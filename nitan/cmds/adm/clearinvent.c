@@ -36,7 +36,7 @@ int main(object me, string arg)
                                 {
                                         rm(dir[i]);
                                         total++;
-                                        write(dir[i] +" ±»É¾³ı¡£\n");
+                                        write(dir[i] +" è¢«åˆªé™¤ã€‚\n");
                                         continue;
                                 }
                         }
@@ -51,7 +51,7 @@ int main(object me, string arg)
                                         */
                                         rm(dir[i]);
                                         total++;
-                                        write(dir[i] +" ±»É¾³ı¡£\n");
+                                        write(dir[i] +" è¢«åˆªé™¤ã€‚\n");
                                         continue;
                                 }
                         }
@@ -59,7 +59,7 @@ int main(object me, string arg)
                 }
         }
         
-        write("\n¼¼ÄÜÄ¿Â¼ÖĞËùÓĞ×Ô´´ÎÄ¼ş¹² " + total + " ¸ö±»É¾³ı¡£\n");
+        write("\næŠ€èƒ½ç›®éŒ„ä¸­æ‰€æœ‰è‡ªå‰µæ–‡ä»¶å…± " + total + " å€‹è¢«åˆªé™¤ã€‚\n");
         return 1;               
 }
 
@@ -103,9 +103,9 @@ int help(object me)
 { 
 write(@HELP
 
-Ö¸Áî¸ñÊ½: clearinvent [pfm] | [skl] | [all]
-±¾Ö¸Áî¿ÉÈÃÄã°Ñ×Ô´´Îä¹¦»ò×Ô´´¾øÕĞÎÄ¼şÈ«²¿É¾³ı¡£
-×¢Òâ£º±¾ÃüÁî±È½ÏÎ£ÏÕ£¬ÇëĞ¡ĞÄÊ¹ÓÃ¡£
+æŒ‡ä»¤æ ¼å¼: clearinvent [pfm] | [skl] | [all]
+æœ¬æŒ‡ä»¤å¯è®“ä½ æŠŠè‡ªå‰µæ­¦åŠŸæˆ–è‡ªå‰µçµ•æ‹›æ–‡ä»¶å…¨éƒ¨åˆªé™¤ã€‚
+æ³¨æ„ï¼šæœ¬å‘½ä»¤æ¯”è¼ƒå±éšªï¼Œè«‹å°å¿ƒä½¿ç”¨ã€‚
 
 HELP);
 return 1;

@@ -8,17 +8,17 @@ inherit SPEAR;
 
 void create()
 {
-        set_name(HIC "µã¸ÖÇ¹" NOR, ({ "steel spear","qiang","spear" }));
+        set_name(HIC "é»é‹¼æ§" NOR, ({ "steel spear","qiang","spear" }));
         set_weight(9000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸Ë");
+                set("unit", "æ¡¿");
                 set("value", 14000);
                 set("material", "steel");
-                set("long", "Ò»±úÎÚºÚµÄ¸ÖÇ¹£¬ÉÏÃæÁ¬Ç¹Ó§¶¼Ã»ÓĞ¡£\n");
-                set("wield_msg", "$NºáÎÕÆğÒ»±ú$n£¬¹ûÈ»Íş·çÁİÁİ¡£\n");
-                set("unwield_msg", "$NÊÕÆğ$n£¬ÏëË³ÊÖß£Ò»ÏÂÇ¹Ó§£¬È´Ã»ÕÒµ½¡£\n");
+                set("long", "ä¸€æŸ„çƒé»‘çš„é‹¼æ§ï¼Œä¸Šé¢é€£æ§çº“éƒ½æ²’æœ‰ã€‚\n");
+                set("wield_msg", "$Næ©«æ¡èµ·ä¸€æŸ„$nï¼Œæœç„¶å¨é¢¨å‡œå‡œã€‚\n");
+                set("unwield_msg", "$Næ”¶èµ·$nï¼Œæƒ³é †æ‰‹æ“¼ä¸€ä¸‹æ§çº“ï¼Œå»æ²’æ‰¾åˆ°ã€‚\n");
         }
         init_spear(60);
         setup();

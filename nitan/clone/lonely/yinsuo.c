@@ -5,24 +5,24 @@ inherit WHIP;
 
 void create()
 {
-        set_name(HIW "ÒøË÷" NOR + HIY "½ðÁå" NOR,({ "yinsuo jinling", "suo", "ling",
+        set_name(HIW "éŠ€ç´¢" NOR + HIY "é‡‘éˆ´" NOR,({ "yinsuo jinling", "suo", "ling",
                                                     "yinsuo", "jinling" }) );
         set_weight(1300);
         if (clonep())
                 destruct(this_object());
         else {
-                set("long", HIW "Ò»¸ùÒøÉ«µÄ³¤Ë÷£¬ÒþÒþÁ÷¶¯×Å½ðÊôµÄ¹â"
-                            "Ôó£¬¿´ÉÏÈ¥ºÜÊÇ¼áÈÍ¡£³¤Ë÷µÄÒ»¶ËÏµ×ÅÁ½¸ö"
-                            "½ðÁå¡£\n" NOR);
-                set("unit", "°Ñ");
+                set("long", HIW "ä¸€æ ¹éŠ€è‰²çš„é•·ç´¢ï¼Œéš±éš±æµå‹•è‘—é‡‘å±¬çš„å…‰"
+                            "æ¾¤ï¼Œçœ‹ä¸ŠåŽ»å¾ˆæ˜¯å …éŸŒã€‚é•·ç´¢çš„ä¸€ç«¯ç³»è‘—å…©å€‹"
+                            "é‡‘éˆ´ã€‚\n" NOR);
+                set("unit", "æŠŠ");
                 set("value", 800000);
                 set("no_sell", 1);
                 set("material", "steel");
-                set("wield_msg", HIW "$N" HIW "ÇáÇáµÄ´Ó»³ÀïÈ¡³öÒ»¸ù"
-                                 "ÒøÉ«µÄ³¤Ë÷ÎÕÔÚÊÖÖÐ¡£\n" NOR); 
-                set("unwield_msg", HIW "$N½«ÊÖÖÐÒøË÷" NOR + HIY "½ð"
-                                 "Áå" NOR + HIW "»ØÑü¼ä£¬ÌìµØÓÖ½¥½¥"
-                                 "·Å³ö¹âÃ¢¡£\n" NOR);
+                set("wield_msg", HIW "$N" HIW "è¼•è¼•çš„å¾žæ‡·è£¡å–å‡ºä¸€æ ¹"
+                                 "éŠ€è‰²çš„é•·ç´¢æ¡åœ¨æ‰‹ä¸­ã€‚\n" NOR); 
+                set("unwield_msg", HIW "$Nå°‡æ‰‹ä¸­éŠ€ç´¢" NOR + HIY "é‡‘"
+                                 "éˆ´" NOR + HIW "å›žè…°é–“ï¼Œå¤©åœ°åˆæ¼¸æ¼¸"
+                                 "æ”¾å‡ºå…‰èŠ’ã€‚\n" NOR);
                 set("stable", 50);
         }
         init_whip(150);
@@ -42,18 +42,18 @@ mixed hit_ob(object me, object victim, int damage_bonus)
         case 0:
                 if (! victim->is_busy())
                 victim->start_busy(me->query_skill("whip") / 10 + 2);
-                return HIY "$N" HIY "Ò»Éù½¿ºÈ£¬ÊÖÖÐµÄ" NOR + HIW "ÒøË÷"
-                       NOR + HIY "½ðÁå»Ã³öÂþÌì±ÞÓ°£¬Ö±µã$n" HIY "¶øÈ¥£¡"
-                       HIR "\n$n" HIR "ÉÔÒ»³ÙÒÉ£¬Ö»¾õÈ«ÉíÒ»Âé£¬ÒÑ±»$N"
-                       HIR "ÕâÕÐµãÖÐÒªÑ¨¡£\n" NOR;
+                return HIY "$N" HIY "ä¸€è²å¬Œå–ï¼Œæ‰‹ä¸­çš„" NOR + HIW "éŠ€ç´¢"
+                       NOR + HIY "é‡‘éˆ´å¹»å‡ºæ¼«å¤©éž­å½±ï¼Œç›´é»ž$n" HIY "è€ŒåŽ»ï¼"
+                       HIR "\n$n" HIR "ç¨ä¸€é²ç–‘ï¼Œåªè¦ºå…¨èº«ä¸€éº»ï¼Œå·²è¢«$N"
+                       HIR "é€™æ‹›é»žä¸­è¦ç©´ã€‚\n" NOR;
 
         case 1:
                 n = me->query_skill("whip");
                 victim->receive_damage("qi", n * 3 / 4, me);
                 victim->receive_wound("qi", n * 3 / 4, me);
-                return  HIY "$N" HIY "Ò»ÉùÇåÐ¥£¬ÊÖÖÐ" NOR + HIW "ÒøË÷"
-                        NOR + HIY "½ðÁåÍðÈçòÔÁúÍ¨Ìì£¬ÆÌÌì¸ÇµØÏ®Ïò$n"
-                        HIY "£¡\n" NOR;
+                return  HIY "$N" HIY "ä¸€è²æ¸…å˜¯ï¼Œæ‰‹ä¸­" NOR + HIW "éŠ€ç´¢"
+                        NOR + HIY "é‡‘éˆ´å®›å¦‚è›Ÿé¾é€šå¤©ï¼Œèˆ–å¤©è“‹åœ°è¥²å‘$n"
+                        HIY "ï¼\n" NOR;
         }
         return damage_bonus;
 }

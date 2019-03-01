@@ -7,18 +7,18 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIY "Ñ×»Æ½ðÌõ" NOR, ({ "yhhero goldbar", "yhhero", "goldbar" }) );
+        set_name(HIY "ç‚Žé»ƒé‡‘æ¢" NOR, ({ "yhhero goldbar", "yhhero", "goldbar" }) );
         set_weight(300);
 
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIY "Ò»¸ù½ð²Ó²ÓµÄ½ðÌõ£¬ÄÃÔÚÊÖÀïÆÄÎªÊæÊÊ¡£\n"
-                            "Ê¹ÓÃ changing Ö¸Áî½«Ñ×»Æ½ðÌõ¶Ò»»ÎªÊ®ÍòYSG£¬»áÔ±¿É¶Ò»»Ê®Ò»ÍòYSG¡£\n" 
-                            "Èç¹ûÔÝÊ±²»Ê¹ÓÃ£¬×îºÃ½«½ðÌõ´æÈë²Ö¿â£¬ÒÔÃâ¶ªÊ§¡£\n" NOR);
+                set("long", HIY "ä¸€æ ¹é‡‘ç‡¦ç‡¦çš„é‡‘æ¢ï¼Œæ‹¿åœ¨æ‰‹è£¡é —ç‚ºèˆ’é©ã€‚\n"
+                            "ä½¿ç”¨ changing æŒ‡ä»¤å°‡ç‚Žé»ƒé‡‘æ¢å…Œæ›ç‚ºåè¬YSGï¼Œæœƒå“¡å¯å…Œæ›åä¸€è¬YSGã€‚\n" 
+                            "å¦‚æžœæš«æ™‚ä¸ä½¿ç”¨ï¼Œæœ€å¥½å°‡é‡‘æ¢å­˜å…¥å€‰åº«ï¼Œä»¥å…ä¸Ÿå¤±ã€‚\n" NOR);
                 set("value", 1);
                 set("no_sell", 1);
-                set("unit", "¸ù");
+                set("unit", "æ ¹");
         }
 
         setup();
@@ -44,15 +44,15 @@ int do_changing(string arg)
         if (! MEMBER_D->is_valib_member(me->query("id")))
         {
                 me->add("stocks/balance", 100000);
-                write(HIG "³É¹¦½«Ò»¸úÑ×»Æ½ðÌõ¶Ò»»ÎªÊ®ÍòYSG²¢´æÈëÁËÄúµÄÒø¿â¡£\n" NOR);
-                write(HIY "ÄúÄ¿Ç°ÔÚÑ×»ÆÒø¿â´æÓÐ " + HIC + me->query("stocks/balance") + HIY "YSG¡£\n" NOR);
+                write(HIG "æˆåŠŸå°‡ä¸€è·Ÿç‚Žé»ƒé‡‘æ¢å…Œæ›ç‚ºåè¬YSGä¸¦å­˜å…¥äº†æ‚¨çš„éŠ€åº«ã€‚\n" NOR);
+                write(HIY "æ‚¨ç›®å‰åœ¨ç‚Žé»ƒéŠ€åº«å­˜æœ‰ " + HIC + me->query("stocks/balance") + HIY "YSGã€‚\n" NOR);
 
         }
         else
         {
                 me->add("stocks/balance", 110000);
-                write(HIG "³É¹¦½«Ò»¸úÑ×»Æ½ðÌõ¶Ò»»ÎªÊ®Ò»ÍòYSG²¢´æÈëÁËÄúµÄÒø¿â¡£\n" NOR);
-                write(HIY "ÄúÄ¿Ç°ÔÚÑ×»ÆÒø¿â´æÓÐ " + HIC + me->query("stocks/balance") + HIY "YSG¡£\n" NOR);
+                write(HIG "æˆåŠŸå°‡ä¸€è·Ÿç‚Žé»ƒé‡‘æ¢å…Œæ›ç‚ºåä¸€è¬YSGä¸¦å­˜å…¥äº†æ‚¨çš„éŠ€åº«ã€‚\n" NOR);
+                write(HIY "æ‚¨ç›®å‰åœ¨ç‚Žé»ƒéŠ€åº«å­˜æœ‰ " + HIC + me->query("stocks/balance") + HIY "YSGã€‚\n" NOR);
         }
 
         destruct(this_object());

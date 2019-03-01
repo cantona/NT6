@@ -1,24 +1,24 @@
 // databased.c
-// Create by ·¢ÏÖºÅ(Find@TX).
+// Create by ç™¼ç¾è™Ÿ(Find@TX).
 // Update by Lonely
 
-// databased.c Ìá¹©µÄÍâ²¿º¯Êı£º
+// databased.c æä¾›çš„å¤–éƒ¨å‡½æ•¸ï¼š
 //
-// Í¨ÓÃÓï¾ä£º
-//   mixed *db_fetch_row()        - Îª²éÕÒÒ»ĞĞ
-//   mixed  db_query()            - ÎªÖ´ĞĞÓï¾ä
-//   mixed *db_all_query()        - ²éÕÒËùÓĞĞĞ
-//   mixed  db_crypt()            - ¼ÓÃÜ×Ö·û´®
-//   string query_db_status()     - Êı¾İ¿â×´Ì¬
+// é€šç”¨èªå¥ï¼š
+//   mixed *db_fetch_row()        - ç‚ºæŸ¥æ‰¾ä¸€è¡Œ
+//   mixed  db_query()            - ç‚ºåŸ·è¡Œèªå¥
+//   mixed *db_all_query()        - æŸ¥æ‰¾æ‰€æœ‰è¡Œ
+//   mixed  db_crypt()            - åŠ å¯†å­—ç¬¦ä¸²
+//   string query_db_status()     - æ•¸æ“šåº«ç‹€æ…‹
 
-// ÓÃ»§¹ÜÀí£º
-//   int db_find_user()           - ²éÑ¯ ID ÊÇ·ñ´æÔÚ
-//   int db_create_user()         - ´´½¨ĞÂµÄÓÃ»§
-//   int db_remove_user()         - É¾³ıÓÃ»§µµ°¸
-//   int db_set_user()            - Éè¶¨ÓÃ»§ÊôĞÔ
-//   int db_add_user()            - Ôö¼ÓÓÃ»§ÊôĞÔ
-//   int db_query_user()          - ²éÑ¯ÓÃ»§ÊôĞÔ
-//   int db_count_user()          - ¼ÆËãÓÃ»§ÊıÁ¿
+// ç”¨æˆ¶ç®¡ç†ï¼š
+//   int db_find_user()           - æŸ¥è©¢ ID æ˜¯å¦å­˜åœ¨
+//   int db_create_user()         - å‰µå»ºæ–°çš„ç”¨æˆ¶
+//   int db_remove_user()         - åˆªé™¤ç”¨æˆ¶æª”æ¡ˆ
+//   int db_set_user()            - è¨­å®šç”¨æˆ¶å±¬æ€§
+//   int db_add_user()            - å¢åŠ ç”¨æˆ¶å±¬æ€§
+//   int db_query_user()          - æŸ¥è©¢ç”¨æˆ¶å±¬æ€§
+//   int db_count_user()          - è¨ˆç®—ç”¨æˆ¶æ•¸é‡
 
 #ifdef DB_SAVE
 
@@ -48,7 +48,7 @@ protected mixed *all_target = ({});
 string *do_sql(string);
 int do_sqlexec(string sql);
 
-// db_save_all() Ê±ÕâÀïµÄºÃ¼¸¸ö×Ö¶ÎÓ¦¸Ã´Ó DBASE Àï·ÖÀë³öÀ´µ¥¶À´æ´¢
+// db_save_all() æ™‚é€™è£¡çš„å¥½å¹¾å€‹å­—æ®µæ‡‰è©²å¾ DBASE è£¡åˆ†é›¢å‡ºä¾†å–®ç¨å­˜å„²
 nosave string *cols = ({
         "id", "name", "surname", "purename", "password", "ad_password",
         "birthday", "online", "on_time", "fee_time", "save_time", "f_mail",
@@ -57,7 +57,7 @@ nosave string *cols = ({
         "f_condition", "f_attack", "f_skill", "f_alias", "f_user", "f_business",
 });
 
-// È·¶¨ÓÃ»§·µ»ØÊı¾İÊ±ÊÇ·ñĞ£ÑéÊı¾İºÍ ÁÙÊ±¾Ù´ë
+// ç¢ºå®šç”¨æˆ¶è¿”å›æ•¸æ“šæ™‚æ˜¯å¦æ ¡é©—æ•¸æ“šå’Œ è‡¨æ™‚èˆ‰æª
 int crc_status() { return crc_status; }
 int clean_up() { return 1; }
 
@@ -112,11 +112,11 @@ int connect_to_database()
 
         n = db_connect(DB_HOST, DATABASE, DB_USER);
 
-        if (intp(n) && (n > 0))  // Á¬½Ó³É¹¦
+        if (intp(n) && (n > 0))  // é€£æ¥æˆåŠŸ
 #ifdef STATIC_LINK
         {
                 db_handle = n;
-                chat("ÒÑ¾­ÓëMySQLÊı¾İ¿â½¨Á¢Á¬½Ó£¡Á¬½ÓºÅÊÇ£º" + n);
+                chat("å·²ç¶“èˆ‡MySQLæ•¸æ“šåº«å»ºç«‹é€£æ¥ï¼é€£æ¥è™Ÿæ˜¯ï¼š" + n);
                 return;
         }
 #else
@@ -186,7 +186,7 @@ protected int valid_caller()
 #endif
 }
 
-// ²»ÄÜÔö¼Ó¼ÇÂ¼£¬Ö»ÄÜĞŞ¸ÄÒÑ¾­ÓĞµÄ¼ÇÂ¼Àï´æÔÚ×Ö¶ÎµÄºÏÊÊÖµ
+// ä¸èƒ½å¢åŠ è¨˜éŒ„ï¼Œåªèƒ½ä¿®æ”¹å·²ç¶“æœ‰çš„è¨˜éŒ„è£¡å­˜åœ¨å­—æ®µçš„åˆé©å€¼
 int db_remove_player(string id)
 {
         int db;
@@ -199,7 +199,7 @@ int db_remove_player(string id)
 #ifdef STATIC_LINK
         if (! db_handle)
         {
-                chat("Êı¾İ¿âÊ§È¥Á¬½Ó¡£");
+                chat("æ•¸æ“šåº«å¤±å»é€£æ¥ã€‚");
                 return 0;
         }
         db = db_handle;
@@ -209,7 +209,7 @@ int db_remove_player(string id)
 #endif
 
         sql = "delete from users where id='" + id + "'";
-        chat("Ö´ĞĞÉ¾³ıÓï¾ä£¡" + sql);
+        chat("åŸ·è¡Œåˆªé™¤èªå¥ï¼" + sql);
         ret = db_exec(db, sql);
         if (! intp(ret))
         {
@@ -223,7 +223,7 @@ int db_remove_player(string id)
         return ret;
 }
 
-// ²»ÄÜÔö¼Ó¼ÇÂ¼£¬Ö»ÄÜĞŞ¸ÄÒÑ¾­ÓĞµÄ¼ÇÂ¼Àï´æÔÚ×Ö¶ÎµÄºÏÊÊÖµ
+// ä¸èƒ½å¢åŠ è¨˜éŒ„ï¼Œåªèƒ½ä¿®æ”¹å·²ç¶“æœ‰çš„è¨˜éŒ„è£¡å­˜åœ¨å­—æ®µçš„åˆé©å€¼
 int db_set_player(string id, string prop, mixed value)
 {
         int db;
@@ -240,7 +240,7 @@ int db_set_player(string id, string prop, mixed value)
 #ifdef STATIC_LINK
         if (! db_handle)
         {
-                chat("Êı¾İ¿âÊ§È¥Á¬½Ó¡£");
+                chat("æ•¸æ“šåº«å¤±å»é€£æ¥ã€‚");
                 return 0;
         }
         db = db_handle;
@@ -253,7 +253,7 @@ int db_set_player(string id, string prop, mixed value)
             ! stringp(value) || sizeof(value) < 2 ))
                 return 0;
 
-        // ¶ÔÓÚ²»Í¬ÀàĞÍµÄÊôĞÔÓ¦¸ÃÓĞ²»Í¬µÄÉèÖÃÊÖ¶Î£¬·ÖÕûĞÍ£¬MAPP£¬Êı×é
+        // å°äºä¸åŒé¡å‹çš„å±¬æ€§æ‡‰è©²æœ‰ä¸åŒçš„è¨­ç½®æ‰‹æ®µï¼Œåˆ†æ•´å‹ï¼ŒMAPPï¼Œæ•¸çµ„
         if (intp(value))
                 sql = "update users set " + prop + "=" + value + " where id = '" + id + "'";
         else if (mapp(value) || arrayp(value))
@@ -262,7 +262,7 @@ int db_set_player(string id, string prop, mixed value)
                 sql = "update users set " + prop + "=" + DB_STR(value) + " where id = '" + id + "'";
         else
         {
-                chat("Êı¾İ¿âº¯Êıdb_setµÄ²ÎÊıvalueÀàĞÍ²»¿ÉÊ¶±ğ£¡");
+                chat("æ•¸æ“šåº«å‡½æ•¸db_setçš„åƒæ•¸valueé¡å‹ä¸å¯è­˜åˆ¥ï¼");
                 return 0;
         }
         ret = db_exec(db, sql);
@@ -295,7 +295,7 @@ mixed db_query_player(string id, string prop)
 #ifdef STATIC_LINK
         if (! db_handle)
         {
-                chat("Êı¾İ¿âÊ§È¥Á¬½Ó¡£");
+                chat("æ•¸æ“šåº«å¤±å»é€£æ¥ã€‚");
                 return 0;
         }
         db = db_handle;
@@ -316,7 +316,7 @@ mixed db_query_player(string id, string prop)
 #ifndef STATIC_LINK
         close_database(db);
 #endif
-        chat("²éÑ¯" + id + "µÄ" + prop + "ÊôĞÔ×Ö¶ÎÖµ¡£·µ»Ø£º" + save_variable(res[0]));
+        chat("æŸ¥è©¢" + id + "çš„" + prop + "å±¬æ€§å­—æ®µå€¼ã€‚è¿”å›ï¼š" + save_variable(res[0]));
         return res[0];
 }
 
@@ -336,14 +336,14 @@ int db_new_player(object ob, object user)
         if (! stringp(my["id"]) || (my["id"] == "") ||
             ! stringp(my["name"]) || (my["name"] == ""))
         {
-                chat("´æ´¢×Ö¶ÎID»òNAMEÎª¿Õ£¬¾Ü¾ø´æ´¢¡£");
+                chat("å­˜å„²å­—æ®µIDæˆ–NAMEç‚ºç©ºï¼Œæ‹’çµ•å­˜å„²ã€‚");
                 return -1;
         }
 
 #ifdef STATIC_LINK
         if (! db_handle)
         {
-                chat("Êı¾İ¿âÊ§È¥Á¬½Ó¡£");
+                chat("æ•¸æ“šåº«å¤±å»é€£æ¥ã€‚");
                 return -1;
         }
         db = db_handle;
@@ -352,8 +352,8 @@ int db_new_player(object ob, object user)
                 return -1;
 #endif
 
-        // ²»ÅĞ¶ÏÊı¾İ¿âÀïÊÇ·ñÒÑ¾­ÓĞ¸ÃÏî¼ÇÂ¼
-        // fee_time²»ÔÚÕâÀï×öĞŞ¸Ä£¬¹Ê²»´æ´¢ÁË
+        // ä¸åˆ¤æ–·æ•¸æ“šåº«è£¡æ˜¯å¦å·²ç¶“æœ‰è©²é …è¨˜éŒ„
+        // fee_timeä¸åœ¨é€™è£¡åšä¿®æ”¹ï¼Œæ•…ä¸å­˜å„²äº†
         sql = "insert into users set id = '" + my["id"] + "',";
         sql += "name = " + DB_STR(my["name"]) + ", surname = " +
                DB_STR(myob["surname"]) + ", purename = " +
@@ -364,12 +364,12 @@ int db_new_player(object ob, object user)
         sql += ", login_dbase = " + DB_STR(save_variable(myob));
         sql += ", f_dbase = " + DB_STR(save_variable(my));
 
-        chat("ÇëÇóÊı¾İ¿â´´½¨ÕÊºÅ£¡\n");
+        chat("è«‹æ±‚æ•¸æ“šåº«å‰µå»ºå¸³è™Ÿï¼\n");
         ret = db_exec(db, sql);
 
         if(!intp(ret))
         {
-                chat("Êı¾İ¿â´æ´¢Ê§°Ü!!!");
+                chat("æ•¸æ“šåº«å­˜å„²å¤±æ•—!!!");
                 log_error(sprintf("db_new_player(%s).db_exec", my["id"]), ret);
                 return -1;
         }
@@ -395,14 +395,14 @@ int db_restore_all(object user)
         if (! mapp(my) || ! stringp(my["id"]) || (my["id"] == "") ||
             ! stringp(my["name"]) || (my["name"] == ""))
         {
-                chat("´æ´¢×Ö¶ÎID»òNAMEÎª¿Õ£¬¾Ü¾ø´æ´¢¡£");
+                chat("å­˜å„²å­—æ®µIDæˆ–NAMEç‚ºç©ºï¼Œæ‹’çµ•å­˜å„²ã€‚");
                 return -1;
         }
 
 #ifdef STATIC_LINK
         if (! db_handle)
         {
-                chat("Êı¾İ¿âÊ§È¥Á¬½Ó¡£");
+                chat("æ•¸æ“šåº«å¤±å»é€£æ¥ã€‚");
                 return -1;
         }
         db = db_handle;
@@ -418,7 +418,7 @@ int db_restore_all(object user)
 
         if (! intp(ret))
         {
-                chat("Êı¾İ¿â´æ´¢Ê§°Ü!!!");
+                chat("æ•¸æ“šåº«å­˜å„²å¤±æ•—!!!");
                 log_error(sprintf("db_restore_all(%s).db_exec",my["id"]),ret);
                 return -1;
         }
@@ -482,14 +482,14 @@ int db_save_all(object user)
         if (! stringp(my["id"]) || (my["id"] == "") ||
             ! stringp(my["name"]) || (my["name"] == ""))
         {
-                chat("´æ´¢×Ö¶ÎID»òNAMEÎª¿Õ£¬¾Ü¾ø´æ´¢¡£");
+                chat("å­˜å„²å­—æ®µIDæˆ–NAMEç‚ºç©ºï¼Œæ‹’çµ•å­˜å„²ã€‚");
                 return -1;
         }
 
 #ifdef STATIC_LINK
         if (! db_handle)
         {
-                chat("Êı¾İ¿âÊ§È¥Á¬½Ó¡£");
+                chat("æ•¸æ“šåº«å¤±å»é€£æ¥ã€‚");
                 return -1;
         }
         db = db_handle;
@@ -498,8 +498,8 @@ int db_save_all(object user)
                 return -1;
 #endif
 
-        // ²»ÅĞ¶ÏÊı¾İ¿âÀïÊÇ·ñÒÑ¾­ÓĞ¸ÃÏî¼ÇÂ¼
-        // fee_time²»ÔÚÕâÀï×öĞŞ¸Ä£¬¹Ê²»´æ´¢ÁË
+        // ä¸åˆ¤æ–·æ•¸æ“šåº«è£¡æ˜¯å¦å·²ç¶“æœ‰è©²é …è¨˜éŒ„
+        // fee_timeä¸åœ¨é€™è£¡åšä¿®æ”¹ï¼Œæ•…ä¸å­˜å„²äº†
         sql = "update users set ";
         sql += "name = " + DB_STR(my["name"]);
 
@@ -511,12 +511,12 @@ int db_save_all(object user)
                         sql += ", ad_password = " + DB_STR(myob["ad_password"]);
                 sql += ", login_dbase = " + DB_STR(save_variable(myob));
         }
-        if (my["on_time"] > 0) // ÈÏÎªÒÑ¾­Å²ÒÆµ½on_time¼Æ·ÑÁË
+        if (my["on_time"] > 0) // èªç‚ºå·²ç¶“æŒªç§»åˆ°on_timeè¨ˆè²»äº†
                 sql += ", online = 1, on_time = " + my["on_time"] + ", save_time = now()";
         else
         {
                 sql += ", online = 1, on_time = " + my["mud_age"] + ", save_time = now()";
-                // my["on_time"] = my["mud_age"]; ÒòÎªÒªÖØĞÂ¼ÆËãsec_id£¬ËùÒÔÕâÀï²»ÄÜÕâÑù×ö
+                // my["on_time"] = my["mud_age"]; å› ç‚ºè¦é‡æ–°è¨ˆç®—sec_idï¼Œæ‰€ä»¥é€™è£¡ä¸èƒ½é€™æ¨£åš
         }
         sql += ", char_idname = " + DB_STR(save_variable(user->query_IDNAME()));
         sql += ", f_autoload = " + DB_STR(save_variable(user->query_autoload_info()));
@@ -533,7 +533,7 @@ int db_save_all(object user)
         ret = db_exec(db, sql);
         if (! intp(ret))
         {
-                chat("Êı¾İ¿â´æ´¢Ê§°Ü!!!" + sql);
+                chat("æ•¸æ“šåº«å­˜å„²å¤±æ•—!!!" + sql);
                 log_error(sprintf("db_save_all(%s).db_exec", my["id"]), ret);
                 return -1;
         }
@@ -554,7 +554,7 @@ string *do_sql(string sql)
 #ifdef STATIC_LINK
         if (! db_handle)
         {
-                chat("Êı¾İ¿âÊ§È¥Á¬½Ó¡£");
+                chat("æ•¸æ“šåº«å¤±å»é€£æ¥ã€‚");
                 return 0;
         }
         db = db_handle;
@@ -571,7 +571,7 @@ string *do_sql(string sql)
                 return 0;
         }
         if (ret == 0) return 0;
-        //Ö»·µ»ØÊ×ĞĞ
+        //åªè¿”å›é¦–è¡Œ
         res = db_fetch(db, 1);
 
 #ifndef STATIC_LINK
@@ -588,7 +588,7 @@ int do_sqlexec(string sql)
 #ifdef STATIC_LINK
         if (! db_handle)
         {
-                chat("Êı¾İ¿âÊ§È¥Á¬½Ó¡£");
+                chat("æ•¸æ“šåº«å¤±å»é€£æ¥ã€‚");
                 return -2;
         }
         db = db_handle;
@@ -617,7 +617,7 @@ mixed *do_sqls(string sql)
 #ifdef STATIC_LINK
         if (! db_handle)
         {
-                chat("Êı¾İ¿âÊ§È¥Á¬½Ó¡£");
+                chat("æ•¸æ“šåº«å¤±å»é€£æ¥ã€‚");
                 return 0;
         }
         db = db_handle;
@@ -634,7 +634,7 @@ mixed *do_sqls(string sql)
                 return 0;
         }
         if (ret == 0) return 0;
-        //Òª·µ»ØËùÓĞĞĞ
+        //è¦è¿”å›æ‰€æœ‰è¡Œ
         //res = allocate(ret);
         for (int i = 0; i < ret; i++)
         {
@@ -648,7 +648,7 @@ mixed *do_sqls(string sql)
         return res;
 }
 
-// ²éÑ¯ ID ÊÇ·ñ´æÔÚ
+// æŸ¥è©¢ ID æ˜¯å¦å­˜åœ¨
 int db_find_user(string key, mixed data)
 {
         int db;
@@ -689,7 +689,7 @@ int db_find_user(string key, mixed data)
         return ret;
 }
 
-// ´´½¨ĞÂµÄÓÃ»§
+// å‰µå»ºæ–°çš„ç”¨æˆ¶
 int db_create_user(string id)
 {
         int db;
@@ -724,7 +724,7 @@ int db_create_user(string id)
         return ret;
 }
 
-// É¾³ıÓÃ»§
+// åˆªé™¤ç”¨æˆ¶
 int db_remove_user(string id)
 {
         int db, n;
@@ -762,7 +762,7 @@ int db_remove_user(string id)
         return n;
 }
 
-// Éè¶¨ÓÃ»§ÊôĞÔ
+// è¨­å®šç”¨æˆ¶å±¬æ€§
 int db_set_user(string id, string key, mixed data)
 {
         int db, n;
@@ -804,7 +804,7 @@ int db_set_user(string id, string key, mixed data)
         return n;
 }
 
-// Ôö¼ÓÓÃ»§ÊôĞÔµã
+// å¢åŠ ç”¨æˆ¶å±¬æ€§é»
 int db_add_user(string id, string key, int num)
 {
         int db, n;
@@ -844,7 +844,7 @@ int db_add_user(string id, string key, int num)
         return n;
 }
 
-// ²éÑ¯ÓÃ»§ÊôĞÔ
+// æŸ¥è©¢ç”¨æˆ¶å±¬æ€§
 mixed db_query_user(string id, string key)
 {
         int db;
@@ -887,7 +887,7 @@ mixed db_query_user(string id, string key)
                 return 0;
 }
 
-// ¼ÓÃÜº¯Êı
+// åŠ å¯†å‡½æ•¸
 mixed db_crypt(string passwd)
 {
         int db;
@@ -924,7 +924,7 @@ mixed db_crypt(string passwd)
         return ret;
 }
 
-// ²éÕÒÒ»ĞĞ
+// æŸ¥æ‰¾ä¸€è¡Œ
 varargs mixed *db_fetch_row(string sql, int row)
 {
         int db;
@@ -955,7 +955,7 @@ varargs mixed *db_fetch_row(string sql, int row)
         return ret;
 }
 
-// Ö´ĞĞ SQL Ö¸Áî
+// åŸ·è¡Œ SQL æŒ‡ä»¤
 varargs mixed do_exec(string sql)
 {
         int db;
@@ -981,7 +981,7 @@ varargs mixed do_exec(string sql)
         return ret;
 }
 
-// Ö´ĞĞÓï¾ä
+// åŸ·è¡Œèªå¥
 mixed db_query(string sql)
 {
         int db;
@@ -1012,7 +1012,7 @@ mixed db_query(string sql)
         return ret;
 }
 
-// ²éÕÒËùÓĞĞĞ
+// æŸ¥æ‰¾æ‰€æœ‰è¡Œ
 mixed *db_all_query(string sql)
 {
         int db, i;
@@ -1042,7 +1042,7 @@ mixed *db_all_query(string sql)
         return ret;
 }
 
-// ¼ÆËãÍæ¼ÒÊıÁ¿
+// è¨ˆç®—ç©å®¶æ•¸é‡
 int db_count_user()
 {
         int db;
@@ -1095,7 +1095,7 @@ int db_remove_item(string id)
 #ifdef STATIC_LINK
         if (! db_handle)
         {
-                chat("Êı¾İ¿âÊ§È¥Á¬½Ó¡£");
+                chat("æ•¸æ“šåº«å¤±å»é€£æ¥ã€‚");
                 return 0;
         }
         db = db_handle;
@@ -1105,7 +1105,7 @@ int db_remove_item(string id)
 #endif
 
         sql = "delete from items where id='" + id + "'";
-        chat("Ö´ĞĞÉ¾³ıÓï¾ä£¡" + sql);
+        chat("åŸ·è¡Œåˆªé™¤èªå¥ï¼" + sql);
         ret = db_exec(db, sql);
         if (! intp(ret))
         {
@@ -1130,7 +1130,7 @@ mixed db_restore_item(mixed ob)
 #ifdef STATIC_LINK
         if (! db_handle)
         {
-                chat("Êı¾İ¿âÊ§È¥Á¬½Ó¡£");
+                chat("æ•¸æ“šåº«å¤±å»é€£æ¥ã€‚");
                 return 0;
         }
         db = db_handle;
@@ -1157,7 +1157,7 @@ mixed db_restore_item(mixed ob)
 
         if (! intp(ret))
         {
-                chat("Êı¾İ¿â´æ´¢Ê§°Ü!!!");
+                chat("æ•¸æ“šåº«å­˜å„²å¤±æ•—!!!");
                 log_error(sprintf("db_restore_item(%s).db_exec", index), ret);
                 return 0;
         }
@@ -1185,7 +1185,7 @@ int db_create_item(mixed ob, mixed data)
 #ifdef STATIC_LINK
         if (! db_handle)
         {
-                chat("Êı¾İ¿âÊ§È¥Á¬½Ó¡£");
+                chat("æ•¸æ“šåº«å¤±å»é€£æ¥ã€‚");
                 return -1;
         }
         db = db_handle;
@@ -1211,7 +1211,7 @@ int db_create_item(mixed ob, mixed data)
         ret = db_exec(db, sql);
         if (! intp(ret))
         {
-                chat("Êı¾İ¿â´æ´¢Ê§°Ü!!!" + sql);
+                chat("æ•¸æ“šåº«å­˜å„²å¤±æ•—!!!" + sql);
                 log_error(sprintf("db_create_item(%s).db_exec", index), ret);
                 return -1;
         }
@@ -1233,7 +1233,7 @@ int db_save_item(mixed ob, mixed data)
 #ifdef STATIC_LINK
         if (! db_handle)
         {
-                chat("Êı¾İ¿âÊ§È¥Á¬½Ó¡£");
+                chat("æ•¸æ“šåº«å¤±å»é€£æ¥ã€‚");
                 return -1;
         }
         db = db_handle;
@@ -1267,7 +1267,7 @@ int db_save_item(mixed ob, mixed data)
         ret = db_exec(db, sql);
         if (! intp(ret))
         {
-                chat("Êı¾İ¿â´æ´¢Ê§°Ü!!!" + sql);
+                chat("æ•¸æ“šåº«å­˜å„²å¤±æ•—!!!" + sql);
                 log_error(sprintf("db_save_item(%s).db_exec", index), ret);
                 return -1;
         }
@@ -1281,7 +1281,7 @@ int db_save_item(mixed ob, mixed data)
 
 string query_name()
 {
-        return "MySQLÊı¾İ¿â(DATABASE_D)";
+        return "MySQLæ•¸æ“šåº«(DATABASE_D)";
 }
 
 #endif

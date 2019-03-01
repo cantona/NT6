@@ -13,26 +13,26 @@ int main(object me, string arg)
             ! living(ob) ||
             ! ob->is_character() ||
             ob == me)
-                return notify_fail("ÄãÏëºÍË­³ÉÎª»ï°é£¿\n");
+                return notify_fail("ä½ æƒ³å’Œèª°æˆç‚ºä¼™ä¼´ï¼Ÿ\n");
 
         if (! pointerp(me->query_team()) || me->is_team_leader())
         {
                 if (sizeof(me->query_team()) >= 12)
-                        return notify_fail("ÄãÕâ¸ö¶ÓÎéÀïÃæµÄÈËÊµÔÚÊÇÌ«¶à"
-                                           "ÁË£¬´ó¼Ò¶¼ÕÕ¹Ë²»¹ıÀ´ÁË¡£\n");
+                        return notify_fail("ä½ é€™å€‹éšŠä¼è£¡é¢çš„äººå¯¦åœ¨æ˜¯å¤ªå¤š"
+                                           "äº†ï¼Œå¤§å®¶éƒ½ç…§é¡§ä¸éä¾†äº†ã€‚\n");
 
                 if( me == query_temp("pending/team", ob) )
                 {
                         if (! pointerp(me->query_team()))
                         {
                                 ob->add_team_member(me);
-                                message_vision("$N¾ö¶¨¼ÓÈë$nµÄ¶ÓÎé¡£\n", me, ob);
+                                message_vision("$Næ±ºå®šåŠ å…¥$nçš„éšŠä¼ã€‚\n", me, ob);
                                 MYGIFT_D->check_mygift(me, "newbie_mygift/zudui"); 
                                 MYGIFT_D->check_mygift(ob, "newbie_mygift/zudui"); 
                         } else
                         {
                                 me->add_team_member(ob);
-                                message_vision("$N¾ö¶¨ÈÃ$n¼ÓÈë¶ÓÎé¡£\n", me, ob);
+                                message_vision("$Næ±ºå®šè®“$nåŠ å…¥éšŠä¼ã€‚\n", me, ob);
                                 MYGIFT_D->check_mygift(me, "newbie_mygift/zudui"); 
                                 MYGIFT_D->check_mygift(ob, "newbie_mygift/zudui"); 
                         }
@@ -43,15 +43,15 @@ int main(object me, string arg)
                         /*
                         if( query("level", ob)<query("level", me)-10 || 
                             query("level", ob)>query("level", me)+10 )
-                                return notify_fail("ÄãÃÇµÄ½ÇÉ«µÈ¼¶Ïà²î½Ï´ó£¬ÎŞ·¨×é¶Ó¡£\n");
+                                return notify_fail("ä½ å€‘çš„è§’è‰²ç­‰ç´šç›¸å·®è¼ƒå¤§ï¼Œç„¡æ³•çµ„éšŠã€‚\n");
                         */
                                 
-                        message_vision("$NÑûÇë$n¼ÓÈë$PµÄ¶ÓÎé¡£\n", me, ob);
-                        tell_object(ob, YEL "Èç¹ûÄãÔ¸Òâ¼ÓÈë£¬ÇëÓÃ team with " +
-                                    query("id", me)+"¡£\n"NOR);
+                        message_vision("$Né‚€è«‹$nåŠ å…¥$Pçš„éšŠä¼ã€‚\n", me, ob);
+                        tell_object(ob, YEL "å¦‚æœä½ é¡˜æ„åŠ å…¥ï¼Œè«‹ç”¨ team with " +
+                                    query("id", me)+"ã€‚\n"NOR);
                         set_temp("pending/team", ob, me);
                         return 1;
                 }
         } else
-                return notify_fail("Ö»ÓĞ¶ÓÎéÁìĞä¿ÉÒÔÑûÇë±ğÈË¼ÓÈë¡£\n");
+                return notify_fail("åªæœ‰éšŠä¼é ˜è¢–å¯ä»¥é‚€è«‹åˆ¥äººåŠ å…¥ã€‚\n");
 }

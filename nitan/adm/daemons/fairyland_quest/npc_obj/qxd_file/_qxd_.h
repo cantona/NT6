@@ -1,23 +1,23 @@
-// qxd Ö÷ÎÄ¼ş£¬ÓÉÉÏ¼¶Ä¿Â¼  _qxd_.c ÒÔ #include µ÷ÓÃ¡£
+// qxd ä¸»æ–‡ä»¶ï¼Œç”±ä¸Šç´šç›®éŒ„  _qxd_.c ä»¥ #include èª¿ç”¨ã€‚
 // naihe 3:15 03-10-19
-// ¸÷ÏîË³Ğò²»µÃµ÷ÂÒ£¬¸÷Ïî²»µÃÈ±ÉÙ¡£
+// å„é …é †åºä¸å¾—èª¿äº‚ï¼Œå„é …ä¸å¾—ç¼ºå°‘ã€‚
 
 
 #define    HJ_OUT_ROOM    HJ_DIR + "room_gameover_hj"
 
-#include "1_vars_qxd.h"         // ÎÄ¼şÍ·µÄ±äÁ¿Éè¶¨
+#include "1_vars_qxd.h"         // æ–‡ä»¶é ­çš„è®Šé‡è¨­å®š
 
-#include "2_preload_qxd.h"      // Ô¤×°º¯Êı£¬È«¾Ö¸÷´¦ÒªÓÃ
+#include "2_preload_qxd.h"      // é è£å‡½æ•¸ï¼Œå…¨å±€å„è™•è¦ç”¨
 
-#include "3_file_qxd.h"         // create() ¼°ÆäËûÖ÷Òª¹¦ÄÜ
+#include "3_file_qxd.h"         // create() åŠå…¶ä»–ä¸»è¦åŠŸèƒ½
 
-#include "4_cmds_qxd.h"         // Ö§³ÖÍæ¼Ò»ù±¾Ö¸Áî
+#include "4_cmds_qxd.h"         // æ”¯æŒç©å®¶åŸºæœ¬æŒ‡ä»¤
 
-#include "4-1_cmds_qxd.h"       // Ô½Ğ´Ô½¶à£¬Ğ´²»ÏÂÁË£¬·Åµ½ÕâÀï
+#include "4-1_cmds_qxd.h"       // è¶Šå¯«è¶Šå¤šï¼Œå¯«ä¸ä¸‹äº†ï¼Œæ”¾åˆ°é€™è£¡
 
-//#include "5_help_qxd.h"         // help º¯Êı   help º¯ÊıÈ¡ÏûÁË¡£
+//#include "5_help_qxd.h"         // help å‡½æ•¸   help å‡½æ•¸å–æ¶ˆäº†ã€‚
 
-#include "6_combat_qxd.h"       // Õ½¶·Ïà¹ØÖ¸Áî
+#include "6_combat_qxd.h"       // æˆ°é¬¥ç›¸é—œæŒ‡ä»¤
 
-#include "7_pfm_qxd.h"          // ¾øÕĞÖ§³Ö
+#include "7_pfm_qxd.h"          // çµ•æ‹›æ”¯æŒ
 

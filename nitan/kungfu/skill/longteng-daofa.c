@@ -1,49 +1,49 @@
 // This program is a part of NITAN MudLIB
-// longteng-daofa.c (ÁúÌÚµ¶·¨)
+// longteng-daofa.c (é¾é¨°åˆ€æ³•)
 
 #include <ansi.h>;
 inherit SKILL;
 
 mapping *action = ({
-([      "action" : "$NÉíĞĞ»Î¶¯,ÃÍµØÒ»ÕĞ[ÁúÕ½ËÄ·½]¿³Ïò$nµÄ$l£¡",
+([      "action" : "$Nèº«è¡Œæ™ƒå‹•,çŒ›åœ°ä¸€æ‹›[é¾æˆ°å››æ–¹]ç å‘$nçš„$lï¼",
         "force"  : 120,
         "attack" : -40,
         "dodge"  : -30,
         "parry"  : 15,
         "lvl"    : 0,
         "damage" : 40,
-        "damage_type" : "¸îÉË",
-        "skill_name"  : "ÁúÕ½ËÄ·½",
+        "damage_type" : "å‰²å‚·",
+        "skill_name"  : "é¾æˆ°å››æ–¹",
 ]),
-([      "action" : "$NÉíĞĞÃÍµØÏòÇ°Ò»³å,½ÅÏÂĞé»ÎÒ»É¨,¾Ùµ¶Ò»ÕĞ[ÁúÌÚËÄº£]Ïò$nµÄ$l¿³È¥£¡",
+([      "action" : "$Nèº«è¡ŒçŒ›åœ°å‘å‰ä¸€æ²–,è…³ä¸‹è™›æ™ƒä¸€æƒ,èˆ‰åˆ€ä¸€æ‹›[é¾é¨°å››æµ·]å‘$nçš„$lç å»ï¼",
         "force"  : 150,
         "attack" : 45,
         "dodge"  : -40,
         "parry"  : -20,
         "lvl"    : 40,
         "damage" : 60,
-        "damage_type" : "¸îÉË",
-        "skill_name"  : "ÁúÌÚËÄº£",
+        "damage_type" : "å‰²å‚·",
+        "skill_name"  : "é¾é¨°å››æµ·",
 ]),
-([      "action" : "$NÌÚ¿ÕÔ½Æğ,»Óµ¶Áè¿Õ¿³ÏÂ,ÕıÊÇÒ»ÕĞ[Ë÷ÃüÒ»µ¶]£¡",
+([      "action" : "$Né¨°ç©ºè¶Šèµ·,æ®åˆ€å‡Œç©ºç ä¸‹,æ­£æ˜¯ä¸€æ‹›[ç´¢å‘½ä¸€åˆ€]ï¼",
         "force"  : 180,
         "attack" : 51,
         "dodge"  : -45,
         "parry"  : -25,
         "lvl"    : 60,
         "damage" : 80,
-        "damage_type" : "¸îÉË",
-        "skill_name"  : "Ë÷ÃüÒ»µ¶",
+        "damage_type" : "å‰²å‚·",
+        "skill_name"  : "ç´¢å‘½ä¸€åˆ€",
 ]),
-([      "action" : "$N´óºÈÒ»Éù,Ò»ÕĞ[Áú·É¾ÅÌì]Á¬»·³¯$nµÄ$l¿³È¥£¡",
+([      "action" : "$Nå¤§å–ä¸€è²,ä¸€æ‹›[é¾é£›ä¹å¤©]é€£ç’°æœ$nçš„$lç å»ï¼",
         "force"  : 220,
         "attack" : 55,
         "dodge"  : -50,
         "parry"  : -30,
         "lvl"    : 80,
         "damage" : 95,
-        "damage_type" : "¸îÉË",
-        "skill_name"  : "Áú·É¾ÅÌì",
+        "damage_type" : "å‰²å‚·",
+        "skill_name"  : "é¾é£›ä¹å¤©",
 ]),
 });
 
@@ -52,16 +52,16 @@ int valid_enable(string usage){ return usage == "blade" || usage == "parry";}
 int valid_learn(object me)
 {
         if( query("max_neili", me)<800 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ã€‚\n");
 
         if ((int)me->query_skill("force") < 150)
-                return notify_fail("ÄãµÄÄÚ¹¦»ğºòÌ«Ç³¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸç«å€™å¤ªæ·ºã€‚\n");
 
         if ((int)me->query_skill("blade", 1) < 120)
-                return notify_fail("ÄãµÄ»ù±¾µ¶·¨²»¹»£¬ÄÑÒÔĞŞÁ¶ÁúÌÚµ¶·¨¡£\n");
+                return notify_fail("ä½ çš„åŸºæœ¬åˆ€æ³•ä¸å¤ ï¼Œé›£ä»¥ä¿®ç…‰é¾é¨°åˆ€æ³•ã€‚\n");
 
         if ((int)me->query_skill("blade", 1) < (int)me->query_skill("longteng-daofa", 1))
-                return notify_fail("ÄãµÄ»ù±¾µ¶·¨Ë®Æ½ÓĞÏŞ£¬ÎŞ·¨Áì»á¸ü¸ßÉîµÄÁúÌÚµ¶·¨¡£\n");
+                return notify_fail("ä½ çš„åŸºæœ¬åˆ€æ³•æ°´å¹³æœ‰é™ï¼Œç„¡æ³•é ˜æœƒæ›´é«˜æ·±çš„é¾é¨°åˆ€æ³•ã€‚\n");
 
         return 1;
 }
@@ -79,13 +79,13 @@ int practice_skill(object me)
         object weapon;
 
         if( !objectp(weapon=query_temp("weapon", me)) || query("skill_type", weapon) != "blade" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ã€‚\n");
 
         if( query("qi", me)<80 )
-                return notify_fail("ÄãµÄÌåÁ¦²»¹»£¬Á·²»ÁËÁúÌÚµ¶·¨¡£\n");
+                return notify_fail("ä½ çš„é«”åŠ›ä¸å¤ ï¼Œç·´ä¸äº†é¾é¨°åˆ€æ³•ã€‚\n");
 
         if( query("neili", me)<120 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬Á·²»ÁËÁúÌÚµ¶·¨¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ï¼Œç·´ä¸äº†é¾é¨°åˆ€æ³•ã€‚\n");
 
         me->receive_damage("qi", 64);
         addn("neili", -84, me);

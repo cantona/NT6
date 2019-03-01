@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-      set("short", "�ŵ���");
+      set("short", "古德林");
         set("long", @LONG
-����һƬ���ܵ��ľ�֣�������ͦ���Σ�֦Ҷ��������������ӵ
-�𣬾�˵�������꣬Ҫ�ǲ���Ϥ���κ�������·��������һƬ�յأ�
-��ֻ�ľ׮�ų�÷��ģ����
+這是一片密密的楠木林，株株秀挺俊何，枝葉分披上捧如兩手擁
+佛，據說有七萬株，要是不熟悉地形很容易迷路。林中有一片空地，
+幾只楠木樁排成梅花模樣。
 LONG );
       set("outdoors", "emei");
       set("exits", ([

@@ -8,13 +8,13 @@ void init()
 
 void create()
 {
-        set_name("ËÄÊ®¶şÕÂ¾­Ò»", ({"book1"}));
+        set_name("å››åäºŒç« ç¶“ä¸€", ({"book1"}));
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "\nÒ»±¾Ïâ»ÆÆìµÄ¾­Êé,·âÆ¤(binding)ºÜ¾«ÖÂ¡£\n");
-                set("unit", "±¾");
+                set("long", "\nä¸€æœ¬é‘²é»ƒæ——çš„ç¶“æ›¸,å°çš®(binding)å¾ˆç²¾è‡´ã€‚\n");
+                set("unit", "æœ¬");
                 set("material", "paper");
         }
         setup();
@@ -31,7 +31,7 @@ int do_tear(string arg)
 
         if(arg=="book1")
         {
-        message_vision("$NÒ»ÏÂ°Ñ¾­ÊéËºµÃ·ÛËé¡£\n", this_player());
+        message_vision("$Nä¸€ä¸‹æŠŠç¶“æ›¸æ’•å¾—ç²‰ç¢ã€‚\n", this_player());
         destruct(this_object());
         return 1;
         }
@@ -39,18 +39,18 @@ int do_tear(string arg)
         if( sscanf(arg, "book1 %s", dir)==1 ) {
         if( dir=="binding" ) {
                 if( query("hasgot", this_object()) )
-                message_vision("$N½«·âÆ¤Ëº¿ª,·¢ÏÖÑòÆ¤ÒÑ¾­±»È¡×ßÁË¡£\n", this_player());
+                message_vision("$Nå°‡å°çš®æ’•é–‹,ç™¼ç¾ç¾Šçš®å·²ç¶“è¢«å–èµ°äº†ã€‚\n", this_player());
                 else
                 {
-                message_vision("$N½«·âÆ¤Ëº¿ª£¬¼¸¿éÑòÆ¤µôÁËÏÂÀ´¡£\n", this_player());
-                message_vision("$NÏÈ½«ÑòÆ¤ÉÏµÄµØÍ¼¼ÇÁËÏÂÀ´£¬È»ºó°ÑËüÃÇÉÕµôÁË¡£\n", this_player());
+                message_vision("$Nå°‡å°çš®æ’•é–‹ï¼Œå¹¾å¡Šç¾Šçš®æ‰äº†ä¸‹ä¾†ã€‚\n", this_player());
+                message_vision("$Nå…ˆå°‡ç¾Šçš®ä¸Šçš„åœ°åœ–è¨˜äº†ä¸‹ä¾†ï¼Œç„¶å¾ŒæŠŠå®ƒå€‘ç‡’æ‰äº†ã€‚\n", this_player());
                 set("huanggong/haspi1", 1, me);
                 set("hasgot", 1, this_object());
                 }
         }
         else
         {
-        message_vision("$NÒ»ÏÂ°Ñ¾­ÊéËºµÃ·ÛËé¡£\n", this_player());
+        message_vision("$Nä¸€ä¸‹æŠŠç¶“æ›¸æ’•å¾—ç²‰ç¢ã€‚\n", this_player());
         destruct(this_object());
         }
         return 1;

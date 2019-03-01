@@ -1,14 +1,14 @@
-// xian.c ÏÊÓÚÍ¨
+// xian.c é®®äºé€š
 
 #include <ansi.h>
 inherit NPC;
 
 void create()
 {
-        set_name("ÏÊÓÚÍ¨", ({ "xianyu  tong"}));
-        set("nickname", "»ªÉ½ÅÑÍ½");
-        set("long", "³¤µÄÃ¼Ä¿ÇåĞã£¬¿¡ÑÅäìÈ÷£¬µ«ÊÇÊµ¼ÊÉÏÊÇ¸öÒõºİ´õ¶¾µÄÈË¡£\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("é®®äºé€š", ({ "xianyu  tong"}));
+        set("nickname", "è¯å±±å›å¾’");
+        set("long", "é•·çš„çœ‰ç›®æ¸…ç§€ï¼Œä¿Šé›…ç€Ÿæ´’ï¼Œä½†æ˜¯å¯¦éš›ä¸Šæ˜¯å€‹é™°ç‹ æ­¹æ¯’çš„äººã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 45);
         set("attitude", "peaceful");
         set("str", 25);

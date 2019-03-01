@@ -1,15 +1,15 @@
-// maijing.c Âó¾¨
+// maijing.c éº¥é¯¨
 
 #include <ansi.h>
 inherit NPC;
 
 void create()
 {
-        set_name("Âó¾¨", ({ "mai  jing"}));
-        set("nickname", "¾Þ¾¨°ï°ïÖ÷");
+        set_name("éº¥é¯¨", ({ "mai  jing"}));
+        set("nickname", "å·¨é¯¨å¹«å¹«ä¸»");
         set("long",
-        "¾Þ¾¨°ïµÄ°ïÖ÷£¬¾ÝËµË®ÉÏµÄ¹¦·ò³öÉñÈë»¯¡£\n");
-        set("gender", "ÄÐÐÔ");
+        "å·¨é¯¨å¹«çš„å¹«ä¸»ï¼Œæ“šèªªæ°´ä¸Šçš„åŠŸå¤«å‡ºç¥žå…¥åŒ–ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 38);
         set("attitude", "peaceful");
         set("str", 25);

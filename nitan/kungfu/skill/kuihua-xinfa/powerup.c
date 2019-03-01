@@ -12,22 +12,22 @@ int exert(object me, object target)
   !query("perform/powerup", me) && 
   !query("can_perform/kuihua-xinfa/powerup", me) && 
   !query_temp("murong/xingyi", me) )
-   return notify_fail("ÄãËùÊ¹ÓÃµÄÄÚ¹¦ÖĞÃ»ÓĞÕâÖÖ¹¦ÄÜ¡£");
+   return notify_fail("ä½ æ‰€ä½¿ç”¨çš„å…§åŠŸä¸­æ²’æœ‰é€™ç¨®åŠŸèƒ½ã€‚");
 */
 
         if( target != me )
-                return notify_fail("ÄãÖ»ÄÜÓÃ¿û»¨ĞÄ·¨ÌáÉı×Ô¼ºµÄÕ½¶·Á¦¡£\n");
+                return notify_fail("ä½ åªèƒ½ç”¨è‘µèŠ±å¿ƒæ³•æå‡è‡ªå·±çš„æˆ°é¬¥åŠ›ã€‚\n");
         if( query("neili", me)<100 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ã€‚\n");
         if( query_temp("powerup", me) )
-                return notify_fail("ÄãÒÑ¾­ÔÚÔË¹¦ÖĞÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“åœ¨é‹åŠŸä¸­äº†ã€‚\n");
 
         skill = me->query_skill("force");
 
         addn("neili", -100, me);
         me->receive_damage("qi",0);
 
-        message_combatd(MAG"$NÕÅ¿ÚÒ»Éù¼âÀ÷³¤Ğ¥£¬ÔËÆğ¿û»¨ĞÄ·¨£¬Éí·¨Í»È»±äµÃÆ®Èç¹í÷È£¬À´È¥Èç·ç£¡\n" NOR, me);
+        message_combatd(MAG"$Nå¼µå£ä¸€è²å°–å²é•·å˜¯ï¼Œé‹èµ·è‘µèŠ±å¿ƒæ³•ï¼Œèº«æ³•çªç„¶è®Šå¾—é£„å¦‚é¬¼é­…ï¼Œä¾†å»å¦‚é¢¨ï¼\n" NOR, me);
 
         addn_temp("apply/attack", skill/3, me);
         addn_temp("apply/dodge", skill/3, me);
@@ -42,19 +42,19 @@ void remove_effect(object me, int amount)
         addn_temp("apply/attack", -amount, me);
         addn_temp("apply/dodge", -amount, me);
         delete_temp("powerup", me);
-        tell_object(me, "ÄãµÄ¿û»¨ĞÄ·¨ÔËĞĞÍê±Ï£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï¡£\n");
+        tell_object(me, "ä½ çš„è‘µèŠ±å¿ƒæ³•é‹è¡Œå®Œç•¢ï¼Œå°‡å…§åŠ›æ”¶å›ä¸¹ç”°ã€‚\n");
 }
 
 int help(object me)
 {
-        write(WHT"\n¿û»¨ĞÄ·¨Ö®¼ÓÁ¦£º"NOR"\n");
+        write(WHT"\nè‘µèŠ±å¿ƒæ³•ä¹‹åŠ åŠ›ï¼š"NOR"\n");
         write(@HELP
 
-        Ê¹ÓÃ¹¦Ğ§£º
-                ÌáÉı×Ô¼ºµÄ¹¥»÷·ÀÓùÄÜÁ¦
+        ä½¿ç”¨åŠŸæ•ˆï¼š
+                æå‡è‡ªå·±çš„æ”»æ“Šé˜²å¾¡èƒ½åŠ›
 
-        ³öÊÖÒªÇó£º
-                ÄÚÁ¦100
+        å‡ºæ‰‹è¦æ±‚ï¼š
+                å…§åŠ›100
 HELP
         );
         return 1;

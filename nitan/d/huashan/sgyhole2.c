@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "É½¶´");
+        set("short", "å±±æ´");
         set("long", @LONG
-ÕâÊÇÒ»¸öºÁ²»ÆğÑÛµÄÉ½¶´£¬µ«ÊÇÀïÃæµÄÊ¯±ÚÉÏÈ´»­ÂúÁËÎåÔÀ½£ÅÉ
-ËùÓĞÒÑ¾­Ê§´«µÄ¾«Ãî¾øÕĞ¡£»¨¸ÚÑÒÊ¯±Ú(wall)ÉÏºÜ¶àĞ¡ÈË£¬È«ÊÇÓÃÀû
-Æ÷¿ÌÖÆ£¬Ïë¼ûµ±³õÔËÁ¦Ö®ÈËÄÚÁ¦Ê®·ÖÉîºñ¡£
+é€™æ˜¯ä¸€å€‹æ¯«ä¸èµ·çœ¼çš„å±±æ´ï¼Œä½†æ˜¯è£¡é¢çš„çŸ³å£ä¸Šå»ç•«æ»¿äº†äº”å²³åŠæ´¾
+æ‰€æœ‰å·²ç¶“å¤±å‚³çš„ç²¾å¦™çµ•æ‹›ã€‚èŠ±å´—å·–çŸ³å£(wall)ä¸Šå¾ˆå¤šå°äººï¼Œå…¨æ˜¯ç”¨åˆ©
+å™¨åˆ»åˆ¶ï¼Œæƒ³è¦‹ç•¶åˆé‹åŠ›ä¹‹äººå…§åŠ›ååˆ†æ·±åšã€‚
 LONG );
         set("exits", ([ /* sizeof() == 4 */
             "southup"   : __DIR__"sgyhole",
@@ -42,49 +42,49 @@ int do_think(string msg)
 
     string where, witch;
     
-    if (! msg)return notify_fail("Ê²Ã´£¿\n");
+    if (! msg)return notify_fail("ä»€éº¼ï¼Ÿ\n");
 
     if (sscanf(msg, "%s from %s", witch, where) != 2)
-          return notify_fail("¸ÉÊ²Ã´£¿\n");
+          return notify_fail("å¹¹ä»€éº¼ï¼Ÿ\n");
 
-    if (witch != "Íò½£·ÙÔÆ")
-          return notify_fail("ÄãÏë²ÎÎòÊ²Ã´£¿\n");
+    if (witch != "è¬åŠç„šé›²")
+          return notify_fail("ä½ æƒ³åƒæ‚Ÿä»€éº¼ï¼Ÿ\n");
 
     if (where != "wall")
-          return notify_fail("ÕâÀïÃ»Ê²Ã´¸øÄã²ÎÎòµÄ°¡£¡\n");
+          return notify_fail("é€™è£¡æ²’ä»€éº¼çµ¦ä½ åƒæ‚Ÿçš„å•Šï¼\n");
 
     if (me->is_busy())
-          return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+          return notify_fail("ä½ ç¾åœ¨æ­£å¿™è‘—å‘¢ã€‚\n");
 
     if (me->is_fighting())
-          return notify_fail("ÄãÔÚÕ½¶·Å¶£¿£¡Ğ¡ĞÄ£¬À´ÁË£¡£¡£¡\n");
+          return notify_fail("ä½ åœ¨æˆ°é¬¥å“¦ï¼Ÿï¼å°å¿ƒï¼Œä¾†äº†ï¼ï¼ï¼\n");
    
     if( query("can_perform/zhurong-jian/wan", me) )
-          return notify_fail("Äã²»ÊÇÒÑ¾­»áÁËÂğ£¿\n");
+          return notify_fail("ä½ ä¸æ˜¯å·²ç¶“æœƒäº†å—ï¼Ÿ\n");
 
     if ((int)me->query_skill("zhurong-jian", 1) < 140)
-          return notify_fail("Äã×£ÈÚ½£·¨²»¹»æµÊì£¬ÎŞ·¨¹áÍ¨Ê¯±ÚÉÏµÄ¾øÑ§£¡\n");
+          return notify_fail("ä½ ç¥èåŠæ³•ä¸å¤ å«»ç†Ÿï¼Œç„¡æ³•è²«é€šçŸ³å£ä¸Šçš„çµ•å­¸ï¼\n");
 
     if ((int)me->query_skill("force") < 220)
-          return notify_fail("ÄãÄÚ¹¦ĞŞÎª²»¹»£¬ÎŞ·¨¹áÍ¨Ê¯±ÚÉÏµÄ¾øÑ§£¡\n");
+          return notify_fail("ä½ å…§åŠŸä¿®ç‚ºä¸å¤ ï¼Œç„¡æ³•è²«é€šçŸ³å£ä¸Šçš„çµ•å­¸ï¼\n");
 
     if( query("max_neili", me)<1200 )
-          return notify_fail("ÄãµÄÄÚÁ¦ĞŞÎª²»×ã£¬ÎŞ·¨¹áÍ¨Ê¯±ÚÉÏµÄ¾øÑ§£¡\n");
+          return notify_fail("ä½ çš„å…§åŠ›ä¿®ç‚ºä¸è¶³ï¼Œç„¡æ³•è²«é€šçŸ³å£ä¸Šçš„çµ•å­¸ï¼\n");
 
     if( query("jing", me)<100 )
-          return notify_fail("ÄãµÄ¾«Á¦ÎŞ·¨¼¯ÖĞ£¬ÎŞ·¨ÁìÎòÊ¯±ÚÉÏµÄ¾øÑ§£¡\n");
+          return notify_fail("ä½ çš„ç²¾åŠ›ç„¡æ³•é›†ä¸­ï¼Œç„¡æ³•é ˜æ‚ŸçŸ³å£ä¸Šçš„çµ•å­¸ï¼\n");
 
     me->start_busy(4 + random(4));
 
     if (random(10) != 1)   
-          return notify_fail("Äã×ĞÏ¸²ÎÎòÊ¯±ÚÉÏµÄ¾øÑ§£¬ÈôÓĞËùÎò£¬µ«ÊÇÊ¼ÖÕÎŞ·¨ÈÚ»á¹áÍ¨£¡\n");
+          return notify_fail("ä½ ä»”ç´°åƒæ‚ŸçŸ³å£ä¸Šçš„çµ•å­¸ï¼Œè‹¥æœ‰æ‰€æ‚Ÿï¼Œä½†æ˜¯å§‹çµ‚ç„¡æ³•èæœƒè²«é€šï¼\n");
 
     me->receive_damage("jing", 95);
 
     me->start_busy(2 + random(4));
 
-    write(HIM "ÃÍÈ»¼ä£¬ÄãÒ»Éù³¤Ğ¥£¬ĞØÖĞ»íÈ»¹áÍ¨£¬ÔÙÎŞÒÉÂÇ¡£\n" NOR);
-    write(HIC "ÄãÖÕÓÚÍ¨ÏşÁË¾øÑ§¡¸Íò½£·ÙÔÆ¡¹¡£\n" NOR);
+    write(HIM "çŒ›ç„¶é–“ï¼Œä½ ä¸€è²é•·å˜¯ï¼Œèƒ¸ä¸­è±ç„¶è²«é€šï¼Œå†ç„¡ç–‘æ…®ã€‚\n" NOR);
+    write(HIC "ä½ çµ‚äºé€šæ›‰äº†çµ•å­¸ã€Œè¬åŠç„šé›²ã€ã€‚\n" NOR);
 
     set("can_perform/zhurong-jian/wan", 1, me);
 
@@ -108,30 +108,30 @@ int do_mianbi()
         c_skill = (int)ob->query_skill("zhurong-jian", 1);
         if (ob->query_skill("sword", 1) <= c_skill)
         {
-                write("Äã¶Ô½£·¨µÄÁË½âÏÔÈ»Ì«µÍ£¬ÎŞ·¨ÁìÎòÊ¯±ÚÄÚÈİ¡£\n", ob);
+                write("ä½ å°åŠæ³•çš„äº†è§£é¡¯ç„¶å¤ªä½ï¼Œç„¡æ³•é ˜æ‚ŸçŸ³å£å…§å®¹ã€‚\n", ob);
                 return 1; 
         }
 
         if (! ob->can_improve_skill("zhurong-jian"))
         {
-                write("$NµÄÊµÕ½¾­Ñé²»×ã£¬ÎŞ·¨ÁìÎòÊ¯±ÚÄÚÈİ¡£\n");
+                write("$Nçš„å¯¦æˆ°ç¶“é©—ä¸è¶³ï¼Œç„¡æ³•é ˜æ‚ŸçŸ³å£å…§å®¹ã€‚\n");
                 return 1; 
         }
 
         if( query("jing", ob)<40 )
         {
-                write("Äã¾«Á¦²»ÄÜ¼¯ÖĞ£¬ÏÖÔÚÎŞ·¨ÁìÎòÊ¯±ÚÄÚÈİ¡£\n");
+                write("ä½ ç²¾åŠ›ä¸èƒ½é›†ä¸­ï¼Œç¾åœ¨ç„¡æ³•é ˜æ‚ŸçŸ³å£å…§å®¹ã€‚\n");
                 return 1; 
         }
 
         if (c_skill >= 10)
         {
-                write("Äã¾õµÃÊ¯±ÚÄÚÈİÌ«·ôÇ³ÁË¡£\n");
+                write("ä½ è¦ºå¾—çŸ³å£å…§å®¹å¤ªè†šæ·ºäº†ã€‚\n");
                 return 1;
         }
 
-        message_vision("$NÃæ¶Ô×ÅÊ¯±ÚõÃ×ø¾²Ë¼£¬Á¼¾Ã£¬¶Ô¡¸×£ÈÚ½£·¨¡¹"
-                        "ËÆÓĞËùÎò¡£\n", ob);
+        message_vision("$Né¢å°è‘—çŸ³å£è¶ºåéœæ€ï¼Œè‰¯ä¹…ï¼Œå°ã€Œç¥èåŠæ³•ã€"
+                        "ä¼¼æœ‰æ‰€æ‚Ÿã€‚\n", ob);
         ob->improve_skill("zhurong-jian",1+random(query("int", ob)));
         ob->receive_damage("jing", 35);
         ob->start_busy(2);

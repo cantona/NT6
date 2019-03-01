@@ -3,17 +3,17 @@
 inherit THROWING;
 void create()
 {
-        set_name("·É»ÈÊ¯", ({ "feihuang shi", "shi" }) );
+        set_name("é£›è—çŸ³", ({ "feihuang shi", "shi" }) );
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
+                set("unit", "æŠŠ");
                 set("value", 500);
-                set("base_unit", "Á£");
+                set("base_unit", "ç²’");
                 set("base_weight", 100);
                 set("base_value", 25);
                 set("material", "stone");
-                set("long", "Ò»¿éÓĞÀâÓĞ½ÇµÄÊ¯Í·¡£\n");
+                set("long", "ä¸€å¡Šæœ‰æ£±æœ‰è§’çš„çŸ³é ­ã€‚\n");
                 
         }
        set_amount(20);

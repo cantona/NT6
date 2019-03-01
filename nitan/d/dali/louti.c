@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-        set("short","¥��");
+        set("short","樓梯");
         set("long",@LONG
-�����ͨ����¥��ӭ��ի����¥�ݣ�¥�ݸ�����ʮ�༶��������
-���ʺ��ëձ��¥������վ��һЩ������ʿ��¥�����ǹ����Ϣ�ĵ�
-����
+這就是通往二樓“迎賓齋”的樓梯，樓梯高有五十余級，上面舖
+了鮮紅的毛氈，樓梯兩側站了一些素衣衛士，樓上則是貴賓休息的地
+方。
 LONG);
         set("objects", ([
            __DIR__"npc/weishi": 3,

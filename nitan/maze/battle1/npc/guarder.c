@@ -7,12 +7,12 @@ inherit NPC;
 
 void create()
 {
-        set_name(HIY "ÊØ»¤Õß" NOR, ({ "guarder",}));
+        set_name(HIY "å®ˆè­·è€…" NOR, ({ "guarder",}));
         set("title", HIR "" NOR);
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("age", 22+random(23));
         set("long", @LONG
-Ëû´ø×ÅÒ»¸±±ùÀäµÄÃæ¾ß£¬ÎŞ·¨±æÊ¶Ä£Ñù¡£
+ä»–å¸¶è‘—ä¸€å‰¯å†°å†·çš„é¢å…·ï¼Œç„¡æ³•è¾¨è­˜æ¨¡æ¨£ã€‚
 LONG);
         set("attitude", "friendly");
         set("str", 80);
@@ -111,7 +111,7 @@ void heart_beat()
         if (query("neili") < 1 && random(50) == 1)                                              
                 set("neili", query("max_neili"));
 
-        // ÊØ»¤·¿¼ä³ö¿Ú
+        // å®ˆè­·æˆ¿é–“å‡ºå£
         env = environment(this_object());
         if (objectp(env))
         {

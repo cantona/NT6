@@ -5,21 +5,21 @@ inherit HEAD;
 
 void create()
 {
-        set_name(HIG"´ºË®±Ì²¨"NOR, ({"chunshui bibo", "flower"}));
+        set_name(HIG"æ˜¥æ°´ç¢§æ³¢"NOR, ({"chunshui bibo", "flower"}));
         set("taskobj", 1);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¶ä");
+                set("unit", "æœµ");
                 set("long", 
-"Ò»Öêº±¼ûÖ®¼«µÄÂÌ¾Õ»¨¡£\n");
+"ä¸€æ ªç½•è¦‹ä¹‹æ¥µçš„ç¶ èŠèŠ±ã€‚\n");
                 set("value", 0);
                 set("material", "plant");
                 set_weight(10);
                 set("armor_prop/armor", 0);
                 set("armor_prop/per", 3);
-                set("wear_msg", "$NÇáÇáµØ°ÑÒ»¶ä$n´÷ÔÚÍ·ÉÏ¡£\n");
-                set("unequip_msg", "$NÇáÇáµØ°Ñ$n´ÓÍ·ÉÏÕªÁËÏÂÀ´¡£\n");
+                set("wear_msg", "$Nè¼•è¼•åœ°æŠŠä¸€æœµ$næˆ´åœ¨é ­ä¸Šã€‚\n");
+                set("unequip_msg", "$Nè¼•è¼•åœ°æŠŠ$nå¾é ­ä¸Šæ‘˜äº†ä¸‹ä¾†ã€‚\n");
         }
         setup();
 }

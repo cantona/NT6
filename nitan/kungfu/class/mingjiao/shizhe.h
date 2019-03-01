@@ -11,14 +11,14 @@ int accept_object(object ob, object obj)
         && ob_fam["generation"] == my_fam["generation"] + 2)
         {
                 set_temp("apprentice_ok", 1, ob);
-                command("say ºÃ£¬"+query("name", ob)+"£¬ÄãÔ¸Òâ°İÎÒÎªÊ¦Âğ£¿");
+                command("say å¥½ï¼Œ"+query("name", ob)+"ï¼Œä½ é¡˜æ„æ‹œæˆ‘ç‚ºå¸«å—ï¼Ÿ");
                 remove_call_out("destroying");
                 call_out("destroying", 1, me, obj);
                 return 1;
         }
 
         command("smile");
-        command("say Õâ¶«Î÷¸øÎÒ¿ÉÃ»ÓĞÊ²÷áÓÃ¡£");
+        command("say é€™æ±è¥¿çµ¦æˆ‘å¯æ²’æœ‰ä»€éº¼ç”¨ã€‚");
         command("give "+query("id", obj)+" to "+query("id", me));
         return 0;
 
@@ -43,21 +43,21 @@ void attempt_apprentice(object ob)
         if (! permit_recruit(ob))
                 return;
 
-        if( !(ob_fam=query("family", ob)) || ob_fam["family_name"] != "Ã÷½Ì" )
+        if( !(ob_fam=query("family", ob)) || ob_fam["family_name"] != "æ˜æ•™" )
         {
-                command("say " + RANK_D->query_respect(ob) + "Óë±¾½ÌËØÎŞÀ´Íù£¬²»Öª´Ë»°´ÓºÎÌ¸Æğ£¿");
+                command("say " + RANK_D->query_respect(ob) + "èˆ‡æœ¬æ•™ç´ ç„¡ä¾†å¾€ï¼Œä¸çŸ¥æ­¤è©±å¾ä½•è«‡èµ·ï¼Ÿ");
                 return;
         }
 
         if ( ob_fam["generation"] <= my_fam["generation"] )
         {
-                command("say " + RANK_D->query_respect(ob) + "£¬Ğ¡Ê¹ÄÄÀï¸Òµ± !");
+                command("say " + RANK_D->query_respect(ob) + "ï¼Œå°ä½¿å“ªè£¡æ•¢ç•¶ !");
                 return;
         }
 
         if ( ob_fam["generation"] == (my_fam["generation"] + 1) )
         {
-                command("say " + ob_fam["master_name"] + "µÄÍ½µÜÔõ÷áÅÜµ½ÎÒÕâ¶ùÀ´ÁË£¬¹ş¹ş¹ş !");
+                command("say " + ob_fam["master_name"] + "çš„å¾’å¼Ÿæ€éº¼è·‘åˆ°æˆ‘é€™å…’ä¾†äº†ï¼Œå“ˆå“ˆå“ˆ !");
                 command("recruit "+query("id", ob));
         }
 
@@ -68,15 +68,15 @@ void attempt_apprentice(object ob)
                         delete_temp("have_letter", ob);
                         delete_temp("apprentice_ok", ob);
 
-                        command("say ÊÇ" + ob_fam["master_name"] + "½ĞÄãÀ´ÕÒÎÒµÄ°É£¬¹ş¹ş¹ş !");
-                        command("say ±¾Ê¹ÕßÓÖµÃÒ»¿ÉËÜÖ®²Å£¬ÕæÊÇ¿ÉÏ²¿ÉºØ !");
+                        command("say æ˜¯" + ob_fam["master_name"] + "å«ä½ ä¾†æ‰¾æˆ‘çš„å§ï¼Œå“ˆå“ˆå“ˆ !");
+                        command("say æœ¬ä½¿è€…åˆå¾—ä¸€å¯å¡‘ä¹‹æ‰ï¼ŒçœŸæ˜¯å¯å–œå¯è³€ !");
 
-                        command("say ¹§Ï²ÄãÈÙÉıÎªÃ÷½Ì»¤½Ì·¨Íõ£¡");
+                        command("say æ­å–œä½ æ¦®å‡ç‚ºæ˜æ•™è­·æ•™æ³•ç‹ï¼");
                         command("recruit "+query("id", ob));
                 }
                 else
                 {
-                        command("say " + RANK_D->query_respect(ob) + "£¬ÄãÃ»ÓĞÍÆ¼öĞÅ£¬²»ÄÜÔ½¼¶°İÊ¦¡£");
+                        command("say " + RANK_D->query_respect(ob) + "ï¼Œä½ æ²’æœ‰æ¨è–¦ä¿¡ï¼Œä¸èƒ½è¶Šç´šæ‹œå¸«ã€‚");
                         return;
                 }
         }

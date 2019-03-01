@@ -3,12 +3,12 @@ inherit TRANS_ROOM;
 
 void create()
 {
-      set("short", "����");
+      set("short", "馬廄");
         set("long", @LONG
-���ǳɶ��ǵ����ǣ����깩Ӧ���ʲ��ϡ��ɶ���紾�������ǻ�
-����ǣ�����Ǻ����տ���������ι�����㣬��ϴˢ�ø�Ǭ������һֱ
-�ź򵽿�����·�����������µ���ľ���϶��ſ���ľ��(paizi)������
-�жѷ������Ѳ��ϡ�
+這是成都城的馬廄，常年供應新鮮草料。成都民風淳樸馬夫們會
+把馬牽到馬廄好生照看，將它們喂飽飲足，再洗刷得幹乾凈凈，一直
+伺候到客人上路。馬廄雨檐下的爛木柱上釘著塊破木牌(paizi)。馬廄
+中堆放著幾堆草料。
 LONG );
       set("outdoors", "chengdu");
       set("no_fight", 1);

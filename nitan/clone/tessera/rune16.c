@@ -10,13 +10,13 @@ int is_rune() { return 1; }
  
 void create()
 {
-        set_name(HIW "·ûÎÄ" NOR, ({"rune16", "rune"}));
+        set_name(HIW "ç¬¦æ–‡" NOR, ({"rune16", "rune"}));
         set_weight(10);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "·ûÎÄ£ºÌ«»À¼«Ñş·û£¬¿ÉÒÔ·ÅÈë°¼²ÛÎïÆ·¡£\n");
-                set("unit", "¸ö");
+                set("long", "ç¬¦æ–‡ï¼šå¤ªç…¥æ¥µç‘¤ç¬¦ï¼Œå¯ä»¥æ”¾å…¥å‡¹æ§½ç‰©å“ã€‚\n");
+                set("unit", "å€‹");
                 set("enchase/SN", 16);
                 set("enchase/type", "all");
                 set("enchase/consistence", 100); 

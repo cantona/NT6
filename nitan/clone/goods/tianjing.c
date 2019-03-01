@@ -5,22 +5,22 @@ inherit ITEM;
 int is_reform_ob() { return 1; }
 void create()
 {
-        set_name(HIW "å¾ÓîÌì¾§" NOR, ({"tian jing", "tian", "jing"}));
+        set_name(HIW "å¯°å®‡å¤©æ™¶" NOR, ({"tian jing", "tian", "jing"}));
         set_weight(10000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "\nÒ»¿é´¿°×É«µÄË®¾§£¬¾§Ó¨ÌŞÍ¸£¬ÎŞÏ¾µÄ±íÃæÉä\n"
-                            "³öÒ«ÑÛµÄ¹âÔó¡£ÆäÖĞ·Â·ğÔÌ²Ø×ÅÇ§Ç§ÍòÍòµÄÉú\n"
-                            "Ãü£¬ÉúÃüÁ÷¶¯²»Ï¢£¬É¢·¢³öÓîÖæµÄÁ¦Á¿¡£Õâ±ã\n"
-                            "ÊÇ´«ËµÖĞµÄÖÁ±¦¡ª¡ªå¾ÓîÌì¾§£¬Ïà´«ÎªÅ®æ´Äï\n"
-                            "ÄïËùÁ¶ÖÆ¡£\n" NOR);
-                set("unit", "¿é");
+                set("long", HIW "\nä¸€å¡Šç´”ç™½è‰²çš„æ°´æ™¶ï¼Œæ™¶ç‘©å‰”é€ï¼Œç„¡æš‡çš„è¡¨é¢å°„\n"
+                            "å‡ºè€€çœ¼çš„å…‰æ¾¤ã€‚å…¶ä¸­ä»¿ä½›è˜Šè—è‘—åƒåƒè¬è¬çš„ç”Ÿ\n"
+                            "å‘½ï¼Œç”Ÿå‘½æµå‹•ä¸æ¯ï¼Œæ•£ç™¼å‡ºå®‡å®™çš„åŠ›é‡ã€‚é€™ä¾¿\n"
+                            "æ˜¯å‚³èªªä¸­çš„è‡³å¯¶â”€â”€å¯°å®‡å¤©æ™¶ï¼Œç›¸å‚³ç‚ºå¥³åª§å¨˜\n"
+                            "å¨˜æ‰€ç…‰åˆ¶ã€‚\n" NOR);
+                set("unit", "å¡Š");
                 set("value", 10000000);
                 set("item_origin", 1);
                 set("element", "water");
                 set("material_attrib", "tian jing");
-                set("material_name", HIW "å¾ÓîÌì¾§" NOR);
+                set("material_name", HIW "å¯°å®‡å¤©æ™¶" NOR);
                 set("can_make", "all");
                 set("power_point", 200);
         }

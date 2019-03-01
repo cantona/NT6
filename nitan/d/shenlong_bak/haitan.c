@@ -1,4 +1,4 @@
-//  /d/shenlong/haitan.c ∫£Ã≤
+//  /d/shenlong/haitan.c Êµ∑ÁÅò
 // Last Modified by winder on Jul. 12 2002
 
 #include <ansi.h>
@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "∫£Ã≤");
+        set("short", "Êµ∑ÁÅò");
         set("long", @LONG
-µ´º˚∞∂…œ ˜ƒæ≤‘¥‰£¨≥§≥§µƒ∫£Ã≤Õ˚≤ªµΩæ°Õ∑£¨æ° «—©∞◊µƒœ∏…≥£¨Àƒ
-¥¶“ª∆¨º≈æ≤£¨Ã˝≤ªº˚“ªµ„…˘“Ù£¨Œ˜√Ê «¥Û∫££¨∂´√Ê∑¬∑˜”–“ª◊˘…Ω∑Â£¨¡Ω
-≈‘ «Õ˚≤ªµΩæ°Õ∑µƒ∫£Ã≤°£µ∫…œµƒø’∆¯À∆∫ı”÷»»”÷√∆£¨œÃ ™µƒ∫£∑Á÷–¥¯◊≈
-“ªπ…–»≥Ù£¨”÷º–‘”¡À“ª¬∆∆ÊÃÿµƒª®œ„£¨Œ≈∆¿¥ Æ∑÷π÷“Ï°£
+‰ΩÜË¶ãÂ≤∏‰∏äÊ®πÊú®ËíºÁø†ÔºåÈï∑Èï∑ÁöÑÊµ∑ÁÅòÊúõ‰∏çÂà∞Áõ°È†≠ÔºåÁõ°ÊòØÈõ™ÁôΩÁöÑÁ¥∞Ê≤ôÔºåÂõõ
+Ëôï‰∏ÄÁâáÂØÇÈùúÔºåËÅΩ‰∏çË¶ã‰∏ÄÈªûËÅ≤Èü≥ÔºåË•øÈù¢ÊòØÂ§ßÊµ∑ÔºåÊù±Èù¢‰ªøÊãÇÊúâ‰∏ÄÂ∫ßÂ±±Â≥∞ÔºåÂÖ©
+ÊóÅÊòØÊúõ‰∏çÂà∞Áõ°È†≠ÁöÑÊµ∑ÁÅò„ÄÇÂ≥∂‰∏äÁöÑÁ©∫Ê∞£‰ºº‰πéÂèàÁÜ±ÂèàÊÇ∂ÔºåÂí∏ÊøïÁöÑÊµ∑È¢®‰∏≠Â∏∂Ëëó
+‰∏ÄËÇ°ËÖ•Ëá≠ÔºåÂèàÂ§æÈõú‰∫Ü‰∏ÄÁ∏∑Â•áÁâπÁöÑËä±È¶ôÔºåËÅûËµ∑‰æÜÂçÅÂàÜÊÄ™Áï∞„ÄÇ
 LONG
         );
         set("exits", ([
@@ -38,14 +38,14 @@ void init()
         me->save();
         if( interactive(me = this_player()) &&
                 !(query("sg/spy", me) || 
-                query("family/family_name", me) == "…Ò¡˙ΩÃ") && 
+                query("family/family_name", me) == "Á•ûÈæçÊïô") && 
                 random((int)me->query_skill("dodge")) < 80 )
         {
-                message_vision( HIR "$Nµƒ—€«∞Õª»ª≥ˆœ÷“ª∏ˆŒﬁµ◊µƒ…Ó‘®...$NµÙ»Î¡Àœ›⁄Â÷Æ÷–°£\n" NOR, me);
-                message_vision( HIR "œ›⁄Â÷–µƒ∏÷∞ÂÕª»ª√∞≥ˆ–Ì∂‡∑Ê¿˚µƒ∏÷’Î£¨…Ó…Óµÿ‘˙»Î¡À$Nµƒ…ÌÃÂ÷–...\n" NOR, me);
+                message_vision( HIR "$NÁöÑÁúºÂâçÁ™ÅÁÑ∂Âá∫Áèæ‰∏ÄÂÄãÁÑ°Â∫ïÁöÑÊ∑±Ê∑µ...$NÊéâÂÖ•‰∫ÜÈô∑Èò±‰πã‰∏≠„ÄÇ\n" NOR, me);
+                message_vision( HIR "Èô∑Èò±‰∏≠ÁöÑÈãºÊùøÁ™ÅÁÑ∂ÂÜíÂá∫Ë®±Â§öÈãíÂà©ÁöÑÈãºÈáùÔºåÊ∑±Ê∑±Âú∞Á¥ÆÂÖ•‰∫Ü$NÁöÑË∫´È´î‰∏≠...\n" NOR, me);
                 damage = 100000 / ( 100 + (int)me->query_skill("force"));
-                me->receive_wound("qi", damage + random(damage), "±ª‘˙À¿¡À");
-                me->receive_damage("qi", damage + random(damage), "±ª‘˙À¿¡À");
+                me->receive_wound("qi", damage + random(damage), "Ë¢´Á¥ÆÊ≠ª‰∫Ü");
+                me->receive_damage("qi", damage + random(damage), "Ë¢´Á¥ÆÊ≠ª‰∫Ü");
                 me->apply_condition("snake_poison", 50 + random(50) +
                 me->query_condition("snake_poison"));
         }

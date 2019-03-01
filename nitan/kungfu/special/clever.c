@@ -1,16 +1,16 @@
-// clever.c Ìì¸³´ÏÓ±
+// clever.c å¤©è³¦è°ç©
 // Created by Vin 26/8/2001
 
 #include <ansi.h>
 
 inherit F_CLEAN_UP;
 
-string name() { return HIM "Ìì¸³´ÏÓ±" NOR; }
+string name() { return HIM "å¤©è³¦è°ç©" NOR; }
 
 int perform(object me, string skill)
 {
-        //return notify_fail("ÕâÏî¼¼ÄÜÄÜ¹»Ê¹Äã¸ü¿ìµÄÎüÊÕÖªÊ¶£¬²»ĞèÒªÔËÓÃ¡£\n");
-        return notify_fail("ÕâÏî¼¼ÄÜÄÜ¹»Ê¹Äã¸ü¿ìµØÑ§Ï°¼¼ÄÜºÍÑĞ¾¿¼¼ÄÜ¡£\n"
-                       HIC "¿ÉÌá¸ßÃ¿´ÎÑ§Ï°´ÎÊıÉÏÏŞ50´Î£¬Ìá¸ßÃ¿´ÎÑĞ¾¿´ÎÊıÉÏÏŞ50´Î¡£\n" NOR);
+        //return notify_fail("é€™é …æŠ€èƒ½èƒ½å¤ ä½¿ä½ æ›´å¿«çš„å¸æ”¶çŸ¥è­˜ï¼Œä¸éœ€è¦é‹ç”¨ã€‚\n");
+        return notify_fail("é€™é …æŠ€èƒ½èƒ½å¤ ä½¿ä½ æ›´å¿«åœ°å­¸ç¿’æŠ€èƒ½å’Œç ”ç©¶æŠ€èƒ½ã€‚\n"
+                       HIC "å¯æé«˜æ¯æ¬¡å­¸ç¿’æ¬¡æ•¸ä¸Šé™50æ¬¡ï¼Œæé«˜æ¯æ¬¡ç ”ç©¶æ¬¡æ•¸ä¸Šé™50æ¬¡ã€‚\n" NOR);
 }
 

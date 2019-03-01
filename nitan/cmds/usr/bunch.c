@@ -56,11 +56,11 @@ int bunch_arrest(object me, string arg);
 int bunch_invite(object me, string arg);
 int join_bunch(object me, string arg);
 int bunch_color(object me, string arg);
-int bunch_efficient(object me, string arg); // ¸ßĞ§Á·¹¦
+int bunch_efficient(object me, string arg); // é«˜æ•ˆç·´åŠŸ
 
 mapping citys = ([
-        "city"     : "ÑïÖİ",
-        "changan"  : "³¤°²",
+        "city"     : "æšå·",
+        "changan"  : "é•·å®‰",
 ]);
 
 int main(object me, string arg)
@@ -79,7 +79,7 @@ int main(object me, string arg)
         switch (args[0])
         {
         case "info":
-                // ÏÔÊ¾Í¬ÃËµÄĞÅÏ¢
+                // é¡¯ç¤ºåŒç›Ÿçš„ä¿¡æ¯
                 return show_bunch_info(me, arg);
 
         case "member":
@@ -99,7 +99,7 @@ int main(object me, string arg)
                 return show_bunch_area(me, arg);
 
         case "hatred":
-                // ÏÔÊ¾Í¬ÃËµÄ³ğÈË
+                // é¡¯ç¤ºåŒç›Ÿçš„ä»‡äºº
                 return show_bunch_hatred(me, arg);
 
         case "all":
@@ -138,8 +138,8 @@ int main(object me, string arg)
         
         case "honors":
                 if( !stringp(fname=query("bunch/bunch_name", me)) )
-                        return notify_fail("ÄãÏÖÔÚ»¹Ã»ÓĞ¼ÓÈëÈÎºÎ°ïÅÉÄØ¡£\n");
-                tell_object(me, "ÄãËùÔÚµÄ°ïÅÉÄ¿Ç°°ïÅÉÈÙÓşÎª "+BUNCH_D->query_bunch_honors(fname)+" µã¡£\n");
+                        return notify_fail("ä½ ç¾åœ¨é‚„æ²’æœ‰åŠ å…¥ä»»ä½•å¹«æ´¾å‘¢ã€‚\n");
+                tell_object(me, "ä½ æ‰€åœ¨çš„å¹«æ´¾ç›®å‰å¹«æ´¾æ¦®è­½ç‚º "+BUNCH_D->query_bunch_honors(fname)+" é»ã€‚\n");
                 return 1;
         
         case "efficient":
@@ -147,33 +147,33 @@ int main(object me, string arg)
                 
         case "out":
                 if( !stringp(fname=query("bunch/bunch_name", me)) )
-                        return notify_fail("ÄãÏÖÔÚ»¹Ã»ÓĞ¼ÓÈëÈÎºÎ°ïÅÉÄØ¡£\n");
+                        return notify_fail("ä½ ç¾åœ¨é‚„æ²’æœ‰åŠ å…¥ä»»ä½•å¹«æ´¾å‘¢ã€‚\n");
 
                 if( query_temp("pending/out_bunch", me) )
                 {
-                        // Í¬ÃËµÄÉùÍûÏÂ½µ
+                        // åŒç›Ÿçš„è²æœ›ä¸‹é™
                         BUNCH_D->add_bunch_fame(fname,-query("weiwang", me));
                         CHANNEL_D->do_channel(this_object(), "rumor",
-                                "ÌıËµ"+me->name(1)+"("+query("id", me)+
-                                ")ÒåÎŞ·´¹Ë£¬ÒÑ¾­±³Àë¡º" + fname + "¡»¶øÈ¥¡£");
+                                "è½èªª"+me->name(1)+"("+query("id", me)+
+                                ")ç¾©ç„¡åé¡§ï¼Œå·²ç¶“èƒŒé›¢ã€" + fname + "ã€è€Œå»ã€‚");
                         delete_temp("pending/out_bunch", me);
 
-                        // Çå³ı¸ÃÓÃ»§ÔÚÍ¬ÃËÖĞµÄĞÅÏ¢
+                        // æ¸…é™¤è©²ç”¨æˆ¶åœ¨åŒç›Ÿä¸­çš„ä¿¡æ¯
                         UPDATE_D->clear_user_data(query("id", me),"bunch");
                         return 1;
                 }
 
-                write("ÄãÕæµÄÏëÒª±³ÆúÕâ¸ö°ïÅÉÂğ£¿ÕâÑù×ö»á½µµÍ" + fname + "µÄÉùÍû¡£\n"
-                      YEL "Èç¹ûÄãÈ·¶¨ÁË£¬¾ÍÔÙÊäÈëÒ»´Î bunch out ÃüÁî¡£\n" NOR);
+                write("ä½ çœŸçš„æƒ³è¦èƒŒæ£„é€™å€‹å¹«æ´¾å—ï¼Ÿé€™æ¨£åšæœƒé™ä½" + fname + "çš„è²æœ›ã€‚\n"
+                      YEL "å¦‚æœä½ ç¢ºå®šäº†ï¼Œå°±å†è¼¸å…¥ä¸€æ¬¡ bunch out å‘½ä»¤ã€‚\n" NOR);
                 set_temp("pending/out_bunch", 1, me);
                 return 1;
         }
 
-        write("ÎŞĞ§µÄ²ÎÊı¡£\n");
+        write("ç„¡æ•ˆçš„åƒæ•¸ã€‚\n");
         return 1;
 }
 
-// ¸ù¾İÍæ¼ÒºÍ²ÎÊıÑ¡ÔñÍ¬ÃËµÄÃû×Ö
+// æ ¹æ“šç©å®¶å’Œåƒæ•¸é¸æ“‡åŒç›Ÿçš„åå­—
 mixed select_bunch(object me, string arg)
 {
         string fam;
@@ -192,29 +192,29 @@ mixed select_bunch(object me, string arg)
 
                 if (! stringp(fam) && objectp(ob = UPDATE_D->global_find_player(arg)))
                 {
-                        // Ã»ÓĞ arg Õâ¸öÍ¬ÃË£¬²é¿´ÊÇ·ñÓĞ¸ÃÍæ¼Ò
+                        // æ²’æœ‰ arg é€™å€‹åŒç›Ÿï¼ŒæŸ¥çœ‹æ˜¯å¦æœ‰è©²ç©å®¶
                         fam=query("bunch/bunch_name", ob);
                         UPDATE_D->global_destruct_player(ob);
                         if (! stringp(fam))
-                                return notify_fail("ÕâÈËÏÖÔÚÃ»ÓĞ¼ÓÈëÈÎºÎ°ïÅÉ¡£\n");
+                                return notify_fail("é€™äººç¾åœ¨æ²’æœ‰åŠ å…¥ä»»ä½•å¹«æ´¾ã€‚\n");
                 }
 
                 if (! stringp(fam))
-                        return notify_fail("Ã»ÓĞÕâ¸öÍæ¼Ò£¬²»ÄÜ²éÔÄÏà¹ØµÄÍ¬ÃË¡£\n");
+                        return notify_fail("æ²’æœ‰é€™å€‹ç©å®¶ï¼Œä¸èƒ½æŸ¥é–±ç›¸é—œçš„åŒç›Ÿã€‚\n");
         }
 
         if (! fam)
         {
                 // select my league
                 if( !stringp(fam=query("bunch/bunch_name", me)) )
-                        return notify_fail("ÄãÏÖÔÚ»¹Ã»ÓĞ¼ÓÈëÈÎºÎ°ïÅÉÄØ¡£\n");
+                        return notify_fail("ä½ ç¾åœ¨é‚„æ²’æœ‰åŠ å…¥ä»»ä½•å¹«æ´¾å‘¢ã€‚\n");
         }
 
         return fam;
 }
 
 
-// ÏÔÊ¾Í¬ÃËµÄ³ğÈË
+// é¡¯ç¤ºåŒç›Ÿçš„ä»‡äºº
 int show_bunch_hatred(object me, string arg)
 {
         mapping hatred;
@@ -232,7 +232,7 @@ int show_bunch_hatred(object me, string arg)
         hatred = BUNCH_D->query_bunch_hatred(fam);
         if (! mapp(hatred) || ! sizeof(hatred))
         {
-                write(fam + "ÏÖÔÚÃ»ÓĞÊ²Ã´³ğÈË¡£\n");
+                write(fam + "ç¾åœ¨æ²’æœ‰ä»€éº¼ä»‡äººã€‚\n");
                 return 1;
         }
 
@@ -240,8 +240,8 @@ int show_bunch_hatred(object me, string arg)
         ids = sort_array(ids, (: sort_hatred :), hatred);
 
         count = 0;
-        msg = WHT "Ä¿Ç°" + fam + "ÔÚ½­ºşÉÏµÄ³ğµĞ¶¼ÓĞ\n" NOR
-              HIY "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n" NOR;
+        msg = WHT "ç›®å‰" + fam + "åœ¨æ±Ÿæ¹–ä¸Šçš„ä»‡æ•µéƒ½æœ‰\n" NOR
+              HIY "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n" NOR;
         for (i = 0; i < sizeof(ids) && count < 30; i++)
         {
                 data = hatred[ids[i]];
@@ -254,17 +254,17 @@ int show_bunch_hatred(object me, string arg)
                                ++count, st, HIR, data[1], NOR);
         }
 
-        msg += HIY "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n" NOR;
+        msg += HIY "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n" NOR;
         if (i < sizeof(ids))
-                msg += WHT "½­ºşÉÏµÄµĞÈËÌ«¶à£¬ÄÑÒÔ¾¡Êı¡£\n" NOR;
+                msg += WHT "æ±Ÿæ¹–ä¸Šçš„æ•µäººå¤ªå¤šï¼Œé›£ä»¥ç›¡æ•¸ã€‚\n" NOR;
         else
-                msg += WHT "Ä¿Ç°Ò»¹²ÊÇ" + chinese_number(i) +
-                       "ÈË¡£\n" NOR;
+                msg += WHT "ç›®å‰ä¸€å…±æ˜¯" + chinese_number(i) +
+                       "äººã€‚\n" NOR;
         write(msg);
         return 1;
 }
 
-// ÏÔÊ¾Ä³Ò»¸öÍ¬ÃËÖĞµÄÈËÔ±
+// é¡¯ç¤ºæŸä¸€å€‹åŒç›Ÿä¸­çš„äººå“¡
 int show_bunch_member(object me, string arg)
 {
         array member;
@@ -276,25 +276,25 @@ int show_bunch_member(object me, string arg)
         if (! arg)
         {
                 if( !stringp(arg=query("bunch/bunch_name", me)) )
-                        return notify_fail("ÄãÏÖÔÚ»¹Ã»ÓĞ¼ÓÈëÈÎºÎÒ»¸ö°ïÅÉÄØ¡£\n");
+                        return notify_fail("ä½ ç¾åœ¨é‚„æ²’æœ‰åŠ å…¥ä»»ä½•ä¸€å€‹å¹«æ´¾å‘¢ã€‚\n");
         }
 
         if (! arrayp(member = BUNCH_D->query_bunch_members(arg)))
         {
-                write("ÏÖÔÚ½­ºşÉÏÃ»ÓĞ(" + arg + ")Õâ¸ö°ïÅÉ¡£\n");
+                write("ç¾åœ¨æ±Ÿæ¹–ä¸Šæ²’æœ‰(" + arg + ")é€™å€‹å¹«æ´¾ã€‚\n");
                 return 1;
         }
 
         if (sizeof(member) < 1)
-                return notify_fail(arg + "ÏÖÔÚÈË¶¡Ï¡Âä¡£\n");
+                return notify_fail(arg + "ç¾åœ¨äººä¸ç¨€è½ã€‚\n");
 
         if (! wizardp(me))
         {
                 if( query("jing", me)<50 )
-                        return notify_fail("ÄãÏÖÔÚ¾«Éñ²»¼Ã£¬ÎŞ·¨´òÌıÕâĞ©ÏûÏ¢¡£\n");
+                        return notify_fail("ä½ ç¾åœ¨ç²¾ç¥ä¸æ¿Ÿï¼Œç„¡æ³•æ‰“è½é€™äº›æ¶ˆæ¯ã€‚\n");
 
                 if (me->is_busy())
-                        return notify_fail("ÄãÏÖÔÚÕıÃ¦£¬Ã»ÓĞÊ±¼ä´òÌıÕâĞ©ÏûÏ¢¡£\n");
+                        return notify_fail("ä½ ç¾åœ¨æ­£å¿™ï¼Œæ²’æœ‰æ™‚é–“æ‰“è½é€™äº›æ¶ˆæ¯ã€‚\n");
 
                 me->receive_damage("jing", 50);
                 me->start_busy(3);
@@ -314,9 +314,9 @@ int show_bunch_member(object me, string arg)
         }
 
         if (msg == "")
-                return notify_fail(arg + "ÏÖÔÚÈË¶¡Ï¡Âä¡£\n");
+                return notify_fail(arg + "ç¾åœ¨äººä¸ç¨€è½ã€‚\n");
 
-        write(arg + "Ä¿Ç°ÓĞÒÔÏÂ" + chinese_number(n) + "ÈË£º\n" + msg);
+        write(arg + "ç›®å‰æœ‰ä»¥ä¸‹" + chinese_number(n) + "äººï¼š\n" + msg);
         return 1;
 }
 
@@ -331,22 +331,22 @@ int show_bunch_all(object me, string arg)
 
         if (! mapp(fame = BUNCH_D->query_bunch_fame()))
         {
-                write("ÏÖÔÚ½­ºşÉÏÃ»ÓĞÈÎºÎÓĞÃûµÄ°ïÅÉ¡£\n");
+                write("ç¾åœ¨æ±Ÿæ¹–ä¸Šæ²’æœ‰ä»»ä½•æœ‰åçš„å¹«æ´¾ã€‚\n");
                 return 1;
         }
 
         fam = keys(fame) - ({ 0 });
 
         if (sizeof(fam) < 1)
-                return notify_fail("Ä¿Ç°½­ºşÉÏÃ»ÓĞÊ²Ã´ÓĞÃûµÄ°ïÅÉ¡£\n");
+                return notify_fail("ç›®å‰æ±Ÿæ¹–ä¸Šæ²’æœ‰ä»€éº¼æœ‰åçš„å¹«æ´¾ã€‚\n");
 
         if (! wizardp(me))
         {
                 if( query("jing", me)<50 )
-                        return notify_fail("ÄãÏÖÔÚ¾«Éñ²»¼Ã£¬ÎŞ·¨´òÌıÕâĞ©ÏûÏ¢¡£\n");
+                        return notify_fail("ä½ ç¾åœ¨ç²¾ç¥ä¸æ¿Ÿï¼Œç„¡æ³•æ‰“è½é€™äº›æ¶ˆæ¯ã€‚\n");
 
                 if (me->is_busy())
-                        return notify_fail("ÄãÏÖÔÚÕıÃ¦£¬Ã»ÓĞÊ±¼ä´òÌıÕâĞ©ÏûÏ¢¡£\n");
+                        return notify_fail("ä½ ç¾åœ¨æ­£å¿™ï¼Œæ²’æœ‰æ™‚é–“æ‰“è½é€™äº›æ¶ˆæ¯ã€‚\n");
 
                 me->receive_damage("jing", 50);
                 me->start_busy(3);
@@ -355,8 +355,8 @@ int show_bunch_all(object me, string arg)
         fam = sort_array(fam, (: sort_bunch :), fame);
 
         msg = sprintf(WHT "%-12s%-20s%-10s%-10s%-12s%-10s\n" NOR,
-                      "°ï»áÃû³Æ", "°ï»á°ïÖ÷", "Íæ¼ÒÊı", "µØÅÌÊı", "ÁªÃË°ïÅÉ", "×ÜÌ³");
-        msg += HIY "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n" NOR;
+                      "å¹«æœƒåç¨±", "å¹«æœƒå¹«ä¸»", "ç©å®¶æ•¸", "åœ°ç›¤æ•¸", "è¯ç›Ÿå¹«æ´¾", "ç¸½å£‡");
+        msg += HIY "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n" NOR;
 
         n = 0;
         foreach (bunch in fam)
@@ -372,24 +372,24 @@ int show_bunch_all(object me, string arg)
                 n++;
                 msg += sprintf(WHT "%-12s%-20s%-10s%-10s%-12s%-10s\n" NOR,
                                bunch,query("name", user)+"("+query("id", user)+")",
-                               player + " ÈË", area + " ´¦",
-                               sizeof(BUNCH_D->query_bunch_league(bunch)) + " ¸ö",
+                               player + " äºº", area + " è™•",
+                               sizeof(BUNCH_D->query_bunch_league(bunch)) + " å€‹",
                                citys[BUNCH_D->query_bunch_info(bunch, "room_zone")]);
 
                 UPDATE_D->global_destruct_player(user);
         }
 
         if (n < 1)
-                return notify_fail("ÏÖÔÚÃ»ÓĞÈÎºÎ°ïÅÉĞÅÏ¢¡£\n");
+                return notify_fail("ç¾åœ¨æ²’æœ‰ä»»ä½•å¹«æ´¾ä¿¡æ¯ã€‚\n");
 
-        msg += "\nÄ¿Ç°ÄàÌ¶¹²ÓĞ" + HIM + chinese_number(n) + NOR + "¸ö°ïÅÉ¡£\n";
-        msg += HIY "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n" NOR;
+        msg += "\nç›®å‰æ³¥æ½­å…±æœ‰" + HIM + chinese_number(n) + NOR + "å€‹å¹«æ´¾ã€‚\n";
+        msg += HIY "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n" NOR;
 
         write(msg);
         return 1;
 }
 
-// ÏÔÊ¾Í¬ÃËÖĞµÄĞÅÏ¢
+// é¡¯ç¤ºåŒç›Ÿä¸­çš„ä¿¡æ¯
 int show_bunch_info(object me, string arg)
 {
         string fam;
@@ -404,62 +404,62 @@ int show_bunch_info(object me, string arg)
 
         if (! arrayp(member = BUNCH_D->query_bunch_members(fam)))
         {
-                write("ÏÖÔÚ½­ºşÉÏÃ»ÓĞ(" + fam + ")Õâ¸ö°ïÅÉ¡£\n");
+                write("ç¾åœ¨æ±Ÿæ¹–ä¸Šæ²’æœ‰(" + fam + ")é€™å€‹å¹«æ´¾ã€‚\n");
                 return 1;
         }
 
         if (sizeof(member) < 1)
-                return notify_fail(fam + "ÏÖÔÚÃ»ÓĞÒ»¸ö°ïÅÉÍæ¼Ò¡£\n");
+                return notify_fail(fam + "ç¾åœ¨æ²’æœ‰ä¸€å€‹å¹«æ´¾ç©å®¶ã€‚\n");
 
         if (! wizardp(me))
         {
                 if( query("jing", me)<50 )
-                        return notify_fail("ÄãÏÖÔÚ¾«Éñ²»¼Ã£¬ÎŞ·¨´òÌıÕâĞ©ÏûÏ¢¡£\n");
+                        return notify_fail("ä½ ç¾åœ¨ç²¾ç¥ä¸æ¿Ÿï¼Œç„¡æ³•æ‰“è½é€™äº›æ¶ˆæ¯ã€‚\n");
 
                 if (me->is_busy())
-                        return notify_fail("ÄãÏÖÔÚÕıÃ¦£¬Ã»ÓĞÊ±¼ä´òÌıÕâĞ©ÏûÏ¢¡£\n");
+                        return notify_fail("ä½ ç¾åœ¨æ­£å¿™ï¼Œæ²’æœ‰æ™‚é–“æ‰“è½é€™äº›æ¶ˆæ¯ã€‚\n");
 
                 me->receive_damage("jing", 50);
                 me->start_busy(3);
         }
 
         /*
-        msg = WHT "\n" + fam + "µÄ°ïÅÉÍæ¼ÒÁĞ±í\n" NOR;
-        msg += HIY "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n" NOR;
+        msg = WHT "\n" + fam + "çš„å¹«æ´¾ç©å®¶åˆ—è¡¨\n" NOR;
+        msg += HIY "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n" NOR;
         member = sort_array(member, (: sort_member :));
         foreach (id in member)
         {
                 reset_eval_cost();
                 msg += sprintf(WHT "%-10s  ", id);
                 if (objectp(ob = find_player(id)))
-                        msg += sprintf(HIY "ÔÚÏß    "
-                                       NOR WHT "Ö°Î»£º" HIM "%-20s "
-                                       NOR WHT "µÈ¼¶£º" HIR "%-2d\n" NOR,
+                        msg += sprintf(HIY "åœ¨ç·š    "
+                                       NOR WHT "è·ä½ï¼š" HIM "%-20s "
+                                       NOR WHT "ç­‰ç´šï¼š" HIR "%-2d\n" NOR,
                                        query("bunch/title", ob),
                                        query("bunch/level", ob));
                 else
-                        msg += HIR "²»ÔÚÏß\n" NOR;
+                        msg += HIR "ä¸åœ¨ç·š\n" NOR;
         }
 
         */
-        msg = WHT "\n" + fam + "µÄ°ïÅÉ×ÊÁÏ»ã×Ü±í\n" NOR;
-        msg += HIY "\n©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n" NOR;
-        msg += WHT + fam + "ÉÏ¸öÔÂÊÕÈëµ¥±í\n" NOR;
-        msg += HIY "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n" NOR;
+        msg = WHT "\n" + fam + "çš„å¹«æ´¾è³‡æ–™åŒ¯ç¸½è¡¨\n" NOR;
+        msg += HIY "\nâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n" NOR;
+        msg += WHT + fam + "ä¸Šå€‹æœˆæ”¶å…¥å–®è¡¨\n" NOR;
+        msg += HIY "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n" NOR;
         i=query(fam+"/last_area_money", get_object(BUNCH_D));
         if (! intp(i))   i = 0;
-        msg += "µØÅÌÊÕÈë£º" + MONEY_D->money_str(i) + "\n\n";
+        msg += "åœ°ç›¤æ”¶å…¥ï¼š" + MONEY_D->money_str(i) + "\n\n";
         i=query(fam+"/last_npc_money", get_object(BUNCH_D));
         if (! intp(i))   i = 0;
-        msg += "°ïÖÚÊÕÈë£º" + MONEY_D->money_str(i) + "\n\n";
+        msg += "å¹«çœ¾æ”¶å…¥ï¼š" + MONEY_D->money_str(i) + "\n\n";
         i=query(fam+"/last_bangzhu_money", get_object(BUNCH_D));
         if (! intp(i))   i = 0;
-        msg += "°ïÖ÷ËùµÃ£º" + MONEY_D->money_str(i) + "\n\n";
-        msg+="°ïÅÉ×Ê²ú£º"+MONEY_D->money_str(query(fam+"/money", get_object(BUNCH_D)))+"\n\n";
-        msg+="°ïÅÉÈÙÓş£º"+BUNCH_D->query_bunch_honors(fam)+"\n\n";
-        msg += HIY "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n" NOR;
+        msg += "å¹«ä¸»æ‰€å¾—ï¼š" + MONEY_D->money_str(i) + "\n\n";
+        msg+="å¹«æ´¾è³‡ç”¢ï¼š"+MONEY_D->money_str(query(fam+"/money", get_object(BUNCH_D)))+"\n\n";
+        msg+="å¹«æ´¾æ¦®è­½ï¼š"+BUNCH_D->query_bunch_honors(fam)+"\n\n";
+        msg += HIY "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n" NOR;
 
-        msg += sprintf("ÏÖÔÚ%sÔÚ½­ºşÉÏ¾ßÓĞ %s%d%s µãÉùÍû¡£\n",
+        msg += sprintf("ç¾åœ¨%såœ¨æ±Ÿæ¹–ä¸Šå…·æœ‰ %s%d%s é»è²æœ›ã€‚\n",
                        fam, HIY, BUNCH_D->query_bunch_fame(fam), NOR);
         write(msg);
 
@@ -480,29 +480,29 @@ int show_bunch_area(object me, string arg)
 
         if (! arrayp(member = BUNCH_D->query_bunch_areas(fam)))
         {
-                write("ÏÖÔÚ°ïÅÉ" + fam + "Ã»ÓĞÈÎºÎµØÅÌ¡£\n");
+                write("ç¾åœ¨å¹«æ´¾" + fam + "æ²’æœ‰ä»»ä½•åœ°ç›¤ã€‚\n");
                 return 1;
         }
 
         if (sizeof(member) < 1)
-                return notify_fail(fam + "ÏÖÔÚÃ»ÓĞÈÎºÎµØÅÌ¡£\n");
+                return notify_fail(fam + "ç¾åœ¨æ²’æœ‰ä»»ä½•åœ°ç›¤ã€‚\n");
 
         if (! wizardp(me))
         {
                 if( query("jing", me)<50 )
-                        return notify_fail("ÄãÏÖÔÚ¾«Éñ²»¼Ã£¬ÎŞ·¨´òÌıÕâĞ©ÏûÏ¢¡£\n");
+                        return notify_fail("ä½ ç¾åœ¨ç²¾ç¥ä¸æ¿Ÿï¼Œç„¡æ³•æ‰“è½é€™äº›æ¶ˆæ¯ã€‚\n");
 
                 if (me->is_busy())
-                        return notify_fail("ÄãÏÖÔÚÕıÃ¦£¬Ã»ÓĞÊ±¼ä´òÌıÕâĞ©ÏûÏ¢¡£\n");
+                        return notify_fail("ä½ ç¾åœ¨æ­£å¿™ï¼Œæ²’æœ‰æ™‚é–“æ‰“è½é€™äº›æ¶ˆæ¯ã€‚\n");
 
                 me->receive_damage("jing", 50);
                 me->start_busy(3);
         }
 
         msg = sprintf(HIC "\n%-18s%-28s%-8s%-8s%-18s\n" NOR,
-                      "µØÅÌÃû³Æ", "×¤ÊØ°ïÖÚ", "¿ª·¢¶È", "ÖÒ³Ï¶È", "ÉÏÔÂÊÕÈë");
+                      "åœ°ç›¤åç¨±", "é§å®ˆå¹«çœ¾", "é–‹ç™¼åº¦", "å¿ èª åº¦", "ä¸Šæœˆæ”¶å…¥");
 
-        msg += HIY "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n" NOR;
+        msg += HIY "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n" NOR;
 
         n = 0;
         foreach (id in member)
@@ -516,20 +516,20 @@ int show_bunch_area(object me, string arg)
                                area["area_name"], area["npc_name"] + "(" + area["npc_id"] + ")",
                                area["kaifa"] + "%",
                                area["zhongcheng"] + "%",
-                               area["last_money"] / 100 + " Á½");
+                               area["last_money"] / 100 + " å…©");
         }
 
         if (n < 1)
-                return notify_fail(arg + "ÏÖÔÚÃ»ÓĞÈÎºÎµØÅÌ¡£\n");
+                return notify_fail(arg + "ç¾åœ¨æ²’æœ‰ä»»ä½•åœ°ç›¤ã€‚\n");
 
-        msg += "\nÄ¿Ç°" + HIM + fam + NOR + "¹²ÓĞ" + HIM + chinese_number(n) + NOR + "´¦µØÅÌ¡£\n";
-        msg += HIY "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n" NOR;
+        msg += "\nç›®å‰" + HIM + fam + NOR + "å…±æœ‰" + HIM + chinese_number(n) + NOR + "è™•åœ°ç›¤ã€‚\n";
+        msg += HIY "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n" NOR;
         // me->start_more(msg);
         write(msg);
         return 1;
 }
 
-// ÏÔÊ¾Ä³Ò»¸öÍ¬ÃËÖĞµÄÈËÔ±
+// é¡¯ç¤ºæŸä¸€å€‹åŒç›Ÿä¸­çš„äººå“¡
 int dismiss_bunch(object me, string arg)
 {
         array member;
@@ -539,18 +539,18 @@ int dismiss_bunch(object me, string arg)
         int n;
 
         if (wiz_level(me) < wiz_level("(arch)"))
-                return notify_fail("ÄãµÄÈ¨ÏŞ²»¹»£¬²»ÄÜÇ¿ĞĞ½âÉ¢°ïÅÉ¡£\n");
+                return notify_fail("ä½ çš„æ¬Šé™ä¸å¤ ï¼Œä¸èƒ½å¼·è¡Œè§£æ•£å¹«æ´¾ã€‚\n");
 
         if (! arg)
-                return notify_fail("ÄãÒª½âÉ¢ÄÄ¸ö°ïÅÉ£¿\n");
+                return notify_fail("ä½ è¦è§£æ•£å“ªå€‹å¹«æ´¾ï¼Ÿ\n");
 
         if (! arrayp(member = BUNCH_D->query_members(arg)))
         {
-                write("ÏÖÔÚ½­ºşÉÏÃ»ÓĞ(" + arg + ")Õâ¸ö°ïÅÉ¡£\n");
+                write("ç¾åœ¨æ±Ÿæ¹–ä¸Šæ²’æœ‰(" + arg + ")é€™å€‹å¹«æ´¾ã€‚\n");
                 return 1;
         }
 
-        write("ÄãÇ¿ĞĞ½âÉ¢ÁË" + arg + "¡£\n");
+        write("ä½ å¼·è¡Œè§£æ•£äº†" + arg + "ã€‚\n");
         BUNCH_D->dismiss_bunch(arg);
         return 1;
 }
@@ -562,20 +562,20 @@ int expell_bunch_member(object me, string arg)
 
         if( !stringp(fname=query("bunch/bunch_name", me)) )
         {
-                write("ÄãÏÖÔÚ»¹Ã»ÓĞ¼ÓÈëÈÎºÎ°ïÅÉÄØ¡£\n");
+                write("ä½ ç¾åœ¨é‚„æ²’æœ‰åŠ å…¥ä»»ä½•å¹«æ´¾å‘¢ã€‚\n");
                 return 1;
         }
 
         if( query("bunch/level", me) != 7 || 
             BUNCH_D->query_bunch_info(fname,"master") != query("id", me) )
         {
-                write("Ö»ÓĞ°ïÖ÷²ÅÓĞÈ¨Àû¿ª³ıÄ³ÈË³ö°ï»á£¡\n");
+                write("åªæœ‰å¹«ä¸»æ‰æœ‰æ¬Šåˆ©é–‹é™¤æŸäººå‡ºå¹«æœƒï¼\n");
                 return 1;
         }
 
         if( arg == query("id", me) )
         {
-                write("¿ª³ı×Ô¼º£¿Äã»¹²»Èç½âÉ¢ÄãµÄ°ïÅÉ£¡\n");
+                write("é–‹é™¤è‡ªå·±ï¼Ÿä½ é‚„ä¸å¦‚è§£æ•£ä½ çš„å¹«æ´¾ï¼\n");
                 return 1;
         }
 
@@ -585,14 +585,14 @@ int expell_bunch_member(object me, string arg)
 
                 if (! objectp(ob))
                 {
-                        write("Ã»ÓĞÕâ¸öÍæ¼Ò¡£\n");
+                        write("æ²’æœ‰é€™å€‹ç©å®¶ã€‚\n");
                         return 1;
                 }
 
                 if( query("bunch/bunch_name", ob) != fname )
                 {
                         UPDATE_D->global_destruct_player(ob);
-                        write("Ëû²»ÊÇÄãµÄ°ïÅÉÖĞÈË£¬ÄãÎŞÈ¨¿ª³ıËû£¡\n");
+                        write("ä»–ä¸æ˜¯ä½ çš„å¹«æ´¾ä¸­äººï¼Œä½ ç„¡æ¬Šé–‹é™¤ä»–ï¼\n");
                         return 1;
 
                 }
@@ -604,8 +604,8 @@ int expell_bunch_member(object me, string arg)
 
         if (objectp(ob))
                 CHANNEL_D->do_channel(this_object(), "rumor",
-                        "ÌıËµ"+query("name", ob)+"("+arg+")"+
-                        "±»°ïÅÉ¡º" + fname + "¡»¸ø¿ª³ıÁË¡£");
+                        "è½èªª"+query("name", ob)+"("+arg+")"+
+                        "è¢«å¹«æ´¾ã€" + fname + "ã€çµ¦é–‹é™¤äº†ã€‚");
 
         UPDATE_D->clear_user_data(arg, "bunch");
 
@@ -619,26 +619,26 @@ int bunch_efficient(object me, string arg)
 
         if( !stringp(fname=query("bunch/bunch_name", me)) )
         {
-                write("ÄãÏÖÔÚ»¹Ã»ÓĞ¼ÓÈëÈÎºÎ°ïÅÉÄØ¡£\n");
+                write("ä½ ç¾åœ¨é‚„æ²’æœ‰åŠ å…¥ä»»ä½•å¹«æ´¾å‘¢ã€‚\n");
                 return 1;
         }
 
         if( query("bunch/level", me) != 7 || 
             BUNCH_D->query_bunch_info(fname,"master") != query("id", me) )
         {
-                write("Ö»ÓĞ°ïÖ÷²ÅÓĞÈ¨ÀûÊ¹ÓÃ°ïÅÉµÄÈÙÓşµã£¡\n");
+                write("åªæœ‰å¹«ä¸»æ‰æœ‰æ¬Šåˆ©ä½¿ç”¨å¹«æ´¾çš„æ¦®è­½é»ï¼\n");
                 return 1;
         }
 
         if( !arg || arg == "" )
         {
-                write("ÄãÒªÓÃ°ïÅÉÈÙÓşµãÀ´¸ÉÊ²Ã´£¿\n");
+                write("ä½ è¦ç”¨å¹«æ´¾æ¦®è­½é»ä¾†å¹¹ä»€éº¼ï¼Ÿ\n");
                 return 1;
         }
         
         if( BUNCH_D->query_bunch_honors(fname) < 200 )
         {
-                write("ÄãµÄ°ïÅÉÈÙÓşµã²»¹»£¡\n");
+                write("ä½ çš„å¹«æ´¾æ¦®è­½é»ä¸å¤ ï¼\n");
                 return 1;
         }        
         
@@ -648,43 +648,43 @@ int bunch_efficient(object me, string arg)
                 BUNCH_D->add_bunch_honors(-200);
                 BUNCH_D->set_bunch_efficient(fname, arg);
                 CHANNEL_D->do_channel(this_object(), "rumor",
-                        "ÌıËµ°ïÅÉ¡º" + fname + HIM"¡»¶Ò»»ÁËÈÙÓşµã£¬È«°ïË«±¶¾­Ñé2Ğ¡Ê±£¡\n"NOR);
-                write("Äã¿ªÊ¼Ê¹ÓÃ°ïÅÉÈÙÓşµã200µã¶Ò»»È«°ïË«±¶¾­Ñé2Ğ¡Ê±£¡\n");
+                        "è½èªªå¹«æ´¾ã€" + fname + HIM"ã€å…Œæ›äº†æ¦®è­½é»ï¼Œå…¨å¹«é›™å€ç¶“é©—2å°æ™‚ï¼\n"NOR);
+                write("ä½ é–‹å§‹ä½¿ç”¨å¹«æ´¾æ¦®è­½é»200é»å…Œæ›å…¨å¹«é›™å€ç¶“é©—2å°æ™‚ï¼\n");
                 break;
 
         case "pot":
                 BUNCH_D->add_bunch_honors(-200);
                 BUNCH_D->set_bunch_efficient(fname, arg);
                 CHANNEL_D->do_channel(this_object(), "rumor",
-                        "ÌıËµ°ïÅÉ¡º" + fname + HIM"¡»¶Ò»»ÁËÈÙÓşµã£¬È«°ïË«±¶Ç±ÄÜ2Ğ¡Ê±£¡\n"NOR);
-                write("Äã¿ªÊ¼Ê¹ÓÃ°ïÅÉÈÙÓşµã200µã¶Ò»»È«°ïË«±¶Ç±ÄÜ2Ğ¡Ê±£¡\n");
+                        "è½èªªå¹«æ´¾ã€" + fname + HIM"ã€å…Œæ›äº†æ¦®è­½é»ï¼Œå…¨å¹«é›™å€æ½›èƒ½2å°æ™‚ï¼\n"NOR);
+                write("ä½ é–‹å§‹ä½¿ç”¨å¹«æ´¾æ¦®è­½é»200é»å…Œæ›å…¨å¹«é›™å€æ½›èƒ½2å°æ™‚ï¼\n");
                 break;
                 
         case "mar":
                 BUNCH_D->add_bunch_honors(-200);
                 BUNCH_D->set_bunch_efficient(fname, arg);
                 CHANNEL_D->do_channel(this_object(), "rumor",
-                        "ÌıËµ°ïÅÉ¡º" + fname + HIM"¡»¶Ò»»ÁËÈÙÓşµã£¬È«°ïË«±¶Ìå»á2Ğ¡Ê±£¡\n"NOR);
-                write("Äã¿ªÊ¼Ê¹ÓÃ°ïÅÉÈÙÓşµã200µã¶Ò»»È«°ïË«±¶Ìå»á2Ğ¡Ê±£¡\n");
+                        "è½èªªå¹«æ´¾ã€" + fname + HIM"ã€å…Œæ›äº†æ¦®è­½é»ï¼Œå…¨å¹«é›™å€é«”æœƒ2å°æ™‚ï¼\n"NOR);
+                write("ä½ é–‹å§‹ä½¿ç”¨å¹«æ´¾æ¦®è­½é»200é»å…Œæ›å…¨å¹«é›™å€é«”æœƒ2å°æ™‚ï¼\n");
                 break;
 
         case "yanjiu":
                 BUNCH_D->add_bunch_honors(-200);
                 BUNCH_D->set_bunch_efficient(fname, arg);
                 CHANNEL_D->do_channel(this_object(), "rumor",
-                        "ÌıËµ°ïÅÉ¡º" + fname + HIM"¡»¶Ò»»ÁËÈÙÓşµã£¬È«°ïÑĞ¾¿Ğ§ÂÊÔö¼Ó20%³ÖĞø2Ğ¡Ê±£¡\n"NOR);
-                write("Äã¿ªÊ¼Ê¹ÓÃ°ïÅÉÈÙÓşµã200µã¶Ò»»È«°ïÑĞ¾¿Ğ§ÂÊÔö¼Ó20%³ÖĞø2Ğ¡Ê±£¡\n");
+                        "è½èªªå¹«æ´¾ã€" + fname + HIM"ã€å…Œæ›äº†æ¦®è­½é»ï¼Œå…¨å¹«ç ”ç©¶æ•ˆç‡å¢åŠ 20%æŒçºŒ2å°æ™‚ï¼\n"NOR);
+                write("ä½ é–‹å§‹ä½¿ç”¨å¹«æ´¾æ¦®è­½é»200é»å…Œæ›å…¨å¹«ç ”ç©¶æ•ˆç‡å¢åŠ 20%æŒçºŒ2å°æ™‚ï¼\n");
                 break;
         
         case "jiqu":
                 BUNCH_D->add_bunch_honors(-200);
                 BUNCH_D->set_bunch_efficient(fname, arg);
                 CHANNEL_D->do_channel(this_object(), "rumor",
-                        "ÌıËµ°ïÅÉ¡º" + fname + HIM"¡»¶Ò»»ÁËÈÙÓşµã£¬È«°ï¼³È¡Ğ§ÂÊÔö¼Ó20%³ÖĞø2Ğ¡Ê±£¡\n"NOR);
-                write("Äã¿ªÊ¼Ê¹ÓÃ°ïÅÉÈÙÓşµã200µã¶Ò»»È«°ï¼³È¡Ğ§ÂÊÔö¼Ó20%³ÖĞø2Ğ¡Ê±£¡\n");
+                        "è½èªªå¹«æ´¾ã€" + fname + HIM"ã€å…Œæ›äº†æ¦®è­½é»ï¼Œå…¨å¹«æ±²å–æ•ˆç‡å¢åŠ 20%æŒçºŒ2å°æ™‚ï¼\n"NOR);
+                write("ä½ é–‹å§‹ä½¿ç”¨å¹«æ´¾æ¦®è­½é»200é»å…Œæ›å…¨å¹«æ±²å–æ•ˆç‡å¢åŠ 20%æŒçºŒ2å°æ™‚ï¼\n");
                 break;
         default:
-                write("ÄãÊ¹ÓÃ°ïÅÉÈÙÓşµãÓÃÀ´¶Ò»»Ê²Ã´ÄØ£¿£¡\n");
+                write("ä½ ä½¿ç”¨å¹«æ´¾æ¦®è­½é»ç”¨ä¾†å…Œæ›ä»€éº¼å‘¢ï¼Ÿï¼\n");
                 break;
         }                
 
@@ -699,7 +699,7 @@ int appoint_bunch_member(object me, string arg)
         int lvl, flag;
 
         if( !(banghui=query("bunch/bunch_name", me)) )
-              return notify_fail("ÄãÃ»ÓĞ²Î¼ÓÈÎºÎ°ï»á£¬ÎŞ·¨ÈÎÃü±ğÈËÖ°Î»¡£\n");
+              return notify_fail("ä½ æ²’æœ‰åƒåŠ ä»»ä½•å¹«æœƒï¼Œç„¡æ³•ä»»å‘½åˆ¥äººè·ä½ã€‚\n");
 
         flag = 0;
 
@@ -709,82 +709,82 @@ int appoint_bunch_member(object me, string arg)
                 flag = 1;
 
         if (! arg)
-                return notify_fail("Ö¸Áî¸ñÊ½£ºbunch appoint <Ä³ÈË> <Ö°Îñ> »ò bunch appoint <Ä³ÈË> <²¿ÃÅ> <Ö°Îñ>\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šbunch appoint <æŸäºº> <è·å‹™> æˆ– bunch appoint <æŸäºº> <éƒ¨é–€> <è·å‹™>\n");
 
         if (! flag)
-                return notify_fail("ÄãÔÚ°ïÄÚÖ°Î»Ì«µÍ£¬ÎŞÈ¨ÈÎÃü±ğÈËÖ°Î»£¡\n");
+                return notify_fail("ä½ åœ¨å¹«å…§è·ä½å¤ªä½ï¼Œç„¡æ¬Šä»»å‘½åˆ¥äººè·ä½ï¼\n");
 
         if (sscanf(arg, "%s %s %s", id, item, zhiwei) == 3)
         {
                 ob = present(id, environment(me));
 
-                if (! ob) return notify_fail("Õâ¶ùÃ»ÓĞÕâÃ´¸öÈË¡£\n");
+                if (! ob) return notify_fail("é€™å…’æ²’æœ‰é€™éº¼å€‹äººã€‚\n");
 
                 if (! ob->is_character())
-                        return notify_fail("¿´Çå³ş£¬ÄÇ²¢²»ÊÇÈË£¡\n");
+                        return notify_fail("çœ‹æ¸…æ¥šï¼Œé‚£ä¸¦ä¸æ˜¯äººï¼\n");
 
                 if (! playerp(ob))
-                        return notify_fail("ÄãÖ»¶Ô±¾°ï»áµÄÍæ¼ÒÊ¹ÓÃÕâÌõÃüÁî£¡\n");
+                        return notify_fail("ä½ åªå°æœ¬å¹«æœƒçš„ç©å®¶ä½¿ç”¨é€™æ¢å‘½ä»¤ï¼\n");
 
                 if( banghui != query("bunch/bunch_name", ob) )
-                        return notify_fail("ÄãÖ»¶Ô±¾°ï»áµÄÍæ¼ÒÊ¹ÓÃÕâÌõÃüÁî£¡\n");
+                        return notify_fail("ä½ åªå°æœ¬å¹«æœƒçš„ç©å®¶ä½¿ç”¨é€™æ¢å‘½ä»¤ï¼\n");
 
                 if( query("bunch/level", me)<query("bunch/level", ob) )
-                        return notify_fail("¶Ô·½ÔÚ°ïÖĞµÄÖ°Î»±ÈÄã¸ß£¬ÄãÈÎÃüËû£¿¸ãĞ¦£¡\n");
+                        return notify_fail("å°æ–¹åœ¨å¹«ä¸­çš„è·ä½æ¯”ä½ é«˜ï¼Œä½ ä»»å‘½ä»–ï¼Ÿæç¬‘ï¼\n");
 
                 if( query("bunch/level", me) == query("bunch/level", ob) )
-                        return notify_fail("¶Ô·½ÔÚ°ïÖĞµÄÖ°Î»ºÍÄãÒ»Ñù¸ß£¬ÄãÈÎÃüËû£¿¸ãĞ¦£¡\n");
+                        return notify_fail("å°æ–¹åœ¨å¹«ä¸­çš„è·ä½å’Œä½ ä¸€æ¨£é«˜ï¼Œä½ ä»»å‘½ä»–ï¼Ÿæç¬‘ï¼\n");
 
                 if (me->is_busy() || me->is_fighting())
-                        return notify_fail("ÄãÕıÃ¦×ÅÄØ£¡\n");
+                        return notify_fail("ä½ æ­£å¿™è‘—å‘¢ï¼\n");
 
                 if (ob->is_busy() || ob->is_fighting())
-                        return notify_fail("¶Ô·½ÕıÃ¦×ÅÄØ£¡\n");
+                        return notify_fail("å°æ–¹æ­£å¿™è‘—å‘¢ï¼\n");
 
                 if (ob == me)
-                        return notify_fail("×Ô¼ºÈÎÃü×Ô¼º£¿\n");
+                        return notify_fail("è‡ªå·±ä»»å‘½è‡ªå·±ï¼Ÿ\n");
 
                 if (! check_item(item))
-                        return notify_fail("ÄúÈÎÃüµÄÖ°Îñ±ØĞëÊÇÖĞÎÄ£¬ÇÒÎª¶şµ½°Ë×Ö£¡\n");
+                        return notify_fail("æ‚¨ä»»å‘½çš„è·å‹™å¿…é ˆæ˜¯ä¸­æ–‡ï¼Œä¸”ç‚ºäºŒåˆ°å…«å­—ï¼\n");
 
-                if (zhiwei != "»¤·¨" && zhiwei != "¶æÖ÷" && zhiwei != "Ì³Ö÷"
-                &&  zhiwei != "ÌÃÖ÷" && zhiwei != "ÏãÖ÷" && zhiwei != "ÃÅÈË"
-                &&  zhiwei != "°ïÖÚ")
-                        return notify_fail("ÈÎÃüµÄÖ°Î»ÖÁÉÏ¶øÏÂÎª£º»¤·¨,¶æÖ÷,Ì³Ö÷,ÌÃÖ÷,ÏãÖ÷,ÃÅÈË,°ïÖÚ¡£\n");
+                if (zhiwei != "è­·æ³•" && zhiwei != "èˆµä¸»" && zhiwei != "å£‡ä¸»"
+                &&  zhiwei != "å ‚ä¸»" && zhiwei != "é¦™ä¸»" && zhiwei != "é–€äºº"
+                &&  zhiwei != "å¹«çœ¾")
+                        return notify_fail("ä»»å‘½çš„è·ä½è‡³ä¸Šè€Œä¸‹ç‚ºï¼šè­·æ³•,èˆµä¸»,å£‡ä¸»,å ‚ä¸»,é¦™ä¸»,é–€äºº,å¹«çœ¾ã€‚\n");
 
                 switch (zhiwei)
                 {
-                case "¸±°ïÖ÷":
+                case "å‰¯å¹«ä¸»":
                         lvl = 6;
                         break;
-                case "³¤ÀÏ":
+                case "é•·è€":
                         lvl = 5;
                         break;
-                case "»¤·¨":
+                case "è­·æ³•":
                         lvl = 4;
                         break;
-                case "¶æÖ÷":
-                case "Ì³Ö÷":
-                case "ÌÃÖ÷":
-                case "ÏãÖ÷":
+                case "èˆµä¸»":
+                case "å£‡ä¸»":
+                case "å ‚ä¸»":
+                case "é¦™ä¸»":
                         lvl = 3;
                         break;
-                case "ÃÅÈË":
+                case "é–€äºº":
                         lvl = 2;
                         break;
-                case "°ïÖÚ":
+                case "å¹«çœ¾":
                         lvl = 1;
                         break;
                 }
 
                 if( query("bunch/level", me) <= lvl )
-                        return notify_fail("ÄãÖ°Î»Ì«µÍ£¬ÎŞÈ¨ÈÎÃü±ğÈËÕâ¸öÖ°Î»£¡\n");
+                        return notify_fail("ä½ è·ä½å¤ªä½ï¼Œç„¡æ¬Šä»»å‘½åˆ¥äººé€™å€‹è·ä½ï¼\n");
 
                 else
                 {
                         set("bunch/title", item+zhiwei, ob);
                         set("bunch/level", lvl, ob);
-                        message_vision("$NÈÎÃü$nÎª¡¸" + banghui + "¡¹" + item + zhiwei + "£¡\n", me, ob);
+                        message_vision("$Nä»»å‘½$nç‚ºã€Œ" + banghui + "ã€" + item + zhiwei + "ï¼\n", me, ob);
                         return 1;
                 }
         }
@@ -794,70 +794,70 @@ int appoint_bunch_member(object me, string arg)
         {
                 ob = present(id, environment(me));
 
-                if (! ob) return notify_fail("Õâ¶ùÃ»ÓĞÕâÃ´¸öÈË¡£\n");
+                if (! ob) return notify_fail("é€™å…’æ²’æœ‰é€™éº¼å€‹äººã€‚\n");
 
                 if (! ob->is_character())
-                        return notify_fail("¿´Çå³ş£¬ÄÇ²¢²»ÊÇÈË£¡\n");
+                        return notify_fail("çœ‹æ¸…æ¥šï¼Œé‚£ä¸¦ä¸æ˜¯äººï¼\n");
 
-                if (!userp(ob)) return notify_fail("ÄãÖ»¶Ô±¾°ï»áµÄÍæ¼ÒÊ¹ÓÃÕâÌõÃüÁî£¡\n");
+                if (!userp(ob)) return notify_fail("ä½ åªå°æœ¬å¹«æœƒçš„ç©å®¶ä½¿ç”¨é€™æ¢å‘½ä»¤ï¼\n");
 
                 if( banghui != query("bunch/bunch_name", ob) )
-                        return notify_fail("ÄãÖ»¶Ô±¾°ï»áµÄÍæ¼ÒÊ¹ÓÃÕâÌõÃüÁî£¡\n");
+                        return notify_fail("ä½ åªå°æœ¬å¹«æœƒçš„ç©å®¶ä½¿ç”¨é€™æ¢å‘½ä»¤ï¼\n");
 
                 if( query("bunch/level", me) <= query("bunch/level", ob) )
-                        return notify_fail("¶Ô·½ÔÚ°ïÖĞµÄÖ°Î»±ÈÄã¸ß£¬ÄãÈÎÃüËû£¿¸ãĞ¦£¡\n");
+                        return notify_fail("å°æ–¹åœ¨å¹«ä¸­çš„è·ä½æ¯”ä½ é«˜ï¼Œä½ ä»»å‘½ä»–ï¼Ÿæç¬‘ï¼\n");
 
                 if (me->is_busy() || me->is_fighting())
-                        return notify_fail("ÄãÕıÃ¦×ÅÄØ£¡\n");
+                        return notify_fail("ä½ æ­£å¿™è‘—å‘¢ï¼\n");
 
                 if (ob->is_busy() || ob->is_fighting())
-                        return notify_fail("¶Ô·½ÕıÃ¦×ÅÄØ£¡\n");
+                        return notify_fail("å°æ–¹æ­£å¿™è‘—å‘¢ï¼\n");
 
                 if (ob == me)
-                        return notify_fail("×Ô¼ºÈÎÃü×Ô¼º£¿\n");
+                        return notify_fail("è‡ªå·±ä»»å‘½è‡ªå·±ï¼Ÿ\n");
 
-                if (name != "¸±°ïÖ÷" && name != "³¤ÀÏ" && name != "»¤·¨" && name != "¶æÖ÷"
-                &&  name != "Ì³Ö÷" && name != "ÌÃÖ÷" && name != "ÏãÖ÷" && name != "ÃÅÈË"
-                &&  name != "°ïÖÚ")
-                        return notify_fail("ÈÎÃüµÄÖ°Î»ÖÁÉÏ¶øÏÂÎª£º¸±°ïÖ÷£¬³¤ÀÏ, »¤·¨, ¶æÖ÷, Ì³Ö÷, ÌÃÖ÷, ÏãÖ÷, ÃÅÈË, °ïÖÚ ¡£\n");
+                if (name != "å‰¯å¹«ä¸»" && name != "é•·è€" && name != "è­·æ³•" && name != "èˆµä¸»"
+                &&  name != "å£‡ä¸»" && name != "å ‚ä¸»" && name != "é¦™ä¸»" && name != "é–€äºº"
+                &&  name != "å¹«çœ¾")
+                        return notify_fail("ä»»å‘½çš„è·ä½è‡³ä¸Šè€Œä¸‹ç‚ºï¼šå‰¯å¹«ä¸»ï¼Œé•·è€, è­·æ³•, èˆµä¸», å£‡ä¸», å ‚ä¸», é¦™ä¸», é–€äºº, å¹«çœ¾ ã€‚\n");
 
                 switch (name)
                 {
-                case "¸±°ïÖ÷":
+                case "å‰¯å¹«ä¸»":
                         lvl = 6;
                         break;
-                case "³¤ÀÏ":
+                case "é•·è€":
                         lvl = 5;
                         break;
-                case "»¤·¨":
+                case "è­·æ³•":
                         lvl = 4;
                         break;
-                case "¶æÖ÷":
-                case "Ì³Ö÷":
-                case "ÌÃÖ÷":
-                case "ÏãÖ÷":
+                case "èˆµä¸»":
+                case "å£‡ä¸»":
+                case "å ‚ä¸»":
+                case "é¦™ä¸»":
                         lvl = 3;
                         break;
-                case "ÃÅÈË":
+                case "é–€äºº":
                         lvl = 2;
                         break;
-                case "°ïÖÚ":
+                case "å¹«çœ¾":
                         lvl = 1;
                         break;
                 }
 
                 if( query("bunch/level", me) <= lvl )
-                        return notify_fail("ÄãÖ°Î»Ì«µÍ£¬ÎŞÈ¨ÈÎÃü±ğÈËÕâ¸öÖ°Î»£¡\n");
+                        return notify_fail("ä½ è·ä½å¤ªä½ï¼Œç„¡æ¬Šä»»å‘½åˆ¥äººé€™å€‹è·ä½ï¼\n");
 
                 else
                 {
                         set("bunch/title", name, ob);
                         set("bunch/level", lvl, ob);
-                        message_vision("$NÈÎÃü$nÎª¡¸" + banghui + "¡¹" + name + "£¡\n", me, ob);
+                        message_vision("$Nä»»å‘½$nç‚ºã€Œ" + banghui + "ã€" + name + "ï¼\n", me, ob);
                         return 1;
                 }
         } else
-                return notify_fail("Ö¸Áî¸ñÊ½£ºbunch appoint <Ä³ÈË> <Ö°Îñ> »ò bunch appoint <Ä³ÈË> <²¿ÃÅ> <Ö°Îñ>\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šbunch appoint <æŸäºº> <è·å‹™> æˆ– bunch appoint <æŸäºº> <éƒ¨é–€> <è·å‹™>\n");
 }
 
 int inherit_bunch_master(object me, string arg)
@@ -870,38 +870,38 @@ int inherit_bunch_master(object me, string arg)
         if( !stringp(banghui=query("bunch/bunch_name", me)) || 
             query("bunch/level", me) != 7 || 
             BUNCH_D->query_bunch_info(banghui,"master") != query("id", me) )
-                return notify_fail("Ö»ÓĞ°ï»áµÄ°ïÖ÷²ÅÄÜÊ¹ÓÃÕâÌõÖ¸Áî¡£\n");
+                return notify_fail("åªæœ‰å¹«æœƒçš„å¹«ä¸»æ‰èƒ½ä½¿ç”¨é€™æ¢æŒ‡ä»¤ã€‚\n");
 
         if (me->is_fighting() || me->is_busy())
-                return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ æ­£å¿™è‘—å‘¢ã€‚\n");
 
         if (! arg)
-                return notify_fail("ÄãÒªÈÃÎ»¸øË­£¿\n");
+                return notify_fail("ä½ è¦è®“ä½çµ¦èª°ï¼Ÿ\n");
 
         if( query("id", me) == arg )
-                return notify_fail("ÈÃÎ»¸ø×Ô¼º£¿ÓĞ±ØÒªÂğ£¿\n");
+                return notify_fail("è®“ä½çµ¦è‡ªå·±ï¼Ÿæœ‰å¿…è¦å—ï¼Ÿ\n");
 
         if (! ob = present(arg, environment(me)))
-                return notify_fail("Õâ¶ùÃ»ÓĞÕâÃ´¸öÍæ¼Ò¡£\n");
+                return notify_fail("é€™å…’æ²’æœ‰é€™éº¼å€‹ç©å®¶ã€‚\n");
 
         if (! playerp(ob))
-                return notify_fail("ÄãÖ»ÄÜÈÃÎ»¸øÍæ¼Ò¡£\n");
+                return notify_fail("ä½ åªèƒ½è®“ä½çµ¦ç©å®¶ã€‚\n");
 
         if( query("bunch/bunch_name", ob) != banghui )
-                return notify_fail("ÄãÖ»ÄÜÈÃÎ»¸ø±¾°ï»áµÄÍæ¼Ò¡£\n");
+                return notify_fail("ä½ åªèƒ½è®“ä½çµ¦æœ¬å¹«æœƒçš„ç©å®¶ã€‚\n");
 
         if (ob->is_fighting() || ob->is_busy())
-                return notify_fail("¶Ô·½ÕıÃ¦×ÅÄØ¡£\n");
+                return notify_fail("å°æ–¹æ­£å¿™è‘—å‘¢ã€‚\n");
 
         BUNCH_D->add_bunch_info(banghui,"master",query("id", ob));
 
         set("bunch/level", 7, ob);
-        set("bunch/title", "°ïÖ÷", ob);
-        set("bunch/title", "ÀÏ°ïÖ÷", me);
+        set("bunch/title", "å¹«ä¸»", ob);
+        set("bunch/title", "è€å¹«ä¸»", me);
         set("bunch/level", 6, me);
         ob->save();
         me->save();
-        message_vision("$N½«°ï»á¡¸" + banghui + "¡¹µÄ°ïÖ÷Ö®Î»ÈÃÎ»¸øÁË$n¡£\n", me, ob);
+        message_vision("$Nå°‡å¹«æœƒã€Œ" + banghui + "ã€çš„å¹«ä¸»ä¹‹ä½è®“ä½çµ¦äº†$nã€‚\n", me, ob);
         return 1;
 }
 
@@ -919,17 +919,17 @@ string show_ally(object me, string id)
         string str = "";
         int i;
 
-        str += sprintf("Ä¿Ç°%sµÄÍ¬ÃË°ïÅÉÓĞ£º\n\n", id);
+        str += sprintf("ç›®å‰%sçš„åŒç›Ÿå¹«æ´¾æœ‰ï¼š\n\n", id);
 
         if (! list = BUNCH_D->query_bunch_league(id))
-                str += "¹ó°ïÅÉÉĞÎŞÍ¬ÃË°ïÅÉ¡£\n\n";
+                str += "è²´å¹«æ´¾å°šç„¡åŒç›Ÿå¹«æ´¾ã€‚\n\n";
         else
         {
                 for (i = 0; i < sizeof(list); i++)
                 {
                         str += sprintf("%s\n", list[i]);
                 }
-                str += sprintf("\n¹² %d °ïÅÉ¡£\n\n", sizeof(list));
+                str += sprintf("\nå…± %d å¹«æ´¾ã€‚\n\n", sizeof(list));
         }
         return me->start_more(str);
 
@@ -944,13 +944,13 @@ int show_bunch_league(object me, string arg)
         seteuid(getuid());
 
         if (me->is_busy())
-                return notify_fail("ÄãµÄ¶¯×÷»¹Ã»ÓĞÍê³É¡£\n");
+                return notify_fail("ä½ çš„å‹•ä½œé‚„æ²’æœ‰å®Œæˆã€‚\n");
 
         if (me->is_fighting())
-                return notify_fail("Äã»¹ÔÚÕ½¶·ÖĞ¡£\n");
+                return notify_fail("ä½ é‚„åœ¨æˆ°é¬¥ä¸­ã€‚\n");
 
         if( !stringp(bname=query("bunch/bunch_name", me)) )
-                return notify_fail("Äã»¹Ã»ÓĞ×é½¨»ò¼ÓÈëÈÎºÎ°ïÅÉ¡£\n");
+                return notify_fail("ä½ é‚„æ²’æœ‰çµ„å»ºæˆ–åŠ å…¥ä»»ä½•å¹«æ´¾ã€‚\n");
 
         if (! arg)
         {
@@ -960,39 +960,39 @@ int show_bunch_league(object me, string arg)
 
         if( !query("bunch/level", me) || 
             query("bunch/level", me)<7 )
-                return notify_fail("Äã²¢²»ÊÇ" + bname + "°ïÅÉµÄÁúÍ·ÀÏ´ó¡£\n");
+                return notify_fail("ä½ ä¸¦ä¸æ˜¯" + bname + "å¹«æ´¾çš„é¾é ­è€å¤§ã€‚\n");
 
         if (sscanf(arg, "%s %s", arg, tname) != 2)
-                return notify_fail("Ö¸Áî¸ñÊ½£ºbunch ally with|cancel <°ïÅÉ>\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šbunch ally with|cancel <å¹«æ´¾>\n");
         else
         {
                 if (! check_bunch(tname))
-                        return notify_fail("Ã»ÓĞÕâ¸ö°ïÅÉ¡£\n");
+                        return notify_fail("æ²’æœ‰é€™å€‹å¹«æ´¾ã€‚\n");
 
                 if (arg == "with")
                 {
                         if (tname == bname)
-                                return notify_fail("Äã²»ÄÜ¸ú×Ô¼º½áÃË¡£\n");
+                                return notify_fail("ä½ ä¸èƒ½è·Ÿè‡ªå·±çµç›Ÿã€‚\n");
 
                         if (BUNCH_D->bunch_is_league(bname, tname) )
-                                return notify_fail("´Ë°ïÅÉÒÑ¾­¸ú¹ó°ïÅÉÍ¬ÃËÁË¡£\n");
+                                return notify_fail("æ­¤å¹«æ´¾å·²ç¶“è·Ÿè²´å¹«æ´¾åŒç›Ÿäº†ã€‚\n");
 
                         if (! ob = find_player((string)BUNCH_D->query_bunch_info(tname, "master")))
-                                return notify_fail("¶Ô·½µÄ°ïÖ÷²»ÔÚ£¬ÄãÎŞ·¨¶ÔËûÌá³öÒªÇó¡£\n");
+                                return notify_fail("å°æ–¹çš„å¹«ä¸»ä¸åœ¨ï¼Œä½ ç„¡æ³•å°ä»–æå‡ºè¦æ±‚ã€‚\n");
 
                         if( me == query_temp("pending/bunch_ally", ob) )
                         {
-                                write(HIY "ÄãÕıÊ½Ğû¸æ´ÓÏÖÔÚÆğ" + bname + "Óë" + tname + "´ï³ÉÍ¬ÃËĞ­Òé¡£\n" NOR);
-                                shout(HIY + bname + "ÕıÊ½Ğû¸æ´ÓÏÖÔÚÆğÓë" + tname + "´ï³ÉÍ¬ÃËĞ­Òé¡£\n" NOR);
+                                write(HIY "ä½ æ­£å¼å®£å‘Šå¾ç¾åœ¨èµ·" + bname + "èˆ‡" + tname + "é”æˆåŒç›Ÿå”è­°ã€‚\n" NOR);
+                                shout(HIY + bname + "æ­£å¼å®£å‘Šå¾ç¾åœ¨èµ·èˆ‡" + tname + "é”æˆåŒç›Ÿå”è­°ã€‚\n" NOR);
                                 BUNCH_D->add_league_into_bunch(bname, tname);
                                 delete_temp("pending/bunch_ally", ob);
                                 return 1;
                         }
                         else
                         {
-                                write(HIY "ÄãÌá³öÓë" + tname + "µÄÍ¬ÃËÌáÒé¡£\n" NOR);
-                                tell_object(ob,bname+"µÄ"+query("name", me)+"ÒªÇóºÍ¹ó°ïÅÉ½¨Á¢Í¬ÃË¹ØÏµ¡£\n");
-                                tell_object(ob, YEL "Èç¹ûÄãÍ¬ÒâµÄ»°£¬ÇëÓÃ bunch ally with " + bname + "¡£\n" NOR);
+                                write(HIY "ä½ æå‡ºèˆ‡" + tname + "çš„åŒç›Ÿæè­°ã€‚\n" NOR);
+                                tell_object(ob,bname+"çš„"+query("name", me)+"è¦æ±‚å’Œè²´å¹«æ´¾å»ºç«‹åŒç›Ÿé—œç³»ã€‚\n");
+                                tell_object(ob, YEL "å¦‚æœä½ åŒæ„çš„è©±ï¼Œè«‹ç”¨ bunch ally with " + bname + "ã€‚\n" NOR);
                                 set_temp("pending/bunch_ally", ob, me);
                                 return 1;
                         }
@@ -1001,18 +1001,18 @@ int show_bunch_league(object me, string arg)
                 else if (arg == "cancel")
                 {
                         if (tname == bname)
-                                return notify_fail("Äã²»ÄÜ¸ú×Ô¼º½â³ı½áÃË¡£\n");
+                                return notify_fail("ä½ ä¸èƒ½è·Ÿè‡ªå·±è§£é™¤çµç›Ÿã€‚\n");
 
                         if (! BUNCH_D->bunch_is_league(bname, tname))
-                                return notify_fail("´Ë°ïÅÉ²¢Ã»ÓĞ¸ú¹ó°ïÅÉ½á³ÉÍ¬ÃË¡£\n");
+                                return notify_fail("æ­¤å¹«æ´¾ä¸¦æ²’æœ‰è·Ÿè²´å¹«æ´¾çµæˆåŒç›Ÿã€‚\n");
 
-                        shout(HIY + me->name() + "´ú±í°ïÅÉ" + bname + "ÕıÊ½Ğû¸æ´ÓÏÖÔÚÆğ½â³ıÓë" + tname + "µÄÍ¬ÃËĞ­Òé¡£\n" NOR);
+                        shout(HIY + me->name() + "ä»£è¡¨å¹«æ´¾" + bname + "æ­£å¼å®£å‘Šå¾ç¾åœ¨èµ·è§£é™¤èˆ‡" + tname + "çš„åŒç›Ÿå”è­°ã€‚\n" NOR);
                         BUNCH_D->remove_league_from_bunch(bname, tname);
                         return 1;
 
                 }
                 else
-                        return notify_fail("Ö¸Áî¸ñÊ½£ºbunch ally with|cancel <°ïÅÉ>\n");
+                        return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šbunch ally with|cancel <å¹«æ´¾>\n");
         }
 }
 
@@ -1025,17 +1025,17 @@ int bunch_arrest(object me, string arg)
         int    i, cnt;
 
         if( !stringp(banghui=query("bunch/bunch_name", me)) )
-                return notify_fail("Äã»¹Ã»ÓĞ×é½¨»ò¼ÓÈëÈÎºÎ°ïÅÉ¡£\n");
+                return notify_fail("ä½ é‚„æ²’æœ‰çµ„å»ºæˆ–åŠ å…¥ä»»ä½•å¹«æ´¾ã€‚\n");
 
         if(! arg)
         {
-                msg = HIR "Í¨¼©ºÚÃûµ¥\n" NOR;
-                msg += "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n" NOR;
+                msg = HIR "é€šç·é»‘åå–®\n" NOR;
+                msg += "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n" NOR;
 
                 vendetta = BUNCH_D->query_bunch_info(banghui, "vendetta");
 
                 if (! arrayp(vendetta) || sizeof(vendetta) < 1)
-                        return notify_fail("Ä¿Ç°Ã»ÓĞ±»±¾°ïÅÉÍ¨¼©µÄÈË¡£\n");
+                        return notify_fail("ç›®å‰æ²’æœ‰è¢«æœ¬å¹«æ´¾é€šç·çš„äººã€‚\n");
 
                 cnt = 0;
                 for (i = 0; i < sizeof(vendetta); i++)
@@ -1049,14 +1049,14 @@ int bunch_arrest(object me, string arg)
 
                 if (cnt == 0 || (cnt % 4))
                         msg += "\n";
-                msg += "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n" NOR;
+                msg += "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n" NOR;
                 me->start_more(msg);
                 return 1;
         }
 
         if( !query("bunch/level", me) || 
               query("bunch/level", me)<7 )
-                return notify_fail("Äã²¢²»ÊÇ" + banghui + "°ïÅÉµÄÁúÍ·ÀÏ´ó¡£\n");
+                return notify_fail("ä½ ä¸¦ä¸æ˜¯" + banghui + "å¹«æ´¾çš„é¾é ­è€å¤§ã€‚\n");
 
 
         if (sscanf(arg,"-a %s", str) == 1)
@@ -1064,30 +1064,30 @@ int bunch_arrest(object me, string arg)
                 target = UPDATE_D->global_find_player(str);
 
                 if (! target)
-                        return notify_fail("ÄãÏë×·É±µÄÍæ¼Ò²¢²»´æÔÚ¡£\n");
+                        return notify_fail("ä½ æƒ³è¿½æ®ºçš„ç©å®¶ä¸¦ä¸å­˜åœ¨ã€‚\n");
 
                 if (target == me)
                 {
                         UPDATE_D->global_destruct_player(target, 1);
-                        return notify_fail("×·É±×Ô¼º£¿Ã»ÎÊÌâ°É¡£\n");
+                        return notify_fail("è¿½æ®ºè‡ªå·±ï¼Ÿæ²’å•é¡Œå§ã€‚\n");
                 }
 
                 if (wizardp(target))
                 {
                         UPDATE_D->global_destruct_player(target, 1);
-                        return notify_fail("×·É±Î×Ê¦£¿µ¨×ÓÒ²Ì«´óÁË°É£¡\n");
+                        return notify_fail("è¿½æ®ºå·«å¸«ï¼Ÿè†½å­ä¹Ÿå¤ªå¤§äº†å§ï¼\n");
                 }
 
                 if( query("age", target)<18 )
                 {
                         UPDATE_D->global_destruct_player(target, 1);
-                        return notify_fail("×·É±ÎŞÃûÖ®±²£¿Ã»ÎÊÌâ°É¡£\n");
+                        return notify_fail("è¿½æ®ºç„¡åä¹‹è¼©ï¼Ÿæ²’å•é¡Œå§ã€‚\n");
                 }
 
                 if( query("vendetta/"+banghui, target) )
                 {
                         UPDATE_D->global_destruct_player(target, 1);
-                        return notify_fail("´ËÍæ¼ÒÒÑÔÚºÚÃûµ¥ÖĞ¡£\n");
+                        return notify_fail("æ­¤ç©å®¶å·²åœ¨é»‘åå–®ä¸­ã€‚\n");
                 }
 
                 set("vendetta/"+banghui, 1, target);
@@ -1101,11 +1101,11 @@ int bunch_arrest(object me, string arg)
 
                 if( banghui == query("bunch/bunch_name", target) )
                         message("channel:rumor",
-                                HIR"¡¾Ò¥ÑÔËÄÆğ¡¿"+ "Ä³ÈË£º°ïÅÉ¡¸"+banghui+"¡¹¿ªÊ¼×·É±±¾°ï"+
-                                query("name", target)+"("+query("id", target)+")£¬°ïÖĞĞÖµÜ¼ûµ½¸ñÉ±ÎğÂÛ£¡\n"NOR,users());
+                                HIR"ã€è¬ è¨€å››èµ·ã€‘"+ "æŸäººï¼šå¹«æ´¾ã€Œ"+banghui+"ã€é–‹å§‹è¿½æ®ºæœ¬å¹«"+
+                                query("name", target)+"("+query("id", target)+")ï¼Œå¹«ä¸­å…„å¼Ÿè¦‹åˆ°æ ¼æ®ºå‹¿è«–ï¼\n"NOR,users());
                 else
                         message("channel:rumor",
-                                HIR"¡¾Ò¥ÑÔËÄÆğ¡¿"+"Ä³ÈË£º°ïÅÉ¡¸"+banghui+"¡¹¿ªÊ¼×·É±"+query("name", target)+"("+query("id", target)+")£¬°ïÖĞĞÖµÜ¼ûµ½¸ñÉ±ÎğÂÛ£¡\n"NOR,users());
+                                HIR"ã€è¬ è¨€å››èµ·ã€‘"+"æŸäººï¼šå¹«æ´¾ã€Œ"+banghui+"ã€é–‹å§‹è¿½æ®º"+query("name", target)+"("+query("id", target)+")ï¼Œå¹«ä¸­å…„å¼Ÿè¦‹åˆ°æ ¼æ®ºå‹¿è«–ï¼\n"NOR,users());
 
                 UPDATE_D->global_destruct_player(target, 1);
                 return 1;
@@ -1114,11 +1114,11 @@ int bunch_arrest(object me, string arg)
         if (sscanf(arg, "-d %s", str) == 1)
         {
                 target = UPDATE_D->global_find_player(str);
-                if(! target)    return notify_fail("±¾ÓÎÏ·ÖĞÃ»ÓĞÕâÃ´¸öÍæ¼Ò¡£\n");
+                if(! target)    return notify_fail("æœ¬éŠæˆ²ä¸­æ²’æœ‰é€™éº¼å€‹ç©å®¶ã€‚\n");
                 if( !query("vendetta/"+banghui, target) )
                 {
                         UPDATE_D->global_destruct_player(target, 0);
-                        return notify_fail("´ËÍæ¼Ò²¢²»ÔÚ×·É±µÄºÚÃûµ¥ÖĞ¡£\n");
+                        return notify_fail("æ­¤ç©å®¶ä¸¦ä¸åœ¨è¿½æ®ºçš„é»‘åå–®ä¸­ã€‚\n");
                 }
 
                 delete("vendetta/"+banghui, target);
@@ -1130,12 +1130,12 @@ int bunch_arrest(object me, string arg)
                 vendetta -= ({ 0 });
                 BUNCH_D->add_bunch_info(banghui, "vendetta", vendetta);
                 message("channel:rumor",
-                       HIR"¡¾Ò¥ÑÔËÄÆğ¡¿"+"Ä³ÈË£º°ïÅÉ¡¸"+banghui+"¡¹Í£Ö¹×·É±"+query("name", target)+"("+query("id", target)+")£¬¸øÓèÌØÉâ¡£\n"NOR,users());
+                       HIR"ã€è¬ è¨€å››èµ·ã€‘"+"æŸäººï¼šå¹«æ´¾ã€Œ"+banghui+"ã€åœæ­¢è¿½æ®º"+query("name", target)+"("+query("id", target)+")ï¼Œçµ¦äºˆç‰¹èµ¦ã€‚\n"NOR,users());
                 UPDATE_D->global_destruct_player(target, 1);
                 return 1;
         }
 
-        return notify_fail("Ö¸Áî¸ñÊ½£ºbunch arrest [-a][-d]<Íæ¼ÒID>\n");
+        return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šbunch arrest [-a][-d]<ç©å®¶ID>\n");
 }
 
 int bunch_invite(object me, string arg)
@@ -1148,10 +1148,10 @@ int bunch_invite(object me, string arg)
         string stuffid, stuffname;
 
         if (! arg || arg == "")
-                return notify_fail("ÄãÒªÑûÇëË­¼ÓÈëÄãµÄ°ï»á£¿\n");
+                return notify_fail("ä½ è¦é‚€è«‹èª°åŠ å…¥ä½ çš„å¹«æœƒï¼Ÿ\n");
 
         if( !stringp(bunch=query("bunch/bunch_name", me)) )
-                return notify_fail("ÄãÃ»ÓĞ²Î¼ÓÈÎºÎ°ï»á£¬ÎŞ·¨ÑûÇëËûÈË¼ÓÈë¡£\n");
+                return notify_fail("ä½ æ²’æœ‰åƒåŠ ä»»ä½•å¹«æœƒï¼Œç„¡æ³•é‚€è«‹ä»–äººåŠ å…¥ã€‚\n");
 
         flag = 0;
 
@@ -1160,39 +1160,39 @@ int bunch_invite(object me, string arg)
                 flag = 1;
 
         if( query("id", me) == arg )
-                return notify_fail("ÑûÇë×Ô¼º£¿£¡\n");
+                return notify_fail("é‚€è«‹è‡ªå·±ï¼Ÿï¼\n");
 
         if (! objectp(ob = present(arg, environment(me))))
-                return notify_fail("Õâ¶ùÓĞÃ»ÕâÃ´¸öÈË¡£\n");
+                return notify_fail("é€™å…’æœ‰æ²’é€™éº¼å€‹äººã€‚\n");
 
         if (! ob->is_character())
-                return notify_fail("ÄãÖ»ÄÜÑûÇë¡¸ÈË¡¹¼ÓÈëÄãµÄ°ï»á¡£\n");
+                return notify_fail("ä½ åªèƒ½é‚€è«‹ã€Œäººã€åŠ å…¥ä½ çš„å¹«æœƒã€‚\n");
 
         if( query("bunch/bunch_name", ob) == query("bunch/bunch_name", me) )
-                return notify_fail(query("name", ob)+"ÒÑ¾­ÊÇ±¾°ïµÜĞÖÁË¡£\n");
+                return notify_fail(query("name", ob)+"å·²ç¶“æ˜¯æœ¬å¹«å¼Ÿå…„äº†ã€‚\n");
 
         if (me->is_fighting() || me->is_busy())
-                return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ æ­£å¿™è‘—å‘¢ã€‚\n");
 
         if (ob->is_fighting() || ob->is_busy())
-                return notify_fail("¶Ô·½ÕıÃ¦×ÅÄØ¡£\n");
+                return notify_fail("å°æ–¹æ­£å¿™è‘—å‘¢ã€‚\n");
 
-        if (! living(ob)) return notify_fail("ÄãµÃÏÈÅªĞÑËûÔÙËµ¡£\n");
+        if (! living(ob)) return notify_fail("ä½ å¾—å…ˆå¼„é†’ä»–å†èªªã€‚\n");
 
         if (playerp(ob) && ! flag)
-                return notify_fail("ÄãÎŞÈ¨ÑûÇëÍæ¼Ò¼ÓÈë¡¸" + bunch + "¡¹£¡\n");
+                return notify_fail("ä½ ç„¡æ¬Šé‚€è«‹ç©å®¶åŠ å…¥ã€Œ" + bunch + "ã€ï¼\n");
 
-        message_vision("$NÑûÇë$n²Î¼Ó°ï»á¡¸" + bunch + "¡¹¡£\n", me, ob);
+        message_vision("$Né‚€è«‹$nåƒåŠ å¹«æœƒã€Œ" + bunch + "ã€ã€‚\n", me, ob);
 
         if (! playerp(ob))
         {
                 if( !query("bunch/zhengzhao", ob) || !ob->is_bunch_npc() )
-                        return notify_fail("¿´Ñù×Ó"+query("name", ob)+
-                                "¶ÔÄãµÄ°ï»áÃ»ÓĞĞËÈ¤¡£\n");
+                        return notify_fail("çœ‹æ¨£å­"+query("name", ob)+
+                                "å°ä½ çš„å¹«æœƒæ²’æœ‰èˆˆè¶£ã€‚\n");
 
                 if (sizeof(BUNCH_D->query_areas_in_bunch(bunch)) > BUNCH_D->query_bunch_fame(bunch) / 500000)
-                        return notify_fail("ÓÉÓÚÄãµÄ°ïÅÉÉùÍû²»¹»£¬¿´Ñù×Ó"+query("name", ob)+
-                                "¶ÔÄãµÄ°ï»áÃ»ÓĞĞËÈ¤¡£\n");
+                        return notify_fail("ç”±äºä½ çš„å¹«æ´¾è²æœ›ä¸å¤ ï¼Œçœ‹æ¨£å­"+query("name", ob)+
+                                "å°ä½ çš„å¹«æœƒæ²’æœ‰èˆˆè¶£ã€‚\n");
 
                 switch(query("bunch/zhengzhao", ob) )
                 {
@@ -1201,12 +1201,12 @@ int bunch_invite(object me, string arg)
                             query("bunch/zhongcheng", ob)<query("meili", me)) && 
                             query("qi", ob)*100>query("max_qi", ob)*80 )
                         {
-                                message_vision("$N¶Ô$nËµµÀ£º¡°¼´ÊÇÈç´Ë£¬ÄãÎÒ²»ÈçÇĞ´è(qiecuo)Ò»ÏÂÎä¹¦ÈçºÎ£¿¡±\n",
+                                message_vision("$Nå°$nèªªé“ï¼šâ€œå³æ˜¯å¦‚æ­¤ï¼Œä½ æˆ‘ä¸å¦‚åˆ‡ç£‹(qiecuo)ä¸€ä¸‹æ­¦åŠŸå¦‚ä½•ï¼Ÿâ€\n",
                                                ob, me);
                                 set_temp("invite/target", me, ob);
                                 return 1;
                         }
-                        message_vision("$N³å×Å$nĞ¦µÀ£º¡°ÎÒ¿É²»¸Ò¸ßÅÊ¹ó°ï°¡¡£¡±\n", ob, me);
+                        message_vision("$Næ²–è‘—$nç¬‘é“ï¼šâ€œæˆ‘å¯ä¸æ•¢é«˜æ”€è²´å¹«å•Šã€‚â€\n", ob, me);
                         return 1;
 
                 case 2:
@@ -1218,14 +1218,14 @@ int bunch_invite(object me, string arg)
                                 if (money < 1) money = 1;
 
                                 money = money * 1000;
-                                message_vision("$N¡¸ºÙºÙ¡¹ÁË¼¸Éù£¬¶Ô$nµÀ£º¡°" +
-                                               chinese_number(money / 1000) + "Á½»Æ½ğ£¬ÉÙÒ»¸ö×ÓÒ²²»ĞĞ¡£¡¡±\n",
+                                message_vision("$Nã€Œå˜¿å˜¿ã€äº†å¹¾è²ï¼Œå°$né“ï¼šâ€œ" +
+                                               chinese_number(money / 1000) + "å…©é»ƒé‡‘ï¼Œå°‘ä¸€å€‹å­ä¹Ÿä¸è¡Œã€‚ã€€â–¡n",
                                                ob, me);
                                 set_temp("invite/target", me, ob);
                                 set_temp("invite/money", money, ob);
                                 return 1;
                         }
-                        message_vision("$N³å×Å$nĞ¦µÀ£º¡°ÎÒ¿É²»¸Ò¸ßÅÊ¹ó°ï°¡¡£¡±\n", ob, me);
+                        message_vision("$Næ²–è‘—$nç¬‘é“ï¼šâ€œæˆ‘å¯ä¸æ•¢é«˜æ”€è²´å¹«å•Šã€‚â€\n", ob, me);
                         return 1;
 
                 case 3:
@@ -1241,16 +1241,16 @@ int bunch_invite(object me, string arg)
                                 if( member_array(query("id", me),target) != -1 )
                                 {
                                         sscanf(data[query("id", me)],"%s:%s",stuffid,stuffname);
-                                        message_vision("$N¶Ô$n´óÉùµÀ£ºÎÒ²»ÊÇËµ¹ıÁËÂğ£¿°Ñ" +
-                                                       stuffname + "(" + stuffid + ")¸øÎÒÕÒÀ´£¡\n",
+                                        message_vision("$Nå°$nå¤§è²é“ï¼šæˆ‘ä¸æ˜¯èªªéäº†å—ï¼ŸæŠŠ" +
+                                                       stuffname + "(" + stuffid + ")çµ¦æˆ‘æ‰¾ä¾†ï¼\n",
                                                        ob, me);
                                         return 1;
                                 }
 
                                 if (sizeof(target) >= 4)
                                 {
-                                        message_vision("$NĞ¦µÀ£º³ĞÃÉ´ó¼Ò¿´µÃÆğ£¬" +
-                                                       RANK_D->query_respect(ob) + "²»Ê¤¸Ğ¼¤¡£\n",
+                                        message_vision("$Nç¬‘é“ï¼šæ‰¿è’™å¤§å®¶çœ‹å¾—èµ·ï¼Œ" +
+                                                       RANK_D->query_respect(ob) + "ä¸å‹æ„Ÿæ¿€ã€‚\n",
                                                        ob);
                                         return 1;
                                 }
@@ -1260,21 +1260,21 @@ int bunch_invite(object me, string arg)
                                 stuffname = npcneed[stuffid];
                                 data[query("id", me)]=stuffid+":"+stuffname;
                                 set_temp("invite/target", data, ob);
-                                message_vision("$N³å×Å$nµÀ£ºÖ»ÒªÄãÄÜÔÚÈı·ÖÖÓÖ®ÄÚ°Ñ" +
+                                message_vision("$Næ²–è‘—$né“ï¼šåªè¦ä½ èƒ½åœ¨ä¸‰åˆ†é˜ä¹‹å…§æŠŠ" +
                                                stuffname + "(" + stuffid + ")" +
-                                               "¸øÎÒÕÒÀ´£¬Ò»ÇĞºÃÉÌÁ¿¡£\n",
+                                               "çµ¦æˆ‘æ‰¾ä¾†ï¼Œä¸€åˆ‡å¥½å•†é‡ã€‚\n",
                                                ob, me);
 
                                 // remove_call_out("delete_target");
                                 call_out("delete_target",180,ob,query("id", me));
                                 return 1;
                         }
-                        message_vision("$N³å×Å$nĞ¦µÀ£º¡°ÎÒ¿É²»¸Ò¸ßÅÊ¹ó°ï°¡¡£¡±\n", ob, me);
+                        message_vision("$Næ²–è‘—$nç¬‘é“ï¼šâ€œæˆ‘å¯ä¸æ•¢é«˜æ”€è²´å¹«å•Šã€‚â€\n", ob, me);
                         return 1;
                 }
         } else
         {
-                tell_object(ob,"Èç¹ûÄãÔ¸Òâ¼ÓÈë¶Ô·½µÄ°ï»á£¬ÇëÊ¹ÓÃbunch join "+query("id", me)+"¡£\n");
+                tell_object(ob,"å¦‚æœä½ é¡˜æ„åŠ å…¥å°æ–¹çš„å¹«æœƒï¼Œè«‹ä½¿ç”¨bunch join "+query("id", me)+"ã€‚\n");
                 set_temp("invite/target", me, ob);
                 return 1;
         }
@@ -1300,29 +1300,29 @@ int join_bunch(object me, string arg)
         string bunch;
 
         if (! arg || arg == "")
-                return notify_fail("ÄãÒª¼ÓÈëË­µÄ°ï»á£¿\n");
+                return notify_fail("ä½ è¦åŠ å…¥èª°çš„å¹«æœƒï¼Ÿ\n");
 
         if( query("combat_exp", me)<1000 )
-                return notify_fail("Äã²Å³õÈë½­ºş£¬ÔÚÄ¥Á·Ä¥Á·°É¡£\n");
+                return notify_fail("ä½ æ‰åˆå…¥æ±Ÿæ¹–ï¼Œåœ¨ç£¨ç·´ç£¨ç·´å§ã€‚\n");
 
         if( stringp(bunch=query("bunch/bunch_name", me)) || 
             stringp(bunch=query("league/league_name", me)) )
-                return notify_fail("±§Ç¸£¬ÄãÒÑ¾­ÊÇ¡¸" + bunch + "¡¹µÄÈËÁË£¬ÎŞ·¨¼ÓÈëÆäËû°ï»á¡£\n");
+                return notify_fail("æŠ±æ­‰ï¼Œä½ å·²ç¶“æ˜¯ã€Œ" + bunch + "ã€çš„äººäº†ï¼Œç„¡æ³•åŠ å…¥å…¶ä»–å¹«æœƒã€‚\n");
 
         if (me->is_fighting() || me->is_busy())
-                return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ æ­£å¿™è‘—å‘¢ã€‚\n");
 
         if( query("id", me) == arg )
-                return notify_fail("ÄãÃ»·¨ÕâÃ´×ö£¡\n");
+                return notify_fail("ä½ æ²’æ³•é€™éº¼åšï¼\n");
 
         if (! objectp(ob = present(arg, environment(me))))
-                return notify_fail("Õâ¶ùÃ»ÓĞÕâÃ´¸öÈË¡£\n");
+                return notify_fail("é€™å…’æ²’æœ‰é€™éº¼å€‹äººã€‚\n");
 
         if( query_temp("invite/target", me) != ob )
-                return notify_fail("±§Ç¸£¬"+query("name", ob)+"²¢Ã»ÓĞÑûÇëÄã²Î¼ÓËûµÄ°ï»á¡£\n");
+                return notify_fail("æŠ±æ­‰ï¼Œ"+query("name", ob)+"ä¸¦æ²’æœ‰é‚€è«‹ä½ åƒåŠ ä»–çš„å¹«æœƒã€‚\n");
 
         if( !stringp(bunch=query("bunch/bunch_name", ob)) )
-                return notify_fail("±§Ç¸£¬"+query("name", ob)+"ÏÖÔÚ²»ÊôÓÚÈÎºÎ°ï»á£¡\n");
+                return notify_fail("æŠ±æ­‰ï¼Œ"+query("name", ob)+"ç¾åœ¨ä¸å±¬äºä»»ä½•å¹«æœƒï¼\n");
 
         BUNCH_D->add_member_into_bunch(bunch,query("id", me));
         BUNCH_D->add_bunch_fame(bunch,query("weiwang", me)/10);
@@ -1331,11 +1331,11 @@ int join_bunch(object me, string arg)
         set("bunch/bunch_id", BUNCH_D->query_bunch_info(bunch,"bunch_id"), me);
         set("bunch/type", BUNCH_D->query_bunch_info(bunch,"type"), me);
         set("bunch/level", 1, me);
-        set("bunch/title", "°ïÖÚ", me);
+        set("bunch/title", "å¹«çœ¾", me);
 
-        message("channel:rumor",HIM"¡¾ÄàÌ¶°ï»á¡¿Ä³ÈË£º"+query("name", me)+
-                                 "("+query("id", me)+")¼ÓÈë°ï»á¡¸"+bunch+
-                                 "¡¹£¬ÊÄËÀÎª¡¸" + bunch + "¡¹Ğ§Á¦£¡\n" NOR, users());
+        message("channel:rumor",HIM"ã€æ³¥æ½­å¹«æœƒã€‘æŸäººï¼š"+query("name", me)+
+                                 "("+query("id", me)+")åŠ å…¥å¹«æœƒã€Œ"+bunch+
+                                 "ã€ï¼Œèª“æ­»ç‚ºã€Œ" + bunch + "ã€æ•ˆåŠ›ï¼\n" NOR, users());
 
         delete_temp("invite/target", me);
 
@@ -1350,25 +1350,25 @@ int bunch_color(object me, string arg)
                            HIM, HIC, HIW, NOR, });
 
         if( !stringp(banghui=query("bunch/bunch_name", me)) )
-                return notify_fail("Äã»¹Ã»ÓĞ×é½¨»ò¼ÓÈëÈÎºÎ°ïÅÉ¡£\n");
+                return notify_fail("ä½ é‚„æ²’æœ‰çµ„å»ºæˆ–åŠ å…¥ä»»ä½•å¹«æ´¾ã€‚\n");
 
         if( !query("bunch/level", me) || 
               query("bunch/level", me)<7 )
-                return notify_fail("Äã²¢²»ÊÇ" + banghui + "°ïÅÉµÄÁúÍ·ÀÏ´ó¡£\n");
+                return notify_fail("ä½ ä¸¦ä¸æ˜¯" + banghui + "å¹«æ´¾çš„é¾é ­è€å¤§ã€‚\n");
 
         if (! arg || arg == "")
-                return notify_fail("ÄãÒªÎª°ïÅÉÑ¡ÔñÊ²Ã´°ïÅÉÑÕÉ«£¿\n");
+                return notify_fail("ä½ è¦ç‚ºå¹«æ´¾é¸æ“‡ä»€éº¼å¹«æ´¾é¡è‰²ï¼Ÿ\n");
 
         arg = color_filter(arg);
         if (member_array(arg, color) == -1)
-                return notify_fail("ÄãÒªÎª°ïÅÉÑ¡ÔñÊ²Ã´°ïÅÉÑÕÉ«ÓĞÎÊÌâ£¬ÇëÖØĞÂÑ¡Ôñ£¡\n");
+                return notify_fail("ä½ è¦ç‚ºå¹«æ´¾é¸æ“‡ä»€éº¼å¹«æ´¾é¡è‰²æœ‰å•é¡Œï¼Œè«‹é‡æ–°é¸æ“‡ï¼\n");
 
         BUNCH_D->add_bunch_info(banghui, "color", arg);
-        tell_object(me, "ÄãÎª°ïÅÉÑ¡ÔñÁË " + arg + "ÑÕÉ«ÏÔÊ¾Ê¾Àı" + NOR + " µÄÑÕÉ«¡£\n");
+        tell_object(me, "ä½ ç‚ºå¹«æ´¾é¸æ“‡äº† " + arg + "é¡è‰²é¡¯ç¤ºç¤ºä¾‹" + NOR + " çš„é¡è‰²ã€‚\n");
         return 1;
 }
 
-// ¸øËùÓĞµÄ³ğºŞ¶ÔÏóÅÅĞò
+// çµ¦æ‰€æœ‰çš„ä»‡æ¨å°è±¡æ’åº
 int sort_hatred(string id1, string id2, mapping hatred)
 {
         mixed *d1, *d2;
@@ -1382,7 +1382,7 @@ int sort_hatred(string id1, string id2, mapping hatred)
         return d2[1] - d1[1];
 }
 
-// ¸øÍ¬ÃËÖĞµÄËùÓĞ½áÒå³ÉÔ±ÅÅĞò
+// çµ¦åŒç›Ÿä¸­çš„æ‰€æœ‰çµç¾©æˆå“¡æ’åº
 int sort_member(string id1, string id2)
 {
         object ob1, ob2;
@@ -1404,38 +1404,38 @@ int sort_member(string id1, string id2)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½: bunch info [Íæ¼Ò] | hatred [Íæ¼Ò] | member [°ïÅÉÃû×Ö]
+æŒ‡ä»¤æ ¼å¼: bunch info [ç©å®¶] | hatred [ç©å®¶] | member [å¹«æ´¾åå­—]
           bunch top | out | area | all | expell | appoint | inherit
           ally | war | surrender | agree | arrest | invite | join | color
 
-²é¿´Ä¿Ç°ÄãËùÔÚ°ïÅÉµÄ¸÷ÖÖĞÅÏ¢£¬ÆäÖĞ£º
+æŸ¥çœ‹ç›®å‰ä½ æ‰€åœ¨å¹«æ´¾çš„å„ç¨®ä¿¡æ¯ï¼Œå…¶ä¸­ï¼š
 
-info   £º²é¿´°ïÅÉÖĞµÄÈËÎï£¬³ÉÔ±×´Ì¬£¬ÉùÍû¡£
-hatred £º²é¿´°ïÅÉµÄ³ğºŞ¶ÔÏó¡£
-member £º²é¿´Ä³¸ö°ïÅÉµÄ³ÉÔ±¡£
-top    £º²é¿´°ïÅÉµÄÉùÍûÅÅÃû¡£
-area   : ²é¿´°ïÅÉµÄµØÅÌĞÅÏ¢¡£
-out    : ÍÑÀë×Ô¼ºËùÔÚµÄ°ïÅÉ¡£
-all    : ²é¿´ËùÓĞµÄ°ïÅÉĞÅÏ¢¡£
-expell : ¿ª³ı°ïÅÉÖĞµÄ³ÉÔ±£¬»á½µµÍ°ïÅÉÉùÍû¡£
-appoint: ÈÎÃü°ïÅÉ³ÉÔ±Î»½×¼°Ö°ÏÎ¡£
-inherit: ìøÈÃ³ö°ïÖ÷Ö®Î»¸ø°ïÀïÆäËûÈË¡£
-ally   : ²é¿´°ïÅÉÁªÃË¼°ÓëÆäËû°ïÅÉ½áÃË¡£
-war    : ¶ÔÄ³¸ö°ïÅÉĞû²¼Õ½Õù¡£(Î´¿ª·Å)
-surrender: Ïò¶ÔÕ½×´Ì¬µÄ°ïÅÉÇóºÍ¡£(Î´¿ª·Å)
-agree  : ½ÓÊÜ¶ÔÕ½×´Ì¬µÄ°ïÅÉÇóºÍ¡£(Î´¿ª·Å)
-arrest : °ïÅÉÍ¨¼©Áî¡£
-invite : ÑûÇëÄ³ÈË¼ÓÈëÄãµÄ°ï»á¡£Ä³ÈË¿ÉÒÔÊÇÍæ¼Ò»òÊÇ¿ÉÕ÷ÕĞµÄ£Î£Ğ£Ã¡£
-join   : ¼ÓÈëÄ³¸ö°ïÅÉ¡£
-tax    : Éè¶¨°ïÅÉË°ÂÊ¡£(Î´¿ª·Å)
-doc    : ±àĞ´°ïÅÉËµÃ÷¡£(Î´¿ª·Å)
-color  : °ïÖ÷Îª°ïÅÉÉèÖÃ°ïÅÉµÄÑÕÉ«¡£
-battle : ²é¿´µ±Ç°°ïÕ½Çé¿ö¡£
-efficient:°ïÖ÷Ê¹ÓÃ°ïÅÉÈÙÓşµãÈÃÈ«°ï¸ßĞ§Á·¹¦¡£
+info   ï¼šæŸ¥çœ‹å¹«æ´¾ä¸­çš„äººç‰©ï¼Œæˆå“¡ç‹€æ…‹ï¼Œè²æœ›ã€‚
+hatred ï¼šæŸ¥çœ‹å¹«æ´¾çš„ä»‡æ¨å°è±¡ã€‚
+member ï¼šæŸ¥çœ‹æŸå€‹å¹«æ´¾çš„æˆå“¡ã€‚
+top    ï¼šæŸ¥çœ‹å¹«æ´¾çš„è²æœ›æ’åã€‚
+area   : æŸ¥çœ‹å¹«æ´¾çš„åœ°ç›¤ä¿¡æ¯ã€‚
+out    : è„«é›¢è‡ªå·±æ‰€åœ¨çš„å¹«æ´¾ã€‚
+all    : æŸ¥çœ‹æ‰€æœ‰çš„å¹«æ´¾ä¿¡æ¯ã€‚
+expell : é–‹é™¤å¹«æ´¾ä¸­çš„æˆå“¡ï¼Œæœƒé™ä½å¹«æ´¾è²æœ›ã€‚
+appoint: ä»»å‘½å¹«æ´¾æˆå“¡ä½éšåŠè·éŠœã€‚
+inherit: ç¦ªè®“å‡ºå¹«ä¸»ä¹‹ä½çµ¦å¹«è£¡å…¶ä»–äººã€‚
+ally   : æŸ¥çœ‹å¹«æ´¾è¯ç›ŸåŠèˆ‡å…¶ä»–å¹«æ´¾çµç›Ÿã€‚
+war    : å°æŸå€‹å¹«æ´¾å®£å¸ƒæˆ°çˆ­ã€‚(æœªé–‹æ”¾)
+surrender: å‘å°æˆ°ç‹€æ…‹çš„å¹«æ´¾æ±‚å’Œã€‚(æœªé–‹æ”¾)
+agree  : æ¥å—å°æˆ°ç‹€æ…‹çš„å¹«æ´¾æ±‚å’Œã€‚(æœªé–‹æ”¾)
+arrest : å¹«æ´¾é€šç·ä»¤ã€‚
+invite : é‚€è«‹æŸäººåŠ å…¥ä½ çš„å¹«æœƒã€‚æŸäººå¯ä»¥æ˜¯ç©å®¶æˆ–æ˜¯å¯å¾æ‹›çš„ï¼®ï¼°ï¼£ã€‚
+join   : åŠ å…¥æŸå€‹å¹«æ´¾ã€‚
+tax    : è¨­å®šå¹«æ´¾ç¨…ç‡ã€‚(æœªé–‹æ”¾)
+doc    : ç·¨å¯«å¹«æ´¾èªªæ˜ã€‚(æœªé–‹æ”¾)
+color  : å¹«ä¸»ç‚ºå¹«æ´¾è¨­ç½®å¹«æ´¾çš„é¡è‰²ã€‚
+battle : æŸ¥çœ‹ç•¶å‰å¹«æˆ°æƒ…æ³ã€‚
+efficient:å¹«ä¸»ä½¿ç”¨å¹«æ´¾æ¦®è­½é»è®“å…¨å¹«é«˜æ•ˆç·´åŠŸã€‚
 
-Î×Ê¦¿ÉÒÔ²é¿´¸÷¸ö°ïÅÉµÄĞÅÏ¢£¬Ö»ĞèÒªÔÚÃüÁîºóÃæ¼ÓÉÏ°ïÅÉµÄÃû×Ö»ò
-ÊÇ°ïÅÉÖĞµÄÍæ¼Ò¡£ÁíÍâÎ×Ê¦¿ÉÒÔÊ¹ÓÃ bunch dismiss  ÃüÁîÇ¿ĞĞ½âÉ¢
-Ò»¸ö°ïÅÉ¡£
+å·«å¸«å¯ä»¥æŸ¥çœ‹å„å€‹å¹«æ´¾çš„ä¿¡æ¯ï¼Œåªéœ€è¦åœ¨å‘½ä»¤å¾Œé¢åŠ ä¸Šå¹«æ´¾çš„åå­—æˆ–
+æ˜¯å¹«æ´¾ä¸­çš„ç©å®¶ã€‚å¦å¤–å·«å¸«å¯ä»¥ä½¿ç”¨ bunch dismiss  å‘½ä»¤å¼·è¡Œè§£æ•£
+ä¸€å€‹å¹«æ´¾ã€‚
 
 see also: area, faxiang
 HELP );

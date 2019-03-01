@@ -3,10 +3,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short","����");
+        set("short","內堂");
         set("long", @LONG
-����һ�����µ����ã����ü򵥶����š�����վ�Ÿ�һ�����̵�
-Ů�ɣ���������Ц��Ц���ƺ��ǽ���������������һ��С���ˡ�
+這是一間雅致的內堂，布置簡單而典雅。裡面站著個一身淡綠的
+女郎，向著你似笑非笑。似乎是江南靈秀造了這樣一個小美人。
 LONG );
         set("exits",([
             "north" : __DIR__"qinyun",

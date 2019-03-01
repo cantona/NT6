@@ -4,11 +4,11 @@ void leave_here(object me);
 
 void create ()
 {
-  set ("short", "ÇàÄ¾ÁÖ");
+  set ("short", "é’æœ¨æ—");
   set ("long", HIG @LONG
-ËÄÃæ¶¼ÊÇÓÄ°µµÄÊ÷ÁÖ£¬ÄñÓï»¨Ïã³äÒçÆä¼ä£¬ÊµÔÚÊÇ¾øÃÀµÄ·ç¾°¡£
-È»¶ø£¬Ã»ÓĞÊ²Ã´¿ÉÒÔÖ¸Ê¾Àë¿ªµÄÈ¥Ïò£¬Ò²Ã»ÓĞÊ²Ã´ÄÜ°µÊ¾³ö¿ÚÔÚÄÄ
-Àï¡£
+å››é¢éƒ½æ˜¯å¹½æš—çš„æ¨¹æ—ï¼Œé³¥èªèŠ±é¦™å……æº¢å…¶é–“ï¼Œå¯¦åœ¨æ˜¯çµ•ç¾çš„é¢¨æ™¯ã€‚
+ç„¶è€Œï¼Œæ²’æœ‰ä»€éº¼å¯ä»¥æŒ‡ç¤ºé›¢é–‹çš„å»å‘ï¼Œä¹Ÿæ²’æœ‰ä»€éº¼èƒ½æš—ç¤ºå‡ºå£åœ¨å“ª
+è£¡ã€‚
 LONG);
 
   set("exits", ([
@@ -36,7 +36,7 @@ int do_quit ()
   me = this_player();
 
   set("startroom", base_name(environment(me)), me);
-  tell_object(me,"ÔİÊ±Àë¿ªÇàÄ¾Õó¡­¡­\n");
+  tell_object(me,"æš«æ™‚é›¢é–‹é’æœ¨é™£â€¦â€¦\n");
   return 0; // return 0 to invoke normal quit
 }
 */
@@ -82,7 +82,7 @@ void leave_here(object me)
         cao = new("/quest/tulong/obj/xiaocao");
         cao->move(environment(me));
       }
-      tell_object(me,HIG"ÂÌ²İµØÉÏÓĞÒ»¶ä»¨£¡\n"NOR);
+      tell_object(me,HIG"ç¶ è‰åœ°ä¸Šæœ‰ä¸€æœµèŠ±ï¼\n"NOR);
 }
 
 void found_outlet(object me)

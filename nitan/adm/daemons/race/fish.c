@@ -1,4 +1,4 @@
-// fish.c ÓÎÓã
+// fish.c éŠé­š
 
 #ifndef __FISH__
 #define __FISH__
@@ -11,14 +11,14 @@ inherit F_DBASE;
 
 mapping *combat_action = ({
 ([
-        "action":                "$NÓÎÉÏÀ´À´ÕÅ×ìÍù$nµÄ$lºİºİµØÒ»Ò§",
+        "action":                "$NéŠä¸Šä¾†ä¾†å¼µå˜´å¾€$nçš„$lç‹ ç‹ åœ°ä¸€å’¬",
         "damage":                20,
-        "damage_type":        "Ò§ÉË",
+        "damage_type":        "å’¬å‚·",
 ]),
 ([
-        "action":                "$N°Ú¶¯Î²°ÍÍù$nµÄ$lÃÍµØÒ»ÅÄ",
+        "action":                "$Næ“ºå‹•å°¾å·´å¾€$nçš„$lçŒ›åœ°ä¸€æ‹",
         "damage":                20,
-        "damage_type":        "ÓÙÉË",
+        "damage_type":        "æ·¤å‚·",
 ]),
 });
 
@@ -27,17 +27,17 @@ void create()
         seteuid(getuid());
         set("attitude", "peaceful");
         set("limbs", ({
-                "Í·²¿",        "Èù²¿",        "±³²¿",        "¸¹²¿",        
-                "Ç°÷¢",        "ºó÷¢", "Î²°Í"
+                "é ­éƒ¨",        "è…®éƒ¨",        "èƒŒéƒ¨",        "è…¹éƒ¨",        
+                "å‰é°­",        "å¾Œé°­", "å°¾å·´"
         }) );
 
-        set("dead_message",       "\n$N°Ú¶¯ÁË¼¸ÏÂ£¬°×°×µÄ¶Ç×ÓÍùÉÏ·­ÁËÆğÀ´¡£\n\n"    );
-        set("unconcious_message", "\n$N°Ú¶¯ÁË¼¸ÏÂ£¬ºìºìµÄÈù°ïÍùÍâ·­ÁË³öÀ´¡£\n\n"    );
-        set("revive_message",     "\n$N°ÚÁË¼¸ÏÂ£¬ÓÖÔÚË®ÖĞÓÎÁË¿ªÈ¥¡£\n\n"            );
-        set("leave_msg",          "´òÁË¸öË®Æ¯ÓÎÁË³öÈ¥"                    );
-        set("arrive_msg",         "ÓÎÁË¹ıÀ´£¬ÔÚË®ÖĞÁé»îµØ´òÁË¸ö×ª¶ù"            );
-        set("fleeout_message",    "´òÁË¸öË®Æ¯ÓÎÁË³öÈ¥"                    );
-        set("fleein_message",     "Ò¡Í·°ÚÎ²µØÓÎÁË¹ıÀ´£¬°×°×µÄ¶Ç×ÓÍùÉÏ·­×Å"      );
+        set("dead_message",       "\n$Næ“ºå‹•äº†å¹¾ä¸‹ï¼Œç™½ç™½çš„è‚šå­å¾€ä¸Šç¿»äº†èµ·ä¾†ã€‚\n\n"    );
+        set("unconcious_message", "\n$Næ“ºå‹•äº†å¹¾ä¸‹ï¼Œç´…ç´…çš„è…®å¹«å¾€å¤–ç¿»äº†å‡ºä¾†ã€‚\n\n"    );
+        set("revive_message",     "\n$Næ“ºäº†å¹¾ä¸‹ï¼Œåˆåœ¨æ°´ä¸­éŠäº†é–‹å»ã€‚\n\n"            );
+        set("leave_msg",          "æ‰“äº†å€‹æ°´æ¼‚éŠäº†å‡ºå»"                    );
+        set("arrive_msg",         "éŠäº†éä¾†ï¼Œåœ¨æ°´ä¸­éˆæ´»åœ°æ‰“äº†å€‹è½‰å…’"            );
+        set("fleeout_message",    "æ‰“äº†å€‹æ°´æ¼‚éŠäº†å‡ºå»"                    );
+        set("fleein_message",     "æ–é ­æ“ºå°¾åœ°éŠäº†éä¾†ï¼Œç™½ç™½çš„è‚šå­å¾€ä¸Šç¿»è‘—"      );
 }
 
 void setup_fish(object ob)
@@ -49,9 +49,9 @@ void setup_fish(object ob)
         ob->set_default_action(__FILE__, "query_action");
 	set("default_actions", (: call_other, __FILE__, "query_action" :), ob);
 
-        my["unit"] = "Ìõ";
+        my["unit"] = "æ¢";
         
-        if( undefinedp(my["gender"]) ) my["gender"] = (random(2))?"´ÆĞÔ":"ĞÛĞÔ";
+        if( undefinedp(my["gender"]) ) my["gender"] = (random(2))?"é›Œæ€§":"é›„æ€§";
         if( undefinedp(my["age"]) ) my["age"] = random(5) + 5;
 
         if( undefinedp(my["str"]) ) my["str"] = random(10) + 5;

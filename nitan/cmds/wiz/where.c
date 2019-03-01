@@ -17,7 +17,7 @@ int main(object me, string str)
                 return 0;
 
         if (! str)
-                return notify_fail("Ö¸Áî¸ñÊ½£ºwhere <ÈËÎï»òµµÃû>\n"); 
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šwhere <äººç‰©æˆ–æª”å>\n"); 
 
         ob = find_player(str);
         if (! ob) ob = find_living(str);
@@ -28,20 +28,20 @@ int main(object me, string str)
         }
 
         if (! ob)
-                return notify_fail("Ã»ÓĞÕÒµ½Õâ¸öÎïÆ·¡£\n");
+                return notify_fail("æ²’æœ‰æ‰¾åˆ°é€™å€‹ç‰©å“ã€‚\n");
 
         where = environment(ob);
         if (! where)
-                return notify_fail("Õâ¸öÈË²»ÖªµÀÔÚÄÇÀïÒ®...\n");
+                return notify_fail("é€™å€‹äººä¸çŸ¥é“åœ¨é‚£è£¡è€¶...\n");
 
         /*
-        write(sprintf("%s(%s)ÏÖÔÚÔÚ%s(%s).\n",
+        write(sprintf("%s(%s)ç¾åœ¨åœ¨%s(%s).\n",
                 (string)ob->name(1),
                 query("id", ob),
                 (string)where->short(),
                 (string)file_name(where)));
         */
-        printf(YEL"\nÄãÄÃ³öË®¾§Çò£¬ÍùÀïÒ»¿´£¬Å¶£¡%s(%s)ÏÖÔÚÔÚ...\n\n"NOR,
+        printf(YEL"\nä½ æ‹¿å‡ºæ°´æ™¶çƒï¼Œå¾€è£¡ä¸€çœ‹ï¼Œå“¦ï¼%s(%s)ç¾åœ¨åœ¨...\n\n"NOR,
                 (string)ob->name(1),
                 query("id", ob));
         LOOK_CMD->look_room(me, where);
@@ -51,9 +51,9 @@ int main(object me, string str)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½: where <ÈËÎïID>
+æŒ‡ä»¤æ ¼å¼: where <äººç‰©ID>
 
-Õâ¸öÖ¸ÁîÊÇÓÃÀ´µÃÖªÈËÎïÄ¿Ç°ËùÔÚµÄÎ»ÖÃ.
+é€™å€‹æŒ‡ä»¤æ˜¯ç”¨ä¾†å¾—çŸ¥äººç‰©ç›®å‰æ‰€åœ¨çš„ä½ç½®.
 
 HELP );
         return 1;

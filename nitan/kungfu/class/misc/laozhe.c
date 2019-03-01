@@ -5,10 +5,10 @@ inherit "/inherit/char/punisher";
 
 void create()
 {
-        set_name("ÌÆÃÅÀÏÕß", ({ "tangmen laozhe", "tangmen", "laozhe"}));
+        set_name("å”é–€è€è€…", ({ "tangmen laozhe", "tangmen", "laozhe"}));
         set("long", 
-"ÌÆÃÅÊÀ¼ÒÒşÍËµÄÀÏÕß£¬Ã»ÓĞÈËÖªµÀËûµÄĞÕÃû¡£\n");
-        set("gender", "ÄĞĞÔ");
+"å”é–€ä¸–å®¶éš±é€€çš„è€è€…ï¼Œæ²’æœ‰äººçŸ¥é“ä»–çš„å§“åã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 91);
         set("class", "tangmen");
         set("attitude", "peaceful");
@@ -59,7 +59,7 @@ void create()
         
         prepare_skill("hand", "boyun-suowu");
         
-        create_family("ÌÆÃÅÊÀ¼Ò", 0, "ÕÆÃÅ");
+        create_family("å”é–€ä¸–å®¶", 0, "æŒé–€");
 
         set_temp("apply/damage", 100);  
         set_temp("apply/unarmed_damage", 100);  

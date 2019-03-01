@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ʯ��");
+        set("short", "石室");
         set("long", @LONG
-�谵��ʯ��û�д��������ǳ��ְ�˽������ü����ҡ���Χ�ڷ�
-�ż����̾ߣ�ǽ����Щ�¾ɲ�һ��Ѫ�ۣ����˲����������������ǳ�
-ʪ��ͷ����ʱ����ˮ�顣
+昏暗的石屋沒有窗戶，乃是長樂幫私設的刑堂及囚室。周圍擺放
+著幾件刑具，牆上有些新舊不一的血痕，令人不寒而栗。室內甚是潮
+濕，頭頂不時滴下水珠。
 LONG );
         set("exits", ([
                 "west" : __DIR__"clyongdao",

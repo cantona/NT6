@@ -4,13 +4,13 @@
 inherit HAMMER;
 void create()
 {
-        set_name("¹ÅÄ¾ÇÙ", ({ "gumu qin", "qin" }) );
+        set_name("å¤æœ¨ç´", ({ "gumu qin", "qin" }) );
         set_weight(7000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "ÕâÊÇÒ»°ÑÍâ±í¹ÅÉ«¹ÅÏã£¬µ«ÊÇÄÚ°ü¾«ÌúµÄÁùÏÒÇÙ¡£\n");
+                set("unit", "æŠŠ");
+                set("long", "é€™æ˜¯ä¸€æŠŠå¤–è¡¨å¤è‰²å¤é¦™ï¼Œä½†æ˜¯å…§åŒ…ç²¾éµçš„å…­å¼¦ç´ã€‚\n");
                 set("value", 3);
                 set("material", "iron");
         }

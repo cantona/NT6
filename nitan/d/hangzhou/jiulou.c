@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-        set("short", "Â¥ÍâÂ¥");
+        set("short", "æ¨“å¤–æ¨“");
         set("long", @LONG
-ÌáÆð¡°Â¥ÍâÂ¥¡±·½Ô²°ÙÀïÎÞÈË²»Öª¡£ÕâÀï¸÷Ê½Ãû²ËÊÇº¼ÖÝÒ»¾ø¡£
-À´ÓÎºþµÄÈËÃÇ¶¼Ò»¶¨»áÀ´ÕâÀï³¢³¢¡£Õû¸ö´óÌÃÄÖºåºåµÄ¼·ÂúÁË¸÷Ê½ÈË
-µÈ¡£µêÐ¡¶ùÅÜÀ´ÅÜÈ¥£¬Ã¦×ÅÕÐºô¿ÍÈË¡£Ç½ÉÏ¹Ò×Å¼Û¸ñÅÆ×Ó(paizi)¡£
+æèµ·â€œæ¨“å¤–æ¨“â€æ–¹åœ“ç™¾è£¡ç„¡äººä¸çŸ¥ã€‚é€™è£¡å„å¼åèœæ˜¯æ­å·žä¸€çµ•ã€‚
+ä¾†éŠæ¹–çš„äººå€‘éƒ½ä¸€å®šæœƒä¾†é€™è£¡å˜—å˜—ã€‚æ•´å€‹å¤§å ‚é¬§å“„å“„çš„æ“ æ»¿äº†å„å¼äºº
+ç­‰ã€‚åº—å°å…’è·‘ä¾†è·‘åŽ»ï¼Œå¿™è‘—æ‹›å‘¼å®¢äººã€‚ç‰†ä¸ŠæŽ›è‘—åƒ¹æ ¼ç‰Œå­(paizi)ã€‚
 LONG);
         set("exits", ([
             "west"      : __DIR__"road10",
@@ -20,13 +20,13 @@ LONG);
         ]));
         set("item_desc", ([
             "paizi" : "
-¶«ÆÂÈâ(Pork)      £ºÒ»Á½°×ÒøÓÖ¶þÊ®ÎÄÍ­°å
-Î÷ºþ´×Óã(Fish)    £ºÒ»Á½°×ÒøÓÖ¶þÊ®ÎÄÍ­°å
-°Ù¹ûÓÍ°ü(Baozi)   £ºÆßÊ®ÎÄÍ­°å
-Áú¾®ÏºÈÊ(Shrimp)  £ºÎåÊ®ÎÄÍ­°å
-½Ð»¯Í¯¼¦(Chicken) £ºÒ»Á½°×ÒøÓÖ¶þÊ®ÎÄÍ­°å
-¹ð»¨ÏÊÀõ¸þ(Guihua geng)£ºÒ»Á½°×ÒøÓÖ¶þÊ®ÎÄÍ­°å
-¾ÆÆ¿(Jiuping)     £ºÊ®ÁùÁ½°×Òø\n",
+æ±å¡è‚‰(Pork)      ï¼šä¸€å…©ç™½éŠ€åˆäºŒåæ–‡éŠ…æ¿
+è¥¿æ¹–é†‹é­š(Fish)    ï¼šä¸€å…©ç™½éŠ€åˆäºŒåæ–‡éŠ…æ¿
+ç™¾æžœæ²¹åŒ…(Baozi)   ï¼šä¸ƒåæ–‡éŠ…æ¿
+é¾äº•è¦ä»(Shrimp)  ï¼šäº”åæ–‡éŠ…æ¿
+å«åŒ–ç«¥é›ž(Chicken) ï¼šä¸€å…©ç™½éŠ€åˆäºŒåæ–‡éŠ…æ¿
+æ¡‚èŠ±é®®æ —ç¾¹(Guihua geng)ï¼šä¸€å…©ç™½éŠ€åˆäºŒåæ–‡éŠ…æ¿
+é…’ç“¶(Jiuping)     ï¼šåå…­å…©ç™½éŠ€\n",
         ]));
 //        set("no_clean_up", 0);
 	set("coor/x", 840);

@@ -1,4 +1,4 @@
-// dating.c �ʺ�Ӵ���
+// dating.c 彩虹居大廳
 
 #include <room.h>
 
@@ -7,18 +7,18 @@ inherit ROOM;                                   /* EXAMPLE */
 
 void create()
 {
-        set("short", "����");             /* EXAMPLE */
-//**    set("short", "ROOM_NAME����");
+        set("short", "大廳");             /* EXAMPLE */
+//**    set("short", "ROOM_NAME大廳");
         set("long", @LONG
-����ǲʺ������ӭ�Ϳ��˵ĵط���������һЩ���Σ����������磬
-�����й����������������������Ȼʲô��û��д�����������˵ķ��䡣
+這就是彩虹居主人迎送客人的地方，正中有一些桌椅，側面是屏風，
+廳堂中掛著兩個條幅。不過上面居然什麼都沒有寫。東面是主人的房間。
 LONG );
 
-        set("default_long", "�����ROOM_NAME����ROOM_OWNERӭ�Ϳ�"  /* EXAMPLE */
-                            "�˵ĵط���������Щ���Σ�����������"   /* EXAMPLE */
-                            "���硣����������ROOM_OWNER�ķ��䣬"   /* EXAMPLE */
-                            "��һ��ľ�������š��ϱ��Ǵ��ţ���ȥ"   /* EXAMPLE */
-                            "����Ժ�ӡ�");                         /* EXAMPLE */
+        set("default_long", "這就是ROOM_NAME主人ROOM_OWNER迎送客"  /* EXAMPLE */
+                            "人的地方。正中有些桌椅，側面是兩扇"   /* EXAMPLE */
+                            "屏風。東首是主人ROOM_OWNER的房間，"   /* EXAMPLE */
+                            "有一扇木門虛掩著。南邊是大門，出去"   /* EXAMPLE */
+                            "就是院子。");                         /* EXAMPLE */
                                                                    /* EXAMPLE */
         setup();
 
@@ -28,7 +28,7 @@ LONG );
                 "south"  : __DIR__"xiaoyuan",   /* EXAMPLE */
         ]));
 
-        create_door("east", "ľ��", "west", DOOR_CLOSED);
+        create_door("east", "木門", "west", DOOR_CLOSED);
 
         set("no_sleep_room", 1);
 

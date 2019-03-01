@@ -1,17 +1,17 @@
-// wuming.c ÎŞÃûÀÏÉ®
+// wuming.c ç„¡åè€åƒ§
 
 inherit NPC;
 inherit F_COAGENT;
 
 void create()
 {
-        set_name("ÎŞÃûÀÏÉ®", ({ "wuming laoseng", "wuming" }));
+        set_name("ç„¡åè€åƒ§", ({ "wuming laoseng", "wuming" }));
         set("long",
-                "ËûÊÇÒ»Î»Ğë·¢»¨°×µÄÀÏÉ®£¬Éí×Å´Ö²¼ÒÂÉÀ£¬ÊÇ"
-                "ÉÙÁÖËÂÀïÃæ´òÔÓµÄÉ®ÈË¡£\n"
+                "ä»–æ˜¯ä¸€ä½é ˆç™¼èŠ±ç™½çš„è€åƒ§ï¼Œèº«è‘—ç²—å¸ƒè¡£è¡«ï¼Œæ˜¯"
+                "å°‘æ—å¯ºè£¡é¢æ‰“é›œçš„åƒ§äººã€‚\n"
         );
 
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("attitude", "friendly");
         set("class", "bonze");
 
@@ -88,7 +88,7 @@ void create()
         prepare_skill("finger", "nianhua-zhi");
         prepare_skill("strike", "sanhua-zhang");
 
-        create_family("ÉÙÁÖÅÉ", 0, "´òÔÓÉ®ÈË");
+        create_family("å°‘æ—æ´¾", 0, "æ‰“é›œåƒ§äºº");
 
         setup();
 

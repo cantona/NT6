@@ -6,13 +6,13 @@ void finish(object me, object ob);
 
 void create()
 {
-        set_name(MAG"Ğ¡¸«Í·"NOR, ({ "fu tou"}));
+        set_name(MAG"å°æ–§é ­"NOR, ({ "fu tou"}));
         set_weight(100);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»°Ñ²ÉÒ©ÈË³£ÓÃµÄĞ¡¸«Í·£¬ÓÃÀ´¿³·¥£¨kanfa£©Ä¾ÀàÒ©²Ä¡£\n");
-                set("unit", "°Ñ"); 
+                set("long", "ä¸€æŠŠæ¡è—¥äººå¸¸ç”¨çš„å°æ–§é ­ï¼Œç”¨ä¾†ç ä¼ï¼ˆkanfaï¼‰æœ¨é¡è—¥æã€‚\n");
+                set("unit", "æŠŠ"); 
                 set("no_get",1);
                 set("no_drop",1);             
                 set("no_put",1);
@@ -39,31 +39,31 @@ int do_kanfa()
     	 || query("id", weapon) != "futou" )
     	if( !objectp(weapon=query_temp("secondary_weapon", me) )
     	 || query("id", weapon) != "futou" )
-        	return notify_fail("Äã²»ÄÃ×Å¹¤¾ß£¬ÕÒµ½Ò©²ÄÒ²¿³²»ÏÂÀ´°¡£¡\n");
+        	return notify_fail("ä½ ä¸æ‹¿è‘—å·¥å…·ï¼Œæ‰¾åˆ°è—¥æä¹Ÿç ä¸ä¸‹ä¾†å•Šï¼\n");
 
   	//if( !query("outdoors", environment(me)) )
-  	//return notify_fail("ÄãÔÚ·¿¼äÀïÄÜ¿³µ½Ê²Ã´£¿¿³ÈËÂğ£¿\n");
+  	//return notify_fail("ä½ åœ¨æˆ¿é–“è£¡èƒ½ç åˆ°ä»€éº¼ï¼Ÿç äººå—ï¼Ÿ\n");
 
-    if( strsrch(query("short", environment(me)),"ÁÖ")<0
-     && strsrch(query("short", environment(me)),"Ä¾")<0
-         && strsrch(query("short", environment(me)),"Ê÷")<0
-              && strsrch(query("long", environment(me)),"ÁÖ")<0
-              && strsrch(query("long", environment(me)),"Ä¾")<0
-              && strsrch(query("long", environment(me)),"Ê÷")<0 )
+    if( strsrch(query("short", environment(me)),"æ—")<0
+     && strsrch(query("short", environment(me)),"æœ¨")<0
+         && strsrch(query("short", environment(me)),"æ¨¹")<0
+              && strsrch(query("long", environment(me)),"æ—")<0
+              && strsrch(query("long", environment(me)),"æœ¨")<0
+              && strsrch(query("long", environment(me)),"æ¨¹")<0 )
 
 
-  	return notify_fail("Ö»ÓĞÊ÷ÁÖÀï²ÅÓĞ¿ÉÄÜÕÒµ½Ò©ÓÃÊ÷Ä¾!\n");
+  	return notify_fail("åªæœ‰æ¨¹æ—è£¡æ‰æœ‰å¯èƒ½æ‰¾åˆ°è—¥ç”¨æ¨¹æœ¨!\n");
   	
 	if(me->is_busy())
-  	return notify_fail("ÄãÏÖÔÚÕıÃ¦,µÈÒ»ÏÂÔÙ¿³°É!\n");
+  	return notify_fail("ä½ ç¾åœ¨æ­£å¿™,ç­‰ä¸€ä¸‹å†ç å§!\n");
 
   	if( query("kanfa", environment(me))>time() )
-  	return notify_fail("ÎªÁË»·¾³±£»¤£¬Çë²»ÒªÀÄ·¥Ê÷Ä¾!\n");
+  	return notify_fail("ç‚ºäº†ç’°å¢ƒä¿è­·ï¼Œè«‹ä¸è¦æ¿«ä¼æ¨¹æœ¨!\n");
 
   	me->start_busy(5);
 
 	me->start_call_out( (: call_other, __FILE__, "finish", me, ob :), 3);
-	message_vision( HIB"$NËÄ´¦ÕÅÍû£¬¿´¿´ÄÜ²»ÄÜÕÒµ½ÓĞÓÃµÄÊ÷Ä¾¡£\n"NOR, this_player());
+	message_vision( HIB"$Nå››è™•å¼µæœ›ï¼Œçœ‹çœ‹èƒ½ä¸èƒ½æ‰¾åˆ°æœ‰ç”¨çš„æ¨¹æœ¨ã€‚\n"NOR, this_player());
 	return 1;
 }
 
@@ -74,13 +74,13 @@ void finish(object me, object ob)
   	if(random(5)>4) 
 	{
   		me->start_busy(2);
-  		message_vision( HIW"Ñ°ÕÒÒ»·¬Ö®ºó$NÒ»ÎŞËù»ñ£¬Ö»µÃÊ§ÍûµØÌ¾ÁË¿ÚÆø¡£\n"NOR, this_player());
+  		message_vision( HIW"å°‹æ‰¾ä¸€ç•ªä¹‹å¾Œ$Nä¸€ç„¡æ‰€ç²ï¼Œåªå¾—å¤±æœ›åœ°å˜†äº†å£æ°£ã€‚\n"NOR, this_player());
 
    	}
   
   	else if ( random(20)<2) 
 	{
-  		message_vision( HIG"$NºÃ²»ÈİÒ×ÕÒµ½Ò»¿ÃÓĞÓÃµÄÊ÷Ä¾£¬¿³ÁËÁ½ÏÂÈ´·¢ÏÖ¸«Í·±À»µÁË!\n"NOR, this_player());
+  		message_vision( HIG"$Nå¥½ä¸å®¹æ˜“æ‰¾åˆ°ä¸€æ£µæœ‰ç”¨çš„æ¨¹æœ¨ï¼Œç äº†å…©ä¸‹å»ç™¼ç¾æ–§é ­å´©å£äº†!\n"NOR, this_player());
   		destruct(ob);
   	}
 	else
@@ -94,6 +94,6 @@ addn("neili", -(query("neili", me)/10), 		me);
    		mu->move(me);
   		me->start_busy(2);
 
-   		message_vision(HIR"$NÍ»È»·¢ÏÖÒ»¿Ã"+mu->name()+HIR"Ê÷£¬Á¬Ã¦È¡³ö¸«Í·£¬·Ñ¾¡È«ÉíÁ¦Æø½«Æä¿³·¥ÏÂÀ´¡£\n"NOR, this_player());
+   		message_vision(HIR"$Nçªç„¶ç™¼ç¾ä¸€æ£µ"+mu->name()+HIR"æ¨¹ï¼Œé€£å¿™å–å‡ºæ–§é ­ï¼Œè²»ç›¡å…¨èº«åŠ›æ°£å°‡å…¶ç ä¼ä¸‹ä¾†ã€‚\n"NOR, this_player());
 	}
 }

@@ -1,14 +1,14 @@
         query_ip_name(3)        LP MudOSv21c7                (7 Jul 1996)
-        º¯ÊıÃû³Æ:
-                query_ip_name() - ´«»ØÖ¸¶¨Íæ¼ÒµÄ ip Ãû³Æ.
-        º¯ÊıÓï·¨:        
+        å‡½æ•¸åç¨±:
+                query_ip_name() - å‚³å›æŒ‡å®šç©å®¶çš„ ip åç¨±.
+        å‡½æ•¸èªæ³•:        
                 string query_ip_name( object ob );
-                ×Ö´® query_ip_name( Îï¼ş ob );
-        º¯ÊıÓÃ·¨:
-                ´«»ØÍæ¼Ò ob µÄ IP Î»Ö·. Ò»¸ö½Ğ×ö addr_server µÄ·ÇÍ¬²½
-                ³ÌĞò»áÕÒ³öÕâĞ©Ãû³Æ. Èç¹ûÕÒ²»µ½ ip Ãû³Æ, ¾Í»á´«»Ø ip ºÅÂë.
-        ²Î¿¼º¯Êı:
+                å­—ä¸² query_ip_name( ç‰©ä»¶ ob );
+        å‡½æ•¸ç”¨æ³•:
+                å‚³å›ç©å®¶ ob çš„ IP ä½å€. ä¸€å€‹å«åš addr_server çš„éåŒæ­¥
+                ç¨‹åºæœƒæ‰¾å‡ºé€™äº›åç¨±. å¦‚æœæ‰¾ä¸åˆ° ip åç¨±, å°±æœƒå‚³å› ip è™Ÿç¢¼.
+        åƒè€ƒå‡½æ•¸:
                 query_ip_number(3), query_host_name(3), resolve(3),
                 socket_address(3)
-        ÊÖ²á·­Òë:
+        æ‰‹å†Šç¿»è­¯:
                 Phoebus@ZH        97.May.1.                (Writen 5/23/97)

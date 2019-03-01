@@ -4,11 +4,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("Ò°Öí", ({ "pig", "yezhu" }) );
-        set("race", "×ßÐó");
+        set_name("é‡Žè±¬", ({ "pig", "yezhu" }) );
+        set("race", "èµ°ç•œ");
         set("age", 4);
         set("long", 
-"ÕâÊÇÒ»Ö»Ð×ÃÍµÄÒ°Öí£¬³¤µÃ¼«Îª´Ö×³£¬×ìÀï»¹²»¶Ï·¢³ö¿ÉÅÂµÄºåÉù¡£\n");
+"é€™æ˜¯ä¸€åªå…‡çŒ›çš„é‡Žè±¬ï¼Œé•·å¾—æ¥µç‚ºç²—å£¯ï¼Œå˜´è£¡é‚„ä¸æ–·ç™¼å‡ºå¯æ€•çš„å“„è²ã€‚\n");
         set("attitude", "peaceful");
 
         set("str", 26);
@@ -17,8 +17,8 @@ void create()
         set("shen_type", -1);
         set("chat_msg_combat", ({
                 (: this_object(), "random_move" :),
-                "Ò°Öí´ó¿Ú´ó¿ÚµØ´­×ÅÆø£ººôßê£¡ºôßê£¡ºôßê£¡ºôßê£¡\n",
-                "Ò°ÖíÍ»È»ÌøÁËÆðÀ´£¬ÑÛ¾¦¶ñºÝºÝµØ¶¢×ÅÄã£¬¿´Ñù×ÓÏëÒªÆË¹ýÀ´¡£\n"
+                "é‡Žè±¬å¤§å£å¤§å£åœ°å–˜è‘—æ°£ï¼šå‘¼å“§ï¼å‘¼å“§ï¼å‘¼å“§ï¼å‘¼å“§ï¼\n",
+                "é‡Žè±¬çªç„¶è·³äº†èµ·ä¾†ï¼Œçœ¼ç›æƒ¡ç‹ ç‹ åœ°ç›¯è‘—ä½ ï¼Œçœ‹æ¨£å­æƒ³è¦æ’²éŽä¾†ã€‚\n"
         }) );
 
         set_temp("apply/attack", 15);
@@ -41,7 +41,7 @@ void init()
 void die()
 {
         object ob;
-        message_vision("$NÍÛÑ½µØ²Òº¿Ò»Éù£¬ËÀÁË£¡\n", this_object());
+        message_vision("$Nå“‡å‘€åœ°æ…˜åšŽä¸€è²ï¼Œæ­»äº†ï¼\n", this_object());
         ob = new("/d/xiakedao/obj/pigdie");
         ob->move(environment(this_object()));
         destruct(this_object());

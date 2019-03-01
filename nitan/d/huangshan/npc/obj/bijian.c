@@ -5,13 +5,13 @@
 inherit SWORD;
 void create()
 {
-        set_name( HIG "±Ì½£" NOR, ({ "green sword", "sword" }) );
+        set_name( HIG "ç¢§åŠ" NOR, ({ "green sword", "sword" }) );
         set_weight(7000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "ÕâÊÇÒ»°Ñ´äÂÌÉ«µÄ½££¬½£ÉíÓÖÏ¸ÓÖ³¤¡£\n");
+                set("unit", "æŠŠ");
+                set("long", "é€™æ˜¯ä¸€æŠŠç¿ ç¶ è‰²çš„åŠï¼ŒåŠèº«åˆç´°åˆé•·ã€‚\n");
                 set("value", 400);
                 set("material", "steel");
         }

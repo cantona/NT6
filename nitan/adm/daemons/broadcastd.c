@@ -8,23 +8,23 @@ inherit F_DBASE;
 mapping push_msg = ([]);
 string query_save_file() { return DATA_DIR + "broadcastd"; }
 
-/* ÁÙÊ±Í¨¹ıpushmsg Ö¸ÁîÍÆËÍµÄ¹ã²¥ÏûÏ¢
-¸ñÊ½£º
+/* è‡¨æ™‚é€šépushmsg æŒ‡ä»¤æ¨é€çš„å»£æ’­æ¶ˆæ¯
+æ ¼å¼ï¼š
 push_msg = ([
-   "msg±àºÅ" :  ([
-      "¹ã²¥ÄÚÈİ"       : "xxx",
-      "¼ä¸ôÊ±¼ä"       : N, // µ¥Î»Ãë
-      "Ñ­»·´ÎÊı"       : N, // int
-      "ÉÏ´Î¹ã²¥Ê±¼ä£º  : TIME,
-      "ÒÑÑ­»·´ÎÊı"     : N, // int
+   "msgç·¨è™Ÿ" :  ([
+      "å»£æ’­å…§å®¹"       : "xxx",
+      "é–“éš”æ™‚é–“"       : N, // å–®ä½ç§’
+      "å¾ªç’°æ¬¡æ•¸"       : N, // int
+      "ä¸Šæ¬¡å»£æ’­æ™‚é–“ï¼š  : TIME,
+      "å·²å¾ªç’°æ¬¡æ•¸"     : N, // int
    ]),
 ]);
 */
 void create()
 {
         seteuid(getuid());
-        set("channel_id", "¹ã²¥¾«Áé");
-        CHANNEL_D->do_channel( this_object(), "sys", "¹ã²¥¾«ÁéÒÑ¾­Æô¶¯¡£");
+        set("channel_id", "å»£æ’­ç²¾éˆ");
+        CHANNEL_D->do_channel( this_object(), "sys", "å»£æ’­ç²¾éˆå·²ç¶“å•Ÿå‹•ã€‚");
 
         if( !restore() && !mapp(push_msg) )
                 push_msg = ([]);
@@ -64,27 +64,27 @@ public int add_push_msg(string title, string info, int delay, int times)
         else
                 key = keys(push_msg);
 
-        // ¼ì²é±êÌâÊÇ·ñÖØ¸´
+        // æª¢æŸ¥æ¨™é¡Œæ˜¯å¦é‡å¾©
         if (sizeof(key))
         {
                 if (member_array(title, key) != -1)
-                        return notify_fail("±êÌâÖØ¸´£¡\n");
+                        return notify_fail("æ¨™é¡Œé‡å¾©ï¼\n");
         }
 
         if (sizeof(info) > 300)
-                return notify_fail("ĞÅÏ¢³¤¶È³¬³¤" + sprintf("%d", sizeof(info) - 88) + "¸ö×Ö·û£¡\n");
+                return notify_fail("ä¿¡æ¯é•·åº¦è¶…é•·" + sprintf("%d", sizeof(info) - 88) + "å€‹å­—ç¬¦ï¼\n");
 
         if (delay < 1)
-                return notify_fail("¼ä¸ôÊ±¼ä²»ÄÜµÍÓÚ1Ãë¡£\n");
+                return notify_fail("é–“éš”æ™‚é–“ä¸èƒ½ä½äº1ç§’ã€‚\n");
 
         if (times < 1)
-                return notify_fail("Ñ­»·´ÎÊı²»ÄÜĞ¡ÓÚ1¡£\n");
+                return notify_fail("å¾ªç’°æ¬¡æ•¸ä¸èƒ½å°äº1ã€‚\n");
 
         if( !mapp(push_msg) ) push_msg = ([]);
         push_msg += ([
               title : ([
                   "msg"       : info,
-                  "delay"     : delay, // µ¥Î»Ãë
+                  "delay"     : delay, // å–®ä½ç§’
                   "times"     : times,
                   "last_broadcast"   : 0,
                   "broadcast_times"  : 0,
@@ -92,7 +92,7 @@ public int add_push_msg(string title, string info, int delay, int times)
         ]);
 
         save();
-        write("Ìí¼Ó³É¹¦£¡Ê¹ÓÃÖ¸Áî pushmsg list ²é¿´µ±Ç°ĞÅÏ¢ÁĞ±í¡£\n");
+        write("æ·»åŠ æˆåŠŸï¼ä½¿ç”¨æŒ‡ä»¤ pushmsg list æŸ¥çœ‹ç•¶å‰ä¿¡æ¯åˆ—è¡¨ã€‚\n");
         return 1;
 }
 
@@ -104,18 +104,18 @@ public int show_push_lish()
         msg = HIC "\n=----------------------------------------=\n" NOR;
 
         if (! sizeof(push_msg))
-                return notify_fail("µ±Ç°Ã»ÓĞPUSHMSGĞÅÏ¢£¡\n");
+                return notify_fail("ç•¶å‰æ²’æœ‰PUSHMSGä¿¡æ¯ï¼\n");
 
         key = keys(push_msg);
 
         for (i = 0; i < sizeof(key); i ++)
         {
-                msg += HIY "[" + key[i] + "]    " HIC + "¼ä¸ô" + sprintf("%d", push_msg[key[i]]["delay"]) + "Ãë    " +
-                       "Ñ­»·" + sprintf("%d/%d", push_msg[key[i]]["broadcast_times"],push_msg[key[i]]["times"] ) + "\n" NOR;
-                msg += HIY "ÄÚÈİ£º" + HIC + push_msg[key[i]]["msg"] + "\n\n";
+                msg += HIY "[" + key[i] + "]    " HIC + "é–“éš”" + sprintf("%d", push_msg[key[i]]["delay"]) + "ç§’    " +
+                       "å¾ªç’°" + sprintf("%d/%d", push_msg[key[i]]["broadcast_times"],push_msg[key[i]]["times"] ) + "\n" NOR;
+                msg += HIY "å…§å®¹ï¼š" + HIC + push_msg[key[i]]["msg"] + "\n\n";
         }
         msg += HIC "\n=----------------------------------------=\n" NOR;
-        msg += HIR "Ö¸Áî pushmsg del [TITLE] ¿ÉÉ¾³ı¹ã²¥£¡\n" NOR;
+        msg += HIR "æŒ‡ä»¤ pushmsg del [TITLE] å¯åˆªé™¤å»£æ’­ï¼\n" NOR;
 
         write(msg);
         return 1;
@@ -129,14 +129,14 @@ public int delete_push_msg(string title)
         else
                 key = keys(push_msg);
 
-        // ¼ì²é±êÌâÊÇ·ñÖØ¸´
+        // æª¢æŸ¥æ¨™é¡Œæ˜¯å¦é‡å¾©
         if (sizeof(key))
         {
                 if (member_array(title, key) == -1)
-                        return notify_fail("ÎŞ´Ë±êÌâ£¡\n");
+                        return notify_fail("ç„¡æ­¤æ¨™é¡Œï¼\n");
         }
         else
-                return notify_fail("µ±Ç°ÎŞPUSHMSG£¡\n");
+                return notify_fail("ç•¶å‰ç„¡PUSHMSGï¼\n");
 
         map_delete(push_msg, title);
 
@@ -153,18 +153,18 @@ void reback_lonely_book()
         object book;
 
         remove_call_out("reback_lonely_book");
-        call_out("reback_lonely_book", 3600*24); // 24Ğ¡Ê±»ØÊÕÒ»´Î
+        call_out("reback_lonely_book", 3600*24); // 24å°æ™‚å›æ”¶ä¸€æ¬¡
 
         file = get_dir("/clone/lonely/book/", -1);
 
-        message_system(HIW "ÏµÍ³»ØÊÕÎ¨Ò»ÎïÆ·¡£\n" NOR);
+        message_system(HIW "ç³»çµ±å›æ”¶å”¯ä¸€ç‰©å“ã€‚\n" NOR);
 
         for (iCount = 0; iCount < sizeof(file); iCount ++)
         {
                 book = find_object("/clone/lonely/book/" + file[iCount][0]);
                 if (objectp(book))destruct(book);
         }
-        // Ç¬À¤´óÅ²ÒÆ
+        // ä¹¾å¤å¤§æŒªç§»
         book = find_object("/clone/book/qiankun_book" );
         if (objectp(book))destruct(book);
 

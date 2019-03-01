@@ -7,10 +7,10 @@ void do_summon();
 int checking(object me);
 void create()
 {
-        set_name( "½©Ê¬µÀ³¤", ({ "jiangshi daozhang", "jiangshi", "daozhang" }));
-        set("long", "Ò»¸ö¿ÉÒÔ¿ØÖÆ½©Ê¬µÄµÀ³¤£¬¿´ÆğÀ´ºÃ¿ÉÅÂ¡£¡£¡£\n");
+        set_name( "åƒµå±é“é•·", ({ "jiangshi daozhang", "jiangshi", "daozhang" }));
+        set("long", "ä¸€å€‹å¯ä»¥æ§åˆ¶åƒµå±çš„é“é•·ï¼Œçœ‹èµ·ä¾†å¥½å¯æ€•ã€‚ã€‚ã€‚\n");
 
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("age", 45);
         set("attitude", "peaceful");
         set("shen_type", 0);
@@ -73,8 +73,8 @@ void create()
         ]));
 
         set("drops", ([
-                "RA&RANDOM30"    :       100,   // µÍ¼¶ÆÕÍ¨×°±¸
-                "RA&RANDOM40"    :       40,    // µÍ¼¶ÆÕÍ¨×°±¸
+                "RA&RANDOM30"    :       100,   // ä½ç´šæ™®é€šè£å‚™
+                "RA&RANDOM40"    :       40,    // ä½ç´šæ™®é€šè£å‚™
                 "FI&/clone/item/pcrystal"   :   10,
                 "FI&/d/item/obj/xuantie"    :   10,
                 "FI&/clone/item/ycrystal"   :   10,
@@ -94,7 +94,7 @@ void do_summon()
         obs = all_inventory(environment(me));
         obs=filter_array(obs,(:query("id", $1) == "zombie":));
         if( sizeof(obs) >= 4 ) return;
-        message_vision(HIM "\n$NàÀàÀ¸Éº¿£¬ÖÜÎ§µÄ½©Ê¬ÍõÓ¦Éù¶øÀ´¡£\n" NOR, me);
+        message_vision(HIM "\n$Nâ–¡â–¡å¹¹åšï¼Œå‘¨åœçš„åƒµå±ç‹æ‡‰è²è€Œä¾†ã€‚\n" NOR, me);
         zombie = new(__DIR__"zombie");
         zombie->move(environment(me));
         enemies = me->query_enemy();
@@ -103,7 +103,7 @@ void do_summon()
                 zombie->kill_ob(enemy);
                 enemy->kill_ob(zombie);
         }
-        message_vision( "\n\n$N¶ñºİºİµØÆËÁËÉÏÀ´¡£\n" , zombie);
+        message_vision( "\n\n$Næƒ¡ç‹ ç‹ åœ°æ’²äº†ä¸Šä¾†ã€‚\n" , zombie);
         call_out("leave",30+random(10),zombie);
         if( !this_object()->is_busy() )
                 this_object()->start_busy(3);
@@ -111,21 +111,21 @@ void do_summon()
 
 void leave(object zombie){
         if( !zombie || zombie->is_fighting() ) return;
-        message_vision("\n$NÏûÊ§ÁË¡£\n",zombie);
+        message_vision("\n$Næ¶ˆå¤±äº†ã€‚\n",zombie);
         destruct(zombie);
 }
 
 int accept_fight(object ob)
 {
-        command("say ÎÒ¿ÉÃ»ĞËÈ¤ÅãÄãÍæ£¬¿ì¸øÎÒ¹ö¿ª¡£");
+        command("say æˆ‘å¯æ²’èˆˆè¶£é™ªä½ ç©ï¼Œå¿«çµ¦æˆ‘æ»¾é–‹ã€‚");
         return 0;
 }
 
 int accept_hit(object ob)
 {
-        message_vision(HIW "$N" HIW "Á³É«Ò»±ä£¬ÉÁ¹ıÒ»µÀÉ±Æø¡£Å­"
-                       "ºÈµÀ£ººÃÒ»¸ö" + RANK_D->query_rude(ob) +
-                       "£¬À´°É£¡\n" NOR, this_object());
+        message_vision(HIW "$N" HIW "è‡‰è‰²ä¸€è®Šï¼Œé–ƒéä¸€é“æ®ºæ°£ã€‚æ€’"
+                       "å–é“ï¼šå¥½ä¸€å€‹" + RANK_D->query_rude(ob) +
+                       "ï¼Œä¾†å§ï¼\n" NOR, this_object());
         kill_ob(ob);
         return 1;
 }
@@ -140,12 +140,12 @@ int accept_kill(object ob)
 
 int accept_ansuan(object ob)
 {
-        return notify_fail("ÄÇÈË¾¯ÌèĞÔºÃ¸ß£¬ÄãÄÑÒÔÏÂÊÖ¡£\n");
+        return notify_fail("é‚£äººè­¦æƒ•æ€§å¥½é«˜ï¼Œä½ é›£ä»¥ä¸‹æ‰‹ã€‚\n");
 }
 
 int accept_touxi(object ob)
 {
-        return notify_fail("ÄÇÈË¾¯ÌèĞÔºÃ¸ß£¬ÄãÄÑÒÔÏÂÊÖ¡£\n");
+        return notify_fail("é‚£äººè­¦æƒ•æ€§å¥½é«˜ï¼Œä½ é›£ä»¥ä¸‹æ‰‹ã€‚\n");
 }
 
 void kill_ob(object me)

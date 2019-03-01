@@ -15,24 +15,24 @@ int main(object me, string arg)
                 if( query("to_pvp/time", me)<time() )
                 {
                         delete("to_pvp", me);
-                        return notify_fail(master+"³¤Ì¾µÀ£º¡°ÄÑµÀ±¾ÅÉÖĞ¾ÍÃ»ÓĞÈËÄÜÉ±´ËÔô£¿±¯ºô£¡£¡£¡¡±");
+                        return notify_fail(master+"é•·å˜†é“ï¼šâ€œé›£é“æœ¬æ´¾ä¸­å°±æ²’æœ‰äººèƒ½æ®ºæ­¤è³Šï¼Ÿæ‚²å‘¼ï¼ï¼ï¼â€");
                 }
                 if( arg == "cancel" )
                 {
                         delete("to_pvp", me);
-                        return notify_fail(master+"Å­µÀ£º¡°ºß£¬ÏóÄãÈç´Ëµ¨Ğ¡Ö®ÈË£¬ÔõÄÜ³É´óÆ÷£¡£¡£¡¡±\n");
+                        return notify_fail(master+"æ€’é“ï¼šâ€œå“¼ï¼Œè±¡ä½ å¦‚æ­¤è†½å°ä¹‹äººï¼Œæ€èƒ½æˆå¤§å™¨ï¼ï¼ï¼â€\n");
                 }
                 if( arg == "ok" )
                 {
                         set("to_pvp/status", 1, me);
                         set("to_pvp/time", time()+600, me);
-                        return notify_fail("ÄãÅ­µÀ£º¡°ÆñÓĞ´ËÀí£¬Èç´Ë¶ñÔô£¬ÎÒÆñÄÜÈİËûÔÚ´ËÊÀÉÏ£¬´ıÎÒÈ¥É±ÁË´ËÔô£¬Ìæ±¾ÅÉ³ıº¦¡±¡£\n");
+                        return notify_fail("ä½ æ€’é“ï¼šâ€œè±ˆæœ‰æ­¤ç†ï¼Œå¦‚æ­¤æƒ¡è³Šï¼Œæˆ‘è±ˆèƒ½å®¹ä»–åœ¨æ­¤ä¸–ä¸Šï¼Œå¾…æˆ‘å»æ®ºäº†æ­¤è³Šï¼Œæ›¿æœ¬æ´¾é™¤å®³â€ã€‚\n");
                 }
-                str =  sprintf("Äã½«Òª±»ÅÉÈ¥É±µÄ±¾ÃÅ³ğµĞ%s(%s)¡£\n", 
+                str =  sprintf("ä½ å°‡è¦è¢«æ´¾å»æ®ºçš„æœ¬é–€ä»‡æ•µ%s(%s)ã€‚\n", 
                         query("to_pvp/name", me),query("to_pvp/id", me));
-                str += sprintf("Äã»¹ÓĞ%sÃëÀ´½ÓÊÜÕâ¸öÈÎÎñ¡£\n",
+                str += sprintf("ä½ é‚„æœ‰%sç§’ä¾†æ¥å—é€™å€‹ä»»å‹™ã€‚\n",
                         CHINESE_D->chinese_number(query("to_pvp/time", me)-time()));
-                str += "Èç¹ûÄãÒª½ÓÊÜÈÎÎñÇëÊäÈë¡°qt ok¡±\n";
+                str += "å¦‚æœä½ è¦æ¥å—ä»»å‹™è«‹è¼¸å…¥â€œqt okâ€\n";
                 write(str);
                 return 1;
         }
@@ -41,11 +41,11 @@ int main(object me, string arg)
                 if( query("to_pvp/time", me)<time() )
                 {
                         delete("to_pvp", me);
-                        return notify_fail(master+"£º¡°É±´ËĞ¡Ôô£¬¾ÓÈ»ÓÃÁËÕâÃ´¾ÃµÄÊ±¼ä»¹Ã»É±ËÀ£¬ÎÒ¿´Ò²²»ÔÙÕÒÄãÁË£¬Äã¸øÎÒºÃºÃµÄÑ§ÒÕ°É£¬ÎÒÁíÍâÕÒÈË£¬ºß£¡£¡£¡¡±");
+                        return notify_fail(master+"ï¼šâ€œæ®ºæ­¤å°è³Šï¼Œå±…ç„¶ç”¨äº†é€™éº¼ä¹…çš„æ™‚é–“é‚„æ²’æ®ºæ­»ï¼Œæˆ‘çœ‹ä¹Ÿä¸å†æ‰¾ä½ äº†ï¼Œä½ çµ¦æˆ‘å¥½å¥½çš„å­¸è—å§ï¼Œæˆ‘å¦å¤–æ‰¾äººï¼Œå“¼ï¼ï¼ï¼â€");
                 }
-                str =  sprintf("ÄãÒªÉ±µÄ±¾ÃÅ³ğµĞÊÇ%s(%s)¡£\n", 
+                str =  sprintf("ä½ è¦æ®ºçš„æœ¬é–€ä»‡æ•µæ˜¯%s(%s)ã€‚\n", 
                         query("to_pvp/name", me),query("to_pvp/id", me));
-                str += sprintf("ÄãĞèÒªÔÚ%sÇ°À´Íê³ÉÕâ¸öÈÎÎñ¡£\n",
+                str += sprintf("ä½ éœ€è¦åœ¨%så‰ä¾†å®Œæˆé€™å€‹ä»»å‹™ã€‚\n",
                         CHINESE_D->chinese_date(query("to_pvp/time", me)));
                 write(str);
                 return 1;

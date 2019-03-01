@@ -9,16 +9,16 @@ inherit F_QUESTER;
 
 void create()
 {
-        set_name("ÌìÉ½Í¯ÀÑ", ({ "tong lao", "tong", "lao" }));
+        set_name("å¤©å±±ç«¥å§¥", ({ "tong lao", "tong", "lao" }));
         set("long",
-            "Ëý¾ÍÊÇ"+HIC"¡¸ÁéðÕ¹¬¡¹"NOR+"µÄ¿ªÉ½×æÊ¦.\n"+
-            "Õ§Ò»¿´ËÆºõÊÇ¸öÊ®Æß°ËËêµÄÅ®×Ó,¿ÉÉñÇéÈ´ÊÇÀÏÆøºáÇï.\n"+
-            "Ë«Ä¿Èçµç,¾¼¾¼ÓÐÉñ,ÏòÄãÇÆÀ´Ê±,×ÔÓÐÒ»¹ÉÁèÈËµÄÍþÑÏ.\n");
-        set("title", HIC"ÁéðÕ¹¬Ö÷ÈË"NOR);
-        set("gender", "Å®ÐÔ");
+            "å¥¹å°±æ˜¯"+HIC"ã€Œéˆé·²å®®ã€"NOR+"çš„é–‹å±±ç¥–å¸«.\n"+
+            "ä¹ä¸€çœ‹ä¼¼ä¹Žæ˜¯å€‹åä¸ƒå…«æ­²çš„å¥³å­,å¯ç¥žæƒ…å»æ˜¯è€æ°£æ©«ç§‹.\n"+
+            "é›™ç›®å¦‚é›»,ç‚¯ç‚¯æœ‰ç¥ž,å‘ä½ çž§ä¾†æ™‚,è‡ªæœ‰ä¸€è‚¡å‡Œäººçš„å¨åš´.\n");
+        set("title", HIC"éˆé·²å®®ä¸»äºº"NOR);
+        set("gender", "å¥³æ€§");
         set("per", 20);
         set("age", 96);
-        set("nickname", HIR "Î¨ÎÒ¶À×ð" NOR);
+        set("nickname", HIR "å”¯æˆ‘ç¨å°Š" NOR);
         set("shen_type",0);
         set("attitude", "peaceful");
 
@@ -80,7 +80,7 @@ void create()
         prepare_skill("strike", "liuyang-zhang");
         prepare_skill("hand", "zhemei-shou");
 
-        create_family("ÁéðÕ¹¬", 1, "Ö÷ÈË");
+        create_family("éˆé·²å®®", 1, "ä¸»äºº");
 
         set("chat_chance_combat", 50);
         set("chat_msg_combat", ({
@@ -109,19 +109,19 @@ void attempt_apprentice(object ob)
         if (! permit_recruit(ob))
                 return;
 
-        if( query("gender", ob) != "Å®ÐÔ" )
+        if( query("gender", ob) != "å¥³æ€§" )
         {
-                command("say ÄãÕÒËÀ°¡!");
+                command("say ä½ æ‰¾æ­»å•Š!");
                 return;
         }
         if ((int)ob->query_skill("bahuang-gong", 1) < 230)
         {
-                command("say " + RANK_D->query_respect(ob) + "ÊÇ·ñ»¹Ó¦¸Ã¶àÁ·Á·°Ë»ÄÁùºÏÎ¨ÎÒ¶À×ð¹¦£¿");
+                command("say " + RANK_D->query_respect(ob) + "æ˜¯å¦é‚„æ‡‰è©²å¤šç·´ç·´å…«è’å…­åˆå”¯æˆ‘ç¨å°ŠåŠŸï¼Ÿ");
                 return;
         }
         if (ob->query_con() < 30)
         {
-                command("say ±¾ÃÅ¹¦·¨¼«ÎªÄÑÁ·,ÄãµÄ¸ù¹ÇËÆºõ²»¹».");
+                command("say æœ¬é–€åŠŸæ³•æ¥µç‚ºé›£ç·´,ä½ çš„æ ¹éª¨ä¼¼ä¹Žä¸å¤ .");
                 return;
         }
         command("recruit "+query("id", ob));
@@ -135,10 +135,10 @@ int accept_ask(object me, string topic)
         switch (topic)
         {
 
-        case "»Ò·ÉÑÌÃð" :
+        case "ç°é£›ç…™æ»…" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/liuyang-zhang/hui",
-                           "name"    : "»Ò·ÉÑÌÃð",
+                           "name"    : "ç°é£›ç…™æ»…",
                            "sk1"     : "liuyang-zhang",
                            "lv1"     : 150,
                            "sk2"     : "zhemei-shou",
@@ -147,60 +147,60 @@ int accept_ask(object me, string topic)
                            "gongxian": 900, ]));
                 break;
 
-        case "Ò»ÕÆÕðÌì" :
+        case "ä¸€æŽŒéœ‡å¤©" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/liuyang-zhang/zhen",
-                           "name"    : "Ò»ÕÆÕðÌì",
+                           "name"    : "ä¸€æŽŒéœ‡å¤©",
                            "sk1"     : "liuyang-zhang",
                            "lv1"     : 140,
                            "neili"   : 2000,
                            "gongxian": 800, ]));
                 break;
 
-        case "°×ºçÕÆÁ¦" :
+        case "ç™½è™¹æŽŒåŠ›" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/liuyang-zhang/baihong",
-                           "name"    : "°×ºçÕÆÁ¦",
+                           "name"    : "ç™½è™¹æŽŒåŠ›",
                            "sk1"     : "liuyang-zhang",
                            "lv1"     : 160,
                            "neili"   : 2200,
                            "gongxian": 800, ]));
                 break;
 
-        case "¾Å»¡ÆÆÈÕ" :
+        case "ä¹å¼§ç ´æ—¥" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/tianyu-qijian/pori",
-                           "name"    : "¾Å»¡ÆÆÈÕ",
+                           "name"    : "ä¹å¼§ç ´æ—¥",
                            "sk1"     : "tianyu-qijian",
                            "lv1"     : 160,
                            "neili"   : 2200,
                            "gongxian": 400, ]));
                 break;
 
-        case "ÌìÅ®É¢»¨" :
+        case "å¤©å¥³æ•£èŠ±" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/tianyu-qijian/san",
-                           "name"    : "ÌìÅ®É¢»¨",
+                           "name"    : "å¤©å¥³æ•£èŠ±",
                            "sk1"     : "tianyu-qijian",
                            "lv1"     : 160,
                            "neili"   : 2200,
                            "gongxian": 400, ]));
                 break;
 
-        case "¾ÅÓðÌìÖï" :
+        case "ä¹ç¾½å¤©èª…" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/tianyu-qijian/zhu",
-                           "name"    : "¾ÅÓðÌìÖï",
+                           "name"    : "ä¹ç¾½å¤©èª…",
                            "sk1"     : "tianyu-qijian",
                            "lv1"     : 160,
                            "neili"   : 2200,
                            "gongxian": 400, ]));
                 break;
 
-        case "»¯Ñý¹¦" :
+        case "åŒ–å¦–åŠŸ" :
                return MASTER_D->teach_pfm(me, this_object(),
                        ([ "perform" : "can_perform/zhemei-shou/hua",
-                          "name"    : "»¯Ñý¹¦",
+                          "name"    : "åŒ–å¦–åŠŸ",
                            "sk1"     : "zhemei-shou",
                            "lv1"     : 160,
                            "neili"   : 2200,

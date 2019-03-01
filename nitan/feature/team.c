@@ -6,38 +6,38 @@
 #include <origin.h>
 
 /*
-object can_guard()              // ÊÇ·ñÓĞÈËÌæ´ËÈËµ±ÕĞ
-void release_array()            // ½âÉ¢Õó·¨
-int refresh_array()             // Ë¢ĞÂÕóÔ±: 1 Õó·¨Õı³£ 0 Õó·¨±»½âÉ¢
+object can_guard()              // æ˜¯å¦æœ‰äººæ›¿æ­¤äººç•¶æ‹›
+void release_array()            // è§£æ•£é™£æ³•
+int refresh_array()             // åˆ·æ–°é™£å“¡: 1 é™£æ³•æ­£å¸¸ 0 é™£æ³•è¢«è§£æ•£
 */
 class zhenfa
 {
-        object *memb;           // Õó·¨³ÉÔ±
-        string type;            // Õó·¨µÄÎä¹¦ÀàĞÍ
-        int num;                // Õó·¨µÄÒªÇóÈËÊı
-        object master;          // ÕóÖ÷
-        string name;            // Õó·¨Ãû³Æ
-        string menpai;          // Õó·¨ËùÊôÃÅÅÉ
-        int ready;              // ×éÕóÍê³É
-        int array_level;        // Õó·¨µÄÕûÌåÓĞĞ§Öµ
-        int level;              // ´ËÕó·¨µÄÓĞĞ§µÈ¼¶
-        string zhen_fn;         // Õó·¨ÎÄ¼şÃû
+        object *memb;           // é™£æ³•æˆå“¡
+        string type;            // é™£æ³•çš„æ­¦åŠŸé¡å‹
+        int num;                // é™£æ³•çš„è¦æ±‚äººæ•¸
+        object master;          // é™£ä¸»
+        string name;            // é™£æ³•åç¨±
+        string menpai;          // é™£æ³•æ‰€å±¬é–€æ´¾
+        int ready;              // çµ„é™£å®Œæˆ
+        int array_level;        // é™£æ³•çš„æ•´é«”æœ‰æ•ˆå€¼
+        int level;              // æ­¤é™£æ³•çš„æœ‰æ•ˆç­‰ç´š
+        string zhen_fn;         // é™£æ³•æ–‡ä»¶å
 }
 
-/* ³ÉÕóÒòËØ
-1¡£³ÉÔ±ÎªÍ¬Ò»ÃÅÅÉ
-2¡£¶¼»á²¢ÇÒ enable Í¬Ò»Õó·¨
-3¡£µ±Ç°ËùÊ¹ÓÃ±øÆ÷ÎªÕó·¨ÒªÇóµÄ±øÆ÷
-4¡£´ïµ½Õó·¨ÒªÇóÈËÊı
-5¡£»·¾³ÏàÍ¬
+/* æˆé™£å› ç´ 
+1ã€‚æˆå“¡ç‚ºåŒä¸€é–€æ´¾
+2ã€‚éƒ½æœƒä¸¦ä¸” enable åŒä¸€é™£æ³•
+3ã€‚ç•¶å‰æ‰€ä½¿ç”¨å…µå™¨ç‚ºé™£æ³•è¦æ±‚çš„å…µå™¨
+4ã€‚é”åˆ°é™£æ³•è¦æ±‚äººæ•¸
+5ã€‚ç’°å¢ƒç›¸åŒ
 
-ÒÆ¶¯³ÉÔ±¾ù¸úËæÕóÖ÷
-ĞÄÌøË¢ĞÂÕó·¨×´Ì¬
-±øÆ÷µÄ×´Ì¬±ä»¯Òª²éÑ¯Õó·¨ enable zhuang xie
-Õó·¨ÔÚÕ½¶·ÖĞµÄÍşÁ¦£º
-        ÌæÈõÕßµÖµ²£ºµ±ÈË busy£¬Æø¹ıÓÚÉÙ¡¢Éñ¹ıÓÚµÍ¡£ÌæÈËµÖµ²Ò»ÕĞ×Ô¼ºÍ£Ò»ÕÕ
-        Õó·¨³ÉÔ±½øÈëÕ½¶·×´Ì¬£¬ÕóÔ±»áÈ«Ô±¼ÓÈë¡¢Õó·¨¿ªÊ¼Æğ×÷ÓÃ
-        Õó·¨µÄÌØ¹¥ ÃÕ»ÃµĞÈËÊÇµĞÈËµÄÕĞÊıÂä¿Õ
+ç§»å‹•æˆå“¡å‡è·Ÿéš¨é™£ä¸»
+å¿ƒè·³åˆ·æ–°é™£æ³•ç‹€æ…‹
+å…µå™¨çš„ç‹€æ…‹è®ŠåŒ–è¦æŸ¥è©¢é™£æ³• enable zhuang xie
+é™£æ³•åœ¨æˆ°é¬¥ä¸­çš„å¨åŠ›ï¼š
+        æ›¿å¼±è€…æŠµæ“‹ï¼šç•¶äºº busyï¼Œæ°£éäºå°‘ã€ç¥éäºä½ã€‚æ›¿äººæŠµæ“‹ä¸€æ‹›è‡ªå·±åœä¸€ç…§
+        é™£æ³•æˆå“¡é€²å…¥æˆ°é¬¥ç‹€æ…‹ï¼Œé™£å“¡æœƒå…¨å“¡åŠ å…¥ã€é™£æ³•é–‹å§‹èµ·ä½œç”¨
+        é™£æ³•çš„ç‰¹æ”» è¬å¹»æ•µäººæ˜¯æ•µäººçš„æ‹›æ•¸è½ç©º
 
 */
 
@@ -58,7 +58,7 @@ void init_zhen()
         zhen->memb = ({});
 }
 
-// ÒÔÏÂÎª²éÑ¯º¯Êı
+// ä»¥ä¸‹ç‚ºæŸ¥è©¢å‡½æ•¸
 int in_array()
 {
         if(!classp(zhen))
@@ -184,28 +184,28 @@ string query_array_fn() { return zhen->zhen_fn; }
 
 int query_array_status() { return classp(zhen) && zhen->ready && (sizeof(zhen->memb - ({0})) >= zhen->num); }
 
-// ÒÔÏÂÎªÅĞ¶Ïº¯Êı
+// ä»¥ä¸‹ç‚ºåˆ¤æ–·å‡½æ•¸
 int can_become_member(object who)
 {
         if(!who)
                 return 0;
 
         if(environment(who) != environment())
-                return notify_fail("Ã»ÓĞÕâ¸öÈË¡£\n");
+                return notify_fail("æ²’æœ‰é€™å€‹äººã€‚\n");
 
         if(!in_array())
-                return notify_fail("ÄãÃ»ÓĞÔÚÈÎºÎÕóĞÎÖ®ÖĞ¡£\n");
+                return notify_fail("ä½ æ²’æœ‰åœ¨ä»»ä½•é™£å½¢ä¹‹ä¸­ã€‚\n");
 
         if(zhen->master != this_object())
-                return notify_fail("Äã²¢²»ÊÇÕóÖ÷¡£\n");
+                return notify_fail("ä½ ä¸¦ä¸æ˜¯é™£ä¸»ã€‚\n");
 
         if(sizeof(zhen->memb) >= zhen->num)
-                return notify_fail(sprintf("¡º%s¡»µÄÈËÊıÒÑ¾­¹»%s¸öÈËÁË¡£\n",
+                return notify_fail(sprintf("ã€%sã€çš„äººæ•¸å·²ç¶“å¤ %så€‹äººäº†ã€‚\n",
                         zhen->name,
                         chinese_number(zhen->num)));
 
         if(!living(who))
-                return notify_fail(who->name()+"Ä¿Ç°ÎŞ·¨Ìı¼ûÄãËµ»°£¬µÈ»á¶ùÔÙËµ°É¡£\n");
+                return notify_fail(who->name()+"ç›®å‰ç„¡æ³•è½è¦‹ä½ èªªè©±ï¼Œç­‰æœƒå…’å†èªªå§ã€‚\n");
 
         if(!zhen->zhen_fn)
         {
@@ -231,7 +231,7 @@ int is_array_master()
         return in_array() && (zhen->master == this_object());
 }
 
-// ÒÔÏÂÎª×´Ì¬±ä¸üº¯Êı
+// ä»¥ä¸‹ç‚ºç‹€æ…‹è®Šæ›´å‡½æ•¸
 int set_array(class zhenfa z)
 {
         if(!classp(z))
@@ -253,7 +253,7 @@ int add_array_member(object who)
 
         foreach(object ob in zhen->memb)
                 if(who->is_fighting(ob))
-                        return notify_fail(sprintf("ÄãÕıÔÚºÍ¡º%s¡»µÄ³ÉÔ±%s´ò¼ÜÄØ£¡\n",
+                        return notify_fail(sprintf("ä½ æ­£åœ¨å’Œã€%sã€çš„æˆå“¡%sæ‰“æ¶å‘¢ï¼\n",
                                 zhen->name,ob->name()));
 
         zhen->memb += ({ who });
@@ -261,12 +261,12 @@ int add_array_member(object who)
         if(!who->set_array(zhen))
         {
                 zhen->memb -= ({ who });
-                return notify_fail("¼ÓÈëÕó·¨³ÉÔ±Ê§°Ü¡£\n");
+                return notify_fail("åŠ å…¥é™£æ³•æˆå“¡å¤±æ•—ã€‚\n");
         }
 
-        tell_object(this_object(),sprintf("%sÓ¦Ñû¼ÓÈëÄãÖ÷³ÖµÄ¡º%s¡»¡£\n",
+        tell_object(this_object(),sprintf("%sæ‡‰é‚€åŠ å…¥ä½ ä¸»æŒçš„ã€%sã€ã€‚\n",
                 who->name(),zhen->name));
-        message("tell_object",sprintf("¡¾%s¡¿£º%sÓ¦Ñû¼ÓÈë¡º%s¡»¡£\n",
+        message("tell_object",sprintf("ã€%sã€‘ï¼š%sæ‡‰é‚€åŠ å…¥ã€%sã€ã€‚\n",
                 zhen->name,who->name(),zhen->name),(zhen->memb - ({who})) );
 
         check_array_status();
@@ -278,14 +278,14 @@ int build_up_array(string f_name)
 {
         if(in_array())
         {
-                tell_object(this_object(),sprintf("ÄãÕıÔÚ¡º%s¡»ÖĞ£¬ÎŞ·¨ÔÙÖ÷³ÖÆäËüÕó·¨¡£\n",
+                tell_object(this_object(),sprintf("ä½ æ­£åœ¨ã€%sã€ä¸­ï¼Œç„¡æ³•å†ä¸»æŒå…¶å®ƒé™£æ³•ã€‚\n",
                         zhen->name));
                 return 0;
         }
 
         if(!f_name || (file_size(f_name+".c") <= 0))
         {
-                tell_object(this_object(),"Õó·¨´íÎó£¡\n");
+                tell_object(this_object(),"é™£æ³•éŒ¯èª¤ï¼\n");
                 return 0;
         }
 
@@ -303,7 +303,7 @@ int build_up_array(string f_name)
         if(!zhen->num || !zhen->name || !zhen->type || !zhen->level)
         {
                 init_zhen();
-                tell_object(this_object(),"Õó·¨²ÎÊı´íÎó¡£\n");
+                tell_object(this_object(),"é™£æ³•åƒæ•¸éŒ¯èª¤ã€‚\n");
                 return 0;
         }
 
@@ -315,48 +315,48 @@ varargs int release_array(int flag)
         object me = this_object();
 
         if(!in_array())
-                return notify_fail("Äã²¢Ã»ÓĞÔÚÈÎºÎÕó·¨Ö®ÖĞ¡£\n");
+                return notify_fail("ä½ ä¸¦æ²’æœ‰åœ¨ä»»ä½•é™£æ³•ä¹‹ä¸­ã€‚\n");
 
         if(zhen->master != me)
-                return notify_fail(sprintf("Ö»ÓĞÕóÖ÷²ÅÄÜ½âÉ¢¡º%s¡»¡£\n",zhen->name));
+                return notify_fail(sprintf("åªæœ‰é™£ä¸»æ‰èƒ½è§£æ•£ã€%sã€ã€‚\n",zhen->name));
 
         zhen->memb -= ({ me });
 
         switch (flag)
         {
-                case 0: // array ÃüÁîÖ÷¶¯½âÉ¢
+                case 0: // array å‘½ä»¤ä¸»å‹•è§£æ•£
                         if(sizeof(zhen->memb))
-                                message("tell_object",sprintf("¡¾%s¡¿£º%s½«¡º%s¡»½âÉ¢ÁË¡£\n",
+                                message("tell_object",sprintf("ã€%sã€‘ï¼š%så°‡ã€%sã€è§£æ•£äº†ã€‚\n",
                                         zhen->name,me->name(),zhen->name),zhen->memb );
-                        tell_object(me,sprintf("Äã½«¡º%s¡»½âÉ¢ÁË¡£\n",zhen->name));
+                        tell_object(me,sprintf("ä½ å°‡ã€%sã€è§£æ•£äº†ã€‚\n",zhen->name));
                         break;
 
-                case 1: // ÕóÖ÷ËÀÍö
+                case 1: // é™£ä¸»æ­»äº¡
                         if(sizeof(zhen->memb))
-                                message("tell_object",sprintf("¡¾%s¡¿£ºÓÉÓÚÕóÖ÷%sËÀÍö£¬¡º%s¡»½âÉ¢ÁË¡£\n",
-                                        zhen->name,me->name(),zhen->name),zhen->memb );
-                        break;
-
-                case 2: // ÕóÖ÷Àë¿ªÓÎÏ·
-                        if(sizeof(zhen->memb))
-                                message("tell_object",sprintf("¡¾%s¡¿£ºÓÉÓÚÕóÖ÷%sÀë¿ªÓÎÏ·£¬¡º%s¡»½âÉ¢ÁË¡£\n",
+                                message("tell_object",sprintf("ã€%sã€‘ï¼šç”±äºé™£ä¸»%sæ­»äº¡ï¼Œã€%sã€è§£æ•£äº†ã€‚\n",
                                         zhen->name,me->name(),zhen->name),zhen->memb );
                         break;
 
-                case 3: // Ê§É¢
+                case 2: // é™£ä¸»é›¢é–‹éŠæˆ²
+                        if(sizeof(zhen->memb))
+                                message("tell_object",sprintf("ã€%sã€‘ï¼šç”±äºé™£ä¸»%sé›¢é–‹éŠæˆ²ï¼Œã€%sã€è§£æ•£äº†ã€‚\n",
+                                        zhen->name,me->name(),zhen->name),zhen->memb );
+                        break;
+
+                case 3: // å¤±æ•£
                         //if(sizeof(zhen->memb))
-                        //      message("tell_object",sprintf("¡¾%s¡¿£ºÓÉÓÚºÍÕóÖ÷%sÊ§É¢£¬¡º%s¡»½âÉ¢ÁË¡£\n",
+                        //      message("tell_object",sprintf("ã€%sã€‘ï¼šç”±äºå’Œé™£ä¸»%så¤±æ•£ï¼Œã€%sã€è§£æ•£äº†ã€‚\n",
                         //              zhen->name,me->name(),zhen->name),zhen->memb );
-                        tell_object(me,sprintf("ÓÉÓÚÃ»ÓĞÆäËû³ÉÔ±£¬¡º%s¡»×Ô¶¯½âÉ¢ÁË¡£\n",zhen->name));
+                        tell_object(me,sprintf("ç”±äºæ²’æœ‰å…¶ä»–æˆå“¡ï¼Œã€%sã€è‡ªå‹•è§£æ•£äº†ã€‚\n",zhen->name));
                         break;
-                case 4: // »èÃÔ²»ĞÑ
+                case 4: // æ˜è¿·ä¸é†’
                         if(sizeof(zhen->memb))
-                                message("tell_object",sprintf("¡¾%s¡¿£ºÓÉÓÚÕóÖ÷%s»èÃÔ²»ĞÑ£¬¡º%s¡»½âÉ¢ÁË¡£\n",
+                                message("tell_object",sprintf("ã€%sã€‘ï¼šç”±äºé™£ä¸»%sæ˜è¿·ä¸é†’ï¼Œã€%sã€è§£æ•£äº†ã€‚\n",
                                         zhen->name,me->name(),zhen->name),zhen->memb );
                         break;
                 case 5:
                         if(sizeof(zhen->memb))
-                                message("tell_object",sprintf("¡¾%s¡¿£ºÓÉÓÚÄÚ²¿³ÉÔ±·¢ÉúÄÚÚ§£¬¡º%s¡»½âÉ¢ÁË¡£\n",
+                                message("tell_object",sprintf("ã€%sã€‘ï¼šç”±äºå…§éƒ¨æˆå“¡ç™¼ç”Ÿå…§è¨Œï¼Œã€%sã€è§£æ•£äº†ã€‚\n",
                                         zhen->name,zhen->name),zhen->memb );
                         break;
         }
@@ -368,11 +368,11 @@ varargs int release_array(int flag)
         return 1;
 }
 
-// ÒÔÏÂÎª×´Ì¬¸Ä±äÍ¨Öª
-varargs void dismiss_array_member(object who,int flag) // ¶ÓÔ±Àë¶Ó
+// ä»¥ä¸‹ç‚ºç‹€æ…‹æ”¹è®Šé€šçŸ¥
+varargs void dismiss_array_member(object who,int flag) // éšŠå“¡é›¢éšŠ
 {
-// flag = 4 »èÃÔ²»ĞÑ
-// flag = 3 ×ßÊ§
+// flag = 4 æ˜è¿·ä¸é†’
+// flag = 3 èµ°å¤±
 // flag = 2 quit
 // flag = 1 dead
         string out;
@@ -386,11 +386,11 @@ varargs void dismiss_array_member(object who,int flag) // ¶ÓÔ±Àë¶Ó
 
         zhen->memb -= ({ who });
         who->init_zhen();
-        tell_object(who,sprintf("\nÄãÍÑÀëÁË¡º%s¡»¡£\n\n",zhen->name));
+        tell_object(who,sprintf("\nä½ è„«é›¢äº†ã€%sã€ã€‚\n\n",zhen->name));
 
-        if(sizeof(zhen->memb) <= 1)// ÓÉÓÚºÍÆäËû³ÉÔ±Ê§É¢
+        if(sizeof(zhen->memb) <= 1)// ç”±äºå’Œå…¶ä»–æˆå“¡å¤±æ•£
         {
-                tell_object(zhen->master,sprintf("\n%sÍÑÀëÁË¡º%s¡»¡£\n\n",who->name(),zhen->name));
+                tell_object(zhen->master,sprintf("\n%sè„«é›¢äº†ã€%sã€ã€‚\n\n",who->name(),zhen->name));
                 release_array(3);
                 return;
         }
@@ -398,27 +398,27 @@ varargs void dismiss_array_member(object who,int flag) // ¶ÓÔ±Àë¶Ó
         switch (flag)
         {
                 case 4:
-                        out = "»èÃÔ²»ĞÑ";
+                        out = "æ˜è¿·ä¸é†’";
                         break;
                 case 2:
-                        out = "Àë¿ªÓÎÏ·";
+                        out = "é›¢é–‹éŠæˆ²";
                         break;
                 case 1:
-                        out = "ËÀÍö";
+                        out = "æ­»äº¡";
                         break;
                 default:
-                        out = "ÍÑÀëÁËÕó·¨";
+                        out = "è„«é›¢äº†é™£æ³•";
                         break;
         }
 
         if(zhen->ready)
         {
-                message("tell_object",sprintf("¡¾%s¡¿£ºÓÉÓÚ%s%s£¬¡º%s¡»µÄÍşÁ¦ÏûÊ§ÁË¡£\n",
+                message("tell_object",sprintf("ã€%sã€‘ï¼šç”±äº%s%sï¼Œã€%sã€çš„å¨åŠ›æ¶ˆå¤±äº†ã€‚\n",
                         zhen->name,who->name(),out,zhen->name),zhen->memb );
                 zhen->ready = 0;
         }
         else
-                message("tell_object",sprintf("¡¾%s¡¿£ºÓÉÓÚ%s%s£¬¡º%s¡»Ê§È¥ÁËÒ»Ãû³ÉÔ±¡£\n",
+                message("tell_object",sprintf("ã€%sã€‘ï¼šç”±äº%s%sï¼Œã€%sã€å¤±å»äº†ä¸€åæˆå“¡ã€‚\n",
                         zhen->name,who->name(),out,zhen->name),zhen->memb );
 
 }
@@ -442,7 +442,7 @@ void test_array()
 
                         zhen->memb -= lv;
 
-                        message("tell_object",sprintf("ÄãÍÑÀëÁË¡º%s¡»¡£\n",zhen->name),lv);
+                        message("tell_object",sprintf("ä½ è„«é›¢äº†ã€%sã€ã€‚\n",zhen->name),lv);
                         lv->init_zhen();
 
                         switch (n)
@@ -451,18 +451,18 @@ void test_array()
                                         out = lv[0]->name();
                                         break;
                                 case 2:
-                                        out = sprintf("%sºÍ%s",lv[0]->name(),lv[1]->name());
+                                        out = sprintf("%så’Œ%s",lv[0]->name(),lv[1]->name());
                                         break;
                                 default:
                                         for(i=0;i<n;i++)
                                                 out += i==0?lv[i]->name():
-                                                        ( (i==n-1)?sprintf("ºÍ%s",lv[i]->name()):
-                                                                sprintf("¡¢%s",lv[i]->name()) );
+                                                        ( (i==n-1)?sprintf("å’Œ%s",lv[i]->name()):
+                                                                sprintf("ã€%s",lv[i]->name()) );
                         }
 
                         if(sizeof(zhen->memb) <= 1)
                         {
-                                tell_object(me,sprintf("¡¾%s¡¿£º%sÍÑÀëÁËÕó·¨¡£\n",
+                                tell_object(me,sprintf("ã€%sã€‘ï¼š%sè„«é›¢äº†é™£æ³•ã€‚\n",
                                         zhen->name,out));
                                 release_array(3);
                                 return;
@@ -470,12 +470,12 @@ void test_array()
 
                         else if(zhen->ready)
                         {
-                                message("tell_object",sprintf("¡¾%s¡¿£ºÓÉÓÚ%sÍÑÀëÁËÕó·¨£¬¡º%s¡»µÄÍşÁ¦ÏûÊ§ÁË¡£\n",
+                                message("tell_object",sprintf("ã€%sã€‘ï¼šç”±äº%sè„«é›¢äº†é™£æ³•ï¼Œã€%sã€çš„å¨åŠ›æ¶ˆå¤±äº†ã€‚\n",
                                         zhen->name,out,zhen->name),zhen->memb);
                                 zhen->ready = 0;
                         }
                         else
-                                message("tell_object",sprintf("¡¾%s¡¿£º%sÍÑÀëÁË¡º%s¡»¡£\n",
+                                message("tell_object",sprintf("ã€%sã€‘ï¼š%sè„«é›¢äº†ã€%sã€ã€‚\n",
                                         zhen->name,out,zhen->name),zhen->memb);
                 }
                 return;
@@ -499,7 +499,7 @@ void change_skill_status(string arg)
 
         if( (arg != zhen->type) && zhen->ready)
         {
-                message("tell_object",sprintf("¡¾%s¡¿£ºÓÉÓÚ%sÃ»ÓĞÊ¹ÓÃ%s£¬¡º%s¡»µÄÍşÁ¦ÏûÊ§ÁË¡£\n",
+                message("tell_object",sprintf("ã€%sã€‘ï¼šç”±äº%sæ²’æœ‰ä½¿ç”¨%sï¼Œã€%sã€çš„å¨åŠ›æ¶ˆå¤±äº†ã€‚\n",
                         zhen->name,
                         this_object()->name(),
                         to_chinese(zhen->type),
@@ -571,11 +571,11 @@ int add_team_member(object who)
                 oteam->memb = ({ this_object(), who });
 
                 who->set_team_data(oteam);
-                tell_object(this_object(), sprintf("%sÓ¦Ñû¼ÓÈëÄãµÄ¶ÓÎé¡£\n", who->name()));
+                tell_object(this_object(), sprintf("%sæ‡‰é‚€åŠ å…¥ä½ çš„éšŠä¼ã€‚\n", who->name()));
                 return 1;
         } else {
                 oteam->memb -= ({0});
-                message("team", sprintf(HIW "¡¾¶ÓÎé¡¿%sÓ¦Ñû¼ÓÈë¶ÓÎé¡£\n" NOR, who->name(1)), oteam->memb);
+                message("team", sprintf(HIW "ã€éšŠä¼ã€‘%sæ‡‰é‚€åŠ å…¥éšŠä¼ã€‚\n" NOR, who->name(1)), oteam->memb);
                 oteam->memb += ({who});
                 (oteam->memb)->set_team_data(oteam);
                 return 1;
@@ -591,7 +591,7 @@ varargs void dismiss_team(object who)
                 if( is_team_leader() ) {
                         oteam->memb -= ({ this_object() });
                         (oteam->memb)->set_team_data(0);
-                        message("team", HIW "¡¾¶ÓÎé¡¿¶ÓÎé½âÉ¢ÁË¡£\n", oteam->memb);
+                        message("team", HIW "ã€éšŠä¼ã€‘éšŠä¼è§£æ•£äº†ã€‚\n", oteam->memb);
                         oteam = 0;
                         return;
                 }
@@ -601,15 +601,15 @@ varargs void dismiss_team(object who)
                 if( !is_team_leader() )
                         return;
 
-                tell_object(who, "ÄãÍÑÀë¶ÓÎéÁË¡£\n");
+                tell_object(who, "ä½ è„«é›¢éšŠä¼äº†ã€‚\n");
                 oteam->memb -= ({ who });
                 who->set_team_data(0);
                 if( sizeof(oteam->memb) <= 1 ) {
-                        tell_object(this_object(), sprintf("ÓÉÓÚ%sÀë¿ª¶ÓÎé£¬¶ÓÎé½âÉ¢ÁË¡£\n",who->name()));
+                        tell_object(this_object(), sprintf("ç”±äº%sé›¢é–‹éšŠä¼ï¼ŒéšŠä¼è§£æ•£äº†ã€‚\n",who->name()));
                         oteam = 0;
                         return;
                 } else {
-                        message("team", sprintf(HIW "¡¾¶ÓÎé¡¿%sÍÑÀëÁË¶ÓÎé¡£\n" NOR, who->name(1)), oteam->memb);
+                        message("team", sprintf(HIW "ã€éšŠä¼ã€‘%sè„«é›¢äº†éšŠä¼ã€‚\n" NOR, who->name(1)), oteam->memb);
                                 (oteam->memb)->set_team_data(oteam);
                         return;
                 }
@@ -657,7 +657,7 @@ object *query_team()
 }
 
 ///////////////////////////////////////////////////////////////////////////////
-// ²»ÊÇ¶ÓÎéµÄ¸úËæ
+// ä¸æ˜¯éšŠä¼çš„è·Ÿéš¨
 int set_leader(object ob)
 {
         if( ob == this_object() )
@@ -686,18 +686,18 @@ int follow_me(object ob, string dir)
         me = this_object();
         if( !living(me) || !ob || ob == me ) return 0;
 
-        if( (ob==leader) && !ob->in_array() && !in_array() && !in_team() )	// array ²»ÄÜºÍ±ğÈË·¢Éú follow ¹ØÏµ	
+        if( (ob==leader) && !ob->in_array() && !in_array() && !in_team() )	// array ä¸èƒ½å’Œåˆ¥äººç™¼ç”Ÿ follow é—œç³»	
 	{
-                // ¸ú×Å±ğÈË×ß
+                // è·Ÿè‘—åˆ¥äººèµ°
                 if( query("env/no_follow", ob) &&
                     me->query_dex() / 2 + random(me->query_dex()) < ob->query_dex() ) {
                         tell_object(me, ob->name() +
-                                    "×ßµÃºÃ¿ì£¬ÄãÒ»ÊèÉñ¾Í¸ú²»ÉÏÁË¡£\n");
+                                    "èµ°å¾—å¥½å¿«ï¼Œä½ ä¸€ç–ç¥å°±è·Ÿä¸ä¸Šäº†ã€‚\n");
                         return 0;
                 }
                 return follow_path(dir);
         } else if( (in_array() && zhen->master == ob) || (in_team() && ob == oteam->leader) ) 
-                // ¸ú×Å¶ÓÎéµÄÁìĞäĞĞ×ß
+                // è·Ÿè‘—éšŠä¼çš„é ˜è¢–è¡Œèµ°
                 return follow_path(dir);
 }
 

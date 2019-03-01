@@ -7,17 +7,17 @@ int exert(object me, object target, int amount)
         int i, skill, damage,force,extra,extra_enemy,state,base,res_kee,last_damage; 
         string msg;
         if( query("class", me) != "yihua" )
-                return notify_fail ("£ÛÂÒ»¨ÔáÓñ£İÖ»ÓĞÒÆ»¨¹¬µÜ×ÓÄÜÊ¹ÓÃ¡£\n");
+                return notify_fail ("ï¹äº‚èŠ±è‘¬ç‰ï¹åªæœ‰ç§»èŠ±å®®å¼Ÿå­èƒ½ä½¿ç”¨ã€‚\n");
 
         if( !me->is_fighting() )
-                return notify_fail("ÂÒ»¨ÔáÓñÖ»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ¡£\n"); 
+                return notify_fail("äº‚èŠ±è‘¬ç‰åªèƒ½åœ¨æˆ°é¬¥ä¸­ä½¿ç”¨ã€‚\n"); 
         force=query("force", me);
         if( force < 500 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n"); 
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ã€‚\n"); 
         
         skill = me->query_skill("mingyu-force",1);
         extra = me->query_skill("force");
-        if (skill<160) return notify_fail("ÄãµÄÃ÷Óñ¹¦ÉĞÎ´´ïµ½µÚ°ËÖØ£¬²»ÄÜÊ©Õ¹ÂÒ»¨ÔáÓñ¡£\n"); 
+        if (skill<160) return notify_fail("ä½ çš„æ˜ç‰åŠŸå°šæœªé”åˆ°ç¬¬å…«é‡ï¼Œä¸èƒ½æ–½å±•äº‚èŠ±è‘¬ç‰ã€‚\n"); 
         
 
                 if (amount<0) amount=0;
@@ -27,12 +27,12 @@ int exert(object me, object target, int amount)
         addn("force", -force/3, me);
         
         //suppose: force: 220,mingyu-force: 180, max_force: 650+220*5=1750
-        //xingxiexuanzhuan×î¶àÎüµ½3±¶ max_force = 1750 * 3 =5250
+        //xingxiexuanzhuanæœ€å¤šå¸åˆ°3å€ max_force = 1750 * 3 =5250
         //dam_max = 5250 * 9= 47250
         damage = force*skill/20;
         damage = damage/2+random(damage/2);
         
-        //¼ì²éµĞÈËÖĞÓĞÃ»ÓĞcondition/mingyuµÄ
+        //æª¢æŸ¥æ•µäººä¸­æœ‰æ²’æœ‰condition/mingyuçš„
         state = 0;
         enemys = me->query_enemy();
         for (i=0;i<sizeof(enemys);i++)
@@ -43,13 +43,13 @@ int exert(object me, object target, int amount)
         
         if (state)
                 {
-                msg = HIW "$NË«Ä¿Î¢±Õ£¬µ¤Ìï´¦ÌÚÆğÒ»¸öÎŞ±È´ÌÑÛÆøÍÅ£¬ÕæÆøäöÎĞÍ»È»ÏûÊ§£¡\n"NOR;
-                msg += HIW "\nÆøÍÅ±¬ÁÑ¿ªÀ´£¬ÏòËÄÖÜµçÉä¶ø³ö£¬¹âÃ¢×ãÒÔºÍÈÕÔÂÕù»Ô£¡\n\n"NOR;
+                msg = HIW "$Né›™ç›®å¾®é–‰ï¼Œä¸¹ç”°è™•é¨°èµ·ä¸€å€‹ç„¡æ¯”åˆºçœ¼æ°£åœ˜ï¼ŒçœŸæ°£æ¼©æ¸¦çªç„¶æ¶ˆå¤±ï¼\n"NOR;
+                msg += HIW "\næ°£åœ˜çˆ†è£‚é–‹ä¾†ï¼Œå‘å››å‘¨é›»å°„è€Œå‡ºï¼Œå…‰èŠ’è¶³ä»¥å’Œæ—¥æœˆçˆ­è¼ï¼\n\n"NOR;
                 }
         else
                 {
-                msg = HIW "$NÒ»Éù¼âĞ¥£¬ÉíÌåÃÍÈ»Ğı×ª²»¶¨£¡\n"NOR;
-                msg += HIW "\n$N´Óµ¤Ìï³öÉ¢³öÎŞÊıÆøÁ÷£¬ÓÌÈçÇ§Íò¸ùÒøÕë£¬ÏòËÄÃæ°Ë·½ÉäÈ¥£¡\n\n"NOR;
+                msg = HIW "$Nä¸€è²å°–å˜¯ï¼Œèº«é«”çŒ›ç„¶æ—‹è½‰ä¸å®šï¼\n"NOR;
+                msg += HIW "\n$Nå¾ä¸¹ç”°å‡ºæ•£å‡ºç„¡æ•¸æ°£æµï¼ŒçŒ¶å¦‚åƒè¬æ ¹éŠ€é‡ï¼Œå‘å››é¢å…«æ–¹å°„å»ï¼\n\n"NOR;
                 }
         
 
@@ -66,10 +66,10 @@ int exert(object me, object target, int amount)
             if (random(extra+extra_enemy)<extra_enemy)
             {
                 last_damage = last_damage /2;
-                combat_message_vision(HIR"$NÖ»¾õÑÛÇ°¹âÃ¢´ÌÑÛ£¬ÖÜÎ§¿ÕÆø¼¸Óû·ĞÌÚ£¬´ó¾ªÖ®ÏÂÁ¬Ã¦¼±ÔËÄÚ¹¦£¬µÖÓù¿ªÀ´¡£\n"NOR,enemys[i]);
+                combat_message_vision(HIR"$Nåªè¦ºçœ¼å‰å…‰èŠ’åˆºçœ¼ï¼Œå‘¨åœç©ºæ°£å¹¾æ¬²æ²¸é¨°ï¼Œå¤§é©šä¹‹ä¸‹é€£å¿™æ€¥é‹å…§åŠŸï¼ŒæŠµå¾¡é–‹ä¾†ã€‚\n"NOR,enemys[i]);
             }
             else
-                combat_message_vision(HIR"$NÖ»¾õÑÛÇ°ÎŞÊıº®¹âÉÁ¹ı£¬Ëæ¼´È«ÉíÒ»Õó´ÌÍ´£¬¼¸¹ÉÑªÖù×ÔÉíÉÏÉä³ö¡£\n"NOR,enemys[i]);
+                combat_message_vision(HIR"$Nåªè¦ºçœ¼å‰ç„¡æ•¸å¯’å…‰é–ƒéï¼Œéš¨å³å…¨èº«ä¸€é™£åˆºç—›ï¼Œå¹¾è‚¡è¡€æŸ±è‡ªèº«ä¸Šå°„å‡ºã€‚\n"NOR,enemys[i]);
             res_kee = 10+(skill-180)/3;
                         if(res_kee>40)
                                 res_kee = 40;

@@ -2,13 +2,13 @@
 inherit NPC;
 void create()
 {
-        string *names = ({"»ÒÃ«¶ñÀÇ","»ÆÃ«¶ñÀÇ","°×Ã«¶ñÀÇ"});
+        string *names = ({"ç°æ¯›æƒ¡ç‹¼","é»ƒæ¯›æƒ¡ç‹¼","ç™½æ¯›æƒ¡ç‹¼"});
         set_name( names[random(sizeof(names))], ({ "wolf"}));
         set("vendetta_mark","wolf");
-        set("race", "Ò°ÊŞ");
-        set("gender", "ĞÛĞÔ");
+        set("race", "é‡ç¸");
+        set("gender", "é›„æ€§");
         set("age", 20);
-        set("long", "ÕâÊÇÒ»Ö»²ĞÈÌµÄ¶ñÀÇ¡£\n");
+        set("long", "é€™æ˜¯ä¸€åªæ®˜å¿çš„æƒ¡ç‹¼ã€‚\n");
 
         set("str", 40);
         set("cor", 100);
@@ -19,7 +19,7 @@ void create()
         set("attitude", "peaceful");
         set("chat_chance", 2);
 
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "Ç°½Å", "áá½Å", "Î²°Í" }) );
+        set("limbs", ({ "é ­éƒ¨", "èº«é«”", "å‰è…³", "å¾Œè…³", "å°¾å·´" }) );
         set("verbs", ({ "bite", "claw" }) );
         set("combat_exp", 100000);
         set("bellicosity", 5 );
@@ -36,6 +36,6 @@ mixed hit_ob(object me, object victim, int damage_bonus)
 {
         victim->receive_damage("qi",30+random(30), me);
         victim->receive_wound("qi",10+random(10), me);
-        message_combatd(HIW"\n$N"+HIW"·æÀûµÄ×¦×ÓÔÚ$n"+HIW"ÉíÉÏÁôÏÂÒ»µÀÑªÁÜÁÜµÄÉË¿Ú£¡"NOR,me,victim);
+        message_combatd(HIW"\n$N"+HIW"é‹’åˆ©çš„çˆªå­åœ¨$n"+HIW"èº«ä¸Šç•™ä¸‹ä¸€é“è¡€æ·‹æ·‹çš„å‚·å£ï¼"NOR,me,victim);
         return;
 }

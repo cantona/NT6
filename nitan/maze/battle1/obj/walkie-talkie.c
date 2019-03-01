@@ -7,12 +7,12 @@
 inherit ITEM;
 
 void create() {
-    set_name("¶Ô½²»ú", ({ "walkie-talkie","phone" }) );
+    set_name("å°è¬›æ©Ÿ", ({ "walkie-talkie","phone" }) );
     if( clonep() )
         set_default_object(__FILE__);
     else {
-        set("unit", "²¿");
-        set("long", "ÕâÊÇÒ»²¿ÎŞÏß¶Ô½²»ú£¬¿ÉÒÔ¶àÈËÍ¬Ê±Í¨»°¡£\n");
+        set("unit", "éƒ¨");
+        set("long", "é€™æ˜¯ä¸€éƒ¨ç„¡ç·šå°è¬›æ©Ÿï¼Œå¯ä»¥å¤šäººåŒæ™‚é€šè©±ã€‚\n");
         set("material", "steel");
         set("value", 10000);
     }
@@ -37,7 +37,7 @@ void init() {
 
 // Wizards:
 // this function is not required for bwdh. Channel will be set
-// in east/west Ïá·¿. Channel 1 for east, channel 2 for west.
+// in east/west å»‚æˆ¿. Channel 1 for east, channel 2 for west.
 // "init #(1,2,3,4)" to set this walkie-talkie to channel 1,2,3,4
 int do_set(string arg) {
     object ob = this_object();
@@ -48,18 +48,18 @@ int do_set(string arg) {
 
     switch (str) {
         case "1" : set("channel", 1, ob);
-                   write("Äã½«¶Ô½²»úÉèÖÃÔÚÆµµÀ 1¡£\n");
+                   write("ä½ å°‡å°è¬›æ©Ÿè¨­ç½®åœ¨é »é“ 1ã€‚\n");
                    break;
         case "2" : set("channel", 2, ob);
-                   write("Äã½«¶Ô½²»úÉèÖÃÔÚÆµµÀ 2¡£\n");
+                   write("ä½ å°‡å°è¬›æ©Ÿè¨­ç½®åœ¨é »é“ 2ã€‚\n");
                    break;
         case "3" : set("channel", 3, ob);
-                   write("Äã½«¶Ô½²»úÉèÖÃÔÚÆµµÀ 3¡£\n");
+                   write("ä½ å°‡å°è¬›æ©Ÿè¨­ç½®åœ¨é »é“ 3ã€‚\n");
                    break;
         case "4" : set("channel", 4, ob);
-                   write("Äã½«¶Ô½²»úÉèÖÃÔÚÆµµÀ 4¡£\n");
+                   write("ä½ å°‡å°è¬›æ©Ÿè¨­ç½®åœ¨é »é“ 4ã€‚\n");
                    break;
-        default : return notify_fail("Ö»ÓĞËÄ¸öÆµµÀ(1,2,3,4)¡£\n");
+        default : return notify_fail("åªæœ‰å››å€‹é »é“(1,2,3,4)ã€‚\n");
     }
     return 1;
 }
@@ -73,11 +73,11 @@ int do_turn(string arg) {
 
     switch(str) {
         case "on"  : set("owner", me->query("id", me), ob);
-                     write("Äã´ò¿ªÁË¶Ô½²»ú¡£\n");
+                     write("ä½ æ‰“é–‹äº†å°è¬›æ©Ÿã€‚\n");
                      return 1;
                      break;
         case "off" : delete("owner", ob);
-                     write("Äã¹ØÉÏÁË¶Ô½²»ú¡£\n");
+                     write("ä½ é—œä¸Šäº†å°è¬›æ©Ÿã€‚\n");
                      return 1;
                      break;
         default : return 0;
@@ -94,13 +94,13 @@ int do_talk(string arg) {
     string msg;
 
     if( !query("owner", ob) || query("owner", ob) != query("id", me) )
-        return notify_fail("Äã»¹Ã»ÓĞ´ò¿ª¶Ô½²»ú¡£\n");
+        return notify_fail("ä½ é‚„æ²’æœ‰æ‰“é–‹å°è¬›æ©Ÿã€‚\n");
 
     if( !query("channel", ob) )
-        return notify_fail("ÄãĞèÒªÉè¶¨Ò»¸öÆµµÀ¡£\n");
+        return notify_fail("ä½ éœ€è¦è¨­å®šä¸€å€‹é »é“ã€‚\n");
 
     if (!arg)
-        return notify_fail("ÄãÒª¸æËßÄãµÄÍ¬°éÊ²Ã´£¿\n");
+        return notify_fail("ä½ è¦å‘Šè¨´ä½ çš„åŒä¼´ä»€éº¼ï¼Ÿ\n");
 
     player_list = users();
     for (i = 0; i < sizeof(player_list); i++) {
@@ -110,16 +110,16 @@ int do_talk(string arg) {
                  && query("owner", inv[j]) == query("id", player_list[i] )
                  && query("channel", inv[j]) == query("channel", ob)){
                 switch(query("channel", ob)){
-                    case 1 : msg = "¡¾¶Ô½²»ú¡¶ÆµµÀÒ»¡·¡¿";
+                    case 1 : msg = "ã€å°è¬›æ©Ÿã€Šé »é“ä¸€ã€‹ã€‘";
                              break;
-                    case 2 : msg = "¡¾¶Ô½²»ú¡¶ÆµµÀ¶ş¡·¡¿";
+                    case 2 : msg = "ã€å°è¬›æ©Ÿã€Šé »é“äºŒã€‹ã€‘";
                              break;
-                    case 3 : msg = "¡¾¶Ô½²»ú¡¶ÆµµÀÈı¡·¡¿";
+                    case 3 : msg = "ã€å°è¬›æ©Ÿã€Šé »é“ä¸‰ã€‹ã€‘";
                              break;
-                    case 4 : msg = "¡¾¶Ô½²»ú¡¶ÆµµÀËÄ¡·¡¿";
+                    case 4 : msg = "ã€å°è¬›æ©Ÿã€Šé »é“å››ã€‹ã€‘";
                              break;
                 }
-                msg=msg+query("name", me)+"("+query("id", me)+")£º"+arg;
+                msg=msg+query("name", me)+"("+query("id", me)+")ï¼š"+arg;
                 tell_object(player_list[i], HIG"\n" + msg + "\n"NOR);
             }
         }

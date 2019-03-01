@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create()
 {
-	set("short","��ͷ��");
+	set("short","象頭崖");
 	set("long",@LONG
-ӭ����һ��޴��ʯ�£���״������ͷ���˵����Ե�������ͷ�¡���ǰ���
-ɽ������һ������������ɨ�㣬��ɨ���ɣ���֦�ɷ����ֽ�ǧͷ�ɣ�����������
-һ���޴�Բʯ��ʯ������Ƕ��һ���������ߵ�������������֦�ɺ������֦����
-���˽Գ�֮̽���ɡ�
+迎面是一塊巨大的石崖，形狀宛如象頭，此地是以得名“象頭崖”。前面的
+山坡上有一棵鬆樹，形如掃帚，名掃帚鬆，因枝幹繁多又叫千頭鬆，東北方向上
+一個巨大圓石，石縫中鑲嵌了一株三尺來高的鬆樹，那鬆樹枝幹橫生，虯枝勃發
+，人皆稱之探風鬆。
 LONG);
 	set("exits",
 	([
@@ -29,6 +29,6 @@ LONG);
 int valid_leave(object me,string dir)
 {
     if(dir=="northup")
-      return notify_fail("�����Ƕ��£�û�����������ˡ�\n");
+      return notify_fail("北上是陡崖，沒法再往上走了。\n");
     return ::valid_leave(me,dir);
 }

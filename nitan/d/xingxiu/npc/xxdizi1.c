@@ -5,10 +5,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÐÇËÞÅÉµÜ×Ó", ({ "xingxiu dizi", "dizi"}));
-        set("gender", "ÄÐÐÔ" );
+        set_name("æ˜Ÿå®¿æ´¾å¼Ÿå­", ({ "xingxiu dizi", "dizi"}));
+        set("gender", "ç”·æ€§" );
         set("age", 26);
-        set("long","ËûÊÇÐÇËÞÅÉµÄ¶ñÍ½, ÉÕÉ±ÇÀ¼é¶Ä, ÎÞ¶ñ²»×÷¡£\n");
+        set("long","ä»–æ˜¯æ˜Ÿå®¿æ´¾çš„æƒ¡å¾’, ç‡’æ®ºæ¶å§¦è³­, ç„¡æƒ¡ä¸ä½œã€‚\n");
 
         set_temp("apply/attack", 15);
         set_temp("apply/defense", 15);
@@ -30,16 +30,16 @@ void create()
         set_skill("parry", 20);
         set_skill("tianshan-zhang", 10);
         map_skill("staff", "tianshan-zhang");
-        create_family("ÐÇËÞÅÉ", 3, "µÜ×Ó");
+        create_family("æ˜Ÿå®¿æ´¾", 3, "å¼Ÿå­");
         setup();
         carry_object("/clone/weapon/gangzhang")->wield();
         carry_object(__DIR__"obj/changpao")->wear();
         add_money("silver", 5);
         set("chat_chance", 5);
         set("chat_msg", ({
-                "ÐÇËÞÅÉµÜ×ÓÒ»»á¶ù´µ×àË¿Öñóï¹Ü, Ò»»á¶ù¸ßÉùËÌµÀ£¬¡°ÐÇ¡«ËÞ¡«ÀÏ¡«ÏÉ£¬¹Å¡«½ñ¡«ÎÞ¡«±È¡±¡£\n",
-                "ÐÇËÞÅÉµÜ×ÓÒ»»á¶ù´µ×àË¿Öñóï¹Ü, Ò»»á¶ù¸ßÉùËÌµÀ£¬¡°ÐÇ¡«ËÞ¡«ÀÏ¡«ÏÉ£¬Íþ¡«Õð¡«å¾¡«Óî¡±¡£\n",
-                "ÐÇËÞÅÉµÜ×ÓÒ»»á¶ù´µ×àË¿Öñóï¹Ü, Ò»»á¶ù¸ßÉùËÌµÀ£¬¡°ÐÇ¡«ËÞ¡«ÀÏ¡«ÏÉ£¬µÂ¡«Åä¡«Ìì¡«µØ¡±¡£\n",
+                "æ˜Ÿå®¿æ´¾å¼Ÿå­ä¸€æœƒå…’å¹å¥çµ²ç«¹ç°«ç®¡, ä¸€æœƒå…’é«˜è²é Œé“ï¼Œâ€œæ˜Ÿï½žå®¿ï½žè€ï½žä»™ï¼Œå¤ï½žä»Šï½žç„¡ï½žæ¯”â€ã€‚\n",
+                "æ˜Ÿå®¿æ´¾å¼Ÿå­ä¸€æœƒå…’å¹å¥çµ²ç«¹ç°«ç®¡, ä¸€æœƒå…’é«˜è²é Œé“ï¼Œâ€œæ˜Ÿï½žå®¿ï½žè€ï½žä»™ï¼Œå¨ï½žéœ‡ï½žå¯°ï½žå®‡â€ã€‚\n",
+                "æ˜Ÿå®¿æ´¾å¼Ÿå­ä¸€æœƒå…’å¹å¥çµ²ç«¹ç°«ç®¡, ä¸€æœƒå…’é«˜è²é Œé“ï¼Œâ€œæ˜Ÿï½žå®¿ï½žè€ï½žä»™ï¼Œå¾·ï½žé…ï½žå¤©ï½žåœ°â€ã€‚\n",
         }) );
 }
 
@@ -53,9 +53,9 @@ void init()
         ob = this_player();
         if (interactive(ob) &&
                 ((fam=query("family", ob)) && 
-                fam["family_name"] != "ÐÇËÞÅÉ" ) )
+                fam["family_name"] != "æ˜Ÿå®¿æ´¾" ) )
         {
-                command("say ´óµ¨¿ñÍ½£¬¾¹¸Ò´³µ½ÌìÉ½½ÅÏÂÀ´ÈöÒ°£¡£¡£¡\n");
+                command("say å¤§è†½ç‹‚å¾’ï¼Œç«Ÿæ•¢é—–åˆ°å¤©å±±è…³ä¸‹ä¾†æ’’é‡Žï¼ï¼ï¼\n");
                 remove_call_out("kill_ob");
                 call_out("kill_ob", 2, ob);
         }

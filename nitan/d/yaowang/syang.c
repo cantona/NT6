@@ -9,10 +9,10 @@ string* npcs = ({
 });
 void create()
 {
-        set("short", "ËÇÑø³¡");
+        set("short", "é£¼é¤Šå ´");
         set("long",@LONG
-ÕâÀïÊÇÒ©Íõ¹ÈµÄËÇÑø³¡£¬ÓÃÓÚËÇÑøÒ»Ğ©¿ÉÒÔÈ¡Ò©²ÄµÄ¶¯Îï£¬Äã¿ÉÒÔ°Ñ¶¯Îï
-×½(zhuo)µ½ÍÀÔ×³¡È¥É±ÁËÈ¡Ò©¡£
+é€™è£¡æ˜¯è—¥ç‹è°·çš„é£¼é¤Šå ´ï¼Œç”¨äºé£¼é¤Šä¸€äº›å¯ä»¥å–è—¥æçš„å‹•ç‰©ï¼Œä½ å¯ä»¥æŠŠå‹•ç‰©
+æ‰(zhuo)åˆ°å± å®°å ´å»æ®ºäº†å–è—¥ã€‚
 LONG );
         set("exits", ([
                 "east" : __DIR__"chalu",
@@ -43,39 +43,39 @@ int do_zhiliao(string arg)
           pot=2+random(6);
         me=this_player();
         lvl=me->query_skill("hunting");
-        if( query("family/family_name", me) != "Ò©Íõ¹È"
+        if( query("family/family_name", me) != "è—¥ç‹è°·"
          || lvl < 60 ) 
-        {               return notify_fail("Äã»¹²»»áá÷ÁÔ¼¼ÇÉÄØ£¡×½¶¯Îï¸ÉÊ²Ã´£¿\n");
+        {               return notify_fail("ä½ é‚„ä¸æœƒç‹©çµæŠ€å·§å‘¢ï¼æ‰å‹•ç‰©å¹¹ä»€éº¼ï¼Ÿ\n");
         }
 
         if( !arg || !objectp(ob = present(arg, environment(me))) )
-                return notify_fail("Ö¸Áî¸ñÊ½£ºzhuo <ID> \n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šzhuo <ID> \n");
 
        if( query("owner", ob) == query("id", me) )
-                   return notify_fail("ÄãÒÑ¾­×½µ½"+ob->name()+"ÁË£¡\n");
+                   return notify_fail("ä½ å·²ç¶“æ‰åˆ°"+ob->name()+"äº†ï¼\n");
 
         if( query("owner", ob) && query("owner", ob) != query("id", me) )
-                      return notify_fail(ob->name()+"ÒÑ¾­ÊÇÈË¼ÒµÄÁË£¡\n");
+                      return notify_fail(ob->name()+"å·²ç¶“æ˜¯äººå®¶çš„äº†ï¼\n");
         if( !query("yaowang_zhuo", ob) )
-                return notify_fail("Õâ¸ö¶«Î÷²»ÄÜ×½£¡\n");
+                return notify_fail("é€™å€‹æ±è¥¿ä¸èƒ½æ‰ï¼\n");
 
         if( me->is_fighting() || me->is_busy() )
-                return notify_fail("ÄãÕıÃ¦×ÅÄØ£¡\n");
+                return notify_fail("ä½ æ­£å¿™è‘—å‘¢ï¼\n");
           if (random(lvl)>lvl*2/3)
         {       
         ob->set_leader(me);
         me->start_busy(2);
-        message_vision("$N¶Ô$nÕÙ»½ÁËÁ½Éù£¬$n¾Í¹Ô¹ÔµÃ¸ú×Å$N¡£\n", me, ob);
+        message_vision("$Nå°$nå¬å–šäº†å…©è²ï¼Œ$nå°±ä¹–ä¹–å¾—è·Ÿè‘—$Nã€‚\n", me, ob);
                 me->improve_skill("hunting",(query("int", me)/6));
-                write(HIC "ÄãÔÚÕÙ»½¹ı³ÌÖĞ¶ÔÓÚá÷ÁÔ¼¼ÇÉÓĞÁËĞ©Ìå»á¡£\n" NOR);
+                write(HIC "ä½ åœ¨å¬å–šéç¨‹ä¸­å°äºç‹©çµæŠ€å·§æœ‰äº†äº›é«”æœƒã€‚\n" NOR);
                    set("owner",query("id",  me), ob);
                      addn("combat_exp", exp, me);
                      me->improve_potential(pot);
-                     tell_object(me, HIC "Äã»ñµÃÁË" + chinese_number(exp) + 
-                             "µã¾­ÑéºÍ" + chinese_number(pot) + "µãÇ±ÄÜ¡£\n"NOR );
+                     tell_object(me, HIC "ä½ ç²å¾—äº†" + chinese_number(exp) + 
+                             "é»ç¶“é©—å’Œ" + chinese_number(pot) + "é»æ½›èƒ½ã€‚\n"NOR );
         }else 
         {       
-        message_vision("$N¶Ô$nÕÙ»½ÁËÁ½Éù£¬$n¸ù±¾¾Í²»Àí$N¡£\n", me, ob);
+        message_vision("$Nå°$nå¬å–šäº†å…©è²ï¼Œ$næ ¹æœ¬å°±ä¸ç†$Nã€‚\n", me, ob);
           me->start_busy(random(2));
         }
 

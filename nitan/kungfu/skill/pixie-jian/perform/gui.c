@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-string name() { return HIR "¹í÷ÈÉí·¨" NOR; }
+string name() { return HIR "é¬¼é­…èº«æ³•" NOR; }
 
 inherit F_SSERVER;
 
@@ -19,27 +19,27 @@ int perform(object me, object target)
         }
 
         if (! me->is_fighting(target))
-                return notify_fail(name() + "Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(name() + "åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if (target->is_busy())
-                return notify_fail(target->name() + "Ä¿Ç°Õý×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É¡£\n");
+                return notify_fail(target->name() + "ç›®å‰æ­£è‡ªé¡§ä¸æš‡ï¼Œæ”¾è†½æ”»æ“Šå§ã€‚\n");
 
         skill = me->query_skill("pixie-jian", 1);
 
         if (skill < 100)
-                return notify_fail("ÄãµÄ±ÙÐ°½£·¨²»¹»æµÊì£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„è¾Ÿé‚ªåŠæ³•ä¸å¤ å«»ç†Ÿï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if( query("neili", me)<100 )
-                return notify_fail("ÄãÏÖÔÚµÄÕæÆø²»×ã£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çš„çœŸæ°£ä¸è¶³ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (me->query_skill_mapped("dodge") != "pixie-jian")
-                return notify_fail("ÄãÃ»ÓÐ×¼±¸Ê¹ÓÃ±ÙÐ°½£·¨£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æº–å‚™ä½¿ç”¨è¾Ÿé‚ªåŠæ³•ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIR "$N" HIR "Éí×Óºö½øºöÍË£¬ÍðÈô¹í÷È£¬ÉíÐÎ¹îÃØÒì³££¬ÔÚ$n"
-              HIR "Éí±ßÆ®ºö²»¶¨¡£\n" NOR;
+        msg = HIR "$N" HIR "èº«å­å¿½é€²å¿½é€€ï¼Œå®›è‹¥é¬¼é­…ï¼Œèº«å½¢è©­ç§˜ç•°å¸¸ï¼Œåœ¨$n"
+              HIR "èº«é‚Šé£„å¿½ä¸å®šã€‚\n" NOR;
 
         ap = attack_power(me, "dodge");
 
@@ -47,14 +47,14 @@ int perform(object me, object target)
 
         if (ap / 2 + random(ap*2) > dp)
         {
-                msg += HIR "$p" HIR "ö®Ê±Ö»¾õÑÛ»¨çÔÂÒ£¬Ö»ÄÜ½ôÊØÃÅ»§£¬²»"
-                       "¸ÒÍý×Ô³ö»÷£¡\n" NOR;
+                msg += HIR "$p" HIR "éœŽæ™‚åªè¦ºçœ¼èŠ±ç¹šäº‚ï¼Œåªèƒ½ç·Šå®ˆé–€æˆ¶ï¼Œä¸"
+                       "æ•¢å¦„è‡ªå‡ºæ“Šï¼\n" NOR;
                 target->start_busy(ap / 80 + 2);
                 me->start_busy(1);
         } else
         {
-                msg += CYN "¿ÉÊÇ$p" CYN "¿´ÆÆÁË$P" CYN "µÄÉí·¨£¬²¢Ã»ÓÐÊÜ"
-                       "µ½ÈÎºÎÓ°Ïì¡£\n" NOR;
+                msg += CYN "å¯æ˜¯$p" CYN "çœ‹ç ´äº†$P" CYN "çš„èº«æ³•ï¼Œä¸¦æ²’æœ‰å—"
+                       "åˆ°ä»»ä½•å½±éŸ¿ã€‚\n" NOR;
                 me->start_busy(2);
         }
         addn("neili", -50, me);

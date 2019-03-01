@@ -8,22 +8,22 @@ void create()
         string weapon;
         int i;
 
-        set_name("Ä°ÉúïÚÍ·", ({ "fake biaotou" }) );
-        set("title", HIR"¸£"HIC"Íş"YEL"ïÚ¾Ö"HIY"ïÚÍ·"NOR);
-        set("gender", random(2)>0 ? "Å®ĞÔ" : "ÄĞĞÔ" );
+        set_name("é™Œç”Ÿé¢é ­", ({ "fake biaotou" }) );
+        set("title", HIR"ç¦"HIC"å¨"YEL"é¢å±€"HIY"é¢é ­"NOR);
+        set("gender", random(2)>0 ? "å¥³æ€§" : "ç”·æ€§" );
         set("age", 30 + random(20) );
-        set("long","Ò»¸öÆÕÍ¨µÄÈË£¬·ÅÔÚÈËÈºÖĞÃ»ÓĞÒ»µãÍ»³öÖ®´¦¡£\n");
+        set("long","ä¸€å€‹æ™®é€šçš„äººï¼Œæ”¾åœ¨äººç¾¤ä¸­æ²’æœ‰ä¸€é»çªå‡ºä¹‹è™•ã€‚\n");
 
         weapon = weapon_msg[random(sizeof(weapon_msg))];
         set("combat_exp",100000 +random(50000));
         set("max_qi",1200+random(300));
         set("max_jing",400+random(200));
-        set("str", 20 + random(11));    // ëöÁ¦
-        set("per", 20 + random(11));    // ÈİÃ²
-        set("int", 20 + random(11));    // ÎòĞÔ
-        set("con", 20 + random(11));    // ¸ù¹Ç
-        set("dex", 100 + random(11));   // Éí·¨
-        set("kar", 20 + random(11));    // ¸£Ôµ
+        set("str", 20 + random(11));    // è†‚åŠ›
+        set("per", 20 + random(11));    // å®¹è²Œ
+        set("int", 20 + random(11));    // æ‚Ÿæ€§
+        set("con", 20 + random(11));    // æ ¹éª¨
+        set("dex", 100 + random(11));   // èº«æ³•
+        set("kar", 20 + random(11));    // ç¦ç·£
         setup();
         carry_object(weapon);
         carry_object("/clone/misc/cloth")->wear();

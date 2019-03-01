@@ -1,17 +1,17 @@
-// hongcha.c ºì²è
+// hongcha.c ç´…èŒ¶
 // Last Modified by winder on Jul. 12 2002
 
 inherit ITEM;
 
 void create()
 {
-        set_name("ºì²è",({"tea", "cha", "hong cha"}));
+        set_name("ç´…èŒ¶",({"tea", "cha", "hong cha"}));
         set_weight(50);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»±­ºì²è£¬ÓÆÓÆµØÃ°×ÅÏãÆø¡«¡«¡«\n");
-                set("unit", "±­");
+                set("long", "ä¸€æ¯ç´…èŒ¶ï¼Œæ‚ æ‚ åœ°å†’è‘—é¦™æ°£ï½ï½ï½\n");
+                set("unit", "æ¯");
                 set("value", 300);
                 set("remaining", 2);
                 set("drink_supply", 25);
@@ -32,10 +32,10 @@ int do_drink(string arg)
         recover = 5;
         if( !this_object()->id(arg) ) return 0;
         if( this_player()->is_busy() )
-                return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É¡£\n");
+                return notify_fail("ä½ ä¸Šä¸€å€‹å‹•ä½œé‚„æ²’æœ‰å®Œæˆã€‚\n");
         if( query("water", this_player()) >= 
                 (int)this_player()->max_water_capacity() )
-                return notify_fail("ÄãÒÑ¾­ºÈÌ«¶àÁË£¬ÔÙÒ²¹à²»ÏÂÒ»µÎË®ÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“å–å¤ªå¤šäº†ï¼Œå†ä¹ŸçŒä¸ä¸‹ä¸€æ»´æ°´äº†ã€‚\n");
 
         set("value", 0);
         addn("water", query("drink_supply"), this_player());
@@ -58,11 +58,11 @@ int do_drink(string arg)
         addn("remaining", -1);
         if ( query("remaining") )
         {
-                 message_vision( "$N¶ËÆğ±­ºì²è£¬ÓĞ×ÌÓĞÎ¶µØÆ·ÁË¼¸¿Ú¡£\nÒ»¹ÉÏãÆøÖ±ÈëĞÄÆ¢£¬$N¾õµÃ¾«ÉñºÃ¶àÁË¡£\n", this_player());
+                 message_vision( "$Nç«¯èµ·æ¯ç´…èŒ¶ï¼Œæœ‰æ»‹æœ‰å‘³åœ°å“äº†å¹¾å£ã€‚\nä¸€è‚¡é¦™æ°£ç›´å…¥å¿ƒè„¾ï¼Œ$Nè¦ºå¾—ç²¾ç¥å¥½å¤šäº†ã€‚\n", this_player());
         }
         else
         {
-                 message_vision( "$N¶ËÆğµñ»¨Ğ¡±­£¬°ÑÊ£ÏÂµÄºì²èÒ»Òû¶ø¾¡¡£\nÒ»¹ÉÏãÆøÖ±ÈëĞÄÆ¢£¬$N¾õµÃ¾«ÉñºÃ¶àÁË¡£\n", this_player());
+                 message_vision( "$Nç«¯èµ·é›•èŠ±å°æ¯ï¼ŒæŠŠå‰©ä¸‹çš„ç´…èŒ¶ä¸€é£²è€Œç›¡ã€‚\nä¸€è‚¡é¦™æ°£ç›´å…¥å¿ƒè„¾ï¼Œ$Nè¦ºå¾—ç²¾ç¥å¥½å¤šäº†ã€‚\n", this_player());
                 destruct(this_object());
         }
         return 1;

@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-     set("short","¾ø±Ú");
+     set("short","çµ•å£");
      set("long",@LONG
-É½µÀµ½´ËÍ»È»ÏûÊ§£¬ÔÚÄãÃæÇ°ÊÇÒ»Ìõ¾ø±Ú£¬ÍùÏÂ¿´È¥ÔÆÎíçÔÈÆ£¬Äã¸ù
-±¾ÎÞ·¨¿´Çå¹Èµ×¡£¾ø±Ú±ßÓÐ¸öÉ½¶´£¨hole)£¬ÅÔ±ßÓÐÒ»¿éÊ¯±®(bei)¡£
+å±±é“åˆ°æ­¤çªç„¶æ¶ˆå¤±ï¼Œåœ¨ä½ é¢å‰æ˜¯ä¸€æ¢çµ•å£ï¼Œå¾€ä¸‹çœ‹åŽ»é›²éœ§ç¹šç¹žï¼Œä½ æ ¹
+æœ¬ç„¡æ³•çœ‹æ¸…è°·åº•ã€‚çµ•å£é‚Šæœ‰å€‹å±±æ´žï¼ˆhole)ï¼Œæ—é‚Šæœ‰ä¸€å¡ŠçŸ³ç¢‘(bei)ã€‚
 LONG
      );
      set("exits", ([ 
@@ -18,8 +18,8 @@ LONG
              ])); 
      set("outdoors", "chengdu");     
      set("item_desc",([
-         "bei" : "¡º÷è÷ë¿ß¡»ÄÚÓÐ¹ÖÊÞ£¬ÎÞÊÂÇÐÎðÈëÄÚ£¡\n" ,
-         "hole" : "ÕâÊÇ÷è÷ë¿ß£¬Äã²»Ïë»îÁËµÄ»°¿ÉÒÔ½øÈ¥¡£(enter dong)\n" ,
+         "bei" : "ã€Žéº’éºŸçªŸã€å…§æœ‰æ€ªç¸ï¼Œç„¡äº‹åˆ‡å‹¿å…¥å…§ï¼\n" ,
+         "hole" : "é€™æ˜¯éº’éºŸçªŸï¼Œä½ ä¸æƒ³æ´»äº†çš„è©±å¯ä»¥é€²åŽ»ã€‚(enter dong)\n" ,
      ]));
      setup();
 }
@@ -40,9 +40,9 @@ void init()
      if ( ! me->query("reborn_start"))
      {
         tell_object(me, 
-           BLINK HIR"÷è÷ë¿ßÄÄÀïÊÇËæ±ãÄÜ½øµÄ£¬Äª·ÇÄã»îµÃ²»ÄÍ·³ÁË!\n\n"NOR);
+           BLINK HIR"éº’éºŸçªŸå“ªè£¡æ˜¯éš¨ä¾¿èƒ½é€²çš„ï¼ŒèŽ«éžä½ æ´»å¾—ä¸è€ç…©äº†!\n\n"NOR);
 
-        message_vision(HIY"Ò»¹É¾Þ´óµÄÁ¦Á¿½«$NÍÆ³öÁË÷è÷ë¶´¿Ú¡£\n\n"NOR, me);
+        message_vision(HIY"ä¸€è‚¡å·¨å¤§çš„åŠ›é‡å°‡$NæŽ¨å‡ºäº†éº’éºŸæ´žå£ã€‚\n\n"NOR, me);
         me->move("/d/city3/road2");
         return;
      }
@@ -56,8 +56,8 @@ void init()
          base_name(environment(ob))[0..20] == "/d/zhuanshi/qilindong")
      {     
          tell_object(me, 
-            HIY"ÏÖÔÚÓÐÈËÕýÔÚ¶´Àï£¬Äã³ÙµãÔÙÀ´°É¡£\n\n"NOR);        
-          message_vision(HIY"Ò»¹É¾Þ´óµÄÁ¦Á¿½«$NÍÆ³öÁË÷è÷ë¶´¿Ú¡£\n\n"NOR, me);
+            HIY"ç¾åœ¨æœ‰äººæ­£åœ¨æ´žè£¡ï¼Œä½ é²é»žå†ä¾†å§ã€‚\n\n"NOR);        
+          message_vision(HIY"ä¸€è‚¡å·¨å¤§çš„åŠ›é‡å°‡$NæŽ¨å‡ºäº†éº’éºŸæ´žå£ã€‚\n\n"NOR, me);
           me->move("/d/city3/shudao14");         
          return;
      }         
@@ -72,17 +72,17 @@ int do_enter(string arg)
     me = this_player();
  
     if( !arg || arg != "hole" )
-       return notify_fail("ÄãÒª½øÄÄÀïÈ¥?\n"); 
+       return notify_fail("ä½ è¦é€²å“ªè£¡åŽ»?\n"); 
 
     foreach (ob in deep_inventory(me)) 
     if (ob->is_character()) 
-        return notify_fail("½ø÷è÷ë¿ß£¬ÉúËÀÓÉÌì£¬¾Í²»Òª´øÆäËûÈË»ò¶¯Îï½øÈ¥ÁË£¡\n"); 
+        return notify_fail("é€²éº’éºŸçªŸï¼Œç”Ÿæ­»ç”±å¤©ï¼Œå°±ä¸è¦å¸¶å…¶ä»–äººæˆ–å‹•ç‰©é€²åŽ»äº†ï¼\n"); 
 
-    message_vision("$NÒ»ÍäÑüÍù¶´Àï×ßÁË½øÈ¥¡£\n\n",me);
+    message_vision("$Nä¸€å½Žè…°å¾€æ´žè£¡èµ°äº†é€²åŽ»ã€‚\n\n",me);
     
     me->move(__DIR__"dong1");
 
-    message("vision", me->name() + "´Ó¶´Àï×ßÁË½øÀ´¡£\n",
+    message("vision", me->name() + "å¾žæ´žè£¡èµ°äº†é€²ä¾†ã€‚\n",
             environment(me), ({me}) );
 
     return 1;   

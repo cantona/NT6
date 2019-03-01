@@ -4,14 +4,14 @@ inherit NPC;
 
 void create()
 {
-        set_name(HIY "Ğ»Ñ·" NOR, ({"xie xun", "xie", "xun", }));
-        set("title", HIR "·¢¿ñµÄ½ğÃ«Ê¨Íõ" NOR);
+        set_name(HIY "è¬éœ" NOR, ({"xie xun", "xie", "xun", }));
+        set("title", HIR "ç™¼ç‹‚çš„é‡‘æ¯›ç…ç‹" NOR);
         set("long",
-        "ËûÊÇÒ»Î»Éí²Ä¿ıÎ°Òì³£µÄµÄÀÏÕß£¬Éí´©Ò»¼ş°×²¼³¤ÅÛ¡£\n"
-        "ËûÂúÍ·»Æ·¢£¬Íş·çÁİÁİ£¬ÕæÈçÌìÉñÒ»°ã£¬Ö»ÊÇÁ½Ö»ÑÛ¾¦²¢²»Õö¿ª¡£\n"
+        "ä»–æ˜¯ä¸€ä½èº«æé­å‰ç•°å¸¸çš„çš„è€è€…ï¼Œèº«ç©¿ä¸€ä»¶ç™½å¸ƒé•·è¢ã€‚\n"
+        "ä»–æ»¿é ­é»ƒç™¼ï¼Œå¨é¢¨å‡œå‡œï¼ŒçœŸå¦‚å¤©ç¥ä¸€èˆ¬ï¼Œåªæ˜¯å…©åªçœ¼ç›ä¸¦ä¸çœé–‹ã€‚\n"
         );
 
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("attitude", "peaceful");
 
         set("age", 61);
@@ -64,14 +64,14 @@ void create()
                 (: command("perform cuff.shang twice") :),
                 (: command("perform cuff.fei twice") :),
         }) );
-        create_family("Ã÷½Ì", 36, "µÜ×Ó");
+        create_family("æ˜æ•™", 36, "å¼Ÿå­");
 
         set_temp("apply/attack", 500000);
         set_temp("apply/unarmed_damage", 50000); 
         set_temp("apply/damage", 50000); 
         set_temp("apply/armor", 50000);
-        set_temp("apply/qy", 80);  // ÆøÔË
-        set_temp("apply/fy", 80);  // ¸£Ôµ
+        set_temp("apply/qy", 80);  // æ°£é‹
+        set_temp("apply/fy", 80);  // ç¦ç·£
         
         setup();
         carry_object("/d/mingjiao/obj/baipao")->wear();
@@ -100,7 +100,7 @@ void heart_beat()
         if (query("neili") < 1 && random(50) == 1)                                              
                 set("neili", query("max_neili"));
         
-        // Èç¹û²»ÔÚ°ïÕ½ÆÚ¼äÔòÏûÊ§
+        // å¦‚æœä¸åœ¨å¹«æˆ°æœŸé–“å‰‡æ¶ˆå¤±
         if (! BUNCH_D->is_battle_start() )destruct(this_object());
 
         ::heart_beat();
@@ -119,7 +119,7 @@ void unconcious()
 
 void die(object killer)
 {
-        object dob;             // ´òÔÎÕâ¸öNPCµÄÈË
+        object dob;             // æ‰“æšˆé€™å€‹NPCçš„äºº
         object env;
         object ob;
         
@@ -128,11 +128,11 @@ void die(object killer)
                 return;
         }
 
-        // ÕÒµ½É±ÁËÎÒ(NPC)»òÊÇ´òÔÎÎÒµÄÈË
+        // æ‰¾åˆ°æ®ºäº†æˆ‘(NPC)æˆ–æ˜¯æ‰“æšˆæˆ‘çš„äºº
         if (! objectp(dob = killer))
                 dob = query_last_damage_from();
 
-        // Èç¹ûÉ±ÎÒµÄÈËÊôÓÚÄ³°ïÅÉÔòÉèÖÃ¸Ã°ïÅÉ¾ßÓĞÇÀÏÈ½øÈëÃÜµÀ
+        // å¦‚æœæ®ºæˆ‘çš„äººå±¬äºæŸå¹«æ´¾å‰‡è¨­ç½®è©²å¹«æ´¾å…·æœ‰æ¶å…ˆé€²å…¥å¯†é“
         if (dob && userp(dob))
         {
                 if (! objectp(env = find_object("/maze/binghuodao/jitan")))
@@ -144,7 +144,7 @@ void die(object killer)
                 }
         }
 
-        message_vision(HIY "$N" HIY "´ó½ĞµÀ£º¡°ÔôÀÏÌì£¬ÔôÀÏÌì°¡£¬ÎªºÎÕâÑù¶ÔÎÒ£¡¡±\n" NOR, 
+        message_vision(HIY "$N" HIY "å¤§å«é“ï¼šâ€œè³Šè€å¤©ï¼Œè³Šè€å¤©å•Šï¼Œç‚ºä½•é€™æ¨£å°æˆ‘ï¼â€\n" NOR, 
                        this_object());
 
         destruct(this_object());

@@ -7,13 +7,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name("ÂæÍÕÉÌ¶Ó", ({ "shangdui"}));
-        set("unit", "Ö»");
+        set_name("é§±é§å•†éšŠ", ({ "shangdui"}));
+        set("unit", "åª");
         set("location", 1);
         set_weight(900000);
         set("long", "
-Ò»Ö»Ô¶µÀ¶øÀ´µÄÂæÍÕÉÌ¶Ó£¬ÂæÍÕ±³ÉÏ¶ÑÂúÁË»õÎï¡£ÉÌÈËÃÇ
-ÊÖÖĞÌá×ÅÒ»Ğ©²¼´ü£¬¿´À´ÊÇ±È½ÏÖØÒªµÄ¶«Î÷¡£¡£¡£\n");
+ä¸€åªé é“è€Œä¾†çš„é§±é§å•†éšŠï¼Œé§±é§èƒŒä¸Šå †æ»¿äº†è²¨ç‰©ã€‚å•†äººå€‘
+æ‰‹ä¸­æè‘—ä¸€äº›å¸ƒè¢‹ï¼Œçœ‹ä¾†æ˜¯æ¯”è¼ƒé‡è¦çš„æ±è¥¿ã€‚ã€‚ã€‚\n");
         set("no_get", 1);
         set("no_drop", 1);
         seteuid(getuid());
@@ -39,10 +39,10 @@ int do_rob()
 
         if(!living(me)) return 0;
         if( !query_temp("xx_job2", me) || !query_temp("rob_start", me) )
-                return notify_fail("ÄãÕâ¼éÔô£¬¾¹¸Ò¹âÌì»¯ÈÕÖ®ÏÂÀ¹½ØÉÌ¶Ó£¬²»ÅÂ±»´òÈëÌìÀÎÂğ£¿\n");
+                return notify_fail("ä½ é€™å§¦è³Šï¼Œç«Ÿæ•¢å…‰å¤©åŒ–æ—¥ä¹‹ä¸‹æ””æˆªå•†éšŠï¼Œä¸æ€•è¢«æ‰“å…¥å¤©ç‰¢å—ï¼Ÿ\n");
         if(objectp(present("hubiao biaoshi", environment(me))))
-                return notify_fail("»¤ïÚïÚÊ¦¿´À´Îä¹¦²»Èõ£¬Äã»¹ÊÇÏÈ´ò·¢ÁËÃæÇ°Õâ¸öÔÙËµ°É£¡\n");  
-        message_vision(HIY "$N¶Ô×Å$n´óºğÒ»Éù£ºĞÇËŞ"+me->name()+"ÔÚ´Ë£¡ÁôÏÂÄãÃÇµÄÇ®²ÆÀ´£¡\n"NOR, me, ob);
+                return notify_fail("è­·é¢é¢å¸«çœ‹ä¾†æ­¦åŠŸä¸å¼±ï¼Œä½ é‚„æ˜¯å…ˆæ‰“ç™¼äº†é¢å‰é€™å€‹å†èªªå§ï¼\n");  
+        message_vision(HIY "$Nå°è‘—$nå¤§å¼ä¸€è²ï¼šæ˜Ÿå®¿"+me->name()+"åœ¨æ­¤ï¼ç•™ä¸‹ä½ å€‘çš„éŒ¢è²¡ä¾†ï¼\n"NOR, me, ob);
         set_temp("xx_rob", 1, me);
         if( !query("going", ob) )
         {
@@ -76,7 +76,7 @@ void make_bs(object me, object ob)
         else
 //
         {
-                message_vision(HIW"$N¼ûÒÑ¾­ÎŞÈË±£»¤£¬ÔÚ$nµÄÍşĞ²ÏÂ£¬Ö»µÃÍ£ÁËÏÂÀ´£¬½«Ëù´øµÄ²ÆÎï¹Ô¹ÔµØÏ×ÉÏ£¡\n"NOR, ob, me);    
+                message_vision(HIW"$Nè¦‹å·²ç¶“ç„¡äººä¿è­·ï¼Œåœ¨$nçš„å¨è„…ä¸‹ï¼Œåªå¾—åœäº†ä¸‹ä¾†ï¼Œå°‡æ‰€å¸¶çš„è²¡ç‰©ä¹–ä¹–åœ°ç»ä¸Šï¼\n"NOR, ob, me);    
                 obj = new("/d/xingxiu/obj/red");
                 obj->move(me);
                 set("owner",query("id",  me), obj);
@@ -86,7 +86,7 @@ void make_bs(object me, object ob)
                 delete_temp("xx_rob", me);
                 delete_temp("xx_job2", me);
                 delete_temp("j", me);
-                message_vision("$N´ø×ÅÂæÍÕ£¬×ª¹ı¼¸¸öĞ¡É½Çğ¾Í²»¼ûÁË¡£\n", ob);
+                message_vision("$Nå¸¶è‘—é§±é§ï¼Œè½‰éå¹¾å€‹å°å±±ä¸˜å°±ä¸è¦‹äº†ã€‚\n", ob);
                 destruct(ob);
         }        
 }
@@ -97,22 +97,22 @@ void go_stage(object me, int stage, int i, int size, object player)
         int f=query("f", me);
         if(stage < size)
         {
-                message_vision(HIY"$N´Ò´ÒÃ¦Ã¦µØÏòÓĞ×¤¾üµÄ¹Ø¿Ú·½ÏòÌÓÈ¥¡£\n"NOR, me);
+                message_vision(HIY"$NåŒ†åŒ†å¿™å¿™åœ°å‘æœ‰é§è»çš„é—œå£æ–¹å‘é€ƒå»ã€‚\n"NOR, me);
                 me->move(dest[i]["context"][stage]);
-                message_vision(HIY"$N´Ò´ÒÃ¦Ã¦µØ±¼ÁË¹ıÀ´¡£\n"NOR, me);
+                message_vision(HIY"$NåŒ†åŒ†å¿™å¿™åœ°å¥”äº†éä¾†ã€‚\n"NOR, me);
                 where = environment(me); 
-                tell_object(player,HIM+query("name", me)+"ºÃÏóÌÓÍùÁË"+query("short", where)+"Ò»´ø¡£\n"NOR);
+                tell_object(player,HIM+query("name", me)+"å¥½è±¡é€ƒå¾€äº†"+query("short", where)+"ä¸€å¸¶ã€‚\n"NOR);
                 call_out("go_stage", f, me, ++stage, i, size, player);
         }
         else
         {    
-                tell_object(player,HIM+query("name", me)+"³É¹¦µØÌÓ½øÁË³ÇÕò¡£\n"NOR);
+                tell_object(player,HIM+query("name", me)+"æˆåŠŸåœ°é€ƒé€²äº†åŸé®ã€‚\n"NOR);
                 delete_temp("xx_rob", player);
                 delete_temp("xx_job2", player);
                 delete_temp("rob_start", player);
                 delete_temp("j", player);
                 delete_temp("biaoshi", player);
-                message_vision(MAG"\n$N×ª½ø¹ØÖĞ£¬ÔÚ¹Ù±øµÄ»¤ËÍÏÂÀë¿ªÁË¡£\n"NOR,me);      
+                message_vision(MAG"\n$Nè½‰é€²é—œä¸­ï¼Œåœ¨å®˜å…µçš„è­·é€ä¸‹é›¢é–‹äº†ã€‚\n"NOR,me);      
                 destruct(me);
         }
 }
@@ -120,7 +120,7 @@ void destroying(object me)
 {
         if( !query("going", me) )
         {
-                message_vision("$N´ø×ÅÂæÍÕ£¬×ª¹ı¼¸¸öĞ¡É½Çğ¾Í²»¼ûÁË¡£\n", me);        
+                message_vision("$Nå¸¶è‘—é§±é§ï¼Œè½‰éå¹¾å€‹å°å±±ä¸˜å°±ä¸è¦‹äº†ã€‚\n", me);        
                 destruct(me);
                 return;
         }
@@ -130,7 +130,7 @@ void destroying(object me)
 
 void destroying2(object me)
 {
-        message_vision("$N´ø×ÅÂæÍÕ£¬×ª¹ı¼¸¸öĞ¡É½Çğ¾Í²»¼ûÁË¡£\n", me);        
+        message_vision("$Nå¸¶è‘—é§±é§ï¼Œè½‰éå¹¾å€‹å°å±±ä¸˜å°±ä¸è¦‹äº†ã€‚\n", me);        
         destruct(me);
         return;
 }

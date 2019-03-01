@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��ͤ");
+        set("short", "鐘亭");
         set("long", @LONG
-��ͤ��������һ�ڣ��ؾ�ǧ�ÿ��ɽ�鱩����������飬����
-ʾ�������Ŷ�ʮ���⡣ 
+鐘亭內設鐵鐘一口，重九千斤。每逢山洪暴發，鳴鐘鎮洪，亦以
+示警，聲聞二十裡外。 
 LONG );
         set("exits", ([
                "west"   : __DIR__"kuixingge",

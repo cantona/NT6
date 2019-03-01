@@ -45,7 +45,7 @@ string query_enterprise_color_id(string id)
 }
 
 
-// »Ø´«ÔÚÄÄ¸öÆóÒµÌåÀï
+// å›å‚³åœ¨å“ªå€‹ä¼æ¥­é«”è£¡
 string in_enterprise(string id)
 {
         string enterprise_id, member_id;
@@ -59,7 +59,7 @@ string in_enterprise(string id)
         return 0;
 }
 
-// ×¢²áÆóÒµ³ÉÔ±
+// æ³¨å†Šä¼æ¥­æˆå“¡
 void register_member(string enterprise_id, string member_id)
 {
         mapping member_data = allocate_mapping(0);
@@ -71,7 +71,7 @@ void register_member(string enterprise_id, string member_id)
         save_object(DATA_PATH);
 }
 
-// ×¢ÏúÆóÒµ³ÉÔ±
+// æ³¨éŠ·ä¼æ¥­æˆå“¡
 void unregister_member(string unregister_id)
 {
         string enterprise_id, member_id;
@@ -89,7 +89,7 @@ void unregister_member(string unregister_id)
         save_object(DATA_PATH);
 }
 
-// Éè¶¨ÆóÒµ×ÊÑ¶
+// è¨­å®šä¼æ¥­è³‡è¨Š
 mixed set_enterprise_info(string id, string prop, mixed info)
 {
         if( undefinedp(enterprises[id]) ) return 0;
@@ -97,7 +97,7 @@ mixed set_enterprise_info(string id, string prop, mixed info)
         return enterprises[id][prop] = info;
 }
 
-// ²éÑ¯ÆóÒµ×ÊÑ¶
+// æŸ¥è©¢ä¼æ¥­è³‡è¨Š
 varargs mixed query_enterprise_info(string id, string prop)
 {
         if( undefinedp(enterprises[id]) ) return 0;
@@ -108,7 +108,7 @@ varargs mixed query_enterprise_info(string id, string prop)
         return enterprises[id][prop];
 }
 
-// É¾³ıÆóÒµ×ÊÑ¶
+// åˆªé™¤ä¼æ¥­è³‡è¨Š
 void delete_enterprise_info(string id, string prop)
 {
         if( undefinedp(enterprises[id]) ) return 0;
@@ -116,7 +116,7 @@ void delete_enterprise_info(string id, string prop)
         map_delete(enterprises[id], prop);
 }
 
-// ×¢²áÆóÒµ
+// æ³¨å†Šä¼æ¥­
 void register_enterprise(string id, string color_id, string president)
 {
         enterprises[id] = allocate_mapping(0);
@@ -135,7 +135,7 @@ void register_enterprise(string id, string color_id, string president)
         save_object(DATA_PATH);
 }
 ///////////////////////////////////////////////////////////////////////////////////////////
-// ×¢ÏúÆóÒµ
+// æ³¨éŠ·ä¼æ¥­
 void unregister_enterprise(string enterprise_id)
 {
         object member_ob;
@@ -161,7 +161,7 @@ void unregister_enterprise(string enterprise_id)
         save_object(DATA_PATH);
 }
 
-// ¼ì²éÊÇ·ñÎª×Ü²Ã
+// æª¢æŸ¥æ˜¯å¦ç‚ºç¸½è£
 int is_president(string enterprise_id, string id)
 {
         if( undefinedp(enterprises[enterprise_id]) ) return 0;
@@ -176,7 +176,7 @@ string query_president(string enterprise_id)
         return enterprises[enterprise_id]["president"];
 }
 
-// ¼ì²éÊÇ·ñÎª³ÉÔ±
+// æª¢æŸ¥æ˜¯å¦ç‚ºæˆå“¡
 int is_member(string enterprise_id, string id)
 {
         if( undefinedp(enterprises[enterprise_id]) ) return 0;
@@ -184,7 +184,7 @@ int is_member(string enterprise_id, string id)
         return !undefinedp(enterprises[enterprise_id]["member"][id]);
 }
 
-// ´¦ÀíÍ¶×Ê
+// è™•ç†æŠ•è³‡
 string change_invest(string enterprise_id, string id, mixed money)
 {
         string result;
@@ -199,7 +199,7 @@ string change_invest(string enterprise_id, string id, mixed money)
         return result;
 }
 
-// ´¦Àí×Ê²ú
+// è™•ç†è³‡ç”¢
 string change_assets(string enterprise_id, mixed money)
 {
         string result;
@@ -219,7 +219,7 @@ string change_assets(string enterprise_id, mixed money)
 }
 
 //
-// ¼ì²éÁ½ÈËÊÇ·ñÔÚÍ¬Ò»¸öÆóÒµÖĞ
+// æª¢æŸ¥å…©äººæ˜¯å¦åœ¨åŒä¸€å€‹ä¼æ¥­ä¸­
 int same_enterprise(string member_id1, string member_id2)
 {
         if( !member_id1 || !member_id2 )
@@ -253,7 +253,7 @@ string query_enterprise_assets(string enterprise_id)
 
         if( undefinedp(enterprises[enterprise_id]) ) return 0;
 
-        // Ã¿Ğ¡Ê±×÷Ò»´Î cache
+        // æ¯å°æ™‚ä½œä¸€æ¬¡ cache
         if( enterprises[enterprise_id]["assets_cache_time"] + 3600 < time() )
         {
                 enterprises[enterprise_id]["assets_cache"] = query("ENTERPRISE/"+enterprise_id);
@@ -270,7 +270,7 @@ string query_enterprise_assets(string enterprise_id)
 
 
 //
-// »Ø´«ËùÓĞ³ÉÔ±µÄ×Ü×Ê²ú
+// å›å‚³æ‰€æœ‰æˆå“¡çš„ç¸½è³‡ç”¢
 /////////////////////////////////////////////////////////////
 string query_enterprise_allmembers_assets(string enterprise_id)
 {
@@ -312,16 +312,16 @@ void add_enterprise_to_mrtg(string enterprise_id, int enterprise_id_number, floa
                 "Directory":"stock/"+enterprise_id_number,
                 "Target":"`cat \""LIBRARY_PATH+MRTGDATA+enterprise_id_number+"\"`",
                 "YLegend":"Value",
-                "LegendI":"¹É¼Û",
+                "LegendI":"è‚¡åƒ¹",
                 "LegendO":"",
-                "Legend1":"ÆóÒµ¸ö¹É×ßÊÆ",
+                "Legend1":"ä¼æ¥­å€‹è‚¡èµ°å‹¢",
                 "Legend2":"",
-                "ShortLegend":"Ôª",
+                "ShortLegend":"å…ƒ",
                 "MaxBytes":50,
                 "MaxAbs":1500,
                 "Options":"gauge, growright, nopercent, noinfo",
-                "Title": enterprise_id+"ÆóÒµ¸ö¹É×ßÊÆ",
-                "PageTop":enterprise_id+"ÆóÒµ¸ö¹É×ßÊÆ"
+                "Title": enterprise_id+"ä¼æ¥­å€‹è‚¡èµ°å‹¢",
+                "PageTop":enterprise_id+"ä¼æ¥­å€‹è‚¡èµ°å‹¢"
         ]);
 */
 }
@@ -358,38 +358,38 @@ void heart_beat()
         }
 
         if( global_randomvalue >= 25 )
-                CHANNEL_D->do_channel(this_object(), "stock", "¹ÉÊĞÊÜµ½¸÷·½"HIR"Àû"NOR RED"¶à"NOR HIR"Ó°Ïì£¬¸÷¹ÉÆÕ±é³ÊÏÖÅÊÉı×ßÊÆ¡£");
+                CHANNEL_D->do_channel(this_object(), "stock", "è‚¡å¸‚å—åˆ°å„æ–¹"HIR"åˆ©"NOR RED"å¤š"NOR HIR"å½±éŸ¿ï¼Œå„è‚¡æ™®éå‘ˆç¾æ”€å‡èµ°å‹¢ã€‚");
         else if( global_randomvalue <= -25 )
-                CHANNEL_D->do_channel(this_object(), "stock", "¹ÉÊĞÊÜµ½¸÷·½"HIG"Àû"NOR GRN"¿Õ"NOR HIR"Ó°Ïì£¬¸÷¹ÉÆÕ±é±íÏÖÆ£Èõ¡£");
+                CHANNEL_D->do_channel(this_object(), "stock", "è‚¡å¸‚å—åˆ°å„æ–¹"HIG"åˆ©"NOR GRN"ç©º"NOR HIR"å½±éŸ¿ï¼Œå„è‚¡æ™®éè¡¨ç¾ç–²å¼±ã€‚");
 
         foreach(enterprise_id, enterprise_data in enterprises)
         {
                 if( undefinedp(enterprise_data["enterprise_id_number"]) )
                         enterprises[enterprise_id]["enterprise_id_number"] = query_serial_number("enterprise_id_number");
 
-                // ½øĞĞÔ¤ÆÚ¹É¼ÛµÄµ÷Õû
+                // é€²è¡Œé æœŸè‚¡åƒ¹çš„èª¿æ•´
                 if( !random(500) )
                 {
                         randomvalue = range_random(-1000, 1000);
 
-                        // Ã¿´Î¸Ä±ä×î¸ß 10%
+                        // æ¯æ¬¡æ”¹è®Šæœ€é«˜ 10%
                         stockvalue_change = enterprise_data["stockpredictvalue"] * randomvalue * 0.0001;
 
-                        // ÏûÏ¢Í¨Öª
+                        // æ¶ˆæ¯é€šçŸ¥
                         if( !random(2) )
                         switch(randomvalue)
                         {
                                 case 800..1000:
-                                        CHANNEL_D->do_channel(this_object(), "stock", "·ÖÎöÊ¦Ô¤²âÆóÒµ¼¯ÍÅ"+query_enterprise_color_id(enterprise_id)+"µÄ¹É¼Û³¤ÆÚ¶øÑÔ¿ÉÄÜ»áÓĞ´ó·ùÉÏÕÇ¡£");
+                                        CHANNEL_D->do_channel(this_object(), "stock", "åˆ†æå¸«é æ¸¬ä¼æ¥­é›†åœ˜"+query_enterprise_color_id(enterprise_id)+"çš„è‚¡åƒ¹é•·æœŸè€Œè¨€å¯èƒ½æœƒæœ‰å¤§å¹…ä¸Šæ¼²ã€‚");
                                         break;
                                 case 500..799:
-                                        CHANNEL_D->do_channel(this_object(), "stock", "·ÖÎöÊ¦Ô¤²âÆóÒµ¼¯ÍÅ"+query_enterprise_color_id(enterprise_id)+"µÄ¹É¼Û³¤ÆÚ¶øÑÔ¿ÉÄÜ»áÓĞĞ¡·ùÉÏÕÇ¡£");
+                                        CHANNEL_D->do_channel(this_object(), "stock", "åˆ†æå¸«é æ¸¬ä¼æ¥­é›†åœ˜"+query_enterprise_color_id(enterprise_id)+"çš„è‚¡åƒ¹é•·æœŸè€Œè¨€å¯èƒ½æœƒæœ‰å°å¹…ä¸Šæ¼²ã€‚");
                                         break;
                                 case -799..-500:
-                                        CHANNEL_D->do_channel(this_object(), "stock", "·ÖÎöÊ¦Ô¤²âÆóÒµ¼¯ÍÅ"+query_enterprise_color_id(enterprise_id)+"µÄ¹É¼Û³¤ÆÚ¶øÑÔ¿ÉÄÜ»áÓĞĞ¡·ùÏÂµø¡£");
+                                        CHANNEL_D->do_channel(this_object(), "stock", "åˆ†æå¸«é æ¸¬ä¼æ¥­é›†åœ˜"+query_enterprise_color_id(enterprise_id)+"çš„è‚¡åƒ¹é•·æœŸè€Œè¨€å¯èƒ½æœƒæœ‰å°å¹…ä¸‹è·Œã€‚");
                                         break;
                                 case -1000..-800:
-                                        CHANNEL_D->do_channel(this_object(), "stock", "·ÖÎöÊ¦Ô¤²âÆóÒµ¼¯ÍÅ"+query_enterprise_color_id(enterprise_id)+"µÄ¹É¼Û³¤ÆÚ¶øÑÔ¿ÉÄÜ»áÓĞĞ¡·ùÏÂµø¡£");
+                                        CHANNEL_D->do_channel(this_object(), "stock", "åˆ†æå¸«é æ¸¬ä¼æ¥­é›†åœ˜"+query_enterprise_color_id(enterprise_id)+"çš„è‚¡åƒ¹é•·æœŸè€Œè¨€å¯èƒ½æœƒæœ‰å°å¹…ä¸‹è·Œã€‚");
                                         break;
                         }
 
@@ -397,7 +397,7 @@ void heart_beat()
 
                         assets_scale = sizeof(query_enterprise_assets(enterprise_id));
 
-                        // ¹É¼Û¼ÓÉÏÆóÒµ×ÜÖµ scale
+                        // è‚¡åƒ¹åŠ ä¸Šä¼æ¥­ç¸½å€¼ scale
                         //new_stockvalue += pow(to_float(assets_scale+"."+to_string(assets_scale)[0..0]), 1.3);
 
                         if( new_stockvalue < STOCK_MIN_VALUE )
@@ -409,10 +409,10 @@ void heart_beat()
                 }
 
 
-                // ¹É¼ÛµÍÓÚÔ¤ÆÚ¹É¼ÛµÄ 90%
+                // è‚¡åƒ¹ä½äºé æœŸè‚¡åƒ¹çš„ 90%
                 if( enterprise_data["stockvalue"]  < enterprise_data["stockpredictvalue"] * 0.9 )
                         randomvalue = range_random(-40, 80);
-                // ¹É¼Û¸ßÓÚÔ¤ÆÚ¹É¼ÛµÄ 110%
+                // è‚¡åƒ¹é«˜äºé æœŸè‚¡åƒ¹çš„ 110%
                 else if( enterprise_data["stockvalue"] > enterprise_data["stockpredictvalue"] * 1.1 )
                         randomvalue = range_random(-80, 40);
                 else
@@ -420,7 +420,7 @@ void heart_beat()
 
                 randomvalue += global_randomvalue;
 
-                // Ã¿´Î±ä¶¯×î¸ß 1.5%
+                // æ¯æ¬¡è®Šå‹•æœ€é«˜ 1.5%
                 stockvalue_change = enterprise_data["stockvalue"] * randomvalue * 0.0001;
 
                 new_stockvalue = enterprise_data["stockvalue"] + stockvalue_change;
@@ -432,13 +432,13 @@ void heart_beat()
                         new_stockvalue = STOCK_MAX_VALUE;
 
                 if( randomvalue >= 200 )
-                        CHANNEL_D->do_channel(this_object(), "stock", sprintf("ÆóÒµ¼¯ÍÅ%s¹É¼Û´óÕÇ "HIR"¡ø%.2f"NOR" µã(%.2f%%)£¬³ÉÎª "HIW"%.2f"NOR" µã¡£",
+                        CHANNEL_D->do_channel(this_object(), "stock", sprintf("ä¼æ¥­é›†åœ˜%sè‚¡åƒ¹å¤§æ¼² "HIR"â–²%.2f"NOR" é»(%.2f%%)ï¼Œæˆç‚º "HIW"%.2f"NOR" é»ã€‚",
                                 query_enterprise_color_id(enterprise_id),
                                 stockvalue_change,
                                 randomvalue/100.,
                                 new_stockvalue));
                 else if( randomvalue <= -200 )
-                        CHANNEL_D->do_channel(this_object(), "stock", sprintf("ÆóÒµ¼¯ÍÅ%s¹É¼ÛÖØ´ì "HIG"¨‹%.2f"NOR" µã(%.2f%%)£¬³ÉÎª "HIW"%.2f"NOR" µã¡£",
+                        CHANNEL_D->do_channel(this_object(), "stock", sprintf("ä¼æ¥­é›†åœ˜%sè‚¡åƒ¹é‡æŒ« "HIG"â–¡%.2f"NOR" é»(%.2f%%)ï¼Œæˆç‚º "HIW"%.2f"NOR" é»ã€‚",
                                 query_enterprise_color_id(enterprise_id),
                                 -stockvalue_change,
                                 -randomvalue/100.,
@@ -446,11 +446,11 @@ void heart_beat()
 
 /*
                 if( stockvalue_change > 0. )
-                        CHANNEL_D->do_channel(this_object(), "stock", sprintf("%-20s ¹É¼Û "HIR"¡ø%5.2f"NOR"£¬³ÉÎª "HIW"%7.2f"NOR" µã¡£", query_enterprise_color_id(enterprise_id), stockvalue_change, new_stockvalue));
+                        CHANNEL_D->do_channel(this_object(), "stock", sprintf("%-20s è‚¡åƒ¹ "HIR"â–²%5.2f"NOR"ï¼Œæˆç‚º "HIW"%7.2f"NOR" é»ã€‚", query_enterprise_color_id(enterprise_id), stockvalue_change, new_stockvalue));
                 else if( stockvalue_change < 0. )
-                        CHANNEL_D->do_channel(this_object(), "stock", sprintf("%-20s ¹É¼Û "HIG"¨‹%5.2f"NOR"£¬³ÉÎª "HIW"%7.2f"NOR" µã¡£", query_enterprise_color_id(enterprise_id), -stockvalue_change, new_stockvalue));
+                        CHANNEL_D->do_channel(this_object(), "stock", sprintf("%-20s è‚¡åƒ¹ "HIG"â–¡%5.2f"NOR"ï¼Œæˆç‚º "HIW"%7.2f"NOR" é»ã€‚", query_enterprise_color_id(enterprise_id), -stockvalue_change, new_stockvalue));
                 else
-                        CHANNEL_D->do_channel(this_object(), "stock", sprintf("%-20s ¹É¼Û "HIW"  %5.2f"NOR"£¬³ÉÎª "HIW"%7.2f"NOR" µã¡£", query_enterprise_color_id(enterprise_id), stockvalue_change, new_stockvalue));
+                        CHANNEL_D->do_channel(this_object(), "stock", sprintf("%-20s è‚¡åƒ¹ "HIW"  %5.2f"NOR"ï¼Œæˆç‚º "HIW"%7.2f"NOR" é»ã€‚", query_enterprise_color_id(enterprise_id), stockvalue_change, new_stockvalue));
 */
                 enterprises[enterprise_id]["stockvalue_change"] = stockvalue_change;
                 enterprises[enterprise_id]["stockvalue"] = new_stockvalue;
@@ -472,7 +472,7 @@ void set_enterprise_stockvalue(string enterprise_id, float value)
 void create()
 {
         seteuid(getuid()); 
-        set("channel_id", "¹ÉÆ±¾«Áé"); 
+        set("channel_id", "è‚¡ç¥¨ç²¾éˆ"); 
 
         if( !restore_object(DATA_PATH) )
         {
@@ -486,5 +486,5 @@ void create()
 
 string query_name()
 {
-        return "ÆóÒµÏµÍ³(ENTERPRISE_D)";
+        return "ä¼æ¥­ç³»çµ±(ENTERPRISE_D)";
 }

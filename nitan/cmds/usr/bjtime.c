@@ -3,26 +3,26 @@
 
 // #define END_TIME 874425565
 #define END_TIME 875981023
-#define FETEDAY "ÖĞÇï½Ú"
+#define FETEDAY "ä¸­ç§‹ç¯€"
 inherit F_CLEAN_UP;
 
 int main(object me, string arg)
 {   int time, date;
     time = time();
-        write(sprintf("ÏÖÔÚµÄÊ±¼äÊÇ±±¾©Ê±¼ä " + ctime( time ) + "¡£\n"));
+        write(sprintf("ç¾åœ¨çš„æ™‚é–“æ˜¯åŒ—äº¬æ™‚é–“ " + ctime( time ) + "ã€‚\n"));
     date = (END_TIME-time) / 24 / 3600;
     if (date > 1)
     {
-        write(sprintf("¾àÀë" + FETEDAY + "»¹ÓĞ"BBLU YEL"%s"NOR"Ìì¡£\n", 
+        write(sprintf("è·é›¢" + FETEDAY + "é‚„æœ‰"BBLU YEL"%s"NOR"å¤©ã€‚\n", 
             chinese_number(date)));
     }
     else if (date == 1)
     {
-        write(sprintf(BBLU YEL "\n\t\tÃ÷Ìì¾ÍÊÇ" + FETEDAY + "ÁË£¡\n\n" NOR));
+        write(sprintf(BBLU YEL "\n\t\tæ˜å¤©å°±æ˜¯" + FETEDAY + "äº†ï¼\n\n" NOR));
     }
     else if (!date)
     {
-        write(sprintf(BBLU YEL "\n\t\t½ñÌìÊÇ" + FETEDAY + "£¡\n\n"NOR));
+        write(sprintf(BBLU YEL "\n\t\tä»Šå¤©æ˜¯" + FETEDAY + "ï¼\n\n"NOR));
     }
         return 1;
 }
@@ -30,9 +30,9 @@ int main(object me, string arg)
 int help(object me)
 {
      write(@HELP
-Ö¸Áî¸ñÊ½: time
+æŒ‡ä»¤æ ¼å¼: time
 
-Õâ¸öÖ¸Áî¸æËßÄãÏÖÊµÊÀ½çÖĞÏÖÔÚµÄÊ±¼ä¡£
+é€™å€‹æŒ‡ä»¤å‘Šè¨´ä½ ç¾å¯¦ä¸–ç•Œä¸­ç¾åœ¨çš„æ™‚é–“ã€‚
 
 HELP
     );

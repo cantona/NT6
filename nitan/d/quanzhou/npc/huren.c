@@ -5,11 +5,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("ºúÈË", ({ "hu ren", "huren" }));
+        set_name("èƒ¡äºº", ({ "hu ren", "huren" }));
         set("shen_type", 1);
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("age", 35);
-        set("long", "Ò»¸ö½ğ·¢±ÌÑÛµÄºúÈË£¬ÕıÖº¸ßÆøÑïµÄßººÈ×Å¡£\n");
+        set("long", "ä¸€å€‹é‡‘ç™¼ç¢§çœ¼çš„èƒ¡äººï¼Œæ­£è¶¾é«˜æ°£æšçš„å†å–è‘—ã€‚\n");
         set("combat_exp", 3800);
         set("attitude", "friendly");
         setup();

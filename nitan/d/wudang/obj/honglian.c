@@ -1,4 +1,4 @@
-//honglian.c Ð¡ºìÁ«
+//honglian.c å°ç´…è“®
 
 inherit ITEM;
 
@@ -6,12 +6,12 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIR"Ð¡ºìÁ«"NOR, ({"hong lian", "honglian"}));
+        set_name(HIR"å°ç´…è“®"NOR, ({"hong lian", "honglian"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¶ä");
-                set("long", "ÕâÊÇÒ»¶äºìÉ«Ð¡»¨£¬Ïó¼«ÁËÒ»¸öÐ¡Á«×ù¡£\n");
+                set("unit", "æœµ");
+                set("long", "é€™æ˜¯ä¸€æœµç´…è‰²å°èŠ±ï¼Œè±¡æ¥µäº†ä¸€å€‹å°è“®åº§ã€‚\n");
                 set("only_do_effect", 1);
         }
         setup();
@@ -19,7 +19,7 @@ void create()
 
 int do_effect(object me)
 {
-        message_vision("$N°Ñ" + name() + "ÈÓ½ø×ìÀï£¬¼¸ÏÂ¾ÍÍÌÁËÏÂÈ¥¡£\n", me);
+        message_vision("$NæŠŠ" + name() + "æ‰”é€²å˜´è£¡ï¼Œå¹¾ä¸‹å°±åžäº†ä¸‹åŽ»ã€‚\n", me);
         addn("neili", 100, me);
         if( query("neili", me)>query("max_neili", me) )
                 set("neili",query("max_neili",  me), me);

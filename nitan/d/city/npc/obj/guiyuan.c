@@ -1,4 +1,4 @@
-// guiyuan.c ¹éÔªµ¤
+// guiyuan.c æ­¸å…ƒä¸¹
 
 inherit ITEM;
 
@@ -13,12 +13,12 @@ void init()
 
 void create()
 {
-        set_name("¹éÔªµ¤", ({"guiyuan dan", "dan"}));
+        set_name("æ­¸å…ƒä¸¹", ({"guiyuan dan", "dan"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
-                set("long", "ÕâÊÇÒ»¿ÅÓ¨°×ÁïÔ²µÄ¹éÔªµ¤¡£\n");
+                set("unit", "é¡†");
+                set("long", "é€™æ˜¯ä¸€é¡†ç‘©ç™½æºœåœ“çš„æ­¸å…ƒä¸¹ã€‚\n");
                 set("value", 10000);
         }
         setup();
@@ -28,14 +28,14 @@ int do_eat(string arg)
 {
         object me=this_player();
 
-        if(!id(arg)) return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+        if(!id(arg)) return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if(!present(this_object(), me))
-                return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if( me->is_busy() )
-                return notify_fail("±ğ¼±£¬ÂıÂı³Ô£¬Ğ¡ĞÄ±ğÒ­×ÅÁË¡£\n");
+                return notify_fail("åˆ¥æ€¥ï¼Œæ…¢æ…¢åƒï¼Œå°å¿ƒåˆ¥å™è‘—äº†ã€‚\n");
 
         addn("neili", 200, this_player());
-        message_vision("$N³ÔÏÂÒ»¿Å¹éÔªµ¤£¬Ö»¾õµÃËÄÖ«°Ùº¡ÕæÆø³äÓ¯ÎŞ±È£¡\n", this_player());
+        message_vision("$Nåƒä¸‹ä¸€é¡†æ­¸å…ƒä¸¹ï¼Œåªè¦ºå¾—å››è‚¢ç™¾éª¸çœŸæ°£å……ç›ˆç„¡æ¯”ï¼\n", this_player());
         destruct(this_object());
         return 1;
 }

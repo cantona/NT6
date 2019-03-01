@@ -2,15 +2,15 @@ inherit ITEM;
 
 void create()
 {
-        set_name("µöÓã¸Ë", ({ "fish pole" , "pole", "µöÓã¸Ë"}) );
+        set_name("é‡£é­šæ¡¿", ({ "fish pole" , "pole", "é‡£é­šæ¡¿"}) );
         set_weight(150);
         set_max_encumbrance(1);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
+                set("unit", "å€‹");
                 set("prep", "on");
-                set("long", "Ò»¸öÓÃÌÒÖ¦×ö³ÉµÄµöÓã¸Ë£¬ÉÏÃæ»¹ÓÐº¬°ú´ý·ÅµÄÌÒ»¨£¬ÏÔµÃÊ®·ÖÐÂÓ±±ðÖÂ¡£¿ÉÒÔÓÃËüÀ´µöÓã(fishing)¡£\n");
+                set("long", "ä¸€å€‹ç”¨æ¡ƒæžåšæˆçš„é‡£é­šæ¡¿ï¼Œä¸Šé¢é‚„æœ‰å«è‹žå¾…æ”¾çš„æ¡ƒèŠ±ï¼Œé¡¯å¾—ååˆ†æ–°ç©Žåˆ¥è‡´ã€‚å¯ä»¥ç”¨å®ƒä¾†é‡£é­š(fishing)ã€‚\n");
                 set("value", 150);
         }
 }
@@ -24,7 +24,7 @@ int do_use(string arg)
 {
 //        if( arg != "fish pole" ) return 0;
 
-        tell_object(this_player(),"ÄãÌÍ³öÒ»¸ö" + this_object()->name() + "¡£\n");
+        tell_object(this_player(),"ä½ æŽå‡ºä¸€å€‹" + this_object()->name() + "ã€‚\n");
         environment(this_player())->fish_notify(this_object(), 0);
 
         return 1;

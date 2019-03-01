@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "С��");
+        set("short", "小巷");
         set("long", @LONG
-����һ���ڰ��������С������з·�Ʈ����һ��������Ϣ��
-������ͨ��С��������˾����ǲ������Ǳ���ȥ�ġ������߾ͻ��
-�����д�·�ˡ�
+這是一條黑暗、骯臟的小巷，空氣中仿佛飄揚著一股罪惡的氣息，
+西北邊通向小巷深處，正人君子是不會往那邊走去的。往東走就會回
+到村中大路了。
 LONG );
         set("exits", ([ /* sizeof() == 2 */
             "east" : __DIR__"sroad3",

@@ -1,4 +1,4 @@
-// tongtiandian.c ͨ���
+// tongtiandian.c 通天殿
 // Winder Oct.10 1998
 
 #include <ansi.h>
@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ͨ���");
+        set("short", "通天殿");
         set("long", @LONG
-�����ǹ�������֮ĩ--ͨ������Ĵ����ڵ����̲�����ʢ��
-��ͨ������Ľ����Աߣ����ż�λ�ؽ̵����󳤶��ɡ������ɡ���
-����������
+這裡是供奉三清之末--通天教主的大殿，殿內的香煙不甚旺盛。
+在通天教主的金身旁邊，塑著幾位截教道友象長耳仙、歸雲仙、申
+公豹的塑像。
 LONG
         );
         set("exits", ([

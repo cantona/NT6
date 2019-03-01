@@ -1,4 +1,4 @@
-//killer.c        ÌÆÃÅËÀÊ¿
+//killer.c        å”é–€æ­»å£«
 
 inherit NPC;
 
@@ -7,12 +7,12 @@ void away();
 
 void create()
 {
-        set_name("ÌÆÃÅËÀÊ¿", ({"killer"}));
-        set("gender", "ÄĞĞÔ");
+        set_name("å”é–€æ­»å£«", ({"killer"}));
+        set("gender", "ç”·æ€§");
         set("age", 26);
         set("long", 
-                "Ëû¿´ÉÏÈ¥Ã»ÓĞÒ»Ë¿±íÇé£¬¸ĞÇé¶ÔËûÀ´ËµÔçÒÑ²»´æÔÚÁË¡£\n");
-        set("gender", "ÄĞĞÔ");
+                "ä»–çœ‹ä¸Šå»æ²’æœ‰ä¸€çµ²è¡¨æƒ…ï¼Œæ„Ÿæƒ…å°ä»–ä¾†èªªæ—©å·²ä¸å­˜åœ¨äº†ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 32);
         set("class", "tangmen");
         set("attitude", "peaceful");
@@ -57,7 +57,7 @@ void create()
         map_skill("hand", "boyun-suowu");
         
         prepare_skill("hand", "boyun-suowu");
-        create_family("ÌÆÃÅÊÀ¼Ò", 4, "ËÀÊ¿");
+        create_family("å”é–€ä¸–å®¶", 4, "æ­»å£«");
         
         set("chat_chance", 5);
         set("chat_msg", ({
@@ -85,7 +85,7 @@ void away()
 {
         if( living(this_object()) )
         {
-                message_vision("ÌÆÃÅµÜ×Ó¼±¼±Ã¦Ã¦µÄ×ß¿ªÁË¡£\n", this_object());
+                message_vision("å”é–€å¼Ÿå­æ€¥æ€¥å¿™å¿™çš„èµ°é–‹äº†ã€‚\n", this_object());
                 destruct(this_object());
         }
         return;

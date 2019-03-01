@@ -5,11 +5,11 @@ inherit TRANS_ROOM;
 
 void create()
 {
-        set("short","Âí¾Ç");
+        set("short","é¦¬å»„");
         set("long",@LONG
-ÕâÊÇÄÏÑô³ÇµÄÂí¾Ç£¬³£Äê¹©Ó¦ÐÂÏÊ²ÝÁÏ¡£ÄÏÑôµØ´¦ÖÐÔ­£¬À´ÍùµÄÐÐÈË
-ÂçÒï²»¾ø¡£Âí¾ÇÓêéÜÏÂµÄÀÃÄ¾ÖùÉÏ¶¤×ÅÒ»¿éÆÆÄ¾ÅÆ(paizi)¡£
-    Âí¾ÇÖÐ¶Ñ·ÅÖø¼¸¶Ñ²ÝÁÏ£¬ÕýÖÐÓÐÒ»¿Úãï²Û¡£
+é€™æ˜¯å—é™½åŸŽçš„é¦¬å»„ï¼Œå¸¸å¹´ä¾›æ‡‰æ–°é®®è‰æ–™ã€‚å—é™½åœ°è™•ä¸­åŽŸï¼Œä¾†å¾€çš„è¡Œäºº
+çµ¡ç¹¹ä¸çµ•ã€‚é¦¬å»„é›¨æªä¸‹çš„çˆ›æœ¨æŸ±ä¸Šé‡˜è‘—ä¸€å¡Šç ´æœ¨ç‰Œ(paizi)ã€‚
+    é¦¬å»„ä¸­å †æ”¾è‘—å¹¾å †è‰æ–™ï¼Œæ­£ä¸­æœ‰ä¸€å£æ³”æ§½ã€‚
 LONG);
         set("outdoors", "nanyang");
         set("region", "nanyang");

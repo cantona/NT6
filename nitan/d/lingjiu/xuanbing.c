@@ -5,19 +5,19 @@ int exercise_improve();
         
 void create()
 {
-        set("short", "Ðþ±ùÊÒ");
+        set("short", "çŽ„å†°å®¤");
         set("long", @LONG
-ÕâÊÇÎôÈÕÌìÉ½Í¯ÀÑÐÞÁ·ÄÚ¹¦µÄµØ·½¡£ÎÝ×ÓÕýÖÐÓÐÒ»¿éÇ§ÄêÐþ±ù (
-ice)£¬±ùÉÏÃ°³öË¿Ë¿º®Æø£¬ÎÝÀïÒò´Ëº®Æø±ÆÈË£¬Äã²»ÓÉµÃ´òÁËÒ»¸öº®
-²ü¡£
+é€™æ˜¯æ˜”æ—¥å¤©å±±ç«¥å§¥ä¿®ç·´å…§åŠŸçš„åœ°æ–¹ã€‚å±‹å­æ­£ä¸­æœ‰ä¸€å¡Šåƒå¹´çŽ„å†° (
+ice)ï¼Œå†°ä¸Šå†’å‡ºçµ²çµ²å¯’æ°£ï¼Œå±‹è£¡å› æ­¤å¯’æ°£é€¼äººï¼Œä½ ä¸ç”±å¾—æ‰“äº†ä¸€å€‹å¯’
+é¡«ã€‚
 LONG );
         set("exits", ([
                 "east" : __DIR__"changl13",
         ]));
 
         set("item_desc", ([
-                "ice" : HIW "\nÕâÊÇÒ»¿é²É×ÔÌìÉ½Ö®áÛµÄÇ§"
-                        "ÄêÐþ±ù£¬Ææº®ÎÞ±È¡£\n\n" NOR,
+                "ice" : HIW "\né€™æ˜¯ä¸€å¡ŠæŽ¡è‡ªå¤©å±±ä¹‹å·”çš„åƒ"
+                        "å¹´çŽ„å†°ï¼Œå¥‡å¯’ç„¡æ¯”ã€‚\n\n" NOR,
         ]));
 
         set("exercise_improve", (: exercise_improve :));
@@ -34,12 +34,12 @@ int exercise_improve()
         if (me->query_skill("bahuang-gong", 1) >= 10)
         {
                 if (random(5) == 0)
-                        tell_object(me, HIW "\nÄãÔËÓÃ°Ë»ÄÁùºÏÎ©ÎÒ¶À×ð¹¦"
-                                        "µÖÓùº®Æø£¬»º»ºÐÐ¹¦¡£\n");
+                        tell_object(me, HIW "\nä½ é‹ç”¨å…«è’å…­åˆæƒŸæˆ‘ç¨å°ŠåŠŸ"
+                                        "æŠµå¾¡å¯’æ°£ï¼Œç·©ç·©è¡ŒåŠŸã€‚\n");
                 return me->query_skill("force") / 10;
         }
 
-        tell_object(me, HIW "\nÄã¶³µÄÑÀ³ÝÖ±´ò²ü£¬µ¤ÌïÄÚÏ¢Ò²ÊÇÒ»ÕóÕóµÄ»ì"
-                        "ÂÒ¡£\n" NOR);
+        tell_object(me, HIW "\nä½ å‡çš„ç‰™é½’ç›´æ‰“é¡«ï¼Œä¸¹ç”°å…§æ¯ä¹Ÿæ˜¯ä¸€é™£é™£çš„æ··"
+                        "äº‚ã€‚\n" NOR);
         return -20;
 }

@@ -1,4 +1,4 @@
-// shanzheng.c µ¥Õı
+// shanzheng.c å–®æ­£
 
 #include <ansi.h>
 
@@ -6,14 +6,14 @@ inherit NPC;
 
 void create()
 {
-        set_name("µ¥Õı", ({ "shan zheng", "shan" }));
+        set_name("å–®æ­£", ({ "shan zheng", "shan" }));
 
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("age", 62);
-        set("long", "ËûÌåÌ¬¿ıÎà£¬ÏàÃ²ÍşÑÏ£¬³¤µÄÒ»¸±Í¯ÑÕº×·¢¡£\n");
+        set("long", "ä»–é«”æ…‹é­æ¢§ï¼Œç›¸è²Œå¨åš´ï¼Œé•·çš„ä¸€å‰¯ç«¥é¡é¶´ç™¼ã€‚\n");
         set("attitude", "peaceful");
 
-        set("nickname", HIR "ÌúÃæÅĞ¹Ù" NOR);
+        set("nickname", HIR "éµé¢åˆ¤å®˜" NOR);
 
         set("str", 35);
         set("int", 36);

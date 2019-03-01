@@ -1,9 +1,9 @@
 // nature.c
 // by Find.
-// �����Ա�׼ room �� npc ���Ѿ��̳У�
-// �����̿���ֱ��������Щ������
+// 此特性標準 room 和 npc 裡已經繼承，
+// 區域編程可以直接引用這些函數。
 
-// ����������ص�ǰ��Ϸ�������.
+// 這個函數返回當前遊戲的年度數.
 int query_year()
 {
         object ob = find_object(NATURE_D);
@@ -13,11 +13,11 @@ int query_year()
         return ob->query_year();
 }
 
-/* ����������ص�ǰ��Ϸ�ļ���.
- * ����ֵ "1" : ����.
- * ����ֵ "2" : �ļ�.
- * ����ֵ "3" : �＾.
- * ����ֵ "4" : ����.
+/* 這個函數返回當前遊戲的季節.
+ * 返回值 "1" : 春季.
+ * 返回值 "2" : 夏季.
+ * 返回值 "3" : 秋季.
+ * 返回值 "4" : 冬季.
  */
 int query_season()
 {
@@ -28,7 +28,7 @@ int query_season()
         return ob->query_season();
 }
 
-// ����������ص�ǰ��Ϸ���·���(1 - 12).
+// 這個函數返回當前遊戲的月份數(1 - 12).
 int query_month()
 {
 
@@ -42,7 +42,7 @@ int query_month()
         return month;
 }
 
-// ����������������Ǵ����еĵڼ��졣
+// 這個函數返回現在是此月中的第幾天。
 int query_day_in_month()
 {
         int month,day;
@@ -55,7 +55,7 @@ int query_day_in_month()
         return day;
 }
 
-// ����������ص�ǰ����һ���еĵڼ���(1 - 365).
+// 這個函數返回當前處于一年中的第幾天(1 - 365).
 int query_day(int *month_day)
 {
         object ob = find_object(NATURE_D);
@@ -65,9 +65,9 @@ int query_day(int *month_day)
         return ob->query_day(month_day);
 }
 
-// ����������ص�ǰ������״��.
-// Ŀǰ��״����: clear ��,snow ѩ,wind ��,fog ��,cloudy ��,
-// cloudy ��չ����������.
+// 這個函數返回當前的天氣狀況.
+// 目前的狀況有: clear 晴,snow 雪,wind 風,fog 霧,cloudy 雲,
+// cloudy 進展到最後就是雨.
 string weather_now()
 {
         string effect,degree;
@@ -81,14 +81,14 @@ string weather_now()
         return effect;
 }
 
-// ����������ص�ǰ������״����չ�ĳ̶�.
-// "begain" : �ոտ�ʼ,������.
-// "last"   : ��ʼ������.
-// "finish" : �ǳ�����,��Ҳ��չ�������.
-// ���� "cloudy" �����չ�� "finish" ��Ҫ������.
-// "clear" �ĳ̶�û������.�ͷ���һ�� "now".
-// �������Ҫ����Ч����Ҫ��ȷ�Ĳɼ�����ǰ������״��.
-// ����Ҫ���״�����̶Ⱥͼ����ۺϵ��жϡ�
+// 這個函數返回當前的天氣狀況進展的程度.
+// "begain" : 剛剛開始,不明顯.
+// "last"   : 開始加重了.
+// "finish" : 非常嚴重,但也進展到最後了.
+// 比如 "cloudy" 如果進展到 "finish" 就要下雨了.
+// "clear" 的程度沒有意義.就返回一個 "now".
+// 如果您所要做的效果需要精確的採集到當前的天氣狀況.
+// 就需要結合狀況、程度和季節綜合的判斷。
 string weather_degree()
 {
         string effect,degree;
@@ -103,9 +103,9 @@ string weather_degree()
 
 }
 
-// ��������ж�Ŀǰ�ǰ��컹�Ǻ�ҹ.
-// ����ֵΪ "1" : ����.
-// ����ֵΪ "0" : ��ҹ.
+// 這個函數判斷目前是白天還是黑夜.
+// 返回值為 "1" : 白天.
+// 返回值為 "0" : 黑夜.
 int is_day()
 {
         string day_night;
@@ -119,13 +119,13 @@ int is_day()
         return (day_night == "day");
 }
 
-// �������������ҹ�����һЩ��ϸ��Ϣ.
-// ����ֵ��һ���ִ�,��ʽΪ: "day_or_night last_time".
-// day_or_night Ϊһ���ִ�,ֵΪ "day" ���� "night" ��
-// ӳĿǰ�ǰ��컹�Ǻ�ҹ.
-// last_time ��һ�� int,��ӳ���Ǿ�����ҹ������ʣ��ʱ��.
-// ���緵��ֵ "day 280" ˵��Ŀǰ�ǰ���,����ҹ������280��.
-// �м���һ���ո����.
+// 這個函數返回晝夜更替的一些詳細信息.
+// 返回值是一個字串,格式為: "day_or_night last_time".
+// day_or_night 為一個字串,值為 "day" 或者 "night" 反
+// 映目前是白天還是黑夜.
+// last_time 是一個 int,反映的是距離晝夜更替所剩的時間.
+// 比如返回值 "day 280" 說明目前是白天,距離夜晚還有280秒.
+// 中間以一個空格隔開.
 string day_night()
 {
         object ob = find_object(NATURE_D);
@@ -135,7 +135,7 @@ string day_night()
         return ob->day_or_night();
 }
 
-// �����������ĿǰΪһ���еĵڼ�����.
+// 這個函數返回目前為一天中的第幾分鐘.
 int query_time()
 {
         object ob = find_object(NATURE_D);

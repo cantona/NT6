@@ -58,7 +58,7 @@ void init()
 int accept_hit(object me)
 {
         if( query("owner", this_object()) == query("id", me))return 1;
-        else return notify_fail(HIW"不是你要抓的人，凑什么热闹！\n"NOR);
+        else return notify_fail(HIW"涓嶆槸浣犺鎶撶殑浜猴紝婀婁粈楹肩啽楝э紒\n"NOR);
 }
 int accept_fight(object who)        {return accept_hit(who);}
 int accept_kill(object who)                {return accept_hit(who);}
@@ -71,7 +71,7 @@ int do_halt()
         
         if ( me->is_fighting(ob) )
         {
-                message_vision(HIW"$N喝道：“你既然识破我的身份，就休想活着离开！”\n"NOR, ob, me);
+                message_vision(HIW"$N鍠濋亾锛氣�滀綘鏃㈢劧璀樼牬鎴戠殑韬唤锛屽氨浼戞兂娲昏憲闆㈤枊锛佲�漒n"NOR, ob, me);
                 return 1;
         }
         return 0;
@@ -110,6 +110,6 @@ int set_perform()
 }
 void dest_me(object ob)
 {
-        message_vision("只见$N忽然急转身行，纵身钻进行人中，转眼就踪迹皆无。\n",ob);
+        message_vision("鍙$N蹇界劧鎬ヨ綁韬锛岀副韬懡閫茶浜轰腑锛岃綁鐪煎氨韫よ贰鐨嗙劇銆俓n",ob);
         destruct(ob);
 }

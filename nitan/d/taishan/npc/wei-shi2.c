@@ -1,4 +1,4 @@
-// wu-shi2.c ÃËÖ÷ÎÀÊ¿
+// wu-shi2.c ç›Ÿä¸»è¡›å£«
 
 #include <ansi.h>
 
@@ -6,11 +6,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("ºìÒÂÎäÊ¿", ({ "wei shi", "shi", "guard" }) );
-        set("gender", "ÄĞĞÔ");
+        set_name("ç´…è¡£æ­¦å£«", ({ "wei shi", "shi", "guard" }) );
+        set("gender", "ç”·æ€§");
         set("age", 35);
         set("long",
-                "ÕâÊÇÎ»ºìÒÂÎäÊ¿£¬ÉíÅû¸Ö¼×£¬ÊÖÖ´³¤½££¬Ë«Ä¿¾«¹â¾¼¾¼£¬¾¯ÌèµØÑ²ÊÓ×ÅËÄÖÜµÄÇéĞÎ¡£\n");
+                "é€™æ˜¯ä½ç´…è¡£æ­¦å£«ï¼Œèº«æŠ«é‹¼ç”²ï¼Œæ‰‹åŸ·é•·åŠï¼Œé›™ç›®ç²¾å…‰ç‚¯ç‚¯ï¼Œè­¦æƒ•åœ°å·¡è¦–è‘—å››å‘¨çš„æƒ…å½¢ã€‚\n");
         set("combat_exp", 80000);
         set("shen_type", 1);
         set("attitude", "heroism");
@@ -62,15 +62,15 @@ void init()
         fae=query("winner", ob3);
 
         if( query("id", this_player()) == mengzhu){
-                message_vision(HIY "ºìÒÂÎäÊ¿¾ÙÆğ³¤½££¬Ïò$NÆëÉù´óº°£ºÃËÖ÷ÍòËê£¬ÍòËê£¬ÍòÍòËê£¡\n" NOR,
+                message_vision(HIY "ç´…è¡£æ­¦å£«èˆ‰èµ·é•·åŠï¼Œå‘$Né½Šè²å¤§å–Šï¼šç›Ÿä¸»è¬æ­²ï¼Œè¬æ­²ï¼Œè¬è¬æ­²ï¼\n" NOR,
                 this_player());
         }
         else if( query("id", this_player()) == shangshan){
-                message_vision(HIY "ºìÒÂÎäÊ¿¾ÙÆğ³¤½££¬Ïò$NÆëÉù´óº°£ºÉÍÉÆÊ¹ÕßºÃ£¡\n" NOR,
+                message_vision(HIY "ç´…è¡£æ­¦å£«èˆ‰èµ·é•·åŠï¼Œå‘$Né½Šè²å¤§å–Šï¼šè³å–„ä½¿è€…å¥½ï¼\n" NOR,
                 this_player());
         }
         else if( query("id", this_player()) == fae){
-                message_vision(HIY "ºìÒÂÎäÊ¿¾ÙÆğ³¤½££¬Ïò$NÆëÉù´óº°£º·£¶ñÊ¹ÕßºÃ£¡\n" NOR,
+                message_vision(HIY "ç´…è¡£æ­¦å£«èˆ‰èµ·é•·åŠï¼Œå‘$Né½Šè²å¤§å–Šï¼šç½°æƒ¡ä½¿è€…å¥½ï¼\n" NOR,
                 this_player());
         }
 }

@@ -1,49 +1,49 @@
-// bingcan-duzhang.c  ±ù²Ï¶¾ÕÆ
+// bingcan-duzhang.c  å†°è ¶æ¯’æŒ
 
 #include <ansi.h>
 
 inherit SKILL;
 
 mapping *action = ({
-([      "action": "$NÁ³ÉÏÂ¶³ö¹îÒìµÄĞ¦Èİ£¬Ë«ÕÆĞ¯Âúº®Ëª£¬ºáÉ¨$n",
+([      "action": "$Nè‡‰ä¸Šéœ²å‡ºè©­ç•°çš„ç¬‘å®¹ï¼Œé›™æŒæ”œæ»¿å¯’éœœï¼Œæ©«æƒ$n",
         "dodge" : -30,
         "attack": 79,
         "parry" : -37,
         "dmage" : 52,
         "force" : 430,
-        "damage_type": "ğöÉË"
+        "damage_type": "ç˜€å‚·"
 ]),
-([      "action": "$NÍ»È»ÉíĞÎĞı×ªÆğÀ´ÆËÏò$n£¬Ë«ÕÆ·ÉÎè×ÅÅÄÏò$nµÄ$l",
+([      "action": "$Nçªç„¶èº«å½¢æ—‹è½‰èµ·ä¾†æ’²å‘$nï¼Œé›™æŒé£›èˆè‘—æ‹å‘$nçš„$l",
         "dodge" : -22,
         "attack": 96,
         "parry" : -34,
         "dmage" : 67,
         "force" : 490,
-        "damage_type": "ğöÉË"
+        "damage_type": "ç˜€å‚·"
 ]),
-([      "action": "$N½«±ù²Ïº®¶¾ÔËÖÁÓÒÊÖ£¬Òõ¶¾ÎŞ±ÈµØÅÄÏò$nµÄ$l",
+([      "action": "$Nå°‡å†°è ¶å¯’æ¯’é‹è‡³å³æ‰‹ï¼Œé™°æ¯’ç„¡æ¯”åœ°æ‹å‘$nçš„$l",
         "dodge" : -20,
         "attack": 113,
         "parry" : 10,
         "dmage" : 82,
         "force" : 530,
-        "damage_type": "ğöÉË"
+        "damage_type": "ç˜€å‚·"
 ]),
-([      "action": "$N¹îÒìµÄÒ»Ğ¦£¬Ë«ÕÆ´ø×ÅÁèÀ÷µÄº®ÆøÅÄÏò$nµÄ$l",
+([      "action": "$Nè©­ç•°çš„ä¸€ç¬‘ï¼Œé›™æŒå¸¶è‘—å‡Œå²çš„å¯’æ°£æ‹å‘$nçš„$l",
         "dodge" : 28,
         "attack": 139,
         "parry" : 36,
         "dmage" : 95,
         "force" : 580,
-        "damage_type": "ğöÉË"
+        "damage_type": "ç˜€å‚·"
 ]),
-([      "action": "$NÑöÌìÒ»Éù³¤Ğ¥£¬¾Û¼¯È«ÉíµÄÁ¦Á¿»÷Ïò$n",
+([      "action": "$Nä»°å¤©ä¸€è²é•·å˜¯ï¼Œèšé›†å…¨èº«çš„åŠ›é‡æ“Šå‘$n",
         "dodge" : 27,
         "attack": 161,
         "parry" : 21,
         "dmage" : 105,
         "force" : 640,
-        "damage_type": "ğöÉË"
+        "damage_type": "ç˜€å‚·"
 ]),
 });
 
@@ -52,23 +52,23 @@ int valid_enable(string usage) { return usage=="strike" || usage=="parry"; }
 int valid_learn(object me)
 {
         if( !query("family", me) || 
-            query("family/family_name", me) != "ĞÇËŞÅÉ" )
-                return notify_fail("Äã²»ÊÇĞÇËŞÅÉÃÅÈË£¬ÎŞ·¨Ñ§Ï°´ËÉñ¹¦¡£\n");
+            query("family/family_name", me) != "æ˜Ÿå®¿æ´¾" )
+                return notify_fail("ä½ ä¸æ˜¯æ˜Ÿå®¿æ´¾é–€äººï¼Œç„¡æ³•å­¸ç¿’æ­¤ç¥åŠŸã€‚\n");
 
         if ((int)me->query_skill("freezing-force", 1) < 0)
-                return notify_fail("ÄãËùĞŞµÄÄÚ¹¦ÎŞ·¨Á·±ù²Ï¶¾ÕÆ¡£\n");
+                return notify_fail("ä½ æ‰€ä¿®çš„å…§åŠŸç„¡æ³•ç·´å†°è ¶æ¯’æŒã€‚\n");
 
         if ((int)me->query_skill("force") < 200)
-                return notify_fail("ÄãµÄÄÚ¹¦»ğºò²»¹»£¬ÎŞ·¨Á·±ù²Ï¶¾ÕÆ¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸç«å€™ä¸å¤ ï¼Œç„¡æ³•ç·´å†°è ¶æ¯’æŒã€‚\n");
 
         if( query("max_neili", me)<3000 )
-                return notify_fail("ÄãµÄÄÚÁ¦Ì«Èõ£¬ÎŞ·¨Á·±ù²Ï¶¾ÕÆ¡£");
+                return notify_fail("ä½ çš„å…§åŠ›å¤ªå¼±ï¼Œç„¡æ³•ç·´å†°è ¶æ¯’æŒã€‚");
 
         if ((int)me->query_skill("strike", 1) < (int)me->query_skill("bingcan-duzhang", 1))
-                return notify_fail("ÄãµÄ»ù±¾ÕÆ·¨Ë®Æ½ÓĞÏŞ£¬ÎŞ·¨Áì»á¸ü¸ßÉîµÄ±ù²Ï¶¾ÕÆ¡£\n");
+                return notify_fail("ä½ çš„åŸºæœ¬æŒæ³•æ°´å¹³æœ‰é™ï¼Œç„¡æ³•é ˜æœƒæ›´é«˜æ·±çš„å†°è ¶æ¯’æŒã€‚\n");
 
         if ((int)me->query_skill("freezing-force", 1) < (int)me->query_skill("bingcan-duzhang", 1))
-                return notify_fail("ÄãµÄ±ù²Ïº®¹¦Ë®Æ½ÓĞÏŞ£¬ÎŞ·¨Áì»á¸ü¸ßÉîµÄ±ù²Ï¶¾ÕÆ¡£\n");
+                return notify_fail("ä½ çš„å†°è ¶å¯’åŠŸæ°´å¹³æœ‰é™ï¼Œç„¡æ³•é ˜æœƒæ›´é«˜æ·±çš„å†°è ¶æ¯’æŒã€‚\n");
 
         return 1;
 }
@@ -97,16 +97,16 @@ mapping query_action(object me, object weapon)
         for(i = ttl; i > 0; i--)
                 if(lvl > action[i-1]["lvl"])
                 {
-                        seq = i; /* »ñµÃÕĞÊıĞòºÅÉÏÏŞ */
+                        seq = i; /* ç²å¾—æ‹›æ•¸åºè™Ÿä¸Šé™ */
                         break;
                 }
-        seq = random(seq);       /* Ñ¡Ôñ³öÊÖÕĞÊıĞòºÅ */
+        seq = random(seq);       /* é¸æ“‡å‡ºæ‰‹æ‹›æ•¸åºè™Ÿ */
         return ([
                 "action"      : action[seq]["action"],
                 "dodge"       : d_e1 + (d_e2 - d_e1) * seq / ttl,
                 "parry"       : p_e1 + (p_e2 - p_e1) * seq / ttl,
                 "force"       : f_e1 + (f_e2 - f_e1) * seq / ttl,
-                "damage_type" : random(2) ? "ÄÚÉË" : "ğöÉË",
+                "damage_type" : random(2) ? "å…§å‚·" : "ç˜€å‚·",
         ]);
 }
 
@@ -119,10 +119,10 @@ int power_point(object me) { return 1.0; }
 int practice_skill(object me)
 {
         if( query("qi", me)<40 )
-                return notify_fail("ÄãµÄÌåÁ¦Ì«µÍÁË¡£\n");
+                return notify_fail("ä½ çš„é«”åŠ›å¤ªä½äº†ã€‚\n");
 
         if( query("neili", me)<30 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»Á·±ù²Ï¶¾ÕÆ¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ç·´å†°è ¶æ¯’æŒã€‚\n");
 
         if (me->query_skill("bingcan-duzhang", 1) < 50)
                 me->receive_damage("qi", 100);
@@ -149,7 +149,7 @@ mixed hit_ob(object me, object victim, int damage_bonus, int factor)
                                  "id":query("id", me),
                                  "duration" : lvl / 100 + random(lvl / 10) ])))
         {
-                return HIW "$n" HIW "Ö»¸ĞÒ»Õó¼«º®´ÓĞÄµ×ÉıÆğ£¬¿´À´ÊÇÖĞÁË$N" HIW "ÕÆÉÏµÄ±ù²Ïº®¶¾¡£\n" NOR;
+                return HIW "$n" HIW "åªæ„Ÿä¸€é™£æ¥µå¯’å¾å¿ƒåº•å‡èµ·ï¼Œçœ‹ä¾†æ˜¯ä¸­äº†$N" HIW "æŒä¸Šçš„å†°è ¶å¯’æ¯’ã€‚\n" NOR;
         }
 }
 

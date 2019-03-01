@@ -6,24 +6,24 @@ inherit F_DEALER;
 
 void create()
 {
-        set_name("Çé¶ù", ({ "qing er", "qing" }));
-        set("title", HIM"ÇÙÉªºÍÃù"NOR);
-        set("nickname",HIR"³àÉşçº½á"NOR);
+        set_name("æƒ…å…’", ({ "qing er", "qing" }));
+        set("title", HIM"ç´ç‘Ÿå’Œé³´"NOR);
+        set("nickname",HIR"èµ¤ç¹©ç¶°çµ"NOR);
         set("shen_type", 1);
 
         set("str", 30);
-        set("gender", "Å®ĞÔ");
+        set("gender", "å¥³æ€§");
         set("age", 17);
          set("per", 30);
         set("long",
-"Ò»¸ö³£×¤ÔÂÀÏìô¸½½üµÄĞ¡¹ÃÄï£¬ÂôÒ»Ğ©Ï¡
-º±µÄ¶«Î÷£¬ĞüÆæ¹Å¹Ö£¬¾İËµÓĞÖúÒöÔµ¡£\n"
+"ä¸€å€‹å¸¸é§æœˆè€ç¥ é™„è¿‘çš„å°å§‘å¨˜ï¼Œè³£ä¸€äº›ç¨€
+ç½•çš„æ±è¥¿ï¼Œæ‡¸å¥‡å¤æ€ªï¼Œæ“šèªªæœ‰åŠ©å§»ç·£ã€‚\n"
 );
         set("combat_exp", 2500);
         set("attitude", "friendly");
         set("chat_chance", 1);
         set("chat_msg", ({
-                "Çé¶ùĞ¦ÃĞÃĞµØËµµÀ£º¡°ÇóÒöÔµ°¡£¿À´¿´¿´ÎÒÂôµÄ¶«Î÷°É£¡¡±\n",
+                "æƒ…å…’ç¬‘çœ¯çœ¯åœ°èªªé“ï¼šâ€œæ±‚å§»ç·£å•Šï¼Ÿä¾†çœ‹çœ‹æˆ‘è³£çš„æ±è¥¿å§ï¼â€\n",
         }));
 
         set("vendor_goods", ({

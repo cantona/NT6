@@ -9,28 +9,28 @@ int do_yang(string arg)
         me=this_player();
         seteuid(getuid());
         if(!arg)
-                return notify_fail("ÄãÏëÑøÊ²Ã´£¿\n");
+                return notify_fail("ä½ æƒ³é¤Šä»€éº¼ï¼Ÿ\n");
         if(arg != "yu bee" || arg != "yu bee")
-                return notify_fail("ÄãÖ»ÄÜÑøÓñ·ä¡£\n");
+                return notify_fail("ä½ åªèƒ½é¤Šç‰èœ‚ã€‚\n");
         if( me->is_busy() || query_temp("marks/bee1", me) )
-                return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ æ­£å¿™è‘—å‘¢ã€‚\n");
         if ( present("mi", me) )
-                return notify_fail("ÄãÕıÄÃ×Å·äÃÛÄØ£¬»¹ÊÇÏÈ½»¸øÀÏÍçÍ¯°É¡£\n");
+                return notify_fail("ä½ æ­£æ‹¿è‘—èœ‚èœœå‘¢ï¼Œé‚„æ˜¯å…ˆäº¤çµ¦è€é ‘ç«¥å§ã€‚\n");
 //        bee=new("/d/baihuagu/npc/yubee");
 //        bee->move(environment(this_player()));
 //        me->set_leader(bee);
 //        bee->set_leader(me);
-        message_vision( HIY"$N´ò¿ªÒ»¸ö·äÏä£¬ÀïÃæºöµÄ·É³öÒ»ÈºÓñ·ä¡£$NÉµĞ¦Ò»Éù£¬¿ªÊ¼ºÍÃÛ·äÍæË£¡£\n"NOR, me, obj);
+        message_vision( HIY"$Næ‰“é–‹ä¸€å€‹èœ‚ç®±ï¼Œè£¡é¢å¿½çš„é£›å‡ºä¸€ç¾¤ç‰èœ‚ã€‚$Nå‚»ç¬‘ä¸€è²ï¼Œé–‹å§‹å’Œèœœèœ‚ç©è€ã€‚\n"NOR, me, obj);
         qufeng = me->query_skill("qufeng",1);
         c=20;
         if (wizardp(me)) c=3;
-        else if (qufeng > 50 ) c = c * 50  / qufeng; // 200¼¶¾ÍÊÇ 1/4
+        else if (qufeng > 50 ) c = c * 50  / qufeng; // 200ç´šå°±æ˜¯ 1/4
         me->apply_condition("yubee", c);
         set_temp("marks/bee1", 1, me);
         return 1;
 }
 int do_quit(string arg)
 {
-        write(query("name", this_player())+"£¬ÕÛÌÚ¸öÉ¶¾¢¶ùÑ½£¬×¨ĞÄÑø·ä°É£¡\n");
+        write(query("name", this_player())+"ï¼ŒæŠ˜é¨°å€‹å•¥å‹å…’å‘€ï¼Œå°ˆå¿ƒé¤Šèœ‚å§ï¼\n");
         return 1;
 }

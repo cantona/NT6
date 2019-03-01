@@ -1,4 +1,4 @@
-// ´óÌÆË«Áú´«
+// å¤§å”é›™é¾å‚³
  
 // zhu.c
 
@@ -8,10 +8,10 @@ inherit F_DEALER;
 void create()
 {
    
-       set_name("ÖìÀÏ°å", ({"zhu laoban","zhu","laoban" }));
+       set_name("æœ±è€æ¿", ({"zhu laoban","zhu","laoban" }));
        set("shop_id",({"zhu laoban","zhu","laoban"}));
-       set("shop_title","Öé±¦µêÀÏ°å");
-       set("gender", "ÄĞĞÔ");
+       set("shop_title","ç å¯¶åº—è€æ¿");
+       set("gender", "ç”·æ€§");
         set("combat_exp", 10000);
        set("age", 26);
        set("per", 14);

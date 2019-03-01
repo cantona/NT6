@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�Ͻ��");
+        set("short", "紫金城");
         set("long", @LONG
-�����ػ������Ͻ��ǽ���ܳ������ǽ�ɻ���ʯ��ɽ�����ɣ�
-���������ž����پ��ڣ�����Ϊ����·�ڣ�����׳�ۡ�
+這是守護金殿的紫金城牆，周長三裡，城牆由花崗石依山勢砌成，
+東西北城門均面臨絕壁，南門為上下路口，氣勢壯觀。
 LONG );
         set("exits", ([
                 "north" : __DIR__"jinding",

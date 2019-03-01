@@ -11,19 +11,19 @@ int exert(object me, object target)
         int skill;
 
         if (target != me)
-                return notify_fail("你只能用蚩尤狂战决来提升自己的战斗力。\n");
+                return notify_fail("浣犲彧鑳界敤铓╁挨鐙傛埌姹轰締鎻愬崌鑷繁鐨勬埌楝ュ姏銆俓n");
 
         if( query("neili", me)<150 )
-                return notify_fail("你的内力不够。\n");
+                return notify_fail("浣犵殑鍏у姏涓嶅銆俓n");
 
         if( query_temp("powerup", me) )
-                return notify_fail("你已经在运功中了。\n");
+                return notify_fail("浣犲凡缍撳湪閬嬪姛涓簡銆俓n");
 
         skill = me->query_skill("force");
         addn("neili", -100, me);
         me->receive_damage("qi", 0);
         
-        message_combatd(HIY "$N" HIY "深吸一口气，待到呼出之时，双目已经射出赤红的光芒，周围的空气中弥漫着阵阵的战意！\n" NOR, me);
+        message_combatd(HIY "$N" HIY "娣卞惛涓�鍙ｆ埃锛屽緟鍒板懠鍑轰箣鏅傦紝闆欑洰宸茬稉灏勫嚭璧ょ磪鐨勫厜鑺掞紝鍛ㄥ湇鐨勭┖姘ｄ腑褰屾极钁楅櫍闄ｇ殑鎴版剰锛乗n" NOR, me);
         addn_temp("apply/attack", skill/2, me);
         addn_temp("apply/defense", skill/2, me);
         set_temp("powerup", 1, me);
@@ -41,6 +41,6 @@ void remove_effect(object me, int amount)
                 addn_temp("apply/attack", -amount, me);
                 addn_temp("apply/defense", -amount, me);
                 delete_temp("powerup", me);
-                tell_object(me, "你的蚩尤狂战决运行完毕，将内力收回丹田。\n");
+                tell_object(me, "浣犵殑铓╁挨鐙傛埌姹洪亱琛屽畬鐣紝灏囧収鍔涙敹鍥炰腹鐢般�俓n");
         }
 }

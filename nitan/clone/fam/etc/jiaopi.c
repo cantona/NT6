@@ -3,13 +3,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(NOR + MAG "×ÏòÔÆ¤" NOR, ({ "dragon skin", "skin" }));
+        set_name(NOR + MAG "ç´«è›Ÿçš®" NOR, ({ "dragon skin", "skin" }));
         set_weight(4000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", NOR + MAG "Ò»¿éòÔÆ¤£¬³Ê×ÏºÚÉ«£¬¼áÓ²ÎŞ±È£¬ÄËÉÏµÈÆ¤¸ïÔ­ÁÏ¡£\n" NOR);
-                set("unit", "¿é");
+                set("long", NOR + MAG "ä¸€å¡Šè›Ÿçš®ï¼Œå‘ˆç´«é»‘è‰²ï¼Œå …ç¡¬ç„¡æ¯”ï¼Œä¹ƒä¸Šç­‰çš®é©åŸæ–™ã€‚\n" NOR);
+                set("unit", "å¡Š");
                 set("value", 100000);
         }
         setup();

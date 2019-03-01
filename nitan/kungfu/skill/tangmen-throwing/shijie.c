@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-string name() { return HIM "Ò»»¨Ò»ÊÀ½ç" NOR; }
+string name() { return HIM "ä¸€èŠ±ä¸€ä¸–ç•Œ" NOR; }
 
 inherit F_SSERVER;
 
@@ -13,42 +13,42 @@ int perform(object me, object target)
         object weapon;
 
         if( !query("reborn/times", me) ) 
-                return notify_fail("ÄãÉĞÎ´×ªÊÀÖØÉú£¬ÎŞ·¨Ê¹ÓÃ" + name() + "¡£\n"); 
+                return notify_fail("ä½ å°šæœªè½‰ä¸–é‡ç”Ÿï¼Œç„¡æ³•ä½¿ç”¨" + name() + "ã€‚\n"); 
                 
         if( !target) target = offensive_target(me);
 
         if( !target || !me->is_fighting(target) )
-                return notify_fail(name() + "Ö»ÄÜÔÚÕ½¶·ÖĞ¶Ô¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(name() + "åªèƒ½åœ¨æˆ°é¬¥ä¸­å°å°æ‰‹ä½¿ç”¨ã€‚\n");
         
         if( me->is_busy() )
-                return notify_fail("ÄãÕıÔÚÃ¦×ÅÄØ¡£\n"); 
+                return notify_fail("ä½ æ­£åœ¨å¿™è‘—å‘¢ã€‚\n"); 
 
         if( !objectp(weapon=query_temp("handing", me)) || 
             query("skill_type", weapon) != "throwing" )
-                return notify_fail("ÄãÏÖÔÚÊÖÖĞÃ»ÓĞÄÃ×Å°µÆ÷£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ‰‹ä¸­æ²’æœ‰æ‹¿è‘—æš—å™¨ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if( (skill = me->query_skill("tangmen-throwing", 1)) < 800 )
-                return notify_fail("ÄãµÄÌÆÃÅ°µÆ÷²»¹»æµÊì£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„å”é–€æš—å™¨ä¸å¤ å«»ç†Ÿï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if( (int)me->query_skill("boyun-suowu", 1) < 800 )
-                return notify_fail("ÄãµÄ²¦ÔÆËøÎí²»¹»æµÊì£¬ÎŞ·¨Ê©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„æ’¥é›²é–éœ§ä¸å¤ å«»ç†Ÿï¼Œç„¡æ³•æ–½å±•" + name() + "ã€‚\n");
 
         if( (int)me->query_skill("force") < 800 )
-                return notify_fail("ÄãµÄÄÚ¹¦ĞŞÎª²»×ã£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸä¿®ç‚ºä¸è¶³ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if( query("max_neili", me)<2000 )
-                return notify_fail("ÄãµÄÄÚÁ¦ĞŞÎª²»×ã£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¿®ç‚ºä¸è¶³ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if( query("neili", me) < 1500 )
-                return notify_fail("ÄãÏÖÔÚÕæÆø²»×ã£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çœŸæ°£ä¸è¶³ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if( !living(target) )
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
         addn("neili", -1000, me);
 
-        msg = HIM "\n$N" HIM "ÊÖÖĞÍ»È»¶àÁËÒ»Ö§»¨£¬ÃÀµÃÑıÑŞ£¬$n" HIM "¾õµÃÓĞµã³ÕÁË£¬\n"
-              HIM "$n" HIM "²»Öª²»¾õÖĞ½øÈëÁËÒ»»¨Ò»ÊÀ½çÖĞ¡£\n" NOR;
+        msg = HIM "\n$N" HIM "æ‰‹ä¸­çªç„¶å¤šäº†ä¸€æ”¯èŠ±ï¼Œç¾å¾—å¦–è‰·ï¼Œ$n" HIM "è¦ºå¾—æœ‰é»ç—´äº†ï¼Œ\n"
+              HIM "$n" HIM "ä¸çŸ¥ä¸è¦ºä¸­é€²å…¥äº†ä¸€èŠ±ä¸€ä¸–ç•Œä¸­ã€‚\n" NOR;
 
         ap = attack_power(me, "throwing") * 2;
         dp = defense_power(target, "parry") + defense_power(target, "dodge") +
@@ -58,7 +58,7 @@ int perform(object me, object target)
 
         if (ap * 2 / 3 + random(ap * 3 / 2) > dp)
         {
-                msg = HIR"ÄÇ»¨Ô½¿ªÔ½ÑŞ£¬Ò»»¨Ò»ÊÀ½ç£¬Ò»Ä¾Ò»¸¡Éú£¬$n"HIR"Î¢Ğ¦×Åµ¹ÏÂÁË£¬ÄÇ»¨Ò²Ğ»ÁË¡£\n" NOR;
+                msg = HIR"é‚£èŠ±è¶Šé–‹è¶Šè‰·ï¼Œä¸€èŠ±ä¸€ä¸–ç•Œï¼Œä¸€æœ¨ä¸€æµ®ç”Ÿï¼Œ$n"HIR"å¾®ç¬‘è‘—å€’ä¸‹äº†ï¼Œé‚£èŠ±ä¹Ÿè¬äº†ã€‚\n" NOR;
                 weapon->hit_ob(me,target,query("jiali", me)+200);
                 //weapon->move(target);
                 weapon->add_amount(-1);
@@ -74,7 +74,7 @@ int perform(object me, object target)
                 me->start_busy(2);
         } else
         {
-                msg = HIR "Î£¼±Ê±¿Ì£¬$n " HIR "¶ÙÎòÒ»·½Ò»¾»ÍÁ£¬´Ó»¨µÄÊÀ½çÖĞ¶İ³ö£¬ÄÇ»¨»®¿Õ¶ø¹ı¡£Ö»Ìıµ±µÄÒ»ÉùÇáÏì£¬ÄÇ»¨Ğ»ÁË£¬ÇáÇáµØÔÒÔÚµØÃæÉÏ¡£\n" NOR;
+                msg = HIR "å±æ€¥æ™‚åˆ»ï¼Œ$n " HIR "é “æ‚Ÿä¸€æ–¹ä¸€å‡ˆåœŸï¼Œå¾èŠ±çš„ä¸–ç•Œä¸­éå‡ºï¼Œé‚£èŠ±åŠƒç©ºè€Œéã€‚åªè½ç•¶çš„ä¸€è²è¼•éŸ¿ï¼Œé‚£èŠ±è¬äº†ï¼Œè¼•è¼•åœ°ç ¸åœ¨åœ°é¢ä¸Šã€‚\n" NOR;
                 message_combatd(msg, me, target);
                 if( query("neili", target)<1000 )
                         set("neili", 0, target);
@@ -88,9 +88,9 @@ int perform(object me, object target)
                 target->affect_by("poison", 
                         ([ "level" : 8000, 
                            "id":query("id", me), 
-                           "name" : "ÌÆÃÅ»¨¶¾", 
+                           "name" : "å”é–€èŠ±æ¯’", 
                            "duration" : 200 ])); 
-                tell_object(target, HIG "ÄãÖĞÁËÌÆÃÅÒ»»¨Ò»ÊÀ½çµÄ»¨¶¾¡£\n"); 
+                tell_object(target, HIG "ä½ ä¸­äº†å”é–€ä¸€èŠ±ä¸€ä¸–ç•Œçš„èŠ±æ¯’ã€‚\n"); 
         }
         return 1;
 }

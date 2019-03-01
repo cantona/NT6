@@ -9,15 +9,15 @@ inherit F_UNIQUE;
 
 void create()
 {
-        set_name("ÕÅÖĞ", ({ "zhang zhong", "zhang", "zhong", }));
+        set_name("å¼µä¸­", ({ "zhang zhong", "zhang", "zhong", }));
         set("long",
-        "ËûÊÇÒ»Î»¸ß¸ßÊİÊİµÄµÀÈË£¬Éí´©Ò»¼ş°×²¼³¤ÅÛ¡£\n"
+        "ä»–æ˜¯ä¸€ä½é«˜é«˜ç˜¦ç˜¦çš„é“äººï¼Œèº«ç©¿ä¸€ä»¶ç™½å¸ƒé•·è¢ã€‚\n"
         "\n"
         );
 
-        set("title", HIG "Ã÷½Ì" NOR "ÎåÉ¢ÈË");
-        set("nickname", "Ìú¹ÚµÀÈË");
-        set("gender", "ÄĞĞÔ");
+        set("title", HIG "æ˜æ•™" NOR "äº”æ•£äºº");
+        set("nickname", "éµå† é“äºº");
+        set("gender", "ç”·æ€§");
         set("attitude", "friendly");
         set("class", "taoist");
 
@@ -59,8 +59,8 @@ void create()
         prepare_skill("cuff", "shenghuo-quan");
         prepare_skill("strike", "guangming-zhang");
 
-        create_family("Ã÷½Ì", 36, "ÎåÉ¢ÈË");
-        set("inherit_title",HIG"Ã÷½Ì"NOR"¹âÃ÷ÕÆÆìÊ¹"NOR);
+        create_family("æ˜æ•™", 36, "äº”æ•£äºº");
+        set("inherit_title",HIG"æ˜æ•™"NOR"å…‰æ˜æŒæ——ä½¿"NOR);
 
         setup();
 

@@ -1,17 +1,17 @@
-// mantou.c ÂøÍ·
+// mantou.c é¥…é ­
 
 inherit ITEM;
 inherit F_FOOD;
 
 void create()
 {
-        set_name("°×ÃæÂøÍ·", ({ "mantou" }));
+        set_name("ç™½é¢é¥…é ­", ({ "mantou" }));
         set_weight(200);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¸öÏãÅçÅçµÄ°×ÃæÂøÍ·¡£\n");
-                set("unit", "¸ö");
+                set("long", "ä¸€å€‹é¦™å™´å™´çš„ç™½é¢é¥…é ­ã€‚\n");
+                set("unit", "å€‹");
                 set("value", 10);
                 set("food_remaining", 4);
                 set("food_supply", 30);

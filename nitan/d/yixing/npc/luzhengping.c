@@ -7,10 +7,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("����ƽ", ({ "lu zhengping", "lu"}));
-        set("title", HIC "�쵶��������" NOR);
-        set("long", "ֻ����һ�Ź��ַ���������һ����ף��������������û�ˡ�\n");
-        set("gender", "����");
+        set_name("呂正平", ({ "lu zhengping", "lu"}));
+        set("title", HIC "快刀門掌門人" NOR);
+        set("long", "只見他一張國字方臉，腮上一部虯髯，將大半張臉都遮沒了。\n");
+        set("gender", "男性");
         set("age", 41);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -43,14 +43,14 @@ void create()
         set_temp("apply/damage", 25);
         set("chat_chance", 8);
         set("chat_msg", ({
-                "����ƽ˵�������ְ��˾ͽ����밳���й����Ľ��飬����ȥ�ݷ������˼ҡ�\n",
+                "呂正平說道：長樂幫的司徒大哥與俺們有過命的交情，真想去拜訪他老人家。\n",
         }) );
 
         set("inquiry",([
-                "������" : "�´���������������������ȫ������ʮ������",
-                "���ְ�" : "��Ҳ��Ҫ�����ְ��ɽ��",
-                "˾ͽ���" : "˾ͽ�����¾����ֵ��ҵ��¡�",
-                "˾ͽ��" : "��˵���ְ�ļ������ҷ��Ϻ���������",
+                "丁不四" : "下次再遇到這老賊，定在他全身剁上十幾刀。",
+                "長樂幫" : "我也正要到長樂幫拜山。",
+                "司徒大哥" : "司徒大哥的事就是兄弟我的事。",
+                "司徒橫" : "聽說長樂幫的姦賊作亂飯上害死了他。",
         ]));
 
         setup();

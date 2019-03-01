@@ -5,15 +5,15 @@ inherit NPC;
 
 void create()
 {
-        set_name("Å·Ñô·æ", ({ "ouyang feng", "ouyang", "feng" }));
-        set("long", "Ëû¾ÍÊÇ°×ÍÕÉ½×¯Ö÷£¬ºÅ³Æ¡°Î÷¶¾¡±µÄÅ·Ñô·æ¡£Á³ÐÍÊÝÏ÷£¬\n"
-                    "ÉíÐÎØâº·£¬ËäÈ»ÊÜµ½¹ù¾¸ÆÛÆ­ÎóÑ§Ï°ÁË¡¸¾ÅÒõÕæ¾­¡¹¶ø×ß\n"
-                    "»ðÈëÄ§£¬Ò»¶È±äµÃ¾«Éñ´íÂÒ£¬µ«ÊÇÏÖÔÚÒÑÈ»»Ö¸´£¬¹¦Á¦ÓÌ\n"
-                    "Ê¤ÍùÎô¡£\n");
-        set("title", "Î÷Óò°×ÍÕÉ½×¯Ö÷");
-        set("gender", "ÄÐÐÔ");
+        set_name("æ­é™½é‹’", ({ "ouyang feng", "ouyang", "feng" }));
+        set("long", "ä»–å°±æ˜¯ç™½é§å±±èŽŠä¸»ï¼Œè™Ÿç¨±â€œè¥¿æ¯’â€çš„æ­é™½é‹’ã€‚è‡‰åž‹ç˜¦å‰Šï¼Œ\n"
+                    "èº«å½¢å‰½æ‚ï¼Œé›–ç„¶å—åˆ°éƒ­é–æ¬ºé¨™èª¤å­¸ç¿’äº†ã€Œä¹é™°çœŸç¶“ã€è€Œèµ°\n"
+                    "ç«å…¥é­”ï¼Œä¸€åº¦è®Šå¾—ç²¾ç¥žéŒ¯äº‚ï¼Œä½†æ˜¯ç¾åœ¨å·²ç„¶æ¢å¾©ï¼ŒåŠŸåŠ›çŒ¶\n"
+                    "å‹å¾€æ˜”ã€‚\n");
+        set("title", "è¥¿åŸŸç™½é§å±±èŽŠä¸»");
+        set("gender", "ç”·æ€§");
         set("age", 53);
-        set("nickname", HIR "Î÷¶¾" NOR);
+        set("nickname", HIR "è¥¿æ¯’" NOR);
         set("shen_type", -1);
         set("attitude", "peaceful");
 
@@ -67,7 +67,7 @@ void create()
         prepare_skill("finger", "shedu-qiqiao");
         prepare_skill("cuff", "lingshe-quan");
 
-        create_family("Å·ÑôÊÀ¼Ò", 5, "ÕÆÃÅ");
+        create_family("æ­é™½ä¸–å®¶", 5, "æŽŒé–€");
 
         set("chat_chance_combat", 120);
         set("chat_msg_combat", ({
@@ -154,7 +154,7 @@ void die()
 
         return;
 }
-// ÆøÑªÐ¡ÓÚ1000ÔòËÀÍö£¬±ÜÃâËûÈËÐ­Öú°ïÃ¦×ªÊÀ
+// æ°£è¡€å°äºŽ1000å‰‡æ­»äº¡ï¼Œé¿å…ä»–äººå”åŠ©å¹«å¿™è½‰ä¸–
 void heart_beat()
 {
         if (this_object()->query("qi") < 1000 || this_object()->query("eff_qi") < 1000)

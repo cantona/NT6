@@ -9,10 +9,10 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("ÓñÁé×Ó", ({ "yuling zi","yuling", "zi" }));
+        set_name("ç‰éˆå­", ({ "yuling zi","yuling", "zi" }));
         set("long",
-                "ËıÀ¥ÂØÅÉµÚÎå´úµÜ×Ó£¬ÈİÑÕÇÎÀö£¬Éí²Ä·áÂú£¬¾ÙÊÖÍ¶×ã¼ä´ø×ÅµãÌô¶ºÖ®Òâ¡£\n");
-        set("gender", "Å®");
+                "å¥¹æ˜†ä¾–æ´¾ç¬¬äº”ä»£å¼Ÿå­ï¼Œå®¹é¡ä¿éº—ï¼Œèº«æè±æ»¿ï¼Œèˆ‰æ‰‹æŠ•è¶³é–“å¸¶è‘—é»æŒ‘é€—ä¹‹æ„ã€‚\n");
+        set("gender", "å¥³");
         set("age", 28);
         set("attitude", "peaceful");
         set("shen_type", -1);
@@ -50,7 +50,7 @@ void create()
         map_skill("sword", "xunlei-jian");
         prepare_skill("leg", "chuanyun-leg");
 
-        create_family("À¥ÂØÅÉ", 5, "µÜ×Ó");
+        create_family("æ˜†ä¾–æ´¾", 5, "å¼Ÿå­");
         set("env/wimpy", 60);
         setup();
         carry_object("/clone/weapon/changjian")->wield();
@@ -62,11 +62,11 @@ void attempt_apprentice(object ob)
         if (! permit_recruit(ob))
                 return;
 
-        if( query("gender", ob) == "ÄĞĞÔ" )
+        if( query("gender", ob) == "ç”·æ€§" )
         {
                 command("fear");
                 command("say "+RANK_D->query_respect(ob)+
-                        "£¬Ê¦Ä¸²»×¼ÎÒÊÕÄĞµÜ×Ó£¬ÄãÈ¥ÕÒÎÒÊ¦ĞÖÈ¥°É¡£");
+                        "ï¼Œå¸«æ¯ä¸æº–æˆ‘æ”¶ç”·å¼Ÿå­ï¼Œä½ å»æ‰¾æˆ‘å¸«å…„å»å§ã€‚");
                 return;
         }
 
@@ -74,16 +74,16 @@ void attempt_apprentice(object ob)
         {
                 command("hmm");
                 command("say "+RANK_D->query_respect(ob)+
-                        "ÄãµÄĞşÌìÎŞ¼«¹¦Ì«²î£¬ÎÒ¿É²»ÏëÊÕÄã¡£");
+                        "ä½ çš„ç„å¤©ç„¡æ¥µåŠŸå¤ªå·®ï¼Œæˆ‘å¯ä¸æƒ³æ”¶ä½ ã€‚");
                 return;
         }
 
         if( query("appren_hezudao", ob) == 1 )
         {
-                command("say Ç°±²Ôõ¸Ò¿ªÕâµÈÍæĞ¦£¬ÕæÊÇÕÛÉ±×öÍí±²µÄÁË¡£");
+                command("say å‰è¼©æ€æ•¢é–‹é€™ç­‰ç©ç¬‘ï¼ŒçœŸæ˜¯æŠ˜æ®ºåšæ™šè¼©çš„äº†ã€‚");
                 return;
         }
-        command("say ¼ÈÈ»"+RANK_D->query_respect(ob)+
-                "ÕâÃ´Å¬Á¦£¬ÎÒ¾ÍÊÕÏÂÄã°É¡£");
+        command("say æ—¢ç„¶"+RANK_D->query_respect(ob)+
+                "é€™éº¼åŠªåŠ›ï¼Œæˆ‘å°±æ”¶ä¸‹ä½ å§ã€‚");
         command("recruit "+query("id", ob));
 }

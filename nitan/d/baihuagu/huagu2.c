@@ -5,10 +5,10 @@
 inherit ROOM;
 void create()
 {
-        set("short", HIR"°Ù»¨¹È"NOR);
+        set("short", HIR"ç™¾èŠ±è°·"NOR);
         set("long", 
-HIG"À´µ½´Ë´¦£¬ÄãÍ»È»ÑÛÇ°Ò»ÁÁ£¬µ«¾õÇàÇà´ä¹È£¬µã×º×Å»òºì»ò×Ï£¬
-»ò»Æ»ò°×µÄÏÊ»¨£¬¾¹ÊÇ»»ÁËÒ»¸öÊÀ½ç¡£µÀÅÔÓÐÒ»ÖêÌÒÊ÷£¬¿ªµÃÕýÑÞ¡£\n"NOR);  
+HIG"ä¾†åˆ°æ­¤è™•ï¼Œä½ çªç„¶çœ¼å‰ä¸€äº®ï¼Œä½†è¦ºé’é’ç¿ è°·ï¼Œé»žç¶´è‘—æˆ–ç´…æˆ–ç´«ï¼Œ
+æˆ–é»ƒæˆ–ç™½çš„é®®èŠ±ï¼Œç«Ÿæ˜¯æ›äº†ä¸€å€‹ä¸–ç•Œã€‚é“æ—æœ‰ä¸€æ ªæ¡ƒæ¨¹ï¼Œé–‹å¾—æ­£è‰·ã€‚\n"NOR);  
         set("outdoors", "baihuagu");
         set("exits", ([
                 "out"  :__DIR__"huagu1",

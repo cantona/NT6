@@ -2,18 +2,18 @@
 inherit STAFF; 
 void create()
 {
-        set_name("Ï¸Öñ¸Í", ({ "bamboo", "zhu gan" }) );
+        set_name("ç´°ç«¹ç«¿", ({ "bamboo", "zhu gan" }) );
         set_weight(100);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ù");
-                set("long", "Ò»¸ùÍ¨Ìå±ÌÂÌµÄÖñ¸Í¡£\n");
+                set("unit", "æ ¹");
+                set("long", "ä¸€æ ¹é€šé«”ç¢§ç¶ çš„ç«¹ç«¿ã€‚\n");
                 set("value", 100);
                 set("rigidity", 5);
                 set("material", "wood");
-                set("wield_msg", "$NÄÃ³öÒ»¸ùÍ¨Ìå±ÌÂÌµÄ$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+                set("wield_msg", "$Næ‹¿å‡ºä¸€æ ¹é€šé«”ç¢§ç¶ çš„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
     }
     ::init_staff(5);
 }        

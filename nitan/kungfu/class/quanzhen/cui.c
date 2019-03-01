@@ -7,12 +7,12 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("´ŞÖ¾·½", ({"cui zhifang", "cui"}));
-        set("gender", "ÄĞĞÔ");
+        set_name("å´”å¿—æ–¹", ({"cui zhifang", "cui"}));
+        set("gender", "ç”·æ€§");
         set("age", 24);
         set("class", "taoist");
         set("long",
-                "Ëû¾ÍÊÇÈ«Õæ½ÌµÚÈı´úµÜ×ÓÖĞµÄºÃÊÖ£¬Íõ´¦Ò»µÄ¶şµÜ×Ó¡£\n");
+                "ä»–å°±æ˜¯å…¨çœŸæ•™ç¬¬ä¸‰ä»£å¼Ÿå­ä¸­çš„å¥½æ‰‹ï¼Œç‹è™•ä¸€çš„äºŒå¼Ÿå­ã€‚\n");
         set("attitude", "friendly");
         set("shen_type",1);
         set("str", 26);
@@ -64,10 +64,10 @@ void create()
         map_skill("finger", "zhongnan-zhi");
         prepare_skill("finger", "zhongnan-zhi");
 
-        create_family("È«Õæ½Ì", 3, "µÜ×Ó");
+        create_family("å…¨çœŸæ•™", 3, "å¼Ÿå­");
 
         set("inquiry", ([
-                "È«Õæ½Ì" :  "ÎÒÈ«Õæ½ÌÊÇÌìÏÂµÀ¼ÒĞşÃÅÕı×Ú¡£\n",
+                "å…¨çœŸæ•™" :  "æˆ‘å…¨çœŸæ•™æ˜¯å¤©ä¸‹é“å®¶ç„é–€æ­£å®—ã€‚\n",
         ]) );
 
         set("master_ob",1);
@@ -83,6 +83,6 @@ void attempt_apprentice(object ob)
         if (! permit_recruit(ob))
                 return;
 
-        command("say ºÃ°É£¬ÎÒ¾ÍÊÕÏÂÄãÕâ¸öÍ½µÜÁË¡£");
+        command("say å¥½å§ï¼Œæˆ‘å°±æ”¶ä¸‹ä½ é€™å€‹å¾’å¼Ÿäº†ã€‚");
         command("recruit "+query("id", ob));
 }

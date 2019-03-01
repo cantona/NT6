@@ -1,4 +1,4 @@
-// he sheng ºÎÊ¢
+// he sheng ä½•ç››
 // Last Modified by winder on Jul. 12 2002
 
 #include <ansi.h>;
@@ -6,9 +6,9 @@ inherit NPC;
 
 void create()
 {
-        set_name("ºÎÊ¢", ({ "he sheng","he" }));
-        set("long", "ÎÞ¸ùµÀÈËµÄ´óµÜ×Ó¡£\n");
-        set("gender", "ÄÐÐÔ");
+        set_name("ä½•ç››", ({ "he sheng","he" }));
+        set("long", "ç„¡æ ¹é“äººçš„å¤§å¼Ÿå­ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 28);
         set("attitude", "peaceful");
         set("shen_type", -1);
@@ -43,10 +43,10 @@ void create()
         map_skill("parry", "huagu-mianzhang");
         prepare_skill("strike", "huagu-mianzhang");
 
-        set("party/party_name", HIY"ÉñÁú½Ì"NOR);
-        set("party/rank", HIR"³àÁúÃÅ"NOR"½ÌÖÚ");
+        set("party/party_name", HIY"ç¥žé¾æ•™"NOR);
+        set("party/rank", HIR"èµ¤é¾é–€"NOR"æ•™çœ¾");
         set("party/level", 1);
-        create_family("ÉñÁú½Ì", 3, "µÜ×Ó");
+        create_family("ç¥žé¾æ•™", 3, "å¼Ÿå­");
 
         setup();
         carry_object(CLOTH_DIR"cloth")->wear();

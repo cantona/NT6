@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "������");
+        set("short", "煉丹房");
         set("long", @LONG
-������ҩ���ȵ�����������Χǽ�ڶ�����ʯ�����ɵģ���ש�̵أ�
-�����������һ����ͭ���ɵĴ�¯��
+這裡是藥王谷的煉丹房，周圍牆壁都是用石塊砌成的，青磚舖地，
+房間中央放著一尊青銅築成的大丹爐。
 LONG );
         set("no_fight", 1);
         set("exits", ([

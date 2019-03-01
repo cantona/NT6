@@ -6,13 +6,13 @@ inherit SHIELD;
 
 void create()
 {
-        set_name("¶ÜÅÆ", ({"shield"}));
+        set_name("å—Žé½ª", ({"shield"}));
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
                 set("material", "wood");
-                set("unit", "Ãæ");
+                set("unit", "é†±");
                 set("armor_prop/armor", 5);
         }
         setup();

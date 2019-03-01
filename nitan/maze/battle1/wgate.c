@@ -8,9 +8,9 @@ void setup_weishi(object weishi,object ob);
 
 void create()
 {
-        set("short", HIR"Õ½³¡Èë¿Ú"NOR);
+        set("short", HIR"æˆ°å ´å…¥å£"NOR);
         set("long", @LONG
-ÕâÀïÊÇÕ½³¡µÄÈë¿Ú¡£¡£¡£
+é€™è£¡æ˜¯æˆ°å ´çš„å…¥å£ã€‚ã€‚ã€‚
 LONG);
         set("outdoors", "battle");
         set("invalid_startroom", 1);
@@ -56,7 +56,7 @@ void death_stage(object ob, int stage)
                 if( !weishi )return;
                 weishi->move(__DIR__"wtang");
                 setup_weishi(weishi,ob);
-                message("vision", "ÄãºöÈ»·¢ÏÖÇ°Ãæ¶àÁËÒ»¸öÈËÓ°¡£\n", environment(weishi), weishi);
+                message("vision", "ä½ å¿½ç„¶ç™¼ç¾å‰é¢å¤šäº†ä¸€å€‹äººå½±ã€‚\n", environment(weishi), weishi);
         }
 
 }
@@ -104,12 +104,12 @@ void setup_weishi(object me,object obj)
                 me->set_skill(names[i], level);
 
         set_temp("battle/team_name",query_temp("battle/team_name",  obj), me);
-        if( exp>80000000)set("name", "ÌØ¼¶ÎäÊ¿", me);
-        else if( exp>60000000)set("name", "Ò»¼¶ÎäÊ¿", me);
-        else if( exp>40000000)set("name", "¶þ¼¶ÎäÊ¿", me);
-        else if( exp>20000000)set("name", "Èý¼¶ÎäÊ¿", me);
-        else if( exp>5000000)set("name", "ËÄ¼¶ÎäÊ¿", me);
-        else set("name", "Îå¼¶ÎäÊ¿", me);
+        if( exp>80000000)set("name", "ç‰¹ç´šæ­¦å£«", me);
+        else if( exp>60000000)set("name", "ä¸€ç´šæ­¦å£«", me);
+        else if( exp>40000000)set("name", "äºŒç´šæ­¦å£«", me);
+        else if( exp>20000000)set("name", "ä¸‰ç´šæ­¦å£«", me);
+        else if( exp>5000000)set("name", "å››ç´šæ­¦å£«", me);
+        else set("name", "äº”ç´šæ­¦å£«", me);
 
         set_temp("apply/short", ({HIW""+query_temp("battle/team_name", obj)+""NOR+me->name()+"(wushi)"}), me);
 }

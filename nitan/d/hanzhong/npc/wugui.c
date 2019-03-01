@@ -4,13 +4,13 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÎÚ¹ê", ({ "wu gui", "gui" }) );
-        set("race", "Ò°ÊÞ");
+        set_name("çƒé¾œ", ({ "wu gui", "gui" }) );
+        set("race", "é‡Žç¸");
         set("age", 10);
-        set("long", "Ò»Ö»´óÎÚ¹ê£¬¿´À´ËêÊý²»Ð¡ÁË¡£\n");
+        set("long", "ä¸€åªå¤§çƒé¾œï¼Œçœ‹ä¾†æ­²æ•¸ä¸å°äº†ã€‚\n");
         set("attitude", "peaceful");
 
-        set("limbs",  ({  "Í·²¿",  "×¦×Ó",  "Î²°Í"  })  );
+        set("limbs",  ({  "é ­éƒ¨",  "çˆªå­",  "å°¾å·´"  })  );
         set("verbs",  ({  "bite"})  );
         set("str", 26);
         set("cor", 30);
@@ -26,7 +26,7 @@ void create()
 void die()
 {
         object ob;
-        message_vision("$N·­×ªÉí£¬ËÀÁË£¡\n", this_object());
+        message_vision("$Nç¿»è½‰èº«ï¼Œæ­»äº†ï¼\n", this_object());
         ob = new("/clone/medicine/vegetable/guijia");
         ob->move(environment(this_object()));
         destruct(this_object());

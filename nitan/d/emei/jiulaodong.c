@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "���϶�");
+        set("short", "九老洞");
         set("long", @LONG
-����Ƕ��ҵ�һ�󶴣���������ޱȣ������Ѳ⡣��һ�߽�����
-�㷢�����в涴�����Թ�������Ī���ƺ�����޵ס����ǿ���뿪�ɡ�
+這就是峨嵋第一大洞，洞內深窈無比，神秘難測。你一走進來，
+便發覺洞中叉洞多如迷宮，怪異莫測似乎黝黑無底。還是快快離開吧。
 LONG );
         set("objects", ([
                 "/clone/quarry/fu" : 4,

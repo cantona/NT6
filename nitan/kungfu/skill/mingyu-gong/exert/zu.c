@@ -9,20 +9,20 @@ int exert(object me, object target)
         int skill;
 
         if (target != me)
-                return notify_fail("你只能用明玉功恢复自己的气血。\n");
+                return notify_fail("浣犲彧鑳界敤鏄庣帀鍔熸仮寰╄嚜宸辩殑姘ｈ銆俓n");
 
         if( query("neili", me)<1000 )
-                return notify_fail("你的真气不够！\n");
+                return notify_fail("浣犵殑鐪熸埃涓嶅锛乗n");
 
         if (me->query_condition("mingyu_qizu"))
-                return notify_fail("你已经在运功中了。\n");
+                return notify_fail("浣犲凡缍撳湪閬嬪姛涓簡銆俓n");
 
         skill = me->query_skill("mingyu-gong", 1);
 
         addn("neili", -100, me);
 
-        message_combatd(HIC "$N" HIC "运起「气足」奇功，"
-                        "眼中闪过一片青芒，随即恢复正常\n" NOR, me);
+        message_combatd(HIC "$N" HIC "閬嬭捣銆屾埃瓒炽�嶅鍔燂紝"
+                        "鐪间腑闁冮亷涓�鐗囬潚鑺掞紝闅ㄥ嵆鎭㈠京姝ｅ父\n" NOR, me);
 
 
         me->apply_condition("mingyu_qizu", skill / 100);

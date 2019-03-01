@@ -6,10 +6,10 @@
 inherit ROOM;
 void create()
 {
-        set("short", "�ƺӰ���");
+        set("short", "黃河岸邊");
         set("long", @LONG
-�����ǻƺӰ��ߡ��ƺ����ʵ�����Ӵ���������ɫ�ĺ�ˮ�ھ���
-������ȥ��ʹ������������ˮʱ�Ŀ�����
+這裡是黃河岸邊。黃河流淌到這裡，河床寬闊。黃色的河水在靜靜
+地向東流去，使人忘記它發洪水時的狂威。
 LONG );
         set("exits", ([
                 "northeast" : __DIR__"huanghe7",

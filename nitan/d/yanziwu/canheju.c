@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�κϾ�");
+        set("short", "參合居");
         set("long", @LONG
-����Ľ���������������ճ����֮�أ����õû����в������ţ�
-ƽʵ��͸�Ÿ߹��ľ��������̫ʦ�Σ��Լ�ǽ�ϵ��ֻ���͸��һ��
-�Ƿ�֮����
+這是慕容世家首腦人物日常起居之地，布置得華麗中不乏清雅，
+平實中透著高貴。楠木方桌，大太師椅，以及牆上的字畫都透著一股
+非凡之氣。
 LONG );
         set("valid_startroom", 1);
         set("no_sleep_room",1);

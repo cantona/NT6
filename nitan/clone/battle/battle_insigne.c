@@ -4,16 +4,16 @@ inherit COMBINED_ITEM;
 
 void create()
 {
-        set_name(HIC"Õ½"NOR CYN"Õù"HIC"Ñ«"NOR CYN"ÕÂ"NOR, ({ "battle insigne"}) );
-        set_temp("status", HIG"´«"NOR GRN"Ææ");
+        set_name(HIC"æˆ°"NOR CYN"çˆ­"HIC"å‹›"NOR CYN"ç« "NOR, ({ "battle insigne"}) );
+        set_temp("status", HIG"å‚³"NOR GRN"å¥‡");
 
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "´ÓÕ½ÕùÖĞ»ñµÃµÄÕ½ÕùÑ«ÕÂ£¬¿ÉÒÔÓÃÀ´¶Ò»»Ï¡ÓĞµÄÎïÆ·£¬Ò²¿ÉÒÔ\n"
-                            "Ê¹ÓÃ(use)ËüÖØĞÂ½øÈëÕ½³¡¡£\n");
-                set("unit", "¶Ñ");
-                set("base_unit", "Ã¶");
+                set("long", "å¾æˆ°çˆ­ä¸­ç²å¾—çš„æˆ°çˆ­å‹›ç« ï¼Œå¯ä»¥ç”¨ä¾†å…Œæ›ç¨€æœ‰çš„ç‰©å“ï¼Œä¹Ÿå¯ä»¥\n"
+                            "ä½¿ç”¨(use)å®ƒé‡æ–°é€²å…¥æˆ°å ´ã€‚\n");
+                set("unit", "å †");
+                set("base_unit", "æš");
                 set("base_value", 100);
                 set("no_sell", 1);
                 set("no_drop", 1);
@@ -36,16 +36,16 @@ int do_use(string arg)
         me = this_player();
 
         if( !BATTLEFIELD_D->is_battle_open() && !BATTLEFIELD2_D->is_battle_start() )
-                return notify_fail("Õ½¶·»¹Ã»ÓĞ¿ªÊ¼±¨Ãû¡£\n");
+                return notify_fail("æˆ°é¬¥é‚„æ²’æœ‰é–‹å§‹å ±åã€‚\n");
 
         if( !BATTLEFIELD_D->is_battle_start() && !BATTLEFIELD2_D->is_battle_start() )
-                return notify_fail("Õ½¶·»¹Ã»ÓĞ¿ªÊ¼¡£\n");
+                return notify_fail("æˆ°é¬¥é‚„æ²’æœ‰é–‹å§‹ã€‚\n");
         
         if( !BATTLEFIELD_D->in_battle(me) && !BATTLEFIELD2_D->in_battle(me) )
-                return notify_fail("Äã¿ÉÒÔÊ¹ÓÃbattle joinÀ´²Î¼ÓÕ½¶·¡£\n");        
+                return notify_fail("ä½ å¯ä»¥ä½¿ç”¨battle joinä¾†åƒåŠ æˆ°é¬¥ã€‚\n");        
                 
         if( BATTLEFIELD_D->inside_battlefield(me) || BATTLEFIELD2_D->inside_battlefield(me) )
-                return notify_fail("ÄãÒÑ¾­ÔÚÕ½³¡ÖĞÁË£¬ÎªÈÙÓş¶øÕ½°É¡£\n");
+                return notify_fail("ä½ å·²ç¶“åœ¨æˆ°å ´ä¸­äº†ï¼Œç‚ºæ¦®è­½è€Œæˆ°å§ã€‚\n");
 
         if( BATTLEFIELD_D->in_battle(me) ) BATTLEFIELD_D->init_player(me);
         else BATTLEFIELD2_D->init_player(me);

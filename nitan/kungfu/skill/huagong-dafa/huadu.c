@@ -1,5 +1,5 @@
 // This program is a part of NITAN MudLIB
-// huadu.c »¯¶¾
+// huadu.c åŒ–æ¯’
 
 #include <ansi.h>
 
@@ -14,26 +14,26 @@ int exert(object me, object target)
         if( target != me || !target ) target = me;
 
         if ((int)me->query_skill("huagong-dafa", 1) < 50)
-               return notify_fail("ÄãµÄ»¯¹¦´ó·¨¹¦»ðºòÌ«Ç³¡£\n");
+               return notify_fail("ä½ çš„åŒ–åŠŸå¤§æ³•åŠŸç«å€™å¤ªæ·ºã€‚\n");
 
         if ((int)me->query_skill("poison", 1) < 50)
-               return notify_fail("ÄãÌåÄÚµÄ¶¾ËØ²»¹»»¯¶¾ËùÐè¡£\n");
+               return notify_fail("ä½ é«”å…§çš„æ¯’ç´ ä¸å¤ åŒ–æ¯’æ‰€éœ€ã€‚\n");
 
 
         if( query("neili", me)<800 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»×ãÓÚ»¯¶¾¡£n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸è¶³äºŽåŒ–æ¯’ã€‚n");
 
         if( query("jing", me)<60 )
-                return notify_fail("ÄãµÄ¾«Éñ×´Ì¬²»×ãÓÚ»¯¶¾¡£\n");
+                return notify_fail("ä½ çš„ç²¾ç¥žç‹€æ…‹ä¸è¶³äºŽåŒ–æ¯’ã€‚\n");
 
         if( query_temp("huadu", me) )
-                return notify_fail("ÄãÒÑÔË¹¦»¯¶¾ÁË¡£\n");
+                return notify_fail("ä½ å·²é‹åŠŸåŒ–æ¯’äº†ã€‚\n");
 
         skill = me->query_skill("force");
         addn("neili", 400, me);
         me->recieve_damage("jing", 50);
 
-        message_combatd(BLU"$N±ÕÄ¿ÄýÉñ£¬½«ÌåÄÚÔÌ»ýµÄ¶¾ÖÊÂýÂý»¯ÎªÕæÆø£¬·ÖÉ¢ÔÚËÄÖ«ÄÚ¡£\n" NOR, me);
+        message_combatd(BLU"$Né–‰ç›®å‡ç¥žï¼Œå°‡é«”å…§è˜Šç©çš„æ¯’è³ªæ…¢æ…¢åŒ–ç‚ºçœŸæ°£ï¼Œåˆ†æ•£åœ¨å››è‚¢å…§ã€‚\n" NOR, me);
         i = me->query_skill("poison", 1) / 2;
         addn_temp("apply/attack", i, me);
         set_temp("huadu", 1, me);
@@ -51,6 +51,6 @@ void remove_effect(object me, int i)
         {
                 addn_temp("apply/attack", -i, me);
                 delete_temp("huadu", me);
-                message_combatd(BLU "$NÔË¹¦»¯¶¾Íê±Ï£¬½«ÕæÆø»¯»Ø¶¾ÖÊÔÌ»ýÌåÄÚ¡£\n" NOR, me);
+                message_combatd(BLU "$Né‹åŠŸåŒ–æ¯’å®Œç•¢ï¼Œå°‡çœŸæ°£åŒ–å›žæ¯’è³ªè˜Šç©é«”å…§ã€‚\n" NOR, me);
         }
 }

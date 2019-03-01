@@ -1,20 +1,20 @@
 // Last Modified by winder on Sep. 12 2001
-// wei-chunhua.c ÎÀ´º»ª
+// wei-chunhua.c è¡›æ˜¥è¯
 
 #include <ansi.h>;
 inherit NPC;
 
 void create()
 {
-        set_name("ÎÀ´º»ª", ({ "wei chunhua", "wei","chunhua" }));
-        set("title", HIR "ºì»¨»á"HIG"¾Åµ±¼Ò" NOR);
-        set("nickname", HIY "¾ÅÃü½õ±ª×Ó" NOR);
+        set_name("è¡›æ˜¥è¯", ({ "wei chunhua", "wei","chunhua" }));
+        set("title", HIR "ç´…èŠ±æœƒ"HIG"ä¹ç•¶å®¶" NOR);
+        set("nickname", HIY "ä¹å‘½éŒ¦è±¹å­" NOR);
         set("long", 
-"Ëû³¤µÃÃæÄ¿Ó¢¿¡£¬´©Ò»¼şÇà²¼³¤ÉÀ£¬ÈıÊ®Ëê×óÓÒÄê¼Í£¬Ë«Ä¿¾¼¾¼£¬
-Ó¢Æø±ÆÈË¡£·²·ê½­ºşÉÏĞ×Å¹Õù¶·¡¢¶Ô¿¹¹Ù±øÖ®Ê±£¬ÎÀ´º»ª×ÜÊÇ²»¹Ë
-ĞÔÃüµÄÓÂÍùÖ±Ç°£¬Ò»ÉúËùÓöĞ×ÏÕ²»¼ÆÆäÊı£¬µ«Á¬ÖØÉËÒ²Î´ÊÜ¹ıÒ»´Î£¬
-ÊÇÒÔËµËûÓĞ¾ÅÌõĞÔÃü¡£\n");
-        set("gender", "ÄĞĞÔ");
+"ä»–é•·å¾—é¢ç›®è‹±ä¿Šï¼Œç©¿ä¸€ä»¶é’å¸ƒé•·è¡«ï¼Œä¸‰åæ­²å·¦å³å¹´ç´€ï¼Œé›™ç›®ç‚¯ç‚¯ï¼Œ
+è‹±æ°£é€¼äººã€‚å‡¡é€¢æ±Ÿæ¹–ä¸Šå…‡æ¯†çˆ­é¬¥ã€å°æŠ—å®˜å…µä¹‹æ™‚ï¼Œè¡›æ˜¥è¯ç¸½æ˜¯ä¸é¡§
+æ€§å‘½çš„å‹‡å¾€ç›´å‰ï¼Œä¸€ç”Ÿæ‰€é‡å…‡éšªä¸è¨ˆå…¶æ•¸ï¼Œä½†é€£é‡å‚·ä¹Ÿæœªå—éä¸€æ¬¡ï¼Œ
+æ˜¯ä»¥èªªä»–æœ‰ä¹æ¢æ€§å‘½ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("class", "swordsman");
         set("age", 31);
         set("attitude", "friendly");
@@ -58,7 +58,7 @@ void create()
                 (: exert_function, "regenerate" :),
                 (: exert_function, "recover" :),
         }) );
-        create_family("ºì»¨»á", 2, "µÜ×Ó");
+        create_family("ç´…èŠ±æœƒ", 2, "å¼Ÿå­");
 
          setup();
         carry_object("/d/wudang/obj/bluecloth")->wear();

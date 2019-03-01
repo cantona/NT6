@@ -17,7 +17,7 @@ int main(object me, string arg)
         seteuid(geteuid(me)); 
 
         if (! arg || sscanf(arg, "%s %s to %s", dir, pattern, replace) != 3)
-                return notify_fail("Ö¸Áî¸ñÊ½£ºreplace <Ä¿Â¼|ÎÄ¼şÃû> <Ô­×Ö·û> to <ĞÂ×Ö·û>\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šreplace <ç›®éŒ„|æ–‡ä»¶å> <åŸå­—ç¬¦> to <æ–°å­—ç¬¦>\n");
 
         replace = replace_string(replace, "\\t", "\t"); 
         replace = replace_string(replace, "\\n", "\n"); 
@@ -27,7 +27,7 @@ int main(object me, string arg)
                 dir=resolve_path(query("cwd", me),dir);
 
         if (! SECURITY_D->valid_write(dir, me)) 
-                return notify_fail("Ã»ÓĞ×ã¹»µÄ¶ÁĞ´È¨ÏŞ¡£\n"); 
+                return notify_fail("æ²’æœ‰è¶³å¤ çš„è®€å¯«æ¬Šé™ã€‚\n"); 
                 
         if (file_size(dir) > 0)
         {               
@@ -35,16 +35,16 @@ int main(object me, string arg)
                 str = replace_string(str, pattern, replace);                            
                 rm(dir);
                 if (write_file(dir, str, 1))
-                        write(HIW + dir + "Ìæ»»³É¹¦¡£\n");
+                        write(HIW + dir + "æ›¿æ›æˆåŠŸã€‚\n");
                 else 
-                        write(HIR + dir + "Ìæ»»Ê§°Ü¡­¡­\n");
+                        write(HIR + dir + "æ›¿æ›å¤±æ•—â€¦â€¦\n");
                 
                 return 1;
         }
 
         if (file_size(dir) == -2 && file[strlen(dir) - 1] != '/') dir += "/";
         if (file_size(dir) != -2) 
-                return notify_fail("Ã»ÓĞÕâ¸öÎÄ¼ş»òÄ¿Â¼¡£\n");
+                return notify_fail("æ²’æœ‰é€™å€‹æ–‡ä»¶æˆ–ç›®éŒ„ã€‚\n");
                         
         result = deep_file_list(dir);
         
@@ -59,9 +59,9 @@ int main(object me, string arg)
                         str = replace_string(str, pattern, replace);                            
                         rm(file);
                         if (write_file(file, str, 1))
-                                write(HIW + file + "Ìæ»»³É¹¦¡£\n");
+                                write(HIW + file + "æ›¿æ›æˆåŠŸã€‚\n");
                         else 
-                                write(HIR + file + "Ìæ»»Ê§°Ü¡­¡­\n");                                                      
+                                write(HIR + file + "æ›¿æ›å¤±æ•—â€¦â€¦\n");                                                      
                 }                
         }
 
@@ -92,9 +92,9 @@ string *deep_file_list(string dir)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½: replace <Ä¿Â¼|ÎÄ¼şÃû> <Ô­×Ö·û> to <ĞÂ×Ö·û>
-½«ÎÄ¼şÄÚÈİÀïµÄËùÓĞ<Ô­×Ö´®>×ª»»³É<ĞÂ×Ö´®>¡£
-×¢Òâ¡ÃÈç¹ûÖ¸ÁîÄ¿Â¼£¬ÊÇ»áÉîÈë¸ÃÄ¿Â¼ÏÂµÄËùÓĞÄ¿Â¼ÌáÈ¡ÎÄ¼ş½øĞĞÂÇÀí£¬ÒªĞ¡ĞÄÊ¹ÓÃ£¡
+æŒ‡ä»¤æ ¼å¼: replace <ç›®éŒ„|æ–‡ä»¶å> <åŸå­—ç¬¦> to <æ–°å­—ç¬¦>
+å°‡æ–‡ä»¶å…§å®¹è£¡çš„æ‰€æœ‰<åŸå­—ä¸²>è½‰æ›æˆ<æ–°å­—ä¸²>ã€‚
+æ³¨æ„ï¸°å¦‚æœæŒ‡ä»¤ç›®éŒ„ï¼Œæ˜¯æœƒæ·±å…¥è©²ç›®éŒ„ä¸‹çš„æ‰€æœ‰ç›®éŒ„æå–æ–‡ä»¶é€²è¡Œæ…®ç†ï¼Œè¦å°å¿ƒä½¿ç”¨ï¼
 HELP );
         return 1;
 }

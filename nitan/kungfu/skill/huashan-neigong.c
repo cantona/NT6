@@ -1,4 +1,4 @@
-// huashan-neigong.c »ªÉ½ĞÄ·¨
+// huashan-neigong.c è¯å±±å¿ƒæ³•
 
 inherit FORCE;
 
@@ -7,8 +7,8 @@ int valid_enable(string usage) { return usage == "force"; }
 int valid_learn(object me)
 {
         int level = (int)me->query_skill("huashan-neigong", 1);
-        if( query("gender", me) == "ÎŞĞÔ" && level>49 )
-                return notify_fail("ÄãÎŞ¸ùÎŞĞÔ£¬ÒõÑô²»µ÷£¬ÄÑÒÔÁì»á¸ßÉîµÄ»ªÉ½ÄÚ¹¦¡£\n");
+        if( query("gender", me) == "ç„¡æ€§" && level>49 )
+                return notify_fail("ä½ ç„¡æ ¹ç„¡æ€§ï¼Œé™°é™½ä¸èª¿ï¼Œé›£ä»¥é ˜æœƒé«˜æ·±çš„è¯å±±å…§åŠŸã€‚\n");
         return ::valid_learn(me);
 }
 
@@ -23,7 +23,7 @@ int query_neili_improve(object me)
 
 int practice_skill(object me)
 {
-        return notify_fail("»ªÉ½ĞÄ·¨Ö»ÄÜÓÃÑ§(learn)µÄÀ´Ôö¼ÓÊìÁ·¶È¡£\n");
+        return notify_fail("è¯å±±å¿ƒæ³•åªèƒ½ç”¨å­¸(learn)çš„ä¾†å¢åŠ ç†Ÿç·´åº¦ã€‚\n");
 }
 
 string exert_function_file(string func)

@@ -1,4 +1,4 @@
-// cline.c Çå³ıÄ©Î²¼¸ĞĞ
+// cline.c æ¸…é™¤æœ«å°¾å¹¾è¡Œ
 
 #include <ansi.h>
 #include <command.h>
@@ -15,7 +15,7 @@ int main(object me, string arg)
 
         if (n < 1 || n > 500)
         {
-                write("²ÎÊı´íÎó¡£\n");
+                write("åƒæ•¸éŒ¯èª¤ã€‚\n");
                 return 1;
         }
 
@@ -30,9 +30,9 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : cline [<ĞĞÊı>]
+æŒ‡ä»¤æ ¼å¼ : cline [<è¡Œæ•¸>]
 
-´ËÖ¸Áî¿ÉÈÃÄãÇå³ı×îºó¼¸ĞĞÎÄ×Ö£¬×öÊ²Ã´ÓÃ£¿×Ô¼ºÏë°É¡£
+æ­¤æŒ‡ä»¤å¯è®“ä½ æ¸…é™¤æœ€å¾Œå¹¾è¡Œæ–‡å­—ï¼Œåšä»€éº¼ç”¨ï¼Ÿè‡ªå·±æƒ³å§ã€‚
 HELP );
         return 1;
 }

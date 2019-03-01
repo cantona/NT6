@@ -11,29 +11,29 @@ int do_join(string arg)
         ob = this_player () ;
 
         if( !arg || arg!="mingjiao" )
-                return notify_fail("ÄãÒª¼ÓÈëÊ²Ã´×éÖ¯£¿\n"); 
+                return notify_fail("ä½ è¦åŠ å…¥ä»€éº¼çµ„ç¹”ï¼Ÿ\n"); 
            if( query_temp("have_letter", ob) || present("tuijian xin1",ob) )
            {
-                command("say ºÃ°¡¡£");
+                command("say å¥½å•Šã€‚");
                 command("heihei "+query("id", ob));
                 return 1;
         }
         if( !mapp(family=query("family", ob)) || 
             !query("family/family_name", ob) )
            {
-                message_vision("$NµãµãÍ·£¬¶Ô$nËµµÀ£ººÃ£¬Äãµ½À¥ÂØÉ½×Ü¶æÈ¥ÕÒ½ÓÒıÊ¹£¬Ëû»áÈÃÄãÈë½ÌµÄ¡£\n",me,ob);
-                message_vision("$N½»¸ø$nÒ»·âÍÆ¼öĞÅ¡£\n", me, ob);
+                message_vision("$Né»é»é ­ï¼Œå°$nèªªé“ï¼šå¥½ï¼Œä½ åˆ°æ˜†ä¾–å±±ç¸½èˆµå»æ‰¾æ¥å¼•ä½¿ï¼Œä»–æœƒè®“ä½ å…¥æ•™çš„ã€‚\n",me,ob);
+                message_vision("$Näº¤çµ¦$nä¸€å°æ¨è–¦ä¿¡ã€‚\n", me, ob);
                 set_temp("have_letter", 1, ob);
                 obj=new("/d/mingjiao/obj/tuijianxin-1");
                 obj->move(ob);
                 return 1;        
         }
-           if( family["family_name"] != "Ã÷½Ì" )
+           if( family["family_name"] != "æ˜æ•™" )
         {
-                message_vision("$NÒ¡Ò¡Í·£¬¶Ô$nËµµÀ£ºÄãÒÑ¾­¼ÓÈëÆäËûÃÅÅÉÁË£¬²»ÄÜÔÙÈëÎÒ¹âÃ÷Ê¥½Ì¡£\n",me,ob);
+                message_vision("$Næ–æ–é ­ï¼Œå°$nèªªé“ï¼šä½ å·²ç¶“åŠ å…¥å…¶ä»–é–€æ´¾äº†ï¼Œä¸èƒ½å†å…¥æˆ‘å…‰æ˜è–æ•™ã€‚\n",me,ob);
                 return 1;
         }
         else
-                message_vision("$NÒ¡Ò¡Í·£¬¶Ô$nËµµÀ£ºÄãÒÑ¾­ÊÇÎÒÃ÷½ÌµÄÈËÁË¡£\n",me,ob);
+                message_vision("$Næ–æ–é ­ï¼Œå°$nèªªé“ï¼šä½ å·²ç¶“æ˜¯æˆ‘æ˜æ•™çš„äººäº†ã€‚\n",me,ob);
         return 1;
 }

@@ -4,12 +4,12 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIC "À¶±¦Ê¯¿ó" NOR, ({ "lan baoshikuang", "lan" }));
+        set_name(HIC "æ‡¦æƒ˜å’é„´" NOR, ({ "lan baoshikuang", "lan" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("base_unit", "¿é");
-                set("unit", "¿é");
+                set("base_unit", "è¼¸");
+                set("unit", "è¼¸");
                 set("base_value", 10000);
                 set("base_weight", 600);
         }

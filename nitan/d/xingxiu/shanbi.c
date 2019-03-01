@@ -5,18 +5,18 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "É½±Ú");
+        set("short", "å±±å£");
         set("long", @LONG
-Ò»Ìõ²İ²İÔÚÉ½±ÚÉÏÈË¹¤¿ªÔä³öÀ´Æéá«µÄĞ¡Â·£¬¼¸¸öĞÇËŞµÜ×ÓÕıÔÚÂñ
-Í·¿à¸É¡£ÕâÀï£¬º®·çÁİÙı£¬Î÷ÃæÊÇÍûºÆºÆ°ÙÀï·½Ô²µÄĞÇËŞº£¡£¶«±ßÉ½±Ú
-ÉÏ£¬¾¡ÊÇĞÇËŞµÜ×ÓÓÃÁ¦ÔÒ³öµÄ¿Ó°¼(ao)¡£
+ä¸€æ¢è‰è‰åœ¨å±±å£ä¸Šäººå·¥é–‹é‘¿å‡ºä¾†å´å¶‡çš„å°è·¯ï¼Œå¹¾å€‹æ˜Ÿå®¿å¼Ÿå­æ­£åœ¨åŸ‹
+é ­è‹¦å¹¹ã€‚é€™è£¡ï¼Œå¯’é¢¨å‡œå†½ï¼Œè¥¿é¢æ˜¯æœ›æµ©æµ©ç™¾è£¡æ–¹åœ“çš„æ˜Ÿå®¿æµ·ã€‚æ±é‚Šå±±å£
+ä¸Šï¼Œç›¡æ˜¯æ˜Ÿå®¿å¼Ÿå­ç”¨åŠ›ç ¸å‡ºçš„å‘å‡¹(ao)ã€‚
 LONG
         );
         set("exits", ([
                 "southdown" : __DIR__"xiaolu",
         ]));
         set ("item_desc", ([
-                "ao" : "ÊÇÈËÓÃ¹÷ÕÈ×²»÷(za)É½±Ú(bi)ÁôÏÂµÄºÛ¼£¡£\n"
+                "ao" : "æ˜¯äººç”¨æ£æ–æ’æ“Š(za)å±±å£(bi)ç•™ä¸‹çš„ç—•è·¡ã€‚\n"
         ])) ;
         set("objects", ([
                 __DIR__"npc/gushou"  : 1,
@@ -42,27 +42,27 @@ int do_za(string arg)
         qi_cost=200/query("con", me);
  
         if (!living(me)) return 0;
-        if ( arg != "bi" ) return notify_fail("ÄãÒª×²»÷Ê²÷á£¿\n");
-        if (!weapon) return notify_fail("ÄãÓÃÊ²Ã´ÔÒÉ½±ÚÀ´Á·¹¦£¿\n");  
+        if ( arg != "bi" ) return notify_fail("ä½ è¦æ’æ“Šä»€éº¼ï¼Ÿ\n");
+        if (!weapon) return notify_fail("ä½ ç”¨ä»€éº¼ç ¸å±±å£ä¾†ç·´åŠŸï¼Ÿ\n");  
         if( query("skill_type", weapon) == "staff" )
                 if ((int)me->query_skill("staff", 1) >= 120) 
-                        return notify_fail("ÄãÒÑ¾­²»ÓÃÔÙÔÚÕâÀï·Ñ¹¦·òÁË¡£\n");  
+                        return notify_fail("ä½ å·²ç¶“ä¸ç”¨å†åœ¨é€™è£¡è²»åŠŸå¤«äº†ã€‚\n");  
         if( query("skill_type", weapon) == "hammer" )
                 if ((int)me->query_skill("hammer", 1) >= 120) 
-                        return notify_fail("ÄãÒÑ¾­²»ÓÃÔÙÔÚÕâÀï·Ñ¹¦·òÁË¡£\n");  
+                        return notify_fail("ä½ å·²ç¶“ä¸ç”¨å†åœ¨é€™è£¡è²»åŠŸå¤«äº†ã€‚\n");  
         if( random(query("kar", me))<3 )
         {
-                message_vision("$NÒ»²»Ğ¡ĞÄÔÒµ½×Ô¼º½ÅÉÏ£¬Í´µÃÔÎÁË¹ıÈ¥¡£\n",me);
+                message_vision("$Nä¸€ä¸å°å¿ƒç ¸åˆ°è‡ªå·±è…³ä¸Šï¼Œç—›å¾—æšˆäº†éå»ã€‚\n",me);
                 me->unconcious();
                 return 1;
         }
         if( (query("jing", me)<ging_cost) || (query("qi", me)<qi_cost) )
         {
-                message_vision("$NÃÍµØÔÒÔÚÉ½±ÚÉÏ£¬½á¹ûÓÃÁ¦¹ı¶È£¡\n", me);
+                message_vision("$NçŒ›åœ°ç ¸åœ¨å±±å£ä¸Šï¼Œçµæœç”¨åŠ›éåº¦ï¼\n", me);
                 me->unconcious();
                 return 1;
         }
-        message_vision("$NÊ¹¾¢×²»÷É½±Ú£¬ÔÚÉ½±ÚÉÏÔÒ³öÒ»¸ö¿Ó°¼¡£\n", me);
+        message_vision("$Nä½¿å‹æ’æ“Šå±±å£ï¼Œåœ¨å±±å£ä¸Šç ¸å‡ºä¸€å€‹å‘å‡¹ã€‚\n", me);
         if( query("skill_type", weapon) == "staff" )
                 me->improve_skill("staff", me->query_skill("staff", 1));
         else if( query("skill_type", weapon) == "hammer" )

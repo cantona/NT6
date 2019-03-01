@@ -1,4 +1,4 @@
-// woshi.c ²Êºç¾ÓÎÔÊÒ
+// woshi.c å½©è™¹å±…è‡¥å®¤
 
 #include <room.h>
 #include <ansi.h>
@@ -8,18 +8,18 @@ inherit ROOM;                                   /* EXAMPLE */
 
 void create()
 {
-        set("short", "ÎÔÊÒ");                   /* EXAMPLE */
-//**    set("short", "ROOM_NAMEÎÔÊÒ");
+        set("short", "è‡¥å®¤");                   /* EXAMPLE */
+//**    set("short", "ROOM_NAMEè‡¥å®¤");
         set("long", @LONG
-ÕâÊÇÖ÷ÈËµÄÎÔÊÒ£¬ÊÕÊ°µÃ¾®¾®ÓĞÌõ¡£ÄÏ´°ÏÂÊÇÒ»ÕÅ´ó´²£¬´²±ßÓĞÒ»¸ö
-¹ñ×Ó£¬»¹ÓĞÒ»¸öÊé¼Ü¡£Õû¼äÎİ×ÓËäÈ»ÆÓËØ£¬µ«ÊÇ¿ÉÒÔËµÊÇÑùÑù¾ãÈ«£¬²¢²»
-È±ÉÙÊ²Ã´¶«Î÷¡£
+é€™æ˜¯ä¸»äººçš„è‡¥å®¤ï¼Œæ”¶æ‹¾å¾—äº•äº•æœ‰æ¢ã€‚å—çª—ä¸‹æ˜¯ä¸€å¼µå¤§åºŠï¼ŒåºŠé‚Šæœ‰ä¸€å€‹
+æ«ƒå­ï¼Œé‚„æœ‰ä¸€å€‹æ›¸æ¶ã€‚æ•´é–“å±‹å­é›–ç„¶æ¨¸ç´ ï¼Œä½†æ˜¯å¯ä»¥èªªæ˜¯æ¨£æ¨£ä¿±å…¨ï¼Œä¸¦ä¸
+ç¼ºå°‘ä»€éº¼æ±è¥¿ã€‚
 LONG );
 
-        set("default_long", "ÕâÊÇÖ÷ÈËµÄÎÔÊÒ£¬ÊÕÊ°µÃ¾®¾®ÓĞÌõ¡£ÄÏ´°ÏÂÊÇ"   /* EXAMPLE */
-                            "Ò»ÕÅ´ó´²£¬´²±ßÓĞÒ»¸ö¹ñ×Ó£¬»¹ÓĞÒ»¸öÊé¼Ü£¬"   /* EXAMPLE */
-                            "ÉÏÃæ·Å×ÅÒ»Ğ©Êé¡£Õû¼äÎİ×Ó²¼ÖÃµÃ·Ç³£ÆÓËØ£¬"   /* EXAMPLE */
-                            "²¢²»Éİ»ª¡£ÎİÃÅÔÚÎ÷Ê×¡£");                   /* EXAMPLE */
+        set("default_long", "é€™æ˜¯ä¸»äººçš„è‡¥å®¤ï¼Œæ”¶æ‹¾å¾—äº•äº•æœ‰æ¢ã€‚å—çª—ä¸‹æ˜¯"   /* EXAMPLE */
+                            "ä¸€å¼µå¤§åºŠï¼ŒåºŠé‚Šæœ‰ä¸€å€‹æ«ƒå­ï¼Œé‚„æœ‰ä¸€å€‹æ›¸æ¶ï¼Œ"   /* EXAMPLE */
+                            "ä¸Šé¢æ”¾è‘—ä¸€äº›æ›¸ã€‚æ•´é–“å±‹å­å¸ƒç½®å¾—éå¸¸æ¨¸ç´ ï¼Œ"   /* EXAMPLE */
+                            "ä¸¦ä¸å¥¢è¯ã€‚å±‹é–€åœ¨è¥¿é¦–ã€‚");                   /* EXAMPLE */
 
 //**    set("objects", ([
 //**            "/adm/npc/obj/xiang" : 1,
@@ -31,7 +31,7 @@ LONG );
                 "west" : __DIR__"dating",
         ]));
 
-        create_door("west", "Ä¾ÃÅ", "east", DOOR_CLOSED);
+        create_door("west", "æœ¨é–€", "east", DOOR_CLOSED);
         
 //**
 //**    set("sleep_room", 1);
@@ -60,13 +60,13 @@ int do_findbaby(string arg)
                 return 0;
 
         if( !query("couple/child_id", me) )
-                return notify_fail("ÄãÓÖ»¹Ã»ÓĞº¢×Ó£¬À´ÕâÀï´ÕÊ²Ã´ÈÈÄÖ°¡£¿\n");
+                return notify_fail("ä½ åˆé‚„æ²’æœ‰å­©å­ï¼Œä¾†é€™è£¡æ¹Šä»€éº¼ç†±é¬§å•Šï¼Ÿ\n");
 
         if( objectp(baby=find_living(query("couple/child_id", me)) )
         &&  environment(baby) && baby->is_baby())
-                return notify_fail("ÄãÃÇµÄº¢×ÓÒÑ¾­ÅÜ³öÈ¥ÍæÁË£¬ºÃºÃËÄ´¦ÕÒÕÒ°É£¡\n");
+                return notify_fail("ä½ å€‘çš„å­©å­å·²ç¶“è·‘å‡ºå»ç©äº†ï¼Œå¥½å¥½å››è™•æ‰¾æ‰¾å§ï¼\n");
 
-        if( query("gender", me) == "Å®ĞÔ" )
+        if( query("gender", me) == "å¥³æ€§" )
                 file=read_file("/data/baby/"+query("id", me)+".o");
         else file=read_file("/data/baby/"+query("couple/couple_id", me)+".o");
 
@@ -76,13 +76,13 @@ int do_findbaby(string arg)
 
                 baby->load_baby(me);
                 baby->move(environment(me));
-                message_vision("ÄãºöÈ»¿´µ½´²µ×ÏÂ" +
-                        ({"Ì½³öÒ»¿ÅĞ¡ÄÔ¹Ï", "Éì³öÒ»Ë«Ğ¡½ÅÑ¾", "Éì³öÒ»Ö§Ğ¡ÊÖ"})
-                        [random(3)] + "£®£®£®\n", me);
+                message_vision("ä½ å¿½ç„¶çœ‹åˆ°åºŠåº•ä¸‹" +
+                        ({"æ¢å‡ºä¸€é¡†å°è…¦ç“œ", "ä¼¸å‡ºä¸€é›™å°è…³ä¸«", "ä¼¸å‡ºä¸€æ”¯å°æ‰‹"})
+                        [random(3)] + "ï¼ï¼ï¼\n", me);
 
         } else
         {
-                tell_object(me, MAG "ÄãÃÇµÄº¢×Ó²»ĞÒØ²ÕÛÁË£¬Çë½Ú°§°É¡£\n" NOR);
+                tell_object(me, MAG "ä½ å€‘çš„å­©å­ä¸å¹¸å¤­æŠ˜äº†ï¼Œè«‹ç¯€å“€å§ã€‚\n" NOR);
                 delete("couple/child_id", me);
                 delete("couple/child_name", me);
         }

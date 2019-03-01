@@ -2,15 +2,15 @@
 
 inherit ROOM;
 #include <ansi.h>
-#define QUESTDIR5 "quest/Ñ©É½·Éºü/±¦²Ø/"
+#define QUESTDIR5 "quest/é›ªå±±é£›ç‹/å¯¶è—/"
 
 void create()
 {
-            set("short",HIW"´óÌü"NOR);
+            set("short",HIW"å¤§å»³"NOR);
             set("long",@LONG
-ÕâÀïÊÇ±¦²ØÍ¼±êÖ¾µÄÌìÌ³£¬¾Ş´óµÄ¹ã³¡ÄÑÒÔÏëÏóµ±³õÈçºÎ½¨Ôì¡£ÖĞ¼ä¶ÑÂä
-×ÅÒ»¸ö¾Ş´óµÄÌìÌ³£¬¿´À´ÊÇ¼ÀìëËùÓÃ£¬¿ÉÄÜÒòÎªÄê´úµÄ¾ÃÔ¶£¬ÒÑ¾­ÓĞĞ©ËúÏİ¡£
-µ«²»Ó°ÏìÆäºê´óµÄÆøÊÆ¡£
+é€™è£¡æ˜¯å¯¶è—åœ–æ¨™å¿—çš„å¤©å£‡ï¼Œå·¨å¤§çš„å»£å ´é›£ä»¥æƒ³è±¡ç•¶åˆå¦‚ä½•å»ºé€ ã€‚ä¸­é–“å †è½
+è‘—ä¸€å€‹å·¨å¤§çš„å¤©å£‡ï¼Œçœ‹ä¾†æ˜¯ç¥­ç¥€æ‰€ç”¨ï¼Œå¯èƒ½å› ç‚ºå¹´ä»£çš„ä¹…é ï¼Œå·²ç¶“æœ‰äº›å¡Œé™·ã€‚
+ä½†ä¸å½±éŸ¿å…¶å®å¤§çš„æ°£å‹¢ã€‚
 LONG
        );
         set("exits", ([
@@ -44,33 +44,33 @@ int i;
      me->delete_temp("out");
      me->delete_temp(QUESTDIR5+"search_ok");
      me->delete_temp(QUESTDIR5+"search");
-          message_vision(YEL"Í»È»$NÌıµ½Ò»¸öÉùÒôµÀ£º¡°ÕâÀï²»»¶Ó­$N£¡¡±\n"NOR,me);
+          message_vision(YEL"çªç„¶$Nè½åˆ°ä¸€å€‹è²éŸ³é“ï¼šâ€œé€™è£¡ä¸æ­¡è¿$Nï¼â€\n"NOR,me);
     if(!wizardp(me)) 
       {
              me->move("/d/xiangyang/damen");  
-           tell_object(me,YEL"ÄãÌ§ÑÛÒ»¿´£¬ÕâÀï¾¹È»ÊÇÎä¹İ´óÃÅ£¬¸Õ²ÅµÄÒ»ÇĞÏñÃÎÒ»ÑùĞé»Ã¡£\n"NOR); 
+           tell_object(me,YEL"ä½ æŠ¬çœ¼ä¸€çœ‹ï¼Œé€™è£¡ç«Ÿç„¶æ˜¯æ­¦é¤¨å¤§é–€ï¼Œå‰›æ‰çš„ä¸€åˆ‡åƒå¤¢ä¸€æ¨£è™›å¹»ã€‚\n"NOR); 
     }
     else 
      {
-          if(random(2)) message_vision(YEL"$NËÆºõÓĞĞ©Æø·ß£¬ÕÅ¿ÚÂîµÀ£º¡°Ã»¿´³öÎÒÊÇË­°¡£¿ÎÒÊÇÎ×Ê¦"+me->query("name")+"¡±\n\n"NOR,me);
-          else message_vision(YEL"$NºßÁËÒ»Éù£¬Í»È»»ëÉíÉ¢·¢³öÉñ²ÅÓĞµÄÆøÊÆ£¬¶îÍ·ÒşÒşÔ¼Ô¼ÏÔ³ö¼¸¸ö½ğ×Ö£º"NOR+HIY+me->query("name")+NOR+YEL"£¡\n\n"NOR,me);
-          message_vision(YEL"¸Õ²ÅÄñ½ĞµÄÉùÒôºÃÏñÒ²ËÆºõÒòÎª$NµÄÆøÊÆÎ®ÁË»ØÈ¥¡£$N²»ÓÉµØµÃÒâµØÒ»Ğ¦¡£\n"NOR,me);
-          message_vision(YEL"Í»È»Ò»¸ö½ÇÂäÀï·É³öÒ»Ö»Ğ¬×Ó£¬ÅéµÄÒ»ÉùÔÒµ½$NÍ·ÉÏ£¬½Ó×ÅÒ»¸öÉùÒôµÀ£º¡°¹ÜÄãÊÇË­£¬TMD¡±\n"NOR ,me);
+          if(random(2)) message_vision(YEL"$Nä¼¼ä¹æœ‰äº›æ°£æ†¤ï¼Œå¼µå£ç½µé“ï¼šâ€œæ²’çœ‹å‡ºæˆ‘æ˜¯èª°å•Šï¼Ÿæˆ‘æ˜¯å·«å¸«"+me->query("name")+"â€\n\n"NOR,me);
+          else message_vision(YEL"$Nå“¼äº†ä¸€è²ï¼Œçªç„¶æ¸¾èº«æ•£ç™¼å‡ºç¥æ‰æœ‰çš„æ°£å‹¢ï¼Œé¡é ­éš±éš±ç´„ç´„é¡¯å‡ºå¹¾å€‹é‡‘å­—ï¼š"NOR+HIY+me->query("name")+NOR+YEL"ï¼\n\n"NOR,me);
+          message_vision(YEL"å‰›æ‰é³¥å«çš„è²éŸ³å¥½åƒä¹Ÿä¼¼ä¹å› ç‚º$Nçš„æ°£å‹¢èäº†å›å»ã€‚$Nä¸ç”±åœ°å¾—æ„åœ°ä¸€ç¬‘ã€‚\n"NOR,me);
+          message_vision(YEL"çªç„¶ä¸€å€‹è§’è½è£¡é£›å‡ºä¸€åªé‹å­ï¼Œç °çš„ä¸€è²ç ¸åˆ°$Né ­ä¸Šï¼Œæ¥è‘—ä¸€å€‹è²éŸ³é“ï¼šâ€œç®¡ä½ æ˜¯èª°ï¼ŒTMDâ€\n"NOR ,me);
           me->unconcious();
     }
      return;   
   }
    if(ob->query("busy")&&ob->query("busy")!=me->query("id"))
   {
-     tell_object(me,YEL"Í»È»ÄãÌıµ½Ò»¸öÉùÒôµÀ£º¡°±¦²ØÒÑ¾­±»ÈËÇÀÏÈÒ»²½ÁË£¡¡±\n"NOR); 
+     tell_object(me,YEL"çªç„¶ä½ è½åˆ°ä¸€å€‹è²éŸ³é“ï¼šâ€œå¯¶è—å·²ç¶“è¢«äººæ¶å…ˆä¸€æ­¥äº†ï¼â€\n"NOR); 
      me->move("/d/xiangyang/damen");  
      me->delete_temp(QUESTDIR5+"search_ok");
       me->delete_temp(QUESTDIR5+"search");
-     tell_object(me,YEL"ÄãÌ§ÑÛÒ»¿´£¬ÕâÀï¾¹È»ÊÇÎä¹İ´óÃÅ£¬¸Õ²ÅµÄÒ»ÇĞÏñÃÎÒ»ÑùĞé»Ã¡£\n"NOR); 
+     tell_object(me,YEL"ä½ æŠ¬çœ¼ä¸€çœ‹ï¼Œé€™è£¡ç«Ÿç„¶æ˜¯æ­¦é¤¨å¤§é–€ï¼Œå‰›æ‰çš„ä¸€åˆ‡åƒå¤¢ä¸€æ¨£è™›å¹»ã€‚\n"NOR); 
      return;   
    }
   ob->set("exits/up",me->query_temp(QUESTDIR5+"map_where"));
-  ob->set("busy",me->query("id"));//ÆäËûÍæ¼ÒÎŞ·¨½øÈë
+  ob->set("busy",me->query("id"));//å…¶ä»–ç©å®¶ç„¡æ³•é€²å…¥
   remove_call_out("check");
   call_out("check",1,me);
 }
@@ -91,9 +91,9 @@ void check(object me)
 	}
         if((obj=present("baozang tu",me))) 
         {
-                            tell_object(me,YEL"ÄãË³ÊÖ¶ªµô"+obj->query("name")+YEL"¡£\n"NOR); 
-              message_vision(HIC"$N¶ªÏÂÒ»ÕÅ"+obj->query("name")+HIC"£¡\n" NOR,me);
-              message_vision(obj->query("name")+HIC"ÂäµØÊ±Ò»ÉÁ£¬¾¹È»Ê§È¥ÁË×ÙÓ°£¡\n" NOR,me);
+                            tell_object(me,YEL"ä½ é †æ‰‹ä¸Ÿæ‰"+obj->query("name")+YEL"ã€‚\n"NOR); 
+              message_vision(HIC"$Nä¸Ÿä¸‹ä¸€å¼µ"+obj->query("name")+HIC"ï¼\n" NOR,me);
+              message_vision(obj->query("name")+HIC"è½åœ°æ™‚ä¸€é–ƒï¼Œç«Ÿç„¶å¤±å»äº†è¹¤å½±ï¼\n" NOR,me);
                     destruct(obj);
        }
   call_out("check",1,me);

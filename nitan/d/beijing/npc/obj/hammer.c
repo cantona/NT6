@@ -3,13 +3,13 @@
 inherit HAMMER;
 void create()
 {
-        set_name( "´òÌú´¸",  ({ "hammer" }));
+        set_name( "æ‰“éµéŒ˜",  ({ "hammer" }));
         set_weight(10000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
-                set("long", "Ò»±úÆÕÍ¨µÄ´òÌú´¸¡£\n");
+                set("unit", "æŸ„");
+                set("long", "ä¸€æŸ„æ™®é€šçš„æ‰“éµéŒ˜ã€‚\n");
                 set("value", 1000);
                 set("material", "gold");
         }

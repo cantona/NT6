@@ -1,4 +1,4 @@
-// huntian-baojian.c »ëÌì±¦¼ø ½ğ³¿êØ
+// huntian-baojian.c æ¸¾å¤©å¯¶é‘’ é‡‘æ™¨æ›¦
 // modified by Vin 2000
 
 #include <ansi.h>
@@ -19,38 +19,38 @@ int valid_force(string force)
 }
 
 mapping *action = ({
-([  "action" : "$NÊ©Õ¹" HIY "½ğ³¿êØ" NOR "ĞÄ·¨Ö®¡¸" HIY "½ğÎÚÈÚÑ©" NOR "¡¹£¬"
-               "Ò»È­»÷µ½$nÃæÃÅ£¬¶¸È»±ã×¦£¬»Ã³öÒ»µÀ½ğ¹âÉäÏò$n$l",
+([  "action" : "$Næ–½å±•" HIY "é‡‘æ™¨æ›¦" NOR "å¿ƒæ³•ä¹‹ã€Œ" HIY "é‡‘çƒèé›ª" NOR "ã€ï¼Œ"
+               "ä¸€æ‹³æ“Šåˆ°$né¢é–€ï¼Œé™¡ç„¶ä¾¿çˆªï¼Œå¹»å‡ºä¸€é“é‡‘å…‰å°„å‘$n$l",
     "dodge"  : -29,
     "attack" : 51,
     "parry"  : 4,
     "force"  : 284,
     "damage" : 58,
     "lvl"    : 0,
-    "weapon" : HIY "½ğ³¿êØÆø¾¢" NOR,
-    "damage_type": "×¥ÉË"
+    "weapon" : HIY "é‡‘æ™¨æ›¦æ°£å‹" NOR,
+    "damage_type": "æŠ“å‚·"
 ]),
-([  "action" : "$N¶¸È»Ê¹³ö" HIY "½ğ³¿êØ" NOR "Ö®¡¸" HIY "Ê®Ñô¹éÒ»" NOR "¡¹£¬Ë«ÕÆ"
-               "Á¬»·Ê¹³ö£¬ÆÌÌì¸ÇµØµÄ¹¥Ïò$n",
+([  "action" : "$Né™¡ç„¶ä½¿å‡º" HIY "é‡‘æ™¨æ›¦" NOR "ä¹‹ã€Œ" HIY "åé™½æ­¸ä¸€" NOR "ã€ï¼Œé›™æŒ"
+               "é€£ç’°ä½¿å‡ºï¼Œèˆ–å¤©è“‹åœ°çš„æ”»å‘$n",
     "dodge"  : -21,
     "attack" : 93,
     "parry"  : 13,
     "force"  : 303,
     "damage" : 161,
     "lvl"    : 150,
-    "weapon" : HIY "½ğ³¿êØÆø¾¢" NOR,
-    "damage_type": "ÄÚÉË"
+    "weapon" : HIY "é‡‘æ™¨æ›¦æ°£å‹" NOR,
+    "damage_type": "å…§å‚·"
 ]),
-([  "action" : "$NÊ©³öÒ»ÕĞ" HIY "½ğ³¿êØ" NOR "Ö®¡¸" HIY "½ğÑôÆÆÁë" NOR "¡¹£¬Ë«ÊÖ"
-               "×÷×¶£¬Ğ¯´ø×ÅÎŞ±ÈÁèÀ÷µÄÄÚ¾¢ÃÍÈ»¹á³ö£¬Ö±×ê$nµÄ$l",
+([  "action" : "$Næ–½å‡ºä¸€æ‹›" HIY "é‡‘æ™¨æ›¦" NOR "ä¹‹ã€Œ" HIY "é‡‘é™½ç ´å¶º" NOR "ã€ï¼Œé›™æ‰‹"
+               "ä½œéŒï¼Œæ”œå¸¶è‘—ç„¡æ¯”å‡Œå²çš„å…§å‹çŒ›ç„¶è²«å‡ºï¼Œç›´é‘½$nçš„$l",
     "dodge"  : -12,
     "attack" : 98,
     "parry"  : 54,
     "force"  : 384,
     "damage" : 233,
     "lvl"    : 200,
-    "weapon" : HIY "½ğ³¿êØÆø¾¢" NOR,
-    "damage_type": "´ÌÉË"
+    "weapon" : HIY "é‡‘æ™¨æ›¦æ°£å‹" NOR,
+    "damage_type": "åˆºå‚·"
 ]),
 });
 
@@ -61,25 +61,25 @@ int valid_enable(string usage) { return usage=="unarmed" ||  usage=="parry" ||  
 int valid_learn(object me)
 {
         if (me->query_skill("huntian-baojian", 1) > 0)
-                return notify_fail("ÄãÒÑ¾­½«»ëÌì±¦¼øÉñ¹¦ºÏÒ»£¬²»±ØÔÙµ¥¶ÀÑ§Ï°¡£\n");
+                return notify_fail("ä½ å·²ç¶“å°‡æ¸¾å¤©å¯¶é‘’ç¥åŠŸåˆä¸€ï¼Œä¸å¿…å†å–®ç¨å­¸ç¿’ã€‚\n");
 
         if( query_temp("weapon", me) || query_temp("secondary_weapon", me) )
-                return notify_fail("ĞŞĞĞ" HIY "½ğ³¿êØ" NOR "ĞÄ·¨±ØĞë¿ÕÊÖ¡£\n");
+                return notify_fail("ä¿®è¡Œ" HIY "é‡‘æ™¨æ›¦" NOR "å¿ƒæ³•å¿…é ˆç©ºæ‰‹ã€‚\n");
 
         if( query("con", me)<35 )
-                return notify_fail("ÄãÉí×Ó¹ÇÌ«Èõ£¬ÎŞ·¨Á·Ï°»ëÌì±¦¼øÉñ¹¦¡£\n");
+                return notify_fail("ä½ èº«å­éª¨å¤ªå¼±ï¼Œç„¡æ³•ç·´ç¿’æ¸¾å¤©å¯¶é‘’ç¥åŠŸã€‚\n");
 
         if ((int)me->query_skill("unarmed", 1) < 220)
-                return notify_fail("ÄãµÄÈ­½Å»ğºòÎŞ·¨Ñ§Ï°" HIY "½ğ³¿êØ" NOR "ĞÄ·¨¡£\n");
+                return notify_fail("ä½ çš„æ‹³è…³ç«å€™ç„¡æ³•å­¸ç¿’" HIY "é‡‘æ™¨æ›¦" NOR "å¿ƒæ³•ã€‚\n");
 
         if ((int)me->query_skill("force", 1) < 220)
-                return notify_fail("ÄãµÄÄÚ¹¦»ğºòÎŞ·¨Ñ§Ï°" HIY "½ğ³¿êØ" NOR "ĞÄ·¨¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸç«å€™ç„¡æ³•å­¸ç¿’" HIY "é‡‘æ™¨æ›¦" NOR "å¿ƒæ³•ã€‚\n");
 
         if( query("max_neili", me)<6000 )
-                return notify_fail("ÄãµÄÄÚÁ¦ĞŞÎªÌ«²î£¬ÎŞ·¨Ñ§Ï°" HIY "½ğ³¿êØ" NOR "ĞÄ·¨¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¿®ç‚ºå¤ªå·®ï¼Œç„¡æ³•å­¸ç¿’" HIY "é‡‘æ™¨æ›¦" NOR "å¿ƒæ³•ã€‚\n");
 
         if ((int)me->query_skill("dian-canghai", 1) - 10 < (int)me->query_skill("jin-chenxi", 1))
-                return notify_fail("Äã±ØĞëÏÈÌá¸ßÄãµÄ" HIB "µå²×º£" NOR "ĞÄ·¨¡£\n");
+                return notify_fail("ä½ å¿…é ˆå…ˆæé«˜ä½ çš„" HIB "é›æ»„æµ·" NOR "å¿ƒæ³•ã€‚\n");
 
         return 1;
 }
@@ -91,7 +91,7 @@ mapping query_action(object me, object weapon)
 
 int practice_skill(object me)
 {
-        return notify_fail( HIY "½ğ³¿êØ" NOR "ĞÄ·¨Ö»ÄÜÍ¨¹ıÔÄ¶Á" HIY "½ğ³¿êØÌì¾§" NOR "À´Ìá¸ß¡£\n");
+        return notify_fail( HIY "é‡‘æ™¨æ›¦" NOR "å¿ƒæ³•åªèƒ½é€šéé–±è®€" HIY "é‡‘æ™¨æ›¦å¤©æ™¶" NOR "ä¾†æé«˜ã€‚\n");
 }
 
 

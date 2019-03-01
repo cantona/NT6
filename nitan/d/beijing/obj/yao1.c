@@ -2,13 +2,13 @@ inherit ITEM;
 #include <ansi.h>
 void create()
 {
-        set_name(RED"¸àÒ©"NOR, ({ "gaoyao" }) );
+        set_name(RED"è†è—¥"NOR, ({ "gaoyao" }) );
         set_weight(100);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "¿´ÉÏÈ¥ºÜÆæ¹ÖµÄÒ»¸±¸àÒ©£¬°ë±ßºì°ë±ßºÚ¡£\n");
-                set("unit", "¸±");
+                set("long", "çœ‹ä¸Šå»å¾ˆå¥‡æ€ªçš„ä¸€å‰¯è†è—¥ï¼ŒåŠé‚Šç´…åŠé‚Šé»‘ã€‚\n");
+                set("unit", "å‰¯");
                 set("value", 500);
         }
     setup();
@@ -24,7 +24,7 @@ void init()
 int do_use(string arg)
 {
         if (!id(arg))
-                return notify_fail("\nÄãÒªÓÃÊ²Ã´Ò©£¿\n");
-        return notify_fail("\nÄãËº¿ªÒ©·âÀ´£¬Ö»¼ûÒ»ÕÅÖ½ÉÏÓĞ¸öÃ÷Ä¿£¬Ô»:\n"
-        +"¡°È¥Çå¸´Ã÷¸àÒ©¡±¡£´ËÍâÊ²Ã´Ò²Ã»ÓĞ¡£\n");
+                return notify_fail("\nä½ è¦ç”¨ä»€éº¼è—¥ï¼Ÿ\n");
+        return notify_fail("\nä½ æ’•é–‹è—¥å°ä¾†ï¼Œåªè¦‹ä¸€å¼µç´™ä¸Šæœ‰å€‹æ˜ç›®ï¼Œæ›°:\n"
+        +"â€œå»æ¸…å¾©æ˜è†è—¥â€ã€‚æ­¤å¤–ä»€éº¼ä¹Ÿæ²’æœ‰ã€‚\n");
 }

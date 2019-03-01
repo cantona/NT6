@@ -1,4 +1,4 @@
-// laopu.c É¨µØÀÏÆÍ
+// laopu.c æƒåœ°è€åƒ•
 
 #include "/d/room/roomnpc/roomnpc.h"
 
@@ -69,10 +69,10 @@ int save()
 
 void create()
 {
-        set_name("É¨µØÀÏÆÍ", ({"lao pu", "saodi laopu"}) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("æƒåœ°è€åƒ•", ({"lao pu", "saodi laopu"}) );
+        set("gender", "ç”·æ€§" );
         set("age", 50 + random(20));
-        set("long", "ÕâÊÇÒ»¸öÉ¨µØµÄÀÏÆÍÈË£¬²»¹ı¿´ÉÏÈ¥ËÆºõÉí»³¾ø¼¼¡£\n");
+        set("long", "é€™æ˜¯ä¸€å€‹æƒåœ°çš„è€åƒ•äººï¼Œä¸éçœ‹ä¸Šå»ä¼¼ä¹èº«æ‡·çµ•æŠ€ã€‚\n");
         set("attitude", "friendly");
 
         set("max_qi", 4000);
@@ -155,7 +155,7 @@ int accept_object(object who, object ob)
 
         if (is_owner(who))
         {
-                message_vision(name() + "¶Ô$NÊ©ÁËÒ»Àñ¡£\n", who);
+                message_vision(name() + "å°$Næ–½äº†ä¸€ç¦®ã€‚\n", who);
                 destruct(ob);
                 return 1;
         }
@@ -166,8 +166,8 @@ int accept_hit(object ob)
 {
         if (is_owner(ob))
         {
-                message_vision("$N³îÃ¼¿àÁ³µÄ¶Ô$nµÀ£º¡°¿É²»ÒªºÍÎÒ¿ªÕâ"
-                               "ÖÖÍæĞ¦£¡¡±\n", this_object(), ob);
+                message_vision("$Næ„çœ‰è‹¦è‡‰çš„å°$né“ï¼šâ€œå¯ä¸è¦å’Œæˆ‘é–‹é€™"
+                               "ç¨®ç©ç¬‘ï¼â€\n", this_object(), ob);
                 return 0;
         }
 
@@ -175,7 +175,7 @@ int accept_hit(object ob)
         command("yun shield");
 
         if (query("can_hujiu") && query("owner"))
-                CHANNEL_D->do_channel( this_object(), "chat", query("owner") + "¿ìÀ´°¡£¬ÓĞÈË¹¥´òµ½´óÃÅ¿ÚÀ´À²£¡");
+                CHANNEL_D->do_channel( this_object(), "chat", query("owner") + "å¿«ä¾†å•Šï¼Œæœ‰äººæ”»æ‰“åˆ°å¤§é–€å£ä¾†å•¦ï¼");
 
         return ::accept_hit(ob);
 }
@@ -184,8 +184,8 @@ int accept_fight(object ob)
 {
         if (is_owner(ob))
         {
-                message_vision("$NÏÅÁËÒ»Ìø£¬»ÅÃ¦¶Ô$nµÀ£º¡°Ğ¡µÄ²»¸Ò£¬Ğ¡"
-                               "µÄ²»¸Ò£¡¡±\n", this_object(), ob);
+                message_vision("$Nåš‡äº†ä¸€è·³ï¼Œæ…Œå¿™å°$né“ï¼šâ€œå°çš„ä¸æ•¢ï¼Œå°"
+                               "çš„ä¸æ•¢ï¼â€\n", this_object(), ob);
                 return 0;
         }
 
@@ -193,7 +193,7 @@ int accept_fight(object ob)
         command("yun shield");
 
         if (query("can_hujiu") && query("owner"))
-                CHANNEL_D->do_channel( this_object(), "chat", query("owner") + "¿ìÀ´°¡£¬ÓĞÈË¹¥´òµ½´óÃÅ¿ÚÀ´À²£¡");
+                CHANNEL_D->do_channel( this_object(), "chat", query("owner") + "å¿«ä¾†å•Šï¼Œæœ‰äººæ”»æ‰“åˆ°å¤§é–€å£ä¾†å•¦ï¼");
 
         return ::accept_fight(ob);
 }
@@ -202,9 +202,9 @@ int accept_kill(object ob)
 {
         if (is_owner(ob))
         {
-                message_vision("$NÒ»Éù³¤Ì¾£¬µÀ£º¡°¼ÈÈ»Ö÷ÈË²»ÁôÎÒÁË£¬°Õ"
-                               "°Õ°Õ£¡ºÏÔòÁô£¬²»ºÏÔòÈ¥£¡ÎÒ×ßÁË¡£¡±\n"
-                               "Ëµ°Õ£¬ÀÏÈË¶ªÏÂÉ¨°Ñ£¬Æ®È»¶øÈ¥¡£\n",
+                message_vision("$Nä¸€è²é•·å˜†ï¼Œé“ï¼šâ€œæ—¢ç„¶ä¸»äººä¸ç•™æˆ‘äº†ï¼Œç½·"
+                               "ç½·ç½·ï¼åˆå‰‡ç•™ï¼Œä¸åˆå‰‡å»ï¼æˆ‘èµ°äº†ã€‚â€\n"
+                               "èªªç½·ï¼Œè€äººä¸Ÿä¸‹æƒæŠŠï¼Œé£„ç„¶è€Œå»ã€‚\n",
                                this_object(), ob);
                 destruct(this_object());
                 return 0;
@@ -214,7 +214,7 @@ int accept_kill(object ob)
         command("yun shield");
 
         if (query("can_hujiu") && query("owner"))
-                CHANNEL_D->do_channel( this_object(), "chat", query("owner") + "¿ìÀ´°¡£¬ÓĞÈË¹¥´òµ½´óÃÅ¿ÚÀ´À²£¡");
+                CHANNEL_D->do_channel( this_object(), "chat", query("owner") + "å¿«ä¾†å•Šï¼Œæœ‰äººæ”»æ‰“åˆ°å¤§é–€å£ä¾†å•¦ï¼");
 
         return ::accept_kill(ob);
 }

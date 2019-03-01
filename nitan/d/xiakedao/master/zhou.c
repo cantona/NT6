@@ -1,4 +1,4 @@
-// zhou.c ÖÜÜÆÈô
+// zhou.c å‘¨èŠ·è‹¥
 
 #include <command.h>
 #include <ansi.h>
@@ -7,13 +7,13 @@ inherit NPC;
 inherit F_MASTER;
 void create()
 {
-        set_name("ÖÜÜÆÈô", ({ "zhou-zhiruo","zhiruo","zhou"}));
+        set_name("å‘¨èŠ·è‹¥", ({ "zhou-zhiruo","zhiruo","zhou"}));
         set("long",
-                "ËıÊÇ¶ëáÒÅÉµÄµÚËÄ´úÕÆÃÅµÜ×Ó¡£\n"
-                "Ò»ÕÅÁ³ĞãÀö¾øË×¡£Éí×ÅÒ»Éíµ­»ÆÒÂÉÑ¡£\n"
-                "ÂÔÏÔÇå¼õµÄÇÉĞ¦ÖĞ´øÁËĞ©ĞíÎŞÄÎ¡£\n"
-                "ËıºÜ¼ÅÄ¯¡£\n");
-        set("gender", "Å®ĞÔ");
+                "å¥¹æ˜¯å³¨åµ‹æ´¾çš„ç¬¬å››ä»£æŒé–€å¼Ÿå­ã€‚\n"
+                "ä¸€å¼µè‡‰ç§€éº—çµ•ä¿—ã€‚èº«è‘—ä¸€èº«æ·¡é»ƒè¡£è£³ã€‚\n"
+                "ç•¥é¡¯æ¸…æ¸›çš„å·§ç¬‘ä¸­å¸¶äº†äº›è¨±ç„¡å¥ˆã€‚\n"
+                "å¥¹å¾ˆå¯‚å¯ã€‚\n");
+        set("gender", "å¥³æ€§");
         set("age", 20);
         set("attitude", "peaceful");
         set("shen_type", -1);
@@ -58,7 +58,7 @@ void create()
         map_skill("sword","huifeng-jian");
         map_skill("parry","huifeng-jian");
         prepare_skill("strike","jinding-zhang");
-        create_family("¶ëáÒÅÉ", 4, "ÕÆÃÅµÜ×Ó");
+        create_family("å³¨åµ‹æ´¾", 4, "æŒé–€å¼Ÿå­");
 
         setup();
         carry_object("/clone/weapon/changjian");
@@ -83,7 +83,7 @@ void greeting(object ob)
         int i;
 
         obj = all_inventory(environment(me));
-        command("say Í½¶ù¶¨»á½ô¼ÇÓëĞÄµÄ¡£");
+        command("say å¾’å…’å®šæœƒç·Šè¨˜èˆ‡å¿ƒçš„ã€‚");
         for(i=0; i<sizeof(obj); i++)
         {
                 if( query("id", obj[i]) == "miejue-shitai" )
@@ -92,6 +92,6 @@ void greeting(object ob)
                     COMBAT_D->do_attack(me,obj[i],query_temp("weapon", me),0);
                 }
         }
-        command("say ÕâÒ»¾äÊÇ·ñÖ¸³öÕÆ±Ø¾¡È«Á¦£¬ÉËµĞÎŞÂÇ¡£");
+        command("say é€™ä¸€å¥æ˜¯å¦æŒ‡å‡ºæŒå¿…ç›¡å…¨åŠ›ï¼Œå‚·æ•µç„¡æ…®ã€‚");
         return;
 }

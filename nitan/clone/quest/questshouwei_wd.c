@@ -9,10 +9,10 @@ inherit F_CLEAN_UP;
 inherit F_UNIQUE;
 void create()
 {
-        set_name("ÃÉÃæÈË", ({ "mengmian  ren" }));
+        set_name("è’™é¢äºº", ({ "mengmian  ren" }));
         set("age",30+random(10));
         set("long", 
-"´ËÈËÒ»ÉíºÚÒÂ£¬ÊÖÎÕÀûÈĞ£¬Ò»ÉíĞŞÎªÉõÊÇÁËµÃ¡£\n");
+"æ­¤äººä¸€èº«é»‘è¡£ï¼Œæ‰‹æ¡åˆ©åˆƒï¼Œä¸€èº«ä¿®ç‚ºç”šæ˜¯äº†å¾—ã€‚\n");
         set("no_steal", 1);
         set("quest_no_guard",1);
         set( "chat_chance_combat", 80);         
@@ -33,7 +33,7 @@ void init()
 
 int accept_hit(object me)
 {
-        notify_fail(HIW"²»ÊÇÄãÒª×¥µÄÈË£¬´ÕÊ²Ã´ÈÈÄÖ£¡\n"NOR);
+        notify_fail(HIW"ä¸æ˜¯ä½ è¦æŠ“çš„äººï¼Œæ¹Šä»€éº¼ç†±é¬§ï¼\n"NOR);
         if( query("owner", this_object()) == query("id", me) )
                 return 1;
 }
@@ -50,7 +50,7 @@ int do_halt()
         
         if ( me->is_fighting(ob))
         {
-                message_vision(HIW"$NºÈµÀ£º¡°Äã¼ÈÈ»Ê¶ÆÆÎÒµÄÉí·İ£¬¾ÍĞİÏë»î×ÅÀë¿ª£¡¡±\n"NOR, ob, me);
+                message_vision(HIW"$Nå–é“ï¼šâ€œä½ æ—¢ç„¶è­˜ç ´æˆ‘çš„èº«ä»½ï¼Œå°±ä¼‘æƒ³æ´»è‘—é›¢é–‹ï¼â€\n"NOR, ob, me);
                 return 1;
         }
         return 0;

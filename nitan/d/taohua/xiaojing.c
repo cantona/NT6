@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "С��");
+        set("short", "小徑");
         set("long", @LONG
-����һ���ɴ�����ʯ�̳ɵ�С·���䲻��˵��һ����Ⱦ����Ҳ������
-�࣬�����������˴�ɨ����������һ��С����������һ��ݵأ�������
-һ�����֡�
+這是一條由大青條石舖成的小路，雖不能說是一塵不染，但也整整潔
+潔，看來經常有人打掃。東北面有一個小土丘，西面是一塊草地，東面有
+一座樹林。
 LONG );
         set("exits", ([
                 "west"  : __DIR__"caodi",

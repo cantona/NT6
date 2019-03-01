@@ -4,17 +4,17 @@ inherit NPC;
 void create()
 {
 
-        set_name(HIR "ÖìÈ¸" NOR,({"zhu que", "zhu", "que", "bird"}));
+        set_name(HIR "æœ±é›€" NOR,({"zhu que", "zhu", "que", "bird"}));
 
-        set("race", "Ò°ÊŞ");
-        set("long", HIR "\n\nÒ»Ö»¿í´ïÕÉĞíµÄÔ¡»ğ·ï»Ë£¬ÄËËÄÉñÊŞÖ®Ò»µÄÖìÈ¸¡£\n"
-                        "ËüÈ«ÉíÓğÃ«ÑªºìËÆ»ğ£¬Õû¸öÉíÌå±ãÈçÒ»ÍÅ»ğÑæ¡£\n" NOR);
+        set("race", "é‡ç¸");
+        set("long", HIR "\n\nä¸€åªå¯¬é”ä¸ˆè¨±çš„æµ´ç«é³³å‡°ï¼Œä¹ƒå››ç¥ç¸ä¹‹ä¸€çš„æœ±é›€ã€‚\n"
+                        "å®ƒå…¨èº«ç¾½æ¯›è¡€ç´…ä¼¼ç«ï¼Œæ•´å€‹èº«é«”ä¾¿å¦‚ä¸€åœ˜ç«ç‡„ã€‚\n" NOR);
         set("age", 10000);
         set("attitude", "peaceful");
 
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "Ë«×¦", "¾±²¿", "³á°ò" }) );
+        set("limbs", ({ "é ­éƒ¨", "èº«é«”", "é›™çˆª", "é ¸éƒ¨", "ç¿…è†€" }) );
         set("verbs", ({ "bite" }) );
-        set("title", HIY "ÉñÊŞ" NOR);
+        set("title", HIY "ç¥ç¸" NOR);
 
         set("combat_exp", 8000000);
         set("max_neili", 15000);
@@ -64,8 +64,8 @@ mixed hit_ob(object me, object ob, int damage_bouns)
 {
         ob->receive_wound("qi", 200 + random(200), me);
         set("neili",query("max_neili",  me), me);
-        return HIY "ÖìÈ¸Ë«×¦»Ã³öÁ½µÀ½ğ¹â£¬É²ÄÇ¼äÅùö¨µçÉÁ£¬×ÏÀ×"
-               "ºäÃù£¬Ç§ÍòµÀÉÁµçÖÁ¾ÅÌì¶ø½µ£¬ÁıÕÖ´óµØ¡£\n" NOR;
+        return HIY "æœ±é›€é›™çˆªå¹»å‡ºå…©é“é‡‘å…‰ï¼Œå‰é‚£é–“éœ¹é‚é›»é–ƒï¼Œç´«é›·"
+               "è½Ÿé³´ï¼Œåƒè¬é“é–ƒé›»è‡³ä¹å¤©è€Œé™ï¼Œç± ç½©å¤§åœ°ã€‚\n" NOR;
 }
 
 void die()
@@ -79,18 +79,18 @@ void die()
         pot = 500 + random(50);
 
         if( objectp(me = query_last_damage_from()) &&
-            query("wang_get/ÖìÓğ", me) && 
+            query("wang_get/æœ±ç¾½", me) && 
             userp(me) )
         {
-                message_vision(HIC "$N" HIC "´ÓÖìÈ¸µÄÊ¬ÌåÉÏ°ÎÏÂÁËÒ»ÊøÓğÃ«¡£\n", me);
+                message_vision(HIC "$N" HIC "å¾æœ±é›€çš„å±é«”ä¸Šæ‹”ä¸‹äº†ä¸€æŸç¾½æ¯›ã€‚\n", me);
                 yumao = new("/d/death/obj/yumao");
                 yumao->move(me);
-                delete("wang_get/ÖìÓğ", me);
+                delete("wang_get/æœ±ç¾½", me);
                 addn("combat_exp", exp, me);
                 addn("potential", pot, me);
 
-                tell_object(me, HIC "ÓÉÓÚÄãÕ¶É±ÉñÊŞÖìÈ¸£¬Äã»ñµÃÁË" + chinese_number(exp)
-                                + "µã¾­ÑéºÍ" + chinese_number(pot) + "µãÇ±ÄÜ¡£\n" NOR);
+                tell_object(me, HIC "ç”±äºä½ æ–¬æ®ºç¥ç¸æœ±é›€ï¼Œä½ ç²å¾—äº†" + chinese_number(exp)
+                                + "é»ç¶“é©—å’Œ" + chinese_number(pot) + "é»æ½›èƒ½ã€‚\n" NOR);
         }
         ::die();
 }

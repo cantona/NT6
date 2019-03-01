@@ -10,15 +10,15 @@ inherit F_COAGENT;
 void create()
 {
         object ob;
-        set_name("»ÔÔÂÊ¹", ({ "huiyue shi", "huiyue", "shi" }));
+        set_name("è¼æœˆä½¿", ({ "huiyue shi", "huiyue", "shi" }));
         set("long", @LONG
-ÕâÊÇÒ»¸öÈıÊ®¶àËêµÄÖĞÄêÄĞ×Ó£¬×°ÊøÆæÒì£¬²»
-Í¬ÆÕÍ¨µÄÖĞÍÁÈËÊ¿¡£Õâ±ãÊÇ²¨Ë¹Ã÷½Ì×Ü½Ì½ÌÖ÷
-×ùÏÂµÄ»ÔÔÂÊ¹¡£
+é€™æ˜¯ä¸€å€‹ä¸‰åå¤šæ­²çš„ä¸­å¹´ç”·å­ï¼Œè£æŸå¥‡ç•°ï¼Œä¸
+åŒæ™®é€šçš„ä¸­åœŸäººå£«ã€‚é€™ä¾¿æ˜¯æ³¢æ–¯æ˜æ•™ç¸½æ•™æ•™ä¸»
+åº§ä¸‹çš„è¼æœˆä½¿ã€‚
 LONG);
-        set("title", "²¨Ë¹×Ü½Ì½ÌÖ÷×ùÏÂ");
-        set("nickname", HIG "ÔÆ·çÔÂÈıÊ¹" NOR);
-        set("gender", "ÄĞĞÔ");
+        set("title", "æ³¢æ–¯ç¸½æ•™æ•™ä¸»åº§ä¸‹");
+        set("nickname", HIG "é›²é¢¨æœˆä¸‰ä½¿" NOR);
+        set("gender", "ç”·æ€§");
         set("age", 33);
         set("attitude", "friendly");
         set("shen_type", -1);
@@ -60,7 +60,7 @@ LONG);
         prepare_skill("strike", "yinfeng-dao");
         prepare_skill("finger", "tougu-zhen");
 
-        create_family("²¨Ë¹Ã÷½Ì×Ü¶æ", 32, "µÜ×Ó");
+        create_family("æ³¢æ–¯æ˜æ•™ç¸½èˆµ", 32, "å¼Ÿå­");
 
         set("chat_chance_combat", 120);
         set("chat_msg_combat", ({

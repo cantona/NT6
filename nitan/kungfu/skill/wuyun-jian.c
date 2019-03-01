@@ -1,4 +1,4 @@
-// wuyun-jian.c ÎåÔÏÆßÏÒ½£
+// wuyun-jian.c äº”éŸ»ä¸ƒå¼¦åŠ
 // Last Modified by winder on Mar. 10 2000
 
 #include <ansi.h>;
@@ -7,25 +7,25 @@ string type() { return "martial"; }
 string martialtype() { return "skill"; }
 
 mapping *action = ({
-([        "action" : "$N×óĞ¡Ö¸Çáµ¯£¬Ò»ÕĞ"HIM"¡¸¹¬ÔÏ¡¹"NOR"ÇÄÈ»»®Ïò$nµÄºóĞÄ",
+([        "action" : "$Nå·¦å°æŒ‡è¼•å½ˆï¼Œä¸€æ‹›"HIM"ã€Œå®®éŸ»ã€"NOR"æ‚„ç„¶åŠƒå‘$nçš„å¾Œå¿ƒ",
         "lvl" : 0,
-        "skill_name" : "¹¬ÔÏ"
+        "skill_name" : "å®®éŸ»"
 ]),
-([        "action" : "$NÓÒÊÖÎŞÃûÖ¸ÈôÓĞÈôÎŞµÄÒ»»®£¬½«ÇÙÏÒ²¢×öÒ»´¦£¬"HIR"[ÉÌÔÏ]"NOR"ÒÑ½«$nÁıÕÖ",
+([        "action" : "$Nå³æ‰‹ç„¡åæŒ‡è‹¥æœ‰è‹¥ç„¡çš„ä¸€åŠƒï¼Œå°‡ç´å¼¦ä¸¦åšä¸€è™•ï¼Œ"HIR"[å•†éŸ»]"NOR"å·²å°‡$nç± ç½©",
         "lvl" : 10,
-        "skill_name" : "ÉÌÔÏ"
+        "skill_name" : "å•†éŸ»"
 ]),
-([        "action" : "$NÎåÖ¸¼²»Ó£¬Ò»Ê½"HIB"[½ÇÔÏ]"NOR"ÎŞĞÎµÄ´ÌÏò$nµÄ×óÀß",
+([        "action" : "$Näº”æŒ‡ç–¾æ®ï¼Œä¸€å¼"HIB"[è§’éŸ»]"NOR"ç„¡å½¢çš„åˆºå‘$nçš„å·¦è‚‹",
         "lvl" : 20,
-        "skill_name" : "½ÇÔÏ"
+        "skill_name" : "è§’éŸ»"
 ]),
-([        "action" : "$N½«ÊÖÖĞ½£ºáÉ¨£¬Í¬Ê±×óÓÒÊÖÈçÅıÅÃËÆµÄ¼²µ¯£¬ÕıÊÇÒ»ÕĞ"HIG"[Ö§ÔÏ]"NOR"",
+([        "action" : "$Nå°‡æ‰‹ä¸­åŠæ©«æƒï¼ŒåŒæ™‚å·¦å³æ‰‹å¦‚çµç¶ä¼¼çš„ç–¾å½ˆï¼Œæ­£æ˜¯ä¸€æ‹›"HIG"[æ”¯éŸ»]"NOR"",
         "lvl" : 30,
-        "skill_name" : "Ö§ÔÏ"
+        "skill_name" : "æ”¯éŸ»"
 ]),
-([        "action" : "$NÊ¹³ö"HIW"¡¸ÓğÔÏ¡¹"NOR"£¬½«½£ÌáÖÁ´½±ß£¬ÈçÍ¬ÇåÒô³öóï£¬½£ÕÆÆë³ö£¬»®Ïò$nµÄ$l",
+([        "action" : "$Nä½¿å‡º"HIW"ã€Œç¾½éŸ»ã€"NOR"ï¼Œå°‡åŠæè‡³å”‡é‚Šï¼Œå¦‚åŒæ¸…éŸ³å‡ºç°«ï¼ŒåŠæŒé½Šå‡ºï¼ŒåŠƒå‘$nçš„$l",
         "lvl" : 40,
-        "skill_name" : "ÓğÔÏ"
+        "skill_name" : "ç¾½éŸ»"
 ]),
 });
 
@@ -33,9 +33,9 @@ int valid_enable(string usage) { return usage == "sword" || usage == "parry"; }
 int valid_learn(object me)
 {
         if( query("max_neili", me)<100 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ã€‚\n");
         if ((int)me->query_skill("kuihua-xinfa", 1) < 20)
-                return notify_fail("ÄãµÄ¿û»¨ĞÄ·¨»ğºò²»µ½¡£\n");
+                return notify_fail("ä½ çš„è‘µèŠ±å¿ƒæ³•ç«å€™ä¸åˆ°ã€‚\n");
         return 1;
 }
 int practice_skill(object me)
@@ -44,9 +44,9 @@ int practice_skill(object me)
 
         if( !objectp(weapon=query_temp("weapon", me) )
          || query("skill_type", weapon) != "sword" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ã€‚\n");
         if( query("jing", me)<35 || query("neili", me)<15 )
-                return notify_fail("ÄãµÄ¾«»òÄÚÁ¦²»¹»Á·ÎåÔÏÆßÏÒ½£¡£\n");
+                return notify_fail("ä½ çš„ç²¾æˆ–å…§åŠ›ä¸å¤ ç·´äº”éŸ»ä¸ƒå¼¦åŠã€‚\n");
         me->receive_damage("jing", 20);
         addn("neili", -15, me);
         return 1;
@@ -75,17 +75,17 @@ mapping query_action(object me, object weapon)
         for(i = ttl; i > 0; i--)
                 if(lvl > action[i-1]["lvl"])
                 {
-                        seq = i; /* »ñµÃÕĞÊıĞòºÅÉÏÏŞ */
+                        seq = i; /* ç²å¾—æ‹›æ•¸åºè™Ÿä¸Šé™ */
                         break;
                 }
-        seq = random(seq);       /* Ñ¡Ôñ³öÊÖÕĞÊıĞòºÅ */
+        seq = random(seq);       /* é¸æ“‡å‡ºæ‰‹æ‹›æ•¸åºè™Ÿ */
         return ([
                 "action"      : action[seq]["action"],
                 "dodge"       : d_e1 + (d_e2 - d_e1) * seq / ttl,
                 "parry"       : p_e1 + (p_e2 - p_e1) * seq / ttl,
                 "force"       : f_e1 + (f_e2 - f_e1) * seq / ttl,
                 "damage"      : m_e1 + (m_e2 - m_e1) * seq / ttl,
-                "damage_type" : random(2) ? "¸îÉË" : "´ÌÉË",
+                "damage_type" : random(2) ? "å‰²å‚·" : "åˆºå‚·",
         ]);
 }
 int learn_bonus() { return 25; }
@@ -100,15 +100,15 @@ string perform_action_file(string action)
 
 int help(object me)
 {
-        write(HIC"\nÎåÔÏÆßÏÒ½££º"NOR"\n");
+        write(HIC"\näº”éŸ»ä¸ƒå¼¦åŠï¼š"NOR"\n");
         write(@HELP
 
-    ÈÕÔÂÉñ½ÌºÚÄ¾ÑÂÎä¹¦£¬Ã·×¯´ó×¯Ö÷»ÆÖÓ¹«µÄ¶ÀÃÅ½£·¨£¬½«ÇÙÀÖ
-ÈÚÈë½£·¨Ö®ÖĞ£¬ÒÔÀÖÒôÈÅµĞĞÄÉñ£¬´Ó¶ø¿ØÖÆ¶Ô·½ÄÚÏ¢µÄ±ä»¯¡£
+    æ—¥æœˆç¥æ•™é»‘æœ¨å´–æ­¦åŠŸï¼Œæ¢…èŠå¤§èŠä¸»é»ƒé˜å…¬çš„ç¨é–€åŠæ³•ï¼Œå°‡ç´æ¨‚
+èå…¥åŠæ³•ä¹‹ä¸­ï¼Œä»¥æ¨‚éŸ³æ“¾æ•µå¿ƒç¥ï¼Œå¾è€Œæ§åˆ¶å°æ–¹å…§æ¯çš„è®ŠåŒ–ã€‚
 
-        Ñ§Ï°ÒªÇó£º
-                ¿û»¨ĞÄ·¨20¼¶
-                ÄÚÁ¦100
+        å­¸ç¿’è¦æ±‚ï¼š
+                è‘µèŠ±å¿ƒæ³•20ç´š
+                å…§åŠ›100
 HELP
         );
         return 1;

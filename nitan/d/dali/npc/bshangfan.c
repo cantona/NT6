@@ -5,10 +5,10 @@ inherit F_VENDOR;
 
 void create()
 {
-        set_name("Ì¨ÒÄÉÌ··", ({ "shang fan", "shang", "fan" }) );
-        set("gender", "Å®ĞÔ" );
+        set_name("å°å¤·å•†è²©", ({ "shang fan", "shang", "fan" }) );
+        set("gender", "å¥³æ€§" );
         set("age", 32);
-        set("long", "Ò»¸ö°ÚÒÄ¸¾Å®£¬±³×Å¸öÖñÂ¨··ÂòĞ©Ë¿Ö¯ÎïÆ·ºÍÊÖ¹¤ÒÕÆ·¡£\n");
+        set("long", "ä¸€å€‹æ“ºå¤·å©¦å¥³ï¼ŒèƒŒè‘—å€‹ç«¹ç°è²©è²·äº›çµ²ç¹”ç‰©å“å’Œæ‰‹å·¥è—å“ã€‚\n");
         set("combat_exp", 2500);
         set("per", 17);
         set("str", 17);

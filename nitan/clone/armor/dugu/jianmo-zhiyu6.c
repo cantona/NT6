@@ -6,20 +6,20 @@ inherit HEAD;
  
 void create()
 {
-        set_name(HIR "½£Ä§" HIC "Ö®Óğ" NOR, ({ "jianmo zhiyu6", "zhiyu6", "jianmo" }) );
+        set_name(HIR "åŠé­”" HIC "ä¹‹ç¾½" NOR, ({ "jianmo zhiyu6", "zhiyu6", "jianmo" }) );
         set_weight(1);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼ş");
-                set("long", HIW "ÕâÊÇÓÉ¶À¹ÂÇó°ÜÈ¡ÉñµñÓğÃ«¾«ĞÄÖÆ×÷¶ø³ÉµÄÍ·ÊÎ£¬ÆäÖĞËÆºõÔÌº­ÁË¸ßÉîµÄÎäÑ§ÕæÚĞ¡£\n" NOR);
+                set("unit", "ä»¶");
+                set("long", HIW "é€™æ˜¯ç”±ç¨å­¤æ±‚æ•—å–ç¥é›•ç¾½æ¯›ç²¾å¿ƒåˆ¶ä½œè€Œæˆçš„é ­é£¾ï¼Œå…¶ä¸­ä¼¼ä¹è˜Šæ¶µäº†é«˜æ·±çš„æ­¦å­¸çœŸè«¦ã€‚\n" NOR);
                 set("value", 1500000);
                 set("armor_prop/dex", 50);
                 set("armor_prop/str", 50);
                 set("armor_prop/con", 50);
                 set("armor_prop/damage", 7000);
                 set("armor_prop/sword", 300);
-                set("special/desc", "ÓĞĞ§½£·¨µÈ¼¶Ìá¸ß300¼¶¡£");
+                set("special/desc", "æœ‰æ•ˆåŠæ³•ç­‰ç´šæé«˜300ç´šã€‚");
                 set("limit", ([
                          "exp" : 100000000,
                          "scborn" : 1,

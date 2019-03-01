@@ -1,5 +1,5 @@
 // Code of ShenZhou
-// shegu.c �߹�
+// shegu.c 蛇谷
 // maco 7/15/2000
 
 #include <ansi.h>
@@ -8,11 +8,11 @@ string look_bush();
 
 void create()
 {
-        set("short", "�߹�����");
+        set("short", "蛇谷樹林");
         set("long", @LONG
-���ǰ���ɽ���߹�֮�У����������ŴԴ԰���(bush)�����ض���
-�ӲݺͿ�֦��Ҷ����ζ������š�С·���۵ش������ԣ���֪��ͨ��
-�������������ȥ�����ָ���ï�ܲ��������ˡ�
+這是白駝山的蛇谷之中，四周生長著叢叢矮樹(bush)，滿地都是
+雜草和枯枝敗葉，氣味不大好聞。小路曲折地穿過樹叢，不知道通往
+哪裡。往西北方望去，樹林更加茂密不見天日了。
 LONG );
 
         set("exits", ([ 

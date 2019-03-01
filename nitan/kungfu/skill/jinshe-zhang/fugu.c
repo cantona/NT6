@@ -1,5 +1,5 @@
 // This program is a part of NITAN MudLIB
-// fugu.c ½ğÉßÓÎÉíÕÆ-¸½¹Ç²øÉí
+// fugu.c é‡‘è›‡éŠèº«æŒ-é™„éª¨çºèº«
 
 #include <ansi.h>
 
@@ -14,22 +14,22 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail("¸½¹Ç²øÉíÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("é™„éª¨çºèº«åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( query_temp("weapon", me) )
-                return notify_fail("Äã²»ÊÇ¿ÕÊÖ£¬²»ÄÜÊ¹ÓÃ¸½¹Ç²øÉí¡£\n");
+                return notify_fail("ä½ ä¸æ˜¯ç©ºæ‰‹ï¼Œä¸èƒ½ä½¿ç”¨é™„éª¨çºèº«ã€‚\n");
 
         if ((int)me->query_skill("jinshe-zhang", 1) < 100)
-                return notify_fail("ÄãµÄ½ğÉßÕÆ²»¹»æµÊì£¬²»»áÊ¹ÓÃ¸½¹Ç²øÉí¡£\n");
+                return notify_fail("ä½ çš„é‡‘è›‡æŒä¸å¤ å«»ç†Ÿï¼Œä¸æœƒä½¿ç”¨é™„éª¨çºèº«ã€‚\n");
 
         if( query("neili", me)<300 )
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ£¬²»ÄÜÊ¹ÓÃ¸½¹Ç²øÉí¡£\n");
+                return notify_fail("ä½ ç¾åœ¨å…§åŠ›å¤ªå¼±ï¼Œä¸èƒ½ä½¿ç”¨é™„éª¨çºèº«ã€‚\n");
 
         if (me->query_skill_prepared("strike") != "jinshe-zhang")
-                return notify_fail("ÄãÏÖÔÚÃ»ÓĞ×¼±¸½ğÉßÕÆ·¨£¬ÎŞ·¨Ê¹ÓÃ¸½¹Ç²øÉí¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ²’æœ‰æº–å‚™é‡‘è›‡æŒæ³•ï¼Œç„¡æ³•ä½¿ç”¨é™„éª¨çºèº«ã€‚\n");
 
-        msg = HIC "$N" HIC "´óºÈÒ»Éù£¬²øÉí¶øÉÏ×óÊÖÒ»Ì½µó×¡$n"
-              HIC "ÊÖÍó£¬ÓÒÕÆÃÍÏÂÉ±ÊÖ£¡\n"NOR;
+        msg = HIC "$N" HIC "å¤§å–ä¸€è²ï¼Œçºèº«è€Œä¸Šå·¦æ‰‹ä¸€æ¢åˆä½$n"
+              HIC "æ‰‹è…•ï¼Œå³æŒçŒ›ä¸‹æ®ºæ‰‹ï¼\n"NOR;
         message_combatd(msg, me, target);
 
         ap = attack_power(me, "strike");
@@ -47,14 +47,14 @@ int perform(object me, object target)
 
                 addn("neili", -150, me);
                 me->start_busy(2);
-                msg = HIR "½á¹û$n" HIR "±»$N" HIR "µÄ×óÊÖËùÖÆ£¬"
-                      "ÔÚ¡¸¸½¹Ç²øÉí¡¹ÏÂ£¬Ò»Ê±¾¹È»ÎŞ·¨»¹ÊÖ£¡\n" NOR;
+                msg = HIR "çµæœ$n" HIR "è¢«$N" HIR "çš„å·¦æ‰‹æ‰€åˆ¶ï¼Œ"
+                      "åœ¨ã€Œé™„éª¨çºèº«ã€ä¸‹ï¼Œä¸€æ™‚ç«Ÿç„¶ç„¡æ³•é‚„æ‰‹ï¼\n" NOR;
         }
         else
         {
                 me->start_busy(2);
-                msg = CYN "¿ÉÊÇ$p" CYN "Ê¶ÆÆÁË$P"
-                      CYN "ÕâÒ»ÕĞ£¬ÊÖÖâÒ»ËÍ£¬°ÚÍÑÁË¶Ô·½¿ØÖÆ¡£\n"NOR;
+                msg = CYN "å¯æ˜¯$p" CYN "è­˜ç ´äº†$P"
+                      CYN "é€™ä¸€æ‹›ï¼Œæ‰‹è‚˜ä¸€é€ï¼Œæ“ºè„«äº†å°æ–¹æ§åˆ¶ã€‚\n"NOR;
         }
         message_combatd(msg, me, target);
 

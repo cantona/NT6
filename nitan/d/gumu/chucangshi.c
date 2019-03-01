@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", HIC"´¢²ØÊÒ"NOR);
+        set("short", HIC"å„²è—å®¤"NOR);
         set("long", @LONG
-¹ÅÄ¹Éú»îÉõÊÇÇå¿à£¬´¢²ØÊÒ¶Ñ×ÅĞ©ÈÕ³£ÓÃÆ·£¬¶¼ÕûÕûÆëÆë¶Ñ·ÅÔÚÇ½
-½Ç£¬¿´À´¾­³£ÓĞ¹ÅÄ¹µÜ×ÓÇ°À´´òÉ¨£¬ÆäÓà±ğÎŞËûÎï¡£
+å¤å¢“ç”Ÿæ´»ç”šæ˜¯æ¸…è‹¦ï¼Œå„²è—å®¤å †è‘—äº›æ—¥å¸¸ç”¨å“ï¼Œéƒ½æ•´æ•´é½Šé½Šå †æ”¾åœ¨ç‰†
+è§’ï¼Œçœ‹ä¾†ç¶“å¸¸æœ‰å¤å¢“å¼Ÿå­å‰ä¾†æ‰“æƒï¼Œå…¶ä½™åˆ¥ç„¡ä»–ç‰©ã€‚
 LONG        );
 
         set("exits", ([
@@ -33,20 +33,20 @@ int do_search(string arg)
 {
         object ob, me = this_player();
 
-        if ( arg == "qiangjiao" || arg == "Ç½½Ç")
+        if ( arg == "qiangjiao" || arg == "ç‰†è§’")
         {
                 if( query_temp("fire", me)<3 )
                 {
                         if(objectp(ob = present("fire", me)))
-                                return notify_fail("ÄãÒÑ¾­ÄÃÁË»ğÕÛÁË£¬ÔõÃ´ÕâÃ´Ì°ĞÄ£¿\n");
+                                return notify_fail("ä½ å·²ç¶“æ‹¿äº†ç«æŠ˜äº†ï¼Œæ€éº¼é€™éº¼è²ªå¿ƒï¼Ÿ\n");
                         addn_temp("fire", 1, me);
-                        message_vision(YEL "$NÔÚÇ½½ÅµÄÎïÆ·¶ÑÀï·­À´·­È¥Ê²Ã´Ò²Ã»ÕÒ×Å¡£\n"NOR, me);
+                        message_vision(YEL "$Nåœ¨ç‰†è…³çš„ç‰©å“å †è£¡ç¿»ä¾†ç¿»å»ä»€éº¼ä¹Ÿæ²’æ‰¾è‘—ã€‚\n"NOR, me);
                         return 1;
                 }
-                message_vision("$NÔÚÇ½½ÅµÄÎïÆ·¶ÑÀï·­À´·­È¥ÕÒ³öÒ»°Ñ»ğÕÛ¡£\n",me);
+                message_vision("$Nåœ¨ç‰†è…³çš„ç‰©å“å †è£¡ç¿»ä¾†ç¿»å»æ‰¾å‡ºä¸€æŠŠç«æŠ˜ã€‚\n",me);
                 delete_temp("fire", me);
                 new("/clone/misc/fire")->move(me);
                 return 1;
         }
-        return notify_fail("ÄãÒªÕÒÊ²Ã´£¿\n");         
+        return notify_fail("ä½ è¦æ‰¾ä»€éº¼ï¼Ÿ\n");         
 }

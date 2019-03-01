@@ -1,4 +1,4 @@
-// houtang2.c ºóÌÃ¶þ½ø
+// houtang2.c å¾Œå ‚äºŒé€²
 // Winder Oct.10 1998
 
 #include <ansi.h>
@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ºóÌÃ¶þ½ø");
+        set("short", "å¾Œå ‚äºŒé€²");
         set("long", @LONG
-ÕâÀïÊÇÈ«Õæ½ÌµÜ×ÓÆ½³£ÑÐÌÖÎä¹¦µÄµØ·½£¬Õâ¸öÌÃ²»´ó£¬ÓÉÓÚ¾­³£
-ÒªÔÚÕâÀïÑÝÎä£¬Ë÷ÐÔÁ¬×ÀÒÎÒ²È«¶¼¿¿µ½Ç½±ßÈ¥ÁË£¬ÕâÑùÌÚ³öÁËÒ»´óÆ¬
-¿ÕµØÀ´¡£
+é€™è£¡æ˜¯å…¨çœŸæ•™å¼Ÿå­å¹³å¸¸ç ”è¨Žæ­¦åŠŸçš„åœ°æ–¹ï¼Œé€™å€‹å ‚ä¸å¤§ï¼Œç”±äºŽç¶“å¸¸
+è¦åœ¨é€™è£¡æ¼”æ­¦ï¼Œç´¢æ€§é€£æ¡Œæ¤…ä¹Ÿå…¨éƒ½é åˆ°ç‰†é‚ŠåŽ»äº†ï¼Œé€™æ¨£é¨°å‡ºäº†ä¸€å¤§ç‰‡
+ç©ºåœ°ä¾†ã€‚
 LONG
         );
         set("no_clean_up", 0);

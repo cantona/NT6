@@ -1,15 +1,15 @@
 inherit ITEM;
 void create()
 {
-    set_name("º¡¹Ç", ({ "skeleton" }));
+    set_name("éª¸éª¨", ({ "skeleton" }));
     set_weight(500);
     if( clonep() )
         set_default_object(__FILE__);
     else {
-        set("unit", "¾ß");
+        set("unit", "å…·");
         set("long",
-            "Ò»¾ß¿İÇ¬µÄº¡¹Ç¡£\n");
+            "ä¸€å…·æ¯ä¹¾çš„éª¸éª¨ã€‚\n");
         set("value", 0);
-        set("no_get","Õâ¶«Î÷Ò»Åö¾ÍÉ¢£¬»¹ÊÇ±ğ¼ğ°É£¡\n");
+        set("no_get","é€™æ±è¥¿ä¸€ç¢°å°±æ•£ï¼Œé‚„æ˜¯åˆ¥æ€å§ï¼\n");
     }
 }

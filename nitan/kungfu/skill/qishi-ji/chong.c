@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define CHONG "¡¸" HIY "³å´Ì¹¥»÷" NOR "¡¹"
+#define CHONG "ã€Œ" HIY "æ²–åˆºæ”»æ“Š" NOR "ã€"
 
 inherit F_SSERVER;
 
@@ -12,34 +12,34 @@ int perform(object me, object target)
         int i;
 
         if( userp(me) && !query("can_perform/qishi-ji/chong", me) )
-                return notify_fail("ÄãËùÊ¹ÓÃµÄÍâ¹¦ÖĞÃ»ÓĞÕâÖÖ¹¦ÄÜ¡£\n");
+                return notify_fail("ä½ æ‰€ä½¿ç”¨çš„å¤–åŠŸä¸­æ²’æœ‰é€™ç¨®åŠŸèƒ½ã€‚\n");
 
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(CHONG "Ö»ÄÜÔÚÕ½¶·ÖĞ¶Ô¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(CHONG "åªèƒ½åœ¨æˆ°é¬¥ä¸­å°å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me)) || 
               query("skill_type", weapon) != "club" )
-                return notify_fail("ÄãËùÊ¹ÓÃµÄÎäÆ÷²»¶Ô£¬ÄÑÒÔÊ©Õ¹" CHONG "¡£\n");
+                return notify_fail("ä½ æ‰€ä½¿ç”¨çš„æ­¦å™¨ä¸å°ï¼Œé›£ä»¥æ–½å±•" CHONG "ã€‚\n");
 
         if (me->query_skill("qishi-ji", 1) < 100)
-                return notify_fail("ÄãÊ¥ÆïÊ¿êªĞŞÎª²»¹»£¬ÄÑÒÔÊ©Õ¹" CHONG "¡£\n");
+                return notify_fail("ä½ è–é¨å£«æˆŸä¿®ç‚ºä¸å¤ ï¼Œé›£ä»¥æ–½å±•" CHONG "ã€‚\n");
 
         if (me->query_skill_mapped("club") != "qishi-ji")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢Ê¥ÆïÊ¿êª£¬ÄÑÒÔÊ©Õ¹" CHONG "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼è–é¨å£«æˆŸï¼Œé›£ä»¥æ–½å±•" CHONG "ã€‚\n");
 
         if (me->query_skill("force") < 150)
-                return notify_fail("ÄãµÄÄÚ¹¦ĞŞÎª²»¹»£¬ÄÑÒÔÊ©Õ¹" CHONG "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸä¿®ç‚ºä¸å¤ ï¼Œé›£ä»¥æ–½å±•" CHONG "ã€‚\n");
 
         if( query("neili", me)<200 )
-                return notify_fail("ÄãÏÖÔÚµÄÕæÆø²»¹»£¬ÄÑÒÔÊ©Õ¹" CHONG "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çš„çœŸæ°£ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" CHONG "ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIY "$N" HIY "¿ñÏøÒ»Éù£¬ÊÖÖĞ" + weapon->name() + HIY "½ÓÁ¬Áù"
-              "´Ì£¬¾¹ËÆ»Ã×÷ÁùµÀµç¹â£¬¾¡Êı´ÌÏò$n" HIY "£¡\n" NOR;
+        msg = HIY "$N" HIY "ç‹‚å“®ä¸€è²ï¼Œæ‰‹ä¸­" + weapon->name() + HIY "æ¥é€£å…­"
+              "åˆºï¼Œç«Ÿä¼¼å¹»ä½œå…­é“é›»å…‰ï¼Œç›¡æ•¸åˆºå‘$n" HIY "ï¼\n" NOR;
 
         message_combatd(msg, me, target);
         addn("neili", -100, me);

@@ -7,19 +7,19 @@ int do_move(string arg);
 
 void create()
 {
-        set("short","ÄÏÑÒ¹¬");
+        set("short","å—å·–å®®");
         set("long", @LONG
-ÕâÀïÊÇ¾ÍÊÇÎäµ±É½ÄÏÑÒ¹¬¡£´Ë¹¬°ëÎÔÐüÑÂÖ®ÏÂ¡£µîÄÚÈýÇå×øÏñ (
-xiang)½ð¹âÉÁÉÁ£¬ÆøÓîÐù°º¡£µîÄÚÌì¾®´¦·¼²ÝÃÔ¾¶£¬°Ù»ÜÕùåû¡£ÓÐ¼¸
-¸ö×°ÊøÐÑÄ¿µÄÎäµ±Èý´úµÜ×Ó´ÓÕâ´Ò´Ò×ß¹ý¡£ÄÏÃæ¸ßÌ¨°ÚÓÐÕæÎä½£Õó£¬
-½£Æø±ÆÈË¶øÀ´¡£
+é€™è£¡æ˜¯å°±æ˜¯æ­¦ç•¶å±±å—å·–å®®ã€‚æ­¤å®®åŠè‡¥æ‡¸å´–ä¹‹ä¸‹ã€‚æ®¿å…§ä¸‰æ¸…ååƒ (
+xiang)é‡‘å…‰é–ƒé–ƒï¼Œæ°£å®‡è»’æ˜‚ã€‚æ®¿å…§å¤©äº•è™•èŠ³è‰è¿·å¾‘ï¼Œç™¾å‰çˆ­å¦ã€‚æœ‰å¹¾
+å€‹è£æŸé†’ç›®çš„æ­¦ç•¶ä¸‰ä»£å¼Ÿå­å¾žé€™åŒ†åŒ†èµ°éŽã€‚å—é¢é«˜å°æ“ºæœ‰çœŸæ­¦åŠé™£ï¼Œ
+åŠæ°£é€¼äººè€Œä¾†ã€‚
 LONG );
         set("exits", ([
                   "out"    : __DIR__"shizhu",
                   "southup": __DIR__"gaotai",
               ]));
               set("item_desc",([
-                  "ÈýÇå×øÏñ" : (: look_xiang :),
+                  "ä¸‰æ¸…ååƒ" : (: look_xiang :),
                   "xiang"    : (: look_xiang :),
               ]));
               set("no_clean_up", 0);
@@ -38,13 +38,13 @@ int valid_leave(object ob, string dir)
 
         if( query("combat_exp", ob)<10000 && 
            (dir == "southup"))
-                    return notify_fail(HIY "ÍâÃæµÄÕæÎä½£ÕóÍþÁ¦Ì«´ó£¬Äã±»"
-                                   "ÄÚÁ¦¹Äµ´£¬²»ÄÜÉÏÈ¥¡£\n");
+                    return notify_fail(HIY "å¤–é¢çš„çœŸæ­¦åŠé™£å¨åŠ›å¤ªå¤§ï¼Œä½ è¢«"
+                                   "å…§åŠ›é¼“ç›ªï¼Œä¸èƒ½ä¸ŠåŽ»ã€‚\n");
 
-        if ((! myfam || (myfam["family_name"] != "Îäµ±ÅÉ")) &&
+        if ((! myfam || (myfam["family_name"] != "æ­¦ç•¶æ´¾")) &&
            (dir == "southup"))
-                    return notify_fail(HIY "ÍâÃæµÄÕæÎä½£ÕóÍþÁ¦Ì«´ó£¬Äã±»"
-                                   "ÄÚÁ¦¹Äµ´£¬ÍËÁË»ØÀ´¡£\n");
+                    return notify_fail(HIY "å¤–é¢çš„çœŸæ­¦åŠé™£å¨åŠ›å¤ªå¤§ï¼Œä½ è¢«"
+                                   "å…§åŠ›é¼“ç›ªï¼Œé€€äº†å›žä¾†ã€‚\n");
         return 1;
 }
 
@@ -55,8 +55,8 @@ void init()
 
 string look_xiang()
 {
-        return YEL "ÈýÇå×øÏñ´¿Í­´ò¾Í£¬¶ÆÒÔ´¿½ð£¬¹âÕÕÂúµî¡£Ö»ÊÇºÃÏóÈý"
-               "¸ö×øÏñ°ÚµÃ²¢²»ºÜÕûÆë¡£\n" NOR;
+        return YEL "ä¸‰æ¸…ååƒç´”éŠ…æ‰“å°±ï¼Œéä»¥ç´”é‡‘ï¼Œå…‰ç…§æ»¿æ®¿ã€‚åªæ˜¯å¥½è±¡ä¸‰"
+               "å€‹ååƒæ“ºå¾—ä¸¦ä¸å¾ˆæ•´é½Šã€‚\n" NOR;
 }
 
 int do_move(string arg)
@@ -66,19 +66,19 @@ int do_move(string arg)
         ob = this_player();
 
         if (! arg || arg != "xiang" )
-                return notify_fail("ÄãÒªÒÆ¶¯Ê²Ã´£¿\n");
+                return notify_fail("ä½ è¦ç§»å‹•ä»€éº¼ï¼Ÿ\n");
 
-        message_sort(HIY "\n$N" HIY "×ßµ½ÈýÇå×øÏñ±³ºó£¬ÓÃÁ¦Ê¹¾¢ÍÆÒÆÀÏ"
-                     "¾ýÏñ£¬ÂýÂýµÄÍÆ×Å£¬×øÏñÖÕÓÚÍÆÁË¡£ÏñÏÂÂ¶³öÒ»¸ö´ó"
-                     "¶´£¬¼¸ÅÅÊ¯½×ÍùÏÂÉìÈ¥£¬´ÓÕâÀï·ÖÃ÷Í¨ÏòÒ»¸ö°µµÀ¡£"
+        message_sort(HIY "\n$N" HIY "èµ°åˆ°ä¸‰æ¸…ååƒèƒŒå¾Œï¼Œç”¨åŠ›ä½¿å‹æŽ¨ç§»è€"
+                     "å›åƒï¼Œæ…¢æ…¢çš„æŽ¨è‘—ï¼Œååƒçµ‚äºŽæŽ¨äº†ã€‚åƒä¸‹éœ²å‡ºä¸€å€‹å¤§"
+                     "æ´žï¼Œå¹¾æŽ’çŸ³éšŽå¾€ä¸‹ä¼¸åŽ»ï¼Œå¾žé€™è£¡åˆ†æ˜Žé€šå‘ä¸€å€‹æš—é“ã€‚"
                      "\n\n" NOR, ob);
         set("exits/down", __DIR__"nanyan0");
 
         if (room = find_object(__DIR__"nanyan0"))
         {
                 set("exits/up", __FILE__, room);
-                   message("vision", HIY "\nÌì»¨°åºöÈ»·¢³öÔþÔþµÄÉùÒô£¬"
-                        "Â¶³öÒ»¸öÏòÉÏµÄÂ¥ÌÝ¡£\n" NOR, room );
+                   message("vision", HIY "\nå¤©èŠ±æ¿å¿½ç„¶ç™¼å‡ºè»‹è»‹çš„è²éŸ³ï¼Œ"
+                        "éœ²å‡ºä¸€å€‹å‘ä¸Šçš„æ¨“æ¢¯ã€‚\n" NOR, room );
         }
         remove_call_out("close_andao");
         call_out("close_andao", 3);
@@ -91,13 +91,13 @@ void close_andao()
         int i;
 
         if (! query("exits/down")) return;
-                    message("vision", HIY "\nÖ»ÌýÆ¹µØÒ»ÉùÏì£¬ÀÏ¾ýÏñ×Ô¶¯"
-                        "ÒÆ»ØÔ­´¦¡£\n" NOR, this_object());
+                    message("vision", HIY "\nåªè½ä¹’åœ°ä¸€è²éŸ¿ï¼Œè€å›åƒè‡ªå‹•"
+                        "ç§»å›žåŽŸè™•ã€‚\n" NOR, this_object());
 
             if (room = find_object(__DIR__"nanyan0"))
             {
-                message("vision", HIY "\nÖ»ÌýÆ¹µØÒ»ÉùÏì£¬ÏòÉÏµÄ¶´¿Ú"
-                        "×Ô¶¯ÑÏÑÏÊµÊµµØ¹ØÁËÆðÀ´¡£\n" NOR, room);
+                message("vision", HIY "\nåªè½ä¹’åœ°ä¸€è²éŸ¿ï¼Œå‘ä¸Šçš„æ´žå£"
+                        "è‡ªå‹•åš´åš´å¯¦å¯¦åœ°é—œäº†èµ·ä¾†ã€‚\n" NOR, room);
             }
             delete("exits/down");
 }

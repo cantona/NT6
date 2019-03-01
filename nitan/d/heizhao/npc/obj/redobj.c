@@ -4,13 +4,13 @@ inherit ITEM;
 #include <ansi.h>;
 void create()
 {
-        set_name(HIR"ºì²¼Ð¡ÄÒ"NOR, ({"hongbu xiaonan", "xiaonan"}));
+        set_name(HIR"ç´…å¸ƒå°å›Š"NOR, ({"hongbu xiaonan", "xiaonan"}));
         set_weight(80);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»Ö»ºì²¼Ð¡ÄÒ£¬²»ÖªµÀÓÐÊ²Ã´ÓÃ´¦¡£\n");
-                set("unit", "Ö»");
+                set("long", "é€™æ˜¯ä¸€åªç´…å¸ƒå°å›Šï¼Œä¸çŸ¥é“æœ‰ä»€éº¼ç”¨è™•ã€‚\n");
+                set("unit", "åª");
                 set("value", 1);
         }
 }
@@ -25,10 +25,10 @@ int do_chaikai(string arg)
         string message;
         int col;
 
-        if(!id(arg)) return notify_fail("ÄãÒª²ðÊ²Ã´£¿\n");
+        if(!id(arg)) return notify_fail("ä½ è¦æ‹†ä»€éº¼ï¼Ÿ\n");
         if(!present(this_object(), me))
-                return notify_fail("ÄãÒª²ðÊ²Ã´£¿\n");
-        message_vision("$N²ð¿ªºì²¼Ð¡ÄÒ£¬Ì¯¿ª·¢ÏÖÊÇÕÅºì²¼£¡\n", me);
+                return notify_fail("ä½ è¦æ‹†ä»€éº¼ï¼Ÿ\n");
+        message_vision("$Næ‹†é–‹ç´…å¸ƒå°å›Šï¼Œæ”¤é–‹ç™¼ç¾æ˜¯å¼µç´…å¸ƒï¼\n", me);
         bu = new(__DIR__"redcloth");
         bu->move(me);
         destruct(this_object());

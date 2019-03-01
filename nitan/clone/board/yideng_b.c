@@ -4,10 +4,10 @@ inherit BULLETIN_BOARD;
 
 void create()
 {
-        set_name("Ò»µÆ´óÊ¦ÃÅÏÂµÜ×ÓÁôÑÔ°å", ({ "board" }) );
+        set_name("ä¸€ç‡ˆå¤§å¸«é–€ä¸‹å¼Ÿå­ç•™è¨€æ¿", ({ "board" }) );
         set("location", "/d/heizhao/chanyuan");
         set("board_id", "yideng_b");
-        set("long", "ÕâÊÇÒ»¸ö¹©Ò»µÆ´óÊ¦ÃÅÏÂµÜ×Ó½»Á÷µÄÁôÑÔ°å¡£\n" );
+        set("long", "é€™æ˜¯ä¸€å€‹ä¾›ä¸€ç‡ˆå¤§å¸«é–€ä¸‹å¼Ÿå­äº¤æµçš„ç•™è¨€æ¿ã€‚\n" );
         setup();
         set("capacity", 100);
         replace_program(BULLETIN_BOARD);

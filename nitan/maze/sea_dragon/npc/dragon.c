@@ -1,5 +1,5 @@
 // This program is a part of NT mudlib
-// boss Ä£°å
+// boss æ¨¡æ¿
 
 #include <ansi.h>
 
@@ -9,17 +9,17 @@ int big_blowing();
 
 void create()
 {
-        set_name( HIB "Õòº£ÉñÁú" NOR, ({ "sea dragon king", "dragon king", "dragon" }) );
-        set("long", HIB "ÕâÊÇÒ»ÌõÈ«Éí±ÌÂÌ£¬Îü´óº£Ö®¼äµÄ¾«»ª¶ø³¤´ó"
-                    "µÄÉñÁú£¡ËüÈ«ÉíÉ¢·¢×Å±ÌÂÌÉ«µÄ¹âÃ¢£¡\n\n" NOR);
+        set_name( HIB "é®æµ·ç¥é¾" NOR, ({ "sea dragon king", "dragon king", "dragon" }) );
+        set("long", HIB "é€™æ˜¯ä¸€æ¢å…¨èº«ç¢§ç¶ ï¼Œå¸å¤§æµ·ä¹‹é–“çš„ç²¾è¯è€Œé•·å¤§"
+                    "çš„ç¥é¾ï¼å®ƒå…¨èº«æ•£ç™¼è‘—ç¢§ç¶ è‰²çš„å…‰èŠ’ï¼\n\n" NOR);
 
-        set("race", "Ò°ÊŞ");
-        set("gender", "ĞÛĞÔ");
+        set("race", "é‡ç¸");
+        set("gender", "é›„æ€§");
         set("age", 200);
         set("no_get", 1);
         set("shen_type", 0);
         set("attitude", "aggressive");
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "Î²°Í" }) );
+        set("limbs", ({ "é ­éƒ¨", "èº«é«”", "å°¾å·´" }) );
         set("verbs", ({ "bite", "claw" }) );
 
         set("dex",100);
@@ -46,8 +46,8 @@ void create()
 
         set("chat_chance", 5);
         set("chat_msg", ({
-                HIB "º£µ×´òÀ´Ò»¸ö¾ŞÀË£¡²îµã°ÑÄã¾í×ß£¡\n" NOR,
-                HIB "Õòº£ÉñÁúÍ»È»ÍÂ³öÒ»¿ÅÕ¿À¶µÄÖé×Ó£¬ÓÖ¾íÁË»ØÈ¥£¡\n" NOR,
+                HIB "æµ·åº•æ‰“ä¾†ä¸€å€‹å·¨æµªï¼å·®é»æŠŠä½ å·èµ°ï¼\n" NOR,
+                HIB "é®æµ·ç¥é¾çªç„¶åå‡ºä¸€é¡†æ¹›è—çš„ç å­ï¼Œåˆå·äº†å›å»ï¼\n" NOR,
         }));
 
         set("chat_chance_combat", 100);
@@ -71,11 +71,11 @@ void create()
                 "gold"  : 100,
                 "weiwang"   : 1000,
         ]));
-        // ÎïÆ·½±Àø
+        // ç‰©å“çå‹µ
         // set("killer_reward", killer_reward("sea_dragon"));
         set("drops", ([
-                "RA&RANDOM20"    :       100,  // µÍ¼¶ÆÕÍ¨×°±¸
-                "RA&RANDOM80"    :       30,   // ÖĞ¼¶ÆÕÍ¨×°±¸
+                "RA&RANDOM20"    :       100,  // ä½ç´šæ™®é€šè£å‚™
+                "RA&RANDOM80"    :       30,   // ä¸­ç´šæ™®é€šè£å‚™
                 "FI&/clone/fam/skpaper/finger1" :   50,
                 "FI&/clone/fam/skpaper/hand1"   :   50,
                 "FI&/clone/fam/skpaper/claw1"   :   50,
@@ -113,8 +113,8 @@ varargs void start_busy(mixed new_busy, mixed new_interrupt)
 
 int big_blowing()
 {
-        message_vision(HIB "$N" HIB "´Óº£Ë®ÀïÉîÉîµØÎüÈëÒ»¿ÚÆø£¬È«Éí·¢³öÒ«ÑÛ"
-                       "µÄÀ¶É«£¬Õû¸öÁú¸¹ÕÍ´óÁË¼¸±¶£¡£¡\n" NOR, this_object());
+        message_vision(HIB "$N" HIB "å¾æµ·æ°´è£¡æ·±æ·±åœ°å¸å…¥ä¸€å£æ°£ï¼Œå…¨èº«ç™¼å‡ºè€€çœ¼"
+                       "çš„è—è‰²ï¼Œæ•´å€‹é¾è…¹è„¹å¤§äº†å¹¾å€ï¼ï¼\n" NOR, this_object());
 
         remove_call_out("hurting");
         call_out("hurting", random(2) + 1);
@@ -126,7 +126,7 @@ int hurting()
         int dam, i , num;
         object *inv;
 
-        message_vision(HIB "$N" HIB "ÍÂ³öÒ»¹É¾Ş´óµÄº£ÀË£®£®£®£®£®£®Õû¸öÌìµØËÆºõ¶¼±»ÍÌÃ»£¡£¡£¡\n" NOR,
+        message_vision(HIB "$N" HIB "åå‡ºä¸€è‚¡å·¨å¤§çš„æµ·æµªï¼ï¼ï¼ï¼ï¼ï¼æ•´å€‹å¤©åœ°ä¼¼ä¹éƒ½è¢«åæ²’ï¼ï¼ï¼\n" NOR,
                        this_object());
 
         inv = all_inventory(environment(this_object()));
@@ -166,7 +166,7 @@ mixed hit_ob(object me, object ob, int damage_bouns)
         ob->receive_damage("qi", damage, me);
         ob->receive_wound("qi", damage, me);
         set("neili",query("max_neili",  me), me);
-        return HIB "$N" HIB "¡°¹ş¡±µÄÒ»ÉùÍÂ³öÒ»¿Úº®Æø£¬µÇÊ±Áî$n"
-               HIB "È«Éí¼¸ºõ¶³½©¡£\n" NOR;
+        return HIB "$N" HIB "â€œå“ˆâ€çš„ä¸€è²åå‡ºä¸€å£å¯’æ°£ï¼Œç™»æ™‚ä»¤$n"
+               HIB "å…¨èº«å¹¾ä¹å‡åƒµã€‚\n" NOR;
 }
 

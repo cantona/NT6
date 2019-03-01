@@ -3,10 +3,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�ʹ����");
+        set("short", "皇宮大道");
         set("long", @LONG
-�����ǻʹ��ڵĴ��������Ŀ���ƽ������ʱ��һЩ��Ů��̫��
-�������㲻�Ҷ࿴�����ǿ�㳯ǰ�߰ɣ�ʡ�������������̲顣
+這裡是皇宮內的大道，分外的寬敞平整，不時有一些宮女和太監
+經過，你不敢多看，還是快點朝前走吧，省得招來侍衛的盤查。
 LONG );
         set("outdoors", "city2");
         set("no_fly",1);

@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-        set("short","��ʯ���");
+        set("short","青石大道");
         set("long", @LONG
-����һ��ͨ���ɶ��Ĵ���ʯ��������������Σ�����ʮ�����¡�
-�ɶ�ƽԭ����츮֮������Ұ����Ȯ�ͣ��������䣬һ�ɰ�����Ϣ��
-�����������Կ����ɶ������ˡ�
+這是一條通往成都的大青石道，兩旁綠樹蔭蔽，空氣十分清新。
+成都平原向稱天府之國，四野雞鳴犬吠，交替起落，一派安樂氣息。
+西面隱隱可以看到成都城門了。
 LONG );
         set("outdoors", "chengdu");
         set("exits",([ /* sizeof() == 1 */

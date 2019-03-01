@@ -5,74 +5,74 @@ int parse_inquiry(object me, object ob, string topic)
         switch (topic)
         {
         case "name":
-                message_vision(CYN "$N" CYN "Ïò$n" CYN "ÎÊµÀ£º¸ÒÎÊ" +
-                               RANK_D->query_respect(ob) + "×ğĞÕ´ó"
-                               "Ãû£¿\n" NOR, me, ob);
+                message_vision(CYN "$N" CYN "å‘$n" CYN "å•é“ï¼šæ•¢å•" +
+                               RANK_D->query_respect(ob) + "å°Šå§“å¤§"
+                               "åï¼Ÿ\n" NOR, me, ob);
                 return 1;
 
         case "here":
-                message_vision(CYN "$N" CYN "Ïò$n" CYN "ÎÊµÀ£ºÕâÎ»" +
-                               RANK_D->query_respect(ob) + "£¬" +
-                               RANK_D->query_self(me) + "³õµ½¹ó±¦µØ"
-                               "£¬²»ÖªÕâÀïÓĞĞ©Ê²÷á·çÍÁÈËÇé£¿\n" NOR,
+                message_vision(CYN "$N" CYN "å‘$n" CYN "å•é“ï¼šé€™ä½" +
+                               RANK_D->query_respect(ob) + "ï¼Œ" +
+                               RANK_D->query_self(me) + "åˆåˆ°è²´å¯¶åœ°"
+                               "ï¼Œä¸çŸ¥é€™è£¡æœ‰äº›ä»€éº¼é¢¨åœŸäººæƒ…ï¼Ÿ\n" NOR,
                                me, ob);
                 return 1;
         
         case "all":
-                message_vision(CYN "$N" CYN "Ïò$n" CYN "ÎÊµÀ£ºÕâÎ»" + 
+                message_vision(CYN "$N" CYN "å‘$n" CYN "å•é“ï¼šé€™ä½" + 
                                RANK_D->query_respect(ob) + 
-                               "£¬Äã¶¼ÖªµÀĞ©Ê²Ã´ÊÂÇéÑ½£¿\n" NOR, 
+                               "ï¼Œä½ éƒ½çŸ¥é“äº›ä»€éº¼äº‹æƒ…å‘€ï¼Ÿ\n" NOR, 
                                me, ob);
                 return 1;
                         
         case "clue":
-        case "ÏßË÷":
-                message_vision(CYN "$N" CYN "Ïò$n" CYN "´òÌıµÀ£º" +
-                               RANK_D->query_self(me) + "´ÓÅÔÈË´¦µÃ"
-                               "Öª" + RANK_D->query_respect(ob) +
-                               "ÓĞĞ©ÏßË÷£¬ÄÜ·ñ¸æÖªÔÚÏÂ£¿\n" NOR, me, ob);
+        case "ç·šç´¢":
+                message_vision(CYN "$N" CYN "å‘$n" CYN "æ‰“è½é“ï¼š" +
+                               RANK_D->query_self(me) + "å¾æ—äººè™•å¾—"
+                               "çŸ¥" + RANK_D->query_respect(ob) +
+                               "æœ‰äº›ç·šç´¢ï¼Œèƒ½å¦å‘ŠçŸ¥åœ¨ä¸‹ï¼Ÿ\n" NOR, me, ob);
                 return 1;
 
         case "rumor":
         case "rumors":
-        case "ÏûÏ¢":
-                message_vision(CYN "$N" CYN "Ïò$n" CYN "ÎÊµÀ£ºÕâÎ»" +
-                               RANK_D->query_respect(ob) + "£¬²»Öª"
-                               "×î½üÓĞÃ»ÓĞÌıËµÊ²Ã´ÏûÏ¢£¿\n" NOR, me,
+        case "æ¶ˆæ¯":
+                message_vision(CYN "$N" CYN "å‘$n" CYN "å•é“ï¼šé€™ä½" +
+                               RANK_D->query_respect(ob) + "ï¼Œä¸çŸ¥"
+                               "æœ€è¿‘æœ‰æ²’æœ‰è½èªªä»€éº¼æ¶ˆæ¯ï¼Ÿ\n" NOR, me,
                                ob);
                 return 1;
 
         case "marry":
-                message_vision(CYN "$NÃĞ×ÅÒ»Ë«ÔôÑÛ£¬²»»³ºÃÒâµÄÏò$n"+ 
-                               CYN"ÎÊµÀ£º¸ÒÎÊÕâÎ»"+RANK_D->query_respect(ob) +
-                               "ÊÇ·ñ»éÅä£¿\n" NOR,me,ob);
+                message_vision(CYN "$Nçœ¯è‘—ä¸€é›™è³Šçœ¼ï¼Œä¸æ‡·å¥½æ„çš„å‘$n"+ 
+                               CYN"å•é“ï¼šæ•¢å•é€™ä½"+RANK_D->query_respect(ob) +
+                               "æ˜¯å¦å©šé…ï¼Ÿ\n" NOR,me,ob);
                 return 1;
         
         case "food":
-                message_vision(CYN "$N¿ÉÁ¯ÙâÙâµÄÏò$n"+CYN"ÎÊµÀ£º¡°²»ÖªÕâÎ»"+
+                message_vision(CYN "$Nå¯æ†å…®å…®çš„å‘$n"+CYN"å•é“ï¼šâ€œä¸çŸ¥é€™ä½"+
                                RANK_D->query_respect(ob) +
-                               "ÊÇ·ñÄÜ¸øÎÒµã³ÔµÄ, ÔÚÏÂÒÑ¾­ÈıÌìÃ»ÓĞ½øÊ³ÁË£¿¡±\n" NOR,
+                               "æ˜¯å¦èƒ½çµ¦æˆ‘é»åƒçš„, åœ¨ä¸‹å·²ç¶“ä¸‰å¤©æ²’æœ‰é€²é£Ÿäº†ï¼Ÿâ€\n" NOR,
                                me,ob);
                 return 1;
         
         case "water":
-                message_vision(CYN "$N¿ÉÁ¯ÙâÙâµÄÏò$n"+CYN"ÎÊµÀ£º¡°²»ÖªÕâÎ»"+
+                message_vision(CYN "$Nå¯æ†å…®å…®çš„å‘$n"+CYN"å•é“ï¼šâ€œä¸çŸ¥é€™ä½"+
                                RANK_D->query_respect(ob) +
-                               "ÊÇ·ñÄÜ¸øÎÒµãºÈµÄ, ÔÚÏÂ¿Ú¿ÊµÃºÜ£¿¡±\n" NOR,
+                               "æ˜¯å¦èƒ½çµ¦æˆ‘é»å–çš„, åœ¨ä¸‹å£æ¸´å¾—å¾ˆï¼Ÿâ€\n" NOR,
                                me,ob);
                 return 1;
         
         case "money":
-                message_vision(CYN "$NË«ÊÖ±§È­Ïò$n"+CYN"ÎÊµÀ£º¡°ÔÚÏÂ³õÀ´Õ¦µ½£¬ĞĞ×ß½­ºşÈ±ÁËĞ©ÅÌ²ø,ÕâÎ»"+
+                message_vision(CYN "$Né›™æ‰‹æŠ±æ‹³å‘$n"+CYN"å•é“ï¼šâ€œåœ¨ä¸‹åˆä¾†å’‹åˆ°ï¼Œè¡Œèµ°æ±Ÿæ¹–ç¼ºäº†äº›ç›¤çº,é€™ä½"+
                                RANK_D->query_respect(ob) +
-                               "ÊÇ·ñÄÜÊ©ÉáÒ»¶ş, ÔÚÏÂ²»Éõ¸Ğ¼¤£¿¡±\n" NOR,
+                               "æ˜¯å¦èƒ½æ–½èˆä¸€äºŒ, åœ¨ä¸‹ä¸ç”šæ„Ÿæ¿€ï¼Ÿâ€\n" NOR,
                                me,ob);
                 return 1;
                 
         case "friend":
-                message_vision(CYN "$NË«ÊÖ±§È­Ïò$n"+CYN"ËµµÀ£º¡°ËÄº£Ö®ÄÚ½ÔĞÖµÜÒ²,ÕâÎ»"+
+                message_vision(CYN "$Né›™æ‰‹æŠ±æ‹³å‘$n"+CYN"èªªé“ï¼šâ€œå››æµ·ä¹‹å…§çš†å…„å¼Ÿä¹Ÿ,é€™ä½"+
                                RANK_D->query_respect(ob) +
-                               ",²»ÖªÔ¸·ñÓëÔÚÏÂ½»¸öÅóÓÑ¡±\n" NOR,
+                               ",ä¸çŸ¥é¡˜å¦èˆ‡åœ¨ä¸‹äº¤å€‹æœ‹å‹â€\n" NOR,
                                me,ob);
                 return 1;
                 

@@ -2,16 +2,16 @@
 inherit ITEM;
 void create()
 {
-        set_name(HIY "÷è÷ëÄÚµ¤" NOR, ({"qilinneidan"}));
+        set_name(HIY "éº’éºŸå…§ä¸¹" NOR, ({"qilinneidan"}));
         set_weight(1);
         if (clonep())
                 set_default_object(__FILE__);
         else {  
-        	set("long", HIC "´«Ëµ÷è÷ëÄÚµ¤ÄËĞŞÁ¶Ç§Äê»ğ÷è÷ëµÄÄÚµ¤£¬ÓµÓĞÎŞ±ßµÄÁ¦Á¿¡£\n" + 
-        	                "·şÊ³(fushi qilinneidan ¼¼ÄÜid)ºó¿ÉÓÀ¾ÃÌáÉı·ÇÖªÊ¶Àà¼¼ÄÜ1¼¶¡£\n" HIC
-        	                "ÓµÓĞÕß£ºzhuri\n" NOR);
-                set("unit", "¿Å");
-                set("owner", "zhuri"); // °ó¶¨ÓµÓĞÕß
+        	set("long", HIC "å‚³èªªéº’éºŸå…§ä¸¹ä¹ƒä¿®ç…‰åƒå¹´ç«éº’éºŸçš„å…§ä¸¹ï¼Œæ“æœ‰ç„¡é‚Šçš„åŠ›é‡ã€‚\n" + 
+        	                "æœé£Ÿ(fushi qilinneidan æŠ€èƒ½id)å¾Œå¯æ°¸ä¹…æå‡éçŸ¥è­˜é¡æŠ€èƒ½1ç´šã€‚\n" HIC
+        	                "æ“æœ‰è€…ï¼šzhuri\n" NOR);
+                set("unit", "é¡†");
+                set("owner", "zhuri"); // ç¶å®šæ“æœ‰è€…
 	        set("no_drop", 1);set("no_give", 1);set("no_store", 1);set("no_sell", 1);
         }
         setup();
@@ -30,37 +30,37 @@ int do_use(string arg)
 	me = this_player();
 
 	if (! arg )
-		return notify_fail("ÄãÒª·şÊ³Ê²Ã´£¿\n");
+		return notify_fail("ä½ è¦æœé£Ÿä»€éº¼ï¼Ÿ\n");
 
 	if (! sscanf(arg, "qilinneidan %s", skid))
-		return notify_fail("Ö¸Áî¸ñÊ½£ºfuyong qilinneidan ¼¼ÄÜID\n");
+		return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šfuyong qilinneidan æŠ€èƒ½ID\n");
 
 	arg = "qilinneidan";
 
 	if (! objectp(ob = present(arg, me)))
-		return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâ¸ö¶«Î÷£¡\n");
+		return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™å€‹æ±è¥¿ï¼\n");
 
 	if (ob->query("owner") != me->query("id"))
-		return notify_fail(ob->name() + NOR "ÒÑ¾­ÓÚÆäËûÍæ¼Ò°ó¶¨£¡\n");
+		return notify_fail(ob->name() + NOR "å·²ç¶“äºå…¶ä»–ç©å®¶ç¶å®šï¼\n");
 
 	if (! me->query_skill(skid, 1))
-		return notify_fail("ÄãÃ»ÓĞÕâ¸ö¼¼ÄÜ£¬ÇëÈ·ÈÏÊäÈëÊÇ·ñÕıÈ·£¡\n");
+		return notify_fail("ä½ æ²’æœ‰é€™å€‹æŠ€èƒ½ï¼Œè«‹ç¢ºèªè¼¸å…¥æ˜¯å¦æ­£ç¢ºï¼\n");
 	
 	if (skid == "zuoyou-hubo")
-		return notify_fail("×óÓÒ»¥²©²»ÄÜÌáÉı£¡\n");
+		return notify_fail("å·¦å³äº’åšä¸èƒ½æå‡ï¼\n");
 
 	if (("/kungfu/skill/" + skid)->type() == "knowledge")
-		return notify_fail("ÖªÊ¶Àà¼¼ÄÜ²»ÄÜÌáÉı£¡\n");
+		return notify_fail("çŸ¥è­˜é¡æŠ€èƒ½ä¸èƒ½æå‡ï¼\n");
 
 	if (("/kungfu/skill/" + skid)->type() != "martial")
-		return notify_fail("ÕâÏî¼¼ÄÜÎ´¶¨ÒåÀàĞÍ²»ÄÜÌáÉı£¡\n");
+		return notify_fail("é€™é …æŠ€èƒ½æœªå®šç¾©é¡å‹ä¸èƒ½æå‡ï¼\n");
 
 	me->set_skill(skid, me->query_skill(skid, 1) + 1);
 
-	tell_object(me, HIG "¹§Ï²£¡Äã·şÏÂ" + ob->name() + HIG "ºó£¬" + to_chinese(skid) + "ÌáÉı1¼¶£¡\n");
+	tell_object(me, HIG "æ­å–œï¼ä½ æœä¸‹" + ob->name() + HIG "å¾Œï¼Œ" + to_chinese(skid) + "æå‡1ç´šï¼\n");
 	
-	log_file("super/"+ filter_color(query("name")) , me->query("id") + " at " + ctime(time()) + " Ê¹ÓÃ" + ob->name() + 
-	                                                "ÌáÉı¼¼ÄÜ£º" + to_chinese(skid) + "¡£\n");
+	log_file("super/"+ filter_color(query("name")) , me->query("id") + " at " + ctime(time()) + " ä½¿ç”¨" + ob->name() + 
+	                                                "æå‡æŠ€èƒ½ï¼š" + to_chinese(skid) + "ã€‚\n");
 
 	me->save();
 	

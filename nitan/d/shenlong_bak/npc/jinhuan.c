@@ -6,10 +6,10 @@ int snake_attspeed(object);
 
 void create()
 {
-        set_name("½ğ»·Éß", ({ "snake", "jinhuan she","she","jinhuan" }) );
-        set("race", "ÅÀÉß");
+        set_name("é‡‘ç’°è›‡", ({ "snake", "jinhuan she","she","jinhuan" }) );
+        set("race", "çˆ¬è›‡");
         set("age", 8);
-        set("long", "Ò»ÌõÈ«ÉíÉÁ×Å½ğ¹â£¬ÈÆ×ÅÒ»È¦È¦Ô²»·µÄ¶¾Éß¡£\n");
+        set("long", "ä¸€æ¢å…¨èº«é–ƒè‘—é‡‘å…‰ï¼Œç¹è‘—ä¸€åœˆåœˆåœ“ç’°çš„æ¯’è›‡ã€‚\n");
         set("attitude", "peaceful");
 
         set("str", 30);

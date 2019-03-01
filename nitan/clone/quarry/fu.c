@@ -3,8 +3,8 @@ inherit QUARRY;
 
 void create()
 {
-        set_name("òùòð", ({ "bian fu", "bian", "fu" }));
-        set("long", WHT "ÕâÊÇÒ»Ö»òùòð£¬Õýµ¹¹ÒÔÚ¶´¶¥¡£\n" NOR);
+        set_name("è™è ", ({ "bian fu", "bian", "fu" }));
+        set("long", WHT "é€™æ˜¯ä¸€åªè™è ï¼Œæ­£å€’æŽ›åœ¨æ´žé ‚ã€‚\n" NOR);
         set("no_auto_kill", 1);
         set("aves", 1);
 

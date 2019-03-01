@@ -3,13 +3,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIR "²¶ÊŞ¼Ğ" NOR, ({ "bushou jia","jia", "bushou" }));
+        set_name(HIR "æ•ç¸å¤¾" NOR, ({ "bushou jia","jia", "bushou" }));
         set_weight(1000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
-                set("long", "ÕâÊÇ×¨ÃÅÓÃÀ´²¶×½¸÷ÖÖÇİÊŞµÄ£¬¼Ğ³İ·æÀûÎŞ±È¡£ \n");
+                set("unit", "å€‹");
+                set("long", "é€™æ˜¯å°ˆé–€ç”¨ä¾†æ•æ‰å„ç¨®ç¦½ç¸çš„ï¼Œå¤¾é½’é‹’åˆ©ç„¡æ¯”ã€‚ \n");
                 set("value", 1000);
                 set("material", "iron");
         }

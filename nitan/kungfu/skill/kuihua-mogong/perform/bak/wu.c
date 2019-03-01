@@ -1,4 +1,4 @@
-// wu.c ÈºÄ§ÂÒÎè
+// wu.c ç¾¤é­”äº‚èˆ
 
 #include <ansi.h>
 
@@ -19,44 +19,44 @@ int perform(object me, object target)
         }
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail("ÈºÄ§ÂÒÎèÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ç¾¤é­”äº‚èˆåªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
  
         if( query("neili", me)<200 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬ÎŞ·¨Ê©Õ¹ÈºÄ§ÂÒÎè£¡\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼Œç„¡æ³•æ–½å±•ç¾¤é­”äº‚èˆï¼\n");
 
         if ((lvl = me->query_skill("kuihua-mogong", 1)) < 150)
-                return notify_fail("ÄãµÄ¿û»¨Ä§¹¦»ğºò²»¹»£¬ÎŞ·¨Ê©Õ¹ÈºÄ§ÂÒÎè£¡\n");
+                return notify_fail("ä½ çš„è‘µèŠ±é­”åŠŸç«å€™ä¸å¤ ï¼Œç„¡æ³•æ–½å±•ç¾¤é­”äº‚èˆï¼\n");
 
         if( weapon=query_temp("weapon", me) )
         {
                 if( query("skill_type", weapon) != "sword" && 
                     query("skill_type", weapon) != "pin" )
-                        return notify_fail("ÄãÊÖÀïÄÃµÄ²»ÊÇ½££¬ÔõÃ´Ê©"
-                                           "Õ¹ÈºÄ§ÂÒÎè£¿\n");
+                        return notify_fail("ä½ æ‰‹è£¡æ‹¿çš„ä¸æ˜¯åŠï¼Œæ€éº¼æ–½"
+                                           "å±•ç¾¤é­”äº‚èˆï¼Ÿ\n");
         } else
         {
                 if (me->query_skill_prepared("finger") != "kuihua-mogong")
-                        return notify_fail("Äã²¢Ã»ÓĞ×¼±¸Ê¹ÓÃ¿û"
-                                           "»¨Ä§¹¦£¬ÈçºÎÊ©Õ¹ÈºÄ§ÂÒÎè£¿\n");
+                        return notify_fail("ä½ ä¸¦æ²’æœ‰æº–å‚™ä½¿ç”¨è‘µ"
+                                           "èŠ±é­”åŠŸï¼Œå¦‚ä½•æ–½å±•ç¾¤é­”äº‚èˆï¼Ÿ\n");
         }
 
        if (! living(target))
-              return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+              return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIR "$N" HIR "Ä¬ÔË¿û»¨Ä§¹¦£¬ÉíĞÎ±äµÃÆæ¿ìÎŞ±È£¬½ÓÁ¬Ïò$n"
-              HIR "¹¥³öÊıÕĞ£¡\n" NOR;
+        msg = HIR "$N" HIR "é»˜é‹è‘µèŠ±é­”åŠŸï¼Œèº«å½¢è®Šå¾—å¥‡å¿«ç„¡æ¯”ï¼Œæ¥é€£å‘$n"
+              HIR "æ”»å‡ºæ•¸æ‹›ï¼\n" NOR;
         i = 5;
         if (lvl + random(lvl) > (int)target->query_skill("dodge"))
         {
-                msg += HIR "$n" HIR "Ö»¾õµÃÑÛÇ°Ò»»¨£¬·¢ÏÖËÄÖÜ¶¼ÊÇ$N"
-                       HIR "µÄÉíÓ°£¬²»ÓÉ°µÉú¾åÒâ£¬½ÓÁ¬ºóÍË¡£\n" NOR;
+                msg += HIR "$n" HIR "åªè¦ºå¾—çœ¼å‰ä¸€èŠ±ï¼Œç™¼ç¾å››å‘¨éƒ½æ˜¯$N"
+                       HIR "çš„èº«å½±ï¼Œä¸ç”±æš—ç”Ÿæ‡¼æ„ï¼Œæ¥é€£å¾Œé€€ã€‚\n" NOR;
                 count = me->query_skill("kuihua-mogong", 1) / 7;
                 addn_temp("apply/attack", count, me);
                 i += random(6);
         } else
         {
-                msg += CYN "$n" CYN "¼û$N" CYN "Éí·¨ºÃ¿ì£¬ÄÄÀï"
-                       "¸Òµ¡Âı£¬Á¬Ã¦´òÆğ¾«ÉñĞ¡ĞÄÓ¦¶Ô¡£\n" NOR;
+                msg += CYN "$n" CYN "è¦‹$N" CYN "èº«æ³•å¥½å¿«ï¼Œå“ªè£¡"
+                       "æ•¢æ€ æ…¢ï¼Œé€£å¿™æ‰“èµ·ç²¾ç¥å°å¿ƒæ‡‰å°ã€‚\n" NOR;
                 count = 0;
         }
 

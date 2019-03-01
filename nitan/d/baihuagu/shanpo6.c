@@ -6,13 +6,13 @@
 inherit ROOM;
 void create()
 {
-        set("short", GRN"ɽ����"NOR);
+        set("short", GRN"山谷中"NOR);
         set("long",
-HIY"����һ��ɽ�ȡ�����ɽ�����ϣ���ס��ɽ�磬��֮���¿��
-�ḻ�����Ե�����ů���ٻ��ȷš��˴����ż���ľ�ܣ������߰�
-���䳲������Ⱥ�����裬���������������������׵�ɽ�ȴ�����
-����������ɽ���и������������кܶ��ľ����������������࣬
-ż���ɼ�һ�����ھ��ҩ��ũ�ˡ�\n"NOR);
+HIY"這是一面山谷。由于山坡向南，阻住了山風，加之地下礦藏
+豐富，所以地氣極暖，百花先放。此處架著幾個木架，托著七八
+個蜂巢。但見群蜂爭舞，到處都是嗡嗡聲，給靜謐的山谷帶來了
+無限生氣。山谷中高樹林立，還有很多灌木，想來谷中物產極多，
+偶爾可見一兩個挖掘草藥的農人。\n"NOR);
         set("outdoors", "baihuagu");
         set("count", 10);
         set("exits", ([
@@ -22,7 +22,7 @@ HIY"����һ��ɽ�ȡ�����ɽ�����ϣ���ס��ɽ�磬��֮���¿��
                 __DIR__"npc/yubee": 2
         ]));
         set("item_desc", ([
-                "�䳲" : "����һ���޴�ķ䳲������ܶ��ܷ���æ�����ۡ�\n",
+                "蜂巢" : "這是一個巨大的蜂巢，裡面很多密蜂正忙著釀蜜。\n",
         ]));
         set("coor/x", -390);
         set("coor/y", -370);
@@ -43,18 +43,18 @@ int do_dig(string arg)
         me=this_player();
         if( query("food", me) >= me->max_food_capacity() )
         {
-                message_vision( HIC"$N��Ҫ��ʲô��ͻȻ����ͯ���˹�����а���Ц��һ�£���Ȼ������ȡ��һ֧���ߣ���$N���й��ȥ�����не����ҽ���ԣ�����$N���ͷ���ۻ����ԵĶ����˳���������ͯ�����Ц�ˣ���һ���̵����ˡ�\n"NOR,me);
+                message_vision( HIC"$N正要挖什麼，突然老頑童跑了過來，邪惡地笑了一下，猛然從身後取出一支茯苓，望$N嘴中灌過去，口中叫道：我叫你吃！！把$N灌得頭暈眼花，吃的都吐了出來。老頑童得意地笑了，又一溜煙地跑了。\n"NOR,me);
                 return 1;
         }
         else
         {
                 if (query("count") > 0)
                 {
-                        message_vision("$N����һ������ڵ�һ�����ڡ��������£��Խ�������\n",me);
+                        message_vision("$N挖了一會兒，挖到一顆首烏。當下坐下，吃將起來。\n",me);
                         addn("food", 30, me);
                         addn("count", -1);
                 }
-                else message_vision("$N����һ�����ɶ��û�С�\n",me);
+                else message_vision("$N挖了一會兒，啥都沒有。\n",me);
                 return 1;
         }
 }
@@ -64,18 +64,18 @@ int do_full(string arg)
         me=this_player();
         if( query("water", me) >= me->max_water_capacity() )
         {
-                message_vision( HIY"$N����δ���������Ķ��ӣ�������䳲����ͻȻ�ҽ�һ���������˶�����������ֻ����ֻ�ֶ�����������\n"NOR,me);
+                message_vision( HIY"$N意猶未盡地拍了拍肚子，手伸向蜂巢──突然慘叫一聲，整個人都跳了起來，只見整只手都膨脹起來。\n"NOR,me);
                 return 1;
         }
         else
         {
                 if (query("count") > 0)
                 {
-                        message_vision("$N�ӷ䳲��ȡ��Щ�佬������������\n",me);
+                        message_vision("$N從蜂巢中取了些蜂漿，喝了起來。\n",me);
                         addn("water", 30, me);
                         addn("count", -1);
                 }
-                else message_vision("$N����һ�����ɶ��û�С�\n",me);
+                else message_vision("$N掏了一會兒，啥都沒有。\n",me);
                 return 1;
         }
 }
@@ -86,14 +86,14 @@ int do_getmi(string arg)
         me=this_player();
         if( query_temp("marks/getmi", me) )
         {
-                message_vision(HIY"$N����һ�����ӷ䳲��ȡ��һ���ۡ�\n"NOR,me);
+                message_vision(HIY"$N歡叫一聲，從蜂巢中取出一罐蜜。\n"NOR,me);
                 new("/d/baihuagu/obj/mi")->move(me);
                 set_temp("marks/getmi", 0, me);
                 return 1;
         }
         else
         {
-                message_vision( HIR"$N�ٺ�һЦ����߯�������䳲��ȥ����Ҫ�����ж���ͻ���˵ļ�������ֻ��������彫��������$N�ص���ͷ�����\n"NOR,me);
+                message_vision( HIR"$N嘿嘿一笑，賊忒兮兮地向蜂巢湊去，正要有所行動，突聽嗡的幾聲，幾只玉蜂從裡面沖將而出，把$N蜇得滿頭大包！\n"NOR,me);
                 return 1;
         }
 }

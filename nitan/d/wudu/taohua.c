@@ -4,12 +4,12 @@ inherit ROOM;
 
 void create()
 {
-        set("short", HIM "ÌÒ»¨Óø" NOR);
+        set("short", HIM "æ¡ƒèŠ±å³ª" NOR);
         set("long", @LONG
-Äã×ßÔÚÁ½É½Ïà¼ĞµÄÏ¿¹ÈÖĞ£¬É½ÉÏÉ½ÏÂÈ«ÊÇÎŞ±ßµÄÒ°ÌÒÊ÷£¬Ò»ÕóÉ½
-·ç´µÀ´£¬ÂäÓ¢çÍ·×¡£Êı°ÙÄêÂäÏÂµÄÌÒ»¨£¬ÌÒÖ¦¶¼¶Ñ»ıÔÚµØÉÏ£¬ÈË×ßÔÚ
-ÉÏÃæÈíÈíµÄ¡£ÈÕ½üÕıÎçÁË£¬Ô¶´¦µÄÉ½ÁÖÖ®¼äËÆºõÆ®µ´×ÅÒ»¹ÉÇáÎí£¬Ô½
-À´Ô½Å¨¡£
+ä½ èµ°åœ¨å…©å±±ç›¸å¤¾çš„å³½è°·ä¸­ï¼Œå±±ä¸Šå±±ä¸‹å…¨æ˜¯ç„¡é‚Šçš„é‡æ¡ƒæ¨¹ï¼Œä¸€é™£å±±
+é¢¨å¹ä¾†ï¼Œè½è‹±ç¹½ç´›ã€‚æ•¸ç™¾å¹´è½ä¸‹çš„æ¡ƒèŠ±ï¼Œæ¡ƒæéƒ½å †ç©åœ¨åœ°ä¸Šï¼Œäººèµ°åœ¨
+ä¸Šé¢è»Ÿè»Ÿçš„ã€‚æ—¥è¿‘æ­£åˆäº†ï¼Œé è™•çš„å±±æ—ä¹‹é–“ä¼¼ä¹é£„ç›ªè‘—ä¸€è‚¡è¼•éœ§ï¼Œè¶Š
+ä¾†è¶Šæ¿ƒã€‚
 LONG);
         set("outdoors", "wudujiao");
 
@@ -28,19 +28,19 @@ int valid_leave (object who, string dir)
         else
         {
                 if (userp(who)
-                    && query("family/family_name", who) != "Îå¶¾½Ì" )
+                    && query("family/family_name", who) != "äº”æ¯’æ•™" )
                 {
                         if (! (present("xingjun san", who))
                             && query("max_neili", who)<1000 )
                         {
-                                message_vision (HIM "Ö»ÎÅÒ»ÕóÅ¨ÓôµÄÏãÆøÏ®À´¡­¡­$N"
-                                                HIM "¶ÙÊ±¾õµÃÍ·ÖØ½ÅÇá¡£\n" NOR, who);
+                                message_vision (HIM "åªèä¸€é™£æ¿ƒé¬±çš„é¦™æ°£è¥²ä¾†â€¦â€¦$N"
+                                                HIM "é “æ™‚è¦ºå¾—é ­é‡è…³è¼•ã€‚\n" NOR, who);
                                 who->receive_damage("qi", 50);
                                 remove_call_out ("fall_down");
                                 call_out ("fall_down", 1, who, environment(who));
                                 who->start_busy(1, 1);
-                                return notify_fail(HIR "Äã½û²»×¡õÔõÄÁË¼¸ÏÂ£¬Á½ÍÈÍ»È»"
-                                                   "Ò»Èí¡£\n\n" NOR);
+                                return notify_fail(HIR "ä½ ç¦ä¸ä½è¸‰è¹Œäº†å¹¾ä¸‹ï¼Œå…©è…¿çªç„¶"
+                                                   "ä¸€è»Ÿã€‚\n\n" NOR);
                         } 
                 }
                 return 1;

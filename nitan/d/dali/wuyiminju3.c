@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-        set("short","ÎÚÒÄÃñ¾Ó");
+        set("short","çƒå¤·æ°‘å±…");
         set("long",@LONG
-ÕâÊÇÒ»ËùÎÚÒÄ×åµÄ·¿ÎÝ¡£´Ë¼äÕý´¦ÊÐÕò£¬ËÄÖÜÎÞÉ½ÊÆ¿ÉÒÀ£¬ÃÅ¿Ú
-Õý¶ÔÏïÄ°¡£ÇàÊ¯´ó·¿£¬×°ÐÞÆÄÎª²»Ë×£¬´óÃÅÊÇ¾«ÐÄµñÖÆµÄ£¬¿ÌÓÐ
-ÈÕ¡¢ÔÂ¡¢»¢±ªµÈ¾«ÃÀµÄÍ¼°¸£¬¿´À´ÕâÀïÊÇÎÚÈö²¿µÄ¼Àìë´óÎÝ¡£
+é€™æ˜¯ä¸€æ‰€çƒå¤·æ—çš„æˆ¿å±‹ã€‚æ­¤é–“æ­£è™•å¸‚éŽ®ï¼Œå››å‘¨ç„¡å±±å‹¢å¯ä¾ï¼Œé–€å£
+æ­£å°å··é™Œã€‚é’çŸ³å¤§æˆ¿ï¼Œè£ä¿®é —ç‚ºä¸ä¿—ï¼Œå¤§é–€æ˜¯ç²¾å¿ƒé›•åˆ¶çš„ï¼Œåˆ»æœ‰
+æ—¥ã€æœˆã€è™Žè±¹ç­‰ç²¾ç¾Žçš„åœ–æ¡ˆï¼Œçœ‹ä¾†é€™è£¡æ˜¯çƒæ’’éƒ¨çš„ç¥­ç¥€å¤§å±‹ã€‚
 LONG);
         set("exits",([ /* sizeof() == 1 */
             "enter"  : __DIR__"jisidawu1",

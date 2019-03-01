@@ -1,4 +1,4 @@
-//neiyuan.c                ËÄ´¨ÌÆÃÅ¡ªÄÚÔº
+//neiyuan.c                å››å·å”é–€â”€å…§é™¢
 
 #include <ansi.h>
 #include <room.h>
@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÄÚÔº");
+        set("short", "å…§é™¢");
         set("long",
-"ÕâÀïÊÇÁ«ÔÆ¸óÄÚÔº¡£´ÓÕâÀïÏò±±¾ÍÊÇÌÆÃÅµÄºËÐÄÌÆÀÏÌ«Ì«µÄÇÞÊÒ¾ÝÎÅ\n"
-"ÍâÈËÒª¼ûµ½ÌÆÀÏÌ«Ì«ÊÆ±ÈµÇÌì»¹ÄÑ£¬´ÓÕâÀïÏò¶«ÊÇÒ»¼ä²ñ·¿£¬ÏòÎ÷ÊÇÍ¨Ïò\n"
-"ºóÔºµÄÐ¡Â·¡£\n"
+"é€™è£¡æ˜¯è“®é›²é–£å…§é™¢ã€‚å¾žé€™è£¡å‘åŒ—å°±æ˜¯å”é–€çš„æ ¸å¿ƒå”è€å¤ªå¤ªçš„å¯¢å®¤æ“šèž\n"
+"å¤–äººè¦è¦‹åˆ°å”è€å¤ªå¤ªå‹¢æ¯”ç™»å¤©é‚„é›£ï¼Œå¾žé€™è£¡å‘æ±æ˜¯ä¸€é–“æŸ´æˆ¿ï¼Œå‘è¥¿æ˜¯é€šå‘\n"
+"å¾Œé™¢çš„å°è·¯ã€‚\n"
 );
         set("exits", ([
                         "south" : __DIR__"nzlang1",
@@ -25,9 +25,9 @@ void create()
 
 int valid_leave(object me, string dir)
 {
-        if( (dir == "north") && (query("family/family_name", me) != "ÌÆÃÅÊÀ¼Ò") && 
+        if( (dir == "north") && (query("family/family_name", me) != "å”é–€ä¸–å®¶") && 
                 !wizardp(me) && (objectp( present("tang si", environment(me)) ) ))
-                return notify_fail("ÌÆË¼Ò»ÉìÊÖ£¬ËµµÀ£º¡°Äã²»ÊÇÌÆÃÅÖÐÈË£¬²»ÄÜÔÙÏòÇ°×ßÁË£¡¡±\n");
+                return notify_fail("å”æ€ä¸€ä¼¸æ‰‹ï¼Œèªªé“ï¼šâ€œä½ ä¸æ˜¯å”é–€ä¸­äººï¼Œä¸èƒ½å†å‘å‰èµ°äº†ï¼â€\n");
         else
                 return ::valid_leave(me, dir);
 }

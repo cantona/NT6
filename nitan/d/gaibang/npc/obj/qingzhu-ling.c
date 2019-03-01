@@ -3,15 +3,15 @@ inherit ITEM;
 
 void create()
 {
-        set_name(NOR + GRN "ÇàÖñÁî" NOR, ({ "qingzhu ling", "qingzhu", "ling" }));
+        set_name(NOR + GRN "é’ç«¹ä»¤" NOR, ({ "qingzhu ling", "qingzhu", "ling" }));
         set_weight(500);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ãæ");
-                set("long", GRN "ÕâÊÇÒ»ÃæÓÃÇàÖñ×ö³ÉµÄÁîÅÆ£¬Æ¾´Ë¿ÉÏò°ïÄÚ"
-                            "Ê¦ĞÖÌôÕ½¡£\n" NOR);
+                set("unit", "é¢");
+                set("long", GRN "é€™æ˜¯ä¸€é¢ç”¨é’ç«¹åšæˆçš„ä»¤ç‰Œï¼Œæ†‘æ­¤å¯å‘å¹«å…§"
+                            "å¸«å…„æŒ‘æˆ°ã€‚\n" NOR);
                 set("material", "steel");
-                set("no_sell", "ÕâÊÇÉ¶£¿Ò²ÄÜÂôÇ®£¿");
+                set("no_sell", "é€™æ˜¯å•¥ï¼Ÿä¹Ÿèƒ½è³£éŒ¢ï¼Ÿ");
         }
 }

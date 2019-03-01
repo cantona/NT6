@@ -6,11 +6,11 @@
 inherit ROOM;
 void create()
 {
-        set("short", "�Է�");
+        set("short", "臥房");
         set("long", @LONG
-���߽���һ���Է���һ���������޵������˱Ƕ������ٽ��黭������
-ǽ�ϡ�����ɴ�֣������⡣С������Ҥ����ƿ�ڵ��һ�����ʢ��������
-һ�Ŵ�����ͷ���������Ʊ���
+你走進了一間臥房。一股若有若無的甜香撲鼻而來。琴劍書畫，掛在
+牆上。錦籠紗罩，金彩珠光。小幾上汝窯美人瓶內的桃花正自盛開。右首
+一張床，床頭放著五彩鸞紋被。
 LONG );
         set("exits", ([
                 "north" :__DIR__"hyjuchu",

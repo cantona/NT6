@@ -6,14 +6,14 @@ inherit FINGER;
 
 void create()
 {
-   set_name(HIG"çúçê½äÖ¸"NOR, ({ "finger"}) );
+   set_name(HIG"ç¥ç€æˆ’æŒ‡"NOR, ({ "finger"}) );
    set_weight(500);
    if( clonep() )
      set_default_object(__FILE__);
    else {
-     set("long","ÕâÊÇÒ»Ã¶Ãû¹óµÄçúçê½äÖ¸¡£\n");
-     set("material", "çúçê");
-     set("unit", "Ã¶");
+     set("long","é€™æ˜¯ä¸€æšåè²´çš„ç¥ç€æˆ’æŒ‡ã€‚\n");
+     set("material", "ç¥ç€");
+     set("unit", "æš");
      set("value", 800);
      set("armor_prop/armor",3);
      set("armor_prop/dodge",2);

@@ -1,9 +1,9 @@
 /*
  * bps.c
  *
- * query_bandwide() ·µ»ØÖµÎª float *
-        0 Îª µ½À´Êı¾İ
-        1 Îª ·¢ËÍ³öÈ¥µÄÊı¾İ
+ * query_bandwide() è¿”å›å€¼ç‚º float *
+        0 ç‚º åˆ°ä¾†æ•¸æ“š
+        1 ç‚º ç™¼é€å‡ºå»çš„æ•¸æ“š
 */
 
 inherit F_CLEAN_UP;
@@ -15,7 +15,7 @@ int main(object me)
 
         bps = query_bandwide();
 
-        out = sprintf("¶Ë¿Ú½øÈëÊı¾İÁ÷Á¿£º%.2f K/Ãë£¬ËÍ³öÁ÷Á¿£º%.2f K/Ãë\n",bps[0]*8/1000, bps[1]*8/1000);
+        out = sprintf("ç«¯å£é€²å…¥æ•¸æ“šæµé‡ï¼š%.2f K/ç§’ï¼Œé€å‡ºæµé‡ï¼š%.2f K/ç§’\n",bps[0]*8/1000, bps[1]*8/1000);
         write(out);
         return 1;
 }

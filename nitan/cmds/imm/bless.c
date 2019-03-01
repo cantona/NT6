@@ -32,7 +32,7 @@ TEXT,
                   |     .    .    . +.    +  .
                  \|/            .       .   . .
         . .       V          .    * . . .  .  +   .
-           +     ¡î           .   .      +
+           +     â˜†           .   .      +
                             .       . +  .+. .
   .                      .     . + .  . .     .      .
            .      .    .     . .   . . .
@@ -61,7 +61,7 @@ TEXT,
       __/M__                    p-p_|__|__|_____|__|__|_q-q      **Y**
  ____|O_^_O|___________________[EEEEM==M==MM===MM==M==MEEEE]-__....|....
 
-    £Ä£Ï £Ù£Ï£Õ £Æ£Å£Å£Ì £Ô£È£Å £Ì£Ï£Ö£Å £Ô£Ï£Î£É£Ç£È£Ô£¿
+    ï¼¤ï¼¯ ï¼¹ï¼¯ï¼µ ï¼¦ï¼¥ï¼¥ï¼¬ ï¼´ï¼¨ï¼¥ ï¼¬ï¼¯ï¼¶ï¼¥ ï¼´ï¼¯ï¼®ï¼©ï¼§ï¼¨ï¼´ï¼Ÿ
 TEXT,
 @TEXT
 
@@ -180,19 +180,19 @@ int main(object me,string arg)
     env = environment(me);
 
     if( !arg || sscanf(arg, "%s with %s", id1, id2) != 2 )
-        return notify_fail("Ö¸Áî¸ñÊ½£ºmbless MALE with FEMALE\n");
+        return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šmbless MALE with FEMALE\n");
 
 //    if( !objectp(male = get_object( id1 ) ) 
 //        || !objectp(female = get_object ( id2 ) ) )
     if(!objectp(male = present(id1, environment(me))) ||
        !objectp(female = present(id2, environment(me))))
-        return notify_fail("ÕâÀïÃ»ÓĞÕâÁ½¸öÈËÅ¶~~\n");
+        return notify_fail("é€™è£¡æ²’æœ‰é€™å…©å€‹äººå“¦~~\n");
 
     if ( ! living( male ) || ! living (female) )
-        return notify_fail("¿´Çå³şµã£¬ÄÇ²»ÊÇ»îµÄ¡£\n");
-    if( (query("gender", male) != "ÄĞĞÔ" && query("gender", male) != "ĞÛĞÔ" )
-        ||(query("gender", female) != "Å®ĞÔ" && query("gender", female)!="´ÆĞÔ"))
-        return notify_fail("ÀÏĞÖ£¬²»Òª´íµãÔ§ÑìÅ¶~\n");
+        return notify_fail("çœ‹æ¸…æ¥šé»ï¼Œé‚£ä¸æ˜¯æ´»çš„ã€‚\n");
+    if( (query("gender", male) != "ç”·æ€§" && query("gender", male) != "é›„æ€§" )
+        ||(query("gender", female) != "å¥³æ€§" && query("gender", female)!="é›Œæ€§"))
+        return notify_fail("è€å…„ï¼Œä¸è¦éŒ¯é»é´›é´¦å“¦~\n");
 
     name1=query("name", male);
     name2=query("name", female);
@@ -200,16 +200,16 @@ int main(object me,string arg)
     if( (query("qi", me)<100) || 
         (query("jing", me)<100) || 
         (query("neili", me)<100) )
-        return notify_fail("ÄãÃ»ÓĞ¾«Éñ×£¸£ÈË¼ÒÁË !\n");
+        return notify_fail("ä½ æ²’æœ‰ç²¾ç¥ç¥ç¦äººå®¶äº† !\n");
     set("qi", 10, me);
     set("jing", 10, me);
     set("neili", 10, me);
 
 //if( !query("env/score", me) )
-    message_vision(HIY"$Nò¯³ÏµØË«ÊÖºÏÊ®£¬Ä¬Ä¬µØÆíµ»µÀ£º°®Éñ\n"
-            "Ñ½£¬Çë´ÍÓè" + name1 + "ºÍ" +
-            name2 + "ĞÒ¸£°É£¡Ô¸ËûÃÇ»á\n"
-            "ÓÀÔ¶ÏàÇ×Ïà°®£¬»¥Ïà·ö³Ö£¬°®»ğÓÀ²»Ï¨Ãğ£¡\n",
+    message_vision(HIY"$Nè™”èª åœ°é›™æ‰‹åˆåï¼Œé»˜é»˜åœ°ç¥ˆç¦±é“ï¼šæ„›ç¥\n"
+            "å‘€ï¼Œè«‹è³œäºˆ" + name1 + "å’Œ" +
+            name2 + "å¹¸ç¦å§ï¼é¡˜ä»–å€‘æœƒ\n"
+            "æ°¸é ç›¸è¦ªç›¸æ„›ï¼Œäº’ç›¸æ‰¶æŒï¼Œæ„›ç«æ°¸ä¸ç†„æ»…ï¼\n",
                 me);
     call_out("show_picture", 2 + random( 3 ), name1, name2);
     return 1;
@@ -218,10 +218,10 @@ int main(object me,string arg)
 void show_picture(string name1, string name2)
 {
     string str;
-    str = HIW "Ö»Ìı¼û¶«·½ºäÂ¡Â¡µØÏìÁËÒ»Éù£¬Ò»¸öæ¯ÃÀµÄÅ®Éù\n"
-        "ÏìÆğ£º\n\t" HIM + name1 + 
-       NOR "" BLU "ºÍ" NOR "" HIM + name2 + NOR "" BLU"½«ÔÚÎÒµÄ±Ó»¤ÏÂÓÀÔ¶\n"
-        "ĞÒ¸££¡ÎÒÒÔ°®ÉñµÄÃûÒåÆğÊÄ£¡\n\n\n" NOR;
+    str = HIW "åªè½è¦‹æ±æ–¹è½Ÿéš†éš†åœ°éŸ¿äº†ä¸€è²ï¼Œä¸€å€‹å§£ç¾çš„å¥³è²\n"
+        "éŸ¿èµ·ï¼š\n\t" HIM + name1 + 
+       NOR "" BLU "å’Œ" NOR "" HIM + name2 + NOR "" BLU"å°‡åœ¨æˆ‘çš„åº‡è­·ä¸‹æ°¸é \n"
+        "å¹¸ç¦ï¼æˆ‘ä»¥æ„›ç¥çš„åç¾©èµ·èª“ï¼\n\n\n" NOR;
     message("marry",str, users());
     call_out("show_flower", 2, name1, name2);
 }
@@ -229,13 +229,13 @@ void show_picture(string name1, string name2)
 void show_flower(string name1, string name2)
 {
     string str;
-    str = "Ìì¿ÕÖĞÍ»È»ÉÁ³öÒ»µÀÑ¤ÀöµÄ»ğ»¨£¬Ò»¸ö¾Ş´óµÄÍ¼°¸Öğ½¥\n"
-          "ÏÔÏÖ£º\n";
+    str = "å¤©ç©ºä¸­çªç„¶é–ƒå‡ºä¸€é“çµ¢éº—çš„ç«èŠ±ï¼Œä¸€å€‹å·¨å¤§çš„åœ–æ¡ˆé€æ¼¸\n"
+          "é¡¯ç¾ï¼š\n";
     str += color1[random(sizeof(color1))] + pic[random(sizeof(pic))] + NOR;
-    str += YEL "ËÄÏÂÀïÒşÒş´«À´ÖÚÈËÉî³ÁµÄ×£¸£Éù£º\n"
-        "     ¡°"HIM + name1 + NOR""YEL"ºÍ"NOR""HIM +
-        name2 + NOR""YEL"ÓÀÔ¶ĞÒ¸£...\n"
-        "                                           ÓÀÔ¶ĞÒ¸££¡£¡¡±\n\n\n";
+    str += YEL "å››ä¸‹è£¡éš±éš±å‚³ä¾†çœ¾äººæ·±æ²‰çš„ç¥ç¦è²ï¼š\n"
+        "     â€œ"HIM + name1 + NOR""YEL"å’Œ"NOR""HIM +
+        name2 + NOR""YEL"æ°¸é å¹¸ç¦...\n"
+        "                                           æ°¸é å¹¸ç¦ï¼ï¼â€\n\n\n";
     message("marry", str, users());
     if ( random( 2) )
         call_out( "show_flower",2 + random ( 3 ),name1,name2 );

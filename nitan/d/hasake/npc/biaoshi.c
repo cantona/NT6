@@ -2,22 +2,22 @@
 inherit NPC;
 void create()
 {
-       set_name("ÉñÃØïÚÊ¦", ({ "shenmi biaoshi", "biaoshi" }) );
-       set("title", "ÖĞÔ­ïÚÊ¦");
-       set("gender", "ÄĞĞÔ" );
+       set_name("ç¥ç§˜é¢å¸«", ({ "shenmi biaoshi", "biaoshi" }) );
+       set("title", "ä¸­åŸé¢å¸«");
+       set("gender", "ç”·æ€§" );
        set("age", 45);
        set("str", 20);
        set("con", 20);
        set("int", 20);
        set("dex", 20);
        set("env/wimpy", 60);
-       set("long", "ËûÊÇ¸öÀ´×ÔÖĞÔ­µÄïÚÊ¦£¬µ«ËûÊ®ÄêÀ´´ÓÃ»»ØÈ¥¹ı£¬ºÃÏóÊÇÔÚÕÒÊ²Ã´¶«Î÷¡£\n" );
+       set("long", "ä»–æ˜¯å€‹ä¾†è‡ªä¸­åŸçš„é¢å¸«ï¼Œä½†ä»–åå¹´ä¾†å¾æ²’å›å»éï¼Œå¥½è±¡æ˜¯åœ¨æ‰¾ä»€éº¼æ±è¥¿ã€‚\n" );
        set("combat_exp", 25000 + random(3000));
        set("shen", -300); 
        set("attitude", "heroism");
        set("chat_chance", 30);
        set("chat_msg", ({
-            "ÉñÃØïÚÊ¦ºÃÏóÔÚ×ÔÑÔ×ÔÓï£ºÔÚÄÄÄØ£¿ÔÚÄÄÄØ£¿ \n",
+            "ç¥ç§˜é¢å¸«å¥½è±¡åœ¨è‡ªè¨€è‡ªèªï¼šåœ¨å“ªå‘¢ï¼Ÿåœ¨å“ªå‘¢ï¼Ÿ \n",
            (: random_move :)
        }) );          
        set("max_qi", 400);

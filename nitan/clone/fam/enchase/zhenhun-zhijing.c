@@ -3,19 +3,19 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIC "Õò»êÖ®¾«" NOR, ({"zhenhun zhijing", "zhenhun", "zhijing" }));
+        set_name(HIC "é®é­‚ä¹‹ç²¾" NOR, ({"zhenhun zhijing", "zhenhun", "zhijing" }));
         set_weight(1000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
+                set("unit", "é¡†");
                 set("value", 500000);
-                set("enchase/name", "Õò»êÖ®¾«");
+                set("enchase/name", "é®é­‚ä¹‹ç²¾");
                 set("enchase/point", 1);
                 set("enchase/type", "head");
-                set("limit", 10); // ÖÁÉÙÓĞ10¸ö¿×µÄÊ±ºò·½¿ÉÏâÇ¶
+                set("limit", 10); // è‡³å°‘æœ‰10å€‹å­”çš„æ™‚å€™æ–¹å¯é‘²åµŒ
                 set("enchase/cur_firm", 100);
-                set("enchase/spe_data", (["add_yanjiu" : 10]) );  // Ã¿¸öÌá¸ßÑĞ¾¿Ğ§ÂÊ10%
+                set("enchase/spe_data", (["add_yanjiu" : 10]) );  // æ¯å€‹æé«˜ç ”ç©¶æ•ˆç‡10%
         }
         setup();
 }

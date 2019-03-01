@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�����");
+        set("short", "大驛道");
         set("long", @LONG
-���ǹٸ�Ϊפ�������뽭��Ҫ�������Ƕ�ר�޵�һ���ٵ�����Ϊ
-��Ҫ���ⲻͨ��ʲô�ط����ٵ��ϵ�����ϡ�١�����ȥ�Ǳ��Ŵ��ţ�
-����ԶԶ�ؿ��������ŵĳ�¥��
+這是官府為駐軍來往與江陰要塞和錫城而專修的一條官道，因為
+除要塞外不通向什麼地方，官道上的行人稀少。向南去是北門大橋，
+可以遠遠地看見蓮蓉門的城樓。
 LONG );
         set("outdoors", "wuxi");
         set("no_clean_up", 0);

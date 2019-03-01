@@ -15,10 +15,10 @@ string flower()
 
 void create()
 {
-        set("short", "��ƺ");
+        set("short", "草坪");
         set("long", @LONG
-������һƬ����Ĳ�ƺ�����ܿ����˸�ɫ���ʻ���һ�����紵
-�������µĿ����д������Ƶ����Ļ��㡣
+這裡是一片青青的草坪，四周開滿了各色的鮮花，一陣涼風吹
+過，清新的空氣中傳來幾縷淡淡的花香。
 LONG );
         set("exits", ([
 		"east" : __DIR__"kongdi",
@@ -41,7 +41,7 @@ void init()
 		me->apply_condition("flower_poison", 30 +
                                     (int)me->query_condition("flower_poison"));
 
-                write(HIG "��ֻ��һ�ɵ���Ϯ��,��ʱ����һ����ľ��\n" NOR);
+                write(HIG "你只覺一股淡香襲來,頓時腦中一陣麻木！\n" NOR);
         }
 }
 

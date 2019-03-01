@@ -5,8 +5,8 @@ inherit NPC;
 #include <ansi.h>;
 void create()
 {
-        set_name("Ö£Ýà", ({ "zheng e", "zheng", "e" }) );
-        set("gender", "Å®ÐÔ");
+        set_name("é„­è¼", ({ "zheng e", "zheng", "e" }) );
+        set("gender", "å¥³æ€§");
         set("class", "swordsman");
         set("age", 16);
         set("attitude", "peaceful");
@@ -55,7 +55,7 @@ void create()
                 (: exert_function, "recover" :),
         }) );
 
-        create_family("ºãÉ½ÅÉ", 14, "µÜ×Ó");
+        create_family("æ†å±±æ´¾", 14, "å¼Ÿå­");
         setup();
 
         carry_object("/clone/weapon/changjian")->wield();

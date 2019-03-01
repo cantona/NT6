@@ -5,9 +5,9 @@ inherit DEMONROOM;
 void setup()
 {
 
-        set("no_rideto", 1);         // ÉèÖÃ²»ÄÜÆïÂíµ½ÆäËûµØ·½
-        set("no_flyto", 1);          // ÉèÖÃ²»ÄÜ´ÓÆðÀ´µØ·½ÆïÂíÀ´ÕâÀï
-        set("binghuo", 1);           // ±íÊ¾ÔÚ±ù»ðµº
+        set("no_rideto", 1);         // è¨­ç½®ä¸èƒ½é¨Žé¦¬åˆ°å…¶ä»–åœ°æ–¹
+        set("no_flyto", 1);          // è¨­ç½®ä¸èƒ½å¾žèµ·ä¾†åœ°æ–¹é¨Žé¦¬ä¾†é€™è£¡
+        set("binghuo", 1);           // è¡¨ç¤ºåœ¨å†°ç«å³¶
         set("no_die", 1);
         set("outdoors", "battle4");
 
@@ -21,15 +21,15 @@ void init ()
         if (! wizardp(this_player()))
         {
                 this_player()->start_busy(1+ random(2));
-                tell_object(this_player(), NOR + WHT "ÄãÀ´µ½ÕâÀï£¬Í»È»¼äÃÔÊ§ÁË·½Ïò¡£\n" NOR);
+                tell_object(this_player(), NOR + WHT "ä½ ä¾†åˆ°é€™è£¡ï¼Œçªç„¶é–“è¿·å¤±äº†æ–¹å‘ã€‚\n" NOR);
         }
         
-        // ·Ç°ïÕ½ÆÚ¼ä£¬ÇåÀíËùÓÐ·ÇÌìÏÂµÚÒ»°ïµÄ³ÉÔ±
+        // éžå¹«æˆ°æœŸé–“ï¼Œæ¸…ç†æ‰€æœ‰éžå¤©ä¸‹ç¬¬ä¸€å¹«çš„æˆå“¡
         if( !BUNCH_D->is_battle_start() && !BUNCH_D->is_top_bunch(this_player()) )
         {
                 this_player()->move(__DIR__"haitan");
         }
-        // °ïÕ½ÆÚ¼ä£¬ÉÏ½ìÌìÏÂµÚÒ»°ï³ÉÔ±²»ÄÜ½øÈë
+        // å¹«æˆ°æœŸé–“ï¼Œä¸Šå±†å¤©ä¸‹ç¬¬ä¸€å¹«æˆå“¡ä¸èƒ½é€²å…¥
         if( (BUNCH_D->is_battle_start() || BUNCH_D->is_battle_open()) && BUNCH_D->query_bunch_topten(1) == query("bunch/bunch_name", this_player()) )
         {
                 this_player()->move(__DIR__"haitan");

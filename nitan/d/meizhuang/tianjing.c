@@ -3,10 +3,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "´óÌì¾®");
+        set("short", "å¤§å¤©äº•");
         set("long", @LONG
-Äã×ß¹ıÒ»¸ö´óÌì¾®£¬Ìì¾®×óÓÒ¸÷Ö²Ò»¿ÃÀÏÃ·£¬Ö¦¸ÉÈçÌú£¬¼«ÊÇ²Ô
-¾¢¡£ÍùÄÏÊÇÃ·×¯´óÃÅ£¬±±ÃæÊÇ´óÌü¡£
+ä½ èµ°éä¸€å€‹å¤§å¤©äº•ï¼Œå¤©äº•å·¦å³å„æ¤ä¸€æ£µè€æ¢…ï¼Œæå¹¹å¦‚éµï¼Œæ¥µæ˜¯è’¼
+å‹ã€‚å¾€å—æ˜¯æ¢…èŠå¤§é–€ï¼ŒåŒ—é¢æ˜¯å¤§å»³ã€‚
 LONG );
         set("exits", ([ /* sizeof() == 2 */
             "north" : __DIR__"dating",
@@ -29,19 +29,19 @@ int do_open(string arg)
         object room;
 
         if (query("exits/south"))
-                return notify_fail("´óÃÅÒÑ¾­ÊÇ¿ª×ÅÁË¡£\n");
+                return notify_fail("å¤§é–€å·²ç¶“æ˜¯é–‹è‘—äº†ã€‚\n");
 
         if (!arg || (arg != "gate" && arg != "south"))
-                return notify_fail("ÄãÒª¿ªÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦é–‹ä»€éº¼ï¼Ÿ\n");
 
         if(!( room = find_object(__DIR__"gate")) )
                 room = load_object(__DIR__"gate");
         if(objectp(room))
         {
                 set("exits/south", __DIR__"gate");
-                message_vision("$NÊ¹¾¢°Ñ´óÃÅ´òÁË¿ªÀ´¡£\n", this_player());
+                message_vision("$Nä½¿å‹æŠŠå¤§é–€æ‰“äº†é–‹ä¾†ã€‚\n", this_player());
                 set("exits/north", __FILE__, room);
-                message("vision", "Ö¨µØÒ»Éù£¬ÀïÃæÓĞÈË°Ñ´óÃÅ´ò¿ªÁË¡£\n", room);
+                message("vision", "å±åœ°ä¸€è²ï¼Œè£¡é¢æœ‰äººæŠŠå¤§é–€æ‰“é–‹äº†ã€‚\n", room);
                 remove_call_out("close_gate");
                 call_out("close_gate", 10);
         }
@@ -58,8 +58,8 @@ void close_gate()
         if(objectp(room))
         {
                 delete("exits/south");
-                        message("vision", "»¤ÔºÉÏÇ°°Ñ´óÃÅ¹ØÁËÆğÀ´¡£\n", this_object());
+                        message("vision", "è­·é™¢ä¸Šå‰æŠŠå¤§é–€é—œäº†èµ·ä¾†ã€‚\n", this_object());
                 delete("exits/north", room);
-                message("vision", "Æ¹µØÒ»Éù£¬ÀïÃæÓĞÈË°Ñ´óÃÅ¹ØÉÏÁË¡£\n", room);
+                message("vision", "ä¹’åœ°ä¸€è²ï¼Œè£¡é¢æœ‰äººæŠŠå¤§é–€é—œä¸Šäº†ã€‚\n", room);
         }
 }

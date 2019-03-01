@@ -1,4 +1,4 @@
-// Room: /d/kunlun/sanshengao.c À¥ÂØÉ½ÈýÊ¥Ûê
+// Room: /d/kunlun/sanshengao.c æ˜†ä¾–å±±ä¸‰è–å³
 // Last Modified by Winder on Nov. 15 2000
 
 #include <ansi.h>
@@ -7,12 +7,12 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÈýÊ¥Ûê");
+        set("short", "ä¸‰è–å³");
         set("long", @long
-µ«¼û±éµØÂÌ²ÝÈç½õ£¬µ½´¦¹ûÊ÷Ïã»¨¡£Ô­À´ÄÇÈýÊ¥ÛêËÄÖÜ¶¼ÊÇ²åÌì¸ß
-É½£¬µ²×¡ÁËº®Æø¡£À¥ÂØÅÉÀú´úÕÆÃÅÈËÔø»¨ÁË¼«´óÁ¦ÆøÕû¶ÙÕâ¸öÉ½Ûê£¬ÅÉ
-Ç²µÜ×Ó¶«ÖÁ½­ÄÏ£¬Î÷ÖÁÌìóÃ£¬°áÒÆÆæ»¨ÒìÊ÷Ç°À´ÖÖÖ²¡£ºöÌýµÃÉ½ÛêºóÒþ
-Òþ´«³öÒ»ÕóÇÙÉù£¬ÄãºÃÆæÐÄÆð£¬±ãÑ­ÉùÑ°È¥¡£
+ä½†è¦‹éåœ°ç¶ è‰å¦‚éŒ¦ï¼Œåˆ°è™•æžœæ¨¹é¦™èŠ±ã€‚åŽŸä¾†é‚£ä¸‰è–å³å››å‘¨éƒ½æ˜¯æ’å¤©é«˜
+å±±ï¼Œæ“‹ä½äº†å¯’æ°£ã€‚æ˜†ä¾–æ´¾æ­·ä»£æŽŒé–€äººæ›¾èŠ±äº†æ¥µå¤§åŠ›æ°£æ•´é “é€™å€‹å±±å³ï¼Œæ´¾
+é£å¼Ÿå­æ±è‡³æ±Ÿå—ï¼Œè¥¿è‡³å¤©ç«ºï¼Œæ¬ç§»å¥‡èŠ±ç•°æ¨¹å‰ä¾†ç¨®æ¤ã€‚å¿½è½å¾—å±±å³å¾Œéš±
+éš±å‚³å‡ºä¸€é™£ç´è²ï¼Œä½ å¥½å¥‡å¿ƒèµ·ï¼Œä¾¿å¾ªè²å°‹åŽ»ã€‚
 long );
         set("exits", ([
                 "north" : __DIR__"jingshenfeng",

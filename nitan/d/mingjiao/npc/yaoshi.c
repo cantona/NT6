@@ -1,12 +1,12 @@
-// yaoshi.c ҩʦ
+// yaoshi.c 藥師
 inherit NPC;
 inherit F_VENDOR;
 void create()
 {
-        set_name("ҩʦ", ({ "yao shi", "yao", "shi" }) );       
-        set("gender", "����" );
+        set_name("藥師", ({ "yao shi", "yao", "shi" }) );       
+        set("gender", "男性" );
         set("age", 34);
-        set("long","����һλ�������ֵ��̳�����ҩʦ��\n");
+        set("long","這是一位教主親手調教出來的藥師。\n");
         set("combat_exp", 400);
         set("unique", 1); 
         set("attitude", "peaceful");
@@ -31,5 +31,5 @@ void init()
 void greeting(object ob)
 {
        if( !ob || environment(ob) != environment() ) return;
-        command("say ��λ"+RANK_D->query_respect(ob)+"���ˣ�����Ҫ��ʲôҩ��");
+        command("say 這位"+RANK_D->query_respect(ob)+"請了，請問要買什麼藥？");
 }

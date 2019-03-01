@@ -1,5 +1,5 @@
 // Code of LXTX
-// pine.c ËÉÊ÷
+// pine.c é¬†æ¨¹
 
 inherit ITEM;
 
@@ -9,13 +9,13 @@ int do_chop(string);
 
 void create()
 {
-        set_name("ËÉÊ÷", ({ "pine", "song shu", "tree" }) );
+        set_name("é¬†æ¨¹", ({ "pine", "song shu", "tree" }) );
         set_weight(40000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»¿ÃÃÜÁÖÀï³£¼ûµÄËÉÊ÷¡£\n");
-                set("unit", "¿Ã");
+                set("long", "é€™æ˜¯ä¸€æ£µå¯†æ—è£¡å¸¸è¦‹çš„é¬†æ¨¹ã€‚\n");
+                set("unit", "æ£µ");
                 set("no_get", 1);
                 set("tree_str", 100);
 
@@ -37,19 +37,19 @@ int do_chop(string arg)
         if (!arg) return 0;
 
         if (me->is_busy() || me->is_fighting() )
-                return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ æ­£å¿™è‘—å‘¢ã€‚\n");
         
         if (arg != "tree" && arg != "pine")
-                return notify_fail("ÄãÒª¿³Ê²Ã´£¿\n");
+                return notify_fail("ä½ è¦ç ä»€éº¼ï¼Ÿ\n");
         
         if( !objectp(weapon=query_temp("weapon", me)) || 
                 query("id", weapon) != "axe" )
-                return notify_fail("ÄãĞèÒªÒ»°Ñ´ó¸«×Ó¡£\n");
+                return notify_fail("ä½ éœ€è¦ä¸€æŠŠå¤§æ–§å­ã€‚\n");
 
         if( query("jing", me)<30 || query("qi", me)<50 )
-                return notify_fail("ÄãµÄÁ¦Æø²»¹»ÁË¡£\n");
+                return notify_fail("ä½ çš„åŠ›æ°£ä¸å¤ äº†ã€‚\n");
 
-        message_vision("$N»Ó¶¯´ó¸«£¬ºİºİµØ³¯ËÉÊ÷¸É¿³ÁËÏÂÈ¥¡£\n",me);
+        message_vision("$Næ®å‹•å¤§æ–§ï¼Œç‹ ç‹ åœ°æœé¬†æ¨¹å¹¹ç äº†ä¸‹å»ã€‚\n",me);
         addn("jing", -20, me);
         addn("qi", -30, me);
         me->start_busy(3);
@@ -70,7 +70,7 @@ int do_chop(string arg)
 
 int shaking()
 {
-        message_vision("ËÉÊ÷ÒÑ¾­Ò¡»ÎµÄºÜÀ÷º¦ÁË¡£\n",this_object());
+        message_vision("é¬†æ¨¹å·²ç¶“æ–æ™ƒçš„å¾ˆå²å®³äº†ã€‚\n",this_object());
         return 1;
 }
 
@@ -78,7 +78,7 @@ int collapse(object me)
 {
         object ob=this_object();
         object shugan;
-        message_vision("Ö»Ìı¿¦àêÒ»Éù£¬ËÉÊ÷´Ó¸ù´¦ÕÛ¶Ï£¬½ô½Ó×ÅºäÂ¡Ò»Éù¾ŞÏì£¬µ¹ÁËÏÂÀ´¡£\n",ob);
+        message_vision("åªè½å–€åš“ä¸€è²ï¼Œé¬†æ¨¹å¾æ ¹è™•æŠ˜æ–·ï¼Œç·Šæ¥è‘—è½Ÿéš†ä¸€è²å·¨éŸ¿ï¼Œå€’äº†ä¸‹ä¾†ã€‚\n",ob);
         shugan=new("/d/mingjiao/obj/shugan");
         shugan->move(environment(ob));
         set("owner",query("id",  me), shugan);

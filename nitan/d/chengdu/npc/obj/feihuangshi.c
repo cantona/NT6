@@ -7,20 +7,20 @@ inherit THROWING;
  
 void create()
 {
-        set_name("·É»ÈÊ¯", ({ "feihuangshi", "shi" }) );
+        set_name("é£›è—çŸ³", ({ "feihuangshi", "shi" }) );
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "×ĞÏ¸ÌôÑ¡µÄ¶ìÂÑÊ¯£¬´óĞ¡Ò»ÖÂ£¬¸ö¸ö¶¼µÎÁïÁïÔ²¡£\n");
-                set("unit", "°Ñ");
+                set("long", "ä»”ç´°æŒ‘é¸çš„éµåµçŸ³ï¼Œå¤§å°ä¸€è‡´ï¼Œå€‹å€‹éƒ½æ»´æºœæºœåœ“ã€‚\n");
+                set("unit", "æŠŠ");
                 set("value", 0);
-                set("base_unit", "¸ö");
+                set("base_unit", "å€‹");
                 set("base_weight", 1);
                 set("base_value", 0);
                 set("damage", 5);        //Here the damage=int_throwing, added by King
                 set("material", "stone");
-                set("wield_msg", HIC"$NÑ¸ËÙµØ´Ó°µÆ÷´üÖĞÌÍ³öÒ»Ğ©·É»ÈÊ¯£¬ÄóÔÚÊÖÖĞ¾Í´ı·¢³ö£¡\n"NOR);
-                set("unwield_msg",HIC"$N½«ÊÖÀïÊ£ÏÂµÄ·É»ÈÊ¯¾¡Êı·Å»Ø°µÆ÷´üÖĞ¡£\n"NOR);
+                set("wield_msg", HIC"$Nè¿…é€Ÿåœ°å¾æš—å™¨è¢‹ä¸­æå‡ºä¸€äº›é£›è—çŸ³ï¼Œæåœ¨æ‰‹ä¸­å°±å¾…ç™¼å‡ºï¼\n"NOR);
+                set("unwield_msg",HIC"$Nå°‡æ‰‹è£¡å‰©ä¸‹çš„é£›è—çŸ³ç›¡æ•¸æ”¾å›æš—å™¨è¢‹ä¸­ã€‚\n"NOR);
         }
         set_amount(20);
         init_throwing(25);

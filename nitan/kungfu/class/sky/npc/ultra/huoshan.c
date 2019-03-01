@@ -1,4 +1,4 @@
-// huoshan »ôÉ½
+// huoshan éœå±±
 
 #include <ansi.h>
 
@@ -6,11 +6,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("»ôÉ½", ({ "huo shan", "huo", "shan" }) );
-        set("title", HIW "´ó×ÚÊ¦" NOR);
-        set("gender", "ÄĞĞÔ");
+        set_name("éœå±±", ({ "huo shan", "huo", "shan" }) );
+        set("title", HIW "å¤§å®—å¸«" NOR);
+        set("gender", "ç”·æ€§");
         set("age", 91);
-        set("long", "ËûÉí×ÅÆæ×°Òì·ş£¬ÏàÃ²Æ½Æ½£¬±ãËÆÒ»°ãµÄÎ÷ÓòÈËÊ¿¡£\n");
+        set("long", "ä»–èº«è‘—å¥‡è£ç•°æœï¼Œç›¸è²Œå¹³å¹³ï¼Œä¾¿ä¼¼ä¸€èˆ¬çš„è¥¿åŸŸäººå£«ã€‚\n");
         set("attitude", "peaceful");
         set("class", "fighter");
         set("str", 30);
@@ -62,7 +62,7 @@ void create()
         set("opinion/ultra",  1);
         set("opinion/master", 1);
 
-        set("rank_info/self", "±¾×ù");
+        set("rank_info/self", "æœ¬åº§");
 
         set_temp("apply/damage", 800);
         set_temp("apply/armor", 1200);
@@ -131,7 +131,7 @@ void die()
 
         return;
 }
-// ÆøÑªĞ¡ÓÚ1000ÔòËÀÍö£¬±ÜÃâËûÈËĞ­Öú°ïÃ¦×ªÊÀ
+// æ°£è¡€å°äº1000å‰‡æ­»äº¡ï¼Œé¿å…ä»–äººå”åŠ©å¹«å¿™è½‰ä¸–
 void heart_beat()
 {
         if (this_object()->query("qi") < 1000 || this_object()->query("eff_qi") < 1000)

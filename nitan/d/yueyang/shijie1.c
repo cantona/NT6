@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ʯ��");
+        set("short", "石階");
         set("long", @LONG
-�������ڶ������ʯ�ף��������ں�ɽ�ϵ�����ͤ��ʯ�����߲���
-���࣬�������ˣ����Ǹ��������ڡ���ɽ�£���ͥ��ˮ��ӵ��ɽ�����
-һƬ��ʮ�����ˡ�
+這是龍口東側的青石階，連接龍口和山上的朗吟亭。石階兩邊茶樹
+連綿，竹響隨人，真是個清幽所在。望山下，洞庭湖水簇擁君山，青碧
+一片，十分怡人。
 LONG );
         set("outdoors", "dongting");
         set("no_clean_up", 0);

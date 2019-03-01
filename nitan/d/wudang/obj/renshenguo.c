@@ -14,20 +14,20 @@ void destguo(object ob)
 {
         ob = this_object();
 
-        message_vision(HIM "\nÖ»¼û$N" HIM "ÂıÂıÉø³öË®À´£¬Ò»»á¾Í¸¯ÀÃµôÁË¡£\n\n"
+        message_vision(HIM "\nåªè¦‹$N" HIM "æ…¢æ…¢æ»²å‡ºæ°´ä¾†ï¼Œä¸€æœƒå°±è…çˆ›æ‰äº†ã€‚\n\n"
                        NOR, ob);
         destruct(ob);
 }
 
 void create()
 {
-        set_name(HIM "ÈË²Î¹û" NOR, ({"renshen guo", "renshen", "guo"}));
+        set_name(HIM "äººåƒæœ" NOR, ({"renshen guo", "renshen", "guo"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ö»");
-                set("long", HIM "ÕâÊÇÒ»Ö»ÒÑ¾­³ÉĞÍµÄÈË²Î¹û£¬ÕæµÄÏó¼«ÁËÈı"
-                            "ÖÜ²»ÂúµÄĞ¡º¢¡£\n" NOR);
+                set("unit", "åª");
+                set("long", HIM "é€™æ˜¯ä¸€åªå·²ç¶“æˆå‹çš„äººåƒæœï¼ŒçœŸçš„è±¡æ¥µäº†ä¸‰"
+                            "å‘¨ä¸æ»¿çš„å°å­©ã€‚\n" NOR);
                 set("only_do_effect", 1);
         }
         setup();
@@ -44,8 +44,8 @@ int do_effect(object me)
         set("eff_qi",query("max_qi",  me), me);
         set("qi",query("eff_qi",  me), me);
 
-        message_vision(HIM "\n$N" HIM "³ÔÏÂÒ»Ã¶ÈË²Î¹û£¬Ö»¾õµÃ¾«Éñ½¡Íú£¬ÄÚ"
-                       "Á¦³äÅæ£¬ÕæÆøÔ´Ô´¶ø\nÉú£¬ÉõÖÁ²»ÔÙ¸Ğµ½¼¢¶ö¸É¿Ê¡£\n\n", me);
+        message_vision(HIM "\n$N" HIM "åƒä¸‹ä¸€æšäººåƒæœï¼Œåªè¦ºå¾—ç²¾ç¥å¥æ—ºï¼Œå…§"
+                       "åŠ›å……æ²›ï¼ŒçœŸæ°£æºæºè€Œ\nç”Ÿï¼Œç”šè‡³ä¸å†æ„Ÿåˆ°é¥‘é¤“å¹¹æ¸´ã€‚\n\n", me);
 
         destruct(this_object());
         return 1;

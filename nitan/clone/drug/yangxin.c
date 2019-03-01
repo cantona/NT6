@@ -1,5 +1,5 @@
 // Code of ShenZhou
-// yangxin.c ÑøĞÄÍè
+// yangxin.c é¤Šå¿ƒä¸¸
 
 inherit PILL;
 #include <ansi.h>
@@ -12,12 +12,12 @@ int worn;
 int cure_ob(string);
 void create()
 {
-        set_name("ÑøĞÄÍè", ({"yangxin wan", "wan"}));
+        set_name("é¤Šå¿ƒä¸¸", ({"yangxin wan", "wan"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
-                set("long", "ÕâÊÇÒ»¿Å°µºì·¢ÁÁµÄÑøĞÄÍè¡£\n");
+                set("unit", "é¡†");
+                set("long", "é€™æ˜¯ä¸€é¡†æš—ç´…ç™¼äº®çš„é¤Šå¿ƒä¸¸ã€‚\n");
                 set("value", 5000);
                 set("no_sell", 1);
                 set("medicine", 1);
@@ -27,7 +27,7 @@ void create()
 
 int cure_ob(object me)
 {
-        message_vision(HIR "$N³ÔÏÂÒ»¿ÃÑøĞÄµ¤£¬Ö»¾õµÃÍ·ÖØ½ÅÇá£¬»ğÆø·­ÌÚ£¬Ô­À´·şÊ³¹ıÃÍ£¬Ò©Ğ§ÊÊµÃÆä·´£¡\n" NOR, this_player());
+        message_vision(HIR "$Nåƒä¸‹ä¸€æ£µé¤Šå¿ƒä¸¹ï¼Œåªè¦ºå¾—é ­é‡è…³è¼•ï¼Œç«æ°£ç¿»é¨°ï¼ŒåŸä¾†æœé£ŸéçŒ›ï¼Œè—¥æ•ˆé©å¾—å…¶åï¼\n" NOR, this_player());
         addn("jingli", -200, this_player());
         this_player()->apply_condition("bonze_drug", 
                 this_player()->query_condition("bonze_drug")+10);
@@ -49,11 +49,11 @@ void wear(int phase)
         worn = phase;
         switch(phase) {
         case 1:
-                set("long", "ÕâÊÇÒ»Á£¸éÁËºÜ³¤Ê±¼äµÄÑøĞÄÍè¡£\n");
+                set("long", "é€™æ˜¯ä¸€ç²’æ“±äº†å¾ˆé•·æ™‚é–“çš„é¤Šå¿ƒä¸¸ã€‚\n");
                 call_out("wear", 300, phase+1);
                 break;
         case 2:
-                set("long", "ÕâÊÇÒ»Á£ÒÑ¾­²»Ì«³ÉĞÎµÄÑøĞÄÍè£¬¿ì±»·ç»¯ÁË¡£\n");
+                set("long", "é€™æ˜¯ä¸€ç²’å·²ç¶“ä¸å¤ªæˆå½¢çš„é¤Šå¿ƒä¸¸ï¼Œå¿«è¢«é¢¨åŒ–äº†ã€‚\n");
                 call_out("wear", 100, phase+1);
                 break;
         case 3:
@@ -64,7 +64,7 @@ void wear(int phase)
 int effect_in_liquid(object ob)
 {
         if( query("liquid/type", ob) == "alcohol"){
-        tell_object(this_player(), HIG"ÄãÖ»¾õµÃÒ»¹ÉÈÈÆø×Ôµ¤ÌïÃ°³ö£¬»ìÉíÉÏÏÂÓĞËµ²»³öµÄÍ¨Ì©¡£\n"NOR);
+        tell_object(this_player(), HIG"ä½ åªè¦ºå¾—ä¸€è‚¡ç†±æ°£è‡ªä¸¹ç”°å†’å‡ºï¼Œæ··èº«ä¸Šä¸‹æœ‰èªªä¸å‡ºçš„é€šæ³°ã€‚\n"NOR);
         addn("jingli", random(10)+10*query("liquid/drunk_apply", ob), this_player());
         if( query("neili", this_player())>query("max_neili", this_player())*2 )
         set("neili",query("max_neili",  this_player())*2-1, this_player());

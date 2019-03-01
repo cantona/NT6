@@ -6,10 +6,10 @@
 inherit ROOM;
 void create()
 {
-        set("short", "�㳡");
+        set("short", "廣場");
         set("long", @LONG
-�㳡ռ�����󣬲����Ͻ���������ȥ�ɴ�ƺӰ�ġ�����������
-��Χ����Щ���ᣬ�����ھ�ס��
+廣場佔地甚大，部置嚴謹。往西過去可達黃河幫的「俠義廳」。
+周圍則是些房舍，供幫眾居住。
 LONG );
         set("exits", ([
                 "east"  : __DIR__"huanghegate",

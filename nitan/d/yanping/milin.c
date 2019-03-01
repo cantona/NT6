@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÃÜÁÖ");
+        set("short", "å¯†æž—");
         set("long", @LONG
-Äã×ßÔÚÒ»ÌõÆ§¾²µÄÁÖÖÐ¹ÙµÀÉÏ£¬Á½ÅÔÊÇÒõÉ­É­µÄÂíÎ²ËÉÁÖ¡£Ö»¼û×ó
-ÓÒÇ°ºó£¬µ½´¦¶¼ÊÇÆÌÌì¸ÇµØµÄËÉÊ÷£¬¼¸Ê®ÕÉ¸ßµÄ´óËÉÊ÷´ØÔÚÒ»¿é£¬ÃÜÊµ
-µÄËÉÅîÏóÒ»±ú±ú¾ÞÖã°ãÉìÏòÌì¿Õ£¬°ÑÑô¹âÕÚµÃË¿ºÁÒ²ÎÞ¡£
+ä½ èµ°åœ¨ä¸€æ¢åƒ»éœçš„æž—ä¸­å®˜é“ä¸Šï¼Œå…©æ—æ˜¯é™°æ£®æ£®çš„é¦¬å°¾é¬†æž—ã€‚åªè¦‹å·¦
+å³å‰å¾Œï¼Œåˆ°è™•éƒ½æ˜¯èˆ–å¤©è“‹åœ°çš„é¬†æ¨¹ï¼Œå¹¾åä¸ˆé«˜çš„å¤§é¬†æ¨¹ç°‡åœ¨ä¸€å¡Šï¼Œå¯†å¯¦
+çš„é¬†è“¬è±¡ä¸€æŸ„æŸ„å·¨å¸šèˆ¬ä¼¸å‘å¤©ç©ºï¼ŒæŠŠé™½å…‰é®å¾—çµ²æ¯«ä¹Ÿç„¡ã€‚
 LONG );
         set("exits", ([
                 "northwest" : __DIR__"guandao3",

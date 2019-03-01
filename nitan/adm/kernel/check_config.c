@@ -3,12 +3,12 @@
 
 #define need(x) badness += x+"\n"
 
-#define FOOTER "¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö\n"
+#define FOOTER "â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’\n"
 #define IMPOSSIBLE_TO_MISS_HEADER \
                FOOTER \
-               "¡º ÄãÏÖÔÚÔËĞĞµÄ MudOS driver µÄÉèÖÃ²ÎÊı²¢²»ÊÊºÏ ¡»\n" \
-               "¡º ´Ë Mudlib, Çë¶Ô driver Ô­ÂëÄÚµÄ 'options.h'  ¡»\n" \
-               "¡º ×÷ÈçÏÂµÄµ÷ÕûÈ»ºóÖØĞÂ±àÒë.                    ¡»\n" \
+               "ã€ ä½ ç¾åœ¨é‹è¡Œçš„ MudOS driver çš„è¨­ç½®åƒæ•¸ä¸¦ä¸é©åˆ ã€\n" \
+               "ã€ æ­¤ Mudlib, è«‹å° driver åŸç¢¼å…§çš„ 'options.h'  ã€\n" \
+               "ã€ ä½œå¦‚ä¸‹çš„èª¿æ•´ç„¶å¾Œé‡æ–°ç·¨è­¯.                    ã€\n" \
                FOOTER
 
 private
@@ -23,69 +23,69 @@ void create()
                 case "MudOS 0.9":
                 case "MudOS v20":
                 case "MudOS v21":
-                badness += "ÄãµÄ MudOS driver °æ±¾¹ıÊ±ÁË,ÇëÊ¹ÓÃ MudOS v22 ¼°ÒÔºóµÄ°æ±¾.\n";
+                badness += "ä½ çš„ MudOS driver ç‰ˆæœ¬éæ™‚äº†,è«‹ä½¿ç”¨ MudOS v22 åŠä»¥å¾Œçš„ç‰ˆæœ¬.\n";
         }
 
 #ifdef __CAST_CALL_OTHERS__
-        need("ĞèÒª: #undef CAST_CALL_OTHERS");
+        need("éœ€è¦: #undef CAST_CALL_OTHERS");
 #endif
 
 #ifdef __NO_ADD_ACTION__
-        need("ĞèÒª: #undef NO_ADD_ACTION");
+        need("éœ€è¦: #undef NO_ADD_ACTION");
 #endif
 
 #ifdef __NO_ENVIRONMENT__
-        need("ĞèÒª: #undef NO_ENVIRONMENT");
+        need("éœ€è¦: #undef NO_ENVIRONMENT");
 #endif
 
 #ifdef __NO_WIZARDS__
-        need(ĞèÒª: "#undef NO_WIZARDS");
+        need(éœ€è¦: "#undef NO_WIZARDS");
 #endif
 
 #ifndef __OLD_ED__
-        need("ĞèÒª: #define OLD_ED");
+        need("éœ€è¦: #define OLD_ED");
 #endif
 /*
 #ifdef __MUDLIB_ERROR_HANDLER__
-        need("ĞèÒª: #undef MUDLIB_ERROR_HANDLER");
+        need("éœ€è¦: #undef MUDLIB_ERROR_HANDLER");
 #endif
 */
 #ifdef __NO_RESETS__
-        need("ĞèÒª: #undef NO_RESETS");
+        need("éœ€è¦: #undef NO_RESETS");
 #endif
 
 #ifdef __LAZY_RESETS__
-        need("ĞèÒª: #undef LAZY_RESETS");
+        need("éœ€è¦: #undef LAZY_RESETS");
 #endif
 
 #ifndef __TRAP_CRASHES__
-        need("ĞèÒª: #define TRAP_CRASHES");
+        need("éœ€è¦: #define TRAP_CRASHES");
 #endif
 
 #ifndef __THIS_PLAYER_IN_CALL_OUT__
-        need("ĞèÒª: #define THIS_PLAYER_IN_CALL_OUT");
+        need("éœ€è¦: #define THIS_PLAYER_IN_CALL_OUT");
 #endif
 
 #ifndef __CALLOUT_HANDLES__
-        need("ĞèÒª: #define CALLOUT_HANDLES");
+        need("éœ€è¦: #define CALLOUT_HANDLES");
 #endif
 
 #ifdef __PRIVS__
-        need("ĞèÒª: #undef PRIVS");
+        need("éœ€è¦: #undef PRIVS");
 #endif
 
 #ifndef __PACKAGE_UIDS__
-        need("ĞèÒª: #define PACKAGE_UIDS");
+        need("éœ€è¦: #define PACKAGE_UIDS");
 #endif
 
 #ifndef __AUTO_SETEUID__
-        need("ĞèÒª: #define AUTO_SETEUID");
+        need("éœ€è¦: #define AUTO_SETEUID");
 #endif
 
 #ifndef __AUTO_TRUST_BACKBONE__
-        need("ĞèÒª: #define AUTO_TRUST_BACKBONE");
+        need("éœ€è¦: #define AUTO_TRUST_BACKBONE");
 #endif
 
         if( strlen(badness) )
-                error("\n\ndriver ÅäÖÃ´íÎó:\n" + IMPOSSIBLE_TO_MISS_HEADER + badness + FOOTER+"\n\n");
+                error("\n\ndriver é…ç½®éŒ¯èª¤:\n" + IMPOSSIBLE_TO_MISS_HEADER + badness + FOOTER+"\n\n");
 }

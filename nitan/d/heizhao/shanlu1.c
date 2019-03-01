@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "���ְ���");
+        set("short", "密林矮樹");
         set("long", @LONG
-����������̣��ٲ�̤���ľ��ǰ������ݣ�������·��Ѱ��ÿ
-��һ�������������̵�С�ȣ�Ҳ������ʹ������һ��������ľ��
-�ܣ���һ��һ���ߵú�����ֻ��һ��̤�գ�����ɽ���ݿ�֮�С�
+這裡荒無人煙，舉步踏到的盡是矮樹長草，哪裡有路可尋？每
+走一步，荊棘都鉤刺到小腿，也不覺疼痛，走了一陣，四周林木漸
+密，你一步一步走得很慢，只恐一個踏空，跌入山溝陷坑之中。
 LONG );
         set("outdoors", "heizhao");
         set("no_clean_up", 0);

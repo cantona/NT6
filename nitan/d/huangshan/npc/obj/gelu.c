@@ -5,14 +5,14 @@
 inherit BLADE;
 void create()
 {
-        set_name(HIR "¸îÂ¹µ¶" NOR, ({ "gelu" }) );
+        set_name(HIR "å‰²é¹¿åˆ€" NOR, ({ "gelu" }) );
         set_weight(10000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "ÇØÊ§ÆäÂ¹£¬ÌìÏÂ¹²Öğ£¬Î¨Ê¤ÕßµÃÂ¹¶ø¸îÖ®£­£­
-Î¨ÓĞÌìÏÂµÄµÚÒ»Ó¢ĞÛ²ÅÄÜµÃµ½µÄ±¦µ¶£¡\n");
+                set("unit", "æŠŠ");
+                set("long", "ç§¦å¤±å…¶é¹¿ï¼Œå¤©ä¸‹å…±é€ï¼Œå”¯å‹è€…å¾—é¹¿è€Œå‰²ä¹‹ï¼ï¼
+å”¯æœ‰å¤©ä¸‹çš„ç¬¬ä¸€è‹±é›„æ‰èƒ½å¾—åˆ°çš„å¯¶åˆ€ï¼\n");
                 set("value", 50000);
                 set("rigidity",2500);        
                 set("material", "steel");

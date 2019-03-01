@@ -9,9 +9,9 @@ void create()
         int skill, nl, lvl;
         int exp;
 
-        set_name("ÃÉ¹Å¾ü¹Ù",({ "menggu junguan", "junguan" }) );
-        set("gender", "ÄĞĞÔ" );
-        set("long","ÕâÊÇÒ»ÃûÃÉ¹Å½«Áì£¬Õı´ø×Å¾üÂíÖ´ĞĞ×ÅÕ½¶·ÈÎÎñ¡£\n");
+        set_name("è’™å¤è»å®˜",({ "menggu junguan", "junguan" }) );
+        set("gender", "ç”·æ€§" );
+        set("long","é€™æ˜¯ä¸€åè’™å¤å°‡é ˜ï¼Œæ­£å¸¶è‘—è»é¦¬åŸ·è¡Œè‘—æˆ°é¬¥ä»»å‹™ã€‚\n");
 
         set("int", 30);
         set("str", 30 + random(20));
@@ -60,7 +60,7 @@ void create()
 
         prepare_skill("hand", "dashou-yin");   
         set_temp("warquest/party", "meng"); 
-        // ×Ô¶¯ĞĞ¾ü±ê¼Ç
+        // è‡ªå‹•è¡Œè»æ¨™è¨˜
         set_temp("warquest/move_from", "/maze/battle3/mying1"); 
         set_temp("apply/reduce_damage", 50);
         addn_temp("apply/armor", 400);
@@ -103,7 +103,7 @@ int do_kill(string arg)
 
         if (this_object()->id(arg))
         {
-                write("ÓĞÃ»ÓĞ¸ã´í£¬ÄÇÊÇÃÉ¹Å±øÒ®£¬»¹²»¿ìÅÜ£¿£¡\n");
+                write("æœ‰æ²’æœ‰æéŒ¯ï¼Œé‚£æ˜¯è’™å¤å…µè€¶ï¼Œé‚„ä¸å¿«è·‘ï¼Ÿï¼\n");
                 return 1;
         } else
         if ((sscanf(arg, "%s from %s",what, who) == 2 ||
@@ -111,12 +111,12 @@ int do_kill(string arg)
              sscanf(arg, "%s on %s", what, who) == 2 ||
              sscanf(arg, "%s %s", what, who) == 2) &&
              this_object()->id(who)) {
-                write("ÓĞÃ»ÓĞ¸ã´í£¬ÄÇÊÇÃÉ¹Å±øÒ®£¬»¹²»¿ìÅÜ£¿£¡\n");
+                write("æœ‰æ²’æœ‰æéŒ¯ï¼Œé‚£æ˜¯è’™å¤å…µè€¶ï¼Œé‚„ä¸å¿«è·‘ï¼Ÿï¼\n");
                 return 1;
         } else
         if (arg == "roar" || arg == "hou")
         {
-                write("ÓĞÃ»ÓĞ¸ã´í£¬ÄÇÊÇÃÉ¹Å±øÒ®£¬»¹²»¿ìÅÜ£¿£¡\n");
+                write("æœ‰æ²’æœ‰æéŒ¯ï¼Œé‚£æ˜¯è’™å¤å…µè€¶ï¼Œé‚„ä¸å¿«è·‘ï¼Ÿï¼\n");
                 return 1;
         }
 
@@ -129,11 +129,11 @@ varargs void die(object killer)
         if (objectp(killer) && playerp(killer)) 
         {
                 addn_temp("warquest/reward", 150, killer);
-                GIFT_D->delay_war_bonus(killer, ([ "prompt" : "Òò¼ßÃğÃÉ¹ÅÆï±ø", "exp" : 500, "pot" : 200, "mar" : 20, "gold" : 2 ])); 
+                GIFT_D->delay_war_bonus(killer, ([ "prompt" : "å› æ®²æ»…è’™å¤é¨å…µ", "exp" : 500, "pot" : 200, "mar" : 20, "gold" : 2 ])); 
         }
 
-        message_vision("$NÂÊÁìµÄÃÉ¹ÅÆï±øÔÚ¼¸¾­Íç¿¹ºó£¬ÖÕÓÚ±»³¹µ×" +
-                        HIR "ÏûÃğÁË" NOR "£¡\n",
+        message_vision("$Nç‡é ˜çš„è’™å¤é¨å…µåœ¨å¹¾ç¶“é ‘æŠ—å¾Œï¼Œçµ‚äºè¢«å¾¹åº•" +
+                        HIR "æ¶ˆæ»…äº†" NOR "ï¼\n",
                         this_object());
 
         return ::die();

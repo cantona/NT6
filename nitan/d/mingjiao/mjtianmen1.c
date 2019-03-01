@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-    set("short", "ÃÅ¿Ú");
+    set("short", "é–€å£");
         set("long", @LONG
-Ç°Ãæ¾ÍÊÇÃ÷½ÌµÄ¡ºÌì×ÖÃÅ¡»ÁË£¬ÕâÀïÊÇÃ÷½ÌÖĞÄĞµÜ×ÓĞŞÁ¶µÄµØ·½£¬
-´ÓÃÅ¿Ú¿´½øÈ¥£¬º¹ÉÀÑï³ô£¬Ä¾×ÀÁ÷¾Æ¡£´Ë´¦²»ÔÊÅ®ÈËËæÒâ½øÈë¡£
+å‰é¢å°±æ˜¯æ˜æ•™çš„ã€å¤©å­—é–€ã€äº†ï¼Œé€™è£¡æ˜¯æ˜æ•™ä¸­ç”·å¼Ÿå­ä¿®ç…‰çš„åœ°æ–¹ï¼Œ
+å¾é–€å£çœ‹é€²å»ï¼Œæ±—è¡«æšè‡­ï¼Œæœ¨æ¡Œæµé…’ã€‚æ­¤è™•ä¸å…å¥³äººéš¨æ„é€²å…¥ã€‚
 LONG );
     set("exits", ([
         "enter" : __DIR__"nanshe",
@@ -24,7 +24,7 @@ int valid_leave(object me, string dir)
 {
     mapping myfam;
     me = this_player();
-    if( (query("gender", me) != "ÄĞĞÔ") && (dir == "enter") )
-      return notify_fail("ÇëÄã×ÔÖØ£¬ÒÔÃâ²»²â£¡\n");
+    if( (query("gender", me) != "ç”·æ€§") && (dir == "enter") )
+      return notify_fail("è«‹ä½ è‡ªé‡ï¼Œä»¥å…ä¸æ¸¬ï¼\n");
     else  return 1;
 }

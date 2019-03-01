@@ -37,14 +37,14 @@ string ask_me()
         me = this_object();
         my_fam=query("family", me);
 
-        if (my_fam && my_fam["family_name"] != "ÉÙÁÖÅÉ")
+        if (my_fam && my_fam["family_name"] != "å°‘æ—æ´¾")
                 return RANK_D->query_respect(fighter) +
-                       "ÓÖ²»ÊÇÎÒÃÇÉÙÁÖËÂµÄÈË£¬´òÌıÂŞººÕó×öÊ²Ã´£¿";
+                       "åˆä¸æ˜¯æˆ‘å€‘å°‘æ—å¯ºçš„äººï¼Œæ‰“è½ç¾…æ¼¢é™£åšä»€éº¼ï¼Ÿ";
 
         skl = fighter->query_skills();
         if (sizeof(skl) <= 1)
                 return RANK_D->query_respect(fighter) + 
-                "¹¦Á¦²»¹»£¬²»¹»×Ê¸ñ´³ÂŞºº´óÕó¡£";
+                "åŠŸåŠ›ä¸å¤ ï¼Œä¸å¤ è³‡æ ¼é—–ç¾…æ¼¢å¤§é™£ã€‚";
         sname  = keys(skl);
 
         for (i = 0; i < sizeof(skl); i++)
@@ -52,39 +52,39 @@ string ask_me()
                 if (member_array(sname[i], checks) != -1 &&
                     skl[sname[i]] < 80) 
                         return RANK_D->query_respect(fighter) + 
-                               "¹¦Á¦²»¹»£¬²»¹»×Ê¸ñ´³ÂŞºº´óÕó¡£";
+                               "åŠŸåŠ›ä¸å¤ ï¼Œä¸å¤ è³‡æ ¼é—–ç¾…æ¼¢å¤§é™£ã€‚";
         }
 
         if( query("luohan_winner", fighter) )
                 return RANK_D->query_respect(fighter) + 
-                "ÒÑÈ»´³¹ıÂŞºº´óÕó£¬¿É²»ÒªÄÃÀÏñÄ¿ªÕâµÈÍæĞ¦¡£";
+                "å·²ç„¶é—–éç¾…æ¼¢å¤§é™£ï¼Œå¯ä¸è¦æ‹¿è€è¡²é–‹é€™ç­‰ç©ç¬‘ã€‚";
 
         if( mapp(fam=query("family", fighter)) && 
-            fam["family_name"] == "ÉÙÁÖÅÉ" &&
+            fam["family_name"] == "å°‘æ—æ´¾" &&
             fam["generation"] > (my_fam["generation"] + 2))
                 return RANK_D->query_respect(fighter) + 
-                "±²·İ²»ºÏ£¬²»¹»×Ê¸ñ´³ÂŞºº´óÕó¡£";
+                "è¼©ä»½ä¸åˆï¼Œä¸å¤ è³‡æ ¼é—–ç¾…æ¼¢å¤§é™£ã€‚";
 
         if( query("guilty", fighter)>0 )
                 return RANK_D->query_respect(fighter) + 
-                "ÄãÀÛ·¸Êı½ä£¬Éí´øÖØ×ï£¬ÎÒÈçºÎÄÜ×¼ĞíÄã´³ÂŞºº´óÕó£¡";
+                "ä½ ç´¯çŠ¯æ•¸æˆ’ï¼Œèº«å¸¶é‡ç½ªï¼Œæˆ‘å¦‚ä½•èƒ½æº–è¨±ä½ é—–ç¾…æ¼¢å¤§é™£ï¼";
 
         if( query("assigned_fighter", me) )
                 return RANK_D->query_respect(fighter) +  
-                "£¬½ñÈÕÒÑÓĞÈËÌôÕ½ÂŞºº´óÕó£¬Äã¹ıÒ»¶ÎÊ±¼äÔÙÀ´°É¡£"; 
+                "ï¼Œä»Šæ—¥å·²æœ‰äººæŒ‘æˆ°ç¾…æ¼¢å¤§é™£ï¼Œä½ éä¸€æ®µæ™‚é–“å†ä¾†å§ã€‚"; 
 
         set_temp("xuannan-asked", 1, fighter);
 
-        say("\nĞşÄÑËµµÀ£ººÃ°É£¬ÎÒÀ´ÕÙ¼¯°ãÈôÌÃ³¤ÀÏÃÇÓÚÎ÷Á·"
-            "Îä³¡¼¯ºÏ£¬ÎÒÉÔºòÔÚÖĞÑëÁ·Îä³¡ÉÏµÈÄã¡£\n");
+        say("\nç„é›£èªªé“ï¼šå¥½å§ï¼Œæˆ‘ä¾†å¬é›†èˆ¬è‹¥å ‚é•·è€å€‘äºè¥¿ç·´"
+            "æ­¦å ´é›†åˆï¼Œæˆ‘ç¨å€™åœ¨ä¸­å¤®ç·´æ­¦å ´ä¸Šç­‰ä½ ã€‚\n");
 
         set("assigned_fighter",query("id",  fighter), me);
         
         if( !query_temp("xuanku-asked", fighter) )
-        say("\nĞşÄÑÓÖµÀ£ºÇëÄãËÙÈ¥¸æÖªÂŞººÌÃĞş¿à´óÊ¦£¬ÇëËû¼´¿ÌÕĞ¼¯"
-            "°ãÈôÌÃÖîÂŞººÓÚÎ÷Á·Îä³¡¼¯ºÏ¡£\n");
+        say("\nç„é›£åˆé“ï¼šè«‹ä½ é€Ÿå»å‘ŠçŸ¥ç¾…æ¼¢å ‚ç„è‹¦å¤§å¸«ï¼Œè«‹ä»–å³åˆ»æ‹›é›†"
+            "èˆ¬è‹¥å ‚è«¸ç¾…æ¼¢äºè¥¿ç·´æ­¦å ´é›†åˆã€‚\n");
 
-        message_vision("\nĞşÄÑ´óÊ¦ÍùÄÏÀë¿ª¡£\n\n", fighter);
+        message_vision("\nç„é›£å¤§å¸«å¾€å—é›¢é–‹ã€‚\n\n", fighter);
 
         for (j = 1; j < 10; j++) 
         {
@@ -98,25 +98,25 @@ string ask_me()
                         me->move("/d/shaolin/luohan5");
                         delete("assigned_fighter", me);
                         delete_temp("xuannan-asked", fighter);
-                        message_vision("\nĞşÄÑ´óÊ¦×ßÁË¹ıÀ´¡£\n\n", fighter);
-                        return "ÕæÊÇ¶Ô²»Æğ£¬°ãÈôÌÃÖĞÓĞÈË²»ÔÚ£¬ÎŞ·¨¾Ù"
-                               "ĞĞÂŞºº´óÕó¡£\n";        
+                        message_vision("\nç„é›£å¤§å¸«èµ°äº†éä¾†ã€‚\n\n", fighter);
+                        return "çœŸæ˜¯å°ä¸èµ·ï¼Œèˆ¬è‹¥å ‚ä¸­æœ‰äººä¸åœ¨ï¼Œç„¡æ³•èˆ‰"
+                               "è¡Œç¾…æ¼¢å¤§é™£ã€‚\n";        
                 }
 
-                message("vision", "\nĞşÄÑ´óÊ¦×ßÁË¹ıÀ´£¬¸ú" +
-                        query("name", monk)+"¸©¶úÇáÉùËµÁË¼¸¾ä¡£\n",
+                message("vision", "\nç„é›£å¤§å¸«èµ°äº†éä¾†ï¼Œè·Ÿ" +
+                        query("name", monk)+"ä¿¯è€³è¼•è²èªªäº†å¹¾å¥ã€‚\n",
                         room, monk);
 
                 monk->move("/d/shaolin/wuchang1");
                 message("vision",query("name", monk)+
-                        "ÂŞººµãÁËµãÍ·£¬¿ì²½×ßÁË³öÈ¥¡£\n", room, monk);
+                        "ç¾…æ¼¢é»äº†é»é ­ï¼Œå¿«æ­¥èµ°äº†å‡ºå»ã€‚\n", room, monk);
         }
         
         me->move("/d/shaolin/wuchang");
 
         call_out("waiting", 1, me);
 
-        return "ºÃ£¡´ó¼Ò¶¼³öÀ´ÁË¡£\n";
+        return "å¥½ï¼å¤§å®¶éƒ½å‡ºä¾†äº†ã€‚\n";
 }
 
 int waiting(object me)
@@ -126,7 +126,7 @@ int waiting(object me)
 
         if (wait_time == 300)
         {
-                say( "ĞşÄÑËµµÀ£º¿´À´Ëû²»»áÀ´ÁË£¬ÎÒÃÇ»ØÈ¥°Õ£¡\n\n");
+                say( "ç„é›£èªªé“ï¼šçœ‹ä¾†ä»–ä¸æœƒä¾†äº†ï¼Œæˆ‘å€‘å›å»ç½·ï¼\n\n");
                 call_out("do_back", 0, me);                
         }
 
@@ -138,7 +138,7 @@ int waiting(object me)
         if( !present("xuanku dashi",environment(me)) || !query_temp("xuanku-asked", fighter) )
         {
                 if( random(10) == 0 ) 
-                say("\nĞşÄÑËµµÀ£º" + RANK_D->query_respect(fighter) + "È¥ÇëÁËĞş¿à´óÊ¦Ã»ÓĞ£¿ ÕÕÀíËûÏÖÔÚ¸Ãµ½ÁË°Õ£¿\n");
+                say("\nç„é›£èªªé“ï¼š" + RANK_D->query_respect(fighter) + "å»è«‹äº†ç„è‹¦å¤§å¸«æ²’æœ‰ï¼Ÿ ç…§ç†ä»–ç¾åœ¨è©²åˆ°äº†ç½·ï¼Ÿ\n");
 
                 wait_time++;
                 call_out("waiting", 1, me);
@@ -155,12 +155,12 @@ int preparing(object me, object fighter)
         if (! (room = find_object("/d/shaolin/wuchang")))
                 room = load_object("/d/shaolin/wuchang");
 
-        say("ĞşÄÑËµµÀ£º²»Ïà¸ÉµÄÈË£¬Èç²»ÓûÏÖ³¡¹ÛÄ¦ÂŞºº´óÕó£¬Çë¼´¿ÌÀë¿ª´Ë´¦¡£\n");
+        say("ç„é›£èªªé“ï¼šä¸ç›¸å¹¹çš„äººï¼Œå¦‚ä¸æ¬²ç¾å ´è§€æ‘©ç¾…æ¼¢å¤§é™£ï¼Œè«‹å³åˆ»é›¢é–‹æ­¤è™•ã€‚\n");
 
-        message("vision", HIY "\nĞşÄÑ´óÊ¦´óÉùĞû²¼£ºÎ÷ÂŞºº´óÕóºÏÎ§£¡\n\n" NOR,
+        message("vision", HIY "\nç„é›£å¤§å¸«å¤§è²å®£å¸ƒï¼šè¥¿ç¾…æ¼¢å¤§é™£åˆåœï¼\n\n" NOR,
                 room);
         command("chat"+query("title", fighter)+query("name", fighter)+
-                "ÓÚ½ñÈÕ" + NATURE_D->game_time() + "ÌôÕ½ÉÙÁÖÊ®°ËÂŞºº´óÕó£¡");
+                "äºä»Šæ—¥" + NATURE_D->game_time() + "æŒ‘æˆ°å°‘æ—åå…«ç¾…æ¼¢å¤§é™£ï¼");
 
         delete_temp("xuannan-asked", fighter);
         delete_temp("beat_count", fighter);
@@ -183,7 +183,7 @@ int fighting(object me, object fighter, int count)
 
         if (count <= 8)
         {
-                message("vision", "\nÂŞºº´óÕó¼±ËÙµØĞı×ª×Å£¬Ò»²ã²ãµØÏòÄÚÊÕ½ô£¡\n" NOR, room2);
+                message("vision", "\nç¾…æ¼¢å¤§é™£æ€¥é€Ÿåœ°æ—‹è½‰è‘—ï¼Œä¸€å±¤å±¤åœ°å‘å…§æ”¶ç·Šï¼\n" NOR, room2);
 
                 monk1 = present(names[count], room1);
                 if (objectp(monk1))
@@ -208,7 +208,7 @@ int fighting(object me, object fighter, int count)
                 if (objectp(monk1))
                         monk1->move(room1);
 
-                say("ĞşÄÑËµµÀ£ºÊÇ°¡£¬¿ÉÏ§Ñ½ ... °¦£¡\n\n");
+                say("ç„é›£èªªé“ï¼šæ˜¯å•Šï¼Œå¯æƒœå‘€ ... å”‰ï¼\n\n");
                 command("sigh");
                 call_out("do_back", 5, me );
         } else
@@ -236,15 +236,15 @@ int do_recruit(object me, object fighter)
         addn("combat_exp", 7500, fighter);
         set("luohan_winner", 1, fighter);
 
-        if( !(ft_fam=query("family", fighter)) || ft_fam["family_name"] != "ÉÙÁÖÅÉ" )
+        if( !(ft_fam=query("family", fighter)) || ft_fam["family_name"] != "å°‘æ—æ´¾" )
         {
                 command("smile");
-                say("ĞşÄÑËµµÀ£º" + RANK_D->query_respect(fighter) + "Îä¹¦×¿¾ø£¬¼æÓÖÊÖÏÂÁôÇé£¬Æ·µÂ¸üÊÇ¹ıÈËÒ»³ï£¬ÀÏñÄ²»Ê¤Åå·şÖ®ÖÁ£¡\n");
+                say("ç„é›£èªªé“ï¼š" + RANK_D->query_respect(fighter) + "æ­¦åŠŸå“çµ•ï¼Œå…¼åˆæ‰‹ä¸‹ç•™æƒ…ï¼Œå“å¾·æ›´æ˜¯éäººä¸€ç±Œï¼Œè€è¡²ä¸å‹ä½©æœä¹‹è‡³ï¼\n");
                 call_out("do_back", 5, me );
         }
         else
         {
-                say("\nĞşÄÑËµµÀ£ººÃ£¬ºÃ£¬ºÃ£¡"+query("name", fighter)+"£¬ÄãÔ¸Òâ°İÎÒµÈÎªÊ¦Âğ£¿\n");
+                say("\nç„é›£èªªé“ï¼šå¥½ï¼Œå¥½ï¼Œå¥½ï¼"+query("name", fighter)+"ï¼Œä½ é¡˜æ„æ‹œæˆ‘ç­‰ç‚ºå¸«å—ï¼Ÿ\n");
                 call_out("do_back", 30, me );
         }
 
@@ -256,8 +256,8 @@ int do_back(object me)
         object monk, room1, room2;
         int i;
 
-        message("vision", "\nĞşÄÑ´óÊ¦Ò²»ÓÁË»ÓÊÖ£¬ °ãÈôÌÃ³¤ÀÏ"
-                "ÃÇËæ¼´Ò²Àë¿ªÁ·Îä³¡¡£\n", environment(me));
+        message("vision", "\nç„é›£å¤§å¸«ä¹Ÿæ®äº†æ®æ‰‹ï¼Œ èˆ¬è‹¥å ‚é•·è€"
+                "å€‘éš¨å³ä¹Ÿé›¢é–‹ç·´æ­¦å ´ã€‚\n", environment(me));
         
         if (! (room1 = find_object("/d/shaolin/wuchang")))
                 room1 = load_object("/d/shaolin/wuchang");

@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ǰ�㳡");
+        set("short", "前廣場");
         set("long", @LONG
-�������̼ұ��ڵ�һ���㳡�������㳡��ɳʯ�������ɣ���
-���ĸɾ����㳡�ı�����һ����ʯС��������ͨ���������̼ұ�
-�����ڡ�
+這裡是商家堡內的一個廣場，整個廣場用沙石舖砌而成，非
+常的幹凈。廣場的北邊有一條青石小徑，可以通過它到達商家堡
+的廳內。
 LONG);
         set("exits", ([
                 "north"  : __DIR__"shang_xiaojin1",

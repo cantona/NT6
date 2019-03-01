@@ -5,13 +5,13 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÃîÊÖÀÉÖĞ", ({ "immortal doctor", "doctor" }) );
+        set_name("å¦™æ‰‹éƒä¸­", ({ "immortal doctor", "doctor" }) );
 
-        set("nickname", "°ëÏÉ");
-        set("gender", "ÄĞĞÔ");
+        set("nickname", "åŠä»™");
+        set("gender", "ç”·æ€§");
         set("age", 30);
         set("long",
-                "ÏÉÒ½ÄÜÖÎ¸÷ÖÖÒÉÄÑÔÓÖ¢,¶ËµÄÊÇÊÖµ½²¡³ı.\n");
+                "ä»™é†«èƒ½æ²»å„ç¨®ç–‘é›£é›œç—‡,ç«¯çš„æ˜¯æ‰‹åˆ°ç—…é™¤.\n");
         set("attitude", "peaceful");
 
         set("str", 26);
@@ -20,7 +20,7 @@ void create()
         set("dex", 30);
 
         set("inquiry", ([
-                "×Ô¹¬": "Å¶....ÄãÒª×Ô¹¬?Ã»ÎÊÌâ,°üÄãÎŞÍ´!(accept zigong)?\n",
+                "è‡ªå®®": "å“¦....ä½ è¦è‡ªå®®?æ²’å•é¡Œ,åŒ…ä½ ç„¡ç—›!(accept zigong)?\n",
         ]) );
         setup();
         carry_object("/clone/cloth/cloth")->wear();
@@ -39,21 +39,21 @@ int  do_accept(string arg){
       me=this_player();
 
       if (arg!="zigong") return 0;
-      if( query("gender", me) != "ÄĞĞÔ" )
+      if( query("gender", me) != "ç”·æ€§" )
       {
          CHANNEL_D->do_channel(this_object(), "chat",
-                sprintf("%sÏë×Ô¹¬¿ÉÏ§°ì²»µ½,¹ş¹ş..\n",query("name", me)));
+                sprintf("%sæƒ³è‡ªå®®å¯æƒœè¾¦ä¸åˆ°,å“ˆå“ˆ..\n",query("name", me)));
          return 0;
       }
-      CHANNEL_D->do_channel(this_object(), "chat", sprintf( "%s ×Ô¹¬Á·±ÙĞ°½£·¨À²! \n",
+      CHANNEL_D->do_channel(this_object(), "chat", sprintf( "%s è‡ªå®®ç·´è¾Ÿé‚ªåŠæ³•å•¦! \n",
         me->name(1)));
-        set("marks/×Ô¹¬", 1, me);
-        set("gender", "ÎŞĞÔ", me);
+        set("marks/è‡ªå®®", 1, me);
+        set("gender", "ç„¡æ€§", me);
       return 1;
 }
 
 int accept_fight(object me)
 {
-        command("say ÎÒÔõÃ´ÄÜ´òµÃ¹ıÄú£¿\n");
+        command("say æˆ‘æ€éº¼èƒ½æ‰“å¾—éæ‚¨ï¼Ÿ\n");
         return 0;
 }

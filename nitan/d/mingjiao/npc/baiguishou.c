@@ -10,15 +10,15 @@ string ask_me();
 
 void create()
 {
-        set_name("°×¹êÊÙ", ({ "bai guishou", "bai", "guishou", }));
+        set_name("ç™½é¾œå£½", ({ "bai guishou", "bai", "guishou", }));
         set("long",
-        "ËûÊÇÒ»Î»Á½÷Ş°ß°×µÄÀÏÕß£¬Éí´©Ò»¼ş°×²¼³¤ÅÛ¡£\n"
-        "ËûÁ³ÉÏ×ÜÊÇ¸¡ÏÖ³ö¿ÉÇ×µÄÎ¢Ğ¦£¬µ«ÓĞÊ±ÓÖÍ¸³öÒ»Ë¿½ÆÚÜ¡£\n"
+        "ä»–æ˜¯ä¸€ä½å…©é¬¢æ–‘ç™½çš„è€è€…ï¼Œèº«ç©¿ä¸€ä»¶ç™½å¸ƒé•·è¢ã€‚\n"
+        "ä»–è‡‰ä¸Šç¸½æ˜¯æµ®ç¾å‡ºå¯è¦ªçš„å¾®ç¬‘ï¼Œä½†æœ‰æ™‚åˆé€å‡ºä¸€çµ²ç‹¡è­ã€‚\n"
         );
 
-            set("title",HIG "Ã÷½Ì" BLU "ĞşÎäÌ³" NOR "Ì³Ö÷");
+            set("title",HIG "æ˜æ•™" BLU "ç„æ­¦å£‡" NOR "å£‡ä¸»");
 
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("attitude", "friendly");
         set("class", "fighter");
 
@@ -55,9 +55,9 @@ void create()
         map_skill("sword", "damo-jian");
 
         prepare_skill("finger", "nianhua-zhi");
-        create_family("Ã÷½Ì", 4, "ĞşÎäÌ³Ì³Ö÷");
+        create_family("æ˜æ•™", 4, "ç„æ­¦å£‡å£‡ä¸»");
         set("inquiry", ([
-                "Ã÷½Ì" :    (: ask_me :),
+                "æ˜æ•™" :    (: ask_me :),
         ]));
         setup();
 
@@ -71,7 +71,7 @@ void init()
 
 string ask_me()
 {
-        return "ÄãÏë¼ÓÈëÎÒÃ÷½Ì(join mingjiao)Âğ£¿";
+        return "ä½ æƒ³åŠ å…¥æˆ‘æ˜æ•™(join mingjiao)å—ï¼Ÿ";
 }
 
 #include "tanzhu.h"

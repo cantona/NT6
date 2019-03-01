@@ -11,10 +11,10 @@ void delete_served(object me);
 
 void create()
 {
-        set("short", "³ø·¿");
+        set("short", "å»šæˆ¿");
         set("long", @LONG
-ÕâÀïÊÇÀ¥ÂØµÜ×ÓÓÃ²ÍµÄµØ·½¡£ÓÉÓÚÌì³¤ÈÕ¾Ã£¬Ç½±Ú¶¼±»ÑÌÑ¬ºÚÁË¡£
-ÎİÀï°Ú×Å¼¸ÕÅ×ÀÒÎ£¬¼¸Î»À¥ÂØµÜ×ÓÕıÔÚ´ó³Ô´óºÈ£¬ĞĞ¾Æ²ÂÈ­¡£
+é€™è£¡æ˜¯æ˜†ä¾–å¼Ÿå­ç”¨é¤çš„åœ°æ–¹ã€‚ç”±äºå¤©é•·æ—¥ä¹…ï¼Œç‰†å£éƒ½è¢«ç…™ç†é»‘äº†ã€‚
+å±‹è£¡æ“ºè‘—å¹¾å¼µæ¡Œæ¤…ï¼Œå¹¾ä½æ˜†ä¾–å¼Ÿå­æ­£åœ¨å¤§åƒå¤§å–ï¼Œè¡Œé…’çŒœæ‹³ã€‚
 LONG );
         set("exits", ([
                 "east" : __DIR__"jiuqulang7",
@@ -48,25 +48,25 @@ int do_tap(string arg)
 
         if (!arg || (arg != "desk" && arg != "table"))
         {
-                return notify_fail("ÄãÒªÇÃÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦æ•²ä»€éº¼ï¼Ÿ\n");
         }
 
         me = this_player();
         if( !objectp(cui = present("pu ren", environment(me))) )
-                return notify_fail("ÄãÇÃÁËÇÃ×À×Ó£¬È´»¹ÊÇÃ»ÈËÀíÄã¡£ÄãÍ»È»¸Ğ¾õ×Ô¼ººÜÎŞÁÄ¡£\n");
+                return notify_fail("ä½ æ•²äº†æ•²æ¡Œå­ï¼Œå»é‚„æ˜¯æ²’äººç†ä½ ã€‚ä½ çªç„¶æ„Ÿè¦ºè‡ªå·±å¾ˆç„¡èŠã€‚\n");
 
         if( !query_temp("marks/sit", me) )
-                return notify_fail("ÄãÇÃÁËÇÃ×À×Ó£¬È´Ã»Ïëµ½ÓĞ¶ÔÄêÇáÈË´Ó×Àµ×ÏÂ×ê³öÀ´£¬ãµÈ»µØ¿´×ÅÄã£¬"
-                        +"\nÄãÍ»È»¸Ğ¾õ×Ô¼ººÜÓŞ´À¡£\n");
+                return notify_fail("ä½ æ•²äº†æ•²æ¡Œå­ï¼Œå»æ²’æƒ³åˆ°æœ‰å°å¹´è¼•äººå¾æ¡Œåº•ä¸‹é‘½å‡ºä¾†ï¼Œæ„•ç„¶åœ°çœ‹è‘—ä½ ï¼Œ"
+                        +"\nä½ çªç„¶æ„Ÿè¦ºè‡ªå·±å¾ˆæ„šè ¢ã€‚\n");
 
          if( query_temp("marks/served", me) )
          {
-                  message_vision("ÆÍÈË²»ÄÍ·³µØ¶Ô$NËµµÀ£º¸Õ¸øÄãÉÏ¹ı²èÄã½Ó×Å¾ÍÒª£¬"+
-                                "Äã²»ÀÛ¿ÉÎÒÀÛ°¡£¡\n", me);
+                  message_vision("åƒ•äººä¸è€ç…©åœ°å°$Nèªªé“ï¼šå‰›çµ¦ä½ ä¸ŠéèŒ¶ä½ æ¥è‘—å°±è¦ï¼Œ"+
+                                "ä½ ä¸ç´¯å¯æˆ‘ç´¯å•Šï¼\n", me);
                   return notify_fail("");
          }
 
-        message_vision("$N¶Ë×øÔÚ×ÀÇ°£¬ÇáÇá¿ÛÁËÏÂ×ÀÃæ£¬ÆÍÈËÁ¬Ã¦¹ıÀ´ÕĞºô¡£\n", me);
+        message_vision("$Nç«¯ååœ¨æ¡Œå‰ï¼Œè¼•è¼•æ‰£äº†ä¸‹æ¡Œé¢ï¼Œåƒ•äººé€£å¿™éä¾†æ‹›å‘¼ã€‚\n", me);
 
         cui->serve_tea(me) ;
 
@@ -88,13 +88,13 @@ int do_sit(string arg)
 {
 
         if ( !arg || (arg != "chair") )
-                return notify_fail("ÄãÒª×øÊ²Ã´ÉÏÃæ£¿\n");
+                return notify_fail("ä½ è¦åä»€éº¼ä¸Šé¢ï¼Ÿ\n");
 
         if( query_temp("marks/sit", this_player()) )
-                return notify_fail("ÄãÒÑ¾­ÓĞÁË¸ö×ùÎ»ÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“æœ‰äº†å€‹åº§ä½äº†ã€‚\n");
 
         set_temp("marks/sit", 1, this_player());
-        return notify_fail("ÄãÕÒÁË¸ö¿ÕÎ»×ùÏÂ£¬µÈ×ÅÉÏ²è¡£\n");
+        return notify_fail("ä½ æ‰¾äº†å€‹ç©ºä½åº§ä¸‹ï¼Œç­‰è‘—ä¸ŠèŒ¶ã€‚\n");
 }
 
 
@@ -110,11 +110,11 @@ int valid_leave(object me, string dir)
         switch ( random(2) )
         {
         case 0:
-                message_vision("ÆÍÈËÉìÊÖÀ¹×¡ÁË$N£º»¹ÊÇÏÈ°Ñ¶«Î÷³ÔÍêÁËÔÙ×ß°É¡£",me);
+                message_vision("åƒ•äººä¼¸æ‰‹æ””ä½äº†$Nï¼šé‚„æ˜¯å…ˆæŠŠæ±è¥¿åƒå®Œäº†å†èµ°å§ã€‚",me);
                 return notify_fail("\n");
                 break;
         case 1:
-                message_vision("ÆÍÈËÀ¹×¡$NµÀ£ººÎÕÆÃÅ·Ô¸À£¬ÒûÊ³²»µÃ´ø³ö²è·¿¡£",me);
+                message_vision("åƒ•äººæ””ä½$Né“ï¼šä½•æŒé–€å©å’ï¼Œé£²é£Ÿä¸å¾—å¸¶å‡ºèŒ¶æˆ¿ã€‚",me);
                 return notify_fail("\n");
                 break;
         }

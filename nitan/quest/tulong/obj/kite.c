@@ -2,15 +2,15 @@ inherit ITEM;
 
 void create()
 {
-        set_name("·çóÝ", ({ "kite" }) );
+        set_name("é¢¨ç®", ({ "kite" }) );
         set_weight(150);
         set_max_encumbrance(1);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
+                set("unit", "å€‹");
                 set("prep", "on");
-                set("long", "Ò»¸öºûµû·çóÝ£¬·Å·çóÝµÄÏßÉÏ°ï×ÅÒ»¸öÐ¡Ð¡µÄÖñÉÚ¡£ \n");
+                set("long", "ä¸€å€‹è´è¶é¢¨ç®ï¼Œæ”¾é¢¨ç®çš„ç·šä¸Šå¹«è‘—ä¸€å€‹å°å°çš„ç«¹å“¨ã€‚ \n");
                 set("value", 2000);
         }
 }
@@ -27,11 +27,11 @@ int do_play(string arg)
    me = this_player();
    ob = this_object();
    if( me->is_fighting() )
-      return notify_fail("ÔÚÕ½¶·ÖÐ·Å·çóÝ£¬ÏëÕÒËÀÂð£¡\n");
+      return notify_fail("åœ¨æˆ°é¬¥ä¸­æ”¾é¢¨ç®ï¼Œæƒ³æ‰¾æ­»å—Žï¼\n");
    if( me->is_busy() )
-      return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓÐÍê³É£¬²»ÄÜ·Å·çóÝ¡£\n");
-   if (!arg || (arg != "kite" && arg != "·çóÝ")) return 0;
-   tell_object(me, "ÄãÌÍ³öÒ»¸ö" + ob->name() + "¡£\n");
+      return notify_fail("ä½ ä¸Šä¸€å€‹å‹•ä½œé‚„æ²’æœ‰å®Œæˆï¼Œä¸èƒ½æ”¾é¢¨ç®ã€‚\n");
+   if (!arg || (arg != "kite" && arg != "é¢¨ç®")) return 0;
+   tell_object(me, "ä½ æŽå‡ºä¸€å€‹" + ob->name() + "ã€‚\n");
    environment(me)->kite_notify(ob, 0);
 
    return 1;

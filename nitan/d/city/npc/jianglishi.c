@@ -1,4 +1,4 @@
-//jianglishi ÄàÌ¶½±ÀøÊ¹
+//jianglishi æ³¥æ½­çå‹µä½¿
 //smallbear 03.10.26
 
 #include <ansi.h>
@@ -11,16 +11,16 @@ int do_lingqu(string arg);
 
 void create()
 {
-        set_name("½±ÀøÊ¹", ({ "jiangli shi", "shi", "jiangli" }));
-        set("nickname", HIY "ÄàÌ¶" NOR);
-        set("long", "Ëû¾ÍÊÇÄàÌ¶½±ÀøÊ¹£¬Èç¹ûÄã¶ÔÄàÌ¶ÓĞ¹±Ï×µÄ»°£¬¿ÉÒÔµ½ËûÕâÀïÁìÈ¡½±Àø¡£\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("çå‹µä½¿", ({ "jiangli shi", "shi", "jiangli" }));
+        set("nickname", HIY "æ³¥æ½­" NOR);
+        set("long", "ä»–å°±æ˜¯æ³¥æ½­çå‹µä½¿ï¼Œå¦‚æœä½ å°æ³¥æ½­æœ‰è²¢ç»çš„è©±ï¼Œå¯ä»¥åˆ°ä»–é€™è£¡é ˜å–çå‹µã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 20);
         set("per", 30);
         set("attitude", "peaceful");
         set("inquiry", ([
-                "¹±Ï×¶È"   : (: ask_gongxian :),
-                "½±Àø" : (: ask_jiangli :),
+                "è²¢ç»åº¦"   : (: ask_gongxian :),
+                "çå‹µ" : (: ask_jiangli :),
         ]));
 
         setup();
@@ -43,10 +43,10 @@ mixed ask_gongxian()
          gx=query("hx_gongxian", me);
 
         if( !query("hx_gongxian", me) )
-                return "¡°ÄãºÃÏó»¹Ã»ÓĞÎªÄàÌ¶×÷³ö¹±Ï×Å¶£¬Òª¼ÓÓÍ¡£¡±";
+                return "â€œä½ å¥½è±¡é‚„æ²’æœ‰ç‚ºæ³¥æ½­ä½œå‡ºè²¢ç»å“¦ï¼Œè¦åŠ æ²¹ã€‚â€";
 
         if( query("hx_gongxian", me)>0 )
-                  write (WHT"½±ÀøÊ¹¶ÔÄãĞ¦ÁËĞ¦£¬ËµµÀ£º¡°¸ÉµÃºÃ£¡ÄãÏÖÔÚÒÑ¾­ÓĞ"+chinese_number(gx)+"µã¹±Ï×¶ÈÁË£¬Òª¼ÌĞøÅ¬Á¦Å¶¡£¡±\n"NOR);
+                  write (WHT"çå‹µä½¿å°ä½ ç¬‘äº†ç¬‘ï¼Œèªªé“ï¼šâ€œå¹¹å¾—å¥½ï¼ä½ ç¾åœ¨å·²ç¶“æœ‰"+chinese_number(gx)+"é»è²¢ç»åº¦äº†ï¼Œè¦ç¹¼çºŒåŠªåŠ›å“¦ã€‚â€\n"NOR);
         return 1;
 }
 
@@ -57,10 +57,10 @@ mixed ask_jiangli()
          me = this_player();
         
         if( !query("hx_gongxian", me) )
-                return "¡°Äã»¹Ã»ÓĞ¹±Ï×¶ÈÄØ£¬¾ÍÀ´ÎÊ½±Àø£¿¡±";
+                return "â€œä½ é‚„æ²’æœ‰è²¢ç»åº¦å‘¢ï¼Œå°±ä¾†å•çå‹µï¼Ÿâ€";
 
         if( query("hx_gongxian", me)>0 )
-                return "¡°ÄãÊÇÀ´ÄÃ½±ÀøµÄÂğ£¿¿´Ò»ÏÂ help gongxian£¬È»ºóÕÒÎÒÁìÈ¡°É¡£¡±";
+                return "â€œä½ æ˜¯ä¾†æ‹¿çå‹µçš„å—ï¼Ÿçœ‹ä¸€ä¸‹ help gongxianï¼Œç„¶å¾Œæ‰¾æˆ‘é ˜å–å§ã€‚â€";
 
          return 1;
 }
@@ -71,22 +71,22 @@ int do_lingqu(string arg)
          me = this_player();
 
         if( !query("hx_gongxian", me) )
-                return notify_fail("ÄãÄ¿Ç°Ã»ÓĞ¹±Ï×¶È£¬²»ÄÜÁìÈ¡½±Àø¡£\n");
+                return notify_fail("ä½ ç›®å‰æ²’æœ‰è²¢ç»åº¦ï¼Œä¸èƒ½é ˜å–çå‹µã€‚\n");
 
          if ( ! arg || arg == "" )
-                return notify_fail("ÄãÏëÁìÈ¡Ê²Ã´ÄØ£¿\n");
+                return notify_fail("ä½ æƒ³é ˜å–ä»€éº¼å‘¢ï¼Ÿ\n");
 
-         if ( arg != "ÆĞÌá×Ó" && arg != "²¹ÌìÊ¯" && arg != "±ù²ÏË¿" && arg != "ÏÉµ¤" && arg != "ÉñÁ¦Íè"
-&& arg != "Ï´Ëèµ¤" && arg != "»ğºìÏÉµ¤" && arg != "ÌìÏãÓñÂ¶" && arg != "¾Å×ª½ğµ¤" && arg != "Ğş»Æ×ÏÇåµ¤"
-&& arg != "Âêè§²ĞÆ¬" && arg != "ôä´ä²ĞÆ¬" && arg != "×êÊ¯²ĞÆ¬" && arg != "Ë®¾§²ĞÆ¬" )
-                return notify_fail("½±ÀøÊ¹¿´ÁËÄãÒ»ÑÛ£º¡°ÎÒÕâÀï¿ÉÃ»ÓĞÄãÏëÒªµÄ£¬¾ö¶¨ÁËÔÙÀ´ÕÒÎÒ°É¡£¡±\n");
+         if ( arg != "è©æå­" && arg != "è£œå¤©çŸ³" && arg != "å†°è ¶çµ²" && arg != "ä»™ä¸¹" && arg != "ç¥åŠ›ä¸¸"
+&& arg != "æ´—é«“ä¸¹" && arg != "ç«ç´…ä»™ä¸¹" && arg != "å¤©é¦™ç‰éœ²" && arg != "ä¹è½‰é‡‘ä¸¹" && arg != "ç„é»ƒç´«æ¸…ä¸¹"
+&& arg != "ç‘ªç‘™æ®˜ç‰‡" && arg != "ç¿¡ç¿ æ®˜ç‰‡" && arg != "é‘½çŸ³æ®˜ç‰‡" && arg != "æ°´æ™¶æ®˜ç‰‡" )
+                return notify_fail("çå‹µä½¿çœ‹äº†ä½ ä¸€çœ¼ï¼šâ€œæˆ‘é€™è£¡å¯æ²’æœ‰ä½ æƒ³è¦çš„ï¼Œæ±ºå®šäº†å†ä¾†æ‰¾æˆ‘å§ã€‚â€\n");
 
-         if ( arg == "²¹ÌìÊ¯")
+         if ( arg == "è£œå¤©çŸ³")
                  {
                          if( query("hx_gongxian", me)<1 )
-                                  return notify_fail("ÄãµÄ¹±Ï×¶È²»¹»ÁË£¬ÔÙ¶à¶àÅ¬Á¦°É¡£\n");
+                                  return notify_fail("ä½ çš„è²¢ç»åº¦ä¸å¤ äº†ï¼Œå†å¤šå¤šåŠªåŠ›å§ã€‚\n");
                         
-                         write(WHT"½±ÀøÊ¹Î¢Î¢µãÁËµãÍ·£¬ÄÃ³öÒ»¿é²¹ÌìÊ¯½»ÁË¸øÄã¡£\n"NOR); 
+                         write(WHT"çå‹µä½¿å¾®å¾®é»äº†é»é ­ï¼Œæ‹¿å‡ºä¸€å¡Šè£œå¤©çŸ³äº¤äº†çµ¦ä½ ã€‚\n"NOR); 
                                     addn("hx_gongxian", -1, me);
                                     bts = new("/d/item/obj/butian"); 
                                     bts->move(this_player());
@@ -94,12 +94,12 @@ int do_lingqu(string arg)
                          
                  }
 
-         if ( arg == "±ù²ÏË¿")
+         if ( arg == "å†°è ¶çµ²")
                  {
                          if( query("hx_gongxian", me)<1 )
-                                  return notify_fail("ÄãµÄ¹±Ï×¶È²»¹»ÁË£¬ÔÙ¶à¶àÅ¬Á¦°É¡£\n");
+                                  return notify_fail("ä½ çš„è²¢ç»åº¦ä¸å¤ äº†ï¼Œå†å¤šå¤šåŠªåŠ›å§ã€‚\n");
 
-                         write(WHT"½±ÀøÊ¹Î¢Î¢µãÁËµãÍ·£¬ÄÃ³öÒ»Êø±ù²ÏË¿½»ÁË¸øÄã¡£\n"NOR); 
+                         write(WHT"çå‹µä½¿å¾®å¾®é»äº†é»é ­ï¼Œæ‹¿å‡ºä¸€æŸå†°è ¶çµ²äº¤äº†çµ¦ä½ ã€‚\n"NOR); 
                                     addn("hx_gongxian", -1, me);
                                     bcs = new("/d/item/obj/tiancs"); 
                                     bcs->move(this_player());
@@ -107,12 +107,12 @@ int do_lingqu(string arg)
                                    
                  }
 
-         if ( arg == "ÆĞÌá×Ó")
+         if ( arg == "è©æå­")
                  {
                          if( query("hx_gongxian", me)<2 )
-                                  return notify_fail("ÄãµÄ¹±Ï×¶È²»¹»ÁË£¬ÔÙ¶à¶àÅ¬Á¦°É¡£\n");
+                                  return notify_fail("ä½ çš„è²¢ç»åº¦ä¸å¤ äº†ï¼Œå†å¤šå¤šåŠªåŠ›å§ã€‚\n");
 
-                         write(WHT"½±ÀøÊ¹Î¢Î¢µãÁËµãÍ·£¬ÄÃ³öÒ»¿ÅÆĞÌá×Ó½»ÁË¸øÄã¡£\n"NOR); 
+                         write(WHT"çå‹µä½¿å¾®å¾®é»äº†é»é ­ï¼Œæ‹¿å‡ºä¸€é¡†è©æå­äº¤äº†çµ¦ä½ ã€‚\n"NOR); 
                                     addn("hx_gongxian", -2, me);
                                     ptz = new("/d/shaolin/obj/puti-zi"); 
                                     ptz->move(this_player());
@@ -120,12 +120,12 @@ int do_lingqu(string arg)
                                    
                  }
 
-         if ( arg == "ÏÉµ¤")
+         if ( arg == "ä»™ä¸¹")
                  {
                          if( query("hx_gongxian", me)<4 )
-                                  return notify_fail("ÄãµÄ¹±Ï×¶È²»¹»ÁË£¬ÔÙ¶à¶àÅ¬Á¦°É¡£\n");
+                                  return notify_fail("ä½ çš„è²¢ç»åº¦ä¸å¤ äº†ï¼Œå†å¤šå¤šåŠªåŠ›å§ã€‚\n");
 
-                         write(WHT"½±ÀøÊ¹Î¢Î¢µãÁËµãÍ·£¬ÄÃ³öÒ»¿ÅÏÉµ¤½»ÁË¸øÄã¡£\n"NOR); 
+                         write(WHT"çå‹µä½¿å¾®å¾®é»äº†é»é ­ï¼Œæ‹¿å‡ºä¸€é¡†ä»™ä¸¹äº¤äº†çµ¦ä½ ã€‚\n"NOR); 
                                     addn("hx_gongxian", -4, me);
                                     xd = new("/clone/gift/xiandan"); 
                                     xd->move(this_player());
@@ -133,12 +133,12 @@ int do_lingqu(string arg)
                                    
                  }
 
-         if ( arg == "ÉñÁ¦Íè")
+         if ( arg == "ç¥åŠ›ä¸¸")
                  {
                          if( query("hx_gongxian", me)<4 )
-                                  return notify_fail("ÄãµÄ¹±Ï×¶È²»¹»ÁË£¬ÔÙ¶à¶àÅ¬Á¦°É¡£\n");
+                                  return notify_fail("ä½ çš„è²¢ç»åº¦ä¸å¤ äº†ï¼Œå†å¤šå¤šåŠªåŠ›å§ã€‚\n");
 
-                         write(WHT"½±ÀøÊ¹Î¢Î¢µãÁËµãÍ·£¬ÄÃ³öÒ»¿ÅÉñÁ¦Íè½»ÁË¸øÄã¡£\n"NOR); 
+                         write(WHT"çå‹µä½¿å¾®å¾®é»äº†é»é ­ï¼Œæ‹¿å‡ºä¸€é¡†ç¥åŠ›ä¸¸äº¤äº†çµ¦ä½ ã€‚\n"NOR); 
                                     addn("hx_gongxian", -4, me);
                                     slw = new("/clone/gift/shenliwan"); 
                                     slw->move(this_player());
@@ -146,12 +146,12 @@ int do_lingqu(string arg)
                                    
                  }
 
-         if ( arg == "Ï´Ëèµ¤")
+         if ( arg == "æ´—é«“ä¸¹")
                  {
                          if( query("hx_gongxian", me)<4 )
-                                  return notify_fail("ÄãµÄ¹±Ï×¶È²»¹»ÁË£¬ÔÙ¶à¶àÅ¬Á¦°É¡£\n");
+                                  return notify_fail("ä½ çš„è²¢ç»åº¦ä¸å¤ äº†ï¼Œå†å¤šå¤šåŠªåŠ›å§ã€‚\n");
 
-                         write(WHT"½±ÀøÊ¹Î¢Î¢µãÁËµãÍ·£¬ÄÃ³öÒ»¿ÅÏ´Ëèµ¤½»ÁË¸øÄã¡£\n"NOR); 
+                         write(WHT"çå‹µä½¿å¾®å¾®é»äº†é»é ­ï¼Œæ‹¿å‡ºä¸€é¡†æ´—é«“ä¸¹äº¤äº†çµ¦ä½ ã€‚\n"NOR); 
                                     addn("hx_gongxian", -4, me);
                                     xsd = new("/clone/gift/xisuidan"); 
                                     xsd->move(this_player());
@@ -159,12 +159,12 @@ int do_lingqu(string arg)
                                    
                  }
 
-         if ( arg == "»ğºìÏÉµ¤")
+         if ( arg == "ç«ç´…ä»™ä¸¹")
                  {
                          if( query("hx_gongxian", me)<4 )
-                                  return notify_fail("ÄãµÄ¹±Ï×¶È²»¹»ÁË£¬ÔÙ¶à¶àÅ¬Á¦°É¡£\n");
+                                  return notify_fail("ä½ çš„è²¢ç»åº¦ä¸å¤ äº†ï¼Œå†å¤šå¤šåŠªåŠ›å§ã€‚\n");
 
-                         write(WHT"½±ÀøÊ¹Î¢Î¢µãÁËµãÍ·£¬ÄÃ³öÒ»¿Å»ğºìÏÉµ¤½»ÁË¸øÄã¡£\n"NOR); 
+                         write(WHT"çå‹µä½¿å¾®å¾®é»äº†é»é ­ï¼Œæ‹¿å‡ºä¸€é¡†ç«ç´…ä»™ä¸¹äº¤äº†çµ¦ä½ ã€‚\n"NOR); 
                                     addn("hx_gongxian", -4, me);
                                     hhxd = new("/clone/gift/unknowdan"); 
                                     hhxd->move(this_player());
@@ -172,12 +172,12 @@ int do_lingqu(string arg)
                                    
                  }
 
-         if ( arg == "ÌìÏãÓñÂ¶")
+         if ( arg == "å¤©é¦™ç‰éœ²")
                  {
                          if( query("hx_gongxian", me)<4 )
-                                  return notify_fail("ÄãµÄ¹±Ï×¶È²»¹»ÁË£¬ÔÙ¶à¶àÅ¬Á¦°É¡£\n");
+                                  return notify_fail("ä½ çš„è²¢ç»åº¦ä¸å¤ äº†ï¼Œå†å¤šå¤šåŠªåŠ›å§ã€‚\n");
 
-                         write(WHT"½±ÀøÊ¹Î¢Î¢µãÁËµãÍ·£¬ÄÃ³öÒ»µÎÌìÏãÓñÂ¶½»ÁË¸øÄã¡£\n"NOR); 
+                         write(WHT"çå‹µä½¿å¾®å¾®é»äº†é»é ­ï¼Œæ‹¿å‡ºä¸€æ»´å¤©é¦™ç‰éœ²äº¤äº†çµ¦ä½ ã€‚\n"NOR); 
                                     addn("hx_gongxian", -3, me);
                                     txyl = new("/clone/gift/tianxiang"); 
                                     txyl->move(this_player());
@@ -185,12 +185,12 @@ int do_lingqu(string arg)
                                    
                  }
 
-         if ( arg == "¾Å×ª½ğµ¤")
+         if ( arg == "ä¹è½‰é‡‘ä¸¹")
                  {
                          if( query("hx_gongxian", me)<6 )
-                                  return notify_fail("ÄãµÄ¹±Ï×¶È²»¹»ÁË£¬ÔÙ¶à¶àÅ¬Á¦°É¡£\n");
+                                  return notify_fail("ä½ çš„è²¢ç»åº¦ä¸å¤ äº†ï¼Œå†å¤šå¤šåŠªåŠ›å§ã€‚\n");
 
-                         write(WHT"½±ÀøÊ¹Î¢Î¢µãÁËµãÍ·£¬ÄÃ³öÒ»¿Å¾Å×ª½ğµ¤½»ÁË¸øÄã¡£\n"NOR); 
+                         write(WHT"çå‹µä½¿å¾®å¾®é»äº†é»é ­ï¼Œæ‹¿å‡ºä¸€é¡†ä¹è½‰é‡‘ä¸¹äº¤äº†çµ¦ä½ ã€‚\n"NOR); 
                                     addn("hx_gongxian", -6, me);
                                     jzjd = new("/clone/gift/jiuzhuan"); 
                                     jzjd->move(this_player());
@@ -198,12 +198,12 @@ int do_lingqu(string arg)
                                    
                  }
 
-         if ( arg == "Âêè§²ĞÆ¬")
+         if ( arg == "ç‘ªç‘™æ®˜ç‰‡")
                  {
                          if( query("hx_gongxian", me)<8 )
-                                  return notify_fail("ÄãµÄ¹±Ï×¶È²»¹»ÁË£¬ÔÙ¶à¶àÅ¬Á¦°É¡£\n");
+                                  return notify_fail("ä½ çš„è²¢ç»åº¦ä¸å¤ äº†ï¼Œå†å¤šå¤šåŠªåŠ›å§ã€‚\n");
 
-                         write(WHT"½±ÀøÊ¹Î¢Î¢µãÁËµãÍ·£¬ÄÃ³öÒ»Æ¬Âêè§²ĞÆ¬½»ÁË¸øÄã¡£\n"NOR); 
+                         write(WHT"çå‹µä½¿å¾®å¾®é»äº†é»é ­ï¼Œæ‹¿å‡ºä¸€ç‰‡ç‘ªç‘™æ®˜ç‰‡äº¤äº†çµ¦ä½ ã€‚\n"NOR); 
                                     addn("hx_gongxian", -8, me);
                                     mn = new("/clone/gift/cagate"); 
                                     mn->move(this_player());
@@ -211,12 +211,12 @@ int do_lingqu(string arg)
                                    
                  }
 
-         if ( arg == "ôä´ä²ĞÆ¬")
+         if ( arg == "ç¿¡ç¿ æ®˜ç‰‡")
                  {
                          if( query("hx_gongxian", me)<8 )
-                                  return notify_fail("ÄãµÄ¹±Ï×¶È²»¹»ÁË£¬ÔÙ¶à¶àÅ¬Á¦°É¡£\n");
+                                  return notify_fail("ä½ çš„è²¢ç»åº¦ä¸å¤ äº†ï¼Œå†å¤šå¤šåŠªåŠ›å§ã€‚\n");
 
-                         write(WHT"½±ÀøÊ¹Î¢Î¢µãÁËµãÍ·£¬ÄÃ³öÒ»Æ¬ôä´ä²ĞÆ¬½»ÁË¸øÄã¡£\n"NOR); 
+                         write(WHT"çå‹µä½¿å¾®å¾®é»äº†é»é ­ï¼Œæ‹¿å‡ºä¸€ç‰‡ç¿¡ç¿ æ®˜ç‰‡äº¤äº†çµ¦ä½ ã€‚\n"NOR); 
                                     addn("hx_gongxian", -8, me);
                                     fc = new("/clone/gift/cjade"); 
                                     fc->move(this_player());
@@ -224,35 +224,35 @@ int do_lingqu(string arg)
                                    
                  }
 
-         if ( arg == "×êÊ¯²ĞÆ¬")
+         if ( arg == "é‘½çŸ³æ®˜ç‰‡")
                  {
                          if( query("hx_gongxian", me)<8 )
-                                  return notify_fail("ÄãµÄ¹±Ï×¶È²»¹»ÁË£¬ÔÙ¶à¶àÅ¬Á¦°É¡£\n");
+                                  return notify_fail("ä½ çš„è²¢ç»åº¦ä¸å¤ äº†ï¼Œå†å¤šå¤šåŠªåŠ›å§ã€‚\n");
 
-                         write(WHT"½±ÀøÊ¹Î¢Î¢µãÁËµãÍ·£¬ÄÃ³öÒ»Æ¬×êÊ¯²ĞÆ¬½»ÁË¸øÄã¡£\n"NOR); 
+                         write(WHT"çå‹µä½¿å¾®å¾®é»äº†é»é ­ï¼Œæ‹¿å‡ºä¸€ç‰‡é‘½çŸ³æ®˜ç‰‡äº¤äº†çµ¦ä½ ã€‚\n"NOR); 
                                     addn("hx_gongxian", -8, me);
                                     zs = new("/clone/gift/cdiamond"); 
                                     zs->move(this_player());
                                     return 1;
                 }
                  
-         if ( arg == "Ë®¾§²ĞÆ¬")
+         if ( arg == "æ°´æ™¶æ®˜ç‰‡")
                 {
                          if( query("hx_gongxian", me)<8 )
-                                  return notify_fail("ÄãµÄ¹±Ï×¶È²»¹»ÁË£¬ÔÙ¶à¶àÅ¬Á¦°É¡£\n");
-                         write(WHT"½±ÀøÊ¹Î¢Î¢µãÁËµãÍ·£¬ÄÃ³öÒ»Æ¬Ë®¾§²ĞÆ¬½»ÁË¸øÄã¡£\n"NOR);
+                                  return notify_fail("ä½ çš„è²¢ç»åº¦ä¸å¤ äº†ï¼Œå†å¤šå¤šåŠªåŠ›å§ã€‚\n");
+                         write(WHT"çå‹µä½¿å¾®å¾®é»äº†é»é ­ï¼Œæ‹¿å‡ºä¸€ç‰‡æ°´æ™¶æ®˜ç‰‡äº¤äº†çµ¦ä½ ã€‚\n"NOR);
                                     addn("hx_gongxian", -8, me);
                                     sj = new("/clone/gift/ccrystal");
                                     sj->move(this_player());
                                     return 1;
                 }
                                
-         if ( arg == "Ğş»Æ×ÏÇåµ¤")
+         if ( arg == "ç„é»ƒç´«æ¸…ä¸¹")
                 {
                          if( query("hx_gongxian", me)<10 )
-                                  return notify_fail("ÄãµÄ¹±Ï×¶È²»¹»ÁË£¬ÔÙ¶à¶àÅ¬Á¦°É¡£\n");
+                                  return notify_fail("ä½ çš„è²¢ç»åº¦ä¸å¤ äº†ï¼Œå†å¤šå¤šåŠªåŠ›å§ã€‚\n");
 
-                         write(WHT"½±ÀøÊ¹Î¢Î¢µãÁËµãÍ·£¬ÄÃ³öÒ»¿ÅĞş»Æ×ÏÇåµ¤½»ÁË¸øÄã¡£\n"NOR);
+                         write(WHT"çå‹µä½¿å¾®å¾®é»äº†é»é ­ï¼Œæ‹¿å‡ºä¸€é¡†ç„é»ƒç´«æ¸…ä¸¹äº¤äº†çµ¦ä½ ã€‚\n"NOR);
                                     addn("hx_gongxian", -10, me);
                                     xhd = new("/clone/gift/xuanhuang");
                                     xhd->move(this_player());

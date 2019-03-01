@@ -3,27 +3,27 @@
 inherit F_CLEAN_UP;
 
 mapping default_dirs = ([
-        "north":        "±±",
-        "south":        "ÄÏ",
-        "east":         "¶«",
-        "west":         "Î÷",
-        "northup":      "±±±ß",
-        "southup":      "ÄÏ±ß",
-        "eastup":       "¶«±ß",
-        "westup":       "Î÷±ß",
-        "northdown":    "±±±ß",
-        "southdown":    "ÄÏ±ß",
-        "eastdown":     "¶«±ß",
-        "westdown":     "Î÷±ß",
-        "northeast":    "¶«±±",
-        "northwest":    "Î÷±±",
-        "southeast":    "¶«ÄÏ",
-        "southwest":    "Î÷ÄÏ",
-        "up":           "ÉÏ",
-        "down":         "ÏÂ",
-        "out":          "Íâ",
-        "in" :          "Àï",
-        "enter" :       "ÀïÃæ",
+        "north":        "åŒ—",
+        "south":        "å—",
+        "east":         "æ±",
+        "west":         "è¥¿",
+        "northup":      "åŒ—é‚Š",
+        "southup":      "å—é‚Š",
+        "eastup":       "æ±é‚Š",
+        "westup":       "è¥¿é‚Š",
+        "northdown":    "åŒ—é‚Š",
+        "southdown":    "å—é‚Š",
+        "eastdown":     "æ±é‚Š",
+        "westdown":     "è¥¿é‚Š",
+        "northeast":    "æ±åŒ—",
+        "northwest":    "è¥¿åŒ—",
+        "southeast":    "æ±å—",
+        "southwest":    "è¥¿å—",
+        "up":           "ä¸Š",
+        "down":         "ä¸‹",
+        "out":          "å¤–",
+        "in" :          "è£¡",
+        "enter" :       "è£¡é¢",
 ]);
 
 int main(object me, string arg)
@@ -34,7 +34,7 @@ int main(object me, string arg)
         mixed old_target;
 
         if (me->is_busy() || me->is_fighting())
-                return notify_fail("ÄãÏÖÔÚÃ»ÓÐ°ì·¨·ÖÐÄÈ¥×öÕâÀàÊÂ£¡\n");
+                return notify_fail("ä½ ç¾åœ¨æ²’æœ‰è¾¦æ³•åˆ†å¿ƒåŽ»åšé€™é¡žäº‹ï¼\n");
 
         old_target=query_temp("guardfor", me);
 
@@ -42,18 +42,18 @@ int main(object me, string arg)
         {
                 if (objectp(old_target))
                         if (living(old_target))
-                                write("ÄãÕýÔÚÊØ»¤Öø" + old_target->name() +
-                                      "¡£\n");
+                                write("ä½ æ­£åœ¨å®ˆè­·è‘—" + old_target->name() +
+                                      "ã€‚\n");
                         else
-                                write("ÄãÕýÊØÔÚ" + old_target->name() +
-                                      "Ò»ÅÔ£¬·ÀÖ¹±ðÈËÄÃ×ß¡£\n");
+                                write("ä½ æ­£å®ˆåœ¨" + old_target->name() +
+                                      "ä¸€æ—ï¼Œé˜²æ­¢åˆ¥äººæ‹¿èµ°ã€‚\n");
                 else
                 if (stringp(old_target))
-                        write("ÄãÕýÊØ×¡Íù" + default_dirs[old_target] +
-                              "µÄ·½Ïò£¬²»×¼ÈÎºÎÈËÀë¿ª¡£\n");
+                        write("ä½ æ­£å®ˆä½å¾€" + default_dirs[old_target] +
+                              "çš„æ–¹å‘ï¼Œä¸æº–ä»»ä½•äººé›¢é–‹ã€‚\n");
                 else
-                             return notify_fail("Ö¸Áî¸ñÊ½£ºguard <ÉúÎï> | "
-                                           "<ÎïÆ·> | <·½Ïò>\n");
+                             return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šguard <ç”Ÿç‰©> | "
+                                           "<ç‰©å“> | <æ–¹å‘>\n");
 
                 return 1;
         }
@@ -64,26 +64,26 @@ int main(object me, string arg)
         if (ob)
         {
                 if (ob == me)
-                        return notify_fail("ÊØÎÀ×Ô¼º£¿²»ÓÃËµÄãÒ²»á"
-                                           "×ö£¬¶Ô°É¡£\n");
+                        return notify_fail("å®ˆè¡›è‡ªå·±ï¼Ÿä¸ç”¨èªªä½ ä¹Ÿæœƒ"
+                                           "åšï¼Œå°å§ã€‚\n");
                 if( query("jing", me)*100/query("max_jing", me)<60 )
-                        return notify_fail("ÄãÏÖÔÚÎÞ·¨¼¯ÖÐ¾«ÉñÊØÎÀ" + ob->name() + "¡£\n");
+                        return notify_fail("ä½ ç¾åœ¨ç„¡æ³•é›†ä¸­ç²¾ç¥žå®ˆè¡›" + ob->name() + "ã€‚\n");
                 set_temp("guardfor", ob, me);
         } else
         if( query("exits/"+arg, env) )
         {
                 if ((base_name(env))[0..10]=="/data/room/")
-                        return notify_fail("ÕâÀïÊÇ±ðÈË¼ÒÀï£¬²»×¼ÄãÈöÒ°£¡\n");
+                        return notify_fail("é€™è£¡æ˜¯åˆ¥äººå®¶è£¡ï¼Œä¸æº–ä½ æ’’é‡Žï¼\n");
                 if( query("no_fight", env) )
-                        return notify_fail("ÕâÀï²»×¼Õ½¶·¡ª¡ªÒ²²»×¼¶Â×¡±ðÈËÈ¥Â·£¡\n");
+                        return notify_fail("é€™è£¡ä¸æº–æˆ°é¬¥â”€â”€ä¹Ÿä¸æº–å µä½åˆ¥äººåŽ»è·¯ï¼\n");
                 if( query("max_room", env) )
-                        return notify_fail("ÕâÀïÊÇ×¡Õ¬Çø£¬²»×¼¶Â×¡±ðÈËÈ¥Â·£¡\n");
+                        return notify_fail("é€™è£¡æ˜¯ä½å®…å€ï¼Œä¸æº–å µä½åˆ¥äººåŽ»è·¯ï¼\n");
                 if( query("jing", me)*100/query("max_jing", me)<75 )
-                        return notify_fail("ÄãÏÖÔÚÎÞ·¨¼¯ÖÐ¾«ÉñÊØÎÀÕâ¸ö·½Ïò¡£\n");
+                        return notify_fail("ä½ ç¾åœ¨ç„¡æ³•é›†ä¸­ç²¾ç¥žå®ˆè¡›é€™å€‹æ–¹å‘ã€‚\n");
                 set_temp("guardfor", arg, me);
         } else
         if (arg != "cancel")
-                return notify_fail("ÄãÒªÊØÎÀË­£¬Ê²÷á£¬»òÊÇÄÄ¸ö·½Ïò£¿\n");
+                return notify_fail("ä½ è¦å®ˆè¡›èª°ï¼Œä»€éº¼ï¼Œæˆ–æ˜¯å“ªå€‹æ–¹å‘ï¼Ÿ\n");
 
         if (objectp(old_target))
         {
@@ -98,7 +98,7 @@ int main(object me, string arg)
                 }
                 if (interactive(old_target))
                         tell_object(old_target, me->name() +
-                                    "²»ÔÙ±£»¤ÄãÁË¡£\n");
+                                    "ä¸å†ä¿è­·ä½ äº†ã€‚\n");
         } else
         if (stringp(old_target))
         {
@@ -117,7 +117,7 @@ int main(object me, string arg)
 
         if (arg=="cancel")
         {
-                write("Ê²Ã´Ò²²»ÓÃÊØÁË£¬ÕæÊÇºÃÇáËÉ¡£\n");
+                write("ä»€éº¼ä¹Ÿä¸ç”¨å®ˆäº†ï¼ŒçœŸæ˜¯å¥½è¼•é¬†ã€‚\n");
                 return 1;
         }
 
@@ -133,10 +133,10 @@ int main(object me, string arg)
                 }
                 set_temp("guarded", guards, ob);
                 if (living(ob))
-                        message_vision("$N¿ªÊ¼±£»¤$n¡£\n", me, ob);
+                        message_vision("$Né–‹å§‹ä¿è­·$nã€‚\n", me, ob);
                 else
-                        message_vision("$NÕ¾µ½µØÉÏµÄ$nÒ»ÅÔÊØÖø£¬ÒÔ"
-                                       "Ãâ±ðÈËÈ¡×ß¡£\n", me, ob);
+                        message_vision("$Nç«™åˆ°åœ°ä¸Šçš„$nä¸€æ—å®ˆè‘—ï¼Œä»¥"
+                                       "å…åˆ¥äººå–èµ°ã€‚\n", me, ob);
                 set_temp("guardfor", ob, me);
         } else
         {
@@ -149,10 +149,10 @@ int main(object me, string arg)
                         guards += ({ me });
                 }
                 set_temp("guarded/"+arg, guards, env);
-                message("vision", me->name() + "¹í¹íËîËîµÄÍûÁËÍûËÄÖÜ£¬"
-                                  "²»ÖªµÀÒª¸ÉÊ²Ã´¡£\n", env, ({ me }));
-                tell_object(me, "Äã¿ªÊ¼ÊØ×¡Íù" + default_dirs[arg] +
-                               "µÄ·½Ïò²»ÈÃÈÎºÎÈËÍ¨ÐÐ¡£\n", me);
+                message("vision", me->name() + "é¬¼é¬¼ç¥Ÿç¥Ÿçš„æœ›äº†æœ›å››å‘¨ï¼Œ"
+                                  "ä¸çŸ¥é“è¦å¹¹ä»€éº¼ã€‚\n", env, ({ me }));
+                tell_object(me, "ä½ é–‹å§‹å®ˆä½å¾€" + default_dirs[arg] +
+                               "çš„æ–¹å‘ä¸è®“ä»»ä½•äººé€šè¡Œã€‚\n", me);
                 set_temp("guardfor", arg, me);
         }
 
@@ -162,27 +162,27 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@TEXT
-Ö¸Áî¸ñÊ½£ºguard [<Ä³ÈË>|<µØÉÏÄ³Îï>|<Ä³¸ö³ö¿Ú>|cancel]
+æŒ‡ä»¤æ ¼å¼ï¼šguard [<æŸäºº>|<åœ°ä¸ŠæŸç‰©>|<æŸå€‹å‡ºå£>|cancel]
 
-Õâ¸öÖ¸ÁîÓÐÈýÖÖ×÷ÓÃ·½Ê½£¬·Ö±ðÈçáá£º
+é€™å€‹æŒ‡ä»¤æœ‰ä¸‰ç¨®ä½œç”¨æ–¹å¼ï¼Œåˆ†åˆ¥å¦‚å¾Œï¼š
 
-guard <Ä³ÈË>      ±£»¤<Ä³ÈË>£¬µ±Ëû£¯ËýÊÜµ½¹¥»÷Ê±£¬±£»¤Õß»á×Ô
-                  ¶¯¼ÓÈëÕ½¶·¡£
+guard <æŸäºº>      ä¿è­·<æŸäºº>ï¼Œç•¶ä»–ï¼å¥¹å—åˆ°æ”»æ“Šæ™‚ï¼Œä¿è­·è€…æœƒè‡ª
+                  å‹•åŠ å…¥æˆ°é¬¥ã€‚
 
-guard <µØÉÏÄ³Îï>  ÊØ×¡·ÅÔÚµØÉÏµÄÄ³¼þ¶«Î÷£¬·ÀÖ¹±ðÈËÀ´ÄÃ£¬Ö»Òª
-                  Äã»¹ÔÚÕâ¸ö·¿¼ä£¬¶øÇÒÃ»ÓÐÃ¦ÖøÆäËûÊÂ£¬±ðÈË¾Í
-                  ÎÞ·¨ÄÃ×ßÕâ¼þ¶«Î÷¡£
+guard <åœ°ä¸ŠæŸç‰©>  å®ˆä½æ”¾åœ¨åœ°ä¸Šçš„æŸä»¶æ±è¥¿ï¼Œé˜²æ­¢åˆ¥äººä¾†æ‹¿ï¼Œåªè¦
+                  ä½ é‚„åœ¨é€™å€‹æˆ¿é–“ï¼Œè€Œä¸”æ²’æœ‰å¿™è‘—å…¶ä»–äº‹ï¼Œåˆ¥äººå°±
+                  ç„¡æ³•æ‹¿èµ°é€™ä»¶æ±è¥¿ã€‚
 
-guard <Ä³¸ö³ö¿Ú>  ÊØ×¡Ä³¸ö³ö¿Ú·ÀÖ¹ËùÓÐÈË´ÓÕâ¸ö³ö¿ÚÀë¿ª£¬¿ÉÒÔ
-                  ÓÃÀ´×èÀ¹ÉÆì¶ÌÓÅÜµÄµÐÈË»òÀ¹Â·´ò½Ù×ö»µÊÂ£¬Èç
-                  ¹ûÄãµ±Ê±ÕýÃ¦£¬Ôò²»ÄÜ×èµ²±ðÈË¡£
+guard <æŸå€‹å‡ºå£>  å®ˆä½æŸå€‹å‡ºå£é˜²æ­¢æ‰€æœ‰äººå¾žé€™å€‹å‡ºå£é›¢é–‹ï¼Œå¯ä»¥
+                  ç”¨ä¾†é˜»æ””å–„æ–¼é€ƒè·‘çš„æ•µäººæˆ–æ””è·¯æ‰“åŠ«åšå£žäº‹ï¼Œå¦‚
+                  æžœä½ ç•¶æ™‚æ­£å¿™ï¼Œå‰‡ä¸èƒ½é˜»æ“‹åˆ¥äººã€‚
 
-guard cancel      È¡ÏûÏÈÇ°µÄ guard ¶ÔÏó¡£
+guard cancel      å–æ¶ˆå…ˆå‰çš„ guard å°è±¡ã€‚
 
-×¢Òâ£¬Ö»ÒªÄãÒ»ÒÆ¶¯£¬¶ÔÎïÆ·ºÍ³ö¿ÚµÄÊØÎÀ×´Ì¬¾Í»á½â³ý£¬µ«ÊÇ¶ÔÈË
-ÎïµÄ±£»¤×´Ì¬ÈÔÈ»ÓÐÐ§£¬Ö»ÒªÄãµ½ÁË±£»¤¶ÔÏóµÄÉí±ßÈÔÈ»·¢»Ó×÷ÓÃ¡£
-ÁíÍâ£¬µ±ÄãÔÚÊØÎÀ×´Ì¬µÄÊ±ºò£¬»áÏûºÄ¾«£¬Èç¹û¾«²»¹»ÁË£¬Ôò»á×Ô¶¯
-½â³ýÊØÎÀ×´Ì¬¡£
+æ³¨æ„ï¼Œåªè¦ä½ ä¸€ç§»å‹•ï¼Œå°ç‰©å“å’Œå‡ºå£çš„å®ˆè¡›ç‹€æ…‹å°±æœƒè§£é™¤ï¼Œä½†æ˜¯å°äºº
+ç‰©çš„ä¿è­·ç‹€æ…‹ä»ç„¶æœ‰æ•ˆï¼Œåªè¦ä½ åˆ°äº†ä¿è­·å°è±¡çš„èº«é‚Šä»ç„¶ç™¼æ®ä½œç”¨ã€‚
+å¦å¤–ï¼Œç•¶ä½ åœ¨å®ˆè¡›ç‹€æ…‹çš„æ™‚å€™ï¼Œæœƒæ¶ˆè€—ç²¾ï¼Œå¦‚æžœç²¾ä¸å¤ äº†ï¼Œå‰‡æœƒè‡ªå‹•
+è§£é™¤å®ˆè¡›ç‹€æ…‹ã€‚
 TEXT );
         return 1;
 }

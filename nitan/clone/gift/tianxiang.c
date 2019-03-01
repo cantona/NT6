@@ -1,4 +1,4 @@
-// tianxiang.c ������¶
+// tianxiang.c 天香玉露
 
 #include <ansi.h>
 
@@ -6,15 +6,15 @@
 
 void create()
 {
-        set_name(HIG "������¶" NOR, ({"magic water", "yvlu", "lu"}));
+        set_name(HIG "天香玉露" NOR, ({"magic water", "yvlu", "lu"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Щ");
-                set("base_unit", "��");
-                set("long", HIG "���Ǹ�������֥�ϵ�һ�ξ�Ө��͸����¶����˵����\n"
-                                "��ɽ��ǧ��������֥Ϊĸ�����ϵ���ȡ���վ��»���\n"
-                                "�������ޱ�����Ĺ�Ч��\n");
+                set("unit", "些");
+                set("base_unit", "滴");
+                set("long", HIG "這是附著在靈芝上的一滴晶瑩剔透的玉露，傳說採自\n"
+                                "靈山，千年來以靈芝為母，不斷的吸取著日精月華，\n"
+                                "具有著無比神奇的功效。\n");
                 set("base_value", 100000); 
                 set("base_weight", 200);
                 set("only_do_effect", 1);
@@ -28,9 +28,9 @@ int do_effect(object me)
         int neili_limit;
 
         neili_limit = me->query_current_neili_limit();
-        message_vision(HIG "$N" HIG "С�������Ľ���¶�������У���ʱ����"
-                       "��̨һ�������������\n��ƮƮ���ɣ�һʱ�侹�в���"
-                       "�����ĸо���\n" NOR,
+        message_vision(HIG "$N" HIG "小心翼翼的將玉露含在嘴中，登時覺得"
+                       "靈台一陣空明，渾身上\n下飄飄欲仙，一時間竟有不在"
+                       "塵世的感覺。\n" NOR,
                        me);
 
         if( query("max_neili", me)<neili_limit )

@@ -3,8 +3,8 @@ inherit "/clone/horse/horse.c";
 
 void create()
 {
-        set_name(HIC "爪黄飞电" NOR, ({ "zhuahuang feidian"}));
-        set("long", HIC "乃三国时曹操的爱马，奔跑如电，乃世间罕有。\n" NOR);
+        set_name(HIC "鐖粌椋涢浕" NOR, ({ "zhuahuang feidian"}));
+        set("long", HIC "涔冧笁鍦嬫檪鏇规搷鐨勬剾棣紝濂旇窇濡傞浕锛屼箖涓栭枔缃曟湁銆俓n" NOR);
 
         set("tili", 3000);
         set("max_tili", 3000);

@@ -4,11 +4,11 @@ inherit  ROOM;
 
 void  create  ()
 {
-        set("short",  "ÑòÈâ¹Ý");
+        set("short",  "ç¾Šè‚‰é¤¨");
         set("long",  @LONG
-ÕâÊÇÀ¼ÖÝ³ÇÄÚ×î´óµÄÑòÈâ¹Ý£¬ÂôµÄÈ«ÊÇ´Ó³ÇÍâ²ÝÔ­ÉÏÀ­À´µÄ¸ÕÔ×É±
-µÄ»îÑò£¬ÓÖÏÊÓÖÄÛ¡£ÄÏÀ´±±ÍùµÄ¿ÍÉÌ£¬µ½´ËµØ´ò¼â£¬ÎÞ²»µ½Õâ¶ùÀ´³¢³¢
-ÏÊ¡£¸üÓÐ²»ÉÙ¸½½üËÂÔºµÄÀ®Âïµ½Õâ¶ùÍµÐÈ¡£
+é€™æ˜¯è˜­å·žåŸŽå…§æœ€å¤§çš„ç¾Šè‚‰é¤¨ï¼Œè³£çš„å…¨æ˜¯å¾žåŸŽå¤–è‰åŽŸä¸Šæ‹‰ä¾†çš„å‰›å®°æ®º
+çš„æ´»ç¾Šï¼Œåˆé®®åˆå«©ã€‚å—ä¾†åŒ—å¾€çš„å®¢å•†ï¼Œåˆ°æ­¤åœ°æ‰“å°–ï¼Œç„¡ä¸åˆ°é€™å…’ä¾†å˜—å˜—
+é®®ã€‚æ›´æœ‰ä¸å°‘é™„è¿‘å¯ºé™¢çš„å–‡å˜›åˆ°é€™å…’å·è…¥ã€‚
 LONG);
         set("exits",  ([  /*  sizeof()  ==  2  */
                 "west"  : __DIR__"market",

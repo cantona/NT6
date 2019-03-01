@@ -13,59 +13,59 @@ int main(object me, string arg)
         seteuid(getuid());
 
         if(!arg || sscanf(arg, "%s to %s", food, ob) !=2)
-                return notify_fail("ÄãÒªÎ¹Ê²Ã´¶«Î÷¸øË­£¿\n");
+                return notify_fail("ä½ è¦å–‚ä»€éº¼æ±è¥¿çµ¦èª°ï¼Ÿ\n");
         if(!objectp(obj = present(food, me)) ) 
-                return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷°¡¡£\n");
+                return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™æ¨£æ±è¥¿å•Šã€‚\n");
         if(!objectp(pet = present(ob, environment(me))) || !living(pet))
-                return notify_fail("ÕâÀïÃ»ÓĞÕâÑùµÄ¶¯Îï¡£\n");
-        if( query("race", pet) == "ÈËÀà" )
-                return notify_fail(pet->name()+"ÊÇ³èÎïÃ´£¿µÉ´óÑÛ¾¦¿´¿´£¡\n");
+                return notify_fail("é€™è£¡æ²’æœ‰é€™æ¨£çš„å‹•ç‰©ã€‚\n");
+        if( query("race", pet) == "äººé¡" )
+                return notify_fail(pet->name()+"æ˜¯å¯µç‰©éº¼ï¼Ÿçªå¤§çœ¼ç›çœ‹çœ‹ï¼\n");
         if(pet->is_busy() )
-                return notify_fail(pet->name()+"ÕıÃ¦×ÅÄØ£¬ÄÄ³ÔµÃÏÂÊ²Ã´£¡\n");
+                return notify_fail(pet->name()+"æ­£å¿™è‘—å‘¢ï¼Œå“ªåƒå¾—ä¸‹ä»€éº¼ï¼\n");
         if(pet->is_busy() )
-                return notify_fail(pet->name()+"ÕıÃ¦×ÅÄØ£¬ÄÄ³ÔµÃÏÂÊ²Ã´£¡\n");
+                return notify_fail(pet->name()+"æ­£å¿™è‘—å‘¢ï¼Œå“ªåƒå¾—ä¸‹ä»€éº¼ï¼\n");
         if(me->is_busy() )
-                return notify_fail("ÄãÕıÃ¦×ÅÄØ£¬Ê²Ã´Ò²×ö²»ÁË£¡\n");
+                return notify_fail("ä½ æ­£å¿™è‘—å‘¢ï¼Œä»€éº¼ä¹Ÿåšä¸äº†ï¼\n");
         if(pet->is_fighting() )
-                return notify_fail("ËüÕıÔÚ´ò¼ÜÄØ£¬ÄãÄÑµÀÃ»¿´¼û£¿£¡\n");
+                return notify_fail("å®ƒæ­£åœ¨æ‰“æ¶å‘¢ï¼Œä½ é›£é“æ²’çœ‹è¦‹ï¼Ÿï¼\n");
         if(me->is_fighting() )
-                return notify_fail("Ò»±ß´ò¼ÜÒ»±ßÎ¹Ê³£¿ÄãÕæÊÇ»îÄåÁË£¡\n");
+                return notify_fail("ä¸€é‚Šæ‰“æ¶ä¸€é‚Šå–‚é£Ÿï¼Ÿä½ çœŸæ˜¯æ´»è†©äº†ï¼\n");
         if( !wizardp(me) && query_temp("feeded", pet) )
-                return notify_fail("ÈËÒ»´Î²»ÄÜ¶à³Ô¶«Î÷£¬³Ô¶àÁË»áÀ­¶Ç×Ó£¬"+query("name", pet)+"Ò²Ò»Ñù¡£\n");
+                return notify_fail("äººä¸€æ¬¡ä¸èƒ½å¤šåƒæ±è¥¿ï¼Œåƒå¤šäº†æœƒæ‹‰è‚šå­ï¼Œ"+query("name", pet)+"ä¹Ÿä¸€æ¨£ã€‚\n");
         if( query("id", me) != query_temp("owner", pet) )
-                return notify_fail("Äã¿´µ½"+query("name", pet)+"ÉÏÇ°ÎÅÁËÁ½ÏÂ£¬½á¹ûÒ»½ÅÌß¿ªÁË¡£\n");
+                return notify_fail("ä½ çœ‹åˆ°"+query("name", pet)+"ä¸Šå‰èäº†å…©ä¸‹ï¼Œçµæœä¸€è…³è¸¢é–‹äº†ã€‚\n");
         if( !query("siliao_supply", obj) )
-                return notify_fail("ËÆºõ"+query("name", pet)+"¶ÔÕâÑù¶«Î÷ĞËÈ¤²»´ó¡£\n");
+                return notify_fail("ä¼¼ä¹"+query("name", pet)+"å°é€™æ¨£æ±è¥¿èˆˆè¶£ä¸å¤§ã€‚\n");
         if( !query("siliao_remaining", obj) )
-                return notify_fail( obj->name() + "ÒÑ¾­Ã»Ê²Ã´ºÃ³ÔµÄÁË¡£\n");
+                return notify_fail( obj->name() + "å·²ç¶“æ²’ä»€éº¼å¥½åƒçš„äº†ã€‚\n");
         if( query("food", pet) >= pet->max_food_capacity() )
-                return notify_fail(pet->name()+"ÒÑ¾­³ÔÌ«±¥ÁË£¬ÔÙÒ²Èû²»ÏÂÈÎºÎ¶«Î÷ÁË¡£\n");
+                return notify_fail(pet->name()+"å·²ç¶“åƒå¤ªé£½äº†ï¼Œå†ä¹Ÿå¡ä¸ä¸‹ä»»ä½•æ±è¥¿äº†ã€‚\n");
         set("value", 0, obj);
         addn("siliao_remaining", -1, obj);
         me->start_busy(1);
-// ³èÎïÊ³Îï×´Ì¬¸Ä±ä¡£
+// å¯µç‰©é£Ÿç‰©ç‹€æ…‹æ”¹è®Šã€‚
         addn("food",query("siliao_supply",  obj), pet);
-// ÑÓÊ±½øÊ³£¬²»ÄÜÁ¬Ğø³Ô¡£¸Õ³ÔÍêÒ²²»ÄÜÈÃ³èÎïÍË³ö¡£Á¬Ğø»úÆ÷ÈËÎ¹76Ìì´ïµ½100¼¶¡£
-// 9Ìì¿ÉÒÔ´ïµ½50¼¶¡£
+// å»¶æ™‚é€²é£Ÿï¼Œä¸èƒ½é€£çºŒåƒã€‚å‰›åƒå®Œä¹Ÿä¸èƒ½è®“å¯µç‰©é€€å‡ºã€‚é€£çºŒæ©Ÿå™¨äººå–‚76å¤©é”åˆ°100ç´šã€‚
+// 9å¤©å¯ä»¥é”åˆ°50ç´šã€‚
         set_temp("feeded", "1", pet);
         call_out("del", 20, pet);
-// ³èÎïÉı¼¶£¬ÓëÑ±ÊŞÎŞ¹Ø¡£
+// å¯µç‰©å‡ç´šï¼Œèˆ‡é¦´ç¸ç„¡é—œã€‚
         if( query("owner", pet) == query("id", me) )
         {
-// Ê³Îï×÷ÓÃ¸Ä±ä£¬ÀÛ¼ÆÒÔ±ãÉı¼¶¡£
+// é£Ÿç‰©ä½œç”¨æ”¹è®Šï¼Œç´¯è¨ˆä»¥ä¾¿å‡ç´šã€‚
                 if( query("siliao_effect", obj) )
                         addn("feed",query("siliao_effect",  obj), pet);
-// Î¹Ñø³¤¾­Ñé¡£
+// å–‚é¤Šé•·ç¶“é©—ã€‚
                 addn("combat_exp", 5+random(10), pet);
                 i=query("feed", pet);
                 j=query("level", pet);
                 if(i>=2+j*j)
                 {
-                        tell_object(me,HIY"ÄãÎ¹ÁËÕâÒ»´ÎÊ³Îïºó£¬·¢¾õ"+query("name", pet)+"ËÆºõÏÔµÃ¸üÇ¿½¡¡¢Ò²¸üÌı»°ÁË£¡\n"NOR);
-// Î¹Ñø³¤¼¶±ğ¡£
+                        tell_object(me,HIY"ä½ å–‚äº†é€™ä¸€æ¬¡é£Ÿç‰©å¾Œï¼Œç™¼è¦º"+query("name", pet)+"ä¼¼ä¹é¡¯å¾—æ›´å¼·å¥ã€ä¹Ÿæ›´è½è©±äº†ï¼\n"NOR);
+// å–‚é¤Šé•·ç´šåˆ¥ã€‚
                         addn("level", 1, pet);
                         set("feed", 0, pet);
-// Î¹Ñø³¤Ñ±·ş¶È¡£
+// å–‚é¤Šé•·é¦´æœåº¦ã€‚
                         addn("obe", 1, pet);
                         lvl=query("level", pet);
                 }
@@ -79,7 +79,7 @@ int main(object me, string arg)
                         message_vision(query("finish_msg", obj),pet,obj);
                 else
                 {
-                        message_vision("$NÄÃ³öÒ»"+query("unit", obj)+query("name", obj)+"À´£¬Ïò$nÕĞÁËÕĞÊÖ¡£\n$nºÜÑ±Ë³µÄ×ßÁË¹ıÈ¥£¬Ò»°ÑµğÆğÁË"+query("name", obj)+"£¬³ÔÁË¸ö¸É¸É¾»¾»¡£\n",me,pet);
+                        message_vision("$Næ‹¿å‡ºä¸€"+query("unit", obj)+query("name", obj)+"ä¾†ï¼Œå‘$næ‹›äº†æ‹›æ‰‹ã€‚\n$nå¾ˆé¦´é †çš„èµ°äº†éå»ï¼Œä¸€æŠŠå¼èµ·äº†"+query("name", obj)+"ï¼Œåƒäº†å€‹å¹¹å¹¹å‡ˆå‡ˆã€‚\n",me,pet);
                 }
                 if( !obj->finish_eat() ) destruct(obj);
         } 
@@ -88,7 +88,7 @@ int main(object me, string arg)
                 if( query("eat_msg", obj) )
                         message_vision(query("eat_msg", obj),pet,obj);
                 else 
-                        message_vision("$NÄÃ³öÒ»"+query("unit", obj)+query("name", obj)+"À´£¬Ïò$nÕĞÁËÕĞÊÖ¡£\n$nºÜÑ±Ë³µÄ×ßÁË¹ıÈ¥£¬Ò»°ÑµğÆğÁË"+query("name", obj)+"£¬ºİºİ¾ÍÊÇÒ»¿Ú¡£\n",me,pet);
+                        message_vision("$Næ‹¿å‡ºä¸€"+query("unit", obj)+query("name", obj)+"ä¾†ï¼Œå‘$næ‹›äº†æ‹›æ‰‹ã€‚\n$nå¾ˆé¦´é †çš„èµ°äº†éå»ï¼Œä¸€æŠŠå¼èµ·äº†"+query("name", obj)+"ï¼Œç‹ ç‹ å°±æ˜¯ä¸€å£ã€‚\n",me,pet);
         }
         if( !obj ) return 1;
         
@@ -103,24 +103,24 @@ void del(object pet)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : feed <ËÇÁÏ> to <¶¯ÎïÃû>
+æŒ‡ä»¤æ ¼å¼ : feed <é£¼æ–™> to <å‹•ç‰©å>
 
-    ´ËÖ¸Áî¿ÉÓÃÓÚÎ¹ÑøÄãËùÑ±·şµÄ¶¯Îï¡£
+    æ­¤æŒ‡ä»¤å¯ç”¨äºå–‚é¤Šä½ æ‰€é¦´æœçš„å‹•ç‰©ã€‚
 
-    ¶ÔÓÚÒÑ¾­Ñ±·şµÄ¶¯Îï£¬¿ÉÒÔ½øĞĞÏÂÊöÖ¸Áî£º
+    å°äºå·²ç¶“é¦´æœçš„å‹•ç‰©ï¼Œå¯ä»¥é€²è¡Œä¸‹è¿°æŒ‡ä»¤ï¼š
 
-»ù±¾Ö¸Áî£º
-        come <¶¯ÎïÃû>:                  ÈÃ¶¯Îï¸úËæÖ÷ÈËĞĞ¶¯¡£
-        stay:                           Í£Ö¹¶¯ÎïµÄ¸úËæ×´Ì¬¡£
-        attack <Ä³Îï>:                  ÈÃ¶¯Îï¹¥»÷µĞÈË¡£
-        stop <¶¯ÎïÃû>:                  ÈÃ¶¯ÎïÍ£Ö¹¶ÔÈËµÄ¹¥»÷¡£
-        release:                        ½áÊøÖ÷Å«×´Ì¬£¬½«¶¯Îï·ÅÀë¡£
+åŸºæœ¬æŒ‡ä»¤ï¼š
+        come <å‹•ç‰©å>:                  è®“å‹•ç‰©è·Ÿéš¨ä¸»äººè¡Œå‹•ã€‚
+        stay:                           åœæ­¢å‹•ç‰©çš„è·Ÿéš¨ç‹€æ…‹ã€‚
+        attack <æŸç‰©>:                  è®“å‹•ç‰©æ”»æ“Šæ•µäººã€‚
+        stop <å‹•ç‰©å>:                  è®“å‹•ç‰©åœæ­¢å°äººçš„æ”»æ“Šã€‚
+        release:                        çµæŸä¸»å¥´ç‹€æ…‹ï¼Œå°‡å‹•ç‰©æ”¾é›¢ã€‚
 
-ÌØÊâÖ¸Áî£º£¨Ö»¶ÔÄ³Ğ©¶¯ÎïÊÊÓÃ£©
-        ride <¶¯ÎïÃû>:                  Æï£¬ÈçÆïÂí£¬»¢£¬µñ£¬öèµÈ¡£
-        unride <¶¯ÎïÃû>:                ÏÂ£¬Àë¿ª×øÆï¡£
-        feed <ËÇÁÏ> to <¶¯ÎïÃû>:        Ìæ¶¯ÎïÎ¹Ê³¡£
-        imbibe <¶¯ÎïÃû>:                ¸ø¶¯ÎïÒûË®¡£
+ç‰¹æ®ŠæŒ‡ä»¤ï¼šï¼ˆåªå°æŸäº›å‹•ç‰©é©ç”¨ï¼‰
+        ride <å‹•ç‰©å>:                  é¨ï¼Œå¦‚é¨é¦¬ï¼Œè™ï¼Œé›•ï¼Œé¯Šç­‰ã€‚
+        unride <å‹•ç‰©å>:                ä¸‹ï¼Œé›¢é–‹åé¨ã€‚
+        feed <é£¼æ–™> to <å‹•ç‰©å>:        æ›¿å‹•ç‰©å–‚é£Ÿã€‚
+        imbibe <å‹•ç‰©å>:                çµ¦å‹•ç‰©é£²æ°´ã€‚
 
 HELP
         );

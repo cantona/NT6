@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "É½ÑÂ");
+        set("short", "å±±å´–");
         set("long", @LONG
-ÕâÊÇ»ªÉ½ºóÉ½µÄ¶¸ÇÍÉ½ÑÂ£¬×óÉÏ·½±ãÊÇ»ªÉ½ÅÉÕÆÃÅÔÀ²»ÈºµÄ¾ÓÊÒ£¬
-¾ÓÊÒµÄ´°»§Õý¶Ô×ÅÄãµÄÍ·¶¥¡£
+é€™æ˜¯è¯å±±å¾Œå±±çš„é™¡å³­å±±å´–ï¼Œå·¦ä¸Šæ–¹ä¾¿æ˜¯è¯å±±æ´¾æŽŒé–€å²³ä¸ç¾¤çš„å±…å®¤ï¼Œ
+å±…å®¤çš„çª—æˆ¶æ­£å°è‘—ä½ çš„é ­é ‚ã€‚
 LONG );
         set("exits",([
                 "east" : __DIR__"songlin4",
@@ -29,11 +29,11 @@ void init()
         if (! environment(ob) &&
             ! query("begin") &&
             ! query("over") &&
-            query("gender", me) == "ÎÞÐÔ" )
+            query("gender", me) == "ç„¡æ€§" )
         {
                 set("jiasha", 1);
-                tell_object(me, HIB "Äã¸Õµ½ÕâÀï£¬ºöÈ»Ìý¼ûÉÏ·½´°»§´«À´ÕóÕó¶ú"
-                                "Óï£¬²»½ûÏë³¯´°»§Íû(view)È¥£¡\n" NOR);
+                tell_object(me, HIB "ä½ å‰›åˆ°é€™è£¡ï¼Œå¿½ç„¶è½è¦‹ä¸Šæ–¹çª—æˆ¶å‚³ä¾†é™£é™£è€³"
+                                "èªžï¼Œä¸ç¦æƒ³æœçª—æˆ¶æœ›(view)åŽ»ï¼\n" NOR);
         }
         return 0;
 }
@@ -43,20 +43,20 @@ int do_look(string arg)
         object me = this_player();
 
         if (arg != "window" && arg != "chuanghu" && arg != "chuang")
-                return notify_fail("ÄãÒª¿´Ê²Ã´£¿\n");
+                return notify_fail("ä½ è¦çœ‹ä»€éº¼ï¼Ÿ\n");
 
         if (query("over") || ! query("jiasha"))
-                return notify_fail("Ò»ÉÈ½ô±Õ×ÅµÄ´°»§£¬Ã»Ê²Ã´ºÃÇÆµÄ¡£\n");
+                return notify_fail("ä¸€æ‰‡ç·Šé–‰è‘—çš„çª—æˆ¶ï¼Œæ²’ä»€éº¼å¥½çž§çš„ã€‚\n");
 
         if (query("begin"))
-                return notify_fail("´°»§ÀïÁ½¸öÈËÓ°ÕýÔÚÌ¸»°£¬ÒªÍµÌý¾Í±ð¶¯¡£\n");
+                return notify_fail("çª—æˆ¶è£¡å…©å€‹äººå½±æ­£åœ¨è«‡è©±ï¼Œè¦å·è½å°±åˆ¥å‹•ã€‚\n");
 
-        if( query("gender", me) != "ÎÞÐÔ" )
-                return notify_fail("Ò»ÉÈ½ô±Õ×ÅµÄ´°»§£¬Ã»Ê²Ã´ºÃÇÆµÄ¡£\n");
+        if( query("gender", me) != "ç„¡æ€§" )
+                return notify_fail("ä¸€æ‰‡ç·Šé–‰è‘—çš„çª—æˆ¶ï¼Œæ²’ä»€éº¼å¥½çž§çš„ã€‚\n");
 
-        message_vision(HIB "$N" HIB "Íû´°»§ÇÆÈ¥£¬Ö»¼û´°Ç°Á¢×ÅÁ½¸öµ­µ­µÄÈËÓ°£¬ÕýÔÚ"
-                       "µÍÉùÏ¸Óï£¬$N" HIB "ÈÌÄÍ²»×¡ºÃÆæ£¬ÇÄÇÄ\nµÄ×ßµ½´°Ç°ÍµÌýÁ½ÈË"
-                       "µÄ¶Ô»°¡£\n" NOR,me);
+        message_vision(HIB "$N" HIB "æœ›çª—æˆ¶çž§åŽ»ï¼Œåªè¦‹çª—å‰ç«‹è‘—å…©å€‹æ·¡æ·¡çš„äººå½±ï¼Œæ­£åœ¨"
+                       "ä½Žè²ç´°èªžï¼Œ$N" HIB "å¿è€ä¸ä½å¥½å¥‡ï¼Œæ‚„æ‚„\nçš„èµ°åˆ°çª—å‰å·è½å…©äºº"
+                       "çš„å°è©±ã€‚\n" NOR,me);
         remove_call_out("do_talk1");
         call_out("do_talk1", 4, me);
         set("begin", 1);
@@ -66,9 +66,9 @@ int do_look(string arg)
 
 int do_talk1(object me)
 {
-        message_vision( WHT "\nÖ»ÌýµÃÒ»Î»Å®×ÓµÄÉùÒôËµµÀ£º¡°Ê¦¸ç£¬ÎÒ¾õµÃÄã½üÀ´ÉñÉ«"
-                        "²»¶Ô£¬ÊÇ²»ÊÇÁ·ÄÇ×ÏÏ¼Éñ¹¦ÓÐ\nÐ©¶ùÂé·³£¿¿É±ðÌ«Çó¾«½ø£¬ÈÇ³ö"
-                        "ÂÒ×ÓÀ´¡£¡±ÌýÉùÒôËÆºõÊÇ»ªÉ½ÕÆÃÅ·òÈËÄþÖÐÔò¡£\n" NOR, me);
+        message_vision( WHT "\nåªè½å¾—ä¸€ä½å¥³å­çš„è²éŸ³èªªé“ï¼šâ€œå¸«å“¥ï¼Œæˆ‘è¦ºå¾—ä½ è¿‘ä¾†ç¥žè‰²"
+                        "ä¸å°ï¼Œæ˜¯ä¸æ˜¯ç·´é‚£ç´«éœžç¥žåŠŸæœ‰\näº›å…’éº»ç…©ï¼Ÿå¯åˆ¥å¤ªæ±‚ç²¾é€²ï¼Œæƒ¹å‡º"
+                        "äº‚å­ä¾†ã€‚â€è½è²éŸ³ä¼¼ä¹Žæ˜¯è¯å±±æŽŒé–€å¤«äººå¯§ä¸­å‰‡ã€‚\n" NOR, me);
         remove_call_out("do_talk2");
         call_out("do_talk2", 4, me);
         return 1;
@@ -76,9 +76,9 @@ int do_talk1(object me)
 
 int do_talk2(object me)
 {
-        message_vision( WHT "\nÓÖÌýµÃÒ»Î»¼âÉù¼âÆøµÄÉùÒôËµµÀ£º¡°Ã»ÓÐ°¡£¬ÎÒÁ·¹¦Ë³Àû"
-                        "µÃºÜ¡£¡±ÄÇÉùÒôÒÀÏ¡±ãÊÇ»ªÉ½\nµÄÕÆÃÅÔÀ²»Èº£¬Äã²»¾¹´ó³ÔÒ»¾ª"
-                        "¡£\n" NOR, me);
+        message_vision( WHT "\nåˆè½å¾—ä¸€ä½å°–è²å°–æ°£çš„è²éŸ³èªªé“ï¼šâ€œæ²’æœ‰å•Šï¼Œæˆ‘ç·´åŠŸé †åˆ©"
+                        "å¾—å¾ˆã€‚â€é‚£è²éŸ³ä¾ç¨€ä¾¿æ˜¯è¯å±±\nçš„æŽŒé–€å²³ä¸ç¾¤ï¼Œä½ ä¸ç«Ÿå¤§åƒä¸€é©š"
+                        "ã€‚\n" NOR, me);
         remove_call_out("do_talk3");
         call_out("do_talk3", 4, me);
         return 1;
@@ -86,8 +86,8 @@ int do_talk2(object me)
 
 int do_talk3(object me)
 {
-        message_vision( WHT "\nÄÇÅ®×ÓÓÖµÀ£º¡°Äã±ðÂ÷ÎÒ£¬ÎªÉõÃ´Äã½üÀ´Ëµ»°µÄÉ¤×Ó±äÁË"
-                        "£¬ÓÖ¼âÓÖ¸ß£¬µ¹ÏñÅ®ÈËËÆµÄ¡£¡±\n" NOR, me);
+        message_vision( WHT "\né‚£å¥³å­åˆé“ï¼šâ€œä½ åˆ¥çžžæˆ‘ï¼Œç‚ºç”šéº¼ä½ è¿‘ä¾†èªªè©±çš„å—“å­è®Šäº†"
+                        "ï¼Œåˆå°–åˆé«˜ï¼Œå€’åƒå¥³äººä¼¼çš„ã€‚â€\n" NOR, me);
         remove_call_out("do_talk4");
         call_out("do_talk4", 4, me);
         return 1;
@@ -95,7 +95,7 @@ int do_talk3(object me)
 
 int do_talk4(object me)
 {
-        message_vision( WHT "\nÄÇÄÐ×ÓÅ­µÀ£º¡°ºúËµ°ËµÀ£¡ÎÒËµ»°ÏòÀ´¾ÍÊÇÕâÑùµÄ¡£¡±\n"
+        message_vision( WHT "\né‚£ç”·å­æ€’é“ï¼šâ€œèƒ¡èªªå…«é“ï¼æˆ‘èªªè©±å‘ä¾†å°±æ˜¯é€™æ¨£çš„ã€‚â€\n"
                         NOR, me);
         remove_call_out("do_talk5");
         call_out("do_talk5", 4, me);
@@ -104,8 +104,8 @@ int do_talk4(object me)
 
 int do_talk5(object me)
 {
-        message_vision( HIB "\nÄãÌýµÃÄÇÄÐ×ÓËµÕâ¾ä»°£¬É¤Éù¹ûÈ»Ïàµ±¼â£¬È·ÏñÊÇ¸öÅ®×Ó"
-                        "ÔÚ´ó·¢Æ¢Æø¡£\n" NOR, me);
+        message_vision( HIB "\nä½ è½å¾—é‚£ç”·å­èªªé€™å¥è©±ï¼Œå—“è²æžœç„¶ç›¸ç•¶å°–ï¼Œç¢ºåƒæ˜¯å€‹å¥³å­"
+                        "åœ¨å¤§ç™¼è„¾æ°£ã€‚\n" NOR, me);
         remove_call_out("do_talk6");
         call_out("do_talk6", 4, me);
         return 1;
@@ -113,9 +113,9 @@ int do_talk5(object me)
 
 int do_talk6(object me)
 {
-        message_vision( WHT "\nÄÇÅ®×Ó½Ó×ÅËµµÀ£º¡°»¹ËµÃ»±ä£¿ÄãÒ»ÉúÖ®ÖÐ£¬¾Í´ÓÀ´Ã»¶Ô"
-                        "ÎÒÕâÑùËµ¹ý»°¡£ÎÒÁ©·ò¸¾¶àÄê£¬\nÄãÐÄÖÐÓÐÉõÃ´½â²»¿ªµÄÊÂ£¬ºÎ"
-                        "ÒÔÂ÷ÎÒ£¿¡±\n" NOR, me);
+        message_vision( WHT "\né‚£å¥³å­æŽ¥è‘—èªªé“ï¼šâ€œé‚„èªªæ²’è®Šï¼Ÿä½ ä¸€ç”Ÿä¹‹ä¸­ï¼Œå°±å¾žä¾†æ²’å°"
+                        "æˆ‘é€™æ¨£èªªéŽè©±ã€‚æˆ‘å€†å¤«å©¦å¤šå¹´ï¼Œ\nä½ å¿ƒä¸­æœ‰ç”šéº¼è§£ä¸é–‹çš„äº‹ï¼Œä½•"
+                        "ä»¥çžžæˆ‘ï¼Ÿâ€\n" NOR, me);
         remove_call_out("do_talk7");
         call_out("do_talk7", 4, me);
         return 1;
@@ -123,9 +123,9 @@ int do_talk6(object me)
 
 int do_talk7(object me)
 {
-        message_vision( WHT "\nÄÇÄÐ×ÓÓÖµÀ£º¡°ÓÐÉõÃ´½â²»¿ªµÄÊÂ£¿àÅ£¬áÔÉ½Ö®»á²»Ô¶£¬"
-                        "×óÀäìøÒâÍ¼ÍÌ²¢ËÄÅÉ£¬ÆäÐÄÕÑ\nÈ»Èô½Ò¡£ÎÒÎª´Ë·³ÐÄ£¬ÄÇÒ²ÊÇÓÐ"
-                        "µÄ¡£¡±\n" NOR,me);
+        message_vision( WHT "\né‚£ç”·å­åˆé“ï¼šâ€œæœ‰ç”šéº¼è§£ä¸é–‹çš„äº‹ï¼Ÿå—¯ï¼Œåµ©å±±ä¹‹æœƒä¸é ï¼Œ"
+                        "å·¦å†·ç¦ªæ„åœ–åžä¸¦å››æ´¾ï¼Œå…¶å¿ƒæ˜­\nç„¶è‹¥æ­ã€‚æˆ‘ç‚ºæ­¤ç…©å¿ƒï¼Œé‚£ä¹Ÿæ˜¯æœ‰"
+                        "çš„ã€‚â€\n" NOR,me);
         remove_call_out("do_talk8");
         call_out("do_talk8", 4, me);
         return 1;
@@ -133,7 +133,7 @@ int do_talk7(object me)
 
 int do_talk8(object me)
 {
-        message_vision( WHT "\nÄÇÅ®×ÓºßÁËÒ»Éù£¬µÀ£º¡°ÎÒ¿´»¹²»Ö¹ÓÚ´Ë¡£¡±\n" NOR, me);
+        message_vision( WHT "\né‚£å¥³å­å“¼äº†ä¸€è²ï¼Œé“ï¼šâ€œæˆ‘çœ‹é‚„ä¸æ­¢äºŽæ­¤ã€‚â€\n" NOR, me);
         remove_call_out("do_talk9");
         call_out("do_talk9", 4, me);
         return 1;
@@ -141,7 +141,7 @@ int do_talk8(object me)
 
 int do_talk9(object me)
 {
-        message_vision( WHT "\nÄÇÄÐ×Ó¼âÉùµÀ£º¡°Äã±ãÊÇÏ¹ÒÉÐÄ£¬´ËÍâ¸üÓÐÉõÃ´£¿¡±\n"
+        message_vision( WHT "\né‚£ç”·å­å°–è²é“ï¼šâ€œä½ ä¾¿æ˜¯çžŽç–‘å¿ƒï¼Œæ­¤å¤–æ›´æœ‰ç”šéº¼ï¼Ÿâ€\n"
                         NOR, me);
         remove_call_out("do_talk10");
         call_out("do_talk10", 4, me);
@@ -150,12 +150,12 @@ int do_talk9(object me)
 
 int do_talk10(object me)
 {
-        message_vision( WHT "\nÄÇÅ®×ÓÉùÒôÊ®·ÖÆ½¾²£¬ËµµÀ£º¡°ÎÒËµÁË³öÀ´£¬Äã¿É±ð·¢»ð"
-                        "¡£ÎÒÖªµÀÄãÊÇÔ©Í÷ÁË³å¶ù¡£ÄÇ\nÈÕ³å¶ùÊÜÉË»èÃÔ£¬ÎÒÌæËûÖ¹ÑªÖÎ"
-                        "ÉËÖ®Ê±£¬¼ûµ½ËûÉíÉÏÓÐ¼þôÂôÄ£¬Ð´ÂúÁË×Ö£¬ËÆºõÊÇ½£·¨\nÖ®Àà¡£"
-                        "µÚ¶þ´ÎÌæËû»»Ò©£¬ÄÇ¼þôÂôÄÒÑ¾­²»¼ûÁË£¬ÆäÊ±³å¶ùÈÔÈ»»èÃÔÎ´ÐÑ"
-                        "¡£Õâ¶ÎÊ±ºòÖ®ÖÐ£¬\n³ýÁËÄãÎÒ¶þÈË£¬²¢ÎÞ±ðÈË½ø·¿¡£Õâ¼þôÂôÄ¿É"
-                        "²»ÊÇÎÒÄÃµÄ¡£¡±\n" NOR, me);
+        message_vision( WHT "\né‚£å¥³å­è²éŸ³ååˆ†å¹³éœï¼Œèªªé“ï¼šâ€œæˆ‘èªªäº†å‡ºä¾†ï¼Œä½ å¯åˆ¥ç™¼ç«"
+                        "ã€‚æˆ‘çŸ¥é“ä½ æ˜¯å†¤æž‰äº†æ²–å…’ã€‚é‚£\næ—¥æ²–å…’å—å‚·æ˜è¿·ï¼Œæˆ‘æ›¿ä»–æ­¢è¡€æ²»"
+                        "å‚·ä¹‹æ™‚ï¼Œè¦‹åˆ°ä»–èº«ä¸Šæœ‰ä»¶è¢ˆè£Ÿï¼Œå¯«æ»¿äº†å­—ï¼Œä¼¼ä¹Žæ˜¯åŠæ³•\nä¹‹é¡žã€‚"
+                        "ç¬¬äºŒæ¬¡æ›¿ä»–æ›è—¥ï¼Œé‚£ä»¶è¢ˆè£Ÿå·²ç¶“ä¸è¦‹äº†ï¼Œå…¶æ™‚æ²–å…’ä»ç„¶æ˜è¿·æœªé†’"
+                        "ã€‚é€™æ®µæ™‚å€™ä¹‹ä¸­ï¼Œ\né™¤äº†ä½ æˆ‘äºŒäººï¼Œä¸¦ç„¡åˆ¥äººé€²æˆ¿ã€‚é€™ä»¶è¢ˆè£Ÿå¯"
+                        "ä¸æ˜¯æˆ‘æ‹¿çš„ã€‚â€\n" NOR, me);
         remove_call_out("do_talk11");
         call_out("do_talk11", 6, me);
         return 1;
@@ -163,8 +163,8 @@ int do_talk10(object me)
 
 int do_talk11(object me)
 {
-        message_vision( WHT "\nÄÇÄÐ×Ó¼¸´Î²å¿ÚËµ»°£¬µ«¾ùÖ»º¬ºý²»ÇåµÄËµÁËÒ»Á½¸ö×Ö£¬"
-                        "±ãÃ»ÔÙËµÏÂÈ¥¡­¡­\n" NOR, me);
+        message_vision( WHT "\né‚£ç”·å­å¹¾æ¬¡æ’å£èªªè©±ï¼Œä½†å‡åªå«ç³Šä¸æ¸…çš„èªªäº†ä¸€å…©å€‹å­—ï¼Œ"
+                        "ä¾¿æ²’å†èªªä¸‹åŽ»â€¦â€¦\n" NOR, me);
         remove_call_out("do_talk12");
         call_out("do_talk12", 4, me);
         return 1;
@@ -172,14 +172,14 @@ int do_talk11(object me)
 
 int do_talk12(object me)
 {
-        message_vision( WHT "\nÄÇÅ®×ÓÓïÉù½¥×ªÈáºÍ£¬ËµµÀ£º¡°Ê¦¸ç£¬ÎÒ»ªÉ½Ò»ÅÉµÄ½£Êõ"
-                        "£¬×ÔÓÐ¶Àµ½µÄÔìÒè£¬×ÏÏ¼Éñ¹¦\nµÄÆø¹¦¸üÊÇ²»·²£¬ÒÔ´ËÓëÈËÕùÐÛ"
-                        "£¬×ÔÒà×ãÒÔÊ÷ÃûÉùÓÚ½­ºþ£¬Ô­²»±ØÔÙÈ¥ÁíÑ§±ðÅÉ½£Êõ¡£\nÖ»ÊÇ½ü"
-                        "À´×óÀäìøÒ°ÐÄ´ó³ã£¬Í¼²¢ËÄÅÉ¡£»ªÉ½Ò»ÅÉÔÚÄãÊÖÀï£¬ËµÉõÃ´Ò²²»"
-                        "ÄÜÂÙÍöÓÚËûµÄÊÖ\nÖÐ¡£ÔÛÃÇÔÙÁªÂçÁËÌ©É½¡¢ºãÉ½¡¢ºâÉ½ÈýÅÉ£¬µ½"
-                        "Ê±ÒÔËÄÅÉ¶·ËûÒ»ÅÉ£¬ÎÒ¿´»¹ÊÇÕ¼ÁËÁù³ÉÓ®\nÃæ£¬¾ÍËãÕæµÄ²»Ê¤£¬"
-                        "´ó»ï¶ùºäºäÁÒÁÒµÄ¾ç¶·Ò»³¡£¬½«ÐÔÃüËÍÔÚáÔÉ½£¬Ò²¾ÍÊÇÁË£¬µ½ÁË"
-                        "¾Å\nÈªÖ®ÏÂÒ²²»ÖÂÀ¢¶Ô»ªÉ½ÅÉµÄÁÐ×æÁÐ×Ú¡£¡±\n" NOR, me);
+        message_vision( WHT "\né‚£å¥³å­èªžè²æ¼¸è½‰æŸ”å’Œï¼Œèªªé“ï¼šâ€œå¸«å“¥ï¼Œæˆ‘è¯å±±ä¸€æ´¾çš„åŠè¡“"
+                        "ï¼Œè‡ªæœ‰ç¨åˆ°çš„é€ è©£ï¼Œç´«éœžç¥žåŠŸ\nçš„æ°£åŠŸæ›´æ˜¯ä¸å‡¡ï¼Œä»¥æ­¤èˆ‡äººçˆ­é›„"
+                        "ï¼Œè‡ªäº¦è¶³ä»¥æ¨¹åè²äºŽæ±Ÿæ¹–ï¼ŒåŽŸä¸å¿…å†åŽ»å¦å­¸åˆ¥æ´¾åŠè¡“ã€‚\nåªæ˜¯è¿‘"
+                        "ä¾†å·¦å†·ç¦ªé‡Žå¿ƒå¤§ç†¾ï¼Œåœ–ä¸¦å››æ´¾ã€‚è¯å±±ä¸€æ´¾åœ¨ä½ æ‰‹è£¡ï¼Œèªªç”šéº¼ä¹Ÿä¸"
+                        "èƒ½æ·ªäº¡äºŽä»–çš„æ‰‹\nä¸­ã€‚å’±å€‘å†è¯çµ¡äº†æ³°å±±ã€æ†å±±ã€è¡¡å±±ä¸‰æ´¾ï¼Œåˆ°"
+                        "æ™‚ä»¥å››æ´¾é¬¥ä»–ä¸€æ´¾ï¼Œæˆ‘çœ‹é‚„æ˜¯ä½”äº†å…­æˆè´\né¢ï¼Œå°±ç®—çœŸçš„ä¸å‹ï¼Œ"
+                        "å¤§ä¼™å…’è½Ÿè½Ÿçƒˆçƒˆçš„åŠ‡é¬¥ä¸€å ´ï¼Œå°‡æ€§å‘½é€åœ¨åµ©å±±ï¼Œä¹Ÿå°±æ˜¯äº†ï¼Œåˆ°äº†"
+                        "ä¹\næ³‰ä¹‹ä¸‹ä¹Ÿä¸è‡´æ„§å°è¯å±±æ´¾çš„åˆ—ç¥–åˆ—å®—ã€‚â€\n" NOR, me);
         remove_call_out("do_talk13");
         call_out("do_talk13", 6, me);
         return 1;
@@ -187,8 +187,8 @@ int do_talk12(object me)
 
 int do_talk13(object me)
 {
-        message_vision( WHT "\nÄÇÄÐ×Ó´óÉùµÀ£º¡°ÄãÔõÖªÎÒÔÚÑ§±ÙÐ°½£·¨£¿Äã¡­¡­Äã¡­¡­"
-                        "ÔÚÍµ¿´ÎÒÂð£¿¡±\n" NOR, me);
+        message_vision( WHT "\né‚£ç”·å­å¤§è²é“ï¼šâ€œä½ æ€ŽçŸ¥æˆ‘åœ¨å­¸è¾Ÿé‚ªåŠæ³•ï¼Ÿä½ â€¦â€¦ä½ â€¦â€¦"
+                        "åœ¨å·çœ‹æˆ‘å—Žï¼Ÿâ€\n" NOR, me);
         remove_call_out("do_talk14");
         call_out("do_talk14", 4, me);
         return 1;
@@ -196,9 +196,9 @@ int do_talk13(object me)
 
 int do_talk14(object me)
 {
-        message_vision( WHT "\nÄÇÅ®×ÓËµµÀ£º¡°ÎÒÓÖºÎ±ØÍµ¿´Õâ²ÅÖªµÀ£¿ÄãËµ»°µÄÉùÒô£¬"
-                        "¾ÍÒÑ¾­È«È»±äÁË£¬ÈËÈË¶¼ÌýµÃ\n³öÀ´£¬ÄÑµÀÄã×Ô¼º·´¶ø²»¾õµÃ£¿"
-                        "Ã¿ÌìÔç³¿£¬Äã±»ÎÑÀï×ÜÊÇÂäÏÂÁËÐí¶àºúÐë¡­¡­¡±\n" NOR, me);
+        message_vision( WHT "\né‚£å¥³å­èªªé“ï¼šâ€œæˆ‘åˆä½•å¿…å·çœ‹é€™æ‰çŸ¥é“ï¼Ÿä½ èªªè©±çš„è²éŸ³ï¼Œ"
+                        "å°±å·²ç¶“å…¨ç„¶è®Šäº†ï¼Œäººäººéƒ½è½å¾—\nå‡ºä¾†ï¼Œé›£é“ä½ è‡ªå·±åè€Œä¸è¦ºå¾—ï¼Ÿ"
+                        "æ¯å¤©æ—©æ™¨ï¼Œä½ è¢«çª©è£¡ç¸½æ˜¯è½ä¸‹äº†è¨±å¤šèƒ¡é ˆâ€¦â€¦â€\n" NOR, me);
         remove_call_out("do_talk15");
         call_out("do_talk15", 4, me);
         return 1;
@@ -206,7 +206,7 @@ int do_talk14(object me)
 
 int do_talk15(object me)
 {
-        message_vision( WHT "\nÄÇÄÐ×Ó¼â½ÐÒ»Éù£¬ÎÊµÀ£º¡°ÄãÇÆ¼ûÁË£¿ÓïÒôÉõÊÇ¾ª²À¡£¡±"
+        message_vision( WHT "\né‚£ç”·å­å°–å«ä¸€è²ï¼Œå•é“ï¼šâ€œä½ çž§è¦‹äº†ï¼ŸèªžéŸ³ç”šæ˜¯é©šæ€–ã€‚â€"
                         "\n" NOR, me);
         remove_call_out("do_talk16");
         call_out("do_talk16", 4, me);
@@ -215,8 +215,8 @@ int do_talk15(object me)
 
 int do_talk16(object me)
 {
-        message_vision( WHT "\nÄÇÅ®×ÓÌ¾µÀ£º¡°ÎÒÔçÇÆ¼ûÁË£¬Ò»Ö±²»Ëµ¡£ÄãÕ³µÄ¼ÙÐë£¬ÄÜ"
-                        "Â÷¹ýÅÔÈË£¬È´ÔõÂ÷µÃ¹ýºÍÄã×ö\nÁË¼¸Ê®Äê·òÆÞµÄÕí±ßÖ®ÈË£¿¡±\n"
+        message_vision( WHT "\né‚£å¥³å­å˜†é“ï¼šâ€œæˆ‘æ—©çž§è¦‹äº†ï¼Œä¸€ç›´ä¸èªªã€‚ä½ ç²˜çš„å‡é ˆï¼Œèƒ½"
+                        "çžžéŽæ—äººï¼Œå»æ€Žçžžå¾—éŽå’Œä½ åš\näº†å¹¾åå¹´å¤«å¦»çš„æž•é‚Šä¹‹äººï¼Ÿâ€\n"
                         NOR,me);
         remove_call_out("do_talk17");
         call_out("do_talk17", 4, me);
@@ -225,8 +225,8 @@ int do_talk16(object me)
 
 int do_talk17(object me)
 {
-        message_vision( WHT "\nÄÇÄÐ×Ó¼ûÊÂÒÑ°ÜÂ¶£¬ÎÞ¿ÉÔÙ±ç£¬¸ôÁËÁ¼¾Ã£¬ÎÊµÀ£º¡°ÅÔÈË"
-                        "»¹ÓÐË­ÖªµÀÁË£¿¡±\n" NOR, me);
+        message_vision( WHT "\né‚£ç”·å­è¦‹äº‹å·²æ•—éœ²ï¼Œç„¡å¯å†è¾¯ï¼Œéš”äº†è‰¯ä¹…ï¼Œå•é“ï¼šâ€œæ—äºº"
+                        "é‚„æœ‰èª°çŸ¥é“äº†ï¼Ÿâ€\n" NOR, me);
         remove_call_out("do_talk18");
         call_out("do_talk18", 4, me);
         return 1;
@@ -234,7 +234,7 @@ int do_talk17(object me)
 
 int do_talk18(object me)
 {
-        message_vision( WHT "\nÄÇÅ®×ÓËµµÀ£º¡°Ã»ÓÐ£¬Éº¶ùºÍÆ½Ö®Ò²²»ÖªµÀ¡±\n" NOR, me);
+        message_vision( WHT "\né‚£å¥³å­èªªé“ï¼šâ€œæ²’æœ‰ï¼ŒçŠå…’å’Œå¹³ä¹‹ä¹Ÿä¸çŸ¥é“â€\n" NOR, me);
         remove_call_out("do_talk19");
         call_out("do_talk19", 4, me);
         return 1;
@@ -242,9 +242,9 @@ int do_talk18(object me)
 
 int do_talk19(object me)
 {
-        message_vision( WHT "\nÄÇÄÐ×Ó³ÁÒ÷Æ¬¿Ì£¬ËµµÀ£º¡°ºÃ£¬ÎÒÌýÄãµÄÈ°£¬Õâ¼þôÂôÄ£¬"
-                        "ÎÒÁ¢¼´»ÙÈ¥£¬ÔÙÂýÂýÏë·¨ÌæÁî\nºü³åÏ´Ë¢Çå°×¡£ÕâÂ·½£·¨£¬½ñºó"
-                        "Ò²²»Á·ÁË¡£¡±\n" NOR, me);
+        message_vision( WHT "\né‚£ç”·å­æ²‰åŸç‰‡åˆ»ï¼Œèªªé“ï¼šâ€œå¥½ï¼Œæˆ‘è½ä½ çš„å‹¸ï¼Œé€™ä»¶è¢ˆè£Ÿï¼Œ"
+                        "æˆ‘ç«‹å³æ¯€åŽ»ï¼Œå†æ…¢æ…¢æƒ³æ³•æ›¿ä»¤\nç‹æ²–æ´—åˆ·æ¸…ç™½ã€‚é€™è·¯åŠæ³•ï¼Œä»Šå¾Œ"
+                        "ä¹Ÿä¸ç·´äº†ã€‚â€\n" NOR, me);
         remove_call_out("do_talk20");
         call_out("do_talk20", 4, me);
         return 1;
@@ -264,14 +264,14 @@ int do_talk20(object me)
 
         if (! environment(ob))
         {
-                message_vision( HIR "\n$N" HIR "´ó³ÔÒ»¾ª£¬±ãÏë³öÉù×èÖ¹£¬½£Æ×ÄË²»ÊÀÖ®Îï£¬"
-                               "¹ÜËûÓÐÒæÓÐº¦£¬ÔÀÀÏÔô¿ÉÎÞÈ¨»ÙÈ¥¡£±ã\nÔÚ´ËÊ±£¬Ö»ÌýµÃ´°×ÓÑ½"
-                               "µÄÒ»Éù´ò¿ª£¬$N" HIR "¼±Ã¦ËõÍ·£¬ÑÛÇ°ºì¹âÒ»ÉÁ£¬ÄÇ¼þôÂôÄÆ®"
-                               "½«ÁËÏÂÀ´£¬\n¸ú×Å´°×ÓÓÖ¼´¹ØÉÏ¡£ÑÛ¿´ÄÇôÂôÄ´ÓÉíÅÔÆ®¹ý£¬$N" HIR
-                               "ÉìÊÖÒ»×¥£¬²îÁËÊý³ß£¬Ã»ÄÜ×¥µ½¡£¶ÙÊ±\n$N" HIR "½«ÉúËÀÖÃÖ®"
-                               "¶ÈÍâ£¬ÓÒÊÖ´îÔÚÑÂÉÏ£¬×ó½ÅÞÕÃüÏòÍâÒ»¹´£¬Ö»¾õ½Å¼âËÆºõÅöµ½ÁË"
-                               "ôÂôÄ£¬Á¢\n¼´Ëõ½«»ØÀ´£¬µ±ÕæÐÒÔËµÃ½ô£¬¾¹½«ÄÇôÂôÄ¹´µ½ÁË£¬Ã»"
-                               "ÂäÈëÌìÉùÏ¿ÏÂµÄÍòØðÉîÔ¨ÖÐ¡£\n\n" NOR, me);
+                message_vision( HIR "\n$N" HIR "å¤§åƒä¸€é©šï¼Œä¾¿æƒ³å‡ºè²é˜»æ­¢ï¼ŒåŠè­œä¹ƒä¸ä¸–ä¹‹ç‰©ï¼Œ"
+                               "ç®¡ä»–æœ‰ç›Šæœ‰å®³ï¼Œå²³è€è³Šå¯ç„¡æ¬Šæ¯€åŽ»ã€‚ä¾¿\nåœ¨æ­¤æ™‚ï¼Œåªè½å¾—çª—å­å‘€"
+                               "çš„ä¸€è²æ‰“é–‹ï¼Œ$N" HIR "æ€¥å¿™ç¸®é ­ï¼Œçœ¼å‰ç´…å…‰ä¸€é–ƒï¼Œé‚£ä»¶è¢ˆè£Ÿé£„"
+                               "å°‡äº†ä¸‹ä¾†ï¼Œ\nè·Ÿè‘—çª—å­åˆå³é—œä¸Šã€‚çœ¼çœ‹é‚£è¢ˆè£Ÿå¾žèº«æ—é£„éŽï¼Œ$N" HIR
+                               "ä¼¸æ‰‹ä¸€æŠ“ï¼Œå·®äº†æ•¸å°ºï¼Œæ²’èƒ½æŠ“åˆ°ã€‚é “æ™‚\n$N" HIR "å°‡ç”Ÿæ­»ç½®ä¹‹"
+                               "åº¦å¤–ï¼Œå³æ‰‹æ­åœ¨å´–ä¸Šï¼Œå·¦è…³æ‹šå‘½å‘å¤–ä¸€å‹¾ï¼Œåªè¦ºè…³å°–ä¼¼ä¹Žç¢°åˆ°äº†"
+                               "è¢ˆè£Ÿï¼Œç«‹\nå³ç¸®å°‡å›žä¾†ï¼Œç•¶çœŸå¹¸é‹å¾—ç·Šï¼Œç«Ÿå°‡é‚£è¢ˆè£Ÿå‹¾åˆ°äº†ï¼Œæ²’"
+                               "è½å…¥å¤©è²å³½ä¸‹çš„è¬ä»žæ·±æ·µä¸­ã€‚\n\n" NOR, me);
                 set("over", 1);
                 delete_temp("jiasha");
                 ob->move(me, 1);
@@ -281,21 +281,21 @@ int do_talk20(object me)
                         addn("combat_exp", exp, me);
                         addn("potential", pot, me);
                         addn("score", sc, me);
-                        tell_object(me, HIW "Äã³É¹¦µÄÈ¡µÃÁË¿û»¨±¦µä£¡\n" NOR + HIC "Í¨"
-                                        "¹ýÕâ´ÎµÄÀúÁ·£¬Äã»ñµÃÁË" + chinese_number(exp) +
-                                        "µã¾­Ñé¡¢" + chinese_number(pot) + "µãÇ±\nÄÜÒÔ¼°"
-                                        + chinese_number(sc) + "µã½­ºþÔÄÀú¡£\n\n" NOR);
+                        tell_object(me, HIW "ä½ æˆåŠŸçš„å–å¾—äº†è‘µèŠ±å¯¶å…¸ï¼\n" NOR + HIC "é€š"
+                                        "éŽé€™æ¬¡çš„æ­·ç·´ï¼Œä½ ç²å¾—äº†" + chinese_number(exp) +
+                                        "é»žç¶“é©—ã€" + chinese_number(pot) + "é»žæ½›\nèƒ½ä»¥åŠ"
+                                        + chinese_number(sc) + "é»žæ±Ÿæ¹–é–±æ­·ã€‚\n\n" NOR);
                         set("skybook/xiaoao/baodian", 1, me);
                 } else
-                        tell_object(me, HIC "ÄãµÃµ½ÁËÒ»¼þôÂôÄ¡£\n\n" NOR);
+                        tell_object(me, HIC "ä½ å¾—åˆ°äº†ä¸€ä»¶è¢ˆè£Ÿã€‚\n\n" NOR);
         } else
         {
-                message_vision( HIR "\n$N" HIR "´ó³ÔÒ»¾ª£¬±ãÏë³öÉù×èÖ¹£¬½£Æ×ÄË²»ÊÀÖ®Îï£¬"
-                               "¹ÜËûÓÐÒæÓÐº¦£¬ÔÀÀÏÔô¿ÉÎÞÈ¨»ÙÈ¥¡£±ã\nÔÚ´ËÊ±£¬Ö»ÌýµÃ´°×ÓÑ½"
-                               "µÄÒ»Éù´ò¿ª£¬$N" HIR "¼±Ã¦ËõÍ·£¬ÑÛÇ°ºì¹âÒ»ÉÁ£¬ÄÇ¼þôÂôÄÆ®"
-                               "½«ÁËÏÂÀ´£¬\n¸ú×Å´°×ÓÓÖ¼´¹ØÉÏ¡£ÑÛ¿´ÄÇôÂôÄ´ÓÉíÅÔÆ®¹ý£¬$N" HIR
-                               "ÉìÊÖÒ»×¥£¬²îÁËÊý³ß£¬Ã»ÄÜ×¥µ½¡£ôÂôÄ\n¶ÙÊ±ÂäÈëÌìÉùÏ¿ÏÂµÄÍò"
-                               "ØðÉîÔ¨ÖÐ¡£\n\n" NOR, me);
+                message_vision( HIR "\n$N" HIR "å¤§åƒä¸€é©šï¼Œä¾¿æƒ³å‡ºè²é˜»æ­¢ï¼ŒåŠè­œä¹ƒä¸ä¸–ä¹‹ç‰©ï¼Œ"
+                               "ç®¡ä»–æœ‰ç›Šæœ‰å®³ï¼Œå²³è€è³Šå¯ç„¡æ¬Šæ¯€åŽ»ã€‚ä¾¿\nåœ¨æ­¤æ™‚ï¼Œåªè½å¾—çª—å­å‘€"
+                               "çš„ä¸€è²æ‰“é–‹ï¼Œ$N" HIR "æ€¥å¿™ç¸®é ­ï¼Œçœ¼å‰ç´…å…‰ä¸€é–ƒï¼Œé‚£ä»¶è¢ˆè£Ÿé£„"
+                               "å°‡äº†ä¸‹ä¾†ï¼Œ\nè·Ÿè‘—çª—å­åˆå³é—œä¸Šã€‚çœ¼çœ‹é‚£è¢ˆè£Ÿå¾žèº«æ—é£„éŽï¼Œ$N" HIR
+                               "ä¼¸æ‰‹ä¸€æŠ“ï¼Œå·®äº†æ•¸å°ºï¼Œæ²’èƒ½æŠ“åˆ°ã€‚è¢ˆè£Ÿ\né “æ™‚è½å…¥å¤©è²å³½ä¸‹çš„è¬"
+                               "ä»žæ·±æ·µä¸­ã€‚\n\n" NOR, me);
                 set("over", 1);
                 delete_temp("jiasha");
         }

@@ -1,15 +1,15 @@
 #modlist
 
 <M2000>
-<mod_name>$HBGRN$������ѧϰ��װ(��)$NOR$</mod_name>
+<mod_name>$HBGRN$文曲星學習套裝(神)$NOR$</mod_name>
 <mod_parts>
-A2000:$HBGRN$�����Ǽ�$NOR$
-A2001:$HBGRN$����������$NOR$
-A2002:$HBGRN$����������$NOR$
-A2003:$HBGRN$������ͷ��$NOR$
-A2004:$HBGRN$������ѥ$NOR$
-A2005:$HBGRN$�����ǻ���$NOR$
-A2006:$HBGRN$������ս��$NOR$
+A2000:$HBGRN$文曲星甲$NOR$
+A2001:$HBGRN$文曲星披風$NOR$
+A2002:$HBGRN$文曲星束帶$NOR$
+A2003:$HBGRN$文曲星頭盔$NOR$
+A2004:$HBGRN$文曲星靴$NOR$
+A2005:$HBGRN$文曲星護腕$NOR$
+A2006:$HBGRN$文曲星戰衣$NOR$
 </mod_parts>
 <bas>3</bas>
 <num>7</num>
@@ -27,15 +27,15 @@ int:240
 </M2000>
 
 <M2010>
-<mod_name>$HIY$��$HIW$֮$HIM$ף��$NOR$$YEL$��װ$NOR$</mod_name>
+<mod_name>$HIY$神$HIW$之$HIM$祝福$NOR$$YEL$套裝$NOR$</mod_name>
 <mod_parts>
-A2010:$HIY$��$HIW$֮$HIM$ף��$NOR$$YEL$����$NOR$
-A2011:$HIY$��$HIW$֮$HIM$ף��$NOR$$YEL$ͷ��$NOR$
-A2012:$HIY$��$HIW$֮$HIM$ף��$NOR$$YEL$ս��$NOR$
-A2013:$HIY$��$HIW$֮$HIM$ף��$NOR$$YEL$����$NOR$
-A2014:$HIY$��$HIW$֮$HIM$ף��$NOR$$YEL$Ƥѥ$NOR$
-A2015:$HIY$��$HIW$֮$HIM$ף��$NOR$$YEL$����$NOR$
-A2016:$HIY$��$HIW$֮$HIM$ף��$NOR$$YEL$����$NOR$
+A2010:$HIY$神$HIW$之$HIM$祝福$NOR$$YEL$鐵甲$NOR$
+A2011:$HIY$神$HIW$之$HIM$祝福$NOR$$YEL$頭盔$NOR$
+A2012:$HIY$神$HIW$之$HIM$祝福$NOR$$YEL$戰衣$NOR$
+A2013:$HIY$神$HIW$之$HIM$祝福$NOR$$YEL$束帶$NOR$
+A2014:$HIY$神$HIW$之$HIM$祝福$NOR$$YEL$皮靴$NOR$
+A2015:$HIY$神$HIW$之$HIM$祝福$NOR$$YEL$護腕$NOR$
+A2016:$HIY$神$HIW$之$HIM$祝福$NOR$$YEL$披風$NOR$
 </mod_parts>
 <bas>4</bas>
 <num>7</num>
@@ -54,17 +54,17 @@ max_neili:100000
 </M2010>
 
 <M2030>
-<mod_name>$HBRED$������װ$NOR$</mod_name>
+<mod_name>$HBRED$刑天套裝$NOR$</mod_name>
 <mod_parts>
-A2030:$HBGRN$��������$NOR$
-A2031:$HBGRN$�����ָ$NOR$
-A2032:$HBGRN$���커��$NOR$
-A2033:$HBGRN$����ħ��$NOR$
-A2034:$HBGRN$����ħ��$NOR$
-A2035:$HBGRN$����ħ��$NOR$
-A2036:$HBGRN$����ħ��$NOR$
-A2037:$HBGRN$����ħ��$NOR$
-A2038:$HBGRN$����ħָ$NOR$
+A2030:$HBGRN$刑天項鏈$NOR$
+A2031:$HBGRN$刑天戒指$NOR$
+A2032:$HBGRN$刑天護符$NOR$
+A2033:$HBGRN$刑天魔劍$NOR$
+A2034:$HBGRN$刑天魔劍$NOR$
+A2035:$HBGRN$刑天魔刀$NOR$
+A2036:$HBGRN$刑天魔刀$NOR$
+A2037:$HBGRN$刑天魔掌$NOR$
+A2038:$HBGRN$刑天魔指$NOR$
 </mod_parts>
 <bas>5</bas>
 <num>9</num>
@@ -86,15 +86,15 @@ fatal_blow:60
 </M2030>
 
 
-#��������װ����
+#文曲星套裝部件
 <A2000>
 <type>armor/armor</type>
-<name>$HBGRN$�����Ǽ�$NOR$</name>
+<name>$HBGRN$文曲星甲$NOR$</name>
 <id>wisdom armor</id>
-<long>�̺��������ǵľ�Ԫ�������ǻ�(��)��</long>
+<long>蘊含了文曲星的精元和無上智慧(神)。</long>
 <value>2000000</value>
 <mod_level>M2000</mod_level>
-<mod_name>$HBGRN$������ѧϰ��װ(��)$NOR$</mod_name>
+<mod_name>$HBGRN$文曲星學習套裝(神)$NOR$</mod_name>
 <require>
 level:10
 con:20
@@ -114,13 +114,13 @@ used:2
 <insert>
 [1]
 id:magic stone
-name:$HIM$��ʯ$NOR$
+name:$HIM$玄石$NOR$
 apply_prop/armor1:30
 apply_prop/int:8
 [/1]
 [2]
 id:magic stone
-name:$HIM$��ʯ$NOR$
+name:$HIM$玄石$NOR$
 apply_prop/study_effect:10
 apply_prop/practice_effect:10
 [/2]
@@ -129,12 +129,12 @@ apply_prop/practice_effect:10
 
 <A2001>
 <type>armor/surcoat</type>
-<name>$HBGRN$����������$NOR$</name>
+<name>$HBGRN$文曲星披風$NOR$</name>
 <id>wisdom surcoat</id>
-<long>�̺��������ǵľ�Ԫ�������ǻ�(��)��</long>
+<long>蘊含了文曲星的精元和無上智慧(神)。</long>
 <value>2000000</value>
 <mod_level>M2000</mod_level>
-<mod_name>$HBGRN$������ѧϰ��װ(��)$NOR$</mod_name>
+<mod_name>$HBGRN$文曲星學習套裝(神)$NOR$</mod_name>
 <require>
 level:10
 con:20
@@ -154,13 +154,13 @@ used:2
 <insert>
 [1]
 id:magic stone
-name:$HIM$��ʯ$NOR$
+name:$HIM$玄石$NOR$
 apply_prop/armor1:30
 apply_prop/int:8
 [/1]
 [2]
 id:magic stone
-name:$HIM$��ʯ$NOR$
+name:$HIM$玄石$NOR$
 apply_prop/study_effect:10
 apply_prop/derive_effect:10
 [/2]
@@ -169,12 +169,12 @@ apply_prop/derive_effect:10
 
 <A2002>
 <type>armor/waist</type>
-<name>$HBGRN$����������$NOR$</name>
+<name>$HBGRN$文曲星束帶$NOR$</name>
 <id>wisdom waist</id>
-<long>�̺��������ǵľ�Ԫ�������ǻ�(��)��</long>
+<long>蘊含了文曲星的精元和無上智慧(神)。</long>
 <value>2000000</value>
 <mod_level>M2000</mod_level>
-<mod_name>$HBGRN$������ѧϰ��װ(��)$NOR$</mod_name>
+<mod_name>$HBGRN$文曲星學習套裝(神)$NOR$</mod_name>
 <require>
 level:10
 con:20
@@ -194,13 +194,13 @@ used:2
 <insert>
 [1]
 id:magic stone
-name:$HIM$��ʯ$NOR$
+name:$HIM$玄石$NOR$
 apply_prop/armor1:30
 apply_prop/int:8
 [/1]
 [2]
 id:magic stone
-name:$HIM$��ʯ$NOR$
+name:$HIM$玄石$NOR$
 apply_prop/learn_effect:10
 apply_prop/derive_effect:10
 [/2]
@@ -209,12 +209,12 @@ apply_prop/derive_effect:10
 
 <A2003>
 <type>armor/head</type>
-<name>$HBGRN$������ͷ��$NOR$</name>
+<name>$HBGRN$文曲星頭盔$NOR$</name>
 <id>wisdom head</id>
-<long>�̺��������ǵľ�Ԫ�������ǻ�(��)��</long>
+<long>蘊含了文曲星的精元和無上智慧(神)。</long>
 <value>2000000</value>
 <mod_level>M2000</mod_level>
-<mod_name>$HBGRN$������ѧϰ��װ(��)$NOR$</mod_name>
+<mod_name>$HBGRN$文曲星學習套裝(神)$NOR$</mod_name>
 <require>
 level:10
 con:20
@@ -234,13 +234,13 @@ used:2
 <insert>
 [1]
 id:magic stone
-name:$HIM$��ʯ$NOR$
+name:$HIM$玄石$NOR$
 apply_prop/armor1:30
 apply_prop/int:8
 [/1]
 [2]
 id:magic stone
-name:$HIM$��ʯ$NOR$
+name:$HIM$玄石$NOR$
 apply_prop/learn_effect:10
 apply_prop/research_effect:10
 [/2]
@@ -249,12 +249,12 @@ apply_prop/research_effect:10
 
 <A2004>
 <type>armor/boots</type>
-<name>$HBGRN$������ѥ$NOR$</name>
+<name>$HBGRN$文曲星靴$NOR$</name>
 <id>wisdom boots</id>
-<long>�̺��������ǵľ�Ԫ�������ǻ�(��)��</long>
+<long>蘊含了文曲星的精元和無上智慧(神)。</long>
 <value>2000000</value>
 <mod_level>M2000</mod_level>
-<mod_name>$HBGRN$������ѧϰ��װ(��)$NOR$</mod_name>
+<mod_name>$HBGRN$文曲星學習套裝(神)$NOR$</mod_name>
 <require>
 level:10
 con:20
@@ -274,13 +274,13 @@ used:2
 <insert>
 [1]
 id:magic stone
-name:$HIM$��ʯ$NOR$
+name:$HIM$玄石$NOR$
 apply_prop/armor1:30
 apply_prop/int:8
 [/1]
 [2]
 id:magic stone
-name:$HIM$��ʯ$NOR$
+name:$HIM$玄石$NOR$
 apply_prop/learn_effect:10
 apply_prop/practice_effect:10
 [/2]
@@ -289,12 +289,12 @@ apply_prop/practice_effect:10
 
 <A2005>
 <type>armor/wrists</type>
-<name>$HBGRN$�����ǻ���$NOR$</name>
+<name>$HBGRN$文曲星護腕$NOR$</name>
 <id>wisdom wrists</id>
-<long>�̺��������ǵľ�Ԫ�������ǻ�(��)��</long>
+<long>蘊含了文曲星的精元和無上智慧(神)。</long>
 <value>2000000</value>
 <mod_level>M2000</mod_level>
-<mod_name>$HBGRN$������ѧϰ��װ(��)$NOR$</mod_name>
+<mod_name>$HBGRN$文曲星學習套裝(神)$NOR$</mod_name>
 <require>
 level:10
 con:20
@@ -314,13 +314,13 @@ used:2
 <insert>
 [1]
 id:magic stone
-name:$HIM$��ʯ$NOR$
+name:$HIM$玄石$NOR$
 apply_prop/armor1:30
 apply_prop/int:8
 [/1]
 [2]
 id:magic stone
-name:$HIM$��ʯ$NOR$
+name:$HIM$玄石$NOR$
 apply_prop/study_effect:10
 apply_prop/practice_effect:10
 [/2]
@@ -329,12 +329,12 @@ apply_prop/practice_effect:10
 
 <A2006>
 <type>armor/cloth</type>
-<name>$HBGRN$������ս��$NOR$</name>
+<name>$HBGRN$文曲星戰衣$NOR$</name>
 <id>wisdom cloth</id>
-<long>һ��˿�ʵ��·���</long>
+<long>一件絲質的衣服。</long>
 <value>2000000</value>
 <mod_level>M2000</mod_level>
-<mod_name>$HBGRN$������ѧϰ��װ(��)$NOR$</mod_name>
+<mod_name>$HBGRN$文曲星學習套裝(神)$NOR$</mod_name>
 <require>
 level:10
 con:20
@@ -354,13 +354,13 @@ used:2
 <insert>
 [1]
 id:magic stone
-name:$HIM$��ʯ$NOR$
+name:$HIM$玄石$NOR$
 apply_prop/armor1:30
 apply_prop/int:8
 [/1]
 [2]
 id:magic stone
-name:$HIM$��ʯ$NOR$
+name:$HIM$玄石$NOR$
 apply_prop/research_effect:10
 apply_prop/derive_effect:10
 [/2]
@@ -368,15 +368,15 @@ apply_prop/derive_effect:10
 </A2006>
 
 
-#ף����װ����
+#祝福套裝部件
 <A2010>
 <type>armor/armor</type>
-<name>$HIY$��$HIW$֮$HIM$ף��$NOR$$YEL$����$NOR$</name>
+<name>$HIY$神$HIW$之$HIM$祝福$NOR$$YEL$鐵甲$NOR$</name>
 <id>zhufu armor</id>
-<long>һ�����������ס�</long>
+<long>一件沉甸甸的鐵甲。</long>
 <value>3000</value>
 <mod_level>M2010</mod_level>
-<mod_name>$HIY$��$HIW$֮$HIM$ף��$NOR$$YEL$��װ$NOR$</mod_name>
+<mod_name>$HIY$神$HIW$之$HIM$祝福$NOR$$YEL$套裝$NOR$</mod_name>
 <require>
 level:1
 con:13
@@ -394,7 +394,7 @@ used:1
 <insert>
 [1]
 id:magic stone
-name:$HIM$��ʯ$NOR$
+name:$HIM$玄石$NOR$
 apply_prop/armor1:30
 apply_prop/int:1
 [/1]
@@ -403,12 +403,12 @@ apply_prop/int:1
 
 <A2011>
 <type>armor/head</type>
-<name>$HIY$��$HIW$֮$HIM$ף��$NOR$$YEL$ͷ��$NOR$</name>
+<name>$HIY$神$HIW$之$HIM$祝福$NOR$$YEL$頭盔$NOR$</name>
 <id>zhufu head</id>
-<long>����һ�����Ƶ�ͷ�������Ա���ͷ����</long>
+<long>這是一頂鐵制的頭盔，用以保護頭部。</long>
 <value>3000</value>
 <mod_level>M2010</mod_level>
-<mod_name>$HIY$��$HIW$֮$HIM$ף��$NOR$$YEL$��װ$NOR$</mod_name>
+<mod_name>$HIY$神$HIW$之$HIM$祝福$NOR$$YEL$套裝$NOR$</mod_name>
 <require>
 level:1
 con:13
@@ -426,7 +426,7 @@ used:1
 <insert>
 [1]
 id:magic stone
-name:$HIM$��ʯ$NOR$
+name:$HIM$玄石$NOR$
 apply_prop/armor1:30
 apply_prop/int:1
 [/1]
@@ -435,12 +435,12 @@ apply_prop/int:1
 
 <A2012>
 <type>armor/cloth</type>
-<name>$HIY$��$HIW$֮$HIM$ף��$NOR$$YEL$ս��$NOR$</name>
+<name>$HIY$神$HIW$之$HIM$祝福$NOR$$YEL$戰衣$NOR$</name>
 <id>zhufu cloth</id>
-<long>һ��˿�ʵ��·���</long>
+<long>一件絲質的衣服。</long>
 <value>3000</value>
 <mod_level>M2010</mod_level>
-<mod_name>$HIY$��$HIW$֮$HIM$ף��$NOR$$YEL$��װ$NOR$</mod_name>
+<mod_name>$HIY$神$HIW$之$HIM$祝福$NOR$$YEL$套裝$NOR$</mod_name>
 <require>
 level:1
 con:13
@@ -458,7 +458,7 @@ used:1
 <insert>
 [1]
 id:magic stone
-name:$HIM$��ʯ$NOR$
+name:$HIM$玄石$NOR$
 apply_prop/armor1:100
 apply_prop/int:1
 [/1]
@@ -467,12 +467,12 @@ apply_prop/int:1
 
 <A2013>
 <type>armor/waist</type>
-<name>$HIY$��$HIW$֮$HIM$ף��$NOR$$YEL$����$NOR$</name>
+<name>$HIY$神$HIW$之$HIM$祝福$NOR$$YEL$束帶$NOR$</name>
 <id>zhufu waist</id>
-<long>����һ��Ƥ�ʵĻ��������Ա���������</long>
+<long>這是一條皮質的護腰，用以保護腰部。</long>
 <value>3000</value>
 <mod_level>M2010</mod_level>
-<mod_name>$HIY$��$HIW$֮$HIM$ף��$NOR$$YEL$��װ$NOR$</mod_name>
+<mod_name>$HIY$神$HIW$之$HIM$祝福$NOR$$YEL$套裝$NOR$</mod_name>
 <require>
 level:1
 con:13
@@ -490,7 +490,7 @@ used:1
 <insert>
 [1]
 id:magic stone
-name:$HIM$��ʯ$NOR$
+name:$HIM$玄石$NOR$
 apply_prop/armor1:30
 apply_prop/con:1
 [/1]
@@ -499,12 +499,12 @@ apply_prop/con:1
 
 <A2014>
 <type>armor/boots</type>
-<name>$HIY$��$HIW$֮$HIM$ף��$NOR$$YEL$Ƥѥ$NOR$</name>
+<name>$HIY$神$HIW$之$HIM$祝福$NOR$$YEL$皮靴$NOR$</name>
 <id>zhufu boots</id>
-<long>����һ˫���Ϻ�ţƤ����Ƥѥ�����Ա����㲿��</long>
+<long>這是一雙用上好牛皮作的皮靴，用以保護足部。</long>
 <value>3000</value>
 <mod_level>M2010</mod_level>
-<mod_name>$HIY$��$HIW$֮$HIM$ף��$NOR$$YEL$��װ$NOR$</mod_name>
+<mod_name>$HIY$神$HIW$之$HIM$祝福$NOR$$YEL$套裝$NOR$</mod_name>
 <require>
 level:1
 con:13
@@ -522,7 +522,7 @@ used:1
 <insert>
 [1]
 id:magic stone
-name:$HIM$��ʯ$NOR$
+name:$HIM$玄石$NOR$
 apply_prop/armor1:30
 apply_prop/dex:1
 [/1]
@@ -531,12 +531,12 @@ apply_prop/dex:1
 
 <A2015>
 <type>armor/wrists</type>
-<name>$HIY$��$HIW$֮$HIM$ף��$NOR$$YEL$����$NOR$</name>
+<name>$HIY$神$HIW$之$HIM$祝福$NOR$$YEL$護腕$NOR$</name>
 <id>zhufu wrists</id>
-<long>����һ�����ʵĻ������Ա����󲿡�</long>
+<long>這是一件布質的護腕，用以保護腕部。</long>
 <value>3000</value>
 <mod_level>M2010</mod_level>
-<mod_name>$HIY$��$HIW$֮$HIM$ף��$NOR$$YEL$��װ$NOR$</mod_name>
+<mod_name>$HIY$神$HIW$之$HIM$祝福$NOR$$YEL$套裝$NOR$</mod_name>
 <require>
 level:1
 con:13
@@ -554,7 +554,7 @@ used:1
 <insert>
 [1]
 id:magic stone
-name:$HIM$��ʯ$NOR$
+name:$HIM$玄石$NOR$
 apply_prop/armor1:30
 apply_prop/int:1
 [/1]
@@ -563,12 +563,12 @@ apply_prop/int:1
 
 <A2016>
 <type>armor/surcoat</type>
-<name>$HIY$��$HIW$֮$HIM$ף��$NOR$$YEL$����$NOR$</name>
+<name>$HIY$神$HIW$之$HIM$祝福$NOR$$YEL$披風$NOR$</name>
 <id>zhufu surcoat</id>
-<long>����һ��˿�ʵ����硣</long>
+<long>這是一件絲質的披風。</long>
 <value>3000</value>
 <mod_level>M2010</mod_level>
-<mod_name>$HIY$��$HIW$֮$HIM$ף��$NOR$$YEL$��װ$NOR$</mod_name>
+<mod_name>$HIY$神$HIW$之$HIM$祝福$NOR$$YEL$套裝$NOR$</mod_name>
 <require>
 level:1
 con:13
@@ -586,7 +586,7 @@ used:1
 <insert>
 [1]
 id:magic stone
-name:$HIM$��ʯ$NOR$
+name:$HIM$玄石$NOR$
 apply_prop/armor1:30
 apply_prop/int:1
 [/1]
@@ -594,15 +594,15 @@ apply_prop/int:1
 </A2016>
 
 
-#������װ����
+#刑天套裝部件
 <A2030>
 <type>rings/neck</type>
-<name>$HBGRN$��������$NOR$</name>
+<name>$HBGRN$刑天項鏈$NOR$</name>
 <id>xingtian neck</id>
-<long>һ���ƽ�����������</long>
+<long>一條黃金打造的項鏈。</long>
 <value>2000000</value>
 <mod_level>M2030</mod_level>
-<mod_name>$HBRED$������װ$NOR$</mod_name>
+<mod_name>$HBRED$刑天套裝$NOR$</mod_name>
 <require>
 level:10
 con:20
@@ -615,12 +615,12 @@ armor:10
 
 <A2031>
 <type>rings/rings</type>
-<name>$HBGRN$�����ָ$NOR$</name>
+<name>$HBGRN$刑天戒指$NOR$</name>
 <id>xingtian ring</id>
-<long>һ���ƽ����Ľ�ָ��</long>
+<long>一個黃金打造的戒指。</long>
 <value>2000000</value>
 <mod_level>M2030</mod_level>
-<mod_name>$HBRED$������װ$NOR$</mod_name>
+<mod_name>$HBRED$刑天套裝$NOR$</mod_name>
 <require>
 level:10
 con:20
@@ -633,12 +633,12 @@ armor:10
 
 <A2032>
 <type>rings/charm</type>
-<name>$HBGRN$���커��$NOR$</name>
+<name>$HBGRN$刑天護符$NOR$</name>
 <id>xingtian charm</id>
-<long>һ���ƽ������Ļ�������</long>
+<long>一件黃金制作的護身符。</long>
 <value>2000000</value>
 <mod_level>M2030</mod_level>
-<mod_name>$HBRED$������װ$NOR$</mod_name>
+<mod_name>$HBRED$刑天套裝$NOR$</mod_name>
 <require>
 level:10
 con:20
@@ -651,12 +651,12 @@ armor:10
 
 <A2033>
 <type>weapon/sword</type>
-<name>$HBGRN$����ħ��$NOR$</name>
+<name>$HBGRN$刑天魔劍$NOR$</name>
 <id>xingtian sword</id>
-<long>һ��Ѫ������ħ����</long>
+<long>一把血光沖天的魔劍。</long>
 <value>2000000</value>
 <mod_level>M2030</mod_level>
-<mod_name>$HBRED$������װ$NOR$</mod_name>
+<mod_name>$HBRED$刑天套裝$NOR$</mod_name>
 <require>
 level:10
 con:20
@@ -669,12 +669,12 @@ damage:50000
 
 <A2034>
 <type>weapon/sword</type>
-<name>$HBGRN$����ħ��$NOR$</name>
+<name>$HBGRN$刑天魔劍$NOR$</name>
 <id>xingtian sword</id>
-<long>һ��Ѫ������ħ����</long>
+<long>一把血光沖天的魔劍。</long>
 <value>2000000</value>
 <mod_level>M2030</mod_level>
-<mod_name>$HBRED$������װ$NOR$</mod_name>
+<mod_name>$HBRED$刑天套裝$NOR$</mod_name>
 <require>
 level:10
 con:20
@@ -687,12 +687,12 @@ damage:50000
 
 <A2035>
 <type>weapon/blade</type>
-<name>$HBGRN$����ħ��$NOR$</name>
+<name>$HBGRN$刑天魔刀$NOR$</name>
 <id>xingtian blade</id>
-<long>һ��Ѫ������ħ����</long>
+<long>一把血光沖天的魔刀。</long>
 <value>2000000</value>
 <mod_level>M2030</mod_level>
-<mod_name>$HBRED$������װ$NOR$</mod_name>
+<mod_name>$HBRED$刑天套裝$NOR$</mod_name>
 <require>
 level:10
 con:20
@@ -705,12 +705,12 @@ damage:50000
 
 <A2036>
 <type>weapon/blade</type>
-<name>$HBGRN$����ħ��$NOR$</name>
+<name>$HBGRN$刑天魔刀$NOR$</name>
 <id>xingtian blade</id>
-<long>һ��Ѫ������ħ����</long>
+<long>一把血光沖天的魔刀。</long>
 <value>2000000</value>
 <mod_level>M2030</mod_level>
-<mod_name>$HBRED$������װ$NOR$</mod_name>
+<mod_name>$HBRED$刑天套裝$NOR$</mod_name>
 <require>
 level:10
 con:20
@@ -723,12 +723,12 @@ damage:50000
 
 <A2037>
 <type>armor/hands</type>
-<name>$HBGRN$����ħ��$NOR$</name>
+<name>$HBGRN$刑天魔掌$NOR$</name>
 <id>xingtian hand</id>
-<long>һ��Ѫ���������ơ�</long>
+<long>一副血光沖天的鐵掌。</long>
 <value>2000000</value>
 <mod_level>M2030</mod_level>
-<mod_name>$HBRED$������װ$NOR$</mod_name>
+<mod_name>$HBRED$刑天套裝$NOR$</mod_name>
 <require>
 level:10
 con:20
@@ -742,12 +742,12 @@ unarmed_damage:50000
 
 <A2038>
 <type>armor/finger</type>
-<name>$HBGRN$����ħָ$NOR$</name>
+<name>$HBGRN$刑天魔指$NOR$</name>
 <id>xingtian finger</id>
-<long>һ��Ѫ������ָ�ס�</long>
+<long>一副血光沖天的指套。</long>
 <value>2000000</value>
 <mod_level>M2030</mod_level>
-<mod_name>$HBRED$������װ$NOR$</mod_name>
+<mod_name>$HBRED$刑天套裝$NOR$</mod_name>
 <require>
 level:10
 con:20

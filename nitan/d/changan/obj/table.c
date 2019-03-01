@@ -2,17 +2,17 @@ inherit ITEM;
 
 void create()
 {
-        set_name( "×À×Ó",({"table" }));
+        set_name( "æ¡Œå­",({"table" }));
         set_weight(30000);
         set_max_encumbrance(18000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "ÕÅ");
+                set("unit", "å¼µ");
                 set("material", "wood");
                 set("value", 2000);
-                set("long", "ÕâÕÅÆÆ×À×Ó·ÅÔÚÕâÀïºÜ¾ÃÁË£¬ÉÏÃæ·ÅÁËÒ»¸ö°ËØÔÅÌ£¬ºÍÒ»¸öÇ©Í²¡£\n" );
-                set("no_sell", "ÕâÑù¶«Î÷²»ÄÜËæ±ãÂòÂô¡£");
+                set("long", "é€™å¼µç ´æ¡Œå­æ”¾åœ¨é€™è£¡å¾ˆä¹…äº†ï¼Œä¸Šé¢æ”¾äº†ä¸€å€‹å…«å¦ç›¤ï¼Œå’Œä¸€å€‹ç°½ç­’ã€‚\n" );
+                set("no_sell", "é€™æ¨£æ±è¥¿ä¸èƒ½éš¨ä¾¿è²·è³£ã€‚");
         }
         setup();
 }
@@ -27,8 +27,8 @@ int do_look(string arg)
         ob = this_object();
         who = this_player();
         if(!arg || arg !="table")
-                return notify_fail("ÄãÒª¿´Ê²Ã´? \n");
-        else   return notify_fail("Èü°ëÏÉÕıÅ¿ÔÚ×À×ÓÉÏË¯¾õÄØ£¬¿´À´ÄãÒª£¨knock£©×À×Ó²ÅÄÜ½ĞĞÑËûÁË¡£\n");
+                return notify_fail("ä½ è¦çœ‹ä»€éº¼? \n");
+        else   return notify_fail("è³½åŠä»™æ­£è¶´åœ¨æ¡Œå­ä¸Šç¡è¦ºå‘¢ï¼Œçœ‹ä¾†ä½ è¦ï¼ˆknockï¼‰æ¡Œå­æ‰èƒ½å«é†’ä»–äº†ã€‚\n");
 }
 int do_get(string arg)
 {
@@ -36,7 +36,7 @@ int do_get(string arg)
         ob = this_object();
         me = this_player();
         if(arg && arg =="table"){
-                write ("²»Òª¸ã¶ñ×÷¾çºÃ²»ºÃ£¬ÄÇÊÇÈü°ëÏÉÎ¨Ò»µÄ²Æ²úÁË¡£\n");
+                write ("ä¸è¦ææƒ¡ä½œåŠ‡å¥½ä¸å¥½ï¼Œé‚£æ˜¯è³½åŠä»™å”¯ä¸€çš„è²¡ç”¢äº†ã€‚\n");
                  return 1;
         }
         return 0;

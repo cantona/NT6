@@ -6,10 +6,10 @@ inherit  ROOM;
 
 void  create  ()
 {
-        set("short",  "��԰");
+        set("short",  "白園");
         set("long",  @LONG
-��԰��ư�ڣ���ڶ���ɽ�������÷��ϡ�Ĺǰʯ���̡����ٸ��׹�
-Ĺ�����֡��׾�������Ԣ����ɽ���Ժš���ɽ��ʿ����
+白園或稱白塚，在東香山北端琵琶峰上。墓前石碑刻“唐少傅白公
+墓”六字。白居易晚年寓居香山，自號“香山居士”。
 LONG);
         set("exits",  ([  /*  sizeof()  ==  2  */
                 "westdown" : __DIR__"longmen",

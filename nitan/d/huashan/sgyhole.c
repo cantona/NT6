@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "É½¶´");
+        set("short", "å±±æ´");
         set("long", @LONG
-ÕâÊÇÒ»¸öºÁ²»ÆğÑÛµÄÉ½¶´£¬µ«ÊÇÀïÃæµÄÊ¯±ÚÉÏÈ´»­ÂúÁËÎåÔÀ½£ÅÉ
-ËùÓĞÒÑ¾­Ê§´«µÄ¾«Ãî¾øÕĞ¡£»¨¸ÚÑÒÊ¯±Ú(wall)ÉÏºÜ¶àĞ¡ÈË£¬È«ÊÇÓÃÀû
-Æ÷¿ÌÖÆ£¬Ïë¼ûµ±³õÔËÁ¦Ö®ÈËÄÚÁ¦Ê®·ÖÉîºñ¡£
+é€™æ˜¯ä¸€å€‹æ¯«ä¸èµ·çœ¼çš„å±±æ´ï¼Œä½†æ˜¯è£¡é¢çš„çŸ³å£ä¸Šå»ç•«æ»¿äº†äº”å²³åŠæ´¾
+æ‰€æœ‰å·²ç¶“å¤±å‚³çš„ç²¾å¦™çµ•æ‹›ã€‚èŠ±å´—å·–çŸ³å£(wall)ä¸Šå¾ˆå¤šå°äººï¼Œå…¨æ˜¯ç”¨åˆ©
+å™¨åˆ»åˆ¶ï¼Œæƒ³è¦‹ç•¶åˆé‹åŠ›ä¹‹äººå…§åŠ›ååˆ†æ·±åšã€‚
 LONG );
         set("exits", ([ /* sizeof() == 4 */
             "southup"   : __DIR__"zhandao",
@@ -42,36 +42,36 @@ int do_mianbi()
 
         ob = this_player();
 
-        if (ob->is_busy()) return notify_fail("ÄãÕıÃ¦×ÅÄØ£¡\n");
+        if (ob->is_busy()) return notify_fail("ä½ æ­£å¿™è‘—å‘¢ï¼\n");
         c_skill = (int)ob->query_skill("sword", 1);
         if (c_skill < 20)
         {
-                message_vision("$N¶Ô½£·¨µÄÁË½âÏÔÈ»Ì«µÍ£¬ÎŞ"
-                               "·¨ÁìÎòÊ¯±ÚÄÚÈİ¡£\n", ob);
+                message_vision("$Nå°åŠæ³•çš„äº†è§£é¡¯ç„¶å¤ªä½ï¼Œç„¡"
+                               "æ³•é ˜æ‚ŸçŸ³å£å…§å®¹ã€‚\n", ob);
                 return 1; 
         }
 
         if (! ob->can_improve_skill("sword"))
         {
-                message_vision("$NµÄÊµÕ½¾­Ñé²»×ã£¬ÎŞ·¨ÁìÎò"
-                               "Ê¯±ÚÄÚÈİ¡£\n", ob);
+                message_vision("$Nçš„å¯¦æˆ°ç¶“é©—ä¸è¶³ï¼Œç„¡æ³•é ˜æ‚Ÿ"
+                               "çŸ³å£å…§å®¹ã€‚\n", ob);
                 return 1; 
         }
 
         if( query("jing", ob)<20 )
         {
-                message_vision("$NÌ«ÀÛÁË£¬ÏÖÔÚÎŞ·¨ÁìÎòÊ¯±ÚÄÚÈİ¡£\n",ob);
+                message_vision("$Nå¤ªç´¯äº†ï¼Œç¾åœ¨ç„¡æ³•é ˜æ‚ŸçŸ³å£å…§å®¹ã€‚\n",ob);
                 return 1; 
         }
 
         if (c_skill >= 100)
         {
-                message_vision("$N¾õµÃÊ¯±ÚÄÚÈİÌ«·ôÇ³ÁË¡£\n", ob);
+                message_vision("$Nè¦ºå¾—çŸ³å£å…§å®¹å¤ªè†šæ·ºäº†ã€‚\n", ob);
                 return 1;
         }
 
-        message_vision("$NÃæ¶Ô×ÅÊ¯±ÚõÃ×ø¾²Ë¼£¬Á¼¾Ã£¬¶Ô»ù±¾"
-                       "½£·¨ËÆÓĞËùÎò¡£\n", ob);
+        message_vision("$Né¢å°è‘—çŸ³å£è¶ºåéœæ€ï¼Œè‰¯ä¹…ï¼Œå°åŸºæœ¬"
+                       "åŠæ³•ä¼¼æœ‰æ‰€æ‚Ÿã€‚\n", ob);
         ob->improve_skill("sword",1+random(query("int", ob)));
         ob->receive_damage("jing", 15);
         ob->start_busy(random(1));

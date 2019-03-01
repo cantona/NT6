@@ -1,18 +1,18 @@
-// earth.c ÓñËè
+// earth.c ç‰é«“
 
 #include <ansi.h>
 inherit ITEM;
 
 void create()
 {
-        set_name(YEL "ÓñËè" NOR, ({ "yu sui", "earth" }) );
+        set_name(YEL "ç‰é«“" NOR, ({ "yu sui", "earth" }) );
         set_weight(30);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", YEL "ÕâÊÇÒ»¿éÓñËè£¬ÊÜÖĞÑëÎì¼ºÍÁÆøËùÖÓ¶øÉúÓñÆÇ£¬É«»Æ£¬ÈëÊÖÎÂÈó¡£\n" NOR);
+                set("long", YEL "é€™æ˜¯ä¸€å¡Šç‰é«“ï¼Œå—ä¸­å¤®æˆŠå·±åœŸæ°£æ‰€é˜è€Œç”Ÿç‰é­„ï¼Œè‰²é»ƒï¼Œå…¥æ‰‹æº«æ½¤ã€‚\n" NOR);
                 set("value", 2000);
-                set("unit", "¿é");
+                set("unit", "å¡Š");
                 set("magic/element", "earth");
         }
         setup();

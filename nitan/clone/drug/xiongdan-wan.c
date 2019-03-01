@@ -1,5 +1,5 @@
 // Code of ShenZhou
-//xiongdan-wan.c °×ÔÆĞÜµ¨Íè
+//xiongdan-wan.c ç™½é›²ç†Šè†½ä¸¸
 //kane 1998.6
 #include <ansi.h>
 inherit PILL;
@@ -10,15 +10,15 @@ void setup()
 int cure_ob(string);
 void create()
 {
-        set_name(HIW"°×ÔÆĞÜµ¨Íè"NOR, ({"xiongdan wan","wan"}));
+        set_name(HIW"ç™½é›²ç†Šè†½ä¸¸"NOR, ({"xiongdan wan","wan"}));
         set_weight(50);
         if (clonep())
             set_default_object(__FILE__);
     else
     {
-                set("unit", "¿Å");
+                set("unit", "é¡†");
         set("long",
-"Ò»¿Å½à°×¹âÈóµÄÒ©Íè£¬ÒÔĞÜµ¨µÈ´ó²¹Ò©ÎïÁ¶ÖÆ¶ø³É£¬¹¦ÄÜÀíÆø»¯Ğé£¬\nµ÷Ôª¹Ì±¾£¬ÓÚÖØÉËÖ®ÈË¸üÓĞµõÃüÖ®Ğ§¡£\n");
+"ä¸€é¡†æ½”ç™½å…‰æ½¤çš„è—¥ä¸¸ï¼Œä»¥ç†Šè†½ç­‰å¤§è£œè—¥ç‰©ç…‰åˆ¶è€Œæˆï¼ŒåŠŸèƒ½ç†æ°£åŒ–è™›ï¼Œ\nèª¿å…ƒå›ºæœ¬ï¼Œäºé‡å‚·ä¹‹äººæ›´æœ‰åŠå‘½ä¹‹æ•ˆã€‚\n");
                 set("value", 10000);
                 set("no_sell", 1);
                 set("medicine", 1);
@@ -35,12 +35,12 @@ int cure_ob(object me)
                 else
                         addn("jingli", -(query("jingli", me)), me);
 
-                message_vision(BLU"$N·şÏÂÒ»¿Å"+query("name")+BLU"£¬¾õµÃĞØ¿ÚÓôÃÆ£¬ËÄÖ«·¦Á¦¡£Ô­À´·şÊ³Ì«¼±\nÌ«¶à£¬Ò©Ğ§ÊÊµÃÆä·´£¡\n" NOR, me);
+                message_vision(BLU"$Næœä¸‹ä¸€é¡†"+query("name")+BLU"ï¼Œè¦ºå¾—èƒ¸å£é¬±æ‚¶ï¼Œå››è‚¢ä¹åŠ›ã€‚åŸä¾†æœé£Ÿå¤ªæ€¥\nå¤ªå¤šï¼Œè—¥æ•ˆé©å¾—å…¶åï¼\n" NOR, me);
                 destruct(this_object());
                 return 1;
         }
            
-        message_vision(HIW"$N·şÏÂÒ»¿Å"+query("name")+HIW"£¬Ö»¾õÈ«ÉíÅ¯ÈÚÈÚµÄ£¬Ëµ²»³öµÄÊÜÓÃ£¬ÉËÊÆ\n»ôÈ»¶øÓú¡£\n"NOR, me);
+        message_vision(HIW"$Næœä¸‹ä¸€é¡†"+query("name")+HIW"ï¼Œåªè¦ºå…¨èº«æš–èèçš„ï¼Œèªªä¸å‡ºçš„å—ç”¨ï¼Œå‚·å‹¢\néœç„¶è€Œç™’ã€‚\n"NOR, me);
         set("eff_jing",query("max_jing",  me), me);
         set("jing",query("max_jing",  me), me);
             set("jingli",query("max_jingli",  me), me);

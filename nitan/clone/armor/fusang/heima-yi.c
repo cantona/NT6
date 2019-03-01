@@ -8,13 +8,13 @@ inherit CLOTH;
 
 void create()
 {
-        set_name(HIB "ºÚÂéÒÂ" NOR, ({ "heima yi", "heima", "yi" }) );
+        set_name(HIB "é»‘éº»è¡£" NOR, ({ "heima yi", "heima", "yi" }) );
         set_weight(3000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼ş");
-                set("long", HIB "ÕâÊÇÒ»¼şÓÃ·öÉ£ºÚÂéÖÆ³ÉµÄ¾¢ÒÂ£¬¶àÎª·öÉ£ÎäÊ¿´©´÷¡£\n" NOR);
+                set("unit", "ä»¶");
+                set("long", HIB "é€™æ˜¯ä¸€ä»¶ç”¨æ‰¶æ¡‘é»‘éº»åˆ¶æˆçš„å‹è¡£ï¼Œå¤šç‚ºæ‰¶æ¡‘æ­¦å£«ç©¿æˆ´ã€‚\n" NOR);
                 set("material", "steel");
                 set("value", 800000);
                 set("armor_prop/armor", 300);

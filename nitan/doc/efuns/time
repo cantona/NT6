@@ -1,13 +1,13 @@
         time(3)                        LP MudOSv21c7                (7 Jul 1996)
-        º¯ÊýÃû³Æ:
-                time() - ´«»ØÏÖÔÚÊ±¿Ì¾àÀë 1970 ÄêÒ»ÔÂÒ»ÈÕÓÐ¶àÉÙÃë.
-        º¯ÊýÓï·¨:
+        å‡½æ•¸åç¨±:
+                time() - å‚³å›žç¾åœ¨æ™‚åˆ»è·é›¢ 1970 å¹´ä¸€æœˆä¸€æ—¥æœ‰å¤šå°‘ç§’.
+        å‡½æ•¸èªžæ³•:
                 int time( void );
-                ÕûÊý time ( ÎÞ²ÎÊý );
-        º¯ÊýÓÃ·¨:
-                ´«»Ø´Ó 1970 ÄêÒ»ÔÂÒ»ÈÕÎçÒ¹ (¸ñÁÖÍþÖÎÊ±¼ä) ¿ªÊ¼µ½ÏÖÔÚ,
-                ×Ü¹²¹ýÁË¶àÉÙÃë.
-        ²Î¿¼º¯Êý:
+                æ•´æ•¸ time ( ç„¡åƒæ•¸ );
+        å‡½æ•¸ç”¨æ³•:
+                å‚³å›žå¾ž 1970 å¹´ä¸€æœˆä¸€æ—¥åˆå¤œ (æ ¼æž—å¨æ²»æ™‚é–“) é–‹å§‹åˆ°ç¾åœ¨,
+                ç¸½å…±éŽäº†å¤šå°‘ç§’.
+        åƒè€ƒå‡½æ•¸:
                 ctime(3), localtime(3), time_expression(3), uptime(3)
-        ÊÖ²á·­Òë:
+        æ‰‹å†Šç¿»è­¯:
                 Phoebus@ZH        97.Jul.25.                (Writen 5/23/97)

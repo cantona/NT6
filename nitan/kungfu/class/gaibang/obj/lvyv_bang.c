@@ -6,18 +6,18 @@ inherit STICK;
 
 void create()
 {
-        set_name("ÂÌÓñ°ô", ({"lvyv bang", "zhu", "stick"}));
+        set_name("ç¶ ç‰æ£’", ({"lvyv bang", "zhu", "stick"}));
         set_weight(5000);
 
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ù");
-                set("long", "Ò»¸ù·º×Åµ­µ­Çà¹âµÄÖñ°ô¡£\n");
+                set("unit", "æ ¹");
+                set("long", "ä¸€æ ¹æ³›è‘—æ·¡æ·¡é’å…‰çš„ç«¹æ£’ã€‚\n");
                 set("value", 10000);
                 set("material", "bamboo");
-                set("wield_msg", "$N³é³öÒ»¸ùÇà¹âÉÁÉÁµÄÖñ°ô×¥ÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N°ÑÊÖÖĞµÄÓñÖñÕÈ²å»ØÑüÖĞ¡£\n");
+                set("wield_msg", "$NæŠ½å‡ºä¸€æ ¹é’å…‰é–ƒé–ƒçš„ç«¹æ£’æŠ“åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$NæŠŠæ‰‹ä¸­çš„ç‰ç«¹æ–æ’å›è…°ä¸­ã€‚\n");
         }
         init_stick(30);
         setup();

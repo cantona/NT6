@@ -3,13 +3,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(NOR + WHT "¸É²ñ" NOR, ({ "gan chai", "gan", "chai" }));
+        set_name(NOR + WHT "å¹¹æŸ´" NOR, ({ "gan chai", "gan", "chai" }));
         set_weight(10000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "À¦");
-                set("long", WHT "ÕâÊÇÒ»À¦Ä¾²ñ¡£\n" NOR);
+                set("unit", "æ†");
+                set("long", WHT "é€™æ˜¯ä¸€æ†æœ¨æŸ´ã€‚\n" NOR);
                 set("value", 10);
                 set("material", "wood");
         }
@@ -20,11 +20,11 @@ int fire(object me, object ob)
         object fire;
 
         if( query_temp("warm", environment()) >= 40 )
-                return notify_fail("ÕâÀïÒÑ¾­¹»ÈÈµÄÁË£¬Äã»¹ÊÇ»»¸ö"
-                                   "µØ·½µã»ð°É¡£\n");
+                return notify_fail("é€™è£¡å·²ç¶“å¤ ç†±çš„äº†ï¼Œä½ é‚„æ˜¯æ›å€‹"
+                                   "åœ°æ–¹é»žç«å§ã€‚\n");
 
-        message_vision("$NÓÃ" + ob->name() + "µãÈ¼ÁË" + name() +
-                       "£¬Ò»Æ¬ºìºìµÄ»ð¹âÓ³ºìÁËËÄÖÜ¡£\n", me);
+        message_vision("$Nç”¨" + ob->name() + "é»žç‡ƒäº†" + name() +
+                       "ï¼Œä¸€ç‰‡ç´…ç´…çš„ç«å…‰æ˜ ç´…äº†å››å‘¨ã€‚\n", me);
 
         fire = new("/clone/misc/needfire");
         fire->move(environment(me));

@@ -11,20 +11,20 @@ int exert(object me, object target)
         int skill;
 
         if (target != me) 
-                return notify_fail("你只能用混天气功来提升自己的战斗力。\n");
+                return notify_fail("浣犲彧鑳界敤娣峰ぉ姘ｅ姛渚嗘彁鍗囪嚜宸辩殑鎴伴鍔涖�俓n");
 
         if( query("neili", me)<100 )
-                return notify_fail("你的内力不够。\n");
+                return notify_fail("浣犵殑鍏у姏涓嶅銆俓n");
                 
         if( query_temp("powerup", me) )
-                return notify_fail("你已经在运功中了。\n");
+                return notify_fail("浣犲凡缍撳湪閬嬪姛涓簡銆俓n");
 
         skill = me->query_skill("force");
         addn("neili", -100, me);
         me->receive_damage("qi", 0);
 
         message_combatd(
-                HIR "$N微一凝神，运起混天气功，全身骨节发出一阵爆豆般的声响ⅵ\n" NOR, me);
+                HIR "$N寰竴鍑濈锛岄亱璧锋贩澶╂埃鍔燂紝鍏ㄨ韩楠ㄧ瘈鐧煎嚭涓�闄ｇ垎璞嗚埇鐨勮伈闊库枴\n" NOR, me);
 
         addn_temp("apply/attack", skill*2/5, me);
         set_temp("powerup", 1, me);
@@ -43,6 +43,6 @@ void remove_effect(object me, int amount)
         {
                 addn_temp("apply/attack", -amount, me);
                 delete_temp("powerup", me);
-                tell_object(me, HIY "你的混天气功运行完毕，将内力收回丹田。\n" NOR);
+                tell_object(me, HIY "浣犵殑娣峰ぉ姘ｅ姛閬嬭瀹岀暍锛屽皣鍏у姏鏀跺洖涓圭敯銆俓n" NOR);
         }
 }

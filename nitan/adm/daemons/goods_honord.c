@@ -37,7 +37,7 @@ int query_rate() { return rate; }
 void create()
 {
         seteuid(ROOT_UID);
-        set("name", HIC"ÈÙÓş¶Ò»»ÉÌ³Ç"NOR);
+        set("name", HIC"æ¦®è­½å…Œæ›å•†åŸ"NOR);
         init_goods();
 }
 
@@ -94,21 +94,21 @@ string chinese_type(string type)
 {
         switch(type)
         {
-        case "object"   : return HIC "ÎïÆ·" NOR;
-        case "pill"     : return HIM "µ¤Ò©" NOR;
-        case "special"  : return HIG "ÏÈÌì¼¼ÄÜ" NOR;
-        case "special2" : return HIB "×ªÊÀ¼¼ÄÜ" NOR;
-        case "story"    : return WHT "¹ÊÊÂ" NOR;
-        case "enchase"  : return HIW "ÏâÇ¶" NOR;
-        case "symbol"   : return YEL "Éñ·û" NOR;
-        case "card"     : return HIY "»áÔ±¿¨" NOR;
-        case "gold"     : return HIY "»Æ½ğ" NOR;
-        case "prop"     : return HIY "×°±¸" NOR;
-        case "module"   : return HIG "Ì××°" NOR;
-        case "package"  : return HIR "Àñ°ü" NOR;
-        case "srv"      : return HIM "·şÎñ" NOR;
-        case "other"    : return HIR "ÆäËû" NOR;
-        default         : return HIR "Î´Öª" NOR;
+        case "object"   : return HIC "ç‰©å“" NOR;
+        case "pill"     : return HIM "ä¸¹è—¥" NOR;
+        case "special"  : return HIG "å…ˆå¤©æŠ€èƒ½" NOR;
+        case "special2" : return HIB "è½‰ä¸–æŠ€èƒ½" NOR;
+        case "story"    : return WHT "æ•…äº‹" NOR;
+        case "enchase"  : return HIW "é‘²åµŒ" NOR;
+        case "symbol"   : return YEL "ç¥ç¬¦" NOR;
+        case "card"     : return HIY "æœƒå“¡å¡" NOR;
+        case "gold"     : return HIY "é»ƒé‡‘" NOR;
+        case "prop"     : return HIY "è£å‚™" NOR;
+        case "module"   : return HIG "å¥—è£" NOR;
+        case "package"  : return HIR "ç¦®åŒ…" NOR;
+        case "srv"      : return HIM "æœå‹™" NOR;
+        case "other"    : return HIR "å…¶ä»–" NOR;
+        default         : return HIR "æœªçŸ¥" NOR;
         }
 }
 
@@ -119,15 +119,15 @@ public varargs int show_goods(object me, string arg)
         int len = 0;
 
         if( !sizeof(all_goods) ) {
-                tell_object(me, sprintf("Ä¿Ç°%sÃ»ÓĞ¿ÉÒÔ¶Ò»»µÄ¶«Î÷¡£\n", query("name")));
+                tell_object(me, sprintf("ç›®å‰%sæ²’æœ‰å¯ä»¥å…Œæ›çš„æ±è¥¿ã€‚\n", query("name")));
                 return 1;
         }
 
         if( !arg ) arg = "all";
 
-        msg  = sprintf("%sÄ¿Ç°¿ÉÒÔ¶Ò»»ÒÔÏÂ»õÎï£º\n\n" NOR, query("name"));
+        msg  = sprintf("%sç›®å‰å¯ä»¥å…Œæ›ä»¥ä¸‹è²¨ç‰©ï¼š\n\n" NOR, query("name"));
         msg += sprintf(HIW "%-6s%-16s%-11s%-10s%s\n" NOR,
-                      "±àºÅ", "Ãû³Æ", "ÈÙÓşµã", "ÖÖÀà", "¹¦ÄÜ¼òÒª");
+                      "ç·¨è™Ÿ", "åç¨±", "æ¦®è­½é»", "ç¨®é¡", "åŠŸèƒ½ç°¡è¦");
         msg += HIG "------------------------------------------------------------------------------------------\n\n" NOR;
         foreach( item in all_goods ) {
                 if( item->type == arg || arg == "all"  )
@@ -145,7 +145,7 @@ public varargs int show_goods(object me, string arg)
         }
 
         msg += "\n";
-        msg += HIG "ÇëÈÏÕæÔÄ¶ÁÓĞ¹ØËµÃ÷£¬¶Ò»»Ç°Çë¿¼ÂÇÇå³ş£¬ ÈçÎŞ²î´í£¬Ë¡²»ÍË»õ£¡\n" NOR;
+        msg += HIG "è«‹èªçœŸé–±è®€æœ‰é—œèªªæ˜ï¼Œå…Œæ›å‰è«‹è€ƒæ…®æ¸…æ¥šï¼Œ å¦‚ç„¡å·®éŒ¯ï¼Œæ•ä¸é€€è²¨ï¼\n" NOR;
         msg += HIG "------------------------------------------------------------------------------------------\n" NOR;
         me->start_more(msg);
         return 1;
@@ -161,12 +161,12 @@ public int exchange_goods(object ob, string arg)
 
         n = sizeof(all_goods);
         if( !n ) {
-                write(sprintf("Ä¿Ç°%sÃ»ÓĞ¿ÉÒÔ¶Ò»»µÄ¶«Î÷¡£\n", query("name")));
+                write(sprintf("ç›®å‰%sæ²’æœ‰å¯ä»¥å…Œæ›çš„æ±è¥¿ã€‚\n", query("name")));
                 return 1;
         }
 
         if( query("honors", ob) < 1 ) {
-                write("Äã»¹Ã»ÓĞ»ñµÃÈÎºÎÈÙÓşµã¡£\n");
+                write("ä½ é‚„æ²’æœ‰ç²å¾—ä»»ä½•æ¦®è­½é»ã€‚\n");
                 return 1;
         }
 
@@ -177,13 +177,13 @@ public int exchange_goods(object ob, string arg)
         }
 
         if( i >= n ) {
-                write(HIR "ÄãÏë¶Ò»»Ê²Ã´£¿ ÇëÊ¹ÓÃ rystore show all ²éÑ¯¡£\n" NOR);
+                write(HIR "ä½ æƒ³å…Œæ›ä»€éº¼ï¼Ÿ è«‹ä½¿ç”¨ rystore show all æŸ¥è©¢ã€‚\n" NOR);
                 return 1;
 
         }
 
         if( all_goods[i]->type == "manual" ) {
-                write("¶Ô²»Æğ£¬¸Ã·şÎñ±ØĞëÓÉ admin ÊÖ¶¯ÊµÏÖ£¬Çë¼°Ê±Óë admin ÁªÏµ£¡\n");
+                write("å°ä¸èµ·ï¼Œè©²æœå‹™å¿…é ˆç”± admin æ‰‹å‹•å¯¦ç¾ï¼Œè«‹åŠæ™‚èˆ‡ admin è¯ç³»ï¼\n");
                 return 1;
         }
 
@@ -198,7 +198,7 @@ public int exchange_goods(object ob, string arg)
         money = query("honors", ob);
         
         if( money < value) {
-                write("¶Ô²»Æğ£¬ÄúµÄÈÙÓşµã²»¹»£¡\n");
+                write("å°ä¸èµ·ï¼Œæ‚¨çš„æ¦®è­½é»ä¸å¤ ï¼\n");
                 return 1;
         }
 
@@ -211,7 +211,7 @@ public int exchange_goods(object ob, string arg)
                 which = all_goods[i]->name;
                 item = new(all_goods[i]->file);
                 if( !objectp(item) ) {
-                        write("¸´ÖÆÎïÆ·Ê§°Ü£¬ÇëÓë±¾Õ¾ADMINÁªÏµ£¡\n");
+                        write("å¾©åˆ¶ç‰©å“å¤±æ•—ï¼Œè«‹èˆ‡æœ¬ç«™ADMINè¯ç³»ï¼\n");
                         return 1;
                 }
 
@@ -219,11 +219,11 @@ public int exchange_goods(object ob, string arg)
 
                 item->move(ob, 1);
                
-                write(HIC "Äú×Ü¹²»¨·ÑÁË " HIY + value + HIC + " µãÈÙÓş, ×£ÄúºÃÔË£¡\n" NOR);
+                write(HIC "æ‚¨ç¸½å…±èŠ±è²»äº† " HIY + value + HIC + " é»æ¦®è­½, ç¥æ‚¨å¥½é‹ï¼\n" NOR);
                 return 1;
 
         default:
-                write("ÎŞĞ§ÎïÆ·ÖÖÀà£¡\n");
+                write("ç„¡æ•ˆç‰©å“ç¨®é¡ï¼\n");
                 return 0;
         }
 }

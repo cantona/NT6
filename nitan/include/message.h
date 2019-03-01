@@ -5,18 +5,18 @@
 
 
 //
-// Client 讯息类别定义
+// Client 瑷婃伅椤炲垾瀹氱京
 //
-#define SYSMSG          "SYSMSG"                // 系统讯息
-#define ENVMSG          "ENVMSG"                // 环境讯息
-#define CMDMSG          "CMDMSG"                // 指令讯息
-#define CHNMSG          "CHNMSG"                // 频道讯息
-#define EMTMSG          "EMTMSG"                // 表情讯息
-#define SAYMSG          "SAYMSG"                // 说话讯息
-#define TELLMSG         "TELLMSG"               // 交谈讯息
-#define ERRMSG          "ERRMSG"                // 错误讯息
-#define ETCMSG          "ETCMSG"                // 其他讯息
-#define GAMEMSG         "GAMEMSG"               // 游戏讯息
+#define SYSMSG          "SYSMSG"                // 绯荤当瑷婃伅
+#define ENVMSG          "ENVMSG"                // 鐠板瑷婃伅
+#define CMDMSG          "CMDMSG"                // 鎸囦护瑷婃伅
+#define CHNMSG          "CHNMSG"                // 闋婚亾瑷婃伅
+#define EMTMSG          "EMTMSG"                // 琛ㄦ儏瑷婃伅
+#define SAYMSG          "SAYMSG"                // 瑾┍瑷婃伅
+#define TELLMSG         "TELLMSG"               // 浜よ珖瑷婃伅
+#define ERRMSG          "ERRMSG"                // 閷瑷婃伅
+#define ETCMSG          "ETCMSG"                // 鍏朵粬瑷婃伅
+#define GAMEMSG         "GAMEMSG"               // 閬婃埐瑷婃伅
 
 int  is_loging_now();
 int  start_log();

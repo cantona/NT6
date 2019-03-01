@@ -1,16 +1,16 @@
         generate_source(3)        LP MudOSv21c7                (7 Jul 1996)
-        º¯ÊýÃû³Æ:
-                generate_source() - ²úÉúÓëÖ¸¶¨Îï¼þÏà¶ÔÕÕµÄ C ³ÌÊ½Âë
-        º¯ÊýÓï·¨:
+        å‡½æ•¸åç¨±:
+                generate_source() - ç”¢ç”Ÿèˆ‡æŒ‡å®šç‰©ä»¶ç›¸å°ç…§çš„ C ç¨‹å¼ç¢¼
+        å‡½æ•¸èªžæ³•:
                 void generate_source( string file,
                         void | string out_file );
-                ÎÞ´«»ØÖµ generate_source( ×Ö´® file,
-                        ÎÞ²ÎÊý »ò ×Ö´® out_file );
-        º¯ÊýÓÃ·¨:
-                generate_source() ºô½Ð LPC -> C µÄ±àÒë³ÌÊ½, ²úÉúÖ¸¶¨
-                Îï¼þµÄÔ­Ê¼Âë. Èç¹ûÃ»ÓÐÖ¸¶¨Êä³öµÄµµ°¸, ÔòÊä³öµÄ½á¹û»á
-                ·ÅÔÚ SAVE_BINARIES  µÄÄ¿Â¼.
-        ²Î¿¼º¯Êý:
+                ç„¡å‚³å›žå€¼ generate_source( å­—ä¸² file,
+                        ç„¡åƒæ•¸ æˆ– å­—ä¸² out_file );
+        å‡½æ•¸ç”¨æ³•:
+                generate_source() å‘¼å« LPC -> C çš„ç·¨è­¯ç¨‹å¼, ç”¢ç”ŸæŒ‡å®š
+                ç‰©ä»¶çš„åŽŸå§‹ç¢¼. å¦‚æžœæ²’æœ‰æŒ‡å®šè¼¸å‡ºçš„æª”æ¡ˆ, å‰‡è¼¸å‡ºçš„çµæžœæœƒ
+                æ”¾åœ¨ SAVE_BINARIES  çš„ç›®éŒ„.
+        åƒè€ƒå‡½æ•¸:
                 valid_asm(4), valid_compile_to_c(4)
-        ÊÖ²á·­Òë:
+        æ‰‹å†Šç¿»è­¯:
                 Phoebus@ZH        97.Feb.13.                (Writen 5/23/97)

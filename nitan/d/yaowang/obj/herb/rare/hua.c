@@ -2,12 +2,12 @@
 
 void create()
 {
-         set_name(NOR + BLU "ÆßÒ¶Ò»Ö¦»¨" NOR, ({ "qiye yizhihua","hua","herb" }));
+         set_name(NOR + BLU "ä¸ƒè‘‰ä¸€æèŠ±" NOR, ({ "qiye yizhihua","hua","herb" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", NOR + HIY "ÆßÒ¶Ò»Ö¦»¨(Paris polyphylla)µÄ¸ÉÔï¸ù¾¥¡£ÒòÆäÒ¶¶àÎª7¡ª10Æ¬ÂÖÉúÓÚ¾¥Ïî£¬¶ø»¨µ¥ÉúÓÚÂÖÉúÒ¶Æ¬Ö®ÉÏ£¬¹ÊµÃ´ËÃû¡£ÓÖÒò»¨µÄÍâÂÖ»¨±»Æ¬ĞÎ´ó.ËÆÒ¶×´£»ÄÚÂÖ»¨±»Æ¬ÍË»¯³Ê³¤Ïß×´ ......\n" NOR);
-                set("base_unit", "¿Å");
+                set("long", NOR + HIY "ä¸ƒè‘‰ä¸€æèŠ±(Paris polyphylla)çš„å¹¹ç‡¥æ ¹è–ã€‚å› å…¶è‘‰å¤šç‚º7â”€10ç‰‡è¼ªç”Ÿäºè–é …ï¼Œè€ŒèŠ±å–®ç”Ÿäºè¼ªç”Ÿè‘‰ç‰‡ä¹‹ä¸Šï¼Œæ•…å¾—æ­¤åã€‚åˆå› èŠ±çš„å¤–è¼ªèŠ±è¢«ç‰‡å½¢å¤§.ä¼¼è‘‰ç‹€ï¼›å…§è¼ªèŠ±è¢«ç‰‡é€€åŒ–å‘ˆé•·ç·šç‹€ ......\n" NOR);
+                set("base_unit", "é¡†");
                 set("base_value", 300000);
                 set("base_weight", 20);
         }

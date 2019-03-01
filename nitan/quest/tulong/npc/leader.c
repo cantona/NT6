@@ -3,11 +3,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("½ÓÒıÊ¹", ({"jieyin shi", "shi", "leader"}));
+        set_name("æ¥å¼•ä½¿", ({"jieyin shi", "shi", "leader"}));
         set("age", 14);
         set("attitude", "peaceful");
-        set("gender", "Å®ĞÔ");
-        set("title", "¾«ÁéÊ¹");
+        set("gender", "å¥³æ€§");
+        set("title", "ç²¾éˆä½¿");
         set("str", 20);
         set("int", 20);
         set("per", 30);
@@ -49,32 +49,32 @@ void greeting(object ob)
                 return; 
                 
         if( query_temp("check_answer/" + query("id", ob)) ) {
-                command("say ÇëÄã¿ì»Ø´ğ°É¡£");
+                command("say è«‹ä½ å¿«å›ç­”å§ã€‚");
                 return;
         }        
          
         switch(random(4)) {
         case 0 :
-                say("½ÓÒıÊ¹Î¢Ğ¦µÀ£ºÕâÎ»" + RANK_D->query_respect(ob) +
-                        "£¬ÇëÏÈ»Ø´ğÎÒÒ»¸öÎÊÌâ£ºÈç¹ûÄãµÄÄ¸Ç×ºÍÆŞ×ÓÍ¬Ê±ÓöÏÕ£¬Äã»áÏÈ¾ÈÄÄÒ»¸öÄØ£¿\n");  
+                say("æ¥å¼•ä½¿å¾®ç¬‘é“ï¼šé€™ä½" + RANK_D->query_respect(ob) +
+                        "ï¼Œè«‹å…ˆå›ç­”æˆ‘ä¸€å€‹å•é¡Œï¼šå¦‚æœä½ çš„æ¯è¦ªå’Œå¦»å­åŒæ™‚é‡éšªï¼Œä½ æœƒå…ˆæ•‘å“ªä¸€å€‹å‘¢ï¼Ÿ\n");  
                 set_temp("check_answer/"+query("id", ob), 1, this_object());
                 call_out("say_answer", 30, ob);
                 break;  
         case 1 :
-                say("½ÓÒıÊ¹Î¢Ğ¦µÀ£ºÕâÎ»" + RANK_D->query_respect(ob) +
-                        "£¬ÇëÏÈ»Ø´ğÎÒÒ»¸öÎÊÌâ£ºÈç¹ûÄãµÄ¶ù×ÓºÍÅ®¶ùÍ¬Ê±ÓöÏÕ£¬Äã»áÏÈ¾ÈÄÄÒ»¸öÄØ£¿\n");
+                say("æ¥å¼•ä½¿å¾®ç¬‘é“ï¼šé€™ä½" + RANK_D->query_respect(ob) +
+                        "ï¼Œè«‹å…ˆå›ç­”æˆ‘ä¸€å€‹å•é¡Œï¼šå¦‚æœä½ çš„å…’å­å’Œå¥³å…’åŒæ™‚é‡éšªï¼Œä½ æœƒå…ˆæ•‘å“ªä¸€å€‹å‘¢ï¼Ÿ\n");
                 set_temp("check_answer/"+query("id", ob), 1, this_object());
                 call_out("say_answer", 30, ob);
                 break;
         case 2 :
-                say("½ÓÒıÊ¹Î¢Ğ¦µÀ£ºÕâÎ»" + RANK_D->query_respect(ob) +
-                        "£¬ÇëÏÈ»Ø´ğÎÒÒ»¸öÎÊÌâ£ºÈç¹ûÄãµÄÆŞ×ÓºÍÅóÓÑÍ¬Ê±ÓöÏÕ£¬Äã»áÏÈ¾ÈÄÄÒ»¸öÄØ£¿\n");
+                say("æ¥å¼•ä½¿å¾®ç¬‘é“ï¼šé€™ä½" + RANK_D->query_respect(ob) +
+                        "ï¼Œè«‹å…ˆå›ç­”æˆ‘ä¸€å€‹å•é¡Œï¼šå¦‚æœä½ çš„å¦»å­å’Œæœ‹å‹åŒæ™‚é‡éšªï¼Œä½ æœƒå…ˆæ•‘å“ªä¸€å€‹å‘¢ï¼Ÿ\n");
                 set_temp("check_answer/"+query("id", ob), 1, this_object());
                 call_out("say_answer", 30, ob);
                 break;
         case 3 :
-                say("½ÓÒıÊ¹Î¢Ğ¦µÀ£ºÕâÎ»" + RANK_D->query_respect(ob) +
-                        "£¬ÇëÏÈ»Ø´ğÎÒÒ»¸öÎÊÌâ£ºÈç¹ûÄãµÄÅóÓÑºÍÇ×ÊôÍ¬Ê±ÓöÏÕ£¬Äã»áÏÈ¾ÈÄÄÒ»¸öÄØ£¿\n");                  
+                say("æ¥å¼•ä½¿å¾®ç¬‘é“ï¼šé€™ä½" + RANK_D->query_respect(ob) +
+                        "ï¼Œè«‹å…ˆå›ç­”æˆ‘ä¸€å€‹å•é¡Œï¼šå¦‚æœä½ çš„æœ‹å‹å’Œè¦ªå±¬åŒæ™‚é‡éšªï¼Œä½ æœƒå…ˆæ•‘å“ªä¸€å€‹å‘¢ï¼Ÿ\n");                  
                 set_temp("check_answer/"+query("id", ob), 1, this_object());
                 call_out("say_answer", 30, ob);
                 break;
@@ -85,8 +85,8 @@ void say_answer(object who)
 {
         if( !who || environment(who) != environment() ) return;
         command("smile");
-        command("say ¶ÔÁË£¬³ÁÄ¬²ÅÊÇ´ğ°¸£¡Õâ±¾À´ÊÇÃ»ÓĞ´ğ°¸µÄÎÊÌâ£¬Ò»ÇĞÒªÊÓµ±Ê±µÄÇéĞÎ¶ø¶¨¡£" + 
-                who->query_idname(1) + "¹ı¹ØÁË£¬È¥°É¡£\n");   
+        command("say å°äº†ï¼Œæ²‰é»˜æ‰æ˜¯ç­”æ¡ˆï¼é€™æœ¬ä¾†æ˜¯æ²’æœ‰ç­”æ¡ˆçš„å•é¡Œï¼Œä¸€åˆ‡è¦è¦–ç•¶æ™‚çš„æƒ…å½¢è€Œå®šã€‚" + 
+                who->query_idname(1) + "éé—œäº†ï¼Œå»å§ã€‚\n");   
         delete_temp("check_answer/"+query("id", who), this_object());
         who->move("/d/dragon/spirit5");
         return ;
@@ -99,31 +99,31 @@ int do_answer(string arg)
         me = this_player();
         ob = this_object();
         
-        if( !arg ) return notify_fail("ÄãËµÊ²Ã´£¿\n");
+        if( !arg ) return notify_fail("ä½ èªªä»€éº¼ï¼Ÿ\n");
 
         if( !(query_temp("check_answer/" + query("id", me),ob)) )
-                return notify_fail("Ê²Ã´£¿\n");
+                return notify_fail("ä»€éº¼ï¼Ÿ\n");
 
 
-        message_vision("$N´ğµÀ£ºÎÒ»áÏÈ¾È¡°" + arg + "¡±¡£\n", me);
+        message_vision("$Nç­”é“ï¼šæˆ‘æœƒå…ˆæ•‘â€œ" + arg + "â€ã€‚\n", me);
 
-        if( arg == "Ç×Êô" || arg == "Å®¶ù" || arg == "¶ù×Ó" || arg == "Ä¸Ç×" || arg == "ÆŞ×Ó" || arg == "ÅóÓÑ" ) 
+        if( arg == "è¦ªå±¬" || arg == "å¥³å…’" || arg == "å…’å­" || arg == "æ¯è¦ª" || arg == "å¦»å­" || arg == "æœ‹å‹" ) 
         {
                 switch (random(3)) {
                 case 0:      
-                        message_vision("$N²àÉíÈÃ³öÒ»ÌõÂ·¡£\n", ob);   
+                        message_vision("$Nå´èº«è®“å‡ºä¸€æ¢è·¯ã€‚\n", ob);   
                         delete_temp("check_answer/"+query("id", me), ob);
                         me->move("/d/dragon/spirit3");
                         remove_call_out("say_answer"); 
                         break;
                 case 1: 
-                        message_vision("$N²àÉíÈÃ³öÒ»ÌõÂ·¡£\n", ob);   
+                        message_vision("$Nå´èº«è®“å‡ºä¸€æ¢è·¯ã€‚\n", ob);   
                         delete_temp("check_answer/"+query("id", me), ob);
                         me->move("/d/dragon/spirit4");  
                         remove_call_out("say_answer");
                         break;
                 case 2: 
-                        message_vision("$N²àÉíÈÃ³öÒ»ÌõÂ·¡£\n", ob);   
+                        message_vision("$Nå´èº«è®“å‡ºä¸€æ¢è·¯ã€‚\n", ob);   
                         delete_temp("check_answer/"+query("id", me), ob);
                         me->move("/d/dragon/spirit0");
                         remove_call_out("say_answer");
@@ -131,7 +131,7 @@ int do_answer(string arg)
                 } 
                 return 1;
         }
-        command("say ÇëÈÏÕæ»Ø´ğ£¡\n");
+        command("say è«‹èªçœŸå›ç­”ï¼\n");
         return 1;
 }
 

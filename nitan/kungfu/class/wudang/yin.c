@@ -1,5 +1,5 @@
 // This program is a part of NITAN MudLIB
-// yin.c ÒóÀæÍ¤
+// yin.c æ®·æ¢¨äº­
 
 #include <ansi.h>
 #include "wudang.h"
@@ -12,12 +12,12 @@ mixed ask_skill();
 
 void create()
 {
-        set_name("ÒóÀæÍ¤", ({ "yin litin", "yin" }));
-        set("nickname", "Îäµ±ÁùÏÀ");
+        set_name("æ®·æ¢¨äº­", ({ "yin litin", "yin" }));
+        set("nickname", "æ­¦ç•¶å…­ä¿ ");
         set("long",
-                "Ëû¾ÍÊÇÕÅÈı·áµÄÁùµÜ×ÓÒóÀæÍ¤¡£\n"
-                "Ëû½ñÄêÈıÊ®Ëê£¬¾«Ã÷ÄÜ¸É£¬¼µ¶ñÈç³ğ£¬ĞÔÈçÁÒ»ğ¡£\n");
-        set("gender", "ÄĞĞÔ");
+                "ä»–å°±æ˜¯å¼µä¸‰è±çš„å…­å¼Ÿå­æ®·æ¢¨äº­ã€‚\n"
+                "ä»–ä»Šå¹´ä¸‰åæ­²ï¼Œç²¾æ˜èƒ½å¹¹ï¼Œå«‰æƒ¡å¦‚ä»‡ï¼Œæ€§å¦‚çƒˆç«ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 30);
         set("attitude", "heroism");
         set("shen_type", 1);
@@ -54,9 +54,9 @@ void create()
         set_skill("literate", 100);
 
         set("no_teach", ([
-                "taiji-shengong" : "ÒªÏëÑ§Ï°Ì«¼«Éñ¹¦ÇëÏòÕÅÕæÈËÇë½Ì¡£",
-                "taiji-jian"     : "Ì«¼«½£±ØĞëÕÅÕæÈËÇ×´«¡£",
-                "taiji-quan"     : "Ì«¼«È­±ØĞëÕÅÕæÈËÇ×´«¡£",
+                "taiji-shengong" : "è¦æƒ³å­¸ç¿’å¤ªæ¥µç¥åŠŸè«‹å‘å¼µçœŸäººè«‹æ•™ã€‚",
+                "taiji-jian"     : "å¤ªæ¥µåŠå¿…é ˆå¼µçœŸäººè¦ªå‚³ã€‚",
+                "taiji-quan"     : "å¤ªæ¥µæ‹³å¿…é ˆå¼µçœŸäººè¦ªå‚³ã€‚",
         ]));
 
         map_skill("force", "yinyun-ziqi");
@@ -69,12 +69,12 @@ void create()
         prepare_skill("unarmed", "taiji-quan");
         prepare_skill("strike", "wudang-zhang");
 
-        create_family("Îäµ±ÅÉ", 2, "µÜ×Ó");
+        create_family("æ­¦ç•¶æ´¾", 2, "å¼Ÿå­");
 
         set("inquiry", ([
-                "ÈáÔÂ´©¿Õ": (: ask_me :),
-                "¾øÕĞ"    : (: ask_me :),
-                "ÌìµØÍ¬ÊÙ": (: ask_skill :),
+                "æŸ”æœˆç©¿ç©º": (: ask_me :),
+                "çµ•æ‹›"    : (: ask_me :),
+                "å¤©åœ°åŒå£½": (: ask_skill :),
         ]));
 
         set("chat_chance_combat", 40);
@@ -103,29 +103,29 @@ void attempt_apprentice(object ob)
 
         if( query("shen", ob)<8000 )
         {
-                command("say ÎÒÎäµ±ÄËÊÇÌÃÌÃÃûÃÅÕıÅÉ£¬¶ÔµÜ×ÓÒªÇó¼«ÑÏ¡£");
-                command("say ÔÚµÂĞĞ·½Ãæ£¬" + RANK_D->query_respect(ob) +
-                        "ÊÇ·ñ»¹×öµÃ²»¹»£¿");
+                command("say æˆ‘æ­¦ç•¶ä¹ƒæ˜¯å ‚å ‚åé–€æ­£æ´¾ï¼Œå°å¼Ÿå­è¦æ±‚æ¥µåš´ã€‚");
+                command("say åœ¨å¾·è¡Œæ–¹é¢ï¼Œ" + RANK_D->query_respect(ob) +
+                        "æ˜¯å¦é‚„åšå¾—ä¸å¤ ï¼Ÿ");
                 return;
         }
 
         if ((int)ob->query_skill("yinyun-ziqi",1) < 70)
         {
-                command("say ÎÒÎäµ±ÅÉ×î×¢ÖØÄÚ¹¦ĞÄ·¨" + RANK_D->query_respect(ob)+
-                        "ÊÇ·ñÓ¦¸ÃÔÚë³ëµ×ÏÆøÉÏ¶àÏÂµã¹¦·ò°¡?");
+                command("say æˆ‘æ­¦ç•¶æ´¾æœ€æ³¨é‡å…§åŠŸå¿ƒæ³•" + RANK_D->query_respect(ob)+
+                        "æ˜¯å¦æ‡‰è©²åœ¨æ°¤æ°³ç´«æ°£ä¸Šå¤šä¸‹é»åŠŸå¤«å•Š?");
                 return;
         }
 
         if ((int)ob->query_skill("taoism", 1) < 70)
         {
-                command("say Ï°ÎäÊÇÎªÁËÇ¿Éí½¡Ìå£¬Ò»Î¶µÄÁ·ÎäÊÇ²»¿ÉÈ¡µÄ¡£");
-                command("say ÎÒ¿´Äã»¹ĞèÒªÔÚĞŞÉíÑøĞÔ·½Ãæ¶à¶ÍÁ¶¶ÍÁ¶£¬ÒÔÌá"
-                        "¸ßÄãµÄµÀµÂĞÄ·¨¡£");
+                command("say ç¿’æ­¦æ˜¯ç‚ºäº†å¼·èº«å¥é«”ï¼Œä¸€å‘³çš„ç·´æ­¦æ˜¯ä¸å¯å–çš„ã€‚");
+                command("say æˆ‘çœ‹ä½ é‚„éœ€è¦åœ¨ä¿®èº«é¤Šæ€§æ–¹é¢å¤šé›ç…‰é›ç…‰ï¼Œä»¥æ"
+                        "é«˜ä½ çš„é“å¾·å¿ƒæ³•ã€‚");
                 return;
         }
 
-        command("say ºÃ°É£¬ÎÒ¾ÍÊÕÏÂÄãÁË¡£");
-        command("say Ï£ÍûÄãÄÜºÃºÃÓÃ¹¦£¬ÏûÃğĞ°Ä§ÍâµÀ£¡");
+        command("say å¥½å§ï¼Œæˆ‘å°±æ”¶ä¸‹ä½ äº†ã€‚");
+        command("say å¸Œæœ›ä½ èƒ½å¥½å¥½ç”¨åŠŸï¼Œæ¶ˆæ»…é‚ªé­”å¤–é“ï¼");
         command("recruit "+query("id", ob));
         if( query("class", ob) != "taoist" )
                 set("class", "taoist", ob);
@@ -137,33 +137,33 @@ mixed ask_me()
 
         me = this_player();
         if( query("can_perform/raozhi-roujian/chuankong", me) )
-                return "×Ô¼ººÃºÃ¶àÁ·Ï°°É£¡";
+                return "è‡ªå·±å¥½å¥½å¤šç·´ç¿’å§ï¼";
 
         if( query("family/family_name", me) != query("family/family_name") )
-                return RANK_D->query_respect(me) + "²»ÊÇÎÒÃÇÎäµ±ÅÉµÄÈË£¬ºÎ³ö´ËÑÔ£¿";
+                return RANK_D->query_respect(me) + "ä¸æ˜¯æˆ‘å€‘æ­¦ç•¶æ´¾çš„äººï¼Œä½•å‡ºæ­¤è¨€ï¼Ÿ";
 
         if (me->query_skill("raozhi-roujian", 1) < 1)
-                return "ÄãÁ¬ÈÆÖ¸Èá½£¶¼Ã»Ñ§£¬»¹Ì¸Ê²Ã´¾øÕĞ¿ÉÑÔ£¿";
+                return "ä½ é€£ç¹æŒ‡æŸ”åŠéƒ½æ²’å­¸ï¼Œé‚„è«‡ä»€éº¼çµ•æ‹›å¯è¨€ï¼Ÿ";
 
         if( query("family/gongji", me)<250 )
-                return "ÄãÎªÎÒÎäµ±ÅÉĞ§Á¦»¹²»¹»£¬ÕâÕĞÎÒÏÈ²»Ã¦´«Äã¡£";
+                return "ä½ ç‚ºæˆ‘æ­¦ç•¶æ´¾æ•ˆåŠ›é‚„ä¸å¤ ï¼Œé€™æ‹›æˆ‘å…ˆä¸å¿™å‚³ä½ ã€‚";
 
         if( query("shen", me)<15000 )
-                return "ÄãĞĞÏÀÕÌÒåµÄÊÂÇé×öµÄ»¹ºÜ²»¹»£¬ÎÒ²»ÄÜ´«Äã¾øÕĞ£¡";
+                return "ä½ è¡Œä¿ ä»—ç¾©çš„äº‹æƒ…åšçš„é‚„å¾ˆä¸å¤ ï¼Œæˆ‘ä¸èƒ½å‚³ä½ çµ•æ‹›ï¼";
 
         if (me->query_skill("force") < 150)
-                return "ÄãµÄÄÚ¹¦µÄĞŞÎª²»¹»£¬Á·¸ßÁËÔÙÀ´°É¡£";
+                return "ä½ çš„å…§åŠŸçš„ä¿®ç‚ºä¸å¤ ï¼Œç·´é«˜äº†å†ä¾†å§ã€‚";
 
         if (me->query_skill("raozhi-roujian", 1) < 100)
-                return "ÄãµÄÈÆÖ¸Èá½£»¹²»µ½¼Ò£¬Òª¶àÁ·Á·£¡";
+                return "ä½ çš„ç¹æŒ‡æŸ”åŠé‚„ä¸åˆ°å®¶ï¼Œè¦å¤šç·´ç·´ï¼";
 
-        message_vision(HIY "$n" HIY "µãÁËµãÍ·£¬°Î³öÑü¼ä³¤½£Í»È»Ïò$N" HIY
-                       HIY "´ÌÀ´£¬Í¾ÖĞ½£·¨ºö\n±ä£¬ÄÇ±ú³¤½£¾¹ËÆ³ÉÁËÒ»ÌõÈí"
-                       "´ø£¬ÇáÈáÇúÕÛ£¬Æ®ºö²»¶¨£¬Õı\nÊÇÆßÊ®¶şÕĞ¡¸ÈÆÖ¸Èá½£"
-                       "¡¹µÄ×îºóÒ»ÕĞ¡¸ÈáÔÂ´©¿Õ¡¹¡£\n" NOR, me,
+        message_vision(HIY "$n" HIY "é»äº†é»é ­ï¼Œæ‹”å‡ºè…°é–“é•·åŠçªç„¶å‘$N" HIY
+                       HIY "åˆºä¾†ï¼Œé€”ä¸­åŠæ³•å¿½\nè®Šï¼Œé‚£æŸ„é•·åŠç«Ÿä¼¼æˆäº†ä¸€æ¢è»Ÿ"
+                       "å¸¶ï¼Œè¼•æŸ”æ›²æŠ˜ï¼Œé£„å¿½ä¸å®šï¼Œæ­£\næ˜¯ä¸ƒåäºŒæ‹›ã€Œç¹æŒ‡æŸ”åŠ"
+                       "ã€çš„æœ€å¾Œä¸€æ‹›ã€ŒæŸ”æœˆç©¿ç©ºã€ã€‚\n" NOR, me,
                        this_object());
-        command("say Äã¿ÉÃ÷°×ÁË£¿");
-        tell_object(me, HIC "ÄãÑ§»áÁË¡¸ÈáÔÂ´©¿Õ¡¹¡£\n" NOR);
+        command("say ä½ å¯æ˜ç™½äº†ï¼Ÿ");
+        tell_object(me, HIC "ä½ å­¸æœƒäº†ã€ŒæŸ”æœˆç©¿ç©ºã€ã€‚\n" NOR);
         if (me->can_improve_skill("sword"))
                 me->improve_skill("sword", 1500000);
         if (me->can_improve_skill("raozhi-roujian"))
@@ -181,33 +181,33 @@ mixed ask_skill()
 
         me = this_player();
         if( query("can_perform/taiji-jian/tong", me) )
-                return "×Ô¼ººÃºÃ¶àÁ·Ï°°É£¡";
+                return "è‡ªå·±å¥½å¥½å¤šç·´ç¿’å§ï¼";
 
         if( query("family/family_name", me) != query("family/family_name") )
-                return RANK_D->query_respect(me) + "²»ÊÇÎÒÃÇÎäµ±ÅÉµÄÈË£¬ºÎ³ö´ËÑÔ£¿";
+                return RANK_D->query_respect(me) + "ä¸æ˜¯æˆ‘å€‘æ­¦ç•¶æ´¾çš„äººï¼Œä½•å‡ºæ­¤è¨€ï¼Ÿ";
 
         if (me->query_skill("taiji-jian", 1) < 1)
-                return "ÄãÁ¬Ì«¼«½£¶¼Ã»Ñ§£¬»¹Ì¸Ê²Ã´¾øÕĞ¿ÉÑÔ£¿";
+                return "ä½ é€£å¤ªæ¥µåŠéƒ½æ²’å­¸ï¼Œé‚„è«‡ä»€éº¼çµ•æ‹›å¯è¨€ï¼Ÿ";
 
         if( query("family/gongji", me)<250 )
-                return "ÄãÎªÎÒÎäµ±ÅÉĞ§Á¦»¹²»¹»£¬ÕâÕĞÎÒÏÈ²»Ã¦´«Äã¡£";
+                return "ä½ ç‚ºæˆ‘æ­¦ç•¶æ´¾æ•ˆåŠ›é‚„ä¸å¤ ï¼Œé€™æ‹›æˆ‘å…ˆä¸å¿™å‚³ä½ ã€‚";
 
         if( query("shen", me)<15000 )
-                return "ÄãĞĞÏÀÕÌÒåµÄÊÂÇé×öµÄ»¹ºÜ²»¹»£¬ÎÒ²»ÄÜ´«Äã¾øÕĞ£¡";
+                return "ä½ è¡Œä¿ ä»—ç¾©çš„äº‹æƒ…åšçš„é‚„å¾ˆä¸å¤ ï¼Œæˆ‘ä¸èƒ½å‚³ä½ çµ•æ‹›ï¼";
 
         if (me->query_skill("force") < 150)
-                return "ÄãµÄÄÚ¹¦µÄĞŞÎª²»¹»£¬Á·¸ßÁËÔÙÀ´°É¡£";
+                return "ä½ çš„å…§åŠŸçš„ä¿®ç‚ºä¸å¤ ï¼Œç·´é«˜äº†å†ä¾†å§ã€‚";
 
         if (me->query_skill("taiji-jian", 1) < 100)
-                return "ÄãµÄÌ«¼«½£»¹²»µ½¼Ò£¬Òª¶àÁ·Á·£¡";
+                return "ä½ çš„å¤ªæ¥µåŠé‚„ä¸åˆ°å®¶ï¼Œè¦å¤šç·´ç·´ï¼";
 
-        message_sort(HIY "$n" HIY "µãÁËµãÍ·µÀ£º¼ÈÈ»$N" HIY "Ò²ÊÇ"
-                     "ÎÒ±²ÖĞÈË£¬ÄÇÃ´ÎÒ¾Í½«×ÔÏşÜ½È¥ºó£¬ÎÒËù²ÎÎæ³ö"
-                     "À´µÄ¡¸ÌìµØÍ¬ÊÙ¡¹´«ÓÚÄã£¬ÇĞ¼Ç£¬·ÇÍò²»µÃÒÔÊ±"
-                     "Ç§Íò²»ÒªÊ¹ÓÃ£¡½ô½Ó×Å£¬$n¿ªÊ¼ÏêÏ¸½²½âÆäÖĞ°Â"
-                     "ÃØ¡£\n" NOR, me, this_object());
-        command("say Äã¿ÉÃ÷°×ÁË£¿");
-        tell_object(me, HIC "ÄãÑ§»áÁË¡¸ÌìµØÍ¬ÊÙ¡¹¡£\n" NOR);
+        message_sort(HIY "$n" HIY "é»äº†é»é ­é“ï¼šæ—¢ç„¶$N" HIY "ä¹Ÿæ˜¯"
+                     "æˆ‘è¼©ä¸­äººï¼Œé‚£éº¼æˆ‘å°±å°‡è‡ªæ›‰èŠ™å»å¾Œï¼Œæˆ‘æ‰€åƒæ‚å‡º"
+                     "ä¾†çš„ã€Œå¤©åœ°åŒå£½ã€å‚³äºä½ ï¼Œåˆ‡è¨˜ï¼Œéè¬ä¸å¾—ä»¥æ™‚"
+                     "åƒè¬ä¸è¦ä½¿ç”¨ï¼ç·Šæ¥è‘—ï¼Œ$né–‹å§‹è©³ç´°è¬›è§£å…¶ä¸­å¥§"
+                     "ç§˜ã€‚\n" NOR, me, this_object());
+        command("say ä½ å¯æ˜ç™½äº†ï¼Ÿ");
+        tell_object(me, HIC "ä½ å­¸æœƒäº†ã€Œå¤©åœ°åŒå£½ã€ã€‚\n" NOR);
         if (me->can_improve_skill("sword"))
                 me->improve_skill("sword", 1500000);
         if (me->can_improve_skill("taiji-jian"))

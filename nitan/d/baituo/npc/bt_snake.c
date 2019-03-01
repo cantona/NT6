@@ -1,6 +1,6 @@
 // Code of JHSH
-// baituo snake °×ÍÕÉ½Éß¹ÈµÄÉß
-// ×¢Òâ£ºÇ§Íò²»¿ÉÓÃÔÚÉß¹ÈÒÔÍâµÄ·¿¼ä£¡
+// baituo snake ç™½é§å±±è›‡è°·çš„è›‡
+// æ³¨æ„ï¼šåƒè¬ä¸å¯ç”¨åœ¨è›‡è°·ä»¥å¤–çš„æˆ¿é–“ï¼
 // by maco
 #include <ansi.h>
 
@@ -12,9 +12,9 @@ void create()
         set("age", 4);
         set("attitude", "peaceful");
 
-        set("msg_fail", "$n³å$NË»µØÒ»ÍÂÉàÍ·");
-        set("msg_succ", "$nË»Ë»×öÏì£¬ÉßÍ·Ëæ×Å$NµÄÊÖ¶¯ÁËÆğÀ´");
-        set("msg_trained","$nÇÄÎŞÉùÏ¢µØÓÎµ½$NµÄ½ÅÏÂ²»¶¯ÁË");
+        set("msg_fail", "$næ²–$Nå˜¶åœ°ä¸€åèˆŒé ­");
+        set("msg_succ", "$nå˜¶å˜¶åšéŸ¿ï¼Œè›‡é ­éš¨è‘—$Nçš„æ‰‹å‹•äº†èµ·ä¾†");
+        set("msg_trained","$næ‚„ç„¡è²æ¯åœ°éŠåˆ°$Nçš„è…³ä¸‹ä¸å‹•äº†");
         set("wildness", 9);
 
         set("str", 26);
@@ -40,37 +40,37 @@ void set_kind(int poison)
         switch( poison )
         {
         case 0:
-                set_name("¶¾Éß", ({ "snake", "she" }) );
-                set("long", "Ò»Ö»ÓĞ×ÅÈı½ÇĞÎÄÔ´üµÄÉß£¬Î²°ÍÉ³É³×öÏì¡£\n");
+                set_name("æ¯’è›‡", ({ "snake", "she" }) );
+                set("long", "ä¸€åªæœ‰è‘—ä¸‰è§’å½¢è…¦è¢‹çš„è›‡ï¼Œå°¾å·´æ²™æ²™åšéŸ¿ã€‚\n");
                 set("combat_exp", 1000);
                 break;
         case 1:
-                set_name("ºÚÉß", ({ "hei she", "snake" ,"she" }) );
-                set("long", "ÕâÌõºÚÉßÉí×ÓºÚµÃ·¢ÁÁ£¬ÉíÉÏ°×µãÒ²ÊÇÉÁÉÁ·¢¹â£¬ÕÅ¿ª´ó¿Ú£¬Â¶³öËÄ¸ùâ²ÑÀ¡£\n");
+                set_name("é»‘è›‡", ({ "hei she", "snake" ,"she" }) );
+                set("long", "é€™æ¢é»‘è›‡èº«å­é»‘å¾—ç™¼äº®ï¼Œèº«ä¸Šç™½é»ä¹Ÿæ˜¯é–ƒé–ƒç™¼å…‰ï¼Œå¼µé–‹å¤§å£ï¼Œéœ²å‡ºå››æ ¹ç ç‰™ã€‚\n");
                 break;
         case 2:
-                set_name("ÖñÒ¶Çà", ({ "zhuye qing", "snake" }) );
-                set("long", "Ò»Ö»ÉíÌå±ÌÂÌµÄÉß£¬ÏÔµÃÌØ±ğÏ¸Ğ¡¡£\n");
+                set_name("ç«¹è‘‰é’", ({ "zhuye qing", "snake" }) );
+                set("long", "ä¸€åªèº«é«”ç¢§ç¶ çš„è›‡ï¼Œé¡¯å¾—ç‰¹åˆ¥ç´°å°ã€‚\n");
                 break;
         case 3:
-                set_name("°Ù²½Éß", ({ "baibu she", "she", "snake" }) );
-                set("long", "Ò»ÌõÇàÉ«³¤Éß£¬»ÆÁÛ¸²Ìå¡£¾İËµ±»°Ù²½ÉßÒ§ÁË£¬×ß³öÒ»°Ù²½±ØËÀÎŞÒÉ¡£\n");
+                set_name("ç™¾æ­¥è›‡", ({ "baibu she", "she", "snake" }) );
+                set("long", "ä¸€æ¢é’è‰²é•·è›‡ï¼Œé»ƒé±—è¦†é«”ã€‚æ“šèªªè¢«ç™¾æ­¥è›‡å’¬äº†ï¼Œèµ°å‡ºä¸€ç™¾æ­¥å¿…æ­»ç„¡ç–‘ã€‚\n");
                 break;
         case 4:
-                set_name("Çà»¨Éß", ({ "qinghua she", "she", "snake" }) );
-                set("long", "Ò»Ìõ»ìÉíÇà»ÆÏà¼äµÄ¶¾Éß£¬°ßÌõÏÊÃ÷£¬ÉßÍ·Ææ±â£¬×÷Èı½ÇÖ®ĞÎ£¬ÏÔ¾ß¾ç¶¾¡£\n");
+                set_name("é’èŠ±è›‡", ({ "qinghua she", "she", "snake" }) );
+                set("long", "ä¸€æ¢æ··èº«é’é»ƒç›¸é–“çš„æ¯’è›‡ï¼Œæ–‘æ¢é®®æ˜ï¼Œè›‡é ­å¥‡æ‰ï¼Œä½œä¸‰è§’ä¹‹å½¢ï¼Œé¡¯å…·åŠ‡æ¯’ã€‚\n");
                 break;
         case 5:
-                set_name("òóÉß", ({ "fu she", "she", "snake" }) );
-                set("long", "Ò»ÌõÏ¸¾±ÇàÉíµÄòóÉß¡£\n");
+                set_name("è®è›‡", ({ "fu she", "she", "snake" }) );
+                set("long", "ä¸€æ¢ç´°é ¸é’èº«çš„è®è›‡ã€‚\n");
                 break;
         case 6:
-                set_name("³àÁ·Éß", ({ "chilian she", "chilian", "she", "snake" }) );
-                set("long", "Ò»Ìõ³ßĞí³¤µÄ³àÁ·Éß£¬Çàºì°ßìµ£¬ÉõÊÇ¿É²À¡£\n");
+                set_name("èµ¤ç·´è›‡", ({ "chilian she", "chilian", "she", "snake" }) );
+                set("long", "ä¸€æ¢å°ºè¨±é•·çš„èµ¤ç·´è›‡ï¼Œé’ç´…æ–‘æ–•ï¼Œç”šæ˜¯å¯æ€–ã€‚\n");
                 break;
         case 7:
-                set_name("½ğÏßÉß", ({ "jinxian she", "she", "snake" }) );
-                set("long", "Ò»Ìõ·½Í·Ğ¡Éß£¬È«ÉíÂÌÁÛ¸²Ìå£¬Ò»Ìõ½ğÏßÓÉÉß¸¹¶øÏÂ¡£\n");
+                set_name("é‡‘ç·šè›‡", ({ "jinxian she", "she", "snake" }) );
+                set("long", "ä¸€æ¢æ–¹é ­å°è›‡ï¼Œå…¨èº«ç¶ é±—è¦†é«”ï¼Œä¸€æ¢é‡‘ç·šç”±è›‡è…¹è€Œä¸‹ã€‚\n");
                 break;
         }
         set_weight(poison*600 + 9000);
@@ -108,7 +108,7 @@ void init()
         ::init();
         add_action("convert","bian");
         if (interactive(ob = this_player()) &&
-            query("family/family_name", ob) != "Å·ÑôÊÀ¼Ò" && 
+            query("family/family_name", ob) != "æ­é™½ä¸–å®¶" && 
                 random(ob->query_kar() + ob->query_per()) < 30) {
                         remove_call_out("kill_ob");
                         call_out("kill_ob", 1, ob);
@@ -119,7 +119,7 @@ void init()
 void die()
 {
         object ob;
-        message_vision("$NÈ«ÉíÅ¤Çú£¬·­ÌÚ»ÓÎè£¬È«ÉíÈíÈíµØÉ¢ÁË¿ªÀ´¡£\n", this_object());
+        message_vision("$Nå…¨èº«æ‰­æ›²ï¼Œç¿»é¨°æ®èˆï¼Œå…¨èº«è»Ÿè»Ÿåœ°æ•£äº†é–‹ä¾†ã€‚\n", this_object());
         ob = new(DRUG_D("shedan"));
         ob->move(environment(this_object()));
         destruct(this_object());
@@ -138,7 +138,7 @@ mixed hit_ob(object me, object victim, int damage_bonus, int factor)
                                  "id":query("id", me),
                                  "duration" :  poison/20 ]));
         }
-        return HIR "Ö»Ìı$nÍ´ºôÁËÒ»Éù£¬¸ø¶¾ÉßºİºİµÄÒ§ÁËÒ»¿Ú£¡\n" NOR;
+        return HIR "åªè½$nç—›å‘¼äº†ä¸€è²ï¼Œçµ¦æ¯’è›‡ç‹ ç‹ çš„å’¬äº†ä¸€å£ï¼\n" NOR;
 }
 
 int convert(string arg)
@@ -147,17 +147,17 @@ int convert(string arg)
         object ob;
 
         if (arg!="snake" && arg!="she") return 0;
-        if( query("family/family_name", me) != "Å·ÑôÊÀ¼Ò" )
-                return notify_fail("Äã²»ÄÜ»¯ÉßÎªÕÈ¡£\n");
+        if( query("family/family_name", me) != "æ­é™½ä¸–å®¶" )
+                return notify_fail("ä½ ä¸èƒ½åŒ–è›‡ç‚ºæ–ã€‚\n");
 
-        if( query("name", this_object()) != "¶¾Éß" )
-                return notify_fail(this_object()->name()+"²»ÊÊºÏ»¯ÎªÉßÕÈ¡£\n");
+        if( query("name", this_object()) != "æ¯’è›‡" )
+                return notify_fail(this_object()->name()+"ä¸é©åˆåŒ–ç‚ºè›‡æ–ã€‚\n");
 
         if (random(me->query_skill("training",1)) <20) {
                 kill_ob(me);
                 return 1;
         }
-        message_vision("$N×óÊÖ°´×¡ÉßÍ·£¬ÓÒÊÖÇá¸§ÆäÆß´ç£¬¿ÚÖĞÄîÄîÓĞ´Ê£¬Æ¬¿Ì¼ä½«Éß»¯ÎªÒ»¸ùÉßÕÈ¡£\n",
+        message_vision("$Nå·¦æ‰‹æŒ‰ä½è›‡é ­ï¼Œå³æ‰‹è¼•æ’«å…¶ä¸ƒå¯¸ï¼Œå£ä¸­å¿µå¿µæœ‰è©ï¼Œç‰‡åˆ»é–“å°‡è›‡åŒ–ç‚ºä¸€æ ¹è›‡æ–ã€‚\n",
                 me,);
                 ob = new("/d/xingxiu/obj/shezhang");
         ob->move(environment(this_object()));

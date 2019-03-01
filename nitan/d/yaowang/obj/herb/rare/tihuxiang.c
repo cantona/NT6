@@ -1,12 +1,12 @@
 #include "herb.h" 
 void create() 
   {
-      set_name(NOR + HIW "õ®õ­Ïã" NOR, ({ "tihu xiang", "tihu", "xiang","herb_tihuxiang" })); 
+      set_name(NOR + HIW "é†é†é¦™" NOR, ({ "tihu xiang", "tihu", "xiang","herb_tihuxiang" })); 
           if (clonep())      
                  set_default_object(__FILE__); 
           else { 
-                  set("long", NOR + HIW "Ò»¶ä°×É«µÄĞ¡»¨£¬·¢³öÕóÕóÅ¨ÁÒµÄ×íÈËÏãÆø¡£\n" NOR); 
-                  set("base_unit", "¶ä");
+                  set("long", NOR + HIW "ä¸€æœµç™½è‰²çš„å°èŠ±ï¼Œç™¼å‡ºé™£é™£æ¿ƒçƒˆçš„é†‰äººé¦™æ°£ã€‚\n" NOR); 
+                  set("base_unit", "æœµ");
                   set("base_value", 50); 
                   set("base_weight", 20);
                }

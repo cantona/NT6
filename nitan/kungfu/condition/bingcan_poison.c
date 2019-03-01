@@ -11,11 +11,11 @@ int update_condition(object me, int duration)
 //      ml = me->query("max_neili")/1000;
         if (duration < 1) return 0;
    if( !living(me) ) {
-      message("vision", me->name() + "ʹ��غ���һ����\n", environment(me), me);
+      message("vision", me->name() + "痛苦地哼了一聲。\n", environment(me), me);
    }
    else {
-      tell_object(me, HIB "��Ȼһ��̹ǵ��溮Ϯ�������еı��Ͼ綾�����ˣ�\n" NOR );
-      message("vision", me->name() + "������ͻȻ�������Σ����ظ�������������\n",
+      tell_object(me, HIB "忽然一陣刺骨的奇寒襲來，你中的冰蠶劇毒發作了！\n" NOR );
+      message("vision", me->name() + "的身子突然晃了兩晃，牙關格格地響了起來。\n",
             environment(me), me);
    }
    if( objectp(query("poisoner", me))){
@@ -29,7 +29,7 @@ int update_condition(object me, int duration)
 
         if( query("qi", me)<1 || query("jing", me)<1 )
         {
-                set_temp("die_reason", "���Ͼ綾��������", me);
+                set_temp("die_reason", "冰蠶劇毒攻心死了", me);
                 me->die();
                 return 0;
         }

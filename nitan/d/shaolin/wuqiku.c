@@ -6,20 +6,20 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "������");
+        set("short", "武器庫");
         set("long", @LONG
-�����µ�������ɳ����µ�һ��ʮ�˰�����������νӦ�о��С�
-����һ��������ٸ��ۻ����ҡ�ǽ������һ����С���ӣ�ÿ��������
-�˸��ָ����ı�����ǽ��һ����׳��ɮ����ƹƹ���ҵ��ڴ���һ����
-�ȡ���һλ����ɮ������ǽ�Ƿ���һ�ѽ䵶���������������������
-��������ӭ�˹�����
+少林寺的武器庫可稱天下第一，十八般兵器，這裡可謂應有盡有。
+四面一望，令你頓感眼花繚亂。牆上砌了一個個小格子，每個都插滿
+了各種各樣的兵器。牆角一個健壯的僧人正乒乒乓乓地在打造一根禪
+杖。另一位灰衣僧人正在牆角拂拭一把戒刀。看到你進來，他緩緩起
+身，向你迎了過來。
 LONG );
         set("exits", ([
                 "west" : __DIR__"zhulin2",
                 "north" : __DIR__"fangjuku",
         ]));
 
-        create_door("west","ľ��","east",DOOR_CLOSED);
+        create_door("west","木門","east",DOOR_CLOSED);
         set("objects",([
                 CLASS_D("shaolin") + "/dao-chen" : 1,
                 __DIR__"npc/datie-seng" : 1,

@@ -25,7 +25,7 @@ int main(object me, string arg)
         filename=DATA_DIR+"trigger/"+query("id", me)+__SAVE_EXTENSION__;
         if( !arg) {
                 if( file_size(filename) > 0 ) {
-                        write(HIC"ÄúÄ¿Ç°ÒÑÉè¶¨ÓĞµÄ´¥·¢ÈçÏÂ£º\n"NOR);
+                        write(HIC"æ‚¨ç›®å‰å·²è¨­å®šæœ‰çš„è§¸ç™¼å¦‚ä¸‹ï¼š\n"NOR);
                         file = read_file(filename);
                         msg = HIW"";
 
@@ -35,8 +35,8 @@ int main(object me, string arg)
                                         tg_cmd = replace_string(tg_cmd, ",", ";");
                                         msg += "-----------------------------------------------\n";
                                         msg += "(" + chinese_number(i+1) + ")\n";
-                                        msg += HIY"´¥·¢×Ö·û£º"HIW + tg_msg + "\n";
-                                        msg += HIY"´¥·¢Ö¸Áî£º"HIW + tg_cmd + "\n";
+                                        msg += HIY"è§¸ç™¼å­—ç¬¦ï¼š"HIW + tg_msg + "\n";
+                                        msg += HIY"è§¸ç™¼æŒ‡ä»¤ï¼š"HIW + tg_cmd + "\n";
                                         msg += "-----------------------------------------------\n";
                                 }
                         }
@@ -47,34 +47,34 @@ int main(object me, string arg)
                         return 1;
                 }
                 else
-                        return notify_fail(HIW"Ö¸Áî¸ñÊ½£ºtrigger ´¥·¢×Ö·û:Ö´ĞĞÖ¸Áî\n"HIY"[ÌáÊ¾£ºÈçĞèÉèÖÃ¶à¸öÖ¸Áî£¬Ã¿¸öÖ¸ÁîÖ®¼äÓÃ¶ººÅ[,]¼ä¸ô¿ª]\n"NOR);
+                        return notify_fail(HIW"æŒ‡ä»¤æ ¼å¼ï¼štrigger è§¸ç™¼å­—ç¬¦:åŸ·è¡ŒæŒ‡ä»¤\n"HIY"[æç¤ºï¼šå¦‚éœ€è¨­ç½®å¤šå€‹æŒ‡ä»¤ï¼Œæ¯å€‹æŒ‡ä»¤ä¹‹é–“ç”¨é€—è™Ÿ[,]é–“éš”é–‹]\n"NOR);
         }
 
         if( arg == "clear" ) {
                 if( query("doing", me) == "trigger" )
-                        return notify_fail("ÄãÏÖÔÚÕıÔÚÖ´ĞĞ´¥·¢£¬ÇëÏÈÍ£ÏÂÀ´ÔÙÇå³ıËü¡£\n");
+                        return notify_fail("ä½ ç¾åœ¨æ­£åœ¨åŸ·è¡Œè§¸ç™¼ï¼Œè«‹å…ˆåœä¸‹ä¾†å†æ¸…é™¤å®ƒã€‚\n");
 
                 delete("trigger", me);
                 if( file_size(filename) >= 0 ) {
                         rm(filename);
-                        write(HIW"³É¹¦Çå³ı´¥·¢ÉèÖÃ¡£\n"NOR);
+                        write(HIW"æˆåŠŸæ¸…é™¤è§¸ç™¼è¨­ç½®ã€‚\n"NOR);
                         return 1;
                 } else {
-                        write(HIW"Äã²¢Ã»ÓĞÉèÖÃ´¥·¢¡£\n"NOR);
+                        write(HIW"ä½ ä¸¦æ²’æœ‰è¨­ç½®è§¸ç™¼ã€‚\n"NOR);
                         return 1;
                 }
         }
 
         if( sscanf(arg, "rm %d", line) ) {
                 if( query("doing", me) == "trigger" )
-                        return notify_fail("ÄãÏÖÔÚÕıÔÚÖ´ĞĞ´¥·¢£¬ÇëÏÈÍ£ÏÂÀ´ÔÙÇå³ıËü¡£\n");
+                        return notify_fail("ä½ ç¾åœ¨æ­£åœ¨åŸ·è¡Œè§¸ç™¼ï¼Œè«‹å…ˆåœä¸‹ä¾†å†æ¸…é™¤å®ƒã€‚\n");
 
                 if( file_size(filename) > 0 ) {
                         file = read_file(filename);
                         lines = explode(file, "\n");
 
                         if( line > sizeof(lines) )
-                                return notify_fail(HIY"µÚ " + chinese_number(line) +" Ìõ´¥·¢ÉèÖÃ²»´æÔÚ¡£\n"NOR);
+                                return notify_fail(HIY"ç¬¬ " + chinese_number(line) +" æ¢è§¸ç™¼è¨­ç½®ä¸å­˜åœ¨ã€‚\n"NOR);
 
                         msg = "";
 
@@ -82,10 +82,10 @@ int main(object me, string arg)
                                 if( i + 1 == line ) {
                                         if( sscanf(lines[i], "%s:%s", tg_msg, tg_cmd) ) {
                                                 tg_cmd = replace_string(tg_cmd, ",", ";");
-                                                write(HIR"Äã³É¹¦É¾³ıµÚ" + chinese_number(line) + "Ìõ´¥·¢ÈçÏÂ£º\n");
+                                                write(HIR"ä½ æˆåŠŸåˆªé™¤ç¬¬" + chinese_number(line) + "æ¢è§¸ç™¼å¦‚ä¸‹ï¼š\n");
                                                 write("-----------------------------------------------\n");
-                                                write(HIY"´¥·¢×Ö·û£º"HIW + tg_msg + "\n");
-                                                write(HIY"´¥·¢Ö¸Áî£º"HIW + tg_cmd + "\n");
+                                                write(HIY"è§¸ç™¼å­—ç¬¦ï¼š"HIW + tg_msg + "\n");
+                                                write(HIY"è§¸ç™¼æŒ‡ä»¤ï¼š"HIW + tg_cmd + "\n");
                                                 write("-----------------------------------------------\n");
                                         }
 
@@ -99,39 +99,39 @@ int main(object me, string arg)
                         return 1;
                 }
                 else
-                        return notify_fail(HIY"ÄãÄ¿Ç°²¢Ã»ÓĞ´¥·¢ÉèÖÃ¡£\n"NOR);
+                        return notify_fail(HIY"ä½ ç›®å‰ä¸¦æ²’æœ‰è§¸ç™¼è¨­ç½®ã€‚\n"NOR);
         }
         if( arg == "start" ) {
                 if( file_size(filename) < 1 )
-                        return notify_fail("ÄãÄ¿Ç°»¹Ã»ÓĞÖÆ¶©´¥·¢¡£\n");
+                        return notify_fail("ä½ ç›®å‰é‚„æ²’æœ‰åˆ¶è¨‚è§¸ç™¼ã€‚\n");
 
                 if( query("trigger", me) )
-                        return notify_fail(HIY"Äã²¢Ã»ÓĞ¹Ø±Õ´¥·¢¹¦ÄÜ£¬²»ĞèÒªÔÙ¿ªÆô¡£\n"NOR);
+                        return notify_fail(HIY"ä½ ä¸¦æ²’æœ‰é—œé–‰è§¸ç™¼åŠŸèƒ½ï¼Œä¸éœ€è¦å†é–‹å•Ÿã€‚\n"NOR);
 
                 if( query("doing", me) )
-                        return notify_fail("ÄãÏÖÔÚÕıÔÚÃ¦ÓÚ¶ÍÁ¶£¬²»ÄÜ¿ªÕ¹ĞÂ´¥·¢¡£\n");
+                        return notify_fail("ä½ ç¾åœ¨æ­£åœ¨å¿™äºé›ç…‰ï¼Œä¸èƒ½é–‹å±•æ–°è§¸ç™¼ã€‚\n");
 
                 env = environment(me);
                 if( !env )
-                        return notify_fail("ÄãÏÖÔÚÊ²Ã´¶¼×ö²»ÁË¡£\n");
+                        return notify_fail("ä½ ç¾åœ¨ä»€éº¼éƒ½åšä¸äº†ã€‚\n");
 
                 if( env->is_chat_room() )
-                        return notify_fail("Äã²»ÄÜÔÚÁÄÌìÊÒÀïÃæÖ´ĞĞ¼Æ»®¡£\n");
+                        return notify_fail("ä½ ä¸èƒ½åœ¨èŠå¤©å®¤è£¡é¢åŸ·è¡Œè¨ˆåŠƒã€‚\n");
 
                 if( query("combat_exp", me)<5000 )
-                        return notify_fail("ÄãµÄÊµÕ½¾­ÑéÌ«Ç³±¡£¬»¹ÊÇÏÈºÃºÃ¶ÍÁ¶¶ÍÁ¶ÔÙËµ°É¡£\n");
+                        return notify_fail("ä½ çš„å¯¦æˆ°ç¶“é©—å¤ªæ·ºè–„ï¼Œé‚„æ˜¯å…ˆå¥½å¥½é›ç…‰é›ç…‰å†èªªå§ã€‚\n");
 
                 if( query("potential", me)-query("learned_points", me)<100 )
-                        return notify_fail("ÄãµÄÇ±ÄÜÌ«ÉÙ£¬ÄÑÒÔ¿ªÕ¹´¥·¢¡£\n");
+                        return notify_fail("ä½ çš„æ½›èƒ½å¤ªå°‘ï¼Œé›£ä»¥é–‹å±•è§¸ç™¼ã€‚\n");
 
                 if( sizeof(filter_array(all_inventory(env), (: userp :))) > 12 )
-                        return notify_fail("ÕâÀïµÄÈËÊµÔÚÌ«¶àÁË£¬ÄãÄÑÒÔ¾²ĞÄ¿ªÕ¹´¥·¢¡£\n");
+                        return notify_fail("é€™è£¡çš„äººå¯¦åœ¨å¤ªå¤šäº†ï¼Œä½ é›£ä»¥éœå¿ƒé–‹å±•è§¸ç™¼ã€‚\n");
 
                 addn("learned_points", 100, me);
 
                 file = read_file(filename);
                 set("trigger", file, me);
-                write(HIG"Äã¿ªÆôÁË´¥·¢¹¦ÄÜ¡£\n"NOR);
+                write(HIG"ä½ é–‹å•Ÿäº†è§¸ç™¼åŠŸèƒ½ã€‚\n"NOR);
                 set("startroom", base_name(env), me);
                 CLOSE_D->user_closed(me);
                 me->set_short_desc(0);
@@ -140,42 +140,42 @@ int main(object me, string arg)
         }
 
         if( query("doing", me) == "trigger" )
-                return notify_fail("ÄãÏÖÔÚÕıÔÚÖ´ĞĞ´¥·¢£¬ÇëÏÈÍ£ÏÂÀ´ÔÙĞŞ¸Ä¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£åœ¨åŸ·è¡Œè§¸ç™¼ï¼Œè«‹å…ˆåœä¸‹ä¾†å†ä¿®æ”¹ã€‚\n");
 
         if( strlen(arg) > 300 )
-                return notify_fail(HIY"ÄãµÄ´¥·¢Éè¶¨Ì«³¤ÁË£¬Çë¿ØÖÆÔÚ300¸ö×Ö½ÚÒÔÄÚ£¬\n"NOR);
+                return notify_fail(HIY"ä½ çš„è§¸ç™¼è¨­å®šå¤ªé•·äº†ï¼Œè«‹æ§åˆ¶åœ¨300å€‹å­—ç¯€ä»¥å…§ï¼Œ\n"NOR);
 
         if( file_size(filename) > 0 ) {
                 file = read_file(filename);
                 lines = explode(file, "\n");
 
                 if( sizeof(lines) >= TRIGGER_CMD_SIZE )
-                        return notify_fail(HIY"ÄãÖ»ÄÜÉèÖÃ" + chinese_number(TRIGGER_CMD_SIZE) + "Ìõ´¥·¢£¬ĞèÒªÉ¾³ıÒ»Ğ©´¥·¢²ÅÄÜ¼ÌĞøÉèÖÃ¡£\n"NOR);
+                        return notify_fail(HIY"ä½ åªèƒ½è¨­ç½®" + chinese_number(TRIGGER_CMD_SIZE) + "æ¢è§¸ç™¼ï¼Œéœ€è¦åˆªé™¤ä¸€äº›è§¸ç™¼æ‰èƒ½ç¹¼çºŒè¨­ç½®ã€‚\n"NOR);
         }
 
         if( sscanf(arg, "%s:%s", tg_msg, tg_cmd) ) {
                 if( !tg_msg || !tg_cmd )
-                        write(HIW"Ôö¼Ó´¥·¢Ê§°Ü¡£\n"NOR);
+                        write(HIW"å¢åŠ è§¸ç™¼å¤±æ•—ã€‚\n"NOR);
                 else
                 if( write_file(filename, tg_msg + ":" + tg_cmd + "\n") ) {
                         tg_cmd = replace_string(tg_cmd, ",", ";");
-                        write(HIG"Äã³É¹¦Ôö¼ÓÁËÒ»Ìõ´¥·¢ÈçÏÂ£º\n");
+                        write(HIG"ä½ æˆåŠŸå¢åŠ äº†ä¸€æ¢è§¸ç™¼å¦‚ä¸‹ï¼š\n");
                         write("-----------------------------------------------\n");
-                        write(HIY"´¥·¢×Ö·û£º"HIW + tg_msg + "\n");
-                        write(HIY"´¥·¢Ö¸Áî£º"HIW + tg_cmd + "\n");
+                        write(HIY"è§¸ç™¼å­—ç¬¦ï¼š"HIW + tg_msg + "\n");
+                        write(HIY"è§¸ç™¼æŒ‡ä»¤ï¼š"HIW + tg_cmd + "\n");
                         write("-----------------------------------------------\n");
                 }
                 else
-                        write(HIW"Ôö¼Ó´¥·¢Ê§°Ü¡£\n"NOR);
+                        write(HIW"å¢åŠ è§¸ç™¼å¤±æ•—ã€‚\n"NOR);
         }
         else
-                return notify_fail(HIW"Ö¸Áî¸ñÊ½£ºtrigger ´¥·¢×Ö·û:Ö´ĞĞÖ¸Áî\n"HIY"[ÌáÊ¾£ºÈçĞèÉèÖÃ¶à¸öÖ¸Áî£¬Ã¿¸öÖ¸ÁîÖ®¼äÓÃ¶ººÅ[,]¼ä¸ô¿ª]\n"NOR);
+                return notify_fail(HIW"æŒ‡ä»¤æ ¼å¼ï¼štrigger è§¸ç™¼å­—ç¬¦:åŸ·è¡ŒæŒ‡ä»¤\n"HIY"[æç¤ºï¼šå¦‚éœ€è¨­ç½®å¤šå€‹æŒ‡ä»¤ï¼Œæ¯å€‹æŒ‡ä»¤ä¹‹é–“ç”¨é€—è™Ÿ[,]é–“éš”é–‹]\n"NOR);
 
         return 1;
 
 }
 
-// ¿ªÊ¼Ö´ĞĞ´¥·¢
+// é–‹å§‹åŸ·è¡Œè§¸ç™¼
 int continue_trigger(object me)
 {
         if( !query("trigger", me) )
@@ -187,7 +187,7 @@ int continue_trigger(object me)
         return 1;
 }
 
-// ÖĞÖ¹´¥·¢
+// ä¸­æ­¢è§¸ç™¼
 int cancel_trigger(object me)
 {
         me->delete_override("unconcious");
@@ -206,7 +206,7 @@ int cancel_trigger(object me)
         return 0;
 }
 
-// Ö´ĞĞ´¥·¢ÖĞ
+// åŸ·è¡Œè§¸ç™¼ä¸­
 void execute_trigger(object me)
 {
         string cmd, *cmds, *run;
@@ -274,26 +274,26 @@ void user_quit(object me)
 int help (object me)
 {
        write(@HELP
-Ö¸Áî¸ñÊ½£º
-[Ò»]¡¢Ôö¼ÓÒ»Ìõ´¥·¢£ºtrigger ´¥·¢×Ö·û:Ö´ĞĞÖ¸Áî
-      ÀıÈç£ºÎÒÏë´¥·¢¡°ÔË¹¦Íê±Ï¡±£¬Ò²¾ÍÊÇÆÁÄ»ÉÏ³öÏÖ¡°ÔË¹¦Íê±Ï¡±£¬ÎÒ¾Í
-      ÈÃËû´ò×øÁ·ÄÚ£¬ÄÇÃ´ÎÒÃÇ¿ÉÒÔÈçÏÂÃæÕâÃ´ÉèÖÃ£º
-      trigger ÔË¹¦Íê±Ï:dazuo 100
-      Ö´ĞĞ¿´¿´£¬Äã»á·¢ÏÖÖ»ÒªÆÁÄ»ÉÏÒ»³öÏÖ¡°ÔË¹¦Íê±Ï¡±ÕâĞ©×Ö£¬ÏµÍ³¾Í»á
-      ×Ô¶¯°ïÄãÓÃ100µãÄÚÁ¦´ò×ø¡£
-      Ò²ĞíÄã»áÎÊ£ºÈç¹ûÎÒÏëÆÁÄ»ÉÏ³öÏÖ¡°ÔË¹¦Íê±Ï¡±¾ÍÏÈ¶ÁÊéÒ»´ÎÔÙ´ò×ø£¬
-      Ò²¾ÍÊÇÆÁÄ»ÉÏ³öÏÖ¡°ÔË¹¦Íê±Ï¡±Ê±Í¬Ê±Ö´ĞĞÁ½¸öÖ¸Áî£¬ÄÇÔõÃ´ÉèÖÃÄØ£¿
-      ºÜ¼òµ¥£¬ÄãÖ»ĞèÒª°Ñ¸÷¸öÖ¸ÁîÖ®¼äÓÃ¶ººÅ[,]¼ä¸ô¿ª¾Í¿ÉÒÔÁË¡£ÈçÏÂ£º
-      trigger ÔË¹¦Íê±Ï:study book,dazuo 100
-      ÏµÍ³¾Í»áÔÚÆÁÄ»ÉÏ³öÏÖ¡°ÔË¹¦Íê±Ï¡±Ê±¾ÍÏÈ°ïÄã¶ÁÊé¶ÁÊéÒ»´ÎÔÙ´ò×øÁË¡£
-      µ±È»Ò²Í¬ÀëÏß¼Æ»®Á·¹¦Ò»ÑùÒ²ÊÇÖ§³Ö alias ¼ò»¯Ö¸ÁîµÄ¡£
-[¶ş]£º²é¿´ÉèÖÃµÄËùÓĞ´¥·¢£ºtrigger
-[Èı]£ºÉ¾³ıÒ»Ìõ´¥·¢£ºtrigger rm Êı×Ö
-      ËµÃ÷£ºÕâ¸öÊı×Ö¾ÍÊÇÄãÒªÉ¾³ıµÄÄÇÌõ´¥·¢µÄÎ»ÖÃ£¬¿ÉÒÔÍ¨¹ı²é¿´ÄãÒªÉ¾
-      ³ıµÄÄÇÌõ´¥·¢µÄÎ»ÖÃ¡£
-[ËÄ]£ºÉ¾³ıËùÓĞ´¥·¢£ºtrigger clear
-[Îå]£º¹Ø±Õ´¥·¢£ºhalt
-[Áù]£ºÆô¶¯´¥·¢£ºtrigger start
+æŒ‡ä»¤æ ¼å¼ï¼š
+[ä¸€]ã€å¢åŠ ä¸€æ¢è§¸ç™¼ï¼štrigger è§¸ç™¼å­—ç¬¦:åŸ·è¡ŒæŒ‡ä»¤
+      ä¾‹å¦‚ï¼šæˆ‘æƒ³è§¸ç™¼â€œé‹åŠŸå®Œç•¢â€ï¼Œä¹Ÿå°±æ˜¯å±å¹•ä¸Šå‡ºç¾â€œé‹åŠŸå®Œç•¢â€ï¼Œæˆ‘å°±
+      è®“ä»–æ‰“åç·´å…§ï¼Œé‚£éº¼æˆ‘å€‘å¯ä»¥å¦‚ä¸‹é¢é€™éº¼è¨­ç½®ï¼š
+      trigger é‹åŠŸå®Œç•¢:dazuo 100
+      åŸ·è¡Œçœ‹çœ‹ï¼Œä½ æœƒç™¼ç¾åªè¦å±å¹•ä¸Šä¸€å‡ºç¾â€œé‹åŠŸå®Œç•¢â€é€™äº›å­—ï¼Œç³»çµ±å°±æœƒ
+      è‡ªå‹•å¹«ä½ ç”¨100é»å…§åŠ›æ‰“åã€‚
+      ä¹Ÿè¨±ä½ æœƒå•ï¼šå¦‚æœæˆ‘æƒ³å±å¹•ä¸Šå‡ºç¾â€œé‹åŠŸå®Œç•¢â€å°±å…ˆè®€æ›¸ä¸€æ¬¡å†æ‰“åï¼Œ
+      ä¹Ÿå°±æ˜¯å±å¹•ä¸Šå‡ºç¾â€œé‹åŠŸå®Œç•¢â€æ™‚åŒæ™‚åŸ·è¡Œå…©å€‹æŒ‡ä»¤ï¼Œé‚£æ€éº¼è¨­ç½®å‘¢ï¼Ÿ
+      å¾ˆç°¡å–®ï¼Œä½ åªéœ€è¦æŠŠå„å€‹æŒ‡ä»¤ä¹‹é–“ç”¨é€—è™Ÿ[,]é–“éš”é–‹å°±å¯ä»¥äº†ã€‚å¦‚ä¸‹ï¼š
+      trigger é‹åŠŸå®Œç•¢:study book,dazuo 100
+      ç³»çµ±å°±æœƒåœ¨å±å¹•ä¸Šå‡ºç¾â€œé‹åŠŸå®Œç•¢â€æ™‚å°±å…ˆå¹«ä½ è®€æ›¸è®€æ›¸ä¸€æ¬¡å†æ‰“åäº†ã€‚
+      ç•¶ç„¶ä¹ŸåŒé›¢ç·šè¨ˆåŠƒç·´åŠŸä¸€æ¨£ä¹Ÿæ˜¯æ”¯æŒ alias ç°¡åŒ–æŒ‡ä»¤çš„ã€‚
+[äºŒ]ï¼šæŸ¥çœ‹è¨­ç½®çš„æ‰€æœ‰è§¸ç™¼ï¼štrigger
+[ä¸‰]ï¼šåˆªé™¤ä¸€æ¢è§¸ç™¼ï¼štrigger rm æ•¸å­—
+      èªªæ˜ï¼šé€™å€‹æ•¸å­—å°±æ˜¯ä½ è¦åˆªé™¤çš„é‚£æ¢è§¸ç™¼çš„ä½ç½®ï¼Œå¯ä»¥é€šéæŸ¥çœ‹ä½ è¦åˆª
+      é™¤çš„é‚£æ¢è§¸ç™¼çš„ä½ç½®ã€‚
+[å››]ï¼šåˆªé™¤æ‰€æœ‰è§¸ç™¼ï¼štrigger clear
+[äº”]ï¼šé—œé–‰è§¸ç™¼ï¼šhalt
+[å…­]ï¼šå•Ÿå‹•è§¸ç™¼ï¼štrigger start
 
 see also: scheme
 HELP

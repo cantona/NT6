@@ -20,24 +20,24 @@ int main(object me,string arg)
                 return 0;
 
         if (!arg)
-                return notify_fail("ÄãÒª²éÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦æŸ¥ä»€éº¼ï¼Ÿ\n");
         sscanf(arg,"%s %s %s %d %d",type,func,tilde,val1,val2);
         if (!type && type != "skill" && type != "setting")
-                return notify_fail("²ÎÊı´íÎó£¡ÇëÓÃhelp searchuser!\n");
+                return notify_fail("åƒæ•¸éŒ¯èª¤ï¼è«‹ç”¨help searchuser!\n");
         if ((!tilde)||((tilde!=">")&&(tilde!="<")&&(tilde!="=")&&(tilde!="<>")))
-                return notify_fail("Æ¥Åä·û´íÎó£¡ÇëÓÃhelp searchuser!\n");
+                return notify_fail("åŒ¹é…ç¬¦éŒ¯èª¤ï¼è«‹ç”¨help searchuser!\n");
         if (!val1)
-                return notify_fail("È±ÉÙµÚÒ»²ÎÊı£¡ÇëÓÃhelp searchuser!\n");
+                return notify_fail("ç¼ºå°‘ç¬¬ä¸€åƒæ•¸ï¼è«‹ç”¨help searchuser!\n");
         if ((!val2)&&(tilde=="<>"))
-                return notify_fail("È±ÉÙµÚ¶ş²ÎÊı!ÇëÓÃhelp searchuser!\n");
+                return notify_fail("ç¼ºå°‘ç¬¬äºŒåƒæ•¸!è«‹ç”¨help searchuser!\n");
         if ((val2<=val1)&&(tilde=="<>"))
-                return notify_fail("µÚÒ»¡¢µÚ¶ş²ÎÊıÅäÖÃ´íÎó!ÇëÓÃhelp searchuser!\n");
-        message("system", "\n*** ÕıÔÚ¼ì²éÍæ¼Ò´¢´æµµ²ÎÊı£¬Õâ¿ÉÄÜÒª¼¸·ÖÖÓÊ±¼ä£¬ÇëÉÔºò.... ***\n", users());
+                return notify_fail("ç¬¬ä¸€ã€ç¬¬äºŒåƒæ•¸é…ç½®éŒ¯èª¤!è«‹ç”¨help searchuser!\n");
+        message("system", "\n*** æ­£åœ¨æª¢æŸ¥ç©å®¶å„²å­˜æª”åƒæ•¸ï¼Œé€™å¯èƒ½è¦å¹¾åˆ†é˜æ™‚é–“ï¼Œè«‹ç¨å€™.... ***\n", users());
 
         seteuid(getuid());
-        write("¼ì²éÖĞ£º\n");
+        write("æª¢æŸ¥ä¸­ï¼š\n");
         log_file("static/check_log", sprintf("-------------------------------------------------\n"));
-        log_file("static/check_log", sprintf("·ûºÏÌõ¼ş£º[%s]%s%s%d,%dµÄÍæ¼ÒÇåµ¥£º\n",type,func,tilde,val1,val2));
+        log_file("static/check_log", sprintf("ç¬¦åˆæ¢ä»¶ï¼š[%s]%s%s%d,%dçš„ç©å®¶æ¸…å–®ï¼š\n",type,func,tilde,val1,val2));
         count3=0;
         ppl_cnt = 0;
         dir = get_dir(DATA_DIR + "login/");
@@ -55,25 +55,25 @@ int main(object me,string arg)
                                 if(!tempob->restore())
                            {
                                    destruct(tempob);
-                                         write("Ã»ÓĞ" + tempid + "Õâ¸öÍæ¼Ò!\n");
+                                         write("æ²’æœ‰" + tempid + "é€™å€‹ç©å®¶!\n");
                                    continue;
                            }
 
                            if( query("id", tempob) != tempid )
                            {
                                    destruct(tempob);
-                                   write("Íæ¼Ò"+tempid+"µÄID"+query("id", tempob)+"²»ÕıÈ·¡£\n");
+                                   write("ç©å®¶"+tempid+"çš„ID"+query("id", tempob)+"ä¸æ­£ç¢ºã€‚\n");
                                    continue;
                            }
 
                            if (! objectp(user_ob = find_player(tempid)))
                            {
-                                   online = 0;//¸ÃÍæ¼Ò²»ÔÚÏß
+                                   online = 0;//è©²ç©å®¶ä¸åœ¨ç·š
                                    user_ob = LOGIN_D->make_body(tempob);
                                    if (! user_ob)
                                    {
                                            destruct(tempob);
-                                           write("ÎŞ·¨Éú³ÉÍæ¼Ò"+tempid+"¡£\n");
+                                           write("ç„¡æ³•ç”Ÿæˆç©å®¶"+tempid+"ã€‚\n");
                                            continue;
                                    }
 
@@ -81,7 +81,7 @@ int main(object me,string arg)
                                    {
                                            destruct(tempob);
                                            destruct(user_ob);
-                                           write("ÎŞ·¨¶ÁÈ¡Íæ¼Òµµ°¸"+tempid+"¡£\n");
+                                           write("ç„¡æ³•è®€å–ç©å®¶æª”æ¡ˆ"+tempid+"ã€‚\n");
                                            continue;
                                    }
                            } else
@@ -155,9 +155,9 @@ int main(object me,string arg)
                 }//for(j=0; j<sizeof(ppls); j++) {
         }//for(i=0; i<sizeof(dir); i++) {
         
-        write("\n\n×Ü¹²ÓĞ"+ ppl_cnt + "Î»Ê¹ÓÃÕß¡£\n");
-        write( count3 + " ¸öÊ¹ÓÃÕß·ûºÏ¼ì²éÒªÇó¡£\n");
-        log_file("static/check_log",sprintf("\n´Ë´Î¼ì²éÓÉ%s[%s]ÔÚ%s²Ù×÷!\n",query("name", this_player()),geteuid(this_player()),ctime(time())[0..15]));
+        write("\n\nç¸½å…±æœ‰"+ ppl_cnt + "ä½ä½¿ç”¨è€…ã€‚\n");
+        write( count3 + " å€‹ä½¿ç”¨è€…ç¬¦åˆæª¢æŸ¥è¦æ±‚ã€‚\n");
+        log_file("static/check_log",sprintf("\næ­¤æ¬¡æª¢æŸ¥ç”±%s[%s]åœ¨%sæ“ä½œ!\n",query("name", this_player()),geteuid(this_player()),ctime(time())[0..15]));
         return 1;
 }//main
 
@@ -171,16 +171,16 @@ int if3()
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½: searchuser <skill|setting> <²ÎÊı> <±í´ï·ûºÅ> <ÊıÖµ1> [ÊıÖµ2]
-¼ì²éMUDÖĞËùÓĞÔÚÏßÎ´ÔÚÏßÍæ¼ÒÖĞ£¬·ûºÏÖ¸¶¨Ìõ¼şµÄÍæ¼ÒĞÅÏ¢£¬¼ÇÂ¼
-´æ·ÅÔÚ/log/static/check_logÄ¿Â¼ÏÂ¡£
-ÆäÖĞskill±íÊ¾¼ì²éÍæ¼ÒµÄÎä¹¦£¬setting±íÊ¾¼ì²éÍæ¼ÒµÄÆäËü¸÷Àà
-ÊôĞÔ¡£
-±í´ï·ûºÅÓĞ£º
->    ´óÓÚ·ûºÅ
-<    Ğ¡ÓÚ·ûºÅ
-=    µÈÓÚ·ûºÅ
-<>   Çø¶Î£¬±íÊ¾ÔÚÊıÖµ1ºÍÊıÖµ2Ö®¼ä
+æŒ‡ä»¤æ ¼å¼: searchuser <skill|setting> <åƒæ•¸> <è¡¨é”ç¬¦è™Ÿ> <æ•¸å€¼1> [æ•¸å€¼2]
+æª¢æŸ¥MUDä¸­æ‰€æœ‰åœ¨ç·šæœªåœ¨ç·šç©å®¶ä¸­ï¼Œç¬¦åˆæŒ‡å®šæ¢ä»¶çš„ç©å®¶ä¿¡æ¯ï¼Œè¨˜éŒ„
+å­˜æ”¾åœ¨/log/static/check_logç›®éŒ„ä¸‹ã€‚
+å…¶ä¸­skillè¡¨ç¤ºæª¢æŸ¥ç©å®¶çš„æ­¦åŠŸï¼Œsettingè¡¨ç¤ºæª¢æŸ¥ç©å®¶çš„å…¶å®ƒå„é¡
+å±¬æ€§ã€‚
+è¡¨é”ç¬¦è™Ÿæœ‰ï¼š
+>    å¤§äºç¬¦è™Ÿ
+<    å°äºç¬¦è™Ÿ
+=    ç­‰äºç¬¦è™Ÿ
+<>   å€æ®µï¼Œè¡¨ç¤ºåœ¨æ•¸å€¼1å’Œæ•¸å€¼2ä¹‹é–“
 
 HELP );
         return 1;

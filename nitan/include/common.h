@@ -1,123 +1,123 @@
 // common.h
 
-// ÆÕÍ¨ÎïÆ·ÁÐ±í
+// æ™®é€šç‰©å“åˆ—è¡¨
 
-// weapon : ÎäÆ÷
-// sword¡¡: ½£
-// knife¡¡: Ø°Ê×
-// axe¡¡¡¡: ¸«Í·
-// mace¡¡ : ÕÈ
-// club¡¡ : ¹÷
-// bow¡¡¡¡: ¹­
-// javelin: ±êÇ¹
-// spear¡¡: Ã¬
-// hammer : ´¸
+// weapon : æ­¦å™¨
+// swordã€€: åŠ
+// knifeã€€: åŒ•é¦–
+// axeã€€ã€€: æ–§é ­
+// maceã€€ : æ–
+// clubã€€ : æ£
+// bowã€€ã€€: å¼“
+// javelin: æ¨™æ§
+// spearã€€: çŸ›
+// hammer : éŒ˜
 
-// equip¡¡: ×°±¸
-// helmet : Í·¿ø
-// armor¡¡: »¤¼×
-// shield : ¶Ü
-// gloves : ÊÖÌ×
-// boots¡¡: Ñ¥×Ó
-// belt¡¡ : Ñü´ø
-// ring¡¡ : ½äÖ¸
-// amulet : »¤·û
-// charm¡¡: ÊÎÎï - ÌØ´ó, ´óÐÍ, Ð¡ÐÍ
-// other¡¡: ÆäËû
+// equipã€€: è£å‚™
+// helmet : é ­ç›”
+// armorã€€: è­·ç”²
+// shield : ç›¾
+// gloves : æ‰‹å¥—
+// bootsã€€: é´å­
+// beltã€€ : è…°å¸¶
+// ringã€€ : æˆ’æŒ‡
+// amulet : è­·ç¬¦
+// charmã€€: é£¾ç‰© - ç‰¹å¤§, å¤§åž‹, å°åž‹
+// otherã€€: å…¶ä»–
 
 mapping common_list = ([
-        "weapon" : ([   "sword" : ([ "short sword": "¶Ì½£", "scimitar" : "Íäµ¶",
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ "sabre"¡¡¡¡¡¡: "Âíµ¶", "fachion"¡¡: "ÁæÔÂµ¶",
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ "long sword" : "³¤½£", "war sword": "Õ½½£",
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ "crystal sword"¡¡: "Ë®¾§½£", "broad sword"¡¡: "À«½£",
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ "two-hand sword" : "Ë«ÊÖ½£", "claymore"¡¡¡¡ : "Ë«ÈÐµ¶",
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ "giant sword"¡¡¡¡: "¾Þ½£",¡¡ "bastard sword": "ÆæÐÐ½£",
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ "flamberge"¡¡¡¡¡¡: "»ðÑæ½£", "great sword"¡¡: "¾ÞÈË½£", ]),
+        "weapon" : ([   "sword" : ([ "short sword": "çŸ­åŠ", "scimitar" : "å½Žåˆ€",
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ "sabre"ã€€ã€€ã€€: "é¦¬åˆ€", "fachion"ã€€: "ä¼¶æœˆåˆ€",
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ "long sword" : "é•·åŠ", "war sword": "æˆ°åŠ",
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ "crystal sword"ã€€: "æ°´æ™¶åŠ", "broad sword"ã€€: "é—ŠåŠ",
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ "two-hand sword" : "é›™æ‰‹åŠ", "claymore"ã€€ã€€ : "é›™åˆƒåˆ€",
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ "giant sword"ã€€ã€€: "å·¨åŠ",ã€€ "bastard sword": "å¥‡è¡ŒåŠ",
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ "flamberge"ã€€ã€€ã€€: "ç«ç‡„åŠ", "great sword"ã€€: "å·¨äººåŠ", ]),
 
-                        "knife" : ([ "dagger" : "¶Ì½£",¡¡ "dirk"¡¡: "Ø°Ê×",
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ "kris"¡¡ : "ÉßÈÐ½£", "blade" : "µ¶",
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ "throwing knife" : "Í¶ÖÀµ¶", "balanced knife" : "Æ½ºâµ¶", ]),
+                        "knife" : ([ "dagger" : "çŸ­åŠ",ã€€ "dirk"ã€€: "åŒ•é¦–",
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ "kris"ã€€ : "è›‡åˆƒåŠ", "blade" : "åˆ€",
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ "throwing knife" : "æŠ•æ“²åˆ€", "balanced knife" : "å¹³è¡¡åˆ€", ]),
 
-                        "axe"¡¡ : ([ "hand exe"¡¡ : "ÊÖ¸«",¡¡ "axe"¡¡¡¡¡¡¡¡¡¡ : "¸«", 
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ "double exe" : "Ë«ÈÐ¸«", "military pick" : "Õ½¸ä",
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ "war axe"¡¡¡¡: "Õ½¸«",¡¡ "large axe"¡¡¡¡ : "´ó¸«",
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ "broad axe"¡¡: "¿í¸«",¡¡ "battle axe"¡¡¡¡: "Õ½¸«",
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ "great axe"¡¡: "¾Þ¸«",¡¡ "giant axe"¡¡¡¡ : "¾Þ¸«", ]),
+                        "axe"ã€€ : ([ "hand exe"ã€€ : "æ‰‹æ–§",ã€€ "axe"ã€€ã€€ã€€ã€€ã€€ : "æ–§", 
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ "double exe" : "é›™åˆƒæ–§", "military pick" : "æˆ°éŽ¬",
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ "war axe"ã€€ã€€: "æˆ°æ–§",ã€€ "large axe"ã€€ã€€ : "å¤§æ–§",
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ "broad axe"ã€€: "å¯¬æ–§",ã€€ "battle axe"ã€€ã€€: "æˆ°æ–§",
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ "great axe"ã€€: "å·¨æ–§",ã€€ "giant axe"ã€€ã€€ : "å·¨æ–§", ]),
 
-                        "mace"¡¡: ([ "mace" : "ÕÈ", "morning star" : "³¿ÐÇÕÈ", "flail" : "Á¬¼Ï", ]),
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡
-                        "club"¡¡: ([ "club" : "¹÷", "spiked club"¡¡: "¶¤¹÷", ]),
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡
-                        "bow"¡¡ : ([ "short bow" : "¶Ì¹­", "hunter's bow"¡¡: "ÁÔ¹­",
-                        "long bow"¡¡: "³¤¹­", "composite bow" : "¸´ºÏ¹­",
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ "short battle bow" : "¶ÌÕ½¹­", "long battle bow" : "³¤Õ½¹­",
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ "short war bow"¡¡¡¡: "¶ÌÕ½¹­", "long war bow"¡¡¡¡: "³¤Õ½¹­", ]),
+                        "mace"ã€€: ([ "mace" : "æ–", "morning star" : "æ™¨æ˜Ÿæ–", "flail" : "é€£æž·", ]),
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€
+                        "club"ã€€: ([ "club" : "æ£", "spiked club"ã€€: "é‡˜æ£", ]),
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€
+                        "bow"ã€€ : ([ "short bow" : "çŸ­å¼“", "hunter's bow"ã€€: "çµå¼“",
+                        "long bow"ã€€: "é•·å¼“", "composite bow" : "å¾©åˆå¼“",
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ "short battle bow" : "çŸ­æˆ°å¼“", "long battle bow" : "é•·æˆ°å¼“",
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ "short war bow"ã€€ã€€: "çŸ­æˆ°å¼“", "long war bow"ã€€ã€€: "é•·æˆ°å¼“", ]),
 
-                        "javelin" : ([ "javelin"¡¡¡¡¡¡¡¡: "±êÇ¹", "pilum"¡¡: "ÖØ±êÇ¹",
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ "short spear"¡¡¡¡: "¶ÌÃ¬", "glaive" : "¸ê",
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ "throwing spear" : "ÖÀÃ¬", ]),
+                        "javelin" : ([ "javelin"ã€€ã€€ã€€ã€€: "æ¨™æ§", "pilum"ã€€: "é‡æ¨™æ§",
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ "short spear"ã€€ã€€: "çŸ­çŸ›", "glaive" : "æˆˆ",
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ "throwing spear" : "æ“²çŸ›", ]),
 
-                        "spear"¡¡ : ([ "spear"¡¡¡¡¡¡ : "Ã¬",¡¡ "trident" : "Èý²æêª",
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ "brandistock" : "³¤Ã¬", "spetum"¡¡: "³¤Ã¬",
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ "pike"¡¡¡¡¡¡¡¡: "³¤Ç¹", ]), ]),
+                        "spear"ã€€ : ([ "spear"ã€€ã€€ã€€ : "çŸ›",ã€€ "trident" : "ä¸‰å‰æˆŸ",
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ "brandistock" : "é•·çŸ›", "spetum"ã€€: "é•·çŸ›",
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ "pike"ã€€ã€€ã€€ã€€: "é•·æ§", ]), ]),
 
-        "helmet" : ([ "cap"¡¡¡¡¡¡ : "Ã±×Ó",¡¡ "skull cap"¡¡: "Í·¿ø", "helm"¡¡: "Í·¿ø", 
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡        "full helm" : "È«Í·¿ø", "great helm" : "¾Þ¿ø", "crown" : "¹Ú",
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡  "mask"¡¡¡¡¡¡: "Ãæ¾ß",¡¡ "bone helm"¡¡: "¹Ç¿ø", ]),
+        "helmet" : ([ "cap"ã€€ã€€ã€€ : "å¸½å­",ã€€ "skull cap"ã€€: "é ­ç›”", "helm"ã€€: "é ­ç›”", 
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€        "full helm" : "å…¨é ­ç›”", "great helm" : "å·¨ç›”", "crown" : "å† ",
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€  "mask"ã€€ã€€ã€€: "é¢å…·",ã€€ "bone helm"ã€€: "éª¨ç›”", ]),
 
-¡¡¡¡¡¡  "armor"¡¡: ([ "quilted armor"¡¡¡¡¡¡: "Èí¼×",¡¡ "leather armor" : "Æ¤¼×",
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡    "hard leather armor" : "Ó²Æ¤¼×", "studded armor" : "¶¤¼×",
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡  "ring mail"¡¡¡¡¡¡¡¡¡¡: "»·¼×",¡¡ "scale mail"¡¡¡¡: "ÁÛ¼×",
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡  "chain mail"¡¡¡¡¡¡¡¡ : "Ëø×Ó¼×", "breast plate"¡¡: "ÐØ¼×",
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡    "splint mail"¡¡¡¡¡¡¡¡: "ÌÙ¼×",¡¡ "plate mail"¡¡¡¡: "¸Ö°å¼×",
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡  "field plate"¡¡¡¡¡¡¡¡: "Æ¬¼×",¡¡ "gothic plate"¡¡: "¸çÌØ¼×",
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡  "full plate mail"¡¡¡¡: "È«Éí¼×", "ancient armor" : "¾É¼×",
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡  "light plate"¡¡¡¡¡¡¡¡: "Çá¼×", ]),
+ã€€ã€€ã€€  "armor"ã€€: ([ "quilted armor"ã€€ã€€ã€€: "è»Ÿç”²",ã€€ "leather armor" : "çš®ç”²",
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€    "hard leather armor" : "ç¡¬çš®ç”²", "studded armor" : "é‡˜ç”²",
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€  "ring mail"ã€€ã€€ã€€ã€€ã€€: "ç’°ç”²",ã€€ "scale mail"ã€€ã€€: "é±—ç”²",
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€  "chain mail"ã€€ã€€ã€€ã€€ : "éŽ–å­ç”²", "breast plate"ã€€: "èƒ¸ç”²",
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€    "splint mail"ã€€ã€€ã€€ã€€: "ç±ç”²",ã€€ "plate mail"ã€€ã€€: "é‹¼æ¿ç”²",
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€  "field plate"ã€€ã€€ã€€ã€€: "ç‰‡ç”²",ã€€ "gothic plate"ã€€: "å“¥ç‰¹ç”²",
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€  "full plate mail"ã€€ã€€: "å…¨èº«ç”²", "ancient armor" : "èˆŠç”²",
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€  "light plate"ã€€ã€€ã€€ã€€: "è¼•ç”²", ]),
 
-        "shield" : ([ "buckler"¡¡¡¡¡¡: "Ð¡Ô°¶Ü", "small shield"¡¡: "Ð¡¶Ü",
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡  "large shield" : "´ó¶Ü",¡¡ "kite shield"¡¡ : "³¤¶Ü",
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡  "tower shield" : "Æ½¶Ü",¡¡ "gothic shield" : "¸çÌØ¶Ü",
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡  "bone shield"¡¡: "¹Ç¶Ü",¡¡ "spiked shield" : "¶¤¶Ü", ]),
+        "shield" : ([ "buckler"ã€€ã€€ã€€: "å°åœ’ç›¾", "small shield"ã€€: "å°ç›¾",
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€  "large shield" : "å¤§ç›¾",ã€€ "kite shield"ã€€ : "é•·ç›¾",
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€  "tower shield" : "å¹³ç›¾",ã€€ "gothic shield" : "å“¥ç‰¹ç›¾",
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€  "bone shield"ã€€: "éª¨ç›¾",ã€€ "spiked shield" : "é‡˜ç›¾", ]),
 
-        "gloves" : ([ "leather gloves" : "Æ¤ÊÖÌ×", "heavy gloves"¡¡¡¡: "ÖØÊÖÌ×",
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡  "chain gloves"¡¡ : "Á´ÊÖÌ×", "light gauntlets" : "ÇáÌú»¤ÊÖ",
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡  "gauntlets"¡¡¡¡¡¡: "Ìú»¤ÊÖ", ]),
+        "gloves" : ([ "leather gloves" : "çš®æ‰‹å¥—", "heavy gloves"ã€€ã€€: "é‡æ‰‹å¥—",
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€  "chain gloves"ã€€ : "éˆæ‰‹å¥—", "light gauntlets" : "è¼•éµè­·æ‰‹",
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€  "gauntlets"ã€€ã€€ã€€: "éµè­·æ‰‹", ]),
 
-        "boots"¡¡: ([ "boots"¡¡¡¡¡¡ : "Ñ¥×Ó",¡¡ "heavy boots"¡¡¡¡¡¡¡¡: "ÖØÑ¥",
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡  "chain boots" : "Ëø×ÓÑ¥", "light plated boots" : "ÇáÌúÑ¥",
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡  "greaves"¡¡¡¡ : "»¤ëÖ¼×", ]),
+        "boots"ã€€: ([ "boots"ã€€ã€€ã€€ : "é´å­",ã€€ "heavy boots"ã€€ã€€ã€€ã€€: "é‡é´",
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€  "chain boots" : "éŽ–å­é´", "light plated boots" : "è¼•éµé´",
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€  "greaves"ã€€ã€€ : "è­·è„›ç”²", ]),
 
-        "belt"¡¡ : ([ "sash" : "Ñü´ø", "light belt" : "ÇáÑü´ø",
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡  "belt" : "Ñü´ø", "heavy belt" : "ÖØÑü´ø",
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡  "plated belt" : "ÌúÑü´ø", ]),
+        "belt"ã€€ : ([ "sash" : "è…°å¸¶", "light belt" : "è¼•è…°å¸¶",
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€  "belt" : "è…°å¸¶", "heavy belt" : "é‡è…°å¸¶",
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€  "plated belt" : "éµè…°å¸¶", ]),
 
-        "ring"¡¡ : "½äÖ¸",
-        "amulet" : "»¤Éí·û",
+        "ring"ã€€ : "æˆ’æŒ‡",
+        "amulet" : "è­·èº«ç¬¦",
 
-        "charm"¡¡: ([ "grand charm" : "ºÀ»ªÊÎÎï", "large charm" : "´óÊÎÎï",
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡  "small charm" : "Ð¡ÊÎÎï", ]),
+        "charm"ã€€: ([ "grand charm" : "è±ªè¯é£¾ç‰©", "large charm" : "å¤§é£¾ç‰©",
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€  "small charm" : "å°é£¾ç‰©", ]),
 
-        "potion" : ([ "healing"¡¡: ([ "minor healing potion"¡¡ : "Ð¡ÉúÃüÆ¿",
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡  "light healing potion"¡¡ : "ÇáÉúÃüÆ¿",
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡  "healing potion"¡¡¡¡¡¡¡¡ : "ÇáÉúÃüÆ¿",
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡  "greater healing potion" : "´óÉúÃüÆ¿",
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡  "super healing potion"¡¡ : "ÌØ¼¶ÉúÃüÆ¿", ]),
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡  "mana"¡¡¡¡ : ([ "minor mana potion"¡¡ : "Ð¡Ä§·¨Æ¿",
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡  "light mana potion"¡¡ : "ÇáÄ§·¨Æ¿",
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡  "mana potion"¡¡¡¡¡¡¡¡ : "ÇáÄ§·¨Æ¿",
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡  "greater mana potion" : "´óÄ§·¨Æ¿",
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡  "super mana potion"¡¡ : "ÌØ¼¶Ä§·¨Æ¿", ]),
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡  "antidote potion" : "½â¶¾¼Á",
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡  "thawing potion"¡¡: "½â¶³¼Á", ]),
+        "potion" : ([ "healing"ã€€: ([ "minor healing potion"ã€€ : "å°ç”Ÿå‘½ç“¶",
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€  "light healing potion"ã€€ : "è¼•ç”Ÿå‘½ç“¶",
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€  "healing potion"ã€€ã€€ã€€ã€€ : "è¼•ç”Ÿå‘½ç“¶",
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€  "greater healing potion" : "å¤§ç”Ÿå‘½ç“¶",
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€  "super healing potion"ã€€ : "ç‰¹ç´šç”Ÿå‘½ç“¶", ]),
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€  "mana"ã€€ã€€ : ([ "minor mana potion"ã€€ : "å°é­”æ³•ç“¶",
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€  "light mana potion"ã€€ : "è¼•é­”æ³•ç“¶",
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€  "mana potion"ã€€ã€€ã€€ã€€ : "è¼•é­”æ³•ç“¶",
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€  "greater mana potion" : "å¤§é­”æ³•ç“¶",
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€  "super mana potion"ã€€ : "ç‰¹ç´šé­”æ³•ç“¶", ]),
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€  "antidote potion" : "è§£æ¯’åŠ‘",
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€  "thawing potion"ã€€: "è§£å‡åŠ‘", ]),
 
-        "key"¡¡ : "Ô¿³×",
-        "jewel" : "Öé±¦",
+        "key"ã€€ : "é‘°åŒ™",
+        "jewel" : "ç å¯¶",
 ]);
 
-// ÎïÆ·³öÏÖµÄ¼¸ÂÊ
+// ç‰©å“å‡ºç¾çš„å¹¾çŽ‡
 array common_rate_table = ({ "weapon", "potion", "armor", "helmet", "shield",
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ "key", "gloves", "boots", "belt", "ring", "amulet",
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ "charm", "jewel", });
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ "key", "gloves", "boots", "belt", "ring", "amulet",
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ "charm", "jewel", });
 
 static int max_rate;
 

@@ -1,16 +1,16 @@
-// pi.c Æ¤ÇåĞş
+// pi.c çš®æ¸…ç„
 // By Lgg,1998.10
 
 inherit NPC;
 
 void create()
 {
-        set_name("Æ¤ÇåĞş", ({"pi qingxuan", "pi"}));
-        set("gender", "ÄĞĞÔ");
+        set_name("çš®æ¸…ç„", ({"pi qingxuan", "pi"}));
+        set("gender", "ç”·æ€§");
         set("age", 24);
         set("class", "taoist");
         set("long",
-                "ËûÊÇÒ»Î»Ìå¸ñÇ¿½¡µÄ×³ÄêµÀÊ¿£¬ËÆºõÉí»³ÎäÒÕ¡£\n");
+                "ä»–æ˜¯ä¸€ä½é«”æ ¼å¼·å¥çš„å£¯å¹´é“å£«ï¼Œä¼¼ä¹èº«æ‡·æ­¦è—ã€‚\n");
         set("attitude", "friendly");
         set("shen_type",1);
         set("str", 26);
@@ -60,10 +60,10 @@ void create()
         map_skill("finger", "zhongnan-zhi");
         prepare_skill("finger", "zhongnan-zhi");
 
-        create_family("È«Õæ½Ì", 4, "µÜ×Ó");
+        create_family("å…¨çœŸæ•™", 4, "å¼Ÿå­");
 
         set("inquiry", ([
-                "È«Õæ½Ì" :  "ÎÒÈ«Õæ½ÌÊÇÌìÏÂµÀ¼ÒĞşÃÅÕı×Ú¡£\n",
+                "å…¨çœŸæ•™" :  "æˆ‘å…¨çœŸæ•™æ˜¯å¤©ä¸‹é“å®¶ç„é–€æ­£å®—ã€‚\n",
         ]) );
 
         setup();

@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-string name() { return HIY "ÐþÃÅ½ðËø" NOR; }
+string name() { return HIY "çŽ„é–€é‡‘éŽ–" NOR; }
 
 inherit F_SSERVER;
 
@@ -14,40 +14,40 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(name() + "Ö»ÓÐÔÚÕ½¶·ÖÐ²ÅÄÜÊ¹ÓÃ¡£\n");
+                return notify_fail(name() + "åªæœ‰åœ¨æˆ°é¬¥ä¸­æ‰èƒ½ä½¿ç”¨ã€‚\n");
 
         if ((level = me->query_skill("jinguan-yusuo", 1)) < 150)
-                return notify_fail("ÄãµÄ½ð¹ØÓñËø²»¹»ÊìÁ·£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n" NOR);
+                return notify_fail("ä½ çš„é‡‘é—œçŽ‰éŽ–ä¸å¤ ç†Ÿç·´ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n" NOR);
 
         if ((int)me->query_skill("force") < 200)
-                return notify_fail("ÄãµÄÄÚ¹¦»ðºò²»×ã£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸç«å€™ä¸è¶³ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if( query("neili", me)<500 )
-                return notify_fail("ÄãÏÖÔÚµÄÕæÆø²»×ã£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n" NOR);
+                return notify_fail("ä½ ç¾åœ¨çš„çœŸæ°£ä¸è¶³ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n" NOR);
 
         if (target->is_busy())
-                return notify_fail(target->name() + "Ä¿Ç°Õý×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É¡£\n");
+                return notify_fail(target->name() + "ç›®å‰æ­£è‡ªé¡§ä¸æš‡ï¼Œæ”¾è†½æ”»æ“Šå§ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIY "Í»È»¼ä$N" HIY "Ë«ÊÖÝëµÄ»ØÈ¦£¬Ê¹³ö¡¸" HIR "ÐþÃÅ½ðËø"
-              HIY "¡¹¾ø¼¼£¬ÆóÍ¼ËøËÀ$n" HIY "µÄÕÐÊý¡£\n" NOR;
+        msg = HIY "çªç„¶é–“$N" HIY "é›™æ‰‹é©€çš„å›žåœˆï¼Œä½¿å‡ºã€Œ" HIR "çŽ„é–€é‡‘éŽ–"
+              HIY "ã€çµ•æŠ€ï¼Œä¼åœ–éŽ–æ­»$n" HIY "çš„æ‹›æ•¸ã€‚\n" NOR;
 
         ap = attack_power(me, "parry");
         dp = defense_power(target, "parry");
 
         if ( ap / 2 + random(ap) > dp )
         {
-                msg += HIR "ö®Ê±$n" HIR "Ö»¾õÕÐÊýÒ»½ô£¬Ë«±ÛÌ±Èí£¬È«Éí"
-                       "Á¦µÀ¾¹ËÆ±»$N" HIR "ÀÎÀÎËø×¡£¡\n" NOR;
+                msg += HIR "éœŽæ™‚$n" HIR "åªè¦ºæ‹›æ•¸ä¸€ç·Šï¼Œé›™è‡‚ç™±è»Ÿï¼Œå…¨èº«"
+                       "åŠ›é“ç«Ÿä¼¼è¢«$N" HIR "ç‰¢ç‰¢éŽ–ä½ï¼\n" NOR;
                 target->start_busy(ap / 80 + 2);
                 addn("neili", -100, me);
                 me->start_busy(1);
         } else
         {
-                msg += HIC "¿ÉÊÇ$n" HIC "·ÀÊØÑÏÃÜ£¬Ë¿ºÁ²»Îª$N"
-                       HIC "µÄÕÐÊýËùÂÒ¡£\n" NOR;
+                msg += HIC "å¯æ˜¯$n" HIC "é˜²å®ˆåš´å¯†ï¼Œçµ²æ¯«ä¸ç‚º$N"
+                       HIC "çš„æ‹›æ•¸æ‰€äº‚ã€‚\n" NOR;
                 addn("neili", -50, me);
                 me->start_busy(2);
         }

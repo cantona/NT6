@@ -1,4 +1,4 @@
-// ±ùÆÇÒøÕë¡£/d/quanzhou/npc/obj/yinzhen.c
+// å†°é­„éŠ€é‡ã€‚/d/quanzhou/npc/obj/yinzhen.c
 // Spacenet@FXLT 1.1.2000
 
 #include <weapon.h>;
@@ -12,20 +12,20 @@ void init()
 
 void create()
 {
-        set_name(HIC"±ùÆÇÒøÕë"NOR, ({ "ice_sting", "zhen" })); 
+        set_name(HIC"å†°é­„éŠ€é‡"NOR, ({ "ice_sting", "zhen" })); 
         set_weight(300);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "Õâ¾ÍÊÇÎäÁÖÖĞÈËÎÅÖ®É«±äµÄ±ùÆÇÒøÕë£¬ÕëÉíÂÆ¿Ì»¨ÎÆ£¬´òÔìµÃ¼«ÊÇ¾«Ï¸£¬ÁîÈËÈÌ²»×¡Ïë°ÑÍæ(bawan)Ò»·¬¡£\n");
+                set("unit", "æŠŠ");
+                set("long", "é€™å°±æ˜¯æ­¦æ—ä¸­äººèä¹‹è‰²è®Šçš„å†°é­„éŠ€é‡ï¼Œé‡èº«ç¸·åˆ»èŠ±ç´‹ï¼Œæ‰“é€ å¾—æ¥µæ˜¯ç²¾ç´°ï¼Œä»¤äººå¿ä¸ä½æƒ³æŠŠç©(bawan)ä¸€ç•ªã€‚\n");
                 set("value", 0);
-                set("base_unit", "¸ù");
+                set("base_unit", "æ ¹");
                 set("base_weight", 30);
                 set("base_value", 0);
                 set("meterial", "iron");
-                set("wield_msg", "$NĞ¡ĞÄÒíÒíµØÈ¡³öÒ»¸ù±ùÆÇÒøÕëµ±ÎäÆ÷¡£\n");
-                set("unwield_msg", "$N°ÑÒøÕë·Å»ØÒÂÄÒÖĞ¡£\n");
+                set("wield_msg", "$Nå°å¿ƒç¿¼ç¿¼åœ°å–å‡ºä¸€æ ¹å†°é­„éŠ€é‡ç•¶æ­¦å™¨ã€‚\n");
+                set("unwield_msg", "$NæŠŠéŠ€é‡æ”¾å›è¡£å›Šä¸­ã€‚\n");
         }
         set_amount(1);
         init_throwing(25);
@@ -37,11 +37,11 @@ int do_bawan()
         object me=this_player();
 
         if(!present(this_object(), me))
-                return notify_fail("ÄãÒª°ÑÍæÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦æŠŠç©ä»€éº¼ï¼Ÿ\n");
         if ((int)this_player()->query_condition("ice_sting") < 10)
         {
-                tell_object(this_player(), "Äã¿´×ÅÊÖÖĞµÄÒøÕë¾õµÃÓĞÈ¤£¬°ÑÕëÉíµÄ»¨ÎÆÏ¸Ï¸ÃşÁËÒ»±é¡£\n");
-                tell_object(this_player(), HIB "ÄãÍ»È»¾õµÃÊÖÕÆÂéÂéµÄÓĞĞ©²»Ì«Áé±ã£¬ÃÍÈ»¾ª¾õ£º¡°ÕëÉÏÓĞ¶¾£¬Èç´Ë°ÑÍæ£¬Æñ²»Î£ÏÕ£¿¡±Ã¦ÕÅ¿ªÊÖÕÆ\nÅ×ÏÂÒøÕë£¬Ö»¼ûÁ½ÊÖÕÆĞÄÒÑÉîºÚÈçÄ«£¬ÊÖ±ÛÂéÄ¾¸Ğ½¥½¥ÉÏÉı£¬ĞÄÖĞ´óº§£¬ÈÌ²»×¡±ãÒª¿Ş³öÉùÀ´¡£\n" NOR);
+                tell_object(this_player(), "ä½ çœ‹è‘—æ‰‹ä¸­çš„éŠ€é‡è¦ºå¾—æœ‰è¶£ï¼ŒæŠŠé‡èº«çš„èŠ±ç´‹ç´°ç´°æ‘¸äº†ä¸€éã€‚\n");
+                tell_object(this_player(), HIB "ä½ çªç„¶è¦ºå¾—æ‰‹æŒéº»éº»çš„æœ‰äº›ä¸å¤ªéˆä¾¿ï¼ŒçŒ›ç„¶é©šè¦ºï¼šâ€œé‡ä¸Šæœ‰æ¯’ï¼Œå¦‚æ­¤æŠŠç©ï¼Œè±ˆä¸å±éšªï¼Ÿâ€å¿™å¼µé–‹æ‰‹æŒ\næ‹‹ä¸‹éŠ€é‡ï¼Œåªè¦‹å…©æ‰‹æŒå¿ƒå·²æ·±é»‘å¦‚å¢¨ï¼Œæ‰‹è‡‚éº»æœ¨æ„Ÿæ¼¸æ¼¸ä¸Šå‡ï¼Œå¿ƒä¸­å¤§é§­ï¼Œå¿ä¸ä½ä¾¿è¦å“­å‡ºè²ä¾†ã€‚\n" NOR);
                 this_player()->apply_condition("ice_sting", 30);
         }        
         destruct(this_object());

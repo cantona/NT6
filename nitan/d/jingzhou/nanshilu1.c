@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��ʯ·");
+        set("short", "碎石路");
         set("long", @LONG
-����һ������ʯ�̳ɵ�·����Ȼ��Щ������ȴ�ܿ�������ȥ����
-�����ˡ�����ǰ��һƬ��ʯ����ס��ȥ·����˵�ǵ��������Ϊ����
-ֹ���׷�϶���ġ�
+這是一條由碎石舖成的路，雖然有些顛簸，卻很寬闊，南去就是
+長江了。不過前面一片亂石，攔住了去路，據說是當年諸葛亮為了阻
+止吳兵追趕而設的。
 LONG );
         set("objects", ([
                 __DIR__"npc/boy" : 1,

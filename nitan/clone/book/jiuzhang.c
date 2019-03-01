@@ -6,14 +6,14 @@ inherit BOOK;
 
 void create()
 {
-        set_name(HIY "¡¸¾ÅÕÂËãÊõ¡¹" NOR, ({ "jiuzhang", "shu" }));
+        set_name(HIY "ã€Œä¹ç« ç®—è¡“ã€" NOR, ({ "jiuzhang", "shu" }));
         set_weight(500);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
-                set("long", "ÕâÊÇÒ»±¾±¡±¡µÄĞ¡²á×Ó£¬ÉÏÃæĞ´×Å"
-                            "¡°¾ÅÕÂËãÊõ¡±ËÄ¸ö¹Å×­Ğ¡×Ö¡£\n");
+                set("unit", "æœ¬");
+                set("long", "é€™æ˜¯ä¸€æœ¬è–„è–„çš„å°å†Šå­ï¼Œä¸Šé¢å¯«è‘—"
+                            "â€œä¹ç« ç®—è¡“â€å››å€‹å¤ç¯†å°å­—ã€‚\n");
                 set("value", 0);
                 set("material", "paper");
                 set("skill", ([

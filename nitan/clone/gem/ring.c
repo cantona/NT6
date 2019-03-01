@@ -6,10 +6,10 @@ inherit F_AUTOLOAD;
 
 void create()
 {
-        set_name(HIC"Ä§·¨½äÖ¸"NOR, ({ "magic ring", "ring" }));
-        set("long", HIC"ÕâÊÇÒ»¸ö´ÓÔ¶¹ÅÁ÷´«ÏÂÀ´µÄ½äÖ¸£¬ÉÏÃæ¿Ì×ÅÒ»Ğ©Ææ¹ÖµÄÖäÓï¡£\n"NOR);
+        set_name(HIC"é­”æ³•æˆ’æŒ‡"NOR, ({ "magic ring", "ring" }));
+        set("long", HIC"é€™æ˜¯ä¸€å€‹å¾é å¤æµå‚³ä¸‹ä¾†çš„æˆ’æŒ‡ï¼Œä¸Šé¢åˆ»è‘—ä¸€äº›å¥‡æ€ªçš„å’’èªã€‚\n"NOR);
         set("weight", 400);
-        set("unit", "¸ö");
+        set("unit", "å€‹");
         set("value", 5000000);
         set("material", "gem");
         set("armor_prop/armor", 10);

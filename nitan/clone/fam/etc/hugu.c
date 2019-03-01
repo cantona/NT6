@@ -3,13 +3,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIW "°×»¢¹Ç" NOR, ({ "tiger bone", "bone" }));
+        set_name(HIW "ç™½è™éª¨" NOR, ({ "tiger bone", "bone" }));
         set_weight(5000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "Ò»¸±°×»¢¹Ç£¬ÄËÖÆÒÂ¼«Æ·£¬ÊÀ¼äº±ÓĞ¡£\n" NOR);
-                set("unit", "¸±");
+                set("long", HIW "ä¸€å‰¯ç™½è™éª¨ï¼Œä¹ƒåˆ¶è¡£æ¥µå“ï¼Œä¸–é–“ç½•æœ‰ã€‚\n" NOR);
+                set("unit", "å‰¯");
                 set("value", 500000);
         }
         setup();

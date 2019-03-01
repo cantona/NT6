@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����ɽ·");
+        set("short", "昆侖山路");
         set("long",@long
-�����Ѿ��������ɵĵط��ˣ�·�߻������أ���Ȼ�Ǻ���������ȴ
-��Ȼ���������������������޵Ľ�����ǰ��ɽ�Ͼ��������ɵľ����ˣ�
-����������ʱ���ɽ�š�
+這裡已經是昆侖派的地方了，路邊花草滿地，雖然是寒冬，這裡卻
+仍然生機勃勃，到處傳來鳥獸的叫聲，前面山上就是昆侖派的居所了，
+下面是來的時候的山門。
 long);
         set("exits",([
                 "westdown" : __DIR__"shanmen",

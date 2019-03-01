@@ -4,10 +4,10 @@
 inherit ROOM;
 void create()
 {
-        set("short", "��·");
+        set("short", "土路");
         set("long", @LONG
-·��һ��СϪ��Ϫˮ���������ţ���ʱ�����(fish)Ծ��ˮ�档
-Ϫ�Լ����к�������ͷר���ڵ��㡣
+路旁一條小溪。溪水嘩嘩地流著，不時有魚兒(fish)躍出水面。
+溪旁幾個男孩正低著頭專心在釣魚。
 LONG);
         set("exits", ([
             "southwest"     : __DIR__"shanlu5",
@@ -17,7 +17,7 @@ LONG);
             __DIR__"npc/boy" : 2,
         ]));
         set("item_desc", ([
-            "fish" : "������һ������Ծˮ���������ۡ���һ���ֵ���ˮ������к�һ��ˮ��\n",
+            "fish" : "“嘩”一條大魚躍水而出，“噗”的一聲又掉回水裡。濺得男孩一身水。\n",
         ]));
         set("outdoors", "hangzhou");
 	set("coor/x", 750);

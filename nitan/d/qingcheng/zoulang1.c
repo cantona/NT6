@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-        set("short", "�ɷ�����");
+        set("short", "鬆風走廊");
         set("long", @LONG
-�������ɷ��������ǰ���Ժ�����ȣ��ɷ�۸ߴ�ɽ������������
-ȥ����ɽ��ţ��Ĺȷ��������챡��ʱʱ��ɢ�ڳ��ִ���֮�䡣�Թź�
-�ƣ�����������ġ��������ڴ���ζ��
+這裡是鬆風觀中連貫前殿後院的走廊，鬆風觀高矗山頂，從走廊望
+去，青山鳥寂，幽谷風生，漫天薄霧時時彌散在長林翠竹之間。自古號
+稱：“青城天下幽”，不妨在此體味。
 LONG );
         set("outdoors", "qingcheng");
         set("exits", ([

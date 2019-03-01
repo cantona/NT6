@@ -1,4 +1,4 @@
-// ÉÏ¹ÅÊ®´óÉñÆ÷Ö® ĞùÔ¯½£
+// ä¸Šå¤åå¤§ç¥å™¨ä¹‹ è»’è½…åŠ
 // Create by Rcwiz for Hero.cn 2003/09
 
 #include <ansi.h>
@@ -9,33 +9,33 @@ inherit SWORD;
 int is_magic_item() { return 1; }
 
 mapping skills = ([
-        "egui-dao"     :   "¶ö¹íµÀ",
-        "xiuluo-dao"   :   "ĞŞÂŞµÀ",
-        "renjian-dao"  :   "ÈË¼äµÀ",
-        "chusheng-dao" :   "ĞóÉúµÀ",
-        "tianji-dao"   :   "Ìì¼«µÀ",
-        "diyu-dao"     :   "µØÓüµÀ",
-        "lun"          :   "Õæ¡¤ÁùµÀÂÖ»Ø",
+        "egui-dao"     :   "é¤“é¬¼é“",
+        "xiuluo-dao"   :   "ä¿®ç¾…é“",
+        "renjian-dao"  :   "äººé–“é“",
+        "chusheng-dao" :   "ç•œç”Ÿé“",
+        "tianji-dao"   :   "å¤©æ¥µé“",
+        "diyu-dao"     :   "åœ°ç„é“",
+        "lun"          :   "çœŸï¹’å…­é“è¼ªå›",
 ]);
 
 void create()
 {
-        set_name(HIY "ĞùÔ¯½£" NOR, ({ "xuanyuan jian", "xuanyuan", "jian" }) );
+        set_name(HIY "è»’è½…åŠ" NOR, ({ "xuanyuan jian", "xuanyuan", "jian" }) );
         set_weight(200);
         if (clonep())
                 set_default_object(__FILE__);
         else
         {
-                set("unit", "°Ñ");
-                set("long", HIY "´ËÄËÉÏ¹ÅÉñÆ÷Ö®Ê×£¬ÓµÓĞ×ÅÎŞÇîµÄÁ¦Á¿£¬¾İËµ"
-                                "ÓµÓĞ´Ë½£Õß¿É³Û³ÒÈË¡¢Ä§¡¢ÉñÈı½ç£¬ÊÆ²»¿Éµ²¡£\n"
-                                "ÉÏÃæ¿ÌÂúÁË¸÷ÖÖÆæ¹ÖµÄÎÄ×Ö£¬ÏñÊÇ·ğ½Ì¾­ÎÄ¡£\n"
-                                "×ªÊÀºó¿É´Ó´Ë½£ÖĞÁìÎò(lingwu)³ö×ªÊÀÆæÑ§¡ªÁùµÀÂÖ»Ø½£¡£\n"
-                                "lingwu ?¡¡¿É²é¿´¿ÉÁìÎòµÄÕĞÊ½¡£\n" NOR);
+                set("unit", "æŠŠ");
+                set("long", HIY "æ­¤ä¹ƒä¸Šå¤ç¥å™¨ä¹‹é¦–ï¼Œæ“æœ‰è‘—ç„¡çª®çš„åŠ›é‡ï¼Œæ“šèªª"
+                                "æ“æœ‰æ­¤åŠè€…å¯é¦³é¨äººã€é­”ã€ç¥ä¸‰ç•Œï¼Œå‹¢ä¸å¯æ“‹ã€‚\n"
+                                "ä¸Šé¢åˆ»æ»¿äº†å„ç¨®å¥‡æ€ªçš„æ–‡å­—ï¼Œåƒæ˜¯ä½›æ•™ç¶“æ–‡ã€‚\n"
+                                "è½‰ä¸–å¾Œå¯å¾æ­¤åŠä¸­é ˜æ‚Ÿ(lingwu)å‡ºè½‰ä¸–å¥‡å­¸â”€å…­é“è¼ªå›åŠã€‚\n"
+                                "lingwu ?ã€€å¯æŸ¥çœ‹å¯é ˜æ‚Ÿçš„æ‹›å¼ã€‚\n" NOR);
                 set("material", "gold");
-                set("wield_msg", HIY "$N" HIY "Ò»ÉùÇáºô£¬Á½ÌõÉñÁú×ÔÌì¶øÏÂ£¬Óµ×ÅÒ»°ÑÖÜÉí·º×Å\n"
-                                 "½ğ¹âµÄÉñ½££¬É²ÄÇ¼ä´Ë½£ÓÌÈçÒ»µÀÁ÷ĞÇ»®¹ı£¬ÂäÈë$N" HIY "ÊÖÖĞ¡£\n" NOR);                               
-                set("unwield_msg", HIY "$N" HIY "ĞÄÒâÒ»×ª£¬ĞùÔ¯½£ÒÑ¹éÇÊ¡£\n" NOR);
+                set("wield_msg", HIY "$N" HIY "ä¸€è²è¼•å‘¼ï¼Œå…©æ¢ç¥é¾è‡ªå¤©è€Œä¸‹ï¼Œæ“è‘—ä¸€æŠŠå‘¨èº«æ³›è‘—\n"
+                                 "é‡‘å…‰çš„ç¥åŠï¼Œå‰é‚£é–“æ­¤åŠçŒ¶å¦‚ä¸€é“æµæ˜ŸåŠƒéï¼Œè½å…¥$N" HIY "æ‰‹ä¸­ã€‚\n" NOR);                               
+                set("unwield_msg", HIY "$N" HIY "å¿ƒæ„ä¸€è½‰ï¼Œè»’è½…åŠå·²æ­¸é˜ã€‚\n" NOR);
                 set("stable", 100);
 
         }
@@ -53,15 +53,15 @@ mixed hit_ob(object me, object victim, int damage_bonus)
         case 0:
                 if (! victim->is_busy())
                 victim->start_busy(20 + random(20));
-                return HIY "$N" HIY "»ÓÎè×ÅÊÖÖĞµÄĞùÔ¯½££¬ÍòµÀ²Ê¹â×ÔÖĞ¶ø³ö£¬Ö±±ÆµÃ"
-                           "$n" HIY "Á¬Á¬ºóÍË¡£\n" NOR;
+                return HIY "$N" HIY "æ®èˆè‘—æ‰‹ä¸­çš„è»’è½…åŠï¼Œè¬é“å½©å…‰è‡ªä¸­è€Œå‡ºï¼Œç›´é€¼å¾—"
+                           "$n" HIY "é€£é€£å¾Œé€€ã€‚\n" NOR;
 
         case 1:
                 n = me->query_skill("sword");
                 victim->receive_damage("qi", n, me);
                 victim->receive_wound("qi", n, me);
-                return HIR "$N" HIR "·´×ªÊÖÖĞĞùÔ¯½££¬ÃÍÈ»¼ä£¬ÊıµÀ½ğ¹â»®Ïò$n" HIY "£¬$n" HIY
-                           "Õı¾ªÒì¼ä£¬È´ÒÑÖĞ½£¡£\n" NOR;
+                return HIR "$N" HIR "åè½‰æ‰‹ä¸­è»’è½…åŠï¼ŒçŒ›ç„¶é–“ï¼Œæ•¸é“é‡‘å…‰åŠƒå‘$n" HIY "ï¼Œ$n" HIY
+                           "æ­£é©šç•°é–“ï¼Œå»å·²ä¸­åŠã€‚\n" NOR;
 
         }
         return damage_bonus;
@@ -82,18 +82,18 @@ int do_lingwu(string arg)
 
         if(! objectp(present("xuanyuan jian", me)))return 0;
  
-        // ×ªÊÀºó²ÅÄÜÁìÎò
+        // è½‰ä¸–å¾Œæ‰èƒ½é ˜æ‚Ÿ
         if (! me->query("scborn/ok"))return 0;
                 
         if (me->is_fighting() || me->is_busy())
-                 return notify_fail("ÄãÕıÃ¦ÄØ£¡\n");
+                 return notify_fail("ä½ æ­£å¿™å‘¢ï¼\n");
 
-        if (! arg)return notify_fail("ÄãÒªÁìÎòÊ²Ã´£¿\n");
+        if (! arg)return notify_fail("ä½ è¦é ˜æ‚Ÿä»€éº¼ï¼Ÿ\n");
         
         str = keys(skills);
         if (arg == "?")
         {
-                write(HIC "ĞùÔ¯½£ÖĞ¼ÇÔØ×ÅÒÔÏÂ¾øÑ§£º\n" NOR);
+                write(HIC "è»’è½…åŠä¸­è¨˜è¼‰è‘—ä»¥ä¸‹çµ•å­¸ï¼š\n" NOR);
                 for (i = 0; i < sizeof(str); i ++)
                         write(sprintf(HIC "%-20s %s\n", 
                               str[i], skills[str[i]]));
@@ -102,50 +102,50 @@ int do_lingwu(string arg)
                       
         }
         if (member_array(arg, str) == -1)       
-                    return notify_fail("ÄãÒªÁìÎòÊ²Ã´(lingwu ?)£¿\n");
+                    return notify_fail("ä½ è¦é ˜æ‚Ÿä»€éº¼(lingwu ?)ï¼Ÿ\n");
 
         if (me->query_skill("buddhism", 1) < 200)
-                    return notify_fail("Äã·­À´¸²È¥µÄÑĞ¾¿×ÅÉÏÃæ¾­ÎÄ£¬È´Ê¼ÖÕ¿´²»Ã÷°×¡£\n");
+                    return notify_fail("ä½ ç¿»ä¾†è¦†å»çš„ç ”ç©¶è‘—ä¸Šé¢ç¶“æ–‡ï¼Œå»å§‹çµ‚çœ‹ä¸æ˜ç™½ã€‚\n");
                                                         
         if (me->query_skill("literate", 1) < 200)
-                    return notify_fail("Äã¶ÁÊéĞ´×ÖµÈ¼¶²»¹»£¬ºÜ¶àÒâË¼ÄãÎŞ·¨Àí½â¡£\n");
+                    return notify_fail("ä½ è®€æ›¸å¯«å­—ç­‰ç´šä¸å¤ ï¼Œå¾ˆå¤šæ„æ€ä½ ç„¡æ³•ç†è§£ã€‚\n");
 
         if (me->query_skill("sword", 1) < 300)
-                    return notify_fail("Äã»ù±¾½£·¨»ğºò²»×ã£¬ÎŞ·¨ÁìÎò³öÊ²Ã´¡£\n");                    
+                    return notify_fail("ä½ åŸºæœ¬åŠæ³•ç«å€™ä¸è¶³ï¼Œç„¡æ³•é ˜æ‚Ÿå‡ºä»€éº¼ã€‚\n");                    
 
         if (me->query_skill("force", 1) < 300)
-                    return notify_fail("Äã»ù±¾ÄÚ¹¦ĞŞÎª²»×ã£¬ÎŞ·¨ÁìÎò³öÊ²Ã´¡£\n");
+                    return notify_fail("ä½ åŸºæœ¬å…§åŠŸä¿®ç‚ºä¸è¶³ï¼Œç„¡æ³•é ˜æ‚Ÿå‡ºä»€éº¼ã€‚\n");
                     
         if (me->query_skill("dodge", 1) < 300)
-                    return notify_fail("Äã»ù±¾Çá¹¦ĞŞÎª²»×ã£¬ÎŞ·¨ÁìÎò³öÊ²Ã´¡£\n");                    
+                    return notify_fail("ä½ åŸºæœ¬è¼•åŠŸä¿®ç‚ºä¸è¶³ï¼Œç„¡æ³•é ˜æ‚Ÿå‡ºä»€éº¼ã€‚\n");                    
 
         if (arg == "lun" && me->query_skill("liudao-jian", 1) < 450)
-                    return notify_fail("ÄãÁùµÀÂÖ»Ø½£·¨µÈ¼¶²»¹»¡£\n");
+                    return notify_fail("ä½ å…­é“è¼ªå›åŠæ³•ç­‰ç´šä¸å¤ ã€‚\n");
                     
         else if (arg == "lun" && me->query_skill("force", 1) < 680)
-                    return notify_fail("ÄãÄÚ¹¦ĞŞÎª²»×ã¡£\n");
+                    return notify_fail("ä½ å…§åŠŸä¿®ç‚ºä¸è¶³ã€‚\n");
 
         else if (arg == "lun" && me->query("max_neili") < 20000)
-                    return notify_fail("ÄãÄÚÁ¦ĞŞÎª²»×ã¡£\n");        
+                    return notify_fail("ä½ å…§åŠ›ä¿®ç‚ºä¸è¶³ã€‚\n");        
 
         else
         {
                 if (me->query_skill(arg, 1))
-                       return notify_fail("Äã²»ÒÑ¾­»áÁËÕâÕĞÁËÂğ£¿\n");
+                       return notify_fail("ä½ ä¸å·²ç¶“æœƒäº†é€™æ‹›äº†å—ï¼Ÿ\n");
 
-                message_vision(HIM "$N" HIM "¾Û¾«»áÉñµØ²ÎÎò×ÅĞùÔ¯½£ÖĞµÄ°ÂÃØ¡¡¡­¡­\n" NOR, me);
+                message_vision(HIM "$N" HIM "èšç²¾æœƒç¥åœ°åƒæ‚Ÿè‘—è»’è½…åŠä¸­çš„å¥§ç§˜ã€€â€¦â€¦\n" NOR, me);
                 
                 switch(arg)
                 {
                         case "lun":
-                            write(HIG "ÄãÁìÎò³öÁË¾øÕĞ¡¡Õæ¡¤ÁùµÀÂÖ»Ø½£¡¡¡£\n" NOR);
+                            write(HIG "ä½ é ˜æ‚Ÿå‡ºäº†çµ•æ‹›ã€€çœŸï¹’å…­é“è¼ªå›åŠã€€ã€‚\n" NOR);
                             me->set("can_perform/liudao-jian/lun", 1);
                             destruct(this_object());
                             return 1;
                         
                         default :                           
-                            write(HIC "ÄãÁìÎò³ö " + skills[arg] + " ¡£\n" NOR);
-                            me->set_skill(arg, 1); // ÁìÎò³öÒ»¼¶
+                            write(HIC "ä½ é ˜æ‚Ÿå‡º " + skills[arg] + " ã€‚\n" NOR);
+                            me->set_skill(arg, 1); // é ˜æ‚Ÿå‡ºä¸€ç´š
                             destruct(this_object());
                             return 1;
                 }

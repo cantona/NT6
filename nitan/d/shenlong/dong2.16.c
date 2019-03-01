@@ -2,10 +2,10 @@ inherit DEMONROOM;
 
 void create()
 {
-        set("short", "�߶���");
+        set("short", "蛇洞外");
         set("long",@LONG
-�����������߶��⣬��˵���ڶ��߱鲼������ס���߾���û���˽�ȥ��
-���ٻ��ų�����
+這是神龍島蛇洞外，據說洞內毒蛇遍布，洞中住有蛇精，沒有人進去後
+能再活著出來。
 LONG);
 
 	set("exits", ([

@@ -4,15 +4,15 @@ inherit ITEM;
 void create()
 {
                 
-        set_name(HIG"ԭʼɭ�����"NOR, ({ "forest door","door"}) );
+        set_name(HIG"原始森林入口"NOR, ({ "forest door","door"}) );
         set_weight(5);
         set("no_get",1);
 
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", GRN"�������ڿ��Խ���ԭʼɭ���Թ�������(enter door)\n"NOR); 
-                set("unit", "��");
+                set("long", GRN"從這個入口可以進入原始森林迷宮副本。(enter door)\n"NOR); 
+                set("unit", "個");
                 set("lore",1);
                 set("value", 20);
         }
@@ -46,15 +46,15 @@ int do_enter(string arg)
                 FUBEN_D->enter_fuben(this_player(), arg);
         else {
                 if( valid == 0 )
-                        write("��ʵս���鲻�㣬���������в��⣬����������һ�������ɡ�\n");
+                        write("您實戰經驗不足，進副本恐有不測，還是先歷練一下再來吧。\n");
                 else if( valid == -1 )
-                        write("������̫���ˣ��Ͳ�Ҫ��ȥ�۸���Щ������С�����˰ɡ�\n");
+                        write("您經驗太高了，就不要進去欺負那些可憐的小怪物了吧。\n");
                 else if( valid == -2 )
-                        write("��Ϸ��Ŀǰ��û�п��Ÿø����������˶Ժ����ԡ�\n");
+                        write("遊戲中目前並沒有開放該副本，請您核對後再試。\n");
                 else if( valid == -3 )
-                        write("�ø�������IP���ؽ��룬���Ѿ�����������ޡ�\n");
+                        write("該副本限制IP多重進入，您已經超過最高上限。\n");
                 else if( valid == -4 )
-                        write("�ø�������ʦ�رգ�����ʱ�޷����롣\n");
+                        write("該副本被巫師關閉，您暫時無法進入。\n");
 
         }        
         return 1;

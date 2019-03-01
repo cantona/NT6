@@ -13,28 +13,28 @@ int perform(object me, object target)
         int count, cnt, skill;
 
         if( query_temp("dujiang", me) )
-                return notify_fail("���Ѿ�����һέ�ɽ����ˡ�\n");
+                return notify_fail("你已經運起「一葦渡江」了。\n");
 
         if ((int)me->query_skill("yiwei-dujiang", 1)< 150)
-                return notify_fail("���һέ�ɽ��ȼ�����������ʩչ���������\n");
+                return notify_fail("你的一葦渡江等級不夠，難以施展此項絕技！\n");
 
         if ((int)me->query_dex() < 30)
-                return notify_fail("�����������ʹ�á�һέ�ɽ���������\n");
+                return notify_fail("你的身法不夠使用「一葦渡江」絕技！\n");
 
         if ((int)me->query_skill("force", 1)< 150)
-                return notify_fail("����ڹ���򲻹�������ʩչ���������\n");
+                return notify_fail("你的內功火候不夠，難以施展此項絕技！\n");
 
         if ((int)me->query_skill("dodge", 1)< 150)
-                return notify_fail("����Ṧ��Ϊ����������ʹ�ô��������\n");
+                return notify_fail("你的輕功修為不夠，不會使用此項絕技！\n");
 
         if( query("max_neili", me)<1000 )
-                return notify_fail("���������Ϊ����ʹ�á�һέ�ɽ�����\n");
+                return notify_fail("你的內力修為不夠使用「一葦渡江」！\n");
 
         if( query("neili", me)<250 )
-                return notify_fail("���ʱ���������㣡\n");
+                return notify_fail("你此時的內力不足！\n");
 
-        msg = HIB "$N" HIB "������������Ԫ����ʩչ��һέ�ɽ�������,"
-                  "����һչ�������˶�ʱ���Ʈ��������Խ��Խ�ᡣ\n" NOR;
+        msg = HIB "$N" HIB "運起心意氣混元功，施展「一葦渡江」絕技,"
+                  "身形一展，整個人頓時凌空飄起，身體變得越來越輕。\n" NOR;
         
         message_combatd(msg, me, target);
         skill = me->query_skill("yiwei-dujiang", 1);
@@ -59,6 +59,6 @@ void remove_effect(object me, int amount, int amount1)
         {
                 addn_temp("dex", -amount, me);
                 delete_temp("dujiang", me);
-                tell_object(me, "��ġ�һέ�ɽ����˹���ϣ��������ջص��\n");
+                tell_object(me, "你的「一葦渡江」運功完畢，將內力收回丹田。\n");
         }
 }

@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "���ӹŵ�");
+        set("short", "閩贛古道");
         set("long", @LONG
-���뽭�������ǲ�����ɽ���������Ĺȣ����ղ�����⡣����ɽ��
-�������޳�û�޳�����·������һ��������ŵ�һ���ȷ��˱Ƕ�����
+進入江西，還是不盡的山坎和密林幽谷，終日不見天光。放眼山中
+毒蟲猛獸出沒無常，行路艱辛。一到這裡就聞到一股腥風撲鼻而來。
 LONG );
         set("exits", ([
                 "northwest" : "/d/henshan/hsroad2",

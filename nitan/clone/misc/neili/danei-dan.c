@@ -4,14 +4,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIW "´óÄÚµ¤" NOR, ({"danei dan", "danei", "dan"}));
+        set_name(HIW "å¤§å…§ä¸¹" NOR, ({"danei dan", "danei", "dan"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
+                set("unit", "é¡†");
                 set("value", 10000);
                 set("only_do_effect", 1);
-                set("long", HIY "Ò»¿Å×ÏÉ«µÄÒ©Íè¡£»Ö¸´800µãÄÚÁ¦¡£\n" NOR);
+                set("long", HIY "ä¸€é¡†ç´«è‰²çš„è—¥ä¸¸ã€‚æ¢å¾©800é»žå…§åŠ›ã€‚\n" NOR);
         }
         setup();
 }
@@ -23,13 +23,13 @@ int do_effect(object me)
 
         if (time() - me->query_temp("last_eat") < 2)
         {
-                write("Äã¸Õ·þÓÃ¹ýÒ©£¬ÐèÒ©ÐÔ·¢»ÓÍêÐ§ÓÃÒÔºó²ÅÄÜ¼ÌÐø·þÓÃ¡£\n");
+                write("ä½ å‰›æœç”¨éŽè—¥ï¼Œéœ€è—¥æ€§ç™¼æ®å®Œæ•ˆç”¨ä»¥å¾Œæ‰èƒ½ç¹¼çºŒæœç”¨ã€‚\n");
                 return 1;
         }
 
         me->set_temp("last_eat", time());
 
-        message_vision(HIW "$N³ÔÏÂÒ»¿Å´óÄÚµ¤£¬¸Ðµ½ÄÚÁ¦ÓÐËù²¹³ä¡£\n" NOR, me);
+        message_vision(HIW "$Nåƒä¸‹ä¸€é¡†å¤§å…§ä¸¹ï¼Œæ„Ÿåˆ°å…§åŠ›æœ‰æ‰€è£œå……ã€‚\n" NOR, me);
 
         if (me->query("max_neili") - me->query("neili") < 800)
                   me->set("neili", me->query("max_neili"));

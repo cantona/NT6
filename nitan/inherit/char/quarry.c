@@ -1,4 +1,4 @@
-// Inherit: quarry.c ¡‘ŒÔ
+// Inherit: quarry.c ÁçµÁâ©
 // Create by Vin for Heros.cn
 
 #include <ansi.h>
@@ -13,16 +13,16 @@ void setup()
 {
         if (query("aves"))
         {
-                set("limbs", ({ "Õ∑≤ø", "…ÌÃÂ", "◊Û≥·", "”“≥·",
-                                "◊¶◊”", "Œ≤∞Õ" }));
+                set("limbs", ({ "È†≠ÈÉ®", "Ë∫´È´î", "Â∑¶ÁøÖ", "Âè≥ÁøÖ",
+                                "Áà™Â≠ê", "Â∞æÂ∑¥" }));
                 set("verbs", ({ "bite", "claw" }));
         } else
         {
-                set("limbs", ({ "Õ∑≤ø", "…ÌÃÂ", "∏π≤ø", "±≥≤ø",
-                                "«∞Ω≈", "∫ÛΩ≈", "Œ≤≤ø" }));
+                set("limbs", ({ "È†≠ÈÉ®", "Ë∫´È´î", "ËÖπÈÉ®", "ËÉåÈÉ®",
+                                "ÂâçËÖ≥", "ÂæåËÖ≥", "Â∞æÈÉ®" }));
                 set("verbs", ({ "hoof", "bite", "claw" }));
         }
-        set("race", "“∞ ﬁ");
+        set("race", "ÈáéÁç∏");
         set("attitude", "aggressive");
         ::setup();
 }
@@ -35,7 +35,7 @@ void init()
         if (! interactive(me = this_player()))
                 return;
 
-        // ◊‘∂Øπ•ª˜‘¶ ﬁ ıµ»º∂≤ª∏ﬂµƒÕÊº“
+        // Ëá™ÂãïÊîªÊìäÈ¶≠Áç∏Ë°ìÁ≠âÁ¥ö‰∏çÈ´òÁöÑÁé©ÂÆ∂
         if ((int)me->query_skill("training", 1) < 100 &&
             query_temp("owner") != query("id", me) &&
             !query("no_auto_kill"))
@@ -52,11 +52,11 @@ void disappear()
 {
         object ob = this_object();
 
-        // ≤∂¡‘∫Ù≥ˆµƒ“∞ ﬁª·∂›÷Æ
+        // ÊçïÁçµÂëºÂá∫ÁöÑÈáéÁç∏ÊúÉÈÅÅ‰πã
         if (living(ob) && query("owner", ob))
         {
-                message_vision(WHT "\nÕª»ª$N" WHT "√Õµÿ“ª¥‹£¨À≤º‰±„"
-                               "œ˚ ßµ√Œﬁ”∞Œﬁ◊Ÿ°£\n\n", ob);
+                message_vision(WHT "\nÁ™ÅÁÑ∂$N" WHT "ÁåõÂú∞‰∏ÄÁ´ÑÔºåÁû¨Èñì‰æø"
+                               "Ê∂àÂ§±ÂæóÁÑ°ÂΩ±ÁÑ°Ëπ§„ÄÇ\n\n", ob);
                 destruct(ob);
         }
 }
@@ -69,21 +69,21 @@ void die(object killer)
         string msg;
 
         if (query("aves"))
-                message_vision(HIR "\n÷ªº˚$N" HIR "∆ÀÃ⁄¡Àº∏œ¬£¨¥”∞Î"
-                               "ø’÷–◊π¬‰œ¬¿¥£¨À¿¡À°£\n\n" NOR, ob);
+                message_vision(HIR "\nÂè™Ë¶ã$N" HIR "Êí≤È®∞‰∫ÜÂπæ‰∏ãÔºåÂæûÂçä"
+                               "Á©∫‰∏≠Â¢úËêΩ‰∏ã‰æÜÔºåÊ≠ª‰∫Ü„ÄÇ\n\n" NOR, ob);
         else
-                message_vision(HIR "\n÷ªÃ˝$N" HIR "∫ø¡Àº∏…˘£¨µπ‘⁄µÿ"
-                               "…œ∆ÀÃ⁄¡Àº∏œ¬£¨À¿¡À°£\n\n" NOR, ob);
+                message_vision(HIR "\nÂè™ËÅΩ$N" HIR "Âöé‰∫ÜÂπæËÅ≤ÔºåÂÄíÂú®Âú∞"
+                               "‰∏äÊí≤È®∞‰∫ÜÂπæ‰∏ãÔºåÊ≠ª‰∫Ü„ÄÇ\n\n" NOR, ob);
 
         if (objectp(me = killer)
            || objectp(me = query_last_damage_from()))
         {
-                // »Áπ˚Œ™◊‘º∫µƒ¡‘ŒÔ£¨‘ÚΩ±¿¯÷Æ
+                // Â¶ÇÊûúÁÇ∫Ëá™Â∑±ÁöÑÁçµÁâ©ÔºåÂâáÁçéÂãµ‰πã
                 // if (query("owner", ob) == query("id", me) &&
                 if (
                    query("combat_exp", me) <= 5000000)
                 {
-                        // ∏˘æ›¡‘ŒÔ…Ë∂®µƒ≤Œ ˝¿¥∏¯”ËΩ±¿¯
+                        // Ê†πÊìöÁçµÁâ©Ë®≠ÂÆöÁöÑÂèÉÊï∏‰æÜÁµ¶‰∫àÁçéÂãµ
                         power = query("power", ob);
 
                         if (power < 50)
@@ -92,33 +92,33 @@ void die(object killer)
                         if (power > 500)
                                 power = 500;
 
-                        GIFT_D->delay_bonus(me, ([ "prompt" : "Õ®π˝’‚¥Œ¡‘»°" + ob->name() +
-                                                              HIG "µƒæ≠¿˙",
+                        GIFT_D->delay_bonus(me, ([ "prompt" : "ÈÄöÈÅéÈÄôÊ¨°ÁçµÂèñ" + ob->name() +
+                                                              HIG "ÁöÑÁ∂ìÊ≠∑",
                                                    "exp"    : random(power) + power,
                                                    "pot"    : random(power / 2) + power / 2,
                                                    "score"  : random(power / 4), ]));
                 }
                 skill = me->query_skill("hunting", 1);
 
-                // ªÒµ√ŒÔ∆∑
+                // Áç≤ÂæóÁâ©ÂìÅ
                 if (query("item1", ob) && random(skill) > 10)
                 {
                         item = new(query("item1", ob));
                         item->move(me, 1);
 
-                        msg = HIC "ƒ„◊–œ∏∑≠—∞" + ob->name() +
-                              HIC "µƒ ¨ÃÂ£¨¥”…œ√Ê∏Óœ¬¡À“ª" +
+                        msg = HIC "‰Ω†‰ªîÁ¥∞ÁøªÂ∞ã" + ob->name() +
+                              HIC "ÁöÑÂ±çÈ´îÔºåÂæû‰∏äÈù¢Ââ≤‰∏ã‰∫Ü‰∏Ä" +
                               query("base_unit", item) +
                               item->name() + HIC;
 
-                        // “ª∂®º∏¬ ªÒµ√∏ﬂº∂ŒÔ∆∑
+                        // ‰∏ÄÂÆöÂπæÁéáÁç≤ÂæóÈ´òÁ¥öÁâ©ÂìÅ
                         if (query("item3") && random(skill) > 60
                            && random(5) > 3)
                         {
                                 item = new(query("item3"));
                                 item->move(me, 1);
 
-                                msg += "º∞“ª" + query("base_unit", item) +
+                                msg += "Âèä‰∏Ä" + query("base_unit", item) +
                                        item->name() + HIC;
                         } else
                         if (query("item2") && random(skill) > 30
@@ -127,10 +127,10 @@ void die(object killer)
                                 item = new(query("item2"));
                                 item->move(me, 1);
 
-                                msg += "º∞“ª" + query("base_unit", item) +
+                                msg += "Âèä‰∏Ä" + query("base_unit", item) +
                                        item->name() + HIC;
                         }
-                        msg += "°£\n\n" NOR;
+                        msg += "„ÄÇ\n\n" NOR;
                         tell_object(me, msg);
                 }
         }

@@ -3,7 +3,7 @@
 
 #include <ansi.h>
 
-string name() { return MAG "ÒÆĞÇ»»ÔÂ" NOR; }
+string name() { return MAG "ç§»æ˜Ÿæ›æœˆ" NOR; }
 
 void remove_effect(object me);
 
@@ -13,21 +13,21 @@ int perform(object me, object target)
         int level;
 
         if( (level = me->query_skill("douzhuan-xingyi", 1)) < 1000 )
-                return notify_fail("ÄãµÄ¶·×ªĞÇÒÆ»¹²»¹»ÊìÁ·£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n" NOR);
+                return notify_fail("ä½ çš„é¬¥è½‰æ˜Ÿç§»é‚„ä¸å¤ ç†Ÿç·´ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n" NOR);
 
         if( (int)query("jingli", me) < 2000 )
-                return notify_fail("ÄãÏÖÔÚÕæÆø²»×ã£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n" NOR);
+                return notify_fail("ä½ ç¾åœ¨çœŸæ°£ä¸è¶³ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n" NOR);
 
         if( (int)query("neili", me) < 5000 )
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦²»¹»£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n" NOR);
+                return notify_fail("ä½ ç¾åœ¨å…§åŠ›ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n" NOR);
 
         if (query_temp("yixinghuanyue", me))
-                return notify_fail("ÄãÒÑ¾­ÔËÆğ" + name() + "¡£\n" NOR);
+                return notify_fail("ä½ å·²ç¶“é‹èµ·" + name() + "ã€‚\n" NOR);
 
         addn("neili", -1000, me);
         me->receive_damage("qi", 0);
         set_temp("yixinghuanyue", 1, me);
-        msg = MAG "\n$N" MAG "ÌáÆğÕæÆø£¬Ä¬Äî" + name() + "ĞÄ·¨£¬ĞÄÖĞÒÔ±ËÖ®µÀ»¹±ËÖ®ÉíµÄ·¨ÃÅÒÑ´ï·¢ºõ×ÔÈ»Ö®¾³¡£\n" NOR;
+        msg = MAG "\n$N" MAG "æèµ·çœŸæ°£ï¼Œé»˜å¿µ" + name() + "å¿ƒæ³•ï¼Œå¿ƒä¸­ä»¥å½¼ä¹‹é“é‚„å½¼ä¹‹èº«çš„æ³•é–€å·²é”ç™¼ä¹è‡ªç„¶ä¹‹å¢ƒã€‚\n" NOR;
 
         message_combatd(msg, me);
 
@@ -43,7 +43,7 @@ void remove_effect(object me)
         if ((int)query_temp("yixinghuanyue", me))
         {
                 delete_temp("yixinghuanyue", me);
-                tell_object(me, "ÄãµÄ"+name()+"ÔË¹¦Íê±Ï£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï¡£\n");
+                tell_object(me, "ä½ çš„"+name()+"é‹åŠŸå®Œç•¢ï¼Œå°‡å…§åŠ›æ”¶å›ä¸¹ç”°ã€‚\n");
         }
 }
 

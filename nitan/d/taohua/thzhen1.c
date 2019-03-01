@@ -17,11 +17,11 @@ string* dirs2 = ({
 void create()
 {
 
-        set("short", "ÌÒ»¨ÁÖ");
+        set("short", "æ¡ƒèŠ±æž—");
         set("long", @LONG
-ÄãÒ»×ß½øÌÒÁÖ£¬¿´¼û¶«Ò»´ØÌÒ»¨£¬Î÷Ò»´ÔÌÒÊ÷£¬Äã¶ÙÊ±Ä¿Ñ£ÉñÃÔ£¬ÃÔ
-Ê§ÁË·½Ïò¡£Äã»ÅÂÒÖÐ¸ÕÏëÍË³ö£¬»ØÍ·Ò»ÇÆ£¬À´Â·ÒÑÔÚ»¨´ÔÖÐÏûÊ§µÃÎÞÓ°ÎÞ
-×Ù£¬¿´À´Ö»ÓÐÓ²×ÅÍ·Æ¤ÍùÇ°×ßÁË¡£
+ä½ ä¸€èµ°é€²æ¡ƒæž—ï¼Œçœ‹è¦‹æ±ä¸€ç°‡æ¡ƒèŠ±ï¼Œè¥¿ä¸€å¢æ¡ƒæ¨¹ï¼Œä½ é “æ™‚ç›®çœ©ç¥žè¿·ï¼Œè¿·
+å¤±äº†æ–¹å‘ã€‚ä½ æ…Œäº‚ä¸­å‰›æƒ³é€€å‡ºï¼Œå›žé ­ä¸€çž§ï¼Œä¾†è·¯å·²åœ¨èŠ±å¢ä¸­æ¶ˆå¤±å¾—ç„¡å½±ç„¡
+è¹¤ï¼Œçœ‹ä¾†åªæœ‰ç¡¬è‘—é ­çš®å¾€å‰èµ°äº†ã€‚
 LONG );
 
         set("exits", ([
@@ -50,10 +50,10 @@ LONG );
 /*
 void init()
 {
-        set_temp("die_reason", "ÎóÈëÌÒ»¨ÃÔÕó±»ÌÒ»¨°êÉäËÀ", this_player());
+        set_temp("die_reason", "èª¤å…¥æ¡ƒèŠ±è¿·é™£è¢«æ¡ƒèŠ±ç“£å°„æ­»", this_player());
         this_player()->receive_damage("qi", 15);
         this_player()->receive_wound("qi",  15);
-        message_vision(HIR "Í»È»Ò»ÕóÌÒ»¨°êÏóÓêµã°ã¼²Éä$N£¡\n" NOR, this_player());
+        message_vision(HIR "çªç„¶ä¸€é™£æ¡ƒèŠ±ç“£è±¡é›¨é»žèˆ¬ç–¾å°„$Nï¼\n" NOR, this_player());
 }
 */
 
@@ -72,7 +72,7 @@ int valid_leave(object me, string dir)
           if (dirs[count] == dir || dirs2[count] == dir)
           {
                 me->move("/d/taohua/thzhen2");
-                if (! myfam || myfam["family_name"] == "ÌÒ»¨µº")
+                if (! myfam || myfam["family_name"] == "æ¡ƒèŠ±å³¶")
                 {
                         if( query("combat_exp", me)<20000+random(10000) )
                         {

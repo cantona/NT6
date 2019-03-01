@@ -8,27 +8,27 @@ void reset();
 
 void create()
 {
-        set("short", HIB "���ֻ�˾��" NOR);
+        set("short", HIB "【輪回司】" NOR);
         set("long", HIB @LONG
 
-                    ��         ��         ˾
+                    輪         回         司
 
-    �ֻ�˾�ں���ɭɭ����ʯ����ĵ������ǻҳ��������಼Χᣣ�Χ�
-���ý���˿������Щ��ֵ�ͼ����������һ����ʯ���� (table)��������
-�����������������Ӻܾ�û��ɨ���ˡ�
+    輪回司內寒氣森森，青石舖設的地面滿是灰塵。堂周青布圍幔，圍幔
+上用金銀絲線繡著些奇怪的圖案，正堂上一張青石桌案 (table)，桌案上
+布滿了蛛網，看樣子很久沒打掃過了。
 
 LONG NOR );
 
         set("item_desc", ([
-                "table" : WHT "һ����ʯ�Ƴɵ������������м���"
-                          "�ѷ죬�������Ѹ�������ܾ��ˡ�\n" NOR,
+                "table" : WHT "一個青石制成的桌案，上面有幾許"
+                          "裂縫，看樣子已擱在這裡很久了。\n" NOR,
         ]));
 
         set("exits", ([
                 "out" : __DIR__"lunhuisi_road1",
         ]));
 
-        create_door("out", YEL "ͭ��" NOR, "enter", DOOR_CLOSED);
+        create_door("out", YEL "銅門" NOR, "enter", DOOR_CLOSED);
         set("no_magic", 1);
         setup();
 }
@@ -50,8 +50,8 @@ int do_move(string arg)
 
         if( arg == "table" )
         {
-                write(HIY "\n���þ���ȫ���������ƶ�ʯ���������������ڵ���"
-                      "����һ�㣬��˿������\n" NOR);
+                write(HIY "\n你用盡了全身力氣想移動石桌，可是它猶如在地面"
+                      "生根一般，紋絲不動。\n" NOR);
                 return 1;
         }
 }
@@ -64,9 +64,9 @@ void check_trigger()
         && (int)query("you") == 3
         && ! query("exits/down") )
         {
-                message("vision", WHT "\nʯ����Ȼ����������һ���춯����"
-                                  "һ�໺���ƿ���ʯ���»�Ȼ¶��һ����"
-                                  "�����Ľ��ݡ�\n" NOR, this_object() );
+                message("vision", WHT "\n石桌忽然「軋軋軋」一陣響動，向"
+                                  "一側緩緩移開，石桌下豁然露出一個黑"
+                                  "洞洞的階梯。\n" NOR, this_object() );
                 set("exits/down", __DIR__"diyin_road1");
                 delete("zuo");
                 delete("you");
@@ -80,8 +80,8 @@ void close_passage()
         object room;
 
         if( ! query("exits/down") ) return;
-        message("vision", WHT "\nʯ����Ȼ����������һ���춯���������ƻ�"
-                          "ԭ���������µĽ��ݸ��˸���ʵ��\n" NOR,
+        message("vision", WHT "\n石桌忽然「軋軋軋」一陣響動，緩緩地移回"
+                          "原處，將向下的階梯蓋了個嚴實。\n" NOR,
                           this_object() );
         delete("exits/down");
 }
@@ -95,7 +95,7 @@ int do_turn(string arg)
 
         if( arg == "lunpan" && (int)query("poem_said") == 1 )
         {
-                write(HIC "�����Ŵ������̣���������������ת����\n" NOR);
+                write(HIC "你試著觸動輪盤，發現它可以左右轉動。\n" NOR);
                 return 1;
         }
 
@@ -103,24 +103,24 @@ int do_turn(string arg)
         {
                 if( dir == "left" )
                 {
-                        message_vision(HIW "$N" HIW "����������ת����һȦ"
-                                       "������Ȼ�����������������죬������"
-                                       "ת�˻�ԭλ��\n" NOR, this_player());
+                        message_vision(HIW "$N" HIW "將輪盤向左轉動了一圈"
+                                       "……忽然「喀喀喀」幾聲輕響，輪盤又"
+                                       "轉了回原位。\n" NOR, this_player());
                         addn("zuo", 1);
                         check_trigger();
                         return 1;
                 }
                 if( dir == "right" )
                 {
-                        message_vision(HIR "$N" HIR "����������ת����һȦ"
-                                       "������Ȼ�����������������죬������"
-                                       "ת�˻�ԭλ��\n" NOR, this_player());
+                        message_vision(HIR "$N" HIR "將輪盤向右轉動了一圈"
+                                       "……忽然「喀喀喀」幾聲輕響，輪盤又"
+                                       "轉了回原位。\n" NOR, this_player());
                         addn("you", 1);
                         check_trigger();
                         return 1;
                 }
            else {
-                        write(HIC "��Ҫ�����������ĸ�����ת����\n" NOR);
+                        write(HIC "你要將輪盤向著哪個方向轉動？\n" NOR);
                         return 1;
                 }
         }
@@ -132,21 +132,21 @@ int do_say(string arg)
 
         if( ! arg || arg == "" ) return 0;
 
-        if( arg == "��ر���ʱ" && (int)query("poem_said") != 1 )
+        if( arg == "天地崩裂時" && (int)query("poem_said") != 1 )
         {
-                message_vision(HIW "\nֻ��$N" HIW "��Ȼ�����ȵ�������ر�"
-                               "��ʱ����\n" NOR + HIR "\n$N" HIR "������"
-                               "�䣬����ͻȻ����¡¡���ζ��˼��¡���ʯ����"
-                               "�����ʯм��ʱ���䣬¶����һ��ʯ�̡�\n\n"
+                message_vision(HIW "\n只聽$N" HIW "猛然高聲喝道：“天地崩"
+                               "裂時！”\n" NOR + HIR "\n$N" HIR "話音剛"
+                               "落，地面突然「轟隆隆」晃動了幾下。青石桌案"
+                               "表層的石屑登時脫落，露出了一個石盤。\n\n"
                                NOR, this_player());
                 this_object()->recreate();
                 set("poem_said", 1);
                 return 1;
         }
 
-        if( arg == "��ر���ʱ" && (int)query("poem_said") == 1 )
+        if( arg == "天地崩裂時" && (int)query("poem_said") == 1 )
         {
-                write(HIC "\n����Ŵ���һ���ͺȣ�������˾�ڻص��˺�һ������š�\n" NOR);
+                write(HIC "\n你對著大堂一聲猛喝，聲音在司內回盪了好一陣才消逝。\n" NOR);
                 return 1;
         }
 }
@@ -160,29 +160,29 @@ void reset()
 
 void recreate()
 {
-        set("short", HIB "���ֻ�˾��" NOR);
+        set("short", HIB "【輪回司】" NOR);
         set("long", HIB @LONG
 
-                    ��         ��         ˾
+                    輪         回         司
 
-    �ֻ�˾�ں���ɭɭ����ʯ����ĵ������ǻҳ��������಼Χᣣ�Χ�
-���ý���˿������Щ��ֵ�ͼ����������һ����ʯ���� (table)��������
-�����Ѿ����䣬¶���ڲ���һ��ʯ������(lunpan)��
+    輪回司內寒氣森森，青石舖設的地面滿是灰塵。堂周青布圍幔，圍幔
+上用金銀絲線繡著些奇怪的圖案，正堂上一張青石桌案 (table)，桌案的
+表層已經脫落，露出內部的一個石制輪盤(lunpan)。
 
 LONG NOR );
 
         set("item_desc", ([
-                "table" : WHT "һ����ʯ�Ƴɵ������������м���"
-                          "�ѷ죬���ı����Ѿ������ˡ�\n" NOR,
-                "lunpan": WHT "һ��ʯ�Ƶ����̣��������ǻ��ƣ���"
-                          "������ת����\n" NOR,
+                "table" : WHT "一個青石制成的桌案，上面有幾許"
+                          "裂縫，它的表層已經脫落了。\n" NOR,
+                "lunpan": WHT "一個石制的輪盤，上面滿是花紋，似"
+                          "乎可以轉動。\n" NOR,
         ]));
 
         set("exits", ([
                 "out" : __DIR__"lunhuisi_road1",
         ]));
 
-        create_door("out", YEL "ͭ��" NOR, "enter", DOOR_CLOSED);
+        create_door("out", YEL "銅門" NOR, "enter", DOOR_CLOSED);
         set("no_magic", 1);
         setup();
 }

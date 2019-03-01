@@ -5,18 +5,18 @@ inherit SWORD;
 
 void create()
 {
-        set_name(HIG "ÎŞÃû½£" NOR, ({ "wuming jian", "wuming", "jian" }) );
+        set_name(HIG "ç„¡ååŠ" NOR, ({ "wuming jian", "wuming", "jian" }) );
         set_weight(28000);
         if (clonep())
                 destruct(this_object());
         else {
-                set("long", HIG "´Ë½£³¤Ô¼ËÄ³ß£¬Çà¹âÉÁÉÁ£¬ËÆÊÇÀûÆ÷¡£\nÄË½£Ä§¶À¹ÂÇó°ÜÄêÇáÊ±Ëù³Ö¡£\n" NOR);
-                set("unit", "±ú");
+                set("long", HIG "æ­¤åŠé•·ç´„å››å°ºï¼Œé’å…‰é–ƒé–ƒï¼Œä¼¼æ˜¯åˆ©å™¨ã€‚\nä¹ƒåŠé­”ç¨å­¤æ±‚æ•—å¹´è¼•æ™‚æ‰€æŒã€‚\n" NOR);
+                set("unit", "æŸ„");
                 set("value", 8000);
                 set("no_sell", 1);
                 set("material", "steel");
-                set("wield_msg", HIG "$N" NOR + WHT "³é³ö$n" NOR + WHT"£¬¸ºÊÖ¶øÁ¢£¬Ò»ÅÉ×ÚÊ¦·ç·¶¡£\n" NOR);
-                set("unwield_msg", HIG "$N" NOR + WHT "ÇåĞ¥Ò»Éù£¬µ¯Ö¸¼ä£¬½«$n" NOR + WHT "ÊÕ»Ø¡£\n" NOR);
+                set("wield_msg", HIG "$N" NOR + WHT "æŠ½å‡º$n" NOR + WHT"ï¼Œè² æ‰‹è€Œç«‹ï¼Œä¸€æ´¾å®—å¸«é¢¨èŒƒã€‚\n" NOR);
+                set("unwield_msg", HIG "$N" NOR + WHT "æ¸…å˜¯ä¸€è²ï¼Œå½ˆæŒ‡é–“ï¼Œå°‡$n" NOR + WHT "æ”¶å›ã€‚\n" NOR);
                 set("stable", 100);
         }
         init_sword(80);

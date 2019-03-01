@@ -13,26 +13,26 @@ int main(object me,string arg)
                 return help();
         if(sscanf(arg,"%s %s",cmd,arg)!=2)
         {
-                write("²ÎÊı´íÎó£¡\n");
+                write("åƒæ•¸éŒ¯èª¤ï¼\n");
                 return help();
         }
         
         cmd=lower_case(cmd);
         if(cmd!="select")
-                return notify_fail("ÔİÊ±²»ÄÜÖ´ĞĞ³ıÁËselectÒÔÍâµÄSQL²éÑ¯£¡\n");
-        log_file("sqlcmd","\n"+ctime(time())+me->name()+"("+query("id", me)+")Ö´ĞĞÁËSQL²éÑ¯£º\n"+cmd+""+arg);
+                return notify_fail("æš«æ™‚ä¸èƒ½åŸ·è¡Œé™¤äº†selectä»¥å¤–çš„SQLæŸ¥è©¢ï¼\n");
+        log_file("sqlcmd","\n"+ctime(time())+me->name()+"("+query("id", me)+")åŸ·è¡Œäº†SQLæŸ¥è©¢ï¼š\n"+cmd+""+arg);
         res=DATABASE_D->do_sql(cmd+" "+arg);
         if(arrayp(res)&&sizeof(res))
-                write("SQL²éÑ¯·µ»Ø½á¹û£º\n"+save_variable(res)+"\n");
+                write("SQLæŸ¥è©¢è¿”å›çµæœï¼š\n"+save_variable(res)+"\n");
         else
-                write("SQL²éÑ¯ÎŞ·µ»Ø½á¹û£¡\n");
+                write("SQLæŸ¥è©¢ç„¡è¿”å›çµæœï¼\n");
         return 1;
 }
 
 int help()
 {
-        write(NOR+"\nSQL²éÑ¯ÃüÁî²âÊÔ°æ£¡Written By JackyBoy\n\n"+
-                "ÃüÁîÓï·¨£º"+HIG+"sql <SQLÓï¾ä> \n"+NOR
-                "Ä¿Ç°Ö»Ö§³Ö"+HIR+"select"+NOR+"²éÑ¯£¡\n");
+        write(NOR+"\nSQLæŸ¥è©¢å‘½ä»¤æ¸¬è©¦ç‰ˆï¼Written By JackyBoy\n\n"+
+                "å‘½ä»¤èªæ³•ï¼š"+HIG+"sql <SQLèªå¥> \n"+NOR
+                "ç›®å‰åªæ”¯æŒ"+HIR+"select"+NOR+"æŸ¥è©¢ï¼\n");
         return 1;
 }

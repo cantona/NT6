@@ -5,24 +5,24 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIW "ÄªĞ°Ê¥·û" NOR, ({ "moye fu", "moye", "fu" }) );
+        set_name(HIW "è«é‚ªè–ç¬¦" NOR, ({ "moye fu", "moye", "fu" }) );
         set_weight(1);
 
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "ÄªĞ°Ê¥·û¿ÉÒÔ½«ÆÕÍ¨µÀ¾ßÉı¼¶Îª×ÔÔìµÀ¾ß£¬ÒÔºó¿ÉÒÔËæÊ±ÕÙ»½Éı¼¶ºóµÄµÀ¾ß¡£\n"
-                                                "Ö¸Áî¸ñÊ½£º upd <ÓûÉı¼¶µÀ¾ßID> to <Éı¼¶ºóµÄµÀ¾ßID> \n"
-                                                                "Ä¿Ç°½ö½öÏŞÓÚÉı¼¶·À¾ßÀàµÀ¾ß¡£\n" NOR);
+                set("long", HIW "è«é‚ªè–ç¬¦å¯ä»¥å°‡æ™®é€šé“å…·å‡ç´šç‚ºè‡ªé€ é“å…·ï¼Œä»¥å¾Œå¯ä»¥éš¨æ™‚å¬å–šå‡ç´šå¾Œçš„é“å…·ã€‚\n"
+                                                "æŒ‡ä»¤æ ¼å¼ï¼š upd <æ¬²å‡ç´šé“å…·ID> to <å‡ç´šå¾Œçš„é“å…·ID> \n"
+                                                                "ç›®å‰åƒ…åƒ…é™äºå‡ç´šé˜²å…·é¡é“å…·ã€‚\n" NOR);
                 set("value", 1);
                 set("no_sell", 1);
-                        set("unit", "ÕÅ");
+                        set("unit", "å¼µ");
         }
 
         setup();
 }
 
-// ¼ì²éĞÂIDÊÇ·ñºÏ·¨
+// æª¢æŸ¥æ–°IDæ˜¯å¦åˆæ³•
 int check_legal_id(string id)
 {
                 int i;
@@ -31,8 +31,8 @@ int check_legal_id(string id)
 
                 if ((strlen(id) < 4) || (strlen(id) > 10))
                 {
-                        write(WHT "\n¶Ô²»Æğ£¬Éı¼¶ºóµÄID±ØĞëÊÇ" HIY " 4 " NOR + WHT 
-                                  "µ½" HIY " 10 " NOR + WHT "¸öÓ¢ÎÄ×ÖÄ¸¡£\n" NOR);
+                        write(WHT "\nå°ä¸èµ·ï¼Œå‡ç´šå¾Œçš„IDå¿…é ˆæ˜¯" HIY " 4 " NOR + WHT 
+                                  "åˆ°" HIY " 10 " NOR + WHT "å€‹è‹±æ–‡å­—æ¯ã€‚\n" NOR);
                         return 0;
                 }
 
@@ -40,7 +40,7 @@ int check_legal_id(string id)
         {
                         if (id[i] < 'a' || id[i] > 'z' )
                         {
-                                write(WHT "\n¶Ô²»Æğ£¬ÄãµÄÓ¢ÎÄÃû×ÖÖ»ÄÜÓÃÓ¢ÎÄ×ÖÄ¸¡£\n" NOR);
+                                write(WHT "\nå°ä¸èµ·ï¼Œä½ çš„è‹±æ–‡åå­—åªèƒ½ç”¨è‹±æ–‡å­—æ¯ã€‚\n" NOR);
                                 return 0;
                         }
         }
@@ -58,8 +58,8 @@ void init()
 }
 
 
-// Éı¼¶µÀ¾ßÎª×ÔÔì±øÆ÷
-// upd <Ä¿±êµÀ¾ßID> <Éı¼¶ºóµÄID>
+// å‡ç´šé“å…·ç‚ºè‡ªé€ å…µå™¨
+// upd <ç›®æ¨™é“å…·ID> <å‡ç´šå¾Œçš„ID>
 int do_upd(string arg)
 {
                 object me;
@@ -67,53 +67,53 @@ int do_upd(string arg)
                 object ob;
                 mapping can_summon_list;
                 string *key_can_summon_list;
-                string head_file; // ×ÔÔìÎïÆ·ÎÄ¼ş¿ªÍ·
-                string input_file; // ×îºóĞ´ÈëµÄÎÄ¼şĞÅÏ¢
+                string head_file; // è‡ªé€ ç‰©å“æ–‡ä»¶é–‹é ­
+                string input_file; // æœ€å¾Œå¯«å…¥çš„æ–‡ä»¶ä¿¡æ¯
                 mapping armor_prop, limit;
                 string *key_armor_prop, *key_limit;
                 int i;
 
                 me = this_player();
 
-                if (! arg)return notify_fail("Ö¸Áî¸ñÊ½: upd <ÓûÉı¼¶µÀ¾ßID> to <Éı¼¶ºóµÄµÀ¾ßID>\n");
+                if (! arg)return notify_fail("æŒ‡ä»¤æ ¼å¼: upd <æ¬²å‡ç´šé“å…·ID> to <å‡ç´šå¾Œçš„é“å…·ID>\n");
 
                 if (sscanf(arg, "%s to %s", tar_id, new_id) != 2)
-                        return notify_fail("Ö¸Áî¸ñÊ½: upd <ÓûÉı¼¶µÀ¾ßID> to <Éı¼¶ºóµÄµÀ¾ßID>\n");
+                        return notify_fail("æŒ‡ä»¤æ ¼å¼: upd <æ¬²å‡ç´šé“å…·ID> to <å‡ç´šå¾Œçš„é“å…·ID>\n");
                 
 /*
-1¡¢Ê×ÏÈÅĞ¶Ï¸ÃµÀ¾ßÊÇ·ñ´æÔÚ¡£
-2¡¢¸ÃµÀ¾ßÊÇ·ñÎª·À¾ß¡£
-3¡¢¸ÃµÀ¾ßÊÇ·ñ¿ÉÉı¼¶
-3.1 ¸ÃµÀ¾ßÊÇ·ñÏÂÏß²»¶ªÊ§
-3.2 ¸ÃµÀ¾ßÊÇ·ñÎª×ÔÔìµÀ¾ß¡£
-3.3 ¸ÃÎïÆ·ĞÂIDÊÇ·ñºÏ·¨£¬È«ÎªÓ¢ÎÄÃû¡£
-3.4 ¸ÃÎïÆ·ĞÂIDÊÇ·ñÓëÏÖÓĞ×ÔÔìÎïÆ·IDÖØ¸´£¨can_summon)¡£
+1ã€é¦–å…ˆåˆ¤æ–·è©²é“å…·æ˜¯å¦å­˜åœ¨ã€‚
+2ã€è©²é“å…·æ˜¯å¦ç‚ºé˜²å…·ã€‚
+3ã€è©²é“å…·æ˜¯å¦å¯å‡ç´š
+3.1 è©²é“å…·æ˜¯å¦ä¸‹ç·šä¸ä¸Ÿå¤±
+3.2 è©²é“å…·æ˜¯å¦ç‚ºè‡ªé€ é“å…·ã€‚
+3.3 è©²ç‰©å“æ–°IDæ˜¯å¦åˆæ³•ï¼Œå…¨ç‚ºè‹±æ–‡åã€‚
+3.4 è©²ç‰©å“æ–°IDæ˜¯å¦èˆ‡ç¾æœ‰è‡ªé€ ç‰©å“IDé‡å¾©ï¼ˆcan_summon)ã€‚
 */
-        // Ê×ÏÈÅĞ¶Ï¸ÃµÀ¾ßÊÇ·ñ´æÔÚ
+        // é¦–å…ˆåˆ¤æ–·è©²é“å…·æ˜¯å¦å­˜åœ¨
                 if (! objectp(ob = present(tar_id, me)))
-                        return notify_fail("ÄãÉíÉÏºÃÏóÃ»ÓĞÕâ¸öÎïÆ·°É£¡\n");
+                        return notify_fail("ä½ èº«ä¸Šå¥½è±¡æ²’æœ‰é€™å€‹ç‰©å“å§ï¼\n");
 
-                // ¼ì²éobÊÇ·ñÎª·À¾ß
+                // æª¢æŸ¥obæ˜¯å¦ç‚ºé˜²å…·
                 if (! stringp(armor_type = ob->query("armor_type")))
-                        return notify_fail("¶Ô²»Æğ£¬Ö»ÄÜÉı¼¶·À¾ßÀàÎïÆ·¡£\n");
+                        return notify_fail("å°ä¸èµ·ï¼Œåªèƒ½å‡ç´šé˜²å…·é¡ç‰©å“ã€‚\n");
 
-                // ¸ÃµÀ¾ßÊÇ·ñ¿ÉÉı¼¶
-                // ¸ÃµÀ¾ßÊÇ·ñÏÂÏß²»¶ªÊ§
+                // è©²é“å…·æ˜¯å¦å¯å‡ç´š
+                // è©²é“å…·æ˜¯å¦ä¸‹ç·šä¸ä¸Ÿå¤±
                 if (! ob->query_autoload())
-                        return notify_fail("ÄãÖ»ÄÜÉı¼¶ÏÂÏß²»¶ªÊ§µÄÎïÆ·¡£\n");
+                        return notify_fail("ä½ åªèƒ½å‡ç´šä¸‹ç·šä¸ä¸Ÿå¤±çš„ç‰©å“ã€‚\n");
                 
-                // ¸ÃµÀ¾ßÊÇ·ñÎª×ÔÔìµÀ¾ß
+                // è©²é“å…·æ˜¯å¦ç‚ºè‡ªé€ é“å…·
                 if (ob->is_item_make())
-                        return notify_fail("×ÔÔìÎïÆ·²»ÄÜÉı¼¶¡£\n");                
+                        return notify_fail("è‡ªé€ ç‰©å“ä¸èƒ½å‡ç´šã€‚\n");                
 
                 // 
                 if (ob->query("no_upd"))
-                        return notify_fail("¸ÃÌØÊâÎïÆ·²»ÄÜÉı¼¶¡£\n");
+                        return notify_fail("è©²ç‰¹æ®Šç‰©å“ä¸èƒ½å‡ç´šã€‚\n");
                         
-                // ¸ÃÎïÆ·ĞÂIDÊÇ·ñºÏ·¨£¬È«ÎªÓ¢ÎÄÃû
+                // è©²ç‰©å“æ–°IDæ˜¯å¦åˆæ³•ï¼Œå…¨ç‚ºè‹±æ–‡å
                 if (! check_legal_id(new_id))return 1;
                                                 
-                // ¸ÃÎïÆ·ĞÂIDÊÇ·ñÓëÏÖÓĞ×ÔÔìÎïÆ·IDÖØ¸´£¨can_summon)
+                // è©²ç‰©å“æ–°IDæ˜¯å¦èˆ‡ç¾æœ‰è‡ªé€ ç‰©å“IDé‡å¾©ï¼ˆcan_summon)
                 can_summon_list = me->query("can_summon");
 
                 if (mapp(can_summon_list))
@@ -124,29 +124,29 @@ int do_upd(string arg)
 
                                 if (member_array(new_id, key_can_summon_list) != -1)
                                 {
-                                        return notify_fail("Éı¼¶ºóµÄIDÃûÓĞÖØ¸´£¬ÇëÊäÈë summon ²é¿´ÒÑÓĞµÄIDÃû¡£\n");
+                                        return notify_fail("å‡ç´šå¾Œçš„IDåæœ‰é‡å¾©ï¼Œè«‹è¼¸å…¥ summon æŸ¥çœ‹å·²æœ‰çš„IDåã€‚\n");
                                 }
                         }
                 }
                 
-                // Èç¹ûÊÇÑ«ÕÂÔò¼ÓÉÏÖîÉñ´ÍÓè xxx(id)
+                // å¦‚æœæ˜¯å‹›ç« å‰‡åŠ ä¸Šè«¸ç¥è³œäºˆ xxx(id)
                 if (ob->query("armor_type") == "medal" ||
                     ob->query("armor_type") == "medal2")
                 {
                         ob->set("long", ob->query("long") + 
-                                        HIC "Ö»¼ûÑ«ÕÂµÄ±ßÔµ¿Ì×ÅÒ»ÅÅĞ¡×Ö£ºÖîÉñ´ÍÓè " + me->name() + HIC + "(" + me->query("id") + ")\n" NOR);
+                                        HIC "åªè¦‹å‹›ç« çš„é‚Šç·£åˆ»è‘—ä¸€æ’å°å­—ï¼šè«¸ç¥è³œäºˆ " + me->name() + HIC + "(" + me->query("id") + ")\n" NOR);
                 }
 
 
 /*
-4¡¢½øĞĞÉı¼¶
-4.1 ¸ù¾İµÀ¾ßÀàĞÍÉèÖÃÏà¹ØÊı¾İ£¬²¢Ğ´ÈëÎÄ¼ş¡£
-4.2 ÉèÖÃ¸ÃÍæ¼Òcan_summon Êı¾İ¡£
-4.3 destruct ¸ÃµÀ¾ßºÍÉı¼¶µÀ¾ß£¬²¢ÌáÊ¾summon
+4ã€é€²è¡Œå‡ç´š
+4.1 æ ¹æ“šé“å…·é¡å‹è¨­ç½®ç›¸é—œæ•¸æ“šï¼Œä¸¦å¯«å…¥æ–‡ä»¶ã€‚
+4.2 è¨­ç½®è©²ç©å®¶can_summon æ•¸æ“šã€‚
+4.3 destruct è©²é“å…·å’Œå‡ç´šé“å…·ï¼Œä¸¦æç¤ºsummon
 */
 
-                // 4¡¢½øĞĞÉı¼¶
-                // 4.1 ¸ù¾İµÀ¾ßÀàĞÍÉèÖÃÏà¹ØÊı¾İ£¬²¢Ğ´ÈëÎÄ¼ş¡£
+                // 4ã€é€²è¡Œå‡ç´š
+                // 4.1 æ ¹æ“šé“å…·é¡å‹è¨­ç½®ç›¸é—œæ•¸æ“šï¼Œä¸¦å¯«å…¥æ–‡ä»¶ã€‚
                 head_file = 
                 "\n"
                 "#include <ansi.h>\n"
@@ -176,12 +176,12 @@ int do_upd(string arg)
                 head_file += "\tif (! check_clone()) return;\n";
                 head_file += "\trestore();\n";
 
-                // Ìæ»»head_fileÖĞÄÚÈİ
-                // 1. ==ARMOR_TYPE== ·À¾ßÀàĞÍ
+                // æ›¿æ›head_fileä¸­å…§å®¹
+                // 1. ==ARMOR_TYPE== é˜²å…·é¡å‹
                 //    ==ARMOR_ID==
                 head_file = replace_string(head_file, "==ARMOR_TYPE==", upper_case(armor_type));
                 head_file = replace_string(head_file, "==ARMOR_ID==", "\"" + new_id + "\"");
-                // 2. ==ARMOR_NAME== Ãû³Æ
+                // 2. ==ARMOR_NAME== åç¨±
                 head_file = replace_string(head_file, "==ARMOR_NAME==", "\"" + ob->name() + "\"");
                 // 3. ==ARMOR_WEIGHT==
                 head_file = replace_string(head_file, "==ARMOR_WEIGHT==", sprintf("%d", ob->query_weight()));
@@ -198,7 +198,7 @@ int do_upd(string arg)
                                                                             "\"" + ob->query("material") + "\"" : 
                                                                                 "\"" +  "steel" + "\"");
                         
-                // 11.ÉèÖÃµÀ¾ßµÄarmor_pro
+                // 11.è¨­ç½®é“å…·çš„armor_pro
                 armor_prop = ob->query("armor_prop");
                 
                 key_armor_prop = keys(armor_prop);
@@ -209,7 +209,7 @@ int do_upd(string arg)
                         {
                                 if (key_armor_prop[i] == "armor")continue;                                
                                 
-                                // Èç¹ûÎª»¤Éí·û ÔòÔİÊ±²»Ğ´Èëfy&qyÖµ£¬ÔÚÑ­»·ºóµ¥¶ÀĞ´Èë
+                                // å¦‚æœç‚ºè­·èº«ç¬¦ å‰‡æš«æ™‚ä¸å¯«å…¥fy&qyå€¼ï¼Œåœ¨å¾ªç’°å¾Œå–®ç¨å¯«å…¥
                                 if (ob->query("armor_type") == "myheart" || 
                                     ob->query("armor_type") == "myheart2")
                                 {
@@ -225,7 +225,7 @@ int do_upd(string arg)
                                         input_file += sprintf("%d", armor_prop[key_armor_prop[i]]) + ");\n";
                         } 
                         
-                        // µ¥¶ÀĞ´Èë¸£Ôµ¼°ÆøÔËµÄ¼ÆËã¹«Ê½
+                        // å–®ç¨å¯«å…¥ç¦ç·£åŠæ°£é‹çš„è¨ˆç®—å…¬å¼
                         if (ob->query("armor_type") == "myheart" || 
                             ob->query("armor_type") == "myheart2")
                         {
@@ -237,10 +237,10 @@ int do_upd(string arg)
                 
                 }
                 input_file += "\tset(\"armor_prop/armor\", apply_armor());\n";
-                // Èç¹ûÎŞarmor_prop²»ÄÜ×°±¸£¬¿ÉÉèÖÃ
+                // å¦‚æœç„¡armor_propä¸èƒ½è£å‚™ï¼Œå¯è¨­ç½®
                 input_file += "\tset(\"armor_prop/can_wear\", 1);\n";
 
-                // 12. ÉèÖÃµÀ¾ßlimitĞÅÏ¢
+                // 12. è¨­ç½®é“å…·limitä¿¡æ¯
                 limit = ob->query("limit");
                 if (mapp(limit))key_limit = keys(limit);
                 if (sizeof(key_limit))
@@ -256,26 +256,26 @@ int do_upd(string arg)
                 input_file += "}\n\n";
                 input_file += "string long() { return query(\"long\") + item_long(); }\n\n";
 
-                // Ğ´ÈëÎÄ¼ş
+                // å¯«å…¥æ–‡ä»¶
                 if (! ITEM_D->extern_write_file("/data/item/" + me->query("id")[0..0] + "/" + me->query("id") + "-" + new_id + ".c",
                                               input_file, 
                                                                   1) )
                 {
-                        return notify_fail("Éı¼¶Ê§°Ü£¬Ğ´ÈëÎÄ¼şÒì³£¡£\n");
+                        return notify_fail("å‡ç´šå¤±æ•—ï¼Œå¯«å…¥æ–‡ä»¶ç•°å¸¸ã€‚\n");
                 }                                
 
-                // ¸üĞÂµÀ¾ß
+                // æ›´æ–°é“å…·
                 load_object("/data/item/" + me->query("id")[0..0] + "/" + me->query("id") + "-" + new_id + ".c");
 
-                // ¼ÇÂ¼
-                log_file("moyefu", me->query("id") + " ÓÚ " + ctime(time()) + " Ê¹ÓÃÄªĞ°·ûÉı¼¶ " + new_id + "¡£\n");
+                // è¨˜éŒ„
+                log_file("moyefu", me->query("id") + " äº " + ctime(time()) + " ä½¿ç”¨è«é‚ªç¬¦å‡ç´š " + new_id + "ã€‚\n");
                 
-                // ÉèÖÃCAN_SUMMON
+                // è¨­ç½®CAN_SUMMON
                 me->set("can_summon/" + new_id, "/data/item/" + me->query("id")[0..0] + "/" + me->query("id") + "-" + new_id + ".c");
                 me->save();
 
-                // ÌáÊ¾
-                write(HIG "Éı¼¶Íê±Ï£¬ÇëÊäÈëÖ¸Áî summon " + new_id + " ÕÙ»ØÉı¼¶ºóµÄÎïÆ·¡£\n" NOR);
+                // æç¤º
+                write(HIG "å‡ç´šå®Œç•¢ï¼Œè«‹è¼¸å…¥æŒ‡ä»¤ summon " + new_id + " å¬å›å‡ç´šå¾Œçš„ç‰©å“ã€‚\n" NOR);
 
                 destruct(ob);
                 destruct(this_object());

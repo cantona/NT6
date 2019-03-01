@@ -7,14 +7,14 @@ inherit NPC;
 int ask_xdh(object me, object ob);
 void create()
 {
-        set_name("ÊØÎÀ",({"shou wei","guard"}) );
-        set("long","ÕâÊÇÒ»¸öÄêÇáÈË£¬³¤µÄÁ÷ÀïÁ÷ÆøµÄ¡£\n");
-        set("title","Ð¡µ¶»á°ïÖÚ");
-        set("gender","ÄÐÐÔ");
+        set_name("å®ˆè¡›",({"shou wei","guard"}) );
+        set("long","é€™æ˜¯ä¸€å€‹å¹´è¼•äººï¼Œé•·çš„æµè£¡æµæ°£çš„ã€‚\n");
+        set("title","å°åˆ€æœƒå¹«çœ¾");
+        set("gender","ç”·æ€§");
         set("age",20);
         set("combat_exp",100);
         set("inquiry",([
-                "Ð¡µ¶»á" : (: ask_xdh :),
+                "å°åˆ€æœƒ" : (: ask_xdh :),
         ]) );
         setup();
 }
@@ -24,23 +24,23 @@ int ask_xdh(object me, object ob)
         
         me=this_player();
         ob=this_object();
-        if( query("bunch/bunch_name", me) != "Ð¡µ¶»á" )
+        if( query("bunch/bunch_name", me) != "å°åˆ€æœƒ" )
         {
                 command("grin");
-                tell_object(me,"Ð¡µ¶»áÊØÎÀËµ£º¡°ÊÇÏëÍ¶±¼ÔÛÃÇÐ¡µ¶»á°É£¿ÄÇ¾ÍµÃÊØ¹æ¾Ø¡£¡±\n");
-                tell_object(me,HIB"Ð¡µ¶»áÊØÎÀÓÃºÚ²¼ÃÉÉÏÄãµÄÑÛ¾¦£¬´ø×ÅÄãÆß×ß°Ë×ß£¬×îºóºÃÏóµ½ÁËÒ»
-¼äÎÝ×ÓÀïÃæ¡£\nÄãÃÉ×ÅµÄºÚ²¼Ò²±»ÈËÈ¡ÁËÏÂÀ´¡£\n"NOR);
-                tell_room("$N±»´øÁË½øÀ´¡£\n",me);
+                tell_object(me,"å°åˆ€æœƒå®ˆè¡›èªªï¼šâ€œæ˜¯æƒ³æŠ•å¥”å’±å€‘å°åˆ€æœƒå§ï¼Ÿé‚£å°±å¾—å®ˆè¦çŸ©ã€‚â€\n");
+                tell_object(me,HIB"å°åˆ€æœƒå®ˆè¡›ç”¨é»‘å¸ƒè’™ä¸Šä½ çš„çœ¼ç›ï¼Œå¸¶è‘—ä½ ä¸ƒèµ°å…«èµ°ï¼Œæœ€å¾Œå¥½è±¡åˆ°äº†ä¸€
+é–“å±‹å­è£¡é¢ã€‚\nä½ è’™è‘—çš„é»‘å¸ƒä¹Ÿè¢«äººå–äº†ä¸‹ä¾†ã€‚\n"NOR);
+                tell_room("$Nè¢«å¸¶äº†é€²ä¾†ã€‚\n",me);
                 me->move("/d/city/xdhzb");
                 return 1;
         }
         if (good_bunch(me))
         {
-                command("say ÎÒÃÇÐ¡µ¶»á²»»¶Ó­ÄãÕâÖÖ×ÔÃüÕýÅÉµÄÈË£¡Çë»Ø°É¡£\n");
+                command("say æˆ‘å€‘å°åˆ€æœƒä¸æ­¡è¿Žä½ é€™ç¨®è‡ªå‘½æ­£æ´¾çš„äººï¼è«‹å›žå§ã€‚\n");
                 return 1;
         }
         
-        tell_object(me,"Ð¡µ¶»áÊØÎÀÆæ¹ÖµÀ£º¡°Í¬Îª±¾°ïÐÖµÜ£¬ÄãºÎ³ö´ËÑÔ°¡£¿¡±\n");
+        tell_object(me,"å°åˆ€æœƒå®ˆè¡›å¥‡æ€ªé“ï¼šâ€œåŒç‚ºæœ¬å¹«å…„å¼Ÿï¼Œä½ ä½•å‡ºæ­¤è¨€å•Šï¼Ÿâ€\n");
         return 1;
 }
 

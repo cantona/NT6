@@ -4,7 +4,7 @@
 
 int is_scborn() { return 1; }
 
-string name() { return HIC "º£ÄÉ°Ù´¨" NOR; }
+string name() { return HIC "æµ·ç´ç™¾å·" NOR; }
 
 int perform(object me, string skill, string arg)
 {
@@ -13,20 +13,20 @@ int perform(object me, string skill, string arg)
 	joblv = me->query_joblv();
 
         if (me->query_temp("special2/haina/joblv"))
-                return notify_fail("ÄãÒÑ¾­ÔÚÔË¹¦ÖĞÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“åœ¨é‹åŠŸä¸­äº†ã€‚\n");
 
-	if (me->query("yhjob/job") != "ÒşÊ¿")
-		return notify_fail("ÄãµÄÖ°Òµ´íÎó£¬ÎŞ·¨Ê©Õ¹¡£\n");
+	if (me->query("yhjob/job") != "éš±å£«")
+		return notify_fail("ä½ çš„è·æ¥­éŒ¯èª¤ï¼Œç„¡æ³•æ–½å±•ã€‚\n");
 		
 	if (me->query("neili") < 1000)
-		return notify_fail("ÄãµÄÄÚÁ¦²»×ã£¬ÎŞ·¨Ê©Õ¹¡£\n");
+		return notify_fail("ä½ çš„å…§åŠ›ä¸è¶³ï¼Œç„¡æ³•æ–½å±•ã€‚\n");
 
 	if (joblv < 20)
-		return notify_fail("ÄãµÄÖ°ÒµµÈ¼¶²»×ã£¬ÎŞ·¨Ê©Õ¹¡£\n");		
+		return notify_fail("ä½ çš„è·æ¥­ç­‰ç´šä¸è¶³ï¼Œç„¡æ³•æ–½å±•ã€‚\n");		
 
-        if (me->is_busy())return notify_fail("µÈÄãÃ¦ÍêÔÙËµ°É£¡\n");
+        if (me->is_busy())return notify_fail("ç­‰ä½ å¿™å®Œå†èªªå§ï¼\n");
 
-        message_vision(HIM "$N" HIM "Á³É«Î¢±ä£¬ÉîÎüÒ»¿ÚÆø£¬È»ºó»º»ºÍÂ³ö£¬Çê¿Ì¼ä£¬ÖÜÉíÃÖÂş×ÅÕóÕó±¡Îí¡£\n" NOR, me);
+        message_vision(HIM "$N" HIM "è‡‰è‰²å¾®è®Šï¼Œæ·±å¸ä¸€å£æ°£ï¼Œç„¶å¾Œç·©ç·©åå‡ºï¼Œé ƒåˆ»é–“ï¼Œå‘¨èº«å½Œæ¼«è‘—é™£é™£è–„éœ§ã€‚\n" NOR, me);
  
         me->add("neili", -1000);
         me->start_busy(1);
@@ -36,7 +36,7 @@ int perform(object me, string skill, string arg)
         me->set_temp("special2/haina/joblv", joblv);
 	armor = me->query_temp("apply/armor");
 	damage = me->query_temp("apply/damage");
-	attack = 1;//me->query_temp("apply/attack"); ÔÚ combatd.cÀï×ö´¦Àí
+	attack = 1;//me->query_temp("apply/attack"); åœ¨ combatd.cè£¡åšè™•ç†
 
 	armor = armor + armor / 10;
 	attack = 1;//attack * (10 + (joblv - 20) / 2) / 100;
@@ -61,7 +61,7 @@ void remove_effect(object me, int joblv, int armor, int damage, int attack)
 		me->add_temp("apply/damage", -1 * damage);
 		me->add_temp("apply/attack", -1 * attack);
 	        me->delete_temp("special2/haina/joblv");
-	        tell_object(me, "Äãº£ÄÉ°Ù´¨ÔË¹¦Íê±Ï¡£\n");
+	        tell_object(me, "ä½ æµ·ç´ç™¾å·é‹åŠŸå®Œç•¢ã€‚\n");
         }
 }
 

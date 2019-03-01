@@ -1,15 +1,15 @@
-// liangongfang.c Á·¹¦·¿
+// liangongfang.c ç·´åŠŸæˆ¿
 // Last Modified by winder on Jul. 12 2002
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "Á·¹¦·¿");
+        set("short", "ç·´åŠŸæˆ¿");
         set("long", @LONG
-ÕâÀïÊÇÉñÁú½ÌÃØÃÜµÄÁ·¹¦·¿£¬µØÏÂÕûÕûÆëÆë·Å×Å¼¸¸öÆÑÍÅ£¬¼¸Î»Éñ
-Áú½Ì³¤ÀÏÕýÅÌÏ¥×øÔÚÉÏÃæÁ·¹¦¡£ËÄ±ÚÁÐ×ÅÒ»Ð©¹ñ×Ó£¬³éÌëÖÐ·ÅÂúÁË¸÷Àà
-Ò©¾Æ¡£¹ñ×ÓÉÏ·Å×Å¼¸±¾ÉñÁú½Ì´Ó¸÷´¦ÁÔ»ñµÄÄÚ¹¦ÐÄ·¨²á×Ó¡£
+é€™è£¡æ˜¯ç¥žé¾æ•™ç§˜å¯†çš„ç·´åŠŸæˆ¿ï¼Œåœ°ä¸‹æ•´æ•´é½Šé½Šæ”¾è‘—å¹¾å€‹è’²åœ˜ï¼Œå¹¾ä½ç¥ž
+é¾æ•™é•·è€æ­£ç›¤è†ååœ¨ä¸Šé¢ç·´åŠŸã€‚å››å£åˆ—è‘—ä¸€äº›æ«ƒå­ï¼ŒæŠ½å±œä¸­æ”¾æ»¿äº†å„é¡ž
+è—¥é…’ã€‚æ«ƒå­ä¸Šæ”¾è‘—å¹¾æœ¬ç¥žé¾æ•™å¾žå„è™•çµç²çš„å…§åŠŸå¿ƒæ³•å†Šå­ã€‚
 LONG
         );
         set("exits", ([
@@ -35,10 +35,10 @@ int do_practice(string arg)
         if( query("sg/exp", me)<5000 )
         {
                 message("vision", 
-                        "Ö»¼ûÒ»Î»ÉñÁú½Ì³¤ÀÏ°Ñ"+me->name() + "Ò»½ÅÌßÁË³öÈ¥¡£\n",
+                        "åªè¦‹ä¸€ä½ç¥žé¾æ•™é•·è€æŠŠ"+me->name() + "ä¸€è…³è¸¢äº†å‡ºåŽ»ã€‚\n",
                         environment(me), ({me}));
                 me->move(__DIR__"zhulin1");
-                message_vision("$N±»ÉñÁú½Ì³¤ÀÏÌßÁË³öÀ´¡£\n", me);
+                message_vision("$Nè¢«ç¥žé¾æ•™é•·è€è¸¢äº†å‡ºä¾†ã€‚\n", me);
                 return 1;
         }
 
@@ -47,6 +47,6 @@ int do_practice(string arg)
         if(arg == "strike" && me->query_skill_mapped(arg) == "huagu-mianzhang" )
                 return 0;
 
-        write("ÕâÀïÊÇÐÞÏ°»¯¹ÇÃàÕÆµÄ³¡Ëù¡£\n");
+        write("é€™è£¡æ˜¯ä¿®ç¿’åŒ–éª¨ç¶¿æŽŒçš„å ´æ‰€ã€‚\n");
         return 1;
 }

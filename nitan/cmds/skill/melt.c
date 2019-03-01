@@ -9,36 +9,36 @@ int main(object me, string arg)
         object ob;
 
         if (! arg)
-                return notify_fail("ÄãÒªÈÜ»¯Ê²Ã´µÀ¾ßµÄ°¼²ÛÎïÆ·£¿\n");
+                return notify_fail("ä½ è¦æº¶åŒ–ä»€éº¼é“å…·çš„å‡¹æ§½ç‰©å“ï¼Ÿ\n");
 
         if (me->is_busy())
-                return notify_fail("ÏÈÃ¦ÍêÁËÄãµÄÊÂÇéÔÙ×öÕâ¼şÊÂÇé°É£¡\n");
+                return notify_fail("å…ˆå¿™å®Œäº†ä½ çš„äº‹æƒ…å†åšé€™ä»¶äº‹æƒ…å§ï¼\n");
 
         if (me->is_fighting())
-                return notify_fail("ÄãÏÖÔÚÕıÔÚ´ò¼Ü£¬Ã»Ê±¼ä×öÕâĞ©ÊÂÇé¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£åœ¨æ‰“æ¶ï¼Œæ²’æ™‚é–“åšé€™äº›äº‹æƒ…ã€‚\n");
 
         if (! objectp(ob = present(arg, me)))
-                return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑùµÀ¾ß¡£\n");
+                return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™æ¨£é“å…·ã€‚\n");
 
         if( query("equipped", ob) )
-                return notify_fail("ÄãÏÈ½â³ı" + ob->name() + CYN "µÄ×°±¸ÔÙËµ£¡\n");
+                return notify_fail("ä½ å…ˆè§£é™¤" + ob->name() + CYN "çš„è£å‚™å†èªªï¼\n");
 
         if( !ob->is_item_make() && !query("unique", ob) )
-                return notify_fail("ÕâÀàÎïÆ·ÎŞĞëÇåÀí°¼²Û¡£\n");
+                return notify_fail("é€™é¡ç‰©å“ç„¡é ˆæ¸…ç†å‡¹æ§½ã€‚\n");
 
         if( !wizardp(me) && (ob->is_item_make() && ob->item_owner() != query("id", me)) )
-                return notify_fail("Õâ²»ÊÇÄãµÄÎïÆ·¡£\n");
+                return notify_fail("é€™ä¸æ˜¯ä½ çš„ç‰©å“ã€‚\n");
 
         if( !query("armor_type", ob) && !query("skill_type", ob) )
-                return notify_fail("ÕâÀàÎïÆ·ÎŞĞëÇåÀí°¼²Û¡£\n");
+                return notify_fail("é€™é¡ç‰©å“ç„¡é ˆæ¸…ç†å‡¹æ§½ã€‚\n");
 
         if( !query("enchase/flute", ob) )
-                return notify_fail("Õâ»¹Ã»ÓĞ¿ª²Û¹ıÁËÄØ¡£\n");
+                return notify_fail("é€™é‚„æ²’æœ‰é–‹æ§½éäº†å‘¢ã€‚\n");
 
         if( !query("enchase/used", ob) )
-                return notify_fail("ÕâÉÏÃæÃ»ÓĞÏâÇ¶¹ı¶«Î÷¡£\n");
+                return notify_fail("é€™ä¸Šé¢æ²’æœ‰é‘²åµŒéæ±è¥¿ã€‚\n");
 
-        notify_fail(ob->name() + "µÄ°¼²ÛÎïÆ·Ã»ÓĞ°ì·¨±»ÈÛÁ¶¡£\n");
+        notify_fail(ob->name() + "çš„å‡¹æ§½ç‰©å“æ²’æœ‰è¾¦æ³•è¢«ç†”ç…‰ã€‚\n");
 
         return ob->do_wash(me);
 }
@@ -46,9 +46,9 @@ int main(object me, string arg)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : melt <ÎïÆ·Ãû³Æ>
+æŒ‡ä»¤æ ¼å¼ : melt <ç‰©å“åç¨±>
 
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄãÔËÓÃÄÚÁ¦½«µÀ¾ß°¼²ÛÀïµÄÎïÆ·ÈÜ»¯µô¡£
+é€™å€‹æŒ‡ä»¤å¯ä»¥è®“ä½ é‹ç”¨å…§åŠ›å°‡é“å…·å‡¹æ§½è£¡çš„ç‰©å“æº¶åŒ–æ‰ã€‚
 HELP
     );
     return 1;

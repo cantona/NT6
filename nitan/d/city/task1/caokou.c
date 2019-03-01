@@ -1,15 +1,15 @@
-// caokou.c ²İ¿Ü
+// caokou.c è‰å¯‡
 
 #include <ansi.h>
 inherit NPC;
 
 void create()
 {
-        set_name("²İ¿Ü", ({ "cao  kou"}));
+        set_name("è‰å¯‡", ({ "cao  kou"}));
 //        set("nickname", "");
         set("long",
-        "Ò»¸öËÄ´¦Á÷´ÜµÄ²İ¿Ü£¬»µÊÂ¸ÉÁË²»ÉÙ¡£\n");
-        set("gender", "ÄĞĞÔ");
+        "ä¸€å€‹å››è™•æµç«„çš„è‰å¯‡ï¼Œå£äº‹å¹¹äº†ä¸å°‘ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", random(20) + 25);
         set("attitude", "peaceful");
         set("str", 25);

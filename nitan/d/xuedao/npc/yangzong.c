@@ -5,9 +5,9 @@ inherit NPC;
 
 void create()
 {
-        set_name("Ñë×Ú", ({ "yang zong", "yang", "zong" }));
-        set("long", "ËûÊÇÒ»Î»²Ø×åÍ¬°û¡£\n");
-        set("gender", "ÄÐÐÔ");
+        set_name("å¤®å®—", ({ "yang zong", "yang", "zong" }));
+        set("long", "ä»–æ˜¯ä¸€ä½è—æ—åŒèƒžã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 30);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -50,6 +50,6 @@ void greeting(object ob)
 {
         if (! ob) return;
 
-        say (CYN "Ñë×ÚºÏÊ²ÎªÀñ£¬ËµµÀ£º°¢åôÙ¢·ð£¡" +
-             RANK_D->query_respect(ob) + CYN "£¬Æ¶É®ÕâÏáÓÐÀñÁË¡£\n" NOR);
+        say (CYN "å¤®å®—åˆä»€ç‚ºç¦®ï¼Œèªªé“ï¼šé˜¿å¼­ä½—ä½›ï¼" +
+             RANK_D->query_respect(ob) + CYN "ï¼Œè²§åƒ§é€™å»‚æœ‰ç¦®äº†ã€‚\n" NOR);
 }

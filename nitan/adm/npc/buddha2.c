@@ -10,13 +10,13 @@ int ask_recover();
 void create()
 {
         seteuid(getuid());
-        set_name(HIY "ÊÍåÈÄ²Äá" NOR, ({ "buddha", "fo zu", "fo", "shijia muni" }));
+        set_name(HIY "é‡‹è¿¦ç‰Ÿå°¼" NOR, ({ "buddha", "fo zu", "fo", "shijia muni" }));
         set("long", @LONG
-·ğ×æ×¯ÑÏ±¦Ïñ£¬ÈÃÈË²»¸ÒÕıÊÓ¡£
+ä½›ç¥–èŠåš´å¯¶åƒï¼Œè®“äººä¸æ•¢æ­£è¦–ã€‚
 LONG);
-        set("nickname", HIW "Èı½ç·¨Íõ" NOR);
-        set("title", HIC "·ğ×æ" NOR);
-        set("gender", "ÄĞĞÔ" );
+        set("nickname", HIW "ä¸‰ç•Œæ³•ç‹" NOR);
+        set("title", HIC "ä½›ç¥–" NOR);
+        set("gender", "ç”·æ€§" );
         set("age", 500);
         set("attitude", "friendly");
         set("max_jing", 1000099);
@@ -33,7 +33,7 @@ LONG);
         set("combat_exp", 100001000099);
 
         set("inquiry", ([
-                "Ç°ÊÀ" : (: ask_recover :),
+                "å‰ä¸–" : (: ask_recover :),
         ]));
 
         set_skill("dodge", 10000);
@@ -81,11 +81,11 @@ int ask_recover()
         object me = this_player();
 
         command("look "+query("id", me));
-        command("say ÄãÓëÎÒÇ°ÊÀÓĞÔµÂğ?");
-        command("say Äã¿É¼ÇµÃÇ°ÊÀÄãĞÕÉõÃûË­£¬ÎÒ¸øÄãµÄ½ÒÓïÓÖÊÇÊ²Ã´£¿");
-        command("say ÈôÄãÄÜ´ğµÃÉÏÀ´ÎÒ±ã¸øÄã¿ªÆôÇ°ÉúÈ«²¿¼ÇÒä¡£");
+        command("say ä½ èˆ‡æˆ‘å‰ä¸–æœ‰ç·£å—?");
+        command("say ä½ å¯è¨˜å¾—å‰ä¸–ä½ å§“ç”šåèª°ï¼Œæˆ‘çµ¦ä½ çš„æ­èªåˆæ˜¯ä»€éº¼ï¼Ÿ");
+        command("say è‹¥ä½ èƒ½ç­”å¾—ä¸Šä¾†æˆ‘ä¾¿çµ¦ä½ é–‹å•Ÿå‰ç”Ÿå…¨éƒ¨è¨˜æ†¶ã€‚");
 
-        tell_object(me, HIW "·ğ×æÔÚÄã¶ú±ßËµµÀ£¬ÈôÄãÏëÆğÀ´ÁË¾ÍÊäÈë recollect <id> <½ÒÓï> \n" NOR);
+        tell_object(me, HIW "ä½›ç¥–åœ¨ä½ è€³é‚Šèªªé“ï¼Œè‹¥ä½ æƒ³èµ·ä¾†äº†å°±è¼¸å…¥ recollect <id> <æ­èª> \n" NOR);
         return 1;
 }
 
@@ -99,36 +99,36 @@ int do_recollect(string arg)
         object buddha, ob, me = this_player();
 
         if( query_temp("do_recollect") )
-                return notify_fail("ÎÒÏÖÔÚÕıÃ¦×Å£¬ÄãÇëÉÔºóÆ¬¿Ì¡£\n");
+                return notify_fail("æˆ‘ç¾åœ¨æ­£å¿™è‘—ï¼Œä½ è«‹ç¨å¾Œç‰‡åˆ»ã€‚\n");
 
         if( query("reborn/times", me) )
-                return notify_fail("ÄãµÄ°¢ÀµÒ®Ê¶²»ÊÇÒÑ¾­´ò¿ªÁËÂğ£¿");
+                return notify_fail("ä½ çš„é˜¿è³´è€¶è­˜ä¸æ˜¯å·²ç¶“æ‰“é–‹äº†å—ï¼Ÿ");
 
         if( !arg || sscanf(arg, "%s %s", my_id, pass) != 2 )
-                return notify_fail("Äã¾¿¾¹¼Ç²»¼ÇµÃ×Ô¼ºÇ°ÊÀÊÇË­£¿\n");
+                return notify_fail("ä½ ç©¶ç«Ÿè¨˜ä¸è¨˜å¾—è‡ªå·±å‰ä¸–æ˜¯èª°ï¼Ÿ\n");
 
         buddha = get_object(BUDDHA);
         data = buddha->query_reborn_data(my_id);
-        if( !data ) return notify_fail("ÎÒÔõÃ´²»¼ÇµÃÇ°ÊÀ¸úÄãÓĞÔµÄØ£¿\n");
+        if( !data ) return notify_fail("æˆ‘æ€éº¼ä¸è¨˜å¾—å‰ä¸–è·Ÿä½ æœ‰ç·£å‘¢ï¼Ÿ\n");
 
         if( data["reborn_pass"] != pass )
-                return notify_fail("Õâ¾äÄÄÀïÊÇÎÒ¸ø¹ıµÄ½ÒÓï£¡\n");
+                return notify_fail("é€™å¥å“ªè£¡æ˜¯æˆ‘çµ¦éçš„æ­èªï¼\n");
 
         if( data["reborn_time"]>query("birthday", me) )
-                return notify_fail("´ËÈË×ªÊÀÖ®Ê±ÄãÒÑÔÚÊÀÉÏ£¬ÄãÓÖÔõÃ´¿ÉÄÜ»áÊÇËû½ñÉúÍ¶Ì¥Ö®Çû£¿\n");
+                return notify_fail("æ­¤äººè½‰ä¸–ä¹‹æ™‚ä½ å·²åœ¨ä¸–ä¸Šï¼Œä½ åˆæ€éº¼å¯èƒ½æœƒæ˜¯ä»–ä»Šç”ŸæŠ•èƒä¹‹è»€ï¼Ÿ\n");
 
         if( data["gender"] != query("gender", me) )
-                return notify_fail("ÄãÓÚ´ËÈË×ªÊÀÖ®Ç°µÄĞÔ±ğ²»Ò»ÖÂ£¬ÄãÔõÃ´¿ÉÄÜÊÇËûÄØ£¿\n");
+                return notify_fail("ä½ äºæ­¤äººè½‰ä¸–ä¹‹å‰çš„æ€§åˆ¥ä¸ä¸€è‡´ï¼Œä½ æ€éº¼å¯èƒ½æ˜¯ä»–å‘¢ï¼Ÿ\n");
 
         if( query("combat_exp", me) >= 100000000 )
-                return notify_fail("ÄãµÄ¾­ÑéÊÜ½ñÊÀÓ°ÏìÌ«Éî£¬ÎÒÎŞ·¨°ïÄã´ò¿ª°¢ÀµÒ®Ê¶¡£\n");
+                return notify_fail("ä½ çš„ç¶“é©—å—ä»Šä¸–å½±éŸ¿å¤ªæ·±ï¼Œæˆ‘ç„¡æ³•å¹«ä½ æ‰“é–‹é˜¿è³´è€¶è­˜ã€‚\n");
 
         set_temp("do_recollect", 1);
 
-        command("say ¿´À´Äã¹ûÈ»ÊÇÇ°ÊÀÓëÎÒÓĞÔµÖ®ÈË£¬´ıÎÒ½«ÄãÇ°ÊÀ¼ÇÒä´ò¿ª£¡");
+        command("say çœ‹ä¾†ä½ æœç„¶æ˜¯å‰ä¸–èˆ‡æˆ‘æœ‰ç·£ä¹‹äººï¼Œå¾…æˆ‘å°‡ä½ å‰ä¸–è¨˜æ†¶æ‰“é–‹ï¼");
 
-        message_vision( HIY "\n·ğ×æËµ×Å±ã³¯×Å$N" HIY "ÇáÇáÒ»»ÓÊÖ¡£\n\n" NOR
-                        HIR "$N" HIR "Í»È»¸Ğµ½Í·Í´ÓûÁÑ......\n\n" NOR, me );
+        message_vision( HIY "\nä½›ç¥–èªªè‘—ä¾¿æœè‘—$N" HIY "è¼•è¼•ä¸€æ®æ‰‹ã€‚\n\n" NOR
+                        HIR "$N" HIR "çªç„¶æ„Ÿåˆ°é ­ç—›æ¬²è£‚......\n\n" NOR, me );
 
         my_name = data["name"];
         my = me->query_entire_dbase();
@@ -174,7 +174,7 @@ int do_recollect(string arg)
         my["ability1"] = copy(data["ability1"]);
         my["ability2"] = copy(data["ability2"]);
         my["newbie_mygift"] = copy(data["newbie_mygift"]);
-        my["character"] = "¹úÊ¿ÎŞË«";
+        my["character"] = "åœ‹å£«ç„¡é›™";
         my["welcomegift"] = 1;
         my["tianfu"] = 0;
         delete("tianfu", me);
@@ -210,12 +210,12 @@ int do_recollect(string arg)
                                 item_filename = ITEM_DIR + id[0..0] + "/" + id +
                                         "-" + sum[i] + FILE_EXTENSION;
                         if( file_size(item_filename) != -1 )
-                                write("ÒÑ¾­´æÔÚÔ­ÎÄ¼şµµ°¸£¬ÏÖ¸²¸Ç´¦Àí¡£\n");
+                                write("å·²ç¶“å­˜åœ¨åŸæ–‡ä»¶æª”æ¡ˆï¼Œç¾è¦†è“‹è™•ç†ã€‚\n");
 
                         assure_file(item_filename);
                         rm(item_filename);
                         if( !write_file(item_filename, content, 1) ) {
-                                write("Ğ´Èëµµ°¸(" + filename + ")Ê±³ö´í£¬ÇëÍ¨ÖªÎ×Ê¦´¦Àí¡£\n");
+                                write("å¯«å…¥æª”æ¡ˆ(" + filename + ")æ™‚å‡ºéŒ¯ï¼Œè«‹é€šçŸ¥å·«å¸«è™•ç†ã€‚\n");
                                 return 0;
                         }
 
@@ -252,12 +252,12 @@ int do_recollect(string arg)
                 item_filename = DATA_DIR + "warcraft/" + id + FILE_EXTENSION;
 
                 if( file_size(item_filename) != -1 )
-                        write("ÒÑ¾­´æÔÚÔ­ÎÄ¼şµµ°¸£¬ÏÖ¸²¸Ç´¦Àí¡£\n");
+                        write("å·²ç¶“å­˜åœ¨åŸæ–‡ä»¶æª”æ¡ˆï¼Œç¾è¦†è“‹è™•ç†ã€‚\n");
 
                 assure_file(item_filename);
                 rm(item_filename);
                 if( !write_file(item_filename, content, 1) ) {
-                        write("Ğ´Èëµµ°¸(" + filename + ")Ê±³ö´í£¬ÇëÍ¨ÖªÎ×Ê¦´¦Àí¡£\n");
+                        write("å¯«å…¥æª”æ¡ˆ(" + filename + ")æ™‚å‡ºéŒ¯ï¼Œè«‹é€šçŸ¥å·«å¸«è™•ç†ã€‚\n");
                         return 0;
                 }
 
@@ -282,7 +282,7 @@ int do_recollect(string arg)
         if( query("reborn/times", me) == 1 )
         {
                 set("xiantian_force", 1, me);
-                tell_object(me, HIY "ÄãÖÕÓÚÍÑ·²ÈëÊ¥£¬¿ÉÒÔĞŞÁ¶ÏÈÌìÕæÆøÁË¡£\n" NOR);
+                tell_object(me, HIY "ä½ çµ‚äºè„«å‡¡å…¥è–ï¼Œå¯ä»¥ä¿®ç…‰å…ˆå¤©çœŸæ°£äº†ã€‚\n" NOR);
         } else
         if( query("reborn/times", me) == 2 )
         {
@@ -292,7 +292,7 @@ int do_recollect(string arg)
                 set("yuanshen/armor", 10, me);
                 set("yuanshen_exp", 1, me);
                 set("yuanshen_level", 1, me);
-                tell_object(me, HIY "Äã½«¾«Á¦»¯³ÉÔªÉñ£¬ÖÕÓÚÁ·µÃÔªÉñ³öÊÀ¡£\n" NOR);
+                tell_object(me, HIY "ä½ å°‡ç²¾åŠ›åŒ–æˆå…ƒç¥ï¼Œçµ‚äºç·´å¾—å…ƒç¥å‡ºä¸–ã€‚\n" NOR);
         } else
         if( query("reborn/times", me) == 3 )
         {
@@ -302,9 +302,9 @@ int do_recollect(string arg)
                 set("yuanshen/armor", 100, me);
                 set("yuanshen_exp", 100000, me);
                 set("yuanshen_level", 100, me);
-                tell_object(me, HIY "ÄãµÄÔªÉñÖÕÓÚ¿ÉÒÔÍ»ÆÆÆ¿¾±£¬¿ÉÒÔ¼ÌĞøĞŞÁ¶ÁË¡£\n" NOR);
+                tell_object(me, HIY "ä½ çš„å…ƒç¥çµ‚äºå¯ä»¥çªç ´ç“¶é ¸ï¼Œå¯ä»¥ç¹¼çºŒä¿®ç…‰äº†ã€‚\n" NOR);
         }
-        message("vision", HBRED "¡¾×ªÊÀÖØÉú¡¿Ìì½ç£º¾İËµÓĞÈËÒÑµÃ·ğ×æ¶÷µä£¬¿ªÆôÁË°¢ÀµÒ®Ê¶¡£\n" NOR, users());
+        message("vision", HBRED "ã€è½‰ä¸–é‡ç”Ÿã€‘å¤©ç•Œï¼šæ“šèªªæœ‰äººå·²å¾—ä½›ç¥–æ©å…¸ï¼Œé–‹å•Ÿäº†é˜¿è³´è€¶è­˜ã€‚\n" NOR, users());
         me->save();
         me->unconcious();
 

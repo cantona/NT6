@@ -1,19 +1,19 @@
-// yanwu2.c ÅÌÁú¾ÓÑÝÎäÌü
+// yanwu2.c ç›¤é¾å±…æ¼”æ­¦å»³
 
 //** inherit PRIVATE_ROOM;
 inherit ROOM;                                   /* EXAMPLE */
 
 void create()
 {
-        set("short", "ÑÝÎäÌü");             /* EXAMPLE */
-//**    set("short", "ROOM_NAMEÑÝÎäÌü");
+        set("short", "æ¼”æ­¦å»³");             /* EXAMPLE */
+//**    set("short", "ROOM_NAMEæ¼”æ­¦å»³");
         set("long", @LONG
-ÕâÊÇÅÌÁú¾ÓµÄÑÝÎäÌü£¬ÓÐÊ±ÓÐÐ©½­ºþÅóÓÑÀ´»á£¬ÏëÒ»ÊÔÉíÊÖ£¬¾Í
-ÔÚÕâÀï±ÈÎä½ÏÁ¿¡£
+é€™æ˜¯ç›¤é¾å±…çš„æ¼”æ­¦å»³ï¼Œæœ‰æ™‚æœ‰äº›æ±Ÿæ¹–æœ‹å‹ä¾†æœƒï¼Œæƒ³ä¸€è©¦èº«æ‰‹ï¼Œå°±
+åœ¨é€™è£¡æ¯”æ­¦è¼ƒé‡ã€‚
 LONG );
 
-        set("default_long", "ÕâÊÇROOM_NAMEµÄÑÝÎäÌü£¬ÓÐÊ±ÓÐÐ©½­ºþÅóÓÑÀ´"/* EXAMPLE */
-                            "»á£¬ÏëÒ»ÊÔÉíÊÖ£¬¾ÍÔÚÕâÀï±ÈÎä½ÏÁ¿¡£" );    /* EXAMPLE */
+        set("default_long", "é€™æ˜¯ROOM_NAMEçš„æ¼”æ­¦å»³ï¼Œæœ‰æ™‚æœ‰äº›æ±Ÿæ¹–æœ‹å‹ä¾†"/* EXAMPLE */
+                            "æœƒï¼Œæƒ³ä¸€è©¦èº«æ‰‹ï¼Œå°±åœ¨é€™è£¡æ¯”æ­¦è¼ƒé‡ã€‚" );    /* EXAMPLE */
                                                                        /* EXAMPLE */
 
         set("exits", ([

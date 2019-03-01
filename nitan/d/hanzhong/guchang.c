@@ -1,15 +1,15 @@
-// guchang.c ɹ�ȳ�
+// guchang.c 曬谷場
 // Winder Oct.10 1998
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "ɹ�ȳ�");
+        set("short", "曬谷場");
         set("long", @LONG
-�����Ǵ�ׯ���ĵ�ɹ�ȳ����ط����󣬲�������Ҳ���塢������
-�ң��ֵĹ���Ҳ��ɹ�ˡ����������ջ�ļ��ڣ��ȳ��ж����˹��ӣ�
-������Ůͯ�����ڳ������֣���ʱ������һ�������໥��ȥ��
+這裡是村莊中心的曬谷場，地方不大，不過村裡也就五、六戶人
+家，種的谷子也夠曬了。現在正是收獲的季節，谷場中堆滿了谷子，
+幾個男女童子正在場中嬉鬧，不時地揚起一捧谷子相互撒去。
 LONG
         );
         set("outdoors", "hanzhong");

@@ -1,4 +1,4 @@
-// five-poison.c Îå¶¾¶¾¼¼
+// five-poison.c äº”æ¯’æ¯’æŠ€
 // Last Modified by winder on Mar. 10 2000
 
 #include <ansi.h>;
@@ -17,22 +17,22 @@ int valid_learn(object me)
 {
         mapping myfam;
         myfam=query("family", me);
-        if (!myfam || (myfam["family_name"] != "Îå¶¾½Ì"))
-                return notify_fail("Äã²»ÊÇÎå¶¾½ÌµÜ×Ó£¬²»ÄÜĞŞÁ¶Îå¶¾¶¾¼¼¡£\n");
+        if (!myfam || (myfam["family_name"] != "äº”æ¯’æ•™"))
+                return notify_fail("ä½ ä¸æ˜¯äº”æ¯’æ•™å¼Ÿå­ï¼Œä¸èƒ½ä¿®ç…‰äº”æ¯’æ¯’æŠ€ã€‚\n");
         return 1;
 
 }
 
 int help(object me)
 {
-        write(HIC"\nÎå¶¾¶¾¼¼£º"NOR"\n");
+        write(HIC"\näº”æ¯’æ¯’æŠ€ï¼š"NOR"\n");
         write(@HELP
 
-    Îå¶¾¶¾¼¼ÎªÔÆÄÏÎå¶¾½Ì¶ÀÃÅ¶¾¼¼¡£Ò²¾ÍÊÇÓÃ¶¾µÄ¼¼ÇÉ£¬ÊÇÎå¶¾
-½ÌµÜ×Ó±ØĞŞµÄ¹¦·ò£¬¹ØÏµµ½Í¶¶¾µÄ³É°ÜºÍ°µÆ÷µÄÉËº¦Á¦¡£
+    äº”æ¯’æ¯’æŠ€ç‚ºé›²å—äº”æ¯’æ•™ç¨é–€æ¯’æŠ€ã€‚ä¹Ÿå°±æ˜¯ç”¨æ¯’çš„æŠ€å·§ï¼Œæ˜¯äº”æ¯’
+æ•™å¼Ÿå­å¿…ä¿®çš„åŠŸå¤«ï¼Œé—œç³»åˆ°æŠ•æ¯’çš„æˆæ•—å’Œæš—å™¨çš„å‚·å®³åŠ›ã€‚
 
-        Ñ§Ï°ÒªÇó£º
-                ÎŞ
+        å­¸ç¿’è¦æ±‚ï¼š
+                ç„¡
 HELP
         );
         return 1;

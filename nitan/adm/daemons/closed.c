@@ -48,7 +48,7 @@ mapping query_closed_users()
 
 void user_closed(object user)
 {
-        user->set_short_desc("ÅÌÏ¥¶ø×ø£¬ÕıÔÚî¨Ä¿±Õ¹ØĞŞÁ¶¡£");
+        user->set_short_desc("ç›¤è†è€Œåï¼Œæ­£åœ¨ç‘ç›®é–‰é—œä¿®ç…‰ã€‚");
         set_temp("last_closing", time(), user);
         if (! closed_users)
                 closed_users = ([ ]);
@@ -163,7 +163,7 @@ void load_all_users()
                         {
                                 destruct(login_ob);
                                 map_delete(closed_users, u);
-                                log_file("log", sprintf("closed£ºÃ»ÓĞÍæ¼Ò(%s)¡£\n", u));
+                                log_file("log", sprintf("closedï¼šæ²’æœ‰ç©å®¶(%s)ã€‚\n", u));
                                 continue;
                         }
 
@@ -172,7 +172,7 @@ void load_all_users()
                         {
                                 destruct(login_ob);
                                 map_delete(closed_users, u);
-                                log_file("log", sprintf("closed£ºÎŞ·¨Éú³ÉÍæ¼Ò(%s)¡£\n", u));
+                                log_file("log", sprintf("closedï¼šç„¡æ³•ç”Ÿæˆç©å®¶(%s)ã€‚\n", u));
                                 continue;
                         }
 
@@ -181,7 +181,7 @@ void load_all_users()
                                 destruct(login_ob);
                                 destruct(user_ob);
                                 map_delete(closed_users, u);
-                                log_file("log", sprintf("closed£ºÎŞ·¨¶ÁÈ¡Íæ¼Ò(%s)µÄµµ°¸¡£\n", u));
+                                log_file("log", sprintf("closedï¼šç„¡æ³•è®€å–ç©å®¶(%s)çš„æª”æ¡ˆã€‚\n", u));
                                 continue;
                         }
 

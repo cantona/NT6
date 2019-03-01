@@ -12,13 +12,13 @@ int main(object me, string arg)
         object *inv;
         int i;
         if (me->is_busy())
-                return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»Íê³É¡£\n");
+                return notify_fail("ä½ ä¸Šä¸€å€‹å‹•ä½œé‚„æ²’å®Œæˆã€‚\n");
 
         inv = deep_inventory(me);
         for (i = 0; i < sizeof(inv); i++)
         {
                 if (! userp(inv[i]) && ! playerp(inv[i])) continue;
-                return notify_fail("ÄãÉíÉÏ»¹ÓĞ¸ö´ó»îÈËÄØ£¬Ïë²»¿ªÒ²±ğ¼±Ñ½£¿\n");
+                return notify_fail("ä½ èº«ä¸Šé‚„æœ‰å€‹å¤§æ´»äººå‘¢ï¼Œæƒ³ä¸é–‹ä¹Ÿåˆ¥æ€¥å‘€ï¼Ÿ\n");
         }
 
         if (! arg)
@@ -28,10 +28,10 @@ int main(object me, string arg)
         }
 
         if (arg != "-f") 
-                return notify_fail("×ÔÉ±ÓĞÁ½ÖÖ£¬ÄúÊÇÒªÓÀÔ¶ËÀµô(-f)»¹ÊÇÖØĞÂÍ¶Ì¥£¿\n");
+                return notify_fail("è‡ªæ®ºæœ‰å…©ç¨®ï¼Œæ‚¨æ˜¯è¦æ°¸é æ­»æ‰(-f)é‚„æ˜¯é‡æ–°æŠ•èƒï¼Ÿ\n");
 
-        write("ÄúÑ¡ÔñÓÀÔ¶ËÀµôµÄ×ÔÉ±·½Ê½£¬Õâ¸öÈËÎïµÄ×ÊÁÏ½«ÓÀÔ¶É¾³ı£¬ÇëÎñ±Ø\n"
-              "¿¼ÂÇÇå³ş£¬È·¶¨µÄ»°ÇëÊäÈëÄúµÄ¹ÜÀíÃÜÂë£º");
+        write("æ‚¨é¸æ“‡æ°¸é æ­»æ‰çš„è‡ªæ®ºæ–¹å¼ï¼Œé€™å€‹äººç‰©çš„è³‡æ–™å°‡æ°¸é åˆªé™¤ï¼Œè«‹å‹™å¿…\n"
+              "è€ƒæ…®æ¸…æ¥šï¼Œç¢ºå®šçš„è©±è«‹è¼¸å…¥æ‚¨çš„ç®¡ç†å¯†ç¢¼ï¼š");
         input_to("check_password", 1, me, 1);
         return 1;
 }
@@ -45,14 +45,14 @@ protected void check_password(string passwd, object me, int forever)
         old_pass=query("ad_password", link_ob);
         if (! stringp(old_pass) || crypt(passwd, old_pass) != old_pass)
         {
-                write(HIR "ÃÜÂë´íÎó£¡Çë×¢Òâ£¬×ÔÉ±±ØĞëÊäÈë¹ÜÀíÃÜÂë¡£\n");
+                write(HIR "å¯†ç¢¼éŒ¯èª¤ï¼è«‹æ³¨æ„ï¼Œè‡ªæ®ºå¿…é ˆè¼¸å…¥ç®¡ç†å¯†ç¢¼ã€‚\n");
                 return;
         }
 
         if (forever)
         {
-                tell_object(me, HIR "\nÄã¾ö¶¨Òª×ÔÉ±ÁË£¬Èç¹ûÈıÊ®Ãë"
-                            "ÖÓÄÚ²»ºó»Ú£¬¾ÍÕæµÄÓÀ±ğÁË¡£\n\n" NOR);
+                tell_object(me, HIR "\nä½ æ±ºå®šè¦è‡ªæ®ºäº†ï¼Œå¦‚æœä¸‰åç§’"
+                            "é˜å…§ä¸å¾Œæ‚”ï¼Œå°±çœŸçš„æ°¸åˆ¥äº†ã€‚\n\n" NOR);
                 set_temp("suicide/time", time(), me);
                 set_temp("suicide/last", 0, me);
                 set_temp("suicide/from", query_ip_number(me), me);
@@ -81,8 +81,8 @@ protected int slow_suicide(object me)
                 if( t-query_temp("suicide/last", me)<5 )
                         return 1;
 
-                tell_object(me, HIR "\nÄã»¹ÓĞ" + chinese_number(30 - t) +
-                            "ÃëÖÓ×ĞÏ¸¿¼ÂÇ(" HIC "haltÍ£Ö¹" HIR ")¡£\n" NOR);
+                tell_object(me, HIR "\nä½ é‚„æœ‰" + chinese_number(30 - t) +
+                            "ç§’é˜ä»”ç´°è€ƒæ…®(" HIC "haltåœæ­¢" HIR ")ã€‚\n" NOR);
                 set_temp("suicide/last", t/5*5, me);
                 return 1;
         }
@@ -96,15 +96,15 @@ protected int slow_suicide(object me)
                         query_temp("suicide/from", me)));
 
         seteuid(getuid());
-        write("\nºÃ°É£¬ÓÀ±ğÁË:)¡£\n\n");
+        write("\nå¥½å§ï¼Œæ°¸åˆ¥äº†:)ã€‚\n\n");
 
         if( query("mud_age", me)>1800 )
         CHANNEL_D->do_channel(this_object(), "rumor",
-                sprintf("%s×ÔÉ±ÁË£¬ÒÔºóÄãÔÙÒ²¿´²»µ½Õâ¸öÈËÁË¡£",
+                sprintf("%sè‡ªæ®ºäº†ï¼Œä»¥å¾Œä½ å†ä¹Ÿçœ‹ä¸åˆ°é€™å€‹äººäº†ã€‚",
                 me->name()));
 
         tell_room(environment(me), me->name() +
-                "ÔÚÄãµÄÃæÇ°»¯×÷ÇáÑÌ£¬½¥½¥ÏûÊ§ÁË...\n", ({me}));
+                "åœ¨ä½ çš„é¢å‰åŒ–ä½œè¼•ç…™ï¼Œæ¼¸æ¼¸æ¶ˆå¤±äº†...\n", ({me}));
 
         UPDATE_D->remove_user(query("id", me), 1);
         return 0;
@@ -112,7 +112,7 @@ protected int slow_suicide(object me)
 
 protected int halt_suicide(object me)
 {
-        tell_object(me, HIG "Äã´òÏûÁËÑ°ËÀµÄÄîÍ·¡£\n" NOR);
+        tell_object(me, HIG "ä½ æ‰“æ¶ˆäº†å°‹æ­»çš„å¿µé ­ã€‚\n" NOR);
         delete_temp("suicide", me);
         return 1;
 }
@@ -120,16 +120,16 @@ protected int halt_suicide(object me)
 int help (object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½: suicide [-f]
+æŒ‡ä»¤æ ¼å¼: suicide [-f]
  
-Èç¹ûÒòÎªÄ³ÖÖÔ­ÒòÄã²»Ïë»îÁË, Äã¿ÉÒÔÑ¡Ôñ×ÔÉ±.
-×ÔÉ±·ÖÁ½ÖÖ:
+å¦‚æœå› ç‚ºæŸç¨®åŸå› ä½ ä¸æƒ³æ´»äº†, ä½ å¯ä»¥é¸æ“‡è‡ªæ®º.
+è‡ªæ®ºåˆ†å…©ç¨®:
  
-suicide    : ÖØĞÂÍ¶Ì¥
-suicide -f : ÓÀÔ¶µÄ³ıÈ¥Íæ¼Ò×ÊÁÏ, ÏµÍ³»áÒªÇóÄã
-             ÊäÈëÃÜÂëÒÔÈ·ÈÏÉí·İ.
+suicide    : é‡æ–°æŠ•èƒ
+suicide -f : æ°¸é çš„é™¤å»ç©å®¶è³‡æ–™, ç³»çµ±æœƒè¦æ±‚ä½ 
+             è¼¸å…¥å¯†ç¢¼ä»¥ç¢ºèªèº«ä»½.
  
-ÇëÉ÷ÖØÑ¡Ôñ :)
+è«‹æ…é‡é¸æ“‡ :)
  
 HELP );
         return 1;

@@ -1,5 +1,5 @@
 // Code of ShenZhou
-// pu_snake.c ÆĞË¹ÇúÉß
+// pu_snake.c è©æ–¯æ›²è›‡
 // by maco
 
 #include <ansi.h>
@@ -8,9 +8,9 @@ inherit SNAKE;
 
 void create()
 {
-        set_name("ÆĞË¹ÇúÉß", ({ "pusiqu she", "snake", "she", "pusiqu" }) );
+        set_name("è©æ–¯æ›²è›‡", ({ "pusiqu she", "snake", "she", "pusiqu" }) );
         set("age", 100);
-        set("long", "ÕâÉßÉíÉÏ½ğ¹âÉÁÉÁ£¬Í·¶¥ÉúÓĞÈâ½Ç£¬ĞÎ×´Ê®·Ö¹ÖÒì¡£\n·ğ¾­ÉÏÔøÓĞ¼ÇÔØ£¬³ÆÎªÆĞË¹ÇúÉß£¬ÌıËµ´ËÉßĞĞ×ßÈç·ç£¬¼«ÄÑ²¶×½¡£\n");
+        set("long", "é€™è›‡èº«ä¸Šé‡‘å…‰é–ƒé–ƒï¼Œé ­é ‚ç”Ÿæœ‰è‚‰è§’ï¼Œå½¢ç‹€ååˆ†æ€ªç•°ã€‚\nä½›ç¶“ä¸Šæ›¾æœ‰è¨˜è¼‰ï¼Œç¨±ç‚ºè©æ–¯æ›²è›‡ï¼Œè½èªªæ­¤è›‡è¡Œèµ°å¦‚é¢¨ï¼Œæ¥µé›£æ•æ‰ã€‚\n");
         set("attitude", "peaceful");
 
         set_weight(13800);
@@ -39,7 +39,7 @@ void create()
                 "supply" : 3,
         ]));
         set("bt_snake", 1);
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "Æß´ç", "Î²°Í", "Èâ½Ç" }) );
+        set("limbs", ({ "é ­éƒ¨", "èº«é«”", "ä¸ƒå¯¸", "å°¾å·´", "è‚‰è§’" }) );
         set("verbs", ({ "bite" }) );
 
         setup();
@@ -59,11 +59,11 @@ void init()
 void unconcious()
 {        
         if(random(4) == 0 ) {
-                message_vision("ÆĞË¹ÇúÉßòêÑÑÅÌĞĞ£¬ÈçÒ»Õó·ç°ã¼±´Ü¶øÌÓ£¬Çê¿ÌÖ®¼äÒÑÎŞÓ°ÎŞ×Ù¡£\n", this_object());
+                message_vision("è©æ–¯æ›²è›‡èœ¿èœ’ç›¤è¡Œï¼Œå¦‚ä¸€é™£é¢¨èˆ¬æ€¥ç«„è€Œé€ƒï¼Œé ƒåˆ»ä¹‹é–“å·²ç„¡å½±ç„¡è¹¤ã€‚\n", this_object());
                 destruct(this_object());
         }
         else {
-                this_object()->disable_player(" <»èÃÔ²»ĞÑ>");
+                this_object()->disable_player(" <æ˜è¿·ä¸é†’>");
                 set("jing", 0, this_object());
                 set("qi", 0, this_object());
                 COMBAT_D->announce(this_object(), "unconcious");
@@ -74,10 +74,10 @@ void unconcious()
 void die()
 {
         object ob;
-        message_vision("$NÈ«ÉíÅ¤Çú£¬·­ÌÚ»ÓÎèÒ»Õó£¬ÂıÂı½©Ö±¶øËÀ¡£\n", this_object());
+        message_vision("$Nå…¨èº«æ‰­æ›²ï¼Œç¿»é¨°æ®èˆä¸€é™£ï¼Œæ…¢æ…¢åƒµç›´è€Œæ­»ã€‚\n", this_object());
         ob = new(__DIR__"obj/mangshe-dan");
-        set("name", "ÆĞË¹ÇúÉßµ¨", ob);
-        set("long", "Ò»Ã¶Éî×ÏÉ«µÄÉßµ¨£¬ÉõÊÇĞÈ³ô¡£\n", ob);
+        set("name", "è©æ–¯æ›²è›‡è†½", ob);
+        set("long", "ä¸€æšæ·±ç´«è‰²çš„è›‡è†½ï¼Œç”šæ˜¯è…¥è‡­ã€‚\n", ob);
         ob->move(environment(this_object()));
         destruct(this_object());
 }

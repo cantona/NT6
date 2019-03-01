@@ -9,66 +9,66 @@ inherit ITEM;
 
 int has_start;
 int has_guess;
-int se_num;                                // Ã¿ÈËµÄ÷»×ÓÊıÁ¿
-int se_total;                                // Ã¿ÈËµÄ÷»×ÓÊıÁ¿2
-int cur_point;                                // µ±Ç°µÄµãÊı
-int cur_amount;                                // µ±Ç°µÄÊıÁ¿
-int has_guess_one;                        // ÊÇ·ñ²Â¹ı£±
-string cur_player;                        // µ±Ç°µÄÍæ¼ÒID
-string last_player;                        // ÉÏÒ»¸öÍæ¼Ò
-string who_lost;                        // Êä·½
-mapping player;                                // Á½¸öÍæ¼Ò [id:({÷»£¬÷»...})]
-mapping player_deal;                        // Íê³ÉµÄÍæ¼Ò
-mapping player_toss;                        // Íæ¼Òtoss´ÎÊı
-mapping player_follow;                        // Íæ¼ÒË³Ğò
-mapping visitor;                        // ¹ÛÕ½µÄÈË [id:({id,...})]
-mapping counter = ([]);                        // ¼ÆÊıÆ÷
-mixed        history;                        // ÀúÊ· string
+int se_num;                                // æ¯äººçš„éª°å­æ•¸é‡
+int se_total;                                // æ¯äººçš„éª°å­æ•¸é‡2
+int cur_point;                                // ç•¶å‰çš„é»æ•¸
+int cur_amount;                                // ç•¶å‰çš„æ•¸é‡
+int has_guess_one;                        // æ˜¯å¦çŒœéï¼‘
+string cur_player;                        // ç•¶å‰çš„ç©å®¶ID
+string last_player;                        // ä¸Šä¸€å€‹ç©å®¶
+string who_lost;                        // è¼¸æ–¹
+mapping player;                                // å…©å€‹ç©å®¶ [id:({éª°ï¼Œéª°...})]
+mapping player_deal;                        // å®Œæˆçš„ç©å®¶
+mapping player_toss;                        // ç©å®¶tossæ¬¡æ•¸
+mapping player_follow;                        // ç©å®¶é †åº
+mapping visitor;                        // è§€æˆ°çš„äºº [id:({id,...})]
+mapping counter = ([]);                        // è¨ˆæ•¸å™¨
+mixed        history;                        // æ­·å² string
 int reset_game(int all);
 
 mixed se_text = ({
         ({"","","","",""}),
         ({
-                "©°©¤©¤©¤©´",
-                "©¦      ©¦",
-                "©¦  ¡ñ  ©¦",
-                "©¦      ©¦",
-                "©¸©¤©¤©¤©¼",
+                "â”Œâ”€â”€â”€â”",
+                "â”‚      â”‚",
+                "â”‚  â—  â”‚",
+                "â”‚      â”‚",
+                "â””â”€â”€â”€â”˜",
         }),
         ({
-                "©°©¤©¤©¤©´",
-                "©¦  ¡ñ  ©¦",
-                "©¦      ©¦",
-                "©¦  ¡ñ  ©¦",
-                "©¸©¤©¤©¤©¼",
+                "â”Œâ”€â”€â”€â”",
+                "â”‚  â—  â”‚",
+                "â”‚      â”‚",
+                "â”‚  â—  â”‚",
+                "â””â”€â”€â”€â”˜",
         }),
         ({
-                "©°©¤©¤©¤©´",
-                "©¦¡ñ¡¡¡¡©¦",
-                "©¦¡¡¡ñ¡¡©¦",
-                "©¦¡¡¡¡¡ñ©¦",
-                "©¸©¤©¤©¤©¼",
+                "â”Œâ”€â”€â”€â”",
+                "â”‚â—ã€€ã€€â”‚",
+                "â”‚ã€€â—ã€€â”‚",
+                "â”‚ã€€ã€€â—â”‚",
+                "â””â”€â”€â”€â”˜",
         }),
         ({
-                "©°©¤©¤©¤©´",
-                "©¦¡ñ¡¡¡ñ©¦",
-                "©¦¡¡¡¡¡¡©¦",
-                "©¦¡ñ¡¡¡ñ©¦",
-                "©¸©¤©¤©¤©¼",
+                "â”Œâ”€â”€â”€â”",
+                "â”‚â—ã€€â—â”‚",
+                "â”‚ã€€ã€€ã€€â”‚",
+                "â”‚â—ã€€â—â”‚",
+                "â””â”€â”€â”€â”˜",
         }),
         ({
-                "©°©¤©¤©¤©´",
-                "©¦¡ñ¡¡¡ñ©¦",
-                "©¦¡¡¡ñ¡¡©¦",
-                "©¦¡ñ¡¡¡ñ©¦",
-                "©¸©¤©¤©¤©¼",
+                "â”Œâ”€â”€â”€â”",
+                "â”‚â—ã€€â—â”‚",
+                "â”‚ã€€â—ã€€â”‚",
+                "â”‚â—ã€€â—â”‚",
+                "â””â”€â”€â”€â”˜",
         }),
         ({
-                "©°©¤©¤©¤©´",
-                "©¦¡ñ¡¡¡ñ©¦",
-                "©¦¡ñ¡¡¡ñ©¦",
-                "©¦¡ñ¡¡¡ñ©¦",
-                "©¸©¤©¤©¤©¼",
+                "â”Œâ”€â”€â”€â”",
+                "â”‚â—ã€€â—â”‚",
+                "â”‚â—ã€€â—â”‚",
+                "â”‚â—ã€€â—â”‚",
+                "â””â”€â”€â”€â”˜",
         })
 });
 
@@ -110,14 +110,14 @@ mixed get_se(int num)
 
 void create()
 {
-        set_name("´ó»°÷»Ì¨", ({ "dahua desk", "desk"}) );
+        set_name("å¤§è©±éª°å°", ({ "dahua desk", "desk"}) );
         set_weight(1);
         if( clonep() )
                 set_default_object(__FILE__);
         else
         {
-                set("unit", "ÕÅ");
-                set("long", "ÕâÊÇÒ»ÕÅ´ó»°÷»Ì¨£¬Íæ¼Ò¿ÉÒÔÔÚÉÏÃæÍæ´ó»°÷»×Ó¡£\n");
+                set("unit", "å¼µ");
+                set("long", "é€™æ˜¯ä¸€å¼µå¤§è©±éª°å°ï¼Œç©å®¶å¯ä»¥åœ¨ä¸Šé¢ç©å¤§è©±éª°å­ã€‚\n");
                 set("value", 1);
                 set("material", "wood");
         }
@@ -138,9 +138,9 @@ string for_other_msg(object who)
                 ob = get_player(last_player);
                 if(ob)
                 {
-                        m=sprintf("%s\n%s(%s)²Â÷»×ÓÊıÎª£º%d¸ö%d\n",m,query("name", ob),query("id", ob),cur_amount,cur_point);
+                        m=sprintf("%s\n%s(%s)çŒœéª°å­æ•¸ç‚ºï¼š%då€‹%d\n",m,query("name", ob),query("id", ob),cur_amount,cur_point);
                         if(ob!=who)
-                                m=m+"Èç¹ûÄã²»ÏàĞÅ£¬¿ÉÒÔ²ğ´©´ó»°("HIY"dahua"+query("id", ob)+NOR")\n";
+                                m=m+"å¦‚æœä½ ä¸ç›¸ä¿¡ï¼Œå¯ä»¥æ‹†ç©¿å¤§è©±("HIY"dahua"+query("id", ob)+NOR")\n";
                 }
         }
         return m;
@@ -152,10 +152,10 @@ string for_guess_msg()
 
         m = "";
         if( has_guess&&last_player )
-                m=m+for_other_msg(0)+"·ñÔò";
-        m = m+"ÄãµÄ²Â²âÊÇ("HIY"guess ÷»×ÓÊıÄ¿ ÷»×ÓµãÊı"NOR")£¿\n";
+                m=m+for_other_msg(0)+"å¦å‰‡";
+        m = m+"ä½ çš„çŒœæ¸¬æ˜¯("HIY"guess éª°å­æ•¸ç›® éª°å­é»æ•¸"NOR")ï¼Ÿ\n";
         if(has_guess&&last_player)
-                m = m+"×¢Òâ£º" HIC "÷»×ÓÊıÄ¿»òÕß÷»×ÓµãÊı±ØĞë±ÈÇ°Ò»Î»Íæ¼Ò´ó¡£\n"NOR;
+                m = m+"æ³¨æ„ï¼š" HIC "éª°å­æ•¸ç›®æˆ–è€…éª°å­é»æ•¸å¿…é ˆæ¯”å‰ä¸€ä½ç©å®¶å¤§ã€‚\n"NOR;
         return m;
 }
 
@@ -188,7 +188,7 @@ string build_se(object who)
                         for(i=0;i<sizeof(s);i++)
                         {
                                 num = s[i];
-                                t = t + se_text[num][y] + "¡¡";
+                                t = t + se_text[num][y] + "ã€€";
                         }
                         r = r + t + "\n";
                 }
@@ -320,31 +320,31 @@ void start_game(int num)
                 se_total = num;
         reset_game(0);
         has_start = 1;
-        msg(0,0,"¿ªÊ¼ÓÎÏ·ÁË¡£\n");
+        msg(0,0,"é–‹å§‹éŠæˆ²äº†ã€‚\n");
 }
 
 void init()
 {
 
-//        add_action("do_help","helpse");                        // °ïÖú
+//        add_action("do_help","helpse");                        // å¹«åŠ©
 
-        add_action("do_reset","reset");                        // ÖØÖÃÓÎÏ·
-        add_action("do_start","start");                        // ÖØĞÂ¿ªÊ¼
-        add_action("do_join","join");                        // ¼ÓÈëÓÎÏ·
+        add_action("do_reset","reset");                        // é‡ç½®éŠæˆ²
+        add_action("do_start","start");                        // é‡æ–°é–‹å§‹
+        add_action("do_join","join");                        // åŠ å…¥éŠæˆ²
 
-        add_action("do_toss","toss");                        // Ò¡÷»×Ó
-        add_action("do_view","view");                        // ²é¿´Çé¿ö
-        add_action("do_finish","finish");                // Íê³É
-        add_action("do_finish","deal");                        // Íê³É
+        add_action("do_toss","toss");                        // æ–éª°å­
+        add_action("do_view","view");                        // æŸ¥çœ‹æƒ…æ³
+        add_action("do_finish","finish");                // å®Œæˆ
+        add_action("do_finish","deal");                        // å®Œæˆ
 
-        add_action("do_dahua","dahua");                        // ·¢ÏÖ´ó»°
-        add_action("do_guess","guess");                        // ²Â²â
-        add_action("do_guess","g");                                // ²Â²â
+        add_action("do_dahua","dahua");                        // ç™¼ç¾å¤§è©±
+        add_action("do_guess","guess");                        // çŒœæ¸¬
+        add_action("do_guess","g");                                // çŒœæ¸¬
 
-        add_action("do_next","next");                        // ´ß´Ù
-        add_action("do_showc","showc");                        // ÏÔÊ¾¼ÆÊıÆ÷
-        add_action("do_visitor","visit");                // Ôö¼ÓÅÔ¹ÛÕß
-        add_action("do_history","history");                // ²é¿´²Â²âÀúÊ·
+        add_action("do_next","next");                        // å‚¬ä¿ƒ
+        add_action("do_showc","showc");                        // é¡¯ç¤ºè¨ˆæ•¸å™¨
+        add_action("do_visitor","visit");                // å¢åŠ æ—è§€è€…
+        add_action("do_history","history");                // æŸ¥çœ‹çŒœæ¸¬æ­·å²
 }
 
 int do_toss(string arg)
@@ -356,17 +356,17 @@ int do_toss(string arg)
         me = this_player();
 
         if(!is_playing(me))
-                return notify_fail("Äã¶¼²»Íæ°¡£¡\n");
+                return notify_fail("ä½ éƒ½ä¸ç©å•Šï¼\n");
         if(!has_start)
-                return notify_fail("ÓÎÏ·»¹Ã»ÓĞ¿ªÊ¼ÁË¡£\n");
+                return notify_fail("éŠæˆ²é‚„æ²’æœ‰é–‹å§‹äº†ã€‚\n");
         if(has_guess)
-                return notify_fail("ÒÑ¾­¿ªÊ¼²Â÷»×ÓÁË¡£\n");
+                return notify_fail("å·²ç¶“é–‹å§‹çŒœéª°å­äº†ã€‚\n");
         if(player_toss[query("id",me)]>=MAX_TOSS) 
-                return notify_fail(sprintf("ÄãÒÑ¾­Ò¡¹ı%d´ÎÁË¡£\n",MAX_TOSS));
+                return notify_fail(sprintf("ä½ å·²ç¶“æ–é%dæ¬¡äº†ã€‚\n",MAX_TOSS));
 
         toss(me);
         player_toss[query("id",me)]++; 
-        msg(me,0,"$NÄÃÆğ÷»×ÓÔÚÊÖÖĞÒ¡ÁËÁ½Ò¡¡£\n");
+        msg(me,0,"$Næ‹¿èµ·éª°å­åœ¨æ‰‹ä¸­æ–äº†å…©æ–ã€‚\n");
         view_se(me,0);
 
         if(idx = visitor[query("id",me)]) 
@@ -395,12 +395,12 @@ int do_reset(string arg)
                 for(i=0;i<sizeof(idx);i++)
                 {
                         if(get_player(idx[i]))
-                                return notify_fail("Äã¶¼²»Íæ°¡£¡\n");
+                                return notify_fail("ä½ éƒ½ä¸ç©å•Šï¼\n");
                 }
         }
                 
         reset_game(1);
-        msg(this_player(),0,"$NÖØÖÃÁËÓÎÏ·¡£\n");
+        msg(this_player(),0,"$Né‡ç½®äº†éŠæˆ²ã€‚\n");
         return 1;
 }
 
@@ -409,17 +409,17 @@ int do_start(string arg)
         int i;
 
         if(!is_playing(this_player()))
-                return notify_fail("Äã¶¼²»Íæ°¡£¡\n");
+                return notify_fail("ä½ éƒ½ä¸ç©å•Šï¼\n");
 
         if(sizeof(player)<2)
-                return notify_fail("ÖÁÉÙÒªÁ½¸öÈË²ÅÄÜÍæ¡£\n");
+                return notify_fail("è‡³å°‘è¦å…©å€‹äººæ‰èƒ½ç©ã€‚\n");
 
         if(!arg||sscanf(arg,"%d",i)!=1)
                 i = 0;
         else
         {
                 if(i<1||i>MAX_SE)
-                        return notify_fail(sprintf("start [÷»×ÓÊıÄ¿]  *×¢Òâ* ÷»×ÓÊıÄ¿±ØĞë>1²¢ÇÒ<=%d\n",MAX_SE));
+                        return notify_fail(sprintf("start [éª°å­æ•¸ç›®]  *æ³¨æ„* éª°å­æ•¸ç›®å¿…é ˆ>1ä¸¦ä¸”<=%d\n",MAX_SE));
         }
         start_game(i);
         return 1;
@@ -439,7 +439,7 @@ int do_view(string arg)
                                 ob = 0;
 
                 if(!ob)
-                        return notify_fail("Äã¶¼²»Íæ°¡£¡\n");
+                        return notify_fail("ä½ éƒ½ä¸ç©å•Šï¼\n");
         }
         else
                 ob = me;
@@ -454,13 +454,13 @@ int do_join(string arg)
 
         me = this_player();
         if(has_start)
-                return notify_fail("ÓÎÏ·ÒÑ¾­¿ªÊ¼£¬²»ÄÜ¼ÓÈëÁË£¬ÇëÊ¹ÓÃ(reset)ÃüÁîÖØÖÃ¡£\n");
+                return notify_fail("éŠæˆ²å·²ç¶“é–‹å§‹ï¼Œä¸èƒ½åŠ å…¥äº†ï¼Œè«‹ä½¿ç”¨(reset)å‘½ä»¤é‡ç½®ã€‚\n");
         if(is_playing(me))
-                return notify_fail("ÄãÒÑ¾­²Î¼ÓÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“åƒåŠ äº†ã€‚\n");
 
         player[query("id",me)]=allocate(se_num); 
         toss(me);
-        msg(me,0,"$N¼ÓÈëÓÎÏ·ÁË¡£\n");
+        msg(me,0,"$NåŠ å…¥éŠæˆ²äº†ã€‚\n");
         return 1;
 }
 
@@ -471,25 +471,25 @@ int do_next(string arg)
         
         me = this_player();
         if(!is_playing(me))
-                return notify_fail("Äã¶¼²»Íæ°¡£¡\n");
+                return notify_fail("ä½ éƒ½ä¸ç©å•Šï¼\n");
 
         if(!has_guess)
-                return notify_fail("»¹Ã»ÓĞ¿ªÊ¼²Â÷»×ÓÁË¡£\n");
+                return notify_fail("é‚„æ²’æœ‰é–‹å§‹çŒœéª°å­äº†ã€‚\n");
         if(!cur_player)
-                return notify_fail("ÏÖÔÚÊÇË­²Â°¡£¿\n");
+                return notify_fail("ç¾åœ¨æ˜¯èª°çŒœå•Šï¼Ÿ\n");
 
         ob = get_cur_player();
         
         if(ob==0)
         {
-                msg(0,0,"ÓĞÍæ¼ÒÈ±³¡ÁË£¬ÇëÖØĞÂ¿ªÊ¼ÓÎÏ·(start)¡£\n");
+                msg(0,0,"æœ‰ç©å®¶ç¼ºå ´äº†ï¼Œè«‹é‡æ–°é–‹å§‹éŠæˆ²(start)ã€‚\n");
                 return 1;
         }
 
         if(me!=ob)
-                msg(me,ob,"$N¶Ô$nËµµÀ£ºµ½ÄãÁË¡£\n");
+                msg(me,ob,"$Nå°$nèªªé“ï¼šåˆ°ä½ äº†ã€‚\n");
         else
-                msg(me,0,"¶Ô×Ô¼ºËµµÀ£ºµ½ÎÒÀ²£¡\n");
+                msg(me,0,"å°è‡ªå·±èªªé“ï¼šåˆ°æˆ‘å•¦ï¼\n");
         tell_object(ob,for_guess_msg());
         return 1;
 }
@@ -503,19 +503,19 @@ int do_guess(string arg)
         
         me = this_player();
         if(!is_playing(me))
-                return notify_fail("Äã¶¼²»Íæ°¡£¡\n");
+                return notify_fail("ä½ éƒ½ä¸ç©å•Šï¼\n");
 
         if(!has_guess)
-                return notify_fail("»¹Ã»ÓĞ¿ªÊ¼²Â÷»×ÓÁË¡£\n");
+                return notify_fail("é‚„æ²’æœ‰é–‹å§‹çŒœéª°å­äº†ã€‚\n");
         ob = get_cur_player();
         if(ob!=me)
-                return notify_fail("»¹Ã»ÓĞµ½Äã²ÂÁË¡£\n");
+                return notify_fail("é‚„æ²’æœ‰åˆ°ä½ çŒœäº†ã€‚\n");
 
         if(!arg||sscanf(arg,"%d %d",n,p)!=2)
-                return notify_fail("guess ÷»×ÓÊıÄ¿ ÷»×ÓµãÊı\n");
+                return notify_fail("guess éª°å­æ•¸ç›® éª°å­é»æ•¸\n");
 
         if(n<sizeof(player)||p>6||p<=0)
-                return notify_fail(sprintf("÷»×ÓÊıÄ¿±ØĞë>=%d£¬÷»×ÓµãÊı±ØĞë>0²¢ÇÒ<=6\n",sizeof(player)));
+                return notify_fail(sprintf("éª°å­æ•¸ç›®å¿…é ˆ>=%dï¼Œéª°å­é»æ•¸å¿…é ˆ>0ä¸¦ä¸”<=6\n",sizeof(player)));
 
         ok = 1;
         if(last_player)
@@ -536,7 +536,7 @@ int do_guess(string arg)
                 }
         }
         if(!ok)
-                return notify_fail("÷»×ÓÊıÄ¿»òÕß÷»×ÓµãÊı±ØĞë±ÈÇ°Ò»Î»Íæ¼Ò´ó¡£\n");
+                return notify_fail("éª°å­æ•¸ç›®æˆ–è€…éª°å­é»æ•¸å¿…é ˆæ¯”å‰ä¸€ä½ç©å®¶å¤§ã€‚\n");
 
         last_player=query("id", me);
         cur_amount = n;
@@ -545,11 +545,11 @@ int do_guess(string arg)
 
         cur_player = player_follow[last_player];
 
-        msg(me,0,sprintf("$N(%s)ËµµÀ£º%d¸ö%d\n",query("id", me),n,p));
+        msg(me,0,sprintf("$N(%s)èªªé“ï¼š%då€‹%d\n",query("id", me),n,p));
         if(history)
-                history=history+({sprintf("%-20s£º%d¸ö%d",query("name", me)+"("+query("id", me)+")",n,p)});
+                history=history+({sprintf("%-20sï¼š%då€‹%d",query("name", me)+"("+query("id", me)+")",n,p)});
         else
-                history=({sprintf("%-20s£º%d¸ö%d",query("name", me)+"("+query("id", me)+")",n,p)});
+                history=({sprintf("%-20sï¼š%då€‹%d",query("name", me)+"("+query("id", me)+")",n,p)});
 
         do_next("");
         return 1;
@@ -584,7 +584,7 @@ int show_all_se(object who)
                 if(get_player(idx[i]))
                 {
                         s = player[idx[i]];
-                        m = sprintf("%s%12s£º",m,idx[i]);
+                        m = sprintf("%s%12sï¼š",m,idx[i]);
                         o = "";
                         sc = 0;
                         for(j=0;j<se_num;j++)
@@ -601,14 +601,14 @@ int show_all_se(object who)
                         }
                         if(sc==se_num)
                         {
-                                o = o + " Î§÷»+1";
+                                o = o + " åœéª°+1";
                                 c++;
                         }
                         m = m + "||"+o+"\n";
                 }
         }
-        m=sprintf("%s%s²ÂÓĞ"HIC"%d"NOR"¸ö%d£¬",m,query("name", ob),cur_amount,cur_point);
-        m = sprintf("%sÏÖÔÚÓĞ"HIC"%d"NOR"¸ö%d\n\n",m,c,cur_point);
+        m=sprintf("%s%sçŒœæœ‰"HIC"%d"NOR"å€‹%dï¼Œ",m,query("name", ob),cur_amount,cur_point);
+        m = sprintf("%sç¾åœ¨æœ‰"HIC"%d"NOR"å€‹%d\n\n",m,c,cur_point);
         msg(0,0,m);
 
         if( query("id", who) == cur_player )
@@ -620,14 +620,14 @@ int show_all_se(object who)
         {
                 add_counter(query("id", who),pt);
                 add_counter(query("id", ob),-pt);
-                msg(ob,who,BLINK HIY "$N±»$n²ğ´©ÁË´ó»°£¡£¡£¡\n\n" NOR);
+                msg(ob,who,BLINK HIY "$Nè¢«$næ‹†ç©¿äº†å¤§è©±ï¼ï¼ï¼\n\n" NOR);
                 who_lost = last_player;
         }
         else
         {
                 add_counter(query("id", who),-pt);
                 add_counter(query("id", ob),pt);
-                msg(who,0,BLINK HIY "$NÅĞ¶Ï´íÎóÁË£¡£¡£¡\n\n" NOR);
+                msg(who,0,BLINK HIY "$Nåˆ¤æ–·éŒ¯èª¤äº†ï¼ï¼ï¼\n\n" NOR);
                 who_lost=query("id", who);
         }
         start_game(0);
@@ -642,24 +642,24 @@ int do_dahua(string arg)
 
         if(!arg)
         {
-                msg(me,0,"$NÒ»±â×ìà½àìµÀ£º¡°´ó»°¾«£¬´ó»°¾«...¡±\n");
+                msg(me,0,"$Nä¸€æ‰å˜´å˜Ÿå›”é“ï¼šâ€œå¤§è©±ç²¾ï¼Œå¤§è©±ç²¾...â€\n");
                 return 1;
         }
 
         if(!is_playing(me))
-                return notify_fail("Äã¶¼²»Íæ°¡£¡\n");
+                return notify_fail("ä½ éƒ½ä¸ç©å•Šï¼\n");
 
         if(!has_guess||!last_player)
-                return notify_fail("»¹Ã»ÓĞ¿ªÊ¼²Â÷»×ÓÁË¡£\n");
+                return notify_fail("é‚„æ²’æœ‰é–‹å§‹çŒœéª°å­äº†ã€‚\n");
         
         ob = get_player(last_player);
         if(ob==me)
-                return notify_fail("×Ô¼º²»ÏàĞÅ×Ô¼º¡£\n");
+                return notify_fail("è‡ªå·±ä¸ç›¸ä¿¡è‡ªå·±ã€‚\n");
 
         if(last_player!=arg)
-                return notify_fail("²»ÊÇËû×îºó²Â÷»×ÓÁË¡£\n");
+                return notify_fail("ä¸æ˜¯ä»–æœ€å¾ŒçŒœéª°å­äº†ã€‚\n");
 
-        msg(me,ob,HIC "\n$N¶Ô$nËµµÀ£ºÎÒ²»ÏàĞÅ£¡£¡£¡\n" NOR);
+        msg(me,ob,HIC "\n$Nå°$nèªªé“ï¼šæˆ‘ä¸ç›¸ä¿¡ï¼ï¼ï¼\n" NOR);
         show_all_se(me);
         return 1;
 }
@@ -670,29 +670,29 @@ int do_finish(string arg)
 
         me = this_player();
         if(!is_playing(me))
-                return notify_fail("Äã¶¼²»Íæ°¡£¡\n");
+                return notify_fail("ä½ éƒ½ä¸ç©å•Šï¼\n");
         if(!has_start)
-                return notify_fail("ÓÎÏ·»¹Ã»ÓĞ¿ªÊ¼ÁË¡£\n");
+                return notify_fail("éŠæˆ²é‚„æ²’æœ‰é–‹å§‹äº†ã€‚\n");
         if(has_guess)
-                return notify_fail("ÒÑ¾­¿ªÊ¼²Â÷»×ÓÁË¡£\n");
+                return notify_fail("å·²ç¶“é–‹å§‹çŒœéª°å­äº†ã€‚\n");
 
         player_deal[query("id",me)] = 1; 
-        msg(me,0,"$N×¼±¸ºÃÁË¡£\n");
+        msg(me,0,"$Næº–å‚™å¥½äº†ã€‚\n");
         if(sizeof(player_deal)==sizeof(player))
         {
                 // all is finish
                 has_guess = 1;
-                msg(0,0,"\n²Â÷»×Ó¿ªÊ¼\n");
+                msg(0,0,"\nçŒœéª°å­é–‹å§‹\n");
                 if(who_lost)cur_player = who_lost;
                 who_lost = 0;
                 if( !cur_player)cur_player=query("id", me);
                 if(ob = get_cur_player())
                 {
-                        msg(ob,0,"$NËµµÀ£ºÓÉÎÒÏÈ²Â£¡£¡£¡\n");
+                        msg(ob,0,"$Nèªªé“ï¼šç”±æˆ‘å…ˆçŒœï¼ï¼ï¼\n");
                         tell_object(ob,for_guess_msg());
                 }
                 else
-                        msg(0,0,"È±ÉÙÁË"+cur_player+"£¬²»ÄÜ½øĞĞÓÎÏ·£¬ÇëÖØĞÂ¿ªÊ¼(start)\n");
+                        msg(0,0,"ç¼ºå°‘äº†"+cur_player+"ï¼Œä¸èƒ½é€²è¡ŒéŠæˆ²ï¼Œè«‹é‡æ–°é–‹å§‹(start)\n");
         }
         
         return 1;
@@ -701,7 +701,7 @@ int do_finish(string arg)
 int do_history(string arg)
 {
         if(!history)
-                tell_object(this_player(),"Ã»ÓĞÀúÊ·×ÊÁÏ¡£\n");
+                tell_object(this_player(),"æ²’æœ‰æ­·å²è³‡æ–™ã€‚\n");
         else
                 tell_object(this_player(),implode(history,"\n")+"\n");
         return 1;
@@ -717,13 +717,13 @@ int do_showc(string arg)
 
         idx = keys(player);
         
-        r = "¼ÆÊı±í(Scoreboard)\n£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­\nID¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡·ÖÊı\n£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­\n";
+        r = "è¨ˆæ•¸è¡¨(Scoreboard)\nï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼\nIDã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€åˆ†æ•¸\nï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼\n";
         for(i=0;i<sizeof(idx);i++)
         {
                 if(get_player(idx[i]))
                         r = sprintf("%s%-14s%10d\n", r,idx[i],counter[idx[i]]);
         }
-        r += "£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­\n";
+        r += "ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼\n";
 
         msg(0,0,r);
         return 1;
@@ -736,7 +736,7 @@ int do_visitor(string arg)
         int del;
 
         if(!arg)
-                return notify_fail("visit [-d] Íæ¼ÒID\n");
+                return notify_fail("visit [-d] ç©å®¶ID\n");
 
         if(sscanf(arg, "-d %s", key)==1 )
                 del = 1;
@@ -751,22 +751,22 @@ int do_visitor(string arg)
         {
                 ob = present(key,environment(this_object()));
                 if(!ob)
-                        return notify_fail("ÕâÀïÃ»ÓĞÕâ¸öÍæ¼Ò°¡£¿\n");
+                        return notify_fail("é€™è£¡æ²’æœ‰é€™å€‹ç©å®¶å•Šï¼Ÿ\n");
 
                 if(del)
                 {
                         if( !is_visitor(ob,query("id", me)) )
-                                return notify_fail("²»ÊÇÄãµÄ¹ÛÕ½Õß¡£\n");
+                                return notify_fail("ä¸æ˜¯ä½ çš„è§€æˆ°è€…ã€‚\n");
 
-                        msg(me,ob,"$N²»ÔÙÔÊĞí$n¹Û¿´$NµÄÕ½¿ö¡£\n");
+                        msg(me,ob,"$Nä¸å†å…è¨±$nè§€çœ‹$Nçš„æˆ°æ³ã€‚\n");
                         visitor[query("id", me)]=visitor[query("id", me)]-({query("id", ob)});
                 }
                 else
                 {
                         if( is_visitor(ob,query("id", me)) )
-                                return notify_fail("ÒÑ¾­ÊÇÄãµÄ¹ÛÕ½ÕßÁË¡£\n");
+                                return notify_fail("å·²ç¶“æ˜¯ä½ çš„è§€æˆ°è€…äº†ã€‚\n");
 
-                        msg(me,ob,"$NÈÃ$n¹Û¿´$NµÄÕ½¿ö¡£\n");
+                        msg(me,ob,"$Nè®“$nè§€çœ‹$Nçš„æˆ°æ³ã€‚\n");
                         if( !visitor[query("id", me)] )
                                 visitor[query("id", me)]=({query("id", ob)});
                         else
@@ -776,13 +776,13 @@ int do_visitor(string arg)
         else
         {
                 if(del)
-                        return notify_fail("£¿£¿£¿£¿\n");
+                        return notify_fail("ï¼Ÿï¼Ÿï¼Ÿï¼Ÿ\n");
 
                 ob = get_player(key);
                 if(!ob)
-                        return notify_fail("Ã»ÓĞÕâ¸öÍæ¼ÒÔÚÍæ°¡£¿\n");
-                msg(me,ob,"$NÏ£Íû³ÉÎª$nµÄ¹ÛÕ½Õß¡£\n");
-                tell_object(ob,"½ÓÊÜÊ¹ÓÃ[visit"+query("id", me)+"]¡£\n");
+                        return notify_fail("æ²’æœ‰é€™å€‹ç©å®¶åœ¨ç©å•Šï¼Ÿ\n");
+                msg(me,ob,"$Nå¸Œæœ›æˆç‚º$nçš„è§€æˆ°è€…ã€‚\n");
+                tell_object(ob,"æ¥å—ä½¿ç”¨[visit"+query("id", me)+"]ã€‚\n");
         }
         return 1;
 }
@@ -790,38 +790,38 @@ int do_visitor(string arg)
 int do_help(string arg)
 {
         this_player()->start_more( @HELP
-´ó»°÷»Ê¹ÓÃ·½·¨:
-¡ª¡ª[¿ªÊ¼ÓÎÏ·]¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
-°ïÖúÃüÁî£ºhelpse
-¼ÓÈëÃüÁî£ºjoin¡¡¡¡¡¡¡¡¡¡¼ÓÈëÓÎÏ·
-¿ªÊ¼ÃüÁî£ºstart ¡¡¡¡¡¡¡¡¿ªÊ¼ÓÎÏ·
-ÖØÖÃÃüÁî£ºreset se                ½áÊøÓÎÏ·
+å¤§è©±éª°ä½¿ç”¨æ–¹æ³•:
+â”€â”€[é–‹å§‹éŠæˆ²]â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+å¹«åŠ©å‘½ä»¤ï¼šhelpse
+åŠ å…¥å‘½ä»¤ï¼šjoinã€€ã€€ã€€ã€€ã€€åŠ å…¥éŠæˆ²
+é–‹å§‹å‘½ä»¤ï¼šstart ã€€ã€€ã€€ã€€é–‹å§‹éŠæˆ²
+é‡ç½®å‘½ä»¤ï¼šreset se                çµæŸéŠæˆ²
 
-¡ª¡ª[ÓÎÏ·Ç°ÃüÁî]¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
-¡¡Ò¡÷»×Ó£ºtoss
-²é¿´÷»×Ó£ºview [Íæ¼ÒID]
-×¼±¸½áÊø£ºfinish »òÕß deal
+â”€â”€[éŠæˆ²å‰å‘½ä»¤]â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+ã€€æ–éª°å­ï¼štoss
+æŸ¥çœ‹éª°å­ï¼šview [ç©å®¶ID]
+æº–å‚™çµæŸï¼šfinish æˆ–è€… deal
 
-¡ª¡ª[ÓÎÏ·ÃüÁî]¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
-²ğ´©´ó»°£ºdahua Íæ¼ÒID
-²Â²â÷»×Ó£ºguess ÷»×ÓÊıÁ¿ ÷»×ÓµãÊı
-¡¡¡¡¡¡¡¡¡¡»òÕß g ÷»×ÓÊıÁ¿ ÷»×ÓµãÊı
-´ß´ÙÍæ¼Ò£ºnext
+â”€â”€[éŠæˆ²å‘½ä»¤]â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+æ‹†ç©¿å¤§è©±ï¼šdahua ç©å®¶ID
+çŒœæ¸¬éª°å­ï¼šguess éª°å­æ•¸é‡ éª°å­é»æ•¸
+ã€€ã€€ã€€ã€€ã€€æˆ–è€… g éª°å­æ•¸é‡ éª°å­é»æ•¸
+å‚¬ä¿ƒç©å®¶ï¼šnext
 
-¡ª¡ª[ÆäËüÃüÁî]¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
-¡¡¼ÆÊıÆ÷£ºshowc
-²Â²âÈÕÖ¾£ºhistory
+â”€â”€[å…¶å®ƒå‘½ä»¤]â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+ã€€è¨ˆæ•¸å™¨ï¼šshowc
+çŒœæ¸¬æ—¥å¿—ï¼šhistory
 
-¡ª¡ª[ÅÔ¹ÛÃüÁî]¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
-¹ÛÕ½ÃüÁî£ºvisit [-d] Íæ¼ÒID
-                ÑûÇëÆäËüÍæ¼Ò¹Û¿´ÄãµÄÓÎÏ·¡£
-                ¼Ó²ÎÊı -d ±íÊ¾É¾³ı¸ÃÍæ¼ÒµÄ¹Û¿´×Ê¸ñ¡£
+â”€â”€[æ—è§€å‘½ä»¤]â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+è§€æˆ°å‘½ä»¤ï¼švisit [-d] ç©å®¶ID
+                é‚€è«‹å…¶å®ƒç©å®¶è§€çœ‹ä½ çš„éŠæˆ²ã€‚
+                åŠ åƒæ•¸ -d è¡¨ç¤ºåˆªé™¤è©²ç©å®¶çš„è§€çœ‹è³‡æ ¼ã€‚
 
-¡ª¡ª[ÓÎÏ·¹æÔò]¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
-½¨ÉèÖĞ...
+â”€â”€[éŠæˆ²è¦å‰‡]â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+å»ºè¨­ä¸­...
 
-¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
-                        make by Ã¨²¿Ã¨(Catyboy) v1.0
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+                        make by è²“éƒ¨è²“(Catyboy) v1.0
 HELP
         );
         return 1;

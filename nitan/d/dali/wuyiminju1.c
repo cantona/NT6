@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-        set("short","�������");
+        set("short","烏夷民居");
         set("long", @LONG
-����һ��������ķ��ݡ�������ӵĽ��غ����򽲾���������ɽ
-�ƣ�һ����ʯΪǽ�ͻ�����ľΪ�����ṹ���ºͺ��˷�����£�����
-ƽ����ʯ��Χǽ�����Ժ����һȦ������ţ����С�
+這是一所烏夷族的房屋。烏夷民居的建地和走向講究依傍四面山
+勢，一般以石為牆和基，以木為樑，結構大致和漢人房屋相仿，皆是
+平房，石砌圍牆。這家院內有一圈牲畜，豬牛羊皆有。
 LONG );
         set("objects", ([
            "/d/dali/npc/muyangnu": 1,

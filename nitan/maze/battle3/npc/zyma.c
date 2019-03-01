@@ -7,15 +7,15 @@ inherit NPC;
 
 void create()
 {
-        set_name(HIW"ÕÕÓñÊ¨×ÓÂí"NOR, ({"shizi ma", "horse", "ma"}));
-        set("race", "Ò°ÊÞ");
+        set_name(HIW"ç…§çŽ‰ç…å­é¦¬"NOR, ({"shizi ma", "horse", "ma"}));
+        set("race", "é‡Žç¸");
         set("age", 3);
 
         set("combat_exp", 2000000);
         set("long",
-                "Ò»Æ¥¸ßÍ·´óÂí£¬È«ÉíÑ©°×µÄÃ«·¢£¬É·ÊÇÉñ¿¡¡£\n");
+                "ä¸€åŒ¹é«˜é ­å¤§é¦¬ï¼Œå…¨èº«é›ªç™½çš„æ¯›ç™¼ï¼Œç…žæ˜¯ç¥žä¿Šã€‚\n");
 
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "Ìã×Ó", "Î²°Í" }) );
+        set("limbs", ({ "é ­éƒ¨", "èº«é«”", "è¹„å­", "å°¾å·´" }) );
         set("verbs", ({ "bite", "hoof" }) );
 
         set("str", 20+random(10));
@@ -37,7 +37,7 @@ void create()
 
         set("chat_chance", 5);
         set("chat_msg", ({
-                 HIC "ÕÕÓñÊ¨×ÓÂí²»×¡µØµÍÃù£¬Ìã×Ó²»Í£µØÅÙ´ò×ÅµØÃæ¡£\n" NOR,
+                 HIC "ç…§çŽ‰ç…å­é¦¬ä¸ä½åœ°ä½Žé³´ï¼Œè¹„å­ä¸åœåœ°åˆ¨æ‰“è‘—åœ°é¢ã€‚\n" NOR,
         }) );
 
         setup();
@@ -57,7 +57,7 @@ int do_ride(string arg)
 
         if (me != WAR_D->query_marshal())  
         { 
-                message_vision(HIY "$NÒ»ÉùË»Ãù£¬°Ñ$nÏÆ·­ÔÚµØ£¬¶ÙÊ±$nÂú×ìÊÇÄà£¡£¡\n" NOR, 
+                message_vision(HIY "$Nä¸€è²å˜¶é³´ï¼ŒæŠŠ$næŽ€ç¿»åœ¨åœ°ï¼Œé “æ™‚$næ»¿å˜´æ˜¯æ³¥ï¼ï¼\n" NOR, 
                         this_object(), me);
                 return 1;
         }                            
@@ -81,7 +81,7 @@ void heading_for(object me)
 {
         if (! objectp(me)) return;
         message_vision(
-                HIW "$N¿ìÂí¼Ó±Þ£¬Á¬Ò¹·É³Ú£¬ÖÕÓÚ¸Ïµ½ÁËËÎ¾ü´óÓª£¡\n" NOR, me);
+                HIW "$Nå¿«é¦¬åŠ éž­ï¼Œé€£å¤œé£›å¼›ï¼Œçµ‚äºŽè¶•åˆ°äº†å®‹è»å¤§ç‡Ÿï¼\n" NOR, me);
         me->move("/maze/battle3/sying1");
         return;
 }

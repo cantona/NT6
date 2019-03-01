@@ -1,10 +1,10 @@
-// Ìì±ä
+// å¤©è®Š
 #include <mudlib.h>
 #include <daemons.h>
 #include <ansi.h>
 
 #define WEATHER_CHANNEL "weather"
-#define CHANNEL_FORMAT "%%^WEATHER_CHANNEL%%^¡¾%s¡¿%s%%^RESET%%^\n"
+#define CHANNEL_FORMAT "%%^WEATHER_CHANNEL%%^ã€%sã€‘%s%%^RESET%%^\n"
 
 void show_weather(string where, int weather);
 
@@ -13,30 +13,30 @@ void main(object ob, string weather)
 	int i;
 	string where;
 	object env;
-	string *weathers = ({"ÇçÌì", "ÏÂÓê", "ÆðÎí", "ÏÂÑ©", "´ó·ç", "±©Óê", "±ù±¢"});
+	string *weathers = ({"æ™´å¤©", "ä¸‹é›¨", "èµ·éœ§", "ä¸‹é›ª", "å¤§é¢¨", "æš´é›¨", "å†°é›¹"});
 
 	env = environment( ob );
         while( env && !inherits(BASE_ROOM, env) )env = environment( env );
 	if( !where = env->get_area() ){
-		write("Ö»ÓÐÔÚÕ½³¡ÉÏ²ÅÄÜ¸Ä±äÌìÆø¡£\n");
+		write("åªæœ‰åœ¨æˆ°å ´ä¸Šæ‰èƒ½æ”¹è®Šå¤©æ°£ã€‚\n");
 		return;
 	};
 	if( !weather || !stringp(weather) || member_array(weather, weathers) == -1 ){
-                write("ÏÖÔÚ±¾µØÇøµÄÌìÆøÊÇ£º" + DAY_D->get_weather_short(AREA_D->get_area(where, "weather")) + "¡£\n");
-		write("Äã¿ÉÒÔÈÃÌìÆø×ª±äÎª£ºÇçÌì£¬ÏÂÓê£¬ÆðÎí£¬ÏÂÑ©£¬´ó·ç£¬±©Óê£¬»ò±ù±¢¡£\n");
+                write("ç¾åœ¨æœ¬åœ°å€çš„å¤©æ°£æ˜¯ï¼š" + DAY_D->get_weather_short(AREA_D->get_area(where, "weather")) + "ã€‚\n");
+		write("ä½ å¯ä»¥è®“å¤©æ°£è½‰è®Šç‚ºï¼šæ™´å¤©ï¼Œä¸‹é›¨ï¼Œèµ·éœ§ï¼Œä¸‹é›ªï¼Œå¤§é¢¨ï¼Œæš´é›¨ï¼Œæˆ–å†°é›¹ã€‚\n");
                 return;
         };
 	if( member_array(weather, weathers) == AREA_D->get_area(where, "weather") ){
-		write("ÏÖÔÚµÄÌìÆø¾ÍÊÇ£º" + DAY_D->get_weather_short(AREA_D->get_area(where, "weather")) + "¡£\n");
+		write("ç¾åœ¨çš„å¤©æ°£å°±æ˜¯ï¼š" + DAY_D->get_weather_short(AREA_D->get_area(where, "weather")) + "ã€‚\n");
 		return;
 	};
 
 	// In the furture, We have to consider the player's ablility
 	// add the exp of this jimou, reduce mp, etc.
 
-	ob->simple_action("$NÅÌÏ¥¶ø×ø£¬¿ÚÖÐÄîÄîÓÐ´Ê¡£\n");
-	ob->simple_action("×ªÑÛ¼ä£¬ÎÚÔÆÃÜ²¼£¬¿ñ·çËÄÆð¡£\n");
-	ob->start_busy(10, "ÄãÕýÃ¦ÓÚ×÷·¨ÄØ¡£");
+	ob->simple_action("$Nç›¤è†è€Œåï¼Œå£ä¸­å¿µå¿µæœ‰è©žã€‚\n");
+	ob->simple_action("è½‰çœ¼é–“ï¼Œçƒé›²å¯†å¸ƒï¼Œç‹‚é¢¨å››èµ·ã€‚\n");
+	ob->start_busy(10, "ä½ æ­£å¿™äºŽä½œæ³•å‘¢ã€‚");
 	load_object("/daemons/cast_d.c")->reg_player(ob->query_primary_id(), "tianbian");
         ob->award_exp(ob->query_sk_level("sk_zhimou")/2+random(20), "tianbian");
 	call_out("show_result", 5+random(5), ob, where, member_array(weather, weathers));
@@ -45,11 +45,11 @@ void show_result(object ob, string where, int weather)
 {
 	ob->stop_busy();
 	if( random(2) == 1 ){
-		ob->simple_action("Ò»µÀÉÁµç´ÓÌì¶ø½µ£¬½Ó×ÅÒ»Éù¾ÞÏì£¬ÌìÆø¸Ä±äÁË¡£\n");
+		ob->simple_action("ä¸€é“é–ƒé›»å¾žå¤©è€Œé™ï¼ŒæŽ¥è‘—ä¸€è²å·¨éŸ¿ï¼Œå¤©æ°£æ”¹è®Šäº†ã€‚\n");
 		AREA_D->set_area(where, "weather", weather);
 		show_weather(where, weather);
 	} else {
-		ob->simple_action("Ò»µÀÉÁµç´ÓÌì¶ø½µ£¬ÕýºÃ´òÔÚ$NÉíÉÏ¡£\n");
+		ob->simple_action("ä¸€é“é–ƒé›»å¾žå¤©è€Œé™ï¼Œæ­£å¥½æ‰“åœ¨$Nèº«ä¸Šã€‚\n");
 		ob->set_cur_hp(0);
 	}
 	return;
@@ -65,8 +65,8 @@ void show_weather(string where, int weather)
                 if( !env = environment(body) )continue;
                 while (env && !inherits(BASE_ROOM, env))env = environment(env);
                 if( !(env->get_area()) || env->get_area() != where )continue;
-		w_info = "ÌìÆø×ªÎª" + DAY_D->get_weather_short(weather)  + "¡£";
-                tell(({user}), sprintf(CHANNEL_FORMAT, "ÌìÆø", w_info), MSG_INDENT);
+		w_info = "å¤©æ°£è½‰ç‚º" + DAY_D->get_weather_short(weather)  + "ã€‚";
+                tell(({user}), sprintf(CHANNEL_FORMAT, "å¤©æ°£", w_info), MSG_INDENT);
         };
         return;
 }

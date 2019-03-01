@@ -22,9 +22,9 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : qinfo [<ÈÎÎñÃû³Æ>]
+æŒ‡ä»¤æ ¼å¼ : qinfo [<ä»»å‹™åç¨±>]
 
-´ËÖ¸Áî¿É²é¿´µ±Ç°ÏµÍ³ÓĞµÄÈÎÎñ¡£
+æ­¤æŒ‡ä»¤å¯æŸ¥çœ‹ç•¶å‰ç³»çµ±æœ‰çš„ä»»å‹™ã€‚
 HELP );
         return 1;
 }

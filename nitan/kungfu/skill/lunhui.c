@@ -4,15 +4,15 @@ inherit SKILL;
 string type() { return "knowledge"; } 
 
 int is_fmsk() { return 1; }
-string family_name() { return "ÉÙÁÖÅÉ"; }
+string family_name() { return "å°‘æž—æ´¾"; }
 
 int valid_learn(object me)
 {        
         if (me->query_skill("buddhism", 1) < 200)
-                return notify_fail("Äãìø×ÚÐÄ·¨ÐÞÎª²»×ã£¬ÎÞ·¨ÑÐÏ°ÁùµÀÂÖ»ØÖ®Êõ¡£\n");        
+                return notify_fail("ä½ ç¦ªå®—å¿ƒæ³•ä¿®ç‚ºä¸è¶³ï¼Œç„¡æ³•ç ”ç¿’å…­é“è¼ªå›žä¹‹è¡“ã€‚\n");        
         
         if( query("family/family_name", me) != family_name() )
-                return notify_fail("ÁùµÀÂÖ»ØÖ®ÊõÖ»ÄÜÉÙÁÖÅÉµÜ×Ó·½¿ÉÑÐÏ°¡£\n");
+                return notify_fail("å…­é“è¼ªå›žä¹‹è¡“åªèƒ½å°‘æž—æ´¾å¼Ÿå­æ–¹å¯ç ”ç¿’ã€‚\n");
 
         return 1;
 }

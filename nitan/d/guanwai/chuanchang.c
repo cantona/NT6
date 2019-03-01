@@ -3,12 +3,12 @@ inherit RIVER;
 
 void create()
 {
-        set("short", "����");
+        set("short", "船廠");
         set("long", @LONG
-�����ǹ��򴬳���������λ�ڹ����ƽԭ�в���һ������
-��С�򣬴��������ϡ������������Ը�ǽ�������ڼ��ء�����
-���ɻ���������գ��˱��ұ�����Ҫ�ء��ɻ��� (river)�ڶ�
-��ʱ�����ͨ�У����ﻯ����ֻ���Ҵ��Ұ�æ�ˡ�
+這裡是古鎮船廠。船廠是位于關外大平原中部的一個古老
+的小鎮，此鎮西、南、北、三面是以高牆壘築利于堅守。東面
+臨鬆花江天成天險，乃兵家必爭的要地。鬆花江 (river)在冬
+春時結冰可通行，夏秋化凍你只好找船家幫忙了。
 LONG);
         //set("arrive_room", "/d/guanwai/damenkan");
         set("to", "/d/guanwai/damenkan");

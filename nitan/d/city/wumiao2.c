@@ -10,10 +10,10 @@ string look_shu();
 
 void create()
 {
-	set("short", "ÎäÃí¶þÂ¥");
+	set("short", "æ­¦å»ŸäºŒæ¨“");
         set("long", @LONG
-ÕâÀïÊÇÔÀÍõÃíµÄ¶þÂ¥£¬ÕâÀï¹©µÄÊÇÔÀ·ÉµÄ³¤×ÓÔÀÔÆºÍÒå×ÓÕÅÏÜ£¬
-Á½×ðËÜÏñ½ð¿øÒøîø£¬Ó¢Æø²ª²ª¡£
+é€™è£¡æ˜¯å²³çŽ‹å»Ÿçš„äºŒæ¨“ï¼Œé€™è£¡ä¾›çš„æ˜¯å²³é£›çš„é•·å­å²³é›²å’Œç¾©å­å¼µæ†²ï¼Œ
+å…©å°Šå¡‘åƒé‡‘ç›”éŠ€éŽ§ï¼Œè‹±æ°£å‹ƒå‹ƒã€‚
 LONG );
 
 	set("no_fight", 1);

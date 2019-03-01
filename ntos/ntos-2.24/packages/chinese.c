@@ -8,9 +8,9 @@
 #include "chinese.h"
 
 /*
- * Written 2001/7/7 01:02ÉÏÎç by lismo <lismo@ms66.hinet.net>
+ * Written 2001/7/7 01:02ä¸Šåˆ by lismo <lismo@ms66.hinet.net>
  *
- * Ôö¼Ó ansi color ´¦Àí¼°ĞÂÔöÒ»¸ö²ÎÊı¿ÉÒÔ×öµÚÒ»ĞĞµÄËõÅÅ¹¤×÷. <clode@mud.revivalworld.org>
+ * å¢åŠ  ansi color è™•ç†åŠæ–°å¢ä¸€å€‹åƒæ•¸å¯ä»¥åšç¬¬ä¸€è¡Œçš„ç¸®æ’å·¥ä½œ. <clode@mud.revivalworld.org>
  *
  */
 #ifdef F_CWRAP
@@ -157,7 +157,7 @@ void f_bg5cc ()
 #endif
 
 /*
- * BIG5 <-> GB »¥×ª³ÌÊ½ĞŞ¸Ä×Ô CCF
+ * BIG5 <-> GB äº’è½‰ç¨‹å¼ä¿®æ”¹è‡ª CCF
  */
 #ifdef F_G2B
 void f_G2B ()

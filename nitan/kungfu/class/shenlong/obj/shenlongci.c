@@ -1,4 +1,4 @@
-// shenlongchi.c ÉñÁú´Ì
+// shenlongchi.c ç¥é¾åˆº
 
 #include <ansi.h>
 #include <weapon.h>
@@ -6,17 +6,17 @@ inherit HOOK;
 
 void create()
 {
-        set_name(HIY"ÉñÁú´Ì"NOR, ({ "shenlong ci", "ci" }));
+        set_name(HIY"ç¥é¾åˆº"NOR, ({ "shenlong ci", "ci" }));
         set_weight(2000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
-                set("long","ÕâÊÇÒ»±ú¶ÌĞ¡¾§ÁÁ¡¢Ç°´øÍä¹³µÄ±øÆ÷£¬ÊÇÉñÁúµºµÄ¶ÀÃÅ±øÆ÷¡£\n");
+                set("unit", "æŸ„");
+                set("long","é€™æ˜¯ä¸€æŸ„çŸ­å°æ™¶äº®ã€å‰å¸¶å½é‰¤çš„å…µå™¨ï¼Œæ˜¯ç¥é¾å³¶çš„ç¨é–€å…µå™¨ã€‚\n");
                 set("value", 500);
                 set("material", "steel");
-                set("wield_msg", "$N¡¸à§¡¹µÄÒ»Éù³é³öÒ»±ú$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²å»ØºóÑü¡£\n");
+                set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€è²æŠ½å‡ºä¸€æŸ„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°‡æ‰‹ä¸­çš„$næ’å›å¾Œè…°ã€‚\n");
         }
         init_hook(30);
         setup();

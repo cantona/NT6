@@ -1,10 +1,10 @@
-// cheng.c ³ÌÒ©·¢
+// cheng.c ç¨‹è—¥ç™¼
 #include <ansi.h>
 inherit NPC;
 
 int ask_job();
 int ask_fail();
-string *yz_east = ({//ÕâÀï¶¨ÒåÇ¿µÁµÄ¿ÉÄÜ²úÉúµØ
+string *yz_east = ({//é€™è£¡å®šç¾©å¼·ç›œçš„å¯èƒ½ç”¢ç”Ÿåœ°
         "/d/taishan/yidao1",
         "/d/quanzhou/qzroad1",
         "/d/quanzhou/qzroad4",
@@ -19,7 +19,7 @@ string *yz_east = ({//ÕâÀï¶¨ÒåÇ¿µÁµÄ¿ÉÄÜ²úÉúµØ
         "/d/huanghe/xueguan",
         });
 
-string *yz_south = ({//ÕâÀï¶¨ÒåÇ¿µÁµÄ¿ÉÄÜ²úÉúµØ
+string *yz_south = ({//é€™è£¡å®šç¾©å¼·ç›œçš„å¯èƒ½ç”¢ç”Ÿåœ°
         "/d/wudang/wdroad4",
         "/d/fuzhou/fzroad6",
         "/d/henshan/hsroad1",
@@ -34,7 +34,7 @@ string *yz_south = ({//ÕâÀï¶¨ÒåÇ¿µÁµÄ¿ÉÄÜ²úÉúµØ
         "/d/xiaoyao/shulin2",
         });
 
-string *yz_north = ({//ÕâÀï¶¨ÒåÇ¿µÁµÄ¿ÉÄÜ²úÉúµØ
+string *yz_north = ({//é€™è£¡å®šç¾©å¼·ç›œçš„å¯èƒ½ç”¢ç”Ÿåœ°
         "/d/shaolin/hanshui1",
         "/d/shaolin/jiulou2",
         "/d/shaolin/shijie1",
@@ -47,7 +47,7 @@ string *yz_north = ({//ÕâÀï¶¨ÒåÇ¿µÁµÄ¿ÉÄÜ²úÉúµØ
         "/d/city2/zhuang9",
         });
 
-string *yz_west = ({//ÕâÀï¶¨ÒåÇ¿µÁµÄ¿ÉÄÜ²úÉúµØ
+string *yz_west = ({//é€™è£¡å®šç¾©å¼·ç›œçš„å¯èƒ½ç”¢ç”Ÿåœ°
         "/d/xiangyang/northgate2",
         "/d/xiangyang/hutong2",
         "/d/xiangyang/westjie3",
@@ -66,13 +66,13 @@ string *yz_west = ({//ÕâÀï¶¨ÒåÇ¿µÁµÄ¿ÉÄÜ²úÉúµØ
 
 void create()
 {
-        set_name("³ÌÒ©·¢", ({ "cheng yaofa", "cheng" }));
-        set("title", "Öª¸®");
-        set("gender", "ÄĞĞÔ");
+        set_name("ç¨‹è—¥ç™¼", ({ "cheng yaofa", "cheng" }));
+        set("title", "çŸ¥åºœ");
+        set("gender", "ç”·æ€§");
         set("age", 43);
         set("str", 20);
         set("dex", 20);
-        set("long", "Ëû¾ÍÊÇ³ÌÒ©·¢£¬ÏÖÈÎÖª¸®¡£\n");
+        set("long", "ä»–å°±æ˜¯ç¨‹è—¥ç™¼ï¼Œç¾ä»»çŸ¥åºœã€‚\n");
         set("combat_exp", 3000000);
         set("shen", 0);
         set("attitude", "heroism");
@@ -87,8 +87,8 @@ void create()
         set("max_neili", 500);
         set("inquiry", ([
                 "job" : (:ask_job():),
-                "ÈÎÎñ" : (: ask_job() :),
-                "Ê§°Ü" : (: ask_fail() :),
+                "ä»»å‹™" : (: ask_job() :),
+                "å¤±æ•—" : (: ask_fail() :),
           ])),
 
         set("env/important", 1);    
@@ -108,12 +108,12 @@ int ask_job()
         skl = me->query_skills();
 
         if (me->query("combat_exp") < 100000){
-                command("say " + RANK_D->query_respect(me) + "ÄãµÄ±¾ÊÂ»¹Ã»ÓĞµ½¼ÒÄØ£¬¿ÖÅÂ´ËÈ¥Â·Í¾ÏÕ¶ñ£¬Äã»¹²»ÄÜÊ¤ÈÎ£¡\n");
+                command("say " + RANK_D->query_respect(me) + "ä½ çš„æœ¬äº‹é‚„æ²’æœ‰åˆ°å®¶å‘¢ï¼Œææ€•æ­¤å»è·¯é€”éšªæƒ¡ï¼Œä½ é‚„ä¸èƒ½å‹ä»»ï¼\n");
                 return 1;
         }
 
         if ( !skl ) {
-                tell_object(me, "ÄãÈ¥Ñ§Ò»Ğ©±¾ÊÂÏÈ°É£¡\n");
+                tell_object(me, "ä½ å»å­¸ä¸€äº›æœ¬äº‹å…ˆå§ï¼\n");
                 return 1;
                 }
         sname  = sort_array( keys(skl), (: strcmp :) );
@@ -124,26 +124,26 @@ int ask_job()
         if (skill < 80) skill = 80;
        
         if (me->query("combat_exp") > 1000000) {
-                command("say " + RANK_D->query_respect(me) + "ÄËÊÇ¹úÖ®¶°Áº£¬ÎÒĞ¡Ğ¡ÏØÁî£¬Æñ¸ÒÀÍÄú´ó¼Ü£¡");
+                command("say " + RANK_D->query_respect(me) + "ä¹ƒæ˜¯åœ‹ä¹‹æ£Ÿæ¨‘ï¼Œæˆ‘å°å°ç¸£ä»¤ï¼Œè±ˆæ•¢å‹æ‚¨å¤§æ¶ï¼");
                 return 1;
         }
         if (me->query("kill_qiangdao") == 1) {
                 command("kick " + me->query("id"));
-                command("say ÎÒ²»ÊÇ¸øÁËÄãÈÎÎñÁËÂğ£¿");
+                command("say æˆ‘ä¸æ˜¯çµ¦äº†ä½ ä»»å‹™äº†å—ï¼Ÿ");
                 return 1;
                 }
         else {
                 command("nod" + me->query("id"));
-                command("say " + RANK_D->query_respect(me) + "ÄÜÎª½­É½Éçğ¢×ÅÏë£¬ÕæÊÇÌ«ºÃÁË¡£");
+                command("say " + RANK_D->query_respect(me) + "èƒ½ç‚ºæ±Ÿå±±ç¤¾ç¨·è‘—æƒ³ï¼ŒçœŸæ˜¯å¤ªå¥½äº†ã€‚");
                 me->set("kill_qiangdao", 1);
-                me->set("quest3/quest_type", "É±");
-                me->set("quest3/quest", "Ç¿µÁ");
+                me->set("quest3/quest_type", "æ®º");
+                me->set("quest3/quest", "å¼·ç›œ");
                 me->set("task_time", time() + 300);
                 switch(random(3)) {
                 case 0 :
                         ob = new(__DIR__"qiangdao");
-                        ob->set("long", "ËûÊÇÃ÷½ÌÆúÍ½£¬×¨¿¿´ò½ÙÓªÉú£¬³¤ÁËÒ»Á³ºáÈâ£¬ÈÃÈËÍû¶øÉúÎ·¡£\n"
-                        "ËûÊÇ" + me->query("name") + "(" + me->query("id") + ")" + "µÄÄ¿±ê¡£\n");
+                        ob->set("long", "ä»–æ˜¯æ˜æ•™æ£„å¾’ï¼Œå°ˆé æ‰“åŠ«ç‡Ÿç”Ÿï¼Œé•·äº†ä¸€è‡‰æ©«è‚‰ï¼Œè®“äººæœ›è€Œç”Ÿç•ã€‚\n"
+                        "ä»–æ˜¯" + me->query("name") + "(" + me->query("id") + ")" + "çš„ç›®æ¨™ã€‚\n");
                         ob->set_skill("jiuyang-shengong", skill);
                         ob->set_skill("blade", skill);
                         ob->set_skill("strike", skill);
@@ -161,8 +161,8 @@ int ask_job()
 
                 default : 
                         ob = new(__DIR__"qiangdao");                   
-                        ob->set("long", "ËûÊÇĞÇËŞµÜ×Ó£¬³£³£ÏÂÉ½´ò½Ù£¬¼â¼âµÄÏÂ°ÍÉÏ¹Ò×Å¼¸ÂÅºúĞë£¬Ò»¿´¾ÍÖªµÀËûÊÇ¸öĞ°Ä§ÍâµÀÖ®±²¡£\n"
-                        "ËûÊÇ" + me->query("name") + "(" + me->query("id") + ")" + "µÄÄ¿±ê¡£\n");
+                        ob->set("long", "ä»–æ˜¯æ˜Ÿå®¿å¼Ÿå­ï¼Œå¸¸å¸¸ä¸‹å±±æ‰“åŠ«ï¼Œå°–å°–çš„ä¸‹å·´ä¸Šæ›è‘—å¹¾å±¢èƒ¡é ˆï¼Œä¸€çœ‹å°±çŸ¥é“ä»–æ˜¯å€‹é‚ªé­”å¤–é“ä¹‹è¼©ã€‚\n"
+                        "ä»–æ˜¯" + me->query("name") + "(" + me->query("id") + ")" + "çš„ç›®æ¨™ã€‚\n");
                         ob->set_skill("zhaixinggong", random(skill));
                         ob->set_skill("huagong-dafa", random(skill));
                         ob->set_skill("chousui-zhang", random(skill));
@@ -183,25 +183,25 @@ int ask_job()
                                 place = yz_east[random(sizeof(yz_east))];
                                 ob->move(place);
                                 me->set("quest3/place", place);
-                                command("whisper " + me->query("id") + " ÓĞÒ»¸öÇ¿µÁÔÚÑïÖİ³Ç¶«Îª·Ç×÷´õ£¬ÄãÈ¥½µ·şËû¡£");                           
+                                command("whisper " + me->query("id") + " æœ‰ä¸€å€‹å¼·ç›œåœ¨æšå·åŸæ±ç‚ºéä½œæ­¹ï¼Œä½ å»é™æœä»–ã€‚");                           
                                 break;
                         case 1 :
                                 place = yz_south[random(sizeof(yz_south))];
                                 ob->move(place);
                                 me->set("quest3/place", place);
-                                command("whisper " + me->query("id") + " ÓĞÒ»¸öÇ¿µÁÔÚÑïÖİ³ÇÄÏÎª·Ç×÷´õ£¬ÄãÈ¥½µ·şËû¡£");                           
+                                command("whisper " + me->query("id") + " æœ‰ä¸€å€‹å¼·ç›œåœ¨æšå·åŸå—ç‚ºéä½œæ­¹ï¼Œä½ å»é™æœä»–ã€‚");                           
                                 break;
                         case 2 :
                                 place = yz_north[random(sizeof(yz_north))];
                                 ob->move(place);
                                 me->set("quest3/place", place);
-                                command("whisper " + me->query("id") + " ÓĞÒ»¸öÇ¿µÁÔÚÑïÖİ³Ç±±Îª·Ç×÷´õ£¬ÄãÈ¥½µ·şËû¡£");                           
+                                command("whisper " + me->query("id") + " æœ‰ä¸€å€‹å¼·ç›œåœ¨æšå·åŸåŒ—ç‚ºéä½œæ­¹ï¼Œä½ å»é™æœä»–ã€‚");                           
                                 break;
                         default :
                                 place = yz_west[random(sizeof(yz_west))];
                                 ob->move(place);
                                 me->set("quest3/place", place);
-                                command("whisper " + me->query("id") + " ÓĞÒ»¸öÇ¿µÁÔÚÑïÖİ³ÇÎ÷Îª·Ç×÷´õ£¬ÄãÈ¥½µ·şËû¡£");                           
+                                command("whisper " + me->query("id") + " æœ‰ä¸€å€‹å¼·ç›œåœ¨æšå·åŸè¥¿ç‚ºéä½œæ­¹ï¼Œä½ å»é™æœä»–ã€‚");                           
                 }               
                 ob->set_temp("owner/id",me->query("id"));
                 ob->set("combat_exp", me->query("combat_exp"));
@@ -226,8 +226,8 @@ int ask_fail()
         
         if (me->query("kill_qiangdao") == 1) {
                 command("haha");
-                command("say ÄãÕâÉíÊÖÒ²¸ÒÀ´³Í¼é³ı¶ñ£¬¶¼¹ÖÀÏ·òµ±³õ¿´´íÁËÈË¡£");
-                command("chat " + me->query("name") + "¿ñÍı×Ô´ó£¬ÖÂÊ¹Ç¿µÁÎ£º¦Ò»·½¡£À´ÈËÀ²£¬ÕÈÔğÈıÊ®£¬Öğ³öÌÃÍâ£¡");
+                command("say ä½ é€™èº«æ‰‹ä¹Ÿæ•¢ä¾†æ‡²å§¦é™¤æƒ¡ï¼Œéƒ½æ€ªè€å¤«ç•¶åˆçœ‹éŒ¯äº†äººã€‚");
+                command("chat " + me->query("name") + "ç‹‚å¦„è‡ªå¤§ï¼Œè‡´ä½¿å¼·ç›œå±å®³ä¸€æ–¹ã€‚ä¾†äººå•¦ï¼Œæ–è²¬ä¸‰åï¼Œé€å‡ºå ‚å¤–ï¼");
                 me->move("/d/city/yamen");
                 me->add("qi",-300);
                 call_out("delete", 300);

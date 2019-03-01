@@ -1,20 +1,20 @@
-// �������block.c
+// 玩家任務：block.c
 
-// ���˼·��
-// �����ʼ��ʱ�趨��ʼ����ʱ��time_to_attack��
-// ��������������ʱ�俪ʼ�ɳ� NPC ������NPCֻҪ
-// ����ս���оͻ᳢���������н�����һ�ֹ�������
-// �����趨time_to_attack������ʱ�俪ʼ�ڶ��ֹ�
-// �������������ֱ���ﵽ����Ĺ�������Ϊֹ��
+// 設計思路：
+// 任務初始化時設定開始攻擊時間time_to_attack，
+// 根據心跳，到了時間開始派出 NPC 攻擊，NPC只要
+// 不在戰鬥中就會嘗試往關內行進。第一輪攻擊過後
+// 重新設定time_to_attack，到了時間開始第二輪攻
+// 擊。如此往復，直至達到定義的攻擊輪數為止。
 
 #include <ansi.h>
 #include <quest.h>
 
 inherit QUEST_OB;
 
-#define ROUND           my["round"]     // ��ǰ�Ĺ�������
-#define MAX_ROUND       my["max_round"] // ���Ĺ�������
-#define TIME            my["time"]      // ��һ�ֹ�����ʱ��
+#define ROUND           my["round"]     // 當前的攻擊輪數
+#define MAX_ROUND       my["max_round"] // 最大的攻擊輪數
+#define TIME            my["time"]      // 下一輪攻擊的時間
 
 int create_attacker(int num);
 
@@ -24,12 +24,12 @@ int filter_listener(object ob)
         return 1;
 }
 
-// ������󴴽�
+// 任務對象創建
 void create()
 {
         seteuid(getuid());
         
-        // ÿ 10 ����һ��
+        // 每 10 秒檢查一次
         set_heart_beat(5);
         setup();
 }
@@ -39,9 +39,9 @@ void init_quest()
         mapping my;
 
         my = query_entire_dbase(); 
-        // ��ʼ������ʱ��(1���������Ժ�)
+        // 初始化攻擊時間(1分鐘左右以後)
         TIME = time() + 30 + random(30);
-        // ��ʼ����������
+        // 初始化攻擊輪數
         ROUND = 0;
         MAX_ROUND = 18;
 }
@@ -61,7 +61,7 @@ void heart_beat()
         catch(create_attacker(21 + random(21)));
         ROUND += 1;
 
-        // BOSS ����
+        // BOSS 出場
         if (ROUND == MAX_ROUND)
         {
                 STORY_D->start_story("yanmen2");
@@ -69,10 +69,10 @@ void heart_beat()
         }
         listeners = filter_array(users(), (: filter_listener :));
         // message("story", STORY_DIR + "yanmen1.c"->prompt() + WHT +
-        message("story", HIY "�����ִ��桿" NOR + WHT +
-                         (random(2) ? "ֻ���õĵ�����֮����һ��������ʿ��ִ��ì"
-                                    : "ֻ��һ��������ʿ�����ų�ì��ָָ��㣬") +
-                         "���������Ź��⡣\n" + NOR, listeners);
+        message("story", HIY "【武林傳奇】" NOR + WHT +
+                         (random(2) ? "只聽得的的馬蹄之聲，一隊契丹武士手執長矛"
+                                    : "只見一隊契丹武士揮舞著長矛，指指點點，") +
+                         "來到了雁門關外。\n" + NOR, listeners);
 }
 
 int create_attacker(int num)
@@ -80,11 +80,11 @@ int create_attacker(int num)
         int i;
         int count;
         object aob;
-        string *msg = ({ "�����ų�ì����ҡ��ڵ����˹�����\n",
-                         "������һƥ�������˹�����\n",
-                         "ҫ�������ľ��ų�ì���˹�����\n",
-                         "���������ʲô���˹�����\n",
-                         "���ϴ��ż�Ц�����˹�����\n", });
+        string *msg = ({ "揮舞著長矛，大搖大擺的走了過來。\n",
+                         "騎著在一匹馬上走了過來。\n",
+                         "耀武揚威的舉著長矛走了過來。\n",
+                         "嘴裡嘟囔著什麼走了過來。\n",
+                         "臉上帶著姦笑，走了過來。\n", });
 
         for (i = 0; i < num + 1; i++)
         {
@@ -97,9 +97,9 @@ int create_attacker(int num)
         return count;
 }
 
-// ���������Ա�ĳ��֪����
+// 這個任務可以被某人知曉嗎？
 int can_know_by(object knower)
 {
-        // �������£����˿�֪
+        // 江湖大事，人人可知
         return 1;
 }

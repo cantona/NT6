@@ -1,4 +1,4 @@
-// kulou.c ÷¼÷Ã
+// kulou.c éª·é«
 // tomcat
 
 
@@ -10,9 +10,9 @@ void create()
 {
   object me = this_object();
   int j;
-  set_name("÷¼÷Ã", ({"ku lou", "yao", "kulou"}));
-  set("long","¸Õ²Å»¹ÊÇÒ»¸¶¸É¿İµÄº¡¹Ç£¬µ«²»ÖªÔõÃ´ËûÍ»È»ÌøÆğÀ´ÁË£¬¿´Ñù×ÓÊÇÀ´Ë÷ÃüµÄ£¡\n");
-  set("gender", "ÄĞĞÔ");
+  set_name("éª·é«", ({"ku lou", "yao", "kulou"}));
+  set("long","å‰›æ‰é‚„æ˜¯ä¸€ä»˜å¹¹æ¯çš„éª¸éª¨ï¼Œä½†ä¸çŸ¥æ€éº¼ä»–çªç„¶è·³èµ·ä¾†äº†ï¼Œçœ‹æ¨£å­æ˜¯ä¾†ç´¢å‘½çš„ï¼\n");
+  set("gender", "ç”·æ€§");
   set("age", 100);
   set("attitude", "peaceful");
   
@@ -84,8 +84,8 @@ void create()
   
   set("chat_chance", 10);
   set("chat_msg", ({
-	"÷¼÷ÃµÀ£º°¦£¬Ò²²»ÖªÔÚÕâÀïË¯ÁË¶à¾ÃÁË¡£\n",
-	"÷¼÷ÃµÀ£º½ñÌì¾ÍÄÃÄã¿ªµ¶ÁË¡£\n",
+	"éª·é«é“ï¼šå”‰ï¼Œä¹Ÿä¸çŸ¥åœ¨é€™è£¡ç¡äº†å¤šä¹…äº†ã€‚\n",
+	"éª·é«é“ï¼šä»Šå¤©å°±æ‹¿ä½ é–‹åˆ€äº†ã€‚\n",
 	}) );
   
   setup();
@@ -125,7 +125,7 @@ void die()
     object wan;
     object ob = this_object();
     object me = this_player();
-    msg="÷¼÷ÃÉ¢³ÉÒ»¶Ñ°×¹Ç£¬¹öÁË¿ªÈ¥¡£\n";
+    msg="éª·é«æ•£æˆä¸€å †ç™½éª¨ï¼Œæ»¾äº†é–‹å»ã€‚\n";
     if(environment())
 	message("vision", msg, environment());
     mykar=me->query_kar(); 
@@ -134,7 +134,7 @@ void die()
     {
        wan=new("/d/obj/drug/guo");
       if(environment()) wan->move(environment());
-       msg=HIW"ÄãÍ»È»·¢ÏÖ°×¹Ç¶ÑÀïºÃÏóÓĞµã¶«Î÷£¡\n"NOR;
+       msg=HIW"ä½ çªç„¶ç™¼ç¾ç™½éª¨å †è£¡å¥½è±¡æœ‰é»æ±è¥¿ï¼\n"NOR;
        message("vision", msg, environment());
     }  
       destruct(this_object());

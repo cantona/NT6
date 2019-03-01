@@ -1,5 +1,5 @@
 // This program is a part of NT MudLIB
-// boguang.c Ìï²®¹â
+// boguang.c ç”°ä¼¯å…‰
 
 #include <ansi.h>
 #include <command.h>
@@ -13,10 +13,10 @@ int  is_stay_in_room()  { return 1; }
 
 void create()
 {
-        set_name("Ìï²®¹â", ({ "tian boguang", "tian", "boguang" }));
-        set("nickname", HIM "ÍòÀï¶ÀĞĞ" NOR);
-        set("long", "Ìï²®¹âÎª½­ºşÖĞ³ôÃûÕÑÕÃµÄ²É»¨Ôô£¬Ò»ÊÖ¿ìµ¶¾ø¼¼£¬ÌìÏÂÎŞË«¡£Çá¹¦ÔÚÎäÁÖÖĞÒ²ÊÇÒ»µÈµÄ¡£\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("ç”°ä¼¯å…‰", ({ "tian boguang", "tian", "boguang" }));
+        set("nickname", HIM "è¬è£¡ç¨è¡Œ" NOR);
+        set("long", "ç”°ä¼¯å…‰ç‚ºæ±Ÿæ¹–ä¸­è‡­åæ˜­å½°çš„æ¡èŠ±è³Šï¼Œä¸€æ‰‹å¿«åˆ€çµ•æŠ€ï¼Œå¤©ä¸‹ç„¡é›™ã€‚è¼•åŠŸåœ¨æ­¦æ—ä¸­ä¹Ÿæ˜¯ä¸€ç­‰çš„ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 35);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -81,8 +81,8 @@ void create()
         ]));
 
         set("drops", ([
-                "RA&RANDOM10"    :       100,   // µÍ¼¶ÆÕÍ¨×°±¸
-                "RA&RANDOM20"    :       40,    // µÍ¼¶ÆÕÍ¨×°±¸
+                "RA&RANDOM10"    :       100,   // ä½ç´šæ™®é€šè£å‚™
+                "RA&RANDOM20"    :       40,    // ä½ç´šæ™®é€šè£å‚™
                 "FI&/clone/goods/enchant-scroll" :   20,
                 "FI&/clone/book/kuangfeng-book"  :   20,
                 "FI&/clone/goods/sun"    :   20,
@@ -104,15 +104,15 @@ void create()
 
 int accept_fight(object ob)
 {
-        command("say ÎÒ¿ÉÃ»ĞËÈ¤ÅãÄãÍæ£¬¿ì¸øÎÒ¹ö¿ª¡£");
+        command("say æˆ‘å¯æ²’èˆˆè¶£é™ªä½ ç©ï¼Œå¿«çµ¦æˆ‘æ»¾é–‹ã€‚");
         return 0;
 }
 
 int accept_hit(object ob)
 {
-        message_vision(HIW "$N" HIW "Á³É«Ò»±ä£¬ÉÁ¹ıÒ»µÀÉ±Æø¡£Å­"
-                       "ºÈµÀ£ººÃÒ»¸ö" + RANK_D->query_rude(ob) +
-                       "£¬À´°É£¡\n" NOR, this_object());
+        message_vision(HIW "$N" HIW "è‡‰è‰²ä¸€è®Šï¼Œé–ƒéä¸€é“æ®ºæ°£ã€‚æ€’"
+                       "å–é“ï¼šå¥½ä¸€å€‹" + RANK_D->query_rude(ob) +
+                       "ï¼Œä¾†å§ï¼\n" NOR, this_object());
         kill_ob(ob);
         return 1;
 }
@@ -127,12 +127,12 @@ int accept_kill(object ob)
 
 int accept_ansuan(object ob)
 {
-        return notify_fail("ÄÇÈË¾¯ÌèĞÔºÃ¸ß£¬ÄãÄÑÒÔÏÂÊÖ¡£\n");
+        return notify_fail("é‚£äººè­¦æƒ•æ€§å¥½é«˜ï¼Œä½ é›£ä»¥ä¸‹æ‰‹ã€‚\n");
 }
 
 int accept_touxi(object ob)
 {
-        return notify_fail("ÄÇÈË¾¯ÌèĞÔºÃ¸ß£¬ÄãÄÑÒÔÏÂÊÖ¡£\n");
+        return notify_fail("é‚£äººè­¦æƒ•æ€§å¥½é«˜ï¼Œä½ é›£ä»¥ä¸‹æ‰‹ã€‚\n");
 }
 
 void kill_ob(object me)
@@ -189,7 +189,7 @@ int fast_attack(object me, object ob)
         delete_temp("attack_pending", me);
         num = random(3) + 5;
 
-        message_vision("Ìï²®¹â´óº°Ò»Éù£¬Ê¹³öÆä¿ìµ¶¾ø¼¼·è¿ñ°ãÏò$NÁ¬ÅüÁË" + chinese_number(num) + "µ¶¡£\n", ob);
+        message_vision("ç”°ä¼¯å…‰å¤§å–Šä¸€è²ï¼Œä½¿å‡ºå…¶å¿«åˆ€çµ•æŠ€ç˜‹ç‹‚èˆ¬å‘$Né€£åŠˆäº†" + chinese_number(num) + "åˆ€ã€‚\n", ob);
 
         for (i = 1; i < num + 1; i++)
         {
@@ -204,15 +204,15 @@ mixed hit_ob(object me, object ob, int damage_bouns)
 {
         ob->start_busy(5 + random(6));
         me->receive_wound("qi", 200 + random(100), ob);
-        return HIY "$N" HIY "´óºÈÒ»Éù£¬Æ´ËÀ·´¿¹£¬¾¹±ÆµÃ$n" HIY "ÊÖÃ¦½ÅÂÒ¡£\n" NOR;
+        return HIY "$N" HIY "å¤§å–ä¸€è²ï¼Œæ‹¼æ­»åæŠ—ï¼Œç«Ÿé€¼å¾—$n" HIY "æ‰‹å¿™è…³äº‚ã€‚\n" NOR;
 }
 
 void death_msg()
 {
         command("chat* heng");
-       	command("chat ½ñÈÕÕæÊÇÔ©¼ÒÂ·Õ­£¬ÄãÒ¯Ò¯ÎÒ»¹ÓĞÊÂ£¬²»·îÅãÁË ¡­¡­");
-	CHANNEL_D->channel_broadcast("rumor", "ÌıËµ" + name() + HIM "±»½­ºşÈË"
-			                     "Ê¿×·É±£¬µ«È´·ÜÁ¦Æ´É±£¬Í»³öÖØÎ§£¬ËÀÀïÌÓÉú¡£" NOR);
+       	command("chat ä»Šæ—¥çœŸæ˜¯å†¤å®¶è·¯çª„ï¼Œä½ çˆºçˆºæˆ‘é‚„æœ‰äº‹ï¼Œä¸å¥‰é™ªäº† â€¦â€¦");
+	CHANNEL_D->channel_broadcast("rumor", "è½èªª" + name() + HIM "è¢«æ±Ÿæ¹–äºº"
+			                     "å£«è¿½æ®ºï¼Œä½†å»å¥®åŠ›æ‹¼æ®ºï¼Œçªå‡ºé‡åœï¼Œæ­»è£¡é€ƒç”Ÿã€‚" NOR);
 }
 
 void random_move()
@@ -222,11 +222,11 @@ void random_move()
         if (time() - query_temp("born_time") > 1800)
         {
                 env = environment(this_object());
-                message_vision("$N¼±¼±Ã¦Ã¦µÄ×ßÁË¡£\n", this_object());
+                message_vision("$Næ€¥æ€¥å¿™å¿™çš„èµ°äº†ã€‚\n", this_object());
 
-                CHANNEL_D->channel_broadcast("mess", "ÌıËµ" +
-                        env->short() + HIW "(" + LOOK_CMD->locate(base_name(env)) + ")Ò»´ø³öÏÖµÄ" +
-                        HIR + this_object()->short() + HIG "ÏûÊ§ÁË¡£\n" NOR);
+                CHANNEL_D->channel_broadcast("mess", "è½èªª" +
+                        env->short() + HIW "(" + LOOK_CMD->locate(base_name(env)) + ")ä¸€å¸¶å‡ºç¾çš„" +
+                        HIR + this_object()->short() + HIG "æ¶ˆå¤±äº†ã€‚\n" NOR);
 
                 destruct(this_object());
                 return;

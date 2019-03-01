@@ -8,18 +8,18 @@ inherit SWORD;
 
 void create()
 {
-        set_name(HIM"ÌÒÄ¾½£"NOR, ({ "taomu jian", "jian" }) );
+        set_name(HIM"æ¡ƒæœ¨åŠ"NOR, ({ "taomu jian", "jian" }) );
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
+                set("unit", "æŠŠ");
                 set("value", 200);
                 set("no_sell", 1);
                 set("material", "bamboo");
-        set("long", "ÕâÊÇÒ»°ÑµÀÊ¿ÃÇÓÃÀ´½µÑı³ıÄ§µÄÌÒÄ¾½££¬ÉÏÃæ¿Ì×ÅÒ»Ğ©·ûºÅ¡£\n");
-                set("wield_msg", HIY"$N³é³öÒ»°Ñ½ğ¹âÉÁÉÁµÄ$n"HIY"ÎÕÔÚÊÖÖĞ¡£\n"); 
-                set("unequip_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+        set("long", "é€™æ˜¯ä¸€æŠŠé“å£«å€‘ç”¨ä¾†é™å¦–é™¤é­”çš„æ¡ƒæœ¨åŠï¼Œä¸Šé¢åˆ»è‘—ä¸€äº›ç¬¦è™Ÿã€‚\n");
+                set("wield_msg", HIY"$NæŠ½å‡ºä¸€æŠŠé‡‘å…‰é–ƒé–ƒçš„$n"HIY"æ¡åœ¨æ‰‹ä¸­ã€‚\n"); 
+                set("unequip_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
         }
         init_sword(10);
         setup();

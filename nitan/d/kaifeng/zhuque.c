@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��ȸ��");
+        set("short", "朱雀門");
         set("long", @LONG
-�����ڳǵĳ��ţ��ߴ�ĳ�ǽ�ô���ש�ֺ���֭���ɣ�ʱ��ĳ�
-ˢʹ��ǽש��Ϊ����ɫ�����������ǽ�¥�����治Զ�����Ǵ������
-�İ˱������
+這是內城的城門，高大的城牆用大青磚彌合米汁而成，時間的沖
+刷使得牆磚變為鐵青色。東西兩邊是角樓，南面不遠處就是大相國寺
+的八寶琉璃殿。
 LONG );
         set("no_clean_up", 0);
         set("exits", ([

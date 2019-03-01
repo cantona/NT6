@@ -5,12 +5,12 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIR "°ü¹ü" NOR, ({ "bag" }) );
+        set_name(HIR "åŒ…è£¹" NOR, ({ "bag" }) );
         set_weight(1);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");                
+                set("unit", "å€‹");                
         }
         setup();
 }
@@ -77,12 +77,12 @@ int do_open(string arg)
 
         if (random(10) < 3)
         {                
-                write("Äã´ò¿ª°ü¹üÒ»¿´£¬ÀïÃæ¾¡ÊÇÒ»Ð©²»ÖµÇ®µÄ¶«Î÷£¬ËæÊÖ½«Ö®ÈÔÔÚÒ»±ß¡£\n");
+                write("ä½ æ‰“é–‹åŒ…è£¹ä¸€çœ‹ï¼Œè£¡é¢ç›¡æ˜¯ä¸€äº›ä¸å€¼éŒ¢çš„æ±è¥¿ï¼Œéš¨æ‰‹å°‡ä¹‹ä»åœ¨ä¸€é‚Šã€‚\n");
                 destruct(this_object());
                 return 1;
         }
 
-        // »ñÈ¡Ò»Ð©½±Àø
+        // ç²å–ä¸€äº›çŽå‹µ
         exp = me->query("combat_exp") / 1000000 + 50 + random(100);
         qn = 50 + random(200);
 
@@ -92,8 +92,8 @@ int do_open(string arg)
 
         if (objectp(ob))
         {
-                msg = HIR "\nÄã»ñµÃÁË " + chinese_number(exp) + " µãÊµÕ½¾­Ñé¼° " + chinese_number(qn) + " µãÇ±ÄÜ¡£\n" NOR;
-                msg += HIY "Äã´Ó" + this_object()->name() + HIY "ËÑ³ö" + ob->name() + HIY "¡£\n\n" NOR;
+                msg = HIR "\nä½ ç²å¾—äº† " + chinese_number(exp) + " é»žå¯¦æˆ°ç¶“é©—åŠ " + chinese_number(qn) + " é»žæ½›èƒ½ã€‚\n" NOR;
+                msg += HIY "ä½ å¾ž" + this_object()->name() + HIY "æœå‡º" + ob->name() + HIY "ã€‚\n\n" NOR;
                 tell_object(me, msg);
                 ob->move(me, 1);
                 me->add("combat_exp", exp);
@@ -101,7 +101,7 @@ int do_open(string arg)
         }
         else
         {
-                write("Îï¼þ" + sob + " ´íÎó¡£\n");
+                write("ç‰©ä»¶" + sob + " éŒ¯èª¤ã€‚\n");
         }
 
         destruct(this_object());

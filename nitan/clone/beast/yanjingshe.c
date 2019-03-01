@@ -3,8 +3,8 @@ inherit SNAKE;
 
 void create()
 {
-        set_name(HIR "ÑÛ¾µÉß" NOR, ({ "yanjing she", "yanjing", "she" }));
-        set("long", HIR "ÕâÊÇÒ»ÌõÎå²Ê°ßìµµÄÑÛ¾µÉß£¬¶¾ĞÔÃÍÁÒÖ®¼«¡£\n" NOR);
+        set_name(HIR "çœ¼é¡è›‡" NOR, ({ "yanjing she", "yanjing", "she" }));
+        set("long", HIR "é€™æ˜¯ä¸€æ¢äº”å½©æ–‘æ–•çš„çœ¼é¡è›‡ï¼Œæ¯’æ€§çŒ›çƒˆä¹‹æ¥µã€‚\n" NOR);
 
         set("age", 3);
         set("str", 35);

@@ -1,4 +1,4 @@
-// xunying.c ¶ÝÓ°ÇÜ×Ù
+// xunying.c éå½±æ“’è¹¤
 // Created by rcwiz for yhonline
 
 #include <ansi.h>
@@ -7,20 +7,20 @@ inherit F_CLEAN_UP;
 
 int is_scborn() { return 1; }
 
-string name() { return HIM "¶ÝÓ°ÇÜ×Ù" NOR; }
+string name() { return HIM "éå½±æ“’è¹¤" NOR; }
 
 int perform(object me, string skill)
 {        
         
         if (me->query("special2/xunying") && ! me->query("thborn/ok"))
         {
-                // 2×ªºó¿ÉÊ¹ÓÃÒ»´Î
+                // 2è½‰å¾Œå¯ä½¿ç”¨ä¸€æ¬¡
                 if (me->query("special2/thborn_xunying"))        
-                        return notify_fail("¶Ô²»Æð£¬ÄãÔÚ½ñÉúÒÑ¾­Ê¹ÓÃ¹ý¸Ã¾ø¼¼£¬ÎÞ·¨ÔÙ´ÎÊ¹ÓÃÁË¡£\n");
+                        return notify_fail("å°ä¸èµ·ï¼Œä½ åœ¨ä»Šç”Ÿå·²ç¶“ä½¿ç”¨éŽè©²çµ•æŠ€ï¼Œç„¡æ³•å†æ¬¡ä½¿ç”¨äº†ã€‚\n");
         }
         
                 if (me->query("combat_exp") < 2700000)
-                        return notify_fail("ÄúµÄÊµÕ½¾­ÑéÐ¡ÓÚ270Íò£¬ÎÞ·¨Ê©Õ¹¸Ã¼¼ÄÜ¡£\n");
+                        return notify_fail("æ‚¨çš„å¯¦æˆ°ç¶“é©—å°äºŽ270è¬ï¼Œç„¡æ³•æ–½å±•è©²æŠ€èƒ½ã€‚\n");
                 
         if (me->query_temp("special2/xunying"))
         {
@@ -30,17 +30,17 @@ int perform(object me, string skill)
                 if (me->query("thborn/ok"))
                         me->set("special2/thborn_xunying", 1);
                 me->save();
-                return notify_fail("Äã»ñµÃÁËÒõÑô°ËØÔ¼°ËãÊõÈý°Ù¼¶¡£\n");
+                return notify_fail("ä½ ç²å¾—äº†é™°é™½å…«å¦åŠç®—è¡“ä¸‰ç™¾ç´šã€‚\n");
         }
         else
         {
                 me->set_temp("special2/xunying", 1);
         
-                      return notify_fail("ÄãÔÚ×ªÉú¹ý³ÌÖÐ×Ý¹ÛÌìÏó£¬²ì¾õµ½ÁËÈËÊÀ\n"
-                                                "¼äµÄÖî¶à°ÂÃØ£¬ÖÚÉú°ÙÌ¬¾¡ÊÕÑÛµ×¡£´Ëºó\n"
-                                             "²»ÔÙÊÜµ½¼ÜÁ¦Ð¶ÕÐÖ®¼¼µÄÃÔ»ó¡£×ªÉúºóÊ¹\n"
-                                             "ÓÃ¸Ã¾ø¼¼¿É»ñµÃÒõÑô°ËØÔ¼°ËãÊõµÈ¼¶Èý°Ù\n"
-                                             "¼¶£¬µ«Ò»Éú½öÄÜÊ¹ÓÃÒ»´Î£¬Èç¹ûÄã¾ö¶¨ÏÖ\n"
-                                             "ÔÚÊ¹ÓÃÇëÔÙÊäÈëÒ»´Î " HIY "special xunying" NOR " ¡£\n");
+                      return notify_fail("ä½ åœ¨è½‰ç”ŸéŽç¨‹ä¸­ç¸±è§€å¤©è±¡ï¼Œå¯Ÿè¦ºåˆ°äº†äººä¸–\n"
+                                                "é–“çš„è«¸å¤šå¥§ç§˜ï¼Œçœ¾ç”Ÿç™¾æ…‹ç›¡æ”¶çœ¼åº•ã€‚æ­¤å¾Œ\n"
+                                             "ä¸å†å—åˆ°æž¶åŠ›å¸æ‹›ä¹‹æŠ€çš„è¿·æƒ‘ã€‚è½‰ç”Ÿå¾Œä½¿\n"
+                                             "ç”¨è©²çµ•æŠ€å¯ç²å¾—é™°é™½å…«å¦åŠç®—è¡“ç­‰ç´šä¸‰ç™¾\n"
+                                             "ç´šï¼Œä½†ä¸€ç”Ÿåƒ…èƒ½ä½¿ç”¨ä¸€æ¬¡ï¼Œå¦‚æžœä½ æ±ºå®šç¾\n"
+                                             "åœ¨ä½¿ç”¨è«‹å†è¼¸å…¥ä¸€æ¬¡ " HIY "special xunying" NOR " ã€‚\n");
        }
 }

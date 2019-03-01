@@ -6,23 +6,23 @@ inherit RINGS;
 
 void create()
 {
-        set_name(HIY "Ìì½µ¡¤ĞÑÊÀ»·" NOR, ({ "xingshi huan3" }));
+        set_name(HIY "å¤©é™ï¹’é†’ä¸–ç’°" NOR, ({ "xingshi huan3" }));
         set_weight(30);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ã¶");
-                set("long", HIY "´«ËµÖĞºüÏÉËùÅå´øµÄÖ¸»·¡£\n" NOR);
+                set("unit", "æš");
+                set("long", HIY "å‚³èªªä¸­ç‹ä»™æ‰€ä½©å¸¶çš„æŒ‡ç’°ã€‚\n" NOR);
                 set("value", 200000);
                 set("material", "gold");
                 set("armor_prop/con", 30);
                 set("armor_prop/damage", 3000);
                 set("armor_prop/unarmed", 150);
                 set("armor_prop/magic_find", 10);
-                set("special/desc", "ÓĞĞ§È­·¨µÈ¼¶Ìá¸ß150¼¶¡£\n"+
-                                    "ÓĞĞ§È­½ÅµÈ¼¶Ìá¸ß150¼¶¡£\n"+
-                                    "ÓĞĞ§ÕÆ·¨µÈ¼¶Ìá¸ß150¼¶¡£\n"+
-                                    "ÓĞĞ§Ö¸·¨µÈ¼¶Ìá¸ß150¼¶¡£\n"
+                set("special/desc", "æœ‰æ•ˆæ‹³æ³•ç­‰ç´šæé«˜150ç´šã€‚\n"+
+                                    "æœ‰æ•ˆæ‹³è…³ç­‰ç´šæé«˜150ç´šã€‚\n"+
+                                    "æœ‰æ•ˆæŒæ³•ç­‰ç´šæé«˜150ç´šã€‚\n"+
+                                    "æœ‰æ•ˆæŒ‡æ³•ç­‰ç´šæé«˜150ç´šã€‚\n"
                 );
                 set("limit", ([ 
                          "exp" : 100000000,

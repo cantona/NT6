@@ -1,5 +1,5 @@
 // This program is a part of NT MudLIB
-// shenghuo-ling.c ʥ���
+// shenghuo-ling.c 聖火令法
 
 #include <ansi.h>;
 inherit SKILL;
@@ -7,31 +7,31 @@ string type() { return "martial"; }
 string martialtype() { return "skill"; }
 
 mapping *action = ({
-([      "action" : "$N̤��һ���������ڵ���һ�����ѱ�ס��$nС�ȡ�ʮָ��ס��$nС���ϵ�
-���ж�������������Ѩ��$nֻ���°��������Ѷ������һ��",
+([      "action" : "$N踏上一步，忽地在地上一坐，已抱住了$n小腿。十指扣住了$n小腿上的
+‘中都’‘築賓’兩穴，$n只覺下半身酸麻難動，大吃一驚",
          "lvl" : 0
 ]),
-([      "action" : "ͻȻ֮�䣬$N���λζ���ͬʱ�۽�������$w��$n���ϻ�ȥ�����²�֪���
-�ƶ���������䡣����ͬʱץס$n���죬һ��֮�£���$n����ԶԶ���˳�ȥ",
+([      "action" : "突然之間，$N身形晃動，同時欺近，手中$w往$n身上劃去。腳下不知如何
+移動，身形早變。右手同時抓住$n後領，一抖之下，將$n向外遠遠擲了出去",
         "lvl" : 10
 ]),
-([      "action" : "$N����ֱ�������ֳ�$w��$n����������䡣������һ˲֮�䣬$n��������
-��Ȼһȭ����$n���ϡ�$nһ�����ģ�$N���$w����$n����",
+([      "action" : "$N欺身直進，左手持$w向$n天靈蓋上拍落。便在這一瞬之間，$n滾身向左，
+已然一拳打在$n腿上。$n一個踉蹌，$N橫過$w戳向$n後心",
         "lvl" : 20
 ]),
-([      "action" : "$N���ط��֣������Ǳ�$wβ�����ϵ����ĵ�һ�죬���ô���$n����",
+([      "action" : "$N忽地放手，手中那柄$w尾端向上彈起，拍的一響，正好打中$n手腕。",
         "lvl" : 30
 ]),
-([      "action" : "$N��Ȼ��ͷ��һ��ͷ����$nײ����$n������ɫ����������һ�ã�ͻ���ؿ�
-һʹ���ѱ�$N����ײ��",
+([      "action" : "$N忽然低頭，一個頭錘向$n撞來，$n不動聲色，向旁又是一讓，突覺胸口
+一痛，已被$N手肘撞中",
         "lvl" : 40
 ]),
-([      "action" : "$N����$w���Ӻ�ɨ��ͻȻ�����������Ľ��$n��֪�Է��Ǻ����⣬���뻹�Ǳ�֮
-Ϊ�������̤��һ������ǰ�׹⼱����$N��$w�ѵ��Ҽ�",
+([      "action" : "$N手中$w急揮橫掃，突然連翻三個空心筋鬥。$n不知對方是何用意，心想還是避之
+為妙，剛向左踏開一步，眼前白光急閃，$N的$w已到右肩",
         "lvl" : 50
 ]),
-([      "action" : "$N��Ȼ��ͷ��һ��ͷ����$nײ����$n������ɫ����������һ�ã�ͻ���ؿ�
-һʹ���ѱ�$N����ײ��",
+([      "action" : "$N忽然低頭，一個頭錘向$n撞來，$n不動聲色，向旁又是一讓，突覺胸口
+一痛，已被$N手肘撞中",
         "lvl" : 60
 ]),
 });
@@ -41,39 +41,39 @@ int valid_enable(string usage) { return usage == "sword" || usage == "parry"; }
 int valid_learn(object me)
 {
         if (query("int", me) < 32)
-                return notify_fail("���������Բ��㣬�޷����ʥ�����\n");
+                return notify_fail("你先天悟性不足，無法領會聖火令法。\n");
 
         if ((int)me->query_skill("force", 1) < 200)
-                return notify_fail("����ڹ���򲻵����޷�ѧϰʥ�����\n");
+                return notify_fail("你的內功火候不到，無法學習聖火令法。\n");
 
         if ((int)me->query_skill("sword", 1) < 200)
-                return notify_fail("��Ļ���������򲻵����޷�ѧϰʥ�����\n");
+                return notify_fail("你的基本劍法火候不到，無法學習聖火令法。\n");
 
         if (query("max_neili", me) < 2400)
-                return notify_fail("����ڹ���Ϊ���㣬�޷�ѧϰʥ�����\n");
+                return notify_fail("你的內功修為不足，無法學習聖火令法。\n");
 
         if (me->query_str() < 35)
-                return notify_fail("����������̫��޷�ѧϰʥ�����\n");
+                return notify_fail("你現在膂力太差，無法學習聖火令法。\n");
 
         if (me->query_int() < 40)
-                return notify_fail("�������޷�����ʥ�����Ҫ�衣\n");
+                return notify_fail("你現在無法領悟聖火令法的要詣。\n");
 
         if (me->query_dex() < 35)
-                return notify_fail("����������̫��޷�ѧϰʥ�����\n");
+                return notify_fail("你現在身法太差，無法學習聖火令法。\n");
 
         if (me->query_skill("force", 1) < me->query_skill("shenghuo-ling", 1))
-                return notify_fail("����ڹ���Ϊ���㣬�޷����������ʥ�����\n");
+                return notify_fail("你的內功修為不足，無法領會更高深的聖火令法。\n");
 
         if (me->query_skill("shenghuo-ling", 1) > 200)
         {
                  if (me->query_skill("shenghuo-ling", 1) >
                      me->query_skill("shenghuo-shengong", 1))
-                            return notify_fail("���ʥ����ˮƽ���ޣ��޷����"
-                                               "�������ʥ�����\n");
+                            return notify_fail("你的聖火神功水平有限，無法領會"
+                                               "更高深的聖火令法。\n");
         }
 
         if (me->query_skill("sword", 1) < me->query_skill("shenghuo-ling", 1))
-                return notify_fail("��Ļ�������ˮƽ���ޣ��޷����������ʥ�����\n");
+                return notify_fail("你的基本劍法水平有限，無法領會更高深的聖火令法。\n");
 
         return 1;
 }
@@ -84,17 +84,17 @@ int practice_skill(object me)
 
         if (!objectp(weapon = query_temp("weapon", me)) ||
             (string)query("skill_type", weapon) != "sword")
-                return notify_fail("��ʹ�õ��������ԡ�\n");
+                return notify_fail("你使用的武器不對。\n");
 
         if (me->query_skill("shenghuo-ling", 1) < 180)
-                return notify_fail("�㻹û������ʥ��������еİ���޷�"
-                                   "ͨ���������������\n");
+                return notify_fail("你還沒有掌握聖火令法中所有的奧妙，無法"
+                                   "通過鍛煉獲得提升。\n");
 
         if ((int)query("qi", me) < 80)
-                return notify_fail("�������������ʥ�����\n");
+                return notify_fail("你的體力不夠練聖火令法。\n");
 
         if ((int)query("neili", me) < 80)
-                return notify_fail("�������������ʥ�����\n");
+                return notify_fail("你的內力不夠練聖火令法。\n");
 
         me->receive_damage("qi", 50);
         addn("neili", -70, me);
@@ -119,17 +119,17 @@ mapping query_action(object me, object weapon)
         for(i = ttl; i > 0; i--)
                 if(lvl > action[i-1]["lvl"])
                 {
-                        seq = i; /* �������������� */
+                        seq = i; /* 獲得招數序號上限 */
                         break;
                 }
-        seq = random(seq);       /* ѡ������������ */
+        seq = random(seq);       /* 選擇出手招數序號 */
         return ([
                 "action"      : action[seq]["action"],
                 "dodge"       : d_e1 + (d_e2 - d_e1) * seq / ttl,
                 "parry"       : p_e1 + (p_e2 - p_e1) * seq / ttl,
                 "force"       : f_e1 + (f_e2 - f_e1) * seq / ttl,
                 "damage"      : m_e1 + (m_e2 - m_e1) * seq / ttl,
-                "damage_type" : random(2) ? "����" : "����",
+                "damage_type" : random(2) ? "劈傷" : "刺傷",
         ]);
 }
 
@@ -148,7 +148,7 @@ mixed hit_ob(object me, object victim, int damage_bonus)
         if (query_temp("shenghuo-ling/max_hit", me))
         {
                 victim->receive_wound("qi", damage_bonus);
-                return HIR "ֻ�������͡�һ����һ����Ѫ��$n" HIR "��ǰ�����"
+                return HIR "只聽“噗嗤”一聲，一股鮮血至$n" HIR "胸前射出！"
                        "\n" NOR;
         }
 }
@@ -160,16 +160,16 @@ string perform_action_file(string action)
 
 int help(object me)
 {
-        write(HIR"\nʥ�����"NOR"\n");
+        write(HIR"\n聖火令法："NOR"\n");
         write(@HELP
 
-    ʥ���������ʥ��ʥ�����ϵ��书��������ʽ�����ޱȶ���
-��֮���ֲ���������ʥ����֮�����ԣ����������ޱȡ�
+    聖火令法是明教聖物聖火令上的武功，以其招式怪異無比而往
+打之措手不及，加上聖火令之特殊性，更是厲害無比。
 
-        ѧϰҪ��
-                ������20��
-                ����50
-                ̫���޷���ϰ50�����ϵ�ʥ���
+        學習要求：
+                九陽神功20級
+                內力50
+                太監無法修習50級以上的聖火令法
 HELP
         );
         return 1;

@@ -17,32 +17,32 @@ int perform(object me, object target)
            !arrayp(can_perform) || 
            !sizeof(can_perform) || 
            member_array("light",can_perform) == -1)
-                return notify_fail("Äã»¹Ã»ÓĞÑ§»áÊ¹ÓÃ£ÛÌìÁúÖ®¹â£İ£¡\n");
+                return notify_fail("ä½ é‚„æ²’æœ‰å­¸æœƒä½¿ç”¨ï¹å¤©é¾ä¹‹å…‰ï¹ï¼\n");
 
         if (me->is_busy())
-                return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É£¬ÎŞ·¨Ê¹ÓÃÌìÁúÖ®¹â¡£\n");
+                return notify_fail("ä½ ä¸Šä¸€å€‹å‹•ä½œé‚„æ²’æœ‰å®Œæˆï¼Œç„¡æ³•ä½¿ç”¨å¤©é¾ä¹‹å…‰ã€‚\n");
 
         lvl = (int)me->query_skill("martial-cognize",1);
 
         if (lvl < 250)
-                return notify_fail("ÄãµÄÎäÑ§ĞŞÑøĞŞÎª²»¹»¡£\n");
+                return notify_fail("ä½ çš„æ­¦å­¸ä¿®é¤Šä¿®ç‚ºä¸å¤ ã€‚\n");
 
         if( query("jingli", me)<500 )
-                return notify_fail("ÄãµÄ¾«Á¦²»¹»£¡\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤ ï¼\n");
 
         if( query("max_jingli", me)<1000 )
-                return notify_fail("ÄãµÄ¾«Á¦»¹Ã»ÓĞ´ïµ½×ã¹»µÄ²ã´Î£¡\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›é‚„æ²’æœ‰é”åˆ°è¶³å¤ çš„å±¤æ¬¡ï¼\n");
 
         if( query("jing", me) <= 300 )
-                return notify_fail("ÄãµÄ¾«Éñ×´¿ö²»ºÃ£¡\n");
+                return notify_fail("ä½ çš„ç²¾ç¥ç‹€æ³ä¸å¥½ï¼\n");
 
         if( environment(me) && query("no_fight", environment(me)) )
-                return notify_fail("ÕâÀï²»ÄÜÊ¹ÓÃ£ÛÌìÁúÖ®¹â£İ!\n");
+                return notify_fail("é€™è£¡ä¸èƒ½ä½¿ç”¨ï¹å¤©é¾ä¹‹å…‰ï¹!\n");
 
         addn("jingli", -400, me);
         me->receive_damage("jing", 250);
 
-        message_vision(HIY "$NÃÍÈ»±¬·¢³öÒ»Éù¾ªÌì¶¯µØµÄÅ­ºğ£¬ÌìµØÒşÒş»ØÏì×ÅÇå³ºµÄÁúÒ÷£®£®£®\n" NOR, me);
+        message_vision(HIY "$NçŒ›ç„¶çˆ†ç™¼å‡ºä¸€è²é©šå¤©å‹•åœ°çš„æ€’å¼ï¼Œå¤©åœ°éš±éš±å›éŸ¿è‘—æ¸…æ¾ˆçš„é¾åŸï¼ï¼ï¼\n" NOR, me);
 
         if ( lvl <= random(500) )
         {
@@ -64,9 +64,9 @@ int perform(object me, object target)
                                 inv[i]->fight_ob(me);
                 }
                 me->start_busy(5);
-                return notify_fail("ÄãÒòÎªÎäÑ§ĞŞÑøĞŞÁ¶²»¹»¶øÊ§°ÜÁË£¡\n");
+                return notify_fail("ä½ å› ç‚ºæ­¦å­¸ä¿®é¤Šä¿®ç…‰ä¸å¤ è€Œå¤±æ•—äº†ï¼\n");
         }
-        message_vision(HIR "£®£®£®$N»Ã»¯³ÉÒ»ÌõÄ£ºıµÄÁúÓ°£¬È«ÉíÉä³öÇ§ÍòµÀ³ãÈÈµÄÑªºì¹âÃ¢£¡£¡£¡\n" NOR, me);
+        message_vision(HIR "ï¼ï¼ï¼$Nå¹»åŒ–æˆä¸€æ¢æ¨¡ç³Šçš„é¾å½±ï¼Œå…¨èº«å°„å‡ºåƒè¬é“ç†¾ç†±çš„è¡€ç´…å…‰èŠ’ï¼ï¼ï¼\n" NOR, me);
         env = environment(me);
         inv = all_inventory(env);
         for(i=0; i<sizeof(inv); i++) {
@@ -84,11 +84,11 @@ int bbqthem(object me, object obj)
         int magic;
         string msg;
         magic = (int) me->query_skill("martial-cognize",1)*5;  
-        message_vision(HIR "\n³ãÈÈµÄºì¹âÏóÀû½£°ãÉäÏò$N£¬\n" NOR, obj);
+        message_vision(HIR "\nç†¾ç†±çš„ç´…å…‰è±¡åˆ©åŠèˆ¬å°„å‘$Nï¼Œ\n" NOR, obj);
         obj->receive_wound("jing", magic*2/3, me);
         if(obj->is_ghost()) 
         {
-                message_vision(YEL "$N²Ò½ĞÁËÒ»Éù£¬»¯ÎªÁË»Ò½ı£¡\n" NOR, obj);
+                message_vision(YEL "$Næ…˜å«äº†ä¸€è²ï¼ŒåŒ–ç‚ºäº†ç°ç‡¼ï¼\n" NOR, obj);
                 obj->die();
                 return 1;
         }

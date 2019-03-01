@@ -22,16 +22,16 @@ string sort_msg(string input)
                 if( len >= 64 && input[i] != '\n' ) {
                         switch (input[i..i+1])
                         {
-                        case "£º":
-                        case "¡±":
-                        case "¡£":
-                        case "£¬":
-                        case "¡¢":
-                        case "£»":
-                        case "£©":
+                        case "ï¼š":
+                        case "â€":
+                        case "ã€‚":
+                        case "ï¼Œ":
+                        case "ã€":
+                        case "ï¼›":
+                        case "ï¼‰":
                         case " )":
-                        case "£¡":
-                        case "£¿":
+                        case "ï¼":
+                        case "ï¼Ÿ":
                                 break;
                         default:
                                 len = 0;
@@ -105,7 +105,7 @@ varargs void message_vision(string msg, object me, object you)
         message("vision", str1, me);
         if( !environment(me) ) return;
         message("vision", str3, all_inventory(environment(me)), ({ me, you }));
-        if( query("fight_room", environment(me)) ) // ÀŞÌ¨±ÈÎäÖ±²¥
+        if( query("fight_room", environment(me)) ) // æ“‚å°æ¯”æ­¦ç›´æ’­
                 environment(me)->relay_message(str3);
 }
 
@@ -230,7 +230,7 @@ varargs void message_combatd(string msg, object me, object you, string damage_in
                                 message("tell_object", str2, you);
                 }
         }
-        // ÀŞÌ¨±ÈÎäÖ±²¥
+        // æ“‚å°æ¯”æ­¦ç›´æ’­
         if( query("fight_room", environment(me)) ) {
                 str3f = msg;
                 str3d = (string)damage_info;
@@ -350,7 +350,7 @@ void message(mixed arg, string message, mixed target, mixed exclude)
 
 void message_system(string message)
 {
-        message("system", HIW "\n¡¾ÏµÍ³ÌáÊ¾¡¿" + message + "\n" NOR,
+        message("system", HIW "\nã€ç³»çµ±æç¤ºã€‘" + message + "\n" NOR,
                 all_interactive(), 0);
 }
 
@@ -377,7 +377,7 @@ string query_fail_msg()
 }
 
 
-// Í³Ò»´úÃû´Ê×ª»»Ö®Ñ¶Ï¢·¢ËÍº¯Ê½
+// çµ±ä¸€ä»£åè©è½‰æ›ä¹‹è¨Šæ¯ç™¼é€å‡½å¼
 varargs void msg(string msg, object me, object you, int onlooker, string classes, object *exclude, mapping translate)
 {
         string my_msg, your_msg;
@@ -385,44 +385,44 @@ varargs void msg(string msg, object me, object you, int onlooker, string classes
 
         if( !msg || !objectp(me) ) return;
 
-        // È¡µÃ Me Îï¼ş×ÊÁÏ
+        // å–å¾— Me ç‰©ä»¶è³‡æ–™
 
-       my_idname = me->query_idname() || "ÎŞÃû³Æ";
+       my_idname = me->query_idname() || "ç„¡åç¨±";
 
 
-        // ¶îÍâÊäÈë¹Ø¼ü×ÖÖ®×ª»», ¼´³ıÁË $ME Óë $YOU ÒÔÍâÖ®×ª»»
+        // é¡å¤–è¼¸å…¥é—œéµå­—ä¹‹è½‰æ›, å³é™¤äº† $ME èˆ‡ $YOU ä»¥å¤–ä¹‹è½‰æ›
         if( mapp(translate) )
                 foreach(string pattern, string replace in translate)
                 msg = replace_string(msg, pattern, replace);
 
-        // Me Ñ¶Ï¢Ö®µÚ¶şÈË³Æ×ª»»
+        // Me è¨Šæ¯ä¹‹ç¬¬äºŒäººç¨±è½‰æ›
         my_msg = replace_string(msg, "$ME", pnoun(2, me));
 
-        // ÈôÓĞ¶ÔÏóÎï¼ş you, Ôò¶Ô you ×÷Ñ¶Ï¢´¦Àí
+        // è‹¥æœ‰å°è±¡ç‰©ä»¶ you, å‰‡å° you ä½œè¨Šæ¯è™•ç†
         if( objectp(you) )
         {
-                your_idname = you->query_idname() || "ÎŞÃû³Æ";
+                your_idname = you->query_idname() || "ç„¡åç¨±";
 
-                // Me Ñ¶Ï¢Ö®µÚÈıÈË³Æ×ª»»
+                // Me è¨Šæ¯ä¹‹ç¬¬ä¸‰äººç¨±è½‰æ›
                 my_msg = replace_string(my_msg, "$YOU", your_idname, 1);
                 my_msg = replace_string(my_msg, "$YOU", pnoun(3, you));
 
-                // You Ñ¶Ï¢Ö®µÚ¶şÈË³Æ×ª»»
+                // You è¨Šæ¯ä¹‹ç¬¬äºŒäººç¨±è½‰æ›
                 your_msg = replace_string(msg, "$ME", my_idname, 1);
                 your_msg = replace_string(your_msg, "$ME", pnoun(3, me));
                 your_msg = replace_string(your_msg, "$YOU", pnoun(2, you));
 
 
-                // ¶ÔÎï¼ş you ËÍ³öÑ¶Ï¢
+                // å°ç‰©ä»¶ you é€å‡ºè¨Šæ¯
                 if( !arrayp(exclude) || member_array(you, exclude) == -1 )
                         tell(you, your_msg, classes);
         }
 
-        // ¶ÔÎï¼ş Me ËÍ³öÑ¶Ï¢
+        // å°ç‰©ä»¶ Me é€å‡ºè¨Šæ¯
         if( !arrayp(exclude) || member_array(me, exclude) == -1 )
                 tell(me, my_msg, classes);
 
-        // ÈôÓĞ onlooker(ÅÔ¹ÛÕß) ²ÎÊı, Ôò¶ÔÓë me »ò you Í¬Ò»»·¾³ÖĞµÄÉúÎï·¢³öÑ¶Ï¢
+        // è‹¥æœ‰ onlooker(æ—è§€è€…) åƒæ•¸, å‰‡å°èˆ‡ me æˆ– you åŒä¸€ç’°å¢ƒä¸­çš„ç”Ÿç‰©ç™¼å‡ºè¨Šæ¯
         if( onlooker )
         {
                 string onlookers_msg;
@@ -448,7 +448,7 @@ varargs void msg(string msg, object me, object you, int onlooker, string classes
                 if( objectp(you) ) 
                         onlookers_msg = replace_string(onlookers_msg, "$YOU", your_idname);
 
-                // ¶ÔËùÓĞÅÔ¹ÛÕßÎï¼şËÍ³öÑ¶Ï¢
+                // å°æ‰€æœ‰æ—è§€è€…ç‰©ä»¶é€å‡ºè¨Šæ¯
                 tell(onlookers, onlookers_msg, classes);
         }
 }

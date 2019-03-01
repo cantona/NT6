@@ -6,14 +6,14 @@ inherit MYHEART;
 
 void create()
 {
-        set_name(HIM "ÏÉÊóÁéÎ²" NOR, ({ "xianshu lingwei", "xianshu", "lingwei" }) );
+        set_name(HIM "ä»™é¼ éˆå°¾" NOR, ({ "xianshu lingwei", "xianshu", "lingwei" }) );
         set_weight(1);
         if( clonep())
                 set_default_object(__FILE__);
         else {
                 set("material", "paper");
-                set("unit", "¸ù");
-                set("long", HIM "¹«Ôª¶şÁãÁã°ËÄê´º½Ú£¬ÓÚÅîÀ³ÏÉµº÷è÷ëÑÂÏÂÕ¶É±ÅîÀ³ÏÉÊóºó»ñµÃµÄÁéÎ²£¬Òì³£Õä¹ó£¬ÏŞÁ¿Õä²Ø¡£\n" NOR);
+                set("unit", "æ ¹");
+                set("long", HIM "å…¬å…ƒäºŒé›¶é›¶å…«å¹´æ˜¥ç¯€ï¼Œäºè“¬èŠä»™å³¶éº’éºŸå´–ä¸‹æ–¬æ®ºè“¬èŠä»™é¼ å¾Œç²å¾—çš„éˆå°¾ï¼Œç•°å¸¸çè²´ï¼Œé™é‡çè—ã€‚\n" NOR);
                 set("value", 1000000);
                 set("limit", ([
                         "exp"    :   1000000,
@@ -25,7 +25,7 @@ void create()
                 set("armor_prop/int", 4);
                 set("armor_prop/dex", 4);
                 set("armor_prop/con", 4);
-                set("special/desc", HIR "Åå´øºó¿ÉÔö¼ÓÈÎÎñºÍÉ±¹Ö½±Àø1%£¬ÇÒ¼õÉÙÅîÀ³µºÉÏÒÆ¶¯Ã¦ÂÒÊ±¼ä¡£" NOR);
+                set("special/desc", HIR "ä½©å¸¶å¾Œå¯å¢åŠ ä»»å‹™å’Œæ®ºæ€ªçå‹µ1%ï¼Œä¸”æ¸›å°‘è“¬èŠå³¶ä¸Šç§»å‹•å¿™äº‚æ™‚é–“ã€‚" NOR);
                 set("armor_prop/xianshu-lingwei", 1);
 
         }

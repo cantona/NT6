@@ -4,18 +4,18 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIW "°×»¢Æ¤" NOR, ({ "baihu pi", "pi"}));
+        set_name(HIW "ç™½è™çš®" NOR, ({ "baihu pi", "pi"}));
         set_weight(700);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "Ò»ÕÅ´ÓÉñÊŞ°×»¢ÉíÉÏ°şÏÂµÄÆ¤£¬Ñ©°×ÎŞÏ¾£¬ÎŞ±ÈµÄ¼áÈÍ¡£\n" NOR);
-                set("unit", "ÕÅ");
+                set("long", HIW "ä¸€å¼µå¾ç¥ç¸ç™½è™èº«ä¸Šå‰ä¸‹çš„çš®ï¼Œé›ªç™½ç„¡æš‡ï¼Œç„¡æ¯”çš„å …éŸŒã€‚\n" NOR);
+                set("unit", "å¼µ");
                 set("value", 1000000);
               set("item_origin", 1);
               set("material_attrib", "silk");
-              set("material_name", HIW "°×»¢Ã«Æ¤" NOR);
-              set("can_make", ({ "¼×" }));
+              set("material_name", HIW "ç™½è™æ¯›çš®" NOR);
+              set("can_make", ({ "ç”²" }));
               set("power_point", 120);
         }
 }

@@ -10,32 +10,32 @@ int main(object me, string arg)
         function f; 
         int r;
 
-        return notify_fail("¸Ã¹¦ÄÜÒÑ¾­¹Ø±Õ¡£\n");
+        return notify_fail("è©²åŠŸèƒ½å·²ç¶“é—œé–‰ã€‚\n");
         if (! arg)
-                return notify_fail("ÄãÒª´¥ÃþÊ²Ã´ÎïÆ·£¿\n");
+                return notify_fail("ä½ è¦è§¸æ‘¸ä»€éº¼ç‰©å“ï¼Ÿ\n");
 
         if (! objectp(obj = present(arg, me)) &&
             ! objectp(obj = present(arg, environment(me))))
-                return notify_fail("ÄãÉíÉÏÃ»ÓÐÕâÑù¶«Î÷£¬¸½½üÒ²Ã»ÓÐ¡£\n");
+                return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™æ¨£æ±è¥¿ï¼Œé™„è¿‘ä¹Ÿæ²’æœ‰ã€‚\n");
 
         if (obj->is_character())
-                return notify_fail("Äã±ðÂÒ¶¯" + obj->name() + "ÁË¡£\n");
+                return notify_fail("ä½ åˆ¥äº‚å‹•" + obj->name() + "äº†ã€‚\n");
 
         f = query_temp("override/touch", me);
         if (functionp(f)) 
                 r = (*f)(me, arg); 
         if (r) return r;
 
-        notify_fail("ÄãÃþÁËÒ»ÏÂ" + obj->name() + "¡£\n");
+        notify_fail("ä½ æ‘¸äº†ä¸€ä¸‹" + obj->name() + "ã€‚\n");
         return obj->do_touch(me);
 }
 
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : touch <ÎïÆ·Ãû³Æ>
+æŒ‡ä»¤æ ¼å¼ : touch <ç‰©å“åç¨±>
  
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄã¸§ÃþÄ³Ñù¶«Î÷£¬³¢ÊÔ·¢»ÓËüµÄÌØÊâÄÜÁ¦¡£
+é€™å€‹æŒ‡ä»¤å¯ä»¥è®“ä½ æ’«æ‘¸æŸæ¨£æ±è¥¿ï¼Œå˜—è©¦ç™¼æ®å®ƒçš„ç‰¹æ®Šèƒ½åŠ›ã€‚
  
 HELP );
         return 1;

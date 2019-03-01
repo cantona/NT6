@@ -6,10 +6,10 @@ int do_forge();
 
 void create()
 {
-        set_name("ÀîÌú×ì", ({ "fortune teller", "teller" }) );
-        set("gender", "ÄÐÐÔ" );
+        set_name("æŽéµå˜´", ({ "fortune teller", "teller" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 48);
-        set("long", "ÀîÌú×ìÊÇ¸öÂò²·ËãØÔµÄ½­ºþÊõÊ¿£¬¼æ´ú¿ÍÐ´ÊéÐÅ¡¢Ìõ·ù¡£\n");
+        set("long", "æŽéµå˜´æ˜¯å€‹è²·åœç®—å¦çš„æ±Ÿæ¹–è¡“å£«ï¼Œå…¼ä»£å®¢å¯«æ›¸ä¿¡ã€æ¢å¹…ã€‚\n");
         set("str", 25);
         set("dex", 20);
         set("con", 17);
@@ -24,9 +24,9 @@ void create()
 
         set("attitude", "peaceful");
         set("inquiry", ([
-                "Ð´ÐÅ" : "ÀîÌú×ìËµµÀ£º´ú¿ÍÐ´ÐÅ£¬Ã¿Ò³ÎåÊ®ÎÄ¡£\n",
-                "Ð´Ìõ·ù" : "ÀîÌú×ìËµµÀ£º¿ÉÒÔÓÃ¸÷¼Ò×Ö¼£Ð´Ìõ·ù£¬Ã¿·ùÎåÁ½°×Òø¡£\n",
-                "Î±Ôì" : (: do_forge :),
+                "å¯«ä¿¡" : "æŽéµå˜´èªªé“ï¼šä»£å®¢å¯«ä¿¡ï¼Œæ¯é äº”åæ–‡ã€‚\n",
+                "å¯«æ¢å¹…" : "æŽéµå˜´èªªé“ï¼šå¯ä»¥ç”¨å„å®¶å­—è·¡å¯«æ¢å¹…ï¼Œæ¯å¹…äº”å…©ç™½éŠ€ã€‚\n",
+                "å½é€ " : (: do_forge :),
         ]) );
 
         setup();
@@ -35,11 +35,11 @@ void create()
 
 int do_forge()
 {
-        say("ÀîÌú×ìÁ½Ö»ÑÛ¾¦ËÄÏÂÉ¨ÁËÉ¨£¬¡¸ºÙºÙºÙ¡¹µÄ¸ÉÐ¦ÁË¼¸Éù...\n");
-        write("ÀîÌú×ìÇáÉù¸úÄãËµµÀ£º²»ÊÇÎÒ´µÅ££¬±£Ö¤ÝëµÄ¸úÔ­À´"
-              "×ÖÌåÒ»Ä£Ò»Ñù£¬Ã¿·âÐÅ\n"
-              "                           ÎåÊ®Á½°×Òø£¬²»¶þ¼Û¡£\n");
-        set_temp("marks/Àî", 1, this_player());
+        say("æŽéµå˜´å…©åªçœ¼ç›å››ä¸‹æŽƒäº†æŽƒï¼Œã€Œå˜¿å˜¿å˜¿ã€çš„å¹¹ç¬‘äº†å¹¾è²...\n");
+        write("æŽéµå˜´è¼•è²è·Ÿä½ èªªé“ï¼šä¸æ˜¯æˆ‘å¹ç‰›ï¼Œä¿è¨¼é©€çš„è·ŸåŽŸä¾†"
+              "å­—é«”ä¸€æ¨¡ä¸€æ¨£ï¼Œæ¯å°ä¿¡\n"
+              "                           äº”åå…©ç™½éŠ€ï¼Œä¸äºŒåƒ¹ã€‚\n");
+        set_temp("marks/æŽ", 1, this_player());
         return 1;
 }
 
@@ -51,19 +51,19 @@ int accept_object(object who, object ob)
 
         if( query("id", ob) == "letterpaper" )
         {
-                if( query_temp("marks/Àî", who) )
+                if( query_temp("marks/æŽ", who) )
                 {
-                        set_temp("marks/Àî3", 1, this_player());
-                        write("ÀîÌú×ì¶ÔÄãËµµÀ£ºÔì·âÐÅÈÝÒ×£¬ÏÈÄÃÎåÊ®Á½Òø×ÓÀ´¡£\n");
-                        set_temp("marks/Àî", 0, this_player());
+                        set_temp("marks/æŽ3", 1, this_player());
+                        write("æŽéµå˜´å°ä½ èªªé“ï¼šé€ å°ä¿¡å®¹æ˜“ï¼Œå…ˆæ‹¿äº”åå…©éŠ€å­ä¾†ã€‚\n");
+                        set_temp("marks/æŽ", 0, this_player());
                         call_out("destroy", 1, ob);
                         return 1;
-                }else if( query_temp("marks/Àî2", who) )
+                }else if( query_temp("marks/æŽ2", who) )
                 {
-                        write("ÀîÌú×ìÆ¤Ð¦Èâ²»Ð¦µÄ¶ÔÄãËµµÀ£ºÎ±ÔìÕâ"
-                              "·âÐÅ¿ÉÊÇ¹ØÏµÖØ´ó°¡£¬µÃ¶àÊÕÎåÊ®Á½¡£\n");
-                        set_temp("marks/Àî4", 1, this_player());
-                        set_temp("marks/Àî2", 0, this_player());
+                        write("æŽéµå˜´çš®ç¬‘è‚‰ä¸ç¬‘çš„å°ä½ èªªé“ï¼šå½é€ é€™"
+                              "å°ä¿¡å¯æ˜¯é—œç³»é‡å¤§å•Šï¼Œå¾—å¤šæ”¶äº”åå…©ã€‚\n");
+                        set_temp("marks/æŽ4", 1, this_player());
+                        set_temp("marks/æŽ2", 0, this_player());
                         call_out("destroy", 1, ob);
                         return 1;
                 }
@@ -72,49 +72,49 @@ int accept_object(object who, object ob)
        
         if (ob->value() >= 5000)
         {
-                if( query_temp("marks/Àî4", who) )
+                if( query_temp("marks/æŽ4", who) )
                 {
-                        write("ÀîÌú×ì¶ÔÄãËµµÀ£ºÕâ·âÐÅÊÇÔìºÃÁË£¬µ«" +
+                        write("æŽéµå˜´å°ä½ èªªé“ï¼šé€™å°ä¿¡æ˜¯é€ å¥½äº†ï¼Œä½†" +
                               RANK_D->query_respect(who) + 
-                              "ÒªÊÇ³öÁËÊÂ£¬Ç§Íò±ð°ÑÎÒËµ³öÀ´Ñ½¡£\n");
-                        say("ÀîÌú×ì¸øÁË"+query("name", who)+"Ò»·âÊÖÐÅ¡£\n");
-                        set_temp("marks/Àî4", 0, this_player());
+                              "è¦æ˜¯å‡ºäº†äº‹ï¼Œåƒè¬åˆ¥æŠŠæˆ‘èªªå‡ºä¾†å‘€ã€‚\n");
+                        say("æŽéµå˜´çµ¦äº†"+query("name", who)+"ä¸€å°æ‰‹ä¿¡ã€‚\n");
+                        set_temp("marks/æŽ4", 0, this_player());
                         letter->move(who);
                         return 1;
                 }
 
-                if( query_temp("marks/Àî3", who) )
+                if( query_temp("marks/æŽ3", who) )
                 {
-                        write("ÀîÌú×ìÆ¤Ð¦Èâ²»Ð¦µÄ¶ÔÄãËµµÀ£ºÎ±ÔìÕâ·âÐÅ"
-                              "¿ÉÊÇ¹ØÏµÖØ´ó°¡£¬µÃ¶àÊÕÎåÊ®Á½¡£\n");
-                        set_temp("marks/Àî4", 1, this_player());
-                        set_temp("marks/Àî3", 0, this_player());
+                        write("æŽéµå˜´çš®ç¬‘è‚‰ä¸ç¬‘çš„å°ä½ èªªé“ï¼šå½é€ é€™å°ä¿¡"
+                              "å¯æ˜¯é—œç³»é‡å¤§å•Šï¼Œå¾—å¤šæ”¶äº”åå…©ã€‚\n");
+                        set_temp("marks/æŽ4", 1, this_player());
+                        set_temp("marks/æŽ3", 0, this_player());
                         return 1;
                 }
 
-                if( query_temp("marks/Àî", who) )
+                if( query_temp("marks/æŽ", who) )
                 {
-                        write("ÀîÌú×ì¶ÔÄãËµµÀ£ºÄãÏëÎ±ÔìÊ²Ã´°¡? ×Ü"
-                              "µÃÄÃ¸öÑù×ÓÀ´°É¡£\n");
-                        set_temp("marks/Àî2", 1, this_player());
-                        set_temp("marks/Àî", 0, this_player());
+                        write("æŽéµå˜´å°ä½ èªªé“ï¼šä½ æƒ³å½é€ ä»€éº¼å•Š? ç¸½"
+                              "å¾—æ‹¿å€‹æ¨£å­ä¾†å§ã€‚\n");
+                        set_temp("marks/æŽ2", 1, this_player());
+                        set_temp("marks/æŽ", 0, this_player());
                         return 1;
                 }
-                say("ÀîÌú×ìÒ»Ãæ¼±Ã¦°ÑÇ®ÊÕÆðÀ´£¬Ò»ÃæÐ¦ÎûÎûËµµÀ£º" +
-                    RANK_D->query_respect(ob) + "£¬ÕâÔõÃ´¸Òµ±¡£\n");
+                say("æŽéµå˜´ä¸€é¢æ€¥å¿™æŠŠéŒ¢æ”¶èµ·ä¾†ï¼Œä¸€é¢ç¬‘å˜»å˜»èªªé“ï¼š" +
+                    RANK_D->query_respect(ob) + "ï¼Œé€™æ€Žéº¼æ•¢ç•¶ã€‚\n");
                 return 1;
         }
 
         if (ob->value() >= 500)
         {
-                say("ÀîÌú×ìÐ¦ÎûÎûËµµÀ£ºÌõ·ùÐ´ºÃÁË£¬Çë"
-                    "ÄúÊÕÆðÀ´°É£¬¶àÐ»¹ØÕÕ¡£\n");
+                say("æŽéµå˜´ç¬‘å˜»å˜»èªªé“ï¼šæ¢å¹…å¯«å¥½äº†ï¼Œè«‹"
+                    "æ‚¨æ”¶èµ·ä¾†å§ï¼Œå¤šè¬é—œç…§ã€‚\n");
                 return 1;
         }
 
         if (ob->value() >= 50)
         {
-                say("ÀîÌú×ìÐ¦ÎûÎûËµµÀ£ºÐÅÐ´ÍêÁË£¬ÄúÊÕºÃÁË£¬¶àÐ»¹ØÕÕ¡£\n");
+                say("æŽéµå˜´ç¬‘å˜»å˜»èªªé“ï¼šä¿¡å¯«å®Œäº†ï¼Œæ‚¨æ”¶å¥½äº†ï¼Œå¤šè¬é—œç…§ã€‚\n");
                 return 1;
         }
         return 0;

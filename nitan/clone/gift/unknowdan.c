@@ -1,4 +1,4 @@
-// unknow.c н╢цШои╣╓
+// unknow.c Ф°╙Е░█Д╩≥Д╦╧
 
 #include <ansi.h>
 
@@ -6,36 +6,36 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIR "╩П╨Лои╣╓" NOR, ({ "huohong xiandan", "dan", "xiandan" }));
+        set_name(HIR "Г│╚Г╢┘Д╩≥Д╦╧" NOR, ({ "huohong xiandan", "dan", "xiandan" }));
         set_weight(200);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "р╩©ет╟т╟╣д╩П╨Лои╣╓ё╛╬щк╣Ётак©ирттЖг©иМ╥╗║ётЖ╪сохлЛйТптжанЕ╣Ц\n");
+                set("long", "Д╦─И║├Е°▓Е°▓Г └Г│╚Г╢┘Д╩≥Д╦╧О╪▄Ф⌠ Х╙╙Е░┐Д╨├Е▐╞Д╩╔Е╒·Е╪╥Х╨╚ФЁ∙Ц─┌Е╒·Е┼═Е┘┬Е╓╘Е╠╛Ф─╖Х┤ЁД╨■И╩·\n");
                 set("value", 10000);
-                set("unit", "©е");
+                set("unit", "И║├");
                 set("only_do_effect", 1);
         }
 }
 
 int do_effect(object me)
 {
-        message_vision("$Nр╩яЖ╡╠ё╛млобакр╩©е" + this_object()->name() +
-                       "║ё\n", me);
+        message_vision("$NД╦─Д╩╟Х└√О╪▄Е░·Д╦▀Д╨├Д╦─И║├" + this_object()->name() +
+                       "Ц─┌\n", me);
         if( query("gift/unknowdan", me) >= 5 || 
             query("gift/dex/succeed", me) >= 5 )
         {
-                message_vision("$Nр║р║╩н╩н╣дё╛м╩х╩║╟е╬Ю╙║╠р╩обвск╓ак╦Ж╦Зм╥║ё\n", me);
-                tell_object(me, "дЦ╬У╣цЁтмЙрт╨См╥жь╫егА╣д║ё\n");
+                message_vision("$NФ░√Ф░√Ф≥┐Ф≥┐Г └О╪▄Г╙│Г└╤Б─°Е∙╙Е≈▓Б─²Д╦─Д╦▀Е╜░Ф▒■Д╨├Е─▀Х╥÷И═╜Ц─┌\n", me);
+                tell_object(me, "Д╫═Х╕╨Е╬≈Е░┐Е╝▄Д╩╔Е╬▄И═╜И┤█Х┘ЁХ╪∙Г └Ц─┌\n");
         } else
         if (random(5) == 0)
         {
                 addn("gift/dex/fail", 1, me);
-                tell_object(me, "╡╩╧ЩдЦ╬У╣ц╨цоЯц╩й╡ц╢вВсц║ё\n");
+                tell_object(me, "Д╦█И│▌Д╫═Х╕╨Е╬≈Е╔╫Е┐▐Ф╡▓Д╩─И╨╪Д╫°Г■╗Ц─┌\n");
         } else
         {
-                tell_object(me, HIM "Ж╝й╠╪ДдЦ╬У╣цмх╧гсШаяё╛р╩й╠лшм╢дя"
-                            "хлё╛╪╦╨Утнак╧Щх╔║ё\n" NOR);
+                tell_object(me, HIM "И°▌Ф≥┌И√⌠Д╫═Х╕╨Е╬≈Х┘©И╙╗Ф╛╡Хё┌О╪▄Д╦─Ф≥┌Г√╪Г≈⌡И⌡ё"
+                            "Е©█О╪▄Е╧╬Д╧▌Ф ┬Д╨├И│▌Е▌╩Ц─┌\n" NOR);
                 addn("dex", 1, me);
                 addn("gift/dex/succeed", 1, me);
         }

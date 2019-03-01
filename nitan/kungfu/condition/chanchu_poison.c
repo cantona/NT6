@@ -11,11 +11,11 @@ int update_condition(object me, int duration)
                 me->clear_condition("chanchu_poison");
                 return 0;
                 }
-        me->receive_wound("qi", 25+random(20),"ó¸òÜ¶¾·¢×÷");
-        me->receive_damage("jing", 15+random(20),"ó¸òÜ¶¾·¢×÷");
+        me->receive_wound("qi", 25+random(20),"èŸ¾èœæ¯’ç™¼ä½œ");
+        me->receive_damage("jing", 15+random(20),"èŸ¾èœæ¯’ç™¼ä½œ");
         if( query("eff_jing", me)<0 || query("eff_qi", me)<0)return 0;
         me->apply_condition("chanchu_poison", duration - 1);
-        tell_object(me, HIG"Äã¾õµÃÉË¿ÚÒ»ÕóÕó·¢Á¹£¬Ã»É¶¸Ğ¾õÁË¡£ÄãÖĞµÄó¸òÜ¶¾·¢×÷ÁË£¡\n" NOR );
+        tell_object(me, HIG"ä½ è¦ºå¾—å‚·å£ä¸€é™£é™£ç™¼æ¶¼ï¼Œæ²’å•¥æ„Ÿè¦ºäº†ã€‚ä½ ä¸­çš„èŸ¾èœæ¯’ç™¼ä½œäº†ï¼\n" NOR );
         return 1;
 }
 

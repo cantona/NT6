@@ -7,12 +7,12 @@ int do_find(string);
 
 void create()
 {
-        set("short", "Ê÷ÁÖÍâ");
+        set("short", "æ¨¹æ—å¤–");
         set("long", @LONG
-ÄãÀ´µ½ÁËÒ»Æ¬ºÚÉ­É­µÄÊ÷ÁÖÃæÇ°£¬·ÅÑÛÍûÈ¥£¬ÃÜÃÜÂéÂéµÄ¶¼ÊÇÊ÷
-Ä¾£¬¶øÇÒ¾£¼¬´ÔÉú£¬ÒşÔ¼¿É¼ûÓĞĞ©Ğ¡Â·¶«ÅÌÎ÷Çú¡£Äã×ĞÏ¸¹Û²ì£¬·¢ÏÖ
-ÕâÏÔÈ»ÊÇ¸öÈËÔìµÄÃÔ¹¬¡£ÆäÖĞ°µºÏÎåĞĞ°ËØÔ£¬ÆæÃÅ¶İ¼×£¬¶ËµÄ·ÇÍ¬Ğ¡
-¿É£¬Ç§Íò²»ÒªÃ°È»½øÈ¥¡£
+ä½ ä¾†åˆ°äº†ä¸€ç‰‡é»‘æ£®æ£®çš„æ¨¹æ—é¢å‰ï¼Œæ”¾çœ¼æœ›å»ï¼Œå¯†å¯†éº»éº»çš„éƒ½æ˜¯æ¨¹
+æœ¨ï¼Œè€Œä¸”èŠæ£˜å¢ç”Ÿï¼Œéš±ç´„å¯è¦‹æœ‰äº›å°è·¯æ±ç›¤è¥¿æ›²ã€‚ä½ ä»”ç´°è§€å¯Ÿï¼Œç™¼ç¾
+é€™é¡¯ç„¶æ˜¯å€‹äººé€ çš„è¿·å®®ã€‚å…¶ä¸­æš—åˆäº”è¡Œå…«å¦ï¼Œå¥‡é–€éç”²ï¼Œç«¯çš„éåŒå°
+å¯ï¼Œåƒè¬ä¸è¦å†’ç„¶é€²å»ã€‚
 LONG );
         set("exits", ([
                 "south" : __DIR__"maze2.c",
@@ -31,11 +31,11 @@ int valid_leave(object me, string dir)
 {
         if (dir=="south") {
                 if (! userp(me)) return 0;
-                set_temp("mark/maze½ğ", 1, me);
-                set_temp("mark/mazeÄ¾", 1, me);
-                set_temp("mark/mazeË®", 1, me);
-                set_temp("mark/maze»ğ", 1, me);
-                set_temp("mark/mazeÍÁ", 1, me);
+                set_temp("mark/mazeé‡‘", 1, me);
+                set_temp("mark/mazeæœ¨", 1, me);
+                set_temp("mark/mazeæ°´", 1, me);
+                set_temp("mark/mazeç«", 1, me);
+                set_temp("mark/mazeåœŸ", 1, me);
                 set_temp("mazepath", 11111+random(88889), me);
         }
 

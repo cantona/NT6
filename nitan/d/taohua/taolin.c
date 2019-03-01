@@ -8,10 +8,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÌÒÁÖ");
+        set("short", "æ¡ƒæž—");
         set("long", @LONG
-ÕâÊÇÒ»Æ¬²ÓÈôÔÆÏ¼µÄÌÒÁÖ£¬·±»¨ËÆ½õ£¬ÎåÉ«çÍ·×£¬±ÈÆðµºÉÏÆäËüµØ·½
-µÄÌÒÁÖÒªÃ¯Ê¢Ðí¶à£¬µØÏÂµÄÄàÍÁÒ²Ê®·ÖÐÂÏÊ£¬ÏñÓÐÈË¸Õ¸ÕÕûÀí¹ý¡£
+é€™æ˜¯ä¸€ç‰‡ç‡¦è‹¥é›²éœžçš„æ¡ƒæž—ï¼Œç¹èŠ±ä¼¼éŒ¦ï¼Œäº”è‰²ç¹½ç´›ï¼Œæ¯”èµ·å³¶ä¸Šå…¶å®ƒåœ°æ–¹
+çš„æ¡ƒæž—è¦èŒ‚ç››è¨±å¤šï¼Œåœ°ä¸‹çš„æ³¥åœŸä¹Ÿååˆ†æ–°é®®ï¼Œåƒæœ‰äººå‰›å‰›æ•´ç†éŽã€‚
 LONG );
         
         set("exits", ([
@@ -37,7 +37,7 @@ void init()
 {
         object ob = this_player();
         if( query_temp("th_tomb_thief", ob)){
-                tell_object(ob,CYN"ÄãËÆºõ¾õµÃÌÒÁÖÖÐÓÐµãÒìÑù£¬µ«ÓÖËµ²»ÉÏÀ´¡£\n"NOR);
+                tell_object(ob,CYN"ä½ ä¼¼ä¹Žè¦ºå¾—æ¡ƒæž—ä¸­æœ‰é»žç•°æ¨£ï¼Œä½†åˆèªªä¸ä¸Šä¾†ã€‚\n"NOR);
                 delete("exits/east");
                 set("exits/east", __DIR__"hyjuchu");
                     remove_call_out("close_door");

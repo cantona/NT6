@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "·¿¼ä");
+        set("short", "æˆ¿é–“");
         set("long", @LONG
-ÕâÊÇÒ»¼ä²¼ÖÃ³ÉÎÔÊÒÄ£ÑùµÄĞ¡·¿¼ä£¬ÓĞÕÅÊ¯´²£¬´²ÉÏ°Ú×Å¸öĞ¡Ğ¡µÄ
-Ä¾Í·ÖÆ³ÉµÄÒ¡Àº£¬Ç½±ÚÉÏĞü×ÅÒ»¸öÆßÏÒÇÙ£¬ÏÒÏß¶¼ÒÑ¾­¶ÏÁË¡£
+é€™æ˜¯ä¸€é–“å¸ƒç½®æˆè‡¥å®¤æ¨¡æ¨£çš„å°æˆ¿é–“ï¼Œæœ‰å¼µçŸ³åºŠï¼ŒåºŠä¸Šæ“ºè‘—å€‹å°å°çš„
+æœ¨é ­åˆ¶æˆçš„æ–ç±ƒï¼Œç‰†å£ä¸Šæ‡¸è‘—ä¸€å€‹ä¸ƒå¼¦ç´ï¼Œå¼¦ç·šéƒ½å·²ç¶“æ–·äº†ã€‚
 LONG );
        set("exits", ([
                "south" : __DIR__"shiji2",
@@ -32,19 +32,19 @@ int do_shout(string arg)
 
         if( !arg || arg=="" ) return 0;
 
-        if( arg=="Ö¥Âé¿ªÃÅ") 
+        if( arg=="èŠéº»é–‹é–€") 
         {
-                tell_object(me,"ÄãÆøÔËµ¤Ìï£¬¶Ô×ÅÇ½±Ú´óºÈÒ»Éù£º¡°Ö¥Âé¿ªÃÅ£¡¡±\n");
-                if( random(100)>50 || ((query("family", me)) && query("family", me)["master_name"] == "åĞÒ£×Ó") )
+                tell_object(me,"ä½ æ°£é‹ä¸¹ç”°ï¼Œå°è‘—ç‰†å£å¤§å–ä¸€è²ï¼šâ€œèŠéº»é–‹é–€ï¼â€\n");
+                if( random(100)>50 || ((query("family", me)) && query("family", me)["master_name"] == "é€é™å­") )
                 {
-                message("vision", "¹ıÁËÒ»»á¶ù£¬ÄãÖ»Ìıµ½Ò»ÕóºäÂ¡Â¡µÄÏìÉù£¬³öÏÖÁËÒ»µÀ°µÃÅ¡£\n", me);
+                message("vision", "éäº†ä¸€æœƒå…’ï¼Œä½ åªè½åˆ°ä¸€é™£è½Ÿéš†éš†çš„éŸ¿è²ï¼Œå‡ºç¾äº†ä¸€é“æš—é–€ã€‚\n", me);
                 set("exits/down", __DIR__"shishi4");
                 remove_call_out("close");
                 call_out("close", 5, this_object());
                 }
         else
                 {
-                message("vision", "·¿¼äÀïµ½´¦»Øµ´×ÅÄãµÄÉùÒô£¬ÕğµÃÄãµÄ¶ú¶äÎÌÎÌ×÷Ïì¡£\n", me);
+                message("vision", "æˆ¿é–“è£¡åˆ°è™•å›ç›ªè‘—ä½ çš„è²éŸ³ï¼Œéœ‡å¾—ä½ çš„è€³æœµç¿ç¿ä½œéŸ¿ã€‚\n", me);
                 me->receive_wound("qi",20);
                 me->unconcious();
                 }
@@ -54,6 +54,6 @@ int do_shout(string arg)
 
 void close(object room)
 {
-        message("vision","Ò»ÕóºäÂ¡Â¡µÄÏìÉù¹ıºó£¬Ê¯ÃÅÓÖ»º»ºµØ¹ØÉÏÁË¡£\n", room);
+        message("vision","ä¸€é™£è½Ÿéš†éš†çš„éŸ¿è²éå¾Œï¼ŒçŸ³é–€åˆç·©ç·©åœ°é—œä¸Šäº†ã€‚\n", room);
         delete("exits/down", room);
 }

@@ -1,4 +1,4 @@
-// dahuan-dan.c ´ó»¹µ¤
+// dahuan-dan.c å¤§é‚„ä¸¹
 
 #include <ansi.h>
 
@@ -6,13 +6,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name("´ó»¹µ¤", ({"dahuan dan", "dahuan", "dan"}));
+        set_name("å¤§é‚„ä¸¹", ({"dahuan dan", "dahuan", "dan"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
-                set("long", "ÕâÊÇÒ»¿Å×Ïºì¾§ÁÁµÄ´ó»¹µ¤¡£´Ëµ¤ÄËÉÙÁÖÕäÒ©£¬Ìá"
-                            "¸ß¹¦Á¦£¬ÁéĞ§ÎŞ±È¡£\n");
+                set("unit", "é¡†");
+                set("long", "é€™æ˜¯ä¸€é¡†ç´«ç´…æ™¶äº®çš„å¤§é‚„ä¸¹ã€‚æ­¤ä¸¹ä¹ƒå°‘æ—çè—¥ï¼Œæ"
+                            "é«˜åŠŸåŠ›ï¼Œéˆæ•ˆç„¡æ¯”ã€‚\n");
                 set("value", 10000);
                 set("only_do_effect", 1);
         }
@@ -31,16 +31,16 @@ int do_effect(object me)
         if ((int)me->query_condition("bonze_drug" ) > 0)
         {
                 addn("max_neili", -1, me);
-                message_vision(HIR "$N" HIR "³ÔÏÂÒ»¿Å´ó»¹µ¤£¬Ö»¾õµÃÍ·"
-                               "ÖØ½ÅÇá£¬Ò¡Ò¡Óûµ¹£¬Ô­À´·şÊ³Ì«¼±Ì«¶à£¬Ò©"
-                               "Ğ§ÊÊµÃÆä·´£¡\n" NOR, me);
+                message_vision(HIR "$N" HIR "åƒä¸‹ä¸€é¡†å¤§é‚„ä¸¹ï¼Œåªè¦ºå¾—é ­"
+                               "é‡è…³è¼•ï¼Œæ–æ–æ¬²å€’ï¼ŒåŸä¾†æœé£Ÿå¤ªæ€¥å¤ªå¤šï¼Œè—¥"
+                               "æ•ˆé©å¾—å…¶åï¼\n" NOR, me);
         } else
         if (neili_limit <= force_limit)
         {
                 addn("max_neili", 1, me);
-                message_vision(HIG "$N" HIG "³ÔÏÂÒ»¿Å´ó»¹µ¤£¬Ö»¾õµÃÌåÄÚ"
-                               "ÕæÁ¦Ô´Ô´×ÌÉú£¬¹ı×Ï¹¬£¬ÈëÄàÍèÍ¸Ê®¶şÖØÂ¥£¬"
-                               "±é²¼Ææ½î°ËÂö£¬È«Éí¹¦Á¦¶ÙÈ»Ìá¸ß£¡\n" NOR, me);
+                message_vision(HIG "$N" HIG "åƒä¸‹ä¸€é¡†å¤§é‚„ä¸¹ï¼Œåªè¦ºå¾—é«”å…§"
+                               "çœŸåŠ›æºæºæ»‹ç”Ÿï¼Œéç´«å®®ï¼Œå…¥æ³¥ä¸¸é€åäºŒé‡æ¨“ï¼Œ"
+                               "éå¸ƒå¥‡ç­‹å…«è„ˆï¼Œå…¨èº«åŠŸåŠ›é “ç„¶æé«˜ï¼\n" NOR, me);
         }
 
         me->apply_condition("bonze_drug", 60);

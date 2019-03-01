@@ -3,10 +3,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÍÀÔ×³¡");
+        set("short", "å± å®°å ´");
         set("long", @LONG
-ÕâÀïÊÇÒ©Íõ¹ÈµÄÍÀÔ×³¡£¬ÊÇ×¨ÃÅÓÃÀ´ÍÀÔ×Ò©Íõ¹ÈËÇÑøµÄ¶¯Îï£¬
-È¡Ò©²ÄÓÃµÄ£¬Äã¿ÉÒÔ°Ñ¶¯Îï×½µ½ÕâÀï£¬½øĞĞÍÀÔ×(sha)¡£
+é€™è£¡æ˜¯è—¥ç‹è°·çš„å± å®°å ´ï¼Œæ˜¯å°ˆé–€ç”¨ä¾†å± å®°è—¥ç‹è°·é£¼é¤Šçš„å‹•ç‰©ï¼Œ
+å–è—¥æç”¨çš„ï¼Œä½ å¯ä»¥æŠŠå‹•ç‰©æ‰åˆ°é€™è£¡ï¼Œé€²è¡Œå± å®°(sha)ã€‚
 LONG );
         set("no_fight", 1);
         set("exits", ([
@@ -28,35 +28,35 @@ int do_sha(string arg)
         pot=2+random(2);
         me=this_player();
 
-        if( query("family/family_name", me) != "Ò©Íõ¹È" || me->query_skill("medical",1)<60 )
+        if( query("family/family_name", me) != "è—¥ç‹è°·" || me->query_skill("medical",1)<60 )
         {
-                return notify_fail("Äã»¹²»»áÈ¡Ò©ÄØ£¡²»»áÉ±¶¯Îï£¿\n");
+                return notify_fail("ä½ é‚„ä¸æœƒå–è—¥å‘¢ï¼ä¸æœƒæ®ºå‹•ç‰©ï¼Ÿ\n");
         }
 
         if( !arg || !objectp(ob = present(arg, environment(me))) )
-                return notify_fail("Ö¸Áî¸ñÊ½£ºsha <ID> \n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šsha <ID> \n");
 
         if( !query("yaowang_zhuo", ob) )
-                return notify_fail("Õâ¸ö¶«Î÷²»ÄÜÔÚÕâÀïÉ±£¡\n");
+                return notify_fail("é€™å€‹æ±è¥¿ä¸èƒ½åœ¨é€™è£¡æ®ºï¼\n");
 
         if( me->is_fighting() || me->is_busy() )
-                return notify_fail("ÄãÕıÃ¦×ÅÄØ£¡\n");
+                return notify_fail("ä½ æ­£å¿™è‘—å‘¢ï¼\n");
 
         if(random(3))
         {
-              message_vision(HIR"$N°Ñ$n°´ÔÚÍÀÔ×²ÛÉÏ£¬Ò»µ¶¿³ÁËÏÂÈ¥¡£\n"NOR, me, ob);
-              message_vision(HIR"½á¹ûµ¶´Ó$nÉíÉÏ»¬ÁËÏÂÀ´£¬$N²îµãÉËÁË×Ô¼º¡£\n"NOR, me, ob);
+              message_vision(HIR"$NæŠŠ$næŒ‰åœ¨å± å®°æ§½ä¸Šï¼Œä¸€åˆ€ç äº†ä¸‹å»ã€‚\n"NOR, me, ob);
+              message_vision(HIR"çµæœåˆ€å¾$nèº«ä¸Šæ»‘äº†ä¸‹ä¾†ï¼Œ$Nå·®é»å‚·äº†è‡ªå·±ã€‚\n"NOR, me, ob);
                  me->start_busy(1+random(2));
               return 1;
             }
         me->improve_skill("medical", ((int)me->query_skill("healing",1)/10));
-        message_vision(HIR"$N°Ñ$n°´ÔÚÍÀÔ×²ÛÉÏ£¬Ò»µ¶¿³ÁËÏÂÈ¥¡£\n"NOR, me, ob);
+        message_vision(HIR"$NæŠŠ$næŒ‰åœ¨å± å®°æ§½ä¸Šï¼Œä¸€åˆ€ç äº†ä¸‹å»ã€‚\n"NOR, me, ob);
         ob->die();
         addn("combat_exp", exp, me);
         me->improve_potential(pot);
-      tell_object(me,HIC "ÔÚÍÀÔ×¹ı³ÌÖĞÄã¶Ô¡¸»ù±¾Ò½Êõ¡¹ÓĞÁËĞÂµÄÈÏÊ¶£¡\n" NOR);
-              tell_object(me, HIC "Äã»ñµÃÁË" + chinese_number(exp) + 
-                      "µã¾­ÑéºÍ" + chinese_number(pot) + "µãÇ±ÄÜ¡£\n"NOR ); 
+      tell_object(me,HIC "åœ¨å± å®°éç¨‹ä¸­ä½ å°ã€ŒåŸºæœ¬é†«è¡“ã€æœ‰äº†æ–°çš„èªè­˜ï¼\n" NOR);
+              tell_object(me, HIC "ä½ ç²å¾—äº†" + chinese_number(exp) + 
+                      "é»ç¶“é©—å’Œ" + chinese_number(pot) + "é»æ½›èƒ½ã€‚\n"NOR ); 
          me->start_busy(2);
         return 1;
 }

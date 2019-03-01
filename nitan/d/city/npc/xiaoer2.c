@@ -5,14 +5,14 @@ inherit F_DEALER;
 
 void create()
 {
-        set_name("µêĞ¡¶ş", ({ "xiao er", "xiao", "waiter" }));
-        set("gender", "ÄĞĞÔ" );
+        set_name("åº—å°äºŒ", ({ "xiao er", "xiao", "waiter" }));
+        set("gender", "ç”·æ€§" );
         set("age", 22);
-        set("long", "ÕâÎ»µêĞ¡¶şÕıĞ¦ßäßäµØÃ¦Öø£¬»¹²»Ê±ÄÃÆğ¹ÒÔÚ²±×ÓÉÏµÄÄ¨²¼²ÁÁ³¡£\n");
+        set("long", "é€™ä½åº—å°äºŒæ­£ç¬‘å’ªå’ªåœ°å¿™è‘—ï¼Œé‚„ä¸æ™‚æ‹¿èµ·æ›åœ¨è„–å­ä¸Šçš„æŠ¹å¸ƒæ“¦è‡‰ã€‚\n");
         set("combat_exp", 100);
         set("attitude", "friendly");
 
-        set("rank_info/respect", "Ğ¡¶ş¸ç");
+        set("rank_info/respect", "å°äºŒå“¥");
         set("vendor_goods", ({
                 __DIR__"obj/jitui",
                 __DIR__"obj/jiudai",
@@ -49,12 +49,12 @@ void greeting(object ob)
         switch(random(2))
         {
         case 0:
-                say(CYN "µêĞ¡¶şĞ¦ßäßäµØËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob) +
-                    CYN "£¬½øÀ´ºÈ±­²è£¬ĞªĞªÍÈ°É¡£\n" NOR);
+                say(CYN "åº—å°äºŒç¬‘å’ªå’ªåœ°èªªé“ï¼šé€™ä½" + RANK_D->query_respect(ob) +
+                    CYN "ï¼Œé€²ä¾†å–æ¯èŒ¶ï¼Œæ­‡æ­‡è…¿å§ã€‚\n" NOR);
                 break;
         case 1:
-                say(CYN "µêĞ¡¶şÓÃ²±×ÓÉÏµÄÃ«½íÄ¨ÁËÄ¨ÊÖ£¬ËµµÀ£ºÕâÎ»" +
-                    RANK_D->query_respect(ob) + CYN "£¬Çë½øÇë½ø¡£\n" NOR);
+                say(CYN "åº—å°äºŒç”¨è„–å­ä¸Šçš„æ¯›å·¾æŠ¹äº†æŠ¹æ‰‹ï¼Œèªªé“ï¼šé€™ä½" +
+                    RANK_D->query_respect(ob) + CYN "ï¼Œè«‹é€²è«‹é€²ã€‚\n" NOR);
                 break;
         }
 }
@@ -64,7 +64,7 @@ int accept_object(object me, object ob)
         
         if( query("money_id", ob) && ob->value() >= 1000 )
         {
-                tell_object(me, CYN "Ğ¡¶şÒ»¹şÑü£¬ËµµÀ£º¶àĞ»ÄúÀÏ£¬¿Í¹ÙÇëÉÏÂ¥ĞªÏ¢¡£\n" NOR);
+                tell_object(me, CYN "å°äºŒä¸€å“ˆè…°ï¼Œèªªé“ï¼šå¤šè¬æ‚¨è€ï¼Œå®¢å®˜è«‹ä¸Šæ¨“æ­‡æ¯ã€‚\n" NOR);
                 set_temp("rent_paid", 1, me);
                 return 1;
         }

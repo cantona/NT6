@@ -1,14 +1,14 @@
         objectp(3)                LP MudOSv21c7                (7 Jul 1996)
-        º¯ÊıÃû³Æ:
-                objectp() - ÅĞ¶ÏÒ»¸öÖ¸¶¨µÄ±äÊıÊÇ·ñÎªÒ»¸öÎï¼ş (object).
-        º¯ÊıÓï·¨:
+        å‡½æ•¸åç¨±:
+                objectp() - åˆ¤æ–·ä¸€å€‹æŒ‡å®šçš„è®Šæ•¸æ˜¯å¦ç‚ºä¸€å€‹ç‰©ä»¶ (object).
+        å‡½æ•¸èªæ³•:
                 int objectp( mixed arg );
-                ÕûÊı objectp( »ìºÏ arg );
-        º¯ÊıÓÃ·¨:
-                Èç¹û arg ÊÇÒ»¸öÎï¼ş¾Í´«»Ø 1.
-        ²Î¿¼º¯Êı:
+                æ•´æ•¸ objectp( æ··åˆ arg );
+        å‡½æ•¸ç”¨æ³•:
+                å¦‚æœ arg æ˜¯ä¸€å€‹ç‰©ä»¶å°±å‚³å› 1.
+        åƒè€ƒå‡½æ•¸:
                 mapp(3), stringp(3), pointerp(3), intp(3), bufferp(3),
                  floatp(3), functionp(3), nullp(3), undefinedp(3), 
                 errorp(3)
-        ÊÖ²á·­Òë:
+        æ‰‹å†Šç¿»è­¯:
                 Phoebus@ZH        97.Apr.24.                (Writen 5/23/97)

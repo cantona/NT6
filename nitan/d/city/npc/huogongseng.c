@@ -4,11 +4,11 @@ inherit NPC;
 void greeting(object ob);
 void create()
 {
-        set_name("»ğ¹¤É®", ({ "huogong seng", "seng" })); 
-        set("long", "Ò»¸öËÂÃíÖĞ×¨×öÔÓÊÂµÄ»ğ¹¤É®£¬ÉíÌåÊ®·ÖµØÇ¿×³¡£\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("ç«å·¥åƒ§", ({ "huogong seng", "seng" })); 
+        set("long", "ä¸€å€‹å¯ºå»Ÿä¸­å°ˆåšé›œäº‹çš„ç«å·¥åƒ§ï¼Œèº«é«”ååˆ†åœ°å¼·å£¯ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("class", "bonze");
-        set("title", "ìøÖÇËÂºÍÉĞ");
+        set("title", "ç¦ªæ™ºå¯ºå’Œå°š");
         set("age", 35);
         set("attitude", "friendly");
         set("shen_type", 1);

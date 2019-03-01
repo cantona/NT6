@@ -1,4 +1,4 @@
-// necklace.c ¶Ç´ø
+// necklace.c è‚šå¸¶
  
 #include <armor.h>
  
@@ -6,14 +6,14 @@ inherit SURCOAT;
  
 void create()
 {
-        set_name("¶Ç´ø", ({ "surcoat", "du dai", "dai" }) );
+        set_name("è‚šå¸¶", ({ "surcoat", "du dai", "dai" }) );
         set_weight(500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
                 set("material", "leather");
-                set("unit", "Ìõ");
-                set("long", "ÕâÊÇÒ»¼şÆ¤ÖÊµÄ¶Ç´ø£¬ÓÃÒÔ±£»¤¸¹²¿¡£\n");
+                set("unit", "æ¢");
+                set("long", "é€™æ˜¯ä¸€ä»¶çš®è³ªçš„è‚šå¸¶ï¼Œç”¨ä»¥ä¿è­·è…¹éƒ¨ã€‚\n");
                 set("value", 800);
                 set("armor_prop/dodge", -3);
         }

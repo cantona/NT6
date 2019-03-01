@@ -1,4 +1,4 @@
-// zhang.c ÕÅÖ¾¹â
+// zhang.c å¼µå¿—å…‰
 // By Lgg,1998.10
 
 #include "quanzhen.h"
@@ -8,12 +8,12 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("ÕÅÖ¾¹â", ({"zhang zhiguang", "zhang"}));
-        set("gender", "ÄĞĞÔ");
+        set_name("å¼µå¿—å…‰", ({"zhang zhiguang", "zhang"}));
+        set("gender", "ç”·æ€§");
         set("age", 24);
         set("class", "taoist");
         set("long",
-                "Ëû¾ÍÊÇÈ«Õæ½ÌµÚÈı´úµÜ×ÓÖĞµÄºÃÊÖ£¬Ì·´¦¶ËµÄµÜ×Ó¡£\n");
+                "ä»–å°±æ˜¯å…¨çœŸæ•™ç¬¬ä¸‰ä»£å¼Ÿå­ä¸­çš„å¥½æ‰‹ï¼Œè­šè™•ç«¯çš„å¼Ÿå­ã€‚\n");
         set("attitude", "friendly");
         set("shen_type",1);
         set("str", 26);
@@ -64,10 +64,10 @@ void create()
         map_skill("finger", "zhongnan-zhi");
         prepare_skill("finger", "zhongnan-zhi");
 
-        create_family("È«Õæ½Ì", 3, "µÜ×Ó");
+        create_family("å…¨çœŸæ•™", 3, "å¼Ÿå­");
 
         set("inquiry", ([
-                "È«Õæ½Ì" :  "ÎÒÈ«Õæ½ÌÊÇÌìÏÂµÀ¼ÒĞşÃÅÕı×Ú¡£\n",
+                "å…¨çœŸæ•™" :  "æˆ‘å…¨çœŸæ•™æ˜¯å¤©ä¸‹é“å®¶ç„é–€æ­£å®—ã€‚\n",
         ]) );
 
         setup();
@@ -82,6 +82,6 @@ void attempt_apprentice(object ob)
         if (! permit_recruit(ob))
                 return;
 
-        command("say ºÃ°É£¬ÎÒ¾ÍÊÕÏÂÄãÕâ¸öÍ½µÜÁË¡£");
+        command("say å¥½å§ï¼Œæˆ‘å°±æ”¶ä¸‹ä½ é€™å€‹å¾’å¼Ÿäº†ã€‚");
         command("recruit "+query("id", ob));
 }

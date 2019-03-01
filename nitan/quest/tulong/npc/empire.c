@@ -5,15 +5,15 @@ int cure_lighting();
 int kill_lighting(); 
 void create()
 {
-        set_name(HIY"Ò¹"+HIG"³½"NOR, ({ "night" }) );
-        set("gender", "Å®ÐÔ"); 
-        set("title", HIC"¾«ÁéÖ®Íõ"NOR);
+        set_name(HIY"å¤œ"+HIG"è¾°"NOR, ({ "night" }) );
+        set("gender", "å¥³æ€§"); 
+        set("title", HIC"ç²¾éˆä¹‹çŽ‹"NOR);
         set("age", 20);
         set("long",@LONG
-Ëý¾ÍÊÇ¾«Áé½çÖ®Ö÷£¬ÊÀ¼äËùÓÐ¾«ÁéµÄµÛÍõ¡£ËýµÄ±³ºóÓÐÒ»¶ÔÍ¸Ã÷µÄÓð
-Òí£¬É¢·¢×Å¾§ÁÁµÄ¹âÃ¢¡£ÔÚËýµÄÊÖÖÐ£¬ÄÃ×ÅÒ»°Ñ±¡±¡µÄÍ¸Ã÷µÄ³¤µ¶¡£
-ÄÇ¾ÍÊÇ¾«Áé½çµÄ±¦Îï¡ª¡ª¾«Áéµ¶¡£ËýÎ¢Î¢Æ¯¸¡ÔÚ¿ÕÖÐ£¬ËäÈ»²¢Ã»ÓÐ±Æ
-ÈËµÄÆøÊÆ£¬µ«È´×ÔÓÐÒ»ÖÖÎÞÉÏµÄÍþÑÏ¡£
+å¥¹å°±æ˜¯ç²¾éˆç•Œä¹‹ä¸»ï¼Œä¸–é–“æ‰€æœ‰ç²¾éˆçš„å¸çŽ‹ã€‚å¥¹çš„èƒŒå¾Œæœ‰ä¸€å°é€æ˜Žçš„ç¾½
+ç¿¼ï¼Œæ•£ç™¼è‘—æ™¶äº®çš„å…‰èŠ’ã€‚åœ¨å¥¹çš„æ‰‹ä¸­ï¼Œæ‹¿è‘—ä¸€æŠŠè–„è–„çš„é€æ˜Žçš„é•·åˆ€ã€‚
+é‚£å°±æ˜¯ç²¾éˆç•Œçš„å¯¶ç‰©â”€â”€ç²¾éˆåˆ€ã€‚å¥¹å¾®å¾®æ¼‚æµ®åœ¨ç©ºä¸­ï¼Œé›–ç„¶ä¸¦æ²’æœ‰é€¼
+äººçš„æ°£å‹¢ï¼Œä½†å»è‡ªæœ‰ä¸€ç¨®ç„¡ä¸Šçš„å¨åš´ã€‚
 LONG);        
         set("str", 18);
         set("con", 52);
@@ -36,7 +36,7 @@ LONG);
         map_skill("parry", "spirit-blade"); 
         set("chat_chance_combat", random(20)+30); 
       set("inquiry", ([
-            "»Ö¸´" : (: ask_me :),
+            "æ¢å¾©" : (: ask_me :),
         ]) );
         set("chat_msg_combat", ({
                (: cure_lighting :), 
@@ -66,11 +66,11 @@ int do_kill(string arg)
 
         callname = RANK_D->query_rude(me);
         if (random(3) > 1)
-        message_vision("\n$N¶ÔÖø$nºÈµÀ£º¡¸" 
-                + callname + "£¡½ñÈÕ²»ÊÇÄãËÀ¾ÍÊÇÎÒ»î£¡¡¹\n\n", ob, me);
+        message_vision("\n$Nå°è‘—$nå–é“ï¼šã€Œ" 
+                + callname + "ï¼ä»Šæ—¥ä¸æ˜¯ä½ æ­»å°±æ˜¯æˆ‘æ´»ï¼ã€\n\n", ob, me);
         else
-        message_vision("\n$N¶ÔÖø$nºÈµÀ£º¡¸" 
-                + callname + "£¡Ã÷Äê½ñÈÕ¾ÍÊÇÄãµÄ¼ÉÈÕ£¡¡¹\n\n", ob, me); 
+        message_vision("\n$Nå°è‘—$nå–é“ï¼šã€Œ" 
+                + callname + "ï¼æ˜Žå¹´ä»Šæ—¥å°±æ˜¯ä½ çš„å¿Œæ—¥ï¼ã€\n\n", ob, me); 
 
        call_out("kill_player",1); 
 
@@ -81,10 +81,10 @@ int ask_me()
 { 
        object me = this_player();
 
-       if( query_temp("m_success/Óã¹Ö", me)){remove_call_out("cure_lighting");
+       if( query_temp("m_success/é­šæ€ª", me)){remove_call_out("cure_lighting");
  
        command("smile"); 
-       command("say ÄãÕü¾È¹ýÎÒµÄÈËÃñ£¬ÎÒÓ¦¸Ã¸øÄã²¹³¥¡£");
+       command("say ä½ æ‹¯æ•‘éŽæˆ‘çš„äººæ°‘ï¼Œæˆ‘æ‡‰è©²çµ¦ä½ è£œå„Ÿã€‚");
        call_out("cure_lighting",3); 
 
        return 1;
@@ -100,7 +100,7 @@ int kill_player()
     me=this_object();
 
         me->command("sigh");
-        me->command("say ÄãÕâÓÖºÎ¿à£¿"); 
+        me->command("say ä½ é€™åˆä½•è‹¦ï¼Ÿ"); 
         me->command("getblade");
         me->command("wield blade");
         me->set("chat_msg_combat",({
@@ -113,7 +113,7 @@ int kill_player()
 int cure_lighting()
 {
 remove_call_out("curing");
-message_vision( HIY "\n\nÒ¹"+HIG"³½"+HIC"ºöµØÕ¹¿ª±³ºóµÄÓðÒí£¬·Éµ½°ë¿Õ£¬ÉíÖÜÉ¢·¢³öÈáºÍµÄ¹âÃ¢£¡£¡\n\n" NOR,
+message_vision( HIY "\n\nå¤œ"+HIG"è¾°"+HIC"å¿½åœ°å±•é–‹èƒŒå¾Œçš„ç¾½ç¿¼ï¼Œé£›åˆ°åŠç©ºï¼Œèº«å‘¨æ•£ç™¼å‡ºæŸ”å’Œçš„å…‰èŠ’ï¼ï¼\n\n" NOR,
 this_object());
 call_out("curing",random(1)+1);
 
@@ -127,7 +127,7 @@ int curing()
         int i;
         int dam;
         object *inv;
-        message_vision( HIY "\n\nÒ¹"+HIG"³½"+HIC"Ë«ÊÖ»·ÓÚÐØÇ°£¬¹âÃ¢»º»ºÈöÏÂ£¡£¡£¡\n\n",this_object()); 
+        message_vision( HIY "\n\nå¤œ"+HIG"è¾°"+HIC"é›™æ‰‹ç’°äºŽèƒ¸å‰ï¼Œå…‰èŠ’ç·©ç·©æ’’ä¸‹ï¼ï¼ï¼\n\n",this_object()); 
                 fw = (int)me->max_food_capacity();
                 set("food", fw, me);
                 fw = (int)me->max_water_capacity();
@@ -145,14 +145,14 @@ int curing()
         if(dam <0) dam = 0;
         inv[i]->receive_curing("qi",dam); 
         inv[i]->receive_heal("qi",dam);
-  tell_object(inv[i], HIG "ÄããåÔ¡ÔÚ¹âÃ¢Àï£¬¾õµÃ×Ô¼º±»»Ö¸´ÁË£¡\n"NOR);
+  tell_object(inv[i], HIG "ä½ æ²æµ´åœ¨å…‰èŠ’è£¡ï¼Œè¦ºå¾—è‡ªå·±è¢«æ¢å¾©äº†ï¼\n"NOR);
          }
         return 1;
 }  
 int kill_lighting()
 {
 remove_call_out("hurting");
-message_vision( HIY "\n\nÒ¹"+HIG"³½"+HIC"ºöµØÕ¹¿ª±³ºóµÄÓðÒí£¬·Éµ½°ë¿Õ£¬Ë«ÊÖÒ«³öÒ»ÍÅ¹âÃ¢£¡£¡\n\n" NOR,
+message_vision( HIY "\n\nå¤œ"+HIG"è¾°"+HIC"å¿½åœ°å±•é–‹èƒŒå¾Œçš„ç¾½ç¿¼ï¼Œé£›åˆ°åŠç©ºï¼Œé›™æ‰‹è€€å‡ºä¸€åœ˜å…‰èŠ’ï¼ï¼\n\n" NOR,
 this_object());
 call_out("hurting",random(1)+1);
 
@@ -165,7 +165,7 @@ int hurting()
         int i;
         int dam;
         object *inv;
-        message_vision( HIY "\n\nÒ¹"+HIG"³½"+HIC"Ë«ÊÖ½áÓ¡£¬ö®Ê±¼ä¹âÃ¢´óÊ¢£¬ÌìµØ¼äÖ»Ê£Ò»Æ¬Ò«Ä¿µÄ¹âÃ¢£¡£¡£¡\n\n",this_object());
+        message_vision( HIY "\n\nå¤œ"+HIG"è¾°"+HIC"é›™æ‰‹çµå°ï¼ŒéœŽæ™‚é–“å…‰èŠ’å¤§ç››ï¼Œå¤©åœ°é–“åªå‰©ä¸€ç‰‡è€€ç›®çš„å…‰èŠ’ï¼ï¼ï¼\n\n",this_object());
         inv = all_inventory(environment(this_object()));
         for(i=sizeof(inv)-1; i>=0; i--)
         if( living(inv[i]))

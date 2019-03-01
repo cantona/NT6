@@ -16,9 +16,9 @@ void create()
 {
         object zhenwu;
 
-        set_name("ÎäÊ¿", ({ "wu shi", "shi" }));
-        set("long","ÕâÊÇÎ»ÎäÊ¿£¬ÉíÅû¸Ö¼×£¬ÊÖÖ´³¤½££¬Ë«Ä¿¾«¹â¾¼¾¼£¬¾¯ÌèµØÑ²ÊÓ×ÅËÄÖÜµÄÇéĞÎ¡£\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("æ­¦å£«", ({ "wu shi", "shi" }));
+        set("long","é€™æ˜¯ä½æ­¦å£«ï¼Œèº«æŠ«é‹¼ç”²ï¼Œæ‰‹åŸ·é•·åŠï¼Œé›™ç›®ç²¾å…‰ç‚¯ç‚¯ï¼Œè­¦æƒ•åœ°å·¡è¦–è‘—å››å‘¨çš„æƒ…å½¢ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 50);
         set("attitude", "heroism");
         set("shen_type", 0);
@@ -56,7 +56,7 @@ void create()
 
         prepare_skill("cuff", "taiji-quan");
 
-        create_family("Îäµ±ÅÉ", 2, "");
+        create_family("æ­¦ç•¶æ´¾", 2, "");
 
         set("chat_chance_combat", 50);
         set("chat_msg_combat", ({
@@ -64,7 +64,7 @@ void create()
         }) );
 
         set("inquiry", ([
-                "»¤Æì": (: do_huqi :),
+                "è­·æ——": (: do_huqi :),
                 "huqi": (: do_huqi :),
         ]));
 
@@ -90,7 +90,7 @@ int accept_kill(object obj)
         string *sname;
         int i, max = 200;
 
-        command("say "+RANK_D->query_rude(obj)+"¾ÓÈ»»¹ÏëÉ±ËÀÎÒ£¡¿´ÕĞ£¡");
+        command("say "+RANK_D->query_rude(obj)+"å±…ç„¶é‚„æƒ³æ®ºæ­»æˆ‘ï¼çœ‹æ‹›ï¼");
 
         if( !objectp(query_temp("weapon", obj)) || !objectp(query_temp("weapon", me)) )
         {
@@ -114,22 +114,22 @@ string do_huqi()
         if( query_temp("battle/team_name", ob) != query_temp("battle/team_name") )
         {
                 me->kill_ob(ob);
-                return RANK_D->query_rude(this_player()) + "·Ç±¾¶ÓÈËÂí£¬Äª·ÇÏëÀ´Ú¿ÎÒ£¿¿´ÕĞ£¡\n";
+                return RANK_D->query_rude(this_player()) + "éæœ¬éšŠäººé¦¬ï¼Œè«éæƒ³ä¾†èª‘æˆ‘ï¼Ÿçœ‹æ‹›ï¼\n";
         }
 
         if( !query("flag", environment(me)) )
         {
-                message_vision(HIG"$NÒÉ»óµØËÄÏÂÍûÍû£¬ËµµÀ£º¡°¿ÉÊÇÕâÀïÃ»ÓĞÆì¿É»¤£¡¡±\n"NOR,me);
-                return "±ğ¸ã´íÁË£¡";
+                message_vision(HIG"$Nç–‘æƒ‘åœ°å››ä¸‹æœ›æœ›ï¼Œèªªé“ï¼šâ€œå¯æ˜¯é€™è£¡æ²’æœ‰æ——å¯è­·ï¼â€\n"NOR,me);
+                return "åˆ¥æéŒ¯äº†ï¼";
         }
         else
         {
-                message_vision(HIG"$N¿´ÁË¿´$n£¬Í´¿ìµØËµµÀ£º¡°ºÃ°É£¡ÎÒ¾ÍÁôÏÂÀ´»¤Æì¡£¡±\n"NOR,me,ob);
+                message_vision(HIG"$Nçœ‹äº†çœ‹$nï¼Œç—›å¿«åœ°èªªé“ï¼šâ€œå¥½å§ï¼æˆ‘å°±ç•™ä¸‹ä¾†è­·æ——ã€‚â€\n"NOR,me,ob);
                 command("halt");
                 command("follow none");
         }
 
-        return "´ó¼Ò¼ÓÓÍ¸É£¡";
+        return "å¤§å®¶åŠ æ²¹å¹¹ï¼";
 }
 
 varargs void die(object killer)

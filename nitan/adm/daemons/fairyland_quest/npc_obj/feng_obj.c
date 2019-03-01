@@ -1,17 +1,17 @@
-//                ±ê×¼ÃèÊö³¤¶ÈÊ¾Àý                                   |
-// ·çÖ®¹ú¶ÈÎïÆ·
-// by naihe  2002-10-25  ÓÚÃ¯Ãû
+//                æ¨™æº–æè¿°é•·åº¦ç¤ºä¾‹                                   |
+// é¢¨ä¹‹åœ‹åº¦ç‰©å“
+// by naihe  2002-10-25  äºŽèŒ‚å
 
 #include <ansi.h>
 
 inherit ITEM;
 
 string *names=({
-    HIW"ÌìÂíÖ®Éí"NOR,
-    HIW"ÉìÕ¹Ö®×óÒí"NOR,
-    HIW"ÉìÕ¹Ö®ÓÒÒí"NOR,
-    HIW"ÌìÂíÏè¿ÕÓùÔÆ·ç"NOR,  // ÕâÊÇ¼ÙµÄ
-    HIW"ÌìÂíÏè¿ÕÓùÔÆ·ç"NOR,
+    HIW"å¤©é¦¬ä¹‹èº«"NOR,
+    HIW"ä¼¸å±•ä¹‹å·¦ç¿¼"NOR,
+    HIW"ä¼¸å±•ä¹‹å³ç¿¼"NOR,
+    HIW"å¤©é¦¬ç¿”ç©ºå¾¡é›²é¢¨"NOR,  // é€™æ˜¯å‡çš„
+    HIW"å¤©é¦¬ç¿”ç©ºå¾¡é›²é¢¨"NOR,
 });
 
 string *ids=({
@@ -23,14 +23,14 @@ string *ids=({
 });
 
 string *longs=({
-    "ÕâÊÇÒ»¸ö²»ÖªÊ²Ã´ÖÊµØµÄÂí×´ÎïÆ·£¬È´ºÍÆ½ÈÕËù¼ûÖ®Âí²»´óÏàÍ¬¡£\n¿´À´»¹ÒªºÍ±ðµÄÊ²Ã´²¿·Ö×éºÏ(zuhe)ÆðÀ´²ÅÊÇÍêÕûµÄ¡£\nËüÉÏÃæËÆºõ¿Ì×Å¸öÏ¸Ï¸µÄÃû×Ö£º",
-    "ÕâÊÇÒ»¸ö³á°òÄ£ÑùµÄ¶«Î÷£¬È´ËÆÊÇ¸ö×óÒí£¬¸Ð¾õÉõÎªÆæ¹Ö¡£\nËüÉÏÃæËÆºõ¿Ì×Å¸öÏ¸Ï¸µÄÃû×Ö£º",
-    "ÕâÊÇÒ»¸ö³á°òÄ£ÑùµÄ¶«Î÷£¬È´ËÆÊÇ¸öÓÒÒí£¬¸Ð¾õÉõÎªÆæ¹Ö¡£\nËüÉÏÃæËÆºõ¿Ì×Å¸öÏ¸Ï¸µÄÃû×Ö£º",
-    "ÕâÊÇÒ»¸ö·çÖ®¹ú¶ÈµÄ±¦Îï¡ª¡ªÌìÂíÏè¿ÕÓùÔÆ·ç¡£µ«¿´ÆðÀ´ËÆºõÓÐÐ©²»¶Ô¾¢¡£",
-    "ÕâÊÇÒ»¸ö·çÖ®¹ú¶ÈµÄ±¦Îï¡ª¡ªÌìÂíÏè¿ÕÓùÔÆ·ç¡£\nËüÉÏÃæËÆºõ¿Ì×Å¸öÏ¸Ï¸µÄÃû×Ö£º",
+    "é€™æ˜¯ä¸€å€‹ä¸çŸ¥ä»€éº¼è³ªåœ°çš„é¦¬ç‹€ç‰©å“ï¼Œå»å’Œå¹³æ—¥æ‰€è¦‹ä¹‹é¦¬ä¸å¤§ç›¸åŒã€‚\nçœ‹ä¾†é‚„è¦å’Œåˆ¥çš„ä»€éº¼éƒ¨åˆ†çµ„åˆ(zuhe)èµ·ä¾†æ‰æ˜¯å®Œæ•´çš„ã€‚\nå®ƒä¸Šé¢ä¼¼ä¹Žåˆ»è‘—å€‹ç´°ç´°çš„åå­—ï¼š",
+    "é€™æ˜¯ä¸€å€‹ç¿…è†€æ¨¡æ¨£çš„æ±è¥¿ï¼Œå»ä¼¼æ˜¯å€‹å·¦ç¿¼ï¼Œæ„Ÿè¦ºç”šç‚ºå¥‡æ€ªã€‚\nå®ƒä¸Šé¢ä¼¼ä¹Žåˆ»è‘—å€‹ç´°ç´°çš„åå­—ï¼š",
+    "é€™æ˜¯ä¸€å€‹ç¿…è†€æ¨¡æ¨£çš„æ±è¥¿ï¼Œå»ä¼¼æ˜¯å€‹å³ç¿¼ï¼Œæ„Ÿè¦ºç”šç‚ºå¥‡æ€ªã€‚\nå®ƒä¸Šé¢ä¼¼ä¹Žåˆ»è‘—å€‹ç´°ç´°çš„åå­—ï¼š",
+    "é€™æ˜¯ä¸€å€‹é¢¨ä¹‹åœ‹åº¦çš„å¯¶ç‰©â”€â”€å¤©é¦¬ç¿”ç©ºå¾¡é›²é¢¨ã€‚ä½†çœ‹èµ·ä¾†ä¼¼ä¹Žæœ‰äº›ä¸å°å‹ã€‚",
+    "é€™æ˜¯ä¸€å€‹é¢¨ä¹‹åœ‹åº¦çš„å¯¶ç‰©â”€â”€å¤©é¦¬ç¿”ç©ºå¾¡é›²é¢¨ã€‚\nå®ƒä¸Šé¢ä¼¼ä¹Žåˆ»è‘—å€‹ç´°ç´°çš„åå­—ï¼š",
 });
 
-string *pivotal=({   // a.ÊàÖáµÄ ¹Ø¼üµÄ
+string *pivotal=({   // a.æ¨žè»¸çš„ é—œéµçš„
     "yes",
     "no",
     "no",
@@ -39,14 +39,14 @@ string *pivotal=({   // a.ÊàÖáµÄ ¹Ø¼üµÄ
 });
 
 string *units=({
-    "¸ö",
-    "Ö»",
-    "Ö»",
-    "¸ö",
-    "¸ö",
+    "å€‹",
+    "åª",
+    "åª",
+    "å€‹",
+    "å€‹",
 });
 
 string my_mark,my_color,my_msg,
-my_mark="feng",my_color=""HIW"",my_msg="·çÖ®¹ú¶È";
+my_mark="feng",my_color=""HIW"",my_msg="é¢¨ä¹‹åœ‹åº¦";
 
 #include "fyld_obj.h"

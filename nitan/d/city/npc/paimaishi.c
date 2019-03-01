@@ -1,4 +1,4 @@
-// ÅÄÂôÊ¦
+// æ‹è³£å¸«
 
 inherit NPC;
 #include <ansi.h>;
@@ -11,13 +11,13 @@ int delete_ob(int num);
 string to_ch(int money);
 void create()
 {
-        set_name("ÅÄÂôÊ¦", ({ "paimai shi", "ji", "shi" }) );
-                set("nickname", HIY+BLINK "ÌìÏÂµÚÒ»´¸" NOR);
-        set("gender", "ÄĞĞÔ");
+        set_name("æ‹è³£å¸«", ({ "paimai shi", "ji", "shi" }) );
+                set("nickname", HIY+BLINK "å¤©ä¸‹ç¬¬ä¸€éŒ˜" NOR);
+        set("gender", "ç”·æ€§");
         set("age", 45);
         set("no_get", 1);
         set("long",
-                "ÕâÊÇÒ»Î»Êİ¸ßµÄÖĞÄêÈË£¬ÒòÎª¹«ÕıÎŞË½¶ø±»ÍÆÎªÌìÏÂµÚÒ»ÅÄÂôÊ¦¡£\n");
+                "é€™æ˜¯ä¸€ä½ç˜¦é«˜çš„ä¸­å¹´äººï¼Œå› ç‚ºå…¬æ­£ç„¡ç§è€Œè¢«æ¨ç‚ºå¤©ä¸‹ç¬¬ä¸€æ‹è³£å¸«ã€‚\n");
         set("combat_exp",600000);
         set("shen", 0);
             set("attitude", "friendly");
@@ -73,33 +73,33 @@ int do_paimai(string arg)
         who=this_player();
         
         if( who->is_busy() )
-         return notify_fail("ÄãµÄ¶¯×÷»¹Ã»ÓĞÍê³É£¬²»ÄÜÌá½»ÎïÆ·½øĞĞÅÄÂô¡£\n");
+         return notify_fail("ä½ çš„å‹•ä½œé‚„æ²’æœ‰å®Œæˆï¼Œä¸èƒ½æäº¤ç‰©å“é€²è¡Œæ‹è³£ã€‚\n");
         if( who->query_condition("auction_forbindden"))
-                return notify_fail("ÄãÄ¿Ç°²»ÄÜ²ÎÓëÅÄÂô¡£\n");
+                return notify_fail("ä½ ç›®å‰ä¸èƒ½åƒèˆ‡æ‹è³£ã€‚\n");
     if( !arg || sscanf(arg, "%s with %d",id, money)!=2 )
-                return notify_fail("Ö¸Áî¸ñÊ½£ºpaimai <ÎïÆ·id> with <µ×¼Û(silverÎªµ¥Î»)> \n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼špaimai <ç‰©å“id> with <åº•åƒ¹(silverç‚ºå–®ä½)> \n");
         if( !ob=present(id, who))
-                return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+                return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™æ¨£æ±è¥¿ã€‚\n");
         if( query("money_id", ob) )
-                return notify_fail("ÄãÒªÅÄÂô¡¸Ç®¡¹£¿\n");
+                return notify_fail("ä½ è¦æ‹è³£ã€ŒéŒ¢ã€ï¼Ÿ\n");
         if( query("value", ob)<10 || money == 0 )
-                return notify_fail("ÅÄÂôÊ¦ËµµÀ£ºÕâ¼ş¶«Î÷²»ÖµÇ®£¬Äã¾Í±ğÂôÁË£¡\n");
+                return notify_fail("æ‹è³£å¸«èªªé“ï¼šé€™ä»¶æ±è¥¿ä¸å€¼éŒ¢ï¼Œä½ å°±åˆ¥è³£äº†ï¼\n");
         if( query("no_sell", ob) && !query("can_auction", ob) )
-                return notify_fail("ÅÄÂôÊ¦ËµµÀ£ºÕâÑù¶«Î÷²»ÄÜÅÄÂôÁË£¡\n");
+                return notify_fail("æ‹è³£å¸«èªªé“ï¼šé€™æ¨£æ±è¥¿ä¸èƒ½æ‹è³£äº†ï¼\n");
         if( query("no_drop", ob) && !query("can_auction", ob) )
-                return notify_fail("ÅÄÂôÊ¦ËµµÀ£ºÈÓ²»µôµÄ¶«Î÷ÏëÀ´Âô£¬Äãµ±ÎÒÕâÀïÊÇÀ¬»ø¶Ñ°¡£¡\n");
+                return notify_fail("æ‹è³£å¸«èªªé“ï¼šæ‰”ä¸æ‰çš„æ±è¥¿æƒ³ä¾†è³£ï¼Œä½ ç•¶æˆ‘é€™è£¡æ˜¯åƒåœ¾å †å•Šï¼\n");
         if( ob->query_unique() && !query("can_auction", ob) )
-                return notify_fail("ÅÄÂôÊ¦ËµµÀµÄËµ£ºÕâÊÇ¹ÂÆ·°¡£¬ÎÒÃÇÕâÀï¿É²»¸Ò³Ğ½ÓÕâ¸öÂòÂôÁË£¡\n");
+                return notify_fail("æ‹è³£å¸«èªªé“çš„èªªï¼šé€™æ˜¯å­¤å“å•Šï¼Œæˆ‘å€‘é€™è£¡å¯ä¸æ•¢æ‰¿æ¥é€™å€‹è²·è³£äº†ï¼\n");
     if( money<(100+query("value", ob)/100) )
-                return notify_fail("ÅÄÂôÊ¦ËµµÀ£ºÄúÏë×öÅâ±¾ÉúÒâ£¬ºÙºÙ£¬Äú²Æ´óÆø´ÖÎŞËùÎ½£¬Ğ¡µêµÄÉùÓş¿ÉÊÇÒªÊÜËğµÄ¡£\n");
+                return notify_fail("æ‹è³£å¸«èªªé“ï¼šæ‚¨æƒ³åšè³ æœ¬ç”Ÿæ„ï¼Œå˜¿å˜¿ï¼Œæ‚¨è²¡å¤§æ°£ç²—ç„¡æ‰€è¬‚ï¼Œå°åº—çš„è²è­½å¯æ˜¯è¦å—æçš„ã€‚\n");
     if(money<0||money>1000000)
-                return notify_fail("ÅÄÂôÊ¦ËµµÀ£ºÄã³öµÄ¼Û¸ñÊÇ·Ç·¨µÄ¡£\n"); //·ÀÖ¹Òç³ö
+                return notify_fail("æ‹è³£å¸«èªªé“ï¼šä½ å‡ºçš„åƒ¹æ ¼æ˜¯éæ³•çš„ã€‚\n"); //é˜²æ­¢æº¢å‡º
         if( query("balance", who)<10000 )
-                return notify_fail("ÅÄÂôÊ¦ËµµÀ£ºÄãÕËºÅÀïµÄÇ®²»¹»Ö§¸¶ÊÖĞø·Ñ£¡\n");
+                return notify_fail("æ‹è³£å¸«èªªé“ï¼šä½ è³¬è™Ÿè£¡çš„éŒ¢ä¸å¤ æ”¯ä»˜æ‰‹çºŒè²»ï¼\n");
    
         addn("balance", -10000, who);
-        command("sys"+query("name", who)+"("+query("id", who)+")"+NOR+query("name", ob)+HIC+"½øĞĞÅÄÂô¡£\n"NOR);
-        command("chat"+"ÓĞÈËÌá½»"+NOR+query("name", ob)+HIC+"½øĞĞÅÄÂô£¬ÇëÊ¹ÓÃ"+HIW"¡¼"HIG"ÅÄÂô"HIW"¡½"NOR+HIC"ÆµµÀ"HIY"£¨£Â£É£Ì£Ì£©"HIC"ÁË½â¾ßÌåÇé¿ö¡£"NOR);
+        command("sys"+query("name", who)+"("+query("id", who)+")"+NOR+query("name", ob)+HIC+"é€²è¡Œæ‹è³£ã€‚\n"NOR);
+        command("chat"+"æœ‰äººæäº¤"+NOR+query("name", ob)+HIC+"é€²è¡Œæ‹è³£ï¼Œè«‹ä½¿ç”¨"+HIW"â–¡"HIG"æ‹è³£"HIW"â–¡"NOR+HIC"é »é“"HIY"ï¼ˆï¼¢ï¼©ï¼¬ï¼¬ï¼‰"HIC"äº†è§£å…·é«”æƒ…æ³ã€‚"NOR);
     who->apply_condition("auction_forbindden",1+random(10));
         sscanf(file_name(ob),"%s#%d",file_name,clone_number);
 
@@ -150,12 +150,12 @@ int begin_paimai(string name,int money,int num,int m)
         m+=1;
         if (m==1)
         {
-                command("bill "+"ÏÖÔÚ¿ªÊ¼ÅÄÂô "NOR+name+HIG+" µÄËùÓĞÈ¨¡£"+NOR);
+                command("bill "+"ç¾åœ¨é–‹å§‹æ‹è³£ "NOR+name+HIG+" çš„æ‰€æœ‰æ¬Šã€‚"+NOR);
         }
         set("on_paimai",1);
         mon = to_ch(money);
-        command("bill "+NOR+name+HIG+"µ×¼Û"+mon+"µÚ"+chinese_number(m)+"´Î");
-        command("bill "+name+HIG"ÊÇ±¾µêµÚ¡º"+chinese_number(num)+"¡»ºÅÅÄÂôÆ·£¬ÓĞÒâÕßÇëÊ¹ÓÃ£Â£É£ÄÃüÁî½øĞĞ¾ºÂò¡£"NOR);
+        command("bill "+NOR+name+HIG+"åº•åƒ¹"+mon+"ç¬¬"+chinese_number(m)+"æ¬¡");
+        command("bill "+name+HIG"æ˜¯æœ¬åº—ç¬¬ã€"+chinese_number(num)+"ã€è™Ÿæ‹è³£å“ï¼Œæœ‰æ„è€…è«‹ä½¿ç”¨ï¼¢ï¼©ï¼¤å‘½ä»¤é€²è¡Œç«¶è²·ã€‚"NOR);
 
         if (!(m==3))
                 call_out("begin_paimai",20,name,money,num,m);
@@ -177,26 +177,26 @@ int finish_paimai(int num,int sign)
         owner=find_player(owner_id);
         if (sign==0)
         {
-                command("bill "+query("npaimai/" + sprintf("%d", num))+HIG+" µÄËùÓĞÈ¨ÅÄÂôÁ÷±êÁË¡£"+NOR);
+                command("bill "+query("npaimai/" + sprintf("%d", num))+HIG+" çš„æ‰€æœ‰æ¬Šæ‹è³£æµæ¨™äº†ã€‚"+NOR);
                 if(owner)
-                        tell_object(owner,HIR"ÄãµÄ¶«Î÷Ã»ÓĞÂô³öÈ¥£¬ÇëÔÚÊ®·ÖÖÓÄÚÀ´ÅÄÂôÎİÀ´È¡»Ø×Ô¼ºµÄÎïÆ·¡£\n"NOR);
+                        tell_object(owner,HIR"ä½ çš„æ±è¥¿æ²’æœ‰è³£å‡ºå»ï¼Œè«‹åœ¨ååˆ†é˜å…§ä¾†æ‹è³£å±‹ä¾†å–å›è‡ªå·±çš„ç‰©å“ã€‚\n"NOR);
         }
         else            
         {
         if( !query_temp("invisibility_buyer", buyer) )
         {
-                command("bill³É½»!"+query("id", buyer)+"»ñµÃÁË"+NOR+query("npaimai/"+sprintf("%d",num))+HIG+"µÄËùÓĞÈ¨¡£"+NOR);
+                command("billæˆäº¤!"+query("id", buyer)+"ç²å¾—äº†"+NOR+query("npaimai/"+sprintf("%d",num))+HIG+"çš„æ‰€æœ‰æ¬Šã€‚"+NOR);
         }
         else
         {
-                command("bill ³É½»! ÓĞÈË»ñµÃÁË "+NOR+query("npaimai/" + sprintf("%d", num))+HIW+" µÄËùÓĞÈ¨¡£"+NOR);
-                command("sys³É½»!"+query("id", buyer)+"»ñµÃÁË"+NOR+query("npaimai/"+sprintf("%d",num))+HIG+"µÄËùÓĞÈ¨¡£"+NOR);
+                command("bill æˆäº¤! æœ‰äººç²å¾—äº† "+NOR+query("npaimai/" + sprintf("%d", num))+HIW+" çš„æ‰€æœ‰æ¬Šã€‚"+NOR);
+                command("sysæˆäº¤!"+query("id", buyer)+"ç²å¾—äº†"+NOR+query("npaimai/"+sprintf("%d",num))+HIG+"çš„æ‰€æœ‰æ¬Šã€‚"+NOR);
         }
                 if (buyer)
-                        tell_object(buyer,HIR"Äã»ñµÃÁË "+NOR+query("npaimai/" + sprintf("%d", num))+HIR+" µÄËùÓĞÈ¨£¬ÇëÔÚÊ®·ÖÖÓÄÚÀ´ÅÄÂôÎİÈ¡»ØÄãÂòµÄ¶«Î÷¡£\n"NOR);
+                        tell_object(buyer,HIR"ä½ ç²å¾—äº† "+NOR+query("npaimai/" + sprintf("%d", num))+HIR+" çš„æ‰€æœ‰æ¬Šï¼Œè«‹åœ¨ååˆ†é˜å…§ä¾†æ‹è³£å±‹å–å›ä½ è²·çš„æ±è¥¿ã€‚\n"NOR);
                 if (owner)
-                        tell_object(owner,HIR"ÄãµÄ"+NOR+query("npaimai/" + sprintf("%d", num))+HIR+"ÂôÁË"
-                        +chinese_number(query("vpaimai/" + sprintf("%d", num)))+"Á½Òø×Ó£¬¿Û³ı5%ÊÖĞø·Ñ£¬ÆäÓàµÄÒÑ¾­¼ÓÈëÄãµÄ»§Í·ÁË¡£\n"NOR);        
+                        tell_object(owner,HIR"ä½ çš„"+NOR+query("npaimai/" + sprintf("%d", num))+HIR+"è³£äº†"
+                        +chinese_number(query("vpaimai/" + sprintf("%d", num)))+"å…©éŠ€å­ï¼Œæ‰£é™¤5%æ‰‹çºŒè²»ï¼Œå…¶ä½™çš„å·²ç¶“åŠ å…¥ä½ çš„æˆ¶é ­äº†ã€‚\n"NOR);        
         }
     if(buyer)
           buyer->apply_condition("auction_forbindden",1+random(10));
@@ -224,9 +224,9 @@ int report_paimai(object buyer,int money,int num)
         remove_call_out("finish_paimai");
         remove_call_out("go_paimai");
         
-        if(query("pnum")) // pnumÊÇÅĞ¶ÏÊÇ·ñÓĞÈËÍ¶±êµÄ±êÖ¾¡¡ 
+        if(query("pnum")) // pnumæ˜¯åˆ¤æ–·æ˜¯å¦æœ‰äººæŠ•æ¨™çš„æ¨™å¿—ã€€ 
         {
-                pay_back(query("ipaimai/" + sprintf("%d", num)),query("vpaimai/" + sprintf("%d", num))*100);//¹é»¹Ç°Ò»¸ö¾ºÂòÕßµÄÇ®¡¡
+                pay_back(query("ipaimai/" + sprintf("%d", num)),query("vpaimai/" + sprintf("%d", num))*100);//æ­¸é‚„å‰ä¸€å€‹ç«¶è²·è€…çš„éŒ¢ã€€
                 addn("pnum",1);
         }
         addn("balance", (0-money*100), buyer);
@@ -238,16 +238,16 @@ int report_paimai(object buyer,int money,int num)
         {
            if (!query("pnum"))
                    addn("pnum",1);
-                command("bill"+query("id", buyer)+"³ö¼Û"+mon+"¹ºÈë"+NOR+query("npaimai/"+sprintf("%d",num))+HIG"µÄËùÓĞÈ¨¡£");
+                command("bill"+query("id", buyer)+"å‡ºåƒ¹"+mon+"è³¼å…¥"+NOR+query("npaimai/"+sprintf("%d",num))+HIG"çš„æ‰€æœ‰æ¬Šã€‚");
         call_out("go_paimai",5,query("name", buyer)+"("+query("id", buyer)+")",query("npaimai/"+sprintf("%d",num)),money,num,0);
         }
         else
         {
            if (!query("pnum"))
            addn("pnum",1);
-       command("sys"+query("id", buyer)+"³ö¼Û"+mon+"¹ºÈë"+NOR+query("npaimai/"+sprintf("%d",num))+HIG"µÄËùÓĞÈ¨¡£");
-       command("bill  ÓĞÈË³ö¼Û "+chinese_number(money)+"Á½Òø×Ó ¹ºÈë"+NOR+query("npaimai/" + sprintf("%d", num))+HIG"µÄËùÓĞÈ¨¡£");
-       call_out("go_paimai",5,"Ä³ÈË",query("npaimai/" + sprintf("%d", num)),money,num,0);
+       command("sys"+query("id", buyer)+"å‡ºåƒ¹"+mon+"è³¼å…¥"+NOR+query("npaimai/"+sprintf("%d",num))+HIG"çš„æ‰€æœ‰æ¬Šã€‚");
+       command("bill  æœ‰äººå‡ºåƒ¹ "+chinese_number(money)+"å…©éŠ€å­ è³¼å…¥"+NOR+query("npaimai/" + sprintf("%d", num))+HIG"çš„æ‰€æœ‰æ¬Šã€‚");
+       call_out("go_paimai",5,"æŸäºº",query("npaimai/" + sprintf("%d", num)),money,num,0);
         }
         return 1;
 }
@@ -300,8 +300,8 @@ int go_paimai(string id,string name,int money,int num,int m)
         string mon;
         m+=1;
         mon = to_ch(money);
-        command("bill "+id+" ³ö¼Û "+mon+"¹ºÈë "+NOR+name+HIG+" µÄËùÓĞÈ¨£¬µÚ"+chinese_number(m)+"´Î");
-        command("bill "+name+HIG"ÊÇ±¾µêµÚ¡º"+chinese_number(num)+"¡»ºÅÅÄÂôÆ·£¬ÓĞÒâÕßÇëÊ¹ÓÃ£Â£É£ÄÃüÁî½øĞĞ¾ºÂò¡£"NOR);
+        command("bill "+id+" å‡ºåƒ¹ "+mon+"è³¼å…¥ "+NOR+name+HIG+" çš„æ‰€æœ‰æ¬Šï¼Œç¬¬"+chinese_number(m)+"æ¬¡");
+        command("bill "+name+HIG"æ˜¯æœ¬åº—ç¬¬ã€"+chinese_number(num)+"ã€è™Ÿæ‹è³£å“ï¼Œæœ‰æ„è€…è«‹ä½¿ç”¨ï¼¢ï¼©ï¼¤å‘½ä»¤é€²è¡Œç«¶è²·ã€‚"NOR);
         if (!(m==3))
                 call_out("go_paimai",20,id,name,money,num,m);
         else
@@ -315,7 +315,7 @@ int do_paimailist()
         {
                 if (query("lpaimai/" + sprintf("%d", i))==1)
                 {
-                        printf("%-10s£º µ×¼Û %-3d Á½Òø×Ó \n",query("npaimai/" + sprintf("%d", i)),query("vpaimai/" + sprintf("%d", i)));
+                        printf("%-10sï¼š åº•åƒ¹ %-3d å…©éŠ€å­ \n",query("npaimai/" + sprintf("%d", i)),query("vpaimai/" + sprintf("%d", i)));
                 }
                 else
                         return 1;
@@ -352,12 +352,12 @@ int do_yao()
                                 if( ob->query_unique() || query("can_auction", ob) )
                                         set("can_auction", 0, ob);
                                 ipaimai[terms[i]]="paimai shi";
-                                message_vision(CYN+"ÅÄÂôÊ¦½«"+NOR+npaimai[terms[i]]+CYN+"½»¸ø$N¡£\n"NOR, this_player(),this_object());
+                                message_vision(CYN+"æ‹è³£å¸«å°‡"+NOR+npaimai[terms[i]]+CYN+"äº¤çµ¦$Nã€‚\n"NOR, this_player(),this_object());
                                 return 1;
                         }
                 }
         }
-        tell_object(this_player(),"ÕâÀïÃ»ÓĞÊôÓÚÄãµÄÎïÆ·¡£\n");
+        tell_object(this_player(),"é€™è£¡æ²’æœ‰å±¬äºä½ çš„ç‰©å“ã€‚\n");
         return 1;
 }
 int delete_ob(int num)
@@ -378,10 +378,10 @@ string to_ch(int money)
         string mon;
         gold = money/100;
     if(gold)
-                mon =chinese_number(gold)+"Á½»Æ½ğ";
+                mon =chinese_number(gold)+"å…©é»ƒé‡‘";
         silver = money-gold*100;
         if(silver)
-                mon +="ÓÖ"+chinese_number(silver)+"Á½°×Òø";
+                mon +="åˆ"+chinese_number(silver)+"å…©ç™½éŠ€";
         mon +="("+sprintf("%d",money)+" silver)";
     set_temp("price",mon);
     return mon;

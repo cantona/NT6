@@ -3,7 +3,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-string name() { return HIW "ÌìÏÂÓĞ" HIR "Ñª" NOR; }
+string name() { return HIW "å¤©ä¸‹æœ‰" HIR "è¡€" NOR; }
 
 inherit F_SSERVER;
 
@@ -15,7 +15,7 @@ int perform(object me, object target)
         int ap, dp;
 
         if (me->query_skill("daojian-guizhen", 1) < 200)
-                return notify_fail("ÄãËùÊ¹ÓÃµÄÍâ¹¦ÖĞÃ»ÓĞÕâÖÖ¹¦ÄÜ¡£\n");
+                return notify_fail("ä½ æ‰€ä½¿ç”¨çš„å¤–åŠŸä¸­æ²’æœ‰é€™ç¨®åŠŸèƒ½ã€‚\n");
 
         if (! target)
         {
@@ -24,50 +24,50 @@ int perform(object me, object target)
         }
 
         if (! me->is_fighting(target))
-                return notify_fail(name() + "Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(name() + "åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me) )
             || query("skill_type", weapon) != "sword"
             && query("skill_type", weapon) != "blade" )
-                return notify_fail("ÄãËùÊ¹ÓÃµÄÎäÆ÷²»¶Ô£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ æ‰€ä½¿ç”¨çš„æ­¦å™¨ä¸å°ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         type=query("skill_type", weapon);
 
         if (me->query_skill(type, 1) < 250)
-                return notify_fail("ÄãµÄ" + to_chinese(type) + "Ì«²î£¬"
-                                   "ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„" + to_chinese(type) + "å¤ªå·®ï¼Œ"
+                                   "é›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (me->query_skill_mapped(type) != "daojian-guizhen")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢µ¶½£¹éÕæ£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼åˆ€åŠæ­¸çœŸï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (me->query_skill("daojian-guizhen", 1) < 250)
-                return notify_fail("ÄãµÄ½£¹éÕæµÈ¼¶²»¹»£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„åŠæ­¸çœŸç­‰ç´šä¸å¤ ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if( query("neili", me)<500 )
-                return notify_fail("ÄãÏÖÔÚµÄÕæÆø²»¹»£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çš„çœŸæ°£ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIW "$N" HIW "ÊÖÖĞ" + weapon->name() + HIW "İëµØÒ»¶¶"
-              "£¬½«¡¸" NOR + WHT "ºú¼Òµ¶·¨" HIW "¡¹²¢¡¸" NOR + WHT
-              "Ãç¼Ò½£·¨" HIW "¡¹Á¬»·Ê©³ö¡£ö®Ê±º®\n¹âµãµã£¬ÓÌÈçÒ¹ÔÉ"
-              "»®¿Õ£¬ÆÌÌì¸ÇµØÕÖÏò$n" HIW "£¬ÕıÊÇÒ»ÕĞ¡¸" HIW "ÌìÏÂ"
-              "ÓĞ" HIR "Ñª" HIW "¡¹¡£\n" NOR;
+        msg = HIW "$N" HIW "æ‰‹ä¸­" + weapon->name() + HIW "é©€åœ°ä¸€æŠ–"
+              "ï¼Œå°‡ã€Œ" NOR + WHT "èƒ¡å®¶åˆ€æ³•" HIW "ã€ä¸¦ã€Œ" NOR + WHT
+              "è‹—å®¶åŠæ³•" HIW "ã€é€£ç’°æ–½å‡ºã€‚éœæ™‚å¯’\nå…‰é»é»ï¼ŒçŒ¶å¦‚å¤œéš•"
+              "åŠƒç©ºï¼Œèˆ–å¤©è“‹åœ°ç½©å‘$n" HIW "ï¼Œæ­£æ˜¯ä¸€æ‹›ã€Œ" HIW "å¤©ä¸‹"
+              "æœ‰" HIR "è¡€" HIW "ã€ã€‚\n" NOR;
 
         ap = attack_power(me, "blade");
         dp = defense_power(target, "parry");
 
         if (ap / 2 + random(ap) > dp)
         {
-                msg += HIW "$n" HIW "Ö»¼ûÎŞÊıµ¶¹â½£Ó°Ïò×Ô¼º±Æ"
-                       "À´£¬¶Ù¸ĞÑÛ»¨çÔÂÒ£¬ĞÄµ×º®ÒâÓÍÈ»¶øÉú¡£\n" NOR;
+                msg += HIW "$n" HIW "åªè¦‹ç„¡æ•¸åˆ€å…‰åŠå½±å‘è‡ªå·±é€¼"
+                       "ä¾†ï¼Œé “æ„Ÿçœ¼èŠ±ç¹šäº‚ï¼Œå¿ƒåº•å¯’æ„æ²¹ç„¶è€Œç”Ÿã€‚\n" NOR;
                 count = ap / 15;
                 set_temp("daojian-guizhen/max_pfm", 1, me);
         } else
         {
-                msg += HIG "$n" HIG "Í»È»·¢ÏÖ×Ô¼ºËÄÖÜ½Ô±»µ¶¹â"
-                       "½£Ó°Ëù°üÎ§£¬ĞÄÖª²»Ãî£¬¼±Ã¦Ğ¡ĞÄÕĞ¼Ü¡£\n" NOR;
+                msg += HIG "$n" HIG "çªç„¶ç™¼ç¾è‡ªå·±å››å‘¨çš†è¢«åˆ€å…‰"
+                       "åŠå½±æ‰€åŒ…åœï¼Œå¿ƒçŸ¥ä¸å¦™ï¼Œæ€¥å¿™å°å¿ƒæ‹›æ¶ã€‚\n" NOR;
                 count = ap / 30;
         }
         message_combatd(msg, me, target);

@@ -10,22 +10,22 @@ inherit F_CLEAN_UP;
 #define DEFAULT_SIZE    25
 
 string help = @HELP
-Ö¸ÁîÀú³Ì
+æŒ‡ä»¤æ­·ç¨‹
 
-Õâ¸öÖ¸ÁîÓÃÀ´¼ìÊÓÄúÔøÊ¹ÓÃ¹ýµÄÖ¸Áî¼ÍÂ¼£¬Äú¿ÉÒÔÍ¸¹ýÏÂÁÐÖ¸ÁîÀ´Ê¹ÓÃÄúµÄÖ¸Áî¼ÍÂ¼
+é€™å€‹æŒ‡ä»¤ç”¨ä¾†æª¢è¦–æ‚¨æ›¾ä½¿ç”¨éŽçš„æŒ‡ä»¤ç´€éŒ„ï¼Œæ‚¨å¯ä»¥é€éŽä¸‹åˆ—æŒ‡ä»¤ä¾†ä½¿ç”¨æ‚¨çš„æŒ‡ä»¤ç´€éŒ„
 
-!!              ÖØ¸´ÉÏÒ»¸öÖ¸Áî
-!<Ö¸Áî±àºÅ>     ÖØ¸´ <Ö¸Áî±àºÅ> µÄÖ¸Áî
+!!              é‡å¾©ä¸Šä¸€å€‹æŒ‡ä»¤
+!<æŒ‡ä»¤ç·¨è™Ÿ>     é‡å¾© <æŒ‡ä»¤ç·¨è™Ÿ> çš„æŒ‡ä»¤
 
-Ö¸Áî¸ñÊ½:
-history <Ö¸ÁîÊý>                ÏÔÊ¾×î½ü <Ö¸ÁîÊý> ±ÊµÄÖ¸ÁîÀú³Ì
-history <Ê¹ÓÃÕß´úºÅ>            ÏÔÊ¾ <Ê¹ÓÃÕß> µÄÖ¸ÁîÀú³Ì (Î×Ê¦×¨ÓÃ)
-history <Ö¸ÁîÊý> <Ê¹ÓÃÕß´úºÅ>   ÏÔÊ¾ <Ê¹ÓÃÕß> ×î½ü <Ö¸ÁîÊý> ±ÊµÄÖ¸ÁîÀú³Ì (Î×Ê¦×¨ÓÃ)
-history <Ê¹ÓÃÕß´úºÅ> <Ö¸ÁîÊý>   Í¬ÉÏ
+æŒ‡ä»¤æ ¼å¼:
+history <æŒ‡ä»¤æ•¸>                é¡¯ç¤ºæœ€è¿‘ <æŒ‡ä»¤æ•¸> ç­†çš„æŒ‡ä»¤æ­·ç¨‹
+history <ä½¿ç”¨è€…ä»£è™Ÿ>            é¡¯ç¤º <ä½¿ç”¨è€…> çš„æŒ‡ä»¤æ­·ç¨‹ (å·«å¸«å°ˆç”¨)
+history <æŒ‡ä»¤æ•¸> <ä½¿ç”¨è€…ä»£è™Ÿ>   é¡¯ç¤º <ä½¿ç”¨è€…> æœ€è¿‘ <æŒ‡ä»¤æ•¸> ç­†çš„æŒ‡ä»¤æ­·ç¨‹ (å·«å¸«å°ˆç”¨)
+history <ä½¿ç”¨è€…ä»£è™Ÿ> <æŒ‡ä»¤æ•¸>   åŒä¸Š
 
-history game                    ÏÔÊ¾ÓÎÏ·µÄÖØ´óÀúÊ·ÊÂ¼þ
+history game                    é¡¯ç¤ºéŠæˆ²çš„é‡å¤§æ­·å²äº‹ä»¶
 
-Ïà¹ØÖ¸Áî: 
+ç›¸é—œæŒ‡ä»¤: 
 HELP;
 
 int main(object me, string arg)
@@ -37,7 +37,7 @@ int main(object me, string arg)
 
         if( !wizardp(me) && time()-query_temp("last_history", me)<3 ) 
         { 
-                write("ÏµÍ³Æø´­ÐêµØÌ¾µÀ£ºÂýÂýÀ´ ....\n");   
+                write("ç³»çµ±æ°£å–˜å™“åœ°å˜†é“ï¼šæ…¢æ…¢ä¾† ....\n");   
                 return 1; 
         } 
 
@@ -45,17 +45,17 @@ int main(object me, string arg)
         {
                 string *game_history = HISTORY_D->query_history();        
                 
-                msg = MUD_FULL_NAME"ÖØ´óÀúÊ·ÊÂ¼þ\n";
-                msg += WHT"¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª\n"NOR;
-                msg += HIC"±àºÅ Ê±¼ä              ID        ÊÂ¼þ\n"NOR;
-                msg += WHT"¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª\n"NOR;
+                msg = MUD_FULL_NAME"é‡å¤§æ­·å²äº‹ä»¶\n";
+                msg += WHT"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n"NOR;
+                msg += HIC"ç·¨è™Ÿ æ™‚é–“              ID        äº‹ä»¶\n"NOR;
+                msg += WHT"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n"NOR;
                 
                 for(i=0;i<sizeof(game_history);i+=4)
                 {
                         msg +=sprintf(HIW"%-5d"NOR CYN"%-18s"NOR YEL"%-10s"NOR HIC"%s\n"NOR, i/4+1, TIME_D->replace_ctime(game_history[i]), game_history[i+2],game_history[i+3]);
                 }
                 
-                msg += WHT"¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª\n"NOR;
+                msg += WHT"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n"NOR;
                 me->start_more(msg);
                 return 1;
         }
@@ -64,8 +64,8 @@ int main(object me, string arg)
         {
                 object *sortusers;
                 
-                msg = "ÅÅÃû Íæ¼ÒÃû³Æ                   Ö¸ÁîÊý   ËÙ¶È(Ã¿Ãë)   Îå°ÙÆ½¾ù ÏµÍ³¸ººÉ\n";
-                msg += WHT"¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª\n"NOR;
+                msg = "æŽ’å çŽ©å®¶åç¨±                   æŒ‡ä»¤æ•¸   é€Ÿåº¦(æ¯ç§’)   äº”ç™¾å¹³å‡ ç³»çµ±è² è·\n";
+                msg += WHT"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n"NOR;
                 sortusers = filter_array(users(), (: playerp($1) :));
                 sortusers = sort_array(sortusers, (: to_float($1->total_command_count())/(time() - query_temp("logon_time", $1)) < to_float($2->total_command_count())/(time() - query_temp("logon_time", $2)) ? 1 : -1 :));
 
@@ -85,7 +85,7 @@ int main(object me, string arg)
                         );
 
                 }
-                msg += WHT"¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª\n"NOR;
+                msg += WHT"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n"NOR;
                 me->start_more(msg);
                 return 1;
         }
@@ -96,20 +96,20 @@ int main(object me, string arg)
         else ob = find_player(arg);
 
         if( !objectp(ob) )
-                return tell(me, "Ã»ÓÐ " + arg + " ÕâÎ»Íæ¼Ò¡£\n");
+                return tell(me, "æ²’æœ‰ " + arg + " é€™ä½çŽ©å®¶ã€‚\n");
 
         if( ob != me && wiz_level(me->query_id(1)) < wiz_level(ob->query_id(1)) )
-                return tell(me, pnoun(2, me) + "Ã»ÓÐÈ¨ÏÞ²éÔÄ" + ob->query_idname() + "µÄÀúÊ·Ö¸Áî¼ÍÂ¼¡£\n");
+                return tell(me, pnoun(2, me) + "æ²’æœ‰æ¬Šé™æŸ¥é–±" + ob->query_idname() + "çš„æ­·å²æŒ‡ä»¤ç´€éŒ„ã€‚\n");
 
         cmd_history = ob->query_history();
 
         if( !(ttl_size = sizeof(cmd_history)) )
-                return tell(me, (me==ob ? pnoun(2, me):ob->query_idname()) + "Ã»ÓÐÈÎºÎÀúÊ·Ö¸Áî¼ÍÂ¼¡£\n");
+                return tell(me, (me==ob ? pnoun(2, me):ob->query_idname()) + "æ²’æœ‰ä»»ä½•æ­·å²æŒ‡ä»¤ç´€éŒ„ã€‚\n");
 
         if( size <= 0 ) size = DEFAULT_SIZE;
         if( size > ttl_size ) size = ttl_size;
         
-        msg = (me==ob ? pnoun(2, me):ob->query_idname())+"×Ü¹²ÓÐ "+ttl_size+" ±ÊÖ¸¼ÍÂ¼£¬Ö¸ÁîÆ½¾ùËÙ¶È "+(ob->total_command_count() > 0 ? sprintf("%.2f", to_float(ob->total_command_count())/((time() - query_temp("logon_time", ob))||1)) : 0)+" (Ö¸ÁîÊý/Ãë)£¬ÏÂÁÐÎª×î½üµÄ "+size+" ±Ê: \n"; 
+        msg = (me==ob ? pnoun(2, me):ob->query_idname())+"ç¸½å…±æœ‰ "+ttl_size+" ç­†æŒ‡ç´€éŒ„ï¼ŒæŒ‡ä»¤å¹³å‡é€Ÿåº¦ "+(ob->total_command_count() > 0 ? sprintf("%.2f", to_float(ob->total_command_count())/((time() - query_temp("logon_time", ob))||1)) : 0)+" (æŒ‡ä»¤æ•¸/ç§’)ï¼Œä¸‹åˆ—ç‚ºæœ€è¿‘çš„ "+size+" ç­†: \n"; 
 
 
         start = ttl_size - size;

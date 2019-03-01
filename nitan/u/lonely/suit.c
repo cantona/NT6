@@ -15,17 +15,17 @@ int main(object me, string arg)
 	string *keys_tz, str_color;
 
 	mapping tzlist = ([
-		"head"       :  "Í·ÊÎ",
-		"waist"      :  "Ñü´ø",
-		"boots"      :  "Ñ¥×Ó",
-		"surcoat"    :  "Åû·ç",//
-		"armor"      :  "Õ½¼×",
-		"cloth"      :  "Õ½ÒÂ",
-		"wrists"     :  "»¤Íó",
-		"neck"       :  "ÏîÁ´",
-		"rings"      :  "½äÖ¸",
-		"myheart"    :  "×ó·û",
-		"myheart2"   :  "ÓÒ·û",
+		"head"       :  "é ­é£¾",
+		"waist"      :  "è…°å¸¶",
+		"boots"      :  "é´å­",
+		"surcoat"    :  "æŠ«é¢¨",//
+		"armor"      :  "æˆ°ç”²",
+		"cloth"      :  "æˆ°è¡£",
+		"wrists"     :  "è­·è…•",
+		"neck"       :  "é …éˆ",
+		"rings"      :  "æˆ’æŒ‡",
+		"myheart"    :  "å·¦ç¬¦",
+		"myheart2"   :  "å³ç¬¦",
 	]);
 
 	if (! objectp(me))return 0;
@@ -34,33 +34,33 @@ int main(object me, string arg)
 
 	keys_tzlist = keys(tzlist);
 
-	// Ò»´ÎĞÔ´©ÉÏÒ»Ì×
+	// ä¸€æ¬¡æ€§ç©¿ä¸Šä¸€å¥—
 	if (arg == "wear")
 	{
 		tz = me->query("tzlist");
 
 		if (! sizeof(tz))
-			return notify_fail("Äã»¹Ã»ÓĞ×Ô¶¨ÒåÌ××°ÁĞ±í£¬ÏêÇé¼û help taozhuang ËµÃ÷¡£\n");
+			return notify_fail("ä½ é‚„æ²’æœ‰è‡ªå®šç¾©å¥—è£åˆ—è¡¨ï¼Œè©³æƒ…è¦‹ help taozhuang èªªæ˜ã€‚\n");
 		/*
-		if (sizeof(tz) < 12 && ! wizardp(me)) // Î×Ê¦²âÊÔµÄÊ±ºò¿É²»ÓÃ´©12¼ş
-			return notify_fail("Äã»¹Î´Íê³É12¼şÌ××°²¿¼şµÄ¶¨Òå£¬ÇëÊ¹ÓÃ suit show ²é¿´£¡\n");
+		if (sizeof(tz) < 12 && ! wizardp(me)) // å·«å¸«æ¸¬è©¦çš„æ™‚å€™å¯ä¸ç”¨ç©¿12ä»¶
+			return notify_fail("ä½ é‚„æœªå®Œæˆ12ä»¶å¥—è£éƒ¨ä»¶çš„å®šç¾©ï¼Œè«‹ä½¿ç”¨ suit show æŸ¥çœ‹ï¼\n");
 */
 		keys_tz = keys(tz);
 		for (i = 0; i < sizeof(keys_tz); i ++)
 		{
 			if (! objectp(ob = present(tz[keys_tz[i]], me)))
 			{
-				// Î´ÔÚÉíÉÏ£¬³¢ÊÔÕÙ»½
+				// æœªåœ¨èº«ä¸Šï¼Œå˜—è©¦å¬å–š
 				__DIR__"summon"->main(me, tz[keys_tz[i]]);
-				// ÕÙ»½ºóÈç¹û»¹Ã»ÓĞÔòÖÕÖ¹
+				// å¬å–šå¾Œå¦‚æœé‚„æ²’æœ‰å‰‡çµ‚æ­¢
 				if (! objectp(ob = present(tz[keys_tz[i]], me)))
-					return notify_fail("Î´ÕÒµ½×°±¸ " + tz[keys_tz[i]] + "£¬²Ù×÷ÖÕÖ¹£¡\n");
+					return notify_fail("æœªæ‰¾åˆ°è£å‚™ " + tz[keys_tz[i]] + "ï¼Œæ“ä½œçµ‚æ­¢ï¼\n");
 			}
 
 			if (ob->query("equipped"))continue;
 
 
-			// ×°±¸ÌØÊâ´¦Àí
+			// è£å‚™ç‰¹æ®Šè™•ç†
 			if (ob->query("skill_type"))
 			{
 				"/cmds/std/wield"->do_wield(me, ob);
@@ -75,13 +75,13 @@ int main(object me, string arg)
 	}
 
 
-	// ÏÔÊ¾ÒÑ¼ÓÈëµÄÌ××°ÁĞ±í
+	// é¡¯ç¤ºå·²åŠ å…¥çš„å¥—è£åˆ—è¡¨
 	if (arg == "show")
 	{
-		result = HIG "-----------×Ô¶¨ÒåÌ××°ÁĞ±í-------------\n" NOR;
+		result = HIG "-----------è‡ªå®šç¾©å¥—è£åˆ—è¡¨-------------\n" NOR;
 
 		if (! sizeof(me->query("tzlist")))
-			return notify_fail("Äã»¹Ã»ÓĞ×Ô¶¨ÒåÌ××°ÁĞ±í£¬ÏêÇé¼û help taozhuang ËµÃ÷¡£\n");
+			return notify_fail("ä½ é‚„æ²’æœ‰è‡ªå®šç¾©å¥—è£åˆ—è¡¨ï¼Œè©³æƒ…è¦‹ help taozhuang èªªæ˜ã€‚\n");
 
 		if (sizeof(me->query("tzlist/weapon")))
 		{
@@ -89,15 +89,15 @@ int main(object me, string arg)
 			if (objectp(ob))
 			{
 				str_color = ob->query("equipped") ? HIM : HIC;
-				result += str_color + "ÎäÆ÷£º " + HIC + ob->name() + HIC + "£¨" +
-		                 	  TAOZHUANG_D->taozhuang_name(ob->query("taozhuang")) + HIC "£©\n" NOR;
+				result += str_color + "æ­¦å™¨ï¼š " + HIC + ob->name() + HIC + "ï¼ˆ" +
+		                 	  TAOZHUANG_D->taozhuang_name(ob->query("taozhuang")) + HIC "ï¼‰\n" NOR;
 		        }
 		        else
-		        	result += HIC "ÎäÆ÷£º " NOR + WHT + me->query("tzlist/weapon") + "\n" NOR;
+		        	result += HIC "æ­¦å™¨ï¼š " NOR + WHT + me->query("tzlist/weapon") + "\n" NOR;
 		}
 		else
 		{
-			result += HIC "ÎäÆ÷£º " + NOR + WHT "----\n" NOR;
+			result += HIC "æ­¦å™¨ï¼š " + NOR + WHT "----\n" NOR;
 		}
 
 		for (i = 0; i < sizeof(keys_tzlist); i ++)
@@ -108,52 +108,52 @@ int main(object me, string arg)
 				if (objectp(ob))
 				{
 					str_color = ob->query("equipped") ? HIM : HIC;
-					result += str_color + tzlist[keys_tzlist[i]] + "£º " + HIC + ob->name() + HIC + "£¨" +
-		                          	  TAOZHUANG_D->taozhuang_name(ob->query("taozhuang")) + HIC "£©\n" NOR;
+					result += str_color + tzlist[keys_tzlist[i]] + "ï¼š " + HIC + ob->name() + HIC + "ï¼ˆ" +
+		                          	  TAOZHUANG_D->taozhuang_name(ob->query("taozhuang")) + HIC "ï¼‰\n" NOR;
 		                }
 		                else
-		                	result += HIC + tzlist[keys_tzlist[i]] + "£º " NOR + WHT +
+		                	result += HIC + tzlist[keys_tzlist[i]] + "ï¼š " NOR + WHT +
 		                	          me->query("tzlist/" + keys_tzlist[i]) + "\n" NOR;
 			}
 			else
 			{
-				result += HIC + tzlist[keys_tzlist[i]] + "£º " NOR + WHT + "----\n" NOR;
+				result += HIC + tzlist[keys_tzlist[i]] + "ï¼š " NOR + WHT + "----\n" NOR;
 			}
 		}
 		result += HIG "-------------------------------------\n" NOR;
-		result += HIW "×°±¸ÀàĞÍÃûÎª" HIM "×ÏºìÉ«" HIW "µÄ±íÊ¾ÒÑ×°±¸£¬" HIC "ÌìÇàÉ«" HIW "ÎªÎ´×°±¸¡£\n" NOR;
-		result += HIY "Ê¹ÓÃÖ¸Áî suit add ×°±¸id Ìí¼Ó×Ô¶¨ÒåÌ××°ÁĞ±í¡£\n" NOR;
-		result += HIR "Ê¹ÓÃÖ¸Áî suit wear ¿É½«×Ô¶¨ÒåÌ××°ÁĞ±íÄÚµÄÌ×¼şÅúÁ¿×°±¸¡£\n" NOR;
-		//result += HIY "Ê¹ÓÃÖ¸Áî suit remove ×°±¸id ´Ó×Ô¶¨ÒåÌ××°ÁĞ±íÖĞÒÆ³ö¸Ã×°±¸¡£\n" NOR;
+		result += HIW "è£å‚™é¡å‹åç‚º" HIM "ç´«ç´…è‰²" HIW "çš„è¡¨ç¤ºå·²è£å‚™ï¼Œ" HIC "å¤©é’è‰²" HIW "ç‚ºæœªè£å‚™ã€‚\n" NOR;
+		result += HIY "ä½¿ç”¨æŒ‡ä»¤ suit add è£å‚™id æ·»åŠ è‡ªå®šç¾©å¥—è£åˆ—è¡¨ã€‚\n" NOR;
+		result += HIR "ä½¿ç”¨æŒ‡ä»¤ suit wear å¯å°‡è‡ªå®šç¾©å¥—è£åˆ—è¡¨å…§çš„å¥—ä»¶æ‰¹é‡è£å‚™ã€‚\n" NOR;
+		//result += HIY "ä½¿ç”¨æŒ‡ä»¤ suit remove è£å‚™id å¾è‡ªå®šç¾©å¥—è£åˆ—è¡¨ä¸­ç§»å‡ºè©²è£å‚™ã€‚\n" NOR;
 		write(result);
 		return 1;
 	}
 
 
-	// ½«Ö¸¶¨×°±¸¼ÓÈëÌ××°ÁĞ±í
+	// å°‡æŒ‡å®šè£å‚™åŠ å…¥å¥—è£åˆ—è¡¨
 	if (sscanf(arg, "add %s", tzx))
 	{
 		if (! objectp(ob = present(tzx, me)))
-			return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâ¼ş×°±¸£¡\n");
+			return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™ä»¶è£å‚™ï¼\n");
 
-		// ÅĞ¶Ï×°±¸ÊÇ·ñÊôÓÚ×Ô¼º
+		// åˆ¤æ–·è£å‚™æ˜¯å¦å±¬äºè‡ªå·±
 		if (ob->item_owner() != me->query("id"))
-			return notify_fail("Õâ¸ö£¬Õâ¸ö¡­¡­£¬ºÃÏó²»ÊôÓÚÄã°É£¡\n");
+			return notify_fail("é€™å€‹ï¼Œé€™å€‹â€¦â€¦ï¼Œå¥½è±¡ä¸å±¬äºä½ å§ï¼\n");
 
-		// ÅĞ¶ÏÊÇ·ñÎª12¼ş×°±¸ÖĞµÄÀàĞÍ
-		if (ob->query("skill_type") || ob->query("armor_type") == "hands") // ÎäÆ÷
+		// åˆ¤æ–·æ˜¯å¦ç‚º12ä»¶è£å‚™ä¸­çš„é¡å‹
+		if (ob->query("skill_type") || ob->query("armor_type") == "hands") // æ­¦å™¨
 		{
 			me->set("tzlist/weapon", tzx);
-			return notify_fail("Ìí¼Ó×Ô¶¨ÒåÌ××°³É¹¦£¬¿ÉÊ¹ÓÃ suit show ²é¿´¡£\n");
+			return notify_fail("æ·»åŠ è‡ªå®šç¾©å¥—è£æˆåŠŸï¼Œå¯ä½¿ç”¨ suit show æŸ¥çœ‹ã€‚\n");
 		}
 		if (! ob->query("armor_type"))
-			return notify_fail("Õâ¼şÎïÆ·²»ÊôÓÚ×°±¸ÀàĞÍ£¡\n");
+			return notify_fail("é€™ä»¶ç‰©å“ä¸å±¬äºè£å‚™é¡å‹ï¼\n");
 
 		if (member_array(ob->query("armor_type"), keys_tzlist) == -1)
-			return notify_fail("Õâ¼şÎïÆ·²»ÊôÓÚÌ××°²¿¼ş£¡\n");
+			return notify_fail("é€™ä»¶ç‰©å“ä¸å±¬äºå¥—è£éƒ¨ä»¶ï¼\n");
 
 		me->set("tzlist/" + ob->query("armor_type"), tzx);
-		return notify_fail("Ìí¼Ó×Ô¶¨ÒåÌ××°³É¹¦£¬¿ÉÊ¹ÓÃ suit show ²é¿´¡£\n");
+		return notify_fail("æ·»åŠ è‡ªå®šç¾©å¥—è£æˆåŠŸï¼Œå¯ä½¿ç”¨ suit show æŸ¥çœ‹ã€‚\n");
 	}
 
 	return TAOZHUANG_D->suit_special(me, arg);

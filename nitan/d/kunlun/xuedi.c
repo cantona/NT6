@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ѩ��");
+        set("short", "雪地");
         set("long", @LONG
-ѩ�������и���ѩ�ѣ����ѩ����ũ�һ���Ĳݶѡ����캮�ض���
-¡���Ϻ��ʬ�岻�ḯ����������һͷأӥ�ڿ��������˼���Ȧ�ӣ�
-Ѱ�һ����Ա��������ʳ��
+雪地中央有個大雪堆，這大雪堆是農家積柴的草堆。這天寒地凍的
+隆冬嚴寒裡，屍體不會腐臭，天上有一頭兀鷹在空中盤旋了幾個圈子，
+尋找機會以便飛下來啄食。
 LONG );
         set("outdoors", "hongmei");
         set("exits", ([

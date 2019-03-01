@@ -1,4 +1,4 @@
-// fdiamond.c ¾«ÃÀ×êÊ¯
+// fdiamond.c ç²¾ç¾é‘½çŸ³
 
 #include <ansi.h>
 #include <armor.h>
@@ -9,20 +9,20 @@ int is_enchase_ob(){ return 1; }
 
 void create()
 {
-        set_name(HIW "¾«ÃÀ×êÊ¯" NOR, ({ "flawless diamond" }) );
+        set_name(HIW "ç²¾ç¾é‘½çŸ³" NOR, ({ "flawless diamond" }) );
         set_weight(40);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "Ò»¿Å¾«¹âÉÁÉÁµÄ¾«ÃÀ×êÊ¯£¬»ªÀöÒì³£¡£\n" NOR);
+                set("long", HIW "ä¸€é¡†ç²¾å…‰é–ƒé–ƒçš„ç²¾ç¾é‘½çŸ³ï¼Œè¯éº—ç•°å¸¸ã€‚\n" NOR);
                 set("value", 100000);
-                set("unit", "¿Å");
+                set("unit", "é¡†");
                 set("armor_prop/per", 7);
                 set("no_identify", 1);
-                set("wear_msg", HIC "$N" HIC "ÇáÇáµØ°Ñ$n"
-                    HIC "´÷ÔÚÍ·ÉÏ¡£\n" NOR);
-                set("remove_msg", HIC "$N" HIC "ÇáÇáµØ°Ñ$n"
-                    HIC "´ÓÍ·ÉÏÕªÁËÏÂÀ´¡£\n" NOR);
+                set("wear_msg", HIC "$N" HIC "è¼•è¼•åœ°æŠŠ$n"
+                    HIC "æˆ´åœ¨é ­ä¸Šã€‚\n" NOR);
+                set("remove_msg", HIC "$N" HIC "è¼•è¼•åœ°æŠŠ$n"
+                    HIC "å¾é ­ä¸Šæ‘˜äº†ä¸‹ä¾†ã€‚\n" NOR);
         }
         setup();
 }

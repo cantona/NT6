@@ -4,10 +4,10 @@ inherit ITEM;
 
 void create()
 {
-	      set_name(HIG"ÇÀÆìÕ½ - "HIW"Ì«¹Å³à»ğ¼ı"NOR, ({"fwar remote antiquity fire arrow","arrow"}) );
+	      set_name(HIG"æ¶æ——æˆ° - "HIW"å¤ªå¤èµ¤ç«ç®­"NOR, ({"fwar remote antiquity fire arrow","arrow"}) );
         set_weight(300);
-        set("unit", "¸ö");
-        set("long", "ÇÀÆìÕ½×¨ÓÃÌØÊâÎïÆ·£¬Ê¹ÓÃ(shoot arrow on <Ä¿±ê>)ºóÓĞ»ú»áÁîÄ¿±êÖÂËÀ¡£\n");
+        set("unit", "å€‹");
+        set("long", "æ¶æ——æˆ°å°ˆç”¨ç‰¹æ®Šç‰©å“ï¼Œä½¿ç”¨(shoot arrow on <ç›®æ¨™>)å¾Œæœ‰æ©Ÿæœƒä»¤ç›®æ¨™è‡´æ­»ã€‚\n");
         set("value", 1);
         set("no_store",1);
         set("no_sell", 1);
@@ -28,16 +28,16 @@ int do_shoot(string arg) {
 	me = this_player();
 	if(!me) return 0;
 	ob = this_object();
-  if(environment() != me) return notify_fail(name()+"²»ÔÚÄãÉíÉÏ¡£\n");
-  if(me->is_busy()) return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É¡£\n");
+  if(environment() != me) return notify_fail(name()+"ä¸åœ¨ä½ èº«ä¸Šã€‚\n");
+  if(me->is_busy()) return notify_fail("ä½ ä¸Šä¸€å€‹å‹•ä½œé‚„æ²’æœ‰å®Œæˆã€‚\n");
 
-  if(!sscanf(base_name(environment(me)), "/d/flagwar/%*s")) return notify_fail(name()+"Ö»ÄÜÔÚÇÀÆìÕ½³¡Ê¹ÓÃ¡£\n");
-  if(!sizeof(me->query_temp("flag_war"))) return notify_fail(name()+"Ö»ÄÜÔÚÇÀÆìÕ½µÄÊ±ºòÊ¹ÓÃ¡£\n");
-  if(!arg || sscanf(arg, "arrow on %s", id) != 1) return notify_fail("Ö¸Áî¸ñÊ½£ºshoot arrow on <Ä¿±ê>¡£\n");
-  if(!target = present(id, environment(me))) return notify_fail("ÕâÀïÃ»ÓĞÕâ¸öÈË¡£\n");
-  if(target == me) return notify_fail("ÄãÖ»ÄÜÉä±ğÈË¡£\n");
-  if(!target->query_temp("flag_war")) return notify_fail("ÄãÖ»ÄÜ¶ÔÇÀÆìÕ½µÄÈËÊ¹ÓÃ¡£\n");
-  message_vision("$NÄÃ×Å$n¶Ô×¼"+target->name()+"£¬Í»È»Á³É«Ò»±äËÉÊÖÉä³ö¡£\n$nĞ®×ÅÔïÈÈµÄ»ğ¹â×·Ñ­"+target->name()+"¶øÈ¥¡£\n", me, ob);
+  if(!sscanf(base_name(environment(me)), "/d/flagwar/%*s")) return notify_fail(name()+"åªèƒ½åœ¨æ¶æ——æˆ°å ´ä½¿ç”¨ã€‚\n");
+  if(!sizeof(me->query_temp("flag_war"))) return notify_fail(name()+"åªèƒ½åœ¨æ¶æ——æˆ°çš„æ™‚å€™ä½¿ç”¨ã€‚\n");
+  if(!arg || sscanf(arg, "arrow on %s", id) != 1) return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šshoot arrow on <ç›®æ¨™>ã€‚\n");
+  if(!target = present(id, environment(me))) return notify_fail("é€™è£¡æ²’æœ‰é€™å€‹äººã€‚\n");
+  if(target == me) return notify_fail("ä½ åªèƒ½å°„åˆ¥äººã€‚\n");
+  if(!target->query_temp("flag_war")) return notify_fail("ä½ åªèƒ½å°æ¶æ——æˆ°çš„äººä½¿ç”¨ã€‚\n");
+  message_vision("$Næ‹¿è‘—$nå°æº–"+target->name()+"ï¼Œçªç„¶è‡‰è‰²ä¸€è®Šé¬†æ‰‹å°„å‡ºã€‚\n$næŒ¾è‘—ç‡¥ç†±çš„ç«å…‰è¿½å¾ª"+target->name()+"è€Œå»ã€‚\n", me, ob);
   me->want_kill(ob);
   damage = 1000+random(2000);
   target->receive_damage("qi", damage, me);
@@ -46,10 +46,10 @@ int do_shoot(string arg) {
   target->kill_ob(me);
   me->start_busy(5);
   if(random(3) >= 1) {
-  message_vision(HIY"Í»È»¼ä$n¹â»ª´óÊ¢£¬¶¸È»É¢·¢³öËÀÍöÆøÏ¢ÆËÏò$N¡£\n", target, ob);
+  message_vision(HIY"çªç„¶é–“$nå…‰è¯å¤§ç››ï¼Œé™¡ç„¶æ•£ç™¼å‡ºæ­»äº¡æ°£æ¯æ’²å‘$Nã€‚\n", target, ob);
     	if(target->query_temp("flag_war/guard")) {
     		target->add_temp("flag_war/guard", -1);
-    		message_vision(HIY"$NÉíÉÏµÄÌØÊâ·À»¤Ğ§¹û·¢»ÓĞ§ÓÃµÖµ²×¡ËÀÍöÆøÏ¢¡£\n"NOR, target);
+    		message_vision(HIY"$Nèº«ä¸Šçš„ç‰¹æ®Šé˜²è­·æ•ˆæœç™¼æ®æ•ˆç”¨æŠµæ“‹ä½æ­»äº¡æ°£æ¯ã€‚\n"NOR, target);
     	} else target->unconcious();
   }
   destruct(ob);

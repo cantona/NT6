@@ -1,4 +1,4 @@
-// zhuha.c 朱蛤奇缘
+// zhuha.c 鏈辫洡濂囩罚
 // Created by rcwiz for yhonline
 
 #include <ansi.h>
@@ -7,10 +7,10 @@ inherit F_CLEAN_UP;
 
 int is_scborn() { return 1; }
 
-string name() { return HIM "朱蛤奇缘" NOR; }
+string name() { return HIM "鏈辫洡濂囩罚" NOR; }
 
 int perform(object me, string skill)
 {
-        return notify_fail("你年轻时因机缘巧合，碰巧服用了万毒至\n"
-                           "尊的莽牯朱蛤，从此之后百毒不侵。\n");
+        return notify_fail("浣犲勾杓曟檪鍥犳绶ｅ阀鍚堬紝纰板阀鏈嶇敤浜嗚惉姣掕嚦\n"
+                           "灏婄殑鑾界壇鏈辫洡锛屽緸姝や箣寰岀櫨姣掍笉渚点�俓n");
 }

@@ -1,4 +1,4 @@
-// xiandan.c ÏÉµ¤
+// xiandan.c ä»™ä¸¹
 
 #include <ansi.h>
 
@@ -6,14 +6,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIM "Ä§½ç·ğĞÄ¹û" NOR, ({ "magic fruit", "magic", "fruit" }) );
+        set_name(HIM "é­”ç•Œä½›å¿ƒæœ" NOR, ({ "magic fruit", "magic", "fruit" }) );
         set_weight(200);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¿ÅÍ¬Ê±·º×ÅÆæÒìÄ§¹âºÍ·ğ¹âµÄ¹ûÊµ£¬¾İËµ³ÔÁËÒÔºó¿ÉÒÔÇå³ı³Ôµ¤ÁôÏÂµÄºóÒÅÖ¢¡£\n");
+                set("long", "ä¸€é¡†åŒæ™‚æ³›è‘—å¥‡ç•°é­”å…‰å’Œä½›å…‰çš„æœå¯¦ï¼Œæ“šèªªåƒäº†ä»¥å¾Œå¯ä»¥æ¸…é™¤åƒä¸¹ç•™ä¸‹çš„å¾Œéºç—‡ã€‚\n");
                 set("value", 10000);
-                set("unit", "¿Å");
+                set("unit", "é¡†");
                 set("no_sell", 1);
                 set("only_do_effect", 1);
         }
@@ -21,8 +21,8 @@ void create()
 
 int do_effect(object me)
 {
-        message_vision("$NÒ»Ñö²±£¬ÍÌÏÂÁËÒ»¿Å" + this_object()->name() +
-                       "¡£\n", me);
+        message_vision("$Nä¸€ä»°è„–ï¼Œåä¸‹äº†ä¸€é¡†" + this_object()->name() +
+                       "ã€‚\n", me);
 
         if( query("gift/int/fail", me) )
         {
@@ -81,9 +81,9 @@ int do_effect(object me)
                         delete("gift/dex/fail", me);
         } 
         
-        tell_object(me, HIG "Ò»¹É»ğÈÈİëÈ»´ÓÈ«ÉíÉıÆğ£¬"
-                            "ÄãÈ«ÉíÓûÁÑ£¬Ç¡ÔÚ´ËÊ±Ò»¹ÉÊæÌ¹Ö®Òâ"
-                            "ÓÍÈ»¶øÆğ£¬¶Ù¸ĞÈ«ÉíÊæ·ş¶àÁË¡£\n" NOR);
+        tell_object(me, HIG "ä¸€è‚¡ç«ç†±é©€ç„¶å¾å…¨èº«å‡èµ·ï¼Œ"
+                            "ä½ å…¨èº«æ¬²è£‚ï¼Œæ°åœ¨æ­¤æ™‚ä¸€è‚¡èˆ’å¦ä¹‹æ„"
+                            "æ²¹ç„¶è€Œèµ·ï¼Œé “æ„Ÿå…¨èº«èˆ’æœå¤šäº†ã€‚\n" NOR);
 
         destruct(this_object());
         return 1;

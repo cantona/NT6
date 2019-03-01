@@ -11,16 +11,16 @@ mixed ask_blade();
 
 void create()
 {
-        set_name("ÇàÇà", ({"qing qing", "qing"}));
-        set("gender", "Å®ĞÔ");
+        set_name("é’é’", ({"qing qing", "qing"}));
+        set("gender", "å¥³æ€§");
         set("age", 21);
         set("shen_type", -1);
         set("long", "
-´©×ÅÒ»Éíµ­ÇàÉ«µÄÒÂ·ş£¬¾ÍÏñÊÇ´ºÌìÇçÀÊµÄÌì¿Õ£¬
-Çç¿ÕÏÂÇå³ºµÄºşË®£¬ºşË®ÖĞµ¹Ó³×ÅµÄÔ¶É½£¬ÃÀµÃ
-ÉñÃØ¶øëüëÊ¡£Ğ¦ÈİÇåĞÂ£¬ÌğÈá£¬´¿½à£¬¸ß¹ó¡£Ñü
-ÉÏ¹Ò×ÅÒ»±úÍäµ¶£¬Íäµ¶ÊÇÓÃ´¿Òø×÷µ¶ÇÊ£¬µ¶±úÉÏ
-Ïâ×ÅÒ»Á£¹âÔóÔ²ÈóµÄÃ÷Öé¡£");
+ç©¿è‘—ä¸€èº«æ·¡é’è‰²çš„è¡£æœï¼Œå°±åƒæ˜¯æ˜¥å¤©æ™´æœ—çš„å¤©ç©ºï¼Œ
+æ™´ç©ºä¸‹æ¸…æ¾ˆçš„æ¹–æ°´ï¼Œæ¹–æ°´ä¸­å€’æ˜ è‘—çš„é å±±ï¼Œç¾å¾—
+ç¥ç§˜è€Œæœ¦æœ§ã€‚ç¬‘å®¹æ¸…æ–°ï¼Œç”œæŸ”ï¼Œç´”æ½”ï¼Œé«˜è²´ã€‚è…°
+ä¸Šæ›è‘—ä¸€æŸ„å½åˆ€ï¼Œå½åˆ€æ˜¯ç”¨ç´”éŠ€ä½œåˆ€é˜ï¼Œåˆ€æŸ„ä¸Š
+é‘²è‘—ä¸€ç²’å…‰æ¾¤åœ“æ½¤çš„æ˜ç ã€‚");
 
         set("attitude", "peaceful");
 
@@ -73,7 +73,7 @@ void create()
 
         prepare_skill("strike", "moshen-zhangfa");
 
-        create_family("Ä§½Ì", 40, "µÜ×Ó");
+        create_family("é­”æ•™", 40, "å¼Ÿå­");
 
         set("chat_chance_combat", 120);
         set("chat_msg_combat", ({
@@ -83,8 +83,8 @@ void create()
         }) );
 
         set("inquiry", ([
-                "Ô²ÔÂÍäµ¶"      : (: ask_blade :),
-                "Ô²ÔÂÄ§µ¶"      : (: ask_blade :),
+                "åœ“æœˆå½åˆ€"      : (: ask_blade :),
+                "åœ“æœˆé­”åˆ€"      : (: ask_blade :),
         ]));
 
         set_temp("apply/attack", 280);
@@ -101,17 +101,17 @@ void create()
 
 void attempt_apprentice(object ob)
 {
-        command("say ÎÒ²»ÊÕÍ½£¬Äã»¹ÊÇÁíÕÒËûÈË°É£¡");
+        command("say æˆ‘ä¸æ”¶å¾’ï¼Œä½ é‚„æ˜¯å¦æ‰¾ä»–äººå§ï¼");
 }
 
 int accept_ask(object me, string topic)
 {
         switch (topic)
         {
-        case "µ±Ê±Ã÷ÔÂÔÚ" :
+        case "ç•¶æ™‚æ˜æœˆåœ¨" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/moon-blade/yue",
-                           "name"    : "µ±Ê±Ã÷ÔÂÔÚ",
+                           "name"    : "ç•¶æ™‚æ˜æœˆåœ¨",
                            "sk1"     : "moon-blade",
                            "lv1"     : 300,
                            "dodge"   : 300,
@@ -119,10 +119,10 @@ int accept_ask(object me, string topic)
                            "shen"    : -50000, ]));
                 break;
 
-        case "Ğ¡Â¥Ò»Ò¹Ìı´ºÓê" :
+        case "å°æ¨“ä¸€å¤œè½æ˜¥é›¨" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/moon-blade/ting",
-                           "name"    : "Ğ¡Â¥Ò»Ò¹Ìı´ºÓê",
+                           "name"    : "å°æ¨“ä¸€å¤œè½æ˜¥é›¨",
                            "sk1"     : "moon-blade",
                            "lv1"     : 300,
                            "dodge"   : 300,
@@ -130,10 +130,10 @@ int accept_ask(object me, string topic)
                            "shen"    : -50000, ]));
                 break;
 
-        case "µ¶ÖÁÉÏ£¬ÖÁÉÏµ¶" :
+        case "åˆ€è‡³ä¸Šï¼Œè‡³ä¸Šåˆ€" :
                   return MASTER_D->teach_pfm(me, this_object(),
                           ([ "perform" : "can_perform/moon-blade/dao",
-                             "name"    : "µ¶ÖÁÉÏ£¬ÖÁÉÏµ¶",
+                             "name"    : "åˆ€è‡³ä¸Šï¼Œè‡³ä¸Šåˆ€",
                              "sk1"     : "moon-blade",
                              "lv1"     : 400,
                              "dodge"   : 400,
@@ -155,14 +155,14 @@ int recognize_apprentice(object ob, string skill)
 
         if (owner != ob)
         {
-                command("say Äã»¹ÊÇÏÈÄÃµ½Ô²ÔÂÍäµ¶ºóÔÙÀ´ÕÒÎÒÑ§Ï°Ô²ÔÂµ¶·¨°É£¡");
+                command("say ä½ é‚„æ˜¯å…ˆæ‹¿åˆ°åœ“æœˆå½åˆ€å¾Œå†ä¾†æ‰¾æˆ‘å­¸ç¿’åœ“æœˆåˆ€æ³•å§ï¼");
                 return -1;
         }
 
         if (ob->query_skill(skill, 1) >= 600)
         {
-                command("say ¹»ÁË£¡ÎÒ¾Í½ÌÄãµ½ÕâÀï°É£¬Îä¹¦»¹ÊÇ"
-                        "Òª¿¿×Ô¼º¶àÑĞ¾¿²ÅÊÇ£¡");
+                command("say å¤ äº†ï¼æˆ‘å°±æ•™ä½ åˆ°é€™è£¡å§ï¼Œæ­¦åŠŸé‚„æ˜¯"
+                        "è¦é è‡ªå·±å¤šç ”ç©¶æ‰æ˜¯ï¼");
                 return -1;
         }
 
@@ -176,19 +176,19 @@ int recognize_apprentice(object ob, string skill)
 
         if (skill == "moon-blade")
         {
-                if( query("family/family_name", ob) != "Ä§½Ì" )
+                if( query("family/family_name", ob) != "é­”æ•™" )
                 {
-                        command("say ÄãºÍÎÒËØÎŞÔ¨Ô´£¬ÎÒÎªÊ²Ã´Òª½ÌÄãÎä¹¦£¿");
+                        command("say ä½ å’Œæˆ‘ç´ ç„¡æ·µæºï¼Œæˆ‘ç‚ºä»€éº¼è¦æ•™ä½ æ­¦åŠŸï¼Ÿ");
                         return -1;
                 }
 
-                message_vision("$N¿´ÁË¿´$n£¬µãµãÍ·µÀ£ºÔ²ÔÂµ¶·¨Ò²Ã»ÓĞÊ²Ã´ÄÑÑ§µÄ¡£\n",
+                message_vision("$Nçœ‹äº†çœ‹$nï¼Œé»é»é ­é“ï¼šåœ“æœˆåˆ€æ³•ä¹Ÿæ²’æœ‰ä»€éº¼é›£å­¸çš„ã€‚\n",
                                this_object(), ob);
                 set_temp("can_learn/qingqing/moon-blade", 1, ob);
                 return 1;
         }
 
-        command("say ÎÒÖ»¶®µÃÒ»µãÔ²ÔÂµ¶·¨£¬Äã¿É²»ÒªÎªÄÑÎÒ¡£");
+        command("say æˆ‘åªæ‡‚å¾—ä¸€é»åœ“æœˆåˆ€æ³•ï¼Œä½ å¯ä¸è¦ç‚ºé›£æˆ‘ã€‚");
         return -1;
 }
 
@@ -201,38 +201,38 @@ mixed ask_blade()
    int cost;
         me = this_player();
         if( query("family/family_name", me) != query("family/family_name") )
-                return "ÄãÕÒËÀ°¡£¿";
+                return "ä½ æ‰¾æ­»å•Šï¼Ÿ";
 
         if( query("combat_exp", me)<2000000 )
-                return "ÄãÎä¹¦Ì«²îÁË£¬¾Í±ğ¸øÎÒÄ§½Ì¶ªÁ³ÁË¡£";
+                return "ä½ æ­¦åŠŸå¤ªå·®äº†ï¼Œå°±åˆ¥çµ¦æˆ‘é­”æ•™ä¸Ÿè‡‰äº†ã€‚";
 
    if( query("family/first", me) ) cost = 250; 
              else cost = 500; 
              if( query("family/gongji", me) < cost ) 
-                     return "ÄãÎªÎÒÄ§½ÌĞ§Á¦»¹²»¹»£¬µÈÄãÓµÓĞ×ã¹»µÄÊ¦ÃÅ¹¦¼¨ÔÙÀ´¶Ò»»Ô²ÔÂÍäµ¶Ê¹ÓÃÊ±¼ä°É¡£";
+                     return "ä½ ç‚ºæˆ‘é­”æ•™æ•ˆåŠ›é‚„ä¸å¤ ï¼Œç­‰ä½ æ“æœ‰è¶³å¤ çš„å¸«é–€åŠŸç¸¾å†ä¾†å…Œæ›åœ“æœˆå½åˆ€ä½¿ç”¨æ™‚é–“å§ã€‚";
 
         call_other(MOON_BLADE, "???");
         ob = find_object(MOON_BLADE);
         if (! objectp(ob))
-                return "µ¶Ã»ÁË£¡";
+                return "åˆ€æ²’äº†ï¼";
 
         if (objectp(owner = environment(ob)))
         {
                 if(owner == me)
                 {
                         destruct(ob);
-                        return "ÄãÊ²Ã´ÒâË¼£¿²»Òª¾ÍÄÃ»ØÀ´Âï¡£\n";
+                        return "ä½ ä»€éº¼æ„æ€ï¼Ÿä¸è¦å°±æ‹¿å›ä¾†å˜›ã€‚\n";
                 }
                 if(owner->is_character())
                 {
-                        return "µ¶ÒÑ¾­±»" + owner->name(1) + "ÄÃ×ßÁË¡£µÈ¹é»¹ºóÄãÔÙÀ´È¡°É¡£\n";
+                        return "åˆ€å·²ç¶“è¢«" + owner->name(1) + "æ‹¿èµ°äº†ã€‚ç­‰æ­¸é‚„å¾Œä½ å†ä¾†å–å§ã€‚\n";
                 }
-                return "µ¶ÒÑ¾­±»ÈË½è×ßÁË¡£ÏÖÔÚ²»ÖªµÀÔÚÊ²Ã´µØ·½¡£\n";
+                return "åˆ€å·²ç¶“è¢«äººå€Ÿèµ°äº†ã€‚ç¾åœ¨ä¸çŸ¥é“åœ¨ä»€éº¼åœ°æ–¹ã€‚\n";
         }
         ob->move(me, 1);
         ob->start_borrowing();
     addn("family/gongji", -cost, me); 
-        message_vision("$NÌÍ³öÒ»°ÑÏóÔÂÑ¿¶ùÑùµÄÍäµ¶£¬µİ¸ø$n£¬"
-                       "µÀ£º¡°Äã¿ÉÒªÄÃºÃÁË£¡ÇĞÎğ±»ËûÈËÄÃ×ß¡±¡£\n", this_object(), me);
+        message_vision("$Næå‡ºä¸€æŠŠè±¡æœˆèŠ½å…’æ¨£çš„å½åˆ€ï¼Œéçµ¦$nï¼Œ"
+                       "é“ï¼šâ€œä½ å¯è¦æ‹¿å¥½äº†ï¼åˆ‡å‹¿è¢«ä»–äººæ‹¿èµ°â€ã€‚\n", this_object(), me);
         return 1;
 }

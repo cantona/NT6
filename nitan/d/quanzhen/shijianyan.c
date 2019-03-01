@@ -1,15 +1,15 @@
-// shijianyan.c �Խ���
+// shijianyan.c 試劍巖
 // Winder Oct.10 1998
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "�Խ���");
+        set("short", "試劍巖");
         set("long", @LONG
-ʯ��������һ�����ʯ������߲߰����ľ��ǿ��ˡ�������
-ʯ����ȫ��̵��Խ��ң����µ�Ӣ��������������ȱ�������ʱ
-����ʯ�ϵĿ��ۣ��޲���Ȼ�𾴡�
+石階旁立著一塊大巖石，上面斑斑駁駁的盡是砍傷。這塊大巖
+石便是全真教的試劍巖，天下的英雄來到這裡，望著先輩們練劍時
+在巖石上的砍痕，無不肅然起敬。
 LONG
         );
         set("outdoors", "zhongnan");

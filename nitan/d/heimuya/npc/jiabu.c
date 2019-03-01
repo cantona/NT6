@@ -7,11 +7,11 @@ void greeting(object);
 void init();
 void create()
 {
-        set_name("¼Ö²¼", ({ "jia bu", "jia", "bu"}) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("è³ˆå¸ƒ", ({ "jia bu", "jia", "bu"}) );
+        set("gender", "ç”·æ€§" );
         set("age", 45);
-        set("title", "ÈÕÔÂÉñ½ÌÇàÁúÌÃ³¤ÀÏ");
-        set("long", "ËûÀ¯»ÆÊİÁ³£¬Á½±ßÌ«ÑôÑ¨¸ß¸ß¹ÄÆğ£¬±äÈç²ØÁËÒ»Ã¶Ã¶ºËÌÒËÆµÄ¡£\n");
+        set("title", "æ—¥æœˆç¥æ•™é’é¾å ‚é•·è€");
+        set("long", "ä»–è Ÿé»ƒç˜¦è‡‰ï¼Œå…©é‚Šå¤ªé™½ç©´é«˜é«˜é¼“èµ·ï¼Œè®Šå¦‚è—äº†ä¸€æšæšæ ¸æ¡ƒä¼¼çš„ã€‚\n");
         set("attitude", "friendly");
         set("shen_type", -1);
 
@@ -43,11 +43,11 @@ void create()
         
         map_skill("parry", "taiji-dao");
         map_skill("blade", "taiji-dao");
-        create_family("ÈÕÔÂÉñ½Ì",2,"µÜ×Ó ÇàÁúÌÃ³¤ÀÏ");
+        create_family("æ—¥æœˆç¥æ•™",2,"å¼Ÿå­ é’é¾å ‚é•·è€");
 
         set("chat_chance", 2);
         set("chat_msg", ({
-                 "¼Ö²¼Ì¾µÀ: ¡°ÈÁÍâ±ØÏÈ°²ÄÚ£¬ÌÃÖĞÁîÅÆ±»µÁÈôÊÇ±»½ÌÖ÷ÖªµÀ£¬ÎÒÃüĞİÒÓ¡£¡±\n"
+                 "è³ˆå¸ƒå˜†é“: â€œæ”˜å¤–å¿…å…ˆå®‰å…§ï¼Œå ‚ä¸­ä»¤ç‰Œè¢«ç›œè‹¥æ˜¯è¢«æ•™ä¸»çŸ¥é“ï¼Œæˆ‘å‘½ä¼‘çŸ£ã€‚â€\n"
         }) );
         setup();
         carry_object("/d/heimuya/npc/obj/dadao")->wield();
@@ -60,5 +60,5 @@ void create()
 
 void attempt_apprentice(object ob)
 {
-     command("say ÎÒÕâµãÆ¤Ã«£¬²»¸Ò£¬²»¸Ò!\n");
+     command("say æˆ‘é€™é»çš®æ¯›ï¼Œä¸æ•¢ï¼Œä¸æ•¢!\n");
 }

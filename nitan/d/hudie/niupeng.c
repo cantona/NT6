@@ -1,17 +1,17 @@
-// Å£Åï niupeng.c
+// ç‰›æ£š niupeng.c
  
 #include <ansi.h>
 inherit ROOM;
 
 void create() 
 { 
-        set("short", "Å£Åï");
+        set("short", "ç‰›æ£š");
         set("long", @LONG
-ÕâÀïÊÇºûµû¹ÈµÄÅ£Åï£¬¾ÝËµÒòµ¹±ÐÔÚÕâÀïµÄÈË²»¼ÆÆäÊý£¬Ê¹µÃ¡º
-¼ûËÀ²»¾È¡»ºúÇàÅ£µÄ´óÃûÌìÏÂÎÅÃû¡£
+é€™è£¡æ˜¯è´è¶è°·çš„ç‰›æ£šï¼Œæ“šèªªå› å€’æ–ƒåœ¨é€™è£¡çš„äººä¸è¨ˆå…¶æ•¸ï¼Œä½¿å¾—ã€Ž
+è¦‹æ­»ä¸æ•‘ã€èƒ¡é’ç‰›çš„å¤§åå¤©ä¸‹èžåã€‚
 LONG );
 
-        set("outdoors", "ºûµû¹È");
+        set("outdoors", "è´è¶è°·");
 
         set("exits", ([ 
             "south" : __DIR__"kongdi",
@@ -34,14 +34,14 @@ int valid_leave(object me, string dir)
 
         inv = deep_inventory(me);
         if (dir == "northdown"){
-          write("±±ÃæÊÇÒ»Æ¬»¨ÆÔ£¬ÀïÃæÖÖÂúÁËÖî°ã»¨²Ý¡£\n");
+          write("åŒ—é¢æ˜¯ä¸€ç‰‡èŠ±åœƒï¼Œè£¡é¢ç¨®æ»¿äº†è«¸èˆ¬èŠ±è‰ã€‚\n");
           ob = filter_array(inv,(:get_object:));        
-          if (myfam && myfam["family_name"] =="Ã÷½Ì" && myfam["generation"] == 35 && ! sizeof(ob))
-          write("ÓÉÓÚÄãÒÑÌýÎÅÕÅ½ÌÖ÷µÄ½Ì»å£¬×ß¹ßÁËÕâÆ¬»¨ÆÔ£¬ËùÒÔÐÅ²½×ßÁË½øÈ¥¡£\n");
+          if (myfam && myfam["family_name"] =="æ˜Žæ•™" && myfam["generation"] == 35 && ! sizeof(ob))
+          write("ç”±äºŽä½ å·²è½èžå¼µæ•™ä¸»çš„æ•™èª¨ï¼Œèµ°æ…£äº†é€™ç‰‡èŠ±åœƒï¼Œæ‰€ä»¥ä¿¡æ­¥èµ°äº†é€²åŽ»ã€‚\n");
           else {
-             tell_room(environment(me), me->name()+"ÍùÄÏÃæµÄÅ£Åï¿ì²½Àë¿ª¡£\n"NOR, ({ me }));
+             tell_room(environment(me), me->name()+"å¾€å—é¢çš„ç‰›æ£šå¿«æ­¥é›¢é–‹ã€‚\n"NOR, ({ me }));
              me->move(__DIR__"huapu1");
-             tell_room(environment(me), me->name()+"´Ó²Ý¾¶¿ì²½×ßÁË¹ýÀ´¡£\n"NOR, ({ me }));
+             tell_room(environment(me), me->name()+"å¾žè‰å¾‘å¿«æ­¥èµ°äº†éŽä¾†ã€‚\n"NOR, ({ me }));
              me->look();
              return notify_fail("");
           }

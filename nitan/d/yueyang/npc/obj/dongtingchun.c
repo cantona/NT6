@@ -1,4 +1,4 @@
-// dongtingchun.c ¶´Í¥´º²è
+// dongtingchun.c æ´žåº­æ˜¥èŒ¶
 
 #include <ansi.h>;
 inherit ITEM;
@@ -6,13 +6,13 @@ inherit F_LIQUID;
 
 void create()
 {
-        set_name(HIG"¶´Í¥´º²è"NOR, ({"dongtingchun cha", "cha", "tea"}));
+        set_name(HIG"æ´žåº­æ˜¥èŒ¶"NOR, ({"dongtingchun cha", "cha", "tea"}));
         set_weight(700);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»Íë¶´Í¥´º²è£¬ÈÈºõºõµØÃ°×ÅÒ»¹É²èÏãÎ¶¡£\n");
-                set("unit", "Íë");
+                set("long", "ä¸€ç¢—æ´žåº­æ˜¥èŒ¶ï¼Œç†±ä¹Žä¹Žåœ°å†’è‘—ä¸€è‚¡èŒ¶é¦™å‘³ã€‚\n");
+                set("unit", "ç¢—");
                 set("value", 100);
                 set("max_liquid", 15);
         }
@@ -21,7 +21,7 @@ void create()
         // we set it to contain wine at the beginning
         set("liquid", ([
                 "type": "tea",
-                "name": "¶´Í¥´º²è",
+                "name": "æ´žåº­æ˜¥èŒ¶",
                 "remaining"  : 5,
                 "drunk_apply": 2,
         ]));

@@ -5,59 +5,59 @@ inherit VRM_SERVER;
 
 void create() 
 { 
-        // ÃÔ¹¬·¿¼äËù¼Ì³ÐµÄÎï¼þµÄµµ°¸Ãû³Æ¡£ 
+        // è¿·å®®æˆ¿é–“æ‰€ç¹¼æ‰¿çš„ç‰©ä»¶çš„æª”æ¡ˆåç¨±ã€‚ 
         set_inherit_room( ROOM );  
                         
-        // Î¨Ò»·¿¼ä
+        // å”¯ä¸€æˆ¿é–“
         set_unique_room("/d/reborn/unique_room/xinmo_room"); 
 
-        // ÃÔ¹¬·¿¼äÀïµÄ¹ÖÎï¡£ 
+        // è¿·å®®æˆ¿é–“è£¡çš„æ€ªç‰©ã€‚ 
         set_maze_npcs( ([
                 "/d/reborn/npc/shadow": random(2),  
         ]) );   
         
-        // ÃÔ¹¬µÄµ¥±ß³¤ 
+        // è¿·å®®çš„å–®é‚Šé•· 
         set_maze_long(10); 
                         
-        // Èë¿Ú·½Ïò(³ö¿ÚÔÚ¶ÔÃæ) 
+        // å…¥å£æ–¹å‘(å‡ºå£åœ¨å°é¢) 
         set_entry_dir("north"); 
                         
-        // Èë¿ÚÓëÇøÓòµÄÁ¬½Ó·½Ïò 
+        // å…¥å£èˆ‡å€åŸŸçš„é€£æŽ¥æ–¹å‘ 
         set_link_entry_dir("north"); 
                         
-        // Èë¿ÚÓëÇøÓòµÄÁ¬½Óµµ°¸Ãû 
+        // å…¥å£èˆ‡å€åŸŸçš„é€£æŽ¥æª”æ¡ˆå 
         set_link_entry_room("/d/reborn/jitan1"); 
                         
-        // ³ö¿ÚÓëÇøÓòµÄÁ¬½Ó·½Ïò 
+        // å‡ºå£èˆ‡å€åŸŸçš„é€£æŽ¥æ–¹å‘ 
         set_link_exit_dir("south"); 
                         
-        // ³ö¿ÚÓëÇøÓòµÄÁ¬½Óµµ°¸Ãû 
+        // å‡ºå£èˆ‡å€åŸŸçš„é€£æŽ¥æª”æ¡ˆå 
         set_link_exit_room("/d/reborn/jitan1");                        
                         
-        // ÆÕÍ¨·¿¼äÃèÊö
-        set_maze_room_short(RED "»Ã¾³" NOR);
+        // æ™®é€šæˆ¿é–“æè¿°
+        set_maze_room_short(RED "å¹»å¢ƒ" NOR);
                         
         set_maze_room_desc(@LONG
-»Ã¾³Àïµ½´¦ÊÇÃÔÎíÃÖÂþ£¬ÖÜ±ßµÄ¾°ÎïËÆÓÐËÆÎÞ£¬ÐéÎÞçÎç¿¡£
+å¹»å¢ƒè£¡åˆ°è™•æ˜¯è¿·éœ§å½Œæ¼«ï¼Œå‘¨é‚Šçš„æ™¯ç‰©ä¼¼æœ‰ä¼¼ç„¡ï¼Œè™›ç„¡ç¸¹ç·²ã€‚
 LONG); 
                         
-        // Èë¿Ú·¿¼ä¶ÌÃèÊö 
-        set_entry_short(HIR "»Ã¾³Èë¿Ú" NOR); 
+        // å…¥å£æˆ¿é–“çŸ­æè¿° 
+        set_entry_short(HIR "å¹»å¢ƒå…¥å£" NOR); 
                         
-        // Èë¿Ú·¿¼äÃèÊö 
+        // å…¥å£æˆ¿é–“æè¿° 
         set_entry_desc(@LONG
-»Ã¾³Àïµ½´¦ÊÇÃÔÎíÃÖÂþ£¬ÖÜ±ßµÄ¾°ÎïËÆÓÐËÆÎÞ£¬ÐéÎÞçÎç¿¡£
+å¹»å¢ƒè£¡åˆ°è™•æ˜¯è¿·éœ§å½Œæ¼«ï¼Œå‘¨é‚Šçš„æ™¯ç‰©ä¼¼æœ‰ä¼¼ç„¡ï¼Œè™›ç„¡ç¸¹ç·²ã€‚
 LONG); 
                         
-        // ³ö¿Ú·¿¼ä¶ÌÃèÊö 
-        set_exit_short(HIW "»Ã¾³³ö¿Ú" NOR); 
+        // å‡ºå£æˆ¿é–“çŸ­æè¿° 
+        set_exit_short(HIW "å¹»å¢ƒå‡ºå£" NOR); 
                         
-        // ³ö¿Ú·¿¼äÃèÊö 
+        // å‡ºå£æˆ¿é–“æè¿° 
         set_exit_desc(@LONG
-»Ã¾³Àïµ½´¦ÊÇÃÔÎíÃÖÂþ£¬ÖÜ±ßµÄ¾°ÎïËÆÓÐËÆÎÞ£¬ÐéÎÞçÎç¿¡£
+å¹»å¢ƒè£¡åˆ°è™•æ˜¯è¿·éœ§å½Œæ¼«ï¼Œå‘¨é‚Šçš„æ™¯ç‰©ä¼¼æœ‰ä¼¼ç„¡ï¼Œè™›ç„¡ç¸¹ç·²ã€‚
 LONG); 
 
-        // ÃÔ¹¬·¿¼äÊÇ·ñÎª»§Íâ·¿¼ä£¿ 
+        // è¿·å®®æˆ¿é–“æ˜¯å¦ç‚ºæˆ¶å¤–æˆ¿é–“ï¼Ÿ 
         set_outdoors(1); 
         
         set_remove_time(420);

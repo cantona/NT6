@@ -4,13 +4,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(NOR + WHT "²ÏË¿" NOR, ({ "can si", "can", "si" }));
+        set_name(NOR + WHT "è ¶çµ²" NOR, ({ "can si", "can", "si" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", NOR + WHT "ÕâÊÇÒ»¸ùÆÕÍ¨µÄ²ÏË¿¡£\n" NOR);
-                set("base_unit", "¸ù");
-                set("unit", "¸ù");
+                set("long", NOR + WHT "é€™æ˜¯ä¸€æ ¹æ™®é€šçš„è ¶çµ²ã€‚\n" NOR);
+                set("base_unit", "æ ¹");
+                set("unit", "æ ¹");
                 set("base_value", 1000);
                 set("base_weight", 1);
         }

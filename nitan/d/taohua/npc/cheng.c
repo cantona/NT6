@@ -2,12 +2,12 @@ inherit NPC;
 
 void create()
 {
-        set_name("³ÌÓ¢", ({ "cheng ying", "cheng", "ying" }));
-        set("gender", "Å®ĞÔ" );
+        set_name("ç¨‹è‹±", ({ "cheng ying", "cheng", "ying" }));
+        set("gender", "å¥³æ€§" );
         set("age",18);
-        set("long", "³ÌÓ¢ÊÇ»ÆÒ©Ê¦´ÓĞ¡ÊÕÑøµÄ¹ÂÅ®¡£ÓÉ»ÆÒ©Ê¦Ç×ÊÖ\n"
-                    "½ÌµÃÁËÒ»ÊÖÈËÈË³Æ¾øµÄÅëµ÷ÊÖ·¨£¬Òò´ËÌÒ»¨µº\n"
-                    "µÄÉÅÊ³¾ÍÓÉËı¸ºÔğ¡£\n");
+        set("long", "ç¨‹è‹±æ˜¯é»ƒè—¥å¸«å¾å°æ”¶é¤Šçš„å­¤å¥³ã€‚ç”±é»ƒè—¥å¸«è¦ªæ‰‹\n"
+                    "æ•™å¾—äº†ä¸€æ‰‹äººäººç¨±çµ•çš„çƒ¹èª¿æ‰‹æ³•ï¼Œå› æ­¤æ¡ƒèŠ±å³¶\n"
+                    "çš„è†³é£Ÿå°±ç”±å¥¹è² è²¬ã€‚\n");
         set("per", 30);
         set("class", "scholar");
         set("combat_exp", 10000);
@@ -20,7 +20,7 @@ void create()
         map_skill("dodge", "anying-fuxiang");
         map_skill("unarmed","luoying-zhang");
 
-        create_family("ÌÒ»¨µº", 3, "µÜ×Ó");
+        create_family("æ¡ƒèŠ±å³¶", 3, "å¼Ÿå­");
 
         setup();
         carry_object("/d/taohua/obj/baiyi")->wear();

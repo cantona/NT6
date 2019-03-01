@@ -197,7 +197,7 @@ int accept_fight(object ob)
         object me;
         me = this_object();
         check_quest(ob);
-        command("say Äã¸øÎÒÈ¥ËÀ°É£¡");
+        command("say ä½ çµ¦æˆ‘åŽ»æ­»å§ï¼");
         command("yun powerup");
         command("yun shield");
         switch (me->query_skill_mapped("force"))
@@ -254,7 +254,7 @@ int accept_hit(object ob)
         object me;
         me = this_object();
         check_quest(ob);
-        command("say Äã¸øÎÒÈ¥ËÀ°É£¡");
+        command("say ä½ çµ¦æˆ‘åŽ»æ­»å§ï¼");
         command("yun powerup");
         command("yun shield");
         switch (me->query_skill_mapped("force"))
@@ -311,7 +311,7 @@ int accept_kill(object ob)
         object me;
         me = this_object();
         check_quest(ob);
-        command("say Äã¸øÎÒÈ¥ËÀ°É£¡");
+        command("say ä½ çµ¦æˆ‘åŽ»æ­»å§ï¼");
         command("yun powerup");
         command("yun shield");
         switch (me->query_skill_mapped("force"))
@@ -387,7 +387,7 @@ void random_move()
 
 void destruct_me()
 {
-        message_vision("$N¼±¼±Ã¦Ã¦µÄ×ßÁË¡£\n", this_object());
+        message_vision("$Næ€¥æ€¥å¿™å¿™çš„èµ°äº†ã€‚\n", this_object());
         destruct(this_object());
         return;
 }
@@ -405,7 +405,7 @@ void check_quest(object ob)
                 quest=query("quest_sn", ob);
 
         if (!mapp(quest)) return;
-        if (quest["type"] == "É±" && quest["name"] == this_object()->name())
+        if (quest["type"] == "æ®º" && quest["name"] == this_object()->name())
                 set_from_me(ob,2);
 
         return;

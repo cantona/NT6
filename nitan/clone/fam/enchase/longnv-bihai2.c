@@ -3,15 +3,15 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIC "ÁúÅ®¡¤±Ìº£ÉñÁú" NOR, ({"bihao shenlong", "bihai", "shenlong" }));
+        set_name(HIC "é¾å¥³ï¹’ç¢§æµ·ç¥é¾" NOR, ({"bihao shenlong", "bihai", "shenlong" }));
         set_weight(900);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIC "ÁúÅ®¡¤±Ìº£ÉñÁúÄË¶«º£Ö®±¦£¬É¢·¢×Å±ÌÀ¶É«µÄ·æÃ¢¡£\n" NOR);
-                set("unit", "¿é");
+                set("long", HIC "é¾å¥³ï¹’ç¢§æµ·ç¥é¾ä¹ƒæ±æµ·ä¹‹å¯¶ï¼Œæ•£ç™¼è‘—ç¢§è—è‰²çš„é‹’èŠ’ã€‚\n" NOR);
+                set("unit", "å¡Š");
                 set("value", 5000);
-                set("enchase/name", "ÁúÅ®¡¤±Ìº£ÉñÁú");
+                set("enchase/name", "é¾å¥³ï¹’ç¢§æµ·ç¥é¾");
                 set("enchase/point", 190);
                 set("enchase/type", "all");
                                 set("enchase/cur_firm", 100);

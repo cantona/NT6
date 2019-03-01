@@ -4,12 +4,12 @@ inherit "/maze/necropolis/necropolis_npc";
 void do_fire();
 void create()
 {
-        string *names = ({"ÓÄÚ¤Ö®»ğ"}); 
+        string *names = ({"å¹½å†¥ä¹‹ç«"}); 
         // set_name( names[random(sizeof(names))], ({ "ghost fire","ghost"}));
         set_name( names[random(sizeof(names))], ({ "ghost fire" }));
         set("vendetta_mark","ghost");
-        set("long", "ÕâÊÇ¸öÈôÒşÈôÏÖµÄÓÄÁé¡£\n");
-        set("title", HIB "(¹íÆø)" NOR); 
+        set("long", "é€™æ˜¯å€‹è‹¥éš±è‹¥ç¾çš„å¹½éˆã€‚\n");
+        set("title", HIB "(é¬¼æ°£)" NOR); 
 
         set("str", 50);
         set("con", 120);
@@ -24,16 +24,16 @@ void create()
         //set("shen_type", -1);        
         //set("chat_chance", 2);
         //set("chat_msg", ({
-        //               "÷¼÷Ã¿Õ¶´µÄÑÛ¿ôÀïÉÁË¸×Å¿ÉÅÂµÄÓ«¹â¡£\n"
+        //               "éª·é«ç©ºæ´çš„çœ¼çœ¶è£¡é–ƒçˆè‘—å¯æ€•çš„ç†’å…‰ã€‚\n"
         //}) ); 
-        set("death_msg",BLU"\n$NÏûÊ§²»¼ûÁË¡£\n\n"NOR);
+        set("death_msg",BLU"\n$Næ¶ˆå¤±ä¸è¦‹äº†ã€‚\n\n"NOR);
         set("chat_chance_combat", 100);
         set("chat_msg_combat", ({
                 (: do_fire() :),
         }) ); 
         set("self_go_msg",1);
-        set("arrive_msg","ÓÄÚ¤Ö®»ğÆ®ÁË¹ıÀ´¡£");
-        set("leave_msg","ÓÄÚ¤Ö®»ğÆ®×ßÁË¡£");
+        set("arrive_msg","å¹½å†¥ä¹‹ç«é£„äº†éä¾†ã€‚");
+        set("leave_msg","å¹½å†¥ä¹‹ç«é£„èµ°äº†ã€‚");
         set("chat_chance", 1);
         set("chat_msg", ({
                 (: random_move :)
@@ -73,10 +73,10 @@ void do_fire() {
         enemies = query_enemy();
         if(!enemies || sizeof(enemies)==0)
                 return;
-        message_vision(HIB"$NÍ»È»ÏûÊ§£¬Í¬Ê±ÎŞÊıÓÄÓÄµÄÀ¶»ğ·Â·ğÊÜµ½ÕÙ»½´ÓµØÏÂÉıÌÚ¶øÆğ£¬ \n$NÖÜÎ§¶ÙÊ±±ä³ÉÁË¿Ö²ÀµÄÈË¼äÁ¶Óü¡£ \n"NOR, this_object()); 
+        message_vision(HIB"$Nçªç„¶æ¶ˆå¤±ï¼ŒåŒæ™‚ç„¡æ•¸å¹½å¹½çš„è—ç«ä»¿ä½›å—åˆ°å¬å–šå¾åœ°ä¸‹å‡é¨°è€Œèµ·ï¼Œ \n$Nå‘¨åœé “æ™‚è®Šæˆäº†ææ€–çš„äººé–“ç…‰ç„ã€‚ \n"NOR, this_object()); 
         foreach(enemy in enemies) {
                 if(enemy) {
-                        message_vision(HIC "\nÒ»ÌõÌõÈä¶¯µÄÀ¶»ğÈçòşÉß°ã²øÉÏÁË$N¡£\n"NOR, enemy, this_object()); 
+                        message_vision(HIC "\nä¸€æ¢æ¢è •å‹•çš„è—ç«å¦‚èŸ’è›‡èˆ¬çºä¸Šäº†$Nã€‚\n"NOR, enemy, this_object()); 
                         enemy->receive_damage("jing",2000+random(1000),this_object());
                         COMBAT_D->report_status(enemy);
                 }

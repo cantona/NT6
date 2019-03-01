@@ -5,16 +5,16 @@ inherit F_DEALER;
 
 void create()
 {
-        set_name("ÃÔÂ·ÉÌÈË", ({ "milu shangren", "milu", "shangren" }));
-        set("gender", "ÄÐÐÔ" );
+        set_name("è¿·è·¯å•†äºº", ({ "milu shangren", "milu", "shangren" }));
+        set("gender", "ç”·æ€§" );
         set("age", 43);
-        set("long", "ÕâÊÇÒ»Î»ÃÔÂ·µÄÉÌÈË£¬°Ë³ÉÊÇÎªÁËÑ°ÕÒÅîÀ³ÏÉµº¶øÃÔÂ·µÄ¡£\n");
+        set("long", "é€™æ˜¯ä¸€ä½è¿·è·¯çš„å•†äººï¼Œå…«æˆæ˜¯ç‚ºäº†å°‹æ‰¾è“¬èŠä»™å³¶è€Œè¿·è·¯çš„ã€‚\n");
         set("combat_exp", 100);
         set("attitude", "friendly");
         
         set("inquiry", ([
-                "ó´ÌÒ"       :   "ÎÒ¾ÍÊÇÎªÁËó´ÌÒ¶øÀ´£¬¿ÉÏ§ó´ÌÒÃ»ÕÒµ½£¬È´ÃÔÂ·ÁË£¬°¥ ¡­¡­¡£\n",
-                "ÅîÀ³ÏÉµº"   :   "ÎÒÎªÁËÑ°ÕÒ´«ËµÖÐµÄó´ÌÒ£¬À´µ½ÕâÀï£¬È´ÃÔÂ·ÁË ¡­¡­¡£\n",
+                "èŸ æ¡ƒ"       :   "æˆ‘å°±æ˜¯ç‚ºäº†èŸ æ¡ƒè€Œä¾†ï¼Œå¯æƒœèŸ æ¡ƒæ²’æ‰¾åˆ°ï¼Œå»è¿·è·¯äº†ï¼Œå“Ž â€¦â€¦ã€‚\n",
+                "è“¬èŠä»™å³¶"   :   "æˆ‘ç‚ºäº†å°‹æ‰¾å‚³èªªä¸­çš„èŸ æ¡ƒï¼Œä¾†åˆ°é€™è£¡ï¼Œå»è¿·è·¯äº† â€¦â€¦ã€‚\n",
         ]));
                 
         set("vendor_goods", ({
@@ -52,12 +52,12 @@ void greeting(object ob)
         switch(random(2))
         {
         case 0:
-                say(CYN "ÃÔÂ·ÉÌÈËÐ¦ßäßäµØËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob) +
-                    CYN "£¬¿´¿´ÓÐÊ²Ã´ÐèÒªµÄ£¬¾¡¹ÜÑ¡¡£\n" NOR);
+                say(CYN "è¿·è·¯å•†äººç¬‘å’ªå’ªåœ°èªªé“ï¼šé€™ä½" + RANK_D->query_respect(ob) +
+                    CYN "ï¼Œçœ‹çœ‹æœ‰ä»€éº¼éœ€è¦çš„ï¼Œç›¡ç®¡é¸ã€‚\n" NOR);
                 break;
         case 1:
-                say(CYN "ÃÔÂ·ÉÌÈËßººÈµÀ£ºÕâÎ»" +
-                    RANK_D->query_respect(ob) + CYN "£¬ÐèÒªÊ²Ã´¾¡¹ÜËµ£¬ÎÒÕâÀï¼Û¸ñ¹«µÀ¡£\n" NOR);
+                say(CYN "è¿·è·¯å•†äººå†å–é“ï¼šé€™ä½" +
+                    RANK_D->query_respect(ob) + CYN "ï¼Œéœ€è¦ä»€éº¼ç›¡ç®¡èªªï¼Œæˆ‘é€™è£¡åƒ¹æ ¼å…¬é“ã€‚\n" NOR);
                 break;
         }
 }
@@ -69,8 +69,8 @@ int accept_object(object me, object obj)
             base_name(obj) == "/d/penglai/obj/pantao")
         {
                 command("nod");
-                message_vision(HIC "$N" HIC "½Ó¹ý" + obj->name() + HIC "£¬Ò»Á³¾ªÑÈµÀ£º°¡ ¡­¡­ ó´¡­¡­ó´ÌÒ¡­¡­ÊµÔÚÌ«¸ÐÐ»ÁË¡­¡­\n" NOR, this_object());
-                message_vision(NOR + CYN "\n$N" NOR "ÄÃ³öÊ®Á½°×Òø¸ø" + me->name() + NOR + CYN "¡£\n" NOR, this_object(), me);
+                message_vision(HIC "$N" HIC "æŽ¥éŽ" + obj->name() + HIC "ï¼Œä¸€è‡‰é©šè¨é“ï¼šå•Š â€¦â€¦ èŸ â€¦â€¦èŸ æ¡ƒâ€¦â€¦å¯¦åœ¨å¤ªæ„Ÿè¬äº†â€¦â€¦\n" NOR, this_object());
+                message_vision(NOR + CYN "\n$N" NOR "æ‹¿å‡ºåå…©ç™½éŠ€çµ¦" + me->name() + NOR + CYN "ã€‚\n" NOR, this_object(), me);
                 ob = new("/clone/money/silver");
                 ob->set_amount(10);
                 ob->move(me, 1);

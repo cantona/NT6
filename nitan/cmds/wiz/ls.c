@@ -37,7 +37,7 @@ int main(object me, string arg)
         dir = resolve_path(query("cwd", me), arg);
 
         if (me != this_player(1))
-                return notify_fail("���ǵ�ǰʹ���߽��в�����\n");
+                return notify_fail("不是當前使用者進行操作。\n");
 
         seteuid(getuid());
         if (file_size(dir) == -2 && dir[strlen(dir) - 1] != '/') dir += "/";
@@ -64,9 +64,9 @@ int main(object me, string arg)
         if (! sizeof(file))
         {
                 if (file_size(dir) == -2)
-                        return notify_fail(sprintf("Ŀ¼(%s)�ǿյġ�\n", dir));
+                        return notify_fail(sprintf("目錄(%s)是空的。\n", dir));
                 else
-                        return notify_fail(sprintf("û�����Ŀ¼(%s)��\n", dir));
+                        return notify_fail(sprintf("沒有這個目錄(%s)。\n", dir));
         }
 
         file = filter_array(file, (: filter_list :), path, me);
@@ -80,11 +80,11 @@ int main(object me, string arg)
                 if (strlen(file[i][0])>w) w = strlen(file[i][0]) + 1;
                 file[i] += ({ MASTER_OB->valid_write(path + file[i][0], me, "ls") });
         }
-        result = "Ŀ¼��" + path + "\n";
+        result = "目錄：" + path + "\n";
 
         if (! sizeof(file))
         {
-                write(sprintf("%s    û���κε�����\n\n", result));
+                write(sprintf("%s    沒有任何檔案。\n\n", result));
                 return 1;
         }
 
@@ -135,17 +135,17 @@ int sort_list(mixed ob1, mixed ob2)
 int help(object me)
 {
         write(@HELP
-ָ���ʽ: ls [-l] [<·����>]
+指令格式: ls [-l] [<路徑名>]
 
-�г�Ŀ¼�����е���Ŀ¼������, ���û��ָ��Ŀ¼, ���г�����Ŀ¼
-�����ݣ����г��ĵ����У���ɫ�Ĵ���·�������Ѿ�����������Ӧ��
-�ļ�������ɫ�Ĵ�����ͨ���ļ�����ɫ���ʾ��Ը�Ŀ¼���ļ�û��д
-��Ȩ�ޡ�-l���������г���ϸ���ϡ�
+列出目錄下所有的子目錄及檔案, 如果沒有指定目錄, 則列出所在目錄
+的內容，所列出的檔案中，白色的代表路徑或是已經載入的物件對應的
+文件，正常色的代表普通的文件。紅色則表示你對該目錄或文件沒有寫
+入權限。-l參數可以列出詳細資料。
 
-����:
-'ls /' ���г�����λ춸�Ŀ¼�µĵ�������Ŀ¼��
-'ls /adm/*.c -l' ����г�/adm/Ŀ¼����������.c��β���ļ�����ϸ
-�����б���
+范例:
+'ls /' 會列出所有位於根目錄下的檔案及子目錄。
+'ls /adm/*.c -l' 則會列出/adm/目錄下面所有以.c結尾的文件的詳細
+資料列表。
 
 HELP );
         return 1;

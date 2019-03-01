@@ -1,4 +1,4 @@
-// ·Ç³£ÖØÒª¡£±» obj_list.h µ÷Ç¶£¬ÇëÎğ¸Ä¶¯¡£
+// éå¸¸é‡è¦ã€‚è¢« obj_list.h èª¿åµŒï¼Œè«‹å‹¿æ”¹å‹•ã€‚
 // 1:36 03-10-19
 
 
@@ -23,4 +23,4 @@ string get_hj_dir()
 
 #define        HJ_DIR        get_hj_dir()
 
-#include "room_amount_hj.h"    // ¸ÃÎÄ¼şÄÚ¶¨ÒåÁË HJ_ROOM_AMOUNT »Ã¾³×î´ó·¿¼äºÅ
+#include "room_amount_hj.h"    // è©²æ–‡ä»¶å…§å®šç¾©äº† HJ_ROOM_AMOUNT å¹»å¢ƒæœ€å¤§æˆ¿é–“è™Ÿ

@@ -6,13 +6,13 @@ inherit NPC;
 
 void create()
 {
-	set_name("ÄêÇáÅ®µÜ×Ó", ({"young girl", "girl", "young"}));
-	set("title", HIY "ÉñÁú½Ì" HIR "³àÁúÊ¹" NOR "×ùÏÂµÜ×Ó");
+	set_name("å¹´è¼•å¥³å¼Ÿå­", ({"young girl", "girl", "young"}));
+	set("title", HIY "ç¥žé¾æ•™" HIR "èµ¤é¾ä½¿" NOR "åº§ä¸‹å¼Ÿå­");
 	set("long",
-	        "ÕâÊÇÒ»¸öÉñÁú½ÌÅ®µÜ×Ó£¬Ò»Ï®ºìÒÂ£¬³¤µÃÆÄÎª¿É°®¡£\n"
+	        "é€™æ˜¯ä¸€å€‹ç¥žé¾æ•™å¥³å¼Ÿå­ï¼Œä¸€è¥²ç´…è¡£ï¼Œé•·å¾—é —ç‚ºå¯æ„›ã€‚\n"
 	);
 
-	set("gender", "Å®ÐÔ");
+	set("gender", "å¥³æ€§");
 	set("attitude", "peaceful");
 
 	set("age", 10 + random(10));
@@ -35,11 +35,11 @@ void create()
 	map_skill("sword","shedao-qigong");
 	set("chat_chance", 3);
         set("chat_msg", ({
-"ÄêÇáµÜ×ÓºöÈ»¸ßÉù½ÐµÀ£º½ÌÖ÷±¦Ñµ£¬Ê±¿ÌÔÚÐÄ£¬½¨¹¦¿ËµÐ£¬ÎÞÊÂ²»³É£¡\n",
-"ÄêÇáµÜ×ÓºöÈ»ÆëÉù½ÐµÀ£ºÖÚÖ¾ÆëÐÄ¿É³É³Ç£¬ÍþÕðÌìÏÂÎÞ±ÈÂ×£¡\n",
-"ÄêÇáµÜ×ÓºöÈ»ÆëÉù½ÐµÀ£ºÉñÁú·ÉÌìÆëÑöÍû£¬½ÌÖ÷ÉùÍþ¸Ç°Ë·½£¡\n",
-"ÄêÇáµÜ×ÓºöÈ»ÆëÉù½ÐµÀ£º³Ë·çÆÆÀË³ÑÓ¢ºÀ£¬½ÌÖ÷ÈçÍ¬ÈÕÔÂ¹â£¡\n",
-"ÄêÇáµÜ×ÓÆëÉù½ÐµÀ£º½ÌÖ÷ÓÀÏíÏÉ¸££¬ÊÙÓëÌìÆë£¡\n",
+"å¹´è¼•å¼Ÿå­å¿½ç„¶é«˜è²å«é“ï¼šæ•™ä¸»å¯¶è¨“ï¼Œæ™‚åˆ»åœ¨å¿ƒï¼Œå»ºåŠŸå…‹æ•µï¼Œç„¡äº‹ä¸æˆï¼\n",
+"å¹´è¼•å¼Ÿå­å¿½ç„¶é½Šè²å«é“ï¼šçœ¾å¿—é½Šå¿ƒå¯æˆåŸŽï¼Œå¨éœ‡å¤©ä¸‹ç„¡æ¯”å€«ï¼\n",
+"å¹´è¼•å¼Ÿå­å¿½ç„¶é½Šè²å«é“ï¼šç¥žé¾é£›å¤©é½Šä»°æœ›ï¼Œæ•™ä¸»è²å¨è“‹å…«æ–¹ï¼\n",
+"å¹´è¼•å¼Ÿå­å¿½ç„¶é½Šè²å«é“ï¼šä¹˜é¢¨ç ´æµªé€žè‹±è±ªï¼Œæ•™ä¸»å¦‚åŒæ—¥æœˆå…‰ï¼\n",
+"å¹´è¼•å¼Ÿå­é½Šè²å«é“ï¼šæ•™ä¸»æ°¸äº«ä»™ç¦ï¼Œå£½èˆ‡å¤©é½Šï¼\n",
         }) );
 
 	setup();

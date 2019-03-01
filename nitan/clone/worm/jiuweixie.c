@@ -3,9 +3,9 @@ inherit WORM;
 
 void create()
 {
-        set_name(WHT "¾ÅÎ²Ð«" NOR, ({ "jiuwei xie", "jiuwei", "xie" }));
-        set("long", WHT "ÕâÊÇÒ»Ö»ÕÉÀ´³¤£¬ÓÐ¾ÅÖ»Î²ÕÝµÄ´óÐ«×Ó¡£\n" NOR);
-        set("race", "Ò°ÊÞ");
+        set_name(WHT "ä¹å°¾è " NOR, ({ "jiuwei xie", "jiuwei", "xie" }));
+        set("long", WHT "é€™æ˜¯ä¸€åªä¸ˆä¾†é•·ï¼Œæœ‰ä¹åªå°¾èŸ„çš„å¤§è å­ã€‚\n" NOR);
+        set("race", "é‡Žç¸");
         set("age", random(10));
         set("attitude", "peaceful");
 
@@ -14,7 +14,7 @@ void create()
 
         set("str", 30);
         set("con", 30);
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "Î²°Í" }));
+        set("limbs", ({ "é ­éƒ¨", "èº«é«”", "å°¾å·´" }));
         set("verbs", ({ "bite" }));
 
         set("worm_poison", ([
@@ -37,7 +37,7 @@ void create()
 void die()
 {
         object ob;
-        message_vision(HIR "\n$N" HIR "µ¹ÔÚµØÉÏ£¬ËÀÁË¡£\n\n" NOR, this_object());
+        message_vision(HIR "\n$N" HIR "å€’åœ¨åœ°ä¸Šï¼Œæ­»äº†ã€‚\n\n" NOR, this_object());
         ob = new(__DIR__"obj/dunang");
         ob->move(environment(this_object()));
         destruct(this_object());

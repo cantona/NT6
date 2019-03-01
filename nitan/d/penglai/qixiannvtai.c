@@ -4,20 +4,20 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÆßÏÉÅ®Ì¨");
+        set("short", "ä¸ƒä»™å¥³å°");
         set("long",@LONG
-ÕâÀïÊÇÒ»´¦¸ßËÊµÄÆ½Ì¨£¬´«Ëµ£¬ÆßÏÉÅ®³£ÔÚÕâÀïĞŞÁ¶ÏÉ·¨¡£·Å
-ÑÛÍûÈ¥£¬Ìì¼ÊÖ®´¦£¬Ò»µÀ²Êºç»®¿Õ¶ø¹ı£¬ÆßÎ»ÃÀÃ²ÎŞ±ÈµÄÏÉÅ®Õıôæ
-ôæÆğÎè£¬Îè×Ëæ¹ÄÈ£¬Èç´ËÃÀ¾°£¬ÁîÈËÁôÁµÍü·µ¡£
+é€™è£¡æ˜¯ä¸€è™•é«˜è³çš„å¹³å°ï¼Œå‚³èªªï¼Œä¸ƒä»™å¥³å¸¸åœ¨é€™è£¡ä¿®ç…‰ä»™æ³•ã€‚æ”¾
+çœ¼æœ›å»ï¼Œå¤©éš›ä¹‹è™•ï¼Œä¸€é“å½©è™¹åŠƒç©ºè€Œéï¼Œä¸ƒä½ç¾è²Œç„¡æ¯”çš„ä»™å¥³æ­£ç¿©
+ç¿©èµ·èˆï¼Œèˆå§¿å©€å¨œï¼Œå¦‚æ­¤ç¾æ™¯ï¼Œä»¤äººç•™æˆ€å¿˜è¿”ã€‚
 LONG);
 
         set("exits", ([
                 "down"    : __DIR__"nanshanjiaoxia",
         ]));
-        set("no_rideto", 1);         // ÉèÖÃ²»ÄÜÆïÂíµ½ÆäËûµØ·½
-        set("no_flyto", 1);          // ÉèÖÃ²»ÄÜ´ÓÆğÀ´µØ·½ÆïÂíÀ´ÕâÀï
-        set("no_die", 1);            // ËÀÍöºóÒÆ¶¯µ½±âÈµ¾Ó
-        set("penglai", 1);           // ±íÊ¾ÔÚÅîÀ³µº
+        set("no_rideto", 1);         // è¨­ç½®ä¸èƒ½é¨é¦¬åˆ°å…¶ä»–åœ°æ–¹
+        set("no_flyto", 1);          // è¨­ç½®ä¸èƒ½å¾èµ·ä¾†åœ°æ–¹é¨é¦¬ä¾†é€™è£¡
+        set("no_die", 1);            // æ­»äº¡å¾Œç§»å‹•åˆ°æ‰éµ²å±…
+        set("penglai", 1);           // è¡¨ç¤ºåœ¨è“¬èŠå³¶
 
         set("no_fight", 1);
         set("sleep_room", 1);
@@ -32,32 +32,32 @@ void init ()
                 if (! this_player()->query("penglai/go_quest/ok"))
                 {
                         this_player()->start_busy(3);
-                        tell_object(this_player(), NOR + WHT "Äãµ½ÁË´Ë´¦£¬ËÄÖÜÏÉÆøçÔÈÆÁîÄãÒ»Ê±¼äÄÑÒÔ±æ±ğ·½Ïò¡£\n" NOR);
+                        tell_object(this_player(), NOR + WHT "ä½ åˆ°äº†æ­¤è™•ï¼Œå››å‘¨ä»™æ°£ç¹šç¹ä»¤ä½ ä¸€æ™‚é–“é›£ä»¥è¾¨åˆ¥æ–¹å‘ã€‚\n" NOR);
                 }
                 else
                 {
                         if (random(2))
                         {
                                 this_player()->start_busy(1);
-                                tell_object(this_player(), NOR + WHT "Äãµ½ÁË´Ë´¦£¬ËÄÖÜÏÉÆøçÔÈÆÁîÄãÒ»Ê±¼äÄÑÒÔ±æ±ğ·½Ïò¡£\n" NOR);                
+                                tell_object(this_player(), NOR + WHT "ä½ åˆ°äº†æ­¤è™•ï¼Œå››å‘¨ä»™æ°£ç¹šç¹ä»¤ä½ ä¸€æ™‚é–“é›£ä»¥è¾¨åˆ¥æ–¹å‘ã€‚\n" NOR);                
                         }
                 }
         }
         
         if (! this_player()->query("penglai/nanshan_quest/ok"))
         {
-                tell_object(this_player(), HIG "\nÄã±»Ò»ÕóÏÉÆø¾íÏÂÉ½È¥ ¡­¡­£¡¡£\n" NOR);
+                tell_object(this_player(), HIG "\nä½ è¢«ä¸€é™£ä»™æ°£å·ä¸‹å±±å» â€¦â€¦ï¼ã€‚\n" NOR);
                 this_player()->move(__DIR__"nanshanjiaoxia");
         }
-        else // µÚÒ»´ÎÆßÏÉÅ®Ì¨Ôö¼ÓÈİÃ²1µã
+        else // ç¬¬ä¸€æ¬¡ä¸ƒä»™å¥³å°å¢åŠ å®¹è²Œ1é»
         {
                 if (! this_player()->query("penglai/qixiannvtai_quest/ok") && this_player()->query("per") < 30)
                 {
-                        tell_object(this_player(), HIR "\nÄã¿´µ½ÁËÆßÏÉÅ®ÆğÎèµÄÊ¢¾°£¬ÊÜÒæ²»Ç³¡£\n" NOR);
-                        tell_object(this_player(), HIC "ÄãµÄ¡¸ÈİÃ²¡¹ÌáÉıÁË£¡\n\n" NOR);                        
-                        CHANNEL_D->do_channel(this_object(), "rumor", "ÌıËµ" HIY + this_player()->name() + "(" + 
-                                                             this_player()->query("id") + ")" HIM "ÔÚÅîÀ³ÏÉµº"
-                                                             "¿´µ½ÁËÆßÏÉÅ®ÆğÎèµÄÊ¢¾°£¬ÊÜÒæ²»Ç³¡£\n" NOR);   
+                        tell_object(this_player(), HIR "\nä½ çœ‹åˆ°äº†ä¸ƒä»™å¥³èµ·èˆçš„ç››æ™¯ï¼Œå—ç›Šä¸æ·ºã€‚\n" NOR);
+                        tell_object(this_player(), HIC "ä½ çš„ã€Œå®¹è²Œã€æå‡äº†ï¼\n\n" NOR);                        
+                        CHANNEL_D->do_channel(this_object(), "rumor", "è½èªª" HIY + this_player()->name() + "(" + 
+                                                             this_player()->query("id") + ")" HIM "åœ¨è“¬èŠä»™å³¶"
+                                                             "çœ‹åˆ°äº†ä¸ƒä»™å¥³èµ·èˆçš„ç››æ™¯ï¼Œå—ç›Šä¸æ·ºã€‚\n" NOR);   
                         this_player()->add("per", 1);
                         this_player()->set("penglai/qixiannvtai_quest/ok", 1);
                         this_player()->save();

@@ -6,7 +6,7 @@
 
 inherit F_SSERVER;
 
-string name() { return "ÇıÉßÒ§ÈË"; }
+string name() { return "é©…è›‡å’¬äºº"; }
 //void remove_bite(object);
 
 int perform(object me, object target)
@@ -27,50 +27,50 @@ int perform(object me, object target)
         if( !target
         ||        !target->is_character()
         ||        !me->is_fighting(target) )
-                return notify_fail("ÄãÖ»ÄÜ×İÉßÍµÏ®Õ½¶·ÖĞµÄ¶ÔÊÖ¡£\n");
+                return notify_fail("ä½ åªèƒ½ç¸±è›‡å·è¥²æˆ°é¬¥ä¸­çš„å°æ‰‹ã€‚\n");
 
         if (lv < 200 )
-                return notify_fail("ÄãµÄÁéÉßÕÈ·¨²»¹»æµÊì£¬ÎŞ·¨ÔÚÊ¹ÕÈ¹¥µĞÖ®Óà×İÉßÉËÈË¡£\n");
+                return notify_fail("ä½ çš„éˆè›‡æ–æ³•ä¸å¤ å«»ç†Ÿï¼Œç„¡æ³•åœ¨ä½¿æ–æ”»æ•µä¹‹ä½™ç¸±è›‡å‚·äººã€‚\n");
 
         if (poison < 200 )
-                return notify_fail("Äã¶ÔÊ¹¶¾µÄ·¨ÃÅËùÖªÓĞÏŞ¡£\n");
+                return notify_fail("ä½ å°ä½¿æ¯’çš„æ³•é–€æ‰€çŸ¥æœ‰é™ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me)) )
-                 return notify_fail("ÄãÊÖÉÏÃ»ÓĞÅÌÉßµÄ±øÆ÷¡£\n");
+                 return notify_fail("ä½ æ‰‹ä¸Šæ²’æœ‰ç›¤è›‡çš„å…µå™¨ã€‚\n");
 
         type=query("snake_type", weapon);
 
         if( !type && query("id", weapon) != "she zhang" )
-                return notify_fail("ÄãµÄ"+weapon->name()+"ÉÏ²¢Ã»ÓĞÉß¡£\n");
+                return notify_fail("ä½ çš„"+weapon->name()+"ä¸Šä¸¦æ²’æœ‰è›‡ã€‚\n");
 
         if( t && (time() - t) < 5 )
-                return notify_fail("Äã¸Õ¸ÕÒÑ¾­×İÉßÉËÈË£¬Õâ÷á¿ì¾Í¹Ê¼¼ÖØÊ©£¬ìóÅÂÄÑÒÔ×àĞ§¡£\n");
+                return notify_fail("ä½ å‰›å‰›å·²ç¶“ç¸±è›‡å‚·äººï¼Œé€™éº¼å¿«å°±æ•…æŠ€é‡æ–½ï¼Œç¥—æ€•é›£ä»¥å¥æ•ˆã€‚\n");
 
         if( me->query_skill("training",1) < 100 )
-               return notify_fail("ÄãµÄÔ¦ÊŞÊõÎŞ·¨Ë³ÀûÇıÊ¹¶¾ÉßÉËÈË¡£\n");
+               return notify_fail("ä½ çš„é¦­ç¸è¡“ç„¡æ³•é †åˆ©é©…ä½¿æ¯’è›‡å‚·äººã€‚\n");
 
         if( query("neili", me)<poi_amount )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬ÄÑÒÔÔÚ×İÉßÏ®»÷Ê±ÎÈ¿Ø"+weapon->name()+"¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ï¼Œé›£ä»¥åœ¨ç¸±è›‡è¥²æ“Šæ™‚ç©©æ§"+weapon->name()+"ã€‚\n");
 
         if( query("jingli", me)<300 )
-                return notify_fail("ÄãµÄ¾«Á¦²»¹»£¬ÄÑÒÔÔÚ×İÉßÏ®»÷Ê±ÎÈ¿Ø"+weapon->name()+"¡£\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤ ï¼Œé›£ä»¥åœ¨ç¸±è›‡è¥²æ“Šæ™‚ç©©æ§"+weapon->name()+"ã€‚\n");
 
         if(( me->query_skill_mapped("force") != "hama-gong") && ( me->query_skill_mapped("force") != "jiuyin-hamagong"))
-                return notify_fail("ÄãËùÓÃµÄÄÚ¹¦Óë¡¸ÁéÉßÕÈ·¨¡¹ÆøÂ·Ïàã££¡\n");
+                return notify_fail("ä½ æ‰€ç”¨çš„å…§åŠŸèˆ‡ã€Œéˆè›‡æ–æ³•ã€æ°£è·¯ç›¸æ‚–ï¼\n");
 
         addn("neili", -(poi_amount/2+50), me);
         addn("jingli", -200, me);
 
         switch (type) {
-        case "¹ÖÉß" :
+        case "æ€ªè›‡" :
         snake_path = "/d/baituo/npc/guaishe";
         break;
-        case "ÁéÉß" :
+        case "éˆè›‡" :
         snake_path = "/d/baituo/npc/lingshe";
         break;
         default:
         snake_path = "/d/baituo/npc/snake";
-        type = "¶¾Éß";
+        type = "æ¯’è›‡";
         }
 
         seteuid(getuid());
@@ -95,7 +95,7 @@ int perform(object me, object target)
         set("snake_poison", poi_amount*5, snake);
         snake->kill_ob(target);
 
-        message_combatd(HIB"\n$N½«"+weapon->name()+HIB"Ò»¶¶£¬ÕÈÉÏ½ğ»·µ±à¥à¥Ò»ÕóÂÒÏì£¬Ò»Ìõ"+type+HIB"´ÓÕÈµ×Ö±ÅÌÉÏÀ´¡£\n"NOR,me);
+        message_combatd(HIB"\n$Nå°‡"+weapon->name()+HIB"ä¸€æŠ–ï¼Œæ–ä¸Šé‡‘ç’°ç•¶å•·å•·ä¸€é™£äº‚éŸ¿ï¼Œä¸€æ¢"+type+HIB"å¾æ–åº•ç›´ç›¤ä¸Šä¾†ã€‚\n"NOR,me);
 
         me->start_busy(1);
 
@@ -115,7 +115,7 @@ int perform(object me, object target)
         if (damage/2+random(damage)>dp)
         {
                 addn("neili", -200, me);
-                message_combatd(HIB"\n$NºöÈ»½«"+weapon->name()+HIB"µ±Í·´òÁËÏÂÀ´£¬$nÒòÎª·À±¸¶¾Éß¶ø¶ãÉÁ²»¼°¡£\n"NOR,me,target);
+                message_combatd(HIB"\n$Nå¿½ç„¶å°‡"+weapon->name()+HIB"ç•¶é ­æ‰“äº†ä¸‹ä¾†ï¼Œ$nå› ç‚ºé˜²å‚™æ¯’è›‡è€Œèº²é–ƒä¸åŠã€‚\n"NOR,me,target);
                 COMBAT_D->do_damage(me, target, WEAPON_ATTACK, damage, 100);
         }
 
@@ -131,20 +131,20 @@ void remove_bite(object me, string type)
 {
         if (! objectp(me)) return;
         delete_temp("baituo/bite", me);
-        tell_object(me, type+"°ºÆğÁËÍ·£¬Ë»µØÒ»ÍÂÉàÍ·¡£\n");
+        tell_object(me, type+"æ˜‚èµ·äº†é ­ï¼Œå˜¶åœ°ä¸€åèˆŒé ­ã€‚\n");
 }
 
 mapping query_action(object me)
 {
         string msg1, msg2;
-        msg1 = HIR"ìó¼û"+SNAKE_STAFF->name()+HIR"´Ó$nÑÛÇ°ÂÓ¹ı£¬²øÕÈÅÌĞıµÄÒ»Ìõ$NÍÌÍÂÉìËõ£¬ÃÍÈ»ÕÅ¿ÚÒ§Ïò$n$l£¬ÕøÄü¹îÒìÖ®¼«£¡"NOR;
-        msg2 = HIW BLK"Ò»Ìõ$N²Å¸Õ´Ü³ö£¬Àä²»·À"+SNAKE_STAFF->name()+HIW BLK"ÉÏÁíÒ»Ìõ$NÒ²ÒÑÇÄÃ»ÉùÏ¢µØ°ºÊ×¶øÆğ£¬Ò»¿ÚÏò$n$lÒ§È¥£¡"NOR;
+        msg1 = HIR"ç¥—è¦‹"+SNAKE_STAFF->name()+HIR"å¾$nçœ¼å‰æ éï¼Œçºæ–ç›¤æ—‹çš„ä¸€æ¢$Nååä¼¸ç¸®ï¼ŒçŒ›ç„¶å¼µå£å’¬å‘$n$lï¼ŒçŒ™ç°è©­ç•°ä¹‹æ¥µï¼"NOR;
+        msg2 = HIW BLK"ä¸€æ¢$Næ‰å‰›ç«„å‡ºï¼Œå†·ä¸é˜²"+SNAKE_STAFF->name()+HIW BLK"ä¸Šå¦ä¸€æ¢$Nä¹Ÿå·²æ‚„æ²’è²æ¯åœ°æ˜‚é¦–è€Œèµ·ï¼Œä¸€å£å‘$n$lå’¬å»ï¼"NOR;
         return ([
         "action":query("second_attack", me)?msg2:msg1,
         "force" : 400,
         "dodge" : 0,
         "parry" : 0,
         "damage" : 400,
-        "weapon" :"¶¾ÑÀ",
-        "damage_type":"Ò§ÉË"]);
+        "weapon" :"æ¯’ç‰™",
+        "damage_type":"å’¬å‚·"]);
 }

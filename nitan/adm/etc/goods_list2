@@ -1,139 +1,139 @@
-ÌìÊ¦»¤Éí·û:tianshi:3:object:/clone/goods/tianshi-charm:´øÔÚÉíÉÏ¿ÉÒÔÈÃËÀÍöÎŞËğÊ§£¬ºìÃû×´Ì¬³ıÍâ£¬ÏûºÄÆ·
-Ä§·¨Ãæ¾ß:mask:30:object:/clone/goods/mask:´÷ÉÏËü±ğÈËÎŞ·¨¶ÔÄãÏÂÈÎºÎÖ¸Áî£¬Æğµ½±£»¤×Ô¼ºµÄ×÷ÓÃ
-å¾ÓîÌì¾§:tianjing:60:object:/clone/goods/tianjing:´òÔì×°±¸²ÄÁÏ£¬ÇÒÌá¸ß¼«Æ·¼¸ÂÊ
-ÎŞÃûÖ®Îï:noname:98:object:/clone/goods/noname:×îÇ¿µÄ´òÔì×°±¸²ÄÁÏ£¬ÇÒÌá¸ß¼«Æ·¼¸ÂÊ´ó
-×Ï½ğÑ«ÕÂÏä×Ó:xunzhang:30:object:/clone/goods/xunzhang_xiang:¿ÉÒÔËæ»ú¿ª³ö×Ï½ğÑ§Ï°Ñ«ÕÂ¡¢×Ï½ğ¼³È¡Ñ«ÕÂ¡¢×Ï½ğÁ·Ï°Ñ«ÕÂ¡¢×Ï½ğÑĞ¾¿Ñ«ÕÂÒÔ¼°×êÊ¯ÑĞ¾¿Ñ«ÕÂÖĞÒ»¸ö
-×Ï½ğ¶ÁÊéÑ«ÕÂ:study:20:object:/clone/goods/study-emblem:ÌáÉıÃ¿´Î¶ÁÊé´ÎÊı300
-×Ï½ğÑ§Ï°Ñ«ÕÂ:learn:40:object:/clone/goods/learn-emblem:ÌáÉıÃ¿´ÎÑ§Ï°´ÎÊı300
-×Ï½ğ¼³È¡Ñ«ÕÂ:derive:50:object:/clone/goods/derive-emblem:ÌáÉıÃ¿´Î¼³È¡Ò»±¶ËÙ¶È
-×Ï½ğÁ·Ï°Ñ«ÕÂ:practice:50:object:/clone/goods/practice-emblem:ÌáÉıÃ¿´ÎÁ·Ï°´ÎÊı300
-×Ï½ğÑĞ¾¿Ñ«ÕÂ:research:60:object:/clone/goods/research-emblem:ÌáÉıÃ¿´ÎÑĞ¾¿´ÎÊı300
-×êÊ¯ÑĞ¾¿Ñ«ÕÂ:research2:98:object:/clone/goods/research-emblem2:ÌáÉıÃ¿´ÎÑĞ¾¿´ÎÊı500
-ÏÂÏß±£ÁôÎïÆ·:quitsave:10:srv:/clone/goods/service:Èı¸öÔÂÄÚ¶ÔËùÓĞÎïÆ·¶¼ÔÊĞíÏÂÏß±£Áô(°üÀ¨°ü¹üÀïÎïÆ·)
-ÀëÏßÔ­µØµÇÂ½:startroom:10:srv:/clone/goods/service:°ëÄêÄÚ´ÓÀëÏßÔ­µØµÇÂ½£¬¸±±¾ÃÔ¹¬ÇøÓò³ıÍâ
-¾ÅÍ·ÉßÁìµØÈ¨:jiutoushe:140:srv:/clone/goods/service:¹ºÂòÒ»ÖÜÊ±¼ä¿É×ÔÓÉ½øÈëÉñÁúµºÄÏ²¿¾ÅÍ·ÉßÁìµØ
-µç»÷³É¹¦:lighting:20:story:con:¼ÓÏÈÌì¸ù¹ÇµÄ¹ÊÊÂ,Ö»¿É¹ºÂòÒ»´Î
-·ïÎè³É¹¦:feng:20:story:dex:¼ÓÏÈÌìÉí·¨µÄ¹ÊÊÂ,Ö»¿É¹ºÂòÒ»´Î
-ÈÕ³ã³É¹¦:sun:20:story:str:¼ÓÏÈÌì±ÛÁ¦µÄ¹ÊÊÂ,Ö»¿É¹ºÂòÒ»´Î
-Ê¥ãå³É¹¦:water:20:story:int:¼ÓÏÈÌìÎòĞÔµÄ¹ÊÊÂ,Ö»¿É¹ºÂòÒ»´Î
-¸É½«Ê¥·û:ganjiang:10:symbol:/adm/npc/obj/ganjiang-symbol:¿É½«×°±¸¼°Ñ«ÕÂÉèÖÃÎª¿ÉSUMMONÊôĞÔ
-Èç¹íËÆ÷È:agile:10:special:/kungfu/special/accuracy:ÏÈÌì¼¼ÄÜ£¬×î¶à¿ÉÓµÓĞËÄ¸ö
-É±Æø³åÏö:hatred:10:special:/kungfu/special/hatred:ÏÈÌì¼¼ÄÜ£¬×î¶à¿ÉÓµÓĞËÄ¸ö
-Ğş»Æ¾ÛÄÉ:mystery:10:special:/kungfu/special/mystery:ÏÈÌì¼¼ÄÜ£¬×î¶à¿ÉÓµÓĞËÄ¸ö
-ÌìÉñ½µÊÀ:power:10:special:/kungfu/special/power:ÏÈÌì¼¼ÄÜ£¬×î¶à¿ÉÓµÓĞËÄ¸ö
-Ğ¡ÖÜÌìÔË×ª:self:10:special:/kungfu/special/self:ÏÈÌì¼¼ÄÜ£¬×î¶à¿ÉÓµÓĞËÄ¸ö
-¹í»°Á¬Æª:trick:10:special:/kungfu/special/trick:ÏÈÌì¼¼ÄÜ£¬×î¶à¿ÉÓµÓĞËÄ¸ö
-ÌìÑÕÓÀ×¤:youth:10:special:/kungfu/special/youth:ÏÈÌì¼¼ÄÜ£¬×î¶à¿ÉÓµÓĞËÄ¸ö
-¿ñ±©Ö®Á¦:might:10:special:/kungfu/special/might:ÏÈÌì¼¼ÄÜ£¬×î¶à¿ÉÓµÓĞËÄ¸ö
-°ËÃæÁáçç:cunning:10:special:/kungfu/special/cunning:ÏÈÌì¼¼ÄÜ£¬×î¶à¿ÉÓµÓĞËÄ¸ö
-Ìì¸³´ÏÓ±:clever:10:special:/kungfu/special/clever:ÏÈÌì¼¼ÄÜ£¬×î¶à¿ÉÓµÓĞËÄ¸ö
-ĞÂÈË´óÀñ°ü:newbie:30:package:/clone/goods/package:Àñ°üÀïÓĞĞş»Æ¡¢¾Å×ª¡¢ÌìÏãÒÔ¼°¼ÓÊôĞÔµÄµ¤Ò©ºÍ1ÍòÁ½»Æ½ğµÈ
-ÎÄÇúĞÇÀñ°ü:wisdom:180:package:/clone/goods/package:Àñ°üÀïÓĞÎÄÇúĞÇ7¼şÌ××°£¬+240%µÄÑ§Ï°¡¢ÑĞ¾¿µÈĞ§¹û£¬Í¬Ê±¼Ó200ºóÌìÎòĞÔ
-ÔÂ¶È»áÔ±:monthcard:12:card:/clone/goods/card:»áÔ±ÔÂ¿¨£¬²»¿É×ªÈÃ¸øÆäËûµÄ½ÇÉ«
-¼¾¶È»áÔ±:seasoncard:30:card:/clone/goods/card:»áÔ±¼¾¿¨£¬²»¿É×ªÈÃ¸øÆäËûµÄ½ÇÉ«
-Äê¶È»áÔ±:yearcard:100:card:/clone/goods/card:»áÔ±Äê¿¨£¬²»¿É×ªÈÃ¸øÆäËûµÄ½ÇÉ«
-ÖÕÉí»áÔ±:forevercard:280:card:/clone/goods/card:»áÔ±ÖÕÉí¿¨£¬²»¿É×ªÈÃÈÃ¸øÆäËûµÄ½ÇÉ«
-½ğ×©:gold:1:gold:/clone/money/gold:ÒøĞĞ´æ¿îÔö¼Ó10000Á½»Æ½ğ
-¸üÃû¾íÖá:changeid:20:object:/adm/npc/obj/idname-scroll:¿ÉÒÔÊ¹×ÔÔì×°±¸¸Ä±ä´úºÅ(id)ºÍÖĞÎÄÃû(name)µÄ¸üÃû¾íÖá
-°ó¶¨Ê¥·û:bind:1:symbol:/clone/goods/bind-symbol:¿É½«×°±¸¼°Ñ«ÕÂµÈ°ó¶¨Ö÷ÈË£¬ËÀÍö¼°ÏÂÏß¶¼²»µô£¬µ«ÊÇÒ²²»ÄÜ¸øÈÎºÎÈËÁË£¬×ªÊÀ»á¶ªÊ§
-ÉÏ¹Å¡¤Ì«Ğé:taixu:10:enchase:/clone/goods/taixu:½ğÊôĞÔÖÕ¼«10LVÏâÇ¶²ÄÁÏ
-ÉÏ¹Å¡¤»¢ÆÇ:hupo:10:enchase:/clone/goods/hupo:Ä¾ÊôĞÔÖÕ¼«10LVÏâÇ¶²ÄÁÏ
-Ğş±ù¡¤º®Ìú:hantie:10:enchase:/clone/goods/hantie:Ë®ÊôĞÔÖÕ¼«10LVÏâÇ¶²ÄÁÏ
-µØĞÄ¡¤ÊÉ»ê:shihun:10:enchase:/clone/goods/shihun:»ğÊôĞÔÖÕ¼«10LVÏâÇ¶²ÄÁÏ
-¾ÅµØ¡¤ĞşÓñ:xuanyu:10:enchase:/clone/goods/xuanyu:ÍÁÊôĞÔÖÕ¼«10LVÏâÇ¶²ÄÁÏ
-ÆĞÌá×Ó:putizi:1:object:/clone/gift/puti-zi:¿ÉÔö¼Ó×î´óÄÚÁ¦100-129µã£¬ÊıÁ¿20¸ö
-¾Å×ª½ğµ¤:jiuzhuan:1:object:/clone/gift/jiuzhuan:¿ÉÔö¼ÓËùÓĞÏÈÌìÇ°4µãµ¤£¬ÊıÁ¿10¸ö,
-ÓñÇåÉ¢:yuqingsan:1:object:/clone/medicine/yuqing:¿ÉÔö¼Ó×î´ó¾«Á¦10-11µã£¬ÊıÁ¿120°ü
-ÌìÏãÓñÂ¶:tianxiang:1:object:/clone/gift/tianxiang:²Î¿¼help item£¬ÊıÁ¿10¸ö
-Ğş»Æ×ÏÇåµ¤:xuanhuang:1:object:/clone/gift/xuanhuang:²Î¿¼help item£¬ÊıÁ¿5¸ö
-ÕÙÉñÏã:xiang:10:object:/d/reborn/obj/xiang:×ªÊÀÊ±ÕÙ»½ÎåÔÀ¸®¾ıÓÃµÄ
-ÈÕ»ê:rihun:1:object:/clone/goods/sun:ÓÃÀ´¸½Ä§ÊôĞÔÏâÇ¶×ÔÔì±øÆ÷ÀàºÍ¿ÕÊÖ±øÆ÷ÀàµÄ±¦Ê¯
-ÔÂÆÇ:yuepo:1:object:/clone/goods/moon:ÓÃÀ´¸½Ä§ÊôĞÔÏâÇ¶×ÔÔì·À¾ßÀàµÄ±¦Ê¯
-¸½Ä§¾íÖá:enchant:1:object:/clone/goods/enchant-scroll:ÓÃÀ´¸½Ä§Ê±ºò·ÀÖ¹ÆÕÍ¨×°±¸µÄÆÆÁÑ£¬ÏûºÄÆ·
-Ì«»Ê»ÆÔø·û:rune01:5:symbol:/clone/tessera/rune01:¿ÉÏâÇ¶ÔÚ×°±¸ÉÏ,ÏêÏ¸²Î¿¼help rune
-Ì«Ã÷ÓñÍê·û:rune02:5:symbol:/clone/tessera/rune02:¿ÉÏâÇ¶ÔÚ×°±¸ÉÏ,ÏêÏ¸²Î¿¼help rune
-ÇåÃ÷ºÎÍ¯·û:rune03:5:symbol:/clone/tessera/rune03:¿ÉÏâÇ¶ÔÚ×°±¸ÉÏ,ÏêÏ¸²Î¿¼help rune
-ĞşÌ¥Æ½Óı·û:rune04:5:symbol:/clone/tessera/rune04:¿ÉÏâÇ¶ÔÚ×°±¸ÉÏ,ÏêÏ¸²Î¿¼help rune
-ÔªÃ÷ÎÄ¾Ù·û:rune05:5:symbol:/clone/tessera/rune05:¿ÉÏâÇ¶ÔÚ×°±¸ÉÏ,ÏêÏ¸²Î¿¼help rune
-Æßê×Ä¦ÒÄ·û:rune06:10:symbol:/clone/tessera/rune06:¿ÉÏâÇ¶ÔÚ×°±¸ÉÏ,ÏêÏ¸²Î¿¼help rune
-ĞéÎŞÔ½ºâ·û:rune07:10:symbol:/clone/tessera/rune07:¿ÉÏâÇ¶ÔÚ×°±¸ÉÏ,ÏêÏ¸²Î¿¼help rune
-Ì«¼«ÃÉôè·û:rune08:10:symbol:/clone/tessera/rune08:¿ÉÏâÇ¶ÔÚ×°±¸ÉÏ,ÏêÏ¸²Î¿¼help rune
-³àÃ÷ºÍÑô·û:rune09:10:symbol:/clone/tessera/rune09:¿ÉÏâÇ¶ÔÚ×°±¸ÉÏ,ÏêÏ¸²Î¿¼help rune
-ĞşÃ÷¹§»ª·û:rune10:10:symbol:/clone/tessera/rune10:¿ÉÏâÇ¶ÔÚ×°±¸ÉÏ,ÏêÏ¸²Î¿¼help rune
-Ò«Ã÷×ÚÆ®·û:rune11:10:symbol:/clone/tessera/rune11:¿ÉÏâÇ¶ÔÚ×°±¸ÉÏ,ÏêÏ¸²Î¿¼help rune
-óÃÂä»ÊóÕ·û:rune12:10:symbol:/clone/tessera/rune12:¿ÉÏâÇ¶ÔÚ×°±¸ÉÏ,ÏêÏ¸²Î¿¼help rune
-ĞéÃ÷ÌÃê×·û:rune13:10:symbol:/clone/tessera/rune13:¿ÉÏâÇ¶ÔÚ×°±¸ÉÏ,ÏêÏ¸²Î¿¼help rune
-¹ÛÃ÷¶Ë¾¸·û:rune14:10:symbol:/clone/tessera/rune14:¿ÉÏâÇ¶ÔÚ×°±¸ÉÏ,ÏêÏ¸²Î¿¼help rune
-ĞşÃ÷¹§Çì·û:rune15:10:symbol:/clone/tessera/rune15:¿ÉÏâÇ¶ÔÚ×°±¸ÉÏ,ÏêÏ¸²Î¿¼help rune
-Ì«»À¼«Ñş·û:rune16:10:symbol:/clone/tessera/rune16:¿ÉÏâÇ¶ÔÚ×°±¸ÉÏ,ÏêÏ¸²Î¿¼help rune
-ÔªÔØ¿×Éı·û:rune17:10:symbol:/clone/tessera/rune17:¿ÉÏâÇ¶ÔÚ×°±¸ÉÏ,ÏêÏ¸²Î¿¼help rune
-Ì«°²»ÊÑÂ·û:rune18:10:symbol:/clone/tessera/rune18:¿ÉÏâÇ¶ÔÚ×°±¸ÉÏ,ÏêÏ¸²Î¿¼help rune
-ÏÔ¶¨¼«·ç·û:rune19:10:symbol:/clone/tessera/rune19:¿ÉÏâÇ¶ÔÚ×°±¸ÉÏ,ÏêÏ¸²Î¿¼help rune
-Ê¼»ÆĞ¢Ã¢·û:rune20:20:symbol:/clone/tessera/rune20:¿ÉÏâÇ¶ÔÚ×°±¸ÉÏ,ÏêÏ¸²Î¿¼help rune
-Ì«»ÆÎÌÖØ·û:rune21:20:symbol:/clone/tessera/rune21:¿ÉÏâÇ¶ÔÚ×°±¸ÉÏ,ÏêÏ¸²Î¿¼help rune
-ÎŞË¼½­ÓÉ·û:rune22:20:symbol:/clone/tessera/rune22:¿ÉÏâÇ¶ÔÚ×°±¸ÉÏ,ÏêÏ¸²Î¿¼help rune
-ÉÏŞéÈîÀÖ·û:rune23:20:symbol:/clone/tessera/rune23:¿ÉÏâÇ¶ÔÚ×°±¸ÉÏ,ÏêÏ¸²Î¿¼help rune
-ÎŞ¼«ê¼ÊÄ·û:rune24:20:symbol:/clone/tessera/rune24:¿ÉÏâÇ¶ÔÚ×°±¸ÉÏ,ÏêÏ¸²Î¿¼help rune
-ğ©Í¥Ïö¶È·û:rune25:20:symbol:/clone/tessera/rune25:¿ÉÏâÇ¶ÔÚ×°±¸ÉÏ,ÏêÏ¸²Î¿¼help rune
-Ô¨Í¨Ôª¶´·û:rune26:20:symbol:/clone/tessera/rune26:¿ÉÏâÇ¶ÔÚ×°±¸ÉÏ,ÏêÏ¸²Î¿¼help rune
-º²³èÃî³É·û:rune27:20:symbol:/clone/tessera/rune27:¿ÉÏâÇ¶ÔÚ×°±¸ÉÏ,ÏêÏ¸²Î¿¼help rune
-ĞãÀÖ½ûÉÏ·û:rune28:20:symbol:/clone/tessera/rune28:¿ÉÏâÇ¶ÔÚ×°±¸ÉÏ,ÏêÏ¸²Î¿¼help rune
-ÎŞÉÏ³£ÈÚ·û:rune29:20:symbol:/clone/tessera/rune29:¿ÉÏâÇ¶ÔÚ×°±¸ÉÏ,ÏêÏ¸²Î¿¼help rune
-ÓñÂ¡ÌÚÊ¤·û:rune30:25:symbol:/clone/tessera/rune30:¿ÉÏâÇ¶ÔÚ×°±¸ÉÏ,ÏêÏ¸²Î¿¼help rune
-Áú±äèó¶È·û:rune31:25:symbol:/clone/tessera/rune31:¿ÉÏâÇ¶ÔÚ×°±¸ÉÏ,ÏêÏ¸²Î¿¼help rune
-Æ½Óı¼ÖŞÈ·û:rune32:25:symbol:/clone/tessera/rune32:¿ÉÏâÇ¶ÔÚ×°±¸ÉÏ,ÏêÏ¸²Î¿¼help rune
-Ì«Çå´ó³à·û:rune33:25:symbol:/clone/tessera/rune33:¿ÉÏâÇ¶ÔÚ×°±¸ÉÏ,ÏêÏ¸²Î¿¼help rune
-ÉÏÇåÓíÓà·û:rune34:30:symbol:/clone/tessera/rune34:¿ÉÏâÇ¶ÔÚ×°±¸ÉÏ,ÏêÏ¸²Î¿¼help rune
-ÓñÇåÇåÎ¢·û:rune35:30:symbol:/clone/tessera/rune35:¿ÉÏâÇ¶ÔÚ×°±¸ÉÏ,ÏêÏ¸²Î¿¼help rune
-ÎŞ¼«´óÂŞ·û:rune36:30:symbol:/clone/tessera/rune36:¿ÉÏâÇ¶ÔÚ×°±¸ÉÏ,ÏêÏ¸²Î¿¼help rune
-ÑĞ¾¿·ûÎÄ°ü:yj-rune:140:package:/clone/goods/package:°üº¬7¸örune31ºÍ7¸örune33
-·ûÎÄÒÁË¾ÌØ°ü:rune24-eq:70:package:/clone/goods/package:°üº¬7¸örune24
-·ûÎÄ±´°ü:rune30-eq:100:package:/clone/goods/package:°üº¬10¸örune30
-·ûÎÄÇÇ°ü:rune31-eq:100:package:/clone/goods/package:°üº¬10¸örune31
-·ûÎÄ²éÄ·°ü:rune32-eq:100:package:/clone/goods/package:°üº¬10¸örune32
-·ûÎÄÈøµÂ°ü:rune33-eq:100:package:/clone/goods/package:°üº¬10¸örune33
-ÎŞÃûĞ¡Í­ÈË:tongrenx:3:object:/clone/tongren/tongren1:¿É¼ø¶¨ÎªĞ¡ÖÜÌìÑ¨Î»Í­ÈË
-ÎŞÃû´óÍ­ÈË:tongrend:3:object:/clone/tongren/tongren2:¿É¼ø¶¨Îª´óÖÜÌìÑ¨Î»Í­ÈË
-Ö¸¶¨³åÑ¨Í­ÈË:tongren:4:other:/clone/tongren/tongren:¿É¹ºÂòÖ¸¶¨µÄ³åÑ¨Í­ÈË
-ÑĞ¾¿ÈÕ»ê°ü:yj-sword:20:package:/clone/goods/sun_sword:°üº¬10¸ö¸½Ä§ÁËÑĞ¾¿Ğ§¹û,¼³È¡Ğ§¹û,Á·Ï°Ğ§¹û¶¼Îª3%µÄÈÕ»êsword°ü,µÈ¼¶=¹ºÂòÕßµÈ¼¶/10*10
-ÑĞ¾¿ÈÕ»ê°ü:yj-blade:20:package:/clone/goods/sun_blade:°üº¬10¸ö¸½Ä§ÁËÑĞ¾¿Ğ§¹û,¼³È¡Ğ§¹û,Á·Ï°Ğ§¹û¶¼Îª3%µÄÈÕ»êblade°ü,µÈ¼¶=¹ºÂòÕßµÈ¼¶/10*10
-ÑĞ¾¿ÈÕ»ê°ü:yj-hammer:20:package:/clone/goods/sun_hammer:°üº¬10¸ö¸½Ä§ÁËÑĞ¾¿Ğ§¹û,¼³È¡Ğ§¹û,Á·Ï°Ğ§¹û¶¼Îª3%µÄÈÕ»êhammer°ü,µÈ¼¶=¹ºÂòÕßµÈ¼¶/10*10
-ÑĞ¾¿ÈÕ»ê°ü:yj-staff:20:package:/clone/goods/sun_staff:°üº¬10¸ö¸½Ä§ÁËÑĞ¾¿Ğ§¹û,¼³È¡Ğ§¹û,Á·Ï°Ğ§¹û¶¼Îª3%µÄÈÕ»êstaff°ü,µÈ¼¶=¹ºÂòÕßµÈ¼¶/10*10
-ÑĞ¾¿ÈÕ»ê°ü:yj-club:20:package:/clone/goods/sun_club:°üº¬10¸ö¸½Ä§ÁËÑĞ¾¿Ğ§¹û,¼³È¡Ğ§¹û,Á·Ï°Ğ§¹û¶¼Îª3%µÄÈÕ»êclub°ü,µÈ¼¶=¹ºÂòÕßµÈ¼¶/10*10
-ÑĞ¾¿ÈÕ»ê°ü:yj-whip:20:package:/clone/goods/sun_whip:°üº¬10¸ö¸½Ä§ÁËÑĞ¾¿Ğ§¹û,¼³È¡Ğ§¹û,Á·Ï°Ğ§¹û¶¼Îª3%µÄÈÕ»êwhip°ü,µÈ¼¶=¹ºÂòÕßµÈ¼¶/10*10
-ÑĞ¾¿ÈÕ»ê°ü:yj-finger:20:package:/clone/goods/sun_finger:°üº¬10¸ö¸½Ä§ÁËÑĞ¾¿Ğ§¹û,¼³È¡Ğ§¹û,Á·Ï°Ğ§¹û¶¼Îª3%µÄÈÕ»êfinger°ü,µÈ¼¶=¹ºÂòÕßµÈ¼¶/10*10
-ÑĞ¾¿ÈÕ»ê°ü:yj-hands:20:package:/clone/goods/sun_hands:°üº¬10¸ö¸½Ä§ÁËÑĞ¾¿Ğ§¹û,¼³È¡Ğ§¹û,Á·Ï°Ğ§¹û¶¼Îª3%µÄÈÕ»êhands°ü,µÈ¼¶=¹ºÂòÕßµÈ¼¶/10*10
-ÑĞ¾¿ÔÂÆÇ°ü:yj-armor:20:package:/clone/goods/moon_armor:°üº¬10¸ö¸½Ä§ÁËÑĞ¾¿Ğ§¹û,¼³È¡Ğ§¹û,Á·Ï°Ğ§¹û¶¼Îª3%µÄÔÂÆÇarmor°ü,µÈ¼¶=¹ºÂòÕßµÈ¼¶/10*10
-ÑĞ¾¿ÔÂÆÇ°ü:yj-boots:20:package:/clone/goods/moon_boots:°üº¬10¸ö¸½Ä§ÁËÑĞ¾¿Ğ§¹û,¼³È¡Ğ§¹û,Á·Ï°Ğ§¹û¶¼Îª3%µÄÔÂÆÇboots°ü,µÈ¼¶=¹ºÂòÕßµÈ¼¶/10*10
-ÑĞ¾¿ÔÂÆÇ°ü:yj-head:20:package:/clone/goods/moon_head:°üº¬10¸ö¸½Ä§ÁËÑĞ¾¿Ğ§¹û,¼³È¡Ğ§¹û,Á·Ï°Ğ§¹û¶¼Îª3%µÄÔÂÆÇhead°ü,µÈ¼¶=¹ºÂòÕßµÈ¼¶/10*10
-ÑĞ¾¿ÔÂÆÇ°ü:yj-cloth:20:package:/clone/goods/moon_cloth:°üº¬10¸ö¸½Ä§ÁËÑĞ¾¿Ğ§¹û,¼³È¡Ğ§¹û,Á·Ï°Ğ§¹û¶¼Îª3%µÄÔÂÆÇcloth°ü,µÈ¼¶=¹ºÂòÕßµÈ¼¶/10*10
-ÑĞ¾¿ÔÂÆÇ°ü:yj-waist:20:package:/clone/goods/moon_waist:°üº¬10¸ö¸½Ä§ÁËÑĞ¾¿Ğ§¹û,¼³È¡Ğ§¹û,Á·Ï°Ğ§¹û¶¼Îª3%µÄÔÂÆÇwaist°ü,µÈ¼¶=¹ºÂòÕßµÈ¼¶/10*10
-ÑĞ¾¿ÔÂÆÇ°ü:yj-wrists:20:package:/clone/goods/moon_wrists:°üº¬10¸ö¸½Ä§ÁËÑĞ¾¿Ğ§¹û,¼³È¡Ğ§¹û,Á·Ï°Ğ§¹û¶¼Îª3%µÄÔÂÆÇwrists°ü,µÈ¼¶=¹ºÂòÕßµÈ¼¶/10*10
-»ÆÁºÕí:hlzhen:10:object:/d/reborn/obj/zhen:×ªÊÀÓÃÓÚ»Ö¸´Ç°ÊÀ¼ÇÒäµÄÎïÆ·
-Ïûìåµ¤:xiaolidan:5:pill:/clone/goods/xiaolidan:ÓÃÓÚÏû³ıìåÆøµÄµ¤Ò©
-Ë«±¶½±Àø3Ğ¡Ê±:srv01:1:srv:/clone/goods/service:Ôö¼Ó3Ğ¡Ê±µÄË«±¶½±ÀøÊ±¼ä
-Ë«±¶½±Àø1ÖÜÊ±:srv02:50:srv:/clone/goods/service:Ôö¼Ó1ÖÜÊ±µÄË«±¶½±ÀøÊ±¼ä
-Õ½³¡´«ËÍ¾íÖá:arena:1:object:/clone/goods/arena-scroll:°üº¬5¸ö¾íÖá£¬¿É½«×Ô¼ºÖØĞÂ´«ËÍµ½Õ½³¡ÖĞ
-Çå³ıËÀÍö¼ÇÂ¼:cleardie:1:other:/clone/goods/cleardie:Çå³ı½ÇÉ«µÄËÀÍö¼ÇÂ¼
-¹î±çÆæÑ§:sophistry:100:special2:/kungfu/special/sophistry:×ªÊÀ¼¼ÄÜ,×î¶àÏŞ¹ºËÄ¸ö
-¶İÓ°ÇÜ×Ù:capture:100:special2:/kungfu/special/capture:×ªÊÀ¼¼ÄÜ,×î¶àÏŞ¹ºËÄ¸ö
-´óÁ¦½ğ¸Õ:kingkong:100:special2:/kungfu/special/kingkong:×ªÊÀ¼¼ÄÜ,×î¶àÏŞ¹ºËÄ¸ö
-²»ËÀ½ğÉí:immortal:100:special2:/kungfu/special/immortal:×ªÊÀ¼¼ÄÜ,×î¶àÏŞ¹ºËÄ¸ö
-ÎäĞÇ×ªÊÀ:musha:100:special2:/kungfu/special/musha:×ªÊÀ¼¼ÄÜ,×î¶àÏŞ¹ºËÄ¸ö
-ÆÆÔª´ó·¨:recover:100:special2:/kungfu/special/recover:×ªÊÀ¼¼ÄÜ,×î¶àÏŞ¹ºËÄ¸ö
-ÆÆÍıÉñÍ«:astral:100:special2:/kungfu/special/astral:×ªÊÀ¼¼ÄÜ,×î¶àÏŞ¹ºËÄ¸ö
-¾ÅÁúÉñ»ğÂ¯:jiulonglu:200:object:/clone/goods/jiulonglu:Á¶Ò©Ê¦ÓÃÀ´Á¶ÖÆµ¤Ò©µÄ¶¥¼¶ÉñÆ÷
-±Ù¹È·û:bigufu:50:object:/clone/goods/bigu-fu:´øÔÚÉíÉÏ¿ÉÒÔÍ£Ö¹ÈÕ³£ÏûºÄÊ³ÎïÒûË®,·ÇÏûºÄÆ·
-²áÂíÊ¯:cemashi:20:object:/clone/goods/cemashi:¿ÉÊ¹ÄãÔö¼ÓÒ»ÌõÆïÂí¼ÇÂ¼µã
-ÍõÕßÖ®ĞÄ:wangzhe:50:object:/clone/goods/wangzhe-zhixin:ÓÃÀ´ÂÌ»¯Ì××°µÄ±ØĞèÎïÆ·
-ÑªÖ®½û¼É:blood:50:object:/clone/goods/blood-taboo:ÓÃÀ´½â³ıÄãÓëÄ§»ÃÊŞÖ®¼äÇ©¶©µÄÑªÖ®ÃËÔ¼
-·Ö½â¾íÖá:resolve:1:object:/clone/goods/resolve-scroll:ÓÃÀ´·Ö½â¶¯Ì¬×°±¸ÊôĞÔ³ÉÔªËØ·ÛÄ©
-¶ÍÔìÊ¯:forging:1:object:/clone/goods/forging-stone:Ò»¿éÓµÓĞÉñÃØÄ§Á¦µÄ¶ÍÔìÊ¯£¬ºÍ×°±¸Ò»Æğ¶ÍÔì¿ÉÉı¼¶×°±¸¡£
-ÎäÆ÷Ö®»ê:weapon-soul:20:object:/clone/enchase/weapon_soul6:Ò»¸öÍêÃÀµÄÎäÆ÷Ö®»ê£¬¿ÉÓÃÀ´¸ÄÔì±øÆ÷¡£
-Í·¿øÖ®»ê:head-soul:20:object:/clone/enchase/head_soul6:Ò»¸öÍêÃÀµÄÍ·¿øÖ®»ê£¬¿ÉÓÃÀ´¸ÄÔìÍ·¿ø¡£
-Õ½¼×Ö®»ê:armor-soul:20:object:/clone/enchase/armor_soul6:Ò»¸öÍêÃÀµÄÕ½¼×Ö®»ê£¬¿ÉÓÃÀ´¸ÄÔìÕ½¼×¡£
-Õ½ÒÂÖ®»ê:cloth-soul:20:object:/clone/enchase/cloth_soul6:Ò»¸öÍêÃÀµÄÕ½ÒÂÖ®»ê£¬¿ÉÓÃÀ´¸ÄÔìÕ½ÒÂ¡£
-Åû·çÖ®»ê:surcoat-soul:20:object:/clone/enchase/surcoat_soul6:Ò»¸öÍêÃÀµÄÅû·çÖ®»ê£¬¿ÉÓÃÀ´¸ÄÔìÅû·ç¡£
-»¤ÍóÖ®»ê:wrists-soul:20:object:/clone/enchase/wrists_soul6:Ò»¸öÍêÃÀµÄ»¤ÍóÖ®»ê£¬¿ÉÓÃÀ´¸ÄÔì»¤Íó¡£
-Ñü´øÖ®»ê:waist-soul:20:object:/clone/enchase/waist_soul6:Ò»¸öÍêÃÀµÄÑü´øÖ®»ê£¬¿ÉÓÃÀ´¸ÄÔìÑü´ø¡£
-Õ½Ñ¥Ö®»ê:boots-soul:20:object:/clone/enchase/boots_soul6:Ò»¸öÍêÃÀµÄÕ½Ñ¥Ö®»ê£¬¿ÉÓÃÀ´¸ÄÔìÕ½Ñ¥¡£
+å¤©å¸«è­·èº«ç¬¦:tianshi:3:object:/clone/goods/tianshi-charm:å¸¶åœ¨èº«ä¸Šå¯ä»¥è®“æ­»äº¡ç„¡æå¤±ï¼Œç´…åç‹€æ…‹é™¤å¤–ï¼Œæ¶ˆè€—å“
+é­”æ³•é¢å…·:mask:30:object:/clone/goods/mask:æˆ´ä¸Šå®ƒåˆ¥äººç„¡æ³•å°ä½ ä¸‹ä»»ä½•æŒ‡ä»¤ï¼Œèµ·åˆ°ä¿è­·è‡ªå·±çš„ä½œç”¨
+å¯°å®‡å¤©æ™¶:tianjing:60:object:/clone/goods/tianjing:æ‰“é€ è£å‚™ææ–™ï¼Œä¸”æé«˜æ¥µå“å¹¾ç‡
+ç„¡åä¹‹ç‰©:noname:98:object:/clone/goods/noname:æœ€å¼·çš„æ‰“é€ è£å‚™ææ–™ï¼Œä¸”æé«˜æ¥µå“å¹¾ç‡å¤§
+ç´«é‡‘å‹›ç« ç®±å­:xunzhang:30:object:/clone/goods/xunzhang_xiang:å¯ä»¥éš¨æ©Ÿé–‹å‡ºç´«é‡‘å­¸ç¿’å‹›ç« ã€ç´«é‡‘æ±²å–å‹›ç« ã€ç´«é‡‘ç·´ç¿’å‹›ç« ã€ç´«é‡‘ç ”ç©¶å‹›ç« ä»¥åŠé‘½çŸ³ç ”ç©¶å‹›ç« ä¸­ä¸€å€‹
+ç´«é‡‘è®€æ›¸å‹›ç« :study:20:object:/clone/goods/study-emblem:æå‡æ¯æ¬¡è®€æ›¸æ¬¡æ•¸300
+ç´«é‡‘å­¸ç¿’å‹›ç« :learn:40:object:/clone/goods/learn-emblem:æå‡æ¯æ¬¡å­¸ç¿’æ¬¡æ•¸300
+ç´«é‡‘æ±²å–å‹›ç« :derive:50:object:/clone/goods/derive-emblem:æå‡æ¯æ¬¡æ±²å–ä¸€å€é€Ÿåº¦
+ç´«é‡‘ç·´ç¿’å‹›ç« :practice:50:object:/clone/goods/practice-emblem:æå‡æ¯æ¬¡ç·´ç¿’æ¬¡æ•¸300
+ç´«é‡‘ç ”ç©¶å‹›ç« :research:60:object:/clone/goods/research-emblem:æå‡æ¯æ¬¡ç ”ç©¶æ¬¡æ•¸300
+é‘½çŸ³ç ”ç©¶å‹›ç« :research2:98:object:/clone/goods/research-emblem2:æå‡æ¯æ¬¡ç ”ç©¶æ¬¡æ•¸500
+ä¸‹ç·šä¿ç•™ç‰©å“:quitsave:10:srv:/clone/goods/service:ä¸‰å€‹æœˆå…§å°æ‰€æœ‰ç‰©å“éƒ½å…è¨±ä¸‹ç·šä¿ç•™(åŒ…æ‹¬åŒ…è£¹è£¡ç‰©å“)
+é›¢ç·šåŸåœ°ç™»é™¸:startroom:10:srv:/clone/goods/service:åŠå¹´å…§å¾é›¢ç·šåŸåœ°ç™»é™¸ï¼Œå‰¯æœ¬è¿·å®®å€åŸŸé™¤å¤–
+ä¹é ­è›‡é ˜åœ°æ¬Š:jiutoushe:140:srv:/clone/goods/service:è³¼è²·ä¸€å‘¨æ™‚é–“å¯è‡ªç”±é€²å…¥ç¥é¾å³¶å—éƒ¨ä¹é ­è›‡é ˜åœ°
+é›»æ“ŠæˆåŠŸ:lighting:20:story:con:åŠ å…ˆå¤©æ ¹éª¨çš„æ•…äº‹,åªå¯è³¼è²·ä¸€æ¬¡
+é³³èˆæˆåŠŸ:feng:20:story:dex:åŠ å…ˆå¤©èº«æ³•çš„æ•…äº‹,åªå¯è³¼è²·ä¸€æ¬¡
+æ—¥ç†¾æˆåŠŸ:sun:20:story:str:åŠ å…ˆå¤©è‡‚åŠ›çš„æ•…äº‹,åªå¯è³¼è²·ä¸€æ¬¡
+è–æ²æˆåŠŸ:water:20:story:int:åŠ å…ˆå¤©æ‚Ÿæ€§çš„æ•…äº‹,åªå¯è³¼è²·ä¸€æ¬¡
+å¹¹å°‡è–ç¬¦:ganjiang:10:symbol:/adm/npc/obj/ganjiang-symbol:å¯å°‡è£å‚™åŠå‹›ç« è¨­ç½®ç‚ºå¯SUMMONå±¬æ€§
+å¦‚é¬¼ä¼¼é­…:agile:10:special:/kungfu/special/accuracy:å…ˆå¤©æŠ€èƒ½ï¼Œæœ€å¤šå¯æ“æœ‰å››å€‹
+æ®ºæ°£æ²–éœ„:hatred:10:special:/kungfu/special/hatred:å…ˆå¤©æŠ€èƒ½ï¼Œæœ€å¤šå¯æ“æœ‰å››å€‹
+ç„é»ƒèšç´:mystery:10:special:/kungfu/special/mystery:å…ˆå¤©æŠ€èƒ½ï¼Œæœ€å¤šå¯æ“æœ‰å››å€‹
+å¤©ç¥é™ä¸–:power:10:special:/kungfu/special/power:å…ˆå¤©æŠ€èƒ½ï¼Œæœ€å¤šå¯æ“æœ‰å››å€‹
+å°å‘¨å¤©é‹è½‰:self:10:special:/kungfu/special/self:å…ˆå¤©æŠ€èƒ½ï¼Œæœ€å¤šå¯æ“æœ‰å››å€‹
+é¬¼è©±é€£ç¯‡:trick:10:special:/kungfu/special/trick:å…ˆå¤©æŠ€èƒ½ï¼Œæœ€å¤šå¯æ“æœ‰å››å€‹
+å¤©é¡æ°¸é§:youth:10:special:/kungfu/special/youth:å…ˆå¤©æŠ€èƒ½ï¼Œæœ€å¤šå¯æ“æœ‰å››å€‹
+ç‹‚æš´ä¹‹åŠ›:might:10:special:/kungfu/special/might:å…ˆå¤©æŠ€èƒ½ï¼Œæœ€å¤šå¯æ“æœ‰å››å€‹
+å…«é¢ç²ç“:cunning:10:special:/kungfu/special/cunning:å…ˆå¤©æŠ€èƒ½ï¼Œæœ€å¤šå¯æ“æœ‰å››å€‹
+å¤©è³¦è°ç©:clever:10:special:/kungfu/special/clever:å…ˆå¤©æŠ€èƒ½ï¼Œæœ€å¤šå¯æ“æœ‰å››å€‹
+æ–°äººå¤§ç¦®åŒ…:newbie:30:package:/clone/goods/package:ç¦®åŒ…è£¡æœ‰ç„é»ƒã€ä¹è½‰ã€å¤©é¦™ä»¥åŠåŠ å±¬æ€§çš„ä¸¹è—¥å’Œ1è¬å…©é»ƒé‡‘ç­‰
+æ–‡æ›²æ˜Ÿç¦®åŒ…:wisdom:180:package:/clone/goods/package:ç¦®åŒ…è£¡æœ‰æ–‡æ›²æ˜Ÿ7ä»¶å¥—è£ï¼Œ+240%çš„å­¸ç¿’ã€ç ”ç©¶ç­‰æ•ˆæœï¼ŒåŒæ™‚åŠ 200å¾Œå¤©æ‚Ÿæ€§
+æœˆåº¦æœƒå“¡:monthcard:12:card:/clone/goods/card:æœƒå“¡æœˆå¡ï¼Œä¸å¯è½‰è®“çµ¦å…¶ä»–çš„è§’è‰²
+å­£åº¦æœƒå“¡:seasoncard:30:card:/clone/goods/card:æœƒå“¡å­£å¡ï¼Œä¸å¯è½‰è®“çµ¦å…¶ä»–çš„è§’è‰²
+å¹´åº¦æœƒå“¡:yearcard:100:card:/clone/goods/card:æœƒå“¡å¹´å¡ï¼Œä¸å¯è½‰è®“çµ¦å…¶ä»–çš„è§’è‰²
+çµ‚èº«æœƒå“¡:forevercard:280:card:/clone/goods/card:æœƒå“¡çµ‚èº«å¡ï¼Œä¸å¯è½‰è®“è®“çµ¦å…¶ä»–çš„è§’è‰²
+é‡‘ç£š:gold:1:gold:/clone/money/gold:éŠ€è¡Œå­˜æ¬¾å¢åŠ 10000å…©é»ƒé‡‘
+æ›´åå·è»¸:changeid:20:object:/adm/npc/obj/idname-scroll:å¯ä»¥ä½¿è‡ªé€ è£å‚™æ”¹è®Šä»£è™Ÿ(id)å’Œä¸­æ–‡å(name)çš„æ›´åå·è»¸
+ç¶å®šè–ç¬¦:bind:1:symbol:/clone/goods/bind-symbol:å¯å°‡è£å‚™åŠå‹›ç« ç­‰ç¶å®šä¸»äººï¼Œæ­»äº¡åŠä¸‹ç·šéƒ½ä¸æ‰ï¼Œä½†æ˜¯ä¹Ÿä¸èƒ½çµ¦ä»»ä½•äººäº†ï¼Œè½‰ä¸–æœƒä¸Ÿå¤±
+ä¸Šå¤ï¹’å¤ªè™›:taixu:10:enchase:/clone/goods/taixu:é‡‘å±¬æ€§çµ‚æ¥µ10LVé‘²åµŒææ–™
+ä¸Šå¤ï¹’è™é­„:hupo:10:enchase:/clone/goods/hupo:æœ¨å±¬æ€§çµ‚æ¥µ10LVé‘²åµŒææ–™
+ç„å†°ï¹’å¯’éµ:hantie:10:enchase:/clone/goods/hantie:æ°´å±¬æ€§çµ‚æ¥µ10LVé‘²åµŒææ–™
+åœ°å¿ƒï¹’å™¬é­‚:shihun:10:enchase:/clone/goods/shihun:ç«å±¬æ€§çµ‚æ¥µ10LVé‘²åµŒææ–™
+ä¹åœ°ï¹’ç„ç‰:xuanyu:10:enchase:/clone/goods/xuanyu:åœŸå±¬æ€§çµ‚æ¥µ10LVé‘²åµŒææ–™
+è©æå­:putizi:1:object:/clone/gift/puti-zi:å¯å¢åŠ æœ€å¤§å…§åŠ›100-129é»ï¼Œæ•¸é‡20å€‹
+ä¹è½‰é‡‘ä¸¹:jiuzhuan:1:object:/clone/gift/jiuzhuan:å¯å¢åŠ æ‰€æœ‰å…ˆå¤©å‰4é»ä¸¹ï¼Œæ•¸é‡10å€‹,
+ç‰æ¸…æ•£:yuqingsan:1:object:/clone/medicine/yuqing:å¯å¢åŠ æœ€å¤§ç²¾åŠ›10-11é»ï¼Œæ•¸é‡120åŒ…
+å¤©é¦™ç‰éœ²:tianxiang:1:object:/clone/gift/tianxiang:åƒè€ƒhelp itemï¼Œæ•¸é‡10å€‹
+ç„é»ƒç´«æ¸…ä¸¹:xuanhuang:1:object:/clone/gift/xuanhuang:åƒè€ƒhelp itemï¼Œæ•¸é‡5å€‹
+å¬ç¥é¦™:xiang:10:object:/d/reborn/obj/xiang:è½‰ä¸–æ™‚å¬å–šäº”å²³åºœå›ç”¨çš„
+æ—¥é­‚:rihun:1:object:/clone/goods/sun:ç”¨ä¾†é™„é­”å±¬æ€§é‘²åµŒè‡ªé€ å…µå™¨é¡å’Œç©ºæ‰‹å…µå™¨é¡çš„å¯¶çŸ³
+æœˆé­„:yuepo:1:object:/clone/goods/moon:ç”¨ä¾†é™„é­”å±¬æ€§é‘²åµŒè‡ªé€ é˜²å…·é¡çš„å¯¶çŸ³
+é™„é­”å·è»¸:enchant:1:object:/clone/goods/enchant-scroll:ç”¨ä¾†é™„é­”æ™‚å€™é˜²æ­¢æ™®é€šè£å‚™çš„ç ´è£‚ï¼Œæ¶ˆè€—å“
+å¤ªçš‡é»ƒæ›¾ç¬¦:rune01:5:symbol:/clone/tessera/rune01:å¯é‘²åµŒåœ¨è£å‚™ä¸Š,è©³ç´°åƒè€ƒhelp rune
+å¤ªæ˜ç‰å®Œç¬¦:rune02:5:symbol:/clone/tessera/rune02:å¯é‘²åµŒåœ¨è£å‚™ä¸Š,è©³ç´°åƒè€ƒhelp rune
+æ¸…æ˜ä½•ç«¥ç¬¦:rune03:5:symbol:/clone/tessera/rune03:å¯é‘²åµŒåœ¨è£å‚™ä¸Š,è©³ç´°åƒè€ƒhelp rune
+ç„èƒå¹³è‚²ç¬¦:rune04:5:symbol:/clone/tessera/rune04:å¯é‘²åµŒåœ¨è£å‚™ä¸Š,è©³ç´°åƒè€ƒhelp rune
+å…ƒæ˜æ–‡èˆ‰ç¬¦:rune05:5:symbol:/clone/tessera/rune05:å¯é‘²åµŒåœ¨è£å‚™ä¸Š,è©³ç´°åƒè€ƒhelp rune
+ä¸ƒæ›œæ‘©å¤·ç¬¦:rune06:10:symbol:/clone/tessera/rune06:å¯é‘²åµŒåœ¨è£å‚™ä¸Š,è©³ç´°åƒè€ƒhelp rune
+è™›ç„¡è¶Šè¡¡ç¬¦:rune07:10:symbol:/clone/tessera/rune07:å¯é‘²åµŒåœ¨è£å‚™ä¸Š,è©³ç´°åƒè€ƒhelp rune
+å¤ªæ¥µè’™ç¿³ç¬¦:rune08:10:symbol:/clone/tessera/rune08:å¯é‘²åµŒåœ¨è£å‚™ä¸Š,è©³ç´°åƒè€ƒhelp rune
+èµ¤æ˜å’Œé™½ç¬¦:rune09:10:symbol:/clone/tessera/rune09:å¯é‘²åµŒåœ¨è£å‚™ä¸Š,è©³ç´°åƒè€ƒhelp rune
+ç„æ˜æ­è¯ç¬¦:rune10:10:symbol:/clone/tessera/rune10:å¯é‘²åµŒåœ¨è£å‚™ä¸Š,è©³ç´°åƒè€ƒhelp rune
+è€€æ˜å®—é£„ç¬¦:rune11:10:symbol:/clone/tessera/rune11:å¯é‘²åµŒåœ¨è£å‚™ä¸Š,è©³ç´°åƒè€ƒhelp rune
+ç«ºè½çš‡ç¬³ç¬¦:rune12:10:symbol:/clone/tessera/rune12:å¯é‘²åµŒåœ¨è£å‚™ä¸Š,è©³ç´°åƒè€ƒhelp rune
+è™›æ˜å ‚æ›œç¬¦:rune13:10:symbol:/clone/tessera/rune13:å¯é‘²åµŒåœ¨è£å‚™ä¸Š,è©³ç´°åƒè€ƒhelp rune
+è§€æ˜ç«¯é–ç¬¦:rune14:10:symbol:/clone/tessera/rune14:å¯é‘²åµŒåœ¨è£å‚™ä¸Š,è©³ç´°åƒè€ƒhelp rune
+ç„æ˜æ­æ…¶ç¬¦:rune15:10:symbol:/clone/tessera/rune15:å¯é‘²åµŒåœ¨è£å‚™ä¸Š,è©³ç´°åƒè€ƒhelp rune
+å¤ªç…¥æ¥µç‘¤ç¬¦:rune16:10:symbol:/clone/tessera/rune16:å¯é‘²åµŒåœ¨è£å‚™ä¸Š,è©³ç´°åƒè€ƒhelp rune
+å…ƒè¼‰å­”å‡ç¬¦:rune17:10:symbol:/clone/tessera/rune17:å¯é‘²åµŒåœ¨è£å‚™ä¸Š,è©³ç´°åƒè€ƒhelp rune
+å¤ªå®‰çš‡å´–ç¬¦:rune18:10:symbol:/clone/tessera/rune18:å¯é‘²åµŒåœ¨è£å‚™ä¸Š,è©³ç´°åƒè€ƒhelp rune
+é¡¯å®šæ¥µé¢¨ç¬¦:rune19:10:symbol:/clone/tessera/rune19:å¯é‘²åµŒåœ¨è£å‚™ä¸Š,è©³ç´°åƒè€ƒhelp rune
+å§‹é»ƒå­èŠ’ç¬¦:rune20:20:symbol:/clone/tessera/rune20:å¯é‘²åµŒåœ¨è£å‚™ä¸Š,è©³ç´°åƒè€ƒhelp rune
+å¤ªé»ƒç¿é‡ç¬¦:rune21:20:symbol:/clone/tessera/rune21:å¯é‘²åµŒåœ¨è£å‚™ä¸Š,è©³ç´°åƒè€ƒhelp rune
+ç„¡æ€æ±Ÿç”±ç¬¦:rune22:20:symbol:/clone/tessera/rune22:å¯é‘²åµŒåœ¨è£å‚™ä¸Š,è©³ç´°åƒè€ƒhelp rune
+ä¸Šæ²é˜®æ¨‚ç¬¦:rune23:20:symbol:/clone/tessera/rune23:å¯é‘²åµŒåœ¨è£å‚™ä¸Š,è©³ç´°åƒè€ƒhelp rune
+ç„¡æ¥µæ›‡èª“ç¬¦:rune24:20:symbol:/clone/tessera/rune24:å¯é‘²åµŒåœ¨è£å‚™ä¸Š,è©³ç´°åƒè€ƒhelp rune
+çš“åº­éœ„åº¦ç¬¦:rune25:20:symbol:/clone/tessera/rune25:å¯é‘²åµŒåœ¨è£å‚™ä¸Š,è©³ç´°åƒè€ƒhelp rune
+æ·µé€šå…ƒæ´ç¬¦:rune26:20:symbol:/clone/tessera/rune26:å¯é‘²åµŒåœ¨è£å‚™ä¸Š,è©³ç´°åƒè€ƒhelp rune
+ç¿°å¯µå¦™æˆç¬¦:rune27:20:symbol:/clone/tessera/rune27:å¯é‘²åµŒåœ¨è£å‚™ä¸Š,è©³ç´°åƒè€ƒhelp rune
+ç§€æ¨‚ç¦ä¸Šç¬¦:rune28:20:symbol:/clone/tessera/rune28:å¯é‘²åµŒåœ¨è£å‚™ä¸Š,è©³ç´°åƒè€ƒhelp rune
+ç„¡ä¸Šå¸¸èç¬¦:rune29:20:symbol:/clone/tessera/rune29:å¯é‘²åµŒåœ¨è£å‚™ä¸Š,è©³ç´°åƒè€ƒhelp rune
+ç‰éš†é¨°å‹ç¬¦:rune30:25:symbol:/clone/tessera/rune30:å¯é‘²åµŒåœ¨è£å‚™ä¸Š,è©³ç´°åƒè€ƒhelp rune
+é¾è®Šæ¢µåº¦ç¬¦:rune31:25:symbol:/clone/tessera/rune31:å¯é‘²åµŒåœ¨è£å‚™ä¸Š,è©³ç´°åƒè€ƒhelp rune
+å¹³è‚²è³ˆå¥•ç¬¦:rune32:25:symbol:/clone/tessera/rune32:å¯é‘²åµŒåœ¨è£å‚™ä¸Š,è©³ç´°åƒè€ƒhelp rune
+å¤ªæ¸…å¤§èµ¤ç¬¦:rune33:25:symbol:/clone/tessera/rune33:å¯é‘²åµŒåœ¨è£å‚™ä¸Š,è©³ç´°åƒè€ƒhelp rune
+ä¸Šæ¸…ç¦¹ä½™ç¬¦:rune34:30:symbol:/clone/tessera/rune34:å¯é‘²åµŒåœ¨è£å‚™ä¸Š,è©³ç´°åƒè€ƒhelp rune
+ç‰æ¸…æ¸…å¾®ç¬¦:rune35:30:symbol:/clone/tessera/rune35:å¯é‘²åµŒåœ¨è£å‚™ä¸Š,è©³ç´°åƒè€ƒhelp rune
+ç„¡æ¥µå¤§ç¾…ç¬¦:rune36:30:symbol:/clone/tessera/rune36:å¯é‘²åµŒåœ¨è£å‚™ä¸Š,è©³ç´°åƒè€ƒhelp rune
+ç ”ç©¶ç¬¦æ–‡åŒ…:yj-rune:140:package:/clone/goods/package:åŒ…å«7å€‹rune31å’Œ7å€‹rune33
+ç¬¦æ–‡ä¼Šå¸ç‰¹åŒ…:rune24-eq:70:package:/clone/goods/package:åŒ…å«7å€‹rune24
+ç¬¦æ–‡è²åŒ…:rune30-eq:100:package:/clone/goods/package:åŒ…å«10å€‹rune30
+ç¬¦æ–‡å–¬åŒ…:rune31-eq:100:package:/clone/goods/package:åŒ…å«10å€‹rune31
+ç¬¦æ–‡æŸ¥å§†åŒ…:rune32-eq:100:package:/clone/goods/package:åŒ…å«10å€‹rune32
+ç¬¦æ–‡è–©å¾·åŒ…:rune33-eq:100:package:/clone/goods/package:åŒ…å«10å€‹rune33
+ç„¡åå°éŠ…äºº:tongrenx:3:object:/clone/tongren/tongren1:å¯é‘’å®šç‚ºå°å‘¨å¤©ç©´ä½éŠ…äºº
+ç„¡åå¤§éŠ…äºº:tongrend:3:object:/clone/tongren/tongren2:å¯é‘’å®šç‚ºå¤§å‘¨å¤©ç©´ä½éŠ…äºº
+æŒ‡å®šæ²–ç©´éŠ…äºº:tongren:4:other:/clone/tongren/tongren:å¯è³¼è²·æŒ‡å®šçš„æ²–ç©´éŠ…äºº
+ç ”ç©¶æ—¥é­‚åŒ…:yj-sword:20:package:/clone/goods/sun_sword:åŒ…å«10å€‹é™„é­”äº†ç ”ç©¶æ•ˆæœ,æ±²å–æ•ˆæœ,ç·´ç¿’æ•ˆæœéƒ½ç‚º3%çš„æ—¥é­‚swordåŒ…,ç­‰ç´š=è³¼è²·è€…ç­‰ç´š/10*10
+ç ”ç©¶æ—¥é­‚åŒ…:yj-blade:20:package:/clone/goods/sun_blade:åŒ…å«10å€‹é™„é­”äº†ç ”ç©¶æ•ˆæœ,æ±²å–æ•ˆæœ,ç·´ç¿’æ•ˆæœéƒ½ç‚º3%çš„æ—¥é­‚bladeåŒ…,ç­‰ç´š=è³¼è²·è€…ç­‰ç´š/10*10
+ç ”ç©¶æ—¥é­‚åŒ…:yj-hammer:20:package:/clone/goods/sun_hammer:åŒ…å«10å€‹é™„é­”äº†ç ”ç©¶æ•ˆæœ,æ±²å–æ•ˆæœ,ç·´ç¿’æ•ˆæœéƒ½ç‚º3%çš„æ—¥é­‚hammeråŒ…,ç­‰ç´š=è³¼è²·è€…ç­‰ç´š/10*10
+ç ”ç©¶æ—¥é­‚åŒ…:yj-staff:20:package:/clone/goods/sun_staff:åŒ…å«10å€‹é™„é­”äº†ç ”ç©¶æ•ˆæœ,æ±²å–æ•ˆæœ,ç·´ç¿’æ•ˆæœéƒ½ç‚º3%çš„æ—¥é­‚staffåŒ…,ç­‰ç´š=è³¼è²·è€…ç­‰ç´š/10*10
+ç ”ç©¶æ—¥é­‚åŒ…:yj-club:20:package:/clone/goods/sun_club:åŒ…å«10å€‹é™„é­”äº†ç ”ç©¶æ•ˆæœ,æ±²å–æ•ˆæœ,ç·´ç¿’æ•ˆæœéƒ½ç‚º3%çš„æ—¥é­‚clubåŒ…,ç­‰ç´š=è³¼è²·è€…ç­‰ç´š/10*10
+ç ”ç©¶æ—¥é­‚åŒ…:yj-whip:20:package:/clone/goods/sun_whip:åŒ…å«10å€‹é™„é­”äº†ç ”ç©¶æ•ˆæœ,æ±²å–æ•ˆæœ,ç·´ç¿’æ•ˆæœéƒ½ç‚º3%çš„æ—¥é­‚whipåŒ…,ç­‰ç´š=è³¼è²·è€…ç­‰ç´š/10*10
+ç ”ç©¶æ—¥é­‚åŒ…:yj-finger:20:package:/clone/goods/sun_finger:åŒ…å«10å€‹é™„é­”äº†ç ”ç©¶æ•ˆæœ,æ±²å–æ•ˆæœ,ç·´ç¿’æ•ˆæœéƒ½ç‚º3%çš„æ—¥é­‚fingeråŒ…,ç­‰ç´š=è³¼è²·è€…ç­‰ç´š/10*10
+ç ”ç©¶æ—¥é­‚åŒ…:yj-hands:20:package:/clone/goods/sun_hands:åŒ…å«10å€‹é™„é­”äº†ç ”ç©¶æ•ˆæœ,æ±²å–æ•ˆæœ,ç·´ç¿’æ•ˆæœéƒ½ç‚º3%çš„æ—¥é­‚handsåŒ…,ç­‰ç´š=è³¼è²·è€…ç­‰ç´š/10*10
+ç ”ç©¶æœˆé­„åŒ…:yj-armor:20:package:/clone/goods/moon_armor:åŒ…å«10å€‹é™„é­”äº†ç ”ç©¶æ•ˆæœ,æ±²å–æ•ˆæœ,ç·´ç¿’æ•ˆæœéƒ½ç‚º3%çš„æœˆé­„armoråŒ…,ç­‰ç´š=è³¼è²·è€…ç­‰ç´š/10*10
+ç ”ç©¶æœˆé­„åŒ…:yj-boots:20:package:/clone/goods/moon_boots:åŒ…å«10å€‹é™„é­”äº†ç ”ç©¶æ•ˆæœ,æ±²å–æ•ˆæœ,ç·´ç¿’æ•ˆæœéƒ½ç‚º3%çš„æœˆé­„bootsåŒ…,ç­‰ç´š=è³¼è²·è€…ç­‰ç´š/10*10
+ç ”ç©¶æœˆé­„åŒ…:yj-head:20:package:/clone/goods/moon_head:åŒ…å«10å€‹é™„é­”äº†ç ”ç©¶æ•ˆæœ,æ±²å–æ•ˆæœ,ç·´ç¿’æ•ˆæœéƒ½ç‚º3%çš„æœˆé­„headåŒ…,ç­‰ç´š=è³¼è²·è€…ç­‰ç´š/10*10
+ç ”ç©¶æœˆé­„åŒ…:yj-cloth:20:package:/clone/goods/moon_cloth:åŒ…å«10å€‹é™„é­”äº†ç ”ç©¶æ•ˆæœ,æ±²å–æ•ˆæœ,ç·´ç¿’æ•ˆæœéƒ½ç‚º3%çš„æœˆé­„clothåŒ…,ç­‰ç´š=è³¼è²·è€…ç­‰ç´š/10*10
+ç ”ç©¶æœˆé­„åŒ…:yj-waist:20:package:/clone/goods/moon_waist:åŒ…å«10å€‹é™„é­”äº†ç ”ç©¶æ•ˆæœ,æ±²å–æ•ˆæœ,ç·´ç¿’æ•ˆæœéƒ½ç‚º3%çš„æœˆé­„waiståŒ…,ç­‰ç´š=è³¼è²·è€…ç­‰ç´š/10*10
+ç ”ç©¶æœˆé­„åŒ…:yj-wrists:20:package:/clone/goods/moon_wrists:åŒ…å«10å€‹é™„é­”äº†ç ”ç©¶æ•ˆæœ,æ±²å–æ•ˆæœ,ç·´ç¿’æ•ˆæœéƒ½ç‚º3%çš„æœˆé­„wristsåŒ…,ç­‰ç´š=è³¼è²·è€…ç­‰ç´š/10*10
+é»ƒæ¨‘æ•:hlzhen:10:object:/d/reborn/obj/zhen:è½‰ä¸–ç”¨äºæ¢å¾©å‰ä¸–è¨˜æ†¶çš„ç‰©å“
+æ¶ˆæˆ¾ä¸¹:xiaolidan:5:pill:/clone/goods/xiaolidan:ç”¨äºæ¶ˆé™¤æˆ¾æ°£çš„ä¸¹è—¥
+é›™å€çå‹µ3å°æ™‚:srv01:1:srv:/clone/goods/service:å¢åŠ 3å°æ™‚çš„é›™å€çå‹µæ™‚é–“
+é›™å€çå‹µ1å‘¨æ™‚:srv02:50:srv:/clone/goods/service:å¢åŠ 1å‘¨æ™‚çš„é›™å€çå‹µæ™‚é–“
+æˆ°å ´å‚³é€å·è»¸:arena:1:object:/clone/goods/arena-scroll:åŒ…å«5å€‹å·è»¸ï¼Œå¯å°‡è‡ªå·±é‡æ–°å‚³é€åˆ°æˆ°å ´ä¸­
+æ¸…é™¤æ­»äº¡è¨˜éŒ„:cleardie:1:other:/clone/goods/cleardie:æ¸…é™¤è§’è‰²çš„æ­»äº¡è¨˜éŒ„
+è©­è¾¯å¥‡å­¸:sophistry:100:special2:/kungfu/special/sophistry:è½‰ä¸–æŠ€èƒ½,æœ€å¤šé™è³¼å››å€‹
+éå½±æ“’è¹¤:capture:100:special2:/kungfu/special/capture:è½‰ä¸–æŠ€èƒ½,æœ€å¤šé™è³¼å››å€‹
+å¤§åŠ›é‡‘å‰›:kingkong:100:special2:/kungfu/special/kingkong:è½‰ä¸–æŠ€èƒ½,æœ€å¤šé™è³¼å››å€‹
+ä¸æ­»é‡‘èº«:immortal:100:special2:/kungfu/special/immortal:è½‰ä¸–æŠ€èƒ½,æœ€å¤šé™è³¼å››å€‹
+æ­¦æ˜Ÿè½‰ä¸–:musha:100:special2:/kungfu/special/musha:è½‰ä¸–æŠ€èƒ½,æœ€å¤šé™è³¼å››å€‹
+ç ´å…ƒå¤§æ³•:recover:100:special2:/kungfu/special/recover:è½‰ä¸–æŠ€èƒ½,æœ€å¤šé™è³¼å››å€‹
+ç ´å¦„ç¥ç³:astral:100:special2:/kungfu/special/astral:è½‰ä¸–æŠ€èƒ½,æœ€å¤šé™è³¼å››å€‹
+ä¹é¾ç¥ç«çˆ:jiulonglu:200:object:/clone/goods/jiulonglu:ç…‰è—¥å¸«ç”¨ä¾†ç…‰åˆ¶ä¸¹è—¥çš„é ‚ç´šç¥å™¨
+è¾Ÿè°·ç¬¦:bigufu:50:object:/clone/goods/bigu-fu:å¸¶åœ¨èº«ä¸Šå¯ä»¥åœæ­¢æ—¥å¸¸æ¶ˆè€—é£Ÿç‰©é£²æ°´,éæ¶ˆè€—å“
+å†Šé¦¬çŸ³:cemashi:20:object:/clone/goods/cemashi:å¯ä½¿ä½ å¢åŠ ä¸€æ¢é¨é¦¬è¨˜éŒ„é»
+ç‹è€…ä¹‹å¿ƒ:wangzhe:50:object:/clone/goods/wangzhe-zhixin:ç”¨ä¾†ç¶ åŒ–å¥—è£çš„å¿…éœ€ç‰©å“
+è¡€ä¹‹ç¦å¿Œ:blood:50:object:/clone/goods/blood-taboo:ç”¨ä¾†è§£é™¤ä½ èˆ‡é­”å¹»ç¸ä¹‹é–“ç°½è¨‚çš„è¡€ä¹‹ç›Ÿç´„
+åˆ†è§£å·è»¸:resolve:1:object:/clone/goods/resolve-scroll:ç”¨ä¾†åˆ†è§£å‹•æ…‹è£å‚™å±¬æ€§æˆå…ƒç´ ç²‰æœ«
+é›é€ çŸ³:forging:1:object:/clone/goods/forging-stone:ä¸€å¡Šæ“æœ‰ç¥ç§˜é­”åŠ›çš„é›é€ çŸ³ï¼Œå’Œè£å‚™ä¸€èµ·é›é€ å¯å‡ç´šè£å‚™ã€‚
+æ­¦å™¨ä¹‹é­‚:weapon-soul:20:object:/clone/enchase/weapon_soul6:ä¸€å€‹å®Œç¾çš„æ­¦å™¨ä¹‹é­‚ï¼Œå¯ç”¨ä¾†æ”¹é€ å…µå™¨ã€‚
+é ­ç›”ä¹‹é­‚:head-soul:20:object:/clone/enchase/head_soul6:ä¸€å€‹å®Œç¾çš„é ­ç›”ä¹‹é­‚ï¼Œå¯ç”¨ä¾†æ”¹é€ é ­ç›”ã€‚
+æˆ°ç”²ä¹‹é­‚:armor-soul:20:object:/clone/enchase/armor_soul6:ä¸€å€‹å®Œç¾çš„æˆ°ç”²ä¹‹é­‚ï¼Œå¯ç”¨ä¾†æ”¹é€ æˆ°ç”²ã€‚
+æˆ°è¡£ä¹‹é­‚:cloth-soul:20:object:/clone/enchase/cloth_soul6:ä¸€å€‹å®Œç¾çš„æˆ°è¡£ä¹‹é­‚ï¼Œå¯ç”¨ä¾†æ”¹é€ æˆ°è¡£ã€‚
+æŠ«é¢¨ä¹‹é­‚:surcoat-soul:20:object:/clone/enchase/surcoat_soul6:ä¸€å€‹å®Œç¾çš„æŠ«é¢¨ä¹‹é­‚ï¼Œå¯ç”¨ä¾†æ”¹é€ æŠ«é¢¨ã€‚
+è­·è…•ä¹‹é­‚:wrists-soul:20:object:/clone/enchase/wrists_soul6:ä¸€å€‹å®Œç¾çš„è­·è…•ä¹‹é­‚ï¼Œå¯ç”¨ä¾†æ”¹é€ è­·è…•ã€‚
+è…°å¸¶ä¹‹é­‚:waist-soul:20:object:/clone/enchase/waist_soul6:ä¸€å€‹å®Œç¾çš„è…°å¸¶ä¹‹é­‚ï¼Œå¯ç”¨ä¾†æ”¹é€ è…°å¸¶ã€‚
+æˆ°é´ä¹‹é­‚:boots-soul:20:object:/clone/enchase/boots_soul6:ä¸€å€‹å®Œç¾çš„æˆ°é´ä¹‹é­‚ï¼Œå¯ç”¨ä¾†æ”¹é€ æˆ°é´ã€‚

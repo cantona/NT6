@@ -4,13 +4,13 @@
 inherit NPC;
 void create()
 {
-        set_name("Ò¹ÓÎÉñ", ({ "ye you" }) );
+        set_name("å¤œéŠç¥", ({ "ye you" }) );
         set("long",HIY @LONG
-               Òõ½çÖ®Éñ
+               é™°ç•Œä¹‹ç¥
 LONG NOR);
-        set("gender","ÄĞĞÔ");
+        set("gender","ç”·æ€§");
         set("str",1000);
-        set("title",HIY "Òõ½çÖ®Éñ" NOR);            
+        set("title",HIY "é™°ç•Œä¹‹ç¥" NOR);            
         set("attitude", "peaceful");
         set("age", 1000);
         set("combat_exp", 100000000);

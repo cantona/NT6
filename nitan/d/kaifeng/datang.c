@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "¿ª·â¸®´óÌÃ");
+        set("short", "é–‹å°åºœå¤§å ‚");
         set("long", @LONG
-Á½ÅÅµÄÑÃÒÛÕ¾Á¢Á½±ß£¬ÔÙÅÔ±ßÊÇÁúÍ·£¬»¢Í·£¬¹·Í·Èý°ÑÕ¡µ¶£¬°×
-ÁÁµÄ·æÈÐÁîÈËº®Ã«Ö±Êú¡£Ì¨×Àºó¸ß¹Ò¡ºÃ÷¾µ¸ßÐü¡»µÄØÒ¶î¡£ÉÏÁË´óÌÃ£¬
-ÎÞÊÂÒ²µ¨º®£¬¶«Ãæ³öÈ¥¾ÍÊÇ½ÖµÀ¡£
+å…©æŽ’çš„è¡™å½¹ç«™ç«‹å…©é‚Šï¼Œå†æ—é‚Šæ˜¯é¾é ­ï¼Œè™Žé ­ï¼Œç‹—é ­ä¸‰æŠŠé˜åˆ€ï¼Œç™½
+äº®çš„é‹’åˆƒä»¤äººå¯’æ¯›ç›´è±Žã€‚å°æ¡Œå¾Œé«˜æŽ›ã€Žæ˜Žé¡é«˜æ‡¸ã€çš„åŒ¾é¡ã€‚ä¸Šäº†å¤§å ‚ï¼Œ
+ç„¡äº‹ä¹Ÿè†½å¯’ï¼Œæ±é¢å‡ºåŽ»å°±æ˜¯è¡—é“ã€‚
 LONG );
         set("objects", ([
                 __DIR__"npc/baozheng" : 1,

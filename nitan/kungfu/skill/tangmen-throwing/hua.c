@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-string name() { return HIR "ÌÆ»¨" NOR; }
+string name() { return HIR "å”èŠ±" NOR; }
 
 #include "/kungfu/skill/eff_msg.h";
 
@@ -17,47 +17,47 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(name() + "Ö»ÄÜÔÚÕ½¶·ÖĞ¶Ô¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(name() + "åªèƒ½åœ¨æˆ°é¬¥ä¸­å°å°æ‰‹ä½¿ç”¨ã€‚\n");
 
            if( !objectp(weapon=query_temp("handing", me)) || 
   (query("id", weapon) != "tang hua" &&
            query("skill_type", weapon) != "throwing") )
-   return notify_fail("ÄãÏÖÔÚÊÖÖĞÃ»ÓĞÄÃ×Å°µÆ÷ÌÆ»¨£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+   return notify_fail("ä½ ç¾åœ¨æ‰‹ä¸­æ²’æœ‰æ‹¿è‘—æš—å™¨å”èŠ±ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if ((skill = me->query_skill("tangmen-throwing", 1)) < 180)
-                return notify_fail("ÄãµÄÌÆÃÅ°µÆ÷²»¹»æµÊì£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„å”é–€æš—å™¨ä¸å¤ å«»ç†Ÿï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
 /*
         if( query("tangmen/yanli", me)<80 )
-                return notify_fail("ÄãµÄÑÛÁ¦Ì«²îÁË£¬Ä¿±ê²»¾«È·£¬ÎŞ·¨Ê©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„çœ¼åŠ›å¤ªå·®äº†ï¼Œç›®æ¨™ä¸ç²¾ç¢ºï¼Œç„¡æ³•æ–½å±•" + name() + "ã€‚\n");
 */
 
         if ((int)me->query_skill("boyun-suowu", 1) < 180)
-                return notify_fail("ÄãµÄ²¦ÔÆËøÎí²»¹»æµÊì£¬ÎŞ·¨Ê©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„æ’¥é›²é–éœ§ä¸å¤ å«»ç†Ÿï¼Œç„¡æ³•æ–½å±•" + name() + "ã€‚\n");
 
         if ((int)me->query_skill("force") < 200)
-                return notify_fail("ÄãµÄÄÚ¹¦ĞŞÎª²»×ã£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸä¿®ç‚ºä¸è¶³ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if( query("max_neili", me)<1200 )
-                return notify_fail("ÄãµÄÄÚÁ¦ĞŞÎª²»×ã£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¿®ç‚ºä¸è¶³ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if( query("neili", me)<150 )
-                return notify_fail("ÄãÏÖÔÚÕæÆø²»×ã£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çœŸæ°£ä¸è¶³ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
         addn("neili", -100, me);
 
-        msg = HIR "\n$N" HIR "ÊÖÖĞÍ»È»¶àÁËÒ»Ö§»¨£¬ÃÀµÃÑıÑŞ£¬$n" HIR "¾õµÃÓĞµã³ÕÁË£¬\n$N" HIR "Ïò$n" HIR "Ò»Ğ¦£¬Ò»ÑïÊÖÏò$n"HIR "Å×È¥¡£\n" +
-              HIG "Ö»¼ûÄÇ»¨¿ªÁË£¬Îå°êÆëÊæ£¬ÖĞÑë»¨ĞÄÍÂÈï£¬É·ÊÇºÃ¿´¡£\n" NOR;
+        msg = HIR "\n$N" HIR "æ‰‹ä¸­çªç„¶å¤šäº†ä¸€æ”¯èŠ±ï¼Œç¾å¾—å¦–è‰·ï¼Œ$n" HIR "è¦ºå¾—æœ‰é»ç—´äº†ï¼Œ\n$N" HIR "å‘$n" HIR "ä¸€ç¬‘ï¼Œä¸€æšæ‰‹å‘$n"HIR "æ‹‹å»ã€‚\n" +
+              HIG "åªè¦‹é‚£èŠ±é–‹äº†ï¼Œäº”ç“£é½Šèˆ’ï¼Œä¸­å¤®èŠ±å¿ƒåè•Šï¼Œç…æ˜¯å¥½çœ‹ã€‚\n" NOR;
 
         ap = attack_power(me, "throwing") * 2;
         dp = defense_power(target, "parry") + defense_power(target, "dodge") +
              target->query_skill("dugu-jiujian", 1) * 10;
 
         message_combatd(msg, me, target);
-        tell_object(target, HIC "\nÄã¼±Ã¦Éì³öÊÖÈ¥½Ó£¬µ«Í»µØ£¬Äã·¢ÏÖÓĞÒì£¬ÄÇÊÇÒ»¶äÌú»¨£¬×İÉíÒ»Ô¾¡£\n" NOR);
+        tell_object(target, HIC "\nä½ æ€¥å¿™ä¼¸å‡ºæ‰‹å»æ¥ï¼Œä½†çªåœ°ï¼Œä½ ç™¼ç¾æœ‰ç•°ï¼Œé‚£æ˜¯ä¸€æœµéµèŠ±ï¼Œç¸±èº«ä¸€èºã€‚\n" NOR);
 //        if (ap * 2 / 3 + random(ap * 3 / 2) > dp)
         if (ap / 2 + random(ap) > dp)
         {
@@ -68,8 +68,8 @@ int perform(object me, object target)
                         weapon->add_amount(-1);
                         damage = damage_power(me, "throwing");
                         damage+= query("jiali", me);
-                        msg = HIR "½á¹û$p" HIR "Ò»Éù²Òº¿£¬Á¬ÖĞÁË$P" HIR "·¢³öµÄÒ»" +
-                                query("base_unit", weapon)+weapon->name()+HIR"¡£\n"NOR;
+                        msg = HIR "çµæœ$p" HIR "ä¸€è²æ…˜åšï¼Œé€£ä¸­äº†$P" HIR "ç™¼å‡ºçš„ä¸€" +
+                                query("base_unit", weapon)+weapon->name()+HIR"ã€‚\n"NOR;
 
                         COMBAT_D->clear_ahinfo();
                         weapon->hit_ob(me,target,query("jiali", me)+120);
@@ -88,9 +88,9 @@ int perform(object me, object target)
                         return 1;
                 }
 
-                msg = HIR"ÄÇ»¨Ô½¿ªÔ½ÑŞ£¬$n" HIR "²»Öª²»¾õÖĞÒÑ³ÕÃÔÁË£¬ÉíĞÎÒ»Âı,Î¢Ğ¦×Åµ¹ÏÂÁË£¬ÄÇ»¨Ò²Ğ»ÁË¡£\n" NOR;
-                tell_object(target, HIR "\nÄã¿´µ½ÄÇ»¨£¬¹ûÕæÊÇÒ»¶äÌú»¨¡£\nÄãÂıÂıµÄÉì³öÊÖÏëÕªÏÂËü£¬µ«"
-                                        "ÄÇ»¨ºÃÏó±äµÄÔ½À´Ô½¶àÁË£¬ÒÀÏ¡ÖĞÄã¼ÇµÃÄÇÉÏÃæÓĞÒ»¸öĞ¡Ğ¡µÄ¡°ÌÆ¡±×Ö¡£\n" NOR);
+                msg = HIR"é‚£èŠ±è¶Šé–‹è¶Šè‰·ï¼Œ$n" HIR "ä¸çŸ¥ä¸è¦ºä¸­å·²ç—´è¿·äº†ï¼Œèº«å½¢ä¸€æ…¢,å¾®ç¬‘è‘—å€’ä¸‹äº†ï¼Œé‚£èŠ±ä¹Ÿè¬äº†ã€‚\n" NOR;
+                tell_object(target, HIR "\nä½ çœ‹åˆ°é‚£èŠ±ï¼ŒæœçœŸæ˜¯ä¸€æœµéµèŠ±ã€‚\nä½ æ…¢æ…¢çš„ä¼¸å‡ºæ‰‹æƒ³æ‘˜ä¸‹å®ƒï¼Œä½†"
+                                        "é‚£èŠ±å¥½è±¡è®Šçš„è¶Šä¾†è¶Šå¤šäº†ï¼Œä¾ç¨€ä¸­ä½ è¨˜å¾—é‚£ä¸Šé¢æœ‰ä¸€å€‹å°å°çš„â€œå”â€å­—ã€‚\n" NOR);
                 weapon->hit_ob(me,target,query("jiali", me)+200);
                 weapon->move(target);
 
@@ -102,8 +102,8 @@ int perform(object me, object target)
         } else
         {
                 if( query("id", weapon) == "tang hua" )
-                        tell_object(target, HIR "¹ûÕæÊÇÌÆ»¨£¬ÌÆÃÅÖĞµÄÌÆ»¨¡£ÄãÔË×ãÈ«ÉíµÄÄÚÁ¦£¬ÉíĞÎÂÓµÄ¸ü¼±¡£\n" NOR);
-                msg = HIR "$n " HIR "ÉíĞÎÆ®ºö£¬ÄÇ»¨»®¿Õ¶ø¹ı¡£Ö»Ìıµ±µÄÒ»ÉùÇáÏì£¬ÄÇ»¨Ğ»ÁË£¬ÇáÇáµØÔÒÔÚµØÃæÉÏ¡£\n" NOR;
+                        tell_object(target, HIR "æœçœŸæ˜¯å”èŠ±ï¼Œå”é–€ä¸­çš„å”èŠ±ã€‚ä½ é‹è¶³å…¨èº«çš„å…§åŠ›ï¼Œèº«å½¢æ çš„æ›´æ€¥ã€‚\n" NOR);
+                msg = HIR "$n " HIR "èº«å½¢é£„å¿½ï¼Œé‚£èŠ±åŠƒç©ºè€Œéã€‚åªè½ç•¶çš„ä¸€è²è¼•éŸ¿ï¼Œé‚£èŠ±è¬äº†ï¼Œè¼•è¼•åœ°ç ¸åœ¨åœ°é¢ä¸Šã€‚\n" NOR;
                 message_combatd(msg, me, target);
                 if( query("neili", target)<1000 )
                         set("neili", 0, target);

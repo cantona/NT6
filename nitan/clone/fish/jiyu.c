@@ -1,4 +1,4 @@
-// jiyu.c öêÓã
+// jiyu.c é¯½é­š
 
 inherit ITEM;
 
@@ -7,13 +7,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name("öêÓã", ({ "ji yu", "jiyu" }) );
+        set_name("é¯½é­š", ({ "ji yu", "jiyu" }) );
         if (clonep())
                 set_default_object(__FILE__);
         else
         {
-                set("long", "Ò»Ìõ»î±ÄÂÒÌøµÄ´óöêÓã¡£\n");
-                set("unit", "Ìõ");
+                set("long", "ä¸€æ¢æ´»è¹¦äº‚è·³çš„å¤§é¯½é­šã€‚\n");
+                set("unit", "æ¢");
         }
 
         setup();

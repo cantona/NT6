@@ -1,4 +1,4 @@
-// puti-zi.c ÆĞÌá×Ó
+// puti-zi.c è©æå­
 
 #include <ansi.h>
 
@@ -14,13 +14,13 @@ void init()
 
 void create()
 {
-        set_name("ÆĞÌá×Ó", ({"puti zi", "zi"}));
+        set_name("è©æå­", ({"puti zi", "zi"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
-                set("long", "ÕâÊÇÒ»¿Å¾§Ó¨ÈçÓñµÄÆĞÌá×Ó£¬²É×ÔÁéÉ½·ğ×æ×ùÇ°£¬ÕäÏ¡ÎŞ
-±È£¬ÄËÍòÄêÆĞÌáÊ÷Ö®Êµ£¬¹¦ÄÜ»¯°Ù½Ù£¬¶ÉÇ§ÔÖ£¬ÓëÌìµØÍ¬ÊÙ¡£\n");
+                set("unit", "é¡†");
+                set("long", "é€™æ˜¯ä¸€é¡†æ™¶ç‘©å¦‚ç‰çš„è©æå­ï¼Œæ¡è‡ªéˆå±±ä½›ç¥–åº§å‰ï¼Œçç¨€ç„¡
+æ¯”ï¼Œä¹ƒè¬å¹´è©ææ¨¹ä¹‹å¯¦ï¼ŒåŠŸèƒ½åŒ–ç™¾åŠ«ï¼Œæ¸¡åƒç½ï¼Œèˆ‡å¤©åœ°åŒå£½ã€‚\n");
                 set("value",100);
         }
         setup();
@@ -37,12 +37,12 @@ int do_eat(string arg)
         force_skill = me->query_skill("force", 1);
         
         if (!id(arg))
-        return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+        return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
 
 
         if ( (int)me->query_condition("bonze_drug" ) > 0 )
         {
-                message_vision(HIR "$NÓÖ³ÔÏÂÒ»¿ÅÆĞÌá×Ó£¬Ö»¾õµÃ¸Î³¦´ç¶Ï£¬ÎåÔàÓûÁÑ£¬Ô­À´·şÊ³Ì«¼±Ì«¶à£¬Ò©Ğ§ÊÊµÃÆä·´£¡\n" NOR, me);
+                message_vision(HIR "$Nåˆåƒä¸‹ä¸€é¡†è©æå­ï¼Œåªè¦ºå¾—è‚è…¸å¯¸æ–·ï¼Œäº”è‡Ÿæ¬²è£‚ï¼ŒåŸä¾†æœé£Ÿå¤ªæ€¥å¤ªå¤šï¼Œè—¥æ•ˆé©å¾—å…¶åï¼\n" NOR, me);
         }
         else if ( neili_limit <= force_limit  )
         {
@@ -53,7 +53,7 @@ int do_eat(string arg)
                 }
 */        
 
-                message_vision(HIY "$N³ÔÏÂÒ»¿ÅÆĞÌá×Ó£¬¶ÙÈ»¼äÖ»¾õÒ»¹ÉºÆµ´ÎŞ±ÈµÄÕæÆøÖ±³å¶¥ÃÅ...\n" NOR, this_player());
+                message_vision(HIY "$Nåƒä¸‹ä¸€é¡†è©æå­ï¼Œé “ç„¶é–“åªè¦ºä¸€è‚¡æµ©ç›ªç„¡æ¯”çš„çœŸæ°£ç›´æ²–é ‚é–€...\n" NOR, this_player());
                 me->apply_condition("bonze_drug", 1000);
         }
 

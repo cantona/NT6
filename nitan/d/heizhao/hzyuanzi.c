@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����Ժ��");
+        set("short", "黑沼院子");
         set("long", @LONG
-ǽ���Ǹ�Ժ�ӣ���Ϊ���룬��һ����ʵ������һ��ȴ��ˮ����
-���Ժ�ӣ�����ͨ�����ã���ǰ�Ǹ��¶����������顣
+牆裡是個院子，分為兩半，左一半是實土，右一半卻是水塘。
+跨過院子，往北通向內堂，堂前是個月洞，仍無門扉。
 LONG );
         set("outdoors", "heizhao");
         set("no_clean_up", 0);

@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ԭҰ");
+        set("short", "原野");
         set("long", @LONG
-ƽҰ��һȺ÷��¹���ڵ�ͷ�Բݣ���Ŀ�����������ǻ�ɽ��Щ��
-��֮�⣬��ΧһƬƽ�������޿ɲ�֮����
+平野上一群梅花鹿正在低頭吃草，極目四望，除了那火山有些駭
+人之外，周圍一片平靜，絕無可怖之處。
 LONG );
         set("outdoors", "binghuo");
         set("no_clean_up", 0);

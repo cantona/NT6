@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ɽ·");
+        set("short", "山路");
         set("long", @LONG
-������һ������ͨ��ɽ·��·�ߵ������ܼ����������㣬�ݴ���
-���ǵ��ص�׺��һЩ��ɫҰ�������н��ͣ����߲�ľïʢ��������
-�£���ɫ������
+這裡是一條很普通的山路，路邊的樹林密集，芳草流香，草叢中
+星星點點地點綴著一些白色野花，漸行漸低，兩邊草木茂盛，處高崖
+下，天色漸陰。
 LONG );
         set("exits", ([
                 "southwest" :__DIR__"tohtq1",

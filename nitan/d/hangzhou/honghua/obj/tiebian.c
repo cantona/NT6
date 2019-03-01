@@ -1,21 +1,21 @@
-// tiebian.c Ìú±Ş
+// tiebian.c éµé­
 
 #include <weapon.h>
 inherit WHIP;
 
 void create()
 {
-        set_name("Ìú±Ş", ({ "changbian", "bian" }));
+        set_name("éµé­", ({ "changbian", "bian" }));
         set_weight(500);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
-                set("long", "ÕâÊÇÒ»±ú´Ö´óµÄÌú±Ş£¬×ÜÓĞÈıÊ®À´½ïÖØ¡£\n");
+                set("unit", "æŸ„");
+                set("long", "é€™æ˜¯ä¸€æŸ„ç²—å¤§çš„éµé­ï¼Œç¸½æœ‰ä¸‰åä¾†æ–¤é‡ã€‚\n");
                 set("value", 100);
                 set("material", "leather");
-                set("wield_msg", "$N¡¸à§¡¹µÄÒ»Éù¶¶³öÒ»±ú$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n±ğ»ØÑü¼ä¡£\n");
+                set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€è²æŠ–å‡ºä¸€æŸ„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°‡æ‰‹ä¸­çš„$nåˆ¥å›è…°é–“ã€‚\n");
         }
         init_whip(40);
         setup();

@@ -5,16 +5,16 @@ inherit NPC;
 #include <ansi.h>;
 void create()
 {
-        set_name("Ç®Çà½¡", ({ "qian qingjian", "qian", "qingjian" }));
-        set("gender", "ÄĞĞÔ");
-        set("title", HIY"»ÆºÓËÄ¹íÀÏËÄ"NOR);
-        set("nickname", HIC"É¥ÃÅ¸«"NOR);
+        set_name("éŒ¢é’å¥", ({ "qian qingjian", "qian", "qingjian" }));
+        set("gender", "ç”·æ€§");
+        set("title", HIY"é»ƒæ²³å››é¬¼è€å››"NOR);
+        set("nickname", HIC"å–ªé–€æ–§"NOR);
         set("age", 32);
         set("str", 25);
         set("dex", 16);
         set("per", 16);
-        set("long", "Ç®Çà½¡ÊÇ»ÆºÓËÄ¹íµÄÀÏËÄ£¬ÊÇ¹íÃÅÁúÍõÉ³Í¨ÌìµÄËÄµÜ×Ó£¬ÉÃ
-ÓÚ¸«·¨¡£\n");
+        set("long", "éŒ¢é’å¥æ˜¯é»ƒæ²³å››é¬¼çš„è€å››ï¼Œæ˜¯é¬¼é–€é¾ç‹æ²™é€šå¤©çš„å››å¼Ÿå­ï¼Œæ“…
+äºæ–§æ³•ã€‚\n");
         set("combat_exp", 20000);
         set("shen_type", -1);
         set("attitude", "peaceful");

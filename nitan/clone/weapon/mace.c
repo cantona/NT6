@@ -8,17 +8,17 @@ inherit MACE;
 
 void create()
 {
-        set_name("ÊìÍ­ïµ", ({"copper mace", "mace", "coppermace", "tongjian", "jian"}));
+        set_name("ç†ŸéŠ…â–¡", ({"copper mace", "mace", "coppermace", "tongjian", "jian"}));
         set_weight(5000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
+                set("unit", "æŸ„");
                 set("value", 2000);
                 set("material", "copper");
-                set("long", "Ò»±ú³ÁµéµéµÄÊìÍ­ïµ£¬ÉÏÃæÍ­Ğâ°ß°ß¡£\n");
-                set("wield_msg", "$N¾ÙÆğÒ»±ú$n£¬ÔÚµØÉÏ×²³öµãµã»ğĞÇ¡£\n");
-                set("unwield_msg", "$NÄ¨ÁËÄ¨$nÉÏµÄĞâ£¬°ÑËüÊÕÁËÆğÀ´¡£\n");
+                set("long", "ä¸€æŸ„æ²‰ç”¸ç”¸çš„ç†ŸéŠ…â–¡ï¼Œä¸Šé¢éŠ…é½æ–‘æ–‘ã€‚\n");
+                set("wield_msg", "$Nèˆ‰èµ·ä¸€æŸ„$nï¼Œåœ¨åœ°ä¸Šæ’å‡ºé»é»ç«æ˜Ÿã€‚\n");
+                set("unwield_msg", "$NæŠ¹äº†æŠ¹$nä¸Šçš„é½ï¼ŒæŠŠå®ƒæ”¶äº†èµ·ä¾†ã€‚\n");
         }
         init_mace(25);
         setup();

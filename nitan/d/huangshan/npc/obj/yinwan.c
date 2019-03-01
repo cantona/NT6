@@ -4,13 +4,13 @@
 inherit THROWING;
 void create()
 {
-        set_name("ÒøÍè", ({ "ball", "silver ball" }) );
+        set_name("éŠ€ä¸¸", ({ "ball", "silver ball" }) );
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»Á£Ä´Ö¸´óĞ¡µÄÒøÍè¡£\n");
-                set("unit", "¶Ñ");
-                set("base_unit", "Á£");
+                set("long", "ä¸€ç²’æ‹‡æŒ‡å¤§å°çš„éŠ€ä¸¸ã€‚\n");
+                set("unit", "å †");
+                set("base_unit", "ç²’");
                 set("base_weight", 1);
                 set("base_value", 1);
         }

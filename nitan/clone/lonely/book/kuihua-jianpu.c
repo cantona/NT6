@@ -3,16 +3,16 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIW "¡¸¿û»¨½£Æ×¡¹" NOR, ({ "kuihua jianpu", "kuihua", "jianpu"}));
+        set_name(HIW "ã€Œè‘µèŠ±åŠè­œã€" NOR, ({ "kuihua jianpu", "kuihua", "jianpu"}));
         set_weight(500);
         if (clonep())
                set_default_object(__FILE__); 
         else {
-                set("unit", "±¾");
+                set("unit", "æœ¬");
                 set("material", "paper");
                 set("no_sell", 1);
-                set("long", HIW "\nÕâÊÇÒ»±¾ÓÃ±¡Ö½Ğ´³ÉµÄÊé£¬·âÆ¤ÉÏĞ´ÓĞ¡¸¿û»¨½£"
-                            "Æ×¡¹ËÄ\n×Ö¡£Äã¿ÉÒÔÊÔ×Å¶Á¶Á(read)¿´¡£\n\n" NOR, );
+                set("long", HIW "\né€™æ˜¯ä¸€æœ¬ç”¨è–„ç´™å¯«æˆçš„æ›¸ï¼Œå°çš®ä¸Šå¯«æœ‰ã€Œè‘µèŠ±åŠ"
+                            "è­œã€å››\nå­—ã€‚ä½ å¯ä»¥è©¦è‘—è®€è®€(read)çœ‹ã€‚\n\n" NOR, );
         }
 }
 
@@ -32,74 +32,74 @@ int do_du(string arg)
 
         if (! arg)
         {
-                write("ÑĞ¶Á¿û»¨½£Æ×Ö¸Áî¸ñÊ½£ºread <¼¼ÄÜ> from <¿û»¨½£Æ×>\n");
+                write("ç ”è®€è‘µèŠ±åŠè­œæŒ‡ä»¤æ ¼å¼ï¼šread <æŠ€èƒ½> from <è‘µèŠ±åŠè­œ>\n");
                 return 1;
         }
 
         if (sscanf(arg, "%s from %s", skill, book) != 2)
         {
-                write("ÑĞ¶Á¿û»¨½£Æ×Ö¸Áî¸ñÊ½£ºread <¼¼ÄÜ> from <¿û»¨½£Æ×>\n");
+                write("ç ”è®€è‘µèŠ±åŠè­œæŒ‡ä»¤æ ¼å¼ï¼šread <æŠ€èƒ½> from <è‘µèŠ±åŠè­œ>\n");
                 return 1;
         }
 
         if (me->is_busy())
         {
-                write("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+                write("ä½ ç¾åœ¨æ­£å¿™è‘—å‘¢ã€‚\n");
                 return 1;
         }
 
         if (me->is_fighting())
         {
-                write("ÄãÎŞ·¨ÔÚÕ½¶·ÖĞ×¨ĞÄÏÂÀ´ÑĞ¶ÁĞÂÖª£¡\n");
+                write("ä½ ç„¡æ³•åœ¨æˆ°é¬¥ä¸­å°ˆå¿ƒä¸‹ä¾†ç ”è®€æ–°çŸ¥ï¼\n");
                 return 1;
         }
 
         if( query("no_fight", where )
             && query("doing", me) != "scheme" )
         {
-                write("ÄãÎŞ·¨ÔÚÕâÀï¾²ÏÂĞÄÀ´ÑĞ¶Á¿û»¨½£Æ×¡£\n");
+                write("ä½ ç„¡æ³•åœ¨é€™è£¡éœä¸‹å¿ƒä¾†ç ”è®€è‘µèŠ±åŠè­œã€‚\n");
                 return 1;
         }
 
         if (! me->query_skill("literate", 1))
         {
-                write("ÄãÊÇ¸öÎÄÃ¤£¬ÏÈÑ§µãÎÄ»¯(literate)°É¡£\n");
+                write("ä½ æ˜¯å€‹æ–‡ç›²ï¼Œå…ˆå­¸é»æ–‡åŒ–(literate)å§ã€‚\n");
                 return 1;
         }
 
         if (! id(book))
         {
-                write("ÕâÀïÃ»ÓĞÕâ±¾Êé¡£\n");
+                write("é€™è£¡æ²’æœ‰é€™æœ¬æ›¸ã€‚\n");
                 return 1;
         }
 
-        if (skill != "±ÙĞ°„¦Ó°" && skill != "±ÙĞ°½£Ó°")
+        if (skill != "è¾Ÿé‚ªâ–¡å½±" && skill != "è¾Ÿé‚ªåŠå½±")
         {
-                write("¿û»¨½£Æ×ÉÏ²¢Ã»ÓĞ¼ÇÔØÄã´òËãÑĞ¾¿µÄÄÚÈİ¡£\n" NOR);
+                write("è‘µèŠ±åŠè­œä¸Šä¸¦æ²’æœ‰è¨˜è¼‰ä½ æ‰“ç®—ç ”ç©¶çš„å…§å®¹ã€‚\n" NOR);
                 return 1;
         }
 
         if (me->query_skill("pixie-jian", 1) < 1000)
         {
-                write("Äã±ÙĞ°½£·¨ĞŞÎª²»×ã£¬ÎŞ·¨ÁìÎòµ½ÆäÖĞ°ÂÃî¡£\n");
+                write("ä½ è¾Ÿé‚ªåŠæ³•ä¿®ç‚ºä¸è¶³ï¼Œç„¡æ³•é ˜æ‚Ÿåˆ°å…¶ä¸­å¥§å¦™ã€‚\n");
                 return 1;
         }
         
         if (me->query_skill("dodge", 1) < 1000)
         {
-                write("Äã»ù±¾Çá¹¦ĞŞÎª²»×ã£¬ÎŞ·¨ÁìÎòµ½ÆäÖĞ°ÂÃî¡£\n");
+                write("ä½ åŸºæœ¬è¼•åŠŸä¿®ç‚ºä¸è¶³ï¼Œç„¡æ³•é ˜æ‚Ÿåˆ°å…¶ä¸­å¥§å¦™ã€‚\n");
                 return 1;
         }
                 
         if( !query("reborn/times", me) )
         {
-                write("ÄãÎ´¾­Àú×ªÊÀ¿¼Ñé£¬ÎŞ·¨ÁìÎòÆäÖĞ°ÂÃî¡£\n");
+                write("ä½ æœªç¶“æ­·è½‰ä¸–è€ƒé©—ï¼Œç„¡æ³•é ˜æ‚Ÿå…¶ä¸­å¥§å¦™ã€‚\n");
                 return 1;                
         }
         
         if( query("combat_exp", me)<10000000 )
         {
-                write("ÄãµÄÊµÕ½¾­Ñé²»×ã£¬ÔÙÔõÃ´¶ÁÒ²Ã»ÓÃ¡£\n");
+                write("ä½ çš„å¯¦æˆ°ç¶“é©—ä¸è¶³ï¼Œå†æ€éº¼è®€ä¹Ÿæ²’ç”¨ã€‚\n");
                 return 1;
         }
 
@@ -107,11 +107,11 @@ int do_du(string arg)
             || query("qi", me)<100
             || query("neili", me)<200 )
         {
-                write("ÄãÏÖÔÚ¹ıÓÚÆ£¾ë£¬ÎŞ·¨×¨ĞÄÏÂÀ´ÑĞ¶ÁĞÂÖª¡£\n");
+                write("ä½ ç¾åœ¨éäºç–²å€¦ï¼Œç„¡æ³•å°ˆå¿ƒä¸‹ä¾†ç ”è®€æ–°çŸ¥ã€‚\n");
                 return 1;
         }
 
-        write(HIW "ÄãÑ§»áÁË¡¸" HIG "±ÙĞ°„¦Ó°" HIW "¡¹¡£\n" NOR);
+        write(HIW "ä½ å­¸æœƒäº†ã€Œ" HIG "è¾Ÿé‚ªâ–¡å½±" HIW "ã€ã€‚\n" NOR);
         set("can_perform/pixie-jian/jian", 1, me);
         destruct(this_object());
         return 1;

@@ -1,5 +1,5 @@
 // This program is a part of NT MudLIB
-// sun.c ÈÕ»ê
+// sun.c æ—¥é­‚
 
 #include <ansi.h>
 
@@ -7,14 +7,14 @@ inherit TESSERA;
 
 void create()
 {
-        set_name(RED "ÈÕ»ê" NOR, ({ "sun soul", "sun" }) );
+        set_name(RED "æ—¥é­‚" NOR, ({ "sun soul", "sun" }) );
         set_weight(1);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", RED "Ì«ÑôÕæ»ğÄı¾Û¶ø³É£¬ÎÚ½ğÉ«£¬ÄÜÆÆĞ°ÇÓÄ§£¬Ç§¾ü±ÙÒ×¡£¡£\n" NOR);
+                set("long", RED "å¤ªé™½çœŸç«å‡èšè€Œæˆï¼Œçƒé‡‘è‰²ï¼Œèƒ½ç ´é‚ªæ€¯é­”ï¼Œåƒè»è¾Ÿæ˜“ã€‚ã€‚\n" NOR);
                 set("value", 50000);
-                set("unit", "¿é");
+                set("unit", "å¡Š");
                 set("can_enchant", "weapon");
                 set("auto_load", 1);
         }

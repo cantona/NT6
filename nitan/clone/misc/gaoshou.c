@@ -6,7 +6,7 @@ inherit NPC;
 #define GAOSHOU_DIR "/data/gaoshou/"
 
 void init_npc();
-int is_c_file(string arg);                //ÅĞ¶ÏargÊÇ·ñ*.cÎÄ¼ş¸ñÊ½
+int is_c_file(string arg);                //åˆ¤æ–·argæ˜¯å¦*.cæ–‡ä»¶æ ¼å¼
 string do_perform(string perform_skill);
 string auto_perform();
 
@@ -42,7 +42,7 @@ void create()
 
         ::create();
         id = COMPETE_D->query_top_id();
-        set_name( "ÄàÌ¶¸ßÊÖ" , ({ id }) );
+        set_name( "æ³¥æ½­é«˜æ‰‹" , ({ id }) );
         setup();        
 
         restore();
@@ -72,8 +72,8 @@ void init_npc()
                         weapon = find_object(weapon_file);
                         if (! weapon || ! weapon->receive_summon(me))
                         {
-                               message_vision(HIM "$N" HIM "ÑïÆğÊÖÀ´£¬¿ÚÖĞÄîÄîÓĞ"
-                                       "´Ê¡£\nÈ»¶øÊ²Ã´Ò²Ã»ÓĞ·¢Éú :)\n", me);
+                               message_vision(HIM "$N" HIM "æšèµ·æ‰‹ä¾†ï¼Œå£ä¸­å¿µå¿µæœ‰"
+                                       "è©ã€‚\nç„¶è€Œä»€éº¼ä¹Ÿæ²’æœ‰ç™¼ç”Ÿ :)\n", me);
                         } else
                                set("value", 0, weapon);
                 }
@@ -152,7 +152,7 @@ void kill_ob(object ob)
         return ::kill_ob(ob);
 }
               
-int is_c_file(string arg)                //ÅĞ¶ÏargÊÇ·ñ*.cÎÄ¼ş¸ñÊ½
+int is_c_file(string arg)                //åˆ¤æ–·argæ˜¯å¦*.cæ–‡ä»¶æ ¼å¼
 {
         int l;
         l = strlen(arg);
@@ -162,7 +162,7 @@ int is_c_file(string arg)                //ÅĞ¶ÏargÊÇ·ñ*.cÎÄ¼ş¸ñÊ½
 }
 
 //      auto_perform()
-//      ×Ô¶¯³ö¾øÕĞ
+//      è‡ªå‹•å‡ºçµ•æ‹›
 string do_perform(string perform_skill)
 {
         int l;
@@ -170,22 +170,22 @@ string do_perform(string perform_skill)
         string file;
         mixed *all_file;
 
-        if (! stringp(dir = SKILL_D(perform_skill) + "/") || file_size(dir) != -2)        //Õâ¸öÎä¹¦Ã»ÓĞ¾øÕĞ
+        if (! stringp(dir = SKILL_D(perform_skill) + "/") || file_size(dir) != -2)        //é€™å€‹æ­¦åŠŸæ²’æœ‰çµ•æ‹›
         return "VOID";
 
-        if (file_size(dir + "perform/") == -2)        //Õâ¸öÎä¹¦ÓĞÒ»¸öperform/×ÓÄ¿Â¼
+        if (file_size(dir + "perform/") == -2)        //é€™å€‹æ­¦åŠŸæœ‰ä¸€å€‹perform/å­ç›®éŒ„
                 dir += "perform/";
 
         all_file = get_dir(dir);
 
-        if (!sizeof(all_file))        //Õâ¸öÎä¹¦Ã»ÓĞ¾øÕĞ
+        if (!sizeof(all_file))        //é€™å€‹æ­¦åŠŸæ²’æœ‰çµ•æ‹›
                 return "VOID";
 
-        all_file = filter_array(all_file,(: is_c_file :));        //È¡³ö*.cÎÄ¼ş
-        if (!sizeof(all_file))        //Õâ¸öÎä¹¦Ã»ÓĞ¾øÕĞ
+        all_file = filter_array(all_file,(: is_c_file :));        //å–å‡º*.cæ–‡ä»¶
+        if (!sizeof(all_file))        //é€™å€‹æ­¦åŠŸæ²’æœ‰çµ•æ‹›
                 return "VOID";
 
-        file = all_file[random(sizeof(all_file))];        //Ëæ»ú³éÈ¡Îä¹¦µÄ¾øÕĞ
+        file = all_file[random(sizeof(all_file))];        //éš¨æ©ŸæŠ½å–æ­¦åŠŸçš„çµ•æ‹›
         l = strlen(file);
         file = dir + file[0..l-3];
         return file;
@@ -218,10 +218,10 @@ string auto_perform()
         can_auto_perform = 0;
         if (askill)
         { 
-                perform_skill_1 = askill;        //µÚÒ»ÖÖpfm;
+                perform_skill_1 = askill;        //ç¬¬ä¸€ç¨®pfm;
                 can_auto_perform = 1;
         }
-        //Èç¹ûÃ»ÓĞ×°±¸±øÆ÷£¬¶øÇÒÓÖÓĞ¿ÕÊÖÎä¹¦beiÁË£¬ÄÇÃ´È¡µÚÒ»ÖÖbeiµÄ¿ÕÊÖÎä¹¦µÄ¾øÕĞÎªµÚ¶şÖÖpfm;
+        //å¦‚æœæ²’æœ‰è£å‚™å…µå™¨ï¼Œè€Œä¸”åˆæœ‰ç©ºæ‰‹æ­¦åŠŸbeiäº†ï¼Œé‚£éº¼å–ç¬¬ä¸€ç¨®beiçš„ç©ºæ‰‹æ­¦åŠŸçš„çµ•æ‹›ç‚ºç¬¬äºŒç¨®pfm;
         if (!weapon && prepare && sizeof(prepare) > 1) 
                 perform_skill_2 = me->query_skill_mapped((keys(prepare))[1]); 
 
@@ -230,7 +230,7 @@ string auto_perform()
                 return do_perform(perform_skill_1);
         else if (can_auto_perform == 2)
         {
-                //Ëæ»úÑ¡ÔñÁ½ÖÖPFM
+                //éš¨æ©Ÿé¸æ“‡å…©ç¨®PFM
                 if (random(2))
                         the_perform_skill = perform_skill_1;
                 else

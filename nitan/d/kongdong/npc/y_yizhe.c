@@ -4,8 +4,8 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÉÙÄêŞÄÕß", ({ "yi zhe","zhe" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("å°‘å¹´å¼ˆè€…", ({ "yi zhe","zhe" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 16);
         set("str", 26);
         set("cor", 40);
@@ -31,7 +31,7 @@ void create()
         set("max_force", 500);
         set("force", 500);
 
-        set("long",     "Ò»ÃûÖÉÆøÎ´¸É¶ø´ÏÃ÷ÁæÀşµÄÉÙÄê¡£\n");
+        set("long",     "ä¸€åç¨šæ°£æœªå¹¹è€Œè°æ˜ä¼¶ä¿çš„å°‘å¹´ã€‚\n");
 
 
         set("combat_exp", 20000);
@@ -49,6 +49,6 @@ void create()
 }
 int refuse_killing(object ob)
 {
-        message_vision("ÄÇÉÙÄê¶Ô$Nß³µÀ£º¡°¶ñÔô°²¸ÒÈç´Ë£¬¸øÎÒÄÃÏÂ£¡¡±\n",ob);
+        message_vision("é‚£å°‘å¹´å°$Nå±é“ï¼šâ€œæƒ¡è³Šå®‰æ•¢å¦‚æ­¤ï¼Œçµ¦æˆ‘æ‹¿ä¸‹ï¼â€\n",ob);
         return 0;
 }

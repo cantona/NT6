@@ -7,20 +7,20 @@ inherit HEAD;
 
 void create()
 {
-        set_name(BLU "ºÚÄµµ¤" NOR, ({ "hei mudan", "mudan" }));
+        set_name(BLU "é»‘ç‰¡ä¸¹" NOR, ({ "hei mudan", "mudan" }));
         set_weight(10);
         if (clonep())
                 set_default_object(__FILE__);
         else 
         {
-                set("long", "Çå¸ßÀä°ÁµÄºÚÄµµ¤¡£\n");
-                set("unit", "¶ä");
+                set("long", "æ¸…é«˜å†·å‚²çš„é»‘ç‰¡ä¸¹ã€‚\n");
+                set("unit", "æœµ");
                 set("value", 6);
                 set("material", "plant");
                 set("armor_prop/armor", 0);
                 set("armor_prop/per", 3);
-                set("wear_msg", "$NÇáÇáµØ°ÑÒ»¶ä$n´÷ÔÚÍ·ÉÏ¡£\n");
-                set("unwield_msg", "$NÇáÇáµØ°Ñ$n´ÓÍ·ÉÏ³ýÁËÏÂÀ´¡£\n");
+                set("wear_msg", "$Nè¼•è¼•åœ°æŠŠä¸€æœµ$næˆ´åœ¨é ­ä¸Šã€‚\n");
+                set("unwield_msg", "$Nè¼•è¼•åœ°æŠŠ$nå¾žé ­ä¸Šé™¤äº†ä¸‹ä¾†ã€‚\n");
                 set("female_only", 1);
         }
 

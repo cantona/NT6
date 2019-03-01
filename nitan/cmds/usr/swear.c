@@ -13,10 +13,10 @@ int main(object me, string arg)
         string msg;
 
         if (! stringp(arg) || arg != "cancel" && sscanf(arg, "with %s", arg) != 1)
-                return notify_fail("ÄãÒªºÍË­Ò»Í¬½áÒå£¿\n");
+                return notify_fail("ä½ è¦å’Œèª°ä¸€åŒçµç¾©ï¼Ÿ\n");
 
         if (me->is_busy() || me->is_fighting())
-                return notify_fail("ºÃºÃÃ¦ÄãÊÖÍ·µÄÊÂÇé£¡\n");
+                return notify_fail("å¥½å¥½å¿™ä½ æ‰‹é ­çš„äº‹æƒ…ï¼\n");
 
         ob = present(arg, environment(me));
 
@@ -25,12 +25,12 @@ int main(object me, string arg)
         {
                 if (old != ob)
                 {
-                        write("Äã´òÏûÁËºÍ" + old->name(1) + "½áÒåµÄÄîÍ·¡£\n");
+                        write("ä½ æ‰“æ¶ˆäº†å’Œ" + old->name(1) + "çµç¾©çš„å¿µé ­ã€‚\n");
                         if (environment(old) == environment(me))
-                                tell_object(old, me->name(1) + "´òÏûÁËºÍÄã½áÒåµÄÄîÍ·¡£\n");
+                                tell_object(old, me->name(1) + "æ‰“æ¶ˆäº†å’Œä½ çµç¾©çš„å¿µé ­ã€‚\n");
                 } else
                 if (query_temp("pending/answer/" + query("id", me), old))
-                        return notify_fail("ÄãÕıÔÚÏòÈË¼ÒÌá³öÇëÇóÄØ£¬¿ÉÊÇÈË¼Ò»¹Ã»ÓĞ´ğÓ¦Äã¡£\n");
+                        return notify_fail("ä½ æ­£åœ¨å‘äººå®¶æå‡ºè«‹æ±‚å‘¢ï¼Œå¯æ˜¯äººå®¶é‚„æ²’æœ‰ç­”æ‡‰ä½ ã€‚\n");
 
                 delete_temp("pending/swear", me);
                 delete_temp("pending/answer/"+query("id", me), old);
@@ -39,68 +39,68 @@ int main(object me, string arg)
         }
 
         if (! ob)
-                return notify_fail("ÕâÀïÃ»ÓĞÕâ¸öÈË¡£\n");
+                return notify_fail("é€™è£¡æ²’æœ‰é€™å€‹äººã€‚\n");
 
         if (query_temp("pending/answer/" + query("id", ob), me) &&
             query_temp("pending/swear", ob) == me )
-                return notify_fail("±ğÈËÕıÔÚÏòÄãÌáÒé½á°İÄØ£¬Äã¾¿¾¹´ğÓ¦»¹ÊÇ²»´ğÓ¦£¿\n");
+                return notify_fail("åˆ¥äººæ­£åœ¨å‘ä½ æè­°çµæ‹œå‘¢ï¼Œä½ ç©¶ç«Ÿç­”æ‡‰é‚„æ˜¯ä¸ç­”æ‡‰ï¼Ÿ\n");
 
 
         if (! ob->is_character())
         {
-                message_vision("$N¶¢×Å$n×ÔÑÔ×ÔÓïµÀ£º¡°ÔÛÃÇ...ÔÛ"
-                               "ÃÇ½á°İ°É£¡ÇóÇóÄãÁË£¡¡±...¿´À´ÊÇ"
-                               "·èÁË¡£\n", me, ob);
+                message_vision("$Nç›¯è‘—$nè‡ªè¨€è‡ªèªé“ï¼šâ€œå’±å€‘...å’±"
+                               "å€‘çµæ‹œå§ï¼æ±‚æ±‚ä½ äº†ï¼â€...çœ‹ä¾†æ˜¯"
+                               "ç˜‹äº†ã€‚\n", me, ob);
                 return 1;
         }
 
         if (ob == me)
         {
-                message_vision("$NÄ¿¹â´ôÖÍ£¬Á½ÑÛ·¢Ö±£¬¿ÚÖĞÄîÄîÓĞ´Ê¡£\n", me);
+                message_vision("$Nç›®å…‰å‘†æ»¯ï¼Œå…©çœ¼ç™¼ç›´ï¼Œå£ä¸­å¿µå¿µæœ‰è©ã€‚\n", me);
                 return 1;
         }
 
         if( query("age", me)<18 )
         {
-                write("Ğ¡Ã«º¢×Óµ·Ê²Ã´ÂÒ£¿Ò»±ßÍæÈ¥£¡\n");
+                write("å°æ¯›å­©å­æ—ä»€éº¼äº‚ï¼Ÿä¸€é‚Šç©å»ï¼\n");
                 return 1;
         }
 
         if( query("age", ob)<18 )
         {
-                write(ob->name() + "»¹ÊÇÒ»¸öĞ¡Ã«º¢×Ó£¬Äã¾ÍÊ¡Ê¡°É£¬±ğ¶ºÈË¼ÒÁË¡£\n");
+                write(ob->name() + "é‚„æ˜¯ä¸€å€‹å°æ¯›å­©å­ï¼Œä½ å°±çœçœå§ï¼Œåˆ¥é€—äººå®¶äº†ã€‚\n");
                 return 1;
         }
 
         if( !query("can_speak", ob) )
         {
-                message_vision("$NÍû×Å$nÉµĞ¦µÄ²»Í££¬²»ÖªµÀÖĞÁËÊ²Ã´Ğ°¡£\n", me, ob);
+                message_vision("$Næœ›è‘—$nå‚»ç¬‘çš„ä¸åœï¼Œä¸çŸ¥é“ä¸­äº†ä»€éº¼é‚ªã€‚\n", me, ob);
                 return 1;
         }
 
         if( stringp(query("born_family", me)) && 
-            query("born_family", me) != "Ã»ÓĞ" && 
+            query("born_family", me) != "æ²’æœ‰" && 
             query("born_family", me) == query("born_family", ob) )
         {
-                write("ÄãºÍÈË¼ÒÊÇÍ¬×åµÜ×Ó£¬½á°İ¸öÊ²Ã´£¿\n");
+                write("ä½ å’Œäººå®¶æ˜¯åŒæ—å¼Ÿå­ï¼Œçµæ‹œå€‹ä»€éº¼ï¼Ÿ\n");
                 return 1;
         }
 
         if (me->is_brother(ob))
         {
-                write("ÄãÒÑ¾­ºÍËû½áÒåÁË£¬ËÆºõÃ»ÓĞ±ØÒªÔÙÀ´Ò»´Î°É¡£\n");
+                write("ä½ å·²ç¶“å’Œä»–çµç¾©äº†ï¼Œä¼¼ä¹æ²’æœ‰å¿…è¦å†ä¾†ä¸€æ¬¡å§ã€‚\n");
                 return 1;
         }
 
         if( mapp(query("brothers", me)) && sizeof(query("brothers", me))>12 )
         {
-                write("Äã½áÒåµÄĞÖµÜÒ²Ì«¶àÁË£¬Á¬Äã×Ô¼º¶¼¿ì¼Ç²»Çå³şÁË¡£\n");
+                write("ä½ çµç¾©çš„å…„å¼Ÿä¹Ÿå¤ªå¤šäº†ï¼Œé€£ä½ è‡ªå·±éƒ½å¿«è¨˜ä¸æ¸…æ¥šäº†ã€‚\n");
                 return 1;
         }
 
         if (! living(ob))
         {
-                write(ob->name() + "ÏÖÔÚ»èÃÔ²»ĞÑ£¬ÎŞ·¨Àí»áÄãµÄÇëÇó¡£\n");
+                write(ob->name() + "ç¾åœ¨æ˜è¿·ä¸é†’ï¼Œç„¡æ³•ç†æœƒä½ çš„è«‹æ±‚ã€‚\n");
                 return 1;
         }
 
@@ -109,26 +109,26 @@ int main(object me, string arg)
         switch (random(6))
         {
         case 0:
-                msg = "$N¶Ô$n´óÉùËµµÀ£º¡°$R£¬ÄãÎÒÒ»¼ûÈç¹Ê£¬ºÎ²»¾Í´Ë½áÒå£¿¡±\n";
+                msg = "$Nå°$nå¤§è²èªªé“ï¼šâ€œ$Rï¼Œä½ æˆ‘ä¸€è¦‹å¦‚æ•…ï¼Œä½•ä¸å°±æ­¤çµç¾©ï¼Ÿâ€\n";
                 break;
         case 1:
-                msg = "$NÌ¾µÀ£º¡°ÌìÏÂËä´ó£¬ÖªÒôÄÑÃÙ£¬$nn£¬ÄãÎÒÓĞÔµ£¬½ñÈÕºÎ²»½á"
-                      "°İ£¿¡±\n";
+                msg = "$Nå˜†é“ï¼šâ€œå¤©ä¸‹é›–å¤§ï¼ŒçŸ¥éŸ³é›£è¦“ï¼Œ$nnï¼Œä½ æˆ‘æœ‰ç·£ï¼Œä»Šæ—¥ä½•ä¸çµ"
+                      "æ‹œï¼Ÿâ€\n";
                 break;
         case 2:
-                msg = "$NÍû×Å$n£¬Ï²²»×ÔÊ¤µÀ£º¡°½ñÈÕµÃÓö$R£¬ÊµÄËÈıÉúÓĞĞÒ£¬ÄãÎÒ"
-                      "½á°İ¿ÉºÃ£¿¡±\n";
+                msg = "$Næœ›è‘—$nï¼Œå–œä¸è‡ªå‹é“ï¼šâ€œä»Šæ—¥å¾—é‡$Rï¼Œå¯¦ä¹ƒä¸‰ç”Ÿæœ‰å¹¸ï¼Œä½ æˆ‘"
+                      "çµæ‹œå¯å¥½ï¼Ÿâ€\n";
                 break;
         case 3:
-                msg = "$N¿çÉÏÒ»²½£¬´óÉùµÀ£º¡°Ç§½ğÒ×µÃ£¬Á¼ÓÑÄÑÃÙ£¬$nn£¡ÄãÎÒºÎ²»"
-                      "¾Í´Ë½á°İ£¿¡±\n";
+                msg = "$Nè·¨ä¸Šä¸€æ­¥ï¼Œå¤§è²é“ï¼šâ€œåƒé‡‘æ˜“å¾—ï¼Œè‰¯å‹é›£è¦“ï¼Œ$nnï¼ä½ æˆ‘ä½•ä¸"
+                      "å°±æ­¤çµæ‹œï¼Ÿâ€\n";
                 break;
         case 4:
-                msg = "$NµÀ£º¡°$nn£¡ÔÚÏÂÓĞÒâºÍÄã½áÎªÒìĞÕ¹ÇÈâ£¬Äã¿´¿ÉºÃ£¿¡±\n";
+                msg = "$Né“ï¼šâ€œ$nnï¼åœ¨ä¸‹æœ‰æ„å’Œä½ çµç‚ºç•°å§“éª¨è‚‰ï¼Œä½ çœ‹å¯å¥½ï¼Ÿâ€\n";
                 break;
         default:
-                msg = "$NÀ­×Å$nµÄÊÖ£¬Ö£ÖØµÀ£º¡°½ñÈÕÁ¼³½£¬ÄãÎÒÔÚ"
-                      "´ËÏà·ê£¬µ±ÕæÄÑµÃ£¬²»Èç½á°İ¿ÉºÃ£¿¡±\n";
+                msg = "$Næ‹‰è‘—$nçš„æ‰‹ï¼Œé„­é‡é“ï¼šâ€œä»Šæ—¥è‰¯è¾°ï¼Œä½ æˆ‘åœ¨"
+                      "æ­¤ç›¸é€¢ï¼Œç•¶çœŸé›£å¾—ï¼Œä¸å¦‚çµæ‹œå¯å¥½ï¼Ÿâ€\n";
                 break;
         }
 
@@ -138,11 +138,11 @@ int main(object me, string arg)
 
         if (! userp(ob))
         {
-                write("µ«ÊÇ" + ob->name() + "ÃæÂ¶ÄÑÉ«£¬¿´À´ÊÇ²»¸ĞĞËÈ¤¡£\n");
+                write("ä½†æ˜¯" + ob->name() + "é¢éœ²é›£è‰²ï¼Œçœ‹ä¾†æ˜¯ä¸æ„Ÿèˆˆè¶£ã€‚\n");
                 return 1;
         }
 
-        tell_object(ob, YEL + me->name(1) + "ÇëÇóºÍÄã½á°İ£¬Äã´ğÓ¦(right)»¹ÊÇ²»´ğÓ¦(refuse)£¿\n" NOR);
+        tell_object(ob, YEL + me->name(1) + "è«‹æ±‚å’Œä½ çµæ‹œï¼Œä½ ç­”æ‡‰(right)é‚„æ˜¯ä¸ç­”æ‡‰(refuse)ï¼Ÿ\n" NOR);
         set_temp("pending/answer/"+query("id", me)+"/right",
                      bind((: call_other, __FILE__, "do_right", ob, me :), ob), ob);
         set_temp("pending/answer/"+query("id", me)+"/refuse",
@@ -157,38 +157,38 @@ int do_right(object me, object ob)
         string msg;
 
         if (! ob || environment(ob) != environment(me))
-                return notify_fail("¿ÉÏ§°¡£¬ÈË¼ÒÒÑ¾­²»ÔÚÕâ¶ùÁË¡£\n");
+                return notify_fail("å¯æƒœå•Šï¼Œäººå®¶å·²ç¶“ä¸åœ¨é€™å…’äº†ã€‚\n");
 
         if (! living(ob))
-                return notify_fail("ÈË¼ÒÏÖÔÚÌı²»µ½ÄãËµµÄ»°£¬»¹ÊÇËãÁË°É¡£\n");
+                return notify_fail("äººå®¶ç¾åœ¨è½ä¸åˆ°ä½ èªªçš„è©±ï¼Œé‚„æ˜¯ç®—äº†å§ã€‚\n");
 
         if( query_temp("pending/swear", ob) != me )
-                return notify_fail("ÈË¼ÒÏÖÔÚÒÑ¾­²»´òËãºÍÄã½á°İÁË¡£\n");
+                return notify_fail("äººå®¶ç¾åœ¨å·²ç¶“ä¸æ‰“ç®—å’Œä½ çµæ‹œäº†ã€‚\n");
 
         delete_temp("pending/swear", ob);
 
         if (me->is_brother(ob))
         {
-                write("ÄãÒÑ¾­ºÍËû½áÒåÁË£¬ËÆºõÃ»ÓĞ±ØÒªÔÙÀ´Ò»´Î°É¡£\n");
+                write("ä½ å·²ç¶“å’Œä»–çµç¾©äº†ï¼Œä¼¼ä¹æ²’æœ‰å¿…è¦å†ä¾†ä¸€æ¬¡å§ã€‚\n");
                 return 1;
         }
 
         if( mapp(query("brothers", me)) && sizeof(query("brothers", me))>12 )
         {
-                message_vision("$NÎªÄÑµÄ¶Ô$nµÀ£º¡°²»ÊÇÎÒ²»Ïë...Ö»ÊÇ...¡±\n",
+                message_vision("$Nç‚ºé›£çš„å°$né“ï¼šâ€œä¸æ˜¯æˆ‘ä¸æƒ³...åªæ˜¯...â€\n",
                                me, ob);
-                write("Äã½áÒåµÄĞÖµÜÒ²Ì«¶àÁË£¬Á¬Äã×Ô¼º¶¼¿ì¼Ç²»Çå³şÁË¡£\n");
+                write("ä½ çµç¾©çš„å…„å¼Ÿä¹Ÿå¤ªå¤šäº†ï¼Œé€£ä½ è‡ªå·±éƒ½å¿«è¨˜ä¸æ¸…æ¥šäº†ã€‚\n");
                 return 1;
         }
 
-        message_vision("$N¿´×Å$n£¬Á¬Á¬µãÍ·µÀ£º¡°" + RANK_D->query_self(me) +
-                       "ÕıÓĞ´ËÒâ£¡ÉõºÃ£¬ÉõºÃ£¡¡±\nÑÔ°Õ£¬Á½ÈË"
-                       "ÆëÆë¹òÏÂ£¬´éÍÁÎªÏã£¬Ò»Æğ¿ÄÍ··¢ÊÄ£º¡°"
-                       "Ëä·Ç¹ÇÈâ£¬ÇéÍ¬ÊÖ×ã¡£\n¼¦ÍÈÇéÉî£¬¾Æ´ü"
-                       "¶÷ÖØ£¡²»ÊÇÍ¬ÄêÍ¬ÔÂÍ¬ÈÕÉú£¬µ«Ô¸Í¬ÄêÍ¬"
-                       "ÔÂÍ¬ÈÕËÀ£¡¡±\n", me, ob);
+        message_vision("$Nçœ‹è‘—$nï¼Œé€£é€£é»é ­é“ï¼šâ€œ" + RANK_D->query_self(me) +
+                       "æ­£æœ‰æ­¤æ„ï¼ç”šå¥½ï¼Œç”šå¥½ï¼â€\nè¨€ç½·ï¼Œå…©äºº"
+                       "é½Šé½Šè·ªä¸‹ï¼Œæ’®åœŸç‚ºé¦™ï¼Œä¸€èµ·ç£•é ­ç™¼èª“ï¼šâ€œ"
+                       "é›–ééª¨è‚‰ï¼Œæƒ…åŒæ‰‹è¶³ã€‚\né›è…¿æƒ…æ·±ï¼Œé…’è¢‹"
+                       "æ©é‡ï¼ä¸æ˜¯åŒå¹´åŒæœˆåŒæ—¥ç”Ÿï¼Œä½†é¡˜åŒå¹´åŒ"
+                       "æœˆåŒæ—¥æ­»ï¼â€\n", me, ob);
 
-        // ¼ÇÂ¼Êı¾İ
+        // è¨˜éŒ„æ•¸æ“š
         set("brothers/"+query("id", ob), ob->name(1), me);
         set("brothers/"+query("id", me), me->name(1), ob);
         me->save();
@@ -197,16 +197,16 @@ int do_right(object me, object ob)
         switch (random(3))
         {
         case 0:
-                msg = "ÌıËµ" + me->name(1) + "ÒÑºÍ" +
-                      ob->name(1) + "½áÎªÒìĞÕ¹ÇÈâ£¬¹²´³½­ºş¡£";
+                msg = "è½èªª" + me->name(1) + "å·²å’Œ" +
+                      ob->name(1) + "çµç‚ºç•°å§“éª¨è‚‰ï¼Œå…±é—–æ±Ÿæ¹–ã€‚";
                 break;
         case 1:
-                msg = "¾İËµ" + me->name(1) + "ºÍ" + ob->name(1) +
-                      "Ò»¼ûÈç¹Ê£¬ÒÑ¾­½áÎªÒìĞÕ¹ÇÈâ¡£";
+                msg = "æ“šèªª" + me->name(1) + "å’Œ" + ob->name(1) +
+                      "ä¸€è¦‹å¦‚æ•…ï¼Œå·²ç¶“çµç‚ºç•°å§“éª¨è‚‰ã€‚";
                 break;
         default:
-                msg = "ÌıËµ" + me->name(1) + "Óë" + ob->name(1) +
-                      "½áÒå£¬Ğ¯ÊÖĞĞ×ß½­ºş¡£";
+                msg = "è½èªª" + me->name(1) + "èˆ‡" + ob->name(1) +
+                      "çµç¾©ï¼Œæ”œæ‰‹è¡Œèµ°æ±Ÿæ¹–ã€‚";
                 break;
         }
         CHANNEL_D->do_channel(this_object(), "rumor", msg);
@@ -218,47 +218,47 @@ int do_refuse(object me, object ob)
         string msg;
 
         if (! ob || environment(ob) != environment(me))
-                return notify_fail("¿ÉÏ§°¡£¬ÈË¼ÒÒÑ¾­²»ÔÚÕâ¶ùÁË¡£\n");
+                return notify_fail("å¯æƒœå•Šï¼Œäººå®¶å·²ç¶“ä¸åœ¨é€™å…’äº†ã€‚\n");
 
         if (! living(ob))
-                return notify_fail("ÈË¼ÒÏÖÔÚÌı²»µ½ÄãËµµÄ»°£¬»¹ÊÇËãÁË°É¡£\n");
+                return notify_fail("äººå®¶ç¾åœ¨è½ä¸åˆ°ä½ èªªçš„è©±ï¼Œé‚„æ˜¯ç®—äº†å§ã€‚\n");
 
         if( query_temp("pending/swear", ob) != me )
-                return notify_fail("ÈË¼ÒÏÖÔÚÒÑ¾­²»´òËãºÍÄã½á°İÁË¡£\n");
+                return notify_fail("äººå®¶ç¾åœ¨å·²ç¶“ä¸æ‰“ç®—å’Œä½ çµæ‹œäº†ã€‚\n");
 
         delete_temp("pending/swear", ob);
 
         switch (random(6))
         {
         case 0:
-                msg = "$NºÙºÙ¸ÉĞ¦ÁË¼¸Éù£¬ÇåÁËÇåÉ¤×Ó£¬¶Ô$nµÀ£º"
-                      "¡°ÔÚÏÂÔõ¸Ò¸ßÅÊ£¿¡±\n";
+                msg = "$Nå˜¿å˜¿å¹¹ç¬‘äº†å¹¾è²ï¼Œæ¸…äº†æ¸…å—“å­ï¼Œå°$né“ï¼š"
+                      "â€œåœ¨ä¸‹æ€æ•¢é«˜æ”€ï¼Ÿâ€\n";
                 break;
         case 1:
-                msg = "$NÒ»ÖåÃ¼£¬¶Ô$nµÀ£º¡°Õâ... ÕâËÆºõ²»Ì«ºÃ"
-                      "°É£¿»¹ÊÇ¸ÄÈÕÔÙËµ°É£¡¡±\n";
+                msg = "$Nä¸€çšºçœ‰ï¼Œå°$né“ï¼šâ€œé€™... é€™ä¼¼ä¹ä¸å¤ªå¥½"
+                      "å§ï¼Ÿé‚„æ˜¯æ”¹æ—¥å†èªªå§ï¼â€\n";
                 break;
         case 2:
-                msg = "$NÃæÓĞÄÑÉ«£¬µÀ£º¡°$nn£¬ÄãµÄÃÀÒâÎÒĞÄÁìÁË"
-                      "£¬Ö»ÊÇ... Ö»ÊÇ... °¦£¡²»ËµÒ²°Õ¡£¡±\n";
+                msg = "$Né¢æœ‰é›£è‰²ï¼Œé“ï¼šâ€œ$nnï¼Œä½ çš„ç¾æ„æˆ‘å¿ƒé ˜äº†"
+                      "ï¼Œåªæ˜¯... åªæ˜¯... å”‰ï¼ä¸èªªä¹Ÿç½·ã€‚â€\n";
                 break;
         case 3:
-                msg = "$NÌ¾ÁËÒ»¿ÚÆøµÀ£º¡°$nn£¬ÎÒÖ»ÊÇ¾õµÃ½ñÈÕÊ±"
-                      "³½ÓĞĞ©²»ÃÀ£¬Ì¸¼°´ËÊÂ²»Ì«ºÃ£¬²»Ì«ºÃ°¡£¡¡±\n";
+                msg = "$Nå˜†äº†ä¸€å£æ°£é“ï¼šâ€œ$nnï¼Œæˆ‘åªæ˜¯è¦ºå¾—ä»Šæ—¥æ™‚"
+                      "è¾°æœ‰äº›ä¸ç¾ï¼Œè«‡åŠæ­¤äº‹ä¸å¤ªå¥½ï¼Œä¸å¤ªå¥½å•Šï¼â€\n";
                 break;
         case 4:
-                msg = "$NàÅÁËÒ»Éù£¬ºöÈ»µÀ£º¡°ÄãÎÒ±²·Ö²»ºÏ£¬Õâ"
-                      "¸ö£¬Õâ¸öÎÒ¿´»¹ÊÇËãÁË°É¡£¡±\n";
+                msg = "$Nå—¯äº†ä¸€è²ï¼Œå¿½ç„¶é“ï¼šâ€œä½ æˆ‘è¼©åˆ†ä¸åˆï¼Œé€™"
+                      "å€‹ï¼Œé€™å€‹æˆ‘çœ‹é‚„æ˜¯ç®—äº†å§ã€‚â€\n";
                 break;
         default:
-                msg = "$N²»¿´$n£¬Ö»ÊÇ¹Ë×óÓÒ¶øÑÔËü£¬¿´À´ÊÇ²»"
-                      "´òËãºÍ$n½á°İ¡£\n";
+                msg = "$Nä¸çœ‹$nï¼Œåªæ˜¯é¡§å·¦å³è€Œè¨€å®ƒï¼Œçœ‹ä¾†æ˜¯ä¸"
+                      "æ‰“ç®—å’Œ$nçµæ‹œã€‚\n";
                 break;
         }
 
         msg = replace_string(msg, "$nn", ob->name(1));
         message_vision(msg, me, ob);
-        tell_object(ob, "¿´À´ÈË¼Ò¶ÔÄãÃ»Ê²Ã´ĞËÈ¤¡£\n");
+        tell_object(ob, "çœ‹ä¾†äººå®¶å°ä½ æ²’ä»€éº¼èˆˆè¶£ã€‚\n");
 
         return 1;
 }
@@ -266,11 +266,11 @@ int do_refuse(object me, object ob)
 int help(object me)
 {
            write( @HELP
-Ö¸Áî¸ñÊ½: swear cancel | with <someone>
+æŒ‡ä»¤æ ¼å¼: swear cancel | with <someone>
 
-ºÍÄ³ÈË½áÒå¡£
+å’ŒæŸäººçµç¾©ã€‚
 
-see also£ºbrothers
+see alsoï¼šbrothers
 HELP );
            return 1;
 }

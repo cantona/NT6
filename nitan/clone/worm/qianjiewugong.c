@@ -3,9 +3,9 @@ inherit WORM;
 
 void create()
 {
-        set_name(RED "ǧ�����" NOR, ({ "qianjie wugong", "qianjie", "wugong" }));
-        set("long", RED "����һ�����߶೤����򼣬��������ǧ��������ɡ�\n" NOR);
-        set("race", "Ұ��");
+        set_name(RED "千節蜈蚣" NOR, ({ "qianjie wugong", "qianjie", "wugong" }));
+        set("long", RED "這是一條三尺多長的蜈蚣，身子由上千個環節組成。\n" NOR);
+        set("race", "野獸");
         set("age", random(10));
         set("attitude", "peaceful");
 
@@ -14,7 +14,7 @@ void create()
 
         set("str", 30);
         set("con", 30);
-        set("limbs", ({ "ͷ��", "����", "β��" }));
+        set("limbs", ({ "頭部", "身體", "尾巴" }));
         set("verbs", ({ "bite" }));
 
         set("worm_poison", ([
@@ -36,6 +36,6 @@ void create()
 
 void die()
 {
-        message_vision(HIR "\n$N" HIR "���ڵ��ϣ����ˡ�\n\n" NOR, this_object());
+        message_vision(HIR "\n$N" HIR "倒在地上，死了。\n\n" NOR, this_object());
         destruct(this_object());
 }

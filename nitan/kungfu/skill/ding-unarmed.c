@@ -1,10 +1,10 @@
-// ding-unarmed.c Ò»ºáÒ»¹´È­
+// ding-unarmed.c ä¸€æ©«ä¸€å‹¾æ‹³
 
 inherit SKILL;
 
 string *action_msg = ({
-        "$N×óÊÖÇáÇáÒ»Ä¨£¬Ïò$nµÄ$lÅÄÈ¥",
-        "$NÓÒÊÖÒ»Ìá£¬²åÏò$nµÄ$l",
+        "$Nå·¦æ‰‹è¼•è¼•ä¸€æŠ¹ï¼Œå‘$nçš„$læ‹å»",
+        "$Nå³æ‰‹ä¸€æï¼Œæ’å‘$nçš„$l",
 });
 
 int valid_enable(string usage) { return usage=="unarmed" || usage=="parry"; }
@@ -22,16 +22,16 @@ mapping query_action(object me, object weapon)
                 "attack": 30 + random(10), 
                 "dodge" : 30 + random(10), 
                 "parry" : 30 + random(10), 
-                "damage_type" : random(2)?"ÄÚÉË":"ğöÉË", 
+                "damage_type" : random(2)?"å…§å‚·":"ç˜€å‚·", 
         ]); 
 }
 
 int practice_skill(object me)
 {
         if( query("qi", me)<40 )
-                return notify_fail("ÄãµÄÌåÁ¦Ì«µÍÁË¡£\n");
+                return notify_fail("ä½ çš„é«”åŠ›å¤ªä½äº†ã€‚\n");
         if( query("neili", me)<40 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»Á·Ò»ºáÒ»¹´È­¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ç·´ä¸€æ©«ä¸€å‹¾æ‹³ã€‚\n");
         me->receive_damage("qi", 30);
         addn("neili", -30, me);
         return 1;

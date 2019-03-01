@@ -15,20 +15,20 @@ int main(object me, string arg)
         mapping cm;
 
         cm = COMBAT_D->query_entire_dbase();
-        msg = "ÏµÍ³ÏÖÔÚµÄÅäÖÃ£º\n";
+        msg = "ç³»çµ±ç¾åœ¨çš„é…ç½®ï¼š\n";
         if (! mapp(cm))
-                msg += "²»Ïé¡£\n\n";
+                msg += "ä¸ç¥¥ã€‚\n\n";
         else
-                msg += "PK ÈËÊıÏŞÖÆ£ºÃ¿Ìì²»³¬¹ı " HIR +
-                       cm["pk_perday"] + NOR " ÈË£¬Ã¿ÈË²»³¬¹ı "
-                       HIR + cm["pk_perman"] + NOR + " ´Î¡£\n\n";
+                msg += "PK äººæ•¸é™åˆ¶ï¼šæ¯å¤©ä¸è¶…é " HIR +
+                       cm["pk_perday"] + NOR " äººï¼Œæ¯äººä¸è¶…é "
+                       HIR + cm["pk_perman"] + NOR + " æ¬¡ã€‚\n\n";
 
         cm = CPU_D->query_entire_dbase();
-        msg += "×î½üÒ»¶ÎÊ±¼äÏµÍ³Ê¹ÓÃCPUµÄÇé¿öÍ³¼Æ£º\n";
-        msg += "ÏµÍ³Ìá¹©CPU×ÊÔ´µÄÂú×ã¶È£º" + fs(cm["last_0"]["supplied"]) +
-              "  ÓÎÏ·¶ÔCPUµÄÕ¼ÓÃÂÊ£º" + fc(cm["last_0"]["cost"]) + "¡£\n";
+        msg += "æœ€è¿‘ä¸€æ®µæ™‚é–“ç³»çµ±ä½¿ç”¨CPUçš„æƒ…æ³çµ±è¨ˆï¼š\n";
+        msg += "ç³»çµ±æä¾›CPUè³‡æºçš„æ»¿è¶³åº¦ï¼š" + fs(cm["last_0"]["supplied"]) +
+              "  éŠæˆ²å°CPUçš„ä½”ç”¨ç‡ï¼š" + fc(cm["last_0"]["cost"]) + "ã€‚\n";
 
-        msg += sprintf("Ç°Ò»Ğ©Ê±¼äCPUµÄÂú×ã¶ÈºÍÕ¼ÓÃÂÊ£º%s/%s  %s/%s  %s/%s  %s/%s¡£\n",
+        msg += sprintf("å‰ä¸€äº›æ™‚é–“CPUçš„æ»¿è¶³åº¦å’Œä½”ç”¨ç‡ï¼š%s/%s  %s/%s  %s/%s  %s/%sã€‚\n",
                        fs(cm["last_1"]["supplied"]), fc(cm["last_1"]["cost"]),
                        fs(cm["last_2"]["supplied"]), fc(cm["last_2"]["cost"]),
                        fs(cm["last_3"]["supplied"]), fc(cm["last_3"]["cost"]),
@@ -64,10 +64,10 @@ string fc(int cost)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : system [-ui] [+|- <ÃÅÅÉ> <µãÊı>]
+æŒ‡ä»¤æ ¼å¼ : system [-ui] [+|- <é–€æ´¾> <é»æ•¸>]
  
-Õâ¸öÖ¸Áî¿ÉÒÔÏÔÊ¾³öÄ¿Ç°ÓÎÏ·µÄÍ¨ÓÃÅäÖÃºÍÊ¹ÓÃÏµÍ³×ÊÔ´µÄ×´¿ö¡£Ê¹
-ÓÃ ui ²ÎÊı¿ÉÒÔ²éÔÄÄ¿Ç° MUD Éè¼ÆÕß¶ÔÓÚµÄÃÅÅÉµÄ¸üĞÂÓÅÏÈ¼¶±ğ¡£
+é€™å€‹æŒ‡ä»¤å¯ä»¥é¡¯ç¤ºå‡ºç›®å‰éŠæˆ²çš„é€šç”¨é…ç½®å’Œä½¿ç”¨ç³»çµ±è³‡æºçš„ç‹€æ³ã€‚ä½¿
+ç”¨ ui åƒæ•¸å¯ä»¥æŸ¥é–±ç›®å‰ MUD è¨­è¨ˆè€…å°äºçš„é–€æ´¾çš„æ›´æ–°å„ªå…ˆç´šåˆ¥ã€‚
  
 HELP );
         return 1;

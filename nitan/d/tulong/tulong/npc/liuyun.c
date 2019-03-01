@@ -10,15 +10,15 @@ inherit F_GUARDER;
 void create()
 {
         object ob;
-        set_name("Á÷ÔÆÊ¹", ({ "liuyun shi", "liuyun", "shi" }));
+        set_name("æµé›²ä½¿", ({ "liuyun shi", "liuyun", "shi" }));
         set("long", @LONG
-ÕâÊÇÒ»¸öËÄÊ®¶àËêµÄÖĞÄêÄĞ×Ó£¬×°ÊøÆæÒì£¬²»
-ÏñÆÕÍ¨µÄÖĞÍÁÈËÊ¿¡£Õâ±ãÊÇ²¨Ë¹Ã÷½Ì×Ü½Ì½ÌÖ÷
-×ùÏÂÅÅÃûÈı°ÙÆßÊ®ËÄµÄÁ÷ÔÆÊ¹¡£
+é€™æ˜¯ä¸€å€‹å››åå¤šæ­²çš„ä¸­å¹´ç”·å­ï¼Œè£æŸå¥‡ç•°ï¼Œä¸
+åƒæ™®é€šçš„ä¸­åœŸäººå£«ã€‚é€™ä¾¿æ˜¯æ³¢æ–¯æ˜æ•™ç¸½æ•™æ•™ä¸»
+åº§ä¸‹æ’åä¸‰ç™¾ä¸ƒåå››çš„æµé›²ä½¿ã€‚
 LONG);
-        set("title", "²¨Ë¹×Ü½Ì½ÌÖ÷×ùÏÂ");
-        set("nickname", HIG "ÔÆ·çÔÂÈıÊ¹" NOR);
-        set("gender", "ÄĞĞÔ");
+        set("title", "æ³¢æ–¯ç¸½æ•™æ•™ä¸»åº§ä¸‹");
+        set("nickname", HIG "é›²é¢¨æœˆä¸‰ä½¿" NOR);
+        set("gender", "ç”·æ€§");
         set("age", 43);
         set("attitude", "friendly");
         set("shen_type", -1);
@@ -60,7 +60,7 @@ LONG);
         prepare_skill("strike", "yinfeng-dao");
         prepare_skill("finger", "tougu-zhen");
 
-        create_family("²¨Ë¹Ã÷½Ì×Ü¶æ", 32, "µÜ×Ó");
+        create_family("æ³¢æ–¯æ˜æ•™ç¸½èˆµ", 32, "å¼Ÿå­");
 
         set("coagents", ({
                 ([ "startroom" : "/d/tulong/tulong/haian",

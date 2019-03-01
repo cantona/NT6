@@ -1,4 +1,4 @@
-// tiannan-bu.c ���ϲ���
+// tiannan-bu.c 天南步法
 
 #include <ansi.h>;
 inherit SKILL;
@@ -6,14 +6,14 @@ string type() { return "martial"; }
 string martialtype() { return "dodge"; }
 
 string *dodge_msg = ({
-"ֻ��$nһ��"HIG"�����ذδС�"NOR"���������ϱ�ֱ���������࣬�����$N��һ�С�\n",
-"$nһ��"MAG"������鳲��"NOR"������ݳ�����֮Զ���ܿ���$N���������ơ�\n",
-"$nʹ��"BLK"������������"NOR"����һ��ƮȻ�ݳ��������ŵء�\n",
-"����$n����Ʈ����һ��"BLU"���������С�"NOR"����һ�ݣ����ѱܿ���\n",
-"$n������ת��һ��"HIC"���˷��ȥ��"NOR"ٿ����һ��Ų�������ߣ��ܹ�����һ�С�\n",
-"����$n����һ�ã�һ��"HIY"���绯������"NOR"$N��һ�����˸��ա�\n",
-"ȴ��$n�㲻��أ�һ��"HIW"������ֱ�ϡ�"NOR"���Դܿ����ߣ����˿�ȥ��\n",
-"$n����΢�Σ�һ��"HIR"��������졹"NOR"�о����յرܿ���$N��һ�С�\n",
+"只見$n一招"HIG"「旱地拔蔥」"NOR"，身體向上筆直地縱起丈余，躲過了$N這一招。\n",
+"$n一個"MAG"「雨燕歸巢」"NOR"，向後縱出數丈之遠，避開了$N的凌厲攻勢。\n",
+"$n使出"BLK"「破土而出」"NOR"，向一旁飄然縱出，輕輕著地。\n",
+"但是$n身形飄忽，一招"BLU"「無中生有」"NOR"輕輕一縱，早已避開。\n",
+"$n身隨意轉，一招"HIC"「乘風而去」"NOR"倏地往一旁挪開了三尺，避過了這一招。\n",
+"可是$n側身一讓，一招"HIY"「鯀化大鵬」"NOR"$N這一招撲了個空。\n",
+"卻見$n足不點地，一招"HIW"「青雲直上」"NOR"往旁竄開數尺，躲了開去。\n",
+"$n身形微晃，一招"HIR"「鳳翔九天」"NOR"有驚無險地避開了$N這一招。\n",
 });
 
 int valid_enable(string usage) { return (usage=="dodge") || (usage=="move"); }
@@ -24,7 +24,7 @@ int valid_learn(object me)
 int practice_skill(object me)
 {
         if( query("qi", me)<20 || query("neili", me)<10 )
-                return notify_fail("�������̫���ˣ����������ϲ�����\n");
+                return notify_fail("你的體力太差了，不能練天南步法。\n");
         me->receive_damage("qi", 20);
         addn("neili", -4, me);
         return 1;
@@ -41,12 +41,12 @@ int power_point(object me) { return 1.2; }
 
 int help(object me)
 {
-        write(HIC"\n���ϲ�����"NOR"\n");
+        write(HIC"\n天南步法："NOR"\n");
         write(@HELP
 
-    ���ϲ��������ϴ����μұ����Ṧ������
+    天南步法是天南大理段家本門輕功身法。
 
-        ѧϰҪ��
+        學習要求：
 
 HELP
         );

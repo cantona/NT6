@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ɽ��С��");
+        set("short", "山間小徑");
         set("long", @LONG
-����һ��λ�����ɽ�ţ���Ϊ��֪��С�������ܹ�ľ���죬����
-�Դ䣬���ɽ����֦ͷ���񳪺Ͳ����������Ͷ��Ͽ�ͨ��ɽ�����
+這是一條位於終南山腳，鮮為人知的小徑。四周古木三天，樹林
+蒼翠，遍地山花，枝頭啼鳥唱和不絕。往西和東南可通往山林深處。
 LONG
         );
         set("outdoors", "zhongnan");

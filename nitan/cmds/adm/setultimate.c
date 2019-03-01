@@ -12,14 +12,14 @@ int main(object me, string arg)
         if (! SECURITY_D->valid_grant(me, "(admin)"))
                 return 0;
 
-        if (! arg) return notify_fail("Ö¸Áî¸ñÊ½: setultimate obj to LV10|LV69|LV87|LV105|LV121\n");
+        if (! arg) return notify_fail("æŒ‡ä»¤æ ¼å¼: setultimate obj to LV10|LV69|LV87|LV105|LV121\n");
 
         if (sscanf(arg, "%s to %s", objname, ultimate) != 2)
-                return notify_fail("Ö¸Áî¸ñÊ½: setultimate obj to LV10|LV69|LV87|LV105|LV121\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼: setultimate obj to LV10|LV69|LV87|LV105|LV121\n");
 
         obj = present(objname, environment(me));
         if (! obj) obj = present(objname, me);
-        if (! obj) return notify_fail("ÕÒ²»µ½Ö¸¶¨µÄÎï¼ş¡£\n");
+        if (! obj) return notify_fail("æ‰¾ä¸åˆ°æŒ‡å®šçš„ç‰©ä»¶ã€‚\n");
 
         ownerid = obj->item_owner();
 
@@ -32,7 +32,7 @@ int main(object me, string arg)
                 set("enchase/flute", 9, obj); 
                 obj->save();
 
-                tell_object(me, "ÉèÖÃ " + obj->short() + " µÈ¼¶Îª LV10 ³É¹¦¡£\n");
+                tell_object(me, "è¨­ç½® " + obj->short() + " ç­‰ç´šç‚º LV10 æˆåŠŸã€‚\n");
                 return 1;
         } else
         if (ultimate == "LV69")
@@ -44,7 +44,7 @@ int main(object me, string arg)
                 IDENTIFY_D->identify_ultimate_ob(obj, 1);
                 obj->save();
 
-                tell_object(me, "ÉèÖÃ " + obj->short() + " µÈ¼¶Îª LV69 ³É¹¦¡£\n");
+                tell_object(me, "è¨­ç½® " + obj->short() + " ç­‰ç´šç‚º LV69 æˆåŠŸã€‚\n");
                 return 1;
         } else
         if (ultimate == "LV87")
@@ -68,7 +68,7 @@ int main(object me, string arg)
                 IDENTIFY_D->identify_ultimate_ob(obj, 1);
                 obj->save();
 
-                tell_object(me, "ÉèÖÃ " + obj->short() + " µÈ¼¶Îª LV87 ³É¹¦¡£\n");
+                tell_object(me, "è¨­ç½® " + obj->short() + " ç­‰ç´šç‚º LV87 æˆåŠŸã€‚\n");
                 return 1;
         } else
         if (ultimate == "LV105")
@@ -84,7 +84,7 @@ int main(object me, string arg)
                 IDENTIFY_D->identify_ultimate_ob(obj, 1);
                 obj->save();
 
-                tell_object(me, "ÉèÖÃ " + obj->short() + " µÈ¼¶Îª LV105 ³É¹¦¡£\n");
+                tell_object(me, "è¨­ç½® " + obj->short() + " ç­‰ç´šç‚º LV105 æˆåŠŸã€‚\n");
                 return 1;
         } else
         if (ultimate == "LV121")
@@ -100,7 +100,7 @@ int main(object me, string arg)
                 IDENTIFY_D->identify_ultimate_ob(obj, 1);
                 obj->save();
 
-                tell_object(me, "ÉèÖÃ " + obj->short() + " µÈ¼¶Îª LV105 ³É¹¦¡£\n");
+                tell_object(me, "è¨­ç½® " + obj->short() + " ç­‰ç´šç‚º LV105 æˆåŠŸã€‚\n");
                 return 1;
-        } else  return notify_fail("µÈ¼¶¸ñÊ½ÓĞLV10/LV69/LV87/LV105/LV121£¬ÄãÒªÉèÖÃËûÎªÄÄ¸öµÈ¼¶£¿\n");
+        } else  return notify_fail("ç­‰ç´šæ ¼å¼æœ‰LV10/LV69/LV87/LV105/LV121ï¼Œä½ è¦è¨­ç½®ä»–ç‚ºå“ªå€‹ç­‰ç´šï¼Ÿ\n");
 }

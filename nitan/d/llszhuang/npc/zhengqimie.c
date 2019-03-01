@@ -2,14 +2,14 @@
 inherit NPC;
 void create()
 {
-        set_name("Ö£ÆßÃğ", ({ "zheng qimie","zheng","qimie"}) );
+        set_name("é„­ä¸ƒæ»…", ({ "zheng qimie","zheng","qimie"}) );
         set("long",@LONG
-Ö£ÆßÃğÊÇÎäÁÖµÚÒ»ÃÀÄĞ×Ó£¬Ò»ÕÅÓ¢¿¡µÃ¾øÎŞè¦´ÃµÄÁ³ÅÓ¹ü£¬Ç¶×ÅÒ»Ë«±ÈÉîºÚ
-º£ÑóÀïÉÁÉÁ·¢¹âµÄ±¦Ê¯»¹Ã÷ÁÁµÄÑÛ¾¦£¬ÀäÀäµØÉ¨ÊÓËÄ·½¡£
+é„­ä¸ƒæ»…æ˜¯æ­¦æ—ç¬¬ä¸€ç¾ç”·å­ï¼Œä¸€å¼µè‹±ä¿Šå¾—çµ•ç„¡ç‘•ç–µçš„è‡‰é¾è£¹ï¼ŒåµŒè‘—ä¸€é›™æ¯”æ·±é»‘
+æµ·æ´‹è£¡é–ƒé–ƒç™¼å…‰çš„å¯¶çŸ³é‚„æ˜äº®çš„çœ¼ç›ï¼Œå†·å†·åœ°æƒè¦–å››æ–¹ã€‚
 LONG
          );
-        set("nickname","Ğ°Òì¼ı");
-        set("title",BLU"Éñ¼ı°ËĞÛ"NOR);
+        set("nickname","é‚ªç•°ç®­");
+        set("title",BLU"ç¥ç®­å…«é›„"NOR);
         set("max_jing", 4000);
         set("max_qi", 8000);                    
         set("max_sen", 4000);
@@ -24,7 +24,7 @@ LONG
         set_skill("dodge", 500);
         set_skill("parry", 400);
         set_skill("sword",420);
-        set_skill("force",800); //·ÀÖ¹±ğÈËÀ´µ¯Ö¸
+        set_skill("force",800); //é˜²æ­¢åˆ¥äººä¾†å½ˆæŒ‡
         set_skill("hamagong",400);
         set_skill("tiyunzong",400);
         map_skill("sword","pixie-jian");

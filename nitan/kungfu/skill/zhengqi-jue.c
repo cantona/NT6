@@ -10,11 +10,11 @@ string type() { return "knowledge"; }
 
 int practice_skill(object me)
 {
-        return notify_fail("ÕıÆø¾öÖ»ÄÜ¿¿Ñ§(learn)À´Ìá¸ß¡£\n");
+        return notify_fail("æ­£æ°£æ±ºåªèƒ½é å­¸(learn)ä¾†æé«˜ã€‚\n");
 }
 void skill_improved(object me)
 {
-        tell_object(me, HIR "ÄãĞÄÀï¹Äµ´×ÅÒ»¹ÉÏÀÒåÖ®Æø£¡\n" NOR );
+        tell_object(me, HIR "ä½ å¿ƒè£¡é¼“ç›ªè‘—ä¸€è‚¡ä¿ ç¾©ä¹‹æ°£ï¼\n" NOR );
         addn("shen", 200, me);
 }
 

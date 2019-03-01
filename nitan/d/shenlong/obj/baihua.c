@@ -3,12 +3,12 @@ inherit ITEM;
 
 void create()
 {
-	set_name("°Ù»¨¸¹Éß¸à", ({"baihua gao", "gao","baihua"}));
+	set_name("ç™¾èŠ±è…¹è›‡è†", ({"baihua gao", "gao","baihua"}));
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "Ã¶");
-		set("long", "ÕâÊÇÒ»Ã¶Õä¹óµÄ°Ù»¨¸¹Éß¸à¡£\n");
+		set("unit", "æš");
+		set("long", "é€™æ˜¯ä¸€æšçè²´çš„ç™¾èŠ±è…¹è›‡è†ã€‚\n");
 		set("value", 20000);
 		set("only_do_effect", 1);
 	}
@@ -29,10 +29,10 @@ int do_effect(object me)
 		if( query("max_neili", me)>max_limit )
 set("max_neili", max_limit, 			me);
 		
-		message_vision(HIY "$N³ÔÏÂÒ»Ã¶°Ù»¨¸¹Éß¸à£¬¶ÙÈ»¼äÖ»¾õÒ»¹ÉÇåÁ¹Ö®ÆøÖ±ÇßĞÄ·Î...\n" NOR, this_player());
+		message_vision(HIY "$Nåƒä¸‹ä¸€æšç™¾èŠ±è…¹è›‡è†ï¼Œé “ç„¶é–“åªè¦ºä¸€è‚¡æ¸…æ¶¼ä¹‹æ°£ç›´æ²å¿ƒè‚º...\n" NOR, this_player());
 	}
 	else
-		message_vision(HIY "$N³ÔÏÂÒ»Ã¶°Ù»¨¸¹Éß¸à£¬µ«ÊÇºÃÏóÃ»Ê²Ã´ÓÃ.\n" NOR, this_player());
+		message_vision(HIY "$Nåƒä¸‹ä¸€æšç™¾èŠ±è…¹è›‡è†ï¼Œä½†æ˜¯å¥½è±¡æ²’ä»€éº¼ç”¨.\n" NOR, this_player());
 
 	destruct(this_object());
 	return 1;

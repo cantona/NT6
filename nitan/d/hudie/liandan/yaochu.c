@@ -6,13 +6,13 @@ void finish(object me, object ob);
 
 void create()
 {
-        set_name(HIC"Ò©³ú"NOR, ({ "yao chu"}));
+        set_name(HIC"è—¥é‹¤"NOR, ({ "yao chu"}));
         set_weight(100);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»°ÑÒ©³ú£¬ÓÃÀ´ÔÚµØÀïÍÚ¾ò£¨wajue£©¸ùÀàÒ©²Ä¡£\n");
-                set("unit", "°Ñ"); 
+                set("long", "ä¸€æŠŠè—¥é‹¤ï¼Œç”¨ä¾†åœ¨åœ°è£¡æŒ–æ˜ï¼ˆwajueï¼‰æ ¹é¡è—¥æã€‚\n");
+                set("unit", "æŠŠ"); 
                 set("no_get",1);
                 set("no_drop",1);             
                 set("no_put",1);
@@ -39,10 +39,10 @@ int do_wajue()
     	 || query("id", weapon) != "yaochu" )
     	if( !objectp(weapon=query_temp("secondary_weapon", me) )
     	 || query("id", weapon) != "yaochu" )
-        	return notify_fail("ÄãÊÖÖĞµÃÄÃ×Å¹¤¾ß²ÅÄÜÍÚÒ©¡£\n");
+        	return notify_fail("ä½ æ‰‹ä¸­å¾—æ‹¿è‘—å·¥å…·æ‰èƒ½æŒ–è—¥ã€‚\n");
 
   	if( !query("outdoors", environment(me)) )
-  	return notify_fail("ÄãÔÚ·¿¼äÀïÍÚ¸öÊ²Ã´¾¢£¬ÒªÍÚÈ¥ÍâÃæÍÚ£¡\n");
+  	return notify_fail("ä½ åœ¨æˆ¿é–“è£¡æŒ–å€‹ä»€éº¼å‹ï¼Œè¦æŒ–å»å¤–é¢æŒ–ï¼\n");
 
   	if(!sscanf(base_name(environment(me)),"/d/wudang/%*s")
   	&& !sscanf(base_name(environment(me)),"/d/quanzhen/%*s")
@@ -53,18 +53,18 @@ int do_wajue()
   	&& !sscanf(base_name(environment(me)),"/d/gaochang/%*s")
   	&& !sscanf(base_name(environment(me)),"/d/kunlun/%*s")
   	&& !sscanf(base_name(environment(me)),"/d/songshan/%*s"))
-  	return notify_fail("Ö»ÓĞÃûÉ½´ó´¨£¬·ç¾°ĞãÀöÖ®´¦²Å¿ÉÒÔÍÚ¾òÒ©²Ä!\n");
+  	return notify_fail("åªæœ‰åå±±å¤§å·ï¼Œé¢¨æ™¯ç§€éº—ä¹‹è™•æ‰å¯ä»¥æŒ–æ˜è—¥æ!\n");
   	
 	if(me->is_busy())
-  	return notify_fail("ÄãÏÖÔÚÕıÃ¦,µÈÒ»ÏÂÔÙÍÚ°É!\n");
+  	return notify_fail("ä½ ç¾åœ¨æ­£å¿™,ç­‰ä¸€ä¸‹å†æŒ–å§!\n");
 
   	if( query("wajue", environment(me))>time() )
-  	return notify_fail("ÕâÀï¸Õ¸Õ±»ÈËÍÚ¾ò¹ı£¬ÄãµÈÒ»»áÔÙÀ´°É!\n");
+  	return notify_fail("é€™è£¡å‰›å‰›è¢«äººæŒ–æ˜éï¼Œä½ ç­‰ä¸€æœƒå†ä¾†å§!\n");
 
   	me->start_busy(5);
 
 	me->start_call_out( (: call_other, __FILE__, "finish", me, ob :), 3);
-	message_vision( HIB"$NÄÃÆğÒ©³ú£¬ÔÚµØÉÏÒ»Õó·è¿ñÂÒÅÙ£¡\n"NOR, this_player());
+	message_vision( HIB"$Næ‹¿èµ·è—¥é‹¤ï¼Œåœ¨åœ°ä¸Šä¸€é™£ç˜‹ç‹‚äº‚åˆ¨ï¼\n"NOR, this_player());
 	return 1;
 }
 
@@ -75,13 +75,13 @@ void finish(object me, object ob)
   	if(random(5)>4) 
 	{
   		me->start_busy(2);
-  		message_vision( HIW"$N¸Ğµ½ºÃÏóÍÚµ½Ê²Ã´¶«Î÷ÁË,×ĞÏ¸Ò»¿´Ô­À´ÊÇÊ¯¿é!\n"NOR, this_player());
+  		message_vision( HIW"$Næ„Ÿåˆ°å¥½è±¡æŒ–åˆ°ä»€éº¼æ±è¥¿äº†,ä»”ç´°ä¸€çœ‹åŸä¾†æ˜¯çŸ³å¡Š!\n"NOR, this_player());
 
    	}
   
    else if ( random(20)<2) 
 	{
-  		message_vision( HIG"$NÍ»È»Ìıµ½¡º¿¦àêÒ»Éù¡»,³úÍ·ÍÚ¶ÏÁË!\n"NOR, this_player());
+  		message_vision( HIG"$Nçªç„¶è½åˆ°ã€å–€åš“ä¸€è²ã€,é‹¤é ­æŒ–æ–·äº†!\n"NOR, this_player());
   		destruct(ob);
   	}
 	else
@@ -95,6 +95,6 @@ addn("neili", -(query("neili", me)/10), 		me);
    		gen->move(me);
   		me->start_busy(2);
 
-   		message_vision(HIR"$NÄÃ×ÅÒ©³úÅÙµØÈı³ß£¬ÍÚ³öÁËÒ»¸ù"+gen->name()+HIR"£¡\n"NOR, this_player());
+   		message_vision(HIR"$Næ‹¿è‘—è—¥é‹¤åˆ¨åœ°ä¸‰å°ºï¼ŒæŒ–å‡ºäº†ä¸€æ ¹"+gen->name()+HIR"ï¼\n"NOR, this_player());
 	}
 }

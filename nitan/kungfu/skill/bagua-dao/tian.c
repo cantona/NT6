@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define TIAN "¡¸" HIY "Ììµ¶°ËÊÆ" NOR "¡¹"
+#define TIAN "ã€Œ" HIY "å¤©åˆ€å…«å‹¢" NOR "ã€"
 
 inherit F_SSERVER;
 
@@ -13,41 +13,41 @@ int perform(object me, object target)
         int i, count;
 
         if( userp(me) && !query("can_perform/bagua-dao/tian", me) )
-                return notify_fail("ÄãËùÊ¹ÓÃµÄÍâ¹¦ÖÐÃ»ÓÐÕâÖÖ¹¦ÄÜ¡£\n");
+                return notify_fail("ä½ æ‰€ä½¿ç”¨çš„å¤–åŠŸä¸­æ²’æœ‰é€™ç¨®åŠŸèƒ½ã€‚\n");
 
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(TIAN "Ö»ÄÜÔÚÕ½¶·ÖÐ¶Ô¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(TIAN "åªèƒ½åœ¨æˆ°é¬¥ä¸­å°å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me)) || 
             query("skill_type", weapon) != "blade" )
-                return notify_fail("ÄãËùÊ¹ÓÃµÄÎäÆ÷²»¶Ô£¬ÄÑÒÔÊ©Õ¹" TIAN "¡£\n");
+                return notify_fail("ä½ æ‰€ä½¿ç”¨çš„æ­¦å™¨ä¸å°ï¼Œé›£ä»¥æ–½å±•" TIAN "ã€‚\n");
 
         if ((int)me->query_skill("bagua-dao", 1) < 200)
-                return notify_fail("ÄãµÄ°ËØÔµ¶·¨²»¹»æµÊì£¬ÄÑÒÔÊ©Õ¹" TIAN "¡£\n");
+                return notify_fail("ä½ çš„å…«å¦åˆ€æ³•ä¸å¤ å«»ç†Ÿï¼Œé›£ä»¥æ–½å±•" TIAN "ã€‚\n");
 
         if ((int)me->query_skill("wai-bagua", 1) < 200)
-                return notify_fail("ÄãµÄÍâ°ËØÔÉñ¹¦²»¹»æµÊì£¬ÄÑÒÔÊ©Õ¹" TIAN "¡£\n");
+                return notify_fail("ä½ çš„å¤–å…«å¦ç¥žåŠŸä¸å¤ å«»ç†Ÿï¼Œé›£ä»¥æ–½å±•" TIAN "ã€‚\n");
 
         if ((int)me->query_skill("nei-bagua", 1) < 200)
-                return notify_fail("ÄãµÄÄÚ°ËØÔÉñ¹¦²»¹»æµÊì£¬ÄÑÒÔÊ©Õ¹" TIAN "¡£\n");
+                return notify_fail("ä½ çš„å…§å…«å¦ç¥žåŠŸä¸å¤ å«»ç†Ÿï¼Œé›£ä»¥æ–½å±•" TIAN "ã€‚\n");
 
         if( query("max_neili", me)<3000 )
-                return notify_fail("ÄãµÄÄÚ¹¦ÐÞÎª²»×ã£¬ÄÑÒÔÊ©Õ¹" TIAN "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸä¿®ç‚ºä¸è¶³ï¼Œé›£ä»¥æ–½å±•" TIAN "ã€‚\n");
 
         if( query("neili", me)<500 )
-                return notify_fail("ÄãÏÖÔÚÕæÆø²»¹»£¬ÄÑÒÔÊ©Õ¹" TIAN "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çœŸæ°£ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" TIAN "ã€‚\n");
 
         if (me->query_skill_mapped("blade") != "bagua-dao")
-                return notify_fail("ÄãÃ»ÓÐ¼¤·¢°ËØÔµ¶·¨£¬ÄÑÒÔÊ©Õ¹" TIAN "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼å…«å¦åˆ€æ³•ï¼Œé›£ä»¥æ–½å±•" TIAN "ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        message_combatd(HIY "$N" HIY "ÝëµØÒ»ÕñÊÖÖÐ" + weapon->name() +
-                        HIY "£¬·¢³öÍòÇ§ÁúÒ÷£¬ö®Ê±µ¶¹â¹ö¹ö£¬ÏòËÄÃæÓ¿³ö"
-                        "£¬ÁýÕÖ$n" HIY "È«Éí¡£\n" NOR, me, target);
+        message_combatd(HIY "$N" HIY "é©€åœ°ä¸€æŒ¯æ‰‹ä¸­" + weapon->name() +
+                        HIY "ï¼Œç™¼å‡ºè¬åƒé¾åŸï¼ŒéœŽæ™‚åˆ€å…‰æ»¾æ»¾ï¼Œå‘å››é¢æ¹§å‡º"
+                        "ï¼Œç± ç½©$n" HIY "å…¨èº«ã€‚\n" NOR, me, target);
 
         count = me->query_skill("bagua-dao", 1) / 6;
 

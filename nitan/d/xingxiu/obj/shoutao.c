@@ -4,16 +4,16 @@ inherit HANDS;
 
 void create()
 {
-        set_name(HIY "½ğË¿ÊÖÌ×" NOR, ({ "jinsi shoutao", "shoutao", "jinsi" }));
+        set_name(HIY "é‡‘çµ²æ‰‹å¥—" NOR, ({ "jinsi shoutao", "shoutao", "jinsi" }));
         set_weight(2900);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIY "ÕâÊÇÒ»Ë«ÓÃ½ğË¿±àÖÆ¶ø³ÉµÄÊÖÌ×£¬´÷ÉÏËû¿ÉÒÔÄÃÈ¡»ò´¥Ãş´ø¶¾µÄÎïÆ·¶ø²»»áÖĞ¶¾¡£\n" NOR);
-                set("unit", "Ë«");
+                set("long", HIY "é€™æ˜¯ä¸€é›™ç”¨é‡‘çµ²ç·¨åˆ¶è€Œæˆçš„æ‰‹å¥—ï¼Œæˆ´ä¸Šä»–å¯ä»¥æ‹¿å–æˆ–è§¸æ‘¸å¸¶æ¯’çš„ç‰©å“è€Œä¸æœƒä¸­æ¯’ã€‚\n" NOR);
+                set("unit", "é›™");
                 set("material", "iron");             
                 set("value", 500);
-                set("no_sell", "ÕâÄãÒ²Âô£¿\n");
+                set("no_sell", "é€™ä½ ä¹Ÿè³£ï¼Ÿ\n");
                 set("armor_prop/armor", 1);
         }
         setup();

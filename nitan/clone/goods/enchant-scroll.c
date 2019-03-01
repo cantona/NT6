@@ -3,13 +3,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIM "¸½Ä§¾íÖá" NOR, ({ "enchant scroll", "scroll" }));
+        set_name(HIM "é™„é­”å·è»¸" NOR, ({ "enchant scroll", "scroll" }));
         set_weight(3000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIM "¸½Ä§¾íÖáÓÃÀ´¸¨ÖúÈÕ»êÔÂÆÇ¸½Ä§ÊôĞÔÓÃµÄ£¬¿ÉÈ·±£¸½Ä§Ê±×°±¸²»»áÏú»Ù¡£\n" NOR);
-                set("unit", "ÕÅ");
+                set("long", HIM "é™„é­”å·è»¸ç”¨ä¾†è¼”åŠ©æ—¥é­‚æœˆé­„é™„é­”å±¬æ€§ç”¨çš„ï¼Œå¯ç¢ºä¿é™„é­”æ™‚è£å‚™ä¸æœƒéŠ·æ¯€ã€‚\n" NOR);
+                set("unit", "å¼µ");
                 set("value", 500000);
                 set("no_sell", 1);
         }

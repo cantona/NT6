@@ -3,8 +3,8 @@ inherit __DIR__"bhd_npc.c";
 
 void create()
 {
-        set_name(HIW "寒冰僵尸" NOR, ({ "bing jiangshi", "bing", "jiangshi" }));
-        set("long", HIW "死在冰洞内的武林高手，却成了一具具恐怖的僵尸。\n" NOR);
+        set_name(HIW "瀵掑啺鍍靛睄" NOR, ({ "bing jiangshi", "bing", "jiangshi" }));
+        set("long", HIW "姝诲湪鍐版礊鍏х殑姝︽灄楂樻墜锛屽嵒鎴愪簡涓�鍏峰叿鎭愭�栫殑鍍靛睄銆俓n" NOR);
 
         set("age", 99999);
         set("str",500);
@@ -42,7 +42,7 @@ void create()
 
 void init()
 {
-        // 随机攻击玩家
+        // 闅ㄦ鏀绘搳鐜╁
         if (userp(this_player()) && random(2) == 1)
         {
                 kill_ob(this_player());

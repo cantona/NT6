@@ -12,14 +12,14 @@ void init()
 
 void create()
 {
-        set_name("ÒÁÀçÂí", ({"horse", "yili ma", "ma"}));
+        set_name("ä¼ŠçŠé¦¬", ({"horse", "yili ma", "ma"}));
         set_weight(35000);
         set_max_encumbrance(50000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Æ¥");
-                set("long", "Ò»Æ¥Á¼ÖÖµÄÒÁÀçÂí£¬¿ÉÒÔÆï(ride)£¬Ò²¿ÉÒÔÍÔ¶«Î÷¡£\n");
+                set("unit", "åŒ¹");
+                set("long", "ä¸€åŒ¹è‰¯ç¨®çš„ä¼ŠçŠé¦¬ï¼Œå¯ä»¥é¨(ride)ï¼Œä¹Ÿå¯ä»¥é¦±æ±è¥¿ã€‚\n");
                 set("value", 1000);
         }
 }
@@ -28,16 +28,16 @@ int do_ride(string arg)
 {
         object me = this_player();
         if (!id(arg))
-                return notify_fail("ÄãÒªÆïÊ²Ã´£¿\n");
-        if( query_temp("marks/Æï", this_player())){
-                       write("ÄãÒÑ¾­ÆïÔÚÂíÉÏÁË¡£\n");
+                return notify_fail("ä½ è¦é¨ä»€éº¼ï¼Ÿ\n");
+        if( query_temp("marks/é¨", this_player())){
+                       write("ä½ å·²ç¶“é¨åœ¨é¦¬ä¸Šäº†ã€‚\n");
                         return 1;
         }
         else {
-               message("vision",this_player()->name() + "·­ÉíÉÏÂí¡£\n",
+               message("vision",this_player()->name() + "ç¿»èº«ä¸Šé¦¬ã€‚\n",
                         environment(me), ({me}) );
-               write("ÄãÕ½Õ½¾¤¾¤ÅÀÉÏÂí±³¡£»¹ºÃ£¬±ğÈËÃ»¿´³öÀ´¡£\n");
-                set_temp("marks/Æï", 1, this_player());
+               write("ä½ æˆ°æˆ°å…¢å…¢çˆ¬ä¸Šé¦¬èƒŒã€‚é‚„å¥½ï¼Œåˆ¥äººæ²’çœ‹å‡ºä¾†ã€‚\n");
+                set_temp("marks/é¨", 1, this_player());
         return 1;
         }
 }

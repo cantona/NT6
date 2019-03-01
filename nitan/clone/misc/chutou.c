@@ -7,13 +7,13 @@ int do_wajue();
 
 void create()
 {
-        set_name(HIG"³úÍ·"NOR, ({ "chu tou", "bao chu", "chu" }));
+        set_name(HIG"é‹¤é ­"NOR, ({ "chu tou", "bao chu", "chu" }));
         set_weight(6000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "ÕâÊÇÒ»°Ñ·¢×ÅºÚÁÁÓ«¹âµÄÌØÖÆ¾«¸Ö³úÍ·£¬ÄãºÃÏó¿ÉÒÔÓÃËüÍÚ¾ò(wajue)Ê²Ã´¶«Î÷¡£\n");
+                set("unit", "æŠŠ");
+                set("long", "é€™æ˜¯ä¸€æŠŠç™¼è‘—é»‘äº®ç†’å…‰çš„ç‰¹åˆ¶ç²¾é‹¼é‹¤é ­ï¼Œä½ å¥½è±¡å¯ä»¥ç”¨å®ƒæŒ–æ˜(wajue)ä»€éº¼æ±è¥¿ã€‚\n");
                 set("wajue", 0);
 //                set("no_sell",1);
 //                set("no_drop",1);
@@ -22,7 +22,7 @@ void create()
                 set("no_beg",1);
                 set("no_steal",1);        
 */                set("value", 1000000);
-                set("no_value",1); // dropÊ±¶ªÊ§
+                set("no_value",1); // dropæ™‚ä¸Ÿå¤±
                 set("material", "steel");
                  
         }
@@ -45,30 +45,30 @@ int do_wajue()
         time=query_temp("wajue1", where);
 
         if( me->is_busy() )
-                return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É£¡\n");
+                return notify_fail("ä½ ä¸Šä¸€å€‹å‹•ä½œé‚„æ²’æœ‰å®Œæˆï¼\n");
         if (!present("bao chu", me))
-                return notify_fail("ÄãÃ»ÓĞ³úÍ·£¬ÔõÃ´ÍÚ¾òÑ½£¿£¡\n");
+                return notify_fail("ä½ æ²’æœ‰é‹¤é ­ï¼Œæ€éº¼æŒ–æ˜å‘€ï¼Ÿï¼\n");
         
                 
         if (!wizardp(me))
         {
                 obj = present("chu tou", me);
                 if( query("jing", me)<50 )
-                        return notify_fail("ÄãÍÚÁË°ëÌì£¬¾«Á¦²»¹»ÁË£¡\n");
+                        return notify_fail("ä½ æŒ–äº†åŠå¤©ï¼Œç²¾åŠ›ä¸å¤ äº†ï¼\n");
                 if( !query("outdoors", environment(me)) )
-                        return notify_fail("ÔÚ·¿×ÓÀïÄãÒ²ÏëÍÚ±¦£¿£¡\n");
+                        return notify_fail("åœ¨æˆ¿å­è£¡ä½ ä¹Ÿæƒ³æŒ–å¯¶ï¼Ÿï¼\n");
                 if (present("bao wu",me))
-                        return notify_fail("ÄãÉíÉÏÒÑ¾­ÓĞ±¦ÎïÁË£¬±ğÌ«Ì°ĞÄ£¡\n");
+                        return notify_fail("ä½ èº«ä¸Šå·²ç¶“æœ‰å¯¶ç‰©äº†ï¼Œåˆ¥å¤ªè²ªå¿ƒï¼\n");
                 if( query_temp("baowunum", me) >= 1 )
-                        return notify_fail("Î¤¾ôÒ¯ÕıÅÉÈËËÄ´¦Ñ°ÄãÄØ£¬»¹²»¿ìÈ¥£¿\n");
+                        return notify_fail("éŸ‹çˆµçˆºæ­£æ´¾äººå››è™•å°‹ä½ å‘¢ï¼Œé‚„ä¸å¿«å»ï¼Ÿ\n");
                 if( t <= time && !(query_temp("invite", me) && random(2) == 1) )
-                        return notify_fail("ÕâÀïÒÑ±»ÈËÍÚ¹ı£¬Ò»»á¶ùÔÙÀ´°É£¡\n");
+                        return notify_fail("é€™è£¡å·²è¢«äººæŒ–éï¼Œä¸€æœƒå…’å†ä¾†å§ï¼\n");
                 if (me->is_fighting()) 
-                        return notify_fail("ÏÖÔÚÕı´òµÃÆğ¾¢£¬ÄÄÓĞ¿ÕÍÚÄØ£¿£¡\n");
+                        return notify_fail("ç¾åœ¨æ­£æ‰“å¾—èµ·å‹ï¼Œå“ªæœ‰ç©ºæŒ–å‘¢ï¼Ÿï¼\n");
         }
         if (random(10) <= 6 )
         {
-                printf(HIC"ÄãÄÃ³öÒ»°Ñ³úÍ·£¬ÔÚµØÉÏÍÚÁË°ëÌì£¬Ê²Ã´Ò²Ã»ÓĞÍÚµ½¡£\n"NOR);
+                printf(HIC"ä½ æ‹¿å‡ºä¸€æŠŠé‹¤é ­ï¼Œåœ¨åœ°ä¸ŠæŒ–äº†åŠå¤©ï¼Œä»€éº¼ä¹Ÿæ²’æœ‰æŒ–åˆ°ã€‚\n"NOR);
                 t = (300 + random(10) );
                 set_temp("wajue", time(), where);
                 set_temp("wajue1", t, where);
@@ -79,7 +79,7 @@ int do_wajue()
         }
         else
         { 
-                printf( HIC"ÄãÄÃ³öÒ»°Ñ³úÍ·£¬ÔÚµØÉÏÍÚÁË°ëÌì£¬Í»È»Äã¾õµÃºÃÏóÍÚµ½ÁËÊ²Ã´¡£\n"NOR);   
+                printf( HIC"ä½ æ‹¿å‡ºä¸€æŠŠé‹¤é ­ï¼Œåœ¨åœ°ä¸ŠæŒ–äº†åŠå¤©ï¼Œçªç„¶ä½ è¦ºå¾—å¥½è±¡æŒ–åˆ°äº†ä»€éº¼ã€‚\n"NOR);   
                 switch (random(10))
                 {
                         case 0:
@@ -88,8 +88,8 @@ int do_wajue()
                                 ob = new(__DIR__"baowu");
                                 set("owner",query("id",  me), ob);
                                 ob->move(me);
-                                tell_object(me, HIW"ÓÉÓÚÄãĞÁÇÚµÄÍÚ¾ò£¬Äã·¢ÏÖÁËÒ»¸ö±¦Îï¡£\n"NOR);
-                                tell_object(me, HIW"¹§Ï²ÄãÀ²£¡\n"NOR);                                
+                                tell_object(me, HIW"ç”±äºä½ è¾›å‹¤çš„æŒ–æ˜ï¼Œä½ ç™¼ç¾äº†ä¸€å€‹å¯¶ç‰©ã€‚\n"NOR);
+                                tell_object(me, HIW"æ­å–œä½ å•¦ï¼\n"NOR);                                
                                 addn_temp("baowunum", 1, me);
                                 break;
                         case 3:
@@ -97,7 +97,7 @@ int do_wajue()
                                 ob = new("/clone/food/fruit/"+dir[random(sizeof(dir))]);
 //                                ob->set("owner",me->query("id"));
                                 ob->move(me);
-                                tell_object(me, HIW"ÓÉÓÚÄãĞÁÇÚµÄÍÚ¾ò£¬Äã·¢ÏÖÁËÒ»Ğ©¶«¶«¡£\n"NOR);
+                                tell_object(me, HIW"ç”±äºä½ è¾›å‹¤çš„æŒ–æ˜ï¼Œä½ ç™¼ç¾äº†ä¸€äº›æ±æ±ã€‚\n"NOR);
                                 break;
                         case 4:
                         case 5:
@@ -105,36 +105,36 @@ int do_wajue()
                                 ob = new("/clone/medicine/vegetable/"+dir[random(sizeof(dir))]);
                                 if( query("id", ob) == "lingzhi" || query("id", ob) == "fuxincao" || query("id", ob) == "xuelian" )
                                 {
-                                message_vision("ÍÛ£¬$NÍÚµ½ÁËÒ»¸öÃ©¿Ó¡£\n", me);
-                                tell_object(me,"ÕâÃ´¿ì¾ÍÁ¬Ã©¿Ó¶¼ÄÜÍÚ³öÀ´£¬Åå·ş°¡Åå·ş¡£\n");
+                                message_vision("å“‡ï¼Œ$NæŒ–åˆ°äº†ä¸€å€‹èŒ…å‘ã€‚\n", me);
+                                tell_object(me,"é€™éº¼å¿«å°±é€£èŒ…å‘éƒ½èƒ½æŒ–å‡ºä¾†ï¼Œä½©æœå•Šä½©æœã€‚\n");
                                 break;
                                 }
 //                                ob->set("owner",me->query("id"));
                                 ob->move(me);
-                                tell_object(me, HIW"ÓÉÓÚÄãĞÁÇÚµÄÍÚ¾ò£¬Äã·¢ÏÖÁËÒ»Ğ©Ò©²Ä¡£\n"NOR);
+                                tell_object(me, HIW"ç”±äºä½ è¾›å‹¤çš„æŒ–æ˜ï¼Œä½ ç™¼ç¾äº†ä¸€äº›è—¥æã€‚\n"NOR);
                                 break;
                         case 6:
 /*
-                                message_vision("°¥Ñ½²»ºÃ£¬$NÍÚµ½ÉßÎÑÁË£¡Ò»Ìõ¶¾Éß´Ó¶´Àï×êÁË³öÀ´¡£\n", me);
-                                tell_object(me,"»¹²»¿ìÅÜ£¿\n");
+                                message_vision("å“å‘€ä¸å¥½ï¼Œ$NæŒ–åˆ°è›‡çª©äº†ï¼ä¸€æ¢æ¯’è›‡å¾æ´è£¡é‘½äº†å‡ºä¾†ã€‚\n", me);
+                                tell_object(me,"é‚„ä¸å¿«è·‘ï¼Ÿ\n");
                                 ob = new("/clone/animal/snake");
                                 ob->move(environment(me));
                                 break;
 */
                         case 7:
 /*
-                                message_vision("Ò»³úÍ·ÏÂÈ¥£¬$NÍÚ³öÒ»ÎÑÍÃ×Ó¡£\n", me);
+                                message_vision("ä¸€é‹¤é ­ä¸‹å»ï¼Œ$NæŒ–å‡ºä¸€çª©å…”å­ã€‚\n", me);
                                 ob = new("/clone/animal/yetu");
                                 ob->move(environment(me));
                                 break;
 */
                         case 8:
-                                message_vision("ÍÛ£¬$NÍÚµ½ÁËÒ»¸öÃ©¿Ó¡£\n", me);
-                                tell_object(me,"ÕâÃ´¿ì¾ÍÁ¬Ã©¿Ó¶¼ÄÜÍÚ³öÀ´£¬Åå·ş°¡Åå·ş¡£\n");
+                                message_vision("å“‡ï¼Œ$NæŒ–åˆ°äº†ä¸€å€‹èŒ…å‘ã€‚\n", me);
+                                tell_object(me,"é€™éº¼å¿«å°±é€£èŒ…å‘éƒ½èƒ½æŒ–å‡ºä¾†ï¼Œä½©æœå•Šä½©æœã€‚\n");
                                 break;
                         default:
-                                message_vision("ÍÛ£¬$NÍÚ³öÁËÒ»¿Ú¾®¡£\n", me);
-                                tell_object(me,"¿ÉÏ§ÍÚµÄµØ·½²»¶Ô£¬Õâ¾®³ıÁËÃ°ÑÌ£¬Ê²Ã´Ò²²»»á¡£\n");
+                                message_vision("å“‡ï¼Œ$NæŒ–å‡ºäº†ä¸€å£äº•ã€‚\n", me);
+                                tell_object(me,"å¯æƒœæŒ–çš„åœ°æ–¹ä¸å°ï¼Œé€™äº•é™¤äº†å†’ç…™ï¼Œä»€éº¼ä¹Ÿä¸æœƒã€‚\n");
                 }
                 
                 t = ( 30 + random(10) ) * 100;

@@ -1,22 +1,22 @@
-// ÌìÉ½ÕÛÃ·ÊÖ·¨Í¼
+// å¤©å±±æŠ˜æ¢…æ‰‹æ³•åœ–
 
 inherit ITEM;
 
 void create()
 {
-        set_name( "ÌìÉ½ÕÛÃ·ÊÖ·¨Í¼ÉÏ¾í", ({ "shoufa tu1", "tu1" }));
+        set_name( "å¤©å±±æŠ˜æ¢…æ‰‹æ³•åœ–ä¸Šå·", ({ "shoufa tu1", "tu1" }));
         set_weight(200);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "·ù");
-                set("long", "ÕâÊÇÒ»·ùÌìÉ½ÕÛÃ·ÊÖ·¨Í¼£¬ÉÏÃæ»­×ÅÒ»Ğ©·×·±¸´ÔÓµÄÕĞÊ½¡£\n");
+                set("unit", "å¹…");
+                set("long", "é€™æ˜¯ä¸€å¹…å¤©å±±æŠ˜æ¢…æ‰‹æ³•åœ–ï¼Œä¸Šé¢ç•«è‘—ä¸€äº›ç´›ç¹å¾©é›œçš„æ‹›å¼ã€‚\n");
                 set("value", 500);
                 set("no_put", 1);
                 set("material", "paper");
                 set("skill", ([
                         "name":        "zhemei-shou",        
-                        "family_name":        "ÁéğÕ¹¬",        
+                        "family_name":        "éˆé·²å®®",        
                         "exp_required":        10000,        // minimum combat experience required
                         "jing_cost":    20,         // jing cost every time study this
                         "difficulty":        20,        // the base int to learn this skill

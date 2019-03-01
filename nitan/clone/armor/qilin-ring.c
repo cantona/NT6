@@ -6,13 +6,13 @@ inherit RINGS;
 
 void create()
 {
-        set_name(HIR "÷è÷ëÖ¸»·" NOR, ({ "qilin ring", "qilin", "ring" }));
+        set_name(HIR "éº’éºŸæŒ‡ç’°" NOR, ({ "qilin ring", "qilin", "ring" }));
         set_weight(500);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
-                set("long", HIR "÷è÷ëÖ¸»·ÄË»ğ÷è÷ëÖ®»¯Éí£¬ÏóÕ÷×Å¡¸Á¦Á¿¡¹£¡\n" NOR);
+                set("unit", "å€‹");
+                set("long", HIR "éº’éºŸæŒ‡ç’°ä¹ƒç«éº’éºŸä¹‹åŒ–èº«ï¼Œè±¡å¾è‘—ã€ŒåŠ›é‡ã€ï¼\n" NOR);
                 set("value", 200000);
                 set("material", "gold");
                 set("armor_prop/str", 10);

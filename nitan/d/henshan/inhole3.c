@@ -5,10 +5,10 @@ void enter_furong();
 
 void create()
 {
-        set("short", "Ë®Á±¶´ÄÚ");
+        set("short", "æ°´ç°¾æ´žå…§");
         set("long", @LONG
-ÕâÀïÒõ·çÉªÉª£¬Ò»Æ¬ÆáºÚ£¬Ê²Ã´Ò²¿´²»¼û£¬Î¨ÓÐ¶´¿Ú´¦ÓÐÒ»Ë¿¹â
-ÁÁ¡£
+é€™è£¡é™°é¢¨ç‘Ÿç‘Ÿï¼Œä¸€ç‰‡æ¼†é»‘ï¼Œä»€éº¼ä¹Ÿçœ‹ä¸è¦‹ï¼Œå”¯æœ‰æ´žå£è™•æœ‰ä¸€çµ²å…‰
+äº®ã€‚
 LONG );
 
         set("exits",([                
@@ -35,15 +35,15 @@ int do_use(string arg)
     if (! present("fire", me)) return 0;
     if (arg == "fire" ) 
     {
-      write(HIW"\nÄãµãÈ¼ÁË»ðÕÛ£¬·¢ÏÖ¶´ÖÐËÆºõÓÐÒ»ÌõÂ·¿ÉÒÔË³×Å×ß(zou)ÏÂÈ¥¡£\n\n"NOR);  
+      write(HIW"\nä½ é»žç‡ƒäº†ç«æŠ˜ï¼Œç™¼ç¾æ´žä¸­ä¼¼ä¹Žæœ‰ä¸€æ¢è·¯å¯ä»¥é †è‘—èµ°(zou)ä¸‹åŽ»ã€‚\n\n"NOR);  
       
       delete("long");
       set("long",@LONG
-½è×Å»ð¹âÄã¿´µ½¶´ÖÐ¹ÖÊ¯á×á¾£¬Ç°·½³öÏÖÒ»ÌõÂ·²»ÖªÍ¨Ïò
-ºÎ´¦¡£
+å€Ÿè‘—ç«å…‰ä½ çœ‹åˆ°æ´žä¸­æ€ªçŸ³å¶™å³‹ï¼Œå‰æ–¹å‡ºç¾ä¸€æ¢è·¯ä¸çŸ¥é€šå‘
+ä½•è™•ã€‚
 LONG);
               
-      set_temp("marks/×ß1", 1, me);
+      set_temp("marks/èµ°1", 1, me);
 
       return 1;
     }
@@ -54,19 +54,19 @@ int do_zou(string arg)
        object me;
        me = this_player();
 
-       if( query_temp("marks/×ß1", me) )
+       if( query_temp("marks/èµ°1", me) )
        {
-                tell_object(me, HIR "\nÄãÄÃ×Å»ðÕÛË³×ÅÂ·²»Í£µØ×ß...\n\n" NOR);
+                tell_object(me, HIR "\nä½ æ‹¿è‘—ç«æŠ˜é †è‘—è·¯ä¸åœåœ°èµ°...\n\n" NOR);
                   
                 call_out("enter_furong", 6);                    
   
-                delete_temp("marks/×ß1", me);
+                delete_temp("marks/èµ°1", me);
 
                 return 1;
        }
        else 
        {
-                write("ÄãÏëÍùÄÄ¶ù×ß£¿\n");
+                write("ä½ æƒ³å¾€å“ªå…’èµ°ï¼Ÿ\n");
 
                 return 1;
        }
@@ -76,8 +76,8 @@ void enter_furong()
 {
         object me = this_player();
 
-        tell_object(me, HIW "ÕâÌõÂ·ÍäÍäÇúÇú£¬Äã¸Ð¾õ×ßÁËºÜ¾Ã£¬µÀÂ·Ô½À´Ô½µÍ£¬Ïñ"
-                            "ÊÇÍ¨ÍùÁíÒ»¸öÉ½·åµÄ¡£\n\n" NOR);                                
+        tell_object(me, HIW "é€™æ¢è·¯å½Žå½Žæ›²æ›²ï¼Œä½ æ„Ÿè¦ºèµ°äº†å¾ˆä¹…ï¼Œé“è·¯è¶Šä¾†è¶Šä½Žï¼Œåƒ"
+                            "æ˜¯é€šå¾€å¦ä¸€å€‹å±±å³°çš„ã€‚\n\n" NOR);                                
 
         me->move(__DIR__"furong");
 }

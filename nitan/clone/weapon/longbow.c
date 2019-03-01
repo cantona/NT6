@@ -6,17 +6,17 @@ inherit __DIR__"bow";
 
 void create()
 {
-        set_name("³¤¹­", ({ "long bow", "bow", "chang gong", "gong" }));
+        set_name("é•·å¼“", ({ "long bow", "bow", "chang gong", "gong" }));
         set_weight(2000);
         if (clonep())
                 set_default_object(__FILE__);
         else
         {
-                set("unit", "ÕÅ");
-                set("long", "Ò»ÕÅ³¤¹­£¬´òÔìµÃÆÄÎª¾«ÖÂ£¬¾ßÓĞÏàµ±ºÃµÄ×¼È·¶È¡£\n");
+                set("unit", "å¼µ");
+                set("long", "ä¸€å¼µé•·å¼“ï¼Œæ‰“é€ å¾—é —ç‚ºç²¾è‡´ï¼Œå…·æœ‰ç›¸ç•¶å¥½çš„æº–ç¢ºåº¦ã€‚\n");
                 set("value", 80000);
-                set("power", 180000);   // ¹¥»÷ÍşÁ¦
-                set("accuracy", 150);   // ×¼È·¶È150%
+                set("power", 180000);   // æ”»æ“Šå¨åŠ›
+                set("accuracy", 150);   // æº–ç¢ºåº¦150%
         }
         setup();
 }

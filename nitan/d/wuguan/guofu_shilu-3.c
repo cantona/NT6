@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ʯ��·");
+        set("short", "石板路");
         set("long", @LONG
-������һ��ʯ��·�ϣ�һֱͨ���Ժ��·������Щ��ͨ��
-���ݣ����ϵ�С�񣬲�ͣ�Ľ��š�
+你走在一條石板路上，一直通向後院，路兩旁是些普通的
+花草，樹上的小鳥，不停的叫著。
 LONG);
         set("no_fight", 1);
         set("exits", ([

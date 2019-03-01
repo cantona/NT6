@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Ð¡µÀ");
+        set("short", "å°é“");
         set("long", @LONG
-ÕâÀïÊÇÒ»ÌõÁÖ¼äÐ¡µÀ£¬ÔÚÊ÷´ÔÖÐòêÑÑ¡£¶«ÃæÊÇÁëÄÏÖØÕò·ðÉ½£¬Î÷
-±ßÍ¨Ïò¹ãÎ÷¡£
+é€™è£¡æ˜¯ä¸€æ¢æž—é–“å°é“ï¼Œåœ¨æ¨¹å¢ä¸­èœ¿èœ’ã€‚æ±é¢æ˜¯å¶ºå—é‡éŽ®ä½›å±±ï¼Œè¥¿
+é‚Šé€šå‘å»£è¥¿ã€‚
 LONG );
         set("objects", ([
                    __DIR__"obj/shuzhi": 1,

@@ -12,7 +12,7 @@ void init()
 void destdan()
 {
         object ob;
-        message_vision("$NÂıÂı±»·ç´µ×Å£¬Ò»»á¾Í²»ÔÙĞÂÏÊÁË¡£\n",this_object());
+        message_vision("$Næ…¢æ…¢è¢«é¢¨å¹è‘—ï¼Œä¸€æœƒå°±ä¸å†æ–°é®®äº†ã€‚\n",this_object());
         ob = new("/d/guanwai/npc/xiongdan1");
         ob->move(environment(this_object()));
         destruct(this_object());
@@ -20,24 +20,24 @@ void destdan()
 
 void create()
 {
-        set_name(HIG"ĞÂÏÊĞÜµ¨"NOR, ({"dan", "xiong dan"}));
-        set("unit", "¸±");
-        set("long", "ÕâÊÇÒ»¸±ĞÂÏÊĞÜµ¨£¬ÈÈÆøÌÚÌÚµÄ£¬Ê®·ÖÓÕÈË¡£\n");
+        set_name(HIG"æ–°é®®ç†Šè†½"NOR, ({"dan", "xiong dan"}));
+        set("unit", "å‰¯");
+        set("long", "é€™æ˜¯ä¸€å‰¯æ–°é®®ç†Šè†½ï¼Œç†±æ°£é¨°é¨°çš„ï¼Œååˆ†èª˜äººã€‚\n");
         setup();
 }
 
 int do_eat(string arg)
 {
         object me=this_player();
-        if (!id(arg))  return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
-        if (me->is_fighting()) return notify_fail("Õ½¶·ÖĞ²»ÄÜ³Ô¶«Î÷£¡\n");
-        if (me->is_busy()) return notify_fail("ÄãÕıÃ¦×ÅÄØ£¡\n");
+        if (!id(arg))  return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
+        if (me->is_fighting()) return notify_fail("æˆ°é¬¥ä¸­ä¸èƒ½åƒæ±è¥¿ï¼\n");
+        if (me->is_busy()) return notify_fail("ä½ æ­£å¿™è‘—å‘¢ï¼\n");
         if(arg=="dan")
         {
                 addn("max_neili", 2, me);
                 set("neili",query("max_neili",  me), me);
                 set("qi",query("eff_qi",  me), me);
-                message_vision("$N³ÔÏÂÒ»¸±ĞÂÏÊĞÜµ¨£¬Ö»¾õµÃ¾«Éñ½¡Íú£¬ÌåÄÚÕæÁ¦Ô´Ô´×ÌÉú£¬ÆøÑª³äÓ¯¡£\n",me);
+                message_vision("$Nåƒä¸‹ä¸€å‰¯æ–°é®®ç†Šè†½ï¼Œåªè¦ºå¾—ç²¾ç¥å¥æ—ºï¼Œé«”å…§çœŸåŠ›æºæºæ»‹ç”Ÿï¼Œæ°£è¡€å……ç›ˆã€‚\n",me);
 
                 destruct(this_object());
         }

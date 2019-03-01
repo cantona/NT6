@@ -5,8 +5,8 @@ int is_pld_npc(){return 1;}
 
 void create()
 {
-        set_name(NOR + YEL "松鼠" NOR, ({ "song shu", "song", "shu" }));
-        set("long", YEL "这是一只可爱的松鼠，看起来很机灵。\n" NOR);
+        set_name(NOR + YEL "楝嗛紶" NOR, ({ "song shu", "song", "shu" }));
+        set("long", YEL "閫欐槸涓�鍙彲鎰涚殑楝嗛紶锛岀湅璧蜂締寰堟闈堛�俓n" NOR);
 
         set("age", 1);
         set("str", 1);

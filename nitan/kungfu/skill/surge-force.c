@@ -1,4 +1,4 @@
-// surge-force.c Å­º£¿ñÌÎ
+// surge-force.c æ€’æµ·ç‹‚æ¿¤
 
 inherit FORCE;
 
@@ -16,14 +16,14 @@ int query_neili_improve(object me)
 
 int valid_learn(object me)
 {
-        if( query("gender", me) != "ÄÐÐÔ" )
-                return notify_fail("Äã²»¾ßÓÐÄÐÐÔµÄÑô¸ÕÖ®Æø£¬ÎÞ·¨ÐÞÏ°Å­º£¿ñÌÎ¡£\n");
+        if( query("gender", me) != "ç”·æ€§" )
+                return notify_fail("ä½ ä¸å…·æœ‰ç”·æ€§çš„é™½å‰›ä¹‹æ°£ï¼Œç„¡æ³•ä¿®ç¿’æ€’æµ·ç‹‚æ¿¤ã€‚\n");
 
         if ((int)me->query_skill("force", 1) < 150)
-                return notify_fail("ÄãµÄ»ù±¾ÄÚ¹¦»ðºò»¹²»¹»£¬»¹²»ÄÜÐÞÁ¶Å­º£¿ñÌÎ¡£\n");
+                return notify_fail("ä½ çš„åŸºæœ¬å…§åŠŸç«å€™é‚„ä¸å¤ ï¼Œé‚„ä¸èƒ½ä¿®ç…‰æ€’æµ·ç‹‚æ¿¤ã€‚\n");
 
         if (me->query_str() < 45)
-                return notify_fail("ÄãµÄëöÁ¦²»×ã£¬ÄÑÒÔÐÞÏ°Å­º£¿ñÌÎ¡£\n");
+                return notify_fail("ä½ çš„è†‚åŠ›ä¸è¶³ï¼Œé›£ä»¥ä¿®ç¿’æ€’æµ·ç‹‚æ¿¤ã€‚\n");
 
 
         return ::valid_learn(me);
@@ -31,7 +31,7 @@ int valid_learn(object me)
 
 int practice_skill(object me)
 {
-        return notify_fail("Å­º£¿ñÌÎÖ»ÄÜÓÃÑ§(learn)µÄÀ´Ôö¼ÓÊìÁ·¶È¡£\n");
+        return notify_fail("æ€’æµ·ç‹‚æ¿¤åªèƒ½ç”¨å­¸(learn)çš„ä¾†å¢žåŠ ç†Ÿç·´åº¦ã€‚\n");
 }
 
 string exert_function_file(string func)

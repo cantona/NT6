@@ -14,18 +14,18 @@ int main(object me, string arg)
         int remain;
 
         if (!arg)
-                return notify_fail("ÄãÒªÏ´Ê²Ã´£¿\n");
+                return notify_fail("ä½ è¦æ´—ä»€éº¼ï¼Ÿ\n");
 
         target = arg;
 
         if( !query("resource/water", environment(me)) )
-                return notify_fail("ÕâÀïÃ»Ë®£¬ÄãÔõÃ´Ï´£¿\n");
+                return notify_fail("é€™è£¡æ²’æ°´ï¼Œä½ æ€éº¼æ´—ï¼Ÿ\n");
 
         if (me->is_busy())
-                return notify_fail("ÏÈÃ¦ÍæÁËÄãµÄÊÂÇéÔÙÏ´°É£¡\n");
+                return notify_fail("å…ˆå¿™ç©äº†ä½ çš„äº‹æƒ…å†æ´—å§ï¼\n");
 
         if (me->is_fighting())
-                return notify_fail("Äã»¹ÊÇ´òÍêÁË¼ÜÔÙÏ´°É£¡\n");
+                return notify_fail("ä½ é‚„æ˜¯æ‰“å®Œäº†æ¶å†æ´—å§ï¼\n");
 
         if (target == "hand" || target == "me")
         {
@@ -36,45 +36,45 @@ int main(object me, string arg)
                 dest = present(target, me);
                 if (! dest) dest = present(target, environment(me));
                 if (! dest)
-                        return notify_fail("ÕâÀïÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+                        return notify_fail("é€™è£¡æ²’æœ‰é€™æ¨£æ±è¥¿ã€‚\n");
 
                 if (dest->is_character())
                 {
                         if (dest != me)
                         {
                                 dest->force_me("chat*rascal"+query("id", me));
-                                return notify_fail("ÄãÒª¸øÈË¼Ò" + dest->name() +
-                                                   "Ï´Ôè£¿\n");
+                                return notify_fail("ä½ è¦çµ¦äººå®¶" + dest->name() +
+                                                   "æ´—æ¾¡ï¼Ÿ\n");
                         }
                         // daub on me
                 } else
                 if( !mapp(query("armor_prop", dest)) && 
                     !mapp(query("weapon_prop", dest)) )
                 {
-                        return notify_fail("ÄÇ¼È²»ÊÇÎäÆ÷£¬Ò²²»ÊÇ·À¾ß£¬"
-                                           "ÄãÓĞÊ²Ã´ºÃÇåÏ´µÄ£¿\n");
+                        return notify_fail("é‚£æ—¢ä¸æ˜¯æ­¦å™¨ï¼Œä¹Ÿä¸æ˜¯é˜²å…·ï¼Œ"
+                                           "ä½ æœ‰ä»€éº¼å¥½æ¸…æ´—çš„ï¼Ÿ\n");
                 }
         }
 
         if( remain=query_temp("daub/poison/remain", dest) )
         {
                 if (remain > 10000)
-                        msg = "£¬Ö»¼ûÏ´ÍêµÄË®±äµÃĞÈ³ôÎŞ±È£¬ÁîÈËÑÚ±Ç¡£\n";
+                        msg = "ï¼Œåªè¦‹æ´—å®Œçš„æ°´è®Šå¾—è…¥è‡­ç„¡æ¯”ï¼Œä»¤äººæ©é¼»ã€‚\n";
                 else
                 if (remain > 4000)
-                        msg = "£¬¾Í¼ûÄÇË®ºöµÄ±äÁËÑÕÉ«£¬±ÌÍôÍôµÄ£¬ÆøÎ¶¹Å¹Ö¡£\n";
+                        msg = "ï¼Œå°±è¦‹é‚£æ°´å¿½çš„è®Šäº†é¡è‰²ï¼Œç¢§æ±ªæ±ªçš„ï¼Œæ°£å‘³å¤æ€ªã€‚\n";
                 else
                 if (remain > 1000)
-                        msg = "£¬ÇåË®Ëæ¼´É«±ä£¬É¢·¢³öÒ»ÖÖÄÑÎÅµÄÆøÎ¶¡£\n";
+                        msg = "ï¼Œæ¸…æ°´éš¨å³è‰²è®Šï¼Œæ•£ç™¼å‡ºä¸€ç¨®é›£èçš„æ°£å‘³ã€‚\n";
                 else
-                        msg = "£¬Ï´ºóË®µÄÑÕÉ«±äµÃÓĞµã²»¶Ô¡£\n";
+                        msg = "ï¼Œæ´—å¾Œæ°´çš„é¡è‰²è®Šå¾—æœ‰é»ä¸å°ã€‚\n";
         } else
-                msg = "¡£\n";
+                msg = "ã€‚\n";
 
         delete_temp("daub", dest);
         if (dest == me)
         {
-                message_vision("$NºÃºÃµÄÏ´ÁËÏ´ÊÖ" + msg, me);
+                message_vision("$Nå¥½å¥½çš„æ´—äº†æ´—æ‰‹" + msg, me);
                 return 1;
         }
 
@@ -88,22 +88,22 @@ int main(object me, string arg)
                 if (! dest || ! me)
                         return 1;
 
-                message_vision("$N½«ÍÑÏÂÀ´µÄ$nºÃºÃµÄÏ´ÁËÏ´" + msg, me, dest);
+                message_vision("$Nå°‡è„«ä¸‹ä¾†çš„$nå¥½å¥½çš„æ´—äº†æ´—" + msg, me, dest);
                 dest->washed(120 + random(120));
                 return 1;
         }
 
-        message_vision("$NÄÃ³ö$n£¬ºÃºÃµÄÏ´ÁËÏ´" + msg, me, dest);
+        message_vision("$Næ‹¿å‡º$nï¼Œå¥½å¥½çš„æ´—äº†æ´—" + msg, me, dest);
         return 1;
 }
 
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : wash <ÎäÆ÷> | <·À¾ß> | hand
+æŒ‡ä»¤æ ¼å¼ : wash <æ­¦å™¨> | <é˜²å…·> | hand
 
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄã½«ÎäÆ÷¡¢·À¾ßºÃºÃ³åÏ´Ò»ÏÂ£¬ÒÔÇå³ıÉÏÃæµÄ¶¾¡£µ±È»Ã»ÓĞ
-¶¾ÇåÏ´ËüÒ²²»ÊÇÊ²Ã´»µÊÂ¡£
+é€™å€‹æŒ‡ä»¤å¯ä»¥è®“ä½ å°‡æ­¦å™¨ã€é˜²å…·å¥½å¥½æ²–æ´—ä¸€ä¸‹ï¼Œä»¥æ¸…é™¤ä¸Šé¢çš„æ¯’ã€‚ç•¶ç„¶æ²’æœ‰
+æ¯’æ¸…æ´—å®ƒä¹Ÿä¸æ˜¯ä»€éº¼å£äº‹ã€‚
 HELP
     );
     return 1;

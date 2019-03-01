@@ -4,10 +4,10 @@ inherit BULLETIN_BOARD;
 
 void create()
 {
-        set_name("¿ÍµêÁôÑÔ°å", ({ "board" }) );
+        set_name("å®¢åº—ç•™è¨€æ¿", ({ "board" }) );
         set("location", "/d/tiezhang/kedian");
         set("board_id", "kedian13_b");
-        set("long", "ÓĞÓĞÓÃµÄ»°¾ÍÍùÕâÀïËµ£¬ÂÒ¹àË®É±ÎŞÉâ¡£\n" );
+        set("long", "æœ‰æœ‰ç”¨çš„è©±å°±å¾€é€™è£¡èªªï¼Œäº‚çŒæ°´æ®ºç„¡èµ¦ã€‚\n" );
         setup();
         set("capacity", 100);
         replace_program(BULLETIN_BOARD);

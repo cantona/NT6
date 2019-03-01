@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-        set("short","�軨԰");
+        set("short","茶花園");
         set("long", @LONG
-�����軨�ھ����£����������Ĳ軨��Ȼ���Ƿ�Ʒ���������ڲ�
-��԰�У�������ܵĶ������涷���Ĳ軨�����ϰ���һ������ԵĲ�
-����΢���ˮ�洵����ҡҷ��涡�
+大理茶花冠絕天下，鎮南王府的茶花自然更非凡品。你正走在茶
+花園中，層層密密的都是爭奇鬥妍的茶花。靠南岸邊一溜的盆栽的茶
+花，微風從水面吹來，搖曳婆娑。
 LONG );
         set("objects", ([
            "/d/dali/obj/chahua8": 1,

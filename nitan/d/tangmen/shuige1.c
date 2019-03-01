@@ -1,4 +1,4 @@
-//shuige1.c                ËÄ´¨ÌÆÃÅ¡ªÍ¤é¿Ë®¸ó
+//shuige1.c                å››å·å”é–€â”€äº­æ¦­æ°´é–£
 
 #include <ansi.h>
 #include <room.h>
@@ -8,11 +8,11 @@ void away(object obj);
 
 void create()
 {
-        set("short", "Í¤é¿Ë®¸ó");
+        set("short", "äº­æ¦­æ°´é–£");
         set("long",
-"ÕâÀïÊÇÁ«ÅºĞ¡ÖşµÄÍ¤é¿Ë®¸ó¡£ÕâÀïÓëÁ«ÅºĞ¡ÖşÁ¬ÎªÒ»Ìå£¬Í¬ÑùÊÇ¹ÅÓñ\n"
-"É«µÄ½¨Öş¡£Ë®¸óËÄ±ÚÉÏ»æ×Å¸÷É«µÄÉ½Ë®Óã³æ£¬´ÓÕâÀïÏòÇ°Í¨ÏòÁ«ÔÆ¸ó£¬¶ø\n"
-"ÉíºóÒ»ÉÈ´óÃÅ½ô±Õ×Åµ²×¡ÁËÍËÂ·£¡\n"
+"é€™è£¡æ˜¯è“®è—•å°ç¯‰çš„äº­æ¦­æ°´é–£ã€‚é€™è£¡èˆ‡è“®è—•å°ç¯‰é€£ç‚ºä¸€é«”ï¼ŒåŒæ¨£æ˜¯å¤ç‰\n"
+"è‰²çš„å»ºç¯‰ã€‚æ°´é–£å››å£ä¸Šç¹ªè‘—å„è‰²çš„å±±æ°´é­šèŸ²ï¼Œå¾é€™è£¡å‘å‰é€šå‘è“®é›²é–£ï¼Œè€Œ\n"
+"èº«å¾Œä¸€æ‰‡å¤§é–€ç·Šé–‰è‘—æ“‹ä½äº†é€€è·¯ï¼\n"
 );
         set("exits", ([
                 "north" : __DIR__"shuige2",
@@ -34,14 +34,14 @@ int do_open(string arg)
         ob = this_player();
 
         if ( query("exits/out") )
-                return notify_fail("ÃÅÒÑ¾­ÊÇ¿ª×ÅµÄÁË¡£\n");
+                return notify_fail("é–€å·²ç¶“æ˜¯é–‹è‘—çš„äº†ã€‚\n");
 
         if ( !( room = find_object(__DIR__"xiaozhu")) )
                 room = load_object(__DIR__"xiaozhu");
 
         if ( arg && arg=="door" && objectp(room) )
         {
-                message_vision(HIC "ÄãÓÃÁ¦½«´óÃÅÀ­¿ª¡£\n" NOR, ob);
+                message_vision(HIC "ä½ ç”¨åŠ›å°‡å¤§é–€æ‹‰é–‹ã€‚\n" NOR, ob);
                 set("exits/out", __DIR__"xiaozhu");
                 set("exits/enter", __DIR__"shuige1", room);
                 remove_call_out("close");
@@ -60,7 +60,7 @@ void close()
                 room = load_object(__DIR__"xiaozhu");
 
         if( this_object() == environment(this_player()) || room == environment(this_player()))
-                message("vision",HIR"´óÃÅÇÄÎŞÉùÏ¢µÄ¹ØÁËÆğÀ´¡£\n"NOR, this_player());
+                message("vision",HIR"å¤§é–€æ‚„ç„¡è²æ¯çš„é—œäº†èµ·ä¾†ã€‚\n"NOR, this_player());
         delete("exits/out");
         if ( objectp(room) )
                 delete("exits/enter", room);
@@ -77,22 +77,22 @@ int valid_leave(object me, string dir)
                 if ( objectp(present("men wei", environment(me)) ) )
                 {
                         obj = present("men wei", environment(me));
-                        message_vision("ÃÅÎÀ¶Ô×Å$N´óÉùº°µÀ£º¡°ÄãµÄÎä¹¦»¹²»¹»¸ß£¬±ğ³öÈ¥¸øÌÆ¼Ò¶ªÈËÁË£¡¡±\n",me);
+                        message_vision("é–€è¡›å°è‘—$Nå¤§è²å–Šé“ï¼šâ€œä½ çš„æ­¦åŠŸé‚„ä¸å¤ é«˜ï¼Œåˆ¥å‡ºå»çµ¦å”å®¶ä¸Ÿäººäº†ï¼â€\n",me);
                         remove_call_out("away");
                         call_out("away", 60, obj);
-                        return notify_fail("\nÄãºöÈ»ÏëÆğÊ¦¸µºÃÏóÔø¾­¸æËß¹ıÄã£¬Ö»ÓĞ¹¦·òÀ÷º¦ÁË²ÅÄÜ±»ÔÊĞí³öÃÅ´³µ´½­ºş¡£\n");
+                        return notify_fail("\nä½ å¿½ç„¶æƒ³èµ·å¸«å‚…å¥½è±¡æ›¾ç¶“å‘Šè¨´éä½ ï¼Œåªæœ‰åŠŸå¤«å²å®³äº†æ‰èƒ½è¢«å…è¨±å‡ºé–€é—–ç›ªæ±Ÿæ¹–ã€‚\n");
                 }
                 else
                         if ( objectp(room) && objectp(present("men wei", room)) )
                         {
                                 obj = present("men wei", room);
-                                tell_room(room, "ÃÅÎÀºÃÏóÌıµ½ÁËÊ²Ã´ÉùÏì£¬Ã¼Í·Ò»Öå×ÔÓïµ½£º¡°ÊÇË­ÓÖÏëÉÃ×Ô³öÃÅ£¡ÎÒµÃÈ¥¿´¿´!¡±\nÃÅÎÀ¿ì²½Ïò¶«×ßÈ¥¡£\n");
-                                tell_room(this_object(), "ÃÅÎÀ¿ì²½´ÓÎ÷±ßµÄÎİÖĞ×ß¹ıÀ´¡£\n");
+                                tell_room(room, "é–€è¡›å¥½è±¡è½åˆ°äº†ä»€éº¼è²éŸ¿ï¼Œçœ‰é ­ä¸€çšºè‡ªèªåˆ°ï¼šâ€œæ˜¯èª°åˆæƒ³æ“…è‡ªå‡ºé–€ï¼æˆ‘å¾—å»çœ‹çœ‹!â€\né–€è¡›å¿«æ­¥å‘æ±èµ°å»ã€‚\n");
+                                tell_room(this_object(), "é–€è¡›å¿«æ­¥å¾è¥¿é‚Šçš„å±‹ä¸­èµ°éä¾†ã€‚\n");
                                 obj->move(__DIR__"shuige1");
-                                message_vision("ÃÅÎÀ¶Ô×Å$N´óÉùº°µÀ£º¡°ÄãµÄÎä¹¦»¹²»¹»¸ß£¬±ğ³öÈ¥¸øÌÆ¼Ò¶ªÈËÁË£¡¡±\n",me);
+                                message_vision("é–€è¡›å°è‘—$Nå¤§è²å–Šé“ï¼šâ€œä½ çš„æ­¦åŠŸé‚„ä¸å¤ é«˜ï¼Œåˆ¥å‡ºå»çµ¦å”å®¶ä¸Ÿäººäº†ï¼â€\n",me);
                                 remove_call_out("away");
                                 call_out("away", 60, obj);
-                                return notify_fail("\nÄãºöÈ»ÏëÆğÊ¦¸µºÃÏóÔø¾­¸æËß¹ıÄã£¬Ö»ÓĞ¹¦·òÀ÷º¦ÁË²ÅÄÜ±»ÔÊĞí³öÃÅ´³µ´½­ºş¡£\n");
+                                return notify_fail("\nä½ å¿½ç„¶æƒ³èµ·å¸«å‚…å¥½è±¡æ›¾ç¶“å‘Šè¨´éä½ ï¼Œåªæœ‰åŠŸå¤«å²å®³äº†æ‰èƒ½è¢«å…è¨±å‡ºé–€é—–ç›ªæ±Ÿæ¹–ã€‚\n");
                         }
 
         return ::valid_leave(me, dir);
@@ -111,8 +111,8 @@ void away(object obj)
         {
                 if (  !obj->busy() && !obj->is_fighting() )
                 {
-                        message_vision("$NÒ¡ÁËÒ¡Í·£¬Ğ¦×ÅËµ:¡°ÏÖÔÚÕâĞ©Ğ¡×ÓÕæ²»ÖªÌì¸ßµØºñ£¬¿ÉÒ»³öÈ¥¾Í¸øÌÆ¼Ò¶ªÈË¡£¡±\n$NÏò²î·¿×ßÈ¥¡£\n", obj);
-                        tell_room(room, "ÃÅÎÀ¿ì²½´ÓË®¸óÄÇ±ß×ß¹ıÀ´¡£\n");
+                        message_vision("$Næ–äº†æ–é ­ï¼Œç¬‘è‘—èªª:â€œç¾åœ¨é€™äº›å°å­çœŸä¸çŸ¥å¤©é«˜åœ°åšï¼Œå¯ä¸€å‡ºå»å°±çµ¦å”å®¶ä¸Ÿäººã€‚â€\n$Nå‘å·®æˆ¿èµ°å»ã€‚\n", obj);
+                        tell_room(room, "é–€è¡›å¿«æ­¥å¾æ°´é–£é‚£é‚Šèµ°éä¾†ã€‚\n");
                         obj->move(__DIR__ "menwei");
                 }
                 else

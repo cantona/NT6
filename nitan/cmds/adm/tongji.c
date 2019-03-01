@@ -15,16 +15,16 @@ int main(object me, string str)
                 return 0;                      
 
         if (! str)
-                return notify_fail("ÄãÒªÍ³¼ÆÊ²Ã´¼¼ÄÜ£¿\n");
+                return notify_fail("ä½ è¦çµ±è¨ˆä»€éº¼æŠ€èƒ½ï¼Ÿ\n");
 
         if (file_size("/kungfu/skill/" + str + ".c") == -1)
-                return notify_fail("Ã»ÓÐÕâ¸ö¼¼ÄÜ´æÔÚ£¡\n");                
+                return notify_fail("æ²’æœ‰é€™å€‹æŠ€èƒ½å­˜åœ¨ï¼\n");                
 
         // users = all_interactive();
         users = users();
 
         j = 0;
-        write(HIW "\nÒÔÏÂÎª±¾ MUD ÖÐÕÆÎÕ " + HIM + CHINESE_D->chinese(str) + HIW + " µÄÔÚÏßÍæ¼Ò¡£\n" NOR);
+        write(HIW "\nä»¥ä¸‹ç‚ºæœ¬ MUD ä¸­æŽŒæ¡ " + HIM + CHINESE_D->chinese(str) + HIW + " çš„åœ¨ç·šçŽ©å®¶ã€‚\n" NOR);
         write(HIY "-------------------------------------------------------------------------\n" NOR);
 
         players = ({});
@@ -34,7 +34,7 @@ int main(object me, string str)
                 {
                         players += ({ player });
 /*
-                        write(sprintf(HIC "%-21sÄêÁä£º%-10dËùÊôÃÅÅÉ£º%-16sµÈ¼¶£º%-10d\n" NOR,
+                        write(sprintf(HIC "%-21så¹´é½¡ï¼š%-10dæ‰€å±¬é–€æ´¾ï¼š%-16sç­‰ç´šï¼š%-10d\n" NOR,
                                       player->name()+"("+query("id", player)+")",
                                       query("age", player),
                                       query("family/family_name", player),
@@ -50,7 +50,7 @@ int main(object me, string str)
         {
                 if (player->query_skill(str, 1))
                 {
-                        write(sprintf(HIC "%-21sÄêÁä£º%-10dËùÊôÃÅÅÉ£º%-16sµÈ¼¶£º%-10d\n" NOR,
+                        write(sprintf(HIC "%-21så¹´é½¡ï¼š%-10dæ‰€å±¬é–€æ´¾ï¼š%-16sç­‰ç´šï¼š%-10d\n" NOR,
                                       player->name()+"("+query("id", player)+")",
                                       query("age", player),
                                       query("family/family_name", player),
@@ -59,7 +59,7 @@ int main(object me, string str)
                 }
          
         }
-        write(HIW "\n×Ü¹² " HIR + j + HIW " Î»Íæ¼ÒÕÆÎÕ" + HIM + CHINESE_D->chinese(str) + "\n" NOR);
+        write(HIW "\nç¸½å…± " HIR + j + HIW " ä½çŽ©å®¶æŽŒæ¡" + HIM + CHINESE_D->chinese(str) + "\n" NOR);
         write(HIY "-------------------------------------------------------------------------\n" NOR);
 
         return 1;

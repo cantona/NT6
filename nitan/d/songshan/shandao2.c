@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����ɽ��");
+        set("short", "嵩岳山道");
         set("long", @LONG
-����������ɽ�������ɴ�أ�ɽ�������ʱ��Ʈ����Զ��ɽ��Ȯ��
-���䣬�����ɷ�֮�С�
+你走在嵩岳山道，青鬆翠柏，山風嵐霧，時來飄盪。遠望山下犬吠
+雞啼，頓起仙凡之感。
 LONG );
         set("exits", ([
                 "northup"   : __DIR__"shuyuan",

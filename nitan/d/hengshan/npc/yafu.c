@@ -5,10 +5,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÑÆ¸¾",({ "yafu" }) );
-        set("gender", "Å®ĞÔ" );
+        set_name("å•å©¦",({ "yafu" }) );
+        set("gender", "å¥³æ€§" );
         set("age", 37);
-        set("long", "ÕâÊÇ¸öÖÕÄê²»¿ª¿ÚµÄÑÆ¸¾\n");
+        set("long", "é€™æ˜¯å€‹çµ‚å¹´ä¸é–‹å£çš„å•å©¦\n");
         set("combat_exp", 50000);
         set("shen_type", 0);
         set("str", 21);

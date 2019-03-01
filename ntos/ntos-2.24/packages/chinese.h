@@ -1,6 +1,6 @@
 /*
 AutoConvert, a Chinese HZ/GB/Big5 encodings auto-converter
-Copyright (C) 1999  ôÀæÐÃö  Yu Guanghui <ygh@dlut.edu.cn>
+Copyright (C) 1999  è˜‰ç¦›é—œ  Yu Guanghui <ygh@dlut.edu.cn>
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

@@ -1,4 +1,4 @@
-// tangzg.c ÌÆÕÆ¹ñ 
+// tangzg.c å”æŒæ«ƒ 
 
 inherit NPC;
 inherit F_VENDOR;
@@ -6,14 +6,14 @@ inherit F_VENDOR;
 
 void create()
 {
-        set_name("ÌÆÕÆ¹ñ", ({ "tang zhanggui", "tang" }));
-        set("title", "ÌÆ¼ÒÆÌ×ÓÀÏ°å");
+        set_name("å”æŒæ«ƒ", ({ "tang zhanggui", "tang" }));
+        set("title", "å”å®¶èˆ–å­è€æ¿");
         set("shen_type", 1);
 
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("age", 45);
         set("long",
-                "ÌÆÕÆ¹ñÊÇÌÆÃÅµÄ¼ÒÈË£¬×öÁË¶àÄêµÄÂòÂôÁË¡£\n");
+                "å”æŒæ«ƒæ˜¯å”é–€çš„å®¶äººï¼Œåšäº†å¤šå¹´çš„è²·è³£äº†ã€‚\n");
         set_skill("unarmed", 50);
         set_skill("dodge", 50);
         set_temp("apply/damage", 15);

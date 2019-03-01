@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set ("short", "С·");
+        set ("short", "小路");
         set ("long", @LONG
-���е�һ��С�����߰���ƽ��ʱ��Ҫ��һЩ��·�Ĺ�ľ�д�������
-�հ���Ĳ�Զ��һ��ɽ��ƽ�ض���ɽ�°����������֮�У���������
-�ܵ���ȥ��
+林中的一條小道，高矮不平，時而要從一些擋路的灌木中穿過，七
+拐八歪的不遠，一座山崖平地而起，山崖半截深入雲霧之中，自來無人
+能得上去。
 LONG);
         set("exits", ([ /* sizeof() == 2 */
                 "north"    : __DIR__"downxuanya",

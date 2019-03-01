@@ -1,5 +1,5 @@
 // fengxue.c
-// ·â±ÕÑ¨µÀ·ÀÖ¹¶¾ÆøÀ©É¢ºÍ·¢×÷
+// å°é–‰ç©´é“é˜²æ­¢æ¯’æ°£æ“´æ•£å’Œç™¼ä½œ
 
 #include <ansi.h>
 
@@ -9,7 +9,7 @@ void end_fengxue(object me)
 {
          if (me->query_temp("fengxue"))
          {
-               write(HIG "Äã³¤ÊæÒ»¿ÚÆø£¬ÖÜÉí±»·â±ÕµÄÑ¨µÀÒÑ×Ô¶¯½â¿ª¡£\n");
+               write(HIG "ä½ é•·èˆ’ä¸€å£æ°£ï¼Œå‘¨èº«è¢«å°é–‰çš„ç©´é“å·²è‡ªå‹•è§£é–‹ã€‚\n");
  
                me->delete_temp("fengxue");
 
@@ -19,7 +19,7 @@ void end_fengxue(object me)
          return;         
 }
 
-// »¹ÒªÌí¼Óset fengxue 1
+// é‚„è¦æ·»åŠ set fengxue 1
 
 int main(object me, string arg)
 {
@@ -27,30 +27,30 @@ int main(object me, string arg)
          object ob;
 
          if (me->is_busy() || me->is_fighting())
-                 return notify_fail("µÈÄãÃ¦ÍêÔÙËµ°É£¡\n");
+                 return notify_fail("ç­‰ä½ å¿™å®Œå†èªªå§ï¼\n");
 
 
          if (time() - me->query_temp("last_fengxue") < 60)
-                 return notify_fail("ÄãµÄÑ¨µÀ¸Õ³å¿ª£¬²»ÄÜ¼ÌĞø·âÑ¨ÁË¡£\n");
+                 return notify_fail("ä½ çš„ç©´é“å‰›æ²–é–‹ï¼Œä¸èƒ½ç¹¼çºŒå°ç©´äº†ã€‚\n");
 
          force = me->query_skill("force");
 /*
          if (me->query_skill("jingluo-xue", 1) < 100)
-                  return notify_fail("Äã¶Ô¾­ÂçÑ§ÁË½â²»¹»£¬ÎŞ·¨·âÑ¨¡£\n");
+                  return notify_fail("ä½ å°ç¶“çµ¡å­¸äº†è§£ä¸å¤ ï¼Œç„¡æ³•å°ç©´ã€‚\n");
 */
          if (! arg)
          {
                 if (me->query_temp("fengxue"))
-                      return notify_fail("ÄãÒÑ¾­½«ÖÜÉíÒªÑ¨·â±Õ¡£\n");                
+                      return notify_fail("ä½ å·²ç¶“å°‡å‘¨èº«è¦ç©´å°é–‰ã€‚\n");                
           
                 if (force < 300)
-                      return notify_fail("ÄãÄÚ¹¦ĞŞÎª²»×ã£¬ÎŞ·¨½«×Ô¼ºÑ¨µÀ·â±Õ¡£\n");
+                      return notify_fail("ä½ å…§åŠŸä¿®ç‚ºä¸è¶³ï¼Œç„¡æ³•å°‡è‡ªå·±ç©´é“å°é–‰ã€‚\n");
 
                 if (me->query("max_neili") < 2000)
-                      return notify_fail("ÄãÄÚÁ¦ĞŞÎª²»×ã£¬ÎŞ·¨½«×Ô¼ºÑ¨µÀ·â±Õ¡£\n");
+                      return notify_fail("ä½ å…§åŠ›ä¿®ç‚ºä¸è¶³ï¼Œç„¡æ³•å°‡è‡ªå·±ç©´é“å°é–‰ã€‚\n");
 
-                message_vision(HIW "$N" HIW "°µÔËÄÚÏ¢£¬ÓÒÊÖÊ³Ö¸ÃÍµØµãÏòÖÜÉí¸÷"
-                               "´¦£¬½«ÒªÑ¨·â±Õ¡£\n" NOR, me);
+                message_vision(HIW "$N" HIW "æš—é‹å…§æ¯ï¼Œå³æ‰‹é£ŸæŒ‡çŒ›åœ°é»å‘å‘¨èº«å„"
+                               "è™•ï¼Œå°‡è¦ç©´å°é–‰ã€‚\n" NOR, me);
 
                 me->set_temp("fengxue", 1);
 
@@ -63,25 +63,25 @@ int main(object me, string arg)
          }    
          
          if( !objectp(ob = present(arg, environment(me))) )
-		 return notify_fail("ÕâÀïÃ»ÓĞ " + arg + "¡£\n");
+		 return notify_fail("é€™è£¡æ²’æœ‰ " + arg + "ã€‚\n");
          
          if (! playerp(ob))
-                 return notify_fail("ÄãÖ»ÄÜ°ïÖúÍæ¼Ò·âÑ¨¡£\n");
+                 return notify_fail("ä½ åªèƒ½å¹«åŠ©ç©å®¶å°ç©´ã€‚\n");
 
          if (! ob->query("env/fengxue") || ob->query_temp("fengxue"))
-                 return notify_fail("¶Ô·½ÏÖÔÚ²»ĞèÒªÄã°ïÖú·âÑ¨¡£\n");
+                 return notify_fail("å°æ–¹ç¾åœ¨ä¸éœ€è¦ä½ å¹«åŠ©å°ç©´ã€‚\n");
 
          if (force < 400)
-                 return notify_fail("ÄãÄÚ¹¦ĞŞÎª²»×ã£¬ÎŞ·¨°ïÖúÆäËûÍæ¼Ò·âÑ¨¡£\n");
+                 return notify_fail("ä½ å…§åŠŸä¿®ç‚ºä¸è¶³ï¼Œç„¡æ³•å¹«åŠ©å…¶ä»–ç©å®¶å°ç©´ã€‚\n");
 
          if (me->query("neili") < 300)
-                 return notify_fail("ÄãÄÚÁ¦²»×ã£¬ÎŞ·¨°ïÖúÆäËûÍæ¼Ò·âÑ¨¡£\n");
+                 return notify_fail("ä½ å…§åŠ›ä¸è¶³ï¼Œç„¡æ³•å¹«åŠ©å…¶ä»–ç©å®¶å°ç©´ã€‚\n");
 
          if (me->query("max_neili") < 3000)
-                 return notify_fail("ÄãÄÚÁ¦ĞŞÎª²»×ã£¬ÎŞ·¨°ïÖúÆäËûÍæ¼Ò·âÑ¨¡£\n");
+                 return notify_fail("ä½ å…§åŠ›ä¿®ç‚ºä¸è¶³ï¼Œç„¡æ³•å¹«åŠ©å…¶ä»–ç©å®¶å°ç©´ã€‚\n");
 
-         message_vision(HIY "$N" HIY "½«ÄÚÁ¦ÔËÓÚÖ¸¼ä£¬ÃÍµØµãÏò$n" HIY "ÖÜ"
-                        "Éí¸÷´¦£¬½«ÆäÒªÑ¨·â±Õ¡£\n" NOR, me, ob);
+         message_vision(HIY "$N" HIY "å°‡å…§åŠ›é‹äºæŒ‡é–“ï¼ŒçŒ›åœ°é»å‘$n" HIY "å‘¨"
+                        "èº«å„è™•ï¼Œå°‡å…¶è¦ç©´å°é–‰ã€‚\n" NOR, me, ob);
 
          ob->set_temp("fengxue", 1);
 
@@ -97,10 +97,10 @@ int main(object me, string arg)
 int help(object me)
 {
   write(@HELP
-Ö¸Áî¸ñÊ½ : fengxue [Íæ¼ÒID]
+æŒ‡ä»¤æ ¼å¼ : fengxue [ç©å®¶ID]
 
-¸ÃÖ¸Áî¿ÉÒÔÔÚÖĞ¶¾Ê±ÔİÊ±½«Ñ¨µÀ·â±Õ£¬ÒÔÃâ¶¾ĞÔ·¢×÷¡£
-µ±Ñ¨µÀ³å¿ªºóÒ»·ÖÖÓÄÚ²»ÄÜÔÙ¼ÌĞø·âÑ¨¡£
+è©²æŒ‡ä»¤å¯ä»¥åœ¨ä¸­æ¯’æ™‚æš«æ™‚å°‡ç©´é“å°é–‰ï¼Œä»¥å…æ¯’æ€§ç™¼ä½œã€‚
+ç•¶ç©´é“æ²–é–‹å¾Œä¸€åˆ†é˜å…§ä¸èƒ½å†ç¹¼çºŒå°ç©´ã€‚
 
 HELP
 );

@@ -2,12 +2,12 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "´óÃÅ");
+        set("short", "å¤§é–€");
         set("long", @LONG
-ÄãÀ´µ½ÁËÌìÁúËÂ´óÃÅÇ°£¬Ö»¼ûÆøÊÆ»ÖºëµÄÁ½¸ö´óÃÅÖùÉÏ¿ÌÓÐÒ»¸¶
-¶ÔÁª( duilian )£¬ºìÆá¸²×Ö£¬ÆÄÓÐµã²¦ÖÚÉúÖ®Òâ¡£Ì§Í·ÉÏÍû£¬ÃÅé¹ÉÏ
-Ò»¿éºÚÄ¾´óØÒ£¬ÉÏÌâ¡º³çÊ¥ËÂ¡»Èý¸ö´ó×Ö£¬±ÊÒâ²ÔËÉ¡£´ËÄËÕýÊ½ËÂÃû£¬
-µ«´óÀí°ÙÐÔ½Ð¹ßÁË£¬¶¼³ÆÖ®Îª¡ºÌìÁúËÂ¡»¡£
+ä½ ä¾†åˆ°äº†å¤©é¾å¯ºå¤§é–€å‰ï¼Œåªè¦‹æ°£å‹¢æ¢å¼˜çš„å…©å€‹å¤§é–€æŸ±ä¸Šåˆ»æœ‰ä¸€ä»˜
+å°è¯( duilian )ï¼Œç´…æ¼†è¦†å­—ï¼Œé —æœ‰é»žæ’¥çœ¾ç”Ÿä¹‹æ„ã€‚æŠ¬é ­ä¸Šæœ›ï¼Œé–€æ¥£ä¸Š
+ä¸€å¡Šé»‘æœ¨å¤§åŒ¾ï¼Œä¸Šé¡Œã€Žå´‡è–å¯ºã€ä¸‰å€‹å¤§å­—ï¼Œç­†æ„è’¼é¬†ã€‚æ­¤ä¹ƒæ­£å¼å¯ºåï¼Œ
+ä½†å¤§ç†ç™¾æ€§å«æ…£äº†ï¼Œéƒ½ç¨±ä¹‹ç‚ºã€Žå¤©é¾å¯ºã€ã€‚
 LONG );
         set("outdoors", "tianlongsi");
         set("exits", ([
@@ -15,7 +15,7 @@ LONG );
                 "north" : "/d/dali/hongsheng",
         ]));
         set("item_desc",([
-                "duilian" : "\n    ÐÄÐÔÎÞÈ¾±¾×ÔÔ²³É¡¡µ«ÀëÍýÔµ¼´ÈçÈç·ð\n\n",
+                "duilian" : "\n    å¿ƒæ€§ç„¡æŸ“æœ¬è‡ªåœ“æˆã€€ä½†é›¢å¦„ç·£å³å¦‚å¦‚ä½›\n\n",
         ]));        
         set("objects",([
                 "/d/wudang/npc/guest" : 1,

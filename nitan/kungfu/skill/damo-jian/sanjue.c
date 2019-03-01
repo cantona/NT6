@@ -1,10 +1,10 @@
 // This program is a part of NITAN MudLIB
-// sanjue.c  ´ïÄ¦½£ ´ïÄ¦Èı¾ø½£
+// sanjue.c  é”æ‘©åŠ é”æ‘©ä¸‰çµ•åŠ
 
 #include <ansi.h>
 
 inherit F_SSERVER;
-string name() { return "´ïÄ¦Èı¾ø½£"; }
+string name() { return "é”æ‘©ä¸‰çµ•åŠ"; }
 
 int perform(object me, object target)
 {
@@ -14,31 +14,31 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail("¡¸´ïÄ¦Èı¾ø½£¡¹Ö»ÄÜÔÚÕ½¶·ÖĞ¶Ô¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œé”æ‘©ä¸‰çµ•åŠã€åªèƒ½åœ¨æˆ°é¬¥ä¸­å°å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me)) ||
               query("skill_type", weapon) != "sword" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ã€‚\n");
 
         if (me->query_dex() < 30)
-                return notify_fail("ÄãµÄÉí·¨²»¹»£¬Ä¿Ç°»¹²»ÄÜÊ¹ÓÃÕâÏî¾ø¼¼£¡\n");
+                return notify_fail("ä½ çš„èº«æ³•ä¸å¤ ï¼Œç›®å‰é‚„ä¸èƒ½ä½¿ç”¨é€™é …çµ•æŠ€ï¼\n");
 
         if (me->query_skill("force") < 200)
-                return notify_fail("ÄãµÄÄÚ¹¦µÄĞŞÎª²»¹»£¬²»ÄÜÊ¹ÓÃÕâÒ»¾ø¼¼£¡\n");
+                return notify_fail("ä½ çš„å…§åŠŸçš„ä¿®ç‚ºä¸å¤ ï¼Œä¸èƒ½ä½¿ç”¨é€™ä¸€çµ•æŠ€ï¼\n");
 
         if (me->query_skill("dodge") < 200)
-                return notify_fail("ÄãµÄÇá¹¦ĞŞÎª²»¹»£¬²»ÄÜÊ¹ÓÃ´ïÄ¦Èı¾ø½££¡\n");
+                return notify_fail("ä½ çš„è¼•åŠŸä¿®ç‚ºä¸å¤ ï¼Œä¸èƒ½ä½¿ç”¨é”æ‘©ä¸‰çµ•åŠï¼\n");
 
         if (me->query_skill("sword") < 200)
-                return notify_fail("ÄãµÄ½£·¨ĞŞÎª²»¹»£¬Ä¿Ç°²»ÄÜÊ¹ÓÃ´ïÄ¦Èı¾ø½££¡\n");
+                return notify_fail("ä½ çš„åŠæ³•ä¿®ç‚ºä¸å¤ ï¼Œç›®å‰ä¸èƒ½ä½¿ç”¨é”æ‘©ä¸‰çµ•åŠï¼\n");
 
         if( query("neili", me)<150 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬²»ÄÜÊ¹ÓÃ´ïÄ¦Èı¾ø½££¡\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼Œä¸èƒ½ä½¿ç”¨é”æ‘©ä¸‰çµ•åŠï¼\n");
 
         if (me->query_skill_mapped("sword") != "damo-jian")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢´ïÄ¦½££¬²»ÄÜÊ¹ÓÃ´ïÄ¦Èı¾ø½££¡\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼é”æ‘©åŠï¼Œä¸èƒ½ä½¿ç”¨é”æ‘©ä¸‰çµ•åŠï¼\n");
 
-        msg = HIC "$N" HIC "Ê¹³ö´ïÄ¦½£µÄ¾ø¼¼¡¸´ïÄ¦Èı¾ø½£¡¹£¬Éí·¨¶¸È»¼Ó¿ì£¡\n" NOR;
+        msg = HIC "$N" HIC "ä½¿å‡ºé”æ‘©åŠçš„çµ•æŠ€ã€Œé”æ‘©ä¸‰çµ•åŠã€ï¼Œèº«æ³•é™¡ç„¶åŠ å¿«ï¼\n" NOR;
         message_combatd(msg, me);
 
         addn("neili", -75, me);

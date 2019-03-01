@@ -7,12 +7,12 @@ inherit NPC;
 
 void create()
 {
-        set_name("Ä§¾ı", ({ "mo jun", "fiend", "mo", "jun" }) );
-        set("title", HIY "Ä§×å" NOR);
-        set("gender", "ÄĞĞÔ");
+        set_name("é­”å›", ({ "mo jun", "fiend", "mo", "jun" }) );
+        set("title", HIY "é­”æ—" NOR);
+        set("gender", "ç”·æ€§");
         set("age", 58);
         set("long", @LONG
-ÕâÊÇÒ»¸öÂúÁ³É±ÆøµÄ¶ñÄ§£¬Á½ÑÛÖ±Â¶Ğ×¹â¡£
+é€™æ˜¯ä¸€å€‹æ»¿è‡‰æ®ºæ°£çš„æƒ¡é­”ï¼Œå…©çœ¼ç›´éœ²å…‡å…‰ã€‚
 LONG );
         set("combat_exp", 500000000);
         set("shen_type", 0);
@@ -50,8 +50,8 @@ void fight_ob(object ob)
         if (is_fighting(ob))
                 return;
 
-        message_vision(HIR "$N" HIR "Å­ºğÒ»Éù£¬Á½ÑÛÖĞ"
-                       "Ğ×¹â±ÏÂ¶¡£\n" NOR, this_object(), ob);
+        message_vision(HIR "$N" HIR "æ€’å¼ä¸€è²ï¼Œå…©çœ¼ä¸­"
+                       "å…‡å…‰ç•¢éœ²ã€‚\n" NOR, this_object(), ob);
 
         ::fight_ob(ob);
         if( !is_killing(query("id", ob)) )
@@ -60,7 +60,7 @@ void fight_ob(object ob)
 
 int accept_fight(object ob)
 {
-        message_vision("$NÒ»Õó¿ñ½Ğ£¬ÃÍÈ»ÆËÁËÉÏÀ´¡£\n",
+        message_vision("$Nä¸€é™£ç‹‚å«ï¼ŒçŒ›ç„¶æ’²äº†ä¸Šä¾†ã€‚\n",
                        this_object(), ob);
         kill_ob(ob);
         return -1;
@@ -80,8 +80,8 @@ mixed hit_ob(object me, object ob, int damage_bouns)
 {
         ob->receive_wound("qi", 10000 + random(10000), me);
         set("neili",query("max_neili",  me), me);
-        return HIR "$N" HIR "ÉíÉÏÌÚÆğÒ»¹É»ğÑæ£¬µÇÊ±±ÆµÃ$n"
-               HIR "ÍËºó¼¸²½£¬ÃÆºßÒ»Éù¡£\n" NOR;
+        return HIR "$N" HIR "èº«ä¸Šé¨°èµ·ä¸€è‚¡ç«ç‡„ï¼Œç™»æ™‚é€¼å¾—$n"
+               HIR "é€€å¾Œå¹¾æ­¥ï¼Œæ‚¶å“¼ä¸€è²ã€‚\n" NOR;
 }
 
 varargs void die(object killer)

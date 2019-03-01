@@ -5,11 +5,11 @@ int do_knock(string arg);
 
 void create()
 {
-        set("short","ÍüÓÇÔ°");
+        set("short","å¿˜æ†‚åœ’");
         set("long",
-"Äã´¦ÔÚÒ»¸öÖ²Âú²è»¨µÄ»¨Ô°Àï£¬ËäÈ»»¹²»ÊÇ¿ª»¨µÄÊ±½Ú£¬µ«ÊÇÄÇĞ©Éú\n"
-"»ú²ª²ªµÄ²èÊ÷£¬²»½ûÈÃÄã¸Ğµ½ĞÄÉñÇåË¬¡£²İ´ÔÀïÓĞĞ©Ğ¡³æ×ÓÕıßóà¯ßóà¯µØ\n"
-"½ĞµÃÕı»¶¡£\n");
+"ä½ è™•åœ¨ä¸€å€‹æ¤æ»¿èŒ¶èŠ±çš„èŠ±åœ’è£¡ï¼Œé›–ç„¶é‚„ä¸æ˜¯é–‹èŠ±çš„æ™‚ç¯€ï¼Œä½†æ˜¯é‚£äº›ç”Ÿ\n"
+"æ©Ÿå‹ƒå‹ƒçš„èŒ¶æ¨¹ï¼Œä¸ç¦è®“ä½ æ„Ÿåˆ°å¿ƒç¥æ¸…çˆ½ã€‚è‰å¢è£¡æœ‰äº›å°èŸ²å­æ­£å”§å–å”§å–åœ°\n"
+"å«å¾—æ­£æ­¡ã€‚\n");
         set("outdoors", "silu"); 
         set("exits",([ 
                 "south"  : "/d/xingxiu/jiayuguan",
@@ -33,34 +33,34 @@ int do_knock(string arg)
        
         if (!arg || arg != "spiritgate")
         {
-                return notify_fail("ÄãÒªÇÃÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦æ•²ä»€éº¼ï¼Ÿ\n");
         }
         
         if( sizeof(member) != 4 )
-                return notify_fail(HIG"Èç¹û¶ÓÖĞ³ÉÔ±ÊıÄ¿²»ÊÇÕıºÃÎª°ËÖ®°ë£¬¾«ÁéÖ®ÃÅ²»»á¿ªÆô¡£\n"NOR);
+                return notify_fail(HIG"å¦‚æœéšŠä¸­æˆå“¡æ•¸ç›®ä¸æ˜¯æ­£å¥½ç‚ºå…«ä¹‹åŠï¼Œç²¾éˆä¹‹é–€ä¸æœƒé–‹å•Ÿã€‚\n"NOR);
 
         if( ! this_player()->is_team_leader() )
-                return notify_fail(HIG"¶ÓÖĞ³ÉÔ±ÖĞÖ»ÓĞ¶Ó³¤²ÅÄÜ¿ªÆô¾«ÁéÖ®ÃÅ¡£\n"NOR);
+                return notify_fail(HIG"éšŠä¸­æˆå“¡ä¸­åªæœ‰éšŠé•·æ‰èƒ½é–‹å•Ÿç²¾éˆä¹‹é–€ã€‚\n"NOR);
 
         env = environment(this_player());
         ips = ({ query_ip_number(this_player()) });
         for(i=0;i<sizeof(member);i++)
         {
                 if (environment(member[i]) != env)
-                        return notify_fail("Äã¶ÓÖĞ³ÉÔ±»¹ÓĞÃ»ÓĞÀ´ÆëµÄ¡£\n");
+                        return notify_fail("ä½ éšŠä¸­æˆå“¡é‚„æœ‰æ²’æœ‰ä¾†é½Šçš„ã€‚\n");
 
                 if( query("combat_exp", member[i])<2000000 )
-                        return notify_fail("¶ÓÖĞ³ÉÔ±ÀïÓĞ¾­ÑéÄÜÁ¦Ì«µÍµÄ,ÄãÃÇÊÇ½ø²»ÁË¾«Áé½çµÄ¡£\n");
+                        return notify_fail("éšŠä¸­æˆå“¡è£¡æœ‰ç¶“é©—èƒ½åŠ›å¤ªä½çš„,ä½ å€‘æ˜¯é€²ä¸äº†ç²¾éˆç•Œçš„ã€‚\n");
                         
                 if( time()-query("boss/dragon", member[i])<3600 )
-                        return notify_fail(HIG "¶ÓÖĞ³ÉÔ±ÀïÓĞÀëÉÏ´ÎÍÀÁúÊ±¼ä²»×ãÒ»¸öĞ¡Ê±£¬¾«ÁéÖ®ÃÅ²»»á¿ªÆô¡£\n" NOR);
+                        return notify_fail(HIG "éšŠä¸­æˆå“¡è£¡æœ‰é›¢ä¸Šæ¬¡å± é¾æ™‚é–“ä¸è¶³ä¸€å€‹å°æ™‚ï¼Œç²¾éˆä¹‹é–€ä¸æœƒé–‹å•Ÿã€‚\n" NOR);
         
                 if (member_array(query_ip_number(member[i]), ips) == -1)
                         ips += ({ query_ip_number(member[i]) });
         }
 /*
         if (sizeof(ips) < 4)
-                return notify_fail(HIG"¶ÓÖĞ³ÉÔ±ÖĞÖ»ÓĞ " + sizeof(ips) + " IPµØÖ·µÄÈË£¬¾«ÁéÖ®ÃÅ²»»á¿ªÆô¡£\n"NOR);
+                return notify_fail(HIG"éšŠä¸­æˆå“¡ä¸­åªæœ‰ " + sizeof(ips) + " IPåœ°å€çš„äººï¼Œç²¾éˆä¹‹é–€ä¸æœƒé–‹å•Ÿã€‚\n"NOR);
 */
 
         for(i=0;i<sizeof(member);i++)
@@ -69,13 +69,13 @@ int do_knock(string arg)
                 set("fighter", 0, member[i]);
                 set("mark/diary", 0, member[i]);
                 set("boss/dragon", time(), member[i]);
-                set_temp("m_success/³õ¼¶", 0, member[i]);
-                set_temp("m_success/»ÃÓ°", 0, member[i]);
-                set_temp("m_success/ÄõÁú", 0, member[i]);
-                set_temp("m_success/Çí²İ", 0, member[i]);
+                set_temp("m_success/åˆç´š", 0, member[i]);
+                set_temp("m_success/å¹»å½±", 0, member[i]);
+                set_temp("m_success/å­½é¾", 0, member[i]);
+                set_temp("m_success/ç“Šè‰", 0, member[i]);
         }
         
-        message_vision( HIG "$NÔÚĞé¿ÕÖĞÇáÇá¿Û¶¯¼¸ÏÂ£¬Ò»ÕóÓÅÃÀµÄÀÖÉùÖĞ£¬$N±»ËÍµ½ÁËÒ»¸öÆæÒìµÄµØ·½£¡\n" NOR, this_player());
-        message("channel:chat", HBMAG"¡¾¾«ÁéÉñ½ç¡¿¾«ÁéÖ®ÃÅ¿ªÆô£¬Ä³Ğ¡¶Ó½øÈëÁË¾«ÁéÉñ½ç£¬ÆÆ½âÉñÁúµÄ·âÓ¡!\n"NOR, users());
+        message_vision( HIG "$Nåœ¨è™›ç©ºä¸­è¼•è¼•æ‰£å‹•å¹¾ä¸‹ï¼Œä¸€é™£å„ªç¾çš„æ¨‚è²ä¸­ï¼Œ$Nè¢«é€åˆ°äº†ä¸€å€‹å¥‡ç•°çš„åœ°æ–¹ï¼\n" NOR, this_player());
+        message("channel:chat", HBMAG"ã€ç²¾éˆç¥ç•Œã€‘ç²¾éˆä¹‹é–€é–‹å•Ÿï¼ŒæŸå°éšŠé€²å…¥äº†ç²¾éˆç¥ç•Œï¼Œç ´è§£ç¥é¾çš„å°å°!\n"NOR, users());
         return 1;
 }

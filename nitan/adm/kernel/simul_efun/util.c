@@ -69,16 +69,16 @@ string sort_string(string input, int width, int prefix)
 
                         switch ((k < sl - 1) ? input[k..k+1] : 0)
                         {
-                        case "£º":
-                        case "¡±":
-                        case "¡£":
-                        case "£¬":
-                        case "£»":
-                        case "£©":
+                        case "ï¼š":
+                        case "â€":
+                        case "ã€‚":
+                        case "ï¼Œ":
+                        case "ï¼›":
+                        case "ï¼‰":
                         case " )":
-                        case "£¡":
-                        case "£¿":
-                        case "¡¢":
+                        case "ï¼":
+                        case "ï¼Ÿ":
+                        case "ã€":
                                 if( k != i ) {
                                         result += input[i..k + 1];
                                         i = k + 1;
@@ -174,54 +174,54 @@ varargs string appromix_time(int n, int flag)
         int bn;
 
         if( n <= 0 )
-                return flag ? "ÂíÉÏ¾Í" : "ÂíÉÏ";
+                return flag ? "é¦¬ä¸Šå°±" : "é¦¬ä¸Š";
 
         bn = 1;
         if( n < bn * 60 ) {
-                // bn µ¥Î»ÊÇÃëÖÓ
-                s = "ÃëÖÓ";
+                // bn å–®ä½æ˜¯ç§’é˜
+                s = "ç§’é˜";
                 odd = 0;
         } else
         if( bn *= 60, n < bn * 60 ) {
-                // bn µ¥Î»ÊÇ·ÖÖÓ
-                s = "·ÖÖÓ";
-                os = "ÃëÖÓ";
+                // bn å–®ä½æ˜¯åˆ†é˜
+                s = "åˆ†é˜";
+                os = "ç§’é˜";
                 odd = n % bn;
                 n /= bn;
         } else
         if( bn *= 60, n < 24 * bn ) {
-                // bn µ¥Î»ÊÇÐ¡Ê±
-                s = "Ð¡Ê±";
-                os = "·ÖÖÓ";
+                // bn å–®ä½æ˜¯å°æ™‚
+                s = "å°æ™‚";
+                os = "åˆ†é˜";
                 odd = (n % bn) / 60;
                 n /= bn;
         } else
         if( bn *= 24, n < 30 * bn ) {
-                // bn µ¥Î»ÊÇÌì
-                s = "Ìì";
-                os = "Ð¡Ê±";
+                // bn å–®ä½æ˜¯å¤©
+                s = "å¤©";
+                os = "å°æ™‚";
                 odd = (n % bn) / (60 * 60);
                 n /= bn;
         } else
         if( n < 365 * bn ) {
-                // bn µ¥Î»ÊÇÌì
-                s = "¸öÔÂ";
-                os = "Ìì";
+                // bn å–®ä½æ˜¯å¤©
+                s = "å€‹æœˆ";
+                os = "å¤©";
                 odd = (n % (30 * bn)) / bn;
                 n /= 30 * bn;
         } else {
-                // bn µ¥Î»ÊÇÌì
-                s = "Äê";
-                os = "¸öÔÂ";
+                // bn å–®ä½æ˜¯å¤©
+                s = "å¹´";
+                os = "å€‹æœˆ";
                 odd = (n % (365 * bn)) / (bn * 30);
                 n /= 365 * bn;
         }
 
         s = chinese_number(n) + s;
         if( odd )
-                s += "Áã" + chinese_number(odd) + os;
+                s += "é›¶" + chinese_number(odd) + os;
 
-        if( flag ) s += "ÒÔºó";
+        if( flag ) s += "ä»¥å¾Œ";
         return s;
 }
 
@@ -441,7 +441,7 @@ string trans_color(string arg, int raw)
 */
 }
 
-// append color after the $N¡¢$n¡¢$w for the string color won't be
+// append color after the $Nã€$nã€$w for the string color won't be
 // break by the NOR after the name
 string append_color(string arg, string default_color)
 {
@@ -455,8 +455,8 @@ string append_color(string arg, string default_color)
 // change to english sigh to chinese
 string chinese_desc(string arg)
 {
-        arg = replace_string(arg, ",", "£¬");
-        arg = replace_string(arg, "!", "£¡");
+        arg = replace_string(arg, ",", "ï¼Œ");
+        arg = replace_string(arg, "!", "ï¼");
         return arg;
 }
 

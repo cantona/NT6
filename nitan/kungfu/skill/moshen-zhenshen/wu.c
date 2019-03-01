@@ -2,7 +2,7 @@
 
 inherit F_CLEAN_UP;
 
-string name() { return "无法无天"; }
+string name() { return "鐒℃硶鐒″ぉ"; }
 
 void remove_effect(object me, int amount);
 
@@ -11,19 +11,19 @@ int perform(object me, object target)
         int skill;
 
         if( query("neili", me)<100 )
-                return notify_fail("你的内力不够。\n");
+                return notify_fail("浣犵殑鍏у姏涓嶅銆俓n");
 
         if ((int)me->query_skill("moshen-zhenshen", 1) < 100)
-                return notify_fail("你的魔神真身修为不够。\n");
+                return notify_fail("浣犵殑榄旂鐪熻韩淇偤涓嶅銆俓n");
 
         if( query_temp("moshenzhenshen", me) )
-                return notify_fail("你已经运起魔神真身绝招无法无天了。\n");
+                return notify_fail("浣犲凡缍撻亱璧烽瓟绁炵湡韬禃鎷涚劇娉曠劇澶╀簡銆俓n");
 
         skill = me->query_skill("force");
         addn("neili", -100, me);
         me->receive_damage("qi", 0);
 
-        message_combatd(HIY "$N" HIY "默运魔功，内劲在身体内快速的运转，霎时在体外形成一层罡气！\n" NOR, me);
+        message_combatd(HIY "$N" HIY "榛橀亱榄斿姛锛屽収鍕佸湪韬珨鍏у揩閫熺殑閬嬭綁锛岄湈鏅傚湪楂斿褰㈡垚涓�灞ょ健姘ｏ紒\n" NOR, me);
 
         addn_temp("apply/armor", skill/2, me);
         addn_temp("apply/defense", skill/3, me);
@@ -43,6 +43,6 @@ void remove_effect(object me, int amount)
                 addn_temp("apply/armor", -(amount/2), me);
                 addn_temp("apply/defense", -(amount/3), me);
                 delete_temp("moshenzhenshen", me);
-                tell_object(me, "你的魔神真身绝招无法无天运行完毕，将内力收回丹田。\n");
+                tell_object(me, "浣犵殑榄旂鐪熻韩绲曟嫑鐒℃硶鐒″ぉ閬嬭瀹岀暍锛屽皣鍏у姏鏀跺洖涓圭敯銆俓n");
         }
 }

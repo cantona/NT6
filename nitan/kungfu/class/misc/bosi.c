@@ -4,9 +4,9 @@ inherit "/inherit/char/punisher";
 
 void create()
 {
-        set_name("Ã÷½Ì²¨Ë¹Ê¹Õß", ({ "bosi shizhe", "bosi", "shizhe"}));
-        set("long",  "Ëû¿´ÉÏÈ¥²»ÏñÊÇÖĞÍÁÈËÊÏ¡£\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("æ˜æ•™æ³¢æ–¯ä½¿è€…", ({ "bosi shizhe", "bosi", "shizhe"}));
+        set("long",  "ä»–çœ‹ä¸Šå»ä¸åƒæ˜¯ä¸­åœŸäººæ°ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 34);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -49,7 +49,7 @@ void create()
 
         prepare_skill("cuff", "qishang-quan");
 
-        create_family("Ã÷½Ì", 0, "Ê¹Õß");
+        create_family("æ˜æ•™", 0, "ä½¿è€…");
 
         set("chat_chance_combat", 120);
         set("chat_msg_combat", ({

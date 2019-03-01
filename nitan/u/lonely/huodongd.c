@@ -1,17 +1,17 @@
-/*¹Ì¶¨»î¶¯¹ÜÀíÏµÍ³£¬ÓÃÓÚ¹ÜÀíÃ¿ÈÕÃ¿ÖÜ¶¨Ê±»î¶¯µÄÆô¶¯ºÍÍ¨Öª
-ÖÜ£º
-  1¡¢ÀŞÌ¨´ò°ñ           20:00-23:00  ÎŞĞèÆô¶¯
-  2¡¢×ÔÓÉÕ½³¡           19:30-22:30  ÎŞĞèÆô¶¯
-  3¡¢°ïÕ½Ö®±ù»ğµºÔ¶Õ÷   20:00-21:30  ĞèÒªÆô¶¯
-  4¡¢ÏåÑô±£ÎÀÕ½         20:30-21:30  ĞèÒªÆô¶¯
-  5¡¢°ïÅÉ´ó×÷Õ½         20:30-22:00  ĞèÒªÆô¶¯
-     çÍ·×ÖÜÄ©»î¶¯       20:00-23:59  ÎŞĞèÆô¶¯
-  6¡¢°ïÕ½Ö®±ù»ğµºÔ¶Õ÷   20:00-21:30  ĞèÒªÆô¶¯
-     ×ÔÓÉÕ½³¡           13:00-20:00  ÎŞĞèÆô¶¯
-     çÍ·×ÖÜÄ©»î¶¯       00:00-23:59  ÎŞĞèÆô¶¯
-  7¡¢ÏåÑô±£ÎÀÕ½         20:30-21:30  ĞèÒªÆô¶¯
-     °ïÅÉ´ó×÷Õ½         20:30-22:00  ĞèÒªÆô¶¯
-     çÍ·×ÖÜÄ©»î¶¯       00:00-23:59  ÎŞĞèÆô¶¯
+/*å›ºå®šæ´»å‹•ç®¡ç†ç³»çµ±ï¼Œç”¨äºç®¡ç†æ¯æ—¥æ¯å‘¨å®šæ™‚æ´»å‹•çš„å•Ÿå‹•å’Œé€šçŸ¥
+å‘¨ï¼š
+  1ã€æ“‚å°æ‰“æ¦œ           20:00-23:00  ç„¡éœ€å•Ÿå‹•
+  2ã€è‡ªç”±æˆ°å ´           19:30-22:30  ç„¡éœ€å•Ÿå‹•
+  3ã€å¹«æˆ°ä¹‹å†°ç«å³¶é å¾   20:00-21:30  éœ€è¦å•Ÿå‹•
+  4ã€è¥„é™½ä¿è¡›æˆ°         20:30-21:30  éœ€è¦å•Ÿå‹•
+  5ã€å¹«æ´¾å¤§ä½œæˆ°         20:30-22:00  éœ€è¦å•Ÿå‹•
+     ç¹½ç´›å‘¨æœ«æ´»å‹•       20:00-23:59  ç„¡éœ€å•Ÿå‹•
+  6ã€å¹«æˆ°ä¹‹å†°ç«å³¶é å¾   20:00-21:30  éœ€è¦å•Ÿå‹•
+     è‡ªç”±æˆ°å ´           13:00-20:00  ç„¡éœ€å•Ÿå‹•
+     ç¹½ç´›å‘¨æœ«æ´»å‹•       00:00-23:59  ç„¡éœ€å•Ÿå‹•
+  7ã€è¥„é™½ä¿è¡›æˆ°         20:30-21:30  éœ€è¦å•Ÿå‹•
+     å¹«æ´¾å¤§ä½œæˆ°         20:30-22:00  éœ€è¦å•Ÿå‹•
+     ç¹½ç´›å‘¨æœ«æ´»å‹•       00:00-23:59  ç„¡éœ€å•Ÿå‹•
 */
 #pragma optimize
 #pragma save_binary
@@ -24,18 +24,18 @@ inherit F_DBASE;
 #define MEMBER_D     "/adm/daemons/memberd"
 #define STR_SPRINTF    "%-10s%-20s%-20s%-20s\n"
 
-// ¼ÇÂ¼ÖÜ»î¶¯ÏÔÊ¾µÄĞÅÏ¢£¬±ÜÃâÖØ¸´¼ÆËã
+// è¨˜éŒ„å‘¨æ´»å‹•é¡¯ç¤ºçš„ä¿¡æ¯ï¼Œé¿å…é‡å¾©è¨ˆç®—
 nosave string strshow = "";
-// ¼ÇÂ¼time¶ÔÓ¦µÄÌìÊı
+// è¨˜éŒ„timeå°æ‡‰çš„å¤©æ•¸
 nosave int current_day = 0;
 
-// º¯ÊıÉùÃ÷
+// å‡½æ•¸è²æ˜
 public string get_week_num(int dtime);
 public void show_week_huodong(string sday);
 public void do_channel(string ch, string msg);
 public int can_start_huodong(string huodong);
 
-// Í¨¹ıctime()·µ»Ø Fri Dec 31 17:04:17 2010 È¡µÚÒ»¸ö¿Õ¸ñÇ°µÄ
+// é€šéctime()è¿”å› Fri Dec 31 17:04:17 2010 å–ç¬¬ä¸€å€‹ç©ºæ ¼å‰çš„
 nosave mapping week_time = ([
         "Mon"  : "1", 
         "Tue"  : "2",
@@ -46,35 +46,35 @@ nosave mapping week_time = ([
         "Sun"  : "7",
 ]);
 
-// ÓÃÓÚÏÔÊ¾µÄ»î¶¯ÁĞ±í£¬²»²ÎÓë¼ÆËã£¬½ö×öÏÔÊ¾
+// ç”¨äºé¡¯ç¤ºçš„æ´»å‹•åˆ—è¡¨ï¼Œä¸åƒèˆ‡è¨ˆç®—ï¼Œåƒ…åšé¡¯ç¤º
 nosave mapping huodong_list = ([
-        "1"   :  sprintf(STR_SPRINTF, "ÖÜÒ»", "ÀŞÌ¨´ò°ñ", "19:00-23:00", "help biwu"),
+        "1"   :  sprintf(STR_SPRINTF, "å‘¨ä¸€", "æ“‚å°æ‰“æ¦œ", "19:00-23:00", "help biwu"),
         
-        "2"   :  sprintf(STR_SPRINTF, "ÖÜ¶ş", "×ÔÓÉÕ½³¡", "19:00-20:30", "help war_free"),
+        "2"   :  sprintf(STR_SPRINTF, "å‘¨äºŒ", "è‡ªç”±æˆ°å ´", "19:00-20:30", "help war_free"),
         
-        "3"   :  sprintf(STR_SPRINTF, "ÖÜÈı", "±ù»ğµºÔ¶Õ÷", "20:00-21:30", "help league.war"),
+        "3"   :  sprintf(STR_SPRINTF, "å‘¨ä¸‰", "å†°ç«å³¶é å¾", "20:00-21:30", "help league.war"),
         
-        "4"   :  sprintf(STR_SPRINTF, "ÖÜËÄ", "ÏåÑô±£ÎÀÕ½", "21:30-22:30", "help xywar"),
+        "4"   :  sprintf(STR_SPRINTF, "å‘¨å››", "è¥„é™½ä¿è¡›æˆ°", "21:30-22:30", "help xywar"),
         
-        "5"   :  sprintf(STR_SPRINTF, "ÖÜÎå", "çÍ·×ÖÜÄ©»î¶¯", "20:00-23:59", "help wkgift") +
-                 sprintf(STR_SPRINTF, "    ", "°ïÅÉ´ó×÷Õ½", "20:00-21:30", "help league.fight"),
+        "5"   :  sprintf(STR_SPRINTF, "å‘¨äº”", "ç¹½ç´›å‘¨æœ«æ´»å‹•", "20:00-23:59", "help wkgift") +
+                 sprintf(STR_SPRINTF, "    ", "å¹«æ´¾å¤§ä½œæˆ°", "20:00-21:30", "help league.fight"),
                  
-        "6"   :  sprintf(STR_SPRINTF, "ÖÜÁù", "çÍ·×ÖÜÄ©»î¶¯", "00:00-23:59", "help wkgift") +
-                 sprintf(STR_SPRINTF, "    ", "×ÔÓÉÕ½³¡", "13:00-20:00", "help war_free") +
-                 sprintf(STR_SPRINTF, "    ", "±ù»ğµºÔ¶Õ÷", "20:00-21:30", "help league.war"),
+        "6"   :  sprintf(STR_SPRINTF, "å‘¨å…­", "ç¹½ç´›å‘¨æœ«æ´»å‹•", "00:00-23:59", "help wkgift") +
+                 sprintf(STR_SPRINTF, "    ", "è‡ªç”±æˆ°å ´", "13:00-20:00", "help war_free") +
+                 sprintf(STR_SPRINTF, "    ", "å†°ç«å³¶é å¾", "20:00-21:30", "help league.war"),
 
-        "7"   :  sprintf(STR_SPRINTF, "ÖÜÈÕ", "çÍ·×ÖÜÄ©»î¶¯", "00:00-23:59", "help wkgift") +
-                 sprintf(STR_SPRINTF, "    ", "ÏåÑô±£ÎÀÕ½", "21:30-22:30", "help xywar") +
-                 sprintf(STR_SPRINTF, "    ", "°ïÅÉ´ó×÷Õ½", "20:00-21:30", "help league.fight"),
+        "7"   :  sprintf(STR_SPRINTF, "å‘¨æ—¥", "ç¹½ç´›å‘¨æœ«æ´»å‹•", "00:00-23:59", "help wkgift") +
+                 sprintf(STR_SPRINTF, "    ", "è¥„é™½ä¿è¡›æˆ°", "21:30-22:30", "help xywar") +
+                 sprintf(STR_SPRINTF, "    ", "å¹«æ´¾å¤§ä½œæˆ°", "20:00-21:30", "help league.fight"),
 ]);
 
-// ÏÔÊ¾ËùÓĞµÄÖÜ»î¶¯»òÖ¸¶¨Ä³ÈÕ»î¶¯
+// é¡¯ç¤ºæ‰€æœ‰çš„å‘¨æ´»å‹•æˆ–æŒ‡å®šæŸæ—¥æ´»å‹•
 public void show_week_huodong(string sday)
 {
         string str;
         int i;
 
-        str = sprintf(HIC + STR_SPRINTF + NOR, "»î¶¯ÈÕ", "»î¶¯Ãû", "Ê±¼ä", "°ïÖúÎÄ¼ş"); 
+        str = sprintf(HIC + STR_SPRINTF + NOR, "æ´»å‹•æ—¥", "æ´»å‹•å", "æ™‚é–“", "å¹«åŠ©æ–‡ä»¶"); 
         str += "=-----------------------------------------------------------------------------=\n";
         
         if (sday != "all")
@@ -92,7 +92,7 @@ public void show_week_huodong(string sday)
                                         strshow += HIR + huodong_list[sprintf("%d", i+1)] + NOR;
                                 else
                                 {
-                                        if ((i+1)%2==0) // ·Öµ¥Ë«´í¿ªÑÕÉ«
+                                        if ((i+1)%2==0) // åˆ†å–®é›™éŒ¯é–‹é¡è‰²
                                                 strshow += HIG + huodong_list[sprintf("%d", i+1)] + NOR;
                                         else
                                                 strshow += HIY + huodong_list[sprintf("%d", i+1)] + NOR;
@@ -105,13 +105,13 @@ public void show_week_huodong(string sday)
         str += "=-----------------------------------------------------------------------------=\n";
         if (sday == "all")
         {
-                str += HIR "ºìÉ«²¿·Ö±íÊ¾½ñÌìµÄ»î¶¯£¡\n" NOR; 
-                str =  "\n" HIY + "¡¾Ñ×»ÆÃ¿ÈÕ»î¶¯ÁĞ±í  -- »¶Ó­²ÎÓë¡¿\n" + str + NOR;
+                str += HIR "ç´…è‰²éƒ¨åˆ†è¡¨ç¤ºä»Šå¤©çš„æ´»å‹•ï¼\n" NOR; 
+                str =  "\n" HIY + "ã€ç‚é»ƒæ¯æ—¥æ´»å‹•åˆ—è¡¨  -- æ­¡è¿åƒèˆ‡ã€‘\n" + str + NOR;
         }
         write(str);
 }
 
-// ·µ»Øµ±Ç°Ê±¼äÊÇÖÜ¼¸£¬ÓÃ×Ö·û´®·µ»Ø£¬ÖÜÒ»ÔòÊÇ¡°1¡±
+// è¿”å›ç•¶å‰æ™‚é–“æ˜¯å‘¨å¹¾ï¼Œç”¨å­—ç¬¦ä¸²è¿”å›ï¼Œå‘¨ä¸€å‰‡æ˜¯â€œ1â€
 public string get_week_num(int dtime)
 {
         int strweek, strtemp;
@@ -124,14 +124,14 @@ void create()
 {
         seteuid(getuid());
         restore();
-        set_heart_beat(10); // 20ÃëĞÄÌøÒ»´Î
+        set_heart_beat(10); // 20ç§’å¿ƒè·³ä¸€æ¬¡
 
-        set("channel_id", HIY "»î¶¯Ê¹Õß" NOR);
+        set("channel_id", HIY "æ´»å‹•ä½¿è€…" NOR);
 }
 
 void remove(){save();}
 
-// ·¢²¼È«ÆÁÍ¨¸æ
+// ç™¼å¸ƒå…¨å±é€šå‘Š
 public void do_channel(string ch, string msg)
 {
         CHANNEL_D->do_channel(this_object(), ch, msg);
@@ -139,12 +139,12 @@ public void do_channel(string ch, string msg)
 
 public void mud_shutdown(){save();}
 
-/* Ã¿1·ÖÖÓ´ÎµÄĞÄÌø ÓÃÓÚ¼ì²é»î¶¯¿ªÆô
-   Í¨¹ıdbase¼ÇÂ¼Ã¿¸ö»î¶¯ÉÏ´Î¾Ù°ìµÄÊ±¼ä£¬±ÜÃâÒòÎªµ±»úµÈÒıÆğµÄÖØ¸´¾ÙĞĞ»òÎ´¾ÙĞĞ
-   sday ´ú±íÖÜ¼¸ ÈçÖÜÒ»Ôòsday = "1"
+/* æ¯1åˆ†é˜æ¬¡çš„å¿ƒè·³ ç”¨äºæª¢æŸ¥æ´»å‹•é–‹å•Ÿ
+   é€šédbaseè¨˜éŒ„æ¯å€‹æ´»å‹•ä¸Šæ¬¡èˆ‰è¾¦çš„æ™‚é–“ï¼Œé¿å…å› ç‚ºç•¶æ©Ÿç­‰å¼•èµ·çš„é‡å¾©èˆ‰è¡Œæˆ–æœªèˆ‰è¡Œ
+   sday ä»£è¡¨å‘¨å¹¾ å¦‚å‘¨ä¸€å‰‡sday = "1"
    query("huodong_info/sday, ([
-        "»î¶¯Ãû1"  : Æô¶¯Ê±¼ä,
-        "»î¶¯Ãû2"  : Æô¶¯Ê±¼ä,
+        "æ´»å‹•å1"  : å•Ÿå‹•æ™‚é–“,
+        "æ´»å‹•å2"  : å•Ÿå‹•æ™‚é–“,
    ]))
 */
 void heart_beat()
@@ -164,133 +164,133 @@ void heart_beat()
 
         today = sprintf("%d", ntime / 86400);
         
-        switch(wk) // ĞÇÆÚ¼¸
+        switch(wk) // æ˜ŸæœŸå¹¾
         {
-        case "1": // ÀŞÌ¨´ò°ñ»î¶¯ 19:30-23:30
-                if (! query("huodong_info/" + today + "/ÀŞÌ¨´ò°ñ")) // »¹Î´¾ÙĞĞ
+        case "1": // æ“‚å°æ‰“æ¦œæ´»å‹• 19:30-23:30
+                if (! query("huodong_info/" + today + "/æ“‚å°æ‰“æ¦œ")) // é‚„æœªèˆ‰è¡Œ
                 {
                         if (nhour == 19)
                         {
-                                // ¿ªÊ¼»î¶¯
-                                do_channel("chat", HIG "±ÈÎäÌôÕ½»î¶¯ÒÑ¾­¿ªÆô£¬»¶Ó­ÉÏÌ¨Ò»Õ¹ÉíÊÖ£¬" +
-                                                       "ÏêÇé¼û help biwu °ïÖú¡£\n" NOR);
-                                // ¼ÇÂ¼¿ªÊ¼Ê±¼ä
-                                set("huodong_info/" + today + "/ÀŞÌ¨´ò°ñ", ntime);
+                                // é–‹å§‹æ´»å‹•
+                                do_channel("chat", HIG "æ¯”æ­¦æŒ‘æˆ°æ´»å‹•å·²ç¶“é–‹å•Ÿï¼Œæ­¡è¿ä¸Šå°ä¸€å±•èº«æ‰‹ï¼Œ" +
+                                                       "è©³æƒ…è¦‹ help biwu å¹«åŠ©ã€‚\n" NOR);
+                                // è¨˜éŒ„é–‹å§‹æ™‚é–“
+                                set("huodong_info/" + today + "/æ“‚å°æ‰“æ¦œ", ntime);
                         }
                 }
         break;
         
-        case "2": // "×ÔÓÉÕ½³¡", "19:00-22:00"
-                if (! query("huodong_info/" + today + "/×ÔÓÉÕ½³¡")) // »¹Î´¾ÙĞĞ
+        case "2": // "è‡ªç”±æˆ°å ´", "19:00-22:00"
+                if (! query("huodong_info/" + today + "/è‡ªç”±æˆ°å ´")) // é‚„æœªèˆ‰è¡Œ
                 {
                         if (nhour == 19)
                         {
-                                // ¿ªÊ¼»î¶¯
-                                do_channel("chat", HIG "×ÔÓÉÕ½³¡»î¶¯ÒÑ¾­¿ªÆô£¬ÎªÁËÈÙÓş¶øÕ½°É¡£" +
-                                                       "ÏêÇé¼û help war_free °ïÖú¡£\n" NOR);
-                                // ³õÊ¼»¯
+                                // é–‹å§‹æ´»å‹•
+                                do_channel("chat", HIG "è‡ªç”±æˆ°å ´æ´»å‹•å·²ç¶“é–‹å•Ÿï¼Œç‚ºäº†æ¦®è­½è€Œæˆ°å§ã€‚" +
+                                                       "è©³æƒ…è¦‹ help war_free å¹«åŠ©ã€‚\n" NOR);
+                                // åˆå§‹åŒ–
                                 WAR_D->init_all_war();
-                                // ¼ÇÂ¼¿ªÊ¼Ê±¼ä
-                                set("huodong_info/" + today + "/×ÔÓÉÕ½³¡", ntime);
+                                // è¨˜éŒ„é–‹å§‹æ™‚é–“
+                                set("huodong_info/" + today + "/è‡ªç”±æˆ°å ´", ntime);
                         }
                 }
         break;
         
-        case "3": // "ÖÜÈı", "±ù»ğµºÔ¶Õ÷",20:00-21:30"
-                if (! query("huodong_info/" + today + "/±ù»ğµºÔ¶Õ÷")) // »¹Î´¾ÙĞĞ
+        case "3": // "å‘¨ä¸‰", "å†°ç«å³¶é å¾",20:00-21:30"
+                if (! query("huodong_info/" + today + "/å†°ç«å³¶é å¾")) // é‚„æœªèˆ‰è¡Œ
                 {
                         if (nhour == 20)
                         {
-                                // ¿ªÊ¼»î¶¯
+                                // é–‹å§‹æ´»å‹•
                                 if (! LEAGUE_D->is_in_leaguewar())
                                         LEAGUE_D->start_leaguewar();
-                                // ¼ÇÂ¼¿ªÊ¼Ê±¼ä
-                                set("huodong_info/" + today + "/±ù»ğµºÔ¶Õ÷", ntime);
+                                // è¨˜éŒ„é–‹å§‹æ™‚é–“
+                                set("huodong_info/" + today + "/å†°ç«å³¶é å¾", ntime);
                         }
                 }
         break;
 
-        case "4": // "ÖÜËÄ", "ÏåÑô±£ÎÀÕ½", "21:30-22:30",
-                if (! query("huodong_info/" + today + "/ÏåÑô±£ÎÀÕ½")) // »¹Î´¾ÙĞĞ
+        case "4": // "å‘¨å››", "è¥„é™½ä¿è¡›æˆ°", "21:30-22:30",
+                if (! query("huodong_info/" + today + "/è¥„é™½ä¿è¡›æˆ°")) // é‚„æœªèˆ‰è¡Œ
                 {
                         if (nhour == 21 && nmin == 30)
                         {
-                                // ¿ªÊ¼»î¶¯
+                                // é–‹å§‹æ´»å‹•
                                 if (XYWAR_D->now_status() == 0)
                                         XYWAR_D->start_xywar();
-                                // ¼ÇÂ¼¿ªÊ¼Ê±¼ä
-                                set("huodong_info/" + today + "/ÏåÑô±£ÎÀÕ½", ntime);
+                                // è¨˜éŒ„é–‹å§‹æ™‚é–“
+                                set("huodong_info/" + today + "/è¥„é™½ä¿è¡›æˆ°", ntime);
                         }
                 }
         break;
         
-        case "5": //"ÖÜÎå", "çÍ·×ÖÜÄ©»î¶¯", "20:00-23:59"
-                  //        "°ïÅÉ´ó×÷Õ½", "20:00-22:00"
-                if (! query("huodong_info/" + today + "/°ïÅÉ´ó×÷Õ½")) // »¹Î´¾ÙĞĞ
+        case "5": //"å‘¨äº”", "ç¹½ç´›å‘¨æœ«æ´»å‹•", "20:00-23:59"
+                  //        "å¹«æ´¾å¤§ä½œæˆ°", "20:00-22:00"
+                if (! query("huodong_info/" + today + "/å¹«æ´¾å¤§ä½œæˆ°")) // é‚„æœªèˆ‰è¡Œ
                 {
                         if (nhour == 20)
                         {
-                                // ¿ªÊ¼»î¶¯
+                                // é–‹å§‹æ´»å‹•
                                 LEAGUEFIGHT_D->start_leaguefitht();
-                                // ¼ÇÂ¼¿ªÊ¼Ê±¼ä
-                                set("huodong_info/" + today + "/°ïÅÉ´ó×÷Õ½", ntime);
+                                // è¨˜éŒ„é–‹å§‹æ™‚é–“
+                                set("huodong_info/" + today + "/å¹«æ´¾å¤§ä½œæˆ°", ntime);
                         }
                 }               
         break;
         
-        case "6": // ÖÜÁù
-                  //        "ÖÜÁù", "çÍ·×ÖÜÄ©»î¶¯", "00:00-23:59"
-                  //        "×ÔÓÉÕ½³¡", "13:00-20:00"
-                  //        "±ù»ğµºÔ¶Õ÷", "20:00-21:30"
-                if (! query("huodong_info/" + today + "/×ÔÓÉÕ½³¡")) // »¹Î´¾ÙĞĞ
+        case "6": // å‘¨å…­
+                  //        "å‘¨å…­", "ç¹½ç´›å‘¨æœ«æ´»å‹•", "00:00-23:59"
+                  //        "è‡ªç”±æˆ°å ´", "13:00-20:00"
+                  //        "å†°ç«å³¶é å¾", "20:00-21:30"
+                if (! query("huodong_info/" + today + "/è‡ªç”±æˆ°å ´")) // é‚„æœªèˆ‰è¡Œ
                 {
                         if (nhour == 13)
                         {
-                                // ¿ªÊ¼»î¶¯
-                                do_channel("chat", HIG "×ÔÓÉÕ½³¡»î¶¯ÒÑ¾­¿ªÆô£¬ÎªÁËÈÙÓş¶øÕ½°É¡£" +
-                                                       "ÏêÇé¼û help war_free °ïÖú¡£\n" NOR);
-                                // ³õÊ¼»¯
+                                // é–‹å§‹æ´»å‹•
+                                do_channel("chat", HIG "è‡ªç”±æˆ°å ´æ´»å‹•å·²ç¶“é–‹å•Ÿï¼Œç‚ºäº†æ¦®è­½è€Œæˆ°å§ã€‚" +
+                                                       "è©³æƒ…è¦‹ help war_free å¹«åŠ©ã€‚\n" NOR);
+                                // åˆå§‹åŒ–
                                 WAR_D->init_all_war();                      
-                                // ¼ÇÂ¼¿ªÊ¼Ê±¼ä
-                                set("huodong_info/" + today + "/×ÔÓÉÕ½³¡", ntime);
+                                // è¨˜éŒ„é–‹å§‹æ™‚é–“
+                                set("huodong_info/" + today + "/è‡ªç”±æˆ°å ´", ntime);
                         }
                 }
-                if (! query("huodong_info/" + today + "/±ù»ğµºÔ¶Õ÷")) // »¹Î´¾ÙĞĞ
+                if (! query("huodong_info/" + today + "/å†°ç«å³¶é å¾")) // é‚„æœªèˆ‰è¡Œ
                 {
                         if (nhour == 20)
                         {
-                                // ¿ªÊ¼»î¶¯
+                                // é–‹å§‹æ´»å‹•
                                 if (! LEAGUE_D->is_in_leaguewar())
                                         LEAGUE_D->start_leaguewar();
-                                // ¼ÇÂ¼¿ªÊ¼Ê±¼ä
-                                set("huodong_info/" + today + "/±ù»ğµºÔ¶Õ÷", ntime);
+                                // è¨˜éŒ„é–‹å§‹æ™‚é–“
+                                set("huodong_info/" + today + "/å†°ç«å³¶é å¾", ntime);
                         }
                 }
         break;
 
-        case "7":  // ÖÜÈÕ
-                  //        "ÖÜÈÕ", "çÍ·×ÖÜÄ©»î¶¯", "00:00-23:59"
-                  //        "ÏåÑô±£ÎÀÕ½", "21:30-22:30"
-                  //        "°ïÅÉ´ó×÷Õ½", "20:00-22:30"
-                if (! query("huodong_info/" + today + "/ÏåÑô±£ÎÀÕ½")) // »¹Î´¾ÙĞĞ
+        case "7":  // å‘¨æ—¥
+                  //        "å‘¨æ—¥", "ç¹½ç´›å‘¨æœ«æ´»å‹•", "00:00-23:59"
+                  //        "è¥„é™½ä¿è¡›æˆ°", "21:30-22:30"
+                  //        "å¹«æ´¾å¤§ä½œæˆ°", "20:00-22:30"
+                if (! query("huodong_info/" + today + "/è¥„é™½ä¿è¡›æˆ°")) // é‚„æœªèˆ‰è¡Œ
                 {
                         if (nhour == 21 && nmin == 30)
                         {
-                                // ¿ªÊ¼»î¶¯
+                                // é–‹å§‹æ´»å‹•
                                 if (XYWAR_D->now_status() == 0)
                                         XYWAR_D->start_xywar();
-                                // ¼ÇÂ¼¿ªÊ¼Ê±¼ä
-                                set("huodong_info/" + today + "/ÏåÑô±£ÎÀÕ½", ntime);
+                                // è¨˜éŒ„é–‹å§‹æ™‚é–“
+                                set("huodong_info/" + today + "/è¥„é™½ä¿è¡›æˆ°", ntime);
                         }
                 }
-                if (! query("huodong_info/" + today + "/°ïÅÉ´ó×÷Õ½")) // »¹Î´¾ÙĞĞ
+                if (! query("huodong_info/" + today + "/å¹«æ´¾å¤§ä½œæˆ°")) // é‚„æœªèˆ‰è¡Œ
                 {
                         if (nhour == 20)
                         {
-                                // ¿ªÊ¼»î¶¯
+                                // é–‹å§‹æ´»å‹•
                                 LEAGUEFIGHT_D->start_leaguefitht();
-                                // ¼ÇÂ¼¿ªÊ¼Ê±¼ä
-                                set("huodong_info/" + today + "/°ïÅÉ´ó×÷Õ½", ntime);
+                                // è¨˜éŒ„é–‹å§‹æ™‚é–“
+                                set("huodong_info/" + today + "/å¹«æ´¾å¤§ä½œæˆ°", ntime);
                         }
                 }
         break;  
@@ -302,8 +302,8 @@ void heart_beat()
         return;
 }
 
-// À´×Ôcity biwu_dating ,yinghao_dating, xinrui_datinµ÷ÓÃ
-// ÊÇ·ñ¿ÉÒÔ¿ªÊ¼±ÈÎä
+// ä¾†è‡ªcity biwu_dating ,yinghao_dating, xinrui_datinèª¿ç”¨
+// æ˜¯å¦å¯ä»¥é–‹å§‹æ¯”æ­¦
 public int can_start_huodong(string huodong)
 {
         string wk, strtime, str_hour, str_min, today;
@@ -323,7 +323,7 @@ public int can_start_huodong(string huodong)
         
         switch(huodong)
         {
-        case "biwu": // ±ÈÎä´ò°ñ 19:00 - 23:00
+        case "biwu": // æ¯”æ­¦æ‰“æ¦œ 19:00 - 23:00
                 if (wk == "1" && 
                    nhour >= 19 && nhour < 23)return 1;
                 else
@@ -335,7 +335,7 @@ public int can_start_huodong(string huodong)
         break;
         case "league.fight":
         break;  
-        case "war_free": // "ÖÜ¶ş", "×ÔÓÉÕ½³¡", "19:00-22:00" ÖÜÁù "×ÔÓÉÕ½³¡", "13:00-20:00"
+        case "war_free": // "å‘¨äºŒ", "è‡ªç”±æˆ°å ´", "19:00-22:00" å‘¨å…­ "è‡ªç”±æˆ°å ´", "13:00-20:00"
                 if (wk == "2" &&
                    nhour >= 19&& 
                    nhour < 22)return 1;

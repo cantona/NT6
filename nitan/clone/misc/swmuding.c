@@ -1,4 +1,4 @@
-// swmuding.c ÉñÄ¾Íõ¶¦
+// swmuding.c ç¥æœ¨ç‹é¼
 
 #include <ansi.h>
 
@@ -22,10 +22,10 @@ mapping insects = ([
 
 void create()
 {
-        set_name(NOR + YEL "ÉñÄ¾Íõ¶¦" NOR, ({"shenmuwang ding", "shenmuwang", "ding"}) );
+        set_name(NOR + YEL "ç¥æœ¨ç‹é¼" NOR, ({"shenmuwang ding", "shenmuwang", "ding"}) );
         set_weight(1200);
-        set("long", NOR + YEL "Ò»Ö»»Æ²Ó²ÓµÄÄ¾ÖÆµÄ¶¦£¬¿´ÉÏÈ¥ÓĞ¸Ğ¾õÓĞĞ©¹îÃØ£¬Ï¸ÎÅÏÂÈ´ÓĞÒ»¹ÉĞÈÎ¶¼ĞÔÓÔÚÏãÎ¶ÖĞ¡£\n" NOR);
-        set("unit", "Ö»");
+        set("long", NOR + YEL "ä¸€åªé»ƒç‡¦ç‡¦çš„æœ¨åˆ¶çš„é¼ï¼Œçœ‹ä¸Šå»æœ‰æ„Ÿè¦ºæœ‰äº›è©­ç§˜ï¼Œç´°èä¸‹å»æœ‰ä¸€è‚¡è…¥å‘³å¤¾é›œåœ¨é¦™å‘³ä¸­ã€‚\n" NOR);
+        set("unit", "åª");
         set("value", 50);
         set("no_sell", 1);
         set_max_encumbrance(1000);

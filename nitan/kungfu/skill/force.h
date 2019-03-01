@@ -22,8 +22,8 @@ varargs int valid_public(object me,mixed comb)
                 if (SKILL_D(sk[i])->valid_enable("force"))
                         if ( member_array(sk[i],can_skill) == -1 )
                                   if (!SCBORN_D->valid_learn(me,sk[i])) 
-                                return notify_fail("Äã²»É¢µô"+to_chinese(sk[i])
-                                        +"£¬ÈçºÎÄÜĞŞÏ°"+to_chinese(skl_name)+"¡£\n");
+                                return notify_fail("ä½ ä¸æ•£æ‰"+to_chinese(sk[i])
+                                        +"ï¼Œå¦‚ä½•èƒ½ä¿®ç¿’"+to_chinese(skl_name)+"ã€‚\n");
         }
         return 1;
 }

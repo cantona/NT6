@@ -1,7 +1,7 @@
 // $file_name.c                                         /* COMMENT_ENTRY */ 
 // Create by TEMPLATE_D. $time.                         /* COMMENT_ENTRY */ 
 // armor.c
-// ×Ô¶¯´´½¨·À¾ßµÄ»ù×¼ÎÄ¼þ¡£                             /* COMMENT_EXIT  */ 
+// è‡ªå‹•å‰µå»ºé˜²å…·çš„åŸºæº–æ–‡ä»¶ã€‚                             /* COMMENT_EXIT  */ 
 
 #include <armor.h>
 inherit WAIST;
@@ -9,15 +9,15 @@ inherit WAIST;
 void create()
 {
 //**    set_name("$name", ({ "$id", }));                /* NAME_ENTRY */ 
-        set_name("Ñü´ø", ({ "waist", }));               /* NAME_EXIT  */
+        set_name("è…°å¸¶", ({ "waist", }));               /* NAME_EXIT  */
 
         if (clonep())
                 set_default_object(__FILE__);
         else
         {
 //**            set("$dbase_key", "$dbase_value\n");    /* DBASE_ENTRY */ 
-                set("long", "ÕâÊÇÒ»¼þÆÕÍ¨µÄÑü´ø¡£\n");  /* DBASE_EXIT  */
-                set("unit", "¼þ");
+                set("long", "é€™æ˜¯ä¸€ä»¶æ™®é€šçš„è…°å¸¶ã€‚\n");  /* DBASE_EXIT  */
+                set("unit", "ä»¶");
                 set("value", 200);
                 set("material", "cloth");
                 set("armor_prop/armor", 1);

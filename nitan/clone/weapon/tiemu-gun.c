@@ -4,17 +4,17 @@ inherit CLUB;
 
 void create()
 {
-        set_name(HIG "ÌúÄ¾¹÷" NOR, ({ "tiemu gun", "gun" }));
+        set_name(HIG "éµæœ¨æ£" NOR, ({ "tiemu gun", "gun" }));
         set_weight(300);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ù");
-                set("long", HIG "ÕâÊÇÒ»¸ùÓÃÇ§ÄêÌúÄ¾ËùÖıÔìµÄ¹÷×Ó£¬ÍşÁ¦·Ç·²¡£\n" NOR);
+                set("unit", "æ ¹");
+                set("long", HIG "é€™æ˜¯ä¸€æ ¹ç”¨åƒå¹´éµæœ¨æ‰€é‘„é€ çš„æ£å­ï¼Œå¨åŠ›éå‡¡ã€‚\n" NOR);
                 set("material", "wood");
                 set("value", 600000);
-                set("wield_msg", "$N³é³öÒ»¸ù$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²å»ØÑü¼ä¡£\n");
+                set("wield_msg", "$NæŠ½å‡ºä¸€æ ¹$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°‡æ‰‹ä¸­çš„$næ’å›è…°é–“ã€‚\n");
         }
         init_club(500);
         setup();

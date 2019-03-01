@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÄÏ½®É³Ä®");
+        set("short", "å—ç–†æ²™æ¼ ");
         set("long", @LONG
-Õâ¾ÍÊÇºÆå«µÄËþ¿ËÀ­Âí¸É´óÉ³Ä®£¬Ò»×ß½øÀ´£¬Äã·Â·ðÃÔÊ§
-ÁË·½Ïò¡£Äã¸Ðµ½¿ÚÄÚÊ®·Ö½¹¿Ê£¬»¹ÊÇ¿ìÐ©Àë¿ª°É¡£
+é€™å°±æ˜¯æµ©ç€šçš„å¡”å…‹æ‹‰é¦¬å¹¹å¤§æ²™æ¼ ï¼Œä¸€èµ°é€²ä¾†ï¼Œä½ ä»¿ä½›è¿·å¤±
+äº†æ–¹å‘ã€‚ä½ æ„Ÿåˆ°å£å…§ååˆ†ç„¦æ¸´ï¼Œé‚„æ˜¯å¿«äº›é›¢é–‹å§ã€‚
 LONG );
 
         set("exits", ([
@@ -21,7 +21,7 @@ LONG );
         ]));
 
         set("outdoors", "xiyu");
-        set("no_map", "ÕâÀïµÄµØÐÎÁîÈËÃÔ»ó£¬ÎÞ·¨»æÖÆµØÍ¼¡£\n");
+        set("no_map", "é€™è£¡çš„åœ°å½¢ä»¤äººè¿·æƒ‘ï¼Œç„¡æ³•ç¹ªåˆ¶åœ°åœ–ã€‚\n");
 
         setup();
 }
@@ -36,7 +36,7 @@ int valid_leave(object me, string dir)
         current_water=query("water", me);
         if (current_water == 0)
         {
-                write("ÄãÒÑ¾­¸Ðµ½²»ÐÐÁË£¬Ú¤Ú¤ÖÐÄã¾õµÃÓÐÈË°ÑÄãÌ§µ½ÌìÉ½½ÅÏÂ¡£\n");
+                write("ä½ å·²ç¶“æ„Ÿåˆ°ä¸è¡Œäº†ï¼Œå†¥å†¥ä¸­ä½ è¦ºå¾—æœ‰äººæŠŠä½ æŠ¬åˆ°å¤©å±±è…³ä¸‹ã€‚\n");
                 me->move(__DIR__"shanjiao");
                 me->unconcious();
                 return -1;
@@ -44,7 +44,7 @@ int valid_leave(object me, string dir)
 
         if (current_water <= 20)
         {
-                write("Äã¹ýÓÚÈ±Ë®£¬ÑÛÃ°½ðÐÇ¡£\n");
+                write("ä½ éŽäºŽç¼ºæ°´ï¼Œçœ¼å†’é‡‘æ˜Ÿã€‚\n");
                 set("water", 0, me);
         } else
         if( !objectp(present("bigu fu", me)) && query("reborn/times", me) < 3 )

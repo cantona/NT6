@@ -13,13 +13,13 @@ int exert(object me, object target)
   !query("perform/maxsuck", me) && 
   !query("can_perform/xixing-dafa/maxsuck", me) && 
   !query_temp("murong/xingyi", me) )
-   return notify_fail("ÄãËùÊ¹ÓÃµÄÄÚ¹¦ÖĞÃ»ÓĞÕâÖÖ¹¦ÄÜ¡£");
+   return notify_fail("ä½ æ‰€ä½¿ç”¨çš„å…§åŠŸä¸­æ²’æœ‰é€™ç¨®åŠŸèƒ½ã€‚");
 */
         if( !target || !target->is_character() || target == me )
          target = offensive_target(me);
 
         if( query("no_fight", environment(me)) )
-                return notify_fail("ÔÚÕâÀï²»ÄÜ¹¥»÷ËûÈË¡£\n");
+                return notify_fail("åœ¨é€™è£¡ä¸èƒ½æ”»æ“Šä»–äººã€‚\n");
 
         if( !objectp(target) ||
                 query("id", target) == "zhangmen" || 
@@ -30,49 +30,49 @@ int exert(object me, object target)
                 query("id", target) == "jiguanren" || 
                 query("id", target) == "xiangpiren" || 
                 query("id", target) == "dujiangshi" )
-                return notify_fail("ÄãÒªÎüÈ¡Ë­µÄµ¤Ôª£¿\n");
+                return notify_fail("ä½ è¦å¸å–èª°çš„ä¸¹å…ƒï¼Ÿ\n");
 
-        notify_fail("²»ÊÇÄãÒª×¥µÄÈË£¬´ÕÊ²Ã´ÈÈÄÖ£¡\n");
+        notify_fail("ä¸æ˜¯ä½ è¦æŠ“çš„äººï¼Œæ¹Šä»€éº¼ç†±é¬§ï¼\n");
         if (!userp(target) && !target->accept_hit(me)) return 0;
 
-        if( query("race", target) != "ÈËÀà" )
-                return notify_fail("¸ã´íÁË£¡Ö»ÓĞÈË²ÅÄÜÓĞµ¤Ôª£¡\n");
+        if( query("race", target) != "äººé¡" )
+                return notify_fail("æéŒ¯äº†ï¼åªæœ‰äººæ‰èƒ½æœ‰ä¸¹å…ƒï¼\n");
 
         my_max=query("max_neili", me);
         tg_max=query("max_neili", target);
 
         if( query_temp("sucked", me) )
-                return notify_fail("Äã¸Õ¸ÕÎüÈ¡¹ıµ¤Ôª£¡\n");
+                return notify_fail("ä½ å‰›å‰›å¸å–éä¸¹å…ƒï¼\n");
 
         if( objectp(query_temp("weapon", me)) )
-                return notify_fail("Äã±ØĞë¿ÕÊÖ²ÅÄÜÊ©ÓÃÎüĞÇ´ó·¨ÎüÈËµ¤Ôª£¡\n");
+                return notify_fail("ä½ å¿…é ˆç©ºæ‰‹æ‰èƒ½æ–½ç”¨å¸æ˜Ÿå¤§æ³•å¸äººä¸¹å…ƒï¼\n");
 
         if( !me->is_fighting() || !target->is_fighting())
 
         if( (int)me->query_skill("xixing-dafa",1) < 90 )
-                return notify_fail("ÄãµÄÎüĞÇ´ó·¨¹¦Á¦²»¹»£¬²»ÄÜÎüÈ¡¶Ô·½µÄµ¤Ôª£¡£\n");
+                return notify_fail("ä½ çš„å¸æ˜Ÿå¤§æ³•åŠŸåŠ›ä¸å¤ ï¼Œä¸èƒ½å¸å–å°æ–¹çš„ä¸¹å…ƒï¼â–¡n");
         if( (int)me->query_skill("kuihua-xinfa",1) < 90 )
-                return notify_fail("ÄãµÄ¿û»¨ĞÄ·¨²»¹»£¬²»ÄÜÔËÈ¡ÎüĞÇ´ó·¨£¡\n");
+                return notify_fail("ä½ çš„è‘µèŠ±å¿ƒæ³•ä¸å¤ ï¼Œä¸èƒ½é‹å–å¸æ˜Ÿå¤§æ³•ï¼\n");
 
         if( query("neili", me)<20 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬²»ÄÜÊ¹ÓÃÎüĞÇ´ó·¨¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ï¼Œä¸èƒ½ä½¿ç”¨å¸æ˜Ÿå¤§æ³•ã€‚\n");
 
         if( query("neili", me)>2*query("max_neili", me) )
-                return notify_fail(HIR"ÄãÖ»¾õÈ«ÉíÕæÆøÂÒ´³£¬¿´À´Òªµ÷ÀíÄÚÏ¢ÁË¡£\n"NOR);
+                return notify_fail(HIR"ä½ åªè¦ºå…¨èº«çœŸæ°£äº‚é—–ï¼Œçœ‹ä¾†è¦èª¿ç†å…§æ¯äº†ã€‚\n"NOR);
 
         if( me->query_skill("force")<query("max_neili", me)/10 )
-                return notify_fail("ÄãµÄÄÚ¹¦Ì«µÍÁË£¬ÔÙÎüÈ¡Ò²ÊÇÍ½ÀÍ¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸå¤ªä½äº†ï¼Œå†å¸å–ä¹Ÿæ˜¯å¾’å‹ã€‚\n");
 
         if( query("max_neili", target)<100 )
                 return notify_fail( target->name() +
-                        "µ¤Ôª»ÁÉ¢£¬¹¦Á¦Î´¾Û£¬ÄãÎŞ·¨´ÓËûÌåÄÚÎüÈ¡ÈÎºÎ¶«Î÷£¡\n");
+                        "ä¸¹å…ƒæ¸™æ•£ï¼ŒåŠŸåŠ›æœªèšï¼Œä½ ç„¡æ³•å¾ä»–é«”å…§å¸å–ä»»ä½•æ±è¥¿ï¼\n");
 
         if( query("max_neili", target)<query("max_neili", me)/10 )
                 return notify_fail( target->name() +
-                        "µÄÄÚ¹¦ĞŞÎªÔ¶²»ÈçÄã£¬ÄãÎŞ·¨´ÓËûÌåÄÚÎüÈ¡µ¤Ôª£¡\n");
+                        "çš„å…§åŠŸä¿®ç‚ºé ä¸å¦‚ä½ ï¼Œä½ ç„¡æ³•å¾ä»–é«”å…§å¸å–ä¸¹å…ƒï¼\n");
 
         message_combatd(
-                HIY"$NÊÖ±ÛÃÍµØ³¤³öÕı×¥ÔÚ$nÓÒÊÖÍóÉÏ¡£Í»È»Ö®¼ä£¬$nÃÍ¾õÓÒÍó¡°ÄÚ¹Ø¡±¡°Íâ¹Ø¡±Á½´¦Ñ¨µÀÖĞÄÚÁ¦Ô´Ô´ÍâĞ¹£¡\n\n" NOR, me, target );
+                HIY"$Næ‰‹è‡‚çŒ›åœ°é•·å‡ºæ­£æŠ“åœ¨$nå³æ‰‹è…•ä¸Šã€‚çªç„¶ä¹‹é–“ï¼Œ$nçŒ›è¦ºå³è…•â€œå…§é—œâ€â€œå¤–é—œâ€å…©è™•ç©´é“ä¸­å…§åŠ›æºæºå¤–æ³„ï¼\n\n" NOR, me, target );
 
         if( living(target) && !query_temp("noliving", target) )
         {
@@ -87,8 +87,8 @@ int exert(object me, object target)
         if (( random(sp) > random(dp) ) ||
                 !living(target) || query_temp("noliving", target) )
         {
-                tell_object(target, HIR"ÄãÖ»¾õµÃÊÖÍóÉÏ¡°ÄÚ¹Ø¡±¡°Íâ¹Ø¡±Á½´¦Ñ¨µÀ±ãÈç¿ªÁËÁ½¸ö´óÈ±¿Ú£¬Á¢Ê±È«ÉíÄÚÁ¦¼±Ğº¶ø³ö£¬ÓĞÈçºÓË®¾öµÌ£¬ÔÙÒ²ÄÑÒÔ¶Â½Ø£¡\n" NOR);
-                tell_object(me, HIG"Äã¾õµÃ" + target->name() + "µÄµ¤Ôª×ÔÊÖÕÆÔ´Ô´²»¾øµØÁ÷ÁË½øÀ´¡£\n" NOR);
+                tell_object(target, HIR"ä½ åªè¦ºå¾—æ‰‹è…•ä¸Šâ€œå…§é—œâ€â€œå¤–é—œâ€å…©è™•ç©´é“ä¾¿å¦‚é–‹äº†å…©å€‹å¤§ç¼ºå£ï¼Œç«‹æ™‚å…¨èº«å…§åŠ›æ€¥ç€‰è€Œå‡ºï¼Œæœ‰å¦‚æ²³æ°´æ±ºå ¤ï¼Œå†ä¹Ÿé›£ä»¥å µæˆªï¼\n" NOR);
+                tell_object(me, HIG"ä½ è¦ºå¾—" + target->name() + "çš„ä¸¹å…ƒè‡ªæ‰‹æŒæºæºä¸çµ•åœ°æµäº†é€²ä¾†ã€‚\n" NOR);
 
                 addn("max_neili", -1*(1+(me->query_skill("xixing-dafa",1)-90)/5), target);
                 addn("max_neili", 1*(1+(me->query_skill("xixing-dafa",1)-90)/5), me);
@@ -105,7 +105,7 @@ int exert(object me, object target)
         }
         else
         {        
-                message_combatd(HIY"¿ÉÊÇ$p¿´ÆÆÁË$PµÄÆóÍ¼£¬ÄÚÁ¦ÃÍµØÒ»Õğ£¬½èÊÆÁïÁË¿ªÈ¥¡£\n" NOR, me, target);
+                message_combatd(HIY"å¯æ˜¯$pçœ‹ç ´äº†$Pçš„ä¼åœ–ï¼Œå…§åŠ›çŒ›åœ°ä¸€éœ‡ï¼Œå€Ÿå‹¢æºœäº†é–‹å»ã€‚\n" NOR, me, target);
                 me->start_busy(7);
                 call_out("del_sucked", 20, me);
         }
@@ -121,17 +121,17 @@ void del_sucked(object me)
 
 int help(object me)
 {
-        write(WHT"\nÎüĞÇ´ó·¨Ö®ÎüÈ¡µ¤Ôª£º"NOR"\n");
+        write(WHT"\nå¸æ˜Ÿå¤§æ³•ä¹‹å¸å–ä¸¹å…ƒï¼š"NOR"\n");
         write(@HELP
 
-        Ê¹ÓÃ¹¦Ğ§£º
-                ÎüÈ¡¶Ô·½µ¤Ôª
-                ÔöÇ¿×Ô¼ºÄÚÁ¦ÉÏÏŞ
+        ä½¿ç”¨åŠŸæ•ˆï¼š
+                å¸å–å°æ–¹ä¸¹å…ƒ
+                å¢å¼·è‡ªå·±å…§åŠ›ä¸Šé™
 
-        ³öÊÖÒªÇó£º
-                ¿û»¨ĞÄ·¨90¼¶
-                ÎüĞÇ´ó·¨90¼¶
-                ÄÚÁ¦20
+        å‡ºæ‰‹è¦æ±‚ï¼š
+                è‘µèŠ±å¿ƒæ³•90ç´š
+                å¸æ˜Ÿå¤§æ³•90ç´š
+                å…§åŠ›20
 HELP
         );
         return 1;

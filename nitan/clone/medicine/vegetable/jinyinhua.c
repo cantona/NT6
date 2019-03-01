@@ -1,4 +1,4 @@
-// jinyinhua.c ½ğÒø»¨
+// jinyinhua.c é‡‘éŠ€èŠ±
 
 inherit ITEM;
 #include <ansi.h>
@@ -11,13 +11,13 @@ void init()
 
 void create()
 {
-        set_name(YEL"½ğ"HIW"Òø"HIY"»¨"NOR, ({"jinyinhua"}));
+        set_name(YEL"é‡‘"HIW"éŠ€"HIY"èŠ±"NOR, ({"jinyinhua"}));
         set_weight(500);
         set("vegetable", 4);
         set("value", 30);
         set("nostrum", 16);
-        set("unit", "¸ù");
-        set("long", "ÕâÊÇÒ»¸ùµÄ½ğÒø»¨£¬¿´À´¿ÉÒÔÈëÒ©¡£\n");
+        set("unit", "æ ¹");
+        set("long", "é€™æ˜¯ä¸€æ ¹çš„é‡‘éŠ€èŠ±ï¼Œçœ‹ä¾†å¯ä»¥å…¥è—¥ã€‚\n");
         set("pour_type", "1");
         setup();
 }
@@ -26,12 +26,12 @@ int do_eat(string arg)
 {
         object me = this_player();
 
-        if(!id(arg)) return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+        if(!id(arg)) return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if(!present(this_object(), me))
-                return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if( me->is_busy() )
-                return notify_fail("±ğ¼±£¬ÂıÂı³Ô£¬Ğ¡ĞÄ±ğÒ­×ÅÁË¡£\n");
+                return notify_fail("åˆ¥æ€¥ï¼Œæ…¢æ…¢åƒï¼Œå°å¿ƒåˆ¥å™è‘—äº†ã€‚\n");
 
-        write("½ğÒø»¨ÈëÒ©²ÅÄÜÈë¿Ú¡£\n");
+        write("é‡‘éŠ€èŠ±å…¥è—¥æ‰èƒ½å…¥å£ã€‚\n");
         return 1;
 }

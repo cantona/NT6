@@ -14,9 +14,9 @@ string zm_apply()
 {
         object ob = this_player();
 /*
-        if (query("gender", ob) != "Å®ĞÔ")
+        if (query("gender", ob) != "å¥³æ€§")
         {
-                return "±¾ÅÉÖ»ÓĞÅ®×Ó²ÅÄÜ½ÓÈÎÕÆÃÅµÜ×ÓÒ»Ö°£¡";
+                return "æœ¬æ´¾åªæœ‰å¥³å­æ‰èƒ½æ¥ä»»æŒé–€å¼Ÿå­ä¸€è·ï¼";
         }
 */
         return ::zm_apply();

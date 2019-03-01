@@ -1,5 +1,5 @@
 // Last Modified by Winder on May. 21 2001
-// muchui.c Ä¾´¸
+// muchui.c æœ¨éŒ˜
 
 #include <weapon.h>
 
@@ -7,15 +7,15 @@ inherit HAMMER;
 
 void create()
 {
-        set_name("Ä¾´¸", ({ "muchui", "chui" }) );
+        set_name("æœ¨éŒ˜", ({ "muchui", "chui" }) );
         set_weight(350);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¸ùÏ÷µÃºÜ¾«ÖÂµÄ¶Ì´¸¡£\n");
-                set("unit", "¸ù");
+                set("long", "ä¸€æ ¹å‰Šå¾—å¾ˆç²¾è‡´çš„çŸ­éŒ˜ã€‚\n");
+                set("unit", "æ ¹");
                 set("value", 100);
-                set("wield_msg", "$N×¥ÆğÒ»¸ù$n£¬ÎÕÔÚÊÖÖĞµ±ÎäÆ÷¡£\n");
+                set("wield_msg", "$NæŠ“èµ·ä¸€æ ¹$nï¼Œæ¡åœ¨æ‰‹ä¸­ç•¶æ­¦å™¨ã€‚\n");
                 set("material", "wood");
         }
         init_hammer(1);

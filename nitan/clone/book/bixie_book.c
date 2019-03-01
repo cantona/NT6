@@ -4,13 +4,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name("±ÙĞ°½£Æ×", ({ "bixie_sword_book", "book" }));
+        set_name("è¾Ÿé‚ªåŠè­œ", ({ "bixie_sword_book", "book" }));
         set_weight(600);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
-                set("long","ÕâÊÇÒ»±¾±ÙĞ°½£Æ×, ¹©×ÔÎÒĞŞÏ°±ÙĞ°½£·¨¡£\n²»¹ıÕâ±¾Êé²¢²»ÒªÇó×Ô¹¬, ÕæÓĞµã¹Ö¡£\n");
+                set("unit", "æœ¬");
+                set("long","é€™æ˜¯ä¸€æœ¬è¾Ÿé‚ªåŠè­œ, ä¾›è‡ªæˆ‘ä¿®ç¿’è¾Ÿé‚ªåŠæ³•ã€‚\nä¸éé€™æœ¬æ›¸ä¸¦ä¸è¦æ±‚è‡ªå®®, çœŸæœ‰é»æ€ªã€‚\n");
                 set("value", 1000);
                 set("material", "paper");
                 set("skill", ([

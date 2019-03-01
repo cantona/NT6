@@ -2,11 +2,11 @@ inherit ROOM;
 #include <ansi.h> 
 void create()
 {
-        set("short", "���ַ�");
+        set("short", "疊嶂峰");
         set("long",
-"[1;32m����Ⱥ����֣�����һ������������Ⱥ�壬Ҳ��˵�徿����\n"
-"�ж��١�Ȼ����ɽ�����ڣ�ȴΨ��һ�����һ�������С�ݳ���ɽ���\n"
-"��֮�����������ƽ��ɴ˶�����\n"
+"[1;32m這裡群峰疊嶂，都是一根而出，看似群峰，也難說清究竟該\n"
+"有多少。然而，山峰雖眾，卻唯此一峰獨尊。一株奇異的小草長在山峰絕\n"
+"高之處，瑞氣祥雲皆由此而來。\n"
 );
         set("exits", ([ 
              "down" : __DIR__"mountain",

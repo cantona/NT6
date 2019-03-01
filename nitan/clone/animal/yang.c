@@ -1,14 +1,14 @@
-// yang.c ÃàÑò
+// yang.c ç¶¿ç¾Š
 // Last Modified by winder on Aug. 1 2002
 
 inherit NPC;
 
 void create()
 {
-        set_name("ÃàÑò", ({ "mian yang", "yang", "sheep" }) );
-        set("race", "×ßÐó");
+        set_name("ç¶¿ç¾Š", ({ "mian yang", "yang", "sheep" }) );
+        set("race", "èµ°ç•œ");
         set("age", 6);
-        set("long", "Ò»Í·ÎÂË³µÄÐ¡ÃàÑò¡£\n");
+        set("long", "ä¸€é ­æº«é †çš„å°ç¶¿ç¾Šã€‚\n");
         set("attitude", "peaceful");
         
         set("str", 16);
@@ -27,7 +27,7 @@ void create()
 void die()
 {
         object ob;
-        message_vision("$NÆà²ÒµÄº¿ÁË¼¸Éù£¬µ¹ÔÚµØÉÏËÀÁË¡£\n", this_object());
+        message_vision("$Nå‡„æ…˜çš„åšŽäº†å¹¾è²ï¼Œå€’åœ¨åœ°ä¸Šæ­»äº†ã€‚\n", this_object());
         ob = new(__DIR__"obj/yangrou2");
         ob->move(environment(this_object()));
         destruct(this_object());

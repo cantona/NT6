@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ɽ��");
+        set("short", "山溝");
         set("long", @LONG
-ɽ��֮�µ�һ��Сɽ����������һƬ�԰���ɽ�ڣ���������ɽ��ֱ
-�����졣�����̲ݴ�����������ѩ��֮����û���С�
+山壁之下的一條小山溝，往西是一片稍矮的山壁，其余三面山壁直
+接雲天。這裡綠草叢生，有許多雪中之雞出沒其中。
 LONG        );
         set("outdoors", "hongmei");
         set("exits", ([ /* sizeof() == 1 */

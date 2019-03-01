@@ -12,14 +12,14 @@ void create()
 {
                 object suyou;
 
-        set_name(HIY "ËÖÓÍµÆ" NOR, ({"lamp"}));
+        set_name(HIY "é…¥æ²¹ç‡ˆ" NOR, ({"lamp"}));
         set_max_encumbrance(200);
         set_weight(600);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Õµ");
-                set("long", "Ò»Õµ´¿½ğ´òÖÆµÄËÖÓÍµÆ£¬×öµÄÊ®·Ö¾«ÇÉ±ğÖÂ£¬¿´ÉÏÈ¥¼ÛÖµ²»·Æ¡£\n");
+                set("unit", "ç›");
+                set("long", "ä¸€ç›ç´”é‡‘æ‰“åˆ¶çš„é…¥æ²¹ç‡ˆï¼Œåšçš„ååˆ†ç²¾å·§åˆ¥è‡´ï¼Œçœ‹ä¸Šå»åƒ¹å€¼ä¸è²ã€‚\n");
                 set("value", 100000);
                                 set("no_get",1);
         }
@@ -48,18 +48,18 @@ int do_light(string arg)
                 object  ob = this_object();
 
         if (!present("fire", me))
-                return notify_fail("ÄãÒªÓÃÊ²Ã´µã»ğ£¿\n");
+                return notify_fail("ä½ è¦ç”¨ä»€éº¼é»ç«ï¼Ÿ\n");
         if (!arg)
-                return notify_fail("ÄãÒªµãÈ¼Ê²Ã´£¿\n");
+                return notify_fail("ä½ è¦é»ç‡ƒä»€éº¼ï¼Ÿ\n");
         if (arg != "lamp")
-                return notify_fail("ÄãÒªµãÈ¼Ê²Ã´£¿\n");
+                return notify_fail("ä½ è¦é»ç‡ƒä»€éº¼ï¼Ÿ\n");
                 if (ob->query_current_liquid() < 5)
-                                return notify_fail("µÆÀïµÄËÖÓÍ²»¹»À²¡£\n");
+                                return notify_fail("ç‡ˆè£¡çš„é…¥æ²¹ä¸å¤ å•¦ã€‚\n");
                 if( query("burning", ob) )
-                                return notify_fail("ËÖÓÍµÆÒÑ¾­µã×ÅÀ²¡£\n");
-        message_vision(HIR"$NµãÈ¼ÁËµÆÖĞµÄËÖÓÍ£¬µÆÍ·Ã°³öĞ¡Ğ¡µÄÒ»¹É»ğÑæ£¬É¢·¢³öµ­µ­µÄËÖÓÍÏã¡£\n"NOR, me);
-        set("long", query("long") + HIR"ÀïÃæÈ¼×ÅĞ¡Ğ¡µÄÒ»¹É»ğÑæ¡£\n"NOR);
-        set_temp("marks/ÓÍ", 1, me);
+                                return notify_fail("é…¥æ²¹ç‡ˆå·²ç¶“é»è‘—å•¦ã€‚\n");
+        message_vision(HIR"$Né»ç‡ƒäº†ç‡ˆä¸­çš„é…¥æ²¹ï¼Œç‡ˆé ­å†’å‡ºå°å°çš„ä¸€è‚¡ç«ç‡„ï¼Œæ•£ç™¼å‡ºæ·¡æ·¡çš„é…¥æ²¹é¦™ã€‚\n"NOR, me);
+        set("long", query("long") + HIR"è£¡é¢ç‡ƒè‘—å°å°çš„ä¸€è‚¡ç«ç‡„ã€‚\n"NOR);
+        set_temp("marks/æ²¹", 1, me);
         set("burning", 1);
         remove_call_out("finish_burn");
         call_out("finish_burn",80+random(80), me);
@@ -80,8 +80,8 @@ void finish_burn(object me)
                 }
                 ob->set_current_liquid(0);
                 set("burning", 0);
-        message_vision(HIR"$NÖĞµÄ»ğÑæËæ·ç»ÎÁËÁ½ÏÂ£¬ÖÕÓÚÏ¨ÃğÁË£¬Ã°³öÒ»¹ÉÇàÑÌ¡£\n"NOR, ob);
-        set("long", "Ò»Õµ´¿½ğ´òÖÆµÄËÖÓÍµÆ£¬×öµÄÊ®·Ö¾«ÇÉ±ğÖÂ£¬¿´ÉÏÈ¥¼ÛÖµ²»·Æ¡£\n");
+        message_vision(HIR"$Nä¸­çš„ç«ç‡„éš¨é¢¨æ™ƒäº†å…©ä¸‹ï¼Œçµ‚äºç†„æ»…äº†ï¼Œå†’å‡ºä¸€è‚¡é’ç…™ã€‚\n"NOR, ob);
+        set("long", "ä¸€ç›ç´”é‡‘æ‰“åˆ¶çš„é…¥æ²¹ç‡ˆï¼Œåšçš„ååˆ†ç²¾å·§åˆ¥è‡´ï¼Œçœ‹ä¸Šå»åƒ¹å€¼ä¸è²ã€‚\n");
 
 }
 

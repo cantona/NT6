@@ -3,11 +3,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÄÏÑÒ·å");
+        set("short", "å—å·–å³°");
         set("long", @LONG
-ÕâÀïÊÇÎäµ±ÈıÊ®ÁùÑÒÖ®×î£¬ËÉÊ÷ôèÌì£¬Ä¾Ê¯ÕùÆæ£¬ÇÍ±ÚÍòØğ¡£ÔÚ
-ĞüÑÂÖ®°ëÖşÓĞÒ»¹¬Óî£¬ÏÂÁÙÉîÔ¨£¬¹¤³ÌºÆ´ó¡£¹¬Ç°ÓĞÒ»Ê¯Öù£¬×ÔÇÍ±Ú
-ÉÏºá³ö¡£
+é€™è£¡æ˜¯æ­¦ç•¶ä¸‰åå…­å·–ä¹‹æœ€ï¼Œé¬†æ¨¹ç¿³å¤©ï¼Œæœ¨çŸ³çˆ­å¥‡ï¼Œå³­å£è¬ä»ã€‚åœ¨
+æ‡¸å´–ä¹‹åŠç¯‰æœ‰ä¸€å®®å®‡ï¼Œä¸‹è‡¨æ·±æ·µï¼Œå·¥ç¨‹æµ©å¤§ã€‚å®®å‰æœ‰ä¸€çŸ³æŸ±ï¼Œè‡ªå³­å£
+ä¸Šæ©«å‡ºã€‚
 LONG );
         set("objects", ([
                 CLASS_D("wudang") + "/mo": 1,
@@ -30,11 +30,11 @@ int valid_leave(object me, string dir)
         mapping myfam;
         myfam=query("family", me);
 
-        if ((! myfam || myfam["family_name"] != "Îäµ±ÅÉ")
+        if ((! myfam || myfam["family_name"] != "æ­¦ç•¶æ´¾")
            && dir == "southdown"
            && objectp(present("mo shenggu", environment(me))))
-                return notify_fail(CYN "ÄªÉù¹ÈÀ¹×¡ÄãËµ£º´Ë´¦ÄË±¾ÅÉ½û"
-                                   "µØ£¬ÇëÖ¹²½¡£\n" NOR);
+                return notify_fail(CYN "è«è²è°·æ””ä½ä½ èªªï¼šæ­¤è™•ä¹ƒæœ¬æ´¾ç¦"
+                                   "åœ°ï¼Œè«‹æ­¢æ­¥ã€‚\n" NOR);
 
         return ::valid_leave(me, dir);
 }

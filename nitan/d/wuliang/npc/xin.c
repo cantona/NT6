@@ -4,10 +4,10 @@
 inherit NPC;
 void create()
 {
-        set_name("ĞÁË«Çå", ({ "xin shuangqing", "xin", "shuangqing"}));
+        set_name("è¾›é›™æ¸…", ({ "xin shuangqing", "xin", "shuangqing"}));
         set("long",
-                "ËıÊÇÒ»Î»µÄËÄÊ®×óÓÒµÄÖĞÄêµÀ¹Ã£¬ÌúÇà×ÅÁ³£¬×ì´½½ô±Õ¡£\n");
-        set("gender", "Å®ĞÔ");
+                "å¥¹æ˜¯ä¸€ä½çš„å››åå·¦å³çš„ä¸­å¹´é“å§‘ï¼Œéµé’è‘—è‡‰ï¼Œå˜´å”‡ç·Šé–‰ã€‚\n");
+        set("gender", "å¥³æ€§");
         set("attitude", "friendly");
         set("class", "taoist");
 
@@ -39,10 +39,10 @@ void create()
         map_skill("parry", "damo-jian");
 
         set("inquiry", ([
-                "ÎŞÁ¿Óñ±Ú"  : "ÄÇÊÇ±¾ÅÉ½ûµØ£¬ÈÎºÎÍâÈË²»µÃÉÃÈë¡£¸É·¸½û¼É£¬¿É½ĞÄãËÀÔáÉíÖ®µØ¡£",
+                "ç„¡é‡ç‰å£"  : "é‚£æ˜¯æœ¬æ´¾ç¦åœ°ï¼Œä»»ä½•å¤–äººä¸å¾—æ“…å…¥ã€‚å¹¹çŠ¯ç¦å¿Œï¼Œå¯å«ä½ æ­»è‘¬èº«ä¹‹åœ°ã€‚",
         ]));
 
-        create_family("ÎŞÁ¿½£Î÷×Ú", 4, "ÕÆÃÅ");
+        create_family("ç„¡é‡åŠè¥¿å®—", 4, "æŒé–€");
         setup();
 
         carry_object("/d/wudang/obj/greyrobe")->wear();

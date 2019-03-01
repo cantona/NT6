@@ -1,4 +1,4 @@
-// mahayana.c ´ó³ËÄùÅÍ¹¦
+// mahayana.c å¤§ä¹˜æ¶…ç£åŠŸ
 //Last Modified by winder on Mar. 10 2000
 
 #include <ansi.h>;
@@ -13,7 +13,7 @@ int power_point(object me) { return 1; }
 int valid_learn(object me)
 {
         if( query("shen", me)<0 )
-                return notify_fail("ÄãµÄĞ°ÆøÌ«ÖØ£¬ÎŞ·¨ĞŞÁ¶´ó³ËÄùÅÍ¹¦¡£\n");
+                return notify_fail("ä½ çš„é‚ªæ°£å¤ªé‡ï¼Œç„¡æ³•ä¿®ç…‰å¤§ä¹˜æ¶…ç£åŠŸã€‚\n");
 
         return 1;
 }
@@ -21,26 +21,26 @@ int valid_learn(object me)
 void skill_improved(object me)
 {
         if ((int)me->query_skill("mahayana", 1) == 120 &&
-            !query("sl_gift/mhyn", me) && query("gender", me) != "ÄĞĞÔ" )
+            !query("sl_gift/mhyn", me) && query("gender", me) != "ç”·æ€§" )
         {
                 addn("dex", 1, me);
                 set("sl_gift/mhyn", 1, me);
-                tell_object(me, HIM "\nÄãµÄ´ó³ËÄùÅÍ¹¦Ñ§ÓĞËù³É£¬Ìá¸ßÁËÄãµÄÉí·¨¡£\n" NOR);
+                tell_object(me, HIM "\nä½ çš„å¤§ä¹˜æ¶…ç£åŠŸå­¸æœ‰æ‰€æˆï¼Œæé«˜äº†ä½ çš„èº«æ³•ã€‚\n" NOR);
         }
 }
 
 int help(object me)
 {
-        write(HIC"\n´ó³ËÄùÅÍ¹¦£º"NOR"\n");
+        write(HIC"\nå¤§ä¹˜æ¶…ç£åŠŸï¼š"NOR"\n");
         write(@HELP
 
-    ¶ëáÒÅÉËØ²»Ï²ÓëÈËÕù¶·£¬µÜ×ÓÃÅÈË³£³£±ÕÃÅĞŞÁ¶ÒÔÔö³¤ÈËÌåÇ±
-ÄÜ£¬ÆäÓĞĞ§³Ì¶ÈÄËÈ¡¾öÓÚ·ğ·¨ĞŞÎª£¨¼´´ó³ËÄùÅÍ¹¦µÄµÈ¼¶£©¡£´ò×ø
-¾²ĞŞ¿ÉÔÚ¶ëáÒìø·¿Ê¹ÓÃÃüÁîjingzuo¡£Çëhelp jingzuo¡£
+    å³¨åµ‹æ´¾ç´ ä¸å–œèˆ‡äººçˆ­é¬¥ï¼Œå¼Ÿå­é–€äººå¸¸å¸¸é–‰é–€ä¿®ç…‰ä»¥å¢é•·äººé«”æ½›
+èƒ½ï¼Œå…¶æœ‰æ•ˆç¨‹åº¦ä¹ƒå–æ±ºäºä½›æ³•ä¿®ç‚ºï¼ˆå³å¤§ä¹˜æ¶…ç£åŠŸçš„ç­‰ç´šï¼‰ã€‚æ‰“å
+éœä¿®å¯åœ¨å³¨åµ‹ç¦ªæˆ¿ä½¿ç”¨å‘½ä»¤jingzuoã€‚è«‹help jingzuoã€‚
 
-        Ñ§Ï°ÒªÇó£º
-                ÏàÓ¦µÄÁÙ¼ÃÊ®¶ş×¯
-                ²»ÄÜÑ§ìø×ÚĞÄ·¨ÍâµÄÆäËû×Ú½ÌĞÄ·¨
+        å­¸ç¿’è¦æ±‚ï¼š
+                ç›¸æ‡‰çš„è‡¨æ¿ŸåäºŒèŠ
+                ä¸èƒ½å­¸ç¦ªå®—å¿ƒæ³•å¤–çš„å…¶ä»–å®—æ•™å¿ƒæ³•
 HELP
         );
         return 1;

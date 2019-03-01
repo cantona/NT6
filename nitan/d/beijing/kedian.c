@@ -3,19 +3,19 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�͵�");
+        set("short", "客店");
         set("long", @LONG
-����һ�ҹ�ģ��С�Ŀ͵꣬����İ���Ҳ�൱�ĳ¾ɺͼ�ª����
-����ϰ���һ����ͷ����Ϊ���С��ĳɱ�С����ͷҲ��û��������
-��æ���͵������һ�ж��������ڴ������͵�Ĺ�̨�Ϲ���һ������
-(paizi)��
+這是一家規模很小的客店，店裡的擺設也相當的陳舊和簡陋。客
+店的老板是一個老頭，因為這間小店的成本小，老頭也就沒請其它人
+幫忙，客店內外的一切都是由他在打理。客店的櫃台上掛著一個牌子
+(paizi)。
 LONG );
        set("exits", ([
                 "east" : "/d/beijing/caroad_w1",
         ]));
         set("item_desc", ([
-                "paizi" : "����������бб��д�������֣�\n\n"
-                        "                       ������\n\n",
+                "paizi" : "牌子上歪歪斜斜的寫著兩個字：\n\n"
+                        "                       客滿！\n\n",
         ]));
         set("objects", ([
                 "/d/beijing/npc/chenlaotou" : 1,

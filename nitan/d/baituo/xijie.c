@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����");
+        set("short", "西街");
         set("long", @LONG
-������С������֡������и��Ƶ꣬��ǰ�����Ÿ߸ߵ���ˣ�һ
-���಼����ӭ��Ʈ�����ӡ�����ɫ�ľ��֡�
+這裡是小鎮的西街。北邊有個酒店，門前樹立著高高的旗桿，一
+塊青布幌子迎風飄揚，上面印著朱紅色的酒字。
 LONG );
         set("outdoors", "baituo");
         set("exits", ([

@@ -9,19 +9,19 @@
 inherit F_CLEAN_UP;
 
 string help = @HELP
-¸ü¸ÄÊ¹ÓÃÕß×ÊÑ¶
+æ›´æ”¹ä½¿ç”¨è€…è³‡è¨Š
 
-´ËÖ¸Áî¿ÉÓÃÀ´¸ü¸ÄÊ¹ÓÃÕß×ÊÑ¶ÈçÏÂ£º
+æ­¤æŒ‡ä»¤å¯ç”¨ä¾†æ›´æ”¹ä½¿ç”¨è€…è³‡è¨Šå¦‚ä¸‹ï¼š
 
--i      ÐÞ¸ÄÍæ¼ÒÓ¢ÎÄ´úºÅÉ«²Ê
--n      ÐÞ¸ÄÍæ¼ÒÖÐÎÄÃû³Æ¼°É«²Ê
+-i      ä¿®æ”¹çŽ©å®¶è‹±æ–‡ä»£è™Ÿè‰²å½©
+-n      ä¿®æ”¹çŽ©å®¶ä¸­æ–‡åç¨±åŠè‰²å½©
 
-Èç²»¼Ó²ÎÊýÔò±íÊ¾È«²¿ÐÞ¸Ä
+å¦‚ä¸åŠ åƒæ•¸å‰‡è¡¨ç¤ºå…¨éƒ¨ä¿®æ”¹
 
-Ö¸Áî¸ñÊ½:
+æŒ‡ä»¤æ ¼å¼:
 changeinfo [-i] [-n]
 
-Ïà¹ØÖ¸Áî: finger, nick
+ç›¸é—œæŒ‡ä»¤: finger, nick
 HELP;
 
 protected void change_prompt(object me, int flag);
@@ -33,7 +33,7 @@ int main(object me, string arg)
         
 #ifndef NO_FEE
         if ( !me->is_vip() )
-                return notify_fail("Äã²»ÊÇ»áÔ±,ÎÞÈ¨Ê¹ÓÃ¸ÃÖ¸Áî¡£\n");
+                return notify_fail("ä½ ä¸æ˜¯æœƒå“¡,ç„¡æ¬Šä½¿ç”¨è©²æŒ‡ä»¤ã€‚\n");
 #endif
                 
         if( arg )
@@ -42,8 +42,8 @@ int main(object me, string arg)
                 if( sscanf(arg, "%*s-n%*s", arg) == 2 ) flag |= CH_NAME;
         }
         if( !flag ) flag = DEFAULT;
-        tell_object(me, "Ìø¹ýÇëÊäÈë [ENTER]£¬È¡ÏûÇëÊäÈë '~q'£¬É«²ÊÐ­ÖúÇëÊäÈë '~h'\n");
-        tell_object(me, WHT"["HIW"Change Information"NOR + WHT"]¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª\n"NOR);
+        tell_object(me, "è·³éŽè«‹è¼¸å…¥ [ENTER]ï¼Œå–æ¶ˆè«‹è¼¸å…¥ '~q'ï¼Œè‰²å½©å”åŠ©è«‹è¼¸å…¥ '~h'\n");
+        tell_object(me, WHT"["HIW"Change Information"NOR + WHT"]â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n"NOR);
         change_prompt(me, flag);
         return 1;
 }
@@ -52,13 +52,13 @@ protected void change_prompt(object me, int flag)
         if( flag & CH_ID )
         {
                 tell_object(me,"\nID-["+query("id", me)+"]\n");
-                tell_object(me, "ÇëÊäÈëÄãµÄ²ÊÉ«Ó¢ÎÄ´úºÅ£º");
+                tell_object(me, "è«‹è¼¸å…¥ä½ çš„å½©è‰²è‹±æ–‡ä»£è™Ÿï¼š");
                 input_to( (: change_input, me, flag :), 2 );
         }
         else if( flag & CH_NAME )
         {
                 tell_object(me,"\nNAME-["+query("name", me)+"]\n");
-                tell_object(me, "ÇëÊäÈëÄãµÄ²ÊÉ«ÖÐÎÄÃû³Æ£º");
+                tell_object(me, "è«‹è¼¸å…¥ä½ çš„å½©è‰²ä¸­æ–‡åç¨±ï¼š");
                 input_to( (: change_input, me, flag :), 2 );
         }
 
@@ -79,7 +79,7 @@ protected void change_input(object me, int flag, string arg)
 
         if( arg == "~q" )
         {
-                tell_object(me, "È¡ÏûÊäÈë¡£\n");
+                tell_object(me, "å–æ¶ˆè¼¸å…¥ã€‚\n");
                 return;
         }
         if( arg == "~h" )
@@ -90,15 +90,15 @@ protected void change_input(object me, int flag, string arg)
         if( flag & CH_ID )
         {
                 if( arg == "" )
-                        tell_object(me, "Ìø¹ý²ÊÉ«Ó¢ÎÄ´úºÅÉè¶¨¡£\n");
+                        tell_object(me, "è·³éŽå½©è‰²è‹±æ–‡ä»£è™Ÿè¨­å®šã€‚\n");
                 else
                 {
                         if( !(res = me->set_idname(text, 0)) )
                         {
-                                tell_object(me, "ÐÂÉè¶¨µÄÓ¢ÎÄ´úºÅÓëÔ­ÓÐÓ¢ÎÄ´úºÅ²»Í¬£¬ÇëÖØÐÂÉè¶¨¡£\n");
+                                tell_object(me, "æ–°è¨­å®šçš„è‹±æ–‡ä»£è™Ÿèˆ‡åŽŸæœ‰è‹±æ–‡ä»£è™Ÿä¸åŒï¼Œè«‹é‡æ–°è¨­å®šã€‚\n");
                                 return change_prompt(me, flag);
                         }
-                        tell_object(me, "²ÊÉ«Ó¢ÎÄ´úºÅ '"+ res[0] +"' Éè¶¨Íê³É¡£\n");
+                        tell_object(me, "å½©è‰²è‹±æ–‡ä»£è™Ÿ '"+ res[0] +"' è¨­å®šå®Œæˆã€‚\n");
                 }
                 flag ^= CH_ID;
         }
@@ -107,28 +107,28 @@ protected void change_input(object me, int flag, string arg)
                 int len;
 
                 if( arg == "" )
-                        tell_object(me, "Ìø¹ý²ÊÉ«ÖÐÎÄÃû³ÆÉè¶¨¡£\n");
+                        tell_object(me, "è·³éŽå½©è‰²ä¸­æ–‡åç¨±è¨­å®šã€‚\n");
                 else
                 {
                         arg = filter_color(trans_color(text,3),1);
                         len = strlen(arg);
                         if( len > 10 || len < 2 )
                         {
-                                tell_object(me, "ÖÐÎÄÃû³Æ±ØÐëÔÚ 1 µ½ 5 ¸öÖÐÎÄ×ÖÖ®¼ä£¬ÇëÖØÐÂÉè¶¨¡£\n");
+                                tell_object(me, "ä¸­æ–‡åç¨±å¿…é ˆåœ¨ 1 åˆ° 5 å€‹ä¸­æ–‡å­—ä¹‹é–“ï¼Œè«‹é‡æ–°è¨­å®šã€‚\n");
                                 return change_prompt(me, flag);
                         }
                         if (! is_chinese(filter_color(arg)))
                         {
-                                tell_object(me, "ÇëÊ¹ÓÃ¡¸ÖÐÎÄ¡¹È¡Ãû×Ö£¬ÇëÖØÐÂÉè¶¨¡£\n");
+                                tell_object(me, "è«‹ä½¿ç”¨ã€Œä¸­æ–‡ã€å–åå­—ï¼Œè«‹é‡æ–°è¨­å®šã€‚\n");
                                 return change_prompt(me, flag);
                         }
 
                         if( !(res = me->set_idname(0, text)) )
                         {
-                                tell_object(me, "ÐÂÉè¶¨µÄÖÐÎÄÃû³ÆÓëÔ­ÓÐÖÐÎÄÃû³Æ²»Í¬£¬ÇëÖØÐÂÉè¶¨¡£\n");
+                                tell_object(me, "æ–°è¨­å®šçš„ä¸­æ–‡åç¨±èˆ‡åŽŸæœ‰ä¸­æ–‡åç¨±ä¸åŒï¼Œè«‹é‡æ–°è¨­å®šã€‚\n");
                                 return change_prompt(me, flag);
                         }
-                        tell_object(me, "²ÊÉ«ÖÐÎÄÃû³Æ '" + res[1] + "' Éè¶¨Íê³É¡£\n");
+                        tell_object(me, "å½©è‰²ä¸­æ–‡åç¨± '" + res[1] + "' è¨­å®šå®Œæˆã€‚\n");
                 }
                 flag ^= CH_NAME;
         }
@@ -140,19 +140,19 @@ protected void change_input(object me, int flag, string arg)
 int help()
 {
         write(@HELP
-¸ü¸ÄÊ¹ÓÃÕß×ÊÑ¶
+æ›´æ”¹ä½¿ç”¨è€…è³‡è¨Š
 
-´ËÖ¸Áî¿ÉÓÃÀ´¸ü¸ÄÊ¹ÓÃÕß×ÊÑ¶ÈçÏÂ£º
+æ­¤æŒ‡ä»¤å¯ç”¨ä¾†æ›´æ”¹ä½¿ç”¨è€…è³‡è¨Šå¦‚ä¸‹ï¼š
 
--i      ÐÞ¸ÄÍæ¼ÒÓ¢ÎÄ´úºÅÉ«²Ê
--n      ÐÞ¸ÄÍæ¼ÒÖÐÎÄÃû³Æ¼°É«²Ê
+-i      ä¿®æ”¹çŽ©å®¶è‹±æ–‡ä»£è™Ÿè‰²å½©
+-n      ä¿®æ”¹çŽ©å®¶ä¸­æ–‡åç¨±åŠè‰²å½©
 
-Èç²»¼Ó²ÎÊýÔò±íÊ¾È«²¿ÐÞ¸Ä
+å¦‚ä¸åŠ åƒæ•¸å‰‡è¡¨ç¤ºå…¨éƒ¨ä¿®æ”¹
 
-Ö¸Áî¸ñÊ½:
+æŒ‡ä»¤æ ¼å¼:
 changeinfo [-i] [-n]
 
-Ïà¹ØÖ¸Áî: finger, nick
+ç›¸é—œæŒ‡ä»¤: finger, nick
 HELP);
         return 1;
 }

@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�ز�����");
+        set("short", "回部部落");
         set("long", @LONG
-�˴����������֣�һ���б���£���һ���ޱߵĲ�ԭ��Զ����ɽ��
-���������֣����������֦ͷ���С�б�µ�������ϴ�һƬ�յأ�����
-��������ڿյص����롣
+此處三面是樹林，一面的斜坡下，是一望無邊的草原，遠處高山在
+雲霧中閃現，各種鳥兒在枝頭鳴叫。斜坡的這邊是老大一片空地，幾個
+帳篷就紮在空地的中央。
 LONG
         );
         set("outdoors", "huijiang");

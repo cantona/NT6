@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�Ǹ�̨");
+        set("short", "登高台");
         set("long", @LONG
-�����������ŵǸ���Զ�ĺ�ȥ������վ�����������壬����
-�����衣ң���潭��ȥ������ű���ʱ��ʱ�֡���Χ��ϼ�����ޣ���
-�ǣ�������廷����������ǧ��
+這裡是南天門登高望遠的好去處。你站在這裡，俯視諸峰，丘垤
+如泥丸。遙看湘江北去，九向九背，時隱時現。周圍煙霞，碧羅，紫
+蓋，天柱諸峰環抱，氣象萬千。
 LONG );
         set("exits", ([
                "northwest"  : __DIR__"nantian",

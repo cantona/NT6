@@ -7,27 +7,27 @@ inherit MEDICAL_BOOK;
 
 void create()
 {
-        set_name(HIG "ÓñÅ®ĞÄ¾­" NOR, ({ "yunv xinjing", "xinjing" }));
+        set_name(HIG "ç‰å¥³å¿ƒç¶“" NOR, ({ "yunv xinjing", "xinjing" }));
         set_weight(500);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
-                set("long", "ÕâÊÇÒ»±¾·º»ÆµÄÊé¼®£¬ÉÏÃæÓÃĞ¡×­Êé"
-                            "Ğ´×Å¡°ÓñÅ®ĞÄ¾­¡±¼¸¸ö×Ö¡£\n",
+                set("unit", "æœ¬");
+                set("long", "é€™æ˜¯ä¸€æœ¬æ³›é»ƒçš„æ›¸ç±ï¼Œä¸Šé¢ç”¨å°ç¯†æ›¸"
+                            "å¯«è‘—â€œç‰å¥³å¿ƒç¶“â€å¹¾å€‹å­—ã€‚\n",
 
                 );
                 set("material", "paper");
                 set("skill", ([
                         "name": "yunv-xinjing",
-					    "family_name" : "¹ÅÄ¹ÅÉ",
+					    "family_name" : "å¤å¢“æ´¾",
                         "jing_cost": 60,
                         "difficulty": 40,
                         "max_skill": 60,
                 ]));
 
                 set("can_make", ([
-                        "jinmisan" : 80,        // ½ğÃÛÉ¢
+                        "jinmisan" : 80,        // é‡‘èœœæ•£
                 ]));
         }
         setup();

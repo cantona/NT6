@@ -9,9 +9,9 @@ int update_condition(object me, int duration)
         {
                 me->move("/d/shaolin/guangchang1");
                 message("vision",
-                        HIY "Ö»ÌýÆ¹µØÒ»Éù£¬ÄãÏÅÁËÒ»Ìø£¬¶¨¾¦Ò»¿´£¬\n"
-                        "Ô­À´ÊÇÒ»¸ö»è»è³Á³ÁµÄ¼Ò»ï´Ó´óÃÅÀï±»ÈÓÁË³öÀ´£¡\n" NOR, environment(me), me);
-                tell_object(me, HIY "Ö»¾õÒ»ÕóÌÚÔÆ¼ÝÎí°ã£¬Äã»è»è³Á³ÁµØ±»ÈÓ³öÁËÉÙÁÖËÂ£¡\n" NOR);
+                        HIY "åªè½ä¹’åœ°ä¸€è²ï¼Œä½ åš‡äº†ä¸€è·³ï¼Œå®šç›ä¸€çœ‹ï¼Œ\n"
+                        "åŽŸä¾†æ˜¯ä¸€å€‹æ˜æ˜æ²‰æ²‰çš„å®¶ä¼™å¾žå¤§é–€è£¡è¢«æ‰”äº†å‡ºä¾†ï¼\n" NOR, environment(me), me);
+                tell_object(me, HIY "åªè¦ºä¸€é™£é¨°é›²é§•éœ§èˆ¬ï¼Œä½ æ˜æ˜æ²‰æ²‰åœ°è¢«æ‰”å‡ºäº†å°‘æž—å¯ºï¼\n" NOR);
                 me->set("startroom", START_ROOM);
                 return 0;
         }

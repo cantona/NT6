@@ -1,4 +1,4 @@
-// hougan.c ºï¸Î
+// hougan.c çŒ´è‚
 // Last Modified by winder on Jul. 12 2002
 
 #include <ansi.h>
@@ -6,13 +6,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name("ºï¸Î", ({ "hou gan", "gan" }) );
+        set_name("çŒ´è‚", ({ "hou gan", "gan" }) );
         set_weight(500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
-                set("long", "ÕâÊÇÒ»¿Å×ÏºÚÉ«µÄºï¸Î¡£\n");
+                set("unit", "é¡†");
+                set("long", "é€™æ˜¯ä¸€é¡†ç´«é»‘è‰²çš„çŒ´è‚ã€‚\n");
                 set("value", 1000);
                 set("medicine", 1);
         }

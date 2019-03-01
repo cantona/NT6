@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "³çÊ¥±¦µî");
+        set("short", "å´‡è–å¯¶æ®¿");
         set("long", @LONG
-ÕâÊÇÒ»×ù¿í¹ãµÄ´óµî£¬ÕýÃæÓÐÒ»×ù¸ßÔ¼¶þÊ®Óà³ßµÄ·ð×æ±¦Ïñ£¬Í¨
-Ìå½ð¹âÒ«ÑÛ¡£×ùÏÂÏãÑÌçÔÈÆ¡£´óµîÁ½ÅÔÊ÷Á¢Á½¸ùÌ´Ä¾´óÖù£¬ÌâÓÐÒ»Áª£¬
-ÔÆÔ»£º¡¡¡¡¡¡¡¡¡¡¡¡ÊØ¿ÚÉãÒâÉíÄª·¸¡¡¡¡ÄªÄÕÒ»ÇÐÖîÓÐÇé¡¡
+é€™æ˜¯ä¸€åº§å¯¬å»£çš„å¤§æ®¿ï¼Œæ­£é¢æœ‰ä¸€åº§é«˜ç´„äºŒåä½™å°ºçš„ä½›ç¥–å¯¶åƒï¼Œé€š
+é«”é‡‘å…‰è€€çœ¼ã€‚åº§ä¸‹é¦™ç…™ç¹šç¹žã€‚å¤§æ®¿å…©æ—æ¨¹ç«‹å…©æ ¹æª€æœ¨å¤§æŸ±ï¼Œé¡Œæœ‰ä¸€è¯ï¼Œ
+é›²æ›°ï¼šã€€ã€€ã€€ã€€ã€€ã€€å®ˆå£æ”æ„èº«èŽ«çŠ¯ã€€ã€€èŽ«æƒ±ä¸€åˆ‡è«¸æœ‰æƒ…ã€€
 LONG );
         set("outdoors", "tianlongsi");
         set("exits", ([

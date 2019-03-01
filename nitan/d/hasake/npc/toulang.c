@@ -2,13 +2,13 @@ inherit NPC;
 inherit F_UNIQUE;
 void create()
 {
-        set_name("Í·ÀÇ", ({ "toulang", "lang" }) );
-        set("race", "Ò°ÊÞ");
+        set_name("é ­ç‹¼", ({ "toulang", "lang" }) );
+        set("race", "é‡Žç¸");
         set("age", 10);
         set("unique", 2);
-        set("long", "ÀÇÒÔÈº¾Ó£¬ÕâÖ»´øÍ·µÄ´ó»ÒÀÇ±ÈÆäËüµÄ´óÒ»±¶ÒÔÉÏ£¬µÍ³ÁµØºð×Å¡£\n");
+        set("long", "ç‹¼ä»¥ç¾¤å±…ï¼Œé€™åªå¸¶é ­çš„å¤§ç°ç‹¼æ¯”å…¶å®ƒçš„å¤§ä¸€å€ä»¥ä¸Šï¼Œä½Žæ²‰åœ°å¼è‘—ã€‚\n");
         set("attitude", "aggressive");        
-        set("limbs", ({ "Í·²¿", "ÑÀ³Ý", "Ç°½Å", "ºó½Å", "Ç°×¦" }) );
+        set("limbs", ({ "é ­éƒ¨", "ç‰™é½’", "å‰è…³", "å¾Œè…³", "å‰çˆª" }) );
         set("verbs", ({ "bite", "claw" }) );
         set("max_qi", 450);
         set("max_jing", 200);
@@ -16,9 +16,9 @@ void create()
         set("combat_exp", 9500);
         set("chat_chance", 20);
         set("chat_msg", ({
-                "Í·ÀÇµÄË«Ä¿ÔÚºÚ°µÖÐÉÁ×Åºì¹â£¬½ô½ôµØ×¢ÊÓ×ÅÄãµÄÒ»¾ÙÒ»¶¯¡£\n",
+                "é ­ç‹¼çš„é›™ç›®åœ¨é»‘æš—ä¸­é–ƒè‘—ç´…å…‰ï¼Œç·Šç·Šåœ°æ³¨è¦–è‘—ä½ çš„ä¸€èˆ‰ä¸€å‹•ã€‚\n",
                 (: random_move :),
-                "Í·ÀÇ·¢³öÒ»ÉùàÆ½Ð£¬ºÃÏóËæÊ±¶¼ÒªÆËÉÏÀ´£¡\n",
+                "é ­ç‹¼ç™¼å‡ºä¸€è²å—¥å«ï¼Œå¥½è±¡éš¨æ™‚éƒ½è¦æ’²ä¸Šä¾†ï¼\n",
         }) );
         set_temp("apply/attack", 20);
         set_temp("apply/defense", 20);
@@ -31,7 +31,7 @@ void create()
 void die()
 {
         object ob;
-    message_vision("$NÆà²ÒµÄº¿ÁË¼¸Éù, ÔÚµØÉÏ´òÁË¼¸¸ö¹ö£¬ÑöÌìËÀÁË¡£\n", this_object());
+    message_vision("$Nå‡„æ…˜çš„åšŽäº†å¹¾è², åœ¨åœ°ä¸Šæ‰“äº†å¹¾å€‹æ»¾ï¼Œä»°å¤©æ­»äº†ã€‚\n", this_object());
         ob = new(__DIR__"obj/langpi");
         ob->move(environment(this_object()));
         destruct(this_object());

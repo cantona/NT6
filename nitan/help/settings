@@ -1,197 +1,197 @@
-©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤
-$HIW$$BBLU$                           ¡¾»·¾³±äÁ¿ÉèÖÃ¡¿                         $NOR$
-©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+$HIW$$BBLU$                           ã€ç’°å¢ƒè®Šé‡è¨­ç½®ã€‘                         $NOR$
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
-Äú¿ÉÓÃ $HIY$set$NOR$ Ö¸ÁîÀ´Éè¶¨Ò»Ð©ÓÐÓÃµÄ»·¾³±äÁ¿£¬ÕâÐ©±äÁ¿Ò²»áËæÖøÄúµÄÈËÎï±»´¢
-´æÏÂÀ´£¬Èç¹ûÓÐ²»ÐèÒªµÄ»·¾³±äÁ¿£¬Ò²¿ÉÒÔÓÃ $HIY$unset$NOR$ É¾³ý¡£ÏêÏ¸µÄÊ¹ÓÃ·½·¨Çë
-¿´ $HIY$help set$NOR$ ¼° $HIY$help unset$NOR$¡£Ä³Ð©²ÎÊý¾ßÓÐÁÐ±íÊôÐÔ£¬Èç$HIC$no_tell/can_tell$NOR$µÈ
-µÈ£¬¶ÔÓÚÕâÐ©²ÎÊýµÄÌØÊâÉèÖÃ·½·¨¿ÉÒÔ²éÔÄ $HIY$help set$NOR$¡£
+æ‚¨å¯ç”¨ $HIY$set$NOR$ æŒ‡ä»¤ä¾†è¨­å®šä¸€äº›æœ‰ç”¨çš„ç’°å¢ƒè®Šé‡ï¼Œé€™äº›è®Šé‡ä¹Ÿæœƒéš¨è‘—æ‚¨çš„äººç‰©è¢«å„²
+å­˜ä¸‹ä¾†ï¼Œå¦‚æžœæœ‰ä¸éœ€è¦çš„ç’°å¢ƒè®Šé‡ï¼Œä¹Ÿå¯ä»¥ç”¨ $HIY$unset$NOR$ åˆªé™¤ã€‚è©³ç´°çš„ä½¿ç”¨æ–¹æ³•è«‹
+çœ‹ $HIY$help set$NOR$ åŠ $HIY$help unset$NOR$ã€‚æŸäº›åƒæ•¸å…·æœ‰åˆ—è¡¨å±¬æ€§ï¼Œå¦‚$HIC$no_tell/can_tell$NOR$ç­‰
+ç­‰ï¼Œå°äºŽé€™äº›åƒæ•¸çš„ç‰¹æ®Šè¨­ç½®æ–¹æ³•å¯ä»¥æŸ¥é–± $HIY$help set$NOR$ã€‚
 
-$HIY$ÒÔÏÂÊÇÓÎÏ·Ä¿Ç°ÈÏÊ¶µÄ»·¾³±äÁ¿$NOR$
+$HIY$ä»¥ä¸‹æ˜¯éŠæˆ²ç›®å‰èªè­˜çš„ç’°å¢ƒè®Šé‡$NOR$
 
-$HIG$±äÁ¿              ÊýÖµ          ÓÃÍ¾$NOR$
+$HIG$è®Šé‡              æ•¸å€¼          ç”¨é€”$NOR$
 
-$HIC$auto_ban$NOR$         <Íæ¼ÒID>       µ±Äã½¨Á¢ÁÄÌìÊÒµÄÊ±ºò×Ô¶¯ÑûÇëµÄÍæ¼Ò¡£Õâ
-                                ÊÇÒ»¸öÁÐ±í²ÎÊý¡£Ò²¿ÉÒÔÓÃ$HIC$all$NOR$ ±íÊ¾½ûÖ¹ÈÎ
-                                ºÎÃ»ÓÐ¾­¹ýÑûÇëµÄÍæ¼ÒÈëÄÚ¡£
+$HIC$auto_ban$NOR$         <çŽ©å®¶ID>       ç•¶ä½ å»ºç«‹èŠå¤©å®¤çš„æ™‚å€™è‡ªå‹•é‚€è«‹çš„çŽ©å®¶ã€‚é€™
+                                æ˜¯ä¸€å€‹åˆ—è¡¨åƒæ•¸ã€‚ä¹Ÿå¯ä»¥ç”¨$HIC$all$NOR$ è¡¨ç¤ºç¦æ­¢ä»»
+                                ä½•æ²’æœ‰ç¶“éŽé‚€è«‹çš„çŽ©å®¶å…¥å…§ã€‚
 
-$HIC$auto_invite$NOR$      <Íæ¼ÒID>       µ±Äã½¨Á¢ÁÄÌìÊÒµÄÊ±ºò×Ô¶¯ÑûÇëµÄÍæ¼Ò¡£Õâ
-                                ÊÇÒ»¸öÁÐ±í²ÎÊý¡£Ò²¿ÉÒÔÓÃ$HIC$all$NOR$ ±íÊ¾ÑûÇëÈÎ
-                                ºÎÃ»ÓÐ±»½ûÖ¹µÄÍæ¼ÒÈëÄÚ¡£
+$HIC$auto_invite$NOR$      <çŽ©å®¶ID>       ç•¶ä½ å»ºç«‹èŠå¤©å®¤çš„æ™‚å€™è‡ªå‹•é‚€è«‹çš„çŽ©å®¶ã€‚é€™
+                                æ˜¯ä¸€å€‹åˆ—è¡¨åƒæ•¸ã€‚ä¹Ÿå¯ä»¥ç”¨$HIC$all$NOR$ è¡¨ç¤ºé‚€è«‹ä»»
+                                ä½•æ²’æœ‰è¢«ç¦æ­¢çš„çŽ©å®¶å…¥å…§ã€‚
 
-$HIC$auto_regenerate$NOR$  <ÈÎÒâ·ÇÁãÖµ>   Éè¶¨ÄãÔÚ¶à´Î¶ÁÊé»òÕßÊÇÑÐ¾¿µÄÊ±ºò£¬Èç¹û
-                                ¾«²»¹»ÁË×Ô¶¯Í¨¹ý$HIY$yun regenerate$NOR$»Ö¸´¾«¡£
+$HIC$auto_regenerate$NOR$  <ä»»æ„éžé›¶å€¼>   è¨­å®šä½ åœ¨å¤šæ¬¡è®€æ›¸æˆ–è€…æ˜¯ç ”ç©¶çš„æ™‚å€™ï¼Œå¦‚æžœ
+                                ç²¾ä¸å¤ äº†è‡ªå‹•é€šéŽ$HIY$yun regenerate$NOR$æ¢å¾©ç²¾ã€‚
 
-$HIC$auto_say$NOR$         <ÈÎÒâ·ÇÁãÖµ>   Éè¶¨ÄãÊäÈëµÄÏµÍ³²»ÈÏÊ¶µÄÃüÁî×Ô¶¯µ±×÷Äã
-                                ËµµÄ»°À´½øÐÐ´¦Àí¡£Ïà¹ØÉèÖÃ£º$HIC$pure_say$NOR$¡£
+$HIC$auto_say$NOR$         <ä»»æ„éžé›¶å€¼>   è¨­å®šä½ è¼¸å…¥çš„ç³»çµ±ä¸èªè­˜çš„å‘½ä»¤è‡ªå‹•ç•¶ä½œä½ 
+                                èªªçš„è©±ä¾†é€²è¡Œè™•ç†ã€‚ç›¸é—œè¨­ç½®ï¼š$HIC$pure_say$NOR$ã€‚
 
-$HIC$auto_drinkout$NOR$    <ÈÎÒâ·ÇÁãÖµ>   Éè¶¨ÄãÔÚºÈÍêÒ»¸öÈÝÆ÷ÀïÃæµÄ¶«Î÷ÒÔºó½«×Ô
-                                ¶¯¶ªÆúÕâ¸öÈÝÆ÷¡£
+$HIC$auto_drinkout$NOR$    <ä»»æ„éžé›¶å€¼>   è¨­å®šä½ åœ¨å–å®Œä¸€å€‹å®¹å™¨è£¡é¢çš„æ±è¥¿ä»¥å¾Œå°‡è‡ª
+                                å‹•ä¸Ÿæ£„é€™å€‹å®¹å™¨ã€‚
 
-$HIC$brief$NOR$            <0 - 4>        Éè¶¨ÒÆ¶¯Ê±Ö»¿´ËùÔÚµØµÄ¼ò¶ÌµÄÃû³Æ£¬Èç¹û
-                                Äú¾õµÃÍøÂçËÙ¶ÈÌ«Âý£¬»òÕßÊÇ¶ÔÇøÓòÒÑ¾­Ê®
-                                ·ÖÊìÏ¤£¬Äú¿ÉÒÔ¿¼ÂÇ²ÉÓÃ briefÄ£Ê½ÒÔ¼õÇá
-                                ÍøÂç¸ºµ£¡£
+$HIC$brief$NOR$            <0 - 4>        è¨­å®šç§»å‹•æ™‚åªçœ‹æ‰€åœ¨åœ°çš„ç°¡çŸ­çš„åç¨±ï¼Œå¦‚æžœ
+                                æ‚¨è¦ºå¾—ç¶²çµ¡é€Ÿåº¦å¤ªæ…¢ï¼Œæˆ–è€…æ˜¯å°å€åŸŸå·²ç¶“å
+                                åˆ†ç†Ÿæ‚‰ï¼Œæ‚¨å¯ä»¥è€ƒæ…®æŽ¡ç”¨ briefæ¨¡å¼ä»¥æ¸›è¼•
+                                ç¶²çµ¡è² æ“”ã€‚
 
-$HIC$combatd$NOR$          <¼ûËµÃ÷>       Éè¶¨´ò¶·Ê±Ö»¿´µ½ÊÜÉËÐÅÏ¢¶øºöÂÔÈ¥´ò¶·ÕÐ
-                                ÊýÃèÊö£¬¼õÇáÍøÂç¸ºµ£¡£
-                                0. $HIC$normal$NOR$ ·½Ê½£¬ÏÔÊ¾ËùÓÐÕ½¶·ÐÅÏ¢¡£
-                                1. $HIC$damage$NOR$ ·½Ê½£¬Ö»ÓÐË«·½Õ½¶·ÊÜÉËÊ±²ÅÏÔ
-                                Ê¾ÕÐÊý¼°ÊÜÉËµÄÐÅÏ¢¡£
-                                2. $HIC$brief$NOR$  ·½Ê½£¬Ö»ÏÔÊ¾Ë«·½Õ½¶·µÄÊÜÉËÐÅ
-                                Ï¢£¬²»ÏÔÊ¾ÕÐÊý¡£
-                                3. $HIC$self$NOR$   ·½Ê½£¬Ö»ÏÔÊ¾×Ô¼ºµÄÊÜÉËÐÅÏ¢£¬
-                                ²»ÏÔÊ¾¶Ô·½µÄÈÎºÎÐÅÏ¢ºÍÕÐÊýµÄÃèÊö¡£
-                                4. $HIC$null$NOR$   ·½Ê½£¬²»ÏÔÊ¾ÈÎºÎÐÅÏ¢£¬Òª¿ì²»
-                                ÒªÃüµÄ´óÏÀÃÇÉÏ°É£¡
-                                $HIR$×¢Òâ£º¸Ã²ÎÊýµÄÉèÖÃ²»ÄÜ¼òµ¥µÄÓÃÊýÖµ±íÊ¾¡£$NOR$
-                                ÁíÍâ£¬µ±Äã¹Û¿´µÚÈý·½´ò¶·µÄÊ±ºò£¬ $HIC$BRIEF$NOR$
-                                ·½Ê½ºÍ$HIC$SELF$NOR$·½Ê½ÊÇÒ»ÑùµÄ£¬ÒòÎªÊÜÉËµÄÐÅÏ¢
-                                ¶¼ÓëÄãÃ»ÓÐ¹ØÏµ¡£
+$HIC$combatd$NOR$          <è¦‹èªªæ˜Ž>       è¨­å®šæ‰“é¬¥æ™‚åªçœ‹åˆ°å—å‚·ä¿¡æ¯è€Œå¿½ç•¥åŽ»æ‰“é¬¥æ‹›
+                                æ•¸æè¿°ï¼Œæ¸›è¼•ç¶²çµ¡è² æ“”ã€‚
+                                0. $HIC$normal$NOR$ æ–¹å¼ï¼Œé¡¯ç¤ºæ‰€æœ‰æˆ°é¬¥ä¿¡æ¯ã€‚
+                                1. $HIC$damage$NOR$ æ–¹å¼ï¼Œåªæœ‰é›™æ–¹æˆ°é¬¥å—å‚·æ™‚æ‰é¡¯
+                                ç¤ºæ‹›æ•¸åŠå—å‚·çš„ä¿¡æ¯ã€‚
+                                2. $HIC$brief$NOR$  æ–¹å¼ï¼Œåªé¡¯ç¤ºé›™æ–¹æˆ°é¬¥çš„å—å‚·ä¿¡
+                                æ¯ï¼Œä¸é¡¯ç¤ºæ‹›æ•¸ã€‚
+                                3. $HIC$self$NOR$   æ–¹å¼ï¼Œåªé¡¯ç¤ºè‡ªå·±çš„å—å‚·ä¿¡æ¯ï¼Œ
+                                ä¸é¡¯ç¤ºå°æ–¹çš„ä»»ä½•ä¿¡æ¯å’Œæ‹›æ•¸çš„æè¿°ã€‚
+                                4. $HIC$null$NOR$   æ–¹å¼ï¼Œä¸é¡¯ç¤ºä»»ä½•ä¿¡æ¯ï¼Œè¦å¿«ä¸
+                                è¦å‘½çš„å¤§ä¿ å€‘ä¸Šå§ï¼
+                                $HIR$æ³¨æ„ï¼šè©²åƒæ•¸çš„è¨­ç½®ä¸èƒ½ç°¡å–®çš„ç”¨æ•¸å€¼è¡¨ç¤ºã€‚$NOR$
+                                å¦å¤–ï¼Œç•¶ä½ è§€çœ‹ç¬¬ä¸‰æ–¹æ‰“é¬¥çš„æ™‚å€™ï¼Œ $HIC$BRIEF$NOR$
+                                æ–¹å¼å’Œ$HIC$SELF$NOR$æ–¹å¼æ˜¯ä¸€æ¨£çš„ï¼Œå› ç‚ºå—å‚·çš„ä¿¡æ¯
+                                éƒ½èˆ‡ä½ æ²’æœ‰é—œç³»ã€‚
 
-$HIC$combat_test$NOR$      <ÈÎÒâ·ÇÁãÖµ>   Éè¶¨ÄãÔÚÕ½¶·µÄÊ±ºò£¬ÏÔÊ¾¾ßÌåÉËº¦Êý¾ÝÖµ¡£
+$HIC$combat_test$NOR$      <ä»»æ„éžé›¶å€¼>   è¨­å®šä½ åœ¨æˆ°é¬¥çš„æ™‚å€™ï¼Œé¡¯ç¤ºå…·é«”å‚·å®³æ•¸æ“šå€¼ã€‚
 
-$HIC$combat_brief$NOR$     <ÈÎÒâ·ÇÁãÖµ>   Éè¶¨Äã²»¹Û¿´µÚÈý·½Õ½¶·ÐÅÏ¢¡£
+$HIC$combat_brief$NOR$     <ä»»æ„éžé›¶å€¼>   è¨­å®šä½ ä¸è§€çœ‹ç¬¬ä¸‰æ–¹æˆ°é¬¥ä¿¡æ¯ã€‚
 
-$HIC$can_accept$NOR$       <Íæ¼ÒID>       Èç¹ûÄúÉè¶¨ÁË$HIC$no_accept$NOR$Îª$HIC$all$NOR$µÄÊ±ºòÓÖÏë½Ó
-                                ÊÜÄ³¸öÅóÓÑµÄÎïÆ·Ôò¿ÉÒÔÉèÖÃ¸Ã²ÎÊý°üº¬¸Ä
-                                ÅóÓÑµÄID£¬Ê¹¸ÃÍæ¼Ò¿ÉÒÔ¸øÓëÄãÎïÆ·¡£Õâ¸ö
-                                ²ÎÊý¾ßÓÐÁÐ±íÊôÐÔ¡£
+$HIC$can_accept$NOR$       <çŽ©å®¶ID>       å¦‚æžœæ‚¨è¨­å®šäº†$HIC$no_accept$NOR$ç‚º$HIC$all$NOR$çš„æ™‚å€™åˆæƒ³æŽ¥
+                                å—æŸå€‹æœ‹å‹çš„ç‰©å“å‰‡å¯ä»¥è¨­ç½®è©²åƒæ•¸åŒ…å«æ”¹
+                                æœ‹å‹çš„IDï¼Œä½¿è©²çŽ©å®¶å¯ä»¥çµ¦èˆ‡ä½ ç‰©å“ã€‚é€™å€‹
+                                åƒæ•¸å…·æœ‰åˆ—è¡¨å±¬æ€§ã€‚
 
-$HIC$can_emote$NOR$        <Íæ¼ÒID>       Èç¹ûÄúÉè¶¨ÁË$HIC$no_emote$NOR$Îª$HIC$all$NOR$ µÄÊ±ºòÓÖÏë½Ó
-                                ÊÜÄ³¸öÅóÓÑµÄ½»Ì¸ÐÅÏ¢£¬¿ÉÒÔÉèÖÃ¸Ã²ÎÊý°ü
-                                º¬ÅóÓÑµÄID£¬Ê¹¸ÃÍæ¼Ò¿ÉÒÔ¶ÔÄã×ö±íÇé¶¯×÷¡£
-                                Õâ¸ö²ÎÊý¾ßÓÐÁÐ±íÊôÐÔ¡£
+$HIC$can_emote$NOR$        <çŽ©å®¶ID>       å¦‚æžœæ‚¨è¨­å®šäº†$HIC$no_emote$NOR$ç‚º$HIC$all$NOR$ çš„æ™‚å€™åˆæƒ³æŽ¥
+                                å—æŸå€‹æœ‹å‹çš„äº¤è«‡ä¿¡æ¯ï¼Œå¯ä»¥è¨­ç½®è©²åƒæ•¸åŒ…
+                                å«æœ‹å‹çš„IDï¼Œä½¿è©²çŽ©å®¶å¯ä»¥å°ä½ åšè¡¨æƒ…å‹•ä½œã€‚
+                                é€™å€‹åƒæ•¸å…·æœ‰åˆ—è¡¨å±¬æ€§ã€‚
 
-$HIC$can_snoop$NOR$        <Íæ¼ÒID>       Éè¶¨ÄúÏÖÔÚÔÊÐí¸ÃÍæ¼Ò¼àÌýÄã£¬$HIY$help snoop$NOR$¡£
-                                Õâ¸ö²ÎÊý¾ßÓÐÁÐ±íÊôÐÔ¡£
+$HIC$can_snoop$NOR$        <çŽ©å®¶ID>       è¨­å®šæ‚¨ç¾åœ¨å…è¨±è©²çŽ©å®¶ç›£è½ä½ ï¼Œ$HIY$help snoop$NOR$ã€‚
+                                é€™å€‹åƒæ•¸å…·æœ‰åˆ—è¡¨å±¬æ€§ã€‚
 
-$HIC$can_tell$NOR$         <Íæ¼ÒID>       Èç¹ûÄúÉè¶¨ÁË$HIC$no_tell$NOR$Îª$HIC$all$NOR$µÄÊ±ºòÓÖÏë½ÓÊÜ
-                                Ä³¸öÅóÓÑµÄ½»Ì¸ÐÅÏ¢£¬¿ÉÒÔÉèÖÃ¸Ã²ÎÊý°üº¬
-                                ÅóÓÑµÄID£¬Ê¹¸ÃÍæ¼Ò¿ÉÒÔºÍÄã½»Ì¸¡£Õâ¸ö²Î
-                                Êý¾ßÓÐÁÐ±íÊôÐÔ¡£
+$HIC$can_tell$NOR$         <çŽ©å®¶ID>       å¦‚æžœæ‚¨è¨­å®šäº†$HIC$no_tell$NOR$ç‚º$HIC$all$NOR$çš„æ™‚å€™åˆæƒ³æŽ¥å—
+                                æŸå€‹æœ‹å‹çš„äº¤è«‡ä¿¡æ¯ï¼Œå¯ä»¥è¨­ç½®è©²åƒæ•¸åŒ…å«
+                                æœ‹å‹çš„IDï¼Œä½¿è©²çŽ©å®¶å¯ä»¥å’Œä½ äº¤è«‡ã€‚é€™å€‹åƒ
+                                æ•¸å…·æœ‰åˆ—è¡¨å±¬æ€§ã€‚
 
-$HIC$careful$NOR$          <ÈÎÒâ·ÇÁãÖµ>   Éè¶¨ÄúÏÖÔÚ²»ÒûÓÃ»òÊ³ÓÃ¸½½ü»·¾³ÖÐµÄÎïÆ·¡£
+$HIC$careful$NOR$          <ä»»æ„éžé›¶å€¼>   è¨­å®šæ‚¨ç¾åœ¨ä¸é£²ç”¨æˆ–é£Ÿç”¨é™„è¿‘ç’°å¢ƒä¸­çš„ç‰©å“ã€‚
 
-$HIC$default_sign$NOR$     <0 - 4>        Éè¶¨ÄúÏÖÔÚÈ±Ê¡Ê¹ÓÃµÄÁôÑÔÇ©Ãû¡£
+$HIC$default_sign$NOR$     <0 - 4>        è¨­å®šæ‚¨ç¾åœ¨ç¼ºçœä½¿ç”¨çš„ç•™è¨€ç°½åã€‚
 
-$HIC$halt_age$NOR$         <ÈÎÒâ·ÇÁãÖµ>   Éè¶¨ÄúÏÖÔÚ²»Ôö¼ÓÄêÁä¡£²»¹ýÕâÖ»ÊÇÔÚÁÄÌì
-                                ÊÒÀïÃæÓÐÐ§¡£Èç¹ûÄãÏ£ÍûÖ»ÁÄÌì²»³¤´ó£¬¿É
-                                ÒÔÊ¹ÓÃ¸ÃÉèÖÃ¡£
+$HIC$halt_age$NOR$         <ä»»æ„éžé›¶å€¼>   è¨­å®šæ‚¨ç¾åœ¨ä¸å¢žåŠ å¹´é½¡ã€‚ä¸éŽé€™åªæ˜¯åœ¨èŠå¤©
+                                å®¤è£¡é¢æœ‰æ•ˆã€‚å¦‚æžœä½ å¸Œæœ›åªèŠå¤©ä¸é•·å¤§ï¼Œå¯
+                                ä»¥ä½¿ç”¨è©²è¨­ç½®ã€‚
 
-$HIC$jam_talk$NOR$         <¼ûËµÃ÷>       Éè¶¨²ÉÓÃ×èÈû½»Ì¸µÄ¶Ô»°·½Ê½¡£
-                                ÓÉÓÚºÍ¶à¸öÍæ¼Ò½øÐÐ½»Ì¸µÄÊ±ºò£¬Ê¹ÓÃ»Ø´ð
-                                ÃüÁî $HIY$reply$NOR$  µÄÐ§¹û²¢²»ºÃ£¬ÒòÎªÍùÍùÔÚÄã
-                                »Ø´ðµÄ¹ý³ÌÖÐÆäËûÈËÓÐ¿ÉÄÜ»á¸øÄã·¢ËÍÏûÏ¢¡£
-                                ÎªÁË±ÜÃâ¶à¸öÈË½»µü£¬Äã¿ÉÒÔÑ¡Ôñ×èÈû½»Ì¸
-                                µÄ·½Ê½£¬ÕâÑù¾Í¿ÉÒÔÈ·±£»Ø´ðÄãÏë»Ø´ðµÄÈË¡£
-                                0. $HIC$NONE$NOR$·½Ê½   ²»²ÉÓÃ×èÈû½»Ì¸¡£
-                                1. $HIC$HALF$NOR$·½Ê½   ²ÉÓÃ°ë×èÈû½»Ì¸¡£´ËÊ±Ã¿µ±
-                                Äã»Ø´ðÒ»¸öÈËÒÔºó£¬ÏµÍ³»á×Ô¶¯Çå³ýÄã»Ø´ð
-                                µÄ¶ÔÏó£¬È»ºóÌáÊ¾ÄãÏÂÒ»¸öÈË·¢ËÍÀ´µÄÏûÏ¢¡£
-                                Ê¹ÓÃÕâÖÖ·½Ê½Äã¶ÔÃ¿Ò»´Î½»Ì¸Ö»ÄÜÊ¹ÓÃÒ»´Î
-                                »Ø´ð $HIY$reply$NOR$¡£
-                                2. $HIC$ABS$NOR$ ·½Ê½   ²ÉÓÃÈ«×èÈû½»Ì¸¡£´ËÊ±¼´Ê¹
-                                Äã»Ø´ðÁËÄ³¸öÈËÒÔºó£¬ÏµÍ³ÈÔÈ»²»»áÌáÊ¾Äã
-                                ÏÂÒ»ÌõÏûÏ¢£¬±ØÐëÍ¨¹ýÄãÊÖ¹¤ÊäÈë $HIY$skip$NOR$ À´
-                                Ìø¹ýµ±Ç°µÄÏûÏ¢¡£
-                                $HIG$µ±Äã²ÉÓÃÁË×èÈû½»Ì¸ÒÔºó£¬Èç¹ûÄãÊÕµ½µÄÏû
-                                Ï¢±»×èÈû£¬ÔòÄãµÄÌáÊ¾·û½«»á±ä³ÉÂÌÉ«¡£$NOR$
+$HIC$jam_talk$NOR$         <è¦‹èªªæ˜Ž>       è¨­å®šæŽ¡ç”¨é˜»å¡žäº¤è«‡çš„å°è©±æ–¹å¼ã€‚
+                                ç”±äºŽå’Œå¤šå€‹çŽ©å®¶é€²è¡Œäº¤è«‡çš„æ™‚å€™ï¼Œä½¿ç”¨å›žç­”
+                                å‘½ä»¤ $HIY$reply$NOR$  çš„æ•ˆæžœä¸¦ä¸å¥½ï¼Œå› ç‚ºå¾€å¾€åœ¨ä½ 
+                                å›žç­”çš„éŽç¨‹ä¸­å…¶ä»–äººæœ‰å¯èƒ½æœƒçµ¦ä½ ç™¼é€æ¶ˆæ¯ã€‚
+                                ç‚ºäº†é¿å…å¤šå€‹äººäº¤è¿­ï¼Œä½ å¯ä»¥é¸æ“‡é˜»å¡žäº¤è«‡
+                                çš„æ–¹å¼ï¼Œé€™æ¨£å°±å¯ä»¥ç¢ºä¿å›žç­”ä½ æƒ³å›žç­”çš„äººã€‚
+                                0. $HIC$NONE$NOR$æ–¹å¼   ä¸æŽ¡ç”¨é˜»å¡žäº¤è«‡ã€‚
+                                1. $HIC$HALF$NOR$æ–¹å¼   æŽ¡ç”¨åŠé˜»å¡žäº¤è«‡ã€‚æ­¤æ™‚æ¯ç•¶
+                                ä½ å›žç­”ä¸€å€‹äººä»¥å¾Œï¼Œç³»çµ±æœƒè‡ªå‹•æ¸…é™¤ä½ å›žç­”
+                                çš„å°è±¡ï¼Œç„¶å¾Œæç¤ºä½ ä¸‹ä¸€å€‹äººç™¼é€ä¾†çš„æ¶ˆæ¯ã€‚
+                                ä½¿ç”¨é€™ç¨®æ–¹å¼ä½ å°æ¯ä¸€æ¬¡äº¤è«‡åªèƒ½ä½¿ç”¨ä¸€æ¬¡
+                                å›žç­” $HIY$reply$NOR$ã€‚
+                                2. $HIC$ABS$NOR$ æ–¹å¼   æŽ¡ç”¨å…¨é˜»å¡žäº¤è«‡ã€‚æ­¤æ™‚å³ä½¿
+                                ä½ å›žç­”äº†æŸå€‹äººä»¥å¾Œï¼Œç³»çµ±ä»ç„¶ä¸æœƒæç¤ºä½ 
+                                ä¸‹ä¸€æ¢æ¶ˆæ¯ï¼Œå¿…é ˆé€šéŽä½ æ‰‹å·¥è¼¸å…¥ $HIY$skip$NOR$ ä¾†
+                                è·³éŽç•¶å‰çš„æ¶ˆæ¯ã€‚
+                                $HIG$ç•¶ä½ æŽ¡ç”¨äº†é˜»å¡žäº¤è«‡ä»¥å¾Œï¼Œå¦‚æžœä½ æ”¶åˆ°çš„æ¶ˆ
+                                æ¯è¢«é˜»å¡žï¼Œå‰‡ä½ çš„æç¤ºç¬¦å°‡æœƒè®Šæˆç¶ è‰²ã€‚$NOR$
 
-$HIC$keep_idle$NOR$        <ÈÎÒâ·ÇÁãÖµ>   Éè¶¨Èç¹ûÄú·¢´ôÊ±²»ÍË³ö¡£
+$HIC$keep_idle$NOR$        <ä»»æ„éžé›¶å€¼>   è¨­å®šå¦‚æžœæ‚¨ç™¼å‘†æ™‚ä¸é€€å‡ºã€‚
 
-$HIC$look_window$NOR$      <ÈÎÒâ·ÇÁãÖµ>   Éè¶¨Èç¹ûÄúÊÒÄÚ¿ÉÒÔ²ì¿´´°ÍâÐÅÏ¢¡£
+$HIC$look_window$NOR$      <ä»»æ„éžé›¶å€¼>   è¨­å®šå¦‚æžœæ‚¨å®¤å…§å¯ä»¥å¯Ÿçœ‹çª—å¤–ä¿¡æ¯ã€‚
 
-$HIC$no_accept$NOR$        <Íæ¼ÒID>       Éè¶¨ÄúÏÖÔÚ²»½ÓÊÜÄ³ÈË $HIY$give$NOR$ µÄÀñÎï¡£Õâ¸ö
-                                ²ÎÊý¾ßÓÐÁÐ±íÊôÐÔ¡£Èç¹ûIDÊÇ$HIC$all$NOR$ Ôò±íÊ¾²»
-                                ½ÓÊÜÈÎºÎÈËµÄÎïÆ·¡£
+$HIC$no_accept$NOR$        <çŽ©å®¶ID>       è¨­å®šæ‚¨ç¾åœ¨ä¸æŽ¥å—æŸäºº $HIY$give$NOR$ çš„ç¦®ç‰©ã€‚é€™å€‹
+                                åƒæ•¸å…·æœ‰åˆ—è¡¨å±¬æ€§ã€‚å¦‚æžœIDæ˜¯$HIC$all$NOR$ å‰‡è¡¨ç¤ºä¸
+                                æŽ¥å—ä»»ä½•äººçš„ç‰©å“ã€‚
 
-$HIC$no_autoultra$NOR$     <ÈÎÒâ·ÇÁãÖµ>   Éè¶¨Äú²»×Ô¶¯½«ÁÄÌìÆµµÀ×ªÎª×ÚÊ¦ÆµµÀ¡£
+$HIC$no_autoultra$NOR$     <ä»»æ„éžé›¶å€¼>   è¨­å®šæ‚¨ä¸è‡ªå‹•å°‡èŠå¤©é »é“è½‰ç‚ºå®—å¸«é »é“ã€‚
 
-$HIC$no_emote$NOR$         <Ö¸¶¨ÈËµÄID>   Éè¶¨ÄúÏÖÔÚ²»½ÓÊÜÖ¸¶¨ÈËµÄ±íÇé¶¯×÷¡£Õâ¸ö
-                                ²ÎÊý¾ßÓÐÁÐ±íÊôÐÔ¡£Èç¹ûIDÊÇ$HIC$all$NOR$ Ôò±íÊ¾²»
-                                ½ÓÊÜÈÎºÎÈËµÄÐÅÏ¢¡£
+$HIC$no_emote$NOR$         <æŒ‡å®šäººçš„ID>   è¨­å®šæ‚¨ç¾åœ¨ä¸æŽ¥å—æŒ‡å®šäººçš„è¡¨æƒ…å‹•ä½œã€‚é€™å€‹
+                                åƒæ•¸å…·æœ‰åˆ—è¡¨å±¬æ€§ã€‚å¦‚æžœIDæ˜¯$HIC$all$NOR$ å‰‡è¡¨ç¤ºä¸
+                                æŽ¥å—ä»»ä½•äººçš„ä¿¡æ¯ã€‚
 
-$HIC$no_more$NOR$          <ÈÎÒâ·ÇÁãÖµ>   Éè¶¨ÄúÏÖÔÚ²»Ê¹ÓÃÒ³·½Ê½ÔÄ¶Á³¤ÐÅÏ¢¡£
+$HIC$no_more$NOR$          <ä»»æ„éžé›¶å€¼>   è¨­å®šæ‚¨ç¾åœ¨ä¸ä½¿ç”¨é æ–¹å¼é–±è®€é•·ä¿¡æ¯ã€‚
 
-$HIC$no_story$NOR$         <ÈÎÒâ·ÇÁãÖµ>   Éè¶¨ÄúÏÖÔÚ²»½ÓÊÜ¹ÊÊÂÐÅÏ¢¡£²»¹ýÕâ²»Ó°Ïì
-                                Äã»ñµÃÔùÆ·¡£
+$HIC$no_story$NOR$         <ä»»æ„éžé›¶å€¼>   è¨­å®šæ‚¨ç¾åœ¨ä¸æŽ¥å—æ•…äº‹ä¿¡æ¯ã€‚ä¸éŽé€™ä¸å½±éŸ¿
+                                ä½ ç²å¾—è´ˆå“ã€‚
 
-$HIC$no_task$NOR$          <ÈÎÒâ·ÇÁãÖµ>   Éè¶¨ÄúÏÖÔÚ²»½ÓÊÜTASKÐÅÏ¢¡£²»¹ýÕâ²»Ó°Ïì
-                                Äã»ñµÃ½±Àø¡£
+$HIC$no_task$NOR$          <ä»»æ„éžé›¶å€¼>   è¨­å®šæ‚¨ç¾åœ¨ä¸æŽ¥å—TASKä¿¡æ¯ã€‚ä¸éŽé€™ä¸å½±éŸ¿
+                                ä½ ç²å¾—çŽå‹µã€‚
 
-$HIC$no_teach$NOR$         <ÈÎÒâ·ÇÁãÖµ>   Éè¶¨ÄúÏÖÔÚ²»½ÌÄúµÄÍ½µÜ¼¼ÄÜ£¬ÓÉì¶½ÌÍ½Òª
-                                ÊÇÒª·Ñ¾«Éñ£¬µ±Í½µÜ²»¹ÔÊ±¡­¡£
+$HIC$no_teach$NOR$         <ä»»æ„éžé›¶å€¼>   è¨­å®šæ‚¨ç¾åœ¨ä¸æ•™æ‚¨çš„å¾’å¼ŸæŠ€èƒ½ï¼Œç”±æ–¼æ•™å¾’è¦
+                                æ˜¯è¦è²»ç²¾ç¥žï¼Œç•¶å¾’å¼Ÿä¸ä¹–æ™‚â€¦ã€‚
 
-$HIC$no_tell$NOR$          <Ö¸¶¨ÈËµÄID>   Éè¶¨ÄúÏÖÔÚ²»½ÓÊÜÖ¸¶¨ÈËµÄ $HIY$tell$NOR$ »ò $HIY$reply$NOR$
-                                µÄÐÅÏ¢¡£Õâ¸ö²ÎÊý¾ßÓÐÁÐ±íÊôÐÔ¡£Èç¹ûIDÊÇ
-                                $HIC$all$NOR$Ôò±íÊ¾²»½ÓÊÜÈÎºÎÈËµÄÐÅÏ¢¡£
+$HIC$no_tell$NOR$          <æŒ‡å®šäººçš„ID>   è¨­å®šæ‚¨ç¾åœ¨ä¸æŽ¥å—æŒ‡å®šäººçš„ $HIY$tell$NOR$ æˆ– $HIY$reply$NOR$
+                                çš„ä¿¡æ¯ã€‚é€™å€‹åƒæ•¸å…·æœ‰åˆ—è¡¨å±¬æ€§ã€‚å¦‚æžœIDæ˜¯
+                                $HIC$all$NOR$å‰‡è¡¨ç¤ºä¸æŽ¥å—ä»»ä½•äººçš„ä¿¡æ¯ã€‚
 
-$HIC$no_follow$NOR$        <ÈÎÒâ·ÇÁãÖµ>   Éè¶¨ÄúÏÖÔÚ²»Ïë±»ÈË×·×Ù£¬Èç¹ûÄãµÄÉí·¨½Ï
-                                ºÃ£¬¾ÍÓÐ¿ÉÄÜ°ÚÍÑ¸ú×ÙµÄÈË¡£µ±ÄãÏë´øÁì±ð
-                                ÈË×ßÂ·µÄ»°£¬¾Í²»ÒªÉèÖÃÕâ¸öÊôÐÔ¡£Õâ¸öÊô
-                                ÐÔ²»Ó°Ïì×é¶Ó£¬Ò²¾ÍÊÇËµºÍÄãÍ¬Ò»¸ö¶ÓÎéÖÐ
-                                µÄÈË²»»á±»ÄãË¦ÏÂ¡£
+$HIC$no_follow$NOR$        <ä»»æ„éžé›¶å€¼>   è¨­å®šæ‚¨ç¾åœ¨ä¸æƒ³è¢«äººè¿½è¹¤ï¼Œå¦‚æžœä½ çš„èº«æ³•è¼ƒ
+                                å¥½ï¼Œå°±æœ‰å¯èƒ½æ“ºè„«è·Ÿè¹¤çš„äººã€‚ç•¶ä½ æƒ³å¸¶é ˜åˆ¥
+                                äººèµ°è·¯çš„è©±ï¼Œå°±ä¸è¦è¨­ç½®é€™å€‹å±¬æ€§ã€‚é€™å€‹å±¬
+                                æ€§ä¸å½±éŸ¿çµ„éšŠï¼Œä¹Ÿå°±æ˜¯èªªå’Œä½ åŒä¸€å€‹éšŠä¼ä¸­
+                                çš„äººä¸æœƒè¢«ä½ ç”©ä¸‹ã€‚
 
-$HIC$no_minmsg$NOR$        <ÈÎÒâ·ÇÁãÖµ>   Éè¶¨ÄúÏÖÔÚ²»ÏëÏÔÊ¾ÆäËûÍæ¼Ò»ò NPCÀë¿ªÄã
-                                ËùÔÚ·¿¼äµÄÐÅÏ¢ÌáÊ¾¡£
+$HIC$no_minmsg$NOR$        <ä»»æ„éžé›¶å€¼>   è¨­å®šæ‚¨ç¾åœ¨ä¸æƒ³é¡¯ç¤ºå…¶ä»–çŽ©å®¶æˆ– NPCé›¢é–‹ä½ 
+                                æ‰€åœ¨æˆ¿é–“çš„ä¿¡æ¯æç¤ºã€‚
 
-$HIC$no_moutmsg$NOR$       <ÈÎÒâ·ÇÁãÖµ>   Éè¶¨ÄúÏÖÔÚ²»ÏëÏÔÊ¾ÆäËûÍæ¼Ò»ò NPC½øÈëÄã
-                                ËùÔÚ·¿¼äµÄÐÅÏ¢ÌáÊ¾¡£
+$HIC$no_moutmsg$NOR$       <ä»»æ„éžé›¶å€¼>   è¨­å®šæ‚¨ç¾åœ¨ä¸æƒ³é¡¯ç¤ºå…¶ä»–çŽ©å®¶æˆ– NPCé€²å…¥ä½ 
+                                æ‰€åœ¨æˆ¿é–“çš„ä¿¡æ¯æç¤ºã€‚
 
-$HIC$show_map$NOR$         <1 - 2>        Éè¶¨ÒÆ¶¯Ê±¿´µ½Zmud×óÉÏ½Ç±¾µØµØÍ¼¡£
-                                1. ÆÕÍ¨±¾µØµØÍ¼ÏÔÊ¾·½Ê½£¬ µØÍ¼Î»ÖÃÃ»ÓÐ
-                                   ±»Ëø¶¨ÔÚZmud×óÉÏ½Ç¡£
-                                2. ÌØÊâ±¾µØµØÍ¼ÏÔÊ¾·½Ê½£¬ µØÍ¼Î»ÖÃ½«±»
-                                   Ëø¶¨ÔÚZmud×óÉÏ½Ç¡£
+$HIC$show_map$NOR$         <1 - 2>        è¨­å®šç§»å‹•æ™‚çœ‹åˆ°Zmudå·¦ä¸Šè§’æœ¬åœ°åœ°åœ–ã€‚
+                                1. æ™®é€šæœ¬åœ°åœ°åœ–é¡¯ç¤ºæ–¹å¼ï¼Œ åœ°åœ–ä½ç½®æ²’æœ‰
+                                   è¢«éŽ–å®šåœ¨Zmudå·¦ä¸Šè§’ã€‚
+                                2. ç‰¹æ®Šæœ¬åœ°åœ°åœ–é¡¯ç¤ºæ–¹å¼ï¼Œ åœ°åœ–ä½ç½®å°‡è¢«
+                                   éŽ–å®šåœ¨Zmudå·¦ä¸Šè§’ã€‚
 
-$HIC$prompt$NOR$           <×Ö·û´®>       Éè¶¨ÄúÊäÈëÃüÁîÇ°µÄÌáÊ¾·û¡£ÒÔÏÂ×Ö·û´®ÓÐ
-                                ×ÅÌØÊâµÄº¬Òå£º
-                                1. $HIC$time$NOR$ ÒÔµ±Ç°µÄÊ±¼ä×÷ÎªÌáÊ¾·û¡£
-                                2. $HIC$date$NOR$ ÒÔµ±Ç°µÄÈÕÆÚ×÷ÎªÌáÊ¾·û¡£
-                                3. $HIC$mud$NOR$  ÒÔMUDÈÕÆÚ×÷ÎªÌáÊ¾·û¡£
-                                3. $HIC$hp$NOR$   ÒÔµ±Ç°µÄ¾«¡¢Æø×÷ÎªÌáÊ¾·û¡£
-                                4. $HIC$path$NOR$ ÒÔµ±Ç°µÄÂ·¾¶×÷ÎªÌáÊ¾·û¡£Ö»ÓÐÎ×
-                                        Ê¦²ÅÄÜÊ¹ÓÃ¸ÃÌáÊ¾·û¡£
-                                Èç¹ûÊÇÆäËü×Ö·û´®ÔòÖ±½ÓÏÔÊ¾£¬¿ÉÒÔÊäÈëÑÕ
-                                É«¡£ÌáÊ¾·ûµÄ³¤¶È²»ÒªÌ«³¤£¬ÒòÎªÕâ»áÓ°Ïì
-                                ÄãµÄÍøÂçËÙ¶È¡£
-                                Èç¹ûÄãÏë»Ö¸´×î³õµÄÌáÊ¾·û£¬¿ÉÒÔÈ¡ÏûÉèÖÃ£º
-                                $HIY$unset prompt$NOR$¡£
+$HIC$prompt$NOR$           <å­—ç¬¦ä¸²>       è¨­å®šæ‚¨è¼¸å…¥å‘½ä»¤å‰çš„æç¤ºç¬¦ã€‚ä»¥ä¸‹å­—ç¬¦ä¸²æœ‰
+                                è‘—ç‰¹æ®Šçš„å«ç¾©ï¼š
+                                1. $HIC$time$NOR$ ä»¥ç•¶å‰çš„æ™‚é–“ä½œç‚ºæç¤ºç¬¦ã€‚
+                                2. $HIC$date$NOR$ ä»¥ç•¶å‰çš„æ—¥æœŸä½œç‚ºæç¤ºç¬¦ã€‚
+                                3. $HIC$mud$NOR$  ä»¥MUDæ—¥æœŸä½œç‚ºæç¤ºç¬¦ã€‚
+                                3. $HIC$hp$NOR$   ä»¥ç•¶å‰çš„ç²¾ã€æ°£ä½œç‚ºæç¤ºç¬¦ã€‚
+                                4. $HIC$path$NOR$ ä»¥ç•¶å‰çš„è·¯å¾‘ä½œç‚ºæç¤ºç¬¦ã€‚åªæœ‰å·«
+                                        å¸«æ‰èƒ½ä½¿ç”¨è©²æç¤ºç¬¦ã€‚
+                                å¦‚æžœæ˜¯å…¶å®ƒå­—ç¬¦ä¸²å‰‡ç›´æŽ¥é¡¯ç¤ºï¼Œå¯ä»¥è¼¸å…¥é¡
+                                è‰²ã€‚æç¤ºç¬¦çš„é•·åº¦ä¸è¦å¤ªé•·ï¼Œå› ç‚ºé€™æœƒå½±éŸ¿
+                                ä½ çš„ç¶²çµ¡é€Ÿåº¦ã€‚
+                                å¦‚æžœä½ æƒ³æ¢å¾©æœ€åˆçš„æç¤ºç¬¦ï¼Œå¯ä»¥å–æ¶ˆè¨­ç½®ï¼š
+                                $HIY$unset prompt$NOR$ã€‚
 
-$HIC$public$NOR$           <ÈÎÒâ·ÇÁãÖµ>   Éè¶¨¹«²¼ÄúµÄµç×ÓÐÅÏäµØÖ·
+$HIC$public$NOR$           <ä»»æ„éžé›¶å€¼>   è¨­å®šå…¬å¸ƒæ‚¨çš„é›»å­ä¿¡ç®±åœ°å€
 
-$HIC$pure_say$NOR$         <ÈÎÒâ·ÇÁãÖµ>   ÕâÒâÎ¶×ÅÄãÊäÈëµÄÃüÁîÈç¹û²»ÊÇÒÔ'/' ×Ö·û
-                                ´òÍ·µÄ£¬ÔòÏµÍ³¶¼»áµ±×÷ÄãËµ»°´¦Àí¡£ÕâÊÇ
-                                ¹©ÄãÁÄÌìÊ±×¨ÓÃµÄ¡£Ïà¹ØÉèÖÃ£º$HIC$auto_say$NOR$¡£
+$HIC$pure_say$NOR$         <ä»»æ„éžé›¶å€¼>   é€™æ„å‘³è‘—ä½ è¼¸å…¥çš„å‘½ä»¤å¦‚æžœä¸æ˜¯ä»¥'/' å­—ç¬¦
+                                æ‰“é ­çš„ï¼Œå‰‡ç³»çµ±éƒ½æœƒç•¶ä½œä½ èªªè©±è™•ç†ã€‚é€™æ˜¯
+                                ä¾›ä½ èŠå¤©æ™‚å°ˆç”¨çš„ã€‚ç›¸é—œè¨­ç½®ï¼š$HIC$auto_say$NOR$ã€‚
 
-$HIC$sign1$NOR$            <×Ö·û´®>       Éè¶¨ÄúµÚÒ»¸öÁôÑÔÇ©Ãûµµ£¬ÆäÖÐ¿ÉÒÔÊ¹ÓÃÑÕ
-                                É«£¬¹æÔò¿ÉÒÔ²Î¼û $HIY$nick$NOR$ ÃüÁî¡£
+$HIC$sign1$NOR$            <å­—ç¬¦ä¸²>       è¨­å®šæ‚¨ç¬¬ä¸€å€‹ç•™è¨€ç°½åæª”ï¼Œå…¶ä¸­å¯ä»¥ä½¿ç”¨é¡
+                                è‰²ï¼Œè¦å‰‡å¯ä»¥åƒè¦‹ $HIY$nick$NOR$ å‘½ä»¤ã€‚
 
-$HIC$sign2..4$NOR$         <×Ö·û´®>       ·Ö±ðÉè¶¨ÄãµÚ¶þ¡¢Èý¡¢ËÄºÅÁôÑÔÇ©Ãûµµ¡£Áô
-                                ÑÔÊ±ÏµÍ³»á×Ô¶¯Ñ¡Ôñ $HIC$default_sign$NOR$ Ö¸Ã÷µÄ
-                                ÄÇÒ»¸ö£¬Èç¹ûÃ»ÓÐ¸Ã²ÎÊý»ò¸Ã²ÎÊýÖ¸Ã÷µÄÇ©
-                                ÃûµµÎª¿ÕÔòÏµÍ³×Ô¶¯Ñ¡ÔñÑ¡ÔñµÚÒ»¸ö·Ç¿ÕµÄ
-                                Ç©Ãûµµ¡£ÔÚÊ¹ÓÃ $HIY$post$NOR$ ÃüÁî½øÐÐÊéÐ´µÄÊ±ºò
-                                ¿ÉÒÔÓÃ $HIY$post Ö÷Ìâ with <n>$NOR$ À´Ö¸Ã÷ÕâÒ»´Î
-                                ÕÅÌùµÄÊ±ºòÊ¹ÓÃµÄÇ©Ãûµµ¡£
+$HIC$sign2..4$NOR$         <å­—ç¬¦ä¸²>       åˆ†åˆ¥è¨­å®šä½ ç¬¬äºŒã€ä¸‰ã€å››è™Ÿç•™è¨€ç°½åæª”ã€‚ç•™
+                                è¨€æ™‚ç³»çµ±æœƒè‡ªå‹•é¸æ“‡ $HIC$default_sign$NOR$ æŒ‡æ˜Žçš„
+                                é‚£ä¸€å€‹ï¼Œå¦‚æžœæ²’æœ‰è©²åƒæ•¸æˆ–è©²åƒæ•¸æŒ‡æ˜Žçš„ç°½
+                                åæª”ç‚ºç©ºå‰‡ç³»çµ±è‡ªå‹•é¸æ“‡é¸æ“‡ç¬¬ä¸€å€‹éžç©ºçš„
+                                ç°½åæª”ã€‚åœ¨ä½¿ç”¨ $HIY$post$NOR$ å‘½ä»¤é€²è¡Œæ›¸å¯«çš„æ™‚å€™
+                                å¯ä»¥ç”¨ $HIY$post ä¸»é¡Œ with <n>$NOR$ ä¾†æŒ‡æ˜Žé€™ä¸€æ¬¡
+                                å¼µè²¼çš„æ™‚å€™ä½¿ç”¨çš„ç°½åæª”ã€‚
 
-$HIC$wimpy$NOR$            <°Ù·Ö±È>       µ±ÄúµÄ¡°¾«¡±»ò¡°Æø¡±µÍì¶Õâ¸ö°Ù·Ö±ÈÊ±¾Í
-                                »á×Ô¶¯ÕÒ»ú»áÌÓÃü¡£
+$HIC$wimpy$NOR$            <ç™¾åˆ†æ¯”>       ç•¶æ‚¨çš„â€œç²¾â€æˆ–â€œæ°£â€ä½Žæ–¼é€™å€‹ç™¾åˆ†æ¯”æ™‚å°±
+                                æœƒè‡ªå‹•æ‰¾æ©Ÿæœƒé€ƒå‘½ã€‚
 
-$HIC$wimpy_apply$NOR$      <µÀ¾ßµÄID>     µ±Äã×Ô¶¯ÌÓÃüµÄÊ±ºòÑ¡ÔñÊ¹ÓÃµÄ¸¨Öú¹¤¾ß¡£
-                                ÔÚ¸ßÊÖÃæÇ°ÌÓÃü²»ÊÇÒ»¼þÈÝÒ×µÄÊÂÇé£¬ÓÃÉÏ
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡Ò»Ð©¹¤¾ß»áºÃºÜ¶àµÄ¡£
+$HIC$wimpy_apply$NOR$      <é“å…·çš„ID>     ç•¶ä½ è‡ªå‹•é€ƒå‘½çš„æ™‚å€™é¸æ“‡ä½¿ç”¨çš„è¼”åŠ©å·¥å…·ã€‚
+                                åœ¨é«˜æ‰‹é¢å‰é€ƒå‘½ä¸æ˜¯ä¸€ä»¶å®¹æ˜“çš„äº‹æƒ…ï¼Œç”¨ä¸Š
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ä¸€äº›å·¥å…·æœƒå¥½å¾ˆå¤šçš„ã€‚
 
-$HIY$Î×Ê¦×¨ÓÃÉèÖÃ$NOR$
+$HIY$å·«å¸«å°ˆç”¨è¨­ç½®$NOR$
 
-$HIC$invisible$NOR$        <ÈÎÒâ·ÇÁãÖµ>   ÒþÉí¡£
+$HIC$invisible$NOR$        <ä»»æ„éžé›¶å€¼>   éš±èº«ã€‚
 
-$HIC$combatd_test$NOR$     <ÈÎÒâ·ÇÁãÖµ>   ÔÚÕ½¶·ÖÐÏÔÊ¾¹¥·ÀÁ¦µÄÐÅÏ¢¡£
+$HIC$combatd_test$NOR$     <ä»»æ„éžé›¶å€¼>   åœ¨æˆ°é¬¥ä¸­é¡¯ç¤ºæ”»é˜²åŠ›çš„ä¿¡æ¯ã€‚
 
-$HIC$immortal$NOR$         <ÈÎÒâ·ÇÁãÖµ>   ²»»áÔÎµ¹»òËÀÍö¡£
+$HIC$immortal$NOR$         <ä»»æ„éžé›¶å€¼>   ä¸æœƒæšˆå€’æˆ–æ­»äº¡ã€‚
 
-$HIC$msg_out$NOR$          <ÃèÊö×Ö·û´®>   Ê¹ÓÃ$HIY$goto$NOR$Àë¿ªÊ±ºòµÄÃèÊö¡£
+$HIC$msg_out$NOR$          <æè¿°å­—ç¬¦ä¸²>   ä½¿ç”¨$HIY$goto$NOR$é›¢é–‹æ™‚å€™çš„æè¿°ã€‚
 
-$HIC$msg_in$NOR$           <ÃèÊö×Ö·û´®>   Ê¹ÓÃ$HIY$goto$NOR$µ½´ïÊ±µÄÃèÊö¡£
+$HIC$msg_in$NOR$           <æè¿°å­—ç¬¦ä¸²>   ä½¿ç”¨$HIY$goto$NOR$åˆ°é”æ™‚çš„æè¿°ã€‚
 

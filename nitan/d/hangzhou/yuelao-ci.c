@@ -7,15 +7,15 @@
 inherit ROOM;
 int is_chat_room() { return 1;}
 void create(){
-        set("short", "ÔÂÀÏìô");
+        set("short", "æœˆè€ç¥ ");
         set("long", @LONG
-ÔÂÀÏÊÇÉñ»°ÖÐÕÆ¹ÜÒöÔµµÄÏÉÈË£¬´«ËµËûÓÐºìÏß£¬Èô°ÑËüÏµÔÚÄÐÅ®
-Åó·½µÄ½ÅÉÏ£¬Ëä³ðÈË»òÏà¸ôÇ§Àï£¬ÖÕ»á½á³ÉÒöÔµ¡£ÔÂÀÏìôÒ»¼äÐ¡Ôº¡¢
-ÈýÎåÍßÎÝ¡£ÕýÎÝÖÐÑëµÄÉñíèÀï×ø×ÅÔÂÏÂÀÏÈË£ººì·çÃ±ºìÅû¼ç£¬º×·¢Í¯
-ÑÕ£¬Ð¦ÈÝÂúÃæ¡£ÉñíèÇ°ÃæÕÕÀýÊÇ¹©×À¡¢ÏãÂ¯¡¢ÖòÌ¨¡¢Ç©Í²£¬µ±È»£¬ÆÑ
-ÍÅÒ²ÊÇÉÙ²»ÁËµÄ¡£Á½ÅÔÒ»¸±ºÚÆáµÄÐ¡¶ÔÁª£ºÔ¸ÌìÏÂÓÐÇéÈË£¬¶¼³ÉÁË¾ì
-Êô£»ÊÇÇ°Éú×¢¶¨ÊÂ£¬Äª´í¹ýÒöÔµ¡£ÁîÈËÅÄ°¸½Ð¾ø¡£Äã¿ÉÒÔÔÚÕâÀïÇóÇ©
-£¨qiuqian£©ÎÊÒ»ÏÂÒöÔµÇéÊÂ¡£
+æœˆè€æ˜¯ç¥žè©±ä¸­æŽŒç®¡å§»ç·£çš„ä»™äººï¼Œå‚³èªªä»–æœ‰ç´…ç·šï¼Œè‹¥æŠŠå®ƒç³»åœ¨ç”·å¥³
+æœ‹æ–¹çš„è…³ä¸Šï¼Œé›–ä»‡äººæˆ–ç›¸éš”åƒè£¡ï¼Œçµ‚æœƒçµæˆå§»ç·£ã€‚æœˆè€ç¥ ä¸€é–“å°é™¢ã€
+ä¸‰äº”ç“¦å±‹ã€‚æ­£å±‹ä¸­å¤®çš„ç¥žé¾•è£¡åè‘—æœˆä¸‹è€äººï¼šç´…é¢¨å¸½ç´…æŠ«è‚©ï¼Œé¶´ç™¼ç«¥
+é¡ï¼Œç¬‘å®¹æ»¿é¢ã€‚ç¥žé¾•å‰é¢ç…§ä¾‹æ˜¯ä¾›æ¡Œã€é¦™çˆã€ç‡­å°ã€ç°½ç­’ï¼Œç•¶ç„¶ï¼Œè’²
+åœ˜ä¹Ÿæ˜¯å°‘ä¸äº†çš„ã€‚å…©æ—ä¸€å‰¯é»‘æ¼†çš„å°å°è¯ï¼šé¡˜å¤©ä¸‹æœ‰æƒ…äººï¼Œéƒ½æˆäº†çœ·
+å±¬ï¼›æ˜¯å‰ç”Ÿæ³¨å®šäº‹ï¼ŒèŽ«éŒ¯éŽå§»ç·£ã€‚ä»¤äººæ‹æ¡ˆå«çµ•ã€‚ä½ å¯ä»¥åœ¨é€™è£¡æ±‚ç°½
+ï¼ˆqiuqianï¼‰å•ä¸€ä¸‹å§»ç·£æƒ…äº‹ã€‚
 LONG );
         set("no_fight", "1");
         set("no_steal", "1");
@@ -44,13 +44,13 @@ int do_qiuqian(string arg)
                 return 1;
 
         if( time()-query("last_qiuqian_time", me)<600 )
-                return notify_fail("ÕâÃ´Æµ·±µÄÇóÇ©¸ÉÂï£¿ÐÄ²»³ÏÔòÇ©²»Áé£¬¹ýÊ®·ÖÖÓÔÙÀ´°É¡£\n");
+                return notify_fail("é€™éº¼é »ç¹çš„æ±‚ç°½å¹¹å˜›ï¼Ÿå¿ƒä¸èª å‰‡ç°½ä¸éˆï¼ŒéŽååˆ†é˜å†ä¾†å§ã€‚\n");
 
         write(HIC "
-Äãò¯³ÏµØÏòÔÂÀÏÏñ°ÝÁË¼¸°Ý£¬¿ÚÖÐÄîÄîÓÐ´Ê£º¡°ÔÂÀÏÔÂÀÏ£¬´Í¸øÎÒºÃÒöÔµ°É£¡¡±
-Äã±Õ×ÅÑÛÇæÁËÖ§Ç©£¬ÓÖÆíµ»ÁËÒ»»á£¬Õâ²ÅÕö¿ªÑÛ¾¦¿´Ç©ÎÄ¡£\n
+ä½ è™”èª åœ°å‘æœˆè€åƒæ‹œäº†å¹¾æ‹œï¼Œå£ä¸­å¿µå¿µæœ‰è©žï¼šâ€œæœˆè€æœˆè€ï¼Œè³œçµ¦æˆ‘å¥½å§»ç·£å§ï¼â€
+ä½ é–‰è‘—çœ¼æ“Žäº†æ”¯ç°½ï¼Œåˆç¥ˆç¦±äº†ä¸€æœƒï¼Œé€™æ‰çœé–‹çœ¼ç›çœ‹ç°½æ–‡ã€‚\n
 " NOR, me);
-        write(HIC "Ç©ÉÏÐ´×Å£º" + QIUQIAN->query_qiuqian() + "¡£\n" NOR, me);
+        write(HIC "ç°½ä¸Šå¯«è‘—ï¼š" + QIUQIAN->query_qiuqian() + "ã€‚\n" NOR, me);
         set("last_qiuqian_time", time(), me);
         return 1;
 }

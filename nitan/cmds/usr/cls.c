@@ -13,9 +13,9 @@ int main(object who,string arg)
 int help()
 {
     write(@HELP
-Ö¸Áî¸ñÊ½£ºcls [-l]
-Õâ¸öÖ¸Áî¿ÉÒÔÇå³ýµ±Ç°ÆÁÄ»ÄÚÈÝ¡£
-Èç¹ûÓÐ-lÕâ¸ö²ÎÊý¾ÍÔÝ»ºÆÁÄ»Êä³ö¡£Ö»ÖÁ°´»Ø³µ½¡¡£
+æŒ‡ä»¤æ ¼å¼ï¼šcls [-l]
+é€™å€‹æŒ‡ä»¤å¯ä»¥æ¸…é™¤ç•¶å‰å±å¹•å…§å®¹ã€‚
+å¦‚æžœæœ‰-lé€™å€‹åƒæ•¸å°±æš«ç·©å±å¹•è¼¸å‡ºã€‚åªè‡³æŒ‰å›žè»Šå¥ã€‚
 HELP );
     return 1;
 }

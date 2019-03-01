@@ -1,9 +1,9 @@
 // socket_ob.c
 // create by yezh 10/01/2005
-// Ò»¸ö »ùÓÚ TCP & ASCII ·½Ê½µÄ SOCKET Îï¼ş£¬
-// ·½·¨£ºdo_open, do_send
-// ÊÂ¼ş£ºon_recv, on_send, on_close
-// ÔÚ¹¹ÔìµÄÊ±ºòcreate socket£¬ÔÚÎö¹¹Ê±close socket
+// ä¸€å€‹ åŸºäº TCP & ASCII æ–¹å¼çš„ SOCKET ç‰©ä»¶ï¼Œ
+// æ–¹æ³•ï¼šdo_open, do_send
+// äº‹ä»¶ï¼šon_recv, on_send, on_close
+// åœ¨æ§‹é€ çš„æ™‚å€™create socketï¼Œåœ¨ææ§‹æ™‚close socket
 
 #include <ansi.h>
 #include <net/socket.h>
@@ -16,10 +16,10 @@
 #define CHECK_FD_VALID();    \
     if (fd != s_fd) \
     {   \
-        // ÊÕµ½ÁË²»ÊôÓÚ×Ô¼ºµÄÊı¾İ°ü \
+        // æ”¶åˆ°äº†ä¸å±¬äºè‡ªå·±çš„æ•¸æ“šåŒ… \
         evaluate(callback["report"], s_fd   \
-                 sprintf("ÊÕµ½Êı¾İ°üÊ±£¬Ì×½Ó×ÖºÅ²»Ò»ÖÂ£¬Îï¼şÌ×½Ó×ÖºÅ£º%d£¬" \
-                         "ÊÕµ½Ì×½Ó×ÖºÅ£º%d\n", s_fd, fd));  \
+                 sprintf("æ”¶åˆ°æ•¸æ“šåŒ…æ™‚ï¼Œå¥—æ¥å­—è™Ÿä¸ä¸€è‡´ï¼Œç‰©ä»¶å¥—æ¥å­—è™Ÿï¼š%dï¼Œ" \
+                         "æ”¶åˆ°å¥—æ¥å­—è™Ÿï¼š%d\n", s_fd, fd));  \
         return; \
     }   \
 
@@ -32,103 +32,103 @@ int get_fd()
 mapping callback;
 string  buf;
 
-// ·¢ËÍÊÇµÄ»Øµ÷º¯Êı
+// ç™¼é€æ˜¯çš„å›èª¿å‡½æ•¸
 void on_send(int fd)
 {
 /*
     CHECK_FD_VALID();
 */
-    // Èç¹ûÓĞ»º´æµÄÊı¾İ£¬ÔòÒ»ÆğĞ´½øÈ¥
+    // å¦‚æœæœ‰ç·©å­˜çš„æ•¸æ“šï¼Œå‰‡ä¸€èµ·å¯«é€²å»
     if (strlen(buf) > 0)
         socket_write(s_fd, buf);
         
     if (functionp(callback["on_send"]))
-        // ´æÔÚ·¢ËÍÊı¾İÊ±µÄ»Øµ÷º¯Êı
+        // å­˜åœ¨ç™¼é€æ•¸æ“šæ™‚çš„å›èª¿å‡½æ•¸
         evaluate(callback["on_send"], fd);
 }
 
 void create()
 {
-    // ´´½¨Ò»¸ö SOCKET £¬ Ã»ÓĞÖ¸¶¨ËüµÄ¶Á»áµ÷º¯Êı£¬ºÍ¹Ø±Õ»Øµ÷º¯Êı
+    // å‰µå»ºä¸€å€‹ SOCKET ï¼Œ æ²’æœ‰æŒ‡å®šå®ƒçš„è®€æœƒèª¿å‡½æ•¸ï¼Œå’Œé—œé–‰å›èª¿å‡½æ•¸
     s_fd = socket_create(STREAM, "", "on_close");
     callback = allocate_mapping(0);
     buf = "";
 }
 
-// ¶Ô·½Ö÷¶¯¹Ø±ÕÁË socket Á¬½Ó
+// å°æ–¹ä¸»å‹•é—œé–‰äº† socket é€£æ¥
 void on_close(int fd)
 {
 /*
     CHECK_FD_VALID();
 */  
-    DEBUG("Ì×½Ó×Ö(" + fd + ")Á¬½Ó±»¹Ø±ÕÁË.\n");
+    DEBUG("å¥—æ¥å­—(" + fd + ")é€£æ¥è¢«é—œé–‰äº†.\n");
     if (functionp(callback["on_close"]))
             evaluate(callback["on_close"], fd);
 }
 
-// ½ÓÊÕµ½¶Ô·½µÄÊı¾İ
+// æ¥æ”¶åˆ°å°æ–¹çš„æ•¸æ“š
 void on_recv(int fd, string data)
 {
 /*
     CHECK_FD_VALID();
 */
     if (functionp(callback["on_recv"]))
-        // ´æÔÚÊÕµ½Êı¾İÊ±µÄ»Øµ÷º¯Êı
+        // å­˜åœ¨æ”¶åˆ°æ•¸æ“šæ™‚çš„å›èª¿å‡½æ•¸
         evaluate(callback["on_recv"], fd, data);
 }
 
-// ´ò¿ªÒ»¸ö SOCKET Á¬½Ó£¬ĞèÒªµÄ²ÎÊı£¬Ä¿±ê IP£¬ºÍÄ¿±ê PORT£¬ÊÂ¼şµÄ»Øµ÷Í¨Öª
+// æ‰“é–‹ä¸€å€‹ SOCKET é€£æ¥ï¼Œéœ€è¦çš„åƒæ•¸ï¼Œç›®æ¨™ IPï¼Œå’Œç›®æ¨™ PORTï¼Œäº‹ä»¶çš„å›èª¿é€šçŸ¥
 int do_open(string ip, int port, mapping callback_arg)
 {
     string addr;
     
-    // °ü×°Ä¿±êµØÖ·¸ñÊ½
+    // åŒ…è£ç›®æ¨™åœ°å€æ ¼å¼
     addr = sprintf("%s %d", ip, port);
     
-    // Éè¶¨»Øµ÷Í¨Öªº¯Êı
+    // è¨­å®šå›èª¿é€šçŸ¥å‡½æ•¸
     callback = callback_arg;
     
-    // Á¬½ÓÄ¿±ê
+    // é€£æ¥ç›®æ¨™
     return socket_connect(s_fd, addr, "on_recv", "on_send");
 }
 
-// ·¢ËÍÒ»¸öÊı¾İ¸ø¶Ô·½
+// ç™¼é€ä¸€å€‹æ•¸æ“šçµ¦å°æ–¹
 int do_send(string data)
 {
     int write_ret;
     
-    DEBUG("¿ªÊ¼Ğ´Ì×½Ó×Ö\n");
+    DEBUG("é–‹å§‹å¯«å¥—æ¥å­—\n");
     write_ret = socket_write(s_fd, buf + data);
     switch (write_ret)
     {
     case EEWOULDBLOCK:
-        // ³ÌĞòÍ£ÖÍ
+        // ç¨‹åºåœæ»¯
     case EESEND:
-        // ´«ËÍ×ÊÁÏ´íÎó
+        // å‚³é€è³‡æ–™éŒ¯èª¤
     case EEALREADY :
-        // ÕıÔÚĞ´Êı¾İÖĞ£¬ËùÒÔ´Ë´ÎĞ´Ê§°Ü£¬Ôò»º´æÊı¾İ£¬Ö®ºóÔÙĞ´
-        DEBUG("Ğ´Ì×½Ó×ÖÊ§°Ü£¬¼ÓÈë»º´æ\n");
+        // æ­£åœ¨å¯«æ•¸æ“šä¸­ï¼Œæ‰€ä»¥æ­¤æ¬¡å¯«å¤±æ•—ï¼Œå‰‡ç·©å­˜æ•¸æ“šï¼Œä¹‹å¾Œå†å¯«
+        DEBUG("å¯«å¥—æ¥å­—å¤±æ•—ï¼ŒåŠ å…¥ç·©å­˜\n");
         buf += data;
         call_out("do_send", 1, "");
         break;
         
     case EECALLBACK:
-        // µÈ´ıÍê³É
+        // ç­‰å¾…å®Œæˆ
     case EESUCCESS :
-        // Ğ´³É¹¦£¬ÔòÇåµô»º´æ
+        // å¯«æˆåŠŸï¼Œå‰‡æ¸…æ‰ç·©å­˜
         buf = "";
         break;
      
     default :
-        DEBUG(HIR "Ğ´Ì×½Ó×ÖÊ§°Ü£¬" + write_ret + "\n" NOR);
+        DEBUG(HIR "å¯«å¥—æ¥å­—å¤±æ•—ï¼Œ" + write_ret + "\n" NOR);
     }
     
     return write_ret;
 }
 
-// Îö¹¹º¯Êı
+// ææ§‹å‡½æ•¸
 void remove()
 {
-    DEBUG("Ì×½Ó×Ö±»¹Ø±ÕÁË.\n");
+    DEBUG("å¥—æ¥å­—è¢«é—œé–‰äº†.\n");
     socket_close(s_fd);
 }

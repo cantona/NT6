@@ -2,15 +2,15 @@ inherit ROOM;
 #include <ansi.h> 
 void create()
 {
-    set("short", "ÈýÇåºþ");
+    set("short", "ä¸‰æ¸…æ¹–");
     set("long",
-"[1;32mºþË®Çå³ºÍ¸Ã÷£¬²»Ê±¿ÉÒÔ¿´µ½¼¸Î²ÓãÌøÉÏË®Ãæ¡£ºþË®¾¡Í·ÊÇ\n"
-"Ò»¸ö´óÆÙ²¼¡£ÔÚÕâÀï¿ÉÒÔÌýµ½ÆÙ²¼´ÓÉ½ÉÏÖ±³å¶øÏÂ£¬·¢³öµÄºäºäÀ×Éù¡£ºþ\n"
-"±ßÒ»¿é¾ÞÊ¯£¬ÉÏÐ´£¢ÈýÇåºþ£¢¡£[2;37;0m\n"
+"[1;32mæ¹–æ°´æ¸…æ¾ˆé€æ˜Žï¼Œä¸æ™‚å¯ä»¥çœ‹åˆ°å¹¾å°¾é­šè·³ä¸Šæ°´é¢ã€‚æ¹–æ°´ç›¡é ­æ˜¯\n"
+"ä¸€å€‹å¤§ç€‘å¸ƒã€‚åœ¨é€™è£¡å¯ä»¥è½åˆ°ç€‘å¸ƒå¾žå±±ä¸Šç›´æ²–è€Œä¸‹ï¼Œç™¼å‡ºçš„è½Ÿè½Ÿé›·è²ã€‚æ¹–\n"
+"é‚Šä¸€å¡Šå·¨çŸ³ï¼Œä¸Šå¯«ã€ä¸‰æ¸…æ¹–ã€ã€‚[2;37;0m\n"
 );
     set("item_desc", ([
-        "ÇåÌ¶":  "ÇåÌ¶Ã÷³º¼ûµ×£¬ÀïÃæÐ¡ÓãÐ¡Ïº½ÔÈô¿ÕÓÎÎÞËùÒÀ¡£\n",
-        "pond":  "ÇåÌ¶Ã÷³º¼ûµ×£¬ÀïÃæÐ¡ÓãÐ¡Ïº½ÔÈô¿ÕÓÎÎÞËùÒÀ¡£\n",
+        "æ¸…æ½­":  "æ¸…æ½­æ˜Žæ¾ˆè¦‹åº•ï¼Œè£¡é¢å°é­šå°è¦çš†è‹¥ç©ºéŠç„¡æ‰€ä¾ã€‚\n",
+        "pond":  "æ¸…æ½­æ˜Žæ¾ˆè¦‹åº•ï¼Œè£¡é¢å°é­šå°è¦çš†è‹¥ç©ºéŠç„¡æ‰€ä¾ã€‚\n",
       ]));
     set("exits", ([ /* sizeof() == 4 */
         "north" : __DIR__"taolin", 
@@ -30,11 +30,11 @@ void fish_notify(object obj, int i)
     case 0:
         bait = present("qiu yin", obj);
         if(!objectp(bait)) {
-            message("vision",me->name() + "ÌÍ³öÁË" + obj->name() + "ÓÖ·ÅÁË»ØÈ¥¡£\n", environment(me), me);
-            tell_object(me, obj->name() + "ÉÏÃ»ÓÐ¶üÔõÃ´¿ÉÒÔµöÓãÄØ£¿ \n");
+            message("vision",me->name() + "æŽå‡ºäº†" + obj->name() + "åˆæ”¾äº†å›žåŽ»ã€‚\n", environment(me), me);
+            tell_object(me, obj->name() + "ä¸Šæ²’æœ‰é¤Œæ€Žéº¼å¯ä»¥é‡£é­šå‘¢ï¼Ÿ \n");
         }
         else {
-            message_vision("$N»Ó¶¯ÁËÒ»ÏÂ£¬" + obj->name() + "ÔÚ¿ÕÖÐ»®ÁËÒ»µÀÆ¯ÁÁµÄ»¡Ïß£¬Óã¹³ÂäÈëÁËË®ÖÐ¡£ \n" , me);
+            message_vision("$Næ®å‹•äº†ä¸€ä¸‹ï¼Œ" + obj->name() + "åœ¨ç©ºä¸­åŠƒäº†ä¸€é“æ¼‚äº®çš„å¼§ç·šï¼Œé­šé‰¤è½å…¥äº†æ°´ä¸­ã€‚ \n" , me);
             destruct(bait);
             remove_call_out("do_fishing");              
             call_out("do_fishing", 5, me);
@@ -49,20 +49,20 @@ void do_fishing(object me)
     object       fish;
 
     if(me && environment(me) == this_object()) {
-        message_vision("$NºÜ¿ìÓÖ³¶¶¯ÁËÒ»ÏÂÓã¸Ë£¬ " , me);
+        message_vision("$Nå¾ˆå¿«åˆæ‰¯å‹•äº†ä¸€ä¸‹é­šæ¡¿ï¼Œ " , me);
         switch (random(3)) {
         case 0:
-            message_vision("È´Ê²Ã´¶¼Ã»µöÉÏÀ´£¡ \n", me);
+            message_vision("å»ä»€éº¼éƒ½æ²’é‡£ä¸Šä¾†ï¼ \n", me);
             break;
         case 1:
-            message_vision("Óã¹Ö±»µöÉÏÀ´À²£¡£¡£¡£¡ \n", me); 
+            message_vision("é­šæ€ªè¢«é‡£ä¸Šä¾†å•¦ï¼ï¼ï¼ï¼ \n", me); 
             fish = new("/quest/tulong/obj/fish1");
-            set_temp("m_success/Óã¹Ö", 1, me);
+            set_temp("m_success/é­šæ€ª", 1, me);
             fish->move(environment(me));
             remove_call_out("kill_me");
             call_out("kill_me", 1, me);         break;
         case 2:
-            message_vision("Óã¹³ÉÏµö×ÅÒ»Ìõ´óÓã£¡£¡ \n", me);
+            message_vision("é­šé‰¤ä¸Šé‡£è‘—ä¸€æ¢å¤§é­šï¼ï¼ \n", me);
             fish = new("/quest/tulong/obj/fish");
             fish->move(me);
             break;

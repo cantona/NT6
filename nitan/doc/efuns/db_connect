@@ -1,39 +1,39 @@
 
         db_connect()
 
-        Ãû³Æ£º
-                db_connect() ½øÐÐÊý¾Ý¿âÁ¬½Ó
+        åç¨±ï¼š
+                db_connect() é€²è¡Œæ•¸æ“šåº«é€£æŽ¥
 
-        Óï·¨£º
+        èªžæ³•ï¼š
                 mixed db_connect(string host, string database,
                         string user, int type|void)
-                »ìºÏÐÍ db_connect(×Ö·û´® host, ×Ö·û´® database,
-                        ×Ö·û´® user, ÕûÊý type|¿Õ)
+                æ··åˆåž‹ db_connect(å­—ç¬¦ä¸² host, å­—ç¬¦ä¸² database,
+                        å­—ç¬¦ä¸² user, æ•´æ•¸ type|ç©º)
 
-        ËµÃ÷£º
-                ½øÐÐÊý¾Ý¿âÁ¬½Ó¡£
+        èªªæ˜Žï¼š
+                é€²è¡Œæ•¸æ“šåº«é€£æŽ¥ã€‚
 
-                host ÎªÒªÁ¬½ÓµÄÊý¾Ý¿âËùÔÚµÄÖ÷»úÃû£¬
-                ÀýÈç£º"127.0.0.1"  "localhost" µÈ
+                host ç‚ºè¦é€£æŽ¥çš„æ•¸æ“šåº«æ‰€åœ¨çš„ä¸»æ©Ÿåï¼Œ
+                ä¾‹å¦‚ï¼š"127.0.0.1"  "localhost" ç­‰
 
-                database Îª²Ù×÷µÄÊý¾Ý¿âÃû³Æ¡£
+                database ç‚ºæ“ä½œçš„æ•¸æ“šåº«åç¨±ã€‚
 
-                user ²Ù×÷Êý¾Ý¿âÕËºÅµÄÓÃ»§Ãû¡£
+                user æ“ä½œæ•¸æ“šåº«è³¬è™Ÿçš„ç”¨æˆ¶åã€‚
 
-                type Êý¾Ý¿â·þÎñÆ÷µÄÀàÐÍ
-                ÔÚÄã±àÒë driver µÄÊ±ºòÈç¹û¶¨ÒåÁË
-                ¶àÖÖÊý¾Ý¿âÖ§³Ö£¬ÀýÈç£º
+                type æ•¸æ“šåº«æœå‹™å™¨çš„é¡žåž‹
+                åœ¨ä½ ç·¨è­¯ driver çš„æ™‚å€™å¦‚æžœå®šç¾©äº†
+                å¤šç¨®æ•¸æ“šåº«æ”¯æŒï¼Œä¾‹å¦‚ï¼š
                         #define USE_MSQL 1
                         #undef USE_MYSQL 2
-                ÔÚÕâÀï¾Í¿ÉÒÔÑ¡Ôñ£º1 »òÕß 2¡£
-                Èç¹û²»´«Èë´Ë²ÎÊý£¬Ä¬ÈÏµÄÊÇÄã¶¨Òå
-                µÄ DEFAULT_DB¡£
+                åœ¨é€™è£¡å°±å¯ä»¥é¸æ“‡ï¼š1 æˆ–è€… 2ã€‚
+                å¦‚æžœä¸å‚³å…¥æ­¤åƒæ•¸ï¼Œé»˜èªçš„æ˜¯ä½ å®šç¾©
+                çš„ DEFAULT_DBã€‚
 
-                ·µ»ØÖµ£º1 Á¬½Ó³É¹¦£¬0 Á¬½ÓÊ§°Ü£¬
-                        Èç¹û·µ»ØÖµÎª×Ö·û´®ÀàÐÍ£¬ÔòÊÇÊý¾Ý¿â·þÎñ
-                        Æ÷Ìá¹©µÄ´íÎóÐÅÏ¢¡£
+                è¿”å›žå€¼ï¼š1 é€£æŽ¥æˆåŠŸï¼Œ0 é€£æŽ¥å¤±æ•—ï¼Œ
+                        å¦‚æžœè¿”å›žå€¼ç‚ºå­—ç¬¦ä¸²é¡žåž‹ï¼Œå‰‡æ˜¯æ•¸æ“šåº«æœå‹™
+                        å™¨æä¾›çš„éŒ¯èª¤ä¿¡æ¯ã€‚
 
-        by ·¢ÏÖºÅ(Find@tx)
+        by ç™¼ç¾è™Ÿ(Find@tx)
 
 
 

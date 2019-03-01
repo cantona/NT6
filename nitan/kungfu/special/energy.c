@@ -1,14 +1,14 @@
-// energy.c 聚魄还虚
+// energy.c 鑱氶瓌閭勮櫅
 // Created by Vin 26/8/2001
 
 #include <ansi.h>
 
 inherit F_CLEAN_UP;
 
-string name() { return HIC "聚魄还虚" NOR; }
+string name() { return HIC "鑱氶瓌閭勮櫅" NOR; }
 
 int perform(object me, string skill)
 {
-        return notify_fail("这项技能能够增加你的最大精气，不需要运用。\n");
+        return notify_fail("閫欓爡鎶�鑳借兘澶犲鍔犱綘鐨勬渶澶х簿姘ｏ紝涓嶉渶瑕侀亱鐢ㄣ�俓n");
 }
 

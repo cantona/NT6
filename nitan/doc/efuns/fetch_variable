@@ -1,18 +1,18 @@
 
-Ãû³Æ£º
-        fetch_variable() - ´«»ØÒ»¸ö±äÊıµÄÖµ¡£
-Óï·¨£º
+åç¨±ï¼š
+        fetch_variable() - å‚³å›ä¸€å€‹è®Šæ•¸çš„å€¼ã€‚
+èªæ³•ï¼š
         mixed fetch_variable( string arg, object ob );
 
-        »ìºÏ fetch_variable( ×Ö´® ±äÊı, Îï¼ş );
-ÓÃ·¨£º
-        ´«»Ø±äÊı arg µÄÖµ£¬×¢Òâ±äÊı arg ±ØĞëÒÑ±»¶¨ÒåÔÚ¸Ã ob ÉÏ¡£
+        æ··åˆ fetch_variable( å­—ä¸² è®Šæ•¸, ç‰©ä»¶ );
+ç”¨æ³•ï¼š
+        å‚³å›è®Šæ•¸ arg çš„å€¼ï¼Œæ³¨æ„è®Šæ•¸ arg å¿…é ˆå·²è¢«å®šç¾©åœ¨è©² ob ä¸Šã€‚
         
-        ×¢Òâ£ºÊ¹ÓÃ´Ë efun ±ØĞèÔÚ options file ÖĞÏÈ¶¨Òå PACKAGE_CONTRIB¡£
-²Î¿¼£º
+        æ³¨æ„ï¼šä½¿ç”¨æ­¤ efun å¿…éœ€åœ¨ options file ä¸­å…ˆå®šç¾© PACKAGE_CONTRIBã€‚
+åƒè€ƒï¼š
         restore_variable, store_variable, restore_object
-×÷Õß£º
+ä½œè€…ï¼š
         Tim Hollebeek  Beek@ZorkMUD, Lima Bean, IdeaExchange, and elsewhere
-·­Òë£º
-        lonely@muds.cn ·­Òë          2011.Oct.2.    v22 °æ
+ç¿»è­¯ï¼š
+        lonely@muds.cn ç¿»è­¯          2011.Oct.2.    v22 ç‰ˆ
 

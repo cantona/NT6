@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��");
+        set("short", "甬道");
         set("long", @LONG
-��һ�����ӭ����ŵ�һ�ɸ��õ�������ζ����������ǰ���
-�����У����ֿ�����ϣ�����㲻����ʼ�ӿ�Ų����뿴�����ﵽ����
-Щʲô������ 
+你一到這裡，迎面就聞到一股腐爛的泥土的味道，不過從前面的
+亮光中，你又看到了希望，你不禁開始加快腳步，想看看那裡到底有
+些什麼東西。 
 LONG );
         set("exits", ([ /* sizeof() == 2 */
                 "north" : __DIR__"didao6",

@@ -75,7 +75,7 @@ varargs void log_file(string file, string text, int backup)
                 {
                         if( !undefinedp(backup) )
                         {
-                                // backup == -1 时为无限
+                                // backup == -1 鏅傜偤鐒￠檺
                                 if( backup != -1 && i >= backup )
                                 {
                                         rm(file+"."+i);

@@ -2,9 +2,9 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Ç°Ôº");
+        set("short", "å‰é™¢");
         set("long", @LONG
-ÕâÀïÊÇÇ°ÔºµÄĞ¡¹ã³¡£¬ÓÃÇà×©ÆÌ¾ÍµÄµØÃæ·Ç³£Õû½à¡£
+é€™è£¡æ˜¯å‰é™¢çš„å°å»£å ´ï¼Œç”¨é’ç£šèˆ–å°±çš„åœ°é¢éå¸¸æ•´æ½”ã€‚
 LONG
         );
         set("exits", ([ /* sizeof() == 4 */
@@ -21,5 +21,5 @@ LONG
         set("no_fight", 1);
         set("outdoors", "yaowang");
         setup();
-//¼Ó¸öpost°å
+//åŠ å€‹postæ¿
 }

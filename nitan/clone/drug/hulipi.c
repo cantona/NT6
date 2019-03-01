@@ -1,5 +1,5 @@
 // Code of ShenZhou
-// hulipi.c ºüÀêÆ¤
+// hulipi.c ç‹è²çš®
 
 #include <ansi.h>
 
@@ -11,13 +11,13 @@ void init();
 
 void create()
 {
-        set_name("ºüÀêÆ¤", ({ "huli pi", "pi" }) );
+        set_name("ç‹è²çš®", ({ "huli pi", "pi" }) );
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "ÕÅ");
-                set("long", "ÕâÊÇÒ»ÕÅÃ«³¤´çĞí£¬ÈáÈí¹â»¬µÄºüÀêÆ¤¡£\n");
+                set("unit", "å¼µ");
+                set("long", "é€™æ˜¯ä¸€å¼µæ¯›é•·å¯¸è¨±ï¼ŒæŸ”è»Ÿå…‰æ»‘çš„ç‹è²çš®ã€‚\n");
                 set("value", 3000);
                 set("no_sell", 1);
                 set("medicine", 1);
@@ -35,7 +35,7 @@ int cure_ob(object me)
                 addn("eff_jingli", -1, me);
                 set("jingli", 0, me);
                 me->apply_condition("bonze_drug", 30);
-                message_vision(HIR "$N³ÔÏÂÒ»ÕÅºüÀêÆ¤£¬Ö»¾õµÃ¸Î³¦´ç¶Ï£¬ÎåÔàÓûÁÑ£¬Ô­À´·şÊ³Ì«¶àÒ©Îï£¬Ò©Ğ§ÊÊµÃÆä·´£¡\n" NOR, this_player());
+                message_vision(HIR "$Nåƒä¸‹ä¸€å¼µç‹è²çš®ï¼Œåªè¦ºå¾—è‚è…¸å¯¸æ–·ï¼Œäº”è‡Ÿæ¬²è£‚ï¼ŒåŸä¾†æœé£Ÿå¤ªå¤šè—¥ç‰©ï¼Œè—¥æ•ˆé©å¾—å…¶åï¼\n" NOR, this_player());
                // this_object()->move("/u/aln/workroom");
                 call_out("destroy", 31);
                 return 1;
@@ -50,7 +50,7 @@ int cure_ob(object me)
         addn("jingli", 300, me);
         me->apply_condition("bonze_drug", 
         me->query_condition("bonze_drug")+30);
-        message_vision(HIY "$N³ÔÏÂÒ»ÕÅºüÀêÆ¤£¬Ö»¾õÈ«ÉíµÄ¾«Á¦¶¼»Ö¸´ÁË¡£\n" NOR, me);
+        message_vision(HIY "$Nåƒä¸‹ä¸€å¼µç‹è²çš®ï¼Œåªè¦ºå…¨èº«çš„ç²¾åŠ›éƒ½æ¢å¾©äº†ã€‚\n" NOR, me);
         call_out("destroy", 31);
         return 1;
 }

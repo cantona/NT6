@@ -3,10 +3,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short",  "�᷿" );
+        set("short",  "廂房" );
         set("long", @LONG
-һ�䲻����᷿����ʰ��ʮ�ָɾ��������Ǽ���ƽ�����
-֮�ã�һ��С����͸��Щ�����ˣ��Ե�ʮ�ֵ����ġ�
+一間不大的廂房，收拾的十分幹凈，看來是家人平是起居
+之用，一扇小窗戶透進些光線了，顯的十分的舒心。
 LONG);
         set("no_fight", 1);
         set("sleep_room", 1);

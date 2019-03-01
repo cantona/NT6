@@ -5,11 +5,11 @@ int is_chat_room() { return 1; }
 
 void create()
 {
-        set("short", "�߾���");
+        set("short", "蛇精洞");
         set("long",@LONG
-�˴����߾�������������ֲ����Ĵ��ɼ���ɫ�ĺ��ǣ���Χ����
-���ߣ�������ʱ�ص��·�����Һ�壬�����˵أ�������һ��Ī���Ŀ�
-�壬��˵����ͷ�߾��Ͳ��ڴ˶����
+此處乃蛇精洞，洞內幽深恐怖，四處可見黑色的骸骨，周圍盡是
+毒蛇，洞頂不時地滴下發臭的液體，置身此地，心中有一種莫名的恐
+懼，據說，九頭蛇精就藏在此洞深處。
 
 LONG);
 
@@ -25,23 +25,23 @@ LONG);
 
 }
 
-// �������Ƿ��Ѿ��μӹ��߾�ս
+// 檢查今天是否已經參加過蛇精戰
 void init()
 {
         object me = this_player();
 
-        // 24Сʱֻ�ܲμ�һ��
+        // 24小時只能參加一次
         if (time() - query("boss/shejing", me) < 2 * 3600 && userp(me) && !wizardp(me)  || query("schedule", me) || query("doing", me) == "trigger")
         {
-                tell_object(me, HIG "\n�Բ�����μ��߾��Կ�ս���ʱ����2Сʱ(Ҳ��׼�ƻ���������ȡ���ƻ������д���)��\n");
-                tell_object(me, HIC "������ϴβμ��߾��Կ�ս����� " + HIY +
-                                  sprintf("%d", (time() - query("boss/shejing", me)) / 3600) + HIC " Сʱ��\n\n" NOR);
+                tell_object(me, HIG "\n對不起，你參加蛇精對抗戰間隔時不足2小時(也不準計劃練功請你取消計劃及所有觸發)。\n");
+                tell_object(me, HIC "你距離上次參加蛇精對抗戰間隔： " + HIY +
+                                  sprintf("%d", (time() - query("boss/shejing", me)) / 3600) + HIC " 小時。\n\n" NOR);
                 me->move(__DIR__"shedong4.8");
                 return;
         }
 
-        // ���òμ�ʱ��
-        tell_object(me, HIG "\n������߾���׼���μӶԿ��߾�ս�����벻Ҫ�뿪������2Сʱ���޷��ٴν��롣\n" NOR);
+        // 設置參加時間
+        tell_object(me, HIG "\n你進入蛇精洞準備參加對抗蛇精戰鬥，請不要離開，否則2小時內無法再次進入。\n" NOR);
         set("boss/shejing", time(), me);
 
         me->save();
@@ -56,7 +56,7 @@ void start_move()
 
         ob = all_inventory(this_object());
 
-        // ����峡��־
+        // 清出清場標志
         delete("doing");
 
         if (! sizeof(ob))return;
@@ -78,8 +78,8 @@ void start_move()
         return;
 }
 
-// �����߾��ļ��ĺ��У����߾��������ӳٽ����з����ڵ�ID
-// �ƶ����߾����⣬��delay_time = 0 ���ӳ�
+// 來自蛇精文件的呼叫，當蛇精死亡後延遲將所有房間內的ID
+// 移動到蛇精洞外，如delay_time = 0 則不延遲
 void move_all_player_out(int delay_time)
 {
         if (! delay_time)

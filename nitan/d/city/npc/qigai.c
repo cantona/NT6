@@ -4,12 +4,12 @@ inherit NPC;
 
 void create()
 {
-        set_name("¿Õ¿Õ¶ù", ({ "qi gai","beggar","gai" }) );
-        set("title", "ÃîÊÖÉñØ¤");
-//        set("title", "ÆòØ¤");
-        set("gender", "ÄĞĞÔ" );
+        set_name("ç©ºç©ºå…’", ({ "qi gai","beggar","gai" }) );
+        set("title", "å¦™æ‰‹ç¥ä¸");
+//        set("title", "ä¹ä¸");
+        set("gender", "ç”·æ€§" );
         set("age", 53);
-        set("long", "Ò»¸öÂúÁ³·çËªÖ®É«µÄÀÏÆòØ¤¡£\n");
+        set("long", "ä¸€å€‹æ»¿è‡‰é¢¨éœœä¹‹è‰²çš„è€ä¹ä¸ã€‚\n");
 
         set("str", 25);
         set("con", 25);
@@ -44,9 +44,9 @@ void create()
         setup();
         set("chat_chance", 15);
         set("chat_msg", ({
-                "¿Õ¿Õ¶ùËµµÀ: ºÃĞÄµÄ´óÒ¯ÄÄ¡« ÉÍÎÒÒª·¹µÄ¼¸¸öÍ­°å°É¡«\n",
-                "¿Õ¿Õ¶ùÀÁÑóÑóµØ´òÁË¸ö¹şÇ·¡£\n",
-                "¿Õ¿Õ¶ùÉìÊÖ×½×¡ÁËÉíÉÏµÄÊ­×Ó£¬ÂîµÀ: ÀÏ×ÓÉíÉÏÃ»¼¸Á½Èâ£¬È«½ĞÄãÃÇ¸øÒ§ÃÓÁË¡£ \n",
+                "ç©ºç©ºå…’èªªé“: å¥½å¿ƒçš„å¤§çˆºå“ªï½ è³æˆ‘è¦é£¯çš„å¹¾å€‹éŠ…æ¿å§ï½\n",
+                "ç©ºç©ºå…’æ‡¶æ´‹æ´‹åœ°æ‰“äº†å€‹å“ˆæ¬ ã€‚\n",
+                "ç©ºç©ºå…’ä¼¸æ‰‹æ‰ä½äº†èº«ä¸Šçš„è¨å­ï¼Œç½µé“: è€å­èº«ä¸Šæ²’å¹¾å…©è‚‰ï¼Œå…¨å«ä½ å€‘çµ¦å’¬ç³œäº†ã€‚ \n",
                 (: random_move :)
         }) );
         carry_object("/clone/food/jitui");
@@ -104,12 +104,12 @@ int accept_object(object me, object obj)
 {
         if( query("money_id", obj) && obj->value() >= 1){
                  command("smile");
-                 command("say ¶àĞ»À² ! ÆäÊµÎÒ»¹ÊÇÓĞµãÇ®µÄ£¬Õâ´ÎÖ»²»¹ıÊÔÊÔÄã°ÕÁË !");
+                 command("say å¤šè¬å•¦ ! å…¶å¯¦æˆ‘é‚„æ˜¯æœ‰é»éŒ¢çš„ï¼Œé€™æ¬¡åªä¸éè©¦è©¦ä½ ç½·äº† !");
                  command("give10silverto"+query("id", me));
         }
         else {
                  command("shake");
-                 command("say ÕâÖÖ¶«Î÷¹í²ÅÒª ! ¹öÒ»±ßÈ¥ !");
+                 command("say é€™ç¨®æ±è¥¿é¬¼æ‰è¦ ! æ»¾ä¸€é‚Šå» !");
                  command("give"+query("id", obj)+"to"+query("id", me));
 //               obj->move(this_player());
         }
@@ -119,6 +119,6 @@ int accept_object(object me, object obj)
 
 int accept_fight(object me)
 {
-        command("say " + RANK_D->query_respect(me) + "ÈÄÃü¢¦Ğ¡µÄÕâ¾ÍÀë¿ª¢¦\n");
+        command("say " + RANK_D->query_respect(me) + "é¥’å‘½â–¡å°çš„é€™å°±é›¢é–‹â–¡\n");
         return 0;
 }

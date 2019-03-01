@@ -3,7 +3,7 @@
 #define TRACE_DETAIL_LENGTH_LIMIT       300
 #define SPRINTF_OVERFLOW                65535
 
-// ´¦Àí´íÎóÑ¶Ï¢µÄº¯Ê½
+// è™•ç†éŒ¯èª¤è¨Šæ¯çš„å‡½å¼
 string tracert_error(mapping error, int caught)
 {
         int count;
@@ -11,12 +11,12 @@ string tracert_error(mapping error, int caught)
         mapping trace;
 
         err_msg = "\n"+sprintf(@ERR
-©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤<Bugs Report>©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤
-[ ´íÎóÊ±¼ä ]: %-s
-[ ´íÎóÄÚÈİ ]: %-s[m
-[ ´íÎóµµ°¸ ]: %-s
-[ ´íÎóĞĞÊı ]: %-d[m
-[ ×ÊÁÏ»ØËİ ]:
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€<Bugs Report>â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+[ éŒ¯èª¤æ™‚é–“ ]: %-s
+[ éŒ¯èª¤å…§å®¹ ]: %-s[m
+[ éŒ¯èª¤æª”æ¡ˆ ]: %-s
+[ éŒ¯èª¤è¡Œæ•¸ ]: %-d[m
+[ è³‡æ–™å›æº¯ ]:
 ERR,
         ctime(time()),
         replace_string(error["error"], "\n", " "),
@@ -27,31 +27,31 @@ ERR,
         {
                 count++;
                 err_msg +=sprintf(@ERR
-    -- µÚ %|3d ±Ê --
-        [ ´¥¶¯Îï¼ş ]: %O
-        [ ³ÌÊ½µµ°¸ ]: %s
-        [ º¯Ê½Ãû³Æ ]: %s(%s)
-        [ ºô½ĞĞĞÊı ]: %s
+    -- ç¬¬ %|3d ç­† --
+        [ è§¸å‹•ç‰©ä»¶ ]: %O
+        [ ç¨‹å¼æª”æ¡ˆ ]: %s
+        [ å‡½å¼åç¨± ]: %s(%s)
+        [ å‘¼å«è¡Œæ•¸ ]: %s
 ERR,
                 count,
                 trace["object"],
                 trace["program"]||"",
                 trace["function"]||"",
                 trace["arguments"] ? implode(map(trace["arguments"], (:typeof($1):)), ", ") : "",
-                (trace["line"] || "Î´Öª")+"");
+                (trace["line"] || "æœªçŸ¥")+"");
 
                 if( trace["arguments"] )
                 {
-                        err_msg += "        [ ´«Èë²ÎÊı ]:\n";
-                        err_msg += implode(map(trace["arguments"], (: "                   ** ("+typeof($1)+")"+implode(explode(sprintf("%."+TRACE_DETAIL_LENGTH_LIMIT+"O\n", $1)+(strlen(sprintf("%O", $1)) > TRACE_DETAIL_LENGTH_LIMIT ? "... Ñ¶Ï¢¹ı³¤Ê¡ÂÔ\n" : ""), "\n"),"\n                      ") :)), "\n")+"\n";
+                        err_msg += "        [ å‚³å…¥åƒæ•¸ ]:\n";
+                        err_msg += implode(map(trace["arguments"], (: "                   ** ("+typeof($1)+")"+implode(explode(sprintf("%."+TRACE_DETAIL_LENGTH_LIMIT+"O\n", $1)+(strlen(sprintf("%O", $1)) > TRACE_DETAIL_LENGTH_LIMIT ? "... è¨Šæ¯éé•·çœç•¥\n" : ""), "\n"),"\n                      ") :)), "\n")+"\n";
                 }
                 if( trace["locals"] )
                 {
-                        err_msg += "        [ ³ÌÊ½±äÊı ]:\n";
-                        err_msg += implode(map(trace["locals"], (: "                   ** ("+typeof($1)+")"+implode(explode(sprintf("%."+TRACE_DETAIL_LENGTH_LIMIT+"O\n", $1)+(strlen(sprintf("%O", $1)) > TRACE_DETAIL_LENGTH_LIMIT ? "... Ñ¶Ï¢¹ı³¤Ê¡ÂÔ\n" : ""), "\n"),"\n                      ") :)), "\n")+"\n";
+                        err_msg += "        [ ç¨‹å¼è®Šæ•¸ ]:\n";
+                        err_msg += implode(map(trace["locals"], (: "                   ** ("+typeof($1)+")"+implode(explode(sprintf("%."+TRACE_DETAIL_LENGTH_LIMIT+"O\n", $1)+(strlen(sprintf("%O", $1)) > TRACE_DETAIL_LENGTH_LIMIT ? "... è¨Šæ¯éé•·çœç•¥\n" : ""), "\n"),"\n                      ") :)), "\n")+"\n";
                 }
         }
-        err_msg += "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤<Bugs Report>©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n\n";
+        err_msg += "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€<Bugs Report>â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n\n";
         return err_msg;
 }
 
@@ -65,22 +65,22 @@ string standard_trace(mapping error, int caught)
 
         /* keep track of number of errors per object...if you're into that */
 
-        res = (caught) ? "´íÎóÑ¶Ï¢±»À¹½Ø£º" : "";
-        res = sprintf("%s\nÖ´ĞĞÊ±¶Î´íÎó£º%s\n³ÌÊ½£º%s µÚ %i ĞĞ\nÎï¼ş£º%s\n",
+        res = (caught) ? "éŒ¯èª¤è¨Šæ¯è¢«æ””æˆªï¼š" : "";
+        res = sprintf("%s\nåŸ·è¡Œæ™‚æ®µéŒ¯èª¤ï¼š%s\nç¨‹å¼ï¼š%s ç¬¬ %i è¡Œ\nç‰©ä»¶ï¼š%s\n",
                       res, error["error"],
                       error["program"], error["line"],
                       error["object"] ? file_name(error["object"]) : "0");
 
         if( !error["object"] && (me = this_player()) ) {
-                res += sprintf("µ±Ç°Íæ¼Ò£º%s(%s) - %O  ËùÔÚ»·¾³£º%O\n",
+                res += sprintf("ç•¶å‰ç©å®¶ï¼š%s(%s) - %O  æ‰€åœ¨ç’°å¢ƒï¼š%O\n",
                                me->name(1), query("id", me), me, environment(me));
                 cmds = me->query_commands();
-                res += me->name(1) + "ÉíÉÏ¼°ËÄÖÜµÄÎïÆ·ÓëËùÔÚµÄ»·¾³Ìá¹©ÒÔÏÂÖ¸Áî£º\n";
+                res += me->name(1) + "èº«ä¸ŠåŠå››å‘¨çš„ç‰©å“èˆ‡æ‰€åœ¨çš„ç’°å¢ƒæä¾›ä»¥ä¸‹æŒ‡ä»¤ï¼š\n";
                 for(i = 0; i<sizeof(cmds); i++)
                         res += sprintf("%-15s  %2d %O\n",
                                        cmds[i][0], cmds[i][1], cmds[i][2]);
 
-                res += sprintf("µ±Ç°µÄÃüÁî£º%O\n", me->query_last_input());
+                res += sprintf("ç•¶å‰çš„å‘½ä»¤ï¼š%O\n", me->query_last_input());
         }
 
         i = 0;
@@ -101,7 +101,7 @@ string standard_trace(mapping error, int caught)
 
         for (; i < s; i++)
         {
-                res = sprintf("%sºô½ĞÀ´×Ô£º%s µÄ %s() µÚ %i ĞĞ£¬Îï¼ş£º %O\n",
+                res = sprintf("%så‘¼å«ä¾†è‡ªï¼š%s çš„ %s() ç¬¬ %i è¡Œï¼Œç‰©ä»¶ï¼š %O\n",
                               res,
                               error["trace"][i]["program"],
                               error["trace"][i]["function"],
@@ -125,11 +125,11 @@ void error_handler(mapping error, int caught)
 
         efun::write_file(LOG_DIR + "debug.log", standard_trace(error, caught));
 
-        // ±ÜÃâÏİÈëÎŞÏŞ´íÎó»Ø±¨»ØÈ¦
+        // é¿å…é™·å…¥ç„¡é™éŒ¯èª¤å›å ±å›åœˆ
         if( previous_object() == this_object() )
         {
                 if( find_object(CHANNEL_D) )
-                        CHANNEL_D->channel_broadcast("debug", "Master object ·¢ÉúÎŞÏŞ´íÎó»ØÈ¦£¬"+error["file"]+" µÚ "+error["line"]+" ĞĞ£¬´íÎó£º"+error["error"]+"£¬ÒÑÇ¿ÖÆÖĞÖ¹¡£");
+                        CHANNEL_D->channel_broadcast("debug", "Master object ç™¼ç”Ÿç„¡é™éŒ¯èª¤å›åœˆï¼Œ"+error["file"]+" ç¬¬ "+error["line"]+" è¡Œï¼ŒéŒ¯èª¤ï¼š"+error["error"]+"ï¼Œå·²å¼·åˆ¶ä¸­æ­¢ã€‚");
                 return;
         }
 
@@ -138,29 +138,29 @@ void error_handler(mapping error, int caught)
 
         if( objectp(user) && userp(user) )
         {
-                if( strlen(msg) >= SPRINTF_OVERFLOW-50000 ) msg = msg[0..SPRINTF_OVERFLOW-50000] + "\n\n[Ñ¶Ï¢¹ı³¤Ê¡ÂÔ...]\n";
+                if( strlen(msg) >= SPRINTF_OVERFLOW-50000 ) msg = msg[0..SPRINTF_OVERFLOW-50000] + "\n\n[è¨Šæ¯éé•·çœç•¥...]\n";
                 user->set_temp("bug_msg", msg);
 
                 if( !wizardp(user) )
                 {
-                        tell_object(user, "[1;5;33mWARNING[m ÕâÀï·¢ÏÖÁË³ô³æ£¬ÇëÓÃ bug Ö¸Áî½«ÏêÏ¸Çé¿ö±¨¸æ¸øÎ×Ê¦»òÏà¹ØÈËÔ±...\n");
+                        tell_object(user, "[1;5;33mWARNING[m é€™è£¡ç™¼ç¾äº†è‡­èŸ²ï¼Œè«‹ç”¨ bug æŒ‡ä»¤å°‡è©³ç´°æƒ…æ³å ±å‘Šçµ¦å·«å¸«æˆ–ç›¸é—œäººå“¡...\n");
 
                         if( find_object(CHANNEL_D) )
                         {
-                                CHANNEL_D->channel_broadcast("debug", user->query_idname()+"Ö´ĞĞÊ±¶Î´íÎó"+(caught ? "(Catch)" : "")+"£º"+error["file"]+" µÚ "+error["line"]+" ĞĞ¡£");
-                                CHANNEL_D->channel_broadcast("debug", "´íÎó£º"+replace_string(error["error"],"\n", " ")+"¡£");
+                                CHANNEL_D->channel_broadcast("debug", user->query_idname()+"åŸ·è¡Œæ™‚æ®µéŒ¯èª¤"+(caught ? "(Catch)" : "")+"ï¼š"+error["file"]+" ç¬¬ "+error["line"]+" è¡Œã€‚");
+                                CHANNEL_D->channel_broadcast("debug", "éŒ¯èª¤ï¼š"+replace_string(error["error"],"\n", " ")+"ã€‚");
                         }
                 }
                 else
-                        tell_object(user, "[1;33mÖ´ĞĞÊ±¶Î´íÎó[m£ºÇëÖ´ĞĞ bug ¼ì²éÏêÏ¸´íÎó»ØËİ¡£\n"+
-                                "[1;33m........µµ°¸[m£º"+error["file"]+"\n[1;33m........ĞĞÊı[m£ºµÚ "+error["line"]+" ĞĞ\n[1;33m........´íÎó[m£º"+replace_string(error["error"],"\n", " ")+"\n");
+                        tell_object(user, "[1;33måŸ·è¡Œæ™‚æ®µéŒ¯èª¤[mï¼šè«‹åŸ·è¡Œ bug æª¢æŸ¥è©³ç´°éŒ¯èª¤å›æº¯ã€‚\n"+
+                                "[1;33m........æª”æ¡ˆ[mï¼š"+error["file"]+"\n[1;33m........è¡Œæ•¸[mï¼šç¬¬ "+error["line"]+" è¡Œ\n[1;33m........éŒ¯èª¤[mï¼š"+replace_string(error["error"],"\n", " ")+"\n");
         }
         else
         {
                 if( find_object(CHANNEL_D) )
                 {
-                        CHANNEL_D->channel_broadcast("debug", (objectp(user) ? base_name(user)+" " : "")+"Ö´ĞĞÊ±¶Î´íÎó"+(caught ? "(Catch)" : "")+"£º"+error["file"]+" µÚ "+error["line"]+" ĞĞ¡£");
-                        CHANNEL_D->channel_broadcast("debug", "´íÎó£º"+replace_string(error["error"],"\n", " ")+"¡£");
+                        CHANNEL_D->channel_broadcast("debug", (objectp(user) ? base_name(user)+" " : "")+"åŸ·è¡Œæ™‚æ®µéŒ¯èª¤"+(caught ? "(Catch)" : "")+"ï¼š"+error["file"]+" ç¬¬ "+error["line"]+" è¡Œã€‚");
+                        CHANNEL_D->channel_broadcast("debug", "éŒ¯èª¤ï¼š"+replace_string(error["error"],"\n", " ")+"ã€‚");
                 }
         }
 
@@ -170,7 +170,7 @@ void error_handler(mapping error, int caught)
 
 // Write an error message into a log file. The error occured in the object
 // 'file', giving the error message 'message'.
-// ¼ÍÂ¼ÏÔÊ¾±àÒë´íÎóÖ®Ñ¶Ï¢
+// ç´€éŒ„é¡¯ç¤ºç·¨è­¯éŒ¯èª¤ä¹‹è¨Šæ¯
 void log_error(string file, string message)
 {
         string error_type;
@@ -185,21 +185,21 @@ void log_error(string file, string message)
         */
         user = this_interactive() || this_player() || previous_object();
 
-        error_type = strsrch(message, "Warning") == -1 ? "´íÎó" : "¾¯¸æ";
+        error_type = strsrch(message, "Warning") == -1 ? "éŒ¯èª¤" : "è­¦å‘Š";
 
         if( objectp(user) && userp(user) )
         {
                 if( !wizardp(user) )
                 {
                         if( find_object(CHANNEL_D) )
-                                CHANNEL_D->channel_broadcast("debug", user->query_idname()+"±àÒëÊ±¶Î"+error_type+"£º"+message);
+                                CHANNEL_D->channel_broadcast("debug", user->query_idname()+"ç·¨è­¯æ™‚æ®µ"+error_type+"ï¼š"+message);
                 }
-                tell_object(user, "\n±àÒëÊ±¶Î"+error_type+"£º" + message);
+                tell_object(user, "\nç·¨è­¯æ™‚æ®µ"+error_type+"ï¼š" + message);
         }
         else
         {
                 if( find_object(CHANNEL_D) )
-                        CHANNEL_D->channel_broadcast("debug", (objectp(user) ? base_name(user)+" " : "")+"±àÒëÊ±¶Î"+error_type+"£º"+message);
+                        CHANNEL_D->channel_broadcast("debug", (objectp(user) ? base_name(user)+" " : "")+"ç·¨è­¯æ™‚æ®µ"+error_type+"ï¼š"+message);
         }
         efun::write_file(LOG_DIR + "log", message);
 }

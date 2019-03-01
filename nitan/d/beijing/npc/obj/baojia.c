@@ -3,21 +3,21 @@
 inherit ARMOR;
 void create()
 {
-        set_name( CYN"ÕæË¿"NOR+HIY"±¦¼×"NOR,  ({ "bao jia", "jia", "armor" }));
+        set_name( CYN"çœŸçµ²"NOR+HIY"å¯¶ç”²"NOR,  ({ "bao jia", "jia", "armor" }));
         set_weight(10000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼ş");
-                set("long", "Ò»¼ûºÚ÷î÷îµÄ¼×£¬ºÁ²»ÆğÑÛ¡£\n");
+                set("unit", "ä»¶");
+                set("long", "ä¸€è¦‹é»‘é»é»çš„ç”²ï¼Œæ¯«ä¸èµ·çœ¼ã€‚\n");
                 /*
-                set("no_drop", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
-                set("no_get", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄÇ¶ù¡£\n");
-                set("no_put", "ÕâÑù¶«Î÷²»ÄÜ·ÅÔÚÄÇ¶ù¡£\n");
-                set("no_steal", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄÇ¶ù¡£\n");
-                set("no_beg", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄÇ¶ù¡£\n");
+                set("no_drop", "é€™æ¨£æ±è¥¿ä¸èƒ½é›¢é–‹ä½ ã€‚\n");
+                set("no_get", "é€™æ¨£æ±è¥¿ä¸èƒ½é›¢é–‹é‚£å…’ã€‚\n");
+                set("no_put", "é€™æ¨£æ±è¥¿ä¸èƒ½æ”¾åœ¨é‚£å…’ã€‚\n");
+                set("no_steal", "é€™æ¨£æ±è¥¿ä¸èƒ½é›¢é–‹é‚£å…’ã€‚\n");
+                set("no_beg", "é€™æ¨£æ±è¥¿ä¸èƒ½é›¢é–‹é‚£å…’ã€‚\n");
                 */
-                set("no_sell", "ÕâÑù¶«Î÷²»ÄÜÂô¡£\n");
+                set("no_sell", "é€™æ¨£æ±è¥¿ä¸èƒ½è³£ã€‚\n");
                 set("value", 100000);
                 set("material", "cloth");
                 set("armor_prop/armor", 200);

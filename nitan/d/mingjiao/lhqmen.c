@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�һ������");
+        set("short", "烈火旗大門");
         set("long", @LONG
-�����������һ���Ĵ��ţ�ׯ�Ϲ��ӣ���ǰ�Բ������������졣
-��ɫ�Ŷ����ڻ�������ϣ����⾫��Ҳ��ͨ�������ܶ�ıؾ�֮�ء�
-������������Ҳ�ر�ࡣ
+這裡是明教烈火旗的大門，莊嚴古樸，門前對插四面鑲紅飛龍旗。
+金色門釘扣在火漆紅門上，分外精神。也是通往明教總舵的必經之地。
+所以來往的人也特別多。
 LONG );
         set("exits", ([
                 "enter"     : __DIR__"lhqyuan",

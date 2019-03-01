@@ -3,13 +3,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIR "ÍõÕßÖ®ĞÄ" NOR, ({ "wangzhe zhixin", "wangzhe", "stone" }));
+        set_name(HIR "ç‹è€…ä¹‹å¿ƒ" NOR, ({ "wangzhe zhixin", "wangzhe", "stone" }));
         set_weight(3000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIR "ÕâÊÇÒ»¿Å¾§Ó¨ÎŞè¦µÄ±¦Ê¯£¬¾İËµÓµÓĞ×ÅÆæ»ÃµÄÁ¦Á¿£¬ÊÇÓÃÀ´ÂÌ»¯Ì××°µÄ±Ø±¸²ÄÁÏ¡£\n" NOR); 
-                set("unit", "¿é");
+                set("long", HIR "é€™æ˜¯ä¸€é¡†æ™¶ç‘©ç„¡ç‘•çš„å¯¶çŸ³ï¼Œæ“šèªªæ“æœ‰è‘—å¥‡å¹»çš„åŠ›é‡ï¼Œæ˜¯ç”¨ä¾†ç¶ åŒ–å¥—è£çš„å¿…å‚™ææ–™ã€‚\n" NOR); 
+                set("unit", "å¡Š");
                 set("value", 500000);
                 set("no_sell", 1);
                 set("auto_load", 1);

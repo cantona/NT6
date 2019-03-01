@@ -3,7 +3,7 @@
 // save_ed_setup and restore_ed_setup are called by the ed to maintain
 // individual options settings. These functions are located in the master
 // object so that the local admins can decide what strategy they want to use.
-// ´¢´æÒ»¸öÊ¹ÓÃÕßµÄ±à¼­³ÌÊ½Éè¶¨»ò×éÌ¬Éè¶¨
+// å„²å­˜ä¸€å€‹ä½¿ç”¨è€…çš„ç·¨è¼¯ç¨‹å¼è¨­å®šæˆ–çµ„æ…‹è¨­å®š
 int save_ed_setup(object user, int code)
 {
         string file;
@@ -18,7 +18,7 @@ int save_ed_setup(object user, int code)
 
 // Retrieve the ed setup. No meaning to defend this file read from
 // unauthorized access.
-// È¡µÃÊ¹ÓÃÕßµÄ±à¼­³ÌÊ½Éè¶¨ (setup) »ò×éÌ¬Éè¶¨
+// å–å¾—ä½¿ç”¨è€…çš„ç·¨è¼¯ç¨‹å¼è¨­å®š (setup) æˆ–çµ„æ…‹è¨­å®š
 int retrieve_ed_setup(object user)
 {
         string file;
@@ -35,14 +35,14 @@ int retrieve_ed_setup(object user)
 // called if a user connection is broken while in the editor; allows
 // the mudlib to save the changes in an alternate file without modifying
 // the original
-// Ê¹ÓÃÕß²»Õı³£¶ÏÏßÊ±£¬±¸·İÆä±à¼­ÄÚÈİ
+// ä½¿ç”¨è€…ä¸æ­£å¸¸æ–·ç·šæ™‚ï¼Œå‚™ä»½å…¶ç·¨è¼¯å…§å®¹
 string get_save_file_name(string file, object user)
 {
         return sprintf("%s.%d", file, time());
 }
 
 // make_path_absolute: This is called by the driver to resolve path names in ed.
-// ÈÃ ed() ×ª»»Óû¶ÁĞ´µµ°¸µÄÏà¶ÔÂ·¾¶Ãû³ÆÎª¾ø¶ÔÂ·¾¶Ãû³Æ
+// è®“ ed() è½‰æ›æ¬²è®€å¯«æª”æ¡ˆçš„ç›¸å°è·¯å¾‘åç¨±ç‚ºçµ•å°è·¯å¾‘åç¨±
 string make_path_absolute(string file)
 {
         file = resolve_path((string)query("cwd", this_player()), file);

@@ -1,17 +1,17 @@
-// Obj: /d/lingxiao/obj/yupai.c º®ÓñÅÆ
+// Obj: /d/lingxiao/obj/yupai.c å¯’ç‰ç‰Œ
 // Last Modified by winder on Jul. 15 2001
 
 inherit ITEM;
 #include <ansi.h>
 void create()
 {
-        set_name(HIW"º®ÓñÅÆ"NOR, ({"hanyu pai", "pai"}));
+        set_name(HIW"å¯’ç‰ç‰Œ"NOR, ({"hanyu pai", "pai"}));
         set_weight(500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿é");
-                set("long","ÕâÊÇÒ»¿éÑ©°×µÄÓñÅÆ£¬´¥ÊÖÉúº®£¬ÄıÈËÆøÑª¡£\n");
+                set("unit", "å¡Š");
+                set("long","é€™æ˜¯ä¸€å¡Šé›ªç™½çš„ç‰ç‰Œï¼Œè§¸æ‰‹ç”Ÿå¯’ï¼Œå‡äººæ°£è¡€ã€‚\n");
                 set("material", "yu");
         }
 }

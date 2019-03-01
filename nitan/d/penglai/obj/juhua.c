@@ -6,14 +6,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIY "¾Õ»¨" NOR, ({ "penglai juhua" }) );
+        set_name(HIY "èŠèŠ±" NOR, ({ "penglai juhua" }) );
         set_weight(100);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¶ä");
+                set("unit", "æœµ");
                 set("value", 1);
-                set("long", HIY "ÕâÊÇÒ»¶ä¾Õ»¨£¬»¨°ê³ÊÏÖ³ö¸÷ÖÖ²»Í¬µÄÑÕÉ«£¬¾İËµÖ»ÓĞÅîÀ³ÏÉµº²ÅÓĞ¡£\n" NOR);
+                set("long", HIY "é€™æ˜¯ä¸€æœµèŠèŠ±ï¼ŒèŠ±ç“£å‘ˆç¾å‡ºå„ç¨®ä¸åŒçš„é¡è‰²ï¼Œæ“šèªªåªæœ‰è“¬èŠä»™å³¶æ‰æœ‰ã€‚\n" NOR);
         }
 
         setup();

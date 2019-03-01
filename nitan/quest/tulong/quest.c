@@ -1,27 +1,27 @@
-// ÉıÖ°ÌåÏµ
-// ask id about ¹¦ÀÍ
+// å‡è·é«”ç³»
+// ask id about åŠŸå‹
 #include <ansi.h>
 
 string *tang=({
-        HIG"»ğÔÆ×ù"NOR,
-        HIG"³àÔÆ×ù"NOR,
-        HIW"½ğÔÆ×ù"NOR,
-        BLU"ĞşÔÆ×ù"NOR,
-        YEL"ÍÁÔÆ×ù"NOR,
-        HIG"Á«»¨×ù"NOR,
-        HIG"ºé»¨×ù"NOR,
-        HIW"°Ù»¨×ù"NOR,
-        BLU"Ì«ÔÆ×ù"NOR,
-        YEL"ºêÔÆ×ù"NOR,
+        HIG"ç«é›²åº§"NOR,
+        HIG"èµ¤é›²åº§"NOR,
+        HIW"é‡‘é›²åº§"NOR,
+        BLU"ç„é›²åº§"NOR,
+        YEL"åœŸé›²åº§"NOR,
+        HIG"è“®èŠ±åº§"NOR,
+        HIG"æ´ªèŠ±åº§"NOR,
+        HIW"ç™¾èŠ±åº§"NOR,
+        BLU"å¤ªé›²åº§"NOR,
+        YEL"å®é›²åº§"NOR,
         });
 
 string *zhiwei=({
-        GRN"¸±ÏãÖ÷"NOR,
-        HIG"ÏãÖ÷"NOR,
-        HIY"¸±ÌÃÖ÷"NOR,
-        HIW"ÌÃÖ÷"NOR,
-        HIY"½ÌÖ÷"NOR,
-        HIR"×Ü½ÌÖ÷"NOR,
+        GRN"å‰¯é¦™ä¸»"NOR,
+        HIG"é¦™ä¸»"NOR,
+        HIY"å‰¯å ‚ä¸»"NOR,
+        HIW"å ‚ä¸»"NOR,
+        HIY"æ•™ä¸»"NOR,
+        HIR"ç¸½æ•™ä¸»"NOR,
         });
 
 int find_zhiwei(int level);
@@ -108,7 +108,7 @@ int find_zhiwei(int level)
                 if(((int)us[i]->query("level")==level)
                         && ((int)us[i]->query("tiandihui/tang")==ttang))
                 {
-                        write(CYN"ÔÆ·çÀïËµµÀ£ºÎÒ»ğÔÆ½ÌÏÖÔÚÃ»ÓĞºÏÊÊµÄÎ»ÖÃ¸øÄã¡£\n"NOR);
+                        write(CYN"é›²é¢¨è£¡èªªé“ï¼šæˆ‘ç«é›²æ•™ç¾åœ¨æ²’æœ‰åˆé©çš„ä½ç½®çµ¦ä½ ã€‚\n"NOR);
                         return 0;
                 }
         }
@@ -158,13 +158,13 @@ int check_ob(object ob,int level)
         if(exp<lvl_exp)
         {
                 message_vision(
-CYN"³Â½øÄÏ¶Ô$N"CYN"ËµµÀ£ºÄãµÄ¾­ÑéÌ«ÉÙ£¬ÎŞ·¨Ê¤ÈÎ"+zhiwei[level]+CYN"Ö®Ö°¡£\n"NOR,ob);
+CYN"é™³é€²å—å°$N"CYN"èªªé“ï¼šä½ çš„ç¶“é©—å¤ªå°‘ï¼Œç„¡æ³•å‹ä»»"+zhiwei[level]+CYN"ä¹‹è·ã€‚\n"NOR,ob);
                 return 0;
         }
         if(job<lvl_job)
         {
                 message_vision(
-CYN"ÔÆ·çÀï¶Ô$N"CYN"ËµµÀ£ºÂÛµ½¹±Ï×£¬ÎÒ½ÌÖĞ»¹ÓĞºÜ¶àĞÖµÜÔÚÄãÖ®ÉÏ¡£ÎÒ¿´Äã»¹ÎŞ·¨Ê¤ÈÎ"+zhiwei[level]+CYN"Ò»Ö°¡£\n"NOR,ob);
+CYN"é›²é¢¨è£¡å°$N"CYN"èªªé“ï¼šè«–åˆ°è²¢ç»ï¼Œæˆ‘æ•™ä¸­é‚„æœ‰å¾ˆå¤šå…„å¼Ÿåœ¨ä½ ä¹‹ä¸Šã€‚æˆ‘çœ‹ä½ é‚„ç„¡æ³•å‹ä»»"+zhiwei[level]+CYN"ä¸€è·ã€‚\n"NOR,ob);
                 return 0;
         }
         return 1;
@@ -173,17 +173,17 @@ CYN"ÔÆ·çÀï¶Ô$N"CYN"ËµµÀ£ºÂÛµ½¹±Ï×£¬ÎÒ½ÌÖĞ»¹ÓĞºÜ¶àĞÖµÜÔÚÄãÖ®ÉÏ¡£ÎÒ¿´Äã»¹ÎŞ·¨Ê¤ÈÎ"
 string assume_tang(object ob,int level,int ttang)
 {
         message_vision(
-CYN"ÔÆ·çÀï¶Ô×Å$N"CYN"µãÁËµãÍ·µÀ£º²»´í£¬ÎÒÌìµØ»áĞÖµÜÖĞÊıÄã¾¡Ö°¾¡Ôğ£¬"+tang[ttang]+zhiwei[level]+CYN"Ö®Ö°¾ÍÓÉÄãÀ´µ£ÈÎ°É¡£\n"NOR,ob);
+CYN"é›²é¢¨è£¡å°è‘—$N"CYN"é»äº†é»é ­é“ï¼šä¸éŒ¯ï¼Œæˆ‘å¤©åœ°æœƒå…„å¼Ÿä¸­æ•¸ä½ ç›¡è·ç›¡è²¬ï¼Œ"+tang[ttang]+zhiwei[level]+CYN"ä¹‹è·å°±ç”±ä½ ä¾†æ“”ä»»å§ã€‚\n"NOR,ob);
         ob->set("tiandihui/tang",ttang);
         ob->add("tiandihui/level",1);
         ob->add("combat_exp",10000);
-        ob->set("title",HIW"»ğÔÆ½Ì"+tang[ttang]+zhiwei[level]);
+        ob->set("title",HIW"ç«é›²æ•™"+tang[ttang]+zhiwei[level]);
         if(level>3)
-                ob->set("title",HIW"»ğÔÆ½Ì"+zhiwei[level]);
+                ob->set("title",HIW"ç«é›²æ•™"+zhiwei[level]);
         message_vision(
-"ÔÆ·çÀï´Ó»³ÖĞÈ¡³öÒ»Ğ©ÒøÁ½ËµµÀ£ºÕâĞ©ÒøÁ½ÊÇÄãĞÁ¿àËùµÃ¡£\n",ob);
+"é›²é¢¨è£¡å¾æ‡·ä¸­å–å‡ºä¸€äº›éŠ€å…©èªªé“ï¼šé€™äº›éŠ€å…©æ˜¯ä½ è¾›è‹¦æ‰€å¾—ã€‚\n",ob);
         MONEY_D->pay_player(ob,200000);
-        return (HIW"»ğÔÆ½Ì"+tang[ttang]+zhiwei[level]);
+        return (HIW"ç«é›²æ•™"+tang[ttang]+zhiwei[level]);
 }
 
 

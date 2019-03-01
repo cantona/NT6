@@ -6,17 +6,17 @@ inherit SWORD;
 
 void create()
 {
-        set_name("Ê÷Ö¦", ({ "shuzhi", "stick" }));
+        set_name("æ¨¹æ", ({ "shuzhi", "stick" }));
         set_weight(1000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ù");
-                set("long","ÕâÊÇÒ»¸ùÆÕÍ¨µÄĞ¡Ê÷Ö¦£¬Äã»ÓÁËÁ½ÏÂ£¬¸Ğ¾õ¿ÉÒÔÓÃÀ´»÷´ÌµĞÈË¡£\n");
+                set("unit", "æ ¹");
+                set("long","é€™æ˜¯ä¸€æ ¹æ™®é€šçš„å°æ¨¹æï¼Œä½ æ®äº†å…©ä¸‹ï¼Œæ„Ÿè¦ºå¯ä»¥ç”¨ä¾†æ“Šåˆºæ•µäººã€‚\n");
                 set("value", 1);
                 set("material", "wood");
-                set("wield_msg", "$NÄÃ³öÒ»¸ù$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N·ÅÏÂÁËÊÖÖĞµÄ$n¡£\n");
+                set("wield_msg", "$Næ‹¿å‡ºä¸€æ ¹$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Næ”¾ä¸‹äº†æ‰‹ä¸­çš„$nã€‚\n");
         }
         init_sword(2);
         setup();

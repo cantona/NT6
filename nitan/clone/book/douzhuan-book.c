@@ -1,4 +1,4 @@
-// douzhuan-book.c ¶·×ªĞÇÒÆ
+// douzhuan-book.c é¬¥è½‰æ˜Ÿç§»
 
 #include <ansi.h>
 
@@ -6,20 +6,20 @@ inherit BOOK;
 
 void create()
 {
-        set_name(CYN "¶·×ªĞÇÒÆ" NOR, ({ "douzhuan book", "douzhuan", "book" }));
+        set_name(CYN "é¬¥è½‰æ˜Ÿç§»" NOR, ({ "douzhuan book", "douzhuan", "book" }));
         set_weight(500);
         if (clonep())
                 set_default_object(__FILE__);
         else
         {
-                set("unit", "±¾");
+                set("unit", "æœ¬");
                 set("no_sell", 1);
-                set("long", "ÕâÊÇÒ»±¾¼ÇÔØÁËÄ½Èİ¼Ò¶·×ªĞÇÒÆµÄÃØ¼®¡£\n");
+                set("long", "é€™æ˜¯ä¸€æœ¬è¨˜è¼‰äº†æ…•å®¹å®¶é¬¥è½‰æ˜Ÿç§»çš„ç§˜ç±ã€‚\n");
                 set("value", 1000);
                 set("material", "paper");
                 set("skill", ([
                         "name":         "douzhuan-xingyi",
-                        "family_name" : "Ä½ÈİÊÀ¼Ò",
+                        "family_name" : "æ…•å®¹ä¸–å®¶",
                         "exp_required": 100000,
                         "jing_cost" :   50,
                         "difficulty":   40,

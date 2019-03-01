@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��ʯ·" );
+        set("short", "青石路" );
         set("long", @LONG
-һ����ʯ�̳ɵ�·��ƽ̹������·�����档����������������
-���˶�������ȥ�˳�����ЪЪ�ţ�һЩС��Ҳ�˻����������Ժȵ�
-������
+一條青石舖成的路，平坦寬闊，路的兩面。綠樹成蔭，來往的人
+累了都到樹下去乘乘涼，歇歇腳，一些小販也乘機在這裡買點吃喝的
+東西。
 LONG );
         set("exits", ([
                 "east" : "/d/jingzhou/nanshilu", 

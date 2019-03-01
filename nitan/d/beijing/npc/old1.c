@@ -2,8 +2,8 @@ inherit BUNCHER;
 
 void create()
 {
-        set_name("ÀÏ¸¾", ({ "old woman", "old", "woman" }) );
-        set("gender", "Å®ĞÔ" );
+        set_name("è€å©¦", ({ "old woman", "old", "woman" }) );
+        set("gender", "å¥³æ€§" );
         set("age", 63);
         set("shen_type", 1);
         set("combat_exp", 10000);

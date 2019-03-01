@@ -1,15 +1,15 @@
 // Last Modified by Sir on May. 22 2001
-// xiuxishi.c ��Ϣ��
+// xiuxishi.c 休息室
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "��Ϣ��");
+        set("short", "休息室");
         set("long", @LONG
-�����Ǻ�ɽ�����ֵ���Ϣ�ҡ����߷ǳ��谵������û��ʲô��Ķ�
-����ֻ���м����һ����ʰ����������Ĵ󴲣��м���ҹ�����ֵ�Сʦ
-̫����˯����
+這裡是恆山白雲庵的休息室。光線非常昏暗。房裡沒有什麼別的東
+西，只有中間放著一張收拾得舒舒服服的大床，有幾個夜晚守庵的小師
+太正在睡覺。
 LONG
         );
         set("exits", ([

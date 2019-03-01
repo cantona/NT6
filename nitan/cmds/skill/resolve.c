@@ -19,49 +19,49 @@ int main(object me, string arg)
         mapping data;
 
         if( !arg )
-                return notify_fail("Ö¸Áî¸ñÊ½£ºresolve <¶¯Ì¬×°±¸>\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šresolve <å‹•æ…‹è£å‚™>\n");
 
         if( me->is_busy() )
-                return notify_fail("ÏÈÃ¦ÍêÁËÄãµÄÊÂÇéÔÙ×öÕâ¼şÊÂÇé°É£¡\n");
+                return notify_fail("å…ˆå¿™å®Œäº†ä½ çš„äº‹æƒ…å†åšé€™ä»¶äº‹æƒ…å§ï¼\n");
 
         if( me->is_fighting() )
-                return notify_fail("ÄãÏÖÔÚÕıÔÚ´ò¼Ü£¬Ã»Ê±¼ä×öÕâĞ©ÊÂÇé¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£åœ¨æ‰“æ¶ï¼Œæ²’æ™‚é–“åšé€™äº›äº‹æƒ…ã€‚\n");
 
         if( !objectp(item = present(arg, me)) )
-                return notify_fail("ÄãÉíÉÏÃ»ÓĞ" + arg + "ÕâÑù×°±¸°¡¡£\n");
+                return notify_fail("ä½ èº«ä¸Šæ²’æœ‰" + arg + "é€™æ¨£è£å‚™å•Šã€‚\n");
 
         if( !objectp(scroll = present("resolve scroll", me)) )
-                return notify_fail("ÄãÉíÉÏÃ»ÓĞ·Ö½â¾íÖá¡£\n");
+                return notify_fail("ä½ èº«ä¸Šæ²’æœ‰åˆ†è§£å·è»¸ã€‚\n");
 
         if( query("max_neili", me)<300 )
-                return notify_fail("ÄãÏÖÔÚµÄÄÚÁ¦ĞŞÎªÓĞÏŞ£¬ÎŞ·¨·Ö½âÎïÆ·¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çš„å…§åŠ›ä¿®ç‚ºæœ‰é™ï¼Œç„¡æ³•åˆ†è§£ç‰©å“ã€‚\n");
 
         if( query("max_jingli", me)<300 )
-                return notify_fail("ÄãÏÖÔÚµÄ¾«Á¦ĞŞÎªÓĞÏŞ£¬ÎŞ·¨·Ö½âÎïÆ·¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çš„ç²¾åŠ›ä¿®ç‚ºæœ‰é™ï¼Œç„¡æ³•åˆ†è§£ç‰©å“ã€‚\n");
 
         if( query("jingli", me)<300 )
-                return notify_fail("ÄãÏÖÔÚ¾«Á¦²»¼Ã£¬ÎŞ·¨·Ö½âÎïÆ·¡£\n");
+                return notify_fail("ä½ ç¾åœ¨ç²¾åŠ›ä¸æ¿Ÿï¼Œç„¡æ³•åˆ†è§£ç‰©å“ã€‚\n");
 
         if( query("equipped", item) )
-                return notify_fail("ÄãÏÈĞ¶³ıËûÏÈ¡£\n");
+                return notify_fail("ä½ å…ˆå¸é™¤ä»–å…ˆã€‚\n");
 
         if( query("no_identify", item) )
-                return notify_fail("´ËÎïÆ·»¹Ã»ÓĞÇ©¶¨¡£\n");
+                return notify_fail("æ­¤ç‰©å“é‚„æ²’æœ‰ç°½å®šã€‚\n");
 
         if( !query("enchase", item) || !query("enchase/apply_prop", item) )
-                return notify_fail("Õâ¸öÎïÆ·ÉÏÃæÃ»ÓĞ¿ÉÓÃÀ´·Ö½âµÄÊôĞÔÔªËØ¡£\n");
+                return notify_fail("é€™å€‹ç‰©å“ä¸Šé¢æ²’æœ‰å¯ç”¨ä¾†åˆ†è§£çš„å±¬æ€§å…ƒç´ ã€‚\n");
 
         if( item->is_item_make() || !sizeof(ins=query("insert", item)) )
-                return notify_fail("Õâ¸öÎïÆ·ÎŞ·¨ÓÃÀ´·Ö½âÊôĞÔÔªËØ¡£\n");
+                return notify_fail("é€™å€‹ç‰©å“ç„¡æ³•ç”¨ä¾†åˆ†è§£å±¬æ€§å…ƒç´ ã€‚\n");
 
         if( query("maze_item", item) )
-                return notify_fail("Õâ¸öÎïÆ·À´Àú²»Ã÷£¬²»¿ÉÒÔÓÃÀ´·Ö½â¡£\n");
+                return notify_fail("é€™å€‹ç‰©å“ä¾†æ­·ä¸æ˜ï¼Œä¸å¯ä»¥ç”¨ä¾†åˆ†è§£ã€‚\n");
 
         if( query("enchase/increase", item) )
-                return notify_fail("¸ÄÔì¹ıµÄ×°±¸²»¿ÉÒÔÓÃÀ´·Ö½âÊôĞÔÔªËØ¡£\n");
+                return notify_fail("æ”¹é€ éçš„è£å‚™ä¸å¯ä»¥ç”¨ä¾†åˆ†è§£å±¬æ€§å…ƒç´ ã€‚\n");
 
-        tell_object(me, HIM "\nÄãË«Ä¿Î¢±Õ£¬½«·Ö½â¾íÖáÓë"+item->name()+HIM"ÄıÓÚÉíÇ°£¬ÔË×ªÄÚ¾¢ÆÈ"
-                        "Ê¹ËüÃÇ¿ÕÖĞĞı×ª½»ÈÚ¡£\n" NOR);
+        tell_object(me, HIM "\nä½ é›™ç›®å¾®é–‰ï¼Œå°‡åˆ†è§£å·è»¸èˆ‡"+item->name()+HIM"å‡äºèº«å‰ï¼Œé‹è½‰å…§å‹è¿«"
+                        "ä½¿å®ƒå€‘ç©ºä¸­æ—‹è½‰äº¤èã€‚\n" NOR);
 
         me->start_busy(1);
         addn("jingli", -200, me);
@@ -72,7 +72,7 @@ int main(object me, string arg)
                 ks = keys(apply);
                 for( j=0; j<sizeof(ks); j++ ) {
                         my_id = ks[j];
-                        my_name = EQUIPMENT_D->chinese(my_id)+"ÔªËØ";
+                        my_name = EQUIPMENT_D->chinese(my_id)+"å…ƒç´ ";
                         data = ([]);
                         data["element"] = my_id;
                         data["name"] = my_name;
@@ -82,11 +82,11 @@ int main(object me, string arg)
                 }
         }
 
-        message("vision", HIW "\nö®Ê±¼äÖ»¼û" + me->name() + HIW "ÉíÇ°Ò»µÀµÀ"
-                "¹â»ªÉÁ¹ı£¬µ«×ªË²¼´ÊÅ£¬ËÆºõ·¢ÉúÁËÊ²Ã´²»Í¬Ñ°³£µÄ"
-                "ÊÂÇé¡£\n\n" NOR, environment(me), ({me}));
+        message("vision", HIW "\néœæ™‚é–“åªè¦‹" + me->name() + HIW "èº«å‰ä¸€é“é“"
+                "å…‰è¯é–ƒéï¼Œä½†è½‰ç¬å³é€ï¼Œä¼¼ä¹ç™¼ç”Ÿäº†ä»€éº¼ä¸åŒå°‹å¸¸çš„"
+                "äº‹æƒ…ã€‚\n\n" NOR, environment(me), ({me}));
 
-        tell_object(me, HIW "ö®Ê±¼äÖ»¼ûÍòµÀ¹â»ª¼²ÉÁ¶ø¹ı£¬Äã¼±Ã¦Éì³öË«ÊÖ£¬·¢ÏÖÕÆĞÄÔÌÑú×ÅÆßÉ«Ï¼¹â¡£\n\n" NOR);
+        tell_object(me, HIW "éœæ™‚é–“åªè¦‹è¬é“å…‰è¯ç–¾é–ƒè€Œéï¼Œä½ æ€¥å¿™ä¼¸å‡ºé›™æ‰‹ï¼Œç™¼ç¾æŒå¿ƒè˜Šæ¼¾è‘—ä¸ƒè‰²éœå…‰ã€‚\n\n" NOR);
 
         addn("max_jingli", -1, me);
         destruct(scroll);

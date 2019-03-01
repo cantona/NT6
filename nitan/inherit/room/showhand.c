@@ -1,30 +1,30 @@
-// suoha.c Ëó¹ş£¬Ö»Ö§³ÖÁ½ÈË, Written by LLM
+// suoha.c æ¢­å“ˆï¼Œåªæ”¯æŒå…©äºº, Written by LLM
 #define DIAN(x)     (x-1)/4
 #define HUA(x)     x%4
 #include <ansi.h>
 inherit ROOM;
 
-object *player=({});//Íæ¼Ò
+object *player=({});//ç©å®¶
 int *cards = ({1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,
-20,21,22,23,24,25,26,27,28});//ËùÓĞµÄÅÆ
-int yazhu=0;//¿ÉÒÔÑº×¢µÄ±ê¼Ç
-int chouma=0;//×ÀÃæÒÑ¾­ÑºÉÏµÄ³ïÂë
-int yazhu_chouma=0;//±ğÈËÑºµÄÈÃÄã¸úµÄ³ïÂëÊı
-int wait_time=0;//µÈ´ı×îºó¶ÁÃë¼ÇºÅ
-int quansuo=0;//È«Ëó
+20,21,22,23,24,25,26,27,28});//æ‰€æœ‰çš„ç‰Œ
+int yazhu=0;//å¯ä»¥æŠ¼æ³¨çš„æ¨™è¨˜
+int chouma=0;//æ¡Œé¢å·²ç¶“æŠ¼ä¸Šçš„ç±Œç¢¼
+int yazhu_chouma=0;//åˆ¥äººæŠ¼çš„è®“ä½ è·Ÿçš„ç±Œç¢¼æ•¸
+int wait_time=0;//ç­‰å¾…æœ€å¾Œè®€ç§’è¨˜è™Ÿ
+int quansuo=0;//å…¨æ¢­
 mapping *suoha_cards=({
 ([
 "anpai":0,
 "mingpai":({}),
-]),//×¯¼ÒµÄÅÆ
+]),//èŠå®¶çš„ç‰Œ
 ([
 "anpai":0,
 "mingpai":({}),
-]),//¶Ô¼ÒµÄÅÆ
+]),//å°å®¶çš„ç‰Œ
 });
-string *all_card=({"£¸","£¹","¢º","£Ê","£Ñ","£Ë","£Á" });
-string *all_sort=({HIB"ºÚÌÒ",HIR"·½Æ¬",HIC"²İ»¨",HIR"ºìÌÒ",});
-string *all_pai=({"É¢ÅÆ","Ò»¶Ô","Á½¶Ô","ÈıÌõ","Ë³×Ó","Í¬»¨","·É»ú","Õ¨µ¯","Í¬»¨Ë³"});
+string *all_card=({"ï¼˜","ï¼™","â–¡","ï¼ª","ï¼±","ï¼«","ï¼¡" });
+string *all_sort=({HIB"é»‘æ¡ƒ",HIR"æ–¹ç‰‡",HIC"è‰èŠ±",HIR"ç´…æ¡ƒ",});
+string *all_pai=({"æ•£ç‰Œ","ä¸€å°","å…©å°","ä¸‰æ¢","é †å­","åŒèŠ±","é£›æ©Ÿ","ç‚¸å½ˆ","åŒèŠ±é †"});
 
 void suoha_init();
 void deal_an_card();
@@ -43,17 +43,17 @@ string type_paiju(object);
 int check_chouma();
 string query_obs();
 
-string type_card(int x)//µ¥ÕÅ±íÊö
+string type_card(int x)//å–®å¼µè¡¨è¿°
 {
     return sprintf("%s%s%s"NOR,all_sort[HUA(x)],HIW,all_card[DIAN(x)]);
 }
 
-string type_cards(mapping pai)//¶àÕÅ±íÊö
+string type_cards(mapping pai)//å¤šå¼µè¡¨è¿°
 {
     switch(pai["lv"])
     {
     case 2:
-       return sprintf("%s´ó¶Ô¼Ó%sĞ¡¶Ô£¬Á½¶Ô×Ó",type_card(pai["ddui"]),type_card(pai["xdui"]));
+       return sprintf("%så¤§å°åŠ %så°å°ï¼Œå…©å°å­",type_card(pai["ddui"]),type_card(pai["xdui"]));
     case 3:
     case 6:
     case 7:
@@ -63,14 +63,14 @@ string type_cards(mapping pai)//¶àÕÅ±íÊö
     }
 }
 
-mapping juesuan(int *ob_allcard)//¾öËã³öÅÆµÄÀàĞÍ
+mapping juesuan(int *ob_allcard)//æ±ºç®—å‡ºç‰Œçš„é¡å‹
 {
     mapping pai;
     int i,x,flag,*L;
 
     flag=0;
     x=sizeof(ob_allcard);
-    L=sort_array(ob_allcard,1);//ÅÅĞò
+    L=sort_array(ob_allcard,1);//æ’åº
     switch(x)
     {
     case 1:
@@ -80,10 +80,10 @@ mapping juesuan(int *ob_allcard)//¾öËã³öÅÆµÄÀàĞÍ
             ]);
         break;
     case 2:
-        if(DIAN(L[0])==DIAN(L[1]))//µãÊıÏàÍ¬ÊÇ¶Ô×Ó
+        if(DIAN(L[0])==DIAN(L[1]))//é»æ•¸ç›¸åŒæ˜¯å°å­
             pai=([
                 "lv": 1,
-                "max" : L[1],//È¡¶Ô×ÓµÄ´óÅÆ
+                "max" : L[1],//å–å°å­çš„å¤§ç‰Œ
             ]);
         else
             pai=([
@@ -92,64 +92,64 @@ mapping juesuan(int *ob_allcard)//¾öËã³öÅÆµÄÀàĞÍ
             ]);
         break;
     case 3:
-        if(DIAN(L[0])==DIAN(L[2]))//µÚÒ»ÓëµÚÈıµãÊıÏàÍ¬ÊÇÈıÖ»
+        if(DIAN(L[0])==DIAN(L[2]))//ç¬¬ä¸€èˆ‡ç¬¬ä¸‰é»æ•¸ç›¸åŒæ˜¯ä¸‰åª
             pai=([
                 "lv": 3,
-                "max" : L[2],//Ëæ±ãÈ¡Ò»ÅÆ
+                "max" : L[2],//éš¨ä¾¿å–ä¸€ç‰Œ
             ]);
-        else if(DIAN(L[0])==DIAN(L[1]))//Ö»ÓĞÒ»¶şµãÊıÏàÍ¬ ¶Ô×Ó
+        else if(DIAN(L[0])==DIAN(L[1]))//åªæœ‰ä¸€äºŒé»æ•¸ç›¸åŒ å°å­
             pai=([
                 "lv": 1,
-                "max" : L[1],//È¡´óÅÆ
+                "max" : L[1],//å–å¤§ç‰Œ
             ]);
-        else if(DIAN(L[1])==DIAN(L[2]))//Ö»ÓĞ¶şÈıµãÊıÏàÍ¬ ¶Ô×Ó
+        else if(DIAN(L[1])==DIAN(L[2]))//åªæœ‰äºŒä¸‰é»æ•¸ç›¸åŒ å°å­
             pai=([
                 "lv": 1,
-                "max" : L[2],//È¡´óÅÆ
+                "max" : L[2],//å–å¤§ç‰Œ
             ]);
         else
             pai=([
                 "lv": 0,
-                "max" : L[2],//È¡×î´óÅÆ
+                "max" : L[2],//å–æœ€å¤§ç‰Œ
             ]);
         break;
     case 4:
         if(DIAN(L[0])+1==DIAN(L[1])&&DIAN(L[1])+1==DIAN(L[2])&&DIAN(L[2])+1==DIAN(L[3]))
             flag=1;
-        if(HUA(L[0])==HUA(L[1])&&HUA(L[2])==HUA(L[3])&&HUA(L[1])==HUA(L[2]))//Í¬»¨£¬ÔÙ¿´ÊÇ·ñË³×Ó
+        if(HUA(L[0])==HUA(L[1])&&HUA(L[2])==HUA(L[3])&&HUA(L[1])==HUA(L[2]))//åŒèŠ±ï¼Œå†çœ‹æ˜¯å¦é †å­
         {
-            if(!flag)//Í¬»¨
+            if(!flag)//åŒèŠ±
                 pai=([
                 "lv": 5,
                 "max" : L[3],
                 ]);
-            else//Í¬»¨Ë³
+            else//åŒèŠ±é †
                 pai=([
                 "lv": 8,
                 "max" : L[3],
                 ]);
         }
-        else if(flag)//Ë³×Ó
+        else if(flag)//é †å­
             pai=([
             "lv": 4,
             "max" : L[3],
             ]);
-        else if(DIAN(L[0])==DIAN(L[3]))//Ò»ËÄµãÊıÏàÍ¬ÊÇÕ¨µ¯
+        else if(DIAN(L[0])==DIAN(L[3]))//ä¸€å››é»æ•¸ç›¸åŒæ˜¯ç‚¸å½ˆ
             pai=([
                 "lv": 7,
-                "max" : L[0],//Ëæ±ãÈ¡Ò»ÅÆ
+                "max" : L[0],//éš¨ä¾¿å–ä¸€ç‰Œ
             ]);
-        else if(DIAN(L[0])==DIAN(L[2])||DIAN(L[1])==DIAN(L[3]))//Ò»Èı»ò¶şËÄµãÊıÏàÍ¬ÊÇÈıÌõ
+        else if(DIAN(L[0])==DIAN(L[2])||DIAN(L[1])==DIAN(L[3]))//ä¸€ä¸‰æˆ–äºŒå››é»æ•¸ç›¸åŒæ˜¯ä¸‰æ¢
             pai=([
                 "lv": 3,
-                "max" : L[2],//Ëæ±ãÈ¡Ò»ÖĞ¼äÅÆ
+                "max" : L[2],//éš¨ä¾¿å–ä¸€ä¸­é–“ç‰Œ
             ]);
-        else if(DIAN(L[0])==DIAN(L[1])&&DIAN(L[2])==DIAN(L[3]))//Ò»¶şÇÒÈıËÄµãÊıÏàÍ¬ÊÇÁ½¶Ô
+        else if(DIAN(L[0])==DIAN(L[1])&&DIAN(L[2])==DIAN(L[3]))//ä¸€äºŒä¸”ä¸‰å››é»æ•¸ç›¸åŒæ˜¯å…©å°
             pai=([
                 "lv": 2,
                 "xdui":L[1],
                 "ddui":L[3],
-                "max":L[3],//È¡×î´óµÄÅÆ
+                "max":L[3],//å–æœ€å¤§çš„ç‰Œ
             ]);
         else
         {
@@ -159,12 +159,12 @@ mapping juesuan(int *ob_allcard)//¾öËã³öÅÆµÄÀàĞÍ
         if(flag)
             pai=([
                 "lv": 1,
-                "max" : L[flag],//È¡¶Ô×ÓµÄ´óÅÆ
+                "max" : L[flag],//å–å°å­çš„å¤§ç‰Œ
             ]);
         else
             pai=([
                 "lv": 0,
-                "max" : L[3],//È¡×î´óµÄÅÆ
+                "max" : L[3],//å–æœ€å¤§çš„ç‰Œ
             ]);
         }
         break;
@@ -172,45 +172,45 @@ mapping juesuan(int *ob_allcard)//¾öËã³öÅÆµÄÀàĞÍ
         if(DIAN(L[0])+1==DIAN(L[1])&&DIAN(L[1])+1==DIAN(L[2])&&DIAN(L[2])+1==DIAN(L[3])&&DIAN(L[3])+1==DIAN(L[4]))
             flag=1;
         if(HUA(L[0])==HUA(L[1])&&HUA(L[1])==HUA(L[2])&&HUA(L[2])==HUA(L[3])
-            &&HUA(L[3])==HUA(L[4]))//ÊÇÍ¬»¨£¬Ö»ÓĞÊÇ·ñË³×ÓÁ½¸ö¿ÉÄÜ
+            &&HUA(L[3])==HUA(L[4]))//æ˜¯åŒèŠ±ï¼Œåªæœ‰æ˜¯å¦é †å­å…©å€‹å¯èƒ½
         {
-            if(!flag)//Í¬»¨
+            if(!flag)//åŒèŠ±
                 pai=([
                 "lv": 5,
                 "max" : L[4],
                 ]);
-            else//Í¬»¨Ë³
+            else//åŒèŠ±é †
                 pai=([
                 "lv": 8,
                 "max" : L[4],
                 ]);
         }
-        else if(flag)//Ë³×Ó
+        else if(flag)//é †å­
             pai=([
             "lv": 4,
             "max" : L[4],
             ]);
-        else if(DIAN(L[0])==DIAN(L[3])||DIAN(L[1])==DIAN(L[4]))//1,4»ò2,5ÏàÍ¬£¬ÔòÎªÕ¨µ¯£¬È¡µÚËÄÕÅ
+        else if(DIAN(L[0])==DIAN(L[3])||DIAN(L[1])==DIAN(L[4]))//1,4æˆ–2,5ç›¸åŒï¼Œå‰‡ç‚ºç‚¸å½ˆï¼Œå–ç¬¬å››å¼µ
         {
             pai=([
             "lv": 7,
-            "max" : L[4],//»¨É«ÎŞ¹Ø½ôÒª£¬Õ¨µ¯Ö»ÒªÅĞ¶ÏµãÊı
+            "max" : L[4],//èŠ±è‰²ç„¡é—œç·Šè¦ï¼Œç‚¸å½ˆåªè¦åˆ¤æ–·é»æ•¸
             ]);
         }
-        else if(DIAN(L[0])==DIAN(L[2])||DIAN(L[2])==DIAN(L[4])||DIAN(L[1])==DIAN(L[3]))//ÈıÕÅÒ»Ñù
+        else if(DIAN(L[0])==DIAN(L[2])||DIAN(L[2])==DIAN(L[4])||DIAN(L[1])==DIAN(L[3]))//ä¸‰å¼µä¸€æ¨£
         {
             if((DIAN(L[0])==DIAN(L[2])&&DIAN(L[3])==DIAN(L[4]))
-                ||(DIAN(L[2])==DIAN(L[4])&&DIAN(L[0])==DIAN(L[1])) )//ËùÊ£Á½ÕÅÊÇ¶Ô×Ó
+                ||(DIAN(L[2])==DIAN(L[4])&&DIAN(L[0])==DIAN(L[1])) )//æ‰€å‰©å…©å¼µæ˜¯å°å­
             {
                 pai=([
                 "lv": 6,
-                "max" : L[2],//È¡ÖĞ¼äÄÇÕÅ£¬»¨É«ÎŞ¹Ø½ôÒª
+                "max" : L[2],//å–ä¸­é–“é‚£å¼µï¼ŒèŠ±è‰²ç„¡é—œç·Šè¦
                 ]);
             }
             else
                 pai=([
                 "lv":3,
-                "max" : L[2],//È¡ÖĞ¼äÄÇÕÅ£¬»¨É«ÎŞ¹Ø½ôÒª
+                "max" : L[2],//å–ä¸­é–“é‚£å¼µï¼ŒèŠ±è‰²ç„¡é—œç·Šè¦
                 ]);
         }
         else
@@ -219,13 +219,13 @@ mapping juesuan(int *ob_allcard)//¾öËã³öÅÆµÄÀàĞÍ
         if(DIAN(L[0])==DIAN(L[1])&&DIAN(L[2])==DIAN(L[3])) flag=3;
         if(DIAN(L[0])==DIAN(L[1])&&DIAN(L[3])==DIAN(L[4])) flag=4;
         if(DIAN(L[1])==DIAN(L[2])&&DIAN(L[3])==DIAN(L[4])) flag=4;
-        if(flag)//Ğ¡¶Ô×Ó¿Ï¶¨ÓĞ1£¬´ó¶Ô×Ó¿Ï¶¨ÓĞ3
+        if(flag)//å°å°å­è‚¯å®šæœ‰1ï¼Œå¤§å°å­è‚¯å®šæœ‰3
         {
             pai=([
                 "lv": 2,
                 "xdui":L[1],
                 "ddui":L[3],
-                "max" : L[flag],//È¡´ó¶Ô×ÓµÄ´óÅÆ
+                "max" : L[flag],//å–å¤§å°å­çš„å¤§ç‰Œ
             ]);
         }
         else
@@ -235,12 +235,12 @@ mapping juesuan(int *ob_allcard)//¾öËã³öÅÆµÄÀàĞÍ
         if(flag)
             pai=([
             "lv": 1,
-            "max" : L[flag],//È¡¶Ô×ÓµÄ´óÅÆ
+            "max" : L[flag],//å–å°å­çš„å¤§ç‰Œ
             ]);
         else
             pai=([
             "lv": 0,
-            "max" : L[4],//È¡×î´óµÄÅÆ
+            "max" : L[4],//å–æœ€å¤§çš„ç‰Œ
             ]);
         }
         }
@@ -249,11 +249,11 @@ mapping juesuan(int *ob_allcard)//¾öËã³öÅÆµÄÀàĞÍ
     return pai;
 }
 
-int bi_daxiao(mapping card1,mapping card2)//±È´óĞ¡,card1´ó¾ÍÊÇ0£¬card2´ó¾ÍÊÇ1
+int bi_daxiao(mapping card1,mapping card2)//æ¯”å¤§å°,card1å¤§å°±æ˜¯0ï¼Œcard2å¤§å°±æ˜¯1
 {
-    if(card1["lv"]==card2["lv"])//Í¬ÀàÏà±È
+    if(card1["lv"]==card2["lv"])//åŒé¡ç›¸æ¯”
     {
-        if(card1["lv"]== 2)//Á½¶Ô×Ó
+        if(card1["lv"]== 2)//å…©å°å­
         {
             if(DIAN(card1["ddui"])>DIAN(card2["ddui"]))
                 return 0;
@@ -281,83 +281,83 @@ int do_sit()
         me = this_player();
 
     if( query_temp("suoha/being", me) )
-                return notify_fail("ÄãÒÑ¾­×øÉÏ×ÀÁË£¡\n");
+                return notify_fail("ä½ å·²ç¶“åä¸Šæ¡Œäº†ï¼\n");
     if( query_temp("duchang_chouma", me)<200 )
-        return notify_fail("ÄãµÄ³ïÂëÌ«ÉÙÁË£¡\n");
+        return notify_fail("ä½ çš„ç±Œç¢¼å¤ªå°‘äº†ï¼\n");
     i=sizeof(player);
-        if (i<2)//»¹ÓĞ¿ÕÎ»
+        if (i<2)//é‚„æœ‰ç©ºä½
         {
         set_temp("suoha/being", 1, me);
                 player+=({me});
-                addn_temp("duchang_chouma", -5, me);//Ñº£µ¸ö
-                yazhu_chouma+=5;//³ïÂë
+                addn_temp("duchang_chouma", -5, me);//æŠ¼ï¼•å€‹
+                yazhu_chouma+=5;//ç±Œç¢¼
         i=sizeof(player);
-        message_vision("$NÄÃ³ö5¸ö³ïÂëÑº³öÈ¥£¬×øÉÏÁË×ùÎ»£¡\n",me);
-        if (i == 2)//Âú2ÈË×Ô¶¯¿ªÊ¼
+        message_vision("$Næ‹¿å‡º5å€‹ç±Œç¢¼æŠ¼å‡ºå»ï¼Œåä¸Šäº†åº§ä½ï¼\n",me);
+        if (i == 2)//æ»¿2äººè‡ªå‹•é–‹å§‹
                 {
-               tell_room(this_object(), HIM"    ºÃ£¬¿ÉÒÔ¿ªÊ¼·¢ÅÆÁË£¡\n"NOR);
+               tell_room(this_object(), HIM"    å¥½ï¼Œå¯ä»¥é–‹å§‹ç™¼ç‰Œäº†ï¼\n"NOR);
                         suoha_init();
                 }
                 return 1;
         }
         else
-                return notify_fail("ÕâÀïÒÑ¾­ÂúÈËÁË£¡\n");
+                return notify_fail("é€™è£¡å·²ç¶“æ»¿äººäº†ï¼\n");
 }
 
 void suoha_init()
 {
     chouma+=yazhu_chouma;
-    yazhu_chouma=0;//ÇåÁã
+    yazhu_chouma=0;//æ¸…é›¶
     deal_an_card();
 }
 
-void deal_an_card()//·¢°µÅÆ
+void deal_an_card()//ç™¼æš—ç‰Œ
 {
         int i, j;
 
-    i=random(sizeof(cards));//Ëæ»úÈ¡Ò»ÕÅ
-    suoha_cards[0]["anpai"]=cards[i];//·¢µ½ÊÖÖĞ°µÅÆ
-    message_vision("\n$NÄÃµ½ÁËÒ»ÕÅ°µÅÆ£¬¿´ÁËÒ»ÑÛºó£¬Ñ¸ËÙµØ¸ÇÔÚ×ÀÉÏ£¡\n",player[0]);
-    tell_object(player[0],"ÕâÕÅ°µÅÆÊÇ£º"+type_card(cards[i])+"£¡\n");
-    cards-=({cards[i]});//×ÀÉÏÕâÕÅÅÆ±»·¢µô
+    i=random(sizeof(cards));//éš¨æ©Ÿå–ä¸€å¼µ
+    suoha_cards[0]["anpai"]=cards[i];//ç™¼åˆ°æ‰‹ä¸­æš—ç‰Œ
+    message_vision("\n$Næ‹¿åˆ°äº†ä¸€å¼µæš—ç‰Œï¼Œçœ‹äº†ä¸€çœ¼å¾Œï¼Œè¿…é€Ÿåœ°è“‹åœ¨æ¡Œä¸Šï¼\n",player[0]);
+    tell_object(player[0],"é€™å¼µæš—ç‰Œæ˜¯ï¼š"+type_card(cards[i])+"ï¼\n");
+    cards-=({cards[i]});//æ¡Œä¸Šé€™å¼µç‰Œè¢«ç™¼æ‰
 
-    i=random(sizeof(cards));//´ÓÊ£ÏÂÀ´µÄÅÆÖĞËæ»úÔÙÈ¡Ò»ÕÅ
-    suoha_cards[1]["anpai"]=cards[i];//·¢µ½ÊÖÖĞ°µÅÆ
-    message_vision("\n$NÄÃµ½ÁËÒ»ÕÅ°µÅÆ£¬¿´ÁËÒ»ÑÛºó£¬Ñ¸ËÙµØ¸ÇÔÚ×ÀÉÏ£¡\n",player[1]);
-    tell_object(player[1],"ÕâÕÅ°µÅÆÊÇ£º"+type_card(cards[i])+"£¡\n");
-    cards-=({cards[i]});//×ÀÉÏÕâÕÅÅÆ±»·¢µô
-    tell_room(this_object(), HIM"    ÏÖÔÚ¿ªÊ¼¸øÃ¿¸öÈË·¢Ã÷ÅÆÁË£¡\n"NOR);
-        remove_call_out("deal_ming_card");//Ò»Ãëºó·¢µÚ¶şÕÅ
-        call_out("deal_ming_card",1);//Ò»Ãëºó·¢µÚ¶şÕÅ
+    i=random(sizeof(cards));//å¾å‰©ä¸‹ä¾†çš„ç‰Œä¸­éš¨æ©Ÿå†å–ä¸€å¼µ
+    suoha_cards[1]["anpai"]=cards[i];//ç™¼åˆ°æ‰‹ä¸­æš—ç‰Œ
+    message_vision("\n$Næ‹¿åˆ°äº†ä¸€å¼µæš—ç‰Œï¼Œçœ‹äº†ä¸€çœ¼å¾Œï¼Œè¿…é€Ÿåœ°è“‹åœ¨æ¡Œä¸Šï¼\n",player[1]);
+    tell_object(player[1],"é€™å¼µæš—ç‰Œæ˜¯ï¼š"+type_card(cards[i])+"ï¼\n");
+    cards-=({cards[i]});//æ¡Œä¸Šé€™å¼µç‰Œè¢«ç™¼æ‰
+    tell_room(this_object(), HIM"    ç¾åœ¨é–‹å§‹çµ¦æ¯å€‹äººç™¼æ˜ç‰Œäº†ï¼\n"NOR);
+        remove_call_out("deal_ming_card");//ä¸€ç§’å¾Œç™¼ç¬¬äºŒå¼µ
+        call_out("deal_ming_card",1);//ä¸€ç§’å¾Œç™¼ç¬¬äºŒå¼µ
 }
 
-void deal_ming_card()//·¢Ã÷ÅÆ
+void deal_ming_card()//ç™¼æ˜ç‰Œ
 {
     int i,j;
     string arg;
     mapping card1,card2;
 
-    i=random(sizeof(cards));//Ëæ»úÈ¡Ò»ÕÅ
-    suoha_cards[0]["mingpai"]+=({cards[i]});//·¢µ½ÊÖÖĞµÄÃ÷ÅÆ
-    message_vision("\n$NÄÃµ½ÁËÒ»ÕÅ£º" +type_card(cards[i])+"£¡\n",player[0]);
-    cards-=({cards[i]});//×ÀÉÏÕâÕÅÅÆ±»·¢µô
-    i=random(sizeof(cards));//Ê£ÏÂµÄÅÆÖĞËæ»úÈ¡Ò»ÕÅ
-    suoha_cards[1]["mingpai"]+=({cards[i]});//·¢µ½ÊÖÖĞµÚÒ»ÕÅÃ÷ÅÆ
-    message_vision("\n$NÄÃµ½ÁËÒ»ÕÅ£º" +type_card(cards[i])+"£¡\n",player[1]);
-    cards-=({cards[i]});//×ÀÉÏÕâÕÅÅÆ±»·¢µô
+    i=random(sizeof(cards));//éš¨æ©Ÿå–ä¸€å¼µ
+    suoha_cards[0]["mingpai"]+=({cards[i]});//ç™¼åˆ°æ‰‹ä¸­çš„æ˜ç‰Œ
+    message_vision("\n$Næ‹¿åˆ°äº†ä¸€å¼µï¼š" +type_card(cards[i])+"ï¼\n",player[0]);
+    cards-=({cards[i]});//æ¡Œä¸Šé€™å¼µç‰Œè¢«ç™¼æ‰
+    i=random(sizeof(cards));//å‰©ä¸‹çš„ç‰Œä¸­éš¨æ©Ÿå–ä¸€å¼µ
+    suoha_cards[1]["mingpai"]+=({cards[i]});//ç™¼åˆ°æ‰‹ä¸­ç¬¬ä¸€å¼µæ˜ç‰Œ
+    message_vision("\n$Næ‹¿åˆ°äº†ä¸€å¼µï¼š" +type_card(cards[i])+"ï¼\n",player[1]);
+    cards-=({cards[i]});//æ¡Œä¸Šé€™å¼µç‰Œè¢«ç™¼æ‰
 
-    card1=juesuan(suoha_cards[0]["mingpai"]);//¾öËã³öÅÆĞÍ
-    card2=juesuan(suoha_cards[1]["mingpai"]);//¾öËã³öÅÆĞÍ
-    j=bi_daxiao(card1,card2);//±È³ö´óÅÆ
+    card1=juesuan(suoha_cards[0]["mingpai"]);//æ±ºç®—å‡ºç‰Œå‹
+    card2=juesuan(suoha_cards[1]["mingpai"]);//æ±ºç®—å‡ºç‰Œå‹
+    j=bi_daxiao(card1,card2);//æ¯”å‡ºå¤§ç‰Œ
     tell_object(player[0],type_paiju(player[0]));
     tell_object(player[1],type_paiju(player[1]));
     if(j) arg=type_cards(card2);
     else arg=type_cards(card1);
-    message_vision(HIY"\n¡¡¡¡$NµÄ"+arg+HIY"Ëµ»°£¡\n"NOR,player[j]);
+    message_vision(HIY"\nã€€ã€€$Nçš„"+arg+HIY"èªªè©±ï¼\n"NOR,player[j]);
     set_temp("suoha/shuohua", 1, player[j]);
-    tell_object(player[j],"\n¡¡ÏëÑº¾Íya <³ïÂëÊı>,²»Ñº(buya)¾ÍÈÏÊä£¡\n");
-        yazhu=1;//¿ÉÒÔÑº×¢ÁË
-        call_out("check_player",60,player[j]);//Ò»·ÖÖÓºó¼ì²é
+    tell_object(player[j],"\nã€€æƒ³æŠ¼å°±ya <ç±Œç¢¼æ•¸>,ä¸æŠ¼(buya)å°±èªè¼¸ï¼\n");
+        yazhu=1;//å¯ä»¥æŠ¼æ³¨äº†
+        call_out("check_player",60,player[j]);//ä¸€åˆ†é˜å¾Œæª¢æŸ¥
     return;
 }
 
@@ -368,15 +368,15 @@ int check_player(object me)
     if(!wait_time)
     {
         wait_time=1;
-        call_out("check_player",10,me);//×îºóÊ®Ãë;
-        tell_object(me,"Äã»¹ÓĞÊ®ÃëÖÓÊ±¼ä£¬³¬Ê±¾Í±íÊ¾ÈÏÊä£¡\n");
+        call_out("check_player",10,me);//æœ€å¾Œåç§’;
+        tell_object(me,"ä½ é‚„æœ‰åç§’é˜æ™‚é–“ï¼Œè¶…æ™‚å°±è¡¨ç¤ºèªè¼¸ï¼\n");
         return 1;
     }
     yazhu=0;
     wait_time=0;
-    message_vision("$N³¬Ê±·ÅÆúÁË£¬´ó¼ÒÁÁµ×ÅÆ£¡\n");
+    message_vision("$Nè¶…æ™‚æ”¾æ£„äº†ï¼Œå¤§å®¶äº®åº•ç‰Œï¼\n");
     ob=gen_ob(me);
-    call_out("juesheng",0,ob,1);//¾öÊ¤
+    call_out("juesheng",0,ob,1);//æ±ºå‹
     return 1;
 }
 
@@ -386,17 +386,17 @@ int do_yazhu(string arg)
     string str;
     object me,ob;
     me=this_player();
-    if(!yazhu) return notify_fail("ÏÖÔÚ²»ÊÇÏÂ×¢µÄÊ±ºò£¡\n");
-    if( !query_temp("suoha/shuohua", me))//ÊÇ·ñÎªËµ»°µÄ·½Ïò
-        return notify_fail("ÏÖÔÚ²»ÊÇÄãËµ»°£¡\n");
+    if(!yazhu) return notify_fail("ç¾åœ¨ä¸æ˜¯ä¸‹æ³¨çš„æ™‚å€™ï¼\n");
+    if( !query_temp("suoha/shuohua", me))//æ˜¯å¦ç‚ºèªªè©±çš„æ–¹å‘
+        return notify_fail("ç¾åœ¨ä¸æ˜¯ä½ èªªè©±ï¼\n");
      if(!arg||sscanf(arg,"%d",i)!=1||(i!=5&&i!=10&&i!=20))
-        return notify_fail("ÄãÒªÑº¶àÉÙ³ïÂë£¿¿ÉÑ¡5¸ö,10¸ö,20¸ö³ïÂë¡£\n");
-    remove_call_out("check_player");//Çå³ıÑÓÊ±ºô½Ğ
+        return notify_fail("ä½ è¦æŠ¼å¤šå°‘ç±Œç¢¼ï¼Ÿå¯é¸5å€‹,10å€‹,20å€‹ç±Œç¢¼ã€‚\n");
+    remove_call_out("check_player");//æ¸…é™¤å»¶æ™‚å‘¼å«
     addn_temp("duchang_chouma", -i, me);
     yazhu_chouma=i;
-    message_vision("$NºßÁËÒ»Éù£¬ÍÆÉÏÈ¥Ò»Ğ©³ïÂëËµ£º¡°ÎÒÑº "+i+" ¸ö£¡¸Ò¸úÂğ£¿¡±\n",me);
+    message_vision("$Nå“¼äº†ä¸€è²ï¼Œæ¨ä¸Šå»ä¸€äº›ç±Œç¢¼èªªï¼šâ€œæˆ‘æŠ¼ "+i+" å€‹ï¼æ•¢è·Ÿå—ï¼Ÿâ€\n",me);
     ob=gen_ob(me);
-    tell_object(ob,"ÄãÒª¸ú(gen)µÄ»°£¬¾ÍÊÇÔÙÉÏ"+i+"¸ö³ïÂë£¬²»Ñº(buya)¾ÍÊÇÈÏÊä£¡\n");
+    tell_object(ob,"ä½ è¦è·Ÿ(gen)çš„è©±ï¼Œå°±æ˜¯å†ä¸Š"+i+"å€‹ç±Œç¢¼ï¼Œä¸æŠ¼(buya)å°±æ˜¯èªè¼¸ï¼\n");
     delete_temp("suoha/shuohua", me);
     set_temp("suoha/genhua", 1, ob);
     call_out("check_player",60,ob);
@@ -408,30 +408,30 @@ int do_gen()
     int i;
     object me,ob;
     me=this_player();
-    if(!yazhu) return notify_fail("ÏÖÔÚ²»ÊÇ¸ú×¢µÄÊ±ºò£¡\n");
+    if(!yazhu) return notify_fail("ç¾åœ¨ä¸æ˜¯è·Ÿæ³¨çš„æ™‚å€™ï¼\n");
     if( !query_temp("suoha/genhua", me) )
-        return notify_fail("ÏÖÔÚ²»ÊÇÄãËµ»°£¡\n");
-    remove_call_out("check_player");//Çå³ıÑÓÊ±ºô½Ğ
-    i=yazhu_chouma;//Ç°ÃæÈËÑºÏÂµÄ³ïÂëÊı
+        return notify_fail("ç¾åœ¨ä¸æ˜¯ä½ èªªè©±ï¼\n");
+    remove_call_out("check_player");//æ¸…é™¤å»¶æ™‚å‘¼å«
+    i=yazhu_chouma;//å‰é¢äººæŠ¼ä¸‹çš„ç±Œç¢¼æ•¸
     addn_temp("duchang_chouma", -i, me);
-    chouma+=(i*2);//Á½¸öÈËµÄ³ïÂë¶¼¼Ó½øÈ¥
-    yazhu_chouma=0;//ÇåÁã
-    message_vision("$NÎ¢Î¢Ò»Ğ¦£¬Ò²ÍÆÁËÒ»Ğ©³ïÂëÉÏÈ¥£¬Ëµ£º¡°ÎÒ¸ú £¡¡±\n",me);
+    chouma+=(i*2);//å…©å€‹äººçš„ç±Œç¢¼éƒ½åŠ é€²å»
+    yazhu_chouma=0;//æ¸…é›¶
+    message_vision("$Nå¾®å¾®ä¸€ç¬‘ï¼Œä¹Ÿæ¨äº†ä¸€äº›ç±Œç¢¼ä¸Šå»ï¼Œèªªï¼šâ€œæˆ‘è·Ÿ ï¼â€\n",me);
     delete_temp("suoha/genhua", me);
-    if(sizeof(suoha_cards[0]["mingpai"])==4)//ÅÆ·¢ÍêÁË
+    if(sizeof(suoha_cards[0]["mingpai"])==4)//ç‰Œç™¼å®Œäº†
     {
         yazhu=0;
-        message_vision("\nÅÆÒÑ·¢Íê£¬´ó¼ÒÁÁµ×ÅÆ£¡\n",me);
-        call_out("juesheng",1,me,0);//¾öÊ¤
+        message_vision("\nç‰Œå·²ç™¼å®Œï¼Œå¤§å®¶äº®åº•ç‰Œï¼\n",me);
+        call_out("juesheng",1,me,0);//æ±ºå‹
     }
-    else//·ñÔòÔÙ·¢ÅÆ
+    else//å¦å‰‡å†ç™¼ç‰Œ
     {
         remove_call_out("deal_ming_card");
             call_out("deal_ming_card",1);
         }
     return 1;
 }
-//¸úÅÆµÄÈË
+//è·Ÿç‰Œçš„äºº
 object gen_ob(object ob)
 {
    if(sizeof(player)<2) return 0;
@@ -441,7 +441,7 @@ object gen_ob(object ob)
         return player[0];
 }
 
-int juesheng(object ob,int flag)//flagÎªÕæ,Ôò²»¹Ü½á¹û¶¼ÊÇobÊ¤
+int juesheng(object ob,int flag)//flagç‚ºçœŸ,å‰‡ä¸ç®¡çµæœéƒ½æ˜¯obå‹
 {
     mapping card1,card2;
     int i,*pai1,*pai2;
@@ -456,18 +456,18 @@ int juesheng(object ob,int flag)//flagÎªÕæ,Ôò²»¹Ü½á¹û¶¼ÊÇobÊ¤
 
     i=bi_daxiao(card1,card2);
 
-    message_vision("\n$NµÄÅÆÊÇ¡º"+type_cards(card1)+"¡»\n"
-    "\n$nµÄÅÆÊÇ¡º"+type_cards(card2)+"¡»\n",player[0],player[1]);
+    message_vision("\n$Nçš„ç‰Œæ˜¯ã€"+type_cards(card1)+"ã€\n"
+    "\n$nçš„ç‰Œæ˜¯ã€"+type_cards(card2)+"ã€\n",player[0],player[1]);
     if(!flag)
         ob=player[i];
     else
     {
         if(ob!=player[i])
-            message_vision("$N°Ã»ÚµØÅÄÅÄºóÄÔÉ×£º¡°ÔçÖªµÀÎÒ¾Í......£¡¡±\n",player[i]);
+            message_vision("$Næ‡Šæ‚”åœ°æ‹æ‹å¾Œè…¦å‹ºï¼šâ€œæ—©çŸ¥é“æˆ‘å°±......ï¼â€\n",player[i]);
         else
-            message_vision("$NµÃÒâµØµãµãÍ·µÀ£ºÒ²¿÷ÄãÓĞ×ÔÖªÖ®Ã÷°¡£¡\n",player[i]);
+            message_vision("$Nå¾—æ„åœ°é»é»é ­é“ï¼šä¹Ÿè™§ä½ æœ‰è‡ªçŸ¥ä¹‹æ˜å•Šï¼\n",player[i]);
     }
-    message_vision("\n¹§Ï²$NÊ¤³ö£¬×ÀÉÏ³ïÂëÈ«ÊÕ£¡\n",ob);
+    message_vision("\næ­å–œ$Nå‹å‡ºï¼Œæ¡Œä¸Šç±Œç¢¼å…¨æ”¶ï¼\n",ob);
     ob_win(ob);
     return 1;
 }
@@ -475,7 +475,7 @@ int juesheng(object ob,int flag)//flagÎªÕæ,Ôò²»¹Ü½á¹û¶¼ÊÇobÊ¤
 void ob_win(object ob)
 {
     addn_temp("duchang_chouma", chouma, ob);
-    message_vision("\nÕâÒ»¾Ö£¬$NÒ»¹²Ó®ÁË"+chouma+"¸ö³ïÂë£¡\n",ob);
+    message_vision("\né€™ä¸€å±€ï¼Œ$Nä¸€å…±è´äº†"+chouma+"å€‹ç±Œç¢¼ï¼\n",ob);
     game_over();
 }
 
@@ -484,12 +484,12 @@ void game_over()
     if(sizeof(player))
     {
         delete_temp("suoha", player[0]);
-        message_vision("$NÕ¾ÁËÆğÀ´¡£\n",player[0]);
+        message_vision("$Nç«™äº†èµ·ä¾†ã€‚\n",player[0]);
     }
     if(sizeof(player)>1)
     {
         delete_temp("suoha", player[1]);
-        message_vision("$NÕ¾ÁËÆğÀ´¡£\n",player[1]);
+        message_vision("$Nç«™äº†èµ·ä¾†ã€‚\n",player[1]);
     }
     player=({});
     chouma=0;
@@ -498,15 +498,15 @@ void game_over()
     ([
         "anpai":0,
         "mingpai":({}),
-    ]),//×¯¼ÒµÄÅÆ
+    ]),//èŠå®¶çš„ç‰Œ
     ([
         "anpai":0,
         "mingpai":({}),
-    ]),//¶Ô¼ÒµÄÅÆ
+    ]),//å°å®¶çš„ç‰Œ
     });
     wait_time=0;
     quansuo=0;
-    cards =({1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28});//ËùÓĞµÄÅÆ
+    cards =({1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28});//æ‰€æœ‰çš„ç‰Œ
 //--------end---------
 }
 
@@ -515,18 +515,18 @@ int do_buya()
     int i;
     object me,ob;
     me=this_player();
-    if(!yazhu) return notify_fail("ÏÖÔÚ²»ÊÇ¸ú×¢µÄÊ±ºò£¡\n");
-    if( !query_temp("suoha/shuohua", me) && !query_temp("suoha/genhua", me))//ÊÇ·ñÎªËµ»°µÄ·½Ïò
-        return notify_fail("ÏÖÔÚ²»ÊÇÄãËµ»°£¡\n");
-    remove_call_out("check_player");//Çå³ıÑÓÊ±ºô½Ğ
+    if(!yazhu) return notify_fail("ç¾åœ¨ä¸æ˜¯è·Ÿæ³¨çš„æ™‚å€™ï¼\n");
+    if( !query_temp("suoha/shuohua", me) && !query_temp("suoha/genhua", me))//æ˜¯å¦ç‚ºèªªè©±çš„æ–¹å‘
+        return notify_fail("ç¾åœ¨ä¸æ˜¯ä½ èªªè©±ï¼\n");
+    remove_call_out("check_player");//æ¸…é™¤å»¶æ™‚å‘¼å«
 
-    chouma+=yazhu_chouma;//¼Ó½øÇ°ÃæÈËÑºÏÂµÄ³ïÂëÊı
-    yazhu_chouma=0;//ÇåÁã
-    message_vision("$NÖåÁËÖåÃ¼£¬Í»È»Ò»Ğ¦£¬Ëµ£º¡°ÎÒ²»¸úÁË £¡¡±\n",me);
+    chouma+=yazhu_chouma;//åŠ é€²å‰é¢äººæŠ¼ä¸‹çš„ç±Œç¢¼æ•¸
+    yazhu_chouma=0;//æ¸…é›¶
+    message_vision("$Nçšºäº†çšºçœ‰ï¼Œçªç„¶ä¸€ç¬‘ï¼Œèªªï¼šâ€œæˆ‘ä¸è·Ÿäº† ï¼â€\n",me);
     yazhu=0;
-    message_vision("$N·ÅÆú¸úÅÆ£¬´ó¼ÒÁÁµ×ÅÆ£¡\n",me);
+    message_vision("$Næ”¾æ£„è·Ÿç‰Œï¼Œå¤§å®¶äº®åº•ç‰Œï¼\n",me);
     ob=gen_ob(me);
-    call_out("juesheng",1,ob,1);//¾öÊ¤
+    call_out("juesheng",1,ob,1);//æ±ºå‹
     return 1;
 }
 
@@ -536,55 +536,55 @@ int do_leave()
     me = this_player();
 
     if( !query_temp("suoha/being", me) )
-                return notify_fail("ÄãÏÖÔÚÃ»ÓĞÔÚÍæËó¹ş£¡Ïë×ß¾ÍÖ±½Ó³ö´óÃÅ¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ²’æœ‰åœ¨ç©æ¢­å“ˆï¼æƒ³èµ°å°±ç›´æ¥å‡ºå¤§é–€ã€‚\n");
     ob=gen_ob(me);
-    if(ob)//ÒÑ¾­ÓĞÁ½¸öÈË
+    if(ob)//å·²ç¶“æœ‰å…©å€‹äºº
     {
-        if(!yazhu)//»¹Î´·¢Ã÷ÅÆ
-            return notify_fail("ÄãÏÖÔÚ²»ÄÜÀë¿ª!\n");
+        if(!yazhu)//é‚„æœªç™¼æ˜ç‰Œ
+            return notify_fail("ä½ ç¾åœ¨ä¸èƒ½é›¢é–‹!\n");
         yazhu=0;
-        remove_call_out("check_player");//Çå³ıÑÓÊ±ºô½Ğ
-        message_vision("$N²»ÏëÔÙÍæÁË£¡\n",me);
-        chouma+=yazhu_chouma;//¼Ó½øÇ°ÃæÈËÑºÏÂµÄ³ïÂëÊı
-        call_out("juesheng",0,ob,1);//¾öÊ¤
+        remove_call_out("check_player");//æ¸…é™¤å»¶æ™‚å‘¼å«
+        message_vision("$Nä¸æƒ³å†ç©äº†ï¼\n",me);
+        chouma+=yazhu_chouma;//åŠ é€²å‰é¢äººæŠ¼ä¸‹çš„ç±Œç¢¼æ•¸
+        call_out("juesheng",0,ob,1);//æ±ºå‹
     }
-    else//Ö»ÓĞÒ»¸öÈË£¬¾ÍÊÇ»¹Ã»¿ª¾Ö
+    else//åªæœ‰ä¸€å€‹äººï¼Œå°±æ˜¯é‚„æ²’é–‹å±€
     {
-        addn_temp("duchang_chouma", yazhu_chouma, me);//½«¸Õ¸ÕÑºµÄ·µ»¹
+        addn_temp("duchang_chouma", yazhu_chouma, me);//å°‡å‰›å‰›æŠ¼çš„è¿”é‚„
         yazhu=0;
-        remove_call_out("check_player");//Çå³ıÑÓÊ±ºô½Ğ
-        message_vision("$N²»ÏëÔÙÍæÁË£¡\n",me);
-        chouma+=yazhu_chouma;//¼Ó½øÇ°ÃæÈËÑºÏÂµÄ³ïÂëÊı
-        call_out("game_over",0);//½áÊø
+        remove_call_out("check_player");//æ¸…é™¤å»¶æ™‚å‘¼å«
+        message_vision("$Nä¸æƒ³å†ç©äº†ï¼\n",me);
+        chouma+=yazhu_chouma;//åŠ é€²å‰é¢äººæŠ¼ä¸‹çš„ç±Œç¢¼æ•¸
+        call_out("game_over",0);//çµæŸ
     }
     return 1;
 }
 
-int do_quansuo()//È«Ëó
+int do_quansuo()//å…¨æ¢­
 {
     int i;
     string str;
     object me,ob;
     me=this_player();
-    if(!yazhu) return notify_fail("ÏÖÔÚ²»ÊÇÏÂ×¢µÄÊ±ºò£¡\n");
-    if(sizeof(suoha_cards[0]["mingpai"])!=4)//ÅÆ·¢ÍêÁË,×îºóÒ»ÂÖ
-        return notify_fail("ÏÖÔÚ²»ÊÇ×îºóÒ»ÕÅ£¬²»ÄÜshowhand£¡\n");
+    if(!yazhu) return notify_fail("ç¾åœ¨ä¸æ˜¯ä¸‹æ³¨çš„æ™‚å€™ï¼\n");
+    if(sizeof(suoha_cards[0]["mingpai"])!=4)//ç‰Œç™¼å®Œäº†,æœ€å¾Œä¸€è¼ª
+        return notify_fail("ç¾åœ¨ä¸æ˜¯æœ€å¾Œä¸€å¼µï¼Œä¸èƒ½showhandï¼\n");
     if(quansuo)
-        return notify_fail("¶Ô·½ÒÑ¾­showhandÁË£¬ÄãÖ»Òª¾ö¶¨¸ú(gen)»¹ÊÇ²»¸ú(buya)£¡\n");
+        return notify_fail("å°æ–¹å·²ç¶“showhandäº†ï¼Œä½ åªè¦æ±ºå®šè·Ÿ(gen)é‚„æ˜¯ä¸è·Ÿ(buya)ï¼\n");
     if( !query_temp("suoha/shuohua", me) && !query_temp("suoha/genhua", me) )
-        return notify_fail("ÏÖÔÚ²»ÊÇÄãËµ»°£¡\n");
-    remove_call_out("check_player");//Çå³ıÑÓÊ±ºô½Ğ
+        return notify_fail("ç¾åœ¨ä¸æ˜¯ä½ èªªè©±ï¼\n");
+    remove_call_out("check_player");//æ¸…é™¤å»¶æ™‚å‘¼å«
     quansuo=1;
-    if( query_temp("suoha/shuohua", me))//Ëµ»°·½
+    if( query_temp("suoha/shuohua", me))//èªªè©±æ–¹
     {
-    i=(200-chouma/2);//×î¸ßÊÇ200,Ì¨ÃæÉÏÓĞÒ»°ë
+    i=(200-chouma/2);//æœ€é«˜æ˜¯200,å°é¢ä¸Šæœ‰ä¸€åŠ
     addn_temp("duchang_chouma", -i, me);
         delete_temp("suoha/shuohua", me);
     yazhu_chouma=i;
     }
-    else if( query_temp("suoha/genhua", me))//¸ú»°·½
+    else if( query_temp("suoha/genhua", me))//è·Ÿè©±æ–¹
     {
-    i=yazhu_chouma;//ÏÈ¸úÉÏÇ°ÃæµÄÈËÑºµÄ×¢
+    i=yazhu_chouma;//å…ˆè·Ÿä¸Šå‰é¢çš„äººæŠ¼çš„æ³¨
     addn_temp("duchang_chouma", -i, me);
     chouma+=i*2;
     i=(200-chouma/2);
@@ -592,9 +592,9 @@ int do_quansuo()//È«Ëó
         delete_temp("suoha/genhua", me);
     yazhu_chouma=i;
     }
-    message_vision("$N½«ÃæÇ°µÄ³ïÂë¡°ºô¡±µØÒ»ÏÂÈ«ÍÆÁËÉÏÈ¥£º¡°ÎÒÈ«ËóÁË£¡¸Ò¸úÂğ£¿¡±\n",me);
+    message_vision("$Nå°‡é¢å‰çš„ç±Œç¢¼â€œå‘¼â€åœ°ä¸€ä¸‹å…¨æ¨äº†ä¸Šå»ï¼šâ€œæˆ‘å…¨æ¢­äº†ï¼æ•¢è·Ÿå—ï¼Ÿâ€\n",me);
     ob=gen_ob(me);
-    tell_object(ob,"ÄãÒª¸ú(gen)µÄ»°£¬¾ÍÊÇÔÙÉÏ"+i+"¸ö³ïÂë£¬²»Ñº(buya)¾ÍÊÇÈÏÊä£¡\n");
+    tell_object(ob,"ä½ è¦è·Ÿ(gen)çš„è©±ï¼Œå°±æ˜¯å†ä¸Š"+i+"å€‹ç±Œç¢¼ï¼Œä¸æŠ¼(buya)å°±æ˜¯èªè¼¸ï¼\n");
     set_temp("suoha/genhua", 1, ob);
     call_out("check_player",60,ob);
     return 1;
@@ -605,9 +605,9 @@ string look_pai()
     switch(sizeof(player))
     {
     case 0:
-        return "×ÀÉÏµÄÅÆ¾Ö»¹Ã»ÓĞ¿ªÊ¼ÄØ£¡\n";
+        return "æ¡Œä¸Šçš„ç‰Œå±€é‚„æ²’æœ‰é–‹å§‹å‘¢ï¼\n";
     case 1:
-        return "ÏÖÔÚ"+player[0]->name()+"Õı×øÔÚ×ÀÉÏµÈºò±ğÈËµÄ¼ÓÈë£¡\n";
+        return "ç¾åœ¨"+player[0]->name()+"æ­£ååœ¨æ¡Œä¸Šç­‰å€™åˆ¥äººçš„åŠ å…¥ï¼\n";
     case 2:
         return type_paiju(this_player());
     }
@@ -622,59 +622,59 @@ string type_paiju(object me)
     pai2=suoha_cards[1]["mingpai"];
     i=sizeof(pai1);
     j=sizeof(pai2);
-    an1=an2="¡ù¡ù¡ù";//Ä¬ÈÏ
+    an1=an2="â€»â€»â€»";//é»˜èª
     if(player[0]==me)
     {
         an1= type_card(suoha_cards[0]["anpai"]);
-        name1="Äã";
+        name1="ä½ ";
     }
     else
         name1=player[0]->name();
     if(player[1]==me)
     {
         an2= type_card(suoha_cards[1]["anpai"]);
-        name2="Äã";
+        name2="ä½ ";
     }
     else
         name2=player[1]->name();
-    str=sprintf("¡¡¡¡%sµÄÅÆ£º%s%s\n"
-"©°©¤©¤©¤©´©°©¤©¤©¤©´©°©¤©¤©¤©´©°©¤©¤©¤©´©°©¤©¤©¤©´\n"
-"©¦¡ù¡ù¡ù©¦©¦¡¡¡¡¡¡©¦©¦¡¡¡¡¡¡©¦©¦¡¡¡¡¡¡©¦©¦¡¡¡¡¡¡©¦\n"
-"©¦%s©¦",name1,(query_temp("suoha/shuohua", player[0])?HIW"Ëµ»°"NOR:""),
-    (query_temp("suoha/genhua", player[0])?HIW"¸ú»°"NOR:""),an1);
+    str=sprintf("ã€€ã€€%sçš„ç‰Œï¼š%s%s\n"
+"â”Œâ”€â”€â”€â”â”Œâ”€â”€â”€â”â”Œâ”€â”€â”€â”â”Œâ”€â”€â”€â”â”Œâ”€â”€â”€â”\n"
+"â”‚â€»â€»â€»â”‚â”‚ã€€ã€€ã€€â”‚â”‚ã€€ã€€ã€€â”‚â”‚ã€€ã€€ã€€â”‚â”‚ã€€ã€€ã€€â”‚\n"
+"â”‚%sâ”‚",name1,(query_temp("suoha/shuohua", player[0])?HIW"èªªè©±"NOR:""),
+    (query_temp("suoha/genhua", player[0])?HIW"è·Ÿè©±"NOR:""),an1);
     for(k=0;k<4;k++)
     {
         if(k<i)
-            str+=sprintf("©¦%s©¦",type_card(pai1[k]));
+            str+=sprintf("â”‚%sâ”‚",type_card(pai1[k]));
         else
-            str+="©¦¡¡¡¡¡¡©¦";
+            str+="â”‚ã€€ã€€ã€€â”‚";
     }
     str+=sprintf("\n"
-"©¦¡ù¡ù¡ù©¦©¦¡¡¡¡¡¡©¦©¦¡¡¡¡¡¡©¦©¦¡¡¡¡¡¡©¦©¦¡¡¡¡¡¡©¦\n"
-"©¸©¤©¤©¤©¼©¸©¤©¤©¤©¼©¸©¤©¤©¤©¼©¸©¤©¤©¤©¼©¸©¤©¤©¤©¼\n\n"
-"¡¡¡¡%sµÄÅÆ£º%s%s\n"
-"©°©¤©¤©¤©´©°©¤©¤©¤©´©°©¤©¤©¤©´©°©¤©¤©¤©´©°©¤©¤©¤©´\n"
-"©¦¡ù¡ù¡ù©¦©¦¡¡¡¡¡¡©¦©¦¡¡¡¡¡¡©¦©¦¡¡¡¡¡¡©¦©¦¡¡¡¡¡¡©¦\n"
-"©¦%s©¦",name2,(query_temp("suoha/shuohua", player[1])?HIW"Ëµ»°"NOR:""),
-    (query_temp("suoha/genhua", player[1])?HIW"¸ú»°"NOR:""),an2);
+"â”‚â€»â€»â€»â”‚â”‚ã€€ã€€ã€€â”‚â”‚ã€€ã€€ã€€â”‚â”‚ã€€ã€€ã€€â”‚â”‚ã€€ã€€ã€€â”‚\n"
+"â””â”€â”€â”€â”˜â””â”€â”€â”€â”˜â””â”€â”€â”€â”˜â””â”€â”€â”€â”˜â””â”€â”€â”€â”˜\n\n"
+"ã€€ã€€%sçš„ç‰Œï¼š%s%s\n"
+"â”Œâ”€â”€â”€â”â”Œâ”€â”€â”€â”â”Œâ”€â”€â”€â”â”Œâ”€â”€â”€â”â”Œâ”€â”€â”€â”\n"
+"â”‚â€»â€»â€»â”‚â”‚ã€€ã€€ã€€â”‚â”‚ã€€ã€€ã€€â”‚â”‚ã€€ã€€ã€€â”‚â”‚ã€€ã€€ã€€â”‚\n"
+"â”‚%sâ”‚",name2,(query_temp("suoha/shuohua", player[1])?HIW"èªªè©±"NOR:""),
+    (query_temp("suoha/genhua", player[1])?HIW"è·Ÿè©±"NOR:""),an2);
     for(k=0;k<4;k++)
     {
         if(k<j)
-            str+=sprintf("©¦%s©¦",type_card(pai2[k]));
+            str+=sprintf("â”‚%sâ”‚",type_card(pai2[k]));
         else
-            str+="©¦¡¡¡¡¡¡©¦";
+            str+="â”‚ã€€ã€€ã€€â”‚";
     }
     str+="\n"
-"©¦¡ù¡ù¡ù©¦©¦¡¡¡¡¡¡©¦©¦¡¡¡¡¡¡©¦©¦¡¡¡¡¡¡©¦©¦¡¡¡¡¡¡©¦\n"
-"©¸©¤©¤©¤©¼©¸©¤©¤©¤©¼©¸©¤©¤©¤©¼©¸©¤©¤©¤©¼©¸©¤©¤©¤©¼\n\n";
-    str+=sprintf("¡¡×ÀÃæÉÏµÄ³ïÂëÊıÊÇ%dÖ»£¬Òª¸ú½øµÄ³ïÂëÊıÎª%dÖ»¡£\n\n",chouma,yazhu_chouma);
+"â”‚â€»â€»â€»â”‚â”‚ã€€ã€€ã€€â”‚â”‚ã€€ã€€ã€€â”‚â”‚ã€€ã€€ã€€â”‚â”‚ã€€ã€€ã€€â”‚\n"
+"â””â”€â”€â”€â”˜â””â”€â”€â”€â”˜â””â”€â”€â”€â”˜â””â”€â”€â”€â”˜â””â”€â”€â”€â”˜\n\n";
+    str+=sprintf("ã€€æ¡Œé¢ä¸Šçš„ç±Œç¢¼æ•¸æ˜¯%dåªï¼Œè¦è·Ÿé€²çš„ç±Œç¢¼æ•¸ç‚º%dåªã€‚\n\n",chouma,yazhu_chouma);
     return str;
 }
 
 int valid_leave(object me, string dir)
 {
     if( query_temp("suoha", me) )
-        return notify_fail("ÄãÕıÔÚ´òÅÆÄØ£¡ÒªÏë×ßÏÈÀë¿ª(leave)ÅÆ×À£¡\n");
+        return notify_fail("ä½ æ­£åœ¨æ‰“ç‰Œå‘¢ï¼è¦æƒ³èµ°å…ˆé›¢é–‹(leave)ç‰Œæ¡Œï¼\n");
     return ::valid_leave(me, dir);
 }
 
@@ -683,7 +683,7 @@ int check_chouma()
     int i;
     object me=this_player();
     if( !i=query_temp("duchang_chouma", me) )
-        return notify_fail("ÄãÉíÉÏÃ»ÓĞÈÎºÎ³ïÂë£¡\n");
-    write("Ä¿Ç°ÄãÉíÉÏÒ»¹²ÓĞ"+chinese_number(i)+"Ö»³ïÂë£¡\n");
+        return notify_fail("ä½ èº«ä¸Šæ²’æœ‰ä»»ä½•ç±Œç¢¼ï¼\n");
+    write("ç›®å‰ä½ èº«ä¸Šä¸€å…±æœ‰"+chinese_number(i)+"åªç±Œç¢¼ï¼\n");
     return 1;
 }

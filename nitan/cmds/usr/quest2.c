@@ -11,12 +11,12 @@ int main(object me, string arg)
         string name, npc;
 
         if( query("ultra_count", me) )
-                write(sprintf("ÄÏÏÍ½»¸øÄãµÄ×ÚÊ¦ÈÎÎñ£¬ÄãÒÑ¾­Á¬ĞøÍê³ÉÁË %d ¸ö¡£\n",
+                write(sprintf("å—è³¢äº¤çµ¦ä½ çš„å®—å¸«ä»»å‹™ï¼Œä½ å·²ç¶“é€£çºŒå®Œæˆäº† %d å€‹ã€‚\n",
                               query("ultra_count", me)));
 
         if( !query("ultraquest/npc1", me) )
         {
-                write("ÄãÏÖÔÚÃ»ÓĞÁìÈÎºÎÈÎÎñ£¡\n");
+                write("ä½ ç¾åœ¨æ²’æœ‰é ˜ä»»ä½•ä»»å‹™ï¼\n");
                 return 1;
         }
 
@@ -49,70 +49,70 @@ int main(object me, string arg)
         {
                 if( query("ultraquest/id", me) )
                 {
-                        write("ÄãÏÖÔÚµÄÈÎÎñÊÇÈ¥É±ÁËÄ»ºóºÚÊÖ"+query("ultraquest/name", me)+"("+
-                              query("ultraquest/id", me)+")£¬ÌáËûµÄÈËÍ·¸øÄÏÏÍ¡£\n");
+                        write("ä½ ç¾åœ¨çš„ä»»å‹™æ˜¯å»æ®ºäº†å¹•å¾Œé»‘æ‰‹"+query("ultraquest/name", me)+"("+
+                              query("ultraquest/id", me)+")ï¼Œæä»–çš„äººé ­çµ¦å—è³¢ã€‚\n");
                         return 1;
                 }
-                write("ÄãÏÖÔÚµÄÈÎÎñÊÇÈ¥Ñ°ÕÒÏßË÷ÖªÇéÈË" + name + "(" + npc + ")¡£\n" +
-                      "ÌıËµËûÇ°¶ÎÈÕ×ÓÔÚ"+query("ultraquest/place", me)+"³öÏÖ¹ı¡£\n");
+                write("ä½ ç¾åœ¨çš„ä»»å‹™æ˜¯å»å°‹æ‰¾ç·šç´¢çŸ¥æƒ…äºº" + name + "(" + npc + ")ã€‚\n" +
+                      "è½èªªä»–å‰æ®µæ—¥å­åœ¨"+query("ultraquest/place", me)+"å‡ºç¾éã€‚\n");
                 return 1;
         } else
         {
                 switch (q["type"])
                 {
                 case "kill":
-                        write(name + "(" + npc + ")·Ô¸ÀÄãÈ¥¸îÏÂ" HIR +
-                              q["name"] + "(" + q["id"] + ")" + NOR "µÄÈËÍ·£¬»ØÀ´½»²î¡£\n");
+                        write(name + "(" + npc + ")å©å’ä½ å»å‰²ä¸‹" HIR +
+                              q["name"] + "(" + q["id"] + ")" + NOR "çš„äººé ­ï¼Œå›ä¾†äº¤å·®ã€‚\n");
                         return 1;
 
                 case "give":
-                        write(name + "(" + npc + ")·Ô¸ÀÄãÈ¥°Ñ°ü¹üËÍµ½" HIR +
-                              q["name"] + "(" + q["id"] + ")" + NOR "µÄÊÖÀï£¬»ØÀ´½»²î¡£\n");
+                        write(name + "(" + npc + ")å©å’ä½ å»æŠŠåŒ…è£¹é€åˆ°" HIR +
+                              q["name"] + "(" + q["id"] + ")" + NOR "çš„æ‰‹è£¡ï¼Œå›ä¾†äº¤å·®ã€‚\n");
                         return 1;
 
                 case "send":
-                        write(name + "(" + npc + ")·Ô¸ÀÄãÈ¥°ÑĞÅËÍµ½" HIR +
-                              q["name"] + "(" + q["id"] + ")" + NOR "µÄÊÖÀï£¬»ØÀ´½»²î¡£\n");
+                        write(name + "(" + npc + ")å©å’ä½ å»æŠŠä¿¡é€åˆ°" HIR +
+                              q["name"] + "(" + q["id"] + ")" + NOR "çš„æ‰‹è£¡ï¼Œå›ä¾†äº¤å·®ã€‚\n");
                         return 1;
 
                 case "guard":
-                        write(name + "(" + npc + ")·Ô¸ÀÄãÁôÔÚËûÄÇÀï±£»¤Ëû¡£\n");
+                        write(name + "(" + npc + ")å©å’ä½ ç•™åœ¨ä»–é‚£è£¡ä¿è­·ä»–ã€‚\n");
                         return 1;
 
                 case "mathematics":
-                        write(name + "(" + npc + ")·Ô¸ÀÄãºÍËû±ÈÊÔÑİËã¡£\n");
+                        write(name + "(" + npc + ")å©å’ä½ å’Œä»–æ¯”è©¦æ¼”ç®—ã€‚\n");
                         return 1;
 
                 case "literate":
-                        write(name + "(" + npc + ")·Ô¸ÀÄãºÍËû±ÈÊÔÊ«´Ê¡£\n");
+                        write(name + "(" + npc + ")å©å’ä½ å’Œä»–æ¯”è©¦è©©è©ã€‚\n");
                         return 1;
 
                 case "chess":
-                        write(name + "(" + npc + ")·Ô¸ÀÄãºÍËû±ÈÊÔÆå¼¼¡£\n");
+                        write(name + "(" + npc + ")å©å’ä½ å’Œä»–æ¯”è©¦æ£‹æŠ€ã€‚\n");
                         return 1;
 
                 case "calligraphy":
-                        write(name + "(" + npc + ")·Ô¸ÀÄã°ïËûĞ´ºÃÊé·¨¡£\n");
+                        write(name + "(" + npc + ")å©å’ä½ å¹«ä»–å¯«å¥½æ›¸æ³•ã€‚\n");
                         return 1;
 
                 case "drawing":
-                        write(name + "(" + npc + ")·Ô¸ÀÄã°ïËû»æ»­¡£\n");
+                        write(name + "(" + npc + ")å©å’ä½ å¹«ä»–ç¹ªç•«ã€‚\n");
                         return 1;
 
                 case "medical":
-                        write(name + "(" + npc + ")·Ô¸ÀÄã°ïËûÖÎ²¡¡£\n");
+                        write(name + "(" + npc + ")å©å’ä½ å¹«ä»–æ²»ç—…ã€‚\n");
                         return 1;
                 }
         }
 
-        write("ÄãÏÖÔÚÃ»ÓĞÁìÈÎºÎÈÎÎñ£¡\n");
+        write("ä½ ç¾åœ¨æ²’æœ‰é ˜ä»»ä½•ä»»å‹™ï¼\n");
         return 1;
 }
 
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : quest2 ÏÔÊ¾³öÄãµ±Ç°µÄ×ÚÊ¦ÈÎÎñ¡£
+æŒ‡ä»¤æ ¼å¼ : quest2 é¡¯ç¤ºå‡ºä½ ç•¶å‰çš„å®—å¸«ä»»å‹™ã€‚
 HELP );
         return 1;
 }

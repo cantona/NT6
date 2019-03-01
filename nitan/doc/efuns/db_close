@@ -1,20 +1,20 @@
 
         db_close()
 
-        ���ƣ�
-                db_close �ر�һ���Ѿ��򿪵����ݿ�����
+        名稱：
+                db_close 關閉一個已經打開的數據庫連接
 
-        �﷨��
+        語法：
                 int db_close(int handle)
-                ���� db_close(���� handle)
+                整數 db_close(整數 handle)
 
-        �÷���
-                �ر�һ���Ѿ��򿪵����ݿ⣬���� handle ��һ���Ѿ�
-                �򿪵����ݿ�ľ����
+        用法：
+                關閉一個已經打開的數據庫，參數 handle 是一個已經
+                打開的數據庫的句柄。
 
-                ����ֵ��0 �ر�ʧ�ܣ� 1 �رճɹ�
+                返回值：0 關閉失敗； 1 關閉成功
 
-        by ���ֺ�(Find@tx)
+        by 發現號(Find@tx)
 
 
 

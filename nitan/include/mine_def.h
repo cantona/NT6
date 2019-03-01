@@ -6,14 +6,14 @@
 #define MINE_FIELD      "/inherit/room/mine_field" 
 #define MINE_STONE      "/clone/mine/mine_stone"
 
-// ¿óÊ¯Àà
+// ç¤¦çŸ³é¡
 #define IRON_MINE       "iron"
 
-// ÌúÀà×ÊÔ´¶¨Òå
-#define IRON_RES_CU     "iron_cu"       // ´ÖÌú
-#define IRON_RES_JING   "iron_jing"     // ¾«Ìú
-#define STEEL_RES       "steel"         // ¸Ö
-#define BLACK_IRON      "blade_iron"    // ĞşÌú
+// éµé¡è³‡æºå®šç¾©
+#define IRON_RES_CU     "iron_cu"       // ç²—éµ
+#define IRON_RES_JING   "iron_jing"     // ç²¾éµ
+#define STEEL_RES       "steel"         // é‹¼
+#define BLACK_IRON      "blade_iron"    // ç„éµ
 
 #endif
 

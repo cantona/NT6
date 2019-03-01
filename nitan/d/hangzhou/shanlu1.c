@@ -4,11 +4,11 @@
 inherit BUILD_ROOM;
 void create()
 {
-        set("short", "ɽ·");
+        set("short", "山路");
         set("long", @LONG
-һ�������߳�����ɽ·�������������������졣����ɽ·�ϣ�ֻ
-�����Է�����������ɫ���ˡ���ʱ�н���Ͳ�����������ϱ㵽����
-���á����¾��Ǵ����
+一條被人走出來的山路，彎彎曲曲地向上延伸。走在山路上，只
+見兩旁峰巒秀麗，景色怡人。不時有進香客擦肩而過。南上便到了下
+天竺。北下就是大道。
 LONG);
         set("exits", ([
                 "southup"   : __DIR__"fajingsi",

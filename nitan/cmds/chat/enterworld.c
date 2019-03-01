@@ -14,17 +14,17 @@ int main(object me, mapping info)
 
         if (objectp(env = environment(me)) &&
             env != find_object(VOID_OB))
-                return MESSAGE_D->error_msg("ÄãÏÖÔÚÒÑ¾­½øÈëµ½ÊÀ½çÖÐÁË¡£\n");
+                return MESSAGE_D->error_msg("ä½ ç¾åœ¨å·²ç¶“é€²å…¥åˆ°ä¸–ç•Œä¸­äº†ã€‚\n");
 
         startroom = info[ARG];
         if (! stringp(startroom) || member_array(startroom, valid_entry) == -1)
                 startroom = "/d/city/kedian";
 
         if (! me->move(startroom))
-                return MESSAGE_D->error_msg("ÏµÍ³³öÏÖ¹ÊÕÏ£¬ÎÞ·¨ÈÃÄã½øÈëÊÀ½ç¡£\n");
+                return MESSAGE_D->error_msg("ç³»çµ±å‡ºç¾æ•…éšœï¼Œç„¡æ³•è®“ä½ é€²å…¥ä¸–ç•Œã€‚\n");
 
-        message("vision", HIC "¿ÕÆøÖÐÇÄÈ»ÃÖÂþ³öÒ»¹ÉÇàÑÌ£¬½¥½¥µÄÄý³ÉÁË" +
-               me->name() + HIC "µÄÑù×Ó¡£\n" NOR, environment(me), ({ me }));
+        message("vision", HIC "ç©ºæ°£ä¸­æ‚„ç„¶å½Œæ¼«å‡ºä¸€è‚¡é’ç…™ï¼Œæ¼¸æ¼¸çš„å‡æˆäº†" +
+               me->name() + HIC "çš„æ¨£å­ã€‚\n" NOR, environment(me), ({ me }));
 
         return 1;
 }

@@ -9,20 +9,20 @@ int exert(object me, object target)
 {
         int skill;
         if (target != me) 
-                return notify_fail("你只能用小无相功提升自己的战斗力。\n");
+                return notify_fail("浣犲彧鑳界敤灏忕劇鐩稿姛鎻愬崌鑷繁鐨勬埌楝ュ姏銆俓n");
                 
         if( query("neili", me)<100 )
-                return notify_fail("你的内力不够。\n");
+                return notify_fail("浣犵殑鍏у姏涓嶅銆俓n");
                 
         if( query_temp("powerup", me) )
-                return notify_fail("你已经在运功中了。\n");
+                return notify_fail("浣犲凡缍撳湪閬嬪姛涓簡銆俓n");
 
         skill = me->query_skill("force");
 
         addn("neili", -100, me);
         me->receive_damage("qi", 0);
 
-        message_combatd(MAG "$N" MAG "运起小无相功，将全身劲力尽数提起！\n" NOR, me);
+        message_combatd(MAG "$N" MAG "閬嬭捣灏忕劇鐩稿姛锛屽皣鍏ㄨ韩鍕佸姏鐩℃暩鎻愯捣锛乗n" NOR, me);
 
         addn_temp("apply/attack", skill/5, me);
         addn_temp("apply/defense", skill/5, me);
@@ -42,7 +42,7 @@ void remove_effect(object me, int amount)
                 addn_temp("apply/attack", -amount, me);
                 addn_temp("apply/defense", -amount, me);
                 delete_temp("powerup", me);
-                tell_object(me, "你的小无相功运行完毕，将内力收回丹田。\n");
+                tell_object(me, "浣犵殑灏忕劇鐩稿姛閬嬭瀹岀暍锛屽皣鍏у姏鏀跺洖涓圭敯銆俓n");
         }
 }
 

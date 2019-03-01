@@ -39,23 +39,23 @@ int main(object me, string arg)
                                 ob = find_living(arg);
 
                         if (! ob || ! ob->is_character() || ! me->visible(ob))
-                                return notify_fail("ÄãÒª²ì¿´Ë­µÄ×´Ì¬£¿\n");
+                                return notify_fail("ä½ è¦å¯Ÿçœ‹èª°çš„ç‹€æ…‹ï¼Ÿ\n");
 
                         if( !wizardp(me) && query("couple/child_id", me) != query("id", ob) )
-                                return notify_fail("ÄãÒª²ì¿´Ë­µÄ×´Ì¬£¿\n");
+                                return notify_fail("ä½ è¦å¯Ÿçœ‹èª°çš„ç‹€æ…‹ï¼Ÿ\n");
 
                 } else
-                        return notify_fail("Ö»ÓÐÎ×Ê¦ÄÜ²ì¿´±ðÈËµÄ×´Ì¬¡£\n");
+                        return notify_fail("åªæœ‰å·«å¸«èƒ½å¯Ÿçœ‹åˆ¥äººçš„ç‹€æ…‹ã€‚\n");
 
                 my = ob->query_entire_dbase();
 
                 if (userp(ob) && (! stringp(my["born"]) || ! my["born"]))
-                        return notify_fail("»¹Ã»ÓÐ³öÉúÄÅ£¬²ì¿´Ê²Ã´£¿\n");
+                        return notify_fail("é‚„æ²’æœ‰å‡ºç”Ÿå¶ï¼Œå¯Ÿçœ‹ä»€éº¼ï¼Ÿ\n");
 
                 if (my["max_jing"] < 1 || my["max_qi"] < 1)
-                        return notify_fail("ÎÞ·¨²ì¿´" + ob->name(1) + "µÄ×´Ì¬¡£\n");
+                        return notify_fail("ç„¡æ³•å¯Ÿçœ‹" + ob->name(1) + "çš„ç‹€æ…‹ã€‚\n");
 
-                // ¿ñ±©ÌúÈ­Ôö¼Ó¼ÓÁ¦ÉÏÏÞ
+                // ç‹‚æš´éµæ‹³å¢žåŠ åŠ åŠ›ä¸Šé™
                 if( query("special_skill/might", ob) )
                 {
                         ml = (int)ob->query_skill("force") / 2;
@@ -69,7 +69,7 @@ int main(object me, string arg)
                 
                 ml += query("jingmai/jiali", ob);
                        
-                // ·ßÅ­Ö®ÐÄÔö¼Ó¼ÓÅ­ÉÏÏÞ
+                // æ†¤æ€’ä¹‹å¿ƒå¢žåŠ åŠ æ€’ä¸Šé™
                 if( query("special_skill/wrath", ob) )
                         mn = ob->query_max_craze() / 70;
                 else
@@ -84,48 +84,48 @@ int main(object me, string arg)
 
                 if (need < 1) need = 1;
 
-                sp = (ob == me ? "Äã" : ob->name()) + "Ä¿Ç°µÄÊôÐÔÉÏÏÞÈçÏÂ£º\n";
-                sp += HIC "¡Ô" HIY "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"
-                      "©¤©¤©¤©¤©¤©¤©¤©¤" HIC "¡Ô\n" NOR;
+                sp = (ob == me ? "ä½ " : ob->name()) + "ç›®å‰çš„å±¬æ€§ä¸Šé™å¦‚ä¸‹ï¼š\n";
+                sp += HIC "â‰¡" HIY "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"
+                      "â”€â”€â”€â”€â”€â”€â”€â”€" HIC "â‰¡\n" NOR;
 
-                sp += sprintf(HIC "¡¾¾«Á¦ÉÏÏÞ¡¿ " HIG " %-21d"
-                              HIC "¡¾ÄÚÁ¦ÉÏÏÞ¡¿ " HIG " %d\n",
+                sp += sprintf(HIC "ã€ç²¾åŠ›ä¸Šé™ã€‘ " HIG " %-21d"
+                              HIC "ã€å…§åŠ›ä¸Šé™ã€‘ " HIG " %d\n",
                       ob->query_current_jingli_limit(), ob->query_current_neili_limit());
 
-                sp += sprintf(HIC "¡¾Ç±ÄÜÉÏÏÞ¡¿ " HIG " %-21d"
-                              HIC "¡¾Ìå»áÉÏÏÞ¡¿ " HIG " %d\n",
+                sp += sprintf(HIC "ã€æ½›èƒ½ä¸Šé™ã€‘ " HIG " %-21d"
+                              HIC "ã€é«”æœƒä¸Šé™ã€‘ " HIG " %d\n",
                       ob->query_potential_limit()-query("learned_points", ob),
                       ob->query_experience_limit()-query("learned_experience", ob));
 
-                sp += sprintf(HIC "¡¾µ±Ç°µÈ¼¶¡¿ " NOR + WHT " %-21d"
-                              HIC "¡¾Éý¼¶ËùÐè¡¿ " NOR + WHT " %d\n", lv, need);
+                sp += sprintf(HIC "ã€ç•¶å‰ç­‰ç´šã€‘ " NOR + WHT " %-21d"
+                              HIC "ã€å‡ç´šæ‰€éœ€ã€‘ " NOR + WHT " %d\n", lv, need);
 
-                sp += sprintf(HIC "¡¾ÄÜÁ¦µãÊý¡¿ " NOR + WHT " %-21d"
-                              HIC "¡¾Îä¹¦ÉÏÏÞ¡¿ " NOR + WHT " %d\n",
+                sp += sprintf(HIC "ã€èƒ½åŠ›é»žæ•¸ã€‘ " NOR + WHT " %-21d"
+                              HIC "ã€æ­¦åŠŸä¸Šé™ã€‘ " NOR + WHT " %d\n",
                       query("ability", ob),level);
 
                 if (mn > 0)
-                        sp += sprintf(HIC "¡¾×î´ó¼ÓÅ­¡¿ " NOR + WHT " %d\t\t   ", mn);
+                        sp += sprintf(HIC "ã€æœ€å¤§åŠ æ€’ã€‘ " NOR + WHT " %d\t\t   ", mn);
                 else
-                        sp += HIC "¡¾×î´ó¼ÓÅ­¡¿ " NOR + WHT " ©¤©¤©¤\t\t   ";
+                        sp += HIC "ã€æœ€å¤§åŠ æ€’ã€‘ " NOR + WHT " â”€â”€â”€\t\t   ";
 
-                sp += sprintf(HIC "¡¾×î´ó¼ÓÁ¦¡¿ " NOR + WHT " %d\n", ml);
+                sp += sprintf(HIC "ã€æœ€å¤§åŠ åŠ›ã€‘ " NOR + WHT " %d\n", ml);
 
 #ifdef LONELY_IMPROVED
-                sp += HIW "¡¾ËÀÍö±£»¤¡¿  " NOR + sprintf("%-21s",
+                sp += HIW "ã€æ­»äº¡ä¿è­·ã€‘  " NOR + sprintf("%-21s",
 #else
-                sp += HIW "¡¾ËÀÍö±£»¤¡¿  " NOR + sprintf("%-37s",
+                sp += HIW "ã€æ­»äº¡ä¿è­·ã€‘  " NOR + sprintf("%-37s",
 #endif
                       (!query("combat/WPK", ob) && !query("no_newbie", ob) && (query("newbie", ob) || 
-                      query("combat_exp", ob)<20000000))?HIY"±£»¤ÖÐ"NOR:
-                      HIY "ÎÞ±£»¤" NOR);
+                      query("combat_exp", ob)<20000000))?HIY"ä¿è­·ä¸­"NOR:
+                      HIY "ç„¡ä¿è­·" NOR);
 
-                sp += HIW "¡¾É±Â¾±£»¤¡¿  " NOR + sprintf("%s",
-                      (query("die_protect/last_dead", me)+query("die_protect/duration", me)<time())?HIY"ÎÞ±£»¤\n"NOR:
-                      HIY "±£»¤ÖÐ\n" NOR);
+                sp += HIW "ã€æ®ºæˆ®ä¿è­·ã€‘  " NOR + sprintf("%s",
+                      (query("die_protect/last_dead", me)+query("die_protect/duration", me)<time())?HIY"ç„¡ä¿è­·\n"NOR:
+                      HIY "ä¿è­·ä¸­\n" NOR);
 
-                sp += HIC "¡Ô" HIY "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"
-                      "©¤©¤©¤©¤©¤©¤©¤©¤" HIC "¡Ô\n" NOR;
+                sp += HIC "â‰¡" HIY "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"
+                      "â”€â”€â”€â”€â”€â”€â”€â”€" HIC "â‰¡\n" NOR;
                 tell_object(me, sp);
                 return 1;
         }
@@ -148,30 +148,30 @@ int main(object me, string arg)
                                 ob = find_living(arg);
 
                         if (! ob || ! ob->is_character() || ! me->visible(ob))
-                                return notify_fail("ÄãÒª²ì¿´Ë­µÄ×´Ì¬£¿\n");
+                                return notify_fail("ä½ è¦å¯Ÿçœ‹èª°çš„ç‹€æ…‹ï¼Ÿ\n");
 
                         if( !wizardp(me) && query("couple/child_id", me) != query("id", ob) )
-                                return notify_fail("ÄãÒª²ì¿´Ë­µÄ×´Ì¬£¿\n");
+                                return notify_fail("ä½ è¦å¯Ÿçœ‹èª°çš„ç‹€æ…‹ï¼Ÿ\n");
                 } else
-                        return notify_fail("Ö»ÓÐÎ×Ê¦ÄÜ²ì¿´±ðÈËµÄ×´Ì¬¡£\n");
+                        return notify_fail("åªæœ‰å·«å¸«èƒ½å¯Ÿçœ‹åˆ¥äººçš„ç‹€æ…‹ã€‚\n");
 
                 my = ob->query_entire_dbase();
 
                 if (userp(ob) && (! stringp(my["born"]) || ! my["born"]))
-                        return notify_fail("»¹Ã»ÓÐ³öÉúÄÅ£¬²ì¿´Ê²Ã´£¿\n");
+                        return notify_fail("é‚„æ²’æœ‰å‡ºç”Ÿå¶ï¼Œå¯Ÿçœ‹ä»€éº¼ï¼Ÿ\n");
 
                 if (my["max_jing"] < 1 || my["max_qi"] < 1)
-                        return notify_fail("ÎÞ·¨²ì¿´" + ob->name(1) + "µÄ×´Ì¬¡£\n");
+                        return notify_fail("ç„¡æ³•å¯Ÿçœ‹" + ob->name(1) + "çš„ç‹€æ…‹ã€‚\n");
 
-                sp = (ob == me ? "Äã" : ob->name()) + "Ä¿Ç°µÄÌì¸³ÊôÐÔÈçÏÂ£º\n";
-                sp += HIC "¡Ô" HIY "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"
-                      "©¤©¤©¤©¤©¤©¤©¤©¤" HIC "¡Ô\n" NOR;
-                sp += HIY "¡¾ ÖÖ Àà ¡¿ " HIC "¡º³õÊ¼¡» ¡ºÏÈÌì¡» ¡º³É¹¦¡» ¡ºÊ§°Ü¡»"
-                      " ¡º¹ÊÊÂ¡» ¡ºÔªÉñ¡»\n" NOR;
-                sp += HIC "¡Ô" HIY "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"
-                      "©¤©¤©¤©¤©¤©¤©¤©¤" HIC "¡Ô\n" NOR;
+                sp = (ob == me ? "ä½ " : ob->name()) + "ç›®å‰çš„å¤©è³¦å±¬æ€§å¦‚ä¸‹ï¼š\n";
+                sp += HIC "â‰¡" HIY "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"
+                      "â”€â”€â”€â”€â”€â”€â”€â”€" HIC "â‰¡\n" NOR;
+                sp += HIY "ã€ ç¨® é¡ž ã€‘ " HIC "ã€Žåˆå§‹ã€ ã€Žå…ˆå¤©ã€ ã€ŽæˆåŠŸã€ ã€Žå¤±æ•—ã€"
+                      " ã€Žæ•…äº‹ã€ ã€Žå…ƒç¥žã€\n" NOR;
+                sp += HIC "â‰¡" HIY "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"
+                      "â”€â”€â”€â”€â”€â”€â”€â”€" HIC "â‰¡\n" NOR;
 
-                sp += sprintf(HIW "¡¾ ëö Á¦ ¡¿ " NOR + WHT " [%3d]    ["
+                sp += sprintf(HIW "ã€ è†‚ åŠ› ã€‘ " NOR + WHT " [%3d]    ["
                       HIG "%3d" NOR + WHT "]    [" HIW "%3d" NOR + WHT "]    ["
                       HIR "%3d" NOR + WHT "]    [" HIM "%3d" NOR + WHT "]    ["
                       HIB "%3d" NOR + WHT "]\n",
@@ -182,7 +182,7 @@ int main(object me, string arg)
                 query("gift/sun", ob),
                 query("tattoo/tattoo_str", ob));
 
-                sp += sprintf(HIW "¡¾ Îò ÐÔ ¡¿ " NOR + WHT " [%3d]    ["
+                sp += sprintf(HIW "ã€ æ‚Ÿ æ€§ ã€‘ " NOR + WHT " [%3d]    ["
                       HIG "%3d" NOR + WHT "]    [" HIW "%3d" NOR + WHT "]    ["
                       HIR "%3d" NOR + WHT "]    [" HIM "%3d" NOR + WHT "]    ["
                       HIB "%3d" NOR + WHT "]\n",
@@ -193,7 +193,7 @@ int main(object me, string arg)
                 query("gift/water", ob),
                 query("tattoo/tattoo_int", ob));
 
-                sp += sprintf(HIW "¡¾ ¸ù ¹Ç ¡¿ " NOR + WHT " [%3d]    ["
+                sp += sprintf(HIW "ã€ æ ¹ éª¨ ã€‘ " NOR + WHT " [%3d]    ["
                       HIG "%3d" NOR + WHT "]    [" HIW "%3d" NOR + WHT "]    ["
                       HIR "%3d" NOR + WHT "]    [" HIM "%3d" NOR + WHT "]    ["
                       HIB "%3d" NOR + WHT "]\n",
@@ -204,7 +204,7 @@ int main(object me, string arg)
                 query("gift/lighting", ob),
                 query("tattoo/tattoo_con", ob));
 
-                sp += sprintf(HIW "¡¾ Éí ·¨ ¡¿ " NOR + WHT " [%3d]    ["
+                sp += sprintf(HIW "ã€ èº« æ³• ã€‘ " NOR + WHT " [%3d]    ["
                       HIG "%3d" NOR + WHT "]    [" HIW "%3d" NOR + WHT "]    ["
                       HIR "%3d" NOR + WHT "]    [" HIM "%3d" NOR + WHT "]    ["
                       HIB "%3d" NOR + WHT "]\n",
@@ -215,7 +215,7 @@ int main(object me, string arg)
                 query("gift/feng", ob),
                 query("tattoo/tattoo_dex", ob));
 
-                sp += sprintf(HIW "¡¾ ÈÝ Ã² ¡¿ " NOR + WHT " [%3d]    ["
+                sp += sprintf(HIW "ã€ å®¹ è²Œ ã€‘ " NOR + WHT " [%3d]    ["
                       HIG "%3d" NOR + WHT "]    [" HIW "%3d" NOR + WHT "]    ["
                       HIR "%3d" NOR + WHT "]    [" HIM "%3d" NOR + WHT "]    ["
                       HIB "%3d" NOR + WHT "]\n",
@@ -226,7 +226,7 @@ int main(object me, string arg)
                 query("gift/pergive", ob),
                 query("tattoo/tattoo_per", ob));
 
-                sp += sprintf(HIW "¡¾ ¸£ Ôµ ¡¿ " NOR + WHT " [%3d]    ["
+                sp += sprintf(HIW "ã€ ç¦ ç·£ ã€‘ " NOR + WHT " [%3d]    ["
                       HIG "%3d" NOR + WHT "]    [" HIW "%3d" NOR + WHT "]    ["
                       HIR "%3d" NOR + WHT "]    [" HIM "%3d" NOR + WHT "]    ["
                       HIB "%3d" NOR + WHT "]\n",
@@ -237,8 +237,8 @@ int main(object me, string arg)
                 query("gift/kargive", ob),
                 query("tattoo/tattoo_kar", ob));
 
-                sp += HIC "¡Ô" HIY "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"
-                      "©¤©¤©¤©¤©¤©¤©¤©¤" HIC "¡Ô\n" NOR;
+                sp += HIC "â‰¡" HIY "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"
+                      "â”€â”€â”€â”€â”€â”€â”€â”€" HIC "â‰¡\n" NOR;
                 tell_object(me, sp);
                 return 1;
         }
@@ -252,49 +252,49 @@ int main(object me, string arg)
                 if (! ob || (! ob->is_character() && ! ob->is_owner(me))) ob = find_player(arg);
                 if (! ob || (! ob->is_character() && ! ob->is_owner(me))) ob = find_living(arg);
                 if (! ob || (! ob->is_character() && ! ob->is_owner(me)) || ! me->visible(ob))
-                        return notify_fail("ÄãÒª²ì¿´Ë­µÄ×´Ì¬£¿\n");
+                        return notify_fail("ä½ è¦å¯Ÿçœ‹èª°çš„ç‹€æ…‹ï¼Ÿ\n");
 
                 if( !wizardp(me) && query("couple/child_id", me) != query("id", ob) && 
                     ! ob->is_owner(me))
-                        return notify_fail("ÄãÒª²ì¿´Ë­µÄ×´Ì¬£¿\n");
+                        return notify_fail("ä½ è¦å¯Ÿçœ‹èª°çš„ç‹€æ…‹ï¼Ÿ\n");
         } else
-                return notify_fail("Ö»ÓÐÎ×Ê¦ÄÜ²ì¿´±ðÈËµÄ×´Ì¬¡£\n");
+                return notify_fail("åªæœ‰å·«å¸«èƒ½å¯Ÿçœ‹åˆ¥äººçš„ç‹€æ…‹ã€‚\n");
 
         my = ob->query_entire_dbase();
 
         if (userp(ob) && (! stringp(my["born"]) || ! my["born"]))
-                return notify_fail("»¹Ã»ÓÐ³öÉúÄÅ£¬²ì¿´Ê²Ã´£¿\n");
+                return notify_fail("é‚„æ²’æœ‰å‡ºç”Ÿå¶ï¼Œå¯Ÿçœ‹ä»€éº¼ï¼Ÿ\n");
 
         if (my["max_jing"] < 1 || my["max_qi"] < 1)
-                return notify_fail("ÎÞ·¨²ì¿´" + ob->name(1) + "µÄ×´Ì¬¡£\n");
+                return notify_fail("ç„¡æ³•å¯Ÿçœ‹" + ob->name(1) + "çš„ç‹€æ…‹ã€‚\n");
 
-        sp = (ob == me ? "Äã" : ob->name()) + "Ä¿Ç°µÄ×´Ì¬ÊôÐÔÈçÏÂ£º\n";
-        sp += HIC "¡Ô" HIY "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"
-              "©¤©¤©¤©¤©¤©¤©¤©¤" HIC "¡Ô\n" NOR;
+        sp = (ob == me ? "ä½ " : ob->name()) + "ç›®å‰çš„ç‹€æ…‹å±¬æ€§å¦‚ä¸‹ï¼š\n";
+        sp += HIC "â‰¡" HIY "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"
+              "â”€â”€â”€â”€â”€â”€â”€â”€" HIC "â‰¡\n" NOR;
 
-        sp += sprintf(HIC "¡¾ ¾« Æø ¡¿ %s%5d/ %5d %s(%3d%%)"
-                      HIC "    ¡¾ ¾« Á¦ ¡¿ %s%5d / %5d (+%d)\n",
+        sp += sprintf(HIC "ã€ ç²¾ æ°£ ã€‘ %s%5d/ %5d %s(%3d%%)"
+                      HIC "    ã€ ç²¾ åŠ› ã€‘ %s%5d / %5d (+%d)\n",
                 status_color(my["jing"], my["eff_jing"]), my["jing"], my["eff_jing"],
                 status_color(my["eff_jing"], my["max_jing"]),
                              my["eff_jing"] * 100 / my["max_jing"],
                 status_color(my["jingli"], my["max_jingli"]), my["jingli"],
                              my["max_jingli"], my["jiajing"] );
 
-        sp += sprintf(HIC "¡¾ Æø Ñª ¡¿ %s%5d/ %5d %s(%3d%%)"
-                      HIC "    ¡¾ ÄÚ Á¦ ¡¿ %s%5d / %5d (+%d)\n",
+        sp += sprintf(HIC "ã€ æ°£ è¡€ ã€‘ %s%5d/ %5d %s(%3d%%)"
+                      HIC "    ã€ å…§ åŠ› ã€‘ %s%5d / %5d (+%d)\n",
                 status_color(my["qi"], my["eff_qi"]), my["qi"], my["eff_qi"],
                 status_color(my["eff_qi"], my["max_qi"]),
                              my["eff_qi"] * 100 / my["max_qi"],
                 status_color(my["neili"], my["max_neili"]), my["neili"],
                              my["max_neili"], my["jiali"] );
 
-        sp += sprintf(HIW "¡¾ Ê³ Îï ¡¿ %s%5d/ %5d      " HIW "     ¡¾ Ç± ÄÜ ¡¿  %s%d\n",
+        sp += sprintf(HIW "ã€ é£Ÿ ç‰© ã€‘ %s%5d/ %5d      " HIW "     ã€ æ½› èƒ½ ã€‘  %s%d\n",
                 status_color(my["food"], ob->max_food_capacity()),
                 my["food"], ob->max_food_capacity(),
                 query("potential", ob) >= ob->query_potential_limit()?HIM:HIY,
                 query("potential", ob)-query("learned_points", ob));
 
-        sp += sprintf(HIW "¡¾ Òû Ë® ¡¿ %s%5d/ %5d      " HIW "     ¡¾ Ìå »á ¡¿  %s%d\n",
+        sp += sprintf(HIW "ã€ é£² æ°´ ã€‘ %s%5d/ %5d      " HIW "     ã€ é«” æœƒ ã€‘  %s%d\n",
                 status_color(my["water"], ob->max_water_capacity()),
                 my["water"], ob->max_water_capacity(),
                 my["experience"] >= ob->query_experience_limit() ? HIM : HIY,
@@ -303,19 +303,19 @@ int main(object me, string arg)
         if (craze = me->query_craze())
         {
                 if (me->is_most_craze())
-                        sp += HIR "¡¾ ·ß " BLINK "Å­" NOR HIR " ¡¿  " +
-                              sprintf("%-22s",query("character", me) == "¹âÃ÷ÀÚÂä"?
-                                               "Êú·¢³å¹Ú" : "Å­»ðÖÐÉÕ");
+                        sp += HIR "ã€ æ†¤ " BLINK "æ€’" NOR HIR " ã€‘  " +
+                              sprintf("%-22s",query("character", me) == "å…‰æ˜Žç£Šè½"?
+                                               "è±Žç™¼æ²–å† " : "æ€’ç«ä¸­ç‡’");
                 else
-                        sp += sprintf(HIR "¡¾ ·ß Å­ ¡¿ %5d/ %5d (+%-3d)    ",
+                        sp += sprintf(HIR "ã€ æ†¤ æ€’ ã€‘ %5d/ %5d (+%-3d)    ",
                                       craze, me->query_max_craze(),
                                       query("jianu", me));
         } else
         {
-                sp += HIC "¡¾ Æ½ ºÍ ¡¿  ©¤©¤©¤©¤©¤©¤©¤©¤©¤    ";
+                sp += HIC "ã€ å¹³ å’Œ ã€‘  â”€â”€â”€â”€â”€â”€â”€â”€â”€    ";
         }
-        sp += sprintf(HIW "¡¾ ¾­ Ñé ¡¿  " HIC "%d\n", my["combat_exp"]);
-        sp += HIC "¡Ô" HIY "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤" HIC "¡Ô\n" NOR;
+        sp += sprintf(HIW "ã€ ç¶“ é©— ã€‘  " HIC "%d\n", my["combat_exp"]);
+        sp += HIC "â‰¡" HIY "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€" HIC "â‰¡\n" NOR;
         tell_object(me, sp);
         return 1;
 }
@@ -340,19 +340,19 @@ string status_color(int current, int max)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½£ºhp [-m] [-g]
-          hp [-m] [-g] <¶ÔÏóÃû³Æ>               £¨Î×Ê¦×¨ÓÃ£©
+æŒ‡ä»¤æ ¼å¼ï¼šhp [-m] [-g]
+          hp [-m] [-g] <å°è±¡åç¨±>               ï¼ˆå·«å¸«å°ˆç”¨ï¼‰
 
-Õâ¸öÖ¸Áî¿ÉÒÔÏÔÊ¾Äã»òÖ¸¶¨¶ÔÏóµÄ¾«ÆøÄÚÁ¦µÈÊýÖµ¡£Èç¹ûÌí¼Ó -m ²Î
-ÊýÔò¸üÏêÏ¸µÄÁÐ³ö¸÷ÖÖÊýÖµµÄ×î´óÓÐÐ§¹ûÖµ¡£Èç¹ûÌí¼Ó -g ²ÎÊýÔò»á
-ÏêÏ¸µÄÁÐ³öÄãµÄÌì¸³ÊôÐÔ×´Ì¬¡£ÆäÖÐ¡ºÔ­Ê¼¡»Ö¸ÄãÔÚÍ¶Ì¥»ò×ªÊÀÖØÉú
-ºó±¾ÉíËù¾ß±¸µÄÔ­Ê¼Öµ¡£¡ºÏÈÌì¡»ÔòÊÇÖ¸¸ÃÏîÏÈÌìÊôÐÔµÄ×ÜÖµ£¬ÕâÏî
-ÊôÐÔ¿ÉÒÔÍ¨¹ý³Ôµ¤»òÊÇ¼¤·¢¹ÊÊÂÒÔ»ñµÃÌáÉý¡£¶ø¡º³É¹¦¡»ºÍ¡ºÊ§°Ü¡»
-ÊÇÖ¸ÄãËù³ÔÔö¼ÓÏÈÌìÊôÐÔÀàÏÉµ¤µÄÐ§¹û¡£¡º¹ÊÊÂ¡»ÊÇÖ¸ÄãÊÇ·ñÔøÔÚÓÎ
-Ï·ÖÐÍ¨¹ýÄ³Ð©¹ÊÊÂÌáÉý¹ýÏàÓ¦µÄÏÈÌìÊôÐÔ¡£×îºóµÄ¡º×ªÊÀ¡»Ôò±íÊ¾Äã
-ÊÇ·ñÍ¨¹ýÁË×ªÊÀÕâ¸öÍ¾¾¶À´Ôö¼ÓÁËºóÌìÊôÐÔ¡£
+é€™å€‹æŒ‡ä»¤å¯ä»¥é¡¯ç¤ºä½ æˆ–æŒ‡å®šå°è±¡çš„ç²¾æ°£å…§åŠ›ç­‰æ•¸å€¼ã€‚å¦‚æžœæ·»åŠ  -m åƒ
+æ•¸å‰‡æ›´è©³ç´°çš„åˆ—å‡ºå„ç¨®æ•¸å€¼çš„æœ€å¤§æœ‰æ•ˆæžœå€¼ã€‚å¦‚æžœæ·»åŠ  -g åƒæ•¸å‰‡æœƒ
+è©³ç´°çš„åˆ—å‡ºä½ çš„å¤©è³¦å±¬æ€§ç‹€æ…‹ã€‚å…¶ä¸­ã€ŽåŽŸå§‹ã€æŒ‡ä½ åœ¨æŠ•èƒŽæˆ–è½‰ä¸–é‡ç”Ÿ
+å¾Œæœ¬èº«æ‰€å…·å‚™çš„åŽŸå§‹å€¼ã€‚ã€Žå…ˆå¤©ã€å‰‡æ˜¯æŒ‡è©²é …å…ˆå¤©å±¬æ€§çš„ç¸½å€¼ï¼Œé€™é …
+å±¬æ€§å¯ä»¥é€šéŽåƒä¸¹æˆ–æ˜¯æ¿€ç™¼æ•…äº‹ä»¥ç²å¾—æå‡ã€‚è€Œã€ŽæˆåŠŸã€å’Œã€Žå¤±æ•—ã€
+æ˜¯æŒ‡ä½ æ‰€åƒå¢žåŠ å…ˆå¤©å±¬æ€§é¡žä»™ä¸¹çš„æ•ˆæžœã€‚ã€Žæ•…äº‹ã€æ˜¯æŒ‡ä½ æ˜¯å¦æ›¾åœ¨éŠ
+æˆ²ä¸­é€šéŽæŸäº›æ•…äº‹æå‡éŽç›¸æ‡‰çš„å…ˆå¤©å±¬æ€§ã€‚æœ€å¾Œçš„ã€Žè½‰ä¸–ã€å‰‡è¡¨ç¤ºä½ 
+æ˜¯å¦é€šéŽäº†è½‰ä¸–é€™å€‹é€”å¾‘ä¾†å¢žåŠ äº†å¾Œå¤©å±¬æ€§ã€‚
 
-Ïà¹ØÖ¸Áî£ºscore
+ç›¸é—œæŒ‡ä»¤ï¼šscore
 HELP);
         return 1;
 }

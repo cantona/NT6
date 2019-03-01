@@ -1,4 +1,4 @@
-// longxia.c ÁúÏº
+// longxia.c é¾è¦
 
 inherit ITEM;
 
@@ -7,13 +7,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name("ÁúÏº", ({ "long xia", "longxia" }) );
+        set_name("é¾è¦", ({ "long xia", "longxia" }) );
         if (clonep())
                 set_default_object(__FILE__);
         else
         {
-                set("long", "Ò»Ö»ÍşÎäµÄ´óÁúÏº¡£\n");
-                set("unit", "Ö»");
+                set("long", "ä¸€åªå¨æ­¦çš„å¤§é¾è¦ã€‚\n");
+                set("unit", "åª");
         }
 
         setup();

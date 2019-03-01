@@ -6,14 +6,14 @@ inherit WRISTS;
 
 void create()
 {
-        set_name(CYN"ÓñÊÖïí"NOR, ({"yu shouzhuo", "shouzhuo" }));
+        set_name(CYN"ç‰æ‰‹é²"NOR, ({"yu shouzhuo", "shouzhuo" }));
         set_weight(500);
         set("taskobj", 1);
         if ( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "°×Óñµñ³ÉµÄÊÖïí£¬ÎÆÀíÇåÎú£¬Ô²»¬¹âÔó¡£\n");
-                set("unit", "Ã¶");
+                set("long", "ç™½ç‰é›•æˆçš„æ‰‹é²ï¼Œç´‹ç†æ¸…æ™°ï¼Œåœ“æ»‘å…‰æ¾¤ã€‚\n");
+                set("unit", "æš");
                 set("value", 0);
                 set("material", "gold");
                 set("armor_prop/armor", 10);

@@ -5,12 +5,12 @@ inherit NPC;
 
 void create()
 {
-        set_name("µË±ş´º", ({"deng bingchun", "deng", "bingchun"}));
-        set("title",HIY"ÉñÁú½Ì"HIG"ÇàÁúÊ¹"NOR"×ùÏÂµÜ×Ó");
-        set("nickname",HIY"¼Ù¹¬Å®"NOR);
-        set("long","Ò»¸öÈıÊ®Ëê×óÓÒµÄµÄÍºÍ·ºº×Ó¡£\n");
+        set_name("é„§ç‚³æ˜¥", ({"deng bingchun", "deng", "bingchun"}));
+        set("title",HIY"ç¥é¾æ•™"HIG"é’é¾ä½¿"NOR"åº§ä¸‹å¼Ÿå­");
+        set("nickname",HIY"å‡å®®å¥³"NOR);
+        set("long","ä¸€å€‹ä¸‰åæ­²å·¦å³çš„çš„ç¦¿é ­æ¼¢å­ã€‚\n");
 
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("attitude", "peaceful"); 
         set("age", 36);
         set("shen_type", -1);

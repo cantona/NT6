@@ -5,21 +5,21 @@ inherit ITEM;
 inherit F_AUTOLOAD;
 void create()
 {
-        set_name(HIB"ÎŞ×ÖÌìÊé"NOR, ({"skybook","book"}) );
+        set_name(HIB"ç„¡å­—å¤©æ›¸"NOR, ({"skybook","book"}) );
         set_weight(10);
         set("no_steal", 1);
         set("no_beg", 1);
 //        set("no_get", 1);
-        set("no_drop","ÍÛ£¿ÌìÊé¶¼Ïë¶ªµô,Ğ¡ĞÄÔâÌìÇ´¡£\n\n");
+        set("no_drop","å“‡ï¼Ÿå¤©æ›¸éƒ½æƒ³ä¸Ÿæ‰,å°å¿ƒé­å¤©è­´ã€‚\n\n");
         set("long",@LONG
-´ËÄËµ±ÄêÏÉÈËÔùÓÚ"µ°Éú"µÄ±¦Îï,ÒòÎªµ°Éú²»Ê¶×Ö,ÏÉÈËÊ©ÁË·¨,
-°ÑÌìÊé±ä³ÉÁËÎŞ×ÖÌìÊé,ºÇºÇ!¾ÍÊÇÎÄÃ¤Ò²ÄÜ¶Á¶®,¿ì¿´¿´(kan)°É£¡
+æ­¤ä¹ƒç•¶å¹´ä»™äººè´ˆäº"è›‹ç”Ÿ"çš„å¯¶ç‰©,å› ç‚ºè›‹ç”Ÿä¸è­˜å­—,ä»™äººæ–½äº†æ³•,
+æŠŠå¤©æ›¸è®Šæˆäº†ç„¡å­—å¤©æ›¸,å‘µå‘µ!å°±æ˜¯æ–‡ç›²ä¹Ÿèƒ½è®€æ‡‚,å¿«çœ‹çœ‹(kan)å§ï¼
 LONG );
         if( clonep() )
                 set_default_object(__FILE__);
         else
         {
-                set("unit", "±¾");
+                set("unit", "æœ¬");
                 set("material", "unknow");
         }
 }
@@ -34,7 +34,7 @@ int query_autoload()
 {
         return 1;
 }
-//½éÉÜ
+//ä»‹ç´¹
 int kan_book()
 {
         object me;
@@ -42,11 +42,11 @@ int kan_book()
         if (!present(this_object(), this_player())) return 0;
 
         tell_object(me,
-    "·¨¾÷ö                    ¹¦ÄÜ
-½î¶·ÔÆ(cloud)         µ½ÏëÈ¥µÄµØ·½\n");
+    "æ³•è¨£â–¡                   åŠŸèƒ½
+ç­‹é¬¥é›²(cloud)         åˆ°æƒ³å»çš„åœ°æ–¹\n");
         return 1;
 }
-// ½î¶·ÔÆ
+// ç­‹é¬¥é›²
 
 int cloud_goto(string arg)
 {
@@ -64,10 +64,10 @@ int cloud_goto(string arg)
                 {
                         obj = environment(ob[i-1]);
                         this_player()->move(obj);
-                        tell_object(mme,HIM"ÄãÒ»¸ö½î¶·´ÜÏò¿ÕÖĞ,Ö»¼ûÑÛÇ°ºìÔÆ·É¹ı,¶ú±ß·çºôºô×÷Ïì ..\n\n"NOR);
-                        tell_object(mme,"ÍÛà¸,ºÃÍ´¿ì,ºÃË¬,Ë¬ÍáÍá!\n\n");
+                        tell_object(mme,HIM"ä½ ä¸€å€‹ç­‹é¬¥ç«„å‘ç©ºä¸­,åªè¦‹çœ¼å‰ç´…é›²é£›é,è€³é‚Šé¢¨å‘¼å‘¼ä½œéŸ¿ ..\n\n"NOR);
+                        tell_object(mme,"å“‡å–”,å¥½ç—›å¿«,å¥½çˆ½,çˆ½æ­ªæ­ª!\n\n");
                         mme->move(obj);
-                        tell_object(mme,"Äã¼İ×ÅÔÆ»º»ºÏÂ½µ,°Èß´Ò»Éù,ºÙ!°²È«×ÅÂ½...\n");
+                        tell_object(mme,"ä½ é§•è‘—é›²ç·©ç·©ä¸‹é™,å­å˜°ä¸€è²,å˜¿!å®‰å…¨è‘—é™¸...\n");
                         return 1;
                 }
         }
@@ -76,6 +76,6 @@ int cloud_goto(string arg)
 
 void owner_is_killed()
 {
-        write(HIY"Ö»¼ûÑÛÇ°½ğ¹âÒ»ÉÁ...ºÃÏóÊÇ.....\n"NOR);
+        write(HIY"åªè¦‹çœ¼å‰é‡‘å…‰ä¸€é–ƒ...å¥½è±¡æ˜¯.....\n"NOR);
         destruct(this_object());
 }

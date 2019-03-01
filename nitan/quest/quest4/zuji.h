@@ -24,11 +24,11 @@ void zuji_begin(int num)
 
      zuji_times++;
 
-     message("channel:rumor", MAG"¡¾¹ÊÊÂ´«ÎÅ¡¿Ö»ÌýµÃµÄµÄÂíÌãÖ®Éù£¬Ò»¶ÓÆõµ¤ÎäÊ¿»ÓÎè×Å³¤Ã¬£¬Éí±³¹­¼ý£¬Ö¸Ö¸µãµã£¬À´µ½ÁËÑãÃÅ¹ØÍâ¡£\n"
-        "´øÍ·´ó¸çµÀ£ºËäÈ»ÕâÐ©Æõµ¤ÈË¿´ËÆÀ´á÷ÁÔµÄ£¬µ«²»ÄÜÂí»¢£¬Ò»¸öÒ²Áô²»µÃ£¡\n"
-        "ÖÚÈËµÄ°µÆ÷±ãÉäÁË³öÈ¥£¬¸ÖïÚ¡¢Ðä¼ý¡¢·Éµ¶¡¢Ìú×¶¡­¡­Ã¿¼þ¶¼Î¹ÁË¾ç¶¾¡£\n"
-        "Ö»ÌýµÃÖÚÁÉÈË°¡°¡ºô½Ð£¬ÂÒ³ÉÒ»ÍÅ£¬Ò»´ó°ë¶¼Ë¤ÏÂÂíÀ´¡£\n"
-        "ÖÚÈËÒ»Óµ¶øÉÏ¡£µ¶½£ÆëÊ©£¡\n"NOR,users());
+     message("channel:rumor", MAG"ã€æ•…äº‹å‚³èžã€‘åªè½å¾—çš„çš„é¦¬è¹„ä¹‹è²ï¼Œä¸€éšŠå¥‘ä¸¹æ­¦å£«æ®èˆžè‘—é•·çŸ›ï¼Œèº«èƒŒå¼“ç®­ï¼ŒæŒ‡æŒ‡é»žé»žï¼Œä¾†åˆ°äº†é›é–€é—œå¤–ã€‚\n"
+        "å¸¶é ­å¤§å“¥é“ï¼šé›–ç„¶é€™äº›å¥‘ä¸¹äººçœ‹ä¼¼ä¾†ç‹©çµçš„ï¼Œä½†ä¸èƒ½é¦¬è™Žï¼Œä¸€å€‹ä¹Ÿç•™ä¸å¾—ï¼\n"
+        "çœ¾äººçš„æš—å™¨ä¾¿å°„äº†å‡ºåŽ»ï¼Œé‹¼é¢ã€è¢–ç®­ã€é£›åˆ€ã€éµéŒâ€¦â€¦æ¯ä»¶éƒ½å–‚äº†åŠ‡æ¯’ã€‚\n"
+        "åªè½å¾—çœ¾é¼äººå•Šå•Šå‘¼å«ï¼Œäº‚æˆä¸€åœ˜ï¼Œä¸€å¤§åŠéƒ½æ‘”ä¸‹é¦¬ä¾†ã€‚\n"
+        "çœ¾äººä¸€æ“è€Œä¸Šã€‚åˆ€åŠé½Šæ–½ï¼\n"NOR,users());
      for(n=0;n<num;n++)
      {
           killer=new("/quest/zuji/qidanb");
@@ -55,11 +55,11 @@ void zuji_new(int num)
      {
 */
           zuji_times=1;
-   message("channel:rumor",MAG"¡¾¹ÊÊÂ´«ÎÅ¡¿ÑãÃÅ¹ØÍâ£¬Ö»¼ûÕâÊ±£¬ÂíÌãÉùÓÖÏìÆðÀ´£¬ÁÉÈËµ±ÏÈµÄÂíÆ¥±¼½ü¡£\n"
-       "Ö»¼ûÕâÐ©Æõµ¤ÎäÊ¿ÉíÉÏ¶¼ÅûÆ¤ôÃ£¬»òÄÃ³¤Ã¬£¬»òÌáÍäµ¶£¬»òÍä¹­´î¼ý£¬»òÍ£ÁÔÓ¥£¬¸ß¸è¶øÀ´¡£\n"
-       "´øÍ·´ó¸çÒ»Éù³¤Ð¥£¬¾ÍÊÇËûÃÇÁË£¡ÖÚÈËµÄ°µÆ÷±ãÉäÁË³öÈ¥£¬¸ÖïÚ¡¢Ðä¼ý¡¢·Éµ¶¡¢Ìú×¶¡­¡­Ã¿¼þ¶¼Î¹ÁË¾ç¶¾¡£\n"
-       "Ö»ÌýµÃÖÚÁÉÈË°¡°¡ºô½Ð£¬ÂÒ³ÉÒ»ÍÅ£¬Ò»´ó°ë¶¼Ë¤ÏÂÂíÀ´¡£\n"
-       "ÖÚÈËÒ»Óµ¶øÉÏ¡£µ¶½£ÆëÊ©£¡\n"NOR,users());
+   message("channel:rumor",MAG"ã€æ•…äº‹å‚³èžã€‘é›é–€é—œå¤–ï¼Œåªè¦‹é€™æ™‚ï¼Œé¦¬è¹„è²åˆéŸ¿èµ·ä¾†ï¼Œé¼äººç•¶å…ˆçš„é¦¬åŒ¹å¥”è¿‘ã€‚\n"
+       "åªè¦‹é€™äº›å¥‘ä¸¹æ­¦å£«èº«ä¸Šéƒ½æŠ«çš®è£˜ï¼Œæˆ–æ‹¿é•·çŸ›ï¼Œæˆ–æå½Žåˆ€ï¼Œæˆ–å½Žå¼“æ­ç®­ï¼Œæˆ–åœçµé·¹ï¼Œé«˜æ­Œè€Œä¾†ã€‚\n"
+       "å¸¶é ­å¤§å“¥ä¸€è²é•·å˜¯ï¼Œå°±æ˜¯ä»–å€‘äº†ï¼çœ¾äººçš„æš—å™¨ä¾¿å°„äº†å‡ºåŽ»ï¼Œé‹¼é¢ã€è¢–ç®­ã€é£›åˆ€ã€éµéŒâ€¦â€¦æ¯ä»¶éƒ½å–‚äº†åŠ‡æ¯’ã€‚\n"
+       "åªè½å¾—çœ¾é¼äººå•Šå•Šå‘¼å«ï¼Œäº‚æˆä¸€åœ˜ï¼Œä¸€å¤§åŠéƒ½æ‘”ä¸‹é¦¬ä¾†ã€‚\n"
+       "çœ¾äººä¸€æ“è€Œä¸Šã€‚åˆ€åŠé½Šæ–½ï¼\n"NOR,users());
 
      for(n=0;n<num;n++)
      {
@@ -75,8 +75,8 @@ void zuji_new(int num)
 
 void zuji_continue(int num)
 {
-          message("channel:rumor", HIR"¡¾¹ÊÊÂ´«ÎÅ¡¿¾­¹ýÒ»¶ÎÊ±¼äµÄÊâËÀ"
-            +HIR"²«¶·£¬½«ÕâÊ£ÏÂ¼¸ÈË¾¡ÊýÉ±ÁË£¬Ã»Ò»¸ö»î¿ÚÌÓ×ß¡££¡\n"NOR,users()); 
+          message("channel:rumor", HIR"ã€æ•…äº‹å‚³èžã€‘ç¶“éŽä¸€æ®µæ™‚é–“çš„æ®Šæ­»"
+            +HIR"æé¬¥ï¼Œå°‡é€™å‰©ä¸‹å¹¾äººç›¡æ•¸æ®ºäº†ï¼Œæ²’ä¸€å€‹æ´»å£é€ƒèµ°ã€‚ï¼\n"NOR,users()); 
           remove_call_out("zuji_over");
           call_out("zuji_over",30,num);
 }
@@ -84,17 +84,17 @@ void zuji_over(int num)
 {
      object killer,killer1;
      int n;
-   message("channel:rumor",MAG"¡¾¹ÊÊÂ´«ÎÅ¡¿Ö»ÌýµÃÂíÌãÉùÒô£¬Î÷±±½ÇÓÖÓÐÁ½ÆïÂí³ÛÀ´£¬ÂíÉÏÊÇÄÐÅ®¶þÈË¡£\n"
-        "ÕâÁ½ÈË¼ûµ½ÄÇÒ»Ê®¾ÅÃûÎäÊ¿ËÀÔÚµØÏÂ£¬ÄÇÄÐ×ÓÁ¢Ê±ÉñÉ«Ê®·ÖÐ×ÃÍ£¬ÏòÖÚÈË´óÉùºÈÎÊ¡£\n"
-        "ÁÉÈË£º$*@!@#$%^&*£¡\n"
-        "ÌúËþ·½´óÐÛ¾ÙÆðÒ»ÌõïÙÌú¹÷£¬ºÈµÀ£ºØ£ÄÇÁÉ¹·£¬ÄÉÏÂÃüÀ´£¡»Ó¹÷±ãÏòÄÇÆõµ¤ÄÐ×Ó´òÁË¹ýÈ¥¡£\n"
-        "ÄÇÁÉÈËÓÒ±ÛÉì³ö£¬ÕÛ¶Ï·½´óÐÛÓÒ±Û¹Ø½Ú£¬½«ËûµÄÉí×ÓÌôÁËÆðÀ´£¬Á¬ÈË´ø¹÷£¬Ò»ÆðË¤ÔÚµÀÅÔ¡£\n"
-        "ÁÉÈË£º#$%^&*$*@!@£¡\n"
-        "µ±ÏÂÁùÆßÈËÒ»Óµ¶øÉÏ£¬ÏòÄÇÁÉÈË¹¥ÁË¹ýÈ¥¡£ÁíÍâËÄÎåÈËÔòÏòÄÇÉÙ¸¾¹¥»÷¡£\n"
-        "ÄÇÉÙ¸¾±»ÈËÒ»½£±ãÕ¶¶ÏÒ»ÌõÊÖ±Û£¬±§×ÅµÄÓ¤¶ùµøÏÂµØÀ´£¬¸ú×Å±ã±»Ò»µ¶¿³È¥ÁË°ë±ßÄÔ´ü¡£\n"
-        "Ö»ÌýµÃÄÇÁÉÈËÑÛ¾¦µÇÊ±ºìÁË£¬Á³ÉÏÉñÉ«¿É²ÀÖ®¼«£¬±©ºÈÒ»Éù£¬³åÏòµÐÕó¡£\n"
+   message("channel:rumor",MAG"ã€æ•…äº‹å‚³èžã€‘åªè½å¾—é¦¬è¹„è²éŸ³ï¼Œè¥¿åŒ—è§’åˆæœ‰å…©é¨Žé¦¬é¦³ä¾†ï¼Œé¦¬ä¸Šæ˜¯ç”·å¥³äºŒäººã€‚\n"
+        "é€™å…©äººè¦‹åˆ°é‚£ä¸€åä¹åæ­¦å£«æ­»åœ¨åœ°ä¸‹ï¼Œé‚£ç”·å­ç«‹æ™‚ç¥žè‰²ååˆ†å…‡çŒ›ï¼Œå‘çœ¾äººå¤§è²å–å•ã€‚\n"
+        "é¼äººï¼š$*@!@#$%^&*ï¼\n"
+        "éµå¡”æ–¹å¤§é›„èˆ‰èµ·ä¸€æ¢é‘Œéµæ£ï¼Œå–é“ï¼šå…€é‚£é¼ç‹—ï¼Œç´ä¸‹å‘½ä¾†ï¼æ®æ£ä¾¿å‘é‚£å¥‘ä¸¹ç”·å­æ‰“äº†éŽåŽ»ã€‚\n"
+        "é‚£é¼äººå³è‡‚ä¼¸å‡ºï¼ŒæŠ˜æ–·æ–¹å¤§é›„å³è‡‚é—œç¯€ï¼Œå°‡ä»–çš„èº«å­æŒ‘äº†èµ·ä¾†ï¼Œé€£äººå¸¶æ£ï¼Œä¸€èµ·æ‘”åœ¨é“æ—ã€‚\n"
+        "é¼äººï¼š#$%^&*$*@!@ï¼\n"
+        "ç•¶ä¸‹å…­ä¸ƒäººä¸€æ“è€Œä¸Šï¼Œå‘é‚£é¼äººæ”»äº†éŽåŽ»ã€‚å¦å¤–å››äº”äººå‰‡å‘é‚£å°‘å©¦æ”»æ“Šã€‚\n"
+        "é‚£å°‘å©¦è¢«äººä¸€åŠä¾¿æ–¬æ–·ä¸€æ¢æ‰‹è‡‚ï¼ŒæŠ±è‘—çš„å¬°å…’è·Œä¸‹åœ°ä¾†ï¼Œè·Ÿè‘—ä¾¿è¢«ä¸€åˆ€ç åŽ»äº†åŠé‚Šè…¦è¢‹ã€‚\n"
+        "åªè½å¾—é‚£é¼äººçœ¼ç›ç™»æ™‚ç´…äº†ï¼Œè‡‰ä¸Šç¥žè‰²å¯æ€–ä¹‹æ¥µï¼Œæš´å–ä¸€è²ï¼Œæ²–å‘æ•µé™£ã€‚\n"
         ".........\n"
-        NOR+HIY"Ï¦ÑôÈçÑª£¬Ñã¹ØÃÅÍâË··çºôºÅ.........\n"NOR,users());
+        NOR+HIY"å¤•é™½å¦‚è¡€ï¼Œé›é—œé–€å¤–æœ”é¢¨å‘¼è™Ÿ.........\n"NOR,users());
 /*
      for(n=0;n<num;n++)
      {
@@ -125,13 +125,13 @@ void zuji_close()
       ulist[k]->add("combat_exp",20000);
       ulist[k]->add("potential",5000);
       ulist[k]->add("weiwang",20);
-           tell_object(ulist[k],HIW"Äã»ñµÃÁË"+HIR+chinese_number(20000) 
-           +HIW"µã¾­ÑéºÍ"+HIR+chinese_number(5000)+HIW"µãÇ±ÄÜ½±ÀøºÍ"+HIR+chinese_number(20)+HIW"µãÍþÍû£¡£¡\n"NOR);   
+           tell_object(ulist[k],HIW"ä½ ç²å¾—äº†"+HIR+chinese_number(20000) 
+           +HIW"é»žç¶“é©—å’Œ"+HIR+chinese_number(5000)+HIW"é»žæ½›èƒ½çŽå‹µå’Œ"+HIR+chinese_number(20)+HIW"é»žå¨æœ›ï¼ï¼\n"NOR);   
    }
 
-  message("channel:rumor",MAG"¡¾¹ÊÊÂ´«ÎÅ¡¿Ö»ÌýµÃµ±µÄÒ»Éù£¬ÄÇÁÉÈËÖÀÏÂ¶Ìµ¶£¬¸©Éí±§ÆðËûÆÞ×ÓµÄÊ¬ÉíºÍ¶ù×Ó£¬×ßµ½ÑÂ±ß£¬\n"
-       "Ó¿Éí±ãÍùÉî¹ÈÖÐÌøÁËÏÂÈ¥¡£ºöÈ»¼ä¡°ÍÛÍÛ¡±Á½ÉùÓ¤¶ùµÄÌä¿Þ£¬´ÓÂÒÊ¯¹ÈÖÐ´«ÁËÉÏÀ´£¬¸ú×ÅºÚ÷î÷îÒ»¼þÎïÊÂ´Ó\n"
-       "¹ÈÖÐ·ÉÉÏ£¬ÅÄµÄÒ»ÉùÇáÒô£¬ÕýºÃµøÔÚÍô°ïÖ÷ÉíÉÏ¡£Ó¤¶ùÌä¿ÞÖ®ÉùÒ»Ö±²»Ö¹£¬ÕýÊÇÄÇ¸öÓ¤¶ù¡£\n"NOR,users());
+  message("channel:rumor",MAG"ã€æ•…äº‹å‚³èžã€‘åªè½å¾—ç•¶çš„ä¸€è²ï¼Œé‚£é¼äººæ“²ä¸‹çŸ­åˆ€ï¼Œä¿¯èº«æŠ±èµ·ä»–å¦»å­çš„å±èº«å’Œå…’å­ï¼Œèµ°åˆ°å´–é‚Šï¼Œ\n"
+       "æ¹§èº«ä¾¿å¾€æ·±è°·ä¸­è·³äº†ä¸‹åŽ»ã€‚å¿½ç„¶é–“â€œå“‡å“‡â€å…©è²å¬°å…’çš„å•¼å“­ï¼Œå¾žäº‚çŸ³è°·ä¸­å‚³äº†ä¸Šä¾†ï¼Œè·Ÿè‘—é»‘é»é»ä¸€ä»¶ç‰©äº‹å¾ž\n"
+       "è°·ä¸­é£›ä¸Šï¼Œæ‹çš„ä¸€è²è¼•éŸ³ï¼Œæ­£å¥½è·Œåœ¨æ±ªå¹«ä¸»èº«ä¸Šã€‚å¬°å…’å•¼å“­ä¹‹è²ä¸€ç›´ä¸æ­¢ï¼Œæ­£æ˜¯é‚£å€‹å¬°å…’ã€‚\n"NOR,users());
 
    zuji_times=0;
    killer_rate=6;
@@ -172,12 +172,12 @@ void remove_enemy()
                         if (enemys[i]->is_fighting())
                         {
                                 enemys[i]->remove_all_killer();
-                                tell_room(environment(enemys[i]), HIW "Ö»¼û" + enemys[i]->name()
-                                        + "Í»È»ÃæÉ«Ò»±ä£¬Ñ¸ËÙ¹¥³ö¼¸ÕÐ£¬Ìø³öÕ½È¦×ªÉíÌÓÁË¡£\n");
+                                tell_room(environment(enemys[i]), HIW "åªè¦‹" + enemys[i]->name()
+                                        + "çªç„¶é¢è‰²ä¸€è®Šï¼Œè¿…é€Ÿæ”»å‡ºå¹¾æ‹›ï¼Œè·³å‡ºæˆ°åœˆè½‰èº«é€ƒäº†ã€‚\n");
                         }
                         else {
-                                tell_room(environment(enemys[i]), HIW "Ö»¼û" + enemys[i]->name()
-                                        + "ÆþÖµÒ»Ëã£¬Í»È»Á³É«´ó±ä£¬¼±¼±Ã¦Ã¦µØÌÓ×ßÁË¡£\n");
+                                tell_room(environment(enemys[i]), HIW "åªè¦‹" + enemys[i]->name()
+                                        + "æŽå€¼ä¸€ç®—ï¼Œçªç„¶è‡‰è‰²å¤§è®Šï¼Œæ€¥æ€¥å¿™å¿™åœ°é€ƒèµ°äº†ã€‚\n");
                         }
                         destruct(enemys[i]);
                 }

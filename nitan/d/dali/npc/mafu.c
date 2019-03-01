@@ -1,4 +1,4 @@
-// mafu.c Âí·ò
+// mafu.c é¦¬å¤«
 
 inherit NPC;
 #include <ansi.h>
@@ -6,10 +6,10 @@ int do_ride();
 
 void create()
 {
-        set_name("Âí·ò", ({ "ma fu","mafu","ma" }));
+        set_name("é¦¬å¤«", ({ "ma fu","mafu","ma" }));
         set("age", 32);
-        set("gender", "ÄĞĞÔ");
-        set("long","Ñ±ÂíºÍ×âÂíµÄĞ¡··£¬¸øËû×â½ğ¾Í¿ÉÒÔ¹Íµ½Âí¡£\n");
+        set("gender", "ç”·æ€§");
+        set("long","é¦´é¦¬å’Œç§Ÿé¦¬çš„å°è²©ï¼Œçµ¦ä»–ç§Ÿé‡‘å°±å¯ä»¥é›‡åˆ°é¦¬ã€‚\n");
         set("attitude", "peaceful");
         set("str", 24);
         set("dex", 16);
@@ -41,7 +41,7 @@ void init()
 void greeting(object ob)
 {
         if( !ob || environment(ob) != environment() ) return;
-        say( "Âí·òµãÍ·¹şÑüµØËµµÀ£ºÕâÎ»¿Í¹Ù£¬ÊÇÏëµ½ÕâÀïÌôÒ»Æ¥ºÃÂí°É£¿\n");
+        say( "é¦¬å¤«é»é ­å“ˆè…°åœ°èªªé“ï¼šé€™ä½å®¢å®˜ï¼Œæ˜¯æƒ³åˆ°é€™è£¡æŒ‘ä¸€åŒ¹å¥½é¦¬å§ï¼Ÿ\n");
 }
 
 int accept_object(object who, object ob)
@@ -49,13 +49,13 @@ int accept_object(object who, object ob)
         object myenv ;
         if( query("money_id", ob) && ob->value() >= 100 )
         {
-        message_vision("Âí·ò¶Ô$NËµ£ººÃ£¡ÕâÎ»"+RANK_D->query_respect(who) +
-                "ÏÖÔÚ¾Í³ö·¢Âğ? ÄÇ¾ÍÉÏÂí°É¡£\n", who);
+        message_vision("é¦¬å¤«å°$Nèªªï¼šå¥½ï¼é€™ä½"+RANK_D->query_respect(who) +
+                "ç¾åœ¨å°±å‡ºç™¼å—? é‚£å°±ä¸Šé¦¬å§ã€‚\n", who);
                 set_temp("marks/horserent", 1, this_player());
                        return 1;
         }
         else  
-                message_vision("Âí·òÖåÃ¼¶Ô$NËµ£ºÄú¸øµÄÒ²Ì«ÉÙÁË°É£¿\n", who);
+                message_vision("é¦¬å¤«çšºçœ‰å°$Nèªªï¼šæ‚¨çµ¦çš„ä¹Ÿå¤ªå°‘äº†å§ï¼Ÿ\n", who);
         return 1;
 }
 

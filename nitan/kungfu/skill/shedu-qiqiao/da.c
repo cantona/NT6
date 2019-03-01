@@ -5,7 +5,7 @@
 
 inherit F_SSERVER;
 
-string name() { return "´ò×Ö¾÷"; }
+string name() { return "æ‰“å­—è¨£"; }
 
 int perform(object me, object target)
 {
@@ -16,31 +16,31 @@ int perform(object me, object target)
         weapon=query_temp("weapon", me);
 
         if (! target)
-                return notify_fail("ÄãÒª´òÄÄÌõÉß£¿\n");
+                return notify_fail("ä½ è¦æ‰“å“ªæ¢è›‡ï¼Ÿ\n");
 
         if (! target->is_snake())
-                return notify_fail("¿´Çå³þÐ©£¬ÄÇ²»ÊÇÉß£¬ÄãÏ¹´òÊ²Ã´£¿\n");
+                return notify_fail("çœ‹æ¸…æ¥šäº›ï¼Œé‚£ä¸æ˜¯è›‡ï¼Œä½ çžŽæ‰“ä»€éº¼ï¼Ÿ\n");
 
         if (! living(target))
-                return notify_fail("ÄÇÌõÉßÔÝÊ±²»»á¶¯µ¯ÁË£¬Äã²»±ØÔÙ´òÁË¡£\n");
+                return notify_fail("é‚£æ¢è›‡æš«æ™‚ä¸æœƒå‹•å½ˆäº†ï¼Œä½ ä¸å¿…å†æ‰“äº†ã€‚\n");
 
         if ((int)me->query_skill("shedu-qiqiao", 1) < 20)
-                return notify_fail("ÄãµÄÉß¶¾ÆæÇÉ»¹²»¹»æµÊì£¬²»ÄÜ´òÉß¡£\n");
+                return notify_fail("ä½ çš„è›‡æ¯’å¥‡å·§é‚„ä¸å¤ å«»ç†Ÿï¼Œä¸èƒ½æ‰“è›‡ã€‚\n");
 
         if ((int)me->query_skill("force") < 30)
-                return notify_fail("ÄãµÄÄÚ¹¦µÄÐÞÎª²»¹»£¬²»ÄÜ´òÉß¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸçš„ä¿®ç‚ºä¸å¤ ï¼Œä¸èƒ½æ‰“è›‡ã€‚\n");
 
         if( query("neili", me)<100 )
-                return notify_fail("ÄãÏÖÔÚµÄÄÚÁ¦²»¹»ÁË¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çš„å…§åŠ›ä¸å¤ äº†ã€‚\n");
 
         if (weapon)
-                msg = HIC "\n$N" HIC "Îè¶¯ÊÖÖÐµÄ" + weapon->name() +
-                      HIC "£¬³¯×Å" + target->name() + HIC "µÄÆß´ç´ò"
-                      "ÁË¹ýÈ¥¡£\n" NOR;
+                msg = HIC "\n$N" HIC "èˆžå‹•æ‰‹ä¸­çš„" + weapon->name() +
+                      HIC "ï¼Œæœè‘—" + target->name() + HIC "çš„ä¸ƒå¯¸æ‰“"
+                      "äº†éŽåŽ»ã€‚\n" NOR;
         else
-                msg = HIC "\n$N" HIC "Éì³öË«Ö¸£¬³öÖ¸Èç·ç£¬Ñ¸õÒÎÞ±ÈµÄ"
-                      "³¯×Å" + target->name() + HIC "µÄÆß´çµãÁË¹ýÈ¥"
-                      "¡£\n" NOR;
+                msg = HIC "\n$N" HIC "ä¼¸å‡ºé›™æŒ‡ï¼Œå‡ºæŒ‡å¦‚é¢¨ï¼Œè¿…èº‹ç„¡æ¯”çš„"
+                      "æœè‘—" + target->name() + HIC "çš„ä¸ƒå¯¸é»žäº†éŽåŽ»"
+                      "ã€‚\n" NOR;
 
         lvl = (int) me->query_skill("shedu-qiqiao", 1) +
               (int) me->query_skill("dodge");
@@ -48,29 +48,29 @@ int perform(object me, object target)
 
         if( lvl/2+random(lvl)<query("combat_exp", target) )
         {
-                msg += HIY "½á¹ûÖ»Ìý¡°Å¾¡±µÄÒ»Éù£¬Õý´òÔÚ" + target->name() +
-                       HIY "µÄÆß´çÉÏ¡£\n" NOR;
+                msg += HIY "çµæžœåªè½â€œå•ªâ€çš„ä¸€è²ï¼Œæ­£æ‰“åœ¨" + target->name() +
+                       HIY "çš„ä¸ƒå¯¸ä¸Šã€‚\n" NOR;
                 lvl = (int) me->query_skill("force");
                 lvl = lvl * 13 / 10;
                 lvl = lvl * lvl / 10 * lvl;
 //                if ( lvl / 2 + random(lvl) > (int) target->query("combat_exp") )
                 if( lvl/2+random(lvl)<query("combat_exp", target) )
                 {
-                        msg += HIM "Ö»¼û" + target->name() + HIM
-                               "Éí×ÓÇáÇá»Î¶¯¼¸ÏÂ£¬¾Í²»ÔÙ¶¯µ¯ÁË¡£\n" NOR;
+                        msg += HIM "åªè¦‹" + target->name() + HIM
+                               "èº«å­è¼•è¼•æ™ƒå‹•å¹¾ä¸‹ï¼Œå°±ä¸å†å‹•å½ˆäº†ã€‚\n" NOR;
                         message_combatd(msg, me);
                         target->unconcious(me);
                 } else
                 {
-                        msg += HIR + "ÄÄÀïÏëµ½" + target->name() +
-                               HIR "°¤ÁËÕâÒ»»÷£¬¾¹È»ÈôÎÞÆäÊÂ£¬¶ÙÊ±Ò»¸ö·­"
-                               "Éí£¬Ö±ÆËÏò$N" HIR "£¡\n\n" NOR;
+                        msg += HIR + "å“ªè£¡æƒ³åˆ°" + target->name() +
+                               HIR "æŒ¨äº†é€™ä¸€æ“Šï¼Œç«Ÿç„¶è‹¥ç„¡å…¶äº‹ï¼Œé “æ™‚ä¸€å€‹ç¿»"
+                               "èº«ï¼Œç›´æ’²å‘$N" HIR "ï¼\n\n" NOR;
                         message_combatd(msg, me);
                         target->kill_ob(me);
                 }
         } else
         {
-                msg += WHT "È»¶ø" + target->name() + WHT "Éí×ÓÒ»ÉÁ£¬¶ãÁË¹ýÈ¥¡£\n\n" NOR;
+                msg += WHT "ç„¶è€Œ" + target->name() + WHT "èº«å­ä¸€é–ƒï¼Œèº²äº†éŽåŽ»ã€‚\n\n" NOR;
                 message_combatd(msg, me);
                 target->kill_ob(me);
         }

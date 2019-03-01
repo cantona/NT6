@@ -7,14 +7,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name("´óÌúºÐ" , ({ "tie he", "box" }) );
+        set_name("å¤§éµç›’" , ({ "tie he", "box" }) );
         set_weight(3000);
         set_max_encumbrance(5000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
-                set("long", "ÕâÊÇÒ»¸öÁ½³ßÀ´¸ßµÄÌúºÐ×Ó£¬ÉÏÃæÂúÊÇÁËÄàÍÁ¡£\n");
+                set("unit", "å€‹");
+                set("long", "é€™æ˜¯ä¸€å€‹å…©å°ºä¾†é«˜çš„éµç›’å­ï¼Œä¸Šé¢æ»¿æ˜¯äº†æ³¥åœŸã€‚\n");
                 set("value", 1000);
                 set("material", "steel");
                 set("no_get",1);
@@ -38,10 +38,10 @@ int do_open(string arg)
         object ob;
 
     if( query_temp("open", me) && geteuid(me) != "yueying" )
-          return notify_fail("ÄãÒÑ¾­´ò¿ªºÐ×ÓÁË\n");   
+          return notify_fail("ä½ å·²ç¶“æ‰“é–‹ç›’å­äº†\n");   
     if (!arg || (arg != "box" && arg != "tie he"))
        {
-        return notify_fail("ÄãÏë´ò¿ªÊ²Ã´£¿\n");
+        return notify_fail("ä½ æƒ³æ‰“é–‹ä»€éº¼ï¼Ÿ\n");
         return 1;
        }
     else
@@ -50,27 +50,27 @@ int do_open(string arg)
     {
           ob=unew(__DIR__"jiaxin");
           if (random(20)> 20) {
-                        write("Äã´ò¿ªÌúºÐ£¬·¢ÏÖÀïÃæ¿Õ¿ÕµÄÊ²Ã´Ò²Ã»ÓÐ¡£\n");
-                        write(HIG"¿´À´ÓÐÈËÒÑ¾­È¡×ßÁËÀïÃæµÄ¶«Î÷,Äã»¹ÊÇ¸ÄÌìÔÙÀ´°É.\n"NOR);
+                        write("ä½ æ‰“é–‹éµç›’ï¼Œç™¼ç¾è£¡é¢ç©ºç©ºçš„ä»€éº¼ä¹Ÿæ²’æœ‰ã€‚\n");
+                        write(HIG"çœ‹ä¾†æœ‰äººå·²ç¶“å–èµ°äº†è£¡é¢çš„æ±è¥¿,ä½ é‚„æ˜¯æ”¹å¤©å†ä¾†å§.\n"NOR);
         set_temp("open", 1, me);
                   return 1;
                  }
         ob->move(me);
-        write(HIC"ÄãÇá¿ªÌúÏ»£¬·¢ÏÖÀïÃæÆ½Æ½ÕûÕû·Å×ÅÒ»·âÊéÐÅ,ÄãÁ¬Ã¦¼ðÁËÆðÀ´¡£\n"NOR);
+        write(HIC"ä½ è¼•é–‹éµåŒ£ï¼Œç™¼ç¾è£¡é¢å¹³å¹³æ•´æ•´æ”¾è‘—ä¸€å°æ›¸ä¿¡,ä½ é€£å¿™æ€äº†èµ·ä¾†ã€‚\n"NOR);
         
         set_temp("open", 1, me);
         return 1;       
       }
     if (!present("xin jian",me))
        {
-        write("ÄãÇá¿ªÌúÏ»£¬Í»È»µôÂäÁËÒ»ÕÅÐÅ¼ã£¬Äã¼±Ã¦°ÑËü¼ñÆð¡£\n");
+        write("ä½ è¼•é–‹éµåŒ£ï¼Œçªç„¶æŽ‰è½äº†ä¸€å¼µä¿¡ç®‹ï¼Œä½ æ€¥å¿™æŠŠå®ƒæ’¿èµ·ã€‚\n");
         ob=new(__DIR__"xinjian1");
         set_temp("mark/open", 1, me);
         set_temp("open", 1, me);
         ob->move(me);
         return 1;
        }
-        write("Äã´ò¿ªÌúºÐ£¬·¢ÏÖÀïÃæ¿Õ¿ÕµÄÊ²Ã´Ò²Ã»ÓÐ¡£\n");
+        write("ä½ æ‰“é–‹éµç›’ï¼Œç™¼ç¾è£¡é¢ç©ºç©ºçš„ä»€éº¼ä¹Ÿæ²’æœ‰ã€‚\n");
         return 1;
     }
 }
@@ -79,26 +79,26 @@ int do_move(string arg)
         object me = this_player();
         object ob;
         if ( !arg || arg != "anceng" )
-        return notify_fail("ÄãÒª¸ÉÊ²÷á£¿\n");
+        return notify_fail("ä½ è¦å¹¹ä»€éº¼ï¼Ÿ\n");
         if( !query_temp("mark/open", me) && !query_temp("mark/xin", me) )
-         return notify_fail("ÄãÒª×öÊ²÷á£¿\n");
+         return notify_fail("ä½ è¦åšä»€éº¼ï¼Ÿ\n");
         
-                write("ÄãÐ¡ÐÄÒíÒí´ò¿ª°µ²ã.......\n");
+                write("ä½ å°å¿ƒç¿¼ç¿¼æ‰“é–‹æš—å±¤.......\n");
                 if( random(10)>8 || query("env/debug", me)){
                                           ob=unew(__DIR__"jinshezhui");
                                           if ( ob ){
                                                          ob->move(me);
                                                          delete_temp("mark/open", me);
                                                          delete_temp("mark/xin", me);
-                                                         write(HIY"ºÕÈ»·¢ÏÖ,Ò»±ú½ð¹âÉÁÉÁµÄÉßÐÍ×¶·ÅÔÚÀïÃæ,¿´ÆðÀ´ºÜÖµÇ®µÄÑù×Ó,Äã¿ªÐÄ¼«ÁË,Á¬Ã¦°ÑËü´§½ø»³Àï\n"NOR);
-       set_temp("quest/½ðÉß½£·¨/½ðÉß×¶", 1, this_player());
-       set_temp("quest/½ðÉßÕÆ·¨/start", 1, this_player());//¿ªÊ¼±ê¼Çbydaidai
+                                                         write(HIY"èµ«ç„¶ç™¼ç¾,ä¸€æŸ„é‡‘å…‰é–ƒé–ƒçš„è›‡åž‹éŒæ”¾åœ¨è£¡é¢,çœ‹èµ·ä¾†å¾ˆå€¼éŒ¢çš„æ¨£å­,ä½ é–‹å¿ƒæ¥µäº†,é€£å¿™æŠŠå®ƒæ£é€²æ‡·è£¡\n"NOR);
+       set_temp("quest/é‡‘è›‡åŠæ³•/é‡‘è›‡éŒ", 1, this_player());
+       set_temp("quest/é‡‘è›‡æŽŒæ³•/start", 1, this_player());//é–‹å§‹æ¨™è¨˜bydaidai
                                                      return 1;
                                                     }
                                           else return 1;
                                           }          
                           
-        message_vision(RED"$NÍ»È»¿´¼û¼¸µÀº®¹âÆËÃæ£¬´ó½ÐÒ»Éù£¬Ò»Õó³é´¤¡£\n"NOR, me);
+        message_vision(RED"$Nçªç„¶çœ‹è¦‹å¹¾é“å¯’å…‰æ’²é¢ï¼Œå¤§å«ä¸€è²ï¼Œä¸€é™£æŠ½æã€‚\n"NOR, me);
         delete_temp("mark/open", me);
         me->unconcious();
         return 1;

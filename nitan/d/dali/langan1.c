@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-        set("short","����");
+        set("short","桿欄");
         set("long",@LONG
-��������������ľ�Ծ����ϣ����Ǹ�������������������̡�
-�乹���������¥�����濪�ţ����ݿ����£��ϸ��糵��״���в�ס
-�ˣ��������²㣬һ��Ϊţ��Ȧ��
+擺夷族大多依樹積木以居其上，就是桿欄，在夷語裡叫做榔盤。
+其構造大致略似樓，側面開門，有梯可上下，上閣如車蓋狀，中層住
+人，這裡是下層，一般為牛羊圈。
 LONG);
         set("objects",([
             __DIR__"npc/shanyang" : 2,

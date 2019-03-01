@@ -10,7 +10,7 @@
 #include "../call_out.h"
 #endif
 
-/* È¡´úÔ­ÓĞ find_player() */
+/* å–ä»£åŸæœ‰ find_player() */
 #ifdef NO_ADD_ACTION
 void f_find_player () {
 	
@@ -46,7 +46,7 @@ void f_find_player () {
 #endif
 
 /*
-  ÓÃÀ´ÖĞÖ¹Ò»¸ö»¥¶¯Îï¼şµÄ input_to ×´Ì¬
+  ç”¨ä¾†ä¸­æ­¢ä¸€å€‹äº’å‹•ç‰©ä»¶çš„ input_to ç‹€æ…‹
 */
 #ifdef F_REMOVE_INPUT_TO
 void f_remove_input_to ()
@@ -69,7 +69,7 @@ void f_remove_input_to ()
 #endif
 
 /*
-  Í³Ò»Éè¶¨ÏµÍ³ HEARTBEAT_INTERVAL »ù×¼
+  çµ±ä¸€è¨­å®šç³»çµ± HEARTBEAT_INTERVAL åŸºæº–
 */
 
 #ifdef F_SET_HEARTBEAT_INTERVAL

@@ -15,7 +15,7 @@ int do_look(string arg)
 
         if( time()-query_temp("last_look_paizi", this_player())<2 )
         {
-                tell_object(this_player(),"±ğ¼·£¬´ó¼Ò¶¼Òª¿´£¡Äã¸Õ¿´¹ıÁË£¬µÈÒ»ÏÂÔÙ¿´°É£¡\n");
+                tell_object(this_player(),"åˆ¥æ“ ï¼Œå¤§å®¶éƒ½è¦çœ‹ï¼ä½ å‰›çœ‹éäº†ï¼Œç­‰ä¸€ä¸‹å†çœ‹å§ï¼\n");
                 return 1;
         }
 
@@ -25,21 +25,21 @@ int do_look(string arg)
         bunch_quest = sort_array(bunch_quest,(: sort_by_id :));
 
         msg = HIC "----------------------------------------------------------------------------\n"NOR;
-        msg += WHT BBLU "                                  ×·É±Áî                                    \n"NOR;
+        msg += WHT BBLU "                                  è¿½æ®ºä»¤                                    \n"NOR;
         msg += HIC "----------------------------------------------------------------------------\n"NOR;
-        msg += sprintf(HIR"%-10s%-50s%-10s%s\n"NOR,"±àºÅ","ÈÎÎñ","ÄÑ¶È","½±Àø");
+        msg += sprintf(HIR"%-10s%-50s%-10s%s\n"NOR,"ç·¨è™Ÿ","ä»»å‹™","é›£åº¦","çå‹µ");
         if (sizeof(bunch_zs))
                 for (i=0;i<sizeof(bunch_zs);i++)
                         msg += sprintf("%-10s%-50s%-10s%s\n",
                                           bunch_zs[i]["id"],
-                                          "×·É±"+bunch_zs[i]["name"],
+                                          "è¿½æ®º"+bunch_zs[i]["name"],
                                           bunch_zs[i]["difficult"],
                                           bunch_zs[i]["reward"],
                                       );
         msg += HIC "----------------------------------------------------------------------------\n"NOR;
-        msg += WHT BBLU "                                  ÈÎÎñ±í                                    \n"NOR;
+        msg += WHT BBLU "                                  ä»»å‹™è¡¨                                    \n"NOR;
         msg += HIC "----------------------------------------------------------------------------\n"NOR;
-        msg += sprintf(HIR"%-10s%-50s%-10s%s\n"NOR,"±àºÅ","ÈÎÎñ","ÄÑ¶È","½±Àø");
+        msg += sprintf(HIR"%-10s%-50s%-10s%s\n"NOR,"ç·¨è™Ÿ","ä»»å‹™","é›£åº¦","çå‹µ");
         if (sizeof(bunch_quest))
                 for (i=0;i<sizeof(bunch_quest);i++)
                 {
@@ -52,8 +52,8 @@ int do_look(string arg)
                                       );
                 }
         msg += HIC "----------------------------------------------------------------------------\n"NOR;
-        msg += HIC "ÇëÓÃtype <±àºÅ>²é¿´Ã¿¸öÈÎÎñµÄ¾ßÌåÇé¿ö¡£\n"NOR;
-        msg += HIC "ÇëÓÃchoose <±àºÅ>Ñ¡ÔñÄãÒªÍê³ÉµÄÈÎÎñ£¬·ÅÆúÈÎÎñÓÃgiveupÖ¸Áî¡£\n"NOR;
+        msg += HIC "è«‹ç”¨type <ç·¨è™Ÿ>æŸ¥çœ‹æ¯å€‹ä»»å‹™çš„å…·é«”æƒ…æ³ã€‚\n"NOR;
+        msg += HIC "è«‹ç”¨choose <ç·¨è™Ÿ>é¸æ“‡ä½ è¦å®Œæˆçš„ä»»å‹™ï¼Œæ”¾æ£„ä»»å‹™ç”¨giveupæŒ‡ä»¤ã€‚\n"NOR;
 
         set_temp("last_look_paizi", time(), this_player());
         this_player()->start_more(msg);
@@ -67,13 +67,13 @@ int do_type(string arg)
 
         if (!wizardp(this_player()) &&  
             (bad_bunch(this_player()) || query("shen", this_player())<0) )
-                return notify_fail("ÄãÒ»¸öºÚµÀÈËÊ¿µ½ÕâÀïÀ´²éÊ²Ã´ÈÎÎñ£¿\n");
+                return notify_fail("ä½ ä¸€å€‹é»‘é“äººå£«åˆ°é€™è£¡ä¾†æŸ¥ä»€éº¼ä»»å‹™ï¼Ÿ\n");
 
         if (!wizardp(this_player()) && ! good_bunch(this_player()))
-                return notify_fail("ÄãÏÈ¼ÓÈë°×µÀÁªÃË£¬²Å¿ÉÒÔ²é¿´°×µÀµÄÈÎÎñ¡£\n");
+                return notify_fail("ä½ å…ˆåŠ å…¥ç™½é“è¯ç›Ÿï¼Œæ‰å¯ä»¥æŸ¥çœ‹ç™½é“çš„ä»»å‹™ã€‚\n");
 
         if (!arg) 
-                return notify_fail("ÄãÏë²é¿´ÄÄÌõÈÎÎñµÄÏêÏ¸ĞÅÏ¢£¿Ö¸Áî£ºtype <±àºÅ>\n");
+                return notify_fail("ä½ æƒ³æŸ¥çœ‹å“ªæ¢ä»»å‹™çš„è©³ç´°ä¿¡æ¯ï¼ŸæŒ‡ä»¤ï¼štype <ç·¨è™Ÿ>\n");
 
         bunch_quest = PARTY_QUEST_D->query_zhuisha_quest(TYPE, arg);
 
@@ -81,18 +81,18 @@ int do_type(string arg)
                 bunch_quest = PARTY_QUEST_D->query_city_quest(PLACE,TYPE, arg);
 
         if (!bunch_quest)
-                return notify_fail("ÄãËù²éÑ¯µÄ±àºÅÎª"+arg+"µÄÈÎÎñ²¢²»´æÔÚ¡£\n");
+                return notify_fail("ä½ æ‰€æŸ¥è©¢çš„ç·¨è™Ÿç‚º"+arg+"çš„ä»»å‹™ä¸¦ä¸å­˜åœ¨ã€‚\n");
         
 /*      if (bunch_quest["id"] == "xc" && !bunch_quest["enable"]) 
-                return notify_fail("½ñÌìÒÑ¾­ÓĞµÜĞÖÈ¥Ñ²³ÇÁË£¬ÄãµÈ¸ÄÌì°É¡£\n");
+                return notify_fail("ä»Šå¤©å·²ç¶“æœ‰å¼Ÿå…„å»å·¡åŸäº†ï¼Œä½ ç­‰æ”¹å¤©å§ã€‚\n");
 */
         msg = HIC "\n----------------------------------------------------------------------------\n"NOR;
-        msg += "ÈÎÎñ±àºÅ£º" + bunch_quest["id"] + "\n";
-        msg += "ÈÎÎñÀàĞÍ£º" + bunch_quest["type"] + "\n";
-        msg += "ÈÎÎñÃû³Æ£º" + bunch_quest["name"] + "\n";
-        msg += "ÈÎÎñÄÑ¶È£º" + bunch_quest["difficult"] + "\n";
-        msg += "ÈÎÎñ½±Àø£º" + bunch_quest["reward"] + "\n";
-        msg += "ÈÎÎñĞÅÏ¢: \n" + bunch_quest["msg"] + "\n";
+        msg += "ä»»å‹™ç·¨è™Ÿï¼š" + bunch_quest["id"] + "\n";
+        msg += "ä»»å‹™é¡å‹ï¼š" + bunch_quest["type"] + "\n";
+        msg += "ä»»å‹™åç¨±ï¼š" + bunch_quest["name"] + "\n";
+        msg += "ä»»å‹™é›£åº¦ï¼š" + bunch_quest["difficult"] + "\n";
+        msg += "ä»»å‹™çå‹µï¼š" + bunch_quest["reward"] + "\n";
+        msg += "ä»»å‹™ä¿¡æ¯: \n" + bunch_quest["msg"] + "\n";
         msg += HIC "----------------------------------------------------------------------------\n"NOR;
         this_player()->start_more(msg);
         return 1;

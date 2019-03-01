@@ -3,11 +3,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short","��Ժ");
+        set("short","後院");
         set("long", @LONG
-�����Ǻ��ι�����������һ��С��԰�����ҵ����Ÿ��ֻ��ݣ�
-�������˴������Ӳ��Ѿ����úܸ��ˡ�һЩ�ʻ������ڲݴ��У�����
-���㲻�ϵ�Ʈ����
+這裡是海澄公府大廳後側的一個小花園，雜亂地種著各種花草，
+看來無人打理，雜草已經長得很高了。一些鮮花夾雜在草叢中，陣陣
+花香不斷地飄過。
 LONG );
         set("exits", ([
                 "north" : "/d/beijing/hai_dating",

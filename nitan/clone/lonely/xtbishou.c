@@ -12,20 +12,20 @@ void start_borrowing()
 
 void create()
 {
-        set_name(CYN "ĞşÌú" WHT "Ø°Ê×" NOR,  ({ "bi shou", "sword", "jian" }));
+        set_name(CYN "ç„éµ" WHT "åŒ•é¦–" NOR,  ({ "bi shou", "sword", "jian" }));
 
         set_weight(12000);
 
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
-                set("no_sell", "Õâ±úÀÃ½£Äã×Ô¸öÁô×Å°É¡£\n");
+                set("unit", "æŸ„");
+                set("no_sell", "é€™æŸ„çˆ›åŠä½ è‡ªå€‹ç•™è‘—å§ã€‚\n");
                 set("value", 100000);
                 set("material", "xuantie");
-                set("wield_msg", HIR "$N" HIR "³é³öÒ»±úºÚ÷î÷îµÄ"
-                                 "Ø°Ê×ÄÃÔÚÊÖÖĞ£¬Ö»¸Ğµ½Ò»Õóº®ÆøÆËÃæ¶øÀ´¡£\n" NOR);
-                set("unwield_msg", HIR "$N" HIR "½«ÊÖÖĞµÄØ°Ê×²å»ØÑ¥ÖĞ¡£\n" NOR);
+                set("wield_msg", HIR "$N" HIR "æŠ½å‡ºä¸€æŸ„é»‘é»é»çš„"
+                                 "åŒ•é¦–æ‹¿åœ¨æ‰‹ä¸­ï¼Œåªæ„Ÿåˆ°ä¸€é™£å¯’æ°£æ’²é¢è€Œä¾†ã€‚\n" NOR);
+                set("unwield_msg", HIR "$N" HIR "å°‡æ‰‹ä¸­çš„åŒ•é¦–æ’å›é´ä¸­ã€‚\n" NOR);
                 set("stable", 100);
         }
 
@@ -63,11 +63,11 @@ void return_to_aobai()
                      call_out("return_to_aobai", 1); 
                      return; 
              } 
-             //ÊÇ·ñÓ¦¸ÃÖ´ĞĞunwield
-             message_vision("ºöÈ»$N¾õµÃÉíÉÏÉÙÁË¼şÊ²Ã´¶«Î÷ËÆµÄ¡£\n", me); 
+             //æ˜¯å¦æ‡‰è©²åŸ·è¡Œunwield
+             message_vision("å¿½ç„¶$Nè¦ºå¾—èº«ä¸Šå°‘äº†ä»¶ä»€éº¼æ±è¥¿ä¼¼çš„ã€‚\n", me); 
      } else 
      { 
-             message("vision", "ºöÈ»Ò»¸öÈË×ßÁË¹ıÀ´£¬¼ñÆğ"+name()+"£¬Ì¾ÁË¿ÚÆø£¬Ò¡Ò¡Í·×ßÁË¡£\n", me); 
+             message("vision", "å¿½ç„¶ä¸€å€‹äººèµ°äº†éä¾†ï¼Œæ’¿èµ·"+name()+"ï¼Œå˜†äº†å£æ°£ï¼Œæ–æ–é ­èµ°äº†ã€‚\n", me); 
      } 
 
         move("/clone/misc/void");

@@ -1,4 +1,4 @@
-// road2.c Ð¡¾¶
+// road2.c å°å¾‘
 
 inherit ROOM;
 
@@ -6,10 +6,10 @@ void create()
 {
         object ob;
 
-        set("short", "Ð¡¾¶");
+        set("short", "å°å¾‘");
         set("long", @LONG
-ÕâÊÇÒ»ÌõòêÑÑµÄÐ¡¾¶£¬ÇúÇúÕÛÕÛÍ¨ÍùÉ½Àï¡£Â·ÃæÉÏ¹â»¬Æ½Êµ£¬¿´À´ÊÇ
-¾­³£ÓÐÈËÀ´Íù¡£ËÄÖÜ·Ç³£°²¾²£¬µÀÅÔ¶¼ÊÇÌïÔ°´å»§¡£
+é€™æ˜¯ä¸€æ¢èœ¿èœ’çš„å°å¾‘ï¼Œæ›²æ›²æŠ˜æŠ˜é€šå¾€å±±è£¡ã€‚è·¯é¢ä¸Šå…‰æ»‘å¹³å¯¦ï¼Œçœ‹ä¾†æ˜¯
+ç¶“å¸¸æœ‰äººä¾†å¾€ã€‚å››å‘¨éžå¸¸å®‰éœï¼Œé“æ—éƒ½æ˜¯ç”°åœ’æ‘æˆ¶ã€‚
 LONG );
 
         set("exits", ([

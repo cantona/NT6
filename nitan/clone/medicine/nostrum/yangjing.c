@@ -5,12 +5,12 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIG"Ñø¾«µ¤"NOR, ({"yangjing dan", "dan"}));
+        set_name(HIG"é¤Šç²¾ä¸¹"NOR, ({"yangjing dan", "dan"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
                 set_weight(4000);
-                set("unit", "Á£");
+                set("unit", "ç²’");
                 set("vegetable", 7);
                 set("nostrum", 128);
                 set("level", 10);
@@ -30,13 +30,13 @@ int do_eat(string arg)
 {
         object me = this_player();
 
-        if(!id(arg)) return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+        if(!id(arg)) return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if(!present(this_object(), me))
-                return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if( me->is_busy() )
-                return notify_fail("±ð¼±£¬ÂýÂý³Ô£¬Ð¡ÐÄ±ðÒ­×ÅÁË¡£\n");
+                return notify_fail("åˆ¥æ€¥ï¼Œæ…¢æ…¢åƒï¼Œå°å¿ƒåˆ¥å™Žè‘—äº†ã€‚\n");
 
-        message_vision("$N³ÔÏÂÒ»Á£" + name() + "¡£\n", me);
+        message_vision("$Nåƒä¸‹ä¸€ç²’" + name() + "ã€‚\n", me);
 /*        if (((int)me->query_condition("xx_poison") > 0) ||
                 (query("eff_jing", me)<query("max_jing", me)) )
         {

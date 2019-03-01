@@ -3,10 +3,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÌïµØ");
+        set("short", "ç”°åœ°");
         set("long", @LONG
-ÕâÊÇÒ©Íõ¹ÈÓÃÀ´ÖÖÖ²²İÒ©µÄÌïµØ£¬Äã¿ÉÒÔÄÃ²İÒ©ÖÖ×ÑÔÚÕâÀïÖÖÖ²²İÒ©(zhong)¡£
-µÈ²İÒ©ÖÖ³ÉÁË¾Í¿ÉÒÔÍÚ(dig)ÆğÀ´¡£
+é€™æ˜¯è—¥ç‹è°·ç”¨ä¾†ç¨®æ¤è‰è—¥çš„ç”°åœ°ï¼Œä½ å¯ä»¥æ‹¿è‰è—¥ç¨®ç±½åœ¨é€™è£¡ç¨®æ¤è‰è—¥(zhong)ã€‚
+ç­‰è‰è—¥ç¨®æˆäº†å°±å¯ä»¥æŒ–(dig)èµ·ä¾†ã€‚
 LONG );
         set("no_clean_up", 1);
         set("yaotian",1);
@@ -30,20 +30,20 @@ int do_dig(string arg)
         object ob, me;
         me = this_player();
 
-        if( query("family/family_name", me) != "Ò©Íõ¹È"
+        if( query("family/family_name", me) != "è—¥ç‹è°·"
                 || me->query_skill("medical",1) < 60 )
-                return notify_fail("Äã²»»áÖÖÖ²²İÒ©£¡¸ü²»»áÍÚ²İÒ©£¡\n");
+                return notify_fail("ä½ ä¸æœƒç¨®æ¤è‰è—¥ï¼æ›´ä¸æœƒæŒ–è‰è—¥ï¼\n");
 
         if(me->is_fighting() && me->is_busy())
-                return notify_fail("ÄãºÜÃ¦£¬Ã»Ê±¼ä¡£\n");
+                return notify_fail("ä½ å¾ˆå¿™ï¼Œæ²’æ™‚é–“ã€‚\n");
 
         if( !arg || !ob = present(arg, environment(me)) )
-                return notify_fail("Ö¸Áî¸ñÊ½£ºdig <²İÒ©ID> \n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šdig <è‰è—¥ID> \n");
 
         if( query("owner", ob) != query("id", me) )
-                return notify_fail("Õâ¸ö¶«Î÷ºÃÏó²»ÊÇÄãµÄ°¡£¿£¿\n"); 
+                return notify_fail("é€™å€‹æ±è¥¿å¥½è±¡ä¸æ˜¯ä½ çš„å•Šï¼Ÿï¼Ÿ\n"); 
 
-        message_vision("$NÇáÇá½«$nÍÚÁËÆğÀ´¡£\n", me, ob);
+        message_vision("$Nè¼•è¼•å°‡$næŒ–äº†èµ·ä¾†ã€‚\n", me, ob);
 
         delete("no_get", ob);
         ob->move(me);
@@ -54,5 +54,5 @@ int do_dig(string arg)
 int do_work(string arg) 
 
 {
-        return notify_fail("ÕâÀï²»ÄÜÊ¹ÓÃÕâ¸öÖ¸Áî£¡\n");
+        return notify_fail("é€™è£¡ä¸èƒ½ä½¿ç”¨é€™å€‹æŒ‡ä»¤ï¼\n");
 }

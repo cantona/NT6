@@ -5,14 +5,14 @@ inherit HEAD;
 
 void create()
 {
-        set_name(HIR "·ï»ËÓğÃ«" NOR, ({ "fenghuang feather", "feather", "fenghuang" }));
+        set_name(HIR "é³³å‡°ç¾½æ¯›" NOR, ({ "fenghuang feather", "feather", "fenghuang" }));
         set_weight(100);
         if (clonep())
                 set_default_object(__FILE__);
         else {               
-                        set("long", HIR "Ò»¸ù·ï»ËÉíÉÏµÄÓğÃ«£¬³Ê»ğºìÉ«¡£\n" NOR);
+                        set("long", HIR "ä¸€æ ¹é³³å‡°èº«ä¸Šçš„ç¾½æ¯›ï¼Œå‘ˆç«ç´…è‰²ã€‚\n" NOR);
 
-                set("unit", "¸ù");
+                set("unit", "æ ¹");
                 set("value", 10000);
         }
         setup();

@@ -4,12 +4,12 @@ inherit "/maze/necropolis/necropolis_npc";
 void do_eye();
 void create()
 {
-        string *names = ({"ÓÄÚ¤Ö®ÑÛ"}); 
+        string *names = ({"å¹½å†¥ä¹‹çœ¼"}); 
         // set_name( names[random(sizeof(names))], ({ "ghost eye","ghost"}));
         set_name( names[random(sizeof(names))], ({ "ghost eye" }));
         set("vendetta_mark","ghost");
-        set("long", "ÕâÊÇ¸öÈôÒşÈôÏÖµÄÓÄÁé¡£\n");
-        set("title", HIB "(¹íÆø)" NOR); 
+        set("long", "é€™æ˜¯å€‹è‹¥éš±è‹¥ç¾çš„å¹½éˆã€‚\n");
+        set("title", HIB "(é¬¼æ°£)" NOR); 
 
         set("str", 50);
         set("con", 120);
@@ -24,9 +24,9 @@ void create()
         //set("shen_type", -1);        
         //set("chat_chance", 2);
         //set("chat_msg", ({
-        //               "÷¼÷Ã¿Õ¶´µÄÑÛ¿ôÀïÉÁË¸×Å¿ÉÅÂµÄÓ«¹â¡£\n"
+        //               "éª·é«ç©ºæ´çš„çœ¼çœ¶è£¡é–ƒçˆè‘—å¯æ€•çš„ç†’å…‰ã€‚\n"
         //}) ); 
-        set("death_msg",BLU"\n$NÏûÊ§²»¼ûÁË¡£\n\n"NOR);
+        set("death_msg",BLU"\n$Næ¶ˆå¤±ä¸è¦‹äº†ã€‚\n\n"NOR);
         set("chat_chance_combat", 100);
         set("chat_msg_combat", ({
                 (: do_eye() :),
@@ -72,15 +72,15 @@ void do_eye() {
                 if(!present(enemy, environment(this_object())))
                 return;
         
-        message_vision(HIR"\n$NÖĞÏÖ³öÁË$nµÄÓ°×Ó£¬$n²»ÓÉµÃÄıÊÓ×Å×Ô¼ºµÄÓ°×Ó...... \n"NOR, this_object(),enemy); 
+        message_vision(HIR"\n$Nä¸­ç¾å‡ºäº†$nçš„å½±å­ï¼Œ$nä¸ç”±å¾—å‡è¦–è‘—è‡ªå·±çš„å½±å­...... \n"NOR, this_object(),enemy); 
         yourexp=query("combat_exp", enemy);
         myexp = query("combat_exp");
         if( random(myexp + yourexp)> yourexp ) {
-                message_vision(HIR"\nÓ°×ÓÍ»È»ËÄ·ÖÎåÁÑ£¬$N¾õµÃ×Ô¼ºµÄÁé»êÒ²·ÖÁÑÁË£¡ \n"NOR, enemy); 
+                message_vision(HIR"\nå½±å­çªç„¶å››åˆ†äº”è£‚ï¼Œ$Nè¦ºå¾—è‡ªå·±çš„éˆé­‚ä¹Ÿåˆ†è£‚äº†ï¼ \n"NOR, enemy); 
                 enemy->receive_damage("jing",query("jing", enemy)/2,this_object());
                 COMBAT_D->report_status(enemy);
         } else 
-                message_vision(HIC"\nµ«ÊÇ$NÑ¸ËÙÊÕ»ØÁËÄ¿¹â£¡ \n"NOR, enemy); 
+                message_vision(HIC"\nä½†æ˜¯$Nè¿…é€Ÿæ”¶å›äº†ç›®å…‰ï¼ \n"NOR, enemy); 
         
         if (!this_object()->is_busy())
                 this_object()->start_busy(2);

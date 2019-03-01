@@ -20,9 +20,9 @@ void fight_ob(object ob)
 
 void create()
 {
-        set_name(HIG "Îå¶¾Ê¥Îï" NOR, ({ "wudu shengwu", "wudu", "shengwu" }));
-        set("long", HIG "ÕâÊÇ´ÓÎå¶¾½Ì¶¾¿ßÖĞÌÓ³öÀ´µÄ¾ç¶¾Ö©Öë£¬Ô¼Äª°ëÈË¸ß£¬¿´ÆğÀ´Ñù×ÓÊ®·Ö¿ÉÅÂ¡£\n" NOR);
-        set("race", "Ò°ÊŞ");
+        set_name(HIG "äº”æ¯’è–ç‰©" NOR, ({ "wudu shengwu", "wudu", "shengwu" }));
+        set("long", HIG "é€™æ˜¯å¾äº”æ¯’æ•™æ¯’çªŸä¸­é€ƒå‡ºä¾†çš„åŠ‡æ¯’èœ˜è››ï¼Œç´„è«åŠäººé«˜ï¼Œçœ‹èµ·ä¾†æ¨£å­ååˆ†å¯æ€•ã€‚\n" NOR);
+        set("race", "é‡ç¸");
         set("age", 20 + random(100));
 
         set("combat_exp", 5000000);
@@ -57,7 +57,7 @@ void create()
 
         setup();
 
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "³¤ÍÈ" }));
+        set("limbs", ({ "é ­éƒ¨", "èº«é«”", "é•·è…¿" }));
         set("verbs", ({ "bite" }));
 
         set("worm_poison", ([
@@ -81,8 +81,8 @@ void create()
         ]));
 
         set("drops", ([
-                "RA&RANDOM30"    :       100,   // µÍ¼¶ÆÕÍ¨×°±¸
-                "RA&RANDOM40"    :       40,    // µÍ¼¶ÆÕÍ¨×°±¸
+                "RA&RANDOM30"    :       100,   // ä½ç´šæ™®é€šè£å‚™
+                "RA&RANDOM40"    :       40,    // ä½ç´šæ™®é€šè£å‚™
                 "FI&/clone/goods/enchant-scroll" :   20,
                 "FI&/clone/goods/sun"    :   20,
                 "FI&/clone/goods/moon"   :   20,
@@ -138,11 +138,11 @@ void random_move()
         if (time() - query_temp("born_time") > 1800)
         {
                 env = environment(this_object());
-                message_vision("$N¼±¼±Ã¦Ã¦µÄ×ßÁË¡£\n", this_object());
+                message_vision("$Næ€¥æ€¥å¿™å¿™çš„èµ°äº†ã€‚\n", this_object());
 
-                CHANNEL_D->channel_broadcast("mess", "ÌıËµ" +
-                        env->short() + HIW "(" + LOOK_CMD->locate(base_name(env)) + ")Ò»´ø³öÏÖµÄ" +
-                        HIR + this_object()->short() + HIG "ÏûÊ§ÁË¡£\n" NOR);
+                CHANNEL_D->channel_broadcast("mess", "è½èªª" +
+                        env->short() + HIW "(" + LOOK_CMD->locate(base_name(env)) + ")ä¸€å¸¶å‡ºç¾çš„" +
+                        HIR + this_object()->short() + HIG "æ¶ˆå¤±äº†ã€‚\n" NOR);
 
                 destruct(this_object());
                 return;
@@ -173,13 +173,13 @@ varargs void die(object killer)
                 return;
         }
 
-        if( time() < query_temp("end_time", me) ) // Ê±¼äÃ»ÓĞµ½£¬ËÀÍö²»ÁË
+        if( time() < query_temp("end_time", me) ) // æ™‚é–“æ²’æœ‰åˆ°ï¼Œæ­»äº¡ä¸äº†
         {
                 addn("jing", query("max_jing") / 10);
                 addn("eff_jing", query("max_jing") / 10);
                 addn("qi", query("max_qi") / 10);
                 addn("eff_qi", query("max_qi") / 10);
-                message_vision(HIR "\n$N" HIR "´óºÈÒ»Éù£¬ÔËÓÃÃØ·¨£¬ÆøÑªÓĞËù»ØÉı£¡\n\n" NOR, me);
+                message_vision(HIR "\n$N" HIR "å¤§å–ä¸€è²ï¼Œé‹ç”¨ç§˜æ³•ï¼Œæ°£è¡€æœ‰æ‰€å›å‡ï¼\n\n" NOR, me);
                 return;
         }
 
@@ -190,7 +190,7 @@ varargs void die(object killer)
                         message_vision(death_msg, me);
         }
 
-        /* ÒÔÏÂ²¿·Ö×ªÒÆµ½equipmentd.cÖĞ´¦Àí,ÒòÉæ¼°µ½¶¯Ì¬ÎïÆ·
+        /* ä»¥ä¸‹éƒ¨åˆ†è½‰ç§»åˆ°equipmentd.cä¸­è™•ç†,å› æ¶‰åŠåˆ°å‹•æ…‹ç‰©å“
         if( drops = query("drops") ) {
                 times = ACTION_D->query_action("fuben_drop");
                 if( !times ) times = 1;
@@ -232,7 +232,7 @@ varargs void die(object killer)
         if( !killer ) killer = me->query_last_damage_from();
         if( !killer ) killer = query_temp("last_damage_from");
         if( objectp(killer) ) {
-                if( query("family/family_name", killer) == "Îå¶¾½Ì")
+                if( query("family/family_name", killer) == "äº”æ¯’æ•™")
                         set("rewards/gongxian", 300);
                 env = environment(me);
                 obs = pointerp(killer->query_team()) ?
@@ -254,7 +254,7 @@ varargs void die(object killer)
                                 else if( query("level", user) <= fuben_level+30 ) percent = 50;
                                 */
                                 else {
-                                        tell_object(user, ((killer == user)?"Äú":killer->name())+"É±ËÀ"+query("name")+"£¬µ«Äú¾­ÑéÓëBOSSµÄË®Æ½Ïà²î¹ı´ó£¬Ã»ÓĞ½±Àø¡£\n");
+                                        tell_object(user, ((killer == user)?"æ‚¨":killer->name())+"æ®ºæ­»"+query("name")+"ï¼Œä½†æ‚¨ç¶“é©—èˆ‡BOSSçš„æ°´å¹³ç›¸å·®éå¤§ï¼Œæ²’æœ‰çå‹µã€‚\n");
                                         continue;
                                 }
                                 rewards["percent"] = percent;
@@ -263,7 +263,7 @@ varargs void die(object killer)
                         else
                         {
                                 if( query("combat_exp", user) > query("combat_exp")*2 ) {
-                                        tell_object(user, ((killer == user)?"Äú":killer->name())+"É±ËÀ"+query("name")+"£¬µ«Äú¾­ÑéÓëBOSSµÄË®Æ½Ïà²î¹ı´ó£¬Ã»ÓĞ½±Àø¡£\n");
+                                        tell_object(user, ((killer == user)?"æ‚¨":killer->name())+"æ®ºæ­»"+query("name")+"ï¼Œä½†æ‚¨ç¶“é©—èˆ‡BOSSçš„æ°´å¹³ç›¸å·®éå¤§ï¼Œæ²’æœ‰çå‹µã€‚\n");
                                         continue;
                                 }
                         }

@@ -7,25 +7,25 @@ nomask int main(object me, string arg)
 {
 	   int tt;
      string msg;
-     if(!find_object(FWAR_D)) return notify_fail("Ä¿Ç°ÇÀÆìÕ½ÉĞÎ´¿ªÊ¼¡£\n");
+     if(!find_object(FWAR_D)) return notify_fail("ç›®å‰æ¶æ——æˆ°å°šæœªé–‹å§‹ã€‚\n");
     switch(arg) {
     	case "join":
-    		if(!FWAR_D->query_flagwar_data("can_accept")) return notify_fail("±¾³¡ÇÀÆìÕ½ÉĞÎ´¿ª·Å±¨Ãû¡£\n");
-    		if(member_array(me->query("id"), FWAR_D->query_flagwar_data("all_player")) != -1) return notify_fail("ÄãÒÑ¾­±¨Ãû±¾³¡µÄÇÀÆìÕ½ÁË¡£\n");
+    		if(!FWAR_D->query_flagwar_data("can_accept")) return notify_fail("æœ¬å ´æ¶æ——æˆ°å°šæœªé–‹æ”¾å ±åã€‚\n");
+    		if(member_array(me->query("id"), FWAR_D->query_flagwar_data("all_player")) != -1) return notify_fail("ä½ å·²ç¶“å ±åæœ¬å ´çš„æ¶æ——æˆ°äº†ã€‚\n");
           switch(MONEY_D->player_pay(me, PAY_MONEY)) {
            case 0:
            case 2:
-           	return notify_fail("²Î¼ÓÇÀÆìÕ½ĞèÖ§¸¶"+MONEY_D->money_str(PAY_MONEY)+"¡£\n");
+           	return notify_fail("åƒåŠ æ¶æ——æˆ°éœ€æ”¯ä»˜"+MONEY_D->money_str(PAY_MONEY)+"ã€‚\n");
            break;
            default:
-           if(!FWAR_D->add_player(me, PAY_MONEY)) return notify_fail("±¨ÃûÇÀÆìÕ½³öÏÖÎÊÌâ£¬ÇëÊ¹ÓÃ sos post »Ø±¨¡£\n");
+           if(!FWAR_D->add_player(me, PAY_MONEY)) return notify_fail("å ±åæ¶æ——æˆ°å‡ºç¾å•é¡Œï¼Œè«‹ä½¿ç”¨ sos post å›å ±ã€‚\n");
            break;           
            }
     	break;
     	case "leave":
-    		// ±¨Ãû½×¶Î
+    		// å ±åéšæ®µ
     		if(!FWAR_D->query_flagwar()) {
-    			if(member_array(me->query("id"), FWAR_D->query_flagwar_data("all_player")) == -1) return notify_fail("Äã±¾À´¾ÍÃ»ÓĞ±¨ÃûÇÀÆìÕ½¡£\n");
+    			if(member_array(me->query("id"), FWAR_D->query_flagwar_data("all_player")) == -1) return notify_fail("ä½ æœ¬ä¾†å°±æ²’æœ‰å ±åæ¶æ——æˆ°ã€‚\n");
     			FWAR_D->leave_player(me->query("id"));
     		} else {
     			if(member_array(me->query("id"), FWAR_D->query_flagwar_data("all_player")) == -1) return 0;
@@ -35,16 +35,16 @@ nomask int main(object me, string arg)
     	default:
      if(!FWAR_D->query_flagwar()) {
      	tt = FWAR_D->query_flagwar_time();
-      if(tt == -1) return notify_fail("ÇÀÆìÕ½ÒÑ¾­ÔÚ±¨Ãû½×¶Î¡£\n");
-      else if(tt == -2) return notify_fail("ÇÀÆìÕ½ÕıÔÚ×¼±¸¡£\n");
-     	else return notify_fail("Ä¿Ç°ÇÀÆìÕ½ÉĞÎ´¿ªÊ¼£¬¾àÀëÏÂ´Î¿ªÊ¼»¹ÓĞ"+CHINESE_D->chinese_period(tt)+"¡£\n");
+      if(tt == -1) return notify_fail("æ¶æ——æˆ°å·²ç¶“åœ¨å ±åéšæ®µã€‚\n");
+      else if(tt == -2) return notify_fail("æ¶æ——æˆ°æ­£åœ¨æº–å‚™ã€‚\n");
+     	else return notify_fail("ç›®å‰æ¶æ——æˆ°å°šæœªé–‹å§‹ï¼Œè·é›¢ä¸‹æ¬¡é–‹å§‹é‚„æœ‰"+CHINESE_D->chinese_period(tt)+"ã€‚\n");
      }
      msg = " "+FWAR_D->query_party_score_total();
-     msg += "©°©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©´\n";
+     msg += "â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”\n";
      msg += " "+FWAR_D->query_party_score("red");
-     msg += " ©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤ \n";
+     msg += " â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ \n";
      msg += " "+FWAR_D->query_party_score("blue");
-     msg += "©¸©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¼\n";
+     msg += "â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜\n";
      me->start_more(msg);    		
     	break;
     }
@@ -57,13 +57,13 @@ nomask int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½£ºflag score | join | leave
+æŒ‡ä»¤æ ¼å¼ï¼šflag score | join | leave
 
-´ËÖ¸ÁîÓÃÀ´²é¿´ÇÀÆìÕ½µÄ×´¿ö¡£
+æ­¤æŒ‡ä»¤ç”¨ä¾†æŸ¥çœ‹æ¶æ——æˆ°çš„ç‹€æ³ã€‚
 
-²ÎÊı£º score : ²é¿´ÇÀÆìÕ½µÄ×´¿ö¡£
-       join  : ±¨Ãû²Î¼ÓÇÀÆìÕ½¡£
-       leave : Àë¿ªÇÀÆìÕ½»òÈ¡Ïû±¨Ãû¡£
+åƒæ•¸ï¼š score : æŸ¥çœ‹æ¶æ——æˆ°çš„ç‹€æ³ã€‚
+       join  : å ±ååƒåŠ æ¶æ——æˆ°ã€‚
+       leave : é›¢é–‹æ¶æ——æˆ°æˆ–å–æ¶ˆå ±åã€‚
 HELP);
         return 1;
 }

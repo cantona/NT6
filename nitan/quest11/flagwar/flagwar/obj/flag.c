@@ -3,10 +3,10 @@ inherit ITEM;
 
 void create()
 {
-	      set_name(HIC"Æì×Ó"NOR, ({"fwar flag","flag"}) );
+	      set_name(HIC"æ——å­"NOR, ({"fwar flag","flag"}) );
         set_weight(300);
-        set("unit", "Ãæ");
-        set("long", "Ò»Ãæ´óÆìÉÏÃè»æ×Å²»ÖªÃûµÄÍ¼ÌÚ£¬¿´À´ÄãËÆºõ¿ÉÒÔ½«Ëü¼ìÆð¡£\n");
+        set("unit", "é¢");
+        set("long", "ä¸€é¢å¤§æ——ä¸Šæç¹ªè‘—ä¸çŸ¥åçš„åœ–é¨°ï¼Œçœ‹ä¾†ä½ ä¼¼ä¹Žå¯ä»¥å°‡å®ƒæª¢èµ·ã€‚\n");
         set("value", 1);
         set("no_store",1);
         set("no_sell", 1);
@@ -24,7 +24,7 @@ int do_get(string arg) {
 	if(!me) return 0;
 	if(arg == "all" || !arg || !ob = present(arg, environment(me))) return 0;
 	if(ob != this_object()) return 0;
-	if(present("fwar flag", me)) return notify_fail("ÄãÉíÉÏÒÑ¾­ÓÐÒ»Ö»Æì×ÓÁË£¬ÏÈÈ¥²åºÃÔÙÀ´°É¡£\n");
+	if(present("fwar flag", me)) return notify_fail("ä½ èº«ä¸Šå·²ç¶“æœ‰ä¸€åªæ——å­äº†ï¼Œå…ˆåŽ»æ’å¥½å†ä¾†å§ã€‚\n");
 	if(ob->move(me)) {
 		me->start_busy(2);
 		FWAR_D->get_flag(me, ob);
@@ -46,8 +46,8 @@ int do_stab(object me)
 {
 	object room;
 	if(!room = environment(me)) return 0;
-	if(!room->query("stab_flag")) return notify_fail(name()+"Ö»ÄÜ²åÔÚÆðµã¡£\n");
-	if(room->query("party") != me->query_temp("flag_war/party")) return notify_fail(name()+"Ö»ÄÜ²åÔÚÄã×Ô¼ºµÄ¶ÓÎéÆðµã¡£\n");
+	if(!room->query("stab_flag")) return notify_fail(name()+"åªèƒ½æ’åœ¨èµ·é»žã€‚\n");
+	if(room->query("party") != me->query_temp("flag_war/party")) return notify_fail(name()+"åªèƒ½æ’åœ¨ä½ è‡ªå·±çš„éšŠä¼èµ·é»žã€‚\n");
 	FWAR_D->stab_flag(me, this_object());
 	return 1;
 }

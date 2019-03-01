@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "׺��¥");
+        set("short", "綴錦樓");
         set("long", @LONG
-�������Ŵ���̺�����в��õ���ⱦ���������鱦������ڷ�
-��������Ŀ���㿴����Ϊ�Ķ�������˳�����߼�����������Щ���ҡ�
-��������һ�ܺ�ľ¥�ݡ�
+地面舖著大紅地毯，房中布置得珠光寶氣，各種珠寶，古玩擺放
+得琳琅滿目，你看了頗為心動，很想順手拿走幾件，但又有些不敢。
+角落裡有一架紅木樓梯。
 LONG );
         set("exits", ([
             "west" : __DIR__"canheju",

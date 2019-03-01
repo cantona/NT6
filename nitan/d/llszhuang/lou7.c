@@ -2,10 +2,10 @@
 inherit ROOM;
 void create()
 {
-        set("short",CYN"�� �� ¥"NOR);
+        set("short",CYN"接 天 樓"NOR);
         set("long",
-"���ǽ���¥�ĵ��߲㣬���ڴ˴����������ּ���ժ���ǳ��ĸо�����\n"
-"�������ס������ֱ����Ҫ�������Ϊһ�塣\n"
+"這是接天樓的第七層，處于此處，真有伸手即可摘下星辰的感覺，你\n"
+"的靈覺不住地擴大，直至象要和天地融為一體。\n"
 );
 
         set("exits", ([ /* sizeof() == 2 */

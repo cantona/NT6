@@ -9,7 +9,7 @@ void create()
         set_name(name, ({ "kuang ren"}) );
         set("nickname",nickname);
         set("long",@LONG
-ËûÑÛÉñĞ×ºİÎŞ±È£¬ºİºİµÉÊÓ×ÅÄã¡£
+ä»–çœ¼ç¥å…‡ç‹ ç„¡æ¯”ï¼Œç‹ ç‹ çªè¦–è‘—ä½ ã€‚
 LONG
          );
         set("max_jing", 7000);

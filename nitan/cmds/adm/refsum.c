@@ -26,16 +26,16 @@ int main(object me, string arg)
                 ob = present(arg, environment(me));  
                 if (! ob) ob = find_player(arg);  
                 if (! ob) ob = find_living(arg);  
-                if (! ob) return notify_fail("ÄãÒª»Ö¸´Ë­µÄÕÙ»½ÁĞ±í£¿\n");  
+                if (! ob) return notify_fail("ä½ è¦æ¢å¾©èª°çš„å¬å–šåˆ—è¡¨ï¼Ÿ\n");  
         }  
           
         path=ITEM_DIR+query("id", ob)[0..0]+"/";
         dirs=get_dir(path+query("id", ob)+"-*.c");
           
-        // É¾³ıÔ­ÓĞÕÙ»½ÁĞ±í  
+        // åˆªé™¤åŸæœ‰å¬å–šåˆ—è¡¨  
         //delete("can_summon", ob);
   
-        // ÖØ½¨ÕÙ»½ÁĞ±í          
+        // é‡å»ºå¬å–šåˆ—è¡¨          
         for (i = 0; i < sizeof(dirs); i++)  
         {  
                 file_name = path + dirs[i];  
@@ -43,12 +43,12 @@ int main(object me, string arg)
                 set("can_summon/"+ob_id, file_name[0..<3], ob);
         }  
  
-        // ½äÖ¸ 
+        // æˆ’æŒ‡ 
         file_name=ITEM_DIR+"ring/"+query("id", ob)+".c";
         if (file_size(file_name) > 0) 
                  set("can_summon/wedding ring", file_name[0..<3], ob);
         
-        // ÂşÓÎ°ü
+        // æ¼«éŠåŒ…
         file_name=ITEM_DIR+"cruise/"+query("id", ob)+".c";
         if (file_size(file_name) > 0) 
                  set("can_summon/qiankun", file_name[0..<3], ob);
@@ -57,10 +57,10 @@ int main(object me, string arg)
         if (file_size(file_name) > 0) 
                  set("can_whistle/"+query("id", get_object(file_name)), file_name[0..<3], ob);
                          
-        msg = HIC"" + ob->name() + HIC"µÄÕÙ»½ÁĞ±í¸üĞÂÍê±Ï¡£\n"NOR;  
+        msg = HIC"" + ob->name() + HIC"çš„å¬å–šåˆ—è¡¨æ›´æ–°å®Œç•¢ã€‚\n"NOR;  
         write(msg);  
         if (ob != me)
-                tell_object(ob, HIC"ÄãµÄÕÙ»½ÁĞ±íÒÑ¾­¸üĞÂ¡£\n"NOR);
+                tell_object(ob, HIC"ä½ çš„å¬å–šåˆ—è¡¨å·²ç¶“æ›´æ–°ã€‚\n"NOR);
                 
         return 1;  
 }  

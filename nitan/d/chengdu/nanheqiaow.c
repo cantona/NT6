@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-        set("short","�Ϻ���");
+        set("short","南河橋");
         set("long", @LONG
-�����ǳɶ��������Ϻ��š����Ӻ��ϺӼг��������ǻ��������
-��֮�����׸�֮�ء���ˮ���±�͸�������������ţ���������佻�Ϫ
-�ˡ�
+這裡是成都西門外南河橋。府河和南河夾城流過，呵護著這個天
+府之國的首府之地。河水清新碧透。東面是西城門，往西就是浣花溪
+了。
 LONG );
         set("outdoors", "chengdu");
         set("exits",([ /* sizeof() == 1 */

@@ -12,8 +12,8 @@ int  halt_working(object me);
 
 void create()
 {
-        set_name("ÔøÈá", ({ "zeng rou", "zeng", "rou" }));
-        set("gender", "Å®ĞÔ");
+        set_name("æ›¾æŸ”", ({ "zeng rou", "zeng", "rou" }));
+        set("gender", "å¥³æ€§");
         set("age", 16);
         set("per", 25);
         set("con", 25);
@@ -21,9 +21,9 @@ void create()
         set("dex", 25);
         set("str", 25);
         set("long",
-"ËıÊÇÎ¤¾ôÒ¯²»ÖªµÀµÚ¼¸·¿µÄĞ¡æª£¬ÔÚÕâÀï¿ª¸ö³ÉÒÂÆÌ£¬ÂôĞ©²»ÖªµÀ
-ÄÄÀ´µÄÒÂ·ş¡£ÓĞÈËËµÄÇ¶¼ÊÇÎ¤¾ôÒ¯´Ó¹¬ÖĞÅª³öÀ´µÄ½ûÆ·¡£»°ÕâÃ´Ëµ£¬
-ÉúÒâÕÕÑùºì»î¡£\n");
+"å¥¹æ˜¯éŸ‹çˆµçˆºä¸çŸ¥é“ç¬¬å¹¾æˆ¿çš„å°å¦¾ï¼Œåœ¨é€™è£¡é–‹å€‹æˆè¡£èˆ–ï¼Œè³£äº›ä¸çŸ¥é“
+å“ªä¾†çš„è¡£æœã€‚æœ‰äººèªªé‚£éƒ½æ˜¯éŸ‹çˆµçˆºå¾å®®ä¸­å¼„å‡ºä¾†çš„ç¦å“ã€‚è©±é€™éº¼èªªï¼Œ
+ç”Ÿæ„ç…§æ¨£ç´…æ´»ã€‚\n");
         set_skill("unarmed", 60);
         set_skill("changquan", 60);
         map_skill("unarmed", "changquan");
@@ -59,7 +59,7 @@ void create()
         }));
 
         set("inquiry", ([
-            "¹¤×÷" : (: ask_job :),
+            "å·¥ä½œ" : (: ask_job :),
             "job"  : (: ask_job :),
         ]));
 
@@ -81,25 +81,25 @@ string ask_job()
 
         me = this_player();
         if( query_temp("job/sew", me) )
-                return "ÈÃÄã×öµÄÒÂ·şÄãÅªºÃÁËÃ´£¿";
+                return "è®“ä½ åšçš„è¡£æœä½ å¼„å¥½äº†éº¼ï¼Ÿ";
 
-        if( query("gender", me) != "Å®ĞÔ" )
-                return "ÕâÅ®º¢×Ó¼ÒµÄ»îÄãÒ²À´¸É£¿";
+        if( query("gender", me) != "å¥³æ€§" )
+                return "é€™å¥³å­©å­å®¶çš„æ´»ä½ ä¹Ÿä¾†å¹¹ï¼Ÿ";
 
         if( query("combat_exp", me)<3000 )
-                return "ÈÃÄãÔÚÎÒÕâ¶ù¸É»îÎÒ»¹ÕæÓĞµã²»·ÅĞÄ¡£";
+                return "è®“ä½ åœ¨æˆ‘é€™å…’å¹¹æ´»æˆ‘é‚„çœŸæœ‰é»ä¸æ”¾å¿ƒã€‚";
 
         if( query("combat_exp", me)>300000 )
-                return "´óÏÀÄúºÃ£¬Äú»¹ÊÇ¿´¼ûÊ²Ã´ºÃµÄ×Ô¼ºÑ¡¼ş°É£¬ÈÃÄú¸É»îÒ²Ì«Î¯ÇüÁË£¡";
+                return "å¤§ä¿ æ‚¨å¥½ï¼Œæ‚¨é‚„æ˜¯çœ‹è¦‹ä»€éº¼å¥½çš„è‡ªå·±é¸ä»¶å§ï¼Œè®“æ‚¨å¹¹æ´»ä¹Ÿå¤ªå§”å±ˆäº†ï¼";
 
         if( query("qi", me)<30 )
-                return "ÄãÁ³É«ÕâÃ´²î£¬»¹ÊÇÏÈĞª»á¶ù°É¡£";
+                return "ä½ è‡‰è‰²é€™éº¼å·®ï¼Œé‚„æ˜¯å…ˆæ­‡æœƒå…’å§ã€‚";
 
         if( query("jing", me)<30 )
-                return "Äã¾«ÉñÍ·²»ĞĞ°¡£¬±ğ°ÑÎÒµÃÁÏ×ÓÔãÌ¤ÁË£¡";
+                return "ä½ ç²¾ç¥é ­ä¸è¡Œå•Šï¼Œåˆ¥æŠŠæˆ‘å¾—æ–™å­ç³Ÿè¸äº†ï¼";
 
         if (me->query_int() < 20)
-                return "ÎûÎû...ÄãÕâÃ´±¿ÊÖ±¿½ÅµÄ£¬Ò²»á×öÒÂ·ş£¿";
+                return "å˜»å˜»...ä½ é€™éº¼ç¬¨æ‰‹ç¬¨è…³çš„ï¼Œä¹Ÿæœƒåšè¡£æœï¼Ÿ";
 
         if (! interactive(me))
                 return "...";
@@ -111,10 +111,10 @@ string ask_job()
                               query_ip_number($1) == query_ip_number($(me)) :));
 
         if (sizeof(obs) > 0)
-                return "ÏÖÔÚÒÑ¾­ÓĞ" + obs[0]->name() + "ÔÚ°ïÎÒÀ²£¬²»ÀÍÄãÁË¡£";
+                return "ç¾åœ¨å·²ç¶“æœ‰" + obs[0]->name() + "åœ¨å¹«æˆ‘å•¦ï¼Œä¸å‹ä½ äº†ã€‚";
 
         set_temp("job/sew", 1, me);
-        return "ºÃ£¬Äã¾Í°ïÎÒ×öµã²Ã·ì(sew)µÄĞ¡»î°É£¡ßö£¬¶«Î÷¶¼ÔÚÕâ¶ù¡£";
+        return "å¥½ï¼Œä½ å°±å¹«æˆ‘åšé»è£ç¸«(sew)çš„å°æ´»å§ï¼å–ï¼Œæ±è¥¿éƒ½åœ¨é€™å…’ã€‚";
 }
 
 int do_sew(string arg)
@@ -123,12 +123,12 @@ int do_sew(string arg)
 
         me = this_player();
         if (me->is_busy())
-                return notify_fail("ÄãÕıÃ¦×ÅÄØ£¬±ğ×Å¼±¡£\n");
+                return notify_fail("ä½ æ­£å¿™è‘—å‘¢ï¼Œåˆ¥è‘—æ€¥ã€‚\n");
 
         if( !query_temp("job/sew", me) )
         {
-                message_vision("$NÍµÍµµÄÄÃÆğÒ»¸ö¶¥Õë£¬$nÒ»Éù½¿ß¸µÀ£º"
-                               "Äã¸øÎÒ·ÅÏÂ£¬ÓĞÊ²Ã´ºÃÍæµÄ£¿\n",
+                message_vision("$Nå·å·çš„æ‹¿èµ·ä¸€å€‹é ‚é‡ï¼Œ$nä¸€è²å¬Œå’é“ï¼š"
+                               "ä½ çµ¦æˆ‘æ”¾ä¸‹ï¼Œæœ‰ä»€éº¼å¥½ç©çš„ï¼Ÿ\n",
                                me, this_object());
                 return 1;
         }
@@ -136,7 +136,7 @@ int do_sew(string arg)
         set_temp("job/step", 1, me);
         me->start_busy(bind((: call_other, __FILE__, "working" :), me),
                        bind((: call_other, __FILE__, "halt_working" :), me));
-        tell_object(me, "Äã¿ªÊ¼·ìÈÒ¡£\n");
+        tell_object(me, "ä½ é–‹å§‹ç¸«ç´‰ã€‚\n");
         return 1;
 }
 
@@ -163,25 +163,25 @@ int working(object me)
         switch(query_temp("job/step", me) )
         {
         case 1:
-                msg = "$N´÷ÉÏÒ»¸ö¶¥Õë£¬Ãş³öÕëÏß¡£";
+                msg = "$Næˆ´ä¸Šä¸€å€‹é ‚é‡ï¼Œæ‘¸å‡ºé‡ç·šã€‚";
                 break;
         case 2:
-                msg = "$NÕ¹¿ª²¼ÁÏ£¬¶Ô×ÅÑù×Ó±È»®ÁË°ëÌì¡£";
+                msg = "$Nå±•é–‹å¸ƒæ–™ï¼Œå°è‘—æ¨£å­æ¯”åŠƒäº†åŠå¤©ã€‚";
                 break;
         case 3:
-                msg = "$NÇáÇáµÄÕÛÁËÕÛÁÏ×Ó£¬ÁôÏÂ¼¸ÌõºÛÓ¡¡£";
+                msg = "$Nè¼•è¼•çš„æŠ˜äº†æŠ˜æ–™å­ï¼Œç•™ä¸‹å¹¾æ¢ç—•å°ã€‚";
                 break;
         case 4:
         case 6:
-                msg = "$N×¨ĞÄÖÂÖ¾µÄÒ»ÕëÒ»ÏßµÄ·ìÈÒ¡£";
+                msg = "$Nå°ˆå¿ƒè‡´å¿—çš„ä¸€é‡ä¸€ç·šçš„ç¸«ç´‰ã€‚";
                 break;
         case 5:
-                msg = "$NÄıÃ¼¿´ÁË¿´Ñù×Ó£¬ÈôÓĞËùË¼¡£";
+                msg = "$Nå‡çœ‰çœ‹äº†çœ‹æ¨£å­ï¼Œè‹¥æœ‰æ‰€æ€ã€‚";
         case 7:
-                msg = "$NÇá¶¯ÏËÏËÏ¸Ö¸£¬·ìÕëÉÏÏÂ´©Ëó£¬ÒÂ·şµÄÄ£Ñù½¥½¥µÄ³öÀ´ÁË¡£";
+                msg = "$Nè¼•å‹•çº–çº–ç´°æŒ‡ï¼Œç¸«é‡ä¸Šä¸‹ç©¿æ¢­ï¼Œè¡£æœçš„æ¨¡æ¨£æ¼¸æ¼¸çš„å‡ºä¾†äº†ã€‚";
                 break;
         default:
-                msg = "$N°ÑÒÂ·ş·ìºÃ£¬ÌÌìÙÍê±Ï£¬µşºÃµİ¸ø$n¡£";
+                msg = "$NæŠŠè¡£æœç¸«å¥½ï¼Œç‡™ç†¨å®Œç•¢ï¼Œç–Šå¥½éçµ¦$nã€‚";
                 finish = 1;
                 break;
         }
@@ -189,7 +189,7 @@ int working(object me)
 
         if (finish)
         {
-                msg += "$n¿´ÁË$N·ì³öÀ´µÄÒÂ·ş£¬µãÍ·µÀ£º²»´í£¬ÓĞµãÒâË¼¡£\n";
+                msg += "$nçœ‹äº†$Nç¸«å‡ºä¾†çš„è¡£æœï¼Œé»é ­é“ï¼šä¸éŒ¯ï¼Œæœ‰é»æ„æ€ã€‚\n";
                 delete_temp("job/sew", me);
                 delete_temp("job/step", me);
 
@@ -201,7 +201,7 @@ int working(object me)
                 ob->move(me, 1);
         }
 
-        msg = replace_string(msg, "$N", "Äã");
+        msg = replace_string(msg, "$N", "ä½ ");
         msg = replace_string(msg, "$n", name());
         tell_object(me, msg);
 
@@ -209,12 +209,12 @@ int working(object me)
         {
                 if (! query("zhufu_mod/cloth", me) && random(10) == 1) 
                 {
-                        message_vision("$n¶Ô$NÎ¢Î¢Ò»Ğ¦£¬µÀ£º¸ÉµÃ²»Àµ£¬ÓĞµã" 
-                                       "ÒâË¼£¬Õâ¸öÉñÖ®×£¸£Õ½ÒÂ¾ÍËãÊÇÎÒËÍ¸øÄãµÄÀñÎï°É¡£\n",
+                        message_vision("$nå°$Nå¾®å¾®ä¸€ç¬‘ï¼Œé“ï¼šå¹¹å¾—ä¸è³´ï¼Œæœ‰é»" 
+                                       "æ„æ€ï¼Œé€™å€‹ç¥ä¹‹ç¥ç¦æˆ°è¡£å°±ç®—æ˜¯æˆ‘é€çµ¦ä½ çš„ç¦®ç‰©å§ã€‚\n",
                                        me, this_object());
                         ob = new("/clone/goods/zhufu_cloth"); 
                         ob->move(me, 1); 
-                        tell_object(me, HIM "\nÄã»ñµÃÁËÒ»¸ö" + ob->name() + HIM "£¡\n" NOR);
+                        tell_object(me, HIM "\nä½ ç²å¾—äº†ä¸€å€‹" + ob->name() + HIM "ï¼\n" NOR);
                         set("zhufu_mod/cloth", 1, me); 
                 }
                 return 0;
@@ -226,8 +226,8 @@ int working(object me)
 
 int halt_working(object me)
 {
-        message_vision("$N°ÑÊÖÖĞµÄÕëÏßÒ»ÈÓ£¬àÖ¹¾µÀ£º"
-                       "Ã»¾¢£¬±¾¹ÃÄï²»¸ÉÁË£¡\n", me);
+        message_vision("$NæŠŠæ‰‹ä¸­çš„é‡ç·šä¸€æ‰”ï¼Œå˜€å’•é“ï¼š"
+                       "æ²’å‹ï¼Œæœ¬å§‘å¨˜ä¸å¹¹äº†ï¼\n", me);
         delete_temp("job/sew", me);
         delete_temp("job/step", me);
         return 1;

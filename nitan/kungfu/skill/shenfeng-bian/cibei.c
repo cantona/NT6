@@ -16,35 +16,35 @@ int perform(object me, object target)
         if( !target
           || !target->is_character()
          || !me->is_fighting(target) )
-              return notify_fail("£Û´È±¯×Ö¾÷£İÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+              return notify_fail("ï¹æ…ˆæ‚²å­—è¨£ï¹åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( extra < 160)
-              return notify_fail("ÄãµÄÉñ·ç±Ş·¨ĞŞÎªÌ«²î£¡\n");
+              return notify_fail("ä½ çš„ç¥é¢¨é­æ³•ä¿®ç‚ºå¤ªå·®ï¼\n");
 
         skill = me->query_skill("buddhism",1);
 
         if( skill < 180)
-              return notify_fail("ÄãµÄìø×ÚĞÄ·¨µÈ¼¶²»¹»£¿ \n");
+              return notify_fail("ä½ çš„ç¦ªå®—å¿ƒæ³•ç­‰ç´šä¸å¤ ï¼Ÿ \n");
 
         if( query("shen", me)<500000 )
-              return notify_fail("´È±¯×Ö¾÷ĞèÒÔÎŞ±ßÕıÆøÎª¸¨,´óÊ¦»¹ÊÇ¶àĞĞÉÆÊÂ°É! \n");
+              return notify_fail("æ…ˆæ‚²å­—è¨£éœ€ä»¥ç„¡é‚Šæ­£æ°£ç‚ºè¼”,å¤§å¸«é‚„æ˜¯å¤šè¡Œå–„äº‹å§! \n");
 
         if( query("neili", me)<1500 )
-              return notify_fail("ÄãµÄÄÚÁ¦ĞŞÎª²»¹»¸¨Öú´È±¯×Ö¾÷¡£\n");
+              return notify_fail("ä½ çš„å…§åŠ›ä¿®ç‚ºä¸å¤ è¼”åŠ©æ…ˆæ‚²å­—è¨£ã€‚\n");
 
         weapon=query_temp("weapon", me);
 
         if( !weapon
           || query("skill_type", weapon) != "whip" )
-              return notify_fail("ÄãÊÖÖĞÃ»ÓĞ±øÆ÷ÈçºÎÊ¹ÓÃ´È±¯×Ö¾÷¡£\n");
+              return notify_fail("ä½ æ‰‹ä¸­æ²’æœ‰å…µå™¨å¦‚ä½•ä½¿ç”¨æ…ˆæ‚²å­—è¨£ã€‚\n");
 
-        msg = RED"Ö»¼û$Nà«à«×ÔÓïµÀ£º´È±¯Îª»³£¬ÊÖÖĞµÄ"+ weapon->name()+RED"·Â·ğÈçÀ´³öÊÀ°ãµ¹¾íÏò$n¡£\n"NOR;
+        msg = RED"åªè¦‹$Nå–ƒå–ƒè‡ªèªé“ï¼šæ…ˆæ‚²ç‚ºæ‡·ï¼Œæ‰‹ä¸­çš„"+ weapon->name()+RED"ä»¿ä½›å¦‚ä¾†å‡ºä¸–èˆ¬å€’å·å‘$nã€‚\n"NOR;
         at=query("combat_exp", me)*me->query_skill("shenfeng-bian",1)/1000;
         df=query("combat_exp", target)*target->query_skill("dodge",1)/1000;
         if( random(at + df) > df ){
             damage=query("shen", me)/2000;
             if(damage > 1500) damage = 1500 + (damage-1500)/100;
-            msg += CYN"$n²»½û±»$NµÄÎŞ±ß·ğ·¨´ò¶¯£¬ÃÍµÄºóÍË£¬Á³ÉÏÃ»ÓĞÒ»Ë¿ÑªÉ«...\n"NOR;
+            msg += CYN"$nä¸ç¦è¢«$Nçš„ç„¡é‚Šä½›æ³•æ‰“å‹•ï¼ŒçŒ›çš„å¾Œé€€ï¼Œè‡‰ä¸Šæ²’æœ‰ä¸€çµ²è¡€è‰²...\n"NOR;
             target->receive_damage("qi", damage, me);
             target->receive_wound("qi", damage/3, me);
             p=query("qi", target)*100/query("max_qi", target);
@@ -52,7 +52,7 @@ int perform(object me, object target)
             message_vision(msg, me, target);
             target->start_busy(3);
             weapon=query_temp("weapon", me);
-            msg = HIG"\n½ô½Ó×Å$NÊÖÖĞµÄ"+ weapon->name()+HIG"Á¬Ğø»Î¶¯£¬¾¹È»²»ÖªµÀÓĞ¶àÉÙ»÷¡£\n" NOR;
+            msg = HIG"\nç·Šæ¥è‘—$Næ‰‹ä¸­çš„"+ weapon->name()+HIG"é€£çºŒæ™ƒå‹•ï¼Œç«Ÿç„¶ä¸çŸ¥é“æœ‰å¤šå°‘æ“Šã€‚\n" NOR;
             message_vision(msg,me,target);
             lmt = random((me->query_skill("shenfeng-bian", 1)- 100)/50)+1;
             if( lmt > 3 ) lmt =3;
@@ -66,7 +66,7 @@ int perform(object me, object target)
                  addn_temp("apply/damage", -extra/5, me);
             }
             delete_temp("chb", me);
-            me->start_perform(5,"´È±¯×Ö¾÷");
+            me->start_perform(5,"æ…ˆæ‚²å­—è¨£");
             addn("neili", -(300+random(me->query_skill("force"))), me);
             addn("jingli", -100, me);
             addn("shen", -5000, me);
@@ -83,7 +83,7 @@ int perform(object me, object target)
               addn("neili", -200, me);
               addn("jingli", -50, me);
               me->start_busy(random(2));
-              me->start_perform(3,"´È±¯×Ö¾÷");
+              me->start_perform(3,"æ…ˆæ‚²å­—è¨£");
         }
         return 1;
 }

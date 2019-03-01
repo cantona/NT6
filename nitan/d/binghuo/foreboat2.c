@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��������");
+        set("short", "東海海面");
         set("long", @LONG
-�������沨ƽ�羵�����ں�Ÿ�����д��У�����緫��������
-�졣ԶԶ�ɼ����ߺ�ƽ���ϣ��и��д�������С��������ǧ�̺��У�
-��ʵ�̵ÿɰ���
+東海海面波平如鏡，大船在海鷗遊魚中穿行，風帶風帆，獵獵作
+響。遠遠可見東邊海平線上，有個蔥蔥鬱鬱的小島，在萬千碧海中，
+著實綠得可愛。
 LONG );
         set("no_sleep_room",1);
         set("outdoors", "binghuo");

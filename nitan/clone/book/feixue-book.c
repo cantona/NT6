@@ -6,18 +6,18 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIC"·ÉÑ©ÕÆÆ×"NOR, ({ "feixue-book" }));
+        set_name(HIC"é£›é›ªæŽŒè­œ"NOR, ({ "feixue-book" }));
         set_weight(600);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
-                set("long", "ÕâÊÇÒ»±¾Ñ§·ÉÑ©Ó³Ã·ÕÆµÄÊé¡£\n");
+                set("unit", "æœ¬");
+                set("long", "é€™æ˜¯ä¸€æœ¬å­¸é£›é›ªæ˜ æ¢…æŽŒçš„æ›¸ã€‚\n");
                 set("value", 1000);
                 set("material", "paper");
                 set("skill", ([
                         "name":         "snow-strike",
-	                    "family_name" : "Ñ©É½ÅÉ",
+	                    "family_name" : "é›ªå±±æ´¾",
                         "exp_required": 10000,
                         "jing_cost" :   20,
                         "difficulty":   20,

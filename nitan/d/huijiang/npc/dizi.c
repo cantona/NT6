@@ -5,9 +5,9 @@ inherit NPC;
 
 void create()
 {
-        set_name("ºì»¨»áµÜ×Ó", ({ "di zi", "dizi" }));
-        set("long", "Ò»ÃûÆÕÆÕÍ¨Í¨µÄºì»¨»áµÜ×Ó\nËûºÃÏñ¶şÊ®ËêÁË£¡\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("ç´…èŠ±æœƒå¼Ÿå­", ({ "di zi", "dizi" }));
+        set("long", "ä¸€åæ™®æ™®é€šé€šçš„ç´…èŠ±æœƒå¼Ÿå­\nä»–å¥½åƒäºŒåæ­²äº†ï¼\n");
+        set("gender", "ç”·æ€§");
         set("age", 20);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -26,7 +26,7 @@ void create()
         set_skill("parry",50);
         set_skill("sword",50);
 
-        create_family("ºì»¨»á",3, "µÜ×Ó");
+        create_family("ç´…èŠ±æœƒ",3, "å¼Ÿå­");
 
         setup();
         carry_object(CLOTH_DIR"cloth")->wear();

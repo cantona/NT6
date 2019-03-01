@@ -3,11 +3,11 @@
 inherit ROOM;
 void create()
 {
-        set("short", "ÉÏÌìÌÝ");
+        set("short", "ä¸Šå¤©æ¢¯");
         set("long", @LONG
-´Ë´¦¾øÏÕ£¬±ØÐëÃæ±ÚÍìË÷£¬ÌùÉíÌ½×ãÇ°½ø£¬²½²»µÇ¸ß£¬¹ÊÃû"ÉÏÌì
-ÌÝ"¡£±±ÃæÊÇÏÂÉ½µÄÂ·£¬ÍùÄÏÃæÊÇ½ðËø¹Ø¡£Î÷ÃæÉÏÈ¥¿ÉÒÔÍ¨´ï±±·åÔÆÌ¨
-·å¡£
+æ­¤è™•çµ•éšªï¼Œå¿…é ˆé¢å£æŒ½ç´¢ï¼Œè²¼èº«æŽ¢è¶³å‰é€²ï¼Œæ­¥ä¸ç™»é«˜ï¼Œæ•…å"ä¸Šå¤©
+æ¢¯"ã€‚åŒ—é¢æ˜¯ä¸‹å±±çš„è·¯ï¼Œå¾€å—é¢æ˜¯é‡‘éŽ–é—œã€‚è¥¿é¢ä¸ŠåŽ»å¯ä»¥é€šé”åŒ—å³°é›²å°
+å³°ã€‚
 LONG );
         set("exits", ([ /* sizeof() == 4 */
            "southup"   : __DIR__"jinsuo",

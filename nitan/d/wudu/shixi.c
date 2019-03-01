@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ʯ϶");
+        set("short", "石隙");
         set("long", @LONG
-������һ����ʯ�ķ�϶��խ��Ҫ�˲������������������۵��ҷ�
-��ǰ��ȥ�����ܺ�����ģ�ֻ�н��µ�ɰʯ������΢�����졣
+這裡是一道巖石的縫隙，窄得要人側身擠過。你沿著曲折的巖縫
+向前摸去，四周黑漆漆的，只有腳下的砂石發出輕微的聲響。
 LONG);
 
         set("exits", ([

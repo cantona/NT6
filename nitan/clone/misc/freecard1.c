@@ -5,12 +5,12 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIC "ÈıÍòÁ½½¨·¿¿¨" NOR, ({"fee free card"}));
+        set_name(HIC "ä¸‰è¬å…©å»ºæˆ¿å¡" NOR, ({"fee free card"}));
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "ÕÅ");
-                set("long",HIC "ÕâÊÇÒ»ÕÅ¼ÛÖµÈıÍòÁ½»Æ½ğµÄ½¨·¿¿¨£¬°ÑËû½»¸øÂ³°à¿ÉÒÔ½¨ÏàÓ¦¼ÛÖµµÄ·¿Îİ¡£\n" NOR);
+                set("unit", "å¼µ");
+                set("long",HIC "é€™æ˜¯ä¸€å¼µåƒ¹å€¼ä¸‰è¬å…©é»ƒé‡‘çš„å»ºæˆ¿å¡ï¼ŒæŠŠä»–äº¤çµ¦é­¯ç­å¯ä»¥å»ºç›¸æ‡‰åƒ¹å€¼çš„æˆ¿å±‹ã€‚\n" NOR);
                 set("value", 1);
                                 set("fee free", 30000);
                 set_weight(100);

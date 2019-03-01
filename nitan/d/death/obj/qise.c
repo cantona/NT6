@@ -4,22 +4,22 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIW "ÆßÉ«è¬çó" NOR, ({"qise yinluo", "qise", "yinluo"}));
+        set_name(HIW "ä¸ƒè‰²ç“”ç" NOR, ({"qise yinluo", "qise", "yinluo"}));
         set_weight(10000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "\nÒ»¿é´¿°×É«µÄË®¾§£¬¾§Ó¨ÌŞÍ¸£¬ÎŞÏ¾µÄ±íÃæÉä\n"
-                            "³öÒ«ÑÛµÄ¹âÔó¡£ÆäÖĞ·Â·ğÔÌ²Ø×ÅÇ§Ç§ÍòÍòµÄÉú\n"
-                            "Ãü£¬ÉúÃüÁ÷¶¯²»Ï¢£¬É¢·¢³öÓîÖæµÄÁ¦Á¿¡£Õâ±ã\n"
-                            "ÊÇ´«ËµÖĞµÄÖÁ±¦¡ª¡ªÆßÉ«è¬çó£¬Ïà´«Ö»ÓĞÔÚµØ\n"
-                            "ÓüÖĞ²Å»á³öÏÖ¡£\n" NOR);
-                set("unit", "¿é");
+                set("long", HIW "\nä¸€å¡Šç´”ç™½è‰²çš„æ°´æ™¶ï¼Œæ™¶ç‘©å‰”é€ï¼Œç„¡æš‡çš„è¡¨é¢å°„\n"
+                            "å‡ºè€€çœ¼çš„å…‰æ¾¤ã€‚å…¶ä¸­ä»¿ä½›è˜Šè—è‘—åƒåƒè¬è¬çš„ç”Ÿ\n"
+                            "å‘½ï¼Œç”Ÿå‘½æµå‹•ä¸æ¯ï¼Œæ•£ç™¼å‡ºå®‡å®™çš„åŠ›é‡ã€‚é€™ä¾¿\n"
+                            "æ˜¯å‚³èªªä¸­çš„è‡³å¯¶â”€â”€ä¸ƒè‰²ç“”çï¼Œç›¸å‚³åªæœ‰åœ¨åœ°\n"
+                            "ç„ä¸­æ‰æœƒå‡ºç¾ã€‚\n" NOR);
+                set("unit", "å¡Š");
                 set("value", 10000000);
                 set("no_store", 1);
                 set("item_origin", 1);
                 set("material_attrib", "yin luo");
-                set("material_name", HIW "ÆßÉ«è¬çó" NOR);
+                set("material_name", HIW "ä¸ƒè‰²ç“”ç" NOR);
                 set("can_make", "all");
                 set("power_point", 200);
         }

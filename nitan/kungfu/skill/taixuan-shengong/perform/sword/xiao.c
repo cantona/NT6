@@ -1,4 +1,4 @@
-// xiao.c äìÏæÒ¹Óê
+// xiao.c ç€Ÿæ¹˜å¤œé›¨
 
 #include <ansi.h>
 
@@ -19,29 +19,29 @@ int perform(object me, object target)
         }
 
         if (! me->is_fighting(target))
-                return notify_fail("Ì«ĞşÉñ¹¦µÄ¡¸äìÏæÒ¹Óê¡¹¾ø¼¼Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("å¤ªç„ç¥åŠŸçš„ã€Œç€Ÿæ¹˜å¤œé›¨ã€çµ•æŠ€åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         skill = me->query_skill("taixuan-shengong", 1);
 
         if (skill < 180)
-                return notify_fail("ÄãµÄÌ«ĞşÉñ¹¦ĞŞÎª²»¹»£¬²»ÄÜÊ¹ÓÃ¡¸äìÏæÒ¹Óê¡¹£¡\n");
+                return notify_fail("ä½ çš„å¤ªç„ç¥åŠŸä¿®ç‚ºä¸å¤ ï¼Œä¸èƒ½ä½¿ç”¨ã€Œç€Ÿæ¹˜å¤œé›¨ã€ï¼\n");
 
         if ((int)me->query_skill("force", 1) < 300)
-                return notify_fail("ÄãµÄÄÚ¹¦ĞŞÎª»¹²»¹»£¬ÎŞ·¨Ê¹ÓÃ¡¸äìÏæÒ¹Óê¡¹£¡\n");
+                return notify_fail("ä½ çš„å…§åŠŸä¿®ç‚ºé‚„ä¸å¤ ï¼Œç„¡æ³•ä½¿ç”¨ã€Œç€Ÿæ¹˜å¤œé›¨ã€ï¼\n");
 
         if( query("neili", me)<300 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬ÎŞ·¨ÔËÓÃ¡¸äìÏæÒ¹Óê¡¹£¡\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼Œç„¡æ³•é‹ç”¨ã€Œç€Ÿæ¹˜å¤œé›¨ã€ï¼\n");
 
         if( !objectp(weapon=query_temp("weapon", me)) || 
             query("skill_type", weapon) != "sword" )
-                return notify_fail("ÄãÖ»ÓĞ×°±¸½£²ÅÄÜÊ©Õ¹¡¸äìÏæÒ¹Óê¡¹£¡\n");
+                return notify_fail("ä½ åªæœ‰è£å‚™åŠæ‰èƒ½æ–½å±•ã€Œç€Ÿæ¹˜å¤œé›¨ã€ï¼\n");
 
         n = 4 + skill / 100;
 
-        msg = HIW "$N" HIW "ÊÖÖĞ" + weapon->name() + HIW "Á¬Á¬»Î¶¯£¬¶ÙÊ±µ´ÆğÒ»Õó"
-              HIW "µÍ³ÁµÄÓĞÈç¹ö¹öÀ×ÒôµÄº£Ğ¥Éù¡­¡­\nÍ»È»¼ä$N" HIW "ÊÖÖĞµÄ" +
-              weapon->name() + HIW "ÈçÒ»µÀÉÁµç»®¹ı£¬Ë²¼äÒÑÏò$n"
-              HIW "à§à§à§Á¬´Ì" + chinese_number(n) + "½£¡£\n" NOR;
+        msg = HIW "$N" HIW "æ‰‹ä¸­" + weapon->name() + HIW "é€£é€£æ™ƒå‹•ï¼Œé “æ™‚ç›ªèµ·ä¸€é™£"
+              HIW "ä½æ²‰çš„æœ‰å¦‚æ»¾æ»¾é›·éŸ³çš„æµ·å˜¯è²â€¦â€¦\nçªç„¶é–“$N" HIW "æ‰‹ä¸­çš„" +
+              weapon->name() + HIW "å¦‚ä¸€é“é–ƒé›»åŠƒéï¼Œç¬é–“å·²å‘$n"
+              HIW "å”°å”°å”°é€£åˆº" + chinese_number(n) + "åŠã€‚\n" NOR;
 
         message_combatd(msg, me, target);
         count = skill / 6;

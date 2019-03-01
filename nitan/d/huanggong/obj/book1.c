@@ -10,15 +10,15 @@ void init()
 
 void create()
 {
-        set_name("²¯Êé", ({"book"}));
+        set_name("å¸›æ›¸", ({"book"}));
         set_weight(500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "\nÒ»·â¾«×°µÄ<<ÂÛÓï>>\n");
-                set("unit", "·ù");
+                set("long", "\nä¸€å°ç²¾è£çš„<<è«–èª>>\n");
+                set("unit", "å¹…");
                 set("material", "paper");
-                set("no_get", "\n×¡ÊÖ,ÄãÆñ¿ÉÔÚ´ËºúÄÖ!ÏÂÈ¥!\n");
+                set("no_get", "\nä½æ‰‹,ä½ è±ˆå¯åœ¨æ­¤èƒ¡é¬§!ä¸‹å»!\n");
         }
         setup();
 }
@@ -35,12 +35,12 @@ int do_move(string arg)
                 {
                         set_temp("doorisok", 1, me);
                         message_vision(
-"\n$NÊÔÖøÒÆ¶¯»­¾í£¬·¢ÏÖËü¿ÉÒÔ×óÓÒÍÆ¶¯...\n", this_player());
+"\n$Nè©¦è‘—ç§»å‹•ç•«å·ï¼Œç™¼ç¾å®ƒå¯ä»¥å·¦å³æ¨å‹•...\n", this_player());
                 }
                 if(!objectp(present("door", environment(me))))
                 {
                         message_vision(
-"$NÇáÇáµØÅ²¶¯»­Ò³£¬Í»È»Ò»ÉÈ°µÃÅ³öÏÖÔÚ$NÑÛÇ°¡£\n", this_player());
+"$Nè¼•è¼•åœ°æŒªå‹•ç•«é ï¼Œçªç„¶ä¸€æ‰‡æš—é–€å‡ºç¾åœ¨$Nçœ¼å‰ã€‚\n", this_player());
                         door = new("/d/beijing/obj/door");
                         door->move("/d/huanggong/yushufang");
                 }
@@ -50,7 +50,7 @@ int do_move(string arg)
                 if( dir=="left" )
                 {
                         message_vision(
-"$N½«»­¾íÍù×óÒÆ£¬Ö»ÌıÔşÔş¼¸Éù£¬»­¾íÓÖÒÆ»ØÔ­Î»¡£\n", this_player());
+"$Nå°‡ç•«å·å¾€å·¦ç§»ï¼Œåªè½è»‹è»‹å¹¾è²ï¼Œç•«å·åˆç§»å›åŸä½ã€‚\n", this_player());
                         if( !query_temp("pushdoor", me) )
                                 set_temp("pushdoor", 1, me);
                         else
@@ -60,7 +60,7 @@ int do_move(string arg)
                 if( dir=="right" )
                 {
                         message_vision(
-"$N½«»­¾íÍùÓÒÒÆ£¬Ö»ÌıÔşÔş¼¸Éù£¬»­¾íÓÖÒÆ»ØÔ­Î»¡£\n", this_player());
+"$Nå°‡ç•«å·å¾€å³ç§»ï¼Œåªè½è»‹è»‹å¹¾è²ï¼Œç•«å·åˆç§»å›åŸä½ã€‚\n", this_player());
                         if( query_temp("pushdoor", me) )
                         {
                                 set_temp("doorisok", 1, me);
@@ -69,7 +69,7 @@ int do_move(string arg)
                 return 1;
                 }
                 else {
-                        write("ÄãÒª½«»­¾íÒÆÏòÄÇ¸ö·½Ïò£¿\n");
+                        write("ä½ è¦å°‡ç•«å·ç§»å‘é‚£å€‹æ–¹å‘ï¼Ÿ\n");
                         return 1;
                 }
         }

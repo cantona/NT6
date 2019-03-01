@@ -3,13 +3,13 @@ inherit BLADE;
 
 void create()
 {
-        set_name("Ø°Ê×", ({ "bishou", "dao" }));
+        set_name("åŒ•é¦–", ({ "bishou", "dao" }));
         set_weight(1000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
-                set("long", "ÕâÊÇÒ»±úÁÁ»Î»ÎµÄØ°Ê×\n");
+                set("unit", "æŸ„");
+                set("long", "é€™æ˜¯ä¸€æŸ„äº®æ™ƒæ™ƒçš„åŒ•é¦–\n");
                 set("value", 500);
                 set("material", "steel");                
         }

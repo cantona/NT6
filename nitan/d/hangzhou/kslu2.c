@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��ʯ·");
+        set("short", "碎石路");
         set("long", @LONG
-����һ����ʯ���̾͵�·��·���������������Ŵ󳵣���������
-��ʲô��������������ɢɢ��������һЩ��ɫ��ʯͷ���������ǽ���
-ʢ��ͭ��ı�ɽ�ˡ�
+這是一條碎石子舖就的路，路上人來人往，趕著大車，看來是在
+運什麼東西。地上零零散散的遺落了一些藍色的石頭。往東就是江南
+盛產銅礦的寶山了。
 LONG );
         set("exits", ([
                 "west" : __DIR__"kslu",

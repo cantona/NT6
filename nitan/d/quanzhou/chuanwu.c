@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����");
+        set("short", "船塢");
         set("long", @LONG
-�������Ƽ���ȫ����õ��촬��ʦ�͹�����һ����ȥ���������깤
-�ͼ����깤�ĸ�����;�����ִ�С��ľ������������ææµµ��һƬ��
-æ����
+這裡是雲集了全國最好的造船技師和工匠。一眼望去，滿是已完工
+和即將完工的各種用途，各種大小的木船。塢內人們忙忙碌碌，一片繁
+忙景象。
 LONG );
         set("outdoors", "quanzhou");
         set("exits", ([

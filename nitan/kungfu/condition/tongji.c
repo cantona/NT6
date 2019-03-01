@@ -6,7 +6,7 @@ int update_condition(object me, int duration)
 {                                  
         if (duration < 1)
         {
-                tell_object(me,HIW"´óËÎãêÁº²»ÔÙÍ¨¼©ÄãÁË£¡\n"NOR);
+                tell_object(me,HIW"å¤§å®‹æ±´æ¨‘ä¸å†é€šç·ä½ äº†ï¼\n"NOR);
                 return 0;
         }
 

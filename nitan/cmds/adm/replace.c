@@ -22,7 +22,7 @@ int main(object me, string arg)
         seteuid(geteuid(me)); 
 
         if (! SECURITY_D->valid_write(file, me)) 
-                return notify_fail("Ã»ÓĞ×ã¹»µÄ¶ÁĞ´È¨ÏŞ¡£\n"); 
+                return notify_fail("æ²’æœ‰è¶³å¤ çš„è®€å¯«æ¬Šé™ã€‚\n"); 
                 
         if (file_size(file) == -1 )
                 file=resolve_path(query("cwd", me),file);
@@ -46,10 +46,10 @@ int main(object me, string arg)
                         }
 
                 }
-                write(HIW "×ª»»Íê±Ï¡£\n" NOR);
+                write(HIW "è½‰æ›å®Œç•¢ã€‚\n" NOR);
                 return 1;
         }
-        else return notify_fail("Ã»ÓĞÕâ¸öÎÄ¼ş»òÄ¿Â¼¡£\n");
+        else return notify_fail("æ²’æœ‰é€™å€‹æ–‡ä»¶æˆ–ç›®éŒ„ã€‚\n");
         return 1;  
 }
 
@@ -101,7 +101,7 @@ int replace(string file, string oldstr, string newstr)
                 } 
         }
 
-        write(HIW + file + "¹²ÓĞ" + j + "¸ö" + oldstr + "±»»»³É" + newstr + "¡£\n" NOR);
+        write(HIW + file + "å…±æœ‰" + j + "å€‹" + oldstr + "è¢«æ›æˆ" + newstr + "ã€‚\n" NOR);
         return 1;
 }
 int help(object me)
@@ -110,10 +110,10 @@ write(@HELP
 Written by ken@NT. All rights reserved.
 E-mail: printken@yahoo.com.hk
 
-Ö¸Áî¸ñÊ½: replace <Ä¿Â¼»òÎÄ¼şÃû> <Ô­×Ö·û> to <ĞÂ×Ö·û>
-½«ÎÄ¼şÄÚÈİÀïµÄËùÓĞ<Ô­×Ö´®>×ª»»³É<ĞÂ×Ö´®>¡£
-×¢Òâ¡ÃÈç¹ûÖ¸ÁîÄ¿Â¼£¬ÊÇ»áÉîÈë¸ÃÄ¿Â¼ÏÂµÄËùÓĞÄ¿Â¼ÌáÈ¡ÎÄ¼ş½øĞĞ
-ÂÇÀí£¬ÒªĞ¡ĞÄÊ¹ÓÃ£¡(½¨Òâ·ÅÔÚ/cmds/adm/ÏÂ)
+æŒ‡ä»¤æ ¼å¼: replace <ç›®éŒ„æˆ–æ–‡ä»¶å> <åŸå­—ç¬¦> to <æ–°å­—ç¬¦>
+å°‡æ–‡ä»¶å…§å®¹è£¡çš„æ‰€æœ‰<åŸå­—ä¸²>è½‰æ›æˆ<æ–°å­—ä¸²>ã€‚
+æ³¨æ„ï¸°å¦‚æœæŒ‡ä»¤ç›®éŒ„ï¼Œæ˜¯æœƒæ·±å…¥è©²ç›®éŒ„ä¸‹çš„æ‰€æœ‰ç›®éŒ„æå–æ–‡ä»¶é€²è¡Œ
+æ…®ç†ï¼Œè¦å°å¿ƒä½¿ç”¨ï¼(å»ºæ„æ”¾åœ¨/cmds/adm/ä¸‹)
 HELP );
 return 1;
 }

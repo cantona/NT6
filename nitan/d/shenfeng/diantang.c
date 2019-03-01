@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-            set("short", "����");
+            set("short", "殿堂");
             set("long", @LONG
-�ߵ����֮�󣬼���һ����С�ĵ��ã������龰ȴ��Ϊ��
-������ʮ�ߺ���һ�Ѷ��໥���ᣬ���Ǵ�ֱ������ʱ���е�
-�������б��У��е�ȴ�ǿ��֡�������һ��Сʯ�š�
+走到大殿之後，見是一座較小的殿堂，殿中情景卻尤為可
+怖，數十具骸骨一堆堆相互糾結，骸骨大都直立如生時，有的
+手中握有兵刃，有的卻是空手。西側有一扇小石門。
 LONG);
         set("objects", ([
                 __DIR__"obj/yudao" : random(2),
@@ -20,6 +20,6 @@ LONG);
                 "south" : __DIR__"dadian",
                 "west" : __DIR__"yushi",
             ]));
-            create_door("west", WHT "Сʯ��" NOR, "east", DOOR_CLOSED);
+            create_door("west", WHT "小石門" NOR, "east", DOOR_CLOSED);
             setup();
 }

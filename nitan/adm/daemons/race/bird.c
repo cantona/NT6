@@ -1,4 +1,4 @@
-// bird.c ·ÉÇİ
+// bird.c é£›ç¦½
 
 #ifndef __BIRD__
 #define __BIRD__
@@ -11,19 +11,19 @@ inherit F_DBASE;
 
 mapping *combat_action = ({
 ([
-        "action":                "$NÓÃ×¦×ÓÍù$nµÄ$lÃÍµØÒ»×¥",
+        "action":                "$Nç”¨çˆªå­å¾€$nçš„$lçŒ›åœ°ä¸€æŠ“",
         "damage":                10,
-        "damage_type":        "×¥ÉË",
+        "damage_type":        "æŠ“å‚·",
 ]),
 ([
-        "action":                "$N·É¹ıÀ´Íù$nµÄ$lºİºİµØÒ»×Ä",
+        "action":                "$Né£›éä¾†å¾€$nçš„$lç‹ ç‹ åœ°ä¸€å•„",
         "damage":                30,
-        "damage_type":        "´ÌÉË",
+        "damage_type":        "åˆºå‚·",
 ]),
 ([
-        "action":                "$NÓÃ³á°òÏò$nµÄ$lÅÄÁË¹ıÈ¥",
+        "action":                "$Nç”¨ç¿…è†€å‘$nçš„$læ‹äº†éå»",
         "damage":                30,
-        "damage_type":        "´ÌÉË",
+        "damage_type":        "åˆºå‚·",
 ])
 });
 
@@ -32,16 +32,16 @@ void create()
         seteuid(getuid());
         set("attitude", "peaceful");
         set("limbs", ({
-                "Í·²¿",        "¾±²¿",        "ºó±³",        "¸¹²¿",        "½Å×¦",        "³á°ò"
+                "é ­éƒ¨",        "é ¸éƒ¨",        "å¾ŒèƒŒ",        "è…¹éƒ¨",        "è…³çˆª",        "ç¿…è†€"
         }) );
 
-        set("dead_message",       "\n$N·¢³öÒ»ÉùÆàÀ÷µÄÃù½Ğ£¬´Ó°ë¿ÕÖĞµøÁËÏÂÀ´¡£\n\n"    );
-        set("unconcious_message", "\n$N´Ó°ë¿ÕÖĞÅéµØµøÏÂÀ´£¬ÔÎÁË¹ıÈ¥¡£\n\n"            );
-        set("revive_message",     "\n$NĞÑ¹ıÀ´¶¯µ¯ÁËÒ»ÏÂ£¬Ë«³áÒ»Õñ£¬ÓÖ·ÉÁËÆğÀ´¡£\n\n"  );
-        set("leave_msg",          "¼²·É¶øÈ¥"                                      );
-        set("arrive_msg",         "·ÉÁË¹ıÀ´"                                      );
-        set("fleeout_message",    "ÆàÃù×Å¼²·É¶øÈ¥"                        );
-        set("fleein_message",     "»º»ºµØ·ÉÁË¹ıÀ´£¬³ÁÖØµØÔÚ°ë¿ÕÖĞ´ò×ÅĞı¶ù"        );
+        set("dead_message",       "\n$Nç™¼å‡ºä¸€è²å‡„å²çš„é³´å«ï¼Œå¾åŠç©ºä¸­è·Œäº†ä¸‹ä¾†ã€‚\n\n"    );
+        set("unconcious_message", "\n$Nå¾åŠç©ºä¸­ç °åœ°è·Œä¸‹ä¾†ï¼Œæšˆäº†éå»ã€‚\n\n"            );
+        set("revive_message",     "\n$Né†’éä¾†å‹•å½ˆäº†ä¸€ä¸‹ï¼Œé›™ç¿…ä¸€æŒ¯ï¼Œåˆé£›äº†èµ·ä¾†ã€‚\n\n"  );
+        set("leave_msg",          "ç–¾é£›è€Œå»"                                      );
+        set("arrive_msg",         "é£›äº†éä¾†"                                      );
+        set("fleeout_message",    "å‡„é³´è‘—ç–¾é£›è€Œå»"                        );
+        set("fleein_message",     "ç·©ç·©åœ°é£›äº†éä¾†ï¼Œæ²‰é‡åœ°åœ¨åŠç©ºä¸­æ‰“è‘—æ—‹å…’"        );
 }
 
 void setup_bird(object ob)
@@ -53,9 +53,9 @@ void setup_bird(object ob)
         ob->set_default_action(__FILE__, "query_action");
 	set("default_actions", (: call_other, __FILE__, "query_action" :), ob);
 
-        my["unit"] = "Ö»";
+        my["unit"] = "åª";
         
-        if( undefinedp(my["gender"]) ) my["gender"] = "ĞÛĞÔ";
+        if( undefinedp(my["gender"]) ) my["gender"] = "é›„æ€§";
         if( undefinedp(my["age"]) ) my["age"] = random(20) + 5;
 
         if( undefinedp(my["str"]) ) my["str"] = random(10) + 5;
@@ -84,14 +84,14 @@ void setup_bird(object ob)
         ob->set_default_object(__FILE__);
         if( !ob->query_weight() ) ob->set_weight(BASE_WEIGHT + (my["str"] - 5)* 1000);
 
-        if( query("subrace", ob) == "×ßÇİ"){
-                set("dead_message",       "\n$N·¢³öÒ»ÉùÆàÀ÷µÄÃù½Ğ£¬ÔÔµ¹ÔÚµØÉÏËÀÁË¡£\n\n"      );
-                set("unconcious_message", "\n$NÆàÃùÒ»ÉùÔÔµ¹ÔÚµØ£¬ÔÎÁË¹ıÈ¥¡£\n\n"              );
-                set("revive_message",     "\n$NĞÑ¹ıÀ´¶¯µ¯ÁËÒ»ÏÂ£¬Ë«³áÆËÌÚÁË¼¸ÏÂÕ¾ÁËÆğÀ´¡£\n\n");
-                set("comeout_message",    "Íù$d¼²±¼¶øÈ¥¡£\n"                                      );
-                set("comein_message",     "ÅÜÁË¹ıÀ´¡£\n"                                      );
-                set("fleeout_message",    "Ò»ÉùÆàÃù£¬Íù$d¼²±¼¶øÈ¥¡£\n"                        );
-                set("fleein_message",     "Ò¡Ò¡°Ú°ÚµÄÅÜÁË¹ıÀ´¡£\n"                            );
+        if( query("subrace", ob) == "èµ°ç¦½"){
+                set("dead_message",       "\n$Nç™¼å‡ºä¸€è²å‡„å²çš„é³´å«ï¼Œæ ½å€’åœ¨åœ°ä¸Šæ­»äº†ã€‚\n\n"      );
+                set("unconcious_message", "\n$Nå‡„é³´ä¸€è²æ ½å€’åœ¨åœ°ï¼Œæšˆäº†éå»ã€‚\n\n"              );
+                set("revive_message",     "\n$Né†’éä¾†å‹•å½ˆäº†ä¸€ä¸‹ï¼Œé›™ç¿…æ’²é¨°äº†å¹¾ä¸‹ç«™äº†èµ·ä¾†ã€‚\n\n");
+                set("comeout_message",    "å¾€$dç–¾å¥”è€Œå»ã€‚\n"                                      );
+                set("comein_message",     "è·‘äº†éä¾†ã€‚\n"                                      );
+                set("fleeout_message",    "ä¸€è²å‡„é³´ï¼Œå¾€$dç–¾å¥”è€Œå»ã€‚\n"                        );
+                set("fleein_message",     "æ–æ–æ“ºæ“ºçš„è·‘äº†éä¾†ã€‚\n"                            );
         }
 }
 

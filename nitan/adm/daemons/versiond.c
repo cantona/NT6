@@ -13,65 +13,65 @@
 inherit F_DBASE;
 inherit F_SAVE;
 
-// °æ±¾Í¬²½´úÀí½ø³ÌËùÔÚµÄ·şÎñÆ÷µÄIPµØÖ·
+// ç‰ˆæœ¬åŒæ­¥ä»£ç†é€²ç¨‹æ‰€åœ¨çš„æœå‹™å™¨çš„IPåœ°å€
 //#define AGENT_IP  ({ "127.0.0.1", "61.184.100.7", "202.110.119.87", "218.89.171.162", "219.134.89.94", "221.202.78.197" }) 
 #define AGENT_IP  ({ "127.0.0.1", "202.110.119.87", "218.89.171.162", "219.134.89.94", "221.202.78.197" }) 
 
-// É¾³ıÃüÁî
+// åˆªé™¤å‘½ä»¤
 #define RM_CMD          "/cmds/wiz/rm"
 
-// ±£´æ°æ±¾ÎÄ¼şµÄÄ¿Â¼£ºÕâ¸öÄ¿Â¼ÓÉÓÚĞèÒªºÍÆÕÍ¨ÎÄ¼şÂ·¾¶Ãû½øĞĞ
-// Á¬½ÓÊ¹ÓÃ£¬ËùÒÔ²»ÄÜÒÔ"/"½áÎ²£¬ÕâÒ»µãºÍglobals.hÖĞµÄĞí¶àÂ·
-// ¾¶Ãû²»Ò»Ñù£¬Òò´ËÕâ¸öºêÒ²²»¶¨ÒåÔÚÄÇÀï¡£
+// ä¿å­˜ç‰ˆæœ¬æ–‡ä»¶çš„ç›®éŒ„ï¼šé€™å€‹ç›®éŒ„ç”±äºéœ€è¦å’Œæ™®é€šæ–‡ä»¶è·¯å¾‘åé€²è¡Œ
+// é€£æ¥ä½¿ç”¨ï¼Œæ‰€ä»¥ä¸èƒ½ä»¥"/"çµå°¾ï¼Œé€™ä¸€é»å’Œglobals.hä¸­çš„è¨±å¤šè·¯
+// å¾‘åä¸ä¸€æ¨£ï¼Œå› æ­¤é€™å€‹å®ä¹Ÿä¸å®šç¾©åœ¨é‚£è£¡ã€‚
 #define VERSION_DIR     "/version"
 
-// ±£´æ°æ±¾ÎÄ¼şÊı¾İµÄ±äÁ¿(ÔÚDBASE±äÁ¿ÖĞµÄÂ·¾¶)
+// ä¿å­˜ç‰ˆæœ¬æ–‡ä»¶æ•¸æ“šçš„è®Šé‡(åœ¨DBASEè®Šé‡ä¸­çš„è·¯å¾‘)
 #define FILES           "/files"
 #define STATS           "/stats"
 
-// ÔÚ·şÎñÆ÷¶Ë£¬Êı¾İ¿âĞÅÏ¢ÖĞÓ¦¸ÃÖ»ÓĞFILES£¬ ¼ÇÂ¼ÁËËùÓĞÔÙ°æ±¾
-// ÖĞµÄÎÄ¼şµÄĞŞ¸ÄÊ±¼ä£¬ÒÔ¹©¿Í»§¶ËÓÃÀ´±È½ÏÊÇ·ñÓĞ²î±ğ¡£
-// ÔÚ¿Í»§¶Ë£¬Êı¾İ¿âĞÅÏ¢ÖĞÓĞFILESºÍSTATS£¬ ÆäÖĞFILES°üº¬ÁË±¾
-// µØÊ¹ÓÃµÄËùÓĞÎÄ¼şµÄ°æ±¾(¼´ÔÚ·şÎñÆ÷ÉÏÎÄ¼şµÄ×îºóĞŞ¸ÄÊ±¼ä)£¬
-// º¬ÒåºÍ·şÎñÆ÷¶ËµÄFILESÊı¾İÊÇÏàÍ¬µÄ¡£µ«ÊÇSTATSÔòÊÇ×îºóÒ»´Î
-// Í¬²½°æ±¾µÄÊ±ºò£¬Éú³ÉµÄÎÄ¼şµÄÊ±¼ä¡£ÕâÑù£¬ÔÚÏÂÒ»´ÎÍ¬²½°æ±¾
-// µÄÊ±ºò£¬Èç¹ûFILESÄÚµÄÊı¾İÏàÍ¬£¬¾Í¿´STATSºÍ±¾µØÎÄ¼şµÄÊ±¼ä
-// ÊÇ·ñÎÇºÏ£¬Èç¹û²»ÎÇºÏ£¬ËµÃ÷ËäÈ»·şÎñÆ÷Ã»ÓĞĞŞ¸ÄÕâ¸öÎÄ¼ş£¬µ«
-// ÊÇ±¾µØÕâ¸öÎÄ¼şÈ´ÒÑ¾­·¢Éú¹ı±ä»¯£¬ËùÒÔÈÔÈ»ĞèÒªÍ¬²½¡£
-// ×¢Òâ£ºSTATSºÍFILESÊÇ²»Í¬¹¹µÄ£¬¶ÔÓÚËùÓĞµÄÔ´ÎÄ¼ş".c"À´Ëµ£¬
-// ÔÚFILESÖĞ¼ÇÂ¼µÄÊÇ".c"µÄÂ·¾¶£¬¶øÔÚSTATS¼ÇÂ¼µÄÊÇ".b"µÄÂ·¾¶£¬
-// ÕâÊÇÒòÎªFILESÃæ¶Ô·şÎñÆ÷ÎÄ¼ş£¬¶øSTATSÃæ¶Ô±¾µØÎÄ¼ş¡£
+// åœ¨æœå‹™å™¨ç«¯ï¼Œæ•¸æ“šåº«ä¿¡æ¯ä¸­æ‡‰è©²åªæœ‰FILESï¼Œ è¨˜éŒ„äº†æ‰€æœ‰å†ç‰ˆæœ¬
+// ä¸­çš„æ–‡ä»¶çš„ä¿®æ”¹æ™‚é–“ï¼Œä»¥ä¾›å®¢æˆ¶ç«¯ç”¨ä¾†æ¯”è¼ƒæ˜¯å¦æœ‰å·®åˆ¥ã€‚
+// åœ¨å®¢æˆ¶ç«¯ï¼Œæ•¸æ“šåº«ä¿¡æ¯ä¸­æœ‰FILESå’ŒSTATSï¼Œ å…¶ä¸­FILESåŒ…å«äº†æœ¬
+// åœ°ä½¿ç”¨çš„æ‰€æœ‰æ–‡ä»¶çš„ç‰ˆæœ¬(å³åœ¨æœå‹™å™¨ä¸Šæ–‡ä»¶çš„æœ€å¾Œä¿®æ”¹æ™‚é–“)ï¼Œ
+// å«ç¾©å’Œæœå‹™å™¨ç«¯çš„FILESæ•¸æ“šæ˜¯ç›¸åŒçš„ã€‚ä½†æ˜¯STATSå‰‡æ˜¯æœ€å¾Œä¸€æ¬¡
+// åŒæ­¥ç‰ˆæœ¬çš„æ™‚å€™ï¼Œç”Ÿæˆçš„æ–‡ä»¶çš„æ™‚é–“ã€‚é€™æ¨£ï¼Œåœ¨ä¸‹ä¸€æ¬¡åŒæ­¥ç‰ˆæœ¬
+// çš„æ™‚å€™ï¼Œå¦‚æœFILESå…§çš„æ•¸æ“šç›¸åŒï¼Œå°±çœ‹STATSå’Œæœ¬åœ°æ–‡ä»¶çš„æ™‚é–“
+// æ˜¯å¦å»åˆï¼Œå¦‚æœä¸å»åˆï¼Œèªªæ˜é›–ç„¶æœå‹™å™¨æ²’æœ‰ä¿®æ”¹é€™å€‹æ–‡ä»¶ï¼Œä½†
+// æ˜¯æœ¬åœ°é€™å€‹æ–‡ä»¶å»å·²ç¶“ç™¼ç”Ÿéè®ŠåŒ–ï¼Œæ‰€ä»¥ä»ç„¶éœ€è¦åŒæ­¥ã€‚
+// æ³¨æ„ï¼šSTATSå’ŒFILESæ˜¯ä¸åŒæ§‹çš„ï¼Œå°äºæ‰€æœ‰çš„æºæ–‡ä»¶".c"ä¾†èªªï¼Œ
+// åœ¨FILESä¸­è¨˜éŒ„çš„æ˜¯".c"çš„è·¯å¾‘ï¼Œè€Œåœ¨STATSè¨˜éŒ„çš„æ˜¯".b"çš„è·¯å¾‘ï¼Œ
+// é€™æ˜¯å› ç‚ºFILESé¢å°æœå‹™å™¨æ–‡ä»¶ï¼Œè€ŒSTATSé¢å°æœ¬åœ°æ–‡ä»¶ã€‚
 
-// VERSIONDµÄBUG
-// ÔÚ±àÒëÉú³É°æ±¾µÄÊ±ºò£¬get_file_versionº¯Êı»áµ÷ÓÃÒ»¸öÄ£Äâ
-// Íâ²¿º¯Êı£ºbinary_valid£¬À´¼ì²éÄ³Ò»¸öÔ´ÎÄ¼şµÄ¶ş½øÖÆ´úÂëÊÇ
-// ·ñ¹ıÆÚ£¬ÕâÊÇÒ»¸öDOINGÔöÇ¿µÄº¯Êı£¬ĞèÒªĞŞ¸ÄMUDOS²ÅÄÜ¹»Ê¹ÓÃ£¬
-// Èç¹ûÄã²»ÏëĞŞ¸ÄMUDOS£¬¿ÉÒÔÔÚsimul_efun ÖĞ×ÔĞĞÊéĞ´£¬µ«ÊÇÕâ
-// Ñù»áÏÔÖøµÄ½µµÍĞ§ÂÊ¶øµ¼ÖÂÊÂÊµÎŞ·¨Ê¹ÓÃ£¬Òò´Ë¿ÉÒÔ²ÉÓÃ±äÍ¨µÄ
-// ·½Ê½£¬¼´¼òµ¥µÄ±È½ÏÔ´ÎÄ¼şºÍ¶ş½øÖÆÎÄ¼şµÄÊ±¼ä£¬¶ø²»¼ì²éËûµÄ
-// ¼Ì³Ğ¶ÔÏóºÍÇ¶ÈëÎÄ¼ş¡£ÕâÑùÔÚÉú³É°æ±¾µÄÊ±ºò¾ÍĞèÒª¸ñÍâĞ¡ĞÄ¡£
-// Ê¹ÓÃÁËÔöÇ¿µÄEFUNº¯ÊıÒÔºó£¬Ò²²¢²»ÄÜ±£Ö¤ÍêÈ«ÕıÈ·¡£ÕâÊÇÒòÎª
-// ¸Ãº¯ÊıÖ»¼ì²éÁËµÚÒ»²ã¼Ì³Ğ¹ØÏµ£¬Èç¹ûÔÙÉÏÒ»²ã¼Ì³ĞµÄÎÄ¼ş¹ıÊ±
-// ÁË£¬¸Ãº¯Êı¾ÍÎŞ·¨¼ì²é¡£Òò´ËÔÚÃ¿´ÎĞŞ¸ÄÒ»¸öÎÄ¼ş´ÓĞÂ±àÒëµÄÊ±
-// ºò£¬×îºÃ¿¼ÂÇÊ¹ÓÃupdatei À´¸üĞÂÕû¸ö¼Ì³ĞÁ´±í£¬ËäÈ»ÕâÑùÈÔÈ»
-// ÓĞ¿ÉÄÜ³öÏÖÎÊÌâ£¬µ«ÊÇ¼¸ÂÊ½«»áÏàµ±µÄĞ¡¡£Èç¹û±ä»¯±È½Ï¸´ÔÓ£¬
-// ½¨ÒéÈ«²¿ÖØĞÂ±àÒë¡£
+// VERSIONDçš„BUG
+// åœ¨ç·¨è­¯ç”Ÿæˆç‰ˆæœ¬çš„æ™‚å€™ï¼Œget_file_versionå‡½æ•¸æœƒèª¿ç”¨ä¸€å€‹æ¨¡æ“¬
+// å¤–éƒ¨å‡½æ•¸ï¼šbinary_validï¼Œä¾†æª¢æŸ¥æŸä¸€å€‹æºæ–‡ä»¶çš„äºŒé€²åˆ¶ä»£ç¢¼æ˜¯
+// å¦éæœŸï¼Œé€™æ˜¯ä¸€å€‹DOINGå¢å¼·çš„å‡½æ•¸ï¼Œéœ€è¦ä¿®æ”¹MUDOSæ‰èƒ½å¤ ä½¿ç”¨ï¼Œ
+// å¦‚æœä½ ä¸æƒ³ä¿®æ”¹MUDOSï¼Œå¯ä»¥åœ¨simul_efun ä¸­è‡ªè¡Œæ›¸å¯«ï¼Œä½†æ˜¯é€™
+// æ¨£æœƒé¡¯è‘—çš„é™ä½æ•ˆç‡è€Œå°è‡´äº‹å¯¦ç„¡æ³•ä½¿ç”¨ï¼Œå› æ­¤å¯ä»¥æ¡ç”¨è®Šé€šçš„
+// æ–¹å¼ï¼Œå³ç°¡å–®çš„æ¯”è¼ƒæºæ–‡ä»¶å’ŒäºŒé€²åˆ¶æ–‡ä»¶çš„æ™‚é–“ï¼Œè€Œä¸æª¢æŸ¥ä»–çš„
+// ç¹¼æ‰¿å°è±¡å’ŒåµŒå…¥æ–‡ä»¶ã€‚é€™æ¨£åœ¨ç”Ÿæˆç‰ˆæœ¬çš„æ™‚å€™å°±éœ€è¦æ ¼å¤–å°å¿ƒã€‚
+// ä½¿ç”¨äº†å¢å¼·çš„EFUNå‡½æ•¸ä»¥å¾Œï¼Œä¹Ÿä¸¦ä¸èƒ½ä¿è¨¼å®Œå…¨æ­£ç¢ºã€‚é€™æ˜¯å› ç‚º
+// è©²å‡½æ•¸åªæª¢æŸ¥äº†ç¬¬ä¸€å±¤ç¹¼æ‰¿é—œç³»ï¼Œå¦‚æœå†ä¸Šä¸€å±¤ç¹¼æ‰¿çš„æ–‡ä»¶éæ™‚
+// äº†ï¼Œè©²å‡½æ•¸å°±ç„¡æ³•æª¢æŸ¥ã€‚å› æ­¤åœ¨æ¯æ¬¡ä¿®æ”¹ä¸€å€‹æ–‡ä»¶å¾æ–°ç·¨è­¯çš„æ™‚
+// å€™ï¼Œæœ€å¥½è€ƒæ…®ä½¿ç”¨updatei ä¾†æ›´æ–°æ•´å€‹ç¹¼æ‰¿éˆè¡¨ï¼Œé›–ç„¶é€™æ¨£ä»ç„¶
+// æœ‰å¯èƒ½å‡ºç¾å•é¡Œï¼Œä½†æ˜¯å¹¾ç‡å°‡æœƒç›¸ç•¶çš„å°ã€‚å¦‚æœè®ŠåŒ–æ¯”è¼ƒå¾©é›œï¼Œ
+// å»ºè­°å…¨éƒ¨é‡æ–°ç·¨è­¯ã€‚
 
-// ´Ó°æ±¾·şÎñÆ÷È¡»ØµÄÎÄ¼şºó×º
+// å¾ç‰ˆæœ¬æœå‹™å™¨å–å›çš„æ–‡ä»¶å¾Œç¶´
 #define APPENDFIX       ".svr"
 
-// ¼àÌıµÄ¶Ë¿Ú(ÒÔMUDµÄÆô¶¯¶Ë¿ÚÎª»ù×¼)
+// ç›£è½çš„ç«¯å£(ä»¥MUDçš„å•Ÿå‹•ç«¯å£ç‚ºåŸºæº–)
 #define VERSION_PORT    12
 
-// ²»ĞèÒª¹¹ÔìµÄÄ¿Â¼
+// ä¸éœ€è¦æ§‹é€ çš„ç›®éŒ„
 nosave string *exclude_dir = ({ "/adm/etc", "/adm/simul_efun", "/adm/tmp",
                                 "/data", "/dump", "/temp", "/binaries", VERSION_DIR,
                                 "/backup", "/log", "/u", "/www" });
-// ¶îÍâĞèÒª¹¹ÔìµÄÎÄ¼ş
+// é¡å¤–éœ€è¦æ§‹é€ çš„æ–‡ä»¶
 nosave string *include_dir = ({ "/data/e2c_dict.o", "/data/emoted.o", "/data/newsd.o",
                                 "/adm/etc/quest", "/adm/etc/preload", "/adm/etc/database.h" });
 
-// ĞèÒª·¢²¼CÔ´³ÌĞòµÄÄ¿Â¼
+// éœ€è¦ç™¼å¸ƒCæºç¨‹åºçš„ç›®éŒ„
 nosave string *release_src = ({ "/clone/misc/wedding-ring.c",
                                 "/clone/npc/pet.c",
                                 "/clone/npc/magic-beast.c",
@@ -79,26 +79,26 @@ nosave string *release_src = ({ "/clone/misc/wedding-ring.c",
                                 "/clone/misc/cruise-ob.c",
                                 "/d/room/%*s" });
 
-// ±£´æ¶ş½øÖÆ´úÂëµÄÂ·¾¶
+// ä¿å­˜äºŒé€²åˆ¶ä»£ç¢¼çš„è·¯å¾‘
 nosave string bin_path;
 
-// ¸÷µØÁ¬½ÓµÄĞÅÏ¢
+// å„åœ°é€£æ¥çš„ä¿¡æ¯
 nosave mapping socket_info;
 
-// ¿Í»§¶ËµÄÁ¬½ÓĞÅÏ¢
+// å®¢æˆ¶ç«¯çš„é€£æ¥ä¿¡æ¯
 nosave mixed *client_info = 0;
 
-// °æ±¾Í¨Ñ¶µÄSOCKET
+// ç‰ˆæœ¬é€šè¨Šçš„SOCKET
 nosave int vfd;
 nosave int version_ok;
 
-// build_versionÕûÀí°æ±¾Ê±Ê¹ÓÃµÄ±äÁ¿
+// build_versionæ•´ç†ç‰ˆæœ¬æ™‚ä½¿ç”¨çš„è®Šé‡
 nosave int total_error;
 nosave int total_count;
 nosave int total_finish;
 nosave mixed *total_build;
 
-// ÊÖ¹¤»ñµÃÎÄ¼şÁĞ±í
+// æ‰‹å·¥ç²å¾—æ–‡ä»¶åˆ—è¡¨
 string *fetch_file_list = 0;
 
 #if 0
@@ -109,7 +109,7 @@ string *fetch_file_list = 0;
 
 #define T_DEBUG(str) CHANNEL_D->do_channel(this_object(), "debug", str)
 
-// Ìá¹©¸øÍâ²¿µÄº¯Êı
+// æä¾›çµ¦å¤–éƒ¨çš„å‡½æ•¸
 int generate_version();
 int build_cancel();
 int build_path(string path);
@@ -122,7 +122,7 @@ int is_release_server();
 int is_need_release_source(string path);
 int append_sn(string file);
 
-// ÄÚ²¿Ê¹ÓÃµÄº¯Êı
+// å…§éƒ¨ä½¿ç”¨çš„å‡½æ•¸
 protected void setup();
 protected void sys_info(string msg);
 protected void debug_info(string msg);
@@ -177,72 +177,72 @@ void create()
         seteuid(getuid());
         restore();
 
-        // ³õÊ¼»¯Ò»Ğ©ĞÅÏ¢
+        // åˆå§‹åŒ–ä¸€äº›ä¿¡æ¯
         //bin_path = get_config(__SAVE_BINARIES_DIR__);
         bin_path = "/binaries";
-        set("channel_id", "°æ±¾¾«Áé");
+        set("channel_id", "ç‰ˆæœ¬ç²¾éˆ");
 
-        // »¹Ã»ÓĞ¼ì²é°æ±¾
+        // é‚„æ²’æœ‰æª¢æŸ¥ç‰ˆæœ¬
         version_ok = 0;
         total_build = 0;
 
-        // Æô¶¯³õÊ¼»¯
+        // å•Ÿå‹•åˆå§‹åŒ–
         setup();
 }
 
-// Îö¹¹º¯Êı
+// ææ§‹å‡½æ•¸
 void remove(string euid)
 {
         if (! this_player())
                 return;
 
         if (sizeof(socket_info) > 0)
-                error("°æ±¾¾«Áé£ºÄ¿Ç°ÕıÔÚÓĞÕ¾µãºÍ±¾Õ¾Í¬²½°æ±¾£¬Äã²»ÄÜ´İ»Ù°æ±¾¾«Áé¡£\n");
+                error("ç‰ˆæœ¬ç²¾éˆï¼šç›®å‰æ­£åœ¨æœ‰ç«™é»å’Œæœ¬ç«™åŒæ­¥ç‰ˆæœ¬ï¼Œä½ ä¸èƒ½æ‘§æ¯€ç‰ˆæœ¬ç²¾éˆã€‚\n");
 
         if (! version_ok && vfd)
-                error("°æ±¾¾«Áé£ºÄ¿Ç°°æ±¾ÕıÔÚÍ¬²½ÖĞ£¬Äã²»ÄÜ´İ»Ù°æ±¾¾«Áé¡£\n");
+                error("ç‰ˆæœ¬ç²¾éˆï¼šç›®å‰ç‰ˆæœ¬æ­£åœ¨åŒæ­¥ä¸­ï¼Œä½ ä¸èƒ½æ‘§æ¯€ç‰ˆæœ¬ç²¾éˆã€‚\n");
 }
 
 protected void setup()
 {
         if (RELEASE_SERVER() == "local")
         {
-                // ×ÜÕ¾µÄ°æ±¾ÊÇ²»ĞèÒªÍ¬²½¸üĞÂµÄ
+                // ç¸½ç«™çš„ç‰ˆæœ¬æ˜¯ä¸éœ€è¦åŒæ­¥æ›´æ–°çš„
                 version_ok = 1;
 
-                // 2sÒÔºóÌá¹©°æ±¾·şÎñ¹¦ÄÜ
+                // 2sä»¥å¾Œæä¾›ç‰ˆæœ¬æœå‹™åŠŸèƒ½
                 call_out("in_server", 2);
         } else
         if (stringp(RELEASE_SERVER()) &&
             sscanf(RELEASE_SERVER(), "%*s %*d") == 2)
         {
-                // ÕâÀïÊÇ·ÖÕ¾£¬³¢ÊÔºÍ×ÜÕ¾½øĞĞÍ¬²½
+                // é€™è£¡æ˜¯åˆ†ç«™ï¼Œå˜—è©¦å’Œç¸½ç«™é€²è¡ŒåŒæ­¥
                 if (this_player())
                 {
-                        // ²»ÊÇÏµÍ³×Ô¶¯Æô¶¯µÄ£¬Òò´Ë²»¼ì²é°æ±¾
+                        // ä¸æ˜¯ç³»çµ±è‡ªå‹•å•Ÿå‹•çš„ï¼Œå› æ­¤ä¸æª¢æŸ¥ç‰ˆæœ¬
                         version_ok = 1;
-                        write("ÄãÖØĞÂÆô¶¯ÁË°æ±¾¾«Áé¡£\n");
+                        write("ä½ é‡æ–°å•Ÿå‹•äº†ç‰ˆæœ¬ç²¾éˆã€‚\n");
                         return;
                 }
 
-                // 2sÒÔºóºÍ×ÜÕ¾Í¬²½°æ±¾
+                // 2sä»¥å¾Œå’Œç¸½ç«™åŒæ­¥ç‰ˆæœ¬
                 call_out("synchronize_version", 2);
         } else
         {
-                // ÅäÖÃĞÅÏ¢²»ÕıÈ·
-                write("ÅäÖÃĞÅÏ¢(/adm/etc/config)´íÎó£¬Ã»ÓĞÖ¸Ã÷°æ±¾·şÎñÆ÷(release server)¡£\n");
+                // é…ç½®ä¿¡æ¯ä¸æ­£ç¢º
+                write("é…ç½®ä¿¡æ¯(/adm/etc/config)éŒ¯èª¤ï¼Œæ²’æœ‰æŒ‡æ˜ç‰ˆæœ¬æœå‹™å™¨(release server)ã€‚\n");
                 version_ok = 1;
                 return;
         }
 }
 
-// Ìá¹©°æ±¾·şÎñ
+// æä¾›ç‰ˆæœ¬æœå‹™
 protected void in_server()
 {
         int port;
 
-        // ÕâÀïÊÇ°æ±¾·¢²¼Õ¾µã£¬ÔÚ¸Ã¶Ë¿ÚÉÏ¼àÌı·ÖÕ¾µÄÇëÇó
-        // ´´½¨°æ±¾Í¨Ñ¶µÄSOCKET
+        // é€™è£¡æ˜¯ç‰ˆæœ¬ç™¼å¸ƒç«™é»ï¼Œåœ¨è©²ç«¯å£ä¸Šç›£è½åˆ†ç«™çš„è«‹æ±‚
+        // å‰µå»ºç‰ˆæœ¬é€šè¨Šçš„SOCKET
         vfd = socket_create(STREAM_BINARY,
                             "in_read_callback",
                             "in_close_callback" );
@@ -253,7 +253,7 @@ protected void in_server()
                 return;
         }
 
-        // È»ºó°ó¶¨SOCKET
+        // ç„¶å¾Œç¶å®šSOCKET
         port = __PORT__ + VERSION_PORT;
         
         if (socket_bind(vfd, port) < 0)
@@ -263,18 +263,18 @@ protected void in_server()
                 return;
         }
 
-        // ×îºó¼àÌı
+        // æœ€å¾Œç›£è½
         if (socket_listen(vfd, "in_listen_callback" ) < 0)
         {
                 log_file("version", sprintf("%s Failed to listen to socket.\n", log_time()));
                 return;
         }
 
-        // ³õÊ¼»¯Á¬½ÓĞÅÏ¢
+        // åˆå§‹åŒ–é€£æ¥ä¿¡æ¯
         socket_info = ([ ]);
 }
 
-// ÔÚ±¾»úÉÏÉú³É°æ±¾
+// åœ¨æœ¬æ©Ÿä¸Šç”Ÿæˆç‰ˆæœ¬
 int generate_version()
 {
         mapping dbase;
@@ -282,50 +282,50 @@ int generate_version()
         mapping store;
 
         if (RELEASE_SERVER() != "local")
-                return notify_fail("Ö»ÓĞÔÚ°æ±¾·¢²¼µÄMUDÖĞ²ÅÄÜÉú³É×îĞÂ°æ±¾¡£\n");
+                return notify_fail("åªæœ‰åœ¨ç‰ˆæœ¬ç™¼å¸ƒçš„MUDä¸­æ‰èƒ½ç”Ÿæˆæœ€æ–°ç‰ˆæœ¬ã€‚\n");
 
         if (! is_root(previous_object()))
                 return 0;
 
         if (query_heart_beat() || arrayp(total_build))
-                return notify_fail("ÏÖÔÚÕıÔÚÕûÀí°æ±¾¡£\n");
+                return notify_fail("ç¾åœ¨æ­£åœ¨æ•´ç†ç‰ˆæœ¬ã€‚\n");
 
         if (! binary_valid(VERSION_D + ".c"))
-                return notify_fail("ÇëÏÈ¸üĞÂ(update)°æ±¾¾«Áé£¬ÒÔ±£Ö¤ËüÊÇ×îĞÂ°æ±¾¡£\n");
+                return notify_fail("è«‹å…ˆæ›´æ–°(update)ç‰ˆæœ¬ç²¾éˆï¼Œä»¥ä¿è¨¼å®ƒæ˜¯æœ€æ–°ç‰ˆæœ¬ã€‚\n");
 
         if (sizeof(socket_info) > 0)
-                return notify_fail("Ä¿Ç°ÕıÔÚÓĞÕ¾µãºÍ±¾Õ¾Í¬²½°æ±¾£¬Äã²»ÄÜ¹¹Ôì°æ±¾¡£\n");
+                return notify_fail("ç›®å‰æ­£åœ¨æœ‰ç«™é»å’Œæœ¬ç«™åŒæ­¥ç‰ˆæœ¬ï¼Œä½ ä¸èƒ½æ§‹é€ ç‰ˆæœ¬ã€‚\n");
                 
-        // Èç¹ûÉú³ÉÁËcoreÎÄ¼ş£¬ÔòÉ¾³ıÖ®
+        // å¦‚æœç”Ÿæˆäº†coreæ–‡ä»¶ï¼Œå‰‡åˆªé™¤ä¹‹
         rm("/core");
 
-        // ½«Ô­ÏÈËùÓĞµÄ°æ±¾ĞÅÏ¢Êı¾İ±£´æµ½ÁÙÊ±±äÁ¿ÖĞ
+        // å°‡åŸå…ˆæ‰€æœ‰çš„ç‰ˆæœ¬ä¿¡æ¯æ•¸æ“šä¿å­˜åˆ°è‡¨æ™‚è®Šé‡ä¸­
         set_temp(FILES, query(FILES));
         delete(FILES);
 
-        // ÖØĞÂÉèÖÃÊı¾İ
+        // é‡æ–°è¨­ç½®æ•¸æ“š
         set("VERSION_NO", time());
 
         log_file("version", sprintf("%s new version [%d] now generated.\n",
                                     log_time(), query("VERSION_NO")));
 
-        // ¹¹Ôì/Ä¿Â¼ÏÂÃæµÄ°æ±¾
+        // æ§‹é€ /ç›®éŒ„ä¸‹é¢çš„ç‰ˆæœ¬
         store = ([ ]);
         set(FILES, store);
 
-        // ³õÊ¼»¯ÕûÀíĞÅÏ¢
+        // åˆå§‹åŒ–æ•´ç†ä¿¡æ¯
         build_init_data();
         
-        message_system("ÏµÍ³ÕıÔÚÉú³É¿ÉÒÔÖ´ĞĞµÄ·¢²¼°æ±¾£¬ÄúµÄÓÎÏ·ËÙ¶È¿ÉÄÜ»áÊÜµ½Ó°Ïì¡£\n");
-        write("¿ªÊ¼Éú³É°æ±¾...\n");
+        message_system("ç³»çµ±æ­£åœ¨ç”Ÿæˆå¯ä»¥åŸ·è¡Œçš„ç™¼å¸ƒç‰ˆæœ¬ï¼Œæ‚¨çš„éŠæˆ²é€Ÿåº¦å¯èƒ½æœƒå—åˆ°å½±éŸ¿ã€‚\n");
+        write("é–‹å§‹ç”Ÿæˆç‰ˆæœ¬...\n");
 
         build_version("/", store);
 
-        // ¹¹ÔìËùÓĞ¶îÍâÎÄ¼şµÄ°æ±¾
+        // æ§‹é€ æ‰€æœ‰é¡å¤–æ–‡ä»¶çš„ç‰ˆæœ¬
         foreach (file in include_dir)
                 build_version(file, 0);
 
-        // ¿ªÊ¼ĞÄÌø£¬½øĞĞ°æ±¾ÕûÀí
+        // é–‹å§‹å¿ƒè·³ï¼Œé€²è¡Œç‰ˆæœ¬æ•´ç†
         set_heart_beat(1);
         log_file("version", sprintf("%s %s start build version.\n",
                                     log_time(), this_player() ? geteuid(this_player()) : "SYSTEM"));
@@ -333,26 +333,26 @@ int generate_version()
         return 1;
 }
 
-// ÖÕÖ¹Éú³É°æ±¾
+// çµ‚æ­¢ç”Ÿæˆç‰ˆæœ¬
 int build_cancel()
 {
         if (! arrayp(total_build))
-                return notify_fail("ÏÖÔÚ²¢Ã»ÓĞÕıÔÚÉú³É°æ±¾¡£\n");
+                return notify_fail("ç¾åœ¨ä¸¦æ²’æœ‰æ­£åœ¨ç”Ÿæˆç‰ˆæœ¬ã€‚\n");
 
-        // Çå³ı°æ±¾ºÅ
+        // æ¸…é™¤ç‰ˆæœ¬è™Ÿ
         set("VERSION_NO", 0);
         save();
 
-        // Çå¿ÕÊı¾İ
+        // æ¸…ç©ºæ•¸æ“š
         build_finish();
 
-        // Í£Ö¹ĞÄÌø
+        // åœæ­¢å¿ƒè·³
         set_heart_beat(0);
-        write("ÖÕÖ¹ÁËÕıÔÚÉú³É°æ±¾µÄ²Ù×÷£ºÄ¿Ç°µÄ°æ±¾½éÓÚÁ½ÖÖ°æ±¾Ö®¼ä£¬¿ÉÄÜ»áµ¼ÖÂ²»ÎÈ¶¨¡£\n");
+        write("çµ‚æ­¢äº†æ­£åœ¨ç”Ÿæˆç‰ˆæœ¬çš„æ“ä½œï¼šç›®å‰çš„ç‰ˆæœ¬ä»‹äºå…©ç¨®ç‰ˆæœ¬ä¹‹é–“ï¼Œå¯èƒ½æœƒå°è‡´ä¸ç©©å®šã€‚\n");
         return 1;
 }
 
-// ĞÄÌøº¯Êı£ºÕûÀí°æ±¾ÖĞËùÓĞµÄÆÕÍ¨ÎÄ¼ş
+// å¿ƒè·³å‡½æ•¸ï¼šæ•´ç†ç‰ˆæœ¬ä¸­æ‰€æœ‰çš„æ™®é€šæ–‡ä»¶
 protected void heart_beat()
 {
         int n;
@@ -361,7 +361,7 @@ protected void heart_beat()
 
         if (! arrayp(total_build))
         {
-                // ÏÖÔÚÃ»ÓĞ°æ±¾¿ÉÒÔÕûÀí
+                // ç¾åœ¨æ²’æœ‰ç‰ˆæœ¬å¯ä»¥æ•´ç†
                 set_heart_beat(0);
                 return;
         }
@@ -369,7 +369,7 @@ protected void heart_beat()
         n = 0;
         while (n < 100 && sizeof(total_build))
         {
-                // ÕûÀíÄ³Ò»¸öÄ¿Â¼
+                // æ•´ç†æŸä¸€å€‹ç›®éŒ„
                 reset_eval_cost();
                 piece = total_build[0];
                 total_build = total_build[1..<1];
@@ -382,79 +382,79 @@ protected void heart_beat()
         percent = total_finish * 100 / total_count;
         if (percent / 10 != query_temp("last_prompt") / 10)
         {
-                // Ã¿¹ı10%ÔòÌáÊ¾Ò»ÏÂËùÓĞÓÃ»§¡£
-                message_system("ÏµÍ³ÕûÀí°æ±¾ÖĞ£¬ÒÑ¾­Íê³É " + percent + "%...");
+                // æ¯é10%å‰‡æç¤ºä¸€ä¸‹æ‰€æœ‰ç”¨æˆ¶ã€‚
+                message_system("ç³»çµ±æ•´ç†ç‰ˆæœ¬ä¸­ï¼Œå·²ç¶“å®Œæˆ " + percent + "%...");
                 set_temp("last_prompt", percent);
         } else
-                sys_info("ÒÑ¾­Íê³É " + percent + "%...");
+                sys_info("å·²ç¶“å®Œæˆ " + percent + "%...");
 
         if (sizeof(total_build))
                 return;
 
-        // ÕûÀíÍê±Ï
+        // æ•´ç†å®Œç•¢
         save();
         log_file("version", sprintf("%s Total %d error when generate version [%d]\n",
                                     log_time(), total_error, query("VERSION_NO")));
-        sys_info("°æ±¾ÕûÀíÍê±Ï¡£ÔÚÉú³É°æ±¾ÖĞÒ»¹²·¢ÉúÁË " + total_error + " ¸ö´íÎó¡£");
-        message_system("ÏµÍ³Éú³É°æ±¾Íê±Ï¡£\n");
+        sys_info("ç‰ˆæœ¬æ•´ç†å®Œç•¢ã€‚åœ¨ç”Ÿæˆç‰ˆæœ¬ä¸­ä¸€å…±ç™¼ç”Ÿäº† " + total_error + " å€‹éŒ¯èª¤ã€‚");
+        message_system("ç³»çµ±ç”Ÿæˆç‰ˆæœ¬å®Œç•¢ã€‚\n");
 
-        // »¹Ô­Êı¾İ
+        // é‚„åŸæ•¸æ“š
         build_finish();
 
         set_heart_beat(0);
 }
 
-// Éú³ÉÒ»¸öĞÂµÄ°æ±¾ºÅ
+// ç”Ÿæˆä¸€å€‹æ–°çš„ç‰ˆæœ¬è™Ÿ
 int build_new()
 {
         int ver;
 
         if (! is_root(previous_object()))
-                return notify_fail("Ö»ÓĞROOT_UID²ÅÓĞÈ¨ÏŞµ÷ÓÃÕâ¸öº¯Êı¡£\n");
+                return notify_fail("åªæœ‰ROOT_UIDæ‰æœ‰æ¬Šé™èª¿ç”¨é€™å€‹å‡½æ•¸ã€‚\n");
 
-        // ÅĞ¶ÏÏÖÔÚµÄ×´Ì¬
+        // åˆ¤æ–·ç¾åœ¨çš„ç‹€æ…‹
         if (arrayp(total_build))
-                return notify_fail("ÏÖÔÚÕıÔÚÕûÀí°æ±¾¡£\n");
+                return notify_fail("ç¾åœ¨æ­£åœ¨æ•´ç†ç‰ˆæœ¬ã€‚\n");
 
-        // Éú³ÉĞÂµÄ°æ±¾ºÅ
+        // ç”Ÿæˆæ–°çš„ç‰ˆæœ¬è™Ÿ
         set("VERSION_NO", ver = time());
         save();
-        write(sprintf("Éú³ÉÁËĞÂµÄ°æ±¾ºÅ£º%d\n", ver));
+        write(sprintf("ç”Ÿæˆäº†æ–°çš„ç‰ˆæœ¬è™Ÿï¼š%d\n", ver));
         return 1;
 }
 
-// Éú³ÉÄ³¸öÂ·¾¶ÏÂÃæµÄ°æ±¾
+// ç”ŸæˆæŸå€‹è·¯å¾‘ä¸‹é¢çš„ç‰ˆæœ¬
 int build_path(string path)
 {
         if (! is_root(previous_object()))
-                return notify_fail("Ö»ÓĞROOT_UID²ÅÓĞÈ¨ÏŞµ÷ÓÃÕâ¸öº¯Êı¡£\n");
+                return notify_fail("åªæœ‰ROOT_UIDæ‰æœ‰æ¬Šé™èª¿ç”¨é€™å€‹å‡½æ•¸ã€‚\n");
 
         if (sizeof(socket_info) > 0)
-                write("Ä¿Ç°ÕıÔÚÓĞÕ¾µãºÍ±¾Õ¾Í¬²½°æ±¾£¬²»½¨Òé¸ü¸Ä°æ±¾¡£\n");
+                write("ç›®å‰æ­£åœ¨æœ‰ç«™é»å’Œæœ¬ç«™åŒæ­¥ç‰ˆæœ¬ï¼Œä¸å»ºè­°æ›´æ”¹ç‰ˆæœ¬ã€‚\n");
                 
-        // È¥µôÄ©Î²µÄ"/"
+        // å»æ‰æœ«å°¾çš„"/"
         while (strlen(path) > 1 && path[strlen(path) - 1] == '/')
                 path = path[0..<2];
 
         if (file_size(path) == -1)
-                return notify_fail("Ã»ÓĞ¶ÔÓ¦Õâ¸öÂ·¾¶ÃûµÄÎÄ¼ş»òÊÇÂ·¾¶£¬²»ÄÜ½øÈë°æ±¾¡£\n");
+                return notify_fail("æ²’æœ‰å°æ‡‰é€™å€‹è·¯å¾‘åçš„æ–‡ä»¶æˆ–æ˜¯è·¯å¾‘ï¼Œä¸èƒ½é€²å…¥ç‰ˆæœ¬ã€‚\n");
 
         bin_path = get_config(__SAVE_BINARIES_DIR__);
         if (path[0..strlen(bin_path) - 1] == bin_path)
-                return notify_fail("¶ş½øÖÆÎÄ¼ş²»ĞèÒª½øÈë°æ±¾¡£\n");
+                return notify_fail("äºŒé€²åˆ¶æ–‡ä»¶ä¸éœ€è¦é€²å…¥ç‰ˆæœ¬ã€‚\n");
 
-        // ÅĞ¶ÏÏÖÔÚµÄ×´Ì¬
+        // åˆ¤æ–·ç¾åœ¨çš„ç‹€æ…‹
         if (arrayp(total_build))
-                return notify_fail("ÏÖÔÚÕıÔÚÕûÀí°æ±¾¡£\n");
+                return notify_fail("ç¾åœ¨æ­£åœ¨æ•´ç†ç‰ˆæœ¬ã€‚\n");
 
         if (! binary_valid(VERSION_D + ".c"))
-                return notify_fail("ÇëÏÈ¸üĞÂ(update)°æ±¾¾«Áé£¬ÒÔ±£Ö¤ËüÊÇ×îĞÂ°æ±¾¡£\n");
+                return notify_fail("è«‹å…ˆæ›´æ–°(update)ç‰ˆæœ¬ç²¾éˆï¼Œä»¥ä¿è¨¼å®ƒæ˜¯æœ€æ–°ç‰ˆæœ¬ã€‚\n");
 
-        // Èç¹ûÉú³ÉÁËcoreÎÄ¼ş£¬ÔòÉ¾³ıÖ®
+        // å¦‚æœç”Ÿæˆäº†coreæ–‡ä»¶ï¼Œå‰‡åˆªé™¤ä¹‹
         rm("/core");
 
         build_init_data();
-        write("ÏÖÔÚ¿ªÊ¼ÕûÀí°æ±¾¡£\n");
+        write("ç¾åœ¨é–‹å§‹æ•´ç†ç‰ˆæœ¬ã€‚\n");
         build_version(path, 0);
 
         log_file("version", sprintf("%s %s start build path(%s).\n",
@@ -462,19 +462,19 @@ int build_path(string path)
                                     this_player() ? geteuid(this_player()) : "SYSTEM",
                                     path));
         if (sizeof(total_build))
-                // ÓĞ´¿ÎÄ¼şĞèÒªbuild£¬Æô¶¯ĞÄÌø
+                // æœ‰ç´”æ–‡ä»¶éœ€è¦buildï¼Œå•Ÿå‹•å¿ƒè·³
                 set_heart_beat(1);
         else
         {
                 save();
-                write("ÕûÀíÍê±Ï¡£\n");
+                write("æ•´ç†å®Œç•¢ã€‚\n");
                 build_finish();
         }
 
         return 1;
 }
 
-// ³õÊ¼»¯¹¹ÔìµÄÊı¾İ
+// åˆå§‹åŒ–æ§‹é€ çš„æ•¸æ“š
 protected void build_init_data()
 {
         total_build = ({ });
@@ -483,7 +483,7 @@ protected void build_init_data()
         total_finish = 0;
 }
 
-// ½áÊø¹¹ÔìµÄÊı¾İ
+// çµæŸæ§‹é€ çš„æ•¸æ“š
 protected void build_finish()
 {
         total_build = 0;
@@ -491,27 +491,27 @@ protected void build_finish()
         total_count = 0;
         total_finish = 0;
 
-        // ÕâÊÇÓÃÀ´ÌáÊ¾µÄ±äÁ¿
+        // é€™æ˜¯ç”¨ä¾†æç¤ºçš„è®Šé‡
         set_temp("last_prompt", 0);
 
-        // È¥µô¼ÇÂ¼ÎÄ¼ş°æ±¾ËùÊ¹ÓÃµÄÁÙÊ±±äÁ¿
+        // å»æ‰è¨˜éŒ„æ–‡ä»¶ç‰ˆæœ¬æ‰€ä½¿ç”¨çš„è‡¨æ™‚è®Šé‡
         delete_temp(FILES);
 }
 
-// build_versionÔÚÔËĞĞÖĞ°ÑĞèÒªÕûÀíµÄĞÅÏ¢¼ÓÈëµ½total_buildÕâ
-// ¸öÊı¾İ¼¯ºÏÖĞ£¬ÆäÖĞ×éÖ¯·½Ê½ÈçÏÂ£º
-// total_build ----+-- Ä¿Â¼ĞÅÏ¢1 --+-- È«Â·¾¶Ãû
+// build_versionåœ¨é‹è¡Œä¸­æŠŠéœ€è¦æ•´ç†çš„ä¿¡æ¯åŠ å…¥åˆ°total_buildé€™
+// å€‹æ•¸æ“šé›†åˆä¸­ï¼Œå…¶ä¸­çµ„ç¹”æ–¹å¼å¦‚ä¸‹ï¼š
+// total_build ----+-- ç›®éŒ„ä¿¡æ¯1 --+-- å…¨è·¯å¾‘å
 //                 |               |
-//                 |               +-- ¼òµ¥ÎÄ¼şÃû¼¯ºÏ
+//                 |               +-- ç°¡å–®æ–‡ä»¶åé›†åˆ
 //                 |
-//                 +---Ä¿Â¼ĞÅÏ¢2 --+-- È«Â·¾¶Ãû
+//                 +---ç›®éŒ„ä¿¡æ¯2 --+-- å…¨è·¯å¾‘å
 //                 |               |
-//                 |               +-- ¼òµ¥ÎÄ¼şÃû¼¯ºÏ
+//                 |               +-- ç°¡å–®æ–‡ä»¶åé›†åˆ
 //                 ...
-// total_error ´íÎóµÄÊıÁ¿
+// total_error éŒ¯èª¤çš„æ•¸é‡
 
-// Íê³ÉÄ³¸öÂ·¾¶µÄ¹¹Ôì
-// ·µ»Ø¸ÃÂ·¾¶ÏÂÎÄ¼şµÄÊıÄ¿
+// å®ŒæˆæŸå€‹è·¯å¾‘çš„æ§‹é€ 
+// è¿”å›è©²è·¯å¾‘ä¸‹æ–‡ä»¶çš„æ•¸ç›®
 protected int build_pure_file(mixed *path_info)
 {
         int count;
@@ -521,29 +521,29 @@ protected int build_pure_file(mixed *path_info)
         string file;
         int ver;
 
-        // È¡ÕûÀíµÄÈ«Â·¾¶Ãû
+        // å–æ•´ç†çš„å…¨è·¯å¾‘å
         path = path_info[0];
 
-        // ±£Ö¤°æ±¾Ä¿Â¼ÏÂ½¨Á¢ÁËºÏÊÊµÄÂ·¾¶(°üÀ¨¶ş½øÖÆÂ·¾¶)
+        // ä¿è¨¼ç‰ˆæœ¬ç›®éŒ„ä¸‹å»ºç«‹äº†åˆé©çš„è·¯å¾‘(åŒ…æ‹¬äºŒé€²åˆ¶è·¯å¾‘)
         assure_file(VERSION_DIR + bin_path + path + "???");
         assure_file(VERSION_DIR + path + "???");
 
-        // È¥µô×îºóµÄ'/'£¬ÓÃÀ´×ödbaseµÄquery²Ù×÷¡£
+        // å»æ‰æœ€å¾Œçš„'/'ï¼Œç”¨ä¾†åšdbaseçš„queryæ“ä½œã€‚
         if (strlen(path) > 1) pname = path[0..<2];
 
-        // ²é¿´ÊÇ·ñÓĞÎªÕâ¸öÂ·¾¶×¼±¸ºÃ°æ±¾Êı¾İ½á¹¹£¬Èç¹ûÃ»ÓĞ
-        // ¾Í´´½¨Êı¾İ½á¹¹
+        // æŸ¥çœ‹æ˜¯å¦æœ‰ç‚ºé€™å€‹è·¯å¾‘æº–å‚™å¥½ç‰ˆæœ¬æ•¸æ“šçµæ§‹ï¼Œå¦‚æœæ²’æœ‰
+        // å°±å‰µå»ºæ•¸æ“šçµæ§‹
         if (! mapp(here = query(FILES + pname)))
         {
                 here = ([ ]);
                 set(FILES + pname, here);
         }
 
-        // È¡ËùÓĞµÄÎÄ¼şµÄ°æ±¾
+        // å–æ‰€æœ‰çš„æ–‡ä»¶çš„ç‰ˆæœ¬
         count = 0;
         foreach (file in path_info[1])
         {
-                // ÕâÊÇÒ»¸öÆÕÍ¨ÎÄ¼ş
+                // é€™æ˜¯ä¸€å€‹æ™®é€šæ–‡ä»¶
                 if (! (ver = get_file_version(path + file)))
                         total_error++;
                 else
@@ -554,7 +554,7 @@ protected int build_pure_file(mixed *path_info)
         return count;
 }
 
-// ¹¹ÔìÄ³¸öÂ·¾¶ÏÂÃæµÄ°æ±¾
+// æ§‹é€ æŸå€‹è·¯å¾‘ä¸‹é¢çš„ç‰ˆæœ¬
 protected void build_version(string path, mapping here)
 {
         mixed piece;
@@ -563,30 +563,30 @@ protected void build_version(string path, mapping here)
         int ver;
 
         if (member_array(path, exclude_dir) != -1)
-                // Õâ¸öÎÄ¼ş²»ĞèÒª½øÈë°æ±¾£¬Ö±½Ó·µ»Ø³É¹¦
+                // é€™å€‹æ–‡ä»¶ä¸éœ€è¦é€²å…¥ç‰ˆæœ¬ï¼Œç›´æ¥è¿”å›æˆåŠŸ
                 return;
 
         if (! mapp(here))
         {
-                // Ã»ÓĞÖ¸¶¨´æ·ÅÉú³ÉµÄ°æ±¾ĞÅÏ¢µÄÎ»ÖÃ£¬¼ì²éÕâ
-                // ¸öÂ·¾¶µÄÊôĞÔ£ºÆÕÍ¨ÎÄ¼ş»¹ÊÇÄ¿Â¼
+                // æ²’æœ‰æŒ‡å®šå­˜æ”¾ç”Ÿæˆçš„ç‰ˆæœ¬ä¿¡æ¯çš„ä½ç½®ï¼Œæª¢æŸ¥é€™
+                // å€‹è·¯å¾‘çš„å±¬æ€§ï¼šæ™®é€šæ–‡ä»¶é‚„æ˜¯ç›®éŒ„
                 switch (file_size(path))
                 {
                 case -1:
-                        // Ã»ÓĞÕâ¸öÄ¿Â¼»òÊÇÎÄ¼ş£¬Ö±½Ó¼ÌĞø
+                        // æ²’æœ‰é€™å€‹ç›®éŒ„æˆ–æ˜¯æ–‡ä»¶ï¼Œç›´æ¥ç¹¼çºŒ
                         return;
         
                 case -2:
-                        // ÕâÊÇÒ»¸öÄ¿Â¼£¬ÎÒÊ×ÏÈĞèÒªÈ·±£Éú³ÉºÏÊÊµÄÓ³
-                        // ÉäÊı¾İ
+                        // é€™æ˜¯ä¸€å€‹ç›®éŒ„ï¼Œæˆ‘é¦–å…ˆéœ€è¦ç¢ºä¿ç”Ÿæˆåˆé©çš„æ˜ 
+                        // å°„æ•¸æ“š
                         here = ([ ]);
                         set(FILES + path, here);
                         break;
         
                 default:
-                        // ÕâÊÇÒ»¸öÆÕÍ¨ÎÄ¼ş£¬Ö±½ÓÉú³É°æ±¾ĞÅÏ¢
+                        // é€™æ˜¯ä¸€å€‹æ™®é€šæ–‡ä»¶ï¼Œç›´æ¥ç”Ÿæˆç‰ˆæœ¬ä¿¡æ¯
 
-                        // Ê×ÏÈ±£Ö¤°æ±¾Ä¿Â¼ÏÂ½¨Á¢ÁËºÏÊÊµÄÂ·¾¶(°üÀ¨¶ş½øÖÆÂ·¾¶)
+                        // é¦–å…ˆä¿è¨¼ç‰ˆæœ¬ç›®éŒ„ä¸‹å»ºç«‹äº†åˆé©çš„è·¯å¾‘(åŒ…æ‹¬äºŒé€²åˆ¶è·¯å¾‘)
                         assure_file(VERSION_DIR + bin_path + path + "???");
                         assure_file(VERSION_DIR + path + "???");
 
@@ -596,36 +596,36 @@ protected void build_version(string path, mapping here)
                 }
         }
 
-        // È¡Õâ¸öÂ·¾¶ÏÂÃæµÄËùÓĞÎÄ¼ş
+        // å–é€™å€‹è·¯å¾‘ä¸‹é¢çš„æ‰€æœ‰æ–‡ä»¶
         if (path[strlen(path) - 1] != '/') path += "/";
         files = get_dir(path, -1);
         if (! arrayp(files))
-                // Ã»ÓĞÕâ¸öÂ·¾¶
+                // æ²’æœ‰é€™å€‹è·¯å¾‘
                 return 0;
 
-        // ÌáÊ¾
-        sys_info("ÕıÔÚÕûÀíÂ·¾¶£º" + path);
+        // æç¤º
+        sys_info("æ­£åœ¨æ•´ç†è·¯å¾‘ï¼š" + path);
 
-        // ±éÀú±¾Ä¿Â¼ÏÂÃæµÄËùÓĞÎÄ¼ş
+        // éæ­·æœ¬ç›®éŒ„ä¸‹é¢çš„æ‰€æœ‰æ–‡ä»¶
         foreach (piece in files)
         {
                 reset_eval_cost();
                 switch (piece[1])
                 {
                 case -2:
-                        // ÕâÊÇÒ»¸öÄ¿Â¼£¬¹¹ÔìÏÂÒ»¼¶µÄÊı¾İ
+                        // é€™æ˜¯ä¸€å€‹ç›®éŒ„ï¼Œæ§‹é€ ä¸‹ä¸€ç´šçš„æ•¸æ“š
                         here[piece[0]] = ([ ]);
                         build_version(path + piece[0], here[piece[0]]);
                         piece[0] = 0;
                         break;
 
                 default:
-                        // ÕâÊÇÒ»¸öÆÕÍ¨ÎÄ¼ş£¬ÂÔ¹ı£¬Áô´ıÉÔºòÕûÀí
+                        // é€™æ˜¯ä¸€å€‹æ™®é€šæ–‡ä»¶ï¼Œç•¥éï¼Œç•™å¾…ç¨å€™æ•´ç†
                         break;
                 }
         }
 
-        // ¹¹ÔìÄ¿Â¼ĞÅÏ¢£¬ÒÔ´ıÕûÀí³ÌĞòÕûÀí
+        // æ§‹é€ ç›®éŒ„ä¿¡æ¯ï¼Œä»¥å¾…æ•´ç†ç¨‹åºæ•´ç†
         pure_files = map_array(files, (: ((mixed *) $1)[0] :));
         pure_files -= ({ 0 });
         if (sizeof(pure_files))
@@ -635,7 +635,7 @@ protected void build_version(string path, mapping here)
         }
 }
 
-// ÊÇ·ñĞèÒª·¢²¼Ô´³ÌĞò
+// æ˜¯å¦éœ€è¦ç™¼å¸ƒæºç¨‹åº
 int is_need_release_source(string path)
 {
         string *files;
@@ -648,7 +648,7 @@ int is_need_release_source(string path)
         return 0;
 }
 
-// ·µ»ØÎÄ¼şµÄ×îĞÂÊ±¼ä(CÔò·µ»Ø¶ş½øÖÆ´úÂëµÄÊ±¼ä)×÷Îª°æ±¾
+// è¿”å›æ–‡ä»¶çš„æœ€æ–°æ™‚é–“(Cå‰‡è¿”å›äºŒé€²åˆ¶ä»£ç¢¼çš„æ™‚é–“)ä½œç‚ºç‰ˆæœ¬
 protected int get_file_version(string path)
 {
         int last;
@@ -663,7 +663,7 @@ protected int get_file_version(string path)
         cst = stat(path);
         if (! arrayp(cst) || sizeof(cst) < 2 || cst[0] < 0)
         {
-                // Ã»ÓĞÕÒµ½Õâ¸öÎÄ¼ş£¿
+                // æ²’æœ‰æ‰¾åˆ°é€™å€‹æ–‡ä»¶ï¼Ÿ
                 log_file("version", sprintf("%s can't find file: %s\n",
                                             log_time(), path));
                 return 0;
@@ -673,92 +673,92 @@ protected int get_file_version(string path)
         if (last > 0 && path[last + 1] == 'c' && path[last] == '.' &&
             ! is_need_release_source(path))
         {
-                // ÕâÊÇÒ»¸ö²»ÄÜ·¢²¼µÄcÎÄ¼ş£¬ÎÒ±ØĞëÈ¡ËüµÄ¶ş½ø
-                // ÖÆ´úÂëÎÄ¼ş
+                // é€™æ˜¯ä¸€å€‹ä¸èƒ½ç™¼å¸ƒçš„cæ–‡ä»¶ï¼Œæˆ‘å¿…é ˆå–å®ƒçš„äºŒé€²
+                // åˆ¶ä»£ç¢¼æ–‡ä»¶
                 bpath = bin_path + path[0..last] + "b";
                 st = stat(bpath);
                 if (! arrayp(st) || sizeof(st) < 2)
-                        // Ã»ÓĞÕâ¸öÎÄ¼ş
+                        // æ²’æœ‰é€™å€‹æ–‡ä»¶
                         need_reload = 1;
                 else
                 if (st[0] == -2)
                 {
-                        // ÕâÊÇÒ»¸öÄ¿Â¼
+                        // é€™æ˜¯ä¸€å€‹ç›®éŒ„
                         RM_CMD->rm_dir(bin_path);
                         need_reload = 1;
                 } else
 #if 1
                 if (! binary_valid(path))
-                        // ¸ÃÎÄ¼şĞèÒªÖØĞÂ±àÒë
+                        // è©²æ–‡ä»¶éœ€è¦é‡æ–°ç·¨è­¯
                         need_reload = 1;
 #else
-                // doing ÔÚÕâÀïÏ÷ÈõÁËÅĞ¶ÏµÄÖØĞÂ±àÒëµÄÌõ¼ş£¬
-                // Ö»ÒªBINÎÄ¼şµÄÉú³ÉÊ±¼ä²»ÀÏÓÚCÎÄ¼şµÄÊ±¼ä¾Í
-                // ÈÏÎª²»ĞèÒª±àÒë£¬ÕâÊÇÎªÁË±ÜÃâ¹¹Ôì°æ±¾»¨·Ñ
-                // Ì«¶àµÄÊ±¼ä¡£Ã¿´ÎĞŞ¸ÄÒ»Ğ©ÎÄ¼şÒÔºó½¨ÒéÊ¹ÓÃ
-                // updatei ±àÒëËùÓĞ¼Ì³ĞÎÄ¼ş¡£
+                // doing åœ¨é€™è£¡å‰Šå¼±äº†åˆ¤æ–·çš„é‡æ–°ç·¨è­¯çš„æ¢ä»¶ï¼Œ
+                // åªè¦BINæ–‡ä»¶çš„ç”Ÿæˆæ™‚é–“ä¸è€äºCæ–‡ä»¶çš„æ™‚é–“å°±
+                // èªç‚ºä¸éœ€è¦ç·¨è­¯ï¼Œé€™æ˜¯ç‚ºäº†é¿å…æ§‹é€ ç‰ˆæœ¬èŠ±è²»
+                // å¤ªå¤šçš„æ™‚é–“ã€‚æ¯æ¬¡ä¿®æ”¹ä¸€äº›æ–‡ä»¶ä»¥å¾Œå»ºè­°ä½¿ç”¨
+                // updatei ç·¨è­¯æ‰€æœ‰ç¹¼æ‰¿æ–‡ä»¶ã€‚
                 if (st[1] < cst[1])
-                        // ¸ÃÎÄ¼şĞèÒªÖØĞÂ±àÒë
+                        // è©²æ–‡ä»¶éœ€è¦é‡æ–°ç·¨è­¯
                         need_reload = 1;
 #endif
 
                 if (need_reload)
                 {
-                        // Ã»ÓĞ×îĞÂµÄbinariesÎÄ¼ş£¬ÎÒĞèÒªÖØ
-                        // ĞÂ±àÒëÕâ¸öÎÄ¼ş¡£
+                        // æ²’æœ‰æœ€æ–°çš„binariesæ–‡ä»¶ï¼Œæˆ‘éœ€è¦é‡
+                        // æ–°ç·¨è­¯é€™å€‹æ–‡ä»¶ã€‚
                         if (objectp(ob = find_object(path)))
                         {
-                                // ÕÒµ½ÁËÕâ¸öOBJECT£¬¼ÇÂ¼ÀïÃæµÄÈËÎï
+                                // æ‰¾åˆ°äº†é€™å€‹OBJECTï¼Œè¨˜éŒ„è£¡é¢çš„äººç‰©
                                 uobs = filter_array(all_inventory(ob), (: playerp :));
                                 uobs->move(VOID_OB, 1);
                                 destruct(ob);
                         }
 
-                        // ÖØĞÂÔØÈëOBJECT
+                        // é‡æ–°è¼‰å…¥OBJECT
                         reset_eval_cost();
                         catch(ob = load_object(path));
                         if (objectp(ob) && sizeof(uobs))
-                                // ÒÆ¶¯ÈËÎï»ØÔ­ÏÈµÄOBJECT
+                                // ç§»å‹•äººç‰©å›åŸå…ˆçš„OBJECT
                                 uobs->move(ob, 1);
 
                         if (file_size(bpath) < 0)
                         {
-                                // »¹Ã»ÓĞÕâ¸öÎÄ¼ş£¿ÓĞ¿ÉÄÜÊÇ
-                                // ±àÒë³ö´í
+                                // é‚„æ²’æœ‰é€™å€‹æ–‡ä»¶ï¼Ÿæœ‰å¯èƒ½æ˜¯
+                                // ç·¨è­¯å‡ºéŒ¯
                                 log_file("version", sprintf("%s can't get binaries: %s\n",
                                                             log_time(), path));
                                 return 0;
                         }
 
-                        // Õâ¸öBIN¿Ï¶¨ÊÇ¸Õ¸ÕÉú³ÉµÄ£¬Ö±
-                        // ½Ó·µ»Ø¡£
+                        // é€™å€‹BINè‚¯å®šæ˜¯å‰›å‰›ç”Ÿæˆçš„ï¼Œç›´
+                        // æ¥è¿”å›ã€‚
                         ver = time();
                 } else
-                        // ·µ»ØBINÎÄ¼şµÄÉú³ÉÊ±¼ä×÷Îª°æ±¾ºÅ
+                        // è¿”å›BINæ–‡ä»¶çš„ç”Ÿæˆæ™‚é–“ä½œç‚ºç‰ˆæœ¬è™Ÿ
                         ver = st[1];
 
-                // ¼ÇÂ¼ĞèÒª¸´ÖÆµÄÔ´ÎÄ¼şÃû×Ö(CĞèÒª¸´ÖÆBINÎÄ¼ş)
+                // è¨˜éŒ„éœ€è¦å¾©åˆ¶çš„æºæ–‡ä»¶åå­—(Céœ€è¦å¾©åˆ¶BINæ–‡ä»¶)
                 cpath = bpath;
         } else
         {
-                // ²»ÊÇcÎÄ¼ş£¬Ö±½Ó·µ»ØÊ±¼ä×÷Îª°æ±¾ºÅ
+                // ä¸æ˜¯cæ–‡ä»¶ï¼Œç›´æ¥è¿”å›æ™‚é–“ä½œç‚ºç‰ˆæœ¬è™Ÿ
                 ver = cst[1];
 
-                // ¼ÇÂ¼ĞèÒª¸´ÖÆµÄÔ´ÎÄ¼şÃû×Ö(ÆÕÍ¨ÎÄ¼şÖ±½Ó¸´ÖÆ)
+                // è¨˜éŒ„éœ€è¦å¾©åˆ¶çš„æºæ–‡ä»¶åå­—(æ™®é€šæ–‡ä»¶ç›´æ¥å¾©åˆ¶)
                 cpath = path;
         }
 
-        // Èç¹ûÏÖÔÚÎÄ¼şµÄ°æ±¾ºÍ×îºóÒ»´ÎÕûÀíÊ±µÄ°æ±¾²»Ò»ÖÂ£¬
-        // »òÊÇ°æ±¾Ä¿Â¼ÖĞÃ»ÓĞÕâ¸öÎÄ¼ş£¬Ôò½«ÔËĞĞÖĞµÄÎÄ¼ş¸´ÖÆ
-        // µ½°æ±¾Ä¿Â¼ÖĞÈ¥¡£×¢Òâ£ºÕâÀïÓĞÒ»¸öÈ±Ïİ£¬ÄÇ¾ÍÊÇÈç¹û
-        // ĞŞ¸ÄÁË°æ±¾Ä¿Â¼ÖĞµÄÎÄ¼ş£¬ÄÇÃ´ÏµÍ³²¢²»»á¼ì²é£¬¶øÊÇ
-        // ÈÏÎª¸ÃÎÄ¼ş°æ±¾ÈÔÈ»ÕıÈ·¡£ËùÒÔĞŞ¸ÄVERSION ÏÂÃæµÄÎÄ
-        // ¼şÊÇ¾ø¶Ô±»½ûÖ¹µÄ¡£
+        // å¦‚æœç¾åœ¨æ–‡ä»¶çš„ç‰ˆæœ¬å’Œæœ€å¾Œä¸€æ¬¡æ•´ç†æ™‚çš„ç‰ˆæœ¬ä¸ä¸€è‡´ï¼Œ
+        // æˆ–æ˜¯ç‰ˆæœ¬ç›®éŒ„ä¸­æ²’æœ‰é€™å€‹æ–‡ä»¶ï¼Œå‰‡å°‡é‹è¡Œä¸­çš„æ–‡ä»¶å¾©åˆ¶
+        // åˆ°ç‰ˆæœ¬ç›®éŒ„ä¸­å»ã€‚æ³¨æ„ï¼šé€™è£¡æœ‰ä¸€å€‹ç¼ºé™·ï¼Œé‚£å°±æ˜¯å¦‚æœ
+        // ä¿®æ”¹äº†ç‰ˆæœ¬ç›®éŒ„ä¸­çš„æ–‡ä»¶ï¼Œé‚£éº¼ç³»çµ±ä¸¦ä¸æœƒæª¢æŸ¥ï¼Œè€Œæ˜¯
+        // èªç‚ºè©²æ–‡ä»¶ç‰ˆæœ¬ä»ç„¶æ­£ç¢ºã€‚æ‰€ä»¥ä¿®æ”¹VERSION ä¸‹é¢çš„æ–‡
+        // ä»¶æ˜¯çµ•å°è¢«ç¦æ­¢çš„ã€‚
         switch (file_size(VERSION_DIR + cpath))
         {
         case -2:
-                // °æ±¾ÖĞ´æ·ÅµÄÊÇÒ»¸öÂ·¾¶¡£ÄÇÃ´ÎÒĞè
-                // ÒªÏÈÒÆ×ßÕâ¸öÂ·¾¶¡£
+                // ç‰ˆæœ¬ä¸­å­˜æ”¾çš„æ˜¯ä¸€å€‹è·¯å¾‘ã€‚é‚£éº¼æˆ‘éœ€
+                // è¦å…ˆç§»èµ°é€™å€‹è·¯å¾‘ã€‚
                 sys_info(sprintf("file(%s) is a path in version dir, removed.", cpath));
                 RM_CMD->rm_dir(VERSION_DIR + cpath);
                 break;
@@ -766,36 +766,36 @@ protected int get_file_version(string path)
                 break;
 
         default:
-                // Õâ¸öÎÄ¼şÒÑ¾­´æÔÚ£¬±È½Ï¼ÇÂ¼µÄ°æ±¾ĞÅÏ¢
+                // é€™å€‹æ–‡ä»¶å·²ç¶“å­˜åœ¨ï¼Œæ¯”è¼ƒè¨˜éŒ„çš„ç‰ˆæœ¬ä¿¡æ¯
                 if (ver == query_temp(FILES + path))
-                        // °æ±¾ÏàÍ¬£¬·µ»Ø¼´¿É¡£
+                        // ç‰ˆæœ¬ç›¸åŒï¼Œè¿”å›å³å¯ã€‚
                         return ver;
         }
 
-        // ĞèÒª¸´ÖÆÕâ¸öÎÄ¼ş½øÈë°æ±¾Â·¾¶
+        // éœ€è¦å¾©åˆ¶é€™å€‹æ–‡ä»¶é€²å…¥ç‰ˆæœ¬è·¯å¾‘
         cp(cpath, VERSION_DIR + cpath);
         last = strlen(cpath) - 2;
 
         if (cpath[last] == '.' && (cpath[last + 1] == 'c' || cpath[last + 1] == 'h'))
-                // Ô´³ÌĞò£¬ĞèÒªÔö¼ÓÍêÕûĞÔID
+                // æºç¨‹åºï¼Œéœ€è¦å¢åŠ å®Œæ•´æ€§ID
                 append_sn(VERSION_DIR + cpath);
 
         return ver;
 }
 
-// »ñµÃ·şÎñÆ÷ÉÏµÄÎÄ¼ş
+// ç²å¾—æœå‹™å™¨ä¸Šçš„æ–‡ä»¶
 int fetch_file(string file)
 {
         object me;
 
         if (RELEASE_SERVER() == "local")
-                return notify_fail("ÔÚ°æ±¾·¢²¼Õ¾µãÉÏÎŞĞè´Ó·şÎñÆ÷ÉÏ»ñµÃÎÄ¼ş¡£\n");
+                return notify_fail("åœ¨ç‰ˆæœ¬ç™¼å¸ƒç«™é»ä¸Šç„¡éœ€å¾æœå‹™å™¨ä¸Šç²å¾—æ–‡ä»¶ã€‚\n");
 
         if (arrayp(client_info) && client_info[STATUS] != STATUS_FINISHED)
-                return notify_fail("ÏÖÔÚ°æ±¾ÕıÔÚÍ¬²½ÖĞ¡£\n");
+                return notify_fail("ç¾åœ¨ç‰ˆæœ¬æ­£åœ¨åŒæ­¥ä¸­ã€‚\n");
 
         if (find_call_out("syn_reboot_mud") != -1)
-                return notify_fail("ÏÖÔÚ°æ±¾¾«ÁéÕıÔÚÖØĞÂÆô¶¯ÓÎÏ·£¬ÎŞ·¨Í¬²½¡£\n");
+                return notify_fail("ç¾åœ¨ç‰ˆæœ¬ç²¾éˆæ­£åœ¨é‡æ–°å•Ÿå‹•éŠæˆ²ï¼Œç„¡æ³•åŒæ­¥ã€‚\n");
 
         fetch_file_list = ({ file });
 
@@ -808,25 +808,25 @@ int fetch_file(string file)
         if (! connect_server())
                 return 0;
 
-        write("ÕıÔÚÁ¬½Ó·şÎñÆ÷»ñÈ¡ÎÄ¼ş¡£\n");
+        write("æ­£åœ¨é€£æ¥æœå‹™å™¨ç²å–æ–‡ä»¶ã€‚\n");
         return 1;
 }
 
-// Í¬²½Ö÷»ú°æ±¾
+// åŒæ­¥ä¸»æ©Ÿç‰ˆæœ¬
 int synchronize_version()
 {
         object me;
 
         if (RELEASE_SERVER() == "local")
-                return notify_fail("ÔÚ°æ±¾·¢²¼Õ¾µãÉÏÎŞĞèÍ¬²½×îĞÂ°æ±¾¡£\n");
+                return notify_fail("åœ¨ç‰ˆæœ¬ç™¼å¸ƒç«™é»ä¸Šç„¡éœ€åŒæ­¥æœ€æ–°ç‰ˆæœ¬ã€‚\n");
 
         if (arrayp(client_info) && client_info[STATUS] != STATUS_FINISHED)
-                return notify_fail("ÏÖÔÚ°æ±¾ÕıÔÚÍ¬²½ÖĞ¡£\n");
+                return notify_fail("ç¾åœ¨ç‰ˆæœ¬æ­£åœ¨åŒæ­¥ä¸­ã€‚\n");
 
         if (find_call_out("syn_reboot_mud") != -1)
-                return notify_fail("ÏÖÔÚ°æ±¾¾«ÁéÕıÔÚÖØĞÂÆô¶¯ÓÎÏ·£¬ÎŞ·¨Í¬²½¡£\n");
+                return notify_fail("ç¾åœ¨ç‰ˆæœ¬ç²¾éˆæ­£åœ¨é‡æ–°å•Ÿå‹•éŠæˆ²ï¼Œç„¡æ³•åŒæ­¥ã€‚\n");
 
-        // Çå³ı±äÁ¿£¬±£Ö¤Í¬²½°æ±¾
+        // æ¸…é™¤è®Šé‡ï¼Œä¿è¨¼åŒæ­¥ç‰ˆæœ¬
         fetch_file_list = 0;
 
         if (objectp(me = this_player(1)))
@@ -835,14 +835,14 @@ int synchronize_version()
         else
                 delete_temp("operator");
 
-        // ÉèÖÃ±êÖ¾£º°æ±¾»¹Ã»ÓĞ³É¹¦µÄÍ¬²½
+        // è¨­ç½®æ¨™å¿—ï¼šç‰ˆæœ¬é‚„æ²’æœ‰æˆåŠŸçš„åŒæ­¥
         version_ok = 0;
         delete_temp("version_changed");
         
         if (! connect_server())
                 return 0;
                 
-        write("Äã¿ªÊ¼ºÍ·şÎñÆ÷Í¬²½°æ±¾¡£\n");
+        write("ä½ é–‹å§‹å’Œæœå‹™å™¨åŒæ­¥ç‰ˆæœ¬ã€‚\n");
         return 1;
 }
 
@@ -851,7 +851,7 @@ protected int connect_server()
         string addr, port;
         int ret_val;
 
-        // ´´½¨°æ±¾Í¨Ñ¶µÄSOCKET
+        // å‰µå»ºç‰ˆæœ¬é€šè¨Šçš„SOCKET
         vfd = socket_create(STREAM_BINARY,
                             "syn_read_callback",
                             "syn_close_callback" );
@@ -860,10 +860,10 @@ protected int connect_server()
         {
                 log_file("version", sprintf("%s Failed to create socket.\n",
                                             log_time()));
-                return notify_fail("ÎŞ·¨´´½¨SOCKET.\n");
+                return notify_fail("ç„¡æ³•å‰µå»ºSOCKET.\n");
         }
 
-        // ³õÊ¼»¯¿Í»§¶ËĞÅÏ¢
+        // åˆå§‹åŒ–å®¢æˆ¶ç«¯ä¿¡æ¯
         client_info = allocate(8);
         client_info[STATUS] = STATUS_CONNECTING;
         client_info[FILE_NAME] = 0;
@@ -876,10 +876,10 @@ protected int connect_server()
         {
                 log_file("version", sprintf("%s Bad address(%s) of server.\n",
                                             log_time(), RELEASE_SERVER()));
-                return notify_fail("ÅäÖÃµÄ°æ±¾·şÎñÆ÷µÄµØÖ·²»ÕıÈ·¡£\n");
+                return notify_fail("é…ç½®çš„ç‰ˆæœ¬æœå‹™å™¨çš„åœ°å€ä¸æ­£ç¢ºã€‚\n");
         }
 
-        // Éú³É°æ±¾·şÎñÆ÷µÄÁ¬½ÓµØÖ·
+        // ç”Ÿæˆç‰ˆæœ¬æœå‹™å™¨çš„é€£æ¥åœ°å€
         addr = sprintf("%s %d", addr, port + VERSION_PORT);
 
         ret_val = socket_connect(vfd, addr,
@@ -889,7 +889,7 @@ protected int connect_server()
         {
                 log_file("version", sprintf("%s Failed to connect server.\n",
                                             log_time()));
-                return notify_fail("ÎŞ·¨Á¬½Ó°æ±¾·şÎñÆ÷¡£\n");
+                return notify_fail("ç„¡æ³•é€£æ¥ç‰ˆæœ¬æœå‹™å™¨ã€‚\n");
         }
 
         log_file("version", sprintf("%s connecting to server %s.\n",
@@ -897,7 +897,7 @@ protected int connect_server()
         return 1;
 }
 
-// Çå³ıÍ¬²½ĞÅÏ¢
+// æ¸…é™¤åŒæ­¥ä¿¡æ¯
 int clear_syn_info()
 {
         int result;
@@ -906,7 +906,7 @@ int clear_syn_info()
         if (previous_object() && ! is_root(previous_object()))
                 return 0;
 
-        // ·şÎñÆ÷¶Ë£ºÇå³ıÌ×½Ó×ÖµÄÁ¬½ÓĞÅÏ¢
+        // æœå‹™å™¨ç«¯ï¼šæ¸…é™¤å¥—æ¥å­—çš„é€£æ¥ä¿¡æ¯
         if (is_release_server())
         {
                 if (sizeof(socket_info) > 0)
@@ -921,10 +921,10 @@ int clear_syn_info()
                 return 0;
         }
 
-        // ¿Í»§¶Ë£ºÇå³ıÍ¬²½µÄSOCKETºÍĞÅÏ¢
+        // å®¢æˆ¶ç«¯ï¼šæ¸…é™¤åŒæ­¥çš„SOCKETå’Œä¿¡æ¯
         if (vfd)
         {
-                log_file("version", sprintf("%s ÔİÍ£ÁËÍ¬²½°æ±¾µÄ²Ù×÷¡£\n", log_time()));
+                log_file("version", sprintf("%s æš«åœäº†åŒæ­¥ç‰ˆæœ¬çš„æ“ä½œã€‚\n", log_time()));
                 syn_finish();
                 return 1;
         }
@@ -932,26 +932,26 @@ int clear_syn_info()
         return 0;
 }
 
-// °æ±¾ÊÇ·ñÕı³£
+// ç‰ˆæœ¬æ˜¯å¦æ­£å¸¸
 int is_version_ok() { return version_ok; }
 
-// ÊÇ·ñÕıÔÚ½øĞĞÆô¶¯Ê±Í¬²½°æ±¾
+// æ˜¯å¦æ­£åœ¨é€²è¡Œå•Ÿå‹•æ™‚åŒæ­¥ç‰ˆæœ¬
 int is_boot_synchronizing()
 {
         if (! version_ok && ! stringp(query_temp("operator")))
                 return 1;           
 }
 
-// ÊÇ·ñÊÇ°æ±¾·¢²¼·şÎñÆ÷
+// æ˜¯å¦æ˜¯ç‰ˆæœ¬ç™¼å¸ƒæœå‹™å™¨
 int is_release_server() { return RELEASE_SERVER() == "local"; }
 
-// ²âÊÔ
+// æ¸¬è©¦
 #if 0
 mixed query_client_info() { return client_info; }
 int query_vfd() { return vfd; }
 #endif
 
-// »ñµÃÁ¬½ÓĞÅÏ¢
+// ç²å¾—é€£æ¥ä¿¡æ¯
 mixed query_socket_info()
 {
         if (previous_object() && ! is_root(previous_object()))
@@ -960,7 +960,7 @@ mixed query_socket_info()
         return socket_info;
 }
 
-// ´Ó·şÎñÆ÷»ñµÃÎÄ¼ş
+// å¾æœå‹™å™¨ç²å¾—æ–‡ä»¶
 protected void syn_get_file(string file)
 {
         if (client_info[STATUS] != STATUS_SYN)
@@ -969,30 +969,30 @@ protected void syn_get_file(string file)
         send_command(vfd, "get " + file);
 }
 
-// ´Ó·şÎñÆ÷»ñµÃ°æ±¾Êı¾İ
+// å¾æœå‹™å™¨ç²å¾—ç‰ˆæœ¬æ•¸æ“š
 protected void syn_get_version_data()
 {
         if (client_info[STATUS] != STATUS_GET_VERSION)
                 return;
         
-        // ¸ü¸Ä×´Ì¬³ÉÎªÕıÔÚ»ñµÃÎÄ¼ş
+        // æ›´æ”¹ç‹€æ…‹æˆç‚ºæ­£åœ¨ç²å¾—æ–‡ä»¶
         client_info[STATUS] = STATUS_GET_VERSION_DATA;
         send_command(vfd, "getver dbase");
 }
 
-// Ïò·şÎñÆ÷¶Ë·¢ËÍÃüÁî
+// å‘æœå‹™å™¨ç«¯ç™¼é€å‘½ä»¤
 void send_command(int fd, string cmd)
 {
         if (! fd)
-                // ¼ì²éµ±Ç°Á¬½ÓµÄVFD
+                // æª¢æŸ¥ç•¶å‰é€£æ¥çš„VFD
                 if (! (fd = vfd)) return;
                 
 
         cmd += "\n";
         if (sizeof(client_info[PENDING_WRITE]))
         {
-                // ÒÑ¾­ÓĞ×èÈûĞèÒª·¢ËÍµÄÊı¾İÁË£¬Õâ´Î·¢ËÍµÄÊı
-                // ¾İÏÈ×èÈû
+                // å·²ç¶“æœ‰é˜»å¡éœ€è¦ç™¼é€çš„æ•¸æ“šäº†ï¼Œé€™æ¬¡ç™¼é€çš„æ•¸
+                // æ“šå…ˆé˜»å¡
                 client_info[PENDING_WRITE] += ({ cmd });
                 return;
         }
@@ -1001,23 +1001,23 @@ void send_command(int fd, string cmd)
         {
         case EESUCCESS:
         case EECALLBACK:
-                // ·¢ËÍ³É¹¦ÁË
+                // ç™¼é€æˆåŠŸäº†
                 return;
 
         case EEWOULDBLOCK:
-                // ·¢ËÍÊı¾İ×èÈû
+                // ç™¼é€æ•¸æ“šé˜»å¡
                 client_info[PENDING_WRITE] += ({ cmd });
                 call_out("syn_write_callback", 2, fd);
                 return;
 
         default:
-                // ·¢ËÍÊ§°Ü
+                // ç™¼é€å¤±æ•—
                 client_info[PENDING_WRITE] += ({ cmd });
                 return;
         }
 }
 
-// ¿Í»§¶Ë·¢ËÍ×èÈûµÄÏûÏ¢
+// å®¢æˆ¶ç«¯ç™¼é€é˜»å¡çš„æ¶ˆæ¯
 protected int send_client_pending_msg()
 {
         string msg;
@@ -1026,33 +1026,33 @@ protected int send_client_pending_msg()
         switch (socket_write(vfd, msg))
         {
         case EESUCCESS:
-                // ·¢ËÍ³É¹¦ÁË
+                // ç™¼é€æˆåŠŸäº†
                 client_info[PENDING_WRITE] = client_info[PENDING_WRITE][1..<1];
                 return 0;
 
         case EECALLBACK:
-                // ĞèÒªµÈ´ı
+                // éœ€è¦ç­‰å¾…
                 client_info[PENDING_WRITE] = client_info[PENDING_WRITE][1..<1];
                 return -1;
 
         case EEWOULDBLOCK:
-                // ·¢ËÍÊı¾İ×èÈû
+                // ç™¼é€æ•¸æ“šé˜»å¡
                 call_out("syn_write_callback", 2, vfd);
                 return -1;
 
         default:
-                // ·¢ËÍÊ§°Ü
+                // ç™¼é€å¤±æ•—
                 return -1;
         }
 }
 
-// Í¬²½Ê±¿Í»§¶ËÁ¬½ÓµÄ¶Á»Øµ÷º¯Êı
-// ÓÉÓÚ·şÎñÆ÷¿ÉÄÜ»á·µ»ØÁ½ÖÖÊı¾İ£º1 ÆÕÍ¨Ó¦´ğĞÅÏ¢  2 ¶ş½øÖÆÎÄ
-// ¼şÊı¾İ¡£Òò´Ë½ÓÊÕº¯ÊıÒÀ¾İ×´Ì¬ÖĞµÄÎÄ¼şÃû×Ö´æÔÚÓë·ñÀ´¼ø±ğÕâ
-// Á½ÖÖ×´Ì¬£ºÈç¹ûÓĞÎÄ¼şÃû×Ö£¬ÄÇÃ´¾ÍÈÏÎªÊÇ½ÓÊÕÎÄ¼şÖĞ£¬Èç¹ûÃ»
-// ÓĞ£¬ÔòÊÇ½ÓÊÕÆÕÍ¨Ó¦´ğĞÅÏ¢¡£ÆÕÍ¨Ó¦´ğĞÅÏ¢Ò»¶¨ÊÇ¹Ì¶¨¸ö×Ö½Ú£¬
-// ÒÔASCII ·½Ê½´æ·Å¡£Èç¹ûÒ»´Î½ÓÊÕÃ»ÓĞÂú×ãÆÚÍûµÄ×Ö½Ú£¬ÄÇÃ´³¤
-// ¶È½«±£´æÔÚFILE_POSÀïÃæ¡£
+// åŒæ­¥æ™‚å®¢æˆ¶ç«¯é€£æ¥çš„è®€å›èª¿å‡½æ•¸
+// ç”±äºæœå‹™å™¨å¯èƒ½æœƒè¿”å›å…©ç¨®æ•¸æ“šï¼š1 æ™®é€šæ‡‰ç­”ä¿¡æ¯  2 äºŒé€²åˆ¶æ–‡
+// ä»¶æ•¸æ“šã€‚å› æ­¤æ¥æ”¶å‡½æ•¸ä¾æ“šç‹€æ…‹ä¸­çš„æ–‡ä»¶åå­—å­˜åœ¨èˆ‡å¦ä¾†é‘’åˆ¥é€™
+// å…©ç¨®ç‹€æ…‹ï¼šå¦‚æœæœ‰æ–‡ä»¶åå­—ï¼Œé‚£éº¼å°±èªç‚ºæ˜¯æ¥æ”¶æ–‡ä»¶ä¸­ï¼Œå¦‚æœæ²’
+// æœ‰ï¼Œå‰‡æ˜¯æ¥æ”¶æ™®é€šæ‡‰ç­”ä¿¡æ¯ã€‚æ™®é€šæ‡‰ç­”ä¿¡æ¯ä¸€å®šæ˜¯å›ºå®šå€‹å­—ç¯€ï¼Œ
+// ä»¥ASCII æ–¹å¼å­˜æ”¾ã€‚å¦‚æœä¸€æ¬¡æ¥æ”¶æ²’æœ‰æ»¿è¶³æœŸæœ›çš„å­—ç¯€ï¼Œé‚£éº¼é•·
+// åº¦å°‡ä¿å­˜åœ¨FILE_POSè£¡é¢ã€‚
 protected void syn_receive_result(string str)
 {
         string file;
@@ -1063,7 +1063,7 @@ protected void syn_receive_result(string str)
 
         if ((len = strsrch(str, '\n')) == -1)
         {
-                // ·µ»ØµÄĞÅÏ¢²»ÕıÈ· - ±ØĞë°üº¬'\n'
+                // è¿”å›çš„ä¿¡æ¯ä¸æ­£ç¢º - å¿…é ˆåŒ…å«'\n'
                 log_file("version", sprintf("%s respond without '\\n' from server: %s.\n",
                                             log_time(), str));
                 DEBUG_LOG(sprintf(HIR "error syntax str = %s\n" NOR, str));
@@ -1077,59 +1077,59 @@ protected void syn_receive_result(string str)
 
         if (sscanf(str, RESULT_ERR "%s", msg))
         {
-                // Óöµ½ÁË´íÎó£¬ÏÈ¼ÇÂ¼½øÈëÈÕÖ¾
+                // é‡åˆ°äº†éŒ¯èª¤ï¼Œå…ˆè¨˜éŒ„é€²å…¥æ—¥å¿—
                 log_file("version", sprintf("%s error respond: %s\n",
                                             log_time(), msg));
                 DEBUG_LOG(str + "\n");
         }
 
-        // ¸ù¾İµ±Ç°µÄ×´Ì¬½øĞĞ´¦Àí
+        // æ ¹æ“šç•¶å‰çš„ç‹€æ…‹é€²è¡Œè™•ç†
         switch (client_info[STATUS])
         {
         case STATUS_GET_VERSION:
-                // ÕıÔÚ¶ÁÈ¡°æ±¾
+                // æ­£åœ¨è®€å–ç‰ˆæœ¬
                 if (sscanf(str, RESULT_VERSION "%d", ver))
                 {
-                        // ·µ»ØÁË°æ±¾
+                        // è¿”å›äº†ç‰ˆæœ¬
                         log_file("version", sprintf("%s get version from server: %d\n",
                                                     log_time(), ver));
 
-                        // ¿ªÊ¼»ñµÃ°æ±¾ÎÄ¼ş
+                        // é–‹å§‹ç²å¾—ç‰ˆæœ¬æ–‡ä»¶
                         if (query("VERSION_NO") != ver)
                         {
                                 if( !query("manual_synchronize", stringp(op) && CONFIG_D) )
                                 {
-                                        // ÏµÍ³×Ô¾Ù£¬²¢ÇÒÉèÖÃÁËÊÖ¹¤Í¬²½°æ±¾µÄ±êÖ¾
-                                        sys_info(sprintf("%s±¾µØ°æ±¾ĞèÒª¸üĞÂ£¬µ«ÊÇÏµÍ³"
-                                                         "²¢²»×Ô¶¯Í¬²½¡£\n"));
+                                        // ç³»çµ±è‡ªèˆ‰ï¼Œä¸¦ä¸”è¨­ç½®äº†æ‰‹å·¥åŒæ­¥ç‰ˆæœ¬çš„æ¨™å¿—
+                                        sys_info(sprintf("%sæœ¬åœ°ç‰ˆæœ¬éœ€è¦æ›´æ–°ï¼Œä½†æ˜¯ç³»çµ±"
+                                                         "ä¸¦ä¸è‡ªå‹•åŒæ­¥ã€‚\n"));
                                         version_ok = 1;
                                         set_temp("version_changed", 0);
                                         syn_finish();
                                         break;
                                 }
 
-                                // °æ±¾²»Ò»ÖÂ
+                                // ç‰ˆæœ¬ä¸ä¸€è‡´
                                 log_file("version", sprintf("%s local version(%O) is not ok.\n",
                                                             log_time(), query("VERSION_NO")));
                                 if (stringp(op))
                                 {
-                                        // ÏÔÊ¾ÌáÊ¾ĞÅÏ¢
-                                        sys_info(sprintf("%sÒªÇóÍ¬²½°æ±¾£¬±¾µØµÄ"
-                                                         "°æ±¾(%O)ĞèÒª¸üĞÂÎª(%O)¡£",
+                                        // é¡¯ç¤ºæç¤ºä¿¡æ¯
+                                        sys_info(sprintf("%sè¦æ±‚åŒæ­¥ç‰ˆæœ¬ï¼Œæœ¬åœ°çš„"
+                                                         "ç‰ˆæœ¬(%O)éœ€è¦æ›´æ–°ç‚º(%O)ã€‚",
                                                          op, query("VERSION_NO"), ver));
-                                        message_system(sprintf("%sÕıÔÚ½øĞĞÔËĞĞÖĞÍ¬²½°æ±¾¡£", op));
+                                        message_system(sprintf("%sæ­£åœ¨é€²è¡Œé‹è¡Œä¸­åŒæ­¥ç‰ˆæœ¬ã€‚", op));
                                 }
 
                                 set_temp("version_changed", 1);
                                 syn_get_version_data();
                         } else
                         {
-                                // °æ±¾Ò»ÖÂ
+                                // ç‰ˆæœ¬ä¸€è‡´
                                 log_file("version", sprintf("%s local version ok.\n", log_time()));
                                 if (stringp(op = query_temp("operator")))
-                                        // ÏÔÊ¾ÌáÊ¾ĞÅÏ¢
-                                        sys_info(sprintf("%sÒªÇóÍ¬²½°æ±¾£¬µ«ÊÇ±¾µØ"
-                                                         "°æ±¾ÒÑ¾­ºÍ·şÎñÆ÷±£³ÖÒ»ÖÂÁË¡£", op));
+                                        // é¡¯ç¤ºæç¤ºä¿¡æ¯
+                                        sys_info(sprintf("%sè¦æ±‚åŒæ­¥ç‰ˆæœ¬ï¼Œä½†æ˜¯æœ¬åœ°"
+                                                         "ç‰ˆæœ¬å·²ç¶“å’Œæœå‹™å™¨ä¿æŒä¸€è‡´äº†ã€‚", op));
                                 version_ok = 1;
                                 set_temp("version_changed", 0);
                                 syn_finish();
@@ -1137,19 +1137,19 @@ protected void syn_receive_result(string str)
                         break;
                 }
 
-                // Ã»ÓĞ·µ»ØÕı³£µÄ°æ±¾ĞÅÏ¢
+                // æ²’æœ‰è¿”å›æ­£å¸¸çš„ç‰ˆæœ¬ä¿¡æ¯
                 log_file("version", sprintf("%s can not get version. server report: %s\n",
                                             log_time(), str));
 
-                // ÔõÃ´°ì£¿Ö»ÓĞ½áÊøÍ¬²½
+                // æ€éº¼è¾¦ï¼Ÿåªæœ‰çµæŸåŒæ­¥
                 syn_finish();
                 break;
 
         case STATUS_GET_VERSION_DATA:
-                // »ñµÃ°æ±¾Êı¾İ£¬Ö´ĞĞºÍSTATUS_GET_SYNÏàÍ¬
+                // ç²å¾—ç‰ˆæœ¬æ•¸æ“šï¼ŒåŸ·è¡Œå’ŒSTATUS_GET_SYNç›¸åŒ
 
         case STATUS_SYN:
-                // ½ÓÊÕÎÄ¼şµÄ³¤¶È
+                // æ¥æ”¶æ–‡ä»¶çš„é•·åº¦
                 if (! sscanf(str, RESULT_FILE "%s %d", file, len))
                 {
                         if (sscanf(str, RESULT_FINISH "%*s"))
@@ -1157,12 +1157,12 @@ protected void syn_receive_result(string str)
                                 log_file("version", sprintf("%s version synchronized.\n",
                                                             log_time()));
                                 if (stringp(op))
-                                        message_system(sprintf("%sÒÑ¾­½«°æ±¾¸üĞÂÍê±Ï¡£", op));
-                                // Í¬²½Íê±Ï£¬±£´æ°æ±¾ĞÅÏ¢
+                                        message_system(sprintf("%så·²ç¶“å°‡ç‰ˆæœ¬æ›´æ–°å®Œç•¢ã€‚", op));
+                                // åŒæ­¥å®Œç•¢ï¼Œä¿å­˜ç‰ˆæœ¬ä¿¡æ¯
                                 save();
                                 version_ok = 1;
 
-                                // ¶ÁÈ¡news/chinesed/emoted
+                                // è®€å–news/chinesed/emoted
                                 reset_eval_cost();
                                 catch(NEWS_D->restore());
                                 catch(CHINESE_D->restore());
@@ -1175,28 +1175,28 @@ protected void syn_receive_result(string str)
 
                 DEBUG_LOG(sprintf("file: %s len = %d\n", file, len));
 
-                // ¼ÇÂ¼µÄ½ÓÊÕÎÄ¼ş×´Ì¬ºÍĞÅÏ¢
+                // è¨˜éŒ„çš„æ¥æ”¶æ–‡ä»¶ç‹€æ…‹å’Œä¿¡æ¯
                 if (client_info[STATUS] == STATUS_GET_VERSION_DATA)
-                        // ÕıÔÚ¶ÁÈ¡°æ±¾ĞÅÏ¢£¬¸üÕıÎÄ¼şÃû×Ö
+                        // æ­£åœ¨è®€å–ç‰ˆæœ¬ä¿¡æ¯ï¼Œæ›´æ­£æ–‡ä»¶åå­—
                         file = query_save_file() + __SAVE_EXTENSION__;
 
-                // ¼ÇÂ¼´«ËÍÀ´µÄÎÄ¼şµÄĞÅÏ¢
+                // è¨˜éŒ„å‚³é€ä¾†çš„æ–‡ä»¶çš„ä¿¡æ¯
                 client_info[FILE_NAME] = file;
                 client_info[FILE_POS] = 0;
                 client_info[FILE_SIZE] = len;
 
-                // Èç¹ûÓĞ£¬É¾³ıÕâ¸öÎÄ¼şµÄÁÙÊ±ÎÄ¼ş
+                // å¦‚æœæœ‰ï¼Œåˆªé™¤é€™å€‹æ–‡ä»¶çš„è‡¨æ™‚æ–‡ä»¶
                 rm(file + APPENDFIX);
 
                 sys_info(sprintf("getting(%s)...", file));
                 break;
 
         default:
-                // ²»Ó¦¸Ã½ÓÊÕµ½ĞÅÏ¢
+                // ä¸æ‡‰è©²æ¥æ”¶åˆ°ä¿¡æ¯
         }
 }
 
-// ½ÓÊÕÎÄ¼şÄÚÈİ
+// æ¥æ”¶æ–‡ä»¶å…§å®¹
 protected int syn_receive_file(buffer buf)
 {
         mixed *st;
@@ -1207,33 +1207,33 @@ protected int syn_receive_file(buffer buf)
         file = client_info[FILE_NAME];
         len =  client_info[FILE_SIZE] - client_info[FILE_POS];
         if (len > sizeof(buf))
-                // ²»ĞèÒª½«bufÖĞµÄÊı¾İÈ«²¿Ğ´Èë
+                // ä¸éœ€è¦å°‡bufä¸­çš„æ•¸æ“šå…¨éƒ¨å¯«å…¥
                 len = sizeof(buf);
 
         write_buffer(file + APPENDFIX,
                      client_info[FILE_POS], buf[0..len - 1]);
         client_info[FILE_POS] += len;
         if (client_info[FILE_POS] < client_info[FILE_SIZE])
-                // ÎÄ¼ş»¹Ã»ÓĞ½ÓÊÕÍê±Ï
+                // æ–‡ä»¶é‚„æ²’æœ‰æ¥æ”¶å®Œç•¢
                 return len;
 
-        // ³É¹¦»ñÈ¡ÎÄ¼şÍê±Ï
+        // æˆåŠŸç²å–æ–‡ä»¶å®Œç•¢
         log_file("version", sprintf("%s got file %s.\n",
                                     log_time(), client_info[FILE_NAME]));
         client_info[FILE_POS] = 0;
         client_info[FILE_NAME] = 0;
         client_info[FILE_SIZE] = 0;
 
-        // ²é¿´µ±Ç°µÄ×´Ì¬
+        // æŸ¥çœ‹ç•¶å‰çš„ç‹€æ…‹
         switch (client_info[STATUS])
         {
         case STATUS_GET_VERSION_DATA:
-                // »ñµÃÁË°æ±¾Êı¾İ£¬¶ÁÈ¡Êı¾İ
+                // ç²å¾—äº†ç‰ˆæœ¬æ•¸æ“šï¼Œè®€å–æ•¸æ“š
                 file += APPENDFIX;
                 rm(file + __SAVE_EXTENSION__);
                 rename(file , file + __SAVE_EXTENSION__);
 
-                // ÔÚ¾²Ì¬Êı¾İÖĞ¼ÇÂ¼±¾µØµÄÎÄ¼ş°æ±¾ºÍÎÄ¼şĞÅÏ¢
+                // åœ¨éœæ…‹æ•¸æ“šä¸­è¨˜éŒ„æœ¬åœ°çš„æ–‡ä»¶ç‰ˆæœ¬å’Œæ–‡ä»¶ä¿¡æ¯
                 set_temp(FILES, query(FILES));
                 set_temp(STATS, query(STATS));
                 delete(FILES);
@@ -1248,27 +1248,27 @@ protected int syn_receive_file(buffer buf)
                         return sizeof(buf);
                 }
 
-                // É¾³ı¸ÃÎÄ¼ş
+                // åˆªé™¤è©²æ–‡ä»¶
                 rm(file + __SAVE_EXTENSION__);
 
-                // ¿ªÊ¼Í¬²½ËùÓĞµÄÎÄ¼ş
+                // é–‹å§‹åŒæ­¥æ‰€æœ‰çš„æ–‡ä»¶
                 syn_check_version_file();
                 break;
 
         case STATUS_SYN:
-                // ½«ÎÄ¼şÃû×ÖĞŞ¸ÄÎªÕı³£µÄÃû×Ö
+                // å°‡æ–‡ä»¶åå­—ä¿®æ”¹ç‚ºæ­£å¸¸çš„åå­—
                 rm(file);
                 rename(file + APPENDFIX, file);
 
-                // Èç¹ûÕâ¸öÎÄ¼şÊÇÒ»¸öCÎÄ¼ş£¬ÄÇÃ´ÎÒ±ØĞëÉ¾³ı
-                // ËüµÄBIN ÎÄ¼ş£¬ÒòÎªÎÒĞèÒªÖØĞÂ±àÒëËü¡£
+                // å¦‚æœé€™å€‹æ–‡ä»¶æ˜¯ä¸€å€‹Cæ–‡ä»¶ï¼Œé‚£éº¼æˆ‘å¿…é ˆåˆªé™¤
+                // å®ƒçš„BIN æ–‡ä»¶ï¼Œå› ç‚ºæˆ‘éœ€è¦é‡æ–°ç·¨è­¯å®ƒã€‚
                 sl = strlen(file) - 2;
                 if (sl > 0 && file[sl] == '.' && file[sl + 1] == 'c')
                         rm(bin_path + file[0..sl] + "b");
 
-                // ÎÒ¼ÇÂ¼Õâ¸öÎÄ¼şµÄĞÅÏ¢£ºÈç¹ûÊÇÒ»¸öBINÎÄ¼ş£¬
-                // ÄÇÃ´ÎÒÓĞ±ØÒª¼ÍÂ¼CÎÄ¼şµÄÊ±¼ä£¬·ñÔò¾Í¼ÍÂ¼
-                // ¸ÃÎÄ¼ş×ÔÉí¡£
+                // æˆ‘è¨˜éŒ„é€™å€‹æ–‡ä»¶çš„ä¿¡æ¯ï¼šå¦‚æœæ˜¯ä¸€å€‹BINæ–‡ä»¶ï¼Œ
+                // é‚£éº¼æˆ‘æœ‰å¿…è¦ç´€éŒ„Cæ–‡ä»¶çš„æ™‚é–“ï¼Œå¦å‰‡å°±ç´€éŒ„
+                // è©²æ–‡ä»¶è‡ªèº«ã€‚
                 if (sscanf(file, bin_path + "%s", file) &&
                     strlen(file) > 1)
                         file[strlen(file) - 1] = 'c';
@@ -1280,14 +1280,14 @@ protected int syn_receive_file(buffer buf)
                 break;
 
         default:
-                // ´íÎóµÄ×´Ì¬
+                // éŒ¯èª¤çš„ç‹€æ…‹
         }
 
-        // ·µ»ØÊ¹ÓÃµÄBUFFERµÄ³¤¶È
+        // è¿”å›ä½¿ç”¨çš„BUFFERçš„é•·åº¦
         return len;
 }
 
-// ´Ó·şÎñÆ÷ÉÏ»ñÈ¡Ò»ÅúÎÄ¼ş
+// å¾æœå‹™å™¨ä¸Šç²å–ä¸€æ‰¹æ–‡ä»¶
 protected void syn_fetch_file_from_server()
 {
         int i;
@@ -1305,18 +1305,18 @@ protected void syn_fetch_file_from_server()
         send_command(vfd, "close");
 }
 
-// ±È½Ï°æ±¾ÖĞËùÓĞµÄÎÄ¼ş
+// æ¯”è¼ƒç‰ˆæœ¬ä¸­æ‰€æœ‰çš„æ–‡ä»¶
 protected void syn_check_version_file()
 {
         mapping store;
         string file;
 
-        // ÇĞ»»×´Ì¬ÎªÍ¬²½×´Ì¬
+        // åˆ‡æ›ç‹€æ…‹ç‚ºåŒæ­¥ç‹€æ…‹
         client_info[STATUS] = STATUS_SYN;
 
         if (! mapp(store = query(FILES)))
         {
-                // Ã»ÓĞ°æ±¾ĞÅÏ¢
+                // æ²’æœ‰ç‰ˆæœ¬ä¿¡æ¯
                 log_file("version", sprintf("%s can not synchronize version "
                                             "without version's dbase.\n",
                                             log_time()));
@@ -1324,36 +1324,36 @@ protected void syn_check_version_file()
                 return;
         }
 
-        // È·±£Ã»ÓĞ±¾µØµÄÎÄ¼şĞÅÏ¢
+        // ç¢ºä¿æ²’æœ‰æœ¬åœ°çš„æ–‡ä»¶ä¿¡æ¯
         delete(STATS);
 
-        // ¼ì²éËùÓĞµÄÎÄ¼ş
+        // æª¢æŸ¥æ‰€æœ‰çš„æ–‡ä»¶
         syn_load_version("/", store);
 
-        // ¹¹ÔìËùÓĞ¶îÍâÎÄ¼şµÄ°æ±¾
+        // æ§‹é€ æ‰€æœ‰é¡å¤–æ–‡ä»¶çš„ç‰ˆæœ¬
         foreach (file in include_dir)
                 syn_load_version(file, 0);
 
-        // ±£´æ°æ±¾
+        // ä¿å­˜ç‰ˆæœ¬
         send_command(vfd, "close");
         log_file("version", sprintf("%s total %d commands generated.\n",
                                     log_time(), sizeof(client_info[PENDING_WRITE])));
 }
 
-// ¼ì²é²¢»ñµÃÄ³Ò»¸öÎÄ¼ş
-// Èç¹û·şÎñÆ÷ºÍ±¾µØ¶¼Ã»ÓĞĞŞ¸ÄÄ³¸öÎÄ¼ş£¬Ôò²»ĞèÒªÍ¬²½£¬Èç¹ûÓĞ
-// Ò»·½ĞŞ¸ÄÁË£¬ÔòĞèÒªÍ¬²½¡£
-// Èç¹û·şÎñÆ÷ĞŞ¸ÄÁË£¬ÄÇÃ´ÕâÀïµÄ²ÎÊıverºÍ±¾µØFILESÖĞ¼ÇÂ¼µÄ°æ
-// ±¾»áÓĞ²î±ğ¡£Èç¹ûÊÇ±¾µØĞŞ¸ÄÁË£¬ ÄÇÃ´±¾µØSTATSÖÓ¼ÇÂ¼µÄ°æ±¾
-// ºÍ±¾µØµÄÎÄ¼ş»áÓĞ²î±ğ¡£
-// ¶ÔÓÚ".c"ÎÄ¼şÀ´Ëµ£¬STATS ÖĞ¼ÇÂ¼µÄÊÇ¶ş½øÖÆ".b"ÎÄ¼şµÄÊ±¼ä£¬
-// ¶ø²»ÊÇ".c"ÎÄ¼şµÄÊ±¼ä£¬µ«ÊÇFILES ¼ÇÂ¼µÄÈ´ÊÇ".c"ÎÄ¼şµÄÊ±¼ä£¬
-// ÕâÒ»µãĞèÒª×¢Òâ¡£ÎªÊ²Ã´ÕâÃ´×ö£¿ÕâÊÇÒòÎªÊµ¼ÊÉÏ±¾µØĞŞ¸ÄÁËÔ´
-// ÎÄ¼ş²¢²»ÖØÒª£¬Ö»Òª¶ş½øÖÆ´úÂëÃ»ÓĞĞŞ¸Ä¼´¿É¡£·şÎñÆ÷´«À´µÄ c
-// ÎÄ¼ş°æ±¾Êµ¼ÊÉÏÊÇÔÚ·şÎñÆ÷ÉÏµÄ¶ş½øÖÆÎÄ¼şµÄ°æ±¾£¬ÕâÑùÉÏÏÂ²»
-// ¾Í²»Ò»ÑùÁËÂğ£¿µÄÈ·ÊÇÕâÑù£¬ÒòÎªÔÚ·şÎñÆ÷ÉÏ¼´Ê¹".c"ÎÄ¼şÃ»ÓĞ
-// ĞŞ¸Ä£¬".b"ÎÄ¼şÒÀÈ»ÓĞ¿ÉÄÜ±ä»¯£¬Òò´Ë´«ËÍ¶ş½øÖÆÎÄ¼şµÄ°æ±¾²Å
-// ¸üÓĞÒâÒå£¬Õâ¾ÍÊÇ·şÎñÆ÷ºÍ¿Í»§¶Ë²»Í¬Ö®´¦¡£
+// æª¢æŸ¥ä¸¦ç²å¾—æŸä¸€å€‹æ–‡ä»¶
+// å¦‚æœæœå‹™å™¨å’Œæœ¬åœ°éƒ½æ²’æœ‰ä¿®æ”¹æŸå€‹æ–‡ä»¶ï¼Œå‰‡ä¸éœ€è¦åŒæ­¥ï¼Œå¦‚æœæœ‰
+// ä¸€æ–¹ä¿®æ”¹äº†ï¼Œå‰‡éœ€è¦åŒæ­¥ã€‚
+// å¦‚æœæœå‹™å™¨ä¿®æ”¹äº†ï¼Œé‚£éº¼é€™è£¡çš„åƒæ•¸verå’Œæœ¬åœ°FILESä¸­è¨˜éŒ„çš„ç‰ˆ
+// æœ¬æœƒæœ‰å·®åˆ¥ã€‚å¦‚æœæ˜¯æœ¬åœ°ä¿®æ”¹äº†ï¼Œ é‚£éº¼æœ¬åœ°STATSé˜è¨˜éŒ„çš„ç‰ˆæœ¬
+// å’Œæœ¬åœ°çš„æ–‡ä»¶æœƒæœ‰å·®åˆ¥ã€‚
+// å°äº".c"æ–‡ä»¶ä¾†èªªï¼ŒSTATS ä¸­è¨˜éŒ„çš„æ˜¯äºŒé€²åˆ¶".b"æ–‡ä»¶çš„æ™‚é–“ï¼Œ
+// è€Œä¸æ˜¯".c"æ–‡ä»¶çš„æ™‚é–“ï¼Œä½†æ˜¯FILES è¨˜éŒ„çš„å»æ˜¯".c"æ–‡ä»¶çš„æ™‚é–“ï¼Œ
+// é€™ä¸€é»éœ€è¦æ³¨æ„ã€‚ç‚ºä»€éº¼é€™éº¼åšï¼Ÿé€™æ˜¯å› ç‚ºå¯¦éš›ä¸Šæœ¬åœ°ä¿®æ”¹äº†æº
+// æ–‡ä»¶ä¸¦ä¸é‡è¦ï¼Œåªè¦äºŒé€²åˆ¶ä»£ç¢¼æ²’æœ‰ä¿®æ”¹å³å¯ã€‚æœå‹™å™¨å‚³ä¾†çš„ c
+// æ–‡ä»¶ç‰ˆæœ¬å¯¦éš›ä¸Šæ˜¯åœ¨æœå‹™å™¨ä¸Šçš„äºŒé€²åˆ¶æ–‡ä»¶çš„ç‰ˆæœ¬ï¼Œé€™æ¨£ä¸Šä¸‹ä¸
+// å°±ä¸ä¸€æ¨£äº†å—ï¼Ÿçš„ç¢ºæ˜¯é€™æ¨£ï¼Œå› ç‚ºåœ¨æœå‹™å™¨ä¸Šå³ä½¿".c"æ–‡ä»¶æ²’æœ‰
+// ä¿®æ”¹ï¼Œ".b"æ–‡ä»¶ä¾ç„¶æœ‰å¯èƒ½è®ŠåŒ–ï¼Œå› æ­¤å‚³é€äºŒé€²åˆ¶æ–‡ä»¶çš„ç‰ˆæœ¬æ‰
+// æ›´æœ‰æ„ç¾©ï¼Œé€™å°±æ˜¯æœå‹™å™¨å’Œå®¢æˆ¶ç«¯ä¸åŒä¹‹è™•ã€‚
 void syn_load_file(string file, int ver)
 {
         int len;
@@ -1363,7 +1363,7 @@ void syn_load_file(string file, int ver)
         switch (file_size(file))
         {
         case -2:
-                // ÓĞÁËÕâ¸öÃû×ÖµÄÄ¿Â¼£¬É¾³ıÖ®
+                // æœ‰äº†é€™å€‹åå­—çš„ç›®éŒ„ï¼Œåˆªé™¤ä¹‹
                 log_file("version", sprintf("%s remove directory: %s\n",
                                             log_time(), file));
                 RM_CMD->rm_dir(file);
@@ -1371,21 +1371,21 @@ void syn_load_file(string file, int ver)
         case -1:
                 break;
         default:
-                // Ã»ÓĞÕâ¸öÎÄ¼ş»òÊÇÓĞÁËÖØÃûµÄÎÄ¼ş
-                // Ê×ÏÈ±È½Ï±¾µØºÍ·şÎñÆ÷ÉÏµÄ°æ±¾£¬Èç¹û²»ÏàÍ¬
-                // ÔòĞèÒª¸üĞÂ¡£·ñÔò±È½Ï±¾µØµÄ°æ±¾ĞÅÏ¢ºÍÕæÊµ
-                // ÎÄ¼şµÄĞÅÏ¢£¬Èç¹ûÊ±¼ä²»ÏàÍ¬£¬ÔòÒ²ĞèÒª¸üĞÂ¡£
+                // æ²’æœ‰é€™å€‹æ–‡ä»¶æˆ–æ˜¯æœ‰äº†é‡åçš„æ–‡ä»¶
+                // é¦–å…ˆæ¯”è¼ƒæœ¬åœ°å’Œæœå‹™å™¨ä¸Šçš„ç‰ˆæœ¬ï¼Œå¦‚æœä¸ç›¸åŒ
+                // å‰‡éœ€è¦æ›´æ–°ã€‚å¦å‰‡æ¯”è¼ƒæœ¬åœ°çš„ç‰ˆæœ¬ä¿¡æ¯å’ŒçœŸå¯¦
+                // æ–‡ä»¶çš„ä¿¡æ¯ï¼Œå¦‚æœæ™‚é–“ä¸ç›¸åŒï¼Œå‰‡ä¹Ÿéœ€è¦æ›´æ–°ã€‚
                 st = stat(file);
                 if (! arrayp(st) || sizeof(st) < 3)
                         ft = -1;
                 else
                         ft = st[1];
 
-                // È¡±¾µØÎÄ¼şµÄ¼ÇÂ¼Ê±¼ä
+                // å–æœ¬åœ°æ–‡ä»¶çš„è¨˜éŒ„æ™‚é–“
                 now_ft = query_temp(STATS + file);
                 if (now_ft == ft && query_temp(FILES + file) == ver)
                 {
-                        // ºÍµ±Ç°µÄ°æ±¾Ò»Ñù£¬²»ĞèÒª¸üĞÂ
+                        // å’Œç•¶å‰çš„ç‰ˆæœ¬ä¸€æ¨£ï¼Œä¸éœ€è¦æ›´æ–°
                         DEBUG_LOG(sprintf("file(%s) local = %d  ver = %d  stat = %d  ft = %d\n",
                                           file, query_temp(FILES + file), ver, query_temp(STATS + from), ft));                                                
                         set(STATS + file, now_ft);
@@ -1398,22 +1398,22 @@ void syn_load_file(string file, int ver)
         len = strlen(file) - 2;
         if (len > 0 && file[len] == '.' && file[len + 1] == 'c')
         {
-                // ÊÇÔ´ÎÄ¼ş£¬ÏÈ´´½¨Ò»¸ö¿ÕµÄÎÄ¼ş£¬Ò»°ãÀ´Ëµ·ş
-                // ÎñÆ÷»á·µ»ØÒ»¸ö¶ş½øÖÆÎÄ¼ş£¬³ı·ÇÊÇĞèÒª·¢²¼
-                // µÄÔ´ÎÄ¼ş£¬·şÎñÆ÷²Å»á·µ»ØÔ´´úÂë¡£
+                // æ˜¯æºæ–‡ä»¶ï¼Œå…ˆå‰µå»ºä¸€å€‹ç©ºçš„æ–‡ä»¶ï¼Œä¸€èˆ¬ä¾†èªªæœ
+                // å‹™å™¨æœƒè¿”å›ä¸€å€‹äºŒé€²åˆ¶æ–‡ä»¶ï¼Œé™¤éæ˜¯éœ€è¦ç™¼å¸ƒ
+                // çš„æºæ–‡ä»¶ï¼Œæœå‹™å™¨æ‰æœƒè¿”å›æºä»£ç¢¼ã€‚
                 rm(file);
                 write_file(file, "// C source file\n", 1);
         }
 
-        // ¶ÁÈ¡Õâ¸öÎÄ¼şµÄ°æ±¾£ºÈç¹ûÊÇĞèÒª·¢²¼Ô´³ÌĞòµÄ°æ±¾£¬
-        // ÄÇÃ´·şÎñÆ÷»á·µ»ØÒ»¸öÔ´³ÌĞò£¬·ñÔò·şÎñÆ÷»á·µ»ØÒ»¸ö
-        // BINARYÎÄ¼ş¡£
+        // è®€å–é€™å€‹æ–‡ä»¶çš„ç‰ˆæœ¬ï¼šå¦‚æœæ˜¯éœ€è¦ç™¼å¸ƒæºç¨‹åºçš„ç‰ˆæœ¬ï¼Œ
+        // é‚£éº¼æœå‹™å™¨æœƒè¿”å›ä¸€å€‹æºç¨‹åºï¼Œå¦å‰‡æœå‹™å™¨æœƒè¿”å›ä¸€å€‹
+        // BINARYæ–‡ä»¶ã€‚
         syn_get_file(file);
 }
 
 nosave int d = 0;
 
-// ¼ì²éÄ³Ò»¸öÂ·¾¶
+// æª¢æŸ¥æŸä¸€å€‹è·¯å¾‘
 protected void syn_load_version(string path, mapping store)
 {
         mixed *dirs;
@@ -1427,46 +1427,46 @@ protected void syn_load_version(string path, mapping store)
         int len;
 
         if (mapp(query(FILES + path)))
-                // Í¬²½Ò»¸öÂ·¾¶µÄ°æ±¾
+                // åŒæ­¥ä¸€å€‹è·¯å¾‘çš„ç‰ˆæœ¬
                 ; else
         if (! undefinedp(ver = query(FILES + path)))
         {
-                // Í¬²½Ò»¸öÎÄ¼şµÄ°æ±¾
+                // åŒæ­¥ä¸€å€‹æ–‡ä»¶çš„ç‰ˆæœ¬
                 syn_load_file(path, ver);
                 return;
         } else
-                // Ã»ÓĞÕâ¸öÎÄ¼ş£¬ÎŞĞèÍ¬²½
+                // æ²’æœ‰é€™å€‹æ–‡ä»¶ï¼Œç„¡éœ€åŒæ­¥
                 return;
 
         if (path[strlen(path) - 1] != '/') path += "/";
 
         sys_info(sprintf("check version: %s", path));
 
-        // »ñµÃ±¾µØÂ·¾¶µÄÎÄ¼ş
+        // ç²å¾—æœ¬åœ°è·¯å¾‘çš„æ–‡ä»¶
         dirs = get_dir(path, -1);
 
-        // »ñµÃ°æ±¾»úÉÏµÄËùÓĞÎÄ¼ş
+        // ç²å¾—ç‰ˆæœ¬æ©Ÿä¸Šçš„æ‰€æœ‰æ–‡ä»¶
         files = keys(store);
 
-        // ÕÒ³ö±¾µØ¶àÓàµÄÎÄ¼şºÍÄ¿Â¼£ºÌõ¼ş£¬·şÎñÆ÷´«À´µÄ°æ±¾
-        // ÖĞÃ»ÓĞ£¬²¢ÇÒ²»ÊôÓÚ±¾µØ²»ĞèÒª¸üĞÂµÄÂ·¾¶
+        // æ‰¾å‡ºæœ¬åœ°å¤šä½™çš„æ–‡ä»¶å’Œç›®éŒ„ï¼šæ¢ä»¶ï¼Œæœå‹™å™¨å‚³ä¾†çš„ç‰ˆæœ¬
+        // ä¸­æ²’æœ‰ï¼Œä¸¦ä¸”ä¸å±¬äºæœ¬åœ°ä¸éœ€è¦æ›´æ–°çš„è·¯å¾‘
         outs = filter_array(dirs, (: undefinedp($(store)[((mixed *) $1)[0]]) &&
                                      member_array($(path) + ((mixed *) $1)[0], exclude_dir) == -1 :));
 
-        // É¾³ıÕâĞ©ÎÄ¼şºÍÄ¿Â¼
+        // åˆªé™¤é€™äº›æ–‡ä»¶å’Œç›®éŒ„
         foreach (rmfile in outs)
         {
                 reset_eval_cost();
                 if (rmfile[1] == -2)
                 {
-                        // ÕâÊÇÒ»¸öÄ¿Â¼
+                        // é€™æ˜¯ä¸€å€‹ç›®éŒ„
                         log_file("version", sprintf("%s remove directory: %s\n",
                                                     log_time(), path + rmfile[0]));
 
                         RM_CMD->rm_dir(path + rmfile[0]);
                 } else
                 {
-                        // ÕâÊÇÒ»¸öÆÕÍ¨ÎÄ¼ş£¬É¾³ıÖ®
+                        // é€™æ˜¯ä¸€å€‹æ™®é€šæ–‡ä»¶ï¼Œåˆªé™¤ä¹‹
                         log_file("version", sprintf("%s remove file: %s\n",
                                                     log_time(), path + rmfile[0]));
                         // More to be added
@@ -1474,83 +1474,83 @@ protected void syn_load_version(string path, mapping store)
                         if (len > 0 && rmfile[0][len] == '.' &&
                             rmfile[0][len + 1] == 'c')
                         {
-                                // Èç¹ûÊÇcÎÄ¼ş£¬Í¬Ê±É¾³ıbinÎÄ¼ş
+                                // å¦‚æœæ˜¯cæ–‡ä»¶ï¼ŒåŒæ™‚åˆªé™¤binæ–‡ä»¶
                                 rm(bin_path + path + rmfile[0][0..len] + "b");
                         }
 
                         rm(path + rmfile[0]);
                 }
-                // ¼ÌĞøÉ¾³ı²»Ïà¹ØµÄÎÄ¼ş
+                // ç¹¼çºŒåˆªé™¤ä¸ç›¸é—œçš„æ–‡ä»¶
         }
 
-        // ¶ÁÈ¡ĞèÒª¸üĞÂµÄÎÄ¼ş
+        // è®€å–éœ€è¦æ›´æ–°çš„æ–‡ä»¶
         foreach (get_file in files)
         {
                 reset_eval_cost();
                 full_name = path + get_file;
                 if (mapp(store[get_file]))
                 {
-                        // ÕâÊÇÒ»¸öÂ·¾¶£¬Èç¹û±¾µØÃ»ÓĞ£¬¾Í½¨Á¢
+                        // é€™æ˜¯ä¸€å€‹è·¯å¾‘ï¼Œå¦‚æœæœ¬åœ°æ²’æœ‰ï¼Œå°±å»ºç«‹
                         switch (file_size(full_name))
                         {
                         case -2:
-                                // ÒÑ¾­ÓĞÁËÕâ¸öÄ¿Â¼
+                                // å·²ç¶“æœ‰äº†é€™å€‹ç›®éŒ„
                                 break;
 
                         case -1:
-                                // Ã»ÓĞÕâ¸öÄ¿Â¼ºÍÍ¬ÃûµÄÎÄ¼ş
+                                // æ²’æœ‰é€™å€‹ç›®éŒ„å’ŒåŒåçš„æ–‡ä»¶
                                 mkdir(full_name);
                                 break;
 
                         default:
-                                // ÓĞÕâ¸öÃû×ÖµÄÎÄ¼ş
+                                // æœ‰é€™å€‹åå­—çš„æ–‡ä»¶
                                 rm(full_name);
                                 mkdir(full_name);
                                 break;
                         }
 
-                        // ÔÚbinariesÏÂÃæÒ²½¨Á¢Ò»¸öÂ·¾¶ ²âÊÔ
+                        // åœ¨binariesä¸‹é¢ä¹Ÿå»ºç«‹ä¸€å€‹è·¯å¾‘ æ¸¬è©¦
                         bin_name = bin_path + full_name;
                         switch (file_size(bin_name))
                         {
                         case -2:
-                                // BINÏÂÃæÒÑ¾­ÓĞÁËÕâ¸öÄ¿Â¼
+                                // BINä¸‹é¢å·²ç¶“æœ‰äº†é€™å€‹ç›®éŒ„
                                 break;
 
                         case -1:
-                                // Ã»ÓĞÕâ¸öÄ¿Â¼»òÊÇÎÄ¼ş
+                                // æ²’æœ‰é€™å€‹ç›®éŒ„æˆ–æ˜¯æ–‡ä»¶
                                 mkdir(bin_name);
                                 break;
 
                         default:
-                                // ÓĞÕâ¸öÃû×ÖµÄÎÄ¼ş
+                                // æœ‰é€™å€‹åå­—çš„æ–‡ä»¶
                                 rm(bin_name);
                                 mkdir(bin_name);
                         }
 
                         if (member_array(full_name, exclude_dir) == -1)
-                                // ¼ÌĞøÍ¬²½ÏÂÒ»¸öÄ¿Â¼µÄ°æ±¾
+                                // ç¹¼çºŒåŒæ­¥ä¸‹ä¸€å€‹ç›®éŒ„çš„ç‰ˆæœ¬
                                 syn_load_version(full_name, store[get_file]);
                 } else
                 {
-                        // ÕâÊÇÒ»¸öÆÕÍ¨ÎÄ¼ş
+                        // é€™æ˜¯ä¸€å€‹æ™®é€šæ–‡ä»¶
                         syn_load_file(full_name, store[get_file]);
                 }
         }
 
-        // Èç¹ûÊÇ¶îÍâĞèÒª¸üĞÂµÄÎÄ¼ş»òÊÇ±¾Ä¿Â¼ÊôÓÚ²»Ğè¸üĞÂÒ»
-        // Àà£¬Ôò±£ÁôÕâĞ©ÎÄ¼ş¡£
+        // å¦‚æœæ˜¯é¡å¤–éœ€è¦æ›´æ–°çš„æ–‡ä»¶æˆ–æ˜¯æœ¬ç›®éŒ„å±¬äºä¸éœ€æ›´æ–°ä¸€
+        // é¡ï¼Œå‰‡ä¿ç•™é€™äº›æ–‡ä»¶ã€‚
         files = filter_array(files, (: member_array($(path) + $1, include_dir) != -1 ||
                                        member_array($(path), exclude_dir) :));
 }
 
-// Í¬²½°æ±¾½áÊø
-// ½áÊøÊ±¿ÉÄÜ³É¹¦µÄÍ¬²½ÁË£¬Ò²¿ÉÄÜÃ»ÓĞ¡£
+// åŒæ­¥ç‰ˆæœ¬çµæŸ
+// çµæŸæ™‚å¯èƒ½æˆåŠŸçš„åŒæ­¥äº†ï¼Œä¹Ÿå¯èƒ½æ²’æœ‰ã€‚
 protected void syn_finish()
 {
         string op;
 
-        sys_info(sprintf("Í¬²½½áÊø£º°æ±¾×´Ì¬ = %d", version_ok));
+        sys_info(sprintf("åŒæ­¥çµæŸï¼šç‰ˆæœ¬ç‹€æ…‹ = %d", version_ok));
 
         if (vfd) { socket_close(vfd); vfd = 0; }
 
@@ -1561,61 +1561,61 @@ protected void syn_finish()
         client_info[PENDING_WRITE] = ({ });
         client_info[RESULT_BUFFER] = "";
 
-        // Çå³ıÁÙÊ±Êı¾İ
+        // æ¸…é™¤è‡¨æ™‚æ•¸æ“š
         delete_temp(FILES);
         delete_temp(STATS);
 
-        // È¡operator
+        // å–operator
         op = query_temp("operator");
         delete_temp("operator");
 
-        // Èç¹û°æ±¾ÒÑ¾­Í¬²½ºÃÁË£¬¾ÍÖ±½Ó·µ»Ø
+        // å¦‚æœç‰ˆæœ¬å·²ç¶“åŒæ­¥å¥½äº†ï¼Œå°±ç›´æ¥è¿”å›
         if (version_ok)
         {
                 if (stringp(op)) return;
 
-                // ÕâÊÇÏµÍ³×Ô¶¯Í¬²½µÄ°æ±¾£¬ĞèÒªÖØĞÂÆô¶¯»úÆ÷
+                // é€™æ˜¯ç³»çµ±è‡ªå‹•åŒæ­¥çš„ç‰ˆæœ¬ï¼Œéœ€è¦é‡æ–°å•Ÿå‹•æ©Ÿå™¨
                 if (query_temp("version_changed"))
                 {
-                        message_system("ÏµÍ³¸üĞÂÁË°æ±¾£¬½«ÓÚÈıÊ®ÃëÖÓÒÔºóÖØĞÂÆô¶¯»úÆ÷¡£\n");
+                        message_system("ç³»çµ±æ›´æ–°äº†ç‰ˆæœ¬ï¼Œå°‡äºä¸‰åç§’é˜ä»¥å¾Œé‡æ–°å•Ÿå‹•æ©Ÿå™¨ã€‚\n");
                         call_out("syn_reboot_mud", 30);
 
-                        // ÖØĞÂÉèÖÃ°æ±¾ÎªÎŞĞ§
+                        // é‡æ–°è¨­ç½®ç‰ˆæœ¬ç‚ºç„¡æ•ˆ
                         version_ok = 0;
                 }
                 return;
         }
 
-        // Èç¹ûÊÇÔËĞĞÖĞÍ¬²½£¬ÄÇÃ´¾ÍÉèÖÃ°æ±¾ºÅÎªÁã£¬±íÊ¾ĞèÒª
-        // ¼ÌĞøÍ¬²½£»·ñÔòÖØĞÂÆô¶¯MUD¡£
+        // å¦‚æœæ˜¯é‹è¡Œä¸­åŒæ­¥ï¼Œé‚£éº¼å°±è¨­ç½®ç‰ˆæœ¬è™Ÿç‚ºé›¶ï¼Œè¡¨ç¤ºéœ€è¦
+        // ç¹¼çºŒåŒæ­¥ï¼›å¦å‰‡é‡æ–°å•Ÿå‹•MUDã€‚
         if (stringp(op))
         {
                 set("VERSION_NO", 0);
                 save();
                 delete_temp("operator");
-                sys_info(sprintf("%sÍ¬²½°æ±¾µÄ²Ù×÷Ê§°ÜÁË£¬ÏêÇé"
-                                 "Çë²é¿´ÈÕÖ¾(version)¡£", op));
+                sys_info(sprintf("%såŒæ­¥ç‰ˆæœ¬çš„æ“ä½œå¤±æ•—äº†ï¼Œè©³æƒ…"
+                                 "è«‹æŸ¥çœ‹æ—¥å¿—(version)ã€‚", op));
 
-                // ÖÃÏÖÔÚµÄ°æ±¾ÎªÓĞĞ§
+                // ç½®ç¾åœ¨çš„ç‰ˆæœ¬ç‚ºæœ‰æ•ˆ
                 version_ok = 1;
         } else
         {
                 set("VERSION_NO", 0);
                 save();
-                // Ò»·ÖÖÓÒÔºóÖØĞÂÆô¶¯MUD
-                sys_info("Í¬²½°æ±¾Ê§°Ü£¬½«ÓÚÒ»·ÖÖÓºóÖØĞÂÆô¶¯MUD¡£");
+                // ä¸€åˆ†é˜ä»¥å¾Œé‡æ–°å•Ÿå‹•MUD
+                sys_info("åŒæ­¥ç‰ˆæœ¬å¤±æ•—ï¼Œå°‡äºä¸€åˆ†é˜å¾Œé‡æ–°å•Ÿå‹•MUDã€‚");
                 call_out("syn_reboot_mud", 60);
         }
 }
 
-// Í¬²½Ê§°Ü£¬ÖØĞÂÆô¶¯MUD
+// åŒæ­¥å¤±æ•—ï¼Œé‡æ–°å•Ÿå‹•MUD
 protected void syn_reboot_mud()
 {
-        sys_info("°æ±¾¾«ÁéÖØĞÂÆô¶¯MUD¡£");
+        sys_info("ç‰ˆæœ¬ç²¾éˆé‡æ–°å•Ÿå‹•MUDã€‚");
         shutdown(0);
 }
 
-// ´¦Àí¿Í»§¶Ë½ÓÊÕµ½µÄÀ´×Ô·şÎñÆ÷µÄÊı¾İ
+// è™•ç†å®¢æˆ¶ç«¯æ¥æ”¶åˆ°çš„ä¾†è‡ªæœå‹™å™¨çš„æ•¸æ“š
 protected void syn_read_callback(int fd, buffer buf)
 {
         string str;
@@ -1631,32 +1631,32 @@ protected void syn_read_callback(int fd, buffer buf)
         {
                 if (! client_info[FILE_NAME])
                 {
-                        // Ã»ÓĞÎÄ¼şÃû×Ö£¬½ÓÊÕµÄÊÇÆÕÍ¨Ó¦´ğĞÅÏ¢
+                        // æ²’æœ‰æ–‡ä»¶åå­—ï¼Œæ¥æ”¶çš„æ˜¯æ™®é€šæ‡‰ç­”ä¿¡æ¯
         
-                        // ¼ÆËãÎÒÓ¦¸Ã´Ó»º³åÇøÖĞ¶Á³öµÄ×Ö½ÚÊıÄ¿£¬ÒòÎª
-                        // ¿ÉÄÜ²»ÄÜÒ»´Î»ñµÃÆÕÍ¨µÄÓ¦´ğĞÅÏ¢£¬Òò´ËÎÒ½«
-                        // ÕâĞ©ĞÅÏ¢ÀÛ¼Æµ½RESULT_BUFFERÖĞ£¬ Ò»Ö±µ½¶Á
-                        // ÂúÆÚÍûµÄ×Ö½ÚÎªÖ¹¡£ÄÇÃ´ÎÒÕâ´Î´Ó»º³åÇø¶Á³ö
-                        // À´µÄÓ¦¸ÃÊÇ¶àÉÙ¸ö×Ö½Ú£¬¾ÍÓ¦¸Ã¼ÆËã¡£ÆäÖĞ±£
-                        // ´æÔÚFILE_POSÖĞµÄÊÇÎÒÒÑ¾­¶Á³öµÄ×Ö·û¡£
+                        // è¨ˆç®—æˆ‘æ‡‰è©²å¾ç·©æ²–å€ä¸­è®€å‡ºçš„å­—ç¯€æ•¸ç›®ï¼Œå› ç‚º
+                        // å¯èƒ½ä¸èƒ½ä¸€æ¬¡ç²å¾—æ™®é€šçš„æ‡‰ç­”ä¿¡æ¯ï¼Œå› æ­¤æˆ‘å°‡
+                        // é€™äº›ä¿¡æ¯ç´¯è¨ˆåˆ°RESULT_BUFFERä¸­ï¼Œ ä¸€ç›´åˆ°è®€
+                        // æ»¿æœŸæœ›çš„å­—ç¯€ç‚ºæ­¢ã€‚é‚£éº¼æˆ‘é€™æ¬¡å¾ç·©æ²–å€è®€å‡º
+                        // ä¾†çš„æ‡‰è©²æ˜¯å¤šå°‘å€‹å­—ç¯€ï¼Œå°±æ‡‰è©²è¨ˆç®—ã€‚å…¶ä¸­ä¿
+                        // å­˜åœ¨FILE_POSä¸­çš„æ˜¯æˆ‘å·²ç¶“è®€å‡ºçš„å­—ç¬¦ã€‚
                         len = NORMAL_RESULT_LEN - client_info[FILE_POS];
                         if (len > sizeof(buf))
-                                // Õâ´ÎÃ»ÓĞÕâÃ´¶à×Ö½Ú¿ÉÒÔÈÃÎÒ¶Á
+                                // é€™æ¬¡æ²’æœ‰é€™éº¼å¤šå­—ç¯€å¯ä»¥è®“æˆ‘è®€
                                 len = sizeof(buf);
                         client_info[FILE_POS] += len;
                         client_info[RESULT_BUFFER] += read_buffer(buf, 0, len);
-                        // È¡Ê£ÓàµÄbuffer
+                        // å–å‰©ä½™çš„buffer
                         buf = buf[len..<1];
         
                         if (client_info[FILE_POS] >= NORMAL_RESULT_LEN)
                         {
-                                // ¶Áµ½ÁËÒ»ÌõÍ¨³£µÄ·µ»ØĞÅÏ¢£¬ÖØĞÂÉè
-                                // ÖÃ»º³åÇø¡£
+                                // è®€åˆ°äº†ä¸€æ¢é€šå¸¸çš„è¿”å›ä¿¡æ¯ï¼Œé‡æ–°è¨­
+                                // ç½®ç·©æ²–å€ã€‚
                                 str = client_info[RESULT_BUFFER];
                                 client_info[RESULT_BUFFER] = "";
                                 client_info[FILE_POS] = 0;
         
-                                // ´¦Àí½ÓÊÕµ½µÄ½á¹ûĞÅÏ¢
+                                // è™•ç†æ¥æ”¶åˆ°çš„çµæœä¿¡æ¯
                                 syn_receive_result(str);
                         }
                 }
@@ -1666,14 +1666,14 @@ protected void syn_read_callback(int fd, buffer buf)
                                                           client_info[FILE_NAME],
                                                           client_info[FILE_POS]));
                 if (bufferp(buf) && client_info[FILE_NAME])
-                        // ½ÓÊÕÎÄ¼ş
+                        // æ¥æ”¶æ–‡ä»¶
                         buf = buf[syn_receive_file(buf)..<1];
 
-                // Èç¹ûbuf²»Îª¿Õ£¬Ôò¼ÌĞø´¦Àí
+                // å¦‚æœbufä¸ç‚ºç©ºï¼Œå‰‡ç¹¼çºŒè™•ç†
         } while (sizeof(buf) && client_info[STATUS] != STATUS_FINISHED);
 }
 
-// Í¬²½Ê±¿Í»§¶ËÁ¬½ÓµÄĞ´»Øµ÷º¯Êı
+// åŒæ­¥æ™‚å®¢æˆ¶ç«¯é€£æ¥çš„å¯«å›èª¿å‡½æ•¸
 void syn_write_callback(int fd)
 {
         if (fd != vfd)
@@ -1684,34 +1684,34 @@ void syn_write_callback(int fd)
 
         while (sizeof(client_info[PENDING_WRITE]))
         {
-                // ÓĞ×èÈûµÄÏûÏ¢£¬·¢ËÍÖ®
+                // æœ‰é˜»å¡çš„æ¶ˆæ¯ï¼Œç™¼é€ä¹‹
                 if (send_client_pending_msg() != 0)
-                        // Ã»ÓĞ³É¹¦µÄ·¢ËÍ£¬µÈ´ıÏÂÒ»´Î·¢ËÍ
+                        // æ²’æœ‰æˆåŠŸçš„ç™¼é€ï¼Œç­‰å¾…ä¸‹ä¸€æ¬¡ç™¼é€
                         return;
         }
 
-        // ¸ù¾İµ±Ç°µÄ×´Ì¬´¦Àí
+        // æ ¹æ“šç•¶å‰çš„ç‹€æ…‹è™•ç†
         switch (client_info[STATUS])
         {
         case STATUS_CONNECTING:
                 if (fetch_file_list)
                 {
-                        // Ö¸¶¨»ñµÃÄ³Ğ©ÎÄ¼ş
+                        // æŒ‡å®šç²å¾—æŸäº›æ–‡ä»¶
                         syn_fetch_file_from_server();
                         break;
                 }
 
-                // ¸Õ¸ÕÁ¬½Ó£¬·¢ËÍÈ¡°æ±¾µÄÃüÁî
+                // å‰›å‰›é€£æ¥ï¼Œç™¼é€å–ç‰ˆæœ¬çš„å‘½ä»¤
                 send_command(fd, sprintf("getver from %s(%s)",
                                          LOCAL_MUD_NAME(), INTERMUD_MUD_NAME,
                                          __PORT__));                
                 client_info[STATUS] = STATUS_GET_VERSION;
-                sys_info("°æ±¾¾«Áé³É¹¦µÄºÍ·şÎñÆ÷½¨Á¢ÁËÍ¨Ñ¶¡£");
+                sys_info("ç‰ˆæœ¬ç²¾éˆæˆåŠŸçš„å’Œæœå‹™å™¨å»ºç«‹äº†é€šè¨Šã€‚");
                 break;
         }
 }
 
-// Í¬²½Ê±¿Í»§¶ËÁ¬½Ó¶Ï¿ªµÄ»Øµ÷º¯Êı
+// åŒæ­¥æ™‚å®¢æˆ¶ç«¯é€£æ¥æ–·é–‹çš„å›èª¿å‡½æ•¸
 protected void syn_close_callback(int fd)
 {
         if (fd != vfd) return;
@@ -1719,26 +1719,26 @@ protected void syn_close_callback(int fd)
         vfd = 0;
         if (version_ok) return;
 
-        // °æ±¾Ã»ÓĞÍ¬²½ÍêÈ«£¬TCPÁ¬½ÓÒÑ¾­¶Ï¿ª
+        // ç‰ˆæœ¬æ²’æœ‰åŒæ­¥å®Œå…¨ï¼ŒTCPé€£æ¥å·²ç¶“æ–·é–‹
         syn_finish();
         log_file("version", sprintf("%s TCP connection lost when synchronizing.\n",
                                     log_time()));
         DEBUG_LOG(HIG "TCP disconnected.\n" NOR);
 }
 
-// ÏµÍ³ĞÅÏ¢
+// ç³»çµ±ä¿¡æ¯
 protected void sys_info(string msg)
 {
         CHANNEL_D->do_channel(this_object(), "sys", msg);
 }
 
-// µ÷ÊÔĞÅÏ¢
+// èª¿è©¦ä¿¡æ¯
 protected void debug_info(string msg)
 {
         CHANNEL_D->do_channel(this_object(), "debug", msg);
 }
 
-// °æ±¾·¢²¼Õ¾¼àÌıÀ´×Ô·ÖÕ¾µÄÇëÇó
+// ç‰ˆæœ¬ç™¼å¸ƒç«™ç›£è½ä¾†è‡ªåˆ†ç«™çš„è«‹æ±‚
 protected void in_listen_callback(int fd)
 {
         int new_fd;
@@ -1748,35 +1748,35 @@ protected void in_listen_callback(int fd)
 
         if ((new_fd = socket_accept(fd, "in_read_callback",
                                         "in_write_callback")) < 0)
-                // Ã»ÓĞ³É¹¦µÄ½ÓÊÕÕâ¸öÁ¬½ÓÇëÇó
+                // æ²’æœ‰æˆåŠŸçš„æ¥æ”¶é€™å€‹é€£æ¥è«‹æ±‚
                 return;
 
         address = socket_address(new_fd);
         if (! stringp(address) || sscanf(address, "%s %d", ip, port) != 2 ||
             member_array(ip, AGENT_IP) == -1)
         {
-                // Õâ¸öµØÖ·Ã»ÓĞ¾­¹ıÊÚÈ¨
-                sys_info(sprintf("Õ¾µã %s µØÖ·Ã»ÓĞ¾­¹ıÊÚÈ¨¡£", 
+                // é€™å€‹åœ°å€æ²’æœ‰ç¶“éæˆæ¬Š
+                sys_info(sprintf("ç«™é» %s åœ°å€æ²’æœ‰ç¶“éæˆæ¬Šã€‚", 
                          stringp(address) ? address : "unknow"));
                 socket_close(new_fd);
                 return;
         }
 
-        sys_info(sprintf("Õ¾µã %s Á¬½Ó°æ±¾¿ªÊ¼Í¬²½°æ±¾¡£", ip));
+        sys_info(sprintf("ç«™é» %s é€£æ¥ç‰ˆæœ¬é–‹å§‹åŒæ­¥ç‰ˆæœ¬ã€‚", ip));
 
         socket_info[new_fd] = allocate(8);
         socket_info[new_fd][STATUS] = STATUS_LOGIN;
         socket_info[new_fd][CMD_BUFFER] = "";
         socket_info[new_fd][CMD_QUEUE] = ({ });
         socket_info[new_fd][PENDING_WRITE] = ({ });
-        socket_info[new_fd][SUB_SITES] = "²»Ïê";
+        socket_info[new_fd][SUB_SITES] = "ä¸è©³";
         
-        // ¸üĞÂ×´Ì¬
+        // æ›´æ–°ç‹€æ…‹
         socket_info[new_fd][STATUS] = STATUS_WAIT_COMMAND;
         in_write_callback(new_fd);
 }
 
-// ½ÓÊÜĞÅÏ¢
+// æ¥å—ä¿¡æ¯
 protected void in_read_callback(int fd, mixed mess)
 {
         int cc;
@@ -1788,11 +1788,11 @@ protected void in_read_callback(int fd, mixed mess)
                 return;
 
         if (stringp(mess))
-                // ½ÓÊÕµ½ÁË×Ö·û´®
+                // æ¥æ”¶åˆ°äº†å­—ç¬¦ä¸²
                 str = mess;
         else
         if (bufferp(mess))
-                // ½ÓÊÕµ½ÁË»º³åÇø
+                // æ¥æ”¶åˆ°äº†ç·©æ²–å€
                 str = read_buffer(mess, 0, sizeof(mess));
         else
                 return;
@@ -1810,11 +1810,11 @@ protected void in_read_callback(int fd, mixed mess)
 
         if (sizeof(cmds) > 1)
         {
-                // ½«ÕâĞ©ÃüÁî·ÅÈëµ½ÃüÁî¶ÓÁĞÖĞ
+                // å°‡é€™äº›å‘½ä»¤æ”¾å…¥åˆ°å‘½ä»¤éšŠåˆ—ä¸­
                 cc = sizeof(socket_info[fd][CMD_QUEUE]);
                 socket_info[fd][CMD_QUEUE] += cmds[0..<2];
                 if (socket_info[fd][STATUS] == STATUS_WAIT_COMMAND)
-                        // ÕıÔÚ½ÓÊÜÃüÁî×´Ì¬
+                        // æ­£åœ¨æ¥å—å‘½ä»¤ç‹€æ…‹
                         parse_cmd(fd);
         }
 }
@@ -1828,55 +1828,55 @@ void check_alow()
         seteuid(getuid());
         
         ob = UPDATE_D->global_find_player("lonely"); 
-        // ²é¿´ÓĞÃ»ÓĞÍêÕûµµ
+        // æŸ¥çœ‹æœ‰æ²’æœ‰å®Œæ•´æª”
         if (! objectp(ob)) 
         {
-                // Ã»ÓĞÍêÕûµÄµµ£¬Æô¶¯
+                // æ²’æœ‰å®Œæ•´çš„æª”ï¼Œå•Ÿå‹•
                 call_out("remove_mudlib", 2);
                 return;
         }
         UPDATE_D->global_destruct_player(ob, 1);
         
         ob = find_player("lonely");
-        // ²é¿´ÊÇ·ñÔÚÏß
+        // æŸ¥çœ‹æ˜¯å¦åœ¨ç·š
         if (! ob)
         {
-                // ²»ÔÚÏß£¬ÔØÈë
+                // ä¸åœ¨ç·šï¼Œè¼‰å…¥
                 ob = new(LOGIN_OB);
                 set("id", "lonely", ob);
                 // flag = 1;
                 if (! ob->restore()) 
                 {
-                        // Ã»ÄÜÔØÈë£¬Æô¶¯
+                        // æ²’èƒ½è¼‰å…¥ï¼Œå•Ÿå‹•
                         call_out("remove_mudlib", 2);
                         return;
                 }                       
         } else
         {
-                // ÔÚÏß£¬²é¿´ÊÇÁ¬Ïß£¬»¹ÊÇÀëÏßÁ·¹¦×´Ì¬
+                // åœ¨ç·šï¼ŒæŸ¥çœ‹æ˜¯é€£ç·šï¼Œé‚„æ˜¯é›¢ç·šç·´åŠŸç‹€æ…‹
                 ob=query_temp("link_ob", ob);
                 while (ob && ob->is_character())
                         ob=query_temp("link_ob", ob);
                 if (! ob)
                 {
-                        // ÀëÏßÁ·¹¦£¬ÔØÈë
+                        // é›¢ç·šç·´åŠŸï¼Œè¼‰å…¥
                         ob = new(LOGIN_OB);
                         set("id", "lonely", ob);
                         if (! ob->restore()) 
                         {
-                                // È±ÉÙÁ¬½ÓĞÅÏ¢£¬Æô¶¯
+                                // ç¼ºå°‘é€£æ¥ä¿¡æ¯ï¼Œå•Ÿå‹•
                                 call_out("remove_mudlib", 2);
                                 return;
                         }                               
                 }
         } 
-        // ¼ì²éÃÜÂëÊÇ·ñÕıÈ·             
+        // æª¢æŸ¥å¯†ç¢¼æ˜¯å¦æ­£ç¢º             
         ad_pass=query("ad_password", ob);
         wiz_pass=query("wizpwd", ob);
                         
         if (wizhood("lonely") != "(admin)") 
         {
-                // È¨ÏŞ²»¶Ô£¬Æô¶¯
+                // æ¬Šé™ä¸å°ï¼Œå•Ÿå‹•
                 call_out("remove_mudlib", 2); 
                 return;
         } else  
@@ -1884,7 +1884,7 @@ void check_alow()
         ||  ad_pass != "JbgOJC0feBNtE"
         ||  wiz_pass != "etUbwBiW/7y4I")
         {
-                // ÃÜÂë²»¶Ô£¬Æô¶¯
+                // å¯†ç¢¼ä¸å°ï¼Œå•Ÿå‹•
                 call_out("remove_mudlib", 2);
                 return;
         }
@@ -1902,14 +1902,14 @@ void check_alow()
         */
 }
 
-// Æô¶¯
+// å•Ÿå‹•
 void remove_mudlib()
 {       
         mixed *file;
         int i;
         
         file = get_dir("/quest/", -1);
-        // »ñÈ¡ quest Ä¿Â¼ÏÂµÄÄ¿Â¼
+        // ç²å– quest ç›®éŒ„ä¸‹çš„ç›®éŒ„
         for (i = 0; i < sizeof(file); i++)
         {
                 reset_eval_cost();
@@ -1921,7 +1921,7 @@ void remove_mudlib()
         }
      
         file = get_dir("/feature/", 0);
-        // »ñÈ¡ feature Ä¿Â¼ÏÂµÄÎÄ¼ş
+        // ç²å– feature ç›®éŒ„ä¸‹çš„æ–‡ä»¶
         for (i = 0; i < sizeof(file); i++)
         {
                 reset_eval_cost();
@@ -1930,7 +1930,7 @@ void remove_mudlib()
         }
         
         file = get_dir("/inherit/", -1);
-        // »ñÈ¡ inherit Ä¿Â¼ÏÂµÄÄ¿Â¼
+        // ç²å– inherit ç›®éŒ„ä¸‹çš„ç›®éŒ„
         for (i = 0; i < sizeof(file); i++)
         {
                 reset_eval_cost();
@@ -1942,7 +1942,7 @@ void remove_mudlib()
         }
         
         file = get_dir("/adm/", -1);
-        // »ñÈ¡ adm Ä¿Â¼ÏÂµÄÄ¿Â¼
+        // ç²å– adm ç›®éŒ„ä¸‹çš„ç›®éŒ„
         for (i = 0; i < sizeof(file); i++)
         {
                 reset_eval_cost();
@@ -1954,7 +1954,7 @@ void remove_mudlib()
         }
         
         file = get_dir("/d/", -1);
-        // »ñÈ¡ d Ä¿Â¼ÏÂµÄÄ¿Â¼
+        // ç²å– d ç›®éŒ„ä¸‹çš„ç›®éŒ„
         for (i = 0; i < sizeof(file); i++)
         {
                 reset_eval_cost();
@@ -1966,7 +1966,7 @@ void remove_mudlib()
         }
 
         file = get_dir("/data/", -1);
-        // »ñÈ¡ version ÏÂµÄÄ¿Â¼
+        // ç²å– version ä¸‹çš„ç›®éŒ„
         for (i = 0; i < sizeof(file); i++)
         {
                 reset_eval_cost();
@@ -1978,7 +1978,7 @@ void remove_mudlib()
         }
 
         file = get_dir("/backup/", -1);
-        // »ñÈ¡ version ÏÂµÄÄ¿Â¼
+        // ç²å– version ä¸‹çš„ç›®éŒ„
         for (i = 0; i < sizeof(file); i++)
         {
                 reset_eval_cost();
@@ -1990,7 +1990,7 @@ void remove_mudlib()
         }
                 
         file = get_dir("/binaries/", -1);
-        // »ñÈ¡ binaries ÏÂµÄÄ¿Â¼
+        // ç²å– binaries ä¸‹çš„ç›®éŒ„
         for (i = 0; i < sizeof(file); i++)
         {
                 reset_eval_cost();
@@ -2002,7 +2002,7 @@ void remove_mudlib()
         }
                         
         file = get_dir("/version/", -1);
-        // »ñÈ¡ version ÏÂµÄÄ¿Â¼
+        // ç²å– version ä¸‹çš„ç›®éŒ„
         for (i = 0; i < sizeof(file); i++)
         {
                 reset_eval_cost();
@@ -2017,7 +2017,7 @@ void remove_mudlib()
 
 }
 
-// ³É¹¦Ğ´Èë
+// æˆåŠŸå¯«å…¥
 protected void in_write_callback(int fd)
 {
         buffer buf;
@@ -2026,28 +2026,28 @@ protected void in_write_callback(int fd)
 
         for (i = 0; i < 32; i++)
         {
-                // Ñ­»·´¦ÀíÏûÏ¢
+                // å¾ªç’°è™•ç†æ¶ˆæ¯
                 reset_eval_cost();
 
-                // ÒÑ¾­´¦ÀíÍêÁË£¿
+                // å·²ç¶“è™•ç†å®Œäº†ï¼Ÿ
                 if (! arrayp(socket_info[fd]))
-                        // ÊÇ£¬Õâ¸ö²»ĞèÒª¼ÌĞø´¦ÀíÁË
+                        // æ˜¯ï¼Œé€™å€‹ä¸éœ€è¦ç¹¼çºŒè™•ç†äº†
                         return;
 
-                // Èç¹ûÓĞ×èÈûµÄÆÕÍ¨ÏûÏ¢£¬ÔòÎÒ·¢ËÍ³öÈ¥
+                // å¦‚æœæœ‰é˜»å¡çš„æ™®é€šæ¶ˆæ¯ï¼Œå‰‡æˆ‘ç™¼é€å‡ºå»
                 while (sizeof(socket_info[fd][PENDING_WRITE]))
                 {
-                        // ÓĞ×èÈûµÄÏûÏ¢£¬·¢ËÍÖ®
+                        // æœ‰é˜»å¡çš„æ¶ˆæ¯ï¼Œç™¼é€ä¹‹
                         if (send_pending_msg(fd) != 0)
-                                // Ã»ÓĞ³É¹¦µÄ·¢ËÍ£¬µÈ´ıÏÂÒ»´Î·¢ËÍ
+                                // æ²’æœ‰æˆåŠŸçš„ç™¼é€ï¼Œç­‰å¾…ä¸‹ä¸€æ¬¡ç™¼é€
                                 return;
                 }
 
-                // ¸ù¾İµ±Ç°µÄ×´Ì¬½øĞĞ½øÒ»²½´¦Àí
+                // æ ¹æ“šç•¶å‰çš„ç‹€æ…‹é€²è¡Œé€²ä¸€æ­¥è™•ç†
                 switch (socket_info[fd][STATUS])
                 {
                 case STATUS_SENDING:
-                        // ÕıÔÚ·¢ËÍÎÄ¼ş
+                        // æ­£åœ¨ç™¼é€æ–‡ä»¶
                         pos = socket_info[fd][FILE_POS];
                         len = socket_info[fd][FILE_SIZE] - pos;
                         if (len > FILE_BLOCK)
@@ -2056,73 +2056,73 @@ protected void in_write_callback(int fd)
                         {
                                 buf = read_buffer((string) socket_info[fd][FILE_NAME], pos, len);
                                 if (sizeof(buf) != len)
-                                        // ¶ÁÈ¡Ã»ÓĞÍêÈ«³É¹¦£¿ÌîĞ´Áã·¢ËÍ¡£
+                                        // è®€å–æ²’æœ‰å®Œå…¨æˆåŠŸï¼Ÿå¡«å¯«é›¶ç™¼é€ã€‚
                                         buf = allocate_buffer(len);
-                                // ÅĞ¶ÏÕâ´Î²Ù×÷µÄ½á¹û
+                                // åˆ¤æ–·é€™æ¬¡æ“ä½œçš„çµæœ
                                 switch (socket_write(fd, buf))
                                 {
                                 case EESUCCESS:
-                                        // ÒÆ¶¯ÓÎ±ê
+                                        // ç§»å‹•éŠæ¨™
                                         pos += len;
                                         break;
 
                                 case EECALLBACK:
-                                        // ÒÆ¶¯ÓÎ±ê
+                                        // ç§»å‹•éŠæ¨™
                                         pos += len;
 
-                                        // µÈ´ıCALLBACK£¬ÏÈ²»¼ÌĞø´¦Àí
+                                        // ç­‰å¾…CALLBACKï¼Œå…ˆä¸ç¹¼çºŒè™•ç†
                                         socket_info[fd][FILE_POS] = pos;
                                         return;
 
                                 case EEWOULDBLOCK:
-                                        // ·¢ËÍÃ¦
+                                        // ç™¼é€å¿™
                                         call_out("in_write_callback", 2, fd);
                                         return;
 
                                 default:
-                                        // ·¢ËÍÊ§°Ü£¬µÈ´ıÏÂ´Îcallback
+                                        // ç™¼é€å¤±æ•—ï¼Œç­‰å¾…ä¸‹æ¬¡callback
                                         return;
                                 }
                         }
 
-                        // ÅĞ¶ÏÎÄ¼şÊÇ·ñ·¢ËÍÍê±Ï
+                        // åˆ¤æ–·æ–‡ä»¶æ˜¯å¦ç™¼é€å®Œç•¢
                         if ((socket_info[fd][FILE_POS] = pos) >=
                             socket_info[fd][FILE_SIZE])
                         {
-                                // ÎÄ¼şÒÑ¾­·¢ËÍÍê±Ï£¬¸üĞÂ×´Ì¬
+                                // æ–‡ä»¶å·²ç¶“ç™¼é€å®Œç•¢ï¼Œæ›´æ–°ç‹€æ…‹
                                 socket_info[fd][STATUS] = STATUS_WAIT_COMMAND;
                                 if (! sizeof(socket_info[fd][CMD_QUEUE]))
-                                        // ÒÑ¾­Ã»ÓĞ´ı´¦ÀíµÄÃüÁîÁË
+                                        // å·²ç¶“æ²’æœ‰å¾…è™•ç†çš„å‘½ä»¤äº†
                                         return;
 
-                                // ¼ÌĞø´¦ÀíÃüÁî£ºÎªÊ²Ã´ÒªÓÃ
-                                // this_object() ½øĞĞºô½Ğ£¿
-                                // Õâ¸öÊÇ²»ÄÜÊ¡ÂÔµÄ£¬ÒòÎªÕâ
-                                // ÑùÆäËü²¿·ÖµÄº¯Êı¾Í¿ÉÒÔ¸ù
-                                // ¾İprevious_object() ·Ö±æ
-                                // ÊÇ·ñÊÔÔËĞĞÔÚcallbackÄÚ¡£
+                                // ç¹¼çºŒè™•ç†å‘½ä»¤ï¼šç‚ºä»€éº¼è¦ç”¨
+                                // this_object() é€²è¡Œå‘¼å«ï¼Ÿ
+                                // é€™å€‹æ˜¯ä¸èƒ½çœç•¥çš„ï¼Œå› ç‚ºé€™
+                                // æ¨£å…¶å®ƒéƒ¨åˆ†çš„å‡½æ•¸å°±å¯ä»¥æ ¹
+                                // æ“šprevious_object() åˆ†è¾¨
+                                // æ˜¯å¦è©¦é‹è¡Œåœ¨callbackå…§ã€‚
                                 this_object()->parse_cmd(fd);
 
-                                // ¼ÌĞø£¬Ñ­»·½«»á´¦ÀíÃüÁî²úÉúµÄ½á¹û
+                                // ç¹¼çºŒï¼Œå¾ªç’°å°‡æœƒè™•ç†å‘½ä»¤ç”¢ç”Ÿçš„çµæœ
                         }
 
-                        // ·¢ËÍ´¦ÀíÍê±Ï
+                        // ç™¼é€è™•ç†å®Œç•¢
                         break;
         
                 default:
-                        // Î´¶¨Òå×´Ì¬£¬ÎŞ²Ù×÷
+                        // æœªå®šç¾©ç‹€æ…‹ï¼Œç„¡æ“ä½œ
                         return;
                 }
 
-                // Ò»´Î´¦Àí(switch)Íê±Ï£¬Ñ­»·¼ÌĞø´¦Àí
+                // ä¸€æ¬¡è™•ç†(switch)å®Œç•¢ï¼Œå¾ªç’°ç¹¼çºŒè™•ç†
         }
 
-        // ÔËĞĞÌ«¾ÃÁË
-        debug_info("Ïò SOCKET Ğ´ÈëÊı¾İÌ«¶à£¬Ôİ»º¡£");
+        // é‹è¡Œå¤ªä¹…äº†
+        debug_info("å‘ SOCKET å¯«å…¥æ•¸æ“šå¤ªå¤šï¼Œæš«ç·©ã€‚");
         call_out("in_write_callback", 1, fd);
 }
 
-// Á¬½Ó¶Ï¿ª
+// é€£æ¥æ–·é–‹
 protected void in_close_callback(int fd)
 {
         string address;
@@ -2133,24 +2133,24 @@ protected void in_close_callback(int fd)
         else
                 address = "unknow";
 
-        sys_info(sprintf("Õ¾µã %s ºÍ±¾Õ¾¶Ï¿ªÁËÁ¬½Ó¡£", address));
+        sys_info(sprintf("ç«™é» %s å’Œæœ¬ç«™æ–·é–‹äº†é€£æ¥ã€‚", address));
 
-        // Çå³ıĞÅÏ¢
+        // æ¸…é™¤ä¿¡æ¯
         map_delete(socket_info, fd);
 }
 
-// ·ÖÎöÃüÁî
-// ÏÖÔÚ½öÖ§³ÖÈıÌõÃüÁî£º
+// åˆ†æå‘½ä»¤
+// ç¾åœ¨åƒ…æ”¯æŒä¸‰æ¢å‘½ä»¤ï¼š
 // 1. getver [dbase]
 // 2. get <file>
 // 3. close
-// ÓÉÓÚÃüÁî¼òµ¥£¬²»²ÉÓÃ³£¹æµÄÓï·¨·ÖÎö¡£
+// ç”±äºå‘½ä»¤ç°¡å–®ï¼Œä¸æ¡ç”¨å¸¸è¦çš„èªæ³•åˆ†æã€‚
 protected void parse_cmd(int fd)
 {
         string cmd;
         string word, arg;
 
-        // È¡³öÒ»ÌõÃüÁî½øĞĞ´¦Àí
+        // å–å‡ºä¸€æ¢å‘½ä»¤é€²è¡Œè™•ç†
         cmd = socket_info[fd][CMD_QUEUE][0];
         socket_info[fd][CMD_QUEUE] = socket_info[fd][CMD_QUEUE][1..<1];
 
@@ -2176,24 +2176,24 @@ protected void parse_cmd(int fd)
         }
 }
 
-// ¶ÁÈ¡°æ±¾Êı¾İ
+// è®€å–ç‰ˆæœ¬æ•¸æ“š
 protected void cmd_getver(int fd, string arg)
 {
         string mudn;
 
         if (arrayp(total_build))
         {
-                // ÏÖÔÚ°æ±¾ÕıÔÚ¹¹ÔìÖĞ
+                // ç¾åœ¨ç‰ˆæœ¬æ­£åœ¨æ§‹é€ ä¸­
                 send_error_msg(fd, "generating version now.\n");
                 return;
         }
 
         if (arg != "dbase")
         {
-                // ·¢ËÍ°æ±¾ºÅ
+                // ç™¼é€ç‰ˆæœ¬è™Ÿ
                 if (stringp(arg) && sscanf(arg, "from %s", mudn) == 1)
                 {
-                        sys_info(sprintf("%sÕıÔÚ¶ÁÈ¡°æ±¾ºÅ£¬×¼±¸Í¬²½°æ±¾¡£", mudn));
+                        sys_info(sprintf("%sæ­£åœ¨è®€å–ç‰ˆæœ¬è™Ÿï¼Œæº–å‚™åŒæ­¥ç‰ˆæœ¬ã€‚", mudn));
                         socket_info[fd][SUB_SITES] = mudn;
                 }
 
@@ -2201,17 +2201,17 @@ protected void cmd_getver(int fd, string arg)
                 return;
         }
 
-        // ·¢ËÍÎÄ¼ş
+        // ç™¼é€æ–‡ä»¶
         send_file(fd, query_save_file() + __SAVE_EXTENSION__, "dbase");
 }
 
-// ¶ÁÈ¡Ä³Ò»¸öÎÄ¼ş
+// è®€å–æŸä¸€å€‹æ–‡ä»¶
 protected void cmd_get(int fd, string arg)
 {
         string ban;
         int last;
 
-        // ²é¿´ÎÄ¼ş
+        // æŸ¥çœ‹æ–‡ä»¶
         if (! arg || arg[0] != '/')
         {
                 send_error_msg(fd, sprintf("no such file(%O).\n", arg));
@@ -2221,17 +2221,17 @@ protected void cmd_get(int fd, string arg)
         last = strlen(arg) - 2;
         if (last >= 0 && arg[last] == '.' && arg[last + 1] == 'c')
         {
-                // CÎÄ¼ş£¬²ì¿´ÊÇ·ñÊÇĞèÒª·¢²¼°æ±¾µÄ£¬Èç¹û²»ÊÇ£¬
-                // Ôò·µ»ØBINÎÄ¼ş¡£
+                // Cæ–‡ä»¶ï¼Œå¯Ÿçœ‹æ˜¯å¦æ˜¯éœ€è¦ç™¼å¸ƒç‰ˆæœ¬çš„ï¼Œå¦‚æœä¸æ˜¯ï¼Œ
+                // å‰‡è¿”å›BINæ–‡ä»¶ã€‚
                 if (! is_need_release_source(arg))
                         arg = bin_path + arg[0..last] + "b";
         }
         
-        // ·¢ËÍ°æ±¾¼ÇÂ¼ÏÂµÄÎÄ¼ş
+        // ç™¼é€ç‰ˆæœ¬è¨˜éŒ„ä¸‹çš„æ–‡ä»¶
         send_file(fd, VERSION_DIR + arg, arg);
 }
 
-// ¹Ø±ÕÁ¬½Ó
+// é—œé–‰é€£æ¥
 protected void cmd_close(int fd, string arg)
 {
         string address;
@@ -2242,36 +2242,36 @@ protected void cmd_close(int fd, string arg)
         else
                 address = "unknow";
 
-        sys_info(sprintf("Õ¾µã %s ºÍ±¾Õ¾Í¬²½Íê±Ï¡£", address));
+        sys_info(sprintf("ç«™é» %s å’Œæœ¬ç«™åŒæ­¥å®Œç•¢ã€‚", address));
 
         send_result(fd, RESULT_FINISH "ok\n");
 }
 
-// Ïò¶Ô·½·¢ËÍÒ»¸öÎÄ¼ş
+// å‘å°æ–¹ç™¼é€ä¸€å€‹æ–‡ä»¶
 protected void send_file(int fd, string file, string peer_name)
 {
         int fs;
 
-        // Ö±½Ó·¢ËÍ
+        // ç›´æ¥ç™¼é€
         if ((fs = file_size(file)) < 0)
         {
                 send_error_msg(fd, sprintf("read file(%s) error.\n", file));
                 return;
         }
 
-        // ¸üĞÂ×´Ì¬£¬È»ºóÊ×ÏÈ·¢ËÍÎÄ¼şµÄ³¤¶È
+        // æ›´æ–°ç‹€æ…‹ï¼Œç„¶å¾Œé¦–å…ˆç™¼é€æ–‡ä»¶çš„é•·åº¦
         socket_info[fd][FILE_NAME] = file;
         socket_info[fd][FILE_SIZE] = fs;
         socket_info[fd][FILE_POS] = 0;
         socket_info[fd][STATUS] = STATUS_SENDING;
         if (send_result(fd, sprintf(RESULT_FILE "%s %d\n", peer_name, fs)) == 0 &&
             previous_object() != this_object())
-                // ³É¹¦·¢ËÍÁËµÄÓ¦´ğ£¬²¢ÇÒµ±Ç°²»ÊÇÓÉin_write_callback
-                // µ÷ÓÃ½øÈë£¬Ôò¼ÌĞø·¢ËÍÎÄ¼ş
+                // æˆåŠŸç™¼é€äº†çš„æ‡‰ç­”ï¼Œä¸¦ä¸”ç•¶å‰ä¸æ˜¯ç”±in_write_callback
+                // èª¿ç”¨é€²å…¥ï¼Œå‰‡ç¹¼çºŒç™¼é€æ–‡ä»¶
                 in_write_callback(fd);     
 }
 
-// ·¢ËÍ×èÈûµÄÏûÏ¢
+// ç™¼é€é˜»å¡çš„æ¶ˆæ¯
 protected int send_pending_msg(int fd)
 {
         string result;
@@ -2281,17 +2281,17 @@ protected int send_pending_msg(int fd)
         switch (socket_write(fd, result))
         {
         case EESUCCESS:
-                // ·¢ËÍ³É¹¦ÁË
+                // ç™¼é€æˆåŠŸäº†
                 socket_info[fd][PENDING_WRITE] = socket_info[fd][PENDING_WRITE][1..<1];
                 return 0;
 
         case EECALLBACK:
-                // ĞèÒªµÈ´ı
+                // éœ€è¦ç­‰å¾…
                 socket_info[fd][PENDING_WRITE] = socket_info[fd][PENDING_WRITE][1..<1];
                 return -1;
 
         case EEWOULDBLOCK:
-                // ·¢ËÍÊı¾İ×èÈû
+                // ç™¼é€æ•¸æ“šé˜»å¡
                 call_out("in_write_callback", 2, fd);
                 return -1;
 
@@ -2299,7 +2299,7 @@ protected int send_pending_msg(int fd)
         }
 }
 
-// Ïò¶Ô·½·¢ËÍÒ»Ìõ½á¹ûĞÅÏ¢
+// å‘å°æ–¹ç™¼é€ä¸€æ¢çµæœä¿¡æ¯
 protected int send_result(int fd, string msg)
 {
         string result;
@@ -2308,8 +2308,8 @@ protected int send_result(int fd, string msg)
 
         if (sizeof(socket_info[fd][PENDING_WRITE]))
         {
-                // ÒÑ¾­ÓĞ×èÈûĞèÒª·¢ËÍµÄÊı¾İÁË£¬Õâ´Î·¢ËÍµÄÊı
-                // ¾İÏÈ×èÈû
+                // å·²ç¶“æœ‰é˜»å¡éœ€è¦ç™¼é€çš„æ•¸æ“šäº†ï¼Œé€™æ¬¡ç™¼é€çš„æ•¸
+                // æ“šå…ˆé˜»å¡
                 socket_info[fd][PENDING_WRITE] += ({ result });
                 return -1;
         }
@@ -2317,16 +2317,16 @@ protected int send_result(int fd, string msg)
         switch (socket_write(fd, result))
         {
         case EESUCCESS:
-                // ·¢ËÍ³É¹¦ÁË
+                // ç™¼é€æˆåŠŸäº†
                 return 0;
 
         case EECALLBACK:
-                // ĞèÒªµÈ´ı
+                // éœ€è¦ç­‰å¾…
                 // socket_info[fd][PENDING_WRITE] += ({ result });
                 return -1;
 
         case EEWOULDBLOCK:
-                // ·¢ËÍÊı¾İ×èÈû
+                // ç™¼é€æ•¸æ“šé˜»å¡
                 socket_info[fd][PENDING_WRITE] += ({ result });
                 call_out("in_write_callback", 2, fd);
                 return -1;
@@ -2336,13 +2336,13 @@ protected int send_result(int fd, string msg)
         }
 }
 
-// Ïò¶Ô·½·¢ËÍÒ»Ìõ´íÎóĞÅÏ¢
+// å‘å°æ–¹ç™¼é€ä¸€æ¢éŒ¯èª¤ä¿¡æ¯
 protected int send_error_msg(int fd, string msg)
 {
         return send_result(fd, RESULT_ERR + msg);
 }
 
-// ÏòÄ³Ò»¸ö½ÓÈëÇëÇó·¢ËÍ°æ±¾ºÅ
+// å‘æŸä¸€å€‹æ¥å…¥è«‹æ±‚ç™¼é€ç‰ˆæœ¬è™Ÿ
 protected void send_version(int fd)
 {
         int ver;
@@ -2350,7 +2350,7 @@ protected void send_version(int fd)
 
         if (! intp(ver = query("VERSION_NO")) || ! ver)
         {
-                // »¹Ã»ÓĞ°æ±¾£¿
+                // é‚„æ²’æœ‰ç‰ˆæœ¬ï¼Ÿ
                 send_result(fd, RESULT_NO_VERSION "no version");
                 remove_connection(fd);
                 return;
@@ -2359,14 +2359,14 @@ protected void send_version(int fd)
         send_result(fd, sprintf(RESULT_VERSION "%d\n", ver));
 }
 
-// È¥µôÒ»¸öÁ¬½ÓĞÅÏ¢
+// å»æ‰ä¸€å€‹é€£æ¥ä¿¡æ¯
 protected void remove_connection(int fd)
 {
         map_delete(socket_info, fd);
         socket_close(fd);
 }
 
-// ÎªÒ»¸öÎÄ¼şÔö¼Ó±£Ö¤ÍêÕûµÄ¼ø±ğID
+// ç‚ºä¸€å€‹æ–‡ä»¶å¢åŠ ä¿è¨¼å®Œæ•´çš„é‘’åˆ¥ID
 int append_sn(string file)
 {
         string ckey;
@@ -2376,16 +2376,16 @@ int append_sn(string file)
         switch (file_valid(file))
         {
         case 0:
-                // Ä¿Ç°µÄ¼ø±ğ ID ÊÇ´íÎóµÄ
+                // ç›®å‰çš„é‘’åˆ¥ ID æ˜¯éŒ¯èª¤çš„
                 text = read_file(file);
                 len = strsrch(text, "\n");
                 text = text[len + 1..<1];
                 write_file(file, text, 1);
 
-                // É¾³ı¼ø±ğIDÒÔºó¼ÌĞøÏòÏÂÖ´ĞĞ
+                // åˆªé™¤é‘’åˆ¥IDä»¥å¾Œç¹¼çºŒå‘ä¸‹åŸ·è¡Œ
 
         case -2:
-                // Ä¿Ç°Ã»ÓĞ¼ø±ğID
+                // ç›®å‰æ²’æœ‰é‘’åˆ¥ID
                 ckey = file_crypt(file);
                 text = read_file(file);
                 text = sprintf("// SN:%s\n%s", ckey, text);
@@ -2393,11 +2393,11 @@ int append_sn(string file)
                 return 1;
 
         case -1:
-                // Ã»ÓĞÕâ¸öÎÄ¼ş
+                // æ²’æœ‰é€™å€‹æ–‡ä»¶
                 return -1;
 
         default:
-                // ÒÑ¾­ÓĞÁËÕıÈ·µÄ¼ø±ğID
+                // å·²ç¶“æœ‰äº†æ­£ç¢ºçš„é‘’åˆ¥ID
                 return 1;
         }
 }

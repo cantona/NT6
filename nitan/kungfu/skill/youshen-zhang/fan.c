@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define FAN "¡¸" HIW "·­ØÔÁ¬»·ÕÆ" NOR "¡¹"
+#define FAN "ã€Œ" HIW "ç¿»å¦é€£ç’°æŒ" NOR "ã€"
 
 inherit F_SSERVER;
 
@@ -13,51 +13,51 @@ int perform(object me, object target)
         int i;
 
         if( userp(me) && !query("can_perform/youshen-zhang/fan", me) )
-                return notify_fail("ÄãËùÊ¹ÓÃµÄÍâ¹¦ÖĞÃ»ÓĞÕâÖÖ¹¦ÄÜ¡£\n");
+                return notify_fail("ä½ æ‰€ä½¿ç”¨çš„å¤–åŠŸä¸­æ²’æœ‰é€™ç¨®åŠŸèƒ½ã€‚\n");
 
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(FAN "Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(FAN "åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( query_temp("weapon", me) || query_temp("secondary_weapon", me) )
-                return notify_fail(FAN "Ö»ÄÜ¿ÕÊÖÊ©Õ¹¡£\n");
+                return notify_fail(FAN "åªèƒ½ç©ºæ‰‹æ–½å±•ã€‚\n");
 
         if ((int)me->query_skill("force") < 160)
-                return notify_fail("ÄãµÄÄÚ¹¦ĞŞÎª²»¹»£¬ÄÑÒÔÊ©Õ¹" FAN "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸä¿®ç‚ºä¸å¤ ï¼Œé›£ä»¥æ–½å±•" FAN "ã€‚\n");
 
         if ((lvl = (int)me->query_skill("youshen-zhang", 1)) < 120)
-                return notify_fail("ÄãµÄÓÎÉí°ËØÔÕÆ²»¹»æµÊì£¬ÄÑÒÔÊ©Õ¹" FAN "¡£\n");
+                return notify_fail("ä½ çš„éŠèº«å…«å¦æŒä¸å¤ å«»ç†Ÿï¼Œé›£ä»¥æ–½å±•" FAN "ã€‚\n");
 
         if (me->query_skill_mapped("unarmed") != "youshen-zhang")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢ÓÎÉí°ËØÔÕÆ£¬ÄÑÒÔÊ©Õ¹" FAN "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼éŠèº«å…«å¦æŒï¼Œé›£ä»¥æ–½å±•" FAN "ã€‚\n");
 
         if (me->query_skill_prepared("unarmed") != "youshen-zhang")
-                return notify_fail("ÄãÃ»ÓĞ×¼±¸ÓÎÉí°ËØÔÕÆ£¬ÄÑÒÔÊ©Õ¹" FAN "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æº–å‚™éŠèº«å…«å¦æŒï¼Œé›£ä»¥æ–½å±•" FAN "ã€‚\n");
 
         if( query("neili", me)<200 )
-                return notify_fail("ÄãÏÖÔÚÕæÆø²»¹»£¬ÄÑÒÔÊ©Õ¹" FAN "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çœŸæ°£ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" FAN "ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIW "Ö»¼û$N" HIW "½ÅÌ¤°ËØÔËÄ·½Ö®Î»£¬ÉíĞÎÔÚÈ«³¡ÓÎ×ß²»¶¨£¬Ë«ÕÆËæºó½ô"
-              "ÅÄ¶ø³ö£¬½ô½ô²øÈÆ×Å$n" HIW "¡£\n" NOR;
+        msg = HIW "åªè¦‹$N" HIW "è…³è¸å…«å¦å››æ–¹ä¹‹ä½ï¼Œèº«å½¢åœ¨å…¨å ´éŠèµ°ä¸å®šï¼Œé›™æŒéš¨å¾Œç·Š"
+              "æ‹è€Œå‡ºï¼Œç·Šç·Šçºç¹è‘—$n" HIW "ã€‚\n" NOR;
         addn("neili", -150, me);
 
         if (random(me->query_skill("force") + me->query_skill("bazhen-zhang")) >
             target->query_skill("force"))
         {
-                msg += HIR "$n" HIR "¶ÙÊ±¾õµÃºôÎü²»³©£¬È«È»±»$N"
-                       HIR "Õâ¹ÉÆæ¹ÖµÄÁ¦µÀËùÖÆ£¬Ö»µÃÆ´ÃüÔË¶¯µÖµ²"
-                       "¡£\n" NOR;
+                msg += HIR "$n" HIR "é “æ™‚è¦ºå¾—å‘¼å¸ä¸æš¢ï¼Œå…¨ç„¶è¢«$N"
+                       HIR "é€™è‚¡å¥‡æ€ªçš„åŠ›é“æ‰€åˆ¶ï¼Œåªå¾—æ‹¼å‘½é‹å‹•æŠµæ“‹"
+                       "ã€‚\n" NOR;
                 count = lvl / 5;
                 addn_temp("apply/attack", count, me);
         } else
         {
-                msg += HIC "$n" HIC "ÉîÎüÒ»¿ÚÆø£¬ÄıÉñµÖµ²£¬µ«¼û"
-                       "ÖÜÎ§$N" HIC "ÕÆÓ°ÖØÖØ£¬$p" HIC "È´ÊÇÁÙÎ£"
-                       "²»ÂÒ£¬Õò¶¨²ğÕĞ¡£\n" NOR;
+                msg += HIC "$n" HIC "æ·±å¸ä¸€å£æ°£ï¼Œå‡ç¥æŠµæ“‹ï¼Œä½†è¦‹"
+                       "å‘¨åœ$N" HIC "æŒå½±é‡é‡ï¼Œ$p" HIC "å»æ˜¯è‡¨å±"
+                       "ä¸äº‚ï¼Œé®å®šæ‹†æ‹›ã€‚\n" NOR;
                 count = 0;
         }
         message_combatd(msg, me, target);

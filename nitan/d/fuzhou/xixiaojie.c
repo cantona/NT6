@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��С��");
+        set("short", "西小街");
         set("long", @LONG
-��ʯ��·��ֱ����չ��ȥ��ֱͨ���š��ֱ���ȥ����һƬ������ˮ
-ɫ������ȴ��һƬ���֣�������ʣ���Զ������
+青石板路筆直地伸展出去，直通西門。街北望去，好一片的瀲灩水
+色，街南卻是一片叢林，佛號鐘呤，悠遠傳音。
 LONG );
         set("exits", ([
                 "west"  : __DIR__"ximen",

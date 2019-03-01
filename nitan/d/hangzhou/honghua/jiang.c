@@ -1,4 +1,4 @@
-// jiang.c ½¯ËÄ¸ù
+// jiang.c è”£å››æ ¹
 
 #include <ansi.h>
 
@@ -7,12 +7,12 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("½¯ËÄ¸ù", ({ "jiang sigen", "jiang","sigen" }));
-        set("title", HIR "ºì»¨»á"HIG"Ê®Èıµ±¼Ò" NOR);
-        set("nickname", HIY "Í­Í·öùÓã" NOR);
+        set_name("è”£å››æ ¹", ({ "jiang sigen", "jiang","sigen" }));
+        set("title", HIR "ç´…èŠ±æœƒ"HIG"åä¸‰ç•¶å®¶" NOR);
+        set("nickname", HIY "éŠ…é ­é±·é­š" NOR);
         set("long", 
-"Í­Í·öùÓã½¯ËÄ¸ùÔÚ»áÖĞ×øµÚÊ®Èı°Ñ½»ÒÎ£¬±øÆ÷ÊÇÌú½°¡£\n");
-        set("gender", "ÄĞĞÔ");
+"éŠ…é ­é±·é­šè”£å››æ ¹åœ¨æœƒä¸­åç¬¬åä¸‰æŠŠäº¤æ¤…ï¼Œå…µå™¨æ˜¯éµæ§³ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("class", "fighter");
         set("age", 21);
         set("attitude", "friendly");

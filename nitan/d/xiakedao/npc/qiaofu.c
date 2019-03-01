@@ -5,10 +5,10 @@ int inquiry_dao();
 
 void create()
 {
-        set_name("éÔ·ò", ({ "qiao fu","fu" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("æ¨µå¤«", ({ "qiao fu","fu" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 50);
-        set("long", "Ò»¸öÒ»±²×ÓÒÔ¿³²ÄÎªÉúµÄÀÏéÔ·ò£¬ÓÉÓÚ±¥ÊÜ·çËª£¬ÏÔ³öÓëÄêÁä²»Ïà³ÆµÄË¥ÀÏ¡£\n");
+        set("long", "ä¸€å€‹ä¸€è¼©å­ä»¥ç æç‚ºç”Ÿçš„è€æ¨µå¤«ï¼Œç”±äºé£½å—é¢¨éœœï¼Œé¡¯å‡ºèˆ‡å¹´é½¡ä¸ç›¸ç¨±çš„è¡°è€ã€‚\n");
         set("shen_type",1);
         set("combat_exp", 10000);
         set("str", 17);
@@ -17,8 +17,8 @@ void create()
         set("int", 18);
         set("attitude", "friendly");
         set("inquiry" , ([
-            "²ñµ¶" : (: inquiry_dao :),
-            "µ¶" : (: inquiry_dao :),
+            "æŸ´åˆ€" : (: inquiry_dao :),
+            "åˆ€" : (: inquiry_dao :),
         ]));
         set_temp("buyed", 0);
         setup();
@@ -29,7 +29,7 @@ void create()
 int accept_object(object who, object ob)
 {
         command("smile");
-        message_vision("Ğ»Ğ»ºÃĞÄµÄ´óÒ¯£¬ºÃÈËÓĞºÃ±¨¡£\n", who);
+        message_vision("è¬è¬å¥½å¿ƒçš„å¤§çˆºï¼Œå¥½äººæœ‰å¥½å ±ã€‚\n", who);
         if( query("money_id", ob) && ob->value() >= 3000 )
            set_temp("buyed", 1);
         return 1;
@@ -42,22 +42,22 @@ int inquiry_dao()
 
         if (present("cut knife",me))
         {
-            message_vision("Äã¾Í±ğÑ°ÀÏÍ·×Ó¿ªĞÄÁË£¬ÄãÉíÉÏ²»ÊÇÒ²ÓĞÒ»°ÑÂğ?\n", me);
+            message_vision("ä½ å°±åˆ¥å°‹è€é ­å­é–‹å¿ƒäº†ï¼Œä½ èº«ä¸Šä¸æ˜¯ä¹Ÿæœ‰ä¸€æŠŠå—?\n", me);
             return 1;
         }
         if( query_temp("buyed")==0 )
         {
-            message_vision("ÕâÎ»´óÒ¯£¬ÊµÔÚ²»ÊÇÎÒÉá²»µÃÕâµ¶£¬Ğ¡ÈËÒ»¼Ò¾ÍÈ«¿¿Ëü¹ı\n"
-                  "ÈÕ×ÓÁË£¬¸øÁËÄã£¬½ĞÎÒÔõÃ´¹ı»î°¡£¡\n", me);
+            message_vision("é€™ä½å¤§çˆºï¼Œå¯¦åœ¨ä¸æ˜¯æˆ‘èˆä¸å¾—é€™åˆ€ï¼Œå°äººä¸€å®¶å°±å…¨é å®ƒé\n"
+                  "æ—¥å­äº†ï¼Œçµ¦äº†ä½ ï¼Œå«æˆ‘æ€éº¼éæ´»å•Šï¼\n", me);
             return 1;
         }
         if( query_temp("buyed")==1 )
         {
-            message_vision("¼ÈÈ»ºÃĞÄÈËÏëÒª£¬¾Í¸øÄã°É£¬±¾À´Ê·ÆÅÆÅÒªÎÒºÃºÃ±£¹ÜµÄ£¬\n"
-                  "Äã¿ÉÇ§Íò±ğÏ¹ËÍ¸ø±ğÈË£¬·ñÔòËı»áÉúÆøµÄ¡£\n", me);
+            message_vision("æ—¢ç„¶å¥½å¿ƒäººæƒ³è¦ï¼Œå°±çµ¦ä½ å§ï¼Œæœ¬ä¾†å²å©†å©†è¦æˆ‘å¥½å¥½ä¿ç®¡çš„ï¼Œ\n"
+                  "ä½ å¯åƒè¬åˆ¥çé€çµ¦åˆ¥äººï¼Œå¦å‰‡å¥¹æœƒç”Ÿæ°£çš„ã€‚\n", me);
             ob=new("/d/xiakedao/obj/knife");
             ob->move(me);
-            message_vision("éÔ·òµİ¸øÄãÒ»°Ñ²ñµ¶£¡\n", me);
+            message_vision("æ¨µå¤«éçµ¦ä½ ä¸€æŠŠæŸ´åˆ€ï¼\n", me);
             set_temp("buyed", 0);
         }
         return 1;

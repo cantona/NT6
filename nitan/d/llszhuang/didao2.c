@@ -1,10 +1,10 @@
 inherit ROOM;
 void create()
 {
-        set("short", "地道");
+        set("short", "鍦伴亾");
         set("long",
-"前面终于出现一道光明，漫长的地道走到了尽头。回头看看来路一片\n"
-"模糊。\n"
+"鍓嶉潰绲備簬鍑虹従涓�閬撳厜鏄庯紝婕暦鐨勫湴閬撹蛋鍒颁簡鐩￠牠銆傚洖闋湅鐪嬩締璺竴鐗嘰n"
+"妯＄硦銆俓n"
 );
         set("exits", ([
         "up" : "/d/llszhuang/dynamic/jiuqu14",

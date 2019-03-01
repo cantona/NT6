@@ -1,5 +1,5 @@
 // black_iron.c
-// ĞşÌú
+// ç„éµ
 
 #include <mine_def.h>
 
@@ -31,14 +31,14 @@ int set_sum(int n)
 
 void create(int arg)
 {
-        set_name("ĞşÌú", ({ "black iron ingot" }) );
+        set_name("ç„éµ", ({ "black iron ingot" }) );
         set_weight(1000);
 
         if(intp(arg) && (arg > 0))
                 sum = arg;
 
         set("value", evaluate((: query_mine_value :),this_object()) );
-        set("unit", "¿é");
+        set("unit", "å¡Š");
         set("long", evaluate((: query_long :), this_object()));
 }
 
@@ -50,19 +50,19 @@ int query_mine_value()
 string query_selling_msg()
 {
         if(sum < 1)
-                return "Ò»Ç®²»Öµ";
+                return "ä¸€éŒ¢ä¸å€¼";
         else
-                return sprintf("%d Á½ÖØ", sum);
+                return sprintf("%d å…©é‡", sum);
 }
 
 string query_long()
 {
-        string l = "ÕâÊÇÒ»¿éĞşÌú£¬";
+        string l = "é€™æ˜¯ä¸€å¡Šç„éµï¼Œ";
 
         if(sum < 1)
-                l += "¿´ÆğÀ´\nÒ»Ç®²»Öµ¡£\n";
+                l += "çœ‹èµ·ä¾†\nä¸€éŒ¢ä¸å€¼ã€‚\n";
         else
-                l += sprintf("´óÔ¼\nÓĞ %d Ç®ÖØ¡£\n", sum);
+                l += sprintf("å¤§ç´„\næœ‰ %d éŒ¢é‡ã€‚\n", sum);
 
         return l;
 }

@@ -1,4 +1,4 @@
-// zhanlu-jian.c Õ¿Â¬½£
+// zhanlu-jian.c æ¹›ç›§åŠ
 // Last Modified by winder on Sep. 7 2001
 
 #include <ansi.h>;
@@ -8,18 +8,18 @@ inherit F_UNIQUE;
 
 void create()
 {
-        set_name(HIC"Õ¿Â¬½£"NOR, ({ "zhanlu jian", "sword", "jian" }));
+        set_name(HIC"æ¹›ç›§åŠ"NOR, ({ "zhanlu jian", "sword", "jian" }));
         set_weight(20000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
-                set("long", "ÕâÊÇ´ºÇïÃû½³Å·Ò±×ÓËùÖıµÄÎå¿Ú±¦½£Ö®Õ¿Â¬½£¡£\n");
+                set("unit", "æŸ„");
+                set("long", "é€™æ˜¯æ˜¥ç§‹ååŒ æ­å†¶å­æ‰€é‘„çš„äº”å£å¯¶åŠä¹‹æ¹›ç›§åŠã€‚\n");
                 set("value", 100000);
                 set("material", "steel");
                 set("weapon_prop/per", 8);
-                set("wield_msg", "$N¡¸à§¡¹µÄÒ»Éù³é³öÒ»¿Úº®¹âÉÁÉÁµÄ$n¡£½£Ãæ¸¡ÎÆÔ¾È»ÉÁ¶¯£¬ÊµÊÇÒ»¿ÚÄÑµÃµÄÉñ±ø¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²å»Ø½£ÇÊ¡£\n");
+                set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€è²æŠ½å‡ºä¸€å£å¯’å…‰é–ƒé–ƒçš„$nã€‚åŠé¢æµ®ç´‹èºç„¶é–ƒå‹•ï¼Œå¯¦æ˜¯ä¸€å£é›£å¾—çš„ç¥å…µã€‚\n");
+                set("unwield_msg", "$Nå°‡æ‰‹ä¸­çš„$næ’å›åŠé˜ã€‚\n");
         }
         init_sword(180);
         setup();

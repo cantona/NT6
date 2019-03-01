@@ -5,12 +5,12 @@ inherit ITEM;
 
 void create()
 {
-        set_name(GRN"±Ì²Ï·Û"NOR, ({"bican fen", "fen"}));
+        set_name(GRN"ç¢§è ¶ç²‰"NOR, ({"bican fen", "fen"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»´ü¾ç¶¾µÄ¶¾Ò©, Èç¹ûÓÃÀ´Á¶°µÆ÷ÓĞ¼ûÑª·âºíÖ®Ğ§. \n");
-                set("unit", "´ü");
+                set("long", "ä¸€è¢‹åŠ‡æ¯’çš„æ¯’è—¥, å¦‚æœç”¨ä¾†ç…‰æš—å™¨æœ‰è¦‹è¡€å°å–‰ä¹‹æ•ˆ. \n");
+                set("unit", "è¢‹");
                 set("value", 20000);
         }
         set("pour_type", "1");
@@ -27,14 +27,14 @@ int do_eat(string arg)
 {
         object me = this_player();
 
-        if(!id(arg)) return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+        if(!id(arg)) return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if(!present(this_object(), me))
-                return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if( me->is_busy() )
-                return notify_fail("±ğ¼±£¬ÂıÂı³Ô£¬Ğ¡ĞÄ±ğÒ­×ÅÁË¡£\n");
+                return notify_fail("åˆ¥æ€¥ï¼Œæ…¢æ…¢åƒï¼Œå°å¿ƒåˆ¥å™è‘—äº†ã€‚\n");
 
-        message_vision("$NÑöÍ·°ÑÒ»Ğ¡´ü" + name() + "¶¼ÑÊÁËÏÂÈ¥¡£\n", me);
-        set_temp("die_reason", "·şÏÂ±Ì²Ï·Û£¬×ÔÉ±ÉíÍöÁË", me);
+        message_vision("$Nä»°é ­æŠŠä¸€å°è¢‹" + name() + "éƒ½åš¥äº†ä¸‹å»ã€‚\n", me);
+        set_temp("die_reason", "æœä¸‹ç¢§è ¶ç²‰ï¼Œè‡ªæ®ºèº«äº¡äº†", me);
         me->die();
         destruct(this_object());
         return 1;

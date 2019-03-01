@@ -6,15 +6,15 @@ int do_use(string arg);
 
 void create()
 {
-        set_name(HIM "ÅîÀ³ÏÉ¹û" NOR, ({"penglai xianguo", "penglai", "xianguo", "guo"}));
+        set_name(HIM "è“¬èŠä»™æœ" NOR, ({"penglai xianguo", "penglai", "xianguo", "guo"}));
         set_weight(1);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIM "\nÕâÊÇÒ»¿Å¾§Ó¨ºìÍ¸µÄÏÉ¹û£¬¾İËµ·şÓÃºóÄÜ¹¦Á¦´óÔö¡£\n"
-                                      "*·şÓÃ(fuyong xianguo)ĞèÏûºÄÎüÁéºø£¬¿É»ñµÃ30Íò¾­Ñé£¬25ÍòÇ±ÄÜ£¬1000µã¹±Ï×¼°20ÍòÌå»á£¨Ë«±¶½±Àø·şÎñ¼Ó±¶£©¡£\n"
-                                      "*Ã¿·şÓÃÒ»¸öÅîÀ³ÏÉ¹û»áÏûºÄÒ»¸öÎüÁéºø£¬ÎüÁéºø¿É´ÓÉÌ³Ç¹ºÂò¡£\n" NOR);
-                set("unit", "¿Å");
+                set("long", HIM "\né€™æ˜¯ä¸€é¡†æ™¶ç‘©ç´…é€çš„ä»™æœï¼Œæ“šèªªæœç”¨å¾Œèƒ½åŠŸåŠ›å¤§å¢ã€‚\n"
+                                      "*æœç”¨(fuyong xianguo)éœ€æ¶ˆè€—å¸éˆå£ºï¼Œå¯ç²å¾—30è¬ç¶“é©—ï¼Œ25è¬æ½›èƒ½ï¼Œ1000é»è²¢ç»åŠ20è¬é«”æœƒï¼ˆé›™å€çå‹µæœå‹™åŠ å€ï¼‰ã€‚\n"
+                                      "*æ¯æœç”¨ä¸€å€‹è“¬èŠä»™æœæœƒæ¶ˆè€—ä¸€å€‹å¸éˆå£ºï¼Œå¸éˆå£ºå¯å¾å•†åŸè³¼è²·ã€‚\n" NOR);
+                set("unit", "é¡†");
                 set("value", 1);
         }
 }
@@ -41,21 +41,21 @@ int do_use(string arg)
         
         if(! objectp(ob = present("xiling hu", me)))
         {
-                return notify_fail("ÄãÉíÉÏÃ»ÓĞÎüÁéºø£¬ÎŞ·¨·şÓÃÅîÀ³ÏÉ¹û¡£\n");
+                return notify_fail("ä½ èº«ä¸Šæ²’æœ‰å¸éˆå£ºï¼Œç„¡æ³•æœç”¨è“¬èŠä»™æœã€‚\n");
         }
         
         if (me->is_fighting() || me->is_busy())
-                 return notify_fail("ÄãÕıÃ¦ÄØ£¡\n");
+                 return notify_fail("ä½ æ­£å¿™å‘¢ï¼\n");
                  
-        // Ê¹ÓÃÃèÊö
-        message_vision(HIY + "\n$N" HIY "Ò»Ì§Í··şÏÂÒ»¿ÅÅîÀ³ÏÉ¹û£¬ÍòµÀ½ğ¹âÉÁ¹ı£¬¹¦Á¦´óÔö ¡­¡­\n" NOR, me);
+        // ä½¿ç”¨æè¿°
+        message_vision(HIY + "\n$N" HIY "ä¸€æŠ¬é ­æœä¸‹ä¸€é¡†è“¬èŠä»™æœï¼Œè¬é“é‡‘å…‰é–ƒéï¼ŒåŠŸåŠ›å¤§å¢ â€¦â€¦\n" NOR, me);
 
         exp = 300000;
         pot = 250000;
         tihui = 200000;
         gongxian = 1000;
         
-        // »î¶¯ÆÚ¼ä
+        // æ´»å‹•æœŸé–“
         if( query("service/double_gift", me) )
         {
                 exp *= 2;
@@ -64,13 +64,13 @@ int do_use(string arg)
                 gongxian *= 2;
         }
         
-        tell_object(me, HIG "Äã·şÏÂÅîÀ³ÏÉ¹ûºó»ñµÃÁË" + chinese_number(exp) + "¾­Ñé£¬" + chinese_number(pot) + "Ç±"
-                            "ÄÜ£¬" + chinese_number(gongxian) + "ÃÅÅÉ¹±Ï×¼°" + chinese_number(tihui) + "Ìå»á¡£ÏûºÄÎüÁéºøÒ»¸ö¡£\n\n" NOR);
+        tell_object(me, HIG "ä½ æœä¸‹è“¬èŠä»™æœå¾Œç²å¾—äº†" + chinese_number(exp) + "ç¶“é©—ï¼Œ" + chinese_number(pot) + "æ½›"
+                            "èƒ½ï¼Œ" + chinese_number(gongxian) + "é–€æ´¾è²¢ç»åŠ" + chinese_number(tihui) + "é«”æœƒã€‚æ¶ˆè€—å¸éˆå£ºä¸€å€‹ã€‚\n\n" NOR);
 
-        // ÏûºÄÎüÁéºø
+        // æ¶ˆè€—å¸éˆå£º
         destruct(ob);
         
-        // ÔªÉñÔö¼Ó¾­Ñé
+        // å…ƒç¥å¢åŠ ç¶“é©—
         if( query("yuanshen/exp", me)<2000000000 )
         {
                 ys_exp = exp / 5;

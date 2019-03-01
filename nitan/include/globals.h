@@ -13,8 +13,8 @@
 #endif
 
 #define NO_FEE
-#define BUSY_MESSAGE    "ƒ„œ÷‘⁄√¶µ√∫‹£¨Œﬁ∑®◊ˆ»Œ∫Œ ¬«È°£\n"
-#define DEBUG_CHANNEL(x) CHANNEL_D->channel_broadcast("debug", "µ˜ ‘æ´¡È£∫"+(string)x) 
+#define BUSY_MESSAGE    "‰Ω†ÁèæÂú®ÂøôÂæóÂæàÔºåÁÑ°Ê≥ïÂÅö‰ªª‰Ωï‰∫ãÊÉÖ„ÄÇ\n"
+#define DEBUG_CHANNEL(x) CHANNEL_D->channel_broadcast("debug", "Ë™øË©¶Á≤æÈùàÔºö"+(string)x) 
 
 // Important directories
 #define INC_DIR                 "/include/"
@@ -31,24 +31,24 @@
 #define QUEST_DIR               "/adm/daemons/quest/"
 #define SHADOW_DIR              "/shadow/"
 #define STORY_DIR               "/adm/daemons/story/"
-#define ARMOR_DIR               "/clone/armor/"              //ª§æﬂ
-#define WEAPON_DIR              "/clone/weapon/"             //±¯∆˜
-#define BOOK_DIR                "/clone/book/"               // ÈºÆ
-#define MONEY_DIR               "/clone/money/"              //ªı±“
-#define ANIMAL_DIR              "/clone/animal/"             //∂ØŒÔ
-#define JEWELRY_DIR             "/clone/jewelry/"            //÷È±¶
-#define FOOD_DIR                "/clone/food/"               // ≥ŒÔ
-#define FRUIT_DIR               "/clone/food/fruit/"         //ÀÆπ˚
-#define LIQUID_DIR              "/clone/food/liquid/"        //“˚¡œ
-#define TEA_DIR                 "/clone/food/tea/"           //≤ËÀÆ
-#define FODDER_DIR              "/clone/food/fodder/"        //À«¡œ
-#define CLOTH_DIR               "/clone/cloth/"              //“¬∑˛
-#define HEAD_DIR                "/clone/cloth/head/"         //ø¯√±
-#define BOOT_DIR                "/clone/cloth/boot/"         //–¨—•
-#define NOSTRUM_DIR             "/clone/medicine/nostrum/"   //≥…“©
-#define POISON_DIR              "/clone/medicine/poison/"    //∂æ“©
-#define VEGETABLE_DIR           "/clone/medicine/vegetable/" //≤›“©
-#define SHOP_DIR                "/clone/shop/"               //…ÃµÍ
+#define ARMOR_DIR               "/clone/armor/"              //Ë≠∑ÂÖ∑
+#define WEAPON_DIR              "/clone/weapon/"             //ÂÖµÂô®
+#define BOOK_DIR                "/clone/book/"               //Êõ∏Á±ç
+#define MONEY_DIR               "/clone/money/"              //Ë≤®Âπ£
+#define ANIMAL_DIR              "/clone/animal/"             //ÂãïÁâ©
+#define JEWELRY_DIR             "/clone/jewelry/"            //Áè†ÂØ∂
+#define FOOD_DIR                "/clone/food/"               //È£üÁâ©
+#define FRUIT_DIR               "/clone/food/fruit/"         //Ê∞¥Êûú
+#define LIQUID_DIR              "/clone/food/liquid/"        //È£≤Êñô
+#define TEA_DIR                 "/clone/food/tea/"           //Ëå∂Ê∞¥
+#define FODDER_DIR              "/clone/food/fodder/"        //È£ºÊñô
+#define CLOTH_DIR               "/clone/cloth/"              //Ë°£Êúç
+#define HEAD_DIR                "/clone/cloth/head/"         //ÁõîÂ∏Ω
+#define BOOT_DIR                "/clone/cloth/boot/"         //ÈûãÈù¥
+#define NOSTRUM_DIR             "/clone/medicine/nostrum/"   //ÊàêËó•
+#define POISON_DIR              "/clone/medicine/poison/"    //ÊØíËó•
+#define VEGETABLE_DIR           "/clone/medicine/vegetable/" //ËçâËó•
+#define SHOP_DIR                "/clone/shop/"               //ÂïÜÂ∫ó
 #define TEMP_DIR                "/temp/"
 #define TEMPLATE_DIR            "/template/"
 #define WORK_DIR                "/adm/daemons/work/"

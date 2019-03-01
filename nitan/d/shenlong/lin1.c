@@ -2,11 +2,11 @@ inherit DEMONROOM;
 
 void create()
 {
-        set("short", "¹àÄ¾ÁÖ");
+        set("short", "çŒæœ¨æ—");
         set("long",@LONG
-ÕâÊÇÒ»Æ¬¹àÄ¾ÁÖ¡£ÄãÃ»ÓĞÏëµ½ÕâÑùÒ»¸ö¹ÂµºÉÏ¾¹ÓĞÕâÑù´óÒ»Æ¬¹à
-Ä¾ÁÖ(bush)£¬²»ÓÉ¸Ğµ½·Ç³£³Ô¾ª¡£Ç°Ãæ¸ù±¾Ã»ÓĞÂ·£¬ËÄÖÜµÄÃÜÁÖÖĞ³¤
-ÂúÁËÔÓ²İ¡£
+é€™æ˜¯ä¸€ç‰‡çŒæœ¨æ—ã€‚ä½ æ²’æœ‰æƒ³åˆ°é€™æ¨£ä¸€å€‹å­¤å³¶ä¸Šç«Ÿæœ‰é€™æ¨£å¤§ä¸€ç‰‡çŒ
+æœ¨æ—(bush)ï¼Œä¸ç”±æ„Ÿåˆ°éå¸¸åƒé©šã€‚å‰é¢æ ¹æœ¬æ²’æœ‰è·¯ï¼Œå››å‘¨çš„å¯†æ—ä¸­é•·
+æ»¿äº†é›œè‰ã€‚
 LONG);
 
 	set("exits", ([
@@ -15,7 +15,7 @@ LONG);
 	]));
 
 	set("item_desc", ([
-	    "bush" : "ÕâÆ¬¹àÄ¾ÁÖÌ«ÉîÁË,ÒªÏë¹ıÈ¥¿ÖÅÂÖ»ÓĞ¿³³öÒ»ÌõÂ·ÁË(kan)¡£\n",
+	    "bush" : "é€™ç‰‡çŒæœ¨æ—å¤ªæ·±äº†,è¦æƒ³éå»ææ€•åªæœ‰ç å‡ºä¸€æ¢è·¯äº†(kan)ã€‚\n",
 	]));
 		
 		set("n_time", 30); 
@@ -38,28 +38,28 @@ int do_kan(string arg)
         object me;
 
         if (arg != "bush")
-                return notify_fail("ÄãÒª¿³Ê²Ã´£¿\n" ) ;
+                return notify_fail("ä½ è¦ç ä»€éº¼ï¼Ÿ\n" ) ;
 
         me = this_player();
 	if( !objectp(weapon=query_temp("weapon", me)) )
-		return notify_fail("²»ÓÃÎäÆ÷¿ÖÅÂ²»ĞĞ°É£¡\n");
+		return notify_fail("ä¸ç”¨æ­¦å™¨ææ€•ä¸è¡Œå§ï¼\n");
 
         if( query("skill_type", weapon) != "blade" && 
             query("skill_type", weapon) != "sword" )
-                return notify_fail(weapon->name() + "Ò²ÄÜÓÃÀ´¿³¶«Î÷£¿\n");
+                return notify_fail(weapon->name() + "ä¹Ÿèƒ½ç”¨ä¾†ç æ±è¥¿ï¼Ÿ\n");
 
-	message_vision("$N³é³ö±øÈĞ£¬¶Ô×Å¹àÄ¾´Ô¾ÍÊÇÒ»ÕóÂÒ¿³¡£\n", me);
+	message_vision("$NæŠ½å‡ºå…µåˆƒï¼Œå°è‘—çŒæœ¨å¢å°±æ˜¯ä¸€é™£äº‚ç ã€‚\n", me);
 
         if( query("neili", me)>100 )
         {
                 set("exits/north", __DIR__"lin2");
-                message_vision("$NÀÛµÃÆø´­ÓõÓõ,ÖÕÓÚ¿³³öÒ»ÌõĞ¡Â·¡£\n", me);
+                message_vision("$Nç´¯å¾—æ°£å–˜åå,çµ‚äºç å‡ºä¸€æ¢å°è·¯ã€‚\n", me);
                 addn("neili", -50, me);
                 remove_call_out("close");
                 call_out("close", 20);
 	} else	
 	{
-                message_vision("$NÀÛµÃÆø´­ÓõÓõ,Ò²Ã»¿³¿ªÒ»ÌõÂ·À´¡£\n", me);
+                message_vision("$Nç´¯å¾—æ°£å–˜åå,ä¹Ÿæ²’ç é–‹ä¸€æ¢è·¯ä¾†ã€‚\n", me);
                 set("neili", 0, me);
 	}
         return 1;
@@ -67,7 +67,7 @@ int do_kan(string arg)
 
 void close()
 {
-        message("vision", "¹àÄ¾´Ô½¥½¥ºÏÂ£ÆğÀ´,ÖÕÓÚÓÖ»Ö¸´ÁËÔ­×´¡£\n",
+        message("vision", "çŒæœ¨å¢æ¼¸æ¼¸åˆæ”èµ·ä¾†,çµ‚äºåˆæ¢å¾©äº†åŸç‹€ã€‚\n",
                 this_object());
         delete("exits/north");
 }

@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create ()
 {
-        set ("short", "ÓÀÌ©´óµÀ");
+        set ("short", "æ°¸æ³°å¤§é“");
         set("long", @LONG
-³ÇÄÚ½ÖµÀ£¬ÓëÄÏ±±ÈýÌõ²¢ÐÐµÄ´ó½Ö£¬ºÍ¶«Î÷µÄ¶þÌõÖ÷½Ö»¥Ïà½»´í
-¶ø³É¡£ÎåÌõ´ó½ÖÔÚÕâÇåÀÊµÄÒ¹³õ£¬È´¼ûÈËÀ´³µÍù£¬µÆ»ðÍ¨Ã÷£¬±ðÓÐÒ»
-·¬ÈÈÄÖ¡£ÆäËûÐ¡½ÖºáÏï£¬ÔòÒÀÕâÐ©Ö÷½Ö½»´í²¼ÖÃ£¬¾®È»ÓÐÐò¡£
+åŸŽå…§è¡—é“ï¼Œèˆ‡å—åŒ—ä¸‰æ¢ä¸¦è¡Œçš„å¤§è¡—ï¼Œå’Œæ±è¥¿çš„äºŒæ¢ä¸»è¡—äº’ç›¸äº¤éŒ¯
+è€Œæˆã€‚äº”æ¢å¤§è¡—åœ¨é€™æ¸…æœ—çš„å¤œåˆï¼Œå»è¦‹äººä¾†è»Šå¾€ï¼Œç‡ˆç«é€šæ˜Žï¼Œåˆ¥æœ‰ä¸€
+ç•ªç†±é¬§ã€‚å…¶ä»–å°è¡—æ©«å··ï¼Œå‰‡ä¾é€™äº›ä¸»è¡—äº¤éŒ¯å¸ƒç½®ï¼Œäº•ç„¶æœ‰åºã€‚
 LONG );
         set("exits",([//sizeof() == 2
                 "south" : "/d/changan/yongtai-nankou",

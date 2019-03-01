@@ -15,26 +15,26 @@ int main(object me, string arg)
         amount = query("flowers/amount", me);
         if( !arg || arg == "" )
         {
-                write(HIW "ÄãÄ¿Ç°ÓµÓĞ " + amount + " ÕÅĞÂÊÖµ¼Ê¦ÆÀ¼ÛÆ±¡£\n" NOR);
+                write(HIW "ä½ ç›®å‰æ“æœ‰ " + amount + " å¼µæ–°æ‰‹å°å¸«è©•åƒ¹ç¥¨ã€‚\n" NOR);
                 if( sizeof(virlist = DB_D->query_data("virlist/teacher")) )
                 {
-                        str = HIC "\n¡Ô"  + HIM "ÓÎÏ·ÖĞËùÓĞÔÚÖ°µ¼Ê¦" + HIC + "¡Ô\n" NOR;  
+                        str = HIC "\nâ‰¡"  + HIM "éŠæˆ²ä¸­æ‰€æœ‰åœ¨è·å°å¸«" + HIC + "â‰¡\n" NOR;  
                         for (i = 0; i < sizeof(virlist);i ++) 
                         {
                                 if( objectp(eob = find_player(virlist[i])) )
                                 {
-                                        str += HIY + eob->name() + HIY + "(" + virlist[i] + ")--ÔÚÏß--"; 
-                                        str += HIY "ÏÊ»¨ " + query("flowers/recognition", eob) + " ¶ä--"; 
-                                        str += HIY "³ô¼¦µ° " + query("flowers/antipathy", eob) + " ¸ö\n" NOR; 
+                                        str += HIY + eob->name() + HIY + "(" + virlist[i] + ")--åœ¨ç·š--"; 
+                                        str += HIY "é®®èŠ± " + query("flowers/recognition", eob) + " æœµ--"; 
+                                        str += HIY "è‡­é›è›‹ " + query("flowers/antipathy", eob) + " å€‹\n" NOR; 
                                 }
                                 else
                                 {
                                         eob = UPDATE_D->global_find_player(virlist[i]); 
                                         if( !objectp(eob) ) continue; 
-                                        str += HIY + eob->name() + HIY + "(" + virlist[i] + ") --ÀëÏßÊ±¼ä£º" + NOR; 
-                                        str += HIY + sprintf("%d", (time() - query("last_on", eob)) / 86400) + "Ìì--";
-                                        str += HIY "ÏÊ»¨ " + query("flowers/recognition", eob) + " ¶ä--"; 
-                                        str += HIY "³ô¼¦µ° " + query("flowers/antipathy", eob) + " ¸ö\n" NOR; 
+                                        str += HIY + eob->name() + HIY + "(" + virlist[i] + ") --é›¢ç·šæ™‚é–“ï¼š" + NOR; 
+                                        str += HIY + sprintf("%d", (time() - query("last_on", eob)) / 86400) + "å¤©--";
+                                        str += HIY "é®®èŠ± " + query("flowers/recognition", eob) + " æœµ--"; 
+                                        str += HIY "è‡­é›è›‹ " + query("flowers/antipathy", eob) + " å€‹\n" NOR; 
                                         UPDATE_D->global_destruct_player(eob, 1); 
                                 }
                         }
@@ -44,7 +44,7 @@ int main(object me, string arg)
         }
 
         if( amount < 1 )
-                return notify_fail(HIW "ÄãÄ¿Ç°ÓµÓĞ 0 ÕÅĞÂÊÖµ¼Ê¦ÆÀ¼ÛÆ±¡£\n" NOR);
+                return notify_fail(HIW "ä½ ç›®å‰æ“æœ‰ 0 å¼µæ–°æ‰‹å°å¸«è©•åƒ¹ç¥¨ã€‚\n" NOR);
 
         if( sscanf(arg, "-a %s", target) )
                 option = 1;
@@ -54,12 +54,12 @@ int main(object me, string arg)
                 return help(me);
 
         if( !objectp(ob = UPDATE_D->global_find_player(target)) ) 
-                return notify_fail("Ã»ÓĞÕâ¸öÈË£¡\n"); 
+                return notify_fail("æ²’æœ‰é€™å€‹äººï¼\n"); 
 
-        if( query("viremploy/job", ob) != "ĞÂÊÖµ¼Ê¦" )
+        if( query("viremploy/job", ob) != "æ–°æ‰‹å°å¸«" )
         {
                 UPDATE_D->global_destruct_player(ob, 1);
-                write("Ëû²»ÊÇĞÂÊÖµ¼Ê¦£¬ÄãÖ»ÄÜ¸øĞÂÊÖµ¼Ê¦Í¶ÆÀ¼ÛÆ±¡£(who -v¿É²éÑ¯ĞÂÊÖµ¼Ê¦)\n");
+                write("ä»–ä¸æ˜¯æ–°æ‰‹å°å¸«ï¼Œä½ åªèƒ½çµ¦æ–°æ‰‹å°å¸«æŠ•è©•åƒ¹ç¥¨ã€‚(who -vå¯æŸ¥è©¢æ–°æ‰‹å°å¸«)\n");
                 return 1;
         }
 
@@ -67,14 +67,14 @@ int main(object me, string arg)
         if( option )
         {
                 addn("flowers/recognition", 1, ob);
-                CHANNEL_D->channel_broadcast("news", me->query_idname() + "¶ÔĞÂÊÖµ¼Ê¦" + ob->query_idname()+"µÄ¹¤×÷±íÊ¾ÈÏ¿É£¬ËÍÉÏ"
-                        HIW"Ò»¶ä"HIY"ÃÀÀö"HIW"µÄ"HIG"ÏÊ"HIR"»¨"NOR"¡£\n");
+                CHANNEL_D->channel_broadcast("news", me->query_idname() + "å°æ–°æ‰‹å°å¸«" + ob->query_idname()+"çš„å·¥ä½œè¡¨ç¤ºèªå¯ï¼Œé€ä¸Š"
+                        HIW"ä¸€æœµ"HIY"ç¾éº—"HIW"çš„"HIG"é®®"HIR"èŠ±"NOR"ã€‚\n");
         }
         else
         {
                 addn("flowers/antipathy", 1, ob);
-                CHANNEL_D->channel_broadcast("news", me->query_idname() + "¶ÔĞÂÊÖµ¼Ê¦" + ob->query_idname()+"µÄ¹¤×÷¼«²»ÂúÒâ£¬ÈÓ¸ø"
-                        HIW"Ò»¸ö"HIY"¼«³ô"HIW"µÄ"HIG"³ô"HIR"¼¦µ°"NOR"¡£\n");
+                CHANNEL_D->channel_broadcast("news", me->query_idname() + "å°æ–°æ‰‹å°å¸«" + ob->query_idname()+"çš„å·¥ä½œæ¥µä¸æ»¿æ„ï¼Œæ‰”çµ¦"
+                        HIW"ä¸€å€‹"HIY"æ¥µè‡­"HIW"çš„"HIG"è‡­"HIR"é›è›‹"NOR"ã€‚\n");
         }
 
         UPDATE_D->global_destruct_player(ob, 1);  
@@ -84,8 +84,8 @@ int main(object me, string arg)
 
 int help(object me)
 {
-        write("flowers                 ²éÑ¯×Ô¼ºÓµÓĞĞÂÊÖµ¼Ê¦ÆÀ¼ÛÆ±Êı\n"
-              "flowers -a <id>         Í¶¸øĞÂÊÖµ¼Ê¦Ò»ÕÅÂúÒâµÄÆÀ¼ÛÆ±\n"
-              "flowers -o <id>         Í¶¸øĞÂÊÖµ¼Ê¦Ò»ÕÅ²»ÂúÒâµÄÆÀ¼ÛÆ±\n");
+        write("flowers                 æŸ¥è©¢è‡ªå·±æ“æœ‰æ–°æ‰‹å°å¸«è©•åƒ¹ç¥¨æ•¸\n"
+              "flowers -a <id>         æŠ•çµ¦æ–°æ‰‹å°å¸«ä¸€å¼µæ»¿æ„çš„è©•åƒ¹ç¥¨\n"
+              "flowers -o <id>         æŠ•çµ¦æ–°æ‰‹å°å¸«ä¸€å¼µä¸æ»¿æ„çš„è©•åƒ¹ç¥¨\n");
         return 1;
 }

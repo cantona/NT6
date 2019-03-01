@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ɽ��С·");
+        set("short", "山澗小路");
         set("long", @LONG
-С·�������ӷ��µ�ɽ��������ʱ������ˮ���䣬�ѵ��ϵ�·ʯȾ
-�ɵ�������ɫ��ɽ�����������де��ɰ��֣�̧ͷ������ʱ�з���Խ��
-������������ɽ·��������һ�鲻��Ĳ�ƺ��
+小路穿過蔓陀峰下的山澗，兩側時而有流水滑落，把地上的路石染
+成淡淡的綠色。山崖上是鬱鬱蔥蔥的鬆柏林，抬頭仰望，時有飛鳥越頂
+而過。北望下山路，下面是一塊不大的草坪。
 LONG );
         set("outdoors", "mantuo");
         set("no_clean_up", 0);

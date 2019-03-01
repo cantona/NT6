@@ -1,4 +1,4 @@
-// bagua.c °ËØÔÕó
+// bagua.c å…«å¦é™£
 
 #include <ansi.h>
 
@@ -18,42 +18,42 @@ int perform(object me, object target)
         }
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail("¡¸°ËØÔÕóÃ¢¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œå…«å¦é™£èŠ’ã€åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
  
         if( !objectp(weapon=query_temp("weapon", me)) || 
             query("skill_type", weapon) != "blade" )
-                return notify_fail("ÄãµÄ±øÆ÷²»¶Ô¡£\n");
+                return notify_fail("ä½ çš„å…µå™¨ä¸å°ã€‚\n");
 
         if( query("max_neili", me)<2000 )
-                return notify_fail("ÄãµÄÄÚÁ¦ĞŞÎª²»¹»¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¿®ç‚ºä¸å¤ ã€‚\n");
 
         if( query("neili", me)<400 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¡\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼\n");
 
         if ((int)me->query_skill("force") < 220)
-                return notify_fail("ÄãµÄÄÚ¹¦»ğºò²»¹»£¡\n");
+                return notify_fail("ä½ çš„å…§åŠŸç«å€™ä¸å¤ ï¼\n");
 
         if ((int)me->query_skill("zijinbagua-dao", 1) < 200)
-                return notify_fail("ÄãµÄ×Ï½ğ°ËØÔµ¶»¹²»µ½¼Ò£¬ÎŞ·¨Ê¹ÓÃ¡¸°ËØÔÕóÃ¢¡¹£¡\n");
+                return notify_fail("ä½ çš„ç´«é‡‘å…«å¦åˆ€é‚„ä¸åˆ°å®¶ï¼Œç„¡æ³•ä½¿ç”¨ã€Œå…«å¦é™£èŠ’ã€ï¼\n");
 
         if (me->query_skill_mapped("blade") != "zijinbagua-dao")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢×Ï½ğ°ËØÔµ¶£¬ÎŞ·¨Ê¹ÓÃ¡¸°ËØÔÕóÃ¢¡¹£¡\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼ç´«é‡‘å…«å¦åˆ€ï¼Œç„¡æ³•ä½¿ç”¨ã€Œå…«å¦é™£èŠ’ã€ï¼\n");
 
-        msg = MAG "$N" MAG "Ò»Éù±©ºÈ£¬ÊÖÖĞµÄ" + weapon->name() +
-              MAG "µ¶Ã¢¶¸³¤£¬¶ÙÊ±Ö»¼ûÍò¹ÉÁèÀ÷µÄµ¶Ã¢°´ÕÕ°ËØÔÕóµÄ"
-              "·½Î»Ö±Ó¿$n" MAG "£¡\n\n" NOR;
+        msg = MAG "$N" MAG "ä¸€è²æš´å–ï¼Œæ‰‹ä¸­çš„" + weapon->name() +
+              MAG "åˆ€èŠ’é™¡é•·ï¼Œé “æ™‚åªè¦‹è¬è‚¡å‡Œå²çš„åˆ€èŠ’æŒ‰ç…§å…«å¦é™£çš„"
+              "æ–¹ä½ç›´æ¹§$n" MAG "ï¼\n\n" NOR;
 
         ap = attack_power(me, "blade");
         dp = defense_power(target, "parry");
         
         if (ap / 2 + random(ap) > dp)
         {
-                msg += HIR "$n" HIR "¼ûÀ´ÕĞÊµÔÚÊÇ±ä»ÃÄª²â£¬²»ÓÉµÃĞÄ"
-                       "Éú¾åÒâ£¬ÕĞÊ½µÇÊ±³öÁËÆÆÕÀ£¡\n" NOR;
+                msg += HIR "$n" HIR "è¦‹ä¾†æ‹›å¯¦åœ¨æ˜¯è®Šå¹»è«æ¸¬ï¼Œä¸ç”±å¾—å¿ƒ"
+                       "ç”Ÿæ‡¼æ„ï¼Œæ‹›å¼ç™»æ™‚å‡ºäº†ç ´ç¶»ï¼\n" NOR;
                 count = me->query_skill("zijinbagua-dao", 1) / 6;
         } else
         {
-                msg += HIY "$n" HIY "ĞÄµ×Î¢Î¢Ò»¾ª£¬´òÆğ¾«ÉñĞ¡ĞÄ½ÓÕĞ¡£\n" NOR;
+                msg += HIY "$n" HIY "å¿ƒåº•å¾®å¾®ä¸€é©šï¼Œæ‰“èµ·ç²¾ç¥å°å¿ƒæ¥æ‹›ã€‚\n" NOR;
                 count = 0;
         }
 

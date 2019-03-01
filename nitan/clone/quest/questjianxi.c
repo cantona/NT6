@@ -2,7 +2,7 @@
 //last modified by sega 13/4/2000
 // Modified by Zeratul Jan 5 2001
 
-//ĞŞ¸Ä³É²»ÄÜ°ïÃ¦É±
+//ä¿®æ”¹æˆä¸èƒ½å¹«å¿™æ®º
 #include <dbase.h>
 #include <login.h>
 #include <ansi.h>
@@ -12,18 +12,18 @@ inherit F_CLEAN_UP;
 inherit F_UNIQUE;
 int ask_me(object who);
 string * name_msg = ({
-        "Á÷Ã¥",
-        "½øÏã¿Í",
-        "Ìô·ò",
-        "¼Ò¶¡",
-        "¹Ù±ø",
-        "Âô»¨¹ÃÄï",
-        "ÌË×ÓÊÖ",
-        "Ğ¡··",
-        "µ¶¿Í",
-        "½£¿Í",
-        "ÓÎ·½ºÍÉĞ",
-        "½­ºşºÀ¿Í",
+        "æµæ°“",
+        "é€²é¦™å®¢",
+        "æŒ‘å¤«",
+        "å®¶ä¸",
+        "å®˜å…µ",
+        "è³£èŠ±å§‘å¨˜",
+        "è¶Ÿå­æ‰‹",
+        "å°è²©",
+        "åˆ€å®¢",
+        "åŠå®¢",
+        "éŠæ–¹å’Œå°š",
+        "æ±Ÿæ¹–è±ªå®¢",
 });
 
 string * long_id = ({
@@ -46,14 +46,14 @@ void create()
         int i;
         i = random(sizeof(name_msg));
         set_name(name_msg[i], ({ long_id[i]}) );
-        set("gender", random(2)>0 ? "Å®ĞÔ" : "ÄĞĞÔ" );
+        set("gender", random(2)>0 ? "å¥³æ€§" : "ç”·æ€§" );
         set("attitude", "friendly");
         set("chat_chance", 30);
         set("chat_msg", ({
           (:call_out,"random_move",0:),
                 }) );
                set("inquiry", ([
-                "¼éÏ¸"    : (: ask_me :),
+                "å§¦ç´°"    : (: ask_me :),
                 "jian xi" : (: ask_me :),
                 "jianxi"  : (: ask_me :),
         ]) );
@@ -79,7 +79,7 @@ int ask_me(object who)
 
         if( query("owner", this_object()) == query("id", me) )
         {
-                message_vision(HIY"$NÑÛÖĞÍ»È»ÉÁ¹ı¾ª¾åµÄÄ¿¹â£¬Ë«ÑÛÃ°»ğ°ãµÉ×Å$n£¬´óÉùº°µÀ£º"+RANK_D->query_self_rude(ob)+"¾ÍÊÇ"+query("fname", ob)+"£¡"+RANK_D->query_rude(me)+"£¡ÄÉÃüÀ´°É£¡\n"NOR,ob,me);
+                message_vision(HIY"$Nçœ¼ä¸­çªç„¶é–ƒéé©šæ‡¼çš„ç›®å…‰ï¼Œé›™çœ¼å†’ç«èˆ¬çªè‘—$nï¼Œå¤§è²å–Šé“ï¼š"+RANK_D->query_self_rude(ob)+"å°±æ˜¯"+query("fname", ob)+"ï¼"+RANK_D->query_rude(me)+"ï¼ç´å‘½ä¾†å§ï¼\n"NOR,ob,me);
                 me->start_busy(1);        
     ob->fight_ob(me);         
 //                me->fight_ob(ob);        
@@ -94,7 +94,7 @@ int ask_me(object who)
       addn_temp("apply/dodge", 100, ob);
     else 
       addn_temp("apply/dodge", 50, ob);
-                set("title",query("family_name",  ob)+"¼éÏ¸", ob);
+                set("title",query("family_name",  ob)+"å§¦ç´°", ob);
                 set("name",query("fname",  ob), ob);
                 if ( mapp(map_status = ob->query_skill_map()) ) {
                         mname  = keys(map_status);
@@ -117,7 +117,7 @@ int ask_me(object who)
     set_temp("asked", 1, ob);
         }
         else
-                message_vision(HIY"$NÑÛÖĞº®¹âÒ»ÉÁ£¬ÂíÉÏÓÖ±äµÃÄ®È»ÁË£¬Ö»ÊÇÆæ¹ÖµØ¿´×Å$n¡£\n"NOR, ob, me);
+                message_vision(HIY"$Nçœ¼ä¸­å¯’å…‰ä¸€é–ƒï¼Œé¦¬ä¸Šåˆè®Šå¾—æ¼ ç„¶äº†ï¼Œåªæ˜¯å¥‡æ€ªåœ°çœ‹è‘—$nã€‚\n"NOR, ob, me);
         return 1;
 }
 
@@ -144,7 +144,7 @@ void init()
 }
 int accept_hit(object me)
 {
-        notify_fail(HIW"²»ÊÇÄãÒª×¥µÄÈË£¬´ÕÊ²Ã´ÈÈÄÖ£¡\n"NOR);
+        notify_fail(HIW"ä¸æ˜¯ä½ è¦æŠ“çš„äººï¼Œæ¹Šä»€éº¼ç†±é¬§ï¼\n"NOR);
         if( query("owner", this_object()) == query("id", me )
          && query_temp("asked", this_object()) )
         {
@@ -165,7 +165,7 @@ int do_halt()
         
         if ( me->is_fighting(ob)  )
         {
-                tell_object( me, HIR"¼éÏ¸Î´³ı£¬ÔõÄÜÁÙÕóÍËËõ£¿\n"NOR );
+                tell_object( me, HIR"å§¦ç´°æœªé™¤ï¼Œæ€èƒ½è‡¨é™£é€€ç¸®ï¼Ÿ\n"NOR );
                 return 1;
         }
         return 0;
@@ -173,6 +173,6 @@ int do_halt()
 
 void dest_me(object ob)
 {
-        message_vision("Ö»¼û$NºöÈ»¼±×ªÉíĞĞ£¬×İÉí×ê½øĞĞÈËÖĞ£¬×ªÑÛ¾Í×Ù¼£½ÔÎŞ¡£\n",ob);
+        message_vision("åªè¦‹$Nå¿½ç„¶æ€¥è½‰èº«è¡Œï¼Œç¸±èº«é‘½é€²è¡Œäººä¸­ï¼Œè½‰çœ¼å°±è¹¤è·¡çš†ç„¡ã€‚\n",ob);
         destruct(ob);
 }

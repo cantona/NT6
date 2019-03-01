@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-    set("short", "��ʯ��");
+    set("short", "青石地");
         set("long", @LONG
-����һƬ��ʯ�أ������޳���б�͵�ɨ��ʯ��ӳ�գ���Ӱѩɽ��
-���������߱���Ŀ��ѩ������Ů���ڼ����Ҵ���ȥ���������Ҳ��
-�����ܼ���
+這是一片青石地，靜穆無塵。斜暉淡掃，石欄映日，輝影雪山。
+三三兩兩高鼻深目，雪膚金發男女教眾急步匆匆來去，所配兵器也非
+中土能見。
 LONG );
     set("exits", ([
         "southwest" : __DIR__"mjleimen1",

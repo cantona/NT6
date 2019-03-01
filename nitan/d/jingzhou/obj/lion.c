@@ -6,10 +6,10 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIC"Ê¯Ê¨×Ó"NOR, ({"shi shizi", "stone lion"}));
-        set("unit", "×ù");
+        set_name(HIC"çŸ³ç…å­"NOR, ({"shi shizi", "stone lion"}));
+        set("unit", "åº§");
         set("no_get", 1);
 
-        set("long", "ÕâÊÇÒ»×ùèòèòÈçÉúµÄÊ¯Ê¨×Ó£¬ÕÅÑÀÎè×¦µÄ¡£\n");
+        set("long", "é€™æ˜¯ä¸€åº§æ ©æ ©å¦‚ç”Ÿçš„çŸ³ç…å­ï¼Œå¼µç‰™èˆçˆªçš„ã€‚\n");
         setup();
 }

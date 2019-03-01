@@ -14,7 +14,7 @@ int update_condition(object me, int duration)
         {
                 if( query_temp("gb_songxin", me) )
                 {
-                        tell_object(me, HIY "ÄãÊ±¼äÒÑ¹ı£¬ÈÎÎñÊ§Ğ§£¡\n" NOR);
+                        tell_object(me, HIY "ä½ æ™‚é–“å·²éï¼Œä»»å‹™å¤±æ•ˆï¼\n" NOR);
                 }
                 delete_temp("gb_songxin", me);
                 delete_temp("songxin_name", me);
@@ -36,7 +36,7 @@ int update_condition(object me, int duration)
         {
                 if( query("tili", me)<80 )
                 {
-                        tell_object(me, RED "ÄãÕâÑù¼±ĞĞËÍĞÅ£¬ÏûºÄÌ«¶à¾«Á¦£¬²»ÓÉÏëÍ£ÏÂÀ´ĞªÒ»ÏÂ£¡\n" NOR);
+                        tell_object(me, RED "ä½ é€™æ¨£æ€¥è¡Œé€ä¿¡ï¼Œæ¶ˆè€—å¤ªå¤šç²¾åŠ›ï¼Œä¸ç”±æƒ³åœä¸‹ä¾†æ­‡ä¸€ä¸‹ï¼\n" NOR);
                         set_temp("wait", 1, me);
                         me->start_busy(1);
                 }
@@ -47,14 +47,14 @@ int update_condition(object me, int duration)
                 }
         } 
 */
-//¼õÉÙ±»µÁµÄ»úÂÊ
+//æ¸›å°‘è¢«ç›œçš„æ©Ÿç‡
         if(duration > time/7 && present("secret letter", me) &&
                 !query_temp("wait", me) && duration<time && 
                 !query_temp("songxin_zuji", me) && random(10)>7 && 
                 (interactive(me)) && !query("no_fight", environment(me)) && 
-                query("disable_type", me) != "<»èÃÔ²»ĞÑ>" )
+                query("disable_type", me) != "<æ˜è¿·ä¸é†’>" )
         {
-                tell_object(me, HIY "Äã¾õµÄÓĞĞ©²»Ãî£¬ËÆºõ±»ÈË¸ú×ÙÉÏÁË£¡\n" NOR);
+                tell_object(me, HIY "ä½ è¦ºçš„æœ‰äº›ä¸å¦™ï¼Œä¼¼ä¹è¢«äººè·Ÿè¹¤ä¸Šäº†ï¼\n" NOR);
                 me->start_busy(1);
                 call_out("zuji", 0, me);    
         }
@@ -67,11 +67,11 @@ void zuji(object me)
         object obj; 
         if (present("secret letter", me)) 
         {
-                tell_object(me,"ÄãÒşÔ¼¸Ğ¾õµ½ÓĞÈËÎ§ÁË¹ıÀ´¡£¡£!!! \n");
+                tell_object(me,"ä½ éš±ç´„æ„Ÿè¦ºåˆ°æœ‰äººåœäº†éä¾†ã€‚ã€‚!!! \n");
                 if (random(10)>9)
                 {
 //this is killer kill npc
-                        tell_object(me, RED "Ôã¸â£¡ÓĞÈËÒªÇÀĞÅ!\n" NOR);
+                        tell_object(me, RED "ç³Ÿç³•ï¼æœ‰äººè¦æ¶ä¿¡!\n" NOR);
 
                         obj = new("/kungfu/class/gaibang/npc/npc1");
                         set("target", me, obj);
@@ -88,7 +88,7 @@ void zuji(object me)
 //this is stealer steal letter
                         obj = present("secret letter", me);
                         destruct(obj);
-                        tell_object(me,RED"Äã½ôÕÅÆğÀ´£¬²»ÓÉÒ»ÃşÒÂ´ü£¬²»ºÃ£¡ĞÅ±»ÍµÁË!\n"NOR);
+                        tell_object(me,RED"ä½ ç·Šå¼µèµ·ä¾†ï¼Œä¸ç”±ä¸€æ‘¸è¡£è¢‹ï¼Œä¸å¥½ï¼ä¿¡è¢«å·äº†!\n"NOR);
                         set_temp("songxin_zuji", 1, me);
                         obj = new("/kungfu/class/gaibang/npc/snpc1");
                         set("target", me, obj);
@@ -111,7 +111,7 @@ void zuji(object me)
         }
         else
         {
-                tell_object(me,"ĞÅÒÑËÍ³ö£¬ÄãÇìĞÒµÄ¶ã¹ıÁËÒ»´Î×·É±!\n");
+                tell_object(me,"ä¿¡å·²é€å‡ºï¼Œä½ æ…¶å¹¸çš„èº²éäº†ä¸€æ¬¡è¿½æ®º!\n");
         }   
     return;
 }
@@ -120,7 +120,7 @@ void killer_clone(object me)
 {
         object obj;
 
-        tell_object(me,"Ôã¸â£¬ÓÖ³åÉÏÀ´ÁË¸öÈË¡£¡£!!! \n");
+        tell_object(me,"ç³Ÿç³•ï¼Œåˆæ²–ä¸Šä¾†äº†å€‹äººã€‚ã€‚!!! \n");
         obj = new("/kungfu/class/gaibang/npc/npc2");
         set("target", me, obj);
         obj->move(environment(me));
@@ -131,7 +131,7 @@ void stealer_clone(object me)
 {
         object obj;
 
-        tell_object(me,"Ôã¸â£¬ÓÖ³åÉÏÀ´ÁË¸öÈË¡£¡£!!! \n");
+        tell_object(me,"ç³Ÿç³•ï¼Œåˆæ²–ä¸Šä¾†äº†å€‹äººã€‚ã€‚!!! \n");
         obj = new("/kungfu/class/gaibang/npc/snpc2");
         set("target", me, obj);
         obj->move(environment(me));

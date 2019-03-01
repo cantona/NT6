@@ -6,14 +6,14 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("ÕÅ³ËÔÆ", ({"zhang chengyun", "zhang", "chengyun", "yun"}));
-        set("nickname", WHT "°×Ô³ÉñÄ§" NOR );
-        set("title", "ÈÕÔÂÉñ½ÌÇ°±²³¤ÀÏ");
+        set_name("å¼µä¹˜é›²", ({"zhang chengyun", "zhang", "chengyun", "yun"}));
+        set("nickname", WHT "ç™½çŒ¿ç¥é­”" NOR );
+        set("title", "æ—¥æœˆç¥æ•™å‰è¼©é•·è€");
         set("long", @LONG
-°×Ô³ÉñÄ§ÕÅ³ËÔÆÊÇÈÕÔÂÉñ½ÌµÄÇ°±²³¤ÀÏ£¬Îä¹¦
-¸ßÇ¿£¬Î»×ğÎŞ±È¡£ÔøÒ»¶ÈÉ¨³ıÎåÔÀ½£ÅÉÁªÃË¡£
+ç™½çŒ¿ç¥é­”å¼µä¹˜é›²æ˜¯æ—¥æœˆç¥æ•™çš„å‰è¼©é•·è€ï¼Œæ­¦åŠŸ
+é«˜å¼·ï¼Œä½å°Šç„¡æ¯”ã€‚æ›¾ä¸€åº¦æƒé™¤äº”å²³åŠæ´¾è¯ç›Ÿã€‚
 LONG);
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("class", "scholar");
         set("age", 61);
         set("attitude", "friendly");
@@ -59,14 +59,14 @@ LONG);
         prepare_skill("claw", "poyue-zhao");
         prepare_skill("cuff", "zhenyu-quan");
 
-        create_family("ÈÕÔÂÉñ½Ì", 7, "Ç°±²³¤ÀÏ");
+        create_family("æ—¥æœˆç¥æ•™", 7, "å‰è¼©é•·è€");
 
         set_temp("apply/damage", 200);
         set_temp("apply/unarmed_damage", 100);
         set_temp("apply/armor", 200);
 
         set("inquiry", ([
-                "Ç¬À¤Ò»»÷" : "ÄãÈ¥ÈÃÎÒÊ¦ĞÖ½ÌÄã°É¡£",
+                "ä¹¾å¤ä¸€æ“Š" : "ä½ å»è®“æˆ‘å¸«å…„æ•™ä½ å§ã€‚",
         ]));
 
         set("chat_chance_combat", 120);
@@ -90,16 +90,16 @@ void attempt_apprentice(object ob)
         if (! permit_recruit(ob))
                 return;
 
-        command("say ×ß¿ª£¬ÎÒ²»ÊÕÍ½¡£");
+        command("say èµ°é–‹ï¼Œæˆ‘ä¸æ”¶å¾’ã€‚");
 }
 
 
 int recognize_apprentice(object ob, string skill)
 {
-        if( query("family/family_name", ob) != "ÈÕÔÂÉñ½Ì" )
+        if( query("family/family_name", ob) != "æ—¥æœˆç¥æ•™" )
         {
                 command("killair");
-                command("say ¸øÎÒ¹ö¿ª£¬ÉÙÔÚÀÏ·òÃæÇ°ËµÈıµÀËÄ£¡");
+                command("say çµ¦æˆ‘æ»¾é–‹ï¼Œå°‘åœ¨è€å¤«é¢å‰èªªä¸‰é“å››ï¼");
                 return -1;
         }
 
@@ -107,34 +107,34 @@ int recognize_apprentice(object ob, string skill)
             && query("family/master_id", ob) != "xiangwentian" )
         {
                 command("sneer");
-                command("say Äã»¹²»Åä¡£");
+                command("say ä½ é‚„ä¸é…ã€‚");
                 return -1; 
         }
 
         if( query("shen", ob)>-60000 )
         {
                 command("hmm");
-                command("say ÀÏ·òÉúÆ½×îÍ´ºŞµÄ¾ÍÊÇÄãÕâÑùµÄ¼ÙÈÊ¼ÙÒåÖ®Í½£¡");
+                command("say è€å¤«ç”Ÿå¹³æœ€ç—›æ¨çš„å°±æ˜¯ä½ é€™æ¨£çš„å‡ä»å‡ç¾©ä¹‹å¾’ï¼");
                 return -1;
         }
 
         if (skill != "club" && skill != "jinyuan-gun")
         {
                 command("hmm");
-                command("say ÎÒÖ»´«ÊÚÄãÕâÌ×¹÷·¨£¬ÆäÓàµÄÕÒÄãÊ¦¸¸Ñ§È¥¡£");
+                command("say æˆ‘åªå‚³æˆä½ é€™å¥—æ£æ³•ï¼Œå…¶ä½™çš„æ‰¾ä½ å¸«çˆ¶å­¸å»ã€‚");
                 return -1;
         }
 
         if (skill == "club" && ob->query_skill("club", 1) > 179)
         {
-                command("say Äã¹÷·¨µÄÔìÒèÒÑ¾­·ÇÍ¬·²ÏìÁË£¬Ê£ÏÂ¾Í×Ô¼ºÈ¥Á·°É¡£");
+                command("say ä½ æ£æ³•çš„é€ è©£å·²ç¶“éåŒå‡¡éŸ¿äº†ï¼Œå‰©ä¸‹å°±è‡ªå·±å»ç·´å§ã€‚");
                 return -1;
         }
 
         if( !query_temp("can_learn/zhangchengfeng", ob) )
         {
                 command("nod");
-                command("say ÄîÔÚÄãÓĞĞÄÎª±¾½Ì³öÁ¦£¬ÎÒ¾Í´«ÄãÕâÌ×½ğÔ³¹÷·¨¡£");
+                command("say å¿µåœ¨ä½ æœ‰å¿ƒç‚ºæœ¬æ•™å‡ºåŠ›ï¼Œæˆ‘å°±å‚³ä½ é€™å¥—é‡‘çŒ¿æ£æ³•ã€‚");
                 set_temp("can_learn/zhangchengfeng", 1, ob);
         }
         return 1;

@@ -23,11 +23,11 @@ void init()
 
 void create()
 {
-        set_name("Ò°ÊŞ", ({"ye shou", "shou"}));
-        set("race", "Ò°ÊŞ");
+        set_name("é‡ç¸", ({"ye shou", "shou"}));
+        set("race", "é‡ç¸");
         set("age", 100);
         set_weight(150000);
-        set("long", "Ò»Ö»ÃæÄ¿²»ÇåµÄÒ°ÊŞ¡£\n");
+        set("long", "ä¸€åªé¢ç›®ä¸æ¸…çš„é‡ç¸ã€‚\n");
         set("combat_exp", 1000);
         set("wildness", 5);
         set("loyalty", 5);
@@ -62,14 +62,14 @@ int train_it(object ob, object me, int pts)
                 if(me->is_fighting()) me->remove_all_enemy();
                 me->set_lord(ob);
                 if(!(msg_trained = me->query("msg_trained")))
-                        msg_trained = "$NÑ±·şÁË$n";
+                        msg_trained = "$Né¦´æœäº†$n";
                  
-                message_vision(msg_trained + "¡£\n", ob, me);
+                message_vision(msg_trained + "ã€‚\n", ob, me);
 
                 if(me->query("auto_follow"))
                 {
                         me->set_leader(ob);
-                        message_vision("$n³¯$N×ßÁË¹ıÀ´¡£\n", ob, me);
+                        message_vision("$næœ$Nèµ°äº†éä¾†ã€‚\n", ob, me);
                 }
         }
         return 1;
@@ -79,21 +79,21 @@ int do_gen(string arg)
 {
         object vc, me, ob = this_player();
 
-        if (!arg ) return notify_fail("ÄãÏëÈÃË­¸ú×ÅÄã×ß£¿\n");
+        if (!arg ) return notify_fail("ä½ æƒ³è®“èª°è·Ÿè‘—ä½ èµ°ï¼Ÿ\n");
         if(!objectp(me = present(arg, environment(ob))))
-                return notify_fail("ÕâÀïÃ»ÓĞÕâ¸öÉúÎï¡£\n");
+                return notify_fail("é€™è£¡æ²’æœ‰é€™å€‹ç”Ÿç‰©ã€‚\n");
         if( !me->is_character() || me->is_corpse() )
-                return notify_fail("¿´Çå³şÒ»µã£¬ÄÇ²¢²»ÊÇ»îÎï¡£\n");
-        if(ob==me) return notify_fail("Õâ¸öºÃ°ì¡£\n");
-        message_vision("$NÏò$nÕĞÁËÕĞÊÖ¡£\n", ob, me);
+                return notify_fail("çœ‹æ¸…æ¥šä¸€é»ï¼Œé‚£ä¸¦ä¸æ˜¯æ´»ç‰©ã€‚\n");
+        if(ob==me) return notify_fail("é€™å€‹å¥½è¾¦ã€‚\n");
+        message_vision("$Nå‘$næ‹›äº†æ‹›æ‰‹ã€‚\n", ob, me);
         if(me->query_lord() == ob)
         {
                 me->set_leader(ob);
-                message_vision("$n³¯$N×ßÁË¹ıÀ´¡£\n", ob, me);
+                message_vision("$næœ$Nèµ°äº†éä¾†ã€‚\n", ob, me);
         }
         else
         {
-                message_vision("$n¶Ô$N²ÇÒ²²»²Ç¡£\n", ob, me);
+                message_vision("$nå°$Nç¬ä¹Ÿä¸ç¬ã€‚\n", ob, me);
         }
         return 1;
 }
@@ -102,31 +102,31 @@ int do_stop(string arg)
 {
         object vc, me, ob = this_player();
 
-        if (!arg ) return notify_fail("ÄãÏëÈÃË­Í£ÏÂÀ´£¿\n");
+        if (!arg ) return notify_fail("ä½ æƒ³è®“èª°åœä¸‹ä¾†ï¼Ÿ\n");
         if(!objectp(me = present(arg, environment(ob))))
-                return notify_fail("ÕâÀïÃ»ÓĞÕâ¸öÉúÎï¡£\n");
+                return notify_fail("é€™è£¡æ²’æœ‰é€™å€‹ç”Ÿç‰©ã€‚\n");
         if( !me->is_character() || me->is_corpse() )
-                return notify_fail("¿´Çå³şÒ»µã£¬ÄÇ²¢²»ÊÇ»îÎï¡£\n");
-        if(ob==me) return notify_fail("ÓÃhaltÃüÁî¡£\n");
+                return notify_fail("çœ‹æ¸…æ¥šä¸€é»ï¼Œé‚£ä¸¦ä¸æ˜¯æ´»ç‰©ã€‚\n");
+        if(ob==me) return notify_fail("ç”¨haltå‘½ä»¤ã€‚\n");
 
-        message_vision("$NÅÄÒ»ÅÄ$nµÄÍ·¡£\n", ob, me);
+        message_vision("$Næ‹ä¸€æ‹$nçš„é ­ã€‚\n", ob, me);
         if(me->query_lord() == ob)
         {
                 if (me->is_fighting())
                 {
                         me->remove_all_enemy();
-                        message_vision("$NËõÔÚ$nµÄ½Å±ß²»Ò§ÈËÁË¡£\n",me,ob);
+                        message_vision("$Nç¸®åœ¨$nçš„è…³é‚Šä¸å’¬äººäº†ã€‚\n",me,ob);
                         return 1;
                 }
                 else
                 {
-                        message_vision("$nÒÉ»óµØ¿´×Å$N¡£\n", ob, me);
+                        message_vision("$nç–‘æƒ‘åœ°çœ‹è‘—$Nã€‚\n", ob, me);
                         return 1;
                 }
         }
         else
         {
-                 message_vision("$n¶Ô$N²ÇÒ²²»²Ç¡£\n", ob, me);
+                 message_vision("$nå°$Nç¬ä¹Ÿä¸ç¬ã€‚\n", ob, me);
         }
         return 1;
 }
@@ -138,21 +138,21 @@ int do_yao(string victim)
 
         if(! victim)
         {
-                message_vision("Ò§Ë­£¿\n", ob, me);
+                message_vision("å’¬èª°ï¼Ÿ\n", ob, me);
                 return 1;
         }
         if(!(vc = present(victim,environment(me))))
         {
-                message_vision("$NÅÄÅÄ$nµÄÍ·¡£\n", ob, me);
-                write(me->name()+"ÕÒ²»µ½Õâ¸öÈË¡£\n");
+                message_vision("$Næ‹æ‹$nçš„é ­ã€‚\n", ob, me);
+                write(me->name()+"æ‰¾ä¸åˆ°é€™å€‹äººã€‚\n");
                 return 1;
         }
         if (vc == ob)
         {
-                message_vision("$NÅÄÅÄ$nµÄÍ·£¬ÓÖÖ¸ÁËÖ¸×Ô¼º¡£\n", ob, me);
+                message_vision("$Næ‹æ‹$nçš„é ­ï¼ŒåˆæŒ‡äº†æŒ‡è‡ªå·±ã€‚\n", ob, me);
                 if(me->query_lord()==ob)
                 {
-                        message_vision("$nÒÉ»óµØ¿´×Å$N¡£\n", ob, me);
+                        message_vision("$nç–‘æƒ‘åœ°çœ‹è‘—$Nã€‚\n", ob, me);
                         return 1;
                 }
                 remove_call_out("biting");
@@ -161,21 +161,21 @@ int do_yao(string victim)
         }
         if (vc == me)
         {
-                message_vision("$NÅÄÅÄ$nµÄÍ·£¬Ö¸ÁËÖ¸ËüµÄÎ²°Í¡£\n", ob, me);
-                message_vision("$nÒ§×Å×Ô¼ºµÄÎ²°Í×ªÁËÒ»¸öÈ¦¡£\n", ob, me);
+                message_vision("$Næ‹æ‹$nçš„é ­ï¼ŒæŒ‡äº†æŒ‡å®ƒçš„å°¾å·´ã€‚\n", ob, me);
+                message_vision("$nå’¬è‘—è‡ªå·±çš„å°¾å·´è½‰äº†ä¸€å€‹åœˆã€‚\n", ob, me);
                 return 1;
         }
 
-        message_vision("$NÅÄÅÄ$nµÄÍ·£¬ÓÖÖ¸ÁËÖ¸" + vc->query("name") +
-                "¡£\n", ob, me);
+        message_vision("$Næ‹æ‹$nçš„é ­ï¼ŒåˆæŒ‡äº†æŒ‡" + vc->query("name") +
+                "ã€‚\n", ob, me);
         if(me->query_lord() != ob)
         {
 //                atk = 9;
 //        else {
 //                atk = random(10);
-//                message_vision("$nÒÉ»óµØ¿´ÁË¿´$N£¬", vc, me);
-//                message_vision("ÓÖ¿´ÁË¿´$N¡£\n", ob, me);
-                message_vision("$n¶Ô$N²ÇÒ²²»²Ç¡£\n", ob, me);
+//                message_vision("$nç–‘æƒ‘åœ°çœ‹äº†çœ‹$Nï¼Œ", vc, me);
+//                message_vision("åˆçœ‹äº†çœ‹$Nã€‚\n", ob, me);
+                message_vision("$nå°$Nç¬ä¹Ÿä¸ç¬ã€‚\n", ob, me);
                 return 1;
 //                if(atk > 6)  vc = ob;
         }
@@ -185,7 +185,7 @@ int do_yao(string victim)
 //                if(me->query_lord() == vc) vc = ob;
                 remove_call_out("biting");
                 call_out("biting",1,me,vc);
-                message_vision("$nÏò$NÆËÁË¹ıÈ¥¡£\n", vc, me);
+                message_vision("$nå‘$Næ’²äº†éå»ã€‚\n", vc, me);
         }
         return 1;
 }
@@ -197,7 +197,7 @@ int do_ting()
         if(me->query_lord()==ob && !me->query("rider"))
         {
                 me->set_leader(0);
-                message_vision("$N¶Ô$n»ÓÁË»ÓÊÖ£¬$n´¹Ê××ß¿ªÁË¡£\n", ob, me);
+                message_vision("$Nå°$næ®äº†æ®æ‰‹ï¼Œ$nå‚é¦–èµ°é–‹äº†ã€‚\n", ob, me);
                 return 1;
         }
         return 0;
@@ -214,7 +214,7 @@ int do_fang()
                 me->set_leader(0);
                 if (me->query("rider") == ob) me->delete("rider");
                 if (ob->query("rided") == me) ob->delete("rided");
-                message_vision("$NÔÚ$n¶ú±ßÇáÉùËµÁË¼¸¾ä£¬$n´¹Ê××ß¿ªÁË¡£\n", ob, me);
+                message_vision("$Nåœ¨$nè€³é‚Šè¼•è²èªªäº†å¹¾å¥ï¼Œ$nå‚é¦–èµ°é–‹äº†ã€‚\n", ob, me);
                 me->set_temp("prelord",ob->query("id"));
                 return 1;
         }

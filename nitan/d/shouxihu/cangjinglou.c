@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�ؾ�¥");
+        set("short", "藏經樓");
         set("long", @LONG
-�����²ؾ�֮�������º�����ƥ�����ﶼ���������飬�߼������
-��ܣ���ܼ��������һ��ͨ�еĿ�϶�����Ŵ�����м䣬����ط���
-���ɳ���������
+大明寺藏經之富，天下罕有其匹。這裡都是密密麻麻，高及頂棚的
+書架，書架間僅有容身一人通行的空隙。幾排大書架中間，間隔地放著
+數丈長的書桌。
 LONG );
         set("exits", ([
                 "south" : __DIR__"daxiongbaodian",

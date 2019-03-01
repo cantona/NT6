@@ -13,7 +13,7 @@ int main(object me, string arg)
         int time;
 
         if (! arg)
-                return notify_fail("ÄãÒª°ÑË­´ø³öµØÓü£¿\n");
+                return notify_fail("ä½ è¦æŠŠèª°å¸¶å‡ºåœ°ç„ï¼Ÿ\n");
 
         time = 0;
         if (sscanf(arg, "%s %s", arg, tstr) == 2)
@@ -33,13 +33,13 @@ int main(object me, string arg)
 
         ob = find_player(arg);
         if (! ob && wiz_level(me) < 1)
-                return notify_fail("Ã»ÓĞÕâ¸öÍæ¼Ò¡£\n");
+                return notify_fail("æ²’æœ‰é€™å€‹ç©å®¶ã€‚\n");
 
         if (! ob)
         {
                 ob = UPDATE_D->global_find_player(arg);
                 if (! objectp(ob))
-                        return notify_fail("Ã»ÓĞÕâ¸öÍæ¼Ò¡£\n");
+                        return notify_fail("æ²’æœ‰é€™å€‹ç©å®¶ã€‚\n");
 
                 ob->move(environment(me));
         }
@@ -47,22 +47,22 @@ int main(object me, string arg)
         if (! ob || ! me->visible(ob))
         {
                 UPDATE_D->global_destruct_player(ob);
-                return notify_fail("Ã»ÓĞÕâ¸öÍæ¼Ò¡£\n");
+                return notify_fail("æ²’æœ‰é€™å€‹ç©å®¶ã€‚\n");
         }
 
         if (! ob->is_in_prison())
         {
                 UPDATE_D->global_destruct_player(ob);
-                return notify_fail("Õâ¸öÍæ¼ÒÏÖÔÚÃ»ÓĞ±»½û±Õ¡£\n");
+                return notify_fail("é€™å€‹ç©å®¶ç¾åœ¨æ²’æœ‰è¢«ç¦é–‰ã€‚\n");
         }
 
         if (! SECURITY_D->valid_grant(me, "(arch)"))
         {
                 if (! objectp(card = present("help card", me)))
-                        return notify_fail("ÄãÃ»ÓĞÈ¨Àû°ÑÈË·Å³öÀ´¡£\n");
+                        return notify_fail("ä½ æ²’æœ‰æ¬Šåˆ©æŠŠäººæ”¾å‡ºä¾†ã€‚\n");
 
-                message_vision("$NÃş³öÒ»ÕÅ¿¨Æ¬£¬Æ´ÃüÄîß¶£ºÌ«ÉÏÀÏ¾ı¾ÈÃü°¡£¬" +
-                               ob->name(1) + "ÕæÊÇÎŞ¹¼°¡£¡\n", me);
+                message_vision("$Næ‘¸å‡ºä¸€å¼µå¡ç‰‡ï¼Œæ‹¼å‘½å¿µå¨ï¼šå¤ªä¸Šè€å›æ•‘å‘½å•Šï¼Œ" +
+                               ob->name(1) + "çœŸæ˜¯ç„¡è¾œå•Šï¼\n", me);
                 destruct(card);
         }
 
@@ -74,10 +74,10 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : free <Íæ¼ÒID> [ <Ê±¼ä> ]
+æŒ‡ä»¤æ ¼å¼ : free <ç©å®¶ID> [ <æ™‚é–“> ]
  
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄã°Ñ±»½û±ÕµÄÍæ¼ÒÊÍ·Å³öÀ´¡£Ê±¼äÒÔ·ÖÖÓÎªµ¥Î»£¬¿É
-ÒÔÓÃ h ±íÊ¾Ğ¡Ê±£¬d ±íÊ¾Ìì¡£
+é€™å€‹æŒ‡ä»¤å¯ä»¥è®“ä½ æŠŠè¢«ç¦é–‰çš„ç©å®¶é‡‹æ”¾å‡ºä¾†ã€‚æ™‚é–“ä»¥åˆ†é˜ç‚ºå–®ä½ï¼Œå¯
+ä»¥ç”¨ h è¡¨ç¤ºå°æ™‚ï¼Œd è¡¨ç¤ºå¤©ã€‚
 
 see also : throw
  

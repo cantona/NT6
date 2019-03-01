@@ -12,16 +12,16 @@ int event_three(object me);
 
 void create()
 {
-        set("short", "������");
+        set("short", "花叢中");
         set("long", @LONG
-����������ɽ��ɽ�Ļ����У���Ժ컨�ſ����������ɣ����ܲ�
-�㣬�����˱ǡ�������������һ������磬�����֦��ɷ�Ǻÿ�����
-�������񴹸ǣ�������Ȼ��ɵ�һ���������ݡ���Щ�컨(flowers)��
-�������ƿ���
+這裡是終南山後山的花叢中，這叢紅花排開來長達數丈，密密層
+層，奇香撲鼻。但見花叢有如一面大屏風，紅瓣綠枝，煞是好看，四
+下裡樹蔭垂蓋，便似天然結成的一座花房樹屋。這些紅花(flowers)似
+乎可以推開。
 LONG );
 
         set("item_desc", ([
-                "flowers" : "�⻨�Լ������ܣ�����һ���ܺõĲ���֮����\n",
+                "flowers" : "這花叢既深且密，到是一個很好的藏身之處。\n",
         ]));
 
         set("no_clean_up", 0);
@@ -46,15 +46,15 @@ int do_hide(){
 
         object me=this_player();
         if (me->is_busy())
-                return notify_fail("��������æ���ģ�\n");
+                return notify_fail("你現在正忙著哪！\n");
 
         if( query_temp("hiding", me) )
-                return notify_fail("���Ѿ��غ��ˡ�\n");
+                return notify_fail("你已經藏好了。\n");
         
         if( query_temp("found_lianhuan_book", me) )
-                return notify_fail("�㻹��ʲô��\n");
+                return notify_fail("你還藏什麼？\n");
         
-        tell_object(me, "��С�������زص��˻����С�\n");
+        tell_object(me, "你小心翼翼地藏到了花叢中。\n");
         
         set_temp("hiding", 1, me);
         
@@ -70,9 +70,9 @@ int do_push(){
         object me=this_player();
         
         if (me->is_busy())
-                return notify_fail("��������æ���ģ�\n");
+                return notify_fail("你現在正忙著哪！\n");
 
-        tell_object(me, "��������ƿ���ľ���������˳�ȥ��\n");
+        tell_object(me, "你輕輕地推開花木，向外走了出去。\n");
         
         set_temp("hiding", 1, me);
         delete_temp("hiding", me);
@@ -91,7 +91,7 @@ int event_one(object me){
         
         if( query_temp("hiding", me)){
         
-                tell_object(me, HIG"ͻȻ��ɽ�����Ų����죬������һ��˵����һ���߽���ԭ��������־ƽ����־����������Խ˵Խ�����������ڻ������硣\n"NOR);
+                tell_object(me, HIG"突然間山後傳來腳步聲響，兩個人一面說話，一面走近。原來竟是尹志平和趙志敬。兩個人越說越大聲，竟似在互相爭辯。\n"NOR);
                 
                 remove_call_out("event_one");
                 call_out("event_two", 5, me);
@@ -104,9 +104,9 @@ int event_two(object me){
         
         if( query_temp("hiding", me)){
         
-                tell_object(me, HIG"ֻ������־����Ц�������㲻����棬�����ҽ̵Ĵ�䣬���������������ӣ������������ƣ���֪��־��ʲô��˼��\n"NOR);
-                tell_object(me, HIG"�������ֹ��У�����������Խ��Խ�ס�ͻȻ�䣬��־�����������㻹�ҵ�������������ʦ������ȥ��\n"NOR);
-                tell_object(me, HIG"��־ƽ��Ҳ���Ͳ�ס��৵�һ�����������ʣ����ı�̣���־�������ܿ����齣��ϻ�����˴�һ��\n"NOR);
+                tell_object(me, HIG"只聽見趙志凈冷笑到：“你不守清規，犯了我教的大戒，怎能再做首座弟子？”你心下納悶，不知趙志敬什麼意思。\n"NOR);
+                tell_object(me, HIG"你心中嘀咕中，尹趙兩人已越吵越兇。突然間，趙志敬喊道：“你還敢抵賴？咱們招丘師伯評理去！\n"NOR);
+                tell_object(me, HIG"尹志平再也忍耐不住，唰地一聲，長劍出鞘，分心便刺，趙志敬側身避開，抽劍出匣，兩人打到一起。\n"NOR);
                 
                 remove_call_out("event_one");
                 call_out("event_three", 15, me);
@@ -120,8 +120,8 @@ int event_three(object me){
         
         if( query_temp("hiding", me)){
         
-                tell_object(me, HIG"ֻ�����Զ��˳���������ã��ѷ�����֪���㲻��������ȫ���亹��\n"NOR);
-                tell_object(me, HIR"\n\n�ٲ����У���־ƽ��ƽ�̣�����������ͬʱ���Ⱥ�ɨ����������ȫ�����еġ������������С�\n"NOR);
+                tell_object(me, HIG"只見尹趙而人出招凌厲變幻，已非你所知，你不禁手心中全是冷汗。\n"NOR);
+                tell_object(me, HIR"\n\n再拆數招，尹志平左劍平刺，右掌正擊，同時左腿橫掃而出，正是全真派中的“三連環”絕招。\n"NOR);
                                 
                 remove_call_out("event_two");
                 call_out("event_four", 15, me);
@@ -136,11 +136,11 @@ int event_four(object me){
         
         if( query_temp("hiding", me)){
         
-                tell_object(me, HIG"ֻ����־ƽ����ŭ�ȣ��������У���Ȼ���ٵ��ݶԷ����У�һζ�͹���\n"NOR);
-                tell_object(me, HIG"\n\n�ٲ����У���־���ڶԷ�ƴ���½����мܲ�ס�����������ȥ��\n"NOR);
+                tell_object(me, HIG"只見尹志平大聲怒喝，連走險招，竟然不再擋駕對方來招，一味猛攻。\n"NOR);
+                tell_object(me, HIG"\n\n再拆數招，趙志敬在對方拼命下漸漸招架不住，撒腿向別處逃去。\n"NOR);
                 
-                tell_object(me, HIY"\n\n��־ƽһ㶣����׷ȥ����ֻ����વ�һ����һ��С���Ӵ���־ƽ���ϵ���������\n"NOR);
-                tell_object(me, "\n\n����־ƽ�ߺ���æ��������С���Ӽ���������\n"NOR);
+                tell_object(me, HIY"\n\n尹志平一愣，隨後追去，你只聽見嗒地一聲，一本小冊子從尹志平身上掉了下來。\n"NOR);
+                tell_object(me, "\n\n待尹志平走後，你忙起身將那小冊子揀了起來。\n"NOR);
                 
                 set_temp("found_lianhuan_book", 1, me);
                 delete_temp("hiding", me);

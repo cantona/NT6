@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ľ����Ӫ��");
+        set("short", "木華黎營帳");
         set("long", @LONG
-ľ�������ɹŵ����ߣ��Ǵ󺹵ľ�ʦ������Ӫ����ֻ�м���ձ����
-��ѷţ������ط����������顣��˵�ɹ����־������ݴ��ġ�
+木華黎是蒙古的智者，是大汗的軍師。他的營帳中只有幾條氈子隨
+便堆放，其他地方到處都是書。據說蒙古文字就是他草創的。
 LONG
         );
         set("objects", ([ /* sizeof() == 1 */

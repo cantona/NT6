@@ -42,10 +42,10 @@ int main(object me, string arg)
         recur_check(me ,dir, recur);
 
         if (file_count) {
-                write("\n¹²´¦Àí" + file_count + "¸öÎÄ¼ş¡£\n");
-                write("½á¹ûÒÑĞ´Èë" + COOR_LOG + "ÖĞ£¬Çë²é¿´¡£\n");
+                write("\nå…±è™•ç†" + file_count + "å€‹æ–‡ä»¶ã€‚\n");
+                write("çµæœå·²å¯«å…¥" + COOR_LOG + "ä¸­ï¼Œè«‹æŸ¥çœ‹ã€‚\n");
         } else
-                write("\nÎ´¼ì²âµ½²»ºÏÒªÇóµÄÎÄ¼ş¡£\n");
+                write("\næœªæª¢æ¸¬åˆ°ä¸åˆè¦æ±‚çš„æ–‡ä»¶ã€‚\n");
 
         return 1;
 }
@@ -62,9 +62,9 @@ int recur_check(object me, string dir, int recur)
 
         if (!sizeof(file)) {
                 if (file_size(dir) == -2)
-                        return notify_fail("Ä¿Â¼ÊÇ¿ÕµÄ¡£\n");
+                        return notify_fail("ç›®éŒ„æ˜¯ç©ºçš„ã€‚\n");
                 else
-                        return notify_fail("Ã»ÓĞÕâ¸öÄ¿Â¼¡£\n");
+                        return notify_fail("æ²’æœ‰é€™å€‹ç›®éŒ„ã€‚\n");
         }
 
         i = sizeof(file);
@@ -73,7 +73,7 @@ int recur_check(object me, string dir, int recur)
                         file[i][0] += "/";
         }
 
-        write("\nÕıÔÚ´¦ÀíÄ¿Â¼£º" + dir);
+        write("\næ­£åœ¨è™•ç†ç›®éŒ„ï¼š" + dir);
 
         if (sizeof(file)) {
                 for(i = 0,j = sizeof(file); i < j; i ++) {
@@ -119,11 +119,11 @@ int check_one_file(object me,string file)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½: checkcoor [-d] [<Â·¾¶Ãû>]
+æŒ‡ä»¤æ ¼å¼: checkcoor [-d] [<è·¯å¾‘å>]
 
-¼ì²éÖ¸¶¨Ä¿Â¼ÏÂËùÓĞµÄÎÄ¼şµÄ×ø±êÇé¿ö£¬Èç¹û²»Ö¸¶¨
-Ä¿Â¼, ÔòÊ¹ÓÃµ±Ç°Ä¿Â¼¡£Èç¹û´ø²ÎÊı-d£¬ÔòÁ¬´ø´¦Àí
-×ÓÄ¿Â¼¡£
+æª¢æŸ¥æŒ‡å®šç›®éŒ„ä¸‹æ‰€æœ‰çš„æ–‡ä»¶çš„åæ¨™æƒ…æ³ï¼Œå¦‚æœä¸æŒ‡å®š
+ç›®éŒ„, å‰‡ä½¿ç”¨ç•¶å‰ç›®éŒ„ã€‚å¦‚æœå¸¶åƒæ•¸-dï¼Œå‰‡é€£å¸¶è™•ç†
+å­ç›®éŒ„ã€‚
 
 HELP
 );

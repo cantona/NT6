@@ -10,21 +10,21 @@ void init()
 
 void create()
 {
-        set_name(HIR "¶Ï³¦»¨" NOR, ({"hua3","duanchang"}));
-        set("unit", "¶ä");
-        set("long", "ÕâÊÇÒ»¶ä¶Ï³¦»¨£¬Í¨ÌåÍ¨ºì£¬ÏÊÄÛÓûµÎ£¬ÃÀÀöÒì³£¡£\n");
-        set("no_get", "Äã¸ù±¾²»¸Ò½üÇ°¡£\n");
+        set_name(HIR "æ–·è…¸èŠ±" NOR, ({"hua3","duanchang"}));
+        set("unit", "æœµ");
+        set("long", "é€™æ˜¯ä¸€æœµæ–·è…¸èŠ±ï¼Œé€šé«”é€šç´…ï¼Œé®®å«©æ¬²æ»´ï¼Œç¾Žéº—ç•°å¸¸ã€‚\n");
+        set("no_get", "ä½ æ ¹æœ¬ä¸æ•¢è¿‘å‰ã€‚\n");
         setup();
 }
 
 int do_eat(string arg)
 {
         object me=this_player();
-        if(!id(arg)) return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+        if(!id(arg)) return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if(!present(this_object(), me))
-                return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if( me->is_busy() )
-                return notify_fail("±ð¼±£¬ÂýÂý³Ô£¬Ð¡ÐÄ±ðÒ­×ÅÁË¡£\n");
+                return notify_fail("åˆ¥æ€¥ï¼Œæ…¢æ…¢åƒï¼Œå°å¿ƒåˆ¥å™Žè‘—äº†ã€‚\n");
         if(random(2)==0) this_player()->unconcious();
         else this_player()->die();
         destruct(this_object());

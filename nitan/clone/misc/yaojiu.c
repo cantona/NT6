@@ -6,18 +6,18 @@ int do_pour(string arg);
 
 void create()
 {
-        set_name("Ò©¾Ê", ({ "yao jiu", "jiu" }) );
+        set_name("è—¥è‡¼", ({ "yao jiu", "jiu" }) );
         set("long",
-                "ÕâÊÇÒ»¸öÒ©¾Ê£¬ÊÇÒ½Ê¿ÃÇÓÃÀ´Á¶ÖÆµ¤Ò©µÄÈİÆ÷£º\n"
-                "put <Ò©²Ä>          ½«Ò©²Ä·ÅÈëÒ©¾ÊÖĞ¡£\n"
-                "fill                ÏòÒ©¾ÊÖĞÌí¼ÓÇåË®¡£\n"
-                "burn                µã»ğÕÛÈ¼ÉÕÄ¾²ñ¡£\n"
-                "putout              Ãğ»ğÀäÈ´Ò©¾Ê¡£\n"
-//                "get <µ¤Ò©>          È¡³öµ¤Ò©¡£\n"
+                "é€™æ˜¯ä¸€å€‹è—¥è‡¼ï¼Œæ˜¯é†«å£«å€‘ç”¨ä¾†ç…‰åˆ¶ä¸¹è—¥çš„å®¹å™¨ï¼š\n"
+                "put <è—¥æ>          å°‡è—¥ææ”¾å…¥è—¥è‡¼ä¸­ã€‚\n"
+                "fill                å‘è—¥è‡¼ä¸­æ·»åŠ æ¸…æ°´ã€‚\n"
+                "burn                é»ç«æŠ˜ç‡ƒç‡’æœ¨æŸ´ã€‚\n"
+                "putout              æ»…ç«å†·å»è—¥è‡¼ã€‚\n"
+//                "get <ä¸¹è—¥>          å–å‡ºä¸¹è—¥ã€‚\n"
         );
         set_weight(3000);
         set_max_encumbrance(5000);
-        set("unit", "¸ö");
+        set("unit", "å€‹");
         set("no_drop", 1);
         set("no_steal", 1);
         set("no_put", 1);
@@ -47,13 +47,13 @@ int do_fill(string arg)
                 return 0;
 
         if (!arg || arg != "water")
-                return notify_fail("ÄãÒªÍùÒ©¾ÊÀïÌí¼ÓÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦å¾€è—¥è‡¼è£¡æ·»åŠ ä»€éº¼ï¼Ÿ\n");
         if (query("process") > 0)
-                return notify_fail("ÄãÒÑ¾­ÍùÒ©¾ÊÀïÌí¹ıË®ÁËÀ²£¡\n");
+                return notify_fail("ä½ å·²ç¶“å¾€è—¥è‡¼è£¡æ·»éæ°´äº†å•¦ï¼\n");
         if( !query("resource/water", room) )
-                return notify_fail("ÕâÀïÃ»ÓĞË®¡£ÄãÕÒ¸öÓĞË®Ö®´¦ÔÙÌíË®°É¡£\n");
+                return notify_fail("é€™è£¡æ²’æœ‰æ°´ã€‚ä½ æ‰¾å€‹æœ‰æ°´ä¹‹è™•å†æ·»æ°´å§ã€‚\n");
         set("process", 1);
-        message_vision("$NÍùÒ©¾ÊÀïÌíÁËĞ©ÇåË®¡£\n", this_player());
+        message_vision("$Nå¾€è—¥è‡¼è£¡æ·»äº†äº›æ¸…æ°´ã€‚\n", this_player());
         return 1;
 }
 int do_burn()
@@ -69,29 +69,29 @@ int do_burn()
         if (!wizardp(me))
         {
                 if (query("process") == 0)
-                        return notify_fail("»¹Ã»·ÅË®¾Íµã»ğ£¬Ïë¸ÉÉÕ°¡£¡\n");
+                        return notify_fail("é‚„æ²’æ”¾æ°´å°±é»ç«ï¼Œæƒ³å¹¹ç‡’å•Šï¼\n");
                 if (query("process") != 1)
-                        return notify_fail(HIY"ÏÖÔÚ²»ÓÃÄãÔÙµã»ğÁËÀ²£¡\n"NOR);
+                        return notify_fail(HIY"ç¾åœ¨ä¸ç”¨ä½ å†é»ç«äº†å•¦ï¼\n"NOR);
                 if (!present("fire", me))
-                        return notify_fail("ÄãÉíÉÏÃ»ÓĞ´ø»ğÕÛ¡£Õâ»ØÔãÁË°É¡£\n");
+                        return notify_fail("ä½ èº«ä¸Šæ²’æœ‰å¸¶ç«æŠ˜ã€‚é€™å›ç³Ÿäº†å§ã€‚\n");
                 if(!present("mu chai",me) && !present("mu chai",room))
-                        return notify_fail("µãÈ¼»ğÕÛÄã²Å·¢ÏÖÃ»ÓĞÄ¾²ñ¿ÉÉÕ¡£\n");
+                        return notify_fail("é»ç‡ƒç«æŠ˜ä½ æ‰ç™¼ç¾æ²’æœ‰æœ¨æŸ´å¯ç‡’ã€‚\n");
         }
         set("process", 2);
         set("burntime", time());
-        message_vision("$NÌÍ³ö»ğÕÛÒ»»Î£¬»ğÕÛÁÁÁËÆğÀ´¡£»ğÕÛµãÈ¼Ä¾²ñºó£¬ÔÙ°ÑÒ©¾Ê·ÅÔÚ²ñÉÏ¡£\n", this_player());
+        message_vision("$Næå‡ºç«æŠ˜ä¸€æ™ƒï¼Œç«æŠ˜äº®äº†èµ·ä¾†ã€‚ç«æŠ˜é»ç‡ƒæœ¨æŸ´å¾Œï¼Œå†æŠŠè—¥è‡¼æ”¾åœ¨æŸ´ä¸Šã€‚\n", this_player());
         for ( seq = 0; seq < sizeof(inv); seq++)
         {
                 if( !query("vegetable", inv[seq]) )
                 {
                         set("process", 3);
-                        message_vision("Ò©¾ÊÀï»ì½ø²»ÄÜÈëÒ©µÄ¶«Î÷¡£¿´À´Õâ¾ÊÒ©Ã»ÓÃÁË¡£¡£¡£\n", this_player());
+                        message_vision("è—¥è‡¼è£¡æ··é€²ä¸èƒ½å…¥è—¥çš„æ±è¥¿ã€‚çœ‹ä¾†é€™è‡¼è—¥æ²’ç”¨äº†ã€‚ã€‚ã€‚\n", this_player());
                 }
                 i+=query("vegetable", inv[seq]);
                 j+=query("nostrum", inv[seq]);
                 destruct(inv[seq]);
         }
-        message_vision("¹ıÁËÒ»»áÒ©¾ÊÀïÃ°³öÒ»¹Éµ­µ­µÄ°×Æø¡£Ò©²Ä½¥½¥°¾µ½Ë®ÖĞ¡£¡£¡£\n", this_player());
+        message_vision("éäº†ä¸€æœƒè—¥è‡¼è£¡å†’å‡ºä¸€è‚¡æ·¡æ·¡çš„ç™½æ°£ã€‚è—¥ææ¼¸æ¼¸ç†¬åˆ°æ°´ä¸­ã€‚ã€‚ã€‚\n", this_player());
         set("vegetable", i);
         set("nostrum", j);
         return 1;
@@ -107,21 +107,21 @@ int do_putout()
 
         seteuid(getuid());
         if (query("vegetable") == 0)
-                return notify_fail("Ò©¾ÊÀïÃ»ÓĞÒ©²Ä£¬°¾²»³ÉÒ©ÁË£¡\n");
+                return notify_fail("è—¥è‡¼è£¡æ²’æœ‰è—¥æï¼Œç†¬ä¸æˆè—¥äº†ï¼\n");
         if (query("process") < 2)
-                return notify_fail("ÏÖÔÚÃ»ÓĞ»ğ¿ÉÃğÁËÀ²£¡\n");
+                return notify_fail("ç¾åœ¨æ²’æœ‰ç«å¯æ»…äº†å•¦ï¼\n");
         if (time() - query("burntime") < 180 && !wizardp(this_player()))
-                return notify_fail("Ò©ÕıÔÚ°¾£¬»ğºò»¹Ã»µ½£¬ÏÖÔÚ¿ÉÃğ²»µÃ»ğ£¡\n");
+                return notify_fail("è—¥æ­£åœ¨ç†¬ï¼Œç«å€™é‚„æ²’åˆ°ï¼Œç¾åœ¨å¯æ»…ä¸å¾—ç«ï¼\n");
         if (time() - query("burntime") > 300 && !wizardp(this_player()))
         {
                 set("process", 0);
-                return notify_fail("Ò©ºÃÏñ°¾ÁËÌ«¾Ã£¬»ğºò¹ıÁË£¬Ò©°¾ºıÁË£¡\n");
+                return notify_fail("è—¥å¥½åƒç†¬äº†å¤ªä¹…ï¼Œç«å€™éäº†ï¼Œè—¥ç†¬ç³Šäº†ï¼\n");
         }
-        message_vision("$N³·ÁË×Å»ğµÄÄ¾²ñ£¬ÈÃÒ©¾Ê×ÔĞĞÀäÈ´¡£\n", this_player());
+        message_vision("$Næ’¤äº†è‘—ç«çš„æœ¨æŸ´ï¼Œè®“è—¥è‡¼è‡ªè¡Œå†·å»ã€‚\n", this_player());
         if (query("process") == 3)
         {
                 set("process", 0);
-                return notify_fail("¿Ï¶¨ÊÇÒ©¾ÊÖĞ²ô½øÔÓÖÊÁË£¬Õâ´ÎÒ©Ã»°¾³É£¡\n");
+                return notify_fail("è‚¯å®šæ˜¯è—¥è‡¼ä¸­æ‘»é€²é›œè³ªäº†ï¼Œé€™æ¬¡è—¥æ²’ç†¬æˆï¼\n");
         }
         set("process", 0);
         dir = get_dir("/clone/medicine/nostrum/");
@@ -141,7 +141,7 @@ int do_putout()
                 {
                         obj->move(this_player());
                         obj->move(this_object());
-                        message_vision("$NÖÕÓÚÁ¶³öÒ»"+query("unit", obj)+query("name", obj)+"¡£\n",this_player());
+                        message_vision("$Nçµ‚äºç…‰å‡ºä¸€"+query("unit", obj)+query("name", obj)+"ã€‚\n",this_player());
                         addn("medicine_count", 1, this_player());
                 }
                 else
@@ -149,9 +149,9 @@ int do_putout()
                         destruct(obj);
                         obj = new("/clone/medicine/nostrum/shit");
                         obj->move(this_object());
-                        message_vision("¿ÉÄÜÊÇ$NÒ½Êõ²»¾«£¬Á¶³öÒ»"+query("unit", obj)+query("name", obj)+"¡£\n",this_player());
+                        message_vision("å¯èƒ½æ˜¯$Né†«è¡“ä¸ç²¾ï¼Œç…‰å‡ºä¸€"+query("unit", obj)+query("name", obj)+"ã€‚\n",this_player());
                 }
                 return 1;
         }
-        else return notify_fail("¿ÉÄÜÊÇÒòÎªÅä·½²»Ì«¶Ô£¬Õâ´Î°¾Ò©Ã»³É¹¦£¡\n");
+        else return notify_fail("å¯èƒ½æ˜¯å› ç‚ºé…æ–¹ä¸å¤ªå°ï¼Œé€™æ¬¡ç†¬è—¥æ²’æˆåŠŸï¼\n");
 }

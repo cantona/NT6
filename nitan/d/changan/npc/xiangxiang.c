@@ -6,9 +6,9 @@ int execute_ask();
 
 void create()
 {
-        set_name("ÏæÏæ", ({ "xiangxiang", "xiang" }));
-        set("title","ÏôÔ±ÍâÖ®Å®");
-        set("gender", "Å®ĞÔ");
+        set_name("æ¹˜æ¹˜", ({ "xiangxiang", "xiang" }));
+        set("title","è•­å“¡å¤–ä¹‹å¥³");
+        set("gender", "å¥³æ€§");
           set("age", 17);
           set("attitude", "peaceful");
           set("shen_type", 1);
@@ -30,14 +30,14 @@ void create()
           set_skill("force", 60);
         set("chat_chance", 15);
         set("chat_msg", ({
-                "ÏæÏæÏëµ½ÉËĞÄ´¦£¬ÈÌ²»×¡·ÅÉù´ó¿Ş¡£\n",
-                "ÏæÏæÈôÓĞËùË¼µÄµÀ£ºË­ÄÜ¸øÎÒµùÉÓ¸öĞÅ½ĞËûÀ´¾ÈÎÒ¡£\n",
+                "æ¹˜æ¹˜æƒ³åˆ°å‚·å¿ƒè™•ï¼Œå¿ä¸ä½æ”¾è²å¤§å“­ã€‚\n",
+                "æ¹˜æ¹˜è‹¥æœ‰æ‰€æ€çš„é“ï¼šèª°èƒ½çµ¦æˆ‘çˆ¹æå€‹ä¿¡å«ä»–ä¾†æ•‘æˆ‘ã€‚\n",
         }) );
         set("inquiry", ([
-                "ĞÅ" : (: execute_ask() :),
-                "¸¸Ç×" : (: execute_ask() :),
+                "ä¿¡" : (: execute_ask() :),
+                "çˆ¶è¦ª" : (: execute_ask() :),
                 "letter" : (: execute_ask() :),
-                "¼Ò" : (: execute_ask() :),
+                "å®¶" : (: execute_ask() :),
         ]));
 
         setup();
@@ -95,7 +95,7 @@ int execute_ask()
           letter = new ("/d/changan/npc/obj/letter");
           letter->move(me);
           command("whisper "+query("id", who)+
-                " ½«Õâ·âĞÅ½»¸øÎÒµù£¡½ĞËû¿ìÀ´¾ÈÎÒ£¡");
+                " å°‡é€™å°ä¿¡äº¤çµ¦æˆ‘çˆ¹ï¼å«ä»–å¿«ä¾†æ•‘æˆ‘ï¼");
           command("give "+query("id", who)+" "+query("id", letter));
           who->save();
           return 1;
@@ -118,7 +118,7 @@ int check_rescure(object who)
           if( query("leader", me) )
                     return 1;
           set("leader",query("id",  who), me);
-          message_vision("$N¶Ô$n¼±ÇĞµØËµµÀ£º¶÷ÈË£¡¿ìµã¶ù´øÎÒÈ¥¼ûÎÒµù£¡\n",me,who);
+          message_vision("$Nå°$næ€¥åˆ‡åœ°èªªé“ï¼šæ©äººï¼å¿«é»å…’å¸¶æˆ‘å»è¦‹æˆ‘çˆ¹ï¼\n",me,who);
           command("follow "+query("id", who));
           set_temp("no_return ", 1, me);
           return 1;

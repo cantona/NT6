@@ -44,14 +44,14 @@ mixed main(object me, string arg, int remote)
         cur_time = time(); 
         if( !wizardp(me) && cur_time-query_temp("last_who", me)<5 )
         {
-              return notify_fail("ÏµÍ³Æø´­ĞêµØÌ¾µÀ£ºÂıÂıÀ´ ....\n"); 
+              return notify_fail("ç³»çµ±æ°£å–˜å™“åœ°å˜†é“ï¼šæ…¢æ…¢ä¾† ....\n"); 
         } 
         set_temp("last_who", cur_time, me);
 
 
         if (arg)
         {
-                if (arg == "ÎÒ°®Ğ¦°Á½­ºş")
+                if (arg == "æˆ‘æ„›ç¬‘å‚²æ±Ÿæ¹–")
                 {
                         str = "";
                         ob = users();
@@ -64,7 +64,7 @@ mixed main(object me, string arg, int remote)
                                         continue;
                                 if( !environment(ob[i]) && !query_temp("waiting_enter", ob[i]) )
                                 {
-                                        destruct(ob[i]);//ÓĞµãÎ£ÏÕ
+                                        destruct(ob[i]);//æœ‰é»å±éšª
                                         continue;
                                 }
                                 str += ADD2(ob[i]);
@@ -103,7 +103,7 @@ mixed main(object me, string arg, int remote)
                                         {
                                                 RWHO_Q->send_rwho_q(option[i][1..sizeof(option[i])],
                                                                     me, opt_long);
-                                                write("ÍøÂ·Ñ¶Ï¢ÒÑËÍ³ö£¬ÇëÉÔºò¡£\n");
+                                                write("ç¶²è·¯è¨Šæ¯å·²é€å‡ºï¼Œè«‹ç¨å€™ã€‚\n");
                                                 return 1;
                                         }
 
@@ -122,9 +122,9 @@ mixed main(object me, string arg, int remote)
                                         if (! ob1 || ! me->visible(ob1))
                                                 ob1 = find_living(option[i]);
                                         if (! ob1 || ! me->visible(ob1))
-                                                return notify_fail("Ã»ÓĞÕâ¸öÍæ¼Ò»ò²ÎÊı´íÎó¡£\nÖ¸Áî¸ñÊ½ : who [-h] [-l] [-w] [-p] [-fam] [-m] [-f] [<ID>]\n");
+                                                return notify_fail("æ²’æœ‰é€™å€‹ç©å®¶æˆ–åƒæ•¸éŒ¯èª¤ã€‚\næŒ‡ä»¤æ ¼å¼ : who [-h] [-l] [-w] [-p] [-fam] [-m] [-f] [<ID>]\n");
                                         if( !query("family/family_name", ob1) )
-                                                return notify_fail(ob1->name(1) + "ÏÖÔÚ»¹Ã»ÓĞ¼ÓÈëÈÎºÎÒ»¸öÃÅÅÉ¡£\n");
+                                                return notify_fail(ob1->name(1) + "ç¾åœ¨é‚„æ²’æœ‰åŠ å…¥ä»»ä½•ä¸€å€‹é–€æ´¾ã€‚\n");
 
                                         me = ob1;
                                         opt_family = 1;
@@ -133,14 +133,14 @@ mixed main(object me, string arg, int remote)
 
         if (opt_male && opt_female)
         {
-                write("²ÎÊı -f ºÍ -m ²»ÄÜÍ¬Ê±Ê¹ÓÃ¡£\n");
+                write("åƒæ•¸ -f å’Œ -m ä¸èƒ½åŒæ™‚ä½¿ç”¨ã€‚\n");
                 return 1;
         }
 
         if (opt_long && me && (vob == this_player()) && ! wizardp(me) && ! remote)
         {
                 if( query("jing", me)<5 )
-                        return notify_fail("ÄãµÄ¾«ÉñÌ«²îÁË£¬Ã»ÓĞ°ì·¨µÃÖªÆäËûÍæ¼ÒµÄÏêÏ¸×ÊÁÏ¡£\n");
+                        return notify_fail("ä½ çš„ç²¾ç¥å¤ªå·®äº†ï¼Œæ²’æœ‰è¾¦æ³•å¾—çŸ¥å…¶ä»–ç©å®¶çš„è©³ç´°è³‡æ–™ã€‚\n");
                 me->receive_damage("jing", 5);
         }
 
@@ -152,7 +152,7 @@ mixed main(object me, string arg, int remote)
         if (opt_party)
         {
                 if( !query("bunch/bunch_name", me) )
-                        return notify_fail("ÄãÏÖÔÚ»¹Ã»ÓĞ¼ÓÈëÈÎºÎÒ»¸ö°ïÅÉ¡£\n");
+                        return notify_fail("ä½ ç¾åœ¨é‚„æ²’æœ‰åŠ å…¥ä»»ä½•ä¸€å€‹å¹«æ´¾ã€‚\n");
                 ob=filter_array(ob,(:query("bunch/bunch_name", $1) == 
                         query("bunch/bunch_name", $2):),me);
         }
@@ -160,16 +160,16 @@ mixed main(object me, string arg, int remote)
         if (opt_family)
         {
                 if( !query("family/family_name", me) )
-                        return notify_fail("ÄãÏÖÔÚ»¹Ã»ÓĞ¼ÓÈëÈÎºÎÒ»¸öÃÅÅÉ¡£\n");
+                        return notify_fail("ä½ ç¾åœ¨é‚„æ²’æœ‰åŠ å…¥ä»»ä½•ä¸€å€‹é–€æ´¾ã€‚\n");
                        ob=filter_array(ob,(:query("family/family_name", $1) == 
                         query("family/family_name", $2):),me);
         }
 
         if (opt_male)
-                       ob=filter_array(ob,(:query("gender", $1) == "ÄĞĞÔ":));
+                       ob=filter_array(ob,(:query("gender", $1) == "ç”·æ€§":));
 
         if (opt_female)
-                       ob=filter_array(ob,(:query("gender", $1) == "Å®ĞÔ":));
+                       ob=filter_array(ob,(:query("gender", $1) == "å¥³æ€§":));
 
         if (who_name)
         {
@@ -191,13 +191,13 @@ mixed main(object me, string arg, int remote)
 
         if (opt_closed)
         {
-                if( !wizardp(me) ) return notify_fail("Ã»ÓĞÕâ¸öÍæ¼Ò»ò²ÎÊı´íÎó¡£\nÖ¸Áî¸ñÊ½ : who [-h] [-l] [-w] [-p] [-fam] [-m] [-f] [<ID>]\n");
+                if( !wizardp(me) ) return notify_fail("æ²’æœ‰é€™å€‹ç©å®¶æˆ–åƒæ•¸éŒ¯èª¤ã€‚\næŒ‡ä»¤æ ¼å¼ : who [-h] [-l] [-w] [-p] [-fam] [-m] [-f] [<ID>]\n");
                 ob=filter_array(ob,(:!interactive($1) && query("doing", $1):));
         }
 
         if (opt_interactive)
         {
-                if( !wizardp(me) ) return notify_fail("Ã»ÓĞÕâ¸öÍæ¼Ò»ò²ÎÊı´íÎó¡£\nÖ¸Áî¸ñÊ½ : who [-h] [-l] [-w] [-p] [-fam] [-m] [-f] [<ID>]\n");
+                if( !wizardp(me) ) return notify_fail("æ²’æœ‰é€™å€‹ç©å®¶æˆ–åƒæ•¸éŒ¯èª¤ã€‚\næŒ‡ä»¤æ ¼å¼ : who [-h] [-l] [-w] [-p] [-fam] [-m] [-f] [<ID>]\n");
                 ob = filter_array(ob, (: interactive($1) :));
         }
 
@@ -206,24 +206,24 @@ mixed main(object me, string arg, int remote)
 
         if (! sizeof(ob))
         {
-                str += "ÄàÌ¶ÖĞÏÖÔÚÃ»ÓĞ·ûºÏÌõ¼şµÄÍæ¼Ò¡£\n";
+                str += "æ³¥æ½­ä¸­ç¾åœ¨æ²’æœ‰ç¬¦åˆæ¢ä»¶çš„ç©å®¶ã€‚\n";
                 if (remote) return str;
                 write(str);
                 return 1;
         }
 
-        str += HIG "¡ò" + LOCAL_MUD_NAME() + HIG "¡ò" + NOR WHT + "  Ä¿Ç°½­ºşÖĞµÄ";
+        str += HIG "â—" + LOCAL_MUD_NAME() + HIG "â—" + NOR WHT + "  ç›®å‰æ±Ÿæ¹–ä¸­çš„";
         if (opt_party)
         {
                 if( query("bunch/bunch_name", me) )
                         str += HIR + " (" + query("bunch/bunch_name", me) + ") " + NOR WHT;
-                else    str += HIC + " (ÎŞ°ïÅÉ) " + NOR WHT;
+                else    str += HIC + " (ç„¡å¹«æ´¾) " + NOR WHT;
         } else
         if (opt_family)
         {
                 if( query("family/family_name", me) )
                         str+=HIR+"("+query("family/family_name", me)+")"+NOR+WHT;
-                else    str += HIC + " (ÎŞÃÅÅÉ) " + NOR WHT;
+                else    str += HIC + " (ç„¡é–€æ´¾) " + NOR WHT;
         }
 
         if (! who_name)
@@ -232,32 +232,32 @@ mixed main(object me, string arg, int remote)
                 who_name = "(" + who_name + ")";
 
         if (opt_closed)
-                str += "ĞŞÁ¶ÖĞµÄ";
+                str += "ä¿®ç…‰ä¸­çš„";
 
         if (opt_reborn)
-                str += "×ªÊÀÖØÉú";
+                str += "è½‰ä¸–é‡ç”Ÿ";
 
         if (opt_wiz)
-                str += (opt_female ? "Å®ĞÔ" : opt_male ? "ÄĞĞÔ" : "") +
-                       "Î×Ê¦" + who_name + "ÓĞ£º";
+                str += (opt_female ? "å¥³æ€§" : opt_male ? "ç”·æ€§" : "") +
+                       "å·«å¸«" + who_name + "æœ‰ï¼š";
         else
-                if (opt_long) str += (opt_female ? "Å®ĞÔ" : opt_male ? "ÄĞĞÔ" : "") +
-                                     (opt_master ? "´ó×ÚÊ¦" : "Íæ¼Ò") + who_name + "ÓĞ£º";
-                else str += (opt_female ? "Å®ĞÔ" : opt_male ? "ÄĞĞÔ" : "") +
-                            (opt_master ? "´ó×ÚÊ¦" : "Íæ¼Ò") + who_name + "ÓĞ£º";
+                if (opt_long) str += (opt_female ? "å¥³æ€§" : opt_male ? "ç”·æ€§" : "") +
+                                     (opt_master ? "å¤§å®—å¸«" : "ç©å®¶") + who_name + "æœ‰ï¼š";
+                else str += (opt_female ? "å¥³æ€§" : opt_male ? "ç”·æ€§" : "") +
+                            (opt_master ? "å¤§å®—å¸«" : "ç©å®¶") + who_name + "æœ‰ï¼š";
 
         if (opt_employ)
-                str += "<ÔÚÏßµÄĞÂÊÖµ¼Ê¦ÓĞ>:";
+                str += "<åœ¨ç·šçš„æ–°æ‰‹å°å¸«æœ‰>:";
 
         if (opt_number)
         {
-                str += chinese_number(sizeof(ob)) + " ÈË¡£\n";
+                str += chinese_number(sizeof(ob)) + " äººã€‚\n";
                 if (remote) return str;
                 write(str);
                 return 1;
         }
 
-        str += NOR"\n"HIC"¡Ô" + HIY"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"HIC"¡Ô\n"NOR;
+        str += NOR"\n"HIC"â‰¡" + HIY"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"HIC"â‰¡\n"NOR;
 
         if (opt_employ)     
         {
@@ -280,12 +280,12 @@ mixed main(object me, string arg, int remote)
                 list = virep_ob;
                 ppl_cnt = 0;
                
-                str += NOR + HIC "¡Ô" + HIY " ĞÂÊÖµ¼Ê¦ " + HIC + "¡Ô\n" NOR; 
+                str += NOR + HIC "â‰¡" + HIY " æ–°æ‰‹å°å¸« " + HIC + "â‰¡\n" NOR; 
                 ppl_cnt++;
                 i = sizeof(list);
                 while (i--)
                 {
-                        if (query("viremploy/job", list[i]) == "ĞÂÊÖµ¼Ê¦")
+                        if (query("viremploy/job", list[i]) == "æ–°æ‰‹å°å¸«")
                         {
                                 ppl_cnt++;
                                 str = sprintf("%s%12s%s%s\n",
@@ -296,21 +296,21 @@ mixed main(object me, string arg, int remote)
                          }
                 }
                 
-                if ((query("viremploy/job", me) == "ĞÂÊÖµ¼Ê¦" || wizardp(me)) && sizeof(virlist = DB_D->query_data("virlist/teacher")))
+                if ((query("viremploy/job", me) == "æ–°æ‰‹å°å¸«" || wizardp(me)) && sizeof(virlist = DB_D->query_data("virlist/teacher")))
                 {
-                        str += NOR + HIC "\n¡Ô"  + HIM "ÓÎÏ·ÖĞËùÓĞÔÚÖ°µ¼Ê¦" + HIC + "¡Ô\n" NOR; 
+                        str += NOR + HIC "\nâ‰¡"  + HIM "éŠæˆ²ä¸­æ‰€æœ‰åœ¨è·å°å¸«" + HIC + "â‰¡\n" NOR; 
                         for (i = 0; i < sizeof(virlist);i ++)
                         {
                                 if (find_player(virlist[i]))
                                 {
-                                        str += HIY + find_player(virlist[i])->name() + HIY + "(" + virlist[i] + ")--ÔÚÏß\n";
+                                        str += HIY + find_player(virlist[i])->name() + HIY + "(" + virlist[i] + ")--åœ¨ç·š\n";
                                 }
                                 else
                                 {
                                         eob = UPDATE_D->global_find_player(virlist[i]);
                                         if( !objectp(eob) ) continue; 
-                                        str += HIY + eob->name() + HIY + "(" + virlist[i] + ") --ÀëÏßÊ±¼ä£º" + NOR;
-                                        str += HIY + sprintf("%d", (time() - query("last_on", eob)) / 86400) + "Ìì\n" NOR;
+                                        str += HIY + eob->name() + HIY + "(" + virlist[i] + ") --é›¢ç·šæ™‚é–“ï¼š" + NOR;
+                                        str += HIY + sprintf("%d", (time() - query("last_on", eob)) / 86400) + "å¤©\n" NOR;
                                         UPDATE_D->global_destruct_player(eob, 1);
                                         
                                 }
@@ -319,12 +319,12 @@ mixed main(object me, string arg, int remote)
                 
                 /*
                 ppl_cnt++;
-                str += NOR "\n" HIC "¡Ô" + HIY " ÓÎÏ·Ğû´« " + HIC + "¡Ô\n\n" NOR;
+                str += NOR "\n" HIC "â‰¡" + HIY " éŠæˆ²å®£å‚³ " + HIC + "â‰¡\n\n" NOR;
                 ppl_cnt++;
                 i = sizeof(list);
                 while (i--)
                 {
-                        if (query("viremploy/job", list[i]) == "ÓÎÏ·Ğû´«")
+                        if (query("viremploy/job", list[i]) == "éŠæˆ²å®£å‚³")
                         {                        
                                 ppl_cnt++;
                                 str = sprintf("%s%12s%s%s\n",
@@ -418,29 +418,29 @@ mixed main(object me, string arg, int remote)
                                 who_id = "#" + geteuid(list[i]);
                         name = sprintf("%s%s%-10s(%-12s",
                                         PREFIX(list[i]),
-                                        wizardp(list[i])?HIY:query("gender", list[i]) == "Å®ĞÔ"?HIM:NOR+WHT,
+                                        wizardp(list[i])?HIY:query("gender", list[i]) == "å¥³æ€§"?HIM:NOR+WHT,
                                         list[i]->name(1),
                                         capitalize(who_id)+")");
                         /*
                         len = color_len(list[i]->query_idname(1));
                         name = sprintf("%s%s%-" + (22 + len) + "s" NOR,
                                         PREFIX(list[i]),
-                                        wizardp(list[i])?HIY:query("gender", list[i]) == "Å®ĞÔ"?HIM:NORWHT,
+                                        wizardp(list[i])?HIY:query("gender", list[i]) == "å¥³æ€§"?HIM:NORWHT,
                                         list[i]->query_idname(1));
                         */
 
                         str = sprintf("%s%s%s", str, name,
-                                      ppl_cnt%3==2?"\n": HIY"©¦");
+                                      ppl_cnt%3==2?"\n": HIY"â”‚");
                         ppl_cnt++;
                 }
                 if (ppl_cnt % 3) str += "\n";
         }
         }
 
-        str += HIC"¡Ô"+HIY"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"HIC"¡Ô\n"NOR;
-        str = sprintf("%s¹²ÓĞ %s Î»Ê¹ÓÃÕßÁ¬ÏßÖĞ£¬ÏµÍ³¸ºµ££º%s\n "
-                      HIG "*" NOR " ±íÊ¾·¢´ôÖĞ£¬" HIC "~" NOR " ±íÊ¾ÁÄÌìÖĞ£¬"
-                      HIR "#" NOR " ±íÊ¾¶ÏÏßÖĞ£¬"HIY"@" NOR" ±íÊ¾ÀëÏßĞŞÁ¶ÖĞ¡£\n",
+        str += HIC"â‰¡"+HIY"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"HIC"â‰¡\n"NOR;
+        str = sprintf("%så…±æœ‰ %s ä½ä½¿ç”¨è€…é€£ç·šä¸­ï¼Œç³»çµ±è² æ“”ï¼š%s\n "
+                      HIG "*" NOR " è¡¨ç¤ºç™¼å‘†ä¸­ï¼Œ" HIC "~" NOR " è¡¨ç¤ºèŠå¤©ä¸­ï¼Œ"
+                      HIR "#" NOR " è¡¨ç¤ºæ–·ç·šä¸­ï¼Œ"HIY"@" NOR" è¡¨ç¤ºé›¢ç·šä¿®ç…‰ä¸­ã€‚\n",
                       str, CHINESE_D->chinese_number(ppl_cnt),
                       query_load_average());
 
@@ -463,33 +463,33 @@ int sort_user_by_name(object ob1, object ob2, int d)
 int help()
 {
         write("
-Ö¸Áî¸ñÊ½ : who [-h] [-l] [-w] [-p] [-c] [-fam] [-f] [-m] [-s] [-S] [-z] [<ID>] [-n] [is <ÖĞÎÄÃû×Ö>]
+æŒ‡ä»¤æ ¼å¼ : who [-h] [-l] [-w] [-p] [-c] [-fam] [-f] [-m] [-s] [-S] [-z] [<ID>] [-n] [is <ä¸­æ–‡åå­—>]
 
-Õâ¸öÖ¸Áî¿ÉÒÔÁĞ³öËùÓĞÔÚÏßÉÏµÄÍæ¼Ò¼°ÆäµÈ¼¶¡£
+é€™å€‹æŒ‡ä»¤å¯ä»¥åˆ—å‡ºæ‰€æœ‰åœ¨ç·šä¸Šçš„ç©å®¶åŠå…¶ç­‰ç´šã€‚
 
--h   ÁĞ³ö°ïÖúÆÁÄ»¡£
--l   Ñ¡ÏîÁĞ³ö½Ï³¤µÄÑ¶Ï¢¡£
--p   Ö»ÁĞ³öÍ¬°ïÅÉµÄÍæ¼Ò¡£
--fam Ö»ÁĞ³öÍ¬ÃÅÅÉµÄÍæ¼Ò¡£
--w   Ö»ÁĞ³öÏßÉÏËùÓĞµÄÎ×Ê¦¡£
--c   Ö»ÁĞ³öÕıÔÚÁÄÌìµÄÍæ¼Ò¡£
--m   Ö»ÁĞ³ö½­ºşÖĞµÄÄĞĞÔÍæ¼Ò¡£
--f   Ö»ÁĞ³ö½­ºşÖĞµÄÅ®ĞÔÍæ¼Ò¡£
--u   Ö»ÁĞ³ö½­ºşÖĞµÄ´ó×ÚÊ¦ÃÇ¡£
--!   Ö»ÁĞ³ö½­ºşÖĞÕıÔÚÁ¬ÏßµÄÍæ¼Ò
--@   Ö»ÁĞ³ö½­ºşÖĞÕıÔÚÀëÏßĞŞÁ¶µÄÍæ¼Ò¡£
--s   °´ÕÕID×ÖÄ¸ÉıĞòÅÅÁĞËùÓĞµÄÍæ¼Ò
--S   °´ÕÕID×ÖÄ¸½µĞòÅÅÁĞËùÓĞµÄÍæ¼Ò
--z   Ö»ÁĞ³ö½­ºşÖĞµÄ×ªÊÀÖØÉúµÄÍæ¼Ò¡£
--v   Ö»ÁĞ³ö½­ºşÖĞÊÇĞÂÊÖµ¼Ê¦µÄÍæ¼Ò¡£
--n   Ö»ÁĞ³öµ±Ç°·ûºÏ²éÕÒÌõ¼şµÄÍæ¼ÒµÄÊıÄ¿¡£
-<ID> ÁĞ³ö<ID>´ú±íÍæ¼ÒËùÊôÃÅÅÉµÄÍæ¼Ò¡£
-is   Èç¹ûÊ¹ÓÃÁËÕâ¸öÑ¡Ïî£¬ºóÃæÒª¸úËæÍæ¼ÒµÄÖĞÎÄÃû×Ö¡£
+-h   åˆ—å‡ºå¹«åŠ©å±å¹•ã€‚
+-l   é¸é …åˆ—å‡ºè¼ƒé•·çš„è¨Šæ¯ã€‚
+-p   åªåˆ—å‡ºåŒå¹«æ´¾çš„ç©å®¶ã€‚
+-fam åªåˆ—å‡ºåŒé–€æ´¾çš„ç©å®¶ã€‚
+-w   åªåˆ—å‡ºç·šä¸Šæ‰€æœ‰çš„å·«å¸«ã€‚
+-c   åªåˆ—å‡ºæ­£åœ¨èŠå¤©çš„ç©å®¶ã€‚
+-m   åªåˆ—å‡ºæ±Ÿæ¹–ä¸­çš„ç”·æ€§ç©å®¶ã€‚
+-f   åªåˆ—å‡ºæ±Ÿæ¹–ä¸­çš„å¥³æ€§ç©å®¶ã€‚
+-u   åªåˆ—å‡ºæ±Ÿæ¹–ä¸­çš„å¤§å®—å¸«å€‘ã€‚
+-!   åªåˆ—å‡ºæ±Ÿæ¹–ä¸­æ­£åœ¨é€£ç·šçš„ç©å®¶
+-@   åªåˆ—å‡ºæ±Ÿæ¹–ä¸­æ­£åœ¨é›¢ç·šä¿®ç…‰çš„ç©å®¶ã€‚
+-s   æŒ‰ç…§IDå­—æ¯å‡åºæ’åˆ—æ‰€æœ‰çš„ç©å®¶
+-S   æŒ‰ç…§IDå­—æ¯é™åºæ’åˆ—æ‰€æœ‰çš„ç©å®¶
+-z   åªåˆ—å‡ºæ±Ÿæ¹–ä¸­çš„è½‰ä¸–é‡ç”Ÿçš„ç©å®¶ã€‚
+-v   åªåˆ—å‡ºæ±Ÿæ¹–ä¸­æ˜¯æ–°æ‰‹å°å¸«çš„ç©å®¶ã€‚
+-n   åªåˆ—å‡ºç•¶å‰ç¬¦åˆæŸ¥æ‰¾æ¢ä»¶çš„ç©å®¶çš„æ•¸ç›®ã€‚
+<ID> åˆ—å‡º<ID>ä»£è¡¨ç©å®¶æ‰€å±¬é–€æ´¾çš„ç©å®¶ã€‚
+is   å¦‚æœä½¿ç”¨äº†é€™å€‹é¸é …ï¼Œå¾Œé¢è¦è·Ÿéš¨ç©å®¶çš„ä¸­æ–‡åå­—ã€‚
 
-"HIG"*"NOR" ±íÊ¾"HIG"·¢´ô"NOR"ÖĞ£¬"HIC "~"NOR" ±íÊ¾ÁÄÌìÖĞ£¬"
-HIR"#"NOR" ±íÊ¾"HIR"¶ÏÏß"NOR"ÖĞ£¬"HIY"@"NOR" ±íÊ¾"HIY"ÀëÏßĞŞÁ¶"NOR"ÖĞ¡£
+"HIG"*"NOR" è¡¨ç¤º"HIG"ç™¼å‘†"NOR"ä¸­ï¼Œ"HIC "~"NOR" è¡¨ç¤ºèŠå¤©ä¸­ï¼Œ"
+HIR"#"NOR" è¡¨ç¤º"HIR"æ–·ç·š"NOR"ä¸­ï¼Œ"HIY"@"NOR" è¡¨ç¤º"HIY"é›¢ç·šä¿®ç…‰"NOR"ä¸­ã€‚
 
-Ïà¹ØÖ¸Áî£º finger
+ç›¸é—œæŒ‡ä»¤ï¼š finger
 " );
         return 1;
 }

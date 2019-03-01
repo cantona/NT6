@@ -3,13 +3,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(NOR + MAG "×ÏòÔ½î" NOR, ({ "dragon vein", "vein" }));
+        set_name(NOR + MAG "ç´«è›Ÿç­‹" NOR, ({ "dragon vein", "vein" }));
         set_weight(4000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", NOR + MAG "Ò»¸ùÄÏº£¶ñòÔµÄÁú½î£¬³Ê×ÏºÚÉ«¡£\n" NOR);
-                set("unit", "¸ù");
+                set("long", NOR + MAG "ä¸€æ ¹å—æµ·æƒ¡è›Ÿçš„é¾ç­‹ï¼Œå‘ˆç´«é»‘è‰²ã€‚\n" NOR);
+                set("unit", "æ ¹");
                 set("value", 500000);
         }
         setup();

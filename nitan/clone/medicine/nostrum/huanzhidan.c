@@ -1,4 +1,4 @@
-// huanzhidan.c »¹ÖÊµ¤
+// huanzhidan.c é‚„è³ªä¸¹
 
 inherit ITEM;
 #include <ansi.h>
@@ -14,12 +14,12 @@ void init()
 
 void create()
 {
-        set_name(HIY"ÈýÇå»»ÖÊµ¤"NOR, ({"huanzhi dan", "dan"}));
+        set_name(HIY"ä¸‰æ¸…æ›è³ªä¸¹"NOR, ({"huanzhi dan", "dan"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
-                set("long", "Ò»¿ÅÉî»ÆÉ«µÄµ¤Ò©¡£\n");
+                set("unit", "é¡†");
+                set("long", "ä¸€é¡†æ·±é»ƒè‰²çš„ä¸¹è—¥ã€‚\n");
                 set("value", 10000);
                 set("no_sell", 1);
                 set("no_drop", 1);
@@ -34,17 +34,17 @@ int do_eat(string arg)
 {
         object me = this_player();
 
-        if (!id(arg)) return notify_fail("ÄãÒª³ÔÊ²Ã´Ò©£¿\n");
+        if (!id(arg)) return notify_fail("ä½ è¦åƒä»€éº¼è—¥ï¼Ÿ\n");
         if (!present(this_object(), this_player()))
-                return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if (me->is_busy() )
-                return notify_fail("±ð¼±£¬ÂýÂý³Ô£¬Ð¡ÐÄ±ðÒ­×ÅÁË¡£\n");
+                return notify_fail("åˆ¥æ€¥ï¼Œæ…¢æ…¢åƒï¼Œå°å¿ƒåˆ¥å™Žè‘—äº†ã€‚\n");
 
         addn("neili", 100, me);
         addn("jingli", 50, me);
         if( query("jingli", me)>query("max_jingli", me) )
                 set("jingli",query("max_jingli",  me), me);
-        message_vision("$N³ÔÏÂÒ»¿ÅÈýÇå»»ÖÊµ¤£¬È«ÉíÎÞ±ÈµÄÊæÌ¹¡£\n", me);
+        message_vision("$Nåƒä¸‹ä¸€é¡†ä¸‰æ¸…æ›è³ªä¸¹ï¼Œå…¨èº«ç„¡æ¯”çš„èˆ’å¦ã€‚\n", me);
         me->start_busy(2);
         destruct(this_object());
         return 1;

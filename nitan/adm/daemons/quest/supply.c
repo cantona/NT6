@@ -1,10 +1,10 @@
-// Íæ¼ÒÈÎÎñÊØ»¤½ø³Ì£ºsupply.c
+// ç©å®¶ä»»å‹™å®ˆè­·é€²ç¨‹ï¼šsupply.c
 
 #include <ansi.h>
 
-// ¹©Ó¦µÄÎïÆ·£ºÓÉÓÚ½ÓÊÜµÄÊ±ºòNPCÖ»¸ºÔğºË¶ÔÖĞÎÄÃû×Ö£¨ÕâÊÇÓÉÓÚ
-// MUDÖĞµÄ´úÂëÒ»ÖÂĞÔ²»ºÃµÄÔµ¹Ê£©£¬ËùÒÔÃ¿¼şÌá¹©µÄÎïÆ·Îñ±ØÒª¿¼
-// ÂÇÇå³ş£¬²»ÒªºÍMUDÖĞµÄÆäËûÎïÆ·ÖØÃû¡£
+// ä¾›æ‡‰çš„ç‰©å“ï¼šç”±äºæ¥å—çš„æ™‚å€™NPCåªè² è²¬æ ¸å°ä¸­æ–‡åå­—ï¼ˆé€™æ˜¯ç”±äº
+// MUDä¸­çš„ä»£ç¢¼ä¸€è‡´æ€§ä¸å¥½çš„ç·£æ•…ï¼‰ï¼Œæ‰€ä»¥æ¯ä»¶æä¾›çš„ç‰©å“å‹™å¿…è¦è€ƒ
+// æ…®æ¸…æ¥šï¼Œä¸è¦å’ŒMUDä¸­çš„å…¶ä»–ç‰©å“é‡åã€‚
 string *supply_objs = ({
         "/clone/weapon/changjian",
         "/clone/weapon/jili",
@@ -28,8 +28,8 @@ string *supply_objs = ({
         "/clone/cloth/tiejia",
 });
 
-// ½ÓÊÜ¹©Ó¦µÄNPC£ºÒªÇóÕâĞ©ÈË±ØĞëÔÚÖ¸¶¨µÄ³¡¾°£¬ËùÒÔÕâÀïÖ¸Ã÷µÄ
-// ÊÇ³¡¾°ºÍNPCµÄID¡£
+// æ¥å—ä¾›æ‡‰çš„NPCï¼šè¦æ±‚é€™äº›äººå¿…é ˆåœ¨æŒ‡å®šçš„å ´æ™¯ï¼Œæ‰€ä»¥é€™è£¡æŒ‡æ˜çš„
+// æ˜¯å ´æ™¯å’ŒNPCçš„IDã€‚
 /*
 mapping rcv_npcs = ([
         "/d/chengdu/bingqidian"     : "tang huai",
@@ -173,7 +173,7 @@ mapping rcv_npcs = ([
 ]);
 void startup();
 
-// ÈÎÎñ¶ÔÏó´´½¨
+// ä»»å‹™å°è±¡å‰µå»º
 void create()
 {
         seteuid(getuid());
@@ -182,16 +182,16 @@ void create()
 
 void start_quest()
 {
-        object env;             // ½ÓÊÕÎïÆ·µÄNPCËùÔÚµÄ»·¾³
-        object npc;             // ½ÓÊÕÎïÆ·µÄNPC¶ÔÏó
-        object *obs;            // Ä¿Ç°ËùÓĞµÄSUPPLYÈÎÎñ
-        string *env_room;       // ĞÂÈÎÎñÄÜ¹»ÔÚµÄµØµã
-        string room;            // NPCËùÔÚµÄ»·¾³ÎÄ¼şÃû×Ö
-        string sob_file;        // ½ÓÊÕµÄÎïÆ·¶ÔÓ¦µÄÎÄ¼ş
+        object env;             // æ¥æ”¶ç‰©å“çš„NPCæ‰€åœ¨çš„ç’°å¢ƒ
+        object npc;             // æ¥æ”¶ç‰©å“çš„NPCå°è±¡
+        object *obs;            // ç›®å‰æ‰€æœ‰çš„SUPPLYä»»å‹™
+        string *env_room;       // æ–°ä»»å‹™èƒ½å¤ åœ¨çš„åœ°é»
+        string room;            // NPCæ‰€åœ¨çš„ç’°å¢ƒæ–‡ä»¶åå­—
+        string sob_file;        // æ¥æ”¶çš„ç‰©å“å°æ‡‰çš„æ–‡ä»¶
 
-        object qob;             // ÈÎÎñ¶ÔÏó
+        object qob;             // ä»»å‹™å°è±¡
 
-        // Ñ¡ÔñÒ»¸öĞÂµÄµØµã(Ä¿Ç°Ã»ÓĞSUPPLYÈÎÎñµÄ)
+        // é¸æ“‡ä¸€å€‹æ–°çš„åœ°é»(ç›®å‰æ²’æœ‰SUPPLYä»»å‹™çš„)
         env_room = keys(rcv_npcs);
         obs = children("/clone/quest/supply");
         if (arrayp(obs) && sizeof(obs) > 0)
@@ -201,7 +201,7 @@ void start_quest()
         }
 
         if (sizeof(env_room) < 1)
-                // ÎŞ·¨ÕÒµ½ÕâÑùµÄµØµã
+                // ç„¡æ³•æ‰¾åˆ°é€™æ¨£çš„åœ°é»
                 return;
 
         room = env_room[random(sizeof(env_room))];
@@ -212,26 +212,26 @@ void start_quest()
                 return;
         }
 
-        // Ñ¡Ôñ¸ÄµØµãÖĞµÄÈË
+        // é¸æ“‡æ”¹åœ°é»ä¸­çš„äºº
         if (! objectp(npc = present(rcv_npcs[room], env)) ||
             query("startroom", npc) != base_name(env) )
-                // ÎŞ·¨ÕÒµ½¸ÃµØµãÖĞºÏÊÊµÄNPCÀ´½ÓÊÕ
+                // ç„¡æ³•æ‰¾åˆ°è©²åœ°é»ä¸­åˆé©çš„NPCä¾†æ¥æ”¶
                 return;
 
 
-        // Ñ¡ÔñÒ»ÖÖ±øÆ÷
+        // é¸æ“‡ä¸€ç¨®å…µå™¨
         sob_file = supply_objs[random(sizeof(supply_objs))];
 
-        // ³õÊ¼»¯ÈÎÎñµÄÒ»Ğ©ĞÅÏ¢£¨Æô¶¯µØµã£©
+        // åˆå§‹åŒ–ä»»å‹™çš„ä¸€äº›ä¿¡æ¯ï¼ˆå•Ÿå‹•åœ°é»ï¼‰
         qob = new("/clone/quest/supply");
         set("quest_position", room, qob);
 
         CHANNEL_D->do_channel(find_object(QUEST_D),
-                              "debug", "½ø³Ì(SUPPLY)ÔÚ" + env->short(1) +
-                              NOR HIW "µØµãÀûÓÃ" + npc->name() +
-                              NOR HIW "´´½¨ÁËÒ»¸öÈÎÎñ¡£");
+                              "debug", "é€²ç¨‹(SUPPLY)åœ¨" + env->short(1) +
+                              NOR HIW "åœ°é»åˆ©ç”¨" + npc->name() +
+                              NOR HIW "å‰µå»ºäº†ä¸€å€‹ä»»å‹™ã€‚");
 
-        // ½»ÓÉÈÎÎñ×Ô¼º½øĞĞ³õÊ¼»¯
+        // äº¤ç”±ä»»å‹™è‡ªå·±é€²è¡Œåˆå§‹åŒ–
         qob->init_quest(npc, sob_file);
 }
 
@@ -240,26 +240,26 @@ private void heart_beat()
         if (! find_object(QUEST_D))
                 return;
 
-        // Èç¹û¿ÉÒÔ£¬Ã¿´ÎĞÄÌø²úÉúÒ»¸öQUEST
+        // å¦‚æœå¯ä»¥ï¼Œæ¯æ¬¡å¿ƒè·³ç”¢ç”Ÿä¸€å€‹QUEST
         start_quest();
 }
 
-// ÈÎÎñÊØ»¤½ø³Ì»½ĞÑÕâ¸ö½ø³Ì
+// ä»»å‹™å®ˆè­·é€²ç¨‹å–šé†’é€™å€‹é€²ç¨‹
 void startup()
 {
-        // Æô¶¯
+        // å•Ÿå‹•
         if (! find_object(QUEST_D))
                 return;
 
         if (! query_heart_beat())
                 CHANNEL_D->do_channel(find_object(QUEST_D),
-                                      "sys", "½ø³Ì(SUPPLY)Æô¶¯ÁË¡£");
+                                      "sys", "é€²ç¨‹(SUPPLY)å•Ÿå‹•äº†ã€‚");
 
-        // Æ½¾ùÃ¿ËÄ·ÖÖÓ²úÉúÒ»¸öÈÎÎñ
+        // å¹³å‡æ¯å››åˆ†é˜ç”¢ç”Ÿä¸€å€‹ä»»å‹™
         set_heart_beat(110 + random(20));
 }
 
-// Í£Ö¹Õâ¸öÈÎÎñ½ø³Ì
+// åœæ­¢é€™å€‹ä»»å‹™é€²ç¨‹
 void stop()
 {
         set_heart_beat(0);

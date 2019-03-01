@@ -6,10 +6,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÃÉ¹Å±ø", ({ "menggu bing", "bing", "menggu" }));
+        set_name("è’™å¤å…µ", ({ "menggu bing", "bing", "menggu" }));
         set("long", 
-"ÃÉ¹Å±ø³¤ÄêÔ¾ÂíºáÇ¹£¬Ê®·ÖæçÓÂ¡£\n");
-        set("gender", "ÄĞĞÔ");
+"è’™å¤å…µé•·å¹´èºé¦¬æ©«æ§ï¼Œååˆ†é©å‹‡ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 18);
         set("attitude", "friendly");
         set("shen_type", 1);
@@ -34,7 +34,7 @@ void create()
         map_skill("club", "zhongping-qiang");
 
         set("env/wimpy", 60);
-        set_temp("is_riding", HIY"ÃÉ¹ÅÂí"NOR);
+        set_temp("is_riding", HIY"è’™å¤é¦¬"NOR);
         set("env/wimpy", 40);
 
          setup();

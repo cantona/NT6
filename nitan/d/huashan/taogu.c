@@ -9,12 +9,12 @@ int valid_leave(object, string);
 
 void create()
 {
-        set("short", "ÌÒ¹È");
+        set("short", "æ¡ƒè°·");
         set("long", @LONG
-Ğ¡¾¶¾¡Í·¾¡ÊÇÒ»É½¹È£¬ÆøºòÊÊÖĞ£¬ËÄ¼¾Èç´º¡£É½¹ÈÄÚ³¤ÂúÁËÒ»´ó
-Æ¬ÌÒÁÖ£¬ÕæÊÇÒ»´¦ºÃËùÔÚ¡£ÒÅº±µÄÊÇ´Ë´¦¾¹È»ĞúÄÖÖ®¼«£¬±ãÈçÉí´¦¾Æ
-ËÁÖ®ÖĞ£¬Ô­À´ÓĞ¼¸¸öÀÏ¶ùÔÚÎªÒ»¼şÖ¥ÂéÂÌ¶¹µÄĞ¡ÊÂ¸ßÉùÕùÂÛ²»Ğİ¡£¶«
-±±·½»¹ÓĞÒ»ÌõĞ¡¾¶¡£
+å°å¾‘ç›¡é ­ç›¡æ˜¯ä¸€å±±è°·ï¼Œæ°£å€™é©ä¸­ï¼Œå››å­£å¦‚æ˜¥ã€‚å±±è°·å…§é•·æ»¿äº†ä¸€å¤§
+ç‰‡æ¡ƒæ—ï¼ŒçœŸæ˜¯ä¸€è™•å¥½æ‰€åœ¨ã€‚éºç½•çš„æ˜¯æ­¤è™•ç«Ÿç„¶å–§é¬§ä¹‹æ¥µï¼Œä¾¿å¦‚èº«è™•é…’
+è‚†ä¹‹ä¸­ï¼ŒåŸä¾†æœ‰å¹¾å€‹è€å…’åœ¨ç‚ºä¸€ä»¶èŠéº»ç¶ è±†çš„å°äº‹é«˜è²çˆ­è«–ä¸ä¼‘ã€‚æ±
+åŒ—æ–¹é‚„æœ‰ä¸€æ¢å°å¾‘ã€‚
 LONG );
 
         set("exits", ([
@@ -44,7 +44,7 @@ void init()
 
 int do_hit(string arg)
 {
-        write("Ã÷ÈË²»×÷°µÊÂ£¬»¹ÊÇ¹âÃ÷Õı´óµØÌôÕ½°É£¡\n");
+        write("æ˜äººä¸ä½œæš—äº‹ï¼Œé‚„æ˜¯å…‰æ˜æ­£å¤§åœ°æŒ‘æˆ°å§ï¼\n");
         return 1;
 }
 
@@ -53,22 +53,22 @@ int valid_leave(object me, string dir)
         if( query("family/master_id", me) != "feng qingyang" && dir == "northeast"){
 
         if( !query_temp("win/tao1", me) && present("tao genxian",environment(me)) )
-                return notify_fail("ÌÒ¸ùÏÉÉìÊÖÒ»À¹µÀ£ºÄã»¹Ã»¸úÎÒ½ÏÁ¿ÄØ£¡\n");
+                return notify_fail("æ¡ƒæ ¹ä»™ä¼¸æ‰‹ä¸€æ””é“ï¼šä½ é‚„æ²’è·Ÿæˆ‘è¼ƒé‡å‘¢ï¼\n");
 
         if( !query_temp("win/tao2", me) && present("tao ganxian",environment(me)) )
-                return notify_fail("ÌÒ¸ÉÏÉ²àÉíÀ¹Â·µÀ£ºÄã»¹Ã»¸úÎÒ±È»®Ó´£¡\n");
+                return notify_fail("æ¡ƒå¹¹ä»™å´èº«æ””è·¯é“ï¼šä½ é‚„æ²’è·Ÿæˆ‘æ¯”åŠƒå–²ï¼\n");
 
         if( !query_temp("win/tao3", me) && present("tao zhixian",environment(me)) )
-                return notify_fail("ÌÒÖ¦ÏÉÉÁÉíÀ¹µÀËµ£ºÄãÔõÃ´°ÑÎÒ¸øÍüÁËÑ½£¡\n");
+                return notify_fail("æ¡ƒæä»™é–ƒèº«æ””é“èªªï¼šä½ æ€éº¼æŠŠæˆ‘çµ¦å¿˜äº†å‘€ï¼\n");
 
         if( !query_temp("win/tao4", me) && present("tao yexian",environment(me)) )
-                return notify_fail("ÌÒÒ¶ÏÉË«ÊÖÒ»Ì¯Ëµ£ºÄãÏëµ½ÄÇ¶ùÈ¥Ñ½£¿£¡\n");
+                return notify_fail("æ¡ƒè‘‰ä»™é›™æ‰‹ä¸€æ”¤èªªï¼šä½ æƒ³åˆ°é‚£å…’å»å‘€ï¼Ÿï¼\n");
 
         if( !query_temp("win/tao5", me) && present("tao huaxian",environment(me)) )
-                return notify_fail("ÌÒ»¨ÏÉĞ¦ÎûÎûµØËµ£º¸ÃÂÖµ½ÎÒÀ´ÅãÄã¹ıÁ½ÕĞÁË°É£¡\n");
+                return notify_fail("æ¡ƒèŠ±ä»™ç¬‘å˜»å˜»åœ°èªªï¼šè©²è¼ªåˆ°æˆ‘ä¾†é™ªä½ éå…©æ‹›äº†å§ï¼\n");
 
         if( !query_temp("win/tao6", me) && present("tao shixian",environment(me)) )
-                return notify_fail("ÌÒÊµÏÉÇ¿×³µ¨É«Ëµ£º´òµÃ¹ıÎÒ±ãÈÃÄãÈ¥¼û·çÇ°±²£¡\n");
+                return notify_fail("æ¡ƒå¯¦ä»™å¼·å£¯è†½è‰²èªªï¼šæ‰“å¾—éæˆ‘ä¾¿è®“ä½ å»è¦‹é¢¨å‰è¼©ï¼\n");
 
     }           
 

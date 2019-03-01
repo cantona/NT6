@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "������Ⱥ��");
+        set("short", "哈薩克群落");
         set("long", @LONG
-�����һƬ����������������˵�����һ���ļ��ڲ�ԭ
-�϶����ϱ���Ǩ�ơ�����һ����ǰ����һ�Ŵ���Ƥ�Եø�����
-Ŀ��һ������������Ů�����˾ƽ��������ܿ������к��㡣
+這兒有一片哈薩克帳蓬。哈薩克人的帳蓬一年四季在草原
+上東西南北的遷移。其中一帳蓬前掛著一張大狼皮顯得格外醒
+目。一個身材苗條的女孩捧了酒漿出來，很客氣地招呼你。
 LONG);
         set("outdoors", "gaochang");
         set("exits", ([

@@ -3,8 +3,8 @@ inherit SNAKE;
 
 void create()
 {
-        set_name(HIC "²Ë»¨Éß" NOR, ({ "caihua she", "caihua", "she" }));
-        set("long", HIC "ÕâÊÇÒ»Ö»ÇàÓÄÓÄµÄ²Ë»¨Éß£¬Í·²¿³ÊÍÖÔ²ĞÎ¡£\n" NOR);
+        set_name(HIC "èœèŠ±è›‡" NOR, ({ "caihua she", "caihua", "she" }));
+        set("long", HIC "é€™æ˜¯ä¸€åªé’å¹½å¹½çš„èœèŠ±è›‡ï¼Œé ­éƒ¨å‘ˆæ©¢åœ“å½¢ã€‚\n" NOR);
 
         set("age", 1);
         set("str", 15);
@@ -38,7 +38,7 @@ int convert(string arg)
         object ob;
 
         if (arg!="snake" && arg!="she" && arg!="caihua she") return 0;
-        if( query("family/family_name", me) != "Å·ÑôÊÀ¼Ò" )
-                return notify_fail("Äã²»ÄÜ»¯ÉßÎªÕÈ¡£\n");
-        return notify_fail("²Ë»¨ÉßÒ°ĞÔÌ«Ğ¡£¬¹¥»÷ÌìĞÔºÜ²î£¬²»ÄÜ»¯ÎªÕÈ¡£\n");
+        if( query("family/family_name", me) != "æ­é™½ä¸–å®¶" )
+                return notify_fail("ä½ ä¸èƒ½åŒ–è›‡ç‚ºæ–ã€‚\n");
+        return notify_fail("èœèŠ±è›‡é‡æ€§å¤ªå°ï¼Œæ”»æ“Šå¤©æ€§å¾ˆå·®ï¼Œä¸èƒ½åŒ–ç‚ºæ–ã€‚\n");
 }

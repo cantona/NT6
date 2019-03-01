@@ -5,12 +5,12 @@ void do_swing();
 void set_from_me(object me);
 void create()
 {
-        string *names = ({ "ÇàÍ­±ª×Ó" });
+        string *names = ({ "é’éŠ…è±¹å­" });
         ::create();
         set_name( names[random(sizeof(names))], ({ "bronze leopard", "bronze", "leopard" }));
         set("vendetta_mark", "ghost");
-        set("long", "ÕâÊÇÒ»¸ö³ÁË¯ÔÚ»ÊÁêÇàÍ­»ú¹ØÊŞ¡£\n");
-        set("title", HIR"»ú¹ØÊŞ" NOR);
+        set("long", "é€™æ˜¯ä¸€å€‹æ²‰ç¡åœ¨çš‡é™µé’éŠ…æ©Ÿé—œç¸ã€‚\n");
+        set("title", HIR"æ©Ÿé—œç¸" NOR);
 
         set("str", 150);
         set("con", 120);
@@ -29,7 +29,7 @@ void create()
                 (: do_swing() :),
         }) );
         set("combat_exp", 100000000);
-        set("death_msg",YEL"\n$NÉ¢Âä³ÉÒ»¶ÑÇàÍ­¡£\n\n"NOR);
+        set("death_msg",YEL"\n$Næ•£è½æˆä¸€å †é’éŠ…ã€‚\n\n"NOR);
 
         set("rewards", ([
                 "exp" : 400,
@@ -79,10 +79,10 @@ void do_swing()
         if( !enemies || sizeof(enemies)==0 )
                 return;
 
-        msg = RED "$NÕÅ¿ª´ó¿Ú£¬ÍÂÒ»¸ö´ó»ğÇò£¡£¡\n" NOR;
+        msg = RED "$Nå¼µé–‹å¤§å£ï¼Œåä¸€å€‹å¤§ç«çƒï¼ï¼\n" NOR;
         message_vision(msg, this_object());
         foreach( enemy in enemies ) {
-                msg = RED"»ğÇòÔÚÌì¿ÕÕ¨¿ª,ÎŞÊıĞ¡»ğÇò·ÉÏò$n£¡"NOR;
+                msg = RED"ç«çƒåœ¨å¤©ç©ºç‚¸é–‹,ç„¡æ•¸å°ç«çƒé£›å‘$nï¼"NOR;
                 message_vision(msg,this_object(), enemy);
                 enemy->receive_damage("qi",5000+random(5000),this_object());
                 COMBAT_D->report_status(enemy);

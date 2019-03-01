@@ -1,15 +1,15 @@
-// guandao2.c �ٵ�
+// guandao2.c 官道
 // Winder Oct.10 1998
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "�ٵ�");
+        set("short", "官道");
         set("long", @LONG
-����һ���ٸ��޽��Ĵ����������Լ���Կ����书��Ķ��š�
-Զ��������Կ���Ρ��ĳ�ǽ��������ͨ����ԭ��·���������
-���ƺ�����һ�֡�Ȱ������һ���ƣ����������޹��ˡ��ĸо���
+這是一條官府修建的大道，西面隱約可以看見武功鎮的東門。
+遠處好象可以看見巍峨的城牆。往東是通往中原的路。走在這裡，
+你似乎有了一種‘勸君更進一杯酒，西出陽關無故人’的感覺。
 LONG
         );
         set("outdoors", "hanzhong");

@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ʯ��");
+        set("short", "石道");
         set("long", @LONG
-һ·�����½̽��ڰ������ܣ���������ɽ��������һ��ˮ̲֮ǰ��
-������һ��ʯ��ͨ��ˮ̲��
+一路上日月教教眾把守嚴密，經過三處山道，來到一處水灘之前，
+西面有一道石階通往水灘。
 LONG );
         set("outdoors", "heimuya");
         set("exits", ([

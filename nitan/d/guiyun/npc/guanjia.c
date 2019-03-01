@@ -1,14 +1,14 @@
-// Npc: /d/guiyun/npc/guanjia.c ¹Ü¼Ò
+// Npc: /d/guiyun/npc/guanjia.c ç®¡å®¶
 // Last Modified by winder on Jul. 9 2001
 
 inherit NPC;
 
 void create()
 {
-        set_name("¹Ü¼Ò", ({ "guan jia", "guanjia", "guan", "jia" }));
-        set("gender", "ÄĞĞÔ");
+        set_name("ç®¡å®¶", ({ "guan jia", "guanjia", "guan", "jia" }));
+        set("gender", "ç”·æ€§");
         set("age", 44);
-        set("long", "ËûÊÇ¹éÔÆ×¯µÄ¹Ü¼Ò£¬¸ºÔğÈÕ³£µÄ×¯Îñ¡£\n");
+        set("long", "ä»–æ˜¯æ­¸é›²èŠçš„ç®¡å®¶ï¼Œè² è²¬æ—¥å¸¸çš„èŠå‹™ã€‚\n");
         
         set("combat_exp", 8000);
         set("shen_type", 0);
@@ -26,7 +26,7 @@ void create()
         set_temp("apply/defense", 22);
 
         set("inquiry",([
-                "name" : "¿È£¬ÄÇÃ´Âé·³¸ÉÊ²Ã´£¬ÓĞÊÂÄú¾ÍÖ±ºô¹Ü¼ÒºÃÁË¡£",
+                "name" : "å’³ï¼Œé‚£éº¼éº»ç…©å¹¹ä»€éº¼ï¼Œæœ‰äº‹æ‚¨å°±ç›´å‘¼ç®¡å®¶å¥½äº†ã€‚",
         ]));
         setup();
         carry_object("/clone/misc/cloth")->wear();

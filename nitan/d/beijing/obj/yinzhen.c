@@ -5,21 +5,21 @@ inherit THROWING;
 
 void create()
 {
-        set_name(HIW "ÒøÕë" NOR, ({ "yin zhen" , "yin", "zhen" }) );
+        set_name(HIW "éŠ€é‡" NOR, ({ "yin zhen" , "yin", "zhen" }) );
         set_weight(200);
 
         if( clonep() )
                 set_default_object(__FILE__);
         else
         {
-                set("unit", "Ã¶");
-                set("long", HIW "ÕâÊÇÒ»Ã¶Èı´ç³¤µÄÒøÕë£¬Ï¸¶øÈáÈÍ£¬¶àÎªÒ½¼Ò"
-                            "´ÌÑ¨ÁÆÉËÖ®ÓÃ¡£ÄÜÔËÓÃÕâÖÖÒøÕëµÄÒ½Õß¶àÎª¿õÊÀ\n"
-                            "ÉñÒ½£¬²¢ÓĞÉîºñµÄÄÚ¹¦¡£Äã¿ÉÒÔÊÔ×ÅÓÃËüÀ´Õë¾Ä"
-                            "(zhenjiu)ÁÆÉË¡£\n" NOR);
+                set("unit", "æš");
+                set("long", HIW "é€™æ˜¯ä¸€æšä¸‰å¯¸é•·çš„éŠ€é‡ï¼Œç´°è€ŒæŸ”éŸŒï¼Œå¤šç‚ºé†«å®¶"
+                            "åˆºç©´ç™‚å‚·ä¹‹ç”¨ã€‚èƒ½é‹ç”¨é€™ç¨®éŠ€é‡çš„é†«è€…å¤šç‚ºæ› ä¸–\n"
+                            "ç¥é†«ï¼Œä¸¦æœ‰æ·±åšçš„å…§åŠŸã€‚ä½ å¯ä»¥è©¦è‘—ç”¨å®ƒä¾†é‡ç¸"
+                            "(zhenjiu)ç™‚å‚·ã€‚\n" NOR);
                 set("value", 0);              
                 set("yingdu", 50);
-                set("base_unit", "Ã¶");
+                set("base_unit", "æš");
                 set("base_weight", 10);
                 set("base_value", 0);
                 set("material","crimsonsteel");
@@ -45,22 +45,22 @@ int do_heal(string arg)
 
         me = this_player();
         if (me->query_skill("zhenjiu-shu", 1) < 1 )
-                return notify_fail("ÄãÕë¾ÄÊõ¶¼Ã»Ñ§£¬È¥É±ÈË°¡£¿\n");
+                return notify_fail("ä½ é‡ç¸è¡“éƒ½æ²’å­¸ï¼Œå»æ®ºäººå•Šï¼Ÿ\n");
 
         if( this_object() != query_temp("handing", me) )
-                return notify_fail("Äã±ØĞë°ÑÒøÕëÄÃÔÚÊÖÀï²ÅÄÜÕë¾Ä¡£\n");
+                return notify_fail("ä½ å¿…é ˆæŠŠéŠ€é‡æ‹¿åœ¨æ‰‹è£¡æ‰èƒ½é‡ç¸ã€‚\n");
 
         if (! arg || ! objectp(ob = present(arg, environment(me))))
-                return notify_fail("ÄãÏë¶ÔË­Ê©ĞĞÕë¾ÄÊõ£¿\n");
+                return notify_fail("ä½ æƒ³å°èª°æ–½è¡Œé‡ç¸è¡“ï¼Ÿ\n");
 
         if( !ob->is_character() || query("not_living", ob) )
-                return notify_fail("¿´Çå³şÁË£¬ÄÇ²»ÊÇ»îÈË£¡\n"); 
+                return notify_fail("çœ‹æ¸…æ¥šäº†ï¼Œé‚£ä¸æ˜¯æ´»äººï¼\n"); 
 
         if (! living(ob))
-                return notify_fail("Äã»¹ÊÇµÈËûĞÑÁËÖ®ºóÔÙÖÎÁÆ°É¡£\n");
+                return notify_fail("ä½ é‚„æ˜¯ç­‰ä»–é†’äº†ä¹‹å¾Œå†æ²»ç™‚å§ã€‚\n");
 
         if( query("no_zhenjiu", ob) )
-                return notify_fail("ÈË¼Ò²»Ïë½ÓÊÜÄãµÄºÃÒâ¡£\n");
+                return notify_fail("äººå®¶ä¸æƒ³æ¥å—ä½ çš„å¥½æ„ã€‚\n");
 
         flag = 0;
 
@@ -68,11 +68,11 @@ int do_heal(string arg)
         {
                 if (me->query_skill("zhenjiu-shu", 1) < 60)
                 {
-                        message_vision( HIY "$N" HIY "ÕıÏë¸ø$n" HIY "ÁÆÉË£¬¿É$n"
-                                        HIY "Íû×Å$N" HIY "ÄÇ²»Í£²ü¶¶µÄË«ÊÖ£¬Á³ÉÏ"
-                                        "Â¶³öº¦ÅÂµÄÉñÉ«¡£\n" NOR + CYN "$n" CYN
-                                        "ÖåÁËÖåÃ¼Í·£¬¶Ô$N" CYN "ËµµÀ£ºÄãÄÇµãÊÖÒÕ"
-                                        "»¹ÊÇËãÁË°É¡£\n", me, ob);
+                        message_vision( HIY "$N" HIY "æ­£æƒ³çµ¦$n" HIY "ç™‚å‚·ï¼Œå¯$n"
+                                        HIY "æœ›è‘—$N" HIY "é‚£ä¸åœé¡«æŠ–çš„é›™æ‰‹ï¼Œè‡‰ä¸Š"
+                                        "éœ²å‡ºå®³æ€•çš„ç¥è‰²ã€‚\n" NOR + CYN "$n" CYN
+                                        "çšºäº†çšºçœ‰é ­ï¼Œå°$N" CYN "èªªé“ï¼šä½ é‚£é»æ‰‹è—"
+                                        "é‚„æ˜¯ç®—äº†å§ã€‚\n", me, ob);
                         return 1;
                 }
         } else
@@ -82,41 +82,41 @@ int do_heal(string arg)
                         if( !is_sub(query("id", me),query("env/can_accept", ob)) )
                         {
                                 // user refuse to accept
-                                return notify_fail("ÈË¼ÒÏÖÔÚ²»Ïë½ÓÊÜÄãµÄºÃÒâ¡£\n");
+                                return notify_fail("äººå®¶ç¾åœ¨ä¸æƒ³æ¥å—ä½ çš„å¥½æ„ã€‚\n");
                         }
                         flag = 1;
                 }
         }
 
         if (me->is_busy())
-                return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£å¿™è‘—å‘¢ã€‚\n");
 
         if (me->is_fighting() || ob->is_fighting())
-                return notify_fail("Õ½¶·ÖĞ»¹ÏëÁÆÉË£¬ÄãÕÒËÀ°¡£¿\n");
+                return notify_fail("æˆ°é¬¥ä¸­é‚„æƒ³ç™‚å‚·ï¼Œä½ æ‰¾æ­»å•Šï¼Ÿ\n");
 
         if( ob->is_killing(query("id", me)) )
-                return notify_fail("ÈË¼Ò²»»á¸øÄãÕâ¸ö»ú»áµÄ¡£\n");
+                return notify_fail("äººå®¶ä¸æœƒçµ¦ä½ é€™å€‹æ©Ÿæœƒçš„ã€‚\n");
 
         if (ob->query_skill("force") >= 150)
-                return notify_fail("ÈË¼ÒÄÚ¹¦Éîºñ£¬²»Ö¸ÍûÄãÌæËûÁÆÉË¡£\n");
+                return notify_fail("äººå®¶å…§åŠŸæ·±åšï¼Œä¸æŒ‡æœ›ä½ æ›¿ä»–ç™‚å‚·ã€‚\n");
 
         if( (query("max_qi", ob)*5/100>query("eff_qi", ob)) )
-                return notify_fail("ÏÖÔÚ´ËÈËÊÜÉË¹ıÖØ£¬Ê©ĞĞÕë¾ÄÌ«Î£ÏÕÁË£¡\n");   
+                return notify_fail("ç¾åœ¨æ­¤äººå—å‚·éé‡ï¼Œæ–½è¡Œé‡ç¸å¤ªå±éšªäº†ï¼\n");   
 
         if( query("max_qi", ob) == query("eff_qi", ob) )
         {
                 if(me != ob)
-                        return notify_fail("ÕâÈË²¢Ã»ÓĞÊÜÉË£¡\n");
+                        return notify_fail("é€™äººä¸¦æ²’æœ‰å—å‚·ï¼\n");
                 else
-                        message_vision(HIW "$N" HIW "¾ö¶¨ÓÃ×Ô¼ºÀ´×öÊÔÑé£¬À´Ìá¸ß×Ô¼º"
-                                       "Õë¾ÄÊõµÄË®Æ½¡£\n" NOR, me);
+                        message_vision(HIW "$N" HIW "æ±ºå®šç”¨è‡ªå·±ä¾†åšè©¦é©—ï¼Œä¾†æé«˜è‡ªå·±"
+                                       "é‡ç¸è¡“çš„æ°´å¹³ã€‚\n" NOR, me);
         }
 
         if( query("neili", me)<80 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»×ã£¬ÎŞ·¨Ê¹ÓÃÕë¾ÄÊõÎªÈËÁÆÉË£¡\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸è¶³ï¼Œç„¡æ³•ä½¿ç”¨é‡ç¸è¡“ç‚ºäººç™‚å‚·ï¼\n");
 
         if( query("jing", me)<50 )
-                return notify_fail("ÄãµÄ¾«²»×ã£¬ÎŞ·¨¼¯ÖĞ¾«Á¦£¡\n");
+                return notify_fail("ä½ çš„ç²¾ä¸è¶³ï¼Œç„¡æ³•é›†ä¸­ç²¾åŠ›ï¼\n");
 
         if( time()-query_temp("last/zhenjiu", ob)<60 )
                 return flag = 1;
@@ -127,12 +127,12 @@ int do_heal(string arg)
         addn("jing", -30, me);
         me->start_busy(1 + random(1));
         me->improve_skill("zhenjiu-shu", 5 + random(30));
-        tell_object(me, HIC "ÔÚÊµ¼ù¹ı³ÌÖĞÄãµÄ¡¸Õë¾ÄÊõ¡¹Ìá¸ßÁË£¡\n" NOR);
+        tell_object(me, HIC "åœ¨å¯¦è¸éç¨‹ä¸­ä½ çš„ã€Œé‡ç¸è¡“ã€æé«˜äº†ï¼\n" NOR);
 
         if (me == ob) s = "$N";
                  else s = "$n";
 
-        msg = HIW "$N" HIW "ÊÖÄóÒøÕë£¬Ğ¡ĞÄÒíÒíµØÏò" + s + HIW "µÄÑ¨µÀ´ÌÈ¥£¬\n" NOR;
+        msg = HIW "$N" HIW "æ‰‹æéŠ€é‡ï¼Œå°å¿ƒç¿¼ç¿¼åœ°å‘" + s + HIW "çš„ç©´é“åˆºå»ï¼Œ\n" NOR;
 
         if (random(120) > (int)me->query_skill("zhenjiu-shu", 1))
         {
@@ -140,24 +140,24 @@ int do_heal(string arg)
                 i=query("max_qi", ob)*10/damage;
 
                 if (i > 100)
-                        msg += CYN "¿ÉÊÇ$N" CYN "ÓÃÁ¦ÉÔÆ«£¬Ã»´ÌÖĞÑ¨µÀ£¬" + s +
-                               CYN "Á³ÉÏÂ¶³öÒ»Ë¿ÄÑ¹ıµÄÉñÇé¡£" NOR;
+                        msg += CYN "å¯æ˜¯$N" CYN "ç”¨åŠ›ç¨åï¼Œæ²’åˆºä¸­ç©´é“ï¼Œ" + s +
+                               CYN "è‡‰ä¸Šéœ²å‡ºä¸€çµ²é›£éçš„ç¥æƒ…ã€‚" NOR;
                 else
                 {
                         if (i > 40)
-                                msg += RED "µ«ÊÇ$N" RED "ÓÃÁ¦¹ıÃÍ£¬¾¹È»´Ì³öÁË"
-                                "Ñª£¬Õâ¿ÉÊÇÕë¾ÄÖĞµÄ´ó¼É£¡" NOR;
+                                msg += RED "ä½†æ˜¯$N" RED "ç”¨åŠ›éçŒ›ï¼Œç«Ÿç„¶åˆºå‡ºäº†"
+                                "è¡€ï¼Œé€™å¯æ˜¯é‡ç¸ä¸­çš„å¤§å¿Œï¼" NOR;
                         else
-                                msg += RED "$N" RED "´ÌÁËÏÂÈ¥²Å·¢ÏÖ´Ì´íÁËÑ¨µÀ£¬"
-                                + s + RED "¡¸ÍÛ¡¹µÄÅç³öÁËÒ»¿ÚÏÊÑª£¡" NOR;
+                                msg += RED "$N" RED "åˆºäº†ä¸‹å»æ‰ç™¼ç¾åˆºéŒ¯äº†ç©´é“ï¼Œ"
+                                + s + RED "ã€Œå“‡ã€çš„å™´å‡ºäº†ä¸€å£é®®è¡€ï¼" NOR;
                 }
 
                 ob->receive_wound("qi", damage);                
                 damage = i;
         } else
         {
-                msg += HIW "$N" HIW "µÄÒøÕë×¼È·ÎŞÎóµÄ´ÌÈëÑ¨µÀ£¬Ëæ×ÅÒøÕëµÄ»º»º×ª"
-                       "¶¯£¬" + s + HIW "³¤³¤µÄ³öÁËÒ»¿ÚÆø£¬Á³É«ºÃ¿´¶àÁË¡£\n" NOR;
+                msg += HIW "$N" HIW "çš„éŠ€é‡æº–ç¢ºç„¡èª¤çš„åˆºå…¥ç©´é“ï¼Œéš¨è‘—éŠ€é‡çš„ç·©ç·©è½‰"
+                       "å‹•ï¼Œ" + s + HIW "é•·é•·çš„å‡ºäº†ä¸€å£æ°£ï¼Œè‡‰è‰²å¥½çœ‹å¤šäº†ã€‚\n" NOR;
 
                 damage = -1;
 
@@ -195,11 +195,11 @@ int do_heal(string arg)
                         if (playerp(ob))
                         {
                                 if (me == ob)
-                                        message_vision(HIR "ºÃÏÕ°¡£¡$N" HIR "²îÒ»µã°Ñ×Ô¼ºÔú"
-                                                       "ËÀ¡£\n" NOR, me);
+                                        message_vision(HIR "å¥½éšªå•Šï¼$N" HIR "å·®ä¸€é»æŠŠè‡ªå·±ç´®"
+                                                       "æ­»ã€‚\n" NOR, me);
                                 else
-                                        message_vision(HIR "ºÃÏÕ°¡£¡$N" HIR "²îÒ»µã°Ñ$n" HIR
-                                                       "ÔúËÀ¡£\n", me,ob);
+                                        message_vision(HIR "å¥½éšªå•Šï¼$N" HIR "å·®ä¸€é»æŠŠ$n" HIR
+                                                       "ç´®æ­»ã€‚\n", me,ob);
                         }
                 } else
                 {
@@ -207,16 +207,16 @@ int do_heal(string arg)
                         {
                                 if (random(damage) < 40)
                                 {
-                                        message_vision(HIR "$N" HIR "Í´µÃ¡¸ÍÛÍÛ¡¹´ó½Ğ²»Ö¹£¬"
-                                                       "Å­µÀ£º¾ÓÈ»¸ÒÏÂ¶¾ÊÖ£¬ÄãÏëÉ±ËÀÎÒ°¡£¡\n" NOR, ob);
+                                        message_vision(HIR "$N" HIR "ç—›å¾—ã€Œå“‡å“‡ã€å¤§å«ä¸æ­¢ï¼Œ"
+                                                       "æ€’é“ï¼šå±…ç„¶æ•¢ä¸‹æ¯’æ‰‹ï¼Œä½ æƒ³æ®ºæ­»æˆ‘å•Šï¼\n" NOR, ob);
 
                                         ob->kill_ob(me);
                                         me->fight_ob(ob);
                                 } else
                                 {
-                                        message_vision(HIR "$N" HIR "¡¸ÍÛ¡¹µÄ´ó½ĞÒ»Éù£¬²»"
-                                                       "ÂúµØµÀ£ººÃÍ´°¡£¡ÏÂ´ÎÄã¿ÉÇ§Íòµ±ĞÄµã"
-                                                       "£¡\n",ob);
+                                        message_vision(HIR "$N" HIR "ã€Œå“‡ã€çš„å¤§å«ä¸€è²ï¼Œä¸"
+                                                       "æ»¿åœ°é“ï¼šå¥½ç—›å•Šï¼ä¸‹æ¬¡ä½ å¯åƒè¬ç•¶å¿ƒé»"
+                                                       "ï¼\n",ob);
                                 }
                         }
                 }

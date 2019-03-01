@@ -1,5 +1,5 @@
 // Code of ShenZhou
-// shouwu.c Ê×ÎÚ¾«
+// shouwu.c é¦–çƒç²¾
 
 #include <ansi.h>
 
@@ -9,13 +9,13 @@ void init();
 
 void create()
 {
-        set_name( GRN "Ê×ÎÚ¾«" NOR , ({"shouwu jing", "shouwu"}));
+        set_name( GRN "é¦–çƒç²¾" NOR , ({"shouwu jing", "shouwu"}));
         set_weight(100);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Ã");
-                set("long", "ÕâÊÇÒ»¿Ã³É¾«µÄºÎÊ×ÎÚ£¬ÖÁÉÙÉú³¤ÁË¼¸°ÙÄêÁË£¬ÔçÒÑ³ÉÈËĞÎ£¬ÓĞÆæÃîµÄÒ©Ğ§¡£\n");
+                set("unit", "æ£µ");
+                set("long", "é€™æ˜¯ä¸€æ£µæˆç²¾çš„ä½•é¦–çƒï¼Œè‡³å°‘ç”Ÿé•·äº†å¹¾ç™¾å¹´äº†ï¼Œæ—©å·²æˆäººå½¢ï¼Œæœ‰å¥‡å¦™çš„è—¥æ•ˆã€‚\n");
                 set("value", 8000);
                 set("no_sell", 1);
                 set("medicine", 1);
@@ -30,7 +30,7 @@ int do_effect(object me)
         set("eff_jing",query("max_jing",  me), me);
         set("jingli",query("max_jingli",  me), me);
         
-        message_vision(HIY "$N³ÔÏÂÒ»¿ÃÊ×ÎÚ¾«£¬Ò©Ğ§Á¢¿ÌÍ¨³¹·Î¸­£¬Ö±´ïËÄÖ«¡£²»½ö¾«Á¦´óÕñ£¬Á¬ÉËÍ´Ò²È«¶¼¸Ğ¾õ²»µ½ÁË¡£\n" NOR, me);
+        message_vision(HIY "$Nåƒä¸‹ä¸€æ£µé¦–çƒç²¾ï¼Œè—¥æ•ˆç«‹åˆ»é€šå¾¹è‚ºè…‘ï¼Œç›´é”å››è‚¢ã€‚ä¸åƒ…ç²¾åŠ›å¤§æŒ¯ï¼Œé€£å‚·ç—›ä¹Ÿå…¨éƒ½æ„Ÿè¦ºä¸åˆ°äº†ã€‚\n" NOR, me);
 
         destruct(this_object());
         return 1;

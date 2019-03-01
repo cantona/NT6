@@ -3,14 +3,14 @@ inherit NPC;
 
 void create()
 {
-        set_name("±±³ó", ({ "bei chou", "bei", "chou", "xizi" }) );
-        set("nickname", HIW "±±Ï·×Ó" NOR);
-        set("title", HIC "ÎäÁÖÌ©¶·" NOR);
-        set("gender", "ÄÐÐÔ" );
+        set_name("åŒ—é†œ", ({ "bei chou", "bei", "chou", "xizi" }) );
+        set("nickname", HIW "åŒ—æˆ²å­" NOR);
+        set("title", HIC "æ­¦æž—æ³°é¬¥" NOR);
+        set("gender", "ç”·æ€§" );
         set("age", 68);
-        set("long", HIC "ÕâÊÇÒ»¸öÉí×ÅÏ·×Ó´ò°çµÄÊÝÐ¡ÀÏÍ·£¬³¤µÃ¼â\n"
-                        "×ìºïÈù£¬ÌìÉúÒ»¸±¼éÏà¡£Õâ±ãÊÇµ±½ñÎäÁÖÖÐ\n"
-                        "ºÅ³Æ¡¸" HIR "ÄÏÏÍ±±³ó" HIC "¡¹Ï·×Ó±±³ó¡£"
+        set("long", HIC "é€™æ˜¯ä¸€å€‹èº«è‘—æˆ²å­æ‰“æ‰®çš„ç˜¦å°è€é ­ï¼Œé•·å¾—å°–\n"
+                        "å˜´çŒ´è…®ï¼Œå¤©ç”Ÿä¸€å‰¯å§¦ç›¸ã€‚é€™ä¾¿æ˜¯ç•¶ä»Šæ­¦æž—ä¸­\n"
+                        "è™Ÿç¨±ã€Œ" HIR "å—è³¢åŒ—é†œ" HIC "ã€æˆ²å­åŒ—é†œã€‚"
                         "\n" NOR);
         set("attitude", "friendly");
         set("max_jing", 250000);
@@ -131,7 +131,7 @@ void die()
                          if (arrayp(ob->query_team()))
                          {
                                  command("heng");
-                                 command("say Ê¤Ö®²»Îä£¡");
+                                 command("say å‹ä¹‹ä¸æ­¦ï¼");
                                  set("qi", 400000);
                                  set("jing", 150000);
                                  set("neili", 35000);
@@ -151,7 +151,7 @@ void die()
              if (ob->query("sky12/floor") == 5)
              {
                       ob->set("sky12/floor", 6);
-                 command("say ¸óÏÂÇë±ã°É£¡");
+                 command("say é–£ä¸‹è«‹ä¾¿å§ï¼");
              }
         }
 
@@ -169,7 +169,7 @@ void die()
 
         return;
 }
-// ÆøÑªÐ¡ÓÚ1000ÔòËÀÍö£¬±ÜÃâËûÈËÐ­Öú°ïÃ¦×ªÊÀ
+// æ°£è¡€å°äºŽ1000å‰‡æ­»äº¡ï¼Œé¿å…ä»–äººå”åŠ©å¹«å¿™è½‰ä¸–
 void heart_beat()
 {
         if (this_object()->query("qi") < 1000 || this_object()->query("eff_qi") < 1000)

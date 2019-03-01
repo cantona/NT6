@@ -7,19 +7,19 @@ inherit HEAD;
 
 void create()
 {
-        set_name(HIG"ÇàÍÓÂŞ»¨"NOR,({ "flower", "hua" }) );
+        set_name(HIG"é’é™€ç¾…èŠ±"NOR,({ "flower", "hua" }) );
         set_weight(500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¶ä");
+                set("unit", "æœµ");
                 set("value", 0);
                 set("material", "plant");
-                set("long", "ÕâÊÇÒ»¶äÇàÍÓÂŞ»¨¡£\n"
-                        "Õâ»¨Ö­Ô­ÓĞĞÈ³ôÖ®Æø£¬±¾Éí²¢ÎŞ¶¾ĞÔ, \n"
-                        "µ«Ò»¾­ºÍÏÊÑª»ìºÍ£¬È´Éú¾ç¶¾£¬Í¬Ê±ĞÈ³ô×ªÎªÇåÏã¡£\n");
+                set("long", "é€™æ˜¯ä¸€æœµé’é™€ç¾…èŠ±ã€‚\n"
+                        "é€™èŠ±æ±åŸæœ‰è…¥è‡­ä¹‹æ°£ï¼Œæœ¬èº«ä¸¦ç„¡æ¯’æ€§, \n"
+                        "ä½†ä¸€ç¶“å’Œé®®è¡€æ··å’Œï¼Œå»ç”ŸåŠ‡æ¯’ï¼ŒåŒæ™‚è…¥è‡­è½‰ç‚ºæ¸…é¦™ã€‚\n");
                 set("wear_msg", "");
-                set("unequip_msg", "$NÕªÏÂĞØÇ°µÄ$n¡£\n");
+                set("unequip_msg", "$Næ‘˜ä¸‹èƒ¸å‰çš„$nã€‚\n");
                 set("armor_prop/armor", 0);
         }
         setup();
@@ -30,15 +30,15 @@ int wear()
         object me = environment();
         int ret;
 
-        message_vision("$NÄÃ³öÒ»¶ä"+query("name", this_object())+"£¬´÷ÔÚĞØÇ°¡£",me);
+        message_vision("$Næ‹¿å‡ºä¸€æœµ"+query("name", this_object())+"ï¼Œæˆ´åœ¨èƒ¸å‰ã€‚",me);
         if (ret=::wear())
         {
-                if( query("gender", me) == "ÄĞĞÔ" )
-                        message_vision("ºÃÒ»¸ö·çÁ÷ÉÙÄêÀÉ£¡\n", me);
-                else if( query("gender", me) == "Å®ĞÔ" )
-                        message_vision("ºÃÒ»¸öÃÀÀöÇÎ¼ÑÍŞ£¡\n", me);
+                if( query("gender", me) == "ç”·æ€§" )
+                        message_vision("å¥½ä¸€å€‹é¢¨æµå°‘å¹´éƒï¼\n", me);
+                else if( query("gender", me) == "å¥³æ€§" )
+                        message_vision("å¥½ä¸€å€‹ç¾éº—ä¿ä½³å¨ƒï¼\n", me);
                 else
-                        message_vision("ºÃÒ»¸ö²»Èı²»ËÄµÄ¼Ò»ï£¡\n", me);
+                        message_vision("å¥½ä¸€å€‹ä¸ä¸‰ä¸å››çš„å®¶ä¼™ï¼\n", me);
         }
         return ret;
 }

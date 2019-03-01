@@ -1,4 +1,4 @@
-// tianwangdan.c ÌìÍõ±£Ãüµ¤
+// tianwangdan.c å¤©ç‹ä¿å‘½ä¸¹
 // Last Modified by winder on Jul. 12 2002
 
 #include <ansi.h>
@@ -12,15 +12,15 @@ void init()
 
 void create()
 {
-        set_name("ÌìÍõ±£Ãüµ¤", ({"baoming dan", "dan"}));
+        set_name("å¤©ç‹ä¿å‘½ä¸¹", ({"baoming dan", "dan"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
+                set("unit", "é¡†");
                 set("value", 4000);
-                set("long", "ÕâÌìÍõ±£Ãüµ¤ÊÇÓÉÈı°ÙÄêÀÏÉ½ÈË²Î¡¢°×ĞÜµ¨¡¢Ñ©Á«µÈÎïÁ¶³ÉµÄÁéµ¤¡£\n");
+                set("long", "é€™å¤©ç‹ä¿å‘½ä¸¹æ˜¯ç”±ä¸‰ç™¾å¹´è€å±±äººåƒã€ç™½ç†Šè†½ã€é›ªè“®ç­‰ç‰©ç…‰æˆçš„éˆä¸¹ã€‚\n");
                 set("medicine", 1);
-                set("no_drop", "ÌìÍõ±£Ãüµ¤Á¶ÖÆ£¬ÄÄÄÜÂÒÈÓ£¡ \n");
+                set("no_drop", "å¤©ç‹ä¿å‘½ä¸¹ç…‰åˆ¶ï¼Œå“ªèƒ½äº‚æ‰”ï¼ \n");
         }
 
         setup();
@@ -30,22 +30,22 @@ int do_eat(string arg)
 {
         object me=this_player();
 
-        if(!id(arg)) return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+        if(!id(arg)) return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if(!present(this_object(), me))
-                return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if( me->is_busy() )
-                return notify_fail("±ğ¼±£¬ÂıÂı³Ô£¬Ğ¡ĞÄ±ğÒ­×ÅÁË¡£\n");
+                return notify_fail("åˆ¥æ€¥ï¼Œæ…¢æ…¢åƒï¼Œå°å¿ƒåˆ¥å™è‘—äº†ã€‚\n");
 
         if( query("eff_jing", me) >= query("max_jing", me) && 
                 query("eff_qi", me) >= query("max_qi", me) )
         {
-                message_vision("$NÃ»±ØÒª³ÔÌìÍõ±£Ãüµ¤¡£\n",me);
+                message_vision("$Næ²’å¿…è¦åƒå¤©ç‹ä¿å‘½ä¸¹ã€‚\n",me);
         }
         else
         {
                 me->receive_curing("jing", 250);
                 me->receive_curing("qi", 400);
-                message_vision("$N³ÔÏÂÒ»Á£ÌìÍõ±£Ãüµ¤£¬¶ÙÊ±¾õµÃºÃ¶àÁË¡£\n",me);
+                message_vision("$Nåƒä¸‹ä¸€ç²’å¤©ç‹ä¿å‘½ä¸¹ï¼Œé “æ™‚è¦ºå¾—å¥½å¤šäº†ã€‚\n",me);
                 destruct(this_object());
         }
         return 1;

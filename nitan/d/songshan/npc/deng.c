@@ -5,10 +5,10 @@ inherit NPC;
 #include <ansi.h>;
 void create()
 {
-        set_name("µË°ËÄê", ({ "deng banian", "banian", "deng" }) );
-        set("long", "ËûÊÇÒ»¸ö°«Ğ¡ºº×Ó¡£áÔÉ½ÅÉÕÆÃÅÈËµÄÊ¦µÜ¡£\n");
-        set("nickname", HIY"Éñ±Ş"NOR);
-        set("gender", "ÄĞĞÔ");
+        set_name("é„§å…«å¹´", ({ "deng banian", "banian", "deng" }) );
+        set("long", "ä»–æ˜¯ä¸€å€‹çŸ®å°æ¼¢å­ã€‚åµ©å±±æ´¾æŒé–€äººçš„å¸«å¼Ÿã€‚\n");
+        set("nickname", HIY"ç¥é­"NOR);
+        set("gender", "ç”·æ€§");
         set("class", "swordsman");
         set("age", 35);
         set("attitude", "peaceful");
@@ -57,7 +57,7 @@ void create()
                 (: exert_function, "regenerate" :),
                 (: exert_function, "recover" :),
         }) );
-        create_family("áÔÉ½ÅÉ", 13, "µÜ×Ó");
+        create_family("åµ©å±±æ´¾", 13, "å¼Ÿå­");
 
         setup();
 

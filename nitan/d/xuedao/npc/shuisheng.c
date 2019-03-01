@@ -4,10 +4,10 @@ inherit NPC;
 #include <ansi.h>;
 void create()
 {
-       set_name("Ë®óÏ", ({ "shui sheng", "shui" }));
+       set_name("æ°´ç¬™", ({ "shui sheng", "shui" }));
        set("long", 
-     "Ëı¾ÍÊÇÄÏËÄÆæ¡°Âä»¨Á÷Ë®¡±ÖĞµÄÀÏËÄË®á·µÄÅ®¶ù£¬³¤µÄºÜÇåĞãÃÀÀö¡£\n");
-       set("gender", "Å®ĞÔ");
+     "å¥¹å°±æ˜¯å—å››å¥‡â€œè½èŠ±æµæ°´â€ä¸­çš„è€å››æ°´å²±çš„å¥³å…’ï¼Œé•·çš„å¾ˆæ¸…ç§€ç¾éº—ã€‚\n");
+       set("gender", "å¥³æ€§");
        set("age", 21);
        set("attitude", "peaceful");
        set("shen_type", 0);

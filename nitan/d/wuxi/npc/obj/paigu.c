@@ -1,17 +1,17 @@
-// paigu.c ¿¾Ñ¼
+// paigu.c çƒ¤é´¨
 
 inherit ITEM;
 inherit F_FOOD;
 
 void create()
 {
-        set_name("ÎŞÎı½´ÅÅ¹Ç", ({"jiang paigu", "paigu"}));
+        set_name("ç„¡éŒ«é†¬æ’éª¨", ({"jiang paigu", "paigu"}));
         set_weight(200);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¿éÅçÏãµÄÎŞÎı½´ÅÅ¹Ç¡£\n");
-                set("unit", "¿é");
+                set("long", "ä¸€å¡Šå™´é¦™çš„ç„¡éŒ«é†¬æ’éª¨ã€‚\n");
+                set("unit", "å¡Š");
                 set("value", 150);
                 set("food_remaining", 3);
                 set("food_supply", 60);

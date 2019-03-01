@@ -11,7 +11,7 @@ int main(object me, string arg)
         string no_tell, can_tell;
         
         if( !arg )
-                return notify_fail("ÄãÏëÒªµÈË­»ØÉñ£¿\n");
+                return notify_fail("ä½ æƒ³è¦ç­‰èª°å›ç¥ï¼Ÿ\n");
 
         /*
         if (sscanf(arg, "%s %s", arg, msg) != 2)
@@ -20,7 +20,7 @@ int main(object me, string arg)
         sscanf(arg, "%s %s", arg, msg);
                 
         if( !objectp(target = find_player(arg)) || ! me->visible(target) )
-                return notify_fail("Õâ¸öÓÃ»§Ã»ÓĞµÇÂ¼£¬ÄãÎŞ·¨ºÍËû½»Ì¸¡£\n");
+                return notify_fail("é€™å€‹ç”¨æˆ¶æ²’æœ‰ç™»éŒ„ï¼Œä½ ç„¡æ³•å’Œä»–äº¤è«‡ã€‚\n");
 
         my_id=query("id", me);
         no_tell=query("env/no_tell", target);
@@ -29,20 +29,20 @@ int main(object me, string arg)
         {
                 can_tell=query("env/can_tell", target);
                 if (! is_sub(my_id, can_tell))
-                        return notify_fail("Õâ¸öÈË²»ÏëÌıÄãÂŞàÂÀ²¡£\n");
+                        return notify_fail("é€™å€‹äººä¸æƒ³è½ä½ ç¾…å—¦å•¦ã€‚\n");
         }
         
         if (! interactive(target) || target->is_net_dead())
-                return notify_fail("´ËÈËÏÖÔÚ²»ÔÚÏßÉÏ£¬Ìı²»µ½ÄãµÄ»°¡£\n");
+                return notify_fail("æ­¤äººç¾åœ¨ä¸åœ¨ç·šä¸Šï¼Œè½ä¸åˆ°ä½ çš„è©±ã€‚\n");
 
         if (! living(target))
-                return notify_fail("ÕâÈËÏÖÔÚ¿ÖÅÂÌı²»µ½ÄãËµµÄ»°ÁË...\n");
+                return notify_fail("é€™äººç¾åœ¨ææ€•è½ä¸åˆ°ä½ èªªçš„è©±äº†...\n");
 
         if (me->ban_say(1))
                 return 0;
                 
         if( target == me )
-                return notify_fail("µÈÄã×Ô¼º»ØÉñ£¿£¿\n");
+                return notify_fail("ç­‰ä½ è‡ªå·±å›ç¥ï¼Ÿï¼Ÿ\n");
 
         info = allocate_mapping(2);
         info["time"] = time();
@@ -56,8 +56,8 @@ int main(object me, string arg)
         else
                 set_temp("waitback_list", ([me:info]), target);
         
-        tell_object(me, HIG "Äã¿ªÊ¼µÈ´ı×Å" HIG + target->query_idname(1) + HIG "»ØÉñ¡£\n" NOR);
-        tell_object(target, HIG + me->query_idname(1) + HIG "¿ªÊ¼µÈ´ı×ÅÄã»ØÉñ¡£\n" NOR);
+        tell_object(me, HIG "ä½ é–‹å§‹ç­‰å¾…è‘—" HIG + target->query_idname(1) + HIG "å›ç¥ã€‚\n" NOR);
+        tell_object(target, HIG + me->query_idname(1) + HIG "é–‹å§‹ç­‰å¾…è‘—ä½ å›ç¥ã€‚\n" NOR);
         tell_object(target, "\a", 0);
         return 1;
 }
@@ -65,14 +65,14 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-µÈ´ıÖ¸Áî
+ç­‰å¾…æŒ‡ä»¤
 
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄúµÈ´ıÏĞÖÃÖĞµÄÊ¹ÓÃÕß£¬Ö±µ½¸ÃÊ¹ÓÃÕß¿ªÊ¼»î¶¯Ê±Í¨ÖªÄú¡£
+é€™å€‹æŒ‡ä»¤å¯ä»¥è®“æ‚¨ç­‰å¾…é–’ç½®ä¸­çš„ä½¿ç”¨è€…ï¼Œç›´åˆ°è©²ä½¿ç”¨è€…é–‹å§‹æ´»å‹•æ™‚é€šçŸ¥æ‚¨ã€‚
 
-Ö¸Áî¸ñÊ½:
-waitback <Ê¹ÓÃÕß´úºÅ> <ÁôÑÔ>
+æŒ‡ä»¤æ ¼å¼:
+waitback <ä½¿ç”¨è€…ä»£è™Ÿ> <ç•™è¨€>
 
-Ïà¹ØÖ¸Áî: beep
+ç›¸é—œæŒ‡ä»¤: beep
 HELP);
         return 1;
 }

@@ -4,10 +4,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("Âô»¨¹ÃÄï", ({ "flower girl","girl"}) );
-        set("gender", "Å®ĞÔ" );
+        set_name("è³£èŠ±å§‘å¨˜", ({ "flower girl","girl"}) );
+        set("gender", "å¥³æ€§" );
         set("age", 18);
-        set("long", "Ò»¸öÈİÃ²ÇåÀöµÄĞ¡¹ÃÄï¡£\n");
+        set("long", "ä¸€å€‹å®¹è²Œæ¸…éº—çš„å°å§‘å¨˜ã€‚\n");
         set("shen_type", 1);
         set("combat_exp", 5000);
         set("str", 20);
@@ -47,7 +47,7 @@ void init()
 void greeting(object ob)
 {
         if( !ob || environment(ob) != environment() ) return;
-             say("Âô»¨¹ÃÄïËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-             + "£¬ÂòÒ»¶ä»¨°É¡£\n");
+             say("è³£èŠ±å§‘å¨˜èªªé“ï¼šé€™ä½" + RANK_D->query_respect(ob)
+             + "ï¼Œè²·ä¸€æœµèŠ±å§ã€‚\n");
         return;
 }

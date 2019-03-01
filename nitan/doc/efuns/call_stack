@@ -1,24 +1,24 @@
 
-        ����:   call_stack()    ���ص�ǰ���������е���Ϣ.
+        名稱:   call_stack()    返回當前函數被呼叫的信息.
 
-        �﷨:
+        語法:
                 array call_stack(int arg)
 
-        �÷�:
+        用法:
 
-                ��� arg = 0, �᷵�غ��ж�ջ�е����Ƶ�����,���е�һ����
-                        ����ĺ���(�統ǰ�������еĳ���).
+                如果 arg = 0, 會返回呼叫堆棧中的名稱的陣列,其中第一個是
+                        最近的呼叫(如當前正在運行的程序).
 
-                ��� arg = 1, �᷵�س�ʽ��������ִ�е�����б�.
+                如果 arg = 1, 會返回程式正在其中執行的物件列表.
 
-                ��� arg = 2, �᷵����Щ����������.
+                如果 arg = 2, 會返回這些函數的名稱.
 
-                ��� arg = 3, �᷵���Ǹ������ origin() �����ķ���ֵ.
+                如果 arg = 3, 會返回那個框架中 origin() 函數的返回值.
 
 
         See also:
                 previous_object, origin
 
-        ����:
-                by ���ֺ�(Find@tx)
+        翻譯:
+                by 發現號(Find@tx)
 

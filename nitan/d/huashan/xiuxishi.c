@@ -9,10 +9,10 @@ int do_close(string);
 
 void create()
 {
-        set("short", "»ªÉ½Ğ¡Öş");
+        set("short", "è¯å±±å°ç¯‰");
         set("long", @LONG
-ÕâÊÇ¼äÕû½àµÄÏá·¿£¬ÒòÃÅ´°³£±Õ×Å£¬¹âÏßºÜ»è°µ¡£·¿Àï±ğÎŞËûÎï£¬
-Ö»ÓĞÖĞ¼ä·Å×ÅÒ»ÕÅÊÕÊ°µÃÊæÊæ·ş·şµÄ´ó´²£¬¿´×Å¾ÍÈÃÈËÏëË¯¾õ¡£
+é€™æ˜¯é–“æ•´æ½”çš„å»‚æˆ¿ï¼Œå› é–€çª—å¸¸é–‰è‘—ï¼Œå…‰ç·šå¾ˆæ˜æš—ã€‚æˆ¿è£¡åˆ¥ç„¡ä»–ç‰©ï¼Œ
+åªæœ‰ä¸­é–“æ”¾è‘—ä¸€å¼µæ”¶æ‹¾å¾—èˆ’èˆ’æœæœçš„å¤§åºŠï¼Œçœ‹è‘—å°±è®“äººæƒ³ç¡è¦ºã€‚
 LONG );
 
         set("sleep_room", 1);
@@ -40,9 +40,9 @@ void close_men()
         if(objectp(room) && query("exits/west"))
         {
                 delete("exits/west");
-                message("vision", "ÃÅßŞßŞÑ½Ñ½µØ×Ô¼ººÏÉÏÁË¡£\n", this_object());
+                message("vision", "é–€å’¿å’¿å‘€å‘€åœ°è‡ªå·±åˆä¸Šäº†ã€‚\n", this_object());
                 delete("exits/east", room);
-                message("vision", "ÃÅßŞßŞÑ½Ñ½µØ×Ô¼ººÏÉÏÁË¡£\n", room);
+                message("vision", "é–€å’¿å’¿å‘€å‘€åœ°è‡ªå·±åˆä¸Šäº†ã€‚\n", room);
         }
 }
 
@@ -51,19 +51,19 @@ int do_close(string arg)
         object room;
 
         if (!arg || (arg != "men" && arg != "door"))
-                return notify_fail("ÄãÒª¹ØÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦é—œä»€éº¼ï¼Ÿ\n");
 
         if (!query("exits/west"))
-                return notify_fail("ÃÅÒÑ¾­ÊÇ¹Ø×ÅµÄÁË¡£\n");
+                return notify_fail("é–€å·²ç¶“æ˜¯é—œè‘—çš„äº†ã€‚\n");
 
-        message_vision("$NÒ»ÉìÊÖ£¬°ÑÃÅ¹ØÉÏÁË¡£\n", this_player());
+        message_vision("$Nä¸€ä¼¸æ‰‹ï¼ŒæŠŠé–€é—œä¸Šäº†ã€‚\n", this_player());
 
         if(!( room = find_object(__DIR__"xiaolu2")) )
                 room = load_object(__DIR__"xiaolu2");
 
         if(objectp(room))
         {
-                message("vision", "ÃÅ±»ÈË´ÓÀïÃæ¹ØÉÏÁË¡£\n", room);
+                message("vision", "é–€è¢«äººå¾è£¡é¢é—œä¸Šäº†ã€‚\n", room);
                 delete("exits/west");
                 delete("exits/east", room);
         }
@@ -77,28 +77,28 @@ int do_open(string arg)
         object me = this_player();
 
         if (!arg || (arg != "men" && arg != "door" && arg != "west"))
-                return notify_fail("ÄãÒª¿ªÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦é–‹ä»€éº¼ï¼Ÿ\n");
 
         if (query("exits/west"))
-                return notify_fail("´óÃÅÒÑ¾­ÊÇ¿ª×ÅÁË¡£\n");
+                return notify_fail("å¤§é–€å·²ç¶“æ˜¯é–‹è‘—äº†ã€‚\n");
 
         if(!( room = find_object(__DIR__"xiaolu2")) )
                 room = load_object(__DIR__"xiaolu2");
         if(objectp(room))
         {
                 set("exits/west", __DIR__"xiaolu2");
-                message_vision("$NÇáÊÖÇá½ÅµØ°ÑÃÅ´ò¿ª¡£\n", this_player());
+                message_vision("$Nè¼•æ‰‹è¼•è…³åœ°æŠŠé–€æ‰“é–‹ã€‚\n", this_player());
                 set("exits/east", __FILE__, room);
                 
                 if( query_temp("sleeped", me) )
                 {
-                message("vision","Ö¨µØÒ»Éù£¬"+query("name", me)+
-                                  "¾«Éñ»À·¢µØ´ÓÀïÃæ°ÑÃÅ´ò¿ªÁË¡£\n",
+                message("vision","å±åœ°ä¸€è²ï¼Œ"+query("name", me)+
+                                  "ç²¾ç¥ç…¥ç™¼åœ°å¾è£¡é¢æŠŠé–€æ‰“é–‹äº†ã€‚\n",
                 room);
                 } else 
                 {
-                message("vision","°ğµØÒ»Éù£¬"+query("name", me)+
-                                  "´ÓÀïÃæ°ÑÃÅ´ò¿ª£¬Ò»Á³µÄ²»ÄÍ·³¡£\n",
+                message("vision","æ¢†åœ°ä¸€è²ï¼Œ"+query("name", me)+
+                                  "å¾è£¡é¢æŠŠé–€æ‰“é–‹ï¼Œä¸€è‡‰çš„ä¸è€ç…©ã€‚\n",
                          room);
                 }        
                 

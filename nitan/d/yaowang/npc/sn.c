@@ -27,14 +27,14 @@ protected void make_book_msg()
 
 void create()
 {
-        set_name("ÊéÅ«", ({ "shu nu","nu","sn" }) );
+        set_name("æ›¸å¥´", ({ "shu nu","nu","sn" }) );
 
         set("class","yaowang");
-        set("title",HIB"¶ÁËÀÈË²»³¥Ãü"NOR);
+        set("title",HIB"è®€æ­»äººä¸å„Ÿå‘½"NOR);
 
-        set("gender", "ÄĞĞÔ" );
+        set("gender", "ç”·æ€§" );
         set("age", 13);
-        set("long", "ÕâÊÇÒ»Î»Ó¢¿¡µÄÉÙÄê¡£\n");
+        set("long", "é€™æ˜¯ä¸€ä½è‹±ä¿Šçš„å°‘å¹´ã€‚\n");
         set("attitude", "peaceful");
 
  
@@ -57,7 +57,7 @@ void create()
 
         setup();
         set("inquiry", ([
-                "½èÊé" : (: ask_all :),
+                "å€Ÿæ›¸" : (: ask_all :),
                 "book" : (: ask_all :),
          ]) );
 
@@ -71,11 +71,11 @@ int do_borrow(string topic)
         object who=this_player();
 
         if(!who
-         || (query("family/family_name", who) != "Ò©Íõ¹È" )
+         || (query("family/family_name", who) != "è—¥ç‹è°·" )
         || !stringp(topic)
         || !environment()
         || (base_name(environment()) != query("startroom")) )
-                return notify_fail( "Äã²»ÊÇÎÒÃÇÒ©Íõ¹ÈµÄ£¬´òÌıËü¸ÉÊ²Ã´£¿");
+                return notify_fail( "ä½ ä¸æ˜¯æˆ‘å€‘è—¥ç‹è°·çš„ï¼Œæ‰“è½å®ƒå¹¹ä»€éº¼ï¼Ÿ");
                 
         if( ((n = member_array(topic,books)) == -1)
         && ( (n = member_array(topic,map_array(books,(: to_chinese :)))) == -1))
@@ -85,11 +85,11 @@ int do_borrow(string topic)
         if(file_size(file+".c") <= 0 || !book_ob = new(file))
                 return 0;
 
-        message_vision(sprintf("$N×ªÉí´ÓÊé¼ÜÉÏÄÃ³öÒ»±¾%s½»¸øÁË$n¡£\n",book_ob->name()),
+        message_vision(sprintf("$Nè½‰èº«å¾æ›¸æ¶ä¸Šæ‹¿å‡ºä¸€æœ¬%säº¤çµ¦äº†$nã€‚\n",book_ob->name()),
                 this_object(),who);
         book_ob->move(who);
 
-        command("say ÕâĞ©ÊéÄãÍµÍµµÄ¿´°É£¬±ğÄÃ³öÈ¥ÈÃÈËÖªµÀÁË¡£\n");
+        command("say é€™äº›æ›¸ä½ å·å·çš„çœ‹å§ï¼Œåˆ¥æ‹¿å‡ºå»è®“äººçŸ¥é“äº†ã€‚\n");
         return 1;
 }
 
@@ -124,10 +124,10 @@ void destruct_book()
 int ask_all()
 {
         object me=this_player();
-        if( query("family/family_name", me) != "Ò©Íõ¹È" )
-                return notify_fail( "Äã²»ÊÇÎÒÃÇÒ©Íõ¹ÈµÄ£¬´òÌıËü¸ÉÊ²Ã´£¿");
+        if( query("family/family_name", me) != "è—¥ç‹è°·" )
+                return notify_fail( "ä½ ä¸æ˜¯æˆ‘å€‘è—¥ç‹è°·çš„ï¼Œæ‰“è½å®ƒå¹¹ä»€éº¼ï¼Ÿ");
 
-        tell_object(me, sprintf("\nÎÒÕâÀï¾ÍÖ»ÓĞÕâĞ©ÎÒ×Ô¼º³­Ğ´µÄÊé£¬¸ß¼¶µÄÒªÓĞ¹ÈÖ÷µÄÃüÁî²ÅºÃ¡£\n%s\n", all_msg));
+        tell_object(me, sprintf("\næˆ‘é€™è£¡å°±åªæœ‰é€™äº›æˆ‘è‡ªå·±æŠ„å¯«çš„æ›¸ï¼Œé«˜ç´šçš„è¦æœ‰è°·ä¸»çš„å‘½ä»¤æ‰å¥½ã€‚\n%s\n", all_msg));
         add_action("do_borrow", "borrow");
         add_action("do_borrow", "jieshu");
         return 1;

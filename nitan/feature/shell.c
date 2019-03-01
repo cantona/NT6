@@ -73,7 +73,7 @@ mixed evaluate_shell(string arg, int novalue)
         me = this_object();
         // poet added restriction for > (wizard)
         if( novalue && (wiz_level(me) < 5) )
-                return notify_fail("È¨ÏÞ¾Ü¾ø¡£\n");
+                return notify_fail("æ¬Šé™æ‹’çµ•ã€‚\n");
 
         // +2 for the function name and object 'me'
         var = allocate(MAX_VAR_COUNT + 2);
@@ -131,9 +131,9 @@ mixed evaluate_shell(string arg, int novalue)
         // check if the user has the privilege to write the file
         if( !write_file(file, content, 1) ) {
                 if( novalue )
-                        return notify_fail("Ð´ÎÄ¼þ³ö´í£¡\n");
+                        return notify_fail("å¯«æ–‡ä»¶å‡ºéŒ¯ï¼\n");
                 else
-                        return "Notify fail: Ð´ÎÄ¼þ³ö´í£¡";
+                        return "Notify fail: å¯«æ–‡ä»¶å‡ºéŒ¯ï¼";
         }
 
         // fill in environment vars as parameter.
@@ -148,9 +148,9 @@ mixed evaluate_shell(string arg, int novalue)
                 rm(file);
                 
                 if ( novalue )
-                        return notify_fail("³ÌÐò±àÒëÊ§°Ü£¡\n");
+                        return notify_fail("ç¨‹åºç·¨è­¯å¤±æ•—ï¼\n");
                 else
-                        return "Notify fail: ³ÌÐò±àÒëÊ§°Ü£¡";
+                        return "Notify fail: ç¨‹åºç·¨è­¯å¤±æ•—ï¼";
         }
 
 /*

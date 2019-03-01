@@ -1,4 +1,4 @@
-// diwang.c µÛÍõÖ®ĞÇ
+// diwang.c å¸ç‹ä¹‹æ˜Ÿ
 // Created by rcwiz for yhonline
 
 #include <ansi.h>
@@ -7,12 +7,12 @@ inherit F_CLEAN_UP;
 
 int is_scborn() { return 1; }
 
-string name() { return HIM "µÛÍõÖ®ĞÇ" NOR; }
+string name() { return HIM "å¸ç‹ä¹‹æ˜Ÿ" NOR; }
 
 int perform(object me, string skill)
 {
-        return notify_fail(HIM "´ËÌìĞÔÕßÓµÓĞµÛÍõÖ®Ïñ£¬ËÄÏîÏÈÌìÊôĞÔ¿ÉÓÀ¾Ã¸÷¼ÓÁ½\n"
-                               "µã¡£Í¬Ê±£¬ÄÚÁ¦ÉÏÏŞºÍ¾«Á¦ÉÏÏŞ¸÷ÌáÉı20%£¬ ÆøÑª»Ö\n"
-                               "¸´ËÙ¶ÈÌáÉı30%¡£\n" NOR);
+        return notify_fail(HIM "æ­¤å¤©æ€§è€…æ“æœ‰å¸ç‹ä¹‹åƒï¼Œå››é …å…ˆå¤©å±¬æ€§å¯æ°¸ä¹…å„åŠ å…©\n"
+                               "é»ã€‚åŒæ™‚ï¼Œå…§åŠ›ä¸Šé™å’Œç²¾åŠ›ä¸Šé™å„æå‡20%ï¼Œ æ°£è¡€æ¢\n"
+                               "å¾©é€Ÿåº¦æå‡30%ã€‚\n" NOR);
 
 }

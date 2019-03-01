@@ -1,4 +1,4 @@
-// story:tianzi ����
+// story:tianzi 天子
 
 #include <ansi.h>
 
@@ -7,18 +7,18 @@ inherit F_CLEAN_UP;
 mixed random_gift();
 
 nosave mixed *story = ({
-        "ĳ��ĳ�µ�ĳһ��...",
-        "�Ƶۺ��׵�����...",
-        "�Ƶۣ��ֵܣ����Ƕ����ˣ������ɽ��ˡ�",
-        "�׵ۣ�Ŷ����������Ҫ��һ�ߣ���˭����������֮λ����",
-        "�Ƶۣ��������Σ�",
-        "�׵ۣ��Ҷ��ӣ�����ɵ�ˣ��Ҷ��������ˣ��������������",
-        "�Ƶۣ�������С�ӱ����û��Ϣ�ˣ������Ű�֥����ɽ��ȥ�ˣ�˵�ǲ�����ɽ�����ˣ�",
-        "�׵ۣ�������ô�������������丸�������ӣ�",
-        "�Ƶۣ��������˵�˵��������ǰ칫ʱ�䣬Ҫ̸�����£�",
-        "�׵ۣ�9494���������ƣ�û�нӰ��������ϲ����ɽ�ѽ��",
-        "�Ƶۣ����ˣ��ҿ����������һ�������ɡ�",
-        "�׵ۣ��ţ�ֻ����ô���ˡ��������ȥ������û�к��ʵ����Ҹ����̳�������֮λ�ɣ�",
+        "某年某月的某一天...",
+        "黃帝和炎帝相遇...",
+        "黃帝：兄弟，我們都老了！該上仙界了。",
+        "炎帝：哦？可咱們這要是一走，那誰來接這天子之位啊？",
+        "黃帝：你兒子如何？",
+        "炎帝：我兒子？你老傻了，我兒子早死了！還是你兒子來！",
+        "黃帝：他？這小子別提多沒出息了，他跟張柏芝隱居山林去了，說是不愛江山愛美人！",
+        "炎帝：啊？這麼風流？真是有其父必有其子！",
+        "黃帝：靠，別胡說八道！現在是辦公時間，要談正經事！",
+        "炎帝：9494。哎，鬱悶！沒有接班人我們上不了仙界呀！",
+        "黃帝：算了，我看我們隨便找一個湊數吧。",
+        "炎帝：嗯，只能這麼招了。咱們這就去看看有沒有合適的人找個來繼承這天子之位吧！",
         (: random_gift :),
 });
 
@@ -27,7 +27,7 @@ void create()
         seteuid(getuid());
 }
 
-string prompt() { return HIY "���������ӡ�" NOR; }
+string prompt() { return HIY "【真命天子】" NOR; }
 
 mixed query_story_message(int step)
 {
@@ -46,7 +46,7 @@ mixed random_gift()
         obs = filter_array(all_interactive(), (: ! wizardp($1) &&
                                                  environment($1) &&
                                               //   environment($1)->query("outdoors") &&
-                                                 query("gender", $1) == "����" && 
+                                                 query("gender", $1) == "男性" && 
                                                  !query("special_skill/emperor", $1) && 
                                                  !query("special_skill/lonely", $1) && 
                                                  !query("special_skill/queen", $1) && 
@@ -58,19 +58,19 @@ mixed random_gift()
         
         if( random(5200-query("kar", ob)*100)>0 )
         {
-                msg = HIC "����װ����������˳�" + ob->name(1) +
-                      HIC "����ϸϸ�����˰��죬�����ҡҡͷ���ˡ�" NOR;
+                msg = HIC "兩個裝束怪異的老人朝" + ob->name(1) +
+                      HIC "仔仔細細端詳了半天，最後還是搖搖頭走了。" NOR;
                 addn("kar", 1+random(2), ob);
                 set("kar", 50, if( query("kar", ob) >= 50)ob);
 
         } else
         {
-                msg = HIY "�Ƶۣ������ֿ���" + ob->name(1) +
-                      HIY "������ò�������Ǹ����棬ȷʵ�Ǽ̳е�λ�Ĳ�����ѡ��" NOR;
+                msg = HIY "黃帝：我左看又看，" + ob->name(1) +
+                      HIY "此人相貌不凡，骨格清奇，確實是繼承帝位的不二人選！" NOR;
                 set("special_skill/emperor", 1, ob);
                 set("special_skill/youth", 1, ob);
                 set("per", 40, ob);
-                log_file("nosave/tianzi", sprintf("%s(%s) ����������� at %s.\n",
+                log_file("nosave/tianzi", sprintf("%s(%s) 獲得天子屬性 at %s.\n",
                          ob->name(1),query("id", ob),ctime(time())));
                 select = 1;
 
@@ -84,8 +84,8 @@ void announce(int select, object ob)
 {
       if (select == 0 )
       CHANNEL_D->do_channel(this_object(), "rumor",
-         "��˵�ס��ƶ���Ѱ�����������޹�����,����" + ob->name() + "���˸�Ե��\n");
+         "聽說炎、黃二帝尋找真命天子無功而返,但給" + ob->name() + "加了福緣。\n");
       else
       CHANNEL_D->do_channel(this_object(), "rumor",
-           "��˵" + ob->name() + "���ס��ƶ���ѡ�У��ٵ���������֮λ��\n");
+           "聽說" + ob->name() + "被炎、黃二帝選中，榮登真命天子之位。\n");
 }

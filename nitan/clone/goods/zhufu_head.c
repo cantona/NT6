@@ -1,6 +1,6 @@
 // This program is a part of NT MudLIB 
 // Written by Lonely@nitan.org
-// head.c Í·¿ø
+// head.c é ­ç›”
  
 #include <ansi.h>
 #include <armor.h>
@@ -9,14 +9,14 @@ inherit HEAD;
  
 void create()
 {
-        set_name(HIY "Éñ" HIW "Ö®" HIM "×£¸£" NOR YEL "Í·¿ø" NOR, ({ "zhufu head", "helmet", "toukui" }) );
+        set_name(HIY "ç¥" HIW "ä¹‹" HIM "ç¥ç¦" NOR YEL "é ­ç›”" NOR, ({ "zhufu head", "helmet", "toukui" }) );
         set_weight(200);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
                 set("material", "steel");
-                set("unit", "¶¥");
-                set("long", HIM "ÕâÊÇÒ»¶¥ÌúÖÆµÄÍ·¿ø£¬ÓÃÒÔ±£»¤Í·²¿¡£\n" NOR);
+                set("unit", "é ‚");
+                set("long", HIM "é€™æ˜¯ä¸€é ‚éµåˆ¶çš„é ­ç›”ï¼Œç”¨ä»¥ä¿è­·é ­éƒ¨ã€‚\n" NOR);
                 set("value", 1500); 
                 set("armor_prop/armor", 20);
         }
@@ -24,7 +24,7 @@ void create()
         set("auto_load", 1); 
         set("mod_mark", "A2011");  
         set("mod_level", "M2010");  
-        set("mod_name", HIY"Éñ"HIW"Ö®"HIM"×£¸£"NOR YEL"Ì××°"NOR); 
+        set("mod_name", HIY"ç¥"HIW"ä¹‹"HIM"ç¥ç¦"NOR YEL"å¥—è£"NOR); 
 
         set("enchase", ([ 
                 "flute" : 1,
@@ -38,7 +38,7 @@ void create()
         set("insert", ([ /* sizeof() == 1 */
                 "1" : ([ /* sizeof() == 3 */
                         "id" : "magic stone",
-                        "name" : HIM"ĞşÊ¯"NOR,
+                        "name" : HIM"ç„çŸ³"NOR,
                         "apply_prop" : ([ /* sizeof() == 2 */
                                 "armor1" : 30,
                                 "int" : 1,

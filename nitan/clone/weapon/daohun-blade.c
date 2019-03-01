@@ -6,13 +6,13 @@ inherit BLADE;
 
 void create()
 {
-        set_name(HIY "¾øÃüÖ®ÈĞ" NOR, ({ "jueming zhiren",}));
+        set_name(HIY "çµ•å‘½ä¹‹åˆƒ" NOR, ({ "jueming zhiren",}));
         set_weight(1);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
-                set("long", HIY "ÕâÊÇÒ»±úÓÉÌìµØÁéÆø¾Û¼¯¶ø³ÉµÄ·æÀûÖ®ÈĞ£¬ËÆºõ²»Ó¦¸ÃÊôÓÚÈË¼ä¡£\n" NOR);
+                set("unit", "æŸ„");
+                set("long", HIY "é€™æ˜¯ä¸€æŸ„ç”±å¤©åœ°éˆæ°£èšé›†è€Œæˆçš„é‹’åˆ©ä¹‹åˆƒï¼Œä¼¼ä¹ä¸æ‡‰è©²å±¬äºäººé–“ã€‚\n" NOR);
                 set("value", 1);
                 set("material", "steel");
                 set("wield_msg", "");

@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��ͷ");
+        set("short", "城頭");
         set("long", @LONG 
-�ߴ���ʤ������ֻ��ѩ����˪Ҳ�׷׶��¡�ͷ�����ϻ���ʯ
-��ľ�⣬һ���Ӿ�˪ѩ���죬�����ס���ʫ�ơ�����˪ѩ����
-���������Ҳ���������˼�ɡ�
+高處不勝寒。不只是雪，連霜也紛紛而下。頭天晚上還是石
+城木垛，一下子就霜雪漫天，萬物俱白。古詩雲‘天涯霜雪霽寒
+霄’。大概也就是這個意思吧。
 LONG );
         set("outdoors", "lingxiao");
         set("no_clean_up", 0);

@@ -7,67 +7,67 @@
 inherit ITEM;
 
 mapping bingfa = ([
-        "fenzhan"    : "·ÜÕ½",
-        "fendou"     : "·Ü¶·",
-        "fenxun"     : "·ÜÑ¸",
-        "qishe"      : "ÆïÉä",
-        "benshe"     : "±¼Éä",
-        "feishe"     : "·ÉÉä",
-        "tupo"       : "Í»ÆÆ",
-        "tujin"      : "Í»½ø",
-        "tuji"       : "Í»»÷",
+        "fenzhan"    : "å¥®æˆ°",
+        "fendou"     : "å¥®é¬¥",
+        "fenxun"     : "å¥®è¿…",
+        "qishe"      : "é¨å°„",
+        "benshe"     : "å¥”å°„",
+        "feishe"     : "é£›å°„",
+        "tupo"       : "çªç ´",
+        "tujin"      : "çªé€²",
+        "tuji"       : "çªæ“Š",
 /*
-        "crossbow" : ([ "qishe"      : "ÆëÉä",
-                        "lianshe"    : "Á¬Éä",
-                        "liannu"     : "Á¬åó",
+        "crossbow" : ([ "qishe"      : "é½Šå°„",
+                        "lianshe"    : "é€£å°„",
+                        "liannu"     : "é€£å¼©",
                      ]),
                      
-        "siegecity": ([ "jinglan"    : "¾®À»",
-                        "chongche"   : "³å³µ",
-                        "fashi"      : "·¢Ê¯",
-                        "xiangbing"  : "Ïó±ø",
-                        "luoshi"     : "ÂäÊ¯",
-                        "leimu"      : "ÀŞÄ¾",
-                        "shetai"     : "ÉäÌ¨",
-                        "jianchui"   : "¼â´¸",
+        "siegecity": ([ "jinglan"    : "äº•é—Œ",
+                        "chongche"   : "æ²–è»Š",
+                        "fashi"      : "ç™¼çŸ³",
+                        "xiangbing"  : "è±¡å…µ",
+                        "luoshi"     : "è½çŸ³",
+                        "leimu"      : "æ“‚æœ¨",
+                        "shetai"     : "å°„å°",
+                        "jianchui"   : "å°–éŒ˜",
                      ]),
-        "ruse"     : ([ "hunluan"    : "»ìÂÒ",
-                        "xianjing"   : "ÏİÚå",
-                        "gongxin"    : "¹¥ĞÄ",
-                        "huanshu"    : "»ÃÊõ",
-                        "yingzao"    : "ÓªÔì",
-                        "poxian"     : "ÆÆÏİ",
-                        "jiaoyu"     : "½ÌÚÍ",
-                        "ruma"       : "ÈèÂî",
+        "ruse"     : ([ "hunluan"    : "æ··äº‚",
+                        "xianjing"   : "é™·é˜±",
+                        "gongxin"    : "æ”»å¿ƒ",
+                        "huanshu"    : "å¹»è¡“",
+                        "yingzao"    : "ç‡Ÿé€ ",
+                        "poxian"     : "ç ´é™·",
+                        "jiaoyu"     : "æ•™è«­",
+                        "ruma"       : "è¾±ç½µ",
                      ]),
-        "resource" : ([ "guwu"       : "¹ÄÎè",
-                        "zhiliao"    : "ÖÎÁÆ",
-                        "yaoshu"     : "ÑıÊõ",
+        "resource" : ([ "guwu"       : "é¼“èˆ",
+                        "zhiliao"    : "æ²»ç™‚",
+                        "yaoshu"     : "å¦–è¡“",
                      ]),
 */                     
 ]);
 
 mapping zhenfa = ([
-        "putong"   : "ÆÕÍ¨Õó",
-        "yulin"    : "ÓãÁÛÕó",
-        "fengshi"  : "·æÊ¸Õó",
-        "heyi"     : "º×ÒíÕó",
-        "yanyue"   : "ÙÈÔÂÕó",
-        "fangyuan" : "·½Ô²Õó",
-        "yanxing"  : "ÑãĞĞÕó",
-        "changshe" : "³¤ÉßÕó",
-        "yunlong"  : "ÔÆÁúÕó",
+        "putong"   : "æ™®é€šé™£",
+        "yulin"    : "é­šé±—é™£",
+        "fengshi"  : "é‹’çŸ¢é™£",
+        "heyi"     : "é¶´ç¿¼é™£",
+        "yanyue"   : "åƒæœˆé™£",
+        "fangyuan" : "æ–¹åœ“é™£",
+        "yanxing"  : "é›è¡Œé™£",
+        "changshe" : "é•·è›‡é™£",
+        "yunlong"  : "é›²é¾é™£",
 ]);
 
 void create()
 {
-        set_name(HIW "Áî¼ı" NOR, ({"ling jian","ling"}) );
+        set_name(HIW "ä»¤ç®­" NOR, ({"ling jian","ling"}) );
         set_weight(10);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ã¶");
-                set("long",HIW"Ò»Ã¶´óËÎ½«¾üµ÷±øÇ²½«µÄÁî¼ı¡£\n"NOR);
+                set("unit", "æš");
+                set("long",HIW"ä¸€æšå¤§å®‹å°‡è»èª¿å…µé£å°‡çš„ä»¤ç®­ã€‚\n"NOR);
                 set("material", "copper");
                 set("no_get", 1);
                 set("no_steal", 1);
@@ -76,7 +76,7 @@ void create()
                 set("no_sell", 1);
                 set("no_store", 1);
         }
-        set("master", "¸ßÌ²»„Ùº®");
+        set("master", "é«˜â–¡ä¸â–¡å¯’");
         set("owner", "lonely");
         setup();
 }
@@ -114,7 +114,7 @@ int do_kill(string arg)
 
         if (this_object()->id(arg))
         {
-                write("ÓĞÃ»ÓĞ¸ã´í£¬ÄÇÊÇ¾ü¶ÓÒ®£¬»¹²»¿ìÅÜ£¿£¡\n");
+                write("æœ‰æ²’æœ‰æéŒ¯ï¼Œé‚£æ˜¯è»éšŠè€¶ï¼Œé‚„ä¸å¿«è·‘ï¼Ÿï¼\n");
                 return 1;
         } else
         if ((sscanf(arg, "%s from %s",what, who) == 2 ||
@@ -122,12 +122,12 @@ int do_kill(string arg)
              sscanf(arg, "%s on %s", what, who) == 2 ||
              sscanf(arg, "%s %s", what, who) == 2) &&
              this_object()->id(who)) {
-                write("ÓĞÃ»ÓĞ¸ã´í£¬ÄÇÊÇ¾ü¶ÓÒ®£¬»¹²»¿ìÅÜ£¿£¡\n");
+                write("æœ‰æ²’æœ‰æéŒ¯ï¼Œé‚£æ˜¯è»éšŠè€¶ï¼Œé‚„ä¸å¿«è·‘ï¼Ÿï¼\n");
                 return 1;
         } else
         if (arg == "roar" || arg == "hou")
         {
-                write("ÓĞÃ»ÓĞ¸ã´í£¬ÄÇÊÇ¾ü¶ÓÒ®£¬»¹²»¿ìÅÜ£¿£¡\n");
+                write("æœ‰æ²’æœ‰æéŒ¯ï¼Œé‚£æ˜¯è»éšŠè€¶ï¼Œé‚„ä¸å¿«è·‘ï¼Ÿï¼\n");
                 return 1;
         }
 
@@ -138,8 +138,8 @@ void attack_over(object me)
 {
         if (objectp(me))
         {
-                message_vision(HIW "$NÊÖÖĞÁîÆìÒ»»Ó£¬Èı¾ü¹¥ÊÆÒ»»º£¬ÖØĞÂ"
-                        + "¿ªÊ¼ÁĞÕó£¬×¼±¸·¢ÆğĞÂÒ»ÂÖµÄ¹¥»÷£¡£¡\n" NOR, me); 
+                message_vision(HIW "$Næ‰‹ä¸­ä»¤æ——ä¸€æ®ï¼Œä¸‰è»æ”»å‹¢ä¸€ç·©ï¼Œé‡æ–°"
+                        + "é–‹å§‹åˆ—é™£ï¼Œæº–å‚™ç™¼èµ·æ–°ä¸€è¼ªçš„æ”»æ“Šï¼ï¼\n" NOR, me); 
                 delete_temp("warquest/attack", me);
         }
         return;
@@ -157,45 +157,45 @@ int do_attack(string arg)
         me = this_player();
         env = environment(me);
 
-        if (! arg) return notify_fail("ÄãÒªÖ¸»Ó²¿¶Ó³¯Ë­·¢Æğ½ø¹¥£¿\n");
+        if (! arg) return notify_fail("ä½ è¦æŒ‡æ®éƒ¨éšŠæœèª°ç™¼èµ·é€²æ”»ï¼Ÿ\n");
 
         /*
         // if (me->query("env/auto_contruel"))
         if( query("env/auto_war", me) )
-                return notify_fail("ÄãÒÑ¾­ÉèÖÃÎªÓÉÏµÍ³×Ô¶¯Ö¸»Ó×÷Õ½£¡ÈçÏë×Ô¼º²Ù×÷£¬ÇëĞŞ¸ÄÉèÖÃ¡£\n");
+                return notify_fail("ä½ å·²ç¶“è¨­ç½®ç‚ºç”±ç³»çµ±è‡ªå‹•æŒ‡æ®ä½œæˆ°ï¼å¦‚æƒ³è‡ªå·±æ“ä½œï¼Œè«‹ä¿®æ”¹è¨­ç½®ã€‚\n");
         */
         if( query_temp("warquest/attack", me) )
-                return notify_fail("ÄãµÄ¶ÓÎéÕıÔÚÁĞÕó½ø¹¥£¬²»ÒªÂÒ·¢ºÅÁîÁË£¡\n");
+                return notify_fail("ä½ çš„éšŠä¼æ­£åœ¨åˆ—é™£é€²æ”»ï¼Œä¸è¦äº‚ç™¼è™Ÿä»¤äº†ï¼\n");
 
         if( !query_temp("warquest/train", me) )
-                return notify_fail("ÄãÎ´´øÒ»±øÒ»×ä£¬Ö¸»Ó¸öÊ²Ã´Ñ½£¿\n");
+                return notify_fail("ä½ æœªå¸¶ä¸€å…µä¸€å’ï¼ŒæŒ‡æ®å€‹ä»€éº¼å‘€ï¼Ÿ\n");
 
         if( query_temp("warquest/group", me)<1 )
-                return notify_fail("ÄãµÄ¶ÓÎéÒÑ¾­ËğÊ§´ù¾¡£¬ÎŞ·¨ÁĞÕó³å·æÁË£¡\n");
+                return notify_fail("ä½ çš„éšŠä¼å·²ç¶“æå¤±æ®†ç›¡ï¼Œç„¡æ³•åˆ—é™£æ²–é‹’äº†ï¼\n");
 
         if (sscanf(arg, "%s with %s & %s on %s", who, zhen, craft, dir) != 4 &&
             sscanf(arg, "%s with %s & %s", who, zhen, craft) != 3)
-                return notify_fail("Ö¸Áî¸ñÊ½´íÎó£¬ÇëÓÃ attack <sb.> with <array> & <craft> [on <dir>] Ö¸»ÓÄãµÄ¶ÓÎé£¡\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼éŒ¯èª¤ï¼Œè«‹ç”¨ attack <sb.> with <array> & <craft> [on <dir>] æŒ‡æ®ä½ çš„éšŠä¼ï¼\n");
 
         if( !query("array/"+zhen, me) && zhen != "putong" )
-                return notify_fail("ÄãÄ¿Ç°»¹Ã»ÓĞÍ¨Ïş¡¸" + zhenfa[zhen] + "¡¹ÕâÖÖÕó·¨£¡\n");
+                return notify_fail("ä½ ç›®å‰é‚„æ²’æœ‰é€šæ›‰ã€Œ" + zhenfa[zhen] + "ã€é€™ç¨®é™£æ³•ï¼\n");
 
         if( query_temp("warquest/train", me) == "infantry" )
         {
                 if( !query("craft/infantry/"+craft, me) )
-                        return notify_fail("ÄãÄ¿Ç°»¹Ã»ÓĞÍ¨Ïş¡¸²½±øÏµ±ø·¨¡¹ÖĞ¡¸" + bingfa[craft] + "¡¹ÕâÖÖ±ø·¨£¡\n");
+                        return notify_fail("ä½ ç›®å‰é‚„æ²’æœ‰é€šæ›‰ã€Œæ­¥å…µç³»å…µæ³•ã€ä¸­ã€Œ" + bingfa[craft] + "ã€é€™ç¨®å…µæ³•ï¼\n");
 
                 if( query("no_fight", env) )
-                        return notify_fail("ÕâÀï²»ĞíÕ½¶·£¡£¡\n");
+                        return notify_fail("é€™è£¡ä¸è¨±æˆ°é¬¥ï¼ï¼\n");
 
                 if (! objectp(ob = present(who, env)))
-                        return notify_fail("ÎŞ·¨ÕÒµ½Ä¿±ê£¬ÇëÓÃ attack <sb.> with <array> & <craft> Ö¸»ÓÄãµÄ¶ÓÎé£¡\n");
+                        return notify_fail("ç„¡æ³•æ‰¾åˆ°ç›®æ¨™ï¼Œè«‹ç”¨ attack <sb.> with <array> & <craft> æŒ‡æ®ä½ çš„éšŠä¼ï¼\n");
 
                 if( !query_temp("warquest", ob) || query_temp("warquest/party", ob) != "meng" )
-                        return notify_fail("Äã¾üÎñÔÚÉí£¬»¹ÊÇ²»ÒªÇáÒ×ÕĞÈÇÊÇ·ÇµÄºÃ£¡\n");
+                        return notify_fail("ä½ è»å‹™åœ¨èº«ï¼Œé‚„æ˜¯ä¸è¦è¼•æ˜“æ‹›æƒ¹æ˜¯éçš„å¥½ï¼\n");
 
-                message_vision(HIY "$N½«ÊÖÖĞ±¦½£Ò»»Ó£¬´óºÈµÀ£º²½±øÓªÁĞÕó¡¸" + zhenfa[zhen] +
-                        "¡¹£¬×¼±¸ÏòµĞ¾ü·¢Æğ³å·æ¡ª¡ª>" + bingfa[craft] + "£¡£¡\n" NOR, me, ob);
+                message_vision(HIY "$Nå°‡æ‰‹ä¸­å¯¶åŠä¸€æ®ï¼Œå¤§å–é“ï¼šæ­¥å…µç‡Ÿåˆ—é™£ã€Œ" + zhenfa[zhen] +
+                        "ã€ï¼Œæº–å‚™å‘æ•µè»ç™¼èµ·æ²–é‹’â”€â”€>" + bingfa[craft] + "ï¼ï¼\n" NOR, me, ob);
 
                 set_temp("warquest/attack", 1, me);
                 set_temp("warquest/array", zhenfa[zhen], me);
@@ -207,10 +207,10 @@ int do_attack(string arg)
         if( query_temp("warquest/train", me) == "cavalry" || 
             query_temp("warquest/train", me) == "archer" )
         {
-                if (! dir) return notify_fail("Ö¸Áî¸ñÊ½´íÎó£¬ÇëÓÃ attack <sb.> with <array> & <craft> on <dir>  Ö¸»ÓÄãµÄ¶ÓÎé£¡\n");
+                if (! dir) return notify_fail("æŒ‡ä»¤æ ¼å¼éŒ¯èª¤ï¼Œè«‹ç”¨ attack <sb.> with <array> & <craft> on <dir>  æŒ‡æ®ä½ çš„éšŠä¼ï¼\n");
 
                 if( !mapp(exits=query("exits", env)) || undefinedp(exits[dir]) )
-                        return notify_fail("ÎŞ·¨ÕÒµ½Ä¿±ê£¬ÇëÓÃ attack <sb.> with <array> & <craft> on <dir>  Ö¸»ÓÄãµÄ¶ÓÎé£¡\n");
+                        return notify_fail("ç„¡æ³•æ‰¾åˆ°ç›®æ¨™ï¼Œè«‹ç”¨ attack <sb.> with <array> & <craft> on <dir>  æŒ‡æ®ä½ çš„éšŠä¼ï¼\n");
 
                 dirs = keys(exits);
                 for (i = 0; i < sizeof(dirs); i++)
@@ -219,19 +219,19 @@ int do_attack(string arg)
                 dirs -= ({ 0 });
 
                 if (member_array(dir, dirs) == -1)
-                        return notify_fail("ÎŞ·¨ÕÒµ½Ä¿±ê£¬ÇëÓÃ attack <sb.> with <array> & <craft> on <dir>  Ö¸»ÓÄãµÄ¶ÓÎé£¡\n");
+                        return notify_fail("ç„¡æ³•æ‰¾åˆ°ç›®æ¨™ï¼Œè«‹ç”¨ attack <sb.> with <array> & <craft> on <dir>  æŒ‡æ®ä½ çš„éšŠä¼ï¼\n");
 
                 room = get_object(exits[dir]);
-                if (! room)  return notify_fail("ÎŞ·¨ÕÒµ½Ä¿±ê£¬ÇëÓÃ attack <sb.> with <array> & <craft> on <dir>  Ö¸»ÓÄãµÄ¶ÓÎé£¡\n");
+                if (! room)  return notify_fail("ç„¡æ³•æ‰¾åˆ°ç›®æ¨™ï¼Œè«‹ç”¨ attack <sb.> with <array> & <craft> on <dir>  æŒ‡æ®ä½ çš„éšŠä¼ï¼\n");
 
                 if( query("no_fight", room) )
-                        return notify_fail("ÄÇÀï²»ÔÊĞíËºÉ±£¡£¡\n");
+                        return notify_fail("é‚£è£¡ä¸å…è¨±æ’•æ®ºï¼ï¼\n");
 
                 if (! objectp(ob = present(who, room)))
-                        return notify_fail("ÎŞ·¨ÕÒµ½Ä¿±ê£¬ÇëÓÃ attack <sb.> with <array> & <craft> on <dir>  Ö¸»ÓÄãµÄ¶ÓÎé£¡\n");
+                        return notify_fail("ç„¡æ³•æ‰¾åˆ°ç›®æ¨™ï¼Œè«‹ç”¨ attack <sb.> with <array> & <craft> on <dir>  æŒ‡æ®ä½ çš„éšŠä¼ï¼\n");
 
                 if( !query_temp("warquest", ob) || query_temp("warquest/party", ob) != "meng" )
-                        return notify_fail("Äã¾üÎñÔÚÉí£¬»¹ÊÇ²»ÒªÇáÒ×ÕĞÈÇÊÇ·ÇµÄºÃ£¡\n");
+                        return notify_fail("ä½ è»å‹™åœ¨èº«ï¼Œé‚„æ˜¯ä¸è¦è¼•æ˜“æ‹›æƒ¹æ˜¯éçš„å¥½ï¼\n");
 
                 set_temp("warquest/attack", 1, me);
                 set_temp("warquest/array", zhenfa[zhen], me);
@@ -239,15 +239,15 @@ int do_attack(string arg)
                 {
                         if( !query_temp("weapon", me) )
                                 if (! WIELD_CMD->main(ob, "bow"))
-                                        return notify_fail("ÄãÉíÉÏÃ»ÓĞ¹­åó£¬ÈçºÎ·Å¼ı¹¥»÷µĞÈË£¡\n");
-                        message_vision(HIB "$N´óÉùÏÂÁîµÀ£ºÉñåóÓªÁĞÕó¡¸" + zhenfa[zhen] +
-                                "¡¹£¡Ò»ÅÅÅÅÀû¼ıÔÚÑô¹âÏÂÉÁÉÁ·¢¹â¡ª¡ª>" +
-                                bingfa[craft] + "£¡£¡\n$N" HIB "Ò»ÉùÁîÏÂ£¬ÍòåóÆë·¢£¡\n" NOR, me);
+                                        return notify_fail("ä½ èº«ä¸Šæ²’æœ‰å¼“å¼©ï¼Œå¦‚ä½•æ”¾ç®­æ”»æ“Šæ•µäººï¼\n");
+                        message_vision(HIB "$Nå¤§è²ä¸‹ä»¤é“ï¼šç¥å¼©ç‡Ÿåˆ—é™£ã€Œ" + zhenfa[zhen] +
+                                "ã€ï¼ä¸€æ’æ’åˆ©ç®­åœ¨é™½å…‰ä¸‹é–ƒé–ƒç™¼å…‰â”€â”€>" +
+                                bingfa[craft] + "ï¼ï¼\n$N" HIB "ä¸€è²ä»¤ä¸‹ï¼Œè¬å¼©é½Šç™¼ï¼\n" NOR, me);
                 } else
                 {
                         me->move(room);
-                        message_vision(HIY "$N½«ÊÖÖĞ±¦½£Ò»»Ó£¬´óºÈµÀ£º³µÆïÓªÁĞÕó¡¸" + zhenfa[zhen] +
-                                "¡¹£¬×¼±¸ÏòµĞ¾ü·¢Æğ³å·æ¡ª¡ª>" + bingfa[craft] + "£¡£¡\n" NOR,
+                        message_vision(HIY "$Nå°‡æ‰‹ä¸­å¯¶åŠä¸€æ®ï¼Œå¤§å–é“ï¼šè»Šé¨ç‡Ÿåˆ—é™£ã€Œ" + zhenfa[zhen] +
+                                "ã€ï¼Œæº–å‚™å‘æ•µè»ç™¼èµ·æ²–é‹’â”€â”€>" + bingfa[craft] + "ï¼ï¼\n" NOR,
                                 me, ob);
                 }
 
@@ -261,7 +261,7 @@ int do_attack(string arg)
 int do_exert(string arg)
 {
         tell_object(this_player(),
-                "ÄãÏÖÔÚÊÇÒ»¾üÖ®Í³Ë§ÁË£¬Ò»¾ÙÒ»¶¯ÇëÈıË¼£¡\n");
+                "ä½ ç¾åœ¨æ˜¯ä¸€è»ä¹‹çµ±å¸¥äº†ï¼Œä¸€èˆ‰ä¸€å‹•è«‹ä¸‰æ€ï¼\n");
         return 1;
 }
 
@@ -272,10 +272,10 @@ int do_stock(string arg)
         me = this_player();
 
         if( !query_temp("warquest/purchase", me) )
-                return notify_fail("ÔªË§²¢Î´·ÖÅÉÄã¹ºÖÃ¾ü±¸µÄÈÎÎñ£¬²»ÒªÉÃ×ÔĞĞ¶¯£¡\n");
+                return notify_fail("å…ƒå¸¥ä¸¦æœªåˆ†æ´¾ä½ è³¼ç½®è»å‚™çš„ä»»å‹™ï¼Œä¸è¦æ“…è‡ªè¡Œå‹•ï¼\n");
                 
         if( query_temp("warquest/move", me) )
-                return notify_fail("ºÅÁîÒÑ¾­·¢²¼ÏÂÈ¥ÁË£¡\n");
+                return notify_fail("è™Ÿä»¤å·²ç¶“ç™¼å¸ƒä¸‹å»äº†ï¼\n");
 
         set_temp("warquest/move", "forward", me);
         set_temp("warquest/move_from", "/d/city2/sying1", me);
@@ -283,28 +283,28 @@ int do_stock(string arg)
         switch(query_temp("warquest/purchase", me) )
         {
         case "weapon" :
-                message_vision(HIW "$NÒ»»ÓÊÖÖĞÁîÅÆ£¬´óºÈµÀ£ºÔªË§ÓĞÁî£¬" +
-                        "¼´¿Ì¿ª¸°ÏåÑô³Ç¹ºÖÃ±ø¼×£¬²»µÃÓĞÎó£¡£¡\n" NOR, me);
+                message_vision(HIW "$Nä¸€æ®æ‰‹ä¸­ä»¤ç‰Œï¼Œå¤§å–é“ï¼šå…ƒå¸¥æœ‰ä»¤ï¼Œ" +
+                        "å³åˆ»é–‹èµ´è¥„é™½åŸè³¼ç½®å…µç”²ï¼Œä¸å¾—æœ‰èª¤ï¼ï¼\n" NOR, me);
                 break;
         case "horse"  :
-                message_vision(HIW "$NÒ»»ÓÊÖÖĞÁîÅÆ£¬´óºÈµÀ£ºÔªË§ÓĞÁî£¬" +
-                        "¼´¿Ì¿ª¸°ÏåÑô³Ç¹ºÂòÕ½Âí£¬²»µÃÓĞÎó£¡£¡\n" NOR, me);
+                message_vision(HIW "$Nä¸€æ®æ‰‹ä¸­ä»¤ç‰Œï¼Œå¤§å–é“ï¼šå…ƒå¸¥æœ‰ä»¤ï¼Œ" +
+                        "å³åˆ»é–‹èµ´è¥„é™½åŸè³¼è²·æˆ°é¦¬ï¼Œä¸å¾—æœ‰èª¤ï¼ï¼\n" NOR, me);
                 break;
         case "stone"  :
-                message_vision(HIW "$NÒ»»ÓÊÖÖĞÁîÅÆ£¬´óºÈµÀ£ºÔªË§ÓĞÁî£¬" +
-                        "¼´¿Ì¿ª¸°ÏåÑô³Ç¹ºÖÃÊ¯Ä¾£¬²»µÃÓĞÎó£¡£¡\n" NOR, me);
+                message_vision(HIW "$Nä¸€æ®æ‰‹ä¸­ä»¤ç‰Œï¼Œå¤§å–é“ï¼šå…ƒå¸¥æœ‰ä»¤ï¼Œ" +
+                        "å³åˆ»é–‹èµ´è¥„é™½åŸè³¼ç½®çŸ³æœ¨ï¼Œä¸å¾—æœ‰èª¤ï¼ï¼\n" NOR, me);
                 break;
         case "arrow"  :
-                message_vision(HIW "$NÒ»»ÓÊÖÖĞÁîÅÆ£¬´óºÈµÀ£ºÔªË§ÓĞÁî£¬" +
-                        "¼´¿Ì¿ª¸°ÏåÑô³Ç¹ºÖÃÓğ¼ı£¬²»µÃÓĞÎó£¡£¡\n" NOR, me);
+                message_vision(HIW "$Nä¸€æ®æ‰‹ä¸­ä»¤ç‰Œï¼Œå¤§å–é“ï¼šå…ƒå¸¥æœ‰ä»¤ï¼Œ" +
+                        "å³åˆ»é–‹èµ´è¥„é™½åŸè³¼ç½®ç¾½ç®­ï¼Œä¸å¾—æœ‰èª¤ï¼ï¼\n" NOR, me);
                 break;
         case "enlist" :
-                message_vision(HIW "$NÒ»»ÓÊÖÖĞÁîÅÆ£¬´óºÈµÀ£ºÔªË§ÓĞÁî£¬" +
-                        "¼´¿Ì¿ª¸°ÏåÑô³ÇÕĞÄ¼ĞÂ±ø£¬²»µÃÓĞÎó£¡£¡\n" NOR, me);
+                message_vision(HIW "$Nä¸€æ®æ‰‹ä¸­ä»¤ç‰Œï¼Œå¤§å–é“ï¼šå…ƒå¸¥æœ‰ä»¤ï¼Œ" +
+                        "å³åˆ»é–‹èµ´è¥„é™½åŸæ‹›å‹Ÿæ–°å…µï¼Œä¸å¾—æœ‰èª¤ï¼ï¼\n" NOR, me);
                 break;
         case "forage" :
-                message_vision(HIW "$NÒ»»ÓÊÖÖĞÁîÅÆ£¬´óºÈµÀ£ºÔªË§ÓĞÁî£¬" +
-                        "¼´¿Ì¿ª¸°¾©Ê¦Ñº½âÁ¸²İ£¬²»µÃÓĞÎó£¡£¡\n" NOR, me);
+                message_vision(HIW "$Nä¸€æ®æ‰‹ä¸­ä»¤ç‰Œï¼Œå¤§å–é“ï¼šå…ƒå¸¥æœ‰ä»¤ï¼Œ" +
+                        "å³åˆ»é–‹èµ´äº¬å¸«æŠ¼è§£ç³§è‰ï¼Œä¸å¾—æœ‰èª¤ï¼ï¼\n" NOR, me);
                 break;
         default :
                 break;
@@ -318,17 +318,17 @@ int do_train(string arg)
         object me = this_player(), weapon;
 
         if( !query_temp("warquest/train", me) )
-                return notify_fail("ÔªË§²¢Ã»ÓĞÅÉÄãÑµÁ·¶ÓÎé°É£¿\n");
+                return notify_fail("å…ƒå¸¥ä¸¦æ²’æœ‰æ´¾ä½ è¨“ç·´éšŠä¼å§ï¼Ÿ\n");
 
         if (! environment(me) ||
             base_name(environment(me)) != "/d/city2/sying1")
-                return notify_fail("Äã±ØĞëµ½ÔªË§ÄÇÀïÁìÃü²Å¿ÉÒÔÑµÁ·¶ÓÎé£¡\n");
+                return notify_fail("ä½ å¿…é ˆåˆ°å…ƒå¸¥é‚£è£¡é ˜å‘½æ‰å¯ä»¥è¨“ç·´éšŠä¼ï¼\n");
 
         if( query_temp("warquest/train_begin", me) )
-                return notify_fail("Äã²»ÊÇÕıÔÚÑµÁ·¶ÓÎéÂğ£¿£¡\n");
+                return notify_fail("ä½ ä¸æ˜¯æ­£åœ¨è¨“ç·´éšŠä¼å—ï¼Ÿï¼\n");
 
-        message_vision(HIW "$N½Ó¹ıÁî¼ı£¬´óÉùµÀ£º" +
-                "Ä©½«×ñÃü£¬Ä©½µ¼´¿ÌÇ°È¥¾üÓªÑµÁ·¶ÓÎé£¡£¡\n" NOR, me);
+        message_vision(HIW "$Næ¥éä»¤ç®­ï¼Œå¤§è²é“ï¼š" +
+                "æœ«å°‡éµå‘½ï¼Œæœ«é™å³åˆ»å‰å»è»ç‡Ÿè¨“ç·´éšŠä¼ï¼ï¼\n" NOR, me);
 
         if( query_temp("warquest/train", me) == "cavalry" )
                 me->move("/d/city2/sying3");
@@ -343,7 +343,7 @@ int do_train(string arg)
                 WIELD_CMD->main(me, "bow");
                 me->move("/d/city2/sying4");
         } else
-                return notify_fail("ÄãÔÚ×öÊ²Ã´£¬ÉÃ×ÔĞĞ¶¯°´¾ü·¨ÂÛ´¦£¡\n");
+                return notify_fail("ä½ åœ¨åšä»€éº¼ï¼Œæ“…è‡ªè¡Œå‹•æŒ‰è»æ³•è«–è™•ï¼\n");
 
         set_temp("warquest/train_begin", 1, me);
         return 1;
@@ -359,42 +359,42 @@ int do_order(string arg)
         me = this_player();
         env = environment(me);
         if (! arg || sscanf(arg, "%s to %s", who, what) != 2)
-                return notify_fail("ÇëÓÃ order sb to do sth. À´·¢²¼ºÅÁî£¡\n");
+                return notify_fail("è«‹ç”¨ order sb to do sth. ä¾†ç™¼å¸ƒè™Ÿä»¤ï¼\n");
 
         if (! objectp(ob = present(who, env)))
-                return notify_fail("ÕâÀïÃ»ÓĞÄã¿ÉÒÔµ÷¶ÈµÄÕâÃû½«Áì£¡\n");
+                return notify_fail("é€™è£¡æ²’æœ‰ä½ å¯ä»¥èª¿åº¦çš„é€™åå°‡é ˜ï¼\n");
 
         if( query_temp("warquest/party", ob) != "song" )
-                return notify_fail("¶Ô·½²»ÊÇËÎ¾ü£¬ÈçºÎ¹©Äãµ÷¶È£¿£¡\n");
+                return notify_fail("å°æ–¹ä¸æ˜¯å®‹è»ï¼Œå¦‚ä½•ä¾›ä½ èª¿åº¦ï¼Ÿï¼\n");
 
         if( !query_temp("warquest/train", ob) || 
             query_temp("warquest/group", ob)<1 )
-                return notify_fail("ÕâÖ§¶ÓÎéÉĞÎ´ÑµÁ·æµÊì£¬ÄÑ¿°´óÓÃ£¡\n");
+                return notify_fail("é€™æ”¯éšŠä¼å°šæœªè¨“ç·´å«»ç†Ÿï¼Œé›£å ªå¤§ç”¨ï¼\n");
 
         if (ob == me)
-                return notify_fail("×Ô¼ºÃüÁî×Ô¼º£¿Äã²»ÏÓÀÛ°¡Äã£¿£¡\n");
+                return notify_fail("è‡ªå·±å‘½ä»¤è‡ªå·±ï¼Ÿä½ ä¸å«Œç´¯å•Šä½ ï¼Ÿï¼\n");
         
-        if (userp(ob)) notify_fail("Äã²»ÄÜÃüÁîÍæ¼Ò½«Áì£¡\n");
+        if (userp(ob)) notify_fail("ä½ ä¸èƒ½å‘½ä»¤ç©å®¶å°‡é ˜ï¼\n");
         
         if( query("degree_jungong", ob)>query("degree_jungong", me) )
-                return notify_fail("¶Ô·½¹ÙÏÎ±ÈÄã¸ß£¬µ÷¶¯²»ÁËÈË¼Ò£¡\n");
+                return notify_fail("å°æ–¹å®˜éŠœæ¯”ä½ é«˜ï¼Œèª¿å‹•ä¸äº†äººå®¶ï¼\n");
 
         if( query_temp("warquest/purchase", ob) )
-                return notify_fail("¶Ô·½ÕıÔÚ½øĞĞ¾ü±¸¹¤×÷£¬×îºÃ²»Òªµ÷¶¯ËûµÄ¾ü¶Ó£¡£¡\n");
+                return notify_fail("å°æ–¹æ­£åœ¨é€²è¡Œè»å‚™å·¥ä½œï¼Œæœ€å¥½ä¸è¦èª¿å‹•ä»–çš„è»éšŠï¼ï¼\n");
 
         switch(what)
         {
         case "follow":
-                message_vision(HIY "$NÂÔÒ»³ÁË¼£¬¶øºó¹û¸ÒµÄÏÂÁîµÀ£º¡°$n£¬"
-                        + "±¾Í³Áì¾ö¶¨Ó­Õ½ÃÉ¹Å´ó¾ü£¬\n½«¾üÇë¼´¿Ìµ÷ÅÉÈËÂíĞ­Öú×÷Õ½£¡\n" NOR, me, ob);
-                message_vision(HIW "$N´óÉùÓ¦µÀ£ºÄ©½«×ñÃü£¡Ô¸Îª½«¾üĞ§È®ÂíÖ®ÀÍ£¡\n" NOR, ob);
+                message_vision(HIY "$Nç•¥ä¸€æ²‰æ€ï¼Œè€Œå¾Œæœæ•¢çš„ä¸‹ä»¤é“ï¼šâ€œ$nï¼Œ"
+                        + "æœ¬çµ±é ˜æ±ºå®šè¿æˆ°è’™å¤å¤§è»ï¼Œ\nå°‡è»è«‹å³åˆ»èª¿æ´¾äººé¦¬å”åŠ©ä½œæˆ°ï¼\n" NOR, me, ob);
+                message_vision(HIW "$Nå¤§è²æ‡‰é“ï¼šæœ«å°‡éµå‘½ï¼é¡˜ç‚ºå°‡è»æ•ˆçŠ¬é¦¬ä¹‹å‹ï¼\n" NOR, ob);
                 ob->set_leader(me);
                 break;
 
         case "stop":
-                message_vision(HIY "$N×ĞÏ¸²é¿´ÁËËÄÖÜµÄµØĞÎ£¬¶øºó¹û¸ÒµÄÏÂÁîµÀ£º¡°$nÌıÁî£¬"
-                                + "Á¢¼´Í£Ö¹¶ÓÎéĞĞ½ø£¡£¡\n" NOR, me, ob);
-                message_vision(HIW "$N´óÉùÓ¦µÀ£ºÄ©½«×ñÃü£¡£¡\n" NOR, ob);
+                message_vision(HIY "$Nä»”ç´°æŸ¥çœ‹äº†å››å‘¨çš„åœ°å½¢ï¼Œè€Œå¾Œæœæ•¢çš„ä¸‹ä»¤é“ï¼šâ€œ$nè½ä»¤ï¼Œ"
+                                + "ç«‹å³åœæ­¢éšŠä¼è¡Œé€²ï¼ï¼\n" NOR, me, ob);
+                message_vision(HIW "$Nå¤§è²æ‡‰é“ï¼šæœ«å°‡éµå‘½ï¼ï¼\n" NOR, ob);
                 ob->command("move stop");
                 break;
 
@@ -402,18 +402,18 @@ int do_order(string arg)
                 if (sscanf(what, "guard %s", dir) == 1
                  && query("exits/"+dir, env) )
                 {
-                        message_vision(HIY "$N×ĞÏ¸²é¿´ÁËËÄÖÜµÄµØĞÎ£¬¶øºó¹û¸ÒµÄÏÂÁîµÀ£º¡°$nÌıÁî£¬" +
-                                "´Ë´¦µØÊÆÏÕÒª£¬\nÒ×ÊØÄÑ¹¥£¬»¹·³Çë½«¾üÔÚ´Ë´¦¼ÓÒÔ¶óÊØ£¡\n" NOR, me, ob);
-                        message_vision(HIW "$N´óÉùÓ¦µÀ£ºÄ©½«×ñÃü£¡µ«´æÒ»±øÒ»×ä£¬¾ö²»Ê§ÕóµØ£¡\n" NOR, ob);
+                        message_vision(HIY "$Nä»”ç´°æŸ¥çœ‹äº†å››å‘¨çš„åœ°å½¢ï¼Œè€Œå¾Œæœæ•¢çš„ä¸‹ä»¤é“ï¼šâ€œ$nè½ä»¤ï¼Œ" +
+                                "æ­¤è™•åœ°å‹¢éšªè¦ï¼Œ\næ˜“å®ˆé›£æ”»ï¼Œé‚„ç…©è«‹å°‡è»åœ¨æ­¤è™•åŠ ä»¥æ‰¼å®ˆï¼\n" NOR, me, ob);
+                        message_vision(HIW "$Nå¤§è²æ‡‰é“ï¼šæœ«å°‡éµå‘½ï¼ä½†å­˜ä¸€å…µä¸€å’ï¼Œæ±ºä¸å¤±é™£åœ°ï¼\n" NOR, ob);
                         ob->set_leader(0);
                         ob->command("guard " + dir);
                 } else
                 if (sscanf(what, "move %s", dir) == 1
                  && query("exits/"+dir, env) )
                 {
-                        message_vision(HIY "$N×ĞÏ¸²é¿´ÁËËÄÖÜµÄµØĞÎ£¬¶øºó¹û¸ÒµÄÏÂÁîµÀ£º¡°$nÌıÁî£¬"
-                                + "Á¢¼´ÂÊÁì²¿¶Ó\n»ğËÙĞĞ½ø£¬²»µÃÓĞÎó£¡£¡\n" NOR, me, ob);
-                        message_vision(HIW"$N´óÉùÓ¦µÀ£ºÄ©½«×ñÃü£¡£¡\n" NOR, ob);
+                        message_vision(HIY "$Nä»”ç´°æŸ¥çœ‹äº†å››å‘¨çš„åœ°å½¢ï¼Œè€Œå¾Œæœæ•¢çš„ä¸‹ä»¤é“ï¼šâ€œ$nè½ä»¤ï¼Œ"
+                                + "ç«‹å³ç‡é ˜éƒ¨éšŠ\nç«é€Ÿè¡Œé€²ï¼Œä¸å¾—æœ‰èª¤ï¼ï¼\n" NOR, me, ob);
+                        message_vision(HIW"$Nå¤§è²æ‡‰é“ï¼šæœ«å°‡éµå‘½ï¼ï¼\n" NOR, ob);
                         ob->set_leader(0);
                         ob->command("move " + dir);
                 } else
@@ -422,11 +422,11 @@ int do_order(string arg)
                         ob->set_leader(0);
                         GO_CMD->main(ob, what);
                 } else
-                        return notify_fail("ÉíÎªÒ»¾üÖ®Í³Áì£¬Çë²»ÒªÀÄÓÃÄãµÄ¾üÈ¨£¡\n");
+                        return notify_fail("èº«ç‚ºä¸€è»ä¹‹çµ±é ˜ï¼Œè«‹ä¸è¦æ¿«ç”¨ä½ çš„è»æ¬Šï¼\n");
                 break;
         }
         set_temp("warquest/battle", 1, ob);
-        set_temp("warquest/quest", "¾ü¶Ó³öÕ÷£¬Ó­Õ½ÃÉ¾ü", ob);
+        set_temp("warquest/quest", "è»éšŠå‡ºå¾ï¼Œè¿æˆ°è’™è»", ob);
         return 1;
 }
 
@@ -447,7 +447,7 @@ int do_move(string dir)
         if (! dir || dir == "stop")
         {
                 remove_call_out("on_move");
-                write("²¿¶ÓĞĞ½øÖÕÖ¹£¡\n");
+                write("éƒ¨éšŠè¡Œé€²çµ‚æ­¢ï¼\n");
                 return 1;
         }
 
@@ -455,11 +455,11 @@ int do_move(string dir)
         {
                 remove_call_out("on_move");
                 call_out("on_move", 2, me, dir);
-                write("²¿¶Ó¿ªÊ¼ĞĞ½ø£¡\n");
+                write("éƒ¨éšŠé–‹å§‹è¡Œé€²ï¼\n");
                 return 1;
         }
         else
-                write("ÎŞ·¨ÒÆ¶¯£¬Ã»ÓĞÖ¸¶¨·½ÏòµÄ³ö¿Ú£¡\n");
+                write("ç„¡æ³•ç§»å‹•ï¼Œæ²’æœ‰æŒ‡å®šæ–¹å‘çš„å‡ºå£ï¼\n");
 
         return 1;
 }
@@ -473,7 +473,7 @@ void on_move(object me, string dir)
         env = environment(me);
         if( !query("exits/"+dir, env) )
         {
-                write("ÎŞ·¨ÒÆ¶¯£¬Ã»ÓĞÖ¸¶¨·½ÏòµÄ³ö¿Ú£¡\n");
+                write("ç„¡æ³•ç§»å‹•ï¼Œæ²’æœ‰æŒ‡å®šæ–¹å‘çš„å‡ºå£ï¼\n");
                 return;
         }
 
@@ -491,7 +491,7 @@ void on_move(object me, string dir)
                 return;
         } else
         {
-                write("ÎŞ·¨ÒÆ¶¯£¬ĞĞ½øÖÕÖ¹£¡\n");
+                write("ç„¡æ³•ç§»å‹•ï¼Œè¡Œé€²çµ‚æ­¢ï¼\n");
                 return;
         }
 }

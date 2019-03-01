@@ -6,12 +6,12 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÇïÔÂ", ({"qiu yue"}));
-        set("gender", "Å®ĞÔ");
+        set_name("ç§‹æœˆ", ({"qiu yue"}));
+        set("gender", "å¥³æ€§");
         set("age", 18);
         set("shen_type", -1);
-        set("long", "ÇàÇàµÄÊÌÅ®£¬Ê®Æß°ËµÄÄê¼Í¡£Êµ¼ÊÉÏÊÇÄ§½ÌÌìÃÀ¹¬Ö÷ÅÉÔÚÇàÇàÉí±ßµÄÎÔµ×¡£\n"
-                    "ÇïÔÂµÄ¼¡·ô£¬±ÈÇïÌìµÄÔÂÁÁ»¹Òªğ¨½à¡¢ÃÄÈË¡£\n");
+        set("long", "é’é’çš„ä¾å¥³ï¼Œåä¸ƒå…«çš„å¹´ç´€ã€‚å¯¦éš›ä¸Šæ˜¯é­”æ•™å¤©ç¾å®®ä¸»æ´¾åœ¨é’é’èº«é‚Šçš„è‡¥åº•ã€‚\n"
+                    "ç§‹æœˆçš„è‚Œè†šï¼Œæ¯”ç§‹å¤©çš„æœˆäº®é‚„è¦çšæ½”ã€åªšäººã€‚\n");
         set("attitude", "peaceful");
 
         set("per", 26);
@@ -56,7 +56,7 @@ void create()
 
         prepare_skill("strike", "moshen-zhangfa");
         
-        create_family("Ä§½Ì", 42, "µÜ×Ó");
+        create_family("é­”æ•™", 42, "å¼Ÿå­");
 
         set_temp("apply/attack", 180);
         set_temp("apply/damage", 180);

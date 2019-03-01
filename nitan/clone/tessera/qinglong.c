@@ -4,14 +4,14 @@ inherit TESSERA;
 
 void create()
 {
-        set_name(HIG "ÇàÁú¡¤Ä¾" NOR, ({"qing long", "wood"}));
+        set_name(HIG "é’é¾ï¹’æœ¨" NOR, ({"qing long", "wood"}));
         set_weight(20);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", HIG "¿ÉÓÃÓÚÏâÇ¶10LV£¬ÊôĞÔÄ¾¡£\n" NOR);
+                set("long", HIG "å¯ç”¨äºé‘²åµŒ10LVï¼Œå±¬æ€§æœ¨ã€‚\n" NOR);
                 set("value", 100000);
-                set("unit", "¿é");
+                set("unit", "å¡Š");
                 set("no_identify", 1);
         }
         setup();

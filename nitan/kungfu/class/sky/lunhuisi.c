@@ -3,19 +3,19 @@ inherit ROOM;
 
 void create()
 {
-        set("short", HIR "¡¾ÂÖ»ØË¾¡¿" NOR);
+        set("short", HIR "ã€è¼ªå›å¸ã€‘" NOR);
         set("long", HIR @LONG
 
-                 ÂÖ        »Ø        Ë¾
+                 è¼ª        å›        å¸
 
-    ÕâÀïÒõÑô½»»ãÖ®´¦£¬ÖÜÎ§Ò»Æ¬ºÚ°µ£¬Ö»ÓĞÒ»ÕóÕóë³ëµÖ®Æø´ÓÏÂ·½Ó¿³ö¡£
+    é€™è£¡é™°é™½äº¤åŒ¯ä¹‹è™•ï¼Œå‘¨åœä¸€ç‰‡é»‘æš—ï¼Œåªæœ‰ä¸€é™£é™£æ°¤æ°³ä¹‹æ°£å¾ä¸‹æ–¹æ¹§å‡ºã€‚
 
 LONG NOR );
 
         set("sleep_room", 1);
 
         set("sky", 1);
-        // ÔÚ´ËÑİÁ·lunhui-sword
+        // åœ¨æ­¤æ¼”ç·´lunhui-sword
         set("lunhui", 1);
         set("valid_startroom", 1);
         setup();

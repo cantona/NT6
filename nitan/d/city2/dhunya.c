@@ -3,11 +3,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", HIB"�ϻ���"NOR);
+        set("short", HIB"斷魂崖"NOR);
         set("long", @LONG
-����������նϻ����ˣ��Ƕ����ϱ��Ľ�ͨ�ؾ�֮·������Ϊ��
-�ұ���֮�أ���ɽ�����ƶ��£�ֻ��һ����խ����С������������
-������Ԩ�������ϳ����֣������鴫��
+這裡就是天險斷魂崖了，是扼守南北的交通必經之路，歷來為兵
+家必爭之地，由山頂幣制而下，只有一條狹窄的羊腸小道，兩面則是
+萬丈深淵，看來斷腸二字，名不虛傳。
 LONG );
 
         set("no_magic", "1");

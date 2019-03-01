@@ -10,19 +10,19 @@ string look_rules();
 
 void create()
 {
-	set("short", "¹°Öí·¿");
+	set("short", "æ‹±è±¬æˆ¿");
         set("long", @LONG
-	ÕâÊÇÒ»¼ä×¨ÃÅÎª¹°Öí¶øÌØ±ğÉè¼ÆµÄ¹°Öí·¿¡£·¿¼äÀïÃæµÆ»ğÍ¨Ã÷£¬
-·Â·ğÓÀÔ¶×¼±¸×ÅÎª¹°Öí¿ñÃÇ·şÎñËÆµÄ¡£·¿¼äµÄÖĞĞÄ·Å×ÅÒ»ÕÅÓÃ°ÙÄêÀÏ
-ËÉÊ÷Ä¾²ÄÌØÖÆµÄ¹°Öí×À(table)£¬ÖÜÎ§·Å×ÅËÄ°ÑéªÄ¾¿¿±³ÒÎ¡£×À×ÓÉÏ°Ú
-×ÅÒ»±¾¼Ç·Ö²¾(scoreboard)£¬±±±ßµÄÇ½ÉÏÌù×ÅÒ»ÕÅÖ½(paper)¡£
+	é€™æ˜¯ä¸€é–“å°ˆé–€ç‚ºæ‹±è±¬è€Œç‰¹åˆ¥è¨­è¨ˆçš„æ‹±è±¬æˆ¿ã€‚æˆ¿é–“è£¡é¢ç‡ˆç«é€šæ˜ï¼Œ
+ä»¿ä½›æ°¸é æº–å‚™è‘—ç‚ºæ‹±è±¬ç‹‚å€‘æœå‹™ä¼¼çš„ã€‚æˆ¿é–“çš„ä¸­å¿ƒæ”¾è‘—ä¸€å¼µç”¨ç™¾å¹´è€
+é¬†æ¨¹æœ¨æç‰¹åˆ¶çš„æ‹±è±¬æ¡Œ(table)ï¼Œå‘¨åœæ”¾è‘—å››æŠŠæ¥ æœ¨é èƒŒæ¤…ã€‚æ¡Œå­ä¸Šæ“º
+è‘—ä¸€æœ¬è¨˜åˆ†ç°¿(scoreboard)ï¼ŒåŒ—é‚Šçš„ç‰†ä¸Šè²¼è‘—ä¸€å¼µç´™(paper)ã€‚
 LONG );
 	set("pigging", 1);
 
 	set("item_desc", ([
 		"table" : (: look_table :),
 		"scoreboard" : (: look_scoreboard :),
-		"paper" : "ÇëÎñ±Ø¶Á help pig_cmds ºÍ help pig_rules¡£\n",
+		"paper" : "è«‹å‹™å¿…è®€ help pig_cmds å’Œ help pig_rulesã€‚\n",
 	]));
 
 	set("exits", ([
@@ -51,6 +51,6 @@ string look_scoreboard()
 int valid_leave(object me, string dir)
 {
 	if( query_temp("pigging_seat", me) )
-		return notify_fail("ÏÈÀë¿ª¹°Öí×À²ÅÄÜĞĞ¶¯¡£\n");
+		return notify_fail("å…ˆé›¢é–‹æ‹±è±¬æ¡Œæ‰èƒ½è¡Œå‹•ã€‚\n");
 	return ::valid_leave(me, dir);
 }

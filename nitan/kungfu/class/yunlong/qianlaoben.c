@@ -7,9 +7,9 @@ int ask_weiwang();
 
 void create()
 {
-        set_name("Ǯ�ϱ�", ({"qian laoben", "qian", "laoben"}));
-        set("title", HIR "��ػ�"HIG"��ľ��"NOR"����");
-        set("gender", "����");
+        set_name("錢老本", ({"qian laoben", "qian", "laoben"}));
+        set("title", HIR "天地會"HIG"青木堂"NOR"會眾");
+        set("gender", "男性");
         set("age", 34);
 
         set("str", 22);
@@ -33,20 +33,20 @@ void create()
         set("env/wimpy", 50);
         set("chat_chance", 5);
         set("chat_msg", ({
-                "Ǯ�ϱ�˵�����ҽ�Ǯ�ϱ���������Ϊ���������ϱ�Ҳ���ˡ�\n",
-                "Ǯ�ϱ�Ц��˵�����ڱ����Ǯ��Ϣ���ٰٷ�֮һ���͹���ֻ�ܴ�ɡ�\n",
-                "Ǯ�ϱ�˵��ֻ�жԱ��ɵ����Ҳ���ô�������Ա���˰����ߺ�......\n",
-                "Ǯ�ϱ�ͻȻ˵��: ������������Ҫ������ֵ�ߴ��кô�����\n",
-                "Ǯ�ϱ�ͻȻ˵�����˷ֿ�һ��ʫ�����Ϻ�Ӣ����֪��\n",
+                "錢老本說道：我叫錢老本，就是因為做生意連老本也賠了。\n",
+                "錢老本笑著說道：在本店存錢利息至少百分之一，客官您只管存吧。\n",
+                "錢老本說：只有對本派弟子我才這麼客氣，對別的人啊，哼哼......\n",
+                "錢老本突然說道: 江湖威望很重要，威望值高大有好處啊。\n",
+                "錢老本突然說：五人分開一首詩，身上洪英無人知。\n",
         }));
         set("inquiry", ([
-                "��Ϣ" : "��Ҫ��Ϣ����ᣡ\n",
-                "�½���" : "����ܶ�����û��ô���ס�\n",
-                "��ػ�" : "ֻҪ��Ӣ�ۺú���������������ػ�(join tiandihui)��\n",
-                "����" : "ֻҪ��������ػᣬ��������и�λ����ѧ���ա�\n",
-                "���" : "ֻҪ��������ػᣬ��������и�λ����ѧ���ա�\n",
-                "����" : (: ask_weiwang :),
-                "��������" : (: ask_weiwang :),
+                "利息" : "想要利息先入會！\n",
+                "陳近南" : "想見總舵主可沒那麼容易。\n",
+                "天地會" : "只要是英雄好漢，都可以入我天地會(join tiandihui)。\n",
+                "加入" : "只要入了我天地會，可以向會中各位好手學武藝。\n",
+                "入會" : "只要入了我天地會，可以向會中各位好手學武藝。\n",
+                "威望" : (: ask_weiwang :),
+                "江湖威望" : (: ask_weiwang :),
         ]) );
 
         set_skill("unarmed", 50);
@@ -75,8 +75,8 @@ void init()
 
 int ask_weiwang()
 {
-        command("tell"+query("id", this_player())+"�����ڵĽ���������"+(query("weiwang", this_player())));
-        say( "Ǯ�ϱ�˵�����������ֵ�ܸߣ���Щ�˼����㲻������ɱ�㣬��������书�����㱦����\n�����㻹���Լ����ᣬ�������ȥ����Ŀ�꣬����ȥǮׯȡǮҲ������Ϣ ����������\n");
-        say("Ǯ�ϱ���˵��ɱĳЩ���˻��ĳЩ���˿�����߽���������\n");
+        command("tell"+query("id", this_player())+"你現在的江湖威望是"+(query("weiwang", this_player())));
+        say( "錢老本說：如果你威望值很高，有些人見了你不但不會殺你，還會教你武功，送你寶貝。\n而且你還可以加入幫會，率領會眾去攻打目標，就連去錢莊取錢也會有利息 。。。。。\n");
+        say("錢老本又說：殺某些壞人或救某些好人可以提高江湖威望。\n");
         return 1;
 }

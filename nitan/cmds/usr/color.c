@@ -6,26 +6,26 @@ inherit F_CLEAN_UP;
 
 int main(object me)
 {
-        tell_object(me,MAG"¡ï"HIY"É«²Ê¾«ÁéÏòÄú±¨¸æ"MAG"¡ï\n\n"NOR);
+        tell_object(me,MAG"â˜…"HIY"è‰²å½©ç²¾éˆå‘æ‚¨å ±å‘Š"MAG"â˜…\n\n"NOR);
         tell_object(me,
-"  ºÚÉ«- BLK"BLK"¡ö¡ö¡ö                       BBLK"BBLK"¡ö¡ö¡ö"NOR"\n"
-"  ºìÉ«- RED"RED"¡ö¡ö¡ö"NOR" HIR"HIR"¡ö¡ö¡ö"NOR" HBRED"HBRED"¡ö¡ö¡ö"NOR" BRED"BRED"¡ö¡ö¡ö"NOR"\n"
-"  ÂÌÉ«- GRN"GRN"¡ö¡ö¡ö"NOR" HIG"HIG"¡ö¡ö¡ö"NOR" HBGRN"HBGRN"¡ö¡ö¡ö"NOR" BGRN"BGRN"¡ö¡ö¡ö"NOR"\n"
-"  »ÆÉ«- YEL"YEL"¡ö¡ö¡ö"NOR" HIY"HIY"¡ö¡ö¡ö"NOR" HBYEL"HBYEL"¡ö¡ö¡ö"NOR" BYEL"BYEL"¡ö¡ö¡ö"NOR"\n"
-"  À¶É«- BLU"BLU"¡ö¡ö¡ö"NOR" HIB"HIB"¡ö¡ö¡ö"NOR" HBBLU"HBBLU"¡ö¡ö¡ö"NOR" BBLU"BBLU"¡ö¡ö¡ö"NOR"\n"
-"  ·ÛÉ«- MAG"MAG"¡ö¡ö¡ö"NOR" HIM"HIM"¡ö¡ö¡ö"NOR" HBMAG"HBMAG"¡ö¡ö¡ö"NOR" BMAG"BMAG"¡ö¡ö¡ö"NOR"\n"
-"  ÇàÉ«- CYN"CYN"¡ö¡ö¡ö"NOR" HIC"HIC"¡ö¡ö¡ö"NOR" HBCYN"HBCYN"¡ö¡ö¡ö"NOR" BCYN"BCYN"¡ö¡ö¡ö"NOR"\n"
-"  °×É«- WHT"WHT"¡ö¡ö¡ö"NOR" HIW"HIW"¡ö¡ö¡ö"NOR" HBWHT"HBWHT"¡ö¡ö¡ö"NOR"\n"
-"  »ÒÉ«- HIK"HIK"¡ö¡ö¡ö"NOR"\n");
+"  é»‘è‰²- BLK"BLK"â– â– â–                        BBLK"BBLK"â– â– â– "NOR"\n"
+"  ç´…è‰²- RED"RED"â– â– â– "NOR" HIR"HIR"â– â– â– "NOR" HBRED"HBRED"â– â– â– "NOR" BRED"BRED"â– â– â– "NOR"\n"
+"  ç¶ è‰²- GRN"GRN"â– â– â– "NOR" HIG"HIG"â– â– â– "NOR" HBGRN"HBGRN"â– â– â– "NOR" BGRN"BGRN"â– â– â– "NOR"\n"
+"  é»ƒè‰²- YEL"YEL"â– â– â– "NOR" HIY"HIY"â– â– â– "NOR" HBYEL"HBYEL"â– â– â– "NOR" BYEL"BYEL"â– â– â– "NOR"\n"
+"  è—è‰²- BLU"BLU"â– â– â– "NOR" HIB"HIB"â– â– â– "NOR" HBBLU"HBBLU"â– â– â– "NOR" BBLU"BBLU"â– â– â– "NOR"\n"
+"  ç²‰è‰²- MAG"MAG"â– â– â– "NOR" HIM"HIM"â– â– â– "NOR" HBMAG"HBMAG"â– â– â– "NOR" BMAG"BMAG"â– â– â– "NOR"\n"
+"  é’è‰²- CYN"CYN"â– â– â– "NOR" HIC"HIC"â– â– â– "NOR" HBCYN"HBCYN"â– â– â– "NOR" BCYN"BCYN"â– â– â– "NOR"\n"
+"  ç™½è‰²- WHT"WHT"â– â– â– "NOR" HIW"HIW"â– â– â– "NOR" HBWHT"HBWHT"â– â– â– "NOR"\n"
+"  ç°è‰²- HIK"HIK"â– â– â– "NOR"\n");
         return 1;
 }
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : color
+æŒ‡ä»¤æ ¼å¼ : color
 
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄãÖªµÀÓÎÏ·ÖÐ¸÷ÖÖÉ«²ÊµÄANSI¿ØÖÆ×ÖÔª¼°É«²ÊµÄ
-ÊÔÑù£¬´Ó¶ø·½±ãÄúÑ¡ÔñÖÐÒâµÄÉ«²Ê¡£
+é€™å€‹æŒ‡ä»¤å¯ä»¥è®“ä½ çŸ¥é“éŠæˆ²ä¸­å„ç¨®è‰²å½©çš„ANSIæŽ§åˆ¶å­—å…ƒåŠè‰²å½©çš„
+è©¦æ¨£ï¼Œå¾žè€Œæ–¹ä¾¿æ‚¨é¸æ“‡ä¸­æ„çš„è‰²å½©ã€‚
 
 HELP );
         return 1;

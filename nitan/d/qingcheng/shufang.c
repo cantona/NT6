@@ -3,11 +3,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�鷿");
+        set("short", "書房");
         set("long", @LONG
-����һ��ɸɾ������鷿������һ����̴ľ�������Ϸ��Ų����鼮��
-��ǽ�ĵط�����һ����ܣ�����������ȫ�Ǹ��ַ�װ���顣���в�����
-����ȥ���ⰻȻ����Ȼ����Ѿá�
+這是一間幹幹凈凈的書房。當中一個大檀木桌，桌上放著不少書籍。
+靠牆的地方還有一個書架，架上滿滿的全是各種封裝的書。其中不少書
+看上去古意盎然，顯然年代已久。
 LONG );
         set("exits", ([
                 "north" : __DIR__"zoulang2",

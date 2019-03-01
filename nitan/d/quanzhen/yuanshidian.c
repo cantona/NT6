@@ -1,4 +1,4 @@
-// yuanshidian.c Ԫʼ��
+// yuanshidian.c 元始殿
 // Winder Oct.10 1998
 
 #include <ansi.h>
@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Ԫʼ��");
+        set("short", "元始殿");
         set("long", @LONG
-�����ǹ���Ԫʼ����Ĵ������������ƣ�����������Ԫʼ��
-��Ľ������Ա߻����ż�λ������̫�ҡ�����������ӡ�����ӵ�
-�ȵ���������һ�����ɻ����������衣
+這裡是供奉元始天尊的大殿。殿內香煙繚繞，正中央塑著元始天
+尊的金身，旁邊還塑著幾位道友如太乙、俱留孫、雲中子、廣和子等
+等的像，正聚在一處或躺或坐，或棋或茶。
 LONG
         );
         set("exits", ([

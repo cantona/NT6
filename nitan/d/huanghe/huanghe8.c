@@ -6,10 +6,10 @@
 inherit ROOM;
 void create()
 {
-        set("short", "�ƺ��뺣��");
+        set("short", "黃河入海口");
         set("long", @LONG
-�ƺ�������ظ�ԭ��������ԭ������ƽԭ���ܳ�һ����Ű��
-���������󺣡�
+黃河流經青藏高原、黃土高原、華北平原，總長一萬零九百裡，
+在這裡匯入大海。
 LONG );
         set("exits", ([
                 "southwest" : __DIR__"huanghe7",

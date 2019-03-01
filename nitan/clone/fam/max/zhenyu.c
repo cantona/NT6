@@ -1,4 +1,4 @@
-// zhenyu.c ÕòÓü¾ªÌìÍè
+// zhenyu.c é®ç„é©šå¤©ä¸¸
 
 #include <ansi.h>
 
@@ -6,18 +6,18 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIW "ÕòÓü¾ªÌìÍè" NOR, ({ "zhenyu wan", "zhenyu", "wan" }) );
+        set_name(HIW "é®ç„é©šå¤©ä¸¸" NOR, ({ "zhenyu wan", "zhenyu", "wan" }) );
         set_weight(3000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "Ò»¿ÅÁúÑÛ´óĞ¡µÄÒ©Íè£¬ë³ëµÆË±Ç£¬Ò»ĞáÖ®ÏÂ±ã¾õĞÄ¿õ\n"
-                                "Éñâù¡£Õû¸öÒ©ÍèÁ÷¶¯×Å½ğÊô°ãµÄ¹âÔó£¬ÈëÊÖ³ÁÖØ£¬ÔÚ\n"
-                                "ÕÆĞÄ»¬¶¯²»Í££¬±ãËÆÓĞÉúÃüÒ»°ã¡£\n"
-                                "±¾ÎïÆ·µÚÒ»´Î³ÔĞ§¹û×î¼Ñ£¡\n" NOR);
+                set("long", HIW "ä¸€é¡†é¾çœ¼å¤§å°çš„è—¥ä¸¸ï¼Œæ°¤æ°³æ’²é¼»ï¼Œä¸€å—…ä¹‹ä¸‹ä¾¿è¦ºå¿ƒæ› \n"
+                                "ç¥æ€¡ã€‚æ•´å€‹è—¥ä¸¸æµå‹•è‘—é‡‘å±¬èˆ¬çš„å…‰æ¾¤ï¼Œå…¥æ‰‹æ²‰é‡ï¼Œåœ¨\n"
+                                "æŒå¿ƒæ»‘å‹•ä¸åœï¼Œä¾¿ä¼¼æœ‰ç”Ÿå‘½ä¸€èˆ¬ã€‚\n"
+                                "æœ¬ç‰©å“ç¬¬ä¸€æ¬¡åƒæ•ˆæœæœ€ä½³ï¼\n" NOR);
                 set("value", 500000);
                 set("no_sell", 1);
-                set("unit", "¿Å");
+                set("unit", "é¡†");
                 set("only_do_effect", 1);
         }
 }
@@ -28,7 +28,7 @@ int do_effect(object me)
         int effect;
         int neili;
 
-        log_file("static/using", sprintf("%s(%s) eat ÕòÓü¾ªÌìÍè at %s.\n",
+        log_file("static/using", sprintf("%s(%s) eat é®ç„é©šå¤©ä¸¸ at %s.\n",
                  me->name(1),query("id", me),ctime(time())));
 
         effect = 0;
@@ -36,22 +36,22 @@ int do_effect(object me)
         if( query("skybook/item/zhenyu", me) )
         {
                 /*
-                message_vision(HIR "$N" HIR "Ò»Ñö²±£¬ÍÌÏÂÁËÒ»¿ÅÕòÓü¾ªÌìÍè£¬È´Ìı$P"
-                               HIR "Ò»Éù¼âÏø£¬Åç³öÒ»¿ÚÏÊÑª¡£\n" NOR, me);
+                message_vision(HIR "$N" HIR "ä¸€ä»°è„–ï¼Œåä¸‹äº†ä¸€é¡†é®ç„é©šå¤©ä¸¸ï¼Œå»è½$P"
+                               HIR "ä¸€è²å°–å“®ï¼Œå™´å‡ºä¸€å£é®®è¡€ã€‚\n" NOR, me);
 
-                me->set_temp("die_reason","Ì°³ÔÕòÓü¾ªÌìÍè£¬½á¹ûÅªµÃÈ«Éí½îÂö¾¡¶Ï"
-                                           "¶øÍö");
+                me->set_temp("die_reason","è²ªåƒé®ç„é©šå¤©ä¸¸ï¼Œçµæœå¼„å¾—å…¨èº«ç­‹è„ˆç›¡æ–·"
+                                           "è€Œäº¡");
                 me->die();
                 */ 
                 me->improve_neili(800);
                 me->improve_jingli(500);
                 addn("skybook/item/zhenyu", 1, me);
-                message_vision(HIW "$N" HIW "Ò»Ñö²±£¬ÍÌÏÂÁËÒ»¿ÅÕòÓü¾ªÌìÍè£¬Ö»¼û$P"
-                               HIW "»ëÉíÒ»²ü£¬ÆßÇÏ¶¼Ã°³ö°×ÑÌÀ´¡£\n" NOR, me);
+                message_vision(HIW "$N" HIW "ä¸€ä»°è„–ï¼Œåä¸‹äº†ä¸€é¡†é®ç„é©šå¤©ä¸¸ï¼Œåªè¦‹$P"
+                               HIW "æ¸¾èº«ä¸€é¡«ï¼Œä¸ƒç«…éƒ½å†’å‡ºç™½ç…™ä¾†ã€‚\n" NOR, me);
         } else
         {
-                message_vision(HIW "$N" HIW "Ò»Ñö²±£¬ÍÌÏÂÁËÒ»¿ÅÕòÓü¾ªÌìÍè£¬Ö»¼û$P"
-                               HIW "»ëÉíÒ»²ü£¬ÆßÇÏ¶¼Ã°³ö°×ÑÌÀ´¡£\n" NOR, me);
+                message_vision(HIW "$N" HIW "ä¸€ä»°è„–ï¼Œåä¸‹äº†ä¸€é¡†é®ç„é©šå¤©ä¸¸ï¼Œåªè¦‹$P"
+                               HIW "æ¸¾èº«ä¸€é¡«ï¼Œä¸ƒç«…éƒ½å†’å‡ºç™½ç…™ä¾†ã€‚\n" NOR, me);
 
                 //addn("combat_exp", 2000000+random(1000000), me);
                 addn("magic_points", 3000, me);

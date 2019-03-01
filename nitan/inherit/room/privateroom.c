@@ -1,10 +1,10 @@
 // privateroom.c
 
-// ·²ÊÇ¼Ì³ĞÕâÖÖ·¿ÎİÀàĞÍµÄ£¬¶¼¿ÉÒÔ±£´æ·¿ÎİµÄÃèÊöºÍ·¿ÎİÖĞautoloadµÄÎïÆ·¡£
-// ±£´æÊı¾İµÄ¶ÔÏó£¬¼Ì³ĞÕß±ØĞëÊÇ/data/room/...Ä¿Â¼ÏÂÃæµÄÎÄ¼ş£¬´ËÊ±ËüµÄ
-// ´æÅÌÎÄ¼şµÄÃû×ÖÏàÍ¬£¬ºó×º²»Í¬¡£
+// å‡¡æ˜¯ç¹¼æ‰¿é€™ç¨®æˆ¿å±‹é¡å‹çš„ï¼Œéƒ½å¯ä»¥ä¿å­˜æˆ¿å±‹çš„æè¿°å’Œæˆ¿å±‹ä¸­autoloadçš„ç‰©å“ã€‚
+// ä¿å­˜æ•¸æ“šçš„å°è±¡ï¼Œç¹¼æ‰¿è€…å¿…é ˆæ˜¯/data/room/...ç›®éŒ„ä¸‹é¢çš„æ–‡ä»¶ï¼Œæ­¤æ™‚å®ƒçš„
+// å­˜ç›¤æ–‡ä»¶çš„åå­—ç›¸åŒï¼Œå¾Œç¶´ä¸åŒã€‚
 //
-// KEY_DOORÈç¹ûÓĞ£¬½«ÊÇ´óÃÅµÄÎ»ÖÃ¡£
+// KEY_DOORå¦‚æœæœ‰ï¼Œå°‡æ˜¯å¤§é–€çš„ä½ç½®ã€‚
 
 #pragma save_binary
 
@@ -140,52 +140,52 @@ int do_kickout(string arg)
         object oob;
 
         if (! arg)
-                return notify_fail("ÄãÒª°ÑË­Ìß³öÈ¥£¿\n");
+                return notify_fail("ä½ è¦æŠŠèª°è¸¢å‡ºå»ï¼Ÿ\n");
 
         me = this_player();
         ob = present(arg, this_object());
 
         if (! objectp(ob))
-                return notify_fail("Äã¿´Ë­²»Ë³ÑÛ£¿\n");
+                return notify_fail("ä½ çœ‹èª°ä¸é †çœ¼ï¼Ÿ\n");
 
         if (ob == me)
-                return notify_fail("Äã´óÄÔÓĞË®£¿\n");
+                return notify_fail("ä½ å¤§è…¦æœ‰æ°´ï¼Ÿ\n");
 
         if( query("couple/couple_id", me) == query("id", ob) )
         {
-                if( query("gender", me) != "Å®ĞÔ" )
-                        return notify_fail("²»ÒªÂÒ´òÀÏÆÅ¡£\n");
+                if( query("gender", me) != "å¥³æ€§" )
+                        return notify_fail("ä¸è¦äº‚æ‰“è€å©†ã€‚\n");
                 else
-                        return notify_fail("Äã¸ÉÉ¶£¿ÕâÃ´Ğ×º·¡£\n");
+                        return notify_fail("ä½ å¹¹å•¥ï¼Ÿé€™éº¼å…‡æ‚ã€‚\n");
         }
 
         if (! is_room_owner(me))
-                return notify_fail("ÄãÓÖ²»ÊÇÕâ¶ùµÄÖ÷ÈË£¬Ïë¸ÉÊ²Ã´£¿\n");
+                return notify_fail("ä½ åˆä¸æ˜¯é€™å…’çš„ä¸»äººï¼Œæƒ³å¹¹ä»€éº¼ï¼Ÿ\n");
 
         if (! query("no_fight"))
-                return notify_fail("½­ºşÉÏÈ­Í·´óµÄËµ»°£¬ÄãºÎ²»Ê©Õ¹³öÕæÊµ±¾Áì£¿\n ");
+                return notify_fail("æ±Ÿæ¹–ä¸Šæ‹³é ­å¤§çš„èªªè©±ï¼Œä½ ä½•ä¸æ–½å±•å‡ºçœŸå¯¦æœ¬é ˜ï¼Ÿ\n ");
 
         if( query("couple/couple_id", me) == query("room_owner_id") )
         {
                 oob = UPDATE_D->global_find_player(room_owner_id());
                 if (! objectp(oob))
-                        return notify_fail("Êı¾İ´íÎó£ºÎŞ·¨²éÑ¯Íæ¼Ò¡£\n");
+                        return notify_fail("æ•¸æ“šéŒ¯èª¤ï¼šç„¡æ³•æŸ¥è©¢ç©å®¶ã€‚\n");
                 entry=query("private_room/entry", oob);
                 UPDATE_D->global_destruct_player(oob);
         } else
                 entry=query("private_room/entry", me);
 
         if (! stringp(entry))
-                return notify_fail("Êı¾İ´íÎó£ºÎŞ·¨²éÑ¯³ö¿Ú¡£\n");
+                return notify_fail("æ•¸æ“šéŒ¯èª¤ï¼šç„¡æ³•æŸ¥è©¢å‡ºå£ã€‚\n");
 
-        message_vision("$N´óºÈÒ»Éù£º¡°¿ì¸ø" + RANK_D->query_self_rude(me) +
-                       "¹ö³öÈ¥£¡¡±\nËµ°Õ£¬·ÉÆğÒ»½Å°Ñ$n¹¾àà¹¾ààµÄÌßÁË³öÈ¥£¡\n",
+        message_vision("$Nå¤§å–ä¸€è²ï¼šâ€œå¿«çµ¦" + RANK_D->query_self_rude(me) +
+                       "æ»¾å‡ºå»ï¼â€\nèªªç½·ï¼Œé£›èµ·ä¸€è…³æŠŠ$nå’•åš•å’•åš•çš„è¸¢äº†å‡ºå»ï¼\n",
                        me, ob);
         ob->move(entry);
-        message("vision", "Ö»ÌıÒ»ÕóàĞÔÓ£¬Ò»ÈË²Ò½Ğ×Å´ÓÀïÃæ"
-                          "·ÉÁË³öÀ´£¬ÖØÖØµÄÂäµ½ÁËµØÉÏ¡£\n",
+        message("vision", "åªè½ä¸€é™£å˜ˆé›œï¼Œä¸€äººæ…˜å«è‘—å¾è£¡é¢"
+                          "é£›äº†å‡ºä¾†ï¼Œé‡é‡çš„è½åˆ°äº†åœ°ä¸Šã€‚\n",
                 environment(ob), ob);
-        tell_object(ob, HIR "ÄãÖ»¾õµÃ»ëÉí¾çÍ´£¬¹ÇÍ·¶¼ÂéÁË¡£\n" NOR);
+        tell_object(ob, HIR "ä½ åªè¦ºå¾—æ¸¾èº«åŠ‡ç—›ï¼Œéª¨é ­éƒ½éº»äº†ã€‚\n" NOR);
         ob->receive_damage("qi", 150);
         if (! ob->is_busy())
                 ob->start_busy(5);
@@ -199,21 +199,21 @@ int do_knock(string arg)
         object room;
 
         if (! arg || arg != "men" && arg != "door")
-                return notify_fail("ÄãÒªÇÃÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦æ•²ä»€éº¼ï¼Ÿ\n");
 
         if (stringp(exit = query("KEY_DOOR/exit")) &&
             query("exits/" + exit))
-                return notify_fail("ÕâÀïµÄÃÅÊÇ¿ªµÄ£¬ÄãÇÃËü¸ÉÊ²Ã´¡£\n");
+                return notify_fail("é€™è£¡çš„é–€æ˜¯é–‹çš„ï¼Œä½ æ•²å®ƒå¹¹ä»€éº¼ã€‚\n");
 
         if (! query("room_key"))
-                return notify_fail("ÔÚÕâÀï¿ªÃÅÓÖ²»ÓÃÔ¿³×£¬ÄãÂÒÇÃÊ²Ã´¡£\n");
+                return notify_fail("åœ¨é€™è£¡é–‹é–€åˆä¸ç”¨é‘°åŒ™ï¼Œä½ äº‚æ•²ä»€éº¼ã€‚\n");
 
         me = this_player();
-        message_vision("$N×ßÉÏÇ°È¥£¬¡°óÆóÆóÆ¡±ÇáÇáÇÃÁË¼¸ÏÂÃÅ¡£\n", me);
+        message_vision("$Nèµ°ä¸Šå‰å»ï¼Œâ€œç¯¤ç¯¤ç¯¤â€è¼•è¼•æ•²äº†å¹¾ä¸‹é–€ã€‚\n", me);
 
         if (objectp(room = find_object(query("KEY_DOOR/room"))))
-                message("vision", "¡°óÆóÆóÆ¡±µÄ¼¸ÉùÇáÏì£¬ºÃÏñÓĞÈËÔÚÍâ"
-                        "ÃæÇÃÃÅ¡£\n", room);
+                message("vision", "â€œç¯¤ç¯¤ç¯¤â€çš„å¹¾è²è¼•éŸ¿ï¼Œå¥½åƒæœ‰äººåœ¨å¤–"
+                        "é¢æ•²é–€ã€‚\n", room);
 
         return 1;
 }
@@ -224,31 +224,31 @@ int do_unlock(string arg)
         string exit;
 
         if (! arg || arg != "men" && arg != "door" && arg != "gate")
-                return notify_fail("ÄãÒª´ò¿ªÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦æ‰“é–‹ä»€éº¼ï¼Ÿ\n");
 
         if (! stringp(exit = query("KEY_DOOR/exit")))
-                return notify_fail("ÕâÀïÃ»ÓĞÃÅĞèÒª´ò¿ª¡£\n");
+                return notify_fail("é€™è£¡æ²’æœ‰é–€éœ€è¦æ‰“é–‹ã€‚\n");
 
         if (query("exits/" + exit))
-                return notify_fail("ÕâÀïµÄÃÅÊÇ¿ªµÄ£¬²»±Ø¶à´ËÒ»¾ÙÁË¡£\n");
+                return notify_fail("é€™è£¡çš„é–€æ˜¯é–‹çš„ï¼Œä¸å¿…å¤šæ­¤ä¸€èˆ‰äº†ã€‚\n");
 
         me = this_player();
         if (stringp(query("room_key")))
         {
                 if (! present(query("room_key"), me) )
                 {
-                        message("vison", me->name() + "¹í¹íËîËîµÄÔÚÃÅ¿Ú¸ãÁË"
-                                         "°ëÌì£¬²»ÖªµÀÔÚ¸ÉÊ²Ã´¡£\n",
+                        message("vison", me->name() + "é¬¼é¬¼ç¥Ÿç¥Ÿçš„åœ¨é–€å£æäº†"
+                                         "åŠå¤©ï¼Œä¸çŸ¥é“åœ¨å¹¹ä»€éº¼ã€‚\n",
                                          this_object(), ({ me }));
-                        tell_object(me, "Äã·ÑÁË°ëÌì¾¢£¬Ò²Ã»ÓĞ´ò¿ªËø£¬¿´À´ÊÇ"
-                                        "Ô¿³×²»¶Ô¡£\n");
+                        tell_object(me, "ä½ è²»äº†åŠå¤©å‹ï¼Œä¹Ÿæ²’æœ‰æ‰“é–‹é–ï¼Œçœ‹ä¾†æ˜¯"
+                                        "é‘°åŒ™ä¸å°ã€‚\n");
                         return 1;
                 }
 
-                message_vision("$N×ßµ½ÃÅÇ°£¬Ãş³öÔ¿³×£¬ÇáÇáÒ»Å¤£¬Å¾µÄÒ»Éù£¬"
-                               "ÃÅ¿ªÁË¡£\n", me);
+                message_vision("$Nèµ°åˆ°é–€å‰ï¼Œæ‘¸å‡ºé‘°åŒ™ï¼Œè¼•è¼•ä¸€æ‰­ï¼Œå•ªçš„ä¸€è²ï¼Œ"
+                               "é–€é–‹äº†ã€‚\n", me);
         } else
-                message_vision("$N×ßµ½ÃÅÇ°£¬ÇáÇáÒ»×ª´ò¿ªÁËÃÅ¡£\n", me);
+                message_vision("$Nèµ°åˆ°é–€å‰ï¼Œè¼•è¼•ä¸€è½‰æ‰“é–‹äº†é–€ã€‚\n", me);
 
         this_open_door();
         return 1;
@@ -259,15 +259,15 @@ int do_lock(string arg)
         string exit;
 
         if (! arg || arg != "men" && arg != "door" && arg != "gate")
-                return notify_fail("ÄãÒªËøÉÏÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦é–ä¸Šä»€éº¼ï¼Ÿ\n");
 
         if (! stringp(exit = query("KEY_DOOR/exit")))
-                return notify_fail("ÕâÀïÃ»ÓĞÃÅĞèÒª¹ØÉÏ¡£\n");
+                return notify_fail("é€™è£¡æ²’æœ‰é–€éœ€è¦é—œä¸Šã€‚\n");
 
         if (! query("exits/" + exit))
-                return notify_fail("ÕâÀïµÄÃÅÒÑ¾­ËøÉÏÁË£¬²»±Ø¶à´ËÒ»¾ÙÁË¡£\n");
+                return notify_fail("é€™è£¡çš„é–€å·²ç¶“é–ä¸Šäº†ï¼Œä¸å¿…å¤šæ­¤ä¸€èˆ‰äº†ã€‚\n");
 
-        message_vision("$NËæÊÖÒ»´øÃÅ£¬¡°ßÑµ±¡±Ò»ÉùÃÅËøÉÏÁË¡£\n",
+        message_vision("$Néš¨æ‰‹ä¸€å¸¶é–€ï¼Œâ€œâ–¡ç•¶â€ä¸€è²é–€é–ä¸Šäº†ã€‚\n",
                        this_player());
         this_close_door(1);
         return 1;
@@ -276,13 +276,13 @@ int do_lock(string arg)
 int do_break(string arg)
 {
         if (! arg || arg != "men" && arg != "door" && arg != "gate")
-                return notify_fail("ÄãÒªÆÆ»µÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦ç ´å£ä»€éº¼ï¼Ÿ\n");
 
         if (is_room_owner(this_player()))
-                return notify_fail("ÄãÓĞÃ«²¡°¡£¿ÔÒ×Ô¼ºµÄÃÅ£¬ÒªÊÇ"
-                                   "Ã»ÁËÔ¿³×ÅäÒ»°Ñ¡£\n");
+                return notify_fail("ä½ æœ‰æ¯›ç—…å•Šï¼Ÿç ¸è‡ªå·±çš„é–€ï¼Œè¦æ˜¯"
+                                   "æ²’äº†é‘°åŒ™é…ä¸€æŠŠã€‚\n");
 
-        write("Äãµ¨×Ó²»Ğ¡£¬¾ÓÈ»¸ÒÉÃ´³ÃñÕ¬£¿\n");
+        write("ä½ è†½å­ä¸å°ï¼Œå±…ç„¶æ•¢æ“…é—–æ°‘å®…ï¼Ÿ\n");
         return 1;
 }
 
@@ -305,7 +305,7 @@ void this_open_door()
 
         if (! ob) return;
 
-        message("vision", "\n¡°¿¨À²¡±Ò»ÉùÃÅ´ÓÄÇ±ß±»ÈË´ò¿ªÁË¡£\n", ob);
+        message("vision", "\nâ€œå¡å•¦â€ä¸€è²é–€å¾é‚£é‚Šè¢«äººæ‰“é–‹äº†ã€‚\n", ob);
         ob->set("exits/"+query("KEY_DOOR/exit", ob),
                 query("KEY_DOOR/room", ob));
 
@@ -324,7 +324,7 @@ void this_close_door(int silent)
                 return;
 
         if (! silent)
-                message("vision", "\nÒ»Õó·ç´µÀ´£¬¡°ßÑµ±¡±Ò»ÉùÃÅ¹ØÉÏÁË¡£\n",
+                message("vision", "\nä¸€é™£é¢¨å¹ä¾†ï¼Œâ€œâ–¡ç•¶â€ä¸€è²é–€é—œä¸Šäº†ã€‚\n",
                         this_object());
         delete("exits/" + exit);
 
@@ -336,7 +336,7 @@ void this_close_door(int silent)
 
         if (! ob) return;
 
-        message("vision", "\n¡°ßÑµ±¡±Ò»ÉùÃÅ¹ØÉÏÁË¡£\n", ob);
+        message("vision", "\nâ€œâ–¡ç•¶â€ä¸€è²é–€é—œä¸Šäº†ã€‚\n", ob);
         delete("exits/"+query("KEY_DOOR/exit", ob), ob);
 }
 

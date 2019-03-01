@@ -1,4 +1,4 @@
-// fork.c »ù±¾²æ·¨
+// fork.c åŸºæœ¬å‰æ³•
 
 // writed by shadow
 

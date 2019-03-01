@@ -1,7 +1,7 @@
 // $file_name.c                                         /* COMMENT_ENTRY */
 // Create by TEMPLATE_D. $time.                         /* COMMENT_ENTRY */
 // axe.c
-// ×Ô¶¯´´½¨¸«Í·µÄ»ù×¼ÎÄ¼ş¡£                             /* COMMENT_EXIT  */
+// è‡ªå‹•å‰µå»ºæ–§é ­çš„åŸºæº–æ–‡ä»¶ã€‚                             /* COMMENT_EXIT  */
 
 #include <weapon.h>
 
@@ -12,19 +12,19 @@ inherit DAGGER;
 void create()
 {
 //**    set_name("$name", ({ "$id", }));                /* NAME_ENTRY */
-        set_name("Ø°Ê×", ({ "dagger", }));              /* NAME_EXIT  */
+        set_name("åŒ•é¦–", ({ "dagger", }));              /* NAME_EXIT  */
 
         if (clonep())
                 set_default_object(__FILE__);
         else
         {
 //**            set("$dbase_key", "$dbase_value\n");    /* DBASE_ENTRY */
-                set("long", "ÕâÊÇÒ»°ÑÆÕÍ¨µÄØ°Ê×¡£\n");  /* DBASE_EXIT  */
-                set("unit", "°Ñ");
+                set("long", "é€™æ˜¯ä¸€æŠŠæ™®é€šçš„åŒ•é¦–ã€‚\n");  /* DBASE_EXIT  */
+                set("unit", "æŠŠ");
                 set("value", 200);
                 set("material", "steel");
-                set("wield_msg", "$N¡¸à§¡¹µÄÒ»Éù³é³öÒ»°Ñ$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²ØÓÚĞä¼ä¡£\n");
+                set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€è²æŠ½å‡ºä¸€æŠŠ$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°‡æ‰‹ä¸­çš„$nè—äºè¢–é–“ã€‚\n");
         }
 
 //**    $function_name($argument);                      /* FUNCTION_ENTRY */

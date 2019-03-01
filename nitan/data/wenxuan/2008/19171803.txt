@@ -1,24 +1,24 @@
-subject : »ªÉ½½ðÉß¶´
-author_name : Þ±´ó´ô
+subject : è¯å±±é‡‘è›‡æ´ž
+author_name : è–‡å¤§å‘†
 author_id : vivi
 time : 1207567337
-board : Þ±´ó´ôµÄÁôÑÔ°å
+board : è–‡å¤§å‘†çš„ç•™è¨€æ¿
 file : /data/analecta/2008/19171803.txt
 add_time : 1211023043
 content :
-½øÈë»ªÉ½ºó£¬À´µ½³¯Ñô·å£¬Èç¹ûÄãµÄºóÌìÉí·¨ÓÐ41ÒÔÉÏ£¬¾Í¿ÉÒÔdownÏÂÈ¥£¬¶¯×÷Òª¿ìµã£¬ÍÏÒ»»á¶ù¾Í»áÏÂ²»È¥ÁË£¬
-ÕâÊ±£¬ÔÙed,wu,d¾Í¿ÉÒÔÏÂÈ¥ÁË¡£ÏÂÈ¥ºó£¬break dong£¬¾Í¿ÉÒÔ´ò¿ª¶´¿Ú£¬{enter;e;n}¾Í¿´µ½ÁËÒ»¾ß¿ÝÇ¬µÄº¡¹Ç(Skeleton) £¬
-Õâ¾ÍÊÇÏÄÑ©ÒËµÄÒÅº¡£¬mai skeleton£¬¾Í»áÍÚ³öÒ»¸ö´óÌúºÐ£¬ÕâÊ±²»ÒªÌ°ÐÄ£¬·ñÔòÈÎÄãÎä¹¦ÓÐ¶à¸ß±ØËÀÎÞÒÉ£¬
-½ÓÏÂÈ¥ÔÙmai skeleton£¬ÓÖÍÚ³öÒ»¸öÐ¡ÌúºÐ£¬Ð¡ÌúºÐÖÐ¾ÍÓÐ½ðÉßÃÜóÅÈý²á¡£¡õÁË±ÜÃâÎó¿ª´óÌúºÐ£¬¼ñÆðÐ¡ÌúºÐºó£¬
-ÔÙÄÏÒ»²½£¬ÔÙopen box£¬Ïëµ±ÄêÎÒÁ½¸öID¸÷±»´óÌúºÐº¦ËÀÁËÒ»´Î£¬Ç°³µÖ®¼ø°¡£¡
+é€²å…¥è¯å±±å¾Œï¼Œä¾†åˆ°æœé™½å³°ï¼Œå¦‚æžœä½ çš„å¾Œå¤©èº«æ³•æœ‰41ä»¥ä¸Šï¼Œå°±å¯ä»¥downä¸‹åŽ»ï¼Œå‹•ä½œè¦å¿«é»žï¼Œæ‹–ä¸€æœƒå…’å°±æœƒä¸‹ä¸åŽ»äº†ï¼Œ
+é€™æ™‚ï¼Œå†ed,wu,då°±å¯ä»¥ä¸‹åŽ»äº†ã€‚ä¸‹åŽ»å¾Œï¼Œbreak dongï¼Œå°±å¯ä»¥æ‰“é–‹æ´žå£ï¼Œ{enter;e;n}å°±çœ‹åˆ°äº†ä¸€å…·æž¯ä¹¾çš„éª¸éª¨(Skeleton) ï¼Œ
+é€™å°±æ˜¯å¤é›ªå®œçš„éºéª¸ï¼Œmai skeletonï¼Œå°±æœƒæŒ–å‡ºä¸€å€‹å¤§éµç›’ï¼Œé€™æ™‚ä¸è¦è²ªå¿ƒï¼Œå¦å‰‡ä»»ä½ æ­¦åŠŸæœ‰å¤šé«˜å¿…æ­»ç„¡ç–‘ï¼Œ
+æŽ¥ä¸‹åŽ»å†mai skeletonï¼ŒåˆæŒ–å‡ºä¸€å€‹å°éµç›’ï¼Œå°éµç›’ä¸­å°±æœ‰é‡‘è›‡å¯†ç¬ˆä¸‰å†Šã€‚â–¡äº†é¿å…èª¤é–‹å¤§éµç›’ï¼Œæ’¿èµ·å°éµç›’å¾Œï¼Œ
+å†å—ä¸€æ­¥ï¼Œå†open boxï¼Œæƒ³ç•¶å¹´æˆ‘å…©å€‹IDå„è¢«å¤§éµç›’å®³æ­»äº†ä¸€æ¬¡ï¼Œå‰è»Šä¹‹é‘’å•Šï¼
 
-½ðÉßÃÜóÅÉÏ²áÊÇ¶Á½ðÉß½£·¨µÄ£¬µ«Òª50¼¶µÄ»ù´¡²ÅÄÜ¶Á£¬ÄÜ¶Áµ½120 ¼¶£»ÖÐ²áÊÇ¶Á½ðÉß×¶·¨µÄ£¬ÄÜ¶Áµ½120¼¶£»
-ÏÂ²áÊÇ¶Á½ðÉßÓÎÉíÕÆµÄ£¬ÄÜ¶Áµ½120¼¶¡£½ðÉß½£·¨ÅäºÏ½ðÉß½£¾ÍÄÜ³öpfm suo£ºËø×Ö¾÷£»½ðÉß×¶·¨ÄÜ³öpfm tuwu£º
-½ðÉßÍÂÎí£»½ðÉßÓÎÉíÕÆÄÜ³öpfm fugu£º¸½¹Ç²øÉí¡£
+é‡‘è›‡å¯†ç¬ˆä¸Šå†Šæ˜¯è®€é‡‘è›‡åŠæ³•çš„ï¼Œä½†è¦50ç´šçš„åŸºç¤Žæ‰èƒ½è®€ï¼Œèƒ½è®€åˆ°120 ç´šï¼›ä¸­å†Šæ˜¯è®€é‡‘è›‡éŒæ³•çš„ï¼Œèƒ½è®€åˆ°120ç´šï¼›
+ä¸‹å†Šæ˜¯è®€é‡‘è›‡éŠèº«æŽŒçš„ï¼Œèƒ½è®€åˆ°120ç´šã€‚é‡‘è›‡åŠæ³•é…åˆé‡‘è›‡åŠå°±èƒ½å‡ºpfm suoï¼šéŽ–å­—è¨£ï¼›é‡‘è›‡éŒæ³•èƒ½å‡ºpfm tuwuï¼š
+é‡‘è›‡åéœ§ï¼›é‡‘è›‡éŠèº«æŽŒèƒ½å‡ºpfm fuguï¼šé™„éª¨çºèº«ã€‚
 
-Ôõ˜lÑ§µ½50¼¶µÄ½ðÉß½£·¨ÄØ£¿´ó¼Ò×¢ÒâÁËÃ»ÓÐ£¬ÔÚ¶´ÖÐÓÐ¸ömap£¬think map¾Í»áÑ§µ½½ðÉß½£·¨£¬Ò»Ö±think map£¬
-Ñ§µ½50¼¶¾Í¿ÉÒÔ¶ÁÊéÁË¡£
+æ€Žâ–¡å­¸åˆ°50ç´šçš„é‡‘è›‡åŠæ³•å‘¢ï¼Ÿå¤§å®¶æ³¨æ„äº†æ²’æœ‰ï¼Œåœ¨æ´žä¸­æœ‰å€‹mapï¼Œthink mapå°±æœƒå­¸åˆ°é‡‘è›‡åŠæ³•ï¼Œä¸€ç›´think mapï¼Œ
+å­¸åˆ°50ç´šå°±å¯ä»¥è®€æ›¸äº†ã€‚
 
-¶´¡õ»¹²åÖø°Ñ½ðÉß½££¬ÏëÒªÄÃËü±ØÐèÒª40ÒÔÉÏµÄºóÌì±ÛÁ¦£¬pull sword£¬°Î²»³öÀ´ÊÇ±ÛÁ¦²»¹»£¬ºÃÏñ»¹ÒªÓÐ1000µã
-ÒÔÉÏµÄÄÚÁ¦£¬°Î³öÀ´ÊÇ¸ö½£±úµÄ»°¾ÍÊÇ±»ÈËÄÃÁË
+æ´žâ–¡é‚„æ’è‘—æŠŠé‡‘è›‡åŠï¼Œæƒ³è¦æ‹¿å®ƒå¿…éœ€è¦40ä»¥ä¸Šçš„å¾Œå¤©è‡‚åŠ›ï¼Œpull swordï¼Œæ‹”ä¸å‡ºä¾†æ˜¯è‡‚åŠ›ä¸å¤ ï¼Œå¥½åƒé‚„è¦æœ‰1000é»ž
+ä»¥ä¸Šçš„å…§åŠ›ï¼Œæ‹”å‡ºä¾†æ˜¯å€‹åŠæŸ„çš„è©±å°±æ˜¯è¢«äººæ‹¿äº†
 [2;37;0m

@@ -13,7 +13,7 @@
 mapping emotions;
 
 string help = @HELP
-´ËÎª±íÇéÖ¸Áî£¬ÇëÊ¹ÓÃÖ¸Áî semote À´²éÔÄ±íÇéÖ¸ÁîÁĞ±í¼°Ê¹ÓÃ·½·¨¡£
+æ­¤ç‚ºè¡¨æƒ…æŒ‡ä»¤ï¼Œè«‹ä½¿ç”¨æŒ‡ä»¤ semote ä¾†æŸ¥é–±è¡¨æƒ…æŒ‡ä»¤åˆ—è¡¨åŠä½¿ç”¨æ–¹æ³•ã€‚
 HELP;
 varargs string do_emote(object me, string verb, string arg, int option);
 
@@ -52,20 +52,20 @@ varargs mixed do_emote(object me, string verb, string arg, int option)
         if( query("doing", me) == "scheme" )
         {
                 if( query("jing", me) < 100 )
-                        return notify_fail("ÄãÏÖÔÚµÄ¾«Éñ²»¼Ã£¬µÈÒ»»á¶ù°É¡£\n");
+                        return notify_fail("ä½ ç¾åœ¨çš„ç²¾ç¥ä¸æ¿Ÿï¼Œç­‰ä¸€æœƒå…’å§ã€‚\n");
                 addn("jing", -50, me);
         }
 
-        /* ÎŞ¶ÔÏó && ÎŞ¸½¼ÓÎÄ×Ö */
+        /* ç„¡å°è±¡ && ç„¡é™„åŠ æ–‡å­— */
         if ( !arg || !arg[0] )
                 emotion_msg = emotion[NONE_ALL];
 
-        /* Èô½« arg ²ğ³ÉÁ½²¿·İ */
+        /* è‹¥å°‡ arg æ‹†æˆå…©éƒ¨ä»½ */
         else if( sscanf(arg, "%s %s", your_name, argument) == 2 )
         {
                 int which;
 
-                // ¼ì²é¸´ÊıÄ¿±ê
+                // æª¢æŸ¥å¾©æ•¸ç›®æ¨™
                 if( sscanf(argument, "%d", which) && which > 1 && objectp(you = present(your_name+" "+which, me) || present(your_name+" "+which, environment(me))) )
                 {
                         your_name += " "+which;
@@ -75,10 +75,10 @@ varargs mixed do_emote(object me, string verb, string arg, int option)
                 if( !objectp(you) )
                         you =  present(your_name, environment(me)) || find_player(your_name);
 
-                /* ÕÒµ½¶ÔÏó && ÓĞ¸½¼ÓÎÄ×Ö */
+                /* æ‰¾åˆ°å°è±¡ && æœ‰é™„åŠ æ–‡å­— */
                 if( objectp(you) && me->visible(you) )
                 {
-                        /* ¶ÔÏóÊÇ×Ô¼º */
+                        /* å°è±¡æ˜¯è‡ªå·± */
                         if( you == me )
                         {
                                 emotion_msg = argument == "" ? emotion[ME_ALL] : emotion[ME_ALL_ARG];
@@ -89,11 +89,11 @@ varargs mixed do_emote(object me, string verb, string arg, int option)
 
                         emotion_msg = replace_string(emotion_msg, "$T", multi_emote(me, argument, option));
                 }
-                /* ÎŞ¶ÔÏó && ÓĞ¸½¼ÓÎÄ×Ö */
+                /* ç„¡å°è±¡ && æœ‰é™„åŠ æ–‡å­— */
                 else
                         emotion_msg = replace_string(emotion[NONE_ALL_ARG], "$T", multi_emote(me, arg, option));
         }
-        /* ÕÒµ½¶ÔÏó && ÎŞ¸½¼ÓÎÄ×Ö */
+        /* æ‰¾åˆ°å°è±¡ && ç„¡é™„åŠ æ–‡å­— */
         else if( objectp(you = present(arg, environment(me)) || find_player(arg)) && me->visible(you) )
         {
                 if( you == me )
@@ -105,7 +105,7 @@ varargs mixed do_emote(object me, string verb, string arg, int option)
                         emotion_msg = emotion[YOU_ALL];
         }
 
-        /* ÎŞ¶ÔÏó && ÓĞ¸½¼ÓÎÄ×Ö */
+        /* ç„¡å°è±¡ && æœ‰é™„åŠ æ–‡å­— */
         else
                 emotion_msg = replace_string(emotion[NONE_ALL_ARG], "$T", multi_emote(me, arg, option));
 
@@ -124,17 +124,17 @@ varargs mixed do_emote(object me, string verb, string arg, int option)
                 {
                         can_emote=query("env/can_emote", target);
                         if (! is_sub(query("id", me), can_emote))
-                                tell_object(me, "Õâ¸öÈË²»Ïë½ÓÊÜÄãµÄ¶¯×÷¡£\n");
+                                tell_object(me, "é€™å€‹äººä¸æƒ³æ¥å—ä½ çš„å‹•ä½œã€‚\n");
                 }
                 */
                 if( arrayp(ignore) && member_array( me->query_id(1), ignore ) != -1 )
                 {
-                        tell(me, HIY+pnoun(2, me)+"Ä¿Ç°ÎŞ·¨¶Ô"+you->query_idname()+HIY"Ê¹ÓÃÈÎºÎ±íÇéÖ¸Áî¡£\n"NOR);
+                        tell(me, HIY+pnoun(2, me)+"ç›®å‰ç„¡æ³•å°"+you->query_idname()+HIY"ä½¿ç”¨ä»»ä½•è¡¨æƒ…æŒ‡ä»¤ã€‚\n"NOR);
                         return 0;
                 }
         }
 
-        // ¼ÆËãÊ¹ÓÃ´ÎÊı
+        // è¨ˆç®—ä½¿ç”¨æ¬¡æ•¸
         emotion[USE] = count(emotion[USE],"+",1);
 
         if( option == MSG )
@@ -158,7 +158,7 @@ varargs mixed do_emote(object me, string verb, string arg, int option)
                 if( !objectp(you) || same_environment(me, you) || !me->visible(you) )
                         msg(CYN+emotion_msg+"\n", me, you, 1, EMTMSG);
                 else
-                        msg(HIB"Ô¶·½"NOR"-"+CYN+emotion_msg+"\n", me, you, 1, EMTMSG);
+                        msg(HIB"é æ–¹"NOR"-"+CYN+emotion_msg+"\n", me, you, 1, EMTMSG);
         }
         
         // Let NPC know we are doing emote on him.
@@ -216,7 +216,7 @@ private void create()
 
         if( !restore_object(DATA) )
         {
-                log_file("static/emote","ÎŞ·¨ÔØÈë´æµµ¡£\n");
+                log_file("static/emote","ç„¡æ³•è¼‰å…¥å­˜æª”ã€‚\n");
                 destruct(this_object());
         }
 }
@@ -233,5 +233,5 @@ int remove()
 
 string query_name()
 {
-        return "±íÇéÏµÍ³(EMOTE_D)";
+        return "è¡¨æƒ…ç³»çµ±(EMOTE_D)";
 }

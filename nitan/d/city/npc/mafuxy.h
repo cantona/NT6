@@ -4,45 +4,45 @@ int do_ridexy()
         object ob = this_player();
         int i;
         string *yz_xy = ({
-                HIC"¿Íµê"NOR,
-                HIC"±±´ó½Ö"NOR,
-                HIC"ÖĞÑë¹ã³¡"NOR,
-                HIC"Î÷´ó½Ö"NOR,
-                HIC"Î÷´ó½Ö"NOR,
-                HIC"Î÷ÃÅ"NOR,
-                HIC"Î÷ÃÅ´óµÀ"NOR,
-                HIC"¹ØÂåµÀ"NOR,
-                HIC"º¯¹È¹Ø"NOR,
-                HIC"²İµØ"NOR,
-                HIC"ĞşÎäÍâÃÅ"NOR,
-                HIC"ĞşÎäÄÚÃÅ"NOR,
-                HIC"±±´ó½Ö"NOR,
-                HIC"¶¡×Ö½Ö¿Ú"NOR,
-                HIC"±±ÄÚ´ó½Ö"NOR,
+                HIC"å®¢åº—"NOR,
+                HIC"åŒ—å¤§è¡—"NOR,
+                HIC"ä¸­å¤®å»£å ´"NOR,
+                HIC"è¥¿å¤§è¡—"NOR,
+                HIC"è¥¿å¤§è¡—"NOR,
+                HIC"è¥¿é–€"NOR,
+                HIC"è¥¿é–€å¤§é“"NOR,
+                HIC"é—œæ´›é“"NOR,
+                HIC"å‡½è°·é—œ"NOR,
+                HIC"è‰åœ°"NOR,
+                HIC"ç„æ­¦å¤–é–€"NOR,
+                HIC"ç„æ­¦å…§é–€"NOR,
+                HIC"åŒ—å¤§è¡—"NOR,
+                HIC"ä¸å­—è¡—å£"NOR,
+                HIC"åŒ—å…§å¤§è¡—"NOR,
         });
         if( query_temp("marks/horserent", ob) != 1 && query("age", ob)>14 )
-                return notify_fail("Ğ¡º¢×Ó²Å¿ÉÒÔÃâ·Ñ×øÂí£¡ÄãÒª½»Ç®£¡\n");
+                return notify_fail("å°å­©å­æ‰å¯ä»¥å…è²»åé¦¬ï¼ä½ è¦äº¤éŒ¢ï¼\n");
         switch (random(3))
         {
                 case 1:
-                        hname=MAG"×ÏæòÂí"NOR;
+                        hname=MAG"ç´«é¨®é¦¬"NOR;
                         break;
                 case 2:
-                        hname=RED"ÔæºìÂí"NOR;
+                        hname=RED"æ£—ç´…é¦¬"NOR;
                         break;
                 default:
-                        hname=HIY"»ÆæôÂí"NOR;
+                        hname=HIY"é»ƒé©ƒé¦¬"NOR;
                         break;
         }
         message_vision(
-"Âí·òËæÊÖ¸ø$NÇ£À´Ò»Æ¥"+hname+"¡£$N·­ÉíÔ¾ÉÏÂí±³¡£¶¯×÷äìÈ÷ÀûË÷¡£Â·±ßĞĞÈËÒ»Õó
-Æğºå: à¸àŞà¸àŞ¡£\n"NOR , ob );
-        message_vision("\nÖ»¼û$NÆïÁ½ÍÈÒ»¼Ğ£¬"+hname+"´©¹ı¿Íµê¶øÈ¥¡£\n",ob);
+"é¦¬å¤«éš¨æ‰‹çµ¦$Nç‰½ä¾†ä¸€åŒ¹"+hname+"ã€‚$Nç¿»èº«èºä¸Šé¦¬èƒŒã€‚å‹•ä½œç€Ÿæ´’åˆ©ç´¢ã€‚è·¯é‚Šè¡Œäººä¸€é™£
+èµ·å“„: å–”å™¢å–”å™¢ã€‚\n"NOR , ob );
+        message_vision("\nåªè¦‹$Né¨å…©è…¿ä¸€å¤¾ï¼Œ"+hname+"ç©¿éå®¢åº—è€Œå»ã€‚\n",ob);
         for (i = 0;i < sizeof(yz_xy);i ++)
                 tell_object(ob,yz_xy[i] + "\n");
         ob->move("/d/xiangyang/majiu");
-        tell_room(environment(ob),query("name", ob)+"Æï×Å"+hname+"Ò»Â·Ë³Àûµ½´ïÏåÑô³Ç¡£\n");
-        message_vision("\n$NÉíĞÎÒ»×ª£¬Ô¾ÏÂÂíÀ´£¬×ËÌ¬Ê®·ÖÓÅÃÀ¡£ÏĞÈËÒ²¸ø$NÒ»´óºå¡£\n",ob);
+        tell_room(environment(ob),query("name", ob)+"é¨è‘—"+hname+"ä¸€è·¯é †åˆ©åˆ°é”è¥„é™½åŸã€‚\n");
+        message_vision("\n$Nèº«å½¢ä¸€è½‰ï¼Œèºä¸‹é¦¬ä¾†ï¼Œå§¿æ…‹ååˆ†å„ªç¾ã€‚é–’äººä¹Ÿçµ¦$Nä¸€å¤§å“„ã€‚\n",ob);
         delete_temp("marks/horserent", ob);
         return 1;
 }

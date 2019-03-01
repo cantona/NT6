@@ -3,11 +3,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", HIW"Âí¾ü´óÓª"NOR);
+        set("short", HIW"é¦¬è»å¤§ç‡Ÿ"NOR);
         set("long", @LONG
-ÕâÀï¾ÍÊÇ¡¸´óËÎ¡¹Âí¾ü´óÓª£¬ÓªÄÚ¾üÂíË»Ãù£¬³¾ÍÁ·ÉÑï£¬ÎªÁËÓ¦
-¶ÔÃÉ¹Å¾«ÈñµÄÆï±ø£¬´óËÎÔçÒÑ¿ªÊ¼ÁËÆï±øµÄÑµÁ·£¬½Ï³¡ÖÐÑëÖ¸»ÓµÄ½«
-ÁìËäÈ»ÔçÒÑº¹Á÷ä¤±³£¬¿ÉÊÇË¿ºÁÒ²²»¸ÒÐ¸µ¡¡£
+é€™è£¡å°±æ˜¯ã€Œå¤§å®‹ã€é¦¬è»å¤§ç‡Ÿï¼Œç‡Ÿå…§è»é¦¬å˜¶é³´ï¼Œå¡µåœŸé£›æšï¼Œç‚ºäº†æ‡‰
+å°è’™å¤ç²¾éŠ³çš„é¨Žå…µï¼Œå¤§å®‹æ—©å·²é–‹å§‹äº†é¨Žå…µçš„è¨“ç·´ï¼Œè¼ƒå ´ä¸­å¤®æŒ‡æ®çš„å°‡
+é ˜é›–ç„¶æ—©å·²æ±—æµæµ¹èƒŒï¼Œå¯æ˜¯çµ²æ¯«ä¹Ÿä¸æ•¢æ‡ˆæ€ ã€‚
 LONG );
         set("train", "cavalry");  
         set("no_magic", "1");

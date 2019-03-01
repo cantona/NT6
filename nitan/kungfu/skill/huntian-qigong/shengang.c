@@ -1,5 +1,5 @@
 // This program is a part of NITAN MudLIB
-// shengang.c ���������������
+// shengang.c 混天氣功混天神罡
 
 #include <ansi.h>
 #include <combat.h>
@@ -17,18 +17,18 @@ int exert(object me, object target)
         weapon=query_temp("weapon", me);
 
         if( !query("can_exert/huntian-qigong/shengang", me) )
-                return notify_fail(HIG "�㻹û���ܵ�ĳ�˵�ָ�㣬������ʹ�����ֹ���\n" NOR);
+                return notify_fail(HIG "你還沒有受到某人的指點，還不會使用這種功夫。\n" NOR);
 
         if( query_temp("shield", me) )
-                return notify_fail(HIG "���Ѿ����˻�Ԫ����ˡ�\n" NOR);
+                return notify_fail(HIG "你已經在運混元天罡了。\n" NOR);
 
         if( query("neili", me)<200 )
-                return notify_fail("���������������\n");
+                return notify_fail("你的內力還不夠！\n");
 
         if ((int)me->query_skill("huntian-qigong", 1) < 150)
-                return notify_fail("��Ļ�����������Ϊ����������ʹ�û�Ԫ���! \n");
+                return notify_fail("你的混天氣功的修為不夠，不能使用混元天罡! \n");
 
-        msg = WHT "$Nʹ������������ѧ����Ԫ�����һ�ɰ����Զ������跢ɢ���£�ȫ�������ڰ�ɫ�����У�\n" NOR;
+        msg = WHT "$N使出混天氣功絕學「混元天罡」，一股白氣自頂心泥丸發散而下，全身彌漫在白色薄霧中！\n" NOR;
 
         qi=query("qi", me);
         maxqi=query("max_qi", me);
@@ -50,7 +50,7 @@ int exert(object me, object target)
                 addn("neili", -150, me);
         } else
         {
-                msg = HIR "$Nƴ�����������������Ԫ������Լ�����̫�أ�û�ܳɹ�!\n" NOR;
+                msg = HIR "$N拼盡畢生功力想提起混元天罡，但自己受傷太重，沒能成功!\n" NOR;
                 message_combatd(msg, me, target);
         }
         return 1;
@@ -60,7 +60,7 @@ void remove_effect(object me, int amount)
 {
         if( query_temp("shield", me) )
         {
-                message_combatd("��ɫ�ı�������ɢȥ��$N�����β����ֱ�������ɼ���\n", me);
+                message_combatd("白色的薄霧漸漸散去，$N的身形步法又變的清晰可見。\n", me);
                 addn_temp("apply/damage", -amount*10, me);
                 addn_temp("apply/unarmed_damage", -amount*10, me);
                 addn_temp("apply/attack", -amount, me);
@@ -68,6 +68,6 @@ void remove_effect(object me, int amount)
                 addn_temp("apply/defense", -amount, me);
 
                 delete_temp("shield", me);
-                tell_object(me, HIY "��Ļ�Ԫ���������ϣ��������ջص��\n" NOR);
+                tell_object(me, HIY "你的混元天罡運行完畢，將內力收回丹田。\n" NOR);
         }
 }

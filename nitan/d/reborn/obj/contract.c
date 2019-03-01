@@ -7,14 +7,14 @@ int is_magic_item() { return 1; }
 
 void create()
 {
-        set_name(BLU "ÑÖÍõÆõ" NOR, ({ "contract" }) );
+        set_name(BLU "é–»ç‹å¥‘" NOR, ({ "contract" }) );
         set_weight(100);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "·İ");
+                set("unit", "ä»½");
                 set("value", 10000);
-                set("long", BLU "ÕâÊÇÒ»·İÑÖÍõÆõ¡£\n" NOR);
+                set("long", BLU "é€™æ˜¯ä¸€ä»½é–»ç‹å¥‘ã€‚\n" NOR);
 
         }
         setup();

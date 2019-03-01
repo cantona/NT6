@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "���");
+        set("short", "後殿");
         set("long", @LONG
- ������ѩɽ�µĺ�Ҳ��ѩɽ���ӱ��������ĵط���������һ
-Щ���������ź�ľ�ˣ�����һЩ�����ŵ�ɳ����ֱ����ľ׮��
+ 這裡是雪山寺的後殿，也是雪山弟子閉門練功的地方。殿內是一
+些練功的蒲團和木人，還有一些吊掛著的沙袋和直豎的木樁。
 LONG );
 
         set("exits", ([

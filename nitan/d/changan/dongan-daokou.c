@@ -3,11 +3,11 @@
 inherit ROOM;
 void create ()
 {
-        set ("short", "¶«°²µÀ¿Ú");
+        set ("short", "æ±å®‰é“å£");
         set("long", @LONG
-³¤°²³Ç×Ô¹ÅÊÇ·±»ªÊ¤µØ£¬ÎªÊý´ú»Ê³¯½¨¶¼Ö®µØ£¬ÓÖÎªÑÎÉÌ´ó¼ÖËù
-¾Û¼¯£¬Òó¸»¼×ÓÚÌìÏÂ¡£¶«°²µÀ¿ÚÊÇÒ»¸öËÄÍ¨°Ë´ïµÄÂ·¿Ú£¬Î÷·½ÓÐÒ»Ìõ
-´óÂ·Í¨Íù·ëÚ¼µÀ£¬¶«ÃæÊÇ³¤°²¶«³ÇÃÅ£¬ÄÏ±±·½ÏòÊÇÁ¬µÂ´óµÀ¡£ 
+é•·å®‰åŸŽè‡ªå¤æ˜¯ç¹è¯å‹åœ°ï¼Œç‚ºæ•¸ä»£çš‡æœå»ºéƒ½ä¹‹åœ°ï¼Œåˆç‚ºé¹½å•†å¤§è³ˆæ‰€
+èšé›†ï¼Œæ®·å¯Œç”²äºŽå¤©ä¸‹ã€‚æ±å®‰é“å£æ˜¯ä¸€å€‹å››é€šå…«é”çš„è·¯å£ï¼Œè¥¿æ–¹æœ‰ä¸€æ¢
+å¤§è·¯é€šå¾€é¦®è©¡é“ï¼Œæ±é¢æ˜¯é•·å®‰æ±åŸŽé–€ï¼Œå—åŒ—æ–¹å‘æ˜¯é€£å¾·å¤§é“ã€‚ 
 LONG );
         set("exits",([//sizeof() == 5
                 "south" : "/d/changan/liande-dadao4",

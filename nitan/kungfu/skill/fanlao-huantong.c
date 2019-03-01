@@ -1,18 +1,18 @@
 #include <ansi.h>
-// ÁéğÕ fanlao-huantong
+// éˆé·² fanlao-huantong
 inherit SKILL; 
 string type() { return "knowledge"; } 
 
 int is_fmsk() { return 1; }
-string family_name() { return "ÁéğÕ¹¬"; }
+string family_name() { return "éˆé·²å®®"; }
 
 int valid_learn(object me)
 {        
         if (me->query_skill("bahuang-gong", 1) < me->query_skill("fanlao-huantong", 1))
-                return notify_fail("Äã°Ë»ÄÁùºÏÎ¨ÎÒ¶À×ğ¹¦»ğºò²»×ã£¬ÎŞ·¨ÑĞÏ°·µÀÏ»¹Í¯¹¦¡£\n");        
+                return notify_fail("ä½ å…«è’å…­åˆå”¯æˆ‘ç¨å°ŠåŠŸç«å€™ä¸è¶³ï¼Œç„¡æ³•ç ”ç¿’è¿”è€é‚„ç«¥åŠŸã€‚\n");        
         
         if( query("family/family_name", me) != family_name() )
-                return notify_fail("·µÀÏ»¹Í¯¹¦Ö»ÄÜÁéğÕ¹¬µÜ×Ó·½¿ÉÑĞÏ°¡£\n");
+                return notify_fail("è¿”è€é‚„ç«¥åŠŸåªèƒ½éˆé·²å®®å¼Ÿå­æ–¹å¯ç ”ç¿’ã€‚\n");
 
         return 1;
 }

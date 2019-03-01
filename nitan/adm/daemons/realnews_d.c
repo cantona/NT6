@@ -7,7 +7,7 @@
 
 
 #define ADDR_SYNTAX		"http://%s/%s"
-#define UPDATE_TIME		30*60	// Ã¿ 30 ·ÖÖÓ¸üĞÂ
+#define UPDATE_TIME		30*60	// æ¯ 30 åˆ†é˜æ›´æ–°
 #define PROCESS_TIMEOUT		30
 #define RESOLVE_TIMEOUT		10
 #undef DEBUG
@@ -51,10 +51,10 @@ nosave mapping name_alias = ([
     "thg"         : "Tom's Hardware Guide",
     "yahoo"		: "Yahoo!",
     "pchome"		: "PC Home",
-    "yam"		: "Ş¬ÊíÌÙ",
+    "yam"		: "è•ƒè–¯ç±",
     "bahamut"	:	"Bahamut",
   */
-  "udn"      : "ÁªºÏĞÂÎÅÍø",
+  "udn"      : "è¯åˆæ–°èç¶²",
 ]);
 
 void create()
@@ -70,10 +70,10 @@ void create()
     // Tom's Hardware Guide
     //SCHEDULE_D->set_event(60*60*12, 1, this_object(), "get_news", "http://www.thg.com.tw/STInforNews/STContList.asp?nsp=Q", "thg", -1, "big5");
 
-    //udn ÁªºÏĞÂÎÅÍø by Msr
+    //udn è¯åˆæ–°èç¶² by Msr
     SCHEDULE_D->set_event(UPDATE_TIME, 1, this_object(), "get_news", "http://udn.com/NEWS/BREAKINGNEWS/", "udn", -1);
 
-    // ¶¨Ê±²¥±¨ĞÂÎÅ
+    // å®šæ™‚æ’­å ±æ–°è
     SCHEDULE_D->set_event(60*60, 1, this_object(), "channel_news");
 }
 void channel_news()
@@ -97,18 +97,18 @@ void socket_send(int fd, mixed msg)
     int res;
 
 #ifdef DEBUG
-    monitor("ËÍ³öÑ¶Ï¢: " + msg);
+    monitor("é€å‡ºè¨Šæ¯: " + msg);
 #endif
 
     if( !msg || msg == "" ) return; 
-    // ÉĞÎ´ÊÕµ½ socket write callback Ç°£¬½«Óû´«ËÍµÄÑ¶Ï¢´æÈë buffer
+    // å°šæœªæ”¶åˆ° socket write callback å‰ï¼Œå°‡æ¬²å‚³é€çš„è¨Šæ¯å­˜å…¥ buffer
     if( !skt_inf->write_fd )
     {
         if( !skt_inf->write_buffer ) skt_inf->write_buffer = "";
         skt_inf->write_buffer += msg;
         return;
     }
-    // Èç¹û buffer ÖĞÓĞÑ¶Ï¢ÉĞÎ´ËÍ³ö£¬ÔòÓë±¾´ÎÑ¶Ï¢Í¬Ê±ËÍ³ö
+    // å¦‚æœ buffer ä¸­æœ‰è¨Šæ¯å°šæœªé€å‡ºï¼Œå‰‡èˆ‡æœ¬æ¬¡è¨Šæ¯åŒæ™‚é€å‡º
     if( skt_inf->write_buffer )
     {
         skt_inf->write_buffer += msg;
@@ -118,17 +118,17 @@ void socket_send(int fd, mixed msg)
 
     switch(res) {
 
-    case EESUCCESS:		/* ³É¹¦ */
-    case EECALLBACK:	/* µÈ´ıÍê³É */
+    case EESUCCESS:		/* æˆåŠŸ */
+    case EECALLBACK:	/* ç­‰å¾…å®Œæˆ */
         skt_inf->write_buffer = 0;
         break;
-    case EEALREADY:		/* ³ÌĞòÒÑ½øĞĞ */
-    case EEWOULDBLOCK:	/* ³ÌĞòÍ£ÖÍ */
-    case EESEND:		/* ´«ËÍ×ÊÁÏ´íÎó */
+    case EEALREADY:		/* ç¨‹åºå·²é€²è¡Œ */
+    case EEWOULDBLOCK:	/* ç¨‹åºåœæ»¯ */
+    case EESEND:		/* å‚³é€è³‡æ–™éŒ¯èª¤ */
         if( !skt_inf->write_buffer ) skt_inf->write_buffer = msg;
         call_out((: socket_send :), 1, fd, "");
         break;
-    default:		/* ÆäËû´íÎó */
+    default:		/* å…¶ä»–éŒ¯èª¤ */
         monitor("socket_send: " + socket_error(res));
         // try again
         socket_shutdown(fd);
@@ -149,8 +149,8 @@ void write_data(int fd)
 {
     skt_inf->write_fd = fd;
     remove_call_out(connect_handle);
-    // Èç¹ûÊÕµ½ socket write callback Ê±
-    // buffer ÄÚÓĞÑ¶Ï¢Î´´«ËÍÔòÁ¢¼´´«ËÍ£¬²¢Çå³ı buffer
+    // å¦‚æœæ”¶åˆ° socket write callback æ™‚
+    // buffer å…§æœ‰è¨Šæ¯æœªå‚³é€å‰‡ç«‹å³å‚³é€ï¼Œä¸¦æ¸…é™¤ buffer
     if( skt_inf->write_buffer )
     {
         socket_write(fd, skt_inf->write_buffer);
@@ -276,7 +276,7 @@ void do_next()
 {
     if( !sizeof(process_queue) )
     {
-        monitor("ÒÑÈ¡µÃËùÓĞĞÂÎÅ");
+        monitor("å·²å–å¾—æ‰€æœ‰æ–°è");
         return;
     }
     current_process = process_queue[0];
@@ -298,8 +298,8 @@ void get_url(string url)
     skt_inf->connect_port = port;
     skt_inf->get_path = path;
 
-    // realnews_d µÄ resolve ºÃÏñ¹Ö¹ÖµÄ
-    // ÏÈÖ±½Ó¸ø ip ºÃÁË by Msr
+    // realnews_d çš„ resolve å¥½åƒæ€ªæ€ªçš„
+    // å…ˆç›´æ¥çµ¦ ip å¥½äº† by Msr
     if( host == "udn.com" )
         host = "210.244.31.154";
 
@@ -311,7 +311,7 @@ void get_url(string url)
 
     if( sscanf(host, "%*d.%*d.%*d.%*d") != 4 )
     {
-        monitor(sprintf("½âÎöÖ÷»úÎ»ÖÃ: %O", host));
+        monitor(sprintf("è§£æä¸»æ©Ÿä½ç½®: %O", host));
         skt_inf->resolved = resolve(host, (: resolve_callback :));
         resolve_handle = call_out((: resolve_timeout :), RESOLVE_TIMEOUT);
         return;
@@ -332,15 +332,15 @@ void process_news(string msg)
 
     if( !msg )
     {
-        monitor("´íÎó: Î´È¡µÃÈÎºÎÑ¶Ï¢");
+        monitor("éŒ¯èª¤: æœªå–å¾—ä»»ä½•è¨Šæ¯");
         return;
     }
 
     if( flag < 0 )
-        monitor("È¡µÃ " + current_process->type + " ¼´Ê±ĞÂÎÅÇåµ¥ÖĞ ...");
+        monitor("å–å¾— " + current_process->type + " å³æ™‚æ–°èæ¸…å–®ä¸­ ...");
 #ifdef DEBUG
     else
-        monitor("ÒÑÏÂÔØ " + current_process->type + " ĞÂÎÅÎÄÕÂ£¬ÉĞÓĞ " + sizeof(process_queue) + " ¸öÖ´ĞĞĞò");
+        monitor("å·²ä¸‹è¼‰ " + current_process->type + " æ–°èæ–‡ç« ï¼Œå°šæœ‰ " + sizeof(process_queue) + " å€‹åŸ·è¡Œåº");
 #endif
 
 
@@ -546,18 +546,18 @@ string *query_news(int n)
 }
 string *query_news_titles(string type)
 {
-    if( undefinedp(news[type]) ) return ({ "ÉĞÎ´È¡µÃĞÂÎÅ×ÊÑ¶" });
+    if( undefinedp(news[type]) ) return ({ "å°šæœªå–å¾—æ–°èè³‡è¨Š" });
     return news[type][0];
 }
 string *query_news_articles(string type)
 {
-    if( undefinedp(news[type]) ) return ({ "ÉĞÎ´È¡µÃĞÂÎÅ×ÊÑ¶" });
+    if( undefinedp(news[type]) ) return ({ "å°šæœªå–å¾—æ–°èè³‡è¨Š" });
     return news[type][1];
 }
 string query_news_article(string type, int i)
 {
-    if( undefinedp(news[type]) ) return "Ã»ÓĞÕâ¸öÀà±ğµÄĞÂÎÅ";
-    if( i < 0 || i >= sizeof(news[type][1]) ) return "Ã»ÓĞÕâ¸öĞÂÎÅÎÄÕÂ";
+    if( undefinedp(news[type]) ) return "æ²’æœ‰é€™å€‹é¡åˆ¥çš„æ–°è";
+    if( i < 0 || i >= sizeof(news[type][1]) ) return "æ²’æœ‰é€™å€‹æ–°èæ–‡ç« ";
     return news[type][1][i];
 }
 mixed *query_process_queue()
@@ -566,5 +566,5 @@ mixed *query_process_queue()
 }
 string query_name()
 {
-    return "ÕæÊµĞÂÎÅÏµÍ³(REALNEWS_D)";
+    return "çœŸå¯¦æ–°èç³»çµ±(REALNEWS_D)";
 }

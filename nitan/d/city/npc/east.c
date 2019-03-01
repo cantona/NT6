@@ -1,14 +1,14 @@
-// east.c ¶«¼ÒÎ÷Ê©
+// east.c æ±å®¶è¥¿æ–½
 
 inherit NPC;
 
 void create()
 {
-        set_name("Î÷Ê©", ({ "xishi"}));
+        set_name("è¥¿æ–½", ({ "xishi"}));
         set("age", 15);
-        set("gender", "Å®ĞÔ");
-        set("title", "¶«¼Ò");
-        set("long", "Ëı¾ÍÊÇÎ÷Ê©£¬ËäÈ»ËıÇã³ÇÇã¹úµÄ£¬¿ÉÊÇÀİµÄ³ÇÇ½¿ÉÒ»µãÒ²²»Çã¡£\n");
+        set("gender", "å¥³æ€§");
+        set("title", "æ±å®¶");
+        set("long", "å¥¹å°±æ˜¯è¥¿æ–½ï¼Œé›–ç„¶å¥¹å‚¾åŸå‚¾åœ‹çš„ï¼Œå¯æ˜¯å£˜çš„åŸç‰†å¯ä¸€é»ä¹Ÿä¸å‚¾ã€‚\n");
         set("attitude", "peaceful");
         set("str", 24);
         set("dex", 16);

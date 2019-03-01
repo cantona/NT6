@@ -1,5 +1,5 @@
 
-// Ãæ¾ß£ºÎªÒş²ØÉí·İËùÅå´ø
+// é¢å…·ï¼šç‚ºéš±è—èº«ä»½æ‰€ä½©å¸¶
 
 #include <armor.h>
 #include <ansi.h>
@@ -9,27 +9,27 @@ inherit MYMASK;
 void create()
 {
         string *sname = ({
-                "ÓñÃæĞŞÂŞ",
-                "ÎŞÃûĞŞÂŞ",
-                "×ÏÉ·ĞŞÂŞ",
-                "¶öĞŞÂŞ",
-                "Æß¾øĞŞÂŞ",
-                "½ğÖ«ĞŞÂŞ",                
+                "ç‰é¢ä¿®ç¾…",
+                "ç„¡åä¿®ç¾…",
+                "ç´«ç…ä¿®ç¾…",
+                "é¤“ä¿®ç¾…",
+                "ä¸ƒçµ•ä¿®ç¾…",
+                "é‡‘è‚¢ä¿®ç¾…",                
         });
 
-        set_name(HIM "ĞŞÂŞÃæ¾ß" NOR, ({ "xiuluo mianju", "xiuluo", "mianju" }) );
+        set_name(HIM "ä¿®ç¾…é¢å…·" NOR, ({ "xiuluo mianju", "xiuluo", "mianju" }) );
         set_weight(100);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
                 set("material", "tian jing");
-                set("unit", "Ö»");
-                set("long", HIM "ÕâÊÇÒ»Ö»Ãæ¾ß£¬×ö³ÉÁËĞŞÂŞ¹íÍõµÄÄ£Ñù¡£´÷ÉÏºó±ãÃ»ÈËÖªµÀÄãµÄÕæÊµÉí·İÁË¡£\n" NOR);
+                set("unit", "åª");
+                set("long", HIM "é€™æ˜¯ä¸€åªé¢å…·ï¼Œåšæˆäº†ä¿®ç¾…é¬¼ç‹çš„æ¨¡æ¨£ã€‚æˆ´ä¸Šå¾Œä¾¿æ²’äººçŸ¥é“ä½ çš„çœŸå¯¦èº«ä»½äº†ã€‚\n" NOR);
                 set("value", 1000000);
                 /*
                 set("armor_prop/mask_name", sname[random(sizeof(sname))]);
                 set("armor_prop/mask_id",  ({ "masker xiuluo", "masker", "xiuluo"}) );
-                set("armor_prop/mask_long", "´ËÈËÅå´ø×ÅĞŞÂŞÃæ¾ß£¬ÄÑÒÔ¿´³öÆäÕæÊµÉí·İ¡£\n");
+                set("armor_prop/mask_long", "æ­¤äººä½©å¸¶è‘—ä¿®ç¾…é¢å…·ï¼Œé›£ä»¥çœ‹å‡ºå…¶çœŸå¯¦èº«ä»½ã€‚\n");
                 set("armor_prop/mask_flag", 1);
                 */
         }
@@ -47,7 +47,7 @@ int do_exit()
 {
         if (this_player()->query_temp("apply/mask_flag"))
         {
-                return notify_fail("ÇëÈ¡ÏÂÃæ¾ßºóÔÙ½øĞĞ¸Ã²Ù×÷¡£\n");
+                return notify_fail("è«‹å–ä¸‹é¢å…·å¾Œå†é€²è¡Œè©²æ“ä½œã€‚\n");
         }
 }
 

@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ɳ��");
+        set("short", "沙洲");
         set("long", @LONG
-�����Ƕػͳ����ڵأ���˿��֮·�ϵ��ʺ����������ǽ���ʣ�
-���и߳���ǽһ���ĳǶա����ڻ������Χ�Ķ�����壬���ڴ���Ͽ�
-�����������޲�͸�����档
+這裡是敦煌城所在地，是絲綢之路上的嚥喉重鎮。四面城牆高聳，
+另有高出城牆一倍的城墩。城內混居了周圍的多個民族，走在大街上看
+到和聽到的無不透著新奇。
 LONG);
         set("outdoors", "silu");
         set("exits", ([

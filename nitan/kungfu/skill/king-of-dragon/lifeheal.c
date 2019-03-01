@@ -7,9 +7,9 @@ int exert(object me, object target)
 {
         if( !wizardp (me)) return 0;
         if( !target )
-                return notify_fail("ÄãÒªÓÃÕæÆøÎªË­ÁÆÉË£¿\n");
+                return notify_fail("ä½ è¦ç”¨çœŸæ°£ç‚ºèª°ç™‚å‚·ï¼Ÿ\n");
 
-        message_combatd( HIY "$N×øÁËÏÂÀ´ÔËÆğÄÚ¹¦£¬½«ÊÖÕÆÌùÔÚ$n±³ĞÄ£¬»º»ºµØ½«ÕæÆøÊäÈë$nÌåÄÚ....\n\n¹ıÁË²»¾Ã£¬$N¶îÍ·ÉÏÃ°³ö¶¹´óµÄº¹Öé£¬$nÍÂ³öÒ»¿ÚğöÑª£¬Á³É«¿´ÆğÀ´ºìÈó¶àÁË¡£\n" NOR, me, target );
+        message_combatd( HIY "$Nåäº†ä¸‹ä¾†é‹èµ·å…§åŠŸï¼Œå°‡æ‰‹æŒè²¼åœ¨$nèƒŒå¿ƒï¼Œç·©ç·©åœ°å°‡çœŸæ°£è¼¸å…¥$né«”å…§....\n\néäº†ä¸ä¹…ï¼Œ$Né¡é ­ä¸Šå†’å‡ºè±†å¤§çš„æ±—ç ï¼Œ$nåå‡ºä¸€å£ç˜€è¡€ï¼Œè‡‰è‰²çœ‹èµ·ä¾†ç´…æ½¤å¤šäº†ã€‚\n" NOR, me, target );
 
         set("eff_qi",query("max_qi",  target), target);
         set("qi",query("max_qi",  target), target);

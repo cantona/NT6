@@ -5,7 +5,7 @@
 
 inherit F_SSERVER;
 
-string name() { return HIR "¾øÃüÒ»Ìß" NOR; }
+string name() { return HIR "çµ•å‘½ä¸€è¸¢" NOR; }
 
 int perform(object me, object target)
 {
@@ -20,41 +20,41 @@ int perform(object me, object target)
         }
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(name()+"Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(name()+"åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( query_temp("weapon", me) || query_temp("secondary_weapon", me) )
-                return notify_fail(name()+"Ö»ÄÜ¿ÕÊÖÊ©Õ¹¡£\n");
+                return notify_fail(name()+"åªèƒ½ç©ºæ‰‹æ–½å±•ã€‚\n");
 
         if (me->query_skill("jueming-tui", 1) < 80)
-                return notify_fail("Äã¾øÃüÍÈ·¨²»¹»æµÊì£¬ÄÑÒÔÊ©Õ¹"+name()+"¡£\n");
+                return notify_fail("ä½ çµ•å‘½è…¿æ³•ä¸å¤ å«»ç†Ÿï¼Œé›£ä»¥æ–½å±•"+name()+"ã€‚\n");
 
         if (me->query_skill_mapped("unarmed") != "jueming-tui")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢¾øÃüÍÈ·¨£¬ÄÑÒÔÊ©Õ¹"+name()+"¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼çµ•å‘½è…¿æ³•ï¼Œé›£ä»¥æ–½å±•"+name()+"ã€‚\n");
 
         if (me->query_skill_prepared("unarmed") != "jueming-tui")
-                return notify_fail("ÄãÃ»ÓĞ×¼±¸¾øÃüÍÈ·¨£¬ÄÑÒÔÊ©Õ¹"+name()+"¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æº–å‚™çµ•å‘½è…¿æ³•ï¼Œé›£ä»¥æ–½å±•"+name()+"ã€‚\n");
 
         if( query("neili", me)<200 )
-                return notify_fail("ÄãÄ¿Ç°µÄÄÚÁ¦²»¹»£¬ÄÑÒÔÊ©Õ¹"+name()+"¡£\n");
+                return notify_fail("ä½ ç›®å‰çš„å…§åŠ›ä¸å¤ ï¼Œé›£ä»¥æ–½å±•"+name()+"ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
         switch (random(3))
         {
         case 0:
-                msg = HIR "Ö»Ìı$N" HIR "Ò»ÉùÀäºß£¬²àÉí·ÉÌß£¬ÓÒÍÈºá"
-                      "É¨Ïò$n" HIR "£¬µ±ÕæÊÇÁ¦²»¿Éµ²¡£\n" NOR;
+                msg = HIR "åªè½$N" HIR "ä¸€è²å†·å“¼ï¼Œå´èº«é£›è¸¢ï¼Œå³è…¿æ©«"
+                      "æƒå‘$n" HIR "ï¼Œç•¶çœŸæ˜¯åŠ›ä¸å¯æ“‹ã€‚\n" NOR;
                 break;
 
         case 1:
-                msg = HIR "$N" HIR "İëµØ´óºÈÒ»Éù£¬µ¥ÍÈÃÍÌß¶ø³ö£¬Ö±"
-                      "õß$n" HIR "Ñü¼Ê£¬ÕĞÊ½¼«ÎªÑ¸ÃÍ¡£\n" NOR;
+                msg = HIR "$N" HIR "é©€åœ°å¤§å–ä¸€è²ï¼Œå–®è…¿çŒ›è¸¢è€Œå‡ºï¼Œç›´"
+                      "è¸¹$n" HIR "è…°éš›ï¼Œæ‹›å¼æ¥µç‚ºè¿…çŒ›ã€‚\n" NOR;
                 break;
 
         default:
-                msg = HIR "Í»È»Ö»¼û$N" HIR "Ë«ÍÈÁ¬»·Ìß³ö£¬Ğ®×Åàëàë"
-                      "·çÉù£¬ÒÔÇ§¾ûÖ®ÊÆÉ¨Ïò$n" HIR "¡£\n" NOR;
+                msg = HIR "çªç„¶åªè¦‹$N" HIR "é›™è…¿é€£ç’°è¸¢å‡ºï¼ŒæŒ¾è‘—â–¡â–¡"
+                      "é¢¨è²ï¼Œä»¥åƒéˆä¹‹å‹¢æƒå‘$n" HIR "ã€‚\n" NOR;
                 break;
         }
 
@@ -64,23 +64,23 @@ int perform(object me, object target)
 
         if (ap / 2 + random(ap) < pp)
         {
-                msg += HIC "¿ÉÊÇ$n" HIC "Éí×ÓÒ»»Î£¬Ó²ÉúÉú¼Ü×¡ÁË$N"
-                       HIC "ÕâÒ»ÍÈ¡£\n" NOR;
+                msg += HIC "å¯æ˜¯$n" HIC "èº«å­ä¸€æ™ƒï¼Œç¡¬ç”Ÿç”Ÿæ¶ä½äº†$N"
+                       HIC "é€™ä¸€è…¿ã€‚\n" NOR;
                 me->start_busy(3);
                 addn("neili", -30, me);
         } else
         if (ap / 2 + random(ap) < dp)
         {
-                msg += CYN "È´¼û$n" CYN "Õò¶¨µÄÏòºóÒ»×İ£¬ÉÁ¿ªÁË$N"
-                       CYN "ÕâÒ»ÍÈ¡£\n" NOR;
+                msg += CYN "å»è¦‹$n" CYN "é®å®šçš„å‘å¾Œä¸€ç¸±ï¼Œé–ƒé–‹äº†$N"
+                       CYN "é€™ä¸€è…¿ã€‚\n" NOR;
                 me->start_busy(3);
                 addn("neili", -30, me);
         } else
         {
                 damage = damage_power(me, "unarmed");
                 msg += COMBAT_D->do_damage(me, target, UNARMED_ATTACK, damage, 50,
-                                           HIR "$n" HIR "Á¬Ã¦¸ñµ²£¬È´Ö»¾õµÃÁ¦µÀ´ó"
-                                           "µÃ³öÆæ£¬µÇÊ±±»Ò»½ÅÌßµÃ·ÉÆğ¡£\n" NOR);
+                                           HIR "$n" HIR "é€£å¿™æ ¼æ“‹ï¼Œå»åªè¦ºå¾—åŠ›é“å¤§"
+                                           "å¾—å‡ºå¥‡ï¼Œç™»æ™‚è¢«ä¸€è…³è¸¢å¾—é£›èµ·ã€‚\n" NOR);
                 me->start_busy(2);
                 addn("neili", -100, me);
         }

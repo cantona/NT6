@@ -6,16 +6,16 @@ inherit POISON;
 
 string name() { return "wudujing_poison"; }
 
-string chinese_name() { return "Îå¶¾Úå"; }
+string chinese_name() { return "äº”æ¯’é˜±"; }
 
 string update_msg_others()
 {
-       return HIW "$NĞØ¿ÚÒ»ÈÈ£¬ÑªÆøÉÏÓ¿£¬¼¸Óû»èµ¹¡£\n" NOR;
+       return HIW "$Nèƒ¸å£ä¸€ç†±ï¼Œè¡€æ°£ä¸Šæ¹§ï¼Œå¹¾æ¬²æ˜å€’ã€‚\n" NOR;
 }
 
 string update_msg_self()
 {
-        return HIM "Ö»¸Ğµ½ĞØ¿ÚÒ»ÈÈ£¬ÑªÆøÃÍµØÉÏÓ¿£¬¼¸Óû»èµ¹£¡\n" NOR;
+        return HIM "åªæ„Ÿåˆ°èƒ¸å£ä¸€ç†±ï¼Œè¡€æ°£çŒ›åœ°ä¸Šæ¹§ï¼Œå¹¾æ¬²æ˜å€’ï¼\n" NOR;
 }
 
 int jing_damage(object me, mapping cnd)

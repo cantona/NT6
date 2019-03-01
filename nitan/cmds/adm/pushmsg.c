@@ -17,13 +17,13 @@ int main(object me, string arg)
                 return 0;
 
         if (! is_root(me) && ! SECURITY_D->valid_grant(me, "(admin)"))
-                return notify_fail("ÄãÃ»ÓÐÈ¨ÏÞ·ÃÎÊ°²È«ÏµÍ³¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¬Šé™è¨ªå•å®‰å…¨ç³»çµ±ã€‚\n");
 
         if (! arg)
-                return notify_fail("Ö¸Áî£ºpushmsg + ²ÎÊý£º\n" +
-                                   "add ±êÌâ ¼ä¸ôÊ±³¤(Ãë) Ñ­»·´ÎÊý ÄÚÈÝ £º Ìí¼ÓPUSHMSG\n" +
-                                   "list : ÏÔÊ¾µ±Ç°¹ã²¥\n" +
-                                   "del ±êÌâ: É¾³ýÖ¸¶¨¹ã²¥\n");
+                return notify_fail("æŒ‡ä»¤ï¼špushmsg + åƒæ•¸ï¼š\n" +
+                                   "add æ¨™é¡Œ é–“éš”æ™‚é•·(ç§’) å¾ªç’°æ¬¡æ•¸ å…§å®¹ ï¼š æ·»åŠ PUSHMSG\n" +
+                                   "list : é¡¯ç¤ºç•¶å‰å»£æ’­\n" +
+                                   "del æ¨™é¡Œ: åˆªé™¤æŒ‡å®šå»£æ’­\n");
 
         if (arg == "list")
                 return SCAN_D->show_push_lish();
@@ -32,12 +32,12 @@ int main(object me, string arg)
                 return SCAN_D->delete_push_msg(title);
 
         if (sscanf(arg, "add %s %d %d %s", title, delay, times, info) != 4)
-                return notify_fail("Ö¸Áî£ºpushmsg + ²ÎÊý£º\n" +
-                                   "add ±êÌâ ¼ä¸ôÊ±³¤(Ãë) Ñ­»·´ÎÊý ÄÚÈÝ £º Ìí¼ÓPUSHMSG\n" +
-                                   "list : ÏÔÊ¾µ±Ç°¹ã²¥\n" +
-                                   "del ±êÌâ: É¾³ýÖ¸¶¨¹ã²¥\n");
+                return notify_fail("æŒ‡ä»¤ï¼špushmsg + åƒæ•¸ï¼š\n" +
+                                   "add æ¨™é¡Œ é–“éš”æ™‚é•·(ç§’) å¾ªç’°æ¬¡æ•¸ å…§å®¹ ï¼š æ·»åŠ PUSHMSG\n" +
+                                   "list : é¡¯ç¤ºç•¶å‰å»£æ’­\n" +
+                                   "del æ¨™é¡Œ: åˆªé™¤æŒ‡å®šå»£æ’­\n");
 
 
-        // Ìí¼Ó
+        // æ·»åŠ 
         return SCAN_D->add_push_msg(title, info, delay, times);
 }

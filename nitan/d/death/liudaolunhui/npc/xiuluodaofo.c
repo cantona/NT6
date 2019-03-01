@@ -5,11 +5,11 @@ inherit BOSS;
 
 void create()
 {
-        set_name(HIC "ĞŞÂŞµÀ·ğ" NOR, ({ "xiuluodao fo", "xiuluodao", "fo" }) );
-        set("gender", "ÄĞĞÔ");
-        set("title", HIW "ĞŞÂŞµÀÊØ»¤Õß" NOR);
+        set_name(HIC "ä¿®ç¾…é“ä½›" NOR, ({ "xiuluodao fo", "xiuluodao", "fo" }) );
+        set("gender", "ç”·æ€§");
+        set("title", HIW "ä¿®ç¾…é“å®ˆè­·è€…" NOR);
         set("age", 200);
-        set("long", HIC "ÊØÎÀÁùµÀÖĞµÄĞŞÂŞµÀµÄ·ğ¡£\n\n" NOR);
+        set("long", HIC "å®ˆè¡›å…­é“ä¸­çš„ä¿®ç¾…é“çš„ä½›ã€‚\n\n" NOR);
 
         set("age", 50);
         set("str", 91);
@@ -94,8 +94,8 @@ void fight_ob(object ob)
         if (is_fighting(ob))
                 return;
 
-        message_vision(HIW "$N" HIW "ÀäºßÒ»Éù£¬Ò»¹ÉÔÆÆø×ÔÉíºó"
-                       "ÉıÆğ£¬ËÆÕæËÆ»Ã¡£\n" NOR, this_object(), ob);
+        message_vision(HIW "$N" HIW "å†·å“¼ä¸€è²ï¼Œä¸€è‚¡é›²æ°£è‡ªèº«å¾Œ"
+                       "å‡èµ·ï¼Œä¼¼çœŸä¼¼å¹»ã€‚\n" NOR, this_object(), ob);
                                                       
         ::fight_ob(ob);
 }
@@ -116,8 +116,8 @@ mixed hit_ob(object me, object ob, int damage_bouns)
         if (damage < 0) damage = 0;
         ob->receive_wound("qi", damage, me);
         set("neili",query("max_neili",  me), me);
-        return HIB "$N" HIB "Ò»Éù±©ºÈ£¬µØÃæÑïÆğÒ»Æ¬»ğº££¬ËÆ"
-               HIB "ºõÕû¸ö´óµØ¶¼Òª±»¿¾½¹ÁËÒ»°ã¡£\n" NOR;
+        return HIB "$N" HIB "ä¸€è²æš´å–ï¼Œåœ°é¢æšèµ·ä¸€ç‰‡ç«æµ·ï¼Œä¼¼"
+               HIB "ä¹æ•´å€‹å¤§åœ°éƒ½è¦è¢«çƒ¤ç„¦äº†ä¸€èˆ¬ã€‚\n" NOR;
 }
 
 void win()
@@ -126,8 +126,8 @@ void win()
         if (! objectp(ob = query_competitor()))
                 return;
 
-        message_vision(HIB "$N¿´ÁË¿´$n£¬ºÙºÙĞ¦µÀ£º¡°ÄãÖªµÀÄã´ò²»°ÜÎÒÒâÎ¶×ÅÊ²Ã´Âğ£¿"
-                       "¾ÍÒâÎ¶×ÅËÀÍö£¡¹ş¹ş£¡£¡£¡¡±\n" NOR,
+        message_vision(HIB "$Nçœ‹äº†çœ‹$nï¼Œå˜¿å˜¿ç¬‘é“ï¼šâ€œä½ çŸ¥é“ä½ æ‰“ä¸æ•—æˆ‘æ„å‘³è‘—ä»€éº¼å—ï¼Ÿ"
+                       "å°±æ„å‘³è‘—æ­»äº¡ï¼å“ˆå“ˆï¼ï¼ï¼â€\n" NOR,
                        this_object(), ob);
                        
         call_out("ob_die", 1, ob);  
@@ -137,7 +137,7 @@ void win()
 void ob_die(object me)
 {
         me->move("/d/death/youmingjie");   
-        set_temp("die_reason", "±»ĞŞÂŞµÀ·ğ¸ø»î»îÉ±ËÀÁË", me);
+        set_temp("die_reason", "è¢«ä¿®ç¾…é“ä½›çµ¦æ´»æ´»æ®ºæ­»äº†", me);
         me->die();       
 }
 
@@ -147,9 +147,9 @@ void lost()
         if (! objectp(ob = query_competitor()))
                 return;
 
-        message_vision( HIB "$N°¥Ñ½Ò»Éù£¬¶Ô$nÅ­µÀ£º¡°Õâ´ÎËãÄã½ÄĞÒ£¬ÏÂ´Î¿ÉÃ»ÓĞÕâÃ´±ãÒËÁË£¡¡±\n" NOR,
+        message_vision( HIB "$Nå“å‘€ä¸€è²ï¼Œå°$næ€’é“ï¼šâ€œé€™æ¬¡ç®—ä½ åƒ¥å¹¸ï¼Œä¸‹æ¬¡å¯æ²’æœ‰é€™éº¼ä¾¿å®œäº†ï¼â€\n" NOR,
                         this_object(), ob );
-        message_vision( HIB "$NËµÍêËæÊÖÒ»»Ó£¬Ò»µÀÇ¿·ç°üÎ§Äã£¬Äã·¢ÏÖÀ´µ½ÁËÑÖÂŞµî£¡\n" NOR, 
+        message_vision( HIB "$Nèªªå®Œéš¨æ‰‹ä¸€æ®ï¼Œä¸€é“å¼·é¢¨åŒ…åœä½ ï¼Œä½ ç™¼ç¾ä¾†åˆ°äº†é–»ç¾…æ®¿ï¼\n" NOR, 
                         this_object(), ob );
                      
         set("reborn_lunhui", "xiuluodao", ob);

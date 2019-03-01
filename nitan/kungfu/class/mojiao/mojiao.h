@@ -6,10 +6,10 @@ int permit_recruit(object ob)
 
         me = this_object();
 
-        if( query("detach/魔教", ob) || 
+        if( query("detach/榄旀暀", ob) || 
             query("betrayer/times", ob) )
         {
-                message_vision("$N大怒道：我魔教岂能由你要来便来，要走便走？\n",me);
+                message_vision("$N澶ф�掗亾锛氭垜榄旀暀璞堣兘鐢变綘瑕佷締渚夸締锛岃璧颁究璧帮紵\n",me);
                 return 0;
         }
 

@@ -1,4 +1,4 @@
-//Ç©µ½´ò¿¨¹¦ÄÜ
+//ç°½åˆ°æ‰“å¡åŠŸèƒ½
 
 #include <ansi.h>
 #include <localtime.h>
@@ -11,8 +11,8 @@ int do_query_time();
 
 void create()
 {
-	set_name("Ç©µ½Ô±", ({ "qiandao npc" }));
-	set("gender", "ÄĞĞÔ");
+	set_name("ç°½åˆ°å“¡", ({ "qiandao npc" }));
+	set("gender", "ç”·æ€§");
 	set("age", 20);
 	set("per", 100);
 	set("con", 100);
@@ -28,12 +28,12 @@ void create()
 	set("max_jing",10000);
 	set("combat_exp",100000000);
 	set("no_suck", 1);
-	set("title",HIG"ÓÎÏ·¹ÜÀíÔ±"NOR);
-	set("long","ËûÊÇÄàÌ¶6µÄ¹ÜÀíÔ±£¬×¨ÃÅ¸ºÔğÍæ¼ÒµÄÇ©µ½¼ÇÂ¼¹¤×÷¡£\n");
+	set("title",HIG"éŠæˆ²ç®¡ç†å“¡"NOR);
+	set("long","ä»–æ˜¯æ³¥æ½­6çš„ç®¡ç†å“¡ï¼Œå°ˆé–€è² è²¬ç©å®¶çš„ç°½åˆ°è¨˜éŒ„å·¥ä½œã€‚\n");
 	set("no_kill",1);
 	set("inquiry", ([
-		"Ç©µ½" : (: do_daka :),
-		"²éÑ¯Ç©µ½" : (: do_query_time :),
+		"ç°½åˆ°" : (: do_daka :),
+		"æŸ¥è©¢ç°½åˆ°" : (: do_query_time :),
 	]));
 	setup();
 	carry_object("/clone/cloth/cloth")->wear();
@@ -52,7 +52,7 @@ int do_daka()
 	
 	if (query_temp("qiandao_time", ob) >time())
 	{
-		tell_object(me,CYN"Ç©µ½Ô±ËµµÀ£ºÂıÂıÀ´£¬ÈÃÎÒ´­¿ÚÆø¡£\n"NOR);
+		tell_object(me,CYN"ç°½åˆ°å“¡èªªé“ï¼šæ…¢æ…¢ä¾†ï¼Œè®“æˆ‘å–˜å£æ°£ã€‚\n"NOR);
 		return 1;
 	}
 	
@@ -62,16 +62,16 @@ int do_daka()
 	
 	if(data && localtime[LT_MDAY]  == localtime2[LT_MDAY])
 	{
-		tell_object(me, CYN"Ç©µ½Ô±ËµµÀ£ºÄã½ñÌìÒÑ¾­Ç©¹ıµ½ÁË£¬Ã÷ÌìÔÙÀ´°É¡£\n"NOR);
+		tell_object(me, CYN"ç°½åˆ°å“¡èªªé“ï¼šä½ ä»Šå¤©å·²ç¶“ç°½éåˆ°äº†ï¼Œæ˜å¤©å†ä¾†å§ã€‚\n"NOR);
 		return 1;
 	}
 	
-	if(localtime[LT_MON] + 1 != localtime2[LT_MON] + 1)//ÔÂ·İ
+	if(localtime[LT_MON] + 1 != localtime2[LT_MON] + 1)//æœˆä»½
 	{
 		delete("dacard", me);
 	}
 	
-	set_temp("qiandao_time", time() + 2, ob);//Òò¸Ã·½Ê½²ÉÈ¡¶ÁĞ´Ó²ÅÌ£¬¹ÊÉÔ×öÏŞÖÆ
+	set_temp("qiandao_time", time() + 2, ob);//å› è©²æ–¹å¼æ¡å–è®€å¯«ç¡¬ç›¤ï¼Œæ•…ç¨åšé™åˆ¶
 	writeFile = QIANDAO;
 	
 	if(writeFile) 
@@ -89,11 +89,11 @@ int do_daka()
 		{
 			sscanf(meFilePach[i], "ID:%s$Ip:%s$Day:%d$Month:%d", id, ip2, day, month);
 									
-			if (ip == ip2 && localtime2[LT_MON] + 1 == day && localtime2[LT_MDAY] == month)//ÏàÍ¬ÎÄ¼şÄÚÈİ±íÊ¾±¾IPÒÑ¾­ÓĞÈËÇ©µ½
+			if (ip == ip2 && localtime2[LT_MON] + 1 == day && localtime2[LT_MDAY] == month)//ç›¸åŒæ–‡ä»¶å…§å®¹è¡¨ç¤ºæœ¬IPå·²ç¶“æœ‰äººç°½åˆ°
 			{
 				ok =1;
 				break;
-			} else if (ip == ip2) {//Ö»ÊÇIPÏàÍ¬£¬²¢Ã»ÓĞÇ©µ½
+			} else if (ip == ip2) {//åªæ˜¯IPç›¸åŒï¼Œä¸¦æ²’æœ‰ç°½åˆ°
 				ok =2;
 				meFilePach[i] = "";
 				break;
@@ -104,21 +104,21 @@ int do_daka()
 	
 	if (ok == 1)
 	{
-		tell_object(me, CYN"Ç©µ½Ô±£ºÕâ¸öIP½ñÌìÒÑ¾­ÓĞÈËÇ©¹ıµ½ÁË¡£\n"NOR);
+		tell_object(me, CYN"ç°½åˆ°å“¡ï¼šé€™å€‹IPä»Šå¤©å·²ç¶“æœ‰äººç°½éåˆ°äº†ã€‚\n"NOR);
 		return 1;
 	} 
 	if (ok == 2)
 	{
-		write_file(writeFile, "", 1);//³õÊ¼»¯¸ÃÎÄ¼ş
-		//ÖØĞ´ÎÄ¼ş
+		write_file(writeFile, "", 1);//åˆå§‹åŒ–è©²æ–‡ä»¶
+		//é‡å¯«æ–‡ä»¶
 		for(i=0; i<size; i++)
 		{
-			if(meFilePach[i] == "") continue;//È¥µôIPÏàÍ¬µÄÄÚÈİ
-			write_file(writeFile, sprintf("%s\n", meFilePach[i]));//ÖØĞ´ËùÓĞÄÚÈİ
+			if(meFilePach[i] == "") continue;//å»æ‰IPç›¸åŒçš„å…§å®¹
+			write_file(writeFile, sprintf("%s\n", meFilePach[i]));//é‡å¯«æ‰€æœ‰å…§å®¹
 		}
 	} 
 	if (ok !=1) {
-		write_file(writeFile, sprintf("%s\n", item_max));//ĞÂ¼ÇÂ¼¼ÓÈëÎÄ¼ş
+		write_file(writeFile, sprintf("%s\n", item_max));//æ–°è¨˜éŒ„åŠ å…¥æ–‡ä»¶
 	} 
 	if ( !objectp(env=environment(ob)) 
 		|| !stringp(room=query("short",env)) ) 
@@ -130,7 +130,7 @@ int do_daka()
 	i = 50000;
 	
         level = query("level", me);
-	//ÔÚÏŞ¶¨µÄÈÕÆÚÄÚ½±ÀøÔö¼Ó
+	//åœ¨é™å®šçš„æ—¥æœŸå…§çå‹µå¢åŠ 
 	if ( (CHINESE_D->chinese_time(7, ctime(time()))) == "2013/06/04" ||
 		(CHINESE_D->chinese_time(7, ctime(time()))) == "2013/06/05" ||
 		(CHINESE_D->chinese_time(7, ctime(time()))) == "2013/06/06" ||
@@ -139,7 +139,7 @@ int do_daka()
 		(CHINESE_D->chinese_time(7, ctime(time()))) == "2013/06/09" ||
 		(CHINESE_D->chinese_time(7, ctime(time()))) == "2013/06/10"  )
 		j = 5 + random(6);
-	else //¹ıÆÚºó½±ÀøÏÂ½µ
+	else //éæœŸå¾Œçå‹µä¸‹é™
 		j = 3 + random(3);
 	
         j = level / 10 * 10;
@@ -155,10 +155,10 @@ int do_daka()
 		addn("potential", i, me);
 		addn("dacard/cishu", 1, me);
 		set("dacard/time", time(), me);
-		message("party", (HIW + "¡¾"+room+"¡¿Ç©µ½Ô±£º" + NOR + query("name", me) 
-									+ "½ñÈÕÇ©µ½»ñµÃ " + HIR + "" + j + " $NT"NOR"¡£\n"NOR), users() );	
-		tell_object(me, sprintf(CYN + "Äã»ñµÃÁË¾­ÑéÖµ %dµã£¬Ç±ÄÜ %dµã¡£\n"NOR, i, i));
-		tell_object(me, sprintf(CYN"½ñÈÕÇ©µ½³É¹¦£¡×£ÄãÓÎÏ·Óä¿ì£¡\n"NOR));
+		message("party", (HIW + "ã€"+room+"ã€‘ç°½åˆ°å“¡ï¼š" + NOR + query("name", me) 
+									+ "ä»Šæ—¥ç°½åˆ°ç²å¾— " + HIR + "" + j + " $NT"NOR"ã€‚\n"NOR), users() );	
+		tell_object(me, sprintf(CYN + "ä½ ç²å¾—äº†ç¶“é©—å€¼ %dé»ï¼Œæ½›èƒ½ %dé»ã€‚\n"NOR, i, i));
+		tell_object(me, sprintf(CYN"ä»Šæ—¥ç°½åˆ°æˆåŠŸï¼ç¥ä½ éŠæˆ²æ„‰å¿«ï¼\n"NOR));
 		
 		return 1;
 }
@@ -171,8 +171,8 @@ int do_query_time()
 	
 	time = query("dacard/time", me);
 	localtime = localtime(time);
-	tell_object(me, sprintf(CYN"Äã±¾ÔÂµ½Ä¿Ç°ÎªÖ¹×Ü¹²Ç©µ½ %d´Î¡£\n"NOR, query("dacard/cishu", me)) );
-	tell_object(me, sprintf(CYN"%sµÄÉÏ´ÎÇ©µ½Ê±¼äÊÇ£º%dÄê%dÔÂ%dÈÕ%dÊ±%d·Ö%dÃë¡£\n"NOR, 
+	tell_object(me, sprintf(CYN"ä½ æœ¬æœˆåˆ°ç›®å‰ç‚ºæ­¢ç¸½å…±ç°½åˆ° %dæ¬¡ã€‚\n"NOR, query("dacard/cishu", me)) );
+	tell_object(me, sprintf(CYN"%sçš„ä¸Šæ¬¡ç°½åˆ°æ™‚é–“æ˜¯ï¼š%då¹´%dæœˆ%dæ—¥%dæ™‚%dåˆ†%dç§’ã€‚\n"NOR, 
 								query("name", me), localtime[LT_YEAR], localtime[LT_MON] + 1,
 								localtime[LT_MDAY], localtime[LT_HOUR], localtime[LT_MIN], localtime[LT_SEC] ));
 	return 1;
@@ -191,7 +191,7 @@ void die()
 	set("neili", 90000);
 	set("max_jingli",10000);
 	
-	say( me->name() + CYN "ËµµÀ£ºÎÒÊÇ²»ËÀµÄ£¬ÄãµÄĞĞÎªÒÑ¾­±»¼ÇÂ¼ÔÚ°¸¡£\n"NOR);
+	say( me->name() + CYN "èªªé“ï¼šæˆ‘æ˜¯ä¸æ­»çš„ï¼Œä½ çš„è¡Œç‚ºå·²ç¶“è¢«è¨˜éŒ„åœ¨æ¡ˆã€‚\n"NOR);
 	return;
 	
 }

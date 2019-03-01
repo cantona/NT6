@@ -1,4 +1,4 @@
-// tianshen.c ÕæÁúÌìÉñ
+// tianshen.c çœŸé¾å¤©ç¥ž
 // Created by rcwiz for yhonline
 
 #include <ansi.h>
@@ -7,16 +7,16 @@ inherit F_CLEAN_UP;
 
 int is_scborn() { return 1; }
 
-string name() { return HIY "ÕæÁúÌìÉñ" NOR; }
+string name() { return HIY "çœŸé¾å¤©ç¥ž" NOR; }
 
 int perform(object me, string skill)
 {
-        return notify_fail(HIY "Ñ×µÛ¡¢»ÆµÛ¡¢ò¿ÓÈÍ¬¾ßÕæÁúÌìÉñÖ®Ïñ£¬ÓµÓÐ¾ªÌì¶¯µØ\n"
-                               "µÄÄÜÁ¦£¬´ËÄÜÁ¦½ö´«ÓÚµÕÏµºóÈË¡£»ñµÃ´Ë¼¼ÄÜÕßÈçÎª\n"
-                               "¡¸ÕæÃüÌì×Ó¡¹ÔòÍê³ÉÊ¦ÃÅÈÎÎñºó»ñÈ¡ÈÎÎñÄÜÁ¦Öµ½±Àø\n"
-                               "Ìá¸ß10%£»ÈçÎª¡¸ÌìÉ·¹ÂÐÇ¡¹ÔòÚ¤Ë¼½±ÀøÌá¸ß10%¡£\n"
-                               "Í¬Ê±£¬ÓµÓÐ¸Ã¼¼ÄÜÕß¿É²»ÔÙÊÜÏÞÖÆ£¬¿ÉÍ¬Ê±ÓµÓÐÕæÃü\n"
-                               "Ìì×Ó¼°ÌìÉ·¹ÂÐÇÁ½ÖÖÌìÐÔ¡£\n" NOR);
+        return notify_fail(HIY "ç‚Žå¸ã€é»ƒå¸ã€èš©å°¤åŒå…·çœŸé¾å¤©ç¥žä¹‹åƒï¼Œæ“æœ‰é©šå¤©å‹•åœ°\n"
+                               "çš„èƒ½åŠ›ï¼Œæ­¤èƒ½åŠ›åƒ…å‚³äºŽå«¡ç³»å¾Œäººã€‚ç²å¾—æ­¤æŠ€èƒ½è€…å¦‚ç‚º\n"
+                               "ã€ŒçœŸå‘½å¤©å­ã€å‰‡å®Œæˆå¸«é–€ä»»å‹™å¾Œç²å–ä»»å‹™èƒ½åŠ›å€¼çŽå‹µ\n"
+                               "æé«˜10%ï¼›å¦‚ç‚ºã€Œå¤©ç…žå­¤æ˜Ÿã€å‰‡å†¥æ€çŽå‹µæé«˜10%ã€‚\n"
+                               "åŒæ™‚ï¼Œæ“æœ‰è©²æŠ€èƒ½è€…å¯ä¸å†å—é™åˆ¶ï¼Œå¯åŒæ™‚æ“æœ‰çœŸå‘½\n"
+                               "å¤©å­åŠå¤©ç…žå­¤æ˜Ÿå…©ç¨®å¤©æ€§ã€‚\n" NOR);
 
 
 }

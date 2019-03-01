@@ -3,9 +3,9 @@ inherit ITEM;
 
 void create()
 {
-        set_name("½¸Ê¯", ({"jiao shi", "stone", "shi"}));
-        set("unit", "¿é");
-        set("long", "ÕâÊÇÂ¶³öº£ÃæµÄ½¸Ê¯£¬Ö»ÓĞÈİµÃÏÂÒ»¸öÈËÕ¾×¡¡£\n");
+        set_name("ç¤çŸ³", ({"jiao shi", "stone", "shi"}));
+        set("unit", "å¡Š");
+        set("long", "é€™æ˜¯éœ²å‡ºæµ·é¢çš„ç¤çŸ³ï¼Œåªæœ‰å®¹å¾—ä¸‹ä¸€å€‹äººç«™ä½ã€‚\n");
         set_temp("apply/yinshen",1);
         set("value", 1000);
         setup();

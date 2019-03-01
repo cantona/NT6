@@ -6,15 +6,15 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIR"Ê¥µ®ºØ¿¨"NOR, ({"Christmas card", "card"}));
+        set_name(HIR"è–èª•è³€å¡"NOR, ({"Christmas card", "card"}));
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "ÕÅ");
+                set("unit", "å¼µ");
                 set("long",
-"ÕâÊÇÒ»ÕÅ"HIR"Ê¥µ®ºØ¿¨"NOR"£¬ËÍ¸øÃ¿Î»ÔÚÊ¥µ®½Ú½øÈëÏÀ¿ÍÐÐÒ»°Ù
-µÄÍæ¼Ò¡£Äã¿ÉÒÔ´ò¿ª(dakai)À´¿´¿´£¬¼Ç×¡×Ô¼ºµÄ±àºÅ¡£
-ÐÂÄêÖÓÉùÇÃÏìµÄÊ±ºò£¬µÈ´ý×ÅÎÒÃÇµÄ³é½±ÀñÆ·¡£\n");
+"é€™æ˜¯ä¸€å¼µ"HIR"è–èª•è³€å¡"NOR"ï¼Œé€çµ¦æ¯ä½åœ¨è–èª•ç¯€é€²å…¥ä¿ å®¢è¡Œä¸€ç™¾
+çš„çŽ©å®¶ã€‚ä½ å¯ä»¥æ‰“é–‹(dakai)ä¾†çœ‹çœ‹ï¼Œè¨˜ä½è‡ªå·±çš„ç·¨è™Ÿã€‚
+æ–°å¹´é˜è²æ•²éŸ¿çš„æ™‚å€™ï¼Œç­‰å¾…è‘—æˆ‘å€‘çš„æŠ½çŽç¦®å“ã€‚\n");
                 set("value", 0);
                 set_weight(10);
         }
@@ -38,42 +38,42 @@ int do_dakai(string arg)
         {
                 tell_object(me,
 HIW"\n"+
-"     ©³©¥©¥©¥©¥©¥©¥©¥©¥ "HIR"Ê¥µ®¿ìÀÖ"HIW" ©¥©¥©¥©¥©¥©¥©¥©¥©·\n"+
-"     ©§  ©°©¤©¤©¤©¤ Merry  Christmas ©¤©¤©¤©¤©´  ©§\n"+
-"     ©§  ©¦                                  ©¦  ©§\n"+
-"     ©§  ©¦                                  ©¦  ©§\n");
+"     â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡ "HIR"è–èª•å¿«æ¨‚"HIW" â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡\n"+
+"     â–¡  â”Œâ”€â”€â”€â”€ Merry  Christmas â”€â”€â”€â”€â”  â–¡\n"+
+"     â–¡  â”‚                                  â”‚  â–¡\n"+
+"     â–¡  â”‚                                  â”‚  â–¡\n");
                 if( strlen(query("name", me)) == 2)tell_object(me,
-HIW"©§©¦Ç×°®µÄ"+query("name", me)+"£º©¦©§\n");
+HIW"â–¡â”‚è¦ªæ„›çš„"+query("name", me)+"ï¼šâ”‚â–¡\n");
                 if( strlen(query("name", me)) == 4)tell_object(me,
-HIW"©§©¦Ç×°®µÄ"+query("name", me)+"£º©¦©§\n");
+HIW"â–¡â”‚è¦ªæ„›çš„"+query("name", me)+"ï¼šâ”‚â–¡\n");
                 if( strlen(query("name", me)) == 6)tell_object(me,
-HIW"©§©¦Ç×°®µÄ"+query("name", me)+"£º©¦©§\n");
+HIW"â–¡â”‚è¦ªæ„›çš„"+query("name", me)+"ï¼šâ”‚â–¡\n");
                 if( strlen(query("name", me)) == 8)tell_object(me,
-HIW"©§©¦Ç×°®µÄ"+query("name", me)+"£º©¦©§\n");
+HIW"â–¡â”‚è¦ªæ„›çš„"+query("name", me)+"ï¼šâ”‚â–¡\n");
                 if( strlen(query("name", me)) == 10)tell_object(me,
-HIW"©§©¦Ç×°®µÄ"+query("name", me)+"£º©¦©§\n");
+HIW"â–¡â”‚è¦ªæ„›çš„"+query("name", me)+"ï¼šâ”‚â–¡\n");
         tell_object(me,
-HIW"     ©§  ©¦      Ô¸ÄúºÍÄúµÄ¼ÒÈËÔÚÖ÷µÄ×£¸£    ©¦  ©§\n"+
-"     ©§  ©¦  ÏÂ£¬¿ìÀÖ¡¢Æ½°²£¡                ©¦  ©§\n"+
-"     ©§  ©¦                                  ©¦  ©§\n"+
-"     ©§  ©¦             *  *"HIR"r"HIW"*  *            ©¦  ©§\n"+
-"     ©§  ©¦          * *"HIR"a"HIW"* "HIG"^"HIY"Y"HIG"^"HIW" *"HIR"i"HIW"* *         ©¦  ©§\n"+
-"     ©§  ©¦         *"HIM"m"HIW"*"HIG"^"HIY"Y"HIG"^"HIW"*"HIG"^\\^"HIW"*"HIG"^"HIY"Y"HIG"^"HIW"*"RED"s"HIW"*        ©¦  ©§\n"+
-"     ©§  ©¦         "HIG"^"HIY"Y"HIG"^"HIW"*"HIG"\\"HIW"*"RED"e"HIW"*"HIG"/"HIW"*"HIG"l"HIW"*"HIG"/"HIW"*"HIG"^"HIY"Y"HIG"^"HIW"        ©¦  ©§\n"+
-"     ©§  ©¦         *"HIG"\\"HIW"*"CYN"t"HIW"*"HIG"|"HIY"Y"HIG"^\\^"HIY"Y"HIG"|"HIW"*"HIG"l"HIW"*"HIG"/"HIW"*        ©¦  ©§\n"+
-"     ©§  ©¦        *"MAG"s"HIW"*"HIG"|"HIY"Y"HIG"^\\\\^/^//^"HIY"Y"HIG"|"HIW"*"HIR"a"HIW"*       ©¦  ©§\n"+
-"     ©§  ©¦        "GRN"^"YEL"Y"GRN"^\\\\_^\\\\\\//^_//^"YEL"Y"GRN"^"HIW"       ©¦  ©§\n"+
-"     ©§  ©¦        "GRN"^\\_^\\_\\_\\//_/_/^_/^"HIW"       ©¦  ©§\n"+
-"     ©§  ©¦         "GRN"^^\\_^\\_\\\\/_/^_/^^"HIW"        ©¦  ©§\n"+
-"     ©§  ©¦           "GRN"^^\\_ \\// _/^^"HIW"          ©¦  ©§\n"+
-"     ©§  ©¦               "GRN"\\_\\_/"HIW"              ©¦  ©§\n"+
-"     ©§  ©¦                "GRN"/|\\"HIW"               ©¦  ©§\n"+
-"     ©§  ©¦               "GRN"/\\\\/\\"HIW"              ©¦  ©§\n"+
-"     ©§  ©¦                                  ©¦  ©§\n"+
-"     ©§  ©¦                  "RED"ÏÀ¿ÍÐÐÒ»°Ù¹§ºØ"HIW"  ©¦  ©§\n"+
-HIW"     ©§  ©¸©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¼  ©§\n"+
-"     ©»©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¿\n"+
-"\n"HIY+"¿¨±àºÅ£º"+query("holiday_cards", me)+
+HIW"     â–¡  â”‚      é¡˜æ‚¨å’Œæ‚¨çš„å®¶äººåœ¨ä¸»çš„ç¥ç¦    â”‚  â–¡\n"+
+"     â–¡  â”‚  ä¸‹ï¼Œå¿«æ¨‚ã€å¹³å®‰ï¼                â”‚  â–¡\n"+
+"     â–¡  â”‚                                  â”‚  â–¡\n"+
+"     â–¡  â”‚             *  *"HIR"r"HIW"*  *            â”‚  â–¡\n"+
+"     â–¡  â”‚          * *"HIR"a"HIW"* "HIG"^"HIY"Y"HIG"^"HIW" *"HIR"i"HIW"* *         â”‚  â–¡\n"+
+"     â–¡  â”‚         *"HIM"m"HIW"*"HIG"^"HIY"Y"HIG"^"HIW"*"HIG"^\\^"HIW"*"HIG"^"HIY"Y"HIG"^"HIW"*"RED"s"HIW"*        â”‚  â–¡\n"+
+"     â–¡  â”‚         "HIG"^"HIY"Y"HIG"^"HIW"*"HIG"\\"HIW"*"RED"e"HIW"*"HIG"/"HIW"*"HIG"l"HIW"*"HIG"/"HIW"*"HIG"^"HIY"Y"HIG"^"HIW"        â”‚  â–¡\n"+
+"     â–¡  â”‚         *"HIG"\\"HIW"*"CYN"t"HIW"*"HIG"|"HIY"Y"HIG"^\\^"HIY"Y"HIG"|"HIW"*"HIG"l"HIW"*"HIG"/"HIW"*        â”‚  â–¡\n"+
+"     â–¡  â”‚        *"MAG"s"HIW"*"HIG"|"HIY"Y"HIG"^\\\\^/^//^"HIY"Y"HIG"|"HIW"*"HIR"a"HIW"*       â”‚  â–¡\n"+
+"     â–¡  â”‚        "GRN"^"YEL"Y"GRN"^\\\\_^\\\\\\//^_//^"YEL"Y"GRN"^"HIW"       â”‚  â–¡\n"+
+"     â–¡  â”‚        "GRN"^\\_^\\_\\_\\//_/_/^_/^"HIW"       â”‚  â–¡\n"+
+"     â–¡  â”‚         "GRN"^^\\_^\\_\\\\/_/^_/^^"HIW"        â”‚  â–¡\n"+
+"     â–¡  â”‚           "GRN"^^\\_ \\// _/^^"HIW"          â”‚  â–¡\n"+
+"     â–¡  â”‚               "GRN"\\_\\_/"HIW"              â”‚  â–¡\n"+
+"     â–¡  â”‚                "GRN"/|\\"HIW"               â”‚  â–¡\n"+
+"     â–¡  â”‚               "GRN"/\\\\/\\"HIW"              â”‚  â–¡\n"+
+"     â–¡  â”‚                                  â”‚  â–¡\n"+
+"     â–¡  â”‚                  "RED"ä¿ å®¢è¡Œä¸€ç™¾æ­è³€"HIW"  â”‚  â–¡\n"+
+HIW"     â–¡  â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜  â–¡\n"+
+"     â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡\n"+
+"\n"HIY+"å¡ç·¨è™Ÿï¼š"+query("holiday_cards", me)+
 "\n"NOR);
         }
         return 1;
@@ -88,12 +88,12 @@ int do_chaikai(string arg)
         if (!present(this_object(), this_player()))
                 return 0;
 
-//        return notify_fail("»¹Ã»µ½Ê±ºòÄØ£¬±ð¼±²ð¿ª°¡£¡\n");
+//        return notify_fail("é‚„æ²’åˆ°æ™‚å€™å‘¢ï¼Œåˆ¥æ€¥æ‹†é–‹å•Šï¼\n");
 
         if (arg == "card")
         {
-                message_vision("$N³äÂúã¿ã½µØ²ð¿ªÁËÊ¥µ®¿¨£¬Í»È»ÈçÄ§Êõ°ã£¬³öÏÖ
-Ò»¸öÀñÆ·ºÐ£¡\n", me);
+                message_vision("$Nå……æ»¿æ†§æ†¬åœ°æ‹†é–‹äº†è–èª•å¡ï¼Œçªç„¶å¦‚é­”è¡“èˆ¬ï¼Œå‡ºç¾
+ä¸€å€‹ç¦®å“ç›’ï¼\n", me);
                 box = new(__DIR__"giftbox");
                 newcard = new(__DIR__"card_cs_done");
                 newcard->move(me);

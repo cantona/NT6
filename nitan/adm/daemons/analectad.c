@@ -11,24 +11,24 @@
 #include <localtime.h>
 #include <analecta.h>
 
-nosave  mapping analecta_list;                                  // ÎÄÑ¡ÁĞ±í
+nosave  mapping analecta_list;                                  // æ–‡é¸åˆ—è¡¨
 
-private void    collect_all_analecta();                         // ÊÕ¼¯ËùÓĞÎÄÑ¡ĞÅÏ¢
-private mapping parse_analecta(string file_name);               // ½âÎöÎÄÑ¡Í·ĞÅÏ¢
-public  mapping query_analecta_list();                          // ²éÑ¯ÎÄÑ¡ÁĞ±í
-public  int     add_analecta(int year, mapping analecta);       // Ìí¼ÓÒ»ÆªÎÄÑ¡
-public  int     delete_analecta(int year, int number);          // É¾³ıÒ»ÆªÎÄÑ¡
+private void    collect_all_analecta();                         // æ”¶é›†æ‰€æœ‰æ–‡é¸ä¿¡æ¯
+private mapping parse_analecta(string file_name);               // è§£ææ–‡é¸é ­ä¿¡æ¯
+public  mapping query_analecta_list();                          // æŸ¥è©¢æ–‡é¸åˆ—è¡¨
+public  int     add_analecta(int year, mapping analecta);       // æ·»åŠ ä¸€ç¯‡æ–‡é¸
+public  int     delete_analecta(int year, int number);          // åˆªé™¤ä¸€ç¯‡æ–‡é¸
 
 void create()
 {
         seteuid(ROOT_UID);
 
-        CHANNEL_D->channel_broadcast("sys", "ÎÄÑ¡ÏµÍ³ÒÑ¾­Æô¶¯¡£");
+        CHANNEL_D->channel_broadcast("sys", "æ–‡é¸ç³»çµ±å·²ç¶“å•Ÿå‹•ã€‚");
         analecta_list = ([ ]);
         collect_all_analecta();
 }
 
-// ²éÑ¯ÎÄÑ¡ÁĞ±í
+// æŸ¥è©¢æ–‡é¸åˆ—è¡¨
 mapping query_analecta_list()
 {
         return analecta_list;
@@ -45,19 +45,19 @@ string *query_year_analecta(int year)
         return analecta_list[y];
 }
 
-// ANALECTA_D Æô¶¯ÊÕ¼¯ËùÓĞµÄÎÄÑ¡
+// ANALECTA_D å•Ÿå‹•æ”¶é›†æ‰€æœ‰çš„æ–‡é¸
 void collect_all_analecta()
 {
         string year, dir, file;
         string *analecta_year, *files;
 
-        CHANNEL_D->channel_broadcast("sys", "ÕıÔÚÊÕ¼¯ÎÄÑ¡ĞÅÏ¢¡£");
+        CHANNEL_D->channel_broadcast("sys", "æ­£åœ¨æ”¶é›†æ–‡é¸ä¿¡æ¯ã€‚");
 
         analecta_year = get_dir(ANALECTA_DIR);
 
         if (! arrayp(analecta_year) || ! sizeof(analecta_year))
         {
-                CHANNEL_D->channel_broadcast("sys", "ÎŞÈÎºÎÎÄÑ¡ĞÅÏ¢¡£");
+                CHANNEL_D->channel_broadcast("sys", "ç„¡ä»»ä½•æ–‡é¸ä¿¡æ¯ã€‚");
                 return;
         }
 
@@ -82,21 +82,21 @@ void collect_all_analecta()
                         analecta_list[year] += ({ parse_analecta(dir + file) });
                 }
         }
-        CHANNEL_D->channel_broadcast("sys", "ÎÄÑ¡ĞÅÏ¢ÊÕ¼¯Íê³É¡£");
+        CHANNEL_D->channel_broadcast("sys", "æ–‡é¸ä¿¡æ¯æ”¶é›†å®Œæˆã€‚");
 }
 
-// ½âÎöÎÄÑ¡Í·ĞÅÏ¢
+// è§£ææ–‡é¸é ­ä¿¡æ¯
 
-// ¸ñÊ½Ê¾Àı£º
-// subject : ²âÊÔÎÄÑ¡                      -> ÎÄÑ¡±êÌâ
-// author_name : °¢¸£                      -> ÎÄÑ¡×÷Õß
-// author_id : jjgod                       -> ÎÄÑ¡×÷ÕßID
-// time : 1012137565                       -> ´´×÷Ê±¼ä
-// board : ¿ÍµêÁôÑÔ°å                      -> ·¢±íµØµã
-// file : /data/analecta/2002/10000000.txt -> ±£´æÎÄ¼ş
-// add_time : 1012137565                   -> Ìí¼ÓÊ±¼ä
+// æ ¼å¼ç¤ºä¾‹ï¼š
+// subject : æ¸¬è©¦æ–‡é¸                      -> æ–‡é¸æ¨™é¡Œ
+// author_name : é˜¿ç¦                      -> æ–‡é¸ä½œè€…
+// author_id : jjgod                       -> æ–‡é¸ä½œè€…ID
+// time : 1012137565                       -> å‰µä½œæ™‚é–“
+// board : å®¢åº—ç•™è¨€æ¿                      -> ç™¼è¡¨åœ°é»
+// file : /data/analecta/2002/10000000.txt -> ä¿å­˜æ–‡ä»¶
+// add_time : 1012137565                   -> æ·»åŠ æ™‚é–“
 // content :
-// ÕâÀïÊÇÄÚÈİ¡£                            -> ÎÄÑ¡ÄÚÈİ
+// é€™è£¡æ˜¯å…§å®¹ã€‚                            -> æ–‡é¸å…§å®¹
 mapping parse_analecta(string file_name)
 {
         mapping data;
@@ -112,26 +112,26 @@ mapping parse_analecta(string file_name)
         info = replace_string(info, "\r", "");
         lines = explode(info, "\n");
 
-        data = ([ "subject"     : "ÎŞÌâ",
-                  "author_name" : "ÎŞÃû",
+        data = ([ "subject"     : "ç„¡é¡Œ",
+                  "author_name" : "ç„¡å",
                   "author_id"   : "NULL_ID",
                   "time"        : 0,
-                  "board"       : "Î´ÖªÁôÑÔ°æ",
-                  "file"        : "Î´ÖªÎÄ¼ş",
+                  "board"       : "æœªçŸ¥ç•™è¨€ç‰ˆ",
+                  "file"        : "æœªçŸ¥æ–‡ä»¶",
                   "add_time"    : 0,
                   "lines"       : 0, ]);
 
         n = sizeof(lines);
         for (i = 0; i < n; i++)
         {
-                // ·Ö³É 'ÏîÄ¿ ' ºÍ ' ÄÚÈİ' Á½²¿·Ö
+                // åˆ†æˆ 'é …ç›® ' å’Œ ' å…§å®¹' å…©éƒ¨åˆ†
                 sub_info = explode(lines[i], ":");
 
-                // ÈôÎŞ·¨½âÎö
+                // è‹¥ç„¡æ³•è§£æ
                 if (sizeof(sub_info) < 2)
                         sub_info += ({ "" });
 
-                // È¥µôÏîÄ¿ÃûÇ°ºóµÄ¿Õ¸ñ
+                // å»æ‰é …ç›®åå‰å¾Œçš„ç©ºæ ¼
                 len = strlen(sub_info[0]);
                 start = 0;
 
@@ -141,7 +141,7 @@ mapping parse_analecta(string file_name)
 
                 sub_info[0] = sub_info[0][start..len];
 
-                // È¥µôÏîÄ¿ÄÚÈİÇ°ºóµÄ¿Õ¸ñ
+                // å»æ‰é …ç›®å…§å®¹å‰å¾Œçš„ç©ºæ ¼
                 if (sizeof(sub_info) > 1)
                 {
                         len = strlen(sub_info[1]);
@@ -154,17 +154,17 @@ mapping parse_analecta(string file_name)
                         sub_info[1] = sub_info[1][start..len];
                 }
 
-                // Èô´ËĞĞ¿ªÊ¼ÎªÎÄÕÂÄÚÈİ£¬ÔòÍ£Ö¹½âÎö
+                // è‹¥æ­¤è¡Œé–‹å§‹ç‚ºæ–‡ç« å…§å®¹ï¼Œå‰‡åœæ­¢è§£æ
                 if (sub_info[0] == "content")
                         break;
                 else
                 {
                         if (undefinedp(data[sub_info[0]]))
                                 continue;
-                        // Èô´ËÏîÄÚÈİÓ¦ÎªÊı×Ö
+                        // è‹¥æ­¤é …å…§å®¹æ‡‰ç‚ºæ•¸å­—
                         if (intp(data[sub_info[0]]))
                                 sub_info = ({ sub_info[0], atoi(sub_info[1]) });
-                        // ×îºóÒÔÊµ¼ÊĞÅÏ¢Ìæ»»µôÈ±Ê¡µÄĞÅÏ¢
+                        // æœ€å¾Œä»¥å¯¦éš›ä¿¡æ¯æ›¿æ›æ‰ç¼ºçœçš„ä¿¡æ¯
                         data[sub_info[0]] = sub_info[1];
                 }
         }
@@ -174,14 +174,14 @@ mapping parse_analecta(string file_name)
         return data;
 }
 
-// Ìí¼ÓÒ»ÆªÎÄÑ¡£¬ÒÔÒ»Ëæ»ú°ËÎ»Êı×ÖÎªÎÄ¼şÃû
+// æ·»åŠ ä¸€ç¯‡æ–‡é¸ï¼Œä»¥ä¸€éš¨æ©Ÿå…«ä½æ•¸å­—ç‚ºæ–‡ä»¶å
 int add_analecta(int year, mapping analecta)
 {
         int i;
         string file, info;
         int add_time;
 
-        // Éú³ÉÒ»¸öËæ»úÎÄ¼şÃû
+        // ç”Ÿæˆä¸€å€‹éš¨æ©Ÿæ–‡ä»¶å
         i = random(99999999 - 10000000 + 1) + 10000000;
         file = ANALECTA_DIR + year + "/" + i + ".txt";
 
@@ -209,7 +209,7 @@ int add_analecta(int year, mapping analecta)
         write_file(file, info, 1);
         analecta["lines"] = file_lines(file);
 
-        // Çå³ı content ĞÅÏ¢£¬ÒÔÃâÕ¼ÓÃ¹ı¶àÄÚ´æ
+        // æ¸…é™¤ content ä¿¡æ¯ï¼Œä»¥å…ä½”ç”¨éå¤šå…§å­˜
         map_delete(analecta, "content");
         if (undefinedp(analecta_list[sprintf("%d", year)]))
                 analecta_list[sprintf("%d", year)] = ({ analecta });
@@ -217,7 +217,7 @@ int add_analecta(int year, mapping analecta)
         return 1;
 }
 
-// É¾³ıÒ»ÆªÎÄÑ¡
+// åˆªé™¤ä¸€ç¯‡æ–‡é¸
 int delete_analecta(int year, int number)
 {
         mapping *analecta;
@@ -232,8 +232,8 @@ int delete_analecta(int year, int number)
         if (number < 1)
                 return 0;
 
-        // ÒòÎªÊÇ°´ÕÕÊ±¼äÅÅÁĞµÄË³ĞòÖ¸³öµÄĞòºÅ£¬
-        // ËùÒÔÉ¾³ıµÄÊ±ºòÒ²Òª°´ÕÕÕâ¸öĞòºÅ²éÕÒ
+        // å› ç‚ºæ˜¯æŒ‰ç…§æ™‚é–“æ’åˆ—çš„é †åºæŒ‡å‡ºçš„åºè™Ÿï¼Œ
+        // æ‰€ä»¥åˆªé™¤çš„æ™‚å€™ä¹Ÿè¦æŒ‰ç…§é€™å€‹åºè™ŸæŸ¥æ‰¾
         analecta = sort_array(analecta, (: sort_analectas :));
 
         number--;
@@ -248,7 +248,7 @@ int delete_analecta(int year, int number)
         return 1;
 }
 
-// Çå³ıÒ»ÄêµÄÎÄÑ¡ÁĞ±í
+// æ¸…é™¤ä¸€å¹´çš„æ–‡é¸åˆ—è¡¨
 int clear_analecta_list(int year)
 {
         if (undefinedp(analecta_list[sprintf("%d", year)]))
@@ -258,7 +258,7 @@ int clear_analecta_list(int year)
         return 1;
 }
 
-// ÌáÊ¾ÓÃ»§
+// æç¤ºç”¨æˆ¶
 void prompt_user(object me)
 {
         int num;
@@ -275,8 +275,8 @@ void prompt_user(object me)
         year = localtime(time())[LT_YEAR];
         if( !sizeof(query("analecta_last_read", me)) )
         {
-                tell_object(me, HIM "»¶Ó­Äú½øÈë" + LOCAL_MUD_NAME() + "£¬½ñºóÇëÊ¹ÓÃ" HIY " wenxuan " HIM
-                                "ÃüÁî²éÔÄÓÎÏ·µÄÎÄÕÂÑ¡¼¯¡£\n" NOR);
+                tell_object(me, HIM "æ­¡è¿æ‚¨é€²å…¥" + LOCAL_MUD_NAME() + "ï¼Œä»Šå¾Œè«‹ä½¿ç”¨" HIY " wenxuan " HIM
+                                "å‘½ä»¤æŸ¥é–±éŠæˆ²çš„æ–‡ç« é¸é›†ã€‚\n" NOR);
 
                 set("analecta_last_read/"+year, time(), me);
                 return;
@@ -287,7 +287,7 @@ void prompt_user(object me)
         analectas = analecta_list[sprintf("%d", year)];
 
         if (! arrayp(analectas) || ! sizeof(analectas)) {
-                tell_object(me, HIM "ÄãÄ¿Ç°Ã»ÓĞÎ´ÔøÔÄ¶Á¹ıµÄÎÄÕÂÑ¡¼¯¡£\n" NOR);
+                tell_object(me, HIM "ä½ ç›®å‰æ²’æœ‰æœªæ›¾é–±è®€éçš„æ–‡ç« é¸é›†ã€‚\n" NOR);
                 return;
         }
 
@@ -300,14 +300,14 @@ void prompt_user(object me)
                         break;
 
         if (total)
-                tell_object(me, sprintf(WHT "ÄãÄ¿Ç°Ò»¹²ÓĞ " HIY "%d" NOR
-                                        WHT " ÆªÎÄÑ¡»¹Ã»ÓĞÔÄ¶Á£¬ÇëÊ¹ÓÃ "
-                                        HIY "wenxuan" NOR WHT " ÃüÁîÔÄ¶Á¡£\n" NOR, total));
+                tell_object(me, sprintf(WHT "ä½ ç›®å‰ä¸€å…±æœ‰ " HIY "%d" NOR
+                                        WHT " ç¯‡æ–‡é¸é‚„æ²’æœ‰é–±è®€ï¼Œè«‹ä½¿ç”¨ "
+                                        HIY "wenxuan" NOR WHT " å‘½ä»¤é–±è®€ã€‚\n" NOR, total));
         else
-                tell_object(me, HIM "ÄãÄ¿Ç°Ã»ÓĞÎ´ÔøÔÄ¶Á¹ıµÄÎÄÕÂÑ¡¼¯¡£\n" NOR);
+                tell_object(me, HIM "ä½ ç›®å‰æ²’æœ‰æœªæ›¾é–±è®€éçš„æ–‡ç« é¸é›†ã€‚\n" NOR);
 }
 
 string query_name()
 {
-        return "ÎÄÑ¡¾«Áé(ANALECTA_D)";
+        return "æ–‡é¸ç²¾éˆ(ANALECTA_D)";
 }

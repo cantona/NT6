@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "³¤ÀÈ");
+        set("short", "é•·å»Š");
         set("long", @LONG
-ÕâÀïÊÇ·Ç³£ÆøÅÉµÄ³¤ÀÈ¡£±±±ßÊÇ¼äÐÝÏ¢ÊÒ¡£ÄÏ±ßÓÐÒ»¼äÐ¡Ð¡µÄÒ©
-·¿£¬ÀïÃæ´«À´Ò»ÕóÆ÷ÃóÅö»÷µÄÉùÒô¡£Î÷±ßÊÇÉÈ¹°ÔÂÐÎ³¨ÃÅ¡£¶«±ßÊÇÁ·
-¹¦³¡¡£
+é€™è£¡æ˜¯éžå¸¸æ°£æ´¾çš„é•·å»Šã€‚åŒ—é‚Šæ˜¯é–“ä¼‘æ¯å®¤ã€‚å—é‚Šæœ‰ä¸€é–“å°å°çš„è—¥
+æˆ¿ï¼Œè£¡é¢å‚³ä¾†ä¸€é™£å™¨çš¿ç¢°æ“Šçš„è²éŸ³ã€‚è¥¿é‚Šæ˜¯æ‰‡æ‹±æœˆå½¢æ•žé–€ã€‚æ±é‚Šæ˜¯ç·´
+åŠŸå ´ã€‚
 LONG );
         set("exits", ([
                 "west"  : __DIR__"ximen",

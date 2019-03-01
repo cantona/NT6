@@ -1,17 +1,17 @@
 //
-//  ÑòÆ¤Êé
+//  ç¾Šçš®æ›¸
 
 inherit ITEM;
 
 void create()
 {
-        set_name( "ÑòÆ¤Êé", ({ "skin" , "shu", "book" }));
+        set_name( "ç¾Šçš®æ›¸", ({ "skin" , "shu", "book" }));
         set_weight(200);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
-                set("long", "ÕâÊÇÒ»ÕÅÑòÆ¤£¬ÉÏÃæ»­×ÅÎè½£µÄĞ¡ÈË¡£\n");
+                set("unit", "æœ¬");
+                set("long", "é€™æ˜¯ä¸€å¼µç¾Šçš®ï¼Œä¸Šé¢ç•«è‘—èˆåŠçš„å°äººã€‚\n");
                 set("value", 0);
                 set("material", "paper");
                 set("skill", ([

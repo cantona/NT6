@@ -17,39 +17,39 @@ int update_condition(object me, int duration)
 
         if (duration == 1200)
         {
-                tell_object(me, HIY "Äã¾õµÃÖÜÎ§µÄÈËºÃÏó¶¼ÔÚÍµÍµ¿´Äã£¬ĞÄÀïºÃ²»×ÔÔÚ£¡\n" NOR);
-                message("vision", me->name() + HIY "ĞßÉ¬µÄµÍ×ÅÍ·£¬°ÚÅª×Å×Ô¼ºµÄÒÂ½Ç¡£\n" NOR,
+                tell_object(me, HIY "ä½ è¦ºå¾—å‘¨åœçš„äººå¥½è±¡éƒ½åœ¨å·å·çœ‹ä½ ï¼Œå¿ƒè£¡å¥½ä¸è‡ªåœ¨ï¼\n" NOR);
+                message("vision", me->name() + HIY "ç¾æ¾€çš„ä½è‘—é ­ï¼Œæ“ºå¼„è‘—è‡ªå·±çš„è¡£è§’ã€‚\n" NOR,
                         environment(me), me);
         } else 
         if (duration == 800)
         {
-                tell_object(me, HIY "Äã¾õµÃÖÜÎ§µÄÈË¶¼ºÃÆæ¹Ö£¬¶ÔÄãÖ¸Ö¸µãµã£¬ÕæÊÇÌÖÑá£¡\n" NOR);
-                message("vision", me->name() + HIY "µÉ×ÅÄã£¬ºÃÏóÄãÇ·ÁËËıÊ²Ã´ËÆµÄ¡­¡­\n" NOR,
+                tell_object(me, HIY "ä½ è¦ºå¾—å‘¨åœçš„äººéƒ½å¥½å¥‡æ€ªï¼Œå°ä½ æŒ‡æŒ‡é»é»ï¼ŒçœŸæ˜¯è¨å­ï¼\n" NOR);
+                message("vision", me->name() + HIY "çªè‘—ä½ ï¼Œå¥½è±¡ä½ æ¬ äº†å¥¹ä»€éº¼ä¼¼çš„â€¦â€¦\n" NOR,
                         environment(me), me);
         } else 
         if (duration == 400)
         {
-                tell_object(me, HIY "Äã¾õµÃÖÜÎ§µÄÈË¶¼ÔÚĞ¦ÎûÎûµÄ¿´×ÅÄã£¬¿ÉÄÜËûÃÇÒÑ¾­¿´³öÀ´ÁËÄã¡­¡­¡£\n" NOR);
-                message("vision", me->name() + HIY "ÓÃÒ»ÖÖÒì³£´ÈÏéµÄÄ¿¹â£¬·´¸´´òÁ¿×Å×Ô¼ºµÄ¶Ç×Ó¡£\n" NOR,
+                tell_object(me, HIY "ä½ è¦ºå¾—å‘¨åœçš„äººéƒ½åœ¨ç¬‘å˜»å˜»çš„çœ‹è‘—ä½ ï¼Œå¯èƒ½ä»–å€‘å·²ç¶“çœ‹å‡ºä¾†äº†ä½ â€¦â€¦ã€‚\n" NOR);
+                message("vision", me->name() + HIY "ç”¨ä¸€ç¨®ç•°å¸¸æ…ˆç¥¥çš„ç›®å…‰ï¼Œåå¾©æ‰“é‡è‘—è‡ªå·±çš„è‚šå­ã€‚\n" NOR,
                         environment(me), me);
         } else 
         if (duration == 200)
         {
-                tell_object(me, HIY "Äã¾õµÃÖÜÎ§µÄÈËÓëÊÀ½ç¶¼ÊÇÄÇ÷áµÄÃÀºÃ£¬ĞÄÇéÎŞ±ÈµÄÊæ³©£¡\n" NOR);
-                message("vision", me->name() + HIY "Ò»Éí³äÂúÁË°²ÏêµÄÆøÏ¢£¬ÄÇ»ı¾Û×ÅÄ¸°®µÄÄ¿¹â²»Ê±É¨ÊÓ×ÅÖÜÎ§£¡\n" NOR,
+                tell_object(me, HIY "ä½ è¦ºå¾—å‘¨åœçš„äººèˆ‡ä¸–ç•Œéƒ½æ˜¯é‚£éº¼çš„ç¾å¥½ï¼Œå¿ƒæƒ…ç„¡æ¯”çš„èˆ’æš¢ï¼\n" NOR);
+                message("vision", me->name() + HIY "ä¸€èº«å……æ»¿äº†å®‰è©³çš„æ°£æ¯ï¼Œé‚£ç©èšè‘—æ¯æ„›çš„ç›®å…‰ä¸æ™‚æƒè¦–è‘—å‘¨åœï¼\n" NOR,
                         environment(me), me);
         } else 
         if (duration == 20 || duration == 10)
         {
-                tell_object(me, HIY "Äã¾õµÃÖÜÎ§µÄÈË¶¼ÓÃ×Å¼«Æä¹ØÇĞµÄÄ¿¹â×¢ÊÓ×ÅÄã£¬ÄÑµÀÊÇ¡­¡­¿ìÁË£¿\n" NOR);
-                message("vision", me->name() + HIY "ÒÑ¾­ĞĞ¶¯Ê®·ÖµÄ³Ù»ºÁË£¬²»Ê±µÄÍ£ÏÂÀ´´­Æø¡£\n" NOR,
+                tell_object(me, HIY "ä½ è¦ºå¾—å‘¨åœçš„äººéƒ½ç”¨è‘—æ¥µå…¶é—œåˆ‡çš„ç›®å…‰æ³¨è¦–è‘—ä½ ï¼Œé›£é“æ˜¯â€¦â€¦å¿«äº†ï¼Ÿ\n" NOR);
+                message("vision", me->name() + HIY "å·²ç¶“è¡Œå‹•ååˆ†çš„é²ç·©äº†ï¼Œä¸æ™‚çš„åœä¸‹ä¾†å–˜æ°£ã€‚\n" NOR,
                         environment(me), me);
         } else 
         if (duration == 1)
         {
-                tell_object(me, HIY "ÖÜÎ§µÄÈË¶¼¾ªÑÈµÄºÏ²»ÉÏÁË×ì°Í£¬Ò»¶¨ÊÇ¼ûµ½ÁËÊ²Ã´Ææ¹ÖÊÂÇé£¡\n"
-                                "¿´À´ÄãÊÇÂíÉÏ¾ÍÒªÉúÁË£¬Çë¸Ï½ôºÍº¢×ÓµÄ¸¸Ç×È¥ÑïÖİÒ©ÆÌµÄ¶şÂ¥²ú·¿£¬·ñÔò»áÓĞÉúÃüÎ£ÏÕµÄ£¡\n" NOR);
-                message("vision", me->name() + HIY "Îæ×Å´ó´óµÄ¶Ç×Ó£¬¶×ÔÚÁËµØÉÏ£¬Á³ÉÏÒ»¸±¼«ÆäÍ´¿àµÄÉñÇé£¡\n" NOR,
+                tell_object(me, HIY "å‘¨åœçš„äººéƒ½é©šè¨çš„åˆä¸ä¸Šäº†å˜´å·´ï¼Œä¸€å®šæ˜¯è¦‹åˆ°äº†ä»€éº¼å¥‡æ€ªäº‹æƒ…ï¼\n"
+                                "çœ‹ä¾†ä½ æ˜¯é¦¬ä¸Šå°±è¦ç”Ÿäº†ï¼Œè«‹è¶•ç·Šå’Œå­©å­çš„çˆ¶è¦ªå»æšå·è—¥èˆ–çš„äºŒæ¨“ç”¢æˆ¿ï¼Œå¦å‰‡æœƒæœ‰ç”Ÿå‘½å±éšªçš„ï¼\n" NOR);
+                message("vision", me->name() + HIY "æ‚è‘—å¤§å¤§çš„è‚šå­ï¼Œè¹²åœ¨äº†åœ°ä¸Šï¼Œè‡‰ä¸Šä¸€å‰¯æ¥µå…¶ç—›è‹¦çš„ç¥æƒ…ï¼\n" NOR,
                         environment(me), me);
                 remove_call_out("birth1");
                 call_out("birth1", 100, me);
@@ -64,7 +64,7 @@ int birth1(object me)
         
         if( (query("age", me))<18 )
         {
-                message_vision(HIY "\n$NËÆºõ¾õµÃ¸¹ÖĞÒ»Õó¾ŞÍ´£¬´ó½ĞÒ»Éù£¬ÓÉÓÚ$NÄêÁäÌ«Ğ¡£¬²»ÊÊºÏÉúÓı£¬\nËùÒÔ$NµÄº¢×ÓÁ÷²úÁË£¬ºÃ¿ÉÁ¯°¡£¡\n" NOR, me);
+                message_vision(HIY "\n$Nä¼¼ä¹è¦ºå¾—è…¹ä¸­ä¸€é™£å·¨ç—›ï¼Œå¤§å«ä¸€è²ï¼Œç”±äº$Nå¹´é½¡å¤ªå°ï¼Œä¸é©åˆç”Ÿè‚²ï¼Œ\næ‰€ä»¥$Nçš„å­©å­æµç”¢äº†ï¼Œå¥½å¯æ†å•Šï¼\n" NOR, me);
                 set("qi", 1, me);
                 set("jing", 1, me);
                 set("neili",query("neili",  me)/2, me);
@@ -76,7 +76,7 @@ int birth1(object me)
         
         if (base_name(environment(me)) != "/d/city/chanfang")
         {
-                message_vision(HIY "\n$NËÆºõ¾õµÃ¸¹ÖĞÒ»Õó¾ŞÍ´£¬´ó½ĞÒ»Éù£¬ÓÉÓÚÕâÀïµÄ»·¾³ÊµÔÚÊÇÌ«¶ñÁÓÁË£¬\nËùÒÔ$NµÄº¢×ÓÁ÷²úÁË£¬ºÃ¿ÉÁ¯°¡£¡\n" NOR, me);
+                message_vision(HIY "\n$Nä¼¼ä¹è¦ºå¾—è…¹ä¸­ä¸€é™£å·¨ç—›ï¼Œå¤§å«ä¸€è²ï¼Œç”±äºé€™è£¡çš„ç’°å¢ƒå¯¦åœ¨æ˜¯å¤ªæƒ¡åŠ£äº†ï¼Œ\næ‰€ä»¥$Nçš„å­©å­æµç”¢äº†ï¼Œå¥½å¯æ†å•Šï¼\n" NOR, me);
                 set("qi", 1, me);
                 set("jing", 1, me);
                 set("neili",query("neili",  me)/2, me);
@@ -89,7 +89,7 @@ int birth1(object me)
         target=find_player(query("couple/couple_id", me));
         if (! target || environment(target) != environment(me))
         {
-                message_vision(HIY "\n$NËÆºõ¾õµÃ¸¹ÖĞÒ»Õó¾ŞÍ´£¬´ó½ĞÒ»Éù£¬ÓÉÓÚ¹Ø¼üÊ±¿ÌÄãµÄÄĞÈËÃ»ÓĞÊØºîÔÚÉí±ß£¬\nËùÒÔ$NµÄº¢×ÓÁ÷²úÁË£¬ºÃ¿ÉÁ¯°¡£¡\n" NOR, me);
+                message_vision(HIY "\n$Nä¼¼ä¹è¦ºå¾—è…¹ä¸­ä¸€é™£å·¨ç—›ï¼Œå¤§å«ä¸€è²ï¼Œç”±äºé—œéµæ™‚åˆ»ä½ çš„ç”·äººæ²’æœ‰å®ˆä¾¯åœ¨èº«é‚Šï¼Œ\næ‰€ä»¥$Nçš„å­©å­æµç”¢äº†ï¼Œå¥½å¯æ†å•Šï¼\n" NOR, me);
                 set("qi", 1, me);
                 set("jing", 1, me);
                 set("neili",query("neili",  me)/2, me);
@@ -104,7 +104,7 @@ int birth1(object me)
         if (! target->id_busy())
                 target->start_busy(15);
                 
-        message_vision(HIY "\n$Nºö¾õ¸¹ÖĞÒ»Õó²ü¶¯£¬¸Ï½ôÀ­×¡$nµÄÊÖ£¬ÈáÉùËµµÀ£ºÒªÉúÁË! \n" NOR, me, target);
+        message_vision(HIY "\n$Nå¿½è¦ºè…¹ä¸­ä¸€é™£é¡«å‹•ï¼Œè¶•ç·Šæ‹‰ä½$nçš„æ‰‹ï¼ŒæŸ”è²èªªé“ï¼šè¦ç”Ÿäº†! \n" NOR, me, target);
         remove_call_out("birth2");
         call_out("birth2", 15, me);
       
@@ -118,7 +118,7 @@ int birth2(object me)
         target=find_player(query("couple/couple_id", me));
         if (! target || environment(target) != environment(me))
         {
-                message_vision(HIY "\n$NËÆºõ¾õµÃ¸¹ÖĞÒ»Õó¾ŞÍ´£¬´ó½ĞÒ»Éù£¬ÓÉÓÚ¹Ø¼üÊ±¿ÌÄãµÄÄĞÈËÃ»ÓĞÊØºîÔÚÉí±ß£¬\nËùÒÔ$NµÄº¢×ÓÁ÷²úÁË£¬ºÃ¿ÉÁ¯°¡£¡\n" NOR, me);
+                message_vision(HIY "\n$Nä¼¼ä¹è¦ºå¾—è…¹ä¸­ä¸€é™£å·¨ç—›ï¼Œå¤§å«ä¸€è²ï¼Œç”±äºé—œéµæ™‚åˆ»ä½ çš„ç”·äººæ²’æœ‰å®ˆä¾¯åœ¨èº«é‚Šï¼Œ\næ‰€ä»¥$Nçš„å­©å­æµç”¢äº†ï¼Œå¥½å¯æ†å•Šï¼\n" NOR, me);
                 set("qi", 1, me);
                 set("jing", 1, me);
                 set("neili",query("neili",  me)/2, me);
@@ -133,7 +133,7 @@ int birth2(object me)
         if (! target->id_busy())
                 target->start_busy(15);
                         
-        message_vision(HIY "\n$NÒÑÊÇ´óº¹ÁÜÀì£¬Ò»Ö±¶¼ÔÚºôÌìÇÀµØ£¬Ë«ÊÖ½ô½ô¿Û×¡$nµÄÊÖ²»·Å¡£\n\nÓ¤¶ùÒÑ¾­Ì½³öÁËÍ·£®£®£®\n" NOR, me, target);
+        message_vision(HIY "\n$Nå·²æ˜¯å¤§æ±—æ·‹æ¼“ï¼Œä¸€ç›´éƒ½åœ¨å‘¼å¤©æ¶åœ°ï¼Œé›™æ‰‹ç·Šç·Šæ‰£ä½$nçš„æ‰‹ä¸æ”¾ã€‚\n\nå¬°å…’å·²ç¶“æ¢å‡ºäº†é ­ï¼ï¼ï¼\n" NOR, me, target);
         remove_call_out("birth3");
         call_out("birth3", 15, me);
         return 1;
@@ -147,7 +147,7 @@ int birth3(object me)
         target=find_player(query("couple/couple_id", me));
         if (! target || environment(target) != environment(me))
         {
-                message_vision(HIY "\n$NËÆºõ¾õµÃ¸¹ÖĞÒ»Õó¾ŞÍ´£¬´ó½ĞÒ»Éù£¬ÓÉÓÚ¹Ø¼üÊ±¿ÌÄãµÄÄĞÈËÃ»ÓĞÊØºîÔÚÉí±ß£¬\nËùÒÔ$NµÄº¢×ÓÁ÷²úÁË£¬ºÃ¿ÉÁ¯°¡£¡\n" NOR, me);
+                message_vision(HIY "\n$Nä¼¼ä¹è¦ºå¾—è…¹ä¸­ä¸€é™£å·¨ç—›ï¼Œå¤§å«ä¸€è²ï¼Œç”±äºé—œéµæ™‚åˆ»ä½ çš„ç”·äººæ²’æœ‰å®ˆä¾¯åœ¨èº«é‚Šï¼Œ\næ‰€ä»¥$Nçš„å­©å­æµç”¢äº†ï¼Œå¥½å¯æ†å•Šï¼\n" NOR, me);
                 set("qi", 1, me);
                 set("jing", 1, me);
                 set("neili",query("neili",  me)/2, me);
@@ -157,9 +157,9 @@ int birth3(object me)
                 return 1;
         }  
                 
-        message_vision(HIY "\n¡¸ÍÛ¡¹£®£®£®£¬Ó¤¶ù³öÊÀÁË£¡\n" +
-                "\n$NÃæÉ«²Ô°×£¬Ğ±ÒĞÔÚ´²Í·£¬¿´¿´º¢×ÓÂúÒâµØÂ¶³öÒ»Ë¿Î¢Ğ¦¡£\n" NOR, me, target);
-        set("long", "\nËı¿´ÆğÀ´ÒÑ¾­ÊÇÒ»¸ö³ÉÊìµÄÉÙ¸¾ÁËÅ¶¡£\n"NOR, me);
+        message_vision(HIY "\nã€Œå“‡ã€ï¼ï¼ï¼ï¼Œå¬°å…’å‡ºä¸–äº†ï¼\n" +
+                "\n$Né¢è‰²è’¼ç™½ï¼Œæ–œå€šåœ¨åºŠé ­ï¼Œçœ‹çœ‹å­©å­æ»¿æ„åœ°éœ²å‡ºä¸€çµ²å¾®ç¬‘ã€‚\n" NOR, me, target);
+        set("long", "\nå¥¹çœ‹èµ·ä¾†å·²ç¶“æ˜¯ä¸€å€‹æˆç†Ÿçš„å°‘å©¦äº†å“¦ã€‚\n"NOR, me);
         delete("longbak", me);
 
         set("neili", 0, me);
@@ -169,23 +169,23 @@ int birth3(object me)
         baby = new("/clone/user/baby");
         if (random(2) > 0)
         {
-                set("gender", "ÄĞĞÔ", baby);
-                baby->set_name("Ğ¡"+query("name", target),
+                set("gender", "ç”·æ€§", baby);
+                baby->set_name("å°"+query("name", target),
                                ({"xiao_"+query("id", target),"baby"}));
                                
-                set("long", "ÕâÊÇ"+query("name", target)+"ºÍ"+query("name", me)+"µÄº¢×Ó¡£³¤µÄºÃÏó"+query("name", target)+"°¡£¡\n", baby);
-                message("shout",HIR"¡¾¼ÒÓĞÏ²ÊÂ¡¿"HIM"¹§Ï²"HIR+query("name", me)+"("+query("id", me)+")"
-                        HIM"¸ø"HIR+query("name", target)+"("+query("id", target)+")"HIM"ÌíÁËÒ»¸ö´óÅÖĞ¡×Ó¡£\n"NOR,
+                set("long", "é€™æ˜¯"+query("name", target)+"å’Œ"+query("name", me)+"çš„å­©å­ã€‚é•·çš„å¥½è±¡"+query("name", target)+"å•Šï¼\n", baby);
+                message("shout",HIR"ã€å®¶æœ‰å–œäº‹ã€‘"HIM"æ­å–œ"HIR+query("name", me)+"("+query("id", me)+")"
+                        HIM"çµ¦"HIR+query("name", target)+"("+query("id", target)+")"HIM"æ·»äº†ä¸€å€‹å¤§èƒ–å°å­ã€‚\n"NOR,
                         users());
         } else
         {
-                set("gender", "Å®ĞÔ", baby);
-                baby->set_name("Ğ¡"+query("name", me),
+                set("gender", "å¥³æ€§", baby);
+                baby->set_name("å°"+query("name", me),
                                ({"xiao_"+query("id", me),"baby"}));
                                
-                set("long", "ÕâÊÇ"+query("name", target)+"ºÍ"+query("name", me)+"µÄº¢×Ó¡£³¤µÄºÃÏó"+query("name", me)+"°¡£¡\n", baby);
-                message("shout",HIR"¡¾¼ÒÓĞÏ²ÊÂ¡¿"HIM"¹§Ï²"HIR+query("name", me)+"("+query("id", me)+")"
-                        HIM"¸ø"HIR+query("name", target)+"("+query("id", target)+")"HIM"ÌíÁËÒ»¸öÇ§½ğĞ¡±¦±´¡£\n"NOR,
+                set("long", "é€™æ˜¯"+query("name", target)+"å’Œ"+query("name", me)+"çš„å­©å­ã€‚é•·çš„å¥½è±¡"+query("name", me)+"å•Šï¼\n", baby);
+                message("shout",HIR"ã€å®¶æœ‰å–œäº‹ã€‘"HIM"æ­å–œ"HIR+query("name", me)+"("+query("id", me)+")"
+                        HIM"çµ¦"HIR+query("name", target)+"("+query("id", target)+")"HIM"æ·»äº†ä¸€å€‹åƒé‡‘å°å¯¶è²ã€‚\n"NOR,
                         users());                
         }
         

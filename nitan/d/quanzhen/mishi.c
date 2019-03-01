@@ -1,14 +1,14 @@
-// mishi.c ����
+// mishi.c 密室
 // Winder Oct.10 1998
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "����");
+        set("short", "密室");
         set("long", @LONG
-������ȫ��̵���Ϊ��ֱ����ԭ�޽������ң�����Ĺ��߷ǳ�
-�谵��Ҳ���Ѿ����������ˡ�
+這裡是全真教弟子為了直達中原修建的密室，這裡的光線非常
+昏暗，也許已經身處地下了。
 LONG
         );
         set("exits", ([

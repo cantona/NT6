@@ -8,18 +8,18 @@ void init()
 
 void create()
 {
-        set_name("²İÒ©", ({"cao yao","cao","yao"}));
-        set("unit", "Öê");
-        set("long", "ÕâÊÇÒ»ÖêÆÕÍ¨µÄ²İÒ©¡£\n");
+        set_name("è‰è—¥", ({"cao yao","cao","yao"}));
+        set("unit", "æ ª");
+        set("long", "é€™æ˜¯ä¸€æ ªæ™®é€šçš„è‰è—¥ã€‚\n");
         setup();
 }
 
 int do_eat(string arg)
 {
-if (!id(arg))  return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+if (!id(arg))  return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
 if(arg=="yao") 
 {
-tell_object(this_player(), HIG "ÄãÖ»¾õÒ»¹ÉÇåÏãÇßÈëĞÄ·Î,¶ÙÊ±ÁéÌ¨Ò»Æ¬¿ÕÃ÷,ÉñÒâÇåË¬£¡\n" NOR );
+tell_object(this_player(), HIG "ä½ åªè¦ºä¸€è‚¡æ¸…é¦™æ²å…¥å¿ƒè‚º,é “æ™‚éˆå°ä¸€ç‰‡ç©ºæ˜,ç¥æ„æ¸…çˆ½ï¼\n" NOR );
 set_temp("nopoison", 1, this_player());
 set("eff_jingli",query("max_jingli",  this_player()), this_player());
 set("jingli",query("max_jingli",  this_player()), this_player());

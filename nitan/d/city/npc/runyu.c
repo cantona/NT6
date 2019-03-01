@@ -6,9 +6,9 @@ inherit F_DEALER;
 int do_send(string arg);
 void create()
 {
-        set_name( WHT"ÈóÓñ"NOR , ({ "run yu", "yu" }) );
-        set("title", MAG"Âô»¨¹ÃÄï"NOR );
-        set("gender", "Å®ÐÔ" );
+        set_name( WHT"æ½¤çŽ‰"NOR , ({ "run yu", "yu" }) );
+        set("title", MAG"è³£èŠ±å§‘å¨˜"NOR );
+        set("gender", "å¥³æ€§" );
         set("age",16);
         set("per",23);
         set("combat_exp", 1500);
@@ -47,11 +47,11 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment( this_object() ) )
         return;
 
-        if( query("gender", ob) == "Å®ÐÔ" )
+        if( query("gender", ob) == "å¥³æ€§" )
         {
                 if( query("age", ob)<30 )
                 {
-                        message_vision("Âô»¨¹ÃÄï³å$PÌðÌðÒ»Ð¦£º¹ÃÄï²»Âò¶äÓô½ðÏãÂð£¿\n",ob);
+                        message_vision("è³£èŠ±å§‘å¨˜æ²–$Pç”œç”œä¸€ç¬‘ï¼šå§‘å¨˜ä¸è²·æœµé¬±é‡‘é¦™å—Žï¼Ÿ\n",ob);
                         return;
                 }
         }
@@ -59,12 +59,12 @@ void greeting(object ob)
         {
                 if( query("couple", ob) )
                 {
-                        message_vision("Âô»¨¹ÃÄï³å×Å$PÐ¦×Å£º²»¸øÄúµÄÆÞ×ÓÂòÊø»¨Âð£¿\n",ob);
+                        message_vision("è³£èŠ±å§‘å¨˜æ²–è‘—$Pç¬‘è‘—ï¼šä¸çµ¦æ‚¨çš„å¦»å­è²·æŸèŠ±å—Žï¼Ÿ\n",ob);
                         return;
                 }
                 else
                 {
-                        message_vision("Âô»¨¹ÃÄï³å×Å$PÐ¦×Å£º²»¸øÐÄÉÏÈËÂòÊøºìÃµ¹åÂð£¿\n",ob);
+                        message_vision("è³£èŠ±å§‘å¨˜æ²–è‘—$Pç¬‘è‘—ï¼šä¸çµ¦å¿ƒä¸Šäººè²·æŸç´…çŽ«ç‘°å—Žï¼Ÿ\n",ob);
                         return;
                 }
         }

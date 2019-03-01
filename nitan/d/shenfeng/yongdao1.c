@@ -3,9 +3,9 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ğ®µÀ");
+        set("short", "ç”¬é“");
         set("long", @LONG
-Õâ¸öÉ½¶´ÀïÉìÊÖ²»¼ûÎåÖ¸£¬ºÚ³Á³ÁµÄÉõÃ´Ò²ÇÆ²»¼û¡£
+é€™å€‹å±±æ´è£¡ä¼¸æ‰‹ä¸è¦‹äº”æŒ‡ï¼Œé»‘æ²‰æ²‰çš„ç”šéº¼ä¹Ÿç§ä¸è¦‹ã€‚
 LONG);
         set("exits", ([
                 "out" : __DIR__"shenfeng",
@@ -31,16 +31,16 @@ int do_use(string arg)
                 return 0;
 
         if( query("mark/light", this_object()) )
-                return notify_fail("ÄãÒÑ¾­µã×Å»ğÕÛÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“é»è‘—ç«æŠ˜äº†ã€‚\n");
 
         if (arg == "fire")
         {
-                     message_vision(HIR "\n$N" HIR "È¡³ö»ğÕÛÒ»»Î£¬·¢ÏÖ´ÓÕâÏÂÈ¥ÀëµØ"
-                               "ÃæÖÁÉÙÓĞÊ®Æß°ËÕÉ£¬·åÄÚµØÃæÔ¶±ÈÍâÃæµÄÎªµÍ¡£\n"
+                     message_vision(HIR "\n$N" HIR "å–å‡ºç«æŠ˜ä¸€æ™ƒï¼Œç™¼ç¾å¾é€™ä¸‹å»é›¢åœ°"
+                               "é¢è‡³å°‘æœ‰åä¸ƒå…«ä¸ˆï¼Œå³°å…§åœ°é¢é æ¯”å¤–é¢çš„ç‚ºä½ã€‚\n"
                                "\n" NOR, me);
 
-                set("long", "Æ¾½è»ğÕÛµÄÎ¢¹â£¬Äã¿ÉÒÔ¿´µ½´ÓÕâÏÂÈ¥ÀëµØÃæÖÁÉÙÓĞÊ®"
-                            "Æß\n°ËÕÉ¸ß£¬·åÄÚµØÃæÔ¶±ÈÍâÃæµÄÎªµÍ¡£\n");
+                set("long", "æ†‘å€Ÿç«æŠ˜çš„å¾®å…‰ï¼Œä½ å¯ä»¥çœ‹åˆ°å¾é€™ä¸‹å»é›¢åœ°é¢è‡³å°‘æœ‰å"
+                            "ä¸ƒ\nå…«ä¸ˆé«˜ï¼Œå³°å…§åœ°é¢é æ¯”å¤–é¢çš„ç‚ºä½ã€‚\n");
 
                 addn("mark/light",query("id", me));
                 return 1;
@@ -52,21 +52,21 @@ int do_tiao(string arg)
         object ob, me = this_player();
 
         if( !query("mark/light", this_object()) )
-                return notify_fail("¶´ÀïÒ»Æ¬ÆáºÚ£¬Äã¸ù±¾Ì½²»Çå·½Ïò¡£\n");
+                return notify_fail("æ´è£¡ä¸€ç‰‡æ¼†é»‘ï¼Œä½ æ ¹æœ¬æ¢ä¸æ¸…æ–¹å‘ã€‚\n");
 
                if (! arg || arg != "down")
-                return notify_fail("ÄãÒªÍùÄÄÌø£¿\n");
+                return notify_fail("ä½ è¦å¾€å“ªè·³ï¼Ÿ\n");
 
-        message_vision(HIY "\n$N" HIY "Ô¥ÁËÒ»ÏÂ£¬¹ÄÆøÓÂÆø£¬ÌøÁËÏÂÈ¥¡£\n\n" NOR, me);
+        message_vision(HIY "\n$N" HIY "è±«äº†ä¸€ä¸‹ï¼Œé¼“æ°£å‹‡æ°£ï¼Œè·³äº†ä¸‹å»ã€‚\n\n" NOR, me);
 
-        // ÅĞ¶ÏÊÇË­µãÈ¼µÄ»ğÕÛ£¬Èç¹û³Ö»ğÕÛÕßÌøÁËÏÂÈ¥£¬Ôò»Ö¸´ºÚ°µ¡£
+        // åˆ¤æ–·æ˜¯èª°é»ç‡ƒçš„ç«æŠ˜ï¼Œå¦‚æœæŒç«æŠ˜è€…è·³äº†ä¸‹å»ï¼Œå‰‡æ¢å¾©é»‘æš—ã€‚
         if( query("mark/light", this_object()) == query("id", me) )
         {
                 delete("mark/light");
-                       set("long", "É½¶´ÀïÉìÊÖ²»¼ûÎåÖ¸£¬ºÚ³Á³ÁµÄÉõÃ´Ò²ÇÆ²»¼û¡£\n");
+                       set("long", "å±±æ´è£¡ä¼¸æ‰‹ä¸è¦‹äº”æŒ‡ï¼Œé»‘æ²‰æ²‰çš„ç”šéº¼ä¹Ÿç§ä¸è¦‹ã€‚\n");
 
-                message("vision", HIR + me->name() + HIR "¾¶×ÔÄÃ×Å»ğÕÛÌøÁËÏÂÈ¥"
-                        "£¬¶´ÄÚËæ¼´ÓÖÊÇÒ»Æ¬ÆáºÚ¡£\n" NOR, environment(me), ({me}));
+                message("vision", HIR + me->name() + HIR "å¾‘è‡ªæ‹¿è‘—ç«æŠ˜è·³äº†ä¸‹å»"
+                        "ï¼Œæ´å…§éš¨å³åˆæ˜¯ä¸€ç‰‡æ¼†é»‘ã€‚\n" NOR, environment(me), ({me}));
         }
 
             if ((int)me->query_skill("dodge", 1) < 150 )
@@ -74,8 +74,8 @@ int do_tiao(string arg)
                 me->move(__DIR__"shishi");
                 me->receive_wound("qi", 300);
                 me->unconcious();
-                message("vision", HIR "\nÍ»È»ÌıµÃ¡¸Åé¡¹µÄÒ»Éù£¬Ö»¼ûÒ»¸öÈË´ÓÉÏ"
-                                  "ÃæµÄÉ½·åÉÏ×¹ÁËÏÂÀ´£¬ÕæÊÇ×³¹Û¡£\n" NOR,
+                message("vision", HIR "\nçªç„¶è½å¾—ã€Œç °ã€çš„ä¸€è²ï¼Œåªè¦‹ä¸€å€‹äººå¾ä¸Š"
+                                  "é¢çš„å±±å³°ä¸Šå¢œäº†ä¸‹ä¾†ï¼ŒçœŸæ˜¯å£¯è§€ã€‚\n" NOR,
                                   environment(me), ({me}));
 
                 if (objectp(ob = present("fire", this_player())))
@@ -84,13 +84,13 @@ int do_tiao(string arg)
         } else
         {
                 me->move(__DIR__"shishi");
-                message("vision", HIY + me->name() + HIY "´ÓÉÏÃæÌøÁËÏÂÀ´¡£\n" NOR,
+                message("vision", HIY + me->name() + HIY "å¾ä¸Šé¢è·³äº†ä¸‹ä¾†ã€‚\n" NOR,
                                   environment(me), ({me}));
 
                 if (objectp(ob = present("fire", this_player())))
                 {
-                        message_vision(HIR "\nÍ»È»¼ä$N" HIR "ÊÖÒ»ËÉ£¬»ğÕÛ×Ó²»"
-                                       "Öªµôµ½ÄÄÀïÈ¥ÁË¡£\n", me);
+                        message_vision(HIR "\nçªç„¶é–“$N" HIR "æ‰‹ä¸€é¬†ï¼Œç«æŠ˜å­ä¸"
+                                       "çŸ¥æ‰åˆ°å“ªè£¡å»äº†ã€‚\n", me);
                         destruct(ob);
                 }
         }

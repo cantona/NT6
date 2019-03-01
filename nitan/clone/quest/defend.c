@@ -1,4 +1,4 @@
-// Íæ¼ÒÈÎÎñ£ºdefend.c
+// ç©å®¶ä»»å‹™ï¼šdefend.c
 
 #include <ansi.h>
 #include <quest.h>
@@ -7,36 +7,36 @@ inherit QUEST_OB;
 
 #include <defend.h>
 
-#define ENEMY_FAM             my["enemy_fam"]      // ¹¥»÷ÕßÀ´×ÔµÄÃÅÅÉ
-#define DEFEND_FAM            my["defend_fam"]     // Òª±£ÎÀµÄÃÅÅÉ
+#define ENEMY_FAM             my["enemy_fam"]      // æ”»æ“Šè€…ä¾†è‡ªçš„é–€æ´¾
+#define DEFEND_FAM            my["defend_fam"]     // è¦ä¿è¡›çš„é–€æ´¾
 #define MASTER_ID             my["master_id"]
 #define PLACE                 my["place"]
-#define MIN_EXP               30000                // ×îĞ¡ EXP ÒªÇó
+#define MIN_EXP               30000                // æœ€å° EXP è¦æ±‚
 
 nosave object dmaster = 0;
 
-// ÏÂÃæÇø·ÖÕıÅÉºÍĞ°ÅÉ£¬¾ÍÊÇÎªÁË·ÀÖ¹³öÏÖÒ»¸öÃÅÅÉ×Ô¼º¹¥»÷
-// ×Ô¼ºµÄ»ÄÌÆÇé¿ö£¨µ±È»ÕâÒ²²»ÄÑ±ÜÃâ£©£¬Ò»°ã¶øÑÔ£¬¶¼ÊÇÕı
-// ÅÉ¹¥»÷Ğ°ÅÉ£¬»òÕßĞ°ÅÉ¹¥»÷ÕıÅÉµÄ£¨ÖîÈç¡°Áù´óÃÅÅÉÎ§¹¥¹â
-// Ã÷¶¥¡±¡¢¡°ÈÕÔÂÉñ½ÌÃğÎåÔÀ½£ÅÉ¡±Ê²Ã´µÄ£©£¬µ«ÊÇÎÒÃÇÖªµÀ£¬
-// ÓĞĞ©ÃÅÅÉÊÇºÜÄÑËµµÃÇåÕıĞ°µÄ£¬±ÈÈçÌÒ»¨µº£¬¹ÃËÕÄ½ÈİµÈµÈ£¬
-// ÕâÑùÎÒÃÇ¾ÍÈÏÎª£¬Í¬Ê±²»ÊôÓÚÒÔÏÂÁ½¸öÊı×éµÄÃÅÅÉ£¬ÊÇ¡°Òà
-// ÕıÒàĞ°¡±»òÕßËµÊÇ¡°²»Õı²»Ğ°¡±£¬Ò²¾ÍÊÇËµ£¬ËüÔÚÕâ³¡·×Õù
-// ÖĞµÄÌ¬¶ÈÊÇ£º¼È¿ÉÄÜ¹¥»÷ÕıÅÉ£¬Ò²¿ÉÄÜ¹¥»÷Ğ°ÅÉ£¬µ±È»£¬Ò²
-// ¿ÉÄÜ¹¥»÷ÒàÕıÒàĞ°µÄÃÅÅÉ¡£
+// ä¸‹é¢å€åˆ†æ­£æ´¾å’Œé‚ªæ´¾ï¼Œå°±æ˜¯ç‚ºäº†é˜²æ­¢å‡ºç¾ä¸€å€‹é–€æ´¾è‡ªå·±æ”»æ“Š
+// è‡ªå·±çš„è’å”æƒ…æ³ï¼ˆç•¶ç„¶é€™ä¹Ÿä¸é›£é¿å…ï¼‰ï¼Œä¸€èˆ¬è€Œè¨€ï¼Œéƒ½æ˜¯æ­£
+// æ´¾æ”»æ“Šé‚ªæ´¾ï¼Œæˆ–è€…é‚ªæ´¾æ”»æ“Šæ­£æ´¾çš„ï¼ˆè«¸å¦‚â€œå…­å¤§é–€æ´¾åœæ”»å…‰
+// æ˜é ‚â€ã€â€œæ—¥æœˆç¥æ•™æ»…äº”å²³åŠæ´¾â€ä»€éº¼çš„ï¼‰ï¼Œä½†æ˜¯æˆ‘å€‘çŸ¥é“ï¼Œ
+// æœ‰äº›é–€æ´¾æ˜¯å¾ˆé›£èªªå¾—æ¸…æ­£é‚ªçš„ï¼Œæ¯”å¦‚æ¡ƒèŠ±å³¶ï¼Œå§‘è˜‡æ…•å®¹ç­‰ç­‰ï¼Œ
+// é€™æ¨£æˆ‘å€‘å°±èªç‚ºï¼ŒåŒæ™‚ä¸å±¬äºä»¥ä¸‹å…©å€‹æ•¸çµ„çš„é–€æ´¾ï¼Œæ˜¯â€œäº¦
+// æ­£äº¦é‚ªâ€æˆ–è€…èªªæ˜¯â€œä¸æ­£ä¸é‚ªâ€ï¼Œä¹Ÿå°±æ˜¯èªªï¼Œå®ƒåœ¨é€™å ´ç´›çˆ­
+// ä¸­çš„æ…‹åº¦æ˜¯ï¼šæ—¢å¯èƒ½æ”»æ“Šæ­£æ´¾ï¼Œä¹Ÿå¯èƒ½æ”»æ“Šé‚ªæ´¾ï¼Œç•¶ç„¶ï¼Œä¹Ÿ
+// å¯èƒ½æ”»æ“Šäº¦æ­£äº¦é‚ªçš„é–€æ´¾ã€‚
 
-// ÕıÅÉÁĞ±í
+// æ­£æ´¾åˆ—è¡¨
 string *zps = ({
-        "Îäµ±ÅÉ", "»ªÉ½Æø×Ú", "È«Õæ½Ì", "¹ÅÄ¹ÅÉ",
-        "ÁéğÕ¹¬", "ÌÒ»¨µº", "¹ØÍâºú¼Ò", "¶ÎÊÏ»Ê×å",
-        "¶ëáÒÅÉ", "Ø¤°ï", "ÉÙÁÖÅÉ", "åĞÒ£ÅÉ",
-        "Ã÷½Ì", "»ªÉ½½£×Ú","ÌÆÃÅÊÀ¼Ò",
+        "æ­¦ç•¶æ´¾", "è¯å±±æ°£å®—", "å…¨çœŸæ•™", "å¤å¢“æ´¾",
+        "éˆé·²å®®", "æ¡ƒèŠ±å³¶", "é—œå¤–èƒ¡å®¶", "æ®µæ°çš‡æ—",
+        "å³¨åµ‹æ´¾", "ä¸å¹«", "å°‘æ—æ´¾", "é€é™æ´¾",
+        "æ˜æ•™", "è¯å±±åŠå®—","å”é–€ä¸–å®¶",
 });
 
-// Ğ°ÅÉÁĞ±í
+// é‚ªæ´¾åˆ—è¡¨
 string *xps = ({
-        "ĞÇËŞÅÉ", "Ñªµ¶ÃÅ", "´óÂÖËÂ", "Å·ÑôÊÀ¼Ò",
-        "ÉñÁú½Ì", "Ä½ÈİÊÀ¼Ò", "ÈÕÔÂÉñ½Ì",
+        "æ˜Ÿå®¿æ´¾", "è¡€åˆ€é–€", "å¤§è¼ªå¯º", "æ­é™½ä¸–å®¶",
+        "ç¥é¾æ•™", "æ…•å®¹ä¸–å®¶", "æ—¥æœˆç¥æ•™",
 });
 
 void die(object ob);
@@ -46,17 +46,17 @@ void remove_enemy();
 int  ask_defend(object ob, object me);
 int  ask_finish(object ob, object me);
 
-// ÈÎÎñ¶ÔÏó´´½¨
+// ä»»å‹™å°è±¡å‰µå»º
 void create()
 {
         seteuid(getuid());
         setup();
 }
 
-// Æô¶¯Ò»¸öÈÎÎñ
-// ÊäÈëÉú³ÉµĞÈËµÄÊıÁ¿ºÍ±»¹¥»÷µÄÃÅÅÉÃû³Æ£¬ÒÑ¾­ÏòÕâ¸öÃÅ
-// ÅÉµÄÕÆÃÅÒªÁËÈÎÎñµÄÈË¿ÉÒÔÈ¥É±ÕâĞ©µĞÈË£¬ÈÎÎñÊ±¼äµ½ÁË
-// ¾Í¿ÉÒÔÒª½±Àø¡£
+// å•Ÿå‹•ä¸€å€‹ä»»å‹™
+// è¼¸å…¥ç”Ÿæˆæ•µäººçš„æ•¸é‡å’Œè¢«æ”»æ“Šçš„é–€æ´¾åç¨±ï¼Œå·²ç¶“å‘é€™å€‹é–€
+// æ´¾çš„æŒé–€è¦äº†ä»»å‹™çš„äººå¯ä»¥å»æ®ºé€™äº›æ•µäººï¼Œä»»å‹™æ™‚é–“åˆ°äº†
+// å°±å¯ä»¥è¦çå‹µã€‚
 void init_quest(int num, string family_name)
 {
         int i;
@@ -68,24 +68,24 @@ void init_quest(int num, string family_name)
 
         my = query_entire_dbase();
 
-        // Éú³ÉÈÎÎñµÄÃû×Ö
-        set_name("Î§¹¥" + family_name);
+        // ç”Ÿæˆä»»å‹™çš„åå­—
+        set_name("åœæ”»" + family_name);
 
-        // Ëæ»úÉú³É¹¥´òÕßµÄÃÅÅÉ
+        // éš¨æ©Ÿç”Ÿæˆæ”»æ‰“è€…çš„é–€æ´¾
         family = keys(familys);
         if (member_array(family_name, xps) != -1)
         {
                 family = family - xps - ({ family_name });
                 enemy_fam = family[random(sizeof(family))];
         }
-        // ·ñÔò¾ÍÅÉÕıÅÉÉÏ³¡
+        // å¦å‰‡å°±æ´¾æ­£æ´¾ä¸Šå ´
         else
         {
                 family = family - zps - ({ family_name });
                 enemy_fam = family[random(sizeof(family))];
         }
 
-        // ¼ÇÂ¼ÈÎÎñµÄÊı¾İĞÅÏ¢
+        // è¨˜éŒ„ä»»å‹™çš„æ•¸æ“šä¿¡æ¯
         ENEMY_FAM = enemy_fam;
         DEFEND_FAM = family_name;
         MASTER_ID = familys[family_name]["master_id"];
@@ -100,24 +100,24 @@ void init_quest(int num, string family_name)
                 return;
         }
 
-        // ÉèÖÃNPCµÄ¶Ô»°ĞÅÏ¢
-        set("inquiry/"+name(), "Äã¿ÉÒÔÊäÈëÖ¸ÁîdefendÀ´ÁìÈ¡±£ÎÀÃÅÅÉÈÎÎñ¡£", dmaster);
-        dmaster->set("inquiry/"+ENEMY_FAM,"Õâ¸ö"+ENEMY_FAM+"ÕæÊÇÌ«¿É¶ñÁË£¬"
-                                            "ÂÅ´ÎÀ´ÎÒÃÇ" + DEFEND_FAM +"ÌôĞÆ¡£");
-        dmaster->set("inquiry/"+DEFEND_FAM,"ÔÚÏÂ¾ÍÊÇ"+DEFEND_FAM+"µÄÕÆÃÅÑ½£¬"
-                                            "ÄãÔ¸²»Ô¸ÒâÖú±¾ÃÅÒ»±ÛÖ®Á¦£¬¹²ÓùÍâµĞ£¿");
+        // è¨­ç½®NPCçš„å°è©±ä¿¡æ¯
+        set("inquiry/"+name(), "ä½ å¯ä»¥è¼¸å…¥æŒ‡ä»¤defendä¾†é ˜å–ä¿è¡›é–€æ´¾ä»»å‹™ã€‚", dmaster);
+        dmaster->set("inquiry/"+ENEMY_FAM,"é€™å€‹"+ENEMY_FAM+"çœŸæ˜¯å¤ªå¯æƒ¡äº†ï¼Œ"
+                                            "å±¢æ¬¡ä¾†æˆ‘å€‘" + DEFEND_FAM +"æŒ‘èˆ‹ã€‚");
+        dmaster->set("inquiry/"+DEFEND_FAM,"åœ¨ä¸‹å°±æ˜¯"+DEFEND_FAM+"çš„æŒé–€å‘€ï¼Œ"
+                                            "ä½ é¡˜ä¸é¡˜æ„åŠ©æœ¬é–€ä¸€è‡‚ä¹‹åŠ›ï¼Œå…±å¾¡å¤–æ•µï¼Ÿ");
         set_temp("override/ask_defend", (:ask_defend:), dmaster);
         set_temp("override/ask_finish", (:ask_finish:), dmaster);
 
-        // °´ÕÕÖ¸¶¨Î»ÖÃËÍ×ßµĞÈË
+        // æŒ‰ç…§æŒ‡å®šä½ç½®é€èµ°æ•µäºº
         for (i = 0; i < num; i++)
         {
                 enemy = new("/clone/npc/enemy");
                 enemy->create_family(enemy_fam, familys[enemy_fam]["generation"]
-                                                + (-1 + random(2)), "µÜ×Ó" );
+                                                + (-1 + random(2)), "å¼Ÿå­" );
                 enemy->setup_family(enemy_fam);
                 set("is_attacking", family_name, enemy);
-                set("long", "ÕâÈËÊÇÇ°À´¹¥´ò"+family_name+"µÄÒ»Ãû"+enemy_fam+"µÜ×Ó¡£\n", enemy);
+                set("long", "é€™äººæ˜¯å‰ä¾†æ”»æ‰“"+family_name+"çš„ä¸€å"+enemy_fam+"å¼Ÿå­ã€‚\n", enemy);
 
                 // enemy->set_temp("override/die", (: die :));
 
@@ -125,15 +125,15 @@ void init_quest(int num, string family_name)
         }
 
         CHANNEL_D->do_channel(dmaster, "family",
-                        sprintf("ÌıËµ%sµÄÒ»°àµÜ×Ó´ó¾ÙÉ±ÉÏÎÒÅÉ£¬ÎÒÅÉĞÎÊÆ²»Ãî¡£", enemy_fam));
+                        sprintf("è½èªª%sçš„ä¸€ç­å¼Ÿå­å¤§èˆ‰æ®ºä¸Šæˆ‘æ´¾ï¼Œæˆ‘æ´¾å½¢å‹¢ä¸å¦™ã€‚", enemy_fam));
 
-        // ÇĞ»»µ½Õı³£×´Ì¬
+        // åˆ‡æ›åˆ°æ­£å¸¸ç‹€æ…‹
         change_status(QUEST_READY);
 
-        // ÉèÖÃÈÎÎñ×î³¤´æ»îÊ±¼ä£º5·ÖÖÓ
+        // è¨­ç½®ä»»å‹™æœ€é•·å­˜æ´»æ™‚é–“ï¼š5åˆ†é˜
         set("live_time", 300);
 
-        // µÇ¼ÇÒ¥ÑÔÏûÏ¢
+        // ç™»è¨˜è¬ è¨€æ¶ˆæ¯
         register_information();
 }
 
@@ -150,7 +150,7 @@ void send_enemy(int num, string family_name)
                 family = family - xps - ({ family_name });
                 enemy_fam = family[random(sizeof(family))];
         }
-        // ·ñÔò¾ÍÅÉÕıÅÉÉÏ³¡
+        // å¦å‰‡å°±æ´¾æ­£æ´¾ä¸Šå ´
         else
         {
                 family = family - zps - ({ family_name });
@@ -161,10 +161,10 @@ void send_enemy(int num, string family_name)
         {
                 enemy = new("/clone/npc/enemy");
                 enemy->create_family(enemy_fam, familys[enemy_fam]["generation"]
-                                                + (-1 + random(2)), "µÜ×Ó" );
+                                                + (-1 + random(2)), "å¼Ÿå­" );
                 enemy->setup_family(enemy_fam);
                 set("is_attacking", family_name, enemy);
-                set("long", "ÕâÈËÊÇÇ°À´¹¥´ò"+family_name+"µÄÒ»Ãû"+enemy_fam+"µÜ×Ó¡£\n", enemy);
+                set("long", "é€™äººæ˜¯å‰ä¾†æ”»æ‰“"+family_name+"çš„ä¸€å"+enemy_fam+"å¼Ÿå­ã€‚\n", enemy);
 
                 set_temp("override/die", (:die:), enemy);
 
@@ -174,7 +174,7 @@ void send_enemy(int num, string family_name)
         return;
 }
 
-// ËÍ×ßµĞÈË£¨ÔÚ ENEMY µÄ chat_msg ÖĞÒ²ÓĞºô½Ğ£©
+// é€èµ°æ•µäººï¼ˆåœ¨ ENEMY çš„ chat_msg ä¸­ä¹Ÿæœ‰å‘¼å«ï¼‰
 void move_enemy(object enemy, string family)
 {
         string *places = familys[family]["place"];
@@ -183,19 +183,19 @@ void move_enemy(object enemy, string family)
 
         if (objectp(room = environment(enemy)))
         {
-                tell_room(room, enemy->name() + "Ò»ÉÁÉí¾Í²»¼ûÁË¡£\n");
+                tell_room(room, enemy->name() + "ä¸€é–ƒèº«å°±ä¸è¦‹äº†ã€‚\n");
         }
 #ifdef DEBUG
         CHANNEL_D->do_channel(this_object(), "sys",
                 sprintf("%s : %O", enemy->short(), place));
 #endif
         enemy->move(place);
-        tell_room(place,"Ö»¼ûÒ»Ãû"+query("family/family_name", enemy)+"µÜ×Ó²»ÖªÊ²Ã´Ê±ºò×êÁË³öÀ´¡£\n");
+        tell_room(place,"åªè¦‹ä¸€å"+query("family/family_name", enemy)+"å¼Ÿå­ä¸çŸ¥ä»€éº¼æ™‚å€™é‘½äº†å‡ºä¾†ã€‚\n");
 
         return;
 }
 
-// »Ö¸´NPC£ºÈÎÎñ½áÊøµÄÊ±ºò±ØĞë»Ö¸´Õı³£µÄNPC
+// æ¢å¾©NPCï¼šä»»å‹™çµæŸçš„æ™‚å€™å¿…é ˆæ¢å¾©æ­£å¸¸çš„NPC
 void restore_npc()
 {
         mapping my = query_entire_dbase();
@@ -212,7 +212,7 @@ void restore_npc()
         dmaster = 0;
 }
 
-// ½áÊøÈÎÎñ
+// çµæŸä»»å‹™
 void cancel_quest()
 {
         remove_enemy();
@@ -220,7 +220,7 @@ void cancel_quest()
         ::cancel_quest();
 }
 
-// µ½Ê±¼äÁË£¬ËÍ×ßµĞÈË
+// åˆ°æ™‚é–“äº†ï¼Œé€èµ°æ•µäºº
 void remove_enemy()
 {
         object *enemys;
@@ -238,12 +238,12 @@ void remove_enemy()
                         if (enemys[i]->is_fighting())
                         {
                                 enemys[i]->remove_all_killer();
-                                tell_room(environment(enemys[i]), HIW "Ö»¼û" + enemys[i]->name()
-                                        + "Í»È»ÃæÉ«Ò»±ä£¬Ñ¸ËÙ¹¥³ö¼¸ÕĞ£¬Ìø³öÕ½È¦×ªÉíÌÓÁË¡£\n");
+                                tell_room(environment(enemys[i]), HIW "åªè¦‹" + enemys[i]->name()
+                                        + "çªç„¶é¢è‰²ä¸€è®Šï¼Œè¿…é€Ÿæ”»å‡ºå¹¾æ‹›ï¼Œè·³å‡ºæˆ°åœˆè½‰èº«é€ƒäº†ã€‚\n");
                         }
                         else {
-                                tell_room(environment(enemys[i]), HIW "Ö»¼û" + enemys[i]->name()
-                                        + "ÆşÖµÒ»Ëã£¬Í»È»Á³É«´ó±ä£¬¼±¼±Ã¦Ã¦µØÌÓ×ßÁË¡£\n");
+                                tell_room(environment(enemys[i]), HIW "åªè¦‹" + enemys[i]->name()
+                                        + "æå€¼ä¸€ç®—ï¼Œçªç„¶è‡‰è‰²å¤§è®Šï¼Œæ€¥æ€¥å¿™å¿™åœ°é€ƒèµ°äº†ã€‚\n");
                         }
                         destruct(enemys[i]);
                 }
@@ -251,64 +251,64 @@ void remove_enemy()
         return;
 }
 
-// Òªµ½ÈÎÎñ²ÅÄÜÈ¥É±ÈË£¨È¥µô·ÇÒª±¾ÃÅµÄÏŞÖÆ£©
+// è¦åˆ°ä»»å‹™æ‰èƒ½å»æ®ºäººï¼ˆå»æ‰éè¦æœ¬é–€çš„é™åˆ¶ï¼‰
 int ask_defend(object ob, object me)
 {
         string *places, place;
 
         string *msg_now =
         ({
-                "×î½ü±¾ÃÅ³£ÓĞÈËÀ´ÌôĞÆ", "×î½ü±¾ÃÅËÆºõ²»Ì«Æ½°²",
-                "×î½ü±¾ÃÅÊ±ÓĞµĞÈË½ø¹¥", "×î½ü±¾ÃÅËÆºõºÜ²»°²ÎÈ",
-                "ÌıËµ¾Í¿ìÒªÓĞµĞÈË½ø¹¥", "³£ÓĞÈË¶Ô±¾ÃÅ»¢ÊÓíñíñ",
+                "æœ€è¿‘æœ¬é–€å¸¸æœ‰äººä¾†æŒ‘èˆ‹", "æœ€è¿‘æœ¬é–€ä¼¼ä¹ä¸å¤ªå¹³å®‰",
+                "æœ€è¿‘æœ¬é–€æ™‚æœ‰æ•µäººé€²æ”»", "æœ€è¿‘æœ¬é–€ä¼¼ä¹å¾ˆä¸å®‰ç©©",
+                "è½èªªå°±å¿«è¦æœ‰æ•µäººé€²æ”»", "å¸¸æœ‰äººå°æœ¬é–€è™è¦–çœˆçœˆ",
         });
         string *msg_do =
         ({
-                "¸Ï¿ìµ½ËÄ´¦Ñ²²éÑ²²é", "×¢ÒâËÄÖÜ¶¼ÒªÈ¥²é²é",
-                "É½ÉÏÉ½ÏÂ¶¼×ĞÏ¸¿´¿´", "ÔÚ±¾ÃÅÒªµÀºÃºÃÊØ×Å",
-                "ÔÚÏÕÒªµØ·½×öºÃ·ÀÎÀ", "µÃ·ÀÖ¹µĞÈË¹¥ÉÏÉ½À´",
+                "è¶•å¿«åˆ°å››è™•å·¡æŸ¥å·¡æŸ¥", "æ³¨æ„å››å‘¨éƒ½è¦å»æŸ¥æŸ¥",
+                "å±±ä¸Šå±±ä¸‹éƒ½ä»”ç´°çœ‹çœ‹", "åœ¨æœ¬é–€è¦é“å¥½å¥½å®ˆè‘—",
+                "åœ¨éšªè¦åœ°æ–¹åšå¥½é˜²è¡›", "å¾—é˜²æ­¢æ•µäººæ”»ä¸Šå±±ä¾†",
         });
         string *msg_place =
         ({
-                "ËäÈ»Ëµ²»ÉÏÉ½Ã÷Ë®Ğã£¬µ«ÊÇ", "Ò²ÊÇÒ»¸öÏÕÒªÎ»ÖÃ£¬ËùÒÔ",
-                "ºÃ´õÒ²ÊÇ¸öÖØÒª¹Ø¿¨£¬Òò´Ë", "±Ï¾¹Ëã¸ö±¾ÃÅÒªµØ£¬ÄÇÃ´",
-                "³£³£ÓĞµĞÈËÀ´´Ë¹¥´ò£¬ËùÒÔ", "¾ÍÅÂµĞÈË¹¥µ½ÕâÀï£¬Òò´Ë",
+                "é›–ç„¶èªªä¸ä¸Šå±±æ˜æ°´ç§€ï¼Œä½†æ˜¯", "ä¹Ÿæ˜¯ä¸€å€‹éšªè¦ä½ç½®ï¼Œæ‰€ä»¥",
+                "å¥½æ­¹ä¹Ÿæ˜¯å€‹é‡è¦é—œå¡ï¼Œå› æ­¤", "ç•¢ç«Ÿç®—å€‹æœ¬é–€è¦åœ°ï¼Œé‚£éº¼",
+                "å¸¸å¸¸æœ‰æ•µäººä¾†æ­¤æ”»æ‰“ï¼Œæ‰€ä»¥", "å°±æ€•æ•µäººæ”»åˆ°é€™è£¡ï¼Œå› æ­¤",
         });
 
         if( !query("family/family_name", me) )
         {
                 ob->command("haha"+query("id", me));
-                message_sort(HIC "$N" HIC "¶Ô$n" HIC "µÀ£º¡°" + RANK_D->query_respect(me)
-                                +"ÎŞÃÅÎŞÅÉ£¬ÎÊÎÒÒªÊ²Ã´ÈÎÎñÄØ£¿¡±\n" NOR, ob, me);
-                tell_object(me, HIW "Äã»¹ÊÇÏÈ°İ¸öÊ¦¸¸ÔÙÒªÈÎÎñ°É¡£\n" NOR);
+                message_sort(HIC "$N" HIC "å°$n" HIC "é“ï¼šâ€œ" + RANK_D->query_respect(me)
+                                +"ç„¡é–€ç„¡æ´¾ï¼Œå•æˆ‘è¦ä»€éº¼ä»»å‹™å‘¢ï¼Ÿâ€\n" NOR, ob, me);
+                tell_object(me, HIW "ä½ é‚„æ˜¯å…ˆæ‹œå€‹å¸«çˆ¶å†è¦ä»»å‹™å§ã€‚\n" NOR);
                 return 1;
         }
 
         if( query("family/family_name", ob) != query("family/family_name", me) )
         {
                 ob->command("?"+query("id", me));
-                message_sort(HIC "$N" HIC "Öå×ÅÃ¼Í·¶Ô$n" HIC "µÀ£º¡°ÕâÎ»"
-                        +query("family/family_name", me)+"µÄ"+RANK_D->query_respect(me)+
-                        "£¬ÄãÅÂÊÇÕÒ´íÈËÁË°É£¿¡±\n" NOR, ob, me);
-                tell_object(me, HIW "Õâ²»ÊÇÄã×Ô¼ºµÄÃÅÅÉ£¬Äã²»Ó¦¸ÃÎÊÕâÎ»Ê¦¸µÒªÈÎÎñÑ½¡£\n" NOR);
+                message_sort(HIC "$N" HIC "çšºè‘—çœ‰é ­å°$n" HIC "é“ï¼šâ€œé€™ä½"
+                        +query("family/family_name", me)+"çš„"+RANK_D->query_respect(me)+
+                        "ï¼Œä½ æ€•æ˜¯æ‰¾éŒ¯äººäº†å§ï¼Ÿâ€\n" NOR, ob, me);
+                tell_object(me, HIW "é€™ä¸æ˜¯ä½ è‡ªå·±çš„é–€æ´¾ï¼Œä½ ä¸æ‡‰è©²å•é€™ä½å¸«å‚…è¦ä»»å‹™å‘€ã€‚\n" NOR);
                 return 1;
         }
 
         if( query("combat_exp", me)<MIN_EXP )
         {
                 ob->command("sigh");
-                message_sort(HIC "$N" HIC "¶Ô$n" HIC "µÀ£º¡°°¦£¬Äã»¹ÊÇµÈË®Æ½¸ßĞ©"
-                                "ÔÙÀ´×öÕâ¸öÈÎÎñ²»³Ù¡£¡±\n" NOR, ob, me);
-                tell_object(me, HIW "Õâ¸öÈÎÎñµÃÓĞ " +MIN_EXP+" µã¾­ÑéÖµ²ÅÄÜ×ö¡£\n" NOR);
+                message_sort(HIC "$N" HIC "å°$n" HIC "é“ï¼šâ€œå”‰ï¼Œä½ é‚„æ˜¯ç­‰æ°´å¹³é«˜äº›"
+                                "å†ä¾†åšé€™å€‹ä»»å‹™ä¸é²ã€‚â€\n" NOR, ob, me);
+                tell_object(me, HIW "é€™å€‹ä»»å‹™å¾—æœ‰ " +MIN_EXP+" é»ç¶“é©—å€¼æ‰èƒ½åšã€‚\n" NOR);
                 return 1;
         }
 
         if( query_temp("defend_quest", me) && !wizardp(me) )
         {
                 ob->command("yi");
-                message_sort(HIC "$N" HIC "ÒÉ»óµØ¶Ô$n" HIC "µÀ£º¡°Äã²»ÊÇÒÑ¾­ÔÚ×ö"
-                                "Õâ¸öÈÎÎñÁËÃ´£¿\nÔõÃ´»¹À´ÕÒÎÒ£¿¡±\n" NOR, ob, me);
-                tell_object(me, HIW "¿ìÈ¥×öºÃ×¼±¸£¬±£ÎÀÄãµÄÃÅÅÉ°É¡£\n" NOR);
+                message_sort(HIC "$N" HIC "ç–‘æƒ‘åœ°å°$n" HIC "é“ï¼šâ€œä½ ä¸æ˜¯å·²ç¶“åœ¨åš"
+                                "é€™å€‹ä»»å‹™äº†éº¼ï¼Ÿ\næ€éº¼é‚„ä¾†æ‰¾æˆ‘ï¼Ÿâ€\n" NOR, ob, me);
+                tell_object(me, HIW "å¿«å»åšå¥½æº–å‚™ï¼Œä¿è¡›ä½ çš„é–€æ´¾å§ã€‚\n" NOR);
                 return 1;
         }
 
@@ -321,13 +321,13 @@ int ask_defend(object ob, object me)
                 send_enemy(10,query("family/family_name", me));
 
                 command("nod"+query("id", me));
-                message_sort(HIC "$N" HIC "ÔŞĞíµØ¶Ô$n" HIC "µÀ£º¡°ºÃ°É£¬"
-                        + msg_now[random(sizeof(msg_now))] +"£¬ÄãÒª×¢Òâ\n"
-                        + msg_do[random(sizeof(msg_do))] + "¡£¡±\n" NOR, ob, me);
+                message_sort(HIC "$N" HIC "è®šè¨±åœ°å°$n" HIC "é“ï¼šâ€œå¥½å§ï¼Œ"
+                        + msg_now[random(sizeof(msg_now))] +"ï¼Œä½ è¦æ³¨æ„\n"
+                        + msg_do[random(sizeof(msg_do))] + "ã€‚â€\n" NOR, ob, me);
 
-                tell_object(me, HIW + ob->name() + HIW "ÇÄÇÄ¸æËßÄã£º¡°"
-                        + place + HIW"Õâ¸öµØ·½" + msg_place[random(sizeof(msg_place))]
-                        +"\nÄã×îºÃ¶à×¢Òâ×¢Òâ¡£¡±\n" NOR);
+                tell_object(me, HIW + ob->name() + HIW "æ‚„æ‚„å‘Šè¨´ä½ ï¼šâ€œ"
+                        + place + HIW"é€™å€‹åœ°æ–¹" + msg_place[random(sizeof(msg_place))]
+                        +"\nä½ æœ€å¥½å¤šæ³¨æ„æ³¨æ„ã€‚â€\n" NOR);
 
                 set_temp("defend_quest/start", 1, me);
                 me->apply_condition("swjob", 30 + random(30));
@@ -342,42 +342,42 @@ int ask_finish(object ob, object me)
         if( !query("family/family_name", me) )
         {
                 ob->command("haha"+query("id", me));
-                message_vision(HIC "$N" HIC "¶Ô$n" HIC "µÀ£º¡°" + RANK_D->query_respect(me)
-                                +"ÎŞÃÅÎŞÅÉ£¬ÎÊÎÒÒªÊ²Ã´ÈÎÎñÄØ£¿¡±\n\n" NOR,ob,me);
-                tell_object(me, HIW "Äã»¹ÊÇÏÈ°İ¸öÊ¦¸¸ÔÙÒªÈÎÎñ°É¡£\n" NOR);
+                message_vision(HIC "$N" HIC "å°$n" HIC "é“ï¼šâ€œ" + RANK_D->query_respect(me)
+                                +"ç„¡é–€ç„¡æ´¾ï¼Œå•æˆ‘è¦ä»€éº¼ä»»å‹™å‘¢ï¼Ÿâ€\n\n" NOR,ob,me);
+                tell_object(me, HIW "ä½ é‚„æ˜¯å…ˆæ‹œå€‹å¸«çˆ¶å†è¦ä»»å‹™å§ã€‚\n" NOR);
                 return 1;
         }
 
         if( query("family/family_name", ob) != query("family/family_name", me) )
         {
                 ob->command("?"+query("id", me));
-                message_vision(HIC "$N" HIC "Öå×ÅÃ¼Í·¶Ô$n" HIC "µÀ£º¡°ÕâÎ»" +
-                               query("family/family_name", me)+"µÄ"+RANK_D->query_respect(me)+
-                               "£¬ÄãÅÂÊÇÕÒ´íÈËÁË°É£¿¡±\n" NOR,ob,me);
-                tell_object(me, HIW "Õâ²»ÊÇÄã×Ô¼ºµÄÃÅÅÉ£¬Äã²»Ó¦¸ÃÎÊÕâÎ»Ê¦¸µÒªÈÎÎñÑ½¡£\n" NOR);
+                message_vision(HIC "$N" HIC "çšºè‘—çœ‰é ­å°$n" HIC "é“ï¼šâ€œé€™ä½" +
+                               query("family/family_name", me)+"çš„"+RANK_D->query_respect(me)+
+                               "ï¼Œä½ æ€•æ˜¯æ‰¾éŒ¯äººäº†å§ï¼Ÿâ€\n" NOR,ob,me);
+                tell_object(me, HIW "é€™ä¸æ˜¯ä½ è‡ªå·±çš„é–€æ´¾ï¼Œä½ ä¸æ‡‰è©²å•é€™ä½å¸«å‚…è¦ä»»å‹™å‘€ã€‚\n" NOR);
                 return 1;
         }
 
         if( !query_temp("defend_quest/start", me) )
         {
                 ob->command("sigh");
-                message_vision(HIC "$N" HIC "ÒÉ»óµØ¶Ô$n" HIC "µÀ£º¡°Äã¶¼²»ÊÇÔÚ×öÕâ¸öÈÎÎñ£¬¾ÍÏëÒª½±Àø£¿¡±\n" NOR, ob, me);
-                tell_object(me, HIW "Äã×ÜµÃÏÈÒª¸öÈÎÎñ°É¡£\n" NOR);
+                message_vision(HIC "$N" HIC "ç–‘æƒ‘åœ°å°$n" HIC "é“ï¼šâ€œä½ éƒ½ä¸æ˜¯åœ¨åšé€™å€‹ä»»å‹™ï¼Œå°±æƒ³è¦çå‹µï¼Ÿâ€\n" NOR, ob, me);
+                tell_object(me, HIW "ä½ ç¸½å¾—å…ˆè¦å€‹ä»»å‹™å§ã€‚\n" NOR);
                 return 1;
         }
 
         if( !query_temp("defend_quest/finish", me) )
         {
                 ob->command("sigh");
-                message_vision(HIC "$N" HIC "ÒÉ»óµØ¶Ô$n" HIC "µÀ£º¡°ÄãµÄÈÎÎñ»¹Ã»ÓĞÍêÄØ£¬ÏÖÔÚ¾ÍÏëÒª½±Àø£¿¡±\n" NOR, ob, me);
-                tell_object(me, HIW "ÄãµÈ×öÍêÁËÔÙÒª½±Àø°É¡£\n" NOR);
+                message_vision(HIC "$N" HIC "ç–‘æƒ‘åœ°å°$n" HIC "é“ï¼šâ€œä½ çš„ä»»å‹™é‚„æ²’æœ‰å®Œå‘¢ï¼Œç¾åœ¨å°±æƒ³è¦çå‹µï¼Ÿâ€\n" NOR, ob, me);
+                tell_object(me, HIW "ä½ ç­‰åšå®Œäº†å†è¦çå‹µå§ã€‚\n" NOR);
                 return 1;
         } else
         {
                 if( !query_temp("defend_quest/killed", me) )
                 {
                         ob->command("hmm");
-                        message_vision(HIC "$N" HIC "µãµãÍ·¶Ô$n" HIC "µÀ£º¡°ºÃ°É£¬Õâ´ÎÈÎÎñÄã´æ¹¦Î´Á¢£¬¾Í²»¸øÄã½±ÀøÁË¡£¡±\n" NOR, ob, me);
+                        message_vision(HIC "$N" HIC "é»é»é ­å°$n" HIC "é“ï¼šâ€œå¥½å§ï¼Œé€™æ¬¡ä»»å‹™ä½ å­˜åŠŸæœªç«‹ï¼Œå°±ä¸çµ¦ä½ çå‹µäº†ã€‚â€\n" NOR, ob, me);
                         delete_temp("defend_quest", me);
                         return 1;
                 } else
@@ -390,11 +390,11 @@ int ask_finish(object ob, object me)
                         pot = exp / 3 + random(2);
                         gongxian = killed * 3;
 
-                        message_vision(HIC "$N" HIC "µãµãÍ·¶Ô$n" HIC "µÀ£º¡°ºÃ£¡Õâ´ÎÈÎÎñÄã³É¹¦½ØÉ±ÁË" +
-                                       chinese_number(killed) + "¸öµĞÈË£¬ÕâÀïÊÇ¸øÄãµÄÒ»µã½±Àø¡£¡±\n" NOR, ob, me);
+                        message_vision(HIC "$N" HIC "é»é»é ­å°$n" HIC "é“ï¼šâ€œå¥½ï¼é€™æ¬¡ä»»å‹™ä½ æˆåŠŸæˆªæ®ºäº†" +
+                                       chinese_number(killed) + "å€‹æ•µäººï¼Œé€™è£¡æ˜¯çµ¦ä½ çš„ä¸€é»çå‹µã€‚â€\n" NOR, ob, me);
                         /*
-                        tell_object(me, HIW "Õâ´ÎÈÎÎñÄãµÃµ½ÁË" + chinese_number(exp) + "µã¾­ÑéÖµºÍ" +
-                                       chinese_number(pot) + "µãÇ±ÄÜÖµµÄ½±Àø£¬ÄãµÄÃÅÅÉ¹±Ï×Ìá¸ßÁË¡£\n" NOR);
+                        tell_object(me, HIW "é€™æ¬¡ä»»å‹™ä½ å¾—åˆ°äº†" + chinese_number(exp) + "é»ç¶“é©—å€¼å’Œ" +
+                                       chinese_number(pot) + "é»æ½›èƒ½å€¼çš„çå‹µï¼Œä½ çš„é–€æ´¾è²¢ç»æé«˜äº†ã€‚\n" NOR);
                         */
                         delete_temp("defend_quest", me);
 
@@ -412,8 +412,8 @@ void die(object ob)
         string *pills, pill;
         int amount = 300 + random(300);
         string *condition = ({
-                "Æø´­ÓõÓõ£¬¾ÍÒª²»Ö§", "Í·ÖØ½ÅÇá£¬ÂíÉÏ¾Íµ¹",
-                "Å»Ñª³ÉÉı£¬ÑÛÃ°½ğĞÇ", "ÉËºÛÀÛÀÛ£¬ÎŞÁ¦ÕĞ¼Ü",
+                "æ°£å–˜ååï¼Œå°±è¦ä¸æ”¯", "é ­é‡è…³è¼•ï¼Œé¦¬ä¸Šå°±å€’",
+                "å˜”è¡€æˆå‡ï¼Œçœ¼å†’é‡‘æ˜Ÿ", "å‚·ç—•ç´¯ç´¯ï¼Œç„¡åŠ›æ‹›æ¶",
         });
 
         if (objectp(me = ob->query_last_damage_from())
@@ -425,13 +425,13 @@ void die(object ob)
                 switch (random(15))
                 {
                         case 1: {
-                                message_sort(HIR "ÑÛ¼û$N" HIR + condition[random(sizeof(condition))]
-                                                +"£¬Í»È»$N´óºÈÒ»Éù£¬¼±ÍË¼¸²½£¬\n¡°ÆËÍ¨¡±¸ø$n¹òÁËÏÂÀ´¡£"
+                                message_sort(HIR "çœ¼è¦‹$N" HIR + condition[random(sizeof(condition))]
+                                                +"ï¼Œçªç„¶$Nå¤§å–ä¸€è²ï¼Œæ€¥é€€å¹¾æ­¥ï¼Œ\nâ€œæ’²é€šâ€çµ¦$nè·ªäº†ä¸‹ä¾†ã€‚"
                                                 "\n" NOR, ob, me);
-                                tell_object(me, HIW + ob->name()+"Í»È»´Ó»³ÀïÌÍ³öÒ»¶Ñ°×»¨»¨µÄÒø×Ó£¬Ğ¡Éù"
-                                                "¶ÔÄãµÀ£º¡°ÕâÎ»" + RANK_D->query_respect(me) + "£¬\nÄã"
-                                                "¾ÍÍø¿ªÒ»Ãæ£¨nod£©ÈçºÎ£¬Õâ" + chinese_number(amount) +
-                                                "Á½°×Òø¾Í¹éÄãÁË£¡¡±\n" NOR);
+                                tell_object(me, HIW + ob->name()+"çªç„¶å¾æ‡·è£¡æå‡ºä¸€å †ç™½èŠ±èŠ±çš„éŠ€å­ï¼Œå°è²"
+                                                "å°ä½ é“ï¼šâ€œé€™ä½" + RANK_D->query_respect(me) + "ï¼Œ\nä½ "
+                                                "å°±ç¶²é–‹ä¸€é¢ï¼ˆnodï¼‰å¦‚ä½•ï¼Œé€™" + chinese_number(amount) +
+                                                "å…©ç™½éŠ€å°±æ­¸ä½ äº†ï¼â€\n" NOR);
                                 ob->clean_up_enemy();
                                 ob->remove_all_enemy(0);
                                 ob->clear_condition(0);
@@ -441,7 +441,7 @@ void die(object ob)
                                 return;
                         }
                         default: {
-                                // ½±Àø
+                                // çå‹µ
                                 if( query("family/family_name", me) == query("is_attacking", ob) )
                                         addn_temp("defend_quest/killed", 1, me);
 
@@ -466,26 +466,26 @@ void die(object ob)
         ob->die();
 }
 
-// Ñ¯ÎÊDEFENDER - ÕıÔÚ±»¹¥´òµÄÃÅÅÉ
+// è©¢å•DEFENDER - æ­£åœ¨è¢«æ”»æ‰“çš„é–€æ´¾
 string ask_defender(object knower, object me)
 {
         mapping my = query_entire_dbase();
 
-        return CYN "Õâ¸ö" HIY + DEFEND_FAM + NOR CYN
-               "ÌıËµÃûÉùµ¹ÊÇºÜ´ó£¬²»»áÕâ´Î¾Í»á¸ø" HIY
-               + DEFEND_FAM + NOR CYN "ÃğÁË°É¡£";
+        return CYN "é€™å€‹" HIY + DEFEND_FAM + NOR CYN
+               "è½èªªåè²å€’æ˜¯å¾ˆå¤§ï¼Œä¸æœƒé€™æ¬¡å°±æœƒçµ¦" HIY
+               + DEFEND_FAM + NOR CYN "æ»…äº†å§ã€‚";
 }
 
-// Ñ¯ÎÊENEMY - ¹¥´òÕßµÄÃÅÅÉ
+// è©¢å•ENEMY - æ”»æ‰“è€…çš„é–€æ´¾
 string ask_enemy(object knower, object me)
 {
         mapping my = query_entire_dbase();
 
-        return CYN "Õâ¸ö" HIY + ENEMY_FAM + NOR CYN
-               "µÄµÜ×ÓÒ»ÏòĞ×°Ô°ÔµÄ£¬Ò»¿´¾Í²»ÊÇÊ²Ã´ºÃ¶«Î÷¡£" NOR;
+        return CYN "é€™å€‹" HIY + ENEMY_FAM + NOR CYN
+               "çš„å¼Ÿå­ä¸€å‘å…‡éœ¸éœ¸çš„ï¼Œä¸€çœ‹å°±ä¸æ˜¯ä»€éº¼å¥½æ±è¥¿ã€‚" NOR;
 }
 
-// ÈÎÎñ½éÉÜ
+// ä»»å‹™ä»‹ç´¹
 string query_introduce(object knower)
 {
         mapping my = query_entire_dbase();
@@ -496,8 +496,8 @@ string query_introduce(object knower)
                 call_out("do_say", 1);
         }
 
-        return CYN "¾İËµÄÇ¸ö" + HIY + ENEMY_FAM + NOR CYN "µÄµÜ×ÓÃÇÕıÔÚ¹¥´ò" +
-               HIY + DEFEND_FAM + NOR CYN "ÄØ£¬Ò²²»ÖªµÀ½áÏÂÁËÊ²Ã´Áº×Ó¡£" NOR;
+        return CYN "æ“šèªªé‚£å€‹" + HIY + ENEMY_FAM + NOR CYN "çš„å¼Ÿå­å€‘æ­£åœ¨æ”»æ‰“" +
+               HIY + DEFEND_FAM + NOR CYN "å‘¢ï¼Œä¹Ÿä¸çŸ¥é“çµä¸‹äº†ä»€éº¼æ¨‘å­ã€‚" NOR;
 }
 
 void do_say(object knower)
@@ -505,41 +505,41 @@ void do_say(object knower)
         if (! objectp(knower) || ! living(knower))
                 return 0;
 
-        message_sort("$Nà½àìµÀ£º¡°ÎÒ¸úÄã¶¼ËµÁË£¬ÕâĞ©ÃÅÅÉÑ½£¬Ã»Ò»¸öºÃ"
-                       "¶«Î÷£¬Õâ²»£¿´òÆğÀ´ÁË°É£¿¡±\n", knower);
+        message_sort("$Nå˜Ÿå›”é“ï¼šâ€œæˆ‘è·Ÿä½ éƒ½èªªäº†ï¼Œé€™äº›é–€æ´¾å‘€ï¼Œæ²’ä¸€å€‹å¥½"
+                       "æ±è¥¿ï¼Œé€™ä¸ï¼Ÿæ‰“èµ·ä¾†äº†å§ï¼Ÿâ€\n", knower);
 }
 
-// ÈÎÎñÌáÊ¾
+// ä»»å‹™æç¤º
 string query_prompt()
 {
         switch (random(3))
         {
         case 0:
-                return CYN "µ¹ÊÇ×î½üÌıÓĞĞ©¿ÍÈËËµÆğ" HIY + name() +
-                       NOR CYN "À´¡£";
+                return CYN "å€’æ˜¯æœ€è¿‘è½æœ‰äº›å®¢äººèªªèµ·" HIY + name() +
+                       NOR CYN "ä¾†ã€‚";
         case 1:
-                return "Ò²Ã»Ê²Ã´´óÊÂ£¬Ö»ÊÇÌıËµ¹ı" HIY + name() +
-                       NOR CYN "°ÕÁË¡£";
+                return "ä¹Ÿæ²’ä»€éº¼å¤§äº‹ï¼Œåªæ˜¯è½èªªé" HIY + name() +
+                       NOR CYN "ç½·äº†ã€‚";
         default:
-                return "Ç°Á½Ìì»¹ÌıÈË¼ÒËµ¹ı" HIY + name() +
-                       NOR CYN "ÄØ¡£";
+                return "å‰å…©å¤©é‚„è½äººå®¶èªªé" HIY + name() +
+                       NOR CYN "å‘¢ã€‚";
         }
 }
 
-// µÇ¼Ç¸ÃÈÎÎñµÄÏûÏ¢
+// ç™»è¨˜è©²ä»»å‹™çš„æ¶ˆæ¯
 void register_information()
 {
         mapping my = query_entire_dbase();
 
         if (! clonep() || ! mapp(my))
-                // ²»ÊÇÈÎÎñ£¬ËùÒÔ²»µÇ¼Ç
+                // ä¸æ˜¯ä»»å‹™ï¼Œæ‰€ä»¥ä¸ç™»è¨˜
                 return;
 
         set_information(ENEMY_FAM, (: ask_enemy :));
         set_information(DEFEND_FAM,(: ask_defender :));
 }
 
-// Õâ¸öÈÎÎñ¿ÉÒÔ±»Ä³ÈËÖªÏşÂğ£¿
+// é€™å€‹ä»»å‹™å¯ä»¥è¢«æŸäººçŸ¥æ›‰å—ï¼Ÿ
 int can_know_by(object knower)
 {
         return 1;
@@ -558,6 +558,6 @@ void check_all_place()
                 the_place = familys[family[i]]["place"];
                 for (j = 0;j<sizeof(the_place);j++)
                         if (!objectp(env = get_object(the_place[j])))
-                                log_file("static/defend_quest",sprintf("ÃÅÅÉÈÎÎñ´íÎó¼ÇÂ¼£º%s\n",the_place[j]));
+                                log_file("static/defend_quest",sprintf("é–€æ´¾ä»»å‹™éŒ¯èª¤è¨˜éŒ„ï¼š%s\n",the_place[j]));
         }
 }

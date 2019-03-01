@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ʯ��");
+        set("short", "石階");
         set("long", @LONG
-���ֽ�����������ǰ������һ�������ʯ�������ֱͨ��ǰ����
-�ص�ϡϡ��������ż��ð�����ȴ�Եøߴ�ͦ�Σ��������֦������
-�ո߸���չ�š�
+鬆林漸漸開闊，面前出現了一條寬廣的石板道，筆直通向前方。
+沿道稀稀落落地種著幾棵柏樹，卻顯得高大挺拔，蝤龍般的枝幹向天
+空高高伸展著。
 LONG );
         set("exits", ([
                 "southdown" : __DIR__"shijie10",

@@ -5,7 +5,7 @@ inherit F_CLEAN_UP;
 
 int is_scborn() { return 1; }
 
-string name() { return HIG "ÉáÎÒÆäË­" NOR; }
+string name() { return HIG "èˆæˆ‘å…¶èª°" NOR; }
 
 int perform(object me, string skill, string arg)
 {
@@ -16,30 +16,30 @@ int perform(object me, string skill, string arg)
 
 		joblv = me->query_joblv();
 
-		t = me->query_team(); // ±ØÐëÒª×é¶Ó²ÅÄÜÊ©Õ¹
+		t = me->query_team(); // å¿…é ˆè¦çµ„éšŠæ‰èƒ½æ–½å±•
 
         if (time() - me->query_temp("special2/shewo/lasttime") < 60)
-                return notify_fail("¸Ã¼¼ÄÜÔÚÒ»·ÖÖÓÄÚÖ»ÄÜÊ©Õ¹Ò»´Î¡£\n");
+                return notify_fail("è©²æŠ€èƒ½åœ¨ä¸€åˆ†é˜å…§åªèƒ½æ–½å±•ä¸€æ¬¡ã€‚\n");
 
-		if (me->query("yhjob/job") != "ÏÀ¿Í")
-				return notify_fail("ÄãµÄÖ°Òµ´íÎó£¬ÎÞ·¨Ê©Õ¹¡£\n");
+		if (me->query("yhjob/job") != "ä¿ å®¢")
+				return notify_fail("ä½ çš„è·æ¥­éŒ¯èª¤ï¼Œç„¡æ³•æ–½å±•ã€‚\n");
 		
 		if (me->query("neili") < 1000)
-				return notify_fail("ÄãµÄÄÚÁ¦²»×ã£¬ÎÞ·¨Ê©Õ¹¡£\n");
+				return notify_fail("ä½ çš„å…§åŠ›ä¸è¶³ï¼Œç„¡æ³•æ–½å±•ã€‚\n");
 
 		if (joblv < 30)
-				return notify_fail("ÄãµÄÖ°ÒµµÈ¼¶²»×ã£¬ÎÞ·¨Ê©Õ¹¡£\n");		
+				return notify_fail("ä½ çš„è·æ¥­ç­‰ç´šä¸è¶³ï¼Œç„¡æ³•æ–½å±•ã€‚\n");		
 
 		if (! arrayp(t))
-				return notify_fail("¸Ã¼¼ÄÜÖ»ÄÜÔÚ×é¶ÓµÄÊ±ºòÊ©Õ¹¡£\n");
+				return notify_fail("è©²æŠ€èƒ½åªèƒ½åœ¨çµ„éšŠçš„æ™‚å€™æ–½å±•ã€‚\n");
 
 	    t -= ({ 0 });
 		if (sizeof(t) <= 1)
-				return notify_fail("¸Ã¼¼ÄÜÖ»ÄÜÔÚ¶àÈË×é¶ÓµÄÊ±ºòÊ©Õ¹¡£\n");
+				return notify_fail("è©²æŠ€èƒ½åªèƒ½åœ¨å¤šäººçµ„éšŠçš„æ™‚å€™æ–½å±•ã€‚\n");
 			
-        if (me->is_busy())return notify_fail("µÈÄãÃ¦ÍêÔÙËµ°É£¡\n");
+        if (me->is_busy())return notify_fail("ç­‰ä½ å¿™å®Œå†èªªå§ï¼\n");
 
-        message_vision(HIC "$N" HIC "Ë«Ä¿Î¢±Õ£¬¶ÙÊ±È«ÉíÉÏÏÂ±»Ò»µÀ½ð¹âÁýÕÖ£¬ÂýÂýµØ£¬½ð¹âÀ©É¢¿ªÀ´ ¡­¡­¡­¡­\n" NOR, me);
+        message_vision(HIC "$N" HIC "é›™ç›®å¾®é–‰ï¼Œé “æ™‚å…¨èº«ä¸Šä¸‹è¢«ä¸€é“é‡‘å…‰ç± ç½©ï¼Œæ…¢æ…¢åœ°ï¼Œé‡‘å…‰æ“´æ•£é–‹ä¾† â€¦â€¦â€¦â€¦\n" NOR, me);
 
 		foreach (tob in t)
 		{
@@ -47,23 +47,23 @@ int perform(object me, string skill, string arg)
 
 			if (1)
 			{			
-				tell_object(tob, HIW + me->name() + "Ê©Õ¹³ö¾øÕÐ¡¸ÉáÎÒÆäË­¡¹£¬»Ö¸´ËùÓÐ¶ÓÓÑµÄ¾«Á¦¼°ÆøÑª¡£\n" NOR);
+				tell_object(tob, HIW + me->name() + "æ–½å±•å‡ºçµ•æ‹›ã€Œèˆæˆ‘å…¶èª°ã€ï¼Œæ¢å¾©æ‰€æœ‰éšŠå‹çš„ç²¾åŠ›åŠæ°£è¡€ã€‚\n" NOR);
 				qi = 500 + me->query_joblv() * 50 + me->query("lhpoint/special/shewo")* 400;
 				jing = 200 + me->query_joblv() * 30 + me->query("lhpoint/special/shewo") * 300;
 
-				// »Ö¸´ÊÜÉË×´Ì¬
+				// æ¢å¾©å—å‚·ç‹€æ…‹
 				if (tob->query("eff_qi") + qi / 2 > tob->query("max_qi"))
 						tob->set("eff_qi",tob->query("max_qi"));
 				else
 						tob->add("eff_qi", qi / 2);
 
-				// »Ö¸´ÆøÑª
+				// æ¢å¾©æ°£è¡€
 				if (tob->query("qi") + qi > tob->query("eff_qi"))
 						tob->set("eff_qi", tob->query("eff_qi"));
 				else
 						tob->add("qi", qi);
 				
-				// »Ö¸´¾«Á¦/¾«ÆøÊÜÉË×´Ì¬
+				// æ¢å¾©ç²¾åŠ›/ç²¾æ°£å—å‚·ç‹€æ…‹
 				if (tob->query("eff_jing") + jing / 2 > tob->query("max_jing"))
 						tob->set("eff_jing", tob->query("max_jing"));
 				else

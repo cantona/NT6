@@ -2,29 +2,29 @@
 inherit F_SSERVER; 
 
 mapping exits_name=([
-"east":            "¶«·½",
-"south":           "ÄÏ·½",
-"west":            "Î÷·½",
-"north":           "±±·½",
-"eastup":          "¶«ÉÏ·½",
-"southup":         "ÄÏÉÏ·½",
-"westup":          "Î÷ÉÏ·½",
-"northup":         "±±ÉÏ·½",
-"eastdown":        "¶«ÏÂ·½",
-"southdown":       "ÄÏÏÂ·½",
-"westdown":        "Î÷ÏÂ·½",
-"northdown":       "±±ÏÂ·½",
-"northeast":       "¶«±±·½",
-"northwest":       "Î÷±±·½",
-"southeast":       "¶«ÄÏ·½",
-"southwest":       "Î÷ÄÏ·½",
-"up":              "ÉÏ·½",
-"southeast":       "¶«ÄÏ·½",
-"southwest":       "Î÷ÄÏ·½",
-"up":              "ÉÏ·½",
-"down":            "ÏÂ·½",
-"enter":           "Àï±ß",
-"out":             "Íâ±ß",
+"east":            "æ±æ–¹",
+"south":           "å—æ–¹",
+"west":            "è¥¿æ–¹",
+"north":           "åŒ—æ–¹",
+"eastup":          "æ±ä¸Šæ–¹",
+"southup":         "å—ä¸Šæ–¹",
+"westup":          "è¥¿ä¸Šæ–¹",
+"northup":         "åŒ—ä¸Šæ–¹",
+"eastdown":        "æ±ä¸‹æ–¹",
+"southdown":       "å—ä¸‹æ–¹",
+"westdown":        "è¥¿ä¸‹æ–¹",
+"northdown":       "åŒ—ä¸‹æ–¹",
+"northeast":       "æ±åŒ—æ–¹",
+"northwest":       "è¥¿åŒ—æ–¹",
+"southeast":       "æ±å—æ–¹",
+"southwest":       "è¥¿å—æ–¹",
+"up":              "ä¸Šæ–¹",
+"southeast":       "æ±å—æ–¹",
+"southwest":       "è¥¿å—æ–¹",
+"up":              "ä¸Šæ–¹",
+"down":            "ä¸‹æ–¹",
+"enter":           "è£¡é‚Š",
+"out":             "å¤–é‚Š",
 ]);
 int do_she(string arg,object me,object bow,int num);
 int do_shoot(string id,object me,object room,string what,int m,object bow,int num);
@@ -64,16 +64,16 @@ int perform(object me,object target)
 
   if( !objectp(bow=query_temp("weapon", me) )
        || !query("is_bow", bow) )
-  return notify_fail("¹­»¹Ã»ÉÏÊÖÄØ£¬»¹ÏëÓÃÁ¬Öé¼ı·¨£¿£¡\n");
+  return notify_fail("å¼“é‚„æ²’ä¸Šæ‰‹å‘¢ï¼Œé‚„æƒ³ç”¨é€£ç ç®­æ³•ï¼Ÿï¼\n");
 
   num=me->query_skill("lianzhu-arrow",1)/100+1;
 
   if( num < 2 || me->query_skill("arrow",1) < 100 )
-  return notify_fail("»¹ÊÇºÃºÃÁ·Á·ÄãµÄ¼ı·¨°É£¡\n");
+  return notify_fail("é‚„æ˜¯å¥½å¥½ç·´ç·´ä½ çš„ç®­æ³•å§ï¼\n");
 
-  message_vision(HIY"$N´Ó¼ıÄÒÄÚ³é³ö"HIW+CHINESE_D->chinese_number(num)+HIY"Ö§"HIW"Óğ¼ı"HIY"£¬´îÔÚ"
-       +query("name", bow)+HIY"ÉÏ£¬×¼±¸Ê©Õ¹ÉúÆ½¾ø¼¼¡ª¡ª"
-       +HIR"Á¬Öé¼ı·¨"+HIY"£¡£¡\n"NOR,me);
+  message_vision(HIY"$Nå¾ç®­å›Šå…§æŠ½å‡º"HIW+CHINESE_D->chinese_number(num)+HIY"æ”¯"HIW"ç¾½ç®­"HIY"ï¼Œæ­åœ¨"
+       +query("name", bow)+HIY"ä¸Šï¼Œæº–å‚™æ–½å±•ç”Ÿå¹³çµ•æŠ€â”€â”€"
+       +HIR"é€£ç ç®­æ³•"+HIY"ï¼ï¼\n"NOR,me);
   input_to("do_she",me,bow,num);
   return 1;
 }
@@ -89,32 +89,32 @@ int do_she(string arg,object me,object bow,int num)
    room=environment(me);
    if( query("no_fight", environment(me)) )
    {
-    tell_object(me,"ÕâÀï²»ĞíÕ½¶·£¡\n");
+    tell_object(me,"é€™è£¡ä¸è¨±æˆ°é¬¥ï¼\n");
     return 1;
    }
 
    if( query("duration", bow)<0 )
    {
-    message_vision("$NÊÖÖĞµÄ"+query("name", bow)+"¡°àÔ¡±µØÒ»Éù¶ÏÁË£¡\n",me);
+    message_vision("$Næ‰‹ä¸­çš„"+query("name", bow)+"â€œâ–¡â€åœ°ä¸€è²æ–·äº†ï¼\n",me);
     destruct(bow);
     return 1;
    }
 
    if( me->query_str()<query("dam", bow)/20 )
    {
-    tell_object(me,"ÄãÊ¹¾¡³ÔÄÌµÄÁ¦ÆøÒ²À­²»¿ª¹­À´£¬¿´À´Á¦Æø²»¹»£¡\n");  
+    tell_object(me,"ä½ ä½¿ç›¡åƒå¥¶çš„åŠ›æ°£ä¹Ÿæ‹‰ä¸é–‹å¼“ä¾†ï¼Œçœ‹ä¾†åŠ›æ°£ä¸å¤ ï¼\n");  
     return 1;
    }
 
    if( me->is_busy() )
    {
-    tell_object(me,"ÄãÏÖÔÚÕıÃ¦×ÅÄØ£¡\n");
+    tell_object(me,"ä½ ç¾åœ¨æ­£å¿™è‘—å‘¢ï¼\n");
     return 1;
    }
 
    if( query("qi", me)<400*num || query("jing", me)<100*num )
    {
-    tell_object(me,"ÄãÏÖÔÚ¾«Æø²»¹»³äÓ¯£¬Á¬Öé¼ı·¨¿ÖÅÂÊ©Õ¹²»³öÀ´£¡\n"); 
+    tell_object(me,"ä½ ç¾åœ¨ç²¾æ°£ä¸å¤ å……ç›ˆï¼Œé€£ç ç®­æ³•ææ€•æ–½å±•ä¸å‡ºä¾†ï¼\n"); 
     return 1;
    }
 
@@ -132,7 +132,7 @@ int do_she(string arg,object me,object bow,int num)
 
     if( room==environment(me) )
     {
-     tell_object(me,"¿´Çå³şµã£¬³¯ÄÄÀïÉäÑ½Äã£¿\n");
+     tell_object(me,"çœ‹æ¸…æ¥šé»ï¼Œæœå“ªè£¡å°„å‘€ä½ ï¼Ÿ\n");
      return 1;
     }
 
@@ -140,25 +140,25 @@ int do_she(string arg,object me,object bow,int num)
      {
       if( query("no_fight", room) )
       { 
-       tell_object(me,"ÄÇÀïÓĞÉñÃ÷×ôÓÓ£¬²»ÈİÄãºúÀ´Ò²£¡\n"); 
+       tell_object(me,"é‚£è£¡æœ‰ç¥æ˜ä½ä½‘ï¼Œä¸å®¹ä½ èƒ¡ä¾†ä¹Ÿï¼\n"); 
        return 1;
       }
 
       "/cmds/std/look.c"->look_room(me,room);  
-      message_vision(HIY"ËæºóÖ»¼û$NÁ¢ÁËÒ»¸ö°ÔÍõÉÏ¹­Ê½£¬³¯"HIR
-       +exits_name[what]+HIY"°Ñ¹­À­Âú.......\n"NOR,me);
-      tell_object(all_inventory(room),HIB"Äã¾õµÃÒ»¹ÉÃÍÁÒµÄÉ±»ú´Ó"HIR
-       +exits_name[exits_reverse(what)]+HIB"´«À´£¡£¡\n"NOR);
+      message_vision(HIY"éš¨å¾Œåªè¦‹$Nç«‹äº†ä¸€å€‹éœ¸ç‹ä¸Šå¼“å¼ï¼Œæœ"HIR
+       +exits_name[what]+HIY"æŠŠå¼“æ‹‰æ»¿.......\n"NOR,me);
+      tell_object(all_inventory(room),HIB"ä½ è¦ºå¾—ä¸€è‚¡çŒ›çƒˆçš„æ®ºæ©Ÿå¾"HIR
+       +exits_name[exits_reverse(what)]+HIB"å‚³ä¾†ï¼ï¼\n"NOR);
 
-      tell_object(me,HIR+exits_name[what]+HIW"µÄÇé¾°ÄãÒ»Ä¿ÁËÈ»£¬"
-                                      +"Äã°ÑÀû¼ı½¥½¥Ãé×¼ÁË¡ª¡ª>\n"NOR);   
+      tell_object(me,HIR+exits_name[what]+HIW"çš„æƒ…æ™¯ä½ ä¸€ç›®äº†ç„¶ï¼Œ"
+                                      +"ä½ æŠŠåˆ©ç®­æ¼¸æ¼¸ç„æº–äº†â”€â”€>\n"NOR);   
       me->start_busy(3+random(3));  
       input_to("do_shoot",me,room,what,m,bow,num);
      } else
-      tell_object(me,"¿´Çå³şµã£¬³¯ÄÄÀïÉäÑ½Äã£¿\n");  
+      tell_object(me,"çœ‹æ¸…æ¥šé»ï¼Œæœå“ªè£¡å°„å‘€ä½ ï¼Ÿ\n");  
 
     } else
-      tell_object(me,"²»»áÉä¼ı£¿ÕÒÈË¼Ò½Ì½ÌÄã°É£¡\n");
+      tell_object(me,"ä¸æœƒå°„ç®­ï¼Ÿæ‰¾äººå®¶æ•™æ•™ä½ å§ï¼\n");
     return 1;
 }
 

@@ -1,16 +1,16 @@
-// yuqing.c  ÓñÇåÉ¢   by sinb
+// yuqing.c  ç‰æ¸…æ•£   by sinb
 
 #include <ansi.h>
 #include "medicine.h"
 
 void create()
 {
-        set_name(HIC "ÓñÇåÉ¢" NOR, ({"yuqing san", "san"}));
+        set_name(HIC "ç‰æ¸…æ•£" NOR, ({"yuqing san", "san"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»°üÓñÇåÉ¢£¬¾İËµÊÇÎäµ±ÅÉµÄÃØÒ©£¬¹¦ÄÜÇ¿Éí½¡Ìå£¬ÑÓÄêÒæÊÙ¡£\n");
-                set("base_unit", "°ü");
+                set("long", "é€™æ˜¯ä¸€åŒ…ç‰æ¸…æ•£ï¼Œæ“šèªªæ˜¯æ­¦ç•¶æ´¾çš„ç§˜è—¥ï¼ŒåŠŸèƒ½å¼·èº«å¥é«”ï¼Œå»¶å¹´ç›Šå£½ã€‚\n");
+                set("base_unit", "åŒ…");
                 set("base_value", 140000);
                 set("base_weight", 80);
                 set("only_do_effect", 1);
@@ -42,15 +42,15 @@ int do_effect(object me)
         /*
         if( time()-query_temp("last_eat/yuqing", me)<320 )
         {
-                write("Äã¸Õ·şÓÃ¹ıÒ©£¬ĞèÒ©ĞÔ·¢»ÓÍêĞ§ÓÃÒÔºó²ÅÄÜ¼ÌĞø·şÓÃ¡£\n");
+                write("ä½ å‰›æœç”¨éè—¥ï¼Œéœ€è—¥æ€§ç™¼æ®å®Œæ•ˆç”¨ä»¥å¾Œæ‰èƒ½ç¹¼çºŒæœç”¨ã€‚\n");
                 return 1;
         }
 
         set_temp("last_eat/yuqing", time(), me);
         */
 
-        message_vision(YEL "$N" YEL "³ÔÏÂÒ»Á£" + name() +
-                       YEL "£¬ÄÚÏ¢ÔËĞĞÒ»Ğ¡ÖÜÌì£¬¸Ğ¾õÉíÌå·¢ÉúÁËÒ»Ğ©±ä»¯¡£\n", me);
+        message_vision(YEL "$N" YEL "åƒä¸‹ä¸€ç²’" + name() +
+                       YEL "ï¼Œå…§æ¯é‹è¡Œä¸€å°å‘¨å¤©ï¼Œæ„Ÿè¦ºèº«é«”ç™¼ç”Ÿäº†ä¸€äº›è®ŠåŒ–ã€‚\n", me);
 
         addn("max_jingli", 5+random(2), me);
         if( query("max_jingli", me)>me->query_current_jingli_limit() )

@@ -1,4 +1,4 @@
-// hai.c º£¹«¹«
+// hai.c æµ·å…¬å…¬
 #include <ansi.h>
 inherit NPC;
 string ask_for_zigong();
@@ -7,22 +7,22 @@ int do_pretend ( string arg );
 
 void create()
 {
-        set_name("º£¹«¹«", ({"hai gonggong", "hai", "gonggong"}));
-        set("title", "¶«³§Ç§»§");
+        set_name("æµ·å…¬å…¬", ({"hai gonggong", "hai", "gonggong"}));
+        set("title", "æ±å» åƒæˆ¶");
         set("long",
-                "ËûÊÇ¶«³§´óÌ«¼àº£´ó¸»£¬ÇÇ×°¸Ä°ç³ÉÉÌÈËÄ£Ñù³ö¾©Ñ°»¶×÷ÀÖ£¬³¤µÃ¼ÈÏñÀÏÍ·ÓÖÏñÀÏÌ«Ì«¡£\n"
+                "ä»–æ˜¯æ±å» å¤§å¤ªç›£æµ·å¤§å¯Œï¼Œå–¬è£æ”¹æ‰®æˆå•†äººæ¨¡æ¨£å‡ºäº¬å°‹æ­¡ä½œæ¨‚ï¼Œé•·å¾—æ—¢åƒè€é ­åˆåƒè€å¤ªå¤ªã€‚\n"
         );
 
-        set("gender", "ÎŞĞÔ");
-        set("rank_info/respect", "¹«¹«");
+        set("gender", "ç„¡æ€§");
+        set("rank_info/respect", "å…¬å…¬");
 
         set("attitude", "heroism");
         set("class", "eunach");
 
         set("inquiry",([
-                "×Ô¹¬"  : (: ask_for_zigong :),
-                "½ø¹¬"  : (: ask_for_jingong :),
-                "»Ê¹¬"  : (: ask_for_jingong :),
+                "è‡ªå®®"  : (: ask_for_zigong :),
+                "é€²å®®"  : (: ask_for_jingong :),
+                "çš‡å®®"  : (: ask_for_jingong :),
         ]));
 
         set("age", 60);
@@ -74,16 +74,16 @@ string ask_for_zigong()
 
         me = this_player();
 
-        if( query("gender", me) == "ÎŞĞÔ" )
-                return "ÄãÎÒÍ¬ÊÇÑËÈË£¬ºÎ±Ø¿ªÈç´ËÎŞÁÄµÄÍæĞ¦£¿\n";
+        if( query("gender", me) == "ç„¡æ€§" )
+                return "ä½ æˆ‘åŒæ˜¯é–¹äººï¼Œä½•å¿…é–‹å¦‚æ­¤ç„¡èŠçš„ç©ç¬‘ï¼Ÿ\n";
 
-        if( query("gender", me) == "Å®ĞÔ" )
-                return "ÎÒËäÒÑ·Ï£¬µ«Ò»Ñù¿ÉÒÔ¸øÄãÕâ¸öĞ¡ÃÀÈË´øÀ´¿ìÀÖ£¬Òª²»ÒªÊÔÊÔ£¿\n";
+        if( query("gender", me) == "å¥³æ€§" )
+                return "æˆ‘é›–å·²å»¢ï¼Œä½†ä¸€æ¨£å¯ä»¥çµ¦ä½ é€™å€‹å°ç¾äººå¸¶ä¾†å¿«æ¨‚ï¼Œè¦ä¸è¦è©¦è©¦ï¼Ÿ\n";
         if ((int)me->query_str() > 28 )
-                return "ÕâÎ»ºÃºº¹ıÓÚ´Ö×³£¬×Ô¹¬ÓĞ°­¹ÛÕ°£¬²»Í×£¬²»Í×¡£\n";
+                return "é€™ä½å¥½æ¼¢éäºç²—å£¯ï¼Œè‡ªå®®æœ‰ç¤™è§€ç»ï¼Œä¸å¦¥ï¼Œä¸å¦¥ã€‚\n";
 
         set_temp("pending/zigong", 1, me);
-        return "×Ô¹¬£¿ÕâÎ»¹«×ÓÏàÃ²ÌÃÌÃ£¬ºÎ±Ø... ÎÒÕæÏ£ÍûÄÜÓĞÄãµÄÄÇ¸ö¡£×Ô¹¬Ö®ºó£¬²»¿Éºó»Ú£¬ÄãÈô¾öĞÄÒÑ¶¨(decide)£¬¸æËßÎÒ¡£\n";
+        return "è‡ªå®®ï¼Ÿé€™ä½å…¬å­ç›¸è²Œå ‚å ‚ï¼Œä½•å¿…... æˆ‘çœŸå¸Œæœ›èƒ½æœ‰ä½ çš„é‚£å€‹ã€‚è‡ªå®®ä¹‹å¾Œï¼Œä¸å¯å¾Œæ‚”ï¼Œä½ è‹¥æ±ºå¿ƒå·²å®š(decide)ï¼Œå‘Šè¨´æˆ‘ã€‚\n";
 }
 
 string ask_for_jingong()
@@ -92,17 +92,17 @@ string ask_for_jingong()
 
         me = this_player();
 
-        if( query("gender", me) == "ÎŞĞÔ" )
-        return("º£¹«¹«Ğ¦Ò÷Ò÷µØËµµÀ£ºÄú¼ÈÒÑÊÇ¹«¹«ÁË£¬×ÔÈ»¿ÉÒÔ½ø¹¬¡£\n");          
+        if( query("gender", me) == "ç„¡æ€§" )
+        return("æµ·å…¬å…¬ç¬‘åŸåŸåœ°èªªé“ï¼šæ‚¨æ—¢å·²æ˜¯å…¬å…¬äº†ï¼Œè‡ªç„¶å¯ä»¥é€²å®®ã€‚\n");          
 
-        if( query("gender", me) == "ÄĞĞÔ" )
+        if( query("gender", me) == "ç”·æ€§" )
         {
         set_temp("pending/zigong", 1, me);
-        return("º£¹«¹«Ğ¦Ò÷Ò÷µØËµµÀ£º²¢²»ÊÇÒ»¶¨Òª×Ô¹¬²Å¿ÉÒÔ½ø»Ê¹¬µÄ£»\n"+"²»¹ı£¬ÄãÈô¾öĞÄÒÑ¶¨(decide)£¬ÎÒ¾Í³ÉÈ«ÁËÄã¡£\n");
+        return("æµ·å…¬å…¬ç¬‘åŸåŸåœ°èªªé“ï¼šä¸¦ä¸æ˜¯ä¸€å®šè¦è‡ªå®®æ‰å¯ä»¥é€²çš‡å®®çš„ï¼›\n"+"ä¸éï¼Œä½ è‹¥æ±ºå¿ƒå·²å®š(decide)ï¼Œæˆ‘å°±æˆå…¨äº†ä½ ã€‚\n");
         }
 
-        if( query("gender", me) == "Å®ĞÔ" )
-        return("º£¹«¹«Ò¡Í·µÀ£º²»ĞĞµÄ£¬Äã³¤µÃÌ«³óÁË¡£\n");                
+        if( query("gender", me) == "å¥³æ€§" )
+        return("æµ·å…¬å…¬æ–é ­é“ï¼šä¸è¡Œçš„ï¼Œä½ é•·å¾—å¤ªé†œäº†ã€‚\n");                
 }
 
 
@@ -112,15 +112,15 @@ int do_decide()
                 return 0;
 
         message_vision(
-                "$NÒ»Ò§ÑÀ£¬ÍÊÏÂÖĞÒÂ¡££¨Å®Íæ¼Ò±ÕÑÛ£¡£©\n\n"
-                "$nÉì³ö³¤½£²åµ½$NÁ½ÍÈÖ®¼ä£¬·ÉËÙÒ»Øà£¬¡­¡­\n\n"
-                "$N¶ÙÊ±²Ò½ĞÒ»Éù»èÁË¹ıÈ¥¡­¡­\n\n",
+                "$Nä¸€å’¬ç‰™ï¼Œè¤ªä¸‹ä¸­è¡£ã€‚ï¼ˆå¥³ç©å®¶é–‰çœ¼ï¼ï¼‰\n\n"
+                "$nä¼¸å‡ºé•·åŠæ’åˆ°$Nå…©è…¿ä¹‹é–“ï¼Œé£›é€Ÿä¸€å‰œï¼Œâ€¦â€¦\n\n"
+                "$Né “æ™‚æ…˜å«ä¸€è²æ˜äº†éå»â€¦â€¦\n\n",
                 this_player(), this_object() );
-        command("chat àË¡­¡­");
+        command("chat å—¨â€¦â€¦");
         command("hehe");
         delete_temp("pending/zigong", this_player());
         delete_temp("pending/jingong", this_player());
-        set("gender", "ÎŞĞÔ", this_player());
+        set("gender", "ç„¡æ€§", this_player());
         set("class", "eunach", this_player());
         set("combat_exp",query("combat_exp",  this_player())+1000, this_player());
         this_player()->unconcious();
@@ -132,31 +132,31 @@ int accept_object(object me, object ob)
 {
         if( !me || environment(me) != environment() ) return 0;
         if ( !objectp(ob) ) return 0; 
-        if ( !present(ob, me) ) return notify_fail("ÄãÃ»ÓĞÕâ¼ş¶«Î÷¡£");
-        if( query("name", ob) == "Ò©·Û" )
+        if ( !present(ob, me) ) return notify_fail("ä½ æ²’æœ‰é€™ä»¶æ±è¥¿ã€‚");
+        if( query("name", ob) == "è—¥ç²‰" )
         {
-         write(HIC "º£¹«¹«´ò¿ªÒ©°ü£¬Éì³öĞ¡Ö¸£¬ÓÃÖ¸¼×ÌôÁËÒ»µã·ÛÄ©£¬\n"
-         +"¾Í×Å¾ÆãıÁË£¬ÈÔÊÇ²»×¡¿ÈËÔ¡£\n" NOR);
+         write(HIC "æµ·å…¬å…¬æ‰“é–‹è—¥åŒ…ï¼Œä¼¸å‡ºå°æŒ‡ï¼Œç”¨æŒ‡ç”²æŒ‘äº†ä¸€é»ç²‰æœ«ï¼Œ\n"
+         +"å°±è‘—é…’æ³¯äº†ï¼Œä»æ˜¯ä¸ä½å’³å—½ã€‚\n" NOR);
                if(objectp(present("xiao", environment(me))))
                 {
-                command("say Ææ¹Ö£¬ÄãÔõÃ´Ò²ÓĞÕâÖÖÒ©¡£");   
+                command("say å¥‡æ€ªï¼Œä½ æ€éº¼ä¹Ÿæœ‰é€™ç¨®è—¥ã€‚");   
                 }
                else
                 {
                  command("smile"+query("id", ob));
                  if( query_temp("haspretend", me) )
                  { 
-                 command("say ¶àĞ»À²£¬Ğ¡¹ğ×Ó£¬ÎÒÏÖÔÚºÃ¶àÁË !");
+                 command("say å¤šè¬å•¦ï¼Œå°æ¡‚å­ï¼Œæˆ‘ç¾åœ¨å¥½å¤šäº† !");
                  delete_temp("haspretend", me);
                  set("huanggong\\canenter", 1, me);
                  }              
-                 else command("say Ææ¹Ö£¬ÄãÔõÃ´Ò²ÓĞÕâÖÖÒ©¡£");   
+                 else command("say å¥‡æ€ªï¼Œä½ æ€éº¼ä¹Ÿæœ‰é€™ç¨®è—¥ã€‚");   
                 }
         }
         else 
         {
                  command("shake ");
-                 command("say ÕâÖÖ¶«Î÷¹í²ÅÒª ! ÀÏ×ÓÔ×ÁËÄã !");
+                 command("say é€™ç¨®æ±è¥¿é¬¼æ‰è¦ ! è€å­å®°äº†ä½  !");
                  remove_call_out("kill_ob");
                  call_out("kill_ob", 1, this_player());
         }   
@@ -169,20 +169,20 @@ int do_pretend ( string arg )
    object ob ;
    ob = this_player () ;
    if( !arg && arg!="guizi"&&arg!="xiao"&&arg!="xiao guizi")
-     return notify_fail("\nÄãÒª×°³ÉË­£¿\n");
+     return notify_fail("\nä½ è¦è£æˆèª°ï¼Ÿ\n");
    
 if(objectp(present("xiao", environment(ob))))
 {
-write(HIR "\nº£¹«¹«´ó½ĞÒ»Éù£ºÄã¸ÒÃ°³äĞ¡¹ğ×Ó£¬ÀÏ×ÓÔ×ÁËÄã£¡\n" NOR);
+write(HIR "\næµ·å…¬å…¬å¤§å«ä¸€è²ï¼šä½ æ•¢å†’å……å°æ¡‚å­ï¼Œè€å­å®°äº†ä½ ï¼\n" NOR);
 remove_call_out("kill_ob");
 call_out("kill_ob", 1, this_player());
 return 1;
 }
-if( query("gender", ob) == "ÄĞĞÔ" )
+if( query("gender", ob) == "ç”·æ€§" )
 {
 set_temp("haspretend", 1, ob);
-message_vision("\n$N×°³ÉÁËĞ¡¹ğ×Ó£¬$nÃ»¿ÔÉù¡£\n",this_player(),this_object());
-message_vision("\nº£¹«¹«¿´ÁË$NÒ»ÑÛ£¬Ëµ¡°°¦£¬ÊÇ²»ÊÇÓÖ¸Ã³ÔÒ©ÁË£¿¡±\n",this_player());
+message_vision("\n$Nè£æˆäº†å°æ¡‚å­ï¼Œ$næ²’å­è²ã€‚\n",this_player(),this_object());
+message_vision("\næµ·å…¬å…¬çœ‹äº†$Nä¸€çœ¼ï¼Œèªªâ€œå”‰ï¼Œæ˜¯ä¸æ˜¯åˆè©²åƒè—¥äº†ï¼Ÿâ€\n",this_player());
 return 1;
 }
 }
@@ -190,7 +190,7 @@ return 1;
 
 void die()
 {
-        say("º£¹«¹«ÕõÔú×ÅÌ¾µÀ£º°¦£¬ÀÏ»ÊÒ¯µÄÊÂ¶ùÎÒÃ»°ì³É°¡£¡\n");                 
-        message_vision("$N²Òº¿Ò»Éù£¬ËÀÁË£¡\n", this_object());
+        say("æµ·å…¬å…¬æ™ç´®è‘—å˜†é“ï¼šå”‰ï¼Œè€çš‡çˆºçš„äº‹å…’æˆ‘æ²’è¾¦æˆå•Šï¼\n");                 
+        message_vision("$Næ…˜åšä¸€è²ï¼Œæ­»äº†ï¼\n", this_object());
         ::die();
 }

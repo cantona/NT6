@@ -22,9 +22,9 @@ void set_bang(object owner)
         obj += ({ob});
 
         owner->set("follower", obj);
-        message("vision", ob->name() + "×ßÁË¹ýÀ´¡£\n", room, ({ob}));
-        message_vision("$N¶Ô×Å$n×÷ÁË¸öÒ¾£¬µÀ£º°ïÖ÷ÀÏÈË¼ÒÐÁ¿àÁË¡£\n", ob, owner);
-        message_vision("$NµãÁËµãÍ·£¬µÀ£ºµÜÐÖÃÇÐÁ¿àÁË¡£\n", owner);
+        message("vision", ob->name() + "èµ°äº†éŽä¾†ã€‚\n", room, ({ob}));
+        message_vision("$Nå°è‘—$nä½œäº†å€‹æ–ï¼Œé“ï¼šå¹«ä¸»è€äººå®¶è¾›è‹¦äº†ã€‚\n", ob, owner);
+        message_vision("$Né»žäº†é»žé ­ï¼Œé“ï¼šå¼Ÿå…„å€‘è¾›è‹¦äº†ã€‚\n", owner);
 }
 
 
@@ -77,10 +77,10 @@ void set_follower(object ob, object owner)
         ob->set_temp("apply/damage",  level);
         ob->set_temp("apply/attack",  level);
 
-        ob->set("inquiry/" + fam, fam + "ÍþÕð½­ºþ£¬Ö¸ÈÕ¿É´ý£¡£¡£¡");
+        ob->set("inquiry/" + fam, fam + "å¨éœ‡æ±Ÿæ¹–ï¼ŒæŒ‡æ—¥å¯å¾…ï¼ï¼ï¼");
         name = (string)owner->query("name");
-        ob->set("inquiry/" + "°ïÖ÷", "ÎÒ¶ÔÎÒÃÇ" + name[0..01] + "°ïÖ÷µÄ¾°ÑöÖ®Çé¬ÓÐÈçÌÏÌÏ½­Ë®Á¬Ãà²»¾ø¡£");
-        ob->set("inquiry/" + name, "Õâ¼¸¸ö×ÖÊÇÄãËµµÄÂð£¿");
-        ob->set("inquiry/" + name[0..01] + "°ïÖ÷", "ÎÒ¶ÔÎÒÃÇ" + name[0..01] + "ïÖ÷µÄ¾°ÑöÖ®Çé£¬ÓÐÈçÌÏÌÏ½­Ë®Á¬Ãà²»¾ø¡£");
+        ob->set("inquiry/" + "å¹«ä¸»", "æˆ‘å°æˆ‘å€‘" + name[0..01] + "å¹«ä¸»çš„æ™¯ä»°ä¹‹æƒ…â–¡è…¥ç¸‘å’¸è½„â–¡â–¡â–¡å—–ç˜“â–¡â–¡);
+        ob->set("inquiry/" + name, "é€™å¹¾å€‹å­—æ˜¯ä½ èªªçš„å—Žï¼Ÿ");
+        ob->set("inquiry/" + name[0..01] + "å¹«ä¸»", "æˆ‘å°æˆ‘å€‘" + name[0..01] + "éŽ¦éŸ‰æœ¨æŠŠé®’â–¡æ¤‹â–¡è…¥ç¸‘å’¸è½„â–¡â–¡â–¡å—–ç˜“â–¡â–¡);
 }
 

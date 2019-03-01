@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ʯ��");
+        set("short", "石道");
         set("long", @LONG
-һ·�����У��м����һ����Լ��ߵ�ʯ��������ʯ����ǽ��һ
-·�϶������½�ͽģ�����������߶�����������·�˶����ܼ��ӡ�
+一路往北行，中間僅有一道寬約五尺的石道，兩邊石壁如牆，一
+路上都有日月教徒模樣的人物在走動，對往來的路人都嚴密監視。
 LONG );
         set("outdoors", "heimuya");
         set("exits", ([

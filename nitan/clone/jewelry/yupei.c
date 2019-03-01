@@ -1,4 +1,4 @@
-// yupei.c ÓñÅå
+// yupei.c çŽ‰ä½©
 
 #include <armor.h>
 #include <ansi.h>
@@ -7,15 +7,15 @@ inherit NECK;
 
 void create()
 {
-        set_name(HIC"ÓñÅå"NOR, ({ "yu pei", "yu" }));
-        set("long", "ÕâÊÇÒ»¿éµ­À¼É«µÄ±¦Óñ£¬Ó¨»¬ÎÂÈó£¬¹â½àÎÞè¦£¬ÕæÊÇÏ¡ÊÀº±ÓÐ¡£\n");
+        set_name(HIC"çŽ‰ä½©"NOR, ({ "yu pei", "yu" }));
+        set("long", "é€™æ˜¯ä¸€å¡Šæ·¡è˜­è‰²çš„å¯¶çŽ‰ï¼Œç‘©æ»‘æº«æ½¤ï¼Œå…‰æ½”ç„¡ç‘•ï¼ŒçœŸæ˜¯ç¨€ä¸–ç½•æœ‰ã€‚\n");
         set("weight", 300);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ã¶");
+                set("unit", "æžš");
                 set("value", 50000);
-                set("material", "Óñ");
+                set("material", "çŽ‰");
                 set("armor_prop/armor", 2);
                 set("female_only", 1);
         }

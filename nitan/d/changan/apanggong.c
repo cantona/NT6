@@ -4,10 +4,10 @@ inherit  ROOM;
 
 void  create  ()
 {
-        set  ("short",  "������");
+        set  ("short",  "阿房宮");
         set  ("long",  @LONG
-������ǰ����������±��ǻ�������ʯ�����￴�ó���ʲô���
-��Զ�����ſ�ʯ��(bei)��
+這裡便是阿房宮，四下便是黃土、亂石，哪裡看得出有什麼宮殿？
+不遠處立著塊石碑(bei)。
 LONG);
         set("exits",  ([  //sizeof()  ==  4
                 "east" :  __DIR__"road7",
@@ -15,11 +15,11 @@ LONG);
         set("item_desc",  ([
                 "bei" :  "
 
-            ʼ����ʮ���꣬ʹū��ʮ���ڽ���˹�
-                 ��������̣���ʦ��¹��
-               ������أ�ǧ�﹬�ڸ�֮һ�档
+            始皇三十五年，使奴七十萬眾建造此宮
+                 不念暴政苛刻，義師逐鹿。
+               霸王入關，千裡宮闕付之一炬。
 
-                ���߱���      �����޵�
+                暴者必亡      仁者無敵
 \n",
         ]));
         set("outdoors",  "changan");

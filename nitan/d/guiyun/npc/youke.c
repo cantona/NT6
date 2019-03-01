@@ -1,14 +1,14 @@
-// Npc: /d/guiyun/npc/youke.c ÓÎ¿Í
+// Npc: /d/guiyun/npc/youke.c éŠå®¢
 // Last Modified by winder on Jul. 9 2001
 
 inherit NPC;
 
 void create()
 {
-        set_name("ÓÎ¿Í", ({ "you ke", "you", "ke" }));
-        set("gender", "ÄĞĞÔ");
+        set_name("éŠå®¢", ({ "you ke", "you", "ke" }));
+        set("gender", "ç”·æ€§");
         set("age", 28);
-        set("long", "ËûÊÇÒ»¸öÀ´´ËÓÎÍæµÄÈË£¬ËÆºõÒÑ¾­ÌÕ×íÓÚÉ½Ë®Ö®ÖĞ¡£\n");
+        set("long", "ä»–æ˜¯ä¸€å€‹ä¾†æ­¤éŠç©çš„äººï¼Œä¼¼ä¹å·²ç¶“é™¶é†‰äºå±±æ°´ä¹‹ä¸­ã€‚\n");
         
         set("combat_exp", 3500);
         set("shen_type", 0);
@@ -20,12 +20,12 @@ void create()
         set_temp("apply/attack", 15);
         set_temp("apply/defense", 15);
         set("inquiry",([
-                "name" : "ÎÒÖ»ÊÇÒ»¸öĞ¡½ÇÉ«£¬ÄÄÓĞĞÕÃû¿ÉÑÔ£¿",
+                "name" : "æˆ‘åªæ˜¯ä¸€å€‹å°è§’è‰²ï¼Œå“ªæœ‰å§“åå¯è¨€ï¼Ÿ",
         ]));
 
         set("chat_chance",10);
         set("chat_msg",({
-                "ÓÎ¿ÍÒ¡Í·»ÎÄÔµØÒ÷µÀ£º×íÎÌÖ®Òâ²»ÔÚ¾Æ£¬ÔÚºõÉ½Ë®Ö®¼äÒ²¡£\n",
+                "éŠå®¢æ–é ­æ™ƒè…¦åœ°åŸé“ï¼šé†‰ç¿ä¹‹æ„ä¸åœ¨é…’ï¼Œåœ¨ä¹å±±æ°´ä¹‹é–“ä¹Ÿã€‚\n",
         }));
         setup();
         carry_object("/clone/misc/cloth")->wear();

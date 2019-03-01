@@ -3,7 +3,7 @@ inherit ITEM;
 
 void create()
 {
-        set_name(YEL "Í­¶¦" NOR, ({ "ding"}) );
+        set_name(YEL "éŠ…é¼" NOR, ({ "ding"}) );
         set_weight(500);
         set_max_encumbrance(800000);
         set("no_get", 1);
@@ -11,8 +11,8 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("prep", "in");
-                set("unit", "Ö»");
-                set("long", HIR "Í­¶¦ÖĞÉÕ×ÅĞÜĞÜÁÒ»ğ£¬»ğÑæ³åÆğÒ»ÕÉÀ´¸ß¡£\n" NOR);
+                set("unit", "åª");
+                set("long", HIR "éŠ…é¼ä¸­ç‡’è‘—ç†Šç†Šçƒˆç«ï¼Œç«ç‡„æ²–èµ·ä¸€ä¸ˆä¾†é«˜ã€‚\n" NOR);
                 set("value", 1);
         }
 }

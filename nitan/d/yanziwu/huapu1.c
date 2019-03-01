@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����");
+        set("short", "花圃");
         set("long", @LONG
-����������ɽׯ�еĻ��ԡ������а��˺ܶ໨������࣬���񴦻�
-����������硣�Ĵ�ɢ���Ų��ٲ�֪���Ļ������з��е�󷲲軨����
-֦���񻣬����ʤ�硣
+這裡是蔓陀山莊中的花圃。花圃中擺了很多花盆和新泥，背蔭處花
+盆裡多是新苗。四處散落著不少不知名的花兒，有繁有凋大凡茶花，皆
+枝條窈窕，弱不勝風。
 LONG );
         set("outdoors", "mantuo");
         set("exits", ([

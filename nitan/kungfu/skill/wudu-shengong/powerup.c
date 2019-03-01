@@ -1,7 +1,7 @@
-// powerup.c »¯Éß´ó·¨
+// powerup.c åŒ–è›‡å¤§æ³•
 // Last Modified by winder on Mar. 10 2000
 //modified by sega 12/28/1999
-//¸ÄÁËÔö¼Ó¹¦Á¦Óë½µµÍ²»µÈºÍ²»ºÄÄÚÁ¦µÄbug
+//æ”¹äº†å¢åŠ åŠŸåŠ›èˆ‡é™ä½ä¸ç­‰å’Œä¸è€—å…§åŠ›çš„bug
 
 #include <ansi.h>
 
@@ -18,20 +18,20 @@ int exert(object me, object target)
   !query("perform/powerup", me) && 
   !query("can_perform/wudu-shengong/powerup", me) && 
   !query_temp("murong/xingyi", me) )
-   return notify_fail("ÄãËùÊ¹ÓÃµÄÄÚ¹¦ÖĞÃ»ÓĞÕâÖÖ¹¦ÄÜ¡£");
+   return notify_fail("ä½ æ‰€ä½¿ç”¨çš„å…§åŠŸä¸­æ²’æœ‰é€™ç¨®åŠŸèƒ½ã€‚");
 */
 
         if( target != me )
-                return notify_fail("ÄãÖ»ÄÜÓÃÎå¶¾Éñ¹¦ÌáÉı×Ô¼ºµÄÕ½¶·Á¦¡£\n");
+                return notify_fail("ä½ åªèƒ½ç”¨äº”æ¯’ç¥åŠŸæå‡è‡ªå·±çš„æˆ°é¬¥åŠ›ã€‚\n");
         if( query("neili", me)<100 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ã€‚\n");
         if( query_temp("powerup", me) )
-                return notify_fail("ÄãÒÑ¾­ÔÚÔË¹¦ÖĞÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“åœ¨é‹åŠŸä¸­äº†ã€‚\n");
 
         skill = me->query_skill("force");
 
         addn("neili", -100, me);
-        message_combatd(BLU"$NÔËÆğÎå¶¾Éñ¹¦£¬Í·¶¥ºÚÆøÕôÌÚ£¬È«Éí¼¡·ô·ØÆğºÚÉ«µÄÁÛ¼×£¬Ë«Ä¿Ğ×¹âËÄÉä£¡\n" NOR, me);
+        message_combatd(BLU"$Né‹èµ·äº”æ¯’ç¥åŠŸï¼Œé ­é ‚é»‘æ°£è’¸é¨°ï¼Œå…¨èº«è‚Œè†šå¢³èµ·é»‘è‰²çš„é±—ç”²ï¼Œé›™ç›®å…‡å…‰å››å°„ï¼\n" NOR, me);
 
         addn_temp("apply/armor", skill, me);
         addn_temp("apply/hand", skill/3, me);
@@ -53,19 +53,19 @@ void remove_effect(object me, int amount)
                 addn_temp("apply/attack", -amount/3, me);
                 addn_temp("apply/armor", -amount, me);
                 delete_temp("powerup", me);
-                tell_object(me, "ÄãµÄÎå¶¾Éñ¹¦ÔËĞĞÍê±Ï£¬ÉíÌåÖğ½¥»Ö¸´Õı³£¡£\n");
+                tell_object(me, "ä½ çš„äº”æ¯’ç¥åŠŸé‹è¡Œå®Œç•¢ï¼Œèº«é«”é€æ¼¸æ¢å¾©æ­£å¸¸ã€‚\n");
         }
 }
 int help(object me)
 {
-        write(WHT"\nÎå¶¾Éñ¹¦Ö®»¯Éß´ó·¨£º"NOR"\n");
+        write(WHT"\näº”æ¯’ç¥åŠŸä¹‹åŒ–è›‡å¤§æ³•ï¼š"NOR"\n");
         write(@HELP
 
-        Ê¹ÓÃ¹¦Ğ§£º
-                ÌáÉı×Ô¼ºµÄ¹¥»÷·ÀÓùÄÜÁ¦
+        ä½¿ç”¨åŠŸæ•ˆï¼š
+                æå‡è‡ªå·±çš„æ”»æ“Šé˜²å¾¡èƒ½åŠ›
 
-        ³öÊÖÒªÇó£º
-                ÄÚÁ¦100
+        å‡ºæ‰‹è¦æ±‚ï¼š
+                å…§åŠ›100
 HELP
         );
         return 1;

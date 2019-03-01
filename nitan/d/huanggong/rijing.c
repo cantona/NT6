@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "日精门");
+        set("short", "鏃ョ簿闁�");
         set("long", @LONG
-日精门北边是南书房, 南边是祭孔处, 这里是皇帝经常出行坐轿的
-地方.
+鏃ョ簿闁�鍖楅倞鏄崡鏇告埧, 鍗楅倞鏄キ瀛旇檿, 閫欒！鏄殗甯濈稉甯稿嚭琛屽潗杞庣殑
+鍦版柟.
 LONG
         );
         set("outdoors", "huanggong");

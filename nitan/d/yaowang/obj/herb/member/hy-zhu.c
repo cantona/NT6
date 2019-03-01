@@ -2,12 +2,12 @@
 
 void create()
 {
-        set_name(HIC "Öí¶ú¶ä" NOR, ({ "hy-zhu", "Senecio goodianux", "herb_hy_zhu" }));
+        set_name(HIC "è±¬è€³æœµ" NOR, ({ "hy-zhu", "Senecio goodianux", "herb_hy_zhu" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "¾Õ¿ÆÖ²Îïµ¥Í·Ç§Àï¹â(Senecio goodianux)µÄÈ«²İ¡£ÒòÆäÒ¶ĞÎÈçÖí¶ú¶ä£¬¹ÊµÃ´ËÃû¡£\n" NOR);
-                set("base_unit", "¿Å");
+                set("long", HIW "èŠç§‘æ¤ç‰©å–®é ­åƒè£¡å…‰(Senecio goodianux)çš„å…¨è‰ã€‚å› å…¶è‘‰å½¢å¦‚è±¬è€³æœµï¼Œæ•…å¾—æ­¤åã€‚\n" NOR);
+                set("base_unit", "é¡†");
                 set("base_value", 20000);
                 set("base_weight", 100);
         }

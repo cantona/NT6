@@ -14,19 +14,19 @@ void self_destruct();
 
 
 nosave string *menpai_names1 = ({
-    "»ªÉ½ÅÉ",
-    "ĞÇËŞÅÉ",
-    "Îäµ±ÅÉ",
-    "ÉÙÁÖÅÉ",
-    "Ø¤°ï",
+    "è¯å±±æ´¾",
+    "æ˜Ÿå®¿æ´¾",
+    "æ­¦ç•¶æ´¾",
+    "å°‘æ—æ´¾",
+    "ä¸å¹«",
 });
 
 nosave string *menpai_names2 = ({
-    "»ªÉ½",
-    "ĞÇËŞ",
-    "Îäµ±",
-    "ÉÙÁÖ",
-    "Ø¤°ï",
+    "è¯å±±",
+    "æ˜Ÿå®¿",
+    "æ­¦ç•¶",
+    "å°‘æ—",
+    "ä¸å¹«",
 });
 
 nosave int random_id;
@@ -34,7 +34,7 @@ nosave int random_id;
 void create()
 {
         set_random_name();
-        set("gender", "ÄĞĞÔ" );
+        set("gender", "ç”·æ€§" );
         set("age", 29);
         set("str", 25);
         set("dex", 30);
@@ -63,9 +63,9 @@ int set_random_name()
     string my_name;
 
     random_id=random(5);
-    my_name = menpai_names2[random_id] + "µÜ×Ó";
+    my_name = menpai_names2[random_id] + "å¼Ÿå­";
     set_name(my_name, ({"dizi"}));
-    set("long", "Ëû¿´ÆğÀ´ÊÇÒ»¸öÄêÇáµÄ"+menpai_names1[random_id]+"µÜ×Ó¡£\n");
+    set("long", "ä»–çœ‹èµ·ä¾†æ˜¯ä¸€å€‹å¹´è¼•çš„"+menpai_names1[random_id]+"å¼Ÿå­ã€‚\n");
 
     return random_id;
 }
@@ -225,7 +225,7 @@ void self_destruct() {
 
     clear_dumudian();
         if (environment(me))
-    message("vision", name(1)+"¼±¼±Ã¦Ã¦µØÀë¿ªÁË.\n", environment(me), me);
+    message("vision", name(1)+"æ€¥æ€¥å¿™å¿™åœ°é›¢é–‹äº†.\n", environment(me), me);
     destruct(me);
 }
 
@@ -247,7 +247,7 @@ void start_job(object target)
         // only check if I am not fighting
        if( present(query("id", target),environment(me))){
            // if the player still here, attack him
-           message_vision(HIR"\n$N¶Ô$n´óÉùºÈµÀ£º" + RANK_D->query_rude(target) + "¾¹¸Ò²»Ê¶ºÃ´õ£¿£¡\n\n"NOR, me, target);
+           message_vision(HIR"\n$Nå°$nå¤§è²å–é“ï¼š" + RANK_D->query_rude(target) + "ç«Ÿæ•¢ä¸è­˜å¥½æ­¹ï¼Ÿï¼\n\n"NOR, me, target);
            kill_ob(target);
        }
        else
@@ -265,8 +265,8 @@ void start_job(object target)
                if (gang->query_current_liquid() > 0)
                {
                     // set gang on fire.
-                    command("say "+"ÀÏ×Ó¿´ËÀÍºÂ¿ÃÇ»¹ÔõÃ´×ö·¨ÊÂ");
-                    message_vision(HIR"$N´Ó»³ÖĞÌÍ³öÒ»Ö§»ğÕÛ£¬µãÈ¼ÁËÍ­¸×ÖĞµÄËÖÓÍ¡£\n"NOR, me);
+                    command("say "+"è€å­çœ‹æ­»ç¦¿é©¢å€‘é‚„æ€éº¼åšæ³•äº‹");
+                    message_vision(HIR"$Nå¾æ‡·ä¸­æå‡ºä¸€æ”¯ç«æŠ˜ï¼Œé»ç‡ƒäº†éŠ…ç¼¸ä¸­çš„é…¥æ²¹ã€‚\n"NOR, me);
                     gang->burn_out_gang();
                }
                self_destruct();

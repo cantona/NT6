@@ -3,19 +3,19 @@
 
 class business
 {
-        string name;    /* Ãû³Æ */
+        string name;    /* åç¨± */
         string id;      /* ID */
-        string unit;    /* µ¥Î» */
-        int amount;     /* ÊıÁ¿ */
-        int buy;        /* ÊÕ¹ºµ¥¼Û */
-        string from;    /* ÊÕ¹ºµØµã */
-        string now;     /* »õÎïµ±Ç°ËùÔÚµØ */
-        string to;      /* »õÎïµ±Ç°ÕıÔÚÇ°ÍùµÄµØµã */
-        int time;       /* Ô¤¼Æµ½´ïµÄÊ±¼ä */
+        string unit;    /* å–®ä½ */
+        int amount;     /* æ•¸é‡ */
+        int buy;        /* æ”¶è³¼å–®åƒ¹ */
+        string from;    /* æ”¶è³¼åœ°é» */
+        string now;     /* è²¨ç‰©ç•¶å‰æ‰€åœ¨åœ° */
+        string to;      /* è²¨ç‰©ç•¶å‰æ­£åœ¨å‰å¾€çš„åœ°é» */
+        int time;       /* é è¨ˆåˆ°é”çš„æ™‚é–“ */
 }
 
-int trade_amount = 0; /* ¹²½øĞĞ¹ıµÄ½»Ò×´ÎÊı */
-int profit = 0; /* ¹²×¬È¡µÄÀûÈó(silver) */
+int trade_amount = 0; /* å…±é€²è¡Œéçš„äº¤æ˜“æ¬¡æ•¸ */
+int profit = 0; /* å…±è³ºå–çš„åˆ©æ½¤(silver) */
 int query_profit() { return profit; }
 
 class business *all = ({});
@@ -44,7 +44,7 @@ int set_business(mapping data)
 protected void get_fasong_number(string num,object me,class business *have);
 protected void get_fasong_where(string num,object me,string *ds,class business ware);
 
-// ·µ»ØÖµ 0 ´ËÈËÔÚ±¾µØÃ»ÓĞÕâÖÖ»õÎï, -1 ÊıÁ¿²»¹».
+// è¿”å›å€¼ 0 æ­¤äººåœ¨æœ¬åœ°æ²’æœ‰é€™ç¨®è²¨ç‰©, -1 æ•¸é‡ä¸å¤ .
 nomask int sell_out(string id,int amount,int value)
 {
         string domain;
@@ -140,46 +140,46 @@ nomask string query_business_status()
         int n;
 
         if(!n  = sizeof(all))
-                output += "ÄãÄ¿Ç°ÊÖÍ·Ã»ÓĞÈÎºÎ»õÎï¡£\n";
+                output += "ä½ ç›®å‰æ‰‹é ­æ²’æœ‰ä»»ä½•è²¨ç‰©ã€‚\n";
         else
         {
-                output += "ÄãÄ¿Ç°ÊÖÍ·µÄ»õÎïÓĞ£º\n";
+                output += "ä½ ç›®å‰æ‰‹é ­çš„è²¨ç‰©æœ‰ï¼š\n";
                 output += sprintf("%-22s%-12s%-12s%-12s%s\n",
-                        "»õÎïÃû³Æ","»õÎïÊıÁ¿","ÊÕ¹ºµØµã","ÊÕ¹º¼Û¸ñ","×´Ì¬");
+                        "è²¨ç‰©åç¨±","è²¨ç‰©æ•¸é‡","æ”¶è³¼åœ°é»","æ”¶è³¼åƒ¹æ ¼","ç‹€æ…‹");
                 output += "----------------------------------------------------------------------\n";
                 for(int i=0;i<n;i++)
                 {
                         string status;
 
                         if(!all[i]->to)
-                                status = sprintf("»õÎïÔÚ%s",to_chinese(all[i]->now));
+                                status = sprintf("è²¨ç‰©åœ¨%s",to_chinese(all[i]->now));
                         else if(time() <=  all[i]->time)
-                                status = sprintf("ÕıÔÚÔËÍù%sµÄÍ¾ÖĞÊ£Óà%sÌì×óÓÒµ½´ï",to_chinese(all[i]->to),
+                                status = sprintf("æ­£åœ¨é‹å¾€%sçš„é€”ä¸­å‰©ä½™%så¤©å·¦å³åˆ°é”",to_chinese(all[i]->to),
                                                  chinese_number((all[i]->time - time()) / 1440));
                         else
-                                status = sprintf("ÒÑÔËµÖ%s",to_chinese(all[i]->to));
+                                status = sprintf("å·²é‹æŠµ%s",to_chinese(all[i]->to));
 
                         output += sprintf("%-22s%-12s%-12s%-12s%s\n",
                                 sprintf("%s(%s)",all[i]->name,all[i]->id),
                                 sprintf("%d%s",all[i]->amount,all[i]->unit),
                                 to_chinese(all[i]->from),
-                                sprintf("%dÒø/%s",all[i]->buy,all[i]->unit),
+                                sprintf("%déŠ€/%s",all[i]->buy,all[i]->unit),
                                 status
                                 );
                 }
         }
 
         if(!trade_amount)
-                output += "\nÄã»¹Ã»ÓĞ´ÓÊÂ¹ıÃ³Ò×»î¶¯¡£\n\n";
+                output += "\nä½ é‚„æ²’æœ‰å¾äº‹éè²¿æ˜“æ´»å‹•ã€‚\n\n";
         else
-                output += sprintf("\nÄã¹²½øĞĞ¹ı%s´ÎÃ³Ò×¡£\n\n",chinese_number(trade_amount));
+                output += sprintf("\nä½ å…±é€²è¡Œé%sæ¬¡è²¿æ˜“ã€‚\n\n",chinese_number(trade_amount));
 
         if(!profit)
-                output += "Äã»¹Ã»ÓĞÍ¨¹ıÃ³Ò××¬È¡¹ıÀûÈó¡£\n\n";
+                output += "ä½ é‚„æ²’æœ‰é€šéè²¿æ˜“è³ºå–éåˆ©æ½¤ã€‚\n\n";
         else if(profit < 0)
-                output += sprintf("ÄãÔÚ´ÓÊÂÃ³Ò×ÖĞ¹²¿÷ËğÁË %d Á½°×Òø¡£\n\n",abs(profit));
+                output += sprintf("ä½ åœ¨å¾äº‹è²¿æ˜“ä¸­å…±è™§æäº† %d å…©ç™½éŠ€ã€‚\n\n",abs(profit));
         else
-                output += sprintf("ÄãÔÚ´ÓÊÂÃ³Ò×ÖĞ¹²×¬È¡ÁË %d Á½°×Òø¡£\n\n",profit);
+                output += sprintf("ä½ åœ¨å¾äº‹è²¿æ˜“ä¸­å…±è³ºå–äº† %d å…©ç™½éŠ€ã€‚\n\n",profit);
 
         return output;
 }
@@ -199,7 +199,7 @@ nomask void fasong_ware()
 
         if( !(n = sizeof(all)) )
         {
-                write("ÄãÏÖÔÚÊÖÀïÃ»ÓĞÈÎºÎ»õÎï¡£\n");
+                write("ä½ ç¾åœ¨æ‰‹è£¡æ²’æœ‰ä»»ä½•è²¨ç‰©ã€‚\n");
                 return;
         }
 
@@ -209,17 +209,17 @@ nomask void fasong_ware()
 
         if( !(n = sizeof(have)) )
         {
-                write(sprintf("ÄãÔÚ%sÃ»ÓĞÈÎºÎ»õÎï¡£\n",to_chinese(from)));
+                write(sprintf("ä½ åœ¨%sæ²’æœ‰ä»»ä½•è²¨ç‰©ã€‚\n",to_chinese(from)));
                 return;
         }
 
         if(n > 1)
         {
-                out = sprintf("ÄãÄ¿Ç°ÔÚ%s¹²ÓĞ%s±Ê»õÎï£º\n",to_chinese(from),chinese_number(n));
+                out = sprintf("ä½ ç›®å‰åœ¨%så…±æœ‰%sç­†è²¨ç‰©ï¼š\n",to_chinese(from),chinese_number(n));
                 for(i=0;i<n;i++)
-                        out += sprintf("%2d. %s %d %s¡£\n",(i+1),
+                        out += sprintf("%2d. %s %d %sã€‚\n",(i+1),
                                 have[i]->name,have[i]->amount,have[i]->unit);
-                out += "ÇëÑ¡ÔñÄãÒª·¢ËÍµÄ»õÎï£º\n";
+                out += "è«‹é¸æ“‡ä½ è¦ç™¼é€çš„è²¨ç‰©ï¼š\n";
                 write(out);
                 input_to( (: get_fasong_number :),this_player(),have );
                 return;
@@ -238,7 +238,7 @@ protected void get_fasong_number(string num,object me,class business *have)
 
         if(!sscanf(num,"%d",n))
         {
-                write("ÇëÑ¡ÔñÄãÒª·¢ËÍµÄ»õÎï£º\n");
+                write("è«‹é¸æ“‡ä½ è¦ç™¼é€çš„è²¨ç‰©ï¼š\n");
                 input_to((: get_fasong_number :),me,have);
                 return;
         }
@@ -246,7 +246,7 @@ protected void get_fasong_number(string num,object me,class business *have)
         n--;
         if( (n < 0 ) || (n > sizeof(have)) )
         {
-                write("ÇëÑ¡ÔñÄãÒª·¢ËÍµÄ»õÎï£º\n");
+                write("è«‹é¸æ“‡ä½ è¦ç™¼é€çš„è²¨ç‰©ï¼š\n");
                 input_to((: get_fasong_number :),me,have);
                 return;
         }
@@ -260,13 +260,13 @@ protected void get_fasong_number(string num,object me,class business *have)
                 if(strlen(v_domains[i]) > l)
                         l = strlen(v_domains[i]);
 
-        out = "Ä¿Ç°¿ÉÒÔ·¢ÍùµÄµØµãÓĞ£º\n";
+        out = "ç›®å‰å¯ä»¥ç™¼å¾€çš„åœ°é»æœ‰ï¼š\n";
         bk = to_int(50/(l+5));
         l++;
         for(i=0;i<s;i++)
                 out += sprintf("%-3d%-"+(string)l+"s  %s",(i+1),v_domains[i],(i%bk==(bk-1))||i==n-1?"\n":"" );
 
-        out += "ÇëÑ¡ÔñÄãÒª·¢ÍùµÄµØµã£º\n";
+        out += "è«‹é¸æ“‡ä½ è¦ç™¼å¾€çš„åœ°é»ï¼š\n";
         write(out);
         input_to((: get_fasong_where :),me,ds,have[n]);
 }
@@ -280,7 +280,7 @@ protected void get_fasong_where(string num,object me,string *ds,class business w
 
         if(!sscanf(num,"%d",n))
         {
-                write("ÇëÑ¡ÔñÄãÒª·¢ÍùµÄµØµã£º\n");
+                write("è«‹é¸æ“‡ä½ è¦ç™¼å¾€çš„åœ°é»ï¼š\n");
                 input_to((: get_fasong_where :),me,ds,ware);
                 return;
         }
@@ -288,7 +288,7 @@ protected void get_fasong_where(string num,object me,string *ds,class business w
         n--;
         if( (n < 0 ) || (n >= sizeof(ds)) )
         {
-                write("ÇëÑ¡ÔñÄãÒª·¢ÍùµÄµØµã£º\n");
+                write("è«‹é¸æ“‡ä½ è¦ç™¼å¾€çš„åœ°é»ï¼š\n");
                 input_to((: get_fasong_where :),me,ds,ware);
                 return;
         }
@@ -296,7 +296,7 @@ protected void get_fasong_where(string num,object me,string *ds,class business w
         time = BUSINESS_D->count_fasong_time(ware->now,ds[n],ware->buy*ware->amount/100);
         if(!time)
         {
-                write("·¢ËÍÊ§°Ü£¡£¡£¡£¡\n");
+                write("ç™¼é€å¤±æ•—ï¼ï¼ï¼ï¼\n");
                 return;
         }
 
@@ -305,24 +305,24 @@ protected void get_fasong_where(string num,object me,string *ds,class business w
         if(plus > 1)
                 fs_fee *= plus;
 
-        if(fs_fee < 20) // 1000 Á½°×Òø¡£Ã¿´ÎÔË·Ñ×îÉÙÎª 20 silver¡£
+        if(fs_fee < 20) // 1000 å…©ç™½éŠ€ã€‚æ¯æ¬¡é‹è²»æœ€å°‘ç‚º 20 silverã€‚
                 fs_fee = 20;
 
         if(query("balance", me) < fs_fee*100)
         {
-                write(sprintf("·¢ËÍ %d %s%sÈ¥%sĞë½ÉÄÉÔË·Ñ %d Á½°×Òø£¬ÄãÒøĞĞ´æ¿î²»¹»¡£\n",
+                write(sprintf("ç™¼é€ %d %s%så»%sé ˆç¹³ç´é‹è²» %d å…©ç™½éŠ€ï¼Œä½ éŠ€è¡Œå­˜æ¬¾ä¸å¤ ã€‚\n",
                         ware->amount,ware->unit,ware->name,to_chinese(ds[n]),fs_fee ));
                 return;
         }
 
         addn("balance", -fs_fee*100, me);
-        write(sprintf("·¢ËÍ %d %s%sÈ¥%sµÄÔË·Ñ %d Á½°×ÒøÒÑÖ±½Ó´ÓÄãµÄÒøĞĞ´æ¿îÖĞ×ªÕÊ¡£\n",
+        write(sprintf("ç™¼é€ %d %s%så»%sçš„é‹è²» %d å…©ç™½éŠ€å·²ç›´æ¥å¾ä½ çš„éŠ€è¡Œå­˜æ¬¾ä¸­è½‰å¸³ã€‚\n",
                         ware->amount,ware->unit,ware->name,to_chinese(ds[n]),fs_fee ));
         ware->now = 0;
         ware->to = ds[n];
         ware->time = time()+time*1440;
         this_object()->save();
-        write(sprintf("%sÒÑ·¢Íù%s,Â·ÉÏ´óÔ¼ĞèÒª%sÌì¡£\n",
+        write(sprintf("%så·²ç™¼å¾€%s,è·¯ä¸Šå¤§ç´„éœ€è¦%så¤©ã€‚\n",
                 ware->name,to_chinese(ds[n]),chinese_number(time)));
 }
 
@@ -338,7 +338,7 @@ protected void random_happen(class business w)
         string reason,cl;
         int n,loss;
 
-        // ËğÊ§ÂÊ 1-5%£¬30% ¿ÉÄÜĞÔ·¢ÉúËğÊ§¡£
+        // æå¤±ç‡ 1-5%ï¼Œ30% å¯èƒ½æ€§ç™¼ç”Ÿæå¤±ã€‚
 
         if(random(100) >= 30)
                 return;
@@ -365,19 +365,19 @@ protected void random_happen(class business w)
         if(!cl)
                 return;
 
-        if( (cl == "¹ÈÎï") || (cl == "ÍÁÌØ²ú") )
-                reason = "ÀÃµô";
+        if( (cl == "è°·ç‰©") || (cl == "åœŸç‰¹ç”¢") )
+                reason = "çˆ›æ‰";
         else
         {
                 if(random(2))
-                        reason = "±»Íµ";
+                        reason = "è¢«å·";
                 else
-                        reason = "±»ÇÀ";
+                        reason = "è¢«æ¶";
         }
 
         w->amount -= loss;
 
-        tell_object(this_object(),sprintf("ÄãµÄ%sÔÚÔËÊäÍ¾ÖĞ%sÁË %d %s¡£\n",
+        tell_object(this_object(),sprintf("ä½ çš„%såœ¨é‹è¼¸é€”ä¸­%säº† %d %sã€‚\n",
                 w->name,reason,loss,w->unit ));
 }
 

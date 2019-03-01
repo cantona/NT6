@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��ͨ��");
+        set("short", "大通嶺");
         set("long", @LONG
-������Ǵ�ͨ�룬Ϊ����������ɽ���Ľ�Ҫ֮�����ɼ�ɽ��Ұ��
-������䣬���Ŵ˵�ʢ����֥����������ý����ֽŲ��á�
+這裡就是大通嶺，為貫連南祈連山脈的緊要之處。可見山羊，野兔
+奔行其間，據聞此地盛產靈芝。再往上需得漸漸手腳並用。
 LONG );
         set("outdoors", "qilian");
         set("no_clean_up", 0);

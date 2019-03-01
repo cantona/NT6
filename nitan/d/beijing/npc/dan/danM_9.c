@@ -4,17 +4,17 @@ inherit COMBINED_ITEM;
 
 void create()
 {
-        set_name(HIW"æÏ¶ğÏÉµ¤"NOR, ({"change dan", "dan"}));
+        set_name(HIW"å«¦å¨¥ä»™ä¸¹"NOR, ({"change dan", "dan"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("base_unit", "Á£");
-                set("no_drop", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
-                set("no_sell", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
-                set("no_put", "ÕâÑù¶«Î÷²»ÄÜ·ÅÔÚÄÇ¶ù¡£\n");
-                set("no_get", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄÇ¶ù¡£\n");
-                set("no_steal", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄÇ¶ù¡£\n");
-                set("no_beg", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄÇ¶ù¡£\n");
+                set("base_unit", "ç²’");
+                set("no_drop", "é€™æ¨£æ±è¥¿ä¸èƒ½é›¢é–‹ä½ ã€‚\n");
+                set("no_sell", "é€™æ¨£æ±è¥¿ä¸èƒ½é›¢é–‹ä½ ã€‚\n");
+                set("no_put", "é€™æ¨£æ±è¥¿ä¸èƒ½æ”¾åœ¨é‚£å…’ã€‚\n");
+                set("no_get", "é€™æ¨£æ±è¥¿ä¸èƒ½é›¢é–‹é‚£å…’ã€‚\n");
+                set("no_steal", "é€™æ¨£æ±è¥¿ä¸èƒ½é›¢é–‹é‚£å…’ã€‚\n");
+                set("no_beg", "é€™æ¨£æ±è¥¿ä¸èƒ½é›¢é–‹é‚£å…’ã€‚\n");
                 set("base_value", 0);
                 set("only_do_effect", 1);
         }
@@ -28,7 +28,7 @@ int do_effect(object me)
 
         if( time()-query_temp("last_eat/dan(M, me)")<400 )
         {
-                write("Äã¸Õ·şÓÃ¹ıÒ©£¬ĞèÒ©ĞÔ·¢»ÓÍêĞ§ÓÃÒÔºó²ÅÄÜ¼ÌĞø·şÓÃ¡£\n");
+                write("ä½ å‰›æœç”¨éè—¥ï¼Œéœ€è—¥æ€§ç™¼æ®å®Œæ•ˆç”¨ä»¥å¾Œæ‰èƒ½ç¹¼çºŒæœç”¨ã€‚\n");
                 return 1;
         }
 
@@ -38,10 +38,10 @@ int do_effect(object me)
 
         if (me->improve_jingli(5))
         {
-                message_vision(HIW "$N³ÔÏÂÒ»Á£æÏ¶ğÏÉµ¤£¬¸Ğµ½¾«Á¦ĞŞÎª±ÈÒÔÇ°Ìá¸ß²»ÉÙ¡£\n" NOR, me);
+                message_vision(HIW "$Nåƒä¸‹ä¸€ç²’å«¦å¨¥ä»™ä¸¹ï¼Œæ„Ÿåˆ°ç²¾åŠ›ä¿®ç‚ºæ¯”ä»¥å‰æé«˜ä¸å°‘ã€‚\n" NOR, me);
                 set("jingli",query("max_jingli",  me), me);
         } else
-                message_vision(HIC "$N³ÔÏÂÒ»Á£æÏ¶ğÏÉµ¤£¬¸Ğ¾õºÃÏñÃ»Ê²Ã´Ğ§¹û¡£\n" NOR, me);
+                message_vision(HIC "$Nåƒä¸‹ä¸€ç²’å«¦å¨¥ä»™ä¸¹ï¼Œæ„Ÿè¦ºå¥½åƒæ²’ä»€éº¼æ•ˆæœã€‚\n" NOR, me);
 
 //        me->start_busy(2);
         me->start_busy(1);

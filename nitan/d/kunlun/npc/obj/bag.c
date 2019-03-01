@@ -4,13 +4,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name("ÓÍ²¼°ü", ({ "bag", "bao" }));
+        set_name("æ²¹å¸ƒåŒ…", ({ "bag", "bao" }));
         set_weight(200);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
-                set("long", "ÕâÊÇÒ»¸öÓÍ²¼°ü¹ü¡£\n");
+                set("unit", "å€‹");
+                set("long", "é€™æ˜¯ä¸€å€‹æ²¹å¸ƒåŒ…è£¹ã€‚\n");
                 set("value", 500);
                 set("material", "cloth");
         }
@@ -36,17 +36,17 @@ int do_open(string arg)
         if ( !arg ) return 0;
         if ( query("book_count") < 1)
         {
-                return notify_fail("ÓÍ²¼°üÀïÃæÊ²Ã´Ò²Ã»ÓÐÁË¡£\n");
+                return notify_fail("æ²¹å¸ƒåŒ…è£¡é¢ä»€éº¼ä¹Ÿæ²’æœ‰äº†ã€‚\n");
         }
 
         me = this_player();
         if ( arg == "bag")
         {
                 where = environment(me);
-message("channel:rumor",MAG"¡¾Ò¥ÑÔ¡¿Ä³ÈË£º"+query("name", this_player())+"ÕÒµ½¾ÅÑôÕæ¾­À²¡£\n"NOR,users());
+message("channel:rumor",MAG"ã€è¬ è¨€ã€‘æŸäººï¼š"+query("name", this_player())+"æ‰¾åˆ°ä¹é™½çœŸç¶“å•¦ã€‚\n"NOR,users());
                 message_vision(
-"$NÇáÇáµØ°ÑÓÍ²¼°üÀ´¿´Ê±£¬ÀïÃæÔ­À´ÊÇËÄ±¾±¡±¡µÄ¾­Êé£¬Ö»ÒòÓÍ²¼°üµÃ½ôÃÜ£¬Ëä
-³¤ÆÚ²ØÔÚÔ³¸¹Ö®ÖÐ£¬ÊéÒ³ÈÔÈ»ÍêºÃÎÞËð¡£\n", me);
+"$Nè¼•è¼•åœ°æŠŠæ²¹å¸ƒåŒ…ä¾†çœ‹æ™‚ï¼Œè£¡é¢åŽŸä¾†æ˜¯å››æœ¬è–„è–„çš„ç¶“æ›¸ï¼Œåªå› æ²¹å¸ƒåŒ…å¾—ç·Šå¯†ï¼Œé›–
+é•·æœŸè—åœ¨çŒ¿è…¹ä¹‹ä¸­ï¼Œæ›¸é ä»ç„¶å®Œå¥½ç„¡æã€‚\n", me);
                 book = new("/clone/book/jiuyang1");
                 book->move(file_name(where));
                 book = new("/clone/book/jiuyang2");

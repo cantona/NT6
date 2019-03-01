@@ -12,11 +12,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", HIW"ÔªË§ÕÊÓª"NOR);
+        set("short", HIW"å…ƒå¸¥å¸³ç‡Ÿ"NOR);
         set("long", @LONG
-ÕâÀï¾ÍÊÇ¡¸´óËÎ¡¹ÔªË§µÄÕÊÓª£¬Á½±ß·ÖÁ¢×ÅÖÚ½«Áì¾üÊ¿£¬´óËÎÔª
-Ë§ÔÚÕâÀï¸ºÔðµ÷±øÇ²½«£¬¿¹»÷ÃÉ¹Å¾üµÄÈëÇÖ£¬²»Ê±ÓÐ´«Áî±ø´ÒÃ¦µØ½ø
-³ö£¬´«µÝ×ÅÇ°ÏßµÄ¾üÇé¡£
+é€™è£¡å°±æ˜¯ã€Œå¤§å®‹ã€å…ƒå¸¥çš„å¸³ç‡Ÿï¼Œå…©é‚Šåˆ†ç«‹è‘—çœ¾å°‡é ˜è»å£«ï¼Œå¤§å®‹å…ƒ
+å¸¥åœ¨é€™è£¡è² è²¬èª¿å…µé£å°‡ï¼ŒæŠ—æ“Šè’™å¤è»çš„å…¥ä¾µï¼Œä¸æ™‚æœ‰å‚³ä»¤å…µåŒ†å¿™åœ°é€²
+å‡ºï¼Œå‚³éžè‘—å‰ç·šçš„è»æƒ…ã€‚
 LONG );
 
         set("no_magic", "1");
@@ -36,14 +36,14 @@ void init()
 
         if (me == WAR_D->query_marshal())
         {
-                message_vision(HIW "ÕÊÖÐµÄ½«Ê¿¿´¼û$N×ßÁË½øÀ´£¬Á¬Ã¦½«ÉíÌåÕ¾µÃ±ÊÖ±£¬×ð¾´µØÏò$NÐÐÀñÖÂ¾´£¡\n" NOR, me);
+                message_vision(HIW "å¸³ä¸­çš„å°‡å£«çœ‹è¦‹$Nèµ°äº†é€²ä¾†ï¼Œé€£å¿™å°‡èº«é«”ç«™å¾—ç­†ç›´ï¼Œå°Šæ•¬åœ°å‘$Nè¡Œç¦®è‡´æ•¬ï¼\n" NOR, me);
 
                 add_action("do_assign", ({ "appoint", "paiqian", "assign" }));
                 add_action("do_convene", ({ "convene", "dianjiang" }));
         }
 }
 
-// recruit ÕÐÄ¼
+// recruit æ‹›å‹Ÿ
 int do_assign(string arg)
 {
         object me;
@@ -60,7 +60,7 @@ int do_convene(string arg)
         int i;
 
         me = this_player();
-        message_vision(HIR "$NÕÙÀ´´«Áî±ø£¬ÏÂÁîµÀ£º»ðËÙ´«Áî¸÷ÓªÍ³Áìµ½±¾Ë§ÕÊÇ°ºòÁî£¡£¡\n", me);
+        message_vision(HIR "$Nå¬ä¾†å‚³ä»¤å…µï¼Œä¸‹ä»¤é“ï¼šç«é€Ÿå‚³ä»¤å„ç‡Ÿçµ±é ˜åˆ°æœ¬å¸¥å¸³å‰å€™ä»¤ï¼ï¼\n", me);
 
         total = WAR_D->query_generals();
         for (i = 0; i < sizeof(total); i++)
@@ -76,8 +76,8 @@ int do_convene(string arg)
 
                 if (sscanf(base_name(environment(ob)), "/d/city2/sy%*s"))
                 {
-                        message_vision(HIR "Ò»Î»´«Áî±ø¼±´Ò´ÒµÃ¸ÏÀ´¶Ô$NµÀ£ºÈý¾ü½«Áì" +
-                                       "»ðËÙÖÁÔªË§ÕÊÓªºîÁî£¡£¡\n" NOR, ob);
+                        message_vision(HIR "ä¸€ä½å‚³ä»¤å…µæ€¥åŒ†åŒ†å¾—è¶•ä¾†å°$Né“ï¼šä¸‰è»å°‡é ˜" +
+                                       "ç«é€Ÿè‡³å…ƒå¸¥å¸³ç‡Ÿä¾¯ä»¤ï¼ï¼\n" NOR, ob);
 
                         ob->start_call_out((: call_other, __FILE__, "go_back", ob :), 5);
                 }
@@ -90,7 +90,7 @@ void go_back(object ob)
 {
         if (! objectp(ob)) return;
 
-        message_vision(HIY "$N¸ÏÃ¦Åú¿ø´ø¼×£¬¸ÏÖÁÔªË§ÕÊÓª£¬»¹ºÃÃ»ÎóÁËÊ±³½¡£\n" NOR, ob);
+        message_vision(HIY "$Nè¶•å¿™æ‰¹ç›”å¸¶ç”²ï¼Œè¶•è‡³å…ƒå¸¥å¸³ç‡Ÿï¼Œé‚„å¥½æ²’èª¤äº†æ™‚è¾°ã€‚\n" NOR, ob);
         ob->move(__DIR__"sying1");
 
         return;

@@ -4,12 +4,12 @@ inherit NPC;
 
 void create()
 {
-        set_name("Áõ¹úĞù", ({ "liu guoxuan", "liu"}));
-        set("gender", "ÄĞĞÔ");
+        set_name("åŠ‰åœ‹è»’", ({ "liu guoxuan", "liu"}));
+        set("gender", "ç”·æ€§");
         set("age", random(10) + 30);
         set("str", 25);
         set("dex", 16);
-        set("long", "Ëû¾ÍÊÇÑÓÆ½Íõ¸®µÄËŞ½«£¬Ì¨º£°²Î£µÄ¸É³Ç£¬Ì¨ÍåÈı»¢µÄÁõ´ó½«¾ü¡£\n");
+        set("long", "ä»–å°±æ˜¯å»¶å¹³ç‹åºœçš„å®¿å°‡ï¼Œå°æµ·å®‰å±çš„å¹¹åŸï¼Œå°ç£ä¸‰è™çš„åŠ‰å¤§å°‡è»ã€‚\n");
         set("combat_exp", 75000);
         set("shen_type", 1);
         set("attitude", "peaceful");
@@ -48,7 +48,7 @@ void init()
 void greeting(object ob)
 {
         if( environment(ob) != environment() ) return;
-        say("Áõ¹úĞùÑïÉùµÀ£ºĞ¡½«ÊØÍÁÓĞÔğ£¬ËäÍòËÀÒÔ²»´Ç¡£\n");
+        say("åŠ‰åœ‹è»’æšè²é“ï¼šå°å°‡å®ˆåœŸæœ‰è²¬ï¼Œé›–è¬æ­»ä»¥ä¸è¾­ã€‚\n");
 }
 
 

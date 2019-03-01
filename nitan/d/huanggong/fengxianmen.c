@@ -4,9 +4,9 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "奉先门");
+        set("short", "濂夊厛闁�");
         set("long", @LONG
-奉先殿庭院的大门.
+濂夊厛娈垮涵闄㈢殑澶ч杸.
 LONG
         );
         set("outdoors", "huanggong");

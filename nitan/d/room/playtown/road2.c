@@ -1,14 +1,14 @@
-// /d/playertown/road2.c 碎石小道
+// /d/playertown/road2.c 纰庣煶灏忛亾
 // Build 1999.12.10 bmw
 
 inherit BUILD_ROOM;
 
 void create()
 {
-        set("short","碎石小道");
+        set("short","纰庣煶灏忛亾");
         set("long",
-"这是一条布满石子的小路，两边长着几颗高大的杨柳树，周围有一小\n"
-"片空地，景色不错，非常适合建房。\n"
+"閫欐槸涓�姊濆竷婊跨煶瀛愮殑灏忚矾锛屽叐閭婇暦钁楀咕椤嗛珮澶х殑妤婃煶妯癸紝鍛ㄥ湇鏈変竴灏廫n"
+"鐗囩┖鍦帮紝鏅壊涓嶉尟锛岄潪甯搁仼鍚堝缓鎴裤�俓n"
 );
 
         set("recordable_room",1);

@@ -4,12 +4,12 @@
 inherit ROOM;
 void create()
 {
-        set("short", "ËÉ·ç¶«ÀÈ");
+        set("short", "é¬†é¢¨æ±å»Š");
         set("long", @LONG
-ÕâÀïÊÇËÉ·ç¹ÛÖÐÁ¬¹á²ÙÁ·³¡ºÍ¶«ÏáµÄ×ßÀÈ£¬ËÉ·ç¹Û¸ß´£É½¶¥£¬´Ó×ß
-ÀÈÍûÈ¥£¬ÇàÉ½Äñ¼Å£¬ÓÄ¹È·çÉú£¬ÂþÌì±¡ÎíÊ±Ê±ÃÖÉ¢ÔÚ³¤ÁÖ´äÖñÖ®¼ä¡£×Ô
-¹ÅºÅ³Æ£º¡°Çà³ÇÌìÏÂÓÄ¡±£¬²»·ÁÔÚ´ËÌåÎ¶¡£ÕâÀïµÄÄÏ±ßÊÇÊé·¿£¬±±±ßÊÇ
-±øÆ÷ÊÒ£¬¶«±ßÒ»Ö±¹Ø×ÅÃÅµÄÊÇ±¾ÅÉµÄ¿â·¿¡£
+é€™è£¡æ˜¯é¬†é¢¨è§€ä¸­é€£è²«æ“ç·´å ´å’Œæ±å»‚çš„èµ°å»Šï¼Œé¬†é¢¨è§€é«˜çŸ—å±±é ‚ï¼Œå¾žèµ°
+å»Šæœ›åŽ»ï¼Œé’å±±é³¥å¯‚ï¼Œå¹½è°·é¢¨ç”Ÿï¼Œæ¼«å¤©è–„éœ§æ™‚æ™‚å½Œæ•£åœ¨é•·æž—ç¿ ç«¹ä¹‹é–“ã€‚è‡ª
+å¤è™Ÿç¨±ï¼šâ€œé’åŸŽå¤©ä¸‹å¹½â€ï¼Œä¸å¦¨åœ¨æ­¤é«”å‘³ã€‚é€™è£¡çš„å—é‚Šæ˜¯æ›¸æˆ¿ï¼ŒåŒ—é‚Šæ˜¯
+å…µå™¨å®¤ï¼Œæ±é‚Šä¸€ç›´é—œè‘—é–€çš„æ˜¯æœ¬æ´¾çš„åº«æˆ¿ã€‚
 LONG );
         set("outdoors", "qingcheng");
         set("exits", ([
@@ -31,13 +31,13 @@ int valid_leave(object me, string dir)
         mapping myfam;
         myfam=query("family", me);
 
-        if((!myfam || myfam["family_name"] != "Çà³ÇÅÉ") && dir != "west" &&
+        if((!myfam || myfam["family_name"] != "é’åŸŽæ´¾") && dir != "west" &&
                 objectp(present("hong renxiong", environment(me))))
-        return notify_fail("ºéÈËÐÛÀ¹×¡ÄãËµ£º´Ë´¦ÄË±¾ÅÉ½ûµØ£¬ÇëÖ¹²½¡£\n");
+        return notify_fail("æ´ªäººé›„æ””ä½ä½ èªªï¼šæ­¤è™•ä¹ƒæœ¬æ´¾ç¦åœ°ï¼Œè«‹æ­¢æ­¥ã€‚\n");
 
         if( me->query_skill("qingming-xuangong", 1) < 10 && dir != "west" &&
                 objectp(present("hong renxiong", environment(me))))
-        return notify_fail("ºéÈËÐÛÀ¹×¡Äã£ºÊ¦¸¸½»´ú£¬ÄÚ¹¦Î´ÕéÐ¡³É²»µÃÈëÄÚ¡£\n");
+        return notify_fail("æ´ªäººé›„æ””ä½ä½ ï¼šå¸«çˆ¶äº¤ä»£ï¼Œå…§åŠŸæœªè‡»å°æˆä¸å¾—å…¥å…§ã€‚\n");
 
         return ::valid_leave(me, dir);
 }
@@ -57,11 +57,11 @@ void close_gate()
         if(objectp(room))
         {
                 delete("exits/east");
-                message("vision","Ö»ÌýÆ¹µØÒ»Éù£¬¿âÃÅ×Ô¶¯¹ØÁËÆðÀ´¡£\n",this_object());
-                message("vision","ÄãÄÔº£ÖÐÉÁ¹ýÒ»¸öÄîÍ·£º°¥Ó´£¡ÓÖ½ø²»È¥ÁË£¡\n", this_object());
+                message("vision","åªè½ä¹’åœ°ä¸€è²ï¼Œåº«é–€è‡ªå‹•é—œäº†èµ·ä¾†ã€‚\n",this_object());
+                message("vision","ä½ è…¦æµ·ä¸­é–ƒéŽä¸€å€‹å¿µé ­ï¼šå“Žå–²ï¼åˆé€²ä¸åŽ»äº†ï¼\n", this_object());
                 delete("exits/west", room);
-                message("vision","Ö»ÌýÆ¹µØÒ»Éù£¬¿âÃÅ×Ô¶¯¹ØÁËÆðÀ´¡£\n",room);
-                message("vision","ÄãÄÔº£ÖÐÉÁ¹ýÒ»¸öÄîÍ·£º»µÁË£¡³ö²»È¥ÁË£¡\n" , room);
+                message("vision","åªè½ä¹’åœ°ä¸€è²ï¼Œåº«é–€è‡ªå‹•é—œäº†èµ·ä¾†ã€‚\n",room);
+                message("vision","ä½ è…¦æµ·ä¸­é–ƒéŽä¸€å€‹å¿µé ­ï¼šå£žäº†ï¼å‡ºä¸åŽ»äº†ï¼\n" , room);
         }
 }
 
@@ -71,22 +71,22 @@ int do_open(string arg)
         object ob;
 
         if (query("exits/east"))
-                return notify_fail("¿âÃÅÒÑ¾­ÊÇ¿ª×ÅÁË¡£\n");
+                return notify_fail("åº«é–€å·²ç¶“æ˜¯é–‹è‘—äº†ã€‚\n");
 
         if (!arg || (arg != "men" && arg != "east" && arg != "door"))
-                return notify_fail("ÄãÒª¿ªÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦é–‹ä»€éº¼ï¼Ÿ\n");
         if (!(ob = present("qingcheng key", this_player())))
-                return notify_fail("Äã²»»áÇËËø¡£\n");
-        message_vision("$NÓÃÒ»°ÑÔ¿³×´ò¿ªÁË¿âÃÅ¡£½á¹ûÓÃÁ¦¹ýÃÍ£¬°ÑÔ¿³×ÞÖ¶ÏÁË¡£\n", this_player());
+                return notify_fail("ä½ ä¸æœƒæ’¬éŽ–ã€‚\n");
+        message_vision("$Nç”¨ä¸€æŠŠé‘°åŒ™æ‰“é–‹äº†åº«é–€ã€‚çµæžœç”¨åŠ›éŽçŒ›ï¼ŒæŠŠé‘°åŒ™æ‹—æ–·äº†ã€‚\n", this_player());
 
         if(!( room = find_object(__DIR__"kufang")) )
                 room = load_object(__DIR__"kufang");
         if(objectp(room))
         {
                 set("exits/east", __DIR__"kufang");
-                message_vision("$NÊ¹¾¢°Ñ¿âÃÅÍÆÁË¿ªÀ´¡£\n",this_player());
+                message_vision("$Nä½¿å‹æŠŠåº«é–€æŽ¨äº†é–‹ä¾†ã€‚\n",this_player());
                 set("exits/west", __FILE__, room);
-                message("vision","ÍâÃæÓÐÈË°Ñ¿âÃÅÍÆ¿ªÁË¡£\n",room);
+                message("vision","å¤–é¢æœ‰äººæŠŠåº«é–€æŽ¨é–‹äº†ã€‚\n",room);
                 remove_call_out("close_gate");
                 call_out("close_gate", 10);
         }

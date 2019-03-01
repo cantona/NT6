@@ -4,24 +4,24 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "³¤ÉúµÀ");
+        set("short", "é•·ç”Ÿé“");
         set("long",@LONG
-³¤ÉúµÀÏóÕ÷×Å³¤Éú²»ÀÏ£¬´«Ëµ£¬ÕâµºÉÏ²»µ«¾Ó×¡×ÅÏÉÕß£¬ 
-»¹¾Ó×¡×Å·²¼äÖ®ÈË£¬ÖÁÓÚÕâÐ©ÈË´ÓºÎ¶øÀ´±ã²»µÃ¶øÖª¡£Ö»Öª
-µÀËûÃÇ³¤Äê¾Ó×¡ÔÚ³¤Éú´åÖÐ¡£Ò²ÓÐ´«Ëµ£¬·²ÊÇÌ¤¹ý³¤ÉúµÀµÄ
-ÈË±ã¿ÉÒÔ»ñµÃÓÀÉú¡£²»ÖªµÀÕâÀïÎªÊ²Ã´Ò²½Ð³¤ÉúµÀ£¬¾ÝËµÕâ
-Àï³¤Éú´åµÄ¾ÓÃñÔ­±¾´òËãÔÚÕâÀï¶¨¾Ó£¬ºóÀ´¹ÈÖÐ³öÏÖ·ÉÁúºó
-È«´åµÄÈË±ã°áÀëÁËÕâÀï¡£
+é•·ç”Ÿé“è±¡å¾è‘—é•·ç”Ÿä¸è€ï¼Œå‚³èªªï¼Œé€™å³¶ä¸Šä¸ä½†å±…ä½è‘—ä»™è€…ï¼Œ 
+é‚„å±…ä½è‘—å‡¡é–“ä¹‹äººï¼Œè‡³äºŽé€™äº›äººå¾žä½•è€Œä¾†ä¾¿ä¸å¾—è€ŒçŸ¥ã€‚åªçŸ¥
+é“ä»–å€‘é•·å¹´å±…ä½åœ¨é•·ç”Ÿæ‘ä¸­ã€‚ä¹Ÿæœ‰å‚³èªªï¼Œå‡¡æ˜¯è¸éŽé•·ç”Ÿé“çš„
+äººä¾¿å¯ä»¥ç²å¾—æ°¸ç”Ÿã€‚ä¸çŸ¥é“é€™è£¡ç‚ºä»€éº¼ä¹Ÿå«é•·ç”Ÿé“ï¼Œæ“šèªªé€™
+è£¡é•·ç”Ÿæ‘çš„å±…æ°‘åŽŸæœ¬æ‰“ç®—åœ¨é€™è£¡å®šå±…ï¼Œå¾Œä¾†è°·ä¸­å‡ºç¾é£›é¾å¾Œ
+å…¨æ‘çš„äººä¾¿æ¬é›¢äº†é€™è£¡ã€‚
 LONG);
 
         set("exits", ([
                 "north"         : __DIR__"wolongdao",        
                 "south"         : __DIR__"feilonggu1",
         ]));
-        set("no_rideto", 1);         // ÉèÖÃ²»ÄÜÆïÂíµ½ÆäËûµØ·½
-        set("no_flyto", 1);          // ÉèÖÃ²»ÄÜ´ÓÆðÀ´µØ·½ÆïÂíÀ´ÕâÀï
-        set("no_die", 1);            // ËÀÍöºóÒÆ¶¯µ½±âÈµ¾Ó
-        set("penglai", 1);           // ±íÊ¾ÔÚÅîÀ³µº
+        set("no_rideto", 1);         // è¨­ç½®ä¸èƒ½é¨Žé¦¬åˆ°å…¶ä»–åœ°æ–¹
+        set("no_flyto", 1);          // è¨­ç½®ä¸èƒ½å¾žèµ·ä¾†åœ°æ–¹é¨Žé¦¬ä¾†é€™è£¡
+        set("no_die", 1);            // æ­»äº¡å¾Œç§»å‹•åˆ°æ‰éµ²å±…
+        set("penglai", 1);           // è¡¨ç¤ºåœ¨è“¬èŠå³¶
         set("no_fight", 1);
 
         setup();
@@ -34,14 +34,14 @@ void init ()
                 if (! this_player()->query("penglai/go_quest/ok"))
                 {
                         this_player()->start_busy(3);
-                        tell_object(this_player(), NOR + WHT "Äãµ½ÁË´Ë´¦£¬ËÄÖÜÏÉÆøçÔÈÆÁîÄãÒ»Ê±¼äÄÑÒÔ±æ±ð·½Ïò¡£\n" NOR);
+                        tell_object(this_player(), NOR + WHT "ä½ åˆ°äº†æ­¤è™•ï¼Œå››å‘¨ä»™æ°£ç¹šç¹žä»¤ä½ ä¸€æ™‚é–“é›£ä»¥è¾¨åˆ¥æ–¹å‘ã€‚\n" NOR);
                 }
                 else
                 {
                         if (random(2))
                         {
                                 this_player()->start_busy(1);
-                                tell_object(this_player(), NOR + WHT "Äãµ½ÁË´Ë´¦£¬ËÄÖÜÏÉÆøçÔÈÆÁîÄãÒ»Ê±¼äÄÑÒÔ±æ±ð·½Ïò¡£\n" NOR);                
+                                tell_object(this_player(), NOR + WHT "ä½ åˆ°äº†æ­¤è™•ï¼Œå››å‘¨ä»™æ°£ç¹šç¹žä»¤ä½ ä¸€æ™‚é–“é›£ä»¥è¾¨åˆ¥æ–¹å‘ã€‚\n" NOR);                
                         }
                 }
         }

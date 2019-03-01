@@ -10,8 +10,8 @@ void init()
 {
         if (!wizardp(this_player()))
         {
-                set("no_get", "ºÙºÙ£¬×öÃÎ°É£¡\n");
-                set("no_drop", "Öì¹ûÄã¶¼ÏëÈÓ£¿\n");
+                set("no_get", "å˜¿å˜¿ï¼Œåšå¤¢å§ï¼\n");
+                set("no_drop", "æœ±æœä½ éƒ½æƒ³æ‰”ï¼Ÿ\n");
         }
         add_action("do_eat", "eat");
         add_action("do_eat", "fu");
@@ -19,13 +19,13 @@ void init()
 
 void create()
 {
-        set_name(HIR "Öì¹û" NOR, ({"zhu guo", "guo"}));
+        set_name(HIR "æœ±æœ" NOR, ({"zhu guo", "guo"}));
         set_weight(20);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
-                set("long", "ÕâÊÇÒ»¿ÅÖì¹û£¬Í¨ÌåÏÊºì£¬Ò»Íû¶øÖªÊÇ²»¿É¶àµÃµÄÕäÆ·¡£\n");
+                set("unit", "é¡†");
+                set("long", "é€™æ˜¯ä¸€é¡†æœ±æœï¼Œé€šé«”é®®ç´…ï¼Œä¸€æœ›è€ŒçŸ¥æ˜¯ä¸å¯å¤šå¾—çš„çå“ã€‚\n");
                 set("value", 10000);
         }
         set("pour_type", "1");
@@ -36,15 +36,15 @@ int do_eat(string arg)
 {
         object me = this_player();
 
-        if(!id(arg)) return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+        if(!id(arg)) return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if(!present(this_object(), me))
-                return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if( me->is_busy() )
-                return notify_fail("±ğ¼±£¬ÂıÂı³Ô£¬Ğ¡ĞÄ±ğÒ­×ÅÁË¡£\n");
+                return notify_fail("åˆ¥æ€¥ï¼Œæ…¢æ…¢åƒï¼Œå°å¿ƒåˆ¥å™è‘—äº†ã€‚\n");
 
         set("qi",query("eff_qi",  me), me);
         set("neili",query("max_neili",  me), me);
-        message_vision(HIR "$N³ÔÏÂÒ»¿ÅÖì¹û£¬Ö»¾õ¼¢¿ÊÈ«Ïû£¬Ò»¹ÉÅ¯Á÷´Óµ¤ÌïÖ±³åÉÏÀ´¡£\n"NOR,me);
+        message_vision(HIR "$Nåƒä¸‹ä¸€é¡†æœ±æœï¼Œåªè¦ºé¥‘æ¸´å…¨æ¶ˆï¼Œä¸€è‚¡æš–æµå¾ä¸¹ç”°ç›´æ²–ä¸Šä¾†ã€‚\n"NOR,me);
         destruct(this_object());
         return 1;
 }

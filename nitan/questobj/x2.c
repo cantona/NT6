@@ -1,4 +1,4 @@
-// ÑªµÎ×Ó
+// è¡€æ»´å­
 
 #include <ansi.h>
 #include <weapon.h>
@@ -6,19 +6,19 @@ inherit WHIP;
 
 void create()
 {
-        set_name(HIR"ÑªµÎ×Ó"NOR, ({ "xuedi zi", "xuedi" }));
+        set_name(HIR"è¡€æ»´å­"NOR, ({ "xuedi zi", "xuedi" }));
         set_weight(500);
         set("taskobj", 1);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
-                set("long", "ÎÚºÚµÄÒ»±ú±øÆ÷£¬ËÆºõÕ´È¾ÁËĞí¶à½­ºşÓ¢ĞÛµÄÏÊÑª£¬°µ°µ
-Í¸³öÒ»¹ÉÑªĞÈµÄÎ¶¡£\n");
+                set("unit", "æŸ„");
+                set("long", "çƒé»‘çš„ä¸€æŸ„å…µå™¨ï¼Œä¼¼ä¹æ²¾æŸ“äº†è¨±å¤šæ±Ÿæ¹–è‹±é›„çš„é®®è¡€ï¼Œæš—æš—
+é€å‡ºä¸€è‚¡è¡€è…¥çš„å‘³ã€‚\n");
                 set("value", 0);
                 set("material", "leather");
-                set("wield_msg", "$N°µ°µÀäĞ¦£¬³éÉí·´ÊÖ£¬Èö³öÒ»¼şÎÚºÚ±øÆ÷¡£\n");
-                set("unwield_msg", "$N°µ×ÔÒ»ÉùÀäºß£¬²»Ğ¼µØÊÕ»ØÑªµÎ×Ó¡£\n");
+                set("wield_msg", "$Næš—æš—å†·ç¬‘ï¼ŒæŠ½èº«åæ‰‹ï¼Œæ’’å‡ºä¸€ä»¶çƒé»‘å…µå™¨ã€‚\n");
+                set("unwield_msg", "$Næš—è‡ªä¸€è²å†·å“¼ï¼Œä¸å±‘åœ°æ”¶å›è¡€æ»´å­ã€‚\n");
         }
         setup();
 }

@@ -1,4 +1,4 @@
-// chanhs.c ²ø»êË¿
+// chanhs.c çºé­‚çµ²
 
 #include <ansi.h>
 
@@ -6,18 +6,18 @@ inherit ITEM;
 
 void create()
 {
-        set_name(WHT "²ø»êË¿" NOR, ({"silk", "chan hunsi", "si"}));
+        set_name(WHT "çºé­‚çµ²" NOR, ({"silk", "chan hunsi", "si"}));
         set_weight(500);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»Êø¾§Ó¨Í¸Ã÷µÄÏ¸Ë¿£¬ÊÇÓÃÖëË¿ºÍ²ÏË¿»ìºÏÖ¯¾Í¶ø³ÉµÄ¡£\n");
-                set("unit", "Êø");
+                set("long", "ä¸€æŸæ™¶ç‘©é€æ˜çš„ç´°çµ²ï¼Œæ˜¯ç”¨è››çµ²å’Œè ¶çµ²æ··åˆç¹”å°±è€Œæˆçš„ã€‚\n");
+                set("unit", "æŸ");
                 set("value", 10000);
                 set("item_origin", 1);
                 set("material_attrib", "silk");
-                set("material_name", WHT "²ø»êË¿" NOR);
-                set("can_make", ({ "±Ş", "»¤¼×", "Õ½ÒÂ", "Ñ¥×Ó", "Ñü´ø" }));
+                set("material_name", WHT "çºé­‚çµ²" NOR);
+                set("can_make", ({ "é­", "è­·ç”²", "æˆ°è¡£", "é´å­", "è…°å¸¶" }));
                 set("power_point", 35);
         }
 }

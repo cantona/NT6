@@ -3,13 +3,13 @@ inherit ROOM;
 
 void create()
 {
-        set("short", WHT "µÚ¶þÖ¸½Ú" NOR );
+        set("short", WHT "ç¬¬äºŒæŒ‡ç¯€" NOR );
         set("long", @LONG
-ÕâÀïÒÑµ½ÁËÖÐÖ¸·åµÄ°ëÉ½ÑüÁË£¬ÓÉÓÚÌúÕÆÉ½ÅÅÁÐµÃÏóÊÖÖ¸Ò»Ñù£¬Ã¿×ùÉ½
-·åÓÖÔÙ·ÖÎªÈý½Ø£¬¾ÍÈçÊÖÖ¸µÄÖ¸½ÚÒ»°ã£¬Òò´ËÕâÀïÓÖÕýÊÇÎ»ÓÚµÚ¶þÖ¸½ÚµÄÎ»
-ÖÃ¡£ÕâÀïÀë·å¶¥ÒÑ½ü£¬Í¸¹ýµ­µ­µÄÔÆÎí£¬ËÆÒÑ¿ÉÒÔ¿´µ½É½Â·µÄ¾¡Í·ÁË¡£×óÇ°
-·½¶þÊ®ÓÚÕÉ´¦£¬ºÚ÷î÷îµÄËÆÓÐÒ»¸ö¶´Ñ¨(dong)£¬¶´¿ÚÆöÒÔÓñÊ¯£¬ÐÞ½¨µÃ¼«ÊÇ
-ÆëÕû¡£
+é€™è£¡å·²åˆ°äº†ä¸­æŒ‡å³°çš„åŠå±±è…°äº†ï¼Œç”±äºŽéµæŽŒå±±æŽ’åˆ—å¾—è±¡æ‰‹æŒ‡ä¸€æ¨£ï¼Œæ¯åº§å±±
+å³°åˆå†åˆ†ç‚ºä¸‰æˆªï¼Œå°±å¦‚æ‰‹æŒ‡çš„æŒ‡ç¯€ä¸€èˆ¬ï¼Œå› æ­¤é€™è£¡åˆæ­£æ˜¯ä½äºŽç¬¬äºŒæŒ‡ç¯€çš„ä½
+ç½®ã€‚é€™è£¡é›¢å³°é ‚å·²è¿‘ï¼Œé€éŽæ·¡æ·¡çš„é›²éœ§ï¼Œä¼¼å·²å¯ä»¥çœ‹åˆ°å±±è·¯çš„ç›¡é ­äº†ã€‚å·¦å‰
+æ–¹äºŒåäºŽä¸ˆè™•ï¼Œé»‘é»é»çš„ä¼¼æœ‰ä¸€å€‹æ´žç©´(dong)ï¼Œæ´žå£ç Œä»¥çŽ‰çŸ³ï¼Œä¿®å»ºå¾—æ¥µæ˜¯
+é½Šæ•´ã€‚
 LONG    );
         set("exits", ([
                 "south" : __DIR__"sslin-5",
@@ -21,7 +21,7 @@ LONG    );
 ]));
 
         set("item_desc", ([ 
-                "dong" : WHT "Ò»¸öºÚ÷î÷îµÄÉ½¶´¡£ºÚ°µÖÐÅ¼¶ûÓÐ¼¸µãÁ×¹âÉÁ¹ý¡£\n" NOR,
+                "dong" : WHT "ä¸€å€‹é»‘é»é»çš„å±±æ´žã€‚é»‘æš—ä¸­å¶çˆ¾æœ‰å¹¾é»žç£·å…‰é–ƒéŽã€‚\n" NOR,
 ]));
         set("no_clean_up", 0);
         set("outdoors", "tiezhang");
@@ -31,7 +31,7 @@ LONG    );
 int valid_leave(object me, string dir)
 {        
         if (dir == "enter" && objectp(present("mayi zhanglao", environment(me))))
-           return notify_fail(CYN "ÂéÒÂ³¤ÀÏºÈµÀ£º´ËÄËÌúÕÆ°ï½ûµØ£¬ÈÎºÎÈË²»µÃÈëÄÚ£¬·ñÔòÓÐËÀÎÞÉú£¡\n" NOR);
+           return notify_fail(CYN "éº»è¡£é•·è€å–é“ï¼šæ­¤ä¹ƒéµæŽŒå¹«ç¦åœ°ï¼Œä»»ä½•äººä¸å¾—å…¥å…§ï¼Œå¦å‰‡æœ‰æ­»ç„¡ç”Ÿï¼\n" NOR);
                 
         return ::valid_leave(me, dir);
 }

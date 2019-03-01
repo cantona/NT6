@@ -2,17 +2,17 @@ inherit ROOM;
 
 void create()
 {
-          set("short", "Ï··ï¸ó");
+          set("short", "æˆ²é³³é–£");
         set("long", @LONG
-ÕâÀïÊÇÁéðÕ¹¬µÜ×ÓÁ·¹¦µÄµØ·½¡£ÓÐ¼¸¸öÃîÁäÅ®×ÓÕýÔÚ×¨ÐÄÖÂÖÂµØ
-Á·Îä£¬ÓÐ¼¸¸öÊÖ³ÖÖñ½££¬ÔÚ»¥Ïà²ðÕÐ£¬Éí·¨Áé¶¯£¬ÓÌÈç´©»¨ºûµûÒ»°ã£¬
-Äã²»½û¿´»¨ÁËÑÛ£¬±ðµÄÈËÔò×øÔÚµØÉÏµÄÆÑÍÅÉÏ¿àÁ·ÄÚÁ¦¡£
+é€™è£¡æ˜¯éˆé·²å®®å¼Ÿå­ç·´åŠŸçš„åœ°æ–¹ã€‚æœ‰å¹¾å€‹å¦™é½¡å¥³å­æ­£åœ¨å°ˆå¿ƒè‡´è‡´åœ°
+ç·´æ­¦ï¼Œæœ‰å¹¾å€‹æ‰‹æŒç«¹åŠï¼Œåœ¨äº’ç›¸æ‹†æ‹›ï¼Œèº«æ³•éˆå‹•ï¼ŒçŒ¶å¦‚ç©¿èŠ±è´è¶ä¸€èˆ¬ï¼Œ
+ä½ ä¸ç¦çœ‹èŠ±äº†çœ¼ï¼Œåˆ¥çš„äººå‰‡ååœ¨åœ°ä¸Šçš„è’²åœ˜ä¸Šè‹¦ç·´å…§åŠ›ã€‚
 LONG );
           set("exits",([
                       "west" : __DIR__"changl4",
                       "up"   : __DIR__"liangong2",
           ]));
-          set("for_family", "ÁéðÕ¹¬");
+          set("for_family", "éˆé·²å®®");
           setup();
           replace_program(ROOM);
 }

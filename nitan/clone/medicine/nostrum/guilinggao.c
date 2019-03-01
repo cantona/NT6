@@ -1,4 +1,4 @@
-// gao.c ¹êÜß¸à
+// gao.c é¾œè‹“è†
 
 inherit ITEM;
 #include <ansi.h>
@@ -11,10 +11,10 @@ void init()
 
 void create()
 {
-        set_name(HIW"¹êÜß¸à"NOR, ({"guiling gao","gao"}));
+        set_name(HIW"é¾œè‹“è†"NOR, ({"guiling gao","gao"}));
         set_weight(3000);
-        set("unit", "¿é");
-        set("long", "ÕâÊÇÒ»¿éÓÃÎÚ¹ê¼×ºÍÜòÜßÅäÖÃ³ÉµÄ¹êÜß¸à£¬¹¦ÄÜÑÓÄêÒæÊÙ¡£\n");
+        set("unit", "å¡Š");
+        set("long", "é€™æ˜¯ä¸€å¡Šç”¨çƒé¾œç”²å’ŒèŒ¯è‹“é…ç½®æˆçš„é¾œè‹“è†ï¼ŒåŠŸèƒ½å»¶å¹´ç›Šå£½ã€‚\n");
         set("pour_type", "1");
         setup();
 }
@@ -27,20 +27,20 @@ int do_eat(string arg)
         taoism_limit = me->query_skill("taoism", 1)*10;
         jingli_limit=query("max_jingli", me);
         
-        if (!id(arg)) return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+        if (!id(arg)) return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if (!present(this_object(), this_player()))
-                return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if( me->is_busy() )
-                return notify_fail("±ğ¼±£¬ÂıÂı³Ô£¬Ğ¡ĞÄ±ğÒ­×ÅÁË¡£\n");
+                return notify_fail("åˆ¥æ€¥ï¼Œæ…¢æ…¢åƒï¼Œå°å¿ƒåˆ¥å™è‘—äº†ã€‚\n");
 
         me->start_busy(2);
         if ( jingli_limit <= taoism_limit && jingli_limit < 500 )
         {
-                write(YEL"Äã³ÔÏÂÁËÒ»¿é¹êÜß¸à£¬Ö»¾õµÃ¾«Éñ½¡ÍúÖ®¼«£¬¾«Á¦Ö±Óû±¼ÌÚ¶ø³ö¡£\n"NOR);
+                write(YEL"ä½ åƒä¸‹äº†ä¸€å¡Šé¾œè‹“è†ï¼Œåªè¦ºå¾—ç²¾ç¥å¥æ—ºä¹‹æ¥µï¼Œç²¾åŠ›ç›´æ¬²å¥”é¨°è€Œå‡ºã€‚\n"NOR);
                 addn("max_jingli", 20, me);
                 addn("jingli", 20, me);
         }
-        else write("Äã³ÔÏÂÁËÒ»¿é¹êÜß¸à£¬µ«ÊÇºÃÏóÃ»Ê²Ã´ÓÃ¡£\n");
+        else write("ä½ åƒä¸‹äº†ä¸€å¡Šé¾œè‹“è†ï¼Œä½†æ˜¯å¥½è±¡æ²’ä»€éº¼ç”¨ã€‚\n");
 
         destruct(this_object());
         return 1;

@@ -1,163 +1,163 @@
 
-$HIY$¡¾Í·ÏÎ½éÉÜ¡¿$NOR$
+$HIY$â–½èŠ›çŽ´è³¡åº„â–¼$NOR$
 
-©³©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©·
-©§ ÃÅÅÉ£º   @ÉÙÁÖÅÉ            Îäµ±ÅÉ            ¶ëáÒÅÉ   ©§
-©Ç©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©Ï
-©§ LV1 £º $GRN$¡¾ ±È  Çð ¡¿$NOR$      $GRN$¡¾ µÀ  Í¯ ¡¿$NOR$      $GRN$¡¾ Ð¡Äá¹Ã ¡¿$NOR$©§
-©§ LV2 £º $YEL$¡¾ ìø  Ê¦ ¡¿$NOR$      $YEL$¡¾ Ð¡µÀÊ¿ ¡¿$NOR$      $YEL$¡¾ Äá  ¹Ã ¡¿$NOR$©§
-©§ LV3 £º $HIC$¡¾ ×ð  Õß ¡¿$NOR$      $HIC$¡¾ µÀ  Ê¿ ¡¿$NOR$      $HIC$¡¾ Ê¦  Ì« ¡¿$NOR$©§
-©§ LV4 £º $HIG$¡¾ ÂÞ  ºº ¡¿$NOR$      $HIG$¡¾ µÀ  ³¤ ¡¿$NOR$      $HIG$¡¾ ÏÍ  Äá ¡¿$NOR$©§
-©§ LV5 £º $HIR$¡¾ ³¤  ÀÏ ¡¿$NOR$      $HIR$¡¾ Ìì  Ê¦ ¡¿$NOR$      $HIR$¡¾ µÂ  Äá ¡¿$NOR$©§
-©§ LV6 £º $HIY$¡¾ Éñ  É® ¡¿$NOR$      $HIY$¡¾ Õæ  ÈË ¡¿$NOR$      $HIY$¡¾ Éñ  Äá ¡¿$NOR$©§
-©§ LV7 £º $CYN$¡¾ Ê¥  É® ¡¿$NOR$      $CYN$¡¾ Ìì  ×ð ¡¿$NOR$      $CYN$¡¾ Ê¥  Äá ¡¿$NOR$©§
-©Ç©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©Ï
-©§ ÃÅÅÉ£º    åÐÒ£ÅÉ            ÁéðÕ¹¬            ÐÇËÞÅÉ   ©§
-©Ç©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©Ï
-©§ LV1 £º $GRN$¡¾ Ñ§  Í¯ ¡¿$NOR$      $GRN$¡¾ Ê¹  Å® ¡¿$NOR$      $GRN$¡¾ ÆÍ  ÈË ¡¿$NOR$©§
-©§ LV2 £º $YEL$¡¾ ÀÉ  ÖÐ ¡¿$NOR$      $YEL$¡¾ ÊÌ  Å® ¡¿$NOR$      $YEL$¡¾ µÜ  ×Ó ¡¿$NOR$©§
-©§ LV3 £º $HIC$¡¾ ·½  Ê¿ ¡¿$NOR$      $HIC$¡¾ ÊË  Å® ¡¿$NOR$      $HIC$¡¾ Ð¡¶¾³æ ¡¿$NOR$©§
-©§ LV4 £º $HIG$¡¾ Òþ  Ê¿ ¡¿$NOR$      $HIG$¡¾ ¶´  Ö÷ ¡¿$NOR$      $HIG$¡¾ÐÇËÞ»¤ÎÀ¡¿$NOR$©§
-©§ LV5 £º $HIR$¡¾ ÒÝ  Ê¿ ¡¿$NOR$      $HIR$¡¾ÁéðÕÓÒÊ¹¡¿$NOR$      $HIR$¡¾ÐÇËÞ¶¾Ê¦¡¿$NOR$©§
-©§ LV6 £º $HIY$¡¾ »¤  ·¨ ¡¿$NOR$      $HIY$¡¾ÁéðÕ×óÊ¹¡¿$NOR$      $HIY$¡¾ ¶¾Ê¥ÊÖ ¡¿$NOR$©§
-©§ LV7 £º $CYN$¡¾ ÒÝ  ÏÉ ¡¿$NOR$      $CYN$¡¾ÌìÉ½ÀÑÀÑ¡¿$NOR$      $CYN$¡¾ÐÇËÞÀÏÏÉ¡¿$NOR$©§
-©Ç©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©Ï
-©§ ÃÅÅÉ£º   @¹ÅÄ¹ÅÉ            È«ÕæÅÉ            À¥ÂØÅÉ   ©§
-©Ç©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©Ï
-©§ LV1 £º $GRN$¡¾³õÈë½­ºþ¡¿$NOR$      $GRN$¡¾ µÀ  Í¯ ¡¿$NOR$      $GRN$¡¾ µÜ  ×Ó ¡¿$NOR$©§
-©§ LV2 £º $YEL$¡¾ÎäÁÖÖÐÈË¡¿$NOR$      $YEL$¡¾ Ð¡µÀÊ¿ ¡¿$NOR$      $YEL$¡¾ÎäÁÖÖÐÈË¡¿$NOR$©§
-©§ LV3 £º $HIC$¡¾½­ºþºÀ½Ü¡¿$NOR$      $HIC$¡¾ µÀ  Ê¿ ¡¿$NOR$      $HIC$¡¾½­ºþºÀ½Ü¡¿$NOR$©§
-©§ LV4 £º $HIG$¡¾ ÉÙ  ÏÀ ¡¿$NOR$      $HIG$¡¾ µÀ  ³¤ ¡¿$NOR$      $HIG$¡¾ ÇÙ  ³Õ ¡¿$NOR$©§
-©§ LV5 £º $HIR$¡¾ ÓÎ  ÏÀ ¡¿$NOR$      $HIR$¡¾ Ìì  Ê¦ ¡¿$NOR$      $HIR$¡¾ Æå  Íõ ¡¿$NOR$©§
-©§ LV6 £º $HIY$¡¾ Òþ  ÏÀ ¡¿$NOR$      $HIY$¡¾ Õæ  ÈË ¡¿$NOR$      $HIY$¡¾ Îä  ¿ñ ¡¿$NOR$©§
-©§ LV7 £º $CYN$¡¾ Éñ  ÏÀ ¡¿$NOR$      $CYN$¡¾ ÖÐÉñÍ¨ ¡¿$NOR$      $CYN$¡¾ Èý  Ê¥ ¡¿$NOR$©§
-©Ç©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©Ï
-©§ ÃÅÅÉ£º    ÌÒ»¨µº           #Ò©Íõ¹È            Ñªµ¶ÃÅ   ©§
-©Ç©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©Ï
-©§ LV1 £º $GRN$¡¾ Ñ§  Í¯ ¡¿$NOR$      $GRN$¡¾ Ò©  Í¯ ¡¿$NOR$      $GRN$¡¾ É³  ÃÖ ¡¿$NOR$©§
-©§ LV2 £º $YEL$¡¾ Êé  Éú ¡¿$NOR$      $YEL$¡¾ Ò©  Ê¦ ¡¿$NOR$      $YEL$¡¾ À®  Âï ¡¿$NOR$©§
-©§ LV3 £º $HIC$¡¾ Ðã  ²Å ¡¿$NOR$      $HIC$¡¾ ·½  Ê¿ ¡¿$NOR$      $HIC$¡¾ É®  ±ø ¡¿$NOR$©§
-©§ LV4 £º $HIG$¡¾ ²·Ëã×Ó ¡¿$NOR$      $HIG$¡¾ Ò©  Éñ ¡¿$NOR$      $HIG$¡¾É®±øÍ·Áì¡¿$NOR$©§
-©§ LV5 £º $HIR$¡¾ Ò©  Íõ ¡¿$NOR$      $HIR$¡¾ Ò©  ÏÉ ¡¿$NOR$      $HIR$¡¾ µ¶  Ð° ¡¿$NOR$©§
-©§ LV6 £º $HIY$¡¾ °ë  Ð° ¡¿$NOR$      $HIY$¡¾ Ò©  Ê¥ ¡¿$NOR$      $HIY$¡¾ µ¶  °Ô ¡¿$NOR$©§
-©§ LV7 £º $CYN$¡¾ ¶«  Ð° ¡¿$NOR$      $CYN$¡¾¶¾ÊÖÒ©Íõ¡¿$NOR$      $CYN$¡¾Ñªµ¶ÀÏ×æ¡¿$NOR$©§
-©Ç©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©Ï
-©§ ÃÅÅÉ£º   @´óÂÖËÂ           @Ø¤  °ï           @ÌúÕÆ°ï   ©§
-©Ç©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©Ï
-©§ LV1 £º $GRN$¡¾ É³  ÃÖ ¡¿$NOR$      $GRN$¡¾ Ð¡½Ð»¨ ¡¿$NOR$      $GRN$¡¾ ÆÍ  ÈË ¡¿$NOR$©§
-©§ LV2 £º $YEL$¡¾ À®  Âï ¡¿$NOR$      $YEL$¡¾ Æò  Ø¤ ¡¿$NOR$      $YEL$¡¾ °ï  ÖÚ ¡¿$NOR$©§
-©§ LV3 £º $HIC$¡¾ É®  ±ø ¡¿$NOR$      $HIC$¡¾ Òå  Ø¤ ¡¿$NOR$      $HIC$¡¾ ½Ì  Í· ¡¿$NOR$©§
-©§ LV4 £º $HIG$¡¾É®±øÍ·Áì¡¿$NOR$      $HIG$¡¾ ÏÀ  Ø¤ ¡¿$NOR$      $HIG$¡¾ ÌÃ  Ö÷ ¡¿$NOR$©§
-©§ LV5 £º $HIR$¡¾ ¹ú  Ê¦ ¡¿$NOR$      $HIR$¡¾ Ìú  Ø¤ ¡¿$NOR$      $HIR$¡¾ Ïã  Ö÷ ¡¿$NOR$©§
-©§ LV6 £º $HIY$¡¾ ·¨  Íõ ¡¿$NOR$      $HIY$¡¾ Éñ  Ø¤ ¡¿$NOR$      $HIY$¡¾ Ì³  Ö÷ ¡¿$NOR$©§
-©§ LV7 £º $CYN$¡¾²»¶¯Ã÷Íõ¡¿$NOR$      $CYN$¡¾ ±±  Ø¤ ¡¿$NOR$      $CYN$¡¾ °ï  Ö÷ ¡¿$NOR$©§
-©Ç©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©Ï
-©§ ÃÅÅÉ£º   *ÌìµØ»á            ºì»¨»á           @ÉñÁú½Ì   ©§
-©Ç©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©Ï
-©§ LV1 £º $GRN$¡¾ Òå  Ê¿ ¡¿$NOR$      $GRN$¡¾ Òå  Ê¿ ¡¿$NOR$      $GRN$¡¾ µÜ  ×Ó ¡¿$NOR$©§
-©§ LV2 £º $YEL$¡¾ ÏÀ  Ê¿ ¡¿$NOR$      $YEL$¡¾ ÏÀ  Ê¿ ¡¿$NOR$      $YEL$¡¾ ËæÁúÊ¹ ¡¿$NOR$©§
-©§ LV3 £º $HIC$¡¾ ÏÀ  ¿Í ¡¿$NOR$      $HIC$¡¾ ÏÀ  ¿Í ¡¿$NOR$      $HIC$¡¾ ³àÁúÊ¹ ¡¿$NOR$©§
-©§ LV4 £º $HIG$¡¾ ´ó  ÏÀ ¡¿$NOR$      $HIG$¡¾ ´ó  ÏÀ ¡¿$NOR$      $HIG$¡¾ ÇàÁúÊ¹ ¡¿$NOR$©§
-©§ LV5 £º $HIR$¡¾ ºÀ  ½Ü ¡¿$NOR$      $HIR$¡¾ ºÀ  ½Ü ¡¿$NOR$      $HIR$¡¾ °×ÁúÊ¹ ¡¿$NOR$©§
-©§ LV6 £º $HIY$¡¾ Ó¢  ºÀ ¡¿$NOR$      $HIY$¡¾ Ó¢  ºÀ ¡¿$NOR$      $HIY$¡¾ ³¤  ÀÏ ¡¿$NOR$©§
-©§ LV7 £º $CYN$¡¾ Ó¢  ÐÛ ¡¿$NOR$      $CYN$¡¾¿õÊÀ´óÏÀ¡¿$NOR$      $CYN$¡¾ÉñÁúÎÞµÐ¡¿$NOR$©§
-©Ç©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©Ï
-©§ ÃÅÅÉ£º    Îå¶¾½Ì           #Ã÷  ½Ì            Ã·  ×¯   ©§
-©Ç©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©Ï
-©§ LV1 £º $GRN$¡¾ ÆÍ  ÈË ¡¿$NOR$      $GRN$¡¾ ½Ì  ÖÚ ¡¿$NOR$      $GRN$¡¾ ÆÍ  ÈË ¡¿$NOR$©§
-©§ LV2 £º $YEL$¡¾³õÈë½­ºþ¡¿$NOR$      $YEL$¡¾ ½Ì  Í½ ¡¿$NOR$      $YEL$¡¾ Ëæ  ´Ó ¡¿$NOR$©§
-©§ LV3 £º $HIC$¡¾ ½Ì  ÖÚ ¡¿$NOR$      $HIC$¡¾ ÃÅ  Ö÷ ¡¿$NOR$      $HIC$¡¾ »¤  Ôº ¡¿$NOR$©§
-©§ LV4 £º $HIG$¡¾ ½Ì  Í½ ¡¿$NOR$      $HIG$¡¾ Æì  Ö÷ ¡¿$NOR$      $HIG$¡¾ ×Ü  ¹Ü ¡¿$NOR$©§
-©§ LV5 £º $HIR$¡¾ ¶¾  ÆÍ ¡¿$NOR$      $HIR$¡¾ É¢  ÈË ¡¿$NOR$      $HIR$¡¾ »­  Ê¥ ¡¿$NOR$©§
-©§ LV6 £º $HIY$¡¾ ¶¾  Íõ ¡¿$NOR$      $HIY$¡¾ ·¨  Íõ ¡¿$NOR$      $HIY$¡¾ ÀÖ  Éñ ¡¿$NOR$©§
-©§ LV7 £º $CYN$¡¾¶¾ÊÖ²ÐÐÄ¡¿$NOR$      $CYN$¡¾¹âÃ÷Ê¥Ê¹¡¿$NOR$      $CYN$¡¾ ×¯  Ö÷ ¡¿$NOR$©§
-©Ç©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©Ï
-©§ ÃÅÅÉ£º   *áÇá¼ÅÉ           *Ìú½£ÃÅ           *ÐþÚ¤¹È   ©§
-©Ç©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©Ï
-©§ LV1 £º $GRN$¡¾ µÀ  Í¯ ¡¿$NOR$      $GRN$¡¾ ½£  Í¯ ¡¿$NOR$      $GRN$¡¾ ÆÍ  ÈË ¡¿$NOR$©§
-©§ LV2 £º $YEL$¡¾ Ð¡µÀÊ¿ ¡¿$NOR$      $YEL$¡¾ ½£  ÊÌ ¡¿$NOR$      $YEL$¡¾ ½£  ÊÌ ¡¿$NOR$©§
-©§ LV3 £º $HIC$¡¾ µÀ  Ê¿ ¡¿$NOR$      $HIC$¡¾ ½£  Ê¿ ¡¿$NOR$      $HIC$¡¾ ½£  Ê¿ ¡¿$NOR$©§
-©§ LV4 £º $HIG$¡¾ µÀ  ³¤ ¡¿$NOR$      $HIG$¡¾ ½£  ¿Í ¡¿$NOR$      $HIG$¡¾ ½£  ¿Í ¡¿$NOR$©§
-©§ LV5 £º $HIR$¡¾ Ìì  Ê¦ ¡¿$NOR$      $HIR$¡¾Ç§ÊÖ½£ÏÀ¡¿$NOR$      $HIR$¡¾ÎäÁÖ¸ßÊÖ¡¿$NOR$©§
-©§ LV6 £º $HIY$¡¾ ³¤  ÀÏ ¡¿$NOR$      $HIY$¡¾ÉñÐÐ½£ÏÀ¡¿$NOR$      $HIY$¡¾ÐþÚ¤»¤·¨¡¿$NOR$©§
-©§ LV7 £º $CYN$¡¾ È­  Íõ ¡¿$NOR$      $CYN$¡¾ ½£  Òþ ¡¿$NOR$      $CYN$¡¾ÐþÚ¤ÀÏÈË¡¿$NOR$©§
-©Ç©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©Ï
-©§ ÃÅÅÉ£º   *ÌìÁúËÂ           *Çà³ÇÅÉ           *áÔÉ½ÅÉ   ©§
-©Ç©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©Ï
-©§ LV1 £º $GRN$¡¾ ±È  Çð ¡¿$NOR$      $GRN$¡¾ ½£  Í¯ ¡¿$NOR$      $GRN$¡¾ ½£  Í¯ ¡¿$NOR$©§
-©§ LV2 £º $YEL$¡¾ ìø  Ê¦ ¡¿$NOR$      $YEL$¡¾ ½£  ÊÌ ¡¿$NOR$      $YEL$¡¾ ½£  ÊÌ ¡¿$NOR$©§
-©§ LV3 £º $HIC$¡¾ ×ð  Õß ¡¿$NOR$      $HIC$¡¾ ½£  Ê¿ ¡¿$NOR$      $HIC$¡¾ ½£  Ê¿ ¡¿$NOR$©§
-©§ LV4 £º $HIG$¡¾ ÂÞ  ºº ¡¿$NOR$      $HIG$¡¾ ½£  ¿Í ¡¿$NOR$      $HIG$¡¾ ½£  ¿Í ¡¿$NOR$©§
-©§ LV5 £º $HIR$¡¾ ³¤  ÀÏ ¡¿$NOR$      $HIR$¡¾ ½£  ÏÀ ¡¿$NOR$      $HIR$¡¾ ½£  ÏÀ ¡¿$NOR$©§
-©§ LV6 £º $HIY$¡¾ Éñ  É® ¡¿$NOR$      $HIY$¡¾ ½£  ºÀ ¡¿$NOR$      $HIY$¡¾ ½£  ºÀ ¡¿$NOR$©§
-©§ LV7 £º $CYN$¡¾ Ê¥  É® ¡¿$NOR$      $CYN$¡¾ ½£  Ð° ¡¿$NOR$      $CYN$¡¾ ½£  µÛ ¡¿$NOR$©§
-©Ç©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©Ï
-©§ ÃÅÅÉ£º   *ºãÉ½ÅÉ            ºâÉ½ÅÉ           *Ì©É½ÅÉ   ©§
-©Ç©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©Ï
-©§ LV1 £º $GRN$¡¾ ½£  Í¯ ¡¿$NOR$      $GRN$¡¾ ½£  Í¯ ¡¿$NOR$      $GRN$¡¾ ½£  Í¯ ¡¿$NOR$©§
-©§ LV2 £º $YEL$¡¾ ½£  ÊÌ ¡¿$NOR$      $YEL$¡¾ ½£  ÊÌ ¡¿$NOR$      $YEL$¡¾ ½£  ÊÌ ¡¿$NOR$©§
-©§ LV3 £º $HIC$¡¾ ½£  Ê¿ ¡¿$NOR$      $HIC$¡¾ ½£  Ê¿ ¡¿$NOR$      $HIC$¡¾ ½£  Ê¿ ¡¿$NOR$©§
-©§ LV4 £º $HIG$¡¾ ½£  ¿Í ¡¿$NOR$      $HIG$¡¾ ½£  ¿Í ¡¿$NOR$      $HIG$¡¾ ½£  ¿Í ¡¿$NOR$©§
-©§ LV5 £º $HIR$¡¾ ½£  ÏÀ ¡¿$NOR$      $HIR$¡¾ ½£  ÏÀ ¡¿$NOR$      $HIR$¡¾ ½£  ÏÀ ¡¿$NOR$©§
-©§ LV6 £º $HIY$¡¾ ½£  ºÀ ¡¿$NOR$      $HIY$¡¾ ½£  ºÀ ¡¿$NOR$      $HIY$¡¾ ½£  ºÀ ¡¿$NOR$©§
-©§ LV7 £º $CYN$¡¾ ½£  ÏÉ ¡¿$NOR$      $CYN$¡¾ ½£  »Ê ¡¿$NOR$      $CYN$¡¾ ½£  Éñ ¡¿$NOR$©§
-©Ç©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©Ï
-©§ ÃÅÅÉ£º  @»ªÉ½Æø×Ú         @»ªÉ½½£×Ú         #Á¬³Ç½£ÅÉ  ©§
-©Ç©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©Ï
-©§ LV1 £º $GRN$¡¾ ½£  Í¯ ¡¿$NOR$      $GRN$¡¾ ½£  Í¯ ¡¿$NOR$      $GRN$¡¾ ½£  Í¯ ¡¿$NOR$©§
-©§ LV2 £º $YEL$¡¾ ½£  ÊÌ ¡¿$NOR$      $YEL$¡¾ ½£  ÊÌ ¡¿$NOR$      $YEL$¡¾ ½£  ÊÌ ¡¿$NOR$©§
-©§ LV3 £º $HIC$¡¾ ½£  Ê¿ ¡¿$NOR$      $HIC$¡¾ ½£  Ê¿ ¡¿$NOR$      $HIC$¡¾ ½£  Ê¿ ¡¿$NOR$©§
-©§ LV4 £º $HIG$¡¾ ½£  ¿Í ¡¿$NOR$      $HIG$¡¾ ½£  ¿Í ¡¿$NOR$      $HIG$¡¾ ½£  ¿Í ¡¿$NOR$©§
-©§ LV5 £º $HIR$¡¾ ½£  ÏÀ ¡¿$NOR$      $HIR$¡¾ ½£  ÏÀ ¡¿$NOR$      $HIR$¡¾ ½£  ÏÀ ¡¿$NOR$©§
-©§ LV6 £º $HIY$¡¾ ½£  ºÀ ¡¿$NOR$      $HIY$¡¾ ½£  ºÀ ¡¿$NOR$      $HIY$¡¾ ½£  ºÀ ¡¿$NOR$©§
-©§ LV7 £º $CYN$¡¾ ½£  Ê¥ ¡¿$NOR$      $CYN$¡¾ ½£  Ä§ ¡¿$NOR$      $CYN$¡¾ ½£  Ð° ¡¿$NOR$©§
-©Ç©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©Ï
-©§ ÃÅÅÉ£º   Ñ©É½½£ÅÉ          ÈÕÔÂÉñ½Ì          ÕòÔ¶ïÚ¾Ö  ©§
-©Ç©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©Ï
-©§ LV1 £º $GRN$¡¾ ½£  Í¯ ¡¿$NOR$      $GRN$¡¾ ½Ì  ÖÚ ¡¿$NOR$      $GRN$¡¾ ÌË×ÓÊÖ ¡¿$NOR$©§
-©§ LV2 £º $YEL$¡¾ ½£  ÊÌ ¡¿$NOR$      $YEL$¡¾ ½Ì  Í½ ¡¿$NOR$      $YEL$¡¾ ïÚ  Ê¦ ¡¿$NOR$©§
-©§ LV3 £º $HIC$¡¾ ½£  Ê¿ ¡¿$NOR$      $HIC$¡¾ ÌÃ  Ö÷ ¡¿$NOR$      $HIC$¡¾ Îä  Õß ¡¿$NOR$©§
-©§ LV4 £º $HIG$¡¾ ½£  ¿Í ¡¿$NOR$      $HIG$¡¾ »¤  ½Ì ¡¿$NOR$      $HIG$¡¾ Îä  Ê¦ ¡¿$NOR$©§
-©§ LV5 £º $HIR$¡¾ ½£  ÏÀ ¡¿$NOR$      $HIR$¡¾ »¤  ·¨ ¡¿$NOR$      $HIR$¡¾ Îä  ×ð ¡¿$NOR$©§
-©§ LV6 £º $HIY$¡¾ ½£  ºÀ ¡¿$NOR$      $HIY$¡¾Ê¥½Ì³¤ÀÏ¡¿$NOR$      $HIY$¡¾ Îä  Éñ ¡¿$NOR$©§
-©§ LV7 £º $CYN$¡¾ ½£  ¿ñ ¡¿$NOR$      $CYN$¡¾ÈÕÔÂÊ¥×ð¡¿$NOR$      $CYN$¡¾ Îä  Ê¥ ¡¿$NOR$©§
-©Ç©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©Ï
-©§ ÃÅÅÉ£º  @Å·ÑôÊÀ¼Ò         @Ä½ÈÝÊÀ¼Ò          ¹ØÍâºú¼Ò  ©§
-©Ç©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©Ï
-©§ LV1 £º $GRN$¡¾ ¼Ò  ¶¡ ¡¿$NOR$      $GRN$¡¾ ¼Ò  ¶¡ ¡¿$NOR$      $GRN$¡¾ ¼Ò  ¶¡ ¡¿$NOR$©§
-©§ LV2 £º $YEL$¡¾ Ëæ  ´Ó ¡¿$NOR$      $YEL$¡¾ Ëæ  ´Ó ¡¿$NOR$      $YEL$¡¾ Ëæ  ´Ó ¡¿$NOR$©§
-©§ LV3 £º $HIC$¡¾ »¤  Ôº ¡¿$NOR$      $HIC$¡¾ »¤  Ôº ¡¿$NOR$      $HIC$¡¾ »¤  Ôº ¡¿$NOR$©§
-©§ LV4 £º $HIG$¡¾ ×Ü  ¹Ü ¡¿$NOR$      $HIG$¡¾ ×Ü  ¹Ü ¡¿$NOR$      $HIG$¡¾ ×Ü  ¹Ü ¡¿$NOR$©§
-©§ LV5 £º $HIR$¡¾ Éß  ÆÍ ¡¿$NOR$      $HIR$¡¾ ¼Ò  ³¼ ¡¿$NOR$      $HIR$¡¾ °Ô  µ¶ ¡¿$NOR$©§
-©§ LV6 £º $HIY$¡¾ Éß  Ä§ ¡¿$NOR$      $HIY$¡¾ ¹«  ×Ó ¡¿$NOR$      $HIY$¡¾ µ¶  Íõ ¡¿$NOR$©§
-©§ LV7 £º $CYN$¡¾ Î÷  ¶¾ ¡¿$NOR$      $CYN$¡¾ ´óÑà»Ê ¡¿$NOR$      $CYN$¡¾Ñ©É½·Éºü¡¿$NOR$©§
-©Ç©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©Ï
-©§ ÃÅÅÉ£º   ÖÐÔ­Ãç¼Ò           ÉÌ¼Ò±¤           ´óÀí¶ÎÊÏ  ©§
-©Ç©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©Ï
-©§ LV1 £º $GRN$¡¾ ¼Ò  ¶¡ ¡¿$NOR$      $GRN$¡¾ ¼Ò  ¶¡ ¡¿$NOR$      $GRN$¡¾ ÊÌ  ´Ó ¡¿$NOR$©§
-©§ LV2 £º $YEL$¡¾ Ëæ  ´Ó ¡¿$NOR$      $YEL$¡¾ Ëæ  ´Ó ¡¿$NOR$      $YEL$¡¾ ÊÌ  ÎÀ ¡¿$NOR$©§
-©§ LV3 £º $HIC$¡¾ »¤  Ôº ¡¿$NOR$      $HIC$¡¾ »¤  Ôº ¡¿$NOR$      $HIC$¡¾Íõ¸®ÊÌÎÀ¡¿$NOR$©§
-©§ LV4 £º $HIG$¡¾ ×Ü  ¹Ü ¡¿$NOR$      $HIG$¡¾ ×Ü  ¹Ü ¡¿$NOR$      $HIG$¡¾ÊÌÎÀÊ×Áì¡¿$NOR$©§
-©§ LV5 £º $HIR$¡¾ Éñ  ½£ ¡¿$NOR$      $HIR$¡¾ Ð°  µ¶ ¡¿$NOR$      $HIR$¡¾Íõ¸®×Ü¹Ü¡¿$NOR$©§
-©§ LV6 £º $HIY$¡¾ ½£  Ê¥ ¡¿$NOR$      $HIY$¡¾ µ¶  °Ô ¡¿$NOR$      $HIY$¡¾ ÕòÄÏÍõ ¡¿$NOR$©§
-©§ LV7 £º $CYN$¡¾½£µ¨·ðÐÄ¡¿$NOR$      $CYN$¡¾ ±¤  Ö÷ ¡¿$NOR$      $CYN$¡¾ ÄÏ  µÛ ¡¿$NOR$©§
-©Ç©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©Ï
-©§ ÃÅÅÉ£º  *Ê¯ÁºÎÂ¼Ò          *¾øÇé¹È          *½­ÄÏ¶¡ÊÏ  ©§
-©Ç©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©Ï
-©§ LV1 £º $GRN$¡¾ ¼Ò  ¶¡ ¡¿$NOR$      $GRN$¡¾ ¼Ò  ¶¡ ¡¿$NOR$      $GRN$¡¾ ¼Ò  ¶¡ ¡¿$NOR$©§
-©§ LV2 £º $YEL$¡¾ Ëæ  ´Ó ¡¿$NOR$      $YEL$¡¾ Ëæ  ´Ó ¡¿$NOR$      $YEL$¡¾ Ëæ  ´Ó ¡¿$NOR$©§
-©§ LV3 £º $HIC$¡¾ »¤  Ôº ¡¿$NOR$      $HIC$¡¾ Ô°  ¶¡ ¡¿$NOR$      $HIC$¡¾ »¤  Ôº ¡¿$NOR$©§
-©§ LV4 £º $HIG$¡¾ ×Ü  ¹Ü ¡¿$NOR$      $HIG$¡¾ »¨  ÆÍ ¡¿$NOR$      $HIG$¡¾ ×Ü  ¹Ü ¡¿$NOR$©§
-©§ LV5 £º $HIR$¡¾ ½Ì  Í· ¡¿$NOR$      $HIR$¡¾ »¤  Ôº ¡¿$NOR$      $HIR$¡¾ Ï²ÎÞ³£ ¡¿$NOR$©§
-©§ LV6 £º $HIY$¡¾ ¶þµ±¼Ò ¡¿$NOR$      $HIY$¡¾ ×Ü  ¹Ü ¡¿$NOR$      $HIY$¡¾ Å­ÎÞ³£ ¡¿$NOR$©§
-©§ LV7 £º $CYN$¡¾ ±¤  Ö÷ ¡¿$NOR$      $CYN$¡¾ ¹È  Ö÷ ¡¿$NOR$      $CYN$¡¾ ×¯  Ö÷ ¡¿$NOR$©§
-©»©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¿
+åº•å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å¼§
+å²± è—·å·–ã„©   @å±¾è¼¿å·–            æŒ•çµžå·–            å¡žæ„»å·–   å²±
+æ€ªå²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©æˆ•
+å²± LV1 ã„© $GRN$â–½ æŽ€  ïž â–¼$NOR$      $GRN$â–½ è€‹  è‚µ â–¼$NOR$      $GRN$â–½ è‹¤æ”å˜” â–¼$NOR$å²±
+å²± LV2 ã„© $YEL$â–½ æªŸ  å‘‡ â–¼$NOR$      $YEL$â–½ è‹¤è€‹å°ª â–¼$NOR$      $YEL$â–½ æ”  å˜” â–¼$NOR$å²±
+å²± LV3 ã„© $HIC$â–½ éƒ¬  æ°ª â–¼$NOR$      $HIC$â–½ è€‹  å°ª â–¼$NOR$      $HIC$â–½ å‘‡  æ€® â–¼$NOR$å²±
+å²± LV4 ã„© $HIG$â–½ è¹•  çŠ– â–¼$NOR$      $HIG$â–½ è€‹  é…— â–¼$NOR$      $HIG$â–½ çŽµ  æ” â–¼$NOR$å²±
+å²± LV5 ã„© $HIR$â–½ é…—  æ©¾ â–¼$NOR$      $HIR$â–½ æ¯ž  å‘‡ â–¼$NOR$      $HIR$â–½ è‚…  æ” â–¼$NOR$å²±
+å²± LV6 ã„© $HIY$â–½ æœ¸  ä»µ â–¼$NOR$      $HIY$â–½ æ·©  ï • â–¼$NOR$      $HIY$â–½ æœ¸  æ” â–¼$NOR$å²±
+å²± LV7 ã„© $CYN$â–½ å¤  ä»µ â–¼$NOR$      $CYN$â–½ æ¯ž  éƒ¬ â–¼$NOR$      $CYN$â–½ å¤  æ” â–¼$NOR$å²±
+æ€ªå²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©æˆ•
+å²± è—·å·–ã„©    æ§±çŒ€å·–            é¾è¥Œåƒ§            é™Žå’‘å·–   å²±
+æ€ªå²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©æˆ•
+å²± LV1 ã„© $GRN$â–½ æ‚  è‚µ â–¼$NOR$      $GRN$â–½ å¦  èº“ â–¼$NOR$      $GRN$â–½ ï›  ï • â–¼$NOR$å²±
+å²± LV2 ã„© $YEL$â–½ æª”  ç¬¢ â–¼$NOR$      $YEL$â–½ å¸Ž  èº“ â–¼$NOR$      $YEL$â–½ èŠ  èµ½ â–¼$NOR$å²±
+å²± LV3 ã„© $HIC$â–½ æº  å°ª â–¼$NOR$      $HIC$â–½ å¸Š  èº“ â–¼$NOR$      $HIC$â–½ è‹¤é¦®å–® â–¼$NOR$å²±
+å²± LV4 ã„© $HIG$â–½ ç¬  å°ª â–¼$NOR$      $HIG$â–½ éŸŒ  ç¿‹ â–¼$NOR$      $HIG$â–½é™Žå’‘èª˜æ€¹â–¼$NOR$å²±
+å²± LV5 ã„© $HIR$â–½ ç ¯  å°ª â–¼$NOR$      $HIR$â–½é¾è¥Œè¡µå¦â–¼$NOR$      $HIR$â–½é™Žå’‘é¦®å‘‡â–¼$NOR$å²±
+å²± LV6 ã„© $HIY$â–½ èª˜  æ¥Š â–¼$NOR$      $HIY$â–½é¾è¥Œé…˜å¦â–¼$NOR$      $HIY$â–½ é¦®å¤å¿’ â–¼$NOR$å²±
+å²± LV7 ã„© $CYN$â–½ ç ¯  çˆ â–¼$NOR$      $CYN$â–½æ¯žåˆ“æªæªâ–¼$NOR$      $CYN$â–½é™Žå’‘æ©¾çˆâ–¼$NOR$å²±
+æ€ªå²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©æˆ•
+å²± è—·å·–ã„©   @å˜‰è´å·–            ïŸµæ·©å·–            å£Žè´…å·–   å²±
+æ€ªå²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©æˆ•
+å²± LV1 ã„© $GRN$â–½å ´ï µè”¬ç¶¬â–¼$NOR$      $GRN$â–½ è€‹  è‚µ â–¼$NOR$      $GRN$â–½ èŠ  èµ½ â–¼$NOR$å²±
+å²± LV2 ã„© $YEL$â–½æŒ•è¼¿ç¬¢ï •â–¼$NOR$      $YEL$â–½ è‹¤è€‹å°ª â–¼$NOR$      $YEL$â–½æŒ•è¼¿ç¬¢ï •â–¼$NOR$å²±
+å²± LV3 ã„© $HIC$â–½è”¬ç¶¬ç‘°è±Œâ–¼$NOR$      $HIC$â–½ è€‹  å°ª â–¼$NOR$      $HIC$â–½è”¬ç¶¬ç‘°è±Œâ–¼$NOR$å²±
+å²± LV4 ã„© $HIG$â–½ å±¾  ç‹¨ â–¼$NOR$      $HIG$â–½ è€‹  é…— â–¼$NOR$      $HIG$â–½ ïž†  åš â–¼$NOR$å²±
+å²± LV5 ã„© $HIR$â–½ èš”  ç‹¨ â–¼$NOR$      $HIR$â–½ æ¯ž  å‘‡ â–¼$NOR$      $HIR$â–½ ï›µ  å¼ â–¼$NOR$å²±
+å²± LV6 ã„© $HIY$â–½ ç¬  ç‹¨ â–¼$NOR$      $HIY$â–½ æ·©  ï • â–¼$NOR$      $HIY$â–½ æŒ•  é¼ â–¼$NOR$å²±
+å²± LV7 ã„© $CYN$â–½ æœ¸  ç‹¨ â–¼$NOR$      $CYN$â–½ ç¬¢æœ¸ç±µ â–¼$NOR$      $CYN$â–½ ï¡‡  å¤ â–¼$NOR$å²±
+æ€ªå²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©æˆ•
+å²± è—·å·–ã„©    æœŠè±ªçµ¢           #ç‹»å¼å—·            æ‚›çµ®è—·   å²±
+æ€ªå²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©æˆ•
+å²± LV1 ã„© $GRN$â–½ æ‚  è‚µ â–¼$NOR$      $GRN$â–½ ç‹»  è‚µ â–¼$NOR$      $GRN$â–½ ä¼ˆ  è­† â–¼$NOR$å²±
+å²± LV2 ã„© $YEL$â–½ æŠŽ  æ±œ â–¼$NOR$      $YEL$â–½ ç‹»  å‘‡ â–¼$NOR$      $YEL$â–½ å¶½  éŽ° â–¼$NOR$å²±
+å²± LV3 ã„© $HIC$â–½ å‡…  ç¬¦ â–¼$NOR$      $HIC$â–½ æº  å°ª â–¼$NOR$      $HIC$â–½ ä»µ  æ¢ â–¼$NOR$å²±
+å²± LV4 ã„© $HIG$â–½ çœºå‘¾èµ½ â–¼$NOR$      $HIG$â–½ ç‹»  æœ¸ â–¼$NOR$      $HIG$â–½ä»µæ¢èŠ›é°â–¼$NOR$å²±
+å²± LV5 ã„© $HIR$â–½ ç‹»  å¼ â–¼$NOR$      $HIR$â–½ ç‹»  çˆ â–¼$NOR$      $HIR$â–½ çµ®  è¨„ â–¼$NOR$å²±
+å²± LV6 ã„© $HIY$â–½ åœ‰  è¨„ â–¼$NOR$      $HIY$â–½ ç‹»  å¤ â–¼$NOR$      $HIY$â–½ çµ®  å•ª â–¼$NOR$å²±
+å²± LV7 ã„© $CYN$â–½ é™²  è¨„ â–¼$NOR$      $CYN$â–½é¦®å¿’ç‹»å¼â–¼$NOR$      $CYN$â–½æ‚›çµ®æ©¾é€Œâ–¼$NOR$å²±
+æ€ªå²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©æˆ•
+å²± è—·å·–ã„©   @æ¹®è¬«ä¾           @å £  å †           @æ²ºæ¢ªå †   å²±
+æ€ªå²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©æˆ•
+å²± LV1 ã„© $GRN$â–½ ä¼ˆ  è­† â–¼$NOR$      $GRN$â–½ è‹¤è«‹è±ª â–¼$NOR$      $GRN$â–½ ï›  ï • â–¼$NOR$å²±
+å²± LV2 ã„© $YEL$â–½ å¶½  éŽ° â–¼$NOR$      $YEL$â–½ ïœ‚  å £ â–¼$NOR$      $YEL$â–½ å †  ç¬² â–¼$NOR$å²±
+å²± LV3 ã„© $HIC$â–½ ä»µ  æ¢ â–¼$NOR$      $HIC$â–½ ç ±  å £ â–¼$NOR$      $HIC$â–½ è«’  èŠ› â–¼$NOR$å²±
+å²± LV4 ã„© $HIG$â–½ä»µæ¢èŠ›é°â–¼$NOR$      $HIG$â–½ ç‹¨  å £ â–¼$NOR$      $HIG$â–½ æ–»  ç¿‹ â–¼$NOR$å²±
+å²± LV5 ã„© $HIR$â–½ å¼Š  å‘‡ â–¼$NOR$      $HIR$â–½ æ²º  å £ â–¼$NOR$      $HIR$â–½ çœ…  ç¿‹ â–¼$NOR$å²±
+å²± LV6 ã„© $HIY$â–½ æ¥Š  å¼ â–¼$NOR$      $HIY$â–½ æœ¸  å £ â–¼$NOR$      $HIY$â–½ æŠ­  ç¿‹ â–¼$NOR$å²±
+å²± LV7 ã„© $CYN$â–½ç¥¥é›„éš´å¼â–¼$NOR$      $CYN$â–½ æŽ§  å £ â–¼$NOR$      $CYN$â–½ å †  ç¿‹ â–¼$NOR$å²±
+æ€ªå²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©æˆ•
+å²± è—·å·–ã„©   *æ¯žè¯é —            ç¶»è±ªé —           @æœ¸éŸ“è«’   å²±
+æ€ªå²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©æˆ•
+å²± LV1 ã„© $GRN$â–½ ç ±  å°ª â–¼$NOR$      $GRN$â–½ ç ±  å°ª â–¼$NOR$      $GRN$â–½ èŠ  èµ½ â–¼$NOR$å²±
+å²± LV2 ã„© $YEL$â–½ ç‹¨  å°ª â–¼$NOR$      $YEL$â–½ ç‹¨  å°ª â–¼$NOR$      $YEL$â–½ å‘´éŸ“å¦ â–¼$NOR$å²±
+å²± LV3 ã„© $HIC$â–½ ç‹¨  è«¦ â–¼$NOR$      $HIC$â–½ ç‹¨  è«¦ â–¼$NOR$      $HIC$â–½ å–ªéŸ“å¦ â–¼$NOR$å²±
+å²± LV4 ã„© $HIG$â–½ æ¹®  ç‹¨ â–¼$NOR$      $HIG$â–½ æ¹®  ç‹¨ â–¼$NOR$      $HIG$â–½ ïžéŸ“å¦ â–¼$NOR$å²±
+å²± LV5 ã„© $HIR$â–½ ç‘°  è±Œ â–¼$NOR$      $HIR$â–½ ç‘°  è±Œ â–¼$NOR$      $HIR$â–½ å•žéŸ“å¦ â–¼$NOR$å²±
+å²± LV6 ã„© $HIY$â–½ èŽ  ç‘° â–¼$NOR$      $HIY$â–½ èŽ  ç‘° â–¼$NOR$      $HIY$â–½ é…—  æ©¾ â–¼$NOR$å²±
+å²± LV7 ã„© $CYN$â–½ èŽ  å€¯ â–¼$NOR$      $CYN$â–½éŒ å²æ¹®ç‹¨â–¼$NOR$      $CYN$â–½æœ¸éŸ“æ‹¸è©â–¼$NOR$å²±
+æ€ªå²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©æˆ•
+å²± è—·å·–ã„©    æ‹»é¦®è«’           #éš´  è«’            ç¹©  èš½   å²±
+æ€ªå²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©æˆ•
+å²± LV1 ã„© $GRN$â–½ ï›  ï • â–¼$NOR$      $GRN$â–½ è«’  ç¬² â–¼$NOR$      $GRN$â–½ ï›  ï • â–¼$NOR$å²±
+å²± LV2 ã„© $YEL$â–½å ´ï µè”¬ç¶¬â–¼$NOR$      $YEL$â–½ è«’  èŠº â–¼$NOR$      $YEL$â–½ å‘´  æ¤ â–¼$NOR$å²±
+å²± LV3 ã„© $HIC$â–½ è«’  ç¬² â–¼$NOR$      $HIC$â–½ è—·  ç¿‹ â–¼$NOR$      $HIC$â–½ èª˜  åŸ â–¼$NOR$å²±
+å²± LV4 ã„© $HIG$â–½ è«’  èŠº â–¼$NOR$      $HIG$â–½ ï›¼  ç¿‹ â–¼$NOR$      $HIG$â–½ è»ž  å¥ª â–¼$NOR$å²±
+å²± LV5 ã„© $HIR$â–½ é¦®  ï› â–¼$NOR$      $HIR$â–½ æ±ƒ  ï • â–¼$NOR$      $HIR$â–½ è³’  å¤ â–¼$NOR$å²±
+å²± LV6 ã„© $HIY$â–½ é¦®  å¼ â–¼$NOR$      $HIY$â–½ æ¥Š  å¼ â–¼$NOR$      $HIY$â–½ æ°ˆ  æœ¸ â–¼$NOR$å²±
+å²± LV7 ã„© $CYN$â–½é¦®å¿’ç´¹é™‘â–¼$NOR$      $CYN$â–½å«–éš´å¤å¦â–¼$NOR$      $CYN$â–½ èš½  ç¿‹ â–¼$NOR$å²±
+æ€ªå²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©æˆ•
+å²± è—·å·–ã„©   *æ…³å»’å·–           *æ²ºè†›è—·           *å“±ç±å—·   å²±
+æ€ªå²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©æˆ•
+å²± LV1 ã„© $GRN$â–½ è€‹  è‚µ â–¼$NOR$      $GRN$â–½ è†›  è‚µ â–¼$NOR$      $GRN$â–½ ï›  ï • â–¼$NOR$å²±
+å²± LV2 ã„© $YEL$â–½ è‹¤è€‹å°ª â–¼$NOR$      $YEL$â–½ è†›  å¸Ž â–¼$NOR$      $YEL$â–½ è†›  å¸Ž â–¼$NOR$å²±
+å²± LV3 ã„© $HIC$â–½ è€‹  å°ª â–¼$NOR$      $HIC$â–½ è†›  å°ª â–¼$NOR$      $HIC$â–½ è†›  å°ª â–¼$NOR$å²±
+å²± LV4 ã„© $HIG$â–½ è€‹  é…— â–¼$NOR$      $HIG$â–½ è†›  è«¦ â–¼$NOR$      $HIG$â–½ è†›  è«¦ â–¼$NOR$å²±
+å²± LV5 ã„© $HIR$â–½ æ¯ž  å‘‡ â–¼$NOR$      $HIR$â–½ï”å¿’è†›ç‹¨â–¼$NOR$      $HIR$â–½æŒ•è¼¿è©¢å¿’â–¼$NOR$å²±
+å²± LV6 ã„© $HIY$â–½ é…—  æ©¾ â–¼$NOR$      $HIY$â–½æœ¸ä¿´è†›ç‹¨â–¼$NOR$      $HIY$â–½å“±ç±èª˜æ¥Šâ–¼$NOR$å²±
+å²± LV7 ã„© $CYN$â–½ ïŸ·  å¼ â–¼$NOR$      $CYN$â–½ è†›  ç¬ â–¼$NOR$      $CYN$â–½å“±ç±æ©¾ï •â–¼$NOR$å²±
+æ€ªå²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©æˆ•
+å²± è—·å·–ã„©   *æ¯žéŸ“ä¾           *ïžå‚‘å·–           *æ…¡åˆ“å·–   å²±
+æ€ªå²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©æˆ•
+å²± LV1 ã„© $GRN$â–½ æŽ€  ïž â–¼$NOR$      $GRN$â–½ è†›  è‚µ â–¼$NOR$      $GRN$â–½ è†›  è‚µ â–¼$NOR$å²±
+å²± LV2 ã„© $YEL$â–½ æªŸ  å‘‡ â–¼$NOR$      $YEL$â–½ è†›  å¸Ž â–¼$NOR$      $YEL$â–½ è†›  å¸Ž â–¼$NOR$å²±
+å²± LV3 ã„© $HIC$â–½ éƒ¬  æ°ª â–¼$NOR$      $HIC$â–½ è†›  å°ª â–¼$NOR$      $HIC$â–½ è†›  å°ª â–¼$NOR$å²±
+å²± LV4 ã„© $HIG$â–½ è¹•  çŠ– â–¼$NOR$      $HIG$â–½ è†›  è«¦ â–¼$NOR$      $HIG$â–½ è†›  è«¦ â–¼$NOR$å²±
+å²± LV5 ã„© $HIR$â–½ é…—  æ©¾ â–¼$NOR$      $HIR$â–½ è†›  ç‹¨ â–¼$NOR$      $HIR$â–½ è†›  ç‹¨ â–¼$NOR$å²±
+å²± LV6 ã„© $HIY$â–½ æœ¸  ä»µ â–¼$NOR$      $HIY$â–½ è†›  ç‘° â–¼$NOR$      $HIY$â–½ è†›  ç‘° â–¼$NOR$å²±
+å²± LV7 ã„© $CYN$â–½ å¤  ä»µ â–¼$NOR$      $CYN$â–½ è†›  è¨„ â–¼$NOR$      $CYN$â–½ è†›  è‘— â–¼$NOR$å²±
+æ€ªå²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©æˆ•
+å²± è—·å·–ã„©   *ç®åˆ“å·–            ç®—åˆ“å·–           *æ€åˆ“å·–   å²±
+æ€ªå²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©æˆ•
+å²± LV1 ã„© $GRN$â–½ è†›  è‚µ â–¼$NOR$      $GRN$â–½ è†›  è‚µ â–¼$NOR$      $GRN$â–½ è†›  è‚µ â–¼$NOR$å²±
+å²± LV2 ã„© $YEL$â–½ è†›  å¸Ž â–¼$NOR$      $YEL$â–½ è†›  å¸Ž â–¼$NOR$      $YEL$â–½ è†›  å¸Ž â–¼$NOR$å²±
+å²± LV3 ã„© $HIC$â–½ è†›  å°ª â–¼$NOR$      $HIC$â–½ è†›  å°ª â–¼$NOR$      $HIC$â–½ è†›  å°ª â–¼$NOR$å²±
+å²± LV4 ã„© $HIG$â–½ è†›  è«¦ â–¼$NOR$      $HIG$â–½ è†›  è«¦ â–¼$NOR$      $HIG$â–½ è†›  è«¦ â–¼$NOR$å²±
+å²± LV5 ã„© $HIR$â–½ è†›  ç‹¨ â–¼$NOR$      $HIR$â–½ è†›  ç‹¨ â–¼$NOR$      $HIR$â–½ è†›  ç‹¨ â–¼$NOR$å²±
+å²± LV6 ã„© $HIY$â–½ è†›  ç‘° â–¼$NOR$      $HIY$â–½ è†›  ç‘° â–¼$NOR$      $HIY$â–½ è†›  ç‘° â–¼$NOR$å²±
+å²± LV7 ã„© $CYN$â–½ è†›  çˆ â–¼$NOR$      $CYN$â–½ è†›  éŠ˜ â–¼$NOR$      $CYN$â–½ è†›  æœ¸ â–¼$NOR$å²±
+æ€ªå²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©æˆ•
+å²± è—·å·–ã„©  @è²Œåˆ“ïœˆè·         @è²Œåˆ“è†›è·         #èŸ€å‚‘è†›å·–  å²±
+æ€ªå²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©æˆ•
+å²± LV1 ã„© $GRN$â–½ è†›  è‚µ â–¼$NOR$      $GRN$â–½ è†›  è‚µ â–¼$NOR$      $GRN$â–½ è†›  è‚µ â–¼$NOR$å²±
+å²± LV2 ã„© $YEL$â–½ è†›  å¸Ž â–¼$NOR$      $YEL$â–½ è†›  å¸Ž â–¼$NOR$      $YEL$â–½ è†›  å¸Ž â–¼$NOR$å²±
+å²± LV3 ã„© $HIC$â–½ è†›  å°ª â–¼$NOR$      $HIC$â–½ è†›  å°ª â–¼$NOR$      $HIC$â–½ è†›  å°ª â–¼$NOR$å²±
+å²± LV4 ã„© $HIG$â–½ è†›  è«¦ â–¼$NOR$      $HIG$â–½ è†›  è«¦ â–¼$NOR$      $HIG$â–½ è†›  è«¦ â–¼$NOR$å²±
+å²± LV5 ã„© $HIR$â–½ è†›  ç‹¨ â–¼$NOR$      $HIR$â–½ è†›  ç‹¨ â–¼$NOR$      $HIR$â–½ è†›  ç‹¨ â–¼$NOR$å²±
+å²± LV6 ã„© $HIY$â–½ è†›  ç‘° â–¼$NOR$      $HIY$â–½ è†›  ç‘° â–¼$NOR$      $HIY$â–½ è†›  ç‘° â–¼$NOR$å²±
+å²± LV7 ã„© $CYN$â–½ è†›  å¤ â–¼$NOR$      $CYN$â–½ è†›  è—¹ â–¼$NOR$      $CYN$â–½ è†›  è¨„ â–¼$NOR$å²±
+æ€ªå²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©æˆ•
+å²± è—·å·–ã„©   æ‚•åˆ“è†›å·–          ï Ÿå Žæœ¸è«’          æ·œå ˆæ›šæ“  å²±
+æ€ªå²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©æˆ•
+å²± LV1 ã„© $GRN$â–½ è†›  è‚µ â–¼$NOR$      $GRN$â–½ è«’  ç¬² â–¼$NOR$      $GRN$â–½ æ˜‹èµ½å¿’ â–¼$NOR$å²±
+å²± LV2 ã„© $YEL$â–½ è†›  å¸Ž â–¼$NOR$      $YEL$â–½ è«’  èŠº â–¼$NOR$      $YEL$â–½ æ›š  å‘‡ â–¼$NOR$å²±
+å²± LV3 ã„© $HIC$â–½ è†›  å°ª â–¼$NOR$      $HIC$â–½ æ–»  ç¿‹ â–¼$NOR$      $HIC$â–½ æŒ•  æ°ª â–¼$NOR$å²±
+å²± LV4 ã„© $HIG$â–½ è†›  è«¦ â–¼$NOR$      $HIG$â–½ èª˜  è«’ â–¼$NOR$      $HIG$â–½ æŒ•  å‘‡ â–¼$NOR$å²±
+å²± LV5 ã„© $HIR$â–½ è†›  ç‹¨ â–¼$NOR$      $HIR$â–½ èª˜  æ¥Š â–¼$NOR$      $HIR$â–½ æŒ•  éƒ¬ â–¼$NOR$å²±
+å²± LV6 ã„© $HIY$â–½ è†›  ç‘° â–¼$NOR$      $HIY$â–½å¤è«’é…—æ©¾â–¼$NOR$      $HIY$â–½ æŒ•  æœ¸ â–¼$NOR$å²±
+å²± LV7 ã„© $CYN$â–½ è†›  é¼ â–¼$NOR$      $CYN$â–½ï Ÿå Žå¤éƒ¬â–¼$NOR$      $CYN$â–½ æŒ•  å¤ â–¼$NOR$å²±
+æ€ªå²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©æˆ•
+å²± è—·å·–ã„©  @éŸæ  å²æ¨¡         @èº…ï §å²æ¨¡          å£½ä¿‹ç¶¸æ¨¡  å²±
+æ€ªå²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©æˆ•
+å²± LV1 ã„© $GRN$â–½ æ¨¡  é–“ â–¼$NOR$      $GRN$â–½ æ¨¡  é–“ â–¼$NOR$      $GRN$â–½ æ¨¡  é–“ â–¼$NOR$å²±
+å²± LV2 ã„© $YEL$â–½ å‘´  æ¤ â–¼$NOR$      $YEL$â–½ å‘´  æ¤ â–¼$NOR$      $YEL$â–½ å‘´  æ¤ â–¼$NOR$å²±
+å²± LV3 ã„© $HIC$â–½ èª˜  åŸ â–¼$NOR$      $HIC$â–½ èª˜  åŸ â–¼$NOR$      $HIC$â–½ èª˜  åŸ â–¼$NOR$å²±
+å²± LV4 ã„© $HIG$â–½ è»ž  å¥ª â–¼$NOR$      $HIG$â–½ è»ž  å¥ª â–¼$NOR$      $HIG$â–½ è»ž  å¥ª â–¼$NOR$å²±
+å²± LV5 ã„© $HIR$â–½ å½´  ï› â–¼$NOR$      $HIR$â–½ æ¨¡  é ƒ â–¼$NOR$      $HIR$â–½ å•ª  çµ® â–¼$NOR$å²±
+å²± LV6 ã„© $HIY$â–½ å½´  è—¹ â–¼$NOR$      $HIY$â–½ é¼   èµ½ â–¼$NOR$      $HIY$â–½ çµ®  å¼ â–¼$NOR$å²±
+å²± LV7 ã„© $CYN$â–½ æ˜¹  é¦® â–¼$NOR$      $CYN$â–½ æ¹®æ¡éŠ˜ â–¼$NOR$      $CYN$â–½æ‚•åˆ“æ»„ç·’â–¼$NOR$å²±
+æ€ªå²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©æˆ•
+å²± è—·å·–ã„©   ç¬¢åŸ»é†®æ¨¡           å¦€æ¨¡æƒœ           æ¹®ç‡´åƒ‡åºŒ  å²±
+æ€ªå²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©æˆ•
+å²± LV1 ã„© $GRN$â–½ æ¨¡  é–“ â–¼$NOR$      $GRN$â–½ æ¨¡  é–“ â–¼$NOR$      $GRN$â–½ å¸Ž  æ¤ â–¼$NOR$å²±
+å²± LV2 ã„© $YEL$â–½ å‘´  æ¤ â–¼$NOR$      $YEL$â–½ å‘´  æ¤ â–¼$NOR$      $YEL$â–½ å¸Ž  æ€¹ â–¼$NOR$å²±
+å²± LV3 ã„© $HIC$â–½ èª˜  åŸ â–¼$NOR$      $HIC$â–½ èª˜  åŸ â–¼$NOR$      $HIC$â–½å¼è‘¬å¸Žæ€¹â–¼$NOR$å²±
+å²± LV4 ã„© $HIG$â–½ è»ž  å¥ª â–¼$NOR$      $HIG$â–½ è»ž  å¥ª â–¼$NOR$      $HIG$â–½å¸Žæ€¹å¿‘é°â–¼$NOR$å²±
+å²± LV5 ã„© $HIR$â–½ æœ¸  è†› â–¼$NOR$      $HIR$â–½ è¨„  çµ® â–¼$NOR$      $HIR$â–½å¼è‘¬è»žå¥ªâ–¼$NOR$å²±
+å²± LV6 ã„© $HIY$â–½ è†›  å¤ â–¼$NOR$      $HIY$â–½ çµ®  å•ª â–¼$NOR$      $HIY$â–½ æ·œé°å¼ â–¼$NOR$å²±
+å²± LV7 ã„© $CYN$â–½è†›ç­ç—°é™‘â–¼$NOR$      $CYN$â–½ æƒœ  ç¿‹ â–¼$NOR$      $CYN$â–½ é°  è‘— â–¼$NOR$å²±
+æ€ªå²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©æˆ•
+å²± è—·å·–ã„©  *å’è¤½æ²æ¨¡          *æ©ˆïž–å—·          *è”¬é°é–“åºŒ  å²±
+æ€ªå²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©æˆ•
+å²± LV1 ã„© $GRN$â–½ æ¨¡  é–“ â–¼$NOR$      $GRN$â–½ æ¨¡  é–“ â–¼$NOR$      $GRN$â–½ æ¨¡  é–“ â–¼$NOR$å²±
+å²± LV2 ã„© $YEL$â–½ å‘´  æ¤ â–¼$NOR$      $YEL$â–½ å‘´  æ¤ â–¼$NOR$      $YEL$â–½ å‘´  æ¤ â–¼$NOR$å²±
+å²± LV3 ã„© $HIC$â–½ èª˜  åŸ â–¼$NOR$      $HIC$â–½ åŸ¶  é–“ â–¼$NOR$      $HIC$â–½ èª˜  åŸ â–¼$NOR$å²±
+å²± LV4 ã„© $HIG$â–½ è»ž  å¥ª â–¼$NOR$      $HIG$â–½ è±ª  ï› â–¼$NOR$      $HIG$â–½ è»ž  å¥ª â–¼$NOR$å²±
+å²± LV5 ã„© $HIR$â–½ è«’  èŠ› â–¼$NOR$      $HIR$â–½ èª˜  åŸ â–¼$NOR$      $HIR$â–½ ç‚°æ‹¸éƒ½ â–¼$NOR$å²±
+å²± LV6 ã„© $HIY$â–½ åª¼çµžæ¨¡ â–¼$NOR$      $HIY$â–½ è»ž  å¥ª â–¼$NOR$      $HIY$â–½ èº‘æ‹¸éƒ½ â–¼$NOR$å²±
+å²± LV7 ã„© $CYN$â–½ æƒœ  ç¿‹ â–¼$NOR$      $CYN$â–½ å—·  ç¿‹ â–¼$NOR$      $CYN$â–½ èš½  ç¿‹ â–¼$NOR$å²±
+å½¿å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å²©å¿½
 
- ×¢£ºLV1£º0 ~ 10000
-     LV2£º10000 ~ 100000
-     LV3£º100000 ~ 500000
-     LV4£º500000 ~ 1000000
-     LV5£º1000000 ~ 2000000
-     LV6£º2000000 ~ 3000000
-     LV7£º3000000 ~ *
+ è›ã„©LV1ã„©0 ~ 10000
+     LV2ã„©10000 ~ 100000
+     LV3ã„©100000 ~ 500000
+     LV4ã„©500000 ~ 1000000
+     LV5ã„©1000000 ~ 2000000
+     LV6ã„©2000000 ~ 3000000
+     LV7ã„©3000000 ~ *
 

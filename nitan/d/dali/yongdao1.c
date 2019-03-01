@@ -4,12 +4,12 @@
 inherit ROOM;
 void create()
 {
-        set("short","ð®µÀ");
+        set("short","ç”¬é“");
         set("long", @LONG
-ÕâÊÇÕòÄÏÍõ¸®µÄð®µÀ¡£Á½±ßÊÇÃÜÃÜµÄÊ÷ÁÖ£¬·ç´µµÃÊ÷Ò¶É³É³ÉùÏì
-Ê¯ÆöµÄð®µÀÂ·ÃæÁ½²à£¬ÊÇÈçÒðµÄÂÌ²Ý£¬µã×º×ÅÒ»ÐÇ°ëµãµÄÐ¡»¨£¬ÖÜÎ§
-Ê®·Ö°²¾²¡£Î¨¶ÀÎ÷±±½Ç´«À´Ò»ÕóÕó´ò¶·µÄÉùÒô£¬ÔÚÕâÚ×¾²µÄ»·¾³Ô½·¢
-ÌýµÃÕæÇÐ¡£
+é€™æ˜¯éŽ®å—çŽ‹åºœçš„ç”¬é“ã€‚å…©é‚Šæ˜¯å¯†å¯†çš„æ¨¹æž—ï¼Œé¢¨å¹å¾—æ¨¹è‘‰æ²™æ²™è²éŸ¿
+çŸ³ç Œçš„ç”¬é“è·¯é¢å…©å´ï¼Œæ˜¯å¦‚èŒµçš„ç¶ è‰ï¼Œé»žç¶´è‘—ä¸€æ˜ŸåŠé»žçš„å°èŠ±ï¼Œå‘¨åœ
+ååˆ†å®‰éœã€‚å”¯ç¨è¥¿åŒ—è§’å‚³ä¾†ä¸€é™£é™£æ‰“é¬¥çš„è²éŸ³ï¼Œåœ¨é€™è¬éœçš„ç’°å¢ƒè¶Šç™¼
+è½å¾—çœŸåˆ‡ã€‚
 LONG );
         set("outdoors", "daliwang");
         set("exits",([ /* sizeof() == 1 */

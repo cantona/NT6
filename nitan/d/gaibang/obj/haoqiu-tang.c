@@ -1,18 +1,18 @@
 //Cracked by Kafei
-// jiaohuaji.c ºÃåÏÌÀ
+// jiaohuaji.c å¥½é€‘æ¹¯
 
 inherit ITEM;
 inherit F_FOOD;
 
 void create()
 {
-        set_name("ºÃåÏÌÀ", ({"haoqiu tang", "soup"}));
+        set_name("å¥½é€‘æ¹¯", ({"haoqiu tang", "soup"}));
         set_weight(200);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»Íë±ÌÂÌµÄÇåÌÀ¡£\n");
-                set("unit", "Íë");
+                set("long", "ä¸€ç¢—ç¢§ç¶ çš„æ¸…æ¹¯ã€‚\n");
+                set("unit", "ç¢—");
                 set("value", 50);
                 set("food_remaining", 1);
                 set("food_supply", 15);

@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÄÏÁ·Îä³¡");
+        set("short", "å—ç·´æ­¦å ´");
         set("long", @LONG
-ÕâÀïÊÇ»ªÉ½ÅÉµÄÁ·Îä³¡£¬³¡ÉÏÁ¢Õâ¼¸¸öÄ¾ÈË£¬Î÷ÄÏÍ¨Ïò¹ã³¡£¬±±
-ÃæÊÇÁíÒ»¸öÁ·Îä³¡£¬¶«±ßÒ²ÊÇÒ»¸öÁ·Îä³¡£¬¿ÉÊÇ²»ÖªÔõÃ´µÄ£¬ËÆºõºÜ
-ÉÙÓÐÈË¹ýÈ¥¡£¸½½üµ½´¦ÊÇ»ªÉ½µÄµÜ×ÓÈËÀ´ÈËÍù£¬ÈÈÄÖ·Ç·²¡£
+é€™è£¡æ˜¯è¯å±±æ´¾çš„ç·´æ­¦å ´ï¼Œå ´ä¸Šç«‹é€™å¹¾å€‹æœ¨äººï¼Œè¥¿å—é€šå‘å»£å ´ï¼ŒåŒ—
+é¢æ˜¯å¦ä¸€å€‹ç·´æ­¦å ´ï¼Œæ±é‚Šä¹Ÿæ˜¯ä¸€å€‹ç·´æ­¦å ´ï¼Œå¯æ˜¯ä¸çŸ¥æ€Žéº¼çš„ï¼Œä¼¼ä¹Žå¾ˆ
+å°‘æœ‰äººéŽåŽ»ã€‚é™„è¿‘åˆ°è™•æ˜¯è¯å±±çš„å¼Ÿå­äººä¾†äººå¾€ï¼Œç†±é¬§éžå‡¡ã€‚
 LONG );
         set("exits", ([ /* sizeof() == 2 */
             "southwest" : __DIR__"square",
@@ -16,7 +16,7 @@ LONG );
             "east"      : __DIR__"wuchang3",
         ]));
         set("outdoors", "huashan" );
-        set("for_family", "»ªÉ½ÅÉ");
+        set("for_family", "è¯å±±æ´¾");
 
         setup();
         replace_program(ROOM);

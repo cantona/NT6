@@ -6,15 +6,15 @@ inherit ITEM;
 
 void create() 
 { 
-     set_name(HIG"ÈÊµ¤"NOR, ({"ren dan", "dan"}));
-     set("unit", "Á£"); 
-     set("long", "ÕâÊÇÒ»¿Å·º×Åµ­ÂÌÉ«¹âÃ¢µÄÒ©Íè£¬ÓÉÑıÄ§µÄ¾«ÆøÄı¾Û¶ø³É¡£\n"); 
-     set("no_drop", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n"); 
-     set("no_sell", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n"); 
-     set("no_put", "ÕâÑù¶«Î÷²»ÄÜ·ÅÔÚÄÇ¶ù¡£\n"); 
-     set("no_get", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄÇ¶ù¡£\n"); 
-     set("no_steal", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄÇ¶ù¡£\n"); 
-     set("no_beg", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄÇ¶ù¡£\n"); 
+     set_name(HIG"ä»ä¸¹"NOR, ({"ren dan", "dan"}));
+     set("unit", "ç²’"); 
+     set("long", "é€™æ˜¯ä¸€é¡†æ³›è‘—æ·¡ç¶ è‰²å…‰èŠ’çš„è—¥ä¸¸ï¼Œç”±å¦–é­”çš„ç²¾æ°£å‡èšè€Œæˆã€‚\n"); 
+     set("no_drop", "é€™æ¨£æ±è¥¿ä¸èƒ½é›¢é–‹ä½ ã€‚\n"); 
+     set("no_sell", "é€™æ¨£æ±è¥¿ä¸èƒ½é›¢é–‹ä½ ã€‚\n"); 
+     set("no_put", "é€™æ¨£æ±è¥¿ä¸èƒ½æ”¾åœ¨é‚£å…’ã€‚\n"); 
+     set("no_get", "é€™æ¨£æ±è¥¿ä¸èƒ½é›¢é–‹é‚£å…’ã€‚\n"); 
+     set("no_steal", "é€™æ¨£æ±è¥¿ä¸èƒ½é›¢é–‹é‚£å…’ã€‚\n"); 
+     set("no_beg", "é€™æ¨£æ±è¥¿ä¸èƒ½é›¢é–‹é‚£å…’ã€‚\n"); 
      set("only_do_effect", 1);
      setup(); 
 } 
@@ -22,31 +22,31 @@ void create()
 int do_effect(object me) 
 { 
     mapping my; 
-    message_vision("$NÒ»Ñö²±£¬ÍÌÏÂÒ»Á£" +HIG+ "ÈÊµ¤¡£\n" NOR, me); 
+    message_vision("$Nä¸€ä»°è„–ï¼Œåä¸‹ä¸€ç²’" +HIG+ "ä»ä¸¹ã€‚\n" NOR, me); 
     my = me->query_entire_dbase();
     switch (random(5))
     {  
          case 0:  
-                write(HIY"Äã¸Ğ¾õÈ«ÉíÒ»ÕóÖËÈÈ£¬Ò»¹ÉÄÚÁ¦Á÷Èëµ¤Ìï¡£\n"NOR); 
+                write(HIY"ä½ æ„Ÿè¦ºå…¨èº«ä¸€é™£ç‚™ç†±ï¼Œä¸€è‚¡å…§åŠ›æµå…¥ä¸¹ç”°ã€‚\n"NOR); 
                 addn("max_neili", 1+random(5), me);
                 break;  
          case 1:  
-                write(HIG"Äã¸Ğ¾õÈ«ÉíËµ²»³öµÄÊæ·şÊÜÓÃ¡£\n"NOR);
+                write(HIG"ä½ æ„Ÿè¦ºå…¨èº«èªªä¸å‡ºçš„èˆ’æœå—ç”¨ã€‚\n"NOR);
                 my["eff_jing"] = my["max_jing"]; 
                 my["jing"] = my["max_jing"]; 
                 break;  
          case 2:  
-                write(HIG"Äã¸Ğ¾õÈ«ÉíËµ²»³öµÄÊæ·şÊÜÓÃ¡£\n"NOR);
+                write(HIG"ä½ æ„Ÿè¦ºå…¨èº«èªªä¸å‡ºçš„èˆ’æœå—ç”¨ã€‚\n"NOR);
                 my["eff_qi"] = my["max_qi"]; 
                 my["qi"] = my["max_qi"]; 
                 break;  
          case 3:
-                write(HIC"Äã¸Ğ¾õÎ¶µÀ»¹²»´í¡£\n"NOR);
+                write(HIC"ä½ æ„Ÿè¦ºå‘³é“é‚„ä¸éŒ¯ã€‚\n"NOR);
                 my["food"] = me->max_food_capacity(); 
                 my["water"] = me->max_water_capacity(); 
                 break;  
          default: 
-                write(HIC"ÄãÍÌµÃÌ«¿ì£¬Ê²Ã´Î¶µÀÒ²Ã»ÓĞ³¢³öÀ´¡£\n"NOR);
+                write(HIC"ä½ åå¾—å¤ªå¿«ï¼Œä»€éº¼å‘³é“ä¹Ÿæ²’æœ‰å˜—å‡ºä¾†ã€‚\n"NOR);
                 break;  
     } 
     destruct(this_object()); 

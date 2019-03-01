@@ -14,70 +14,70 @@ string query_idname()
 
 void create()
 {
-        set_name("ÎŞÃûÊ¬Ìå", ({ "corpse" }));
+        set_name("ç„¡åå±é«”", ({ "corpse" }));
         if (clonep())
                 set_default_object(__FILE__);
         else
         {
                 set("default_clone", "/clone/misc/part");
                 set("parts", ([
-                        "left arm" : ({ 0, "Ìõ", "×ó±Û", "ÊÖ±Û", "arm",
+                        "left arm" : ({ 0, "æ¢", "å·¦è‡‚", "æ‰‹è‡‚", "arm",
                                         ([ "left hand": "hand" ]),
-                                        "¶çÏÂ", 0 }),
-                        "left hand": ({ 1, "Ö»", "×óÊÖ", "ÊÖÕÆ", "hand",
+                                        "å‰ä¸‹", 0 }),
+                        "left hand": ({ 1, "åª", "å·¦æ‰‹", "æ‰‹æŒ", "hand",
                                         ([ "left thumb"        : "thumb",
                                            "left forefinger"   : "forefinger",
                                            "left middle finger": "middle finger",
                                            "left ring finger"  : "ring finger",
                                            "left little finger": "little finger" ]),
-                                        "¶çÏÂ", 0 }),
-                        "left thumb"         : ({ 2, "¸ù", "×óÊÖ´óÄ´Ö¸", "´óÄ´Ö¸", "thumb",
+                                        "å‰ä¸‹", 0 }),
+                        "left thumb"         : ({ 2, "æ ¹", "å·¦æ‰‹å¤§æ‹‡æŒ‡", "å¤§æ‹‡æŒ‡", "thumb",
                                                   0, 0, 0 }),
-                        "left forefinger"    : ({ 2, "¸ù", "×óÊÖÊ³Ö¸", "Ê³Ö¸", "forefinger",
+                        "left forefinger"    : ({ 2, "æ ¹", "å·¦æ‰‹é£ŸæŒ‡", "é£ŸæŒ‡", "forefinger",
                                                   0, 0, 0 }),
-                        "left middle finger" : ({ 2, "¸ù", "×óÊÖÖĞÖ¸", "ÖĞÖ¸", "middle finger",
+                        "left middle finger" : ({ 2, "æ ¹", "å·¦æ‰‹ä¸­æŒ‡", "ä¸­æŒ‡", "middle finger",
                                                   0, 0, 0 }),
-                        "left ring finger"   : ({ 2, "¸ù", "×óÊÖÎŞÃûÖ¸", "ÎŞÃûÖ¸", "ring finger",
+                        "left ring finger"   : ({ 2, "æ ¹", "å·¦æ‰‹ç„¡åæŒ‡", "ç„¡åæŒ‡", "ring finger",
                                                   0, 0, 0 }),
-                        "left little finger" : ({ 2, "¸ù", "×óÊÖĞ¡Ö¸", "Ğ¡Ö¸", "little finger",
+                        "left little finger" : ({ 2, "æ ¹", "å·¦æ‰‹å°æŒ‡", "å°æŒ‡", "little finger",
                                                   0, 0, 0 }),
-                        "right arm" : ({ 0, "Ìõ", "ÓÒ±Û", "ÊÖ±Û", "arm",
+                        "right arm" : ({ 0, "æ¢", "å³è‡‚", "æ‰‹è‡‚", "arm",
                                         ([ "right hand": "hand" ]),
-                                        "¶çÏÂ", 0 }),
-                        "right hand": ({ 1, "Ö»", "ÓÒÊÖ", "ÊÖÕÆ", "hand",
+                                        "å‰ä¸‹", 0 }),
+                        "right hand": ({ 1, "åª", "å³æ‰‹", "æ‰‹æŒ", "hand",
                                         ([ "right thumb"        : "thumb",
                                            "right forefinger"   : "forefinger",
                                            "right middle finger": "middle finger",
                                            "right ring finger"  : "ring finger",
                                            "right little finger": "little finger" ]),
-                                        "¶çÏÂ", 0 }),
-                        "right thumb"         : ({ 2, "¸ù", "ÓÒÊÖ´óÄ´Ö¸", "´óÄ´Ö¸", "thumb",
+                                        "å‰ä¸‹", 0 }),
+                        "right thumb"         : ({ 2, "æ ¹", "å³æ‰‹å¤§æ‹‡æŒ‡", "å¤§æ‹‡æŒ‡", "thumb",
                                                    0, 0, 0 }),
-                        "right forefinger"    : ({ 2, "¸ù", "ÓÒÊÖÊ³Ö¸", "Ê³Ö¸", "forefinger",
+                        "right forefinger"    : ({ 2, "æ ¹", "å³æ‰‹é£ŸæŒ‡", "é£ŸæŒ‡", "forefinger",
                                                    0, 0, 0 }),
-                        "right middle finger" : ({ 2, "¸ù", "ÓÒÊÖÖĞÖ¸", "ÖĞÖ¸", "middle finger",
+                        "right middle finger" : ({ 2, "æ ¹", "å³æ‰‹ä¸­æŒ‡", "ä¸­æŒ‡", "middle finger",
                                                    0, 0, 0 }),
-                        "right ring finger"   : ({ 2, "¸ù", "ÓÒÊÖÎŞÃûÖ¸", "ÎŞÃûÖ¸", "ring finger",
+                        "right ring finger"   : ({ 2, "æ ¹", "å³æ‰‹ç„¡åæŒ‡", "ç„¡åæŒ‡", "ring finger",
                                                    0, 0, 0 }),
-                        "right little finger" : ({ 2, "¸ù", "ÓÒÊÖĞ¡Ö¸", "Ğ¡Ö¸", "little finger",
+                        "right little finger" : ({ 2, "æ ¹", "å³æ‰‹å°æŒ‡", "å°æŒ‡", "little finger",
                                                    0, 0, 0 }),
-                        "left leg" : ({ 0, "Ìõ", "×óÍÈ", "ÈËÍÈ", "leg",
+                        "left leg" : ({ 0, "æ¢", "å·¦è…¿", "äººè…¿", "leg",
                                         ([ "left foot": "foot" ]),
-                                         "¶çÏÂ", 0 }),
-                        "left foot": ({ 1, "Ö»", "×ó½Å", "ÈË½Å", "foot",
+                                         "å‰ä¸‹", 0 }),
+                        "left foot": ({ 1, "åª", "å·¦è…³", "äººè…³", "foot",
                                         ([ "left toes"        : "toes", ]),
-                                        "¶çÏÂ", 0 }),
-                        "left toes": ({ 2, "¸ù", "×ó½ÅÖº", "½ÅÖº", "toes",
+                                        "å‰ä¸‹", 0 }),
+                        "left toes": ({ 2, "æ ¹", "å·¦è…³è¶¾", "è…³è¶¾", "toes",
                                                        0, 0, 0 }),
-                        "right leg" : ({ 0, "Ìõ", "ÓÒÍÈ", "ÈËÍÈ", "leg",
+                        "right leg" : ({ 0, "æ¢", "å³è…¿", "äººè…¿", "leg",
                                         ([ "right foot": "foot" ]),
-                                         "¶çÏÂ", 0 }),
-                        "right foot": ({ 1, "Ö»", "ÓÒ½Å", "ÈË½Å", "foot",
+                                         "å‰ä¸‹", 0 }),
+                        "right foot": ({ 1, "åª", "å³è…³", "äººè…³", "foot",
                                         ([ "right toes"        : "toes", ]),
-                                        "¶çÏÂ", 0 }),
-                        "right toes": ({ 2, "¸ù", "ÓÒ½ÅÖº", "½ÅÖº", "toes",
+                                        "å‰ä¸‹", 0 }),
+                        "right toes": ({ 2, "æ ¹", "å³è…³è¶¾", "è…³è¶¾", "toes",
                                                        0, 0, 0 }),
-                        "head"      : ({ 0, "¿Å", "Í·", "ÈËÍ·", "head",
+                        "head"      : ({ 0, "é¡†", "é ­", "äººé ­", "head",
                                         ([ "left eye"  : "left eye",
                                            "right eye" : "right eye",
                                            "nose"      : "nose",
@@ -85,30 +85,30 @@ void create()
                                            "right ear" : "right ear",
                                            "hair"      : "hair",
                                            "tongue"    : "tongue", ]),
-                                        "¿³ÏÂ", "/clone/misc/head" }),
-                        "left eye"  : ({ 1, "Ö»", "×óÑÛ", "ÑÛÖé", "eye",
-                                         0, "ÍÚ³ö", 0, }),
-                        "right eye" : ({ 1, "Ö»", "ÓÒÑÛ", "ÑÛÖé", "eye",
-                                         0, "ÍÚ³ö", 0, }),
-                        "left ear"  : ({ 1, "Ö»", "×ó¶ú", "¶ú¶ä", "ear",
+                                        "ç ä¸‹", "/clone/misc/head" }),
+                        "left eye"  : ({ 1, "åª", "å·¦çœ¼", "çœ¼ç ", "eye",
+                                         0, "æŒ–å‡º", 0, }),
+                        "right eye" : ({ 1, "åª", "å³çœ¼", "çœ¼ç ", "eye",
+                                         0, "æŒ–å‡º", 0, }),
+                        "left ear"  : ({ 1, "åª", "å·¦è€³", "è€³æœµ", "ear",
                                          0, 0, 0, }),
-                        "right ear" : ({ 1, "Ö»", "ÓÒ¶ú", "¶ú¶ä", "ear",
+                        "right ear" : ({ 1, "åª", "å³è€³", "è€³æœµ", "ear",
                                          0, 0, 0, }),
-                        "nose"      : ({ 1, "Ö»", "±Ç×Ó", "±Ç×Ó", "nose",
+                        "nose"      : ({ 1, "åª", "é¼»å­", "é¼»å­", "nose",
                                          0, 0, 0, }),
-                        "hair"      : ({ 1, "Êø", "Í··¢", "Í··¢", 0,
+                        "hair"      : ({ 1, "æŸ", "é ­ç™¼", "é ­ç™¼", 0,
                                          0, 0, "/clone/misc/hair", }),
-                        "tongue"    : ({ 1, "Ìõ", "ÉàÍ·", "ÉàÍ·", 0,
+                        "tongue"    : ({ 1, "æ¢", "èˆŒé ­", "èˆŒé ­", 0,
                                          0, 0, 0, }),
-                        "genitals"  : ({ 1, "¸ù", "ÉúÖ³Æ÷", 0, 0,
+                        "genitals"  : ({ 1, "æ ¹", "ç”Ÿæ®–å™¨", 0, 0,
                                          0, 0, 0, }),
                 ]));
                 set("no_store", 1);
-                set("unit", "¾ß" );
+                set("unit", "å…·" );
                 set("main_part_level", 0);
         }
         
-        set("long", "ÕâÊÇÒ»¾ßÎŞÃûÊ¬Ìå¡£\n");
+        set("long", "é€™æ˜¯ä¸€å…·ç„¡åå±é«”ã€‚\n");
         decayed = 0;
         if( clonep(this_object()) ) call_out("decay", 60, 1);
 }
@@ -132,34 +132,34 @@ void decay(int phase)
         {
         case 1:
                 set("owner_id", "unknow");
-                msg =  name(1) + "¿ªÊ¼¸¯ÀÃÁË£¬·¢³öÒ»¹ÉÄÑÎÅµÄ¶ñ³ô¡£\n";
+                msg =  name(1) + "é–‹å§‹è…çˆ›äº†ï¼Œç™¼å‡ºä¸€è‚¡é›£èçš„æƒ¡è‡­ã€‚\n";
                 delete("victim_name");
                 delete("owner_id");
                 switch (query("gender"))
                 {
-                case "ÄĞĞÔ":
-                        set_name("¸¯ÀÃµÄÄĞÊ¬", ({ "corpse", "Ê¬Ìå" }));
+                case "ç”·æ€§":
+                        set_name("è…çˆ›çš„ç”·å±", ({ "corpse", "å±é«”" }));
                         break;
 
-                case "Å®ĞÔ":
-                        set_name("¸¯ÀÃµÄÅ®Ê¬", ({ "corpse", "Ê¬Ìå" }));
+                case "å¥³æ€§":
+                        set_name("è…çˆ›çš„å¥³å±", ({ "corpse", "å±é«”" }));
                         break;
 
                 default:
-                        set_name("¸¯ÀÃµÄÊ¬Ìå", ({ "corpse", "Ê¬Ìå" }));
+                        set_name("è…çˆ›çš„å±é«”", ({ "corpse", "å±é«”" }));
                 }
-                set("long",        "Õâ¾ßÊ¬ÌåÏÔÈ»ÒÑ¾­ÌÉÔÚÕâÀïÓĞÒ»¶ÎÊ±¼äÁË£¬ÕıÉ¢·¢ÖøÒ»¹É¸¯Ê¬µÄÎ¶µÀ¡£\n");
+                set("long",        "é€™å…·å±é«”é¡¯ç„¶å·²ç¶“èººåœ¨é€™è£¡æœ‰ä¸€æ®µæ™‚é–“äº†ï¼Œæ­£æ•£ç™¼è‘—ä¸€è‚¡è…å±çš„å‘³é“ã€‚\n");
                 call_out("decay", 60, phase + 1);
                 break;
         case 2:
                 delete("parts");
-                msg = name(1) + "±»·ç´µÇ¬ÁË£¬±ä³ÉÒ»¾ßº¡¹Ç¡£\n";
-                set_name("¿İÇ¬µÄº¡¹Ç", ({ "skeleton", "º¡¹Ç" }) );
-                set("long", "Õâ¸±º¡¹ÇÒÑ¾­ÌÉÔÚÕâÀïºÜ¾ÃÁË¡£\n");
+                msg = name(1) + "è¢«é¢¨å¹ä¹¾äº†ï¼Œè®Šæˆä¸€å…·éª¸éª¨ã€‚\n";
+                set_name("æ¯ä¹¾çš„éª¸éª¨", ({ "skeleton", "éª¸éª¨" }) );
+                set("long", "é€™å‰¯éª¸éª¨å·²ç¶“èººåœ¨é€™è£¡å¾ˆä¹…äº†ã€‚\n");
                 call_out("decay", 5, phase + 1);
                 break;
         case 3:
-                msg = "Ò»Õó·ç´µ¹ı£¬°Ñ" + name(1) + "»¯³É¹Ç»Ò´µÉ¢ÁË¡£\n";
+                msg = "ä¸€é™£é¢¨å¹éï¼ŒæŠŠ" + name(1) + "åŒ–æˆéª¨ç°å¹æ•£äº†ã€‚\n";
                 if( env )
                         all_inventory(this_object())->move(env);
                 tell_room(env, msg);
@@ -195,7 +195,7 @@ int do_cut(object me, string arg)
                 return 1;
 
         delete_temp("handing");
-        message("vision", "¡°Å¾À²¡±Ò»Éù£¬" + ob->name() + "µôÁËÏÂÀ´¡£\n",
+        message("vision", "â€œå•ªå•¦â€ä¸€è²ï¼Œ" + ob->name() + "æ‰äº†ä¸‹ä¾†ã€‚\n",
                           environment());
         ob->move(environment());
         return 1;
@@ -208,10 +208,10 @@ int make_corpse(object victim, object killer)
         object aob, dob;
         object *inv;
 
-        set_name(victim->name(1) + "µÄÊ¬Ìå", ({ "corpse" }));
+        set_name(victim->name(1) + "çš„å±é«”", ({ "corpse" }));
         set("long", victim->long()
-                +"È»¶ø£¬"+gender_pronoun(query("gender", victim) )
-                + "ÒÑ¾­ËÀÁË£¬Ö»Ê£ÏÂÒ»¾ßÊ¬Ìå¾²¾²µØÌÉÔÚÕâÀï¡£\n");
+                +"ç„¶è€Œï¼Œ"+gender_pronoun(query("gender", victim) )
+                + "å·²ç¶“æ­»äº†ï¼Œåªå‰©ä¸‹ä¸€å…·å±é«”éœéœåœ°èººåœ¨é€™è£¡ã€‚\n");
         set("class",query("class", victim));
         set("age",query("age", victim));
         set("combat_exp",query("combat_exp", victim));
@@ -236,15 +236,15 @@ int make_corpse(object victim, object killer)
                         set("who_get/id",query("id", killer));
                         set("who_get/time", time() + 5);
                 }
-                // ÕâÊÇÎªÁË°ïÊÖÉè¼ÆµÄ
+                // é€™æ˜¯ç‚ºäº†å¹«æ‰‹è¨­è¨ˆçš„
                 if (! objectp(dob)) dob = killer;
                 if (objectp(dob) &&
                     objectp(aob=query_temp("quest/assist", dob)) )
                 {
-                        // ÎÒÕıÔÚ°ïÖúÄ³ÈË(aob)£¬Èç¹ûÄ³ÈËµÄÈ·ÏëÉ±
-                        // ËÀ¸ÃÈËµÄ»°£¬ÔòÎÒ¼ÇÂ¼Ö®¡£
+                        // æˆ‘æ­£åœ¨å¹«åŠ©æŸäºº(aob)ï¼Œå¦‚æœæŸäººçš„ç¢ºæƒ³æ®º
+                        // æ­»è©²äººçš„è©±ï¼Œå‰‡æˆ‘è¨˜éŒ„ä¹‹ã€‚
                         if( aob->is_killing(query("id", victim)) )
-                                // ¼ÇÂ¼´ËÈË°ïÖúµÄ¶ÔÏó
+                                // è¨˜éŒ„æ­¤äººå¹«åŠ©çš„å°è±¡
                                 set("assist", aob);
                 }
         } else
@@ -254,23 +254,23 @@ int make_corpse(object victim, object killer)
         }
  
         if( query("class", victim) == "bonze" )
-                set("no_cut/hair", "ËüÃ»ÓĞÍ··¢°¡£¬µÈËüÔÙ³¤³öÀ´ºÃÏñÀ´²»¼°ÁË¡£\n");
+                set("no_cut/hair", "å®ƒæ²’æœ‰é ­ç™¼å•Šï¼Œç­‰å®ƒå†é•·å‡ºä¾†å¥½åƒä¾†ä¸åŠäº†ã€‚\n");
 
         switch(query("gender", victim) )
         {
-        case "Å®ĞÔ":
-                set("no_cut/genitals", "¿´Çå³şÁË£¬Õâ¿ÉÊÇÒ»¾ßÅ®Ê¬");
+        case "å¥³æ€§":
+                set("no_cut/genitals", "çœ‹æ¸…æ¥šäº†ï¼Œé€™å¯æ˜¯ä¸€å…·å¥³å±");
                 break;
 
-        case "ÄĞĞÔ":
+        case "ç”·æ€§":
                 break;
 
-        case "ÎŞĞÔ":
-                set("no_cut/genitals", "¿´Çå³şÁË£¬ÕâÎ»ÉúÇ°¾ÍÒÑ¾­×ö¹ı"
-                                       "ÊÖÊõÁË£¬Äã²»±ØÔÙ²ÙĞÄÁË¡£\n");
+        case "ç„¡æ€§":
+                set("no_cut/genitals", "çœ‹æ¸…æ¥šäº†ï¼Œé€™ä½ç”Ÿå‰å°±å·²ç¶“åšé"
+                                       "æ‰‹è¡“äº†ï¼Œä½ ä¸å¿…å†æ“å¿ƒäº†ã€‚\n");
                 break;
         default:
-                set("no_cut/genitals", "¿´Çå³şÁË£¬Õâ²»ÊÇÈËµÄÊ¬Ìå¡£\n");
+                set("no_cut/genitals", "çœ‹æ¸…æ¥šäº†ï¼Œé€™ä¸æ˜¯äººçš„å±é«”ã€‚\n");
                 break;
         }
 

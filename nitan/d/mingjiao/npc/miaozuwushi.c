@@ -7,11 +7,11 @@ void greeting(object ob);
 
 void create()
 {
-        set_name("Î×Ê¿", ({ "wushi" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("å·«å£«", ({ "wushi" }) );
+        set("gender", "ç”·æ€§" );
 
         set("age", 45);
-        set("long", "¹îÒìµÄÃçÈËÎ×Ê¿£¬ºÃÏóÏëÉ±ÁËÄã¼ÀÉñ¡£\n");
+        set("long", "è©­ç•°çš„è‹—äººå·«å£«ï¼Œå¥½è±¡æƒ³æ®ºäº†ä½ ç¥­ç¥ã€‚\n");
         set("shen_type",-1);
         set("combat_exp", 6000);
 
@@ -22,7 +22,7 @@ void create()
 
         set("chat_chance", 30);
         set("chat_msg", ({
-                "Î×Ê¿Ò»Éù´óº°: @@###$$!!! @@@! &*%%%%@!!! \n",
+                "å·«å£«ä¸€è²å¤§å–Š: @@###$$!!! @@@! &*%%%%@!!! \n",
         }) );
 
         set_skill("unarmed", 35);

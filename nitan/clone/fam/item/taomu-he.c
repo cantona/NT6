@@ -6,23 +6,23 @@ inherit ITEM;
 
 void create()
 {
-        set_name(NOR + YEL "ÌÒÄ¾ºĞ" NOR, ({ "taomu he", "taomu", "he" }) );
+        set_name(NOR + YEL "æ¡ƒæœ¨ç›’" NOR, ({ "taomu he", "taomu", "he" }) );
         set_weight(1);
 
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", NOR + YEL "ÕâÊÇÒ»¸öÓÃÌÒÄ¾ÖÆ³ÉµÄºĞ×Ó£¬¿ÉÒÔÓÃÀ´´æ·Åµ¤Ò©£¬¾İËµ£¬·²ÊÇ´æ·Å\n"
-                                                      "ÔÚÕâ¸öºĞ×ÓÀïµÄµ¤Ò©ÏÂÏßºó¶¼²»»á¶ªÊ§¡£\n" HIG
-                                                                          "Ö¸Áî¸ñÊ½£º´æ´¢µ¤Ò©£º  store cun ÊıÁ¿ µ¤Ò©ID\n"
-                                                                          "          È¡³öµ¤Ò©£º  store qu ÊıÁ¿ µ¤Ò©ID\n"
-                                                                          "          ²é¿´ºĞ×Ó£º  store show \n" NOR);
+                set("long", NOR + YEL "é€™æ˜¯ä¸€å€‹ç”¨æ¡ƒæœ¨åˆ¶æˆçš„ç›’å­ï¼Œå¯ä»¥ç”¨ä¾†å­˜æ”¾ä¸¹è—¥ï¼Œæ“šèªªï¼Œå‡¡æ˜¯å­˜æ”¾\n"
+                                                      "åœ¨é€™å€‹ç›’å­è£¡çš„ä¸¹è—¥ä¸‹ç·šå¾Œéƒ½ä¸æœƒä¸Ÿå¤±ã€‚\n" HIG
+                                                                          "æŒ‡ä»¤æ ¼å¼ï¼šå­˜å„²ä¸¹è—¥ï¼š  store cun æ•¸é‡ ä¸¹è—¥ID\n"
+                                                                          "          å–å‡ºä¸¹è—¥ï¼š  store qu æ•¸é‡ ä¸¹è—¥ID\n"
+                                                                          "          æŸ¥çœ‹ç›’å­ï¼š  store show \n" NOR);
                 set("value", 1);
                 set("no_sell", 1);
                                 set("no_give", 1);
                                 set("no_drop", 1);
 
-                        set("unit", "¸ö");
+                        set("unit", "å€‹");
         }
 
         setup();
@@ -44,13 +44,13 @@ int do_store(string arg)
         string para, ob_id;
         int amount;
 
-    // ÏÈÈ¡ÏÂÃæ¾ß
+    // å…ˆå–ä¸‹é¢å…·
     if (me->query_temp("apply/mask_flag"))
     {
-         return notify_fail("¸óÏÂÎªºÎ²»ÒÔÕæÃæÄ¿Ê¾ÈË£¿\n");
+         return notify_fail("é–£ä¸‹ç‚ºä½•ä¸ä»¥çœŸé¢ç›®ç¤ºäººï¼Ÿ\n");
     }
 
-        if (! arg)return notify_fail("\nÎ´ÊäÈë²ÎÊı»òÊäÈë²ÎÊı´íÎó¡£\n");
+        if (! arg)return notify_fail("\næœªè¼¸å…¥åƒæ•¸æˆ–è¼¸å…¥åƒæ•¸éŒ¯èª¤ã€‚\n");
 
         if (arg == "show")
         {                
@@ -58,17 +58,17 @@ int do_store(string arg)
                 return 1;
         }
 
-        // ²é¿´ËùÓĞ²Ö¿âÓÃ»§
+        // æŸ¥çœ‹æ‰€æœ‰å€‰åº«ç”¨æˆ¶
         if (arg == "list")
         {
                 if (! wizardp(me))return 0;
                 DANSTORE_D->show_store_list();
                 return 1;
         }
-        // ²é¿´ÆäËûÍæ¼ÒµÄ´æ´¢Çé¿ö
+        // æŸ¥çœ‹å…¶ä»–ç©å®¶çš„å­˜å„²æƒ…æ³
         if (sscanf(arg, "show %s", para) == 1)
         {
-                if (! wizardp(me))return notify_fail("\nÊäÈë²ÎÊı¹ı¶à£¡\n");
+                if (! wizardp(me))return notify_fail("\nè¼¸å…¥åƒæ•¸éå¤šï¼\n");
 
                 DANSTORE_D->show_player_objects(para);
                 
@@ -76,10 +76,10 @@ int do_store(string arg)
         }
 
         if (sscanf(arg, "%s %d %s", para, amount, ob_id) != 3)
-                return notify_fail("\nÊäÈë²ÎÊı´íÎó ¡£\n");
+                return notify_fail("\nè¼¸å…¥åƒæ•¸éŒ¯èª¤ ã€‚\n");
         
         if (amount < 1)
-                return notify_fail("\nÊäÈëÊıÁ¿²»ÄÜĞ¡ÓÚ 1 ¡£\n");
+                return notify_fail("\nè¼¸å…¥æ•¸é‡ä¸èƒ½å°äº 1 ã€‚\n");
 
         if (para == "cun")
         {
@@ -92,5 +92,5 @@ int do_store(string arg)
                 return 1;        
         }
         
-        return notify_fail("\nÊäÈë²ÎÊı´íÎó¡£\n");
+        return notify_fail("\nè¼¸å…¥åƒæ•¸éŒ¯èª¤ã€‚\n");
 }

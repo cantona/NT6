@@ -4,12 +4,12 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "É½Â·");
+        set("short", "å±±è·¯");
         set("long", @LONG 
-×ßµ½ÕâÀï£¬·´¾õÅ¯ºÍÒ»Ð©ÁË£¬·çÈÔÔÚ¹Î£¬µ«¶ú±ßÖ»Ìýµ½¶£µ±
-µÄÁ÷Ë®Éù¡£Ò»µÀ°×²¨´ÓÑÒ·ìÖÐ´¹ÏÂ£¬óùóùÇåÁ÷ÁîÈËÐÄÉñÒ»Ë¬£¬×ó
-±ßÈÈÆøÌÚÌÚ£¬ÑÌÎíÃÖÂþ£¬ÏÔÈ»ÊÇ¸öÎÂÈª£¬ÓÒ±ßÁãÁãÂäÂäÓÐ¼¸¼äÄ¾
-ÎÝ£¬ÊÇÁèÏöµÜ×ÓÑ²É½¿´ÊØÊ±×¡ËÞÖ®µØ¡£
+èµ°åˆ°é€™è£¡ï¼Œåè¦ºæš–å’Œä¸€äº›äº†ï¼Œé¢¨ä»åœ¨åˆ®ï¼Œä½†è€³é‚Šåªè½åˆ°å®ç•¶
+çš„æµæ°´è²ã€‚ä¸€é“ç™½æ³¢å¾žå·–ç¸«ä¸­åž‚ä¸‹ï¼Œç°Œç°Œæ¸…æµä»¤äººå¿ƒç¥žä¸€çˆ½ï¼Œå·¦
+é‚Šç†±æ°£é¨°é¨°ï¼Œç…™éœ§å½Œæ¼«ï¼Œé¡¯ç„¶æ˜¯å€‹æº«æ³‰ï¼Œå³é‚Šé›¶é›¶è½è½æœ‰å¹¾é–“æœ¨
+å±‹ï¼Œæ˜¯å‡Œéœ„å¼Ÿå­å·¡å±±çœ‹å®ˆæ™‚ä½å®¿ä¹‹åœ°ã€‚
 LONG);
         set("outdoors", "lingxiao");
         set("exits", ([
@@ -18,7 +18,7 @@ LONG);
             "west" : __DIR__"water", 
             "east"  : __DIR__"muwu",
         ]));
-        create_door("east", "Ä¾ÃÅ", "west", DOOR_CLOSED);
+        create_door("east", "æœ¨é–€", "west", DOOR_CLOSED);
         set("no_clean_up", 0);
         setup();
 }

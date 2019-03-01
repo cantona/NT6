@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "������");
+        set("short", "柏樹林");
         set("long", @LONG
-������һƬ֦��Ҷï�İ����֣����ݳ��ñ�ض��ǣ�������ԭʼ
-�����֣����ƺ���ʧ�˷���
+這裡是一片枝繁葉茂的柏樹林，花草長得便地都是，看著這原始
+的密林，你似乎迷失了方向。
 LONG
         );
         set("outdoors", "changan");

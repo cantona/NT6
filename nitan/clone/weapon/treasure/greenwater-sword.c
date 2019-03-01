@@ -1,4 +1,4 @@
-// greenwater-sword.c ±ÌË®½£
+// greenwater-sword.c ç¢§æ°´åŠ
 // Last Modified by winder on Sep. 7 2001
 
 #include <weapon.h>;
@@ -8,17 +8,17 @@ inherit F_UNIQUE;
 
 void create()
 {
-        set_name(HIG"±ÌË®½£"NOR, ({ "greenwater sword", "jian", "sword" }) );
+        set_name(HIG"ç¢§æ°´åŠ"NOR, ({ "greenwater sword", "jian", "sword" }) );
         set_weight(7000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "ÕâÊÇÒ»°ÑÍ¨Ìå¾§Ó¨ÌŞÍ¸µÄ½£!\n");
+                set("unit", "æŠŠ");
+                set("long", "é€™æ˜¯ä¸€æŠŠé€šé«”æ™¶ç‘©å‰”é€çš„åŠ!\n");
                 set("value", 400);
                 set("material", "crimsonsteel");
-                set("wield_msg", "$N¡¸à§¡¹µØÒ»Éù³é³öÒ»°Ñ$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²åÈëÑü¼äµÄ½£ÇÊ¡£\n");
+                set("wield_msg", "$Nã€Œå”°ã€åœ°ä¸€è²æŠ½å‡ºä¸€æŠŠ$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°‡æ‰‹ä¸­çš„$næ’å…¥è…°é–“çš„åŠé˜ã€‚\n");
         }
         init_sword(100);
         setup();

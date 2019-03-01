@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "С��");
+        set("short", "小巷");
         set("long", @LONG
-�������ǵ�һ������ʯ������С��ǳ�Ƨ�������¹��꣬·�濴��
-�������ɾ��ġ�ǰ����һ��Ƭ��Ϊï�ܵ������֡�
+洛陽東城的一條由碎石舖砌的小巷，非常僻靜。剛下過雨，路面看起
+來還滿幹凈的。前面是一大片頗為茂密的綠竹林。
 LONG);
         set("outdoors", "luoyang");
         set("no_clean_up", 0);

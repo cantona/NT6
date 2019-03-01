@@ -3,13 +3,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIR "ºèÃÉÁéÆø" NOR, ({ "hongmeng lingqi", "hongmen lingqi", "lingqi" }));
+        set_name(HIR "é´»è’™éˆæ°£" NOR, ({ "hongmeng lingqi", "hongmen lingqi", "lingqi" }));
         set_weight(3000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIR "»ìãç³õ¿ª²úÉúµÄºèÃÉÁéÆø£¬¾İËµÓµÓĞ×ÅÆæ»ÃµÄÁ¦Á¿£¬ÊÇÓÃÀ´ÌáÉıÌ××°µÈ¼¶µÄ±Ø±¸²ÄÁÏ¡£\n" NOR); 
-                set("unit", "¿é");
+                set("long", HIR "æ··æ²Œåˆé–‹ç”¢ç”Ÿçš„é´»è’™éˆæ°£ï¼Œæ“šèªªæ“æœ‰è‘—å¥‡å¹»çš„åŠ›é‡ï¼Œæ˜¯ç”¨ä¾†æå‡å¥—è£ç­‰ç´šçš„å¿…å‚™ææ–™ã€‚\n" NOR); 
+                set("unit", "å¡Š");
                 set("value", 500000);
                 set("no_sell", 1);
                 set("auto_load", 1);

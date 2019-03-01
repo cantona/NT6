@@ -3,14 +3,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIG "ø◊»∏ Ø" NOR, ({"kongque shi", "kongque", "shi" }));
+        set_name(HIG "Ë¨ÇÔ†ÇÂùí" NOR, ({"kongque shi", "kongque", "shi" }));
         set_weight(2000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "ø≈");
+                set("unit", "Ë°°");
                 set("value", 500000);
-                set("enchase/name", "ø◊»∏ Ø");
+                set("enchase/name", "Ë¨ÇÔ†ÇÂùí");
                 set("enchase/point", 1);
                 set("enchase/type", "surcoat");
                 set("enchase/cur_firm", 100);

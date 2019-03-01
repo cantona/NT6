@@ -1,16 +1,16 @@
-// youji.c ÓÎæ÷
+// youji.c éŠé©¥
 
 #include <ansi.h>
 inherit NPC;
 
 void create()
 {
-        set_name("ÓÎæ÷", ({ "you ji", "you", "ji" }) );
-        set("gender", "ÄĞĞÔ");
-        set("nickname",HIW"ÓÎÊÏË«ĞÛ"NOR);
-        set("title","¾ÛÏÍ×¯´ó×¯Ö÷");
+        set_name("éŠé©¥", ({ "you ji", "you", "ji" }) );
+        set("gender", "ç”·æ€§");
+        set("nickname",HIW"éŠæ°é›™é›„"NOR);
+        set("title","èšè³¢èŠå¤§èŠä¸»");
         set("age", 40);
-        set("long","Ëû¾ÍÊÇ¾ÛÏÍ×¯µÄ´ó×¯Ö÷ÓÎæ÷¡£\n");
+        set("long","ä»–å°±æ˜¯èšè³¢èŠçš„å¤§èŠä¸»éŠé©¥ã€‚\n");
         set("combat_exp", 300000);
         set("shen_type", 1);
         set("attitude", "peaceful");

@@ -6,10 +6,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÎÃ×Ó", ({ "wen zi" }) );
-        set("long",     "Ò»Ö»³¤×ìµÄĞ¡³æÕıĞ¦ÎûÎûµÄ¿´ÖøÄã¡£\n");
+        set_name("èšŠå­", ({ "wen zi" }) );
+        set("long",     "ä¸€åªé•·å˜´çš„å°èŸ²æ­£ç¬‘å˜»å˜»çš„çœ‹è‘—ä½ ã€‚\n");
 
-        set("race", "Ò°ÊŞ");
+        set("race", "é‡ç¸");
         set("age", 1);
         set("attitude", "peaceful");
 
@@ -19,7 +19,7 @@ void create()
         set("str", 10);
         set("cor", 50);
 
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "³á°ò" }) );
+        set("limbs", ({ "é ­éƒ¨", "èº«é«”", "ç¿…è†€" }) );
         set("verbs", ({ "bite" }) );
 
         set_temp("apply/attack", 10);
@@ -50,8 +50,8 @@ int telling(object me)
 {   
     if (!me || environment(me) != environment()) return 1; 
     if( query("tangmen/yanli", me) >= 50 )
-       return notify_fail("ÕâÎ»ÌÆÃÅµÜ×ÓºÃÑÛÁ¦°¡£¡¼ÓÓÍ°¡£¡\n");
-       return notify_fail("°¦£¬Ïë²»µ½°¡£¬Ïë²»µ½£¬ÄãµÄÑÛÁ¦Ì«Ë®ÁË°É£¡ÒªÅ¬Á¦°¡£¡\n");
+       return notify_fail("é€™ä½å”é–€å¼Ÿå­å¥½çœ¼åŠ›å•Šï¼åŠ æ²¹å•Šï¼\n");
+       return notify_fail("å”‰ï¼Œæƒ³ä¸åˆ°å•Šï¼Œæƒ³ä¸åˆ°ï¼Œä½ çš„çœ¼åŠ›å¤ªæ°´äº†å§ï¼è¦åŠªåŠ›å•Šï¼\n");
 }
 
 int do_zha(string arg)
@@ -65,35 +65,35 @@ int do_zha(string arg)
         myfam=query("family", ob);
         jing_drop = random(40);
         
-        if ( myfam["family_name"] != "ÌÆÃÅÊÀ¼Ò" )
+        if ( myfam["family_name"] != "å”é–€ä¸–å®¶" )
            {
-           message_vision(HIR"$NÏëµ÷Ï·ÎÃ×Ó°¡£¡\n"NOR,ob);
+           message_vision(HIR"$Næƒ³èª¿æˆ²èšŠå­å•Šï¼\n"NOR,ob);
            return 1;
            }          
         if ( !arg||(arg != "wenzi" && arg != "wen zi"))
-           return notify_fail("ÄãÏë×¥Ê²Ã´°¡? \n");
+           return notify_fail("ä½ æƒ³æŠ“ä»€éº¼å•Š? \n");
         
         if( query_temp("find_wz", ob) )
-           return notify_fail("ĞÄ²»ÒªÌ«ºÚ£¡ÄãÒª¼¸Ö»°¡£¡\n");
+           return notify_fail("å¿ƒä¸è¦å¤ªé»‘ï¼ä½ è¦å¹¾åªå•Šï¼\n");
         
         if( query_temp("minchen", ob) != query("short") )
-           return notify_fail("Äã²»Òª¼ûµ½ÎÃ×Ó¾Í×¥°¡£¡\n");   
+           return notify_fail("ä½ ä¸è¦è¦‹åˆ°èšŠå­å°±æŠ“å•Šï¼\n");   
            
 /*
         if( query("jingli", ob)<20 )
-           return notify_fail("ÉíÌåÖØÒª£¬²»ÒªÍüÁËĞİÏ¢°¡£¡\n");
+           return notify_fail("èº«é«”é‡è¦ï¼Œä¸è¦å¿˜äº†ä¼‘æ¯å•Šï¼\n");
 */
          
         if( query("d3name") != query("id", ob) )
-           return notify_fail("Õâ¸öÊÀ½çÕæÆæ¹Ö£¬ÕæÆæ¹Ö£¡\n");   
+           return notify_fail("é€™å€‹ä¸–ç•ŒçœŸå¥‡æ€ªï¼ŒçœŸå¥‡æ€ªï¼\n");   
            
         if( query_temp("lianyl", ob) )
           {   
-        message_vision(YEL"$NÃĞÆğÑÛ¾¦À´£¬Ğ¡ĞÄÒíÒíµÄ¿¿½üÎÃ×Ó£¬ÃÍµÄÒ»ÆË......\n"NOR, ob);
+        message_vision(YEL"$Nçœ¯èµ·çœ¼ç›ä¾†ï¼Œå°å¿ƒç¿¼ç¿¼çš„é è¿‘èšŠå­ï¼ŒçŒ›çš„ä¸€æ’²......\n"NOR, ob);
                  if( random(query("tangmen/yanli", ob)/3+10+query("dex", ob)/3)>random(50) )
                     {
-                        message_vision(HIG"$N¹ş¹şÒ»Ğ¦£¬¶¨¾¦Ò»¿´£¬ÎÃ×ÓÒÑ±»$N×¥×¡ÁË£¬ĞÄÖĞ²»ÓÉµÄÒ»ÕóµÃÒâ¡£\n"NOR,ob);
-                        tell_object(ob,HIR"ÄãÔÙÒ»¿´£¬ÎÃ×ÓÒÑËÀ£¬ËãÁË£¬²»ÒªÁË¡£»ØÈ¥½»²î°É£¡\n"NOR);
+                        message_vision(HIG"$Nå“ˆå“ˆä¸€ç¬‘ï¼Œå®šç›ä¸€çœ‹ï¼ŒèšŠå­å·²è¢«$NæŠ“ä½äº†ï¼Œå¿ƒä¸­ä¸ç”±çš„ä¸€é™£å¾—æ„ã€‚\n"NOR,ob);
+                        tell_object(ob,HIR"ä½ å†ä¸€çœ‹ï¼ŒèšŠå­å·²æ­»ï¼Œç®—äº†ï¼Œä¸è¦äº†ã€‚å›å»äº¤å·®å§ï¼\n"NOR);
                         delete_temp("lianyl", ob);
                         set_temp("find_wz", 1, ob);
                         delete_temp("started", ob);
@@ -106,19 +106,19 @@ int do_zha(string arg)
                   {   
                   switch( random(3))
                    {case 0:
-                     say("ÎÃ×ÓÎËÎËµÄ·É¿ªÁË¡£Äã²îµãµøµ¹£¡\n");
+                     say("èšŠå­å—¡å—¡çš„é£›é–‹äº†ã€‚ä½ å·®é»è·Œå€’ï¼\n");
                     break;
                     case 1:
-                     say(HIY"Ò»²»Ğ¡ĞÄÄãÀ´ÁË¸ö¹·¿ĞÄà£¬¿ÉÁ¯°¡£¡\n"NOR);
+                     say(HIY"ä¸€ä¸å°å¿ƒä½ ä¾†äº†å€‹ç‹—å•ƒæ³¥ï¼Œå¯æ†å•Šï¼\n"NOR);
                     break;
                     case 2:   
-                     say(HIC"°¦£¬ÓÖÒ»¸ö´óÂíÅ¿£¡\n"NOR);
+                     say(HIC"å”‰ï¼Œåˆä¸€å€‹å¤§é¦¬è¶´ï¼\n"NOR);
                     break;
                    }
                   return 1; 
                   } 
            }     
-       return notify_fail(HIR"ÓÖÊÇÒ»¸öÃ»ÓĞÊÂ×öµÄÈË£¡\n"NOR);
+       return notify_fail(HIR"åˆæ˜¯ä¸€å€‹æ²’æœ‰äº‹åšçš„äººï¼\n"NOR);
 }                     
                   
                      

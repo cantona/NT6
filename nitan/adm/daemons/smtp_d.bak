@@ -11,15 +11,15 @@
 #include <ansi.h>
 #include <origin.h>
 
-#define RANDOM_PWD_LEN                8 /* Ëæ»úÃÜÂë³¤¶È */
+#define RANDOM_PWD_LEN                8 /* éš¨æ©Ÿå¯†ç¢¼é•·åº¦ */
 
 class email
 {
-        string rcpt;        // ÊÕ¼şÕßµØÖ·
-        string body;        // ÄÚÈİ
-        int status;        // ×´Ì¬Âë
-        string id;        // ÓÃ»§ ID
-        string passwd;        // ÃÜÂë
+        string rcpt;        // æ”¶ä»¶è€…åœ°å€
+        string body;        // å…§å®¹
+        int status;        // ç‹€æ…‹ç¢¼
+        string id;        // ç”¨æˆ¶ ID
+        string passwd;        // å¯†ç¢¼
         object user;
         int normal;
 }
@@ -76,7 +76,7 @@ nomask void send_mail(object user,string mail)
 
         if(!objectp(link = user->query_temp("link_ob")))
         {
-                tell_object(user,"ÄúµÄµµ°¸²»ÍêÈ«,ÎŞ·¨½øĞĞ×¢²á,ÇëÖØĞÂÁ¬ÏßÍê³É×¢²á.\n\n");
+                tell_object(user,"æ‚¨çš„æª”æ¡ˆä¸å®Œå…¨,ç„¡æ³•é€²è¡Œæ³¨å†Š,è«‹é‡æ–°é€£ç·šå®Œæˆæ³¨å†Š.\n\n");
                 destruct(user);
                 return;
         }
@@ -85,13 +85,13 @@ nomask void send_mail(object user,string mail)
         || (lhalf == "")
         || (rhalf == "") )
         {
-                write(sprintf("ÄãµÄµç×ÓÓÊ¼şµØÖ·£º%s ¸ñÊ½²»ÕıÈ·£¬\nÇëÈÏÕæ¼ì²éºóÖØĞÂ×¢²á¡£\n",mail));
+                write(sprintf("ä½ çš„é›»å­éƒµä»¶åœ°å€ï¼š%s æ ¼å¼ä¸æ­£ç¢ºï¼Œ\nè«‹èªçœŸæª¢æŸ¥å¾Œé‡æ–°æ³¨å†Šã€‚\n",mail));
                 return;
         }
 
         if(!regexp(mail, "^[a-zA-Z0-9_.@-]+$"))
         {
-                write(sprintf("ÄãµÄµç×ÓÓÊ¼şµØÖ·£º%s Àï°üº¬·Ç·¨×Ö·û£¬\nÇëÈÏÕæ¼ì²éºóÖØĞÂ×¢²á¡£\n",mail));
+                write(sprintf("ä½ çš„é›»å­éƒµä»¶åœ°å€ï¼š%s è£¡åŒ…å«éæ³•å­—ç¬¦ï¼Œ\nè«‹èªçœŸæª¢æŸ¥å¾Œé‡æ–°æ³¨å†Šã€‚\n",mail));
                 return;
         }
 
@@ -101,20 +101,20 @@ nomask void send_mail(object user,string mail)
         passwd = random_passwd(RANDOM_PWD_LEN);
         server = sprintf("%s 25",address);
 
-        msg = sprintf("From: \"%s\" <%s>\nTo: %s\nSubject: µç×ÓÓÊ¼şÈ·ÈÏº¯\n\n",
+        msg = sprintf("From: \"%s\" <%s>\nTo: %s\nSubject: é›»å­éƒµä»¶ç¢ºèªå‡½\n\n",
         MUD_NAME,PUBLIC_MUD_MAIL,mail);
-        msg += sprintf("ÄãºÃ£¬»¶Ó­¹âÁÙ"+MUD_NAME+"\n                  ÈáÇéÓëÏÀÒåµÄÊÀ½ç¡£\n\nÄúµÄÕËºÅ£º%s\nÃÜ    Âë£º%s\n",user->query("id"),passwd);
-        msg += "\n×¢Òâ£ºÕâ¸öÕËºÅÄ¿Ç°ÎªÁÙÊ±ÕËºÅ£¬ÇëÄúÓÚ48Ğ¡Ê±Ö®ÄÚµÇÂ½È·ÈÏ¡£\n";
-        msg +=   "      ¹ıÆÚÎ´µÇÂ½½«»á±»×Ô¶¯É¾³ı¡£\n";
-        msg +=   "      ÈçÓĞ×¢²áµÇÂ½·½ÃæµÄÎÊÌâ¿ÉÒÔÓë "+ PUBLIC_MUD_MAIL+" ÁªÏµ¡£\n";
-        msg += "\n      ÓÎÏ·µÄÖ÷Ò³ÔÚ http://www.mudtx.com/ ÄÇÀïÓĞÏêÏ¸µÄ°ïÖú
-      ºÍÍæ¼ÒĞ´µÄĞÂÊÖÖ¸ÄÏ¡¢¾­Ñé½éÉÜ£¬ÏàĞÅ»á¶ÔÄãºÜÓĞÓÃ´¦¡£
+        msg += sprintf("ä½ å¥½ï¼Œæ­¡è¿å…‰è‡¨"+MUD_NAME+"\n                  æŸ”æƒ…èˆ‡ä¿ ç¾©çš„ä¸–ç•Œã€‚\n\næ‚¨çš„è³¬è™Ÿï¼š%s\nå¯†    ç¢¼ï¼š%s\n",user->query("id"),passwd);
+        msg += "\næ³¨æ„ï¼šé€™å€‹è³¬è™Ÿç›®å‰ç‚ºè‡¨æ™‚è³¬è™Ÿï¼Œè«‹æ‚¨äº48å°æ™‚ä¹‹å…§ç™»é™¸ç¢ºèªã€‚\n";
+        msg +=   "      éæœŸæœªç™»é™¸å°‡æœƒè¢«è‡ªå‹•åˆªé™¤ã€‚\n";
+        msg +=   "      å¦‚æœ‰æ³¨å†Šç™»é™¸æ–¹é¢çš„å•é¡Œå¯ä»¥èˆ‡ "+ PUBLIC_MUD_MAIL+" è¯ç³»ã€‚\n";
+        msg += "\n      éŠæˆ²çš„ä¸»é åœ¨ http://www.mudtx.com/ é‚£è£¡æœ‰è©³ç´°çš„å¹«åŠ©
+      å’Œç©å®¶å¯«çš„æ–°æ‰‹æŒ‡å—ã€ç¶“é©—ä»‹ç´¹ï¼Œç›¸ä¿¡æœƒå°ä½ å¾ˆæœ‰ç”¨è™•ã€‚
 
-      ×¢Òâ£ºÃÜÂëÎª 8 Î»£¬Ò»Î»×ÖÄ¸¼ä¸ôÒ»Î»Êı×Ö£¬
-            1,3,5,7 Î»ÊÇ×ÖÄ¸£¬2,4,6,8 Î»ÊÇÊı×Ö£¬
-            ±£ÏÕµÄ·½·¨ÊÇÓÃ¿½±´¡¢Õ³ÌùÀ´ÊäÈëÃÜÂë¡£
+      æ³¨æ„ï¼šå¯†ç¢¼ç‚º 8 ä½ï¼Œä¸€ä½å­—æ¯é–“éš”ä¸€ä½æ•¸å­—ï¼Œ
+            1,3,5,7 ä½æ˜¯å­—æ¯ï¼Œ2,4,6,8 ä½æ˜¯æ•¸å­—ï¼Œ
+            ä¿éšªçš„æ–¹æ³•æ˜¯ç”¨æ‹·è²ã€ç²˜è²¼ä¾†è¼¸å…¥å¯†ç¢¼ã€‚
 
-                 ×£ÄúÔÚ¡¶ÌìÏÂ¡·ÍæµÄÓä¿ì£¡";
+                 ç¥æ‚¨åœ¨ã€Šå¤©ä¸‹ã€‹ç©çš„æ„‰å¿«ï¼";
 
         newmail = new(class email);
         newmail->rcpt = mail;
@@ -128,7 +128,7 @@ nomask void send_mail(object user,string mail)
         if(s<0)
         {
                 log_file("socket","Socket create err: "+socket_error(s)+"\n");
-                tell_object(user,"×¢²á¹ı³ÌÖĞ·şÎñÆ÷·¢Éú´íÎó£¬ÇëÔÙ×¢²áÒ»´Î¡£\n");
+                tell_object(user,"æ³¨å†Šéç¨‹ä¸­æœå‹™å™¨ç™¼ç”ŸéŒ¯èª¤ï¼Œè«‹å†æ³¨å†Šä¸€æ¬¡ã€‚\n");
                 return;
         }
 
@@ -138,12 +138,12 @@ nomask void send_mail(object user,string mail)
         if(err<0)
         {
                 log_file("socket","Socket connect err: "+socket_error(err)+"\n");
-                tell_object(user,"×¢²á¹ı³ÌÖĞ·şÎñÆ÷·¢Éú´íÎó£¬ÇëÔÙ×¢²áÒ»´Î¡£\n");
+                tell_object(user,"æ³¨å†Šéç¨‹ä¸­æœå‹™å™¨ç™¼ç”ŸéŒ¯èª¤ï¼Œè«‹å†æ³¨å†Šä¸€æ¬¡ã€‚\n");
                 socket_close(s);
                 return;
         }
 
-        tell_object(user,"ÓÊ¼ş·¢ËÍÖĞ£¬ÇëÉÔºò¡£¡£¡£¡£¡£¡£\n");
+        tell_object(user,"éƒµä»¶ç™¼é€ä¸­ï¼Œè«‹ç¨å€™ã€‚ã€‚ã€‚ã€‚ã€‚ã€‚\n");
         call_out("time_out",90,s);
 }
 
@@ -158,7 +158,7 @@ protected void time_out(int fd)
 
         if(objectp(mailmsg->user))
         {
-                tell_object(mailmsg->user,"\n·¢ËÍ¹ı³Ì³¬Ê±£¬ÇëÖØĞÂÔÙ×¢²áÒ»´Î¡£\n\n");
+                tell_object(mailmsg->user,"\nç™¼é€éç¨‹è¶…æ™‚ï¼Œè«‹é‡æ–°å†æ³¨å†Šä¸€æ¬¡ã€‚\n\n");
                 (mailmsg->user)->stop_busy();
         }
 
@@ -186,11 +186,11 @@ protected void success_register(int fd)
 
         map_delete(content,fd);
 
-        tell_object(usr,sprintf("\n¸øÄú·ÖÅäµÄËæ»úÃÜÂëÒÑ¸ù¾İÄúµÇ¼ÇµÄµØÖ··¢Íù£º%s
-ÇëÄúÎå·ÖÖÓºó¼ì²éÄúµÄÓÊÏä¡£Èç¹ûÄúÔÚ24Ğ¡Ê±ºó»¹Î´ÄÜÊÕµ½ÎÒÃÇ
-¸øÄú·¢³öµÄÓÊ¼ş£¬ÇëÄúÏò %s ·¢ĞÅËµÃ÷ÏêÏ¸Çé¿ö£¬
-ÎÒÃÇ»á¾¡¿ìÎªÄú½â¾ö¡£²»±ãÖ®´¦Çë¶àÁÂ½â¡£
-×£ÄúÔÚ %s ÍæµÄÓä¿ì£¬ÔÙ¼û£¡\n\n\n",mailmsg->rcpt,PUBLIC_MUD_MAIL,MUD_NAME));
+        tell_object(usr,sprintf("\nçµ¦æ‚¨åˆ†é…çš„éš¨æ©Ÿå¯†ç¢¼å·²æ ¹æ“šæ‚¨ç™»è¨˜çš„åœ°å€ç™¼å¾€ï¼š%s
+è«‹æ‚¨äº”åˆ†é˜å¾Œæª¢æŸ¥æ‚¨çš„éƒµç®±ã€‚å¦‚æœæ‚¨åœ¨24å°æ™‚å¾Œé‚„æœªèƒ½æ”¶åˆ°æˆ‘å€‘
+çµ¦æ‚¨ç™¼å‡ºçš„éƒµä»¶ï¼Œè«‹æ‚¨å‘ %s ç™¼ä¿¡èªªæ˜è©³ç´°æƒ…æ³ï¼Œ
+æˆ‘å€‘æœƒç›¡å¿«ç‚ºæ‚¨è§£æ±ºã€‚ä¸ä¾¿ä¹‹è™•è«‹å¤šè«’è§£ã€‚
+ç¥æ‚¨åœ¨ %s ç©çš„æ„‰å¿«ï¼Œå†è¦‹ï¼\n\n\n",mailmsg->rcpt,PUBLIC_MUD_MAIL,MUD_NAME));
 
         link->set("last_on", time());
         link->set("last_from", query_ip_name(usr));
@@ -202,8 +202,8 @@ protected void success_register(int fd)
         link->save();
         usr->save();
 
-        tell_room(environment(usr),"ÄãÖ»¾õµÃÑÛÇ°Ò»»¨£¬"+usr->query("name")+"²»¼ûÁË¡£\n",({usr}));
-        message("channel:sys",sprintf(HIR"¡¾ÓÊ¼ş×¢²á¾«Áé¡¿£º%s(%s)Íê³É×¢²áÍË³öÓÎÏ·¡£\n"NOR,
+        tell_room(environment(usr),"ä½ åªè¦ºå¾—çœ¼å‰ä¸€èŠ±ï¼Œ"+usr->query("name")+"ä¸è¦‹äº†ã€‚\n",({usr}));
+        message("channel:sys",sprintf(HIR"ã€éƒµä»¶æ³¨å†Šç²¾éˆã€‘ï¼š%s(%s)å®Œæˆæ³¨å†Šé€€å‡ºéŠæˆ²ã€‚\n"NOR,
                 usr->name(),geteuid(usr)),filter_array(users(),(: wizardp($1) :)));
 
         destruct(link);
@@ -226,7 +226,7 @@ protected void mail_error(int fd,string message)
 
         if(objectp(mailmsg->user))
         {
-                tell_object(mailmsg->user,sprintf("\n·¢ËÍ¹ı³ÌÖĞ³öÏÖÒì³£´íÎó£º\n%s\nÇëÖØĞÂÔÙ×¢²áÒ»´Î¡£\n\n",
+                tell_object(mailmsg->user,sprintf("\nç™¼é€éç¨‹ä¸­å‡ºç¾ç•°å¸¸éŒ¯èª¤ï¼š\n%s\nè«‹é‡æ–°å†æ³¨å†Šä¸€æ¬¡ã€‚\n\n",
                         message));
                 (mailmsg->user)->stop_busy();
         }
@@ -260,7 +260,7 @@ protected void read_callback(int fd,string message)
                 return;
         }
 
-        if(!mailmsg->status)  // ÎÕÊÖÁ¬Í¨
+        if(!mailmsg->status)  // æ¡æ‰‹é€£é€š
         {
                 socket_write(fd,sprintf("EHLO %s\r\n",query_host_name()));
                 mailmsg->status++;
@@ -300,7 +300,7 @@ protected void read_callback(int fd,string message)
                         return;
                 }
 
-                // ESMTP ²»ĞèÒªÈÏÖ¤
+                // ESMTP ä¸éœ€è¦èªè¨¼
                 socket_write(fd,sprintf("MAIL FROM: <%s>\r\n","mud@mail.263.net.cn"));
 //                socket_write(fd,sprintf("MAIL FROM: <%s>\r\n",PUBLIC_MUD_MAIL));
                 mailmsg->status = 3;
@@ -311,7 +311,7 @@ protected void read_callback(int fd,string message)
         {
                 string quest;
 
-                if(rcode == 334)        // ÈÏÖ¤ÌáÎÊ
+                if(rcode == 334)        // èªè¨¼æå•
                 {
                         quest = message[4..];
                         quest = replace_string(quest,"\n","");
@@ -329,7 +329,7 @@ protected void read_callback(int fd,string message)
                         }
                 }
 
-                // ÈÏÖ¤Í¨¹ı
+                // èªè¨¼é€šé
                 socket_write(fd,sprintf("MAIL FROM: <%s>\r\n","mud@mail.263.net.cn"));
 //                socket_write(fd,sprintf("MAIL FROM: <%s>\r\n",PUBLIC_MUD_MAIL));
                 mailmsg->status = 3;
@@ -399,7 +399,7 @@ protected varargs void write_callback(int fd,string outgoing)
         }
 }
 
-/* ÒÔºóÒª¼ÓÈë¶ÔÄ³Àà mail µØÖ·µÄÏŞÖÆ£¬Ò²ÔÚÕâÀïÊµÏÖ¡£*/
+/* ä»¥å¾Œè¦åŠ å…¥å°æŸé¡ mail åœ°å€çš„é™åˆ¶ï¼Œä¹Ÿåœ¨é€™è£¡å¯¦ç¾ã€‚*/
 protected int mail_have_reg(object user,string mail)
 {
         object link;
@@ -414,9 +414,9 @@ protected int mail_have_reg(object user,string mail)
 
         if(!permit_reg_email(mail))
         {
-                tell_object(user,"Õâ¸öÓÊ¼şµØÖ·ÒÑ¾­×¢²á¹ıÁË£¬±¾ÓÎÏ·²»ÔÊĞíÍ¬Ò»µØÖ·¶àÖØ×¢²á¡£\nÔÙ¼û£¡\n");
+                tell_object(user,"é€™å€‹éƒµä»¶åœ°å€å·²ç¶“æ³¨å†Šéäº†ï¼Œæœ¬éŠæˆ²ä¸å…è¨±åŒä¸€åœ°å€å¤šé‡æ³¨å†Šã€‚\nå†è¦‹ï¼\n");
                 del_user_data(id,2);
-                message("channel:sys",sprintf(HIR"¡¾ÓÊ¼ş×¢²á¾«Áé¡¿£º%s(%s)×¢²áÇëÇó±»¾Ü¾ø£¬ÍË³öÓÎÏ·¡£\n"NOR,
+                message("channel:sys",sprintf(HIR"ã€éƒµä»¶æ³¨å†Šç²¾éˆã€‘ï¼š%s(%s)æ³¨å†Šè«‹æ±‚è¢«æ‹’çµ•ï¼Œé€€å‡ºéŠæˆ²ã€‚\n"NOR,
                         user->name(),geteuid(user)),filter_array(users(),(: wizardp($1) :)));
 
                 destruct(user);
@@ -430,7 +430,7 @@ protected int mail_have_reg(object user,string mail)
                 return 0;
 }
 
-/* ³¬¹ı48Ğ¡Ê±Î´Á¬ÏßÈ·ÈÏÉ¾³ıµµ°¸ */
+/* è¶…é48å°æ™‚æœªé€£ç·šç¢ºèªåˆªé™¤æª”æ¡ˆ */
 void user_no_login()
 {
         string *player,time;
@@ -467,7 +467,7 @@ void user_no_login()
                         rm(f);
                 if(file_size(f = sprintf(DATA_DIR+"user/%c/%s.o",one[0],one)) > 0)
                         rm(f);
-                log_file("smtp",sprintf("(%s)³¬¹ı48Ğ¡Ê±Î´Á¬ÏßÈ·ÈÏ±»É¾³ı¡£%s\n",one,time));
+                log_file("smtp",sprintf("(%s)è¶…é48å°æ™‚æœªé€£ç·šç¢ºèªè¢«åˆªé™¤ã€‚%s\n",one,time));
         }
 }
 /*

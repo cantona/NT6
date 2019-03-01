@@ -1,4 +1,4 @@
-// jlding.c ¾ÅÁú¶¦
+// jlding.c ä¹é¾é¼
 
 #include <ansi.h>
 
@@ -6,14 +6,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIR "¾ÅÁú¶¦" NOR, ({ "jiulong ding", "ding" }));
+        set_name(HIR "ä¹é¾é¼" NOR, ({ "jiulong ding", "ding" }));
         set_weight(1200);
         set_max_encumbrance(200);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
-                set("long", "Ò»¸öÖÜ±ßÏâÇ¶¾ÅÌõÁúµÄ¶¦£¬ÆÄÎª³ÁÖØ£¬ÌØÊâÖÊµØ£¬ÄËÁ¶µ¤ÉñÆ÷¡£\n");
+                set("unit", "å€‹");
+                set("long", "ä¸€å€‹å‘¨é‚Šé‘²åµŒä¹æ¢é¾çš„é¼ï¼Œé —ç‚ºæ²‰é‡ï¼Œç‰¹æ®Šè³ªåœ°ï¼Œä¹ƒç…‰ä¸¹ç¥å™¨ã€‚\n");
                 set("value", 20000);
                 set("auto_load", 1);
                 set("can_summon", 1); 

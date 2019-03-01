@@ -4,7 +4,7 @@
  * File   : baseball.c
  * Author : Clode@RevivalWorld
  * Date   : 2009-08-10
- * Note   : °ôÇòÖ¸Áî
+ * Note   : æ£’çƒæŒ‡ä»¤
  * Update :
  *  o 2000-00-00  
  *
@@ -23,26 +23,26 @@ inherit F_CLEAN_UP;
 #define RECORD_SIZE 	30
 
 string help = @HELP
-   °ôÇòÖ¸Áî£¬¿ÉÒÔ²éÑ¯°ôÇò±ÈÈüÏà¹Ø×ÊÑ¶
+   æ£’çƒæŒ‡ä»¤ï¼Œå¯ä»¥æŸ¥è©¢æ£’çƒæ¯”è³½ç›¸é—œè³‡è¨Š
 
-   baseball			- ÏÔÊ¾Ä¿Ç°²ÎÈü¶ÓÎé¡¢Õ½¿ö¡¢Çò¶Ó»ù±¾×ÊÑ¶
+   baseball			- é¡¯ç¤ºç›®å‰åƒè³½éšŠä¼ã€æˆ°æ³ã€çƒéšŠåŸºæœ¬è³‡è¨Š
    
-   baseball info		- ²éÑ¯×Ô¼ºËùÊôÇòÔ±¼ÍÂ¼
-   baseball info 'Íæ¼ÒID'	- ²éÑ¯ÆäËûÍæ¼ÒÇòÔ±¼ÍÂ¼
+   baseball info		- æŸ¥è©¢è‡ªå·±æ‰€å±¬çƒå“¡ç´€éŒ„
+   baseball info 'ç©å®¶ID'	- æŸ¥è©¢å…¶ä»–ç©å®¶çƒå“¡ç´€éŒ„
    
-   baseball listen 'Íæ¼ÒID'	- ÊÕÌıÄ³Î»Íæ¼ÒµÄÇò¶Ó±ÈÈüÊµ¿ö
-   baseball listen -d		- Í£Ö¹ÊÕÌı±ÈÈüÊµ¿ö
+   baseball listen 'ç©å®¶ID'	- æ”¶è½æŸä½ç©å®¶çš„çƒéšŠæ¯”è³½å¯¦æ³
+   baseball listen -d		- åœæ­¢æ”¶è½æ¯”è³½å¯¦æ³
    
-   baseball record 'ÖÖÀà'	- ²éÑ¯ÇòÔ±¼ÍÂ¼ÅÅĞĞ(ÖÖÀà°üÀ¨ home, hit, hit2, hit3, run, k, era, special)
-   baseball record 'ÖÖÀà' Äê¶È	- ²éÑ¯ÇòÔ±¼ÍÂ¼ÅÅĞĞ(Ä³Ò»ÌØ¶¨Äê¶È)
+   baseball record 'ç¨®é¡'	- æŸ¥è©¢çƒå“¡ç´€éŒ„æ’è¡Œ(ç¨®é¡åŒ…æ‹¬ home, hit, hit2, hit3, run, k, era, special)
+   baseball record 'ç¨®é¡' å¹´åº¦	- æŸ¥è©¢çƒå“¡ç´€éŒ„æ’è¡Œ(æŸä¸€ç‰¹å®šå¹´åº¦)
 
-   baseball hint '°µºÅ'		- ÏÂ´ï°µºÅ£¬Ã¿³¡ÇòÈü×î¶àÊ¹ÓÃ 6 ´Î°µºÅ
+   baseball hint 'æš—è™Ÿ'		- ä¸‹é”æš—è™Ÿï¼Œæ¯å ´çƒè³½æœ€å¤šä½¿ç”¨ 6 æ¬¡æš—è™Ÿ
    	
-   °µºÅÖÖÀàÈçÏÂ : 	
-   batter 	- ¹ÄÎèÄ¿Ç°³¡ÉÏ´òÕß£¬ÈÃËûÔÚÕâ´ÎÉÏ³¡»ú»áÖĞ¶ÌÔİÌáÉı´ò»÷ÍşÁ¦
-   pitcher 	- ¹ÄÎèÄ¿Ç°³¡ÉÏÍ¶ÊÖ£¬ÈÃËûÓëÄ¿Ç°´òÕßµÄ¶Ô¾öÖĞ¶ÌÔİÌáÉıÍ¶ÇòÍşÁ¦
-   bunt		- ´ò°µºÅ¸ø³¡ÉÏ´òÕß£¬ÒªÇóÆä½øĞĞ´¥»÷¶Ì´ò£¬ÒÔÑÚ»¤ÀİÉÏÅÜÕßÍÆ½ø(²»¼ÆÈë°µºÅ´ÎÊı)
-   walk		- ´ò°µºÅ¸ø³¡ÉÏÍ¶ÊÖ£¬ÒªÇóÆä¾´Ô¶ËÄ»µ±£ËÍÄ¿Ç°´òÕß(²»¼ÆÈë°µºÅ´ÎÊı)
+   æš—è™Ÿç¨®é¡å¦‚ä¸‹ : 	
+   batter 	- é¼“èˆç›®å‰å ´ä¸Šæ‰“è€…ï¼Œè®“ä»–åœ¨é€™æ¬¡ä¸Šå ´æ©Ÿæœƒä¸­çŸ­æš«æå‡æ‰“æ“Šå¨åŠ›
+   pitcher 	- é¼“èˆç›®å‰å ´ä¸ŠæŠ•æ‰‹ï¼Œè®“ä»–èˆ‡ç›®å‰æ‰“è€…çš„å°æ±ºä¸­çŸ­æš«æå‡æŠ•çƒå¨åŠ›
+   bunt		- æ‰“æš—è™Ÿçµ¦å ´ä¸Šæ‰“è€…ï¼Œè¦æ±‚å…¶é€²è¡Œè§¸æ“ŠçŸ­æ‰“ï¼Œä»¥æ©è­·å£˜ä¸Šè·‘è€…æ¨é€²(ä¸è¨ˆå…¥æš—è™Ÿæ¬¡æ•¸)
+   walk		- æ‰“æš—è™Ÿçµ¦å ´ä¸ŠæŠ•æ‰‹ï¼Œè¦æ±‚å…¶æ•¬é å››å£ä¿é€ç›®å‰æ‰“è€…(ä¸è¨ˆå…¥æš—è™Ÿæ¬¡æ•¸)
 HELP;
 
 int main(object me, string arg)
@@ -65,10 +65,10 @@ int main(object me, string arg)
 		int rank = 0;
 		int limit;
 		
-		msg = ({ "\n µÚ "HIC+year+NOR" Çò¼¾Ä¿Ç°¹²ÓĞ "HIY+sizeof(season)+NOR" ¸ö²ÎÈüÇò¶Ó£¬Ä¿Ç°Õ½¼¨ÅÅÃûÈçÏÂ£º" });
-		msg += ({ WHT"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"NOR });
-		msg += ({ sprintf(HIW" %-4s%-13s%-13s%4s%5s%5s%6s %-12s%s"NOR, "", "Çò¶ÓÃû³Æ", "ÀÏ°å", "³¡´Î", "Ê¤³¡", "°Ü³¡", "Ê¤ÂÊ", "Ä¿Ç°¶ÔÕ½", "Èü¿ö") });
-		msg += ({ WHT"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"NOR });
+		msg = ({ "\n ç¬¬ "HIC+year+NOR" çƒå­£ç›®å‰å…±æœ‰ "HIY+sizeof(season)+NOR" å€‹åƒè³½çƒéšŠï¼Œç›®å‰æˆ°ç¸¾æ’åå¦‚ä¸‹ï¼š" });
+		msg += ({ WHT"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"NOR });
+		msg += ({ sprintf(HIW" %-4s%-13s%-13s%4s%5s%5s%6s %-12s%s"NOR, "", "çƒéšŠåç¨±", "è€æ¿", "å ´æ¬¡", "å‹å ´", "æ•—å ´", "å‹ç‡", "ç›®å‰å°æˆ°", "è³½æ³") });
+		msg += ({ WHT"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"NOR });
 		
 		limit = (BASEBALL_D->calculate_max_game_times(year)-10) / 2;
 		
@@ -91,15 +91,15 @@ int main(object me, string arg)
 				
 			if( win+lose < limit && sep == 0 )
 			{
-				msg += ({ WHT"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤ "NOR"³¡´ÎÊıÁ¿Ìõ¼ş²»×ã"WHT" ©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"NOR });
+				msg += ({ WHT"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ "NOR"å ´æ¬¡æ•¸é‡æ¢ä»¶ä¸è¶³"WHT" â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"NOR });
 				sep = 1;
 			}
 			
 			if( rank == 8 )
-				msg += ({ NOR RED"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤ "HIR"¼¾ºóÈü½ú¼¶Ìõ¼ş"NOR RED" ©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"NOR });
+				msg += ({ NOR RED"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ "HIR"å­£å¾Œè³½æ™‰ç´šæ¢ä»¶"NOR RED" â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"NOR });
 			
 			//else if( rank == 12 )
-			//	msg += ({ NOR RED"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤ "HIR"¼¾ºóÈü½ú¼¶Ìõ¼ş"NOR RED" ©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"NOR });
+			//	msg += ({ NOR RED"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ "HIR"å­£å¾Œè³½æ™‰ç´šæ¢ä»¶"NOR RED" â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"NOR });
 			
 			opponent = BASEBALL_D->query_opponent(id);
 			
@@ -110,18 +110,18 @@ int main(object me, string arg)
 					if( BASEBALL_D->is_in_post_season() )
 					{
 						if( member_array(id, BASEBALL_D->query_post_season_eliminate_teams()) != -1 )
-							statustext = RED"ÌÔÌ­"NOR;
+							statustext = RED"æ·˜æ±°"NOR;
 						else if( member_array(id, BASEBALL_D->query_post_season_team(2)) != -1 )
-							statustext = HIY"½ú¼¶"NOR YEL"×Ü¹Ú¾üÈü"NOR;		
+							statustext = HIY"æ™‰ç´š"NOR YEL"ç¸½å† è»è³½"NOR;		
 						else if( member_array(id, BASEBALL_D->query_post_season_team(4)) != -1 )
-							statustext = HIG"½ú¼¶"NOR GRN"ËÄÇ¿Èü"NOR;
+							statustext = HIG"æ™‰ç´š"NOR GRN"å››å¼·è³½"NOR;
 						else if( member_array(id, BASEBALL_D->query_post_season_team(8)) != -1 )
-							statustext = HIC"½ú¼¶"NOR CYN"°ËÇ¿Èü"NOR;
+							statustext = HIC"æ™‰ç´š"NOR CYN"å…«å¼·è³½"NOR;
 						else
-							statustext = WHT"ĞİÈü"NOR;
+							statustext = WHT"ä¼‘è³½"NOR;
 					}
 					else
-						statustext = HIG"Åä"NOR GRN"¶ÔÖĞ"NOR;
+						statustext = HIG"é…"NOR GRN"å°ä¸­"NOR;
 					break;
 				}
 				case STATUS_PLAYING:
@@ -133,43 +133,43 @@ int main(object me, string arg)
 					else
 						statustext = sprintf(HIC"%-2d"NOR":"CYN"%2d"NOR, game[TEAM2SCORE], game[TEAM1SCORE]);
 						   
-					statustext += sprintf(" "WHT"%s"HIW"%d"NOR, (game[INNING]%2?"¡ü":"¡ı"), (game[INNING]/2+game[INNING]%2));
+					statustext += sprintf(" "WHT"%s"HIW"%d"NOR, (game[INNING]%2?"â†‘":"â†“"), (game[INNING]/2+game[INNING]%2));
 					break;	
 				}
 				case STATUS_PREPARING:
 				{
 					mapping game = BASEBALL_D->query_game(id);
-					statustext = HIY"×¼"NOR YEL"±¸ÖĞ"NOR+" "+HIY+((PREPARETIME - game[TICK])/60+1)+NOR YEL+"m"NOR;
+					statustext = HIY"æº–"NOR YEL"å‚™ä¸­"NOR+" "+HIY+((PREPARETIME - game[TICK])/60+1)+NOR YEL+"m"NOR;
 					break;	
 				}
 			}
 			msg += ({ sprintf(" %-4s%-13s"HIC"%-13s"HIW"%4d"HIR"%5d"HIG"%5d"HIY+(win>0&&lose==0?"%6.1f":"%6.2f")+NOR CYN" %-12s"NOR"%s", sep == 0 ? to_string(++rank):"", setup[id]["name"], capitalize(id), win+lose, win, lose, lose+win > 0. ? (win*100./(lose+win)) : 0., opponent ? capitalize(opponent) : "", statustext) });
 		}
 		
-		msg += ({ WHT"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"NOR });
+		msg += ({ WHT"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"NOR });
 		
 		if( !undefinedp(setup[myid]) )
 		{
 			if( setup[myid]["keepwins"] > 1 )
-				msg += ({ pnoun(2, me)+"µÄÇò¶Ó×î½ü´ò³ö "HIR+setup[myid]["keepwins"]+NOR" Á¬Ê¤£¬Ê¿Æø¸ß°º" });
+				msg += ({ pnoun(2, me)+"çš„çƒéšŠæœ€è¿‘æ‰“å‡º "HIR+setup[myid]["keepwins"]+NOR" é€£å‹ï¼Œå£«æ°£é«˜æ˜‚" });
 			if( setup[myid]["keeploses"] > 1 )
-				msg += ({ pnoun(2, me)+"µÄÇò¶Ó×î½ü¿àÍÌ "HIG+setup[myid]["keeploses"]+NOR" Á¬°Ü£¬Ê¿ÆøµÍÂä" });
+				msg += ({ pnoun(2, me)+"çš„çƒéšŠæœ€è¿‘è‹¦å "HIG+setup[myid]["keeploses"]+NOR" é€£æ•—ï¼Œå£«æ°£ä½è½" });
 		}
 
 		if( BASEBALL_D->is_in_post_season() )
-			msg += ({ " Ä¿Ç°ÕıÔÚ½øĞĞµÚ "HIC+year+NOR" Çò¼¾¼¾ºóÈü" });
+			msg += ({ " ç›®å‰æ­£åœ¨é€²è¡Œç¬¬ "HIC+year+NOR" çƒå­£å­£å¾Œè³½" });
 		else 
 		{
 			int eta = 1282456800 + 604800*year - time();
 			
 			if( eta < 0 )
-				msg += ({ " µÚ "HIC+year+NOR" Çò¼¾¼¾ºóÈü×¼±¸ÖĞ"NOR });
+				msg += ({ " ç¬¬ "HIC+year+NOR" çƒå­£å­£å¾Œè³½æº–å‚™ä¸­"NOR });
 			else
-				msg += ({ " ¾àÀëµÚ "HIC+year+NOR" Çò¼¾¼¾ºóÈü»¹ÓĞ "HIY+(eta/60/60/24)+" Ìì "+(eta/60/60%24)+" Ğ¡Ê± "+(eta/60%60)+" ·Ö"NOR });
+				msg += ({ " è·é›¢ç¬¬ "HIC+year+NOR" çƒå­£å­£å¾Œè³½é‚„æœ‰ "HIY+(eta/60/60/24)+" å¤© "+(eta/60/60%24)+" å°æ™‚ "+(eta/60%60)+" åˆ†"NOR });
 		}
 			
-		msg += ({ " ²éÑ¯ÇòÔ±ÅÅĞĞ¼ÍÂ¼ / ÊÕÌı¸÷Çò¶Ó¼´Ê±Õ½¿ö / ÏÂ´ï°µºÅ - help baseball" });
-		msg += ({ WHT"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"NOR });
+		msg += ({ " æŸ¥è©¢çƒå“¡æ’è¡Œç´€éŒ„ / æ”¶è½å„çƒéšŠå³æ™‚æˆ°æ³ / ä¸‹é”æš—è™Ÿ - help baseball" });
+		msg += ({ WHT"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"NOR });
 		return tell(me, implode(msg, "\n")+"\n");
 	}
 	else if( sscanf(arg, "record %s", value) == 1 )
@@ -184,19 +184,19 @@ int main(object me, string arg)
 		sscanf(value, "%s %d", value, year);
 		
 		if( !mapp(record[year]) )
-			return tell(me, "²¢Ã»ÓĞµÚ "+year+" Çò¼¾µÄ¼ÍÂ¼¡£\n");
+			return tell(me, "ä¸¦æ²’æœ‰ç¬¬ "+year+" çƒå­£çš„ç´€éŒ„ã€‚\n");
 			
 		playerrecord = record[year][RECORD_PLAYER];
 			
-		msg += ({ " µÚ "HIC+year+NOR" Çò¼¾ËùÓĞÇòÔ±¼ÍÂ¼ÅÅÃûÈçÏÂ£º" });
+		msg += ({ " ç¬¬ "HIC+year+NOR" çƒå­£æ‰€æœ‰çƒå“¡ç´€éŒ„æ’åå¦‚ä¸‹ï¼š" });
 		
 		switch(lower_case(value))
 		{
 			case "home":
 			{
-				msg += ({ WHT"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"NOR });
-				msg += ({ HIW" ÅÅÃû È«Àİ´òÍõ                    Çò¶ÓÀÏ°å      Ö§Êı"NOR });
-				msg += ({ WHT"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"NOR });
+				msg += ({ WHT"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"NOR });
+				msg += ({ HIW" æ’å å…¨å£˜æ‰“ç‹                    çƒéšŠè€æ¿      æ”¯æ•¸"NOR });
+				msg += ({ WHT"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"NOR });
 				
 				recordsort = sort_array( filter_array(keys(playerrecord), (: $(playerrecord)[$1]["hit4"] > 0 :)), (: $(playerrecord)[$1]["hit4"] > $(playerrecord)[$2]["hit4"] ? -1 : 1 :) );
 					
@@ -218,9 +218,9 @@ int main(object me, string arg)
 			}
 			case "hit":
 			{
-				msg += ({ WHT"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"NOR });
-				msg += ({ HIW" ÅÅÃû °²´òÍõ                      Çò¶ÓÀÏ°å      Ö§Êı       ´ò»÷ÂÊ"NOR });
-				msg += ({ WHT"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"NOR });
+				msg += ({ WHT"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"NOR });
+				msg += ({ HIW" æ’å å®‰æ‰“ç‹                      çƒéšŠè€æ¿      æ”¯æ•¸       æ‰“æ“Šç‡"NOR });
+				msg += ({ WHT"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"NOR });
 				
 				recordsort = sort_array( filter_array(keys(playerrecord), (: $(playerrecord)[$1]["hit"] > 0 :)), (: $(playerrecord)[$1]["hit"] > $(playerrecord)[$2]["hit"] ? -1 : 1 :) );
 					
@@ -242,9 +242,9 @@ int main(object me, string arg)
 			}
 			case "hit2":
 			{
-				msg += ({ WHT"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"NOR });
-				msg += ({ HIW" ÅÅÃû ¶şÀİ°²´òÍõ                  Çò¶ÓÀÏ°å      Ö§Êı       ´ò»÷ÂÊ"NOR });
-				msg += ({ WHT"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"NOR });
+				msg += ({ WHT"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"NOR });
+				msg += ({ HIW" æ’å äºŒå£˜å®‰æ‰“ç‹                  çƒéšŠè€æ¿      æ”¯æ•¸       æ‰“æ“Šç‡"NOR });
+				msg += ({ WHT"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"NOR });
 				
 				recordsort = sort_array( filter_array(keys(playerrecord), (: $(playerrecord)[$1]["hit2"] > 0 :)), (: $(playerrecord)[$1]["hit2"] > $(playerrecord)[$2]["hit2"] ? -1 : 1 :) );
 					
@@ -266,9 +266,9 @@ int main(object me, string arg)
 			}
 			case "hit3":
 			{
-				msg += ({ WHT"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"NOR });
-				msg += ({ HIW" ÅÅÃû ÈıÀİ°²´òÍõ                  Çò¶ÓÀÏ°å      Ö§Êı       ´ò»÷ÂÊ"NOR });
-				msg += ({ WHT"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"NOR });
+				msg += ({ WHT"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"NOR });
+				msg += ({ HIW" æ’å ä¸‰å£˜å®‰æ‰“ç‹                  çƒéšŠè€æ¿      æ”¯æ•¸       æ‰“æ“Šç‡"NOR });
+				msg += ({ WHT"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"NOR });
 				
 				recordsort = sort_array( filter_array(keys(playerrecord), (: $(playerrecord)[$1]["hit3"] > 0 :)), (: $(playerrecord)[$1]["hit3"] > $(playerrecord)[$2]["hit3"] ? -1 : 1 :) );
 					
@@ -290,9 +290,9 @@ int main(object me, string arg)
 			}
 			case "run":
 			{
-				msg += ({ WHT"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"NOR });
-				msg += ({ HIW" ÅÅÃû ´òµãÍõ                      Çò¶ÓÀÏ°å      ´òµã"NOR });
-				msg += ({ WHT"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"NOR });
+				msg += ({ WHT"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"NOR });
+				msg += ({ HIW" æ’å æ‰“é»ç‹                      çƒéšŠè€æ¿      æ‰“é»"NOR });
+				msg += ({ WHT"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"NOR });
 				
 				recordsort = sort_array( filter_array(keys(playerrecord), (: $(playerrecord)[$1]["rbi"] > 0 :)), (: $(playerrecord)[$1]["rbi"] > $(playerrecord)[$2]["rbi"] ? -1 : 1 :) );
 					
@@ -314,9 +314,9 @@ int main(object me, string arg)
 			}
 			case "k":
 			{
-				msg += ({ WHT"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"NOR });
-				msg += ({ HIW" ÅÅÃû ÈıÕñÍõ                      Çò¶ÓÀÏ°å      ÈıÕñ       ÈıÕñÂÊ"NOR });
-				msg += ({ WHT"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"NOR });
+				msg += ({ WHT"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"NOR });
+				msg += ({ HIW" æ’å ä¸‰æŒ¯ç‹                      çƒéšŠè€æ¿      ä¸‰æŒ¯       ä¸‰æŒ¯ç‡"NOR });
+				msg += ({ WHT"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"NOR });
 				
 				recordsort = sort_array( filter_array(keys(playerrecord), (: $(playerrecord)[$1]["strikeout"] > 0 :)), (: $(playerrecord)[$1]["strikeout"] > $(playerrecord)[$2]["strikeout"] ? -1 : 1 :) );
 					
@@ -338,9 +338,9 @@ int main(object me, string arg)
 			}
 			case "era":
 			{
-				msg += ({ WHT"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"NOR });
-				msg += ({ HIW" ÅÅÃû ·ÀÓùÂÊÍõ                    Çò¶ÓÀÏ°å       ¾ÖÊı(>45)     ×ÔÔğ·ÖÂÊ"NOR });
-				msg += ({ WHT"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"NOR });
+				msg += ({ WHT"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"NOR });
+				msg += ({ HIW" æ’å é˜²å¾¡ç‡ç‹                    çƒéšŠè€æ¿       å±€æ•¸(>45)     è‡ªè²¬åˆ†ç‡"NOR });
+				msg += ({ WHT"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"NOR });
 				
 				recordsort = sort_array( filter_array(keys(playerrecord), (: $(playerrecord)[$1]["out"] > 135 :)), (: to_float($(playerrecord)[$1]["run"])/$(playerrecord)[$1]["out"] > to_float($(playerrecord)[$2]["run"])/$(playerrecord)[$2]["out"] ? 1 : -1 :) );
 					
@@ -364,33 +364,33 @@ int main(object me, string arg)
 			{
 				mapping specialrecord = record[year][RECORD_SPECIAL];
 				
-				msg += ({ WHT"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"NOR });
-				msg += ({ HIW" ÌØÊâ¼ÍÂ¼             ¼ÍÂ¼   ´ï³É¶ÓÎé / ÇòÔ±               ÀÏ°å"NOR });
-				msg += ({ WHT"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"NOR });
+				msg += ({ WHT"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"NOR });
+				msg += ({ HIW" ç‰¹æ®Šç´€éŒ„             ç´€éŒ„   é”æˆéšŠä¼ / çƒå“¡               è€æ¿"NOR });
+				msg += ({ WHT"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"NOR });
 
 				if( stringp(specialrecord["champion"]) )
 				{
 					mapping setup = BASEBALL_D->query_setup(specialrecord["champion"]);
-					msg += ({ sprintf(NOR YEL" Çò¼¾×Ü¹Ú¾ü                  %-30s"HIC"%s"NOR, mapp(setup) ? setup["name"] : specialrecord["champion"], capitalize(specialrecord["champion"])) });
+					msg += ({ sprintf(NOR YEL" çƒå­£ç¸½å† è»                  %-30s"HIC"%s"NOR, mapp(setup) ? setup["name"] : specialrecord["champion"], capitalize(specialrecord["champion"])) });
 				}
 				
 				if( stringp(specialrecord["2rd"]) )
 				{
 					mapping setup = BASEBALL_D->query_setup(specialrecord["2rd"]);
-					msg += ({ sprintf(NOR YEL" Çò¼¾ÑÇ¾ü                    %-30s"HIC"%s"NOR, mapp(setup) ? setup["name"] : specialrecord["2rd"], capitalize(specialrecord["2rd"])) });
+					msg += ({ sprintf(NOR YEL" çƒå­£äºè»                    %-30s"HIC"%s"NOR, mapp(setup) ? setup["name"] : specialrecord["2rd"], capitalize(specialrecord["2rd"])) });
 					msg += ({ "" });
 				}
 				
 				if( stringp(specialrecord["keepwinsteam"]) )
 				{
 					mapping setup = BASEBALL_D->query_setup(specialrecord["keepwinsteam"]);
-					msg += ({ sprintf(NOR YEL" ×î³¤Á¬Ê¤³¡´Î        "HIY"%5d"NOR"   %-30s"HIC"%s"NOR, specialrecord["keepwins"], mapp(setup) ? setup["name"] : specialrecord["keepwinsteam"], capitalize(specialrecord["keepwinsteam"])) });
+					msg += ({ sprintf(NOR YEL" æœ€é•·é€£å‹å ´æ¬¡        "HIY"%5d"NOR"   %-30s"HIC"%s"NOR, specialrecord["keepwins"], mapp(setup) ? setup["name"] : specialrecord["keepwinsteam"], capitalize(specialrecord["keepwinsteam"])) });
 				}
 				
 				if( stringp(specialrecord["keeplosesteam"]) )
 				{
 					mapping setup = BASEBALL_D->query_setup(specialrecord["keeplosesteam"]);
-					msg += ({ sprintf(NOR YEL" ×î³¤Á¬°Ü³¡´Î        "HIY"%5d"NOR"   %-30s"HIC"%s"NOR, specialrecord["keeploses"], mapp(setup) ? setup["name"] : specialrecord["keeplosesteam"], capitalize(specialrecord["keeplosesteam"])) });
+					msg += ({ sprintf(NOR YEL" æœ€é•·é€£æ•—å ´æ¬¡        "HIY"%5d"NOR"   %-30s"HIC"%s"NOR, specialrecord["keeploses"], mapp(setup) ? setup["name"] : specialrecord["keeplosesteam"], capitalize(specialrecord["keeplosesteam"])) });
 				}
 				
 				if( stringp(specialrecord["maxstrikeoutsplayer"]) )
@@ -400,7 +400,7 @@ int main(object me, string arg)
 					if( file_exists(specialrecord["maxstrikeoutsplayer"]) )
 						player = load_object(specialrecord["maxstrikeoutsplayer"]);
 						
-					msg += ({ sprintf(NOR YEL" µ¥³¡×î¶àÈıÕñ´ÎÊı    "HIY"%5d"NOR"   %-30s"HIC"%s"NOR, specialrecord["maxstrikeouts"], objectp(player) ? player->query_idname() : "ÒÑÏûÊ§", objectp(player) ? capitalize(query("boss", player)) : "") });
+					msg += ({ sprintf(NOR YEL" å–®å ´æœ€å¤šä¸‰æŒ¯æ¬¡æ•¸    "HIY"%5d"NOR"   %-30s"HIC"%s"NOR, specialrecord["maxstrikeouts"], objectp(player) ? player->query_idname() : "å·²æ¶ˆå¤±", objectp(player) ? capitalize(query("boss", player)) : "") });
 				}
 				if( stringp(specialrecord["maxhomerundistanceplayer"]) )
 				{
@@ -409,35 +409,35 @@ int main(object me, string arg)
 					if( file_exists(specialrecord["maxhomerundistanceplayer"]) )
 						player = load_object(specialrecord["maxhomerundistanceplayer"]);
 						
-					msg += ({ sprintf(NOR YEL" È«Àİ´ò×î³¤¾àÀë      "HIY"%5d"NOR"   %-30s"HIC"%s"NOR, specialrecord["maxhomerundistance"], objectp(player) ? player->query_idname() : "ÒÑÏûÊ§", objectp(player) ? capitalize(query("boss", player)) : "") });
+					msg += ({ sprintf(NOR YEL" å…¨å£˜æ‰“æœ€é•·è·é›¢      "HIY"%5d"NOR"   %-30s"HIC"%s"NOR, specialrecord["maxhomerundistance"], objectp(player) ? player->query_idname() : "å·²æ¶ˆå¤±", objectp(player) ? capitalize(query("boss", player)) : "") });
 				}
 				if( stringp(specialrecord["maxhitsteam"]) )
 				{
 					mapping setup = BASEBALL_D->query_setup(specialrecord["maxhitsteam"]);
-					msg += ({ sprintf(NOR YEL" µ¥³¡×î¶à°²´òÊı      "HIY"%5d"NOR"   %-30s"HIC"%s"NOR, specialrecord["maxhits"], mapp(setup) ? setup["name"] : specialrecord["maxhitsteam"], capitalize(specialrecord["maxhitsteam"])) });
+					msg += ({ sprintf(NOR YEL" å–®å ´æœ€å¤šå®‰æ‰“æ•¸      "HIY"%5d"NOR"   %-30s"HIC"%s"NOR, specialrecord["maxhits"], mapp(setup) ? setup["name"] : specialrecord["maxhitsteam"], capitalize(specialrecord["maxhitsteam"])) });
 				}
 				
 				if( stringp(specialrecord["maxscoresteam"]) )
 				{
 					mapping setup = BASEBALL_D->query_setup(specialrecord["maxscoresteam"]);
-					msg += ({ sprintf(NOR YEL" µ¥³¡×î¶àµÃ·ÖÊı      "HIY"%5d"NOR"   %-30s"HIC"%s"NOR, specialrecord["maxscores"], mapp(setup) ? setup["name"] : specialrecord["maxscoresteam"], capitalize(specialrecord["maxscoresteam"])) });
+					msg += ({ sprintf(NOR YEL" å–®å ´æœ€å¤šå¾—åˆ†æ•¸      "HIY"%5d"NOR"   %-30s"HIC"%s"NOR, specialrecord["maxscores"], mapp(setup) ? setup["name"] : specialrecord["maxscoresteam"], capitalize(specialrecord["maxscoresteam"])) });
 				}
 
 				if( stringp(specialrecord["maxinningsteam1"]) && stringp(specialrecord["maxinningsteam2"]) )
 				{
-					msg += ({ sprintf(NOR YEL" ÑÓ³¤Èü×î³¤¾ÖÊı      "HIY"%5d"NOR"   %-30s"HIC"%s"NOR, specialrecord["maxinnings"]/2+specialrecord["maxinnings"]%2, (mapp(BASEBALL_D->query_setup(specialrecord["maxinningsteam1"])) ? BASEBALL_D->query_setup(specialrecord["maxinningsteam1"])["name"] : specialrecord["maxinningsteam1"])+" & "+(mapp(BASEBALL_D->query_setup(specialrecord["maxinningsteam2"])) ? BASEBALL_D->query_setup(specialrecord["maxinningsteam2"])["name"] : specialrecord["maxinningsteam2"]), capitalize(specialrecord["maxinningsteam1"]) +" & "+capitalize(specialrecord["maxinningsteam2"])) });
+					msg += ({ sprintf(NOR YEL" å»¶é•·è³½æœ€é•·å±€æ•¸      "HIY"%5d"NOR"   %-30s"HIC"%s"NOR, specialrecord["maxinnings"]/2+specialrecord["maxinnings"]%2, (mapp(BASEBALL_D->query_setup(specialrecord["maxinningsteam1"])) ? BASEBALL_D->query_setup(specialrecord["maxinningsteam1"])["name"] : specialrecord["maxinningsteam1"])+" & "+(mapp(BASEBALL_D->query_setup(specialrecord["maxinningsteam2"])) ? BASEBALL_D->query_setup(specialrecord["maxinningsteam2"])["name"] : specialrecord["maxinningsteam2"]), capitalize(specialrecord["maxinningsteam1"]) +" & "+capitalize(specialrecord["maxinningsteam2"])) });
 				}
 				
 				if( stringp(specialrecord["maxscorediffwin"]) && stringp(specialrecord["maxscoredifflose"]) )
 				{
-					msg += ({ sprintf(NOR YEL" µ¥³¡·ÖÊı×î´ó²î¾à    "HIY"%5d"NOR"   %-30s"HIC"%s"NOR, specialrecord["maxscorediff"], (mapp(BASEBALL_D->query_setup(specialrecord["maxscorediffwin"])) ? BASEBALL_D->query_setup(specialrecord["maxscorediffwin"])["name"] : specialrecord["maxscorediffwin"])+" & "+(mapp(BASEBALL_D->query_setup(specialrecord["maxscoredifflose"])) ? BASEBALL_D->query_setup(specialrecord["maxscoredifflose"])["name"] : specialrecord["maxscoredifflose"]), capitalize(specialrecord["maxscorediffwin"]) +" & "+capitalize(specialrecord["maxscoredifflose"])) });
+					msg += ({ sprintf(NOR YEL" å–®å ´åˆ†æ•¸æœ€å¤§å·®è·    "HIY"%5d"NOR"   %-30s"HIC"%s"NOR, specialrecord["maxscorediff"], (mapp(BASEBALL_D->query_setup(specialrecord["maxscorediffwin"])) ? BASEBALL_D->query_setup(specialrecord["maxscorediffwin"])["name"] : specialrecord["maxscorediffwin"])+" & "+(mapp(BASEBALL_D->query_setup(specialrecord["maxscoredifflose"])) ? BASEBALL_D->query_setup(specialrecord["maxscoredifflose"])["name"] : specialrecord["maxscoredifflose"]), capitalize(specialrecord["maxscorediffwin"]) +" & "+capitalize(specialrecord["maxscoredifflose"])) });
 				}
 				break;
 			}
 			default:
-				return tell(me, "ÇëÊä³öÕıÈ·µÄ¼ÍÂ¼ÖÖÀà(home, hit, hit2, hit3, run, k, era, special)¡£\n");
+				return tell(me, "è«‹è¼¸å‡ºæ­£ç¢ºçš„ç´€éŒ„ç¨®é¡(home, hit, hit2, hit3, run, k, era, special)ã€‚\n");
 		}
-		msg += ({ WHT"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"NOR });
+		msg += ({ WHT"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"NOR });
 		
 		return me->more(implode(msg, "\n")+"\n");
 	}
@@ -461,15 +461,15 @@ int main(object me, string arg)
 			target = myid;
 			
 		if( !BASEBALL_D->exists(target) )
-			return tell(me, "Ã»ÓĞ "+target+" ÕâÎ»Íæ¼Ò£¬»ò¸ÃÍæ¼Ò²¢Î´½¨Á¢Çò¶Ó¡£\n");
+			return tell(me, "æ²’æœ‰ "+target+" é€™ä½ç©å®¶ï¼Œæˆ–è©²ç©å®¶ä¸¦æœªå»ºç«‹çƒéšŠã€‚\n");
 
 		setup = BASEBALL_D->query_setup(target);
 
-		text = (target == myid ? pnoun(2, me) : find_player(target) ? find_player(target)->query_idname() : capitalize(target)+" ")+"µÄÇò¶ÓÃû³ÆÎª¡°"+(setup["name"]||"Î´ÃüÃû")+"¡±¶Ó£¬Ä¿Ç°°²ÅÅµÄÇòÔ±ÊØ±¸Î»ÖÃÓë´ò»÷°ô´Î×ÊÁÏÈçÏÂ£º\n";
+		text = (target == myid ? pnoun(2, me) : find_player(target) ? find_player(target)->query_idname() : capitalize(target)+" ")+"çš„çƒéšŠåç¨±ç‚ºâ€œ"+(setup["name"]||"æœªå‘½å")+"â€éšŠï¼Œç›®å‰å®‰æ’çš„çƒå“¡å®ˆå‚™ä½ç½®èˆ‡æ‰“æ“Šæ£’æ¬¡è³‡æ–™å¦‚ä¸‹ï¼š\n";
 		
-		text += WHT"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n"NOR;
-		text += sprintf(HIW"%-4s %-9s%5s%5s%5s%5s%10s%10s %s\n"NOR, "", "ÊØ±¸Î»ÖÃ", "×ÔÔğ", "¾ÖÊı", "ËÄ»µ", "ÈıÕñ", "ÈıÕñÂÊ", "·½Ïò", "ÇòÔ±Ãû³Æ" );
-		text += WHT"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n"NOR;
+		text += WHT"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n"NOR;
+		text += sprintf(HIW"%-4s %-9s%5s%5s%5s%5s%10s%10s %s\n"NOR, "", "å®ˆå‚™ä½ç½®", "è‡ªè²¬", "å±€æ•¸", "å››å£", "ä¸‰æŒ¯", "ä¸‰æŒ¯ç‡", "æ–¹å‘", "çƒå“¡åç¨±" );
+		text += WHT"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n"NOR;
 		
 		labor = 0;
 		position = 0;
@@ -488,9 +488,9 @@ int main(object me, string arg)
 		switch(handside)
 		{
 			case HANDSIDE_NONE: handsidename = ""; break;
-			case HANDSIDE_LEFTHAND: handsidename = HIC"×ó"NOR CYN"Í¶"NOR; break;
-			case HANDSIDE_RIGHTHAND: handsidename = HIG"ÓÒ"NOR GRN"Í¶"NOR; break;
-			case HANDSIDE_TWOHANDS: handsidename = "´íÎó"; break;
+			case HANDSIDE_LEFTHAND: handsidename = HIC"å·¦"NOR CYN"æŠ•"NOR; break;
+			case HANDSIDE_RIGHTHAND: handsidename = HIG"å³"NOR GRN"æŠ•"NOR; break;
+			case HANDSIDE_TWOHANDS: handsidename = "éŒ¯èª¤"; break;
 		}
 		
 		out = BASEBALL_D->get_record(RECORD_PLAYER, file, "out", year);
@@ -500,19 +500,19 @@ int main(object me, string arg)
 		
 		text += sprintf(" %-3s %-9s"HIG"%5.2f"HIC"%5d"HIM"%5d"HIY"%5d"HIY"%9.2f%%"NOR"%10s %s\n", 
 			"",
-			position || WHT"Î´Éè¶¨"NOR, 
+			position || WHT"æœªè¨­å®š"NOR, 
 			out > 0 ? run * 9. / (out / 3.): 0.,
 			out / 3,
 			BASEBALL_D->get_record(RECORD_PLAYER, file, "fourball", year),
 			strikeout,
 			bf > 0 ? 100. * strikeout / bf : 0.,
 			handsidename,
-			objectp(labor) ? labor->query_idname() : WHT"Î´Éè¶¨"NOR
+			objectp(labor) ? labor->query_idname() : WHT"æœªè¨­å®š"NOR
 		);
 			
 		text += WHT"\n"NOR;
-		text += sprintf(HIW"%-4s %-9s%5s%5s%5s%5s%5s%5s%5s%5s %s\n"NOR, "°ô´Î", "ÊØ±¸Î»ÖÃ", "´òÂÊ", "°²´ò", "¶ş°²", "Èı°²", "È«Àİ", "´òµã", "±£ËÍ", "·½Ïò", "ÇòÔ±Ãû³Æ");
-		text += WHT"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n"NOR;
+		text += sprintf(HIW"%-4s %-9s%5s%5s%5s%5s%5s%5s%5s%5s %s\n"NOR, "æ£’æ¬¡", "å®ˆå‚™ä½ç½®", "æ‰“ç‡", "å®‰æ‰“", "äºŒå®‰", "ä¸‰å®‰", "å…¨å£˜", "æ‰“é»", "ä¿é€", "æ–¹å‘", "çƒå“¡åç¨±");
+		text += WHT"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n"NOR;
 		
 		for(int i=1;i<10;++i)
 		{
@@ -534,14 +534,14 @@ int main(object me, string arg)
 			switch(handside)
 			{
 				case HANDSIDE_NONE: handsidename = ""; break;
-				case HANDSIDE_LEFTHAND: handsidename = HIC"×ó"NOR CYN"´ò"NOR; break;
-				case HANDSIDE_RIGHTHAND: handsidename =HIG"ÓÒ"NOR GRN"´ò"NOR; break;
-				case HANDSIDE_TWOHANDS: handsidename = HIY"×ó"NOR YEL"ÓÒ"NOR; break;
+				case HANDSIDE_LEFTHAND: handsidename = HIC"å·¦"NOR CYN"æ‰“"NOR; break;
+				case HANDSIDE_RIGHTHAND: handsidename =HIG"å³"NOR GRN"æ‰“"NOR; break;
+				case HANDSIDE_TWOHANDS: handsidename = HIY"å·¦"NOR YEL"å³"NOR; break;
 			}
 		
 			text += sprintf(" %-3s %-9s"HIG"%5.2f"HIC"%5d"HIY"%5d"HIY"%5d"HIY"%5d"HIW"%5d"HIM"%5d"NOR" %4s %s\n", 
 				HIG+i+NOR, 
-				position || WHT"Î´Éè¶¨"NOR, 
+				position || WHT"æœªè¨­å®š"NOR, 
 				BASEBALL_D->get_hit_rate(target, i, year),
 				BASEBALL_D->get_record(RECORD_PLAYER, file, "hit", year),
 				BASEBALL_D->get_record(RECORD_PLAYER, file, "hit2", year),
@@ -550,19 +550,19 @@ int main(object me, string arg)
 				BASEBALL_D->get_record(RECORD_PLAYER, file, "rbi", year),
 				BASEBALL_D->get_record(RECORD_PLAYER, file, "walk", year),
 				handsidename,
-				objectp(labor) ? labor->query_idname() : WHT"Î´Éè¶¨"NOR
+				objectp(labor) ? labor->query_idname() : WHT"æœªè¨­å®š"NOR
 			);
 		}
 	
-		text += WHT"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n"NOR;
+		text += WHT"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n"NOR;
 		for(int y=year;y>=1;--y)
 		{
 			win = BASEBALL_D->get_record(RECORD_TEAM, target, "win", y);
 			lose = BASEBALL_D->get_record(RECORD_TEAM, target, "lose", y);
 		
-			text += WHT"µÚ "HIW+y+NOR WHT" Çò¼¾"NOR"¼¾ÈüÊ¤³¡Êı£º"HIR+win+NOR" / °Ü³¡Êı£º"HIG+lose+NOR" / Ê¤ÂÊ£º"HIY+sprintf("%.2f", win+lose > 0 ? 100.*win/(win+lose) : 0.)+NOR YEL"%"NOR"\n";
+			text += WHT"ç¬¬ "HIW+y+NOR WHT" çƒå­£"NOR"å­£è³½å‹å ´æ•¸ï¼š"HIR+win+NOR" / æ•—å ´æ•¸ï¼š"HIG+lose+NOR" / å‹ç‡ï¼š"HIY+sprintf("%.2f", win+lose > 0 ? 100.*win/(win+lose) : 0.)+NOR YEL"%"NOR"\n";
 		}
-		text += WHT"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n"NOR;
+		text += WHT"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n"NOR;
 		me->more(text);
 		
 		return;
@@ -572,18 +572,18 @@ int main(object me, string arg)
 		if( arg == "-d" )
 		{
 			BASEBALL_D->set_listener(myid, 0);
-			return tell(me, pnoun(2, me)+"Í£Ö¹ÊÕÌıËùÓĞ±ÈÈüÊµ¿ö¡£\n");
+			return tell(me, pnoun(2, me)+"åœæ­¢æ”¶è½æ‰€æœ‰æ¯”è³½å¯¦æ³ã€‚\n");
 		}
 		
 		if( !arg || !arg[0] )
-			return tell(me, "ÇëÊäÈëÕıÈ·µÄÖ¸Áî¸ñÊ½¡£\n");
+			return tell(me, "è«‹è¼¸å…¥æ­£ç¢ºçš„æŒ‡ä»¤æ ¼å¼ã€‚\n");
 
 		if( !BASEBALL_D->in_season(arg) )
-			return tell(me, arg+" ²¢Ã»ÓĞÇò¶Ó¼ÓÈë¼¾Èü¡£\n");
+			return tell(me, arg+" ä¸¦æ²’æœ‰çƒéšŠåŠ å…¥å­£è³½ã€‚\n");
 			
 		BASEBALL_D->set_listener(myid, arg);
 		
-		return tell(me, pnoun(2, me)+"¿ªÊ¼ÊÕÌı "+arg+" µÄÇò¶Ó±ÈÈüÊµ¿ö¡£\n");
+		return tell(me, pnoun(2, me)+"é–‹å§‹æ”¶è½ "+arg+" çš„çƒéšŠæ¯”è³½å¯¦æ³ã€‚\n");
 	}
 	else if( sscanf(arg, "hint %s", arg) == 1 )
 	{
@@ -593,12 +593,12 @@ int main(object me, string arg)
 		mapping game;
 		
 		if( BASEBALL_D->query_status(myid) != STATUS_PLAYING )
-			return tell(me, pnoun(2, me)+"µÄÇò¶ÓÄ¿Ç°²¢Î´½øĞĞÇòÈü¡£\n");
+			return tell(me, pnoun(2, me)+"çš„çƒéšŠç›®å‰ä¸¦æœªé€²è¡Œçƒè³½ã€‚\n");
 		
 		setup = BASEBALL_D->query_setup(myid);
 				
 		if( setup["hint"] > 0 )
-			return tell(me, pnoun(2, me)+"Ç°Ò»´ÎÏÂ´ïµÄ°µºÅÄ¿Ç°ÈÔÈ»ÓĞĞ§£¬ÎŞ·¨ÖØ¸²ÏÂ´ï°µºÅ¡£\n");
+			return tell(me, pnoun(2, me)+"å‰ä¸€æ¬¡ä¸‹é”çš„æš—è™Ÿç›®å‰ä»ç„¶æœ‰æ•ˆï¼Œç„¡æ³•é‡è¦†ä¸‹é”æš—è™Ÿã€‚\n");
 
 		game = BASEBALL_D->query_game(myid);
 		
@@ -609,74 +609,74 @@ int main(object me, string arg)
 			case "batter":
 				
 				if( setup["hinttimes"] <= 0 ) 
-					return tell(me, pnoun(2, me)+"Õâ´ÎÇòÈüµÄ°µºÅÏÂ´ï´ÎÊıÒÑ´ïÉÏÏŞ¡£\n");
+					return tell(me, pnoun(2, me)+"é€™æ¬¡çƒè³½çš„æš—è™Ÿä¸‹é”æ¬¡æ•¸å·²é”ä¸Šé™ã€‚\n");
 			
 				if( ((game[INNING]%2) > 0 && game[TEAM2] == myid) || ((game[INNING]%2) == 0 && game[TEAM1] == myid) )
 				{
-					tell(me, pnoun(2, me)+"ÏÂ´ï°µºÅ¹ÄÎèÕıÔÚ´ò»÷µÄ´òÕß£¬ÕâÒ»ÂÖ´òÏ¯µÄ´ò»÷ÍşÁ¦¶ÌÔİÌáÉı¡£\n");
-					BASEBALL_D->add_message(myid, me->query_idname()+"½ôÕÅµØ¶Ô×Å´òÕß±ÈÁËÈı¸öÁ¬´òÕß¶¼¿´²»Ì«¶®µÄÊÖÊÆ¡° "+signal+" ¡±");
+					tell(me, pnoun(2, me)+"ä¸‹é”æš—è™Ÿé¼“èˆæ­£åœ¨æ‰“æ“Šçš„æ‰“è€…ï¼Œé€™ä¸€è¼ªæ‰“å¸­çš„æ‰“æ“Šå¨åŠ›çŸ­æš«æå‡ã€‚\n");
+					BASEBALL_D->add_message(myid, me->query_idname()+"ç·Šå¼µåœ°å°è‘—æ‰“è€…æ¯”äº†ä¸‰å€‹é€£æ‰“è€…éƒ½çœ‹ä¸å¤ªæ‡‚çš„æ‰‹å‹¢â€œ "+signal+" â€");
 					setup["hint"] = HINTTYPE_BATTER;
 					
 					setup["hinttimes"]--;
 				}
 				else
-					return tell(me, "Ä¿Ç°"+pnoun(2, me)+"ÊÇ·ÀÊØ·½£¬ÎŞ·¨¶Ô´òÕßÏÂ´ï°µºÅ¡£\n");
+					return tell(me, "ç›®å‰"+pnoun(2, me)+"æ˜¯é˜²å®ˆæ–¹ï¼Œç„¡æ³•å°æ‰“è€…ä¸‹é”æš—è™Ÿã€‚\n");
 
 				break;
 			case "bunt":
 				if( (game[INNING]%2) > 0 && game[TEAM2] == myid || ((game[INNING]%2) == 0 && game[TEAM1] == myid) )
 				{
-					tell(me, pnoun(2, me)+"ÏÂ´ï°µºÅ¸øÕıÔÚ´ò»÷µÄ´òÕß£¬ÒªÇóÆä½øĞĞ´¥»÷¶Ì´òÒÔÑÚ»¤ÀİÉÏÅÜÕßÍÆ½ø¡£\n");
-					BASEBALL_D->add_message(myid, me->query_idname()+"½ôÕÅµØ¶Ô×Å´òÕß±ÈÁËÈı¸öÁ¬´òÕß¶¼¿´²»Ì«¶®µÄÊÖÊÆ¡° "+signal+" ¡±");
+					tell(me, pnoun(2, me)+"ä¸‹é”æš—è™Ÿçµ¦æ­£åœ¨æ‰“æ“Šçš„æ‰“è€…ï¼Œè¦æ±‚å…¶é€²è¡Œè§¸æ“ŠçŸ­æ‰“ä»¥æ©è­·å£˜ä¸Šè·‘è€…æ¨é€²ã€‚\n");
+					BASEBALL_D->add_message(myid, me->query_idname()+"ç·Šå¼µåœ°å°è‘—æ‰“è€…æ¯”äº†ä¸‰å€‹é€£æ‰“è€…éƒ½çœ‹ä¸å¤ªæ‡‚çš„æ‰‹å‹¢â€œ "+signal+" â€");
 					setup["hint"] = HINTTYPE_BUNT;
 				}
 				else
-					return tell(me, "Ä¿Ç°"+pnoun(2, me)+"ÊÇ·ÀÊØ·½£¬ÎŞ·¨¶Ô´òÕßÏÂ´ï°µºÅ¡£\n");
+					return tell(me, "ç›®å‰"+pnoun(2, me)+"æ˜¯é˜²å®ˆæ–¹ï¼Œç„¡æ³•å°æ‰“è€…ä¸‹é”æš—è™Ÿã€‚\n");
 					
 				break;
 			case "pitcher":
 				
 				if( setup["hinttimes"] <= 0 ) 
-					return tell(me, pnoun(2, me)+"Õâ´ÎÇòÈüµÄ°µºÅÏÂ´ï´ÎÊıÒÑ´ïÉÏÏŞ¡£\n");
+					return tell(me, pnoun(2, me)+"é€™æ¬¡çƒè³½çš„æš—è™Ÿä¸‹é”æ¬¡æ•¸å·²é”ä¸Šé™ã€‚\n");
 			
 				if( (game[INNING]%2) == 0 && game[TEAM2] == myid || ((game[INNING]%2) > 0 && game[TEAM1] == myid) )
 				{
-					tell(me, pnoun(2, me)+"ÏÂ´ï°µºÅ¹ÄÎèÕıÔÚÍ¶ÇòµÄÍ¶ÊÖ£¬Ãæ¶ÔÄ¿Ç°´òÕßµÄÍ¶ÇòÍşÁ¦¶ÌÔİÌáÉı¡£\n");
-					BASEBALL_D->add_message(myid, me->query_idname()+"½ôÕÅµØ¶Ô×ÅÍ¶ÊÖ±ÈÁËÈı¸öÁ¬Í¶ÊÖ¶¼¿´²»Ì«¶®µÄÊÖÊÆ¡° "+signal+" ¡±");
+					tell(me, pnoun(2, me)+"ä¸‹é”æš—è™Ÿé¼“èˆæ­£åœ¨æŠ•çƒçš„æŠ•æ‰‹ï¼Œé¢å°ç›®å‰æ‰“è€…çš„æŠ•çƒå¨åŠ›çŸ­æš«æå‡ã€‚\n");
+					BASEBALL_D->add_message(myid, me->query_idname()+"ç·Šå¼µåœ°å°è‘—æŠ•æ‰‹æ¯”äº†ä¸‰å€‹é€£æŠ•æ‰‹éƒ½çœ‹ä¸å¤ªæ‡‚çš„æ‰‹å‹¢â€œ "+signal+" â€");
 					setup["hint"] = HINTTYPE_PITCHER;
 					
 					setup["hinttimes"]--;
 				}
 				else
-					return tell(me, "Ä¿Ç°"+pnoun(2, me)+"ÊÇ¹¥»÷·½£¬ÎŞ·¨¶ÔÍ¶ÊÖÏÂ´ï°µºÅ¡£\n");
+					return tell(me, "ç›®å‰"+pnoun(2, me)+"æ˜¯æ”»æ“Šæ–¹ï¼Œç„¡æ³•å°æŠ•æ‰‹ä¸‹é”æš—è™Ÿã€‚\n");
 					
 				break;
 			case "walk":
 				if( (game[INNING]%2) == 0 && game[TEAM2] == myid || ((game[INNING]%2) > 0 && game[TEAM1] == myid) )
 				{
-					tell(me, pnoun(2, me)+"ÏÂ´ï°µºÅ¹ÄÎèÕıÔÚÍ¶ÇòµÄÍ¶ÊÖ£¬ÒªÇóÆä¾´Ô¶ËÄ»µ±£ËÍÄ¿Ç°´òÕß¡£\n");
-					BASEBALL_D->add_message(myid, me->query_idname()+"½ôÕÅµØ¶Ô×ÅÍ¶ÊÖ±ÈÁËÈı¸öÁ¬Í¶ÊÖ¶¼¿´²»Ì«¶®µÄÊÖÊÆ¡° "+signal+" ¡±");
+					tell(me, pnoun(2, me)+"ä¸‹é”æš—è™Ÿé¼“èˆæ­£åœ¨æŠ•çƒçš„æŠ•æ‰‹ï¼Œè¦æ±‚å…¶æ•¬é å››å£ä¿é€ç›®å‰æ‰“è€…ã€‚\n");
+					BASEBALL_D->add_message(myid, me->query_idname()+"ç·Šå¼µåœ°å°è‘—æŠ•æ‰‹æ¯”äº†ä¸‰å€‹é€£æŠ•æ‰‹éƒ½çœ‹ä¸å¤ªæ‡‚çš„æ‰‹å‹¢â€œ "+signal+" â€");
 					setup["hint"] = HINTTYPE_WALK;
 				}
 				else
-					return tell(me, "Ä¿Ç°"+pnoun(2, me)+"ÊÇ¹¥»÷·½£¬ÎŞ·¨¶ÔÍ¶ÊÖÏÂ´ï°µºÅ¡£\n");
+					return tell(me, "ç›®å‰"+pnoun(2, me)+"æ˜¯æ”»æ“Šæ–¹ï¼Œç„¡æ³•å°æŠ•æ‰‹ä¸‹é”æš—è™Ÿã€‚\n");
 					
 				break;
 	
 			default:
-				return tell(me, "Ã»ÓĞ "+arg+" ÕâÖÖ°µºÅÖÖÀà¡£\n");
+				return tell(me, "æ²’æœ‰ "+arg+" é€™ç¨®æš—è™Ÿç¨®é¡ã€‚\n");
 		}
 		
 		
 		
 		if( setup["hinttimes"] == 0 )
-			tell(me, pnoun(2, me)+"Õâ´ÎÇòÈüµÄ°µºÅÏÂ´ï´ÎÊıÒÑ´ïÉÏÏŞ¡£\n");
+			tell(me, pnoun(2, me)+"é€™æ¬¡çƒè³½çš„æš—è™Ÿä¸‹é”æ¬¡æ•¸å·²é”ä¸Šé™ã€‚\n");
 		else
-			tell(me, pnoun(2, me)+"Õâ³¡ÇòÈüÊ£ÏÂ "+setup["hinttimes"]+" ´ÎÏÂ´ï°µºÅµÄ»ú»á¡£\n");
+			tell(me, pnoun(2, me)+"é€™å ´çƒè³½å‰©ä¸‹ "+setup["hinttimes"]+" æ¬¡ä¸‹é”æš—è™Ÿçš„æ©Ÿæœƒã€‚\n");
 
 		BASEBALL_D->set_setup(myid, setup);
 		return;
 	}
 			
-	return tell(me, "ÇëÊäÈëÕıÈ·µÄÖ¸Áî¸ñÊ½(help baseball)¡£\n");
+	return tell(me, "è«‹è¼¸å…¥æ­£ç¢ºçš„æŒ‡ä»¤æ ¼å¼(help baseball)ã€‚\n");
 }

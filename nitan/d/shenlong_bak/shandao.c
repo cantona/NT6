@@ -1,4 +1,4 @@
-// ɽ�� /d/shenlong/shandao
+// 山道 /d/shenlong/shandao
 // Last Modified by winder on Jul. 12 2002
 
 #include <ansi.h>
@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ɽ��");
+        set("short", "山道");
         set("long", @LONG
-ת������ɽ�£�����������һ��ɽ��֮�У�ɽ���ı����Ƿ嶥����
-����ɽ�¡�̧ͷң���嶥���ż��������ݣ���������ԼԼ���������ϡ�
-�ĵ���ײ���������˸���������������������ɽ����Զ�ˡ�ɽ����խ��
-ֻ����һ��ͨ����
+轉過兩個山坡，你已行走在一個山道之中，山道的北面是峰頂，向
+下是山坡。抬頭遙見峰頂建著幾座大竹屋，耳邊隱隱約約傳來「鏘鏘」
+的刀劍撞擊聲和有人高聲喧嘩的聲音，看來離山頂不遠了。山道狹窄，
+只能容一人通過。
 LONG
         );
         set("outdoors", "shenlong");

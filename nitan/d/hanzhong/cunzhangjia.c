@@ -1,15 +1,15 @@
-// cunzhangjia.c �峤��
+// cunzhangjia.c 村長家
 // Winder Oct.10 1998
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "�峤��");
+        set("short", "村長家");
         set("long", @LONG
-�����Ǵ峤�ļң�������ѷ���һЩ��ͷ������֮���ũ����
-�ߣ���һЩ�Ǵ��д�����ﻵ�ˣ�������峤���޵ġ�����ǰ����
-��ʮ���ʺ������������һЩ��ɵ�Ұζ��
+這裡是村長的家，堂屋裡堆放著一些鋤頭、鐮刀之類的農耕用
+具，有一些是村中村民家裡壞了，來央求村長給修的。屋檐前吊著
+數十串鮮紅的辣椒，還有一些風幹的野味。
 LONG
         );
         set("exits", ([

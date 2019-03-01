@@ -3,10 +3,10 @@ inherit BUNCH_ROOM;
 
 void create()
 {
-        set("short", "С·");
+        set("short", "小路");
         set("long", @LONG
-������һ��С·�ϡ�ǰ���·��᫣����˺��١�������һ������
-��С��·��ɽ��
+你走在一條小路上。前面道路崎嶇，行人很少。西面有一條蜿蜒
+的小岔路上山。
 LONG );
         set("exits", ([
                 "southwest" : "/d/beijing/road1",

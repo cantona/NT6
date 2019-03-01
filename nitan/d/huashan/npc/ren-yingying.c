@@ -4,9 +4,9 @@ inherit NPC;
 
 void create()
 {
-        set_name("��ӯӯ", ({ "ren yingying", "yingying" }) );
-        set("title","ħ��ʥ��");
-        set("gender", "Ů��" );
+        set_name("任盈盈", ({ "ren yingying", "yingying" }) );
+        set("title","魔教聖姑");
+        set("gender", "女性" );
         set("age", 19);
         set("str", 16);
         set("con", 30);
@@ -23,7 +23,7 @@ void create()
         set("max_neili", 2800);
         set("jiali", 30);
 
-        set("long",     "��ӯӯ��ħ�̽��������еĶ���Ů����\n");
+        set("long",     "任盈盈是魔教教主任我行的獨生女兒。\n");
         set("combat_exp", 250000);
         set("shen_tpye", 1);
         set_skill("unarmed", 90);
@@ -52,7 +52,7 @@ void create()
 
 int accept_fight(object me)
 {
-        command("say СŮ����������Ķ���?");
+        command("say 小女子怎會是你的對手?");
         return 0;
 }
 void init()
@@ -67,13 +67,13 @@ void init()
 }
 void greeting(object ob)
 {
-      say( "��ӯӯ΢΢̾�˿���������֪���ҵ��������ںη�?��\n");
+      say( "任盈盈微微嘆了口氣：“不知道我的令狐大哥在何方?”\n");
       if ( ((int)ob->query_dex()>=25) && ((int)ob->query_int()>=25) )
       {
-           tell_object(ob,"��ӯӯ˵������������ҵ���������.\n");
+           tell_object(ob,"任盈盈說道：請你務必找到我令狐大哥.\n");
            set("marks/feng-qingyang", 1, ob);
       }
-      tell_object(ob,"��ӯӯ������仰��ƮȻ��ȥ.\n");
+      tell_object(ob,"任盈盈所完這句話，飄然隱去.\n");
       call_out("goway",10);
 }
 void goway(){

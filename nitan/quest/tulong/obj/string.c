@@ -2,13 +2,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name("Ï¸ÂéÏß", ({ "string" , "xi xiang"}) );
+        set_name("ç´°éº»ç·š", ({ "string" , "xi xiang"}) );
         set_weight(5);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ìõ");
-                set("long", "Ò»Ìõ³¤³¤µÄÏ¸ÂéÏß¡£\n");
+                set("unit", "æ¢");
+                set("long", "ä¸€æ¢é•·é•·çš„ç´°éº»ç·šã€‚\n");
                 set("value", 50);
         }
 }

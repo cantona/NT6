@@ -8,14 +8,14 @@ string look_out();
 
 void create()
 {
-        set("short", "ÖÓÂ¥Æß²ã");
+        set("short", "é˜æ¨“ä¸ƒå±¤");
         set("long", @LONG
-ÕâÀï¾ÍÊÇÖÓÂ¥Ö®¶¥¡£Ö±ÈëÑÛÁ±µÄ±ãÊÇÄÇ¿Ú´óÖÓºÍÒ»¸ùÐü¹Ò¿ÕÖÐµÄ
-¾ÞèÆ¡£Ï¸¿´´óÖÓ£¬ÕûÕûÓÐÁ½ÕÉÀ´¸ß£¬Ö±¾¶Ò²ÓÐÕÉÐí¡£ÖÓÉíËÆÓÉÇàÍ­½½
-Öý£¬ÉÏÃæÂúÊÇÃÜÃÜÂéÂéµÄÓ¡ÎÄ¹Å×­£¬¹À¼ÆÖØÓâÊýÇ§½ï¡£¾ÞèÆ´Ö¿ÉºÏ±§£¬
-ÕÉ°ÑÀ´³¤£¬Ò»Í·¹üÒÔºñÆ¤£¬Õý¶Ô×ÅÖÓÑü¡£¾¡¹ÜÉ½·ç´µÈËÓûµ¹£¬Ë­¶¼½û
-²»×¡Ïë×²Ò»ÏÂÖÓ(bell)ÊÔÊÔ¡£ÍùÍâ¿´£¬ÓÐ¸öºÜ´óµÄºº°×Óñ´°Ì¨(out)£¬
-ÉÏÃæ×ã¿ÉÕ¾Ò»¸öÈË¡£
+é€™è£¡å°±æ˜¯é˜æ¨“ä¹‹é ‚ã€‚ç›´å…¥çœ¼ç°¾çš„ä¾¿æ˜¯é‚£å£å¤§é˜å’Œä¸€æ ¹æ‡¸æŽ›ç©ºä¸­çš„
+å·¨æµã€‚ç´°çœ‹å¤§é˜ï¼Œæ•´æ•´æœ‰å…©ä¸ˆä¾†é«˜ï¼Œç›´å¾‘ä¹Ÿæœ‰ä¸ˆè¨±ã€‚é˜èº«ä¼¼ç”±é’éŠ…æ¾†
+é‘„ï¼Œä¸Šé¢æ»¿æ˜¯å¯†å¯†éº»éº»çš„å°æ–‡å¤ç¯†ï¼Œä¼°è¨ˆé‡é€¾æ•¸åƒæ–¤ã€‚å·¨æµç²—å¯åˆæŠ±ï¼Œ
+ä¸ˆæŠŠä¾†é•·ï¼Œä¸€é ­è£¹ä»¥åŽšçš®ï¼Œæ­£å°è‘—é˜è…°ã€‚ç›¡ç®¡å±±é¢¨å¹äººæ¬²å€’ï¼Œèª°éƒ½ç¦
+ä¸ä½æƒ³æ’žä¸€ä¸‹é˜(bell)è©¦è©¦ã€‚å¾€å¤–çœ‹ï¼Œæœ‰å€‹å¾ˆå¤§çš„æ¼¢ç™½çŽ‰çª—å°(out)ï¼Œ
+ä¸Šé¢è¶³å¯ç«™ä¸€å€‹äººã€‚
 LONG );
         set("exits", ([
                 "down" : __DIR__"zhonglou6",
@@ -42,16 +42,16 @@ int do_knock(string arg)
         mapping mine;
 
         me = this_player();
-        if ( !arg || ( arg != "bell" ) ) return notify_fail("ÄãÒªÇÃÊ²÷á£¿\n");
+        if ( !arg || ( arg != "bell" ) ) return notify_fail("ä½ è¦æ•²ä»€éº¼ï¼Ÿ\n");
 
         addn("qi", -20, me);
 
 
         mine = me->query_entire_dbase();
-        message_vision("$NÇÃÁËÒ»ÏÂ´óÖÓ£¬¡ºßÛ¡­¡­¡»ÉùÒô´«±éÕû¸öËÂÃí¡£\n", me);
-        write("ÖÓÉùÈçÑ¸À×°ãÔÚÄã¶ú±ßÕ¨Ïì£¬ÄãÍ·ÄÔÖÐÒ»Æ¬ºýÍ¿£¬\n"
-                "È«ÉíÒ¡Ò¡Óû×¹£¬ÃãÁ¦Ö§³Å×Å²»µ¹ÔÚµØÉÏ¡£ÐÄÖÐÒ»¸ö\n"
-                "ÉùÒô¸æËßÄã£¬µÃ¸Ï¿ìÀë¿ªÕâÀï£¬²»È»¾ÍÃ»ÃüÁË¡£\n");
+        message_vision("$Næ•²äº†ä¸€ä¸‹å¤§é˜ï¼Œã€Žâ–¡â€¦â€¦ã€è²éŸ³å‚³éæ•´å€‹å¯ºå»Ÿã€‚\n", me);
+        write("é˜è²å¦‚è¿…é›·èˆ¬åœ¨ä½ è€³é‚Šç‚¸éŸ¿ï¼Œä½ é ­è…¦ä¸­ä¸€ç‰‡ç³Šå¡—ï¼Œ\n"
+                "å…¨èº«æ–æ–æ¬²å¢œï¼Œå‹‰åŠ›æ”¯æ’è‘—ä¸å€’åœ¨åœ°ä¸Šã€‚å¿ƒä¸­ä¸€å€‹\n"
+                "è²éŸ³å‘Šè¨´ä½ ï¼Œå¾—è¶•å¿«é›¢é–‹é€™è£¡ï¼Œä¸ç„¶å°±æ²’å‘½äº†ã€‚\n");
 
         if( random(2) == 0)addn("combat_exp", 1, me);
         else addn("combat_exp", -2, me);
@@ -73,20 +73,20 @@ int do_out(string arg)
             (query("qi", me)<qi_cost) )
                 i = 0;
 
-        message_vision("$NÅÀÉÏ´°Ì¨£¬Ò»¸ö×ÝÉí£¬ÌøÁËÏÂÈ¥¡£\n", me);
+        message_vision("$Nçˆ¬ä¸Šçª—å°ï¼Œä¸€å€‹ç¸±èº«ï¼Œè·³äº†ä¸‹åŽ»ã€‚\n", me);
         me->move(__DIR__"zhonglou");
         me->start_busy(5);
-        message_vision("Ö»Ìý¡ºÅé¡»µØÒ»Éù$N´ÓËþ¶¥ÌøÁËÏÂÀ´¡£\n", me);
+        message_vision("åªè½ã€Žç °ã€åœ°ä¸€è²$Nå¾žå¡”é ‚è·³äº†ä¸‹ä¾†ã€‚\n", me);
         if (i < 50)
         {
-                set_temp("die_reason", "´ÓËþ¶¥Ê§×ãµôÁËÏÂÀ´Ë¤ËÀÁË", me);
+                set_temp("die_reason", "å¾žå¡”é ‚å¤±è¶³æŽ‰äº†ä¸‹ä¾†æ‘”æ­»äº†", me);
                 me->die();
         } else
         if (i < 125)
                 me->unconcious();
         else
         {
-                message_vision("$NÒÑÎÈÎÈµØÕ¾ÔÚµØÉÏ¡£\n", me);
+                message_vision("$Nå·²ç©©ç©©åœ°ç«™åœ¨åœ°ä¸Šã€‚\n", me);
                 if( i>175 && query("dodge", me)<200 )
                         me->improve_skill("dodge",1+random(query("dex", me)));
                 me->receive_damage("jing", ging_cost);
@@ -99,20 +99,20 @@ int do_out(string arg)
 string look_bell()
 {
         return
-        "¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n"
-        "¡ù¡ù¡ù¡ù¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ù¡ù¡ù¡ù\n"
-        "¡ù¡ù¡ù¡ù¡¡¡¡¡¡¡¡¡¡·ðÓïÓÐÔ»£º¡¡¡¡¡¡¡¡¡¡¡ù¡ù¡ù¡ù\n"
-        "¡ù¡ù¡ù¡ù¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ù¡ù¡ù¡ù\n"
-        "¡ù¡ù¡ù¡ù¡¡¡º×öÒ»ÌìºÍÉÐ£¬×²Ò»ÌìÖÓ¡»¡¡¡¡¡ù¡ù¡ù¡ù\n"
-        "¡ù¡ù¡ù¡ù¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ù¡ù¡ù¡ù\n"
-        "¡ù¡ù¡ù¡ù¡¡£¨£ë£î£ï£ã£ë¡¡£â£å£ì£ì£©¡¡¡¡¡ù¡ù¡ù¡ù\n"
-        "¡ù¡ù¡ù¡ù¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ù¡ù¡ù¡ù\n"
-        "¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n";
+        "â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»\n"
+        "â€»â€»â€»â€»ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â€»â€»â€»â€»\n"
+        "â€»â€»â€»â€»ã€€ã€€ã€€ã€€ã€€ä½›èªžæœ‰æ›°ï¼šã€€ã€€ã€€ã€€ã€€â€»â€»â€»â€»\n"
+        "â€»â€»â€»â€»ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â€»â€»â€»â€»\n"
+        "â€»â€»â€»â€»ã€€ã€Žåšä¸€å¤©å’Œå°šï¼Œæ’žä¸€å¤©é˜ã€ã€€ã€€â€»â€»â€»â€»\n"
+        "â€»â€»â€»â€»ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â€»â€»â€»â€»\n"
+        "â€»â€»â€»â€»ã€€ï¼ˆï½‹ï½Žï½ï½ƒï½‹ã€€ï½‚ï½…ï½Œï½Œï¼‰ã€€ã€€â€»â€»â€»â€»\n"
+        "â€»â€»â€»â€»ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â€»â€»â€»â€»\n"
+        "â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»\n";
 }
 
 string look_out()
 {
-        return  "ÕâÀïÊÇÖÓÂ¥¶¥²ãµÄ´°Ì¨£¬´ÓÕâÀï¿ÉÒÔÒ£ÍûÕû¸öÉÙÊÒÉ½Âö£¬\n"
-"ÒÔ¼°¸ßËÊÈëÔÆµÄáÔÉ½¡£¸¡ÊÀÑÌ³¾£¬¾¡ÔÚÑÛµ×¡£¾ÝËµÔÚ´ËµØ\n"
-"¿ÉÒÔÓëÌì½çÖî·ðÖ±½Ó½»Á÷£¬¶ÔìøÐÞ´óÓÐÒæ´¦¡£\n";
+        return  "é€™è£¡æ˜¯é˜æ¨“é ‚å±¤çš„çª—å°ï¼Œå¾žé€™è£¡å¯ä»¥é™æœ›æ•´å€‹å°‘å®¤å±±è„ˆï¼Œ\n"
+"ä»¥åŠé«˜è³å…¥é›²çš„åµ©å±±ã€‚æµ®ä¸–ç…™å¡µï¼Œç›¡åœ¨çœ¼åº•ã€‚æ“šèªªåœ¨æ­¤åœ°\n"
+"å¯ä»¥èˆ‡å¤©ç•Œè«¸ä½›ç›´æŽ¥äº¤æµï¼Œå°ç¦ªä¿®å¤§æœ‰ç›Šè™•ã€‚\n";
 }

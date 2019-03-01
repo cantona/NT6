@@ -1,231 +1,231 @@
-¡õ ÓÐ¹ØÆ·ÖÊ¹ÜÖÆ
+â–¡ æœ‰é—œå“è³ªç®¡åˆ¶
 
-ËùÓÐµÄ Mud ¶¼ÓÐ×Ô¼ºµÄ·ç¸ñ¡¢·¢Õ¹·½Ïò¡¢¸ú³ÌÊ½ÂëÆ·ÖÊµÄÒªÇó£¬Í¨³£ÕâÐ©ÒªÇó»á
-ËæÖøÖ÷³ÖÕâ¸ö Mud µÄÉñ¶øÒì£¬µ«ÊÇÍùÍùÓÉì¶Ã¿¸öÉñ¶Ô mudlib µÄÁË½â³Ì¶È²»Ò»£¬
-ËùÄÜ¶ÔÆ·ÖÊÒªÇóµÄÉî¶ÈÒ²²»Í¬£¬ÎªÁËÄÜ¹»ÈÃ³ÌÊ½ÂëµÄÆ·ÖÊÎ¬³ÖÔÚÒ»¸öË®×¼ÒÔÉÏ£¬×î
-ºÃÄÜ¹»ÖÆ¶©³öÒ»¸ö×î»ù±¾µÄÆ·ÖÊÒªÇó£¬ÒÔÏÂÊÇ¶«·½¹ÊÊÂ II µÄÆ·ÖÊÒªÇó£º
+æ‰€æœ‰çš„ Mud éƒ½æœ‰è‡ªå·±çš„é¢¨æ ¼ã€ç™¼å±•æ–¹å‘ã€è·Ÿç¨‹å¼ç¢¼å“è³ªçš„è¦æ±‚ï¼Œé€šå¸¸é€™äº›è¦æ±‚æœƒ
+éš¨è‘—ä¸»æŒé€™å€‹ Mud çš„ç¥žè€Œç•°ï¼Œä½†æ˜¯å¾€å¾€ç”±æ–¼æ¯å€‹ç¥žå° mudlib çš„äº†è§£ç¨‹åº¦ä¸ä¸€ï¼Œ
+æ‰€èƒ½å°å“è³ªè¦æ±‚çš„æ·±åº¦ä¹Ÿä¸åŒï¼Œç‚ºäº†èƒ½å¤ è®“ç¨‹å¼ç¢¼çš„å“è³ªç¶­æŒåœ¨ä¸€å€‹æ°´æº–ä»¥ä¸Šï¼Œæœ€
+å¥½èƒ½å¤ åˆ¶è¨‚å‡ºä¸€å€‹æœ€åŸºæœ¬çš„å“è³ªè¦æ±‚ï¼Œä»¥ä¸‹æ˜¯æ±æ–¹æ•…äº‹ II çš„å“è³ªè¦æ±‚ï¼š
 
-¡õ ³ÌÊ½Âë
+â–¡ ç¨‹å¼ç¢¼
 
-(1) ³ÌÊ½Âë±ØÐëËõÅÅÕûÆë£¬ËõÅÅÒ»ÂÉÓÃ tab (Ïàµ±ì¶ 4 µÄ¿Õ¸ñ)£¬ËäÈ»Ëõ²»ËõÅÅ
-    ÎÞ¹Ø³ÌÊ½ÊÇ·ñÄÜ¹»Ö´ÐÐ£¬µ«ÊÇÈç¹ûÄãÊÇÒ»¸öÖ»Çó³ÌÊ½Ö´ÐÐÕýÈ·£¬¶ø²»¹Ü±ðÈË
-    ÊÇ·ñÈÝÒ×ÔÄ¶ÁÄãµÄ³ÌÊ½Âë£¬ÔÚ Mud ÕâÑùÒ»¸öÓÉ¶àÈË¹²Í¬·¢Õ¹³ÌÊ½µÄ»·¾³ÖÐ
-    ½«»áÊ®·ÖÈÇÈË·´¸Ð¡£
+(1) ç¨‹å¼ç¢¼å¿…é ˆç¸®æŽ’æ•´é½Šï¼Œç¸®æŽ’ä¸€å¾‹ç”¨ tab (ç›¸ç•¶æ–¼ 4 çš„ç©ºæ ¼)ï¼Œé›–ç„¶ç¸®ä¸ç¸®æŽ’
+    ç„¡é—œç¨‹å¼æ˜¯å¦èƒ½å¤ åŸ·è¡Œï¼Œä½†æ˜¯å¦‚æžœä½ æ˜¯ä¸€å€‹åªæ±‚ç¨‹å¼åŸ·è¡Œæ­£ç¢ºï¼Œè€Œä¸ç®¡åˆ¥äºº
+    æ˜¯å¦å®¹æ˜“é–±è®€ä½ çš„ç¨‹å¼ç¢¼ï¼Œåœ¨ Mud é€™æ¨£ä¸€å€‹ç”±å¤šäººå…±åŒç™¼å±•ç¨‹å¼çš„ç’°å¢ƒä¸­
+    å°‡æœƒååˆ†æƒ¹äººåæ„Ÿã€‚
 
-(2) ±ØÐëÃ»ÓÐ±àÒëÊ±¶Î´íÎó£¬ÕâÊÇ·Ç³£»ù±¾µÄÒªÇó£¬Èç¹ûÄãµÄÇøÓò»¹ÓÐÎÞ·¨ÕýÈ·
-    ±» load ½øÀ´µÄÎï¼þ³ÌÊ½£¬±ðÕÒÉñ QC £¬·ñÔò×îÇáµÄ³Í·£ÊÇÆ¨¹ÉÉÏÒ»¸öÇå³þ
-    µÄÐ¬Ó¡¡£
+(2) å¿…é ˆæ²’æœ‰ç·¨è­¯æ™‚æ®µéŒ¯èª¤ï¼Œé€™æ˜¯éžå¸¸åŸºæœ¬çš„è¦æ±‚ï¼Œå¦‚æžœä½ çš„å€åŸŸé‚„æœ‰ç„¡æ³•æ­£ç¢º
+    è¢« load é€²ä¾†çš„ç‰©ä»¶ç¨‹å¼ï¼Œåˆ¥æ‰¾ç¥ž QC ï¼Œå¦å‰‡æœ€è¼•çš„æ‡²ç½°æ˜¯å±è‚¡ä¸Šä¸€å€‹æ¸…æ¥š
+    çš„éž‹å°ã€‚
 
-(3) ÔÚ QC µÄ´óÎ×Ê¦²âÊÔ¹ý³ÌÖÐ£¬±ØÐëÃ»ÓÐÖ´ÐÐÊ±¶Î´íÎó£¬ÇøÓòµÄ×÷ÕßÓÐÒåÎñ±¨¸æ
-    ËùÓÐÒþ²ØµÄ¶¯×÷¡¢¡õÃÜ£¬²¢ÇÒ¾­ÓÉ QC µÄ´óÎ×Ê¦²âÊÔÎÞÎó¡£
+(3) åœ¨ QC çš„å¤§å·«å¸«æ¸¬è©¦éŽç¨‹ä¸­ï¼Œå¿…é ˆæ²’æœ‰åŸ·è¡Œæ™‚æ®µéŒ¯èª¤ï¼Œå€åŸŸçš„ä½œè€…æœ‰ç¾©å‹™å ±å‘Š
+    æ‰€æœ‰éš±è—çš„å‹•ä½œã€â–¡å¯†ï¼Œä¸¦ä¸”ç¶“ç”± QC çš„å¤§å·«å¸«æ¸¬è©¦ç„¡èª¤ã€‚
 
-(4) µµ°¸Â·¾¶Ãû³Æ±ØÐëºÍ¾ø¶ÔÂ·¾¶ÎÞ¹Ø£¬»»¾ä»°ËµÄãµÄ³ÌÊ½±ØÐëÔÚÕû¸öÄ¿Â¼±»ÒÆ¶¯
-    µ½ÁíÒ»Â·¾¶ÏÂÖ®ááÈÔÈ»ÄÜ¹»Õý³£¶¯×÷£¬Äã¿ÉÒÔÓÃ __DIR__ Õâ¸öÓÉ MudOS Ìá¹©
-    µÄ¾Þ¼¯¶¨Òå±íÊ¾Õâ¸öµµ°¸Ä¿Ç°ËùÔÚµÄÄ¿Â¼( __FILE__±íÊ¾Ä¿Ç°Õâ¸öµµ°¸µÄµµÃû
-    )£¬¼´Ê¹ÒÆ¶¯Ö®áá±ØÐë×öÐÞÕý£¬×îºÃÒ²ÏÞì¶Ä³¸ö .h µµ°¸¡£
+(4) æª”æ¡ˆè·¯å¾‘åç¨±å¿…é ˆå’Œçµ•å°è·¯å¾‘ç„¡é—œï¼Œæ›å¥è©±èªªä½ çš„ç¨‹å¼å¿…é ˆåœ¨æ•´å€‹ç›®éŒ„è¢«ç§»å‹•
+    åˆ°å¦ä¸€è·¯å¾‘ä¸‹ä¹‹å¾Œä»ç„¶èƒ½å¤ æ­£å¸¸å‹•ä½œï¼Œä½ å¯ä»¥ç”¨ __DIR__ é€™å€‹ç”± MudOS æä¾›
+    çš„å·¨é›†å®šç¾©è¡¨ç¤ºé€™å€‹æª”æ¡ˆç›®å‰æ‰€åœ¨çš„ç›®éŒ„( __FILE__è¡¨ç¤ºç›®å‰é€™å€‹æª”æ¡ˆçš„æª”å
+    )ï¼Œå³ä½¿ç§»å‹•ä¹‹å¾Œå¿…é ˆåšä¿®æ­£ï¼Œæœ€å¥½ä¹Ÿé™æ–¼æŸå€‹ .h æª”æ¡ˆã€‚
 
-¡õ Ê¹ÓÃÕß½çÃæ
+â–¡ ä½¿ç”¨è€…ç•Œé¢
 
-(1) ËùÓÐµÄÑ¶Ï¢±ØÐëÕýÈ·¶øÇÒÊÊµ±£¬ËùÎ½¡¸ÕýÈ·¡¹ÊÇÖ¸»ùì¶Ò»°ã³£Ê¶ËùÓ¦¸øÓèµÄÑ¶
-    Ï¢±ØÐëÎÞÎó£¬ÀýÈçÄ³ÈËÀ­ÏÂÒ»¸ùÀ­¡õ£¬À­À­¡õµÄÈË¿´µ½µÄÑ¶Ï¢¸úÅÔ¹ÛµÄÈË¿´µ½
-    µÄÑ¶Ï¢¾Í±ØÐëÕýÈ·£¬ËùÎ½¡¸ÊÊµ±¡¹ÊÇÖ¸Ñ¶Ï¢³öÏÖµÄµØ·½¡¢Ñ¶Ï¢µÄ³¤¶Ì¡¢±êµã·û
-    ºÅ¡¢ÑÕÉ«¡¢³öÏÖÊ±¼ä±ØÐë¾¡Á¿ºÏºõÕæÊµÊÀ½çµÄÇéÐÎ£¬ÀýÈçÈËÎï chat µÄÑ¶Ï¢¸ú
-    add_actionµÄÑ¶Ï¢Ó¦¸ÃÒªÄÜÊÊµ±µØ±í´ï³ö¶¯×÷ÕßµÄÁ¢³¡£¬²»ÄÜÓÐ¿´ÆðÀ´¹Ö¹ÖµÄ
-    ¸Ð¾õ¡£
+(1) æ‰€æœ‰çš„è¨Šæ¯å¿…é ˆæ­£ç¢ºè€Œä¸”é©ç•¶ï¼Œæ‰€è¬‚ã€Œæ­£ç¢ºã€æ˜¯æŒ‡åŸºæ–¼ä¸€èˆ¬å¸¸è­˜æ‰€æ‡‰çµ¦äºˆçš„è¨Š
+    æ¯å¿…é ˆç„¡èª¤ï¼Œä¾‹å¦‚æŸäººæ‹‰ä¸‹ä¸€æ ¹æ‹‰â–¡ï¼Œæ‹‰æ‹‰â–¡çš„äººçœ‹åˆ°çš„è¨Šæ¯è·Ÿæ—è§€çš„äººçœ‹åˆ°
+    çš„è¨Šæ¯å°±å¿…é ˆæ­£ç¢ºï¼Œæ‰€è¬‚ã€Œé©ç•¶ã€æ˜¯æŒ‡è¨Šæ¯å‡ºç¾çš„åœ°æ–¹ã€è¨Šæ¯çš„é•·çŸ­ã€æ¨™é»žç¬¦
+    è™Ÿã€é¡è‰²ã€å‡ºç¾æ™‚é–“å¿…é ˆç›¡é‡åˆä¹ŽçœŸå¯¦ä¸–ç•Œçš„æƒ…å½¢ï¼Œä¾‹å¦‚äººç‰© chat çš„è¨Šæ¯è·Ÿ
+    add_actionçš„è¨Šæ¯æ‡‰è©²è¦èƒ½é©ç•¶åœ°è¡¨é”å‡ºå‹•ä½œè€…çš„ç«‹å ´ï¼Œä¸èƒ½æœ‰çœ‹èµ·ä¾†æ€ªæ€ªçš„
+    æ„Ÿè¦ºã€‚
 
-(2) ¾°Îï»òÎïÆ·µÄÉèÖÃ±ØÐëºÏÀí£¬ÈçÒ»Öê¿ÉÒÔÅÀµÄÊ÷Äã¿ÉÒÔ°ÑËüÐ´³É·¿¼äµÄ¾°Îï£¬
-    Ò²¿ÉÒÔÓÃÒ»¸öÎïÆ·À´±íÊ¾Ê÷µÄ´æÔÚ(¿ÉÒÔ¿³ÏÂÀ´´ø×ß)£¬µ«ÊÇÒ»¸ö¿ÉÒÔ×ê½øÈ¥µÄ
-    µØ¶´¾Í²»Ó¦¸ÃÐ´³ÉÒ»¸öÎïÆ·¡£
+(2) æ™¯ç‰©æˆ–ç‰©å“çš„è¨­ç½®å¿…é ˆåˆç†ï¼Œå¦‚ä¸€æ ªå¯ä»¥çˆ¬çš„æ¨¹ä½ å¯ä»¥æŠŠå®ƒå¯«æˆæˆ¿é–“çš„æ™¯ç‰©ï¼Œ
+    ä¹Ÿå¯ä»¥ç”¨ä¸€å€‹ç‰©å“ä¾†è¡¨ç¤ºæ¨¹çš„å­˜åœ¨(å¯ä»¥ç ä¸‹ä¾†å¸¶èµ°)ï¼Œä½†æ˜¯ä¸€å€‹å¯ä»¥é‘½é€²åŽ»çš„
+    åœ°æ´žå°±ä¸æ‡‰è©²å¯«æˆä¸€å€‹ç‰©å“ã€‚
 
-¡õ ÄÚÈÝ
+â–¡ å…§å®¹
 
-(1) ÈËÎïµÄÇ¿¶È±ØÐëºÏÀí£¬¶«·½¹ÊÊÂ II ËäÈ»²É¿ª·ÅÊ½µÄÊôÐÔÏµÍ³£¬µ«ÊÇÁíÒ»¸öÖØ
-    µãÊÇ£ºNPC ºÍÍæ¼ÒÊÇÍ¬Ò»¸öÊÀ½çµÄÈË£¬NPC µÄ×÷ÓÃ²»ÄÜ×÷ÎªËü¾ßÓÐ±äÌ¬ÄÜÁ¦µÄ
-    ÀíÓÉ£¬»»¾ä»°Ëµ NPC µÄ¡¸Ç¿¡¹±ØÐëÓÐ¹ÊÊÂ±³¾°Éè¶¨ÉÏµÄÀíÓÉ£¬ÒòÎª quest »ò
-    ÈÎºÎÓ¦ÓÃÉÏµÄÇ£Ç¿ÀíÓÉ¶øÉè¼ÆµÄÇ¿Á¦ NPC »áÊÜµ½×îÑÏ¸ñµÄ¼ìÑé¡£
-    ( ÇëÏÈ²ÎÕÕ¸÷ÃÅÅÉÕÆÃÅµÄÇ¿¶È£¬×÷Îª¼ÙÉèµÄÍæ¼ÒÇ¿¶ÈË®×¼ÉÏÏÞ£¬NPC Ã»ÓÐÌØÊâ
-    ÀíÓÉ²»Ó¦¸ÃÇ¿¹ýÕâÐ©ÈË£¬¶øÇÒÕâÖÖÇ¿¶ÈµÄ NPC Ó¦¸ÃÊÇÊ®·Ö¡¸ÉÙ¼û¡¹µÄ¡£)
+(1) äººç‰©çš„å¼·åº¦å¿…é ˆåˆç†ï¼Œæ±æ–¹æ•…äº‹ II é›–ç„¶æŽ¡é–‹æ”¾å¼çš„å±¬æ€§ç³»çµ±ï¼Œä½†æ˜¯å¦ä¸€å€‹é‡
+    é»žæ˜¯ï¼šNPC å’ŒçŽ©å®¶æ˜¯åŒä¸€å€‹ä¸–ç•Œçš„äººï¼ŒNPC çš„ä½œç”¨ä¸èƒ½ä½œç‚ºå®ƒå…·æœ‰è®Šæ…‹èƒ½åŠ›çš„
+    ç†ç”±ï¼Œæ›å¥è©±èªª NPC çš„ã€Œå¼·ã€å¿…é ˆæœ‰æ•…äº‹èƒŒæ™¯è¨­å®šä¸Šçš„ç†ç”±ï¼Œå› ç‚º quest æˆ–
+    ä»»ä½•æ‡‰ç”¨ä¸Šçš„ç‰½å¼·ç†ç”±è€Œè¨­è¨ˆçš„å¼·åŠ› NPC æœƒå—åˆ°æœ€åš´æ ¼çš„æª¢é©—ã€‚
+    ( è«‹å…ˆåƒç…§å„é–€æ´¾æŽŒé–€çš„å¼·åº¦ï¼Œä½œç‚ºå‡è¨­çš„çŽ©å®¶å¼·åº¦æ°´æº–ä¸Šé™ï¼ŒNPC æ²’æœ‰ç‰¹æ®Š
+    ç†ç”±ä¸æ‡‰è©²å¼·éŽé€™äº›äººï¼Œè€Œä¸”é€™ç¨®å¼·åº¦çš„ NPC æ‡‰è©²æ˜¯ååˆ†ã€Œå°‘è¦‹ã€çš„ã€‚)
 
-(2) ÎäÆ÷×°±¸µÄÇ¿¶È±ØÐëºÏÀí£¬ºÍ NPC ÏàÍ¬£¬Ç¿Á¦µÄ×°±¸Ó¦¸ÃÊÇÊ®·Öº±¼ûµÄ£¬Èç¹û
-    Ã»ÓÐÊÊµ±µÄ¹ÊÊÂ±³¾°Éè¶¨£¬Ç¿Á¦µÄ×°±¸»áÊÜµ½×îÑÏ¸ñµÄ¼ìÑé£¬¶øÇÒÕâÐ©×°±¸±Ø
-    ÐëÊÇ¼«Æäº±¼ûµÄ¡£
+(2) æ­¦å™¨è£å‚™çš„å¼·åº¦å¿…é ˆåˆç†ï¼Œå’Œ NPC ç›¸åŒï¼Œå¼·åŠ›çš„è£å‚™æ‡‰è©²æ˜¯ååˆ†ç½•è¦‹çš„ï¼Œå¦‚æžœ
+    æ²’æœ‰é©ç•¶çš„æ•…äº‹èƒŒæ™¯è¨­å®šï¼Œå¼·åŠ›çš„è£å‚™æœƒå—åˆ°æœ€åš´æ ¼çš„æª¢é©—ï¼Œè€Œä¸”é€™äº›è£å‚™å¿…
+    é ˆæ˜¯æ¥µå…¶ç½•è¦‹çš„ã€‚
 
-(3) ÇøÓòµÄ´óÐ¡ÓëÆäÖÐËùº¬µÄ¡¸¡õÃÜ¡¹±ØÐë³ÉÕý±È£¬Èç¹ûÄãµÄÇøÓòÖ»ÓÐÒ»¶ÑÓÃ·¿¼ä
-    ±à¼­Æ÷×ö³öÀ´µÄ¿Õ·¿¼ä£¬¸úÒ»Ð©ÓÃ copy ¸ú¸ÄÐðÊö¡¢Êý×Ö×ö³öÀ´µÄ NPC¡¢×°±¸
-    »òÎïÆ·£¬³¬¹ý 20 ¸ö·¿¼äµÄÕâÖÖÑô´ºÇøÓòÍ¨¹ý QC µÄ¿ÉÄÜÐÔ¾Í·Ç³£ÃìÃ£ÁË¡£
+(3) å€åŸŸçš„å¤§å°èˆ‡å…¶ä¸­æ‰€å«çš„ã€Œâ–¡å¯†ã€å¿…é ˆæˆæ­£æ¯”ï¼Œå¦‚æžœä½ çš„å€åŸŸåªæœ‰ä¸€å †ç”¨æˆ¿é–“
+    ç·¨è¼¯å™¨åšå‡ºä¾†çš„ç©ºæˆ¿é–“ï¼Œè·Ÿä¸€äº›ç”¨ copy è·Ÿæ”¹æ•˜è¿°ã€æ•¸å­—åšå‡ºä¾†çš„ NPCã€è£å‚™
+    æˆ–ç‰©å“ï¼Œè¶…éŽ 20 å€‹æˆ¿é–“çš„é€™ç¨®é™½æ˜¥å€åŸŸé€šéŽ QC çš„å¯èƒ½æ€§å°±éžå¸¸æ¸ºèŒ«äº†ã€‚
 
-¡õ ·ç¸ñ
+â–¡ é¢¨æ ¼
 
-(1) Ò»ÈçÄãËù¼ûµ½µÄ£¬¶«·½¹ÊÊÂ II µÄ·ç¸ñÓ¦¸ÃÊ®·ÖÃ÷ÏÔ£¬Ê²÷á¸ÃÓÐ£¬Ê²÷á²»¸ÃÓÐ
-    ÄãÓ¦¸ÃÔÚÉêÇë QC Ö®Ç°×Ô¼ºÔÙÈ·ÈÏ¼¸´Î£¬²»ÒªÈÃ QC µÄ´óÎ×Ê¦ÔÚÄãµÄÇøÓò·¢ÏÖ
-    Ò»¹Þ¿É¿Ú¿ÉÀÖ»òºÚÐÇÊÖÇ¹¡£
+(1) ä¸€å¦‚ä½ æ‰€è¦‹åˆ°çš„ï¼Œæ±æ–¹æ•…äº‹ II çš„é¢¨æ ¼æ‡‰è©²ååˆ†æ˜Žé¡¯ï¼Œä»€éº¼è©²æœ‰ï¼Œä»€éº¼ä¸è©²æœ‰
+    ä½ æ‡‰è©²åœ¨ç”³è«‹ QC ä¹‹å‰è‡ªå·±å†ç¢ºèªå¹¾æ¬¡ï¼Œä¸è¦è®“ QC çš„å¤§å·«å¸«åœ¨ä½ çš„å€åŸŸç™¼ç¾
+    ä¸€ç½å¯å£å¯æ¨‚æˆ–é»‘æ˜Ÿæ‰‹æ§ã€‚
 
-(2) ÎÒÃÇÒªÇóÇøÓòµÄÉè¼ÆÐèÒªÓÐÏàµ±µÄ¡¸Ô­´´ÐÔ¡¹£¬Ò²ÐíºÜ¶àÎäÏÀÐ¡ËµÖÐµÄÇé½Ú¡¢
-    ÈËÃû¡¢µØÃû¡¢ÎäÆ÷¸ú¶«·½¹ÊÊÂ II µÄ·ç¸ñÊ®·ÖÎÇºÏ£¬µ«ÊÇÎÒÃÇÏ£ÍûÎ×Ê¦ÄÜÓÃ×Ô
-    ¼ºÏë³öÀ´µÄ¶«Î÷(ÉõÖÁ×îºÃ»Ø±Ü¸úÒ»Ð©Ì«³öÃûµÄ×÷Æ·À×Í¬µÄ¶«Î÷)£¬Èç¹ûÄãµÄÇø
-    ÓòÊÇÍêÈ«³ö×ÔÄ³²¿Ð¡Ëµ»òµçÓ°£¬ÎªÁË±ÜÃâÖÇ»Û²Æ²úÈ¨ÉÏ¿ÉÄÜµÄÕùÒéÓëÂé·³£¬Õâ
-    ÖÖÇøÓò¿ª·ÅµÄ¿ÉÄÜÐÔ·Ç³£µÍ¡£
+(2) æˆ‘å€‘è¦æ±‚å€åŸŸçš„è¨­è¨ˆéœ€è¦æœ‰ç›¸ç•¶çš„ã€ŒåŽŸå‰µæ€§ã€ï¼Œä¹Ÿè¨±å¾ˆå¤šæ­¦ä¿ å°èªªä¸­çš„æƒ…ç¯€ã€
+    äººåã€åœ°åã€æ­¦å™¨è·Ÿæ±æ–¹æ•…äº‹ II çš„é¢¨æ ¼ååˆ†å»åˆï¼Œä½†æ˜¯æˆ‘å€‘å¸Œæœ›å·«å¸«èƒ½ç”¨è‡ª
+    å·±æƒ³å‡ºä¾†çš„æ±è¥¿(ç”šè‡³æœ€å¥½å›žé¿è·Ÿä¸€äº›å¤ªå‡ºåçš„ä½œå“é›·åŒçš„æ±è¥¿)ï¼Œå¦‚æžœä½ çš„å€
+    åŸŸæ˜¯å®Œå…¨å‡ºè‡ªæŸéƒ¨å°èªªæˆ–é›»å½±ï¼Œç‚ºäº†é¿å…æ™ºæ…§è²¡ç”¢æ¬Šä¸Šå¯èƒ½çš„çˆ­è­°èˆ‡éº»ç…©ï¼Œé€™
+    ç¨®å€åŸŸé–‹æ”¾çš„å¯èƒ½æ€§éžå¸¸ä½Žã€‚
 
-¡õ Î¬ÐÞÖ®ÒåÎñÓëááÐø·¢Õ¹
+â–¡ ç¶­ä¿®ä¹‹ç¾©å‹™èˆ‡å¾ŒçºŒç™¼å±•
 
-(1) Ò»µ«ÄãµÄÇøÓòÍ¨¹ý QC ¿ª·Å¸øÍæ¼Ò£¬Õâ²¢²»±íÊ¾ÄãµÄÔðÈÎ¾ÍÍêÁË£¬¶øÊÇ¸üÖØµÄ
-    ÔðÈÎ£¬Í¨³£µ±ÄãµÄÇøÓò¿ª·ÅÖ®áá£¬»á½«Õû¸öÄ¿Â¼°áµ½ /d ÏÂ£¬²¢ÇÒÉñ»¹¿ÉÄÜ»á
-    ¸øÄã¸ÃÄ¿Â¼µÄ¶ÁÐ´È¨£¬Õâ±íÊ¾Äã±ØÐë¸ºÔðÕâÒ»¸öÇøÓòµÄÎ¬ÐÞ¹¤×÷£¬ÈÎºÎÕâ¸öÇø
-    Óò²úÉúµÄ´íÎóÄã¶¼±ØÐë¸ºÔðÐÞ»¤¡£
+(1) ä¸€ä½†ä½ çš„å€åŸŸé€šéŽ QC é–‹æ”¾çµ¦çŽ©å®¶ï¼Œé€™ä¸¦ä¸è¡¨ç¤ºä½ çš„è²¬ä»»å°±å®Œäº†ï¼Œè€Œæ˜¯æ›´é‡çš„
+    è²¬ä»»ï¼Œé€šå¸¸ç•¶ä½ çš„å€åŸŸé–‹æ”¾ä¹‹å¾Œï¼Œæœƒå°‡æ•´å€‹ç›®éŒ„æ¬åˆ° /d ä¸‹ï¼Œä¸¦ä¸”ç¥žé‚„å¯èƒ½æœƒ
+    çµ¦ä½ è©²ç›®éŒ„çš„è®€å¯«æ¬Šï¼Œé€™è¡¨ç¤ºä½ å¿…é ˆè² è²¬é€™ä¸€å€‹å€åŸŸçš„ç¶­ä¿®å·¥ä½œï¼Œä»»ä½•é€™å€‹å€
+    åŸŸç”¢ç”Ÿçš„éŒ¯èª¤ä½ éƒ½å¿…é ˆè² è²¬ä¿®è­·ã€‚
 
 
-¡õ ¼Ì³Ð
+â–¡ ç¹¼æ‰¿
 
-    ÏàÐÅÓÐÎªÊý²»ÉÙµÄÎ×Ê¦¶Ôì¶  LPC Îï¼þµÄ¡¸¶àÖØ¼Ì³Ð¡¹¸Ðµ½À§»ó£¬ÕâÊÇÒòÎªÐí
-¶à mudlib µÄ¼Ì³Ð½á¹¹Ê®·Ö»ìÂÒ£¬¶øÇÒÃ»ÓÐ¹Ì¶¨·ç¸ñ£¬Òò´ËÕâÀïÌØ±ðËµÃ÷Ò»ÏÂÎÒÃÇ
-µÄ¼Ì³Ð½á¹¹Ëù×ñÑ­µÄ·ç¸ñ£º
+    ç›¸ä¿¡æœ‰ç‚ºæ•¸ä¸å°‘çš„å·«å¸«å°æ–¼  LPC ç‰©ä»¶çš„ã€Œå¤šé‡ç¹¼æ‰¿ã€æ„Ÿåˆ°å›°æƒ‘ï¼Œé€™æ˜¯å› ç‚ºè¨±
+å¤š mudlib çš„ç¹¼æ‰¿çµæ§‹ååˆ†æ··äº‚ï¼Œè€Œä¸”æ²’æœ‰å›ºå®šé¢¨æ ¼ï¼Œå› æ­¤é€™è£¡ç‰¹åˆ¥èªªæ˜Žä¸€ä¸‹æˆ‘å€‘
+çš„ç¹¼æ‰¿çµæ§‹æ‰€éµå¾ªçš„é¢¨æ ¼ï¼š
 
-    ¡¸ÈÎºÎÎï¼þ£¬¿ÉÒÔ¼Ì³Ð×î¶àÒ»¸ö¡º±ê×¼Îï¼þ¡»£¬ºÍ½ÓÖø±ê×¼Îï¼þµÄ¼Ì³ÐÐðÊöÖ®
-áá£¬Èô¸É¸ö¡ºÎï¼þÌØáç¡»¡£¡¹
+    ã€Œä»»ä½•ç‰©ä»¶ï¼Œå¯ä»¥ç¹¼æ‰¿æœ€å¤šä¸€å€‹ã€Žæ¨™æº–ç‰©ä»¶ã€ï¼Œå’ŒæŽ¥è‘—æ¨™æº–ç‰©ä»¶çš„ç¹¼æ‰¿æ•˜è¿°ä¹‹
+å¾Œï¼Œè‹¥å¹¹å€‹ã€Žç‰©ä»¶ç‰¹å¾µã€ã€‚ã€
 
-    ÆäÖÐµÄ¡ºÎï¼þÌØáç¡»ÒÔ¡º±ê×¼Îï¼þ¡»ËùÎ´Ôø¼Ì³Ð¹ýµÄÎï¼þÌØáçÎªÏÞ£¬»»¾ä»°Ëµ
-Ò»¸öÎï¼þÌØáç²»Ó¦¸ÃÔÚÈÎºÎÎï¼þÖÐ±»¼Ì³Ð³¬¹ýÁ½´ÎÒÔÉÏ¡£
+    å…¶ä¸­çš„ã€Žç‰©ä»¶ç‰¹å¾µã€ä»¥ã€Žæ¨™æº–ç‰©ä»¶ã€æ‰€æœªæ›¾ç¹¼æ‰¿éŽçš„ç‰©ä»¶ç‰¹å¾µç‚ºé™ï¼Œæ›å¥è©±èªª
+ä¸€å€‹ç‰©ä»¶ç‰¹å¾µä¸æ‡‰è©²åœ¨ä»»ä½•ç‰©ä»¶ä¸­è¢«ç¹¼æ‰¿è¶…éŽå…©æ¬¡ä»¥ä¸Šã€‚
 
-¡õ ±ê×¼Îï¼þ (standard objects)
+â–¡ æ¨™æº–ç‰©ä»¶ (standard objects)
 
-    Ò²¾ÍÊÇÎ»ì¶ /std ÏÂµÄÎï¼þ£¬ÕâÐ©Îï¼þÈç¹û¼ÓÉÏÒ»¸öÊÊµ±µÄ create() º¯Êý¾Í
-¿ÉÒÔ³ÉÎªÒ»¸öÍêÕûµÄÎï¼þ¡£²»¹ý£¬ÎÞÂÛÔÚÈÎºÎÇé¿öÏÂ£¬¶¼²»Ó¦¸Ã¶ÔÒ»¸ö±ê×¼Îï¼þ×ö
-clone µÄ¶¯×÷£¬ÄãÖ»ÄÜ¼Ì³ÐËü¡£
+    ä¹Ÿå°±æ˜¯ä½æ–¼ /std ä¸‹çš„ç‰©ä»¶ï¼Œé€™äº›ç‰©ä»¶å¦‚æžœåŠ ä¸Šä¸€å€‹é©ç•¶çš„ create() å‡½æ•¸å°±
+å¯ä»¥æˆç‚ºä¸€å€‹å®Œæ•´çš„ç‰©ä»¶ã€‚ä¸éŽï¼Œç„¡è«–åœ¨ä»»ä½•æƒ…æ³ä¸‹ï¼Œéƒ½ä¸æ‡‰è©²å°ä¸€å€‹æ¨™æº–ç‰©ä»¶åš
+clone çš„å‹•ä½œï¼Œä½ åªèƒ½ç¹¼æ‰¿å®ƒã€‚
 
-    ±ê×¼Îï¼þ×÷Îª¸÷Ê½Îï¼þµÄÖ÷Ìå£¬Èç¹ûÒ»¸öÎï¼þ³ýÁË±ê×¼Îï¼þÍâÃ»ÓÐÁíÍâ¼Ì³ÐÈÎ
-ºÎÆäËûµÄÎï¼þÌØÐÔ£¬¶øÇÒÎï¼þÖÐ³ýÁË create() Ö®ÍâÃ»ÓÐµÚ¶þ¸öº¯Êý£¬ÈçÒ»°ãµÄ·¿
-¼ä¡¢¹ÖÎï¡¢ÎïÆ·µÈ£¬Ó¦¸ÃÔÚ create() º¯Êý½áÊøÖ®Ç°£¬ÓÃ replace_program()  ½«
-×Ô¼ºµÄ³ÌÊ½ÓÃ±ê×¼Îï¼þÈ¡´ú£¬ÒòÎª create() Ö»ÓÐÔÚÎï¼þ±»´´Ôì(»ò clone)³öÀ´Ê±
-Ö´ÐÐÒ»´Î£¬ÒÔááÔÙÒ²ÓÃ²»µ½ÁË£¬ËùÒÔÇ¬´àÓÃËù¼Ì³ÐµÄ±ê×¼Îï¼þÈ¡´ú£¬ÕâÑù¿ÉÒÔÊ¡ÏÂ
-ÎªÊý²»ÉÙµÄ¼ÇÒäÌå¡£
+    æ¨™æº–ç‰©ä»¶ä½œç‚ºå„å¼ç‰©ä»¶çš„ä¸»é«”ï¼Œå¦‚æžœä¸€å€‹ç‰©ä»¶é™¤äº†æ¨™æº–ç‰©ä»¶å¤–æ²’æœ‰å¦å¤–ç¹¼æ‰¿ä»»
+ä½•å…¶ä»–çš„ç‰©ä»¶ç‰¹æ€§ï¼Œè€Œä¸”ç‰©ä»¶ä¸­é™¤äº† create() ä¹‹å¤–æ²’æœ‰ç¬¬äºŒå€‹å‡½æ•¸ï¼Œå¦‚ä¸€èˆ¬çš„æˆ¿
+é–“ã€æ€ªç‰©ã€ç‰©å“ç­‰ï¼Œæ‡‰è©²åœ¨ create() å‡½æ•¸çµæŸä¹‹å‰ï¼Œç”¨ replace_program()  å°‡
+è‡ªå·±çš„ç¨‹å¼ç”¨æ¨™æº–ç‰©ä»¶å–ä»£ï¼Œå› ç‚º create() åªæœ‰åœ¨ç‰©ä»¶è¢«å‰µé€ (æˆ– clone)å‡ºä¾†æ™‚
+åŸ·è¡Œä¸€æ¬¡ï¼Œä»¥å¾Œå†ä¹Ÿç”¨ä¸åˆ°äº†ï¼Œæ‰€ä»¥ä¹¾è„†ç”¨æ‰€ç¹¼æ‰¿çš„æ¨™æº–ç‰©ä»¶å–ä»£ï¼Œé€™æ¨£å¯ä»¥çœä¸‹
+ç‚ºæ•¸ä¸å°‘çš„è¨˜æ†¶é«”ã€‚
 
-    ÔÚÄ³Ð©ÇéÐÎÏÂ£¬Ò»¸ö±ê×¼Îï¼þÖ»ÊÇÁíÒ»¸ö±ê×¼Îï¼þÓëÒ»Ð©Îï¼þÌØÐÔµÄ×éºÏ£¬Æä
-Îï¼þ±¾Éí²¢²»¶¨ÒåÆäËûµÄº¯Êý£¬Èç npc.c£¬Ô­ÒòÊÇÒòÎªÎÒÃÇ¡¸³£³£»áÓÃµ½ÕâÑùµÄ×é
-ºÏ¡¹£¬Èç¹û½«ÕâÑùµÄ×éºÏ¶¨ÒåÎªÒ»¸ö±ê×¼Îï¼þ£¬¾Í¿ÉÒÔÓÃÇ°ÃæÌáµ½µÄÔÚ create()
-ÖÐÓÃ  replace_program Ê¡ÏÂ²»ÉÙ¼ÇÒäÌå£¬ÒòÎª±ê×¼Îï¼þµÄ³ÌÊ½ÔÚ¼ÇÒäÌåÖÐÖ»´æÒ»
-·Ý¶øÒÑ¡£
+    åœ¨æŸäº›æƒ…å½¢ä¸‹ï¼Œä¸€å€‹æ¨™æº–ç‰©ä»¶åªæ˜¯å¦ä¸€å€‹æ¨™æº–ç‰©ä»¶èˆ‡ä¸€äº›ç‰©ä»¶ç‰¹æ€§çš„çµ„åˆï¼Œå…¶
+ç‰©ä»¶æœ¬èº«ä¸¦ä¸å®šç¾©å…¶ä»–çš„å‡½æ•¸ï¼Œå¦‚ npc.cï¼ŒåŽŸå› æ˜¯å› ç‚ºæˆ‘å€‘ã€Œå¸¸å¸¸æœƒç”¨åˆ°é€™æ¨£çš„çµ„
+åˆã€ï¼Œå¦‚æžœå°‡é€™æ¨£çš„çµ„åˆå®šç¾©ç‚ºä¸€å€‹æ¨™æº–ç‰©ä»¶ï¼Œå°±å¯ä»¥ç”¨å‰é¢æåˆ°çš„åœ¨ create()
+ä¸­ç”¨  replace_program çœä¸‹ä¸å°‘è¨˜æ†¶é«”ï¼Œå› ç‚ºæ¨™æº–ç‰©ä»¶çš„ç¨‹å¼åœ¨è¨˜æ†¶é«”ä¸­åªå­˜ä¸€
+ä»½è€Œå·²ã€‚
 
-¡õ Îï¼þÌØÐÔ (features)
+â–¡ ç‰©ä»¶ç‰¹æ€§ (features)
 
-    Ò²¾ÍÊÇ /feature ÏÂµÄÎï¼þ£¬ÕâÐ©Îï¼þÖ»ÊÇÌá¹©µ¥Ò»µÄÊôÐÔÄ£×é£¬ÊÇ´¿´âÓÃÀ´
-±»¼Ì³ÐµÄÎï¼þ£¬µ±È»£¬¾ø¶Ô²»Ó¦¸ÃÈ¥ clone Ëü£¬ÄãÖ»ÄÜ¼Ì³ÐËü¡£
+    ä¹Ÿå°±æ˜¯ /feature ä¸‹çš„ç‰©ä»¶ï¼Œé€™äº›ç‰©ä»¶åªæ˜¯æä¾›å–®ä¸€çš„å±¬æ€§æ¨¡çµ„ï¼Œæ˜¯ç´”ç²¹ç”¨ä¾†
+è¢«ç¹¼æ‰¿çš„ç‰©ä»¶ï¼Œç•¶ç„¶ï¼Œçµ•å°ä¸æ‡‰è©²åŽ» clone å®ƒï¼Œä½ åªèƒ½ç¹¼æ‰¿å®ƒã€‚
 
-    ¶¨ÒåÎï¼þÌØÐÔµÄÔ­ÔòÊÇ¡¸Ä£×é»¯¡¹£¬Ò²¾ÍÊÇËµ£¬ÒªÄÜ¾¡Á¿ÔÚ¶ÀÁ¢ì¶±ê×¼Îï¼þÍâ
-µÄÇéÐÎÏÂ¹¤×÷£¬ËäÈ»ÍêÈ«¶ÀÁ¢ÊÇ²»¿ÉÄÜµÄ£¬µ«¡¸¾¡Á¿¾ÍÊÇ¡¹¡£Îï¼þÌØÐÔ£¬¹ËÃûË¼Òå
-£¬Ìá¹©µÄÊÇÒ»ÏîÌØÐÔ(Èç equip.c)¡¢ÌØÊâ¹¦ÄÜ(Èç alias.c, more.c)¡¢»òÒ»Ð©Ïà»¥
-¹ØÁ¬ÃÜÇÐµÄº¯Êý×é³ÉµÄÄ£×é(Èç attack.c) £¬Èç¹ûËùÒªÃèÊöµÄÌØÐÔ¾ßÓÐÄÜÈÃÐí¶à²»
-Í¬Îï¼þÊ¹ÓÃµÄÐÔÖÊ£¬Ó¦¸ÃÓÅÏÈ°ÑËüÐ´³ÉÒ»¸öÎï¼þÌØÐÔ£¬·´Ö®£¬Ôò°ÑËüÐ´³ÉÒ»¸ö±ê×¼
-Îï¼þ¡£
+    å®šç¾©ç‰©ä»¶ç‰¹æ€§çš„åŽŸå‰‡æ˜¯ã€Œæ¨¡çµ„åŒ–ã€ï¼Œä¹Ÿå°±æ˜¯èªªï¼Œè¦èƒ½ç›¡é‡åœ¨ç¨ç«‹æ–¼æ¨™æº–ç‰©ä»¶å¤–
+çš„æƒ…å½¢ä¸‹å·¥ä½œï¼Œé›–ç„¶å®Œå…¨ç¨ç«‹æ˜¯ä¸å¯èƒ½çš„ï¼Œä½†ã€Œç›¡é‡å°±æ˜¯ã€ã€‚ç‰©ä»¶ç‰¹æ€§ï¼Œé¡§åæ€ç¾©
+ï¼Œæä¾›çš„æ˜¯ä¸€é …ç‰¹æ€§(å¦‚ equip.c)ã€ç‰¹æ®ŠåŠŸèƒ½(å¦‚ alias.c, more.c)ã€æˆ–ä¸€äº›ç›¸äº’
+é—œé€£å¯†åˆ‡çš„å‡½æ•¸çµ„æˆçš„æ¨¡çµ„(å¦‚ attack.c) ï¼Œå¦‚æžœæ‰€è¦æè¿°çš„ç‰¹æ€§å…·æœ‰èƒ½è®“è¨±å¤šä¸
+åŒç‰©ä»¶ä½¿ç”¨çš„æ€§è³ªï¼Œæ‡‰è©²å„ªå…ˆæŠŠå®ƒå¯«æˆä¸€å€‹ç‰©ä»¶ç‰¹æ€§ï¼Œåä¹‹ï¼Œå‰‡æŠŠå®ƒå¯«æˆä¸€å€‹æ¨™æº–
+ç‰©ä»¶ã€‚
 
-    ºÃÁË£¬¿´ÁËÕâ÷á¶àÎÄÖßÖßµÄ¶¨Òå£¬ÎÒÃÇÓÃÒ»¸öÀý×ÓÀ´½âÊÍ¡¸±ê×¼Îï¼þ¡¹ºÍ¡¸Îï
-¼þÌØÐÔ¡¹µÄÒâÒå¡£±È·½ËµÎÒÃÇÒªÐ´Ò»¸öÄÜ¹»×°±¸µÄ½£Ö®¾«Áé(ÉúÎï)£¬ÓÃÒÔÏÂµÄ¼Ì³Ð
-·½Ê½¶¨Òå£º
+    å¥½äº†ï¼Œçœ‹äº†é€™éº¼å¤šæ–‡è¬…è¬…çš„å®šç¾©ï¼Œæˆ‘å€‘ç”¨ä¸€å€‹ä¾‹å­ä¾†è§£é‡‹ã€Œæ¨™æº–ç‰©ä»¶ã€å’Œã€Œç‰©
+ä»¶ç‰¹æ€§ã€çš„æ„ç¾©ã€‚æ¯”æ–¹èªªæˆ‘å€‘è¦å¯«ä¸€å€‹èƒ½å¤ è£å‚™çš„åŠä¹‹ç²¾éˆ(ç”Ÿç‰©)ï¼Œç”¨ä»¥ä¸‹çš„ç¹¼æ‰¿
+æ–¹å¼å®šç¾©ï¼š
 
-    inherit NPC;        // ±ê×¼Îï¼þ NPC
-    inherit F_EQUIP;    // Îï¼þÌØÐÔ ¡¸¿É×°±¸¡¹
+    inherit NPC;        // æ¨™æº–ç‰©ä»¶ NPC
+    inherit F_EQUIP;    // ç‰©ä»¶ç‰¹æ€§ ã€Œå¯è£å‚™ã€
 
-    ´ÏÃ÷µÄÄã£¬µ½ÕâÀïÓ¦¸Ã¿´µÃ³öÕâÖÖ×éºÏµÄµ¯ÐÔÁË°É£¬ÒòÎª  NPC ²¢²»¾ßÓÐÄÜÈÃ
-²»Í¬Îï¼þÊ¹ÓÃµÄÐÔÖÊ£¬Òò´ËÎÒÃÇ°ÑËüÐ´³É±ê×¼Îï¼þ£¬¶ø¡¸¿É×°±¸¡¹ÒòÎª¾ßÓÐÕâÖÖÐÔ
-ÖÊ£¬ËùÒÔÐ´³ÉÒ»¸öÎï¼þÌØÐÔ£¬Èç¹ûÔÚ´«Í³µÄ mudlib £¬monster.c Óë weapon.c ¶¼
-ÊÇ¡¸±ê×¼Îï¼þ¡¹ÐÍµÄÎï¼þ£¬¾ÍËãÓÐÄÄÎ»Î×Ê¦µ¨¸ÒÍ¬Ê±¼Ì³ÐÕâÁ½¸öµµ°¸£¬áá¹ûÒ»¶¨Ïà
-µ±¿ÉÅÂ¡£
+    è°æ˜Žçš„ä½ ï¼Œåˆ°é€™è£¡æ‡‰è©²çœ‹å¾—å‡ºé€™ç¨®çµ„åˆçš„å½ˆæ€§äº†å§ï¼Œå› ç‚º  NPC ä¸¦ä¸å…·æœ‰èƒ½è®“
+ä¸åŒç‰©ä»¶ä½¿ç”¨çš„æ€§è³ªï¼Œå› æ­¤æˆ‘å€‘æŠŠå®ƒå¯«æˆæ¨™æº–ç‰©ä»¶ï¼Œè€Œã€Œå¯è£å‚™ã€å› ç‚ºå…·æœ‰é€™ç¨®æ€§
+è³ªï¼Œæ‰€ä»¥å¯«æˆä¸€å€‹ç‰©ä»¶ç‰¹æ€§ï¼Œå¦‚æžœåœ¨å‚³çµ±çš„ mudlib ï¼Œmonster.c èˆ‡ weapon.c éƒ½
+æ˜¯ã€Œæ¨™æº–ç‰©ä»¶ã€åž‹çš„ç‰©ä»¶ï¼Œå°±ç®—æœ‰å“ªä½å·«å¸«è†½æ•¢åŒæ™‚ç¹¼æ‰¿é€™å…©å€‹æª”æ¡ˆï¼Œå¾Œæžœä¸€å®šç›¸
+ç•¶å¯æ€•ã€‚
 
-    Èç¹ûÄãÏ¸ÐÄµÄ»°£¬ÆäÊµ¿ÉÒÔ·¢ÏÖ·ÖÎöµ½×îáá£¬Ò»¸ö×î»ù±¾µÄ±ê×¼Îï¼þÖ»ÊÇ¼¸¸ö
-Îï¼þÌØÐÔµÄ×éºÏ£¬ËùÎ½µÄ±ê×¼Îï¼þÊÂÊµÉÏÊÇ½«Ò»Ð©Îï¼þÌØÐÔ¡¸°ü×°¡¹ÆðÀ´£¬ËùÒÔÀí
-ÏëÖÐÓ¦¸Ã¡¸¾¡Á¿±ÜÃâ¡¹ÔÚ±ê×¼Îï¼þÖÐ¶¨Òåº¯Êý£¬µ«ÊÇÒ²²»±Ø¹ý·ÖµØÓ²½«ËùÓÐµÄ±ê×¼
-Îï¼þ²ð¿ª³ÉÒ»Ð©Ææ¹ÖµÄÎï¼þÌØÐÔ£¬ÕâÐ©¶«Î÷¿ÉÄÜºÍÓÎÏ·ÏµÍ³¹æ»®ÕßµÄË¼¿¼·½Ê½Óë¸ö
-ÈËÏ²ºÃÓÐ¹Ø£¬×Ü¶øÑÔÖ®£¬¡¸¼òµ¥¡¹¡¸ºÏÀí¡¹¡¸¸»µ¯ÐÔ¡¹Ó¦¸ÃÊÇÉè¼Æ¼Ì³Ð½á¹¹µÄÖ÷Òª
-¿¼Á¿¡£
+    å¦‚æžœä½ ç´°å¿ƒçš„è©±ï¼Œå…¶å¯¦å¯ä»¥ç™¼ç¾åˆ†æžåˆ°æœ€å¾Œï¼Œä¸€å€‹æœ€åŸºæœ¬çš„æ¨™æº–ç‰©ä»¶åªæ˜¯å¹¾å€‹
+ç‰©ä»¶ç‰¹æ€§çš„çµ„åˆï¼Œæ‰€è¬‚çš„æ¨™æº–ç‰©ä»¶äº‹å¯¦ä¸Šæ˜¯å°‡ä¸€äº›ç‰©ä»¶ç‰¹æ€§ã€ŒåŒ…è£ã€èµ·ä¾†ï¼Œæ‰€ä»¥ç†
+æƒ³ä¸­æ‡‰è©²ã€Œç›¡é‡é¿å…ã€åœ¨æ¨™æº–ç‰©ä»¶ä¸­å®šç¾©å‡½æ•¸ï¼Œä½†æ˜¯ä¹Ÿä¸å¿…éŽåˆ†åœ°ç¡¬å°‡æ‰€æœ‰çš„æ¨™æº–
+ç‰©ä»¶æ‹†é–‹æˆä¸€äº›å¥‡æ€ªçš„ç‰©ä»¶ç‰¹æ€§ï¼Œé€™äº›æ±è¥¿å¯èƒ½å’ŒéŠæˆ²ç³»çµ±è¦åŠƒè€…çš„æ€è€ƒæ–¹å¼èˆ‡å€‹
+äººå–œå¥½æœ‰é—œï¼Œç¸½è€Œè¨€ä¹‹ï¼Œã€Œç°¡å–®ã€ã€Œåˆç†ã€ã€Œå¯Œå½ˆæ€§ã€æ‡‰è©²æ˜¯è¨­è¨ˆç¹¼æ‰¿çµæ§‹çš„ä¸»è¦
+è€ƒé‡ã€‚
 
-¡õ ¼¼ÄÜÏµÍ³
+â–¡ æŠ€èƒ½ç³»çµ±
 
-ÎÒÃÇÊ¹ÓÃµÄ¼¼ÄÜÏµÍ³ÊÇÊôì¶¶àÔª³É³¤Í¾¾¶µÄÏµÍ³£¬ÓÐ±ðì¶´«Í³ÓÃ¾­ÑéÖµ»»È¡µÈ¼¶µÄ
-·½Ê½£¬Ò»¸ö¼¼ÄÜÓÉÁ½¸öÊýÖµÀ´ÃèÊö£º¡¸µÈ¼¶¡¹Óë¡¸Ñ§Ï°µãÊý¡¹£¬Æ½³£Ê¹ÓÃÊ±Ö»¿´µÈ
-¼¶£¬Ñ§Ï°µãÊýÍêÈ«²»Ó°Ïì¼¼ÄÜµÄÐ§Á¦¡£
+æˆ‘å€‘ä½¿ç”¨çš„æŠ€èƒ½ç³»çµ±æ˜¯å±¬æ–¼å¤šå…ƒæˆé•·é€”å¾‘çš„ç³»çµ±ï¼Œæœ‰åˆ¥æ–¼å‚³çµ±ç”¨ç¶“é©—å€¼æ›å–ç­‰ç´šçš„
+æ–¹å¼ï¼Œä¸€å€‹æŠ€èƒ½ç”±å…©å€‹æ•¸å€¼ä¾†æè¿°ï¼šã€Œç­‰ç´šã€èˆ‡ã€Œå­¸ç¿’é»žæ•¸ã€ï¼Œå¹³å¸¸ä½¿ç”¨æ™‚åªçœ‹ç­‰
+ç´šï¼Œå­¸ç¿’é»žæ•¸å®Œå…¨ä¸å½±éŸ¿æŠ€èƒ½çš„æ•ˆåŠ›ã€‚
 
-ÓÉì¶¼¼ÄÜµÄÐÔÖÊ²»Í¬£¬ÎÒÃÇ½«¼¼ÄÜ·ÖÎªÁ½´óÀà£º»ù±¾¼¼ÄÜ¸úÌØÊâ¼¼ÄÜ£¬»ù±¾¼¼ÄÜÓÖ
-¿ÉÒÔ³ÆÎª¼¼ÄÜÖÖÀà£¬ËùÓÐµÄÌØÊâ¼¼ÄÜ¶¼±ØÐëÓÐÖÁÉÙÒ»ÖÖµÄ»ù±¾¼¼ÄÜÎª»ù´¡£¬¾ÙÀýÀ´
-Ëµ£¬¡¸xx½£·¨¡¹ÊÇÒ»ÖÖÌØÊâ¼¼ÄÜ£¬ÒÔ¡¸»ù±¾½£Êõ¡¹¡¢¡¸²ðÕÐÐ¶Á¦Ö®·¨¡¹Îª»ù´¡£¬Õâ
-¸öÒâË¼ÊÇËµ£¬ÕâÖÖ½£·¨¿ÉÒÔ±»¡¸Ê¹ÓÃ¡¹ÔÚ½£ÊõÓë²ðÕÐÐ¶Á¦µÄÓÃÍ¾ÉÏ£¬²¢²»ÊÇËµ±ØÐë
-ÏÈÑ§¹ý»ù±¾½£ÊõÓë²ðÕÐÐ¶Á¦Ö®·¨²ÅÄÜÑ§Õâ¸ö½£Êõ£¬ÓÐ¹Ø¼¼ÄÜµÄÑ§Ï°ÏÞÖÆÍêÈ«ÓÉ¼¼ÄÜ
-±¾Éí¶¨Òå£¬ÏµÍ³²»Ô¤×÷¼ÙÉè¡£
+ç”±æ–¼æŠ€èƒ½çš„æ€§è³ªä¸åŒï¼Œæˆ‘å€‘å°‡æŠ€èƒ½åˆ†ç‚ºå…©å¤§é¡žï¼šåŸºæœ¬æŠ€èƒ½è·Ÿç‰¹æ®ŠæŠ€èƒ½ï¼ŒåŸºæœ¬æŠ€èƒ½åˆ
+å¯ä»¥ç¨±ç‚ºæŠ€èƒ½ç¨®é¡žï¼Œæ‰€æœ‰çš„ç‰¹æ®ŠæŠ€èƒ½éƒ½å¿…é ˆæœ‰è‡³å°‘ä¸€ç¨®çš„åŸºæœ¬æŠ€èƒ½ç‚ºåŸºç¤Žï¼Œèˆ‰ä¾‹ä¾†
+èªªï¼Œã€ŒxxåŠæ³•ã€æ˜¯ä¸€ç¨®ç‰¹æ®ŠæŠ€èƒ½ï¼Œä»¥ã€ŒåŸºæœ¬åŠè¡“ã€ã€ã€Œæ‹†æ‹›å¸åŠ›ä¹‹æ³•ã€ç‚ºåŸºç¤Žï¼Œé€™
+å€‹æ„æ€æ˜¯èªªï¼Œé€™ç¨®åŠæ³•å¯ä»¥è¢«ã€Œä½¿ç”¨ã€åœ¨åŠè¡“èˆ‡æ‹†æ‹›å¸åŠ›çš„ç”¨é€”ä¸Šï¼Œä¸¦ä¸æ˜¯èªªå¿…é ˆ
+å…ˆå­¸éŽåŸºæœ¬åŠè¡“èˆ‡æ‹†æ‹›å¸åŠ›ä¹‹æ³•æ‰èƒ½å­¸é€™å€‹åŠè¡“ï¼Œæœ‰é—œæŠ€èƒ½çš„å­¸ç¿’é™åˆ¶å®Œå…¨ç”±æŠ€èƒ½
+æœ¬èº«å®šç¾©ï¼Œç³»çµ±ä¸é ä½œå‡è¨­ã€‚
 
-Í¨³£ÎÒÃÇ¹«Ê½ÖÐ¼ÆËã¼¼ÄÜµÈ¼¶µÄÊ±ºò£¬Ê¹ÓÃµÄÊÇÒ»ÖÖ³ÆÎª¡¸ÓÐÐ§µÈ¼¶¡¹µÄ¼ÆËã·½Ê½
-£¬ËùÎ½µÄÓÐÐ§µÈ¼¶£¬ÊÇÒÔ¡¸¼¼ÄÜÖÖÀà¡¹(»ù±¾¼¼ÄÜ)ÎªË÷ÒýµÄ£¬ÌØÊâ¼¼ÄÜÃ»ÓÐÓÐÐ§µÈ
-¼¶£¬ÒòÎªÓÐÐ§µÈ¼¶µÄ¼ÆËãÊÇºÏ²¢ ¡õ »ù±¾¼¼ÄÜ¡¢¡õ ±»¡¸ÖÂÄÜ¡¹µÄÌØÊâ¼¼ÄÜ£¬ ÒÔ¼°
- ¡õ ×°±¸¡¢·¨ÊõµÈÆäËûÓ°Ïì£¬Ëù¼ÆËã³öÀ´µÄ£¬ÆäÖÐ»ù±¾¼¼ÄÜµÄµÈ¼¶ÒÔ¶þ·ÖÖ®Ò»¼ÆËã
-£¬ÌØÊâ¼¼ÄÜÒÔÔ­À´µÈ¼¶¼ÆËã£¬×°±¸¼°ÆäËû·¨ÊõÓ°ÏìÒÔÐÞÕýÖµ¼ÆËã(¿ÉÕý¿É¸º)¡£´ó¸Å
-µÄ¹«Ê½ÈçÏÂ£º
+é€šå¸¸æˆ‘å€‘å…¬å¼ä¸­è¨ˆç®—æŠ€èƒ½ç­‰ç´šçš„æ™‚å€™ï¼Œä½¿ç”¨çš„æ˜¯ä¸€ç¨®ç¨±ç‚ºã€Œæœ‰æ•ˆç­‰ç´šã€çš„è¨ˆç®—æ–¹å¼
+ï¼Œæ‰€è¬‚çš„æœ‰æ•ˆç­‰ç´šï¼Œæ˜¯ä»¥ã€ŒæŠ€èƒ½ç¨®é¡žã€(åŸºæœ¬æŠ€èƒ½)ç‚ºç´¢å¼•çš„ï¼Œç‰¹æ®ŠæŠ€èƒ½æ²’æœ‰æœ‰æ•ˆç­‰
+ç´šï¼Œå› ç‚ºæœ‰æ•ˆç­‰ç´šçš„è¨ˆç®—æ˜¯åˆä¸¦ â–¡ åŸºæœ¬æŠ€èƒ½ã€â–¡ è¢«ã€Œè‡´èƒ½ã€çš„ç‰¹æ®ŠæŠ€èƒ½ï¼Œ ä»¥åŠ
+ â–¡ è£å‚™ã€æ³•è¡“ç­‰å…¶ä»–å½±éŸ¿ï¼Œæ‰€è¨ˆç®—å‡ºä¾†çš„ï¼Œå…¶ä¸­åŸºæœ¬æŠ€èƒ½çš„ç­‰ç´šä»¥äºŒåˆ†ä¹‹ä¸€è¨ˆç®—
+ï¼Œç‰¹æ®ŠæŠ€èƒ½ä»¥åŽŸä¾†ç­‰ç´šè¨ˆç®—ï¼Œè£å‚™åŠå…¶ä»–æ³•è¡“å½±éŸ¿ä»¥ä¿®æ­£å€¼è¨ˆç®—(å¯æ­£å¯è² )ã€‚å¤§æ¦‚
+çš„å…¬å¼å¦‚ä¸‹ï¼š
 
-  ÓÐÐ§µÈ¼¶ = (»ù±¾¼¼ÄÜ / 2) + ÌØÊâ¼¼ÄÜ(enabled) + ÐÞÕýÖµ
+  æœ‰æ•ˆç­‰ç´š = (åŸºæœ¬æŠ€èƒ½ / 2) + ç‰¹æ®ŠæŠ€èƒ½(enabled) + ä¿®æ­£å€¼
 
-´ó¶àÊýµÄ¹«Ê½ÖÐËù³ÆµÄ¡¸¼¼ÄÜµÈ¼¶¡¹Ö¸µÄ±ãÊÇÉÏÃæµÄÓÐÐ§µÈ¼¶¡£
+å¤§å¤šæ•¸çš„å…¬å¼ä¸­æ‰€ç¨±çš„ã€ŒæŠ€èƒ½ç­‰ç´šã€æŒ‡çš„ä¾¿æ˜¯ä¸Šé¢çš„æœ‰æ•ˆç­‰ç´šã€‚
 
-¡õ ¼¼ÄÜ¶¨Òå
+â–¡ æŠ€èƒ½å®šç¾©
 
-ËùÓÐµÄ¼¼ÄÜ°üÀ¨»ù±¾¼¼ÄÜÓëÌØÊâ¼¼ÄÜ£¬ÎÒÃÇ¶¼ÓÃÒ»¸öÎï¼þÀ´¶¨Òå£¬¶¨Òå¼¼ÄÜµÄÎï¼þ
-±ØÐë¼Ì³Ð±ê×¼¼¼ÄÜÎï¼þ SKILL£¬²¢ÇÒ¶¨ÒåÒÔÏÂ¼¸¸öº¯Êý£º
+æ‰€æœ‰çš„æŠ€èƒ½åŒ…æ‹¬åŸºæœ¬æŠ€èƒ½èˆ‡ç‰¹æ®ŠæŠ€èƒ½ï¼Œæˆ‘å€‘éƒ½ç”¨ä¸€å€‹ç‰©ä»¶ä¾†å®šç¾©ï¼Œå®šç¾©æŠ€èƒ½çš„ç‰©ä»¶
+å¿…é ˆç¹¼æ‰¿æ¨™æº–æŠ€èƒ½ç‰©ä»¶ SKILLï¼Œä¸¦ä¸”å®šç¾©ä»¥ä¸‹å¹¾å€‹å‡½æ•¸ï¼š
 
 string type()
 
-  ´«»Ø¼¼ÄÜµÄÐÍÌ¬£¬Ä¿Ç°ÓÐ "knowledge"¡¢"martial" Á½ÖÖ£¬ÆäÖÐ "martial" ÐÍÌ¬
-  µÄ¼¼ÄÜ learn Ö¸Áî»á×Ô¶¯ÏÞÖÆµ±ÊµÕ½¾­ÑéÐ¡ì¶¼¼ÄÜ(²»ÊÇÓÐÐ§¼¼ÄÜ)Èý´Î·½µÄÊ±ºò
-  ²»ÄÜÑ§Ï°¡£
+  å‚³å›žæŠ€èƒ½çš„åž‹æ…‹ï¼Œç›®å‰æœ‰ "knowledge"ã€"martial" å…©ç¨®ï¼Œå…¶ä¸­ "martial" åž‹æ…‹
+  çš„æŠ€èƒ½ learn æŒ‡ä»¤æœƒè‡ªå‹•é™åˆ¶ç•¶å¯¦æˆ°ç¶“é©—å°æ–¼æŠ€èƒ½(ä¸æ˜¯æœ‰æ•ˆæŠ€èƒ½)ä¸‰æ¬¡æ–¹çš„æ™‚å€™
+  ä¸èƒ½å­¸ç¿’ã€‚
 
 int valid_learn(object me)
 
-  ¼ì²é me ÊÇ·ñÓÐÑ§Ï°ÕâÏî¼¼ÄÜµÄÌõ¼þ£¬ÕâÀïµÄÑ§Ï°°üÀ¨ learn, study, practice
-  £¬µ«ÊÇ²»°üÀ¨¾­ÓÉÊ¹ÓÃ¶ø½ø²½µÄÇéÐÎ¡£Èç¹ûºÏºõÌõ¼þ£¬´«»Ø 1£¬·ñÔò´«»Ø 0¡£
+  æª¢æŸ¥ me æ˜¯å¦æœ‰å­¸ç¿’é€™é …æŠ€èƒ½çš„æ¢ä»¶ï¼Œé€™è£¡çš„å­¸ç¿’åŒ…æ‹¬ learn, study, practice
+  ï¼Œä½†æ˜¯ä¸åŒ…æ‹¬ç¶“ç”±ä½¿ç”¨è€Œé€²æ­¥çš„æƒ…å½¢ã€‚å¦‚æžœåˆä¹Žæ¢ä»¶ï¼Œå‚³å›ž 1ï¼Œå¦å‰‡å‚³å›ž 0ã€‚
 
 int valid_enable(string usage)
 
-  ¼ì²éÕâ¸ö¼¼ÄÜÊÇ·ñ¿ÉÒÔÓÃÔÚ usage µÄÓÃÍ¾ÉÏ£¬ÈôÊÇ£¬´«»Ø 1£¬·ñÔò´«»Ø 0¡£
+  æª¢æŸ¥é€™å€‹æŠ€èƒ½æ˜¯å¦å¯ä»¥ç”¨åœ¨ usage çš„ç”¨é€”ä¸Šï¼Œè‹¥æ˜¯ï¼Œå‚³å›ž 1ï¼Œå¦å‰‡å‚³å›ž 0ã€‚
 
 int practice_skill(object me)
 
-  ÈÃÒ»¸öÈËÎï¡¸Á·Ï°¡¹Ò»¸ö¼¼ÄÜ£¬Õâ¸öº¯ÊýÊÇÓÉ practice Ö¸Áîºô½Ð£¬×÷Îª¼¼ÄÜÎï¼þ
-  µÄ´¦Àíº¯Êý¡£
+  è®“ä¸€å€‹äººç‰©ã€Œç·´ç¿’ã€ä¸€å€‹æŠ€èƒ½ï¼Œé€™å€‹å‡½æ•¸æ˜¯ç”± practice æŒ‡ä»¤å‘¼å«ï¼Œä½œç‚ºæŠ€èƒ½ç‰©ä»¶
+  çš„è™•ç†å‡½æ•¸ã€‚
 
 void skill_improved(object me)
 
-  Ã¿µ±Ò»¸öÈËÎïµÄ¼¼ÄÜµÈ¼¶ÌáÉýÁË£¬¾Í»áºô½ÐÕâ¸öº¯Êý£¬Äã¿ÉÒÔÔÚÕâÀïÃæ×öÒ»Ð©¸úµÈ
-  ¼¶Ïà¹ØµÄ¸Ä±ä»ò½±Àø¡£
+  æ¯ç•¶ä¸€å€‹äººç‰©çš„æŠ€èƒ½ç­‰ç´šæå‡äº†ï¼Œå°±æœƒå‘¼å«é€™å€‹å‡½æ•¸ï¼Œä½ å¯ä»¥åœ¨é€™è£¡é¢åšä¸€äº›è·Ÿç­‰
+  ç´šç›¸é—œçš„æ”¹è®Šæˆ–çŽå‹µã€‚
 
-¡õ Îï¼þÌØÐÔ
+â–¡ ç‰©ä»¶ç‰¹æ€§
 
-    Îï¼þÌØÐÔµÄÊ¹ÓÃ·½·¨´ó²¿·ÖÊÇ¾­ÓÉÌØ¶¨º¯Êý£¬Ã¿¸öÎï¼þÌØÐÔ¸÷²»ÏàÍ¬£¬Òò´Ë
-ÕâÀïÒ²Ã»Ê²÷áºÃËµµÄ£¬Ö»ÊÇÌá¹©¼¸¸öÒÔááµ±ÄãÒª¼ÓÈëÐÂµÄÎï¼þÌØÐÔÊ±£¬×îºÃÒª×ñ
-ÊØµÄÔ­Ôò£º
+    ç‰©ä»¶ç‰¹æ€§çš„ä½¿ç”¨æ–¹æ³•å¤§éƒ¨åˆ†æ˜¯ç¶“ç”±ç‰¹å®šå‡½æ•¸ï¼Œæ¯å€‹ç‰©ä»¶ç‰¹æ€§å„ä¸ç›¸åŒï¼Œå› æ­¤
+é€™è£¡ä¹Ÿæ²’ä»€éº¼å¥½èªªçš„ï¼Œåªæ˜¯æä¾›å¹¾å€‹ä»¥å¾Œç•¶ä½ è¦åŠ å…¥æ–°çš„ç‰©ä»¶ç‰¹æ€§æ™‚ï¼Œæœ€å¥½è¦éµ
+å®ˆçš„åŽŸå‰‡ï¼š
 
-(1) ¼òµ¥
+(1) ç°¡å–®
 
-    µ±Äã·¢ÏÖÒ»¸öÎï¼þÌØÐÔÐ´ÏÂÀ´½«ÊÇÒ»¸ö 10K ÒÔÉÏµÄ´óµµ°¸Ê±£¬Ïë°ì·¨Ëõ¶Ì
-    »ò²ð³ÉÁ½¸öÌØÐÔ£¬¾¡Á¿Î¬³ÖÒ»¸öÌØÐÔËùÌá¹©µÄ¹¦ÄÜµ¥´¿»¯¡£
+    ç•¶ä½ ç™¼ç¾ä¸€å€‹ç‰©ä»¶ç‰¹æ€§å¯«ä¸‹ä¾†å°‡æ˜¯ä¸€å€‹ 10K ä»¥ä¸Šçš„å¤§æª”æ¡ˆæ™‚ï¼Œæƒ³è¾¦æ³•ç¸®çŸ­
+    æˆ–æ‹†æˆå…©å€‹ç‰¹æ€§ï¼Œç›¡é‡ç¶­æŒä¸€å€‹ç‰¹æ€§æ‰€æä¾›çš„åŠŸèƒ½å–®ç´”åŒ–ã€‚
 
-(2) ¼ÇÒäÌå
+(2) è¨˜æ†¶é«”
 
-    ÇëÄã¼ÇµÃÎï¼þÌØÐÔÊÇ±»¼Ì³ÐµÄ£¬¶ø¼Ì³ÐÕâ¸öÌØÐÔµÄÎï¼þ½«»á copy Ò»·ÝËùÓÐ
-    Ðû¸æÔÚÕâ¸öÌØÐÔÖÐµÄ global variables £¬Òò´ËÈç¹ûÒ»¸öÌØÐÔÖÐÐèÒªÓÃµ½Ðí
-    ¶à¾ßÓÐ³£ÊýÐÔÖÊµÄ±äÊý( ¼´£¬Ö´ÐÐ¹ý³ÌÖÐ²»Ëæ¼Ì³ÐÕâ¸öÌØÐÔµÄÎï¼þ¶ø±ä )£¬
-    ÊÔÖøÓÃ daemon µÄÐÎÊ½ÒÔ½ÚÊ¡¼ÇÒäÌå£¬Èç ALIAS_D£¬SKILL_D µÈ¡£
+    è«‹ä½ è¨˜å¾—ç‰©ä»¶ç‰¹æ€§æ˜¯è¢«ç¹¼æ‰¿çš„ï¼Œè€Œç¹¼æ‰¿é€™å€‹ç‰¹æ€§çš„ç‰©ä»¶å°‡æœƒ copy ä¸€ä»½æ‰€æœ‰
+    å®£å‘Šåœ¨é€™å€‹ç‰¹æ€§ä¸­çš„ global variables ï¼Œå› æ­¤å¦‚æžœä¸€å€‹ç‰¹æ€§ä¸­éœ€è¦ç”¨åˆ°è¨±
+    å¤šå…·æœ‰å¸¸æ•¸æ€§è³ªçš„è®Šæ•¸( å³ï¼ŒåŸ·è¡ŒéŽç¨‹ä¸­ä¸éš¨ç¹¼æ‰¿é€™å€‹ç‰¹æ€§çš„ç‰©ä»¶è€Œè®Š )ï¼Œ
+    è©¦è‘—ç”¨ daemon çš„å½¢å¼ä»¥ç¯€çœè¨˜æ†¶é«”ï¼Œå¦‚ ALIAS_Dï¼ŒSKILL_D ç­‰ã€‚
 
-(3) Ð§ÂÊ
+(3) æ•ˆçŽ‡
 
-    ²ÉÓÃÎï¼þÌØÐÔµÄÒ»¸öÔ­Òò¾ÍÊÇ±ÜÃâ¡¸Éî²ã¼Ì³Ð¡¹£¬ËäÈ» driver ÔÚÖ´ÐÐÉÏ²¢
-    Ã»ÓÐÌ«´óµÄ²îÒì£¬µ«ÊÇ¶Ôì¶´ó²¿·ÖÎ×Ê¦¶øÑÔ£¬ÒªÁË½â»ò³ý´íÒ»¸ö¼Ì³ÐµÃÂÒÆß
-    °ËÔãµÄÎï¼þÊÇÏàµ±À§ÄÑµÄ£¬¾¡Á¿ÓÃ¡¸Ò»¸ö±ê×¼Îï¼þ¼ÓÈô¸É¸öÎï¼þÌØÐÔ¡¹µÄÄ£
-    Ê½È¥¶¨ÒåËùÓÐÎï¼þ¡£
+    æŽ¡ç”¨ç‰©ä»¶ç‰¹æ€§çš„ä¸€å€‹åŽŸå› å°±æ˜¯é¿å…ã€Œæ·±å±¤ç¹¼æ‰¿ã€ï¼Œé›–ç„¶ driver åœ¨åŸ·è¡Œä¸Šä¸¦
+    æ²’æœ‰å¤ªå¤§çš„å·®ç•°ï¼Œä½†æ˜¯å°æ–¼å¤§éƒ¨åˆ†å·«å¸«è€Œè¨€ï¼Œè¦äº†è§£æˆ–é™¤éŒ¯ä¸€å€‹ç¹¼æ‰¿å¾—äº‚ä¸ƒ
+    å…«ç³Ÿçš„ç‰©ä»¶æ˜¯ç›¸ç•¶å›°é›£çš„ï¼Œç›¡é‡ç”¨ã€Œä¸€å€‹æ¨™æº–ç‰©ä»¶åŠ è‹¥å¹¹å€‹ç‰©ä»¶ç‰¹æ€§ã€çš„æ¨¡
+    å¼åŽ»å®šç¾©æ‰€æœ‰ç‰©ä»¶ã€‚
 
-¡õ ACTION
+â–¡ ACTION
 
 varargs void start_busy(mixed new_busy, mixed new_interrupt)
 
 nomask int is_busy() { return busy != 0; }
-ÅÐ¶¨Ê¹ÓÃÕßÊÇ·ñÕýÃ¦Öø×öÄ³¼þÊÂ.
+åˆ¤å®šä½¿ç”¨è€…æ˜¯å¦æ­£å¿™è‘—åšæŸä»¶äº‹.
 
 void continue_action()
-Èç¹ûÕ½¶·ÖÐÊ¹ÓÃÕßÓÐ busy Öø¸ö flag, Ôò heart_beat() »á¸Äºô½ÐÕâ¸öº¯
-Êý.
+å¦‚æžœæˆ°é¬¥ä¸­ä½¿ç”¨è€…æœ‰ busy è‘—å€‹ flag, å‰‡ heart_beat() æœƒæ”¹å‘¼å«é€™å€‹å‡½
+æ•¸.
 
 This function will be called in the place of attack() during
 combat to indicate a person is in busy statue.
@@ -234,844 +234,844 @@ void interrupt_me(object who, string how)
 This function interrupts whatever the user is doing.
 
 int start_call_out(function fun, int delay)
-¿ªÊ¼Ö´ÐÐ call_out, ½«´«ÈëµÄº¯ÊýÃû³Æ¼°ÑÓ³ÙÊ±¼ä´«¸ø call_out() Õâ¸ö
-º¯Êý, ²¢ì¶Ê±¼äµ½Ê±Ö´ÐÐ¸Ãº¯Êý.
+é–‹å§‹åŸ·è¡Œ call_out, å°‡å‚³å…¥çš„å‡½æ•¸åç¨±åŠå»¶é²æ™‚é–“å‚³çµ¦ call_out() é€™å€‹
+å‡½æ•¸, ä¸¦æ–¼æ™‚é–“åˆ°æ™‚åŸ·è¡Œè©²å‡½æ•¸.
 
 void eval_function(function fun) { evaluate(fun); }
-Ö´ÐÐÄ³¸öº¯Êý.
+åŸ·è¡ŒæŸå€‹å‡½æ•¸.
 
 Evaluate the function named fun. (a fun function :)
 
-¡õ  ALIAS -- Ìæ´úÖ¸Áî
+â–¡  ALIAS -- æ›¿ä»£æŒ‡ä»¤
 
-MAX_REPEAT 30  : ×î¶àÍ¬Ò»¸öÖ¸Áî¿ÉÒÔÖØ¸²µÄÊýÁ¿.
-MAX_ALIASES 40 : ¿ÉÉè¶¨µÄÌæ´úÖ¸ÁîÊýÁ¿.
-HISTORY_BUFFER_SIZE 10 : ÏµÍ³¼ÇÒäÖ¸ÁîµÄÊýÁ¿.
+MAX_REPEAT 30  : æœ€å¤šåŒä¸€å€‹æŒ‡ä»¤å¯ä»¥é‡è¦†çš„æ•¸é‡.
+MAX_ALIASES 40 : å¯è¨­å®šçš„æ›¿ä»£æŒ‡ä»¤æ•¸é‡.
+HISTORY_BUFFER_SIZE 10 : ç³»çµ±è¨˜æ†¶æŒ‡ä»¤çš„æ•¸é‡.
 
 string process_input(string str)
-´¦ÀïÊäÈëÖ¸Áî.
-Èç¹ûÊ¹ÓÃÕßÒÑÊäÈë³¬¹ý MAX_REPEAT Ëù¶¨ÒåµÄÊýÁ¿µÄÏàÍ¬Ö¸Áî, ÏµÍ³»áÇ¿ÆÈÊ¹
-ÓÃÕßÀë¿ª.
-½ÓÏÂÀ´ÏµÍ³»áÅÐ¶¨Ê¹ÓÃÕßÊÇ·ñÒªÖØ¸²Ê¹ÓÃÇ°ÃæÓÃ¹ýµÄÖ¸Áî, ÔÙÀ´»áºË¶ÔÊ¹ÓÃÕß
-×Ô¼ºËùÉè¶¨µÄÌæ´úÖ¸Áî±í, ÈôÓÐÕÒµ½·ûºÏµÄÔò½«ÊäÈëµÄÌæ´úÖ¸ÁîÀ©ÕÅÎªÍêÕûµÄ
-Ö¸Áî. ´«»ØÖµÎª´¦Àí¹ýááµÄÊäÈëÖ¸Áî. ÈôÒÔÉÏÌõ¼þ¶¼²»·ûºÏÔòºô½Ð ALIAS_D
-µÄ process_global_alias() º¯Êý²¢½«½á¹û×öÎª´Ëº¯ÊýµÄ´«»ØÖµ.
+è™•è£¡è¼¸å…¥æŒ‡ä»¤.
+å¦‚æžœä½¿ç”¨è€…å·²è¼¸å…¥è¶…éŽ MAX_REPEAT æ‰€å®šç¾©çš„æ•¸é‡çš„ç›¸åŒæŒ‡ä»¤, ç³»çµ±æœƒå¼·è¿«ä½¿
+ç”¨è€…é›¢é–‹.
+æŽ¥ä¸‹ä¾†ç³»çµ±æœƒåˆ¤å®šä½¿ç”¨è€…æ˜¯å¦è¦é‡è¦†ä½¿ç”¨å‰é¢ç”¨éŽçš„æŒ‡ä»¤, å†ä¾†æœƒæ ¸å°ä½¿ç”¨è€…
+è‡ªå·±æ‰€è¨­å®šçš„æ›¿ä»£æŒ‡ä»¤è¡¨, è‹¥æœ‰æ‰¾åˆ°ç¬¦åˆçš„å‰‡å°‡è¼¸å…¥çš„æ›¿ä»£æŒ‡ä»¤æ“´å¼µç‚ºå®Œæ•´çš„
+æŒ‡ä»¤. å‚³å›žå€¼ç‚ºè™•ç†éŽå¾Œçš„è¼¸å…¥æŒ‡ä»¤. è‹¥ä»¥ä¸Šæ¢ä»¶éƒ½ä¸ç¬¦åˆå‰‡å‘¼å« ALIAS_D
+çš„ process_global_alias() å‡½æ•¸ä¸¦å°‡çµæžœåšç‚ºæ­¤å‡½æ•¸çš„å‚³å›žå€¼.
 
 int set_alias(string verb, string replace)
-½«ÐÂµÄÌæ´úÖ¸Áî¼ÓÈëÌæ´úÖ¸ÁîÁÐ±í. ÈôÃ»ÓÐ´«ÈëµÚ¶þ¸ö²ÎÊý, ÔòÈ¡ÏûËù´«ÈëÖ®
-Ìæ´úÖ¸ÁîµÄÉè¶¨, ²¢È·¶¨Ê¹ÓÃÕßÃ»ÓÐ³¬¹ýÌæ´úÖ¸ÁîÊýÁ¿µÄÉÏÏÞ.
+å°‡æ–°çš„æ›¿ä»£æŒ‡ä»¤åŠ å…¥æ›¿ä»£æŒ‡ä»¤åˆ—è¡¨. è‹¥æ²’æœ‰å‚³å…¥ç¬¬äºŒå€‹åƒæ•¸, å‰‡å–æ¶ˆæ‰€å‚³å…¥ä¹‹
+æ›¿ä»£æŒ‡ä»¤çš„è¨­å®š, ä¸¦ç¢ºå®šä½¿ç”¨è€…æ²’æœ‰è¶…éŽæ›¿ä»£æŒ‡ä»¤æ•¸é‡çš„ä¸Šé™.
 
 mapping query_all_alias()
-´«»ØÎï¼þËùÉè¶¨µÄÌæ´úÖ¸Áî.
+å‚³å›žç‰©ä»¶æ‰€è¨­å®šçš„æ›¿ä»£æŒ‡ä»¤.
 
-¡õAPPRENTICE
+â–¡APPRENTICE
 
 int is_apprentice_of(object ob)
-ÅÐ¶¨Ö¸¶¨ÈëÎï¼þÊÇ·ñÎª´«ÈëÎï¼þµÄµÜ×Ó.
+åˆ¤å®šæŒ‡å®šå…¥ç‰©ä»¶æ˜¯å¦ç‚ºå‚³å…¥ç‰©ä»¶çš„å¼Ÿå­.
 
 void assign_apprentice(string title, int privs)
-Éè¶¨Îï¼þÔÚËùÊôÃÅÅÉµØÎ»¼°Ì§Í·. -1 ±íÊ¾Îï¼þÎªÕÆÃÅÈË, 0 ±íÊÇÎï¼þÎªµÜ×Ó.
+è¨­å®šç‰©ä»¶åœ¨æ‰€å±¬é–€æ´¾åœ°ä½åŠæŠ¬é ­. -1 è¡¨ç¤ºç‰©ä»¶ç‚ºæŽŒé–€äºº, 0 è¡¨æ˜¯ç‰©ä»¶ç‚ºå¼Ÿå­.
 
 void create_family(string family_name, int generation, string title)
-½¨Á¢Ò»¸ö mapping À´´¢´æÎï¼þµÄÃÅÅÉ×ÊÁÏ, ²¢Éè¶¨Ö¸¶¨Îï¼þÎªÕÆÃÅÈË.
+å»ºç«‹ä¸€å€‹ mapping ä¾†å„²å­˜ç‰©ä»¶çš„é–€æ´¾è³‡æ–™, ä¸¦è¨­å®šæŒ‡å®šç‰©ä»¶ç‚ºæŽŒé–€äºº.
 
 int recruit_apprentice(object ob)
-Éè¶¨´«ÈëÎï¼þÎªÖ¸¶¨Îï¼þµÄµÜ×Ó²¢Éè¶¨Ïà¹Ø×ÊÁÏ.
+è¨­å®šå‚³å…¥ç‰©ä»¶ç‚ºæŒ‡å®šç‰©ä»¶çš„å¼Ÿå­ä¸¦è¨­å®šç›¸é—œè³‡æ–™.
 
-¡õ F_AUTLOAD
+â–¡ F_AUTLOAD
 
 void clean_up_autoload()
-½« autoload ÕóÁÐÇå³ýµô.
+å°‡ autoload é™£åˆ—æ¸…é™¤æŽ‰.
 
 void save_autoload()
-¹ýÂÇËùÓÐÔÚÄ³Îï¼þ inventory ÖÐµÄÎïÆ·, Èç¹û query_autoload() ÓÐ´«»Ø
-ÖµÔò½«ÎïÆ·µÄµµ°¸Ãû³Æ¼°Æä´«»ØÖµ´æÈë autoload ÕóÁÐÖÐ.
+éŽæ…®æ‰€æœ‰åœ¨æŸç‰©ä»¶ inventory ä¸­çš„ç‰©å“, å¦‚æžœ query_autoload() æœ‰å‚³å›ž
+å€¼å‰‡å°‡ç‰©å“çš„æª”æ¡ˆåç¨±åŠå…¶å‚³å›žå€¼å­˜å…¥ autoload é™£åˆ—ä¸­.
 
 void restore_autoload()
-¶ÁÈ¡Ò»¸öÎï¼þµÄ autoload ÕóÁÐ²¢ÊÔÍ¼¸´ÖÆËù´æµÄÎïÆ·. ÈôÊ§°ÜÔò»áÏÔÊ¾´í
-ÎóÑ¶Ï¢²¢½«Ñ¶Ï¢´æÈë /log/AUTOLOAD µµÖÐ.
+è®€å–ä¸€å€‹ç‰©ä»¶çš„ autoload é™£åˆ—ä¸¦è©¦åœ–å¾©åˆ¶æ‰€å­˜çš„ç‰©å“. è‹¥å¤±æ•—å‰‡æœƒé¡¯ç¤ºéŒ¯
+èª¤è¨Šæ¯ä¸¦å°‡è¨Šæ¯å­˜å…¥ /log/AUTOLOAD æª”ä¸­.
 
-¡õ F_CLEAN_UP - Ìá¹©¼Ì³ÐÕâÏîÌØáçµÄÎï¼þÒ»¸ö±ê×¼µÄ clean_up º¯Êý¡£
+â–¡ F_CLEAN_UP - æä¾›ç¹¼æ‰¿é€™é …ç‰¹å¾µçš„ç‰©ä»¶ä¸€å€‹æ¨™æº–çš„ clean_up å‡½æ•¸ã€‚
 
-    Ã¿µ±Ò»¸öÎï¼þÔÚ¸ôÁËÒ»¶Î¹Ì¶¨³¤¶ÈÊ±¼äÃ»ÓÐ±»ÆäËûÎï¼þ²Î¿¼µ½£¬MudOS »áºô
-½Ð¸ÃÎï¼þµÄ clean_up º¯ÊýÒÔ¼ì²éÕâ¸öÎï¼þÊÇ·ñÓÐ¼ÌÐø´æÔÚµÄ±ØÒª£¬Ò²¾ÍÊÇËµ£¬
-Èç¹ûÕâ¸öÎï¼þÓÐÒ»¶ÎÊ±¼äÃ»ÓÐ±»Ê¹ÓÃµ½£¬Ò²ÐíÎï¼þÒÑ¾­Ã»ÓÐÓÃÁË£¬¿ÉÒÔ½«Ëü´Ó¼Ç
-ÒäÌåÖÐÇå³ýÒÔ½ÚÊ¡¿Õ¼ä£¬ÀýÈç£ºÒ»¸öºÜ¾ÃÃ»ÓÐÈË×ß¹ýµÄ·¿¼ä¡£
+    æ¯ç•¶ä¸€å€‹ç‰©ä»¶åœ¨éš”äº†ä¸€æ®µå›ºå®šé•·åº¦æ™‚é–“æ²’æœ‰è¢«å…¶ä»–ç‰©ä»¶åƒè€ƒåˆ°ï¼ŒMudOS æœƒå‘¼
+å«è©²ç‰©ä»¶çš„ clean_up å‡½æ•¸ä»¥æª¢æŸ¥é€™å€‹ç‰©ä»¶æ˜¯å¦æœ‰ç¹¼çºŒå­˜åœ¨çš„å¿…è¦ï¼Œä¹Ÿå°±æ˜¯èªªï¼Œ
+å¦‚æžœé€™å€‹ç‰©ä»¶æœ‰ä¸€æ®µæ™‚é–“æ²’æœ‰è¢«ä½¿ç”¨åˆ°ï¼Œä¹Ÿè¨±ç‰©ä»¶å·²ç¶“æ²’æœ‰ç”¨äº†ï¼Œå¯ä»¥å°‡å®ƒå¾žè¨˜
+æ†¶é«”ä¸­æ¸…é™¤ä»¥ç¯€çœç©ºé–“ï¼Œä¾‹å¦‚ï¼šä¸€å€‹å¾ˆä¹…æ²’æœ‰äººèµ°éŽçš„æˆ¿é–“ã€‚
 
-    clean up Ê±¼äµÄ³¤¶ÌÊÇÔÚ MudOS µÄ runtime config µµÀïÉè¶¨µÄ¡£ËùÓÐ¿É
-ÒÔ±» clone µÄÎï¼þ¡¢·¿¼ä¡¢Ö¸Áî´¦ÀíÎï¼þ¡¢ÒÔ¼°·Ç³¤×¤ÐÍ daemon¶¼Ó¦¸ÃÒª¼Ì³Ð
-ÕâÏîÌØáçÒÔ±ãÄÜÔÚÎï¼þ²»±»Ê¹ÓÃµ½Ê±¼ÓÒÔ´Ý»Ù²¢ÊÍ·Å³öËùÕ¼¼ÇÒäÌå¡£
+    clean up æ™‚é–“çš„é•·çŸ­æ˜¯åœ¨ MudOS çš„ runtime config æª”è£¡è¨­å®šçš„ã€‚æ‰€æœ‰å¯
+ä»¥è¢« clone çš„ç‰©ä»¶ã€æˆ¿é–“ã€æŒ‡ä»¤è™•ç†ç‰©ä»¶ã€ä»¥åŠéžé•·é§åž‹ daemonéƒ½æ‡‰è©²è¦ç¹¼æ‰¿
+é€™é …ç‰¹å¾µä»¥ä¾¿èƒ½åœ¨ç‰©ä»¶ä¸è¢«ä½¿ç”¨åˆ°æ™‚åŠ ä»¥æ‘§æ¯€ä¸¦é‡‹æ”¾å‡ºæ‰€ä½”è¨˜æ†¶é«”ã€‚
 
-    µ±´Ëº¯Êý´«»Ø 1 Ê±£¬ÒâË¼ÊÇ¸æËß MudOS ¡¸ÎÒÏÖÔÚÔÝÊ±Òª¼ÌÐøÁôÔÚ¼ÇÒäÌåÖÐ
-£¬µ«ÊÇÈç¹ûÔÙ¸ôÒ»¶Î¹Ì¶¨³¤¶ÈÊ±¼äÕâ¸öÎï¼þÈÔÈ»Ã»ÓÐ±»ÆäËûÎï¼þ²Î¿¼µ½£¬ÇëÄãÔÙ
-ºô½ÐÒ»´ÎÎÒµÄ clean_up() º¯Êý¡¹£¬Èô´«»Ø 0 »òÊÇ clean_up  º¯ÊýÃ»ÓÐ±»¶¨Òå
-£¬Ôò MudOS »á¼ÙÉèÕâ¸öÎï¼þ²»ÐèÒª clean upÕâÖÖ·þÎñ£¬ÒÔáá¾Í²»»áÔÙºô½ÐÕâ¸ö
-Îï¼þµÄ clean_up()¡£
+    ç•¶æ­¤å‡½æ•¸å‚³å›ž 1 æ™‚ï¼Œæ„æ€æ˜¯å‘Šè¨´ MudOS ã€Œæˆ‘ç¾åœ¨æš«æ™‚è¦ç¹¼çºŒç•™åœ¨è¨˜æ†¶é«”ä¸­
+ï¼Œä½†æ˜¯å¦‚æžœå†éš”ä¸€æ®µå›ºå®šé•·åº¦æ™‚é–“é€™å€‹ç‰©ä»¶ä»ç„¶æ²’æœ‰è¢«å…¶ä»–ç‰©ä»¶åƒè€ƒåˆ°ï¼Œè«‹ä½ å†
+å‘¼å«ä¸€æ¬¡æˆ‘çš„ clean_up() å‡½æ•¸ã€ï¼Œè‹¥å‚³å›ž 0 æˆ–æ˜¯ clean_up  å‡½æ•¸æ²’æœ‰è¢«å®šç¾©
+ï¼Œå‰‡ MudOS æœƒå‡è¨­é€™å€‹ç‰©ä»¶ä¸éœ€è¦ clean upé€™ç¨®æœå‹™ï¼Œä»¥å¾Œå°±ä¸æœƒå†å‘¼å«é€™å€‹
+ç‰©ä»¶çš„ clean_up()ã€‚
 
-±ê×¼µÄ clean_up() ÅÐ¶¨³ÌÐò£º
+æ¨™æº–çš„ clean_up() åˆ¤å®šç¨‹åºï¼š
 
-    Ê×ÏÈ£¬Èç¹ûÕâ¸öÎï¼þÊÇÒ»¸öÊ¹ÓÃÕß (ÓÃ interactive() ¾ö¶¨)£¬´Ëº¯Êý´«»Ø
- 1£¬ÒòÎªÊ¹ÓÃÕß·¢´ô¹ý¾ÃÊÇÔÚ heart beat Àï´¦ÀíµÄ¡£
+    é¦–å…ˆï¼Œå¦‚æžœé€™å€‹ç‰©ä»¶æ˜¯ä¸€å€‹ä½¿ç”¨è€… (ç”¨ interactive() æ±ºå®š)ï¼Œæ­¤å‡½æ•¸å‚³å›ž
+ 1ï¼Œå› ç‚ºä½¿ç”¨è€…ç™¼å‘†éŽä¹…æ˜¯åœ¨ heart beat è£¡è™•ç†çš„ã€‚
 
-    ½ÓÏÂÀ´£¬Èç¹ûÕâ¸öÎï¼þÊÇÔÚÁíÒ»¸öÎï¼þÀï£¬ÀýÈçÒ»¸ö·¿¼äÀïµÄ¹ÖÎï¡¢´ü×ÓÀï
-µÄÎïÆ·µÈµÈ£¬ÎÒÃÇ¸Äºô½Ðº¬ÓÐÕâ¸öÎï¼þµÄ·¿¼ä»ò´ü×ÓµÄ clean_up() £¬ÕâÑù×öÓÐ
-Á½¸öÖ÷ÒªÀíÓÉ£ºÈç¹ûÍ¬Ò»¸ö·¿¼äÀïÓÐ²»ÄÜ±» clean up µÄÎï¼þ£¬ÈçÍæ¼Ò£¬ÄÇ÷áÎÒ
-ÃÇ²»Ï£ÍûÈÎºÎÎï¼þÔÚËûÃÇÃæÇ°Æ¾¿ÕÏûÊ§£¬¶øÇÒ£¬Èç¹ûÒ»¸ö´æÔÚì¶ÁíÒ»Îï¼þÖÐµÄÎï
-¼þÄÜ¹»±»Çå³ý£¬ÈÝÄÉËüµÄÎï¼þ±Ø¶¨Ò²ÄÜ¹»±»Çå³ý£¬Èç¹ûÈÝÄÉËüµÄÎï¼þ²»ÄÜ±»Çå³ý
-£¬ÄÇ÷áÕâ¸öÎï¼þÒ²±Ø¶¨²»ÄÜ±»Çå³ý£¬ÈçÍæ¼ÒÉíÉÏµÄÎï¼þ£¬Òò´ËÎÒÃÇÈÃÈÝÄÉÕâ¸öÎï
-¼þµÄÎï¼þÀ´¾ö¶¨Òª²»ÒªÇå³ý£¬ÒòÎªÇå³ýÒ»¸öÎï¼þµÄÍ¬Ê±£¬Ò²»áÇå³ýÕâ¸öÎï¼þÀïµÄ
-ËùÓÐÎï¼þ¡£
+    æŽ¥ä¸‹ä¾†ï¼Œå¦‚æžœé€™å€‹ç‰©ä»¶æ˜¯åœ¨å¦ä¸€å€‹ç‰©ä»¶è£¡ï¼Œä¾‹å¦‚ä¸€å€‹æˆ¿é–“è£¡çš„æ€ªç‰©ã€è¢‹å­è£¡
+çš„ç‰©å“ç­‰ç­‰ï¼Œæˆ‘å€‘æ”¹å‘¼å«å«æœ‰é€™å€‹ç‰©ä»¶çš„æˆ¿é–“æˆ–è¢‹å­çš„ clean_up() ï¼Œé€™æ¨£åšæœ‰
+å…©å€‹ä¸»è¦ç†ç”±ï¼šå¦‚æžœåŒä¸€å€‹æˆ¿é–“è£¡æœ‰ä¸èƒ½è¢« clean up çš„ç‰©ä»¶ï¼Œå¦‚çŽ©å®¶ï¼Œé‚£éº¼æˆ‘
+å€‘ä¸å¸Œæœ›ä»»ä½•ç‰©ä»¶åœ¨ä»–å€‘é¢å‰æ†‘ç©ºæ¶ˆå¤±ï¼Œè€Œä¸”ï¼Œå¦‚æžœä¸€å€‹å­˜åœ¨æ–¼å¦ä¸€ç‰©ä»¶ä¸­çš„ç‰©
+ä»¶èƒ½å¤ è¢«æ¸…é™¤ï¼Œå®¹ç´å®ƒçš„ç‰©ä»¶å¿…å®šä¹Ÿèƒ½å¤ è¢«æ¸…é™¤ï¼Œå¦‚æžœå®¹ç´å®ƒçš„ç‰©ä»¶ä¸èƒ½è¢«æ¸…é™¤
+ï¼Œé‚£éº¼é€™å€‹ç‰©ä»¶ä¹Ÿå¿…å®šä¸èƒ½è¢«æ¸…é™¤ï¼Œå¦‚çŽ©å®¶èº«ä¸Šçš„ç‰©ä»¶ï¼Œå› æ­¤æˆ‘å€‘è®“å®¹ç´é€™å€‹ç‰©
+ä»¶çš„ç‰©ä»¶ä¾†æ±ºå®šè¦ä¸è¦æ¸…é™¤ï¼Œå› ç‚ºæ¸…é™¤ä¸€å€‹ç‰©ä»¶çš„åŒæ™‚ï¼Œä¹Ÿæœƒæ¸…é™¤é€™å€‹ç‰©ä»¶è£¡çš„
+æ‰€æœ‰ç‰©ä»¶ã€‚
 
-    Èç¹ûÕâ¸öÎï¼þ²¢²»ÊÇÔÚÁíÒ»¸öÎï¼þÀï£¬¶øÊÇÒ»¸ö·¿¼ä£¬ÎÒÃÇ»¹±ØÐë¼ì²éÊÇ·ñ
-ÓÐÍæ¼ÒÔÚÕâ¸ö·¿¼äÀï£¬ÒÔÃâÍæ¼Ò·¢´ôÁËÒ»»á¶ù¾Í±»Ìßµ½×îááÀÖÔ°È¥¡£
+    å¦‚æžœé€™å€‹ç‰©ä»¶ä¸¦ä¸æ˜¯åœ¨å¦ä¸€å€‹ç‰©ä»¶è£¡ï¼Œè€Œæ˜¯ä¸€å€‹æˆ¿é–“ï¼Œæˆ‘å€‘é‚„å¿…é ˆæª¢æŸ¥æ˜¯å¦
+æœ‰çŽ©å®¶åœ¨é€™å€‹æˆ¿é–“è£¡ï¼Œä»¥å…çŽ©å®¶ç™¼å‘†äº†ä¸€æœƒå…’å°±è¢«è¸¢åˆ°æœ€å¾Œæ¨‚åœ’åŽ»ã€‚
 
-    ×îáá£¬¾­¹ýÒÔÉÏ¸÷¸ö¹Ø¿¨£¬ÎÒÃÇÅÐ¶¨Õâ¸öÎï¼þÒÑ¾­Ã»ÓÐ´æÔÚµÄ±ØÒª£¬ËùÒÔÎÒ
-ÃÇ½«Õâ¸öÎï¼þ´Ý»Ù£¬´«»Ø 0 ÓÃÒÔ¸æÖª MudOS Õâ¸öÎï¼þÒÑ¾­¡¸²»¼ûÁË¡¹ÒÔáá²»ÓÃ
-ÔÙ¼ì²éËüÊÇ·ñÐèÒª clean up  ¡£
+    æœ€å¾Œï¼Œç¶“éŽä»¥ä¸Šå„å€‹é—œå¡ï¼Œæˆ‘å€‘åˆ¤å®šé€™å€‹ç‰©ä»¶å·²ç¶“æ²’æœ‰å­˜åœ¨çš„å¿…è¦ï¼Œæ‰€ä»¥æˆ‘
+å€‘å°‡é€™å€‹ç‰©ä»¶æ‘§æ¯€ï¼Œå‚³å›ž 0 ç”¨ä»¥å‘ŠçŸ¥ MudOS é€™å€‹ç‰©ä»¶å·²ç¶“ã€Œä¸è¦‹äº†ã€ä»¥å¾Œä¸ç”¨
+å†æª¢æŸ¥å®ƒæ˜¯å¦éœ€è¦ clean up  ã€‚
 
-¡õ F_COMMAND
+â–¡ F_COMMAND
 
 init_command_hook()
-¾­ÓÉ add_action, ½«ËùÓÐ user ÊäÈë¶«Î÷´«Èë command_hook() Õâ¸öº¯Êý.
-±¾º¯ÊýÃ»ÓÐ´«»ØÖµ.
+ç¶“ç”± add_action, å°‡æ‰€æœ‰ user è¼¸å…¥æ±è¥¿å‚³å…¥ command_hook() é€™å€‹å‡½æ•¸.
+æœ¬å‡½æ•¸æ²’æœ‰å‚³å›žå€¼.
 
 find_command(string verb)
-ºô½Ð command daemon (COMMAND_D) ¿´¿´ÔÚÖ¸¶¨Â·¾¶ÄÚÊÇ·ñÓÐ¸ú verb Í¬Ãû
-µÄµµ°¸, ÈôÓÐ, ´«»ØµµÃû.
+å‘¼å« command daemon (COMMAND_D) çœ‹çœ‹åœ¨æŒ‡å®šè·¯å¾‘å…§æ˜¯å¦æœ‰è·Ÿ verb åŒå
+çš„æª”æ¡ˆ, è‹¥æœ‰, å‚³å›žæª”å.
 
 command_hook(string arg)
-Ò»µ«Ê¹ÓÃÕßÊäÈëÒ»ÐÐÎÄ×Ö, driver »á½«³ýÁËµÚÒ» ¸ö×ÖÒÔÍâµÄÎÄ×Öµ±³É²ÎÊý
-(arg) ²¢´«ÖÁ´Ëº¯Êý. ÊäÈëµÄµÚÒ»¸ö×Ö¾ÍÊÇËùÎ½µÄ¶¯´Ê (verb). Í¨³£ÊÇ Ò»
-¸öÖ¸Áî.½ÓÏÂÀ´ÎÒÃÇ¾­ÓÉ query_verb()  µÃµ½ Õâ¸ö¶¯´Ê, Ò²¾ÍÊÇÊ¹ÓÃÕßËùÊä
-ÈëµÄµÚÒ»¸ö×Ö.È»áá¿ªÊ¼ÅÐ¶¨Ê¹ÓÃÕßÊäÈëÕâÐÐÎÄ×ÖµÄÄ¿µÄ. Ê×ÏÈÎÒÃÇ½«¶¯´Ê´«
-Èë find_command()¿´¿´ÔÚÊ¹ÓÃÕßµÄÂ·¾¶Éè¶¨ÖÐÊÇ·ñÓÐÓëÕâ¸ö¶¯´ÊÏàÍ¬µÄÖ¸Áî
-µµÃû, Èç¹ûÓÐ, ÔòÊÔÖøÒÔcall_other()  È¥ºô½Ð ¸ÃµµÃûµÄ main() º¯Êý²¢´«
-Èë²ÎÊý arg ¼°¶¯×÷ÈË Îï¼þ.Èç¹û³É¹¦, Ôò½áÊøÀë¿ª. ²»·ûºÏÉÏÊöÌõ¼þÕß, ±¾
-º¯ÊýÔÚ´Ëºô½Ð EMOTE_D ( emotedaemon), ÅÐ±ðÕâ¸ö¶¯´ÊÊÇ²»ÊÇ emote Ö®Ò»,
-Èç¹û²»ÊÇµÄ»°Ôòºô½Ð¹ÜÀí½»Ì¸ÆµµÀµÄ daemon, (CHANNEL_D) ¿´¿´Õâ¸öÊÇ²»ÊÇ
-½»Ì¸ÆµµÀÓÃµÄÖ¸Áî. ×îáá, ÎÒÃÇÀ´ÅÐ¶¨ÕâÊÇ²»ÊÇÊ¹ÓÃÕßÓÃÀ´ÒÆ¶¯µÄ µÄÖ¸Áî (
-Èç: ¶«, ÄÏ, Î÷, ±±µÈµÈ). Èç¹ûÒÔÉÏ½Ô·Ç, ÄÇÎÒÃÇ¾Í´«»Ø 0, ÓÐ¿ÉÄÜÕâ¸öÊ¹
-ÓÃÕßÊäÈëÁËÒ»¸ö²»´æÔÚµÄÖ¸Áî.
+ä¸€ä½†ä½¿ç”¨è€…è¼¸å…¥ä¸€è¡Œæ–‡å­—, driver æœƒå°‡é™¤äº†ç¬¬ä¸€ å€‹å­—ä»¥å¤–çš„æ–‡å­—ç•¶æˆåƒæ•¸
+(arg) ä¸¦å‚³è‡³æ­¤å‡½æ•¸. è¼¸å…¥çš„ç¬¬ä¸€å€‹å­—å°±æ˜¯æ‰€è¬‚çš„å‹•è©ž (verb). é€šå¸¸æ˜¯ ä¸€
+å€‹æŒ‡ä»¤.æŽ¥ä¸‹ä¾†æˆ‘å€‘ç¶“ç”± query_verb()  å¾—åˆ° é€™å€‹å‹•è©ž, ä¹Ÿå°±æ˜¯ä½¿ç”¨è€…æ‰€è¼¸
+å…¥çš„ç¬¬ä¸€å€‹å­—.ç„¶å¾Œé–‹å§‹åˆ¤å®šä½¿ç”¨è€…è¼¸å…¥é€™è¡Œæ–‡å­—çš„ç›®çš„. é¦–å…ˆæˆ‘å€‘å°‡å‹•è©žå‚³
+å…¥ find_command()çœ‹çœ‹åœ¨ä½¿ç”¨è€…çš„è·¯å¾‘è¨­å®šä¸­æ˜¯å¦æœ‰èˆ‡é€™å€‹å‹•è©žç›¸åŒçš„æŒ‡ä»¤
+æª”å, å¦‚æžœæœ‰, å‰‡è©¦è‘—ä»¥call_other()  åŽ»å‘¼å« è©²æª”åçš„ main() å‡½æ•¸ä¸¦å‚³
+å…¥åƒæ•¸ arg åŠå‹•ä½œäºº ç‰©ä»¶.å¦‚æžœæˆåŠŸ, å‰‡çµæŸé›¢é–‹. ä¸ç¬¦åˆä¸Šè¿°æ¢ä»¶è€…, æœ¬
+å‡½æ•¸åœ¨æ­¤å‘¼å« EMOTE_D ( emotedaemon), åˆ¤åˆ¥é€™å€‹å‹•è©žæ˜¯ä¸æ˜¯ emote ä¹‹ä¸€,
+å¦‚æžœä¸æ˜¯çš„è©±å‰‡å‘¼å«ç®¡ç†äº¤è«‡é »é“çš„ daemon, (CHANNEL_D) çœ‹çœ‹é€™å€‹æ˜¯ä¸æ˜¯
+äº¤è«‡é »é“ç”¨çš„æŒ‡ä»¤. æœ€å¾Œ, æˆ‘å€‘ä¾†åˆ¤å®šé€™æ˜¯ä¸æ˜¯ä½¿ç”¨è€…ç”¨ä¾†ç§»å‹•çš„ çš„æŒ‡ä»¤ (
+å¦‚: æ±, å—, è¥¿, åŒ—ç­‰ç­‰). å¦‚æžœä»¥ä¸Šçš†éž, é‚£æˆ‘å€‘å°±å‚³å›ž 0, æœ‰å¯èƒ½é€™å€‹ä½¿
+ç”¨è€…è¼¸å…¥äº†ä¸€å€‹ä¸å­˜åœ¨çš„æŒ‡ä»¤.
 
-Èç¹û PROFILE_COMMANDS ÓÐ¶¨ÒåµÄ»°, ÓÐ¹ØÕâ¸öÖ¸ÁîµÄÊ¹ÓÃÇéÐÎ»áÓÉ
-PROFILE_D¼ÇÂ¼ÏÂÀ´²¢´æì¶Ö¸¶¨µµ°¸ÖÐ.
+å¦‚æžœ PROFILE_COMMANDS æœ‰å®šç¾©çš„è©±, æœ‰é—œé€™å€‹æŒ‡ä»¤çš„ä½¿ç”¨æƒ…å½¢æœƒç”±
+PROFILE_Dè¨˜éŒ„ä¸‹ä¾†ä¸¦å­˜æ–¼æŒ‡å®šæª”æ¡ˆä¸­.
 
 set_path(string *p)
-½« *p Ö¸¶¨ÎªÂ·¾¶. *p ÎªÕóÁÐÐÍÌ¬.
+å°‡ *p æŒ‡å®šç‚ºè·¯å¾‘. *p ç‚ºé™£åˆ—åž‹æ…‹.
 
 force_me(string cmd)
-Ç¿ÆÈ¶¯×÷Îï¼þÖ´ÐÐÒ»¸öÖ¸Áî, ºô½Ð´Ëº¯ÊýµÄÎï¼þÐèÒªÓÐ ROOT UID ²Å»á³É¹¦.
+å¼·è¿«å‹•ä½œç‰©ä»¶åŸ·è¡Œä¸€å€‹æŒ‡ä»¤, å‘¼å«æ­¤å‡½æ•¸çš„ç‰©ä»¶éœ€è¦æœ‰ ROOT UID æ‰æœƒæˆåŠŸ.
 
-¡õ DAMAGE
+â–¡ DAMAGE
 
 int is_ghost()
-ÅÐ¶ÏÎï¼þÊÇ·ñÎª¹í»ê.
+åˆ¤æ–·ç‰©ä»¶æ˜¯å¦ç‚ºé¬¼é­‚.
 
 varargs int receive_damage(string type, int damage, object who)
-ÈÃÎï¼þÄ³Ïî×´¿öµÄÊýÖµ¼õÉÙ. damage ²»µÃÎª¸ºÊý. ±¾º¯Êý»á¼ì²éÉËº¦ÖÖÀàÊÇ
-·ñºÏ·¨áá½«Îï¼þµÄ×´¿öÊýÖµ¼õÉÙ, Èô×îááÖµµÍì¶ÁãÔòÉèÎª -1. ×îáá, ´ò¿ªÎï
-¼þµÄÐÄÌø (heart_beat).
+è®“ç‰©ä»¶æŸé …ç‹€æ³çš„æ•¸å€¼æ¸›å°‘. damage ä¸å¾—ç‚ºè² æ•¸. æœ¬å‡½æ•¸æœƒæª¢æŸ¥å‚·å®³ç¨®é¡žæ˜¯
+å¦åˆæ³•å¾Œå°‡ç‰©ä»¶çš„ç‹€æ³æ•¸å€¼æ¸›å°‘, è‹¥æœ€å¾Œå€¼ä½Žæ–¼é›¶å‰‡è¨­ç‚º -1. æœ€å¾Œ, æ‰“é–‹ç‰©
+ä»¶çš„å¿ƒè·³ (heart_beat).
 
 varargs int receive_wound(string type, int damage, object who)
-Í¬ receive_damage. µ«ÉËº¦ÊÇ¼ÓÔÚ×´Ì¬ÖµÉÏ (eff_xxx).
+åŒ receive_damage. ä½†å‚·å®³æ˜¯åŠ åœ¨ç‹€æ…‹å€¼ä¸Š (eff_xxx).
 
 varargs int receive_heal(string type, int heal)
-Í¬ receive damage, µ«×÷ÓÃÏà·´, ±¾º¯ÊýÊÇ½«Ä³¸öÊýÖµ¼ÓÈë×´¿öµÄÊýÖµÉÏ.
+åŒ receive damage, ä½†ä½œç”¨ç›¸å, æœ¬å‡½æ•¸æ˜¯å°‡æŸå€‹æ•¸å€¼åŠ å…¥ç‹€æ³çš„æ•¸å€¼ä¸Š.
 
 varargs int receive_curing(string type, int heal)
-Í¬ receive_wound, µ«×÷ÓÃÏà·´, ±¾º¯ÊýÊÇ½«ÊýÖµ¼ÓÈë×´Ì¬ÖµÉÏ, Ïàµ±ì¶
-Ò½ÁÆ.
+åŒ receive_wound, ä½†ä½œç”¨ç›¸å, æœ¬å‡½æ•¸æ˜¯å°‡æ•¸å€¼åŠ å…¥ç‹€æ…‹å€¼ä¸Š, ç›¸ç•¶æ–¼
+é†«ç™‚.
 
 void unconcious()
-°ÑÄ³¸öÎï¼þÅª»è, ÅÐ±ð¼°Ö´ÐÐ²½ÖèÈçÏÂ: Ã»ÓÐÉúÃüµÄÎï¼þ²»ÄÜÉè, Èç¹ûÎï¼þ
-ÊÇÒòÎªÊÜÉË¶ø»èµÄ, ºô½ÐÔÚ COMBAT_D ÖÐµÄ winner_reward() ÒÔ´¦ÀíÊ¤Á¦
-ÕßµÄ½±ÉÍ.. etc. É¾³ýÖ¸¶¨Îï¼þµÄµÐÈË±í, ËÍ³öÏà¹ØÑ¶Ï¢ (ÈÃÔÚ³¡µÄ´ó¼Ò¶¼
-ÖªµÀ) ½«¾«ÆøÉñµÈ×´Ì¬ÉèÎª0, ¹Ø±ÕÖ¸¶¨Îï¼þ½ÓÊÜÑ¶Ï¢µÄµÄÈ¨Á¦, ×îááÉè¶¨
-ÇåÐÑµÄÊ±¼ä, ·Åµ½ call_out ÉÏ.
+æŠŠæŸå€‹ç‰©ä»¶å¼„æ˜, åˆ¤åˆ¥åŠåŸ·è¡Œæ­¥é©Ÿå¦‚ä¸‹: æ²’æœ‰ç”Ÿå‘½çš„ç‰©ä»¶ä¸èƒ½è¨­, å¦‚æžœç‰©ä»¶
+æ˜¯å› ç‚ºå—å‚·è€Œæ˜çš„, å‘¼å«åœ¨ COMBAT_D ä¸­çš„ winner_reward() ä»¥è™•ç†å‹åŠ›
+è€…çš„çŽè³ž.. etc. åˆªé™¤æŒ‡å®šç‰©ä»¶çš„æ•µäººè¡¨, é€å‡ºç›¸é—œè¨Šæ¯ (è®“åœ¨å ´çš„å¤§å®¶éƒ½
+çŸ¥é“) å°‡ç²¾æ°£ç¥žç­‰ç‹€æ…‹è¨­ç‚º0, é—œé–‰æŒ‡å®šç‰©ä»¶æŽ¥å—è¨Šæ¯çš„çš„æ¬ŠåŠ›, æœ€å¾Œè¨­å®š
+æ¸…é†’çš„æ™‚é–“, æ”¾åˆ° call_out ä¸Š.
 
 varargs void revive(int quiet)
-°ÑÄ³ÈËÅªÐÑ. Èç¹û call_out »¹ÔÚ, É¾µôËû. Èç¹ûÇåÐÑµÄÎï¼þ±¾À´ÊÇÔÚÁíÒ»
-¸öÊ¹ÓÃÕßµÄ inventory ÖÐ, ½«Ö®ÒÆµ½Ê¹ÓÃÕßµÄ»·¾³ÖÐ. ºô½Ð enable_player()
-ÒÔÉè¶¨Íæ¼ÒµÄÖ¸ÁîºÍÏà¹ØÉè¶¨, ´«³ö¶ÔÓ¦µÄÑ¶Ï¢²¢½«Ñ¶Ï¢¹ÜµÀ´ò¿ª. Èô´«Èë
-Öµ quiet Îª 1, ÔòÇåÐÑµÄÑ¶Ï¢²»»áËÍ³ö.
+æŠŠæŸäººå¼„é†’. å¦‚æžœ call_out é‚„åœ¨, åˆªæŽ‰ä»–. å¦‚æžœæ¸…é†’çš„ç‰©ä»¶æœ¬ä¾†æ˜¯åœ¨å¦ä¸€
+å€‹ä½¿ç”¨è€…çš„ inventory ä¸­, å°‡ä¹‹ç§»åˆ°ä½¿ç”¨è€…çš„ç’°å¢ƒä¸­. å‘¼å« enable_player()
+ä»¥è¨­å®šçŽ©å®¶çš„æŒ‡ä»¤å’Œç›¸é—œè¨­å®š, å‚³å‡ºå°æ‡‰çš„è¨Šæ¯ä¸¦å°‡è¨Šæ¯ç®¡é“æ‰“é–‹. è‹¥å‚³å…¥
+å€¼ quiet ç‚º 1, å‰‡æ¸…é†’çš„è¨Šæ¯ä¸æœƒé€å‡º.
 
 void die()
-ËÀÁË...
-Èç¹ûÎï¼þÊÇ»èÃÔ²»ÐÑµÄ×´¿ö, ÏÈ°ÑËûÅªÐÑ. ½±ÀøÉ±ÈËÕß (hmm...) ²¢ÖÆÔìÒ»
-¾ß¡õÌå, °Ñ killer ±íÉ¾³ý, Èç¹ûËÀÕßÊÇÍæ¼Ò, Ôò°ÑËûÉèÎª¹í»ê²¢ËÍµ½Òõ¼ä
-È¥, ·ñÔòÖ±½Ó´Ý»Ù¸ÃÎï¼þ.
+æ­»äº†...
+å¦‚æžœç‰©ä»¶æ˜¯æ˜è¿·ä¸é†’çš„ç‹€æ³, å…ˆæŠŠä»–å¼„é†’. çŽå‹µæ®ºäººè€… (hmm...) ä¸¦åˆ¶é€ ä¸€
+å…·â–¡é«”, æŠŠ killer è¡¨åˆªé™¤, å¦‚æžœæ­»è€…æ˜¯çŽ©å®¶, å‰‡æŠŠä»–è¨­ç‚ºé¬¼é­‚ä¸¦é€åˆ°é™°é–“
+åŽ», å¦å‰‡ç›´æŽ¥æ‘§æ¯€è©²ç‰©ä»¶.
 
 void reincarnate()
-¸´»î...
-½«Îï¼þµÄ ghost ±ê¼ÇÈ¥µô. ÉíÌåµÄ¸÷Ïî×´Ì¬ÖµÉèÎªÉÏÏÞ.
+å¾©æ´»...
+å°‡ç‰©ä»¶çš„ ghost æ¨™è¨˜åŽ»æŽ‰. èº«é«”çš„å„é …ç‹€æ…‹å€¼è¨­ç‚ºä¸Šé™.
 
 int heal_up()
 update all status (gin, kee, sen, fp, mp, ap.. etc)
 
-¡õ F_DBASE Îï¼þ×ÊÁÏÌØÐÔ
+â–¡ F_DBASE ç‰©ä»¶è³‡æ–™ç‰¹æ€§
 
 mixed set(string prop, mixed data)
-½«ÊôÐÔ prop µÄÄÚÈÝÉèÎª data ²¢´æÈë dbase mapping ÖÐ, Èç¹û dbase
-²»´æÔÚµÄ»°Ôò»á½¨Á¢Ò»¸öÐÂµÄ dbase.
+å°‡å±¬æ€§ prop çš„å…§å®¹è¨­ç‚º data ä¸¦å­˜å…¥ dbase mapping ä¸­, å¦‚æžœ dbase
+ä¸å­˜åœ¨çš„è©±å‰‡æœƒå»ºç«‹ä¸€å€‹æ–°çš„ dbase.
 
 varargs mixed query(string prop, int raw)
-´«»ØÊôÐÔ prop µÄÄÚÈÝ, Èç¹û¸ÃÊôÐÔ²»´æÔÚ»òÊÇ dbase ²»´æÔÚÔò´«»Ø 0.
-µÚ¶þ¸ö´«ÈëÖµ¿ÉÓÐ¿ÉÎÞ, Èç¹û raw ÖµÎª 1, Ôò´«»ØÖµÎª prop Ëùºô½ÐµÄ
-º¯Ê½Ãû³Æ, ·ñÔò´«»Ø¸Ãº¯Ê½µÄ´«»ØÖµ.
+å‚³å›žå±¬æ€§ prop çš„å…§å®¹, å¦‚æžœè©²å±¬æ€§ä¸å­˜åœ¨æˆ–æ˜¯ dbase ä¸å­˜åœ¨å‰‡å‚³å›ž 0.
+ç¬¬äºŒå€‹å‚³å…¥å€¼å¯æœ‰å¯ç„¡, å¦‚æžœ raw å€¼ç‚º 1, å‰‡å‚³å›žå€¼ç‚º prop æ‰€å‘¼å«çš„
+å‡½å¼åç¨±, å¦å‰‡å‚³å›žè©²å‡½å¼çš„å‚³å›žå€¼.
 
 int delete(string prop)
-½«ÊôÐÔ prop ´Ó dbase ÖÐÉ¾³ý.
+å°‡å±¬æ€§ prop å¾ž dbase ä¸­åˆªé™¤.
 
 mixed add(string prop, mixed data)
-½« data ¼ÓÈëÊôÐÔ prop µÄÄÚÈÝ, Èç¹û¸ÃÊôÐÔ²»´æÔÚ, Ôòºô½ÐÓë
-set(prop, data) ÏàÍ¬.
+å°‡ data åŠ å…¥å±¬æ€§ prop çš„å…§å®¹, å¦‚æžœè©²å±¬æ€§ä¸å­˜åœ¨, å‰‡å‘¼å«èˆ‡
+set(prop, data) ç›¸åŒ.
 
 int set_temp(string prop, mixed data)
-½«ÁÙÊ±ÊôÐÔ prop µÄÄÚÈÝÉèÎª data ²¢´æÈë tmp_dbase mapping ÖÐ, Èç¹û
-tmp_dbase ²»´æÔÚµÄ»°Ôò»á½¨Á¢Ò»¸öÐÂµÄ tmp_dbase.
-tmp_dbase ÎªÁÙÊ±ÐÔµÄ×ÊÁÏ¿â.
+å°‡è‡¨æ™‚å±¬æ€§ prop çš„å…§å®¹è¨­ç‚º data ä¸¦å­˜å…¥ tmp_dbase mapping ä¸­, å¦‚æžœ
+tmp_dbase ä¸å­˜åœ¨çš„è©±å‰‡æœƒå»ºç«‹ä¸€å€‹æ–°çš„ tmp_dbase.
+tmp_dbase ç‚ºè‡¨æ™‚æ€§çš„è³‡æ–™åº«.
 
  mixed query_temp(string prop)
-´«»ØÁÙÊ±ÊôÐÔ prop µÄÄÚÈÝ.
+å‚³å›žè‡¨æ™‚å±¬æ€§ prop çš„å…§å®¹.
 
 int delete_temp(string prop)
-½«ÁÙÊ±ÊôÐÔ prop ´Ó tmp_dbase ÖÐÉ¾³ý.
+å°‡è‡¨æ™‚å±¬æ€§ prop å¾ž tmp_dbase ä¸­åˆªé™¤.
 
 mixed add_temp(string prop, mixed data)
-½« data ¼ÓÈëÁÙÊ±ÊôÐÔ prop µÄÄÚÈÝ, Èç¹û¸ÃÊôÐÔ²»´æÔÚ, ÔòÓëºô½Ð
-set(prop, data) ÏàÍ¬.
+å°‡ data åŠ å…¥è‡¨æ™‚å±¬æ€§ prop çš„å…§å®¹, å¦‚æžœè©²å±¬æ€§ä¸å­˜åœ¨, å‰‡èˆ‡å‘¼å«
+set(prop, data) ç›¸åŒ.
 
 mapping query_entire_dbase()
-´«»ØÕû¸ö dbase µÄÄÚÈÝ.
+å‚³å›žæ•´å€‹ dbase çš„å…§å®¹.
 
 void set_default_object(mixed ob)
 
 
-¡õ F_EDIT
+â–¡ F_EDIT
 
 int edit(function callback)
-¿ªÊ¼±à¼­³ÌÊ½¡£
+é–‹å§‹ç·¨è¼¯ç¨‹å¼ã€‚
 
 void input_line(string line, string text, function callback)
-ÓÉ±à¼­³ÌÊ½ºô½Ð´Ëº¯Êý£¬½«Ê¹ÓÃÕßËùÊäÈëµÄÎÄ×Ö»òÖ¸Áî×÷ÊÊµ±µÄ»ØÓ¦£¬µ±Ê¹ÓÃÕß½á
-ÊöÊäÈëÊ±£¬´«ÈëµÄº¯Êý callback ½«»á±»Ö´ÐÐ¡£
+ç”±ç·¨è¼¯ç¨‹å¼å‘¼å«æ­¤å‡½æ•¸ï¼Œå°‡ä½¿ç”¨è€…æ‰€è¼¸å…¥çš„æ–‡å­—æˆ–æŒ‡ä»¤ä½œé©ç•¶çš„å›žæ‡‰ï¼Œç•¶ä½¿ç”¨è€…çµ
+è¿°è¼¸å…¥æ™‚ï¼Œå‚³å…¥çš„å‡½æ•¸ callback å°‡æœƒè¢«åŸ·è¡Œã€‚
 
-¡õ EQUIP
+â–¡ EQUIP
 
 int wear()
-ÅÐ¶ÏÒ»¸öÎï¼þÊÇ·ñ¿ÉÒÔ×°±¸ÎïÆ·. Îï¼þ±ØÐèÊÇÒ»¸öÈËÎï (ÒÔ is_character()
-ÅÐ¶¨), Ïë´©µÄÎï¼þ±ØÐèÊÇ¿ÉÒÔ´©µÄ... µÈµÈ. ÏµÍ³»á¼ì²éÊÇ·ñÒÑ¾­´©ÁËÍ¬
-ÀàÐÍµÄ»¤¾ß, ÅÐ¶Ï³É¹¦ááÉè¶¨ËùÓÐ´©ÉÏ»¤¾ßááµÄ×ÊÁÏ.
+åˆ¤æ–·ä¸€å€‹ç‰©ä»¶æ˜¯å¦å¯ä»¥è£å‚™ç‰©å“. ç‰©ä»¶å¿…éœ€æ˜¯ä¸€å€‹äººç‰© (ä»¥ is_character()
+åˆ¤å®š), æƒ³ç©¿çš„ç‰©ä»¶å¿…éœ€æ˜¯å¯ä»¥ç©¿çš„... ç­‰ç­‰. ç³»çµ±æœƒæª¢æŸ¥æ˜¯å¦å·²ç¶“ç©¿äº†åŒ
+é¡žåž‹çš„è­·å…·, åˆ¤æ–·æˆåŠŸå¾Œè¨­å®šæ‰€æœ‰ç©¿ä¸Šè­·å…·å¾Œçš„è³‡æ–™.
 
 int wield()
-ÅÐ¶ÏÒ»¸öÎï¼þÊÇ·ñ¿ÉÒÔ×°±¸ÎäÆ÷. Îï¼þ±ØÐèÊÇÒ»¸öÈËÎï (ÒÔ is_character()
-ÅÐ¶¨), ÏëÏëÊ¹ÓÃµÄÎï¼þ±ØÐèÊÇÎäÆ÷... µÈµÈ. ÏµÍ³»á¼ì²éÊÇ·ñÓÐ¿Õ³öÀ´µÄÊÖ
-À´ÄÃÕâÑùÎäÆ÷. Èç¹ûÅÐ¶Ï³É¹¦ÔòÉè¶¨ËùÓÐÊ¹ÓÃÎäÆ÷ááµÄ×ÊÁÏ.
+åˆ¤æ–·ä¸€å€‹ç‰©ä»¶æ˜¯å¦å¯ä»¥è£å‚™æ­¦å™¨. ç‰©ä»¶å¿…éœ€æ˜¯ä¸€å€‹äººç‰© (ä»¥ is_character()
+åˆ¤å®š), æƒ³æƒ³ä½¿ç”¨çš„ç‰©ä»¶å¿…éœ€æ˜¯æ­¦å™¨... ç­‰ç­‰. ç³»çµ±æœƒæª¢æŸ¥æ˜¯å¦æœ‰ç©ºå‡ºä¾†çš„æ‰‹
+ä¾†æ‹¿é€™æ¨£æ­¦å™¨. å¦‚æžœåˆ¤æ–·æˆåŠŸå‰‡è¨­å®šæ‰€æœ‰ä½¿ç”¨æ­¦å™¨å¾Œçš„è³‡æ–™.
 
 int unequip()
-½«´©ÖøµÄ»¤¾ß»òÎäÆ÷ÍÑµô»ò·ÅÏÂ.
+å°‡ç©¿è‘—çš„è­·å…·æˆ–æ­¦å™¨è„«æŽ‰æˆ–æ”¾ä¸‹.
 
-¡õ F_FINANCE
+â–¡ F_FINANCE
 
 int can_afford(int amount)
-Õâ¸öº¯ÊýÊÇÓÃÀ´ÅÐ¶¨Ò»¸öÎï¼þ (this_object()) ÊÇ·ñ¸¶µÃÆð amount Õâ¸ö¼ÛÇ®.
-Èô´«»Ø 0 ±íÊ¾Õâ¸öÎï¼þ²¢Ã»ÓÐÕâ÷á¶àÇ®, ´«»Ø 1 ±íÊ¾Îï¼þÓÐÕâ÷á¶àÇ®, ¶øÇÒ
-ÓÐÕýÈ·µÄÇ®±ÒÖÖÀà. ´«»Ø 2 Ôò±íÊ¾´ËÎï¼þËäÈ»ÓÐ×ã¹»µÄÇ®, È´Ã»ÓÐÕýÈ·µÄÇ®±Ò
-ÖÖÀà.
+é€™å€‹å‡½æ•¸æ˜¯ç”¨ä¾†åˆ¤å®šä¸€å€‹ç‰©ä»¶ (this_object()) æ˜¯å¦ä»˜å¾—èµ· amount é€™å€‹åƒ¹éŒ¢.
+è‹¥å‚³å›ž 0 è¡¨ç¤ºé€™å€‹ç‰©ä»¶ä¸¦æ²’æœ‰é€™éº¼å¤šéŒ¢, å‚³å›ž 1 è¡¨ç¤ºç‰©ä»¶æœ‰é€™éº¼å¤šéŒ¢, è€Œä¸”
+æœ‰æ­£ç¢ºçš„éŒ¢å¹£ç¨®é¡ž. å‚³å›ž 2 å‰‡è¡¨ç¤ºæ­¤ç‰©ä»¶é›–ç„¶æœ‰è¶³å¤ çš„éŒ¢, å»æ²’æœ‰æ­£ç¢ºçš„éŒ¢å¹£
+ç¨®é¡ž.
 
-¡õ MESSAGE -- Ñ¶Ï¢
+â–¡ MESSAGE -- è¨Šæ¯
 
-MAX_MSG_BUFFER 500      ×î¶à¿ÉÒÔ´¢´æµÄÔÝ´æÑ¶Ï¢ÐÐÊý.
+MAX_MSG_BUFFER 500      æœ€å¤šå¯ä»¥å„²å­˜çš„æš«å­˜è¨Šæ¯è¡Œæ•¸.
 
 void receive_message(string msgclass, string msg)
-Èç¹ûÊÕµ½Ñ¶Ï¢µÄÎï¼þ²»ÊÇÍæ¼Ò, Ôò½«ËùÓÐ´«ÈëµÄ²ÎÊý´«¸ø relay_message()
-º¯Êý. ½ÓÏÂÀ´ÅÐ¶¨Õâ¶ÎÑ¶Ï¢ÊÇ·ñÎª½»Ì¸ÆµµÀ»òÊÇÓÐ¹ØÌìÆøµÄÑ¶Ï¢, ²¢ÅÐ¶¨Ê¹
-ÓÃÕßÊÇ·ñ¿ÉÒÔÊÕµ½ÕâÐ©Ñ¶Ï¢. ÔÙÀ´ÔòÅÐ¶¨½ÓÊÜÑ¶Ï¢µÄÍæ¼ÒÊÇ·ñÓÐÉè¶¨ÈÎºÎ×è
-µµÑ¶Ï¢µÄÊôÐÔ, ²¢ÒÀ´Ë¾ö¶¨¸ÃÍæ¼ÒÊÇ·ñ¿ÉÒÔÊÕµ½¸ÃÑ¶Ï¢. ×îáá, Èç¹ûÍæ¼ÒÕý
-ÔÚ±à¼­µµ°¸»òÊäÈëÄ£Ê½ÖÐ, Ôò½«Ñ¶Ï¢ËÍÖÁÔÝ´æ¿Õ¼ä´æ·Å. Èç¹ûÅÐ¶¨Ê¹ÓÃÕß¿É
-ÒÔ½ÓÊÜÕâ¶ÎÑ¶Ï¢, Ôòºô½Ð receive() º¯Êý²¢½«Ñ¶Ï¢´«Èë.
+å¦‚æžœæ”¶åˆ°è¨Šæ¯çš„ç‰©ä»¶ä¸æ˜¯çŽ©å®¶, å‰‡å°‡æ‰€æœ‰å‚³å…¥çš„åƒæ•¸å‚³çµ¦ relay_message()
+å‡½æ•¸. æŽ¥ä¸‹ä¾†åˆ¤å®šé€™æ®µè¨Šæ¯æ˜¯å¦ç‚ºäº¤è«‡é »é“æˆ–æ˜¯æœ‰é—œå¤©æ°£çš„è¨Šæ¯, ä¸¦åˆ¤å®šä½¿
+ç”¨è€…æ˜¯å¦å¯ä»¥æ”¶åˆ°é€™äº›è¨Šæ¯. å†ä¾†å‰‡åˆ¤å®šæŽ¥å—è¨Šæ¯çš„çŽ©å®¶æ˜¯å¦æœ‰è¨­å®šä»»ä½•é˜»
+æª”è¨Šæ¯çš„å±¬æ€§, ä¸¦ä¾æ­¤æ±ºå®šè©²çŽ©å®¶æ˜¯å¦å¯ä»¥æ”¶åˆ°è©²è¨Šæ¯. æœ€å¾Œ, å¦‚æžœçŽ©å®¶æ­£
+åœ¨ç·¨è¼¯æª”æ¡ˆæˆ–è¼¸å…¥æ¨¡å¼ä¸­, å‰‡å°‡è¨Šæ¯é€è‡³æš«å­˜ç©ºé–“å­˜æ”¾. å¦‚æžœåˆ¤å®šä½¿ç”¨è€…å¯
+ä»¥æŽ¥å—é€™æ®µè¨Šæ¯, å‰‡å‘¼å« receive() å‡½æ•¸ä¸¦å°‡è¨Šæ¯å‚³å…¥.
 
 void write_prompt()
-Ð´ÈëÊ¹ÓÃÕßµÄÏÂÒ»¸ö prompt, ÈôÊ¹ÓÃÕßÓÐÔÝ´æÑ¶Ï¢»¹Î´Êä³öÔòÏÈ½«¸ÃÑ¶Ï¢
-´«¸øÊ¹ÓÃÕß.
+å¯«å…¥ä½¿ç”¨è€…çš„ä¸‹ä¸€å€‹ prompt, è‹¥ä½¿ç”¨è€…æœ‰æš«å­˜è¨Šæ¯é‚„æœªè¼¸å‡ºå‰‡å…ˆå°‡è©²è¨Šæ¯
+å‚³çµ¦ä½¿ç”¨è€….
 
 void receive_snoop()
-½«¼à¿´Ê±¶Ô·½Ëù¿´µ½µÄÑ¶Ï¢Ç°Ãæ¼ÓÉÏ % ·ûºÅÒÔÊ¾Çø±ð.
+å°‡ç›£çœ‹æ™‚å°æ–¹æ‰€çœ‹åˆ°çš„è¨Šæ¯å‰é¢åŠ ä¸Š % ç¬¦è™Ÿä»¥ç¤ºå€åˆ¥.
 
-¡õ F_MORE
+â–¡ F_MORE
 
 void more(string cmd, string *text, int line)
-½«´«ÈëµÄÎÄ×ÖÕóÁÐÒ»ÐÐÒ»ÐÐµÄÏÔÊ¾³öÀ´£¬²¢ÒÀÕÕÊ¹ÓÃÕßËùÊäÈëµÄÖ¸Áî¶¯×÷¡£
+å°‡å‚³å…¥çš„æ–‡å­—é™£åˆ—ä¸€è¡Œä¸€è¡Œçš„é¡¯ç¤ºå‡ºä¾†ï¼Œä¸¦ä¾ç…§ä½¿ç”¨è€…æ‰€è¼¸å…¥çš„æŒ‡ä»¤å‹•ä½œã€‚
 
 void start_more(string msg)
-¿ªÊ¹Ö´ÐÐ more£¬½«´«ÈëµÄ×Ö´®Ò»ÐÐÒ»ÐÐµÄ·Ö¿ªÒÔ·½±ãÏÔÊ¾¡£
+é–‹ä½¿åŸ·è¡Œ moreï¼Œå°‡å‚³å…¥çš„å­—ä¸²ä¸€è¡Œä¸€è¡Œçš„åˆ†é–‹ä»¥æ–¹ä¾¿é¡¯ç¤ºã€‚
 
-¡õ F_NAME
+â–¡ F_NAME
 
 void set_name(string name, string *id)
 
-½« name ×Ö´®ÉèÈëÎï¼þµÄ name ÊôÐÔÖÐ. Èç¹û¸ÃÎï¼þ»¹Ã»ÓÐÉè id ÊôÐÔ,
-ÔòÈ¡´«ÈëÖ® id ÕóÁÐµÄµÚÒ»¸ö (id[0]) ÔªËØÎª¸ÃÎï¼þµÄ id. ²¢½« my_id
-ÕóÁÐÉèÎª´«ÈëÖ® id ÕóÁÐµÄÖµ.
+å°‡ name å­—ä¸²è¨­å…¥ç‰©ä»¶çš„ name å±¬æ€§ä¸­. å¦‚æžœè©²ç‰©ä»¶é‚„æ²’æœ‰è¨­ id å±¬æ€§,
+å‰‡å–å‚³å…¥ä¹‹ id é™£åˆ—çš„ç¬¬ä¸€å€‹ (id[0]) å…ƒç´ ç‚ºè©²ç‰©ä»¶çš„ id. ä¸¦å°‡ my_id
+é™£åˆ—è¨­ç‚ºå‚³å…¥ä¹‹ id é™£åˆ—çš„å€¼.
 
 int id(string str)
-Èç¹û "apply/id" Õâ¸öÁÙÊ±ÊôÐÔ´æÔÚÇÒ²»ÊÇ¿Õ×Ö´®µÄ»°, ±íÊ¾Õâ¸öÎï¼þÕýÔÚ¼ÙÃ°
-±ðµÄÎï¼þ, ÎÒÃÇ¾ÍÓÃ applied_id ¡õµÄÄÚÈÝÀ´µ±Õâ¸öÎï¼þµÄ id, Èç¹ûÓÐÕÒµ½µÄ
-»°´«»Ø 1. ·ñÔò´«»Ø 0. ÕâÑù¿ÉÒÔ±ÜÃâ¡¸Ã°ÅÆ»õ¡¹ÔÚ id Ö¸ÁîÏÂ¼û¹âËÀ.
-Èç¹ûÃ»ÓÐ "apply/id", ÔòÒÔ my_id µÄÄÚÈÝÀ´ÅÐ¶¨. Èç¹û str Óë my_id ÕóÁÐÖÐ
-µÄÄ³¸öÔªËØÏàÍ¬, Ôò´«»Ø 1, ·ñÔò´«»Ø 0.
+å¦‚æžœ "apply/id" é€™å€‹è‡¨æ™‚å±¬æ€§å­˜åœ¨ä¸”ä¸æ˜¯ç©ºå­—ä¸²çš„è©±, è¡¨ç¤ºé€™å€‹ç‰©ä»¶æ­£åœ¨å‡å†’
+åˆ¥çš„ç‰©ä»¶, æˆ‘å€‘å°±ç”¨ applied_id â–¡çš„å…§å®¹ä¾†ç•¶é€™å€‹ç‰©ä»¶çš„ id, å¦‚æžœæœ‰æ‰¾åˆ°çš„
+è©±å‚³å›ž 1. å¦å‰‡å‚³å›ž 0. é€™æ¨£å¯ä»¥é¿å…ã€Œå†’ç‰Œè²¨ã€åœ¨ id æŒ‡ä»¤ä¸‹è¦‹å…‰æ­».
+å¦‚æžœæ²’æœ‰ "apply/id", å‰‡ä»¥ my_id çš„å…§å®¹ä¾†åˆ¤å®š. å¦‚æžœ str èˆ‡ my_id é™£åˆ—ä¸­
+çš„æŸå€‹å…ƒç´ ç›¸åŒ, å‰‡å‚³å›ž 1, å¦å‰‡å‚³å›ž 0.
 
 string *parse_command_id_list() { return my_id; }
-Èç¹û "apply/id" Õâ¸öÁÙÊ±ÊôÐÔ´æÔÚÇÒ²»ÊÇ¿Õ×Ö´®µÄ»°, ´«»Ø applied_id ÕóÁÐ
-µÄËùÓÐÄÚÈÝ. ·ñÔò´«»Ø my_id ÕóÁÐµÄÄÚÈÝ.
+å¦‚æžœ "apply/id" é€™å€‹è‡¨æ™‚å±¬æ€§å­˜åœ¨ä¸”ä¸æ˜¯ç©ºå­—ä¸²çš„è©±, å‚³å›ž applied_id é™£åˆ—
+çš„æ‰€æœ‰å…§å®¹. å¦å‰‡å‚³å›ž my_id é™£åˆ—çš„å…§å®¹.
 
 varargs string name(int raw)
-Èç¹ûÎï¼þÓÐ "apply/name" Õâ¸öÁÙÊ±ÊôÐÔ¶øÇÒ²»ÊÇ¿ÕµÄµÄ»°, Ôò´«»ØÖµÎª mask
-Õâ¸öÕóÁÐµÄµ¹ÊýµÚ¶þÏîÔªËØ.
-Èç¹ûÎï¼þÓÐ "name" Õâ¸öÊôÐÔ, ´«»ØÖµÎª "name" µÄÄÚÈÝ. ·ñÔò´«»ØÕâ¸öÎï¼þµÄ
-µµÃû.
+å¦‚æžœç‰©ä»¶æœ‰ "apply/name" é€™å€‹è‡¨æ™‚å±¬æ€§è€Œä¸”ä¸æ˜¯ç©ºçš„çš„è©±, å‰‡å‚³å›žå€¼ç‚º mask
+é€™å€‹é™£åˆ—çš„å€’æ•¸ç¬¬äºŒé …å…ƒç´ .
+å¦‚æžœç‰©ä»¶æœ‰ "name" é€™å€‹å±¬æ€§, å‚³å›žå€¼ç‚º "name" çš„å…§å®¹. å¦å‰‡å‚³å›žé€™å€‹ç‰©ä»¶çš„
+æª”å.
 
 varargs string short(int raw)
-Èç¹û¸ÃÎï¼þÉèÓÐ short Õâ¸öÊôÐÔ, Ôò´«»Ø×Ö´®Îª short µÄÄÚÈÝ¼ÓÉÏ id. ·ñÔò
-´«»Ø×Ö´®Îª¸ÃÎï¼þ name ÊôÐÔµÄÄÚÈÝ¼ÓÉÏ id. Èç¹û¸ÃÎï¼þ²»ÊÇÈËÎï (ÓÉ
-is_chaaracter() ÅÐ¶¨) ÔòÔÚ´Ë´«»Ø×Ö´®µÄÄÚÈÝ.
-Èç¹ûÕâ¸öÎï¼þÓÐ "apply/short" Õâ¸öÁÙÊ±ÊôÐÔÇÒÄÚÈÝ²»ÊÇ¿ÕµÄ, Ôò´«»Ø×Ö´®±»
-ÉèÎª "apply/short" ÕóÁÐµÄµ¹ÊýµÚ¶þ¸öÔªËØ. ·ñÔò´«»Ø×Ö´®»á½«Îï¼þµÄ nickname
-¼° title µÈÊôÐÔ¼ÓÒÔ×éºÏ. ×îááÅÐ¶¨Õâ¸öÎï¼þÊÇ·ñÔÚ¶ÏÏßÖÐ, ÊäÈëÎÄ×ÖÖÐ, ±à
-¼­µµ°¸ÖÐ»òÊÇ»èÃÔ²»ÐÑ, ²¢½«ÊÊµ±µÄ×Ö´®¼ÓÈëÏÈÇ°µÄ×Ö´®Ò»Æð´«»Ø.
+å¦‚æžœè©²ç‰©ä»¶è¨­æœ‰ short é€™å€‹å±¬æ€§, å‰‡å‚³å›žå­—ä¸²ç‚º short çš„å…§å®¹åŠ ä¸Š id. å¦å‰‡
+å‚³å›žå­—ä¸²ç‚ºè©²ç‰©ä»¶ name å±¬æ€§çš„å…§å®¹åŠ ä¸Š id. å¦‚æžœè©²ç‰©ä»¶ä¸æ˜¯äººç‰© (ç”±
+is_chaaracter() åˆ¤å®š) å‰‡åœ¨æ­¤å‚³å›žå­—ä¸²çš„å…§å®¹.
+å¦‚æžœé€™å€‹ç‰©ä»¶æœ‰ "apply/short" é€™å€‹è‡¨æ™‚å±¬æ€§ä¸”å…§å®¹ä¸æ˜¯ç©ºçš„, å‰‡å‚³å›žå­—ä¸²è¢«
+è¨­ç‚º "apply/short" é™£åˆ—çš„å€’æ•¸ç¬¬äºŒå€‹å…ƒç´ . å¦å‰‡å‚³å›žå­—ä¸²æœƒå°‡ç‰©ä»¶çš„ nickname
+åŠ title ç­‰å±¬æ€§åŠ ä»¥çµ„åˆ. æœ€å¾Œåˆ¤å®šé€™å€‹ç‰©ä»¶æ˜¯å¦åœ¨æ–·ç·šä¸­, è¼¸å…¥æ–‡å­—ä¸­, ç·¨
+è¼¯æª”æ¡ˆä¸­æˆ–æ˜¯æ˜è¿·ä¸é†’, ä¸¦å°‡é©ç•¶çš„å­—ä¸²åŠ å…¥å…ˆå‰çš„å­—ä¸²ä¸€èµ·å‚³å›ž.
 
 varargs string long(int raw)
-Èç¹ûÕâ¸öÎï¼þÓÐ "apply/long" Õâ¸öÁÙÊ±ÊôÐÔÇÒÄÚÈÝ²»ÊÇ¿ÕµÄ, Ôò´«»Ø "apply/long"
-ÕóÁÐµÄµ¹ÊýµÚ¶þ¸öÔªËØ. ·ñÔò´«»Ø "long" Õâ¸öÊôÐÔµÄÄÚÈÝ. Èô¸ÃÎï¼þÃ»ÓÐ "long"
-Õâ¸öÊôÐÔ, Ôòºô½Ð²¢´«»Ø short() º¯ÊýµÄÄÚÈÝ²¢¼ÓÉÏ "¡£\n".
+å¦‚æžœé€™å€‹ç‰©ä»¶æœ‰ "apply/long" é€™å€‹è‡¨æ™‚å±¬æ€§ä¸”å…§å®¹ä¸æ˜¯ç©ºçš„, å‰‡å‚³å›ž "apply/long"
+é™£åˆ—çš„å€’æ•¸ç¬¬äºŒå€‹å…ƒç´ . å¦å‰‡å‚³å›ž "long" é€™å€‹å±¬æ€§çš„å…§å®¹. è‹¥è©²ç‰©ä»¶æ²’æœ‰ "long"
+é€™å€‹å±¬æ€§, å‰‡å‘¼å«ä¸¦å‚³å›ž short() å‡½æ•¸çš„å…§å®¹ä¸¦åŠ ä¸Š "ã€‚\n".
 
-¡õ F_SAVE
+â–¡ F_SAVE
 
 int save()
-ÅÐ¶¨Îï¼þµÄ´æµµµµÃû²¢½«¸ÃÎï¼þ´æµµ¡£
+åˆ¤å®šç‰©ä»¶çš„å­˜æª”æª”åä¸¦å°‡è©²ç‰©ä»¶å­˜æª”ã€‚
 
 int restore()
-½«Îï¼þµÄ×ÊÁÏÓÉµµ°¸ÄÚÔØÈë¡£
+å°‡ç‰©ä»¶çš„è³‡æ–™ç”±æª”æ¡ˆå…§è¼‰å…¥ã€‚
 
-¡õ SKILL
+â–¡ SKILL
 
 mapping query_skills()
-´«»ØÎï¼þµÄËùÓÐ¼¼ÄÜ.
+å‚³å›žç‰©ä»¶çš„æ‰€æœ‰æŠ€èƒ½.
 
 mapping query_learned()
-´«»ØËùÓÐ¼¼ÄÜµÄÑ§Ï°µãÊý.
+å‚³å›žæ‰€æœ‰æŠ€èƒ½çš„å­¸ç¿’é»žæ•¸.
 
 void set_skill(string skill, int val)
-Éè¶¨¼¼ÄÜ. ´«Èë¼¼ÄÜÃû³Æ¼°µÈ¼¶, Èô¼¼ÄÜµÄ mapping ²»´æÔÚÔòÐÂ½¨Á¢Ò»¸ö,
-·ñÔòÖ±½ÓÉèÈë¼¼ÄÜÃû³Æ¼°µÈ¼¶.
+è¨­å®šæŠ€èƒ½. å‚³å…¥æŠ€èƒ½åç¨±åŠç­‰ç´š, è‹¥æŠ€èƒ½çš„ mapping ä¸å­˜åœ¨å‰‡æ–°å»ºç«‹ä¸€å€‹,
+å¦å‰‡ç›´æŽ¥è¨­å…¥æŠ€èƒ½åç¨±åŠç­‰ç´š.
 
 int delete_skill(string skill)
-É¾³ýÄ³Ïî¼¼ÄÜ. Á¬´øµÄÒ²»áÉ¾³ý¸ÃÏî¼¼ÄÜµÄÑ§Ï°µãÊý.
+åˆªé™¤æŸé …æŠ€èƒ½. é€£å¸¶çš„ä¹Ÿæœƒåˆªé™¤è©²é …æŠ€èƒ½çš„å­¸ç¿’é»žæ•¸.
 
 varargs void map_skill(string skill, string mapped_to)
-°ÑÄ³Ïî¼¼ÄÜÖÂÄÜ, ÈôµÚ¶þ¸ö²ÎÊýÃ»ÓÐ´«Èë, ÔòÈ¡Ïû¸ÃÏîÖÂÄÜ.
+æŠŠæŸé …æŠ€èƒ½è‡´èƒ½, è‹¥ç¬¬äºŒå€‹åƒæ•¸æ²’æœ‰å‚³å…¥, å‰‡å–æ¶ˆè©²é …è‡´èƒ½.
 
 string query_skill_mapped(string skill)
-´«»ØÄ³Ïî¼¼ÄÜÖÖÀàËùÖÂÄÜµÄ¼¼ÄÜÃû³Æ.
+å‚³å›žæŸé …æŠ€èƒ½ç¨®é¡žæ‰€è‡´èƒ½çš„æŠ€èƒ½åç¨±.
 
 Returns the name of the skill that is enabled as as skill type
 passed as parameter.
 
 varargs int query_skill(string skill, int raw)
-´«»Ø¼¼ÄÜµÄµÈ¼¶.
+å‚³å›žæŠ€èƒ½çš„ç­‰ç´š.
 
 mapping query_skill_map()
-´«»Ø¼¼ÄÜÖÂÄÜµÄÁÐ±í.
+å‚³å›žæŠ€èƒ½è‡´èƒ½çš„åˆ—è¡¨.
 
 
 int skill_death_penalty()
-ÈËÎïËÀáá»áºô½ÐÕâ¸öº¯ÊýÒÔ¼ÆËãËÀÍöÊ±ËùÔì³ÉµÄ¼¼ÄÜËðÊ§.
+äººç‰©æ­»å¾Œæœƒå‘¼å«é€™å€‹å‡½æ•¸ä»¥è¨ˆç®—æ­»äº¡æ™‚æ‰€é€ æˆçš„æŠ€èƒ½æå¤±.
 
 varargs void improve_skill(string skill, int amount, int weak_mode)
-Ôö¼Ò´«Èë¼¼ÄÜµÄÑ§Ï°µãÊý, ²¢ÅÐ¶¨ÊÇ·ñÓÐ½ø²½ÒÔÔö¼ÓµÈ¼¶.
+å¢žå®¶å‚³å…¥æŠ€èƒ½çš„å­¸ç¿’é»žæ•¸, ä¸¦åˆ¤å®šæ˜¯å¦æœ‰é€²æ­¥ä»¥å¢žåŠ ç­‰ç´š.
 
-¡õ team
+â–¡ team
 
 int set_leader(object ob)
-½«´«ÈëÎï¼þÉèÎª¸Ã¶ÓÎéµÄÁì¶Ó¡£
+å°‡å‚³å…¥ç‰©ä»¶è¨­ç‚ºè©²éšŠä¼çš„é ˜éšŠã€‚
 
 object query_leader()
-´«»Ø¶ÓÎéµÄÁì¶ÓÎï¼þ¡£
+å‚³å›žéšŠä¼çš„é ˜éšŠç‰©ä»¶ã€‚
 
 int follow_path(string dir)
-ÈÃÖ¸¶¨Îï¼þÖ´ÐÐÒÆ¶¯Ö¸Áî£¬·½ÏòÒÔ´«ÈëÖµÎªÖ÷¡£
+è®“æŒ‡å®šç‰©ä»¶åŸ·è¡Œç§»å‹•æŒ‡ä»¤ï¼Œæ–¹å‘ä»¥å‚³å…¥å€¼ç‚ºä¸»ã€‚
 
 int follow_me(object ob, string dir)
 
 int add_team_member(object ob)
-½«Ö¸¶¨Îï¼þ¼ÓÈë¶ÓÎéÖÐ¡£Èç¹û¶ÓÎé»¹²»´æÔÚ£¬Ôò»á½¨Á¢Ò»¸öÐÂµÄ¶ÓÎé£¬²¢°Ñºô½Ð´Ëº¯
-ÊýµÄÎï¼þºÍ´«ÈëÎï¼þÄÉÈë¶ÓÎéÖ®ÖÐ¡£
+å°‡æŒ‡å®šç‰©ä»¶åŠ å…¥éšŠä¼ä¸­ã€‚å¦‚æžœéšŠä¼é‚„ä¸å­˜åœ¨ï¼Œå‰‡æœƒå»ºç«‹ä¸€å€‹æ–°çš„éšŠä¼ï¼Œä¸¦æŠŠå‘¼å«æ­¤å‡½
+æ•¸çš„ç‰©ä»¶å’Œå‚³å…¥ç‰©ä»¶ç´å…¥éšŠä¼ä¹‹ä¸­ã€‚
 
 int set_team(object *t)
-Éè¶¨¶ÓÎé¡££¨×¢£º´Ëº¯ÊýÃ»ÓÐ´«»ØÖµ¡££©(Î´Íê)
+è¨­å®šéšŠä¼ã€‚ï¼ˆæ³¨ï¼šæ­¤å‡½æ•¸æ²’æœ‰å‚³å›žå€¼ã€‚ï¼‰(æœªå®Œ)
 
 varargs int dismiss_team(object ob)
-½âÉ¢¶ÓÎé¡£Èô½âÉ¢ÈËÎªÕâ¸ö¶ÓÎéµÄÁì¶Ó£¬ÔòÕû¸ö¶ÓÎé»á±»½âÉ¢¡£·ñÔò½ö¸Ã³É
-Ô±Àë¿ª¶ÓÎé¡£
+è§£æ•£éšŠä¼ã€‚è‹¥è§£æ•£äººç‚ºé€™å€‹éšŠä¼çš„é ˜éšŠï¼Œå‰‡æ•´å€‹éšŠä¼æœƒè¢«è§£æ•£ã€‚å¦å‰‡åƒ…è©²æˆ
+å“¡é›¢é–‹éšŠä¼ã€‚
 
 object *query_team()
-´«»Ø¶ÓÎé¡õËùÓÐ¶ÓÔ±¡£
+å‚³å›žéšŠä¼â–¡æ‰€æœ‰éšŠå“¡ã€‚
 
 int is_team_leader()
-²âÊÔÖ¸¶¨Îï¼þÊÇ·ñÎªÒ»¸ö¶ÓÎéµÄÁì¶Ó¡£
+æ¸¬è©¦æŒ‡å®šç‰©ä»¶æ˜¯å¦ç‚ºä¸€å€‹éšŠä¼çš„é ˜éšŠã€‚
 
 
-¡õ VENDOR -- ±ê×¼··ÂôÎï¼þ
+â–¡ VENDOR -- æ¨™æº–è²©è³£ç‰©ä»¶
 
 int buy_object(object me, string what)
-(ÎªÍê)
+(ç‚ºå®Œ)
 
 void complete_trade(object me, string what)
-Íê³É½»Ò×, ½«Îï¼þ½»¸øÂòÖ÷²¢´«³öÏà¹ØÑ¶Ï¢.
+å®Œæˆäº¤æ˜“, å°‡ç‰©ä»¶äº¤çµ¦è²·ä¸»ä¸¦å‚³å‡ºç›¸é—œè¨Šæ¯.
 
 string price_string(int v)
-ÒÔ¶ÔµÈµÄ±ÒÖµÁÐ³öÎï¼þµÄ¼ÛÖµ.
+ä»¥å°ç­‰çš„å¹£å€¼åˆ—å‡ºç‰©ä»¶çš„åƒ¹å€¼.
 
 int do_vendor_list(string arg)
-ÁÐ³öËù³öÊÛµÄÎïÆ·¼°¼ÛÇ®.
+åˆ—å‡ºæ‰€å‡ºå”®çš„ç‰©å“åŠåƒ¹éŒ¢.
 
-¡õ ÈËÎïÖ¢×´
+â–¡ äººç‰©ç—‡ç‹€
 
-ËùÎ½µÄÖ¢×´(condition)¾ÍÊÇÒ»¸öÈËÎïÒòÎªÊÜÉË¡¢ÖÐ¶¾¡¢»ò·¨ÊõÓ°ÏìËù²úÉúµÄ
-¸÷ÖÖÖ¢×´£¬ÔÚ ES2 mudlib ÀïÃæ¶¨Òå³É¡¸ÐèÒªÃ¿´Î recover Ê±±ä»¯µÄÖ¢×´¡¹
-£¬»»¾ä»°Ëµ£¬ÈËÎïÖ¢×´ÊÇÒ»ÖÖÏàµ±ºÄ·ÑÏµÍ³ CPU Ê±¼äµÄÎï¼þ£¬¶øÇÒÒ»·¢Éú´í
-Îó¾Í¿ÉÄÜµ¼ÖÂ lost heart beat¡£
+æ‰€è¬‚çš„ç—‡ç‹€(condition)å°±æ˜¯ä¸€å€‹äººç‰©å› ç‚ºå—å‚·ã€ä¸­æ¯’ã€æˆ–æ³•è¡“å½±éŸ¿æ‰€ç”¢ç”Ÿçš„
+å„ç¨®ç—‡ç‹€ï¼Œåœ¨ ES2 mudlib è£¡é¢å®šç¾©æˆã€Œéœ€è¦æ¯æ¬¡ recover æ™‚è®ŠåŒ–çš„ç—‡ç‹€ã€
+ï¼Œæ›å¥è©±èªªï¼Œäººç‰©ç—‡ç‹€æ˜¯ä¸€ç¨®ç›¸ç•¶è€—è²»ç³»çµ± CPU æ™‚é–“çš„ç‰©ä»¶ï¼Œè€Œä¸”ä¸€ç™¼ç”ŸéŒ¯
+èª¤å°±å¯èƒ½å°Žè‡´ lost heart beatã€‚
 
-½«Ò»¸öÖ¢×´¼Óµ½Ò»¸öÈËÎïÉíÉÏÊ®·Ö¼òµ¥£¬ÈËÎïÎï¼þ¼Ì³ÐµÄ F_CONDITION ÖÐ¶¨
-ÒåÁËÒ»¸ö½çÃæº¯Êý apply_condition() ÈÃÄã½«Ò»¸öÖ¢×´¼ÓÖîì¶¸ÃÃûÈËÎïÉíÉÏ
-£¬Õâ¸öº¯ÊýµÚÒ»¸ö²ÎÊýÊÇ¶¨ÒåÕâ¸öÖ¢×´µÄÎï¼þµµÃû£¬µÚ¶þ¸ö²ÎÊýÔòÊÇÒ»¸ö
-mixed ÐÍÌ¬µÄÈÎÒâ²ÎÊý£¬ÓÃÀ´ÃèÊöÕâÃûÈËÎï´ËÒ»Ö¢×´µÄ×ÊÑ¶¡£
+å°‡ä¸€å€‹ç—‡ç‹€åŠ åˆ°ä¸€å€‹äººç‰©èº«ä¸Šååˆ†ç°¡å–®ï¼Œäººç‰©ç‰©ä»¶ç¹¼æ‰¿çš„ F_CONDITION ä¸­å®š
+ç¾©äº†ä¸€å€‹ç•Œé¢å‡½æ•¸ apply_condition() è®“ä½ å°‡ä¸€å€‹ç—‡ç‹€åŠ è«¸æ–¼è©²åäººç‰©èº«ä¸Š
+ï¼Œé€™å€‹å‡½æ•¸ç¬¬ä¸€å€‹åƒæ•¸æ˜¯å®šç¾©é€™å€‹ç—‡ç‹€çš„ç‰©ä»¶æª”åï¼Œç¬¬äºŒå€‹åƒæ•¸å‰‡æ˜¯ä¸€å€‹
+mixed åž‹æ…‹çš„ä»»æ„åƒæ•¸ï¼Œç”¨ä¾†æè¿°é€™åäººç‰©æ­¤ä¸€ç—‡ç‹€çš„è³‡è¨Šã€‚
 
-apply_condition Ö®ËùÒÔÓÃÕâÖÖºÍ function ±È½ÏÆðÀ´½ÏÂýµÄ¸ñÊ½À´¶¨ÒåÒ»¸ö
-Ö¢×´£¬Ö÷ÒªÊÇÎªÁËÈÃÈËÎïµÄÖ¢×´×´Ì¬ÄÜ±» save_object() ´¢´æÏÂÀ´£¬Òò´Ëµ±
-ÄãÉè¼ÆÐÂµÄÖ¢×´Ê±£¬Çë×¢ÒâÃèÊöÕâ¸öÈËÎïÖ¢×´µÄ²ÎÊýÖÐ²»ÒªÊ¹ÓÃ object ÐÍÌ¬
-µÄÀ¸Î»£¬ÒÔÃâÔÚ save ¼° restore Ö®ááÊ§È¥Õâ¸öÀ¸Î»µÄÄÚÈÝ¡£
+apply_condition ä¹‹æ‰€ä»¥ç”¨é€™ç¨®å’Œ function æ¯”è¼ƒèµ·ä¾†è¼ƒæ…¢çš„æ ¼å¼ä¾†å®šç¾©ä¸€å€‹
+ç—‡ç‹€ï¼Œä¸»è¦æ˜¯ç‚ºäº†è®“äººç‰©çš„ç—‡ç‹€ç‹€æ…‹èƒ½è¢« save_object() å„²å­˜ä¸‹ä¾†ï¼Œå› æ­¤ç•¶
+ä½ è¨­è¨ˆæ–°çš„ç—‡ç‹€æ™‚ï¼Œè«‹æ³¨æ„æè¿°é€™å€‹äººç‰©ç—‡ç‹€çš„åƒæ•¸ä¸­ä¸è¦ä½¿ç”¨ object åž‹æ…‹
+çš„æ¬„ä½ï¼Œä»¥å…åœ¨ save åŠ restore ä¹‹å¾Œå¤±åŽ»é€™å€‹æ¬„ä½çš„å…§å®¹ã€‚
 
-¶¨ÒåÖ¢×´µÄÎï¼þÊ®·Ö¼òµ¥£¬F_CONDITION ÔÚÃ¿´ÎÈËÎï recover Ê±¼äµ½£¬ºô½Ð
-heal_up() Ö®Ç°£¬»á¶ÔÈËÎïËùÓÐµÄÖ¢×´Ö®¶¨ÒåÎï¼þºô½Ð update_condition()
-Õâ¸ö×Ô¶¨º¯Êý£¬ºô½Ð´«ÈëÁ½¸ö²ÎÊý£¬µÚÒ»¸öÊÇ object ÐÍÌ¬£¬Ò²¾ÍÊÇ´øÓÐÕâ¸ö
-Ö¢×´µÄÈËÎï£¬µÚ¶þ¸öÔòÊÇÓÃÀ´¼ÇÂ¼ÕâÃûÈËÎï¸ÃÖ¢×´×ÊÑ¶µÄ mixed ÐÍÌ¬²ÎÊý£¬
-ÄãÔÚÖ¢×´¶¨ÒåÎï¼þÖÐÐû¸æµÚ¶þ¸ö²ÎÊýµÄÊ±ºò¿ÉÒÔÈÎÒâÖ¸¶¨ËüµÄÐÍÌ¬£¬F_CONDITION
-²¢²»»á¶ÔÕâ¸ö±äÊý×öÈÎºÎ´¦Àí¡£
+å®šç¾©ç—‡ç‹€çš„ç‰©ä»¶ååˆ†ç°¡å–®ï¼ŒF_CONDITION åœ¨æ¯æ¬¡äººç‰© recover æ™‚é–“åˆ°ï¼Œå‘¼å«
+heal_up() ä¹‹å‰ï¼Œæœƒå°äººç‰©æ‰€æœ‰çš„ç—‡ç‹€ä¹‹å®šç¾©ç‰©ä»¶å‘¼å« update_condition()
+é€™å€‹è‡ªå®šå‡½æ•¸ï¼Œå‘¼å«å‚³å…¥å…©å€‹åƒæ•¸ï¼Œç¬¬ä¸€å€‹æ˜¯ object åž‹æ…‹ï¼Œä¹Ÿå°±æ˜¯å¸¶æœ‰é€™å€‹
+ç—‡ç‹€çš„äººç‰©ï¼Œç¬¬äºŒå€‹å‰‡æ˜¯ç”¨ä¾†è¨˜éŒ„é€™åäººç‰©è©²ç—‡ç‹€è³‡è¨Šçš„ mixed åž‹æ…‹åƒæ•¸ï¼Œ
+ä½ åœ¨ç—‡ç‹€å®šç¾©ç‰©ä»¶ä¸­å®£å‘Šç¬¬äºŒå€‹åƒæ•¸çš„æ™‚å€™å¯ä»¥ä»»æ„æŒ‡å®šå®ƒçš„åž‹æ…‹ï¼ŒF_CONDITION
+ä¸¦ä¸æœƒå°é€™å€‹è®Šæ•¸åšä»»ä½•è™•ç†ã€‚
 
-update_condition() µÄ´«»ØÖµÊÇÒ»¸ö±íÊ¾¶à¸ö flag µÄÕûÊý£¬ÕâÐ© flag ¶¼¶¨
-ÒåÔÚ <condition.h> ÖÐ£¬Èç¹û´«»ØÖµÎª 0£¬Õâ¸öÖ¢×´»áÔÚ return Ö®áá±»´ÓÕâ
-ÃûÈËÎïÉíÉÏÒÆ³ý(ÕâÑùÉè¼Æ¿ÉÒÔÈÃ´íÎóµÄÖ¢×´¶¨ÒåÎï¼þµµÃûÔÚÒ»´Îºô½ÐÖ®ááÁ¢¿Ì
-±»ÒÆ³ý)¡£
+update_condition() çš„å‚³å›žå€¼æ˜¯ä¸€å€‹è¡¨ç¤ºå¤šå€‹ flag çš„æ•´æ•¸ï¼Œé€™äº› flag éƒ½å®š
+ç¾©åœ¨ <condition.h> ä¸­ï¼Œå¦‚æžœå‚³å›žå€¼ç‚º 0ï¼Œé€™å€‹ç—‡ç‹€æœƒåœ¨ return ä¹‹å¾Œè¢«å¾žé€™
+åäººç‰©èº«ä¸Šç§»é™¤(é€™æ¨£è¨­è¨ˆå¯ä»¥è®“éŒ¯èª¤çš„ç—‡ç‹€å®šç¾©ç‰©ä»¶æª”ååœ¨ä¸€æ¬¡å‘¼å«ä¹‹å¾Œç«‹åˆ»
+è¢«ç§»é™¤)ã€‚
 
-CND_CONTINUE    Èô´«»ØÖµµÄÕâ¸ö flag Îª on£¬ÔòÏÂ´Î recover Ê±Õâ¸öÖ¢×´
-                »áÔÙ´Î±»ºô½Ð¡£
+CND_CONTINUE    è‹¥å‚³å›žå€¼çš„é€™å€‹ flag ç‚º onï¼Œå‰‡ä¸‹æ¬¡ recover æ™‚é€™å€‹ç—‡ç‹€
+                æœƒå†æ¬¡è¢«å‘¼å«ã€‚
 
-¡õ ¶¯×÷(action)
+â–¡ å‹•ä½œ(action)
 
-    ÕâÀïËùÎ½µÄ¡¸¶¯×÷¡¹(action)£¬ÊÇÖ¸ÉúÎïÕ½¶·Ê±µÄÐÐÎªµÄ×îÐ¡µ¥Î»£¬¿ÉÒÔÊÇ»Ó³ö
-Ò»È­¡¢Ìß³öÒ»½Å¡¢ÓÃ½£Ò»´Ì¡¢Éä³öÒ»Ö§·ÉïÚ¡¢¶ª³öÒ»¸ö»ðÇò¡¢ÉõÖÁÊÇ¡õÊÔÒ»´ÎÌÓÅÜµÈ
-µÈ£¬Ö»ÒªÊÇÂß¼­ÉÏÊôì¶¡¸Í¬Ò»Ê±¼ä¡¹Ëù×÷µÄÐÐÎª£¬¶¼¿ÉÒÔ¹éÀàì¶Ò»¸ö¶¯×÷¡£
+    é€™è£¡æ‰€è¬‚çš„ã€Œå‹•ä½œã€(action)ï¼Œæ˜¯æŒ‡ç”Ÿç‰©æˆ°é¬¥æ™‚çš„è¡Œç‚ºçš„æœ€å°å–®ä½ï¼Œå¯ä»¥æ˜¯æ®å‡º
+ä¸€æ‹³ã€è¸¢å‡ºä¸€è…³ã€ç”¨åŠä¸€åˆºã€å°„å‡ºä¸€æ”¯é£›é¢ã€ä¸Ÿå‡ºä¸€å€‹ç«çƒã€ç”šè‡³æ˜¯â–¡è©¦ä¸€æ¬¡é€ƒè·‘ç­‰
+ç­‰ï¼Œåªè¦æ˜¯é‚è¼¯ä¸Šå±¬æ–¼ã€ŒåŒä¸€æ™‚é–“ã€æ‰€ä½œçš„è¡Œç‚ºï¼Œéƒ½å¯ä»¥æ­¸é¡žæ–¼ä¸€å€‹å‹•ä½œã€‚
 
-    ÎÒÃÇ¼ÙÉèËùÓÐµÄ¶¯×÷¶¼ÊÇÔÚÕ½¶·×´Ì¬ÏÂµÄÐÐÎª£¬ÒòÎª·ÇÕ½¶·×´Ì¬ÏÂµÄ¶¯×÷Ö±½Ó×ö
-³öÀ´¾Í¿ÉÒÔÁË£¬²»ÐèÒª»¨ÐÄË¼ÓÃÒÔÏÂ½«Ìáµ½µÄ¸ñÊ½ÃèÊöËü¡£·´¹ýÀ´Ëµ£¬°ÑÕ½¶·×´Ì¬ÏÂ
-µÄÐÐÎªÍ³Ò»ÓÃ¡¸¶¯×÷¡¹À´ÃèÊöµÄÀíÓÉºÜ¼òµ¥£¬ÎÒÃÇ²»Ï£ÍûÒ»¸öÈË¿ÉÒÔ½åÓÉÈÎºÎÎ×Ê¦Òâ
-ÁÏÖ®ÍâµÄ¼¼ÇÉÔÚµÐÈË»Ó³öÒ»½£µÄÍ¬Ê±£¬¶ª³öÊ®¸ö»ðÇò¡¢¼ñÆðµØÉÏµÄÈýÊ®Æ¿Ò©¼Á¡¢µÈµÈ
-ÇéÐÎ·¢Éú£¬ÁíÒ»·½Ãæ£¬Ò²Ìá¹©Î×Ê¦ÃÇÔÚÉè¼Æ¹ÖÎï¡¢ÎäÆ÷¡¢ÎïÆ·µÈÎï¼þÊ±£¬¿ÉÒÔÓÃ±È½Ï
-ÇáËÉµÄ·½Ê½¶¨Òå³öÒ»Ð©±ä»¯½Ï´óµÄ±íÏÖ·½Ê½¡£
+    æˆ‘å€‘å‡è¨­æ‰€æœ‰çš„å‹•ä½œéƒ½æ˜¯åœ¨æˆ°é¬¥ç‹€æ…‹ä¸‹çš„è¡Œç‚ºï¼Œå› ç‚ºéžæˆ°é¬¥ç‹€æ…‹ä¸‹çš„å‹•ä½œç›´æŽ¥åš
+å‡ºä¾†å°±å¯ä»¥äº†ï¼Œä¸éœ€è¦èŠ±å¿ƒæ€ç”¨ä»¥ä¸‹å°‡æåˆ°çš„æ ¼å¼æè¿°å®ƒã€‚åéŽä¾†èªªï¼ŒæŠŠæˆ°é¬¥ç‹€æ…‹ä¸‹
+çš„è¡Œç‚ºçµ±ä¸€ç”¨ã€Œå‹•ä½œã€ä¾†æè¿°çš„ç†ç”±å¾ˆç°¡å–®ï¼Œæˆ‘å€‘ä¸å¸Œæœ›ä¸€å€‹äººå¯ä»¥è—‰ç”±ä»»ä½•å·«å¸«æ„
+æ–™ä¹‹å¤–çš„æŠ€å·§åœ¨æ•µäººæ®å‡ºä¸€åŠçš„åŒæ™‚ï¼Œä¸Ÿå‡ºåå€‹ç«çƒã€æ’¿èµ·åœ°ä¸Šçš„ä¸‰åç“¶è—¥åŠ‘ã€ç­‰ç­‰
+æƒ…å½¢ç™¼ç”Ÿï¼Œå¦ä¸€æ–¹é¢ï¼Œä¹Ÿæä¾›å·«å¸«å€‘åœ¨è¨­è¨ˆæ€ªç‰©ã€æ­¦å™¨ã€ç‰©å“ç­‰ç‰©ä»¶æ™‚ï¼Œå¯ä»¥ç”¨æ¯”è¼ƒ
+è¼•é¬†çš„æ–¹å¼å®šç¾©å‡ºä¸€äº›è®ŠåŒ–è¼ƒå¤§çš„è¡¨ç¾æ–¹å¼ã€‚
 
-    ÔÚ³ÌÊ½ÖÐ£¬ÎÒÃÇÓÃÒ»¸ö mapping À´±íÊ¾Ò»¸ö¶¯×÷£¬ÖµµÃÒ»ÌáµÄÊÇ£¬ÓÉì¶mapping
-ÕâÖÖ½á¹¹ÔÚ LPC ÖÐÊÇÒÔÎ»Ö·´«µÝ(call by address)£¬Òò´ËÎªÁË°²È«Æð¼û£¬ÎÒÃÇ¹æ¶¨
-ËùÓÐ´¦Àí¶¯×÷µÄ³ÌÊ½¡¸¾ø²»¡¹ÐÞ¸ÄÆäËûÎï¼þËùÌá¹©µÄ¶¯×÷ mapping µÄÄÚÈÝ £¬Õâ¸öÔ­
-ÔòÊÇÔ¤·ÀÒ»Ð©Î´À´¿ÉÄÜ·¢ÉúµÄ´íÎó³öÏÖ¡£
+    åœ¨ç¨‹å¼ä¸­ï¼Œæˆ‘å€‘ç”¨ä¸€å€‹ mapping ä¾†è¡¨ç¤ºä¸€å€‹å‹•ä½œï¼Œå€¼å¾—ä¸€æçš„æ˜¯ï¼Œç”±æ–¼mapping
+é€™ç¨®çµæ§‹åœ¨ LPC ä¸­æ˜¯ä»¥ä½å€å‚³éž(call by address)ï¼Œå› æ­¤ç‚ºäº†å®‰å…¨èµ·è¦‹ï¼Œæˆ‘å€‘è¦å®š
+æ‰€æœ‰è™•ç†å‹•ä½œçš„ç¨‹å¼ã€Œçµ•ä¸ã€ä¿®æ”¹å…¶ä»–ç‰©ä»¶æ‰€æä¾›çš„å‹•ä½œ mapping çš„å…§å®¹ ï¼Œé€™å€‹åŽŸ
+å‰‡æ˜¯é é˜²ä¸€äº›æœªä¾†å¯èƒ½ç™¼ç”Ÿçš„éŒ¯èª¤å‡ºç¾ã€‚
 
-    ÔÚ¶¨ÒåÒ»¸ö¶¯×÷µÄ mapping ÖÐ£¬¿ÉÄÜÓÐÒÔÏÂµÄÀ¸Î»£¬ÆäÖÐÇ°ÃæÓÐ * ºÅµÄ±íÊ¾Õâ
-¸öÀ¸Î»ÊÇ¿ÉÓÐ¿ÉÎÞµÄ£º
+    åœ¨å®šç¾©ä¸€å€‹å‹•ä½œçš„ mapping ä¸­ï¼Œå¯èƒ½æœ‰ä»¥ä¸‹çš„æ¬„ä½ï¼Œå…¶ä¸­å‰é¢æœ‰ * è™Ÿçš„è¡¨ç¤ºé€™
+å€‹æ¬„ä½æ˜¯å¯æœ‰å¯ç„¡çš„ï¼š
 
 action
 
-    Ö´ÐÐÕâ¸ö¶¯×÷Ëù³öÏÖµÄÑ¶Ï¢£¬¸ñÊ½ÊÇºÍ message_vision Õâ¸ö simul efun ÒªÇó
-    µÄÏàÍ¬£¬ÀýÈç "$N¶Ô×¼$nµÄ%s»Ó³öÒ»È­" £¬ÆäÖÐµÄ %s »áÓÃÕâ¸ö¶¯×÷Ëù¹¥»÷µÄ²¿
-    Î»Ãû³Æ´úÌæ¡£
+    åŸ·è¡Œé€™å€‹å‹•ä½œæ‰€å‡ºç¾çš„è¨Šæ¯ï¼Œæ ¼å¼æ˜¯å’Œ message_vision é€™å€‹ simul efun è¦æ±‚
+    çš„ç›¸åŒï¼Œä¾‹å¦‚ "$Nå°æº–$nçš„%sæ®å‡ºä¸€æ‹³" ï¼Œå…¶ä¸­çš„ %s æœƒç”¨é€™å€‹å‹•ä½œæ‰€æ”»æ“Šçš„éƒ¨
+    ä½åç¨±ä»£æ›¿ã€‚
 
 *post_action
 
-    ÕâÊÇÒ»¸ö function type µÄÀ¸Î»£¬Èç¹ûÕâ¸öÀ¸Î»±»¶¨Òå£¬combatd »áÔÚ action
-    Ñ¶Ï¢Ó¡³öÖ®ááºô½ÐÕâ¸ö function£¬ÓÐ²»ÉÙÕ½¶·ÖÐµÄÌØÊâÐ§¹û¶¼ÊÇÀûÓÃÕâ¸ö·½Ê½
-    Íê³É£¬ÈçÍ¶ÉäÎäÆ÷µÄÏûºÄ¡¢Ä³Ð©Õ½¶·ÓÃµÄÄ§·¨µÈ¡£
+    é€™æ˜¯ä¸€å€‹ function type çš„æ¬„ä½ï¼Œå¦‚æžœé€™å€‹æ¬„ä½è¢«å®šç¾©ï¼Œcombatd æœƒåœ¨ action
+    è¨Šæ¯å°å‡ºä¹‹å¾Œå‘¼å«é€™å€‹ functionï¼Œæœ‰ä¸å°‘æˆ°é¬¥ä¸­çš„ç‰¹æ®Šæ•ˆæžœéƒ½æ˜¯åˆ©ç”¨é€™å€‹æ–¹å¼
+    å®Œæˆï¼Œå¦‚æŠ•å°„æ­¦å™¨çš„æ¶ˆè€—ã€æŸäº›æˆ°é¬¥ç”¨çš„é­”æ³•ç­‰ã€‚
 
 *damage
 
-    Ö´ÐÐÕâ¸ö¶¯×÷µÄÉËº¦Á¦ÐÞÕý£¬µ¥Î»ÊÇ°Ù·Ö±È£¬¡õÎ§ÊÇ´óì¶ -100¡£
+    åŸ·è¡Œé€™å€‹å‹•ä½œçš„å‚·å®³åŠ›ä¿®æ­£ï¼Œå–®ä½æ˜¯ç™¾åˆ†æ¯”ï¼Œâ–¡åœæ˜¯å¤§æ–¼ -100ã€‚
     default: 0
 
 *damage_type
 
-    ¹¥»÷ÃüÖÐÊ±ËùÔì³ÉµÄÉËº¦ÖÖÀà£¬Èç"¸îÉË"¡¢"ðöÉË"¡¢"×ÆÉË"µÈµÈ£¬ÏêÏ¸µÄÉËº¦ÖÖ
-    ÀàÇë²Î¿¼ÆäËûÎÄ¼þ¡£
-    default: "ÉËº¦"
+    æ”»æ“Šå‘½ä¸­æ™‚æ‰€é€ æˆçš„å‚·å®³ç¨®é¡žï¼Œå¦‚"å‰²å‚·"ã€"ç˜€å‚·"ã€"ç¼å‚·"ç­‰ç­‰ï¼Œè©³ç´°çš„å‚·å®³ç¨®
+    é¡žè«‹åƒè€ƒå…¶ä»–æ–‡ä»¶ã€‚
+    default: "å‚·å®³"
 
 *dodge
 
-    Õâ¸ö¶¯×÷¶ÔµÐÈË¶ã±Ü´ËÒ»¹¥»÷µÄÐÞÕý°Ù·ÖÂÊ¡£
+    é€™å€‹å‹•ä½œå°æ•µäººèº²é¿æ­¤ä¸€æ”»æ“Šçš„ä¿®æ­£ç™¾åˆ†çŽ‡ã€‚
     default: 0
 
 *parry
 
-    Õâ¸ö¶¯×÷¶ÔµÐÈËÕÐ¼Ü´ËÒ»¹¥»÷µÄÐÞÕý°Ù·ÖÂÊ¡£
+    é€™å€‹å‹•ä½œå°æ•µäººæ‹›æž¶æ­¤ä¸€æ”»æ“Šçš„ä¿®æ­£ç™¾åˆ†çŽ‡ã€‚
     default: 0
 
-¡õ ÈËÎï×´Ì¬
+â–¡ äººç‰©ç‹€æ…‹
 
-Ò»¸öÈËÎï¾ßÓÐÈýÏî»ù±¾µÄÊýÖµ£ºÐÎÌå(Physical)¡¢ÄÜÁ¿(Energy)¡¢¾«Éñ(Mental)¡£
+ä¸€å€‹äººç‰©å…·æœ‰ä¸‰é …åŸºæœ¬çš„æ•¸å€¼ï¼šå½¢é«”(Physical)ã€èƒ½é‡(Energy)ã€ç²¾ç¥ž(Mental)ã€‚
 
-Ã¿Ò»¸öÊýÖµ¶¼ÓÐÒ»¸ö¡¸Ä¿Ç°Öµ¡¹£¬±íÊ¾¸Ã×´Ì¬ÔÚ¼ÆËãÈËÎïÄÜÁ¦Ê±Ëù¾ßÓÐµÄÇ¿¶È£¬Ò»¸ö
-¡¸ÓÐÐ§ÉÏÏÞ¡¹£¬±íÊ¾Õâ¸ö×´Ì¬ÔÚÈËÎï×ÔÈ»µÄÇé¿öÏÂ£¬ÄÜ¹»¾­ÓÉÐÂ³Â´úÐ»»ò×ÔÎÒÐÞ¸´µÄ
-»úÄÜÂýÂý»Ö¸´µÄÉÏÏÞ£¬¸úÒ»¸ö¡¸×î´óÉÏÏÞ¡¹£¬±íÊ¾Õâ¸öÈËÎï¸ÃÏî×´Ì¬µÄ¼«´óÖµ¡£
+æ¯ä¸€å€‹æ•¸å€¼éƒ½æœ‰ä¸€å€‹ã€Œç›®å‰å€¼ã€ï¼Œè¡¨ç¤ºè©²ç‹€æ…‹åœ¨è¨ˆç®—äººç‰©èƒ½åŠ›æ™‚æ‰€å…·æœ‰çš„å¼·åº¦ï¼Œä¸€å€‹
+ã€Œæœ‰æ•ˆä¸Šé™ã€ï¼Œè¡¨ç¤ºé€™å€‹ç‹€æ…‹åœ¨äººç‰©è‡ªç„¶çš„æƒ…æ³ä¸‹ï¼Œèƒ½å¤ ç¶“ç”±æ–°é™³ä»£è¬æˆ–è‡ªæˆ‘ä¿®å¾©çš„
+æ©Ÿèƒ½æ…¢æ…¢æ¢å¾©çš„ä¸Šé™ï¼Œè·Ÿä¸€å€‹ã€Œæœ€å¤§ä¸Šé™ã€ï¼Œè¡¨ç¤ºé€™å€‹äººç‰©è©²é …ç‹€æ…‹çš„æ¥µå¤§å€¼ã€‚
 
-ÕâÈý¸öÖµµÄ¸ßµÍÓÀÔ¶ÊÇ£ºÄ¿Ç°Öµ ¡Ü ÓÐÐ§ÉÏÏÞ ¡Ü ×î´óÉÏÏÞ¡£
+é€™ä¸‰å€‹å€¼çš„é«˜ä½Žæ°¸é æ˜¯ï¼šç›®å‰å€¼ â‰¦ æœ‰æ•ˆä¸Šé™ â‰¦ æœ€å¤§ä¸Šé™ã€‚
 
-¡õ  Phisical ÐÎÌå
+â–¡  Phisical å½¢é«”
 
-ÐÎÌåµÄÄ¿Ç°Öµ±íÊ¾Ò»¸öÈËÎïÐÎÌå(ÉíÌå»úÄÜ)µÄ»úÄÜ×´Ì¬£¬ÐÎÌå»úÄÜ»áÒòÎª×÷Õ½Ê±µÄ×è
-µ²¡¢³ÐÊÜ¹¥»÷¶ø½µµÍ£¬ÐÎÌåÄ¿Ç°Öµ½µµ½Áã±íÊ¾Õâ¸öÈËÎïµÄÐÎÌå»úÄÜÍêÈ«É¥Ê§×÷ÓÃ£¬Ò²
-¾ÍÊÇËÀÍö×´Ì¬(dead)¡£
-ÐÎÌåµÄÓÐÐ§ÉÏÏÞ±íÊ¾Ò»¸öÈËÎïÐÎÌåµÄÍêºÃ³Ì¶È£¬ÐÎÌåÓÐÐ§ÉÏÏÞ»áËæÖøÈËÎïÊÜµ½ÊµÌåÉË
-º¦( ÎïÀíÐÔÉËº¦ )¶ø½µµÍ£¬ÐÎÌåÓÐÐ§ÉÏÏÞ½µµ½Áã±íÊ¾Õâ¸öÈËÎïµÄÐÎÌåÒÑ¾­±»´Ý»Ù¡¢±¨
-·ÏÁË£¬Ò²¾ÍÊÇ»ÙÃð×´Ì¬(destroyed)¡£
+å½¢é«”çš„ç›®å‰å€¼è¡¨ç¤ºä¸€å€‹äººç‰©å½¢é«”(èº«é«”æ©Ÿèƒ½)çš„æ©Ÿèƒ½ç‹€æ…‹ï¼Œå½¢é«”æ©Ÿèƒ½æœƒå› ç‚ºä½œæˆ°æ™‚çš„é˜»
+æ“‹ã€æ‰¿å—æ”»æ“Šè€Œé™ä½Žï¼Œå½¢é«”ç›®å‰å€¼é™åˆ°é›¶è¡¨ç¤ºé€™å€‹äººç‰©çš„å½¢é«”æ©Ÿèƒ½å®Œå…¨å–ªå¤±ä½œç”¨ï¼Œä¹Ÿ
+å°±æ˜¯æ­»äº¡ç‹€æ…‹(dead)ã€‚
+å½¢é«”çš„æœ‰æ•ˆä¸Šé™è¡¨ç¤ºä¸€å€‹äººç‰©å½¢é«”çš„å®Œå¥½ç¨‹åº¦ï¼Œå½¢é«”æœ‰æ•ˆä¸Šé™æœƒéš¨è‘—äººç‰©å—åˆ°å¯¦é«”å‚·
+å®³( ç‰©ç†æ€§å‚·å®³ )è€Œé™ä½Žï¼Œå½¢é«”æœ‰æ•ˆä¸Šé™é™åˆ°é›¶è¡¨ç¤ºé€™å€‹äººç‰©çš„å½¢é«”å·²ç¶“è¢«æ‘§æ¯€ã€å ±
+å»¢äº†ï¼Œä¹Ÿå°±æ˜¯æ¯€æ»…ç‹€æ…‹(destroyed)ã€‚
 
-¡õ Energy   ÄÜÁ¿
+â–¡ Energy   èƒ½é‡
 
-ÄÜÁ¿µÄÄ¿Ç°Öµ±íÊ¾Ò»¸öÈËÎïÌåÁ¦(¶¯Á¦)µÄÄ¿Ç°×´Ì¬£¬ÄÜÁ¿»áÒòÎª½øÐÐ¹¥»÷¡¢»ò¸÷ÖÖÏû
-ºÄÌåÁ¦µÄ¶¯×÷¶ø½µµÍ£¬ÄÜÁ¿½µµ½Áã±íÊ¾Õâ¸öÈËÎïÒÑ¾­ÌåÁ¦Í¸Ö§(¶¯Á¦É¥Ê§)£¬¶ø³ÉÎªÌ±
-»¾×´Ì¬(exhausted)¡£
-ÄÜÁ¿µÄÓÐÐ§ÉÏÏÞ±íÊ¾Ò»¸öÈËÎïÌåÄÜ(ÄÜÔ´)µÄ×´Ì¬£¬ÌåÄÜ»áÒòÎªÊÜµ½ÄÜÁ¿ÐÍÎäÆ÷¡¢Æø¹¦
-µÈÄÜÁ¿¹¥»÷¶ø½µµÍ£¬ÄÜÁ¿µÄÓÐÐ§ÉÏÏÞ½µµ½Áã±íÊ¾ÈËÎïµÄÌåÄÜºÄ½ß(ÄÜÔ´ºÄ¾¡)£¬¶ø³ÉÎª
-Ë¥½ß×´Ì¬(withered)¡£
+èƒ½é‡çš„ç›®å‰å€¼è¡¨ç¤ºä¸€å€‹äººç‰©é«”åŠ›(å‹•åŠ›)çš„ç›®å‰ç‹€æ…‹ï¼Œèƒ½é‡æœƒå› ç‚ºé€²è¡Œæ”»æ“Šã€æˆ–å„ç¨®æ¶ˆ
+è€—é«”åŠ›çš„å‹•ä½œè€Œé™ä½Žï¼Œèƒ½é‡é™åˆ°é›¶è¡¨ç¤ºé€™å€‹äººç‰©å·²ç¶“é«”åŠ›é€æ”¯(å‹•åŠ›å–ªå¤±)ï¼Œè€Œæˆç‚ºç™±
+ç˜“ç‹€æ…‹(exhausted)ã€‚
+èƒ½é‡çš„æœ‰æ•ˆä¸Šé™è¡¨ç¤ºä¸€å€‹äººç‰©é«”èƒ½(èƒ½æº)çš„ç‹€æ…‹ï¼Œé«”èƒ½æœƒå› ç‚ºå—åˆ°èƒ½é‡åž‹æ­¦å™¨ã€æ°£åŠŸ
+ç­‰èƒ½é‡æ”»æ“Šè€Œé™ä½Žï¼Œèƒ½é‡çš„æœ‰æ•ˆä¸Šé™é™åˆ°é›¶è¡¨ç¤ºäººç‰©çš„é«”èƒ½è€—ç«­(èƒ½æºè€—ç›¡)ï¼Œè€Œæˆç‚º
+è¡°ç«­ç‹€æ…‹(withered)ã€‚
 
-¡õ Mental   ¾«Éñ
+â–¡ Mental   ç²¾ç¥ž
 
-¾«ÉñµÄÄ¿Ç°Öµ±íÊ¾Ò»¸öÈËÎïµÄ¼¯ÖÐÁ¦Ä¿Ç°µÄ×´Ì¬£¬¾«ÉñÁ¦»áÒòÎªÊ¹ÓÃÄ§·¨¡¢»ò½øÐÐÐè
-ÒªÄÔÁ¦µÄ¹¤×÷¶ø½µµÍ£¬¾«Éñ½µµ½Áã±íÊ¾Õâ¸öÈËÎïÒÑ¾­ÀÛµ¹ÁË£¬½øÈë»èË¯×´Ì¬(asleep)
-¡£
-¾«ÉñµÄÓÐÐ§ÉÏÏÞ±íÊ¾Ò»¸öÈËµÄÒâÖ¾Á¦¡¢Ä§Á¦×´Ì¬£¬¾«ÉñÉÏÏÞ»áÒòÎªÊÜµ½´ßÃß¡¢Ò©ÎïµÄ
-¸±×÷ÓÃ¡¢Ä§·¨µÄ¾«Éñ¹¥»÷µÈÓ°Ïì¶ø½µµÍ£¬µ±Õâ¸öÓÐÐ§ÉÏÏÞÖµ½µµ½Áã±íÊ¾Õâ¸öÈËÎïµÄ¾«
-ÉñÒÑ¾­±ÀÀ££¬¶øÏÝÈë·è¿ñ×´Ì¬(insane)¡£
+ç²¾ç¥žçš„ç›®å‰å€¼è¡¨ç¤ºä¸€å€‹äººç‰©çš„é›†ä¸­åŠ›ç›®å‰çš„ç‹€æ…‹ï¼Œç²¾ç¥žåŠ›æœƒå› ç‚ºä½¿ç”¨é­”æ³•ã€æˆ–é€²è¡Œéœ€
+è¦è…¦åŠ›çš„å·¥ä½œè€Œé™ä½Žï¼Œç²¾ç¥žé™åˆ°é›¶è¡¨ç¤ºé€™å€‹äººç‰©å·²ç¶“ç´¯å€’äº†ï¼Œé€²å…¥æ˜ç¡ç‹€æ…‹(asleep)
+ã€‚
+ç²¾ç¥žçš„æœ‰æ•ˆä¸Šé™è¡¨ç¤ºä¸€å€‹äººçš„æ„å¿—åŠ›ã€é­”åŠ›ç‹€æ…‹ï¼Œç²¾ç¥žä¸Šé™æœƒå› ç‚ºå—åˆ°å‚¬çœ ã€è—¥ç‰©çš„
+å‰¯ä½œç”¨ã€é­”æ³•çš„ç²¾ç¥žæ”»æ“Šç­‰å½±éŸ¿è€Œé™ä½Žï¼Œç•¶é€™å€‹æœ‰æ•ˆä¸Šé™å€¼é™åˆ°é›¶è¡¨ç¤ºé€™å€‹äººç‰©çš„ç²¾
+ç¥žå·²ç¶“å´©æ½°ï¼Œè€Œé™·å…¥ç˜‹ç‹‚ç‹€æ…‹(insane)ã€‚
 
-¡õ ¹Øì¶ÉúÃüÐÍÌ¬
+â–¡ é—œæ–¼ç”Ÿå‘½åž‹æ…‹
 
-²¢²»ÊÇËùÓÐµÄÉúÃüÐÍÌ¬¶Ôì¶ÉÏÃæÈý¸ö×´Ì¬¶¼ÓÐ¶¨Òå£¬»»¾ä»°Ëµ£¬ÓÐÐ©×´Ì¬¶ÔÄ³Ð©ÉúÃü
-ÐÍÌ¬ÊÇ²»¾ßÒâÒåµÄ( ÕâÀïµÄÉúÃüÐÍÌ¬°üÀ¨»úÆ÷ÈËÔÚÄÚ )¡£
+ä¸¦ä¸æ˜¯æ‰€æœ‰çš„ç”Ÿå‘½åž‹æ…‹å°æ–¼ä¸Šé¢ä¸‰å€‹ç‹€æ…‹éƒ½æœ‰å®šç¾©ï¼Œæ›å¥è©±èªªï¼Œæœ‰äº›ç‹€æ…‹å°æŸäº›ç”Ÿå‘½
+åž‹æ…‹æ˜¯ä¸å…·æ„ç¾©çš„( é€™è£¡çš„ç”Ÿå‘½åž‹æ…‹åŒ…æ‹¬æ©Ÿå™¨äººåœ¨å…§ )ã€‚
 
-¡õ ÐÎÌå
+â–¡ å½¢é«”
 
-   ¶Ôì¶¾«ÉñÌåµÄÉúÎïÈç¹í»ê(Ghost)¶øÑÔ£¬ÐÎÌåÊÇÃ»ÓÐÒâÒåµÄ£¬Òò´Ë¾«ÉñÌåµÄÉúÎï²»
-   »áÊÜµ½ÐÎÌåµÄÉËº¦£¬Òò´ËÒ²²»»áÓÐËÀÍö»ò»ÙÃðµÄ×´Ì¬¡£
+   å°æ–¼ç²¾ç¥žé«”çš„ç”Ÿç‰©å¦‚é¬¼é­‚(Ghost)è€Œè¨€ï¼Œå½¢é«”æ˜¯æ²’æœ‰æ„ç¾©çš„ï¼Œå› æ­¤ç²¾ç¥žé«”çš„ç”Ÿç‰©ä¸
+   æœƒå—åˆ°å½¢é«”çš„å‚·å®³ï¼Œå› æ­¤ä¹Ÿä¸æœƒæœ‰æ­»äº¡æˆ–æ¯€æ»…çš„ç‹€æ…‹ã€‚
 
-   ¶Ôì¶²»ËÀÉúÎï(Undead)¶øÑÔ£¬Æä»î¶¯µÄÔ­Àí¸úÐÎÌåµÄ»úÄÜÎÞ¹Ø£¬¹ÊÐÎÌåÊÇÎÞÄ¿Ç°Öµ
-   µÄ£¬Òò´Ë²»ËÀÉúÎïÃ»ÓÐËÀÍö×´Ì¬£¬Ö»ÓÐ»ÙÃð×´Ì¬¡£
+   å°æ–¼ä¸æ­»ç”Ÿç‰©(Undead)è€Œè¨€ï¼Œå…¶æ´»å‹•çš„åŽŸç†è·Ÿå½¢é«”çš„æ©Ÿèƒ½ç„¡é—œï¼Œæ•…å½¢é«”æ˜¯ç„¡ç›®å‰å€¼
+   çš„ï¼Œå› æ­¤ä¸æ­»ç”Ÿç‰©æ²’æœ‰æ­»äº¡ç‹€æ…‹ï¼Œåªæœ‰æ¯€æ»…ç‹€æ…‹ã€‚
 
-¡õ ÄÜÁ¿
+â–¡ èƒ½é‡
 
-   ¶Ôì¶Ä§·¨Çý¶¯µÄÉúÎïÈç Golem ¶øÑÔ£¬ÆäÄÜÁ¿À´×ÔÊ©·¨ÕßµÄÒâÖ¾£¬×ÔÉíµÄÄÜÁ¿ÊÇÃ»
-   ÓÐÒâÒåµÄ£¬Òò´ËÄ§·¨Çý¶¯µÄÉúÎïÃ»ÓÐÌ±»¾¸úË¥½ßµÄ×´Ì¬¡£
+   å°æ–¼é­”æ³•é©…å‹•çš„ç”Ÿç‰©å¦‚ Golem è€Œè¨€ï¼Œå…¶èƒ½é‡ä¾†è‡ªæ–½æ³•è€…çš„æ„å¿—ï¼Œè‡ªèº«çš„èƒ½é‡æ˜¯æ²’
+   æœ‰æ„ç¾©çš„ï¼Œå› æ­¤é­”æ³•é©…å‹•çš„ç”Ÿç‰©æ²’æœ‰ç™±ç˜“è·Ÿè¡°ç«­çš„ç‹€æ…‹ã€‚
 
-   ¶Ôì¶·Ç»úÐµÌåµÄÈËÔìÈË¶øÑÔ£¬ÄÜÁ¿ÊÇÎÞÄ¿Ç°ÖµµÄ(¶¯Á¦ºã¶¨)£¬Òò´Ë·Ç»úÐµÌåÈËÔìÈË
-   ²»»áÌ±»¾£¬Ö»ÓÐË¥½ß(ÈçÄ§¹íÖÕ½áÕß T-2000¡¢ÆßÁúÖéµÄÈËÔìÈË)¡£
+   å°æ–¼éžæ©Ÿæ¢°é«”çš„äººé€ äººè€Œè¨€ï¼Œèƒ½é‡æ˜¯ç„¡ç›®å‰å€¼çš„(å‹•åŠ›æ†å®š)ï¼Œå› æ­¤éžæ©Ÿæ¢°é«”äººé€ äºº
+   ä¸æœƒç™±ç˜“ï¼Œåªæœ‰è¡°ç«­(å¦‚é­”é¬¼çµ‚çµè€… T-2000ã€ä¸ƒé¾ç çš„äººé€ äºº)ã€‚
 
-¡õ ¾«Éñ
+â–¡ ç²¾ç¥ž
 
-   ¶Ôì¶´¿»úÐµÈË¶øÑÔ£¬¾«ÉñÊÇÃ»ÓÐÒâÒåµÄ£¬Òò´Ë´¿»úÐµÈË²»»á»èË¯»ò·è¿ñ¡£
+   å°æ–¼ç´”æ©Ÿæ¢°äººè€Œè¨€ï¼Œç²¾ç¥žæ˜¯æ²’æœ‰æ„ç¾©çš„ï¼Œå› æ­¤ç´”æ©Ÿæ¢°äººä¸æœƒæ˜ç¡æˆ–ç˜‹ç‹‚ã€‚
 
-   ¶Ôì¶²»ËÀÉúÎï¶øÑÔ£¬Æä¾«ÉñÊÇÀ´×ÔÆä³ÉÎª²»ËÀÉúÎïÊ±µÄÖäÎÄÖ®Á¦Á¿£¬Òò´Ë¾«ÉñÃ»ÓÐ
-   Ä¿Ç°Öµ£¬²»»á»èË¯£¬Ö»ÓÐ·è¿ñ(Èç£ºLich Ê©·¨ÊõÃ»ÓÐ·¨Á¦ÏÞÖÆ)¡£
+   å°æ–¼ä¸æ­»ç”Ÿç‰©è€Œè¨€ï¼Œå…¶ç²¾ç¥žæ˜¯ä¾†è‡ªå…¶æˆç‚ºä¸æ­»ç”Ÿç‰©æ™‚çš„å’’æ–‡ä¹‹åŠ›é‡ï¼Œå› æ­¤ç²¾ç¥žæ²’æœ‰
+   ç›®å‰å€¼ï¼Œä¸æœƒæ˜ç¡ï¼Œåªæœ‰ç˜‹ç‹‚(å¦‚ï¼šLich æ–½æ³•è¡“æ²’æœ‰æ³•åŠ›é™åˆ¶)ã€‚
 
-ÓÉÉÏÃæµÄÀý×ÓÎÒÃÇ¿ÉÒÔ¿´³öÃ¿¸ö×´Ì¬³ýÁËÇ°Ãæ¶¨ÒåÖÐÃèÊöµÄÐÐÎªÖ®Íâ£¬»¹ÓÐ¡¸ÎÞ¶¨Òå¡¹
-¸ú¡¸Ä¿Ç°ÖµÓëÓÐÐ§ÉÏÏÞºãÒ»ÖÂ¡¹µÄÇéÐÎ¡£
+ç”±ä¸Šé¢çš„ä¾‹å­æˆ‘å€‘å¯ä»¥çœ‹å‡ºæ¯å€‹ç‹€æ…‹é™¤äº†å‰é¢å®šç¾©ä¸­æè¿°çš„è¡Œç‚ºä¹‹å¤–ï¼Œé‚„æœ‰ã€Œç„¡å®šç¾©ã€
+è·Ÿã€Œç›®å‰å€¼èˆ‡æœ‰æ•ˆä¸Šé™æ†ä¸€è‡´ã€çš„æƒ…å½¢ã€‚
 
-ÔÚ¡¸ÎÞ¶¨Òå¡¹µÄÇé¿öÏÂ£¬¸ÃÐÍÌ¬µÄÉúÃüÎÞ·¨Ê¹ÓÃÏûºÄ¸Ã×´Ì¬Ä¿Ç°ÖµµÄ¼¼ÄÜ£¬Èç´¿»úÆ÷ÈË
-²»ÄÜÊ¹ÓÃÄ§·¨¡¢Ä§·¨Çý¶¯ÉúÎï²»ÄÜÊ¹ÓÃÆø¹¦¡¢¾«ÉñÌåÉúÎï²»ÄÜÊ¹ÓÃ×°±¸¡£Í¬Ê±£¬ÕâÖÖÉú
-ÎïÒ²²»»áÊÜµ½½µµÍ¸Ã×´Ì¬Ä¿Ç°Öµ¡¢ÓÐÐ§ÉÏÏÞµÄÉËº¦£¬Èç´¿»úÆ÷ÈË¶Ô´ßÃßÃ»ÓÐ·´Ó¦£¬Ä§·¨
-Çý¶¯ÉúÎï²»ÅÂÆø¹¦(ÄÜÁ¿ÐÍÎäÆ÷¿ÉÄÜÍ¬Ê±Ôì³ÉÐÎÌåÉËº¦)£¬¾«ÉñÌåÉúÎï²»ÅÂÎïÀíÐÔ¹¥»÷¡£
+åœ¨ã€Œç„¡å®šç¾©ã€çš„æƒ…æ³ä¸‹ï¼Œè©²åž‹æ…‹çš„ç”Ÿå‘½ç„¡æ³•ä½¿ç”¨æ¶ˆè€—è©²ç‹€æ…‹ç›®å‰å€¼çš„æŠ€èƒ½ï¼Œå¦‚ç´”æ©Ÿå™¨äºº
+ä¸èƒ½ä½¿ç”¨é­”æ³•ã€é­”æ³•é©…å‹•ç”Ÿç‰©ä¸èƒ½ä½¿ç”¨æ°£åŠŸã€ç²¾ç¥žé«”ç”Ÿç‰©ä¸èƒ½ä½¿ç”¨è£å‚™ã€‚åŒæ™‚ï¼Œé€™ç¨®ç”Ÿ
+ç‰©ä¹Ÿä¸æœƒå—åˆ°é™ä½Žè©²ç‹€æ…‹ç›®å‰å€¼ã€æœ‰æ•ˆä¸Šé™çš„å‚·å®³ï¼Œå¦‚ç´”æ©Ÿå™¨äººå°å‚¬çœ æ²’æœ‰åæ‡‰ï¼Œé­”æ³•
+é©…å‹•ç”Ÿç‰©ä¸æ€•æ°£åŠŸ(èƒ½é‡åž‹æ­¦å™¨å¯èƒ½åŒæ™‚é€ æˆå½¢é«”å‚·å®³)ï¼Œç²¾ç¥žé«”ç”Ÿç‰©ä¸æ€•ç‰©ç†æ€§æ”»æ“Šã€‚
 
-¡õ ·¿¼äÊôÐÔ
+â–¡ æˆ¿é–“å±¬æ€§
 
 "short"                                                         (string)
 
-    ·¿¼äµÄ¶ÌÐðÊö¡£
+    æˆ¿é–“çš„çŸ­æ•˜è¿°ã€‚
 
 "long"                                                          (string)
 
-    ·¿¼äµÄ³¤ÐðÊö¡£
+    æˆ¿é–“çš„é•·æ•˜è¿°ã€‚
 
 "item_desc"                                                     (mapping)
 
-    ·¿¼äÖÐ¸ö±ð¾°ÎïµÄÐðÊö£¬¸ñÊ½Îª£º([ <¾°ÎïÃû³Æ>:<¾°ÎïÐðÊö>, .... ])¡£
-    ÆäÖÐ<¾°ÎïÐðÊö>¿ÉÒÔÊÇ×Ö´®»ò function type¡£
+    æˆ¿é–“ä¸­å€‹åˆ¥æ™¯ç‰©çš„æ•˜è¿°ï¼Œæ ¼å¼ç‚ºï¼š([ <æ™¯ç‰©åç¨±>:<æ™¯ç‰©æ•˜è¿°>, .... ])ã€‚
+    å…¶ä¸­<æ™¯ç‰©æ•˜è¿°>å¯ä»¥æ˜¯å­—ä¸²æˆ– function typeã€‚
 
 "exits"                                                         (mapping)
 
-    ·¿¼äµÄ³ö¿Ú£¬°üÀ¨ÓÐÃÅµÄ·½Ïò£¬¸ñÊ½Îª£º([  <³ö¿Ú>:<·¿¼äµµÃû>, .... ])¡£
+    æˆ¿é–“çš„å‡ºå£ï¼ŒåŒ…æ‹¬æœ‰é–€çš„æ–¹å‘ï¼Œæ ¼å¼ç‚ºï¼š([  <å‡ºå£>:<æˆ¿é–“æª”å>, .... ])ã€‚
 
 "objects"                                                       (mapping)
 
-    ·¿¼äÖÐµÄÎïÆ·¡¢ÉúÎï£¬¸ñÊ½£º([ <ÎïÆ·»òÉúÎïµµÃû>:<ÊýÁ¿>, .... ])¡£
+    æˆ¿é–“ä¸­çš„ç‰©å“ã€ç”Ÿç‰©ï¼Œæ ¼å¼ï¼š([ <ç‰©å“æˆ–ç”Ÿç‰©æª”å>:<æ•¸é‡>, .... ])ã€‚
 
 "outdoors"                                                      (string)
 
-    ·¿¼äÊÇ·ñÎª¡¸»§Íâ¡¹£¬»§Íâ·¿¼ä¿ÉÒÔ¿´µ½ÌìÉ«±ä»¯ÓëÆøºòÓ°Ïì¡£×Ö´®µÄÒâÒå
-    ±íÊ¾·¿¼äµÄÆøºòÇø£¬Í¨³£ºÍ¸ÃÇøÓòµÄ domain (¼´ /d ÏÂµÄÄ¿Â¼Ãû³Æ) Í¬¡£
+    æˆ¿é–“æ˜¯å¦ç‚ºã€Œæˆ¶å¤–ã€ï¼Œæˆ¶å¤–æˆ¿é–“å¯ä»¥çœ‹åˆ°å¤©è‰²è®ŠåŒ–èˆ‡æ°£å€™å½±éŸ¿ã€‚å­—ä¸²çš„æ„ç¾©
+    è¡¨ç¤ºæˆ¿é–“çš„æ°£å€™å€ï¼Œé€šå¸¸å’Œè©²å€åŸŸçš„ domain (å³ /d ä¸‹çš„ç›®éŒ„åç¨±) åŒã€‚
 
 "no_fight"                                                      (int)
 
-    ·¿¼äÊÇÎª½ûÖ¹×÷Õ½ÇøÓò¡£
+    æˆ¿é–“æ˜¯ç‚ºç¦æ­¢ä½œæˆ°å€åŸŸã€‚
 
 "no_magic"                                                      (int)
 
-    ·¿¼äÊÇÎª½ûÖ¹Ê©·¨ÇøÓò¡£
+    æˆ¿é–“æ˜¯ç‚ºç¦æ­¢æ–½æ³•å€åŸŸã€‚
 
-¡õ ÎäÆ÷ÊôÐÔ
+â–¡ æ­¦å™¨å±¬æ€§
 
 "skill_type"                                                    (string)
 
-    Õâ¸öÎäÆ÷ËùÊôµÄ¼¼ÄÜÖÖÀà£¬Èç "sword"¡¢"blade" µÈ£¬Òª×¢ÒâÔÚ /d/skill
-    ÏÂ±ØÐëÓÐÒ»¸ö¶¨Òå¸ÃÎäÆ÷¼¼ÄÜµÄÎï¼þ£¬·ñÔò×°±¸Õâ¸öÎäÆ÷Õ½¶·Ê±»áÓÐ´íÎó
-    Ñ¶Ï¢¡£
+    é€™å€‹æ­¦å™¨æ‰€å±¬çš„æŠ€èƒ½ç¨®é¡žï¼Œå¦‚ "sword"ã€"blade" ç­‰ï¼Œè¦æ³¨æ„åœ¨ /d/skill
+    ä¸‹å¿…é ˆæœ‰ä¸€å€‹å®šç¾©è©²æ­¦å™¨æŠ€èƒ½çš„ç‰©ä»¶ï¼Œå¦å‰‡è£å‚™é€™å€‹æ­¦å™¨æˆ°é¬¥æ™‚æœƒæœ‰éŒ¯èª¤
+    è¨Šæ¯ã€‚
 
 "rigidity"                                                      (int)
 
-    ÎäÆ÷µÄÓ²¶È£¬µ±Ê¹ÓÃÎäÆ÷Ïà¶·Ê±£¬Ó²¶È¡¢ÎäÆ÷µÄÖØÁ¿¡¢³ÖÓÃÕßµÄÁ¦Á¿½«»áÓ°
-    ÏìÎäÆ÷ÊÜËðµÄ»úÂÊ¡£
-    ÎäÆ÷ÊÜËð»ú»áËùÓÃµÄÇ¿¶ÈÖµ¼ÆËã¹«Ê½ÈçÏÂ£º
+    æ­¦å™¨çš„ç¡¬åº¦ï¼Œç•¶ä½¿ç”¨æ­¦å™¨ç›¸é¬¥æ™‚ï¼Œç¡¬åº¦ã€æ­¦å™¨çš„é‡é‡ã€æŒç”¨è€…çš„åŠ›é‡å°‡æœƒå½±
+    éŸ¿æ­¦å™¨å—æçš„æ©ŸçŽ‡ã€‚
+    æ­¦å™¨å—ææ©Ÿæœƒæ‰€ç”¨çš„å¼·åº¦å€¼è¨ˆç®—å…¬å¼å¦‚ä¸‹ï¼š
 
-        ÖØÁ¿/500 + Ó²¶È + Á¦Á¿
+        é‡é‡/500 + ç¡¬åº¦ + åŠ›é‡
 
 "weapon_prop"                                                   (mapping)
 
-    ÎäÆ÷¶Ô³ÖÓÃÕßµÄ×´Ì¬Ó°Ïì£¬Í¨³£ÎäÆ÷Ö»Ó°Ïì "damage"£¬ÕâÐ©×´Ì¬Ó°Ïì»áÔÚ
-    ÎäÆ÷±»×°±¸Ê±ÓÃ add_temp() ¼Óµ½³ÖÓÃÕßµÄ apply ÉÏ£¬²¢ì¶Ð¶³ý»ò dest
-    Ê±¼õ»ØÀ´¡£
+    æ­¦å™¨å°æŒç”¨è€…çš„ç‹€æ…‹å½±éŸ¿ï¼Œé€šå¸¸æ­¦å™¨åªå½±éŸ¿ "damage"ï¼Œé€™äº›ç‹€æ…‹å½±éŸ¿æœƒåœ¨
+    æ­¦å™¨è¢«è£å‚™æ™‚ç”¨ add_temp() åŠ åˆ°æŒç”¨è€…çš„ apply ä¸Šï¼Œä¸¦æ–¼å¸é™¤æˆ– dest
+    æ™‚æ¸›å›žä¾†ã€‚
 
 "flag"                                                          (int)
 
-    ÎäÆ÷µÄÒ»Ð©ÐÍÌ¬Æì±ê.
+    æ­¦å™¨çš„ä¸€äº›åž‹æ…‹æ——æ¨™.
 
-¡õ ÒÔÏÂÊÇÄ¿Ç°ÔÊÐíµÄ»¤¾ßÖÖÀà£º
+â–¡ ä»¥ä¸‹æ˜¯ç›®å‰å…è¨±çš„è­·å…·ç¨®é¡žï¼š
 
-head    Í·²¿»¤¾ß£¬·²ÊÇ´÷ÔÚÍ·ÉÏµÄ¶¼Ëã£¬°üÀ¨Í·½í¡¢¶ú»·¡¢Í·¿ø¡¢Ã±×ÓµÈµÈ¡£
-neck    ´øÔÚ¾±×ÓÉÏµÄ»¤¾ß»òÊÎÎï£¬Ïî¡õ¡¢»¤Éí·û¡¢Î§½íµÈµÈ¡£
-cloth   ´©ÔÚÉíÉÏµÄÇá±ãÐÍÒÂÎï£¬°üÀ¨ÉÏÒÂ¸ú¿ã×ÓÕûÌ×¡£
-armor   îø¼×¡¢´©ÔÚ cloth ÍâÃæ£¬Ò²ÊÇ°üÀ¨ÉÏ°ëÉíÓëÏÂ°ëÉíÕûÌ×¡£
-surcoat ÍâÌ×¡¢´©ÔÚîø¼×ÍâÃæ¡£
-waist   Ñü²¿»¤¾ß£¬°üÀ¨Ñü´ø¡¢Ñü½í¡£
-wrists  ÊÖÍó»¤¾ß£¬ÈçÊÖïí¡¢»¤Íó¡£
-shield  ¶ÜÅÆ£¬²»ÓÃ½âÊÍÁË°É¡£
-finger  ½äÖ¸£¬Ö»ÓÐ´÷ÔÚÓÒÊÖÎÞÃûÖ¸µÄ½äÖ¸²ÅÄÜ·¢»ÓÐ§Á¦£¬ËùÒÔÖ»ÄÜ´÷Ò»¸ö¡£
-hands   ÊÖ²¿»¤¾ß¡£
-boots   ×ã²¿»¤¾ß£¬Ð¬Àà¡£
+head    é ­éƒ¨è­·å…·ï¼Œå‡¡æ˜¯æˆ´åœ¨é ­ä¸Šçš„éƒ½ç®—ï¼ŒåŒ…æ‹¬é ­å·¾ã€è€³ç’°ã€é ­ç›”ã€å¸½å­ç­‰ç­‰ã€‚
+neck    å¸¶åœ¨é ¸å­ä¸Šçš„è­·å…·æˆ–é£¾ç‰©ï¼Œé …â–¡ã€è­·èº«ç¬¦ã€åœå·¾ç­‰ç­‰ã€‚
+cloth   ç©¿åœ¨èº«ä¸Šçš„è¼•ä¾¿åž‹è¡£ç‰©ï¼ŒåŒ…æ‹¬ä¸Šè¡£è·Ÿè¤²å­æ•´å¥—ã€‚
+armor   éŽ§ç”²ã€ç©¿åœ¨ cloth å¤–é¢ï¼Œä¹Ÿæ˜¯åŒ…æ‹¬ä¸ŠåŠèº«èˆ‡ä¸‹åŠèº«æ•´å¥—ã€‚
+surcoat å¤–å¥—ã€ç©¿åœ¨éŽ§ç”²å¤–é¢ã€‚
+waist   è…°éƒ¨è­·å…·ï¼ŒåŒ…æ‹¬è…°å¸¶ã€è…°å·¾ã€‚
+wrists  æ‰‹è…•è­·å…·ï¼Œå¦‚æ‰‹é²ã€è­·è…•ã€‚
+shield  ç›¾ç‰Œï¼Œä¸ç”¨è§£é‡‹äº†å§ã€‚
+finger  æˆ’æŒ‡ï¼Œåªæœ‰æˆ´åœ¨å³æ‰‹ç„¡åæŒ‡çš„æˆ’æŒ‡æ‰èƒ½ç™¼æ®æ•ˆåŠ›ï¼Œæ‰€ä»¥åªèƒ½æˆ´ä¸€å€‹ã€‚
+hands   æ‰‹éƒ¨è­·å…·ã€‚
+boots   è¶³éƒ¨è­·å…·ï¼Œéž‹é¡žã€‚
 
-¡õ ÎïÆ·ÊôÐÔ
+â–¡ ç‰©å“å±¬æ€§
 
 "name"                                                          (string)
 
-    ÎïÆ·µÄÖÐÎÄÃû³Æ¡£
+    ç‰©å“çš„ä¸­æ–‡åç¨±ã€‚
 
 "id"                                                            (string)
 
-    ÎïÆ·µÄÓ¢ÎÄÃû³Æ¡£
+    ç‰©å“çš„è‹±æ–‡åç¨±ã€‚
 
 "long"                                                          (string)
 
-    ÎïÆ·µÄÏêÏ¸ÃèÊö¡£
+    ç‰©å“çš„è©³ç´°æè¿°ã€‚
 
 "value"                                                         (int)
 
-    ÎïÆ·µÄ¼ÛÖµ£¬µ¥Î»ÊÇ¡¸Ç®¡¹(coin)¡£
+    ç‰©å“çš„åƒ¹å€¼ï¼Œå–®ä½æ˜¯ã€ŒéŒ¢ã€(coin)ã€‚
 
 "unit"                                                          (string)
 
-    ÎïÆ·µÄµ¥Î»£¬Èç£º¸ö¡¢°Ñ¡¢Ö¦.....
+    ç‰©å“çš„å–®ä½ï¼Œå¦‚ï¼šå€‹ã€æŠŠã€æž.....
 
 "no_get"                                                        (int)
 
-    ±íÊ¾ÎïÆ·ÊÇ·ñ¿É±»¼ñÆðÀ´¡£
+    è¡¨ç¤ºç‰©å“æ˜¯å¦å¯è¢«æ’¿èµ·ä¾†ã€‚
 
 "no_drop"                                                       (int string)
 
-    ±íÊ¾ÎïÆ·ÊÇ·ñ¿É±»¶ªÆú£¬Èç¹ûÐÍÌ¬ÊÇ string, Ôòµ±ÓÐÈËÆóÍ¼¶ªÆúÕâ¸öÎïÆ·Ê±
-    »á½«¸Ã×Ö´®ÓÃ notify_fail ´«»ØÈ¥¡£
+    è¡¨ç¤ºç‰©å“æ˜¯å¦å¯è¢«ä¸Ÿæ£„ï¼Œå¦‚æžœåž‹æ…‹æ˜¯ string, å‰‡ç•¶æœ‰äººä¼åœ–ä¸Ÿæ£„é€™å€‹ç‰©å“æ™‚
+    æœƒå°‡è©²å­—ä¸²ç”¨ notify_fail å‚³å›žåŽ»ã€‚
 
-¡õ ¶¨ÒåÔÚÈËÎïÎï¼þÖÐµÄ¸½¼Óº¯Êý(apply functions)
+â–¡ å®šç¾©åœ¨äººç‰©ç‰©ä»¶ä¸­çš„é™„åŠ å‡½æ•¸(apply functions)
 
 void defeated_enemy(object victim)
 
-µ±ÕâÃûÈËÎï´ò»èÒ»¸öµÐÈËµÄÊ±ºò»áºô½ÐÕâ¸ö¸½¼Óº¯Êý£¬victim ¼´ÊÇ±»´ò»èµÄµÄ
-µÐÈËÎï¼þ¡£
-ºô½ÐÕß: COMBAT_D
-ÓÐÔ¤Éè¶¨Òå´ËÒ»º¯ÊýµÄÏµÍ³Îï¼þ: none
+ç•¶é€™åäººç‰©æ‰“æ˜ä¸€å€‹æ•µäººçš„æ™‚å€™æœƒå‘¼å«é€™å€‹é™„åŠ å‡½æ•¸ï¼Œvictim å³æ˜¯è¢«æ‰“æ˜çš„çš„
+æ•µäººç‰©ä»¶ã€‚
+å‘¼å«è€…: COMBAT_D
+æœ‰é è¨­å®šç¾©æ­¤ä¸€å‡½æ•¸çš„ç³»çµ±ç‰©ä»¶: none
 
 void killed_enemy(object victim)
 
-µ±ÕâÃûÈËÎïÉ±ËÀÒ»¸öµÐÈËµÄÊ±ºò»áºô½ÐÕâ¸ö¸½¼Óº¯Êý£¬victim ÊÇ¼´½«Òª±»É±ËÀ
-µÄµÐÈËÎï¼þ¡£
-ºô½ÐÕß: COMBAT_D
-ÓÐÔ¤Éè¶¨Òå´ËÒ»º¯ÊýµÄÏµÍ³Îï¼þ: none
+ç•¶é€™åäººç‰©æ®ºæ­»ä¸€å€‹æ•µäººçš„æ™‚å€™æœƒå‘¼å«é€™å€‹é™„åŠ å‡½æ•¸ï¼Œvictim æ˜¯å³å°‡è¦è¢«æ®ºæ­»
+çš„æ•µäººç‰©ä»¶ã€‚
+å‘¼å«è€…: COMBAT_D
+æœ‰é è¨­å®šç¾©æ­¤ä¸€å‡½æ•¸çš„ç³»çµ±ç‰©ä»¶: none
 
 int accept_fight(object who)
 
-µ±ÓÐÆäËûÉúÎï¶ÔÕâ¸öÈËÎïÏÂ fight Ö¸ÁîµÄÊ±ºò£¬»áºô½ÐÕâ¸ö¸½¼Óº¯Êý£¬who ÊÇ
-ÏÂ fight Ö¸ÁîµÄÉúÎï£¬Èç¹ûÊÇ¶Ô player ÏÂ£¬"fight" Ö¸Áî»áÖ±½ÓÏÔÊ¾Ñ¶Ï¢áç
-Çó±»ÌôÕ½Ò»·½µÄÍ¬Òâ£¬Èç¹ûÊÇ¶Ô NPC ÏÂÕâ¸öÖ¸Áî£¬Ôòµ±Õâ¸ö¸½¼Óº¯Êý´«»Ø 1
-Ê±²Å»á½ÓÊÜÌôÕ½£¬·ñÔòÏÔÊ¾Ä³Ä³²»Ïë¸úÄã½ÏÁ¿µÄÑ¶Ï¢¡£
-ºô½ÐÕß: "fight" Ö¸Áî
-ÓÐÔ¤Éè¶¨Òå´ËÒ»º¯ÊýµÄÏµÍ³Îï¼þ: NPC
+ç•¶æœ‰å…¶ä»–ç”Ÿç‰©å°é€™å€‹äººç‰©ä¸‹ fight æŒ‡ä»¤çš„æ™‚å€™ï¼Œæœƒå‘¼å«é€™å€‹é™„åŠ å‡½æ•¸ï¼Œwho æ˜¯
+ä¸‹ fight æŒ‡ä»¤çš„ç”Ÿç‰©ï¼Œå¦‚æžœæ˜¯å° player ä¸‹ï¼Œ"fight" æŒ‡ä»¤æœƒç›´æŽ¥é¡¯ç¤ºè¨Šæ¯å¾µ
+æ±‚è¢«æŒ‘æˆ°ä¸€æ–¹çš„åŒæ„ï¼Œå¦‚æžœæ˜¯å° NPC ä¸‹é€™å€‹æŒ‡ä»¤ï¼Œå‰‡ç•¶é€™å€‹é™„åŠ å‡½æ•¸å‚³å›ž 1
+æ™‚æ‰æœƒæŽ¥å—æŒ‘æˆ°ï¼Œå¦å‰‡é¡¯ç¤ºæŸæŸä¸æƒ³è·Ÿä½ è¼ƒé‡çš„è¨Šæ¯ã€‚
+å‘¼å«è€…: "fight" æŒ‡ä»¤
+æœ‰é è¨­å®šç¾©æ­¤ä¸€å‡½æ•¸çš„ç³»çµ±ç‰©ä»¶: NPC
 
 int accept_object(object who, object item)
 
-µ±ÓÐÈËÓÃ give Ö¸Áî¸øÕâ¸ö·ÇÍæ¼ÒÈËÎï¶«Î÷Ê±£¬»áºô½ÐÕâ¸ö¸½¼Óº¯Êý£¬´«»Ø 1
-±íÊ¾Ô¸Òâ½ÓÊÜÕâ¸ö¶«Î÷£¬´«»Ø 0 ±íÊ¾²»½ÓÊÜ¡£
-ºô½ÐÕß: "give" Ö¸Áî
-ÓÐÔ¤Éè¶¨Òå´ËÒ»º¯ÊýµÄÏµÍ³Îï¼þ: none
+ç•¶æœ‰äººç”¨ give æŒ‡ä»¤çµ¦é€™å€‹éžçŽ©å®¶äººç‰©æ±è¥¿æ™‚ï¼Œæœƒå‘¼å«é€™å€‹é™„åŠ å‡½æ•¸ï¼Œå‚³å›ž 1
+è¡¨ç¤ºé¡˜æ„æŽ¥å—é€™å€‹æ±è¥¿ï¼Œå‚³å›ž 0 è¡¨ç¤ºä¸æŽ¥å—ã€‚
+å‘¼å«è€…: "give" æŒ‡ä»¤
+æœ‰é è¨­å®šç¾©æ­¤ä¸€å‡½æ•¸çš„ç³»çµ±ç‰©ä»¶: none
 
 void recruit_apprentice(objct apprentice)
 
-µ±Ò»¸öÈËÎïÊÕÁËÁíÒ»¸öÈËÎï×öµÜ×ÓÊ±»áºô½ÐÕâ¸ö¸½¼Óº¯Êý£¬Äã¿ÉÒÔÔÚÕâ¸öº¯ÊýÀï
-ÐÞ¸ÄµÜ×ÓµÄ rank »òÆäËû¶«Î÷¡£
-ºô½ÐÕß: "apprentice" Ö¸Áî
-ÓÐÔ¤Éè¶¨Òå´ËÒ»º¯ÊýµÄÏµÍ³Îï¼þ: none
+ç•¶ä¸€å€‹äººç‰©æ”¶äº†å¦ä¸€å€‹äººç‰©åšå¼Ÿå­æ™‚æœƒå‘¼å«é€™å€‹é™„åŠ å‡½æ•¸ï¼Œä½ å¯ä»¥åœ¨é€™å€‹å‡½æ•¸è£¡
+ä¿®æ”¹å¼Ÿå­çš„ rank æˆ–å…¶ä»–æ±è¥¿ã€‚
+å‘¼å«è€…: "apprentice" æŒ‡ä»¤
+æœ‰é è¨­å®šç¾©æ­¤ä¸€å‡½æ•¸çš„ç³»çµ±ç‰©ä»¶: none
 
-¡õ ÆÀ¼ÛÏµÍ³
+â–¡ è©•åƒ¹ç³»çµ±
 
-¼ÙÉèÔÚÒ»¸ö¼¯ºÏÖÐÓÐ¸öÊýÎª N µÄÏàÒì¸öÌå( N ÖÖ NPC »ò player )£¬Ã¿Ò»¸ö
-¸öÌå¾ßÓÐ¡¸ÆÀ¼Û¡¹Óë¡¸ÄÜÁ¦¡¹Á½ÖÖÊýÖµÊôÐÔ¡£
+å‡è¨­åœ¨ä¸€å€‹é›†åˆä¸­æœ‰å€‹æ•¸ç‚º N çš„ç›¸ç•°å€‹é«”( N ç¨® NPC æˆ– player )ï¼Œæ¯ä¸€å€‹
+å€‹é«”å…·æœ‰ã€Œè©•åƒ¹ã€èˆ‡ã€Œèƒ½åŠ›ã€å…©ç¨®æ•¸å€¼å±¬æ€§ã€‚
 
-ÆÀ¼ÛÒ»¿ªÊ¼µÄ³õÊ¼ÖµÒ»ÂÉÊÇ 0£¬ÄÜÁ¦µÄÊýÖµÔò²»ÔÚÕâ¸öÏµÍ³µÄ¹ØÐÄ¡õÎ§¡£
+è©•åƒ¹ä¸€é–‹å§‹çš„åˆå§‹å€¼ä¸€å¾‹æ˜¯ 0ï¼Œèƒ½åŠ›çš„æ•¸å€¼å‰‡ä¸åœ¨é€™å€‹ç³»çµ±çš„é—œå¿ƒâ–¡åœã€‚
 
-¼ÙÉèÕâ¸öÏµÍ³´Ó t = 0 ¿ªÊ¼£¬Ã¿µ¥Î»Ê±¼äÄÚ»á·¢ÉúÈô¸É¸ö¡¸Õ½¶·¡¹£¬Õ½¶·µÄ
-·¢ÉúÎªÒ»»úÂÊÃÜ¶È¹Ì¶¨µÄÊÂ¼þ£¬¼´£¬²»¿¼ÂÇË²¼ä·¢Éú´óÁ¿Õ½¶·µÄÇéÐÎ¡£
+å‡è¨­é€™å€‹ç³»çµ±å¾ž t = 0 é–‹å§‹ï¼Œæ¯å–®ä½æ™‚é–“å…§æœƒç™¼ç”Ÿè‹¥å¹¹å€‹ã€Œæˆ°é¬¥ã€ï¼Œæˆ°é¬¥çš„
+ç™¼ç”Ÿç‚ºä¸€æ©ŸçŽ‡å¯†åº¦å›ºå®šçš„äº‹ä»¶ï¼Œå³ï¼Œä¸è€ƒæ…®çž¬é–“ç™¼ç”Ÿå¤§é‡æˆ°é¬¥çš„æƒ…å½¢ã€‚
 
-Õ½¶·: ÈÎÈ¡ÏµÍ³ÖÐÁ½¸öÏàÒì¸öÌå£¬Õ½¶·¹ý³Ì²»¿¼ÂÇ£¬Ö»È¡¡¸²úÉúÒ»Ê¤Ò»¸º¡¹µÄ
-      ÇéÐÎÎªÓÐÐ§Ñù±¾£¬²¢×÷ÎªÒ»´ÎÆÀ¼Û±ä¶¯µÄÊäÈë£¬ÈÎÒ»¸öÌåµÃÊ¤µÄ»úÂÊºÍ
-      Æä¡¸ÄÜÁ¦¡¹³ÉÕý±È£¬ºÍµÐ·½µÄ¡¸ÄÜÁ¦¡¹³É·´±È¡£
+æˆ°é¬¥: ä»»å–ç³»çµ±ä¸­å…©å€‹ç›¸ç•°å€‹é«”ï¼Œæˆ°é¬¥éŽç¨‹ä¸è€ƒæ…®ï¼Œåªå–ã€Œç”¢ç”Ÿä¸€å‹ä¸€è² ã€çš„
+      æƒ…å½¢ç‚ºæœ‰æ•ˆæ¨£æœ¬ï¼Œä¸¦ä½œç‚ºä¸€æ¬¡è©•åƒ¹è®Šå‹•çš„è¼¸å…¥ï¼Œä»»ä¸€å€‹é«”å¾—å‹çš„æ©ŸçŽ‡å’Œ
+      å…¶ã€Œèƒ½åŠ›ã€æˆæ­£æ¯”ï¼Œå’Œæ•µæ–¹çš„ã€Œèƒ½åŠ›ã€æˆåæ¯”ã€‚
 
-ÆÀ¼Û±ä¶¯: µÃÊ¤µÄÒ»·½ÊÓË«·½¡¸Ä¿Ç°µÄÆÀ¼Û¡¹µÄ±ÈÖµ»ñµÃÈô¸ÉÆÀ¼Û£¬¸º·½µÄÆÀ
-          ¼Û²»±ä¶¯¡£
+è©•åƒ¹è®Šå‹•: å¾—å‹çš„ä¸€æ–¹è¦–é›™æ–¹ã€Œç›®å‰çš„è©•åƒ¹ã€çš„æ¯”å€¼ç²å¾—è‹¥å¹¹è©•åƒ¹ï¼Œè² æ–¹çš„è©•
+          åƒ¹ä¸è®Šå‹•ã€‚
 
-ÊÔÇóÒ»ºÏÊÊÖ®ÆÀ¼Û±ä¶¯¹«Ê½£¬Ê¹µÃÔÚ¾­¹ýÒ»¶ÎÊ±¼äáá£¬¸Ã¼¯ºÏÖÐ¸öÌåµÄ¡¸ÆÀ¼Û¡¹
-ºÍ¡¸ÄÜÁ¦¡¹ÄÜ³ÉÕý±È(ÒÔÄÜÁ¦ºÍÆÀ¼ÛÎª x, y Öá£¬Ã¿¸ö¸öÌåÃèÒ»¸öµã£¬»á³ÊÏÖÏß
-ÐÔ·Ö²¼)¡£
+è©¦æ±‚ä¸€åˆé©ä¹‹è©•åƒ¹è®Šå‹•å…¬å¼ï¼Œä½¿å¾—åœ¨ç¶“éŽä¸€æ®µæ™‚é–“å¾Œï¼Œè©²é›†åˆä¸­å€‹é«”çš„ã€Œè©•åƒ¹ã€
+å’Œã€Œèƒ½åŠ›ã€èƒ½æˆæ­£æ¯”(ä»¥èƒ½åŠ›å’Œè©•åƒ¹ç‚º x, y è»¸ï¼Œæ¯å€‹å€‹é«”æä¸€å€‹é»žï¼Œæœƒå‘ˆç¾ç·š
+æ€§åˆ†å¸ƒ)ã€‚
 
-¡õ  ÈçºÎ½¨ÔìÒ»¸ö·¿¼ä
+â–¡  å¦‚ä½•å»ºé€ ä¸€å€‹æˆ¿é–“
 
-    ·¿¼äÊÇ¹¹³ÉÕâÕû¸öÊÀ½çµÄÒªËØÖ®Ò»£¬ÔÚ´ËÎÒÃÇÌá¹©ÁËÒ»¸ö·¿¼äµÄ±ê×¼Îï¼þÀ´ÈÃ
-ËùÓÐµÄ·¿¼ä¼Ì³Ð¡£¶øÈçÍ¬ÆäËûµÄÎï¼þÒ»°ã£¬ÄãÐèÒªÐ´Ò»¸ö create() À´Éè¶¨·¿¼äÖÐ
-µÄÐðÊö¡¢³ö¿Ú¡¢ÎïÆ·¡¢ÉúÎïµÈµÈ¡£ÕâÀï£¬ÎÒÏ²»¶ËµÄãÓÃ create() Õâ¸öº¯Ê½À´¸³Óè
-Õâ¸ö·¿¼äµÄÊôÐÔ¡£Ò»°ãÀ´Ëµ£¬Òª½¨ÔìÒ»¸ö¼òµ¥µÄ·¿¼ä£¬ÄãÖ»Òª¸³ÓèËü»ù±¾µÄÊôÐÔ¼´
-¿É¡£µ±È»£¬ÎÒÃÇ²»ÈÏÎªÒ»¸öÇøÓòÖÐ¼¸Ê®¸ö·¿¼äÃ»ÓÐÈÎºÎµÄ»ú¹Ø»òÃØÃÜ£¬ÊÇ¸ö»áÎüÒý
-Íæ¼ÒÒ»ÓÎµÄºÃµØ·½¡£
+    æˆ¿é–“æ˜¯æ§‹æˆé€™æ•´å€‹ä¸–ç•Œçš„è¦ç´ ä¹‹ä¸€ï¼Œåœ¨æ­¤æˆ‘å€‘æä¾›äº†ä¸€å€‹æˆ¿é–“çš„æ¨™æº–ç‰©ä»¶ä¾†è®“
+æ‰€æœ‰çš„æˆ¿é–“ç¹¼æ‰¿ã€‚è€Œå¦‚åŒå…¶ä»–çš„ç‰©ä»¶ä¸€èˆ¬ï¼Œä½ éœ€è¦å¯«ä¸€å€‹ create() ä¾†è¨­å®šæˆ¿é–“ä¸­
+çš„æ•˜è¿°ã€å‡ºå£ã€ç‰©å“ã€ç”Ÿç‰©ç­‰ç­‰ã€‚é€™è£¡ï¼Œæˆ‘å–œæ­¡èªªä½ ç”¨ create() é€™å€‹å‡½å¼ä¾†è³¦äºˆ
+é€™å€‹æˆ¿é–“çš„å±¬æ€§ã€‚ä¸€èˆ¬ä¾†èªªï¼Œè¦å»ºé€ ä¸€å€‹ç°¡å–®çš„æˆ¿é–“ï¼Œä½ åªè¦è³¦äºˆå®ƒåŸºæœ¬çš„å±¬æ€§å³
+å¯ã€‚ç•¶ç„¶ï¼Œæˆ‘å€‘ä¸èªç‚ºä¸€å€‹å€åŸŸä¸­å¹¾åå€‹æˆ¿é–“æ²’æœ‰ä»»ä½•çš„æ©Ÿé—œæˆ–ç§˜å¯†ï¼Œæ˜¯å€‹æœƒå¸å¼•
+çŽ©å®¶ä¸€éŠçš„å¥½åœ°æ–¹ã€‚
 
-    ÏÂÃæ£¬Ìáµ½ÁËÒ»Ð©½¨Ôì·¿¼äËùÐèÒªÁôÒâµÄÊÂÏî£¬Ò²»áÅäºÏÒ»Ð©Àý×ÓÀ´ËµÃ÷¡£
+    ä¸‹é¢ï¼Œæåˆ°äº†ä¸€äº›å»ºé€ æˆ¿é–“æ‰€éœ€è¦ç•™æ„çš„äº‹é …ï¼Œä¹Ÿæœƒé…åˆä¸€äº›ä¾‹å­ä¾†èªªæ˜Žã€‚
 
-  Ò»¡¢»ù±¾Æª
+  ä¸€ã€åŸºæœ¬ç¯‡
 
-    Ò»¸ö»ù±¾µÄ·¿¼ä£¬ÒªÓÐ short <¶ÌÐðÊö> ¡¢ long <³¤ÐðÊö>¡¢ exits <³ö¿Ú>
+    ä¸€å€‹åŸºæœ¬çš„æˆ¿é–“ï¼Œè¦æœ‰ short <çŸ­æ•˜è¿°> ã€ long <é•·æ•˜è¿°>ã€ exits <å‡ºå£>
 
-¡õ  µ±ÄãÔÚÐ´Ò»¸ö·¿¼äµÄ long <³¤ÐðÊö>Ê±£¬Æä¸ñÊ½Îª£º
+â–¡  ç•¶ä½ åœ¨å¯«ä¸€å€‹æˆ¿é–“çš„ long <é•·æ•˜è¿°>æ™‚ï¼Œå…¶æ ¼å¼ç‚ºï¼š
 
         set("long", @LONG
 
-·¿¼äµÄÐðÊö.......
+æˆ¿é–“çš„æ•˜è¿°.......
 
 LONG
         );
 
-    ÆäÖÐ @LONG ºÍ LONG  ÊÇ»¥Ïà¶ÔÓ¦µÄ£¬Äã¿ÉÒÔÓÃÈÎºÎ×Ö½ÓÔÚ @  ááÃæ£¬µ«ÊÇÇ°
-ááÁ½¸ö×ÖÒ»¶¨ÒªÒ»Ñù£¬ÕâÑùÏµÍ³²ÅÄÜÅÐ±ð£¬¶ø·¿¼äµÄÐðÊöÐ´ÍêÊ±£¬Ò»¶¨Òª»»ÐÐááÔÙ
-½ÓµÚ¶þ¸ö LONG £¬ÇÒÍ¬Ò»ÐÐ²»ÄÜÔÙÓÐÆäËûÈÎºÎµÄ×ÖÔª£¬²»È»ÏµÍ³ÎÞ·¨ÅÐ¶¨ÐðÊöÊÇ·ñ
-¸Ã½áÊøÁË£¬»áÔì³É±àÒëÊ±µÄ´íÎó¡£
+    å…¶ä¸­ @LONG å’Œ LONG  æ˜¯äº’ç›¸å°æ‡‰çš„ï¼Œä½ å¯ä»¥ç”¨ä»»ä½•å­—æŽ¥åœ¨ @  å¾Œé¢ï¼Œä½†æ˜¯å‰
+å¾Œå…©å€‹å­—ä¸€å®šè¦ä¸€æ¨£ï¼Œé€™æ¨£ç³»çµ±æ‰èƒ½åˆ¤åˆ¥ï¼Œè€Œæˆ¿é–“çš„æ•˜è¿°å¯«å®Œæ™‚ï¼Œä¸€å®šè¦æ›è¡Œå¾Œå†
+æŽ¥ç¬¬äºŒå€‹ LONG ï¼Œä¸”åŒä¸€è¡Œä¸èƒ½å†æœ‰å…¶ä»–ä»»ä½•çš„å­—å…ƒï¼Œä¸ç„¶ç³»çµ±ç„¡æ³•åˆ¤å®šæ•˜è¿°æ˜¯å¦
+è©²çµæŸäº†ï¼Œæœƒé€ æˆç·¨è­¯æ™‚çš„éŒ¯èª¤ã€‚
 
-    ¶øÎªÇóÇøÓò¿´ÆðÀ´Íâ¹ÛÉÏÕûÆë¡¢Í³Ò»£¬·¿¼äµÄ³¤ÐðÊöÖÐÃ¿Ò»ÐÐµÄ³¤¶È±ØÐëÒ»Ñù
-£¬¶øÒ»ÐÐµÄ³¤¶È½¨ÒéÎª 29 µ½ 32 ¸öÖÐÎÄ×Ö£¬Ô¼Õ¼Ó©Ä»µÄÈý·ÖÖ®¶þ¡£²¢ÇÒÒ»¸ö·¿¼ä
-µÄÐðÊö×îºÃ²»ÒªµÍì¶ÈýÐÐ£¬ÇøÓò¸÷¸ö·¿¼äµÄÐðÊöÖØ¸´ÐÔ½µµ½Ô½µÍÔ½ºÃ£¬ÕâÑùÄãµÄÇø
-Óò¿´ÆðÀ´²Å²»»áÌ«¹ýÑô´º¡£µ±È»£¬ÓÐÊ±ºòÎªÁËÄ³Ð©Ä¿µÄ£¬±ÈÈçÒ»¸öÃÔ¹¬£¬Äã¿ÉÄÜ»á
-ÏàÁÚµÄ¼¸¸ö·¿¼ä¶¼ÓÃµ½Ò»ÑùµÄÐðÊö£¬ÄÇ×ÔÈ»²»ÔÚ´ËÏÞ¡£
+    è€Œç‚ºæ±‚å€åŸŸçœ‹èµ·ä¾†å¤–è§€ä¸Šæ•´é½Šã€çµ±ä¸€ï¼Œæˆ¿é–“çš„é•·æ•˜è¿°ä¸­æ¯ä¸€è¡Œçš„é•·åº¦å¿…é ˆä¸€æ¨£
+ï¼Œè€Œä¸€è¡Œçš„é•·åº¦å»ºè­°ç‚º 29 åˆ° 32 å€‹ä¸­æ–‡å­—ï¼Œç´„ä½”èž¢å¹•çš„ä¸‰åˆ†ä¹‹äºŒã€‚ä¸¦ä¸”ä¸€å€‹æˆ¿é–“
+çš„æ•˜è¿°æœ€å¥½ä¸è¦ä½Žæ–¼ä¸‰è¡Œï¼Œå€åŸŸå„å€‹æˆ¿é–“çš„æ•˜è¿°é‡å¾©æ€§é™åˆ°è¶Šä½Žè¶Šå¥½ï¼Œé€™æ¨£ä½ çš„å€
+åŸŸçœ‹èµ·ä¾†æ‰ä¸æœƒå¤ªéŽé™½æ˜¥ã€‚ç•¶ç„¶ï¼Œæœ‰æ™‚å€™ç‚ºäº†æŸäº›ç›®çš„ï¼Œæ¯”å¦‚ä¸€å€‹è¿·å®®ï¼Œä½ å¯èƒ½æœƒ
+ç›¸é„°çš„å¹¾å€‹æˆ¿é–“éƒ½ç”¨åˆ°ä¸€æ¨£çš„æ•˜è¿°ï¼Œé‚£è‡ªç„¶ä¸åœ¨æ­¤é™ã€‚
 
-¡õ  Ò»¸ö·¿¼äµÄ³ö¿ÚÔòÒÔÏÂÁÐ¸ñÊ½¸³Óè£º
+â–¡  ä¸€å€‹æˆ¿é–“çš„å‡ºå£å‰‡ä»¥ä¸‹åˆ—æ ¼å¼è³¦äºˆï¼š
 
         set("exits", ([
-                "·½Ïò"          : "Á¬½Óµ½µÄ·¿¼äÖ®µµÃû",
+                "æ–¹å‘"          : "é€£æŽ¥åˆ°çš„æˆ¿é–“ä¹‹æª”å",
                 ...........
         ]);
 
-    ÔÚÕâÀï£¬ÎªÁËÒ»¸öÒÔááÇøÓò¿ª·Åáá°áÒÆÄ¿Â¼µÄ±ãÀûÐÔ£¬½¨Òé²ÉÓÃ__DIR__ Õâ¸ö
-ÓÉÏµÍ³Ìá¹©µÄ¾Þ¼¯À´Ð´Â·¾¶£¬±ÈÈçËµ£º
+    åœ¨é€™è£¡ï¼Œç‚ºäº†ä¸€å€‹ä»¥å¾Œå€åŸŸé–‹æ”¾å¾Œæ¬ç§»ç›®éŒ„çš„ä¾¿åˆ©æ€§ï¼Œå»ºè­°æŽ¡ç”¨__DIR__ é€™å€‹
+ç”±ç³»çµ±æä¾›çš„å·¨é›†ä¾†å¯«è·¯å¾‘ï¼Œæ¯”å¦‚èªªï¼š
 
                 "west"          : __DIR__"path3",
-        ºÍ
+        å’Œ
                 "west"          : "/u/d/davidoff/goathill/path3",
 
-ÊÇÍêÈ«Ò»ÑùµÄ¡£µ«Ç°ÕßÏÔÈ»ÔÚÒÔááÄ¿Â¼µÄ°áÒÆÉÏ·½±ãµÄ¶à¡£¶øÔÚÏÂÃæ»áÌáµ½Éè¶¨·¿
-¼äÖÐµÄÎïÆ·»òÉúÎïÊ±£¬Ò²½¨Òé²ÉÓÃÕâÖÖ·½Ê½Ð´×÷¡£
+æ˜¯å®Œå…¨ä¸€æ¨£çš„ã€‚ä½†å‰è€…é¡¯ç„¶åœ¨ä»¥å¾Œç›®éŒ„çš„æ¬ç§»ä¸Šæ–¹ä¾¿çš„å¤šã€‚è€Œåœ¨ä¸‹é¢æœƒæåˆ°è¨­å®šæˆ¿
+é–“ä¸­çš„ç‰©å“æˆ–ç”Ÿç‰©æ™‚ï¼Œä¹Ÿå»ºè­°æŽ¡ç”¨é€™ç¨®æ–¹å¼å¯«ä½œã€‚
 
-¡õ  item_desc ÕâÊÇÓÃÀ´Éè¶¨¸ö±ð¾°ÎïµÄÃèÊö£¬µ±Íæ¼ÒÓÃ look Õâ¸öÖ¸ÁîÊ±¾Í»á×÷
-    ÓÃ¡£Æä¸ñÊ½Îª£º
+â–¡  item_desc é€™æ˜¯ç”¨ä¾†è¨­å®šå€‹åˆ¥æ™¯ç‰©çš„æè¿°ï¼Œç•¶çŽ©å®¶ç”¨ look é€™å€‹æŒ‡ä»¤æ™‚å°±æœƒä½œ
+    ç”¨ã€‚å…¶æ ¼å¼ç‚ºï¼š
 
         set("item_desc", ([
-                "¾°ÎïÃû³Æ"      : "¾°ÎïÐðÊö",
+                "æ™¯ç‰©åç¨±"      : "æ™¯ç‰©æ•˜è¿°",
                 ...........
         ]);
 
-    ÆäÖÐ¾°ÎïÐðÊö¿ÉÒÔÊÇ×Ö´®»òÊÇÒ»¸ö function £¬ËùÒÔÄã¿ÉÒÔÀûÓÃÕâ¸ö¹¦ÄÜ¼ÓÒÔ
-±ä»¯£¬µ±Íæ¼Ò look Ò»¸ö¾°ÎïÊ±£¬¿ÉÄÜ¿´µ½ÐðÊö£¬Ò²¿ÉÄÜ·¢ÉúÒ»Ð©ÌØÊâµÄÊÂ¼þ£¬¶ø
-Äã¾Í¿ÉÒÔÔÚ±»ºô½ÐµÄº¯Ê½ÖÐÐ´ÏÂÕâÐ©ÊÂ¼þ¡£
+    å…¶ä¸­æ™¯ç‰©æ•˜è¿°å¯ä»¥æ˜¯å­—ä¸²æˆ–æ˜¯ä¸€å€‹ function ï¼Œæ‰€ä»¥ä½ å¯ä»¥åˆ©ç”¨é€™å€‹åŠŸèƒ½åŠ ä»¥
+è®ŠåŒ–ï¼Œç•¶çŽ©å®¶ look ä¸€å€‹æ™¯ç‰©æ™‚ï¼Œå¯èƒ½çœ‹åˆ°æ•˜è¿°ï¼Œä¹Ÿå¯èƒ½ç™¼ç”Ÿä¸€äº›ç‰¹æ®Šçš„äº‹ä»¶ï¼Œè€Œ
+ä½ å°±å¯ä»¥åœ¨è¢«å‘¼å«çš„å‡½å¼ä¸­å¯«ä¸‹é€™äº›äº‹ä»¶ã€‚
 
-¡õ  objects ¿ÉÒÔÈÃÕâ¸ö·¿¼äÔÚÃ¿´Î resetÊ±ÔØÈëÄ³Ð©ÉúÎï»òÄ³Ð©ÎïÆ·£º
+â–¡  objects å¯ä»¥è®“é€™å€‹æˆ¿é–“åœ¨æ¯æ¬¡ resetæ™‚è¼‰å…¥æŸäº›ç”Ÿç‰©æˆ–æŸäº›ç‰©å“ï¼š
 
         set("objects", ([
-                "ÎïÆ·»òÉúÎïµÄµµÃû"      : ÊýÁ¿,
+                "ç‰©å“æˆ–ç”Ÿç‰©çš„æª”å"      : æ•¸é‡,
                 ...........
         ]);
 
-    ÈçÍ¬Ç°ÃæËùÌáµ½µÄ£¬½¨Òé²ÉÓÃ __DIR__À´±àÐ´ÄãµÄÂ·¾¶£¬¶øÊýÁ¿ÔòÒªÓÃÕûÊý¡£
+    å¦‚åŒå‰é¢æ‰€æåˆ°çš„ï¼Œå»ºè­°æŽ¡ç”¨ __DIR__ä¾†ç·¨å¯«ä½ çš„è·¯å¾‘ï¼Œè€Œæ•¸é‡å‰‡è¦ç”¨æ•´æ•¸ã€‚
 
-¡õ  ÒªÎªÕâ¸ö·¿¼äÌíÉÏÃÅ»§Ê±£¬¼ÇµÃÇ°Ãæ±ØÐëÏÈ #include <room.h>¡£¶ø¸ñÊ½Îª£º
+â–¡  è¦ç‚ºé€™å€‹æˆ¿é–“æ·»ä¸Šé–€æˆ¶æ™‚ï¼Œè¨˜å¾—å‰é¢å¿…é ˆå…ˆ #include <room.h>ã€‚è€Œæ ¼å¼ç‚ºï¼š
 
-        create_door("³ö¿Ú·½Ïò", "ÃÅµÄÃû³Æ", "½øÈë·½Ïò", Ô¤Éè×´Ì¬);
+        create_door("å‡ºå£æ–¹å‘", "é–€çš„åç¨±", "é€²å…¥æ–¹å‘", é è¨­ç‹€æ…‹);
 
-    ±ÈÈçËµ£¬ÕâÀïÃ÷ÏÔµÄ³ö¿ÚÓÐ west¡¢east ºÍ up¡£ ¶øÄãÒªÈÃÎ÷±ßÓÐÒ»¸ö¹ØÉÏµÄ
-ºìÄ¾ÃÅ£¬Äã¿ÉÒÔÕâÑùÐ´£º
+    æ¯”å¦‚èªªï¼Œé€™è£¡æ˜Žé¡¯çš„å‡ºå£æœ‰ westã€east å’Œ upã€‚ è€Œä½ è¦è®“è¥¿é‚Šæœ‰ä¸€å€‹é—œä¸Šçš„
+ç´…æœ¨é–€ï¼Œä½ å¯ä»¥é€™æ¨£å¯«ï¼š
 
-        create_door("west", "ºìÄ¾ÃÅ", "east", DOOR_CLOSED);
+        create_door("west", "ç´…æœ¨é–€", "east", DOOR_CLOSED);
 
-    µ±Íæ¼Ò½øÈëÕâ¸ö·¿¼äÊ±£¬Ëû»á¿´µ½£º
+    ç•¶çŽ©å®¶é€²å…¥é€™å€‹æˆ¿é–“æ™‚ï¼Œä»–æœƒçœ‹åˆ°ï¼š
 
-        ÕâÀïÃ÷ÏÔµÄ³ö¿ÚÓÐ east ºÍ up¡£
+        é€™è£¡æ˜Žé¡¯çš„å‡ºå£æœ‰ east å’Œ upã€‚
 
-    ¶øµ±Ëû look west Ê±£¬»á¿´µ½£ºÕâ¸öºìÄ¾ÃÅÊÇ¹ØÉÏµÄ¡£
+    è€Œç•¶ä»– look west æ™‚ï¼Œæœƒçœ‹åˆ°ï¼šé€™å€‹ç´…æœ¨é–€æ˜¯é—œä¸Šçš„ã€‚
 
 
-    ÆäËûµÄÒ»Ð©ÊôÐÔ£¬Äã¿ÉÒÔ²Î¿¼ /doc/build/room_prop »òÊÇ¶ÁÒ»ÏÂ±ê×¼Îï¼þµÄ
-room.c¡£Ò²½¨ÒéÄã¿ÉÒÔ¶àÓÃ more hereÀ´¹Û¿´Ò»¼äÌØÊâµÄ room¡£
-  ¶þ¡¢½ø½×Æª
+    å…¶ä»–çš„ä¸€äº›å±¬æ€§ï¼Œä½ å¯ä»¥åƒè€ƒ /doc/build/room_prop æˆ–æ˜¯è®€ä¸€ä¸‹æ¨™æº–ç‰©ä»¶çš„
+room.cã€‚ä¹Ÿå»ºè­°ä½ å¯ä»¥å¤šç”¨ more hereä¾†è§€çœ‹ä¸€é–“ç‰¹æ®Šçš„ roomã€‚
+  äºŒã€é€²éšŽç¯‡
 
-    ÒªÈÃÄãµÄÇøÓòÖÐ¸»ÓÐ±ä»¯£¬Éú¶¯ÓÐÈ¤£¬³ýÁËÎÄ×ÖÐðÊöµÄ·á¸»¶ÈÒÔÍâ£¬Äã¸ü¿ÉÒÔ
-ÀûÓÃ init() Õâ¸öº¯Ê½ÎªÄãµÄ·¿¼äÔö¼ÓÒ»Ð©¡¸»ú¹Ø¡¹»ò¡¸ÃØÃÜ¡¹¡£
+    è¦è®“ä½ çš„å€åŸŸä¸­å¯Œæœ‰è®ŠåŒ–ï¼Œç”Ÿå‹•æœ‰è¶£ï¼Œé™¤äº†æ–‡å­—æ•˜è¿°çš„è±å¯Œåº¦ä»¥å¤–ï¼Œä½ æ›´å¯ä»¥
+åˆ©ç”¨ init() é€™å€‹å‡½å¼ç‚ºä½ çš„æˆ¿é–“å¢žåŠ ä¸€äº›ã€Œæ©Ÿé—œã€æˆ–ã€Œç§˜å¯†ã€ã€‚
 
-    ÕâÀï£¬ÏÈÈÃÎÒÃÇÁË½âÒ»ÏÂ init() µÄÓÃÍ¾ÎªºÎ£¬ºÍÎªÊ²÷áÒªÓÃµ½Ëü¡£Ã¿Ò»¸ö·¿
-¼äµÄ create() Ö»ÓÐµ± resetÊ±²Å»á±»ºô½Ðµ½£¬¶ø init() ÔòÊÇÔÚ BÎï¼þ½øÈëµ½ A
-Îï¼þÊ±¶¼»áºô½Ðµ½ AÎï¼þµÄ init() ¡£¿´µ½Õâ£¬ÄãÓ¦¸Ã¿ÉÒÔ¿´³ö²î±ðÁË£¬ÎÒÃÇÏ£Íû
-µ±Ò»¸öÎï¼þ£¨´Ë´¦½Ï¶àÊÇÍæ¼Ò£©½øµ½Ò»¸ö·¿¼äÊ±£¬ÄÜ¹»¾­ÓÉÄ³¸ö¶¯×÷Æô¶¯Õâ¸ö·¿¼ä
-µÄ»ú¹ØµÄ»°£¬×ÔÈ»ÊÇÀûÓÃ init() À´±àÐ´¡£
+    é€™è£¡ï¼Œå…ˆè®“æˆ‘å€‘äº†è§£ä¸€ä¸‹ init() çš„ç”¨é€”ç‚ºä½•ï¼Œå’Œç‚ºä»€éº¼è¦ç”¨åˆ°å®ƒã€‚æ¯ä¸€å€‹æˆ¿
+é–“çš„ create() åªæœ‰ç•¶ resetæ™‚æ‰æœƒè¢«å‘¼å«åˆ°ï¼Œè€Œ init() å‰‡æ˜¯åœ¨ Bç‰©ä»¶é€²å…¥åˆ° A
+ç‰©ä»¶æ™‚éƒ½æœƒå‘¼å«åˆ° Aç‰©ä»¶çš„ init() ã€‚çœ‹åˆ°é€™ï¼Œä½ æ‡‰è©²å¯ä»¥çœ‹å‡ºå·®åˆ¥äº†ï¼Œæˆ‘å€‘å¸Œæœ›
+ç•¶ä¸€å€‹ç‰©ä»¶ï¼ˆæ­¤è™•è¼ƒå¤šæ˜¯çŽ©å®¶ï¼‰é€²åˆ°ä¸€å€‹æˆ¿é–“æ™‚ï¼Œèƒ½å¤ ç¶“ç”±æŸå€‹å‹•ä½œå•Ÿå‹•é€™å€‹æˆ¿é–“
+çš„æ©Ÿé—œçš„è©±ï¼Œè‡ªç„¶æ˜¯åˆ©ç”¨ init() ä¾†ç·¨å¯«ã€‚
 
-    Ò»°ãµÄÊ¹ÓÃ·½Ê½£¬ÊÇÔÚ init() ÖÐÀûÓÃ add_action() À´ºô½ÐÄãÐ´µÄº¯Ê½£¬Æä
-¸ñÊ½Îª£º
+    ä¸€èˆ¬çš„ä½¿ç”¨æ–¹å¼ï¼Œæ˜¯åœ¨ init() ä¸­åˆ©ç”¨ add_action() ä¾†å‘¼å«ä½ å¯«çš„å‡½å¼ï¼Œå…¶
+æ ¼å¼ç‚ºï¼š
         add_action("function type", "action");
 
-    function type ¼´ÊÇ±»ºô½ÐµÄº¯Ê½Ãû    action ÊÇÆô¶¯µÄ¶¯×÷
+    function type å³æ˜¯è¢«å‘¼å«çš„å‡½å¼å    action æ˜¯å•Ÿå‹•çš„å‹•ä½œ
 
-    ¶øÄã¾Í¿ÉÒÔ½«±» action Æô¶¯ááÒª·¢ÉúµÄÊÂ£¬¶¼Ð´ÔÚ±»ºô½ÐµÄº¯Ê½ÀïÃæ¡£ÀíÂÛ
-ÉÏÀ´Ëµ£¬ÀûÓÃÕâ¸ö·½Ê½ÎÒÃÇ¿ÉÒÔ×öµ½ÈÎºÎÊÂ£¬µ±È»£¬ÄÜ²»ÄÜ´ï³É¾Í¿´Ð´³ÌÊ½µÄ¹¦Á¦
-ÁË¡£ÏÂÃæ¾Ù¸ö¼òµ¥µÄÀý×Ó£º
+    è€Œä½ å°±å¯ä»¥å°‡è¢« action å•Ÿå‹•å¾Œè¦ç™¼ç”Ÿçš„äº‹ï¼Œéƒ½å¯«åœ¨è¢«å‘¼å«çš„å‡½å¼è£¡é¢ã€‚ç†è«–
+ä¸Šä¾†èªªï¼Œåˆ©ç”¨é€™å€‹æ–¹å¼æˆ‘å€‘å¯ä»¥åšåˆ°ä»»ä½•äº‹ï¼Œç•¶ç„¶ï¼Œèƒ½ä¸èƒ½é”æˆå°±çœ‹å¯«ç¨‹å¼çš„åŠŸåŠ›
+äº†ã€‚ä¸‹é¢èˆ‰å€‹ç°¡å–®çš„ä¾‹å­ï¼š
 
 void init()
 {
@@ -1083,255 +1083,255 @@ int do_pick(string arg)
         object me;
 
         me = this_player();
-        if ( !arg || ( arg != "flower" ) ) return notify_fail("ÄãÒªÕªÊ²÷á£¿\n");
+        if ( !arg || ( arg != "flower" ) ) return notify_fail("ä½ è¦æ‘˜ä»€éº¼ï¼Ÿ\n");
 
         else if ( random((int)me->query("kar")) < 7 )
-                message_vision("$N½«»¨ÕªÁËÏÂÀ´£¬µ«Ò»²»Ð¡ÐÄ±»´ÌÁËÒ»ÏÂ¡£\n", me);
+                message_vision("$Nå°‡èŠ±æ‘˜äº†ä¸‹ä¾†ï¼Œä½†ä¸€ä¸å°å¿ƒè¢«åˆºäº†ä¸€ä¸‹ã€‚\n", me);
 
         else
-                message_vision("$NÕªÏÂÒ»¶äÃÀÀöµÄÑªºìÉ«ÏÊ»¨¡£\n", me);
+                message_vision("$Næ‘˜ä¸‹ä¸€æœµç¾Žéº—çš„è¡€ç´…è‰²é®®èŠ±ã€‚\n", me);
 
         return 1;
 }
 
-    µ±Íæ¼ÒÀûÓÃ pick Õâ¸öÖ¸ÁîÊ±¾Í»áºô½Ðµ½ do_pick() Õâ¸ö function£¬¶øÆô¶¯ÁË
-Õâ¸ö·¿¼äµÄ»ú¹Ø¡£
+    ç•¶çŽ©å®¶åˆ©ç”¨ pick é€™å€‹æŒ‡ä»¤æ™‚å°±æœƒå‘¼å«åˆ° do_pick() é€™å€‹ functionï¼Œè€Œå•Ÿå‹•äº†
+é€™å€‹æˆ¿é–“çš„æ©Ÿé—œã€‚
 
-    ÕâÀïÌØ±ðÌáµ½Ò»µã£¬Ò»¸ö¼òµ¥µÄ room ÎÒÃÇÎªÁËÊ¹¼ÇÒäÌåµÄÊ¹ÓÃÁ¿½µµ½×îµÍ£¬»á
-ÔÚ create() ×îáá¼ÓÉÏÒ»ÐÐ replace_program(ROOM); ¡£ÕâÊÇÒòÎªÔÚ·¿¼äµÄ±ê×¼Îï¼þ
-ÖÐÓÐ¶¨ÒåÁËÈç init() µÈÆäËûµÄº¯Ê½£¬¶øÒ»¸ö¼òµ¥µÄ·¿¼ä¸ù±¾Ã»ÓÐÓÃµ½£¬ËùÒÔÎÒÃÇÓÃ
-replace_program() À´½«Ô­±¾µÄ±»¼Ì³ÐµÄ±ê×¼Îï¼þ¡¸ÖØÖÃ¡¹£¨»òËµÈ¡´ú£©µô£¬µ«ÊÇÒ»
-µ©·¿¼äÖÐÓÃµ½ÁË init() À´±àÐ´Ê±£¬¾Í¾ø¶Ô²»¿ÉÒÔÓÃ replace_program()£¬ÒòÎªÏµÍ³
-½ìÊ±ÕÒ²»µ½ init() ±ã»áËæ±ãºô½ÐÒ»¸ö¼ÇÒäÌåÖÐµÄÎ»Ö·¶øËæ±ã´«½øÒ»Ð©ÂÒÆß°ËÔãµÄ¶«
-Î÷£¬Çé¿öÑÏÖØÊ±£¬ÉõÖÁ¿ÉÒÔÈÃÕû¸ö mud crash¡£µ«ÊÇ£¬ÎÒÃÇ×Ô²»¿ÉÒòÒ­·ÏÊ³£¬¸ÃÓÃµÄ
-Ê±ºò»¹ÊÇÒªÓÃ£¬ÕâÐ©Ó¦¸ÃÊÇÒ»¸öºÃµÄ³ÌÊ½Ð´×÷ÈËÔ±×Ô¼º±ØÐëÁôÒâµÄ£¬·¢Éú×´¿öÒª×Ô¼º
-¸ºÔð¡£
+    é€™è£¡ç‰¹åˆ¥æåˆ°ä¸€é»žï¼Œä¸€å€‹ç°¡å–®çš„ room æˆ‘å€‘ç‚ºäº†ä½¿è¨˜æ†¶é«”çš„ä½¿ç”¨é‡é™åˆ°æœ€ä½Žï¼Œæœƒ
+åœ¨ create() æœ€å¾ŒåŠ ä¸Šä¸€è¡Œ replace_program(ROOM); ã€‚é€™æ˜¯å› ç‚ºåœ¨æˆ¿é–“çš„æ¨™æº–ç‰©ä»¶
+ä¸­æœ‰å®šç¾©äº†å¦‚ init() ç­‰å…¶ä»–çš„å‡½å¼ï¼Œè€Œä¸€å€‹ç°¡å–®çš„æˆ¿é–“æ ¹æœ¬æ²’æœ‰ç”¨åˆ°ï¼Œæ‰€ä»¥æˆ‘å€‘ç”¨
+replace_program() ä¾†å°‡åŽŸæœ¬çš„è¢«ç¹¼æ‰¿çš„æ¨™æº–ç‰©ä»¶ã€Œé‡ç½®ã€ï¼ˆæˆ–èªªå–ä»£ï¼‰æŽ‰ï¼Œä½†æ˜¯ä¸€
+æ—¦æˆ¿é–“ä¸­ç”¨åˆ°äº† init() ä¾†ç·¨å¯«æ™‚ï¼Œå°±çµ•å°ä¸å¯ä»¥ç”¨ replace_program()ï¼Œå› ç‚ºç³»çµ±
+å±†æ™‚æ‰¾ä¸åˆ° init() ä¾¿æœƒéš¨ä¾¿å‘¼å«ä¸€å€‹è¨˜æ†¶é«”ä¸­çš„ä½å€è€Œéš¨ä¾¿å‚³é€²ä¸€äº›äº‚ä¸ƒå…«ç³Ÿçš„æ±
+è¥¿ï¼Œæƒ…æ³åš´é‡æ™‚ï¼Œç”šè‡³å¯ä»¥è®“æ•´å€‹ mud crashã€‚ä½†æ˜¯ï¼Œæˆ‘å€‘è‡ªä¸å¯å› å™Žå»¢é£Ÿï¼Œè©²ç”¨çš„
+æ™‚å€™é‚„æ˜¯è¦ç”¨ï¼Œé€™äº›æ‡‰è©²æ˜¯ä¸€å€‹å¥½çš„ç¨‹å¼å¯«ä½œäººå“¡è‡ªå·±å¿…é ˆç•™æ„çš„ï¼Œç™¼ç”Ÿç‹€æ³è¦è‡ªå·±
+è² è²¬ã€‚
 
-  Èý¡¢½¨Òé
+  ä¸‰ã€å»ºè­°
 
-    ÕâÀïÎÒÃÇÌá¹©ÁËÒ»¸ö¹¤¾ßÀ´ÈÃÎ×Ê¦ÃÇ¿ÉÒÔ·½±ãµÄ±àÐ´Ò»¸ö·¿¼ä£¬ÄÇ¾ÍÊÇ·¿¼ä±à¼­
-Æ÷(Roommaker) £¬Äã¿ÉÒÔ clone /obj/roommaker À´Ê¹ÓÃËü¡£Ò»°ãµÄ²½ÖèÊÇ£¬ÏÈÀûÓÃ
-mkroomÀ´ÔìÒ»¸ö¿Õ·¿¼ä£¬È»ááÀûÓÃ goto Õâ¸öÖ¸Áîµ½·¿¼äÀïÈ¥£¬ÔÙÓÃ rset short ºÍ
-connect À´Éè¶¨Õâ¸ö·¿¼äµÄ¶ÌÐðÊö¼°³ö¿Ú£¬¶øÏñÆäËûµÄÒ»Ð©ÊôÐÔÀýÈç outdoors µÈµÈ
-Ò²¶¼¿ÉÒÔÀûÓÃËûÀ´×öµ½£¬½ÓÖøÓÃ to rset long À´Éè¶¨Õâ¸ö·¿¼äµÄ³¤ÐðÊö£¬×îááÔÙÓÃ
-saveroom½«Õâ¸ö·¿¼ä´æµµ¡£ÒªÊÇÕâÖ»ÊÇÒ»¸ö»ù±¾µÄ·¿¼ä£¬ÄÇµ½ÕâÀï¾Í´ó¹¦¸æ³ÉÁË£¬Òª
-ÊÇ¡õÏëÈÃÕâ¸ö·¿¼ä¸»ÓÐ±ä»¯£¬ÄÇ¾ÍÔÙÓÃÏßÉÏ±à¼­Æ÷ edit »ò½«Õâ¸ö·¿¼äµÄµµ°¸ ftp
-»ØÈ¥¼ÌÐøÐÞ¸Ä¡£
+    é€™è£¡æˆ‘å€‘æä¾›äº†ä¸€å€‹å·¥å…·ä¾†è®“å·«å¸«å€‘å¯ä»¥æ–¹ä¾¿çš„ç·¨å¯«ä¸€å€‹æˆ¿é–“ï¼Œé‚£å°±æ˜¯æˆ¿é–“ç·¨è¼¯
+å™¨(Roommaker) ï¼Œä½ å¯ä»¥ clone /obj/roommaker ä¾†ä½¿ç”¨å®ƒã€‚ä¸€èˆ¬çš„æ­¥é©Ÿæ˜¯ï¼Œå…ˆåˆ©ç”¨
+mkroomä¾†é€ ä¸€å€‹ç©ºæˆ¿é–“ï¼Œç„¶å¾Œåˆ©ç”¨ goto é€™å€‹æŒ‡ä»¤åˆ°æˆ¿é–“è£¡åŽ»ï¼Œå†ç”¨ rset short å’Œ
+connect ä¾†è¨­å®šé€™å€‹æˆ¿é–“çš„çŸ­æ•˜è¿°åŠå‡ºå£ï¼Œè€Œåƒå…¶ä»–çš„ä¸€äº›å±¬æ€§ä¾‹å¦‚ outdoors ç­‰ç­‰
+ä¹Ÿéƒ½å¯ä»¥åˆ©ç”¨ä»–ä¾†åšåˆ°ï¼ŒæŽ¥è‘—ç”¨ to rset long ä¾†è¨­å®šé€™å€‹æˆ¿é–“çš„é•·æ•˜è¿°ï¼Œæœ€å¾Œå†ç”¨
+saveroomå°‡é€™å€‹æˆ¿é–“å­˜æª”ã€‚è¦æ˜¯é€™åªæ˜¯ä¸€å€‹åŸºæœ¬çš„æˆ¿é–“ï¼Œé‚£åˆ°é€™è£¡å°±å¤§åŠŸå‘Šæˆäº†ï¼Œè¦
+æ˜¯â–¡æƒ³è®“é€™å€‹æˆ¿é–“å¯Œæœ‰è®ŠåŒ–ï¼Œé‚£å°±å†ç”¨ç·šä¸Šç·¨è¼¯å™¨ edit æˆ–å°‡é€™å€‹æˆ¿é–“çš„æª”æ¡ˆ ftp
+å›žåŽ»ç¹¼çºŒä¿®æ”¹ã€‚
 
-¡õ ÈçºÎÐ´Ò»¸ö·ÇÍæÕßÈËÎï(NPC)
+â–¡ å¦‚ä½•å¯«ä¸€å€‹éžçŽ©è€…äººç‰©(NPC)
 
-Ò».ÄêÁä:
-   ÓÉì¶ÏµÍ³½«»áÒÀÄêÁä¶ø¼ÆËã³ö, ¸Ã¹ÖÎïÖ®Ìì¸³¼°»ù±¾×´Ì¬¡£
-   ¹ÊÇëÎñ±ØÉè¶¨¹ÖÎïµÄÄêÁä¡£
+ä¸€.å¹´é½¡:
+   ç”±æ–¼ç³»çµ±å°‡æœƒä¾å¹´é½¡è€Œè¨ˆç®—å‡º, è©²æ€ªç‰©ä¹‹å¤©è³¦åŠåŸºæœ¬ç‹€æ…‹ã€‚
+   æ•…è«‹å‹™å¿…è¨­å®šæ€ªç‰©çš„å¹´é½¡ã€‚
 
-   Éè¶¨·½·¨: set( "age", ÊýÖµ );
+   è¨­å®šæ–¹æ³•: set( "age", æ•¸å€¼ );
 
-¶þ.Ìì¸³: (Çë²Î¿¼ help gift)
-   str = ëöÁ¦, cor = µ¨Ê¶, int = ÎòÐÔ, spi = ÁéÐÔ,
-   cps = ¶¨Á¦, per = ÈÝÃ², con = ¸ù¹Ç, kar = ¸£Ôµ¡£
+äºŒ.å¤©è³¦: (è«‹åƒè€ƒ help gift)
+   str = è†‚åŠ›, cor = è†½è­˜, int = æ‚Ÿæ€§, spi = éˆæ€§,
+   cps = å®šåŠ›, per = å®¹è²Œ, con = æ ¹éª¨, kar = ç¦ç·£ã€‚
 
-   Éè¶¨·½Ê½: set( "ÊôÐÔ", ÊýÖµ );
-   ÊýÖµ¡õÎ§: 10 - 30
+   è¨­å®šæ–¹å¼: set( "å±¬æ€§", æ•¸å€¼ );
+   æ•¸å€¼â–¡åœ: 10 - 30
 
-Èý.×´Ì¬: (Çë²Î¿¼ help stats)
-   gin = ¾«, kee = Æø, sen = Éñ¡£
-   atman = ÁéÁ¦, force = ÄÚÁ¦, mana = ·¨Á¦¡£
+ä¸‰.ç‹€æ…‹: (è«‹åƒè€ƒ help stats)
+   gin = ç²¾, kee = æ°£, sen = ç¥žã€‚
+   atman = éˆåŠ›, force = å…§åŠ›, mana = æ³•åŠ›ã€‚
 
-   Éè¶¨·½Ê½: ÀýÈç, set( "gin", 200 );
+   è¨­å®šæ–¹å¼: ä¾‹å¦‚, set( "gin", 200 );
                    set( "max_gin", 200 );
                    set( "force_factor", 3 );
 
-ËÄ.¾­Ñé:
-   ¶ÔÒ»°ãÃ»ÓÐÌØÊâ¼¼ÄÜµÄ¹ÖÎï¶øÑÔ, Õ½¶·¾­Ñé(combat_exp)
-   ¼¸ºõ¾ö¶¨ÁË¹ÖÎïµÄÇ¿¶È¡£¶ø×ÛºÏÆÀ¼Û(score)Ôò¾ö¶¨ÁËÍæ¼Ò
-   »÷°Ü´Ë¹ÖÎïáá, ÊÇ·ñÄÜ´ó¾ÙÌá¸ß×Ô¼ºµÄ×ÛºÏÆÀ¼Û¡£
+å››.ç¶“é©—:
+   å°ä¸€èˆ¬æ²’æœ‰ç‰¹æ®ŠæŠ€èƒ½çš„æ€ªç‰©è€Œè¨€, æˆ°é¬¥ç¶“é©—(combat_exp)
+   å¹¾ä¹Žæ±ºå®šäº†æ€ªç‰©çš„å¼·åº¦ã€‚è€Œç¶œåˆè©•åƒ¹(score)å‰‡æ±ºå®šäº†çŽ©å®¶
+   æ“Šæ•—æ­¤æ€ªç‰©å¾Œ, æ˜¯å¦èƒ½å¤§èˆ‰æé«˜è‡ªå·±çš„ç¶œåˆè©•åƒ¹ã€‚
 
-   Éè¶¨·½Ê½: set( "combat_exp", ÊýÖµ );
-             set( "score", ÊýÖµ );
+   è¨­å®šæ–¹å¼: set( "combat_exp", æ•¸å€¼ );
+             set( "score", æ•¸å€¼ );
 
-Îå.¼¼ÄÜ:
-   Èç¹ûÏë×öÐ©½ÏÀ÷º¦µÄ¹ÖÎï»òµ¼Ê¦(ÈÃÍæ¼ÒÑ§¼¼ÄÜ)Ê±, ×îºÃµÄ·½
-   Ê½¼´ÊÇÉè¶¨¼¼ÄÜ¡£
+äº”.æŠ€èƒ½:
+   å¦‚æžœæƒ³åšäº›è¼ƒåŽ²å®³çš„æ€ªç‰©æˆ–å°Žå¸«(è®“çŽ©å®¶å­¸æŠ€èƒ½)æ™‚, æœ€å¥½çš„æ–¹
+   å¼å³æ˜¯è¨­å®šæŠ€èƒ½ã€‚
 
-   Éè¶¨·½Ê½:
-            1.¹ÖÎïÑ§¹ýµÄ¼¼ÄÜ: set( "¼¼ÇÉÃû", ÊýÖµ );
-            2.¹ÖÎïÊ©Õ¹µÄ¼¼ÄÜ: map_skill( "¼¼ÇÉÖÖÀà", "¼¼ÇÉÃû" );
+   è¨­å®šæ–¹å¼:
+            1.æ€ªç‰©å­¸éŽçš„æŠ€èƒ½: set( "æŠ€å·§å", æ•¸å€¼ );
+            2.æ€ªç‰©æ–½å±•çš„æŠ€èƒ½: map_skill( "æŠ€å·§ç¨®é¡ž", "æŠ€å·§å" );
 
-   µ±Ê¹ÓÃ map_skill() Ê±, ÇëÎñ±ØÈ·¶¨¼¼ÇÉÖÖÀàÊÇ·ñÏà·û¡£Ä¿Ç°,
-   ¼¼ÇÉÖÖÀàÈçÏÂ:
-   µ¶·¨(blade): spring-blade
-   Çá¹¦(dodge): chaos-steps pyrobat-steps nine-moon-steps stormdance
-   ÄÚ¹¦(essence): fonxanforce celestial iceforce gouyee nine-moon-force
-   ÐÞÐÐ(evolution):
-   ·¨Êõ(magic):
-   ÕÐ¼Ü(parry): ¸÷ÖÖ¸ß¼¶³ÖÐµ¹¦·ò
-   ¹÷·¨(stick):
-   ½£·¨(sword): fonxansword six-chaos-sword nine-moon-sword
-   °µÆ÷(throwing):
-   È­½Å(unarmed): liuh-ken celestrike nine-moon-claw tenderzhi ...
-   ÖäÊõ(spells): necromancy
+   ç•¶ä½¿ç”¨ map_skill() æ™‚, è«‹å‹™å¿…ç¢ºå®šæŠ€å·§ç¨®é¡žæ˜¯å¦ç›¸ç¬¦ã€‚ç›®å‰,
+   æŠ€å·§ç¨®é¡žå¦‚ä¸‹:
+   åˆ€æ³•(blade): spring-blade
+   è¼•åŠŸ(dodge): chaos-steps pyrobat-steps nine-moon-steps stormdance
+   å…§åŠŸ(essence): fonxanforce celestial iceforce gouyee nine-moon-force
+   ä¿®è¡Œ(evolution):
+   æ³•è¡“(magic):
+   æ‹›æž¶(parry): å„ç¨®é«˜ç´šæŒæ¢°åŠŸå¤«
+   æ£æ³•(stick):
+   åŠæ³•(sword): fonxansword six-chaos-sword nine-moon-sword
+   æš—å™¨(throwing):
+   æ‹³è…³(unarmed): liuh-ken celestrike nine-moon-claw tenderzhi ...
+   å’’è¡“(spells): necromancy
 
-//Ï£ÍûÄÜ°ÑËùÓÐ¼¼ÄÜÁÐì¶Æäáá//
-Áù.ÖÖ×å:
-   Èç¹ûÎ´Ö¸¶¨ÖÖ×å, ÏµÍ³½«»á×Ô¶¯Ñ¡¶¨ÈËÀà¡£
+//å¸Œæœ›èƒ½æŠŠæ‰€æœ‰æŠ€èƒ½åˆ—æ–¼å…¶å¾Œ//
+å…­.ç¨®æ—:
+   å¦‚æžœæœªæŒ‡å®šç¨®æ—, ç³»çµ±å°‡æœƒè‡ªå‹•é¸å®šäººé¡žã€‚
 
-   Éè¶¨·½Ê½: set( "race", "ÖÖ×åÃû" );
+   è¨­å®šæ–¹å¼: set( "race", "ç¨®æ—å" );
 
-Æß.ÐÔ±ð:
-   ÒÀÖÖ×åÖ®²»Í¬, ÓÐÁ½ÖÖÏµÍ³: 1.ÄÐÐÔ, Å®ÐÔ¡£
-                             2.ÐÛÐÔ, ´ÆÐÔ, ÖÐÐÔ¡£
+ä¸ƒ.æ€§åˆ¥:
+   ä¾ç¨®æ—ä¹‹ä¸åŒ, æœ‰å…©ç¨®ç³»çµ±: 1.ç”·æ€§, å¥³æ€§ã€‚
+                             2.é›„æ€§, é›Œæ€§, ä¸­æ€§ã€‚
 
-   Éè¶¨·½Ê½: set( "gender", "ÐÔ±ð" );
+   è¨­å®šæ–¹å¼: set( "gender", "æ€§åˆ¥" );
 
-°Ë.¹¥»÷:
-   ¹¥»÷Ä£Ê½°üÀ¨¹¥»÷·½Ê½¼°ÊÜ¹¦²¿Î»¡£Èç¹ûÖÖ×åÊÇÈËÀà, ½«Ö±½Ó
-   ¼Ì³Ð±ê×¼Ä£Ê½, ²»Ðë¶îÍâÉè¶¨; ÆäâÅÖÖ×åÔòÒ»¶¨Òª¼ÓÒÔÉè¶¨¡£
-   Éè¶¨·½Ê½: set( "verbs", ({ "¹¥»÷·½Ê½1", "¹¥»÷·½Ê½2", ...}) );
-             set( "limbs", ({ "ÊÜ¹¦²¿Î»1", "ÊÜ¹¦²¿Î»2", ...}) );
+å…«.æ”»æ“Š:
+   æ”»æ“Šæ¨¡å¼åŒ…æ‹¬æ”»æ“Šæ–¹å¼åŠå—åŠŸéƒ¨ä½ã€‚å¦‚æžœç¨®æ—æ˜¯äººé¡ž, å°‡ç›´æŽ¥
+   ç¹¼æ‰¿æ¨™æº–æ¨¡å¼, ä¸é ˆé¡å¤–è¨­å®š; å…¶é¤˜ç¨®æ—å‰‡ä¸€å®šè¦åŠ ä»¥è¨­å®šã€‚
+   è¨­å®šæ–¹å¼: set( "verbs", ({ "æ”»æ“Šæ–¹å¼1", "æ”»æ“Šæ–¹å¼2", ...}) );
+             set( "limbs", ({ "å—åŠŸéƒ¨ä½1", "å—åŠŸéƒ¨ä½2", ...}) );
 
-   Ä¿Ç°Ö®ÖÖ×åÈçÏÂ±í:
+   ç›®å‰ä¹‹ç¨®æ—å¦‚ä¸‹è¡¨:
 
-   ÖÖ×å    ÐÔ±ð    ¹¥»÷·½Ê½        ÊÜ¹¦²¿Î»
+   ç¨®æ—    æ€§åˆ¥    æ”»æ“Šæ–¹å¼        å—åŠŸéƒ¨ä½
   ------------------------------------------
-   ÈËÀà     1      ÏµÍ³¸ø¶¨        ÏµÍ³¸ø¶¨
+   äººé¡ž     1      ç³»çµ±çµ¦å®š        ç³»çµ±çµ¦å®š
   .........................................
-   Ò°ÊÞ     2      hoof, bite,     ×ÔÓÉÉè¶¨
+   é‡Žç¸     2      hoof, bite,     è‡ªç”±è¨­å®š
                    claw, poke
   ------------------------------------------
 
-¾Å.°µÓï:
-   ÎÒÃÇ¿ÉÒÔÔÚ¹ÖÎïÉÏÉè¶¨Ä³Ð©°µÓï, Ê¹µÃµ±Íæ¼ÒÑ¯ÎÊ(ask)ÌØ¶¨Ö®
-   ¹Ø¼ü×ÖÊ±, ¹ÖÎïÄÜ×Ô¶¯×öÎÒÃÇÔ¤ÉèÖ®¶¯×÷¡£
+ä¹.æš—èªž:
+   æˆ‘å€‘å¯ä»¥åœ¨æ€ªç‰©ä¸Šè¨­å®šæŸäº›æš—èªž, ä½¿å¾—ç•¶çŽ©å®¶è©¢å•(ask)ç‰¹å®šä¹‹
+   é—œéµå­—æ™‚, æ€ªç‰©èƒ½è‡ªå‹•åšæˆ‘å€‘é è¨­ä¹‹å‹•ä½œã€‚
 
-   Éè¶¨·½Ê½: set( "inquiry", ([
-                  "°µÓï1" : "»ØÓ¦Ö®Óï\n",
-                  "°µÓï2" : (: this_object(), "ºô½Ð¸±³ÌÊ½Ö®Ãû" :)
+   è¨­å®šæ–¹å¼: set( "inquiry", ([
+                  "æš—èªž1" : "å›žæ‡‰ä¹‹èªž\n",
+                  "æš—èªž2" : (: this_object(), "å‘¼å«å‰¯ç¨‹å¼ä¹‹å" :)
                 ]) );
 
-Ê®.ÆäËü:
-   ÆäâÅÖ®Éè¶¨Èç: set_name(), set_short(), set_long(), create_family(),
+å.å…¶å®ƒ:
+   å…¶é¤˜ä¹‹è¨­å®šå¦‚: set_name(), set_short(), set_long(), create_family(),
                  set( "nickname", "?" );
-                ÁíÎÄÐðÊö!
+                å¦æ–‡æ•˜è¿°!
 
-¡õ ÖÆ×÷ emote:
+â–¡ åˆ¶ä½œ emote:
 
-½ÇÉ«°éÑÝÓÎÏ·ÖÐ³ýÁËÌ¸»°Íâ»¹³£³£»áÓÃµ½Ò»Ð©¶¯×÷, ±íÇéµÈÀ´¸¨Öú
-»òÓÃÒÔ±í´ïÒ»Ð©²»ÈÝÒ×¡¸Ëµ¡¹³öÀ´µÄ¸Ð¾õ. ÕâÀàÖ¸ÁîÍ¨³£½Ð×÷ emote.
-ËäÈ»ËµÖÐÎÄµÄ emote Ö¸ÁîÊÇ¿ÉÄÜµÄ, µ«ÎªÁË·½±ãÆð¼û, emote ¶¼ÒÔ
-Ê¹ÓÃÓ¢ÎÄ¶¯´ÊÎªÖ÷.
+è§’è‰²ä¼´æ¼”éŠæˆ²ä¸­é™¤äº†è«‡è©±å¤–é‚„å¸¸å¸¸æœƒç”¨åˆ°ä¸€äº›å‹•ä½œ, è¡¨æƒ…ç­‰ä¾†è¼”åŠ©
+æˆ–ç”¨ä»¥è¡¨é”ä¸€äº›ä¸å®¹æ˜“ã€Œèªªã€å‡ºä¾†çš„æ„Ÿè¦º. é€™é¡žæŒ‡ä»¤é€šå¸¸å«ä½œ emote.
+é›–ç„¶èªªä¸­æ–‡çš„ emote æŒ‡ä»¤æ˜¯å¯èƒ½çš„, ä½†ç‚ºäº†æ–¹ä¾¿èµ·è¦‹, emote éƒ½ä»¥
+ä½¿ç”¨è‹±æ–‡å‹•è©žç‚ºä¸».
 
-emote ÓÉ /adm/daemons/emoted.c ¹ÜÀí.
+emote ç”± /adm/daemons/emoted.c ç®¡ç†.
 
-ÓÐ¹Ø emote µÄÖ¸Áî:
-edemote -- ÐÞ¸Ä, É¾³ý, ÏÔÊ¾Ò»¸ö emote µÄÄÚÈÝ.
-semote  -- ÏÔÊ¾Ä¿Ç° emote daemon ËùÖªµÀµÄ emote.
+æœ‰é—œ emote çš„æŒ‡ä»¤:
+edemote -- ä¿®æ”¹, åˆªé™¤, é¡¯ç¤ºä¸€å€‹ emote çš„å…§å®¹.
+semote  -- é¡¯ç¤ºç›®å‰ emote daemon æ‰€çŸ¥é“çš„ emote.
 
-emote ·ÖÎªÈýÖÖ: ÓÐÄ¿±ê, Ã»ÓÐÄ¿±êºÍ¶Ô×Ô¼º.
+emote åˆ†ç‚ºä¸‰ç¨®: æœ‰ç›®æ¨™, æ²’æœ‰ç›®æ¨™å’Œå°è‡ªå·±.
 
-ÔÚÖÆ×÷ÓÐÄ¿±êµÄ emote Ê±, ÄãÒª¿¼ÂÇÈý¸ö¡¸°æ±¾¡¹µÄÑ¶Ï¢:
-1. Ö´ÐÐÕß - Äã×Ô¼º, Ö´ÐÐÕâ¸ö emote µÄÈË.
-2. ¶ÔÏó   - ÄãÓÃ emote µÄÄ¿±ê. ±È·½Ëµ 'smile A' Ê±, A ¾ÍÊÇ¶ÔÏó.
-3. ÆäËûÈË - ³ýÁËÄãºÍÄ¿±êÍâËùÓÐÔÚ³¡µÄÈË.
+åœ¨åˆ¶ä½œæœ‰ç›®æ¨™çš„ emote æ™‚, ä½ è¦è€ƒæ…®ä¸‰å€‹ã€Œç‰ˆæœ¬ã€çš„è¨Šæ¯:
+1. åŸ·è¡Œè€… - ä½ è‡ªå·±, åŸ·è¡Œé€™å€‹ emote çš„äºº.
+2. å°è±¡   - ä½ ç”¨ emote çš„ç›®æ¨™. æ¯”æ–¹èªª 'smile A' æ™‚, A å°±æ˜¯å°è±¡.
+3. å…¶ä»–äºº - é™¤äº†ä½ å’Œç›®æ¨™å¤–æ‰€æœ‰åœ¨å ´çš„äºº.
 
-¶Ôì¶Ã»ÓÐÄ¿±ê»ò¶Ô×Ô¼ºµÄ emote, ÔòÖ»Òª¿¼ÂÇ 1 ¸ú 3 Á½ÖÖÑ¶Ï¢.
+å°æ–¼æ²’æœ‰ç›®æ¨™æˆ–å°è‡ªå·±çš„ emote, å‰‡åªè¦è€ƒæ…® 1 è·Ÿ 3 å…©ç¨®è¨Šæ¯.
 
-ÈÎºÎÑ¶Ï¢¶¼¿ÉÒÔÓÐºÜ¶àÐÐ.
+ä»»ä½•è¨Šæ¯éƒ½å¯ä»¥æœ‰å¾ˆå¤šè¡Œ.
 
-Ñ¶Ï¢µÄ´ú»»²ÎÊý:
-$N -- ÄãµÄÖÐÎÄÃû×Ö.
-$n -- ¶ÔÏñµÄÖÐÎÄÃû×Ö.
-$P -- ×Ô¼ºµÄÈË³Æ´úÃû´Ê, ÈçÄã, ¡õ, Ëû, Ëý...
-$p -- ¶ÔÏóµÄÈË³Æ´úÃû´Ê, Í¬ÉÏ.
+è¨Šæ¯çš„ä»£æ›åƒæ•¸:
+$N -- ä½ çš„ä¸­æ–‡åå­—.
+$n -- å°åƒçš„ä¸­æ–‡åå­—.
+$P -- è‡ªå·±çš„äººç¨±ä»£åè©ž, å¦‚ä½ , â–¡, ä»–, å¥¹...
+$p -- å°è±¡çš„äººç¨±ä»£åè©ž, åŒä¸Š.
 
-¡õÀý:
-¼ÙÉèÎÒÃÇÒª×öÒ»¸ö 'bore' emote:
+â–¡ä¾‹:
+å‡è¨­æˆ‘å€‘è¦åšä¸€å€‹ 'bore' emote:
 >edemote bore
 
-±à¼­ emote£ºbore
-Ñ¶Ï¢¿ÉÒÔÓÐºÃ¼¸ÐÐ£¬ÓÃ . ±íÊ¾½áÊø¡£
-Ñ¶Ï¢ÖÐ¿ÉÊ¹ÓÃµÄ²ÎÊýÓÐÒÔÏÂ¼¸ÖÖ£º
-  $N  ×Ô¼ºµÄÃû×Ö¡£
-  $n  Ê¹ÓÃ¶ÔÏóµÄÃû×Ö¡£
-  $P  ×Ô¼ºµÄÈË³Æ´úÃû´Ê£¬ÈçÄã¡¢¡õ¡¢Ëû¡¢Ëý¡¢Ëü¡¢Ëü¡£
-  $p  Ê¹ÓÃ¶ÔÏóµÄÈË³Æ´úÃû´Ê£¬ÈçÄã¡¢¡õ¡¢Ëû¡¢Ëý¡¢Ëü¡¢Ëü¡£
-¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
-²»Ö¸¶¨¶ÔÏóÊ¹ÓÃÕâ¸ö emote Ê±£¬Äã×Ô¼º¿´µ½µÄÑ¶Ï¢£º
-->$P¾õµÃÕâÀïºÜÎÞÁÄ.
+ç·¨è¼¯ emoteï¼šbore
+è¨Šæ¯å¯ä»¥æœ‰å¥½å¹¾è¡Œï¼Œç”¨ . è¡¨ç¤ºçµæŸã€‚
+è¨Šæ¯ä¸­å¯ä½¿ç”¨çš„åƒæ•¸æœ‰ä»¥ä¸‹å¹¾ç¨®ï¼š
+  $N  è‡ªå·±çš„åå­—ã€‚
+  $n  ä½¿ç”¨å°è±¡çš„åå­—ã€‚
+  $P  è‡ªå·±çš„äººç¨±ä»£åè©žï¼Œå¦‚ä½ ã€â–¡ã€ä»–ã€å¥¹ã€å®ƒã€å®ƒã€‚
+  $p  ä½¿ç”¨å°è±¡çš„äººç¨±ä»£åè©žï¼Œå¦‚ä½ ã€â–¡ã€ä»–ã€å¥¹ã€å®ƒã€å®ƒã€‚
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+ä¸æŒ‡å®šå°è±¡ä½¿ç”¨é€™å€‹ emote æ™‚ï¼Œä½ è‡ªå·±çœ‹åˆ°çš„è¨Šæ¯ï¼š
+->$Pè¦ºå¾—é€™è£¡å¾ˆç„¡èŠ.
 ->.
-²»Ö¸¶¨¶ÔÏóÊ¹ÓÃÕâ¸ö emote Ê±£¬ÆäËûÈË¿´µ½µÄÑ¶Ï¢£º
-->$N¾õµÃÕâÀïºÜÎÞÁÄ.
+ä¸æŒ‡å®šå°è±¡ä½¿ç”¨é€™å€‹ emote æ™‚ï¼Œå…¶ä»–äººçœ‹åˆ°çš„è¨Šæ¯ï¼š
+->$Nè¦ºå¾—é€™è£¡å¾ˆç„¡èŠ.
 ->.
-¶Ô×Ô¼ºÊ¹ÓÃÕâ¸ö emote Ê±£¬×Ô¼º¿´µ½µÄÑ¶Ï¢£º
-->$P¾õµÃ$P×Ô¼ººÜÎÞÁÄ.
+å°è‡ªå·±ä½¿ç”¨é€™å€‹ emote æ™‚ï¼Œè‡ªå·±çœ‹åˆ°çš„è¨Šæ¯ï¼š
+->$Pè¦ºå¾—$Pè‡ªå·±å¾ˆç„¡èŠ.
 ->.
-¶Ô×Ô¼ºÊ¹ÓÃÕâ¸ö emote Ê±£¬ÆäËûÈË¿´µ½µÄÑ¶Ï¢£º
-->$N¾õµÃ$P×Ô¼ººÜÎÞÁÄ.
+å°è‡ªå·±ä½¿ç”¨é€™å€‹ emote æ™‚ï¼Œå…¶ä»–äººçœ‹åˆ°çš„è¨Šæ¯ï¼š
+->$Nè¦ºå¾—$Pè‡ªå·±å¾ˆç„¡èŠ.
 ->.
-¶Ô±ðÈËÊ¹ÓÃÕâ¸ö emote Ê±£¬×Ô¼º¿´µ½µÄÑ¶Ï¢£º
-->$P¾õµÃ$nºÜÎÞÁÄ.
+å°åˆ¥äººä½¿ç”¨é€™å€‹ emote æ™‚ï¼Œè‡ªå·±çœ‹åˆ°çš„è¨Šæ¯ï¼š
+->$Pè¦ºå¾—$nå¾ˆç„¡èŠ.
 ->.
-¶Ô±ðÈËÊ¹ÓÃÕâ¸ö emote Ê±£¬Ê¹ÓÃ¶ÔÏó¿´µ½µÄÑ¶Ï¢£º
-->$N¾õµÃ$pºÜÎÞÁÄ.
+å°åˆ¥äººä½¿ç”¨é€™å€‹ emote æ™‚ï¼Œä½¿ç”¨å°è±¡çœ‹åˆ°çš„è¨Šæ¯ï¼š
+->$Nè¦ºå¾—$på¾ˆç„¡èŠ.
 ->.
-¶Ô±ðÈËÊ¹ÓÃÕâ¸ö emote Ê±£¬³ýÄã×Ô¼ººÍÊ¹ÓÃ¶ÔÏóÍâ£¬ÆäËûÈË¿´µ½µÄÑ¶Ï¢£º
-->$N¾õµÃ$nºÜÎÞÁÄ.
+å°åˆ¥äººä½¿ç”¨é€™å€‹ emote æ™‚ï¼Œé™¤ä½ è‡ªå·±å’Œä½¿ç”¨å°è±¡å¤–ï¼Œå…¶ä»–äººçœ‹åˆ°çš„è¨Šæ¯ï¼š
+->$Nè¦ºå¾—$nå¾ˆç„¡èŠ.
 ->.
-Emote ±à¼­½áÊø¡£
+Emote ç·¨è¼¯çµæŸã€‚
 
-µ±Äã (Ä³¼×) Ê¹ÓÃÕâ¸ö emote Ê±:
+ç•¶ä½  (æŸç”²) ä½¿ç”¨é€™å€‹ emote æ™‚:
 > bore
-[Äã¿´µ½]   : Äã¾õµÃÕâÀïºÜÎÞÁÄ.
-[±ðÈË¿´µ½] : Ä³¼×¾õµÃÕâÀïºÜÎÞÁÄ.
-> bore Ä³¼×  (ÕâÀïÒ²¿ÉÒÔÊ¹ÓÃÄ³¼×µÄÓ¢ÎÄ ID)
-[Äã¿´µ½]   : Äã¾õµÃÄã×Ô¼ººÜÎÞÁÄ.
-[±ðÈË¿´µ½] : Ä³¼×¾õµÃËû×Ô¼ººÜÎÞÁÄ.
-> bore Ä³ÒÒ
-[Äã¿´µ½]   : Äã¾õµÃÄ³ÒÒºÜÎÞÁÄ.
-[Ä³ÒÒ¿´µ½] : Ä³¼×¾õµÃÄãºÜÎÞÁÄ.
-[±ðÈË¿´µ½] : Ä³¼×¾õµÃÄ³ÒÒºÜÎÞÁÄ.
+[ä½ çœ‹åˆ°]   : ä½ è¦ºå¾—é€™è£¡å¾ˆç„¡èŠ.
+[åˆ¥äººçœ‹åˆ°] : æŸç”²è¦ºå¾—é€™è£¡å¾ˆç„¡èŠ.
+> bore æŸç”²  (é€™è£¡ä¹Ÿå¯ä»¥ä½¿ç”¨æŸç”²çš„è‹±æ–‡ ID)
+[ä½ çœ‹åˆ°]   : ä½ è¦ºå¾—ä½ è‡ªå·±å¾ˆç„¡èŠ.
+[åˆ¥äººçœ‹åˆ°] : æŸç”²è¦ºå¾—ä»–è‡ªå·±å¾ˆç„¡èŠ.
+> bore æŸä¹™
+[ä½ çœ‹åˆ°]   : ä½ è¦ºå¾—æŸä¹™å¾ˆç„¡èŠ.
+[æŸä¹™çœ‹åˆ°] : æŸç”²è¦ºå¾—ä½ å¾ˆç„¡èŠ.
+[åˆ¥äººçœ‹åˆ°] : æŸç”²è¦ºå¾—æŸä¹™å¾ˆç„¡èŠ.
 
-¡õ ÈçºÎ¼ÜÉè ES2Àà mudlib
+â–¡ å¦‚ä½•æž¶è¨­ ES2é¡ž mudlib
 
-(1) MudOS ²¿·Ý
+(1) MudOS éƒ¨ä»½
 
-  Ê×ÏÈ£¬ÄãÒªÓÐÒ»·Ý MudOS (×îºÃÊÇ v21c2 °æ)£¬¶øÇÒÒòÎªÖÐÎÄµÄ¹ØÏµ£¬ÔÚ
-  compile Ö®Ç°ÐèÒª×öÒ»Ð©ÐÞ¸Ä¡£ÎªÁË½ÚÊ¡ÄúµÄÊ±¼ä£¬½¨ÒéÄú´Ó comm.c µÄ
-  telnet_neg() º¯ÊýÓë ed.c µÄ prntln() º¯ÊýÏÂÊÖ£¬¶Ô C ÓïÑÔÉÔÓÐ»ù´¡
-  µÄÈËÓ¦¸ÃºÜÈÝÒ×¾ÍÄÜ¿´³ö¸ÃÈçºÎÐÞ¸Ä£¬ÔÚ´Ë¾Í²»×¸ÑÔÁË¡£
+  é¦–å…ˆï¼Œä½ è¦æœ‰ä¸€ä»½ MudOS (æœ€å¥½æ˜¯ v21c2 ç‰ˆ)ï¼Œè€Œä¸”å› ç‚ºä¸­æ–‡çš„é—œç³»ï¼Œåœ¨
+  compile ä¹‹å‰éœ€è¦åšä¸€äº›ä¿®æ”¹ã€‚ç‚ºäº†ç¯€çœæ‚¨çš„æ™‚é–“ï¼Œå»ºè­°æ‚¨å¾ž comm.c çš„
+  telnet_neg() å‡½æ•¸èˆ‡ ed.c çš„ prntln() å‡½æ•¸ä¸‹æ‰‹ï¼Œå° C èªžè¨€ç¨æœ‰åŸºç¤Ž
+  çš„äººæ‡‰è©²å¾ˆå®¹æ˜“å°±èƒ½çœ‹å‡ºè©²å¦‚ä½•ä¿®æ”¹ï¼Œåœ¨æ­¤å°±ä¸è´…è¨€äº†ã€‚
 
-  Æä´Î£¬Äú±ØÐë½« MudOS ÕýÈ·ÎÞÎóµØ compile ³ö¿ÉÖ´ÐÐµµ£¬ÔÚ¿ªÊ¼ compile
-  Ö®Ç°£¬Äú±ØÐëÏÈÉè¶¨ºÃ options.h µÄÄÚÈÝ£¬ES2 mudlib µÄ options.h
-  Ò²¿ÉÒÔ´ÓÎÒÃÇÌá¹©µÄ ftp site µÃµ½£¬Èç¹ûÄúÎÞ·¨È·¶¨Ò»Ð©Ñ¡ÏîÒªÈçºÎÉè¶¨
-  £¬Çë²Î¿¼¸Ãµµ°¸¡£
+  å…¶æ¬¡ï¼Œæ‚¨å¿…é ˆå°‡ MudOS æ­£ç¢ºç„¡èª¤åœ° compile å‡ºå¯åŸ·è¡Œæª”ï¼Œåœ¨é–‹å§‹ compile
+  ä¹‹å‰ï¼Œæ‚¨å¿…é ˆå…ˆè¨­å®šå¥½ options.h çš„å…§å®¹ï¼ŒES2 mudlib çš„ options.h
+  ä¹Ÿå¯ä»¥å¾žæˆ‘å€‘æä¾›çš„ ftp site å¾—åˆ°ï¼Œå¦‚æžœæ‚¨ç„¡æ³•ç¢ºå®šä¸€äº›é¸é …è¦å¦‚ä½•è¨­å®š
+  ï¼Œè«‹åƒè€ƒè©²æª”æ¡ˆã€‚
 
-  ½ÓÏÂÀ´£¬ÔÚÕý³£µÄÇé¿öÏÂÖ»ÒªÔÚ src ×ÓÄ¿Â¼ÏÂ´ò make ¾Í¿ÉÒÔ×÷³öÁ½¸ö¿É
-  Ö´ÐÐµµ£ºdriver ¸ú addr_server£¬Èç¹û³öÁËÆäËû±àÒëÉÏµÄÎÊÌâ£¬ÇëÄúÇë½Ì
-  SYSOP¡£
+  æŽ¥ä¸‹ä¾†ï¼Œåœ¨æ­£å¸¸çš„æƒ…æ³ä¸‹åªè¦åœ¨ src å­ç›®éŒ„ä¸‹æ‰“ make å°±å¯ä»¥ä½œå‡ºå…©å€‹å¯
+  åŸ·è¡Œæª”ï¼šdriver è·Ÿ addr_serverï¼Œå¦‚æžœå‡ºäº†å…¶ä»–ç·¨è­¯ä¸Šçš„å•é¡Œï¼Œè«‹æ‚¨è«‹æ•™
+  SYSOPã€‚
 
 (2) Install
 
-  µ±ÄúÓÐÁË MudOS Ö´ÐÐµµÖ®áá£¬¾Í¿ÉÒÔ¿ªÊ¼¼ÜÉè ES2 mudlib£¬ÔÚ es2Ä¿Â¼ÏÂ
-  /adm/etc/config.ES2 ÊÇÓÃÀ´µ±×÷ MudOS driver ²ÎÊýµÄ runtime config
-  file£¬ÇëÄú½«Õâ¸öµµ°¸¿½±´µ½ driver µÄÄ¿Â¼ÏÂ£¬È»ááÓÃÎÄÊé±à¼­Æ÷ÐÞ¸ÄÀï
-  Ãæ mudlib directory ¸ú binary directory ÕâÁ½¸öÂ·¾¶ÎªÄú´æ·Å ES2
-  mudlib ÒÔ¼° driver ¿ÉÖ´ÐÐµµµÄ¾ø¶ÔÂ·¾¶£¬Õâ¸öµµ°¸ÖÐ³ýÁËÇ°ÃæËùËµµÄÁ½
-  ¸öÂ·¾¶ÒÔÍâ£¬ÆäËûÓÐ¹ØÂ·¾¶µÄÉè¶¨¶¼ÊÇÏà¶Ôì¶ mudlib µÄÂ·¾¶£¬Èç¹ûÄú¶Ô
-  mudlib »¹²»ÊÇºÜÊìÏ¤£¬ÇëÎð¸ü¸Ä¡£
+  ç•¶æ‚¨æœ‰äº† MudOS åŸ·è¡Œæª”ä¹‹å¾Œï¼Œå°±å¯ä»¥é–‹å§‹æž¶è¨­ ES2 mudlibï¼Œåœ¨ es2ç›®éŒ„ä¸‹
+  /adm/etc/config.ES2 æ˜¯ç”¨ä¾†ç•¶ä½œ MudOS driver åƒæ•¸çš„ runtime config
+  fileï¼Œè«‹æ‚¨å°‡é€™å€‹æª”æ¡ˆæ‹·è²åˆ° driver çš„ç›®éŒ„ä¸‹ï¼Œç„¶å¾Œç”¨æ–‡æ›¸ç·¨è¼¯å™¨ä¿®æ”¹è£¡
+  é¢ mudlib directory è·Ÿ binary directory é€™å…©å€‹è·¯å¾‘ç‚ºæ‚¨å­˜æ”¾ ES2
+  mudlib ä»¥åŠ driver å¯åŸ·è¡Œæª”çš„çµ•å°è·¯å¾‘ï¼Œé€™å€‹æª”æ¡ˆä¸­é™¤äº†å‰é¢æ‰€èªªçš„å…©
+  å€‹è·¯å¾‘ä»¥å¤–ï¼Œå…¶ä»–æœ‰é—œè·¯å¾‘çš„è¨­å®šéƒ½æ˜¯ç›¸å°æ–¼ mudlib çš„è·¯å¾‘ï¼Œå¦‚æžœæ‚¨å°
+  mudlib é‚„ä¸æ˜¯å¾ˆç†Ÿæ‚‰ï¼Œè«‹å‹¿æ›´æ”¹ã€‚
 
-  µ½ÕâÀïÈç¹ûÒ»ÇÐ¶¼Õý³££¬ÄúÖ»ÒªÔÚ driver µÄÄ¿Â¼ÏÂÓÃ£º
+  åˆ°é€™è£¡å¦‚æžœä¸€åˆ‡éƒ½æ­£å¸¸ï¼Œæ‚¨åªè¦åœ¨ driver çš„ç›®éŒ„ä¸‹ç”¨ï¼š
 
   driver config.ES2 &
 
-  ¾Í¿ÉÒÔÆô¶¯ÁË£¬µ±Äú¿´µ½ Setting up IPC on port XXXX (XXXX ÊÇÄúÔÚ
-  config.ES2 ÖÐÉè¶¨ÒªÈÃ mud Ê¹ÓÃµÄ port ºÅÂë)£¬¾Í±íÊ¾°²×°³É¹¦ÁË¡£
+  å°±å¯ä»¥å•Ÿå‹•äº†ï¼Œç•¶æ‚¨çœ‹åˆ° Setting up IPC on port XXXX (XXXX æ˜¯æ‚¨åœ¨
+  config.ES2 ä¸­è¨­å®šè¦è®“ mud ä½¿ç”¨çš„ port è™Ÿç¢¼)ï¼Œå°±è¡¨ç¤ºå®‰è£æˆåŠŸäº†ã€‚
 
-(3) ÈçºÎ´´ÔìµÚÒ»¸öÈËÎï
+(3) å¦‚ä½•å‰µé€ ç¬¬ä¸€å€‹äººç‰©
 
-  µ±ÄúÄÃµ½Õâ·Ý mudlib µÄÊ±ºò£¬»á·¢ÏÖ²¢Ã»ÓÐÈÎºÎÈËÎï×ÊÁÏµµ£¬ÇëÄúÔÚ es2
-  Ä¿Â¼ÏÂ, adm/etc/wizlist ÖÐ¼ÓÉÏÄúµÄÃû×Ö£¬ÒÔ¼°Ò»¸ö (admin)£¬(admin)
-  ±íÊ¾¾ßÓÐ×î¸ßµÄÈ¨ÏÞµÈ¼¶£¬wizlist Õâ¸öµµ°¸ÊÇÓÃÀ´´¢´æËùÓÐÎ×Ê¦µÄµÈ¼¶£¬
-  ¶øÇÒ²»¹ÜÈËÎï´æÔÚÓë·ñ£¬ËùÒÔÇëÄúÖ»ÁôÏÂ×Ô¼º£¬½«ÆäËû²»´æÔÚµÄÈËÎïÉ¾µô¡£
+  ç•¶æ‚¨æ‹¿åˆ°é€™ä»½ mudlib çš„æ™‚å€™ï¼Œæœƒç™¼ç¾ä¸¦æ²’æœ‰ä»»ä½•äººç‰©è³‡æ–™æª”ï¼Œè«‹æ‚¨åœ¨ es2
+  ç›®éŒ„ä¸‹, adm/etc/wizlist ä¸­åŠ ä¸Šæ‚¨çš„åå­—ï¼Œä»¥åŠä¸€å€‹ (admin)ï¼Œ(admin)
+  è¡¨ç¤ºå…·æœ‰æœ€é«˜çš„æ¬Šé™ç­‰ç´šï¼Œwizlist é€™å€‹æª”æ¡ˆæ˜¯ç”¨ä¾†å„²å­˜æ‰€æœ‰å·«å¸«çš„ç­‰ç´šï¼Œ
+  è€Œä¸”ä¸ç®¡äººç‰©å­˜åœ¨èˆ‡å¦ï¼Œæ‰€ä»¥è«‹æ‚¨åªç•™ä¸‹è‡ªå·±ï¼Œå°‡å…¶ä»–ä¸å­˜åœ¨çš„äººç‰©åˆªæŽ‰ã€‚
 
-  ½ÓÏÂÀ´ÄúÖØÐÂÆô¶¯ MudOS£¬È»ááÁ¬Ïß½øÈ¥´´ÔìÄú¸Õ²ÅÉè¶¨µÄÈËÎï£¬Äú»á·¢ÏÖ
-  ÕâÃûÈËÎïµÄ×´Ì¬Ò»¿ªÊ¼¾ÍÊÇ (admin)£¬½ÓÏÂÀ´Äú¾Í¿ÉÒÔÓÃ promote Ö¸Áî½«
-  ÆäËûÈËßªÉýÎªÎ×Ê¦£¬promote »á×Ô¶¯½«ÕâÐ©ÈËÎïµÄµÈ¼¶Ð´Èë wizlist¡£
+  æŽ¥ä¸‹ä¾†æ‚¨é‡æ–°å•Ÿå‹• MudOSï¼Œç„¶å¾Œé€£ç·šé€²åŽ»å‰µé€ æ‚¨å‰›æ‰è¨­å®šçš„äººç‰©ï¼Œæ‚¨æœƒç™¼ç¾
+  é€™åäººç‰©çš„ç‹€æ…‹ä¸€é–‹å§‹å°±æ˜¯ (admin)ï¼ŒæŽ¥ä¸‹ä¾†æ‚¨å°±å¯ä»¥ç”¨ promote æŒ‡ä»¤å°‡
+  å…¶ä»–äººæ“¢å‡ç‚ºå·«å¸«ï¼Œpromote æœƒè‡ªå‹•å°‡é€™äº›äººç‰©çš„ç­‰ç´šå¯«å…¥ wizlistã€‚

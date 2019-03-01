@@ -1,4 +1,4 @@
-// ½ÙïÚ£Î£Ğ£Ã
+// åŠ«é¢ï¼®ï¼°ï¼£
 // Updated by Lonely
 
 inherit CLASS_D("generate") + "/chinese";
@@ -17,8 +17,8 @@ void create()
         int lvl;
 
         ::create();
-        set("gender", "ÄĞĞÔ" );
-        set("nickname", "½Ù·Ë");
+        set("gender", "ç”·æ€§" );
+        set("nickname", "åŠ«åŒª");
         set("age", 30 + random(30));
         set("long", "");
         set("attitude", "friendly");
@@ -31,7 +31,7 @@ void create()
         lvl = 2 + random(2);
         NPC_D->init_npc_skill(this_object(), lvl);
 
-        // ³õÊ¼»¯NPCµÄÄÜÁ¦
+        // åˆå§‹åŒ–NPCçš„èƒ½åŠ›
         my = query_entire_dbase();
         my["max_qi"] = 1000 + lvl * 300 + random(500);
         my["max_jing"] = my["max_qi"] / 2;
@@ -68,7 +68,7 @@ void init()
         string area;
         
         add_action("do_nod", "nod"); 
-        add_action("do_nod", "ºÃµÄ"); 
+        add_action("do_nod", "å¥½çš„"); 
         if( !query("area", killer) && !query("found", killer) )
         {
                 env = environment(killer);
@@ -106,7 +106,7 @@ void init()
 
 }
 
-// Èç¹û½ÓÊÜÁË»ßÂ¸
+// å¦‚æœæ¥å—äº†è³„è³‚
 int do_nod(string arg)
 {
         object me = this_player();
@@ -122,14 +122,14 @@ int do_nod(string arg)
                 {
                         if( query_temp("lonely/diamond", me) )
                         {
-                                message_vision(HIW "Ö»¼û$N" HIW "³¤Ğ¦ÈıÉù£º¡°¹ş¹ş¹ş£¬Ê¶Ê±ÎñÕßÎª¿¡½Ü£¬" +
-                                        RANK_D->query_respect(me) + "¹ûÈ»ÊÇÃ÷°×ÈË£¬ºÙºÙ£¬ÕâÇøÇøĞ¡±¦Ê¯" +
-                                        "¾Í¹éÄãÁË£¬¹ş¹ş¡£¡±\n\n" NOR,
+                                message_vision(HIW "åªè¦‹$N" HIW "é•·ç¬‘ä¸‰è²ï¼šâ€œå“ˆå“ˆå“ˆï¼Œè­˜æ™‚å‹™è€…ç‚ºä¿Šå‚‘ï¼Œ" +
+                                        RANK_D->query_respect(me) + "æœç„¶æ˜¯æ˜ç™½äººï¼Œå˜¿å˜¿ï¼Œé€™å€å€å°å¯¶çŸ³" +
+                                        "å°±æ­¸ä½ äº†ï¼Œå“ˆå“ˆã€‚â€\n\n" NOR,
                                         ob, me);
                                 obj = new(DIAM_DIR + SM_LIST[random(sizeof(SM_LIST))]);
                                 
-                                tell_object(me, HIR + ob->name() + "µİ¸øÁËÄã" + obj->name() +
-                                                HIR "ÒÔºó£¬ÍÂ³öÒ»¿ÚÏÊÑª£¬Ñï³¤¶øÈ¥¡£\n" NOR);
+                                tell_object(me, HIR + ob->name() + "éçµ¦äº†ä½ " + obj->name() +
+                                                HIR "ä»¥å¾Œï¼Œåå‡ºä¸€å£é®®è¡€ï¼Œæšé•·è€Œå»ã€‚\n" NOR);
                                 obj->move(me, 1);
                                 delete_temp("lonely", me);
                                 remove_call_out("escape_me");
@@ -139,14 +139,14 @@ int do_nod(string arg)
                         }       
                         amount=query_temp("lonely/waiting", me);
 
-                        message_vision(HIW "Ö»¼û$N" HIW "³¤Ğ¦ÈıÉù£º¡°¹ş¹ş¹ş£¬Ê¶Ê±ÎñÕßÎª¿¡½Ü£¬" +
-                                RANK_D->query_respect(me) + "¹ûÈ»ÊÇÃ÷°×ÈË£¬ºÙºÙ£¬ÕâÇøÇø" +
-                                chinese_number(amount) + "Á½°×Òø¾Í¹éÄãÁË£¬¹ş¹ş¡£¡±\n\n" NOR,
+                        message_vision(HIW "åªè¦‹$N" HIW "é•·ç¬‘ä¸‰è²ï¼šâ€œå“ˆå“ˆå“ˆï¼Œè­˜æ™‚å‹™è€…ç‚ºä¿Šå‚‘ï¼Œ" +
+                                RANK_D->query_respect(me) + "æœç„¶æ˜¯æ˜ç™½äººï¼Œå˜¿å˜¿ï¼Œé€™å€å€" +
+                                chinese_number(amount) + "å…©ç™½éŠ€å°±æ­¸ä½ äº†ï¼Œå“ˆå“ˆã€‚â€\n\n" NOR,
                                 ob, me);
-                        // ÒòÎªÊÇ¡°Á½¡±Îªµ¥Î»£¬ËùÒÔÒª * 100¡£
+                        // å› ç‚ºæ˜¯â€œå…©â€ç‚ºå–®ä½ï¼Œæ‰€ä»¥è¦ * 100ã€‚
                         MONEY_D->pay_player(me, amount * 100);
-                        tell_object(me, HIR + ob->name() + "µİ¸øÁËÄã" + chinese_number(amount) +
-                                        "Á½°×ÒøÒÔºó£¬ÍÂ³öÒ»¿ÚÏÊÑª£¬Ñï³¤¶øÈ¥¡£\n" NOR );
+                        tell_object(me, HIR + ob->name() + "éçµ¦äº†ä½ " + chinese_number(amount) +
+                                        "å…©ç™½éŠ€ä»¥å¾Œï¼Œåå‡ºä¸€å£é®®è¡€ï¼Œæšé•·è€Œå»ã€‚\n" NOR );
                         delete_temp("lonely", me);
                         remove_call_out("escape_me");
                         remove_call_out("check_me");
@@ -182,8 +182,8 @@ int do_fkill(object ob)
         if( !query_temp("lonely/waiting", this_object()) )
         {
             if (living(this_object()))
-                       message_sort(HIR "$N´óºÈµÀ£º¡°´ËÉ½ÊÇÎÒ¿ª£¬´ËÊ÷ÊÇÎÒÔÔ£¡" +
-                        query("name", ob)+"Ê¶ÏàµÄ»°£¬¾Í°Ñºì»õ¶¼½»³öÀ´£¡\n"NOR,
+                       message_sort(HIR "$Nå¤§å–é“ï¼šâ€œæ­¤å±±æ˜¯æˆ‘é–‹ï¼Œæ­¤æ¨¹æ˜¯æˆ‘æ ½ï¼" +
+                        query("name", ob)+"è­˜ç›¸çš„è©±ï¼Œå°±æŠŠç´…è²¨éƒ½äº¤å‡ºä¾†ï¼\n"NOR,
                         this_object());  
 
                  this_object()->kill_ob(ob);
@@ -204,13 +204,13 @@ int do_kill(string arg)
         if (! arg) return 0;
         if (this_object()->id(arg))
         {
-                write("½­ºşÈËÊ¿£¬»¹ÊÇÉÙÈÇÎªÃî¡£\n");
+                write("æ±Ÿæ¹–äººå£«ï¼Œé‚„æ˜¯å°‘æƒ¹ç‚ºå¦™ã€‚\n");
                 return 1;
         }
         else
         if (sscanf(arg, "%s from %s", what, who) == 2 && this_object()->id(who))
         {
-                write("»¹ÊÇµ½±ğ´¦È¥Ê©Õ¹ÄãµÄ±¾ÊÂ°É¡£\n");
+                write("é‚„æ˜¯åˆ°åˆ¥è™•å»æ–½å±•ä½ çš„æœ¬äº‹å§ã€‚\n");
                 return 1;
         }
         return 0;
@@ -220,8 +220,8 @@ int do_kill(string arg)
 void escape_me(object ob,object me)
 {
         message_vision(
-                "$NÄüĞ¦ÁË¼¸Éù£º¡°½ñÌìĞÄÇéºÃ£¬" + RANK_D->query_self_rude(ob) +
-                "¾Í·Å¹ıÄã£¬²»ÅãÄãÍæÁË¡£¡±Ëµ°Õ£¬Ò»¸ö½î¶·Ìø³öÕ½È¦£¬²»ÖªÈ¥Ïò¡£\n", ob);
+                "$Nç°ç¬‘äº†å¹¾è²ï¼šâ€œä»Šå¤©å¿ƒæƒ…å¥½ï¼Œ" + RANK_D->query_self_rude(ob) +
+                "å°±æ”¾éä½ ï¼Œä¸é™ªä½ ç©äº†ã€‚â€èªªç½·ï¼Œä¸€å€‹ç­‹é¬¥è·³å‡ºæˆ°åœˆï¼Œä¸çŸ¥å»å‘ã€‚\n", ob);
 
         destruct(ob);
 }
@@ -231,8 +231,8 @@ void unconcious()
         object me, ob = this_object();
         int amount = 300 + random(300);
         string *condition = ({
-                "Æø´­ÓõÓõ£¬¾ÍÒª²»Ö§", "Í·ÖØ½ÅÇá£¬ÂíÉÏ¾Íµ¹", 
-                "Å»Ñª³ÉÉı£¬ÑÛÃ°½ğĞÇ", "ÉËºÛÀÛÀÛ£¬ÎŞÁ¦ÕĞ¼Ü", 
+                "æ°£å–˜ååï¼Œå°±è¦ä¸æ”¯", "é ­é‡è…³è¼•ï¼Œé¦¬ä¸Šå°±å€’", 
+                "å˜”è¡€æˆå‡ï¼Œçœ¼å†’é‡‘æ˜Ÿ", "å‚·ç—•ç´¯ç´¯ï¼Œç„¡åŠ›æ‹›æ¶", 
         });
 
         if (objectp(me = query_last_damage_from()) 
@@ -243,13 +243,13 @@ void unconcious()
                 {
                         case 1: 
                         {
-                                message_vision(HIR "ÑÛ¼û$N" HIR + condition[random(sizeof(condition))]
-                                                +"£¬Í»È»$N´óºÈÒ»Éù£¬¼±ÍË¼¸²½£¬\n¡°ÆËÍ¨¡±¸ø$n¹òÁËÏÂÀ´¡£"
+                                message_vision(HIR "çœ¼è¦‹$N" HIR + condition[random(sizeof(condition))]
+                                                +"ï¼Œçªç„¶$Nå¤§å–ä¸€è²ï¼Œæ€¥é€€å¹¾æ­¥ï¼Œ\nâ€œæ’²é€šâ€çµ¦$nè·ªäº†ä¸‹ä¾†ã€‚"
                                                 "\n" NOR, ob, me);
-                                tell_object(me, HIW + ob->name() + "Í»È»´Ó»³ÀïÌÍ³öÒ»¶Ñ°×»¨»¨µÄÒø×Ó£¬Ğ¡Éù"
-                                                "¶ÔÄãµÀ£º¡°ÕâÎ»" + RANK_D->query_respect(me) + "£¬\nÄã"
-                                                "¾ÍÍø¿ªÒ»Ãæ£¨nod£©ÈçºÎ£¬Õâ" + chinese_number(amount) +
-                                                "Á½°×Òø¾Í¹éÄãÁË£¡¡±\n" NOR);
+                                tell_object(me, HIW + ob->name() + "çªç„¶å¾æ‡·è£¡æå‡ºä¸€å †ç™½èŠ±èŠ±çš„éŠ€å­ï¼Œå°è²"
+                                                "å°ä½ é“ï¼šâ€œé€™ä½" + RANK_D->query_respect(me) + "ï¼Œ\nä½ "
+                                                "å°±ç¶²é–‹ä¸€é¢ï¼ˆnodï¼‰å¦‚ä½•ï¼Œé€™" + chinese_number(amount) +
+                                                "å…©ç™½éŠ€å°±æ­¸ä½ äº†ï¼â€\n" NOR);
                                 remove_all_enemy(0); 
                                 set("qi", 1, ob);
                                 set("jing", 1, ob);
@@ -260,12 +260,12 @@ void unconcious()
                         }
                         case 2:
                         {
-                                message_vision(HIR "ÑÛ¼û$N" HIR + condition[random(sizeof(condition))]
-                                                +"£¬Í»È»$N´óºÈÒ»Éù£¬¼±ÍË¼¸²½£¬\n¡°ÆËÍ¨¡±¸ø$n¹òÁËÏÂÀ´¡£"
+                                message_vision(HIR "çœ¼è¦‹$N" HIR + condition[random(sizeof(condition))]
+                                                +"ï¼Œçªç„¶$Nå¤§å–ä¸€è²ï¼Œæ€¥é€€å¹¾æ­¥ï¼Œ\nâ€œæ’²é€šâ€çµ¦$nè·ªäº†ä¸‹ä¾†ã€‚"
                                                 "\n" NOR, ob, me);
-                                tell_object(me, HIW + ob->name() + "Í»È»´Ó»³ÀïÌÍ³öÒ»¿é±¦Ê¯£¬Ğ¡Éù"
-                                                "¶ÔÄãµÀ£º¡°ÕâÎ»" + RANK_D->query_respect(me) + "£¬\nÄã"
-                                                "¾ÍÍø¿ªÒ»Ãæ£¨nod£©ÈçºÎ£¬Õâ±¦Ê¯¾Í¹éÄãÁË£¡¡±\n" NOR);
+                                tell_object(me, HIW + ob->name() + "çªç„¶å¾æ‡·è£¡æå‡ºä¸€å¡Šå¯¶çŸ³ï¼Œå°è²"
+                                                "å°ä½ é“ï¼šâ€œé€™ä½" + RANK_D->query_respect(me) + "ï¼Œ\nä½ "
+                                                "å°±ç¶²é–‹ä¸€é¢ï¼ˆnodï¼‰å¦‚ä½•ï¼Œé€™å¯¶çŸ³å°±æ­¸ä½ äº†ï¼â€\n" NOR);
                                 remove_all_enemy(0); 
                                 set("qi", 1, ob);
                                 set("jing", 1, ob);
@@ -277,7 +277,7 @@ void unconcious()
                         }
                         default: 
                         {
-                                // ½±Àø
+                                // çå‹µ
                                 ::unconcious();
                                 return;
                         }
@@ -298,7 +298,7 @@ varargs void die(object killer)
         if (objectp(killer))
                 killer1=find_player(query("want_kill", me));
         
-        message_vision(HIC"$N²Òº¿Ò»Éù£¬¿ÚÅçÏÊÑª£¬µ½ÔÚµØÉÏËÀÁË¡£\n"NOR,me);
+        message_vision(HIC"$Næ…˜åšä¸€è²ï¼Œå£å™´é®®è¡€ï¼Œåˆ°åœ¨åœ°ä¸Šæ­»äº†ã€‚\n"NOR,me);
         
         if (killer1)
         {
@@ -323,9 +323,9 @@ varargs void die(object killer)
                          if (reward_pot < 0) reward_pot = 0;
 
                            tell_object(killer1,
-                                HIM "¹§Ï²ÄãÓÖ³É¹¦½â¾öÒ»Ãû½Ù·Ë£¡\n" NOR + HIW "ÔÚÊµÕ½ÖĞ£¬Äã»ñµÃÁË" +  
-                                CHINESE_D->chinese_number(reward_exp) + "µãµÄ¡ºÊµÕ½¾­Ñé¡»" +
-                                CHINESE_D->chinese_number(reward_pot) + "µãµÄ¡ºÇ±ÄÜ¡»ºÍÒ»Ğ©ÊµÕ½Ìå»á£¡\n" NOR); 
+                                HIM "æ­å–œä½ åˆæˆåŠŸè§£æ±ºä¸€ååŠ«åŒªï¼\n" NOR + HIW "åœ¨å¯¦æˆ°ä¸­ï¼Œä½ ç²å¾—äº†" +  
+                                CHINESE_D->chinese_number(reward_exp) + "é»çš„ã€å¯¦æˆ°ç¶“é©—ã€" +
+                                CHINESE_D->chinese_number(reward_pot) + "é»çš„ã€æ½›èƒ½ã€å’Œä¸€äº›å¯¦æˆ°é«”æœƒï¼\n" NOR); 
                            addn("quest_yunbiao/reward_exp", reward_exp, killer1);
                            addn("quest_yunbiao/reward_potential", reward_pot, killer1);
                            addn("combat_exp", reward_exp, killer1);

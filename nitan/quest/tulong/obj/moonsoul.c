@@ -3,13 +3,13 @@ inherit ITEM;
 #include <ansi.h>
 void create()
 {
-        set_name( HIC"ÔÂÆÇ"NOR, ({ "moonsoul"}));
+        set_name( HIC"æœˆé­„"NOR, ({ "moonsoul"}));
         set_weight(300);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
-                set("long","ÕâÊÇÒ»¿ÅÒ¹Ã÷Öé£¬·Å×ÅÓÄÀ¶µÄÈáºÍµÄ¹â£¬Ëü³ö×ÔÔÂ¹¬£¬¼ÛÖµÁ¬³Ç¡£\n");
+                set("unit", "é¡†");
+                set("long","é€™æ˜¯ä¸€é¡†å¤œæ˜ç ï¼Œæ”¾è‘—å¹½è—çš„æŸ”å’Œçš„å…‰ï¼Œå®ƒå‡ºè‡ªæœˆå®®ï¼Œåƒ¹å€¼é€£åŸã€‚\n");
                 set("value", 70000);
                 set("material", "iron");
               }

@@ -1,18 +1,18 @@
 // This program is a part of NITAN MudLIB
 // bunchd.c
 /*
-¡¾°ïÅÉÈÙÓşµãµÄ¹¦ÄÜ¡¿
-°ïÅÉÈÙÓşµãÊÇÒ»ÖÖÏûºÄµãÊı£¬½öÍ¨¹ıÌØÊâ»î¶¯»ñÈ¡¡£Í¨¹ıbunchÖ¸Áî¿ÉÒÔËæÊ±²é
-Ñ¯±¾°ïÅÉµÄÈÙÓşµãÊı¡£°ïÖ÷¿ÉÍ¨¹ıÏûºÄÈÙÓşµãÊı»»È¡ÒÔÏÂÌØÊâ¹¦ÄÜÖ®Ò»£º
+ã€å¹«æ´¾æ¦®è­½é»çš„åŠŸèƒ½ã€‘
+å¹«æ´¾æ¦®è­½é»æ˜¯ä¸€ç¨®æ¶ˆè€—é»æ•¸ï¼Œåƒ…é€šéç‰¹æ®Šæ´»å‹•ç²å–ã€‚é€šébunchæŒ‡ä»¤å¯ä»¥éš¨æ™‚æŸ¥
+è©¢æœ¬å¹«æ´¾çš„æ¦®è­½é»æ•¸ã€‚å¹«ä¸»å¯é€šéæ¶ˆè€—æ¦®è­½é»æ•¸æ›å–ä»¥ä¸‹ç‰¹æ®ŠåŠŸèƒ½ä¹‹ä¸€ï¼š
 
-°ïÅÉÈÙÓşµã¿ÉÒÔÍ¨¹ı group quest »ñµÃ
+å¹«æ´¾æ¦®è­½é»å¯ä»¥é€šé group quest ç²å¾—
 
-È«°ïË«±¶¾­Ñé2Ğ¡Ê±£¬ÏûºÄXµã°ïÅÉÈÙÓşµã¡£
-È«°ïË«±¶Ç±ÄÜ2Ğ¡Ê±£¬ÏûºÄXµã°ïÅÉÈÙÓşµã¡£
-È«°ïË«±¶Ìå»á2Ğ¡Ê±£¬ÏûºÄXµã°ïÅÉÈÙÓşµã¡£
-È«°ïÑĞ¾¿Ğ§ÂÊÔö¼Ó20%³ÖĞø3Ğ¡Ê±£¬ÏûºÄXµã°ïÅÉÈÙÓşµã¡£
-È«°ï¼³È¡Ğ§ÂÊÔö¼Ó20%³ÖĞø3Ğ¡Ê±£¬ÏûºÄXµã°ïÅÉÈÙÓşµã¡£
-È«°ïÚ¤Ë¼Ğ§ÂÊÔö¼Ó20%³ÖĞø3Ğ¡Ê±£¬ÏûºÄXµã°ïÅÉÈÙÓşµã¡£
+å…¨å¹«é›™å€ç¶“é©—2å°æ™‚ï¼Œæ¶ˆè€—Xé»å¹«æ´¾æ¦®è­½é»ã€‚
+å…¨å¹«é›™å€æ½›èƒ½2å°æ™‚ï¼Œæ¶ˆè€—Xé»å¹«æ´¾æ¦®è­½é»ã€‚
+å…¨å¹«é›™å€é«”æœƒ2å°æ™‚ï¼Œæ¶ˆè€—Xé»å¹«æ´¾æ¦®è­½é»ã€‚
+å…¨å¹«ç ”ç©¶æ•ˆç‡å¢åŠ 20%æŒçºŒ3å°æ™‚ï¼Œæ¶ˆè€—Xé»å¹«æ´¾æ¦®è­½é»ã€‚
+å…¨å¹«æ±²å–æ•ˆç‡å¢åŠ 20%æŒçºŒ3å°æ™‚ï¼Œæ¶ˆè€—Xé»å¹«æ´¾æ¦®è­½é»ã€‚
+å…¨å¹«å†¥æ€æ•ˆç‡å¢åŠ 20%æŒçºŒ3å°æ™‚ï¼Œæ¶ˆè€—Xé»å¹«æ´¾æ¦®è­½é»ã€‚
 */
 
 #include <ansi.h>
@@ -23,13 +23,13 @@
 inherit F_SAVE;
 inherit F_DBASE;
 
-// °ïÅÉÉùÍû×î´óÊÇ10ÒÚ
+// å¹«æ´¾è²æœ›æœ€å¤§æ˜¯10å„„
 #define MAX_BUNCH_FAME         1000000000
 
-// Ã¿¸ö°ïÅÉ×î¶àÓĞ100¸ö³ğÈË
+// æ¯å€‹å¹«æ´¾æœ€å¤šæœ‰100å€‹ä»‡äºº
 #define MAX_HATRED_PERSON       100
 
-// µ±³ğÈË³¬¹ıµÄÊ±ºòÃ¿´ÎÒÆ³ı¶àÉÙ¸ö
+// ç•¶ä»‡äººè¶…éçš„æ™‚å€™æ¯æ¬¡ç§»é™¤å¤šå°‘å€‹
 #define HATREDP_REMOVED         10
 #define BUNCH_HOME              "/data/bunch/"
 #define RM_CMD                  "/cmds/wiz/rm"
@@ -41,7 +41,7 @@ mapping last_bunch_fame;
 // area's base_name & short
 mapping area_fame;
 
-// °ïÅÉ¶Ô³ğÈË³ğºŞ¶ÈµÄÅÅĞò
+// å¹«æ´¾å°ä»‡äººä»‡æ¨åº¦çš„æ’åº
 private int sort_hatred(string id1, string id2, mapping hatred);
 public mixed manage_areas();
 public void dismiss_bunch(string fname);
@@ -52,34 +52,34 @@ public int bunch_is_league(mixed ob1, mixed ob2);
 void add_bunch_honors(string bname, int honors);
 
 nosave string *npc_bunch = ({
-        "ºÚ°×µÀ",
-        "ĞŞÂŞÃÅ",
-        "Ğ¡µ¶»á",
-        "ÏÀÒåÃË",
-        "ÎŞ¼«°ï",
-        "×ÏÉÀ»á",
+        "é»‘ç™½é“",
+        "ä¿®ç¾…é–€",
+        "å°åˆ€æœƒ",
+        "ä¿ ç¾©ç›Ÿ",
+        "ç„¡æ¥µå¹«",
+        "ç´«è¡«æœƒ",
 });
 
 nosave string *bad_weather = ({
-        "ÊÜ¸ÉºµµÄÓ°Ïì£¬$N¿÷¿Õ",
-        "ÓÉÓÚ±©ÓêÏ®»÷£¬$NÊÕ³ÉµøÁË",
-        "$NÔâµ½ÁËÙÁ¿ÜµÄÏ®»÷£¬±»½Ù",
-        "¹Ù¸®¼ÓÖØ¶Ô$NµÄÕ÷Ë°£¬$N¿÷¿Õ",
-        "¼²²¡ÔÚ$NËÁÅ°£¬ËğÊ§²ÒÖØ",
-        "Áú¾í·çÏ®¾íÁË$N£¬½á¹ûÔì³É¾Ş´óËğÊ§",
-        "$N·¢Éú±©¶¯£¬ÈËÔ±ÉËÍö²ÒÖØ£¬ËğÊ§",
-        "$NÍ»·¢µØÕğ£¬ÈËÔ±ÉËÍö²ÒÖØ£¬»¨·Ñ¾Ş´ó",
+        "å—å¹¹æ—±çš„å½±éŸ¿ï¼Œ$Nè™§ç©º",
+        "ç”±äºæš´é›¨è¥²æ“Šï¼Œ$Næ”¶æˆè·Œäº†",
+        "$Né­åˆ°äº†å€­å¯‡çš„è¥²æ“Šï¼Œè¢«åŠ«",
+        "å®˜åºœåŠ é‡å°$Nçš„å¾ç¨…ï¼Œ$Nè™§ç©º",
+        "ç–¾ç—…åœ¨$Nè‚†è™ï¼Œæå¤±æ…˜é‡",
+        "é¾å·é¢¨è¥²å·äº†$Nï¼Œçµæœé€ æˆå·¨å¤§æå¤±",
+        "$Nç™¼ç”Ÿæš´å‹•ï¼Œäººå“¡å‚·äº¡æ…˜é‡ï¼Œæå¤±",
+        "$Nçªç™¼åœ°éœ‡ï¼Œäººå“¡å‚·äº¡æ…˜é‡ï¼ŒèŠ±è²»å·¨å¤§",
 });
 
 nosave mapping citys = ([
-        "bj"  : "±±¾©³Ç",
-        "yz"  : "ÑïÖİ³Ç",
-        "ca"  : "³¤°²³Ç",
-        "cd"  : "³É¶¼³Ç",
-        "sz"  : "ËÕÖİ³Ç",
-        "hz"  : "º¼Öİ³Ç",
-        "xy"  : "ÏåÑô³Ç",
-        "dl"  : "´óÀí³Ç",
+        "bj"  : "åŒ—äº¬åŸ",
+        "yz"  : "æšå·åŸ",
+        "ca"  : "é•·å®‰åŸ",
+        "cd"  : "æˆéƒ½åŸ",
+        "sz"  : "è˜‡å·åŸ",
+        "hz"  : "æ­å·åŸ",
+        "xy"  : "è¥„é™½åŸ",
+        "dl"  : "å¤§ç†åŸ",
 ]);
 
 // start
@@ -123,12 +123,12 @@ void topten_bunch_add(string bunch_name)
 
         save();
 }
-// ·µ»Ø×î½üµÚ¼¸³¡È¡Ê¤µÄ°ïÅÉÃû³Æ
+// è¿”å›æœ€è¿‘ç¬¬å¹¾å ´å–å‹çš„å¹«æ´¾åç¨±
 string query_bunch_topten(int n)
 {
         mapping data;
 
-        if( !sizeof(bunch_topten) ) return "¾«ÒâÉ½×¯";
+        if( !sizeof(bunch_topten) ) return "ç²¾æ„å±±èŠ";
         data = bunch_topten[sizeof(bunch_topten)-n];
         return data["bunch_name"];
 }
@@ -190,7 +190,7 @@ void init_player(object me)
         int i;
         object *obs;
 
-        tell_object(me, HIY "ÄãÑÛÇ°ºöÈ»Ò»»¨...\n" NOR);
+        tell_object(me, HIY "ä½ çœ¼å‰å¿½ç„¶ä¸€èŠ±...\n" NOR);
         me->set_override("unconcious", (: call_other, __FILE__, "check_out" :));
         me->set_override("die", (: call_other, __FILE__, "check_out" :));
         me->set_override("quit", (: call_other, __FILE__, "check_quit" :));
@@ -218,7 +218,7 @@ void init_player(object me)
         me->move("/maze/binghuodao/haitan"+(1+random(2)));
 }
 
-// ²ÎÓëÕ½Õù
+// åƒèˆ‡æˆ°çˆ­
 void join_battle(object me)
 {
         string where;
@@ -227,28 +227,28 @@ void join_battle(object me)
 
         /*
         if( battle_start_flag )
-                return tell_object(me, "Õ½³¡ÒÑ¾­¿ªÆô£¬±¨ÃûÖÕÖ¹¡£\n");
+                return tell_object(me, "æˆ°å ´å·²ç¶“é–‹å•Ÿï¼Œå ±åçµ‚æ­¢ã€‚\n");
         */
 
         if( me->is_busy() )
                 return tell_object(me, BUSY_MESSAGE);
 
         if( me->is_fighting() )
-                return tell_object(me, "ÄãÄ¿Ç°ÕıÔÚÕ½¶·ÖĞ£¬»¹ÊÇÏÈ´¦ÀíÄ¿Ç°µÄ¶ÔÊÖÔÙËµ°É¡£\n");
+                return tell_object(me, "ä½ ç›®å‰æ­£åœ¨æˆ°é¬¥ä¸­ï¼Œé‚„æ˜¯å…ˆè™•ç†ç›®å‰çš„å°æ‰‹å†èªªå§ã€‚\n");
 
         if( me->query_condition("killer") )
-                return tell_object(me, "¹Ù¸®ÕıÔÚÍ¨¼©Äã£¬Äã»¹¸ÒÔÚÕâ¶ùÅ×Í·Â¶Ãæ£¿\n");
+                return tell_object(me, "å®˜åºœæ­£åœ¨é€šç·ä½ ï¼Œä½ é‚„æ•¢åœ¨é€™å…’æ‹‹é ­éœ²é¢ï¼Ÿ\n");
 
         if( !battle_open_flag )
-                return tell_object(me, "Õ½ÕùÃ»ÓĞ·¢³ö¼¯½á£¬Ä¿Ç°ÎŞ·¨±¨Ãû¡£\n");
+                return tell_object(me, "æˆ°çˆ­æ²’æœ‰ç™¼å‡ºé›†çµï¼Œç›®å‰ç„¡æ³•å ±åã€‚\n");
 
         if( me->is_ghost() )
-                return tell_object(me, "µÈÄã»¹Ñôºó£¬ÔÙ±¨Ãû°É¡£\n");
+                return tell_object(me, "ç­‰ä½ é‚„é™½å¾Œï¼Œå†å ±åå§ã€‚\n");
 
         init_player(me);
 
-        CHANNEL_D->channel_broadcast("war", "Ä¿Ç°¹²ÓĞ "+sizeof(total)+
-                                            " Î»Íæ¼Ò±¨Ãû²ÎÓë"HIY"µÚ"HIG+chinese_number(battle_times+1)+HIY"½ì°ïÅÉÕù¶áÕ½¡£"NOR);
+        CHANNEL_D->channel_broadcast("war", "ç›®å‰å…±æœ‰ "+sizeof(total)+
+                                            " ä½ç©å®¶å ±ååƒèˆ‡"HIY"ç¬¬"HIG+chinese_number(battle_times+1)+HIY"å±†å¹«æ´¾çˆ­å¥ªæˆ°ã€‚"NOR);
 
 }
 
@@ -267,7 +267,7 @@ void stop_battle()
                 //ob->remove_all_killer();
                 ob->remove_all_enemy(1);
                 restore_status(ob);
-                tell_object(ob, "Äã±»´«ÀëÕ½³¡...\n");
+                tell_object(ob, "ä½ è¢«å‚³é›¢æˆ°å ´...\n");
         }
 
         total = allocate(0);
@@ -280,13 +280,13 @@ public void win_battle(object me, string bunch_name)
 {
         stop_battle();
 
-        CHANNEL_D->channel_broadcast("news", HIY + "¹§Ï²°ïÅÉ¡¾" + bunch_name + "¡¿»ñµÃÁËµÚ" + HIG +
-                              chinese_number(battle_times+1) + HIY "½ì°ïÅÉÕù¶áÕ½µÄÊ¤Àû£¡\n" NOR);
-        CHANNEL_D->channel_broadcast("news", HIY + "±¾½ì°ïÅÉÕù¶áÕ½ÖĞ£¬" + me->name() + HIY + "(" + me->query_id(1) +
-                              ")¾Ó¹¦ÖÁÎ°£¬»ñµÃÁË·áºñµÄ½±Àø£¡\n" NOR);
-        CHANNEL_D->channel_broadcast("news", HIY + "°ïÅÉ" + bunch_name + "ËùÓĞÈËÔ±ÔÚ½ÓÏÂÀ´¶şÊ®ËÄĞ¡Ê±ÄÚÓµÓĞ±ù»ğµºÀúÁ·¶À¼ÒËùÓĞÈ¨£¡\n" NOR);
+        CHANNEL_D->channel_broadcast("news", HIY + "æ­å–œå¹«æ´¾ã€" + bunch_name + "ã€‘ç²å¾—äº†ç¬¬" + HIG +
+                              chinese_number(battle_times+1) + HIY "å±†å¹«æ´¾çˆ­å¥ªæˆ°çš„å‹åˆ©ï¼\n" NOR);
+        CHANNEL_D->channel_broadcast("news", HIY + "æœ¬å±†å¹«æ´¾çˆ­å¥ªæˆ°ä¸­ï¼Œ" + me->name() + HIY + "(" + me->query_id(1) +
+                              ")å±…åŠŸè‡³å‰ï¼Œç²å¾—äº†è±åšçš„çå‹µï¼\n" NOR);
+        CHANNEL_D->channel_broadcast("news", HIY + "å¹«æ´¾" + bunch_name + "æ‰€æœ‰äººå“¡åœ¨æ¥ä¸‹ä¾†äºŒåå››å°æ™‚å…§æ“æœ‰å†°ç«å³¶æ­·ç·´ç¨å®¶æ‰€æœ‰æ¬Šï¼\n" NOR);
 
-        tell_object(me, HIY "ÄãÔÚ±¾½ì°ïÕ½ÖĞ³ÉÎª×îºóµÄ¶áÆìÕß£¬»ñµÃÁË¶ş°ÙÍò¾­Ñé¡¢¶ş°ÙÍòÇ±ÄÜºÍ¶ş°ÙÍòÊµÕ½Ìå»á½±Àø£¡\n" NOR);
+        tell_object(me, HIY "ä½ åœ¨æœ¬å±†å¹«æˆ°ä¸­æˆç‚ºæœ€å¾Œçš„å¥ªæ——è€…ï¼Œç²å¾—äº†äºŒç™¾è¬ç¶“é©—ã€äºŒç™¾è¬æ½›èƒ½å’ŒäºŒç™¾è¬å¯¦æˆ°é«”æœƒçå‹µï¼\n" NOR);
         addn("combat_exp", 2000000, me);
         addn("potential", 2000000, me);
         addn("experience", 2000000, me);
@@ -296,11 +296,11 @@ public void win_battle(object me, string bunch_name)
         set_heart_beat(1800 + random(30));
 }
 
-// Ä³Õ½³¡¿ªÊ¼½ÓÊÜ±¨Ãû TIME_D µ÷ÓÃ
+// æŸæˆ°å ´é–‹å§‹æ¥å—å ±å TIME_D èª¿ç”¨
 void start_join()
 {
-        CHANNEL_D->channel_broadcast("war", HIY"ÈÙÒ«"NOR YEL"Ö®Õ½"HIR"·¢³öÕ½Õù¼¯½á£¬¼´½«ÔÚ "+(BATTLE_JOIN_TIME/60)+
-                                            " ·ÖÖÓºó·¢¶¯"HIY"µÚ"HIG+chinese_number(battle_times+1)+HIY"½ì°ïÅÉÕù¶áÕ½£¬"HIR"Çë×¼±¸¼ÓÈëÕ½ÒÛ(help bunch_war)¡£\n"NOR);
+        CHANNEL_D->channel_broadcast("war", HIY"æ¦®è€€"NOR YEL"ä¹‹æˆ°"HIR"ç™¼å‡ºæˆ°çˆ­é›†çµï¼Œå³å°‡åœ¨ "+(BATTLE_JOIN_TIME/60)+
+                                            " åˆ†é˜å¾Œç™¼å‹•"HIY"ç¬¬"HIG+chinese_number(battle_times+1)+HIY"å±†å¹«æ´¾çˆ­å¥ªæˆ°ï¼Œ"HIR"è«‹æº–å‚™åŠ å…¥æˆ°å½¹(help bunch_war)ã€‚\n"NOR);
 
         total = ({});
         battle_open_flag = 1;
@@ -326,12 +326,12 @@ void start_battle()
                 total = allocate(0);
                 battle_open_flag = 0;
                 battle_start_time = 0;
-                CHANNEL_D->channel_broadcast("war", "±¨Ãû²ÎÓë"HIY"µÚ"HIG+chinese_number(battle_times+1)+HIY"½ì°ïÅÉÕù¶áÕ½"HIR"µÄÍæ¼Ò²»×ã 5 ÈË£¬È¡Ïû±¾´ÎÕ½ÒÛ¡£");
+                CHANNEL_D->channel_broadcast("war", "å ±ååƒèˆ‡"HIY"ç¬¬"HIG+chinese_number(battle_times+1)+HIY"å±†å¹«æ´¾çˆ­å¥ªæˆ°"HIR"çš„ç©å®¶ä¸è¶³ 5 äººï¼Œå–æ¶ˆæœ¬æ¬¡æˆ°å½¹ã€‚");
                 return;
         }
 
-        CHANNEL_D->channel_broadcast("war", "¿ªÊ¼³öÕ÷£¡¹²¼Æ "+sizeof(total)+
-                                            " Î»Íæ¼Ò²ÎÓë"HIY"µÚ"HIG+chinese_number(battle_times+1)+HIY"½ì°ïÅÉÕù¶áÕ½£¬"HIR"¼ÆÊ± "+(BATTLE_TIME/60)+" ·ÖÖÓ½áÊø¡£");
+        CHANNEL_D->channel_broadcast("war", "é–‹å§‹å‡ºå¾ï¼å…±è¨ˆ "+sizeof(total)+
+                                            " ä½ç©å®¶åƒèˆ‡"HIY"ç¬¬"HIG+chinese_number(battle_times+1)+HIY"å±†å¹«æ´¾çˆ­å¥ªæˆ°ï¼Œ"HIR"è¨ˆæ™‚ "+(BATTLE_TIME/60)+" åˆ†é˜çµæŸã€‚");
 
         ob = new("/maze/binghuodao/npc/xiexun");
         ob->move("/maze/binghuodao/jitan");
@@ -347,20 +347,20 @@ public int query_bunch_battle(object me)
 
         str = "";
 
-        str += HIG "\nµ±Ç°ÌìÏÂµÚÒ»°ï£º" + HIY + query_bunch_topten(1) + NOR;
-        str += HIG "\nµ±Ç°°ïÕ½µÄ×´Ì¬£º";
-        str += battle_start_flag ? HIR "µ±Ç°°ïÕ½½øĞĞÖĞ¡£" NOR : (battle_start_time > 0 ? HIY "°ïÕ½×¼±¸ÖĞ£¬¼´½«¿ªÊ¼¡£" NOR :"µ±Ç°°ïÕ½Î´½øĞĞ¡£");
+        str += HIG "\nç•¶å‰å¤©ä¸‹ç¬¬ä¸€å¹«ï¼š" + HIY + query_bunch_topten(1) + NOR;
+        str += HIG "\nç•¶å‰å¹«æˆ°çš„ç‹€æ…‹ï¼š";
+        str += battle_start_flag ? HIR "ç•¶å‰å¹«æˆ°é€²è¡Œä¸­ã€‚" NOR : (battle_start_time > 0 ? HIY "å¹«æˆ°æº–å‚™ä¸­ï¼Œå³å°‡é–‹å§‹ã€‚" NOR :"ç•¶å‰å¹«æˆ°æœªé€²è¡Œã€‚");
         str += "\n";
-        str += battle_start_flag ? HIR "µ±Ç°°ïÕ½»¹Ê£Óà" + time_period(battle_time_countdown) + "½áÊø¡£" NOR : "";
+        str += battle_start_flag ? HIR "ç•¶å‰å¹«æˆ°é‚„å‰©ä½™" + time_period(battle_time_countdown) + "çµæŸã€‚" NOR : "";
         str += "\n";
 
-        str += HIG "\n×î½üÊ®½ì°ïÅÉÕù¶áÕ½»ñÊ¤°ïÅÉ£º\n" NOR;
-        str += sprintf("%-15s%-15s%-40s\n", "½ìÊı", "°ïÅÉ", "Ê¤ÀûÈÕÆÚ");
+        str += HIG "\næœ€è¿‘åå±†å¹«æ´¾çˆ­å¥ªæˆ°ç²å‹å¹«æ´¾ï¼š\n" NOR;
+        str += sprintf("%-15s%-15s%-40s\n", "å±†æ•¸", "å¹«æ´¾", "å‹åˆ©æ—¥æœŸ");
         str += "----------------------------------------------------------\n";
 
         if( n = sizeof(bunch_topten) )
         {
-                // ÏÔÊ¾×î½ü10½ì
+                // é¡¯ç¤ºæœ€è¿‘10å±†
                 if( n > 10 )
                         t = n - 10;
                 else
@@ -385,7 +385,7 @@ public int query_bunch_battle(object me)
                 }
         }
         str += "----------------------------------------------------------\n";
-        str+= HIG "ÂÌÉ«´ú±íÄãµ±Ç°ËùÔÚ°ïÅÉ¡£\n" NOR;
+        str+= HIG "ç¶ è‰²ä»£è¡¨ä½ ç•¶å‰æ‰€åœ¨å¹«æ´¾ã€‚\n" NOR;
         tell_object(me, str);
         return 1;
 }
@@ -442,23 +442,23 @@ int check_out(object me)
         my["qi"] = 1;
         my["jing"] = 1;
 
-        tell_object(me, HIR "\nÄã¾õµÃÑÛÇ°Ò»ÕóÄ£ºı...ÕâÏÂÍêÁË£¡\n" NOR);
+        tell_object(me, HIR "\nä½ è¦ºå¾—çœ¼å‰ä¸€é™£æ¨¡ç³Š...é€™ä¸‹å®Œäº†ï¼\n" NOR);
         if( ob = me->query_last_damage_from() )
         {
-                msg = me->name(1) + "²ÒÔâ" + ob->name(1) + "µÄ¶¾ÊÖ£¬±»ÎŞÇé£Ğ£Ë¡£";
+                msg = me->name(1) + "æ…˜é­" + ob->name(1) + "çš„æ¯’æ‰‹ï¼Œè¢«ç„¡æƒ…ï¼°ï¼«ã€‚";
         } else
-                 msg = me->name(1) + "ÔËÆø²»¼Ñ£¬±¾ÁìÓĞÏŞ¡¢ÒÑ¾­²ÒÔâ£Ğ£Ë¡£";
+                 msg = me->name(1) + "é‹æ°£ä¸ä½³ï¼Œæœ¬é ˜æœ‰é™ã€å·²ç¶“æ…˜é­ï¼°ï¼«ã€‚";
 
         message("vision", msg, environment(me), ({ me }));
 
         restore_status(me);
         total -= ({ me });
 
-        message("vision", "Ò»¸öºÚÓ°Ù¿µÄ´ÜÁË³öÀ´£¬Ëæ¼´¾ÍÊÇ¡°Å¾¡±µÄ"
-                "Ò»Éù£¬¾Í¼û" + me->name() +"Ë¤µ¹ÁËµØÉÏ£¬Ò»¸±°ëËÀ²»"
-                "»îµÄÑù×Ó¡£\n", environment(me), ({ me }));
-        tell_object(me, "°ë»è°ëÃÔÖĞ£¬Äã¾õµÃ±»ÈËÁàÁËÆğÀ´£¬ÓÖ"
-                "ÖØÖØµÄË¤µ¹ÁËµØÉÏ¡£\n");
+        message("vision", "ä¸€å€‹é»‘å½±å€çš„ç«„äº†å‡ºä¾†ï¼Œéš¨å³å°±æ˜¯â€œå•ªâ€çš„"
+                "ä¸€è²ï¼Œå°±è¦‹" + me->name() +"æ‘”å€’äº†åœ°ä¸Šï¼Œä¸€å‰¯åŠæ­»ä¸"
+                "æ´»çš„æ¨£å­ã€‚\n", environment(me), ({ me }));
+        tell_object(me, "åŠæ˜åŠè¿·ä¸­ï¼Œä½ è¦ºå¾—è¢«äººæ‹äº†èµ·ä¾†ï¼Œåˆ"
+                "é‡é‡çš„æ‘”å€’äº†åœ°ä¸Šã€‚\n");
 
         if( !living(me) )
                 me->revive();
@@ -472,10 +472,10 @@ void create()
         mapping data;
 
         seteuid(getuid());
-        set("channel_id", HIY "°ïÅÉÍ¨¸æ" NOR);
+        set("channel_id", HIY "å¹«æ´¾é€šå‘Š" NOR);
         restore();
         set_heart_beat(1800);
-        // ×ªÒÆµ½timed.cÖĞµ÷ÓÃ
+        // è½‰ç§»åˆ°timed.cä¸­èª¿ç”¨
         //SCHEDULE_D->set_event(7200, 1, this_object(), "manage_areas");
 
         if (! mapp(bunch_fame)) bunch_fame = ([ ]);
@@ -486,13 +486,13 @@ void remove()
 {
         save();
 }
-// ÒªÔÚ CMDS:REBOOT ÀïÃæ¼ÓÉÏµ÷ÓÃ
+// è¦åœ¨ CMDS:REBOOT è£¡é¢åŠ ä¸Šèª¿ç”¨
 public void mud_shutdown()
 {
         save();
 }
 
-// ĞÄÌø£ºÎ¬»¤°ïÅÉµÄÍ¨³£ĞÅÏ¢
+// å¿ƒè·³ï¼šç¶­è­·å¹«æ´¾çš„é€šå¸¸ä¿¡æ¯
 void heart_beat()
 {
         int t;
@@ -504,7 +504,7 @@ void heart_beat()
         last = query("last_check");
         if ((t / 86400) != (last / 86400))
         {
-                // ÌìÊı·¢ÉúÁË±ä»¯£º¸´ÖÆ°ïÅÉµÄÃûÍûĞÅÏ¢
+                // å¤©æ•¸ç™¼ç”Ÿäº†è®ŠåŒ–ï¼šå¾©åˆ¶å¹«æ´¾çš„åæœ›ä¿¡æ¯
                 all_fam = keys(bunch_fame) - ({ 0 });
                 last_bunch_fame = ([ ]);
 
@@ -535,8 +535,8 @@ void heart_beat()
                         case 300:
                         case 600:
                         case 900:
-                                CHANNEL_D->channel_broadcast("war", HIY"ÈÙÒ«"NOR YEL"Ö®Õ½"HIR"·¢³öÕ½Õù¼¯½á£¬¼´½«ÔÚ "+(battle_start_time/60)+
-                                            " ·ÖÖÓºó·¢¶¯"HIY"µÚ"HIG+chinese_number(battle_times+1)+HIY"½ì°ïÅÉÕù¶áÕ½£¬"HIR"Çë×¼±¸¼ÓÈëÕ½ÒÛ(help bunch_war)¡£"NOR);
+                                CHANNEL_D->channel_broadcast("war", HIY"æ¦®è€€"NOR YEL"ä¹‹æˆ°"HIR"ç™¼å‡ºæˆ°çˆ­é›†çµï¼Œå³å°‡åœ¨ "+(battle_start_time/60)+
+                                            " åˆ†é˜å¾Œç™¼å‹•"HIY"ç¬¬"HIG+chinese_number(battle_times+1)+HIY"å±†å¹«æ´¾çˆ­å¥ªæˆ°ï¼Œ"HIR"è«‹æº–å‚™åŠ å…¥æˆ°å½¹(help bunch_war)ã€‚"NOR);
                                 break;
                 }
 
@@ -548,7 +548,7 @@ void heart_beat()
 
         if( --battle_time_countdown <= 0 )
         {
-                CHANNEL_D->do_channel(this_object(), "news", HIM "ºÜÒÅº¶£¬±¾½ìÌìÏÂµÚÒ»°ïÕù¶áÕ½ÔÚÓÉÓÚ³¬Ê±¶ø½áÊøÁË!\n" NOR);
+                CHANNEL_D->do_channel(this_object(), "news", HIM "å¾ˆéºæ†¾ï¼Œæœ¬å±†å¤©ä¸‹ç¬¬ä¸€å¹«çˆ­å¥ªæˆ°åœ¨ç”±äºè¶…æ™‚è€ŒçµæŸäº†!\n" NOR);
                 stop_battle();
                 return;
         }
@@ -557,8 +557,8 @@ void heart_beat()
                 auto_check();
 
         if( battle_time_countdown == 60 || battle_time_countdown == 180 )
-                CHANNEL_D->channel_broadcast("war", HIR"Õ½"NOR RED"Õù"HIR"£º"+HIY"µÚ"HIG+chinese_number(battle_times+1)+
-                                                    HIY"½ì°ïÅÉÕù¶áÕ½"HIR"¼´½«ÔÚ "+(battle_time_countdown/60)+" ·ÖÖÓºó½áÊø..."NOR);
+                CHANNEL_D->channel_broadcast("war", HIR"æˆ°"NOR RED"çˆ­"HIR"ï¼š"+HIY"ç¬¬"HIG+chinese_number(battle_times+1)+
+                                                    HIY"å±†å¹«æ´¾çˆ­å¥ªæˆ°"HIR"å³å°‡åœ¨ "+(battle_time_countdown/60)+" åˆ†é˜å¾ŒçµæŸ..."NOR);
 }
 
 public mixed manage_areas()
@@ -591,43 +591,43 @@ public mixed manage_areas()
 
                 bunch_name = area_fame[area]["bunch_name"];
 
-                if (bunch_name == "¶ÀÁ¢ÖĞ")
+                if (bunch_name == "ç¨ç«‹ä¸­")
                         continue;
 
                 if (! (room = get_object(area)))
                         continue;
 
-                // ÅÌµãÊ±ºò°ïÅÉ NPC ²»ÔÚÊ±ºòÔòÎŞÊÕÈë
+                // ç›¤é»æ™‚å€™å¹«æ´¾ NPC ä¸åœ¨æ™‚å€™å‰‡ç„¡æ”¶å…¥
                 if (undefinedp(area_fame[area]["npc_id"]) ||
                     ! objectp(npc = present(area_fame[area]["npc_id"], room)))
                         continue;
 
                 if (! mapp(query(bunch_name)))
                 {
-                        message("channel:rumor", HIM"¡¾ÄàÌ¶°ï»á¡¿ÓÉÓÚ°ïÅÉÍß½â£¬" +
-                                query("short", room)+"Ğû²¼ÍÑÀë°ï»á"+"¡¸"+bunch_name+
-                                "¡¹" + "µÄ¿ØÖÆ£¡\n" NOR, users());
+                        message("channel:rumor", HIM"ã€æ³¥æ½­å¹«æœƒã€‘ç”±äºå¹«æ´¾ç“¦è§£ï¼Œ" +
+                                query("short", room)+"å®£å¸ƒè„«é›¢å¹«æœƒ"+"ã€Œ"+bunch_name+
+                                "ã€" + "çš„æ§åˆ¶ï¼\n" NOR, users());
 
                         delete("bunch", npc);
-                        area_fame[area]["bunch_name"] = "¶ÀÁ¢ÖĞ";
+                        area_fame[area]["bunch_name"] = "ç¨ç«‹ä¸­";
                         continue;
                 }
 
                 if (area_fame[area]["money"] < -1000000 ||
                     query(bunch_name + "/money") < -100000000)
                 {
-                        message("channel:rumor", HIM"¡¾ÄàÌ¶°ï»á¡¿ÓÉÓÚ¾­Óª²»ÉÆ£¬" +
-                                query("short", room)+"Ğû²¼ÍÑÀë°ï»á"+"¡¸"+bunch_name+
-                                "¡¹" + "µÄ¿ØÖÆ£¡\n" NOR, users());
+                        message("channel:rumor", HIM"ã€æ³¥æ½­å¹«æœƒã€‘ç”±äºç¶“ç‡Ÿä¸å–„ï¼Œ" +
+                                query("short", room)+"å®£å¸ƒè„«é›¢å¹«æœƒ"+"ã€Œ"+bunch_name+
+                                "ã€" + "çš„æ§åˆ¶ï¼\n" NOR, users());
 
-                        // µ÷Õû°ïÅÉÍşÍû
+                        // èª¿æ•´å¹«æ´¾å¨æœ›
                         weiwang = bunch_fame[bunch_name];
                         weiwang -= 1000;
                         if (weiwang < 0) weiwang = 0;
                         bunch_fame[bunch_name] = weiwang;
 
                         delete("bunch", npc);
-                        area_fame[area]["bunch_name"] = "¶ÀÁ¢ÖĞ";
+                        area_fame[area]["bunch_name"] = "ç¨ç«‹ä¸­";
                         continue;
                 }
 
@@ -672,7 +672,7 @@ public mixed manage_areas()
                                 bad_money = kaifa * jizhi * 10000;
                                 area_money -= bad_money;
                         } else
-                        { // ¿ª·¢¶È¸ßµÄ£¬Ò»°ãÀ´Ëµ×ÔÈ»ÔÖº¦Ó°Ïì²»´ó
+                        { // é–‹ç™¼åº¦é«˜çš„ï¼Œä¸€èˆ¬ä¾†èªªè‡ªç„¶ç½å®³å½±éŸ¿ä¸å¤§
                                 bad_area = "";
                                 area_money += (kaifa / 2) * (jizhi / 2) * 1000;
                         }
@@ -726,8 +726,8 @@ public mixed manage_areas()
 
                 if (query(bunch + "/money") < -100000000)
                 {
-                        message("channel:rumor", HIW "¡¾ÄàÌ¶°ï»á¡¿ÓÉÓÚ°ïÅÉ×Ê²ú³¤ÆÚÑÏÖØ¿÷Ëğ£¬°ï»á¡¸" +
-                                                 bunch + "¡¹ÎŞ·¨Î¬³ÖÈÕ³£¿ªÖ§£¬ÍÁ±ÀÍß½âÁË£¡\n" NOR, users());
+                        message("channel:rumor", HIW "ã€æ³¥æ½­å¹«æœƒã€‘ç”±äºå¹«æ´¾è³‡ç”¢é•·æœŸåš´é‡è™§æï¼Œå¹«æœƒã€Œ" +
+                                                 bunch + "ã€ç„¡æ³•ç¶­æŒæ—¥å¸¸é–‹æ”¯ï¼ŒåœŸå´©ç“¦è§£äº†ï¼\n" NOR, users());
                         lost += ({ bunch });
                         map_delete(data, bunch);
                 }
@@ -779,34 +779,34 @@ public mixed manage_areas()
 
                 if( !data[query("bunch/bunch_name", player)])continue;
 
-                tell_object(player,HIG"°ïÅÉ¡¸"+query("bunch/bunch_name", player)+"¡¹"+"·¢âÃ£¬ÄãµÄ´æ¿îÔö¼ÓÁË"+
-                                    MONEY_D->money_str(data[query("bunch/bunch_name", player)])+"£¡\n"NOR);
+                tell_object(player,HIG"å¹«æ´¾ã€Œ"+query("bunch/bunch_name", player)+"ã€"+"ç™¼é¤‰ï¼Œä½ çš„å­˜æ¬¾å¢åŠ äº†"+
+                                    MONEY_D->money_str(data[query("bunch/bunch_name", player)])+"ï¼\n"NOR);
 
 #ifndef LONELY_IMPROVED
                 if( query("balance", player)>2000000000 )
-                        tell_object(player, RED "ÄãÔÚÇ®×¯µÄÇ®ÒÑ´ïµ½¶şÊ®ÍòÁ½»Æ½ğ£¬¿ìµã»¨°É£¡\n" NOR);
+                        tell_object(player, RED "ä½ åœ¨éŒ¢èŠçš„éŒ¢å·²é”åˆ°äºŒåè¬å…©é»ƒé‡‘ï¼Œå¿«é»èŠ±å§ï¼\n" NOR);
                 else
 #endif
                         addn("balance", data[player->query("bunch/bunch_name")], player);
         }
 
         if (bad_area == "")
-                message("channel:rumor", HIM "¡¾°ïÅÉ¡¿Ä³ÈË£º¸÷µØÅÌÊÕÈëÁ¼ºÃ£¬Çë¸÷Î»°ïÖ÷ËÙÀ´Ç®×¯×ªÕÊ£¡\n" NOR,
+                message("channel:rumor", HIM "ã€å¹«æ´¾ã€‘æŸäººï¼šå„åœ°ç›¤æ”¶å…¥è‰¯å¥½ï¼Œè«‹å„ä½å¹«ä¸»é€Ÿä¾†éŒ¢èŠè½‰å¸³ï¼\n" NOR,
                         users());
         else
         {
                 str = bad_weather[random(sizeof(bad_weather))];
                 str = replace_string(str, "$N", bad_area);
 
-                message("channel:rumor", HIM "¡¾°ïÅÉ¡¿Ä³ÈË£º" + str +
-                                         MONEY_D->money_str(bad_money) + "£¡\n" NOR, users());
+                message("channel:rumor", HIM "ã€å¹«æ´¾ã€‘æŸäººï¼š" + str +
+                                         MONEY_D->money_str(bad_money) + "ï¼\n" NOR, users());
         }
         save();
 }
 
-// ·µ»Ø°ïÅÉÉùÍû£ºÈç¹û²ÎÊıÎª¿Õ£¬·µ»ØmappingÀàĞÍ£¬°üº¬ÁËËùÓĞÍ¬
-// ÃËµÄÉùÍû£»Èç¹û²ÎÊıÊÇÈËÎï£¬ Ôò·µ»Ø¸ÃÈËÎïËùÔÚµÄÄÇ¸ö°ïÅÉµÄÉù
-// Íû£»Èç¹û²ÎÊıÊÇ°ïÅÉ£¬Ôò·µ»Ø¸Ã°ïÅÉµÄÉùÍû¡£
+// è¿”å›å¹«æ´¾è²æœ›ï¼šå¦‚æœåƒæ•¸ç‚ºç©ºï¼Œè¿”å›mappingé¡å‹ï¼ŒåŒ…å«äº†æ‰€æœ‰åŒ
+// ç›Ÿçš„è²æœ›ï¼›å¦‚æœåƒæ•¸æ˜¯äººç‰©ï¼Œ å‰‡è¿”å›è©²äººç‰©æ‰€åœ¨çš„é‚£å€‹å¹«æ´¾çš„è²
+// æœ›ï¼›å¦‚æœåƒæ•¸æ˜¯å¹«æ´¾ï¼Œå‰‡è¿”å›è©²å¹«æ´¾çš„è²æœ›ã€‚
 public mixed query_bunch_fame(mixed ob)
 {
         string fname;
@@ -825,19 +825,19 @@ public mixed query_bunch_fame(mixed ob)
         return bunch_fame;
 }
 
-// ²éÑ¯×òÌìµÄ°ïÅÉÃûÍûĞÅÏ¢
+// æŸ¥è©¢æ˜¨å¤©çš„å¹«æ´¾åæœ›ä¿¡æ¯
 public mapping query_all_last_bunch_fame()
 {
         if (! mapp(last_bunch_fame))
-                // Ã»ÓĞ×òÌìµÄĞÅÏ¢£¬·µ»Ø½ñÌìµÄ
+                // æ²’æœ‰æ˜¨å¤©çš„ä¿¡æ¯ï¼Œè¿”å›ä»Šå¤©çš„
                 return bunch_fame;
 
-        // ·µ»Ø×òÌìµÄ°ïÅÉÉùÍûĞÅÏ¢
+        // è¿”å›æ˜¨å¤©çš„å¹«æ´¾è²æœ›ä¿¡æ¯
         return last_bunch_fame;
 }
 
-// ²éÑ¯°ïÅÉµÄ³ğºŞĞÅÏ¢£ºÊäÈëµÄob¿ÉÒÔÊÇ°ïÅÉµÄÃû×Ö£¬Ò²¿ÉÊÇ
-// ÖĞµÄÈËÎï¡£
+// æŸ¥è©¢å¹«æ´¾çš„ä»‡æ¨ä¿¡æ¯ï¼šè¼¸å…¥çš„obå¯ä»¥æ˜¯å¹«æ´¾çš„åå­—ï¼Œä¹Ÿå¯æ˜¯
+// ä¸­çš„äººç‰©ã€‚
 public mapping query_bunch_hatred(mixed ob)
 {
         mapping hatred;
@@ -857,7 +857,7 @@ public mapping query_bunch_hatred(mixed ob)
         return hatred;
 }
 
-// ±ä»¯°ïÅÉÉùÍû£ºÊäÈëµÄob¿ÉÒÔÊÇ°ïÅÉµÄÃû×Ö£¬Ò²¿ÉÊÇ°ïÅÉÖĞµÄÈËÎï¡£
+// è®ŠåŒ–å¹«æ´¾è²æœ›ï¼šè¼¸å…¥çš„obå¯ä»¥æ˜¯å¹«æ´¾çš„åå­—ï¼Œä¹Ÿå¯æ˜¯å¹«æ´¾ä¸­çš„äººç‰©ã€‚
 public void add_bunch_fame(mixed ob, int n)
 {
         int new_fame;
@@ -874,7 +874,7 @@ public void add_bunch_fame(mixed ob, int n)
         if (! stringp(fname) || undefinedp(query(fname + "/member")))
                 return;
 
-        // ¼ÆËãĞÂµÄ°ïÅÉÉùÍû
+        // è¨ˆç®—æ–°çš„å¹«æ´¾è²æœ›
         new_fame = bunch_fame[fname] + n;
         if (new_fame < 0) new_fame = 0;
         if (new_fame > MAX_BUNCH_FAME)
@@ -882,7 +882,7 @@ public void add_bunch_fame(mixed ob, int n)
         bunch_fame[fname] = new_fame;
 }
 
-// °ïÅÉ¼ä³ğÉ±
+// å¹«æ´¾é–“ä»‡æ®º
 public void bunch_kill(object killer, object victim)
 {
         int kexp;
@@ -894,21 +894,21 @@ public void bunch_kill(object killer, object victim)
         mapping hatred;
         mixed *d;
 
-        // Ö»ÓĞÍæ¼ÒÖ®¼äµÄ³ğÉ±²Å¼ÆËãÔÚÄÚ
+        // åªæœ‰ç©å®¶ä¹‹é–“çš„ä»‡æ®ºæ‰è¨ˆç®—åœ¨å…§
         if (! objectp(killer) || ! playerp(killer) ||
             ! objectp(victim) || ! playerp(victim))
                 return;
 
-        // Î×Ê¦Ö®¼äµÄ±È»®¿É²»ÄÜËãÊı
+        // å·«å¸«ä¹‹é–“çš„æ¯”åŠƒå¯ä¸èƒ½ç®—æ•¸
         if (wizardp(killer) || wizardp(victim))
                 return;
 
-        // ²é¿´ÕâÁ½¸öÍæ¼ÒËù´¦µÄ°ïÅÉ
+        // æŸ¥çœ‹é€™å…©å€‹ç©å®¶æ‰€è™•çš„å¹«æ´¾
         kfam=query("bunch/bunch_name", killer);
         vfam=query("bunch/bunch_name", victim);
 
         if (! stringp(kfam) && ! stringp(vfam))
-                // ¶¼²»ÔÚ°ïÅÉÄÚ£¬²»±Ø¼ÌĞøÁË
+                // éƒ½ä¸åœ¨å¹«æ´¾å…§ï¼Œä¸å¿…ç¹¼çºŒäº†
                 return;
 
         kexp=query("combat_exp", killer);
@@ -917,10 +917,10 @@ public void bunch_kill(object killer, object victim)
         if (kfam == vfam)
         {
                 if( !killer->is_killing(query("id", victim)) )
-                        // Ê§ÊÖËùÉ±£¬²»ÓèÀí»á
+                        // å¤±æ‰‹æ‰€æ®ºï¼Œä¸äºˆç†æœƒ
                         return;
 
-                // °ïÅÉÄÚ²ĞÉ±£¿²»ÓëÀí»á£¬Ö±½Ó¿Û³ı°ïÅÉºÍ¸öÈË1/10ÍşÍû¡£
+                // å¹«æ´¾å…§æ®˜æ®ºï¼Ÿä¸èˆ‡ç†æœƒï¼Œç›´æ¥æ‰£é™¤å¹«æ´¾å’Œå€‹äºº1/10å¨æœ›ã€‚
                 add_bunch_fame(kfam, -bunch_fame[kfam] / 10);
                 addn("weiwang", -query("weiwang", killer)/10, killer);
                 return;
@@ -928,9 +928,9 @@ public void bunch_kill(object killer, object victim)
         if (bunch_is_league(kfam, vfam))
         {
                 if( !killer->is_killing(query("id", victim)) )
-                        // Ê§ÊÖËùÉ±£¬²»ÓèÀí»á
+                        // å¤±æ‰‹æ‰€æ®ºï¼Œä¸äºˆç†æœƒ
                         return;
-                // Í¬ÃË°ïÅÉÄÚ²ĞÉ±£¿Ö±½Ó¿Û³ı°ïÅÉºÍ¸öÈË1/20ÍşÍû¡£
+                // åŒç›Ÿå¹«æ´¾å…§æ®˜æ®ºï¼Ÿç›´æ¥æ‰£é™¤å¹«æ´¾å’Œå€‹äºº1/20å¨æœ›ã€‚
                 add_bunch_fame(kfam, -bunch_fame[kfam] / 20);
                 addn("weiwang", -query("weiwang", killer)/20, killer);
                 return;
@@ -938,17 +938,17 @@ public void bunch_kill(object killer, object victim)
 
         if (kexp < vexp*3 && vexp >= 100000)
         {
-                // É±ÊÖµÄ¾­Ñé²»ÊÇÔ¶Ô¶µÄ´óÓÚ¶Ô·½£¬²¢ÇÒ±»É±µÄ
-                // ÈËÓĞÒ»¶¨µÄ¾­Ñé£¬Õâ½«µ¼ÖÂ°ïÅÉÉùÍûµÄ½µµÍ¡£
+                // æ®ºæ‰‹çš„ç¶“é©—ä¸æ˜¯é é çš„å¤§äºå°æ–¹ï¼Œä¸¦ä¸”è¢«æ®ºçš„
+                // äººæœ‰ä¸€å®šçš„ç¶“é©—ï¼Œé€™å°‡å°è‡´å¹«æ´¾è²æœ›çš„é™ä½ã€‚
                 fame_delta=vexp+query("score", killer)*2+
                              query("weiwang", killer)*10;
                 fame_delta /= 1000;
         } else
-                // ¶ÔÊÖ¾­ÑéÌ«ÉÙ£¬»òÊÇ²î¾àÌ«´ó£¬²»Ó°ÏìÉùÍû
+                // å°æ‰‹ç¶“é©—å¤ªå°‘ï¼Œæˆ–æ˜¯å·®è·å¤ªå¤§ï¼Œä¸å½±éŸ¿è²æœ›
                 fame_delta = 0;
 
-        // ²é¿´É±ÊÖËùÔÚµÄ°ïÅÉÊÇ·ñ³ğºŞËÀÕß£ºÈç¹û³ğºŞ£¬ÔòÄÜ¹»
-        // ´ø¶¯ÉùÍûµÄ±ä»¯¡£
+        // æŸ¥çœ‹æ®ºæ‰‹æ‰€åœ¨çš„å¹«æ´¾æ˜¯å¦ä»‡æ¨æ­»è€…ï¼šå¦‚æœä»‡æ¨ï¼Œå‰‡èƒ½å¤ 
+        // å¸¶å‹•è²æœ›çš„è®ŠåŒ–ã€‚
         if (stringp(kfam))
         {
                 string path;
@@ -957,16 +957,16 @@ public void bunch_kill(object killer, object victim)
                 d = query(path);
                 if (arrayp(d) && sizeof(d) >= 2 && intp(d[1]))
                 {
-                        // ³ğºŞËÀÕß£¬°ïÅÉ»ñµÃ¶îÍâµÄÉùÍû
+                        // ä»‡æ¨æ­»è€…ï¼Œå¹«æ´¾ç²å¾—é¡å¤–çš„è²æœ›
                         if (d[1] > 2000)
                                 CHANNEL_D->do_channel(this_object(), "rumor",
-                                        "ÌıËµ" + killer->name(1) + "»÷±ĞÁË" +
-                                        victim->name(1) + "£¬Îª" +
-                                        kfam + "³öÁËÒ»¿Ú¶ñÆø¡£");
+                                        "è½èªª" + killer->name(1) + "æ“Šæ–ƒäº†" +
+                                        victim->name(1) + "ï¼Œç‚º" +
+                                        kfam + "å‡ºäº†ä¸€å£æƒ¡æ°£ã€‚");
                         fame_delta += d[1] / 3;
 
-                        // ¶Ô´ËÈËµÄ³ğºŞ½µµÍ(½µµÍµÄÒª±ÈÔö¼ÓµÄÒª¶à)£¬
-                        // ¾ßÌå¿ÉÒÔ¿´fame_delta Óë³ğºŞ¶È¹«Ë¾µÄ²îÒì
+                        // å°æ­¤äººçš„ä»‡æ¨é™ä½(é™ä½çš„è¦æ¯”å¢åŠ çš„è¦å¤š)ï¼Œ
+                        // å…·é«”å¯ä»¥çœ‹fame_delta èˆ‡ä»‡æ¨åº¦å…¬å¸çš„å·®ç•°
                         d[1] -= fame_delta;
                         if (d[1] <= 0)
                                 delete(path);
@@ -975,16 +975,16 @@ public void bunch_kill(object killer, object victim)
                 }
         }
 
-        // µ÷ÕûÁ½¸ö°ïÅÉµÄÉùÍû
+        // èª¿æ•´å…©å€‹å¹«æ´¾çš„è²æœ›
         add_bunch_fame(killer,  fame_delta);
         add_bunch_fame(victim, -fame_delta);
 
-        // Í³¼Æ¸ÃÉ±ÊÖ¶Ô±¾ÃÅµÄ²Ğº¦³Ì¶È
+        // çµ±è¨ˆè©²æ®ºæ‰‹å°æœ¬é–€çš„æ®˜å®³ç¨‹åº¦
         if (! stringp(vfam))
                 return;
 
-        // ³ğºŞ³Ì¶ÈºÍÉùÍûµÄ±ä»¯¶¼ÊÇÔÚÒ»¸öÊıÁ¿¼¶ÉÏ(K¾­Ñé)£¬µ«
-        // ÊÇ³ğºŞ³Ì¶ÈµÍÓÚÉùÍûµÄ±ä»¯¡£
+        // ä»‡æ¨ç¨‹åº¦å’Œè²æœ›çš„è®ŠåŒ–éƒ½æ˜¯åœ¨ä¸€å€‹æ•¸é‡ç´šä¸Š(Kç¶“é©—)ï¼Œä½†
+        // æ˜¯ä»‡æ¨ç¨‹åº¦ä½äºè²æœ›çš„è®ŠåŒ–ã€‚
         vexp = vexp/1000 + 1;
         if (vexp > 5000)
                 vexp = (vexp - 5000) / 16 + 2000;
@@ -1000,13 +1000,13 @@ public void bunch_kill(object killer, object victim)
                 return;
         }
 
-        // Ã¿¸ö°ïÅÉ×î¶à¼ÇÂ¼Èô¸É¸ö³ğÈË
+        // æ¯å€‹å¹«æ´¾æœ€å¤šè¨˜éŒ„è‹¥å¹¹å€‹ä»‡äºº
         if (! undefinedp(d = hatred[kid]))
         {
                 if (! arrayp(d) || sizeof(d) < 2 ||
                     ! intp(d[1]) || ! stringp(d[0]))
                 {
-                        // Õâ¸öIDµÄÊı¾İ³öÁË¹ÊÕÏ
+                        // é€™å€‹IDçš„æ•¸æ“šå‡ºäº†æ•…éšœ
                         d = 0;
                 }
         } else
@@ -1015,8 +1015,8 @@ public void bunch_kill(object killer, object victim)
                 string *ids;
                 int i;
 
-                // ¹ıÂËÈ¥µôÒ»Ğ©ÈË£¬ÎªÊ²Ã´²»È¥µôÒ»¸ö£¿ÕâÊÇÎª
-                // ÁË·ÀÖ¹¹ıÂËÆµ·±µÄ½øĞĞ¹ıÂË²Ù×÷¡£
+                // éæ¿¾å»æ‰ä¸€äº›äººï¼Œç‚ºä»€éº¼ä¸å»æ‰ä¸€å€‹ï¼Ÿé€™æ˜¯ç‚º
+                // äº†é˜²æ­¢éæ¿¾é »ç¹çš„é€²è¡Œéæ¿¾æ“ä½œã€‚
                 ids = sort_array(keys(hatred),
                                  (: sort_hatred :), hatred);
                 for (i = 0; i < sizeof(ids) && i < HATREDP_REMOVED; i++)
@@ -1031,21 +1031,21 @@ public void bunch_kill(object killer, object victim)
                 d[1] += vexp;
         }
 
-        // ¼ÇÂ¼Õâ¸öÈËµÄĞÅÏ¢
+        // è¨˜éŒ„é€™å€‹äººçš„ä¿¡æ¯
         hatred[kid] = d;
 }
 
-// È¥µôËùÓĞ°ïÅÉ¶ÔÄ³¸öÈËµÄ³ğºŞĞÅÏ¢
+// å»æ‰æ‰€æœ‰å¹«æ´¾å°æŸå€‹äººçš„ä»‡æ¨ä¿¡æ¯
 public void remove_hatred(string id)
 {
         mixed dbase, bunch, hatred;
         string fam;
 
         if (! mapp(dbase = query_entire_dbase()))
-                // ÏÖÔÚ»¹Ã»ÓĞ³ğºŞĞÅÏ¢
+                // ç¾åœ¨é‚„æ²’æœ‰ä»‡æ¨ä¿¡æ¯
                 return;
 
-        // ²éÔÄËùÓĞµÄ
+        // æŸ¥é–±æ‰€æœ‰çš„
         foreach (fam in keys(dbase))
         {
                 reset_eval_cost();
@@ -1054,11 +1054,11 @@ public void remove_hatred(string id)
                         continue;
 
                 if (mapp(hatred = bunch["hatred"]))
-                        // È¥µô¸Ã°ïÅÉ¶ÔÄ³ÈËµÄ³ğºŞĞÅÏ¢
+                        // å»æ‰è©²å¹«æ´¾å°æŸäººçš„ä»‡æ¨ä¿¡æ¯
                         map_delete(hatred, id);
 
                 if (! mapp(hatred) || sizeof(hatred) < 1)
-                        // Õâ¸ö°ïÅÉÒÑ¾­Ã»ÓĞ³ğºŞĞÅÏ¢
+                        // é€™å€‹å¹«æ´¾å·²ç¶“æ²’æœ‰ä»‡æ¨ä¿¡æ¯
                         map_delete(bunch, "hatred");
         }
 
@@ -1070,37 +1070,37 @@ public mixed valid_new_build(object ob, string id, string name)
         object env;
 
         if (! env = environment(ob))
-                return "ºÃÏó³öÏÖÁËµãÎÊÌâ£¬ÇëºÍÎ×Ê¦ÁªÏµ£¡\n";
+                return "å¥½è±¡å‡ºç¾äº†é»å•é¡Œï¼Œè«‹å’Œå·«å¸«è¯ç³»ï¼\n";
 
         if (! env->is_create_bunch_room())
-                return "ÕâÀï²»¿ÉÒÔÓÃÀ´½¨Éè°ïÅÉ×ÜÌ³£¬ÇëÁíÑ¡µØµã¡£\n";
+                return "é€™è£¡ä¸å¯ä»¥ç”¨ä¾†å»ºè¨­å¹«æ´¾ç¸½å£‡ï¼Œè«‹å¦é¸åœ°é»ã€‚\n";
 
         if (env->query_room_id(id) || env->query_room_name(name))
-                return "ÕâÀïÒÑ¾­ÓĞ¸ö·¿¼äÊ¹ÓÃÁËÕâ¸ö´úºÅÁË¡£\n";
+                return "é€™è£¡å·²ç¶“æœ‰å€‹æˆ¿é–“ä½¿ç”¨äº†é€™å€‹ä»£è™Ÿäº†ã€‚\n";
 
         if (file_size(BUNCH_HOME + id + "/center.c") > 0)
-                return "ÒÑ¾­ÓĞ±ğµÄ°ïÅÉÊ¹ÓÃÁËÕâ¸öID´úºÅÁË¡£\n";
+                return "å·²ç¶“æœ‰åˆ¥çš„å¹«æ´¾ä½¿ç”¨äº†é€™å€‹IDä»£è™Ÿäº†ã€‚\n";
         // ......
         return 0;
 }
 
-// ²é¿´ÊÇ·ñ¿ÉÒÔ´´½¨Õâ¸ö
+// æŸ¥çœ‹æ˜¯å¦å¯ä»¥å‰µå»ºé€™å€‹
 public mixed valid_new_bunch(string fname)
 {
         if (query(fname + "/member"))
-                return "ÈË¼ÒÔç¾ÍÓĞ½ĞÕâ¸öµÄÀ²£¬Äã¾Í±ğ´ÕÈÈÄÖÁË¡£\n";
+                return "äººå®¶æ—©å°±æœ‰å«é€™å€‹çš„å•¦ï¼Œä½ å°±åˆ¥æ¹Šç†±é¬§äº†ã€‚\n";
 
         if (member_array(fname, npc_bunch) != -1)
-                return "½­ºşÉÏÔçÓĞÕâ¸öÏÖ³ÉµÄ°ïÅÉ£¬Äã»¹Ïë×öÊ²Ã´£¿\n";
+                return "æ±Ÿæ¹–ä¸Šæ—©æœ‰é€™å€‹ç¾æˆçš„å¹«æ´¾ï¼Œä½ é‚„æƒ³åšä»€éº¼ï¼Ÿ\n";
 
         if (! undefinedp(FAMILY_D->query_family_fame(fname))
                 || ! undefinedp(LEAGUE_D->query_league_fame(fname)))
-                return "½­ºşÉÏÒÑ¾­ÓĞ" + fname + "ÁË£¬Äã»¹Ïë×öÊ²Ã´£¿\n";
+                return "æ±Ÿæ¹–ä¸Šå·²ç¶“æœ‰" + fname + "äº†ï¼Œä½ é‚„æƒ³åšä»€éº¼ï¼Ÿ\n";
 
         return 0;
 }
 
-// ´´½¨°ïÅÉ
+// å‰µå»ºå¹«æ´¾
 public void create_bunch(string fname, string id, string type, int base, object *obs)
 {
         mapping data;
@@ -1129,11 +1129,11 @@ public void create_bunch(string fname, string id, string type, int base, object 
                         zone = domain_file(position);
 
                         data += ([ "level" : 7,
-                                   "title" : "°ïÖ÷" ]);
+                                   "title" : "å¹«ä¸»" ]);
                 } else
                 {
                         data += ([ "level" : 6,
-                                   "title" : "ÔªÀÏ" ]);
+                                   "title" : "å…ƒè€" ]);
                 }
 
                 set("bunch", data, ob);
@@ -1185,10 +1185,10 @@ CODE;
 
 void create()
 {
-        set_name("ÈÎÎñÊ¹Õß", ({ "quester" }));
-        set("gender", "ÄĞĞÔ");
+        set_name("ä»»å‹™ä½¿è€…", ({ "quester" }));
+        set("gender", "ç”·æ€§");
         set("age", 23);
-        set("long", "ËûÊÇÒ»¸ö³¤µÃºÜÓ¢¿¡µÄÄĞ×Ó£¬¿´ÉÏÈ¥·çÁ÷ÙÃÙÎ¡£\n");
+        set("long", "ä»–æ˜¯ä¸€å€‹é•·å¾—å¾ˆè‹±ä¿Šçš„ç”·å­ï¼Œçœ‹ä¸Šå»é¢¨æµå€œå„»ã€‚\n");
 CODE;
         if (type == "bad")
         {
@@ -1249,10 +1249,10 @@ int sort_by_id(mapping quest1, mapping quest2);
 void create()
 {
 CODE;
-        code += sprintf("\tset\(\"short\", \"%s×ÜÌ³\"\);\n", fname);
+        code += sprintf("\tset\(\"short\", \"%sç¸½å£‡\"\);\n", fname);
 
-        code += sprintf("\tset(\"long\", \"·¿¼äµÄÇ½ÉÏÓĞÒ»¿éÅÆ×Ó(paizi)¡£¼ÓÈë°ïÅÉ" +
-                        "%sµÄÍæ¼Ò£¬¿ÉÒÔÔÚÕâÀïÑ¡ÔñÈÎÎñÈ¥Íê³É¡£\\n\");\n", fname);
+        code += sprintf("\tset(\"long\", \"æˆ¿é–“çš„ç‰†ä¸Šæœ‰ä¸€å¡Šç‰Œå­(paizi)ã€‚åŠ å…¥å¹«æ´¾" +
+                        "%sçš„ç©å®¶ï¼Œå¯ä»¥åœ¨é€™è£¡é¸æ“‡ä»»å‹™å»å®Œæˆã€‚\\n\");\n", fname);
 
         code += "\tset(\"objects\", ([\n\t\t__DIR__\"npc/quester\" : 1,\n\t]));\n";
         code += "\tset(\"exits\", ([\n\t\t\"south\" : __DIR__\"room9\", \n\t]));\n";
@@ -1277,8 +1277,8 @@ int is_bunch_room() { return 1; }
 
 void create()
 {
-        set("short", "¿Õ·¿¼ä - ÇëÊ¹ÓÃ cshort À´±à¼­±êÌâ");
-        set("long", "ÕâÊÇÒ»¼äÊ²Ã´Ò²Ã»ÓĞµÄ¿Õ·¿¼ä£¬ÇëÀûÓÃ clong À´±à¼­·¿¼äĞğÊö¡£\n");
+        set("short", "ç©ºæˆ¿é–“ - è«‹ä½¿ç”¨ cshort ä¾†ç·¨è¼¯æ¨™é¡Œ");
+        set("long", "é€™æ˜¯ä¸€é–“ä»€éº¼ä¹Ÿæ²’æœ‰çš„ç©ºæˆ¿é–“ï¼Œè«‹åˆ©ç”¨ clong ä¾†ç·¨è¼¯æˆ¿é–“æ•˜è¿°ã€‚\n");
 
         set("exits", ([
                 "north" : __DIR__"room0",
@@ -1294,64 +1294,64 @@ CODE;
         env->save();
         CP_CMD->copy_dir("/d/room/bunch/", BUNCH_HOME + id + "/");
 
-        message("vision",creater->name()+"ÕÒÁËÒ»¶Ñ¹¤ÈËÀ´ÔÚ"+query("short", env)+
-                "ÇÃÇÃ´ò´òµÄ£¬½¨Ôì³öÒ»Ğ©·¿¼ä¡£\n", env);
+        message("vision",creater->name()+"æ‰¾äº†ä¸€å †å·¥äººä¾†åœ¨"+query("short", env)+
+                "æ•²æ•²æ‰“æ‰“çš„ï¼Œå»ºé€ å‡ºä¸€äº›æˆ¿é–“ã€‚\n", env);
 
         data = ([
-                "bunch_id"      : id,                // °ïÅÉ´úºÅ
-                "bunch_name"    : fname,             // °ïÅÉÃû³Æ
-                "time"          : time(),            // °ïÅÉ³ÉÁ¢Ê±¼ä
-                "master"        : master,            // °ïÅÉ°ïÖ÷
-                "color"         : NOR,               // °ïÅÉÑÕÉ«
-                "money"         : 10000000,          // °ïÅÉ×Ê½ğ
-                "member"        : obs->query_id(0),  // °ïÅÉ³ÉÔ±
-                "type"          : type,              // °ïÅÉÕıĞ°
-                "tax"           : 5,                 // °ïÅÉË°ÂÊ
-                "alert"         : 0,                 // °ïÅÉ¾¯½ä(1~4)
-                "league"        : ({}),              // °ïÅÉÍ¬ÃË
-                "char_status"   : 0,                 // °ïÅÉÈË²Ä
-                "weapon_status" : 0,                 // °ïÅÉÎäÆ÷
-                "char_money"    : 0,                 // Í¶×ÊÔÚÈË²ÄµÄ½ğ¶î
-                "weapon_money"  : 0,                 // Í¶×ÊÔÚÎäÆ÷µÄ½ğ¶î
-                "senior"        : obs->query_id(0),  // ÔªÀÏ£¨²»¿ÉÌáÉı£©
-                "room_position" : position,          // °ïÅÉËùÔÚÎÄ¼şÂ·¾¶
-                "room_entry"    : entry,             // °ïÅÉÈë¿ÚÎÄ¼şÂ·¾¶
-                "room_name"     : fname,             // °ïÅÉÈë¿Ú´¦·¿¼äÃû
-                "room_id"       : id,                // °ïÅÉÈë¿Ú·¿¼ä´úÂë
-                "room_zone"     : zone,              // °ïÅÉËùÔÚÎ»ÖÃÇøÓò
-                "war_target"    : "NULL",            // °ïÅÉÕ½ÕùµĞ¶Ô°ïÅÉ
-                "war_kill"      : 0,                 // Õ½ÕùÉ±ËÀ¶ÔÊÖÊıÁ¿
-                "war_endtime"   : 0,                 // °ïÅÉÕ½Õù½áÊøÊ±¼ä
-                "war_win"       : 0,                 // °ïÅÉÕ½ÕùÊ¤Àû´ÎÊı
-                "war_lose"      : 0,                 // °ïÅÉÕ½ÕùÊ§°Ü´ÎÊı
+                "bunch_id"      : id,                // å¹«æ´¾ä»£è™Ÿ
+                "bunch_name"    : fname,             // å¹«æ´¾åç¨±
+                "time"          : time(),            // å¹«æ´¾æˆç«‹æ™‚é–“
+                "master"        : master,            // å¹«æ´¾å¹«ä¸»
+                "color"         : NOR,               // å¹«æ´¾é¡è‰²
+                "money"         : 10000000,          // å¹«æ´¾è³‡é‡‘
+                "member"        : obs->query_id(0),  // å¹«æ´¾æˆå“¡
+                "type"          : type,              // å¹«æ´¾æ­£é‚ª
+                "tax"           : 5,                 // å¹«æ´¾ç¨…ç‡
+                "alert"         : 0,                 // å¹«æ´¾è­¦æˆ’(1~4)
+                "league"        : ({}),              // å¹«æ´¾åŒç›Ÿ
+                "char_status"   : 0,                 // å¹«æ´¾äººæ
+                "weapon_status" : 0,                 // å¹«æ´¾æ­¦å™¨
+                "char_money"    : 0,                 // æŠ•è³‡åœ¨äººæçš„é‡‘é¡
+                "weapon_money"  : 0,                 // æŠ•è³‡åœ¨æ­¦å™¨çš„é‡‘é¡
+                "senior"        : obs->query_id(0),  // å…ƒè€ï¼ˆä¸å¯æå‡ï¼‰
+                "room_position" : position,          // å¹«æ´¾æ‰€åœ¨æ–‡ä»¶è·¯å¾‘
+                "room_entry"    : entry,             // å¹«æ´¾å…¥å£æ–‡ä»¶è·¯å¾‘
+                "room_name"     : fname,             // å¹«æ´¾å…¥å£è™•æˆ¿é–“å
+                "room_id"       : id,                // å¹«æ´¾å…¥å£æˆ¿é–“ä»£ç¢¼
+                "room_zone"     : zone,              // å¹«æ´¾æ‰€åœ¨ä½ç½®å€åŸŸ
+                "war_target"    : "NULL",            // å¹«æ´¾æˆ°çˆ­æ•µå°å¹«æ´¾
+                "war_kill"      : 0,                 // æˆ°çˆ­æ®ºæ­»å°æ‰‹æ•¸é‡
+                "war_endtime"   : 0,                 // å¹«æ´¾æˆ°çˆ­çµæŸæ™‚é–“
+                "war_win"       : 0,                 // å¹«æ´¾æˆ°çˆ­å‹åˆ©æ¬¡æ•¸
+                "war_lose"      : 0,                 // å¹«æ´¾æˆ°çˆ­å¤±æ•—æ¬¡æ•¸
         ]);
         set(fname, data);
 
         save();
 }
 
-// ½âÉ¢°ïÅÉ
+// è§£æ•£å¹«æ´¾
 public void dismiss_bunch(string fname)
 {
         string *ids;
         string id, dir, pos;
         object ob, npc, room;
 
-        // Çå³ıÃûÍûĞÅÏ¢
+        // æ¸…é™¤åæœ›ä¿¡æ¯
         map_delete(bunch_fame, fname);
         if (mapp(last_bunch_fame)) map_delete(last_bunch_fame, fname);
 
-        // Çå³ı°ïÅÉÖĞµÄËùÓĞÍæ¼ÒµÄÏà¹ØĞÅÏ¢
+        // æ¸…é™¤å¹«æ´¾ä¸­çš„æ‰€æœ‰ç©å®¶çš„ç›¸é—œä¿¡æ¯
         ids = query(fname + "/member");
         dir = query(fname + "/room_id");
         pos = query(fname + "/room_position");
 
         if (arrayp(ids))
         {
-                // °ïÅÉÖĞ»¹ÓĞÍæ¼Ò£¬Çå³ıËûÃÇµÄĞÅÏ¢
+                // å¹«æ´¾ä¸­é‚„æœ‰ç©å®¶ï¼Œæ¸…é™¤ä»–å€‘çš„ä¿¡æ¯
                 foreach (id in ids)
                 {
-                        // ´¦ÀíÖĞ
+                        // è™•ç†ä¸­
                         reset_eval_cost();
                         UPDATE_D->clear_user_data(id, "bunch");
                 }
@@ -1361,12 +1361,12 @@ public void dismiss_bunch(string fname)
 
         if (arrayp(ids))
         {
-                // °ïÅÉÖĞ»¹ÓĞµØÅÌ£¬Çå³ıËûÃÇµÄĞÅÏ¢
+                // å¹«æ´¾ä¸­é‚„æœ‰åœ°ç›¤ï¼Œæ¸…é™¤ä»–å€‘çš„ä¿¡æ¯
                 foreach (id in ids)
                 {
-                        // ´¦ÀíÖĞ
+                        // è™•ç†ä¸­
                         reset_eval_cost();
-                        area_fame[id]["bunch_name"] = "¶ÀÁ¢ÖĞ";
+                        area_fame[id]["bunch_name"] = "ç¨ç«‹ä¸­";
 
                         ob = get_object(id);
                         if (! ob) continue;
@@ -1383,21 +1383,21 @@ public void dismiss_bunch(string fname)
                 room = get_object(pos);
                 if (objectp(room))
                 {
-                        message("vision", "Í»È»¼¸¸öÍ¯×Ó·ÉÒ²ËÆ"
-                                  "µÄ³åÁË¹ıÀ´£¬ÊÖÀï²Ù×Å¸÷ÖÖ¼Ò»ï"
-                                  "£¬ÈÂÈÂµÀ£ºÉÁ¿ª£¡¶¼ÉÁ¿ª£¡\n",
+                        message("vision", "çªç„¶å¹¾å€‹ç«¥å­é£›ä¹Ÿä¼¼"
+                                  "çš„æ²–äº†éä¾†ï¼Œæ‰‹è£¡æ“è‘—å„ç¨®å®¶ä¼™"
+                                  "ï¼Œåš·åš·é“ï¼šé–ƒé–‹ï¼éƒ½é–ƒé–‹ï¼\n",
                                   room);
                         room->destroy_room(dir);
                         room->save();
                 }
         }
 
-        // Çå³ı°ïÅÉµÄËùÓĞĞÅÏ¢
+        // æ¸…é™¤å¹«æ´¾çš„æ‰€æœ‰ä¿¡æ¯
         delete(fname);
         save();
 }
 
-// ²éÑ¯°ïÅÉÖĞµÄµÜĞÖ
+// æŸ¥è©¢å¹«æ´¾ä¸­çš„å¼Ÿå…„
 public string *query_bunch_members(mixed ob)
 {
         string *member;
@@ -1417,7 +1417,7 @@ public string *query_bunch_members(mixed ob)
         return member;
 }
 
-// ²éÑ¯°ïÅÉÖĞµÄµØÅÌ
+// æŸ¥è©¢å¹«æ´¾ä¸­çš„åœ°ç›¤
 public string *query_bunch_areas(mixed ob)
 {
         string *areas, *aname;
@@ -1461,7 +1461,7 @@ public string *query_bunch_league(mixed ob)
         return member;
 }
 
-// ²éÑ¯µØÅÌµÄĞÅÏ¢
+// æŸ¥è©¢åœ°ç›¤çš„ä¿¡æ¯
 public mixed query_area_info(string afile, string info)
 {
         if (! stringp(afile) || ! stringp(info))
@@ -1479,7 +1479,7 @@ public mixed query_area_info(string afile, string info)
         return area_fame[afile][info];
 }
 
-// ²éÑ¯°ïÅÉµÄĞÅÏ¢
+// æŸ¥è©¢å¹«æ´¾çš„ä¿¡æ¯
 public mixed query_bunch_info(string fname, string info)
 {
         if (stringp(fname) && stringp(info))
@@ -1493,7 +1493,7 @@ public mixed query_bunch_info(string fname, string info)
                 return 0;
 }
 
-// ÔÚ°ïÅÉÖĞ±ä¶¯ÆäËû²ÎÊı£¬ÀıÈç°ïÅÉ×Ê²ú¡¢°ïÖ÷µÈ¡£
+// åœ¨å¹«æ´¾ä¸­è®Šå‹•å…¶ä»–åƒæ•¸ï¼Œä¾‹å¦‚å¹«æ´¾è³‡ç”¢ã€å¹«ä¸»ç­‰ã€‚
 public void add_bunch_info(string fname, string info, mixed n)
 {
         if (! mapp(query(fname)))
@@ -1508,7 +1508,7 @@ public void add_bunch_info(string fname, string info, mixed n)
                 set(fname + "/" + info, n);
 }
 
-// ¸Ä±äµØÅÌÖĞµÄ²ÎÊıÖµ
+// æ”¹è®Šåœ°ç›¤ä¸­çš„åƒæ•¸å€¼
 public void add_area_info(string afile, string info, mixed value)
 {
         if (undefinedp(area_fame[afile]))
@@ -1536,7 +1536,7 @@ public void remove_area_from_areas(string area_file)
         map_delete(area_fame, area_file);
 }
 
-// ´Ó°ïÅÉÖĞÈ¥µôÒ»¸öÈË
+// å¾å¹«æ´¾ä¸­å»æ‰ä¸€å€‹äºº
 public varargs void remove_member_from_bunch(mixed fname, string id)
 {
         mapping bunch;
@@ -1566,7 +1566,7 @@ public varargs void remove_member_from_bunch(mixed fname, string id)
         if (sizeof(member) < 1)
         {
                 CHANNEL_D->do_channel(this_object(), "rumor",
-                        "ÌıËµ" + fname + "ÈË²ÅµòÁã£¬ÎôÈÕ°ïÖÚ¾¡½ÔÉ¢È¥£¬´Ó´Ë½­ºşÔÙÎŞ´Ë°ïÅÉÁË¡£");
+                        "è½èªª" + fname + "äººæ‰å‡‹é›¶ï¼Œæ˜”æ—¥å¹«çœ¾ç›¡çš†æ•£å»ï¼Œå¾æ­¤æ±Ÿæ¹–å†ç„¡æ­¤å¹«æ´¾äº†ã€‚");
 
                 map_delete(bunch_fame, fname);
                 if (mapp(last_bunch_fame)) map_delete(last_bunch_fame, fname);
@@ -1577,12 +1577,12 @@ public varargs void remove_member_from_bunch(mixed fname, string id)
 
                 if (arrayp(areas))
                 {
-                        // °ïÅÉÖĞ»¹ÓĞµØÅÌ£¬Çå³ıËûÃÇµÄĞÅÏ¢
+                        // å¹«æ´¾ä¸­é‚„æœ‰åœ°ç›¤ï¼Œæ¸…é™¤ä»–å€‘çš„ä¿¡æ¯
                         foreach (area in areas)
                         {
-                                // ´¦ÀíÖĞ
+                                // è™•ç†ä¸­
                                 reset_eval_cost();
-                                area_fame[area]["bunch_name"] = "¶ÀÁ¢ÖĞ";
+                                area_fame[area]["bunch_name"] = "ç¨ç«‹ä¸­";
 
                                 room = get_object(area);
                                 if (! room) continue;
@@ -1599,9 +1599,9 @@ public varargs void remove_member_from_bunch(mixed fname, string id)
                         room = get_object(pos);
                         if (objectp(room))
                         {
-                                message("vision", "Í»È»¼¸¸öÍ¯×Ó·ÉÒ²ËÆ"
-                                        "µÄ³åÁË¹ıÀ´£¬ÊÖÀï²Ù×Å¸÷ÖÖ¼Ò»ï"
-                                        "£¬ÈÂÈÂµÀ£ºÉÁ¿ª£¡¶¼ÉÁ¿ª£¡\n",
+                                message("vision", "çªç„¶å¹¾å€‹ç«¥å­é£›ä¹Ÿä¼¼"
+                                        "çš„æ²–äº†éä¾†ï¼Œæ‰‹è£¡æ“è‘—å„ç¨®å®¶ä¼™"
+                                        "ï¼Œåš·åš·é“ï¼šé–ƒé–‹ï¼éƒ½é–ƒé–‹ï¼\n",
                                         room);
                                 room->destroy_room(dir);
                                 room->save();
@@ -1613,7 +1613,7 @@ public varargs void remove_member_from_bunch(mixed fname, string id)
                 bunch["member"] = member;
 }
 
-// ÔÚ°ïÅÉÖĞÔö¼ÓÒ»¸öÈË
+// åœ¨å¹«æ´¾ä¸­å¢åŠ ä¸€å€‹äºº
 public void add_member_into_bunch(string fname, string id)
 {
         string *member;
@@ -1629,7 +1629,7 @@ public void add_member_into_bunch(string fname, string id)
         save();
 }
 
-// Ôö¼ÓµØÅÌµ½°ïÅÉ¿ØÖÆÖĞ
+// å¢åŠ åœ°ç›¤åˆ°å¹«æ´¾æ§åˆ¶ä¸­
 public void add_area_into_bunch(string fname, string afile, string aname, object ob)
 {
         string bname;
@@ -1655,9 +1655,9 @@ public void add_area_into_bunch(string fname, string afile, string aname, object
         } else
         {
                 bname = area_fame[afile]["bunch_name"];
-                if (bname != "¶ÀÁ¢ÖĞ")
-                        message("channel:rumor",  HIM "¡¾°ïÅÉ¡¿Ä³ÈË£º" + aname +
-                                "Ğû²¼ÍÑÀë°ïÅÉ¡¸" + bname + "¡¹µÄ¿ØÖÆ£¡\n" NOR, users());
+                if (bname != "ç¨ç«‹ä¸­")
+                        message("channel:rumor",  HIM "ã€å¹«æ´¾ã€‘æŸäººï¼š" + aname +
+                                "å®£å¸ƒè„«é›¢å¹«æ´¾ã€Œ" + bname + "ã€çš„æ§åˆ¶ï¼\n" NOR, users());
                 area_fame[afile]["bunch_name"] = fname;
                 area_fame[afile]["zhongcheng"] = 10;
         }
@@ -1666,16 +1666,16 @@ public void add_area_into_bunch(string fname, string afile, string aname, object
         set("bunch/zhongcheng", 10, ob);
         set("bunch/max_zhongcheng", 100, ob);
 
-        message("channel:rumor",HIM"¡¾°ïÅÉ¡¿Ä³ÈË£º"+query("name", ob)+
-                "¼ÓÈë°ïÅÉ¡¸" + fname + "¡¹£¡\n" NOR, users());
+        message("channel:rumor",HIM"ã€å¹«æ´¾ã€‘æŸäººï¼š"+query("name", ob)+
+                "åŠ å…¥å¹«æ´¾ã€Œ" + fname + "ã€ï¼\n" NOR, users());
 
-        message("channel:rumor", HIM "¡¾°ïÅÉ¡¿Ä³ÈË£º" + aname +
-                "±»°ïÅÉ¡¸" + fname + "¡¹ÍÌ²¢£¡\n" NOR, users());
+        message("channel:rumor", HIM "ã€å¹«æ´¾ã€‘æŸäººï¼š" + aname +
+                "è¢«å¹«æ´¾ã€Œ" + fname + "ã€åä¸¦ï¼\n" NOR, users());
 
         return;
 }
 
-// ²éÑ¯Á½¸ö°ïÅÉÊÇ·ñÎªÍ¬ÃË
+// æŸ¥è©¢å…©å€‹å¹«æ´¾æ˜¯å¦ç‚ºåŒç›Ÿ
 public int bunch_is_league(mixed ob1, mixed ob2)
 {
         string *lea;
@@ -1706,7 +1706,7 @@ public int bunch_is_league(mixed ob1, mixed ob2)
         return 0;
 }
 
-// Ôö¼ÓÒ»¸öÍ¬ÃË°ïÅÉ
+// å¢åŠ ä¸€å€‹åŒç›Ÿå¹«æ´¾
 public int add_league_into_bunch(mixed ob1, mixed ob2)
 {
         string *lea;
@@ -1748,7 +1748,7 @@ public int add_league_into_bunch(mixed ob1, mixed ob2)
         return 1;
 }
 
-// ÒÆ³ıÒ»¸öÍ¬ÃË°ïÅÉ
+// ç§»é™¤ä¸€å€‹åŒç›Ÿå¹«æ´¾
 public int remove_league_from_bunch(mixed ob1, mixed ob2)
 {
         string *lea;
@@ -1794,11 +1794,11 @@ public int remove_league_from_bunch(mixed ob1, mixed ob2)
         return 1;
 }
 
-// Ğû²¼Õ½Õù
+// å®£å¸ƒæˆ°çˆ­
 public int announce_war_start(string fname, string bname)
 {
-        message("channel:rumor", HIR "\n\tºä¶¯ÎäÁÖ¡«¡«¾ª¶¯Íò½Ì¡«¡«\n\t"
-                HIC + fname + HIR "Óë" HIM + bname + HIR "µÄ°ïÅÉÃ¬¶Ü¼¤»¯£¬¿ªÊ¼È«Ãæ¿ªÕ½¡­¡­\n" NOR, users());
+        message("channel:rumor", HIR "\n\tè½Ÿå‹•æ­¦æ—ï½ï½é©šå‹•è¬æ•™ï½ï½\n\t"
+                HIC + fname + HIR "èˆ‡" HIM + bname + HIR "çš„å¹«æ´¾çŸ›ç›¾æ¿€åŒ–ï¼Œé–‹å§‹å…¨é¢é–‹æˆ°â€¦â€¦\n" NOR, users());
 
         set(fname + "/war_target", bname);
         set(bname + "/war_target", fname);
@@ -1808,7 +1808,7 @@ public int announce_war_start(string fname, string bname)
         return 1;
 }
 
-public int war_stop_time(string fname)  // µÚÒ»ÖÖÍ£Ö¹Ä£Ê½-Ê±¼äµ½
+public int war_stop_time(string fname)  // ç¬¬ä¸€ç¨®åœæ­¢æ¨¡å¼-æ™‚é–“åˆ°
 {
         int kill_1, kill_2, money;
         string bname, wname, lname;
@@ -1833,30 +1833,30 @@ public int war_stop_time(string fname)  // µÚÒ»ÖÖÍ£Ö¹Ä£Ê½-Ê±¼äµ½
         }
         else
         {
-                message("channel:rumor", HIR "\n\tºä¶¯ÎäÁÖ¡«¡«¾ª¶¯Íò½Ì¡«¡«\n\t"
-                        HIC + fname + HIR "Óë" HIM + bname + HIR "µÄ°ïÅÉ¶Ô¾öÖÕÓÚ½áÊø¡­¡­\n\t"
-                        HIC + fname + HIR "×Ü¹²É±µô" HIM + bname + HIG " " + CHINESE_D->chinese_number(kill_1) + HIR "Î»°ïÖÚ£¬\n\t"
-                        HIM + bname + HIC "×Ü¹²É±µô" HIC + fname + HIG " " + CHINESE_D->chinese_number(kill_2) + HIR "Î»°ïÖÚ£¬\n\t"
-                        HIR + "Ë«·½½ÔËÀÉË²ÒÖØ£¬¹ÊÒÔÆ½ÊÖ×÷ÊÕ¡£\n" NOR, users());
+                message("channel:rumor", HIR "\n\tè½Ÿå‹•æ­¦æ—ï½ï½é©šå‹•è¬æ•™ï½ï½\n\t"
+                        HIC + fname + HIR "èˆ‡" HIM + bname + HIR "çš„å¹«æ´¾å°æ±ºçµ‚äºçµæŸâ€¦â€¦\n\t"
+                        HIC + fname + HIR "ç¸½å…±æ®ºæ‰" HIM + bname + HIG " " + CHINESE_D->chinese_number(kill_1) + HIR "ä½å¹«çœ¾ï¼Œ\n\t"
+                        HIM + bname + HIC "ç¸½å…±æ®ºæ‰" HIC + fname + HIG " " + CHINESE_D->chinese_number(kill_2) + HIR "ä½å¹«çœ¾ï¼Œ\n\t"
+                        HIR + "é›™æ–¹çš†æ­»å‚·æ…˜é‡ï¼Œæ•…ä»¥å¹³æ‰‹ä½œæ”¶ã€‚\n" NOR, users());
 
                 end_bunch_war(bname, fname, 0);
 
                 return 1;
         }
 
-        message("channel:rumor", HIR "\n\tºä¶¯ÎäÁÖ¡«¡«¾ª¶¯Íò½Ì¡«¡«\n\t"
-                HIC + wname + HIR "Óë" HIM + lname + HIR "µÄ°ïÅÉ¶Ô¾öÖÕÓÚ½áÊø¡­¡­\n\t"
-                HIC + wname + HIR "×Ü¹²É±µô" HIM + lname + HIG " " + CHINESE_D->chinese_number(kill_1) + HIR "Î»°ïÖÚ£¬\n\t"
-                HIM + lname + HIC "×Ü¹²É±µô" HIC + wname + HIG " " + CHINESE_D->chinese_number(kill_2) + HIR "Î»°ïÖÚ£¬\n\t"
-                HIM + lname + HIC "Õ½°Ü£¬±ØĞëÅâ³¥" HIC + wname + HIY " " +
-                CHINESE_D->chinese_number(money) + HIR "Á½»Æ½ğ¡£\n" NOR, users());
+        message("channel:rumor", HIR "\n\tè½Ÿå‹•æ­¦æ—ï½ï½é©šå‹•è¬æ•™ï½ï½\n\t"
+                HIC + wname + HIR "èˆ‡" HIM + lname + HIR "çš„å¹«æ´¾å°æ±ºçµ‚äºçµæŸâ€¦â€¦\n\t"
+                HIC + wname + HIR "ç¸½å…±æ®ºæ‰" HIM + lname + HIG " " + CHINESE_D->chinese_number(kill_1) + HIR "ä½å¹«çœ¾ï¼Œ\n\t"
+                HIM + lname + HIC "ç¸½å…±æ®ºæ‰" HIC + wname + HIG " " + CHINESE_D->chinese_number(kill_2) + HIR "ä½å¹«çœ¾ï¼Œ\n\t"
+                HIM + lname + HIC "æˆ°æ•—ï¼Œå¿…é ˆè³ å„Ÿ" HIC + wname + HIY " " +
+                CHINESE_D->chinese_number(money) + HIR "å…©é»ƒé‡‘ã€‚\n" NOR, users());
 
                 end_bunch_war(wname, lname, money);
 
                 return 1;
 }
 
-public int war_stop_kill(string fname)   // µÚ¶şÖÖÍ£Ö¹Ä£Ê½..°ïÖ÷±»×÷µô......
+public int war_stop_kill(string fname)   // ç¬¬äºŒç¨®åœæ­¢æ¨¡å¼..å¹«ä¸»è¢«ä½œæ‰......
 {
         string bname, master;
         int number, money;
@@ -1866,26 +1866,26 @@ public int war_stop_kill(string fname)   // µÚ¶şÖÖÍ£Ö¹Ä£Ê½..°ïÖ÷±»×÷µô......
         number = query_bunch_info(bname, "war_kill");
         money = number * 1000 + 100000;
 
-        message("channel:rumor", HIC "\tºÅÍâ!!ºÅÍâ!!ºä¶¯ÎäÁÖµÄ" + HIG + bname + HIC "ºÍ" HIG + fname + HIC "µÄ°ïÅÉ¶Ô¾ö×ÜÓÚÓĞÁË½á¹ûÁË!!!!\n"
-                HIG "       " + bname + HIC "É±µôÁË" HIG + fname + HIC "°ïÅÉ°ïÖ÷:" HIG + master + HIC "\n" +
-                "\tÒ»Ê±Ö®¼ä" + HIG + fname + HIC + "ÒòÎª°ïÖ÷±»×öµô£¬ÒÔÖÂ¾üĞÄ´óÂÒ!!!Ò»Â·°ÜÍË!!!\n" + HIC +
-                "\t×îºóÅĞ¶¨::" + HIG + fname + HIC + "±ØĞëÒª¸¶³ö" + CHINESE_D->chinese_number(money) + "Á½µÄÅâ³¥½ğ!!!\n" NOR, users());
+        message("channel:rumor", HIC "\tè™Ÿå¤–!!è™Ÿå¤–!!è½Ÿå‹•æ­¦æ—çš„" + HIG + bname + HIC "å’Œ" HIG + fname + HIC "çš„å¹«æ´¾å°æ±ºç¸½äºæœ‰äº†çµæœäº†!!!!\n"
+                HIG "       " + bname + HIC "æ®ºæ‰äº†" HIG + fname + HIC "å¹«æ´¾å¹«ä¸»:" HIG + master + HIC "\n" +
+                "\tä¸€æ™‚ä¹‹é–“" + HIG + fname + HIC + "å› ç‚ºå¹«ä¸»è¢«åšæ‰ï¼Œä»¥è‡´è»å¿ƒå¤§äº‚!!!ä¸€è·¯æ•—é€€!!!\n" + HIC +
+                "\tæœ€å¾Œåˆ¤å®š::" + HIG + fname + HIC + "å¿…é ˆè¦ä»˜å‡º" + CHINESE_D->chinese_number(money) + "å…©çš„è³ å„Ÿé‡‘!!!\n" NOR, users());
 
 
         end_bunch_war(bname, fname, money);
         return 1;
 }
 
-public int war_stop_money(string lname, int money)   // µÚÈıÖÖÍ£Ö¹Ä£Ê½..ÇóºÍ......
+public int war_stop_money(string lname, int money)   // ç¬¬ä¸‰ç¨®åœæ­¢æ¨¡å¼..æ±‚å’Œ......
 {
         string wname, master;
 
         wname = query_bunch_info(lname, "war_target");
         master = query_bunch_info(lname, "master");
 
-        message("channel:rumor", HIC "\tºÅÍâ!!ºÅÍâ!!ºä¶¯ÎäÁÖµÄ" + HIG + wname + HIC "ºÍ" + HIG + lname + HIC + "µÄ°ïÅÉ¶Ô¾ö×ÜÓÚÓĞÁË½á¹ûÁË!!!!\n" + HIG +
-         "   " + wname + HIC + "Ô¸½ÓÊÜ" + HIG + lname + HIC + "µÄ°ïÖ÷" + HIG + master + HIC + "ÇóºÍ!!!Ë«·½Í¬Òâ½áÊøÕ½¶·×´Ì¬!!!\n" + HIC +
-         "\t×îºó" + HIG + lname + HIC + "Ô¸¸øÓè" + HIG + wname + HIC + "¹²" + CHINESE_D->chinese_number(money) + "Á½µÄÇóºÍ½ğ!!!\n" NOR, users());
+        message("channel:rumor", HIC "\tè™Ÿå¤–!!è™Ÿå¤–!!è½Ÿå‹•æ­¦æ—çš„" + HIG + wname + HIC "å’Œ" + HIG + lname + HIC + "çš„å¹«æ´¾å°æ±ºç¸½äºæœ‰äº†çµæœäº†!!!!\n" + HIG +
+         "   " + wname + HIC + "é¡˜æ¥å—" + HIG + lname + HIC + "çš„å¹«ä¸»" + HIG + master + HIC + "æ±‚å’Œ!!!é›™æ–¹åŒæ„çµæŸæˆ°é¬¥ç‹€æ…‹!!!\n" + HIC +
+         "\tæœ€å¾Œ" + HIG + lname + HIC + "é¡˜çµ¦äºˆ" + HIG + wname + HIC + "å…±" + CHINESE_D->chinese_number(money) + "å…©çš„æ±‚å’Œé‡‘!!!\n" NOR, users());
 
         end_bunch_war(wname, lname, money);
 
@@ -1917,7 +1917,7 @@ public int end_bunch_war(string wname, string lname, int gold)
         return 1;
 }
 
-// Ôö¼Ó°ïÅÉÈÙÓşµã
+// å¢åŠ å¹«æ´¾æ¦®è­½é»
 void add_bunch_honors(string bname, int honors)
 {
         addn(bname + "/honors", honors);
@@ -1929,7 +1929,7 @@ int query_bunch_honors(string bname)
         return query(bname + "/honors");
 }
 
-// Íâ²¿µ÷ÓÃ¸ßĞ§Á·¹¦
+// å¤–éƒ¨èª¿ç”¨é«˜æ•ˆç·´åŠŸ
 int query_bunch_efficient(string bname, string arg)
 {
         if( !bname ) return 0;
@@ -1949,7 +1949,7 @@ void remove_bunch_efficient(string bname, string arg)
         save();
 }
 
-// ÅÅĞò£ºÉıĞò
+// æ’åºï¼šå‡åº
 private int sort_hatred(string id1, string id2, mapping hatred)
 {
         mixed *d1, *d2;

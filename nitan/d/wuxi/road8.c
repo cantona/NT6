@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "���С��");
+        set("short", "鄉間小道");
         set("long", @LONG
-·���ߵ������Ͱ������࣬���಻֪����СҰ��������е�����
-ȥ��͸����֦�������߶���һ���޼ʵ���Ұ������ôҲ�����뵽����
-����������Խ�Ļ���÷���ˡ�
+路兩邊的樹都低矮了許多，許多不知名的小野花在輕風中點來點
+去，透過樹枝看到兩邊都是一望無際的田野。你怎麼也不會想到這裡
+就是孕育吳越文化的梅村了。
 LONG );
         set("outdoors", "wuxi");
         set("no_clean_up", 0);

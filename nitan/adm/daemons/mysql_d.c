@@ -11,7 +11,7 @@ mapping mysql;
 
 varargs mixed exec(int handle, string sql);
 
-// ½¨Á¢ MYSQL Á¬Ïß
+// å»ºç«‹ MYSQL é€£ç·š
 varargs mixed connect(string hostname, string database, string username)
 {
 	mixed handle;
@@ -39,7 +39,7 @@ varargs mixed connect(string hostname, string database, string username)
 	return handle;
 }
  
-// ¹Ø±Õ MYSQL Á¬Ïß
+// é—œé–‰ MYSQL é€£ç·š
 varargs int close(int handle)
 {
 	if( undefinedp(handle) )
@@ -62,7 +62,7 @@ varargs int close(int handle)
 }
 
 
-// Ö´ÐÐ SQL Ö¸Áî
+// åŸ·è¡Œ SQL æŒ‡ä»¤
 varargs mixed exec(int handle, string sql)
 {
 	mixed value;
@@ -114,5 +114,5 @@ int remove()
 }
 string query_name()
 {
-	return "MYSQL ×ÊÁÏ¿âÏµÍ³(MYSQL_D)";
+	return "MYSQL è³‡æ–™åº«ç³»çµ±(MYSQL_D)";
 }

@@ -1,10 +1,10 @@
-// ding-dodge.c ¶¡×Ö²½ 
+// ding-dodge.c ä¸å­—æ­¥ 
 
 inherit SKILL;
 
 string *dodge_msg = ({
-        "$nÂş²»¾­ĞÄµÄÏò×óÂõ³öÒ»²½£¬¸ÕºÃ±Ü¹ı$NµÄÁèÀ÷¹¥ÊÆ¡£\n",
-        "¿ÉÊÇ$nÇ¡ÇÉÍùÓÒ×ßÁËÒ»²½£¬¶ã¹ıÁË$NÕâÒ»ÕĞ¡£\n",
+        "$næ¼«ä¸ç¶“å¿ƒçš„å‘å·¦é‚å‡ºä¸€æ­¥ï¼Œå‰›å¥½é¿é$Nçš„å‡Œå²æ”»å‹¢ã€‚\n",
+        "å¯æ˜¯$næ°å·§å¾€å³èµ°äº†ä¸€æ­¥ï¼Œèº²éäº†$Né€™ä¸€æ‹›ã€‚\n",
 });
 
 int valid_enable(string usage) { return (usage == "dodge"); }
@@ -19,9 +19,9 @@ string query_dodge_msg()
 int practice_skill(object me)
 {
         if( query("qi", me)<50 )
-                return notify_fail("ÄãµÄÌåÁ¦Ì«²îÁË£¬Âõ²»¿ª¶¡×Ö²½¡£\n");
+                return notify_fail("ä½ çš„é«”åŠ›å¤ªå·®äº†ï¼Œé‚ä¸é–‹ä¸å­—æ­¥ã€‚\n");
         if( query("neili", me)<40 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ã€‚\n");
         me->receive_damage("qi", 40);
         addn("neili", -30, me);
         return 1;

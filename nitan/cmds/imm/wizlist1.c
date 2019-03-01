@@ -27,10 +27,10 @@ string time_period(int time)
         h = t % 24;             t /= 24;
         d = t;
  
-        if (d) str = chinese_number(d) + "Ìì";
+        if (d) str = chinese_number(d) + "å¤©";
         else str = "";
 
-        if (h) str += chinese_number(h) + "Ð¡Ê±";
+        if (h) str += chinese_number(h) + "å°æ™‚";
    
         return str;
 }
@@ -47,10 +47,10 @@ int main(object me, string arg)
         if (! SECURITY_D->valid_grant(me, "(wizard)")) 
                 return 0;
 
-        desc = NOR + LOCAL_MUD_NAME() + "Ä¿Ç°µÄÎ×Ê¦ÓÐ£º\n";
-        desc += "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n" NOR;
-        desc += BBLU HIW "Î×Ê¦µÈ¼¶        Î×Ê¦ÈËÎï    Ä¿Ç°ÈÎÎñ              Á¬Ïß×´Ì¬              \n"NOR;
-        desc += "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n" NOR;
+        desc = NOR + LOCAL_MUD_NAME() + "ç›®å‰çš„å·«å¸«æœ‰ï¼š\n";
+        desc += "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n" NOR;
+        desc += BBLU HIW "å·«å¸«ç­‰ç´š        å·«å¸«äººç‰©    ç›®å‰ä»»å‹™              é€£ç·šç‹€æ…‹              \n"NOR;
+        desc += "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n" NOR;
         
         list = sort_array(SECURITY_D->query_wizlist(), (: sort_level :));
         
@@ -75,11 +75,11 @@ int main(object me, string arg)
                         r = wizhood(list[i]);                
                         switch (wizhood(list[i])) 
                         { 
-                                case "(admin)"          : msg = "ÏµÍ³¹ÜÀí"; k = adm_n; break;
-                                case "(arch)"           : msg = "³ÌÐò¿ª·¢"; k = arc_n; break;
-                                case "(wizard)"         : msg = "¿ª·¢¸¨Öú"; k = wiz_n; break;
-                                case "(apprentice)"     : msg = "Íæ¼Ò¹ÜÀí"; k = app_n; break;
-                                case "(immortal)"       : msg = "¹ÜÀí¸¨Öú"; k = imm_n; break;
+                                case "(admin)"          : msg = "ç³»çµ±ç®¡ç†"; k = adm_n; break;
+                                case "(arch)"           : msg = "ç¨‹åºé–‹ç™¼"; k = arc_n; break;
+                                case "(wizard)"         : msg = "é–‹ç™¼è¼”åŠ©"; k = wiz_n; break;
+                                case "(apprentice)"     : msg = "çŽ©å®¶ç®¡ç†"; k = app_n; break;
+                                case "(immortal)"       : msg = "ç®¡ç†è¼”åŠ©"; k = imm_n; break;
                         }
                         j = 1;
                 } else 
@@ -89,14 +89,14 @@ int main(object me, string arg)
                 }        
                 
                 if (k == 1) 
-                        str = "©¥©¥©¥";        
+                        str = "â–¡â–¡â–¡";        
                 else 
-                        str = "©¥©×©¥";
+                        str = "â–¡â–¡â–¡";
                                 
                 if (k != j && k != 1 && j != 1) 
-                        str = "  ©Ç©¥";
+                        str = "  â–¡â–¡";
                 if (k == j && k != 1 && j != 1)     
-                        str = "  ©»©¥";
+                        str = "  â–¡â–¡";
                         
                 if (objectp(ob = find_player(list[i])) && me->visible(ob)) 
                 {                        
@@ -107,9 +107,9 @@ int main(object me, string arg)
                         t=time()-query_temp("time", ob);
                         
                         if (t < 3600)
-                                att = "Á¬Ïß²»×ãÒ»Ð¡Ê±";
+                                att = "é€£ç·šä¸è¶³ä¸€å°æ™‚";
                         else
-                                att = "Á¬Ïß" + time_period(t);
+                                att = "é€£ç·š" + time_period(t);
                         
                         y = 1;
                 } else 
@@ -121,9 +121,9 @@ int main(object me, string arg)
                                                    DATA_DIR, "/" + list[i][0..0] + "/", 
                                                    list[i], __SAVE_EXTENSION__), -1)[1]);
                         if (t < 3600)
-                                att = "ÀëÏß²»×ãÒ»Ð¡Ê±";  
+                                att = "é›¢ç·šä¸è¶³ä¸€å°æ™‚";  
                         else               
-                                att = "ÀëÏß" + time_period(t);  
+                                att = "é›¢ç·š" + time_period(t);  
                         
                         y = 0;                             
                 }
@@ -135,7 +135,7 @@ int main(object me, string arg)
                                 filter_color(get_mission(list[i])), att);                                 
         }
 
-        desc += "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n" NOR;
+        desc += "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n" NOR;
         desc += NOR "\n";
         write(desc);
         return 1;
@@ -159,15 +159,15 @@ string get_mission(string arg)
                         
                 return mis;
         }
-        return "ÈÎÎñÎ´¶¨";
+        return "ä»»å‹™æœªå®š";
 }
 
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : wizlist
+æŒ‡ä»¤æ ¼å¼ : wizlist
 
-ÓÃÍ¾ : ÁÐ³öÄ¿Ç°ËùÓÐµÄÎ×Ê¦Ãûµ¥¡£
+ç”¨é€” : åˆ—å‡ºç›®å‰æ‰€æœ‰çš„å·«å¸«åå–®ã€‚
 HELP );
         return 1;
 }

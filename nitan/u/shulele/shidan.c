@@ -4,10 +4,10 @@ inherit ITEM;
 int do_fu(string arg);
 void create()
 {
-   set_name(HIR"Ê¬µ¤"NOR, ({ "shi dan","dan" }));
+   set_name(HIR"å±ä¸¹"NOR, ({ "shi dan","dan" }));
    set_weight(100);
-   set("unit", "¿Å");
-   set("long","ÕâÊÇÒ»¿ÅÓÉÊ¬ÌåÁ·³ÉµÄµ¤Ò©,·şÓÃ(fu dan)ºó£¬»á·¢ÉúÊ²Ã´ÊÂÇéÄØ?\n");
+   set("unit", "é¡†");
+   set("long","é€™æ˜¯ä¸€é¡†ç”±å±é«”ç·´æˆçš„ä¸¹è—¥,æœç”¨(fu dan)å¾Œï¼Œæœƒç™¼ç”Ÿä»€éº¼äº‹æƒ…å‘¢?\n");
    set("value", 0);
    set("no_give",1);
    set("no_save",1);
@@ -21,12 +21,12 @@ int do_fu(string arg)
 {
 	object me,ob;int i;
 	ob=this_object();me=this_player();
-	if(!arg||(arg!="dan"&&arg!="µ¤"))
-		return notify_fail("ÄãÒª·şÓÃÊ²Ã´?\n");
-	message_vision("$N·şÏÂÁËÒ»¿Å[Ê¬µ¤].\n",me);
+	if(!arg||(arg!="dan"&&arg!="ä¸¹"))
+		return notify_fail("ä½ è¦æœç”¨ä»€éº¼?\n");
+	message_vision("$Næœä¸‹äº†ä¸€é¡†[å±ä¸¹].\n",me);
 if(random(10)>8)
 {
-message_vision("$N¸Ğ¾õµ½ÉñÇåÆøË¬£¬ÄÚÁ¦ËÆºõÔö¼ÓÁË¡£\n",me);
+message_vision("$Næ„Ÿè¦ºåˆ°ç¥æ¸…æ°£çˆ½ï¼Œå…§åŠ›ä¼¼ä¹å¢åŠ äº†ã€‚\n",me);
 me->add("max_force",10);
 }else{
 me->set("gin",-1);

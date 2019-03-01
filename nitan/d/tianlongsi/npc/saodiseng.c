@@ -2,8 +2,8 @@ inherit KNOWER;
 
 void create()
 {
-        set_name("É¨µØÉ®", ({ "saodi seng", "saodi", "seng" }));
-        set("gender", "ÄÐÐÔ" );
+        set_name("æŽƒåœ°åƒ§", ({ "saodi seng", "saodi", "seng" }));
+        set("gender", "ç”·æ€§" );
         set("class", "bonze");
         set("age", 100);
         set("shen_type", 1);

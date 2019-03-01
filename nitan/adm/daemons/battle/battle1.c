@@ -27,16 +27,16 @@ void init_battle()
         refresh_map();
         
         level = 1000 + random(1000);
-        BATTLEFIELD_D->set_battle_name(HIG"Ë­ÓëÕù·æ"NOR);
-        BATTLEFIELD_D->set_team_name(RED"³à»ğ¶Ó"NOR, HIB"Ğ¥ÔÆ¶Ó"NOR);
+        BATTLEFIELD_D->set_battle_name(HIG"èª°èˆ‡çˆ­é‹’"NOR);
+        BATTLEFIELD_D->set_team_name(RED"èµ¤ç«éšŠ"NOR, HIB"å˜¯é›²éšŠ"NOR);
         BATTLEFIELD_D->set_entry_room("/maze/battle1/wgate", "/maze/battle1/egate");
-        BATTLEFIELD_D->set_bonus_percent(100); // ½±Àø100%
+        BATTLEFIELD_D->set_bonus_percent(100); // çå‹µ100%
         set("flag", 1, get_object("/maze/battle1/etang"));
-        set("team_name", HIB"Ğ¥ÔÆ¶Ó"NOR, get_object("/maze/battle1/etang")); 
-        set("team_name", HIB"Ğ¥ÔÆ¶Ó"NOR, get_object("/maze/battle1/eting")); 
+        set("team_name", HIB"å˜¯é›²éšŠ"NOR, get_object("/maze/battle1/etang")); 
+        set("team_name", HIB"å˜¯é›²éšŠ"NOR, get_object("/maze/battle1/eting")); 
         set("flag", 1, get_object("/maze/battle1/wtang"));
-        set("team_name", RED"³à»ğ¶Ó"NOR, get_object("/maze/battle1/wtang")); 
-        set("team_name", RED"³à»ğ¶Ó"NOR, get_object("/maze/battle1/wting")); 
+        set("team_name", RED"èµ¤ç«éšŠ"NOR, get_object("/maze/battle1/wtang")); 
+        set("team_name", RED"èµ¤ç«éšŠ"NOR, get_object("/maze/battle1/wting")); 
 }
 
 

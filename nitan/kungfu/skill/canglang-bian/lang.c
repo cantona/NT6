@@ -3,7 +3,7 @@
 #include <ansi.h>
 
 inherit F_SSERVER;
-string name() { return "¾ŞÀËÌÏÌì"; }
+string name() { return "å·¨æµªæ»”å¤©"; }
 
 int perform(object me, object target)
 {
@@ -15,31 +15,31 @@ int perform(object me, object target)
         if (! target
         ||      ! target->is_character()
         ||      ! me->is_fighting(target))
-                return notify_fail("¡¸¾ŞÀËÌÏÌì¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œå·¨æµªæ»”å¤©ã€åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me) )
         ||      query("skill_type", weapon) != "whip" )
-                return notify_fail("ÄãÃ»ÓĞ±ŞÔÚÊÖ£¬Ê©²»³ö¡¸¾ŞÀËÌÏÌì¡¹¡£\n");
+                return notify_fail("ä½ æ²’æœ‰é­åœ¨æ‰‹ï¼Œæ–½ä¸å‡ºã€Œå·¨æµªæ»”å¤©ã€ã€‚\n");
 
         if( query("neili", me)<200 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¡\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ï¼\n");
 
         if (me->query_skill("canglang-bian", 1) < 200)
-                return notify_fail("ÄãµÄ¡¸²×ÀË±Ş·¨ ¡¹Î´Õé¸ßÃî¾³½ç£¬ÎŞ·¨Ê©³ö¡¸¾ŞÀËÌÏÌì¡¹£¡\n");
+                return notify_fail("ä½ çš„ã€Œæ»„æµªé­æ³• ã€æœªè‡»é«˜å¦™å¢ƒç•Œï¼Œç„¡æ³•æ–½å‡ºã€Œå·¨æµªæ»”å¤©ã€ï¼\n");
 
         if (me->query_skill("bibo-shengong", 1) < 200)
-                return notify_fail("ÄãµÄ±ÌÌÎĞş¹¦ĞŞÎª²»¹»£¬ÎŞ·¨Ê©³ö¡¸²×ÀË±Ş·¨¡¹£¡\n");
+                return notify_fail("ä½ çš„ç¢§æ¿¤ç„åŠŸä¿®ç‚ºä¸å¤ ï¼Œç„¡æ³•æ–½å‡ºã€Œæ»„æµªé­æ³•ã€ï¼\n");
 
         if (me->query_skill_mapped("whip") != "canglang-bian")
-                return notify_fail("ÄãËùÓÃµÄ²¢·Ç¡¸²×ÀË±Ş·¨ ¡¹£¬Ê©Õ¹²»³ö¡¸¾ŞÀËÌÏÌì¡¹£¡\n");
+                return notify_fail("ä½ æ‰€ç”¨çš„ä¸¦éã€Œæ»„æµªé­æ³• ã€ï¼Œæ–½å±•ä¸å‡ºã€Œå·¨æµªæ»”å¤©ã€ï¼\n");
 
         message_combatd(
-                HIR"$NºöÈ»½«"+(query("name", query_temp("weapon", me)))+
-                HIR"ÆµÆµË¦³ö£¬"+(query("name", query_temp("weapon", me)))+
-                HIR "·¢³öÅüÅ¾±©¿ÕÖ®Éù²»¾øÈÅµÃ$nĞÄ·³ÒâÂÒ¡£\n" NOR, me, target);
+                HIR"$Nå¿½ç„¶å°‡"+(query("name", query_temp("weapon", me)))+
+                HIR"é »é »ç”©å‡ºï¼Œ"+(query("name", query_temp("weapon", me)))+
+                HIR "ç™¼å‡ºåŠˆå•ªæš´ç©ºä¹‹è²ä¸çµ•æ“¾å¾—$nå¿ƒç…©æ„äº‚ã€‚\n" NOR, me, target);
         message_combatd(
-                HIB "$NµÄÕĞÊıÍòÇ§£¬µ«±ŞÍ·È´×ÜÊÇÖ¸Ïò$nµÄÖÜÉíÒªÑ¨£¬¹¥»÷Èç¾ŞÀËÁ¬ÃàÎŞÇîÎŞ¾¡£¬"
-                "Áî$nÖ»ÓĞÕĞ¼ÜÖ®¹¦È´ÎŞ»¹ÊÖÖ®Á¦¡£\n" NOR, me, target);
+                HIB "$Nçš„æ‹›æ•¸è¬åƒï¼Œä½†é­é ­å»ç¸½æ˜¯æŒ‡å‘$nçš„å‘¨èº«è¦ç©´ï¼Œæ”»æ“Šå¦‚å·¨æµªé€£ç¶¿ç„¡çª®ç„¡ç›¡ï¼Œ"
+                "ä»¤$nåªæœ‰æ‹›æ¶ä¹‹åŠŸå»ç„¡é‚„æ‰‹ä¹‹åŠ›ã€‚\n" NOR, me, target);
 
         set_temp("julang", 1, me);
 
@@ -67,7 +67,7 @@ private int remove_effect(object me, int amount)
                 addn_temp("apply/attack", -amount, me);
                 addn_temp("apply/defense", -amount, me);
                 delete_temp("julang", me);
-                message_combatd(YEL "\n$NÂıÂıÄÚÔËÄÚ¹¦£¬°ÑÕæÆøÑ¹ÏÂ£¡\n\n" NOR, me);
+                message_combatd(YEL "\n$Næ…¢æ…¢å…§é‹å…§åŠŸï¼ŒæŠŠçœŸæ°£å£“ä¸‹ï¼\n\n" NOR, me);
         }
 
         return 0;

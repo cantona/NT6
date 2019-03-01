@@ -1,4 +1,4 @@
-//Êı×Ö|ºº×Ö ASC¢òµãÕóÍ¼   Éú³É³ÌĞò
+//æ•¸å­—|æ¼¢å­— ASCâ…¡é»é™£åœ–   ç”Ÿæˆç¨‹åº
 //Smallfish@HUAXIA
 
 #include <ansi.h>
@@ -13,7 +13,7 @@ void create()
         seteuid(getuid());
 }
 
-//Êı×ÖµãÕóÍ¼Éú³Éº¯Êı
+//æ•¸å­—é»é™£åœ–ç”Ÿæˆå‡½æ•¸
 string make_msg(mapping num)
 {
         int q, q_size, i1 = random(2), i2 = random(2), i3 = random(2), i4 = random(2), i5 = random(2);
@@ -26,7 +26,7 @@ string make_msg(mapping num)
                 {
                         get_msg = sprintf("%s%s", 
                                           numbers[atoi(num["num"+j])][i],
-                                          (i_num[j-1])?"BJ¡ñ"NOR:"BJ¡ñ¡ñ"NOR);
+                                          (i_num[j-1])?"BJâ—"NOR:"BJâ—â—"NOR);
                         get_msg = replace_string(get_msg,"BJ",num["bjcolor"+j]);
                         get_msg = replace_string(get_msg,"QJ",num["qjcolor"+j]);
                         msg += get_msg;
@@ -35,7 +35,7 @@ string make_msg(mapping num)
         }
         msg += "\n";
         q_size = strlen(msg);
-        while ((beg=strsrch(msg,"¡ñ"))>=0) 
+        while ((beg=strsrch(msg,"â—"))>=0) 
         {
                 str = chn_num[random(sizeof(chn_num))];
                 str = str[(random(sizeof(str)) & 0xFFFE)..<1];
@@ -45,7 +45,7 @@ string make_msg(mapping num)
         return msg;
 }
 
-//ºº×ÖµãÕóÍ¼Éú³Éº¯Êı
+//æ¼¢å­—é»é™£åœ–ç”Ÿæˆå‡½æ•¸
 string make_chn_msg(mapping num)
 {
         int q, q_size, i1 = random(2), i2 = random(2), i3 = random(2), i4 = random(2);
@@ -57,29 +57,29 @@ string make_chn_msg(mapping num)
         the_point1 = LANGUAGE_D->Get_Point(num["num1"],num["index1"]);
         if (!the_point1)
                 log_file("static/chn_num",
-                        sprintf("Õâ¸öºº×ÖÃ»ÓĞÈ¡µ½µãÕó£º%s£¬Çë×ĞÏ¸²é¿´\n",num["num1"]));
+                        sprintf("é€™å€‹æ¼¢å­—æ²’æœ‰å–åˆ°é»é™£ï¼š%sï¼Œè«‹ä»”ç´°æŸ¥çœ‹\n",num["num1"]));
         the_point2 = LANGUAGE_D->Get_Point(num["num2"],num["index2"]);
         if (!the_point2)
                 log_file("static/chn_num",
-                        sprintf("Õâ¸öºº×ÖÃ»ÓĞÈ¡µ½µãÕó£º%s£¬Çë×ĞÏ¸²é¿´\n",num["num2"]));
+                        sprintf("é€™å€‹æ¼¢å­—æ²’æœ‰å–åˆ°é»é™£ï¼š%sï¼Œè«‹ä»”ç´°æŸ¥çœ‹\n",num["num2"]));
 
         the_point1 = trouble(the_point1);
         the_point2 = trouble(the_point2);
 
         for (int i = 0 ; i < 16 ; i++) {
-                the_point1[i] = replace_string(the_point1[i],"b","BJ¡ñ"NOR);
-                the_point1[i] = replace_string(the_point1[i],"q","QJ¡ñ"NOR);
-                the_point2[i] = replace_string(the_point2[i],"b","BJ¡ñ"NOR);
-                the_point2[i] = replace_string(the_point2[i],"q","QJ¡ñ"NOR);
+                the_point1[i] = replace_string(the_point1[i],"b","BJâ—"NOR);
+                the_point1[i] = replace_string(the_point1[i],"q","QJâ—"NOR);
+                the_point2[i] = replace_string(the_point2[i],"b","BJâ—"NOR);
+                the_point2[i] = replace_string(the_point2[i],"q","QJâ—"NOR);
 
                 get_msg1 = sprintf("%s%s%s", 
-                                  (i_num[0])?""NOR:(random(16)==0)?"QJ¡ñ"NOR:"BJ¡ñ"NOR,
+                                  (i_num[0])?""NOR:(random(16)==0)?"QJâ—"NOR:"BJâ—"NOR,
                                   the_point1[i],
-                                  (i_num[1])?""NOR:(random(16)==0)?"QJ¡ñ"NOR:"BJ¡ñ"NOR);
+                                  (i_num[1])?""NOR:(random(16)==0)?"QJâ—"NOR:"BJâ—"NOR);
                 get_msg2 = sprintf("%s%s%s\n", 
-                                  (i_num[2])?""NOR:(random(16)==0)?"QJ¡ñ"NOR:"BJ¡ñ"NOR,
+                                  (i_num[2])?""NOR:(random(16)==0)?"QJâ—"NOR:"BJâ—"NOR,
                                   the_point2[i],
-                                  (i_num[3])?""NOR:(random(16)==0)?"QJ¡ñ"NOR:"BJ¡ñ"NOR);
+                                  (i_num[3])?""NOR:(random(16)==0)?"QJâ—"NOR:"BJâ—"NOR);
                 get_msg1 = replace_string(get_msg1,"BJ",num["bjcolor1"]);
                 get_msg1 = replace_string(get_msg1,"QJ",num["qjcolor1"]);
                 get_msg2 = replace_string(get_msg2,"BJ",num["bjcolor2"]);
@@ -90,7 +90,7 @@ string make_chn_msg(mapping num)
         return msg;
 }
 
-//»ñÈ¡×ÚÊ¦whisperÈÎÎñ
+//ç²å–å®—å¸«whisperä»»å‹™
 mapping get_question()
 {
         int the_num, i, j, chinese_num;
@@ -116,7 +116,7 @@ mapping get_question()
                 question = make_msg(num);
         } else
         {
-                //Á½¸öºº×Ö²ÉÓÃÏàÍ¬µÄÇ°¾°ºÍ±³¾°¿ÉÄÜ¸ÉÈÅĞ§¹û¸üºÃÒ»Ğ©:)
+                //å…©å€‹æ¼¢å­—æ¡ç”¨ç›¸åŒçš„å‰æ™¯å’ŒèƒŒæ™¯å¯èƒ½å¹¹æ“¾æ•ˆæœæ›´å¥½ä¸€äº›:)
                 //smallfish@huaxia
                 j = random(sizeof(the_color));
                 for (i = 0;i < 2;i ++)
@@ -141,7 +141,7 @@ mapping get_question()
         return quest;
 }
 
-//ºº×ÖµãÕóÍ¼¸ÉÈÅÏóËØÌí¼Óº¯Êı
+//æ¼¢å­—é»é™£åœ–å¹¹æ“¾è±¡ç´ æ·»åŠ å‡½æ•¸
 string *trouble(string *str_point)
 {
         int i,j,random_col,random_line,get_it;
@@ -185,7 +185,7 @@ string *trouble(string *str_point)
         return str_point;
 }
 
-//ÏÂÃæÕâ¸öº¯ÊıÃ»ÓĞÊµ¼Ê×÷ÓÃ£¬Ö»ÊÇÓÃÓÚCALL¼ì²éºº×Ö±íÊÇ·ñÓĞ´íÎó
+//ä¸‹é¢é€™å€‹å‡½æ•¸æ²’æœ‰å¯¦éš›ä½œç”¨ï¼Œåªæ˜¯ç”¨äºCALLæª¢æŸ¥æ¼¢å­—è¡¨æ˜¯å¦æœ‰éŒ¯èª¤
 void check_chn()
 {
         int i,j;
@@ -198,7 +198,7 @@ void check_chn()
                 {
                         if (!LANGUAGE_D->Get_Point(line[j..j+1]))
                                 log_file("static/chn_num",
-                                          sprintf("Õâ¸öºº×ÖÃ»ÓĞÈ¡µ½µãÕó£º%s£¬Çë×ĞÏ¸²é¿´\n",line[j..j+1]));
+                                          sprintf("é€™å€‹æ¼¢å­—æ²’æœ‰å–åˆ°é»é™£ï¼š%sï¼Œè«‹ä»”ç´°æŸ¥çœ‹\n",line[j..j+1]));
                         j+=2;
                 }
         }

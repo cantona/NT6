@@ -4,13 +4,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name("º£ËÉ×Ó", ({ "hai song zi" }) );
+        set_name("æµ·é¬†å­", ({ "hai song zi" }) );
         set_weight(100);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
-                set("long", "ÕâÊÇÒ»¿ÅÐ¡Ö¸¼×¸Ç´óµÄ×ØÉ«¹û×Ó¡£\n");
+                set("unit", "é¡†");
+                set("long", "é€™æ˜¯ä¸€é¡†å°æŒ‡ç”²è“‹å¤§çš„æ£•è‰²æžœå­ã€‚\n");
         }
 }
 
@@ -26,7 +26,7 @@ int do_eat(string arg)
         if(!id(arg))
                 return 0;
 
-        message_vision("$N°Ñº£ËÉ×Ó·ÅÔÚ×ìÀï½ÀÁË½À£¬¿àµÄÖåÆðÁËÃ¼Í·¡£\n", me);
+        message_vision("$NæŠŠæµ·é¬†å­æ”¾åœ¨å˜´è£¡åš¼äº†åš¼ï¼Œè‹¦çš„çšºèµ·äº†çœ‰é ­ã€‚\n", me);
 
         me->apply_condition("mabi", 5);
         destruct(this_object());

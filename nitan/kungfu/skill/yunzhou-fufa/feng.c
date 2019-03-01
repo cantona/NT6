@@ -3,7 +3,7 @@
 
 inherit F_SSERVER;
 
-string name() { return HIG "·çÄ§Îè" NOR; }
+string name() { return HIG "é¢¨é­”èˆž" NOR; }
 
 int perform(object me, object target)
 {
@@ -14,44 +14,44 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(name() + "Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(name() + "åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if (target->is_busy())
-                return notify_fail(target->name() + "Ä¿Ç°Õý×Ô¹Ë²»Ï¾£¬·Å"
-                                   "µ¨¹¥»÷°É¡£\n");
+                return notify_fail(target->name() + "ç›®å‰æ­£è‡ªé¡§ä¸æš‡ï¼Œæ”¾"
+                                   "è†½æ”»æ“Šå§ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me)) ||
             query("skill_type", weapon) != "whip" )
-                return notify_fail("ÄãµÄÎäÆ÷²»¶Ô£¬ÎÞ·¨Ê©Õ¹" + name() + "\n");
+                return notify_fail("ä½ çš„æ­¦å™¨ä¸å°ï¼Œç„¡æ³•æ–½å±•" + name() + "\n");
 
         if (me->query_skill("yunzhou-fufa", 1) < 60)
-                return notify_fail("ÄãµÄÔÆÖã·÷·¨¼¶±ð²»¹»£¬ÎÞ·¨Ê©Õ¹" + name() + "£¡\n");
+                return notify_fail("ä½ çš„é›²å¸šæ‹‚æ³•ç´šåˆ¥ä¸å¤ ï¼Œç„¡æ³•æ–½å±•" + name() + "ï¼\n");
 
         if( query("neili", me)<100 )
-                return notify_fail("ÄãÏÖÔÚÕæÆø²»¹»£¬ÎÞ·¨Ê©Õ¹" + name() + "£¡\n");
+                return notify_fail("ä½ ç¾åœ¨çœŸæ°£ä¸å¤ ï¼Œç„¡æ³•æ–½å±•" + name() + "ï¼\n");
 
         if (me->query_skill_mapped("whip") != "yunzhou-fufa")
-                return notify_fail("ÄãÃ»ÓÐ¼¤·¢ÔÆÖã·÷·¨£¬ÎÞ·¨Ê©Õ¹" + name() + "£¡\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼é›²å¸šæ‹‚æ³•ï¼Œç„¡æ³•æ–½å±•" + name() + "ï¼\n");
 
        if (! living(target))
-              return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+              return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIY "\n$N±©ºÈÒ»Éù£¬Ç±ÔËÌåÄÚÕæÆø£¬½«" + weapon->name() + HIY
-              "»ÓÎèµÃºôºôÖ±Ïì£¬Ö±ÆÆ³¤¿Õ£¬ÓÌÈçÂþÌì¿ñÉ³°ã¾íÏò$n¡£\n" NOR;
+        msg = HIY "\n$Næš´å–ä¸€è²ï¼Œæ½›é‹é«”å…§çœŸæ°£ï¼Œå°‡" + weapon->name() + HIY
+              "æ®èˆžå¾—å‘¼å‘¼ç›´éŸ¿ï¼Œç›´ç ´é•·ç©ºï¼ŒçŒ¶å¦‚æ¼«å¤©ç‹‚æ²™èˆ¬å·å‘$nã€‚\n" NOR;
 
         ap = attack_power(me, "whip");
         dp = defense_power(target, "dodge");
 
         if( ap / 2 + random(ap) > dp )
         {
-                msg += HIR "$n" HIR "Ö»¾õ·çÉùÏôÏô£¬ÑÛÇ°ÍòÇ§±ÞÓ°£¬¶Ù¸Ð"
-                      "ÊÖ½ÅÎÞ´ë£¬¾ª»Å²»ÒÑ¡£\n" NOR;
+                msg += HIR "$n" HIR "åªè¦ºé¢¨è²è•­è•­ï¼Œçœ¼å‰è¬åƒéž­å½±ï¼Œé “æ„Ÿ"
+                      "æ‰‹è…³ç„¡æŽªï¼Œé©šæ…Œä¸å·²ã€‚\n" NOR;
 
                 target->start_busy((int)me->query_skill("yunzhou-fufa") / 25 + 2);
         } else
         {
-                msg += CYN "¿ÉÊÇ$p" CYN "¿´ÆÆÁË$P"
-                      CYN "µÄÆóÍ¼£¬Ð±Ìø¶ãÉÁ¿ªÀ´¡£\n" NOR;
+                msg += CYN "å¯æ˜¯$p" CYN "çœ‹ç ´äº†$P"
+                      CYN "çš„ä¼åœ–ï¼Œæ–œè·³èº²é–ƒé–‹ä¾†ã€‚\n" NOR;
         }
         me->start_busy(1);
 

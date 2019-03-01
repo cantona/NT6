@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-          set ("short", "�ٵ�");
+          set ("short", "官道");
           set ("long", @LONG
-����һ���ɹٸ�����ĵ�·�����ݰ������������ϱ���ͨ
-Ҫ�����������Զ��ˣ���ʱ���������ĺ͸ϳ��ľ�����
+這是一條由官府舖設的道路，可容八馬並驅。是南北交通
+要道。行人明顯多了，不時還有騎馬的和趕車的經過。
 LONG);
 
           set("outdoors", "zhongzhou");

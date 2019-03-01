@@ -13,30 +13,30 @@ int save_room_file(string yn, string file, string str);
 
 void create()
 {
-        set_name("·¿¼ä±à¼­Æ÷" + RMK_VERSION, ({ "roommaker", "maker" }) );
+        set_name("æˆ¿é–“ç·¨è¼¯å™¨" + RMK_VERSION, ({ "roommaker", "maker" }) );
         set_weight(100);
-        set("unit", "¸ö" );
+        set("unit", "å€‹" );
         set("long", @LONG
-ÕâÊÇÒ»¸öÓÃÀ´¡¸¿ìËÙ¡¹ÖÆÔì·¿¼äµÄ¹¤¾ß£¬°ïÖúÊ±¼ä²»¶à»òÓĞÑÏÖØ  lag µÄÎ×Ê¦
-ÀûÓÃÏßÉÏÊäÈëÖÆÔì¼òµ¥µÄ·¿¼ä£¬²»¹ıÈç¹ûÄãÏëÌá¸ß×Ô¼ºÇøÓò·¿¼äµÄÆ·ÖÊ£¬×îºÃ
-²»ÒªÌ«ÒÀÀµÕâ¸ö¶«Î÷£¬Äã¿ÉÒÔÊ¹ÓÃÒÔÏÂ¼¸¸öÖ¸Áî£º
+é€™æ˜¯ä¸€å€‹ç”¨ä¾†ã€Œå¿«é€Ÿã€åˆ¶é€ æˆ¿é–“çš„å·¥å…·ï¼Œå¹«åŠ©æ™‚é–“ä¸å¤šæˆ–æœ‰åš´é‡  lag çš„å·«å¸«
+åˆ©ç”¨ç·šä¸Šè¼¸å…¥åˆ¶é€ ç°¡å–®çš„æˆ¿é–“ï¼Œä¸éå¦‚æœä½ æƒ³æé«˜è‡ªå·±å€åŸŸæˆ¿é–“çš„å“è³ªï¼Œæœ€å¥½
+ä¸è¦å¤ªä¾è³´é€™å€‹æ±è¥¿ï¼Œä½ å¯ä»¥ä½¿ç”¨ä»¥ä¸‹å¹¾å€‹æŒ‡ä»¤ï¼š
 
-mkroom <·¿¼äµµÃû>
+mkroom <æˆ¿é–“æª”å>
 
-    Ôì³öÒ»¸ö¡¸¿Õ¡¹·¿¼ä£¬Ö®ááÄã¿ÉÒÔ goto µ½Õâ¸ö·¿¼äÓÃ rset Éè¶¨·¿¼äµÄ
-    ĞğÊö»òÊôĞÔ¡£
+    é€ å‡ºä¸€å€‹ã€Œç©ºã€æˆ¿é–“ï¼Œä¹‹å¾Œä½ å¯ä»¥ goto åˆ°é€™å€‹æˆ¿é–“ç”¨ rset è¨­å®šæˆ¿é–“çš„
+    æ•˜è¿°æˆ–å±¬æ€§ã€‚
 
-rset <·¿¼äÊôĞÔ> <ÊôĞÔÄÚÈİ>
+rset <æˆ¿é–“å±¬æ€§> <å±¬æ€§å…§å®¹>
 
-    Éè¶¨ÄãÄ¿Ç°ËùÔÚ·¿¼äµÄÊôĞÔ£¬Èç short£¬long µÈ¡£
+    è¨­å®šä½ ç›®å‰æ‰€åœ¨æˆ¿é–“çš„å±¬æ€§ï¼Œå¦‚ shortï¼Œlong ç­‰ã€‚
 
-connect <·½Ïò> <·¿¼äµµÃû>
+connect <æ–¹å‘> <æˆ¿é–“æª”å>
 
-    ½«ÄãÄ¿Ç°ËùÔÚµÄ·¿¼äÁ¬½ÓÒ»¸ö³ö¿Úµ½ÁíÒ»¸ö·¿¼ä¡£
+    å°‡ä½ ç›®å‰æ‰€åœ¨çš„æˆ¿é–“é€£æ¥ä¸€å€‹å‡ºå£åˆ°å¦ä¸€å€‹æˆ¿é–“ã€‚
 
 saveroom
 
-    ½«ÄãÄ¿Ç°ËùÔÚµÄ·¿¼ä´æµµ¡£
+    å°‡ä½ ç›®å‰æ‰€åœ¨çš„æˆ¿é–“å­˜æª”ã€‚
 LONG
         );
 }
@@ -58,13 +58,13 @@ int do_mkroom(string arg)
 {
         string file, dir, code;
 
-        if( !arg ) return notify_fail("Ö¸Áî¸ñÊ½£ºmkroom <·¿¼äµµÃû> [<·½Ïò>]\n");
+        if( !arg ) return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šmkroom <æˆ¿é–“æª”å> [<æ–¹å‘>]\n");
         if( sscanf(arg, "%s %s", file, dir)!=2 )
                 file = arg;
         seteuid(geteuid(this_player()));
         file = resolve_path(this_player()->query("cwd"), file) + ".c";
         if( file_size(file)!=-1 )
-                return notify_fail("µµ°¸ " + file + " ÒÑ¾­´æÔÚÁË¡£\n");
+                return notify_fail("æª”æ¡ˆ " + file + " å·²ç¶“å­˜åœ¨äº†ã€‚\n");
         if( !write_file(file, @ROOM_CODE
 // This is a room made by roommaker.
 
@@ -72,14 +72,14 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "¿Õ·¿¼ä");
-        set("long", "ÕâÊÇÒ»¼äÊ²÷áÒ²Ã»ÓĞµÄ¿Õ·¿¼ä¡£\n");
+        set("short", "ç©ºæˆ¿é–“");
+        set("long", "é€™æ˜¯ä¸€é–“ä»€éº¼ä¹Ÿæ²’æœ‰çš„ç©ºæˆ¿é–“ã€‚\n");
         setup();
         replace_program(ROOM);
 }
 ROOM_CODE
-        ) ) return notify_fail("ÄãÃ»ÓĞĞ´Èëµµ°¸(" + file +")µÄÈ¨Àû¡£\n");
-        message_vision("Ö»Ìıµ½$NµÄ·¿¼ä±à¼­Æ÷¡¸ßÙ¡¹µÄÒ»Éù£¬Äã¾õµÃÕâ¸öÊÀ½çÓÖ±ä´óÁËÒ»µã¡£\n", this_player());
+        ) ) return notify_fail("ä½ æ²’æœ‰å¯«å…¥æª”æ¡ˆ(" + file +")çš„æ¬Šåˆ©ã€‚\n");
+        message_vision("åªè½åˆ°$Nçš„æˆ¿é–“ç·¨è¼¯å™¨ã€Œå—¶ã€çš„ä¸€è²ï¼Œä½ è¦ºå¾—é€™å€‹ä¸–ç•Œåˆè®Šå¤§äº†ä¸€é»ã€‚\n", this_player());
         return 1;
 }
 
@@ -89,7 +89,7 @@ int do_rset(string arg)
         mixed data;
 
         if( !arg || sscanf(arg, "%s %s", prop, str)!=2 )
-                return notify_fail("Ö¸Áî¸ñÊ½£ºrset <·¿¼äÊôĞÔ> <ÊôĞÔÄÚÈİ>\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šrset <æˆ¿é–“å±¬æ€§> <å±¬æ€§å…§å®¹>\n");
 
         if( sscanf(str, "%d", data)!=1 )
                 data = str;
@@ -105,7 +105,7 @@ int do_connect(string arg)
         string dir, file;
 
         if( !arg || sscanf(arg, "%s %s", dir, file)!=2 )
-                return notify_fail("Ö¸Áî¸ñÊ½£ºconnect <·½Ïò> <·¿¼äµµÃû>\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šconnect <æ–¹å‘> <æˆ¿é–“æª”å>\n");
         file = resolve_path(this_player()->query("cwd"), file);
         exits = environment(this_player())->query("exits");
         if( mapp(exits) )
@@ -148,12 +148,12 @@ ROOM_CODE
         i = strlen(file)-1;
         while( (i > 0) && (file[i]!='/')) i--;
         if( i>0 ) {
-                write("Ä¿Ç°Ä¿Â¼£º" + file[0..i] + " ÒÔ __DIR__ È¡´ú¡£\n");
+                write("ç›®å‰ç›®éŒ„ï¼š" + file[0..i] + " ä»¥ __DIR__ å–ä»£ã€‚\n");
                 str = replace_string(str, "\"" + file[0..i], "__DIR__\"");
         }
 
         if( file_size(file)!=-1 ) {
-                write("µµ°¸ " + file + " ÒÑ´æÔÚ£¬ÒªÉ¾³ı¾ÉµµÂğ£¿[y/n]");
+                write("æª”æ¡ˆ " + file + " å·²å­˜åœ¨ï¼Œè¦åˆªé™¤èˆŠæª”å—ï¼Ÿ[y/n]");
                 input_to("save_room_file", file, str);
                 return 1;
         }
@@ -166,12 +166,12 @@ int save_room_file(string yn, string file, string str)
         if( strlen(yn)<1 || yn[0]!='y' ) return 1;
 
         rm(file);
-        write("´æµµ " + file + "....");
+        write("å­˜æª” " + file + "....");
         if( write_file(file, str) ) {
                 write("Ok.\n");
                 return 1;
         } else
-                return notify_fail("ÄãÃ»ÓĞĞ´ÈëÕâ¸öµµ°¸(" + file + ")µÄÈ¨Àû¡£\n");
+                return notify_fail("ä½ æ²’æœ‰å¯«å…¥é€™å€‹æª”æ¡ˆ(" + file + ")çš„æ¬Šåˆ©ã€‚\n");
 }
 
 void owner_is_killed() { destruct(this_object()); }

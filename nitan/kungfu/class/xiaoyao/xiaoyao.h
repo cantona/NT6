@@ -1,29 +1,29 @@
 int permit_recruit(object ob)
 {
-        if( query("detach/åĞÒ£ÅÉ", ob) || query("betrayer/åĞÒ£ÅÉ", ob) )
+        if( query("detach/é€é™æ´¾", ob) || query("betrayer/é€é™æ´¾", ob) )
         {
-                command("say Äãµ±Äê¶¼ÒÑ¾­Àë¿ªÁËåĞÒ£ÅÉ£¬ºÎ±ØÓÖÒª»ØÀ´£¿");
+                command("say ä½ ç•¶å¹´éƒ½å·²ç¶“é›¢é–‹äº†é€é™æ´¾ï¼Œä½•å¿…åˆè¦å›ä¾†ï¼Ÿ");
                 return 0;
         }
 
         if( query("betrayer/times", ob) )
         {
-                command("say ÎÒÃÇåĞÒ£ÅÉÄËÃûÃÅÕıÅÉ£¬¾ö²»ÊÕÅĞÊ¦Ö®Í½£¡");
+                command("say æˆ‘å€‘é€é™æ´¾ä¹ƒåé–€æ­£æ´¾ï¼Œæ±ºä¸æ”¶åˆ¤å¸«ä¹‹å¾’ï¼");
                 return 0;
         }
 
         if( query("family/family_name", ob) && 
-            query("family/family_name", ob) != "åĞÒ£ÅÉ" )
+            query("family/family_name", ob) != "é€é™æ´¾" )
         {
-                command("say Äã¼ÈÈ»ÒÑ¾­ÓĞÁËÃûÊ¦Ö¸µã£¬²»ºÃºÃÑ§Ï°£¬À´ÎÒÃÇåĞÒ£ÅÉ×÷Éõ£¿");
+                command("say ä½ æ—¢ç„¶å·²ç¶“æœ‰äº†åå¸«æŒ‡é»ï¼Œä¸å¥½å¥½å­¸ç¿’ï¼Œä¾†æˆ‘å€‘é€é™æ´¾ä½œç”šï¼Ÿ");
                 return 0;
         }
 
         if( query("per", ob)<26 )
         {
                 command("look"+query("id", ob));
-                command("say " + RANK_D->query_respect(ob) + "µÄ×ğÈİÎ´Ãâ´ÎÁË"
-                        "µã£¬ÕâÑù¿ÉÈë²»ÁËÎÒÃÇåĞÒ£ÅÉ£¡");
+                command("say " + RANK_D->query_respect(ob) + "çš„å°Šå®¹æœªå…æ¬¡äº†"
+                        "é»ï¼Œé€™æ¨£å¯å…¥ä¸äº†æˆ‘å€‘é€é™æ´¾ï¼");
                 return 0;
         }
 

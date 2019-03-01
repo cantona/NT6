@@ -1,4 +1,4 @@
-// /d/yixing/skills/play2.c ±Ìº£³±ÉúÇú
+// /d/yixing/skills/play2.c ç¢§æµ·æ½®ç”Ÿæ›²
 // Last Modified by winder on Jul. 12 2002
 
 #include <ansi.h>
@@ -11,35 +11,35 @@ int exert(object me, object target)
         int i, dp, skill, damage;
 
         if( query("neili", me)<800){
-                tell_object(me, "ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                tell_object(me, "ä½ çš„å…§åŠ›ä¸å¤ ã€‚\n");
                 return 1;
         }
 
         room = environment(me);
         if( query("no_fight", room)){
-                tell_object(me, "ÔÚÕâÀï²»ÄÜ¹¥»÷ËûÈË¡£\n");
+                tell_object(me, "åœ¨é€™è£¡ä¸èƒ½æ”»æ“Šä»–äººã€‚\n");
                 return 1;
         }
 
         if( !(weapon=query_temp("weapon", me))){
-               tell_object(me, "ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+               tell_object(me, "ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ã€‚\n");
                return 1;
         }
 
         if( query("id", weapon) != "yuxiao"
          && query("id", weapon) != "tiexiao"
          && query("id", weapon) != "zhuxiao"){
-                tell_object(me, "ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                tell_object(me, "ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ã€‚\n");
                 return 1;
         }
         
         if( (string)me->query_skill_mapped("force") != "bitao-xuangong" ) {
-                tell_object(me, "ÄãËùÓÃµÄ²¢·Ç±ÌÌÎĞş¹¦£¬ÎŞ·¨Ê©Õ¹±Ìº£³±ÉúÇú£¡\n");
+                tell_object(me, "ä½ æ‰€ç”¨çš„ä¸¦éç¢§æ¿¤ç„åŠŸï¼Œç„¡æ³•æ–½å±•ç¢§æµ·æ½®ç”Ÿæ›²ï¼\n");
                 return 1;
         }
         
         if( (skill = (int)me->query_skill("bitao-xuangong", 1)) < 80 ) {
-                tell_object(me, "ÄãµÄ±ÌÌÎĞş¹¦»ğºòÎ´µ½£¬ÎŞ·¨Ê©Õ¹±Ìº£³±ÉúÇú£¡\n");
+                tell_object(me, "ä½ çš„ç¢§æ¿¤ç„åŠŸç«å€™æœªåˆ°ï¼Œç„¡æ³•æ–½å±•ç¢§æµ·æ½®ç”Ÿæ›²ï¼\n");
                 return 1;
         }
 
@@ -50,7 +50,7 @@ int exert(object me, object target)
    //  modified by aln to give a more reasonable busy time
         me->start_busy(1 + random(5 - skill/60));
         message_vision(
-                HIG "$N³é³öÒ»Ö§¶´óï£¬Ç±ÔËÄÚÁ¦£¬·Åµ½´½±ß´µ×àÆğÀ´£¬óïÉùÍñ×ª²øÃà£¬ÈçÁ¼ÏüË½Óï£¬ÓÖÈçÀ¥¸Ú·ïÎØ¡£¢¦\n" NOR, me);
+                HIG "$NæŠ½å‡ºä¸€æ”¯æ´ç°«ï¼Œæ½›é‹å…§åŠ›ï¼Œæ”¾åˆ°å”‡é‚Šå¹å¥èµ·ä¾†ï¼Œç°«è²å©‰è½‰çºç¶¿ï¼Œå¦‚è‰¯å®µç§èªï¼Œåˆå¦‚æ˜†å´—é³³å—šã€‚â–¡\n" NOR, me);
 
         inv = all_inventory(room);
         for(i = 0; i < sizeof(inv); i++) {
@@ -70,7 +70,7 @@ int exert(object me, object target)
                 inv[i]->receive_damage("jing", damage);
                 inv[i]->receive_damage("qi", damage);
 
-                message_vision(HIM"$N¾õµÃÈ«ÉíÆ®Æ®ÓûÏÉ£¬Á³ÉÏÂ¶³öÃÔã¯¶øÂú×ãµÄÉñÇé£¬Çé²»×Ô½ûµÄÊÖÎè×ãµ¸ÆğÀ´......\n"NOR, inv[i]);
+                message_vision(HIM"$Nè¦ºå¾—å…¨èº«é£„é£„æ¬²ä»™ï¼Œè‡‰ä¸Šéœ²å‡ºè¿·æƒ˜è€Œæ»¿è¶³çš„ç¥æƒ…ï¼Œæƒ…ä¸è‡ªç¦çš„æ‰‹èˆè¶³è¹ˆèµ·ä¾†......\n"NOR, inv[i]);
                 inv[i]->start_busy(damage/100);
         }
 

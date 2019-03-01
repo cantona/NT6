@@ -14,7 +14,7 @@ int main(object me, string arg)
         string msg;
 
         if (! is_root(me) && ! SECURITY_D->valid_grant(me, "(boss)"))
-                return notify_fail("Ö»ÓĞ¹ÜÀíÔ±²ÅÄÜÊÚÈ¨¸ÃÕ¾µãµÄÊ¹ÓÃÈ¨ÏŞ¡£\n");
+                return notify_fail("åªæœ‰ç®¡ç†å“¡æ‰èƒ½æˆæ¬Šè©²ç«™é»çš„ä½¿ç”¨æ¬Šé™ã€‚\n");
 
         if (! arg)
         {
@@ -22,11 +22,11 @@ int main(object me, string arg)
                 map_delete(site_privilege, INTERMUD_MUD_NAME);
                 if (sizeof(site_privilege) < 1)
                 {
-                        write("Ä¿Ç°¸ÃÕ¾µãÃ»ÓĞ¸³ÓèÈÎºÎÊ¹ÓÃÈ¨ÏŞ¡£\n");
+                        write("ç›®å‰è©²ç«™é»æ²’æœ‰è³¦äºˆä»»ä½•ä½¿ç”¨æ¬Šé™ã€‚\n");
                         return 1;
                 }
 
-                msg = "Ä¿Ç°¸ÃÕ¾µã(" + INTERMUD_MUD_NAME + ")¸³ÓèµÄÊ¹ÓÃÈ¨ÏŞĞÅÏ¢ÈçÏÂ£º\n";
+                msg = "ç›®å‰è©²ç«™é»(" + INTERMUD_MUD_NAME + ")è³¦äºˆçš„ä½¿ç”¨æ¬Šé™ä¿¡æ¯å¦‚ä¸‹ï¼š\n";
 
                 foreach (item in keys(site_privilege))
                         msg += sprintf("%s : %s\n", item, site_privilege[item]);
@@ -36,7 +36,7 @@ int main(object me, string arg)
         }
 
         if (! me->is_admin())
-                return notify_fail("Äã²»ÄÜĞŞ¸ÄÕâ¸öÕ¾µãµÄÊ¹ÓÃÈ¨ÏŞ¡£\n");
+                return notify_fail("ä½ ä¸èƒ½ä¿®æ”¹é€™å€‹ç«™é»çš„ä½¿ç”¨æ¬Šé™ã€‚\n");
 
         if (sscanf(arg, "%s %s", item, desc) != 2)
         {
@@ -48,11 +48,11 @@ int main(object me, string arg)
                 desc = 0;
 
         if (! SECURITY_D->set_site_privilege(item, desc))
-                return notify_fail("ÎŞ·¨ÉèÖÃ " + item +
-                                   " ·½ÃæµÄÈ¨ÏŞĞÅÏ¢Îª " + desc + "¡£\n");
+                return notify_fail("ç„¡æ³•è¨­ç½® " + item +
+                                   " æ–¹é¢çš„æ¬Šé™ä¿¡æ¯ç‚º " + desc + "ã€‚\n");
         else
         if (! desc)
-                write("Çå³ıÁË " + item + " ·½ÃæµÄÈ¨ÏŞĞÅÏ¢¡£\n");
+                write("æ¸…é™¤äº† " + item + " æ–¹é¢çš„æ¬Šé™ä¿¡æ¯ã€‚\n");
         else
                 write("Ok.\n");
 
@@ -63,10 +63,10 @@ int main(object me, string arg)
 int help (object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½: sp <class> <info>
+æŒ‡ä»¤æ ¼å¼: sp <class> <info>
 
-ÊÚÈ¨¸ø±¾µØÕ¾µãÄ³Ğ©·½ÃæµÄÊ¹ÓÃÈ¨ÏŞ¡£info Èç¹ûÎª¿Õ»òÊÇ clear Ôò
-±íÊ¾È¡ÏûÕâÀàµÄÊ¹ÓÃÈ¨ÏŞ¡£
+æˆæ¬Šçµ¦æœ¬åœ°ç«™é»æŸäº›æ–¹é¢çš„ä½¿ç”¨æ¬Šé™ã€‚info å¦‚æœç‚ºç©ºæˆ–æ˜¯ clear å‰‡
+è¡¨ç¤ºå–æ¶ˆé€™é¡çš„ä½¿ç”¨æ¬Šé™ã€‚
 HELP );
         return 1;
 }

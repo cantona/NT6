@@ -7,13 +7,13 @@ int do_drink(string);
 
 void create()
 {
-        set_name("ÀÏºï×Ó", ({ "monkey", "hou", "houzi" }) );
-        set("race", "×ßÊŞ");
+        set_name("è€çŒ´å­", ({ "monkey", "hou", "houzi" }) );
+        set("race", "èµ°ç¸");
         set("age", 200 + random(50));
-        set("long", "Ò»Ö»ÀÏÌ¬ÁúÖÓµÄÀÏºï×Ó£¬ËäÈ»¶¯×÷³Ù»º£¬µ«Ë¿ºÁ²»¼õ½ÆÕ©µÄĞÔ×Ó¡£\n");
+        set("long", "ä¸€åªè€æ…‹é¾é˜çš„è€çŒ´å­ï¼Œé›–ç„¶å‹•ä½œé²ç·©ï¼Œä½†çµ²æ¯«ä¸æ¸›ç‹¡è©çš„æ€§å­ã€‚\n");
         set("attitude", "peaceful");
 
-        set("limbs", ({ "Í·²¿", "ÉíÌå",  "Ç°ÍÈ", "ºóÍÈ", "Î²°Í" }) );
+        set("limbs", ({ "é ­éƒ¨", "èº«é«”",  "å‰è…¿", "å¾Œè…¿", "å°¾å·´" }) );
         set("verbs", ({ "bite", "claw" }) );
 
 // make sure those shenlong dizis can not catch it without using tricks
@@ -45,7 +45,7 @@ void init()
                         if( random(6) > 3 ) COMBAT_D->do_attack(me, ob);
                         kill_ob(ob);}
                 else {                       
-                        message_vision("ÀÏºï×Ó±»$NÏÅÁËÒ»Ìø£¬¸Ï½ô¶ãÔÚÒ»ÅÔ¡£\n", me);
+                        message_vision("è€çŒ´å­è¢«$Nåš‡äº†ä¸€è·³ï¼Œè¶•ç·Šèº²åœ¨ä¸€æ—ã€‚\n", me);
                         command("look"+query("id", ob));
                 }
         }
@@ -75,14 +75,14 @@ int do_drink(string arg)
                 if( query("id", inv[i]) == "jiudai" && query("liquid/type", inv[i]) == "alcohol"){
                         command("get"+query("id", inv[i]));
                         if( !query("liquid/remaining", inv[i])){
-                                say("ÀÏºï×ÓÒ¡ÁËÒ¡"+query("name", inv[i])+"ºó£¬Ê§ÍûµØÒ¡ÁËÒ¡Í·¡£\n");
-                                say("ÀÏºï×ÓÓÃÁ¦Ò»Ë¦£¬°Ñ"+query("name", inv[i])+"ÂÕµÃÎŞÓ°ÎŞ×Ù¡£\n");
+                                say("è€çŒ´å­æ–äº†æ–"+query("name", inv[i])+"å¾Œï¼Œå¤±æœ›åœ°æ–äº†æ–é ­ã€‚\n");
+                                say("è€çŒ´å­ç”¨åŠ›ä¸€ç”©ï¼ŒæŠŠ"+query("name", inv[i])+"æ„å¾—ç„¡å½±ç„¡è¹¤ã€‚\n");
                                 destruct(inv[i]);
                         } else {
-                                say("ÀÏºï×Ó¸ßĞËµÃÖ¨Ö¨ÂÒ½Ğ£¬Ò»¿ÚÈ«ºÈÁËÏÂÈ¥¡£\n");
+                                say("è€çŒ´å­é«˜èˆˆå¾—å±å±äº‚å«ï¼Œä¸€å£å…¨å–äº†ä¸‹å»ã€‚\n");
                                 set("liquid/remaining", 0, inv[i]);
                                 command("drop"+query("id", inv[i]));
-                                say("ÀÏºï×Ó¿´ÆğÀ´ÓĞµãÁ¦²»´ÓĞÄ£¬Ò¡Ò¡Óû×¹¡£\n");
+                                say("è€çŒ´å­çœ‹èµ·ä¾†æœ‰é»åŠ›ä¸å¾å¿ƒï¼Œæ–æ–æ¬²å¢œã€‚\n");
                                 set_temp("drunk", 1);
                                 addn_temp("apply/attack", -20);
                                 addn_temp("apply/defense", -20);
@@ -121,7 +121,7 @@ void die()
         if( objectp(obj=query_temp("last_damage_from", this_object())) )
         set("owner",query("id",  obj), ob);
 
-        message_vision("$N²Òº¿Ò»Éù£¬ËÀÁË£¡\n", this_object());
+        message_vision("$Næ…˜åšä¸€è²ï¼Œæ­»äº†ï¼\n", this_object());
         destruct(this_object());
 }
 

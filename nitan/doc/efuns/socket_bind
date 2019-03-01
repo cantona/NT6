@@ -1,48 +1,48 @@
 
      socket_bind(3)         MudOS (5 Sep 1994)          socket_bind(3)
 
-     Ãû³Æ£º
-          socket_bind() - ÃüÃû(bind)Ò»¸ö socket
+     åç¨±ï¼š
+          socket_bind() - å‘½å(bind)ä¸€å€‹ socket
 
-     Óï·¨£º
+     èªæ³•ï¼š
           #include 
 
           int socket_bind( int s, int port );
 
-          ÕûÊı socket_bind( ÕûÊı s, ÕûÊı port );
+          æ•´æ•¸ socket_bind( æ•´æ•¸ s, æ•´æ•¸ port );
 
-     ÓÃ·¨£º
-          socket_bind() ÎªÒ»¸öÎ´ÃüÃûµÄ socket Ö¸¶¨Ò»¸öÃû×Ö¡£µ±Ò»¸ö
-          socket ÓÉ socket_create(3) ½¨Á¢áá£¬ËüÒÑ´æÔÚì¶Ò»¸öÃüÃû¿Õ¼ä
-          £¨Î»Ö·×å, address family£©µ«»¹Ã»ÓĞÖ¸¶¨Ãû×Ö¡£socket_bind()
-          ĞèÒª²ººÅÀ´Îª socket s ÃüÃû¡£
+     ç”¨æ³•ï¼š
+          socket_bind() ç‚ºä¸€å€‹æœªå‘½åçš„ socket æŒ‡å®šä¸€å€‹åå­—ã€‚ç•¶ä¸€å€‹
+          socket ç”± socket_create(3) å»ºç«‹å¾Œï¼Œå®ƒå·²å­˜åœ¨æ–¼ä¸€å€‹å‘½åç©ºé–“
+          ï¼ˆä½å€æ—, address familyï¼‰ä½†é‚„æ²’æœ‰æŒ‡å®šåå­—ã€‚socket_bind()
+          éœ€è¦åŸ è™Ÿä¾†ç‚º socket s å‘½åã€‚
 
-     ´«»ØÖµ£º
-          socket_bind() ´«»Ø£º
+     å‚³å›å€¼ï¼š
+          socket_bind() å‚³å›ï¼š
 
-               ³É¹¦Ê±ÊÇ EESUCCESS¡£
+               æˆåŠŸæ™‚æ˜¯ EESUCCESSã€‚
 
-               Ê§°ÜÊ±ÊÇÒ»¸öÓĞÈçÏÂÒâÒåµÄ¸ºÖµ¡£
+               å¤±æ•—æ™‚æ˜¯ä¸€å€‹æœ‰å¦‚ä¸‹æ„ç¾©çš„è² å€¼ã€‚
 
-     ´íÎóÖµ£º
-          EEFDRANGE      ÃèÊöÖµ(descriptor)³¬³ö¡õÎ§¡£
+     éŒ¯èª¤å€¼ï¼š
+          EEFDRANGE      æè¿°å€¼(descriptor)è¶…å‡ºâ–¡åœã€‚
 
-          EEBADF         ÎŞĞ§µÄÃèÊöÖµ¡£
+          EEBADF         ç„¡æ•ˆçš„æè¿°å€¼ã€‚
 
-          EESECURITY     ÆóÍ¼Î¥·´°²È«¡£
+          EESECURITY     ä¼åœ–é•åå®‰å…¨ã€‚
 
-          EEISBOUND      socket ÒÑÃüÃû¡£
+          EEISBOUND      socket å·²å‘½åã€‚
 
-          EEADDRINUSE    ´ËÎ»Ö·ÒÑ±»Ê¹ÓÃ¡£
+          EEADDRINUSE    æ­¤ä½å€å·²è¢«ä½¿ç”¨ã€‚
 
-          EEBIND         ÃüÃûÎÊÌâ¡£
+          EEBIND         å‘½åå•é¡Œã€‚
 
-          EEGETSOCKNAME  getsockname ÎÊÌâ¡£
+          EEGETSOCKNAME  getsockname å•é¡Œã€‚
 
-     ²ÎÕÕ£º
+     åƒç…§ï¼š
           socket_connect(3), socket_create(3), socket_listen(3)
 
-     ·­Òë£º
+     ç¿»è­¯ï¼š
           Kenny@Broken.History       97.Jul.27       (printed 3/16/95)
 
 

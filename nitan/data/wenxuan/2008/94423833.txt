@@ -1,16 +1,16 @@
-subject : ��ߣ���������
-author_name : ޱ���
+subject : 面具（易容術）
+author_name : 薇大呆
 author_id : vivi
 time : 1207566930
-board : ޱ��������԰�
+board : 薇大呆的留言板
 file : /data/analecta/2008/94423833.txt
 add_time : 1211023015
 content :
-�������ϱߵ���ʯ�����ʼ�ߣ�nw;w;sw;w;se;s;su;s������������С·��
-ע��·�������˺���޻��Զ�kill�ģ��ٱ�����������������
-kill zhang san��get all from corpse
-�Ϳ��Եõ���ߺͼ����ƽ𣬵�ȻҪһЩ�书���ܰ���ɱ����
-��ע�⣬�������Ĵ��߶��ģ��õ���ߺ������������100�����ϾͿ��������ˣ�
-������pretend �����
-û��"פ��"������⼼�ܵ��˵���60��Ͳ����������������
+從襄陽南邊的青石大道開始走｛nw;w;sw;w;se;s;su;s｝就來到林中小路，
+注意路上有土匪和嘍羅會自動kill的，百變道人張三就在這□，
+kill zhang san，get all from corpse
+就可以得到面具和幾兩黃金，當然要一些武功才能把他殺死，
+請注意，張三會四處走動的，拿到面具後如果會易容術100級以上就可以易容了，
+命令是pretend 物件。
+沒有"駐□"這個特殊技能的人到了60歲就不能用面具來易容了
 [2;37;0m

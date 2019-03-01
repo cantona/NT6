@@ -25,14 +25,14 @@ mapping upgrade_material = ([
 
 void create()
 {
-        set_name("Å·Ò±×Ó", ({ "ouye zi", "zi" }) );
-        set("nickname", RED "³àĞÄ½£µ¨" NOR );
-        set("gender", "ÄĞĞÔ" );
+        set_name("æ­å†¶å­", ({ "ouye zi", "zi" }) );
+        set("nickname", RED "èµ¤å¿ƒåŠè†½" NOR );
+        set("gender", "ç”·æ€§" );
         set("age", 60);
         set("long",
-                "ËûÍ·ÉÏ°ü×ÅÍ·½í£¬ÈıÂÆ³¤÷×Æ®È÷ĞØÇ°£¬ÃæÄ¿ÇåÊİµ«ºìÔÎÓĞ¹â£¬\n"
-                "¶şÄ¿¾¼¾¼ÓĞÉñ£¬Ë¸Ë¸ÉÁ×Å¾¹ËÆÊÇÁİÁİµÄ½£¹â£¬»ëÉíËÆºõ¶¼°üÎ§\n"
-                "ÔÚÒ»¹É½£ÆøÖ®ÖĞ¡£\n");
+                "ä»–é ­ä¸ŠåŒ…è‘—é ­å·¾ï¼Œä¸‰ç¸·é•·é«¯é£„æ´’èƒ¸å‰ï¼Œé¢ç›®æ¸…ç˜¦ä½†ç´…æšˆæœ‰å…‰ï¼Œ\n"
+                "äºŒç›®ç‚¯ç‚¯æœ‰ç¥ï¼Œçˆçˆé–ƒè‘—ç«Ÿä¼¼æ˜¯å‡œå‡œçš„åŠå…‰ï¼Œæ¸¾èº«ä¼¼ä¹éƒ½åŒ…åœ\n"
+                "åœ¨ä¸€è‚¡åŠæ°£ä¹‹ä¸­ã€‚\n");
         set("str", 25);
         set("dex", 20);
         set("con", 17);
@@ -52,7 +52,7 @@ void create()
         set_temp("apply/attack", 50);
         set_temp("apply/defense", 50);
         set_temp("apply/damage",50);
-        create_family("ĞşÌìÅÉ", 1, "µÜ×Ó");
+        create_family("ç„å¤©æ´¾", 1, "å¼Ÿå­");
         set("combat_exp", 250000);
 
         map_skill("force","bibo-shengong");
@@ -64,19 +64,19 @@ void create()
         set("attitude", "peaceful");
 
         set("inquiry", ([
-                "Öı½£" : "ÎÒÒÑ¾­ºÜ¾ÃºÜ¾ÃÃ»ÓĞÖı½£ÁË£¬Äã»¹ÊÇÁíÕÒ±ğÈË°É¡£\n",
-                "Àº×°" : (: ask_blue() :),
-                "·Û×°" : (: ask_pink() :),
-                "½ğ×°" : (: ask_gold() :),
-                "ÂÌ×°" : (: ask_green() :),
-                "Ç¿»¯" : (: ask_steady() :),
+                "é‘„åŠ" : "æˆ‘å·²ç¶“å¾ˆä¹…å¾ˆä¹…æ²’æœ‰é‘„åŠäº†ï¼Œä½ é‚„æ˜¯å¦æ‰¾åˆ¥äººå§ã€‚\n",
+                "ç±ƒè£" : (: ask_blue() :),
+                "ç²‰è£" : (: ask_pink() :),
+                "é‡‘è£" : (: ask_gold() :),
+                "ç¶ è£" : (: ask_green() :),
+                "å¼·åŒ–" : (: ask_steady() :),
         ]) );
         setup();
         set("chat_chance", 3);
         set("chat_msg", ({
-                "Å·Ò±×Ó¸§½£¶ø¸è£º¾ŞãÚÉñ±øÙâ£¬ÈËÖı¾Í¡£¸ÇÊÀ±¦½£Ùâ£¬ÅäÓ¢ĞÛ£¡\n",
-                "Å·Ò±×ÓµÍÍ·³ÁÒ÷£¬ËÆºõÔÚË¼¿¼Ê²Ã´¡£\n"
-                "Å·Ò±×ÓÌ¾ÁËÒ»¿ÚÆø£ºÉñ±øÅäÓ¢ĞÛ£¬¿ÉÓ¢ĞÛ¡£¡£¡£¡£¡£¡£\n"
+                "æ­å†¶å­æ’«åŠè€Œæ­Œï¼šå·¨é—•ç¥å…µå…®ï¼Œäººé‘„å°±ã€‚è“‹ä¸–å¯¶åŠå…®ï¼Œé…è‹±é›„ï¼\n",
+                "æ­å†¶å­ä½é ­æ²‰åŸï¼Œä¼¼ä¹åœ¨æ€è€ƒä»€éº¼ã€‚\n"
+                "æ­å†¶å­å˜†äº†ä¸€å£æ°£ï¼šç¥å…µé…è‹±é›„ï¼Œå¯è‹±é›„ã€‚ã€‚ã€‚ã€‚ã€‚ã€‚\n"
         }) );
         carry_object("/clone/misc/cloth")->wear();
         carry_object("/clone/weapon/changjian")->wield();
@@ -92,9 +92,9 @@ int ask_blue()
         object me = this_player();
         object ob = this_object();
 
-        message_vision(CYN "$N¶Ô$n" CYN "ËµµÀ£ºÄãÊÇÒªºÏ³ÉÀºÉ«×°±¸Âğ£¿ÄãÏÈ¸¶¸øÎÒÒ»ÍòÁ½»Æ½ğ£¬È»ºó°ÑÒÔÏÂ²ÄÁÏ×¼±¸ºÃ¸øÎÒ¡£\n"
-                "       1¡¢ÏëÒªºÏ³ÉµÄ°×É«×°±¸ 1 ¸ö\n"
-                "       2¡¢ÏàÍ¬µÈ¼¶ÒÑ¾­ÎüÈ¡ÊôĞÔµÄºÚË®¾§»ò³¬¼¶ºÚË®¾§ 3 ¸ö\n" NOR, ob, me);
+        message_vision(CYN "$Nå°$n" CYN "èªªé“ï¼šä½ æ˜¯è¦åˆæˆç±ƒè‰²è£å‚™å—ï¼Ÿä½ å…ˆä»˜çµ¦æˆ‘ä¸€è¬å…©é»ƒé‡‘ï¼Œç„¶å¾ŒæŠŠä»¥ä¸‹ææ–™æº–å‚™å¥½çµ¦æˆ‘ã€‚\n"
+                "       1ã€æƒ³è¦åˆæˆçš„ç™½è‰²è£å‚™ 1 å€‹\n"
+                "       2ã€ç›¸åŒç­‰ç´šå·²ç¶“å¸å–å±¬æ€§çš„é»‘æ°´æ™¶æˆ–è¶…ç´šé»‘æ°´æ™¶ 3 å€‹\n" NOR, ob, me);
         set_temp("upgrade/money", 100000000, me);
         set_temp("upgrade/do", "blue", me);
         return 1;
@@ -105,10 +105,10 @@ int ask_pink()
         object me = this_player();
         object ob = this_object();
 
-        message_vision(CYN "$N¶Ô$n" CYN "ËµµÀ£ºÄãÊÇÒªºÏ³É·ÛÉ«×°±¸Âğ£¿ÄãÏÈ¸¶¸øÎÒÒ»ÍòÁ½»Æ½ğ£¬È»ºó°ÑÒÔÏÂ²ÄÁÏ×¼±¸ºÃ¸øÎÒ¡£\n"
-                "       1¡¢ÏëÒªºÏ³ÉµÄÀ¶É«×°±¸ 1 ¸ö\n"
-                "       2¡¢·ÛË®¾§»ò³¬¼¶·ÛË®¾§ 1 ¸ö\n"
-                "       3¡¢ĞşÌúÊ¯ 3 ¸ö\n" NOR, ob, me);
+        message_vision(CYN "$Nå°$n" CYN "èªªé“ï¼šä½ æ˜¯è¦åˆæˆç²‰è‰²è£å‚™å—ï¼Ÿä½ å…ˆä»˜çµ¦æˆ‘ä¸€è¬å…©é»ƒé‡‘ï¼Œç„¶å¾ŒæŠŠä»¥ä¸‹ææ–™æº–å‚™å¥½çµ¦æˆ‘ã€‚\n"
+                "       1ã€æƒ³è¦åˆæˆçš„è—è‰²è£å‚™ 1 å€‹\n"
+                "       2ã€ç²‰æ°´æ™¶æˆ–è¶…ç´šç²‰æ°´æ™¶ 1 å€‹\n"
+                "       3ã€ç„éµçŸ³ 3 å€‹\n" NOR, ob, me);
         set_temp("upgrade/money", 100000000, me);
         set_temp("upgrade/do", "pink", me);
         return 1;
@@ -119,9 +119,9 @@ int ask_gold()
         object me = this_player();
         object ob = this_object();
 
-        message_vision(CYN "$N¶Ô$n" CYN "ËµµÀ£ºÄãÊÇÒªºÏ³É½ğÉ«×°±¸Âğ£¿ÄãÏÈ¸¶¸øÎÒÒ»ÍòÁ½»Æ½ğ£¬È»ºó°ÑÒÔÏÂ²ÄÁÏ×¼±¸ºÃ¸øÎÒ¡£\n"
-                "       1¡¢ÏëÒªºÏ³ÉµÄ·ÛÉ«×°±¸ 1 ¸ö\n"
-                "       2¡¢»ÆË®¾§»ò³¬¼¶»ÆË®¾§ 2 ¸ö\n" NOR, ob, me);
+        message_vision(CYN "$Nå°$n" CYN "èªªé“ï¼šä½ æ˜¯è¦åˆæˆé‡‘è‰²è£å‚™å—ï¼Ÿä½ å…ˆä»˜çµ¦æˆ‘ä¸€è¬å…©é»ƒé‡‘ï¼Œç„¶å¾ŒæŠŠä»¥ä¸‹ææ–™æº–å‚™å¥½çµ¦æˆ‘ã€‚\n"
+                "       1ã€æƒ³è¦åˆæˆçš„ç²‰è‰²è£å‚™ 1 å€‹\n"
+                "       2ã€é»ƒæ°´æ™¶æˆ–è¶…ç´šé»ƒæ°´æ™¶ 2 å€‹\n" NOR, ob, me);
         set_temp("upgrade/money", 100000000, me);
         set_temp("upgrade/do", "gold", me);
         return 1;
@@ -132,11 +132,11 @@ int ask_green()
         object me = this_player();
         object ob = this_object();
 
-        message_vision(CYN "$N¶Ô$n" CYN "ËµµÀ£ººÏ³ÉÌ××°(ÂÌ×°)±ØĞèµÄµÀ¾ßÈçÏÂ
-       1£©1¼şĞèÇóµÈ¼¶Îª30 ¼¶ÒÔÉÏ£¨°üº¬30¼¶£©µÄ½ğ×°±¸
-       2£©1¿éÂÌË®¾§
-       3£©5 ¿é½ğÉ«Ãû×ÖµÄÁ¶»¯²ÄÁÏ£¨ĞşÌúÊ¯)
-ÄãÈç¹û×¼±¸ºÃÁËµÀ¾ß£¬ÏÈ½»¸øÎÒ1ÍòÁ½»Æ½ğ¡£\n" NOR, ob, me);
+        message_vision(CYN "$Nå°$n" CYN "èªªé“ï¼šåˆæˆå¥—è£(ç¶ è£)å¿…éœ€çš„é“å…·å¦‚ä¸‹
+       1ï¼‰1ä»¶éœ€æ±‚ç­‰ç´šç‚º30 ç´šä»¥ä¸Šï¼ˆåŒ…å«30ç´šï¼‰çš„é‡‘è£å‚™
+       2ï¼‰1å¡Šç¶ æ°´æ™¶
+       3ï¼‰5 å¡Šé‡‘è‰²åå­—çš„ç…‰åŒ–ææ–™ï¼ˆç„éµçŸ³)
+ä½ å¦‚æœæº–å‚™å¥½äº†é“å…·ï¼Œå…ˆäº¤çµ¦æˆ‘1è¬å…©é»ƒé‡‘ã€‚\n" NOR, ob, me);
         set_temp("upgrade/money", 100000000, me);
         set_temp("upgrade/do", "green", me);
         return 1;
@@ -147,12 +147,12 @@ int ask_steady()
         object me = this_player();
         object ob = this_object();
 
-        message_vision(CYN "$N¶Ô$n" CYN "ËµµÀ£ºÇ¿»¯±ØĞèµÄµÀ¾ßÈçÏÂ
-       1£©1¼şĞèÇóµÈ¼¶Îª30 ¼¶ÒÔÉÏ£¨°üº¬30¼¶£©µÄÀ¶×°±¸£¨·Û×°±¸¡¢½ğ×°±¸¡¢ÂÌ×°±¸£©
-       2£©1¿éÊ¥Ë®¾§
-       3£©1¿ÅÎüÈ¡ÁË¸½¼ÓÊôĞÔµÄºÚË®¾§£¨³¬¼¶ºÚË®¾§£©
-       4£©4 ¿é½ğÉ«Ãû×ÖµÄÁ¶»¯²ÄÁÏ£¨ĞşÌúÊ¯)
-ÄãÈç¹û×¼±¸ºÃÁËµÀ¾ß£¬ÏÈ½»¸øÎÒ1ÍòÁ½»Æ½ğ¡£\n" NOR, ob, me);
+        message_vision(CYN "$Nå°$n" CYN "èªªé“ï¼šå¼·åŒ–å¿…éœ€çš„é“å…·å¦‚ä¸‹
+       1ï¼‰1ä»¶éœ€æ±‚ç­‰ç´šç‚º30 ç´šä»¥ä¸Šï¼ˆåŒ…å«30ç´šï¼‰çš„è—è£å‚™ï¼ˆç²‰è£å‚™ã€é‡‘è£å‚™ã€ç¶ è£å‚™ï¼‰
+       2ï¼‰1å¡Šè–æ°´æ™¶
+       3ï¼‰1é¡†å¸å–äº†é™„åŠ å±¬æ€§çš„é»‘æ°´æ™¶ï¼ˆè¶…ç´šé»‘æ°´æ™¶ï¼‰
+       4ï¼‰4 å¡Šé‡‘è‰²åå­—çš„ç…‰åŒ–ææ–™ï¼ˆç„éµçŸ³)
+ä½ å¦‚æœæº–å‚™å¥½äº†é“å…·ï¼Œå…ˆäº¤çµ¦æˆ‘1è¬å…©é»ƒé‡‘ã€‚\n" NOR, ob, me);
         set_temp("upgrade/money", 100000000, me);
         set_temp("upgrade/do", "steady", me);
         return 1;
@@ -165,14 +165,14 @@ int check_legal_name(string name, int max_len)
         i = strlen(name);
         if ((strlen(name) < 2) || (strlen(name) > max_len ))
         {
-                write(sprintf("¶Ô²»Æğ£¬ÖĞÎÄ×Ö±ØĞëÊÇ 1 µ½ %d ¸öÖĞÎÄ×Ö¡£\n",
+                write(sprintf("å°ä¸èµ·ï¼Œä¸­æ–‡å­—å¿…é ˆæ˜¯ 1 åˆ° %d å€‹ä¸­æ–‡å­—ã€‚\n",
                       max_len / 2));
                 return 0;
         }
 
         if (max_len < 9 && ! is_chinese(name))
         {
-                write("¶Ô²»Æğ£¬ÇëÄúÓÃ¡¸ÖĞÎÄ¡¹ÎªÌ××°È¡Ãû×Ö¡£\n");
+                write("å°ä¸èµ·ï¼Œè«‹æ‚¨ç”¨ã€Œä¸­æ–‡ã€ç‚ºå¥—è£å–åå­—ã€‚\n");
                 return 0;
         }
         return 1;
@@ -184,7 +184,7 @@ void get_modname(string arg, object me, object ob)
         string arg_old;
 
         if( arg == "q" || arg == "Q" ) {
-                write("ÄãÈ¡ÏûÁËÂÌ»¯×°±¸£¬½«×°±¸È¡»Ø¡£\n");
+                write("ä½ å–æ¶ˆäº†ç¶ åŒ–è£å‚™ï¼Œå°‡è£å‚™å–å›ã€‚\n");
                 ob->move(me, 1);
                 return;
         }
@@ -194,14 +194,14 @@ void get_modname(string arg, object me, object ob)
 
         if (! check_legal_name(arg, 8))
         {
-                write("Çë¸øÄãµÄÂÌ»¯×°±¸Æğ¸öºó×ºÃû³Æ(²»Òª³¬¹ı4¸ö×Ö£¬¿É¼ÓÑÕÉ«)£º\n");
+                write("è«‹çµ¦ä½ çš„ç¶ åŒ–è£å‚™èµ·å€‹å¾Œç¶´åç¨±(ä¸è¦è¶…é4å€‹å­—ï¼Œå¯åŠ é¡è‰²)ï¼š\n");
                 input_to( (: get_modname :), me, ob);
                 return;
         }
 
         arg = arg_old;
         arg = trans_color(arg, 3);
-        arg = HIG "¡ù" NOR+arg+NOR+HIG "¡ù" NOR;
+        arg = HIG "â€»" NOR+arg+NOR+HIG "â€»" NOR;
         set_temp("upgrade/modname", arg, me);
 
         do_combine(me, ob);
@@ -215,39 +215,39 @@ int accept_object(object me, object ob)
         int i;
 
         if( query_temp("upgrade/making") ) {
-                message_vision("$N¶Ô$nËµ£ºÎÒÏÖÔÚÕıÃ¦×ÅÄØ£¬ÇëÉÔµÈÒ»»á£¡\n",
+                message_vision("$Nå°$nèªªï¼šæˆ‘ç¾åœ¨æ­£å¿™è‘—å‘¢ï¼Œè«‹ç¨ç­‰ä¸€æœƒï¼\n",
                                this_object(), me);
                 return 0;
         }
 
         if( query("money_id", ob)){
                 if( !query_temp("upgrade/money", me)){
-                        message_vision("$N°Ñ$nµİ¹ıÈ¥µÄ" + ob->name() +
-                                       "ÍÆÁË»ØÀ´£¬µÀ£ºÎŞ¹¦²»ÊÜÂ»£¡\n",
+                        message_vision("$NæŠŠ$nééå»çš„" + ob->name() +
+                                       "æ¨äº†å›ä¾†ï¼Œé“ï¼šç„¡åŠŸä¸å—ç¥¿ï¼\n",
                                        this_object(), me);
                         return 0;
                 }
 
                 if( ob->value()<query_temp("upgrade/money", me)){
-                        message_vision("$N¶Ô$nËµ£º¶Ô²»Æğ£¬ÀÏ·òÕâÒ»"
-                                       "Ç§¶àÄêÀ´£¬»¹Ã»ÓĞ´ò¹ıÕÛ¿Û¡£\n",
+                        message_vision("$Nå°$nèªªï¼šå°ä¸èµ·ï¼Œè€å¤«é€™ä¸€"
+                                       "åƒå¤šå¹´ä¾†ï¼Œé‚„æ²’æœ‰æ‰“éæŠ˜æ‰£ã€‚\n",
                                        this_object(), me);
                         return 0;
                 }
                 if( query_temp("upgrade/do", me) == "steady" )
-                        message_vision("$N¶Ô$nËµµÀ£ººÃ£¬ÄãÕâ¾Í°ÑÄãµÄÒªÇ¿»¯µÄ×°±¸¸øÎÒ¿´¿´(show)ÏÈ¡£\n",
+                        message_vision("$Nå°$nèªªé“ï¼šå¥½ï¼Œä½ é€™å°±æŠŠä½ çš„è¦å¼·åŒ–çš„è£å‚™çµ¦æˆ‘çœ‹çœ‹(show)å…ˆã€‚\n",
                                 this_object(), me);
                 else
-                        message_vision("$N¶Ô$nËµµÀ£ººÃ£¬ÄãÕâ¾Í°ÑÄãµÄÒªºÏ³ÉµÄ×°±¸¸øÎÒ¿´¿´(show)ÏÈ¡£\n",
+                        message_vision("$Nå°$nèªªé“ï¼šå¥½ï¼Œä½ é€™å°±æŠŠä½ çš„è¦åˆæˆçš„è£å‚™çµ¦æˆ‘çœ‹çœ‹(show)å…ˆã€‚\n",
                                 this_object(), me);
 
-                set_temp("paid/Å·Ò±×Ó", 1, me);
+                set_temp("paid/æ­å†¶å­", 1, me);
                 destruct(ob);
                 return -1;
         }
 
         if( !mapp(nds=query_temp("upgrade/needs", me)) && !query_temp("upgrade/prepare", me)){
-                message_vision("$N¶Ô$nËµ£ºÄã¸øÎÒÕâ¸ö¸ÉÊ²Ã´°¡£¡\n",
+                message_vision("$Nå°$nèªªï¼šä½ çµ¦æˆ‘é€™å€‹å¹¹ä»€éº¼å•Šï¼\n",
                                this_object(), me);
                 return 0;
         }
@@ -255,14 +255,14 @@ int accept_object(object me, object ob)
         if( query("material_file", ob) && base_name(ob) == query_temp("upgrade/file", me)){
                 if( query_temp("upgrade/prepare", me)){
                         if( query_temp("upgrade/do", me) == "green"){
-                                write("Çë¸øÄãµÄÂÌ»¯×°±¸Æğ¸öºó×ºÃû³Æ(²»Òª³¬¹ı4¸ö×Ö£¬¿É¼ÓÑÕÉ«)£º\n");
+                                write("è«‹çµ¦ä½ çš„ç¶ åŒ–è£å‚™èµ·å€‹å¾Œç¶´åç¨±(ä¸è¦è¶…é4å€‹å­—ï¼Œå¯åŠ é¡è‰²)ï¼š\n");
                                 input_to( (: get_modname :), me, ob);
                         }
                         else
                                 do_combine(me, ob);
                         return 1;
                 } else {
-                        message_vision("$N¶Ô$nËµ£ºÄã¸øÎÒÕâ¸ö¸ÉÊ²Ã´°¡£¡\n",
+                        message_vision("$Nå°$nèªªï¼šä½ çµ¦æˆ‘é€™å€‹å¹¹ä»€éº¼å•Šï¼\n",
                                               this_object(), me);
                         return 0;
                 }
@@ -273,30 +273,30 @@ int accept_object(object me, object ob)
         obj = keys(nds);
         for( i = 0; i < sizeof(obj); i++ ) {
                 if( ob->query_name() == obj[i]->query_name() ) {
-                        if( ob->query_name() == "ºÚË®" ) {
+                        if( ob->query_name() == "é»‘æ°´" ) {
                                 if( query_temp("upgrade/level", me) && 
                                     query("enchase/level", ob) != query_temp("upgrade/level", me)){
-                                        message_vision("$N¶Ô$nËµ£º" + ob->name() + "µÄµÈ¼¶ºÍÒªÇó²»·û£¡\n",
+                                        message_vision("$Nå°$nèªªï¼š" + ob->name() + "çš„ç­‰ç´šå’Œè¦æ±‚ä¸ç¬¦ï¼\n",
                                                 this_object(), me);
                                         return 0;
                                 }
                                 if( query_temp("upgrade/type", me) && 
                                     query("enchase/type", ob) != query_temp("upgrade/type", me)){
-                                        message_vision("$N¶Ô$nËµ£º" + ob->name() + "µÄÀàĞÍºÍÒªÇó²»·û£¡\n",
+                                        message_vision("$Nå°$nèªªï¼š" + ob->name() + "çš„é¡å‹å’Œè¦æ±‚ä¸ç¬¦ï¼\n",
                                                 this_object(), me);
                                         return 0;
                                 }
                                 str=keys(query("enchase/apply_prop", ob))[0];
                                 if( query_temp("upgrade/do", me) == "steady"){
                                         if( !query_temp("upgrade/steady_prop/"+str, me)){
-                                                message_vision("$N¶Ô$nËµ£º" + ob->name() + "ËùÎüÈ¡µÄÊôĞÔºÍÓÃÀ´Ç¿»¯µÄ×°±¸Ô­Ê¼ÊôĞÔ²»Ò»ÖÂ£¬²»¿ÉÓÃÀ´Ç¿»¯£¡\n",
+                                                message_vision("$Nå°$nèªªï¼š" + ob->name() + "æ‰€å¸å–çš„å±¬æ€§å’Œç”¨ä¾†å¼·åŒ–çš„è£å‚™åŸå§‹å±¬æ€§ä¸ä¸€è‡´ï¼Œä¸å¯ç”¨ä¾†å¼·åŒ–ï¼\n",
                                                         this_object(), me);
                                                 return 0;
                                         }
                                         set_temp("upgrade/apply_prop/"+str,query("enchase/apply_prop/"+str,  ob), me);
                                 } else {
                                         if( query_temp("upgrade/apply_prop/"+str, me)){
-                                                message_vision("$N¶Ô$nËµ£º" + ob->name() + "ËùÎüÈ¡µÄÊôĞÔ²»¿ÉÖØ¸´ÓÃÀ´ºÏ³É£¡\n",
+                                                message_vision("$Nå°$nèªªï¼š" + ob->name() + "æ‰€å¸å–çš„å±¬æ€§ä¸å¯é‡å¾©ç”¨ä¾†åˆæˆï¼\n",
                                                         this_object(), me);
                                                 return 0;
                                         }
@@ -313,14 +313,14 @@ int accept_object(object me, object ob)
                         if( !mapp(nds=query_temp("upgrade/needs", me)) || sizeof(keys(nds))<1){
                                 set_temp("upgrade/prepare", 1, me);
                                 delete_temp("upgrade/needs", me);
-                                tell_object(me, HIR "\nºÏ³É×°±¸µÄÎïÆ·ÆëÁË£¬ÏÖÔÚ°ÑÄãµÄÒªºÏ³ÉµÄ×°±¸¸øÎÒ°É£¡\n" NOR);
+                                tell_object(me, HIR "\nåˆæˆè£å‚™çš„ç‰©å“é½Šäº†ï¼Œç¾åœ¨æŠŠä½ çš„è¦åˆæˆçš„è£å‚™çµ¦æˆ‘å§ï¼\n" NOR);
                                 return -1;
                         }
 
-                        tell_object(me, HIR "\n¶÷£¬²»´í£¬»¹ÓĞÃ»ÓĞÁË£¿£¡\n" NOR);
+                        tell_object(me, HIR "\næ©ï¼Œä¸éŒ¯ï¼Œé‚„æœ‰æ²’æœ‰äº†ï¼Ÿï¼\n" NOR);
                         return -1;
                 } else {
-                        message_vision("$N¶Ô$nËµ£ºÄã¸øÎÒÕâ¸ö¸ÉÊ²Ã´°¡£¿ÎÒÒªÄãÕÒµÄ²ÄÁÏ²»ÊÇÕâ¸ö£¡\n",
+                        message_vision("$Nå°$nèªªï¼šä½ çµ¦æˆ‘é€™å€‹å¹¹ä»€éº¼å•Šï¼Ÿæˆ‘è¦ä½ æ‰¾çš„ææ–™ä¸æ˜¯é€™å€‹ï¼\n",
                                    this_object(), me);
                         return 0;
                 }
@@ -336,9 +336,9 @@ int do_combine(object me, object ob)
         set_temp("upgrade/making", ob);
         set_temp("upgrade/player_id",query("id", me));
 
-        message_vision(HIM "$NÄÃ³öÌØÖÆµÄÄ§·½£¬½«" + ob->name() + HIM "ºÍºÏ³É²ÄÁÏ·ÅÁË½øÈ¥¡£\n"
-                       "½Ó×Å$N°´ÕÕÌØÊâµÄË³Ğò½«Ä§·½Ğı×ª£¬ö®Ê±¼äÖ»¼ûÄ§·½·¢³öÒ»µÀÆæÒìµÄ¹âÃ¢£¬\n"
-                       "Ò»"+query("unit", ob)+"Õ¸ĞÂµÄ"+ob->name()+HIM"³öÏÖÔÚÄãµÄÑÛÇ°¡£\n\n"NOR,
+        message_vision(HIM "$Næ‹¿å‡ºç‰¹åˆ¶çš„é­”æ–¹ï¼Œå°‡" + ob->name() + HIM "å’Œåˆæˆææ–™æ”¾äº†é€²å»ã€‚\n"
+                       "æ¥è‘—$NæŒ‰ç…§ç‰¹æ®Šçš„é †åºå°‡é­”æ–¹æ—‹è½‰ï¼Œéœæ™‚é–“åªè¦‹é­”æ–¹ç™¼å‡ºä¸€é“å¥‡ç•°çš„å…‰èŠ’ï¼Œ\n"
+                       "ä¸€"+query("unit", ob)+"å¶„æ–°çš„"+ob->name()+HIM"å‡ºç¾åœ¨ä½ çš„çœ¼å‰ã€‚\n\n"NOR,
                        this_object(), me);
 
         temp = ([]);
@@ -375,7 +375,7 @@ int do_combine(object me, object ob)
                 ob->set_color("$HIB$");
                 set("combine_to", "pink", ob);
                 set("require", temp, ob);
-                set("makeinfo", HIR"\n"+me->query_idname()+HIR"³öÆ·\n"NOR, ob);
+                set("makeinfo", HIR"\n"+me->query_idname()+HIR"å‡ºå“\n"NOR, ob);
         }
         else if( combine_to == "pink" ) {
                 set("enchase/pink_prop", prop, ob);
@@ -384,12 +384,12 @@ int do_combine(object me, object ob)
                 ob->set_color("$HIM$");
                 set("combine_to", "gold", ob);
                 set("require", temp, ob);
-                set("makeinfo", HIR"\n"+me->query_idname()+HIR"³öÆ·\n"NOR, ob);
+                set("makeinfo", HIR"\n"+me->query_idname()+HIR"å‡ºå“\n"NOR, ob);
         }
         else if( combine_to == "gold" ) {
                 ob->set_color("$HIY$");
                 set("combine_to", "green", ob);
-                set("makeinfo", HIR"\n"+me->query_idname()+HIR"³öÆ·\n"NOR, ob);
+                set("makeinfo", HIR"\n"+me->query_idname()+HIR"å‡ºå“\n"NOR, ob);
         }
         else if( combine_to == "green" ) {
                 set("enchase/green_prop", prop, ob);
@@ -398,7 +398,7 @@ int do_combine(object me, object ob)
                 set("mod", "itemmake", ob);
                 ob->set_color("$HIG$");
                 set("combine_to", "ultimate", ob);
-                set("makeinfo", HIR"\n"+me->query_idname()+HIR"³öÆ·\n"NOR, ob);
+                set("makeinfo", HIR"\n"+me->query_idname()+HIR"å‡ºå“\n"NOR, ob);
         }
 
         ob->save();
@@ -414,9 +414,9 @@ int do_finish(object me, object ob)
                 me = find_player(query_temp("upgrade/player_id"));
 
         if( !objectp(me) || environment(me) != environment() ) {
-                message_vision(HIW "$NÌ¾ÁË¿ÚÆø£¬ËµµÀ£º¿ÍÈËÎªºÎÕâ¾ÍÈ¥"
-                               "ÁË£¡£¿°ÕÁË°ÕÁË£¬²»×öÁË£¬È¥°É£¡\n"
-                               "$N°Ñ"+ob->name()+"Å×½ø»ğÂ¯£¬¾Í´Ë²»¼û¡£\n\n" NOR,
+                message_vision(HIW "$Nå˜†äº†å£æ°£ï¼Œèªªé“ï¼šå®¢äººç‚ºä½•é€™å°±å»"
+                               "äº†ï¼ï¼Ÿç½·äº†ç½·äº†ï¼Œä¸åšäº†ï¼Œå»å§ï¼\n"
+                               "$NæŠŠ"+ob->name()+"æ‹‹é€²ç«çˆï¼Œå°±æ­¤ä¸è¦‹ã€‚\n\n" NOR,
                                this_object());
                 if( objectp(me) )
                         delete_temp("upgrade", me);
@@ -428,7 +428,7 @@ int do_finish(object me, object ob)
                 return 1;
         }
         ob->move(me, 1);
-        message_vision("$N°Ñ"+query("name", ob)+"½»»¹¸øÁË$n¡£\n",
+        message_vision("$NæŠŠ"+query("name", ob)+"äº¤é‚„çµ¦äº†$nã€‚\n",
                        this_object(), me);
         delete_temp("upgrade", me);
         delete_temp("upgrade");
@@ -446,43 +446,43 @@ int do_show(string arg)
         int level, i;
 
         if( query_temp("upgrade/making") )
-                return notify_fail("ÎÒÕıÔÚÃ¦×ÅÄØ£¬ÇëÉÔµÈÒ»»á£¡\n");
+                return notify_fail("æˆ‘æ­£åœ¨å¿™è‘—å‘¢ï¼Œè«‹ç¨ç­‰ä¸€æœƒï¼\n");
 
         if( !arg )
-                return notify_fail("ÄãÒªÁÁ³öÊ²Ã´¶«Î÷£¿\n");
+                return notify_fail("ä½ è¦äº®å‡ºä»€éº¼æ±è¥¿ï¼Ÿ\n");
 
         me = this_player();
         if( !objectp(ob = present(arg, me)) )
-                return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÖÖ¶«Î÷¡£\n");
+                return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™ç¨®æ±è¥¿ã€‚\n");
 
         if( query("equipped", ob) )
-                return notify_fail("ÄãÏÈ½â³ı" + ob->name() + "µÄ×°±¸ÔÙËµ£¡\n");
+                return notify_fail("ä½ å…ˆè§£é™¤" + ob->name() + "çš„è£å‚™å†èªªï¼\n");
 
         if( query_temp("upgrade/file", me) )
-                return notify_fail("ÄãÏÈ°ÑÄãÕıÔÚ½øĞĞµÄºÏ³É/Ç¿»¯/¸ÄÔìÍê¹¤ÁËÔÙËµ£¡\n");
+                return notify_fail("ä½ å…ˆæŠŠä½ æ­£åœ¨é€²è¡Œçš„åˆæˆ/å¼·åŒ–/æ”¹é€ å®Œå·¥äº†å†èªªï¼\n");
 
-        message_vision("$nÄÃ³öÒ»"+query("unit", ob)+ob->name()+
-                       "¶Ô$NËµ£º¡°°İÍĞ°İÍĞ...¡±\n",
+        message_vision("$næ‹¿å‡ºä¸€"+query("unit", ob)+ob->name()+
+                       "å°$Nèªªï¼šâ€œæ‹œæ‰˜æ‹œæ‰˜...â€\n",
                        this_object(), me);
 
-        if( !wizardp(me) && !query_temp("paid/Å·Ò±×Ó",1, me)){
-                command("say ÄãÕâÊÇÏëÈÃÎÒ°ïÄã¸ÉÊ²Ã´ÄØ£¿");
+        if( !wizardp(me) && !query_temp("paid/æ­å†¶å­",1, me)){
+                command("say ä½ é€™æ˜¯æƒ³è®“æˆ‘å¹«ä½ å¹¹ä»€éº¼å‘¢ï¼Ÿ");
                 /*command("heihei");
                 set_temp("upgrade/money", 100000000, me);
-                command("say Õâ...ÔõÃ´Ò²µÄÓĞµãÒâË¼ÒâË¼°É£¿Äã"
-                        "ËµÒ»ÍòÁ½»Æ½ğÔõÃ´Ñù£¿µ±È»¶àĞ©ÎÒÒ²²»·´¶Ô¡£");*/
+                command("say é€™...æ€éº¼ä¹Ÿçš„æœ‰é»æ„æ€æ„æ€å§ï¼Ÿä½ "
+                        "èªªä¸€è¬å…©é»ƒé‡‘æ€éº¼æ¨£ï¼Ÿç•¶ç„¶å¤šäº›æˆ‘ä¹Ÿä¸åå°ã€‚");*/
                 return 1;
         }
 
         if( !query("material_file", ob)){
                 command("heng");
-                command("say Õâ...Õâ...ÎÒ¿´»¹ÊÇËãÁË°É£¡");
+                command("say é€™...é€™...æˆ‘çœ‹é‚„æ˜¯ç®—äº†å§ï¼");
                 return 1;
         }
 
         /*if( ob->item_owner() != query("id", me)){
                 command("kick"+query("id", me));
-                command("say ÄãÒÔÎªÎÒµÄÏÉÊõÊÇÃÉÊÂµÄ°¡£¬Õâ·ÖÃ÷²»ÊÇÄãµÄ£¡");
+                command("say ä½ ä»¥ç‚ºæˆ‘çš„ä»™è¡“æ˜¯è’™äº‹çš„å•Šï¼Œé€™åˆ†æ˜ä¸æ˜¯ä½ çš„ï¼");
                 return 1;
         }*/
         if( query_temp("upgrade/do", me) == "steady"){
@@ -499,7 +499,7 @@ int do_show(string arg)
                 set_temp("upgrade/steady_prop", copy(query("enchase/apply_prop", ob)), me);
         } else {
                 data=copy(query("combine_to", upgrade_material[ob)]);
-                if( !mapp(data) ) return notify_fail("ÄãµÄ×°±¸ÒÑ¾­²»ĞèÒªÔÙºÏ³ÉÁË¡£\n");
+                if( !mapp(data) ) return notify_fail("ä½ çš„è£å‚™å·²ç¶“ä¸éœ€è¦å†åˆæˆäº†ã€‚\n");
 
                 if( query("combine_to", ob) == "blue"){
                         level=query("require/level", ob);
@@ -518,12 +518,12 @@ int do_show(string arg)
         obs = keys(data);
 
         if( query_temp("upgrade/do", me) == "steady" )
-                str = "\nÄãµÄ" + ob->short() + HIG + "´Ë´ÎÇ¿»¯ĞèÒªµÄÎïÆ·ÈçÏÂ£º\n\n";
+                str = "\nä½ çš„" + ob->short() + HIG + "æ­¤æ¬¡å¼·åŒ–éœ€è¦çš„ç‰©å“å¦‚ä¸‹ï¼š\n\n";
         else
-                str = "\nÄãµÄ" + ob->short() + HIG + "´Ë´ÎºÏ³ÉĞèÒªµÄÎïÆ·ÈçÏÂ£º\n\n";
+                str = "\nä½ çš„" + ob->short() + HIG + "æ­¤æ¬¡åˆæˆéœ€è¦çš„ç‰©å“å¦‚ä¸‹ï¼š\n\n";
         for( i=0; i<sizeof(obs); i++ ) {
                 item = new(obs[i]);
-                str += sprintf("%-40s £º\t%d %s\n",
+                str += sprintf("%-40s ï¼š\t%d %s\n",
                                item->short(),
                                data[obs[i]],
                                query("unit", item));
@@ -531,29 +531,29 @@ int do_show(string arg)
         }
         str += "\n";
         tell_object(me, HIG + str + NOR);
-        tell_object(me, "ÄãÇ§ÍòÒª¼ÇºÃÎÒ½ĞÄãÕÒµÄµÄÎïÆ·£¬·ñÔò.....\n");
-        tell_object(me, "Äã°Ñ" + ob->short() + "ËùĞèµÄÎïÆ·±¸Æë£¬ÔÙÀ´ÕÒÎÒ°É£¡\n");
-        delete_temp("paid/Å·Ò±×Ó", me);
+        tell_object(me, "ä½ åƒè¬è¦è¨˜å¥½æˆ‘å«ä½ æ‰¾çš„çš„ç‰©å“ï¼Œå¦å‰‡.....\n");
+        tell_object(me, "ä½ æŠŠ" + ob->short() + "æ‰€éœ€çš„ç‰©å“å‚™é½Šï¼Œå†ä¾†æ‰¾æˆ‘å§ï¼\n");
+        delete_temp("paid/æ­å†¶å­", me);
         return 1;
 }
 
 void kill_ob(object ob)
 {
         ::kill_ob(ob);
-        message_vision("$NÀäĞ¦Ò»Éù£¬µÀ£º¡°ÕâÄêÍ·£¬Ê²Ã´ÈË¶¼ÓĞ¡£¡±ËµÍêÉìÊÖÒ»Ö¸$n¡£\n",
+        message_vision("$Nå†·ç¬‘ä¸€è²ï¼Œé“ï¼šâ€œé€™å¹´é ­ï¼Œä»€éº¼äººéƒ½æœ‰ã€‚â€èªªå®Œä¼¸æ‰‹ä¸€æŒ‡$nã€‚\n",
                        this_object(), ob);
         ob->unconcious();
 }
 
 int accept_fight(object who)
 {
-        command("say Ã»ĞËÈ¤¡£");
+        command("say æ²’èˆˆè¶£ã€‚");
         return 0;
 }
 
 int accept_ansuan(object who)
 {
-        return notify_fail("Äã¸ÕÏë°µËã£¬¿ÉÊÇÑÛÇ°Ò»»¨£¬¿´²»Ì«Çå³ş¡£\n");
+        return notify_fail("ä½ å‰›æƒ³æš—ç®—ï¼Œå¯æ˜¯çœ¼å‰ä¸€èŠ±ï¼Œçœ‹ä¸å¤ªæ¸…æ¥šã€‚\n");
 }
 
 void receive_damage(string type, int n)

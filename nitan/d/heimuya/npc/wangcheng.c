@@ -4,11 +4,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("Íõ³Ï", ({ "wang cheng","wang"}) );
-        set("gender", "ÄÐÐÔ" );
-        set("title", "ÈÕÔÂÉñ½Ì·çÀ×ÌÃÆìÖ÷");
+        set_name("çŽ‹èª ", ({ "wang cheng","wang"}) );
+        set("gender", "ç”·æ€§" );
+        set("title", "æ—¥æœˆç¥žæ•™é¢¨é›·å ‚æ——ä¸»");
         set("age", 65);
-        set("long", "´ËÈËÉí²Ä°«ÅÖ£¬ÂúÁ³¶ÑÐ¦£¬ÆäÊµÎªÈËÊ®·ÖºÝ¶¾¡£\n");
+        set("long", "æ­¤äººèº«æçŸ®èƒ–ï¼Œæ»¿è‡‰å †ç¬‘ï¼Œå…¶å¯¦ç‚ºäººååˆ†ç‹ æ¯’ã€‚\n");
         set("attitude", "friendly");
         set("shen_type", -1);
 
@@ -49,7 +49,7 @@ void create()
         prepare_skill("hand", "huanmo-longtianwu");
         prepare_skill("cuff", "xuwu-piaomiao");
 
-        create_family("ÈÕÔÂÉñ½Ì",2,"µÜ×Ó ·çÀ×ÌÃÆìÖ÷");
+        create_family("æ—¥æœˆç¥žæ•™",2,"å¼Ÿå­ é¢¨é›·å ‚æ——ä¸»");
 
         setup();
         carry_object("/clone/weapon/gangjian")->wield();

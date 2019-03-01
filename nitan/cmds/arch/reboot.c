@@ -10,7 +10,7 @@ inherit F_CLEAN_UP;
 #define STORAGE_D "/adm/daemons/storaged.c"
 #endif
 
-// Æô¶¯µÄÊ±¼ä
+// å•Ÿå‹•çš„æ™‚é–“
 int start_reboot = 0;
 int last_notice = 0;
 
@@ -28,7 +28,7 @@ int main(object me, string arg)
 
         if (! arg)
         {
-                write("Ö¸Áî¸ñÊ½: shutdown [-f] | soon | after <n>\n");
+                write("æŒ‡ä»¤æ ¼å¼: shutdown [-f] | soon | after <n>\n");
                 return 1;
         }
 
@@ -42,18 +42,18 @@ int main(object me, string arg)
 
                 if (! is_root(me))
                 {
-                        write("ÄãÃ»ÓĞÈ¨ÏŞÇ¿ÖÆÍ£Ö¹" + LOCAL_MUD_NAME() + "¡£\n");
+                        write("ä½ æ²’æœ‰æ¬Šé™å¼·åˆ¶åœæ­¢" + LOCAL_MUD_NAME() + "ã€‚\n");
                         return 1;
                 }
 
-                message_system(str + "Ç¿ĞĞÆô¶¯ÁË" + LOCAL_MUD_NAME() + "¡£");
+                message_system(str + "å¼·è¡Œå•Ÿå‹•äº†" + LOCAL_MUD_NAME() + "ã€‚");
                 shutdown(0);
                 return 1;
         }
 
         if (wiz_level(me) < 4)
         {
-                write("ÄãÃ»ÓĞÈ¨ÏŞÖØĞÂÆô¶¯" + LOCAL_MUD_NAME() + "¡£\n");
+                write("ä½ æ²’æœ‰æ¬Šé™é‡æ–°å•Ÿå‹•" + LOCAL_MUD_NAME() + "ã€‚\n");
                 return 1;
         }
 
@@ -63,7 +63,7 @@ int main(object me, string arg)
                 {
                         if (arg != "cancel")
                         {
-                                write("²ÎÊı´íÎó£¬Çë²é¿´°ïÖú¡£\n");
+                                write("åƒæ•¸éŒ¯èª¤ï¼Œè«‹æŸ¥çœ‹å¹«åŠ©ã€‚\n");
                                 return 1;
                         }
 
@@ -71,35 +71,35 @@ int main(object me, string arg)
                         {
                                 start_reboot = 0;
                                 set_heart_beat(0);
-                                message_system(str + "È¡ÏûÁËÆô¶¯£¬ÓÎÏ·¼ÌĞø½øĞĞ¡£");
+                                message_system(str + "å–æ¶ˆäº†å•Ÿå‹•ï¼ŒéŠæˆ²ç¹¼çºŒé€²è¡Œã€‚");
                                 write("Ok.\n");
                                 return 1;
                         }
 
-                        write("ÏÖÔÚMUDÕıÔÚÕı³£µÄÔËĞĞ¡£\n");
+                        write("ç¾åœ¨MUDæ­£åœ¨æ­£å¸¸çš„é‹è¡Œã€‚\n");
                         return 1;
                 }
-                message_system(str + "ÖØĞÂÆô¶¯ÁË" + LOCAL_MUD_NAME() + "¡£");
+                message_system(str + "é‡æ–°å•Ÿå‹•äº†" + LOCAL_MUD_NAME() + "ã€‚");
                 reboot_mud();
         }
 
         if (n < 1)
         {
-                write("Ã»ÓĞÕâÃ´¶ÌµÄÊ±¼ä£¬Äã²»ÈçÑ¡Ôñ soon Á¢¿ÌÆô¶¯¡£\n");
+                write("æ²’æœ‰é€™éº¼çŸ­çš„æ™‚é–“ï¼Œä½ ä¸å¦‚é¸æ“‡ soon ç«‹åˆ»å•Ÿå‹•ã€‚\n");
                 return 1;
         }
 
         if (n > 10)
         {
-                write("ÕâÃ´¾Ã£¿Äã»¹ÊÇµÈÒ»»á¶ùÔÙÆô¶¯°É¡£\n");
+                write("é€™éº¼ä¹…ï¼Ÿä½ é‚„æ˜¯ç­‰ä¸€æœƒå…’å†å•Ÿå‹•å§ã€‚\n");
                 return 1;
         }
 
         start_reboot = time() + n * 60;
         last_notice = time();
         set_heart_beat(1);
-        message_system(str + "¾ö¶¨ÔÚ" + chinese_number(n) +
-                       "·ÖÖÓÒÔºóÖØĞÂÆô¶¯" + LOCAL_MUD_NAME() + "¡£");
+        message_system(str + "æ±ºå®šåœ¨" + chinese_number(n) +
+                       "åˆ†é˜ä»¥å¾Œé‡æ–°å•Ÿå‹•" + LOCAL_MUD_NAME() + "ã€‚");
         return 1;
 }
 
@@ -118,15 +118,15 @@ protected void heart_beat()
                 return;
         }
 
-        if (n >= 60) str = chinese_number(n / 60) + "·ÖÖÓ"; else
+        if (n >= 60) str = chinese_number(n / 60) + "åˆ†é˜"; else
                      str = "";
-        if (n % 60) str += chinese_number(n % 60) + "Ãë";
+        if (n % 60) str += chinese_number(n % 60) + "ç§’";
 
         t = time() - last_notice;
         if ((n >= 60 && t >= 60) || (n < 60 && n >= 10 && t >= 10) || n < 10)
         {
-                message_system(LOCAL_MUD_NAME() + "½«ÔÚ" +
-                               str + "ÒÔºóÖØĞÂÆô¶¯£¬Çë×¥½ôÊ±¼ä´¦ÀíÄãµÄÈËÎï¡£");
+                message_system(LOCAL_MUD_NAME() + "å°‡åœ¨" +
+                               str + "ä»¥å¾Œé‡æ–°å•Ÿå‹•ï¼Œè«‹æŠ“ç·Šæ™‚é–“è™•ç†ä½ çš„äººç‰©ã€‚");
                 last_notice = time();
         }
 }
@@ -136,9 +136,9 @@ protected void reboot_mud()
         object *user, link_ob;
         int i;
 
-        message_system("ÓÎÏ·ÖØĞÂÆô¶¯£¬ÇëÉÔºòÒ»·ÖÖÓÔÙ login ¡£\n");
+        message_system("éŠæˆ²é‡æ–°å•Ÿå‹•ï¼Œè«‹ç¨å€™ä¸€åˆ†é˜å† login ã€‚\n");
 
-        // ±£´æËùÓĞµÄÊØ»¤½ø³ÌµÄÊı¾İ
+        // ä¿å­˜æ‰€æœ‰çš„å®ˆè­·é€²ç¨‹çš„æ•¸æ“š
         reset_eval_cost();
         if (find_object(INTERMUD2_D))INTERMUD2_D->mud_shutdown();
         if (find_object(NAME_D))     NAME_D->mud_shutdown();
@@ -167,15 +167,15 @@ protected void reboot_mud()
 int help (object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½: shutdown [-f] | soon | after <n> | cancel
+æŒ‡ä»¤æ ¼å¼: shutdown [-f] | soon | after <n> | cancel
 
-ÖØĞÂÆğ¶¯ÓÎÏ·¡£Èç¹û²ÉÓÃ -f ²ÎÊı£¬ÔòÏµÍ³Ç¿ÖÆÆô¶¯£¬¶ø²»±£´æÈÎºÎ
-½ø¶È£¬ÕâÊÇ¹©ÏµÍ³³ö´íÊ±Ê¹ÓÃµÄ¡£Èç¹ûÊ¹ÓÃÁË²ÎÊısoon£¬ÔòÏµÍ³½«Á¢
-¿ÌÖØĞÂÆô¶¯£¬¶øÊ¹ÓÃ after n ÔòÏµÍ³½«ÔÚ n ·ÖÖÓÒÔºóÖØĞÂÆô¶¯¡£
+é‡æ–°èµ·å‹•éŠæˆ²ã€‚å¦‚æœæ¡ç”¨ -f åƒæ•¸ï¼Œå‰‡ç³»çµ±å¼·åˆ¶å•Ÿå‹•ï¼Œè€Œä¸ä¿å­˜ä»»ä½•
+é€²åº¦ï¼Œé€™æ˜¯ä¾›ç³»çµ±å‡ºéŒ¯æ™‚ä½¿ç”¨çš„ã€‚å¦‚æœä½¿ç”¨äº†åƒæ•¸soonï¼Œå‰‡ç³»çµ±å°‡ç«‹
+åˆ»é‡æ–°å•Ÿå‹•ï¼Œè€Œä½¿ç”¨ after n å‰‡ç³»çµ±å°‡åœ¨ n åˆ†é˜ä»¥å¾Œé‡æ–°å•Ÿå‹•ã€‚
 
-Ê¹ÓÃÁË -f ²ÎÊıÔò soon ºÍ after ÎŞĞ§¡£
+ä½¿ç”¨äº† -f åƒæ•¸å‰‡ soon å’Œ after ç„¡æ•ˆã€‚
 
-Èç¹ûÊ¹ÓÃÁË after ²ÎÊı£¬¿ÉÒÔÊ¹ÓÃ cancel ²ÎÊıÖĞÖ¹Æô¶¯µÄ¹ı³Ì¡£
+å¦‚æœä½¿ç”¨äº† after åƒæ•¸ï¼Œå¯ä»¥ä½¿ç”¨ cancel åƒæ•¸ä¸­æ­¢å•Ÿå‹•çš„éç¨‹ã€‚
 
 HELP );
         return 1;

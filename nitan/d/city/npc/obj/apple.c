@@ -1,18 +1,18 @@
 // Code of ShenZhou
-// apple ¹ú¹âÆ»¹û
+// apple åœ‹å…‰è˜‹æžœ
 #include <ansi.h>
 inherit ITEM;
 inherit F_FOOD;
 
 void create()
 {
-        set_name("Æ»¹û", ({"ping guo", "guo"}));
+        set_name("è˜‹æžœ", ({"ping guo", "guo"}));
         set_weight(80);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¸öÐÂÏÊÏãÌðµÄ´óºìÆ»¹û¡£\n");
-                set("unit", "¸ö");
+                set("long", "ä¸€å€‹æ–°é®®é¦™ç”œçš„å¤§ç´…è˜‹æžœã€‚\n");
+                set("unit", "å€‹");
                 set("value", 20);
                 set("food_remaining", 3);
                 set("food_supply", 10);

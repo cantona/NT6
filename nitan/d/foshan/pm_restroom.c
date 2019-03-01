@@ -7,13 +7,13 @@ int do_look(string arg);
 
 void create()
 {
-        set("short", "Ó¢ÐÛ»á¹Ý");
+        set("short", "è‹±é›„æœƒé¤¨");
         set("long", @LONG
-Ó¢ÐÛ»á¹ÝÒ²ÊÇ·ïÀÏÒ¯µÄ¼ÒÒµ¡£³£À´ÕâÀïµÄÈË£¬¶¼ÊÇÓÐÄÜÄÍÓÐÀ´Í·
-µÄ¡£Ó¢ÐÛ»á¹ÝÀïÎ§×ÅºÚÑ¹Ñ¹µÄÒ»ÈºÈË£¬ÄÏ·½ÓÐÒ»ÉÈ½ô½ô¹Ø±ÕµÄÐ¡ÃÅ¡£
-Ö»ÓÐÔÚÃ¿ÔÂÒ»´ÎµÄµêÆÌÅÄÂôÊ±¡¸ÄÏ°ÔÌì¡¹·ïÌìÄÏ²Å»á½«Ëü´ò¿ª£¬ÔÚÄÇ
-Àï»á¼û¸÷´¦µÄÉÌ¼Ö¡£Ð¡ÃÅÅÔ¹Ò×ÅµÄÒ»¿éºìÄ¾ÅÆ×Ó(paizi)ÉÏ±êÐ´×Å¸÷¼Ò
-µêÆÌÅÄÂôµÄµ×¼Û¡£
+è‹±é›„æœƒé¤¨ä¹Ÿæ˜¯é³³è€çˆºçš„å®¶æ¥­ã€‚å¸¸ä¾†é€™è£¡çš„äººï¼Œéƒ½æ˜¯æœ‰èƒ½è€æœ‰ä¾†é ­
+çš„ã€‚è‹±é›„æœƒé¤¨è£¡åœè‘—é»‘å£“å£“çš„ä¸€ç¾¤äººï¼Œå—æ–¹æœ‰ä¸€æ‰‡ç·Šç·Šé—œé–‰çš„å°é–€ã€‚
+åªæœ‰åœ¨æ¯æœˆä¸€æ¬¡çš„åº—èˆ–æ‹è³£æ™‚ã€Œå—éœ¸å¤©ã€é³³å¤©å—æ‰æœƒå°‡å®ƒæ‰“é–‹ï¼Œåœ¨é‚£
+è£¡æœƒè¦‹å„è™•çš„å•†è³ˆã€‚å°é–€æ—æŽ›è‘—çš„ä¸€å¡Šç´…æœ¨ç‰Œå­(paizi)ä¸Šæ¨™å¯«è‘—å„å®¶
+åº—èˆ–æ‹è³£çš„åº•åƒ¹ã€‚
 LONG );
 
         set("no_beg", 1);
@@ -52,8 +52,8 @@ int valid_leave(object me, string dir)
                 if( (query("balance", me)<5000000
                  || query("weiwang", me)<0 )
                 &&  dir == "south" && ! wizardp(me))
-                        return notify_fail(CYN "·ïÒ»ÃùÀ¹×¡Äã£¬ÀäÐ¦µÀ£ºÒÔ¸óÏÂµÄ²Æ"
-                                           "²úºÍµØÎ»£¬ÉÐ²»×ãÒÔ½øÈ¥¡£\n" NOR);
+                        return notify_fail(CYN "é³³ä¸€é³´æ””ä½ä½ ï¼Œå†·ç¬‘é“ï¼šä»¥é–£ä¸‹çš„è²¡"
+                                           "ç”¢å’Œåœ°ä½ï¼Œå°šä¸è¶³ä»¥é€²åŽ»ã€‚\n" NOR);
         }
         return ::valid_leave(me);
 }
@@ -63,18 +63,18 @@ int do_open()
         object me = this_player();
 
         if (query("exits/south"))
-                return notify_fail("ÃÅÒÑ¾­ÊÇ¿ª×ÅµÄÁË¡£\n");
+                return notify_fail("é–€å·²ç¶“æ˜¯é–‹è‘—çš„äº†ã€‚\n");
 
         set("exits/south", __DIR__"pmc");
 
-        message_vision(HIY "$N" HIY "ÇáÇáÒ»ÍÆ£¬½«Í¨ÏòÓ¢ÐÛ»á¹ÝµÄ"
-                       "Ð¡ÃÅ¿ªÆôÁË¡£\n" NOR, me);
+        message_vision(HIY "$N" HIY "è¼•è¼•ä¸€æŽ¨ï¼Œå°‡é€šå‘è‹±é›„æœƒé¤¨çš„"
+                       "å°é–€é–‹å•Ÿäº†ã€‚\n" NOR, me);
 
-        shout(HIY "¡¾ÉÌ½ç´«ÎÅ¡¿" NOR + WHT + me->name() + WHT "[" +
-              query("id", me)+WHT"]¿ªÆôÁË·ðÉ½Ó¢ÐÛ»á¹ÝµÄµêÆÌÅÄ"
-              "Âô»áµÄ´óÃÅ¡£\n" NOR);
+        shout(HIY "ã€å•†ç•Œå‚³èžã€‘" NOR + WHT + me->name() + WHT "[" +
+              query("id", me)+WHT"]é–‹å•Ÿäº†ä½›å±±è‹±é›„æœƒé¤¨çš„åº—èˆ–æ‹"
+              "è³£æœƒçš„å¤§é–€ã€‚\n" NOR);
 
-        write("Äã¿ªÍ¨ÁËµêÆÌÅÄÂô»áµÄÂ·¾¶¡£\n");
+        write("ä½ é–‹é€šäº†åº—èˆ–æ‹è³£æœƒçš„è·¯å¾‘ã€‚\n");
         return 1;
 }
 
@@ -83,11 +83,11 @@ int do_close()
         object me = this_player();
 
         if (! query("exits/south"))
-                return notify_fail("ÃÅÒÑ¾­ÊÇ¹Ø×ÅµÄÁË¡£\n");
+                return notify_fail("é–€å·²ç¶“æ˜¯é—œè‘—çš„äº†ã€‚\n");
 
         delete("exits/south");
-        message_vision(WHT "$N" WHT "Ë³ÊÖÒ»´ø£¬½«Í¨ÏòÅÄÂôºóÌüµÄ"
-                       "Ð¡ÃÅ¹ØÉÏÁË¡£\n" NOR, me);
+        message_vision(WHT "$N" WHT "é †æ‰‹ä¸€å¸¶ï¼Œå°‡é€šå‘æ‹è³£å¾Œå»³çš„"
+                       "å°é–€é—œä¸Šäº†ã€‚\n" NOR, me);
         return 1;
 }
 
@@ -102,35 +102,35 @@ int do_look(string arg)
 
         if (! query("exits/south"))
         {
-                write("ÏÖÔÚÉÐÎ´µ½ÅÄÂôµêÆÌµÄÊ±¼ä¡£\n");
+                write("ç¾åœ¨å°šæœªåˆ°æ‹è³£åº—èˆ–çš„æ™‚é–“ã€‚\n");
                 return 1;
         }
 
         shop_record = SHOP_D->query_shop();
 
-        msg = LOCAL_MUD_NAME() + "µêÆÌÅÄÂôµ×¼Û±í£º\n"NOR;
-        msg += HIY "©°©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©´\n" NOR;
+        msg = LOCAL_MUD_NAME() + "åº—èˆ–æ‹è³£åº•åƒ¹è¡¨ï¼š\n"NOR;
+        msg += HIY "â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”\n" NOR;
 
-        msg += sprintf(HIY "©¦" NOR + WHT " %-18s%-18s%-13s" HIY "©¦\n" NOR,
-                       "µêÆÌÎ»ÖÃ",
-                       "µêÆÌÃû³Æ",
-                       "ÅÄÂôµ×¼Û");
+        msg += sprintf(HIY "â”‚" NOR + WHT " %-18s%-18s%-13s" HIY "â”‚\n" NOR,
+                       "åº—èˆ–ä½ç½®",
+                       "åº—èˆ–åç¨±",
+                       "æ‹è³£åº•åƒ¹");
 
-        msg += HIY "©À©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©È\n" NOR;
+        msg += HIY "â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\n" NOR;
 
         for (i = 0; i < sizeof(shop_record); i++)
         {
                 g = shop_record[i]["price"];
-                msg += sprintf(HIY "©¦" HIC " %sµêÆÌ           "
+                msg += sprintf(HIY "â”‚" HIC " %såº—èˆ–           "
                                HIG "%-16s" NOR +
-                               YEL "»Æ½ð" + chinese_number(g) +
-                               "Á½    " HIY "©¦\n" NOR,
+                               YEL "é»ƒé‡‘" + chinese_number(g) +
+                               "å…©    " HIY "â”‚\n" NOR,
                                shop_record[i]["id"],
                                shop_record[i]["name"]);
         }
-        msg += HIY "©¸©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¼\n" NOR;
-        msg += WHT "×Ü¹²ÓÐ" + chinese_number(sizeof(shop_record)) +
-               WHT "¼ÒµêÆÌµÈ´ýÅÄÂô¡£\n";
+        msg += HIY "â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜\n" NOR;
+        msg += WHT "ç¸½å…±æœ‰" + chinese_number(sizeof(shop_record)) +
+               WHT "å®¶åº—èˆ–ç­‰å¾…æ‹è³£ã€‚\n";
         write(msg);
         return 1;
 }

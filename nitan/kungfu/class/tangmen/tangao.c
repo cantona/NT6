@@ -1,4 +1,4 @@
-// tangque.c ÌÆÈ±
+// tangque.c å”ç¼º
 
 #include <ansi.h>
 #include "tangmen.h"
@@ -8,10 +8,10 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("ÌÆ°Á", ({ "tang ao", "tang", "ao" }));
+        set_name("å”å‚²", ({ "tang ao", "tang", "ao" }));
         set("long", 
-                "ËûÊÇÌÆÃÅµÚ¶ş´úµÜ×ÓÖĞµÄ½Ü³öÈËÎï¡£\n");
-        set("gender", "ÄĞĞÔ");
+                "ä»–æ˜¯å”é–€ç¬¬äºŒä»£å¼Ÿå­ä¸­çš„å‚‘å‡ºäººç‰©ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 40);
         set("attitude", "heroism");
         set("shen_type", 1);
@@ -58,7 +58,7 @@ void create()
         prepare_skill("hand", "boyun-suowu");
 
         
-        create_family("ÌÆÃÅÊÀ¼Ò", 2, "µÕÏµ¸ßÊÖ");
+        create_family("å”é–€ä¸–å®¶", 2, "å«¡ç³»é«˜æ‰‹");
         set("class", "tangmen");
 
         set("chat_chance_combat", 20);
@@ -87,24 +87,24 @@ void attempt_apprentice(object ob)
                         
         if( query("shen", ob)<10000 )
          {
-                command("say ÎÒÊÕÍ½×î×¢ÖØµÂĞĞ£¡");
-                command("say ÔÚµÂĞĞ·½Ãæ£¬" + RANK_D->query_respect(ob) +
-                        "ÊÇ·ñ»¹×öµÃ²»¹»£¿");
+                command("say æˆ‘æ”¶å¾’æœ€æ³¨é‡å¾·è¡Œï¼");
+                command("say åœ¨å¾·è¡Œæ–¹é¢ï¼Œ" + RANK_D->query_respect(ob) +
+                        "æ˜¯å¦é‚„åšå¾—ä¸å¤ ï¼Ÿ");
                 return;
         }
 
         if ((int)ob->query_skill("biyun-xinfa", 1) < 120) {
-                command("say ÌÆÃÅËäÈ»ÒÔ°µÆ÷ÎªÖ÷£¬µ«»¹ÊÇÒª¸¨ÒÔÄÚÁ¦¡£"); 
+                command("say å”é–€é›–ç„¶ä»¥æš—å™¨ç‚ºä¸»ï¼Œä½†é‚„æ˜¯è¦è¼”ä»¥å…§åŠ›ã€‚"); 
                 command("say " + RANK_D->query_respect(ob) + 
-                        "ÊÇ·ñ»¹Ó¦¸ÃÔÚ±ÌÔÆĞÄ·¨ÉÏ¶àÏÂµã¹¦·ò£¿");
+                        "æ˜¯å¦é‚„æ‡‰è©²åœ¨ç¢§é›²å¿ƒæ³•ä¸Šå¤šä¸‹é»åŠŸå¤«ï¼Ÿ");
                 return;
         }
         if( query("int", ob)<28){
-                command("say ÌÆÃÅÀúÀ´×¢ÖØµÜ×ÓµÄÎÄÑ§ĞŞÎª¡£");
-                command("say ±¾ÅÉ¹¦·òÒªÄÜÊìÁ·ÔËÓÃ£¬±ØĞëÄÜÌå»áÆäÖĞËùº¬ÉîÔ¶Òâ¾³£¬ÎòĞÔ²îÁËÊÇ²»ĞĞµÄ¡£");
-                command("say " + RANK_D->query_respect(ob) + "µÄÎòĞÔ»¹´óÓĞÇ±Á¦¿ÉÍÚ£¬»¹ÊÇÇë»Ø°É¡£");
+                command("say å”é–€æ­·ä¾†æ³¨é‡å¼Ÿå­çš„æ–‡å­¸ä¿®ç‚ºã€‚");
+                command("say æœ¬æ´¾åŠŸå¤«è¦èƒ½ç†Ÿç·´é‹ç”¨ï¼Œå¿…é ˆèƒ½é«”æœƒå…¶ä¸­æ‰€å«æ·±é æ„å¢ƒï¼Œæ‚Ÿæ€§å·®äº†æ˜¯ä¸è¡Œçš„ã€‚");
+                command("say " + RANK_D->query_respect(ob) + "çš„æ‚Ÿæ€§é‚„å¤§æœ‰æ½›åŠ›å¯æŒ–ï¼Œé‚„æ˜¯è«‹å›å§ã€‚");
                 return;
         }
-        command("say ¹ş¹ş¹ş£¬ÎÒ¾ÍÊÕÏÂÄã£¬¼Ç×¡ÒÔºóÒªÔÚ½­ºşĞĞÏÀÕÌÒåà¸£¡");
+        command("say å“ˆå“ˆå“ˆï¼Œæˆ‘å°±æ”¶ä¸‹ä½ ï¼Œè¨˜ä½ä»¥å¾Œè¦åœ¨æ±Ÿæ¹–è¡Œä¿ ä»—ç¾©å–”ï¼");
         command("recruit "+query("id", ob));
 }

@@ -4,20 +4,20 @@ inherit DEMONROOM;
 
 void create()
 {
-        set("short", "³¤ËÉÁÖ");
+        set("short", "é•·é¬†æž—");
         set("long",@LONG
-ÅîÀ³ÏÉµºµÄ³¤ËÉÁÖÖÐÉú³¤×ÅÐí¶à¸ß´óµÄËÉÊ÷£¬Ã¿µ±ÓÐÏÉÆøÓ¿Ïò
-ÕâÀïµÄÊ±ºò£¬ËÉÊ÷ÉÏµÄËÉÊó±ã»á²»Í£µØÒ¡¶¯Ê÷Ö¦£¬ËÉÒ¶Ò²·×·×ÂäÏÂ£¬
-½«µØÉÏÆÌµÃÈíÈíµÄ¡£
+è“¬èŠä»™å³¶çš„é•·é¬†æž—ä¸­ç”Ÿé•·è‘—è¨±å¤šé«˜å¤§çš„é¬†æ¨¹ï¼Œæ¯ç•¶æœ‰ä»™æ°£æ¹§å‘
+é€™è£¡çš„æ™‚å€™ï¼Œé¬†æ¨¹ä¸Šçš„é¬†é¼ ä¾¿æœƒä¸åœåœ°æ–å‹•æ¨¹æžï¼Œé¬†è‘‰ä¹Ÿç´›ç´›è½ä¸‹ï¼Œ
+å°‡åœ°ä¸Šèˆ–å¾—è»Ÿè»Ÿçš„ã€‚
 LONG);
 
         set("exits", ([
                 "north"     : __DIR__"xiuzhenchi",
         ]));
-        set("no_rideto", 1);         // ÉèÖÃ²»ÄÜÆïÂíµ½ÆäËûµØ·½
-        set("no_flyto", 1);          // ÉèÖÃ²»ÄÜ´ÓÆðÀ´µØ·½ÆïÂíÀ´ÕâÀï
-        set("no_die", 1);            // ËÀÍöºóÒÆ¶¯µ½±âÈµ¾Ó
-        set("penglai", 1);           // ±íÊ¾ÔÚÅîÀ³µº
+        set("no_rideto", 1);         // è¨­ç½®ä¸èƒ½é¨Žé¦¬åˆ°å…¶ä»–åœ°æ–¹
+        set("no_flyto", 1);          // è¨­ç½®ä¸èƒ½å¾žèµ·ä¾†åœ°æ–¹é¨Žé¦¬ä¾†é€™è£¡
+        set("no_die", 1);            // æ­»äº¡å¾Œç§»å‹•åˆ°æ‰éµ²å±…
+        set("penglai", 1);           // è¡¨ç¤ºåœ¨è“¬èŠå³¶
 
         set("n_time", 20); 
         set("n_npc", 2); 
@@ -43,14 +43,14 @@ void init ()
                 if (! this_player()->query("penglai/go_quest/ok"))
                 {
                         this_player()->start_busy(3);
-                        tell_object(this_player(), NOR + WHT "Äãµ½ÁË´Ë´¦£¬ËÄÖÜÏÉÆøçÔÈÆÁîÄãÒ»Ê±¼äÄÑÒÔ±æ±ð·½Ïò¡£\n" NOR);
+                        tell_object(this_player(), NOR + WHT "ä½ åˆ°äº†æ­¤è™•ï¼Œå››å‘¨ä»™æ°£ç¹šç¹žä»¤ä½ ä¸€æ™‚é–“é›£ä»¥è¾¨åˆ¥æ–¹å‘ã€‚\n" NOR);
                 }
                 else
                 {
                         if (random(2))
                         {
                                 this_player()->start_busy(1);
-                                tell_object(this_player(), NOR + WHT "Äãµ½ÁË´Ë´¦£¬ËÄÖÜÏÉÆøçÔÈÆÁîÄãÒ»Ê±¼äÄÑÒÔ±æ±ð·½Ïò¡£\n" NOR);                
+                                tell_object(this_player(), NOR + WHT "ä½ åˆ°äº†æ­¤è™•ï¼Œå››å‘¨ä»™æ°£ç¹šç¹žä»¤ä½ ä¸€æ™‚é–“é›£ä»¥è¾¨åˆ¥æ–¹å‘ã€‚\n" NOR);                
                         }
                 }
         }

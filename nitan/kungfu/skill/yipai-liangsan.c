@@ -5,23 +5,23 @@
 inherit SHAOLIN_SKILL;
 
 mapping *action = ({
-([      "action": "$NÒ»ÕÆÅÄÏò$n£¬Ã»ÓĞÊ²Ã´ÕÂ·¨",
+([      "action": "$Nä¸€æŒæ‹å‘$nï¼Œæ²’æœ‰ä»€éº¼ç« æ³•",
         "force" : 400,
         "attack": -50,
         "dodge" : -50,
         "parry" : -50,
         "damage": -50,
         "lvl"   : 0,
-        "damage_type" : "ÄÚÉË"
+        "damage_type" : "å…§å‚·"
 ]),
-([      "action": "$NÉîÉîÎüÁËÒ»¿ÚÆø£¬Ë«ÕÆ»®ÁËÒ»¸öÈ¦×Ó£¬»º»ºÅÄÏò$n£¬ÕÆÁ¦ÓĞÈçÅÅÉ½µ¹º£Ò»°ã",
+([      "action": "$Næ·±æ·±å¸äº†ä¸€å£æ°£ï¼Œé›™æŒåŠƒäº†ä¸€å€‹åœˆå­ï¼Œç·©ç·©æ‹å‘$nï¼ŒæŒåŠ›æœ‰å¦‚æ’å±±å€’æµ·ä¸€èˆ¬",
         "force" : 700,
         "attack": 400,
         "dodge" : -20,
         "parry" : 30,
         "damage": 300,
         "lvl"   : 150,
-        "damage_type" : "ÄÚÉË"
+        "damage_type" : "å…§å‚·"
 ]),
 });
 
@@ -30,16 +30,16 @@ int valid_enable(string usage) { return usage == "strike" || usage == "parry"; }
 int valid_learn(object me)
 {
         if( query_temp("weapon", me) || query_temp("secondary_weapon", me) )
-                return notify_fail("Á·Ò»ÅÄÁ½É¢±ØĞë¿ÕÊÖ¡£\n");
+                return notify_fail("ç·´ä¸€æ‹å…©æ•£å¿…é ˆç©ºæ‰‹ã€‚\n");
 
         if ((int)me->query_skill("force") < 200)
-                return notify_fail("ÄãµÄÄÚ¹¦»ğºò²»¹»£¬²»ÄÜÇ¿ĞĞĞŞÏ°Ò»ÅÄÁ½É¢¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸç«å€™ä¸å¤ ï¼Œä¸èƒ½å¼·è¡Œä¿®ç¿’ä¸€æ‹å…©æ•£ã€‚\n");
 
         if( query("max_neili", me)<2500 )
-                return notify_fail("ÄãµÄÄÚÁ¦»¹²»¹»Ç¿£¬ÎŞ·¨ĞŞÏ°Ò»ÅÄÁ½É¢¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›é‚„ä¸å¤ å¼·ï¼Œç„¡æ³•ä¿®ç¿’ä¸€æ‹å…©æ•£ã€‚\n");
 
         if ((int)me->query_skill("strike", 1) < (int)me->query_skill("yipai-liangsan", 1))
-                return notify_fail("ÄãµÄ»ù±¾ÕÆ·¨»ğºòË®Æ½ÓĞÏŞ£¬ÎŞ·¨Áì»á¸ü¸ßÉîµÄÒ»ÅÄÁ½É¢¡£\n");
+                return notify_fail("ä½ çš„åŸºæœ¬æŒæ³•ç«å€™æ°´å¹³æœ‰é™ï¼Œç„¡æ³•é ˜æœƒæ›´é«˜æ·±çš„ä¸€æ‹å…©æ•£ã€‚\n");
 
         return 1;
 }
@@ -66,13 +66,13 @@ int practice_skill(object me)
 {
         if( query_temp("weapon", me) || 
             query_temp("secondary_weapon", me) )
-                return notify_fail("Äã±ØĞë¿ÕÊÖÁ·Ï°£¡\n");
+                return notify_fail("ä½ å¿…é ˆç©ºæ‰‹ç·´ç¿’ï¼\n");
 
         if( query("qi", me)<300 )
-                return notify_fail("ÄãµÄÌåÁ¦Ì«µÍÁË¡£\n");
+                return notify_fail("ä½ çš„é«”åŠ›å¤ªä½äº†ã€‚\n");
 
         if( query("neili", me)<300 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»Á·Ò»ÅÄÁ½É¢¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ç·´ä¸€æ‹å…©æ•£ã€‚\n");
 
         me->receive_damage("qi", 100);
         addn("neili", -100, me);
@@ -93,5 +93,5 @@ mixed hit_ob(object me, object victim, int damage_bonus)
         else
                 addn("neili", -100, victim);
 
-        return HIR "$n" HIR "½ÓÏÂ$NÕâÒ»ÕÆ£¬Ò»Ê±¼äÖ»¾õµÃ»ëÉí·¦Á¦¡£\n" NOR;
+        return HIR "$n" HIR "æ¥ä¸‹$Né€™ä¸€æŒï¼Œä¸€æ™‚é–“åªè¦ºå¾—æ¸¾èº«ä¹åŠ›ã€‚\n" NOR;
 }

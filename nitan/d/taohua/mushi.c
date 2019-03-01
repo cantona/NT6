@@ -3,13 +3,13 @@ inherit ROOM;
 void create()
 {
   
-        set("short", "Ä¹ÊÒ");
+        set("short", "å¢“å®¤");
         set("long", @LONG
-ÕâÊÇÒ»¼ä¿í³¨µÄÄ¹ÊÒ¡£Ä¹ÊÒ¶¥ÉÏÓÐÒ»¿ÅÌØ±ð´óµÄÃ÷ÖéÉÁÉÁ
-·¢¹â¡£ÖÐÑë·Å×ÅÒ»¸±Óñ¹×£¬ÖÜÎ§Ôò¶Ñ·ÅÁËÎÞÊýµÄÆæÕäÒìÍæ¡£ÓÐ
-ÕÅ¹©×À°ÚÔÚÓñÇ°,×ÀÉÏ·Å×ÅÅÌ×Ó(panzi).Ä¹ÊÒ¶ÔÃæ¹ÒÕâ·ùÇàÄêÉÙ
-¸¾µÄ»­Ïñ¡£»­ÏñÉÏµÄÉÙ¸¾ÇÉÐ¦æÌÈ»£¬ºÍ²Ò°×µÄÓñ¹×¼°±ÌÓÍÓÍµÄ
-Öé¹âÐÎ³ÉÁËÒ»·ùÆæ¹îµÄ»­Ãæ¡£
+é€™æ˜¯ä¸€é–“å¯¬æ•žçš„å¢“å®¤ã€‚å¢“å®¤é ‚ä¸Šæœ‰ä¸€é¡†ç‰¹åˆ¥å¤§çš„æ˜Žç é–ƒé–ƒ
+ç™¼å…‰ã€‚ä¸­å¤®æ”¾è‘—ä¸€å‰¯çŽ‰æ£ºï¼Œå‘¨åœå‰‡å †æ”¾äº†ç„¡æ•¸çš„å¥‡çç•°çŽ©ã€‚æœ‰
+å¼µä¾›æ¡Œæ“ºåœ¨çŽ‰å‰,æ¡Œä¸Šæ”¾è‘—ç›¤å­(panzi).å¢“å®¤å°é¢æŽ›é€™å¹…é’å¹´å°‘
+å©¦çš„ç•«åƒã€‚ç•«åƒä¸Šçš„å°‘å©¦å·§ç¬‘å«£ç„¶ï¼Œå’Œæ…˜ç™½çš„çŽ‰æ£ºåŠç¢§æ²¹æ²¹çš„
+ç å…‰å½¢æˆäº†ä¸€å¹…å¥‡è©­çš„ç•«é¢ã€‚
 LONG);
         set("exits", ([
                 "up" : __DIR__"mudao",
@@ -41,8 +41,8 @@ LONG);
 
         set("item_desc", ([
                 "panzi" : @TEXT
-    Äã×ÐÏ¸¿´ÁËÒ»ÏÂÅÌ×Ó£¬ÕâÊÇÒ»¸öÓñÅÌ£¬ÀïÃæ·Å×ÅÊý¿Å¾§Ó¨µÄ
-    Ã÷Öé¡£ÕâÐ©Ã÷ÖéËÆºõ¿ÉÒÔÄÃ³öÀ´(pick zhu)¡£
+    ä½ ä»”ç´°çœ‹äº†ä¸€ä¸‹ç›¤å­ï¼Œé€™æ˜¯ä¸€å€‹çŽ‰ç›¤ï¼Œè£¡é¢æ”¾è‘—æ•¸é¡†æ™¶ç‘©çš„
+    æ˜Žç ã€‚é€™äº›æ˜Žç ä¼¼ä¹Žå¯ä»¥æ‹¿å‡ºä¾†(pick zhu)ã€‚
 TEXT
         ]) );
 
@@ -53,7 +53,7 @@ void init()
 {
         object me = this_player();
         add_action("do_pick","pick");
-        set_temp("taohua/Ä¹ÊÒ", 0, me);
+        set_temp("taohua/å¢“å®¤", 0, me);
 }
 void reset()
 {
@@ -68,18 +68,18 @@ int do_pick(string arg)
 
         me = this_player();
         if( !arg || arg!="zhu" )
-                return notify_fail("ÄãÒªÄÃÊ²Ã´? \n");
+                return notify_fail("ä½ è¦æ‹¿ä»€éº¼? \n");
                 
-        if (me->is_busy()) return notify_fail("ÄãÕýÔÚÃ¦×ÅÄØ£¡\n");
+        if (me->is_busy()) return notify_fail("ä½ æ­£åœ¨å¿™è‘—å‘¢ï¼\n");
 
         if ( query("pick_available") )
         {
-                message_vision("$N´ÓÅÌ×ÓÀïÄÃ³öÀ´Ò»¿ÅÃ÷Öé¡£\n",this_player() );
+                message_vision("$Nå¾žç›¤å­è£¡æ‹¿å‡ºä¾†ä¸€é¡†æ˜Žç ã€‚\n",this_player() );
                 obj = new ("/d/taohua/obj/mingzhu");
                 obj->move(me);
                 addn("pick_available", -1);
                 me->start_busy(3);
-                if( query_temp("taohua/Ä¹ÊÒ", me))return 1;
+                if( query_temp("taohua/å¢“å®¤", me))return 1;
                 killer = new ("/d/taohua/npc/shoumu") ;
                 obs = all_inventory(this_object());        
                 count = 0;
@@ -89,12 +89,12 @@ int do_pick(string arg)
                 }
                 if (count < 6)
                 {
-                        message_vision("\nÍ»È»Ä¹ÊÒÖÐ´ò¿ªÁËÒ»µÀ°µÃÅ£¬´ÓÀïÃæ×ß³öÒ»¸öÊØÄ¹¼ÒÅ«¡£\n"
-                                       "¶Ô$NºÈµÀ£ºÔô×Ó¸Ò¶û£¡Á¬·òÈËµÄ¶«Î÷ÄãÒ²¸Ò¶¯£¡\n", me);
+                        message_vision("\nçªç„¶å¢“å®¤ä¸­æ‰“é–‹äº†ä¸€é“æš—é–€ï¼Œå¾žè£¡é¢èµ°å‡ºä¸€å€‹å®ˆå¢“å®¶å¥´ã€‚\n"
+                                       "å°$Nå–é“ï¼šè³Šå­æ•¢çˆ¾ï¼é€£å¤«äººçš„æ±è¥¿ä½ ä¹Ÿæ•¢å‹•ï¼\n", me);
    
                         killer->move(environment(me));
                         killer->kill_ob(me);
-                        set_temp("taohua/Ä¹ÊÒ", 1, me);
+                        set_temp("taohua/å¢“å®¤", 1, me);
                 }
        }
        return 1;

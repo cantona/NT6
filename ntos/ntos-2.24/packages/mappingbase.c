@@ -74,12 +74,12 @@ f_mb_set (void) {
     i = find_global_variable(ob->prog, tmpstr, &type, 0);
     if (i == -1) {
         pop_n_elems(st_num_arg);
-        error("(set) %s 物件未宣告全域映射资料库变数。\n", ob->obname);
+        error("(set) %s 鐗╀欢鏈鍛婂叏鍩熸槧灏勮硣鏂欏韩璁婃暩銆俓n", ob->obname);
     }
     value = &ob->variables[i];
     if( value->type != T_MAPPING ) {
         pop_n_elems(st_num_arg);
-        error("(set) %s 物件的资料库变数型态错误。\n", ob->obname);
+        error("(set) %s 鐗╀欢鐨勮硣鏂欏韩璁婃暩鍨嬫厠閷銆俓n", ob->obname);
     }   
     map = value->u.map;
 
@@ -96,7 +96,7 @@ set_pop:
         if( ++j > 20 )
         {
                 pop_2_elems();
-                error("(set) %s too deep mapping(20)。\n", ob->obname);
+                error("(set) %s too deep mapping(20)銆俓n", ob->obname);
         }
         
         while (*src != '/' && *src)
@@ -188,12 +188,12 @@ f_mb_query (void) {
     i = find_global_variable(ob->prog, tmpstr, &type, 0);
     if (i == -1) {
         pop_n_elems(st_num_arg);
-        error("(set_temp) %s 物件未宣告全域映射资料库变数。\n", ob->obname);
+        error("(set_temp) %s 鐗╀欢鏈鍛婂叏鍩熸槧灏勮硣鏂欏韩璁婃暩銆俓n", ob->obname);
     }
     value = &ob->variables[i];
     if( value->type != T_MAPPING ) {
         pop_n_elems(st_num_arg);
-        error("(set_temp) %s 物件的资料库变数型态错误。\n", ob->obname);
+        error("(set_temp) %s 鐗╀欢鐨勮硣鏂欏韩璁婃暩鍨嬫厠閷銆俓n", ob->obname);
     }   
     map = value->u.map;
 
@@ -282,12 +282,12 @@ f_mb_delete (void) {
     i = find_global_variable(ob->prog, tmpstr, &type, 0);
     if (i == -1) {
         pop_n_elems(st_num_arg);
-        error("(delete) %s 物件未宣告全域映射资料库变数。\n", ob->obname);
+        error("(delete) %s 鐗╀欢鏈鍛婂叏鍩熸槧灏勮硣鏂欏韩璁婃暩銆俓n", ob->obname);
     }
     value = &ob->variables[i];
     if( value->type != T_MAPPING ) {
         pop_n_elems(st_num_arg);
-        error("(delete) %s 物件的资料库变数型态错误。\n", ob->obname);
+        error("(delete) %s 鐗╀欢鐨勮硣鏂欏韩璁婃暩鍨嬫厠閷銆俓n", ob->obname);
     }   
     map = value->u.map;
 

@@ -1,33 +1,33 @@
 /******** Written by ken@NT.  All rights reserved. ********/
 //ip.c
 /**********************************************************/
-/* ÓÃ·¨¡Ã ³ıÁËÓÃ(ip id)±¾Ö¸ÁîÀ´²éÖª¶Ô·½IP£¬»òÍæ¼ÒËùÔÚµØÍâ */
-/*        »¹¿ÉÒÔÓÉÍâ²¿µ÷ÓÃconvert_ipº¯Êı£¬±ÈÈçlogind.c    */
-/*        µ÷ÓÃ·½·¨£¬¼ÙÉèobÊÇÒ»¸öÍæ¼Ò£¬ÄÇÃ´µ÷ÓÃµÄ·½·¨ÈçÏÂ  */
+/* ç”¨æ³•ï¸° é™¤äº†ç”¨(ip id)æœ¬æŒ‡ä»¤ä¾†æŸ¥çŸ¥å°æ–¹IPï¼Œæˆ–ç©å®¶æ‰€åœ¨åœ°å¤– */
+/*        é‚„å¯ä»¥ç”±å¤–éƒ¨èª¿ç”¨convert_ipå‡½æ•¸ï¼Œæ¯”å¦‚logind.c    */
+/*        èª¿ç”¨æ–¹æ³•ï¼Œå‡è¨­obæ˜¯ä¸€å€‹ç©å®¶ï¼Œé‚£éº¼èª¿ç”¨çš„æ–¹æ³•å¦‚ä¸‹  */
 /*        "/cmds/adm/ip.c"->convert_ip(query_ip_number    */
-/*        (ob)) ÕâÑù¾Í»á·µ»ØÒ»¸ö×Ö·û´®ÀàĞÍµÄobµÄËùÔÚµØ¡£  */
+/*        (ob)) é€™æ¨£å°±æœƒè¿”å›ä¸€å€‹å­—ç¬¦ä¸²é¡å‹çš„obçš„æ‰€åœ¨åœ°ã€‚  */
 /*                                                        */
-/* ¸üĞÂ¡Ã Êı¾İ¿â·ÅÔÚ/adm/etc/ipdata/ ·Ö±ğ·ÅÖøÎå¸ö¼º·ÖÀà   */
-/*        µÄIPÊı¾İÎÄ¼ş£¬Èç·¢ÏÖÓĞÎ´ÖªIP£¬¿ÉÒÔ×ÔĞĞ¸üĞÂ¡£    */
+/* æ›´æ–°ï¸° æ•¸æ“šåº«æ”¾åœ¨/adm/etc/ipdata/ åˆ†åˆ¥æ”¾è‘—äº”å€‹å·±åˆ†é¡   */
+/*        çš„IPæ•¸æ“šæ–‡ä»¶ï¼Œå¦‚ç™¼ç¾æœ‰æœªçŸ¥IPï¼Œå¯ä»¥è‡ªè¡Œæ›´æ–°ã€‚    */
 /*                                                        */
-/* ×¼È·¡Ã ×¼È·¶ÈÍêÈ«È¡¾öÓÚÊı¾İ¿â£¬±¾³ÌĞòÊÇÕâÑùÊµÏÖIP²éÕÒ  */
-/*        µÄ£¬Ò»¸öIPÓÉËÄ¸öIP¶ÎËù×é³É£¬A.B.C.D ÏÈÕÒµ½IPµÄ  */
-/*        A¶Î£¬Õâ¾ö¶¨ÔÚ/ipdata/ÀïµÄÄÇ¸öÎÄ¼şÖĞ²éÕÒ£¬´ó´ó¼Ó */
-/*        ¿ìÁË²éÕÒµ½ËÙ¶È£¬È»ºó²éÕÒquery_ip_number(ob)ÊÇ·ñ */
-/*        ÔÚºÍIP1ºÍIP2Ö®¼äÊÇ¾Í·´»ØºóÃæµÄµØÇøÃû£¬²»ÊÇ¾ÍÕÒÏÂ*/
-/*        Ò»ĞĞ£¬µ½×îºóÒ²²»µ½·µ»ØÎ´ÖªµØÇø¡£( by ken@NT )   */
+/* æº–ç¢ºï¸° æº–ç¢ºåº¦å®Œå…¨å–æ±ºäºæ•¸æ“šåº«ï¼Œæœ¬ç¨‹åºæ˜¯é€™æ¨£å¯¦ç¾IPæŸ¥æ‰¾  */
+/*        çš„ï¼Œä¸€å€‹IPç”±å››å€‹IPæ®µæ‰€çµ„æˆï¼ŒA.B.C.D å…ˆæ‰¾åˆ°IPçš„  */
+/*        Aæ®µï¼Œé€™æ±ºå®šåœ¨/ipdata/è£¡çš„é‚£å€‹æ–‡ä»¶ä¸­æŸ¥æ‰¾ï¼Œå¤§å¤§åŠ  */
+/*        å¿«äº†æŸ¥æ‰¾åˆ°é€Ÿåº¦ï¼Œç„¶å¾ŒæŸ¥æ‰¾query_ip_number(ob)æ˜¯å¦ */
+/*        åœ¨å’ŒIP1å’ŒIP2ä¹‹é–“æ˜¯å°±åå›å¾Œé¢çš„åœ°å€åï¼Œä¸æ˜¯å°±æ‰¾ä¸‹*/
+/*        ä¸€è¡Œï¼Œåˆ°æœ€å¾Œä¹Ÿä¸åˆ°è¿”å›æœªçŸ¥åœ°å€ã€‚( by ken@NT )   */
 /**********************************************************/
 
 #include <ansi.h>
 inherit F_CLEAN_UP;
 
-#define IP_DIR "/adm/etc/ipdata/" // IPÊı¾İËù·ÅµÄÎ»ÖÃ
-#define EXT    ".ip" // ¶¨ÒåIPÊı¾İÎÄ¼şµÄ¸±µµÃû
+#define IP_DIR "/adm/etc/ipdata/" // IPæ•¸æ“šæ‰€æ”¾çš„ä½ç½®
+#define EXT    ".ip" // å®šç¾©IPæ•¸æ“šæ–‡ä»¶çš„å‰¯æª”å
 
 int help(object me);
 int main(object me, string arg);
 
-string convert_ip(string ip); // ¸øÍâ²¿µ÷ÓÃµÄº¯Êı
+string convert_ip(string ip); // çµ¦å¤–éƒ¨èª¿ç”¨çš„å‡½æ•¸
 
 void create() { seteuid(getuid()); }
 
@@ -46,7 +46,7 @@ int main(object me, string arg)
         ob = UPDATE_D->global_find_player(arg);
         if (objectp(ob))
         {
-                ip     = query_ip_number(ob); // ÔÚÍæ¼ÒÉíÉÏÈ¡µÃIP                               
+                ip     = query_ip_number(ob); // åœ¨ç©å®¶èº«ä¸Šå–å¾—IP                               
                 output = convert_ip(ip);
                 UPDATE_D->global_destruct_player(ob, 1);
                 write(output + "\n");
@@ -71,10 +71,10 @@ string convert_ip(string ip)
                 return "";
         
         ip_detail = explode(ip, ".");
-        // °Ñcut¿ª×öËÄ¶Î£¬Èç¹ûIP= 127.0.0.1 ÄÇÃ´ip_detail[0] = 127                                 
+        // æŠŠcuté–‹åšå››æ®µï¼Œå¦‚æœIP= 127.0.0.1 é‚£éº¼ip_detail[0] = 127                                 
         // ip_detail[1] = 0 ip_detail[2] = 0 ip_detail[3] = 1
-        // ¿¼ÂÇµ½Ğ§ÂÊµÄÎÊÌâ£¬ÏÈÅĞ¶Ïip_detail[0]ÊÇÊ²Ã´£¬ÔÙ´ò¿ª¶ÔÓ¦µÄIPÎÄ¼ş
-        // µ±È»IPÎÄ¼şÒªÏÈ¾­¹ı·ÖÀà(¼´ÊÇip_detail[0].ip·ÅÖøµÄËùÓĞIP¶¼ÊÇÒÔ´Ë¿ªÍ·)
+        // è€ƒæ…®åˆ°æ•ˆç‡çš„å•é¡Œï¼Œå…ˆåˆ¤æ–·ip_detail[0]æ˜¯ä»€éº¼ï¼Œå†æ‰“é–‹å°æ‡‰çš„IPæ–‡ä»¶
+        // ç•¶ç„¶IPæ–‡ä»¶è¦å…ˆç¶“éåˆ†é¡(å³æ˜¯ip_detail[0].ipæ”¾è‘—çš„æ‰€æœ‰IPéƒ½æ˜¯ä»¥æ­¤é–‹é ­)
         if (file_size(IP_DIR + ip_detail[0] + EXT) > 0)
         {
                 ip_data = explode(read_file(IP_DIR + ip_detail[0] + EXT), "\n");
@@ -86,22 +86,22 @@ string convert_ip(string ip)
         }
 
         sscanf(ip, "%d.%d.%d.%d", a, b, c, d);
-        // °ÑIPÃ¿¶ÎÇ¿ÖÆĞÔ±äÎª3¸ö×Ö·û£¬±ÈÈç 127.0.0.1 ±ä³É127.000.000.001
+        // æŠŠIPæ¯æ®µå¼·åˆ¶æ€§è®Šç‚º3å€‹å­—ç¬¦ï¼Œæ¯”å¦‚ 127.0.0.1 è®Šæˆ127.000.000.001
         ip_detail[0] = sprintf("%03d", a );
         ip_detail[1] = sprintf("%03d", b );
         ip_detail[2] = sprintf("%03d", c );
         ip_detail[3] = sprintf("%03d", d );
         
         ip     = implode(ip_detail, ".");
-        sscanf(ip, "%d.%d.%d.%d", a, b, c, d); // °ÑIPµÄ×Ö´®±ä³ÉÕûÊıÀàĞÍ
-        ipb = d + (c * 1000) + (b * 1000000); // °ÑÎ²Èı¶ÎµÄIPÏà¼Ó£¬ÓÃ×÷ÏÂÃæµÄÔËËã
+        sscanf(ip, "%d.%d.%d.%d", a, b, c, d); // æŠŠIPçš„å­—ä¸²è®Šæˆæ•´æ•¸é¡å‹
+        ipb = d + (c * 1000) + (b * 1000000); // æŠŠå°¾ä¸‰æ®µçš„IPç›¸åŠ ï¼Œç”¨ä½œä¸‹é¢çš„é‹ç®—
 
         count  = sizeof (ip_data);
         count  = count - 1;
 
         if  (ip == "127.000.000.001")
         {
-                return "±¾µØ»úÆ÷";
+                return "æœ¬åœ°æ©Ÿå™¨";
                 find = 1;
         }
         if (find != 1)
@@ -111,19 +111,19 @@ string convert_ip(string ip)
                         ip_data_detail = explode(ip_data[i], "|");
                         if(strcmp (ip[0..2], ip_data_detail[0][0..2]) != 0 &&
                            strcmp (ip[0..2], ip_data_detail[1][0..2]) != 0)
-                        continue; // Èç¹ûIPµÄµÚÒ»¶ÎÍêÈ«ÏàµÈÓÚIPÎÄ¼şÀïµÄIPÍ·Ò»¶ÎÔòÖ´ĞĞÏÂÃæ´úÂë
+                        continue; // å¦‚æœIPçš„ç¬¬ä¸€æ®µå®Œå…¨ç›¸ç­‰äºIPæ–‡ä»¶è£¡çš„IPé ­ä¸€æ®µå‰‡åŸ·è¡Œä¸‹é¢ä»£ç¢¼
                         {                       
                                 sscanf(ip_data_detail[0], "%d.%d.%d.%d", a, b, c, d);
                                 ipa = d + (c * 1000) + (b * 1000000);
-                                // ipa ÊÇ¼ÇÖøIP1Î²Èı¶ÎµÄIPÏà¼ÓºóµÄÖµ
+                                // ipa æ˜¯è¨˜è‘—IP1å°¾ä¸‰æ®µçš„IPç›¸åŠ å¾Œçš„å€¼
                                 sscanf(ip_data_detail[1], "%d.%d.%d.%d", a, b, c, d);
                                 ipc = d + (c * 1000) + (b * 1000000);
-                                // ipc ¼ÇÖøIP2Î²Èı¶ÎµÄIPÏà¼ÓºóµÄÖµ
-                                // Èç¹ûÍæ¼ÒµÄIPÊÇÔÚipa ºÍ ipc Ö®¼äµÄ£¬¼´Ö´ĞĞÏÂÃæ´úÂë
+                                // ipc è¨˜è‘—IP2å°¾ä¸‰æ®µçš„IPç›¸åŠ å¾Œçš„å€¼
+                                // å¦‚æœç©å®¶çš„IPæ˜¯åœ¨ipa å’Œ ipc ä¹‹é–“çš„ï¼Œå³åŸ·è¡Œä¸‹é¢ä»£ç¢¼
                                 if (ipb <= ipa || ipb >= ipc)
                                 continue;                       
                                 {                       
-                                        return ip_data_detail[2]; // ´«»Ø¸ÃIPµÄµØÇø
+                                        return ip_data_detail[2]; // å‚³å›è©²IPçš„åœ°å€
                                         find = 1;
                                         break;
                                 }
@@ -132,7 +132,7 @@ string convert_ip(string ip)
         }
 
         if (find == 0)
-                return "Î´ÖªµØÇø";
+                return "æœªçŸ¥åœ°å€";
 
 }
 
@@ -142,7 +142,7 @@ write(@HELP
 Written by ken@NT. All rights reserved.
 E-mail: printken@yahoo.com.hk
 
-¸ñÊ½ : ip <IPµØÖ· | ÔÚÏßÍæ¼Ò>
+æ ¼å¼ : ip <IPåœ°å€ | åœ¨ç·šç©å®¶>
 
 HELP);
 return 1;

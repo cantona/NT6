@@ -3,17 +3,17 @@ inherit BOOK;
 
 void create()
 {
-        set_name(HIC "¡¸ÂåÊé¡¹" NOR, ({ "luo shu", "luo", "shu" }));
+        set_name(HIC "ã€Œæ´›æ›¸ã€" NOR, ({ "luo shu", "luo", "shu" }));
         set_weight(500);
         if (clonep())
             set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
-                set("long", HIY "ÕâÊÇÒ»±¾ÓÃ±¡¾îĞ´³ÉµÄÊé¡£ÉÏÊé¶ş×Ö¹Å×­¡¸"
-                            HIC "ÂåÊé" HIY "¡¹¡£ÊéÆ¤ÒÑÈ»\n·º»Æ£¬¿´À´ÒÑ¾­"
-                            "±£´æºÜ¾ÃÁË¡£\n" NOR);
+                set("unit", "æœ¬");
+                set("long", HIY "é€™æ˜¯ä¸€æœ¬ç”¨è–„çµ¹å¯«æˆçš„æ›¸ã€‚ä¸Šæ›¸äºŒå­—å¤ç¯†ã€Œ"
+                            HIC "æ´›æ›¸" HIY "ã€ã€‚æ›¸çš®å·²ç„¶\næ³›é»ƒï¼Œçœ‹ä¾†å·²ç¶“"
+                            "ä¿å­˜å¾ˆä¹…äº†ã€‚\n" NOR);
                 set("value", 1);
-                set("no_sell", "àÅ£¿ÄãÄÃµÄÕâÊÇÉ¶ÆÆÍæÒâ£¿");
+                set("no_sell", "å—¯ï¼Ÿä½ æ‹¿çš„é€™æ˜¯å•¥ç ´ç©æ„ï¼Ÿ");
                 set("material", "silk");
                 set("skill", ([
                         "name" : "count",

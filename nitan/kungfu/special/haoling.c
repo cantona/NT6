@@ -5,7 +5,7 @@ inherit F_CLEAN_UP;
 
 int is_scborn() { return 1; }
 
-string name() { return HIR "ºÅÁî°Ë·½" NOR; }
+string name() { return HIR "è™Ÿä»¤å…«æ–¹" NOR; }
 
 int perform(object me, string skill, string arg)
 {
@@ -16,40 +16,40 @@ int perform(object me, string skill, string arg)
 
         joblv = me->query_joblv();
 
-        t = me->query_team(); // ±ØĞëÒª×é¶Ó²ÅÄÜÊ©Õ¹
+        t = me->query_team(); // å¿…é ˆè¦çµ„éšŠæ‰èƒ½æ–½å±•
 
         if (me->query_temp("special2/haoling"))
-                return notify_fail("¡¸ºÅÁî°Ë·½¡¹µÄ¹¦Ğ§»¹Î´ÏûÊ§£¬ÎŞ·¨Ê©Õ¹¡£\n");
+                return notify_fail("ã€Œè™Ÿä»¤å…«æ–¹ã€çš„åŠŸæ•ˆé‚„æœªæ¶ˆå¤±ï¼Œç„¡æ³•æ–½å±•ã€‚\n");
 
-        if (me->query("yhjob/job") != "Ä§Ê¦")
-                return notify_fail("ÄãµÄÖ°Òµ´íÎó£¬ÎŞ·¨Ê©Õ¹¡£\n");
+        if (me->query("yhjob/job") != "é­”å¸«")
+                return notify_fail("ä½ çš„è·æ¥­éŒ¯èª¤ï¼Œç„¡æ³•æ–½å±•ã€‚\n");
                 
         if (me->query("neili") < 1200)
-                return notify_fail("ÄãµÄÄÚÁ¦²»×ã£¬ÎŞ·¨Ê©Õ¹¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸è¶³ï¼Œç„¡æ³•æ–½å±•ã€‚\n");
 
         if (joblv < 30)
-                return notify_fail("ÄãµÄÖ°ÒµµÈ¼¶²»×ã£¬ÎŞ·¨Ê©Õ¹¡£\n");                
+                return notify_fail("ä½ çš„è·æ¥­ç­‰ç´šä¸è¶³ï¼Œç„¡æ³•æ–½å±•ã€‚\n");                
 
         if (! arrayp(t))
-                return notify_fail("¸Ã¼¼ÄÜÖ»ÄÜÔÚ×é¶ÓµÄÊ±ºòÊ©Õ¹¡£\n");
+                return notify_fail("è©²æŠ€èƒ½åªèƒ½åœ¨çµ„éšŠçš„æ™‚å€™æ–½å±•ã€‚\n");
 
         t -= ({ 0 });
         if (sizeof(t) <= 1)
-                return notify_fail("¸Ã¼¼ÄÜÖ»ÄÜÔÚ¶àÈË×é¶ÓµÄÊ±ºòÊ©Õ¹¡£\n");
+                return notify_fail("è©²æŠ€èƒ½åªèƒ½åœ¨å¤šäººçµ„éšŠçš„æ™‚å€™æ–½å±•ã€‚\n");
                         
-        if (me->is_busy())return notify_fail("µÈÄãÃ¦ÍêÔÙËµ°É£¡\n");
+        if (me->is_busy())return notify_fail("ç­‰ä½ å¿™å®Œå†èªªå§ï¼\n");
 
-        message_vision(HIR "$N" HIR "Ë«Ä¿·¢¹â£¬Õñ±Û¸ßºô£¬¡°Ä§ÓÉĞÄÉú£¬ºÅÁî°Ë·½£¡¡± £¬ÉùÒô¼¤µ´ËÄÖÜ£¬ÁîÈËÉúÎ·¡£\n" NOR, me);
+        message_vision(HIR "$N" HIR "é›™ç›®ç™¼å…‰ï¼ŒæŒ¯è‡‚é«˜å‘¼ï¼Œâ€œé­”ç”±å¿ƒç”Ÿï¼Œè™Ÿä»¤å…«æ–¹ï¼â€ ï¼Œè²éŸ³æ¿€ç›ªå››å‘¨ï¼Œä»¤äººç”Ÿç•ã€‚\n" NOR, me);
 
         foreach (tob in t)
         {
                 if (1)
                 {                        
-                        tell_object(tob, HIW + me->name() + "Ê©Õ¹³ö¾øÕĞ¡¸ºÅÁî°Ë·½¡¹£¬Ìá¸ßËùÓĞ¶ÓÓÑµÄÃüÖĞ¼°ÉËº¦Á¦¡£\n" NOR);
+                        tell_object(tob, HIW + me->name() + "æ–½å±•å‡ºçµ•æ‹›ã€Œè™Ÿä»¤å…«æ–¹ã€ï¼Œæé«˜æ‰€æœ‰éšŠå‹çš„å‘½ä¸­åŠå‚·å®³åŠ›ã€‚\n" NOR);
                         attack = 100 + me->query_joblv() * 20 + me->query("lhpoint/special/haoling") * 60;
                         damage = 100 + me->query_joblv() * 30 + me->query("lhpoint/special/haoling") * 80;
 
-                              // ²»ÄÜÖØ¸´Ê©Õ¹
+                              // ä¸èƒ½é‡å¾©æ–½å±•
                         if (! tob->query_temp("special2/haoling"))
                         {
                                 tob->set_temp("special2/haoling", joblv);
@@ -76,7 +76,7 @@ void remove_effect(object me, int attack, int damage)
                 me->add_temp("apply/damage", -1 * damage);
                 me->add_temp("apply/unarmed_damage", -1 * damage);
                 me->delete_temp("special2/haoling");
-                tell_object(me, "¡¸ºÅÁî°Ë·½¡¹µÄ¹¦Ğ§ÒÑ¾­ÏûÊ§¡£\n");
+                tell_object(me, "ã€Œè™Ÿä»¤å…«æ–¹ã€çš„åŠŸæ•ˆå·²ç¶“æ¶ˆå¤±ã€‚\n");
         }
 }
 

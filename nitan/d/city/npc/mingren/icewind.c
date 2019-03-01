@@ -1,18 +1,18 @@
-// gzf ¹íÕÉ·ò
+// gzf é¬¼ä¸ˆå¤«
 
 #include <ansi.h>;
 inherit NPC;
 
 void create()
 {
-        set_name(HIW "Ñ©»ê" NOR, ({ "icewind" }));
-        set("title", HIR "Ã¦ÂµÖ®Éñ" NOR);
-        set("gender", "ÄÐÐÔ");
+        set_name(HIW "é›ªé­‚" NOR, ({ "icewind" }));
+        set("title", HIR "å¿™ç¢Œä¹‹ç¥ž" NOR);
+        set("gender", "ç”·æ€§");
         set("age", 35);
         set("no_get", 1);
-        set("long", sort_msg(HIY"Ñ©»ê£¬2005Äê8ÔÂÖØ·µÄàÌ¶£¬Ê¼ÓÚÄàÌ¶£¨¶þ£©£¬ÖÕÓÚÄàÌ¶£¨¶þ£©£¬ÒÔÑ©Ç³Äý£¨ÃðÇ³£©´³µ´½­ºþ"
-"£¬Ò»ÉúÎÞÎª£¬½»ÓÑÉõ¶à¡£ÓëÓÑÇ§ÍõÖ®Íõ£¬·¢´ô³æ£¬ºüÒ»½££¬³þ·ç£¬Ë¾ÂíÌìô¥¹²½¨°ïÅÉ¡°Ñ©Óò²ÔÀÇ¡±,´³µ´½­ºþÊ±£¬´¦ÊÂËäÎÞ´óÉÆ£¬"
-"ÒàÎÞ´ó¶ñ£¬ÒÔÇÚ·ÜÐÞÁ·Îª×¨³¤£¬ÒÔÍÅ½áÐÖµÜÎª¼ºÈÎ£¬ÖÕÒòË½Îñ¶øÀë¿ªÄàÌ¶¡£\n" NOR));
+        set("long", sort_msg(HIY"é›ªé­‚ï¼Œ2005å¹´8æœˆé‡è¿”æ³¥æ½­ï¼Œå§‹äºŽæ³¥æ½­ï¼ˆäºŒï¼‰ï¼Œçµ‚äºŽæ³¥æ½­ï¼ˆäºŒï¼‰ï¼Œä»¥é›ªæ·ºå‡ï¼ˆæ»…æ·ºï¼‰é—–ç›ªæ±Ÿæ¹–"
+"ï¼Œä¸€ç”Ÿç„¡ç‚ºï¼Œäº¤å‹ç”šå¤šã€‚èˆ‡å‹åƒçŽ‹ä¹‹çŽ‹ï¼Œç™¼å‘†èŸ²ï¼Œç‹ä¸€åŠï¼Œæ¥šé¢¨ï¼Œå¸é¦¬å¤©ç±Ÿå…±å»ºå¹«æ´¾â€œé›ªåŸŸè’¼ç‹¼â€,é—–ç›ªæ±Ÿæ¹–æ™‚ï¼Œè™•äº‹é›–ç„¡å¤§å–„ï¼Œ"
+"äº¦ç„¡å¤§æƒ¡ï¼Œä»¥å‹¤å¥®ä¿®ç·´ç‚ºå°ˆé•·ï¼Œä»¥åœ˜çµå…„å¼Ÿç‚ºå·±ä»»ï¼Œçµ‚å› ç§å‹™è€Œé›¢é–‹æ³¥æ½­ã€‚\n" NOR));
         set("combat_exp", 60000);
         set("shen_type", 1);
         set("attitude", "friendly");

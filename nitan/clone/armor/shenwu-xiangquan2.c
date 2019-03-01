@@ -1,4 +1,4 @@
-// necklace.c ½ğÏîÁ´
+// necklace.c é‡‘é …éˆ
 
 #include <armor.h>
 #include <ansi.h>
@@ -7,12 +7,12 @@ inherit NECK;
 
 void create()
 {
-        set_name(HIY "ÉñÎäÏîÈ¦" NOR, ({ "shenwu xiangquan2", "shenwu", "xiangquan2" }));
+        set_name(HIY "ç¥æ­¦é …åœˆ" NOR, ({ "shenwu xiangquan2", "shenwu", "xiangquan2" }));
         set_weight(500);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "´®");
+                set("unit", "ä¸²");
                 set("value", 200000);
                 set("material", "gold");
                 set("armor_prop/armor", 300);

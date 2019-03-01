@@ -1,4 +1,4 @@
-// guishejiu.c ¹êÉß¾Æºø
+// guishejiu.c é¾œè›‡é…’å£º
 
 #include <ansi.h>;
 inherit ITEM;
@@ -6,13 +6,13 @@ inherit F_LIQUID;
 
 void create()
 {
-        set_name("¹êÉß¾Æºø", ({"guishe jiuhu", "jiu", "jiuhu"}));
+        set_name("é¾œè›‡é…’å£º", ({"guishe jiuhu", "jiu", "jiuhu"}));
         set_weight(700);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¸öÓÃÀ´×°¹êÉß¾ÆµÄ¾Æºø£¬ÀïÃæ¿É×°Ò»½ïµÄ¾Æ¡£\n");
-                set("unit", "¸ö");
+                set("long", "ä¸€å€‹ç”¨ä¾†è£é¾œè›‡é…’çš„é…’å£ºï¼Œè£¡é¢å¯è£ä¸€æ–¤çš„é…’ã€‚\n");
+                set("unit", "å€‹");
                 set("value", 300);
                 set("max_liquid", 15);
         }
@@ -21,7 +21,7 @@ void create()
         // we set it to contain wine at the beginning
         set("liquid", ([
                 "type": "alcohol",
-                "name": "¹êÉß¾Æ",
+                "name": "é¾œè›‡é…’",
                 "remaining": 5,
                 "drunk_apply": 3,
         ]));

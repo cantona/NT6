@@ -4,18 +4,18 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Ê÷¶´");
+        set("short", "æ¨¹æ´");
         set("long", @LONG
-Ê÷¶´ÄÚ·Ç³£ÏÁÕ­£¬¹âÏßºÚ°µ£¬µØÉÏÆÌÂúÊÇ¿İ²İ¡£¶´µÄÇ½ÉÏÓĞÒ»Ö»
-´óÖ©ÖëÕıÔÚ±àÖ¯Ò»¸öÖ©ÖëÍø¡£
+æ¨¹æ´å…§éå¸¸ç‹¹çª„ï¼Œå…‰ç·šé»‘æš—ï¼Œåœ°ä¸Šèˆ–æ»¿æ˜¯æ¯è‰ã€‚æ´çš„ç‰†ä¸Šæœ‰ä¸€åª
+å¤§èœ˜è››æ­£åœ¨ç·¨ç¹”ä¸€å€‹èœ˜è››ç¶²ã€‚
 LONG );
         set("exits", ([ /* sizeof() == 1 */
             "out" : __DIR__"entrance",
         ]));
         set("no_clean_up", 0);
         set("item_desc", ([ /* sizeof() == 2 */
-            "¿İ²İ":"Ò»¶Ñ¿İ²İ£¬ÀïÃæÓĞÒ»¸ö´óÌú»·(ring)¡£\n",
-            "grass":"Ò»¶Ñ¿İ²İ£¬ÀïÃæÓĞÒ»¸ö´óÌú»·(ring)¡£\n",
+            "æ¯è‰":"ä¸€å †æ¯è‰ï¼Œè£¡é¢æœ‰ä¸€å€‹å¤§éµç’°(ring)ã€‚\n",
+            "grass":"ä¸€å †æ¯è‰ï¼Œè£¡é¢æœ‰ä¸€å€‹å¤§éµç’°(ring)ã€‚\n",
         ]));
 
         setup();
@@ -29,9 +29,9 @@ void init()
 int do_pull(string arg)
 {
         if( !arg ) return 0;
-        if( arg != "´óÌú»·" && arg != "ring" ) return 0;
-        if( arg == "´óÌú»·" || arg == "ring" ) {
-        message_vision("$NÓÃ¾¢À­Æğ´óÌú»·£¬ÁàÆğÒ»¿éÄ¾°å£¬ÏÂÃæÂ¶³öÒ»¶´¡£\n", this_player() );
+        if( arg != "å¤§éµç’°" && arg != "ring" ) return 0;
+        if( arg == "å¤§éµç’°" || arg == "ring" ) {
+        message_vision("$Nç”¨å‹æ‹‰èµ·å¤§éµç’°ï¼Œæ‹èµ·ä¸€å¡Šæœ¨æ¿ï¼Œä¸‹é¢éœ²å‡ºä¸€æ´ã€‚\n", this_player() );
         set("exits/enter", __DIR__"tunnel1");
         call_out("close_passage", 10);
         return 1;
@@ -44,5 +44,5 @@ void close_passage()
 
         if( !query("exits/enter") ) return;
         delete("exits/enter");
-        message("vision","Ä¾°å»ÎÁË»Î£¬½«ÏÂÃæµÄ¶´¿Ú¸Ç×¡ÁË¡£\n", this_object() );
+        message("vision","æœ¨æ¿æ™ƒäº†æ™ƒï¼Œå°‡ä¸‹é¢çš„æ´å£è“‹ä½äº†ã€‚\n", this_object() );
 }

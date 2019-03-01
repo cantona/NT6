@@ -9,28 +9,28 @@ int exert(object me, object target)
   !query("perform/heal", me) && 
   !query("can_perform/honghua-shengong/heal", me) && 
   !query_temp("murong/xingyi", me) )
-   return notify_fail("ÄãËùÊ¹ÓÃµÄÄÚ¹¦ÖĞÃ»ÓĞÕâÖÖ¹¦ÄÜ¡£");
+   return notify_fail("ä½ æ‰€ä½¿ç”¨çš„å…§åŠŸä¸­æ²’æœ‰é€™ç¨®åŠŸèƒ½ã€‚");
 
         if( me->is_fighting() )
-                return notify_fail("Õ½¶·ÖĞÔË¹¦ÁÆÉË£¿ÕÒËÀÂğ£¿\n");
+                return notify_fail("æˆ°é¬¥ä¸­é‹åŠŸç™‚å‚·ï¼Ÿæ‰¾æ­»å—ï¼Ÿ\n");
 
         if( me->is_busy() )
-                return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ£¬ÄÄÓĞ¿ÕÔË¹¦£¿\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£å¿™è‘—å‘¢ï¼Œå“ªæœ‰ç©ºé‹åŠŸï¼Ÿ\n");
 
         if( (int)me->query_skill("honghua-shengong", 1) < 20)
-                return notify_fail("ÄãµÄºì»¨Éñ¹¦ĞŞÎª»¹²»¹»¡£\n");
+                return notify_fail("ä½ çš„ç´…èŠ±ç¥åŠŸä¿®ç‚ºé‚„ä¸å¤ ã€‚\n");
 
         if( query("neili", me)<50 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ã€‚\n");
 /*
         if( query("eff_qi", me) >= query("max_qi", me) )
-                return notify_fail(HIR"ÄãÃ»ÓĞÊÜÉË£¬²»±ØÔËÕæÆøÁÆÉË£¡\n"NOR);
+                return notify_fail(HIR"ä½ æ²’æœ‰å—å‚·ï¼Œä¸å¿…é‹çœŸæ°£ç™‚å‚·ï¼\n"NOR);
 */
         if( query("eff_qi", me)<query("max_qi", me)/2 )
-                return notify_fail("ÄãÒÑ¾­ÊÜÉË¹ıÖØ£¬Ö»ÅÂÒ»ÔËÕæÆø±ãÓĞÉúÃüÎ£ÏÕ£¡\n");
+                return notify_fail("ä½ å·²ç¶“å—å‚·éé‡ï¼Œåªæ€•ä¸€é‹çœŸæ°£ä¾¿æœ‰ç”Ÿå‘½å±éšªï¼\n");
 
-        write( HIW "ÄãÈ«Éí·ÅËÉ£¬×øÏÂÀ´¿ªÊ¼ÔË¹¦ÁÆÉË¡£\n" NOR);
-        message("vision", HIW + me->name() + "ÍÂ³öÒ»¿ÚğöÑª£¬Á³É«¿´ÆğÀ´ºÃ¶àÁË¡£\n" NOR, environment(me), me);
+        write( HIW "ä½ å…¨èº«æ”¾é¬†ï¼Œåä¸‹ä¾†é–‹å§‹é‹åŠŸç™‚å‚·ã€‚\n" NOR);
+        message("vision", HIW + me->name() + "åå‡ºä¸€å£ç˜€è¡€ï¼Œè‡‰è‰²çœ‹èµ·ä¾†å¥½å¤šäº†ã€‚\n" NOR, environment(me), me);
 
         me->receive_curing("qi", 10 + (int)me->query_skill("force")/5 );
         addn("neili", -50, me);
@@ -42,15 +42,15 @@ int exert(object me, object target)
 
 int help(object me)
 {
-        write(WHT"\nºì»¨Éñ¹¦Ö®×ÔÁÆ£º"NOR"\n");
+        write(WHT"\nç´…èŠ±ç¥åŠŸä¹‹è‡ªç™‚ï¼š"NOR"\n");
         write(@HELP
 
-        Ê¹ÓÃ¹¦Ğ§£º
-                Îª×Ô¼ºÁÆÉË
+        ä½¿ç”¨åŠŸæ•ˆï¼š
+                ç‚ºè‡ªå·±ç™‚å‚·
 
-        ³öÊÖÒªÇó£º
-                ºì»¨Éñ¹¦20¼¶
-                ÄÚÁ¦50
+        å‡ºæ‰‹è¦æ±‚ï¼š
+                ç´…èŠ±ç¥åŠŸ20ç´š
+                å…§åŠ›50
 HELP
         );
         return 1;

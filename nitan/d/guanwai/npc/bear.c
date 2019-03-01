@@ -5,15 +5,15 @@ inherit NPC;
 
 void create()
 {
-        set_name(CYN "ºÚĞÜ" NOR, ({ "hei xiong", "bear","xiong" }) );
-        set("race", "Ò°ÊŞ");
+        set_name(CYN "é»‘ç†Š" NOR, ({ "hei xiong", "bear","xiong" }) );
+        set("race", "é‡ç¸");
         set("age", 20);
-        set("long", "Ò»Ö»Ğ×ÃÍµÄºÚĞÜ£¬ĞÎÌåË¶´ó£¬ÈËÁ¢¶øĞĞ¡£\n");
+        set("long", "ä¸€åªå…‡çŒ›çš„é»‘ç†Šï¼Œå½¢é«”ç¢©å¤§ï¼Œäººç«‹è€Œè¡Œã€‚\n");
         set("attitude", "aggressive");
 
-        set("limbs", ({ "ĞÜÍ·", "ĞÜÉí", "Ç°×¦", "ºó×¦", "Î²°Í" }) );
+        set("limbs", ({ "ç†Šé ­", "ç†Šèº«", "å‰çˆª", "å¾Œçˆª", "å°¾å·´" }) );
         set("verbs", ({ "bite", "claw" }) );
-        set("unit", "Ö»");
+        set("unit", "åª");
 
         set("combat_exp", 50000);
         set_temp("apply/attack", 200);
@@ -24,8 +24,8 @@ void create()
 
         set("chat_chance", 10);
         set("chat_msg", ({
-                "ºÚĞÜ³å×ÅÄãÒ¡Í·°ÚÎ²µØ£¬²»ÖªµÀÊÇÊ²Ã´ÒâË¼¡£\n",
-                "ºÚĞÜ¼·ÁË¼·±Ç×Ó£¬Äã¾õµÃËüºÃÏóÔÚĞ¦£¬¶ÙÊ±Ò»Õó½ôÕÅ¡£\n",
+                "é»‘ç†Šæ²–è‘—ä½ æ–é ­æ“ºå°¾åœ°ï¼Œä¸çŸ¥é“æ˜¯ä»€éº¼æ„æ€ã€‚\n",
+                "é»‘ç†Šæ“ äº†æ“ é¼»å­ï¼Œä½ è¦ºå¾—å®ƒå¥½è±¡åœ¨ç¬‘ï¼Œé “æ™‚ä¸€é™£ç·Šå¼µã€‚\n",
         }));
 }
 
@@ -46,7 +46,7 @@ void greeting(object ob)
         if (! objectp(ob) || environment(ob) != environment())
                 return;
 
-        message_vision("$Nº©º©µÄ¿´×Å$n¡£\n",
+        message_vision("$Næ†¨æ†¨çš„çœ‹è‘—$nã€‚\n",
                        this_object(), ob);
 }
 

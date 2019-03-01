@@ -4,10 +4,10 @@ inherit F_SAVE;
 void create()
 {
         if( !restore() ) {
-                set_name("²ÊÆ±", ({"cai piao"}));
-                set("long","ÕâÊÇÒ»ÕÅÄàÌ¶²ÊÆ±\n");
+                set_name("å½©ç¥¨", ({"cai piao"}));
+                set("long","é€™æ˜¯ä¸€å¼µæ³¥æ½­å½©ç¥¨\n");
         }
-        set("unit", "ÕÅ");
+        set("unit", "å¼µ");
         seteuid(getuid());
 }
 

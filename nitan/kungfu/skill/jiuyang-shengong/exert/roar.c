@@ -1,5 +1,5 @@
 // This program is a part of NT MudLIB
-// roar.c ��س���
+// roar.c 天地長吟
 
 #include <ansi.h>
 
@@ -11,7 +11,7 @@ int exert(object me, object target)
         int i, skill, damage;
 
         if ((int)query("neili", me) < 100)
-                return notify_fail("�������������\n");
+                return notify_fail("你的內力不夠。\n");
 
         skill = me->query_skill("force");
 
@@ -19,11 +19,11 @@ int exert(object me, object target)
         me->receive_damage("qi", 10);
 
         if (query("no_fight", environment(me)))
-                return notify_fail("���ﲻ�ܹ�������! \n");
+                return notify_fail("這裡不能攻擊別人! \n");
 
         me->start_busy(5);
-        message_combatd(HIY "$N" HIY "��Ȼ����һ���������쳤�������������ޱȣ����ƻֺ룬�Ե�"
-                        "��ɽҡ֮������Χ��ɢ��ȥ��\n" NOR, me);
+        message_combatd(HIY "$N" HIY "猛然深吸一口氣，仰天長吟，聲音洪亮無比，氣勢恢弘，以地"
+                        "動山搖之勢向周圍擴散開去。\n" NOR, me);
 
         ob = all_inventory(environment(me));
         for (i = 0; i < sizeof(ob); i++)
@@ -48,7 +48,7 @@ int exert(object me, object target)
                         ob[i]->receive_damage("qi", damage * 3, me);
                         if( query("neili", ob[i])<skill*2 )
                                 ob[i]->receive_wound("jing", damage * 2, me);
-                        tell_object(ob[i], "��ֻ�����ؿ�һ����ƣ���ʱ���˼�����һ����Ѫ�ӿ��������\n");
+                        tell_object(ob[i], "你只覺得胸口一陣苦悶，頓時倒退幾步，一股鮮血從口中噴出。\n");
                 }
         }
         return 1;

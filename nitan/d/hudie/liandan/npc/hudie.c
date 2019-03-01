@@ -4,16 +4,16 @@ inherit NPC;
 
 void create()
 {
-        set_name("ºûµû", ({ "hu die", "hu" }) );
-        set("race", "Ò°ÊŞ");
+        set_name("è´è¶", ({ "hu die", "hu" }) );
+        set("race", "é‡ç¸");
         set("age", 4);
-        set("long", "Ò»Ö»ÃÀÀöµÄºûµû£¬¿´µ½Ëü£¬Äã²»¾õÓĞĞ©¸ĞÉË¡£\n");
+        set("long", "ä¸€åªç¾éº—çš„è´è¶ï¼Œçœ‹åˆ°å®ƒï¼Œä½ ä¸è¦ºæœ‰äº›æ„Ÿå‚·ã€‚\n");
         set("attitude", "peaceful");
 
         set("str", 26);
         set("cor", 30);
 
-        set("limbs", ({ "Ç°×¦","×ì","ºó×¦","³á°ò" }));
+        set("limbs", ({ "å‰çˆª","å˜´","å¾Œçˆª","ç¿…è†€" }));
         set("verbs", ({ "bite" }) );
 
         set("combat_exp", 800);
@@ -23,7 +23,7 @@ void create()
 
 void die()
 {
-        message_vision("$NÇáÇáµØÆ®ÂäÔÚµØÃæ£¡$NÎŞÉùÎŞÏ¢µØËÀÁË¡£\n", this_object());
+        message_vision("$Nè¼•è¼•åœ°é£„è½åœ¨åœ°é¢ï¼$Nç„¡è²ç„¡æ¯åœ°æ­»äº†ã€‚\n", this_object());
         destruct(this_object());
 }
 

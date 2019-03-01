@@ -35,7 +35,7 @@ int main(object me, string arg)
         {
                 if (me && ! is_root(me))
                 {
-                        write("ֻ�й���Ա����ʹ�� -R ������\n");
+                        write("只有管理員才能使用 -R 參數。\n");
                         return 1;
                 }
 
@@ -45,7 +45,7 @@ int main(object me, string arg)
         {
                 if (me && ! is_root(me))
                 {
-                        write("ֻ�й���Ա����ʹ�� -F ������\n");
+                        write("只有管理員才能使用 -F 參數。\n");
                         return 1;
                 }
 
@@ -56,7 +56,7 @@ int main(object me, string arg)
                 copy_dir = 0;
         } else
         {
-                write("��ʽ����\n");
+                write("格式錯誤！\n");
                 help(me);
                 return 1;
         }
@@ -67,21 +67,21 @@ int main(object me, string arg)
         {
                 dir = SECURITY_D->query_site_privilege("edit");
                 if( !dir && !sscanf(dst, "/u/%*s") )
-                        return notify_fail("��ֻ�ܸ����ļ������Լ���Ŀ¼�¡�\n");
+                        return notify_fail("你只能復制文件到你自己的目錄下。\n");
                         
                 if( dir != "all" && !sscanf(dst, "/%s/%*s", dir) )
-                        return notify_fail("��ֻ�ܸ����ļ������Լ�Ŀ¼���Լ�" + dir + "Ŀ¼�¡�\n");
+                        return notify_fail("你只能復制文件到你自己目錄下以及" + dir + "目錄下。\n");
         }
         switch (file_size(src))
         {
         case -1:
                 if (copy_filter) break;
-                write("û�����(" + src + ")�ļ���Ŀ¼���޷����ơ�\n");
+                write("沒有這個(" + src + ")文件或目錄，無法復制。\n");
                 return 1;
 
         case -2:
                 if (copy_dir) break;
-                write("û��ָ�� -R ���������ܸ���Ŀ¼(" + src + ")��\n");
+                write("沒有指定 -R 參數，不能復制目錄(" + src + ")。\n");
                 return 1;
         default:
                 // copy file, not directory.
@@ -105,16 +105,16 @@ int main(object me, string arg)
                 else
                 {
                         if (! SECURITY_D->valid_read(src, me, "ls"))
-                                write("û�����(" + src + ")�ļ���Ŀ¼���޷����ơ�\n");
+                                write("沒有這個(" + src + ")文件或目錄，無法復制。\n");
                         else
-                                write("��û��Ȩ�޸�������ļ���\n");
+                                write("你沒有權限復制這個文件。\n");
                 }
                 return 1;
         }
 
         if (strlen(dst) >= strlen(src) && dst[0..strlen(src) - 1] == src)
         {
-                write("�㲻�ܽ�һ��·�����Ƶ�������������·���С�\n");
+                write("你不能將一個路徑復制到自身或者是子路徑中。\n");
                 return 1;
         }
 
@@ -133,15 +133,15 @@ int main(object me, string arg)
 
         default:
                 // destition is a file, error
-                write("Ŀ¼���ܸ��Ƶ��ļ��ڣ����������Ŀ��·����\n");
+                write("目錄不能復制到文件內，請修正你的目的路徑。\n");
                 return 1;
         }
 
-        message_system(HIC "����Ŀ¼�У����Ժ�..." NOR);
+        message_system(HIC "復制目錄中，請稍候..." NOR);
 
         count = copy_dir(src, dst, DIR_MAY_NOT_EXISTED, copy_filter);
         if (count)
-                write(HIY "�ܹ���" + count + "���ļ����ɹ����ơ�\n" NOR);
+                write(HIY "總共有" + count + "個文件被成功復制。\n" NOR);
         return 1;
 }
 
@@ -172,9 +172,9 @@ int copy_dir(string src, string dst, int dir_existed, int copy_filter)
                 
                 if (idx == -1 || idx == 0) return count;
                 src = src[0..idx]; 
-                write (HIC "����Ŀ¼(" + src + ")�з��������ļ� -- > (" + dst + ")��\n" NOR);
+                write (HIC "復制目錄(" + src + ")中符合條件文件 -- > (" + dst + ")。\n" NOR);
         } else        
-                write (HIC "����Ŀ¼(" + src + ") -- > (" + dst + ")��\n" NOR);
+                write (HIC "復制目錄(" + src + ") -- > (" + dst + ")。\n" NOR);
                 
         i = sizeof(file);
         while (i--)
@@ -203,10 +203,10 @@ int copy_dir(string src, string dst, int dir_existed, int copy_filter)
 int help(object me)
 {
         write(@HELP
-ָ���ʽ : cp [-R|-F] <�ļ�|·����> <Ŀ���ļ�|Ŀ��·����>
+指令格式 : cp [-R|-F] <文件|路徑名> <目的文件|目的路徑名>
  
-���ָ����Ը���Դ�ļ���Ŀ���ļ����Ƶ�Ŀ��·�������ʹ���˲���-R��
-���Ը���һ��Ŀ¼��û������������ܸ���·����
+這個指令可以復制源文件成目的文件或復制到目的路徑。如果使用了參數-R則
+可以復制一個目錄，沒有這個參數則不能復制路徑。
 
 see also: rm, mv
 HELP );

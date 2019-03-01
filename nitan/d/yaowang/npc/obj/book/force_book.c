@@ -2,24 +2,24 @@ inherit ITEM;
 
 void create()
 {
-       set_name("»ù±¾ÄÚ¹¦", ({ "force book"}));
+       set_name("åŸºæœ¬å…§åŠŸ", ({ "force book"}));
         set_weight(600);
         if( clonep() )
                 set_default_object(__FILE__);
         else
         {
-        set("unit", "±¾");
+        set("unit", "æœ¬");
         set("long",
-"Õâ±¾ÊéÉÏÃæÖ»ÓĞÒ»Ğ©×Ö¼£Ä£ºıµÄ×Ö¾ä£¬ËÆºõ\n"
-"Ğ´µÄÊÇÒ»Ğ©ÄÚ¹¦ĞŞÁ¶µÄ¾­ÑéÖ®Ì¸¡£\n");
+"é€™æœ¬æ›¸ä¸Šé¢åªæœ‰ä¸€äº›å­—è·¡æ¨¡ç³Šçš„å­—å¥ï¼Œä¼¼ä¹\n"
+"å¯«çš„æ˜¯ä¸€äº›å…§åŠŸä¿®ç…‰çš„ç¶“é©—ä¹‹è«‡ã€‚\n");
         set("value", 800);
         set("material", "paper");
         set("skill", ([
-        "name":         "force", // Îä¹¦Ãû³Æ,
-        "exp_required": 100,    // ¶Á´ËÊéĞèÒªµÄ×îµÍ¾­Ñé.
-        "jing_cost":     15,      // ¶ÁÊé»¨µÄÉñ.
-        "difficulty":   20,      // ²Î¿´ /cmds/std/study.c
-        "max_skill":    60,      // ÄÜ¶Áµ½µÄ×î¸ßµÈ¼¶.
+        "name":         "force", // æ­¦åŠŸåç¨±,
+        "exp_required": 100,    // è®€æ­¤æ›¸éœ€è¦çš„æœ€ä½ç¶“é©—.
+        "jing_cost":     15,      // è®€æ›¸èŠ±çš„ç¥.
+        "difficulty":   20,      // åƒçœ‹ /cmds/std/study.c
+        "max_skill":    60,      // èƒ½è®€åˆ°çš„æœ€é«˜ç­‰ç´š.
 ]) );
         }
 }

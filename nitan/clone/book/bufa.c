@@ -3,18 +3,18 @@ inherit ITEM;
 
 void create()
 {
-        set_name( "ÒâĞÎ²½·¨",({ "bufa book","bufa","shu","book"}));
+        set_name( "æ„å½¢æ­¥æ³•",({ "bufa book","bufa","shu","book"}));
         set_weight(200);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
-                set("long","ÕâÊÇÒ»±¾ÒâĞÎ²½²½·¨¡£\n");
+                set("unit", "æœ¬");
+                set("long","é€™æ˜¯ä¸€æœ¬æ„å½¢æ­¥æ­¥æ³•ã€‚\n");
                 set("value", 5000);
                 set("material", "paper");
                 set("skill", ([
                         "name": "yixingbu",  //name of the skill
-						"family_name": "ÉñÁú½Ì",
+						"family_name": "ç¥é¾æ•™",
                         "exp_required": 10000 , //minimum combat experience required
                         "jing_cost": 20+random(30),// jing cost every time study this
                         "difficulty":        20,        // the base int to learn this skill

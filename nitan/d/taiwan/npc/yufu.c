@@ -1,4 +1,4 @@
-// nongfu.c Å©·ò
+// nongfu.c è¾²å¤«
 // Last Modifyed by Ahda on Jan. 4 2002
 
 inherit NPC;
@@ -8,8 +8,8 @@ void create()
         int age;
         age = 20 + random(40);
         
-        set_name("Óæ·ò", ({ "yu fu", "yufu", "yu", "fu", }));
-        set("gender", "ÄĞĞÔ");
+        set_name("æ¼å¤«", ({ "yu fu", "yufu", "yu", "fu", }));
+        set("gender", "ç”·æ€§");
         set("age", age);
 
         set_skill("unarmed", 10);

@@ -1,16 +1,16 @@
-// beijie.c ����
+// beijie.c 北街
 // Winder Oct.10 1998
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "����");
+        set("short", "北街");
         set("long", @LONG
-�����Ǻ���������Ľֵ���ÿ���һʮ�壬��Ҫ���������
-Щ����֮��ľۻᡣ�ֱ�����һ�Ҿ�¥��¥ǰ����һ������������
-д�˸����ġ��ơ��֡�������һ���˼ҡ�����С���ڽ���Ц����
-�Ż���׷��
+北街是漢中鎮最繁華的街道，每逢初一十五，還要在這裡舉行
+些廟會之類的聚會。街北面是一家酒樓，樓前掛著一條藍幅，上面
+寫了個大大的‘酒’字。西面是一戶人家。幾個小孩在街上笑著鬧
+著互相追逐。
 LONG
         );
         set("outdoors", "hanzhong");

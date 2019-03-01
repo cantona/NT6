@@ -18,43 +18,43 @@
 #define STATUS_PREPARING        1
 #define STATUS_PLAYING          2
 
-#define TICK                    0       // ¼ÆÊı
-#define TEAM1                   1       // Ö÷³¡Çò¶Ó
-#define TEAM2                   2       // ¿Í³¡Çò¶Ó
-#define INNING                  3       // ¾ÖÊı
-#define OUT                             4       // ³ö¾ÖÊı
-#define STRIKE                  5       // ºÃÇò
-#define BALL                    6       // »µÇò
-#define RUNNER1ST               7       // Ò»ÀİÅÜÕß
-#define RUNNER2ND               8       // ¶şÀİÅÜÕß
-#define RUNNER3RD               9       // ÈıÀİÅÜÕß
-#define TEAM1NUMBER             10      // Ö÷³¡Çò¶ÓÄ¿Ç°°ô´Î
-#define TEAM2NUMBER             11      // ¿Í³¡Çò¶ÓÄ¿Ç°°ô´Î
-#define TEAM1SCORE              12      // Ö÷³¡Çò¶ÓµÃ·Ö
-#define TEAM2SCORE              13      // ¿Í³¡Çò¶ÓµÃ·Ö
-#define TEAM1HIT                14      // Ö÷³¡Çò¶Ó°²´òÊı
-#define TEAM2HIT                15      // ¿Í³¡Çò¶Ó°²´òÊı
-#define TEAM1MISS               16      // Ö÷³¡Çò¶ÓÊ§ÎóÊı
-#define TEAM2MISS               17      // ¿Í³¡Çò¶ÓÊ§ÎóÊı
-#define TEAM1K                  18      // Ö÷³¡Çò¶ÓÍ¶ÊÖÈıÕñÊı
-#define TEAM2K                  19      // ¿Í³¡Çò¶ÓÍ¶ÊÖÈıÕñÊı
-#define TEAM1WALK               20      // Ö÷³¡Çò¶Ó±£ËÍÊı
-#define TEAM2WALK               21      // ¿Í³¡Çò¶Ó±£ËÍÊı
+#define TICK                    0       // è¨ˆæ•¸
+#define TEAM1                   1       // ä¸»å ´çƒéšŠ
+#define TEAM2                   2       // å®¢å ´çƒéšŠ
+#define INNING                  3       // å±€æ•¸
+#define OUT                             4       // å‡ºå±€æ•¸
+#define STRIKE                  5       // å¥½çƒ
+#define BALL                    6       // å£çƒ
+#define RUNNER1ST               7       // ä¸€å£˜è·‘è€…
+#define RUNNER2ND               8       // äºŒå£˜è·‘è€…
+#define RUNNER3RD               9       // ä¸‰å£˜è·‘è€…
+#define TEAM1NUMBER             10      // ä¸»å ´çƒéšŠç›®å‰æ£’æ¬¡
+#define TEAM2NUMBER             11      // å®¢å ´çƒéšŠç›®å‰æ£’æ¬¡
+#define TEAM1SCORE              12      // ä¸»å ´çƒéšŠå¾—åˆ†
+#define TEAM2SCORE              13      // å®¢å ´çƒéšŠå¾—åˆ†
+#define TEAM1HIT                14      // ä¸»å ´çƒéšŠå®‰æ‰“æ•¸
+#define TEAM2HIT                15      // å®¢å ´çƒéšŠå®‰æ‰“æ•¸
+#define TEAM1MISS               16      // ä¸»å ´çƒéšŠå¤±èª¤æ•¸
+#define TEAM2MISS               17      // å®¢å ´çƒéšŠå¤±èª¤æ•¸
+#define TEAM1K                  18      // ä¸»å ´çƒéšŠæŠ•æ‰‹ä¸‰æŒ¯æ•¸
+#define TEAM2K                  19      // å®¢å ´çƒéšŠæŠ•æ‰‹ä¸‰æŒ¯æ•¸
+#define TEAM1WALK               20      // ä¸»å ´çƒéšŠä¿é€æ•¸
+#define TEAM2WALK               21      // å®¢å ´çƒéšŠä¿é€æ•¸
 
-#define BASETYPE_STRIKEOUT              0       // ÈıÕñ
-#define BASETYPE_BALL                   1       // ±£ËÍÉÏÀİ
-#define BASETYPE_HIT                    2       // °²´òÉÏÀİ
-#define BASETYPE_BUNT                   3       // ´¥»÷¶Ì´ò
-#define BASETYPE_TOUCHKILL              4       // ´ÌÉ±
-#define BASETYPE_CATCHKILL              5       // ½ÓÉ±
-#define BASETYPE_DOUBLEPLAY             6       // Ë«É±
-#define BASETYPE_TRIPLEPLAY             7       // ÈıÉ±
-#define BASETYPE_STEAL                  8       // µÁÀİ
+#define BASETYPE_STRIKEOUT              0       // ä¸‰æŒ¯
+#define BASETYPE_BALL                   1       // ä¿é€ä¸Šå£˜
+#define BASETYPE_HIT                    2       // å®‰æ‰“ä¸Šå£˜
+#define BASETYPE_BUNT                   3       // è§¸æ“ŠçŸ­æ‰“
+#define BASETYPE_TOUCHKILL              4       // åˆºæ®º
+#define BASETYPE_CATCHKILL              5       // æ¥æ®º
+#define BASETYPE_DOUBLEPLAY             6       // é›™æ®º
+#define BASETYPE_TRIPLEPLAY             7       // ä¸‰æ®º
+#define BASETYPE_STEAL                  8       // ç›œå£˜
 
-#define SCORETYPE_HOMERUN               1       // È«Àİ´ò
-#define SCORETYPE_FOURBALL              2       // ±£ËÍ
-#define SCORETYPE_SACRIFICE             3       // ÎşÉü´ò
-#define SCORETYPE_HIT                   4       // °²´ò
+#define SCORETYPE_HOMERUN               1       // å…¨å£˜æ‰“
+#define SCORETYPE_FOURBALL              2       // ä¿é€
+#define SCORETYPE_SACRIFICE             3       // çŠ§ç‰²æ‰“
+#define SCORETYPE_HIT                   4       // å®‰æ‰“
 
 #define HINTTYPE_BATTER                 1       
 #define HINTTYPE_PITCHER                2       

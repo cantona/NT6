@@ -3,10 +3,10 @@ inherit BULLETIN_BOARD;
 
 void create()
 {
-        set_name("工作笔记", ({ "board" }) );
+        set_name("宸ヤ綔绛嗚", ({ "board" }) );
         set("location", "/u/wuji/workroom");
         set("board_id", "wuji_b");
-        set("long", "这是一个专供wuji使用的工作笔记。\n" );
+        set("long", "閫欐槸涓�鍊嬪皥渚泈uji浣跨敤鐨勫伐浣滅瓎瑷樸�俓n" );
         setup();
         set("capacity", 100);
         replace_program(BULLETIN_BOARD);

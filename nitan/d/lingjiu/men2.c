@@ -6,10 +6,10 @@ string look_bian();
 
 void create()
 {
-        set("short", "Êé·¿´óÃÅ");
+        set("short", "æ›¸æˆ¿å¤§é–€");
         set("long", @LONG
-ÕâÊÇÊé·¿ÃÅ¿Ú£¬Ö»¼û´óÃÅÅÔÌù×Å¸±¶ÔÁª (duilian)£¬Ì§Í·ÉÏÍû¡£
-ÃÅé¹ÉÏÒ»¿é´óØÒ(bian)ÉÏÐ´×Å¼¸¸ö´ó×Ö¡£
+é€™æ˜¯æ›¸æˆ¿é–€å£ï¼Œåªè¦‹å¤§é–€æ—è²¼è‘—å‰¯å°è¯ (duilian)ï¼ŒæŠ¬é ­ä¸Šæœ›ã€‚
+é–€æ¥£ä¸Šä¸€å¡Šå¤§åŒ¾(bian)ä¸Šå¯«è‘—å¹¾å€‹å¤§å­—ã€‚
 LONG );
         set("outdoors", "lingjiu");
         set("exits", ([
@@ -30,21 +30,21 @@ string look_duilian()
 {
         return
         HIR "\n"
-        "             ¡ù¡ù¡ù¡ù¡ù¡ù¡ù            ¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n"
-        "             ¡ù¡ù¡ù¡ù¡ù¡ù¡ù            ¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n"
-        "             ¡ù¡ù      ¡ù¡ù            ¡ù¡ù      ¡ù¡ù\n"
-        "             ¡ù¡ù" NOR + HIW "¡¡ÐÐ¡¡" NOR + HIR "¡ù¡ù            ¡ù¡ù" NOR + HIW "  ×ø  " NOR + HIR "¡ù¡ù\n"
-        "             ¡ù¡ù¡¡ ¡¡ ¡ù¡ù            ¡ù¡ù      ¡ù¡ù\n"
-        "             ¡ù¡ù" NOR + HIW "  µ½  " NOR + HIR "¡ù¡ù            ¡ù¡ù" NOR + HIW "  ¿´  " NOR + HIR "¡ù¡ù\n"
-        "             ¡ù¡ù      ¡ù¡ù            ¡ù¡ù      ¡ù¡ù\n"
-        "             ¡ù¡ù" NOR + HIW "  Ë®  " NOR + HIR "¡ù¡ù            ¡ù¡ù" NOR + HIW "  ÔÆ  " NOR + HIR "¡ù¡ù\n"
-        "             ¡ù¡ù      ¡ù¡ù            ¡ù¡ù      ¡ù¡ù\n"
-        "             ¡ù¡ù" NOR + HIW "  Çî  " NOR + HIR "¡ù¡ù            ¡ù¡ù" NOR + HIW "  Æð  " NOR + HIR "¡ù¡ù\n"
-        "             ¡ù¡ù      ¡ù¡ù            ¡ù¡ù      ¡ù¡ù\n"
-        "             ¡ù¡ù" NOR + HIW "  ´¦  " NOR + HIR "¡ù¡ù            ¡ù¡ù" NOR + HIW "  Ê±  " NOR + HIR "¡ù¡ù\n"
-        "             ¡ù¡ù    ¡¡¡ù¡ù            ¡ù¡ù      ¡ù¡ù\n"
-        "             ¡ù¡ù¡ù¡ù¡ù¡ù¡ù            ¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n"
-        "             ¡ù¡ù¡ù¡ù¡ù¡ù¡ù            ¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n\n" NOR;
+        "             â€»â€»â€»â€»â€»â€»â€»            â€»â€»â€»â€»â€»â€»â€»\n"
+        "             â€»â€»â€»â€»â€»â€»â€»            â€»â€»â€»â€»â€»â€»â€»\n"
+        "             â€»â€»      â€»â€»            â€»â€»      â€»â€»\n"
+        "             â€»â€»" NOR + HIW "ã€€è¡Œã€€" NOR + HIR "â€»â€»            â€»â€»" NOR + HIW "  å  " NOR + HIR "â€»â€»\n"
+        "             â€»â€»ã€€ ã€€ â€»â€»            â€»â€»      â€»â€»\n"
+        "             â€»â€»" NOR + HIW "  åˆ°  " NOR + HIR "â€»â€»            â€»â€»" NOR + HIW "  çœ‹  " NOR + HIR "â€»â€»\n"
+        "             â€»â€»      â€»â€»            â€»â€»      â€»â€»\n"
+        "             â€»â€»" NOR + HIW "  æ°´  " NOR + HIR "â€»â€»            â€»â€»" NOR + HIW "  é›²  " NOR + HIR "â€»â€»\n"
+        "             â€»â€»      â€»â€»            â€»â€»      â€»â€»\n"
+        "             â€»â€»" NOR + HIW "  çª®  " NOR + HIR "â€»â€»            â€»â€»" NOR + HIW "  èµ·  " NOR + HIR "â€»â€»\n"
+        "             â€»â€»      â€»â€»            â€»â€»      â€»â€»\n"
+        "             â€»â€»" NOR + HIW "  è™•  " NOR + HIR "â€»â€»            â€»â€»" NOR + HIW "  æ™‚  " NOR + HIR "â€»â€»\n"
+        "             â€»â€»    ã€€â€»â€»            â€»â€»      â€»â€»\n"
+        "             â€»â€»â€»â€»â€»â€»â€»            â€»â€»â€»â€»â€»â€»â€»\n"
+        "             â€»â€»â€»â€»â€»â€»â€»            â€»â€»â€»â€»â€»â€»â€»\n\n" NOR;
 }
 
 string look_bian()
@@ -53,7 +53,7 @@ string look_bian()
     "\n"
               HIY "               ####################################\n"
                   "               ####                            ####\n"
-                  "               ####    ÈÎ    ÎÒ    åÐ    Ò£    ####\n"  
+                  "               ####    ä»»    æˆ‘    é€    é™    ####\n"  
                   "               ####                            ####\n"
                   "               ####################################\n\n\n\n\n\n\n" NOR;
     "\n";

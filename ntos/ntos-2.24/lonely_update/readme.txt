@@ -1,4 +1,4 @@
-ĞŞ¸ÄmudosµÄÃû×Ö
+ä¿®æ”¹mudosçš„åå­—
 interpret
 lex
 patchlevel

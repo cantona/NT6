@@ -1,4 +1,4 @@
-// xuexue.c Ñ©Ğ«×Ó
+// xuexue.c é›ªè å­
 
 #include <ansi.h>
 
@@ -6,16 +6,16 @@ inherit POISON_INSECT;
 
 void create()
 {
-        set_name(WHT "Ñ©Ğ«×Ó" NOR, ({ "xue xie" }) );
+        set_name(WHT "é›ªè å­" NOR, ({ "xue xie" }) );
         set_weight(180);
-        set("race", "Ò°ÊŞ");
+        set("race", "é‡ç¸");
         set("age", 2);
-        set("long", "Ò»Ö»¾§Ó¨ÌŞÍ¸µÄĞ«×Ó¡£\n");
+        set("long", "ä¸€åªæ™¶ç‘©å‰”é€çš„è å­ã€‚\n");
         set("attitude", "peaceful");
         set("str", 25);
         set("con", 22);
-        set("unit", "Ö»");
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "½Å", "Î²°Í" }) );
+        set("unit", "åª");
+        set("limbs", ({ "é ­éƒ¨", "èº«é«”", "è…³", "å°¾å·´" }) );
         set("verbs", ({ "bite" }) );
 
         set("insect_poison", ([

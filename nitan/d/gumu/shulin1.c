@@ -1,15 +1,15 @@
-// shulin1.c ����
+// shulin1.c 樹林
 // Java Oct.10 1998
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "С����");
+        set("short", "小樹林");
         set("long", @LONG
-����һƬС���֣���Χ����ľ���ܸߡ�������һЩ�в������ֵ���
-��������ͷס�����������Щ����������������·�˰ɣ�תͷ��ȴ����
-���ϱ��ƺ���һ��С·������������֮�С�
+這是一片小樹林，周圍的樹木都很高。間雜著一些叫不出名字的鮮
+花，五彩繽紛。你隱隱地有些擔心起來：不會迷路了吧，轉頭間卻看見
+東南邊似乎有一條小路，隱藏在樹叢之中。
 LONG        );
         set("outdoors", "gumu");
         set("exits", ([

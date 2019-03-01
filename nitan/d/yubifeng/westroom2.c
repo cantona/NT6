@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "���᷿");
+        set("short", "西廂房");
         set("long", @long
-���᷿ԭ�Ƕ�ׯ�������ҵ����ڣ����ʼ�����һӦ���֮���뱸��
-��������ǿ�����        
+西廂房原是杜莊主的臥室的所在，床帳幾桌、一應起居之具齊備，
+陳設得甚是考究。        
 long );
         set("exits", ([
                 "east" : __DIR__"zoulang5",

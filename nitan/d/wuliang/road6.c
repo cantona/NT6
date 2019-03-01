@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��ɽС·");
+        set("short", "後山小路");
         set("long", @LONG
-�߳�ʮ����Ѿ�������ɽ��ĺ�ɽ��ֻ����ˮ�����ȣ�ǰ����
-��ɽϪ��Ѱ������Ϫ�ԣ�Ϫˮ�峺�쳣��Զ������������֦���Ų���
-����������졣
+走出十余裡，已經到無量山峰的後山，只聽得水聲淙淙，前面有
+條山溪。尋聲來到溪旁，溪水清澈異常，遠近地下撒滿枯枝，腳步走
+動，格格做響。
 LONG );
         set("outdoors", "wuliang");
         set("exits", ([

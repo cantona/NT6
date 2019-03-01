@@ -13,20 +13,20 @@ int main(object me, string arg)
                 return 0;
 
         if (! arg || sscanf(arg, "%s %s", arg, new_status) != 2)
-                return notify_fail("Ö¸Áî¸ñÊ½£ºpromote <Ê¹ÓÃÕß> <µÈ¼¶>\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼špromote <ä½¿ç”¨è€…> <ç­‰ç´š>\n");
 
         if (wiz_level(new_status) < 0)
-                return notify_fail("Ã»ÓĞÕâÖÖµÈ¼¶¡£\n");
+                return notify_fail("æ²’æœ‰é€™ç¨®ç­‰ç´šã€‚\n");
 
         ob = UPDATE_D->global_find_player(arg);
         if (! objectp(ob))
-                return notify_fail("ÄãÖ»ÄÜ¸Ä±äÊ¹ÓÃÕßµÄÈ¨ÏŞ¡£\n");
+                return notify_fail("ä½ åªèƒ½æ”¹è®Šä½¿ç”¨è€…çš„æ¬Šé™ã€‚\n");
 
         if (wiz_level(me) < wiz_level(new_status) ||
             wiz_level(me) < wiz_level(ob))
         {
                 UPDATE_D->global_destruct_player(ob, 1);
-                write("ÄãÃ»ÓĞÕâÖÖÈ¨Á¦¡£\n");
+                write("ä½ æ²’æœ‰é€™ç¨®æ¬ŠåŠ›ã€‚\n");
                 return 1;
         }
 
@@ -36,12 +36,12 @@ int main(object me, string arg)
         if (! (SECURITY_D->set_status(ob, new_status)))
         {
                 UPDATE_D->global_destruct_player(ob, 1);
-                write("ĞŞ¸ÄÊ§°Ü¡£\n");
+                write("ä¿®æ”¹å¤±æ•—ã€‚\n");
                 return 1;
         }
 
-        message_vision("$N½«$nµÄÈ¨ÏŞ´Ó " + old_status + " ¸ÄÎª " +
-                       new_status + " ¡£\n", me, ob);
+        message_vision("$Nå°‡$nçš„æ¬Šé™å¾ " + old_status + " æ”¹ç‚º " +
+                       new_status + " ã€‚\n", me, ob);
         seteuid(getuid());
         ob->setup();
 
@@ -52,11 +52,11 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : promote <Ä³ÈË> (È¨ÏŞµÈ¼¶)
+æŒ‡ä»¤æ ¼å¼ : promote <æŸäºº> (æ¬Šé™ç­‰ç´š)
 
-ÓÃÀ´ÌáÉıÈ¨ÏŞµÈ¼¶, (player) (immortal) (apprentice) (wizard)
+ç”¨ä¾†æå‡æ¬Šé™ç­‰ç´š, (player) (immortal) (apprentice) (wizard)
 (arch) (admin)
-Ò»¸ö admin ÄÜÌáÉıÈ¨ÏŞÖÁÈÎºÎµÈ¼¶, ¶ø arch Ö»ÄÜÌáÉıÖÁ arch¡£
+ä¸€å€‹ admin èƒ½æå‡æ¬Šé™è‡³ä»»ä½•ç­‰ç´š, è€Œ arch åªèƒ½æå‡è‡³ archã€‚
 HELP );
 
         return 1;

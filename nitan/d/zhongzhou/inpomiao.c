@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ؤ�����ݷֶ�");
+        set("short", "丐幫中州分舵");
         set("long", @LONG
-������ؤ���������ݸ��ķֶ档����������ɢ����һЩ��
-�ݺ����ޱ������е��������ѱ��˰��ߣ����һ��л���ռ
-�˵ط�����ֻ���߹�ɢ�������и�����ԭ����ʢ��ˮ�ġ�
+這裡是丐幫設在中州府的分舵。破廟角落中散放著一些稻
+草和破棉被，正中的神像早已被人搬走，如今被一幫叫化子佔
+了地方，幾只破瓦罐散落在廟中各處，原來是盛滴水的。
 LONG);
         set("no_clean_up", 0);
         set("outdoors", "zhongzhou");

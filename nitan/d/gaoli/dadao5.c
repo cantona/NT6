@@ -1,12 +1,12 @@
-// Room in ����
+// Room in 高麗
 inherit ROOM;
 void create()        
 {
-        set("short", "��ʯ���");
+        set("short", "青石大道");
         set("long", @LONG
         
-������һ����ʯ����ϣ���Ϊս����ԭ��Խ��ǰ������Խ��Խ�٣�
-��ʱ�����������ҴҶ�������������������޾��ڡ��ϱ�ͨ��ټ�,
+你走在一條青石大道上，因為戰爭的原因，越向前走行人越來越少，
+不時有人騎著馬匆匆而過。大道往北進入新羅境內。南邊通向百濟,
 LONG
         );
 set("outdoors", "gaoli");

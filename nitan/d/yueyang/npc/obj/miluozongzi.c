@@ -1,4 +1,4 @@
-// miluozongzi.c ãèÂŞôÕ×Ó
+// miluozongzi.c æ±¨ç¾…ç²½å­
 
 #include <ansi.h>;
 inherit ITEM;
@@ -6,13 +6,13 @@ inherit F_FOOD;
 
 void create()
 {
-        set_name(YEL"ãèÂŞôÕ×Ó"NOR, ({"miluo zongzi", "zongzi"}));
+        set_name(YEL"æ±¨ç¾…ç²½å­"NOR, ({"miluo zongzi", "zongzi"}));
         set_weight(500);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long","ÕâÊÇÒ»Ö»ÏãÌğµÄãèÂŞôÕ×Ó¡£Ã¿µ½¶ËÎç£¬ÕâÀïµÄ°ÙĞÕ¶¼Òª»®ÁúÖÛÈ÷ôÕ×Ó£¬ÊıÇ§ÄêÀ´ÏàÑØ³ÉË×¡£\n");
-                set("unit", "Ö»");
+                set("long","é€™æ˜¯ä¸€åªé¦™ç”œçš„æ±¨ç¾…ç²½å­ã€‚æ¯åˆ°ç«¯åˆï¼Œé€™è£¡çš„ç™¾å§“éƒ½è¦åŠƒé¾èˆŸæ´’ç²½å­ï¼Œæ•¸åƒå¹´ä¾†ç›¸æ²¿æˆä¿—ã€‚\n");
+                set("unit", "åª");
                 set("value", 300);
                 set("food_remaining", 15);
                 set("food_supply", 20);

@@ -1,4 +1,4 @@
-// xiandan.c ÏÉµ¤
+// xiandan.c ä»™ä¸¹
 
 #include <ansi.h>
 
@@ -6,29 +6,29 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIM "ÃÀÈİÍè" NOR, ({ "per wan", "wan", "per" }) );
+        set_name(HIM "ç¾å®¹ä¸¸" NOR, ({ "per wan", "wan", "per" }) );
         set_weight(200);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¿ÅÔ°Ô°µÄµ¤Íè£¬¾İËµ³ÔÁË¿ÉÒÔÔ½À´Ô½ÃÀÀö£¬ÊÇÃ¿¸öÅ®×ÓÃÎÃÂÒÔÇóµÄºÃ¶«Î÷¡£\n");
+                set("long", "ä¸€é¡†åœ’åœ’çš„ä¸¹ä¸¸ï¼Œæ“šèªªåƒäº†å¯ä»¥è¶Šä¾†è¶Šç¾éº—ï¼Œæ˜¯æ¯å€‹å¥³å­å¤¢å¯ä»¥æ±‚çš„å¥½æ±è¥¿ã€‚\n");
                 set("value", 10000);
-                set("unit", "Á£");
+                set("unit", "ç²’");
                 set("only_do_effect", 1);
         }
 }
 
 int do_effect(object me)
 {
-        message_vision("$NÒ»Ñö²±£¬ÍÌÏÂÁËÒ»Á£" + this_object()->name() +
-                       "¡£\n", me);
+        message_vision("$Nä¸€ä»°è„–ï¼Œåä¸‹äº†ä¸€ç²’" + this_object()->name() +
+                       "ã€‚\n", me);
         if( query("per", me) >= 30 )
         {
-                message_vision("$NºöÈ»¡°ÍÛÍÛ¡±£¬ÍÂÁËÒ»µØ¡£\n", me);
-                tell_object(me, "Äã¾õµÃ×ìÀï·Ç³£µÄ¿à¡£\n");
+                message_vision("$Nå¿½ç„¶â€œå“‡å“‡â€ï¼Œåäº†ä¸€åœ°ã€‚\n", me);
+                tell_object(me, "ä½ è¦ºå¾—å˜´è£¡éå¸¸çš„è‹¦ã€‚\n");
         } else
         {
-                tell_object(me, HIG "Äã¿ªÊ¼·¢¾õÄãµÄÈİÃ²¿ªÊ¼¸Ä±ä£¬±äµÄÆ¯ÁÁ¶àÁË¡£\n" NOR);
+                tell_object(me, HIG "ä½ é–‹å§‹ç™¼è¦ºä½ çš„å®¹è²Œé–‹å§‹æ”¹è®Šï¼Œè®Šçš„æ¼‚äº®å¤šäº†ã€‚\n" NOR);
                 addn("per", 1, me);
         }
 

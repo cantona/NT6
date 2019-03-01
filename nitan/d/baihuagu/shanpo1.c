@@ -5,9 +5,9 @@ inherit ROOM;
 #include <ansi.h>
 void create()
 {
-        set("short", HIY"ɽ��"NOR);
+        set("short", HIY"山坡"NOR);
         set("long", 
-"����һ��ɽ�£�ɽ����Ϊƽ̹��ɽ�����м���é�ݡ�\n");
+"這是一面山坡，山勢甚為平坦。山坡上有幾間茅屋。\n");
         set("outdoors", "baihuagu");
         set("count", 3);
         set("exits", ([
@@ -33,11 +33,11 @@ int do_dig(string arg)
         me=this_player();
         if (query("count") > 0)
         {
-                message_vision("������һ������ڵ�һ�����ߡ�\n",me);
+                message_vision("你挖了一會兒，挖到一顆茯苓。\n",me);
                 food=new(VEGETABLE_DIR"fuling");
                 food->move(me);
                 addn("count", -1);
         }
-        else message_vision("������һ�����û�ڵ�ʲô��\n",me);
+        else message_vision("你挖了一會兒，沒挖到什麼。\n",me);
         return 1;
 }

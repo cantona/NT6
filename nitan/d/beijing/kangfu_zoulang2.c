@@ -3,12 +3,12 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "¿µ¸®×ßÀÈ");
+        set("short", "åº·åºœèµ°å»Š");
         set("long", @LONG
-ÕâÊÇÒ»ÌõÄ¾ÖÆµÄ×ßÀÈ£¬µØÃæºÜÊÇ¹â»¬£¬±»´òÕûµÃÒ»³¾²»È¾¡£¼¸¸ö
-¿µ¸®µÄÏÂÈËÔÚ´Ë×ß¶¯¡£ÄÏ±ßÊÇ¿µ¸®µÄ´óÌü£¬×óÓÒÁ½²àÊÇÁ½¸öÏá·¿¡£±±
-±ßÊÇ¿µÇ×ÍõµÄÊé·¿ËùÔÚ¡£ÕâÀïÕ¾×ÅÒ»¸öÍºÍ·ºÍÉÐ£¬ÄÇÊÇ¿µ¸®µÄÊÌÎÀÍ·
-Áì¡£
+é€™æ˜¯ä¸€æ¢æœ¨åˆ¶çš„èµ°å»Šï¼Œåœ°é¢å¾ˆæ˜¯å…‰æ»‘ï¼Œè¢«æ‰“æ•´å¾—ä¸€å¡µä¸æŸ“ã€‚å¹¾å€‹
+åº·åºœçš„ä¸‹äººåœ¨æ­¤èµ°å‹•ã€‚å—é‚Šæ˜¯åº·åºœçš„å¤§å»³ï¼Œå·¦å³å…©å´æ˜¯å…©å€‹å»‚æˆ¿ã€‚åŒ—
+é‚Šæ˜¯åº·è¦ªçŽ‹çš„æ›¸æˆ¿æ‰€åœ¨ã€‚é€™è£¡ç«™è‘—ä¸€å€‹ç¦¿é ­å’Œå°šï¼Œé‚£æ˜¯åº·åºœçš„ä¾è¡›é ­
+é ˜ã€‚
 LONG );
        set("exits", ([
                 "north" : "/d/beijing/kangfu_shufang",

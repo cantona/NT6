@@ -9,7 +9,7 @@
 #define I2D_MUD_SERVER          ({"113.31.21.157", 5004})
 #define MUDLIST_UPDATE_INTERVAL 600
 #define REFRESH_INCOMING_TIME   3*60*60
-//----------------------Î»ÔªÔËËãÓÃ-------------------------
+//----------------------ä½å…ƒé‹ç®—ç”¨-------------------------
 #define GB_CODE         1
 #define ANTI_AD         2
 #define IGNORED         4

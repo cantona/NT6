@@ -10,12 +10,12 @@ int main(object me,string arg)
                 arg=replace_string(arg,"'","");
                 arg=replace_string(arg,"\\","");
                 set("qqinfo", arg, me);
-                write(ALERT("ƒ„µƒ∏ˆ»À–≈œ¢“—æ≠…Ë÷√≥…π¶!\n"));
+                write(ALERT("‰Ω†ÁöÑÂÄã‰∫∫‰ø°ÊÅØÂ∑≤Á∂ìË®≠ÁΩÆÊàêÂäü!\n"));
                 return 1;
         }
         if(arg&&!objectp(obj))
                 obj = UPDATE_D->global_find_player(arg);
-        if(!objectp(obj)) return notify_fail(ALERT("Œﬁ∑®≤È—Ø∂‘∑Ω–≈œ¢°£"));
+        if(!objectp(obj)) return notify_fail(ALERT("ÁÑ°Ê≥ïÊü•Ë©¢Â∞çÊñπ‰ø°ÊÅØ„ÄÇ"));
         if( stringp(str=query("qqinfo", obj)) )
         {
                 write(TMI("qqinfo"+((obj==me)?"0":"1")+" "+str));

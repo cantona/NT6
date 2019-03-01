@@ -8,13 +8,13 @@ inherit CLOTH;
 
 void create()
 {
-        set_name(HIR"Èö»¨°ÙñŞÈ¹"NOR, ({ "sahua qun", "qun" }) );
+        set_name(HIR"æ’’èŠ±ç™¾è¤¶è£™"NOR, ({ "sahua qun", "qun" }) );
         set_weight(3000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼ş");
-                set("long", "Ò»¼şÏÊÑŞ¶áÄ¿µÄ°ÙñŞÈ¹£¬Ê½Ñù¼òµ¥´ó·½¡£\n");
+                set("unit", "ä»¶");
+                set("long", "ä¸€ä»¶é®®è‰·å¥ªç›®çš„ç™¾è¤¶è£™ï¼Œå¼æ¨£ç°¡å–®å¤§æ–¹ã€‚\n");
                 set("material", "cloth");
                 set("value", 0);
                 set("armor_prop/armor", 3);

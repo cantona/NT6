@@ -5,14 +5,14 @@ inherit F_FOOD;
 
 void create()
 {
-        set_name("Òì¹û", ({ "yiguo"}) );
+        set_name("ç•°æžœ", ({ "yiguo"}) );
         set_weight(50);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
                 set("prep", "on");
-                set("unit", "¸ö");
-                set("long", "Ò»ÖÖÄã´ÓÎ´¼û¹ýµÄÆæÒì¹û×Ó¡£\n");
+                set("unit", "å€‹");
+                set("long", "ä¸€ç¨®ä½ å¾žæœªè¦‹éŽçš„å¥‡ç•°æžœå­ã€‚\n");
                 set("value", 1);
                 set("food_remaining", 1);
                 set("food_supply", 16);
@@ -31,8 +31,8 @@ int do_eat(string arg)
 
         my = me->query_entire_dbase(); 
 
-        if(arg=="yiguo"||arg=="Òì¹û") {
-                message_vision("$N¸Ðµ½¿ìÃÀÒì³££¬·Â·ð³ÔÁËÊ²Ã´Áéµ¤ÃîÒ©£¡£¡\n", me);
+        if(arg=="yiguo"||arg=="ç•°æžœ") {
+                message_vision("$Næ„Ÿåˆ°å¿«ç¾Žç•°å¸¸ï¼Œä»¿ä½›åƒäº†ä»€éº¼éˆä¸¹å¦™è—¥ï¼ï¼\n", me);
                 set("food", me->max_food_capacity(), me);
                 set("water", me->max_water_capacity(), me);
                 my["jing"]     = my["max_jing"];

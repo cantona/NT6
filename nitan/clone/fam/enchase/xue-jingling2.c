@@ -3,14 +3,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIW "Ñ©¾«Áé" NOR, ({"snow ghost" }));
+        set_name(HIW "é›ªç²¾éˆ" NOR, ({"snow ghost" }));
         set_weight(2000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
+                set("unit", "é¡†");
                 set("value", 500000);
-                set("enchase/name", "Ñ©¾«Áé");
+                set("enchase/name", "é›ªç²¾éˆ");
                 set("enchase/point", 120);
                 set("enchase/type", "wrists");
                                 set("enchase/cur_firm", 100);

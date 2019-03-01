@@ -44,5 +44,5 @@ varargs string number_symbol(mixed arg, int mark)
 }
 string query_name()
 {
-        return "数字系统(NUMBER_D)";
+        return "鏁稿瓧绯荤当(NUMBER_D)";
 }

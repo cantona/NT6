@@ -4,11 +4,11 @@ inherit  ROOM;
 
 void  create  ()
 {
-        set("short",  "���Ӵ��");
+        set("short",  "濱河大街");
         set("long",  @LONG
-�������ݳ�������һ���֣��Ӷ���һֱ���쵽���š��������Գ�
-���ż���������������򱱳����ţ�����ǹųǣ����ǻƺӶɿ��ˡ���
-���ǳ��ڵĳ�������
+這是蘭州城內最大的一條街，從東門一直延伸到西門。往西可以出
+西門繼續向西域進發，向北出北門，經金城古城，便是黃河渡口了。南
+邊是城內的城隍廟。
 LONG);
         set("exits",  ([  /*  sizeof()  ==  2  */
                 "north" : __DIR__"road3",

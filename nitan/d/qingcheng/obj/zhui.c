@@ -6,17 +6,17 @@ inherit DAGGER;
 
 void create()
 {
-        set_name(HIC"Ìú×¶"NOR, ({ "tie zhui", "zhui" }) );
+        set_name(HIC"éµéŒ"NOR, ({ "tie zhui", "zhui" }) );
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
+                set("unit", "æŸ„");
                 set("count", 12);
                 set("value", 100);
                 set("material", "iron");
-                set("long", HIC"´ËÌú×¶³¤ÁùÆß´çĞí£¬×¶¼âÇúÁËÁ½Çú¡£ÀïÃæ¹²ÓĞ"+chinese_number(query("count"))+"Ö§Çà·ä¶¤¿ÉÒÔÉä³ö(shoot)¡£\n"NOR);
-                set("wield_msg", HIC"$N½«×óÊÖÉìÈëÓÒÊÖÒÂĞä£¬Ëæ¼´½«ÊÖÉì³ö£¬ÊÖÖĞÒÑÎÕÁËÒ»±úÌú×¶£¡\n"NOR);
-                set("unwield_msg",HIC"$N½«ÊÖÀïÌú×¶ÍùĞäÖĞÒ»Èû¾Í²»¼ûÁË¡£\n"NOR);
+                set("long", HIC"æ­¤éµéŒé•·å…­ä¸ƒå¯¸è¨±ï¼ŒéŒå°–æ›²äº†å…©æ›²ã€‚è£¡é¢å…±æœ‰"+chinese_number(query("count"))+"æ”¯é’èœ‚é‡˜å¯ä»¥å°„å‡º(shoot)ã€‚\n"NOR);
+                set("wield_msg", HIC"$Nå°‡å·¦æ‰‹ä¼¸å…¥å³æ‰‹è¡£è¢–ï¼Œéš¨å³å°‡æ‰‹ä¼¸å‡ºï¼Œæ‰‹ä¸­å·²æ¡äº†ä¸€æŸ„éµéŒï¼\n"NOR);
+                set("unwield_msg",HIC"$Nå°‡æ‰‹è£¡éµéŒå¾€è¢–ä¸­ä¸€å¡å°±ä¸è¦‹äº†ã€‚\n"NOR);
         }
         init_dagger(5);
         setup();
@@ -35,110 +35,110 @@ int do_shoot(string arg)
         if (environment(this_object())!=me)
                 return 0;
         if( query("no_fight", environment(me)) )
-                return notify_fail("ÕâÀï½ûÖ¹Õ½¶·¡£\n");
+                return notify_fail("é€™è£¡ç¦æ­¢æˆ°é¬¥ã€‚\n");
         if( (me->is_busy() ))
-                return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ£¬Ã»µÃÏĞÓÃ¡¸Çà·ä¶¤¡¹¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£å¿™è‘—å‘¢ï¼Œæ²’å¾—é–’ç”¨ã€Œé’èœ‚é‡˜ã€ã€‚\n");
         if( !arg )
-                return notify_fail("ÄãÒªÉä»÷Ë­£¿\n");
+                return notify_fail("ä½ è¦å°„æ“Šèª°ï¼Ÿ\n");
         if( !objectp(obj = present(arg, environment(me)) ))
-                return notify_fail("ÕâÀïÃ»ÓĞÕâ¸öÈË£¡\n");
+                return notify_fail("é€™è£¡æ²’æœ‰é€™å€‹äººï¼\n");
         if( !obj->is_character() || obj->is_corpse() )
-                return notify_fail("¿´Çå³şÒ»µã£¬ÄÇ²¢²»ÊÇ»îÎï¡£\n");
+                return notify_fail("çœ‹æ¸…æ¥šä¸€é»ï¼Œé‚£ä¸¦ä¸æ˜¯æ´»ç‰©ã€‚\n");
         if( !me->is_fighting(obj) )
-                return notify_fail("¡¸Çà·ä¶¤¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
-        if( obj == me ) return notify_fail("Éä×Ô¼º£¿±ğÏë²»¿ª°¡¡£\n");
+                return notify_fail("ã€Œé’èœ‚é‡˜ã€åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
+        if( obj == me ) return notify_fail("å°„è‡ªå·±ï¼Ÿåˆ¥æƒ³ä¸é–‹å•Šã€‚\n");
 //        obj = me->select_opponent();
 
         if( query("count") == 0 )
-                return notify_fail("Çà·ä¶¤¶¼Éä¹âÁË£¬ÊÕÊÖ°Õ¡£\n");
+                return notify_fail("é’èœ‚é‡˜éƒ½å°„å…‰äº†ï¼Œæ”¶æ‰‹ç½·ã€‚\n");
         attacklvl = me->query_skill("qingzi9da", 1);
         parrylvl = obj->query_skill("parry", 1);
         dodgelvl = obj->query_skill("dodge", 1);
         damage=query("eff_qi", obj);
         if( query("neili", me)<400 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»×ã£¬ÎŞÁ¦·¢³öÇà·ä¶¤£¡\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸è¶³ï¼Œç„¡åŠ›ç™¼å‡ºé’èœ‚é‡˜ï¼\n");
         if( me->query_skill("qingming-xuangong", 1) < 30 )
-                return notify_fail("ÄãµÄÇàÚ¤Ğş¹¦»ğºò²»µ½£¬ÎŞ·¨·¢³öÇà·ä¶¤£¡\n");
+                return notify_fail("ä½ çš„é’å†¥ç„åŠŸç«å€™ä¸åˆ°ï¼Œç„¡æ³•ç™¼å‡ºé’èœ‚é‡˜ï¼\n");
         if( attacklvl < 10 )
-                return notify_fail("ÄãµÄÇà×Ö¾Å´ò»ğºò²»µ½£¬ÎŞ·¨·¢³öÇà·ä¶¤£¡\n");
+                return notify_fail("ä½ çš„é’å­—ä¹æ‰“ç«å€™ä¸åˆ°ï¼Œç„¡æ³•ç™¼å‡ºé’èœ‚é‡˜ï¼\n");
 
         addn("count", -1);
         addn("neili", -300, me);
         weapon = new(__DIR__"qingfengding");
-/* ·¢Éä */
+/* ç™¼å°„ */
         if( attacklvl < 40 )
         {
-                message_vision(HIG"$NÔÚÌú×¶ºó²¿Ò»ÇÃ£¬Ò»Ö§Çà·ä¶¤¼²ËÙÉä³ö£¡\n"NOR, me);
+                message_vision(HIG"$Nåœ¨éµéŒå¾Œéƒ¨ä¸€æ•²ï¼Œä¸€æ”¯é’èœ‚é‡˜ç–¾é€Ÿå°„å‡ºï¼\n"NOR, me);
         }
         else
                 if( attacklvl < 70 )
                 {
-                        message_vision(HIG"$NÔÚÌú×¶ºó²¿Ò»ÇÃ£¬Ò»Ö§Çà·ä¶¤ºôĞ¥¶ø³ö£¡\n"NOR, me);
+                        message_vision(HIG"$Nåœ¨éµéŒå¾Œéƒ¨ä¸€æ•²ï¼Œä¸€æ”¯é’èœ‚é‡˜å‘¼å˜¯è€Œå‡ºï¼\n"NOR, me);
                 }
                 else
                         if( attacklvl < 100 )
                         {
-                                message_vision(HIG"$NÔÚÌú×¶ºó²¿Ò»ÇÃ£¬Ò»Ö§Çà·ä¶¤ÆÆ¿ÕÉä³ö£¡\n"NOR, me);
+                                message_vision(HIG"$Nåœ¨éµéŒå¾Œéƒ¨ä¸€æ•²ï¼Œä¸€æ”¯é’èœ‚é‡˜ç ´ç©ºå°„å‡ºï¼\n"NOR, me);
                         }
                         else
                         {
-                                message_vision(HIG"$NÔÚÌú×¶ºó²¿Ò»ÇÃ£¬Ò»Ö§Çà·ä¶¤µçÉä¶ø³ö£¡\n"NOR, me);
+                                message_vision(HIG"$Nåœ¨éµéŒå¾Œéƒ¨ä¸€æ•²ï¼Œä¸€æ”¯é’èœ‚é‡˜é›»å°„è€Œå‡ºï¼\n"NOR, me);
                         }
 
         if(userp(obj)) obj->kill_ob(me);
         else obj->fight_ob(me);
 
         me->start_busy(2);
-/* ²»ÖĞ */
+/* ä¸ä¸­ */
 
         if( attacklvl < (int)(dodgelvl/2) + random((int)(dodgelvl/2)) )
         {
                 weapon->move(obj);
-                message_vision(HIY"$NÀäĞ¦Ò»Éù£¬Éì³ö½ÅÑ¾×ÓÖ»Ò»¼Ğ£¬ÇáËÉµó×¡ÁËÇà·ä¶¤¡£\n"NOR, obj);
+                message_vision(HIY"$Nå†·ç¬‘ä¸€è²ï¼Œä¼¸å‡ºè…³ä¸«å­åªä¸€å¤¾ï¼Œè¼•é¬†åˆä½äº†é’èœ‚é‡˜ã€‚\n"NOR, obj);
                 return 1;
         }
 //        if( attacklvl < (int)(dodgelvl/2) + random(parrylvl))
         if( attacklvl < random(dodgelvl) + random(parrylvl))
         {
                 weapon->move(environment(me));
-                message_vision(HIY"$NÒ»ÉùÀäºß£¬Ì§ÊÖÉùÊ³Ö¸Ò»µ¯£¬ÕıºÃµ¯ÔÚÇà·ä¶¤ÉÏ£¬Çà·ä¶¤Ò»ÉÁÂäµØ£¡\n"NOR, obj);
+                message_vision(HIY"$Nä¸€è²å†·å“¼ï¼ŒæŠ¬æ‰‹è²é£ŸæŒ‡ä¸€å½ˆï¼Œæ­£å¥½å½ˆåœ¨é’èœ‚é‡˜ä¸Šï¼Œé’èœ‚é‡˜ä¸€é–ƒè½åœ°ï¼\n"NOR, obj);
                 return 1;
         }
         if( attacklvl < (int)(parrylvl/2) + random((int)(parrylvl/2)) )
         {
                 weapon->move(obj);
-                message_vision(HIY"$N×ì½ÇÂ¶³öÒ»Ë¿ÀäĞ¦£¬Ò»Ì§ÊÖ±ã½«Çà·ä¶¤ÊÕÁıÔÚÒÂĞäÀï¡£\n"NOR, obj);
+                message_vision(HIY"$Nå˜´è§’éœ²å‡ºä¸€çµ²å†·ç¬‘ï¼Œä¸€æŠ¬æ‰‹ä¾¿å°‡é’èœ‚é‡˜æ”¶ç± åœ¨è¡£è¢–è£¡ã€‚\n"NOR, obj);
                 return 1;
         }
         if( attacklvl < dodgelvl )
         {
-                message_vision(HIY"$NäìÈ÷µØÒ»×ªÉí£¬±Ü¿ªÁËÇà·ä¶¤¡£\n"NOR, obj);
+                message_vision(HIY"$Nç€Ÿæ´’åœ°ä¸€è½‰èº«ï¼Œé¿é–‹äº†é’èœ‚é‡˜ã€‚\n"NOR, obj);
                 return 1;
         }
         if( attacklvl < parrylvl )
         {
                 weapon->move(obj);
-                message_vision("$N¶ãÉÁ²»¼°£¬Ò»ÕÅ×ì£¬¾ÓÈ»Ò§×¡ÁËÇà·ä¶¤£¡\n"NOR, obj);
+                message_vision("$Nèº²é–ƒä¸åŠï¼Œä¸€å¼µå˜´ï¼Œå±…ç„¶å’¬ä½äº†é’èœ‚é‡˜ï¼\n"NOR, obj);
                 return 1;
         }
 
-/* ÃüÖĞ */
+/* å‘½ä¸­ */
 
         if( attacklvl > parrylvl + dodgelvl + random((parrylvl + dodgelvl) * 2))
         {
-                message_vision(HIR"$NÒ»ÀãÉñ£¬Ò»ÉùÃÆºß£¬ºíÍ·ºÕÈ»¶¤×ÅÒ»Ö§Çà·ä¶¤£¡\n"NOR, obj);
+                message_vision(HIR"$Nä¸€æ¥ç¥ï¼Œä¸€è²æ‚¶å“¼ï¼Œå–‰é ­èµ«ç„¶é‡˜è‘—ä¸€æ”¯é’èœ‚é‡˜ï¼\n"NOR, obj);
                 obj->die();
         }
         else
         if( attacklvl > parrylvl + dodgelvl + random(parrylvl + dodgelvl) )
         {
-                message_vision(HIR"$NÒ»¸ö¶ãÉÁ²»¼°£¬Ò»Éù²Òºô£¬Çà·ä¶¤Õı¶¤ÔÚ$NµÄÄÔÃÅ£¡\n"NOR, obj);
+                message_vision(HIR"$Nä¸€å€‹èº²é–ƒä¸åŠï¼Œä¸€è²æ…˜å‘¼ï¼Œé’èœ‚é‡˜æ­£é‡˜åœ¨$Nçš„è…¦é–€ï¼\n"NOR, obj);
                 obj->unconcious();
         }
         else
         if( attacklvl > random(parrylvl + dodgelvl) )
         {
-                message_vision(RED"$NÒ»¸ö¶ãÉÁ²»¼°£¬Ò»Éù²Òºô£¬Çà·ä¶¤Õı¶¤ÔÚ$NµÄĞØ¿Ú£¡\n"NOR, obj);
+                message_vision(RED"$Nä¸€å€‹èº²é–ƒä¸åŠï¼Œä¸€è²æ…˜å‘¼ï¼Œé’èœ‚é‡˜æ­£é‡˜åœ¨$Nçš„èƒ¸å£ï¼\n"NOR, obj);
                 if(damage < 11) obj->unconcious();
                 else obj->receive_wound("qi", damage-10);
                 obj->start_busy(3);
@@ -146,20 +146,20 @@ int do_shoot(string arg)
         else
         if( attacklvl > parrylvl )
         {
-                message_vision(HIM"$NÒ»¸öğÎ×Ó·­Éí£¬½á¹ûÇà·ä¶¤ºôµØÒ»Éù£¬Õı¶¤ÔÚ$NµÄ´óÍÈÉÏ£¡\n"NOR, obj);
+                message_vision(HIM"$Nä¸€å€‹é·‚å­ç¿»èº«ï¼Œçµæœé’èœ‚é‡˜å‘¼åœ°ä¸€è²ï¼Œæ­£é‡˜åœ¨$Nçš„å¤§è…¿ä¸Šï¼\n"NOR, obj);
                 obj->receive_wound("qi", (int)(damage/2));
                 obj->start_busy(3);
         }
         else
         if( attacklvl > dodgelvl )
         {
-                message_vision(MAG"$N¶ãÉÁ²»¼°£¬Çà·ä¶¤ºôµØÒ»Éù¶¤ÔÚ$NµÄ¸ì²²ÉÏ£¡\n"NOR, obj);
+                message_vision(MAG"$Nèº²é–ƒä¸åŠï¼Œé’èœ‚é‡˜å‘¼åœ°ä¸€è²é‡˜åœ¨$Nçš„èƒ³è†Šä¸Šï¼\n"NOR, obj);
                 obj->receive_wound("qi", (int)(damage/3));
                 obj->start_busy(3);
         }
         else
         {
-                message_vision(HIW"$N×İÉíÒ»Ô¾£¬µ«Çà·ä¶¤ÔÚ$NµÄÊÖ±ÛÉÏ»®³öÁËÒ»µÀÉË¿Ú£¡\n"NOR, obj);
+                message_vision(HIW"$Nç¸±èº«ä¸€èºï¼Œä½†é’èœ‚é‡˜åœ¨$Nçš„æ‰‹è‡‚ä¸ŠåŠƒå‡ºäº†ä¸€é“å‚·å£ï¼\n"NOR, obj);
                 obj->receive_wound("qi", (int)(damage/10));
                 obj->start_busy(1);
         }

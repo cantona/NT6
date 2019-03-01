@@ -3,12 +3,12 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short", "ÆÙ²¼");
+  set ("short", "ç€‘å¸ƒ");
   set ("long",HIG @LONG
-²ÔÉ½¾þÁë£¬·åÊÆ´ÞÎ¡£¬Ö»¼û¶¥ÉÏ°×ÔÆÆ®Æ®£¬ÑÂÇ°Ê÷Ó°º®º®£¬ÁÖ
-ÄÚËÉ°ØÇ§Ç§£¬ËÄ´¦¹ÖÊ¯á×á×£¬ÁîÈË¾Ù²½Î¬ÄÑ¡£ÆÙ²¼ÉùÕð¶úÓûÁû£¬Ë®
-»¨·É½¦£¬ÈçËéÓñ°ãÂþÌìÆ®È÷¡£É½ÑÂ¶¥ÉÏÒþÒþÓÐÈðÆøÏéÔÆ£¬²»Öª½«ÓÐ
-ºÎÒìÏó³öÏÖ¡£
+è’¼å±±å³»å¶ºï¼Œå³°å‹¢å´”å·ï¼Œåªè¦‹é ‚ä¸Šç™½é›²é£„é£„ï¼Œå´–å‰æ¨¹å½±å¯’å¯’ï¼Œæž—
+å…§é¬†æŸåƒåƒï¼Œå››è™•æ€ªçŸ³å¶™å¶™ï¼Œä»¤äººèˆ‰æ­¥ç¶­é›£ã€‚ç€‘å¸ƒè²éœ‡è€³æ¬²è¾ï¼Œæ°´
+èŠ±é£›æ¿ºï¼Œå¦‚ç¢ŽçŽ‰èˆ¬æ¼«å¤©é£„æ´’ã€‚å±±å´–é ‚ä¸Šéš±éš±æœ‰ç‘žæ°£ç¥¥é›²ï¼Œä¸çŸ¥å°‡æœ‰
+ä½•ç•°è±¡å‡ºç¾ã€‚
 LONG);
 
   set("exits", ([
@@ -27,11 +27,11 @@ int do_climb (string arg)
 {
   object who = this_player();
 
-  message_vision ("$NÊÖ½Å²¢ÓÃ·Ü²»¹ËÉíµØÏòÉÏÅÀÈ¥¡£\n",who);
+  message_vision ("$Næ‰‹è…³ä¸¦ç”¨å¥®ä¸é¡§èº«åœ°å‘ä¸Šçˆ¬åŽ»ã€‚\n",who);
   if( query("combat_exp", who)<10000 || 
       random(4))
   {
-    message_vision ("\n¡­¡­»©»©Ò»Éù£¬$NÊ§ÊÖ»¬ÁËÏÂÀ´¡£\n",who);
+    message_vision ("\nâ€¦â€¦å˜©å˜©ä¸€è²ï¼Œ$Nå¤±æ‰‹æ»‘äº†ä¸‹ä¾†ã€‚\n",who);
     who->unconcious();    
   }
   else

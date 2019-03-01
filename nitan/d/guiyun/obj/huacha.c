@@ -8,13 +8,13 @@ void each_drink();
 
 void create()
 {
-        set_name("ÜÔÀò»¨²è", ({"moli huacha", "huacha", "cha", "tea"}));
+        set_name("èŒ‰è‰èŠ±èŒ¶", ({"moli huacha", "huacha", "cha", "tea"}));
         set_weight(20);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»±­É¢·¢×ÅÇåÏãµÄÜÔÀò»¨²è¡£\n");
-                set("unit", "±­");
+                set("long", "ä¸€æ¯æ•£ç™¼è‘—æ¸…é¦™çš„èŒ‰è‰èŠ±èŒ¶ã€‚\n");
+                set("unit", "æ¯");
                 set("value", 0);
                 set("max_liquid", 5);
         }
@@ -23,7 +23,7 @@ void create()
     // we set it to contain tea at the beginning
         set("liquid", ([
                 "type": "tea",
-                "name": "²èË®",
+                "name": "èŒ¶æ°´",
                 "remaining": 5,
                 "drunk_supply": 0,
                 "drink_func": (: call_other, this_object(), "each_drink" :),

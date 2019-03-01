@@ -1,4 +1,4 @@
-// jiaobei.c ½Ì±®
+// jiaobei.c æ•™ç¢‘
 // Winder Oct.10 1998
 
 #include <ansi.h>
@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "½Ì±®");
+        set("short", "æ•™ç¢‘");
         set("long", @LONG
-ÕâÀïÊÇÈ«Õæ½ÌµÄ½Ì±®ËùÔÚµØ£¬Â·ÅÔÁ¢×ÅÒ»¿é´ó±®(bei)¡£ÔÙÍù¶«
-×ß¾ÍÊÇÌìÏÂÎÅÃûµÄµÀ¼ÒÐþÃÅÕý×Ú--È«Õæ½ÌµÄ´óÃÅÁË¡£±±ÃæÓÐÒ»ÌõÊ¯
-½×£¬²»ÖªµÀÍ¨ÏòÄÄÀï£¬ÍùÎ÷ÊÇÏÂÉ½µÄÂ·¡£
+é€™è£¡æ˜¯å…¨çœŸæ•™çš„æ•™ç¢‘æ‰€åœ¨åœ°ï¼Œè·¯æ—ç«‹è‘—ä¸€å¡Šå¤§ç¢‘(bei)ã€‚å†å¾€æ±
+èµ°å°±æ˜¯å¤©ä¸‹èžåçš„é“å®¶çŽ„é–€æ­£å®—--å…¨çœŸæ•™çš„å¤§é–€äº†ã€‚åŒ—é¢æœ‰ä¸€æ¢çŸ³
+éšŽï¼Œä¸çŸ¥é“é€šå‘å“ªè£¡ï¼Œå¾€è¥¿æ˜¯ä¸‹å±±çš„è·¯ã€‚
 LONG
         );
         set("outdoors", "zhongnan");
@@ -22,17 +22,17 @@ LONG
         ]));
         set("item_desc", ([
         "bei": CYN"
-        £ª£ª£ª£ª£ª
-¡¡¡¡¡¡¡¡£ª¡¡¡¡¡¡£ª
-¡¡¡¡¡¡¡¡£ª¡¡È«¡¡£ª
-¡¡¡¡¡¡¡¡£ª¡¡¡¡¡¡£ª
-¡¡¡¡¡¡¡¡£ª¡¡Õæ¡¡£ª
-¡¡¡¡¡¡¡¡£ª¡¡¡¡¡¡£ª
-¡¡¡¡¡¡¡¡£ª¡¡¹Å¡¡£ª
-¡¡¡¡¡¡¡¡£ª¡¡¡¡¡¡£ª
-¡¡¡¡¡¡¡¡£ª¡¡½Ì¡¡£ª
-¡¡¡¡¡¡¡¡£ª¡¡¡¡¡¡£ª
-¡¡¡¡¡¡¡¡£ª£ª£ª£ª£ª
+        ï¼Šï¼Šï¼Šï¼Šï¼Š
+ã€€ã€€ã€€ã€€ï¼Šã€€ã€€ã€€ï¼Š
+ã€€ã€€ã€€ã€€ï¼Šã€€å…¨ã€€ï¼Š
+ã€€ã€€ã€€ã€€ï¼Šã€€ã€€ã€€ï¼Š
+ã€€ã€€ã€€ã€€ï¼Šã€€çœŸã€€ï¼Š
+ã€€ã€€ã€€ã€€ï¼Šã€€ã€€ã€€ï¼Š
+ã€€ã€€ã€€ã€€ï¼Šã€€å¤ã€€ï¼Š
+ã€€ã€€ã€€ã€€ï¼Šã€€ã€€ã€€ï¼Š
+ã€€ã€€ã€€ã€€ï¼Šã€€æ•™ã€€ï¼Š
+ã€€ã€€ã€€ã€€ï¼Šã€€ã€€ã€€ï¼Š
+ã€€ã€€ã€€ã€€ï¼Šï¼Šï¼Šï¼Šï¼Š
 \n"NOR
         ]) );
 

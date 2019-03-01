@@ -7,10 +7,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("½£¿Í", ({ "jian ke","ke" }) );
-        set("gender", "ÄĞĞÔ");
+        set_name("åŠå®¢", ({ "jian ke","ke" }) );
+        set("gender", "ç”·æ€§");
         set("age", 45);
-        set("long","ÕâÊÇÎ»ÖĞÄêÎäÈË£¬¼ç±³³¤½££¬³¤³¤µÄ½£ËëËæ·çÆ®Ñï£¬¿´À´ËÆºõÉí»³¾øÒÕ¡£\n");
+        set("long","é€™æ˜¯ä½ä¸­å¹´æ­¦äººï¼Œè‚©èƒŒé•·åŠï¼Œé•·é•·çš„åŠç©—éš¨é¢¨é£„æšï¼Œçœ‹ä¾†ä¼¼ä¹èº«æ‡·çµ•è—ã€‚\n");
         set("combat_exp", 20000);
         set("shen_type", -1);
         set("attitude", "heroism");
@@ -42,7 +42,7 @@ void init()
         mengzhu=query("winner", ob);
 
         if( query("id", this_player()) == mengzhu){
-                message_vision(HIY "½£¿ÍÏò$N¹ªÉíÎªÀñ£¬ËµµÀ£ºÃËÖ÷ÄúÀÏÈË¼ÒºÃ£¡\n" NOR, 
+                message_vision(HIY "åŠå®¢å‘$Nèº¬èº«ç‚ºç¦®ï¼Œèªªé“ï¼šç›Ÿä¸»æ‚¨è€äººå®¶å¥½ï¼\n" NOR, 
                 this_player());
         }        
 }

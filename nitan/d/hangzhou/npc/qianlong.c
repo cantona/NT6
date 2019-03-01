@@ -6,15 +6,15 @@ inherit NPC;
 
 void create()
 {
-        set_name("Ç¬Â¡»ÊµÛ", ({ "qianlong", "emperor"}) );
-        set("title", "Çå¸ß×Ú");
-        set("gender", "ÄĞĞÔ");
+        set_name("ä¹¾éš†çš‡å¸", ({ "qianlong", "emperor"}) );
+        set("title", "æ¸…é«˜å®—");
+        set("gender", "ç”·æ€§");
         set("age", 43);
         set("per", 24);
         set("no_get", 1);
         set("long",
-"Ç¬Â¡»ÊµÛĞÕ°®ĞÂ¾õÂŞ£¬ÃûºëÀú£¬ÊÇ´óÇåÈë¹ØºóµÚËÄÎ»ÔÚÎ»»ÊµÛ£¬ÉúÆ½
-ºÅ³ÆÓĞÊ®´óÎä¹¦£¬×Ô³Æ¡°Ê®È«ÀÏÈË¡±¡£\n");
+"ä¹¾éš†çš‡å¸å§“æ„›æ–°è¦ºç¾…ï¼Œåå¼˜æ­·ï¼Œæ˜¯å¤§æ¸…å…¥é—œå¾Œç¬¬å››ä½åœ¨ä½çš‡å¸ï¼Œç”Ÿå¹³
+è™Ÿç¨±æœ‰åå¤§æ­¦åŠŸï¼Œè‡ªç¨±â€œåå…¨è€äººâ€ã€‚\n");
         set("combat_exp", 500);
         set("attitude", "piece");
         setup();
@@ -34,8 +34,8 @@ int do_kneel()
         if ( objectp(present("chen jialuo", environment(me))))
         {
               message_vision(
-"$NÕıÏë¸øÇ¬Â¡»ÊµÛÇë°²£¬È´±»³Â¼ÒÂåÒ»°ÑÀ¹×¡£º÷²×ÓµÄÓ¥È®£¬
-²»ÒªÁ³µÄÅ«²Å£¬ÄÉÃüÀ´°É£¡\n\n", me);
+"$Næ­£æƒ³çµ¦ä¹¾éš†çš‡å¸è«‹å®‰ï¼Œå»è¢«é™³å®¶æ´›ä¸€æŠŠæ””ä½ï¼šéŸƒå­çš„é·¹çŠ¬ï¼Œ
+ä¸è¦è‡‰çš„å¥´æ‰ï¼Œç´å‘½ä¾†å§ï¼\n\n", me);
               chen = all_inventory(environment(me));
               for(i=0; i<sizeof(chen); i++)
               {
@@ -44,16 +44,16 @@ int do_kneel()
               }
         }
         message_vision(
-"$N¹§¹§¾´¾´µØ¹òÁËÏÂÀ´£¬¿ÄÍ·µÀ£ºÅ«²Å"+query("name", me)+"¾È¼İÀ´³Ù£¬»ÊÉÏË¡Å«²ÅËÀ×ï£¡\n\n",me);
+"$Næ­æ­æ•¬æ•¬åœ°è·ªäº†ä¸‹ä¾†ï¼Œç£•é ­é“ï¼šå¥´æ‰"+query("name", me)+"æ•‘é§•ä¾†é²ï¼Œçš‡ä¸Šæ•å¥´æ‰æ­»ç½ªï¼\n\n",me);
         if( query("combat_exp", me)<150000 )
         {
               message_vision(
-"$n¿´×Å$N£¬ºßÁËÒ»Éù£ºÄãµ¨¸ÒÆÛ¾ıÃ°¹¦£¡Æ¾ÄãÕâµãÄÜÄÍÒ²ÏëÌôÁËºì»¨»á£¿£¡\n\n", me, this_object() );
+"$nçœ‹è‘—$Nï¼Œå“¼äº†ä¸€è²ï¼šä½ è†½æ•¢æ¬ºå›å†’åŠŸï¼æ†‘ä½ é€™é»èƒ½è€ä¹Ÿæƒ³æŒ‘äº†ç´…èŠ±æœƒï¼Ÿï¼\n\n", me, this_object() );
               message_vision(
-"$n·ÉÆğÒ»½Å£¬ÌßµÃ$NÑ¾ÊÖÑ¾½Å¹öÏÂÁùºÍËşÈ¥ÁË¡£\n\n", me, this_object() );
+"$né£›èµ·ä¸€è…³ï¼Œè¸¢å¾—$Nä¸«æ‰‹ä¸«è…³æ»¾ä¸‹å…­å’Œå¡”å»äº†ã€‚\n\n", me, this_object() );
               me->move("/d/hangzhou/liuheta");
-              tell_object(me, HIR"Äã´ÓËş¶¥±»Ò»½ÅÌßÁËÏÂÀ´£¬ºÃÌÛ£¡»¹ÊÜÁËÉË¡£\n"NOR);
-message("vision",HIR"Ö»¼û"+query("name", me)+"´ÓËş¶¥ÉÏÆËÍ¨Ò»ÉùµøÁËÏÂÀ´£¬ÌÉÔÚµØÉÏ°ëÌìÅÀ²»ÆğÀ´£¡\n"NOR,environment(me),me);
+              tell_object(me, HIR"ä½ å¾å¡”é ‚è¢«ä¸€è…³è¸¢äº†ä¸‹ä¾†ï¼Œå¥½ç–¼ï¼é‚„å—äº†å‚·ã€‚\n"NOR);
+message("vision",HIR"åªè¦‹"+query("name", me)+"å¾å¡”é ‚ä¸Šæ’²é€šä¸€è²è·Œäº†ä¸‹ä¾†ï¼Œèººåœ¨åœ°ä¸ŠåŠå¤©çˆ¬ä¸èµ·ä¾†ï¼\n"NOR,environment(me),me);
               me->receive_wound("qi", 20);
               addn("combat_exp", 0-query("combat_exp", me)/100, me);
               return 1;
@@ -61,12 +61,12 @@ message("vision",HIR"Ö»¼û"+query("name", me)+"´ÓËş¶¥ÉÏÆËÍ¨Ò»ÉùµøÁËÏÂÀ´£¬ÌÉÔÚµØÉÏ
         if( query("marks/qianlong", me) )
         {
               message_vision(
-"$n¿´×Å$N£¬ºßÁËÒ»Éù£¬Ã»Àí$N¡£\n\n", me, this_object() );
+"$nçœ‹è‘—$Nï¼Œå“¼äº†ä¸€è²ï¼Œæ²’ç†$Nã€‚\n\n", me, this_object() );
         }
         else
         {
               message_vision(
-"$n¿´×Å$NËµµÀ£ºÃâÁË£¡¿´ÔÚÄã¾È¼İÓĞ¹¦£¬ÃâÄãËÀ×ï£¬ëŞ×ÔÓĞ·âÉÍ¡£\n\n", me, this_object() );
+"$nçœ‹è‘—$Nèªªé“ï¼šå…äº†ï¼çœ‹åœ¨ä½ æ•‘é§•æœ‰åŠŸï¼Œå…ä½ æ­»ç½ªï¼Œæœ•è‡ªæœ‰å°è³ã€‚\n\n", me, this_object() );
               set("marks/qianlong", "1", me);
               addn("combat_exp", 10000, me);
         }

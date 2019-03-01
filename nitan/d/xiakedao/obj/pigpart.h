@@ -10,7 +10,7 @@ void setup()
 
 int do_effect()
 {
-        return notify_fail("ÄãÏë³ÔÉú" + name() + "£¿\n");
+        return notify_fail("ä½ æƒ³åƒç”Ÿ" + name() + "ï¼Ÿ\n");
 }
 
 int broil(object me, object ob)
@@ -20,29 +20,29 @@ int broil(object me, object ob)
         me = this_player();
         if (me->is_busy())
         {
-                write("ÄãÏÖÔÚÃ¦×ÅÄØ£¬¹ı»á¶ùÔÙ¿¾°É¡£\n");
+                write("ä½ ç¾åœ¨å¿™è‘—å‘¢ï¼Œéæœƒå…’å†çƒ¤å§ã€‚\n");
                 return 1;
         }
 
         if (! query("food_remaining"))
         {
-                write("Õâ¸öºÃÏñÃ»ÓĞÊ²Ã´±ØÒªÔÙ¿¾ÁË°É£¿\n");
+                write("é€™å€‹å¥½åƒæ²’æœ‰ä»€éº¼å¿…è¦å†çƒ¤äº†å§ï¼Ÿ\n");
                 return 1;
         }
 
         if (! query("only_do_effect"))
         {
-                write("ËãÁË°É£¬¶«Î÷²»ÓÃ¿¾Á½±é£¬Ì«ÀÏÁË¡£\n");
+                write("ç®—äº†å§ï¼Œæ±è¥¿ä¸ç”¨çƒ¤å…©éï¼Œå¤ªè€äº†ã€‚\n");
                 return 1;
         }
 
-        message_vision("$N°Ñ" + name() + "·ÅÔÚ" + ob->name() +
-                       "ÉÏÏ¸Ï¸µÄ¿¾×Å£¬Ö»Ìı±Ïà£±Ïà£µÄÉùÒô£¬Ò»"
-                       "ÕóÓÕÈËµÄÏãÎ¶É¢ÁË³öÀ´¡£\n", me);
+        message_vision("$NæŠŠ" + name() + "æ”¾åœ¨" + ob->name() +
+                       "ä¸Šç´°ç´°çš„çƒ¤è‘—ï¼Œåªè½ç•¢å•µç•¢å•µçš„è²éŸ³ï¼Œä¸€"
+                       "é™£èª˜äººçš„é¦™å‘³æ•£äº†å‡ºä¾†ã€‚\n", me);
 
-        write(HIY "Äã°Ñ" + name() + HIY "¿¾ºÃÁË£¡\n" NOR);
-        set("long", "Ò»" + query("unit") + "¿¾µÃÏãÅçÅçµÄÒ°Öí" + name() + "¡£\n");
-        set_name("¿¾" + name(), 0);
+        write(HIY "ä½ æŠŠ" + name() + HIY "çƒ¤å¥½äº†ï¼\n" NOR);
+        set("long", "ä¸€" + query("unit") + "çƒ¤å¾—é¦™å™´å™´çš„é‡è±¬" + name() + "ã€‚\n");
+        set_name("çƒ¤" + name(), 0);
         delete("only_do_effect");
         me->start_busy(1);
         return 1;

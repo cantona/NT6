@@ -1,4 +1,4 @@
-// xiao qiushui.c ÏôÇïË®
+// xiao qiushui.c è•­ç§‹æ°´
 
 #include <ansi.h>
 
@@ -7,13 +7,13 @@ inherit NPC;
 string ask_me();
 void create()
 {
-        set_name("ÏôÇïË®", ({ "xiao qiushui", "xiao" }));
-        set("nickname", HIY "´óÏÀ" NOR);
+        set_name("è•­ç§‹æ°´", ({ "xiao qiushui", "xiao" }));
+        set("nickname", HIY "å¤§ä¿ " NOR);
         set("long", 
-                "Ô­À´Ëû¾ÍÊÇÓëÌÆ·½³ÕĞÄÏàÁµ£¬ÎªÁËÌÆ·½´óÄÖÌÆÃÅµÄÏôÇïË®¡£\n"
-                "ËûÔÚ½­ºşÉÏĞĞÏÀÕÌÒå£¬ÏÀÃûÔ¶²¥£¬ÈË³Æ¡°´óÏÀ¡±¡£\n"
-                "Ëû´óÔ¼¶şÊ®ÓĞÓà£¬ËäÈ»ÊÜ¾¡ÕÛÄ¥£¬ÈÔÈ»´ø×ÅÒ»Éí°ÁÆø¡£\n");
-        set("gender", "ÄĞĞÔ");
+                "åŸä¾†ä»–å°±æ˜¯èˆ‡å”æ–¹ç—´å¿ƒç›¸æˆ€ï¼Œç‚ºäº†å”æ–¹å¤§é¬§å”é–€çš„è•­ç§‹æ°´ã€‚\n"
+                "ä»–åœ¨æ±Ÿæ¹–ä¸Šè¡Œä¿ ä»—ç¾©ï¼Œä¿ åé æ’­ï¼Œäººç¨±â€œå¤§ä¿ â€ã€‚\n"
+                "ä»–å¤§ç´„äºŒåæœ‰ä½™ï¼Œé›–ç„¶å—ç›¡æŠ˜ç£¨ï¼Œä»ç„¶å¸¶è‘—ä¸€èº«å‚²æ°£ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 20);
 set("attitude", "peaceful");        
         set("shen_type", 1);
@@ -46,7 +46,7 @@ set_skill("literate", 2580);
 map_skill("unarmed", "biye-wu");        
         map_skill("parry", "wuzhan-mei");
         map_skill("sword", "wuzhan-mei");
-        create_family("ÌÆÃÅ", 7, "µÜ×Ó");
+        create_family("å”é–€", 7, "å¼Ÿå­");
         set("class", "tangmen");
         
         
@@ -59,7 +59,7 @@ set("chat_chance_combat", 200);
         }) );
         set("inquiry", 
                 ([
-                        "ÌÆ·½" : (: ask_me :)
+                        "å”æ–¹" : (: ask_me :)
                 ]));
         set("yu_count", 1);
 
@@ -71,16 +71,16 @@ string ask_me()
 {object ob;
  object me;
  me=this_player();
-        if (query("yu_count") < 1){return "ÊÇÌÆ·½½ĞÄãÀ´¼ûÎÒµÄ£¿¿ÉÏ§ÎÒµÄÓñÅåÒÑ¾­½»¸ø±ğÈËÁË¡£\n";}
+        if (query("yu_count") < 1){return "æ˜¯å”æ–¹å«ä½ ä¾†è¦‹æˆ‘çš„ï¼Ÿå¯æƒœæˆ‘çš„ç‰ä½©å·²ç¶“äº¤çµ¦åˆ¥äººäº†ã€‚\n";}
         command("touch"+query("id", this_player()));
-        command("say ÊÇÌÆ·½½ĞÄãÀ´¼ûÎÒµÄ£¿\n");
+        command("say æ˜¯å”æ–¹å«ä½ ä¾†è¦‹æˆ‘çš„ï¼Ÿ\n");
         command("sigh" );
-        command("say ×Ô´Óµ±ÈÕ´óÄÖÌÆÃÅÖ®ºó£¬ÎÒ¾ÍºÍÌÆ·½ÉúËÀÏà¸ôÁË¡£\n");
+        command("say è‡ªå¾ç•¶æ—¥å¤§é¬§å”é–€ä¹‹å¾Œï¼Œæˆ‘å°±å’Œå”æ–¹ç”Ÿæ­»ç›¸éš”äº†ã€‚\n");
         ob=new("/d/tangmen/obj/yupei");
         ob->move(this_player());
-        message_vision("$N½»¸ø$nÒ»¿éÓñÅå¡£\n", me, ob);
+        message_vision("$Näº¤çµ¦$nä¸€å¡Šç‰ä½©ã€‚\n", me, ob);
         addn("yu_count", -1);
-        return"Äã°ÑÕâ¿éÓñÅå½»¸øÌÆ·½°É¡£\n";
+        return"ä½ æŠŠé€™å¡Šç‰ä½©äº¤çµ¦å”æ–¹å§ã€‚\n";
         
 
                                                         

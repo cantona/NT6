@@ -1,5 +1,5 @@
 // This program is a part of NITAN MudLIB
-// powerup.c »¯¹¦´ó·¨¼ÓÁ¦
+// powerup.c åŒ–åŠŸå¤§æ³•åŠ åŠ›
 
 #include <ansi.h>
 
@@ -12,16 +12,16 @@ int exert(object me, object target)
         int skill;
 
         if( target != me )
-                return notify_fail("ÄãÖ»ÄÜÌáÉý×Ô¼ºµÄÕ½¶·Á¦¡£\n");
+                return notify_fail("ä½ åªèƒ½æå‡è‡ªå·±çš„æˆ°é¬¥åŠ›ã€‚\n");
         if( query("neili", me)<200 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ã€‚\n");
         if( query_temp("powerup", me) )
-                return notify_fail("ÄãÒÑ¾­ÔÚÔË¹¦ÖÐÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“åœ¨é‹åŠŸä¸­äº†ã€‚\n");
 
         skill = me->query_skill("force");
 
         message_combatd(
-        HIG "$NÉà¼âÒ»Ò§£¬Åç³öÒ»¿Ú±ÌÑª£¬ÔËÆð»¯¹¦´ó·¨ÒÑ½«È«ÉíÇ±Á¦¾¡ÊýÌáÆð£¡\n" NOR, me);
+        HIG "$NèˆŒå°–ä¸€å’¬ï¼Œå™´å‡ºä¸€å£ç¢§è¡€ï¼Œé‹èµ·åŒ–åŠŸå¤§æ³•å·²å°‡å…¨èº«æ½›åŠ›ç›¡æ•¸æèµ·ï¼\n" NOR, me);
 
         addn_temp("apply/attack", skill/3, me);
         addn_temp("apply/armor", skill/3, me);
@@ -41,6 +41,6 @@ void remove_effect(object me, int amount)
                 addn_temp("apply/attack", -amount, me);
                 addn_temp("apply/armor", -amount, me);
                 delete_temp("powerup", me);
-                tell_object(me, "ÄãµÄ»¯¹¦´ó·¨ÔËÐÐÍê±Ï£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï¡£\n");
+                tell_object(me, "ä½ çš„åŒ–åŠŸå¤§æ³•é‹è¡Œå®Œç•¢ï¼Œå°‡å…§åŠ›æ”¶å›žä¸¹ç”°ã€‚\n");
         }
 }

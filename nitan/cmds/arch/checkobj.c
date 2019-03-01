@@ -1,4 +1,4 @@
-//checkobj  ²éÑ¯ÎïÆ··Ö²¼
+//checkobj  æŸ¥è©¢ç‰©å“åˆ†å¸ƒ
 // Smallfish@Huaxia
 
 inherit F_CLEAN_UP;
@@ -17,28 +17,28 @@ int main(object me,string arg)
 
         seteuid(geteuid(me));
         if (!arg)
-                return notify_fail("Ö¸Áî¸ñÊ½£ºcheckobj <ÎïÆ·ÎÄ¼ş>|<·¿¼äÎÄ¼ş>\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šcheckobj <ç‰©å“æ–‡ä»¶>|<æˆ¿é–“æ–‡ä»¶>\n");
 
         file=resolve_path(query("cwd", me),arg);
         if (file_size(file) < 0)
         {
                 ob = present(arg, me);
                 if (! ob) ob = present(arg, environment(me));
-                if (! ob) return notify_fail("Ã»ÓĞÕâ¸öµµ°¸¡£\n");
+                if (! ob) return notify_fail("æ²’æœ‰é€™å€‹æª”æ¡ˆã€‚\n");
                 file = base_name(ob) + ".c";
         }
 
         if (!objectp(ob = load_object(file)))
-                return notify_fail("ÎŞ·¨¸ù¾İ" + file + "Éú³ÉÎïÆ·¡£\n");
+                return notify_fail("ç„¡æ³•æ ¹æ“š" + file + "ç”Ÿæˆç‰©å“ã€‚\n");
 
         if (ob->is_character())
         {
                 if (!userp(ob))
                         destruct(ob);
-                return notify_fail("ÕâÊÇÒ»¸öÈËÎïÎïÆ·¡£\n");
+                return notify_fail("é€™æ˜¯ä¸€å€‹äººç‰©ç‰©å“ã€‚\n");
         }
 
-        if ((int)ob->query_max_encumbrance() == 100000000000)   //ÊÇ·¿¼ä
+        if ((int)ob->query_max_encumbrance() == 100000000000)   //æ˜¯æˆ¿é–“
                 info = check_room(file);
         else
                 info = check_obj(file);
@@ -62,14 +62,14 @@ string check_room(string file)
         room = load_object(file);
 
         if (!room)
-                return "¼ì²é" + file + "³ö´í¡£\n";
+                return "æª¢æŸ¥" + file + "å‡ºéŒ¯ã€‚\n";
 
-        msg = "ÕâÊÇÒ»¸ö·¿¼ä£º" + file + "£¬Ãû³Æ£º" + room->short() + "\n";
+        msg = "é€™æ˜¯ä¸€å€‹æˆ¿é–“ï¼š" + file + "ï¼Œåç¨±ï¼š" + room->short() + "\n";
         msg += "------------------------------------------------------------------------\n";
         ob_list=query("objects", room);
         if( !mapp(ob_list) ) 
         {
-                msg += "Õâ¸ö·¿¼äÃ»ÓĞÈÎºÎÎïÆ·¡£\n";
+                msg += "é€™å€‹æˆ¿é–“æ²’æœ‰ä»»ä½•ç‰©å“ã€‚\n";
                 return msg;
         }
 
@@ -86,13 +86,13 @@ string check_room(string file)
                         if (!environment(ob[list[i]]))
                                 continue;
                         base_env = base_environment(ob[list[i]]);
-                        msg += "»îµÄÎïÆ·£º" + ob[list[i]]->short() + "£¬ÔÚ" + base_env + "¡£\n";
+                        msg += "æ´»çš„ç‰©å“ï¼š" + ob[list[i]]->short() + "ï¼Œåœ¨" + base_env + "ã€‚\n";
                         have_living = 1;
                 }
         }
 
         if (!have_living)
-                msg += "Õâ¸ö·¿¼äÄ¿Ç°Ã»ÓĞ»îµÄÎïÆ·¡£\n";
+                msg += "é€™å€‹æˆ¿é–“ç›®å‰æ²’æœ‰æ´»çš„ç‰©å“ã€‚\n";
 
         list = keys(ob_list);
 
@@ -119,7 +119,7 @@ string check_obj(string file)
 
         ob = load_object(file);
         if (!ob)
-                return "¼ì²é" + file + "³ö´í¡£\n";
+                return "æª¢æŸ¥" + file + "å‡ºéŒ¯ã€‚\n";
 
         if (ob->is_character())
         {
@@ -128,7 +128,7 @@ string check_obj(string file)
                 return 0;
         }
 
-        msg = "ÎïÆ·£º" + file + "£¬Ãû³Æ£º" + ob->short() + "\n";
+        msg = "ç‰©å“ï¼š" + file + "ï¼Œåç¨±ï¼š" + ob->short() + "\n";
 
         if (clonep(ob))
                 destruct(ob);
@@ -137,7 +137,7 @@ string check_obj(string file)
 
         if (!sizeof(ob_list))
         {
-                msg += "Õâ¸öÎÄ¼şÃ»ÓĞÈÎºÎ¸´ÖÆÎïÆ·¡£\n";
+                msg += "é€™å€‹æ–‡ä»¶æ²’æœ‰ä»»ä½•å¾©åˆ¶ç‰©å“ã€‚\n";
                 return msg;
         }
 
@@ -163,7 +163,7 @@ string check_obj(string file)
                 count += obj_env[list[i]];
         }
 
-        msg += "×Ü¹²" + chinese_number(count) + "¸öÎïÆ·¡£\n";
+        msg += "ç¸½å…±" + chinese_number(count) + "å€‹ç‰©å“ã€‚\n";
 
         obj_env = 0;
         return msg;
@@ -184,7 +184,7 @@ string base_environment(object ob)
                         break;
         }
         if (!env)
-                return "²»ÖªÃûµÄµØ·½";
+                return "ä¸çŸ¥åçš„åœ°æ–¹";
         if (!clonep(env) || env->is_chat_room())
                 return env->short() + "(" + base_name(env) + ")";
         else
@@ -194,10 +194,10 @@ string base_environment(object ob)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : checkobj <ÎïÆ·>|<·¿¼ä>
+æŒ‡ä»¤æ ¼å¼ : checkobj <ç‰©å“>|<æˆ¿é–“>
 
-²éÑ¯Ö¸¶¨µÄÎïÆ··Ö²¼Çé¿ö¡£
-Èç¹û²éÑ¯·¿¼ä£¬ÔòÏÔÊ¾·¿¼äËùÓĞ¹ÌÓĞÎïÆ·µÄ·Ö²¼Çé¿ö¡£
+æŸ¥è©¢æŒ‡å®šçš„ç‰©å“åˆ†å¸ƒæƒ…æ³ã€‚
+å¦‚æœæŸ¥è©¢æˆ¿é–“ï¼Œå‰‡é¡¯ç¤ºæˆ¿é–“æ‰€æœ‰å›ºæœ‰ç‰©å“çš„åˆ†å¸ƒæƒ…æ³ã€‚
 HELP
     );
     return 1;

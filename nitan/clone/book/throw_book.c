@@ -4,18 +4,18 @@ inherit ITEM;
 
 void create()
 {
-        set_name( GRN"ÌìÉ½Æ÷·¨"NOR,({ "throwing book","book"}));
+        set_name( GRN"å¤©å±±å™¨æ³•"NOR,({ "throwing book","book"}));
         set_weight(200);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
-                set("long","ÕâÊÇÒ»±¾ĞÇËŞÅÉÎä¹¦ÃÜ¼®¡£\n");
+                set("unit", "æœ¬");
+                set("long","é€™æ˜¯ä¸€æœ¬æ˜Ÿå®¿æ´¾æ­¦åŠŸå¯†ç±ã€‚\n");
                 set("value", 500);
                 set("material", "paper");
                 set("skill", ([
                         "name":         "feixing-shu",//name of the skill
-					    "family_name" : "ĞÇËŞÅÉ",
+					    "family_name" : "æ˜Ÿå®¿æ´¾",
                         "exp_required": 1000 ,        //minimum combat experience required
                         "jing_cost":    20+random(20),// jing cost every time study this
                         "difficulty":        20,           // the base int to learn this skill

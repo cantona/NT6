@@ -4,15 +4,15 @@ inherit ITEM;
 
 void create()
 {
-        set_name("ĞÅ", ({"qing xin"}));
+        set_name("ä¿¡", ({"qing xin"}));
         set_weight(100);
         set("value",1);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "·â");
-                set("long","ÕâÊÇÒ»·âÈÎÓ¯Ó¯¸øÁîºü³åµÄÇéÊé¡£\n");
-//                set("no_drop", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
+                set("unit", "å°");
+                set("long","é€™æ˜¯ä¸€å°ä»»ç›ˆç›ˆçµ¦ä»¤ç‹æ²–çš„æƒ…æ›¸ã€‚\n");
+//                set("no_drop", "é€™æ¨£æ±è¥¿ä¸èƒ½é›¢é–‹ä½ ã€‚\n");
                 set("material", "paper");
         }
 }

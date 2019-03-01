@@ -1,14 +1,14 @@
-// wuxing.c ÎåĞĞµÜ×Ó
+// wuxing.c äº”è¡Œå¼Ÿå­
 
 inherit NPC;
 
 void create()
 {
-        set_name("ÎåĞĞµÜ×Ó", ({ "wuxing dizi","dizi","wuxing"}));
+        set_name("äº”è¡Œå¼Ÿå­", ({ "wuxing dizi","dizi","wuxing"}));
         set("age", 23);
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("long",
-"ÕæÎä½£ÕóµÄÎåĞĞ·½Î»µÜ×Ó¡£\n");
+"çœŸæ­¦åŠé™£çš„äº”è¡Œæ–¹ä½å¼Ÿå­ã€‚\n");
         set("attitude", "peaceful");
         set("str", 24);
         set("dex", 16);
@@ -25,9 +25,9 @@ void create()
         set_temp("apply/armor", 30);
         set("chat_chance",2);
         set("chat_msg", ({
-                "ÎåĞĞµÜ×ÓÆëÉùßººÈ£ºÕæÎä½£Õó£¬ÌìÏÂµÚÒ»£¡\n",
+                "äº”è¡Œå¼Ÿå­é½Šè²å†å–ï¼šçœŸæ­¦åŠé™£ï¼Œå¤©ä¸‹ç¬¬ä¸€ï¼\n",
         }));
-        create_family("Îäµ±ÅÉ", 3, "µÜ×Ó");
+        create_family("æ­¦ç•¶æ´¾", 3, "å¼Ÿå­");
         setup();
         carry_object(WEAPON_DIR"changjian")->wield();
         carry_object("/d/wudang/obj/wuxingfu")->wear();

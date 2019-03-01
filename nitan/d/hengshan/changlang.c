@@ -1,15 +1,15 @@
 // Last Modified by Sir on May. 22 2001
-//Room: changlang.c ³¤ÀÈ
+//Room: changlang.c é•·å»Š
 
 inherit ROOM;
 void do_chat();
 
 void create()
 {
-        set("short","³¤ÀÈ");
+        set("short","é•·å»Š");
         set("long",@LONG
-Í¨ÍùºãÉ½°×ÔÆâÖµÄºóµîµÄÒ»Ìõ³¤ÀÈ¡£Íù±±±ãÊÇÊÇºãÉ½ÅÉÕÆÃÅÈËµÄ¾Ó
-Ëù¡£ÄÏ±ßÊÇºãÉ½ÅÉ°×ÔÆâÖ¡£
+é€šå¾€æ†å±±ç™½é›²åºµçš„å¾Œæ®¿çš„ä¸€æ¢é•·å»Šã€‚å¾€åŒ—ä¾¿æ˜¯æ˜¯æ†å±±æ´¾æŒé–€äººçš„å±…
+æ‰€ã€‚å—é‚Šæ˜¯æ†å±±æ´¾ç™½é›²åºµã€‚
 LONG);
         set("no_clean_up", 0);
         set("exits",([ /* sizeof() == 1 */

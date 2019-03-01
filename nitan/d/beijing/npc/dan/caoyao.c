@@ -6,13 +6,13 @@ inherit ITEM;
 
 void create() 
 {
-        set_name(HIG "²»ÖªÃû²İÒ©" NOR, ({"cao yao", "yao", "cao"}));
+        set_name(HIG "ä¸çŸ¥åè‰è—¥" NOR, ({"cao yao", "yao", "cao"}));
         set_weight(10);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Öê");
-                set("long", "ÕâÊÇÒ»ÖêÉú³¤ÔÚÃÜÁÖÖĞµÄ²»ÖªÃûµÄ²İÒ©£¬Ò»°ãÈË¶¼»áÎóÈÏ³ÉÔÓ²İ¡£\n");
+                set("unit", "æ ª");
+                set("long", "é€™æ˜¯ä¸€æ ªç”Ÿé•·åœ¨å¯†æ—ä¸­çš„ä¸çŸ¥åçš„è‰è—¥ï¼Œä¸€èˆ¬äººéƒ½æœƒèª¤èªæˆé›œè‰ã€‚\n");
         }
         setup();
 }

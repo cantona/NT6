@@ -7,18 +7,18 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIY "Ñ×»Æ½ð¿é" NOR, ({ "yanhuang jinkuai", "yanhuang", "jinkuai" }) );
+        set_name(HIY "ç‚Žé»ƒé‡‘å¡Š" NOR, ({ "yanhuang jinkuai", "yanhuang", "jinkuai" }) );
         set_weight(300);
 
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIY "Ò»¿é½ð²Ó²ÓµÄ½ð¿é£¬ÄÃÔÚÊÖÀï·Ç³£³ÁÖØ¡£\n"
-                            "Ê¹ÓÃ changing Ö¸Áî½«Ñ×»Æ½ðÌõ¶Ò»»ÎªÒ»°ÙÍò»Æ½ð£¨YSG£©¡£\n" 
-                            "Èç¹ûÔÝÊ±²»Ê¹ÓÃ£¬×îºÃ½«½ð¿é´æÈë²Ö¿â£¬ÒÔÃâ¶ªÊ§¡£\n" NOR);
+                set("long", HIY "ä¸€å¡Šé‡‘ç‡¦ç‡¦çš„é‡‘å¡Šï¼Œæ‹¿åœ¨æ‰‹è£¡éžå¸¸æ²‰é‡ã€‚\n"
+                            "ä½¿ç”¨ changing æŒ‡ä»¤å°‡ç‚Žé»ƒé‡‘æ¢å…Œæ›ç‚ºä¸€ç™¾è¬é»ƒé‡‘ï¼ˆYSGï¼‰ã€‚\n" 
+                            "å¦‚æžœæš«æ™‚ä¸ä½¿ç”¨ï¼Œæœ€å¥½å°‡é‡‘å¡Šå­˜å…¥å€‰åº«ï¼Œä»¥å…ä¸Ÿå¤±ã€‚\n" NOR);
                 set("value", 1);
                 set("no_sell", 1);
-                set("unit", "¿é");
+                set("unit", "å¡Š");
         }
 
         setup();
@@ -44,18 +44,18 @@ int do_changing(string arg)
         if (! MEMBER_D->is_valib_member(me->query("id")) || 1)
         {
                 me->add("stocks/balance", 1000000);
-                write(HIG "³É¹¦½«Ò»¿éÑ×»Æ½ð¿é¶Ò»»ÎªÒ»°ÙÍòYSG²¢´æÈëÁËÄúµÄÒø¿â¡£\n" NOR);
-                // ´º½Ú»î¶¯ÆÚ¼ä¼ÓËÍ10W
+                write(HIG "æˆåŠŸå°‡ä¸€å¡Šç‚Žé»ƒé‡‘å¡Šå…Œæ›ç‚ºä¸€ç™¾è¬YSGä¸¦å­˜å…¥äº†æ‚¨çš„éŠ€åº«ã€‚\n" NOR);
+                // æ˜¥ç¯€æ´»å‹•æœŸé–“åŠ é€10W
                 //me->add("stocks/balance", 100000);
-                //write(HIR "»î¶¯ÔùËÍ£º´º½Ú»î¶¯ÆÚ¼ä¼ÓËÍ10%¼´100000 YSG£¬×£´º½Ú¿ìÀÖ£¡\n" NOR);
-                write(HIY "ÄúÄ¿Ç°ÔÚÑ×»ÆÒø¿â´æÓÐ " + HIC + me->query("stocks/balance") + HIY "YSG¡£\n" NOR);
+                //write(HIR "æ´»å‹•è´ˆé€ï¼šæ˜¥ç¯€æ´»å‹•æœŸé–“åŠ é€10%å³100000 YSGï¼Œç¥æ˜¥ç¯€å¿«æ¨‚ï¼\n" NOR);
+                write(HIY "æ‚¨ç›®å‰åœ¨ç‚Žé»ƒéŠ€åº«å­˜æœ‰ " + HIC + me->query("stocks/balance") + HIY "YSGã€‚\n" NOR);
 
         }/*
         else
         {
                 me->add("stocks/balance", 110000);
-                write(HIG "³É¹¦½«Ò»¸úÑ×»Æ½ðÌõ¶Ò»»ÎªÊ®Ò»ÍòYSG²¢´æÈëÁËÄúµÄÒø¿â¡£\n" NOR);
-                write(HIY "ÄúÄ¿Ç°ÔÚÑ×»ÆÒø¿â´æÓÐ " + HIC + me->query("stocks/balance") + HIY "YSG¡£\n" NOR);
+                write(HIG "æˆåŠŸå°‡ä¸€è·Ÿç‚Žé»ƒé‡‘æ¢å…Œæ›ç‚ºåä¸€è¬YSGä¸¦å­˜å…¥äº†æ‚¨çš„éŠ€åº«ã€‚\n" NOR);
+                write(HIY "æ‚¨ç›®å‰åœ¨ç‚Žé»ƒéŠ€åº«å­˜æœ‰ " + HIC + me->query("stocks/balance") + HIY "YSGã€‚\n" NOR);
         }
 */
         destruct(this_object());

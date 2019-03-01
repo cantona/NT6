@@ -12,12 +12,12 @@ inherit F_DBASE;
 #define GAOSHOU_DIR     "/data/gaoshou/"
 #define TEMP_OBJ        "/clone/misc/temp_gaoshou"
 
-nosave object challenger = 0;  // ÌôÕ½Õß
-nosave object competitor = 0;  // ±»ÌôÕ½×Å
+nosave object challenger = 0;  // æŒ‘æˆ°è€…
+nosave object competitor = 0;  // è¢«æŒ‘æˆ°è‘—
 
-// ·µ»ØÖµ 1 -- ¿ÉÒÔÉÏÈ¥
-// ·µ»ØÖµ 2 -- ÕıÔÚ±ÈÎä
-// ·µ»ØÖµ 3 -- »¹Ã»¿ª·Å
+// è¿”å›å€¼ 1 -- å¯ä»¥ä¸Šå»
+// è¿”å›å€¼ 2 -- æ­£åœ¨æ¯”æ­¦
+// è¿”å›å€¼ 3 -- é‚„æ²’é–‹æ”¾
 nosave int state = 1;
 nosave int times = 3;
 nosave int top_num = 10;
@@ -61,8 +61,8 @@ int clean_up() { return 1; }
 void create()
 {
         seteuid(ROOT_UID);
-        set("channel_id", "±ÈÎä¾«Áé");
-        CHANNEL_D->do_channel( this_object(), "sys", "ÑİÎäÏµÍ³ÒÑ¾­Æô¶¯¡£");     
+        set("channel_id", "æ¯”æ­¦ç²¾éˆ");
+        CHANNEL_D->do_channel( this_object(), "sys", "æ¼”æ­¦ç³»çµ±å·²ç¶“å•Ÿå‹•ã€‚");     
         get_tops();
 }
 
@@ -72,7 +72,7 @@ void remove(string euid)
                 return;
       
         if (state = 2 && sizeof(total) > 0) 
-                error("±ÈÎä¾«Áé£ºÄ¿Ç°»¹ÓĞÍæ¼ÒÕıÔÚÌôÕ½Ê®´ó¸ßÊÖ£¬Äã²»ÄÜ´İ»Ù±ÈÎä¾«Áé¡£\n"); 
+                error("æ¯”æ­¦ç²¾éˆï¼šç›®å‰é‚„æœ‰ç©å®¶æ­£åœ¨æŒ‘æˆ°åå¤§é«˜æ‰‹ï¼Œä½ ä¸èƒ½æ‘§æ¯€æ¯”æ­¦ç²¾éˆã€‚\n"); 
 }
 
 protected void heart_beat()
@@ -162,22 +162,22 @@ int check_out(object me)
                 my["jing"] = 1;
                 my["jingli"] = 1;
 
-                tell_object(me, HIR "\nÄã¾õµÃÑÛÇ°Ò»ÕóÄ£ºı...ÕâÏÂÍêÁË£¡\n" NOR);
+                tell_object(me, HIR "\nä½ è¦ºå¾—çœ¼å‰ä¸€é™£æ¨¡ç³Š...é€™ä¸‹å®Œäº†ï¼\n" NOR);
                 if (ob = me->query_last_damage_from())
                 {
-                        msg = "ÌıËµ" + me->name(1) + HIY "²ÒÔâ" + ob->name(1) + HIY "µÄ¶¾ÊÖ£¬±»Ò»½ÅÌßÏÂÀŞÌ¨¡£";
+                        msg = "è½èªª" + me->name(1) + HIY "æ…˜é­" + ob->name(1) + HIY "çš„æ¯’æ‰‹ï¼Œè¢«ä¸€è…³è¸¢ä¸‹æ“‚å°ã€‚";
                 } else
-                        msg = "ÌıËµ" + me->name(1) + HIY "ÔËÆø²»¼Ñ£¬±¾ÁìÓĞÏŞ¡¢ÒÑ¾­°ÜÏÂÀŞÌ¨¡£";
+                        msg = "è½èªª" + me->name(1) + HIY "é‹æ°£ä¸ä½³ï¼Œæœ¬é ˜æœ‰é™ã€å·²ç¶“æ•—ä¸‹æ“‚å°ã€‚";
                 message_competition(msg);
 
                 restore_status(me);
                 total -= ({ me });
                 me->move(ENTRY_ROOM);
-                message("vision", "Ò»¸öºÚÓ°Ù¿µÄ´ÜÁË³öÀ´£¬Ëæ¼´¾ÍÊÇ¡°Å¾¡±µÄ"
-                        "Ò»Éù£¬¾Í¼û" + me->name() +"Ë¤µ¹ÁËµØÉÏ£¬Ò»¸±°ëËÀ²»"
-                        "»îµÄÑù×Ó¡£\n", environment(me), ({ me }));
-                tell_object(me, "°ë»è°ëÃÔÖĞ£¬Äã¾õµÃ±»ÈËÁàÁËÆğÀ´£¬ÓÖ"
-                        "ÖØÖØµÄË¤µ¹ÁËµØÉÏ¡£\n");
+                message("vision", "ä¸€å€‹é»‘å½±å€çš„ç«„äº†å‡ºä¾†ï¼Œéš¨å³å°±æ˜¯â€œå•ªâ€çš„"
+                        "ä¸€è²ï¼Œå°±è¦‹" + me->name() +"æ‘”å€’äº†åœ°ä¸Šï¼Œä¸€å‰¯åŠæ­»ä¸"
+                        "æ´»çš„æ¨£å­ã€‚\n", environment(me), ({ me }));
+                tell_object(me, "åŠæ˜åŠè¿·ä¸­ï¼Œä½ è¦ºå¾—è¢«äººæ‹äº†èµ·ä¾†ï¼Œåˆ"
+                        "é‡é‡çš„æ‘”å€’äº†åœ°ä¸Šã€‚\n");
                 if (! living(me))
                         me->revive();
                 
@@ -185,11 +185,11 @@ int check_out(object me)
                 return 1;
         } else
         {
-                message_vision(NOR "\n$NÏ¥¸ÇÒ»Èí£¬µ¥Ï¥×ÅµØ£¬ÓÖÇ¿³Å×ÅÕ¾ÆğÉíÀ´£¬¿ÚÖĞÈ´Åç³öÒ»¿Ú" 
-                        HIR "ÏÊÑª" NOR "£¬÷öÈ»×ªÉíÀëÈ¥£¡\n\n" NOR, me); 
-                msg = HIY "¹§Ï²" + NOR + HIR + challenger->name(1) + NOR + 
-                      HIY "±ÈÎäÕ½Ê¤" + NOR + HIR + me->name(1) + NOR +  
-                      HIY "£¡£¡\n" NOR;
+                message_vision(NOR "\n$Nè†è“‹ä¸€è»Ÿï¼Œå–®è†è‘—åœ°ï¼Œåˆå¼·æ’è‘—ç«™èµ·èº«ä¾†ï¼Œå£ä¸­å»å™´å‡ºä¸€å£" 
+                        HIR "é®®è¡€" NOR "ï¼Œé»¯ç„¶è½‰èº«é›¢å»ï¼\n\n" NOR, me); 
+                msg = HIY "æ­å–œ" + NOR + HIR + challenger->name(1) + NOR + 
+                      HIY "æ¯”æ­¦æˆ°å‹" + NOR + HIR + me->name(1) + NOR +  
+                      HIY "ï¼ï¼\n" NOR;
                 message_competition(msg);    
                               
                 restore_status(me); 
@@ -201,16 +201,16 @@ int check_out(object me)
 
 int check_quit(object me)
 {
-        message_competition("ÌıËµ" + me->name(1) +
-                            "ÁÙÕóÍÑÌÓ£¬Áï×ßÁË¡£");
+        message_competition("è½èªª" + me->name(1) +
+                            "è‡¨é™£è„«é€ƒï¼Œæºœèµ°äº†ã€‚");
         restore_status(me);
         if (arrayp(total))
                 total -= ({ me });
-        tell_object(me, "Äã¾ö¶¨ÆúÈ¨£¬ÌÓÁËÏÂÈ¥¡£\n");
+        tell_object(me, "ä½ æ±ºå®šæ£„æ¬Šï¼Œé€ƒäº†ä¸‹å»ã€‚\n");
 
         // continue run quit function
         me->move(ENTRY_ROOM);
-        message("vision", "Ö»¼û" + me->name() + "Á³É«·Ç³£ÄÑ¿´µÄÅÜÁËÏÂÀ´¡£\n",
+        message("vision", "åªè¦‹" + me->name() + "è‡‰è‰²éå¸¸é›£çœ‹çš„è·‘äº†ä¸‹ä¾†ã€‚\n",
                 environment(me), ({ me }));
         return 1;
 }
@@ -220,29 +220,29 @@ int join_competition(object ob)
         mixed exp;
 
         if (state = 2 && sizeof(total) > 0) 
-                return notify_fail("ÏÖÔÚÀŞÌ¨ÕıÔÚ¾ÙĞĞ±ÈÎä£¬Äã»¹ÊÇµÈ»á°É¡£\n");
+                return notify_fail("ç¾åœ¨æ“‚å°æ­£åœ¨èˆ‰è¡Œæ¯”æ­¦ï¼Œä½ é‚„æ˜¯ç­‰æœƒå§ã€‚\n");
 
         if (state == 3)
-                return notify_fail("ÀŞÌ¨ÏÖÔÚÒÑ¾­¹Ø±ÕÁË£¬ÄãÅÜÀ´¸ÉÊ²Ã´£¿\n");
+                return notify_fail("æ“‚å°ç¾åœ¨å·²ç¶“é—œé–‰äº†ï¼Œä½ è·‘ä¾†å¹¹ä»€éº¼ï¼Ÿ\n");
         
         if( time()-query_temp("competed", ob)<500 )
-                return notify_fail("Äã¸Õ´ò¹ıÀŞÌ¨²»¾Ã£¬Äã»¹ÊÇµÈ»áÔÙÀ´°É¡£\n");
+                return notify_fail("ä½ å‰›æ‰“éæ“‚å°ä¸ä¹…ï¼Œä½ é‚„æ˜¯ç­‰æœƒå†ä¾†å§ã€‚\n");
                 
         exp=query("combat_exp", ob);
         if (exp < 100000)
-                return notify_fail("Äã»¹ÊÇËãÁË°É£¬ÄãÕâµã¾­Ñé¾Í±ğ½øÈ¥ÏÖÑÛÁË¡£\n");
+                return notify_fail("ä½ é‚„æ˜¯ç®—äº†å§ï¼Œä½ é€™é»ç¶“é©—å°±åˆ¥é€²å»ç¾çœ¼äº†ã€‚\n");
 
         if (ob->query_condition("killer", 1))
-                return notify_fail("ÄãÕıÔÚ±»¹Ù¸®Í¨¼©£¬ËùÒÔ²»ÄÜ²Î¼Ó±ÈÎä¡£\n");
+                return notify_fail("ä½ æ­£åœ¨è¢«å®˜åºœé€šç·ï¼Œæ‰€ä»¥ä¸èƒ½åƒåŠ æ¯”æ­¦ã€‚\n");
 
         if (! get_tops())
-                return notify_fail("¶Ô²»Æğ£¬ÀŞÌ¨ÉÏ±ÈÎäÅÅÃû¼ÇÂ¼ÓĞ´íÎó£¬ÇëÁªÏµÎ×Ê¦¡£\n");
+                return notify_fail("å°ä¸èµ·ï¼Œæ“‚å°ä¸Šæ¯”æ­¦æ’åè¨˜éŒ„æœ‰éŒ¯èª¤ï¼Œè«‹è¯ç³»å·«å¸«ã€‚\n");
 
         if (ob->query_condition())
-                return notify_fail("ÄãÏÖÔÚ×´Ì¬²»¼Ñ£¬»¹ÊÇ±ğ½øÈ¥ÁË¡£\n");
+                return notify_fail("ä½ ç¾åœ¨ç‹€æ…‹ä¸ä½³ï¼Œé‚„æ˜¯åˆ¥é€²å»äº†ã€‚\n");
 
         if( query("id", ob) == tops[0]["id"] )
-                return notify_fail("ÄãÒÑ¾­ÊÇÌìÏÂµÚÒ»ÁË£¬»¹ÊÇ±ğ½øÈ¥ÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“æ˜¯å¤©ä¸‹ç¬¬ä¸€äº†ï¼Œé‚„æ˜¯åˆ¥é€²å»äº†ã€‚\n");
 
         if (! arrayp(total))
                 total = ({ ob });
@@ -250,8 +250,8 @@ int join_competition(object ob)
         if (member_array(ob, total) == -1)
                 total += ({ ob });                
                
-        message_competition((ultrap(ob) ? "´ó×ÚÊ¦" : "") +
-                            ob->name(1) + "ÉÏÀŞÌ¨ÌôÕ½Ê®´ó¸ßÊÖ£¬´ó»ï¶ùÎªËû¼ÓÓÍ°¡£¡¡£");
+        message_competition((ultrap(ob) ? "å¤§å®—å¸«" : "") +
+                            ob->name(1) + "ä¸Šæ“‚å°æŒ‘æˆ°åå¤§é«˜æ‰‹ï¼Œå¤§ä¼™å…’ç‚ºä»–åŠ æ²¹å•Šï¼ã€‚");
 
         init_player(ob);
         // set_heart_beat(1);
@@ -274,9 +274,9 @@ protected void init_player(object me)
 
         me->move(FIGHT_ROOM);
         if (userp(me))
-                message_vision(HIW "$N·ÉÉíÌøÉÏÀŞÌ¨£¬ÖÜÎ§ÏìÆğÒ»Æ¬½ĞºÃÉù¡£\n\n", me);
+                message_vision(HIW "$Né£›èº«è·³ä¸Šæ“‚å°ï¼Œå‘¨åœéŸ¿èµ·ä¸€ç‰‡å«å¥½è²ã€‚\n\n", me);
         else        
-                message_vision(HIW "Ö»ÌıµÄÒ»ÉùÂàÏì£¬$N´ÓºóÌ¨´ó²½×ßÁË³öÀ´£¬»·¹ËÒ»ÏÂËÄ·½¡£\n\n", me); 
+                message_vision(HIW "åªè½çš„ä¸€è²é‘¼éŸ¿ï¼Œ$Nå¾å¾Œå°å¤§æ­¥èµ°äº†å‡ºä¾†ï¼Œç’°é¡§ä¸€ä¸‹å››æ–¹ã€‚\n\n", me); 
         set("backup/condition", me->query_condition(), me);
         me->clear_condition();
 }
@@ -390,8 +390,8 @@ protected int do_competition(object ob1, object ob2)
                         } else
                         {
                                 times = 3;
-                                tell_room(room, HIY "\t-------  ¿ª     Ê¼  -------\n\n" NOR);
-                                message_vision(HIW "\n$N¶Ô×Å$nÀäºßÒ»Éù£º¼ÈÈ»²»ÒªÃü£¬ÄÇ¾Í·ÅÂí¹ıÀ´°É£¡\n", ob2, ob1);
+                                tell_room(room, HIY "\t-------  é–‹     å§‹  -------\n\n" NOR);
+                                message_vision(HIW "\n$Nå°è‘—$nå†·å“¼ä¸€è²ï¼šæ—¢ç„¶ä¸è¦å‘½ï¼Œé‚£å°±æ”¾é¦¬éä¾†å§ï¼\n", ob2, ob1);
                         } 
                 }
                 
@@ -430,8 +430,8 @@ protected int finish_competition()
         {               
                 restore_status(challenger);
                 challenger->move(ENTRY_ROOM);
-                message_vision(HIW "$N¹ş¹şÒ»Ğ¦£¬ÇáÉíÆ®ÏÂÁËÀŞÌ¨¡£\n" NOR, challenger);
-                msg = HIY + challenger->name(1) + "´ò°ÜËùÓĞ¸ßÊÖ£¬´óĞ¦×Å·ÉÉíÆ®ÏÂÀŞÌ¨£¡\n" NOR;
+                message_vision(HIW "$Nå“ˆå“ˆä¸€ç¬‘ï¼Œè¼•èº«é£„ä¸‹äº†æ“‚å°ã€‚\n" NOR, challenger);
+                msg = HIY + challenger->name(1) + "æ‰“æ•—æ‰€æœ‰é«˜æ‰‹ï¼Œå¤§ç¬‘è‘—é£›èº«é£„ä¸‹æ“‚å°ï¼\n" NOR;
                 message_competition(msg);    
         }
         
@@ -440,7 +440,7 @@ protected int finish_competition()
         /*
         if (mingci != 0)
         {
-                msg = HIY + challenger->name(1) + "±»¼¸¸ö´óººÌ§ÏÂÁËÀŞÌ¨£¡\n" NOR;
+                msg = HIY + challenger->name(1) + "è¢«å¹¾å€‹å¤§æ¼¢æŠ¬ä¸‹äº†æ“‚å°ï¼\n" NOR;
                 message_competition(msg);    
         }
         */
@@ -470,7 +470,7 @@ protected int finish_competition()
 
         if (old_mingci == 9)
         {
-                //É¾³ıÀÏÌìÏÂµÚÊ®µÄ×ÊÁÏ
+                //åˆªé™¤è€å¤©ä¸‹ç¬¬åçš„è³‡æ–™
                 temp_file = GAOSHOU_DIR + "npc/" + tops[9]["id"] + ".o";
                 if (file_size(temp_file) >= 0)
                         rm(temp_file);
@@ -494,13 +494,13 @@ protected int finish_competition()
                 if (i == mingci)
                 {
                         tops[i] = tmp_top;
-                        //¸´ÖÆÍæ¼Òµµ°¸
+                        //å¾©åˆ¶ç©å®¶æª”æ¡ˆ
                         cp(from_file, to_file);
 
-                        //ĞŞ¸ÄĞÂµÄµµ°¸ÊôĞÔ
+                        //ä¿®æ”¹æ–°çš„æª”æ¡ˆå±¬æ€§
                         temp_ob = new(TEMP_OBJ);
                         temp_ob->delete_status();
-                        //¸´ÖÆÎäÆ÷
+                        //å¾©åˆ¶æ­¦å™¨
                         if( objectp(weapon=query_temp("weapon", challenger)) && 
                             (! weapon->is_no_clone() ||
                              weapon->is_item_make()))
@@ -536,7 +536,7 @@ protected int finish_competition()
                                 } else carry_ob += ({ to_file });
                         }
 
-                        //¸´ÖÆ·À¾ß
+                        //å¾©åˆ¶é˜²å…·
                         for (j = 0;j<sizeof(armor_type);j++)
                         {
                                 if( objectp(armor=query_temp("armor/"+armor_type[j], challenger)) )
@@ -567,9 +567,9 @@ protected int finish_competition()
                 tops[i] = tops[i - 1];
         }
         save_tops();
-        msg = HIY "¹§Ï²" + challenger->name(1) +
-              HIY "ÈÙµÇ" + HIG + "ÌìÏÂµÚ" + chinese_number(mingci + 1) +
-              NOR + HIY + "µÄ±¦×ù£¡\n" NOR;
+        msg = HIY "æ­å–œ" + challenger->name(1) +
+              HIY "æ¦®ç™»" + HIG + "å¤©ä¸‹ç¬¬" + chinese_number(mingci + 1) +
+              NOR + HIY + "çš„å¯¶åº§ï¼\n" NOR;
         message_competition(msg);    
         get_tops();
         restore_competition();
@@ -603,7 +603,7 @@ int get_tops()
                 {
                         top = ([ ]);
                         top["id"] = "test";
-                        top["title"] = "¡¸Î×Ê¦²âÊÔÈËÎï¡¹²âÊÔ(test)";
+                        top["title"] = "ã€Œå·«å¸«æ¸¬è©¦äººç‰©ã€æ¸¬è©¦(test)";
                         tops += ([ i : top ]);       
                 }
                 return 1;
@@ -645,5 +645,5 @@ int save_tops()
 protected void message_competition(string msg)
 {
         return;
-        message("sys", HIY "¡¾ÑİÎä´óÌü¡¿" + msg + "\n" NOR, users());
+        message("sys", HIY "ã€æ¼”æ­¦å¤§å»³ã€‘" + msg + "\n" NOR, users());
 }

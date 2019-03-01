@@ -4,11 +4,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÍÁ·ËÍ·", ({ "tufei tou","bandit leader","tou" }) );
-        set("gender", "ÄĞĞÔ");
+        set_name("åœŸåŒªé ­", ({ "tufei tou","bandit leader","tou" }) );
+        set("gender", "ç”·æ€§");
         set("age", 45);
         set("long",
-                "Õâ¼Ò»ïÂúÁ³É±Æø£¬Ò»¸¶Ğ×Éñ¶ñÉ·µÄÄ£Ñù£¬ÁîÈËÍû¶øÉúÎ·¡£\n");
+                "é€™å®¶ä¼™æ»¿è‡‰æ®ºæ°£ï¼Œä¸€ä»˜å…‡ç¥æƒ¡ç…çš„æ¨¡æ¨£ï¼Œä»¤äººæœ›è€Œç”Ÿç•ã€‚\n");
         set("combat_exp", 20000);
         set("shen_type", -1);
         set("attitude", "aggressive");
@@ -18,7 +18,7 @@ void create()
 
         set("chat_chance", 5);
         set("chat_msg", ({
-                "ÍÁ·ËÍ·ºÙºÙµØÀäĞ¦×Å: ½ñÌìÄã¾Í±ğÏë´ÓÕâÀï»î×Å³öÈ¥ÁË!\n",
+                "åœŸåŒªé ­å˜¿å˜¿åœ°å†·ç¬‘è‘—: ä»Šå¤©ä½ å°±åˆ¥æƒ³å¾é€™è£¡æ´»è‘—å‡ºå»äº†!\n",
         }) );
 
         set_skill("sword", 30);

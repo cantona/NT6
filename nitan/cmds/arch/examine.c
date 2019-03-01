@@ -5,7 +5,7 @@
 
 inherit F_CLEAN_UP;
 
-// ¼ì²é·½Ê½£¨ÊÖ¹¤¼ì²éÔòÉèÖÃ³ÉÎª EXAMINE_ALL£©
+// æª¢æŸ¥æ–¹å¼ï¼ˆæ‰‹å·¥æª¢æŸ¥å‰‡è¨­ç½®æˆç‚º EXAMINE_ALLï¼‰
 #define        EXAMINE_ALL        0
 #define        EXAMINE_LOGINED        1
 
@@ -28,7 +28,7 @@ int main(object me, string arg)
                 return 0;
 
         if (! arg)
-                return notify_fail("Ö¸Áî¸ñÊ½£ºexamine [-u] <Íæ¼ÒID> | -all\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šexamine [-u] <çŽ©å®¶ID> | -all\n");
 
         if (! sscanf(arg, "-u %s", arg))
                 copy_user = 0;
@@ -39,14 +39,14 @@ int main(object me, string arg)
         {
                 string r;
                 r = examine_player(arg, copy_user, EXAMINE_ALL, 0);
-                if (! r) r = sprintf("ÕâÎ»Íæ¼Ò(%s)µÄÊý¾ÝÃ»ÓÐÒì³£¡£\n", arg);
-                write("¼ì²é½á¹û£º" + r);
+                if (! r) r = sprintf("é€™ä½çŽ©å®¶(%s)çš„æ•¸æ“šæ²’æœ‰ç•°å¸¸ã€‚\n", arg);
+                write("æª¢æŸ¥çµæžœï¼š" + r);
                 return 1;
         }
 
-        message_system("ÏµÍ³½øÐÐÊý¾Ý´¦ÀíÖÐ£¬ÇëÄÍÐÄµÈºò...\n");
-        write(HIG "ÏÖÔÚÏµÍ³½«¼ì²éËùÓÐÍæ¼Ò£¬ÉÔºó»ã±¨¡£\n"
-              HIG "½ø¶È£º" + process_bar(0) + "\n");
+        message_system("ç³»çµ±é€²è¡Œæ•¸æ“šè™•ç†ä¸­ï¼Œè«‹è€å¿ƒç­‰å€™...\n");
+        write(HIG "ç¾åœ¨ç³»çµ±å°‡æª¢æŸ¥æ‰€æœ‰çŽ©å®¶ï¼Œç¨å¾ŒåŒ¯å ±ã€‚\n"
+              HIG "é€²åº¦ï¼š" + process_bar(0) + "\n");
         if (me)
         {
                 me->attach_system();
@@ -98,13 +98,13 @@ void search_dir(object me, int type)
                 }
                 total += j;
                 message("system", ESC + "[1A" + ESC + "[256D"
-                                  HIG "½ø¶È£º" + process_bar((i + 1) * 100 / sizeof(dir)) +
-                                  "\n" + (me ? HIR "Ö´ÐÐÖÐ" NOR "> " : ""),
+                                  HIG "é€²åº¦ï¼š" + process_bar((i + 1) * 100 / sizeof(dir)) +
+                                  "\n" + (me ? HIR "åŸ·è¡Œä¸­" NOR "> " : ""),
                                   me ? me : filter_array(all_interactive(), (: wizardp :)));
         }
 
-        info = HIC "\n¼ì²éËùÓÐ " HIY + total +
-               HIC " Íæ¼ÒµÄ½á¹ûÈçÏÂ£º\n" NOR WHT;
+        info = HIC "\næª¢æŸ¥æ‰€æœ‰ " HIY + total +
+               HIC " çŽ©å®¶çš„çµæžœå¦‚ä¸‹ï¼š\n" NOR WHT;
         for (i = 0; i < sizeof(result); i++)
         {
                 info += result[i];
@@ -117,10 +117,10 @@ void search_dir(object me, int type)
         }
 
         if (! count)
-                info += HIC "Ã»ÓÐÈÎºÎµÄÍæ¼ÒÊý¾Ý¿ÉÄÜÒìÑù¡£\n" NOR;
+                info += HIC "æ²’æœ‰ä»»ä½•çš„çŽ©å®¶æ•¸æ“šå¯èƒ½ç•°æ¨£ã€‚\n" NOR;
         else
-                info += HIG "¹²ÓÐ " + to_chinese(count) +
-                        " Î»Íæ¼ÒÊý¾Ý¿ÉÄÜÒì³£¡£\n\n" NOR;
+                info += HIG "å…±æœ‰ " + to_chinese(count) +
+                        " ä½çŽ©å®¶æ•¸æ“šå¯èƒ½ç•°å¸¸ã€‚\n\n" NOR;
         info += HIY "There are total " + total_gold + " golds.\n\n" NOR;
 
         log_file("examine", filter_color(info));
@@ -140,7 +140,7 @@ protected string fname(object ob)
         s2=query("purename", ob);
         if (! s1) s1= "";
         if (s2) s1 += s2;
-        if (s1 == "") s1 = "ÎÞÃû";
+        if (s1 == "") s1 = "ç„¡å";
         return s1;
 }
 
@@ -169,14 +169,14 @@ protected string examine_player(string name, int copy_user, int type, int last_t
                                   name + __SAVE_EXTENSION__);
         
                         if (! arrayp(st) || sizeof(st) < 3)
-                                // ¿ÉÄÜÃ»ÓÐÕâ¸öÎÄ¼þ
-                                return sprintf(WHT "ÎÞ·¨²éÔÄÍæ¼Ò(%s)µÄµÄµÇÂ¼ÐÅÏ¢¡£\n" NOR, name);
+                                // å¯èƒ½æ²’æœ‰é€™å€‹æ–‡ä»¶
+                                return sprintf(WHT "ç„¡æ³•æŸ¥é–±çŽ©å®¶(%s)çš„çš„ç™»éŒ„ä¿¡æ¯ã€‚\n" NOR, name);
         
-                        // È¡×îºó·ÃÎÊ login_ob µÄÊ±¼ä
+                        // å–æœ€å¾Œè¨ªå• login_ob çš„æ™‚é–“
                         last_touched = st[1];
                 }
 
-                // ¼ÆËãÃ»ÓÐÉÏÏßµÄÊ±¼ä
+                // è¨ˆç®—æ²’æœ‰ä¸Šç·šçš„æ™‚é–“
                 day = (time() - last_touched) / 86400;
 
                 if (day >= 90 && ! objectp(find_player(name)))
@@ -184,7 +184,7 @@ protected string examine_player(string name, int copy_user, int type, int last_t
                         remove_flag = 0;
                 else
                 if (day >= 1)
-                        // Õâ¸öÎÄ¼þ×î½üÃ»ÓÐ·ÃÎÊ¹ý
+                        // é€™å€‹æ–‡ä»¶æœ€è¿‘æ²’æœ‰è¨ªå•éŽ
                         return 0;
         }
 
@@ -194,7 +194,7 @@ protected string examine_player(string name, int copy_user, int type, int last_t
         if (! login_ob->restore())
         {
                 destruct(login_ob);
-                return sprintf(WHT "Ã»ÓÐÍæ¼Ò(%s)¡£\n" NOR, name);
+                return sprintf(WHT "æ²’æœ‰çŽ©å®¶(%s)ã€‚\n" NOR, name);
         }
 
         if( query("id", login_ob) != name )
@@ -202,7 +202,7 @@ protected string examine_player(string name, int copy_user, int type, int last_t
                 string id;
                 id=query("id", login_ob);
                 destruct(login_ob);
-                return sprintf(HIR "Íæ¼Ò(%s)µÄID(%s)²»ÕýÈ·¡£\n" NOR, name, id);
+                return sprintf(HIR "çŽ©å®¶(%s)çš„ID(%s)ä¸æ­£ç¢ºã€‚\n" NOR, name, id);
         }
 
         if (! objectp(user_ob = find_player(name)))
@@ -212,14 +212,14 @@ protected string examine_player(string name, int copy_user, int type, int last_t
                 if (! user_ob)
                 {
                         destruct(login_ob);
-                        return sprintf(HIR "ÎÞ·¨Éú³ÉÍæ¼Ò(%s)¡£\n" NOR, name);
+                        return sprintf(HIR "ç„¡æ³•ç”ŸæˆçŽ©å®¶(%s)ã€‚\n" NOR, name);
                 }
 
                 if (! user_ob->restore())
                 {
                         destruct(login_ob);
                         destruct(user_ob);
-                        return sprintf(HIR "ÎÞ·¨¶ÁÈ¡Íæ¼Òµµ°¸(%s)¡£\n" NOR, name);
+                        return sprintf(HIR "ç„¡æ³•è®€å–çŽ©å®¶æª”æ¡ˆ(%s)ã€‚\n" NOR, name);
                 }
         } else
                 online = 1;
@@ -228,15 +228,15 @@ protected string examine_player(string name, int copy_user, int type, int last_t
         {
                 if( ultrap(user_ob) || query("immortal", user_ob) )
                 {
-                        // ÓÀ¾Ã±£ÁôµÄÍæ¼Ò£º´ÓÐÂ±£´æ login_ob£¬
-                        // Ë¢ÐÂ¸ÃÈËÎïµÄ×îºó·ÃÎÊÊ±¼ä¡£
+                        // æ°¸ä¹…ä¿ç•™çš„çŽ©å®¶ï¼šå¾žæ–°ä¿å­˜ login_obï¼Œ
+                        // åˆ·æ–°è©²äººç‰©çš„æœ€å¾Œè¨ªå•æ™‚é–“ã€‚
                         login_ob->save();
                         destruct(login_ob);
                         destruct(user_ob);
                         return 0;
                 }
 
-                // É¾³ý¸ÃÍæ¼Ò
+                // åˆªé™¤è©²çŽ©å®¶
                 destruct(login_ob);
                 destruct(user_ob);
                 log_file("static/purge",
@@ -255,7 +255,7 @@ protected string examine_player(string name, int copy_user, int type, int last_t
                                  name,
                                  query("name", user_ob),
                                  (interactive(user_ob) ? HIC : HIR),
-                                 (interactive(user_ob) ? query_ip_number(user_ob) : "¶ÏÏßÖÐ"),
+                                 (interactive(user_ob) ? query_ip_number(user_ob) : "æ–·ç·šä¸­"),
                                  NOR,
                                  result);
                 else
@@ -268,7 +268,7 @@ protected string examine_player(string name, int copy_user, int type, int last_t
                                  ctime(query("last_on", login_ob))[20..24],
                                  NOR,
                                  result,
-                                 (user_ob->is_in_prison() ? HIR "(ÓüÖÐ)" NOR : ""));
+                                 (user_ob->is_in_prison() ? HIR "(ç„ä¸­)" NOR : ""));
         }
 
         destruct(login_ob);
@@ -279,7 +279,7 @@ protected string examine_player(string name, int copy_user, int type, int last_t
                 {
                         me = this_player();
                         // I should login it
-                        message_vision("$N¿ÚÖÐÄîÄîÓÐ´Ê£¬½«$n±äÁË³öÀ´¡£\n",
+                        message_vision("$Nå£ä¸­å¿µå¿µæœ‰è©žï¼Œå°‡$nè®Šäº†å‡ºä¾†ã€‚\n",
                                        me, user_ob);
                         catch(user_ob->setup());
                         catch(user_ob->restore_autoload());
@@ -295,7 +295,7 @@ protected string examine_player(string name, int copy_user, int type, int last_t
                 {
                         // login user? oh, I needn't do it because the
                         // user is online now.
-                        write("Íæ¼ÒÄ¿Ç°ÕýÔÚÏßÉÏ¡£\n");
+                        write("çŽ©å®¶ç›®å‰æ­£åœ¨ç·šä¸Šã€‚\n");
                 }
         }
 
@@ -316,9 +316,9 @@ protected string is_illegal(object ob, int update)
                 return 0;
 
 #if 0
-        if( query("family/family_name", ob) != "»ªÉ½ÅÉ" && 
+        if( query("family/family_name", ob) != "è¯å±±æ´¾" && 
             ob->query_skill("hunyuan-zhang", 1))
-                return "ÓµÓÐ»ìÔªÕÆ¼¼ÄÜ";
+                return "æ“æœ‰æ··å…ƒæŽŒæŠ€èƒ½";
         return 0;
 #endif
         if( query_temp("user_setup", ob) )
@@ -372,7 +372,7 @@ protected string is_illegal(object ob, int update)
             ! intp(lex["potential"]) ||
             ! intp(lex["experience"]) ||
             ! intp(lex["time"]))
-                return HIR "Êý¾ÝÀàÐÍ´íÎó" NOR;
+                return HIR "æ•¸æ“šé¡žåž‹éŒ¯èª¤" NOR;
 
         age = my["mud_age"] / 86400;
         exp = my["combat_exp"];
@@ -398,28 +398,28 @@ protected string is_illegal(object ob, int update)
         total_gold += gold;
 
         if (gold > 2000)
-                return HIY "ÓµÓÐ " + gold + " Á½»Æ½ð" NOR;
+                return HIY "æ“æœ‰ " + gold + " å…©é»ƒé‡‘" NOR;
 
         if (exp < 1000000 && gold >= 1000)
-                return HIC "¾­Ñé 1M ÒÔÄÚÓµÓÐ " + gold + " Á½»Æ½ð" NOR;
+                return HIC "ç¶“é©— 1M ä»¥å…§æ“æœ‰ " + gold + " å…©é»ƒé‡‘" NOR;
 
         if (exp > 10000 && dt > 60)
         {
                 if ((sp = dexp * 60 / dt) > 90)
-                        return HIR "Æ½¾ù¾­ÑéËÙ¶ÈÌ«¿ì(" + sp + "/·ÖÖÓ:" + dt / 60 + "·ÖÖÓ)" NOR;
+                        return HIR "å¹³å‡ç¶“é©—é€Ÿåº¦å¤ªå¿«(" + sp + "/åˆ†é˜:" + dt / 60 + "åˆ†é˜)" NOR;
 
                 if ((sp = dpot * 60 / dt) > 20)
-                        return HIR "Æ½¾ùÇ±ÄÜËÙ¶ÈÌ«¿ì(" + sp + "/·ÖÖÓ:" + dt / 60 + "·ÖÖÓ)" NOR;
+                        return HIR "å¹³å‡æ½›èƒ½é€Ÿåº¦å¤ªå¿«(" + sp + "/åˆ†é˜:" + dt / 60 + "åˆ†é˜)" NOR;
 
                 if ((sp = dmar * 60 / dt) > 10)
-                        return HIR "Æ½¾ùÌå»áËÙ¶ÈÌ«¿ì(" + sp + "/·ÖÖÓ:" + dt / 60 + "·ÖÖÓ)" NOR;
+                        return HIR "å¹³å‡é«”æœƒé€Ÿåº¦å¤ªå¿«(" + sp + "/åˆ†é˜:" + dt / 60 + "åˆ†é˜)" NOR;
 
                 if (dage > dt + 60)
-                        return HIR "Á¬ÏßÊ±¼ä³¬¹ýÏµÍ³¼ä¸ôÊ±¼ä(" + ((dage - dt) / 60) + "·ÖÖÓ)¡£" NOR;
+                        return HIR "é€£ç·šæ™‚é–“è¶…éŽç³»çµ±é–“éš”æ™‚é–“(" + ((dage - dt) / 60) + "åˆ†é˜)ã€‚" NOR;
         }
 
         if (gold >= 100 && age < 1)
-                return HIC "14ËêÓµÓÐ " + gold + " Á½»Æ½ð" NOR;
+                return HIC "14æ­²æ“æœ‰ " + gold + " å…©é»ƒé‡‘" NOR;
 
         return 0;
 }
@@ -427,18 +427,18 @@ protected string is_illegal(object ob, int update)
 int  help(object  me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½£ºexamine [-u] <Íæ¼ÒID> | -all
+æŒ‡ä»¤æ ¼å¼ï¼šexamine [-u] <çŽ©å®¶ID> | -all
 
-²éÕÒÍæ¼Ò£¬ÅÐ¶ÏÊý¾ÝÊÇ·ñÕý³£¡£Èç¹ûÊ¹ÓÃÁË[-u]²ÎÊý£¬Ôò³ýÁË¼ì²éÍæ
-¼Ò£¬»¹»á½«²»ÔÚÏßÉÏÍæ¼Ò¸´ÖÆ³öÀ´£¬ÒÔ¹©ÏêÏ¸²éÔÄ¡£
+æŸ¥æ‰¾çŽ©å®¶ï¼Œåˆ¤æ–·æ•¸æ“šæ˜¯å¦æ­£å¸¸ã€‚å¦‚æžœä½¿ç”¨äº†[-u]åƒæ•¸ï¼Œå‰‡é™¤äº†æª¢æŸ¥çŽ©
+å®¶ï¼Œé‚„æœƒå°‡ä¸åœ¨ç·šä¸ŠçŽ©å®¶å¾©åˆ¶å‡ºä¾†ï¼Œä»¥ä¾›è©³ç´°æŸ¥é–±ã€‚
 
-ÅÐ¶ÏÒÀ¾Ý£º
-1. ³¬¹ý 20000 Á½»Æ½ð¡£
-2. ¾­Ñé 1M ÒÔÄÚ³¬¹ý 3000 Á½»Æ½ð¡£
-3. Æ½¾ù¾­ÑéËÙ¶È³¬¹ý (90/m)¡£
-4. Æ½¾ùÇ±ÄÜËÙ¶È³¬¹ý (20/m)¡£
-5. Æ½¾ùÌå»áËÙ¶È³¬¹ý (10/m)¡£
-6. 14Ëê½ðÇ®³¬¹ý 100 Á½»Æ½ð¡£
+åˆ¤æ–·ä¾æ“šï¼š
+1. è¶…éŽ 20000 å…©é»ƒé‡‘ã€‚
+2. ç¶“é©— 1M ä»¥å…§è¶…éŽ 3000 å…©é»ƒé‡‘ã€‚
+3. å¹³å‡ç¶“é©—é€Ÿåº¦è¶…éŽ (90/m)ã€‚
+4. å¹³å‡æ½›èƒ½é€Ÿåº¦è¶…éŽ (20/m)ã€‚
+5. å¹³å‡é«”æœƒé€Ÿåº¦è¶…éŽ (10/m)ã€‚
+6. 14æ­²é‡‘éŒ¢è¶…éŽ 100 å…©é»ƒé‡‘ã€‚
 
 HELP
     );

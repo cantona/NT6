@@ -1,54 +1,54 @@
 //Created by RoomEditer on 02-1-3.
 //by bravo
-// naihe 05-12-3 0:22 ÍêÈ«ÖØĞ´(Ö»ÊÇÑØÔ­À´µÄÎÄ¼şÃû¼°µØÀíÎ»ÖÃ¶øÒÑ)£¬Ìí¼Ó¶Ä´óĞ¡¹¦ÄÜ£¬Ê¹Ö®³ÉÎªÕæÕı¶Ä³¡¡£
-// naihe 05-12-3 17:01 µ÷Õû±ª×ÓÅâÂÊ£¬Ôö¼ÓÊı¾İ´æÈ¡¹¦ÄÜ¼°¸üÏêÏ¸µÄ·ÖÎö log.
-// ÓÉÓÚ sz /d/ ÏÂÎÄ¼şÃ»ÓĞ save_object() È¨£¬¹Ê¸ü¸Ä´ËÎÄ¼şÎª /clone/room/changan_dufang.c
-// naihe 05-12-6 8:41 ¼ÓÉÏ²Ê½ğ¹¦ÄÜ¡£
-// naihe 05-12-14 16:42 ×îÖÕÍêÉÆ¡£
-// naihe 05-12-18 10:15 ½µµÍÊÖĞø·ÑÓÃÓÉ°Ù·ÖÂÊ¸ÄÎªÇ§·ÖÂÊ£¬¿ÉÑ¡ÔñÓàµØ¸ü¶à¡£
+// naihe 05-12-3 0:22 å®Œå…¨é‡å¯«(åªæ˜¯æ²¿åŸä¾†çš„æ–‡ä»¶ååŠåœ°ç†ä½ç½®è€Œå·²)ï¼Œæ·»åŠ è³­å¤§å°åŠŸèƒ½ï¼Œä½¿ä¹‹æˆç‚ºçœŸæ­£è³­å ´ã€‚
+// naihe 05-12-3 17:01 èª¿æ•´è±¹å­è³ ç‡ï¼Œå¢åŠ æ•¸æ“šå­˜å–åŠŸèƒ½åŠæ›´è©³ç´°çš„åˆ†æ log.
+// ç”±äº sz /d/ ä¸‹æ–‡ä»¶æ²’æœ‰ save_object() æ¬Šï¼Œæ•…æ›´æ”¹æ­¤æ–‡ä»¶ç‚º /clone/room/changan_dufang.c
+// naihe 05-12-6 8:41 åŠ ä¸Šå½©é‡‘åŠŸèƒ½ã€‚
+// naihe 05-12-14 16:42 æœ€çµ‚å®Œå–„ã€‚
+// naihe 05-12-18 10:15 é™ä½æ‰‹çºŒè²»ç”¨ç”±ç™¾åˆ†ç‡æ”¹ç‚ºåƒåˆ†ç‡ï¼Œå¯é¸æ“‡ä½™åœ°æ›´å¤šã€‚
 
 #include <ansi.h>
 inherit ROOM;
 inherit F_SAVE;
-#include <ctime_format_func.h>    // Ä³Ğ©MUDÀïÃ»ÓĞÕâ¸öº¯Êı£ºctime_format()£¬°ÑËüĞ´³É£ºreturn ctime(time()); ¼´¿É¡£
-//#include <set_del_color_func.h> // Ä³Ğ©MUDÀïÃ»ÓĞÕâÁ½¸ö s_efun:  setcolor(), delcolor().
+#include <ctime_format_func.h>    // æŸäº›MUDè£¡æ²’æœ‰é€™å€‹å‡½æ•¸ï¼šctime_format()ï¼ŒæŠŠå®ƒå¯«æˆï¼šreturn ctime(time()); å³å¯ã€‚
+//#include <set_del_color_func.h> // æŸäº›MUDè£¡æ²’æœ‰é€™å…©å€‹ s_efun:  setcolor(), delcolor().
 
 #define     DUFANG_VERSION                  "V1.2 (2005.12.18)"
 
 // ----------------- defines -----------------------
-#define     DUFANG_LOG_FILE                 "duchang/changan_dufang"     // log dir ÏÂ¡£
-#define     LOG_ON          1               // ¿ªÆôÊ±Ôò½øĞĞ log_file() ²Ù×÷¡£Ö÷ÒªÊÇ¼ÇÂ¼ mewiz ²Ù×÷¼ÇÂ¼¡£
+#define     DUFANG_LOG_FILE                 "duchang/changan_dufang"     // log dir ä¸‹ã€‚
+#define     LOG_ON          1               // é–‹å•Ÿæ™‚å‰‡é€²è¡Œ log_file() æ“ä½œã€‚ä¸»è¦æ˜¯è¨˜éŒ„ mewiz æ“ä½œè¨˜éŒ„ã€‚
 #define     DUFANG_SAVE_FILE    DATA_DIR +  "duchang/changan_dufang"
-#define     SAVE_ON         1               // ¿ªÆôÊ±Ôò½øĞĞ save_object() ²Ù×÷¡£
-                                            // ±¾ÎÄ¼şÊı¾İ¼ÇÂ¼Î»ÖÃ
-#define     SYSTEM_WIZ_ID   "$lonely$"       // ÔÊĞíÊ¹ÓÃ <mewiz reward Êı×Ö> Ö¸Áî¸øÏµÍ³¼ÓÈë½±½ğ¡£
-#define     SYSTEM_EAT_P    3               // ÏµÍ³³ÔÇ®ÉèÖÃÊÇ·ñ¿ªÆô¡£ÕâÊÇÒ»¸öÇ§·ÖÂÊ¡£
-                                            // ·ÇÁãÊ±£¬Ã¿¾Ö¶¼Òª¡°³Ôµô¡±Ò»¶¨µÄÑº×¢¶î£¬²»¼ÆÈë·µ»¹¼ÇÂ¼ÖĞ¡£
-#define     WAIT_TIME       20              // Ñº×¢ºóµÈ´ı¿ª¾ÖµÄÊ±¼ä(µÈ´ı¶àÈËÑº×¢)
-#define     GOGO_WAIT_TIME  3               // ×¼±¸¿ª¾ÖºóÒªµÈ´ı¼¸Ãë²ÅÄÜÓÃ gogo ¼ÓËÙ¿ª½±¡£
-#define     DEF_PERCENT     95              // Õı³£Ê±µÄÄ¬ÈÏÅâÂÊ£¬ÕâÊÇÓ®µÄ²¿·Ö¡£Èç bet 100 ¼´´¿×¬ 100*DEF_PERCENT/100
-#define     BAOZI_PERCENT   3000            // ±ª×ÓµÄ¹Ì¶¨ÅâÂÊ¡£¹æÔòÍ¬ÉÏ¡£
-#define     ADD_PERCENT     2               // µ±´ó¡¢Ğ¡¡¢µ¥¡¢Ë«Á¬Ğø¿ª³öÊ±£¬Á¬Ğø¿ª³öµÄÏîÆäÅâÂÊ»áÉÏÕÇ¡£ÕâÊÇ·ù¶È¡£
-#define     LOST_PERCENT    2               // Í¬ÉÏ£¬¸ôµÃÔ½¾ÃÎ´¿ªµÄÏîÆäÅâÂÊ»áÏÂµø£¬ÕâÊÇ·ù¶È¡£
-#define     MAX_DF_PLAYER   10              // ×î¶à 10 Î»Íæ¼ÒÍ¬Ê±Í¶×¢¡£ ¶¨ÒåÎª 0 Ê±²»ÏŞÖÆ¡£
+#define     SAVE_ON         1               // é–‹å•Ÿæ™‚å‰‡é€²è¡Œ save_object() æ“ä½œã€‚
+                                            // æœ¬æ–‡ä»¶æ•¸æ“šè¨˜éŒ„ä½ç½®
+#define     SYSTEM_WIZ_ID   "$lonely$"       // å…è¨±ä½¿ç”¨ <mewiz reward æ•¸å­—> æŒ‡ä»¤çµ¦ç³»çµ±åŠ å…¥çé‡‘ã€‚
+#define     SYSTEM_EAT_P    3               // ç³»çµ±åƒéŒ¢è¨­ç½®æ˜¯å¦é–‹å•Ÿã€‚é€™æ˜¯ä¸€å€‹åƒåˆ†ç‡ã€‚
+                                            // éé›¶æ™‚ï¼Œæ¯å±€éƒ½è¦â€œåƒæ‰â€ä¸€å®šçš„æŠ¼æ³¨é¡ï¼Œä¸è¨ˆå…¥è¿”é‚„è¨˜éŒ„ä¸­ã€‚
+#define     WAIT_TIME       20              // æŠ¼æ³¨å¾Œç­‰å¾…é–‹å±€çš„æ™‚é–“(ç­‰å¾…å¤šäººæŠ¼æ³¨)
+#define     GOGO_WAIT_TIME  3               // æº–å‚™é–‹å±€å¾Œè¦ç­‰å¾…å¹¾ç§’æ‰èƒ½ç”¨ gogo åŠ é€Ÿé–‹çã€‚
+#define     DEF_PERCENT     95              // æ­£å¸¸æ™‚çš„é»˜èªè³ ç‡ï¼Œé€™æ˜¯è´çš„éƒ¨åˆ†ã€‚å¦‚ bet 100 å³ç´”è³º 100*DEF_PERCENT/100
+#define     BAOZI_PERCENT   3000            // è±¹å­çš„å›ºå®šè³ ç‡ã€‚è¦å‰‡åŒä¸Šã€‚
+#define     ADD_PERCENT     2               // ç•¶å¤§ã€å°ã€å–®ã€é›™é€£çºŒé–‹å‡ºæ™‚ï¼Œé€£çºŒé–‹å‡ºçš„é …å…¶è³ ç‡æœƒä¸Šæ¼²ã€‚é€™æ˜¯å¹…åº¦ã€‚
+#define     LOST_PERCENT    2               // åŒä¸Šï¼Œéš”å¾—è¶Šä¹…æœªé–‹çš„é …å…¶è³ ç‡æœƒä¸‹è·Œï¼Œé€™æ˜¯å¹…åº¦ã€‚
+#define     MAX_DF_PLAYER   10              // æœ€å¤š 10 ä½ç©å®¶åŒæ™‚æŠ•æ³¨ã€‚ å®šç¾©ç‚º 0 æ™‚ä¸é™åˆ¶ã€‚
 
-//    #######  ²Ê½ğ·½ÃæµÄÉèÖÃ #######
-#define     JACKPOT_ON      1               // ÊÇ·ñ¿ªÆô²Ê½ğ½±Àø¡£ 0 ²»¿ªÆô¡£
-#define     JACKPOT_RANDOM  5               // Èç¹û !random(Õâ¸öÊı) ²¢·ûºÏÌõ¼ş(Ó®Èë×ã¹»µÄÇ®)µÄ»°¾Í»á¿ªÆô²Ê½ğ
-#define     JACKPOT_LIMIT   20000           // ²Ê½ğÏŞÖÆ£¬ÏµÍ³ÒªÓ®Èë¶àÉÙ½ğ²Å»á¿ªÆô²Ê½ğ¡£²»¹ı£¬Ò²¿ÉÄÜÒÔ½ÏµÍ¸ÅÂÊ¿ªÆô²Ê½ğ¡£
-#define     JACKPOT_MAX     2000            // ²Ê½ğ×î¶à
-#define     JACKPOT_MIN     200             // ²Ê½ğ×îÉÙ
+//    #######  å½©é‡‘æ–¹é¢çš„è¨­ç½® #######
+#define     JACKPOT_ON      1               // æ˜¯å¦é–‹å•Ÿå½©é‡‘çå‹µã€‚ 0 ä¸é–‹å•Ÿã€‚
+#define     JACKPOT_RANDOM  5               // å¦‚æœ !random(é€™å€‹æ•¸) ä¸¦ç¬¦åˆæ¢ä»¶(è´å…¥è¶³å¤ çš„éŒ¢)çš„è©±å°±æœƒé–‹å•Ÿå½©é‡‘
+#define     JACKPOT_LIMIT   20000           // å½©é‡‘é™åˆ¶ï¼Œç³»çµ±è¦è´å…¥å¤šå°‘é‡‘æ‰æœƒé–‹å•Ÿå½©é‡‘ã€‚ä¸éï¼Œä¹Ÿå¯èƒ½ä»¥è¼ƒä½æ¦‚ç‡é–‹å•Ÿå½©é‡‘ã€‚
+#define     JACKPOT_MAX     2000            // å½©é‡‘æœ€å¤š
+#define     JACKPOT_MIN     200             // å½©é‡‘æœ€å°‘
 //    ###############################
 
-#define     BIG_STR         HIG"´ó"NOR      // ¿ÉÒÔÔÚÕâÀï¸ÄÒ»ÏÂÑÕÉ«¡£Ö»ÊÇÃèÊö¶øÒÑ¡£
-#define     SMALL_STR       HIC"Ğ¡"NOR
-#define     SINGLE_STR      HIY"µ¥"NOR
-#define     DOUBLE_STR      HIM"Ë«"NOR
-#define     BAOZI_STR       HIR"±ª×Ó"NOR
+#define     BIG_STR         HIG"å¤§"NOR      // å¯ä»¥åœ¨é€™è£¡æ”¹ä¸€ä¸‹é¡è‰²ã€‚åªæ˜¯æè¿°è€Œå·²ã€‚
+#define     SMALL_STR       HIC"å°"NOR
+#define     SINGLE_STR      HIY"å–®"NOR
+#define     DOUBLE_STR      HIM"é›™"NOR
+#define     BAOZI_STR       HIR"è±¹å­"NOR
 
 // ---------------- game vars (save) ----------------
 int times_flag = 1;
-int BetOn = 1;                              // ÔÊĞíÑº×¢
+int BetOn = 1;                              // å…è¨±æŠ¼æ³¨
 mapping game_info = ([
     "comp_da"       : 0,
     "comp_xiao"     : 0,
@@ -58,7 +58,7 @@ mapping game_info = ([
     "percent_xiao"  : DEF_PERCENT,
     "percent_dan"   : DEF_PERCENT,
     "percent_shuang": DEF_PERCENT,
-    "percent_baozi" : BAOZI_PERCENT,        // ¿ÉÒÔÑº±ª×Ó£¬¹Ì¶¨ÅâÂÊ¡£
+    "percent_baozi" : BAOZI_PERCENT,        // å¯ä»¥æŠ¼è±¹å­ï¼Œå›ºå®šè³ ç‡ã€‚
     "last_msg_dx"   : "",
     "last_msg_ds"   : "",
 ]);
@@ -67,8 +67,8 @@ mapping log_info = ([
     "total_pay" : 0,
     "total_bet_g" : 0,
     "total_pay_g" : 0,
-    "system_reward_g": 0,   // ÏµÍ³¶îÍâ½±ÀøµÄ£¬ÓÉ mewiz Ö¸Áî¼°ÌØ¶¨Î×Ê¦ÉèÖÃ¡£
-    "system_eat"  : 0,      // ÏµÍ³³ÔµôµÄ¡­¡­
+    "system_reward_g": 0,   // ç³»çµ±é¡å¤–çå‹µçš„ï¼Œç”± mewiz æŒ‡ä»¤åŠç‰¹å®šå·«å¸«è¨­ç½®ã€‚
+    "system_eat"  : 0,      // ç³»çµ±åƒæ‰çš„â€¦â€¦
     "system_eat_g": 0,
 ]);
 // ---------------- game vars (no save) --------------
@@ -119,16 +119,16 @@ protected string  check_percent_str   ();
 
 
 // ####################################################
-// #################  ÒÔÏÂ¿ªÊ¼ÕıÊ½²¿·Ö ################
+// #################  ä»¥ä¸‹é–‹å§‹æ­£å¼éƒ¨åˆ† ################
 // ####################################################
-// ±£³Ö·¿¼ä²»±»ÏµÍ³ clean_up()
+// ä¿æŒæˆ¿é–“ä¸è¢«ç³»çµ± clean_up()
 void reset()
 {
     ::reset();
     set("no_clean_up", 1 );
 }
 
-// ´æ´¢ÎÄ¼şÎ»ÖÃ
+// å­˜å„²æ–‡ä»¶ä½ç½®
 string query_save_file()
 {
     if( !SAVE_ON )
@@ -136,27 +136,27 @@ string query_save_file()
     return DUFANG_SAVE_FILE;
 }
 
-// »ñµÃ id µÄÑº×¢±íµÄ×Ö´®
+// ç²å¾— id çš„æŠ¼æ³¨è¡¨çš„å­—ä¸²
 string check_beted_str( string id )
 {
     string msg;
     msg = "";
     if( bet_info[ id + "-baozi" ] )
-        msg += "±¾¾ÖÑº  "+BAOZI_STR+"£º" + bet_info[ id + "-baozi" ] + "\n";
+        msg += "æœ¬å±€æŠ¼  "+BAOZI_STR+"ï¼š" + bet_info[ id + "-baozi" ] + "\n";
     if( bet_info[ id + "-da" ] )
-        msg += "±¾¾ÖÑº  "+BIG_STR+"£º" + bet_info[ id + "-da" ] + "\n";
+        msg += "æœ¬å±€æŠ¼  "+BIG_STR+"ï¼š" + bet_info[ id + "-da" ] + "\n";
     if( bet_info[ id + "-xiao" ] )
-        msg += "±¾¾ÖÑº  "+SMALL_STR+"£º" + bet_info[ id + "-xiao" ] + "\n";
+        msg += "æœ¬å±€æŠ¼  "+SMALL_STR+"ï¼š" + bet_info[ id + "-xiao" ] + "\n";
     if( bet_info[ id + "-dan" ] )
-        msg += "±¾¾ÖÑº  "+SINGLE_STR+"£º" + bet_info[ id + "-dan" ] + "\n";
+        msg += "æœ¬å±€æŠ¼  "+SINGLE_STR+"ï¼š" + bet_info[ id + "-dan" ] + "\n";
     if( bet_info[ id + "-shuang" ] )
-        msg += "±¾¾ÖÑº  "+DOUBLE_STR+"£º" + bet_info[ id + "-shuang" ] + "\n";
+        msg += "æœ¬å±€æŠ¼  "+DOUBLE_STR+"ï¼š" + bet_info[ id + "-shuang" ] + "\n";
     if( msg != "" )
-        msg = "ÒÔÏÂÊÇ±¾¾Ö "+id+" µÄÑº×¢£º\n" + msg;
+        msg = "ä»¥ä¸‹æ˜¯æœ¬å±€ "+id+" çš„æŠ¼æ³¨ï¼š\n" + msg;
     return msg;
 }
 
-// Ö§¸¶½±½ğµÈ¡£
+// æ”¯ä»˜çé‡‘ç­‰ã€‚
 protected void finish_bingo_check()
 {
     object *inv, ob;
@@ -168,54 +168,54 @@ protected void finish_bingo_check()
         return;
     if( jp_bingo && jackpot > 0 )
     {
-        tell_room( this_object(), BLINK+HIM"ÖĞÁËĞÒÔË½±½ğ£¡£¡£¡±¾¾ÖĞÒÔË½±½ğÃ¿Î»×î¸ßÅÉ²Ê "+jackpot+" (coin)£¬ÓĞÑº×¢ÑºÖĞµÄÍæ¼Ò¶¼ÄÜ»ñµÃºìÀû£¡\n"NOR);
+        tell_room( this_object(), BLINK+HIM"ä¸­äº†å¹¸é‹çé‡‘ï¼ï¼ï¼æœ¬å±€å¹¸é‹çé‡‘æ¯ä½æœ€é«˜æ´¾å½© "+jackpot+" (coin)ï¼Œæœ‰æŠ¼æ³¨æŠ¼ä¸­çš„ç©å®¶éƒ½èƒ½ç²å¾—ç´…åˆ©ï¼\n"NOR);
     }
     foreach( ob in inv )
     {
         if( !userp(ob) || !living(ob) )
             continue;
         id = ob->query("id");
-        if( (bet=bet_info[ id + "-" + game_info["opened1"]]) > 0 )     // Ñº´óĞ¡ÖĞÁË(»ò±ª×ÓÖĞÁË)¡£
+        if( (bet=bet_info[ id + "-" + game_info["opened1"]]) > 0 )     // æŠ¼å¤§å°ä¸­äº†(æˆ–è±¹å­ä¸­äº†)ã€‚
         {
-            bet *= 100;     // ×ª³É coin
-            // ·ÀÖ¹Òç³ö£¬µÍÅâÂÊÊ±Ö±½Ó¼ÆËã£¬¸ßÅâÂÊÊ±ÏÈ³ıºó³Ë¡£
+            bet *= 100;     // è½‰æˆ coin
+            // é˜²æ­¢æº¢å‡ºï¼Œä½è³ ç‡æ™‚ç›´æ¥è¨ˆç®—ï¼Œé«˜è³ ç‡æ™‚å…ˆé™¤å¾Œä¹˜ã€‚
             if( game_info["percent_"+game_info["opened1"]] <= 500 )
-                bingo = bet + (bet * game_info[ "percent_" + game_info[ "opened1"] ] / 100);    // ¼ÆËãÓ¦µÃ½±½ğ
+                bingo = bet + (bet * game_info[ "percent_" + game_info[ "opened1"] ] / 100);    // è¨ˆç®—æ‡‰å¾—çé‡‘
             else
                 bingo = bet + (bet / 100 * game_info[ "percent_" + game_info[ "opened1"] ]);
-            ob->add( "balance", bingo );        // Ö§¸¶
-            log_info[ "total_pay" ] += bingo;   // ¼ÇÂ¼
-            message_vision( "$NÑºÏÂ "+(bet/100)+" Á½°×ÒøÂò "+type_str[game_info["opened1"]]+" £¬»ñµÃ½±½ğ"
-                +MONEY_D->money_str( bingo-bet )+"(Ç®×¯×Ô¶¯×ªÕÊ£¬±¾½ğÍ¬Ê±·µ»¹)¡£\n", ob );      // ±¨¸æ
+            ob->add( "balance", bingo );        // æ”¯ä»˜
+            log_info[ "total_pay" ] += bingo;   // è¨˜éŒ„
+            message_vision( "$NæŠ¼ä¸‹ "+(bet/100)+" å…©ç™½éŠ€è²· "+type_str[game_info["opened1"]]+" ï¼Œç²å¾—çé‡‘"
+                +MONEY_D->money_str( bingo-bet )+"(éŒ¢èŠè‡ªå‹•è½‰å¸³ï¼Œæœ¬é‡‘åŒæ™‚è¿”é‚„)ã€‚\n", ob );      // å ±å‘Š
             if( undefinedp( bet_info_jp[id] ) )
-                bet_info_jp[ id ] = bet/100;    // ×ª»Ø silver
+                bet_info_jp[ id ] = bet/100;    // è½‰å› silver
             else
-                bet_info_jp[ id ] += bet/100;    // ×ª»Ø silver
+                bet_info_jp[ id ] += bet/100;    // è½‰å› silver
         }
-        if( (bet=bet_info[ id + "-" + game_info["opened2"]]) > 0 )     // Ñºµ¥Ë«ÖĞÁË¡£
+        if( (bet=bet_info[ id + "-" + game_info["opened2"]]) > 0 )     // æŠ¼å–®é›™ä¸­äº†ã€‚
         {
-            bet *= 100;     // ×ª³É coin
-            // ·ÀÖ¹Òç³ö£¬µÍÅâÂÊÊ±Ö±½Ó¼ÆËã£¬¸ßÅâÂÊÊ±ÏÈ³ıºó³Ë¡£
+            bet *= 100;     // è½‰æˆ coin
+            // é˜²æ­¢æº¢å‡ºï¼Œä½è³ ç‡æ™‚ç›´æ¥è¨ˆç®—ï¼Œé«˜è³ ç‡æ™‚å…ˆé™¤å¾Œä¹˜ã€‚
             if( game_info["percent_"+game_info["opened2"]] < 300 )
-                bingo = bet + (bet * game_info[ "percent_" + game_info[ "opened2"] ] / 100);    // ¼ÆËãÓ¦µÃ½±½ğ
+                bingo = bet + (bet * game_info[ "percent_" + game_info[ "opened2"] ] / 100);    // è¨ˆç®—æ‡‰å¾—çé‡‘
             else
                 bingo = bet + (bet / 100 * game_info[ "percent_" + game_info[ "opened2"] ]);
-            ob->add( "balance", bingo );        // Ö§¸¶
-            log_info[ "total_pay" ] += bingo;   // ¼ÇÂ¼
-            message_vision( "$NÑºÏÂ "+(bet/100)+" Á½°×ÒøÂò "+type_str[game_info["opened2"]]+" £¬»ñµÃ½±½ğ"
-                +MONEY_D->money_str( bingo-bet )+"(Ç®×¯×Ô¶¯×ªÕÊ£¬±¾½ğÍ¬Ê±·µ»¹)¡£\n", ob );      // ±¨¸æ
+            ob->add( "balance", bingo );        // æ”¯ä»˜
+            log_info[ "total_pay" ] += bingo;   // è¨˜éŒ„
+            message_vision( "$NæŠ¼ä¸‹ "+(bet/100)+" å…©ç™½éŠ€è²· "+type_str[game_info["opened2"]]+" ï¼Œç²å¾—çé‡‘"
+                +MONEY_D->money_str( bingo-bet )+"(éŒ¢èŠè‡ªå‹•è½‰å¸³ï¼Œæœ¬é‡‘åŒæ™‚è¿”é‚„)ã€‚\n", ob );      // å ±å‘Š
             if( undefinedp( bet_info_jp[id] ) )
-                bet_info_jp[ id ] = bet/100;    // ×ª»Ø silver
+                bet_info_jp[ id ] = bet/100;    // è½‰å› silver
             else
-                bet_info_jp[ id ] += bet/100;    // ×ª»Ø silver
+                bet_info_jp[ id ] += bet/100;    // è½‰å› silver
         }
     }
-    // Í³¼Æ²Ê½ğÎÊÌâ
+    // çµ±è¨ˆå½©é‡‘å•é¡Œ
     if( jp_bingo && jackpot > 0 )
     {
         if( !sizeof( bet_info_jp ) )
         {
-            tell_room( this_object(), HIM"²»¹ıºÜ¿ÉÏ§£¬±¾¾ÖÓÎÏ·ÎŞÈËÑºÖĞ£¬²Ê½ğÎŞÈË»ñµÃ£¡\n"NOR );
+            tell_room( this_object(), HIM"ä¸éå¾ˆå¯æƒœï¼Œæœ¬å±€éŠæˆ²ç„¡äººæŠ¼ä¸­ï¼Œå½©é‡‘ç„¡äººç²å¾—ï¼\n"NOR );
         }
         else
         {
@@ -226,22 +226,22 @@ protected void finish_bingo_check()
             {
                 if( !(ob = find_player(t)) || environment(ob) != this_object() )
                     continue;
-                bet = bet_info_jp[ t ];             // ¸ÃÍæ¼Ò×Ü bet ÖĞÊıÁ¿
-                if( bet > 5000 )                   // ×ÜÁ¿ 5000 ÒÔÉÏ¿ÉÒÔµÃµ½È«¶î½±½ğ
+                bet = bet_info_jp[ t ];             // è©²ç©å®¶ç¸½ bet ä¸­æ•¸é‡
+                if( bet > 5000 )                   // ç¸½é‡ 5000 ä»¥ä¸Šå¯ä»¥å¾—åˆ°å…¨é¡çé‡‘
                     percent = 100;
                 else
                     percent = bet * 100 / 5000;
                 if( percent < 1 )
-                    percent = 1;                    // µÃ³ö°Ù·Ö±È
-                bingo = jackpot / 100 * percent;    // ×îÖÕ½±½ğ(coin)
-                message_vision( HIY"          $N"HIY"»ñµÃÁË "+HIR+percent+"%"HIY" µÄ²Ê½ğ£º"
-                    +MONEY_D->money_str( bingo )+"£¡\n"NOR, ob);
-                ob->add( "balance", bingo );        // Ö§¸¶
-                log_info[ "total_pay" ] += bingo;   // ¼ÇÂ¼
+                    percent = 1;                    // å¾—å‡ºç™¾åˆ†æ¯”
+                bingo = jackpot / 100 * percent;    // æœ€çµ‚çé‡‘(coin)
+                message_vision( HIY"          $N"HIY"ç²å¾—äº† "+HIR+percent+"%"HIY" çš„å½©é‡‘ï¼š"
+                    +MONEY_D->money_str( bingo )+"ï¼\n"NOR, ob);
+                ob->add( "balance", bingo );        // æ”¯ä»˜
+                log_info[ "total_pay" ] += bingo;   // è¨˜éŒ„
             }
         }
     }
-    // ½« log ¼ÇÂ¼»»³É gold µ¥Î»ÒÔ·ÀÖ¹Òç³öµÄÎÊÌâ¡£
+    // å°‡ log è¨˜éŒ„æ›æˆ gold å–®ä½ä»¥é˜²æ­¢æº¢å‡ºçš„å•é¡Œã€‚
     if( log_info["total_bet"] >= 10000 )
     {
         log_info["total_bet_g"] += log_info["total_bet"] / 10000;
@@ -254,7 +254,7 @@ protected void finish_bingo_check()
     }
 }
 
-// »ñµÃÏµÍ³ÏÖÔÚÓ®Ç®µÄÊıÁ¿
+// ç²å¾—ç³»çµ±ç¾åœ¨è´éŒ¢çš„æ•¸é‡
 int query_system_win()
 {
     return log_info["system_reward_g"]
@@ -269,11 +269,11 @@ protected void new_game()
     bet_info_jp = ([ ]);
     df_player = ({ });
     jackpot = 0;
-    // ±¾¾Ö×ÜÑº×¢¶îÒª³éÒ»²¿·Ö×÷ÏµÍ³³ÔµôµÄ¡£
+    // æœ¬å±€ç¸½æŠ¼æ³¨é¡è¦æŠ½ä¸€éƒ¨åˆ†ä½œç³»çµ±åƒæ‰çš„ã€‚
     if( SYSTEM_EAT_P > 0 )
     {
         int tmp;
-        tmp = this_bet / 1000 * SYSTEM_EAT_P;       // ÕâÊÇÒ»¸öÇ§·ÖÂÊ¡£
+        tmp = this_bet / 1000 * SYSTEM_EAT_P;       // é€™æ˜¯ä¸€å€‹åƒåˆ†ç‡ã€‚
         if( tmp < 1 )
             tmp = 1;
         log_info["system_eat"] += tmp;
@@ -300,29 +300,29 @@ protected void game_start( int stat )
     {
         int win = query_system_win();
         int t = 1;
-        tell_room( this_object(), HIW"µÚ "+times_flag+" ¾Ö¶Ä¾Ö¿ª±¦£¬Âò¶¨ÀëÊÖ£¡\n"NOR );
-        // ÏµÍ³Ó®ÁËÒ»¶¨ÊıÁ¿£¬¾Í»á¿ªÆô²Ê½ğ½±Àø¡£»òÕß»áÒÔ½ÏµÍ¸ÅÂÊ¿ªÆôĞ¡½±²Ê½ğ¡£
+        tell_room( this_object(), HIW"ç¬¬ "+times_flag+" å±€è³­å±€é–‹å¯¶ï¼Œè²·å®šé›¢æ‰‹ï¼\n"NOR );
+        // ç³»çµ±è´äº†ä¸€å®šæ•¸é‡ï¼Œå°±æœƒé–‹å•Ÿå½©é‡‘çå‹µã€‚æˆ–è€…æœƒä»¥è¼ƒä½æ¦‚ç‡é–‹å•Ÿå°çå½©é‡‘ã€‚
         if( (JACKPOT_ON && !random( JACKPOT_RANDOM ) && win > JACKPOT_LIMIT)
          || (JACKPOT_ON && !random(JACKPOT_RANDOM*10))
         )
         {
             jp_bingo = 0;
-            // ²Ê½ğ¶îÊÇ win ¶îµÄ 1/20
+            // å½©é‡‘é¡æ˜¯ win é¡çš„ 1/20
             jackpot = 1 + random( win/20 );
-            // ×î¶à
+            // æœ€å¤š
             if( jackpot > JACKPOT_MAX )
                 jackpot = JACKPOT_MAX - random(JACKPOT_MAX/20);
-            // ×îÉÙ
+            // æœ€å°‘
             if( jackpot < JACKPOT_MIN )
                 jackpot = JACKPOT_MIN + random(JACKPOT_MIN/20);
-            jackpot *= 10000;       // »»³É coin
+            jackpot *= 10000;       // æ›æˆ coin
             if( win > JACKPOT_LIMIT*3 )
-                jp_num = 6 + random( 10 );      // Õâ¸öÏà¶ÔÈİÒ×ÖĞÒ»Ğ©¡£
+                jp_num = 6 + random( 10 );      // é€™å€‹ç›¸å°å®¹æ˜“ä¸­ä¸€äº›ã€‚
             else
                 jp_num = 3 + random(16);
             tell_room( this_object(),
-                sprintf( "\n                 %s¡ï%s¡î%s¡ï %sĞÒ%sÔË  "HIY"%d  %s²Ê%s½ğ %s¡ï%s¡î%s¡ï\n"
-                    +HIW"         ±¾¾ÖÈô¿ª³ö "HIR"%d"HIW" µã£¬ÔòËùÓĞÂòÖĞµÄÍæ¼Ò¶¼ÓĞ»ú»á»ñµÃ½±½ğ£¡\n\n"NOR,
+                sprintf( "\n                 %sâ˜…%sâ˜†%sâ˜… %så¹¸%sé‹  "HIY"%d  %så½©%sé‡‘ %sâ˜…%sâ˜†%sâ˜…\n"
+                    +HIW"         æœ¬å±€è‹¥é–‹å‡º "HIR"%d"HIW" é»ï¼Œå‰‡æ‰€æœ‰è²·ä¸­çš„ç©å®¶éƒ½æœ‰æ©Ÿæœƒç²å¾—çé‡‘ï¼\n\n"NOR,
                         random_color(), random_color(), random_color(),
                         random_color(), random_color(),
                         jackpot,
@@ -333,7 +333,7 @@ protected void game_start( int stat )
             );
             t = 5;
         }
-        call_out( "game_start", t, 1 );     // t Ãëºó¼ÌĞø
+        call_out( "game_start", t, 1 );     // t ç§’å¾Œç¹¼çºŒ
         return;
     }
     if( stat == 1 )
@@ -343,21 +343,21 @@ protected void game_start( int stat )
         t2 = 1 + random( 6 );
         t3 = 1 + random( 6 );
         total = t1 + t2 + t3;
-        msg = "µÚ "+times_flag+" ¾Ö¶Ä¾Ö¿ª³ö£º"
-            + chinese_number( t1 ) + "¡¢"
-            + chinese_number( t2 ) + "¡¢"
-            + chinese_number( t3 ) + "£¬";
+        msg = "ç¬¬ "+times_flag+" å±€è³­å±€é–‹å‡ºï¼š"
+            + chinese_number( t1 ) + "ã€"
+            + chinese_number( t2 ) + "ã€"
+            + chinese_number( t3 ) + "ï¼Œ";
         if( t1 == t2 && t1 == t3 )
         {
-            msg += BAOZI_STR+ HIW"£¬Í¨³Ô¡°´óĞ¡µ¥Ë«¡±£¡";
-            game_info[ "opened1" ] = "baozi";       // ÉèÖÃÒ»¸ö¾ÍĞĞ
+            msg += BAOZI_STR+ HIW"ï¼Œé€šåƒâ€œå¤§å°å–®é›™â€ï¼";
+            game_info[ "opened1" ] = "baozi";       // è¨­ç½®ä¸€å€‹å°±è¡Œ
             game_info[ "opened2" ] = "-----";       //
         }
         else
         {
-            msg += chinese_number( total )+"µã  "
+            msg += chinese_number( total )+"é»  "
                 + (total < 11 ? SMALL_STR : BIG_STR) + HIW "  "
-                +"£¬±¨  "+(total % 2 ? SINGLE_STR : DOUBLE_STR )+ HIW"  Êı£¡";
+                +"ï¼Œå ±  "+(total % 2 ? SINGLE_STR : DOUBLE_STR )+ HIW"  æ•¸ï¼";
             if( total < 11 )
                 game_info[ "opened1" ] = "xiao";
             else
@@ -368,20 +368,20 @@ protected void game_start( int stat )
                 game_info[ "opened2" ] = "shuang";
         }
         tell_room( this_object(), HIW"\n" + msg + "\n\n"NOR );
-        game_info[ "last_opened_msg" ] = msg;   // °ÑĞÅÏ¢¼ÇÂ¼ÏÂÀ´¡£
-        call_out( "game_start", 1, 2 );         // 1Ãëºó¼ÌĞø
+        game_info[ "last_opened_msg" ] = msg;   // æŠŠä¿¡æ¯è¨˜éŒ„ä¸‹ä¾†ã€‚
+        call_out( "game_start", 1, 2 );         // 1ç§’å¾Œç¹¼çºŒ
         return;
     }
     else
     {
         if( total == jp_num )
             jp_bingo = 1;
-        finish_bingo_check();      // Ö§¸¶½±½ğ¡£
+        finish_bingo_check();      // æ”¯ä»˜çé‡‘ã€‚
 
-        // ¼ÆËãĞÂµÄÅâÂÊ¡£Èç¹ûÊÇ±ª×Ó£¬Ôò±£³ÖÅâÂÊ¡£
+        // è¨ˆç®—æ–°çš„è³ ç‡ã€‚å¦‚æœæ˜¯è±¹å­ï¼Œå‰‡ä¿æŒè³ ç‡ã€‚
         if( game_info[ "opened1" ] != "baozi" )
         {
-            // ´óĞ¡Á¬¿ª(»òÕßÁ¬ĞøÍ¨É±)
+            // å¤§å°é€£é–‹(æˆ–è€…é€£çºŒé€šæ®º)
             if( game_info[ "last_opened1" ] == game_info[ "opened1" ] )
             {
                 game_info[ "percent_" + game_info[ "opened1" ] ] += ADD_PERCENT;
@@ -389,7 +389,7 @@ protected void game_start( int stat )
                 game_info[ "comp_" + game_info[ "opened1" ] ] ++;
                 game_info[ "comp_" +  type_opp[game_info[ "opened1" ]] ] = 0;
             }
-            else        // ·ñÔò»Ö¸´¡£
+            else        // å¦å‰‡æ¢å¾©ã€‚
             {
                 game_info[ "percent_da" ] = DEF_PERCENT;
                 game_info[ "percent_xiao" ] = DEF_PERCENT;
@@ -397,7 +397,7 @@ protected void game_start( int stat )
                 game_info[ "comp_" + type_opp[game_info[ "opened1" ]] ] = 0;
 
             }
-            // µ¥Ë«Á¬¿ª
+            // å–®é›™é€£é–‹
             if( game_info[ "last_opened2" ] == game_info[ "opened2" ] )
             {
                 game_info[ "percent_" + game_info[ "opened2" ] ] += ADD_PERCENT;
@@ -414,9 +414,9 @@ protected void game_start( int stat )
             }
             game_info[ "last_opened1" ] = game_info[ "opened1" ];
             game_info[ "last_opened2" ] = game_info[ "opened2" ];
-            // ¼ÇÂ¼ÉÏÅÌµÄĞÅÏ¢¡£
+            // è¨˜éŒ„ä¸Šç›¤çš„ä¿¡æ¯ã€‚
         }
-        // ¼ÇÂ¼×Ü¹²¿ªµÄ´ÎÊı¡£
+        // è¨˜éŒ„ç¸½å…±é–‹çš„æ¬¡æ•¸ã€‚
         if( !game_info[ "total_opened_" + game_info[ "opened1" ]]  )
             game_info["total_opened_" + game_info[ "opened1" ]] = 1;
         else
@@ -425,7 +425,7 @@ protected void game_start( int stat )
             game_info["total_opened_" + game_info[ "opened2" ]] = 1;
         else
             game_info["total_opened_" + game_info[ "opened2" ]] ++;
-        if( 1 )     // ¸ã×ßÊÆÍ¼
+        if( 1 )     // æèµ°å‹¢åœ–
         {
             string t;
             // dx
@@ -460,9 +460,9 @@ protected void game_start( int stat )
 void create()
 {
     restore();
-    set("short","¶Ä·»");
-    //set("long", (: query_now_long :) );  yh lib ²»Ö§³ÖÕâÑù set long. ÎªÁË¼æÈİ£¬Í³Ò»¸ü¸Ä¡£
-    set( "long", query_now_long() );       // Ã¿¾ÖÓÎÏ·½áÊøºó»¹Òª¶îÍâ set Ò»´Î£¬ÒÔ¸Ä±ä long().
+    set("short","è³­åŠ");
+    //set("long", (: query_now_long :) );  yh lib ä¸æ”¯æŒé€™æ¨£ set long. ç‚ºäº†å…¼å®¹ï¼Œçµ±ä¸€æ›´æ”¹ã€‚
+    set( "long", query_now_long() );       // æ¯å±€éŠæˆ²çµæŸå¾Œé‚„è¦é¡å¤– set ä¸€æ¬¡ï¼Œä»¥æ”¹è®Š long().
     set("exits",([
         "east" : "/d/city/tree2",
     ]));
@@ -488,16 +488,16 @@ string query_now_long2()
 {
     string msg = "";
     if( !BetOn )
-        msg += HIR"                         ¡¾¶Ä·»ÔİÍ£ÓªÒµ¡¿\n\n"NOR;
+        msg += HIR"                         ã€è³­åŠæš«åœç‡Ÿæ¥­ã€‘\n\n"NOR;
     if( game_info[ "last_opened_msg" ] )
-        msg += BBLU + HIW"  ÉÏ¾Ö£º" + filter_color(game_info[ "last_opened_msg" ]) + "  \n"NOR;
+        msg += BBLU + HIW"  ä¸Šå±€ï¼š" + filter_color(game_info[ "last_opened_msg" ]) + "  \n"NOR;
     else
-        msg += BBLU + HIW"  ÉÏ¾Ö£º                                                            \n"NOR;
-    msg += "      "BCYN + HIW" A  Ä¿Ç°ÅâÂÊ£º    [´ó]  Á¬¿ª "+game_info[ "comp_da" ]+" ¾Ö  ÅâÂÊ "+(100+game_info[ "percent_da" ])+"%    \n"NOR;
-    msg += "      "BCYN + HIW" B  Ä¿Ç°ÅâÂÊ£º    [Ğ¡]  Á¬¿ª "+game_info[ "comp_xiao" ]+" ¾Ö  ÅâÂÊ "+(100+game_info[ "percent_xiao" ])+"%    \n"NOR;
-    msg += "      "BCYN + HIW" C  Ä¿Ç°ÅâÂÊ£º    [µ¥]  Á¬¿ª "+game_info[ "comp_dan" ]+" ¾Ö  ÅâÂÊ "+(100+game_info[ "percent_dan" ])+"%    \n"NOR;
-    msg += "      "BCYN + HIW" D  Ä¿Ç°ÅâÂÊ£º    [Ë«]  Á¬¿ª "+game_info[ "comp_shuang" ]+" ¾Ö  ÅâÂÊ "+(100+game_info[ "percent_shuang" ])+"%    \n"NOR;
-    msg += BBLU+HIW"  ´óĞ¡£º[ " + sprintf( "%-20s",game_info["last_msg_dx"]) + "]      µ¥Ë«£º[ "+sprintf( "%-20s",game_info["last_msg_ds"])+"]  \n"NOR;
+        msg += BBLU + HIW"  ä¸Šå±€ï¼š                                                            \n"NOR;
+    msg += "      "BCYN + HIW" A  ç›®å‰è³ ç‡ï¼š    [å¤§]  é€£é–‹ "+game_info[ "comp_da" ]+" å±€  è³ ç‡ "+(100+game_info[ "percent_da" ])+"%    \n"NOR;
+    msg += "      "BCYN + HIW" B  ç›®å‰è³ ç‡ï¼š    [å°]  é€£é–‹ "+game_info[ "comp_xiao" ]+" å±€  è³ ç‡ "+(100+game_info[ "percent_xiao" ])+"%    \n"NOR;
+    msg += "      "BCYN + HIW" C  ç›®å‰è³ ç‡ï¼š    [å–®]  é€£é–‹ "+game_info[ "comp_dan" ]+" å±€  è³ ç‡ "+(100+game_info[ "percent_dan" ])+"%    \n"NOR;
+    msg += "      "BCYN + HIW" D  ç›®å‰è³ ç‡ï¼š    [é›™]  é€£é–‹ "+game_info[ "comp_shuang" ]+" å±€  è³ ç‡ "+(100+game_info[ "percent_shuang" ])+"%    \n"NOR;
+    msg += BBLU+HIW"  å¤§å°ï¼š[ " + sprintf( "%-20s",game_info["last_msg_dx"]) + "]      å–®é›™ï¼š[ "+sprintf( "%-20s",game_info["last_msg_ds"])+"]  \n"NOR;
     msg += check_percent_str();
     return msg + "\n";
 }
@@ -506,8 +506,8 @@ string query_now_long()
 {
     string msg;
 
-    msg ="ÕâÀïÊÇÍõÕß¹éÀ´µÄÒ»¼ÒĞ¡¶Ä·»£¬±ğ¿´Ëü¹æÄ£²»´ó£¬È´³£³£ÓĞĞí¶àÇ§½ğ¸»ºÀ
-À´ÕâÀï³¹Ò¹ºÀ¶Ä¡£¶ÔÃÅµÄÇ½ÉÏÌû×ÅÒ»ÕÅ²¼¸æ(bugao)¡£\n\n";
+    msg ="é€™è£¡æ˜¯ç‹è€…æ­¸ä¾†çš„ä¸€å®¶å°è³­åŠï¼Œåˆ¥çœ‹å®ƒè¦æ¨¡ä¸å¤§ï¼Œå»å¸¸å¸¸æœ‰è¨±å¤šåƒé‡‘å¯Œè±ª
+ä¾†é€™è£¡å¾¹å¤œè±ªè³­ã€‚å°é–€çš„ç‰†ä¸Šå¸–è‘—ä¸€å¼µå¸ƒå‘Š(bugao)ã€‚\n\n";
     msg += query_now_long2();
     return msg;
 }
@@ -518,30 +518,30 @@ string look_bugao()
     string msg;
     msg =
 "**********************************************************
-    ¶Ä·»ÓÎÏ·ËµÃ÷  "HIC+DUFANG_VERSION"  Naihe@ÉñÖİ MUD"NOR"
+    è³­åŠéŠæˆ²èªªæ˜  "HIC+DUFANG_VERSION"  Naihe@ç¥å· MUD"NOR"
 
-    ±¾¶Ä·»Ö±½ÓÊ¹ÓÃÇ®×¯×ªÕÊ¸¶¿î£¬Éè÷»×Ó¶Ä¾Ö¡£
+    æœ¬è³­åŠç›´æ¥ä½¿ç”¨éŒ¢èŠè½‰å¸³ä»˜æ¬¾ï¼Œè¨­éª°å­è³­å±€ã€‚
 
-    Èı¿Å÷»×Ó£¬Ñº×¢ºó "+WAIT_TIME+" Ãë¿ª½±£¬ÑºÖĞ¼´½±¡£
-    ¿ÉÒÔÑº¡°´ó¡±¡¢¡°Ğ¡¡±¡¢¡°µ¥¡±¡¢¡°Ë«¡±¡¢¡°±ª×Ó¡±¹²ÎåÏî¡£
+    ä¸‰é¡†éª°å­ï¼ŒæŠ¼æ³¨å¾Œ "+WAIT_TIME+" ç§’é–‹çï¼ŒæŠ¼ä¸­å³çã€‚
+    å¯ä»¥æŠ¼â€œå¤§â€ã€â€œå°â€ã€â€œå–®â€ã€â€œé›™â€ã€â€œè±¹å­â€å…±äº”é …ã€‚
 
-    4,6,8,10,12,14,16 ÎªË«£¬5,7,9,11,13,15,17 Îªµ¥¡£
-    4-10 ÎªĞ¡£¬11-17 Îª´ó¡£
-    Èı¿Å÷»×Ó¶¼Ò»ÑùÊ±Îª¡°±ª×Ó¡±£¬Í¨³Ô´óĞ¡µ¥Ë«¡ª¡ªµ«Åâ³öÑº
-    ÖĞ±ª×ÓµÄ×¢½ğ£¬ÅâÂÊÎª¹Ì¶¨µÄ "+(game_info["percent_baozi"]+100)+"%¡£
+    4,6,8,10,12,14,16 ç‚ºé›™ï¼Œ5,7,9,11,13,15,17 ç‚ºå–®ã€‚
+    4-10 ç‚ºå°ï¼Œ11-17 ç‚ºå¤§ã€‚
+    ä¸‰é¡†éª°å­éƒ½ä¸€æ¨£æ™‚ç‚ºâ€œè±¹å­â€ï¼Œé€šåƒå¤§å°å–®é›™â”€â”€ä½†è³ å‡ºæŠ¼
+    ä¸­è±¹å­çš„æ³¨é‡‘ï¼Œè³ ç‡ç‚ºå›ºå®šçš„ "+(game_info["percent_baozi"]+100)+"%ã€‚
 
-    ÆäËüÅâÂÊÃ¿¾ÖÁí±¨£¬Í¶×¢·¶Î§ 1 - 10000 Á½"HIW"°×Òø"NOR"¡£
+    å…¶å®ƒè³ ç‡æ¯å±€å¦å ±ï¼ŒæŠ•æ³¨èŒƒåœ 1 - 10000 å…©"HIW"ç™½éŠ€"NOR"ã€‚
 
-    "HIY"Ñº×¢£º   <bet ÊıÁ¿ to da|xiao|dan|shuang|baozi>"NOR"
-             ÄãÒ²¿ÉÒÔÓÃ  a|b|c|d|e  À´¼ò»¯ÊäÈëÉÏÃæµÄÀàĞÍ¡£
-    ²é¿´£º   <chk ID>
-    ¼´¿ª£º   <gogo>
+    "HIY"æŠ¼æ³¨ï¼š   <bet æ•¸é‡ to da|xiao|dan|shuang|baozi>"NOR"
+             ä½ ä¹Ÿå¯ä»¥ç”¨  a|b|c|d|e  ä¾†ç°¡åŒ–è¼¸å…¥ä¸Šé¢çš„é¡å‹ã€‚
+    æŸ¥çœ‹ï¼š   <chk ID>
+    å³é–‹ï¼š   <gogo>
 
-    ¼ÓÈë "HIW"Ëæ»ú²Ê½ğ"NOR" ÉèÖÃ£¡
-    Ã¿Î»Íæ¼ÒÒ»´Î¿ÉÄÜ»ñµÃ "+JACKPOT_MIN+" - "+JACKPOT_MAX+" »Æ½ğ£¡
+    åŠ å…¥ "HIW"éš¨æ©Ÿå½©é‡‘"NOR" è¨­ç½®ï¼
+    æ¯ä½ç©å®¶ä¸€æ¬¡å¯èƒ½ç²å¾— "+JACKPOT_MIN+" - "+JACKPOT_MAX+" é»ƒé‡‘ï¼
 **********************************************************\n";
     if( wizardp(me) )
-        msg += "ÄãÊÇÎ×Ê¦£¬¿ÉÒÔÊ¹ÓÃ <mewiz> Ö¸Áî½øĞĞÒ»Ğ©ÉèÖÃ¡£\n";
+        msg += "ä½ æ˜¯å·«å¸«ï¼Œå¯ä»¥ä½¿ç”¨ <mewiz> æŒ‡ä»¤é€²è¡Œä¸€äº›è¨­ç½®ã€‚\n";
     return msg;
 }
 void init()
@@ -557,8 +557,8 @@ string system_info_msg()
 {
     int t = query_system_win();
     return sprintf(
-        "(ÏµÍ³ÏÖÔÚ %s )  ×ÜÊÕÈë£º%d (¶îÍâ½±Àø£º%d)  ×ÜÖ§³ö£º%d (ÊÖĞøÏûºÄ£º%d)  Ó¯Óà£º%s%d"NOR"  ("HIY"»Æ½ğ"NOR")\n",
-        (BetOn ? HIG"¿ª·ÅÖĞ"NOR : HIR"¹Ø±ÕÖĞ"NOR),
+        "(ç³»çµ±ç¾åœ¨ %s )  ç¸½æ”¶å…¥ï¼š%d (é¡å¤–çå‹µï¼š%d)  ç¸½æ”¯å‡ºï¼š%d (æ‰‹çºŒæ¶ˆè€—ï¼š%d)  ç›ˆä½™ï¼š%s%d"NOR"  ("HIY"é»ƒé‡‘"NOR")\n",
+        (BetOn ? HIG"é–‹æ”¾ä¸­"NOR : HIR"é—œé–‰ä¸­"NOR),
         log_info["total_bet_g"],
         log_info["system_reward_g"],
         log_info["total_pay_g"],
@@ -568,8 +568,8 @@ string system_info_msg()
     );
 }
 
-// Î×Ê¦ÉèÖÃ¿ª·Å / Í£Ö¹ ÓÎÏ·£»»òÉèÖÃµ±Ç°×ÜÑº×¢ÊıÁ¿(¸üĞÂºóÖ®Ç°µÄ¼ÇÂ¼Ã»ÁË£¬°ÑËüÉèÖÃ»ØÀ´)¡£
-// naihe °´£ºÔö¼Ó²Ê½ğÉèÖÃÖ®ºó£¬Ñº×¢ÊıÁ¿ÓĞÏàµ±´óµÄÓ°Ïì£¬ËùÒÔ²»ÄÜÔÙËæÒâ¸ü¸ÄÁË¡£È¡ÏûÁËÕâ¸ö¹¦ÄÜ¡£
+// å·«å¸«è¨­ç½®é–‹æ”¾ / åœæ­¢ éŠæˆ²ï¼›æˆ–è¨­ç½®ç•¶å‰ç¸½æŠ¼æ³¨æ•¸é‡(æ›´æ–°å¾Œä¹‹å‰çš„è¨˜éŒ„æ²’äº†ï¼ŒæŠŠå®ƒè¨­ç½®å›ä¾†)ã€‚
+// naihe æŒ‰ï¼šå¢åŠ å½©é‡‘è¨­ç½®ä¹‹å¾Œï¼ŒæŠ¼æ³¨æ•¸é‡æœ‰ç›¸ç•¶å¤§çš„å½±éŸ¿ï¼Œæ‰€ä»¥ä¸èƒ½å†éš¨æ„æ›´æ”¹äº†ã€‚å–æ¶ˆäº†é€™å€‹åŠŸèƒ½ã€‚
 protected int do_mewiz( string arg )
 {
     object me = this_player();
@@ -578,10 +578,10 @@ protected int do_mewiz( string arg )
 
     if( !wizardp(me) )
         return 0;
-    help_msg = "Ö¸Áî²ÎÊıÈçÏÂ£º\n"
-        +"<mewiz reward Êı×Ö Ô­Òò>  -- ¸ø¶Ä·»ÏµÍ³¼ÓÈë¶îÍâ½±Àø×Ê½ğ£¬µ¥Î» gold ¡£\n"
-        +"                             Ò²¿ÉÒÔÊäÈë¸ºÊıÀ´³·ÏûËü¡£\n"
-        +"<mewiz stat>              -- ¿ª·Å / ¹Ø±Õ¶Ä·»\n";
+    help_msg = "æŒ‡ä»¤åƒæ•¸å¦‚ä¸‹ï¼š\n"
+        +"<mewiz reward æ•¸å­— åŸå› >  -- çµ¦è³­åŠç³»çµ±åŠ å…¥é¡å¤–çå‹µè³‡é‡‘ï¼Œå–®ä½ gold ã€‚\n"
+        +"                             ä¹Ÿå¯ä»¥è¼¸å…¥è² æ•¸ä¾†æ’¤æ¶ˆå®ƒã€‚\n"
+        +"<mewiz stat>              -- é–‹æ”¾ / é—œé–‰è³­åŠ\n";
     if( arg == "stat" )
     {
         if( BetOn )
@@ -590,46 +590,46 @@ protected int do_mewiz( string arg )
             BetOn = 1;
         if( LOG_ON )
         {
-            log_file( DUFANG_LOG_FILE, sprintf( "[%s] %s(%s)¸ü¸Ä¿ª·Å×´Ì¬£¬ÏÖÔÚÊÇ£º%d  ¡£\n",
+            log_file( DUFANG_LOG_FILE, sprintf( "[%s] %s(%s)æ›´æ”¹é–‹æ”¾ç‹€æ…‹ï¼Œç¾åœ¨æ˜¯ï¼š%d  ã€‚\n",
                 ctime_format(), me->query("name"), getuid(me), BetOn )
             );
         }
-        msg = sprintf( HIG"¡¾¹«¸æ¡¿%s(%s)½«³¤°²³Ç%s%sÁË£¬ÏÖÔÚ£º%s¡£\n"NOR,
-            me->query("name"), getuid(me), query("short"), (BetOn ? "¿ª·Å" : "¹Ø±Õ"),
-            (BetOn ? "Õı³£ÓªÒµ" : "Í£Ö¹ÓªÒµ")
+        msg = sprintf( HIG"ã€å…¬å‘Šã€‘%s(%s)å°‡é•·å®‰åŸ%s%säº†ï¼Œç¾åœ¨ï¼š%sã€‚\n"NOR,
+            me->query("name"), getuid(me), query("short"), (BetOn ? "é–‹æ”¾" : "é—œé–‰"),
+            (BetOn ? "æ­£å¸¸ç‡Ÿæ¥­" : "åœæ­¢ç‡Ÿæ¥­")
         );
         shout( msg );
-        write( msg + "Ö´ĞĞÍê±Ï£¬×´Ì¬ÒÑ×Ô¶¯´¢´æ¡£\n" );
-        set( "long", query_now_long() );       // Ã¿¾ÖÓÎÏ·½áÊøºó»¹Òª¶îÍâ set Ò»´Î£¬ÒÔ¸Ä±ä long().
+        write( msg + "åŸ·è¡Œå®Œç•¢ï¼Œç‹€æ…‹å·²è‡ªå‹•å„²å­˜ã€‚\n" );
+        set( "long", query_now_long() );       // æ¯å±€éŠæˆ²çµæŸå¾Œé‚„è¦é¡å¤– set ä¸€æ¬¡ï¼Œä»¥æ”¹è®Š long().
         save();
         return 1;
     }
     if( stringp(arg) && sscanf( arg, "reward %d %s", add, because ) == 2 )
     {
         if( strsrch( SYSTEM_WIZ_ID, "$" + getuid(me) + "$" ) == -1 )
-            return notify_fail("¶Ô²»Æğ£¬Õâ¸öÖ¸ÁîÖ»ÄÜÓÉÖ¸¶¨Î×Ê¦Ö´ĞĞ¡£\n"
-                "Ö¸¶¨Î×Ê¦£º"+ replace_string( SYSTEM_WIZ_ID, "$", " ") + "\n"
+            return notify_fail("å°ä¸èµ·ï¼Œé€™å€‹æŒ‡ä»¤åªèƒ½ç”±æŒ‡å®šå·«å¸«åŸ·è¡Œã€‚\n"
+                "æŒ‡å®šå·«å¸«ï¼š"+ replace_string( SYSTEM_WIZ_ID, "$", " ") + "\n"
             );
         if( add < -10000 || add > 10000 )
-            return notify_fail("Ôö¼ÓÁ¿·¶Î§ÊÇ -10000 ~ 10000 Ö®¼ä¡£\n");
+            return notify_fail("å¢åŠ é‡èŒƒåœæ˜¯ -10000 ~ 10000 ä¹‹é–“ã€‚\n");
         now = log_info["system_reward_g"];
         all = now + add;
         if( all < 0 )
-            return notify_fail("¶Ô²»Æğ£¬Äã²»ÄÜ½«½±Àø×Ê½ğ¼õµ½ 0 ÒÔÏÂ¡£\n"
-                "ÏÖÔÚÓĞ£º"+now+"  Ôö¼Ó£º"+add+"  ½á¹û£º"+all+"\n"
+            return notify_fail("å°ä¸èµ·ï¼Œä½ ä¸èƒ½å°‡çå‹µè³‡é‡‘æ¸›åˆ° 0 ä»¥ä¸‹ã€‚\n"
+                "ç¾åœ¨æœ‰ï¼š"+now+"  å¢åŠ ï¼š"+add+"  çµæœï¼š"+all+"\n"
             );
         if( LOG_ON )
         {
-            log_file( DUFANG_LOG_FILE, sprintf( "[%s] %s(%s)ÒòÎª(%s)×¢Èë¶îÍâ½±Àø×Ê½ğ %d £¬Ô­ %d -> %d ¡£\n",
+            log_file( DUFANG_LOG_FILE, sprintf( "[%s] %s(%s)å› ç‚º(%s)æ³¨å…¥é¡å¤–çå‹µè³‡é‡‘ %d ï¼ŒåŸ %d -> %d ã€‚\n",
                 ctime_format(), me->query("name"), getuid(me), because, add, now, all )
             );
         }
-        msg = sprintf( HIG"¡¾¹«¸æ¡¿%s(%s)¸ø³¤°²³Ç%s×¢ÈëÁË %d Á½»Æ½ğ×÷¶îÍâ½±Àø×Ê½ğ£¬Ô­Òò£º%s\n"NOR,
+        msg = sprintf( HIG"ã€å…¬å‘Šã€‘%s(%s)çµ¦é•·å®‰åŸ%sæ³¨å…¥äº† %d å…©é»ƒé‡‘ä½œé¡å¤–çå‹µè³‡é‡‘ï¼ŒåŸå› ï¼š%s\n"NOR,
             me->query("name"), getuid(me), query("short"), add, because,
         );
         log_info[ "system_reward_g" ] = all;
         shout( msg );
-        write( msg + "Ö´ĞĞÍê±Ï£¬×´Ì¬ÒÑ×Ô¶¯´¢´æ¡£\n" + system_info_msg() );
+        write( msg + "åŸ·è¡Œå®Œç•¢ï¼Œç‹€æ…‹å·²è‡ªå‹•å„²å­˜ã€‚\n" + system_info_msg() );
         save();
         return 1;
     }
@@ -639,7 +639,7 @@ protected int do_mewiz( string arg )
 
 protected string check_percent_str()
 {
-    return sprintf( "%s£º%d (%d%%)  %s£º%d (%d%%)  %s£º%d (%d%%)  %s£º%d (%d%%)  %s£º%d (%d.%d%%)\n",
+    return sprintf( "%sï¼š%d (%d%%)  %sï¼š%d (%d%%)  %sï¼š%d (%d%%)  %sï¼š%d (%d%%)  %sï¼š%d (%d.%d%%)\n",
             BIG_STR,    game_info["total_opened_da"],
                 times_flag <= 1 ? 0 : game_info["total_opened_da"] * 100 / (times_flag-1),
             SMALL_STR,  game_info["total_opened_xiao"],
@@ -654,7 +654,7 @@ protected string check_percent_str()
     );
 }
 
-// ²éÑ¯Ñº×¢ĞÅÏ¢£¬Íæ¼Ò²Ù×÷½Ó¿Úº¯Êı
+// æŸ¥è©¢æŠ¼æ³¨ä¿¡æ¯ï¼Œç©å®¶æ“ä½œæ¥å£å‡½æ•¸
 protected int do_chk( string arg )
 {
     string id, msg;
@@ -663,12 +663,12 @@ protected int do_chk( string arg )
     else
         id = arg;
     if( (msg=check_beted_str(id)) == "" )
-        return notify_fail( id + " ÔÚ±¾¾ÖÎ´ÓĞÈÎºÎÑº×¢¡£\n");
+        return notify_fail( id + " åœ¨æœ¬å±€æœªæœ‰ä»»ä½•æŠ¼æ³¨ã€‚\n");
     write( msg );
     return 1;
 }
 
-// Ñº×¢£¬Íæ¼Ò²Ù×÷½Ó¿Úº¯Êı
+// æŠ¼æ³¨ï¼Œç©å®¶æ“ä½œæ¥å£å‡½æ•¸
 protected int do_bet( string arg )
 {
     object me = this_player();
@@ -676,16 +676,16 @@ protected int do_bet( string arg )
     int bet, beted;
 
     if( !BetOn )
-        return notify_fail("¶Ô²»Æğ£¬±¾¶Ä·»ÔİÊ±Í£Ö¹ÓªÒµ¡£\n");
+        return notify_fail("å°ä¸èµ·ï¼Œæœ¬è³­åŠæš«æ™‚åœæ­¢ç‡Ÿæ¥­ã€‚\n");
     if( GameStat == 2)
-        return notify_fail("ÏÖÔÚÕıÔÚ¿ª³ö±¾¾Ö½á¹û£¬ÇëÉÔµÈÏÂ¾ÖÔÙÑº¡£\n");
+        return notify_fail("ç¾åœ¨æ­£åœ¨é–‹å‡ºæœ¬å±€çµæœï¼Œè«‹ç¨ç­‰ä¸‹å±€å†æŠ¼ã€‚\n");
     id = me->query("id");
     if( !arg || sscanf( arg, "%d to %s", bet, type) != 2 )
     {
         write( check_beted_str( id ) );
-        return notify_fail("Ñº×¢¸ñÊ½£º <bet ÊıÁ¿ to da|xiao|dan|shuang>\n");
+        return notify_fail("æŠ¼æ³¨æ ¼å¼ï¼š <bet æ•¸é‡ to da|xiao|dan|shuang>\n");
     }
-    // ¿É¼ò»¯
+    // å¯ç°¡åŒ–
     switch( type )
     {
         case "a":
@@ -700,16 +700,16 @@ protected int do_bet( string arg )
         case "E": type = "baozi";break;
     }
     if( member_array( type , keys(type_str) ) == -1 )
-        return notify_fail("Ñº×¢¸ñÊ½£º <bet ÊıÁ¿ to da|xiao|dan|shuang>\n");
+        return notify_fail("æŠ¼æ³¨æ ¼å¼ï¼š <bet æ•¸é‡ to da|xiao|dan|shuang>\n");
     if( bet < 1 || bet > 10000 )
-        return notify_fail("Ñº×¢·¶Î§ÔÚ 1 - 10000 Á½°×ÒøÖ®¼ä¡£\n");
+        return notify_fail("æŠ¼æ³¨èŒƒåœåœ¨ 1 - 10000 å…©ç™½éŠ€ä¹‹é–“ã€‚\n");
     if( me->query( "balance" ) < bet*100 )
-        return notify_fail("ÄãµÄ´æ¿î²»×ã "+bet+" Á½°×ÒøÁË¡£\n");
-    // naihe add ÈËÊıÏŞÖÆ 05-12-6 8:46
+        return notify_fail("ä½ çš„å­˜æ¬¾ä¸è¶³ "+bet+" å…©ç™½éŠ€äº†ã€‚\n");
+    // naihe add äººæ•¸é™åˆ¶ 05-12-6 8:46
     if( member_array( id, df_player ) != -1 )
     {
         if( MAX_DF_PLAYER > 0 && sizeof(df_player) >= MAX_DF_PLAYER )
-            return notify_fail("¶Ô²»Æğ£¬Õâ¾ÖÓÎÏ·Ñº×¢µÄÈËÒÑ¾­Ì«¶àÁË¡£\n");
+            return notify_fail("å°ä¸èµ·ï¼Œé€™å±€éŠæˆ²æŠ¼æ³¨çš„äººå·²ç¶“å¤ªå¤šäº†ã€‚\n");
         else
             df_player += ({ id });
     }
@@ -718,44 +718,44 @@ protected int do_bet( string arg )
     {
         beted = bet_info[ bet_key ];
         if( beted + bet > 10000 )
-            return notify_fail( "Õâ¾ÖÄãÒÑ¾­ÑºÁË "+beted+" Á½°×ÒøÔÚ "
-                +type_str[ type ]+" ÉÏ±ßÁË£¬ºÏ¼Æ±¾´Î³¬³öÁË×î´óÑº×¢ÏŞÖÆ¡£\n"
+            return notify_fail( "é€™å±€ä½ å·²ç¶“æŠ¼äº† "+beted+" å…©ç™½éŠ€åœ¨ "
+                +type_str[ type ]+" ä¸Šé‚Šäº†ï¼Œåˆè¨ˆæœ¬æ¬¡è¶…å‡ºäº†æœ€å¤§æŠ¼æ³¨é™åˆ¶ã€‚\n"
             );
-        bet_info[ bet_key ] = beted + bet;          // ĞŞ¸Ä¸ÃÍæ¼Òµ±¾ÖµÄ¸ÃÏîÑº×¢
-        log_info[ "total_bet" ] += (bet*100);       // ×ÜÑº×¢¶î¼ÇÂ¼
-        this_bet += (bet*100);                      // ±¾¾Ö×ÜÑº×¢¶î¼ÇÂ¼
+        bet_info[ bet_key ] = beted + bet;          // ä¿®æ”¹è©²ç©å®¶ç•¶å±€çš„è©²é …æŠ¼æ³¨
+        log_info[ "total_bet" ] += (bet*100);       // ç¸½æŠ¼æ³¨é¡è¨˜éŒ„
+        this_bet += (bet*100);                      // æœ¬å±€ç¸½æŠ¼æ³¨é¡è¨˜éŒ„
         me->add( "balance", -(bet*100) );
-        message_vision( "$NÄÃ¹ıÕÊ±¾´ó±ÊÒ»»Ó£¬×·¼ÓÁË "+bet+" Á½°×ÒøÑº  "+type_str[ type ]+ "¡£\n", me );
+        message_vision( "$Næ‹¿éå¸³æœ¬å¤§ç­†ä¸€æ®ï¼Œè¿½åŠ äº† "+bet+" å…©ç™½éŠ€æŠ¼  "+type_str[ type ]+ "ã€‚\n", me );
     }
     else
     {
-        bet_info[ bet_key ] = bet;                  // ÉèÖÃ¸ÃÍæ¼Òµ±¾ÖµÄ¸ÃÏîÑº×¢
-        log_info[ "total_bet" ] += (bet*100);       // ×ÜÑº×¢¶î¼ÇÂ¼
-        this_bet += (bet*100);                      // ±¾¾Ö×ÜÑº×¢¶î¼ÇÂ¼
+        bet_info[ bet_key ] = bet;                  // è¨­ç½®è©²ç©å®¶ç•¶å±€çš„è©²é …æŠ¼æ³¨
+        log_info[ "total_bet" ] += (bet*100);       // ç¸½æŠ¼æ³¨é¡è¨˜éŒ„
+        this_bet += (bet*100);                      // æœ¬å±€ç¸½æŠ¼æ³¨é¡è¨˜éŒ„
         me->add( "balance", -(bet*100) );
-        message_vision( "$NÄÃ¹ıÕÊ±¾´ó±ÊÒ»»Ó£¬°Ñ "+bet+" Á½°×ÒøÑºÉÏÁË  "+type_str[ type ]+ "¡£\n", me );
+        message_vision( "$Næ‹¿éå¸³æœ¬å¤§ç­†ä¸€æ®ï¼ŒæŠŠ "+bet+" å…©ç™½éŠ€æŠ¼ä¸Šäº†  "+type_str[ type ]+ "ã€‚\n", me );
     }
     write( check_beted_str( id ) );
     if( GameStat == 0 )
     {
-        valid_gogo_time = time() + GOGO_WAIT_TIME;       // ¹ı¼¸Ãë²Å¿ÉÒÔÓÃ gogo ¼ÓËÙ¿ª½±¡£
+        valid_gogo_time = time() + GOGO_WAIT_TIME;       // éå¹¾ç§’æ‰å¯ä»¥ç”¨ gogo åŠ é€Ÿé–‹çã€‚
         GameStat = 1;
-        tell_room( this_object(), HIW"µÚ "+times_flag+" ¾Ö¶Ä¾Ö½«ÓÚ "+WAIT_TIME+" Ãëºó¿ªÊ¼£¬ÒªÂòµÄ¾Í¿ìÑºÀ²£¡\n"NOR );
+        tell_room( this_object(), HIW"ç¬¬ "+times_flag+" å±€è³­å±€å°‡äº "+WAIT_TIME+" ç§’å¾Œé–‹å§‹ï¼Œè¦è²·çš„å°±å¿«æŠ¼å•¦ï¼\n"NOR );
         remove_call_out( "game_start" );
         call_out( "game_start", WAIT_TIME, 0 );
     }
-    //me->save();       // ²»ĞèÒª¡£Íæ¼ÒÈç¹û quit »á save()
+    //me->save();       // ä¸éœ€è¦ã€‚ç©å®¶å¦‚æœ quit æœƒ save()
     return 1;
 }
 
-// ¼ÓËÙ¿ª¾Ö£¬Íæ¼Ò½Ó¿Úº¯Êı
+// åŠ é€Ÿé–‹å±€ï¼Œç©å®¶æ¥å£å‡½æ•¸
 protected int do_gogo()
 {
     if( GameStat != 1 )
-        return notify_fail( "ÏÖÔÚµÄ×´Ì¬²»ÄÜ¿ª½±¡£¿ÉÄÜÊÇÎŞÈËÑº×¢£¬»òÕßÊÇÒÑÔÚ¿ª½±ÖĞ¡£\n");
+        return notify_fail( "ç¾åœ¨çš„ç‹€æ…‹ä¸èƒ½é–‹çã€‚å¯èƒ½æ˜¯ç„¡äººæŠ¼æ³¨ï¼Œæˆ–è€…æ˜¯å·²åœ¨é–‹çä¸­ã€‚\n");
     if( valid_gogo_time > time() )
-        return notify_fail( "µÈµÈ±ğÈËÒ²ÑºµãÔÙ¿ª°É£¡\n");
-    message_vision( "$N´óÉù½ĞµÀ£º¿ìµã¿ª£¡Á¢¿Ì¿ª£¡ÏÖÔÚ¡¢ÂíÉÏ¡¢¸øÎÒ¿ª£¡\n", this_player() );
+        return notify_fail( "ç­‰ç­‰åˆ¥äººä¹ŸæŠ¼é»å†é–‹å§ï¼\n");
+    message_vision( "$Nå¤§è²å«é“ï¼šå¿«é»é–‹ï¼ç«‹åˆ»é–‹ï¼ç¾åœ¨ã€é¦¬ä¸Šã€çµ¦æˆ‘é–‹ï¼\n", this_player() );
     GameStat = 2;
     remove_call_out( "game_start" );
     call_out( "game_start", 1, 0 );

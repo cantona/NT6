@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����");
+        set("short", "走廊");
         set("long", @LONG
-������ׯ�ڵ�һ��ľ�Ƶ����ȣ����������ǹ⻬������
-���ȱ�������һ����Ⱦ���㲻ʱ�ܹ���������ؤ��ĵ����ڴ�
-�߶���æµ����ͣ�������Ǹ����䳡��
+這是馬莊內的一條木制的走廊，紅漆地面很是光滑。整個
+走廊被打整得一塵不染。你不時能夠看到幾個丐幫的弟子在此
+走動，忙碌個不停。往北是個練武場。
 LONG);
         set("region", "yangzhou");
         set("exits", ([

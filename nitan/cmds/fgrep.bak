@@ -4,7 +4,7 @@
  * File   : fgrep.c
  * Author : Sinji@RevivalWorld
  * Date   : 2002-09-14
- * Note   : fgrep Ö¸Áî
+ * Note   : fgrep æŒ‡ä»¤
  * Update :
  *  o 2000-00-00
  *
@@ -17,15 +17,15 @@
 inherit COMMAND;
 
 string help = @HELP
-Ö¸Áî¸ñÊ½£ºfgrep [-l] [-r] <ÑùÊ½> [Â·¾¶]
+æŒ‡ä»¤æ ¼å¼ï¼šfgrep [-l] [-r] <æ¨£å¼> [è·¯å¾‘]
 
-ÏÔÊ¾µµ°¸ÖĞÓĞÏà·ûÑùÊ½µÄµÄĞĞ, <ÑùÊ½> ¿ÉÎªÕı¹æ±íÊ¾·¨(regular expression)
-ÓûÖªÕı¹æ±íÊ¾·¨µÄÓÃ·¨¿É help regexp() ÒÔÈ¡µÃ¸ü½øÒ»²½×ÊÑ¶¡£
+é¡¯ç¤ºæª”æ¡ˆä¸­æœ‰ç›¸ç¬¦æ¨£å¼çš„çš„è¡Œ, <æ¨£å¼> å¯ç‚ºæ­£è¦è¡¨ç¤ºæ³•(regular expression)
+æ¬²çŸ¥æ­£è¦è¡¨ç¤ºæ³•çš„ç”¨æ³•å¯ help regexp() ä»¥å–å¾—æ›´é€²ä¸€æ­¥è³‡è¨Šã€‚
 
-Ïê¹Ø²ÎÊıËµÃ÷ÈçÏÂ£º
+è©³é—œåƒæ•¸èªªæ˜å¦‚ä¸‹ï¼š
 
--l      ÏÔÊ¾ĞĞºÅ
--r      ÏÔÊ¾²»·ûºÏ <ÑùÊ½> ĞĞ
+-l      é¡¯ç¤ºè¡Œè™Ÿ
+-r      é¡¯ç¤ºä¸ç¬¦åˆ <æ¨£å¼> è¡Œ
 HELP;
 string last_file;
 mapping grep(string path, string *files, string pattern, int flag);
@@ -37,7 +37,7 @@ private void command(object me, string arg)
 
         if( !arg )
         {
-                printf("Ö¸Áî¸ñÊ½£ºfgrep [-l] [-r] <ÑùÊ½> [Â·¾¶]\n");
+                printf("æŒ‡ä»¤æ ¼å¼ï¼šfgrep [-l] [-r] <æ¨£å¼> [è·¯å¾‘]\n");
                 return;
         }
         if( sscanf(arg, "-l %s", arg) ) flag  = 1;
@@ -63,12 +63,12 @@ private void command(object me, string arg)
                 }
                 if( i )
                 {
-                        printf("fgrep: ²ÎÊı <ÑùÊ½> ¸ñÊ½´íÎó£¬() ±ØĞëÎªÒ»¶Ô¡£\n", arg);
+                        printf("fgrep: åƒæ•¸ <æ¨£å¼> æ ¼å¼éŒ¯èª¤ï¼Œ() å¿…é ˆç‚ºä¸€å°ã€‚\n", arg);
                         return;
                 }
                 if( j )
                 {
-                        printf("fgrep: ²ÎÊı <ÑùÊ½> ¸ñÊ½´íÎó£¬[] ±ØĞëÎªÒ»¶Ô¡£\n", arg);
+                        printf("fgrep: åƒæ•¸ <æ¨£å¼> æ ¼å¼éŒ¯èª¤ï¼Œ[] å¿…é ˆç‚ºä¸€å°ã€‚\n", arg);
                         return;
                 }
         }
@@ -89,12 +89,12 @@ private void command(object me, string arg)
                 path = path[0..idx];
         }
         if( !files )
-                return tell(me, "fgrep: Ã»ÓĞ " + path + " Õâ¸öµµ°¸»òÄ¿Â¼¡£\n", CMDMSG);
+                return tell(me, "fgrep: æ²’æœ‰ " + path + " é€™å€‹æª”æ¡ˆæˆ–ç›®éŒ„ã€‚\n", CMDMSG);
 
         if( !sizeof(files) )
-                return tell(me, "fgrep: ÔÚ " + path + " Ä¿Â¼ÖĞÃ»ÓĞÈÎºÎµµ°¸¡£\n", CMDMSG);
+                return tell(me, "fgrep: åœ¨ " + path + " ç›®éŒ„ä¸­æ²’æœ‰ä»»ä½•æª”æ¡ˆã€‚\n", CMDMSG);
 
-        tell(me, sprintf(HIY"ËÑÑ°ÑùÊ½"HIW" %s "NOR + HIY"ÓÚ %s ... \n\n"NOR, arg, path), CMDMSG);
+        tell(me, sprintf(HIY"æœå°‹æ¨£å¼"HIW" %s "NOR + HIY"äº %s ... \n\n"NOR, arg, path), CMDMSG);
         
         match_files = grep(path, files, arg, flag);
         foreach(string file, mixed match in match_files)
@@ -112,11 +112,11 @@ private void command(object me, string arg)
                         if( flag ) i++;
                 }
                 if( flag ) gcnt = gcnt/2;
-                tell(me, sprintf(HIR"ÔÚ %s µµ°¸ÖĞ¹²ÕÒµ½ %d ¸ö·ûºÏ½á¹û¡£\n\n"NOR, path + file, gcnt), CMDMSG);
+                tell(me, sprintf(HIR"åœ¨ %s æª”æ¡ˆä¸­å…±æ‰¾åˆ° %d å€‹ç¬¦åˆçµæœã€‚\n\n"NOR, path + file, gcnt), CMDMSG);
                 fcnt ++;
         }
         
-        tell(me, sprintf(HIY"¹² %d ¸öµµ°¸·ûºÏ±È¶ÔÑùÊ½¡£\n"NOR, fcnt), CMDMSG);
+        tell(me, sprintf(HIY"å…± %d å€‹æª”æ¡ˆç¬¦åˆæ¯”å°æ¨£å¼ã€‚\n"NOR, fcnt), CMDMSG);
 }
 
 mapping grep(string path, string *files, string pattern, int flag)

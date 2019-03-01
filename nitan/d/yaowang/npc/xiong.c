@@ -3,16 +3,16 @@ inherit NPC;
 
 void create()
 {
-        set_name(HIB"ºÚÐÜ"NOR, ({ "hei xiong", "xiong" }) );
-        set("race", "Ò°ÊÞ");
+        set_name(HIB"é»‘ç†Š"NOR, ({ "hei xiong", "xiong" }) );
+        set("race", "é‡Žç¸");
         set("age", 4);
-        set("long", "Ò»Ö»¸ß´óµÄºÚÐÜ£¬·Ç³£ÐÛ×³¡£\n");
+        set("long", "ä¸€åªé«˜å¤§çš„é»‘ç†Šï¼Œéžå¸¸é›„å£¯ã€‚\n");
         set("attitude", "peaceful");
  
         set("str", 30);
         set("cor", 26);
 
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "×¦×Ó"}) );
+        set("limbs", ({ "é ­éƒ¨", "èº«é«”", "çˆªå­"}) );
         set("verbs", ({ "bite" }) );
  
         set("combat_exp", 3000);
@@ -29,7 +29,7 @@ void create()
 void die()
 {
         object ob1, ob2, ob3;
-        message_vision(HIR"$NÉíÌåÒ»Íá£¬µ¹ÔÚµØÉÏ£¬$NËÀÁË¡£\n"NOR, this_object());
+        message_vision(HIR"$Nèº«é«”ä¸€æ­ªï¼Œå€’åœ¨åœ°ä¸Šï¼Œ$Næ­»äº†ã€‚\n"NOR, this_object());
         if(random(10)>8)
         {
         ob1 = new(__DIR__"obj/xiongdan");

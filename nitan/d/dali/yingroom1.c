@@ -3,14 +3,14 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÄàÌ¶");
+        set("short", "æ³¥æ½­");
         set("long", @LONG
-ÕâÀïÊÇÒ»¸öÆ¬´óÄàÌ¶£¬ÏòÇ°ÍûÈ¥£¬ÑÛÇ°Ò»ÍÅÃ£Ã£°×Îí¹ü×ÅÒ»·½Ò»
-Ô²Á½¼äÃ©Îİ£¬ÒşÒşÔ¼Ô¼ÓĞµÆ¹â´Ó·½ÎİÖĞÉä³ö¡£´ËÃ©ÎİÎŞÃÅÎŞ»§£¬Á¬´°
-»§¶¼Ã»ÓĞÒ»¸ö£¬²»ÖªµÀÍÁÇ½(wall)ÄÇ±ßÓĞĞ©Ê²Ã´¡£
+é€™è£¡æ˜¯ä¸€å€‹ç‰‡å¤§æ³¥æ½­ï¼Œå‘å‰æœ›å»ï¼Œçœ¼å‰ä¸€åœ˜èŒ«èŒ«ç™½éœ§è£¹è‘—ä¸€æ–¹ä¸€
+åœ“å…©é–“èŒ…å±‹ï¼Œéš±éš±ç´„ç´„æœ‰ç‡ˆå…‰å¾æ–¹å±‹ä¸­å°„å‡ºã€‚æ­¤èŒ…å±‹ç„¡é–€ç„¡æˆ¶ï¼Œé€£çª—
+æˆ¶éƒ½æ²’æœ‰ä¸€å€‹ï¼Œä¸çŸ¥é“åœŸç‰†(wall)é‚£é‚Šæœ‰äº›ä»€éº¼ã€‚
 LONG );
         set("item_desc",([
-                "wall" : "Ò»¶Â¿´ÆğÀ´²»ÊÇºÜ¸ßµÄÍÁÇ½¡£\n",
+                "wall" : "ä¸€å µçœ‹èµ·ä¾†ä¸æ˜¯å¾ˆé«˜çš„åœŸç‰†ã€‚\n",
                 ]));
         set("no_clean_up", 0);
         set("no_magic", 1);
@@ -35,16 +35,16 @@ int do_jump(string arg)
         object me = this_player();
 
         if ( !arg || arg != "wall")
-                return notify_fail( "Ê²Ã´£¿\n");
+                return notify_fail( "ä»€éº¼ï¼Ÿ\n");
 
-        message_vision("$N×İÉíÍùÍÁÇ½ÉÏÌøÈ¥¡£\n", me);
+        message_vision("$Nç¸±èº«å¾€åœŸç‰†ä¸Šè·³å»ã€‚\n", me);
         if ( me->query_skill("dodge",1) <= 50) {
-                message_vision("$NÍ¨µÄÒ»ÉùË¤½øÁËÄàÌ¶£¬ÂúÉí³ôÆø¡£\n", me);
+                message_vision("$Né€šçš„ä¸€è²æ‘”é€²äº†æ³¥æ½­ï¼Œæ»¿èº«è‡­æ°£ã€‚\n", me);
                 me->receive_wound("qi", 100);
         }
         if ( me->query_skill("dodge",1) > 50 ) {
                 me->move("/d/dali/yingroom2");
-                message("vision", me->name() + "×İÉíÓÉÇ½ÉÏÌøÁË¹ıÀ´¡£\n",environment(me), 
+                message("vision", me->name() + "ç¸±èº«ç”±ç‰†ä¸Šè·³äº†éä¾†ã€‚\n",environment(me), 
                         ({me}) );
         }
         return 1;

@@ -7,9 +7,9 @@ inherit F_DEALER;
 
 void create()
 {
-        set_name("ÀäÓôÈ»" , ({ "leng yuran", "leng" }) );
-        set("rank_info/zhiye","ÓñµêÀÏ°å");
-        set("gender", "ÄĞĞÔ" );
+        set_name("å†·é¬±ç„¶" , ({ "leng yuran", "leng" }) );
+        set("rank_info/zhiye","ç‰åº—è€æ¿");
+        set("gender", "ç”·æ€§" );
         set("age",45);
         set("combat_exp", 1500000);
         set_skill("unarmed",30);
@@ -43,6 +43,6 @@ void init()
 void greeting(object ob)
 {
         if (environment(ob)==environment())
-        message_vision("ÓñµêÀÏ°å¶Ô$PĞ¦Á³ÏàÓ­£ºÇëËæ±ã¿´¿´¡£\n",ob);
+        message_vision("ç‰åº—è€æ¿å°$Pç¬‘è‡‰ç›¸è¿ï¼šè«‹éš¨ä¾¿çœ‹çœ‹ã€‚\n",ob);
         return;
 }

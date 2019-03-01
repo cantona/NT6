@@ -10,16 +10,16 @@ mapping query_quesths()
                 quesths = QUESTHS_D("2find")->query_quesths();
         else
         quesths = QUESTHS_D("2kill")->query_quesths();
-        if (quesths["type"] == "Ñ°") 
+        if (quesths["type"] == "å°‹") 
         {
                 if (random(5) == 3)
                 {
-                        quesths["type"] = "ËÍ";
-                        quesths["name"] = "»ØÖ´";
+                        quesths["type"] = "é€";
+                        quesths["name"] = "å›åŸ·";
                 } else 
                 if (random(5) == 2)
                 {
-                        quesths["type"] = "Õ÷";
+                        quesths["type"] = "å¾";
                 }
         } 
         return quesths;

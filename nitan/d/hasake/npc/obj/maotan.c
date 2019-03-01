@@ -5,10 +5,10 @@ inherit ITEM;
 
 void create()
 {
-        set_name("Ã«Ìº", ({"maotan", "tan"}));
+        set_name("æ¯›æ¯¯", ({"maotan", "tan"}));
         set_weight(8000);
-        set("unit", "ÕÅ");
-        set("long", "ÕâÊÇÒ»ÕÅÃÀÀöµÄ¹şÈø¿ËÃ«Ìº¡£\n");
+        set("unit", "å¼µ");
+        set("long", "é€™æ˜¯ä¸€å¼µç¾éº—çš„å“ˆè–©å…‹æ¯›æ¯¯ã€‚\n");
         set("value", 3000);
 //        setup();
 }

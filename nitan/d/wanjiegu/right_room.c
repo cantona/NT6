@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "���᷿");
+        set("short", "右廂房");
         set("long", @LONG
-����һ����ͨ�ķ��䣬�������һЩ�ճ���Ʒ��ǽ���������һ
-��ҩ�ݣ����ӹ����ɼ��������պ�Ҫ�����������ҩ�
+這是一間普通的房間，裡面放著一些日常用品，牆角落裡堆著一
+堆藥草，是鐘谷主採集而來，日後要用它制造各種藥物。
 LONG );
         set("exits", ([ /* sizeof() == 2 */
             "west" : __DIR__"hall",

@@ -1,5 +1,5 @@
 // Written by Lonely@nitan.org
-// ËùÏòÎŞÖÍ ×ªÊÀ¼¼ÄÜ
+// æ‰€å‘ç„¡æ»¯ è½‰ä¸–æŠ€èƒ½
 // wuzhi.c
 
 #include <ansi.h>
@@ -12,24 +12,24 @@ int exert(object me, object target)
         int skill;
 
         /*
-        if( query("family/family_name", me) != "¹ÅÄ¹ÅÉ" )
-                return notify_fail("Äã²»ÊÇ¹ÅÄ¹µÜ×Ó£¬ÎŞ·¨Ê¹ÓÃËùÏòÎŞÖÍ¡£\n");
+        if( query("family/family_name", me) != "å¤å¢“æ´¾" )
+                return notify_fail("ä½ ä¸æ˜¯å¤å¢“å¼Ÿå­ï¼Œç„¡æ³•ä½¿ç”¨æ‰€å‘ç„¡æ»¯ã€‚\n");
         */
 
         if( !query("reborn/times", me) )
-                return notify_fail("ÄãÉĞÎ´×ªÊÀÖØÉú£¬ÎŞ·¨Ê¹ÓÃËùÏòÎŞÖÍ£¡\n");
+                return notify_fail("ä½ å°šæœªè½‰ä¸–é‡ç”Ÿï¼Œç„¡æ³•ä½¿ç”¨æ‰€å‘ç„¡æ»¯ï¼\n");
 
         if( (skill = me->query_skill("yunv-xinfa", 1)) < 1000 )
-                return notify_fail("ÄãµÄÓñÅ®ĞÄ·¨»¹²»¹»¾«Êì£¬ÎŞ·¨Ê¹ÓÃËùÏòÎŞÖÍ£¡\n");
+                return notify_fail("ä½ çš„ç‰å¥³å¿ƒæ³•é‚„ä¸å¤ ç²¾ç†Ÿï¼Œç„¡æ³•ä½¿ç”¨æ‰€å‘ç„¡æ»¯ï¼\n");
 
         if( query_temp("wuzhi", me) )
-                return notify_fail("ÄãÒÑ¾­ÔÚÔËÆğËùÏòÎŞÖÍÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“åœ¨é‹èµ·æ‰€å‘ç„¡æ»¯äº†ã€‚\n");
 
         if( query("jingli", me)<2000 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ã€‚\n");
 
         if( query("neili", me)<5000 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ã€‚\n");
 
         addn("neili", -1000, me);
         me->receive_damage("qi", 0);
@@ -37,7 +37,7 @@ int exert(object me, object target)
         skill += me->query_skill("martial-cognize", 1);
         skill /= 100;
 
-        message_combatd(HIY "Ö»¼û$N" HIY "ĞÄ¾²ÈçË®£¬ÄÚÏ¢ÔÙÎŞÍ£ÖÍ£¬ĞÄÖĞÎäÑ§ÈçÁ÷Ë®°ã»ÓÈ÷¿ªÀ´¡£\n" NOR, me);
+        message_combatd(HIY "åªè¦‹$N" HIY "å¿ƒéœå¦‚æ°´ï¼Œå…§æ¯å†ç„¡åœæ»¯ï¼Œå¿ƒä¸­æ­¦å­¸å¦‚æµæ°´èˆ¬æ®æ´’é–‹ä¾†ã€‚\n" NOR, me);
 
         addn_temp("apply/ap_power", skill, me);
         addn_temp("apply/add_weak", skill, me);
@@ -60,6 +60,6 @@ void remove_effect(object me, int skill)
                 addn_temp("apply/add_busy", -skill/6, me);
                 addn_temp("apply/double_damage", -skill, me);
                 delete_temp("wuzhi", me);
-                tell_object(me, "ÄãµÄÓñÅ®ĞÄ·¨ÔËĞĞÍê±Ï£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï¡£\n");
+                tell_object(me, "ä½ çš„ç‰å¥³å¿ƒæ³•é‹è¡Œå®Œç•¢ï¼Œå°‡å…§åŠ›æ”¶å›ä¸¹ç”°ã€‚\n");
         }
 }

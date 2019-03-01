@@ -9,14 +9,14 @@ inherit F_QUESTER;
 
 void create()
 {
-        set_name("ÁøÈôËÉ", ({"liu ruosong", "liu", "ruosong"}));
-        set("nickname", HIW "ÇàËÉ½£¿Í" NOR );
-        // set("title", "Ëêº®ÈıÓÑ");
-        set("gender", "ÄĞĞÔ");
+        set_name("æŸ³è‹¥é¬†", ({"liu ruosong", "liu", "ruosong"}));
+        set("nickname", HIW "é’é¬†åŠå®¢" NOR );
+        // set("title", "æ­²å¯’ä¸‰å‹");
+        set("gender", "ç”·æ€§");
         set("age", 42);
         set("shen_type", -1);
-        set("long", "¡°Ëêº®ÈıÓÑ¡±ÖĞµÄ¡±ÇàËÉ½£¿Í¡±£¬ÍòËÉÉ½×¯µÄÖ÷ÈË¡£\n"
-                    "Îäµ±É½ĞşÕæ¹Û£¬ÌìÒ»ÕæÈËÃÅÏÂÎ¨Ò»µÄË×¼ÒµÜ×Ó¡£\n");
+        set("long", "â€œæ­²å¯’ä¸‰å‹â€ä¸­çš„â€é’é¬†åŠå®¢â€ï¼Œè¬é¬†å±±èŠçš„ä¸»äººã€‚\n"
+                    "æ­¦ç•¶å±±ç„çœŸè§€ï¼Œå¤©ä¸€çœŸäººé–€ä¸‹å”¯ä¸€çš„ä¿—å®¶å¼Ÿå­ã€‚\n");
         set("attitude", "peaceful");
 
         set("per", 21);
@@ -65,12 +65,12 @@ void create()
         
         prepare_skill("strike", "moshen-zhangfa");
         
-        create_family("Ä§½Ì", 41, "µÜ×Ó");
+        create_family("é­”æ•™", 41, "å¼Ÿå­");
 
         set("no_teach", ([
-                "wudang-xinfa"          : "´ËÄËÎäµ±Îä¹¦£¬ÎÒ²»ÄÜÇáÒ×´«ÊÚÓÚÄã¡£",
-                "wudang-zhang"      : "´ËÄËÎäµ±Îä¹¦£¬ÎÒ²»ÄÜÇáÒ×´«ÊÚÓÚÄã¡£",
-                "wudang-jian"         : "´ËÄËÎäµ±Îä¹¦£¬ÎÒ²»ÄÜÇáÒ×´«ÊÚÓÚÄã¡£",
+                "wudang-xinfa"          : "æ­¤ä¹ƒæ­¦ç•¶æ­¦åŠŸï¼Œæˆ‘ä¸èƒ½è¼•æ˜“å‚³æˆäºä½ ã€‚",
+                "wudang-zhang"      : "æ­¤ä¹ƒæ­¦ç•¶æ­¦åŠŸï¼Œæˆ‘ä¸èƒ½è¼•æ˜“å‚³æˆäºä½ ã€‚",
+                "wudang-jian"         : "æ­¤ä¹ƒæ­¦ç•¶æ­¦åŠŸï¼Œæˆ‘ä¸èƒ½è¼•æ˜“å‚³æˆäºä½ ã€‚",
         ]));
   
         set("chat_chance_combat", 120); 
@@ -96,23 +96,23 @@ void attempt_apprentice(object ob)
         if (! permit_recruit(ob))  return;
 
         command("recruit "+query("id", ob));
-        command("say ºÃ£¬ºÃ£¬ºÃ£¬ÈÕºóÒ»¶¨Òª¹â´óÎÒÄ§½Ì¡£"); 
+        command("say å¥½ï¼Œå¥½ï¼Œå¥½ï¼Œæ—¥å¾Œä¸€å®šè¦å…‰å¤§æˆ‘é­”æ•™ã€‚"); 
 }
 
 int accept_ask(object me, string topic)
 {
         switch (topic)
         {
-        case "ÀúÁ·" :
-        case "ÀúÁ¶" :
-        case "¶ÍÁ¶" :
+        case "æ­·ç·´" :
+        case "æ­·ç…‰" :
+        case "é›ç…‰" :
                 return QUEST_D->accept_ask(this_object(), me, topic);
                 break;
 
-        case "ÌìÍâÁ÷ĞÇ" :
+        case "å¤©å¤–æµæ˜Ÿ" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/liuxing-jianfa/liuxing",
-                           "name"    : "ÌìÍâÁ÷ĞÇ",
+                           "name"    : "å¤©å¤–æµæ˜Ÿ",
                            "sk1"     : "liuxing-jianfa",
                            "lv1"     : 150,
                            "dodge"   : 150,

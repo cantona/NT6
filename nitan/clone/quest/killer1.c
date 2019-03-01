@@ -6,12 +6,12 @@ int do_back(object me);
 
 void create()
 {
-        set_name("ºÚÒÂÈË", ({ "heiyi ren","ren"}));
-        set("gender", "ÄĞĞÔ");
+        set_name("é»‘è¡£äºº", ({ "heiyi ren","ren"}));
+        set("gender", "ç”·æ€§");
         set("quest_no_guard",1);
         set("no_steal",1);
         set("no_ansuan",1);
-        set("long", "Ò»¸ö´©×ÅºÚÉ«Ò¹ĞĞÒÂµÄÈË¡£\n");
+        set("long", "ä¸€å€‹ç©¿è‘—é»‘è‰²å¤œè¡Œè¡£çš„äººã€‚\n");
         set( "chat_chance_combat", 80);         
   set( "chat_msg_combat",({
                         (: exert_function, "recover" :),
@@ -27,7 +27,7 @@ int do_back(object me)
 {                        
         if (objectp(environment(me)))
         {
-                tell_room(environment(me),query("name", me)+"´Ò´ÒÃ¦Ã¦µÄÀë¿ªÁË¡£\n",({me}));
+                tell_room(environment(me),query("name", me)+"åŒ†åŒ†å¿™å¿™çš„é›¢é–‹äº†ã€‚\n",({me}));
                 destruct(me); 
         }
   return 1;
@@ -72,14 +72,14 @@ void die()
                         }
                         addn("combat_exp", exp, me);
                         addn("potential", pot, me);
-                        set_temp("prize_reason", "×·É±", me);
+                        set_temp("prize_reason", "è¿½æ®º", me);
                         set_temp("can_give_prize", 1, me);
                         set_temp("prize_exp", exp, me);
                         set_temp("prize_pot", pot, me);
 
-                        tell_object(me,HIW"¾­¹ıÕâ·¬ÀúÁ·£¬\nÄã±»½±ÀøÁË£º\n");
-                        tell_object(me,chinese_number(exp) +"µãÊµÕ½¾­Ñé\n" +
-                        chinese_number(pot) + "µãÇ±ÄÜ\n"NOR);
+                        tell_object(me,HIW"ç¶“éé€™ç•ªæ­·ç·´ï¼Œ\nä½ è¢«çå‹µäº†ï¼š\n");
+                        tell_object(me,chinese_number(exp) +"é»å¯¦æˆ°ç¶“é©—\n" +
+                        chinese_number(pot) + "é»æ½›èƒ½\n"NOR);
                 }
         }
         me=find_player(query("owner", ob));
@@ -91,7 +91,7 @@ void die()
 int accept_fight(object ob)
 {
         set_temp("killer",ob);
-        command("say ºÃ£¡ÔÛÃÇ¾Í±È»®±È»®£¡");
+        command("say å¥½ï¼å’±å€‘å°±æ¯”åŠƒæ¯”åŠƒï¼");
         kill_ob(ob);
         return 1;
 }
@@ -99,7 +99,7 @@ int accept_fight(object ob)
 int accept_hit(object ob)
 {
         set_temp("killer",ob);
-        command("say ÄãËÀÈ¥°É£¡");
+        command("say ä½ æ­»å»å§ï¼");
         kill_ob(ob);
         return 1;
 }
@@ -107,8 +107,8 @@ int accept_hit(object ob)
 int accept_kill(object ob)
 {
         set_temp("killer",ob);
-        command("say ºß£¡ÕÒËÀ£¡");
+        command("say å“¼ï¼æ‰¾æ­»ï¼");
         return 1;
 }
-int accept_ansuan(object who) {return notify_fail("´ËÈË¾¯ÌèĞÔÌ«¸ß£¬Ã»·¨°µËã¡£\n");}
+int accept_ansuan(object who) {return notify_fail("æ­¤äººè­¦æƒ•æ€§å¤ªé«˜ï¼Œæ²’æ³•æš—ç®—ã€‚\n");}
 int accept_touxi(object who)        {return accept_kill(who);}

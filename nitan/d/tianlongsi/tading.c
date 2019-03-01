@@ -3,9 +3,9 @@ inherit ROOM;
 string look();
 void create()
 {
-        set("short", "Ëş¶¥");
+        set("short", "å¡”é ‚");
         set("long", @LONG
-ÕâÊÇÉáÀûËşËş¶¥£¬ÊÒÖĞ¹ÂÁãÁãµØ·Å×ÅÒ»ÕÅ¹©×À(zhuozi)¡£
+é€™æ˜¯èˆåˆ©å¡”å¡”é ‚ï¼Œå®¤ä¸­å­¤é›¶é›¶åœ°æ”¾è‘—ä¸€å¼µä¾›æ¡Œ(zhuozi)ã€‚
 LONG );
         set("outdoors", "tianlongsi");
         set("exits", ([
@@ -22,5 +22,5 @@ string look()
 {
         object me=this_player();
         set_temp("marks/ask_temp0", 1, me);
-        return "ÄÇÊÇÔ­À´¹©·îÉáÀû×ÓµÄµØ·½£¬Èç½ñ¿Õ¿ÕÈçÒ²£¬¿´À´½­ºşÖĞ´«ÑÔ²»Ğé¡£\n";
+        return "é‚£æ˜¯åŸä¾†ä¾›å¥‰èˆåˆ©å­çš„åœ°æ–¹ï¼Œå¦‚ä»Šç©ºç©ºå¦‚ä¹Ÿï¼Œçœ‹ä¾†æ±Ÿæ¹–ä¸­å‚³è¨€ä¸è™›ã€‚\n";
 }

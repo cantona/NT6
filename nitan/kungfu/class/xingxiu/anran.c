@@ -8,32 +8,32 @@ inherit F_GUARDER;
 mapping *quest = ({
   (["name":                "xianrenya",
     "start" :              "/d/xingxiu/xianrenya",
-    "place" :              "ÏÉÈËÑÂ",]),
+    "place" :              "ä»™äººå´–",]),
   (["name":                "silk1",
     "start" :              "/d/xingxiu/silk1",
-    "place" :              "¼ÎÓø¹ØÒÔÎ÷µÄË¿³ñÖ®Â·",]),
+    "place" :              "å˜‰å³ªé—œä»¥è¥¿çš„çµ²ç¶¢ä¹‹è·¯",]),
   (["name":                "shanjiao",
     "start" :              "/d/xingxiu/shanjiao",
-    "place" :              "ÌìÉ½½ÅÏÂ",]),
+    "place" :              "å¤©å±±è…³ä¸‹",]),
   (["name":                "xinglongshan",
     "start" :              "/d/xingxiu/xinglongshan",
-    "place" :              "ĞËÂ¡É½",]),
+    "place" :              "èˆˆéš†å±±",]),
   (["name":                "tugu",
     "start" :              "/d/xingxiu/tugu",
-    "place" :              "ÍÂ¹È»ë·üÙ¹³Ç",]),
+    "place" :              "åè°·æ¸¾ä¼ä¿ŸåŸ",]),
 });
 string ask_job();
 
 void create()
 {
-        set_name("÷öÈ»×Ó", ({ "anran zi", "anran", "zi" }) );
-        set("gender", "ÄĞĞÔ" );
-        set("nickname", "ĞÇËŞÅÉÁùµÜ×Ó");
+        set_name("é»¯ç„¶å­", ({ "anran zi", "anran", "zi" }) );
+        set("gender", "ç”·æ€§" );
+        set("nickname", "æ˜Ÿå®¿æ´¾å…­å¼Ÿå­");
         set("age", 31);
         set("location", 1);
         set("unique", 1);
-        set("long", "÷öÈ»×ÓÔÚĞÇËŞ¶ş´úÊ®µÜ×ÓÖĞÅÅĞĞµÚÁù£¬
-µ«Ëû¶ÔĞÇËŞÅÉÎä¹¦ÓĞĞ©¶À´´£¬¹¦Á¦²»Ç³¡£\n");
+        set("long", "é»¯ç„¶å­åœ¨æ˜Ÿå®¿äºŒä»£åå¼Ÿå­ä¸­æ’è¡Œç¬¬å…­ï¼Œ
+ä½†ä»–å°æ˜Ÿå®¿æ´¾æ­¦åŠŸæœ‰äº›ç¨å‰µï¼ŒåŠŸåŠ›ä¸æ·ºã€‚\n");
         set("env/wimpy", 40);
         set("str", 29);
         set("dex", 26);
@@ -74,15 +74,15 @@ void create()
                 (: exert_function, "huagong" :),
                 (: perform_action, "strike.biyan" :),
         }));
-        create_family("ĞÇËŞÅÉ", 2, "µÜ×Ó");
+        create_family("æ˜Ÿå®¿æ´¾", 2, "å¼Ÿå­");
         set("attitude", "peaceful");
         set("inquiry", ([
-                "¶¡´ºÇï" : "¶¡´ºÇïÊÇÄã½ĞµÄÂğ£¿Ã»´óÃ»Ğ¡µÄ¡£ÒÔºó½ĞÀÏÏÉ£¡",
-                "½ØÉ±" : (: ask_job :),
-                "ÇÀ½Ù" : (: ask_job :),
+                "ä¸æ˜¥ç§‹" : "ä¸æ˜¥ç§‹æ˜¯ä½ å«çš„å—ï¼Ÿæ²’å¤§æ²’å°çš„ã€‚ä»¥å¾Œå«è€ä»™ï¼",
+                "æˆªæ®º" : (: ask_job :),
+                "æ¶åŠ«" : (: ask_job :),
                 "rob"  : (: ask_job :),
                 "job"  : (: ask_job :),
-                "´µÅõ" : "Ğ¡Ê¦ÃÃ×îÌÖÀÏÏÉÏ²»¶£¬ÄãÈ¥ÎÊËı°É¡£",
+                "å¹æ§" : "å°å¸«å¦¹æœ€è¨è€ä»™å–œæ­¡ï¼Œä½ å»å•å¥¹å§ã€‚",
         ]));
           set("coagents", ({
                   ([ "startroom" : "/d/xingxiu/riyuedong",
@@ -98,7 +98,7 @@ void create()
 void attempt_apprentice(object ob)
 {
         command("consider");
-        command("say ĞÇËŞÃÅÖĞ¸÷ÈË¶¼ÓĞ×¨Ö°£¬Òª°İÊ¦ÄãÈ¥ÕÒÎÒÊ¦ĞÖµÜ°É£¡");
+        command("say æ˜Ÿå®¿é–€ä¸­å„äººéƒ½æœ‰å°ˆè·ï¼Œè¦æ‹œå¸«ä½ å»æ‰¾æˆ‘å¸«å…„å¼Ÿå§ï¼");
         return;
 }
 int accept_object(object me, object obj)
@@ -106,24 +106,24 @@ int accept_object(object me, object obj)
         object ob=this_object();
         if(!me || environment(me) != environment()) return 0;
         if(!objectp(obj)) return 0;
-        if(!present(obj, me)) return notify_fail("ÄãÃ»ÓĞÕâ¼ş¶«Î÷¡£");
+        if(!present(obj, me)) return notify_fail("ä½ æ²’æœ‰é€™ä»¶æ±è¥¿ã€‚");
         if(userp(obj))
         {
                 command("consider"+query("id", me));
-                command("say ÄãÄÃ¸ö¿ìËÀµÄÈËÀ´Æ­ÎÒ£¿");
+                command("say ä½ æ‹¿å€‹å¿«æ­»çš„äººä¾†é¨™æˆ‘ï¼Ÿ");
                 return 0;
         }
         if(!me->query_condition("xx_task2"))
         {
                 command("shake"+query("id", me));
-                command("say ÕâÃ´¾Ã²Å»ØÀ´£¬ÎÒ»¹²»ÈçÕÒ±ğÈËÀ´¸É£¡");
+                command("say é€™éº¼ä¹…æ‰å›ä¾†ï¼Œæˆ‘é‚„ä¸å¦‚æ‰¾åˆ¥äººä¾†å¹¹ï¼");
                 return 0;
         }
         if( query("id", obj) == "prize" && query("owner", obj) == query("id", me) )
         {
                 command("nod"+query("id", me));
-                command("say ºÃÑùµÄ£¡Õâ²ÅÏóÎÒÃÇĞÇËŞÅÉµÄ×÷·ç£¡\n");
-                message_vision(HIY"$N½«$n"HIY"²ğ¿ª£¬ÄÃ³öÁËÒ»´ó¶Ñ½ğÒø²Æ±¦¡£\n"NOR,ob, obj);
+                command("say å¥½æ¨£çš„ï¼é€™æ‰è±¡æˆ‘å€‘æ˜Ÿå®¿æ´¾çš„ä½œé¢¨ï¼\n");
+                message_vision(HIY"$Nå°‡$n"HIY"æ‹†é–‹ï¼Œæ‹¿å‡ºäº†ä¸€å¤§å †é‡‘éŠ€è²¡å¯¶ã€‚\n"NOR,ob, obj);
                 remove_call_out("del_temp");
                 remove_call_out("destroying");
                 call_out("destroying", 5, obj, ob, me);
@@ -132,13 +132,13 @@ int accept_object(object me, object obj)
         if( query("money_id", obj) )
         {
                 command("pat"+query("id", me));
-                command("say Ç®ÎÒÓĞµÄÊÇ£¬ÄãÒÔºó»¹ÊÇÁô¸ø×Ô¼º°É¡£");
+                command("say éŒ¢æˆ‘æœ‰çš„æ˜¯ï¼Œä½ ä»¥å¾Œé‚„æ˜¯ç•™çµ¦è‡ªå·±å§ã€‚");
                 return 0;
         }
         if( query("owner", obj) != query("id", me) )
         {
                 command("hehe"+query("id", me));
-                command("say ²»´í°¡£¬µ«Õâ»î¿É²»ÊÇÄã¸ÉµÄ¡£");
+                command("say ä¸éŒ¯å•Šï¼Œä½†é€™æ´»å¯ä¸æ˜¯ä½ å¹¹çš„ã€‚");
                 return 1;
         }
         else return 0;
@@ -151,11 +151,11 @@ void destroying(object obj, object ob, object me)
         if(!ob) return;
         if(!me || environment(me) != environment())
         {
-                command("say ß×£¬ÈËÄØ£¿");
+                command("say å’¦ï¼Œäººå‘¢ï¼Ÿ");
                 return;
         }
         command("pat"+query("id", me));
-        message_vision(HIY "$N¶Ô$nËµµÀ£ºÄãÕâ´Î×öµÃ¼«Îª³öÉ«£¬ÕâÊÇÄã¸ÃµÃµÄ²¿·Ö£¬ÄÃÈ¥°É£¡\n"NOR,ob, me);
+        message_vision(HIY "$Nå°$nèªªé“ï¼šä½ é€™æ¬¡åšå¾—æ¥µç‚ºå‡ºè‰²ï¼Œé€™æ˜¯ä½ è©²å¾—çš„éƒ¨åˆ†ï¼Œæ‹¿å»å§ï¼\n"NOR,ob, me);
         n_money = new("/clone/money/gold");
         n_money->move(me);
         n_money->add_amount(1);
@@ -164,13 +164,13 @@ void destroying(object obj, object ob, object me)
         pot=query_temp("biaoshi", me)*20;
         addn("combat_exp", exp, me);
         addn("potential", pot, me);
-        set_temp("prize_reason", "ÇÀ½Ù", me);
+        set_temp("prize_reason", "æ¶åŠ«", me);
         set_temp("can_give_prize", 1, me);
         set_temp("prize_exp", exp, me);
         set_temp("prize_pot", pot, me);
-        tell_room(environment(me),me->name()+"Êı×ÅÇ®´üÀïµÄ½ğ×Ó£¬Á³ÉÏµÄ¼¡Èâ²»×¡µØ²ü¶¯£¬ÑÛ¾¦É¢·¢×ÅÒ»ÖÖÆæ¹ÖµÄ¹âÃ¢¡£\n" NOR, ({ me }));
-        tell_object(me,"ºÙºÙ£¬·¢ÁË£¡µÃµ½"+chinese_number(query_temp("job2_exp", me))+"µã¾­Ñé¡£\n");
-        log_file("mission/ms_shangdui",sprintf("%20s×öÇÀ½ÙÈÎÎñ£¬É±ÁË%2i¸öïÚÊ¦£¬µÃµ½£º%4iµãEXPºÍ%4iµãÇ±ÄÜ¡£\n",
+        tell_room(environment(me),me->name()+"æ•¸è‘—éŒ¢è¢‹è£¡çš„é‡‘å­ï¼Œè‡‰ä¸Šçš„è‚Œè‚‰ä¸ä½åœ°é¡«å‹•ï¼Œçœ¼ç›æ•£ç™¼è‘—ä¸€ç¨®å¥‡æ€ªçš„å…‰èŠ’ã€‚\n" NOR, ({ me }));
+        tell_object(me,"å˜¿å˜¿ï¼Œç™¼äº†ï¼å¾—åˆ°"+chinese_number(query_temp("job2_exp", me))+"é»ç¶“é©—ã€‚\n");
+        log_file("mission/ms_shangdui",sprintf("%20såšæ¶åŠ«ä»»å‹™ï¼Œæ®ºäº†%2iå€‹é¢å¸«ï¼Œå¾—åˆ°ï¼š%4ié»EXPå’Œ%4ié»æ½›èƒ½ã€‚\n",
         me->name(1)+"("+getuid(me)+")",query_temp("biaoshi", me),query_temp("job2_exp", me),query_temp("biaoshi", me)*20));
         delete_temp("job2_exp", me);
         delete_temp("biaoshi", me);
@@ -189,28 +189,28 @@ string ask_job()
         exp=query("combat_exp", me);
 
         if(ob->is_busy() || ob->is_fighting())
-                return "Ã»¿´¼ûÎÒÕıÃ¦×ÅÂğ£¿Ò»±ßµÈ×ÅÈ¥£¡";
+                return "æ²’çœ‹è¦‹æˆ‘æ­£å¿™è‘—å—ï¼Ÿä¸€é‚Šç­‰è‘—å»ï¼";
         if( !query("family", me) )
-                return "¿´µÃ³öÄã¶ÔÀÏÏÉÌ¬¶È¹§¾´£¬ºÎ²»¼ÓÈëÎÒĞÇËŞÅÉÄØ£¿";
-        if( query("family/family_name", me) != "ĞÇËŞÅÉ" && 
+                return "çœ‹å¾—å‡ºä½ å°è€ä»™æ…‹åº¦æ­æ•¬ï¼Œä½•ä¸åŠ å…¥æˆ‘æ˜Ÿå®¿æ´¾å‘¢ï¼Ÿ";
+        if( query("family/family_name", me) != "æ˜Ÿå®¿æ´¾" && 
                 !query_temp("ding_flatter", me) )
-                return "Äã¶ÔÀÏÏÉµÄÌ¬¶È¿´ÉÏÈ¥²»Ì«¹§¾´°¡£¡";
+                return "ä½ å°è€ä»™çš„æ…‹åº¦çœ‹ä¸Šå»ä¸å¤ªæ­æ•¬å•Šï¼";
         if(me->query_condition("wait_xx_task"))
-                return "ÉÏ´Î°ÑÎÒÊ¦ĞÖ¸øµÄÈÎÎñ¸ãÔÒÁË£¬Õâ´ÎÄã¾ÍµÈµÈ°É¡£";
+                return "ä¸Šæ¬¡æŠŠæˆ‘å¸«å…„çµ¦çš„ä»»å‹™æç ¸äº†ï¼Œé€™æ¬¡ä½ å°±ç­‰ç­‰å§ã€‚";
         if(me->query_condition("xx_task2"))
-                return "ÎÒÏÖÔÚ»¹Ã»ÓĞµÃµ½ÈÎºÎÏûÏ¢£¬ÄãµÈ»á¶ùÔÙÀ´°É¡£";
+                return "æˆ‘ç¾åœ¨é‚„æ²’æœ‰å¾—åˆ°ä»»ä½•æ¶ˆæ¯ï¼Œä½ ç­‰æœƒå…’å†ä¾†å§ã€‚";
 //        if(me->query_condition("job_busy"))
-  //              return "ÄãÏÖÔÚ»¹ÓĞÈÎÎñÔÚÉí£¬µÈ»á¶ùÔÙÀ´°É¡£";
+  //              return "ä½ ç¾åœ¨é‚„æœ‰ä»»å‹™åœ¨èº«ï¼Œç­‰æœƒå…’å†ä¾†å§ã€‚";
         if( query_temp("job_asked", ob) == query("id", me) )
-                return "²»ÊÇ½ĞÄãÏÈÈ¥ÄÇÀïµÈÎÒÂğ£¿ÔõÃ´»¹ÀµÔÚÕâÀï£¿";
+                return "ä¸æ˜¯å«ä½ å…ˆå»é‚£è£¡ç­‰æˆ‘å—ï¼Ÿæ€éº¼é‚„è³´åœ¨é€™è£¡ï¼Ÿ";
         if( query_temp("job_asked", ob) )
-                return "ºÙºÙ£¬ÄãÀ´ÍíÁË£¬µÈÏÂÒ»´Î°É¡£";
+                return "å˜¿å˜¿ï¼Œä½ ä¾†æ™šäº†ï¼Œç­‰ä¸‹ä¸€æ¬¡å§ã€‚";
         if(exp<200000)
-                return "¹ş¹ş¹ş£¬ÄãÔÙ¼Ó°ÑÁ¦Á·¹¦°É¡£";
+                return "å“ˆå“ˆå“ˆï¼Œä½ å†åŠ æŠŠåŠ›ç·´åŠŸå§ã€‚";
         if(exp>=750000)
-                return "ÄãµÄ¹¦Á¦ÒÑ¾­³¬¹ıÎÒÁË£¬»¹ÓÃ¸úÎÒ³öÈ¥×öÊÂ£¿";
+                return "ä½ çš„åŠŸåŠ›å·²ç¶“è¶…éæˆ‘äº†ï¼Œé‚„ç”¨è·Ÿæˆ‘å‡ºå»åšäº‹ï¼Ÿ";
         if( query("shen", me)>-10000 )
-                return "ºß£¡¿´À´ÄãµÄĞÄ³¦»¹²»¹»ºÚ°¡£¬ÕâÖÖÊÂÄã²»ÎÊÒ²°Õ¡£";
+                return "å“¼ï¼çœ‹ä¾†ä½ çš„å¿ƒè…¸é‚„ä¸å¤ é»‘å•Šï¼Œé€™ç¨®äº‹ä½ ä¸å•ä¹Ÿç½·ã€‚";
         if(exp>=600000) j=6;
         else if(exp>=500000) j=5;
         else if(exp>=400000) j=5;
@@ -219,7 +219,7 @@ string ask_job()
 
         set_temp("xx_job2", 1, me);
         delete_temp("biaoshi", me);
-        message_vision(CYN "\n$NÒõÒõÒ»Ğ¦£¬ËµµÀ£ºÕâÁ½Ìì»áÓĞÒ»¶ÓÂæÍÕÉÌ¶Ó¾­¹ı£¬Äã¹»µ¨¾ÍºÍÎÒÒ»ÆğÈ¥¿´¿´°É¡£\n"NOR, ob, me);
+        message_vision(CYN "\n$Né™°é™°ä¸€ç¬‘ï¼Œèªªé“ï¼šé€™å…©å¤©æœƒæœ‰ä¸€éšŠé§±é§å•†éšŠç¶“éï¼Œä½ å¤ è†½å°±å’Œæˆ‘ä¸€èµ·å»çœ‹çœ‹å§ã€‚\n"NOR, ob, me);
         set_temp("job_asked",query("id",  me), ob);
         set_temp("dest", aquest["name"], ob);
         set_temp("start_place", aquest["start"], ob);
@@ -228,13 +228,13 @@ string ask_job()
         me->apply_condition("xx_task2", 10 + j);
         me->start_busy(1);
         call_out("going", 30, ob);
-        return "ÎÒ»¹ÓĞĞ©ÊÂÒª°ì£¬ÄãÏÈÈ¥"+query_temp("place", ob)+"µÈÎÒ¡£\n";
+        return "æˆ‘é‚„æœ‰äº›äº‹è¦è¾¦ï¼Œä½ å…ˆå»"+query_temp("place", ob)+"ç­‰æˆ‘ã€‚\n";
 }
 void going(object me)
 {
-        message_vision("$N¼±¼±Ã¦Ã¦µØ×ßÁË³öÈ¥¡£\n", me);
+        message_vision("$Næ€¥æ€¥å¿™å¿™åœ°èµ°äº†å‡ºå»ã€‚\n", me);
         me->move(query_temp("start_place", me));
-        message_vision("$N¼±¼±Ã¦Ã¦µØ×ßÁË¹ıÀ´¡£\n", me);
+        message_vision("$Næ€¥æ€¥å¿™å¿™åœ°èµ°äº†éä¾†ã€‚\n", me);
 }
 void init()
 {
@@ -264,7 +264,7 @@ void waiting(object ob, object me)
 {
         if(!ob || !living(me)) return;
         command("nod"+query("id", me));
-        command("say ºÃ£¬ÎÒÃÇ¾ÍÔÚÕâÀïµÈ×ÅËûÃÇÀ´°É¡£");
+        command("say å¥½ï¼Œæˆ‘å€‘å°±åœ¨é€™è£¡ç­‰è‘—ä»–å€‘ä¾†å§ã€‚");
         set_temp("wait_target", 1, ob);
         set_temp("wait_target", 1, me);
         remove_call_out("wait_target");
@@ -277,9 +277,9 @@ void do_back(object me)
         delete_temp("start_place", me);
         delete_temp("place", me);
         delete_temp("dest", me);
-        message_vision("$N×ª¹ıÉ½Çğ£¬¼¸¸öÆğÂä¾Í²»¼ûÁË¡£\n", me);
+        message_vision("$Nè½‰éå±±ä¸˜ï¼Œå¹¾å€‹èµ·è½å°±ä¸è¦‹äº†ã€‚\n", me);
         me->move("/d/xingxiu/riyuedong1");
-        message_vision("$N¼±¼±Ã¦Ã¦µØ×ßÁË¹ıÀ´¡£\n", me);
+        message_vision("$Næ€¥æ€¥å¿™å¿™åœ°èµ°äº†éä¾†ã€‚\n", me);
         remove_call_out("del_temp");
         call_out("del_temp", 300, me);
 }
@@ -290,15 +290,15 @@ int wait_target(object ob, object me)
         object obj;
         if(!objectp(present(me, environment(ob))))
         {
-                message_vision("$NËµµÀ£ºÒ®£¿ÄÇ¼Ò»ïÔõÃ´²»¼ûÁË£¿\n", ob);
+                message_vision("$Nèªªé“ï¼šè€¶ï¼Ÿé‚£å®¶ä¼™æ€éº¼ä¸è¦‹äº†ï¼Ÿ\n", ob);
                 remove_call_out("do_back");
                 do_back(ob);
                 return 1;
         }
         if(!objectp(ob = present("anran zi", environment(me))))
         {
-                tell_object(me,"Äã·¢ÏÖ÷öÈ»×Ó²»¼ûÁË£¬Ö»ºÃ»ÒÁïÁïµØ×ªÉíÀë¿ª¡£\n");
-                tell_room(environment(me),me->name()+"Í»È»Ò»Á³Ã£È»µÄ±íÇé£¬¿´À´ÊÇÏëÒªÀë¿ªÁË¡£\n", ({ me }));
+                tell_object(me,"ä½ ç™¼ç¾é»¯ç„¶å­ä¸è¦‹äº†ï¼Œåªå¥½ç°æºœæºœåœ°è½‰èº«é›¢é–‹ã€‚\n");
+                tell_room(environment(me),me->name()+"çªç„¶ä¸€è‡‰èŒ«ç„¶çš„è¡¨æƒ…ï¼Œçœ‹ä¾†æ˜¯æƒ³è¦é›¢é–‹äº†ã€‚\n", ({ me }));
                 delete_temp("xx_job2", me);
                 me->clear_condition("xx_task2");
                 delete_temp("wait_target", me);
@@ -307,10 +307,10 @@ int wait_target(object ob, object me)
         obj = new("/d/xingxiu/npc/shangdui");
         obj->move(environment(me));
         set("arg",query_temp("dest",  ob), obj);
-        message_vision(HIY"\nÖ»ÌıÒ»ÕóÂæÍÕ·çÁåÉù´«À´£¬Ò»Ö»ÂæÍÕÉÌ¶Ó³öÏÖÔÚÑÛÇ°£¡\n\n"NOR, ob);
-        tell_object(me,"ÁÔÎïÖÕÓÚ³öÏÖÁË£¡\n");
-        message_vision(HIY"$N¶Ô×Å$n´óÉùÃüÁîµÀ£ºÄã¿ìÇÀ(qiang)ÉÌ¶Ó£¬ÎÒÀ´¶Ô¸¶ÆäËûÈË£¡\n"NOR, ob, me);
-        message_vision("ËµÍê$N¾Í³åÉÏÇ°È¥£¬ºÍ¼¸¸ö»¤ïÚïÚÊ¦´ò¶·×·Öğ¿ªÁË¡£\n", ob);
+        message_vision(HIY"\nåªè½ä¸€é™£é§±é§é¢¨éˆ´è²å‚³ä¾†ï¼Œä¸€åªé§±é§å•†éšŠå‡ºç¾åœ¨çœ¼å‰ï¼\n\n"NOR, ob);
+        tell_object(me,"çµç‰©çµ‚äºå‡ºç¾äº†ï¼\n");
+        message_vision(HIY"$Nå°è‘—$nå¤§è²å‘½ä»¤é“ï¼šä½ å¿«æ¶(qiang)å•†éšŠï¼Œæˆ‘ä¾†å°ä»˜å…¶ä»–äººï¼\n"NOR, ob, me);
+        message_vision("èªªå®Œ$Nå°±æ²–ä¸Šå‰å»ï¼Œå’Œå¹¾å€‹è­·é¢é¢å¸«æ‰“é¬¥è¿½é€é–‹äº†ã€‚\n", ob);
         remove_call_out("do_back");
         do_back(ob);
         delete_temp("wait_target", me);

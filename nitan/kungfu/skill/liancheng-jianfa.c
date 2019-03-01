@@ -1,18 +1,18 @@
 // This program is a part of NITAN MudLIB
-// liancheng-jian.c Á¬³Ç½£·¨
+// liancheng-jian.c é€£åŸŽåŠæ³•
 
 inherit SKILL;
 
 string *action_msg = ({
-        "$NÊ¹Ò»Ê½¡¸¹Âºèº£ÉÏÀ´¡¹£¬ÊÖÖÐ$wÎËÎËÎ¢Õñ£¬»Ã³ÉÒ»Ìõ¼²¹â´ÌÏò$nµÄ$l",
-        "$N´í²½ÉÏÇ°£¬Ê¹³ö¡¸³Øäê²»¸Ò¹Ë¡¹£¬ÊÖÖÐ$w»®³öÒ»µÀ½£¹âÅüÏò$nµÄ$l",
-        "$NÊÖÖÐ$wÒ»¶¶£¬Ò»ÕÐ¡¸ÂäÈÕÕÕ´óÆì¡¹£¬Ð±Ð±Ò»½£·´ÍóÁÃ³ö£¬¹¥Ïò$nµÄ$l",
-        "$NÊÖÖÐ½£ïÏà¥à¥³¤Ò÷Ò»Éù£¬Ò»Ê½¡¸ÂíÃù·çÏôÏô¡¹£¬Ò»µÀ½£¹â·ÉÏò$nµÄ$l",
-        "$NÒ»Ê½¡¸ÂäÈÕÑô¹ØÂ·¡¹£¬ÊÖÖÐ$wÎè³öÎÞÊý½£»¨£¬Ê¹$nÄÑ¶ÏÐéÊµ£¬ÎÞ¿É¶ã±Ü",
-        "$NÊÖÖÐ$wÐ±Ö¸²ÔÌì£¬½£Ã¢ÍÌÍÂ£¬Ò»Ê½¡¸Ç¼µÑÔ¹ÑîÁø¡¹£¬¶Ô×¼$nµÄ$lÐ±Ð±»÷³ö",
-        "$NÒ»Ê½¡¸´º·ç¶ÈÓñÃÅ¡¹£¬ÊÖÍó¼±¶¶£¬»ÓÈ÷³öÍòµã½ð¹â£¬´ÌÏò$nµÄ$l",
-        "$NÒ»Ê½¡¸Ò£¹ÒÔÚÇ°´¨¡¹£¬$w·ÉÕ¶ÅÌÐý£¬Èç¼²µç°ãÉäÏò$nµÄÐØ¿Ú",
-        "$NÒ»Ê½¡¸·ÉÁ÷ÈýÇ§³ß¡¹£¬$wÍ»È»´ÓÌì¶ø½µ£¬Ò»Æ¬½ð¹âÎ§ÂÓ$nÈ«Éí",
+        "$Nä½¿ä¸€å¼ã€Œå­¤é´»æµ·ä¸Šä¾†ã€ï¼Œæ‰‹ä¸­$wå—¡å—¡å¾®æŒ¯ï¼Œå¹»æˆä¸€æ¢ç–¾å…‰åˆºå‘$nçš„$l",
+        "$NéŒ¯æ­¥ä¸Šå‰ï¼Œä½¿å‡ºã€Œæ± æ½¢ä¸æ•¢é¡§ã€ï¼Œæ‰‹ä¸­$wåŠƒå‡ºä¸€é“åŠå…‰åŠˆå‘$nçš„$l",
+        "$Næ‰‹ä¸­$wä¸€æŠ–ï¼Œä¸€æ‹›ã€Œè½æ—¥ç…§å¤§æ——ã€ï¼Œæ–œæ–œä¸€åŠåè…•æ’©å‡ºï¼Œæ”»å‘$nçš„$l",
+        "$Næ‰‹ä¸­åŠé˜å•·å•·é•·åŸä¸€è²ï¼Œä¸€å¼ã€Œé¦¬é³´é¢¨è•­è•­ã€ï¼Œä¸€é“åŠå…‰é£›å‘$nçš„$l",
+        "$Nä¸€å¼ã€Œè½æ—¥é™½é—œè·¯ã€ï¼Œæ‰‹ä¸­$wèˆžå‡ºç„¡æ•¸åŠèŠ±ï¼Œä½¿$né›£æ–·è™›å¯¦ï¼Œç„¡å¯èº²é¿",
+        "$Næ‰‹ä¸­$wæ–œæŒ‡è’¼å¤©ï¼ŒåŠèŠ’åžåï¼Œä¸€å¼ã€Œç¾Œç¬›æ€¨æ¥ŠæŸ³ã€ï¼Œå°æº–$nçš„$læ–œæ–œæ“Šå‡º",
+        "$Nä¸€å¼ã€Œæ˜¥é¢¨åº¦çŽ‰é–€ã€ï¼Œæ‰‹è…•æ€¥æŠ–ï¼Œæ®æ´’å‡ºè¬é»žé‡‘å…‰ï¼Œåˆºå‘$nçš„$l",
+        "$Nä¸€å¼ã€Œé™æŽ›åœ¨å‰å·ã€ï¼Œ$wé£›æ–¬ç›¤æ—‹ï¼Œå¦‚ç–¾é›»èˆ¬å°„å‘$nçš„èƒ¸å£",
+        "$Nä¸€å¼ã€Œé£›æµä¸‰åƒå°ºã€ï¼Œ$wçªç„¶å¾žå¤©è€Œé™ï¼Œä¸€ç‰‡é‡‘å…‰åœæŽ $nå…¨èº«",
 });
 
 int valid_enable(string usage) { return usage == "sword" || usage == "parry"; }
@@ -26,7 +26,7 @@ mapping query_action(object me, object weapon)
                 "attack": 70 + random(10),
                 "dodge" : 20 + random(10),
                 "parry" : 20 + random(10),
-                "damage_type" : random(2)?"´ÌÉË":"¸îÉË",
+                "damage_type" : random(2)?"åˆºå‚·":"å‰²å‚·",
         ]);
 }
 
@@ -36,11 +36,11 @@ int practice_skill(object me)
 
         if( !objectp(weapon=query_temp("weapon", me) )
          || query("skill_type", weapon) != "sword" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ã€‚\n");
         if( query("qi", me)<80 )
-                return notify_fail("ÄãµÄÌåÁ¦²»¹»Á·Á¬³Ç½£·¨¡£\n");
+                return notify_fail("ä½ çš„é«”åŠ›ä¸å¤ ç·´é€£åŸŽåŠæ³•ã€‚\n");
         if( query("neili", me)<80 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ã€‚\n");
         me->receive_damage("qi", 70);
         addn("neili", -70, me);
         return 1;

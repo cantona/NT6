@@ -3,11 +3,11 @@
 inherit ROOM;
 void create()
 {
-        set("short", "������͵��¥");
+        set("short", "天外天客店二樓");
         set("long", @LONG
-������͵��Ȼ�����鴫���ô��һ��ͷ���һ�ž��µĴ�������
-���������������ޱߵ����˾��¡�ůů�ķ紵��������˯����������
-˯���ĺõط���
+天外天客店果然名不虛傳，好大的一間客房，一張精致的床，窗外
+是美麗的西湖，無邊的宜人景致。暖暖的風吹得你昏昏欲睡，這裡正是
+睡覺的好地方。
 LONG);
         set("sleep_room", "1");
         set("no_fight", "1");

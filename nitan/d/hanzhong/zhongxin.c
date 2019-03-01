@@ -1,15 +1,15 @@
-// zhongxin.c ���Ĺ㳡
+// zhongxin.c 中心廣場
 // Winder Oct.10 1998
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "���Ĺ㳡");
+        set("short", "中心廣場");
         set("long", @LONG
-�����Ǻ���������Ĺ㳡���������Ǹ�С��ֻ���������--
-�ֱ��Ƕ��֣����֣��Ͻֺͱ��֣����������ϡ��ߵ����·��
-�����˶���Щ�������㶼�ͺ������ع���Ϊ��
+這裡是漢中鎮的中心廣場，漢中鎮是個小鎮，只有四條大街--
+分別是東街，西街，南街和北街，都在這裡匯合。走到這裡，路上
+的行人多了些，見了你都和和氣氣地拱手為禮。
 LONG
         );
         set("outdoors", "hanzhong");

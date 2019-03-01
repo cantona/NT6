@@ -3,7 +3,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-string name() { return HIY "»Ã½£¾÷" NOR; }
+string name() { return HIY "å¹»åŠè¨£" NOR; }
 
 inherit F_SSERVER;
 
@@ -16,28 +16,28 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(name() + "Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(name() + "åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me)) ||
             query("skill_type", weapon) != "sword" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (me->query_skill("tianyu-qijian", 1) < 120)
-                return notify_fail("ÄãµÄÌìÓğÆæ½£²»¹»æµÊì£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„å¤©ç¾½å¥‡åŠä¸å¤ å«»ç†Ÿï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (me->query_skill("force", 1) < 160)
-                return notify_fail("ÄãµÄÄÚ¹¦»ğºò²»×ã£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸç«å€™ä¸è¶³ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if( query("neili", me)<300 )
-                return notify_fail("ÄãÏÖÔÚµÄÕæÆø²»×ã£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çš„çœŸæ°£ä¸è¶³ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
         level = me->query_skill("tianyu-qijian", 1);
 
-        msg = HIY "$N" HIY "ÄıÉñÏ¢Æø£¬ÊÖÍó¼²¶¶£¬Íì³öÇ§Íò¸ö½£»¨£¬ÆÌÌì¸ÇµØ·ÉÏò$n"
-              HIY "¡£\n" NOR;
+        msg = HIY "$N" HIY "å‡ç¥æ¯æ°£ï¼Œæ‰‹è…•ç–¾æŠ–ï¼ŒæŒ½å‡ºåƒè¬å€‹åŠèŠ±ï¼Œèˆ–å¤©è“‹åœ°é£›å‘$n"
+              HIY "ã€‚\n" NOR;
 
         message_combatd(msg, me, target);
         addn("neili", -100, me);

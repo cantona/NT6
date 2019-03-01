@@ -4,22 +4,22 @@ inherit NPC;
 
 void create()
 {
-        set_name("Éñµñ", ({ "shen diao", "diao" }) );
-        set("race", "·ÉÇÝ");
-        set("subrace", "×ßÇÝ");
+        set_name("ç¥žé›•", ({ "shen diao", "diao" }) );
+        set("race", "é£›ç¦½");
+        set("subrace", "èµ°ç¦½");
         set("age", 20);
         set("long", @LONG
-    ÕâµñÉíÐÎÉõ¾Þ£¬±ÈÈË»¹¸ß£¬ÐÎÃ²³óÂªÖ®¼«£¬È«ÉíÓðÃ«ÊèÊèÂä
-Âä£¬ËÆÊÇ±»ÈË°ÎÈ¥ÁËÒ»´ó°ëËÆµÄ£¬Ã«É«»ÆºÚ£¬ÏÔµÃÉõÊÇ°¹Ôà£¬µñ
-µö×ìÍäÇú£¬Í·¶¥ÉúÖø¸öÑªºìµÄ´óÈâÁö£¬Ë«ÍÈÆæ´Ö£¬ÓðÒíÉõ¶Ì¡£
+    é€™é›•èº«å½¢ç”šå·¨ï¼Œæ¯”äººé‚„é«˜ï¼Œå½¢è²Œé†œé™‹ä¹‹æ¥µï¼Œå…¨èº«ç¾½æ¯›ç–ç–è½
+è½ï¼Œä¼¼æ˜¯è¢«äººæ‹”åŽ»äº†ä¸€å¤§åŠä¼¼çš„ï¼Œæ¯›è‰²é»ƒé»‘ï¼Œé¡¯å¾—ç”šæ˜¯éª¯è‡Ÿï¼Œé›•
+é‡£å˜´å½Žæ›²ï¼Œé ­é ‚ç”Ÿè‘—å€‹è¡€ç´…çš„å¤§è‚‰ç˜¤ï¼Œé›™è…¿å¥‡ç²—ï¼Œç¾½ç¿¼ç”šçŸ­ã€‚
 LONG
 );
         set("attitude", "peaceful");
         set("chat_chance", 10);
         set("chat_msg", ({
-                "ÕâµñÂõÖø´ó²½À´È¥£¬Ö»ÊÇ¸ßÊÓÀ«²½£¬×ÔÓÐÒ»·¬ÍþÎäÆø¸Å¡£\n",
-                "Õâµñ²»Ê±Éì³öÓðÒí£¬È´ÓÖÉõ¶Ì£¬²»ÖªÈçºÎ·ÉÏè£¬µ«ÅÄ´òºôºô³É·ç¡£\n",
-                "ÕâµñÍ»È»¸ßÉùÃù½Ð£¬ÉùÒôÎ¢´øË»ÑÆ£¬µ«¼¤Ô½²ÔÁ¹£¬ÆøÊÆÉõºÀ¡£\n",
+                "é€™é›•é‚è‘—å¤§æ­¥ä¾†åŽ»ï¼Œåªæ˜¯é«˜è¦–é—Šæ­¥ï¼Œè‡ªæœ‰ä¸€ç•ªå¨æ­¦æ°£æ¦‚ã€‚\n",
+                "é€™é›•ä¸æ™‚ä¼¸å‡ºç¾½ç¿¼ï¼Œå»åˆç”šçŸ­ï¼Œä¸çŸ¥å¦‚ä½•é£›ç¿”ï¼Œä½†æ‹æ‰“å‘¼å‘¼æˆé¢¨ã€‚\n",
+                "é€™é›•çªç„¶é«˜è²é³´å«ï¼Œè²éŸ³å¾®å¸¶å˜¶å•žï¼Œä½†æ¿€è¶Šè’¼æ¶¼ï¼Œæ°£å‹¢ç”šè±ªã€‚\n",
         }));
        set("qi", 4000);
         set("max_qi", 4000);
@@ -27,7 +27,7 @@ LONG
         set("max_jing", 2000);
         set("str", 86);
         set("cor", 80);
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "×ó³á", "ÓÒ³á", "×ó×¦", "ÓÒ×¦" }) );
+        set("limbs", ({ "é ­éƒ¨", "èº«é«”", "å·¦ç¿…", "å³ç¿…", "å·¦çˆª", "å³çˆª" }) );
         set("verbs", ({ "poke", "claw", "wind" }) );
 
         set("combat_exp", 2000000);

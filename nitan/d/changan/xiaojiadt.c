@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "���Ҵ���");
+        set("short", "蕭家大廳");
         set("long", @LONG
-�����������أ����г���һ������֮�⣬���Ǽ��޼Ҿߣ�����
-���裬ֻ��ǽ�Ϲ���һ���޴�Ĺ��ʻ�������һ����ǣ�ɽ��ˮ�ƣ�
-����׺��̨ͤ¥��԰����������ǽ��ϵ�һ�����ǡ�
+這間大廳很樸素，房中除了一個鐵箱之外，竟是既無家具，又無
+擺設，只是牆上掛著一幅巨大的工筆畫，畫中一座大城，山環水繞，
+還點綴有亭台樓閣、園林人物，看來是江南的一處名城。
 LONG );
         set("exits", ([ /* sizeof() == 3 */
                 "west" : "/d/changan/xiaojia-qianyuan",

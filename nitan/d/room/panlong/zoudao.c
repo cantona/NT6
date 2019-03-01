@@ -1,4 +1,4 @@
-// yingke.c ÅÌÁú¾ÓÓ­¿ÍÌü
+// yingke.c ç›¤é¾å±…è¿å®¢å»³
 
 #include <room.h>
 
@@ -7,14 +7,14 @@ inherit ROOM;                                   /* EXAMPLE */
 
 void create()
 {
-        set("short", "×ßµÀ");
+        set("short", "èµ°é“");
         set("long", @LONG
-ÕâÊÇÁ¬½ÓÕıÌüºÍ´óÃÅµÄÒ»Ìõ×ßµÀ£¬Á½ÅÔ¶¼ÊÇÄ¾ÖÆÇ½°å£¬Ç°Ãæ¾ÍÊÇ
-Ó­¿ÍÌü¡£
+é€™æ˜¯é€£æ¥æ­£å»³å’Œå¤§é–€çš„ä¸€æ¢èµ°é“ï¼Œå…©æ—éƒ½æ˜¯æœ¨åˆ¶ç‰†æ¿ï¼Œå‰é¢å°±æ˜¯
+è¿å®¢å»³ã€‚
 LONG );
 
-        set("default_long", "ÕâÊÇÁ¬½ÓÕıÌüºÍ´óÃÅµÄÒ»Ìõ×ßµÀ£¬Á½ÅÔ¶¼ÊÇÄ¾" /* EXAMPLE */
-                            "ÖÆÇ½°å£¬Ç°Ãæ¾ÍÊÇÓ­¿ÍÌü¡£" );              /* EXAMPLE */
+        set("default_long", "é€™æ˜¯é€£æ¥æ­£å»³å’Œå¤§é–€çš„ä¸€æ¢èµ°é“ï¼Œå…©æ—éƒ½æ˜¯æœ¨" /* EXAMPLE */
+                            "åˆ¶ç‰†æ¿ï¼Œå‰é¢å°±æ˜¯è¿å®¢å»³ã€‚" );              /* EXAMPLE */
                                                                        /* EXAMPLE */
 
         set("exits", ([
@@ -50,14 +50,14 @@ int do_push(string arg)
         object room;
 
         if (query("gate") == "open")
-                return notify_fail("´óÃÅ¿ª×ÅÄØ£¬Äã»¹ÍÆÊ²Ã´£¿\n");
+                return notify_fail("å¤§é–€é–‹è‘—å‘¢ï¼Œä½ é‚„æ¨ä»€éº¼ï¼Ÿ\n");
 
         me = this_player();
-        message("vision",  "ÄãÓÃÁ¦ÍÆÁËÍÆ´óÃÅ£¬¾ÍÌı´óÃÅ¡°Ö¨Ñ½Ñ½¡±µÄ±»ÈËÍÆ¿ªÁË¡£\n",
+        message("vision",  "ä½ ç”¨åŠ›æ¨äº†æ¨å¤§é–€ï¼Œå°±è½å¤§é–€â€œå±å‘€å‘€â€çš„è¢«äººæ¨é–‹äº†ã€‚\n",
                            this_object());
     
         room = get_object(__DIR__"qianting");
-        message("vision", "´óÃÅ¡°Ö¨Ñ½Ñ½¡±µÄ±»ÈËÍÆ¿ªÁË¡£\n", room);
+        message("vision", "å¤§é–€â€œå±å‘€å‘€â€çš„è¢«äººæ¨é–‹äº†ã€‚\n", room);
         set("gate", "open");
         set("exits/south", __DIR__"qianting");
         set("exits/north", __FILE__, room);
@@ -73,21 +73,21 @@ int do_close(string arg, int n)
         object room;
 
         if (query("gate") == "close")
-                return notify_fail("´óÃÅ¹Ø×ÅÄØ£¬Äã»¹ÔÙ¹ØÒ»±é£¿\n");
+                return notify_fail("å¤§é–€é—œè‘—å‘¢ï¼Œä½ é‚„å†é—œä¸€éï¼Ÿ\n");
 
         if (! n)
         {
                 me = this_player();
-                message("vision", me->name() + "×ßÉÏÇ°È¥£¬ÓÃÁ¦ºÏÉÏ´óÃÅ¡£\n",
+                message("vision", me->name() + "èµ°ä¸Šå‰å»ï¼Œç”¨åŠ›åˆä¸Šå¤§é–€ã€‚\n",
                         this_object());
         } else
         {
-                message("vision", "´óÃÅ¡°Ö¨Ñ½Ñ½¡±µÄ±»ÈË¹ØÉÏÁË¡£\n",
+                message("vision", "å¤§é–€â€œå±å‘€å‘€â€çš„è¢«äººé—œä¸Šäº†ã€‚\n",
                         this_object());
         }
 
         room = get_object(__DIR__"qianting");
-        message("vision", "´óÃÅ¡°Ö¨Ñ½Ñ½¡±µÄ±»ÈË¹ØÉÏÁË¡£\n", room);
+        message("vision", "å¤§é–€â€œå±å‘€å‘€â€çš„è¢«äººé—œä¸Šäº†ã€‚\n", room);
         set("gate", "close");
         delete("exits/south");
         set("gate", "close", room);

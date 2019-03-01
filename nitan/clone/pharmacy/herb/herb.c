@@ -11,13 +11,13 @@ int tp, op, xp;
 string *eng;
 string s_name, unit, desc;
 
-string* _tp = ({ "¿à", "ÏÌ", "Ëá", "ÐÁ", "¸Ê" });
-string* _op = ({ "º®", "Á¹", "Æ½", "ÎÂ", "ÈÈ" });
-string* _xp = ({ "ÎÞ", "ÓÐ" });
+string* _tp = ({ "è‹¦", "å’¸", "é…¸", "è¾›", "ç”˜" });
+string* _op = ({ "å¯’", "æ¶¼", "å¹³", "æº«", "ç†±" });
+string* _xp = ({ "ç„¡", "æœ‰" });
 
 void create()
 {
-        set_name("Ò©²ÄÎï¼þ", ({ "herb", "object" }));
+        set_name("è—¥æç‰©ä»¶", ({ "herb", "object" }));
 
         setup();
 }
@@ -32,7 +32,7 @@ int initialize(int id, string name, int *prop)
 
         s_name = name;
         eng  = ({ "herb" });
-        unit = "·Ý";
+        unit = "ä»½";
         desc = 0;
 
         rt = PHARMACY_D->query_relation(id);
@@ -55,13 +55,13 @@ string long()
 {
         string long;
 
-        long = WHT + s_name + "£º\n";
+        long = WHT + s_name + "ï¼š\n";
 
         if (stringp(desc))
                 long += desc + "\n";
 
-        long += "Î¶ÐÔ£º" + _tp[tp] + " Ò©ÐÔ£º" + _op[op];
-        long += " ¶¾ÐÔ£º" + _xp[xp] + "\n" + NOR;
+        long += "å‘³æ€§ï¼š" + _tp[tp] + " è—¥æ€§ï¼š" + _op[op];
+        long += " æ¯’æ€§ï¼š" + _xp[xp] + "\n" + NOR;
 
         return long;
 }

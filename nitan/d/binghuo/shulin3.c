@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "������");
+        set("short", "大樹林");
         set("long", @LONG
-�������������滨��ܣ�������Ҷ����ɽ��Ұ�����⼫��֮����
-��Ȼ�д���ľ�������ǰݻ�ɽ֮���ˡ�ż������һЩ�в�����Ŀ�Ĵ�
-��С�ޣ�Ҳ�����ˡ�
+這裡綠樹成蔭。奇花異卉，長青闊葉，漫山遍野。在這極北之處，
+居然有此林木，看來是拜火山之賜了。偶爾驚起一些叫不出名目的大
+鳥小獸，也不避人。
 LONG );
         set("outdoors", "binghuo");
         set("exits", ([
@@ -41,7 +41,7 @@ int valid_leave (object who, string dir)
                 {
                         addn_temp("binghuo", 1, who);
                         who->start_busy(2);
-                        return notify_fail("��������������ȥ�����Ǻ����򲻶ԣ����˰��죬�ֻص���ԭ�ء�\n");
+                        return notify_fail("你向西北踉蹌走去，可是好象方向不對，摸了半天，又回到了原地。\n");
                 }
         }
 }

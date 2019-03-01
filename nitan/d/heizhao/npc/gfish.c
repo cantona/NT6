@@ -6,10 +6,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("½ğÍŞÍŞ", ({ "jin wawa", "jin", "fish" }) );
-        set("race", "Ò°ÊŞ");
+        set_name("é‡‘å¨ƒå¨ƒ", ({ "jin wawa", "jin", "fish" }) );
+        set("race", "é‡ç¸");
         set("age",35);
-        set("long", "´ËÎïËÆÓã·ÇÓã£¬ËÆÉß·ÇÉß£¬È«Éí½ğÉ«£¬ÓĞ³ßÀ´³¤¡£\n");
+        set("long", "æ­¤ç‰©ä¼¼é­šéé­šï¼Œä¼¼è›‡éè›‡ï¼Œå…¨èº«é‡‘è‰²ï¼Œæœ‰å°ºä¾†é•·ã€‚\n");
 
         set("attitude", "peaceful");
         

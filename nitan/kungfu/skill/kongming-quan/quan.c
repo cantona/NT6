@@ -3,7 +3,7 @@
 
 inherit F_SSERVER;
 
-string name() { return "ÂÒÈ­·ÉÎè"; }
+string name() { return "äº‚æ‹³é£›èˆž"; }
 
 int perform(object me, object target)
 {
@@ -11,42 +11,42 @@ int perform(object me, object target)
         int damage,skill,wap,wdp;
         string *limb, type, result, str,msg;
 
-        type = "ÄÚÉË";
+        type = "å…§å‚·";
 
         if( !target ) target = offensive_target(me);
 
         if( !target
         ||        !target->is_character()
         ||        !me->is_fighting(target) )
-                return notify_fail("ÂÒÈ­·ÉÎèÖ»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("äº‚æ‹³é£›èˆžåªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( objectp(query_temp("weapon", me)) )
-                return notify_fail("¿ÕÊÖ²ÅÄÜÊ©Õ¹ÂÒÈ­·ÉÎè£¡\n");
+                return notify_fail("ç©ºæ‰‹æ‰èƒ½æ–½å±•äº‚æ‹³é£›èˆžï¼\n");
 
         if( me->query_skill_mapped("unarmed") != "kongming-quan" )
-                return notify_fail("ÄãËùÓÃµÄ²¢·Ç¿ÕÃ÷È­£¬²»ÄÜÊ©Õ¹ÂÒÈ­·ÉÎè£¡\n");
+                return notify_fail("ä½ æ‰€ç”¨çš„ä¸¦éžç©ºæ˜Žæ‹³ï¼Œä¸èƒ½æ–½å±•äº‚æ‹³é£›èˆžï¼\n");
 
         if( me->query_skill_prepared("unarmed") != "kongming-quan" )
-                return notify_fail("ÄãËù±¸µÄ²¢·Ç¿ÕÃ÷È­£¬²»ÄÜÊ©Õ¹ÂÒÈ­·ÉÎè£¡\n");
+                return notify_fail("ä½ æ‰€å‚™çš„ä¸¦éžç©ºæ˜Žæ‹³ï¼Œä¸èƒ½æ–½å±•äº‚æ‹³é£›èˆžï¼\n");
 
         /*
         if( me->query_skill_mapped("force") != "xiantian-gong" )
-                return notify_fail("ÄãËùÓÃµÄ²¢·ÇÏÈÌì¹¦£¬Ê©Õ¹²»³öÂÒÈ­·ÉÎè£¡\n");
+                return notify_fail("ä½ æ‰€ç”¨çš„ä¸¦éžå…ˆå¤©åŠŸï¼Œæ–½å±•ä¸å‡ºäº‚æ‹³é£›èˆžï¼\n");
         */
 
         if( me->query_skill("force") < 120 )
-                return notify_fail("ÄãµÄÏÈÌì¹¦»ðºòÎ´µ½£¬ÎÞ·¨Ê©Õ¹ÂÒÈ­·ÉÎè£¡\n");
+                return notify_fail("ä½ çš„å…ˆå¤©åŠŸç«å€™æœªåˆ°ï¼Œç„¡æ³•æ–½å±•äº‚æ‹³é£›èˆžï¼\n");
 
         if( me->query_skill("unarmed") < 120 )
-                return notify_fail("ÂÒÈ­·ÉÎèÐèÒª¾«Õ¿µÄ¿ÕÃ÷È­·½ÄÜÓÐÐ§Ê©Õ¹£¡\n");
+                return notify_fail("äº‚æ‹³é£›èˆžéœ€è¦ç²¾æ¹›çš„ç©ºæ˜Žæ‹³æ–¹èƒ½æœ‰æ•ˆæ–½å±•ï¼\n");
 
         if( query("max_neili", me) <= 1000 )
-                return notify_fail("ÄãµÄÄÚÁ¦µÈ¼¶²»¹»Ê¹ÓÃÂÒÈ­·ÉÎè£¡\n");
+                return notify_fail("ä½ çš„å…§åŠ›ç­‰ç´šä¸å¤ ä½¿ç”¨äº‚æ‹³é£›èˆžï¼\n");
 
         if( query("neili", me) <= 1000 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬ÎÞ·¨¼ÌÐøÊ©Õ¹ÂÒÈ­·ÉÎè£¡\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ï¼Œç„¡æ³•ç¹¼çºŒæ–½å±•äº‚æ‹³é£›èˆžï¼\n");
 
-        msg = HIY"$NÕÅ¿ÚÒ»Éù±©ºÈ£¬Ë«Ä¿¾«¹âËÄÉä£¬½Ó×ÅÉíÐÎÆ®ºö²»¶¨£¬Ë«È­»Ã»¯³öÂþÌìÈ­Ó°ÖØÖØÏò$nÁýÕÖ¹ýÈ¥£¡\n\n"NOR;
+        msg = HIY"$Nå¼µå£ä¸€è²æš´å–ï¼Œé›™ç›®ç²¾å…‰å››å°„ï¼ŒæŽ¥è‘—èº«å½¢é£„å¿½ä¸å®šï¼Œé›™æ‹³å¹»åŒ–å‡ºæ¼«å¤©æ‹³å½±é‡é‡å‘$nç± ç½©éŽåŽ»ï¼\n\n"NOR;
         message_combatd(msg, me, target);
 
         skill =  me->query_skill("unarmed");
@@ -54,19 +54,19 @@ int perform(object me, object target)
         addn_temp("apply/unarmed_damage", skill/2, me);
         addn_temp("apply/attack", skill/2, me);
 
-        message("vission",HIR  "ÉÏÒ»È­£¡\n" NOR,environment(me));
+        message("vission",HIR  "ä¸Šä¸€æ‹³ï¼\n" NOR,environment(me));
         COMBAT_D->do_attack(me,target,query_temp("weapon", me));
-        message("vission",HIR  "ÏÂÒ»È­£¡\n" NOR,environment(me));
+        message("vission",HIR  "ä¸‹ä¸€æ‹³ï¼\n" NOR,environment(me));
         COMBAT_D->do_attack(me,target,query_temp("weapon", me));
-        message("vission",HIR  "×óÒ»È­£¡\n" NOR,environment(me));
+        message("vission",HIR  "å·¦ä¸€æ‹³ï¼\n" NOR,environment(me));
         COMBAT_D->do_attack(me,target,query_temp("weapon", me));
-        message("vission",HIR  "ÓÒÒ»È­£¡\n" NOR,environment(me));
+        message("vission",HIR  "å³ä¸€æ‹³ï¼\n" NOR,environment(me));
         COMBAT_D->do_attack(me,target,query_temp("weapon", me));
-        message("vission",HIR  "Ç°Ò»È­£¡\n" NOR,environment(me));
+        message("vission",HIR  "å‰ä¸€æ‹³ï¼\n" NOR,environment(me));
         COMBAT_D->do_attack(me,target,query_temp("weapon", me));
-        message("vission",HIR  "ºóÒ»È­£¡\n" NOR,environment(me));
+        message("vission",HIR  "å¾Œä¸€æ‹³ï¼\n" NOR,environment(me));
         COMBAT_D->do_attack(me,target,query_temp("weapon", me));
-        message("vission",HIR  "×îºóÔÙÒ»È­£¡\n" NOR,environment(me));
+        message("vission",HIR  "æœ€å¾Œå†ä¸€æ‹³ï¼\n" NOR,environment(me));
         COMBAT_D->do_attack(me,target,query_temp("weapon", me));
         me->start_busy(3);
 

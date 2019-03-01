@@ -6,16 +6,16 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Ê¯ÊÒ");
+        set("short", "çŸ³å®¤");
         set("long", @LONG
-ÕâÊÇÒ»¸öÊ¯Í·Æö³ÉµÄ·¿¼ä£¬ÒòÎªºÃ¾ÃÃ»ÓĞÈËÀ´¹ı£¬É¢·¢×ÅÒ»Ğ©ºÜÄÑ
-ÎÅµÄÆøÎ¶£¬·¿¼äÖĞµ½´¦¿ÉÒÔ¿´µ½ÖëË¿ºÍ³æ¼£¡£
+é€™æ˜¯ä¸€å€‹çŸ³é ­ç Œæˆçš„æˆ¿é–“ï¼Œå› ç‚ºå¥½ä¹…æ²’æœ‰äººä¾†éï¼Œæ•£ç™¼è‘—ä¸€äº›å¾ˆé›£
+èçš„æ°£å‘³ï¼Œæˆ¿é–“ä¸­åˆ°è™•å¯ä»¥çœ‹åˆ°è››çµ²å’ŒèŸ²è·¡ã€‚
 LONG );
         set("exits", ([
                 "north" : __DIR__"shiji3",
                 "west" : __DIR__"shiji2",
         ]));
-        create_door("north", "Ê¯ÃÅ", "south", DOOR_CLOSED);
+        create_door("north", "çŸ³é–€", "south", DOOR_CLOSED);
         set("no_clean_up", 0);
         set("coor/x", -50000);
         set("coor/y", -21040);

@@ -4,14 +4,14 @@ void create()
 {
         object sword;
 
-        set_name("Õ¹·É", ({ "zhan fei"}) );
+        set_name("å±•é£›", ({ "zhan fei"}) );
         set("long",@LONG
-ËûÄêÔ¼ÁùÊ®âÅ£¬ÉíĞÎ¸ßÊİ£¬ÊÖ½Å¾ù½ÏÆÕÍ¨ÈË³¤ÉÏÒ»Ğ©£¬¶¯×÷ÁéÇÉ£¬Ë«Ä¿
-×ª¶¯¼äÊ¹ÈË¸Ğµ½ËûÊÇ¸ö»úÁé¶àÖÇµÄÈËÎï¡£
+ä»–å¹´ç´„å…­åé¤˜ï¼Œèº«å½¢é«˜ç˜¦ï¼Œæ‰‹è…³å‡è¼ƒæ™®é€šäººé•·ä¸Šä¸€äº›ï¼Œå‹•ä½œéˆå·§ï¼Œé›™ç›®
+è½‰å‹•é–“ä½¿äººæ„Ÿåˆ°ä»–æ˜¯å€‹æ©Ÿéˆå¤šæ™ºçš„äººç‰©ã€‚
 LONG
          );
 
-        set("title",MAG"Ã¬²ùË«·É"NOR);
+        set("title",MAG"çŸ›éŸé›™é£›"NOR);
         set("max_jing", 4000);
         set("max_qi", 3000);                    
         set("max_sen", 4000);
@@ -27,7 +27,7 @@ LONG
         set_skill("dodge", 500);
         set_skill("parry", 500);
         set_skill("sword",420);
-        set_skill("force",800); //·ÀÖ¹±ğÈËÀ´µ¯Ö¸
+        set_skill("force",800); //é˜²æ­¢åˆ¥äººä¾†å½ˆæŒ‡
         set_skill("hamagong",400);
         set_skill("tiyunzong",400);
         map_skill("sword","pixie-jian");

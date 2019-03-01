@@ -5,13 +5,13 @@
 inherit DAGGER;
 void create()
 {
-        set_name(HIW "²Ôñ·Ç§Äêº®Ìú" NOR, ({ "old iron" }) );
+        set_name(HIW "è’¼ç©¹åƒå¹´å¯’éµ" NOR, ({ "old iron" }) );
         set_weight(10000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿é");
-                set("long", "Ò»¿é´Ó²Ôñ·Éñ½£ÉÏÒò±»Ê¯·ì¿¨×¡¶øµôÏÂÀ´µÄ½£¼â¡£\n");
+                set("unit", "å¡Š");
+                set("long", "ä¸€å¡Šå¾è’¼ç©¹ç¥åŠä¸Šå› è¢«çŸ³ç¸«å¡ä½è€Œæ‰ä¸‹ä¾†çš„åŠå°–ã€‚\n");
                 set("value", 50000);
                 set("rigidity",2000);        
                 set("material", "steel");
@@ -19,7 +19,7 @@ void create()
                 set("for_create_weapon",1);
         }
         init_dagger(20);
-        set("wield_msg", "$N´Ó»³ÖĞÃş³öÒ»¿é$nÎÕÔÚÊÖÖĞ¡£\n");
-        set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²ØÈë»³ÖĞ¡£\n");
+        set("wield_msg", "$Nå¾æ‡·ä¸­æ‘¸å‡ºä¸€å¡Š$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+        set("unwield_msg", "$Nå°‡æ‰‹ä¸­çš„$nè—å…¥æ‡·ä¸­ã€‚\n");
         setup();
 }

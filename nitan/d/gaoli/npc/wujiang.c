@@ -3,13 +3,13 @@ inherit NPC;
 
 void create()
 {
-   set_name("Îä½«",({ "wu jiang","jiang","wu" }) );
-   set("gender", "ÄĞĞÔ" );
+   set_name("æ­¦å°‡",({ "wu jiang","jiang","wu" }) );
+   set("gender", "ç”·æ€§" );
    set("age", 32);
-   set("long", "ÕâÊÇÊØÎÀ¸ßÀöµÄÎä½«£¬¿´ÆğÀ´Ê®·ÖÍş·ç¡£\n");
+   set("long", "é€™æ˜¯å®ˆè¡›é«˜éº—çš„æ­¦å°‡ï¼Œçœ‹èµ·ä¾†ååˆ†å¨é¢¨ã€‚\n");
        
    set("combat_exp",800000);
-   set("guard","¸ßÀö");
+   set("guard","é«˜éº—");
    set("attitude", "peaceful");
    
         set("str", 30);

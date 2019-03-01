@@ -6,14 +6,14 @@ inherit NPC;
 
 void create()
 {
-	set_name("ÓÎ¿Í", ({ "you ke","ke"}));
+	set_name("éŠå®¢", ({ "you ke","ke"}));
 	if ( random(10) < 7 )
-	    set("gender", "ÄĞĞÔ" );
+	    set("gender", "ç”·æ€§" );
 	else
-	    set("gender", "Å®ĞÔ" );
+	    set("gender", "å¥³æ€§" );
 	set("age", 15+random(50));
 	set("long",
-		"ÕâÊÇÒ»Î»µ½áÇá¼É½À´ÓÎÍæµÄÓÎ¿Í¡£\n");
+		"é€™æ˜¯ä¸€ä½åˆ°å´†å³’å±±ä¾†éŠç©çš„éŠå®¢ã€‚\n");
 	set("chat_chance", 10);
     set("chat_msg", ({
         (: random_move :)
@@ -26,7 +26,7 @@ void create()
     set_temp("apply/damage",random(5) );
     set_temp("apply/armor",random(5) );
 	setup();
-    if ( query("gender") == "ÄĞĞÔ")
+    if ( query("gender") == "ç”·æ€§")
       	carry_object(__DIR__"obj/yifu1")->wear();
     else 
         carry_object(__DIR__"obj/yifu3")->wear();

@@ -1,6 +1,6 @@
-// ´óÌÆË«Áú´«
+// å¤§å”é›™é¾å‚³
 
-//¹Ù±ø
+//å®˜å…µ
 
 
 inherit NPC;
@@ -9,10 +9,10 @@ inherit NPC;
 
 void create()
 {
-        set_name(HIY"¹Ù±ø"NOR, ({ "guan bing", "bing"}) );
-        set("gender", "ÄĞĞÔ");
+        set_name(HIY"å®˜å…µ"NOR, ({ "guan bing", "bing"}) );
+        set("gender", "ç”·æ€§");
         set("age", 35);
-        set("long","ÕâÊÇ¸ßÀöÑÃÃÅµÄ¹Ù±ø£¬×Ü¹Ü¸ßÀöµÄÖÎ°²¡£\n");
+        set("long","é€™æ˜¯é«˜éº—è¡™é–€çš„å®˜å…µï¼Œç¸½ç®¡é«˜éº—çš„æ²»å®‰ã€‚\n");
         set("combat_exp", 300000+random(40000));
         set("attitude", "heroism");
         set("str", 30);

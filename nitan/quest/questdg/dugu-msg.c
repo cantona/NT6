@@ -1,81 +1,81 @@
 #include <ansi.h>
 
 string *action_msg = ({
-"¶À¹ÂÇó°ÜÎ¢Ð¦×Å¶ÔÄãËµ£º¡°",
-"¶À¹ÂÇó°ÜÂúÁ³ÕýÈÝµÀ£º¡°",
-"¶À¹ÂÇó°ÜºÇºÇ´óÐ¦×ÅËµ£º¡°",
-"¶À¹ÂÇó°ÜÓÇÐÄâçâçµÄËµ£º¡°",
-"¶À¹ÂÇó°Ü»º»ºµÄ¸æËßÄã£º¡°",
-"¶À¹ÂÇó°ÜÒ»Á³ºÍ°ªµÄËµµÀ£º¡°",
-"¶À¹ÂÇó°Ü±³×ÅË«ÊÖõâ×Å²½£¬ÑÏËàµÄËµ£º¡°",
-"¶À¹ÂÇó°ÜÇáÇáÌ¾Ï¢µ½£º¡°",
-"¶À¹ÂÇó°ÜÕýÈÝ¶ÔÄãµÀ£º¡°",
+"ç¨å­¤æ±‚æ•—å¾®ç¬‘è‘—å°ä½ èªªï¼šâ€œ",
+"ç¨å­¤æ±‚æ•—æ»¿è‡‰æ­£å®¹é“ï¼šâ€œ",
+"ç¨å­¤æ±‚æ•—å‘µå‘µå¤§ç¬‘è‘—èªªï¼šâ€œ",
+"ç¨å­¤æ±‚æ•—æ†‚å¿ƒå¿¡å¿¡çš„èªªï¼šâ€œ",
+"ç¨å­¤æ±‚æ•—ç·©ç·©çš„å‘Šè¨´ä½ ï¼šâ€œ",
+"ç¨å­¤æ±‚æ•—ä¸€è‡‰å’Œè—¹çš„èªªé“ï¼šâ€œ",
+"ç¨å­¤æ±‚æ•—èƒŒè‘—é›™æ‰‹è¸±è‘—æ­¥ï¼Œåš´è‚…çš„èªªï¼šâ€œ",
+"ç¨å­¤æ±‚æ•—è¼•è¼•å˜†æ¯åˆ°ï¼šâ€œ",
+"ç¨å­¤æ±‚æ•—æ­£å®¹å°ä½ é“ï¼šâ€œ",
 });
 
 string *say_msg1 = ({
-"ÎÒÍ»È»ÏëÆðÐèÒªÒ»Ñù¶«Î÷£¬¾ÍÊÇname",
-"ÎÒÏëÕâÑù×Ó£¬Äã²»ÈçÈ¥ÕÒÕÒname",
-"ÄãÏÖÔÚ¾ÍÈ¥£¬°ïÎÒÑ°Ò»Ñ°name",
-"½­ºþ¶¯µ´£¬Îï×Ê½ôÈ±£¬ÎÒÄ¿Ç°ÕýÏëÒªname",
-"ÏÖÔÚÓÐÒ»¼þ¼±ÊÂÒªÄã×ö£¬¾ÍÊÇÈ¥°ïÎÒÕÒname",
-"ÄãÓÐ¿Õ¾ÍÈ¥ËÄ´¦¿´¿´£¬ÊÇ·ñÄÜÅªÀ´name",
-"ÎÒÏëÇëÄã¸Ï¿ì°ïÎÒ×öÒ»¼þÊÂ£¬Ò²¾ÍÊÇÕÒname",
-"ÄêÇáÈËÐèÒª¶à¶ÍÁ¶¶ÍÁ¶£¬¿´¿´ÄãµÄ°ìÊÂÄÜÁ¦£¬È¥¸ãÀ´name",
-"ÎÒÍ»È»ºÜÏë¿´¿´name",
-"ÌýËµÓÐÒ»Ñù¶«Î÷½Ðname",
-"ÌìÏÂ´ó²¿·Ö¶«Î÷ÎÒ¶¼ÓÐÁË£¬²»¹ýÉÙÁËÒ»Ñùname",
+"æˆ‘çªç„¶æƒ³èµ·éœ€è¦ä¸€æ¨£æ±è¥¿ï¼Œå°±æ˜¯name",
+"æˆ‘æƒ³é€™æ¨£å­ï¼Œä½ ä¸å¦‚åŽ»æ‰¾æ‰¾name",
+"ä½ ç¾åœ¨å°±åŽ»ï¼Œå¹«æˆ‘å°‹ä¸€å°‹name",
+"æ±Ÿæ¹–å‹•ç›ªï¼Œç‰©è³‡ç·Šç¼ºï¼Œæˆ‘ç›®å‰æ­£æƒ³è¦name",
+"ç¾åœ¨æœ‰ä¸€ä»¶æ€¥äº‹è¦ä½ åšï¼Œå°±æ˜¯åŽ»å¹«æˆ‘æ‰¾name",
+"ä½ æœ‰ç©ºå°±åŽ»å››è™•çœ‹çœ‹ï¼Œæ˜¯å¦èƒ½å¼„ä¾†name",
+"æˆ‘æƒ³è«‹ä½ è¶•å¿«å¹«æˆ‘åšä¸€ä»¶äº‹ï¼Œä¹Ÿå°±æ˜¯æ‰¾name",
+"å¹´è¼•äººéœ€è¦å¤šé›ç…‰é›ç…‰ï¼Œçœ‹çœ‹ä½ çš„è¾¦äº‹èƒ½åŠ›ï¼ŒåŽ»æžä¾†name",
+"æˆ‘çªç„¶å¾ˆæƒ³çœ‹çœ‹name",
+"è½èªªæœ‰ä¸€æ¨£æ±è¥¿å«name",
+"å¤©ä¸‹å¤§éƒ¨åˆ†æ±è¥¿æˆ‘éƒ½æœ‰äº†ï¼Œä¸éŽå°‘äº†ä¸€æ¨£name",
 });
 
 string *say_msg2 = ({
-"£¬ÄãÄÜ²»ÄÜ°ÑËüÕÒÀ´ÄØ",
-"£¬ÎÒÏëÄãÓ¦¸Ã¿ÉÒÔÍê³ÉÈÎÎñ°É",
-"£¬×ÐÏ¸ÕÒÒ»ÕÒ£¬Ó¦¸Ã²»ÄÑµÄ",
-"£¬ËÙËÙÕÒÀ´½»¸øÎÒÒª½ô",
-"£¬ÒªÊÇÄÜÕÒÀ´£¬ÎÒ×Ô»á½±ÀøÄã",
-"£¬ÄÜ²»ÄÜÑ°µ½ËüÄØ£¿",
-"£¬ÄÜ·ñÕÒÀ´¾Í¿´³öÄãµÄ°ìÊÂÄÜÁ¦ÁË",
-"£¬ËÙÈ¥ËÙ»Ø",
-"Õâ¸öÎï¼þ£¬¿ìÏë°ì·¨È¥°É",
-"½»¸øÎÒ£¬ÔõÃ´Ñù£¬²»»áÌ«ÄÑ°É",
+"ï¼Œä½ èƒ½ä¸èƒ½æŠŠå®ƒæ‰¾ä¾†å‘¢",
+"ï¼Œæˆ‘æƒ³ä½ æ‡‰è©²å¯ä»¥å®Œæˆä»»å‹™å§",
+"ï¼Œä»”ç´°æ‰¾ä¸€æ‰¾ï¼Œæ‡‰è©²ä¸é›£çš„",
+"ï¼Œé€Ÿé€Ÿæ‰¾ä¾†äº¤çµ¦æˆ‘è¦ç·Š",
+"ï¼Œè¦æ˜¯èƒ½æ‰¾ä¾†ï¼Œæˆ‘è‡ªæœƒçŽå‹µä½ ",
+"ï¼Œèƒ½ä¸èƒ½å°‹åˆ°å®ƒå‘¢ï¼Ÿ",
+"ï¼Œèƒ½å¦æ‰¾ä¾†å°±çœ‹å‡ºä½ çš„è¾¦äº‹èƒ½åŠ›äº†",
+"ï¼Œé€ŸåŽ»é€Ÿå›ž",
+"é€™å€‹ç‰©ä»¶ï¼Œå¿«æƒ³è¾¦æ³•åŽ»å§",
+"äº¤çµ¦æˆ‘ï¼Œæ€Žéº¼æ¨£ï¼Œä¸æœƒå¤ªé›£å§",
 });
 
 string *kill_msg1 = ({
-"nameÕâ¸öÈËËØÀ´¶àÐÐ²»Òå£¬",
-"ÄãÌýËµ¹ýname×î½ü·¸ÏÂµÄÌÏÌì×ïÐÐ°É£¿",
-"ÓÐÈËÏòÎÒ·´Ó³nameÀÏÊÇºú×÷·ÇÎª£¬",
-"name¾¹È»ÓÕ¹ÕÁ¼¼Ò¸¾Å®£¡",
-"ÌýËµname×î½ü°ïÌ«ÐÐÉ½ÍÁ·ËÁìÂ·£¬´ò½ÙÁËÒ»¸öÕò×Ó£¬",
-"¶ÔÅóÓÑ¿ÓÃÉ¹ÕÆ­£¬nameÕâ¸öÈËºÁÎÞÈÊÒåµÀµÂ£¬",
-"ÓÐÒ»»ïÈË×î½üÃ°³äÎÒËÄ´¦ÕÐÒ¡×²Æ­£¬ÎÒÒÑ¾­²é³öÆäÖÐÓÐname£¬",
-"×ö´íÊÂÇé¿ÉÒÔ¸Ä£¬Ò»´íÔÙ´í£¬ÎÒÒ²Î¬»¤²»ÁËname£¬",
-"ÄãÈ¥ÕÒÕÒnameÔÚÊ²Ã´µØ·½£¬Õâ¸öÈË·¸ÏÂµÄ×ïÐÐÁ¬Éñ¶¼²»»áÔ­ÁÂ£¬",
+"nameé€™å€‹äººç´ ä¾†å¤šè¡Œä¸ç¾©ï¼Œ",
+"ä½ è½èªªéŽnameæœ€è¿‘çŠ¯ä¸‹çš„æ»”å¤©ç½ªè¡Œå§ï¼Ÿ",
+"æœ‰äººå‘æˆ‘åæ˜ nameè€æ˜¯èƒ¡ä½œéžç‚ºï¼Œ",
+"nameç«Ÿç„¶èª˜æ‹è‰¯å®¶å©¦å¥³ï¼",
+"è½èªªnameæœ€è¿‘å¹«å¤ªè¡Œå±±åœŸåŒªé ˜è·¯ï¼Œæ‰“åŠ«äº†ä¸€å€‹éŽ®å­ï¼Œ",
+"å°æœ‹å‹å‘è’™æ‹é¨™ï¼Œnameé€™å€‹äººæ¯«ç„¡ä»ç¾©é“å¾·ï¼Œ",
+"æœ‰ä¸€ä¼™äººæœ€è¿‘å†’å……æˆ‘å››è™•æ‹›æ–æ’žé¨™ï¼Œæˆ‘å·²ç¶“æŸ¥å‡ºå…¶ä¸­æœ‰nameï¼Œ",
+"åšéŒ¯äº‹æƒ…å¯ä»¥æ”¹ï¼Œä¸€éŒ¯å†éŒ¯ï¼Œæˆ‘ä¹Ÿç¶­è­·ä¸äº†nameï¼Œ",
+"ä½ åŽ»æ‰¾æ‰¾nameåœ¨ä»€éº¼åœ°æ–¹ï¼Œé€™å€‹äººçŠ¯ä¸‹çš„ç½ªè¡Œé€£ç¥žéƒ½ä¸æœƒåŽŸè«’ï¼Œ",
 });
 
 string *kill_msg2 = ({
-"ÕâÖÖÈË¶àÒ»¸ö²»ÈçÉÙÒ»¸ö£¡¡±",
-"ÄãÈ¥²ù³ýÁËÕâ¸ö¶ñ°Ô°É¡£¡±",
-"¶ÔÕâÖÖÈË¾Í²»ÒªÐÄ´ÈÊÖÈíÁË¡£¡±",
-"°ÑnameËÍµ½µØÓüÈ¥ºÃºÃ·´Ê¡°É£¡¡±",
-"³úÁËname£¬²»ÒªÐÄ´ÈÊÖÈí£¡¡±",
-"ÎªÁËÎ¬»¤½­ºþµÄ¹«µÂ£¬Ò²Ö»ÓÐÉ±ÁËnameÁË¡£¡±",
+"é€™ç¨®äººå¤šä¸€å€‹ä¸å¦‚å°‘ä¸€å€‹ï¼â€",
+"ä½ åŽ»éŸé™¤äº†é€™å€‹æƒ¡éœ¸å§ã€‚â€",
+"å°é€™ç¨®äººå°±ä¸è¦å¿ƒæ…ˆæ‰‹è»Ÿäº†ã€‚â€",
+"æŠŠnameé€åˆ°åœ°ç„åŽ»å¥½å¥½åçœå§ï¼â€",
+"é‹¤äº†nameï¼Œä¸è¦å¿ƒæ…ˆæ‰‹è»Ÿï¼â€",
+"ç‚ºäº†ç¶­è­·æ±Ÿæ¹–çš„å…¬å¾·ï¼Œä¹Ÿåªæœ‰æ®ºäº†nameäº†ã€‚â€",
 });
 
 string *summon_msg1 = ({
-"nameÕâ¸öÈË±¾ÐÔ²»»µ£¬ÎÒµ¹ÊÇÓÐÐÄÎ¬»¤Ò»ÏÂ£¬",
-"ÄãÌýËµ¹ýname×î½ü·¸ÁËµã´íÎó°É£¿",
-"ÓÐÈËÏòÎÒ·´Ó³nameÀÏÊÇºú×÷·ÇÎª£¬",
-"nameºÃºÃÒ»¸öÈË£¬ÔõÃ´Í»È»Ò²¸É»µÊÂ£¿",
-"ÌýËµname×î½üÈ¥¹ýÌ«ÐÐÉ½ÍÁ·ËÎÑ£¬²»ÖªµÀÏë¸ÉÊ²Ã´£¿",
-"·¸ÁË´íÎó£¬Òª¼°Ê±¸ÄÕý°¡£¬nameÏÖÔÚÐèÒªÖ¸Òý²ÅÄÜ×ßÉÏÕýµÀ£¬",
-"ÄãÈ¥ÕÒÕÒnameÔÚÊ²Ã´µØ·½£¬",
+"nameé€™å€‹äººæœ¬æ€§ä¸å£žï¼Œæˆ‘å€’æ˜¯æœ‰å¿ƒç¶­è­·ä¸€ä¸‹ï¼Œ",
+"ä½ è½èªªéŽnameæœ€è¿‘çŠ¯äº†é»žéŒ¯èª¤å§ï¼Ÿ",
+"æœ‰äººå‘æˆ‘åæ˜ nameè€æ˜¯èƒ¡ä½œéžç‚ºï¼Œ",
+"nameå¥½å¥½ä¸€å€‹äººï¼Œæ€Žéº¼çªç„¶ä¹Ÿå¹¹å£žäº‹ï¼Ÿ",
+"è½èªªnameæœ€è¿‘åŽ»éŽå¤ªè¡Œå±±åœŸåŒªçª©ï¼Œä¸çŸ¥é“æƒ³å¹¹ä»€éº¼ï¼Ÿ",
+"çŠ¯äº†éŒ¯èª¤ï¼Œè¦åŠæ™‚æ”¹æ­£å•Šï¼Œnameç¾åœ¨éœ€è¦æŒ‡å¼•æ‰èƒ½èµ°ä¸Šæ­£é“ï¼Œ",
+"ä½ åŽ»æ‰¾æ‰¾nameåœ¨ä»€éº¼åœ°æ–¹ï¼Œ",
 });
 
 string *summon_msg2 = ({
-"Äã°Ñname¸øÎÒ´øÕâÀïÀ´°É£¡¡±",
-"°ïÎÒÈ¥°ÑnameÇÜÀ´¡£¡±",
-"´ønameÀ´ÎÒÕâÀï£¬ÎÒÀ´½ÌÓý½ÌÓý¡£¡±",
-"²»ÖªµÀnameÀ´ÎÒÕâÀï»á²»»áÌýÎÒµÄÖ¸µ¼£¡¡±",
-"ÎÒÕæÏëµ±ÃæºÃºÃµÄÔðÎÊÒ»ÏÂname£¡¡±",
+"ä½ æŠŠnameçµ¦æˆ‘å¸¶é€™è£¡ä¾†å§ï¼â€",
+"å¹«æˆ‘åŽ»æŠŠnameæ“’ä¾†ã€‚â€",
+"å¸¶nameä¾†æˆ‘é€™è£¡ï¼Œæˆ‘ä¾†æ•™è‚²æ•™è‚²ã€‚â€",
+"ä¸çŸ¥é“nameä¾†æˆ‘é€™è£¡æœƒä¸æœƒè½æˆ‘çš„æŒ‡å°Žï¼â€",
+"æˆ‘çœŸæƒ³ç•¶é¢å¥½å¥½çš„è²¬å•ä¸€ä¸‹nameï¼â€",
 });
 
 string query_dgmsg(string type,string name)
@@ -85,18 +85,18 @@ string query_dgmsg(string type,string name)
         msg1 = "";
         msg2 = "";
         msg += action_msg[random(sizeof(action_msg))];
-        if (type == "Ñ°") {
+        if (type == "å°‹") {
                 msg1 = say_msg1[random(sizeof(say_msg1))];
                 msg1 = replace_string(msg1,"name",name);
                 msg2 = say_msg2[random(sizeof(say_msg2))];
                 msg2 = replace_string(msg2,"name",name);
-        } else if (type == "É±" || type == "Ô×")
+        } else if (type == "æ®º" || type == "å®°")
         {
                 msg1 = kill_msg1[random(sizeof(kill_msg1))];
                 msg1 = replace_string(msg1,"name",name);
                 msg2 = kill_msg2[random(sizeof(kill_msg2))];
                 msg2 = replace_string(msg2,"name",name);
-        } else if (type == "×½" || type == "ÇÜ")
+        } else if (type == "æ‰" || type == "æ“’")
         {
                 msg1 = summon_msg1[random(sizeof(summon_msg1))];
                 msg1 = replace_string(msg1,"name",name);

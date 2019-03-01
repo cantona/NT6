@@ -1,7 +1,7 @@
 #include <ansi.h>
  
 inherit F_SSERVER;
-#define PNAME "¡¸"HIG"»Ã»¯ÑÌÔÆ"NOR "¡¹"
+#define PNAME "ã€Œ"HIG"å¹»åŒ–ç…™é›²"NOR "ã€"
 
 int perform(object me,object target)
 {
@@ -18,16 +18,16 @@ int perform(object me,object target)
    !query("can_perform/"+sskill+"/"+pfname, me) && 
    !query_temp("murong/xingyi", me) && 
    !SCBORN_D->valid_perform(me,sskill,pfname) )
-   return notify_fail("ÄãËùÊ¹ÓÃµÄÍâ¹¦ÖĞÃ»ÓĞÕâÖÖ¹¦ÄÜ¡£\n");
+   return notify_fail("ä½ æ‰€ä½¿ç”¨çš„å¤–åŠŸä¸­æ²’æœ‰é€™ç¨®åŠŸèƒ½ã€‚\n");
 
         if( !objectp(target) ) {flag =1;target = offensive_target(me);}
         
         if( !target || !target->is_character() || target == me ||        
                   !me->is_fighting(target) ||
           !living(target) || query_temp("noliving", target) )
-                return notify_fail(PNAME"Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(PNAME"åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
-        //¿ÕÊÖ±øÆ÷¾ù¿É
+        //ç©ºæ‰‹å…µå™¨å‡å¯
 
         fskill = "huiyan-xinfa";
         bskill = "strike";
@@ -40,32 +40,32 @@ int perform(object me,object target)
                 bskill = "parry";
         }
         if( (int)me->query_skill(fskill, 1) < 100 )
-                return notify_fail("ÄãµÄ"+to_chinese(fskill)+"»ğºò²»¹»£¬Ê¹²»³ö"+PNAME+"¡£\n");
+                return notify_fail("ä½ çš„"+to_chinese(fskill)+"ç«å€™ä¸å¤ ï¼Œä½¿ä¸å‡º"+PNAME+"ã€‚\n");
         if( (int)me->query_skill(sskill, 1) < 100 )
-                return notify_fail("ÄãµÄ"+to_chinese(sskill)+"²»¹»ÊìÁ·£¬²»»áÊ¹ÓÃ"+PNAME+"¡£\n");
+                return notify_fail("ä½ çš„"+to_chinese(sskill)+"ä¸å¤ ç†Ÿç·´ï¼Œä¸æœƒä½¿ç”¨"+PNAME+"ã€‚\n");
         if( (int)me->query_skill(bskill, 1) < 100 )
-                return notify_fail("ÄãµÄ"+to_chinese(sskill)+"ĞŞÎª²»¹», Ê¹²»³ö"+PNAME+"¡£\n");
+                return notify_fail("ä½ çš„"+to_chinese(sskill)+"ä¿®ç‚ºä¸å¤ , ä½¿ä¸å‡º"+PNAME+"ã€‚\n");
         if(target->is_busy())
-                return notify_fail(target->name() +"Ä¿Ç°Õı×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É£¡\n");
+                return notify_fail(target->name() +"ç›®å‰æ­£è‡ªé¡§ä¸æš‡ï¼Œæ”¾è†½æ”»æ“Šå§ï¼\n");
         if( query("neili", me)<100 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬Ê¹²»³ö"PNAME"£¡\n");
-        msg = HIC "\n$N" HIC "Ë«ÕÆ¶¸È»Á¬Ğø·´×ª£¬Ò»ÕĞ"PNAME+HIC"£¬Ë«ÕÆ´ø·ç£¬ÒÑ½«$n" HIC "ÁıÕÖÔÚÕÆ·çÖ®ÖĞ¡£\n" NOR;
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ï¼Œä½¿ä¸å‡º"PNAME"ï¼\n");
+        msg = HIC "\n$N" HIC "é›™æŒé™¡ç„¶é€£çºŒåè½‰ï¼Œä¸€æ‹›"PNAME+HIC"ï¼Œé›™æŒå¸¶é¢¨ï¼Œå·²å°‡$n" HIC "ç± ç½©åœ¨æŒé¢¨ä¹‹ä¸­ã€‚\n" NOR;
  
    ap = me->query_skill(bskill,1);
    dp = target->query_skill("parry",1);
         if( dp < 1 )                dp = 1;
         if( random(ap) > dp/3 )
         {
-                msg += HIR "½á¹û$n" HIR "Ä¿²»Ï¾½Ó£¬¶ÙÊ±±»$N" HIR "ÕÆ"
-                      "·çËùÀ§£¬¶ÙÊ±Õó½Å´óÂÒ¡£\n" NOR;
+                msg += HIR "çµæœ$n" HIR "ç›®ä¸æš‡æ¥ï¼Œé “æ™‚è¢«$N" HIR "æŒ"
+                      "é¢¨æ‰€å›°ï¼Œé “æ™‚é™£è…³å¤§äº‚ã€‚\n" NOR;
                 target->start_busy(ap/30+2);
                 me->start_busy(1);
                 addn("neili", -200, me);
         }
         else
         {
-     msg += HIY "$n" HIY "¿´Çå$N" HIY "Õâ¼¸ÕĞµÄÀ´Â·£¬µ«"
-                      "ÄÚ¾¢ËùÖÁ£¬ÕÆ·çÏ¬Àû£¬Ò²Ö»µÃĞ¡ĞÄµÖµ²¡£\n" NOR;          
+     msg += HIY "$n" HIY "çœ‹æ¸…$N" HIY "é€™å¹¾æ‹›çš„ä¾†è·¯ï¼Œä½†"
+                      "å…§å‹æ‰€è‡³ï¼ŒæŒé¢¨çŠ€åˆ©ï¼Œä¹Ÿåªå¾—å°å¿ƒæŠµæ“‹ã€‚\n" NOR;          
                 me->start_busy(2);
                 addn("neili", -50, me);
         }
@@ -73,21 +73,21 @@ int perform(object me,object target)
         if(!target->is_fighting(me)) target->fight_ob(me);
         return 1;
 }
-string name() {return replace_string(replace_string(PNAME,"¡¸",""),"¡¹","");}
+string name() {return replace_string(replace_string(PNAME,"ã€Œ",""),"ã€","");}
 
 int help(object me)
 {
-        write(WHT"\n"+to_chinese(explode(__FILE__,"/")[<2])+"Ö®"+name()+WHT"£º"NOR"\n");
+        write(WHT"\n"+to_chinese(explode(__FILE__,"/")[<2])+"ä¹‹"+name()+WHT"ï¼š"NOR"\n");
         write(@HELP
 
-        Ê¹ÓÃ¹¦Ğ§£º
-                ³ÙÖÍ¶Ô·½³öÊÖ
+        ä½¿ç”¨åŠŸæ•ˆï¼š
+                é²æ»¯å°æ–¹å‡ºæ‰‹
 
-        ³öÊÖÒªÇó£º
-                »ØÑãĞÄ·¨100¼¶
-                ±ÌÂŞÕÆ100¼¶
-                »ù±¾ÕÆ·¨100¼¶
-                ÄÚÁ¦100
+        å‡ºæ‰‹è¦æ±‚ï¼š
+                å›é›å¿ƒæ³•100ç´š
+                ç¢§ç¾…æŒ100ç´š
+                åŸºæœ¬æŒæ³•100ç´š
+                å…§åŠ›100
 HELP
         );
         return 1;

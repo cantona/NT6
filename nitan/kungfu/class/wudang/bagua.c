@@ -1,4 +1,4 @@
-// bagua.c °ËØÔµÜ×Ó
+// bagua.c å…«å¦å¼Ÿå­
 
 #include <command.h>
 #include <ansi.h>
@@ -7,10 +7,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("°ËØÔµÜ×Ó", ( {"bagua dizi","dizi","bagu" }));
+        set_name("å…«å¦å¼Ÿå­", ( {"bagua dizi","dizi","bagu" }));
         set("age", 23);
-        set("gender", "ÄĞĞÔ");
-        set("long", "ÕæÎä½£Õó°ËØÔ·½Î»µÜ×Ó¡£\n");
+        set("gender", "ç”·æ€§");
+        set("long", "çœŸæ­¦åŠé™£å…«å¦æ–¹ä½å¼Ÿå­ã€‚\n");
         set("attitude", "peaceful");
 
         set("str", 24);
@@ -29,9 +29,9 @@ void create()
         set_temp("apply/armor", 80);
         set("chat_chance", 5);
         set("chat_msg", ({
-                "°ËØÔµÜ×ÓÆëÉùßººÈ£ºÕæÎä½£Õó£¬ÌìÏÂµÚÒ»£¡\n",
+                "å…«å¦å¼Ÿå­é½Šè²å†å–ï¼šçœŸæ­¦åŠé™£ï¼Œå¤©ä¸‹ç¬¬ä¸€ï¼\n",
         }));
-        create_family("Îäµ±ÅÉ", 3, "µÜ×Ó");
+        create_family("æ­¦ç•¶æ´¾", 3, "å¼Ÿå­");
 
         setup();
         carry_object(WEAPON_DIR"changjian")->wield();

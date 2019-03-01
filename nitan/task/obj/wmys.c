@@ -2,14 +2,14 @@
 inherit TASK;
 void create()
 {
-    set_name(WHT"ÎäÄÂÒÅÊé" NOR, ({ "yue-script" }));
+    set_name(WHT"æ­¦ç©†éºæ›¸" NOR, ({ "yue-script" }));
         set_weight(20);
         if( clonep() )
                 destruct(this_object());
         else {
-                set("unit", "±¾");
+                set("unit", "æœ¬");
                 set("long",
-            "ÕâÊÇÒ»±¾´«×ÔÔÀÎäÄÂµÄ±ø·¨ÊÖ²á£¬ÄÚÎÄ¾ùÊÇĞĞ¾ü´òÕÌ¡¢²¼ÕóÓÃ±øµÄ¾«ÒåÒª¾÷¡£\n");
+            "é€™æ˜¯ä¸€æœ¬å‚³è‡ªå²³æ­¦ç©†çš„å…µæ³•æ‰‹å†Šï¼Œå…§æ–‡å‡æ˜¯è¡Œè»æ‰“ä»—ã€å¸ƒé™£ç”¨å…µçš„ç²¾ç¾©è¦è¨£ã€‚\n");
                 set("material", "paper");
                 set("skill", ([
                         "name":         "strategy",             
@@ -19,6 +19,6 @@ void create()
                         "max_skill":    80              
                         ]) );
                 }
-        set("owner", "ÕÔÃô");
+        set("owner", "è¶™æ•");
         setup();
 }

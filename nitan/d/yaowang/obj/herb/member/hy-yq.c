@@ -2,12 +2,12 @@
 
 void create()
 {
-        set_name(HIC "Ñ»È¸»¹Ñô" NOR, ({ "hy-yq", "Pholidota yunnanensis", "herb_hy_yq" }));
+        set_name(HIC "é´‰é›€é‚„é™½" NOR, ({ "hy-yq", "Pholidota yunnanensis", "herb_hy_yq" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "À¼¿ÆÖ²ÎïÔÆÄÏÊ¯ÏÉÌÒ(Pholidota yunnanensis)µÄ´ø¼ÙÁÛ¾¥µÄÈ«²İ¡£ÒòÆäÁ½Ò¶ĞÎËÆÏ²ÈµÕÅ×ì.¹ÊµÃ´ËÃû¡£\n" NOR);
-                set("base_unit", "¿Å");
+                set("long", HIW "è˜­ç§‘æ¤ç‰©é›²å—çŸ³ä»™æ¡ƒ(Pholidota yunnanensis)çš„å¸¶å‡é±—è–çš„å…¨è‰ã€‚å› å…¶å…©è‘‰å½¢ä¼¼å–œéµ²å¼µå˜´.æ•…å¾—æ­¤åã€‚\n" NOR);
+                set("base_unit", "é¡†");
                 set("base_value", 20000);
                 set("base_weight", 100);
         }

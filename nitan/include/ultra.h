@@ -1,4 +1,4 @@
-// ultra.h ×ÚÊ¦ÆÀ¼ÛÍæ¼ÒµÄ¹«¹²´úÂë
+// ultra.h å®—å¸«è©•åƒ¹ç©å®¶çš„å…¬å…±ä»£ç¢¼
 
 int query_auto_perform() { return 1; }
 int calc_level(object me, string skill);
@@ -8,16 +8,16 @@ void check_ultra(object me);
 // level is calculate as:
 // level = (skill effect level) + (action["force"] - 200) / 5
 mapping opinions_rank = ([
-        500 : "×ÚÊ¦",
-        450 : "µÇ·åÔì¼«",
-        410 : "³¬·²ÍÑË×",
-        380 : "ÕéÖÁ»¯¾³",
-        350 : "Â¯»ğ´¿Çà",
-        320 : "ÒÑÓĞ´ó³É",
-        290 : "·ÇÍ¬·²Ïì",
-        260 : "³öÀà°ÎİÍ",
-        230 : "ÉíÊÖ²»·²",
-        200 : "ÒÑÓĞĞ¡³É",
+        500 : "å®—å¸«",
+        450 : "ç™»å³°é€ æ¥µ",
+        410 : "è¶…å‡¡è„«ä¿—",
+        380 : "è‡»è‡³åŒ–å¢ƒ",
+        350 : "çˆç«ç´”é’",
+        320 : "å·²æœ‰å¤§æˆ",
+        290 : "éåŒå‡¡éŸ¿",
+        260 : "å‡ºé¡æ‹”èƒ",
+        230 : "èº«æ‰‹ä¸å‡¡",
+        200 : "å·²æœ‰å°æˆ",
 ]);
 
 // generate opinion
@@ -38,21 +38,21 @@ void check_opinion(object me)
                 return;
         }
 
-        // rank: Ô­ÓĞµÄÆÀ¼Û³ÆºÅ
-        // ks:   ²»Í¬ÆÀ¼ÛĞèÒªµÄµÈ¼¶°´ÕÕÉıĞòÅÅÁĞ
-        // lvl:  Ô­ÓĞÆÀ¼ÛËùÔÚµÄµÈ¼¶
-        // next_lvl: ÔÚÔ­ÓĞµÄÆÀ¼ÛÏÂÏÂÒ»µÈ¼¶ĞèÒªµÄlvl
-        // opinion : ´Ë´ÎµÄÆÀ¼ÛµÈ¼¶£¬Èç¹ûÎª-1¾ÍÃ»ÓĞ±ä»¯
+        // rank: åŸæœ‰çš„è©•åƒ¹ç¨±è™Ÿ
+        // ks:   ä¸åŒè©•åƒ¹éœ€è¦çš„ç­‰ç´šæŒ‰ç…§å‡åºæ’åˆ—
+        // lvl:  åŸæœ‰è©•åƒ¹æ‰€åœ¨çš„ç­‰ç´š
+        // next_lvl: åœ¨åŸæœ‰çš„è©•åƒ¹ä¸‹ä¸‹ä¸€ç­‰ç´šéœ€è¦çš„lvl
+        // opinion : æ­¤æ¬¡çš„è©•åƒ¹ç­‰ç´šï¼Œå¦‚æœç‚º-1å°±æ²’æœ‰è®ŠåŒ–
         rank = query("opinion/" + MY_OPINION, me);
         ks  = sort_array(keys(opinions_rank), 1);
         if (! stringp(rank))
         {
-                // ÒÔÇ°Ã»ÓĞÆÀ¼Û£¬ÉèÖÃ×îĞ¡ÆÀ¼ÛĞèÒªµÄµÈ¼¶
+                // ä»¥å‰æ²’æœ‰è©•åƒ¹ï¼Œè¨­ç½®æœ€å°è©•åƒ¹éœ€è¦çš„ç­‰ç´š
                 next_lvl = ks[0];
         } else
         {
-                // ÒÔÇ°ÓĞÆÀ¼Û£¬¿´ÕâÒ»´ÎÈç¹ûÌáÉıµÄ»°ĞèÒª
-                // µ½¶àÉÙ¼¶
+                // ä»¥å‰æœ‰è©•åƒ¹ï¼Œçœ‹é€™ä¸€æ¬¡å¦‚æœæå‡çš„è©±éœ€è¦
+                // åˆ°å¤šå°‘ç´š
                 for (i = 0; i < sizeof(ks) - 1; i++)
                         if (opinions_rank[ks[i]] == rank)
                         {
@@ -61,7 +61,7 @@ void check_opinion(object me)
                         }
                 if (i >= sizeof(ks))
                 {
-                        // ÎŞ·¨ÕÒµ½Ô­ÏÈµÄµÈ¼¶£¬ÉèÖÃ×îĞ¡ÆÀ¼Û
+                        // ç„¡æ³•æ‰¾åˆ°åŸå…ˆçš„ç­‰ç´šï¼Œè¨­ç½®æœ€å°è©•åƒ¹
                         next_lvl = ks[0];
                 }
         }
@@ -70,7 +70,7 @@ void check_opinion(object me)
         {
                 lvl = calc_level(me, my_opinions[i]);
                 if (lvl >= next_lvl && lvl > opinion)
-                        // ¼ÇÂ¼£ºµÚiÏîÎäÑ§ÓĞ¸üºÃµÄÆÀ¼Û
+                        // è¨˜éŒ„ï¼šç¬¬ié …æ­¦å­¸æœ‰æ›´å¥½çš„è©•åƒ¹
                         opinion = lvl;
         }
 
@@ -78,14 +78,14 @@ void check_opinion(object me)
         {
                 if (next_lvl == ks[0])
                 {
-                        message_vision("\n$Nµ­µ­Ò»Ğ¦£¬¶Ô$nµÀ£º"
-                                       "¡°ÄãµÄ" OPINION_TYPE "²»ĞĞ°¡£¡ºÃºÃ"
-                                       "Å¬Á¦°É£¡¡±\n", this_object(), me);
+                        message_vision("\n$Næ·¡æ·¡ä¸€ç¬‘ï¼Œå°$né“ï¼š"
+                                       "â€œä½ çš„" OPINION_TYPE "ä¸è¡Œå•Šï¼å¥½å¥½"
+                                       "åŠªåŠ›å§ï¼â€\n", this_object(), me);
                         return;
                 }
-                message_vision("\n$N¶Ô$nÒ¡Ò¡Í·µÀ£º¡°²»ÔõÃ´Ñù£¬ÎÒ"
-                               "·¢ÏÖÄãµÄ" OPINION_TYPE
-                               "±ÈÉÏ´ÎÃ»Ê²Ã´Ì«´óµÄ½ø²½¡£¡±\n",
+                message_vision("\n$Nå°$næ–æ–é ­é“ï¼šâ€œä¸æ€éº¼æ¨£ï¼Œæˆ‘"
+                               "ç™¼ç¾ä½ çš„" OPINION_TYPE
+                               "æ¯”ä¸Šæ¬¡æ²’ä»€éº¼å¤ªå¤§çš„é€²æ­¥ã€‚â€\n",
                                this_object(), me);
                 return;
         }
@@ -96,20 +96,20 @@ void check_opinion(object me)
         set("opinion/" + MY_OPINION, opinions_rank[ks[i]], me);
         if (i == sizeof(ks) -1)
         {
-                // µ½ÁËÖÕ¼«
-                message_vision("\n$N¶Ô$nĞ¦µÀ£º¡°¹§Ï²£¡" +
+                // åˆ°äº†çµ‚æ¥µ
+                message_vision("\n$Nå°$nç¬‘é“ï¼šâ€œæ­å–œï¼" +
                                RANK_D->query_respect(me) +
-                               "µÄ" OPINION_TYPE "ÒÑÈ»µ½ÁË×ÚÊ¦¾³½ç£¡"
-                               "ÎäµÀÎŞÇî£¬¸óÏÂ×ÔÖØ£¡¡±\n",
+                               "çš„" OPINION_TYPE "å·²ç„¶åˆ°äº†å®—å¸«å¢ƒç•Œï¼"
+                               "æ­¦é“ç„¡çª®ï¼Œé–£ä¸‹è‡ªé‡ï¼â€\n",
                                this_object(), me);
                 set("opinions/master", 1, me);
                 check_ultra(me);
                 return;
         }
 
-        message_vision("\n$N³ÁË¼Æ¬¿Ì£¬¶Ô$nµÀ£º¡°¾ÍÄ¿Ç°À´¿´£¬ÄãµÄ"
-                       OPINION_TYPE "ÒÑ¾­¿ÉÒÔËãµÃÉÏÊÇ" +
-                       opinions_rank[ks[i]] + "ÁË¡£¡±\n",
+        message_vision("\n$Næ²‰æ€ç‰‡åˆ»ï¼Œå°$né“ï¼šâ€œå°±ç›®å‰ä¾†çœ‹ï¼Œä½ çš„"
+                       OPINION_TYPE "å·²ç¶“å¯ä»¥ç®—å¾—ä¸Šæ˜¯" +
+                       opinions_rank[ks[i]] + "äº†ã€‚â€\n",
                        this_object(), me);
 }
 
@@ -117,18 +117,18 @@ void check_ultra(object me)
 {
         object *ultra;
 
-        if (query("opinion/unarmed", me) != "×ÚÊ¦" ||
-            query("opinion/weapon", me) != "×ÚÊ¦"  ||
-            query("opinion/force", me) != "×ÚÊ¦"  ||
-            query("opinion/dodge", me) != "×ÚÊ¦" )
+        if (query("opinion/unarmed", me) != "å®—å¸«" ||
+            query("opinion/weapon", me) != "å®—å¸«"  ||
+            query("opinion/force", me) != "å®—å¸«"  ||
+            query("opinion/dodge", me) != "å®—å¸«" )
                 return;
 
         set("opinion/ultra", 1, me);
         ultra = NPC_D->query_ultra_master();
         ultra -= ({ this_object() });
-        command("chat ÕæÊÇ³¤½­ºóÀËÍÆÇ°ÀË£¬Ïë²»µ½½ñÈÕÓÖÓĞ" + query("name", me) +
-                "õÒÉíÎäÁÖ´ó×ÚÊ¦µÄĞĞÁĞ£¡");
+        command("chat çœŸæ˜¯é•·æ±Ÿå¾Œæµªæ¨å‰æµªï¼Œæƒ³ä¸åˆ°ä»Šæ—¥åˆæœ‰" + query("name", me) +
+                "èº‹èº«æ­¦æ—å¤§å®—å¸«çš„è¡Œåˆ—ï¼");
         ultra->do_congration(me);
         CHANNEL_D->do_channel(find_object(MASTER_OB), "rumor",
-                              "ÌıËµ" + query("name", me) + "³ÉÎªÎäÑ§´ó×ÚÊ¦¡£");
+                              "è½èªª" + query("name", me) + "æˆç‚ºæ­¦å­¸å¤§å®—å¸«ã€‚");
 }

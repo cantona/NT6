@@ -3,11 +3,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "³ø·¿");
+        set("short", "å»šæˆ¿");
         set("long", @LONG
-ÕâÀïÊÇ´å³¤¼ÒµÄ³ø·¿£¬Æ½³£µÜ×ÓÃÇ¶öÁË¿ÉÒÔµ½ÕâÀïÒª £¨ÊäÈëÖ¸
-Áî yao£©Ğ©Ê³Îï¡£·¿ÖĞÔî»ğÕıÍú£¬Ò»¸ö´ó³øÊ¦ÕıÃ¦µÄÂúÍ·´óº¹¡£Îİ½Ç
-·Å×ÅÒ»¸ö´óË®¸×¡£  
+é€™è£¡æ˜¯æ‘é•·å®¶çš„å»šæˆ¿ï¼Œå¹³å¸¸å¼Ÿå­å€‘é¤“äº†å¯ä»¥åˆ°é€™è£¡è¦ ï¼ˆè¼¸å…¥æŒ‡
+ä»¤ yaoï¼‰äº›é£Ÿç‰©ã€‚æˆ¿ä¸­ç¶ç«æ­£æ—ºï¼Œä¸€å€‹å¤§å»šå¸«æ­£å¿™çš„æ»¿é ­å¤§æ±—ã€‚å±‹è§’
+æ”¾è‘—ä¸€å€‹å¤§æ°´ç¼¸ã€‚  
 LONG);
 
         set("exits", ([
@@ -37,18 +37,18 @@ int do_yao()
         me = this_player();
 
         if (present("man tou", this_player())) 
-                return notify_fail(CYN "³øÊ¦Ã¼Í·Ò»Öå£¬ËµµÀ£º³ÔÍêÁËÔÙÄÃ£¬±ğÀË·ÑÊ³Îï¡£\n" NOR);
+                return notify_fail(CYN "å»šå¸«çœ‰é ­ä¸€çšºï¼Œèªªé“ï¼šåƒå®Œäº†å†æ‹¿ï¼Œåˆ¥æµªè²»é£Ÿç‰©ã€‚\n" NOR);
 
         if (present("water", this_object())) 
-                return notify_fail(CYN "³øÊ¦Ã¼Í·Ò»Öå£¬ËµµÀ£º³ÔÍêÁËÔÙÄÃ£¬±ğÀË·ÑÊ³Îï¡£\n" NOR);
+                return notify_fail(CYN "å»šå¸«çœ‰é ­ä¸€çšºï¼Œèªªé“ï¼šåƒå®Œäº†å†æ‹¿ï¼Œåˆ¥æµªè²»é£Ÿç‰©ã€‚\n" NOR);
 
         if( time()-query_temp("last_yao_food", me)<30 )
-                return notify_fail(CYN "³øÊ¦Ã¼Í·Ò»Öå£¬ËµµÀ£ºÄã¸ÕÒª¹ıÊ³ÎïÁË£¬Áôµã¿ÚÁ¸¸ø±ğÈË°É£¡\n" NOR);
+                return notify_fail(CYN "å»šå¸«çœ‰é ­ä¸€çšºï¼Œèªªé“ï¼šä½ å‰›è¦éé£Ÿç‰©äº†ï¼Œç•™é»å£ç³§çµ¦åˆ¥äººå§ï¼\n" NOR);
 
         if (query("ricewater") > 0)
         {
-                message_vision(CYN "³øÊ¦½«Ò»¸öÂøÍ·ºÍÒ»ÍëÇåË®µİµ½$NÊÖÖĞ£¬Ğ¦"
-                               "µÀ£ºÄãÂıÓÃ¡£\n" NOR, me);
+                message_vision(CYN "å»šå¸«å°‡ä¸€å€‹é¥…é ­å’Œä¸€ç¢—æ¸…æ°´éåˆ°$Næ‰‹ä¸­ï¼Œç¬‘"
+                               "é“ï¼šä½ æ…¢ç”¨ã€‚\n" NOR, me);
                 food = new("/d/henshan/obj/mantou");
                 water = new("/d/henshan/obj/water");
                 food->move(me);
@@ -57,8 +57,8 @@ int do_yao()
                 set_temp("last_yao_food", time(),                 me);
         }
         else 
-                message_vision(CYN "³øÊ¦¶Ô$N" CYN "Ç¸ÉùµÀ£ºàË£¬³ÔµÄºÈµÄ¶¼"
-                               "Ã»ÁË¡£\n" NOR,me);
+                message_vision(CYN "å»šå¸«å°$N" CYN "æ­‰è²é“ï¼šå—¨ï¼Œåƒçš„å–çš„éƒ½"
+                               "æ²’äº†ã€‚\n" NOR,me);
         return 1; 
 
 }

@@ -5,14 +5,14 @@ inherit F_CLEAN_UP;
 inherit POISON; 
 
 string name() { return "jy_poison"; } 
-string chinese_name() { return "九阴白骨爪毒"; } 
+string chinese_name() { return "涔濋櫚鐧介鐖瘨"; } 
 
 string update_msg_others() 
 {
-       return BLU "$N" BLU "突然只膝弯曲，身子慢慢垂下，口中发出似人似鬼的荷荷之声。\n" NOR; 
+       return BLU "$N" BLU "绐佺劧鍙啙褰庢洸锛岃韩瀛愭參鎱㈠瀭涓嬶紝鍙ｄ腑鐧煎嚭浼间汉浼奸鐨勮嵎鑽蜂箣鑱层�俓n" NOR; 
 }
 
 string update_msg_self() 
 {
-       return BLU "你忽然感到身体僵直，已经不听使唤了。\n" NOR; 
+       return BLU "浣犲拷鐒舵劅鍒拌韩楂斿兊鐩达紝宸茬稉涓嶈伣浣垮枤浜嗐�俓n" NOR; 
 }

@@ -1,4 +1,4 @@
-// ±Ù¹È·û
+// è¾Ÿè°·ç¬¦
 
 #include <ansi.h>
 
@@ -6,16 +6,16 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIW "±Ù¹È·û" NOR, ({ "bigu fu", "fu" }) );
+        set_name(HIW "è¾Ÿè°·ç¬¦" NOR, ({ "bigu fu", "fu" }) );
         set_weight(30);
 
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "Ğ¯´øºó×Ô¶¯½øÈë±Ù¹È×´Ì¬, ÈÕ³£²»ÏûºÄÊ³ÎïÒûË®¡£\n" NOR);
+                set("long", HIW "æ”œå¸¶å¾Œè‡ªå‹•é€²å…¥è¾Ÿè°·ç‹€æ…‹, æ—¥å¸¸ä¸æ¶ˆè€—é£Ÿç‰©é£²æ°´ã€‚\n" NOR);
                 set("value", 1);
                 set("no_sell", 1);
-                set("unit", "ÕÅ");
+                set("unit", "å¼µ");
         }
         set("auto_load", 1);
 

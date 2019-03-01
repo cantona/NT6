@@ -1,5 +1,5 @@
 // This program is a part of NT MudLIB
-// zhao.c ¾²ÕÕÊ¦Ì«
+// zhao.c éœç…§å¸«å¤ª
 
 #include <command.h>
 #include <ansi.h>
@@ -11,19 +11,19 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("¾²ÕÕÊ¦Ì«", ({ "jingzhao shitai","jingzhao","shitai"}));
+        set_name("éœç…§å¸«å¤ª", ({ "jingzhao shitai","jingzhao","shitai"}));
         set("long",
-           "ËıÊÇÒ»Î»ÖĞÄê³ö¼ÒµÀ¹Ã£¬µÀ¹Ú¸ßÂ££¬´ÈÃ¼ÉÆÄ¿¡£\n");
-        set("gender", "Å®ĞÔ");
+           "å¥¹æ˜¯ä¸€ä½ä¸­å¹´å‡ºå®¶é“å§‘ï¼Œé“å† é«˜æ”ï¼Œæ…ˆçœ‰å–„ç›®ã€‚\n");
+        set("gender", "å¥³æ€§");
         set("age", 43);
         set("attitude", "peaceful");
         set("shen_type", 1);
         set("shen", 10000);
         set("class", "bonze");
         set("inquiry",([
-                "Ìê¶È"  : (: ask_for_join :),
-                "³ö¼Ò"  : (: ask_for_join :),
-                "»¹Ë×"  : "¶ëáÒµÜ×Ó£¬²»ÄÜ»¹Ë×¡£ÄãÕÒÕÆÃÅÊ¦Ì«°É¡£",
+                "å‰ƒåº¦"  : (: ask_for_join :),
+                "å‡ºå®¶"  : (: ask_for_join :),
+                "é‚„ä¿—"  : "å³¨åµ‹å¼Ÿå­ï¼Œä¸èƒ½é‚„ä¿—ã€‚ä½ æ‰¾æŒé–€å¸«å¤ªå§ã€‚",
         ]));
 
         set("str", 30);
@@ -65,7 +65,7 @@ void create()
         map_skill("sword","huifeng-jian");
         map_skill("parry","huifeng-jian");
 
-        create_family("¶ëáÒÅÉ", 4, "µÜ×Ó");
+        create_family("å³¨åµ‹æ´¾", 4, "å¼Ÿå­");
 
         set("master_ob", 2);
         setup();
@@ -79,6 +79,6 @@ void attempt_apprentice(object ob)
         if (! permit_recruit(ob))
                 return;
 
-        command("say ºÃ°É£¬ÎÒ¾ÍÊÕÏÂÄãÁË¡£");
+        command("say å¥½å§ï¼Œæˆ‘å°±æ”¶ä¸‹ä½ äº†ã€‚");
         command("recruit "+query("id", ob));
 }

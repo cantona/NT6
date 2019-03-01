@@ -5,17 +5,17 @@
 inherit THROWING;
 void create()
 {
-        set_name("Ã·»¨Õë", ({ "meihua zhen", "zhen" }) );
+        set_name("æ¢…èŠ±é‡", ({ "meihua zhen", "zhen" }) );
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
+                set("unit", "æŠŠ");
                 set("value", 10000);
-                set("base_unit", "¸ù");
+                set("base_unit", "æ ¹");
                 set("base_weight", 100);
                 set("base_value", 200);
                 set("material", "steel");
-                set("long", "Ò»¸ùÏ¸ÈôÅ£Ã«µÄÕë¡£\n");
+                set("long", "ä¸€æ ¹ç´°è‹¥ç‰›æ¯›çš„é‡ã€‚\n");
                                 
         }
        set_amount(50);

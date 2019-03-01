@@ -4,13 +4,13 @@ inherit FINGER;
 
 void create()
 {
-   set_name(HIC"Ãåµéôä´äÖ¸»·"NOR, ({ "zhihuan"}) );
+   set_name(HIC"ç·¬ç”¸ç¿¡ç¿ æŒ‡ç’°"NOR, ({ "zhihuan"}) );
    set_weight(100);
    if( clonep() )
      set_default_object(__FILE__);
    else {
-     set("material", "Ìú");
-     set("unit", "Ã¶");
+     set("material", "éµ");
+     set("unit", "æš");
      set("value",6000);
      set("armor_prop/armor",16);
      set("armor_prop/dodge",12);

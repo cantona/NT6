@@ -6,8 +6,8 @@
 inherit F_CLEAN_UP;
 
 string help = @HELP
-    ÁĞ³öÖ÷Òª Mud ¼´Ê±¼à²âÁĞ±í¡£
-    Áí¿ÉÓÉ http://www.muds.cn ËæÊ±²éÔÄ¼´Ê±×ÊÁÏ
+    åˆ—å‡ºä¸»è¦ Mud å³æ™‚ç›£æ¸¬åˆ—è¡¨ã€‚
+    å¦å¯ç”± http://www.muds.cn éš¨æ™‚æŸ¥é–±å³æ™‚è³‡æ–™
 
 HELP;
 
@@ -20,8 +20,8 @@ string online_user_record()
 {
         int *realtime = TIME_D->query_realtime_array();
         int i, j, hour = realtime[HOUR];
-        string str,b="¡õ";
-        //string str,b="¨€";
+        string str,b="â–¡";
+        //string str,b="â–¡";
         string s="                                                                                                            ";
         string *list=({s,s,s,s,s,s,s,s,s,s,s,s,s,s});
         mapping record; 
@@ -43,7 +43,7 @@ string online_user_record()
         w = ((max_num-min_num)/VER);
         if( w<=0 )
                 w=0.001;
-        str = NOR WHT"¡ü"HIW"ÖĞÎÄ Mud Íæ¼ÒÉÏÏßÊ±¼äÇ÷ÊÆÍ¼\n"NOR;
+        str = NOR WHT"â†‘"HIW"ä¸­æ–‡ Mud ç©å®¶ä¸Šç·šæ™‚é–“è¶¨å‹¢åœ–\n"NOR;
         for(i=0;i<VER;i++)
         {
                 for(j=0;j<HOR;j++)
@@ -56,10 +56,10 @@ string online_user_record()
                                         list[i+1][j*4..j*4+3]=" "+b+" ";
                         }
                 }
-                str +=NOR WHT"¨O"NOR+list[i]+"\n";
+                str +=NOR WHT"â–¡"NOR+list[i]+"\n";
         }
 
-        str += NOR WHT"©¸©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤¡ú\n"NOR;
+        str += NOR WHT"â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â†’\n"NOR;
         str += HIC+time[0..(hour*4+1)]+HIM+"["+HIR+sprintf("%2d",hour)+HIM+"]"+HIC+time[(hour*4+6)..<0]+NOR+"\n\n";
 
         return str;
@@ -87,10 +87,10 @@ int main(object me, string arg)
 
         mudlist = MUDLIST_D->query_mudlist();
 
-        msg = HIM"ÖĞÎÄ Mud ¼´Ê±¼à²âÁĞ±í\n"NOR;
+        msg = HIM"ä¸­æ–‡ Mud å³æ™‚ç›£æ¸¬åˆ—è¡¨\n"NOR;
 
-        msg +=HIM"ÖĞÎÄÃû³Æ - Ó¢ÎÄÃû³Æ                        ÍøÂ·Î»ÖÃ                 ²º   ×´Ì¬ Íæ¼Ò ×îºóÁ¬ÏßÊ±¼ä\n"NOR;
-        msg +="©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n";
+        msg +=HIM"ä¸­æ–‡åç¨± - è‹±æ–‡åç¨±                        ç¶²è·¯ä½ç½®                 åŸ    ç‹€æ…‹ ç©å®¶ æœ€å¾Œé€£ç·šæ™‚é–“\n"NOR;
+        msg +="â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n";
 
         mudnamesort = sort_array(keys(mudlist)-({0}), (: mudlist_sort($(mudlist), $1, $2) :)) ;
 
@@ -106,7 +106,7 @@ int main(object me, string arg)
                 else if( data["MUD_CHINESE_NAME"] || data["MUD_ENGLISH_NAME"] )
                         mudname = data["MUD_CHINESE_NAME"] || data["MUD_ENGLISH_NAME"];
                 else
-                        mudname = "--Î´ÖªÃû³Æ--";
+                        mudname = "--æœªçŸ¥åç¨±--";
 
                 allmuders += data["USERS"];
 
@@ -114,19 +114,19 @@ int main(object me, string arg)
                     mudname,
                     ip,
                     port,
-                    (data["CONNECT_FAILED_TIMES"] ? NOR CYN"¶ÏÏß"NOR : HIC"Á¬Ïß"NOR),
+                    (data["CONNECT_FAILED_TIMES"] ? NOR CYN"æ–·ç·š"NOR : HIC"é€£ç·š"NOR),
                     HIG+(!data["CONNECT_FAILED_TIMES"] ? (data["USERS_COUNT_PARSE"] ? data["USERS"] : "NA") : "")+NOR,
                     data["LAST_CONTACT_TIME"] ? TIME_D->replace_ctime(data["LAST_CONTACT_TIME"]) : "--/--/---- --:--",
                 );
                 
         }
-        msg += NOR "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n";
-        msg += "* ÍøÒ³ä¯ÀÀÓÀ¾ÃÎ»Ö·Îª http://www.muds.cn\n";
-        msg += "* Íæ¼ÒÏÔÊ¾ NA ´ú±íÏµÍ³ÎŞ·¨Ö±½Ó²éÑ¯µÃµ½´Ë Mud ÏßÉÏÍæ¼ÒÊıÁ¿\n";
-        msg += "* ÈôÄúµÄ Mud Óû¼ÓÈëÁĞ±í¡¢ĞŞ¸Ä»òÊÇ²»Ï£ÍûÔÚÁĞ±í³öÏÖ£¬ÇëÖÁ muds.cn 5000 Óë Lonely ÁªÏµ\n"NOR;
-        msg += "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n"NOR;
-        msg += NOR WHT"¹²ÓĞ "HIW+sizeof(mudnamesort)+NOR WHT" ¸ö Mud£¬"HIW+allmuders+NOR WHT" Î»Íæ¼ÒÔÚÁĞ±íÖĞ\n"NOR;
-        msg += "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n"NOR;
+        msg += NOR "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n";
+        msg += "* ç¶²é ç€è¦½æ°¸ä¹…ä½å€ç‚º http://www.muds.cn\n";
+        msg += "* ç©å®¶é¡¯ç¤º NA ä»£è¡¨ç³»çµ±ç„¡æ³•ç›´æ¥æŸ¥è©¢å¾—åˆ°æ­¤ Mud ç·šä¸Šç©å®¶æ•¸é‡\n";
+        msg += "* è‹¥æ‚¨çš„ Mud æ¬²åŠ å…¥åˆ—è¡¨ã€ä¿®æ”¹æˆ–æ˜¯ä¸å¸Œæœ›åœ¨åˆ—è¡¨å‡ºç¾ï¼Œè«‹è‡³ muds.cn 5000 èˆ‡ Lonely è¯ç³»\n"NOR;
+        msg += "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n"NOR;
+        msg += NOR WHT"å…±æœ‰ "HIW+sizeof(mudnamesort)+NOR WHT" å€‹ Mudï¼Œ"HIW+allmuders+NOR WHT" ä½ç©å®¶åœ¨åˆ—è¡¨ä¸­\n"NOR;
+        msg += "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n"NOR;
 
         msg+= online_user_record();
         

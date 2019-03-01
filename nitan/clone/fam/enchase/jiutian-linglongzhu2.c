@@ -3,19 +3,19 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIM "¾ÅÌìÁáççÖé" NOR, ({"linglong zhu", "linglong", "zhu"}));
+        set_name(HIM "ä¹å¤©ç²ç“ç " NOR, ({"linglong zhu", "linglong", "zhu"}));
         set_weight(2000);
-        set("long", HIM "¿´ËÆÆ½·²µÄÖé×Ó£¬Ä´Ö¸°ã´óĞ¡£¬µ«È´¿ÉÒÔ¸ù¾İÊ±³½µÄ±ä»¯·ÅÉä³ö²»Í¬µÄÑÕÉ«£¬ÕäÆæÎŞ±È¡£\n" NOR);
+        set("long", HIM "çœ‹ä¼¼å¹³å‡¡çš„ç å­ï¼Œæ‹‡æŒ‡èˆ¬å¤§å°ï¼Œä½†å»å¯ä»¥æ ¹æ“šæ™‚è¾°çš„è®ŠåŒ–æ”¾å°„å‡ºä¸åŒçš„é¡è‰²ï¼Œçå¥‡ç„¡æ¯”ã€‚\n" NOR);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
+                set("unit", "é¡†");
                 set("value", 500000);
-                set("enchase/name", "¾ÅÌìÁáççÖé");
+                set("enchase/name", "ä¹å¤©ç²ç“ç ");
                 set("enchase/point", 1);
                 set("enchase/type", "surcoat");
                 set("enchase/cur_firm", 100);
-                set("nine_object", 1); // ¾Å¿×ÏâÇ¶ÎïÆ·±ê¼Ç
+                set("nine_object", 1); // ä¹å­”é‘²åµŒç‰©å“æ¨™è¨˜
                 set("enchase/spe_data", ([]) );  
         }
         setup();

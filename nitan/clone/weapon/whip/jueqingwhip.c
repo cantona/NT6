@@ -7,16 +7,16 @@ inherit WHIP;
 
 void create()
 {
-        set_name("ÇéË¿", ({"silk whip", "whip"}));
+        set_name("æƒ…çµ²", ({"silk whip", "whip"}));
         set_weight(500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long","Ò»ÌõÀ¶É«µÄ³¤´ø£¬Ï¸¿´ÓÉÎŞÊıÏ¸ÈçÃ«·¢µÄ³¤Ë¿¾Û³É£¬ËäÇáÈôÎŞÎï£¬È´ÎŞ¿×²»Èë¡£\n");
-                set("unit", "Ìõ");
+                set("long","ä¸€æ¢è—è‰²çš„é•·å¸¶ï¼Œç´°çœ‹ç”±ç„¡æ•¸ç´°å¦‚æ¯›ç™¼çš„é•·çµ²èšæˆï¼Œé›–è¼•è‹¥ç„¡ç‰©ï¼Œå»ç„¡å­”ä¸å…¥ã€‚\n");
+                set("unit", "æ¢");
                 set("value", 12000);
-                set("wield_msg", "$N×óÊÖÇáÑï£¬Ò»ÌõÀ¶É«³ñ´øºöµØË¦ÁË³öÀ´¡£\n");
-                set("unwield_msg", "$N°ÑÊÖÖĞ$n²ø»ØÑü¼ä¡£\n");
+                set("wield_msg", "$Nå·¦æ‰‹è¼•æšï¼Œä¸€æ¢è—è‰²ç¶¢å¸¶å¿½åœ°ç”©äº†å‡ºä¾†ã€‚\n");
+                set("unwield_msg", "$NæŠŠæ‰‹ä¸­$nçºå›è…°é–“ã€‚\n");
                 set("weapon_prop/courage", 5);
         }
         init_whip(60);

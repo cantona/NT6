@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-        set("short","����С·");
+        set("short","竹林小路");
         set("long",@LONG
-һ��С·�����ֶ��������Ϸ��������һ��Ƭ̨���˾۾ӵĴ�
-�򣬶�����ңң����ϲ�ݳǵĳ�ǽ����·��������ï�ܣ�ʱ��̨����
-��������
+一條小路穿竹林而過，西南方竹林深處是一大片台夷人聚居的村
+鎮，東北可遙遙望見喜州城的城牆。道路兩邊竹林茂密，時有台夷人
+來砍伐。
 LONG);
         set("outdoors", "dalis");
         set("exits",([ /* sizeof() == 1 */

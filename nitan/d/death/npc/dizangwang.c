@@ -10,9 +10,9 @@ mixed ask_reborn();
 
 void create()
 {
-        set_name("µØ²ØÍõ", ({ "dizang", }));
-        set("long", "ËûÈÝÃ²ÍþÑÏ£¬²»¿ÉÒ»ÊÀ¡£ÍÛ£¡Ëû¿ÉÊÇÕÆ¹ÜÈË¼äÉúËÀµÄÉñÏÉ¡£\n");
-        set("gender", "ÄÐÐÔ");
+        set_name("åœ°è—çŽ‹", ({ "dizang", }));
+        set("long", "ä»–å®¹è²Œå¨åš´ï¼Œä¸å¯ä¸€ä¸–ã€‚å“‡ï¼ä»–å¯æ˜¯æŽŒç®¡äººé–“ç”Ÿæ­»çš„ç¥žä»™ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 99);
         set("attitude", "peaceful");
         set("shen_type", 0);
@@ -51,30 +51,30 @@ void create()
         prepare_skill("finger", "kuihua-mogong");     
            
         set("inquiry", ([
-                "÷è÷ëÑ¥"   : (: ask_xue :),
-                "×ªÊÀ"     : (: ask_reborn :),                
-                "ÖØÉú"     : (: ask_reborn :),
-                "×ªÉú"     : (: ask_reborn :),
-                "×ªÊÀÖØÉú" : (: ask_reborn :),
+                "éº’éºŸé´"   : (: ask_xue :),
+                "è½‰ä¸–"     : (: ask_reborn :),                
+                "é‡ç”Ÿ"     : (: ask_reborn :),
+                "è½‰ç”Ÿ"     : (: ask_reborn :),
+                "è½‰ä¸–é‡ç”Ÿ" : (: ask_reborn :),
         ]));
         
         setup();
         carry_object("/clone/cloth/cloth.c")->wear();
         carry_object("/clone/misc/spin")->wield();
                 
-        create_family("Ú¤¸®µØ²ØÍõµîÇ°", 1, "ÓÄÚ¤Ö®Ö÷");
-        set("title", HIR "ÓÄÚ¤Ö®Ö÷" NOR);
+        create_family("å†¥åºœåœ°è—çŽ‹æ®¿å‰", 1, "å¹½å†¥ä¹‹ä¸»");
+        set("title", HIR "å¹½å†¥ä¹‹ä¸»" NOR);
 }
 
 int attempt_apprentice(object ob)
 {
         if( !query("born", ob) )
         {
-                command("say Äã¿ìÍ¶Ì¥È¥£¬ÔÚÕâÀïÏ¹½ÁºÍÊ²Ã´£¿");
+                command("say ä½ å¿«æŠ•èƒŽåŽ»ï¼Œåœ¨é€™è£¡çžŽæ”ªå’Œä»€éº¼ï¼Ÿ");
                 return 0;
         }
 
-        command("say ¹ö£¡¸øÎÒÒ»±ß¶ùÈ¥£¡");
+        command("say æ»¾ï¼çµ¦æˆ‘ä¸€é‚Šå…’åŽ»ï¼");
 }
 
 mixed ask_xue()
@@ -85,8 +85,8 @@ mixed ask_xue()
 
         me = this_player();
 
-        if( !query("hell_quest/ËøÑôµ¤", me) )
-                return "Æä÷è÷ëÑ¥ÊÇÎÒµÄ±¦Îï£¬Äã´òÌýËü¸ÉÊ²Ã´£¿";
+        if( !query("hell_quest/éŽ–é™½ä¸¹", me) )
+                return "å…¶éº’éºŸé´æ˜¯æˆ‘çš„å¯¶ç‰©ï¼Œä½ æ‰“è½å®ƒå¹¹ä»€éº¼ï¼Ÿ";
 
         ob = find_object(QILIN_XUE);
         if (! ob) ob = load_object(QILIN_XUE);
@@ -99,19 +99,19 @@ mixed ask_xue()
         }
 
         if (owner == me)
-                return "÷è÷ëÑ¥²»ÊÇÔÚÄãµÄÊÖÖÐÃ´£¬ÔõÃ´·´¶øÀ´ÕÒÎÒÄØ£¿";
+                return "éº’éºŸé´ä¸æ˜¯åœ¨ä½ çš„æ‰‹ä¸­éº¼ï¼Œæ€Žéº¼åè€Œä¾†æ‰¾æˆ‘å‘¢ï¼Ÿ";
 
         if (objectp(owner) && owner != this_object())
         {
                 if (! owner->is_character())
-                        return "ÎÒÒÑ¾­°Ñ÷è÷ëÑ¥ÒÑ¾­½è³öÈ¥ÁË¡£";
+                        return "æˆ‘å·²ç¶“æŠŠéº’éºŸé´å·²ç¶“å€Ÿå‡ºåŽ»äº†ã€‚";
 
-                        return "÷è÷ëÑ¥ÏÖÔÚÂäÔÚ"+query("name", owner)+
-                               "ÊÖÖÐ£¬ÄãÈ¥°ÑËûÕÒ»ØÀ´°É¡£";
+                        return "éº’éºŸé´ç¾åœ¨è½åœ¨"+query("name", owner)+
+                               "æ‰‹ä¸­ï¼Œä½ åŽ»æŠŠä»–æ‰¾å›žä¾†å§ã€‚";
         }
 
         ob->move(this_object());
-        message_vision("$NµãµãÍ·µÀ£º¡°ºÃ£¬¼ÈÈ»ÄãÊÇÎªÁËÀÏ·òµÄËøÑôµ¤Ö®ÊÂ£¬ÀÏ·ò¾Í½è¸øÄã°É£¡¡±\n", 
+        message_vision("$Né»žé»žé ­é“ï¼šâ€œå¥½ï¼Œæ—¢ç„¶ä½ æ˜¯ç‚ºäº†è€å¤«çš„éŽ–é™½ä¸¹ä¹‹äº‹ï¼Œè€å¤«å°±å€Ÿçµ¦ä½ å§ï¼â€\n", 
                        this_object(), me);
  command("give boots to "+query("id", me));
         return 1;
@@ -124,20 +124,20 @@ mixed ask_reborn()
         who = this_player();
 
         if( !query("reborn_lunhui", who)){
-                message_vision( BLU "$N" BLU "¶Ô$n" BLU "Ò»¹°ÊÖ£¬µÀ£ºÄãÏë×ªÊÀÏÈ¹ýÁËÁùµÀÊØÎÀ·ðÕâÒ»¹ØÔÙËµ£¡\n", 
+                message_vision( BLU "$N" BLU "å°$n" BLU "ä¸€æ‹±æ‰‹ï¼Œé“ï¼šä½ æƒ³è½‰ä¸–å…ˆéŽäº†å…­é“å®ˆè¡›ä½›é€™ä¸€é—œå†èªªï¼\n", 
                                 this_object(), who );
                 return 1;
         }      
           
         if( query("betrayer", who) )
         {
-                message_vision("$N¶Ô$nÅ­µÀ£ºÄã»¹ÊÇÏÈ°ÑÓëÅÐÊ¦ÃÅÅÉÖÐµÄ¾À¸ð½â¾öÁËÔÙÀ´£¡\n",
+                message_vision("$Nå°$næ€’é“ï¼šä½ é‚„æ˜¯å…ˆæŠŠèˆ‡åˆ¤å¸«é–€æ´¾ä¸­çš„ç³¾è‘›è§£æ±ºäº†å†ä¾†ï¼\n",
                                this_object(), who);
                 return 1;
         }
 
-        message_vision( BLU "$N" BLU "µãµãÍ·µÀ£º¡°ºÃ£¬¼ÈÈ»Äã´³¹ýµØ¸®µÄ¿¼Ñé£¬ÀÏ·ò¾ÍËÍÄãÉÏÌì½çÖ±½ÓÃæ¼û·ð×æ£¡¡±\n"
-                        BLU "$N" BLU "ËæÊÖÒ»ÕÐ£¬Í»È»¹ÎÆðÒ»ÕóÒõ·ç£¬½«$n" BLU "´øµ½¼«ÀÖÊÀ½ç¡£\n" NOR, 
+        message_vision( BLU "$N" BLU "é»žé»žé ­é“ï¼šâ€œå¥½ï¼Œæ—¢ç„¶ä½ é—–éŽåœ°åºœçš„è€ƒé©—ï¼Œè€å¤«å°±é€ä½ ä¸Šå¤©ç•Œç›´æŽ¥é¢è¦‹ä½›ç¥–ï¼â€\n"
+                        BLU "$N" BLU "éš¨æ‰‹ä¸€æ‹›ï¼Œçªç„¶åˆ®èµ·ä¸€é™£é™°é¢¨ï¼Œå°‡$n" BLU "å¸¶åˆ°æ¥µæ¨‚ä¸–ç•Œã€‚\n" NOR, 
                         this_object(), who );                            
                  
         who->move("/d/reborn/heaven");

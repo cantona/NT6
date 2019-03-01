@@ -7,16 +7,16 @@
 inherit BOOTS;
 
 string* shoename = ({
-        HIM"Ğå»¨Ğ¡Ğ¬"NOR,
-        "²¼Ğ¬",
+        HIM"ç¹¡èŠ±å°é‹"NOR,
+        "å¸ƒé‹",
 });
 string* shoeid = ({
         "flower shoes",
         "cloth shoes",
 });
 string* shoelong = ({
-        "ÕâÊÇÒ»Ë«Å®ÈË´©µÄ·ìÖÆµÃºÜ¾«ÃÀµÄĞå»¨Ğ¬¡£\n",
-        "ÕâÊÇÒ»Ë«ºÜÆÕÍ¨µÄ´Ö²¼Ğ¬¡£\n",
+        "é€™æ˜¯ä¸€é›™å¥³äººç©¿çš„ç¸«åˆ¶å¾—å¾ˆç²¾ç¾çš„ç¹¡èŠ±é‹ã€‚\n",
+        "é€™æ˜¯ä¸€é›™å¾ˆæ™®é€šçš„ç²—å¸ƒé‹ã€‚\n",
 });
 
 void create()
@@ -30,7 +30,7 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("material", "cloth");
-                set("unit", "Ë«");
+                set("unit", "é›™");
         //        set("long", shoelong[i]);
                 set("value", 0);
                 set("armor_prop/armor", 1 );

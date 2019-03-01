@@ -7,11 +7,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÍçÍ¯", ({ "wan tong", "wan", "tong" }));
+        set_name("é ‘ç«¥", ({ "wan tong", "wan", "tong" }));
 
-        set("long", "Ò»¸ö¿É°®µÄÍçÍ¯£¬ÌìÕæÎŞ±È¡£\n");
+        set("long", "ä¸€å€‹å¯æ„›çš„é ‘ç«¥ï¼Œå¤©çœŸç„¡æ¯”ã€‚\n");
         
-        set("gender", random(2) ? "Å®ĞÔ" : "ÄĞĞÔ");
+        set("gender", random(2) ? "å¥³æ€§" : "ç”·æ€§");
         set("age", 6);
         set("attitude", "friendly");
         set("shen_type", 1);
@@ -29,7 +29,7 @@ void create()
 
         
         set("inquiry", ([
-                "ÅîÀ³ÏÉµº"               :   "°¡°¡°¡£¬ÄãËµµÄÊ²Ã´Ñ½£¬ÎÒÔõÃ´Ã»Ìı¹ı¡¡¡­¡­£¿£¿\n",
+                "è“¬èŠä»™å³¶"               :   "å•Šå•Šå•Šï¼Œä½ èªªçš„ä»€éº¼å‘€ï¼Œæˆ‘æ€éº¼æ²’è½éã€€â€¦â€¦ï¼Ÿï¼Ÿ\n",
         ]));
              
         setup();

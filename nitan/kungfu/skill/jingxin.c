@@ -1,21 +1,21 @@
 #include <ansi.h>
-// ¶ëáÒ ¾²ĞÄ jingxin
+// å³¨åµ‹ éœå¿ƒ jingxin
 inherit SKILL; 
 string type() { return "knowledge"; } 
 
 int is_fmsk() { return 1; }
-string family_name() { return "¶ëáÒÅÉ"; }
+string family_name() { return "å³¨åµ‹æ´¾"; }
 
 int valid_learn(object me)
 {        
         if (me->query_skill("huifeng-jian", 1) < 30)
-                return notify_fail("Äã»Ø·ç·÷Áø½£»ğºò²»×ã£¬ÎŞ·¨ÑĞÏ°¾²ĞÄ¡£\n");        
+                return notify_fail("ä½ å›é¢¨æ‹‚æŸ³åŠç«å€™ä¸è¶³ï¼Œç„¡æ³•ç ”ç¿’éœå¿ƒã€‚\n");        
         
         if( query("family/family_name", me) != family_name() )
-                return notify_fail("¾²ĞÄÖ»ÄÜ¶ëáÒÅÉµÜ×Ó·½¿ÉÑĞÏ°¡£\n");
+                return notify_fail("éœå¿ƒåªèƒ½å³¨åµ‹æ´¾å¼Ÿå­æ–¹å¯ç ”ç¿’ã€‚\n");
 
         if (me->query_skill("jingxin", 1) / 2 > me->query_skill("mahayana", 1))
-                return notify_fail("Äã´ó³ËÄùÅÍ¹¦µÈ¼¶²»×ã£¬ÎŞ·¨¼ÌĞøÑĞÏ°¾²ĞÄ¡£\n");
+                return notify_fail("ä½ å¤§ä¹˜æ¶…ç£åŠŸç­‰ç´šä¸è¶³ï¼Œç„¡æ³•ç¹¼çºŒç ”ç¿’éœå¿ƒã€‚\n");
 
         return 1;
 }

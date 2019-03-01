@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-        set("short","���ɴ���");
+        set("short","烏蒙村落");
         set("long", @LONG
-������ɽ�Ļ��£������˰�ʯȥ�����������޳�һ������״��
-ƽ̨����ӷֱ��ڸ���ƽ̨�ϣ��������ӣ�������ʯ��Χǽ������
-��·Ҳ��ʯͷ�̳ɡ�
+這裡是山的緩坡，烏夷人搬石去土，把這裡修成一層層階梯狀的
+平台，民居分別建在各處平台上，互不連接，各自有石砌圍牆，村中
+道路也由石頭舖成。
 LONG );
         set("outdoors", "dalin");
         set("exits",([ /* sizeof() == 1 */

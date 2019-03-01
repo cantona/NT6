@@ -42,13 +42,13 @@ void init()
 
 void die(object killer)
 {
-        object dob;             // ´òÔÎÕâ¸öNPCµÄÈË
-        int n;                  // ¿ÉÒÔ½±ÀøµÄÈËµÄÊıÄ¿
-        int exp;                // ĞèÒª¹Ï·ÖµÄ¾­Ñé
-        int pot;                // ĞèÒª¹Ï·ÖµÄÇ±ÄÜ
-        int mar;                // Ìå»á
+        object dob;             // æ‰“æšˆé€™å€‹NPCçš„äºº
+        int n;                  // å¯ä»¥çå‹µçš„äººçš„æ•¸ç›®
+        int exp;                // éœ€è¦ç“œåˆ†çš„ç¶“é©—
+        int pot;                // éœ€è¦ç“œåˆ†çš„æ½›èƒ½
+        int mar;                // é«”æœƒ
         int exp2, pot2;
-        object *t;              // É±ËÀÎÒµÄÈËµÄ¶ÓÎéÁĞ±í
+        object *t;              // æ®ºæ­»æˆ‘çš„äººçš„éšŠä¼åˆ—è¡¨
         object tob;
         int i;
         object *inv;
@@ -58,7 +58,7 @@ void die(object killer)
         string s_gift, *key_s_gift;
         int gift_point;
 
-        // ¶¨Òå½±ÀøÎïÆ·ÁĞ±í
+        // å®šç¾©çå‹µç‰©å“åˆ—è¡¨
         mixed oblist;
                 
         object env;
@@ -70,11 +70,11 @@ void die(object killer)
                 return;
         }
 
-        // Í¨Öªµ±Ç°·¿¼ä£¬ÒÔ±ã¼ÆËãË¢ĞÂ
+        // é€šçŸ¥ç•¶å‰æˆ¿é–“ï¼Œä»¥ä¾¿è¨ˆç®—åˆ·æ–°
         env = environment(this_object());
         env->npc_die(this_object());
         
-        // ÕÒµ½É±ÁËÎÒ(NPC)»òÊÇ´òÔÎÎÒµÄÈË
+        // æ‰¾åˆ°æ®ºäº†æˆ‘(NPC)æˆ–æ˜¯æ‰“æšˆæˆ‘çš„äºº
         if (! objectp(dob = killer))
                 dob = query_last_damage_from();
 
@@ -118,7 +118,7 @@ void die(object killer)
                                                         ([ "exp"      : exp2 + ((tob == dob) ? exp2 / 10 : 0),
                                                            "pot"      : pot2 + ((tob == dob) ? pot2 / 10 : 0),
                                                            "mar"      : mar + ((tob == dob) ? mar / 10 : 0),
-                                                           "prompt"   : "ÄãµÄ¶ÓÎé´ò°Ü" + name() + "Ö®ºó"]));
+                                                           "prompt"   : "ä½ çš„éšŠä¼æ‰“æ•—" + name() + "ä¹‹å¾Œ"]));
                                 }
                         }
                 }
@@ -128,38 +128,38 @@ void die(object killer)
                                 ([ "exp"      : exp,
                                    "pot"      : pot,
                                    "mar"      : mar,
-                                   "prompt"   : "ÄãÔÚ´ò°Ü" + name() + "Ö®ºó"]));
+                                   "prompt"   : "ä½ åœ¨æ‰“æ•—" + name() + "ä¹‹å¾Œ"]));
                 }
         }
 
-        // Ò»¶¨¼¸ÂÊµôÎïÆ·ÔÚÉ±ÎÒµÄÈËÉíÉÏdob
+        // ä¸€å®šå¹¾ç‡æ‰ç‰©å“åœ¨æ®ºæˆ‘çš„äººèº«ä¸Šdob
         if (objectp(dob) && environment(dob) == environment(this_object()))
         {
                 key_s_gift = keys(oblist);
                 s_gift = key_s_gift[random(sizeof(key_s_gift))];
                 gift_point = oblist[s_gift];
 
-                // ÅĞ¶Ï¼¸ÂÊ
+                // åˆ¤æ–·å¹¾ç‡
                 if( (MEMBER_D->is_valid_member(query("id", dob)) || random(4) == 1 )
                         && random(MAX_POINT / ITEM_D->gift_point()) < gift_point)
                 {
-                        // »ñµÃÎïÆ·--±¬³öÎïÆ·
+                        // ç²å¾—ç‰©å“--çˆ†å‡ºç‰©å“
                         gift_ob = new(s_gift);
                         if (objectp(gift_ob))
                         {
-                                message_vision(HIR "¶£~~Ò»Éù£¬´Ó$N" HIR "ÉíÉÏµô³öÒ»Ñù¶«Î÷¡£\n" NOR, this_object(), dob);
+                                message_vision(HIR "å®~~ä¸€è²ï¼Œå¾$N" HIR "èº«ä¸Šæ‰å‡ºä¸€æ¨£æ±è¥¿ã€‚\n" NOR, this_object(), dob);
                                 set("who_get/id",query("id",  dob), gift_ob);
-                                set("who_get/time", time()+60, gift_ob);//Ò»·ÖÖÓÄÚÖ»ÄÜ×Ô¼º¼ñÈ¡
+                                set("who_get/time", time()+60, gift_ob);//ä¸€åˆ†é˜å…§åªèƒ½è‡ªå·±æ’¿å–
                                 gift_ob->move(environment(this_object()));
                         }
-                        else // ¼ÍÂ¼Ö® 
+                        else // ç´€éŒ„ä¹‹ 
                         {
                                         log_file("killed-gift-none", s_gift + "\n");
                         }
                 }
         }
 
-        // µô³ö½ğÇ®¼°ÆäËûÎïÆ·
+        // æ‰å‡ºé‡‘éŒ¢åŠå…¶ä»–ç‰©å“
         if (1)
         {
                 inv = all_inventory(this_object());

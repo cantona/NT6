@@ -1,4 +1,4 @@
-// road1.c С��
+// road1.c 小徑
 
 inherit ROOM;
 
@@ -6,10 +6,10 @@ void create()
 {
         object ob;
 
-        set("short", "С��");
+        set("short", "小徑");
         set("long", @LONG
-����һ�����ѵ�С������������ͨ��ɽ�·���Ϲ⻬ƽʵ��������
-����������������������ԼԼ���Կ�����ʯ�̾͵Ĺٵ���
+這是一條蜿蜒的小徑，曲曲折折通往山裡。路面上光滑平實，看來是
+經常有人來往。東面隱隱約約可以看到青石舖就的官道。
 LONG );
 
         set("exits", ([

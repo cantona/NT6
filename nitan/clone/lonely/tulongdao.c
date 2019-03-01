@@ -5,21 +5,21 @@ inherit BLADE;
 
 void create()
 {
-        set_name(NOR + CYN "ÍÀÁúµ¶" NOR, ({ "tulong dao", "tulong", "dao", "blade" }) );
+        set_name(NOR + CYN "å± é¾åˆ€" NOR, ({ "tulong dao", "tulong", "dao", "blade" }) );
         set_weight(32000);
         if (clonep())
                 destruct(this_object());
         else {
-                set("long", NOR + CYN "Õâ±ãÊÇºÅ³ÆÎäÁÖÖÁ×ðµÄÍÀÁú±¦µ¶£¬ËÄ³ßÀ´³¤"
-                            "µÄµ¥µ¶£¬¾¹´ïÒ»°Ù¶à½ïÖ®ÖØ¡£\nÏà´«ÆäÖÐ²ØÓÐ¿õÊÀµÄ´ó"
-                            "ÃØÃÜ¡£\n" NOR);
-                set("unit", "±ú");
+                set("long", NOR + CYN "é€™ä¾¿æ˜¯è™Ÿç¨±æ­¦æž—è‡³å°Šçš„å± é¾å¯¶åˆ€ï¼Œå››å°ºä¾†é•·"
+                            "çš„å–®åˆ€ï¼Œç«Ÿé”ä¸€ç™¾å¤šæ–¤ä¹‹é‡ã€‚\nç›¸å‚³å…¶ä¸­è—æœ‰æ› ä¸–çš„å¤§"
+                            "ç§˜å¯†ã€‚\n" NOR);
+                set("unit", "æŸ„");
                 set("value", 800000);
-                set("no_sell", "ÎÒµÄÌì¡­Äã¡­ÄãÖªµÀÕâÊÇÉ¶Ã´£¿ÕâÄãÒ²¸ÒÄÃÀ´Âô£¿");
+                set("no_sell", "æˆ‘çš„å¤©â€¦ä½ â€¦ä½ çŸ¥é“é€™æ˜¯å•¥éº¼ï¼Ÿé€™ä½ ä¹Ÿæ•¢æ‹¿ä¾†è³£ï¼Ÿ");
                 set("material", "steel");
-                set("wield_msg", HIY "$N" HIY "Ò»Éù¿ñÐ¦£¬´Ó±³ºó³é³öÄÇ±úºÅ³Æ¡¸"
-                                 HIR "ÎäÁÖÖÁ×ð" HIY "¡¹µÄÍÀÁú±¦µ¶¸ß¸ß¾ÙÆð¡£\n" NOR);
-                set("unwield_msg", HIY "$N" HIY "¹þ¹þÒ»Ð¦£¬½«ÍÀÁú±¦µ¶²å»Ø±³ºó¡£\n" NOR);
+                set("wield_msg", HIY "$N" HIY "ä¸€è²ç‹‚ç¬‘ï¼Œå¾žèƒŒå¾ŒæŠ½å‡ºé‚£æŸ„è™Ÿç¨±ã€Œ"
+                                 HIR "æ­¦æž—è‡³å°Š" HIY "ã€çš„å± é¾å¯¶åˆ€é«˜é«˜èˆ‰èµ·ã€‚\n" NOR);
+                set("unwield_msg", HIY "$N" HIY "å“ˆå“ˆä¸€ç¬‘ï¼Œå°‡å± é¾å¯¶åˆ€æ’å›žèƒŒå¾Œã€‚\n" NOR);
                 set("stable", 100);
         }
         init_blade(250);
@@ -30,6 +30,6 @@ mixed hit_ob(object me, object victim, int damage_bonus)
 {
         victim->receive_damage("jing",query("str", me)*2,me);
         victim->receive_wound("jing",query("str", me)*2,me);
-        return HIM "ÍÀÁúµ¶¼Ð´ø×Å´Ì¶úµÄÆÆ¿ÕÉù»®³öÒ»µÀµÀ³¤ºç£¬ö®Ê±¼ä$n"
-               HIM "Ö»¸Ðµ½ÐÄÉñÒâÂÒ¡£\n" NOR;
+        return HIM "å± é¾åˆ€å¤¾å¸¶è‘—åˆºè€³çš„ç ´ç©ºè²åŠƒå‡ºä¸€é“é“é•·è™¹ï¼ŒéœŽæ™‚é–“$n"
+               HIM "åªæ„Ÿåˆ°å¿ƒç¥žæ„äº‚ã€‚\n" NOR;
 }

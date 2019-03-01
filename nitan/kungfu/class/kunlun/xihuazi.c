@@ -7,9 +7,9 @@ inherit F_GUARDER;
 
 void create()
 {
-        set_name("Î÷»ª×Ó", ({"xi huazi", "xi", "huazi"}));
-        set("long", "ËûÊÇÀ¥ÂØÅÉµÚÎå´úµÜ×Ó£¬ÂúÈùò°÷×£¬ĞÔ×ÓÊ®·Ö±©Ôê¡£\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("è¥¿è¯å­", ({"xi huazi", "xi", "huazi"}));
+        set("long", "ä»–æ˜¯æ˜†ä¾–æ´¾ç¬¬äº”ä»£å¼Ÿå­ï¼Œæ»¿è…®è™¯é«¯ï¼Œæ€§å­ååˆ†æš´èºã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 38);
         set("attitude", "heroism");
         set("str", 25);
@@ -42,8 +42,8 @@ void create()
         set_skill("martial-cognize", 100);
 
         set("no_teach", ([
-                "liangyi-shengong"  : "Á½ÒÇÉñ¹¦ĞèµÃÕÆÃÅÈËÇ××Ô´«ÊÚ¡£",
-                "zhengliangyi-jian"  : "ÕıÁ½ÒÇ½£·¨ÄË±¾ÃÅÉñ¹¦£¬ĞèÒªÕÆÃÅÈËÇ××Ô´«ÊÚ¡£",
+                "liangyi-shengong"  : "å…©å„€ç¥åŠŸéœ€å¾—æŒé–€äººè¦ªè‡ªå‚³æˆã€‚",
+                "zhengliangyi-jian"  : "æ­£å…©å„€åŠæ³•ä¹ƒæœ¬é–€ç¥åŠŸï¼Œéœ€è¦æŒé–€äººè¦ªè‡ªå‚³æˆã€‚",
         ]));
 
         map_skill("force", "liangyi-shengong");
@@ -63,14 +63,14 @@ void create()
         }));
 
         set("guarder", ([
-                "refuse_other": CYN "$N" CYN "¶Ô$n" CYN "Å­ºÈµÀ£º"
-                                "ËûÄÌÄÌµÄ£¬ÄãÊÇÊ²Ã´ÈË£¿À¥ÂØÅÉÆñÊÇ"
-                                "ÈÃÄãËæ±ã×ß¶¯µØ·½£¿" NOR,
-                "refuse_carry": CYN "$N" CYN "¶Ô$n" CYN "ºÈµÀ£ºÄã"
-                                "±³ÉÏ±³µÄÊÇÊ²Ã´ÈË£¿¸øÎÒ·ÅÏÂÀ´£¡" NOR,
+                "refuse_other": CYN "$N" CYN "å°$n" CYN "æ€’å–é“ï¼š"
+                                "ä»–å¥¶å¥¶çš„ï¼Œä½ æ˜¯ä»€éº¼äººï¼Ÿæ˜†ä¾–æ´¾è±ˆæ˜¯"
+                                "è®“ä½ éš¨ä¾¿èµ°å‹•åœ°æ–¹ï¼Ÿ" NOR,
+                "refuse_carry": CYN "$N" CYN "å°$n" CYN "å–é“ï¼šä½ "
+                                "èƒŒä¸ŠèƒŒçš„æ˜¯ä»€éº¼äººï¼Ÿçµ¦æˆ‘æ”¾ä¸‹ä¾†ï¼" NOR,
         ]));
 
-        create_family("À¥ÂØÅÉ", 5, "µÜ×Ó");
+        create_family("æ˜†ä¾–æ´¾", 5, "å¼Ÿå­");
 
         set("chat_chance_combat", 100);
         set("chat_msg_combat", ({
@@ -92,24 +92,24 @@ void attempt_apprentice(object me)
         if (! permit_recruit(me))
                 return;
 
-        if( query("gender", me) == "Å®ĞÔ" )
+        if( query("gender", me) == "å¥³æ€§" )
         {
-                command("say Ê¦¸µ²»×¼ÎÒÊÕÅ®µÜ×Ó£¬ÄãÈ¥ÕÒÎÒ¼¸¸öÊ¦ÃÃ°É¡£");
+                command("say å¸«å‚…ä¸æº–æˆ‘æ”¶å¥³å¼Ÿå­ï¼Œä½ å»æ‰¾æˆ‘å¹¾å€‹å¸«å¦¹å§ã€‚");
                 return;
         }
 
         if( query("combat_exp", me)<10000 )
         {
-                command("say ÄãµÄ½­ºş¾­ÑéÊµÔÚÌ«Ç³£¬»¹ÊÇ¶ÍÁ¶¶ÍÁ¶ÔÙËµ°É¡£");
+                command("say ä½ çš„æ±Ÿæ¹–ç¶“é©—å¯¦åœ¨å¤ªæ·ºï¼Œé‚„æ˜¯é›ç…‰é›ç…‰å†èªªå§ã€‚");
                 return;
         }
 
         if ((int)me->query_skill("kunlun-xinfa", 1) < 30)
         {
-                command("say Äã¶Ô±¾ÃÅµÄÄÚ¹¦ĞÄ·¨ËùÖªÉĞÇ³£¬Á·Ï°¸ßÁËÔÙÀ´ÕÒÎÒ°É¡£");
+                command("say ä½ å°æœ¬é–€çš„å…§åŠŸå¿ƒæ³•æ‰€çŸ¥å°šæ·ºï¼Œç·´ç¿’é«˜äº†å†ä¾†æ‰¾æˆ‘å§ã€‚");
                 return;
         }
 
-        command("say ¼ÈÈ»" + RANK_D->query_respect(me) + "ÕâÃ´Å¬Á¦£¬ÎÒ¾ÍÊÕÏÂÄã°É¡£");
+        command("say æ—¢ç„¶" + RANK_D->query_respect(me) + "é€™éº¼åŠªåŠ›ï¼Œæˆ‘å°±æ”¶ä¸‹ä½ å§ã€‚");
         command("recruit "+query("id", me));
 }

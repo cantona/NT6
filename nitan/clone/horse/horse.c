@@ -36,33 +36,33 @@ mapping trans = ([
 ]);
 
 mapping show_trans = ([
-"beijing"   : "±±¾©",
-"luoyang"   : "ÂåÑô",
-"yangzhou"  : "ÑïÖİ",
-"dali"      : "´óÀí", 
-"foshan"    : "·ğÉ½", 
-"fuzhou"    : "¸£Öİ", 
-"guanwai"   : "¹ØÍâ", 
-"hangzhou"  : "º¼Öİ", 
-"lanzhou"   : "À¼Öİ", 
-"lingzhou"  : "ÁéÖİ", 
-"yongdeng"  : "ÓÀµÇ", 
-"suzhou"    : "ËÕÖİ",
-"xiangyang" : "ÏåÑô", 
-"yili"      : "ÒÁÀç", 
-"chengdu"   : "³É¶¼", 
-"emei"      : "¶ëáÒÉ½", 
-"emei2"     : "¶ëáÒ°ëÉ½", 
-"quanzhou"  : "ÈªÖİ", 
-"jiaxing"   : "¼ÎĞË", 
-"jingzhou"  : "¾£Öİ", 
-"nanyang"   : "ÄÏÑô", 
-"changan"   : "³¤°²", 
-"wugong"    : "Îä¹¦Õò", 
-"hengyang"  : "ºâÑô", 
-"kaifeng"   : "¿ª·â", 
-"kunming"   : "À¥Ã÷", 
-"zhongzhou" : "ÖĞÖİ",
+"beijing"   : "åŒ—äº¬",
+"luoyang"   : "æ´›é™½",
+"yangzhou"  : "æšå·",
+"dali"      : "å¤§ç†", 
+"foshan"    : "ä½›å±±", 
+"fuzhou"    : "ç¦å·", 
+"guanwai"   : "é—œå¤–", 
+"hangzhou"  : "æ­å·", 
+"lanzhou"   : "è˜­å·", 
+"lingzhou"  : "éˆå·", 
+"yongdeng"  : "æ°¸ç™»", 
+"suzhou"    : "è˜‡å·",
+"xiangyang" : "è¥„é™½", 
+"yili"      : "ä¼ŠçŠ", 
+"chengdu"   : "æˆéƒ½", 
+"emei"      : "å³¨åµ‹å±±", 
+"emei2"     : "å³¨åµ‹åŠå±±", 
+"quanzhou"  : "æ³‰å·", 
+"jiaxing"   : "å˜‰èˆˆ", 
+"jingzhou"  : "èŠå·", 
+"nanyang"   : "å—é™½", 
+"changan"   : "é•·å®‰", 
+"wugong"    : "æ­¦åŠŸé®", 
+"hengyang"  : "è¡¡é™½", 
+"kaifeng"   : "é–‹å°", 
+"kunming"   : "æ˜†æ˜", 
+"zhongzhou" : "ä¸­å·",
 ]);
 
 string get_trans_path(string s)
@@ -85,8 +85,8 @@ void setup()
         set("ridable", 1);
         set("no_give", 1);
         set("value", 1);
-        set("unit", "Æ¥");
-        set("base_unit", "Æ¥");
+        set("unit", "åŒ¹");
+        set("base_unit", "åŒ¹");
         set_weight(1);
 
         set_heart_beat(2);
@@ -103,13 +103,13 @@ int show_trans(object me)
         string* places;
         mapping self_flag;
 
-        write(HIY "Äã¿ÉÒÔÆïÂíµ½ÒÔÏÂµØ·½£º\n" NOR);
+        write(HIY "ä½ å¯ä»¥é¨é¦¬åˆ°ä»¥ä¸‹åœ°æ–¹ï¼š\n" NOR);
 
         places = keys(show_trans); 
         for (i = 0; i < sizeof(places); i ++)
                 write(sprintf("%-20s%-20s\n", places[i], show_trans[places[i]]));
 
-        // ×Ô¼º¼ÇÂ¼µÄµØµã
+        // è‡ªå·±è¨˜éŒ„çš„åœ°é»
         self_flag = me->query("horse/flags");
 
         if (mapp(self_flag) && MEMBER_D->is_valib_member(me->query("id")))
@@ -119,7 +119,7 @@ int show_trans(object me)
                         places = ({});
                         places = keys(self_flag);
                         for (i = 0; i < sizeof(places); i ++)
-                                write(sprintf(HIG "%-20s%-20s\n" NOR, places[i], "ÓÃ»§¼ÇÂ¼µØµã"));
+                                write(sprintf(HIG "%-20s%-20s\n" NOR, places[i], "ç”¨æˆ¶è¨˜éŒ„åœ°é»"));
                 }
         }
         else if(mapp(self_flag))
@@ -129,17 +129,17 @@ int show_trans(object me)
                         places = ({});
                         places = keys(self_flag);
                         for (i = 0; i < sizeof(places); i ++)
-                                write(sprintf(HIG "%-20s%-20s\n" NOR, places[i], "ÓÃ»§¼ÇÂ¼µØµã"));
+                                write(sprintf(HIG "%-20s%-20s\n" NOR, places[i], "ç”¨æˆ¶è¨˜éŒ„åœ°é»"));
                 }                
         }
 
-        write(HIY "\nÇëÊ¹ÓÃ rideto <µØÃû> ÆïÂíµ½Ö¸¶¨µØ·½¡£\n" NOR);
+        write(HIY "\nè«‹ä½¿ç”¨ rideto <åœ°å> é¨é¦¬åˆ°æŒ‡å®šåœ°æ–¹ã€‚\n" NOR);
 
         return 1;
 
 }
 
-// ÆïÂíµ½Ö¸¶¨µØµã
+// é¨é¦¬åˆ°æŒ‡å®šåœ°é»
 int move_to(object me, string place)
 {
         object running, horse, follower;
@@ -149,151 +149,151 @@ int move_to(object me, string place)
         object trans_target, me_env;
         
 
-        // ¼ì²éÊÇ·ñÆïÂí
+        // æª¢æŸ¥æ˜¯å¦é¨é¦¬
         if (! objectp(horse = me->query_temp("is_riding")))
         {
-                write("Äã²¢Ã»ÓĞÆïÂí°¡¡£\n" );
+                write("ä½ ä¸¦æ²’æœ‰é¨é¦¬å•Šã€‚\n" );
                 return 1;
         }
         if (horse->query_temp("running"))
         {
-                write(this_object()->name() + NOR "ÕıÔÚ±¼ÅÜÄØ£¡\n" NOR);
+                write(this_object()->name() + NOR "æ­£åœ¨å¥”è·‘å‘¢ï¼\n" NOR);
                 return 1;
         }
         if (me->query_temp("running"))
         {
-                write("ÄãÕıÔÚ±¼ÅÜÖĞÄØ¡£\n");
+                write("ä½ æ­£åœ¨å¥”è·‘ä¸­å‘¢ã€‚\n");
                 return 1;
         }
         if (me->is_busy() || me->is_fighting())
         {
-                write("ÄãÕıÃ¦ÄØ£¡\n");
+                write("ä½ æ­£å¿™å‘¢ï¼\n");
                 return 1;
         }
         sk_riding = me->query_skill("riding", 1);
         if (sk_riding < 30)
         {
-                write("ÄãÆïÊõ²»¹»£¬ÎŞ·¨ÆïÂíµ½Ö¸¶¨µØµã¡£\n");
+                write("ä½ é¨è¡“ä¸å¤ ï¼Œç„¡æ³•é¨é¦¬åˆ°æŒ‡å®šåœ°é»ã€‚\n");
                 return 1;
         }
 
-        // ¼ì²éÊÇ·ñÓĞ¸ÃµØ·½¿ÉÈ¥
+        // æª¢æŸ¥æ˜¯å¦æœ‰è©²åœ°æ–¹å¯å»
         if (! stringp(trans_path = get_trans_path(place)))
         {
                         if (stringp(trans_path = me->query("horse/flags/" + place)))
                         {
                                 if (! find_object(trans_path) && ! load_object(trans_path))
                                 {
-                                        write("ÄãÎŞ·¨ÆïÂí´ïµ½Õâ¸öµØ·½¡£\n");
+                                        write("ä½ ç„¡æ³•é¨é¦¬é”åˆ°é€™å€‹åœ°æ–¹ã€‚\n");
                                         return 1;
                                 }
                                 
                         }
                         if (! stringp(trans_path = me->query("horse/flags/" + place)))
                         {
-                                write("ÄãÎŞ·¨ÆïÂí´ïµ½Õâ¸öµØ·½¡£\n");
+                                write("ä½ ç„¡æ³•é¨é¦¬é”åˆ°é€™å€‹åœ°æ–¹ã€‚\n");
                                 return 1;
                         }                
                         else
                         {
                                 if (! MEMBER_D->is_valib_member(me->query("id")) && ! me->query("horse/stone"))
                                 {
-                                        write("ÄãÎŞ·¨ÆïÂí´ïµ½Õâ¸öµØ·½¡£\n");
+                                        write("ä½ ç„¡æ³•é¨é¦¬é”åˆ°é€™å€‹åœ°æ–¹ã€‚\n");
                                         return 1;
                                 }
                         }                
         }
 
-        // Ä³Ğ©µØ·½ÎŞ·¨ÆïÂíµ½´ï
+        // æŸäº›åœ°æ–¹ç„¡æ³•é¨é¦¬åˆ°é”
         trans_target = find_object(trans_path);
         if (! objectp(trans_target))trans_target = load_object(trans_path);
 
         if (! objectp(trans_target))
         {
-                write("ÄãÎŞ·¨ÆïÂí´ïµ½Õâ¸öµØ·½¡£\n");
+                write("ä½ ç„¡æ³•é¨é¦¬é”åˆ°é€™å€‹åœ°æ–¹ã€‚\n");
                 return 1;
         }
         
         if (trans_target->query("no_flyto"))
         {
-                write("ÄãÎŞ·¨ÆïÂí´ïµ½Õâ¸öµØ·½¡£\n");
+                write("ä½ ç„¡æ³•é¨é¦¬é”åˆ°é€™å€‹åœ°æ–¹ã€‚\n");
                 return 1;
         }
 
-        // ÔÚÌì½çÒ²ÎŞ·¨µ½´ï
+        // åœ¨å¤©ç•Œä¹Ÿç„¡æ³•åˆ°é”
         if (sscanf(trans_path, "/kungfu/class/sky%s", temp) == 1)
         {
-                write("ÄãÎŞ·¨ÆïÂí´ïµ½Õâ¸öµØ·½¡£\n");
+                write("ä½ ç„¡æ³•é¨é¦¬é”åˆ°é€™å€‹åœ°æ–¹ã€‚\n");
                 return 1;
         }
 
         if (sscanf(trans_path, "/d/newbie/%s", temp) == 1)
         {
-                write("ÄãÎŞ·¨ÆïÂí´ïµ½Õâ¸öµØ·½¡£\n");
-                log_file("horse", me->query("id") + "ÓÚ" + ctime(time()) + " ÊÔÍ¼ÀûÓÃ¼ÇÂ¼µã»Øµ½ĞÂÊÖ´å¡£\n");
+                write("ä½ ç„¡æ³•é¨é¦¬é”åˆ°é€™å€‹åœ°æ–¹ã€‚\n");
+                log_file("horse", me->query("id") + "äº" + ctime(time()) + " è©¦åœ–åˆ©ç”¨è¨˜éŒ„é»å›åˆ°æ–°æ‰‹æ‘ã€‚\n");
                 return 1;
         }        
-        // ÉñÁúµºÉÏ²»ÄÜµ½´ï(³¬Ó°Âí³ıÍâ)
+        // ç¥é¾å³¶ä¸Šä¸èƒ½åˆ°é”(è¶…å½±é¦¬é™¤å¤–)
         me_env = environment(me);
         
         if (me_env->query("no_rideto"))
         {
-                write("´Ë´¦²»ÄÜÆïÂí¡£\n");
+                write("æ­¤è™•ä¸èƒ½é¨é¦¬ã€‚\n");
                 return 1;                
         }
         if (sscanf(base_name(me_env), "/d/shenlong/%s", temp) == 1 && this_object()->query("id") != "chaoying")
         {
-                write("´Ë´¦ÎŞ·¨ÆïÂí¡£\n");
+                write("æ­¤è™•ç„¡æ³•é¨é¦¬ã€‚\n");
                 return 1;
         }
         if (sscanf(trans_path, "/d/shenlong/%s", temp) == 1 && this_object()->query("id") != "chaoying")
         {
-                write("ÄãÎŞ·¨ÆïÂí´ïµ½Õâ¸öµØ·½¡£\n");
+                write("ä½ ç„¡æ³•é¨é¦¬é”åˆ°é€™å€‹åœ°æ–¹ã€‚\n");
                 return 1;
         }
         
         if (trans_path == "/d/shenlong/shejingdong")
         {
-                write("ÄãµÄ×øÆïÎŞ·¨¸ĞÓ¦Éß¾«¶´ÄÚµÄÇé¿ö£¬ÎŞ·¨ÆïÂí´ïµ½Õâ¸öµØ·½¡£\n");
+                write("ä½ çš„åé¨ç„¡æ³•æ„Ÿæ‡‰è›‡ç²¾æ´å…§çš„æƒ…æ³ï¼Œç„¡æ³•é¨é¦¬é”åˆ°é€™å€‹åœ°æ–¹ã€‚\n");
                 return 1;
         }
         
-        // dream_boatÉÏÎŞ·¨ÆïÂí
+        // dream_boatä¸Šç„¡æ³•é¨é¦¬
         if (sscanf(base_name(me_env), "/clone/misc/dream_%s", temp) == 1)
         {
-                write("´Ë´¦ÎŞ·¨ÆïÂí¡£\n");
+                write("æ­¤è™•ç„¡æ³•é¨é¦¬ã€‚\n");
                 return 1;
         }
         
-        // Íæ¼Ò·¿¼äÎŞ·¨µ½´ï£¬×Ô¼ºµÄ·¿¼ä¿ÉÒÔ
+        // ç©å®¶æˆ¿é–“ç„¡æ³•åˆ°é”ï¼Œè‡ªå·±çš„æˆ¿é–“å¯ä»¥
         if (sscanf(trans_path, "/data/room/%s/%s", temp, temp2) == 2)
         {
-                // ×Ô¼º·¿¼ä¿ÉÒÔ½øÈë
+                // è‡ªå·±æˆ¿é–“å¯ä»¥é€²å…¥
                 if (me->query("id") != temp)
                 {
-                        write("ÄãÎŞ·¨ÆïÂí½øÈëË½ÈË×¡Õ¬¡£\n");
+                        write("ä½ ç„¡æ³•é¨é¦¬é€²å…¥ç§äººä½å®…ã€‚\n");
                         return 1;
                 }
         }
 
         if (sscanf(trans_path, "/clone/misc/dream_%s", temp) == 1)
         {
-                write("ÄãÎŞ·¨ÆïÂí´ïµ½Õâ¸öµØ·½¡£\n");
+                write("ä½ ç„¡æ³•é¨é¦¬é”åˆ°é€™å€‹åœ°æ–¹ã€‚\n");
                 return 1;
         }
         if (sscanf(trans_path, "/d/xiangyang/%s", temp) == 1 && XYWAR_D->now_status() == 2)
         {
-                write("ÏÖÔÚÏåÑô³ÇÈ«Ãæ½ä±¸£¬Äã»¹ÊÇ×øÂí³µ±È½Ï°²È«£¡\n");
+                write("ç¾åœ¨è¥„é™½åŸå…¨é¢æˆ’å‚™ï¼Œä½ é‚„æ˜¯åé¦¬è»Šæ¯”è¼ƒå®‰å…¨ï¼\n");
                 return 1;
         }
 
         if (sscanf(base_name(environment(me)),"/d/xiangyang/%s", temp) == 1  && XYWAR_D->now_status() == 2)
         {
-                write("ÏÖÔÚÏåÑô³ÇÈ«Ãæ½ä±¸£¬Äã»¹ÊÇ×øÂí³µ±È½Ï°²È«£¡\n");
+                write("ç¾åœ¨è¥„é™½åŸå…¨é¢æˆ’å‚™ï¼Œä½ é‚„æ˜¯åé¦¬è»Šæ¯”è¼ƒå®‰å…¨ï¼\n");
                 return 1;
         }
 
-        // ¸ù¾İÂíµÄºÃ»µ¼°ÆïÂíÕßµÄÆïÊõÀ´ÅĞ¶Ï´ïµ½Ä¿µÄµØÊ±¼ä
+        // æ ¹æ“šé¦¬çš„å¥½å£åŠé¨é¦¬è€…çš„é¨è¡“ä¾†åˆ¤æ–·é”åˆ°ç›®çš„åœ°æ™‚é–“
         level = horse->query("level");
         if (sk_riding >= 300)sk_riding = 300;
         trans_times = 2 + random(1 + 300 / sk_riding) + random(22 - level*4);
@@ -301,13 +301,13 @@ int move_to(object me, string place)
         if (trans_times <= 0)
                 log_file("horse_time", trans_times + "\n");
 
-        // ÅĞ¶ÏÆïÂíµ½Ö¸¶¨µØµãÂíËùÏûºÄµÄÌåÁ¦
+        // åˆ¤æ–·é¨é¦¬åˆ°æŒ‡å®šåœ°é»é¦¬æ‰€æ¶ˆè€—çš„é«”åŠ›
         horse_tili = horse->query("tili");
         cost_tili = 10 + random(trans_times * 25);
 
         if (horse_tili <= cost_tili)
         {
-                write(horse->name() + NOR "ÌåÁ¦²»×ã£¬»¹ÊÇÈÃËüĞİÏ¢»á¶ù°É¡£\n");
+                write(horse->name() + NOR "é«”åŠ›ä¸è¶³ï¼Œé‚„æ˜¯è®“å®ƒä¼‘æ¯æœƒå…’å§ã€‚\n");
                 return 1;
         }
 
@@ -323,8 +323,8 @@ int move_to(object me, string place)
         horse->set_temp("running", 1);
         me->set_temp("running", 1);
 
-        message("vision",  "\n" + this_object() ->name() + HIW "Ò»Éù³¤"
-                  "Ë»£¬¼ıÒ»°ãµØ³å³ö ¡­¡­\n" NOR, environment(me), ({horse}));
+        message("vision",  "\n" + this_object() ->name() + HIW "ä¸€è²é•·"
+                  "å˜¶ï¼Œç®­ä¸€èˆ¬åœ°æ²–å‡º â€¦â€¦\n" NOR, environment(me), ({horse}));
 
         call_out("arrived_dest", trans_times, me, follower, running, horse, trans_path);
 
@@ -343,7 +343,7 @@ int arrived_dest(object me, mixed follower, object running, object horse, string
         }
         if (objectp(follower))follower->move(trans_path);
         if (objectp(horse))horse->delete_temp("running");
-        // Èç¹ûÓĞÍ¬°éÔòÍ¬°é×Ô¶¯ÒÆ¶¯µ½ÃæÇ°
+        // å¦‚æœæœ‰åŒä¼´å‰‡åŒä¼´è‡ªå‹•ç§»å‹•åˆ°é¢å‰
         ob = me->query("me_mater");
         if (objectp(ob))
                 ob->move(environment(me));
@@ -358,20 +358,20 @@ int arrived_dest(object me, mixed follower, object running, object horse, string
         if(objectp(running))destruct(running);
 
         if (objectp(horse))
-                message("vision",  "\n" + this_object()->name() + HIW "µ½ÁËÄ¿µÄµØ£¬ÃÍÈ»³¤Ë»£¬Ç°"
-                          "Ìß¸ßÑï£¬¶ÙÊ±³¾ÍÁËÄÉ¢¡­¡­\n" NOR, environment(horse), ({horse}));
+                message("vision",  "\n" + this_object()->name() + HIW "åˆ°äº†ç›®çš„åœ°ï¼ŒçŒ›ç„¶é•·å˜¶ï¼Œå‰"
+                          "è¸¢é«˜æšï¼Œé “æ™‚å¡µåœŸå››æ•£â€¦â€¦\n" NOR, environment(horse), ({horse}));
 
         return 1;
 }
 
-// Ç¿ĞĞÉÏÂí
+// å¼·è¡Œä¸Šé¦¬
 int force_me_ride(object me)
 {
         object owner;
 
     if (! objectp(me))
     {
-                write("Îï¼ş³ö´í¡£\n");
+                write("ç‰©ä»¶å‡ºéŒ¯ã€‚\n");
                 return 0;
     }
 
@@ -383,12 +383,12 @@ int force_me_ride(object me)
           this_object()->set_temp("is_rided_follow", me);
         me->set_temp("is_riding_follow", this_object());
 
-    message_vision("$NÔ¾ÉÏ$n" NOR "£¬×øÔÚ" + owner->name() + "µÄÉíºó¡£\n", me, this_object());
+    message_vision("$Nèºä¸Š$n" NOR "ï¼Œååœ¨" + owner->name() + "çš„èº«å¾Œã€‚\n", me, this_object());
 
         return 1;
 }
 
-// ĞÄÌø
+// å¿ƒè·³
 void heart_beat()
 {
      int level;

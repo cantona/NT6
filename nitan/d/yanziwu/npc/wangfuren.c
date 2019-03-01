@@ -4,11 +4,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("Íõ·òÈË", ({ "wang furen","wang" }) );
-        set("gender", "Å®ĞÔ" );
-        set("title", HIM"ÂûÍÓÉ½×¯×¯Ö÷"NOR );
+        set_name("ç‹å¤«äºº", ({ "wang furen","wang" }) );
+        set("gender", "å¥³æ€§" );
+        set("title", HIM"è”“é™€å±±èŠèŠä¸»"NOR );
         set("age", 35);
-        set("long", "ËıÉí´©¶ì»Æ³ñÉÀ£¬Ã¼Ä¿¿Ú±Ç¾ùÃÀÑŞÎŞÂ×£¬Á³ÉÏÈ´ÆÄÓĞ·çËªËêÔÂµÄºÛ¼£¡£\n");
+        set("long", "å¥¹èº«ç©¿éµé»ƒç¶¢è¡«ï¼Œçœ‰ç›®å£é¼»å‡ç¾è‰·ç„¡å€«ï¼Œè‡‰ä¸Šå»é —æœ‰é¢¨éœœæ­²æœˆçš„ç—•è·¡ã€‚\n");
         set("shen_type", -1);
         set("combat_exp", 100000);
         set("per", 30);

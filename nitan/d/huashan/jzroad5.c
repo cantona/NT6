@@ -3,16 +3,16 @@
 inherit ROOM;
 void create()
 {
-        set("short", "ÖÐÌõÉ½ÃÜÁÖ");
+        set("short", "ä¸­æ¢å±±å¯†æž—");
         set("long", @LONG
-É½Â·Ô½À´Ô½Ð¡£¬ÖÜÎ§Ã¯ÃÜÉ­ÁÖÀïºÍ½ÅÏÂµÄÃ©²Ý·â×¡ÁËÂ·£¬ÉÏ²»¼û
-Ìì¹â£¬ºó²»¼û¹éÂ·(road)£¬Äã¼òÖ±¾øÍûÁË¡£
+å±±è·¯è¶Šä¾†è¶Šå°ï¼Œå‘¨åœèŒ‚å¯†æ£®æž—è£¡å’Œè…³ä¸‹çš„èŒ…è‰å°ä½äº†è·¯ï¼Œä¸Šä¸è¦‹
+å¤©å…‰ï¼Œå¾Œä¸è¦‹æ­¸è·¯(road)ï¼Œä½ ç°¡ç›´çµ•æœ›äº†ã€‚
 LONG );
         set("exits", ([
                 "northdown" : __DIR__"jzroad4",
         ]));
         set("item_desc", ([
-                "road" : "Â·±ßÄ£Ä£ºýºý£¬ºÃÏóÓÐ¸ö±®¡£¿ÉÊÇÌ«°µÁËÊµÔÚ¿´²»¼û¡£\n",
+                "road" : "è·¯é‚Šæ¨¡æ¨¡ç³Šç³Šï¼Œå¥½è±¡æœ‰å€‹ç¢‘ã€‚å¯æ˜¯å¤ªæš—äº†å¯¦åœ¨çœ‹ä¸è¦‹ã€‚\n",
         ]));
         set("no_clean_up", 0);
         setup();
@@ -33,9 +33,9 @@ int do_use(string arg)
         if (!present("fire", me))  return 0;
         if( arg=="fire" ) {
              write(
-"ÄãµãÈ¼ÁË»ðÕÛ£¬·¢ÏÖÊÇÒ»Î§´óÊ÷£¬±»Ï÷È¥Ê÷Æ¤µÄÊ÷¸ÉÉÏÊé¡°ÖÐÌõÉ½¡±Èý×Ö¡£
-²à±ßÒ»¸öÊ÷¶´£¬ËÆºõ¿ÉÒÔ×ê(zuan)¹ýÈ¥¡£\n");
-             set_temp("marks/×ê1", 1, this_player());
+"ä½ é»žç‡ƒäº†ç«æŠ˜ï¼Œç™¼ç¾æ˜¯ä¸€åœå¤§æ¨¹ï¼Œè¢«å‰ŠåŽ»æ¨¹çš®çš„æ¨¹å¹¹ä¸Šæ›¸â€œä¸­æ¢å±±â€ä¸‰å­—ã€‚
+å´é‚Šä¸€å€‹æ¨¹æ´žï¼Œä¼¼ä¹Žå¯ä»¥é‘½(zuan)éŽåŽ»ã€‚\n");
+             set_temp("marks/é‘½1", 1, this_player());
              return 1;
        }
 }
@@ -45,17 +45,17 @@ int do_zuan(string arg)
         object me;
         me = this_player();
 
-        if( query_temp("marks/×ê1", me)){
-             message("vision", me->name() + "²àÉí×ÌÁïÒ»ÏÂ×ê½øÊ÷¶´²»¼ûÁË¡£\n",
+        if( query_temp("marks/é‘½1", me)){
+             message("vision", me->name() + "å´èº«æ»‹æºœä¸€ä¸‹é‘½é€²æ¨¹æ´žä¸è¦‹äº†ã€‚\n",
                     environment(me), ({me}) );
              me->move(__DIR__"jzroad6");
-             message("vision", me->name() + "´ÓÊ÷Àï×êÁË³öÀ´¡£\n",
+             message("vision", me->name() + "å¾žæ¨¹è£¡é‘½äº†å‡ºä¾†ã€‚\n",
                      environment(me), ({me}) );
-             delete_temp("marks/×ê1", this_player());
+             delete_temp("marks/é‘½1", this_player());
              return 1;
         }
         else {
-             write("ÄãÏëÍùÄÄ¶ù×ê?!\n");
+             write("ä½ æƒ³å¾€å“ªå…’é‘½?!\n");
              return 1;
         }
 }

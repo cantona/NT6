@@ -27,21 +27,21 @@ int main(object me, string str)
                 ob = present(str, environment(me));   
                 if (! ob) ob = find_player(str);   
                 if (! ob) ob = find_living(str);   
-                if (! ob) return notify_fail("ÄãÒª²é¿´Ë­µÄÕÙ»½ÁĞ±í£¿\n");   
+                if (! ob) return notify_fail("ä½ è¦æŸ¥çœ‹èª°çš„å¬å–šåˆ—è¡¨ï¼Ÿ\n");   
         }  
         
-        // »ñÈ¡¿ÉÕÙ»½ÎïÆ·ÁĞ±í 
+        // ç²å–å¯å¬å–šç‰©å“åˆ—è¡¨ 
         
         if( !mapp(ol=query("can_summon", ob)) || sizeof(ol)<1 )
-                return notify_fail("ÄãÏÖÔÚ»¹Ã»ÓĞ¿ÉÒÔÕÙ»½µÄÎïÆ·¡£\n"); 
+                return notify_fail("ä½ ç¾åœ¨é‚„æ²’æœ‰å¯ä»¥å¬å–šçš„ç‰©å“ã€‚\n"); 
  
-        msg=query("name", ob)+"("+query("id", ob)+")¿ÉÒÔÕÙ»½µÄÎïÆ·ÓĞ£º\n\n";
+        msg=query("name", ob)+"("+query("id", ob)+")å¯ä»¥å¬å–šçš„ç‰©å“æœ‰ï¼š\n\n";
         items = keys(ol); 
         foreach (item in items) 
         { 
                 file = (string) ol[item]; 
                 if (file_size(file + ".c") < 0 && file_size(file) < 0) 
-                        nitem = HIR"<²»´æÔÚµÄÎäÆ÷ID£¬ÇëÓëÎ×Ê¦ÁªÏµ>"NOR; 
+                        nitem = HIR"<ä¸å­˜åœ¨çš„æ­¦å™¨IDï¼Œè«‹èˆ‡å·«å¸«è¯ç³»>"NOR; 
                 else 
                 { 
                         call_other(file, "???"); 

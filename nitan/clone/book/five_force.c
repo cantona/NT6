@@ -4,18 +4,18 @@ inherit ITEM;
 
 void create()
 {
-        set_name("Îå¶¾Õæ¾­", ({ "jing", "book" }));
+        set_name("äº”æ¯’çœŸç¶“", ({ "jing", "book" }));
         set_weight(50);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
-                set("long", "ÕâÊÇÒ»±¾±¡±¡µÄĞ¡²á£¬ÉÏÃæ»æÁËĞí¶à´ò×øµÄÈËÏñ¡£\n");
+                set("unit", "æœ¬");
+                set("long", "é€™æ˜¯ä¸€æœ¬è–„è–„çš„å°å†Šï¼Œä¸Šé¢ç¹ªäº†è¨±å¤šæ‰“åçš„äººåƒã€‚\n");
                 set("value", 0);
                 set("material", "paper");
                 set("skill", ([
                         "name": "wudu-shengong",        // name of the skill 
-                        "family_name" : "Îå¶¾½Ì",
+                        "family_name" : "äº”æ¯’æ•™",
 						"exp_required": 0,      // minimum combat experience required
                         "jing_cost":    20,     // jing cost every time study this
                         "difficulty":   20,     // the base int to learn this skill

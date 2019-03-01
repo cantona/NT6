@@ -9,11 +9,11 @@ mixed ask_me();
 
 void create()
 {
-        set_name("ÓÎ·½µÀÈË", ({ "dao ren", "dao", "daoren" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("éŠæ–¹é“äºº", ({ "dao ren", "dao", "daoren" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 34);
-        set("long", "Ò»¸ö°×¾»°«ÅÖµÄµÀÊ¿£¬¼ûË­¶¼Ğ¦ÃĞÃĞµÄ£¬ÕıÓÆ\n"
-                    "ÏĞµÄÆ·×ÅÒ»±­Ïã²è¡£\n");
+        set("long", "ä¸€å€‹ç™½å‡ˆçŸ®èƒ–çš„é“å£«ï¼Œè¦‹èª°éƒ½ç¬‘çœ¯çœ¯çš„ï¼Œæ­£æ‚ \n"
+                    "é–’çš„å“è‘—ä¸€æ¯é¦™èŒ¶ã€‚\n");
         set("max_qi", 1800);
         set("max_jing", 1000);
         set("max_neili", 2000);
@@ -47,13 +47,13 @@ void create()
         prepare_skill("claw", "wusheng-zhao");
 
         set("inquiry", ([
-                "Îå¶¾½Ì"  : (: ask_me :),
-                "»ØÈ¥"    : (: ask_me :),
-                "»Ø½Ì"    : (: ask_me :),
-                "»ØÎå¶¾½Ì": (: ask_me :),
+                "äº”æ¯’æ•™"  : (: ask_me :),
+                "å›å»"    : (: ask_me :),
+                "å›æ•™"    : (: ask_me :),
+                "å›äº”æ¯’æ•™": (: ask_me :),
         ]) );
 
-        create_family("Îå¶¾½Ì", 13, "»¤·¨µÜ×Ó");
+        create_family("äº”æ¯’æ•™", 13, "è­·æ³•å¼Ÿå­");
 
         set("vendor_goods", ([
                "/d/wudu/obj/jiedudan" : 300000,
@@ -85,17 +85,17 @@ void greeting(object ob)
         switch(random(3))
         {
         case 0:
-                say(CYN "ÓÎ·½µÀÈËºÙºÙÒ»Õó¼éĞ¦µÀ£ºÕâÎ»" + RANK_D->query_respect(ob) +
-                    CYN "£¬Ò²ÊÇÀ´×¡µêµÄÂğ£¿\n" NOR);
+                say(CYN "éŠæ–¹é“äººå˜¿å˜¿ä¸€é™£å§¦ç¬‘é“ï¼šé€™ä½" + RANK_D->query_respect(ob) +
+                    CYN "ï¼Œä¹Ÿæ˜¯ä¾†ä½åº—çš„å—ï¼Ÿ\n" NOR);
                 break;
         case 1:
-                say(CYN "ÓÎ·½µÀÈËµãÁËµãÊÖµÀ£ºÕâÎ»" + RANK_D->query_respect(ob) +
-                    CYN "Çë¹ıÕâÀï×ø£¬ÕâÊÇÒªÈ¥ÄÇ°¡£¿\n" NOR);
+                say(CYN "éŠæ–¹é“äººé»äº†é»æ‰‹é“ï¼šé€™ä½" + RANK_D->query_respect(ob) +
+                    CYN "è«‹éé€™è£¡åï¼Œé€™æ˜¯è¦å»é‚£å•Šï¼Ÿ\n" NOR);
                 break;
         case 2:
-                say(CYN "ÓÎ·½µÀÈËÃæÏÖ¾ªÑÈÖ®É«µÀ£ºÕâÎ»" + RANK_D->query_respect(ob) +
-                    CYN "Ã¼ÏÖºÚÆø£¬½üÈÕ»áÓĞ´óÄÑ¡£\nÓÎ·½µÀÈË¼ÌĞøËµµÀ£ºÆ¶µÀÓĞÒ»Ğ©ËæÉí"
-                    "µ¤Íè¿ÉÒÔÂô¸øÄã£¬»òĞí¿É¾ÈÄãÒ»Ãü¡£\n" NOR);
+                say(CYN "éŠæ–¹é“äººé¢ç¾é©šè¨ä¹‹è‰²é“ï¼šé€™ä½" + RANK_D->query_respect(ob) +
+                    CYN "çœ‰ç¾é»‘æ°£ï¼Œè¿‘æ—¥æœƒæœ‰å¤§é›£ã€‚\néŠæ–¹é“äººç¹¼çºŒèªªé“ï¼šè²§é“æœ‰ä¸€äº›éš¨èº«"
+                    "ä¸¹ä¸¸å¯ä»¥è³£çµ¦ä½ ï¼Œæˆ–è¨±å¯æ•‘ä½ ä¸€å‘½ã€‚\n" NOR);
                 break;
         }
 }
@@ -107,11 +107,11 @@ void attempt_apprentice(object ob)
 
         if( query("shen", ob)>-1000 )
         {
-                command("say ÎÒ½ÌµÜ×Ó¹óÔÚËæĞÄËùÓû£¬²»ÊÕÎ±¾ı×Ó¡£");
+                command("say æˆ‘æ•™å¼Ÿå­è²´åœ¨éš¨å¿ƒæ‰€æ¬²ï¼Œä¸æ”¶å½å›å­ã€‚");
                 return;
         }
         command("recruit "+query("id", ob));
-        set("title", "Îå¶¾½Ì½ÌÖÚ", ob);
+        set("title", "äº”æ¯’æ•™æ•™çœ¾", ob);
         return;
 }
 
@@ -120,29 +120,29 @@ mixed ask_me()
         object ob, me;
         me = this_player();
 
-        if( query("family/family_name", me) != "Îå¶¾½Ì" )
-                return "Äã´óÒ¯µÄ£¬ÄãÂŞÀï°ËàÂµ½µ×ÏëËµÉ¶×Ó£¿";
+        if( query("family/family_name", me) != "äº”æ¯’æ•™" )
+                return "ä½ å¤§çˆºçš„ï¼Œä½ ç¾…è£¡å…«å—¦åˆ°åº•æƒ³èªªå•¥å­ï¼Ÿ";
 
         if (find_object(query("startroom")) != environment())
-                return "ÎÒÕâÀï»¹ÓĞÊÂ£¬Äã¾Í×Ô¼º×ß»ØÈ¥°É¡£";
+                return "æˆ‘é€™è£¡é‚„æœ‰äº‹ï¼Œä½ å°±è‡ªå·±èµ°å›å»å§ã€‚";
 
-        command("say ÕâÎ»"+ RANK_D->query_respect(me) + "À´µÄÕıºÃ£¬ÕâÀï"
-                "ÕıÓĞÂí³µÒª»ØÉ½°ìÊÂ£¬¾ÍÈÃËûÃÇËÍÄãÒ»³Ì°É¡£\n");
+        command("say é€™ä½"+ RANK_D->query_respect(me) + "ä¾†çš„æ­£å¥½ï¼Œé€™è£¡"
+                "æ­£æœ‰é¦¬è»Šè¦å›å±±è¾¦äº‹ï¼Œå°±è®“ä»–å€‘é€ä½ ä¸€ç¨‹å§ã€‚\n");
 
-        message_vision(HIC "ÓÎ·½µÀÈËÒ»ÕĞÊÖ£¬Ò»Á¾Âí³µÊ»¹ıÀ´Í£ÔÚÃÅÇ°¡£\n$N"
-                       HIC "¼±Ã¦×ê½ø³µÖĞ£¬Ö»ÌıÒ»ÕóÇå´àµÄ±ŞÏì£¬Âí³µ¾ø³¾¶ø"
-                       "È¥¡£\n\n" NOR, me);
+        message_vision(HIC "éŠæ–¹é“äººä¸€æ‹›æ‰‹ï¼Œä¸€è¼›é¦¬è»Šé§›éä¾†åœåœ¨é–€å‰ã€‚\n$N"
+                       HIC "æ€¥å¿™é‘½é€²è»Šä¸­ï¼Œåªè½ä¸€é™£æ¸…è„†çš„é­éŸ¿ï¼Œé¦¬è»Šçµ•å¡µè€Œ"
+                       "å»ã€‚\n\n" NOR, me);
 
         ob = load_object("/d/wudu/damen");
         ob = find_object("/d/wudu/damen");
 
-        message("vision", HIC "\nÔ¶´¦Ò»Á¾Âí³µ¼±Ê»¶øÀ´£¬³µÃÅÒ»¿ª" +
-                          query("name", me)+HIC"´ÓÀïÃæ×êÁË³öÀ´"
-                          "¡£\n\n" NOR, environment(me), ({me}));
+        message("vision", HIC "\né è™•ä¸€è¼›é¦¬è»Šæ€¥é§›è€Œä¾†ï¼Œè»Šé–€ä¸€é–‹" +
+                          query("name", me)+HIC"å¾è£¡é¢é‘½äº†å‡ºä¾†"
+                          "ã€‚\n\n" NOR, environment(me), ({me}));
 
         me->move("/d/wudu/damen");
-        tell_object(me, CYN "\n³µ°ÑÊÆËµµÀ£ºÕâÎ»" + RANK_D->query_respect(me) +
-                        CYN "ÒÑ¾­µ½ÁË£¬ÇëÏÂ³µ°É¡£\n\n" NOR);
+        tell_object(me, CYN "\nè»ŠæŠŠå‹¢èªªé“ï¼šé€™ä½" + RANK_D->query_respect(me) +
+                        CYN "å·²ç¶“åˆ°äº†ï¼Œè«‹ä¸‹è»Šå§ã€‚\n\n" NOR);
         return 1;
 
 }

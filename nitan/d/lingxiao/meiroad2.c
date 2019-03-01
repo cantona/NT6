@@ -3,13 +3,13 @@ inherit ROOM;
 
 void create()
 {
-        set("short","÷��");
+        set("short","梅道");
         set("long",@LONG 
-��Ҳ��һ������÷�������С��������ⲻͬ���ǣ����
-������÷��������ȫ������Ѫ����õĺ�÷������ƬƬƮ�䵽
-��׵�ѩ���ϣ�����һ�������˳�����ˣ��ڸ��Լ���������
-����ʱ����С�Ĵ�������ָ��������һ��Ѫ�������˰׾�������
-һֻͨ��ѩ�׵�ѩ���ڵ�����Ȼ���裬��ң�Եá�
+這也是一條充滿梅花清香的小道。與殿外不同的是，這兒
+種滿了梅樹，而且全是如鮮血般燦爛的紅梅，花瓣片片飄落到
+潔白的雪地上，就如一個溫婉和順的美人，在給自己的心上人
+刺繡時，不小心刺破了手指而流出的一滴血，浸到了白絹上樣。
+一只通體雪白的雪鶴在地上翩然起舞，逍遙自得。
 LONG);
         set("outdoors", "lingxiao");
         set("exits", ([
@@ -36,15 +36,15 @@ int do_pick(string arg)
         if (arg == "mei hua" || arg == "meihua")
         {
                 if (query("count") < -5)
-                        return notify_fail("�����÷���Ѿ���ժ���ˡ�\n");
+                        return notify_fail("這裡的梅花已經被摘光了。\n");
 
                 ob = new(__DIR__"obj/mei");
                 ob->move(me, 1);
                 addn("count", -1);
 
-                message_vision("$N��·�Ե�����ժ��һ��" +
-                               query("name", ob)+"��\n",me);
+                message_vision("$N從路旁的樹上摘了一朵" +
+                               query("name", ob)+"。\n",me);
                 return 1;
         } else
-                return notify_fail("��Ҫժʲô��\n");
+                return notify_fail("你要摘什麼？\n");
 }

@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Êé·¿ÄÚÌü");
+        set("short", "æ›¸æˆ¿å…§å»³");
         set("long", @LONG
-ÕâÀïÊÇÊé·¿ÄÚÌü£¬¿¿Ç½·Å×ÅÒ»ÅÅÊé¼Ü£¬´°Ç°µÄĞ¡¼¸ÉÏÒ»¸öĞ¡
-ÊéÍ¯ÕıÔÚÆä¼ä³­Ğ´×ÅÊ²Ã´¡£
+é€™è£¡æ˜¯æ›¸æˆ¿å…§å»³ï¼Œé ç‰†æ”¾è‘—ä¸€æ’æ›¸æ¶ï¼Œçª—å‰çš„å°å¹¾ä¸Šä¸€å€‹å°
+æ›¸ç«¥æ­£åœ¨å…¶é–“æŠ„å¯«è‘—ä»€éº¼ã€‚
 LONG
         );
         set("exits", ([ /* sizeof() == 1 */
@@ -27,7 +27,7 @@ int valid_leave(object me,string dir)
         if(dir == "out")
         {
                 if(sizeof(filter_array(deep_inventory(me),(: $1->is_yaowang_book() :))))
-                        return notify_fail("ÊéÅ«ÇÄÇÄµØ¶ÔÄãËµ£¬ÕâĞ©Êé±ğÄÃ³öÈ¥Ñ½!\n");
+                        return notify_fail("æ›¸å¥´æ‚„æ‚„åœ°å°ä½ èªªï¼Œé€™äº›æ›¸åˆ¥æ‹¿å‡ºå»å‘€!\n");
         }
 
         return ::valid_leave(me,dir);

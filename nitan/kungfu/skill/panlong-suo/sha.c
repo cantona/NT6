@@ -1,6 +1,6 @@
 #include <ansi.h>
 
-#define SHA "¡¸" HIR "¾øÃüÆßÉ±" NOR "¡¹"
+#define SHA "ã€Œ" HIR "çµ•å‘½ä¸ƒæ®º" NOR "ã€"
 
 inherit F_SSERVER;
  
@@ -12,7 +12,7 @@ int perform(object me, object target)
         int i;
 
         if( userp(me) && !query("can_perform/panlong-suo/sha", me) )
-                return notify_fail("ÄãËùÊ¹ÓÃµÄÍâ¹¦ÖĞÃ»ÓĞÕâÖÖ¹¦ÄÜ¡£\n");
+                return notify_fail("ä½ æ‰€ä½¿ç”¨çš„å¤–åŠŸä¸­æ²’æœ‰é€™ç¨®åŠŸèƒ½ã€‚\n");
 
         if (! target)
         {
@@ -21,39 +21,39 @@ int perform(object me, object target)
         }
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(SHA "Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(SHA "åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
  
         if( !objectp(weapon=query_temp("weapon", me)) || 
             query("skill_type", weapon) != "whip" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô£¬ÄÑÒÔÊ©Õ¹" SHA "¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ï¼Œé›£ä»¥æ–½å±•" SHA "ã€‚\n");
 
         if ((int)me->query_skill("force") < 220)
-                return notify_fail("ÄãµÄÄÚ¹¦»ğºò²»¹»£¬ÄÑÒÔÊ©Õ¹" SHA "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸç«å€™ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" SHA "ã€‚\n");
 
         if ((int)me->query_skill("panlong-suo", 1) < 180)
-                return notify_fail("ÄãµÄÅùö¨ÅÌÁúË÷»¹²»µ½¼Ò£¬ÄÑÒÔÊ©Õ¹" SHA "¡£\n");
+                return notify_fail("ä½ çš„éœ¹é‚ç›¤é¾ç´¢é‚„ä¸åˆ°å®¶ï¼Œé›£ä»¥æ–½å±•" SHA "ã€‚\n");
 
         if (me->query_skill_mapped("whip") != "panlong-suo")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢Åùö¨ÅÌÁúË÷£¬ÄÑÒÔÊ©Õ¹" SHA "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼éœ¹é‚ç›¤é¾ç´¢ï¼Œé›£ä»¥æ–½å±•" SHA "ã€‚\n");
 
         if( query("neili", me)<300 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬ÄÑÒÔÊ©Õ¹" SHA "¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" SHA "ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIR "Í»È»¼ä$N" HIR "ÃÍµÄâ®ÉíÆËÉÏ£¬ÊÖÖĞ" + weapon->name() +
-              HIR "¼±×ª£¬±ãËÆ²»ÒªÃü°ãµØÏò$n" HIR "ÃÍ¹¥¹ıÈ¥¡£\n" NOR;
+        msg = HIR "çªç„¶é–“$N" HIR "çŒ›çš„çŒ±èº«æ’²ä¸Šï¼Œæ‰‹ä¸­" + weapon->name() +
+              HIR "æ€¥è½‰ï¼Œä¾¿ä¼¼ä¸è¦å‘½èˆ¬åœ°å‘$n" HIR "çŒ›æ”»éå»ã€‚\n" NOR;
 
         if (random(me->query_skill("whip")) > target->query_skill("parry") / 2)
         {
-                msg += HIR "$n" HIR "×ä²»¼°·À£¬µÇÊ±ÊÖÃ¦½ÅÂÒ£¬ÕĞ¼ÜÊè"
-                       "É¢£¬»ÅÃ¦ÖĞÄÑÒÔµÖµ²¡£\n" NOR;
+                msg += HIR "$n" HIR "å’ä¸åŠé˜²ï¼Œç™»æ™‚æ‰‹å¿™è…³äº‚ï¼Œæ‹›æ¶ç–"
+                       "æ•£ï¼Œæ…Œå¿™ä¸­é›£ä»¥æŠµæ“‹ã€‚\n" NOR;
                 count = me->query_skill("whip") / 20;
         } else
         {
-                msg += HIC "$n" HIC "ĞÄµ×Ò»¾ª£¬Á¬Ã¦È«ÉñÓ¦¶Ô£¬²»¸ÒÓĞ"
-                       "Ë¿ºÁ´óÒâ¡£\n" NOR;
+                msg += HIC "$n" HIC "å¿ƒåº•ä¸€é©šï¼Œé€£å¿™å…¨ç¥æ‡‰å°ï¼Œä¸æ•¢æœ‰"
+                       "çµ²æ¯«å¤§æ„ã€‚\n" NOR;
                 count = 0;
         }
 

@@ -2,15 +2,15 @@
 inherit TASK;
 void create()
 {
-    set_name(HIC"Éú³½°Ë×Ö"NOR, ({ "scbz", "shengchen bazi" }) );  
+    set_name(HIC"ç”Ÿè¾°å…«å­—"NOR, ({ "scbz", "shengchen bazi" }) );  
     set_weight(1); 
     if( clonep() ) 
             destruct(this_object());  
     else { 
-            set("unit", "ÕÅ");  
+            set("unit", "å¼µ");  
             set("material", "paper");
-            set("long", "Éú³½°Ë×Ö¡£¡£¡£¡£¡£¡££¡\n"); 
+            set("long", "ç”Ÿè¾°å…«å­—ã€‚ã€‚ã€‚ã€‚ã€‚ã€‚ï¼\n"); 
         }
-        set("owner", "ºìÄï");  
+        set("owner", "ç´…å¨˜");  
         setup(); 
 }

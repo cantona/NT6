@@ -4,11 +4,11 @@ inherit BOSS;
 
 void create()
 {
-        set_name(HIY"ÔôµÁÍ·Áì"NOR, ({"zeidao touling", "touling", "zeidao"}) );
-        set("title", HIY "ÂÌÁÖºÀ½Ü" NOR);
-        set("gender", "ÄĞĞÔ" );
+        set_name(HIY"è³Šç›œé ­é ˜"NOR, ({"zeidao touling", "touling", "zeidao"}) );
+        set("title", HIY "ç¶ æ—è±ªå‚‘" NOR);
+        set("gender", "ç”·æ€§" );
         set("age", random(30)+20);
-        set("long", "ÎŞ¾¡´óÄ®±ßÔµ»î¶¯µÄÔôµÁĞ¡Í·Ä¿£¬Õ¼×ÅÒ»ÉíÎäÒÕ¾­³£Áì×ÅÒ»°ïĞ¡à¶ÂŞÇÀ½Ù¹ıÍùĞĞÈË¡£\n");
+        set("long", "ç„¡ç›¡å¤§æ¼ é‚Šç·£æ´»å‹•çš„è³Šç›œå°é ­ç›®ï¼Œä½”è‘—ä¸€èº«æ­¦è—ç¶“å¸¸é ˜è‘—ä¸€å¹«å°å˜ç¾…æ¶åŠ«éå¾€è¡Œäººã€‚\n");
         set("attitude", "aggressive");
         set("class", "lvlin");
         set("str", 30);
@@ -39,7 +39,7 @@ void create()
         map_skill("parry", "jiuyin-baiguzhao");
         map_skill("blade", "wuhu-duanmendao");
         map_skill("dodge", "tiyunzong");
-        create_family("ÂÌÁÖ±©·çÃË", 3, "µÜ×Ó");
+        create_family("ç¶ æ—æš´é¢¨ç›Ÿ", 3, "å¼Ÿå­");
         set("auto_perform", 1); 
 
         set("drops", ([

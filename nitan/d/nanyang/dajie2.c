@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-        set("short", "�����");
+        set("short", "北大街");
         set("long", @LONG
-�������Թű��ǹء���ͨ������ıؾ�֮·�����䲻��ȴ������
-�࣬����紾�ӡ�������һ��СС�ĵ��̣���Щ��ˮ����ʳ����������
-�ˡ���������һ��������
+南陽城自古便是關、洛通荊、襄的必經之路。城雖不大，卻很是整
+潔，且民風淳樸。街西有一家小小的店舖，賣些酒水，肉食給過往的行
+人。東北面是一個大廟。
 LONG);
         set("exits",([
                 "north"     : __DIR__"beimen",

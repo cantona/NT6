@@ -1,4 +1,4 @@
-// jiang ½­°ÙÊ¤
+// jiang æ±Ÿç™¾å‹
 // Last Modified by winder on Aug. 25 2001
 
 #include <ansi.h>
@@ -8,10 +8,10 @@ void create()
 {
         seteuid(getuid());
 
-        set_name("½­°ÙÊ¤", ({ "jiang baisheng", "jiang", "baisheng" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("æ±Ÿç™¾å‹", ({ "jiang baisheng", "jiang", "baisheng" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 30);
-        set("long", "µ±½ñÎäÁÖÃËÖ÷ÎºÎŞË«Ö®ÊÖÏÂÖ®Ç×±ø¶Ó³¤¡£\n");
+        set("long", "ç•¶ä»Šæ­¦æ—ç›Ÿä¸»é­ç„¡é›™ä¹‹æ‰‹ä¸‹ä¹‹è¦ªå…µéšŠé•·ã€‚\n");
         set("attitude", "heroism");
         set("generation",0);
         set("winner","none");
@@ -59,7 +59,7 @@ int accept_fight(object ob)
         if ( !present(ob, environment()) ) return 0;
 
         if( query("fight_times", me) >= 10 )
-                return notify_fail("½­°ÙÊ¤ÒÑ¾­È«ÉíÍÑÁ¦£¬Å¿ÔÚµØÉÏ´ó¿ÚµØ´­×Å´ÖÆø£¡\n");        
+                return notify_fail("æ±Ÿç™¾å‹å·²ç¶“å…¨èº«è„«åŠ›ï¼Œè¶´åœ¨åœ°ä¸Šå¤§å£åœ°å–˜è‘—ç²—æ°£ï¼\n");        
 
         addn("fight_times", 1, me);
 
@@ -83,9 +83,9 @@ int checking(object me, object ob)
         {
                 if( (query("qi", me)*100/my_max_qi) <= 80 )
                 {
-                        say(GRN "\n½­°ÙÊ¤ËµµÀ£º ÎºÃËÖ÷Ôó±»ÌìÏÂ£¬¸£¼Ã²ÔÉú£¬ ËûÀÏÈË¼ÒËãÎŞÒÅ²ß£¬¹¦ÎŞ²»¿Ë£¬¿ËÎŞ²»Ê¤£¡\n" NOR);
-                        say(GRN "\n½­°ÙÊ¤ËµµÀ£º ÎºÃËÖ÷Ò»¾ä»°£¬ÊôÏÂ°ìÊÂ´ÁÁ¦£¬ÓÂÍùÖ±Ç°£¡ ±ùÌìÑ©µØÍùÀï´³£¬µ¶É½»ğº£¾Í¸ÒÈ¥£¡\n" NOR);
-                        message_vision(HIY "\n½­°ÙÊ¤ËµÍê£¬È«Éí²»Öª´òÄÄÀïÃ°³öÀ´µÄÒ»¹ÉÁ¦Æø£¬²»µ«¹¦Á¦¾¡¸´£¬È­Á¦Ò²ÍşÃÍºÃ¶à±¶£¡\n" NOR, ob);
+                        say(GRN "\næ±Ÿç™¾å‹èªªé“ï¼š é­ç›Ÿä¸»æ¾¤è¢«å¤©ä¸‹ï¼Œç¦æ¿Ÿè’¼ç”Ÿï¼Œ ä»–è€äººå®¶ç®—ç„¡éºç­–ï¼ŒåŠŸç„¡ä¸å…‹ï¼Œå…‹ç„¡ä¸å‹ï¼\n" NOR);
+                        say(GRN "\næ±Ÿç™¾å‹èªªé“ï¼š é­ç›Ÿä¸»ä¸€å¥è©±ï¼Œå±¬ä¸‹è¾¦äº‹æˆ³åŠ›ï¼Œå‹‡å¾€ç›´å‰ï¼ å†°å¤©é›ªåœ°å¾€è£¡é—–ï¼Œåˆ€å±±ç«æµ·å°±æ•¢å»ï¼\n" NOR);
+                        message_vision(HIY "\næ±Ÿç™¾å‹èªªå®Œï¼Œå…¨èº«ä¸çŸ¥æ‰“å“ªè£¡å†’å‡ºä¾†çš„ä¸€è‚¡åŠ›æ°£ï¼Œä¸ä½†åŠŸåŠ›ç›¡å¾©ï¼Œæ‹³åŠ›ä¹Ÿå¨çŒ›å¥½å¤šå€ï¼\n" NOR, ob);
 
                         set("eff_qi",query("max_qi",  me), me);
                         set("qi",query("max_qi",  me), me);
@@ -94,7 +94,7 @@ int checking(object me, object ob)
                 }
                 else if( (query("qi", ob)*100/his_max_qi)<50 )
                 {
-                        say(GRN "\n½­°ÙÊ¤ËµµÀ£º ¿´À´ÄãĞ¡×Ó¸úÎÒ»¹²î×ÅÒ»´ó½ØÄØ£¬»ØÈ¥Á·ÉÏÊ®ÄêÔÙÀ´°É£¡\n");
+                        say(GRN "\næ±Ÿç™¾å‹èªªé“ï¼š çœ‹ä¾†ä½ å°å­è·Ÿæˆ‘é‚„å·®è‘—ä¸€å¤§æˆªå‘¢ï¼Œå›å»ç·´ä¸Šåå¹´å†ä¾†å§ï¼\n");
                         return 1;
                 }
 

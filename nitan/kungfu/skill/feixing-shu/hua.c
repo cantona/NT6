@@ -7,7 +7,7 @@
 #include "/kungfu/skill/eff_msg.h";
 
 inherit F_SSERVER;
-#define YU "¡¸" HIG "ÂúÌì»¨Óê" NOR "¡¹"
+#define YU "ã€Œ" HIG "æ»¿å¤©èŠ±é›¨" NOR "ã€"
 
 int perform(object me, object target)
 {
@@ -19,41 +19,41 @@ int perform(object me, object target)
         object weapon;
 
         if( userp(me) && !query("can_perform/feixing-shu/hua", me) )
-                return notify_fail("Äã»¹Ã»ÓÐÊÜ¹ý¸ßÈËÖ¸µã£¬ÎÞ·¨Ê©Õ¹" YU "¡£\n");
+                return notify_fail("ä½ é‚„æ²’æœ‰å—éŽé«˜äººæŒ‡é»žï¼Œç„¡æ³•æ–½å±•" YU "ã€‚\n");
 
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(YU "Ö»ÄÜÔÚÕ½¶·ÖÐ¶Ô¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(YU "åªèƒ½åœ¨æˆ°é¬¥ä¸­å°å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon=query_temp("handing", me)) || 
             query("skill_type", weapon) != "throwing" )
-                return notify_fail("ÄãÏÖÔÚÊÖÖÐ²¢Ã»ÓÐÄÃ×Å°µÆ÷¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ‰‹ä¸­ä¸¦æ²’æœ‰æ‹¿è‘—æš—å™¨ã€‚\n");
 
         if (weapon->query_amount() < 10)
-                return notify_fail("ÖÁÉÙÒªÓÐÊ®Ã¶°µÆ÷Äã²ÅÄÜÊ©Õ¹" YU "¡£\n");
+                return notify_fail("è‡³å°‘è¦æœ‰åæžšæš—å™¨ä½ æ‰èƒ½æ–½å±•" YU "ã€‚\n");
 
         if ((skill = me->query_skill("feixing-shu", 1)) < 100)
-                return notify_fail("ÄãµÄ·ÉÐÇÊõ²»¹»æµÊì£¬²»»áÊ¹ÓÃ" YU "¡£\n");
+                return notify_fail("ä½ çš„é£›æ˜Ÿè¡“ä¸å¤ å«»ç†Ÿï¼Œä¸æœƒä½¿ç”¨" YU "ã€‚\n");
  
         if ((int)me->query_skill("force", 1) < 120)
-                return notify_fail("ÄãµÄÄÚ¹¦»ðºò²»¹»£¬²»ÄÜÊ¹ÓÃ" YU "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸç«å€™ä¸å¤ ï¼Œä¸èƒ½ä½¿ç”¨" YU "ã€‚\n");
 
         if (me->query_skill_mapped("throwing") != "feixing-shu")
-                return notify_fail("ÄãÃ»ÓÐ¼¤·¢·ÉÐÇÊõÎª»ù±¾°µÆ÷£¬ÎÞ·¨Ê©Õ¹" YU "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼é£›æ˜Ÿè¡“ç‚ºåŸºæœ¬æš—å™¨ï¼Œç„¡æ³•æ–½å±•" YU "ã€‚\n");
 
         if( query("neili", me)<250 )
-                return notify_fail("ÄãÄÚÁ¦²»¹»ÁË¡£\n");
+                return notify_fail("ä½ å…§åŠ›ä¸å¤ äº†ã€‚\n");
 
        if (! living(target))
-              return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+              return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
         addn("neili", -100, me);
         weapon->add_amount(-10);
 
-        msg= HIG "Ö»ÌýÒ»¹É¾¢·ç´Ó$N" HIG "µÄÓÒ²à·¢³ö£¬$N" HIG
-             "ÊÖÖÐµÄ" + weapon->name() + HIG "ÈçÑÌÓê°ãÏò$n"
-             HIG "ÁýÕÖ¹ýÈ¥£¡\n" NOR;
+        msg= HIG "åªè½ä¸€è‚¡å‹é¢¨å¾ž$N" HIG "çš„å³å´ç™¼å‡ºï¼Œ$N" HIG
+             "æ‰‹ä¸­çš„" + weapon->name() + HIG "å¦‚ç…™é›¨èˆ¬å‘$n"
+             HIG "ç± ç½©éŽåŽ»ï¼\n" NOR;
 
         me->start_busy(2);
         my_exp = attack_power(me, "throwing");
@@ -66,9 +66,9 @@ int perform(object me, object target)
                 if (random(my_exp) > ob_exp) n += 1 + random(2);
                 if (random(my_exp / 2) > ob_exp) n += 1 + random(2);
                 if (random(my_exp / 4) > ob_exp) n += 1 + random(2);
-                msg += HIR "½á¹û$n" HIR "·´Ó¦²»¼°£¬ÖÐÁË$N" HIR +
+                msg += HIR "çµæžœ$n" HIR "åæ‡‰ä¸åŠï¼Œä¸­äº†$N" HIR +
                        chinese_number(n)+query("base_unit", weapon)+
-                       weapon->name() + HIR "£¡\n" NOR;
+                       weapon->name() + HIR "ï¼\n" NOR;
 
                 target->receive_wound("qi", skill / 3 + random(skill / 3), me);
                 p=query("qi", target)*100/query("max_qi", target);
@@ -84,8 +84,8 @@ int perform(object me, object target)
                 message_combatd(msg, me, target);
         } else
         {
-                msg += NOR + CYN "¿ÉÊÇ$n" CYN  "Éí·¨Áé¶¯£¬¶ã¹ýÁË$N" CYN  "·¢³öµÄËùÓÐ" +
-                       weapon->name() + CYN  "¡£\n" NOR;
+                msg += NOR + CYN "å¯æ˜¯$n" CYN  "èº«æ³•éˆå‹•ï¼Œèº²éŽäº†$N" CYN  "ç™¼å‡ºçš„æ‰€æœ‰" +
+                       weapon->name() + CYN  "ã€‚\n" NOR;
                 message_combatd(msg, me, target);
         }
 

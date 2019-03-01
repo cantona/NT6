@@ -39,7 +39,7 @@ void init()
                 if( !query_temp("zuji_target", me))set_temp("zuji_target", t_name, me);
                 if( !query_temp("skill_set", me) )
                 {
-                        command("say Ğ¡×Ó£¬¹Ô¹Ô°ÑÃÜº¯½»³öÀ´°É£¡£¡£¡\n");
+                        command("say å°å­ï¼Œä¹–ä¹–æŠŠå¯†å‡½äº¤å‡ºä¾†å§ï¼ï¼ï¼\n");
                         remove_call_out("dest");
                         call_out("dest",300);
                         remove_call_out("do_clone");
@@ -47,7 +47,7 @@ void init()
                 }
                 else
                 {
-                        command("say ÏëÅÜ£¬»¹²»¸øÎÒ½»³öÀ´£¡£¡£¡\n");
+                        command("say æƒ³è·‘ï¼Œé‚„ä¸çµ¦æˆ‘äº¤å‡ºä¾†ï¼ï¼ï¼\n");
                         me->set_leader(ob);
                         remove_call_out("dest");
                         call_out("dest",300);
@@ -183,7 +183,7 @@ int do_kill(object me, object dest)
         if( objectp(dest) && present(dest, environment(me))
                   && !query("no_fight", environment(me)) )
         {
-                message_vision(HIR "$N¶Ô$nËµµÀ£º"+RANK_D->query_rude(dest)+"£¬ÏëÍùÄÄÀïÅÜ£¡\n" NOR, me, dest);
+                message_vision(HIR "$Nå°$nèªªé“ï¼š"+RANK_D->query_rude(dest)+"ï¼Œæƒ³å¾€å“ªè£¡è·‘ï¼\n" NOR, me, dest);
                 me->set_leader(dest);
                 me->kill_ob(dest);
                 dest->fight_ob(me);
@@ -256,8 +256,8 @@ void dest()
         ob = this_player();
         me = this_object();
 
-        write(query("name", me)+"µÀ£ºÕâ´ÎËãÄãÃü´ó£¡\n",me);
-        write(query("name", me)+"´Ò´ÒÀë¿ª¡£\n",me);
+        write(query("name", me)+"é“ï¼šé€™æ¬¡ç®—ä½ å‘½å¤§ï¼\n",me);
+        write(query("name", me)+"åŒ†åŒ†é›¢é–‹ã€‚\n",me);
 
         destruct(this_object());
 }
@@ -268,8 +268,8 @@ void dest2()
         ob = this_player();
         me = this_object();
 
-        write(query("name", me)+"µÀ£ºÄã¶ãµÃ¹ı³õÒ»¶ã²»¹ıÊ®Îå£¬ÎÒÃÇ»¹»áÀ´µÄ£¡\n",me);
-        write(query("name", me)+"´Ò´ÒÀë¿ª¡£\n",me);
+        write(query("name", me)+"é“ï¼šä½ èº²å¾—éåˆä¸€èº²ä¸éåäº”ï¼Œæˆ‘å€‘é‚„æœƒä¾†çš„ï¼\n",me);
+        write(query("name", me)+"åŒ†åŒ†é›¢é–‹ã€‚\n",me);
         delete_temp("songxin_zuji", ob);
 
         destruct(this_object());
@@ -279,7 +279,7 @@ void dest3()
         object me;
         me = this_object();
 
-        write(query("name", me)+"´óĞ¦µÀ£ºÍê³ÉÈÎÎñÁË£¡\n",me);
-        write(query("name", me)+"´Ò´ÒÀë¿ª¡£\n",me);
+        write(query("name", me)+"å¤§ç¬‘é“ï¼šå®Œæˆä»»å‹™äº†ï¼\n",me);
+        write(query("name", me)+"åŒ†åŒ†é›¢é–‹ã€‚\n",me);
         destruct(this_object());
 }

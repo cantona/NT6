@@ -7,8 +7,8 @@ inherit F_GUARDER;
 
 void create()
 {
-        set_name("Ã×ÎªÒå", ({ "mi weiyi", "mi", "weiyi" }));
-        set("gender", "ÄĞĞÔ" );
+        set_name("ç±³ç‚ºç¾©", ({ "mi weiyi", "mi", "weiyi" }));
+        set("gender", "ç”·æ€§" );
         set("class", "swordman");
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -49,7 +49,7 @@ void create()
         prepare_skill("cuff", "henshan-quan");
         prepare_skill("strike", "biluo-zhang");
 
-        create_family("ºâÉ½ÅÉ", 15, "µÜ×Ó");
+        create_family("è¡¡å±±æ´¾", 15, "å¼Ÿå­");
 
         set("chat_chance_combat", 120);
         set("chat_msg_combat", ({
@@ -78,17 +78,17 @@ void attempt_apprentice(object ob)
 
         if( query("family/master_id", ob) == "xiangdanian" )
         {
-                command("say Äã¼ÈÒÑ°İÎÒÏòÊ¦ĞÖÎªÊ¦£¬ÎÒÒ²²»±ãÊÕÄãÎªÍ½¡£");
+                command("say ä½ æ—¢å·²æ‹œæˆ‘å‘å¸«å…„ç‚ºå¸«ï¼Œæˆ‘ä¹Ÿä¸ä¾¿æ”¶ä½ ç‚ºå¾’ã€‚");
                 return;
         }
 
         if( query("shen", ob)<0 )
         {
-                command("say ÄãÕâÈË²»×öºÃÊÂ£¬ÎÒºâÉ½ÅÉ¿ÉÈİÄã²»µÃ¡£");
+                command("say ä½ é€™äººä¸åšå¥½äº‹ï¼Œæˆ‘è¡¡å±±æ´¾å¯å®¹ä½ ä¸å¾—ã€‚");
                 return;
         }
 
-        command("say ¼ÈÈ»Èç´Ë£¬ÄÇÄãÒÔºó¾Í¸ú×ÅÎÒ°É¡£");
+        command("say æ—¢ç„¶å¦‚æ­¤ï¼Œé‚£ä½ ä»¥å¾Œå°±è·Ÿè‘—æˆ‘å§ã€‚");
         command("recruit "+query("id", ob));
 }
 
@@ -96,10 +96,10 @@ int accept_ask(object me, string topic)
 {
         switch (topic)
         {
-        case "ÇàÌìÀ¿ÈÕÔÂ" :
+        case "é’å¤©æ”¬æ—¥æœˆ" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/henshan-quan/lan",
-                           "name"    : "ÇàÌìÀ¿ÈÕÔÂ",
+                           "name"    : "é’å¤©æ”¬æ—¥æœˆ",
                            "sk1"     : "henshan-quan",
                            "lv1"     : 60,
                            "force"   : 80,

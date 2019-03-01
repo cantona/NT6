@@ -5,13 +5,13 @@ inherit WAIST;
 
 void create()
 {
-        set_name(HIR "Ê¥ÁéÑü´ø" NOR, ({ "shengling belt3", "belt", "shengling3" }));
+        set_name(HIR "è–éˆè…°å¸¶" NOR, ({ "shengling belt3", "belt", "shengling3" }));
         set_weight(100);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "Ò»¸ùÉÁÒ«×ÅÆæÒì¹âÃ¢µÄÑü´ø¡£\n" NOR) ;
-                set("unit", "¸ù");
+                set("long", HIW "ä¸€æ ¹é–ƒè€€è‘—å¥‡ç•°å…‰èŠ’çš„è…°å¸¶ã€‚\n" NOR) ;
+                set("unit", "æ ¹");
                 set("value", 400000);
                 set("armor_prop/armor", 100);
                 set("armor_prop/dodge", 12);

@@ -10,10 +10,10 @@ inherit VRM_SERVER;
 
 void create() 
 { 
-        // ÃÔ¹¬·¿¼äËù¼Ì³ÐµÄÎï¼þµÄµµ°¸Ãû³Æ¡£ 
+        // è¿·å®®æˆ¿é–“æ‰€ç¹¼æ‰¿çš„ç‰©ä»¶çš„æª”æ¡ˆåç¨±ã€‚ 
         set_inherit_room( ROOM );  
                         
-        //Î¨Ò»·¿¼ä
+        //å”¯ä¸€æˆ¿é–“
         set_unique_room( ({
                 "/maze/necropolis/unique_room/skeleton_room",
                 "/maze/necropolis/unique_room/ghost_room",
@@ -22,7 +22,7 @@ void create()
                 "/maze/necropolis/unique_room/quest_room",
         }) ); 
 
-        //ÃÔ¹¬·¿¼äÀïµÄ¹ÖÎï¡£ 
+        //è¿·å®®æˆ¿é–“è£¡çš„æ€ªç‰©ã€‚ 
 /*
         set_maze_npcs( ([
                 "/maze/necropolis/npc/skeleton": !random(3),  
@@ -47,64 +47,64 @@ void create()
                 "/maze/necropolis/npc/ghost_fire": 1+random(5),
                 "/maze/necropolis/npc/ghost_eye": 1+random(5),
         ]) );
-        //²»ËãËÀÍö                
+        //ä¸ç®—æ­»äº¡                
         //set_maze_nodeath(1);
 
         set_lonely_create(1);
         
-        //ÃÔ¹¬µÄµ¥±ß³¤ 
+        //è¿·å®®çš„å–®é‚Šé•· 
         set_maze_long(10); 
                         
-        //Èë¿Ú·½Ïò(³ö¿ÚÔÚ¶ÔÃæ) 
+        //å…¥å£æ–¹å‘(å‡ºå£åœ¨å°é¢) 
         set_entry_dir("north"); 
                         
-        //Èë¿ÚÓëÇøÓòµÄÁ¬½Ó·½Ïò 
+        //å…¥å£èˆ‡å€åŸŸçš„é€£æŽ¥æ–¹å‘ 
         set_link_entry_dir("north"); 
                         
-        //Èë¿ÚÓëÇøÓòµÄÁ¬½Óµµ°¸Ãû 
+        //å…¥å£èˆ‡å€åŸŸçš„é€£æŽ¥æª”æ¡ˆå 
         set_link_entry_room(__DIR__"enter"); 
                         
-        //³ö¿ÚÓëÇøÓòµÄÁ¬½Ó·½Ïò 
+        //å‡ºå£èˆ‡å€åŸŸçš„é€£æŽ¥æ–¹å‘ 
         set_link_exit_dir("south"); 
                         
-        //³ö¿ÚÓëÇøÓòµÄÁ¬½Óµµ°¸Ãû 
+        //å‡ºå£èˆ‡å€åŸŸçš„é€£æŽ¥æª”æ¡ˆå 
         set_link_exit_room(__DIR__"leave"); 
                         
-        //ÒÔÏÂÊÇÈë¿Ú×ø±ê
+        //ä»¥ä¸‹æ˜¯å…¥å£åæ¨™
         set_link_entry_room_x(ENTER_ROOM_X);
         set_link_entry_room_y(ENTER_ROOM_Y);
         set_link_entry_room_z(ENTER_ROOM_Z);
                         
-        //ÆÕÍ¨·¿¼äÃèÊö
-        set_maze_room_short(RED "¹îÒìÄ¹Ô°" NOR);
+        //æ™®é€šæˆ¿é–“æè¿°
+        set_maze_room_short(RED "è©­ç•°å¢“åœ’" NOR);
                         
         set_maze_room_desc(@LONG
-Ä¹Ô°ÀïÃ»ÓÐÒ»µãÉúÆø£¬µØÉÏµ½´¦ÊÇ¿ÝÖ¦°ÜÒ¶£¬Å¼¶û¿´µ½Ò»Ð©
-¸É¿ÝµÄ¶¯ÎïÊ¬º¡£¬ÈÃÈË²»º®¶øÀõ£¬µ½´¦É¢·¢×ÅÒ»¹ÉÊ¬Ê×¸¯ÀÃµÄ
-Î¶µÀ£¬¿´²»µ½Ò»Ë¿»îÎï´æÔÚ¡£
+å¢“åœ’è£¡æ²’æœ‰ä¸€é»žç”Ÿæ°£ï¼Œåœ°ä¸Šåˆ°è™•æ˜¯æž¯æžæ•—è‘‰ï¼Œå¶çˆ¾çœ‹åˆ°ä¸€äº›
+å¹¹æž¯çš„å‹•ç‰©å±éª¸ï¼Œè®“äººä¸å¯’è€Œæ —ï¼Œåˆ°è™•æ•£ç™¼è‘—ä¸€è‚¡å±é¦–è…çˆ›çš„
+å‘³é“ï¼Œçœ‹ä¸åˆ°ä¸€çµ²æ´»ç‰©å­˜åœ¨ã€‚
 LONG); 
                         
-        //Èë¿Ú·¿¼ä¶ÌÃèÊö 
-        set_entry_short(HIR "¹îÒìÄ¹Ô°Èë¿Ú" NOR); 
+        //å…¥å£æˆ¿é–“çŸ­æè¿° 
+        set_entry_short(HIR "è©­ç•°å¢“åœ’å…¥å£" NOR); 
                         
-        //Èë¿Ú·¿¼äÃèÊö 
+        //å…¥å£æˆ¿é–“æè¿° 
         set_entry_desc(@LONG
-Ä¹Ô°ÀïÃ»ÓÐÒ»µãÉúÆø£¬µØÉÏµ½´¦ÊÇ¿ÝÖ¦°ÜÒ¶£¬Å¼¶û¿´µ½Ò»Ð©
-¸É¿ÝµÄ¶¯ÎïÊ¬º¡£¬ÈÃÈË²»º®¶øÀõ£¬µ½´¦É¢·¢×ÅÒ»¹ÉÊ¬Ê×¸¯ÀÃµÄ
-Î¶µÀ£¬¿´²»µ½Ò»Ë¿»îÎï´æÔÚ¡£
+å¢“åœ’è£¡æ²’æœ‰ä¸€é»žç”Ÿæ°£ï¼Œåœ°ä¸Šåˆ°è™•æ˜¯æž¯æžæ•—è‘‰ï¼Œå¶çˆ¾çœ‹åˆ°ä¸€äº›
+å¹¹æž¯çš„å‹•ç‰©å±éª¸ï¼Œè®“äººä¸å¯’è€Œæ —ï¼Œåˆ°è™•æ•£ç™¼è‘—ä¸€è‚¡å±é¦–è…çˆ›çš„
+å‘³é“ï¼Œçœ‹ä¸åˆ°ä¸€çµ²æ´»ç‰©å­˜åœ¨ã€‚
 LONG); 
                         
-        //³ö¿Ú·¿¼ä¶ÌÃèÊö 
-        set_exit_short(HIW "¹îÒìÄ¹Ô°³ö¿Ú" NOR); 
+        //å‡ºå£æˆ¿é–“çŸ­æè¿° 
+        set_exit_short(HIW "è©­ç•°å¢“åœ’å‡ºå£" NOR); 
                         
-        //³ö¿Ú·¿¼äÃèÊö 
+        //å‡ºå£æˆ¿é–“æè¿° 
         set_exit_desc(@LONG
-Ä¹Ô°ÀïÃ»ÓÐÒ»µãÉúÆø£¬µØÉÏµ½´¦ÊÇ¿ÝÖ¦°ÜÒ¶£¬Å¼¶û¿´µ½Ò»Ð©
-¸É¿ÝµÄ¶¯ÎïÊ¬º¡£¬ÈÃÈË²»º®¶øÀõ£¬µ½´¦É¢·¢×ÅÒ»¹ÉÊ¬Ê×¸¯ÀÃµÄ
-Î¶µÀ£¬¿´²»µ½Ò»Ë¿»îÎï´æÔÚ¡£
+å¢“åœ’è£¡æ²’æœ‰ä¸€é»žç”Ÿæ°£ï¼Œåœ°ä¸Šåˆ°è™•æ˜¯æž¯æžæ•—è‘‰ï¼Œå¶çˆ¾çœ‹åˆ°ä¸€äº›
+å¹¹æž¯çš„å‹•ç‰©å±éª¸ï¼Œè®“äººä¸å¯’è€Œæ —ï¼Œåˆ°è™•æ•£ç™¼è‘—ä¸€è‚¡å±é¦–è…çˆ›çš„
+å‘³é“ï¼Œçœ‹ä¸åˆ°ä¸€çµ²æ´»ç‰©å­˜åœ¨ã€‚
 LONG); 
 
-        // ÃÔ¹¬·¿¼äÊÇ·ñÎª»§Íâ·¿¼ä£¿ 
+        // è¿·å®®æˆ¿é–“æ˜¯å¦ç‚ºæˆ¶å¤–æˆ¿é–“ï¼Ÿ 
         set_outdoors(1); 
         
         set_maze_refresh(600); 

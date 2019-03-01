@@ -1,18 +1,18 @@
-// xiaoer2.c ¾ÆµêĞ¡¶ş
+// xiaoer2.c é…’åº—å°äºŒ
 
 #include <ansi.h>
 inherit KNOWER;
 
 void create()
 {
-        set_name("µêĞ¡¶ş", ({ "xiao er", "xiao", "waiter" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("åº—å°äºŒ", ({ "xiao er", "xiao", "waiter" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 22);
         set("long",
-                "ÕâÎ»µêĞ¡¶şÕıĞ¦ßäßäµØÃ¦Öø£¬»¹²»Ê±ÄÃÆğ¹ÒÔÚ²±×ÓÉÏµÄÄ¨²¼²ÁÁ³¡£\n");
+                "é€™ä½åº—å°äºŒæ­£ç¬‘å’ªå’ªåœ°å¿™è‘—ï¼Œé‚„ä¸æ™‚æ‹¿èµ·æ›åœ¨è„–å­ä¸Šçš„æŠ¹å¸ƒæ“¦è‡‰ã€‚\n");
         set("combat_exp", 100);
         set("attitude", "friendly");
-        set("rank_info/respect", "Ğ¡¶ş¸ç");
+        set("rank_info/respect", "å°äºŒå“¥");
         setup();
         carry_object("/clone/misc/cloth")->wear();
 }
@@ -36,12 +36,12 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
         switch( random(2) ) {
                 case 0:
-                        say( "µêĞ¡¶şĞ¦ßäßäµØËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-                                + "£¬½øÀ´ºÈ±­²è£¬ĞªĞªÍÈ°É¡£\n");
+                        say( "åº—å°äºŒç¬‘å’ªå’ªåœ°èªªé“ï¼šé€™ä½" + RANK_D->query_respect(ob)
+                                + "ï¼Œé€²ä¾†å–æ¯èŒ¶ï¼Œæ­‡æ­‡è…¿å§ã€‚\n");
                         break;
                 case 1:
-                        say( "µêĞ¡¶şÓÃ²±×ÓÉÏµÄÃ«½íÄ¨ÁËÄ¨ÊÖ£¬ËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-                                + "£¬Çë½øÇë½ø¡£\n");
+                        say( "åº—å°äºŒç”¨è„–å­ä¸Šçš„æ¯›å·¾æŠ¹äº†æŠ¹æ‰‹ï¼Œèªªé“ï¼šé€™ä½" + RANK_D->query_respect(ob)
+                                + "ï¼Œè«‹é€²è«‹é€²ã€‚\n");
                         break;
         }
 }
@@ -51,7 +51,7 @@ int accept_object(object me, object ob)
         
         if( query("money_id", ob) && ob->value() >= 1000 )
         {
-                tell_object(me, CYN "Ğ¡¶şÒ»¹şÑü£¬ËµµÀ£º¶àĞ»ÄúÀÏ£¬¿Í¹ÙÇëÉÏÂ¥ĞªÏ¢¡£\n" NOR);
+                tell_object(me, CYN "å°äºŒä¸€å“ˆè…°ï¼Œèªªé“ï¼šå¤šè¬æ‚¨è€ï¼Œå®¢å®˜è«‹ä¸Šæ¨“æ­‡æ¯ã€‚\n" NOR);
                 set_temp("rent_paid", 1, me);
                 return 1;
         }
@@ -59,10 +59,10 @@ int accept_object(object me, object ob)
         switch (random(6))
         {
         case 0:
-                command("say ºÃ£¡ºÃ£¡");
+                command("say å¥½ï¼å¥½ï¼");
                 break;
         case 1:
-                command("say ²»ĞèÒªµÄ¶«Î÷È«¸øÎÒ£¡");
+                command("say ä¸éœ€è¦çš„æ±è¥¿å…¨çµ¦æˆ‘ï¼");
                 break;
         }
 

@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��������");
+        set("short", "衡陽西街");
         set("long", @LONG
-�����Ǻ��������֣����·�˴Ҵ��򶫶��У��ϱ�����һ�����ǣ�
-������һ��װ�κܵ��ŵĵ��̣��������Ŵ������˷��塣
+這裡是衡陽城西街，這見路人匆匆向東而行，南邊是有一個馬廄，
+北面是一家裝飾很典雅的店舖，店舖入門處掛滿了風鈴。
 LONG );
         set("outdoors", "henshan");
 

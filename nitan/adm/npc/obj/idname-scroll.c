@@ -3,9 +3,9 @@
 #include <ansi.h>
 
 inherit ITEM;
-// Èç¹û×Ö·û´®±»ÉèÖÃ³ÉÕâ¸öÖµ£¬±íÊ¾ÊäÈëµÄ×Ö·û´®¾ßÓĞ·Ç·¨µÄ¸ñÊ½
+// å¦‚æœå­—ç¬¦ä¸²è¢«è¨­ç½®æˆé€™å€‹å€¼ï¼Œè¡¨ç¤ºè¼¸å…¥çš„å­—ç¬¦ä¸²å…·æœ‰éæ³•çš„æ ¼å¼
 #define ILLEGAL_STR     "."
-// ÔÚconvertÊ±¿´¿´Òª²»ÒªÈ¥µô²ÊÉ«
+// åœ¨convertæ™‚çœ‹çœ‹è¦ä¸è¦å»æ‰å½©è‰²
 #define NOCOLOR         1
 #define COLORABLE       0
 
@@ -14,16 +14,16 @@ string converts(string arg, int max_len, int no_color);
 
 void create()
 {
-        set_name(RED "¸üÃû¾íÖá" NOR, ({ "idname scroll", "scroll" }) );
+        set_name(RED "æ›´åå·è»¸" NOR, ({ "idname scroll", "scroll" }) );
         set_weight(30);
 
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "¿ÉÒÔÊ¹×ÔÔì×°±¸¸Ä±ä(idname)´úºÅºÍÖĞÎÄÃûµÄ¸üÃû¾íÖá¡£\n" NOR);
+                set("long", HIW "å¯ä»¥ä½¿è‡ªé€ è£å‚™æ”¹è®Š(idname)ä»£è™Ÿå’Œä¸­æ–‡åçš„æ›´åå·è»¸ã€‚\n" NOR);
                 set("value", 1);
                 set("no_sell", 1);
-                set("unit", "ÕÅ");
+                set("unit", "å¼µ");
         }
 
         setup();
@@ -46,20 +46,20 @@ int do_idname(string arg)
         me = this_player();
         if (! arg || sscanf(arg, "%s %s %s", what, sname, sid) != 3)
         {
-                write("¸ñÊ½²»¶Ô£¡Ó¦¸ÃÊÇ£ºidname <ÎïÆ·ID> <ĞÂÃû×Ö> <ĞÂID>\nÀıÈç£ºidname baojian ³¤½£ sword\n");
+                write("æ ¼å¼ä¸å°ï¼æ‡‰è©²æ˜¯ï¼šidname <ç‰©å“ID> <æ–°åå­—> <æ–°ID>\nä¾‹å¦‚ï¼šidname baojian é•·åŠ sword\n");
                 return 1;
         }
 
         if (! objectp(ob = present(what, me)))
-                return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÖÖ¶«Î÷¡£\n");
+                return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™ç¨®æ±è¥¿ã€‚\n");
 
         if (! ob->is_item_make())
-                return notify_fail("Ö»ÓĞ×ÔÔìÎïÆ··½¿ÉÓÃÖ®ĞŞ¸ÄÃû³Æ»òÃèÊö¡£\n");
+                return notify_fail("åªæœ‰è‡ªé€ ç‰©å“æ–¹å¯ç”¨ä¹‹ä¿®æ”¹åç¨±æˆ–æè¿°ã€‚\n");
 
         if( ob->item_owner() != query("id", me) )
-                return notify_fail("Õâ¸ö¶«Î÷µÄÖ÷ÈË²¢²»ÊÇÄã¡£\n");
+                return notify_fail("é€™å€‹æ±è¥¿çš„ä¸»äººä¸¦ä¸æ˜¯ä½ ã€‚\n");
 
-        // ILLEGAL_STR = "." ±íÊ¾·Ç·¨µÄÊäÈë
+        // ILLEGAL_STR = "." è¡¨ç¤ºéæ³•çš„è¼¸å…¥
         if ((sname = converts(sname, 14, COLORABLE)) == ILLEGAL_STR)
                 return 1;
 
@@ -68,31 +68,31 @@ int do_idname(string arg)
 
         if (! sname || ! sid)
         {
-                write("ÄãºÃºÃ¸ö¶¨¸öÃû×Ö£¡\n");
+                write("ä½ å¥½å¥½å€‹å®šå€‹åå­—ï¼\n");
                 return 1;
         }
 
         if (! is_chinese(filter_color(sname, 1)))
         {
-                write("×°±¸µÄÃû×Ö±ØĞëÊÇÖĞÎÄ¡£\n");
+                write("è£å‚™çš„åå­—å¿…é ˆæ˜¯ä¸­æ–‡ã€‚\n");
                 return 1;
         }
 
         if (! is_legal_id(sid))
         {
-                write("Ó¢ÎÄ´úºÅ±ØĞëÈ«²¿ÓÃĞ¡Ğ´Ó¢ÎÄ²Å¿ÉÒÔ£¡\n");
+                write("è‹±æ–‡ä»£è™Ÿå¿…é ˆå…¨éƒ¨ç”¨å°å¯«è‹±æ–‡æ‰å¯ä»¥ï¼\n");
                 return 1;
         }
 
         if (strlen(filter_color(sname)) < 4)
         {
-                write("Ãû×ÖÖÁÉÙÁ½¸öºº×Ö£¡\n");
+                write("åå­—è‡³å°‘å…©å€‹æ¼¢å­—ï¼\n");
                 return 1;
         }
 
         if (strlen(sid) < 3)
         {
-                write("´úºÅÖÁÉÙÈı¸ö×Ö·û£¡\n");
+                write("ä»£è™Ÿè‡³å°‘ä¸‰å€‹å­—ç¬¦ï¼\n");
                 return 1;
         }
 
@@ -118,24 +118,24 @@ int do_idname(string arg)
                 write_file(filename, content[i] + "\n");
         }
 
-        write("Ãû×Ö£º" CYN + sname + "    ´úºÅ£º" CYN + sid + NOR "\n");
+        write("åå­—ï¼š" CYN + sname + "    ä»£è™Ÿï¼š" CYN + sid + NOR "\n");
         catch(call_other(filename, "???"));
         ob = find_object(filename);
         if (! ob)
         {
-                write(HIR "ĞŞ¸Ä³öÏÖÎÊÌâ£¬Çë»ã±¨¸øÎ×Ê¦£¡\n" NOR);
+                write(HIR "ä¿®æ”¹å‡ºç¾å•é¡Œï¼Œè«‹åŒ¯å ±çµ¦å·«å¸«ï¼\n" NOR);
         }
         else
         {
                 ob->move(me, 1);
-                write("ĞŞ¸Ä³É¹¦£¬SUMMON ID²»±ä¡£\n");
+                write("ä¿®æ”¹æˆåŠŸï¼ŒSUMMON IDä¸è®Šã€‚\n");
                 destruct(this_object());
         }
 
         return 1;
 }
 
-// ÅĞ¶ÏÊÇ·ñÊÇºÏ·¨µÄºº×Ö
+// åˆ¤æ–·æ˜¯å¦æ˜¯åˆæ³•çš„æ¼¢å­—
 int legal_chinese(string str)
 {
         int i;
@@ -151,12 +151,12 @@ int legal_chinese(string str)
         return 1;
 }
 
-// ×ª»»×Ö·û´®ÖĞµÄÑÕÉ«±êÖ¾
+// è½‰æ›å­—ç¬¦ä¸²ä¸­çš„é¡è‰²æ¨™å¿—
 string converts(string arg, int max_len, int no_color)
 {
         int i;
 
-        // È¥³ı×Ö·û´®ÖĞµÄ¿Õ¸ñ£¬ÒıºÅ£¬±ÜÃâ±»±ğÈËÀûÓÃ×öÆÆ»µ
+        // å»é™¤å­—ç¬¦ä¸²ä¸­çš„ç©ºæ ¼ï¼Œå¼•è™Ÿï¼Œé¿å…è¢«åˆ¥äººåˆ©ç”¨åšç ´å£
         arg = replace_string(arg, " ", "");
         arg = replace_string(arg, "\"", "'");
 
@@ -164,14 +164,14 @@ string converts(string arg, int max_len, int no_color)
         {
                 if (arg[i] == '\\' && arg[i + 1] != 'n')
                 {
-                        write("×Ö·û'\\'ºóÃæÖ»ÄÜ¸úËæn×Ö·û±íÊ¾»Ø³µ£¡\n");
+                        write("å­—ç¬¦'\\'å¾Œé¢åªèƒ½è·Ÿéš¨nå­—ç¬¦è¡¨ç¤ºå›è»Šï¼\n");
                         return ILLEGAL_STR;
                 }
         }
 
-        arg = replace_string(arg, ",", "£¬");
-        arg = replace_string(arg, ":", "£º");
-        arg = replace_string(arg, "?", "£¿");
+        arg = replace_string(arg, ",", "ï¼Œ");
+        arg = replace_string(arg, ":", "ï¼š");
+        arg = replace_string(arg, "?", "ï¼Ÿ");
 
         if (no_color)
         {
@@ -188,9 +188,9 @@ string converts(string arg, int max_len, int no_color)
         }
         if (strlen(filter_color(arg, 1)) > max_len)
         {
-                write("¶Ô²»Æğ£¬Õâ¸ö×Ö·û´®Ì«³¤ÁË£¬Çë²»ÒªÊäÈë³¬¹ı" + chinese_number(max_len) +
-                      "¸ö×Ö·û³¤µÄ×Ö·û´®¡£\n");
-                // ±íÊ¾·Ç·¨µÄÊäÈë
+                write("å°ä¸èµ·ï¼Œé€™å€‹å­—ç¬¦ä¸²å¤ªé•·äº†ï¼Œè«‹ä¸è¦è¼¸å…¥è¶…é" + chinese_number(max_len) +
+                      "å€‹å­—ç¬¦é•·çš„å­—ç¬¦ä¸²ã€‚\n");
+                // è¡¨ç¤ºéæ³•çš„è¼¸å…¥
                 return ILLEGAL_STR;
         }
         return arg;

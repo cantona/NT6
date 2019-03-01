@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-            set("short", "��");
+            set("short", "甬道");
             set("long", @LONG
-�����������ܵ���һ���ݼ��������ݼ�����ʮ����·��ǰ
-���Ȼ���ʣ�����һ��Ƭƽ�ء�
+這裡玉室下密道的一道梯級。下了梯級再走十多丈路，前
+面豁然開朗，竟是一大片平地。
 LONG);
             set("exits", ([ 
                   "down" : __DIR__"feicui1",

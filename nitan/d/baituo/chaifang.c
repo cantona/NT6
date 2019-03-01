@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-          set("short", "��");
+          set("short", "柴房");
         set("long", @LONG
-���Ǽ䲻���Ĳ񷿣�ľ���Ѿ����չ��ˣ�ʣ��ļ��Ѹɲ����߰�
-��ڷ��ڵ��棬ǽ�Ƿ���һ���񵶡�
+這是間不寬的柴房，木柴已經快燒光了，剩余的幾堆幹柴亂七八
+糟擺放在地面，牆角放著一柄柴刀。
 LONG );
           set("exits", ([
                       "west" : __DIR__"chufang",

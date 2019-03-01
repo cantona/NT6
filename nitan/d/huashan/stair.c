@@ -1,15 +1,15 @@
 //Cracked by Kafei
-// xiaolu1.c 华山密室石阶
+// xiaolu1.c 鑿北瀵嗗鐭抽殠
 // qfy 10/8/1997
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "石阶");
+        set("short", "鐭抽殠");
         set("long",
-"石阶蜿然向下伸延，尽头可见扇紧壁着的石门。两侧石壁上挂着点燃\n"
-"的火把，把通道照得十分明亮。\n"
+"鐭抽殠铚跨劧鍚戜笅浼稿欢锛岀洝闋彲瑕嬫墖绶婂钁楃殑鐭抽杸銆傚叐鍋寸煶澹佷笂鎺涜憲榛炵噧\n"
+"鐨勭伀鎶婏紝鎶婇�氶亾鐓у緱鍗佸垎鏄庝寒銆俓n"
 );
 
         set("exits", ([ /* sizeof() == 1 */

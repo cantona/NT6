@@ -13,30 +13,30 @@ int main(object me, string arg)
         seteuid(getuid());
 
         if(!arg || arg == " ")
-                return notify_fail("��Ҫ��˭ιˮ��\n");
+                return notify_fail("你要給誰喂水？\n");
         if(!objectp(pet = present(arg, environment(me))) || !living(pet))
-                return notify_fail("����û���⶯�\n");
-        if( query("race", pet) == "����" )
-                return notify_fail(pet->name()+"�ǳ���ô���ɴ��۾�������\n");
+                return notify_fail("這裡沒有這動物。\n");
+        if( query("race", pet) == "人類" )
+                return notify_fail(pet->name()+"是寵物麼？瞪大眼睛看看！\n");
         if(pet->is_busy() )
-                return notify_fail(pet->name()+"��æ���أ��ĺȵ���ʲô��\n");
+                return notify_fail(pet->name()+"正忙著呢，哪喝得下什麼！\n");
         if(me->is_busy() )
-                return notify_fail("����æ���أ�ʲôҲ�����ˣ�\n");
+                return notify_fail("你正忙著呢，什麼也做不了！\n");
         if(pet->is_fighting() )
-                return notify_fail("��û���������ڴ���𣿣�\n");
+                return notify_fail("你沒看道它正在打架嗎？！\n");
         if(me->is_fighting() )
-                return notify_fail("һ�ߴ��һ��ιˮ�������ǻ����ˣ�\n");
+                return notify_fail("一邊打架一邊喂水？你真是活膩了！\n");
         if( query("id", me) != query_temp("owner", pet) )
-                return notify_fail("�㲻��"+query("name", pet)+"�����ˣ��˼Ҳ�������ġ�\n");
+                return notify_fail("你不是"+query("name", pet)+"的主人，人家不會理你的。\n");
         if( query("water", pet) >= pet->max_water_capacity() )
-                return notify_fail(pet->name()+"�Ѿ��ȵ�̫���ˣ���Ҳ�಻���κζ����ˡ�\n");
+                return notify_fail(pet->name()+"已經喝得太多了，再也灌不下任何東西了。\n");
 
         me->start_busy(1);
         if( query("resource/water", environment(me)) )
         {
                 if( query("drink_msg", pet) )
                         message_vision(query("drink_msg", pet),pet);
-                else message_vision("$N�쳤��ͷ������ˮ�棬һ��������������ȥ��\n", pet);
+                else message_vision("$N伸長舌頭舔了舔水面，一仰脖頸，喝了下去。\n", pet);
                 addn("water", 30, pet);
         }
         else
@@ -50,25 +50,25 @@ int main(object me, string arg)
                         }
                 }
                 if( i == sizeof(obj) )
-                        return notify_fail("����ûɶ�������Ը�"+pet->name()+"ιˮ��\n");
-// ������ˮ״̬�ı䡣
+                        return notify_fail("這裡沒啥東西可以給"+pet->name()+"喂水。\n");
+// 寵物飲水狀態改變。
                 addn("water", 10+query("liquid/drunk_apply", obj[i]), pet);
-// ���������ı䡣
+// 容器容量改變。
                 addn("liquid/remaining", -1, obj[i]);
-// �ԵĲ�busy��ι��busy��feed.cҲһ����
+// 吃的不busy，喂的busy，feed.c也一樣。
                 if( query("liquid/busy", obj[i]) )
                         me->start_busy(query("liquid/busy", obj[i]));
                 if( query("liquid/remaining", obj[i]) )
-                        message_vision("$N�쳤��������$n���������µغ��˼���"+query("liquid/name", obj[i])+"��\n",pet,obj[i]);
+                        message_vision("$N伸長脖頸對著$n，唏唏嗦嗦地喝了幾口"+query("liquid/name", obj[i])+"。\n",pet,obj[i]);
                 else
-                        message_vision("$N�쳤��������$n���������¾Ͱ�"+query("liquid/name", obj[i])+"���˸����⡣\n",pet,obj[i]);
-// �ȵ���ҩ����
+                        message_vision("$N伸長脖頸對著$n，唏唏嗦嗦就把"+query("liquid/name", obj[i])+"喝了個精光。\n",pet,obj[i]);
+// 喝到毒藥啦。
                 if( query("liquid/poisontime", obj[i])>1 )
                 {
                         pet->apply_condition(query("liquid/poison", obj[i]), query("liquid/poisontime", obj) );
-                        write(query("name", pet)+"ͻȻ���ú����ܵ�Ť�������������£�����ȵĶ����е㲻�Ծ���\n");
+                        write(query("name", pet)+"突然覺得很難受地扭著腰掙紮了兩下，好象喝的東西有點不對勁。\n");
                 }
-// �ȵ�������
+// 喝到酒啦。
                 switch(query("liquid/type", obj[i]) )
                 {
                         case"alcohol":pet->apply_condition("drunk",pet->query_condition("drunk")+query("liquid/drunk_apply", obj[i]));
@@ -76,20 +76,20 @@ int main(object me, string arg)
                 }
         }
 
-// ������������ѱ���޹ء�
+// 寵物升級，與馴獸無關。
         if( query("owner", pet) == query("id", me) )
         {
-// ʳ�����øı䣬�ۼ��Ա�������
+// 食物作用改變，累計以便升級。
                 addn("feed", 1, pet);
                 i=query("feed", pet);
                 j=query("level", pet);
                 if(i>=2+j*j)
                 {
-                        tell_object(me,HIY"��ι����һ����ˮ�󣬷���"+query("name", pet)+"�ƺ��������ˣ�\n"NOR);
-// ι��������
+                        tell_object(me,HIY"你喂了這一次飲水後，發覺"+query("name", pet)+"似乎更聽話了！\n"NOR);
+// 喂養長級別。
                         addn("level", 1, pet);
                         set("feed", 0, pet);
-// ι����ѱ���ȡ�
+// 喂養長馴服度。
                         addn("obe", 1, pet);
                         lvl=query("level", pet);
                 }
@@ -103,24 +103,24 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-ָ���ʽ : imbibe <����>
+指令格式 : imbibe <動物>
 
-    ��ָ�������ι������ѱ���Ķ��
+    此指令可用于喂養你所馴服的動物。
 
-    �����Ѿ�ѱ���Ķ�����Խ�������ָ�
+    對于已經馴服的動物，可以進行下述指令：
 
-����ָ�
-        come <������>:                  �ö�����������ж���
-        stay:                           ֹͣ����ĸ���״̬��
-        attack <ĳ��>:                  �ö��﹥�����ˡ�
-        stop <������>:                  �ö���ֹͣ���˵Ĺ�����
-        release:                        ������ū״̬����������롣
+基本指令：
+        come <動物名>:                  讓動物跟隨主人行動。
+        stay:                           停止動物的跟隨狀態。
+        attack <某物>:                  讓動物攻擊敵人。
+        stop <動物名>:                  讓動物停止對人的攻擊。
+        release:                        結束主奴狀態，將動物放離。
 
-����ָ���ֻ��ĳЩ�������ã�
-        ride <������>:                  �����������������ȡ�
-        unride <������>:                �£��뿪���
-        feed <����> to <������>:        �涯��ιʳ��
-        imbibe <������>:                ��������ˮ��
+特殊指令：（只對某些動物適用）
+        ride <動物名>:                  騎，如騎馬，虎，雕，鯊等。
+        unride <動物名>:                下，離開坐騎。
+        feed <飼料> to <動物名>:        替動物喂食。
+        imbibe <動物名>:                給動物飲水。
 
 HELP
         );

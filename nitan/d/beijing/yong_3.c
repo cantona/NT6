@@ -3,10 +3,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÓÀÄÚ¶«½Ö");
+        set("short", "æ°¸å…§æ±è¡—");
         set("long", @LONG
-ÓÀÄÚ¶«½ÖÊÇÒ»Ìõ·±»ªµÄ´ó½Ö£¬Ò²ÊÇ±±¾©×îÔÓÂÒµÄµØ¶Î¡£Ò»Ìõ¿íÀ«
-µÄÇàÊ¯´óµÀ´ÓÖÐ´©¹ý£¬Ïò¶«Î÷Á½Í·ÑÓÉì¡£Î÷±ßÊÇ¾©³ÇÀïÖøÃûµÄ·²±ÝÇÅ¡£
+æ°¸å…§æ±è¡—æ˜¯ä¸€æ¢ç¹è¯çš„å¤§è¡—ï¼Œä¹Ÿæ˜¯åŒ—äº¬æœ€é›œäº‚çš„åœ°æ®µã€‚ä¸€æ¢å¯¬é—Š
+çš„é’çŸ³å¤§é“å¾žä¸­ç©¿éŽï¼Œå‘æ±è¥¿å…©é ­å»¶ä¼¸ã€‚è¥¿é‚Šæ˜¯äº¬åŸŽè£¡è‘—åçš„å‡¡é™›æ©‹ã€‚
 LONG );
         set("exits", ([
                 "west" : "/d/beijing/yong_2",

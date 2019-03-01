@@ -1,8 +1,8 @@
-// zui.c ÂÞºº×í¾Æ
+// zui.c ç¾…æ¼¢é†‰é…’
 
 #include <ansi.h>
 
-#define PFM_NAME        "ÂÞºº×í¾Æ"
+#define PFM_NAME        "ç¾…æ¼¢é†‰é…’"
 
 inherit F_SSERVER;
 
@@ -13,17 +13,17 @@ int perform(object me, object target)
         int skill;
  
         if( query("neili", me)<150 )
-                return notify_fail("ÄãµÄÕæÆø²»×ãÒÔÊ©Õ¹¡¸" + PFM_NAME + "¡¹¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸è¶³ä»¥æ–½å±•ã€Œ" + PFM_NAME + "ã€ã€‚\n");
 
         if( query_temp("zui-quan_zui", me) )
-                return notify_fail("ÄãÒÑ¾­½ßÁ¦ÌáÉýÄãµÄÉí·¨ÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“ç«­åŠ›æå‡ä½ çš„èº«æ³•äº†ã€‚\n");
         
         if ((int)me->query_skill("zui-quan", 1) < 80)
-                return notify_fail("ÄãµÄ×íÈ­»¹²»µ½¼Ò£¬ÎÞ·¨Ê©Õ¹¡¸" + PFM_NAME + "¡¹¡£\n");
+                return notify_fail("ä½ çš„é†‰æ‹³é‚„ä¸åˆ°å®¶ï¼Œç„¡æ³•æ–½å±•ã€Œ" + PFM_NAME + "ã€ã€‚\n");
 
-        msg = HIY "$N" HIY "ºöµØÉíÐÎÒ»±ä£¬Ë«È­ÐéÎÕ£¬Ê¹³öÒ»ÕÐ¡¸" + PFM_NAME +
-              HIY "¡¹£¬ÓÌÈç½ð±­ÔÚÊÖ¡£\n"
-              HIG "¿´ËÆ²½ÂÄõÔõÄ£¬×íÌ¬¿É¾Ð£¬µ«ÉíÐÎÈ´Áé»îÖ®¼«£¡\n" NOR;
+        msg = HIY "$N" HIY "å¿½åœ°èº«å½¢ä¸€è®Šï¼Œé›™æ‹³è™›æ¡ï¼Œä½¿å‡ºä¸€æ‹›ã€Œ" + PFM_NAME +
+              HIY "ã€ï¼ŒçŒ¶å¦‚é‡‘æ¯åœ¨æ‰‹ã€‚\n"
+              HIG "çœ‹ä¼¼æ­¥å±¥è¸‰è¹Œï¼Œé†‰æ…‹å¯æ‹˜ï¼Œä½†èº«å½¢å»éˆæ´»ä¹‹æ¥µï¼\n" NOR;
 
         message_combatd(msg, me);
         addn("neili", -100, me);
@@ -46,6 +46,6 @@ void remove_effect(object me, int amount)
         {
                 addn_temp("dex", -amount, me);
                 delete_temp("zui-quan_zui", me);
-                tell_object(me, "ÄãµÄÂÞºº×í¾ÆÔË¹¦Íê±Ï£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï¡£\n");
+                tell_object(me, "ä½ çš„ç¾…æ¼¢é†‰é…’é‹åŠŸå®Œç•¢ï¼Œå°‡å…§åŠ›æ”¶å›žä¸¹ç”°ã€‚\n");
         }
 }

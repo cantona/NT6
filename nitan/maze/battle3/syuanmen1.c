@@ -8,12 +8,12 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Ô¯ÃÅÍâ"NOR);
+        set("short", "è½…é–€å¤–"NOR);
         set("long", @LONG
-ÕâÀï¾ÍÊÇ¡¸´óËÎ¡¹¾üÓª×¤ÔúµØÁË£¬Ô¶Ô¶µØ¿ÉÒÔ¿´¼ûÒ»Ãæ´óÆì£¬ÉÏ
-ÃæÊé×ÅÒ»¸ö¶·´óµÄÁ¥Êé¡¸ËÎ¡¹×Ö£¬ÔÙ×ß½üĞ©¾Íµ½¾üÓªÁË£¬Ñ°³£ÈË»¹ÊÇ
-²»Òª¿¿½üµÄºÃ£¬Ê¡µÃ±»µ±³ÉÏ¸×÷×½ÆğÀ´¡£Î÷±ßÒ»¸öÊ¯ÃÅÍ¨Ïò¼ıÂ¥£¬ÉÏ
-ÃæÒ»¸öÌúÃÅÍ¨Ïò³ÇÇ½¡£
+é€™è£¡å°±æ˜¯ã€Œå¤§å®‹ã€è»ç‡Ÿé§ç´®åœ°äº†ï¼Œé é åœ°å¯ä»¥çœ‹è¦‹ä¸€é¢å¤§æ——ï¼Œä¸Š
+é¢æ›¸è‘—ä¸€å€‹é¬¥å¤§çš„éš¸æ›¸ã€Œå®‹ã€å­—ï¼Œå†èµ°è¿‘äº›å°±åˆ°è»ç‡Ÿäº†ï¼Œå°‹å¸¸äººé‚„æ˜¯
+ä¸è¦é è¿‘çš„å¥½ï¼Œçœå¾—è¢«ç•¶æˆç´°ä½œæ‰èµ·ä¾†ã€‚è¥¿é‚Šä¸€å€‹çŸ³é–€é€šå‘ç®­æ¨“ï¼Œä¸Š
+é¢ä¸€å€‹éµé–€é€šå‘åŸç‰†ã€‚
 LONG );
         set("defence",120);
         set("no_magic", "1");
@@ -24,8 +24,8 @@ LONG );
                "up"    : __DIR__"sying5",
         ]));    
 
-        create_door("up", "ÌúÃÅ", "down", DOOR_CLOSED);
-        create_door("west", "Ê¯ÃÅ", "east", DOOR_CLOSED);
+        create_door("up", "éµé–€", "down", DOOR_CLOSED);
+        create_door("west", "çŸ³é–€", "east", DOOR_CLOSED);
         setup();
 }
               
@@ -45,20 +45,20 @@ int do_repair()
         object room = this_object(), me = this_player();
 
         if (me->is_busy())
-                return notify_fail("ÄãÕıÃ¦×ÅÄØ£¡\n");
+                return notify_fail("ä½ æ­£å¿™è‘—å‘¢ï¼\n");
 
         if (WAR_D->query_stones(me) < 200)
-                return notify_fail("ÓÉÓÚÈ±ÉÙ×ã¹»µÄÊ¯Í·¼°Ä¾²Ä,Ô¯ÃÅµÄ·ÀÓù¹¤ÊÂÎŞ·¨ĞŞÀí£¡\n");
+                return notify_fail("ç”±äºç¼ºå°‘è¶³å¤ çš„çŸ³é ­åŠæœ¨æ,è½…é–€çš„é˜²å¾¡å·¥äº‹ç„¡æ³•ä¿®ç†ï¼\n");
 
         if( query("defence", room)>999 )
-                return notify_fail("Ô¯ÃÅµÄ·ÀÓù¹¤ÊÂÒÑ¾­ĞŞÀíºÃÁË£¡\n");
+                return notify_fail("è½…é–€çš„é˜²å¾¡å·¥äº‹å·²ç¶“ä¿®ç†å¥½äº†ï¼\n");
         else
         {
                 if( query_temp("warquest/group", me) < 1 )
-                        return notify_fail("Äã»¹ÊÇ´øÁì¶ÓÎéÀ´ÇÀĞŞ×ÅÔ¯ÃÅµÄ·ÀÓù¹¤ÊÂ°É£¡\n");
+                        return notify_fail("ä½ é‚„æ˜¯å¸¶é ˜éšŠä¼ä¾†æ¶ä¿®è‘—è½…é–€çš„é˜²å¾¡å·¥äº‹å§ï¼\n");
 
                 message_vision(
-                        HIW "$N´ø×ÅÒ»Ö§¶ÓÎé½ôÕÅµØÇÀĞŞ×ÅÔ¯ÃÅµÄ·ÀÓù¹¤ÊÂ£¡\n" NOR, me);
+                        HIW "$Nå¸¶è‘—ä¸€æ”¯éšŠä¼ç·Šå¼µåœ°æ¶ä¿®è‘—è½…é–€çš„é˜²å¾¡å·¥äº‹ï¼\n" NOR, me);
                 addn("defence", random(query_temp("warquest/group", me)), room);
                 WAR_D->expend_stones(me, 200);
                 me->start_busy(1 + random(2));
@@ -71,17 +71,17 @@ int do_break()
         object room = this_object(), me = this_player();
 
         if (me->is_busy())        
-                return notify_fail("ÄãÕıÃ¦×ÅÄØ£¡\n");
+                return notify_fail("ä½ æ­£å¿™è‘—å‘¢ï¼\n");
 
         if( query("defence", room)<1 )
         {
                 set("defence", 0, room);
-                write("Ô¯ÃÅµÄµÄ·ÀÓùÒÑ¾­±»»÷ÆÆÁË£¬¿ì³å½øÈ¥°¡£¡\n");
+                write("è½…é–€çš„çš„é˜²å¾¡å·²ç¶“è¢«æ“Šç ´äº†ï¼Œå¿«æ²–é€²å»å•Šï¼\n");
                 return 1; 
         } else
         {
                 message_vision(
-                        HIY "$N´ø×ÅÒ»Ö§¹¥³Ç¶ÓÎéÕı¼Ó½ô¹¥»÷×ÅÔ¯ÃÅµÄ·ÀÓù¹¤ÊÂ£¡\n" NOR,me);
+                        HIY "$Nå¸¶è‘—ä¸€æ”¯æ”»åŸéšŠä¼æ­£åŠ ç·Šæ”»æ“Šè‘—è½…é–€çš„é˜²å¾¡å·¥äº‹ï¼\n" NOR,me);
                 addn("defence", -random(query_temp("warquest/group", me)), room);
                 me->start_busy(2 + random(2));
                 return 1;

@@ -10,45 +10,45 @@ int main(object me, string arg)
         object ob;
         int i;
         if( !query("bunch/bunch_name", me) )
-                return notify_fail("ÄãÃ»ÓĞ²Î¼ÓÈÎºÎ°ï»á£¬ÎŞ·¨Í¨¹ıÇĞõãÎä¹¦Õ÷ÕĞNPC¡£\n");
+                return notify_fail("ä½ æ²’æœ‰åƒåŠ ä»»ä½•å¹«æœƒï¼Œç„¡æ³•é€šéåˆ‡è¹‰æ­¦åŠŸå¾æ‹›NPCã€‚\n");
                 
         if (! arg)
-                return notify_fail("ÄãÒªºÍË­ÇĞ´èÎä¹¦£¿\n");
+                return notify_fail("ä½ è¦å’Œèª°åˆ‡ç£‹æ­¦åŠŸï¼Ÿ\n");
                 
         if (! ob = present(arg, environment(me)))
-                return notify_fail("Õâ¶ùÃ»ÓĞÕâÃ´¸öÈË¡£\n");
+                return notify_fail("é€™å…’æ²’æœ‰é€™éº¼å€‹äººã€‚\n");
                 
         if (! ob->is_character())
-                return notify_fail("¿´Çå³ş£¡ÄÇ²¢²»ÊÇ¸öÉúÎï¡£\n");
+                return notify_fail("çœ‹æ¸…æ¥šï¼é‚£ä¸¦ä¸æ˜¯å€‹ç”Ÿç‰©ã€‚\n");
                 
         if (playerp(ob))
-                return notify_fail("ÄãÖ»ÄÜÓëNPCÇĞõãÎä¹¦¡£\n");
+                return notify_fail("ä½ åªèƒ½èˆ‡NPCåˆ‡è¹‰æ­¦åŠŸã€‚\n");
                 
-        if (! living(ob)) return notify_fail("ÄãµÃÏÈ°ÑËûÅªĞÑÔÙËµ¡£\n");
+        if (! living(ob)) return notify_fail("ä½ å¾—å…ˆæŠŠä»–å¼„é†’å†èªªã€‚\n");
         
         if (me->is_fighting() || me->is_busy())
-                return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ æ­£å¿™è‘—å‘¢ã€‚\n");
                 
         if( query("bunch/zhengzhao", ob) != 1 )
-                return notify_fail("Õâ¸öNPC²»ÄÜÓÃÇĞ´èÎä¹¦µÄ·½Ê½Õ÷ÕĞ¡£\n");
+                return notify_fail("é€™å€‹NPCä¸èƒ½ç”¨åˆ‡ç£‹æ­¦åŠŸçš„æ–¹å¼å¾æ‹›ã€‚\n");
                 
         if( query("bunch/bunch_name", ob) == query("bunch/bunch_name", me) )
-                return notify_fail("Õâ¸öNPCÒÑ¾­ÊÇ±¾°ïĞÖµÜ£¬²»±ØÍ¨¹ıÇĞõãÎä¹¦À´Õ÷ÕĞ¡£\n");
+                return notify_fail("é€™å€‹NPCå·²ç¶“æ˜¯æœ¬å¹«å…„å¼Ÿï¼Œä¸å¿…é€šéåˆ‡è¹‰æ­¦åŠŸä¾†å¾æ‹›ã€‚\n");
                 
         if ((object)query_temp("invite/target", ob) != me)
-                return notify_fail("Äã±ØĞëÒªÏÈÑûÇë(yaoqing)Õâ¸öNPC¡£\n");
+                return notify_fail("ä½ å¿…é ˆè¦å…ˆé‚€è«‹(yaoqing)é€™å€‹NPCã€‚\n");
                 
         if (ob->is_fighting() || ob->is_busy())
-                return notify_fail("¶Ô·½ÕıÃ¦×ÅÄØ¡£\n");
+                return notify_fail("å°æ–¹æ­£å¿™è‘—å‘¢ã€‚\n");
                 
         if( query("bunch/bunch_name", ob) && query("bunch/zhongcheng", ob)>query("meili", me) )
-                return notify_fail("¿´Ñù×Ó¶Ô·½²»ÏëºÍÄãÇĞõãÎäÒÕ¡£\n");
+                return notify_fail("çœ‹æ¨£å­å°æ–¹ä¸æƒ³å’Œä½ åˆ‡è¹‰æ­¦è—ã€‚\n");
                 
         if( query("qi", ob)*100<query("max_qi", ob)*80 )
-                return notify_fail("¿´Ñù×Ó¶Ô·½²»ÏëºÍÄãÇĞõãÎäÒÕ¡£\n");
+                return notify_fail("çœ‹æ¨£å­å°æ–¹ä¸æƒ³å’Œä½ åˆ‡è¹‰æ­¦è—ã€‚\n");
                 
-        message_vision(HIY"$NµÀ£º¡°Èç´Ë" + RANK_D->query_self(ob) +
-                       "ÎÒ±ãÁì½Ì"+query("name", me)+"µÄ¸ßÕĞ£¡¡±\n"NOR,
+        message_vision(HIY"$Né“ï¼šâ€œå¦‚æ­¤" + RANK_D->query_self(ob) +
+                       "æˆ‘ä¾¿é ˜æ•™"+query("name", me)+"çš„é«˜æ‹›ï¼â€\n"NOR,
                        ob, me);
                        
         if( query_temp("invite/target", ob) )
@@ -80,19 +80,19 @@ void check_qi(object me,object ob)
         
         if( query("qi", ob)>query("max_qi", ob)/2 )
         {
-                message_vision("$N¹ş¹şÒ»Ğ¦£¬³å×Å$nµÀ£º¡°¿´À´" + RANK_D->query_respect(me)
-                               + "»¹µÃ¿àÁ·²ÅĞĞ°¡¡£¡±\n", ob, me);                
+                message_vision("$Nå“ˆå“ˆä¸€ç¬‘ï¼Œæ²–è‘—$né“ï¼šâ€œçœ‹ä¾†" + RANK_D->query_respect(me)
+                               + "é‚„å¾—è‹¦ç·´æ‰è¡Œå•Šã€‚â€\n", ob, me);                
         }
         
         else if (ob->query_last_damage_from() != me) 
         {
-                message_vision("$NºßÁËÒ»ÉùµÀ£º¡°¿¿ËûÈË°ïÃ¦ËãÊ²Ã´ÒâË¼£¿¡±\n",ob);
+                message_vision("$Nå“¼äº†ä¸€è²é“ï¼šâ€œé ä»–äººå¹«å¿™ç®—ä»€éº¼æ„æ€ï¼Ÿâ€\n",ob);
         }
         else            
         {
-                message_vision("$N¶Ô$nÒ»±§È­µÀ£º¡°" + RANK_D->query_respect(me)
-                               + "¹ûÈ»À÷º¦£¬" + RANK_D->query_self(ob)
-                               + "Åå·şµÃ½ô°¡¡£¡±\n", ob, me);
+                message_vision("$Nå°$nä¸€æŠ±æ‹³é“ï¼šâ€œ" + RANK_D->query_respect(me)
+                               + "æœç„¶å²å®³ï¼Œ" + RANK_D->query_self(ob)
+                               + "ä½©æœå¾—ç·Šå•Šã€‚â€\n", ob, me);
                 ob->do_join_bunch(me);
         }
 }

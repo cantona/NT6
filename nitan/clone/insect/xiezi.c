@@ -1,4 +1,4 @@
-// xiezi.c Ğ«×Ó
+// xiezi.c è å­
 
 #include <ansi.h>
 
@@ -6,16 +6,16 @@ inherit POISON_INSECT;
 
 void create()
 {
-        set_name("Ğ«×Ó", ({ "xie zi" }) );
+        set_name("è å­", ({ "xie zi" }) );
         set_weight(180);
-        set("race", "Ò°ÊŞ");
+        set("race", "é‡ç¸");
         set("age", 2);
-        set("long", "Ò»Ö»ÕÅÑÀÎè×¦µÄĞ«×Ó¡£\n");
+        set("long", "ä¸€åªå¼µç‰™èˆçˆªçš„è å­ã€‚\n");
         set("attitude", "peaceful");
         set("str", 20);
         set("con", 20);
-        set("unit", "Ö»");
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "½Å", "Î²°Í" }) );
+        set("unit", "åª");
+        set("limbs", ({ "é ­éƒ¨", "èº«é«”", "è…³", "å°¾å·´" }) );
         set("verbs", ({ "bite" }) );
 
         set("insect_poison", ([

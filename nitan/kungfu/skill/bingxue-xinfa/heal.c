@@ -9,20 +9,20 @@ int exert(object me, object target)
   !query("perform/heal", me) && 
   !query("can_perform/bingxue-xinfa/heal", me) && 
   !query_temp("murong/xingyi", me) )
-   return notify_fail("ÄãËùÊ¹ÓÃµÄÄÚ¹¦ÖĞÃ»ÓĞÕâÖÖ¹¦ÄÜ¡£");
+   return notify_fail("ä½ æ‰€ä½¿ç”¨çš„å…§åŠŸä¸­æ²’æœ‰é€™ç¨®åŠŸèƒ½ã€‚");
 
         if( me->is_fighting() )
-                return notify_fail("Õ½¶·ÖĞÔË¹¦ÁÆÉË£¿ÕÒËÀÂğ£¿\n");
+                return notify_fail("æˆ°é¬¥ä¸­é‹åŠŸç™‚å‚·ï¼Ÿæ‰¾æ­»å—ï¼Ÿ\n");
         if( me->is_busy() )
-                return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ£¬ÄÄÓĞ¿ÕÔË¹¦£¿\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£å¿™è‘—å‘¢ï¼Œå“ªæœ‰ç©ºé‹åŠŸï¼Ÿ\n");
         if ((int)me->query_skill("bingxue-xinfa", 1) < 20)
-                return notify_fail("ÄãµÄ±ùÑ©ĞÄ·¨ĞŞÎª»¹²»¹»¡£\n");
+                return notify_fail("ä½ çš„å†°é›ªå¿ƒæ³•ä¿®ç‚ºé‚„ä¸å¤ ã€‚\n");
         if( query("neili", me)<50 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ã€‚\n");
         if( query("eff_qi", me)<query("max_qi", me)/2 )
-                return notify_fail("ÄãÒÑ¾­ÊÜÉË¹ıÖØ£¬Ö»ÅÂÒ»ÔËÕæÆø±ãÓĞÉúÃüÎ£ÏÕ£¡\n");
-        write( HIW "ÄãÈ«Éíº®ÆøçÔÈÆ£¬×øÏÂÀ´¿ªÊ¼ÔË¹¦ÁÆÉË¡£\n" NOR);
-        message("vision", HIW + me->name() + "ÍÂ³öÒ»¿ÚğöÑª£¬Á³É«¿´ÆğÀ´ºÃ¶àÁË¡£\n" NOR, environment(me), me);
+                return notify_fail("ä½ å·²ç¶“å—å‚·éé‡ï¼Œåªæ€•ä¸€é‹çœŸæ°£ä¾¿æœ‰ç”Ÿå‘½å±éšªï¼\n");
+        write( HIW "ä½ å…¨èº«å¯’æ°£ç¹šç¹ï¼Œåä¸‹ä¾†é–‹å§‹é‹åŠŸç™‚å‚·ã€‚\n" NOR);
+        message("vision", HIW + me->name() + "åå‡ºä¸€å£ç˜€è¡€ï¼Œè‡‰è‰²çœ‹èµ·ä¾†å¥½å¤šäº†ã€‚\n" NOR, environment(me), me);
 
         me->receive_curing("qi", 10 + (int)me->query_skill("force")/5 );
         addn("neili", -50, me);
@@ -33,15 +33,15 @@ int exert(object me, object target)
 }
 int help(object me)
 {
-        write(WHT"\n±ùÑ©ĞÄ·¨Ö®×ÔÁÆ£º"NOR"\n");
+        write(WHT"\nå†°é›ªå¿ƒæ³•ä¹‹è‡ªç™‚ï¼š"NOR"\n");
         write(@HELP
 
-        Ê¹ÓÃ¹¦Ğ§£º
-                Îª×Ô¼ºÁÆÉË
+        ä½¿ç”¨åŠŸæ•ˆï¼š
+                ç‚ºè‡ªå·±ç™‚å‚·
 
-        ³öÊÖÒªÇó£º
-                ±ùÑ©ĞÄ·¨20¼¶
-                ÄÚÁ¦50
+        å‡ºæ‰‹è¦æ±‚ï¼š
+                å†°é›ªå¿ƒæ³•20ç´š
+                å…§åŠ›50
 HELP
         );
         return 1;

@@ -1,13 +1,13 @@
 // banghui.h
-// °ï»á¶¨ÒåÎÄ¼ş
+// å¹«æœƒå®šç¾©æ–‡ä»¶
 
-// ·¿¼ä³¤ÃèÊöÏŞ¶¨
+// æˆ¿é–“é•·æè¿°é™å®š
 protected nosave int room_desc_l = 52, room_desc_h = 6;
 
-// ·¿¼ä×î´ó³ö¿ÚÊı
+// æˆ¿é–“æœ€å¤§å‡ºå£æ•¸
 protected nosave int max_exits = 5;
 
-// Ã¿¸ö·¿¼ä×î¶à¶¨ÒåµÄ action ÊıÄ¿
+// æ¯å€‹æˆ¿é–“æœ€å¤šå®šç¾©çš„ action æ•¸ç›®
 protected nosave int max_action_per_room = 2;
 
 protected nosave mapping r_dir = ([

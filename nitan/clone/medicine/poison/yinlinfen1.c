@@ -6,16 +6,16 @@ inherit COMBINED_ITEM;
 
 void create()
 {
-        set_name(WHT"µãÈ¼µÄÒøÁ×·Û"NOR, ({ "yinlin fen", "fen", "yinlin" }) );
+        set_name(WHT"é»ç‡ƒçš„éŠ€ç£·ç²‰"NOR, ({ "yinlin fen", "fen", "yinlin" }) );
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long","Ò»°üÒø¹âÉÁÉÁµÄ¶¾·Û¡£ÒÑ¾­µãÈ¼£¬¿ÉÒÔÍ¿(tu)ÔÚ±øÆ÷ÉÏÁË¡£\n" );
-                set("unit", "Ğ©");
+                set("long","ä¸€åŒ…éŠ€å…‰é–ƒé–ƒçš„æ¯’ç²‰ã€‚å·²ç¶“é»ç‡ƒï¼Œå¯ä»¥å¡—(tu)åœ¨å…µå™¨ä¸Šäº†ã€‚\n" );
+                set("unit", "äº›");
                 set("base_value", 5000);
-                set("base_unit", "°ü");
+                set("base_unit", "åŒ…");
                 set("base_weight", 30);
-                set("drug_color", ""WHT"Òø¹âÉÁÉÁ"NOR"");
+                set("drug_color", ""WHT"éŠ€å…‰é–ƒé–ƒ"NOR"");
                 set("pour_type", "cold_poison");
         }
         set_amount(1);

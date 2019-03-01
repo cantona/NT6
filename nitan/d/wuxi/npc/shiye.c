@@ -6,9 +6,9 @@ int ask_me();
 
 void create()
 {
-        set_name("ÀÏÉÜĞË", ( { "lao saoxing", "lao" }) );
-        set("title", "Öª¸®Ê¦Ò¯");
-        set("gender", "ÄĞĞÔ" );
+        set_name("è€ç´¹èˆˆ", ( { "lao saoxing", "lao" }) );
+        set("title", "çŸ¥åºœå¸«çˆº");
+        set("gender", "ç”·æ€§" );
         set("age", 57);
 
         set("combat_exp", 30000);

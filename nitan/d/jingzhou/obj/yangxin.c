@@ -1,4 +1,4 @@
-// yangxin.c ÑøĞÄÍè
+// yangxin.c é¤Šå¿ƒä¸¸
 
 inherit ITEM;
 
@@ -12,12 +12,12 @@ void init()
 
 void create()
 {
-        set_name("ÑøĞÄÍè", ({"yangxin wan", "wan"}));
+        set_name("é¤Šå¿ƒä¸¸", ({"yangxin wan", "wan"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
-                set("long", "ÕâÊÇÒ»¿Å°µºì·¢ÁÁµÄÑøĞÄÍè¡£\n");
+                set("unit", "é¡†");
+                set("long", "é€™æ˜¯ä¸€é¡†æš—ç´…ç™¼äº®çš„é¤Šå¿ƒä¸¸ã€‚\n");
                 set("value", 10000);
         }
         setup();
@@ -26,10 +26,10 @@ void create()
 int do_eat(string arg)
 {
         if (!id(arg))
-        return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+        return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
 
         addn("qi", 200, this_player());
-        message_vision("$N³ÔÏÂÒ»¿ÅÑøĞÄÍè£¬Ö»¾õµÃÌåÄÚÕæÁ¦Ô´Ô´×ÌÉú£¬²»¾øÈçÂÆ¡£\n", this_player());
+        message_vision("$Nåƒä¸‹ä¸€é¡†é¤Šå¿ƒä¸¸ï¼Œåªè¦ºå¾—é«”å…§çœŸåŠ›æºæºæ»‹ç”Ÿï¼Œä¸çµ•å¦‚ç¸·ã€‚\n", this_player());
         destruct(this_object());
         return 1;
 }

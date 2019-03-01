@@ -5,8 +5,8 @@
 #define ANIMAL_GENDER           3
 */
 
-#define DEFAULT_GENDER          "ÄÐÐÔ"
-#define MALE_GENDER             "ÄÐÐÔ"
-#define FEMALE_GENDER           "Å®ÐÔ"
-#define ANIMAL_GENDER           "ÎÞÐÔ"
+#define DEFAULT_GENDER          "ç”·æ€§"
+#define MALE_GENDER             "ç”·æ€§"
+#define FEMALE_GENDER           "å¥³æ€§"
+#define ANIMAL_GENDER           "ç„¡æ€§"
 

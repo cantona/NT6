@@ -5,12 +5,12 @@ inherit ITEM;
 int throw_ob(object me, object victim);
 void create()
 {
-   set_name(RED"Á¶ĞÄµ¯"NOR, ({"lianxin dan", "dan", "lianxin"}));
+   set_name(RED"ç…‰å¿ƒå½ˆ"NOR, ({"lianxin dan", "dan", "lianxin"}));
    if (clonep())
       set_default_object(__FILE__);
    else {
-      set("unit", "¿Å");
-      set("long", RED"Ò»¿ÅÁò»ÇÏõÁ×ËùÖÆµÄ»ğµ¯£¬ÄÚ¼Ğ¶¾Ò©¡£\n" NOR);
+      set("unit", "é¡†");
+      set("long", RED"ä¸€é¡†ç¡«ç£ºç¡ç£·æ‰€åˆ¶çš„ç«å½ˆï¼Œå…§å¤¾æ¯’è—¥ã€‚\n" NOR);
       set("skill", "feixing-shu");
       set("value", 0);
    }
@@ -21,7 +21,7 @@ int throw_ob(object me, object victim)
 {
         int ap, dp;
 
-   message_vision(BLU"$NÒ»ÑïÊÖ£¬ÒÂĞäÖĞ·É³öÒ»µãÀ¶Ó¡Ó¡µÄ»ğ»¨£¬ÈçÒ»Ö»·ÉÓ©£¬Ïò$nÆË¹ıÈ¥¡£\n" NOR, me, victim);
+   message_vision(BLU"$Nä¸€æšæ‰‹ï¼Œè¡£è¢–ä¸­é£›å‡ºä¸€é»è—å°å°çš„ç«èŠ±ï¼Œå¦‚ä¸€åªé£›è¢ï¼Œå‘$næ’²éå»ã€‚\n" NOR, me, victim);
    ap = me->query_skill("feixing-shu", 1);
    dp = (int)victim->query_skill("dodge");
    ap*=query("combat_exp", me)/1000;
@@ -30,7 +30,7 @@ int throw_ob(object me, object victim)
    ap = random(ap);
         
         if (ap > dp/2){
-   message_vision(RED"Ö»Ìı¼ûÒ»ÕóàÍàÍÉùÏì£¬ÄÇ·ÉÓ©ÒÑÂäÔÚ$nµÄ¼çÍ·£¬°Ñ$nµÄ¼ç²¿ÉÕµÃ½¹ÀÃ¡£\n" NOR, me, victim);
+   message_vision(RED"åªè½è¦‹ä¸€é™£å—¤å—¤è²éŸ¿ï¼Œé‚£é£›è¢å·²è½åœ¨$nçš„è‚©é ­ï¼ŒæŠŠ$nçš„è‚©éƒ¨ç‡’å¾—ç„¦çˆ›ã€‚\n" NOR, me, victim);
    me->improve_skill("feixing-shu", 1);
    victim->apply_condition("insect_poison", 12);
    set("poisoner", me, victim);
@@ -47,7 +47,7 @@ int throw_ob(object me, object victim)
    }
    else
         {
-        message_vision("$n·¢ÏÖ²»Ãî£¬¸Ï½ôÏòááÔ¾¿ªÊıÕÉ£¬¶ãÁË¿ªÈ¥¡£\n" NOR, me, victim);
+        message_vision("$nç™¼ç¾ä¸å¦™ï¼Œè¶•ç·Šå‘å¾Œèºé–‹æ•¸ä¸ˆï¼Œèº²äº†é–‹å»ã€‚\n" NOR, me, victim);
         if( !victim->is_killing(me) ) victim->kill_ob(me);
         me->start_busy(1+random(3));
         destruct(this_object());

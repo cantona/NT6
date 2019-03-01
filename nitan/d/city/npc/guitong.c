@@ -9,11 +9,11 @@ object  room  =  0;
 
 void  create()
 {
-    set_name("Çà÷İ¹êÍ¯",  ({"gui  tong",  "tong"  }));
-    set("gender",  "ÄĞĞÔ");
+    set_name("é’â–¡é¾œç«¥",  ({"gui  tong",  "tong"  }));
+    set("gender",  "ç”·æ€§");
     set("age",  13);
     set("per",  30);
-    set("long",  "Ò»Î»Ôú×ÅÇà÷İµÄ¹êÍ¯¡£\n");
+    set("long",  "ä¸€ä½ç´®è‘—é’â–¡çš„é¾œç«¥ã€‚\n");
     set("combat_exp",  5000);
     set_skill("force",  50);
     set_skill("unarmed",  50);
@@ -41,7 +41,7 @@ void  init()
 
 void  refuse_message  (object  me,  object  who)
 {
-    message_vision  ("$NËµ£º±ğ±ğ£¬É±$NÄÄÓĞÈü¹êÓĞÈ¤¡£\n",me,who);
+    message_vision  ("$Nèªªï¼šåˆ¥åˆ¥ï¼Œæ®º$Nå“ªæœ‰è³½é¾œæœ‰è¶£ã€‚\n",me,who);
 }
 
 int  do_fight(string  arg)
@@ -51,7 +51,7 @@ int  do_fight(string  arg)
 
     if  (arg  &&  present(arg,environment(who))==me)
     {
-        message_vision  ("$N¿´Ñù×ÓÊäºìÁËÑÛ£¬ÏëÕÒ$n´ò¼Ü¡£\n",who,me);
+        message_vision  ("$Nçœ‹æ¨£å­è¼¸ç´…äº†çœ¼ï¼Œæƒ³æ‰¾$næ‰“æ¶ã€‚\n",who,me);
         refuse_message  (me,who);
         return  1;
     }
@@ -65,7 +65,7 @@ int  do_kill(string  arg)
 
     if  (arg  &&  present(arg,environment(who))==me)
     {
-        message_vision  ("$N¿´Ñù×ÓÊäºìÁËÑÛ£¬ÏëÉ±$n¡£\n",who,me);
+        message_vision  ("$Nçœ‹æ¨£å­è¼¸ç´…äº†çœ¼ï¼Œæƒ³æ®º$nã€‚\n",who,me);
         refuse_message  (me,who);
         return  1;
     }

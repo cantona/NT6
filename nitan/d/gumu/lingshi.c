@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", HIC"ÁéÊÒ"NOR);
+        set("short", HIC"éˆå®¤"NOR);
         set("long", @LONG
-Ö»¼û¿Õ¿Õ¿õ¿õµÄÒ»×ù´óÌüÉÏ²¢ÁĞ·ÅÖøÎå¾ßÊ¯¹×¡£ÄıÉñÏ¸¿´£¬¼ûÁ½¾ß
-Ê¯¹×¹×¸ÇÒÑÃÜÃÜ¸Ç×Å£¬Ô­À´ÊÇ¹ÅÄ¹ÅÉ×æÊ¦ÁÖ³¯Ó¢ºÍĞ¡ÁúÅ®Ê¦¸µµÄ°²ÉíÖ®
-´¦¡£ÁíÍâ¶ş¾ßµÄ¹×¸Ç(guangai)È´Ö»ÍÆÉÏÒ»°ë£¬Ò²²»ÖªÆäÖĞÓĞÎŞÊ¬Ìå¡£
+åªè¦‹ç©ºç©ºæ› æ› çš„ä¸€åº§å¤§å»³ä¸Šä¸¦åˆ—æ”¾è‘—äº”å…·çŸ³æ£ºã€‚å‡ç¥ç´°çœ‹ï¼Œè¦‹å…©å…·
+çŸ³æ£ºæ£ºè“‹å·²å¯†å¯†è“‹è‘—ï¼ŒåŸä¾†æ˜¯å¤å¢“æ´¾ç¥–å¸«æ—æœè‹±å’Œå°é¾å¥³å¸«å‚…çš„å®‰èº«ä¹‹
+è™•ã€‚å¦å¤–äºŒå…·çš„æ£ºè“‹(guangai)å»åªæ¨ä¸Šä¸€åŠï¼Œä¹Ÿä¸çŸ¥å…¶ä¸­æœ‰ç„¡å±é«”ã€‚
 LONG        );
 
         set("exits", ([ 
@@ -34,29 +34,29 @@ int do_tui(string arg)
         object me=this_player();
 
         if (me->is_busy() || me->is_fighting())
-                return notify_fail("ÄãÕıÃ¦×ÅÄÄ£¡\n");
+                return notify_fail("ä½ æ­£å¿™è‘—å“ªï¼\n");
         if ( arg =="guangai")
         {
-                message_vision(YEL"$NÊ¹¾¢ÍÆ¿ªÁË¹×¸Ç¡£\n"NOR,me);
-                set_temp("marks/Ê¯¹×", 1, me);
+                message_vision(YEL"$Nä½¿å‹æ¨é–‹äº†æ£ºè“‹ã€‚\n"NOR,me);
+                set_temp("marks/çŸ³æ£º", 1, me);
                 return 1;
         }
-        return notify_fail("ÄãÒªÍÆÊ²Ã´£¿\n");
+        return notify_fail("ä½ è¦æ¨ä»€éº¼ï¼Ÿ\n");
 }
 
 int do_tang(string arg)
 {
         object me=this_player();       
 
-        if( !query_temp("marks/Ê¯¹×", me))return 0;
+        if( !query_temp("marks/çŸ³æ£º", me))return 0;
         if (me->is_busy() || me->is_fighting())
-                return notify_fail("ÄãÕıÃ¦×ÅÄÄ£¡\n");
+                return notify_fail("ä½ æ­£å¿™è‘—å“ªï¼\n");
         if ( arg =="guan")
         {
-                delete_temp("marks/Ê¯¹×", me);
+                delete_temp("marks/çŸ³æ£º", me);
                 me->move(__DIR__"shiguan");
-                message_vision(HIY"$NÌÉ½øÁËÊ¯¹×£¬¹×ÄÚÒÑÎŞ×ª²àâÅµØ¡£\n"NOR,me);
+                message_vision(HIY"$Nèººé€²äº†çŸ³æ£ºï¼Œæ£ºå…§å·²ç„¡è½‰å´é¤˜åœ°ã€‚\n"NOR,me);
                 return 1;
         }
-        return notify_fail("ÄãÏëÌÉÔÚÄÄÀï£¿\n");
+        return notify_fail("ä½ æƒ³èººåœ¨å“ªè£¡ï¼Ÿ\n");
 }

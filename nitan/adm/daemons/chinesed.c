@@ -16,34 +16,34 @@
 inherit F_SAVE;
 
 // some constatns
-nosave string *c_digit = ({ "Áã","Ê®","°Ù","Ç§","Íò","ÒÚ","Õ×" });
-nosave string *c_num = ({ "Áã","Ò»","¶ş","Èı","ËÄ","Îå","Áù","Æß","°Ë","¾Å","Ê®" });
-nosave string *c_num2 = ({ "Áã","Ò¼","·¡","²Î","ËÁ","Îé","Â½","Æâ","°Æ","¾Á","Ê²" });
-nosave string *sym_tian = ({ "¼×","ÒÒ","±û","¶¡","Îì","¼º","¸ı","ĞÁ","ÈÉ","¹ï" });
-nosave string *sym_di = ({ "×Ó","³ó","Òú","Ã®","³½","ËÈ","Îç","Î´","Éê","ÓÏ","Ğç","º¥" });
-// ×î´óÊıÖµµ¥Î»¿É×ÔÓÉÔö¼õ
-// string *unit = ({ "Íò","ÒÚ","Õ×","¾©","Ûò","èÌ","·y","¹µ","½§","Õı","ÔØ","¼«","ºãºÓÉ³","°¢É®µo","ÄÇÓÉËü","²»¿ÉË¼Òé","ÎŞÁ¿","´óÊı" });
-nosave string *unit = ({ "Íò","ÒÚ","Õ×" });
+nosave string *c_digit = ({ "éŒ¨","å‹","å•ƒ","ï”","å‹€","ç ¬","æ¬³" });
+nosave string *c_num = ({ "éŒ¨","ç¨","åª¼","ï¡‡","ä¾","æ‹»","é ","ï›¯","åŒ","å¬","å‹" });
+nosave string *c_num2 = ({ "éŒ¨","ç“","æ¥š","çµ±","ä½¹","æ–ª","ç¿»","ï›²","å‰¯","å¢¾","å¦¦" });
+nosave string *sym_tian = ({ "æ¨…","çœ£","æ¢¡","é–“","æ˜¡","æ’©","è»¾","é‡“","ï “","å°" });
+nosave string *sym_di = ({ "èµ½","å ¯","çªŒ","ç°¾","é­š","ä¾’","æ•","å¸¤","æ‰ ","è¡ƒ","å‰š","æ¼¸" });
+// éƒ”æ¹®æ…ç¡‰ç­‰å¼‡è¤«èµ»èš•å´ç†¬
+// string *unit = ({ "å‹€","ç ¬","æ¬³","å„”","è·","é§‰","æš„","åƒ±","è†š","æ·","å©¥","æ†¤","ç®ç¢©ä¼ˆ","é™ä»µç™¼","é¥’èš•å³","ç¥¥è¤«ä½·ç¥œ","æ‹¸è¬›","æ¹®æ…" });
+nosave string *unit = ({ "å‹€","ç ¬","æ¬³" });
 nosave mapping cache;
 mapping dict = 
 ([
-        "north"                :"±±±ß",
-        "south"                :"ÄÏ±ß",
-        "east"                :"¶«±ß",
-        "west"                :"Î÷±ß",
-        "northwest"        :"Î÷±±±ß",
-        "northeast"        :"¶«±±±ß",
-        "southwest"        :"Î÷ÄÏ±ß",
-        "southeast"        :"¶«ÄÏ±ß",
-        "down"                :"Â¥ÏÂ",
-        "up"                :"Â¥ÉÏ",
-        "changan"       :"³¤°²",
-        "city"          :"ÑïÖİ",
-        "kaifeng"       :"¿ª·â",
-        "hangzhou"      :"º¼Öİ",
-        "suzhou"        :"ËÕÖİ",
-        "dali"          :"´óÀí",
-        "beijing"       :"±±¾©",
+        "north"                :"æ§æ™š",
+        "south"                :"é°æ™š",
+        "east"                :"é™²æ™š",
+        "west"                :"æ˜¹æ™š",
+        "northwest"        :"æ˜¹æ§æ™š",
+        "northeast"        :"é™²æ§æ™š",
+        "southwest"        :"æ˜¹é°æ™š",
+        "southeast"        :"é™²é°æ™š",
+        "down"                :"ç¼ç‹Ÿ",
+        "up"                :"ç¼å¥»",
+        "changan"       :"é…—å‡",
+        "city"          :"æ ¨ç¬£",
+        "kaifeng"       :"ç¾²çŒ¾",
+        "hangzhou"      :"çç¬£",
+        "suzhou"        :"åŠ¼ç¬£",
+        "dali"          :"æ¹®ç‡´",
+        "beijing"       :"æ§å„”",
 ]);
 
 void add_translate(string key, string chn);
@@ -52,9 +52,9 @@ void remove_translate(string key);
 string initialize(int i)
 {
         if( i < 11 ) return c_num[i];
-        if( i < 20 ) return "Ê®"+c_num[i%10];
-        if( i < 100 ) return c_num[i/10]+"Ê®"+(i%10 ? c_num[i%10] : "" );
-        if( i < 1000 ) return c_num[i/100]+"°Ù"+(i%100 ? ((i%100<10?"Áã":0)||(i%100<20?"Ò»":""))+initialize(i%100) : "");
+        if( i < 20 ) return "å‹"+c_num[i%10];
+        if( i < 100 ) return c_num[i/10]+"å‹"+(i%10 ? c_num[i%10] : "" );
+        if( i < 1000 ) return c_num[i/100]+"å•ƒ"+(i%100 ? ((i%100<10?"éŒ¨":0)||(i%100<20?"ç¨":""))+initialize(i%100) : "");
 }
 
 void create()
@@ -63,7 +63,7 @@ void create()
         restore();
         cache = allocate_mapping(0);
         
-        /* ½¨Á¢ÊıÖµ¿ìÈ¡ */
+        /* è†˜è•¾æ…ç¡‰è¾¦ïŸ« */
         for(int i=0;i<=1000;i++)
                 cache[i] = initialize(i);
 }
@@ -75,11 +75,11 @@ void remove()
 
 string chinese_number(mixed i)
 {
-        // ÈôÊäÈë²ÎÊıÎª integer (»á overflow) 
+        // ï ¾æ€€ï µçµ±æ…å³ˆ integer (é — overflow) 
         if( intp(i) )
         {
                 if (i < 0)
-                        return "¸º" + chinese_number(-i);
+                        return "è›¹" + chinese_number(-i);
                 if (i < 11)
                         return c_num[i];
                 if (i < 20)
@@ -148,16 +148,16 @@ string chinese_number(mixed i)
                         return chinese_number(i / 1000000000000) + c_digit[6] +
                         chinese_number(i % 1000000000000);
             }
-            // ÈôÊäÈë²ÎÊıÎª string (ÎŞÏŞÎ»Êı´¦Àí)
+            // ï ¾æ€€ï µçµ±æ…å³ˆ string (æ‹¸ç™¹å¼‡æ…æ­ç‡´)
         else if( stringp(i) && i != "")
         {
                    int j, k, *n=({}), usize = sizeof(unit);
                 string *u=({""});
                 string msg;
                 
-                if( i[0] == '-' ) return "¸º" + chinese_number(i[1..]);
+                if( i[0] == '-' ) return "è›¹" + chinese_number(i[1..]);
                 
-                // ½«Êı×ÖÒÀËÄÎ»Êı²ğ½â
+                // è”šæ…è¶¼ç”¡ä¾å¼‡æ…èè³¤
                 while( (msg = i[<(j+=4)..<(j-3)])!="" )
                 {                        
                         n += ({ to_int(msg) });
@@ -167,12 +167,12 @@ string chinese_number(mixed i)
                 j = k = sizeof(n);
                         
                 while(j--)
-                        if( n[j] ) msg += (j+1<k ? (n[j+1] && n[j]>999 ? chinese_number(n[j]):"Áã"+chinese_number(n[j])):chinese_number(n[j])) + u[j];
+                        if( n[j] ) msg += (j+1<k ? (n[j+1] && n[j]>999 ? chinese_number(n[j]):"éŒ¨"+chinese_number(n[j])):chinese_number(n[j])) + u[j];
                         else if( u[j] == unit[usize-1] ) msg += unit[usize-1];
 
                 return msg;
         }
-        else return "´íÎóÊıÖµ";
+        else return "æ¸£æ˜«æ…ç¡‰";
 }
 
 nomask string chinese_period(int t)
@@ -187,13 +187,13 @@ nomask string chinese_period(int t)
         n = t /60/60/24/30%13;
         y = t /60/60/24/30/13;
 
-        if(y) time = cache[y] + "ÄêÓÖ";
-        if(n) time += cache[n] + "¸öÔÂ"                + (y?"":"ÓÖ");
-        if(d) time += cache[d] + "Ìì"                + (n||y?"":"ÓÖ");
-        if(h) time += cache[h] + "Ğ¡Ê±"                + (d||n||y?"":"ÓÖ");
-        if(m) time += cache[m] + "·Ö"                + (h||d||n||y?"":"ÓÖ");
+        if(y) time = cache[y] + "çˆ›è¡±";
+        if(n) time += cache[n] + "è·ºå "                + (y?"":"è¡±");
+        if(d) time += cache[d] + "æ¯"                + (n||y?"":"è¡±");
+        if(h) time += cache[h] + "è‹¤å¥€"                + (d||n||y?"":"è¡±");
+        if(m) time += cache[m] + "ç…¦"                + (h||d||n||y?"":"è¡±");
 
-        return time+cache[s]+"Ãë";        
+        return time+cache[s]+"éƒ";        
 }
 
 int chinese_to_number(mixed chinese)
@@ -306,7 +306,7 @@ string cctime(int date)
         wday = lt[LT_WDAY];
         mon = lt[LT_MON] + 1; 
         year = lt[LT_YEAR];
-        return sprintf("%dÄê%dÔÂ%dÈÕ %dÊ±%d·Ö%dÃë", year, mon, mday, hour, min, sec);
+        return sprintf("%dçˆ›%då %dï Ÿ %då¥€%dç…¦%déƒ", year, mon, mday, hour, min, sec);
 }
 
 string chinese_date(int date)
@@ -316,7 +316,7 @@ string chinese_date(int date)
         if (date <=0) date=1;
         local = localtime(date);
         
-        return sprintf("%s%sÄê%sÔÂ%sÈÕ%sÊ±%s¿Ì",
+        return sprintf("%s%sçˆ›%så %sï Ÿ%så¥€%sè¦¦",
                 sym_tian[local[LT_YEAR] % 10], sym_di[local[LT_YEAR] % 12],
                 chinese_number(local[LT_MON] + 1),
                 chinese_number(local[LT_MDAY] + (local[LT_HOUR] > 23 ? 1 : 0)),
@@ -336,7 +336,7 @@ string chinese_monthday(int date)
 {
         mixed *local;
         local = NATURE_D->query_localtime(date);
-        return sprintf("%sÔÂ%sÈÕ",
+        return sprintf("%så %sï Ÿ",
                        chinese_number(local[LT_MON] + 1),
                        chinese_number(local[LT_MDAY]));
 }
@@ -418,8 +418,8 @@ string itoa(int i)
 
 string chinese_time(int type,string get_time)
 {
-/* ²»ÒªÊ¹ÓÃlocaltimeÀ´´«µİget_time£¬Ê¹ÓÃctime(time())¾ÍÊÇÕıÈ·µÄÁË£¡
-ÔÚÇóµ±Ç°Ê±¼äÊ±ÓÃlocaltimeÊÇÎŞËùÎ½£¬µ«ÊÇÒª×ª»»Ò»¸öÊ±¼ä»¹ÊÇctimeºÃµã£¡*/
+/* ç¥¥çŒå¦èššlocaltimeæ‡‚æ›è°get_timeã„›å¦èššctime(time())æ†©å²†æ·ï è…”è³¸ã„
+å©“ï çµïå¥€æ½”å¥€èššlocaltimeå²†æ‹¸å€å½–ã„›ç­å²†çŒè›Œé™ç¨è·ºå¥€æ½”éœå²†ctimeç–‘è¸ã„*/
 
         string e_time, week, month, year;
         string c_week, c_year, c_month, c_time;
@@ -444,18 +444,18 @@ string chinese_time(int type,string get_time)
                 chinese_number(year[2]-48),
                 chinese_number(year[3]-48));
 
-        c_year =c_year +"Äê";
-        c_month  = c_month + "ÔÂ";
-        if(c_week=="Æß")
-        c_week="ÈÕ";
+        c_year =c_year +"çˆ›";
+        c_month  = c_month + "å ";
+        if(c_week=="ï›¯")
+        c_week="ï Ÿ";
 
-        c_week = " ĞÇÆÚ"+c_week;
+        c_week = " é™ï›ª"+c_week;
 
-        c_time = chinese_number(day) + "ÈÕ";
-        c_time += chinese_number(hour) + "µã";
-        c_time += chinese_number(minute) + "·Ö";
+        c_time = chinese_number(day) + "ï Ÿ";
+        c_time += chinese_number(hour) + "è¸";
+        c_time += chinese_number(minute) + "ç…¦";
         // maybe not need srcond to show
-        // c_time += chinese_number(second) + "Ãë";
+        // c_time += chinese_number(second) + "éƒ";
 
         if (type) {
                 switch( type ) {
@@ -463,10 +463,10 @@ string chinese_time(int type,string get_time)
                         case 2: return c_year+c_month+c_time;
                         case 3: return c_month+c_time+c_week;
                         case 4: return c_month+c_time;
-                        case 5: return year+"Äê"+(member_array(month, month_name) + 1)+
-                                "ÔÂ"+day+"ÈÕ"+hour+"µã"+minute+"·Ö";
+                        case 5: return year+"çˆ›"+(member_array(month, month_name) + 1)+
+                                "å "+day+"ï Ÿ"+hour+"è¸"+minute+"ç…¦";
                         case 6: return (member_array(month, month_name) + 1)+
-                                "ÔÂ"+day+"ÈÕ"+hour+"µã"+minute+"·Ö";
+                                "å "+day+"ï Ÿ"+hour+"è¸"+minute+"ç…¦";
                         case 7: {
                                 return sprintf("%s/%s/%s",year,
                                 strlen(itoa(member_array(month, month_name) + 1))<=1?

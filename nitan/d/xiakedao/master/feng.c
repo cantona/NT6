@@ -1,17 +1,17 @@
-// feng.c ·çÇåÑï
+// feng.c é¢¨æ¸…æš
 
 inherit NPC;
 inherit F_MASTER;
 
 void create()
 {
-        set_name("·çÇåÑï", ({ "feng-qingyang", "feng", "qingyang" }));
-        set("title", "»ªÉ½µÚÊ®¶ş´ú½£×Ú³¤ÀÏ");
+        set_name("é¢¨æ¸…æš", ({ "feng-qingyang", "feng", "qingyang" }));
+        set("title", "è¯å±±ç¬¬åäºŒä»£åŠå®—é•·è€");
         set("long", 
-"Õâ±ãÊÇµ±ÄêÃûÕğ½­ºşµÄ»ªÉ½ÃûËŞ·çÇåÑï¡£ËûÉíÖøÇàÅÛ£¬ÉñÆøÒÖÓôÁ³Èç½ğÖ½¡£
-Éí²ÄÊİ³¤£¬Ã¼Óî¼äÒ»Ö±ÁıÕÖ×ÅÒ»¹Éµ­µ­µÄÓÇÉËÉñÉ«£¬ÏÔÈ»¶Ôµ±ÄêµÄ½£×ÚÆø×Ú
-Ö®ÕùÒ»Ö±ÄÑÒÔÍü»³¡£\n");
-        set("gender", "ÄĞĞÔ");
+"é€™ä¾¿æ˜¯ç•¶å¹´åéœ‡æ±Ÿæ¹–çš„è¯å±±åå®¿é¢¨æ¸…æšã€‚ä»–èº«è‘—é’è¢ï¼Œç¥æ°£æŠ‘é¬±è‡‰å¦‚é‡‘ç´™ã€‚
+èº«æç˜¦é•·ï¼Œçœ‰å®‡é–“ä¸€ç›´ç± ç½©è‘—ä¸€è‚¡æ·¡æ·¡çš„æ†‚å‚·ç¥è‰²ï¼Œé¡¯ç„¶å°ç•¶å¹´çš„åŠå®—æ°£å®—
+ä¹‹çˆ­ä¸€ç›´é›£ä»¥å¿˜æ‡·ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 68);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -55,7 +55,7 @@ void create()
         map_skill("blade", "fanliangyi-dao");
         map_skill("strike", "hunyuan-zhang");
 
-        create_family("»ªÉ½ÅÉ", 12, "µÜ×Ó");
+        create_family("è¯å±±æ´¾", 12, "å¼Ÿå­");
         set("family/master_id", "feng qingyang");
 
         set("chat_chance_combat", 80);
@@ -90,7 +90,7 @@ void greeting(object ob)
         int i;
 
         obj = all_inventory(environment(me));
-        command("say ·ÇÒ²£¬·ÇÒ²£¬ÕâÕĞÓ¦¸Ã½£ÒâÇú¶ø½£ÊÆÖ±¡£");
+        command("say éä¹Ÿï¼Œéä¹Ÿï¼Œé€™æ‹›æ‡‰è©²åŠæ„æ›²è€ŒåŠå‹¢ç›´ã€‚");
         for(i=0; i<sizeof(obj); i++)
         {
                 if( query("id", obj[i]) == "zhang-sanfeng" )

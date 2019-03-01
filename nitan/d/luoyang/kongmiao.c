@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����");
+        set("short", "孔廟");
         set("long", @LONG
-�����ǿ���������п׷����������ʵ۶������������˼������
-���Լ��Ľ�ɽ��𢣬�����ʵ���ȻҲ�����⡣���ۺ��˵��ˣ����Ϲ��Ͼ�
-��������ݡ�
+這裡是孔廟正殿，內有孔夫子像。歷代皇帝都懂得利用儒教思想來鞏
+固自己的江山社稷，當朝皇帝自然也不例外。不論何人到此，都畢恭畢敬
+地上香禮拜。
 LONG);
         set("no_clean_up", 0);
         set("exits", ([

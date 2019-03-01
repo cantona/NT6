@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����¥");
+        set("short", "北四樓");
         set("long", WHT@LONG
-���ϱ���¥��ĿԶ�����������Ǵ��������ɽ���������Ѷ�����ç
-ç�Բԣ���ب���⣬������ͻȻ�������棬�����ٶ����ƶ�ȥ��ǡ��һ
-���޴����������֪��������Ҳ��֪����ȥ��
+登上北四樓極目遠眺，但見長城從西南面的山脊曲折蜿蜒而來，莽
+莽蒼蒼，橫亙天外，在這裡突然折向南面，不久再度逶迤東去，恰似一
+條巨大的遊龍，不知其所來，也不知其所去。
 LONG
 NOR  );
         set("outdoors", "changcheng");

@@ -1,4 +1,4 @@
-// jinlun.c ½ğÂÖ
+// jinlun.c é‡‘è¼ª
 // Last Modified by winder on Sep. 7 2001
 
 #include <ansi.h>;
@@ -8,17 +8,17 @@ inherit F_UNIQUE;
 
 void create()
 {
-        set_name( HIY "½ğÂÖ" NOR,({ "jin lun" ,"lun" ,"jinlun" }));
+        set_name( HIY "é‡‘è¼ª" NOR,({ "jin lun" ,"lun" ,"jinlun" }));
         set_weight(100000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long",HIY"ÕâÊÇÒ»±ú½ğ¹âÉÁÉÁµÄ·¨ÂÖ¡£\n"NOR);
+                set("unit", "æŠŠ");
+                set("long",HIY"é€™æ˜¯ä¸€æŸ„é‡‘å…‰é–ƒé–ƒçš„æ³•è¼ªã€‚\n"NOR);
                 set("value", 10000);
                 set("material", "gold");
-                set("wield_msg", "$N¡¸à§¡¹µÄÒ»Éù³é³öÒ»±ú$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg","$N½«ÊÖÖĞµÄ$n·Å»ØÑü¼ä¡£\n");
+                set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€è²æŠ½å‡ºä¸€æŸ„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg","$Nå°‡æ‰‹ä¸­çš„$næ”¾å›è…°é–“ã€‚\n");
         }
         init_hammer(150);
         setup();

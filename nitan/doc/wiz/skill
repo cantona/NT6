@@ -1,214 +1,214 @@
 
-©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤
-                     ¡¾ÏÀ¿ÍĞĞÒ»°ÙÎä¼¼Æª¡¿
-©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤
-    Îä¼¼ÊÇÍæ¼ÒÔÚÓÎÏ·ÖĞËùÄÜÑ§µ½µÄÎä¹¦ºÍ¼¼ÄÜ¡£Íæ¼Ò¿ÉÒÔ²é¿´¸÷ÏîÎä¹¦µÄ
-Ñ§Ï°ºÍÓ¦ÓÃ¡£ÕâĞ©°ïÖúÎÄ¼ş¶¼ÊÇ»ã×ÜÎÄ¼ş£¬ÏêÏ¸½éÉÜ£¬Ö»ºÃÇë¿´¸÷ÃÅÅÉµÄ°ï
-ÖúÎÄ¼şÁË¡£
-ÀıÈç£ºhelp skill_apl   ÓÃÀ´²é¿´Îä¼¼ÔËÓÃÏêÎö¡£
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+                     ã€ä¿ å®¢è¡Œä¸€ç™¾æ­¦æŠ€ç¯‡ã€‘
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    æ­¦æŠ€æ˜¯ç©å®¶åœ¨éŠæˆ²ä¸­æ‰€èƒ½å­¸åˆ°çš„æ­¦åŠŸå’ŒæŠ€èƒ½ã€‚ç©å®¶å¯ä»¥æŸ¥çœ‹å„é …æ­¦åŠŸçš„
+å­¸ç¿’å’Œæ‡‰ç”¨ã€‚é€™äº›å¹«åŠ©æ–‡ä»¶éƒ½æ˜¯åŒ¯ç¸½æ–‡ä»¶ï¼Œè©³ç´°ä»‹ç´¹ï¼Œåªå¥½è«‹çœ‹å„é–€æ´¾çš„å¹«
+åŠ©æ–‡ä»¶äº†ã€‚
+ä¾‹å¦‚ï¼šhelp skill_apl   ç”¨ä¾†æŸ¥çœ‹æ­¦æŠ€é‹ç”¨è©³æã€‚
 
-        ¡¼skill_comb ¡½  Îä¹¦»¥±¸ÁĞ±í
-        ¡¼skill_know ¡½  ÖªÊ¶¼¼ÄÜÁĞ±í
-        ¡¼wuguan     ¡½  Îä¹İ
-        ¡¼force      ¡½  ÄÚ¹¦¹¦ÓÃ
+        â–¡skill_comb â–¡  æ­¦åŠŸäº’å‚™åˆ—è¡¨
+        â–¡skill_know â–¡  çŸ¥è­˜æŠ€èƒ½åˆ—è¡¨
+        â–¡wuguan     â–¡  æ­¦é¤¨
+        â–¡force      â–¡  å…§åŠŸåŠŸç”¨
 
-    Îä¹¦·Ö¿ÕÊÖÈ­½ÅºÍ±øÆ÷¡£
-    Ò»°ãÀ´Ëµ£¬³¤±øÆ÷Îä¹¦¹¥»÷·¶Î§´ó£¬µĞÊÖ²»ÈİÒ×ÉÁ±Ü£¬È´ÈİÒ×ÕĞ¼Ü£»¶ø
-¶Ì±øÆ÷µÄ¹¦·òÁéÇÉ½üÉí£¬µĞÊÖ²»Ò×ÕĞ¼Üµ½£¬¶àÑ¡ÔñÉÁ±Ü¡£±øÆ÷ÓĞ·æÈñÓë·ñÒÔ
-¼°³ÁÖØÓë·ñµÄ·Ö±ğ£¬ÕâÒ²Ó°Ïìµ½¶ÔµĞÊÖµÄÉËº¦³Ì¶ÈÒÔ¼°µĞÊÖËù²ÉÈ¡µÄ¿ËÖÆÕĞ
-ÊıµÄÑ¡Ôñ¡£
+    æ­¦åŠŸåˆ†ç©ºæ‰‹æ‹³è…³å’Œå…µå™¨ã€‚
+    ä¸€èˆ¬ä¾†èªªï¼Œé•·å…µå™¨æ­¦åŠŸæ”»æ“ŠèŒƒåœå¤§ï¼Œæ•µæ‰‹ä¸å®¹æ˜“é–ƒé¿ï¼Œå»å®¹æ˜“æ‹›æ¶ï¼›è€Œ
+çŸ­å…µå™¨çš„åŠŸå¤«éˆå·§è¿‘èº«ï¼Œæ•µæ‰‹ä¸æ˜“æ‹›æ¶åˆ°ï¼Œå¤šé¸æ“‡é–ƒé¿ã€‚å…µå™¨æœ‰é‹’éŠ³èˆ‡å¦ä»¥
+åŠæ²‰é‡èˆ‡å¦çš„åˆ†åˆ¥ï¼Œé€™ä¹Ÿå½±éŸ¿åˆ°å°æ•µæ‰‹çš„å‚·å®³ç¨‹åº¦ä»¥åŠæ•µæ‰‹æ‰€æ¡å–çš„å…‹åˆ¶æ‹›
+æ•¸çš„é¸æ“‡ã€‚
 
-    ÏÂÁĞÊÇÄ¿Ç°ÏÀ¿ÍĞĞÒ»°ÙµÄÎä¹¦ÁĞ±í£¨°´Æ´Òô×ÖÄ¸Ë³Ğò£©¡£Äã¿ÉÒÔÀûÓÃ¸÷
-¸öÃÅÅÉµÄ°ïÖúÎÄ¼şÁË½â±¾ÃÅ¹¦·òµÄÏêÏ¸Çé¿ö£¬Ò²Ö±½ÓÓÃhelp Îä¹¦Ãû À´²éÑ¯
-Ã¿¸öÎä¹¦µÄ½éÉÜ¡¢Ñ§Ï°Ìõ¼şÒÔ¼°ËüµÄ¾øÕĞ¡¢¾øÕĞµÄĞ§Á¦ºÍ³öÊÖÌõ¼şµÈ¡£
-    Èç£ºhelp bibo-shengong£¬½«ÏÔÊ¾±Ì²¨Éñ¹¦µÄ½éÉÜºÍÄÚÍâ¹¦Ê¹ÓÃ¡£Èç¹û
- help bibo-shengong.roar£¬½«ÏÔÊ¾±Ì²¨Éñ¹¦Ö®±Ìº£Éú³±ÇúµÄ½éÉÜºÍÊ¹ÓÃÌõ
-¼ş¡£ 
-
-
-                                ÄÚ¹¦(force)
-°Ë»ÄÁùºÏ¹¦   åĞÒ£   bahuang-gong      °×ÔÆĞÄ·¨     ºãÉ½   baiyun-xinfa
-±±Ú¤Éñ¹¦     åĞÒ£   beiming-shengong  ±Ì²¨Éñ¹¦     ÌÒ»¨   bibo-shengong
-±ùÑ©ĞÄ·¨     ÁèÏö   binxue-xinfa      ¹éÔªÍÂÄÉ·¨   ÌúÕÆ   guiyuan-tunafa
-¸òó¡¹¦       °×ÍÕ   hamagong          º®±ùÕæÆø     áÔÉ½   hanbing-zhenqi
-ºì»¨Éñ¹¦     ºì»¨»á honghua-shengong  »ªÉ½ÄÚ¹¦     »ªÉ½   huashan-neigong
-»ìÌìÆø¹¦     Ø¤°ï   huntian-qigong    »ìÔªÒ»Æø¹¦   ÉÙÁÖ   hunyuan-yiqi      
-»ØÑãĞÄ·¨     ºâÉ½   huiyan-xinfa      »¯¹¦´ó·¨     ĞÇËŞ   huagong-dafa
-¾ÅÑôÉñ¹¦     Ã÷½Ì   jiuyang-shengong  ¿û»¨ĞÄ·¨     ºÚÄ¾ÑÂ kuihua-xinfa
-¿İÈÙìø¹¦     ´óÀí   kurong-changong   ÁÙ¼ÃÊ®¶ş×¯   ¶ëáÒ   linji-zhuang
-ÁúÏó°ãÈô¹¦   Ñ©É½ËÂ longxiang         ÅÍÊ¯Éñ¹¦     Ì©É½   panshi-shengong
-ÇàÚ¤Ğş¹¦     Çà³Ç   qingming-xuangong ÉñÁúĞÄ·¨     ÉñÁú   shenlong-xinfa
-ÉñÔª¹¦       Ä½Èİ   shenyuan-gong     ÉñÕÕ¾­       ¹«¹²   shenzhao-jing
-Ì«¼«Éñ¹¦     Îäµ±   taiji-shengong    Ì«Ğş¹¦       ¹«¹²   taixuan-gong
-Îå¶¾Éñ¹¦     Îå¶¾   wudu-shengong     ÏÈÌìÆø¹¦     È«Õæ   xiantian-qigong
-Ğ¡ÎŞÏà¹¦     Ñ©É½ËÂ xiaowuxiang       ÎüĞÇ´ó·¨     ºÚÄ¾ÑÂ xixing-dafa
-ĞşÌìÎŞ¼«¹¦   À¥ÂØ   xuantian-wuji     Ò×½î¾­       ÄÏ±±ÉÙÁÖ yijinjing
-ÔÆÁúÉñ¹¦     ÔÆÁú   yunlong-shengong  ÓñÅ®ĞÄ·¨     ¹ÅÄ¹   yunv-xinfa
-Õ¾×®¹¦       ÄÏÉÙÁÖ zhanzhuang-gong   ×ÏÏ¼Éñ¹¦     »ªÉ½   zixia-shengong
-
-                                Çá¹¦(dodge)
-°µÓ°¸¡Ïã     ÌÒ»¨   anying-fuxiang    ±ÙĞ°½£·¨     ¹«¹²   bixie-jian
-ó¸òÜ²½·¨     °×ÍÕ   chanchu-bufa      ´©»¨ÈÆÊ÷     Çà³Ç   chuanhua
-·ÉĞÇÊõ       ĞÇËŞ   feixing-shu       ·ÉÑà»ØÏè     »ªÉ½   feiyan-huixiang
-·çÉñ¾÷       Ì©É½   fengshenjue       ¸¡¹âÂÓÓ°     áÔÉ½   fuguanglueying
-»ªÉ½Éí·¨     »ªÉ½   huashan-shenfa    ½ğÑã¹¦       È«Õæ   jinyan-gong
-À¥ÂØÉí·¨     À¥ÂØ   kunlun-shenfa     ÁèĞé²½       ºãÉ½   lingxu-bu
-Áè²¨Î¢²½     åĞÒ£   lingboweibu       Æ®Òİ²½·¨     ºÚÄ¾ÑÂ piaoyibu
-Ç¬À¤´óÅ²ÒÆ   Ã÷½Ì   qiankun-danuoyi   ÇàòğÉí·¨     Ã÷½Ì   qingfu-shenfa     
-ÇïÑãÄÏ»Ø     ºâÉ½   qiuyan-nanhui     ÉÙÁÖÉí·¨     ÉÙÁÖ   shaolin-shenfa    
-Éí¿ÕĞĞ       Ñ©É½ËÂ shenkong-xing     ÉñĞĞ°Ù±ä     ¹«¹²   shenxing-baibian  
-ÌúÕÆË®ÉÏÆ®   ÌúÕÆ   shuishangpiao     Ã·Ñ©Æ®Ïã²½   ÁèÏö   snowstep
-Ì«Ğş¹¦       ¹«¹²   taixuan-gong      Ì¤Ñ©ÎŞºÛ     À¥ÂØ   taxue-wuhen
-ÌìÄÏ²½·¨     ´óÀí   tiannan-step      ÌİÔÆ×İ       Îäµ±   tiyunzong
-Îå¶¾ÑÌÂÜ²½   Îå¶¾   wudu-yanluobu     åĞÒ£ÓÎ       Ø¤°ï   xiaoyaoyou
-ÑàË«·É       ¹«¹²   yanfly            ÑàÁéÉí·¨     Ä½Èİ   yanling-shenfa
-Ò»Î­¶É½­     ÄÏÉÙÁÖ yiwei-dujiang     ÒâĞÎ²½·¨     ÉñÁú   yixingbu
-ÔÂÓ°Îè²½     åĞÒ£   yueying-wubu      ÓñÅ®Éí·¨     ¹ÅÄ¹   yunv-shenfa
-ÔÆÁúÉí·¨     ÔÆÁú   yunlong-shenfa    ÓÎÁúÉí·¨     ºì»¨   youlong-shenfa
-ÖîÌì»¯Éí²½   ¶ëáÒ   zhutian-bu        ÕªĞÇ¹¦       ĞÇËŞ   zhaixinggong
-
-                                ½£·¨(sword)
-±ÙĞ°½£·¨     ¹«¹²   bixie-jian        ¼Ù±ÙĞ°½£·¨   ¹«¹²   bixie-sword
-³åÁé½£·¨     »ªÉ½   chongling-sword   ´ïÄ¦½£       ÉÙÁÖ   damo-jian
-´ïÄ¦½£       ÄÏÉÙÁÖ damo-sword        ¶Î¼Ò½£       ´óÀí   duanjia-sword
-·üÄ§½£       ÉÙÁÖ   fumo-jian         ·üÄ§½£       ÄÏÉÙÁÖ fumo-sword
-ºãÉ½½£·¨     ºãÉ½   hengshan-jian     ºâÉ½½£·¨     ºâÉ½   hengshan-sword
-»ªÉ½½£·¨     »ªÉ½   huashan-sword     »Ø·ç·÷Áø½£   ¶ëáÒ   huifeng-jian
-ĞşÌú½£·¨     ¹ÅÄ¹   iron-sword        ½ğÉß½£·¨     ¹«¹²   jinshe-jian
-¿ñ·ç½£·¨     »ªÉ½   kuangfeng-jian    ÕıÁ½ÒÇ½£·¨   À¥ÂØ   liangyi-sword
-Á½ÒÇ½£·¨     Îäµ±   liangyi-jian      ÁÒ»ğ½£·¨     Ã÷½Ì   liehuo-jian
-¶À¹Â¾Å½£     »ªÉ½   lonely-sword      Âä»¨Ê®Èı½£   ºì»¨   luohua-jian
-ÂäÓ¢Éñ½£     ÌÒ»¨   luoying-shenjian  ²»¶¯Ã÷Íõ½£   Ñ©É½   mingwang-jian
-Ä½Èİ½£·¨     Ä½Èİ   murong-sword      Çàòş½£·¨     Îå¶¾   qingmang-sword
-È«Õæ½£·¨     È«Õæ   quanzhen-jian     ÉßµºÆæ¹¦     ÉñÁú   shedao-qigong
-Ê¥»ğÁî·¨     Ã÷½Ì   shenghuo-ling     ËÉ·ç½£·¨     Çà³Ç   songfeng-jian
-áÔÉ½½£·¨     áÔÉ½   songshan-sword    Ì«¼«½£·¨     Îäµ±   taiji-jian
-Ì©É½½£·¨     Ì©É½   taishan-sword     ÌÆÊ«½£·¨     ¹«¹²   tangshi-jian
-ÌìÓğÆæ½£     åĞÒ£   tianyu-qijian     Îäµ±½£·¨     Îäµ±   wudang-jian
-ÎåÔÏÆßÏÒ½£   ºÚÄ¾ÑÂ wuyun-jian        Ñ©É½½£·¨     ÁèÏö   xueshan-sword
-Ñ¸À×Ê®Áù½£   À¥ÂØ   xunlei-sword      ÔÆÁú½£·¨     ÔÆÁú   yunlong-jian
-ÓñÅ®½ğÕë½£   »ªÉ½   yunu-sword        ÓñÅ®ËØĞÄ½£   ¹ÅÄ¹   yunv-jian
-Óñóï½£·¨     ÌÒ»¨   yuxiao-jian
-
-                                ¸«·¨(axe)
-¶ÏÔÆ¸«       ´óÀí   duanyun-fu
-
-                                µ¶·¨(blade)
-´È±¯µ¶       ÉÙÁÖ   cibei-dao           ´È±¯µ¶       ÄÏÉÙÁÖ cibei-blade
-·´Á½ÒÇµ¶·¨   »ªÉ½   fanliangyi-dao      ºú¼Òµ¶·¨     ¹«¹²   hujia-daofa
-½ğÎÚµ¶·¨     ÁèÏö   jinwu-blade         ¿ñ·çµ¶·¨     ¹«¹²   kuangfeng-blade
-ÁÒÑæµ¶·¨     Ã÷½Ì   lieyan-dao          ËÄÏóÁùºÏµ¶   Ø¤°ï   liuhe-blade
-Ä½Èİµ¶·¨     Ä½Èİ   murong-blade        Çï¸èÆßµ¶     ºì»¨   qiuge-dao
-È¼Ä¾µ¶·¨     ÄÏÉÙÁÖ ranmu-blade         ÈçÒâµ¶·¨     åĞÒ£   ruyi-dao
-Ì«¼«µ¶·¨     Îäµ±   taiji-dao           ĞŞÂŞµ¶       ÄÏÉÙÁÖ xiuluo-blade
-ĞŞÂŞµ¶       ÉÙÁÖ   xiuluo-dao          Îå»¢¶ÏÃÅµ¶   ÔÆÁú   wuhu-duanmendao
-Ñªµ¶         Ñ©É½ËÂ xue-dao             ÑãĞĞµ¶       ¶ëáÒ   yanxing-dao
-
-                                ×¦·¨(claw)
-Áú×¦¹¦       ÄÏÉÙÁÖ dragon-claw         Ó¥×¦¹¦       ÄÏÉÙÁÖ eagleg-claw
-¼ÅÃğ×¦       ÄÏÉÙÁÖ jimie-claw          ¾ÅÒõ°×¹Ç×¦   ¹«¹²   jiuyin-baiguzhao
-Áú×¦¹¦       ÉÙÁÖ   longzhua-gong       ÈıÒõòÚò¼×¦   ĞÇËŞ   sanyin-wugongzhao
-ËÑ¹ÇÓ¥×¦¹¦   Ã÷½Ì   sougu               Ó¥×¦¹¦       ÉÙÁÖ   yingzhua-gong
-ÔÆÁú×¦       ÔÆÁú   yunlong-zhua
-
-                                ¹÷·¨(club)
-Î¤ÍÓ¹÷       ÄÏÉÙÁÖ weituo-club         Î¤ÍÔèÆ       ÄÏÉÙÁÖ weituo-chu
-Î¤ÍÓ¹÷       ÉÙÁÖ   weituo-gun          ÉÙÁÖ×í¹÷     ÄÏÉÙÁÖ zui-club
-ÉÙÁÖ×í¹÷     ÉÙÁÖ   zui-gun
-
-                                È­·¨(cuff)
-Ì«×æ³¤È­     ¹«¹²   changquan           »¢º×Ë«ĞÎÈ­   ¹«¹²   huhe-quan
-ÉÙÁÖÄÏÈ­     ÄÏÉÙÁÖ shaolin-cuff        ºïÈ­         ÔÆÁú   houquan
-½ğÓñÈ­       ´óÀí   jinyu-quan          ½ğ¸Õè¤åÈÄ¸È­ Ñ©É½   yujiamu-quan
-ÉÙÁÖÂŞººÈ­   ÉÙÁÖ   luohan-quan         ÉÙÁÖÂŞººÈ­   ÄÏÉÙÁÖ luohan-cuff
-°Ù»¨´íÈ­     ºì»¨   baihua-cuoquan      ÕğÌìÈ­·¨     À¥ÂØ   zhentian-cuff
-¸òó¡È­       °×ÍÕ   hamaquan            ÆÆÓñÈ­       »ªÉ½   poyu-quan
-´¿ÑôÈ­       È«Õæ   chunyang-quan       ÆßÉËÈ­       Ã÷½Ì   qishang-quan
-´ó½ğ¸ÕÈ­     ÄÏÉÙÁÖ jingang-cuff        ´ó½ğ¸ÕÈ­     ÉÙÁÖ   jingang-quan
-
-                                ¶Ì±ø(dagger)
-Ê¯¹Ä´òÑ¨±Ê·¨ ºÚÄ¾ÑÂ shigu-bifa
-
-                                Ö¸·¨(finger)
-¶àÂŞÒ¶Ö¸     ÄÏÉÙÁÖ duoluoye-finger     ²ÎºÏÖ¸       Ä½Èİ   canhe-finger
-Ä¦Ú­Ö¸       ÄÏÉÙÁÖ mohe-finger         Äé»¨Ö¸       ÄÏÉÙÁÖ nianhua-finger
-Äé»¨Ö¸       ÉÙÁÖ   nianhua-zhi         Ò»Ö¸ìø       ÄÏÉÙÁÖ one-finger       
-Ò»ÑôÖ¸       ´óÀí   sun-finger          ÁùÂöÉñ½£     ´óÀí   six-finger
-µ¯Ö¸ÉñÍ¨     ÌÒ»¨   tanzhi-shentong     Ììî¸Ö¸Ñ¨·¨   ¶ëáÒ   tiangang-zhi
-ÎŞÏà½ÙÖ¸     ÄÏÉÙÁÖ wuxiang-finger      ĞşÌìÎŞÇéÖ¸   ºÚÄ¾ÑÂ xuantian-zhi
-Ò»Ö¸ìø       ÉÙÁÖ   yizhi-chan
-
-                                ´¸·¨(hammer) 
-ÈÕÔÂÂÖ·¨     Ñ©É½ËÂ riyue-lun
-
-                                ÊÖ·¨(hand)
-±¼À×ÊÖ       ºì»¨»á benlei-shou         ²¨ÂŞÃÛÊÖ     ÄÏÉÙÁÖ boluomi-hand
-´©ÔÆÊÖ       ºãÉ½   chuanyun-shou       ´óÊÖÓ¡       Ñ©É½ËÂ dashou-yin
-·çÔÆÊÖ       ÄÏÉÙÁÖ fengyun-hand        ·çÔÆÊÖ       ÉÙÁÖ   fengyun-shou
-À¼»¨·÷Ñ¨ÊÖ   ÌÒ»¨   lanhua-shou         ´óÂäÑãÊÖ     ºâÉ½   luoyan-hand
-ÆÆÔÆÊÖ       áÔÉ½   poyun-hand          ÔÆÁúÊÖ       ÔÆÁú   yunlong-shou
-ÈçÀ´Ç§Ò¶ÊÖ   ÄÏÉÙÁÖ qianye-hand         ÈçÀ´Ç§Ò¶ÊÖ   ÉÙÁÖ   qianye-shou
-Ç§ÖëÍò¶¾ÊÖ   Îå¶¾   qianzhu-wandushou   ÔÀ¼ÒÉ¢ÊÖ     ¹«¹²   sanshou
-ÉñÁú°ËÊ½     ÉñÁú   shenlong-bashi      ÉßĞĞµóÊÖ     °×ÍÕ   shexing-diaoshou
-ËøºíÇÜÄÃÊÖ   Ø¤°ï   suohou-hand         ÌìÉ½ÕÛÃ·ÊÖ   åĞÒ£   zhemei-shou
-
-                                ¹³·¨(hook)
-Îå¶¾¹³·¨     Îå¶¾   wudu-goufa
-
-                                ÍÈ·¨(leg)
-´©ÔÆÍÈ·¨     À¥ÂØ   chuanyun-leg        ÈçÓ°ËæĞÎÍÈ   ÄÏÉÙÁÖ ruying-leg
-ÉÙÁÖµ¯ÍÈ     ÄÏÉÙÁÖ shaolin-leg
-
-                                Ç¹·¨(spear)
-ÌúÑªÇ¹·¨     ÌúÕÆ   tiexue-qiang        ÖĞÆ½Ç¹·¨     ¹«¹²   zhongping-qiang
-
-                                ÕÈ·¨(staff)
-¶Î¼Ò½£       ´óÀí   duanjia-sword       ·èÄ§ÕÈ·¨     Ø¤°ï   fengmo-staff
-ÁéÉßÕÈ·¨     °×ÍÕ   lingshe-zhangfa     ÆÕ¶ÉÕÈ·¨     ÄÏÉÙÁÖ pudu-staff
-ÆÕ¶ÉÕÈ·¨     ÉÙÁÖ   pudu-zhang          ÉßµºÆæ¹¦     ÉñÁú   shedao-qigong
-ÌìÉ½ÕÈ·¨     ĞÇËŞ   tianshan-zhang      ÎŞ³£ÕÈ·¨     ÄÏÉÙÁÖ wuchang-staff
-ÎŞ³£ÕÈ·¨     ÉÙÁÖ   wuchang-zhang       ½ğ¸Õ½µÄ§èÆ   Ñ©É½ËÂ xiangmo-chu
-
-                                °ô·¨(stick)
-´ò¹·°ô·¨     Ø¤°ï   dagou-bang
-
-                                ÕÆ·¨(strike)
-°ãÈôÕÆ       ÉÙÁÖ   banruo-zhang        °ãÈôÕÆ       ÄÏÉÙÁÖ boruo-strike
-³éËèÕÆ       ĞÇËŞ   chousui-zhang       ´İĞÄÕÆ       Çà³Ç   cuixin-strike
-¸òó¡¹¦       °×ÍÕ   hamagong            º®±ùÃàÕÆ     Ã÷½Ì   hanbing-mianzhang
-ê»ÌìÕÆ       È«Õæ   haotian-zhang       »ğÑæµ¶       Ñ©É½   huoyan-dao
-ºÚÉ°ÕÆ       ºì»¨   heisha-zhang        »¯¹ÇÃàÕÆ     ÉñÁú   huagu-mianzhang
-»ìÔªÕÆ       »ªÉ½   hunyuan-zhang       ½ğ¶¥ÃàÕÆ     ¶ëáÒ   jinding-zhang
-´ó½ğ¸ÕÉñÕÆ   ÄÏÉÙÁÖ jingang-strike      ½ğÉßÓÎÉíÕÆ   ¹«¹²   jinshe-zhang
-¿ì»îÊ®ÈıÕÆ   Ì©É½   kuaihuo-strike      À¥ÂØÕÆ       À¥ÂØ   kunlun-strike
-ÌìÉ½ÁùÑôÕÆ   åĞÒ£   liuyang-zhang       É¢»¨ÕÆ       ÄÏÉÙÁÖ sanhua-strike
-É¢»¨ÕÆ       ÉÙÁÖ   sanhua-zhang        ·ÉÑ©Ó³Ã·ÕÆ   ÁèÏö   snow-strike
-´óáÔÑôÕÆ     áÔÉ½   songyang-strike     Ìì³¤ÕÆ·¨     ºãÉ½   tianchang-zhang
-ÌúÕÆÕÆ·¨     ÌúÕÆ   tiezhang-zhangfa    Î¤ÍÓÕÆ       ÄÏÉÙÁÖ weituo-strike
-Îå¶¾ÕÆ       Îå¶¾   wudu-zhang          ÎåÂŞÇáÑÌÕÆ   ´óÀí   wuluo-zhang
-½µÁúÊ®°ËÕÆ   Ø¤°ï   xianglong-zhang     ĞÇÒÆÕÆ       Ä½Èİ   xingyi-strike
-ÖìÉ°ÕÆ       ÌúÕÆ   zhusha-zhang
-
-                                È­½Å(unarmed)
+    ä¸‹åˆ—æ˜¯ç›®å‰ä¿ å®¢è¡Œä¸€ç™¾çš„æ­¦åŠŸåˆ—è¡¨ï¼ˆæŒ‰æ‹¼éŸ³å­—æ¯é †åºï¼‰ã€‚ä½ å¯ä»¥åˆ©ç”¨å„
+å€‹é–€æ´¾çš„å¹«åŠ©æ–‡ä»¶äº†è§£æœ¬é–€åŠŸå¤«çš„è©³ç´°æƒ…æ³ï¼Œä¹Ÿç›´æ¥ç”¨help æ­¦åŠŸå ä¾†æŸ¥è©¢
+æ¯å€‹æ­¦åŠŸçš„ä»‹ç´¹ã€å­¸ç¿’æ¢ä»¶ä»¥åŠå®ƒçš„çµ•æ‹›ã€çµ•æ‹›çš„æ•ˆåŠ›å’Œå‡ºæ‰‹æ¢ä»¶ç­‰ã€‚
+    å¦‚ï¼šhelp bibo-shengongï¼Œå°‡é¡¯ç¤ºç¢§æ³¢ç¥åŠŸçš„ä»‹ç´¹å’Œå…§å¤–åŠŸä½¿ç”¨ã€‚å¦‚æœ
+ help bibo-shengong.roarï¼Œå°‡é¡¯ç¤ºç¢§æ³¢ç¥åŠŸä¹‹ç¢§æµ·ç”Ÿæ½®æ›²çš„ä»‹ç´¹å’Œä½¿ç”¨æ¢
+ä»¶ã€‚ 
 
 
-÷öÈ»Ïú»êÕÆ   ¹ÅÄ¹   anran-zhang         »ªÉ½È­·¨     »ªÉ½   huashan-ken
-¿ÕÃ÷È­       ¹«¹²   kongming-quan       ÃÀÅ®È­       ¹ÅÄ¹   meinv-quan
-ÉñÕÕ¾­       ¹«¹²   shenzhao-jing       Ì«¼«È­       Îäµ±   taiji-quan
-Ì«Ğş¹¦       ¹«¹²   taixuan-gong        Îäµ±È­       Îäµ±   wudang-quan
-ÎŞÓ°ÍÈ       Çà³Ç   wuying-leg          Ğı·çÉ¨Ò¶ÍÈ   ÌÒ»¨   xuanfeng-leg
+                                å…§åŠŸ(force)
+å…«è’å…­åˆåŠŸ   é€é™   bahuang-gong      ç™½é›²å¿ƒæ³•     æ†å±±   baiyun-xinfa
+åŒ—å†¥ç¥åŠŸ     é€é™   beiming-shengong  ç¢§æ³¢ç¥åŠŸ     æ¡ƒèŠ±   bibo-shengong
+å†°é›ªå¿ƒæ³•     å‡Œéœ„   binxue-xinfa      æ­¸å…ƒåç´æ³•   éµæŒ   guiyuan-tunafa
+è›¤èŸ†åŠŸ       ç™½é§   hamagong          å¯’å†°çœŸæ°£     åµ©å±±   hanbing-zhenqi
+ç´…èŠ±ç¥åŠŸ     ç´…èŠ±æœƒ honghua-shengong  è¯å±±å…§åŠŸ     è¯å±±   huashan-neigong
+æ··å¤©æ°£åŠŸ     ä¸å¹«   huntian-qigong    æ··å…ƒä¸€æ°£åŠŸ   å°‘æ—   hunyuan-yiqi      
+å›é›å¿ƒæ³•     è¡¡å±±   huiyan-xinfa      åŒ–åŠŸå¤§æ³•     æ˜Ÿå®¿   huagong-dafa
+ä¹é™½ç¥åŠŸ     æ˜æ•™   jiuyang-shengong  è‘µèŠ±å¿ƒæ³•     é»‘æœ¨å´– kuihua-xinfa
+æ¯æ¦®ç¦ªåŠŸ     å¤§ç†   kurong-changong   è‡¨æ¿ŸåäºŒèŠ   å³¨åµ‹   linji-zhuang
+é¾è±¡èˆ¬è‹¥åŠŸ   é›ªå±±å¯º longxiang         ç£çŸ³ç¥åŠŸ     æ³°å±±   panshi-shengong
+é’å†¥ç„åŠŸ     é’åŸ   qingming-xuangong ç¥é¾å¿ƒæ³•     ç¥é¾   shenlong-xinfa
+ç¥å…ƒåŠŸ       æ…•å®¹   shenyuan-gong     ç¥ç…§ç¶“       å…¬å…±   shenzhao-jing
+å¤ªæ¥µç¥åŠŸ     æ­¦ç•¶   taiji-shengong    å¤ªç„åŠŸ       å…¬å…±   taixuan-gong
+äº”æ¯’ç¥åŠŸ     äº”æ¯’   wudu-shengong     å…ˆå¤©æ°£åŠŸ     å…¨çœŸ   xiantian-qigong
+å°ç„¡ç›¸åŠŸ     é›ªå±±å¯º xiaowuxiang       å¸æ˜Ÿå¤§æ³•     é»‘æœ¨å´– xixing-dafa
+ç„å¤©ç„¡æ¥µåŠŸ   æ˜†ä¾–   xuantian-wuji     æ˜“ç­‹ç¶“       å—åŒ—å°‘æ— yijinjing
+é›²é¾ç¥åŠŸ     é›²é¾   yunlong-shengong  ç‰å¥³å¿ƒæ³•     å¤å¢“   yunv-xinfa
+ç«™æ¨åŠŸ       å—å°‘æ— zhanzhuang-gong   ç´«éœç¥åŠŸ     è¯å±±   zixia-shengong
 
-                                ±Ş·¨(whip)
+                                è¼•åŠŸ(dodge)
+æš—å½±æµ®é¦™     æ¡ƒèŠ±   anying-fuxiang    è¾Ÿé‚ªåŠæ³•     å…¬å…±   bixie-jian
+èŸ¾èœæ­¥æ³•     ç™½é§   chanchu-bufa      ç©¿èŠ±ç¹æ¨¹     é’åŸ   chuanhua
+é£›æ˜Ÿè¡“       æ˜Ÿå®¿   feixing-shu       é£›ç‡•å›ç¿”     è¯å±±   feiyan-huixiang
+é¢¨ç¥è¨£       æ³°å±±   fengshenjue       æµ®å…‰æ å½±     åµ©å±±   fuguanglueying
+è¯å±±èº«æ³•     è¯å±±   huashan-shenfa    é‡‘é›åŠŸ       å…¨çœŸ   jinyan-gong
+æ˜†ä¾–èº«æ³•     æ˜†ä¾–   kunlun-shenfa     å‡Œè™›æ­¥       æ†å±±   lingxu-bu
+å‡Œæ³¢å¾®æ­¥     é€é™   lingboweibu       é£„é€¸æ­¥æ³•     é»‘æœ¨å´– piaoyibu
+ä¹¾å¤å¤§æŒªç§»   æ˜æ•™   qiankun-danuoyi   é’è èº«æ³•     æ˜æ•™   qingfu-shenfa     
+ç§‹é›å—å›     è¡¡å±±   qiuyan-nanhui     å°‘æ—èº«æ³•     å°‘æ—   shaolin-shenfa    
+èº«ç©ºè¡Œ       é›ªå±±å¯º shenkong-xing     ç¥è¡Œç™¾è®Š     å…¬å…±   shenxing-baibian  
+éµæŒæ°´ä¸Šé£„   éµæŒ   shuishangpiao     æ¢…é›ªé£„é¦™æ­¥   å‡Œéœ„   snowstep
+å¤ªç„åŠŸ       å…¬å…±   taixuan-gong      è¸é›ªç„¡ç—•     æ˜†ä¾–   taxue-wuhen
+å¤©å—æ­¥æ³•     å¤§ç†   tiannan-step      æ¢¯é›²ç¸±       æ­¦ç•¶   tiyunzong
+äº”æ¯’ç…™è˜¿æ­¥   äº”æ¯’   wudu-yanluobu     é€é™éŠ       ä¸å¹«   xiaoyaoyou
+ç‡•é›™é£›       å…¬å…±   yanfly            ç‡•éˆèº«æ³•     æ…•å®¹   yanling-shenfa
+ä¸€è‘¦æ¸¡æ±Ÿ     å—å°‘æ— yiwei-dujiang     æ„å½¢æ­¥æ³•     ç¥é¾   yixingbu
+æœˆå½±èˆæ­¥     é€é™   yueying-wubu      ç‰å¥³èº«æ³•     å¤å¢“   yunv-shenfa
+é›²é¾èº«æ³•     é›²é¾   yunlong-shenfa    éŠé¾èº«æ³•     ç´…èŠ±   youlong-shenfa
+è«¸å¤©åŒ–èº«æ­¥   å³¨åµ‹   zhutian-bu        æ‘˜æ˜ŸåŠŸ       æ˜Ÿå®¿   zhaixinggong
 
-¶ÏÔÆ±Ş·¨     È«Õæ   duanyun-bian        ·É·ï±Ş·¨     ´óÀí   feifeng-whip
-¾Å½Ú±Ş·¨     ÄÏÉÙÁÖ jiujie-whip         Çï·ç³¾·¨     ¹ÅÄ¹   qiufeng-chenfa
-ÈÕÔÂ±Ş·¨     ÉÙÁÖ   riyue-bian          ÈÕÔÂ±Ş·¨     ÄÏÉÙÁÖ riyue-whip
-Îå¶¾±Ş·¨     Îå¶¾   wudu-whip           ½µÄ§±Ş       ÄÏÉÙÁÖ xiangmo-whip
-ÔÆÁú±Ş       ÔÆÁú   yunlong-bian        
+                                åŠæ³•(sword)
+è¾Ÿé‚ªåŠæ³•     å…¬å…±   bixie-jian        å‡è¾Ÿé‚ªåŠæ³•   å…¬å…±   bixie-sword
+æ²–éˆåŠæ³•     è¯å±±   chongling-sword   é”æ‘©åŠ       å°‘æ—   damo-jian
+é”æ‘©åŠ       å—å°‘æ— damo-sword        æ®µå®¶åŠ       å¤§ç†   duanjia-sword
+ä¼é­”åŠ       å°‘æ—   fumo-jian         ä¼é­”åŠ       å—å°‘æ— fumo-sword
+æ†å±±åŠæ³•     æ†å±±   hengshan-jian     è¡¡å±±åŠæ³•     è¡¡å±±   hengshan-sword
+è¯å±±åŠæ³•     è¯å±±   huashan-sword     å›é¢¨æ‹‚æŸ³åŠ   å³¨åµ‹   huifeng-jian
+ç„éµåŠæ³•     å¤å¢“   iron-sword        é‡‘è›‡åŠæ³•     å…¬å…±   jinshe-jian
+ç‹‚é¢¨åŠæ³•     è¯å±±   kuangfeng-jian    æ­£å…©å„€åŠæ³•   æ˜†ä¾–   liangyi-sword
+å…©å„€åŠæ³•     æ­¦ç•¶   liangyi-jian      çƒˆç«åŠæ³•     æ˜æ•™   liehuo-jian
+ç¨å­¤ä¹åŠ     è¯å±±   lonely-sword      è½èŠ±åä¸‰åŠ   ç´…èŠ±   luohua-jian
+è½è‹±ç¥åŠ     æ¡ƒèŠ±   luoying-shenjian  ä¸å‹•æ˜ç‹åŠ   é›ªå±±   mingwang-jian
+æ…•å®¹åŠæ³•     æ…•å®¹   murong-sword      é’èŸ’åŠæ³•     äº”æ¯’   qingmang-sword
+å…¨çœŸåŠæ³•     å…¨çœŸ   quanzhen-jian     è›‡å³¶å¥‡åŠŸ     ç¥é¾   shedao-qigong
+è–ç«ä»¤æ³•     æ˜æ•™   shenghuo-ling     é¬†é¢¨åŠæ³•     é’åŸ   songfeng-jian
+åµ©å±±åŠæ³•     åµ©å±±   songshan-sword    å¤ªæ¥µåŠæ³•     æ­¦ç•¶   taiji-jian
+æ³°å±±åŠæ³•     æ³°å±±   taishan-sword     å”è©©åŠæ³•     å…¬å…±   tangshi-jian
+å¤©ç¾½å¥‡åŠ     é€é™   tianyu-qijian     æ­¦ç•¶åŠæ³•     æ­¦ç•¶   wudang-jian
+äº”éŸ»ä¸ƒå¼¦åŠ   é»‘æœ¨å´– wuyun-jian        é›ªå±±åŠæ³•     å‡Œéœ„   xueshan-sword
+è¿…é›·åå…­åŠ   æ˜†ä¾–   xunlei-sword      é›²é¾åŠæ³•     é›²é¾   yunlong-jian
+ç‰å¥³é‡‘é‡åŠ   è¯å±±   yunu-sword        ç‰å¥³ç´ å¿ƒåŠ   å¤å¢“   yunv-jian
+ç‰ç°«åŠæ³•     æ¡ƒèŠ±   yuxiao-jian
 
-                                °µÆ÷(throwing)
-¶áÃü½ğ»¨     Ã÷½Ì   duoming-jinhua      ·ÉĞÇÊõ       ĞÇËŞ   feixing-shu
-º®ĞÇ°Ë´ò     ºì»¨»á hanxing-bada        ½ğÉß×¶·¨     ¹«¹²   jinshe-zhui
-ÂúÌì»¨Óê     À¥ÂØ   mantian-huayu       ÎŞÓ°·Éµ¶     ºì»¨   wuying-feidao
-ĞùÔ¯¼ı       ¹«¹²   xuanyuan-arrow      
+                                æ–§æ³•(axe)
+æ–·é›²æ–§       å¤§ç†   duanyun-fu
+
+                                åˆ€æ³•(blade)
+æ…ˆæ‚²åˆ€       å°‘æ—   cibei-dao           æ…ˆæ‚²åˆ€       å—å°‘æ— cibei-blade
+åå…©å„€åˆ€æ³•   è¯å±±   fanliangyi-dao      èƒ¡å®¶åˆ€æ³•     å…¬å…±   hujia-daofa
+é‡‘çƒåˆ€æ³•     å‡Œéœ„   jinwu-blade         ç‹‚é¢¨åˆ€æ³•     å…¬å…±   kuangfeng-blade
+çƒˆç‡„åˆ€æ³•     æ˜æ•™   lieyan-dao          å››è±¡å…­åˆåˆ€   ä¸å¹«   liuhe-blade
+æ…•å®¹åˆ€æ³•     æ…•å®¹   murong-blade        ç§‹æ­Œä¸ƒåˆ€     ç´…èŠ±   qiuge-dao
+ç‡ƒæœ¨åˆ€æ³•     å—å°‘æ— ranmu-blade         å¦‚æ„åˆ€æ³•     é€é™   ruyi-dao
+å¤ªæ¥µåˆ€æ³•     æ­¦ç•¶   taiji-dao           ä¿®ç¾…åˆ€       å—å°‘æ— xiuluo-blade
+ä¿®ç¾…åˆ€       å°‘æ—   xiuluo-dao          äº”è™æ–·é–€åˆ€   é›²é¾   wuhu-duanmendao
+è¡€åˆ€         é›ªå±±å¯º xue-dao             é›è¡Œåˆ€       å³¨åµ‹   yanxing-dao
+
+                                çˆªæ³•(claw)
+é¾çˆªåŠŸ       å—å°‘æ— dragon-claw         é·¹çˆªåŠŸ       å—å°‘æ— eagleg-claw
+å¯‚æ»…çˆª       å—å°‘æ— jimie-claw          ä¹é™°ç™½éª¨çˆª   å…¬å…±   jiuyin-baiguzhao
+é¾çˆªåŠŸ       å°‘æ—   longzhua-gong       ä¸‰é™°èœˆèš£çˆª   æ˜Ÿå®¿   sanyin-wugongzhao
+æœéª¨é·¹çˆªåŠŸ   æ˜æ•™   sougu               é·¹çˆªåŠŸ       å°‘æ—   yingzhua-gong
+é›²é¾çˆª       é›²é¾   yunlong-zhua
+
+                                æ£æ³•(club)
+éŸ‹é™€æ£       å—å°‘æ— weituo-club         éŸ‹é¦±æµ       å—å°‘æ— weituo-chu
+éŸ‹é™€æ£       å°‘æ—   weituo-gun          å°‘æ—é†‰æ£     å—å°‘æ— zui-club
+å°‘æ—é†‰æ£     å°‘æ—   zui-gun
+
+                                æ‹³æ³•(cuff)
+å¤ªç¥–é•·æ‹³     å…¬å…±   changquan           è™é¶´é›™å½¢æ‹³   å…¬å…±   huhe-quan
+å°‘æ—å—æ‹³     å—å°‘æ— shaolin-cuff        çŒ´æ‹³         é›²é¾   houquan
+é‡‘ç‰æ‹³       å¤§ç†   jinyu-quan          é‡‘å‰›ç‘œè¿¦æ¯æ‹³ é›ªå±±   yujiamu-quan
+å°‘æ—ç¾…æ¼¢æ‹³   å°‘æ—   luohan-quan         å°‘æ—ç¾…æ¼¢æ‹³   å—å°‘æ— luohan-cuff
+ç™¾èŠ±éŒ¯æ‹³     ç´…èŠ±   baihua-cuoquan      éœ‡å¤©æ‹³æ³•     æ˜†ä¾–   zhentian-cuff
+è›¤èŸ†æ‹³       ç™½é§   hamaquan            ç ´ç‰æ‹³       è¯å±±   poyu-quan
+ç´”é™½æ‹³       å…¨çœŸ   chunyang-quan       ä¸ƒå‚·æ‹³       æ˜æ•™   qishang-quan
+å¤§é‡‘å‰›æ‹³     å—å°‘æ— jingang-cuff        å¤§é‡‘å‰›æ‹³     å°‘æ—   jingang-quan
+
+                                çŸ­å…µ(dagger)
+çŸ³é¼“æ‰“ç©´ç­†æ³• é»‘æœ¨å´– shigu-bifa
+
+                                æŒ‡æ³•(finger)
+å¤šç¾…è‘‰æŒ‡     å—å°‘æ— duoluoye-finger     åƒåˆæŒ‡       æ…•å®¹   canhe-finger
+æ‘©è¨¶æŒ‡       å—å°‘æ— mohe-finger         æ‹ˆèŠ±æŒ‡       å—å°‘æ— nianhua-finger
+æ‹ˆèŠ±æŒ‡       å°‘æ—   nianhua-zhi         ä¸€æŒ‡ç¦ª       å—å°‘æ— one-finger       
+ä¸€é™½æŒ‡       å¤§ç†   sun-finger          å…­è„ˆç¥åŠ     å¤§ç†   six-finger
+å½ˆæŒ‡ç¥é€š     æ¡ƒèŠ±   tanzhi-shentong     å¤©ç½¡æŒ‡ç©´æ³•   å³¨åµ‹   tiangang-zhi
+ç„¡ç›¸åŠ«æŒ‡     å—å°‘æ— wuxiang-finger      ç„å¤©ç„¡æƒ…æŒ‡   é»‘æœ¨å´– xuantian-zhi
+ä¸€æŒ‡ç¦ª       å°‘æ—   yizhi-chan
+
+                                éŒ˜æ³•(hammer) 
+æ—¥æœˆè¼ªæ³•     é›ªå±±å¯º riyue-lun
+
+                                æ‰‹æ³•(hand)
+å¥”é›·æ‰‹       ç´…èŠ±æœƒ benlei-shou         æ³¢ç¾…èœœæ‰‹     å—å°‘æ— boluomi-hand
+ç©¿é›²æ‰‹       æ†å±±   chuanyun-shou       å¤§æ‰‹å°       é›ªå±±å¯º dashou-yin
+é¢¨é›²æ‰‹       å—å°‘æ— fengyun-hand        é¢¨é›²æ‰‹       å°‘æ—   fengyun-shou
+è˜­èŠ±æ‹‚ç©´æ‰‹   æ¡ƒèŠ±   lanhua-shou         å¤§è½é›æ‰‹     è¡¡å±±   luoyan-hand
+ç ´é›²æ‰‹       åµ©å±±   poyun-hand          é›²é¾æ‰‹       é›²é¾   yunlong-shou
+å¦‚ä¾†åƒè‘‰æ‰‹   å—å°‘æ— qianye-hand         å¦‚ä¾†åƒè‘‰æ‰‹   å°‘æ—   qianye-shou
+åƒè››è¬æ¯’æ‰‹   äº”æ¯’   qianzhu-wandushou   å²³å®¶æ•£æ‰‹     å…¬å…±   sanshou
+ç¥é¾å…«å¼     ç¥é¾   shenlong-bashi      è›‡è¡Œåˆæ‰‹     ç™½é§   shexing-diaoshou
+é–å–‰æ“’æ‹¿æ‰‹   ä¸å¹«   suohou-hand         å¤©å±±æŠ˜æ¢…æ‰‹   é€é™   zhemei-shou
+
+                                é‰¤æ³•(hook)
+äº”æ¯’é‰¤æ³•     äº”æ¯’   wudu-goufa
+
+                                è…¿æ³•(leg)
+ç©¿é›²è…¿æ³•     æ˜†ä¾–   chuanyun-leg        å¦‚å½±éš¨å½¢è…¿   å—å°‘æ— ruying-leg
+å°‘æ—å½ˆè…¿     å—å°‘æ— shaolin-leg
+
+                                æ§æ³•(spear)
+éµè¡€æ§æ³•     éµæŒ   tiexue-qiang        ä¸­å¹³æ§æ³•     å…¬å…±   zhongping-qiang
+
+                                æ–æ³•(staff)
+æ®µå®¶åŠ       å¤§ç†   duanjia-sword       ç˜‹é­”æ–æ³•     ä¸å¹«   fengmo-staff
+éˆè›‡æ–æ³•     ç™½é§   lingshe-zhangfa     æ™®æ¸¡æ–æ³•     å—å°‘æ— pudu-staff
+æ™®æ¸¡æ–æ³•     å°‘æ—   pudu-zhang          è›‡å³¶å¥‡åŠŸ     ç¥é¾   shedao-qigong
+å¤©å±±æ–æ³•     æ˜Ÿå®¿   tianshan-zhang      ç„¡å¸¸æ–æ³•     å—å°‘æ— wuchang-staff
+ç„¡å¸¸æ–æ³•     å°‘æ—   wuchang-zhang       é‡‘å‰›é™é­”æµ   é›ªå±±å¯º xiangmo-chu
+
+                                æ£’æ³•(stick)
+æ‰“ç‹—æ£’æ³•     ä¸å¹«   dagou-bang
+
+                                æŒæ³•(strike)
+èˆ¬è‹¥æŒ       å°‘æ—   banruo-zhang        èˆ¬è‹¥æŒ       å—å°‘æ— boruo-strike
+æŠ½é«“æŒ       æ˜Ÿå®¿   chousui-zhang       æ‘§å¿ƒæŒ       é’åŸ   cuixin-strike
+è›¤èŸ†åŠŸ       ç™½é§   hamagong            å¯’å†°ç¶¿æŒ     æ˜æ•™   hanbing-mianzhang
+æ˜Šå¤©æŒ       å…¨çœŸ   haotian-zhang       ç«ç‡„åˆ€       é›ªå±±   huoyan-dao
+é»‘ç ‚æŒ       ç´…èŠ±   heisha-zhang        åŒ–éª¨ç¶¿æŒ     ç¥é¾   huagu-mianzhang
+æ··å…ƒæŒ       è¯å±±   hunyuan-zhang       é‡‘é ‚ç¶¿æŒ     å³¨åµ‹   jinding-zhang
+å¤§é‡‘å‰›ç¥æŒ   å—å°‘æ— jingang-strike      é‡‘è›‡éŠèº«æŒ   å…¬å…±   jinshe-zhang
+å¿«æ´»åä¸‰æŒ   æ³°å±±   kuaihuo-strike      æ˜†ä¾–æŒ       æ˜†ä¾–   kunlun-strike
+å¤©å±±å…­é™½æŒ   é€é™   liuyang-zhang       æ•£èŠ±æŒ       å—å°‘æ— sanhua-strike
+æ•£èŠ±æŒ       å°‘æ—   sanhua-zhang        é£›é›ªæ˜ æ¢…æŒ   å‡Œéœ„   snow-strike
+å¤§åµ©é™½æŒ     åµ©å±±   songyang-strike     å¤©é•·æŒæ³•     æ†å±±   tianchang-zhang
+éµæŒæŒæ³•     éµæŒ   tiezhang-zhangfa    éŸ‹é™€æŒ       å—å°‘æ— weituo-strike
+äº”æ¯’æŒ       äº”æ¯’   wudu-zhang          äº”ç¾…è¼•ç…™æŒ   å¤§ç†   wuluo-zhang
+é™é¾åå…«æŒ   ä¸å¹«   xianglong-zhang     æ˜Ÿç§»æŒ       æ…•å®¹   xingyi-strike
+æœ±ç ‚æŒ       éµæŒ   zhusha-zhang
+
+                                æ‹³è…³(unarmed)
+
+
+é»¯ç„¶éŠ·é­‚æŒ   å¤å¢“   anran-zhang         è¯å±±æ‹³æ³•     è¯å±±   huashan-ken
+ç©ºæ˜æ‹³       å…¬å…±   kongming-quan       ç¾å¥³æ‹³       å¤å¢“   meinv-quan
+ç¥ç…§ç¶“       å…¬å…±   shenzhao-jing       å¤ªæ¥µæ‹³       æ­¦ç•¶   taiji-quan
+å¤ªç„åŠŸ       å…¬å…±   taixuan-gong        æ­¦ç•¶æ‹³       æ­¦ç•¶   wudang-quan
+ç„¡å½±è…¿       é’åŸ   wuying-leg          æ—‹é¢¨æƒè‘‰è…¿   æ¡ƒèŠ±   xuanfeng-leg
+
+                                é­æ³•(whip)
+
+æ–·é›²é­æ³•     å…¨çœŸ   duanyun-bian        é£›é³³é­æ³•     å¤§ç†   feifeng-whip
+ä¹ç¯€é­æ³•     å—å°‘æ— jiujie-whip         ç§‹é¢¨å¡µæ³•     å¤å¢“   qiufeng-chenfa
+æ—¥æœˆé­æ³•     å°‘æ—   riyue-bian          æ—¥æœˆé­æ³•     å—å°‘æ— riyue-whip
+äº”æ¯’é­æ³•     äº”æ¯’   wudu-whip           é™é­”é­       å—å°‘æ— xiangmo-whip
+é›²é¾é­       é›²é¾   yunlong-bian        
+
+                                æš—å™¨(throwing)
+å¥ªå‘½é‡‘èŠ±     æ˜æ•™   duoming-jinhua      é£›æ˜Ÿè¡“       æ˜Ÿå®¿   feixing-shu
+å¯’æ˜Ÿå…«æ‰“     ç´…èŠ±æœƒ hanxing-bada        é‡‘è›‡éŒæ³•     å…¬å…±   jinshe-zhui
+æ»¿å¤©èŠ±é›¨     æ˜†ä¾–   mantian-huayu       ç„¡å½±é£›åˆ€     ç´…èŠ±   wuying-feidao
+è»’è½…ç®­       å…¬å…±   xuanyuan-arrow      
 

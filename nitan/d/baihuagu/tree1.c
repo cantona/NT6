@@ -5,10 +5,10 @@
 inherit ROOM;
 void create()
 {
-        set("short", "Ê÷ÁÖ");
+        set("short", "æ¨¹æž—");
         set("long", @LONG
-´ÔÁÖÖÐÒ»Æ¬ºÚ°µ¡£ÄãµÉ´óÑÛ¾¦£¬ÃãÇ¿¿´Çå³þÁËÒ»µã¡£Ò»ÌõÏ¸Ï¸
-µÄ¹âÏß(light)Í¸¹ý²ãµþµÄÊ÷Ò¶µÄ·ìÖÐÉäÏÂÀ´£¬ËÆºõÔ¤Ê¾×ÅÉúµÄÏ£Íû¡£
+å¢æž—ä¸­ä¸€ç‰‡é»‘æš—ã€‚ä½ çžªå¤§çœ¼ç›ï¼Œå‹‰å¼·çœ‹æ¸…æ¥šäº†ä¸€é»žã€‚ä¸€æ¢ç´°ç´°
+çš„å…‰ç·š(light)é€éŽå±¤ç–Šçš„æ¨¹è‘‰çš„ç¸«ä¸­å°„ä¸‹ä¾†ï¼Œä¼¼ä¹Žé ç¤ºè‘—ç”Ÿçš„å¸Œæœ›ã€‚
 LONG);
         set("outdoors", "baihuagu");
         set("exits", ([ 
@@ -31,13 +31,13 @@ void init()
 }
 int do_look(string arg)
 {
-        string *dirc = ({ "ÎÞ","¶«","ÄÏ","Î÷","±±"});
+        string *dirc = ({ "ç„¡","æ±","å—","è¥¿","åŒ—"});
         int i;
         i=random(4)+1;
-        if (!arg||!(arg=="light" || arg=="¹âÏß"))
-                return notify_fail("ÄãÒª¿´Ê²÷á£¿\n");
-        message_vision(HIW "$N×ÐÏ¸¹Û²ì¹âÏß,·¢ÏÖËüÊÇ´Ó"+dirc[i]+"±ßÍ¸¹ýÀ´µÄ¡£\n" NOR,this_player());
-        set_temp("marks/°Ù»¨¹È", i, this_object());
+        if (!arg||!(arg=="light" || arg=="å…‰ç·š"))
+                return notify_fail("ä½ è¦çœ‹ä»€éº¼ï¼Ÿ\n");
+        message_vision(HIW "$Nä»”ç´°è§€å¯Ÿå…‰ç·š,ç™¼ç¾å®ƒæ˜¯å¾ž"+dirc[i]+"é‚Šé€éŽä¾†çš„ã€‚\n" NOR,this_player());
+        set_temp("marks/ç™¾èŠ±è°·", i, this_object());
         return 1;
 }
 int do_go(string arg)
@@ -45,8 +45,8 @@ int do_go(string arg)
         string *dira=({"+-*/","east","south","west","north"});
         string *dirb=({"+-*/","e","s","w","n"});
         int a;
-        a=query_temp("marks/°Ù»¨¹È", this_object());
-        set_temp("marks/°Ù»¨¹È", 0, this_object());
+        a=query_temp("marks/ç™¾èŠ±è°·", this_object());
+        set_temp("marks/ç™¾èŠ±è°·", 0, this_object());
         if (arg==dira[a]||arg==dirb[a])
         {
                 this_player()->move(__DIR__"out");

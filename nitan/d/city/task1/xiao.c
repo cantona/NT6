@@ -1,14 +1,14 @@
-// xiaoyao.c åĞÒ£×Ó
+// xiaoyao.c é€é™å­
 
 #include <ansi.h>
 inherit NPC;
 
 void create()
 {
-        set_name("åĞÒ£×Ó", ({ "xiaoyao  zi"}));
-        set("nickname", "ÑÌÏ¼ÉñÁú");
-        set("long","²¡·òÄ£ÑùµÄÖĞÄêÈË£¬ÒÂÉÀñÜñÚ£¬Ò§ÖøÒ»¸ùºµÑÌ¹Ü£¬Ë«Ä¿ËÆÕöËÆ±Õ£¬×ìÀïÂıÂıÅç³öÑÌÎí¡£\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("é€é™å­", ({ "xiaoyao  zi"}));
+        set("nickname", "ç…™éœç¥é¾");
+        set("long","ç—…å¤«æ¨¡æ¨£çš„ä¸­å¹´äººï¼Œè¡£è¡«è¥¤è¤¸ï¼Œå’¬è‘—ä¸€æ ¹æ—±ç…™ç®¡ï¼Œé›™ç›®ä¼¼çœä¼¼é–‰ï¼Œå˜´è£¡æ…¢æ…¢å™´å‡ºç…™éœ§ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", random(10) + 45);
         set("attitude", "peaceful");
         set("str", 25);

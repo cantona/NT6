@@ -1,4 +1,4 @@
-// poison.c »ù±¾¶¾¼¼
+// poison.c åŸºæœ¬æ¯’æŠ€
 // Last Modified by winder on Mar. 10 2000
 // Modified by Java Mar.1998
 
@@ -15,9 +15,9 @@ int power_point(object me) { return 1; }
 
 int valid_learn(object me)
 {
-        if( query("character", me) == "¹âÃ÷ÀÚÂä" && 
-            query("family/family_name", me) != "¹ØÍâºú¼Ò" )
-                return notify_fail("ÄãÐÄÖÐ°µÏë£ºÎÒÐÐÊÂ¹âÃ÷ÀÚÂä£¬Ñ§Ê²Ã´¶¾¼¼£¡\n");
+        if( query("character", me) == "å…‰æ˜Žç£Šè½" && 
+            query("family/family_name", me) != "é—œå¤–èƒ¡å®¶" )
+                return notify_fail("ä½ å¿ƒä¸­æš—æƒ³ï¼šæˆ‘è¡Œäº‹å…‰æ˜Žç£Šè½ï¼Œå­¸ä»€éº¼æ¯’æŠ€ï¼\n");
 
         return 1;
 }
@@ -31,26 +31,26 @@ void skill_improved(object me)
                 (me->query_skill("poison",1) == 90) ||
                 (me->query_skill("poison",1) >= 100))
         {
-                tell_object(me, "ÄãÌåÄÚµÄ¶¾ÖÊ¿ªÊ¼·´ÊÉ×ÔÉíÁË£¬µÃÕÒÈËÉ¢¶¾ÁË¡£\n");
+                tell_object(me, "ä½ é«”å…§çš„æ¯’è³ªé–‹å§‹åå™¬è‡ªèº«äº†ï¼Œå¾—æ‰¾äººæ•£æ¯’äº†ã€‚\n");
                 me->apply_condition("poison_sandu",1000);
         }
 }
 */
 int practice_skill(object me)
 {
-        return notify_fail("»ù±¾¶¾¼¼Ö»ÄÜ¿¿Ñ§Ï°À´Ìá¸ß¡£\n");
+        return notify_fail("åŸºæœ¬æ¯’æŠ€åªèƒ½é å­¸ç¿’ä¾†æé«˜ã€‚\n");
 }
 int help(object me)
 {
-        write(HIC"\n»ù±¾¶¾¼¼£º"NOR"\n");
+        write(HIC"\nåŸºæœ¬æ¯’æŠ€ï¼š"NOR"\n");
         write(@HELP
 
-    ÐÇËÞµÜ×ÓÏÂ¶¾±Ø¾ßÎä¹¦£¬ÏÂ¶¾µÄÐ§¹ûºÍ»ù±¾¶¾¼¼µÄ¸ßµÍÓÐºÜ´ó
-µÄ¹ØÏµ¡£µ±ÌåÄÚ¶¾ËØ·´ÊÉ×ÔÉíÊ±£¬µÃÕÒÈËÉ¢¶¾¡£
+    æ˜Ÿå®¿å¼Ÿå­ä¸‹æ¯’å¿…å…·æ­¦åŠŸï¼Œä¸‹æ¯’çš„æ•ˆæžœå’ŒåŸºæœ¬æ¯’æŠ€çš„é«˜ä½Žæœ‰å¾ˆå¤§
+çš„é—œç³»ã€‚ç•¶é«”å…§æ¯’ç´ åå™¬è‡ªèº«æ™‚ï¼Œå¾—æ‰¾äººæ•£æ¯’ã€‚
 
-        Ñ§Ï°ÒªÇó£º
-                ÃûÃÅÕýÅÉµÄÐÄ·¨²»ÄÜÑ§
-                ·ÇÐÇËÞÅÉµÜ×Ó²»ÄÜÑ§
+        å­¸ç¿’è¦æ±‚ï¼š
+                åé–€æ­£æ´¾çš„å¿ƒæ³•ä¸èƒ½å­¸
+                éžæ˜Ÿå®¿æ´¾å¼Ÿå­ä¸èƒ½å­¸
 HELP
         );
         return 1;

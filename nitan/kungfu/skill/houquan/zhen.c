@@ -1,4 +1,4 @@
-// zhen.c ºïÈ­¡¸Õğ¡¹×Ö¾÷
+// zhen.c çŒ´æ‹³ã€Œéœ‡ã€å­—è¨£
 // by Lonely
 
 #include <ansi.h>
@@ -13,18 +13,18 @@ int perform(object me, object target)
         if( !target ) target = offensive_target(me);
 
         if( !target || !target->is_character() || !me->is_fighting(target) )
-                return notify_fail("Éñ¹¦ÕğµĞÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ç¥åŠŸéœ‡æ•µåªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( objectp(query_temp("weapon", me)) )
-                return notify_fail("Äã±ØĞë¿ÕÊÖ²ÅÄÜÊ¹ÓÃ¡¸Õğ¡¹×Ö¾÷£¡\n");         
+                return notify_fail("ä½ å¿…é ˆç©ºæ‰‹æ‰èƒ½ä½¿ç”¨ã€Œéœ‡ã€å­—è¨£ï¼\n");         
                 
         if( (int)me->query_skill("houquan", 1) < 40 )
-                return notify_fail("ÄãµÄºïÈ­²»¹»æµÊì£¬²»»áÊ¹ÓÃ¡¸Õğ¡¹×Ö¾÷¡£\n");
+                return notify_fail("ä½ çš„çŒ´æ‹³ä¸å¤ å«»ç†Ÿï¼Œä¸æœƒä½¿ç”¨ã€Œéœ‡ã€å­—è¨£ã€‚\n");
                                 
         if( query("neili", me)<200 )
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ£¬²»ÄÜÊ¹ÓÃ¡¸Õğ¡¹×Ö¾÷¡£\n");
+                return notify_fail("ä½ ç¾åœ¨å…§åŠ›å¤ªå¼±ï¼Œä¸èƒ½ä½¿ç”¨ã€Œéœ‡ã€å­—è¨£ã€‚\n");
                         
-        msg = CYN "$NÄ¬ÔËÉñ¹¦£¬Ê¹³öºïÈ­¡¸Õğ¡¹×Ö¾÷£¬ÆóÍ¼ÒÔÄÚÁ¦ÕğÉË$n¡£\n"NOR;
+        msg = CYN "$Né»˜é‹ç¥åŠŸï¼Œä½¿å‡ºçŒ´æ‹³ã€Œéœ‡ã€å­—è¨£ï¼Œä¼åœ–ä»¥å…§åŠ›éœ‡å‚·$nã€‚\n"NOR;
 
         if (random(me->query_skill("force")) > target->query_skill("force") / 2 )
         {       
@@ -33,10 +33,10 @@ int perform(object me, object target)
                 damage = 100 + random(damage/2);
                 addn("neili", -200, me);
                 
-                if( damage < 20 ) pmsg = HIY"½á¹û$nÊÜµ½$NµÄÄÚÁ¦·´Õğ£¬ÃÆºßÒ»Éù¡£\n"NOR;
-                else if( damage < 40 ) pmsg = HIY"½á¹û$n±»$NÒÔÄÚÁ¦·´Õğ£¬¡¸ºÙ¡¹µØÒ»ÉùÍËÁËÁ½²½¡£\n"NOR;
-                else if( damage < 80 ) pmsg = RED"½á¹û$n±»$NÒÔÄÚÁ¦Ò»Õğ£¬ĞØ¿ÚÓĞÈçÊÜµ½Ò»¼ÇÖØ´¸£¬Á¬ÍËÁËÎåÁù²½£¡\n"NOR;
-                else pmsg = HIR"½á¹û$n±»$NµÄÄÚÁ¦Ò»Õğ£¬ÑÛÇ°Ò»ºÚ£¬Éí×ÓÏòºó·É³öÕÉĞí£¡£¡\n"NOR;
+                if( damage < 20 ) pmsg = HIY"çµæœ$nå—åˆ°$Nçš„å…§åŠ›åéœ‡ï¼Œæ‚¶å“¼ä¸€è²ã€‚\n"NOR;
+                else if( damage < 40 ) pmsg = HIY"çµæœ$nè¢«$Nä»¥å…§åŠ›åéœ‡ï¼Œã€Œå˜¿ã€åœ°ä¸€è²é€€äº†å…©æ­¥ã€‚\n"NOR;
+                else if( damage < 80 ) pmsg = RED"çµæœ$nè¢«$Nä»¥å…§åŠ›ä¸€éœ‡ï¼Œèƒ¸å£æœ‰å¦‚å—åˆ°ä¸€è¨˜é‡éŒ˜ï¼Œé€£é€€äº†äº”å…­æ­¥ï¼\n"NOR;
+                else pmsg = HIR"çµæœ$nè¢«$Nçš„å…§åŠ›ä¸€éœ‡ï¼Œçœ¼å‰ä¸€é»‘ï¼Œèº«å­å‘å¾Œé£›å‡ºä¸ˆè¨±ï¼ï¼\n"NOR;
                 
                 msg += COMBAT_D->do_damage(me, target, UNARMED_ATTACK, damage, 50, pmsg);
                 
@@ -48,7 +48,7 @@ int perform(object me, object target)
         {
                 addn("neili", -50, me);
                 me->start_busy(3);
-                msg += CYN"¿ÉÊÇ$p¿´ÆÆÁË$PµÄÆóÍ¼£¬²¢Ã»ÓĞÉÏµ±¡£\n"NOR;
+                msg += CYN"å¯æ˜¯$pçœ‹ç ´äº†$Pçš„ä¼åœ–ï¼Œä¸¦æ²’æœ‰ä¸Šç•¶ã€‚\n"NOR;
         }
         message_combatd(msg, me, target);
 

@@ -2,23 +2,23 @@
 
         repeat_string()           MudOS v22
 
-        Ãû³Æ:
-                repeat_string() - ÒÔÒ»¶¨µÄ´ÎÊıÖØ¸´Ò»¸ö×Ö·û´®,
-                                        Éú³ÉÒ»¸öĞÂµÄ×Ö·û´®.
+        åç¨±:
+                repeat_string() - ä»¥ä¸€å®šçš„æ¬¡æ•¸é‡å¾©ä¸€å€‹å­—ç¬¦ä¸²,
+                                        ç”Ÿæˆä¸€å€‹æ–°çš„å­—ç¬¦ä¸².
 
-        Óï·¨:
+        èªæ³•:
                 string repeat_string(string str , int times);
 
-                ×Ö·û´® repeat_string(×Ö·û´® str , ÕıÕûÊı times);
+                å­—ç¬¦ä¸² repeat_string(å­—ç¬¦ä¸² str , æ­£æ•´æ•¸ times);
 
-        ÓÃ·¨:
-                °Ñ×Ö·û´® str ÖØ¸´ times ´ÎÁ¬½Ó·µ»ØÒ»¸öĞÂµÄ×Ö·û´®.
-                ÀıÈç:
+        ç”¨æ³•:
+                æŠŠå­—ç¬¦ä¸² str é‡å¾© times æ¬¡é€£æ¥è¿”å›ä¸€å€‹æ–°çš„å­—ç¬¦ä¸².
+                ä¾‹å¦‚:
                         repeat_string("ab",5)
-                        ·µ»Ø: "ababababab" Õâ¸ö×Ö·û´®.
+                        è¿”å›: "ababababab" é€™å€‹å­—ç¬¦ä¸².
 
 
-        Õâ¸öº¯ÊıĞèÒªÔÚ options ÎÄ¼şÀï¶¨ÒåÁË PACKAGE_CONTRIB .
+        é€™å€‹å‡½æ•¸éœ€è¦åœ¨ options æ–‡ä»¶è£¡å®šç¾©äº† PACKAGE_CONTRIB .
 
-        by ·¢ÏÖºÅ(Find@tx)
+        by ç™¼ç¾è™Ÿ(Find@tx)
 

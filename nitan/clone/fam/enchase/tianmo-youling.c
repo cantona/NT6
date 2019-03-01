@@ -3,15 +3,15 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIW "ÌìÄ§¡¤ÓÄÁé" NOR, ({"tianmo youling", "youling" }));
+        set_name(HIW "å¤©é­”ï¹’å¹½éˆ" NOR, ({"tianmo youling", "youling" }));
         set_weight(900);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "Ò»¿é¾§Ó¨µÄ±¦Ê¯£¬ÄÃÔÚÊÖÖĞÈ´ÓĞÒ»ÖÖ²»ÏêµÄ¸Ğ¾õ¡£\n" NOR);
-                set("unit", "¿é");
+                set("long", HIW "ä¸€å¡Šæ™¶ç‘©çš„å¯¶çŸ³ï¼Œæ‹¿åœ¨æ‰‹ä¸­å»æœ‰ä¸€ç¨®ä¸è©³çš„æ„Ÿè¦ºã€‚\n" NOR);
+                set("unit", "å¡Š");
                 set("value", 50000);
-                set("enchase/name", "ÌìÄ§¡¤ÓÄÁé");
+                set("enchase/name", "å¤©é­”ï¹’å¹½éˆ");
                 set("enchase/point", 65);
                 set("enchase/type", "all");
                 set("enchase/cur_firm", 90);

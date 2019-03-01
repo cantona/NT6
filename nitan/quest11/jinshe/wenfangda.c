@@ -1,16 +1,16 @@
 // /d/city/npc/wenfangda
-// by daidai ¼ÓÈë½ğÉßquestÏà¹Ø
+// by daidai åŠ å…¥é‡‘è›‡questç›¸é—œ
 inherit NPC;
 #include <ansi.h>
 string ask_quest(); 
 void create()
 {
-        set_name("ÎÂ·½´ï", ({ "wen fangda", "wen", "fangda" }));
-        set("title", "ÎÂ¼ÒÎåÀÏ");
+        set_name("æº«æ–¹é”", ({ "wen fangda", "wen", "fangda" }));
+        set("title", "æº«å®¶äº”è€");
         set("long", 
-        "Ëû¾ÍÊÇÎÂ¼ÒÎåÀÏµÄÀÏ´óÎÂ·½´ï¡£\n"
-        "Ò»¸ö¾«ÊİµÄÀÏÕß£¬Ò»Ë«ÑÛ¾¦Â¶³ö½Æ»«µÄÄ¿¹â¡£\n");
-        set("gender", "ÄĞĞÔ");
+        "ä»–å°±æ˜¯æº«å®¶äº”è€çš„è€å¤§æº«æ–¹é”ã€‚\n"
+        "ä¸€å€‹ç²¾ç˜¦çš„è€è€…ï¼Œä¸€é›™çœ¼ç›éœ²å‡ºç‹¡çŒ¾çš„ç›®å…‰ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 66);
         set("attitude", "friendly");
         set("shen", -10000);
@@ -48,8 +48,8 @@ void create()
         prepare_skill("cuff", "wenjia-quan");
 
         set("inquiry", ([
-                "½ğÉßÀÉ¾ı" : (: ask_quest:),
-                "ÏÄÑ©ÒË" : (: ask_quest:),
+                "é‡‘è›‡éƒå›" : (: ask_quest:),
+                "å¤é›ªå®œ" : (: ask_quest:),
         ]));
 
         setup(); 
@@ -63,30 +63,30 @@ string ask_quest()
         me = this_player();
         ob = this_object();
 
-        if( query("quest/½ğÉß½£·¨/pass", me) )
+        if( query("quest/é‡‘è›‡åŠæ³•/pass", me) )
         { 
-           // ½âÁËquest»¹À´ÎÊ ÕÒ³é£¡£¡ by daidai
+           // è§£äº†questé‚„ä¾†å• æ‰¾æŠ½ï¼ï¼ by daidai
            call_out("outwuguan",1,me);
-           return "ÄãÊÇÔõÃ´ÖªµÀÕâ¸ö¼éÔôµÄ£¿";
+           return "ä½ æ˜¯æ€éº¼çŸ¥é“é€™å€‹å§¦è³Šçš„ï¼Ÿ";
         }
-        if( !query_temp("quest/½ğÉß½£·¨/start", me) )
+        if( !query_temp("quest/é‡‘è›‡åŠæ³•/start", me) )
         {
            command("heng");
-           return "ÄÇÊÇÎÒÎÂ¼Ò±¤µÄ³ğÈË£¡";
+           return "é‚£æ˜¯æˆ‘æº«å®¶å ¡çš„ä»‡äººï¼";
         }
-        message_vision(HIG"$NÁ³ÉÏÂ¶³öÒìÑùµÄÉñÉ«¡£\n"NOR, ob);
+        message_vision(HIG"$Nè‡‰ä¸Šéœ²å‡ºç•°æ¨£çš„ç¥è‰²ã€‚\n"NOR, ob);
         command("look"+query("id", me));
         command("sigh");
-        command("say ÕâÃ´ËµÄã¾ÍÊÇ½ğÉß¼éÔôµÄ´«ÈËÁË£¬À´±¨³ğÁË£¿");
-         message_vision(HIC"$NÒ»°ÚÊÖ£º¡°¸úÎÒÀ´°É¡£¡±´ø×Å$nÏòÁ·Îä³¡×ßÈ¥¡£\n"NOR, ob, me);
+        command("say é€™éº¼èªªä½ å°±æ˜¯é‡‘è›‡å§¦è³Šçš„å‚³äººäº†ï¼Œä¾†å ±ä»‡äº†ï¼Ÿ");
+         message_vision(HIC"$Nä¸€æ“ºæ‰‹ï¼šâ€œè·Ÿæˆ‘ä¾†å§ã€‚â€å¸¶è‘—$nå‘ç·´æ­¦å ´èµ°å»ã€‚\n"NOR, ob, me);
         
-        set_temp("quest/½ğÉß½£·¨/start_kill", 1, me);
-        delete_temp("quest/½ğÉß½£·¨/start", me);
+        set_temp("quest/é‡‘è›‡åŠæ³•/start_kill", 1, me);
+        delete_temp("quest/é‡‘è›‡åŠæ³•/start", me);
 //         me->move("/d/xiangyang/wen/quest/lianwu");
-// ÎªÁË±ÜÃâÓĞ¶à¸öÍæ¼ÒÍ¬Ê±½âquest by daidai
+// ç‚ºäº†é¿å…æœ‰å¤šå€‹ç©å®¶åŒæ™‚è§£quest by daidai
          room=new("/d/xiangyang/wen/quest/lianwu");
         me->move(room);
-        return "ºß......";
+        return "å“¼......";
 }
 void outwuguan(object me)
 {
@@ -94,8 +94,8 @@ void outwuguan(object me)
         object *inv;
         if(!me) return;
         command("ah");
-        command("say ÄãÊÇ½ğÉßÀÉ¾ıÄÇ¸ö¼éÔôµÄ´«ÈË£¡À´ÈË°¡£¡¸øÎÒÉ±ÁËÕâØË£¡");
-        message_vision(HIR"Ö»¼ûÒ»Èº¼Ò¶¡»ÓÎè±øÆ÷Ïò$N³åÉ±¶øÀ´£¬$NÂä»Ä¶øÌÓ¡£\n"NOR, me);
+        command("say ä½ æ˜¯é‡‘è›‡éƒå›é‚£å€‹å§¦è³Šçš„å‚³äººï¼ä¾†äººå•Šï¼çµ¦æˆ‘æ®ºäº†é€™å»ï¼");
+        message_vision(HIR"åªè¦‹ä¸€ç¾¤å®¶ä¸æ®èˆå…µå™¨å‘$Næ²–æ®ºè€Œä¾†ï¼Œ$Nè½è’è€Œé€ƒã€‚\n"NOR, me);
         inv = filter_array(deep_inventory(me), (: userp :));
         if( sizeof(inv))
                 inv->move(environment(ob));

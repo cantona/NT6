@@ -1,9 +1,9 @@
 // This program is a part of NITAN MudLIB
-// hup.c ÎåÆø³¯Ôª
+// hup.c äº”æ°£æœå…ƒ
 
 #include <ansi.h>
 
-#define HUP "¡¸" HIR "ÎåÆø³¯Ôª" NOR "¡¹"
+#define HUP "ã€Œ" HIR "äº”æ°£æœå…ƒ" NOR "ã€"
 
 inherit F_CLEAN_UP;
 
@@ -16,16 +16,16 @@ int exert(object me, object target)
         int neili_cost;
 
         if( userp(me) && !query("can_perform/xiantian-gong/hup", me) )
-                return notify_fail("ÄãÎ´µÃ¸ßÈËÖ¸µã£¬²»Öª¸ÃÈçºÎÊ©Õ¹" HUP "¡£\n"); 
+                return notify_fail("ä½ æœªå¾—é«˜äººæŒ‡é»ï¼Œä¸çŸ¥è©²å¦‚ä½•æ–½å±•" HUP "ã€‚\n"); 
 
         if ((int)me->query_skill("xiantian-gong", 1) < 200)
-                return notify_fail("ÄãÏÈÌì¹¦²»¹»Éîºñ£¬ÄÑÒÔÊ©Õ¹" HUP "¡£\n");
+                return notify_fail("ä½ å…ˆå¤©åŠŸä¸å¤ æ·±åšï¼Œé›£ä»¥æ–½å±•" HUP "ã€‚\n");
 
         if( query("max_neili", me)<1000 )
-                return notify_fail("ÄãµÄÄÚÁ¦ĞŞÎª²»×ã£¬ÄÑÒÔÊ©Õ¹" HUP "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¿®ç‚ºä¸è¶³ï¼Œé›£ä»¥æ–½å±•" HUP "ã€‚\n");
 
         if( query("neili", me)<200 )
-                return notify_fail("ÄãÏÖÔÚµÄÕæÆø²»¹»£¬ÄÑÒÔÊ©Õ¹" HUP "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çš„çœŸæ°£ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" HUP "ã€‚\n");
 
         my = me->query_entire_dbase();
         if ((rp = (my["max_qi"] - my["eff_qi"])) < 1)
@@ -35,8 +35,8 @@ int exert(object me, object target)
                 rp = my["max_qi"] / 10;
 
         skill = me->query_skill("force");
-        msg = HIW "$N" HIW "»º»ºÍÂ³öÒ»¿ÚÆø£¬¶ÙÊ±ÆøÂöÍ¨³©£¬Á³É«½¥½¥µÄ±ä"
-              "µÃÆ½ºÍ¡£\n" NOR;
+        msg = HIW "$N" HIW "ç·©ç·©åå‡ºä¸€å£æ°£ï¼Œé “æ™‚æ°£è„ˆé€šæš¢ï¼Œè‡‰è‰²æ¼¸æ¼¸çš„è®Š"
+              "å¾—å¹³å’Œã€‚\n" NOR;
         message_combatd(msg, me);
 
         neili_cost = rp + 100;

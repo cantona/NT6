@@ -5,16 +5,16 @@ void do_swing();
 void set_from_me(object me);
 void create()
 {
-        string *names = ({ "ÇàÍ­Ê¨×Ó" });
+        string *names = ({ "é’éŠ…ç…å­" });
 
         ::create();
         set_name( names[random(sizeof(names))], ({ "bronze lions", "bronze", "lions"}));
         set("long", @LONG
-ÕâÊÇÒ»¸ö³ÁË¯ÔÚ»ÊÁêÇàÍ­»ú¹ØÊŞ¡£Éí³¤ÕÉĞí¡£ËüµÄÑÛÈçÍ­Áå£¬ÅØÏøÆğÀ´ÉùÕğËÄ±Ú¡£ÔÚ
-¶«·½ÏÉÊõµÄ×÷ÓÃÏÂ£¬ËüµÄĞĞ¶¯Ææ¿ì£¬½øÍËÈç·ç£¬ÔÙ¼ÓÉÏÃ«Æ¤µ¶Ç¹²»Èë£¬Àû×¦¿ìÈçµ¶ÈĞ£¬
-¶ËµÄÊÇ¼«ÄÑ¶Ô¸¶¡£
+é€™æ˜¯ä¸€å€‹æ²‰ç¡åœ¨çš‡é™µé’éŠ…æ©Ÿé—œç¸ã€‚èº«é•·ä¸ˆè¨±ã€‚å®ƒçš„çœ¼å¦‚éŠ…éˆ´ï¼Œå’†å“®èµ·ä¾†è²éœ‡å››å£ã€‚åœ¨
+æ±æ–¹ä»™è¡“çš„ä½œç”¨ä¸‹ï¼Œå®ƒçš„è¡Œå‹•å¥‡å¿«ï¼Œé€²é€€å¦‚é¢¨ï¼Œå†åŠ ä¸Šæ¯›çš®åˆ€æ§ä¸å…¥ï¼Œåˆ©çˆªå¿«å¦‚åˆ€åˆƒï¼Œ
+ç«¯çš„æ˜¯æ¥µé›£å°ä»˜ã€‚
 LONG);
-        set("title", HIR"»ú¹ØÊŞ" NOR);
+        set("title", HIR"æ©Ÿé—œç¸" NOR);
 
         set("str", 150);
         set("con", 150);
@@ -35,7 +35,7 @@ LONG);
         */
 
         set("combat_exp", 100000000);
-        set("death_msg",YEL"\n$NÉ¢Âä³ÉÒ»¶ÑÇàÍ­¡£\n\n"NOR);
+        set("death_msg",YEL"\n$Næ•£è½æˆä¸€å †é’éŠ…ã€‚\n\n"NOR);
 
         set("rewards", ([
                 "exp" : 450,
@@ -86,11 +86,11 @@ void do_swing()
         if( !enemies || sizeof(enemies)==0 )
                 return;
 
-        msg = HIW"$N½«Éí×Ó¶ÔÕıµĞÈË£¬ÕÅ¿ª´ó¿Ú£¬Í»È»¼ä½ğ¹âÉÁ¶¯,Ò»Õó¸ÖÕëÓÉ$N¿ÚÖĞ¼¤Éä¶ø³ö£¡\n"NOR;
+        msg = HIW"$Nå°‡èº«å­å°æ­£æ•µäººï¼Œå¼µé–‹å¤§å£ï¼Œçªç„¶é–“é‡‘å…‰é–ƒå‹•,ä¸€é™£é‹¼é‡ç”±$Nå£ä¸­æ¿€å°„è€Œå‡ºï¼\n"NOR;
         message_vision(msg,this_object());
 
         foreach( enemy in enemies ) {
-                msg = HIW"¸ÖÕë¼ÈÏ¸£¬ÎªÊıÓÖ¶à£¬$n´ó¾ªÖ®ÏÂ£¬²»¼°¶ãÉÁ£¬±»´òÁË¸öÕı×Å£¡\n"NOR;
+                msg = HIW"é‹¼é‡æ—¢ç´°ï¼Œç‚ºæ•¸åˆå¤šï¼Œ$nå¤§é©šä¹‹ä¸‹ï¼Œä¸åŠèº²é–ƒï¼Œè¢«æ‰“äº†å€‹æ­£è‘—ï¼\n"NOR;
                 message_vision(msg,this_object(), enemy);
                 enemy->receive_damage("qi",8000+random(8000),this_object());
                 COMBAT_D->report_status(enemy);

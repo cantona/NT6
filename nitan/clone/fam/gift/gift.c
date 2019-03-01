@@ -8,27 +8,27 @@ string query_autoload()
 
 void create()
 {
-        set_name(HIY "ÏÉµ¤" NOR, ({ "gift" }));
+        set_name(HIY "ä»™ä¸¹" NOR, ({ "gift" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIY "ÕâÊÇÒ»¿ÅÔö¼ÓÈİÃ²µÄÏÉµ¤¡£\n" NOR);
-                set("base_unit", "¿Å");
+                set("long", HIY "é€™æ˜¯ä¸€é¡†å¢åŠ å®¹è²Œçš„ä»™ä¸¹ã€‚\n" NOR);
+                set("base_unit", "é¡†");
                 set("base_value", 10000);
                 set("base_weight", 50);
                 set("only_do_effect", 1);
 
-                // Ôö¼ÓÌì¸³µÄÖÖÀà
+                // å¢åŠ å¤©è³¦çš„ç¨®é¡
                 set("gift_type", "per");
 
-                // Ìì¸³ÖÖÀàµÄÃû³Æ
-                set("gift_name", "ÈİÃ²");
+                // å¤©è³¦ç¨®é¡çš„åç¨±
+                set("gift_name", "å®¹è²Œ");
 
-                // ³É¹¦µÄ¼¸ÂÊ
+                // æˆåŠŸçš„å¹¾ç‡
                 set("gift_point", 100);
 
-                // ³É¹¦µÄÃèÊö
-                set("gift_msg", HIC "Í»È»¼äÄãµÄÆ¤·ôÍ¸¹ıÒ»µÀ¹âÔó¡£\n" NOR);
+                // æˆåŠŸçš„æè¿°
+                set("gift_msg", HIC "çªç„¶é–“ä½ çš„çš®è†šé€éä¸€é“å…‰æ¾¤ã€‚\n" NOR);
         }
         setup();
 }
@@ -39,48 +39,48 @@ int do_effect(object me)
 
         point = query("gift_point");
 
-        // ÕæÃüÌì×ÓÌáÉı³É¹¦¼¸ÂÊ
+        // çœŸå‘½å¤©å­æå‡æˆåŠŸå¹¾ç‡
         if( query("special_skills/emperor", me) )
                 point += 35;
 
-        // ÌìÉ·¹ÂĞÇÌáÉı³É¹¦¼¸ÂÊ
+        // å¤©ç…å­¤æ˜Ÿæå‡æˆåŠŸå¹¾ç‡
         if( query("special_skills/lonely", me) )
                 point += 10;
 
-        // ¸£ĞÇ¸ßÕÕÌáÉı³É¹¦¼¸ÂÊ
+        // ç¦æ˜Ÿé«˜ç…§æå‡æˆåŠŸå¹¾ç‡
         if( query("special_skill/lucky", me) )
                 point += 5;
 
-        message_vision(WHT "$N" WHT "Ò»Ñö²±£¬ÍÌÏÂÁËÒ»" +
+        message_vision(WHT "$N" WHT "ä¸€ä»°è„–ï¼Œåä¸‹äº†ä¸€" +
                        query("base_unit") + name() + WHT
-                       "¡£\n" NOR, me);
+                       "ã€‚\n" NOR, me);
 
         if( query("gift/" + query("gift_type") + "/all", me) >= 1 ||
             query("gift/" + query("gift_type") + "/succeed", me) >= 6 )
         {
-                tell_object(me, "Äã¾õµÃÕâÒ©ºÃÏóÃ»Ê²Ã´Ğ§¹û¡£\n");
+                tell_object(me, "ä½ è¦ºå¾—é€™è—¥å¥½è±¡æ²’ä»€éº¼æ•ˆæœã€‚\n");
         } else
         if (random(100) >= point)
         {
-                tell_object(me, HIR "²»¹ıÄã¾õµÃÕâÒ©ºÃÏñÃ»Æğµ½Ê²Ã´"
-                                "×÷ÓÃ¡£\n" NOR);
+                tell_object(me, HIR "ä¸éä½ è¦ºå¾—é€™è—¥å¥½åƒæ²’èµ·åˆ°ä»€éº¼"
+                                "ä½œç”¨ã€‚\n" NOR);
 
-                // ¼ÇÂ¼Ê§°ÜµÄ¼ÇºÅ
+                // è¨˜éŒ„å¤±æ•—çš„è¨˜è™Ÿ
                 addn("gift/"+query("gift_type")+"/fail", 1, me);
         } else
         {
                 tell_object(me, query("gift_msg"));
-                tell_object(me, HIC "ÄãµÄ" + query("gift_name") +
-                                HIC "ÓÀ¾ÃÔö¼ÓÒ»µã¡£\n" NOR);
+                tell_object(me, HIC "ä½ çš„" + query("gift_name") +
+                                HIC "æ°¸ä¹…å¢åŠ ä¸€é»ã€‚\n" NOR);
 
-                // ¼ÇÂ¼³É¹¦µÄ¼ÇºÅ
+                // è¨˜éŒ„æˆåŠŸçš„è¨˜è™Ÿ
                 addn("gift/"+query("gift_type")+"/succeed", 1, me);
 
-                // Ôö¼ÓÏàÓ¦µÄÌì¸³ÊôĞÔ
+                // å¢åŠ ç›¸æ‡‰çš„å¤©è³¦å±¬æ€§
                 addn(query("gift_type"), 1, me);
         }
 
-        // ¼ÇÂ¼Èë³Ôµ¤µÄ×ÜÁ¿
+        // è¨˜éŒ„å…¥åƒä¸¹çš„ç¸½é‡
         /*
         if( !query("gift/" + query("gift_type") + "/all", me) ) 
                 addn("gift/"+query("gift_type")+"/all", 1, me);

@@ -1,5 +1,5 @@
 // underlt.c
-// ÀŞÌ¨ÏÂÃæ
+// æ“‚å°ä¸‹é¢
 
 inherit ROOM;
 
@@ -28,7 +28,7 @@ int valid_leave(object me, string dir)
                 return ::valid_leave(me, dir);
 
         if (ob->refuse(me))
-                return notify_fail("Äã´ÕÊ²Ã´ÈÈÄÖ£¬ÏÖÔÚ²»ÊÇÄãÉÏÈ¥µÄÊ±ºò¡£\n");
+                return notify_fail("ä½ æ¹Šä»€éº¼ç†±é¬§ï¼Œç¾åœ¨ä¸æ˜¯ä½ ä¸Šå»çš„æ™‚å€™ã€‚\n");
 
         return ::valid_leave(me, dir);
 }
@@ -41,37 +41,37 @@ int do_pass(string arg)
 
         me = this_player();
         if (! wizardp(me))
-                return notify_fail("Äã²»ÊÇÎ×Ê¦£¬Ã»ÓĞ×Ê¸ñÈÃÈË¼ÒÉÏÈ¥¡£\n");
+                return notify_fail("ä½ ä¸æ˜¯å·«å¸«ï¼Œæ²’æœ‰è³‡æ ¼è®“äººå®¶ä¸Šå»ã€‚\n");
 
         if (! arg ||
             ! objectp(ob = present(arg, this_object())))
-                return notify_fail("ÄãÏëÈÃË­ÉÏÈ¥£¿\n");
+                return notify_fail("ä½ æƒ³è®“èª°ä¸Šå»ï¼Ÿ\n");
 
         if (ob == me)
-                return notify_fail("Äã¾Í²»»á×Ô¼º×ßÉÏÈ¥£¿\n");
+                return notify_fail("ä½ å°±ä¸æœƒè‡ªå·±èµ°ä¸Šå»ï¼Ÿ\n");
 
         if (wizardp(ob))
-                return notify_fail("ÈË¼Ò×Ô¼ºÏëÉÏÈ¥×Ô¼º»áÉÏÈ¥£¬²»ÀÍÄã·ÑĞÄ¡£\n");
+                return notify_fail("äººå®¶è‡ªå·±æƒ³ä¸Šå»è‡ªå·±æœƒä¸Šå»ï¼Œä¸å‹ä½ è²»å¿ƒã€‚\n");
 
         if (! ob->is_character())
-                return notify_fail("ÄãÊÇ²»ÊÇ´óÄÔ½øÁËË®£¿\n");
+                return notify_fail("ä½ æ˜¯ä¸æ˜¯å¤§è…¦é€²äº†æ°´ï¼Ÿ\n");
 
         if (! userp(ob))
-                return notify_fail("ÄãÍ±ÁËÍ±ÁË" + ob->name() + "£¬²»¹ıÈË¼ÒÃ»¶¯¡£\n");
+                return notify_fail("ä½ æ…äº†æ…äº†" + ob->name() + "ï¼Œä¸éäººå®¶æ²’å‹•ã€‚\n");
 
         if (! living(ob))
-                return notify_fail("ºÃ´õÄãµÃÅªĞÑÈË¼Ò°É£¿\n");
+                return notify_fail("å¥½æ­¹ä½ å¾—å¼„é†’äººå®¶å§ï¼Ÿ\n");
 
         ob_leitai = find_object(LEITAI);
         if (! objectp(ob_leitai))
                 ob_leitai = load_object(LEITAI);
         if (! objectp(ob_leitai))
-                return notify_fail("ÀŞÌ¨ÔÚÄÄÀï£¿\n");
+                return notify_fail("æ“‚å°åœ¨å“ªè£¡ï¼Ÿ\n");
 
-        message_vision("$NµãµãÍ·£¬¶Ô$nµÀ£º¡°ÄãÉÏÈ¥°É¡£¡±\n"
-                       "Ö»¼û$nÄ¦È­²ÁÕÆ£¬Ó»Ô¾±¼ÉÏÌ¨È¥¡£\n",
+        message_vision("$Né»é»é ­ï¼Œå°$né“ï¼šâ€œä½ ä¸Šå»å§ã€‚â€\n"
+                       "åªè¦‹$næ‘©æ‹³æ“¦æŒï¼Œè¸´èºå¥”ä¸Šå°å»ã€‚\n",
                        me, ob);
-        message("vision", "Ö»¼û" + ob->name() + "Ô¾ÉÏÌ¨À´£¬½Ã½¡Ö®¼«¡£\n",
+        message("vision", "åªè¦‹" + ob->name() + "èºä¸Šå°ä¾†ï¼ŒçŸ¯å¥ä¹‹æ¥µã€‚\n",
                 ob_leitai);
         ob->move(ob_leitai);
         return 1;

@@ -5,11 +5,11 @@ int check_legal_id(string arg);
 
 void create()
 {
-        set_name("ÀÏ²Ã·ì", ({ "waiter" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("è€è£ç¸«", ({ "waiter" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 52);
         set("long",
-                "ÕâÎ»ÀÏ²Ã·ìÕıĞ¦ßäßäµØÃ¦Öø£¬»¹²»Ê±µÄ²ÁÒ»²Á×Ô¼ºµÄÀÏ»¨ÑÛ¡£\n");
+                "é€™ä½è€è£ç¸«æ­£ç¬‘å’ªå’ªåœ°å¿™è‘—ï¼Œé‚„ä¸æ™‚çš„æ“¦ä¸€æ“¦è‡ªå·±çš„è€èŠ±çœ¼ã€‚\n");
         set("combat_exp", 5);
         set("attitude", "friendly");
         setup();
@@ -34,12 +34,12 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
         switch( random(5) ) {
                 case 0:
-                        say( "ÀÏ²Ã·ìĞ¦ßäßäµØËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-                                + "£¬½øÀ´¶©ÉíÒÂ·ş°É¡£\n");
+                        say( "è€è£ç¸«ç¬‘å’ªå’ªåœ°èªªé“ï¼šé€™ä½" + RANK_D->query_respect(ob)
+                                + "ï¼Œé€²ä¾†è¨‚èº«è¡£æœå§ã€‚\n");
                         break;
                 case 1:
-                        say( "ÀÏ²Ã·ì³îÃ¼¿àÁ³ËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-                                + "£¬ÄãÓÖÅÖÓÖ°«£¬Õâ°ï²»ÁËÄã¡£\n");
+                        say( "è€è£ç¸«æ„çœ‰è‹¦è‡‰èªªé“ï¼šé€™ä½" + RANK_D->query_respect(ob)
+                                + "ï¼Œä½ åˆèƒ–åˆçŸ®ï¼Œé€™å¹«ä¸äº†ä½ ã€‚\n");
                         break;
         }
 }
@@ -52,22 +52,22 @@ int do_ding(string arg)
         me = this_player();
         id=query("id", me);
         if(!arg || sscanf(arg,"%s %s %s %s %s",ctype,ccolor,cname,cid,material ) != 5)
-        return notify_fail("Ö¸Áî¸ñÊ½£ºding <type> <color> <name> <English name> <material>\n");
+        return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šding <type> <color> <name> <English name> <material>\n");
         if(me->is_busy())
-        return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É¡£\n");
+        return notify_fail("ä½ ä¸Šä¸€å€‹å‹•ä½œé‚„æ²’æœ‰å®Œæˆã€‚\n");
         if( query("created_item", me) >= query("age", me)/11 )
-        return notify_fail("ÄãÏÖÔÚÖ»ÄÜÓµÓĞ"+chinese_number(query("age", me)/11)+
-"¼ş×ÔÔìÎïÆ·¡£\n");
+        return notify_fail("ä½ ç¾åœ¨åªèƒ½æ“æœ‰"+chinese_number(query("age", me)/11)+
+"ä»¶è‡ªé€ ç‰©å“ã€‚\n");
         if( query("created_item", me) >= 3 )
-        return notify_fail("ÄãÒÑ¾­ÓµÓĞÌ«¶à×ÔÔìÎïÆ·ÁË¡£\n");
+        return notify_fail("ä½ å·²ç¶“æ“æœ‰å¤ªå¤šè‡ªé€ ç‰©å“äº†ã€‚\n");
         gold = present("gold_money", this_player());
-        if(!gold) return notify_fail("ÄãÉíÉÏÃ»ÓĞ½ğ×Ó¡£\n");
+        if(!gold) return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é‡‘å­ã€‚\n");
         if((int) gold->query_amount() < 1)
-        return notify_fail("ÄãÉíÉÏÃ»ÓĞÄÇ÷á¶à½ğ×Ó¡£\n");
+        return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é‚£éº¼å¤šé‡‘å­ã€‚\n");
         if(!objectp(ob2=present(material,me)))
-        return notify_fail("ÄãÉíÉÏ²¢Ã»ÓĞ"+material+"¡£\n");
+        return notify_fail("ä½ èº«ä¸Šä¸¦æ²’æœ‰"+material+"ã€‚\n");
         if( !query("for_create_cloth", ob2) )
-        return notify_fail(ob2->name()+"²¢²»¿ÉÒÔÓÃÀ´×öÒÂÊÎ¡£\n");
+        return notify_fail(ob2->name()+"ä¸¦ä¸å¯ä»¥ç”¨ä¾†åšè¡£é£¾ã€‚\n");
         if( !check_legal_name(cname))
         return notify_fail("");
         if( !check_legal_id(cid))
@@ -91,7 +91,7 @@ int do_ding(string arg)
             ccolor != "$HIC$" &&
             ccolor != "$HIW$" 
         )
-        return notify_fail("²»ÖªÄãÒªÊ²Ã´ÑÕÉ«£®\n");
+        return notify_fail("ä¸çŸ¥ä½ è¦ä»€éº¼é¡è‰²ï¼\n");
         ccolor = replace_string(ccolor, "$BLK$", "BLK");
         ccolor = replace_string(ccolor, "$RED$", "RED");
         ccolor = replace_string(ccolor, "$GRN$", "GRN");
@@ -126,11 +126,11 @@ int do_ding(string arg)
                         newfile = read_file("/obj/clothes/scarf.o");
                         break;
                 default:
-                        return notify_fail("ÕâÀï²»»á×öÄãÒªµÄ¶«Î÷£®\n");
+                        return notify_fail("é€™è£¡ä¸æœƒåšä½ è¦çš„æ±è¥¿ï¼\n");
         }
         timestamp = sprintf("%c%c%c%c%c%c%c",'a'+random(20),'a'+random(20),'a'+random(20),
         'a'+random(20),'a'+random(20),'a'+random(20),'a'+random(20));
-        newfile = replace_string( newfile, "¶©×÷µÄ", cname);
+        newfile = replace_string( newfile, "è¨‚ä½œçš„", cname);
         newfile = replace_string( newfile, "order", cid);
         newfile = replace_string( newfile, "fengyun", id);
         newfile = replace_string( newfile, "COR", ccolor);
@@ -151,7 +151,7 @@ int do_ding(string arg)
         gold->add_amount(-1);
         addn("created_item", 1, me);
         me->start_busy(1);
-        write("Äã½«ÉíÉÏµÄ"+ob2->name()+"½»¸ø"+name()+"£¬´òÔì³ÉÒ»"+query("unit", ob)+
+        write("ä½ å°‡èº«ä¸Šçš„"+ob2->name()+"äº¤çµ¦"+name()+"ï¼Œæ‰“é€ æˆä¸€"+query("unit", ob)+
         ob->name()+"\n");
         destruct(ob2);
         seteuid(getuid());
@@ -164,16 +164,16 @@ int check_legal_name(string name)
         int i;
         i = strlen(name);
         if( (strlen(name) < 2) || (strlen(name) > 40 ) ) {
-                write("¶Ô²»Æğ£¬ÖĞÎÄÃû×Ö±ØĞëÊÇÒ»µ½¶şÊ®¸öÖĞÎÄ×Ö¡£\n");
+                write("å°ä¸èµ·ï¼Œä¸­æ–‡åå­—å¿…é ˆæ˜¯ä¸€åˆ°äºŒåå€‹ä¸­æ–‡å­—ã€‚\n");
                 return 0;
         }
         while(i--) {
                 if( name[i]<=' ' ) {
-                        write("¶Ô²»Æğ£¬ÖĞÎÄÃû×Ö²»ÄÜÓÃ¿ØÖÆ×ÖÔª¡£\n");
+                        write("å°ä¸èµ·ï¼Œä¸­æ–‡åå­—ä¸èƒ½ç”¨æ§åˆ¶å­—å…ƒã€‚\n");
                         return 0;
                 }
                 if( i%2==0 && !is_chinese(name[i..<0]) ) {
-                        write("¶Ô²»Æğ£¬Ãû×Ö±ØĞèÊÇÖĞÎÄ¡£\n");
+                        write("å°ä¸èµ·ï¼Œåå­—å¿…éœ€æ˜¯ä¸­æ–‡ã€‚\n");
                         return 0;
                 }
         }
@@ -185,7 +185,7 @@ int check_legal_id(string name)
         int i;
         i = strlen(name);
         if( (strlen(name) < 3) || (strlen(name) > 20 ) ) {
-                write("¶Ô²»Æğ£¬Ó¢ÎÄÃû×Ö±ØĞëÊÇÈıµ½¶şÊ®¸ö×Ö¡£\n");
+                write("å°ä¸èµ·ï¼Œè‹±æ–‡åå­—å¿…é ˆæ˜¯ä¸‰åˆ°äºŒåå€‹å­—ã€‚\n");
                 return 0;
         }
 

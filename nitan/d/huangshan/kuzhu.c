@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-        set("short", "¿àÖñÏª");
+        set("short", "è‹¦ç«¹æºª");
         set("long", @LONG
-ÑØÍ¾Ê¢²ú¿àÖñ£¬ËùÒÔÏªË®Ò²ÓĞµ­µ­µÄÉ¬Î¶£¬µ«ÊÇÁ¼Ò©¿à¿Ú£¬¿àÖñ¸ü
-ÊÇÈëÒ©µÄÉÏÆ·£¬ËùÒÔÀ´ÍùÖ®ÈËÒÀÈ»°®Òû´ËÈª£¬¶ÔÓÚ½â·¦ÌáÉñ¼«ÓĞ°ïÖú¡£
-¸üÓĞÈËÌØµØÀ´´ËÈ¡Öñ¸ùÈëÒ©¡£ÓÚÊÇ±ãÓĞÉ½ÃñÔÚ´Ë·¥Öñ··Âô¡£
+æ²¿é€”ç››ç”¢è‹¦ç«¹ï¼Œæ‰€ä»¥æºªæ°´ä¹Ÿæœ‰æ·¡æ·¡çš„æ¾€å‘³ï¼Œä½†æ˜¯è‰¯è—¥è‹¦å£ï¼Œè‹¦ç«¹æ›´
+æ˜¯å…¥è—¥çš„ä¸Šå“ï¼Œæ‰€ä»¥ä¾†å¾€ä¹‹äººä¾ç„¶æ„›é£²æ­¤æ³‰ï¼Œå°äºè§£ä¹æç¥æ¥µæœ‰å¹«åŠ©ã€‚
+æ›´æœ‰äººç‰¹åœ°ä¾†æ­¤å–ç«¹æ ¹å…¥è—¥ã€‚äºæ˜¯ä¾¿æœ‰å±±æ°‘åœ¨æ­¤ä¼ç«¹è²©è³£ã€‚
 LONG
         );
         set("exits", ([ 
@@ -18,8 +18,8 @@ LONG
                 __DIR__"npc/snake" : 2,
         ]) );
         set("item_desc", ([
-                "¿àÖñÏª": "Äã¿ÉÒÔÊÔ×Å´ÓÏª£¨xi£©ÖĞºÈ£¨drink£©Ò»¿Ú¡£\n",
-                "kuzhuxi": "Äã¿ÉÒÔÊÔ×Å´ÓÏª£¨xi£©ÖĞºÈ£¨drink£©Ò»¿Ú¡£\n"
+                "è‹¦ç«¹æºª": "ä½ å¯ä»¥è©¦è‘—å¾æºªï¼ˆxiï¼‰ä¸­å–ï¼ˆdrinkï¼‰ä¸€å£ã€‚\n",
+                "kuzhuxi": "ä½ å¯ä»¥è©¦è‘—å¾æºªï¼ˆxiï¼‰ä¸­å–ï¼ˆdrinkï¼‰ä¸€å£ã€‚\n"
         ]) );
         set("outdoors", "huangshan");
         set("coor/x", -575);
@@ -38,8 +38,8 @@ int do_drink(string arg)
 
         if(!arg || arg != "xi") return 0;
         if( query("water", me) >= me->max_water_capacity() )
-                return notify_fail("ÄãËÆºõ²¢²»¿Ê¡£\n");
-        message_vision("$NÍäÏÂÑü£¬ÔÚ¿àÖñÏªÖĞºÈÁËÒ»´ó¿Ú¿àË®£¡\n",me);
+                return notify_fail("ä½ ä¼¼ä¹ä¸¦ä¸æ¸´ã€‚\n");
+        message_vision("$Nå½ä¸‹è…°ï¼Œåœ¨è‹¦ç«¹æºªä¸­å–äº†ä¸€å¤§å£è‹¦æ°´ï¼\n",me);
         addn("water", 50, me);
         return 1;
 }
@@ -51,11 +51,11 @@ int do_climb(string arg)
 
         if(!arg || arg != "up")
         {
-                write("ÄãÒªÍùÄÄÀïÅÀ£¿\n");
+                write("ä½ è¦å¾€å“ªè£¡çˆ¬ï¼Ÿ\n");
                 return 1;
         }
         me = this_player();
-        message_vision("\n$NÂıÂıµØÏòÉÏÅÀÈ¥¡£\n",me);
+        message_vision("\n$Næ…¢æ…¢åœ°å‘ä¸Šçˆ¬å»ã€‚\n",me);
         me->start_busy(4);
         call_out("fliping",4,me);
         me->stop_busy();
@@ -67,7 +67,7 @@ int fliping(object me)
         if( !me->is_ghost())
         {
                 me->move(__DIR__"huangshan");
-                message_vision("$NË³×ÅÑÂ±ÚÅÀÁËÉÏÀ´¡£\n", me);
+                message_vision("$Né †è‘—å´–å£çˆ¬äº†ä¸Šä¾†ã€‚\n", me);
         }
         return 1;
 }

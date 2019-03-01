@@ -7,14 +7,14 @@ inherit MEDICAL_BOOK;
 
 void create()
 {
-        set_name(HIG "Á¶µ¤ÃØ±¾" NOR, ({ "liandan miben", "miben" }));
+        set_name(HIG "ç…‰ä¸¹ç§˜æœ¬" NOR, ({ "liandan miben", "miben" }));
         set_weight(500);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
-                set("long", "ÕâÊÇÒ»±¾·º»ÆµÄÊé¼®£¬ÉÏÃæÓÃĞ¡×­Êé"
-                            "Ğ´×Å¡°Á¶µ¤ÃØ±¾¡±¼¸¸ö×Ö¡£\n",
+                set("unit", "æœ¬");
+                set("long", "é€™æ˜¯ä¸€æœ¬æ³›é»ƒçš„æ›¸ç±ï¼Œä¸Šé¢ç”¨å°ç¯†æ›¸"
+                            "å¯«è‘—â€œç…‰ä¸¹ç§˜æœ¬â€å¹¾å€‹å­—ã€‚\n",
 
                 );
                 set("material", "paper");
@@ -27,13 +27,13 @@ void create()
                 ]));
 
                 set("can_make", ([
-                        "shujing"  : 80,        // Êæ½î»îÂçµ¤
-                        "dieda"    : 80,        // µø´òÉËÓú¸à
-                        "jiedu"    : 100,       // Å£»Æ½â¶¾Íè
-                        "yuzhen"   : 150,       // ÓñÕæÉ¢
-                        "yuling"   : 150,       // ÓñÁéÉ¢
-                        "yuqing"   : 200,       // ÓñÇåÉ¢
-                        "sanhuang" : 250,       // Èı»Æ±¦À°µ¤
+                        "shujing"  : 80,        // èˆ’ç­‹æ´»çµ¡ä¸¹
+                        "dieda"    : 80,        // è·Œæ‰“å‚·ç™’è†
+                        "jiedu"    : 100,       // ç‰›é»ƒè§£æ¯’ä¸¸
+                        "yuzhen"   : 150,       // ç‰çœŸæ•£
+                        "yuling"   : 150,       // ç‰éˆæ•£
+                        "yuqing"   : 200,       // ç‰æ¸…æ•£
+                        "sanhuang" : 250,       // ä¸‰é»ƒå¯¶è‡˜ä¸¹
                 ]));
         }
         setup();

@@ -8,22 +8,22 @@ int main(object me, string arg)
         int cur_time = time();  
 
         if( !wizardp(me) && cur_time-query_temp("last_who", me)<5 )
-                return notify_fail("ÏµÍ³Æø´­ĞêµØÌ¾µÀ£ºÂıÂıÀ´ ....\n");  
+                return notify_fail("ç³»çµ±æ°£å–˜å™“åœ°å˜†é“ï¼šæ…¢æ…¢ä¾† ....\n");  
 
         set_temp("last_who", cur_time, me);
         if (! objectp(WAR_D->query_marshal()))
-                return notify_fail("ÏÖÔÚÇ°·½Ã»ÓĞÕ½ÊÂ£¡\n"); 
+                return notify_fail("ç¾åœ¨å‰æ–¹æ²’æœ‰æˆ°äº‹ï¼\n"); 
 
-        write(sprintf("Íõ³¯Õ½ÕùÒÑ¾­½øĞĞÁË" + WAR_D->query_continue_time() + "¡£\n"));
+        write(sprintf("ç‹æœæˆ°çˆ­å·²ç¶“é€²è¡Œäº†" + WAR_D->query_continue_time() + "ã€‚\n"));
         return 1;
 }
 
 int help(object me)
 {
      write(@HELP
-Ö¸Áî¸ñÊ½: time
+æŒ‡ä»¤æ ¼å¼: time
 
-Õâ¸öÖ¸Áî¸æËßÄãÍõ³¯Õ½ÕùÒÑ¾­½øĞĞµÄÊ±¼ä¡£
+é€™å€‹æŒ‡ä»¤å‘Šè¨´ä½ ç‹æœæˆ°çˆ­å·²ç¶“é€²è¡Œçš„æ™‚é–“ã€‚
 
 HELP
     );

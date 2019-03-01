@@ -5,25 +5,25 @@ inherit SURCOAT;
 
 void create()
 {
-        set_name(HIR "·ï»ËÅû·ç" NOR, ({ "fenghuang pifeng", "fenghuang", "pifeng" }));
+        set_name(HIR "é³³å‡°æŠ«é¢¨" NOR, ({ "fenghuang pifeng", "fenghuang", "pifeng" }));
         set_weight(1000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼ş");
-                set("long", HIR"\nÒ»¼şÓÃ·ï»ËÓğÃ«Ö¯³ÉµÄÅû·ç£¬ÄËÏ¡ÊÀÕä¡£\n" NOR
-                            HIC "ÓĞĞ§ÕĞ¼ÜĞŞÕı£º+ 20        ÓĞĞ§Çá¹¦ĞŞÕı£º+ 30\n" NOR
-                            HIC "¿¹¶¾Ğ§¹ûĞŞÕı£º+ 15%       ·ÀÓùĞ§¹ûµÈ¼¶£º  70\n" NOR
-                            HIC "¿¹¶¾»Ø±ÜĞŞÕı£º+ 15%\n" NOR);
+                set("unit", "ä»¶");
+                set("long", HIR"\nä¸€ä»¶ç”¨é³³å‡°ç¾½æ¯›ç¹”æˆçš„æŠ«é¢¨ï¼Œä¹ƒç¨€ä¸–çã€‚\n" NOR
+                            HIC "æœ‰æ•ˆæ‹›æ¶ä¿®æ­£ï¼š+ 20        æœ‰æ•ˆè¼•åŠŸä¿®æ­£ï¼š+ 30\n" NOR
+                            HIC "æŠ—æ¯’æ•ˆæœä¿®æ­£ï¼š+ 15%       é˜²å¾¡æ•ˆæœç­‰ç´šï¼š  70\n" NOR
+                            HIC "æŠ—æ¯’å›é¿ä¿®æ­£ï¼š+ 15%\n" NOR);
 
                 set("material", "phoenix");
-                set("material_name", "ÖìÈ¸ÓğÃ«¡¢ÖìÈ¸Ö®½Ç¡¢ÖìÈ¸½î¡¢Îå²ÊÁáççÖé");
+                set("material_name", "æœ±é›€ç¾½æ¯›ã€æœ±é›€ä¹‹è§’ã€æœ±é›€ç­‹ã€äº”å½©ç²ç“ç ");
                 set("can_summon", 1);
                 set("summon_id", "fenghuangjia");
-                set("ctype", "Åû·ç");
-                set("summon_wear_msg", HIR "É²ÄÇ¼ä£¬Ò»¹É»ğÑæ´ÓµØĞÄÌÚÉä¶ø³ö£¬Ö±³åÌì¼Ê£¬\n"
-                                       "×ªÑÛ¼ä£¬»ğÑæ½¥½¥»¯×÷Ò»Ö»»ğ·ï»Ë£¬Óë$N" HIR "ºÏÎªÒ»Ìå¡£\n" NOR);
-                set("summon_remove_msg", HIR "Ö»ÌıµÃÒ»Éù³¤Ë»£¬Ò»Ö»¾Ş´óµÄ»ğ·ï»ËÏûÊ§ÓëÌì¼Ê¡£\n" NOR);
+                set("ctype", "æŠ«é¢¨");
+                set("summon_wear_msg", HIR "å‰é‚£é–“ï¼Œä¸€è‚¡ç«ç‡„å¾åœ°å¿ƒé¨°å°„è€Œå‡ºï¼Œç›´æ²–å¤©éš›ï¼Œ\n"
+                                       "è½‰çœ¼é–“ï¼Œç«ç‡„æ¼¸æ¼¸åŒ–ä½œä¸€åªç«é³³å‡°ï¼Œèˆ‡$N" HIR "åˆç‚ºä¸€é«”ã€‚\n" NOR);
+                set("summon_remove_msg", HIR "åªè½å¾—ä¸€è²é•·å˜¶ï¼Œä¸€åªå·¨å¤§çš„ç«é³³å‡°æ¶ˆå¤±èˆ‡å¤©éš›ã€‚\n" NOR);
 
                 set("value", 4500000);
                 set("armor_prop/armor", 50);

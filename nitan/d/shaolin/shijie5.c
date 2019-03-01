@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ʯ��");
+        set("short", "石階");
         set("long", @LONG
-һ�Ҿ޴���ٲ������������Խɽ�䣬ˮ����Ũ�÷·���Ե���
-ˮ�������ɽ�ͼ����𱡻������������۲�ɢ��������ˮ�����������
-ʯ��������ˮ�գ�����ȥ���ÿ������˴������
+一掛巨大的瀑布白龍出霄般橫越山間，水氣已濃得仿佛可以滴下
+水珠兒來。山巒間升起薄弧的青霧，凝聚不散。嘩嘩的水聲震耳欲聾。
+石階上滿是水漬，走上去滑得可以讓人打跌。。
 LONG );
         set("exits", ([
                 "southdown" : __DIR__"shijie4",

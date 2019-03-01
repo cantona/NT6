@@ -1,5 +1,5 @@
 // /banghui/smith.c
-// °ïÅÉµÄÌú½³
+// å¹«æ´¾çš„éµåŒ 
 // by Find.
 
 #include <ansi.h>
@@ -7,10 +7,10 @@
 #include <mine_def.h>
 #include <mangle.h>
 #include <self.h>
-#define WEAPON_VALUE	500	/* Ã¿µãÉ±ÉËÁ¦5Á½Òø×Ó¡£*/
+#define WEAPON_VALUE	500	/* æ¯é»æ®ºå‚·åŠ›5å…©éŠ€å­ã€‚*/
 #define ARMOR_VALUE	200
-#define KEY_VALUE	10000	/* Åä¼ÒÃÅÔ¿³×£¬1 gold Ò»°Ñ */
-#define MIN_FEE		200	/* ĞŞÀí±øÆ÷×îµÍµÄ·ÑÓÃ */
+#define KEY_VALUE	10000	/* é…å®¶é–€é‘°åŒ™ï¼Œ1 gold ä¸€æŠŠ */
+#define MIN_FEE		200	/* ä¿®ç†å…µå™¨æœ€ä½çš„è²»ç”¨ */
 #define MAX_SELL_RATE	80
 
 inherit NPC;
@@ -23,7 +23,7 @@ string query_save_file()
 	return base_name("this_object()");
 }
 
-protected int sell_rate = 50;	// Ä¬ÈÏÎª°ë¼ÛÊÕ¹º
+protected int sell_rate = 50;	// é»˜èªç‚ºåŠåƒ¹æ”¶è³¼
 protected mapping make_weapon_ability = ([]);
 protected nosave int do_nothing;
 protected nosave object master;
@@ -47,15 +47,15 @@ protected nosave mapping res_cost = ([
 ]),
 
 res_cost_desc = ([
-"axe" : "¸«×Ó(Axe) [Ğè %d ½ïÔ­ÁÏ]\n",
-"blade" : "µ¶(Blade) [Ğè %d ½ïÔ­ÁÏ]\n",
-"dagger" : "Ø°Ê×(dagger) [Ğè %d ½ïÔ­ÁÏ]\n",
-"hammer" : "Ë«ÊÖ´¸(hammer) [Ğè %d ½ïÔ­ÁÏ]\n",
-"dhammer" : "µ¥ÊÖ´¸(hammer) [Ğè %d ½ïÔ­ÁÏ]\n",
-"spear" : "Ç¹(spear) [Ğè %d ½ïÔ­ÁÏ]\n",
-"stick" : "¹÷(stick) [Ğè %d ½ïÔ­ÁÏ]\n",
-"sword" : "½£(sword) [Ğè %d ½ïÔ­ÁÏ]\n",
-"whip" : "±Ş(whip) [Ğè %d ½ïÔ­ÁÏ]\n",
+"axe" : "æ–§å­(Axe) [éœ€ %d æ–¤åŸæ–™]\n",
+"blade" : "åˆ€(Blade) [éœ€ %d æ–¤åŸæ–™]\n",
+"dagger" : "åŒ•é¦–(dagger) [éœ€ %d æ–¤åŸæ–™]\n",
+"hammer" : "é›™æ‰‹éŒ˜(hammer) [éœ€ %d æ–¤åŸæ–™]\n",
+"dhammer" : "å–®æ‰‹éŒ˜(hammer) [éœ€ %d æ–¤åŸæ–™]\n",
+"spear" : "æ§(spear) [éœ€ %d æ–¤åŸæ–™]\n",
+"stick" : "æ£(stick) [éœ€ %d æ–¤åŸæ–™]\n",
+"sword" : "åŠ(sword) [éœ€ %d æ–¤åŸæ–™]\n",
+"whip" : "é­(whip) [éœ€ %d æ–¤åŸæ–™]\n",
 ]),
 
 std_self_weapon = ([
@@ -97,10 +97,10 @@ int learn_make_weapon_ability(string cls)
 		make_weapon_ability = ([]);
 
 	if(!undefinedp(make_weapon_ability[cls]))
-		return notify_fail(sprintf("%sÒÑ¾­»á´òÔìÕâÖÖ±øÆ÷ÁË¡£\n", name()));
+		return notify_fail(sprintf("%så·²ç¶“æœƒæ‰“é€ é€™ç¨®å…µå™¨äº†ã€‚\n", name()));
 
 	if(undefinedp(res_cost[cls]))
-		return notify_fail(sprintf("%sÃ»·¨Ñ§»áÕâÖÖ±øÆ÷µÄ´òÔì·½·¨¡£\n", name()));
+		return notify_fail(sprintf("%sæ²’æ³•å­¸æœƒé€™ç¨®å…µå™¨çš„æ‰“é€ æ–¹æ³•ã€‚\n", name()));
 
 	make_weapon_ability += ([ cls : 5 ]);
 	save();
@@ -124,7 +124,7 @@ int add_make_weapon_ability(string cls)
 		return 0;
 
 	if(!mapp(make_weapon_ability) || undefinedp(make_weapon_ability[cls]))
-		return notify_fail(sprintf("%s»¹²»»á´òÔìÕâÖÖ±øÆ÷¡£\n", name()));
+		return notify_fail(sprintf("%sé‚„ä¸æœƒæ‰“é€ é€™ç¨®å…µå™¨ã€‚\n", name()));
 
 	make_weapon_ability[cls]++;
 	save();
@@ -160,7 +160,7 @@ void init()
 	::init();
 	add_action("do_sell", "sell");
 	add_action("do_fix",({"fix","xiuli"}));
-	add_action("do_epurate", "ti");	// ÌáÁ¶¡¢¾«Á¶¿ó
+	add_action("do_epurate", "ti");	// æç…‰ã€ç²¾ç…‰ç¤¦
 	add_action("do_make_self", "dazao");
 	add_action("do_ronghe", "ronghe");
 }
@@ -176,20 +176,20 @@ int do_sell(string arg)
 	{
 		find_banghui_master();
 		if(!objectp(master))
-			return notify_fail("´Ë°ïÅÉ¿ØÖÆÖĞĞÄ³öÏÖ´íÎó£¬ÇëÍ¨ÖªÎ×Ê¦½â¾ö¡£\n");
+			return notify_fail("æ­¤å¹«æ´¾æ§åˆ¶ä¸­å¿ƒå‡ºç¾éŒ¯èª¤ï¼Œè«‹é€šçŸ¥å·«å¸«è§£æ±ºã€‚\n");
 	}
 
 	if( me->is_busy() )
 		return notify_fail(BUSY_MESSAGE);
 
 	if( !arg || ! ob = present(arg, this_player()) )
-		return notify_fail( "ÄãÒªÂôÊ²Ã´ÎïÆ·£¿\n" );
+		return notify_fail( "ä½ è¦è³£ä»€éº¼ç‰©å“ï¼Ÿ\n" );
 
 	if(!ob->is_weapon() && !ob->is_armor())
-		return notify_fail(name()+"Ò¡Ò¡Í·ËµµÀ£º¡°ÕâÀïÖ»ÊÕ¹º±øÆ÷ºÍ»¤¼×¡£¡±\n");
+		return notify_fail(name()+"æ–æ–é ­èªªé“ï¼šâ€œé€™è£¡åªæ”¶è³¼å…µå™¨å’Œè­·ç”²ã€‚â€\n");
 
 	if(ob->query("no_drop") || ob->query("no_sell"))
-		return notify_fail("ÕâÑù¶«Î÷²»ÄÜÂô¡£\n");
+		return notify_fail("é€™æ¨£æ±è¥¿ä¸èƒ½è³£ã€‚\n");
 
 	if(ob->is_weapon())
 	{
@@ -198,16 +198,16 @@ int do_sell(string arg)
 		if(ob->is_self_make_weapon())
 			value = ob->query("value");
 
-		else if(temp <= 50) /* ÆÕÍ¨±øÆ÷£¬°´ value Ëã¼Û¡£*/
+		else if(temp <= 50) /* æ™®é€šå…µå™¨ï¼ŒæŒ‰ value ç®—åƒ¹ã€‚*/
 		{
 			if(ob->query("base_value")) /* combined ob */
 				value = ob->value();
 			else
 				value = ob->query("value");
 			if( !value )
-				return notify_fail("ÕâÑù¶«Î÷²»ÖµÇ®¡£\n");
+				return notify_fail("é€™æ¨£æ±è¥¿ä¸å€¼éŒ¢ã€‚\n");
 			if(value < 10)
-				return notify_fail(ob->query("name")+"¼ÛÖµÌ«µÍ£¬Õâ²»ÊÕ¡£\n");
+				return notify_fail(ob->query("name")+"åƒ¹å€¼å¤ªä½ï¼Œé€™ä¸æ”¶ã€‚\n");
 		}
 
 		else
@@ -220,23 +220,23 @@ int do_sell(string arg)
 		value = value*(W_MAX_MANGLE-mangle)/W_MAX_MANGLE;
 
 		if(value < 10)
-			return notify_fail(sprintf("%sËµµÀ£º¡°%sÒÑ¾­²»ÖµÇ®ÁË¡£¡±\n",
+			return notify_fail(sprintf("%sèªªé“ï¼šâ€œ%så·²ç¶“ä¸å€¼éŒ¢äº†ã€‚â€\n",
 				this_object()->name(),ob->name()));
 
 		if(mangle == W_MAX_MANGLE)
-			return notify_fail(sprintf("%sËµµÀ£º¡°%sÒÑ¾­ÆÆ¾ÉµÄÒ»Ç®²»ÖµÁË¡£¡±\n",
+			return notify_fail(sprintf("%sèªªé“ï¼šâ€œ%så·²ç¶“ç ´èˆŠçš„ä¸€éŒ¢ä¸å€¼äº†ã€‚â€\n",
 				this_object()->name(),ob->name()));
 		else
-			write(sprintf("Äã°Ñ%sÂôµô£¬µÃµ½%s¡£\n",ob->name(),chinese_value(value)));
+			write(sprintf("ä½ æŠŠ%sè³£æ‰ï¼Œå¾—åˆ°%sã€‚\n",ob->name(),chinese_value(value)));
 
 		if(mangle >= W_MAX_MANGLE/2)
-			write(sprintf("%sËµµÀ£º¡°%sÒÑ¾­ÆÆ¾ÉµÄ²»ÏñÑù×ÓÁË£¬Ö»ÄÜÖµÕâ¼¸¸öÇ®ÁË¡£¡±\n",
+			write(sprintf("%sèªªé“ï¼šâ€œ%så·²ç¶“ç ´èˆŠçš„ä¸åƒæ¨£å­äº†ï¼Œåªèƒ½å€¼é€™å¹¾å€‹éŒ¢äº†ã€‚â€\n",
 				this_object()->name(),ob->name()));
 		else if(mangle >= W_MAX_MANGLE/5)
-			write(sprintf("%sËµµÀ£º¡°%sÓĞÒ»Ğ©ÆÆ¾É£¬ËùÒÔÖ»ÄÜÖµÕâĞ©Ç®¡£¡±\n",
+			write(sprintf("%sèªªé“ï¼šâ€œ%sæœ‰ä¸€äº›ç ´èˆŠï¼Œæ‰€ä»¥åªèƒ½å€¼é€™äº›éŒ¢ã€‚â€\n",
 				this_object()->name(),ob->name()));
 		else if(mangle >0)
-			write(sprintf("%sËµµÀ£º¡°%sÉÔÎ¢ÓĞÒ»µãËğ»µ£¬Õâ¸ö¼ÛÇ®ÒÑ¾­²»´íÁË¡£¡±\n",
+			write(sprintf("%sèªªé“ï¼šâ€œ%sç¨å¾®æœ‰ä¸€é»æå£ï¼Œé€™å€‹åƒ¹éŒ¢å·²ç¶“ä¸éŒ¯äº†ã€‚â€\n",
 				this_object()->name(),ob->name()));
 
 		pay_player(me, value, ob->query_credit_point_flag()?1:0);
@@ -244,7 +244,7 @@ int do_sell(string arg)
 			ob->unequip();
 		destruct(ob);
 
-		// ²î¼Û²¿·Ö´æÈë°ïÅÉ½ğ¿â
+		// å·®åƒ¹éƒ¨åˆ†å­˜å…¥å¹«æ´¾é‡‘åº«
 		if(save_value)
 			master->save_to_treasury(save_value);
 
@@ -254,13 +254,13 @@ int do_sell(string arg)
 	else if(ob->is_armor())
 	{
 		temp = ob->query("armor_prop/armor");
-		if(temp <= 50) /* ÆÕÍ¨»¤¼×£¬°´ value Ëã¼Û¡£*/
+		if(temp <= 50) /* æ™®é€šè­·ç”²ï¼ŒæŒ‰ value ç®—åƒ¹ã€‚*/
 		{
 			value = ob->query("value");
 			if( !value )
-				return notify_fail("ÕâÑù¶«Î÷²»ÖµÇ®¡£\n");
+				return notify_fail("é€™æ¨£æ±è¥¿ä¸å€¼éŒ¢ã€‚\n");
 			if(value < 10)
-				return notify_fail(ob->query("name")+"¼ÛÖµÌ«µÍ£¬Õâ²»ÊÕ¡£\n");
+				return notify_fail(ob->query("name")+"åƒ¹å€¼å¤ªä½ï¼Œé€™ä¸æ”¶ã€‚\n");
 		}
 
 		else
@@ -273,23 +273,23 @@ int do_sell(string arg)
 		value = value*(A_MAX_MANGLE-mangle)/A_MAX_MANGLE;
 
 		if(value < 10)
-			return notify_fail(sprintf("%sËµµÀ£º¡°%sÒÑ¾­²»ÖµÇ®ÁË¡£¡±\n",
+			return notify_fail(sprintf("%sèªªé“ï¼šâ€œ%så·²ç¶“ä¸å€¼éŒ¢äº†ã€‚â€\n",
 				this_object()->name(),ob->name()));
 
 		if(mangle == A_MAX_MANGLE)
-			return notify_fail(sprintf("%sËµµÀ£º¡°%sÒÑ¾­ÆÆ¾ÉµÄÒ»Ç®²»ÖµÁË¡£¡±\n",
+			return notify_fail(sprintf("%sèªªé“ï¼šâ€œ%så·²ç¶“ç ´èˆŠçš„ä¸€éŒ¢ä¸å€¼äº†ã€‚â€\n",
 				this_object()->name(),ob->name()));
 		else
-			write(sprintf("Äã°Ñ%sÂôµô£¬µÃµ½%s¡£\n",ob->name(),chinese_value(value)));
+			write(sprintf("ä½ æŠŠ%sè³£æ‰ï¼Œå¾—åˆ°%sã€‚\n",ob->name(),chinese_value(value)));
 
 		if(mangle >= A_MAX_MANGLE/2)
-			write(sprintf("%sËµµÀ£º¡°%sÒÑ¾­ÆÆ¾ÉµÄ²»ÏñÑù×ÓÁË£¬Ö»ÄÜÖµÕâ¼¸¸öÇ®ÁË¡£¡±\n",
+			write(sprintf("%sèªªé“ï¼šâ€œ%så·²ç¶“ç ´èˆŠçš„ä¸åƒæ¨£å­äº†ï¼Œåªèƒ½å€¼é€™å¹¾å€‹éŒ¢äº†ã€‚â€\n",
 				this_object()->name(),ob->name()));
 		else if(mangle >= A_MAX_MANGLE/5)
-			write(sprintf("%sËµµÀ£º¡°%sÓĞÒ»Ğ©ÆÆ¾É£¬ËùÒÔÖ»ÄÜÖµÕâĞ©Ç®¡£¡±\n",
+			write(sprintf("%sèªªé“ï¼šâ€œ%sæœ‰ä¸€äº›ç ´èˆŠï¼Œæ‰€ä»¥åªèƒ½å€¼é€™äº›éŒ¢ã€‚â€\n",
 				this_object()->name(),ob->name()));
 		else if(mangle >0)
-			write(sprintf("%sËµµÀ£º¡°%sÉÔÎ¢ÓĞÒ»µãËğ»µ£¬Õâ¸ö¼ÛÇ®ÒÑ¾­²»´íÁË¡£¡±\n",
+			write(sprintf("%sèªªé“ï¼šâ€œ%sç¨å¾®æœ‰ä¸€é»æå£ï¼Œé€™å€‹åƒ¹éŒ¢å·²ç¶“ä¸éŒ¯äº†ã€‚â€\n",
 				this_object()->name(),ob->name()));
 
 		pay_player(me, value, ob->query_credit_point_flag()?1:0);
@@ -314,14 +314,14 @@ int do_fix(string arg)
 	{
 		find_banghui_master();
 		if(!objectp(master))
-			return notify_fail("´Ë°ïÅÉ¿ØÖÆÖĞĞÄ³öÏÖ´íÎó£¬ÇëÍ¨ÖªÎ×Ê¦½â¾ö¡£\n");
+			return notify_fail("æ­¤å¹«æ´¾æ§åˆ¶ä¸­å¿ƒå‡ºç¾éŒ¯èª¤ï¼Œè«‹é€šçŸ¥å·«å¸«è§£æ±ºã€‚\n");
 	}
 
 	if(!arg || !ob = present(arg,me))
-		return notify_fail(this_object()->name()+"¿´×ÅÄãËµµÀ£º¡°ÄãÒªĞŞÀíÊ²Ã´£¿¡±\n");
+		return notify_fail(this_object()->name()+"çœ‹è‘—ä½ èªªé“ï¼šâ€œä½ è¦ä¿®ç†ä»€éº¼ï¼Ÿâ€\n");
 
 	if(!ob->is_weapon() && !ob->is_armor())
-		return notify_fail(this_object()->name()+"Ò¡Ò¡Í·ËµµÀ£º¡°ÔÛÕâÖ»ĞŞÀí±øÆ÷ºÍ»¤¼×¡£¡±\n");
+		return notify_fail(this_object()->name()+"æ–æ–é ­èªªé“ï¼šâ€œå’±é€™åªä¿®ç†å…µå™¨å’Œè­·ç”²ã€‚â€\n");
 
 	if(ob->query("base_value")) /* combined ob */
 		value = ob->value();
@@ -329,23 +329,23 @@ int do_fix(string arg)
 		value = ob->query("value");
 
 	if( !value )
-		return notify_fail(this_object()->name()+"ËµµÀ£ºÕâ¶«Î÷²»ÖµÇ®»¹ĞŞÊ²Ã´£¬ÈÓÁËËãÁË£¡\n");
+		return notify_fail(this_object()->name()+"èªªé“ï¼šé€™æ±è¥¿ä¸å€¼éŒ¢é‚„ä¿®ä»€éº¼ï¼Œæ‰”äº†ç®—äº†ï¼\n");
 	if(value < 10)
 		return notify_fail(this_object()->name()+
-			"ËµµÀ£º"+ob->name()+"Öµ²»ÁË¼¸¸öÇ®£¬Õâ²»ĞŞ¡£\n");
+			"èªªé“ï¼š"+ob->name()+"å€¼ä¸äº†å¹¾å€‹éŒ¢ï¼Œé€™ä¸ä¿®ã€‚\n");
 
 	if(ob->is_weapon())
 	{
 		mangle = ob->query("weapon_mangle");
 
 		if(!mangle)
-			return notify_fail(this_object()->name()+"ËµµÀ£ºÕ¸ĞÂµÄ"+
-				ob->name()+"»¹ĞŞÊ²Ã´¡£\n");
+			return notify_fail(this_object()->name()+"èªªé“ï¼šå¶„æ–°çš„"+
+				ob->name()+"é‚„ä¿®ä»€éº¼ã€‚\n");
 
 		if(me->query_banghui_id() == b_id)
 		{
 			ob->delete("weapon_mangle");
-			write(sprintf("%sµãµãÍ·ËµµÀ£º%sĞŞºÃÁË£¬ÄÃ×ÅËüÎªÎÒÃÇ%s¶à³öÁ¦¡£\n",
+			write(sprintf("%sé»é»é ­èªªé“ï¼š%sä¿®å¥½äº†ï¼Œæ‹¿è‘—å®ƒç‚ºæˆ‘å€‘%så¤šå‡ºåŠ›ã€‚\n",
 				name(), ob->name(), b_name));
 			return 1;
 		}
@@ -355,13 +355,13 @@ int do_fix(string arg)
 			fee = MIN_FEE;
 
 		if(!f=player_pay(me,fee) || f == 2)
-			return notify_fail(this_object()->name()+"ËµµÀ£ºĞŞÀíÕâ¼ş±øÆ÷ĞèÒª"+
-				chinese_value(fee)+"£¬ÄãÉíÉÏµÄÇ®²»¹»¡£\n");
+			return notify_fail(this_object()->name()+"èªªé“ï¼šä¿®ç†é€™ä»¶å…µå™¨éœ€è¦"+
+				chinese_value(fee)+"ï¼Œä½ èº«ä¸Šçš„éŒ¢ä¸å¤ ã€‚\n");
 
 		else
 		{
 			ob->delete("weapon_mangle");
-			write(sprintf("%sËµµÀ£º¡°%sĞŞºÃÁË£¬ĞŞÀí·ÑÒ»¹²%s£¬¿´ÄãÅÜ½­ºşÒ²²»ÈİÒ×£¬Õâ»ØÕæ±ãÒËÄãÁË¡£¡±\n",
+			write(sprintf("%sèªªé“ï¼šâ€œ%sä¿®å¥½äº†ï¼Œä¿®ç†è²»ä¸€å…±%sï¼Œçœ‹ä½ è·‘æ±Ÿæ¹–ä¹Ÿä¸å®¹æ˜“ï¼Œé€™å›çœŸä¾¿å®œä½ äº†ã€‚â€\n",
 				this_object()->name(),ob->name(),chinese_value(fee)));
 			return 1;
 		}
@@ -372,13 +372,13 @@ int do_fix(string arg)
 		mangle = ob->query("armor_mangle");
 
 		if(!mangle)
-			return notify_fail(this_object()->name()+"ËµµÀ£ºÕ¸ĞÂµÄ"+
-				ob->name()+"»¹ĞŞÊ²Ã´¡£\n");
+			return notify_fail(this_object()->name()+"èªªé“ï¼šå¶„æ–°çš„"+
+				ob->name()+"é‚„ä¿®ä»€éº¼ã€‚\n");
 
 		if(me->query_banghui_id() == b_id)
 		{
 			ob->delete("armor_mangle");
-			write(sprintf("%sµãµãÍ·ËµµÀ£º%sĞŞºÃÁË£¬´©´÷×ÅËüÎªÎÒÃÇ%s¶à³öÁ¦¡£\n",
+			write(sprintf("%sé»é»é ­èªªé“ï¼š%sä¿®å¥½äº†ï¼Œç©¿æˆ´è‘—å®ƒç‚ºæˆ‘å€‘%så¤šå‡ºåŠ›ã€‚\n",
 				name(), ob->name(), b_name));
 			return 1;
 		}
@@ -388,13 +388,13 @@ int do_fix(string arg)
 			fee = MIN_FEE;
 
 		if(!f=player_pay(me,fee) || f == 2)
-			return notify_fail(this_object()->name()+"ËµµÀ£ºĞŞÀíÕâ¼ş»¤¾ßĞèÒª"+
-				chinese_value(fee)+"£¬ÄãÉíÉÏµÄÇ®²»¹»¡£\n");
+			return notify_fail(this_object()->name()+"èªªé“ï¼šä¿®ç†é€™ä»¶è­·å…·éœ€è¦"+
+				chinese_value(fee)+"ï¼Œä½ èº«ä¸Šçš„éŒ¢ä¸å¤ ã€‚\n");
 
 		else
 		{
 			ob->delete("armor_mangle");
-			write(sprintf("%sËµµÀ£º¡°%sĞŞºÃÁË£¬ĞŞÀí·ÑÒ»¹²%s£¬¿´ÄãÅÜ½­ºşÒ²²»ÈİÒ×£¬Õâ»ØÕæ±ãÒËÄãÁË¡£¡±\n",
+			write(sprintf("%sèªªé“ï¼šâ€œ%sä¿®å¥½äº†ï¼Œä¿®ç†è²»ä¸€å…±%sï¼Œçœ‹ä½ è·‘æ±Ÿæ¹–ä¹Ÿä¸å®¹æ˜“ï¼Œé€™å›çœŸä¾¿å®œä½ äº†ã€‚â€\n",
 				this_object()->name(),ob->name(),chinese_value(fee)));
 			return 1;
 		}
@@ -415,9 +415,9 @@ void setup()
 		find_banghui_master();
 
 	if(!mapp(inq = this_object()->query("inquiry",1)))
-		inq = ([ "¼ø¶¨" : (: call_other, this_object(), "identify_mine_stone" :) ]);
-	else if(undefinedp(inq["¼ø¶¨"]))
-		inq += ([ "¼ø¶¨" : (: call_other, this_object(), "identify_mine_stone" :) ]);
+		inq = ([ "é‘’å®š" : (: call_other, this_object(), "identify_mine_stone" :) ]);
+	else if(undefinedp(inq["é‘’å®š"]))
+		inq += ([ "é‘’å®š" : (: call_other, this_object(), "identify_mine_stone" :) ]);
 	else
 		return;
 
@@ -432,10 +432,10 @@ string identify_mine_stone(object who)
 		return 0;
 
 	if(!sizeof(inv = filter_array(all_inventory(who), (: $1->is_mine_stone() && !$1->query_check() :))))
-		return "ÄãÉíÉÏÃ»ÓĞĞèÒª¼ø¶¨µÄ¿óÊ¯¡£\n";
+		return "ä½ èº«ä¸Šæ²’æœ‰éœ€è¦é‘’å®šçš„ç¤¦çŸ³ã€‚\n";
 
 	inv->set_check_flag(1);
-	return sprintf("¶¼¼ø¶¨ºÃÁË%s¡£\n",!random(3)?"£¬Ã»Ê²Ã´ÖµÇ®µÄ¶«Î÷":"");
+	return sprintf("éƒ½é‘’å®šå¥½äº†%sã€‚\n",!random(3)?"ï¼Œæ²’ä»€éº¼å€¼éŒ¢çš„æ±è¥¿":"");
 }
 
 int do_epurate(string arg)
@@ -448,16 +448,16 @@ int do_epurate(string arg)
 	{
 		find_banghui_master();
 		if(!objectp(master))
-			return notify_fail("´Ë°ïÅÉ¿ØÖÆÖĞĞÄ³öÏÖ´íÎó£¬ÇëÍ¨ÖªÎ×Ê¦½â¾ö¡£\n");
+			return notify_fail("æ­¤å¹«æ´¾æ§åˆ¶ä¸­å¿ƒå‡ºç¾éŒ¯èª¤ï¼Œè«‹é€šçŸ¥å·«å¸«è§£æ±ºã€‚\n");
 	}
 
 	if(do_nothing)
-		return notify_fail(sprintf("%sËµµÀ£ºµÈ»á¶ù£¬ÕıÃ¦×ÅÄØ¡£\n", name()));
+		return notify_fail(sprintf("%sèªªé“ï¼šç­‰æœƒå…’ï¼Œæ­£å¿™è‘—å‘¢ã€‚\n", name()));
 
 	if(!arg || !objectp(ob = present(arg, me)))
-		return notify_fail("ÄãÒªÌáÁ¶Ê²Ã´£¿\n");
+		return notify_fail("ä½ è¦æç…‰ä»€éº¼ï¼Ÿ\n");
 
-	if(ob->is_mine_stone())		// ÌáÁ¶¿óÊ¯
+	if(ob->is_mine_stone())		// æç…‰ç¤¦çŸ³
 	{
 		if(!ob->query_check())
 			ob->set_check_flag(1);
@@ -465,13 +465,13 @@ int do_epurate(string arg)
 		if( !(mcs = ob->query_mine_class())
 		|| !(cmcs = MINE_D->chinese_mine_class(mcs))
 		|| (member_array(mcs, can_epurate) == -1) )
-			return notify_fail(sprintf("%sÒ¡Ò¡Í·ËµµÀ£ºÕâÀï²»º¬ÈÎºÎ¿óÎï³É·İ¡£\n", name()));
+			return notify_fail(sprintf("%sæ–æ–é ­èªªé“ï¼šé€™è£¡ä¸å«ä»»ä½•ç¤¦ç‰©æˆä»½ã€‚\n", name()));
 
 		if( (ew = ob->query_eff_weight()) < 1 )
-			return notify_fail(sprintf("%sÒ¡Ò¡Í·ËµµÀ£ºÕâÀïº¬µÄ%sÌ«ÉÙÁË£¬Ã»·¨ÌáÁ¶¡£\n", name(), cmcs));
+			return notify_fail(sprintf("%sæ–æ–é ­èªªé“ï¼šé€™è£¡å«çš„%så¤ªå°‘äº†ï¼Œæ²’æ³•æç…‰ã€‚\n", name(), cmcs));
 
 		if(!objectp(tg = MINE_D->query_mine_class_up_ob(mcs)))
-			return notify_fail(sprintf("%sÒ¡Ò¡Í·ËµµÀ£ºÕâ¿é¿óÊ¯Ã»·¨ÌáÁ¶¡£\n", name()));
+			return notify_fail(sprintf("%sæ–æ–é ­èªªé“ï¼šé€™å¡Šç¤¦çŸ³æ²’æ³•æç…‰ã€‚\n", name()));
 
 		if(me->query_banghui_id() != b_id)
 		{
@@ -482,19 +482,19 @@ int do_epurate(string arg)
 			if(!(rtn=player_pay(me,value)) || (rtn == 2))
 			{
 				destruct(tg);
-				return notify_fail(sprintf("%sËµµÀ£ºÌáÁ¶Õâ¿é¿óÊ¯ÀïµÄ%sĞèÒª%s¡£\n",
+				return notify_fail(sprintf("%sèªªé“ï¼šæç…‰é€™å¡Šç¤¦çŸ³è£¡çš„%séœ€è¦%sã€‚\n",
 					name(), cmcs, chinese_value(value)));
 			}
 		}
 
 		do_nothing = 1;
-		message_vision("$N³¯×Å$nµãµãÍ·ËµµÀ£ºµÈÒ»»á¶ù¡£\n", this_object(), me);
+		message_vision("$Næœè‘—$né»é»é ­èªªé“ï¼šç­‰ä¸€æœƒå…’ã€‚\n", this_object(), me);
 
 		call_out("epurate_it", 1+random(2), me, ob, tg);
 		return 1;
 	}
 
-	else if(ob->is_iron_class_res())	// ¾«Á¶
+	else if(ob->is_iron_class_res())	// ç²¾ç…‰
 	{
 		int upq;
 
@@ -502,14 +502,14 @@ int do_epurate(string arg)
 		|| !(cmcs = MINE_D->chinese_mine_class(mcs))
 		|| (member_array(mcs, can_epurate) == -1)
 		|| !(upq = MINE_D->query_mine_class_up_quantity(mcs)) )
-			return notify_fail(sprintf("%sÒ¡Ò¡Í·ËµµÀ£ºÕâ¶«Î÷Ã»·¨ÔÙ¾«Á¶ÁË¡£\n", name()));
+			return notify_fail(sprintf("%sæ–æ–é ­èªªé“ï¼šé€™æ±è¥¿æ²’æ³•å†ç²¾ç…‰äº†ã€‚\n", name()));
 
 		if( (ew = ob->query_weight()/100) < upq )
-			return notify_fail(sprintf("%sÒ¡Ò¡Í·ËµµÀ£º¶Ô%s¾«Á¶ÖÁÉÙĞèÒª %d Á½£¬Õâ¿é%s²»¹»¡£\n",
+			return notify_fail(sprintf("%sæ–æ–é ­èªªé“ï¼šå°%sç²¾ç…‰è‡³å°‘éœ€è¦ %d å…©ï¼Œé€™å¡Š%sä¸å¤ ã€‚\n",
 				cmcs, upq, cmcs));
 
 		if(!objectp(tg = MINE_D->query_mine_class_up_ob(mcs)))
-			return notify_fail(sprintf("%sÒ¡Ò¡Í·ËµµÀ£ºÎÒÕâÃ»·¨¶Ô%s½øĞĞ¾«Á¶ÁË¡£\n", name(), cmcs));
+			return notify_fail(sprintf("%sæ–æ–é ­èªªé“ï¼šæˆ‘é€™æ²’æ³•å°%sé€²è¡Œç²¾ç…‰äº†ã€‚\n", name(), cmcs));
 
 		ew /= upq;
 
@@ -524,7 +524,7 @@ int do_epurate(string arg)
 			if(!(rtn=player_pay(me,value)) || (rtn == 2))
 			{
 				destruct(tg);
-				return notify_fail(sprintf("%sËµµÀ£º¶ÔÕâ¿é%s½øĞĞ¾«Á¶ĞèÒª%s¡£\n",
+				return notify_fail(sprintf("%sèªªé“ï¼šå°é€™å¡Š%sé€²è¡Œç²¾ç…‰éœ€è¦%sã€‚\n",
 					name(), cmcs, chinese_value(value)));
 			}
 		}
@@ -534,16 +534,16 @@ int do_epurate(string arg)
 		if(!tg->move(me) && !tg->move(environment()))
 		{
 			destruct(tg);
-			return notify_fail("Òì³£³¬ÖØ£¬ÏòÎ×Ê¦±¨¸æ°É¡£\n");
+			return notify_fail("ç•°å¸¸è¶…é‡ï¼Œå‘å·«å¸«å ±å‘Šå§ã€‚\n");
 		}
 
 		rong_he(me, tg);
-		write(sprintf("%sµãµãÍ·ËµµÀ£ººÃÁË£¬ÄÃÈ¥°É¡£\n", name()));
+		write(sprintf("%sé»é»é ­èªªé“ï¼šå¥½äº†ï¼Œæ‹¿å»å§ã€‚\n", name()));
 		return 1;
 	}
 
 	else
-		return notify_fail(sprintf("%sÒ¡Ò¡Í·ËµµÀ£ºÕâ¶«Î÷Ã»·¨ÌáÁ¶¡£\n", name()));
+		return notify_fail(sprintf("%sæ–æ–é ­èªªé“ï¼šé€™æ±è¥¿æ²’æ³•æç…‰ã€‚\n", name()));
 }
 
 protected void epurate_it(object me, object ob, object tg)
@@ -573,7 +573,7 @@ protected void epurate_it(object me, object ob, object tg)
 
 	rong_he(me, tg);
 	do_nothing = 0;
-	message_vision("$N³¯×Å$nµãµãÍ·ËµµÀ£ºÌáÁ¶ºÃÁË£¬ÄÃÈ¥°É¡£\n", this_object(), me);
+	message_vision("$Næœè‘—$né»é»é ­èªªé“ï¼šæç…‰å¥½äº†ï¼Œæ‹¿å»å§ã€‚\n", this_object(), me);
 }
 
 int do_ronghe(string arg)
@@ -584,10 +584,10 @@ int do_ronghe(string arg)
 	|| !sizeof(arg)
 	|| !objectp(ob = present(arg, me))
 	|| !ob->is_iron_class_res() )
-		return notify_fail("ÄãÒªÈÛºÏÊ²Ã´£¿\n");
+		return notify_fail("ä½ è¦ç†”åˆä»€éº¼ï¼Ÿ\n");
 
 	rong_he(me, ob);
-	write(sprintf("%sµãµãÍ·ËµµÀ£ººÃÁË¡£\n", name()));
+	write(sprintf("%sé»é»é ­èªªé“ï¼šå¥½äº†ã€‚\n", name()));
 	return 1;
 }
 
@@ -639,41 +639,41 @@ nomask int do_make_self(string arg)
 	{
 		find_banghui_master();
 		if(!objectp(master))
-			return notify_fail("´Ë°ïÅÉ¿ØÖÆÖĞĞÄ³öÏÖ´íÎó£¬ÇëÍ¨ÖªÎ×Ê¦½â¾ö¡£\n");
+			return notify_fail("æ­¤å¹«æ´¾æ§åˆ¶ä¸­å¿ƒå‡ºç¾éŒ¯èª¤ï¼Œè«‹é€šçŸ¥å·«å¸«è§£æ±ºã€‚\n");
 	}
 
 	if(me->query_banghui_id() != b_id)
-		return notify_fail(sprintf("%sÒ¡Ò¡Í·ËµµÀ£ºÄã²»ÊÇÎÒÃÇ%sµÄÈË¡£\n", name(), b_name));
+		return notify_fail(sprintf("%sæ–æ–é ­èªªé“ï¼šä½ ä¸æ˜¯æˆ‘å€‘%sçš„äººã€‚\n", name(), b_name));
 
 #ifdef WIZARD_FLAG
 	if(wizardp(me))
-		return notify_fail("Î×Ê¦²»ÔÊĞí´òÔì±øÆ÷¡£\n");
+		return notify_fail("å·«å¸«ä¸å…è¨±æ‰“é€ å…µå™¨ã€‚\n");
 	if(query_wiz_flag() && !wizardp(me))
-		return notify_fail(sprintf("%sÒ¡Ò¡Í·ËµµÀ£ºÎÒ²»ÄÜÎªÍæ¼Ò´òÔì±øÆ÷¡£\n", name()));
+		return notify_fail(sprintf("%sæ–æ–é ­èªªé“ï¼šæˆ‘ä¸èƒ½ç‚ºç©å®¶æ‰“é€ å…µå™¨ã€‚\n", name()));
 #endif
 
-	if(!arg)	// ³õÊ¼´òÔì±øÆ÷
+	if(!arg)	// åˆå§‹æ‰“é€ å…µå™¨
 	{
 		string out, *can;
 
 		if(!make_weapon_ability || !sizeof(make_weapon_ability))
-			return notify_fail(sprintf("%sÒ¡Ò¡Í·ËµµÀ£ºÎÒ²»»á´òÔì±øÆ÷¡£\n", name()));
+			return notify_fail(sprintf("%sæ–æ–é ­èªªé“ï¼šæˆ‘ä¸æœƒæ‰“é€ å…µå™¨ã€‚\n", name()));
 
 		if(!sizeof(inv = filter_array(all_inventory(me), (: is_money :))))
-			return notify_fail("´òÔì±øÆ÷ĞèÒª 5 Á½°×Òø£¬ÄãÉíÉÏÃ»Ç®¡£\n");
+			return notify_fail("æ‰“é€ å…µå™¨éœ€è¦ 5 å…©ç™½éŠ€ï¼Œä½ èº«ä¸Šæ²’éŒ¢ã€‚\n");
 
 		foreach(object tmp in inv)
 			vl += tmp->value();
 
 		if(vl < 500)
-			return notify_fail("´òÔì±øÆ÷ĞèÒª 5 Á½°×Òø£¬ÄãÉíÉÏÇ®²»¹»¡£\n");
+			return notify_fail("æ‰“é€ å…µå™¨éœ€è¦ 5 å…©ç™½éŠ€ï¼Œä½ èº«ä¸ŠéŒ¢ä¸å¤ ã€‚\n");
 
 		can = keys(make_weapon_ability);
-		out = "¿É´òÔìµÄ±øÆ÷ÖÖÀà£º\n";
+		out = "å¯æ‰“é€ çš„å…µå™¨ç¨®é¡ï¼š\n";
 		for(int i=0; i<sizeof(can); i++)
 			out += sprintf((string)i+1+". "+res_cost_desc[can[i]],
 				res_cost[can[i]]);
-		out += sprintf("ÇëÑ¡ÔñÄãÒª´òÔìµÄ±øÆ÷ÀàĞÍ[1-%d, qÍË³ö]£º\n", sizeof(can));
+		out += sprintf("è«‹é¸æ“‡ä½ è¦æ‰“é€ çš„å…µå™¨é¡å‹[1-%d, qé€€å‡º]ï¼š\n", sizeof(can));
 		write(out);
 		input_to( (: select_weapon_class :), me, out);
 		return 1;
@@ -684,7 +684,7 @@ nomask int do_make_self(string arg)
 		int damage, amount, pay, n, cost;
 
 		if(!objectp(ob = present(arg, me)) || !ob->is_self_make_weapon())
-			return notify_fail("ÄãÒª¶ÍÔìÄÄ¼ş±øÆ÷£¿\n");
+			return notify_fail("ä½ è¦é›é€ å“ªä»¶å…µå™¨ï¼Ÿ\n");
 
 		damage = ob->query("weapon_prop/damage") - ob->query_base_damage() + 1;
 
@@ -692,20 +692,20 @@ nomask int do_make_self(string arg)
 
 		if(!n = sizeof(inv = filter_array(all_inventory(me),
 			(: $1->is_iron_class_res() && ($1->query_mine_class() == BLACK_IRON) :))))
-			return notify_fail(sprintf("¶ÍÔì%sĞèÒªÓÃ %d Ç®ĞşÌú£¬ÄãÉíÉÏÃ»ÓĞ¡£\n", ob->name(), vl));
+			return notify_fail(sprintf("é›é€ %séœ€è¦ç”¨ %d éŒ¢ç„éµï¼Œä½ èº«ä¸Šæ²’æœ‰ã€‚\n", ob->name(), vl));
 
 		foreach(object tmp in inv)
 			amount += tmp->query_sum();
 
 		if(amount < vl)
-			return notify_fail(sprintf("¶ÍÔì%sĞèÒªÓÃ %d Ç®ĞşÌú£¬ÄãÉíÉÏ²»¹»¡£\n", ob->name(), vl));
+			return notify_fail(sprintf("é›é€ %séœ€è¦ç”¨ %d éŒ¢ç„éµï¼Œä½ èº«ä¸Šä¸å¤ ã€‚\n", ob->name(), vl));
 
 		cost = vl*70/100;
 		if(cost < 1)
 			cost = 1;
 
 		if(!(pay = player_pay(me, cost*100)) || (pay == 2) )
-			return notify_fail(sprintf("¶ÍÔì%sĞèÒª»¨·Ñ %d Á½°×Òø¡£\n", ob->name(), vl));
+			return notify_fail(sprintf("é›é€ %séœ€è¦èŠ±è²» %d å…©ç™½éŠ€ã€‚\n", ob->name(), vl));
 
 		for(int i=0; i<n; i++)
 		{
@@ -733,7 +733,7 @@ nomask int do_make_self(string arg)
 		ob->add("weapon_prop/damage", 1);
 		ob->set_weapon_weight();
 		ob->set_weapon_value();
-		write(sprintf("%sµãµãÍ·ËµµÀ£º¶ÍÔìºÃÁË£¬»¶Ó­ÏÂ´ÎÔÙ¹â¹Ë¡£\n", name()));
+		write(sprintf("%sé»é»é ­èªªé“ï¼šé›é€ å¥½äº†ï¼Œæ­¡è¿ä¸‹æ¬¡å†å…‰é¡§ã€‚\n", name()));
 		return 1;
 	}
 }
@@ -771,7 +771,7 @@ protected void select_weapon_class(string str, object me, string out)
 
 	if(!ob)
 	{
-		tell_object(me, "´òÔì±øÆ÷³öÏÖ´íÎó£¬ÇëÍ¨ÖªÎ×Ê¦´¦Àí¡£\n");
+		tell_object(me, "æ‰“é€ å…µå™¨å‡ºç¾éŒ¯èª¤ï¼Œè«‹é€šçŸ¥å·«å¸«è™•ç†ã€‚\n");
 		return;
 	}
 
@@ -783,7 +783,7 @@ protected void select_weapon_class(string str, object me, string out)
 			(: $1->is_iron_class_res() && ($1->query_mine_class() == BLACK_IRON) :))))
 			{
 				destruct(ob);
-				tell_object(me, sprintf("´òÔìÕâ¼ş±øÆ÷ĞèÒª %d ½ïÔ­ÁÏ£¬ÄãÉíÉÏÃ»ÓĞ¡£\n", cost));
+				tell_object(me, sprintf("æ‰“é€ é€™ä»¶å…µå™¨éœ€è¦ %d æ–¤åŸæ–™ï¼Œä½ èº«ä¸Šæ²’æœ‰ã€‚\n", cost));
 				return;
 			}
 	}
@@ -800,7 +800,7 @@ protected void select_weapon_class(string str, object me, string out)
 		if(wt < cost*10000)
 		{
 			destruct(ob);
-			tell_object(me, sprintf("´òÔìÕâ¼ş±øÆ÷ĞèÒª %d ½ïÔ­ÁÏ£¬ÄãÉíÉÏ²»¹»¡£\n", cost));
+			tell_object(me, sprintf("æ‰“é€ é€™ä»¶å…µå™¨éœ€è¦ %d æ–¤åŸæ–™ï¼Œä½ èº«ä¸Šä¸å¤ ã€‚\n", cost));
 			return;
 		}
 
@@ -819,7 +819,7 @@ protected void select_weapon_class(string str, object me, string out)
 		if(wt < cost*1000)
 		{
 			destruct(ob);
-			tell_object(me, sprintf("´òÔìÕâ¼ş±øÆ÷ĞèÒª %d ½ïÔ­ÁÏ£¬ÄãÉíÉÏ²»¹»¡£\n", cost));
+			tell_object(me, sprintf("æ‰“é€ é€™ä»¶å…µå™¨éœ€è¦ %d æ–¤åŸæ–™ï¼Œä½ èº«ä¸Šä¸å¤ ã€‚\n", cost));
 			return;
 		}
 
@@ -829,18 +829,18 @@ protected void select_weapon_class(string str, object me, string out)
 	ob->set_require_res(cost*1000);
 
 	tell_object(me, "
-ÈçÒªÃû³ÆÖĞÊ¹ÓÃÑÕÉ«£¬¿ÉÒÔÓÃÒÔÏÂ¿ØÖÆ·û£º
-×¢Òâ£º¿ØÖÆ·û×ÖÄ¸Òª´óĞ´¡£
+å¦‚è¦åç¨±ä¸­ä½¿ç”¨é¡è‰²ï¼Œå¯ä»¥ç”¨ä»¥ä¸‹æ§åˆ¶ç¬¦ï¼š
+æ³¨æ„ï¼šæ§åˆ¶ç¬¦å­—æ¯è¦å¤§å¯«ã€‚
 
-$RED$ - ºìÉ«		$HIR$ - ÁÁºìÉ«
-$GRN$ - ÂÌÉ«		$HIG$ - ÁÁÂÌÉ«
-$YEL$ - ÍÁ»ÆÉ«		$HIY$ - »ÆÉ«
-$BLU$ - ÉîÀ¶É«		$HIB$ - À¶É«
-$MAG$ - Ç³×ÏÉ«		$HIM$ - ·ÛºìÉ«
-$CYN$ - À¶ÂÌÉ«		$HIC$ - ÌìÇàÉ«
-$WHT$ - Ç³»ÒÉ«		$HIW$ - °×É«
+$RED$ - ç´…è‰²		$HIR$ - äº®ç´…è‰²
+$GRN$ - ç¶ è‰²		$HIG$ - äº®ç¶ è‰²
+$YEL$ - åœŸé»ƒè‰²		$HIY$ - é»ƒè‰²
+$BLU$ - æ·±è—è‰²		$HIB$ - è—è‰²
+$MAG$ - æ·ºç´«è‰²		$HIM$ - ç²‰ç´…è‰²
+$CYN$ - è—ç¶ è‰²		$HIC$ - å¤©é’è‰²
+$WHT$ - æ·ºç°è‰²		$HIW$ - ç™½è‰²
 
-Éè¶¨±øÆ÷µÄÃû³Æ[1-6¸öºº×Ö, qÍË³ö]£º\n");
+è¨­å®šå…µå™¨çš„åç¨±[1-6å€‹æ¼¢å­—, qé€€å‡º]ï¼š\n");
 	input_to( (: get_self_weapon_name :), me, ob);
 }
 
@@ -859,18 +859,18 @@ protected void get_self_weapon_name(string str, object me, object ob)
 	if(!stringp(str) || !sizeof(str))
 	{
 		tell_object(me, "
-ÈçÒªÃû³ÆÖĞÊ¹ÓÃÑÕÉ«£¬¿ÉÒÔÓÃÒÔÏÂ¿ØÖÆ·û£º
-×¢Òâ£º¿ØÖÆ·û×ÖÄ¸Òª´óĞ´¡£
+å¦‚è¦åç¨±ä¸­ä½¿ç”¨é¡è‰²ï¼Œå¯ä»¥ç”¨ä»¥ä¸‹æ§åˆ¶ç¬¦ï¼š
+æ³¨æ„ï¼šæ§åˆ¶ç¬¦å­—æ¯è¦å¤§å¯«ã€‚
 
-$RED$ - ºìÉ«		$HIR$ - ÁÁºìÉ«
-$GRN$ - ÂÌÉ«		$HIG$ - ÁÁÂÌÉ«
-$YEL$ - ÍÁ»ÆÉ«		$HIY$ - »ÆÉ«
-$BLU$ - ÉîÀ¶É«		$HIB$ - À¶É«
-$MAG$ - Ç³×ÏÉ«		$HIM$ - ·ÛºìÉ«
-$CYN$ - À¶ÂÌÉ«		$HIC$ - ÌìÇàÉ«
-$WHT$ - Ç³»ÒÉ«		$HIW$ - °×É«
+$RED$ - ç´…è‰²		$HIR$ - äº®ç´…è‰²
+$GRN$ - ç¶ è‰²		$HIG$ - äº®ç¶ è‰²
+$YEL$ - åœŸé»ƒè‰²		$HIY$ - é»ƒè‰²
+$BLU$ - æ·±è—è‰²		$HIB$ - è—è‰²
+$MAG$ - æ·ºç´«è‰²		$HIM$ - ç²‰ç´…è‰²
+$CYN$ - è—ç¶ è‰²		$HIC$ - å¤©é’è‰²
+$WHT$ - æ·ºç°è‰²		$HIW$ - ç™½è‰²
 
-Éè¶¨±øÆ÷µÄÃû³Æ[1-6¸öºº×Ö, qÍË³ö]£º\n");
+è¨­å®šå…µå™¨çš„åç¨±[1-6å€‹æ¼¢å­—, qé€€å‡º]ï¼š\n");
 		input_to( (: get_self_weapon_name :), me, ob);
 		return;
 	}
@@ -904,7 +904,7 @@ $WHT$ - Ç³»ÒÉ«		$HIW$ - °×É«
 
 	if(((i = sizeof(tmp)) < 2) || (i > 12))
 	{
-		tell_object(me, "[±øÆ÷Ãû³Æ±ØĞëÊ¹ÓÃ 1-6 ¸öºº×Ö]\nÉè¶¨±øÆ÷µÄÃû³Æ[1-6¸öºº×Ö, qÍË³ö]£º\n");
+		tell_object(me, "[å…µå™¨åç¨±å¿…é ˆä½¿ç”¨ 1-6 å€‹æ¼¢å­—]\nè¨­å®šå…µå™¨çš„åç¨±[1-6å€‹æ¼¢å­—, qé€€å‡º]ï¼š\n");
 		input_to( (: get_self_weapon_name :), me, ob);
 		return;
 	}
@@ -915,7 +915,7 @@ $WHT$ - Ç³»ÒÉ«		$HIW$ - °×É«
 
                 if( tmp[i]<128 )
 		{
-			tell_object(me, "[±øÆ÷Ãû³Æ±ØĞëÊ¹ÓÃºº×Ö]\nÉè¶¨±øÆ÷µÄÃû³Æ[1-6¸öºº×Ö, qÍË³ö]£º\n");
+			tell_object(me, "[å…µå™¨åç¨±å¿…é ˆä½¿ç”¨æ¼¢å­—]\nè¨­å®šå…µå™¨çš„åç¨±[1-6å€‹æ¼¢å­—, qé€€å‡º]ï¼š\n");
 			input_to( (: get_self_weapon_name :), me, ob);
 			return;
                 }
@@ -927,7 +927,7 @@ $WHT$ - Ç³»ÒÉ«		$HIW$ - °×É«
 			if( (section < 16)
 			|| (section > 87) )
 			{
-				tell_object(me, "[±øÆ÷Ãû³Æ±ØĞëÊ¹ÓÃ³£ÓÃºº×Ö]\nÉè¶¨±øÆ÷µÄÃû³Æ[1-6¸öºº×Ö, qÍË³ö]£º\n");
+				tell_object(me, "[å…µå™¨åç¨±å¿…é ˆä½¿ç”¨å¸¸ç”¨æ¼¢å­—]\nè¨­å®šå…µå™¨çš„åç¨±[1-6å€‹æ¼¢å­—, qé€€å‡º]ï¼š\n");
 				input_to( (: get_self_weapon_name :), me, ob);
 				return;
 			}
@@ -936,10 +936,10 @@ $WHT$ - Ç³»ÒÉ«		$HIW$ - °×É«
 
 	ob->set("name", str);
 	tell_object(me, "
-Éè¶¨±øÆ÷µÄ ID
-  ±øÆ÷µÄ ID ×î¶à¿ÉÊ¹ÓÃ 4 ¸öµ¥´Ê
-  Ã¿¸öµ¥´Ê×î¶à 7 ¸öÓ¢ÎÄ×ÖÄ¸×é³É
-ÇëÉè¶¨±øÆ÷µÄ ID [qÍË³ö]£º\n");
+è¨­å®šå…µå™¨çš„ ID
+  å…µå™¨çš„ ID æœ€å¤šå¯ä½¿ç”¨ 4 å€‹å–®è©
+  æ¯å€‹å–®è©æœ€å¤š 7 å€‹è‹±æ–‡å­—æ¯çµ„æˆ
+è«‹è¨­å®šå…µå™¨çš„ ID [qé€€å‡º]ï¼š\n");
 	input_to( (: get_self_weapon_id :), me, ob);
 }
 
@@ -958,10 +958,10 @@ protected void get_self_weapon_id(string str, object me, object ob)
 	if(!stringp(str) || !sizeof(str))
 	{
 		tell_object(me, "
-Éè¶¨±øÆ÷µÄ ID
-  ±øÆ÷µÄ ID ×î¶à¿ÉÊ¹ÓÃ 4 ¸öµ¥´Ê
-  Ã¿¸öµ¥´Ê×î¶à 7 ¸öÓ¢ÎÄ×ÖÄ¸×é³É
-ÇëÉè¶¨±øÆ÷µÄ ID [qÍË³ö]£º\n");
+è¨­å®šå…µå™¨çš„ ID
+  å…µå™¨çš„ ID æœ€å¤šå¯ä½¿ç”¨ 4 å€‹å–®è©
+  æ¯å€‹å–®è©æœ€å¤š 7 å€‹è‹±æ–‡å­—æ¯çµ„æˆ
+è«‹è¨­å®šå…µå™¨çš„ ID [qé€€å‡º]ï¼š\n");
 		input_to( (: get_self_weapon_id :), me, ob);
 		return;
 	}
@@ -976,10 +976,10 @@ protected void get_self_weapon_id(string str, object me, object ob)
 	if( !(n = sizeof(words = explode(str, " ") - ({ "" }))) || (n > 4) )
 	{
 		tell_object(me, "
-  ±øÆ÷µÄ ID ×î¶àÖ»ÄÜÊ¹ÓÃ 4 ¸öÓ¢ÎÄµ¥´Ê
+  å…µå™¨çš„ ID æœ€å¤šåªèƒ½ä½¿ç”¨ 4 å€‹è‹±æ–‡å–®è©
                          ~~~~
-  Ã¿¸öµ¥´Ê×î¶à 7 ¸öÓ¢ÎÄ×ÖÄ¸×é³É
-Éè¶¨±øÆ÷µÄ ID [qÍË³ö]£º\n");
+  æ¯å€‹å–®è©æœ€å¤š 7 å€‹è‹±æ–‡å­—æ¯çµ„æˆ
+è¨­å®šå…µå™¨çš„ ID [qé€€å‡º]ï¼š\n");
 		input_to( (: get_self_weapon_id :), me, ob);
 		return;
 	}
@@ -989,10 +989,10 @@ protected void get_self_weapon_id(string str, object me, object ob)
 		if(sizeof(tmp) > 7)
 		{
 			tell_object(me, "
-  ±øÆ÷µÄ ID ×î¶àÖ»ÄÜÊ¹ÓÃ 4 ¸öÓ¢ÎÄµ¥´Ê
-  Ã¿¸öµ¥´Ê×î¶à 7 ¸öÓ¢ÎÄ×ÖÄ¸×é³É
+  å…µå™¨çš„ ID æœ€å¤šåªèƒ½ä½¿ç”¨ 4 å€‹è‹±æ–‡å–®è©
+  æ¯å€‹å–®è©æœ€å¤š 7 å€‹è‹±æ–‡å­—æ¯çµ„æˆ
                ~~~~
-Éè¶¨±øÆ÷µÄ ID [qÍË³ö]£º\n");
+è¨­å®šå…µå™¨çš„ ID [qé€€å‡º]ï¼š\n");
 			input_to( (: get_self_weapon_id :), me, ob);
 			return;
 		}
@@ -1000,10 +1000,10 @@ protected void get_self_weapon_id(string str, object me, object ob)
 		if(!regexp(tmp, "^[a-zA-Z]+$"))
 		{
 			tell_object(me, "
-  ±øÆ÷µÄ ID ×î¶àÖ»ÄÜÊ¹ÓÃ 4 ¸öÓ¢ÎÄµ¥´Ê
-  Ã¿¸öµ¥´Ê×î¶à 7 ¸öÓ¢ÎÄ×ÖÄ¸×é³É
+  å…µå™¨çš„ ID æœ€å¤šåªèƒ½ä½¿ç”¨ 4 å€‹è‹±æ–‡å–®è©
+  æ¯å€‹å–®è©æœ€å¤š 7 å€‹è‹±æ–‡å­—æ¯çµ„æˆ
                    ~~~~~~~~
-Éè¶¨±øÆ÷µÄ ID [qÍË³ö]£º\n");
+è¨­å®šå…µå™¨çš„ ID [qé€€å‡º]ï¼š\n");
 			input_to( (: get_self_weapon_id :), me, ob);
 			return;
 		}
@@ -1013,8 +1013,8 @@ protected void get_self_weapon_id(string str, object me, object ob)
 
 	ob->set_name(ob->query("name"), ({ str }) );
 
-	tell_object(me, "ÇëÉè¶¨±øÆ÷µÄÃèÊö£º\n¡¤ÃèÊöÄÚÈİ²»ÄÜ³¬¹ıÈıĞĞ\n¡¤Ã¿ĞĞ²»³¬¹ı20¸öºº×Ö
-ÇëÊäÈë('.'½áÊøÊäÈë£¬'q'ÍË³ö)£º\n------------------------------------------------------\n");
+	tell_object(me, "è«‹è¨­å®šå…µå™¨çš„æè¿°ï¼š\nï¹’æè¿°å…§å®¹ä¸èƒ½è¶…éä¸‰è¡Œ\nï¹’æ¯è¡Œä¸è¶…é20å€‹æ¼¢å­—
+è«‹è¼¸å…¥('.'çµæŸè¼¸å…¥ï¼Œ'q'é€€å‡º)ï¼š\n------------------------------------------------------\n");
 	input_to((: get_self_weapon_desc :), me, ob, "");
 }
 
@@ -1040,20 +1040,20 @@ protected void get_self_weapon_desc(string str, object me, object ob, string des
 		return;
 	}
 
-	if(str[0] == '.')	// ½áÊøÊäÈë
+	if(str[0] == '.')	// çµæŸè¼¸å…¥
 	{
 		if( !sizeof(desc) )
 		{
 			ob->set("long", 0);
 			tell_object(me, "
-Éè¶¨×°Åå´Ë±øÆ÷Ê±µÄĞÅÏ¢
- $N Îª×°Åå´Ë±øÆ÷µÄÈË
- $n Îª´Ë±øÆ÷
-ÀıÈç£º
-  ×°ÅåĞÅÏ¢Éè¶¨Îª£º$NÄÃ³öÒ»°Ñ$nÎÕÔÚÊÖÖĞµ±×÷ÎäÆ÷¡£
-  ×°Åå±øÆ÷±ğÈË¾Í»á¿´µ½£ºÕÅÈıÄÃ³öÒ»°ÑÌìĞ°¶Ì½£ÎÕÔÚÊÖÖĞµ±×÷ÎäÆ÷¡£
+è¨­å®šè£ä½©æ­¤å…µå™¨æ™‚çš„ä¿¡æ¯
+ $N ç‚ºè£ä½©æ­¤å…µå™¨çš„äºº
+ $n ç‚ºæ­¤å…µå™¨
+ä¾‹å¦‚ï¼š
+  è£ä½©ä¿¡æ¯è¨­å®šç‚ºï¼š$Næ‹¿å‡ºä¸€æŠŠ$næ¡åœ¨æ‰‹ä¸­ç•¶ä½œæ­¦å™¨ã€‚
+  è£ä½©å…µå™¨åˆ¥äººå°±æœƒçœ‹åˆ°ï¼šå¼µä¸‰æ‹¿å‡ºä¸€æŠŠå¤©é‚ªçŸ­åŠæ¡åœ¨æ‰‹ä¸­ç•¶ä½œæ­¦å™¨ã€‚
 
-ÇëÉè¶¨´Ë±øÆ÷µÄ×°ÅåĞÅÏ¢[×î³¤²»³¬¹ı25¸öºº×Ö, q ÍË³ö]£º
+è«‹è¨­å®šæ­¤å…µå™¨çš„è£ä½©ä¿¡æ¯[æœ€é•·ä¸è¶…é25å€‹æ¼¢å­—, q é€€å‡º]ï¼š
 ");
 			input_to((: get_self_weapon_wield_msg :), me, ob);
 			return;
@@ -1061,9 +1061,9 @@ protected void get_self_weapon_desc(string str, object me, object ob, string des
 
 		if( sizeof(explode(desc, "\n")) > 3)
 		{
-			tell_object(me, HBCYN HIG"¡¤±øÆ÷µÄÃèÊöÄÚÈİ²»ÄÜ³¬¹ıÈıĞĞ£¬ÇëÖØĞÂÉè¶¨±øÆ÷ÃèÊö¡£
-¡¤ÃèÊöÄÚÈİ²»ÄÜ³¬¹ıÈıĞĞ\n¡¤Ã¿ĞĞ²»³¬¹ı20¸öºº×Ö
-ÇëÊäÈë('.'½áÊøÊäÈë£¬'q'ÍË³ö)£º\n------------------------------------------------------\n"NOR);
+			tell_object(me, HBCYN HIG"ï¹’å…µå™¨çš„æè¿°å…§å®¹ä¸èƒ½è¶…éä¸‰è¡Œï¼Œè«‹é‡æ–°è¨­å®šå…µå™¨æè¿°ã€‚
+ï¹’æè¿°å…§å®¹ä¸èƒ½è¶…éä¸‰è¡Œ\nï¹’æ¯è¡Œä¸è¶…é20å€‹æ¼¢å­—
+è«‹è¼¸å…¥('.'çµæŸè¼¸å…¥ï¼Œ'q'é€€å‡º)ï¼š\n------------------------------------------------------\n"NOR);
 			input_to((: get_self_weapon_desc :), me, ob, "");
 			return;
 		}
@@ -1072,14 +1072,14 @@ protected void get_self_weapon_desc(string str, object me, object ob, string des
 			desc += "\n";
 		ob->set("long", desc);
 		tell_object(me, "
-Éè¶¨×°Åå´Ë±øÆ÷Ê±µÄĞÅÏ¢
- $N Îª×°Åå´Ë±øÆ÷µÄÈË
- $n Îª´Ë±øÆ÷
-ÀıÈç£º
-  ×°ÅåĞÅÏ¢Éè¶¨Îª£º$NÄÃ³öÒ»°Ñ$nÎÕÔÚÊÖÖĞµ±×÷ÎäÆ÷¡£
-  ×°Åå±øÆ÷±ğÈË¾Í»á¿´µ½£ºÕÅÈıÄÃ³öÒ»°ÑÌìĞ°¶Ì½£ÎÕÔÚÊÖÖĞµ±×÷ÎäÆ÷¡£
+è¨­å®šè£ä½©æ­¤å…µå™¨æ™‚çš„ä¿¡æ¯
+ $N ç‚ºè£ä½©æ­¤å…µå™¨çš„äºº
+ $n ç‚ºæ­¤å…µå™¨
+ä¾‹å¦‚ï¼š
+  è£ä½©ä¿¡æ¯è¨­å®šç‚ºï¼š$Næ‹¿å‡ºä¸€æŠŠ$næ¡åœ¨æ‰‹ä¸­ç•¶ä½œæ­¦å™¨ã€‚
+  è£ä½©å…µå™¨åˆ¥äººå°±æœƒçœ‹åˆ°ï¼šå¼µä¸‰æ‹¿å‡ºä¸€æŠŠå¤©é‚ªçŸ­åŠæ¡åœ¨æ‰‹ä¸­ç•¶ä½œæ­¦å™¨ã€‚
 
-ÇëÉè¶¨´Ë±øÆ÷µÄ×°ÅåĞÅÏ¢[×î³¤²»³¬¹ı25¸öºº×Ö, q ÍË³ö]£º
+è«‹è¨­å®šæ­¤å…µå™¨çš„è£ä½©ä¿¡æ¯[æœ€é•·ä¸è¶…é25å€‹æ¼¢å­—, q é€€å‡º]ï¼š
 ");
 		input_to((: get_self_weapon_wield_msg :), me, ob);
 		return;
@@ -1094,16 +1094,16 @@ protected void get_self_weapon_desc(string str, object me, object ob, string des
 		for(int i=0; i<n; i++)
 			if(strlen(tmp[i]) > 40)
 			{
-				tell_object(me, HBCYN HIG"Ã¿Ò»ĞĞ²»ÄÜ³¬¹ı¶şÊ®¸öÖĞÎÄ×Ö£¬ÇëÖØĞÂÊäÈë¸Õ²ÅÊäÈëµÄÄÚÈİ£º\n");
+				tell_object(me, HBCYN HIG"æ¯ä¸€è¡Œä¸èƒ½è¶…éäºŒåå€‹ä¸­æ–‡å­—ï¼Œè«‹é‡æ–°è¼¸å…¥å‰›æ‰è¼¸å…¥çš„å…§å®¹ï¼š\n");
 				input_to((: get_self_weapon_desc :), me, ob, desc);
 				return;
 			}
 
 			if( sizeof(explode(desc, "\n")) > 3)
 			{
-				tell_object(me, HBCYN HIG"¡¤±øÆ÷µÄÃèÊöÄÚÈİ²»ÄÜ³¬¹ıÈıĞĞ£¬ÇëÖØĞÂÉè¶¨±øÆ÷ÃèÊö¡£
-¡¤ÃèÊöÄÚÈİ²»ÄÜ³¬¹ıÈıĞĞ\n¡¤Ã¿ĞĞ²»³¬¹ı20¸öºº×Ö
-ÇëÊäÈë('.'½áÊøÊäÈë£¬'q'ÍË³ö)£º\n------------------------------------------------------\n"NOR);
+				tell_object(me, HBCYN HIG"ï¹’å…µå™¨çš„æè¿°å…§å®¹ä¸èƒ½è¶…éä¸‰è¡Œï¼Œè«‹é‡æ–°è¨­å®šå…µå™¨æè¿°ã€‚
+ï¹’æè¿°å…§å®¹ä¸èƒ½è¶…éä¸‰è¡Œ\nï¹’æ¯è¡Œä¸è¶…é20å€‹æ¼¢å­—
+è«‹è¼¸å…¥('.'çµæŸè¼¸å…¥ï¼Œ'q'é€€å‡º)ï¼š\n------------------------------------------------------\n"NOR);
 				input_to((: get_self_weapon_desc :), me, ob, "");
 				return;
 			}
@@ -1113,16 +1113,16 @@ protected void get_self_weapon_desc(string str, object me, object ob, string des
 	{
 		if(strlen(str) > 40)
 		{
-			tell_object(me, HBCYN HIG"Ã¿Ò»ĞĞ²»ÄÜ³¬¹ı¶şÊ®¸öÖĞÎÄ×Ö£¬ÇëÖØĞÂÊäÈë¸Õ²ÅÊäÈëµÄÄÚÈİ£º\n");
+			tell_object(me, HBCYN HIG"æ¯ä¸€è¡Œä¸èƒ½è¶…éäºŒåå€‹ä¸­æ–‡å­—ï¼Œè«‹é‡æ–°è¼¸å…¥å‰›æ‰è¼¸å…¥çš„å…§å®¹ï¼š\n");
 			input_to((: get_self_weapon_desc :), me, ob, desc);
 			return;
 		}
 
 		if( sizeof(explode(desc, "\n")) > 2)
 		{
-			tell_object(me, HBCYN HIG"¡¤±øÆ÷µÄÃèÊöÄÚÈİ²»ÄÜ³¬¹ıÈıĞĞ£¬ÇëÖØĞÂÉè¶¨±øÆ÷ÃèÊö¡£
-¡¤ÃèÊöÄÚÈİ²»ÄÜ³¬¹ıÈıĞĞ\n¡¤Ã¿ĞĞ²»³¬¹ı20¸öºº×Ö
-ÇëÊäÈë('.'½áÊøÊäÈë£¬'q'ÍË³ö)£º\n------------------------------------------------------\n"NOR);
+			tell_object(me, HBCYN HIG"ï¹’å…µå™¨çš„æè¿°å…§å®¹ä¸èƒ½è¶…éä¸‰è¡Œï¼Œè«‹é‡æ–°è¨­å®šå…µå™¨æè¿°ã€‚
+ï¹’æè¿°å…§å®¹ä¸èƒ½è¶…éä¸‰è¡Œ\nï¹’æ¯è¡Œä¸è¶…é20å€‹æ¼¢å­—
+è«‹è¼¸å…¥('.'çµæŸè¼¸å…¥ï¼Œ'q'é€€å‡º)ï¼š\n------------------------------------------------------\n"NOR);
 			input_to((: get_self_weapon_desc :), me, ob, "");
 			return;
 		}
@@ -1144,14 +1144,14 @@ protected void get_self_weapon_wield_msg(string str, object me, object ob)
 	if(!stringp(str) || !sizeof(str))
 	{
 		tell_object(me, "
-Éè¶¨×°Åå´Ë±øÆ÷Ê±µÄĞÅÏ¢
- $N Îª×°Åå´Ë±øÆ÷µÄÈË
- $n Îª´Ë±øÆ÷
-ÀıÈç£º
-  ×°ÅåĞÅÏ¢Éè¶¨Îª£º$NÄÃ³öÒ»°Ñ$nÎÕÔÚÊÖÖĞµ±×÷ÎäÆ÷¡£
-  ×°Åå±øÆ÷±ğÈË¾Í»á¿´µ½£ºÕÅÈıÄÃ³öÒ»°ÑÌìĞ°¶Ì½£ÎÕÔÚÊÖÖĞµ±×÷ÎäÆ÷¡£
+è¨­å®šè£ä½©æ­¤å…µå™¨æ™‚çš„ä¿¡æ¯
+ $N ç‚ºè£ä½©æ­¤å…µå™¨çš„äºº
+ $n ç‚ºæ­¤å…µå™¨
+ä¾‹å¦‚ï¼š
+  è£ä½©ä¿¡æ¯è¨­å®šç‚ºï¼š$Næ‹¿å‡ºä¸€æŠŠ$næ¡åœ¨æ‰‹ä¸­ç•¶ä½œæ­¦å™¨ã€‚
+  è£ä½©å…µå™¨åˆ¥äººå°±æœƒçœ‹åˆ°ï¼šå¼µä¸‰æ‹¿å‡ºä¸€æŠŠå¤©é‚ªçŸ­åŠæ¡åœ¨æ‰‹ä¸­ç•¶ä½œæ­¦å™¨ã€‚
 
-ÇëÉè¶¨´Ë±øÆ÷µÄ×°ÅåĞÅÏ¢[×î³¤²»³¬¹ı25¸öºº×Ö, q ÍË³ö]£º
+è«‹è¨­å®šæ­¤å…µå™¨çš„è£ä½©ä¿¡æ¯[æœ€é•·ä¸è¶…é25å€‹æ¼¢å­—, q é€€å‡º]ï¼š
 ");
 		input_to((: get_self_weapon_wield_msg :), me, ob);
 		return;
@@ -1167,13 +1167,13 @@ protected void get_self_weapon_wield_msg(string str, object me, object ob)
 	if(sizeof(str) > 50)
 	{
 		tell_object(me, "
-** ĞÅÏ¢×î³¤²»³¬¹ı25¸öºº×Ö **
+** ä¿¡æ¯æœ€é•·ä¸è¶…é25å€‹æ¼¢å­— **
 
-Éè¶¨×°Åå´Ë±øÆ÷Ê±µÄĞÅÏ¢
- $N Îª×°Åå´Ë±øÆ÷µÄÈË
- $n Îª´Ë±øÆ÷
+è¨­å®šè£ä½©æ­¤å…µå™¨æ™‚çš„ä¿¡æ¯
+ $N ç‚ºè£ä½©æ­¤å…µå™¨çš„äºº
+ $n ç‚ºæ­¤å…µå™¨
 
-ÇëÉè¶¨´Ë±øÆ÷µÄ×°ÅåĞÅÏ¢[×î³¤²»³¬¹ı25¸öºº×Ö, q ÍË³ö]£º
+è«‹è¨­å®šæ­¤å…µå™¨çš„è£ä½©ä¿¡æ¯[æœ€é•·ä¸è¶…é25å€‹æ¼¢å­—, q é€€å‡º]ï¼š
 ");
 		input_to((: get_self_weapon_wield_msg :), me, ob);
 		return;
@@ -1185,14 +1185,14 @@ protected void get_self_weapon_wield_msg(string str, object me, object ob)
 	ob->set("wield_msg", str);
 
 	tell_object(me, "
-Éè¶¨·ÅÏÂ´Ë±øÆ÷Ê±µÄĞÅÏ¢
- $N Îª·ÅÏÂ´Ë±øÆ÷µÄÈË
- $n Îª´Ë±øÆ÷
-ÀıÈç£º
-  ĞÅÏ¢Éè¶¨Îª£º$N½«ÊÖÖĞµÄ$n²åÈëÑü¼äµÄ½£ÇÊ¡£
-  ·ÅÏÂ´Ë±øÆ÷±ğÈË¾Í»á¿´µ½£ºÕÅÈı½«ÊÖÖĞµÄÌìĞ°¶Ì½£²åÈëÑü¼äµÄ½£ÇÊ¡£
+è¨­å®šæ”¾ä¸‹æ­¤å…µå™¨æ™‚çš„ä¿¡æ¯
+ $N ç‚ºæ”¾ä¸‹æ­¤å…µå™¨çš„äºº
+ $n ç‚ºæ­¤å…µå™¨
+ä¾‹å¦‚ï¼š
+  ä¿¡æ¯è¨­å®šç‚ºï¼š$Nå°‡æ‰‹ä¸­çš„$næ’å…¥è…°é–“çš„åŠé˜ã€‚
+  æ”¾ä¸‹æ­¤å…µå™¨åˆ¥äººå°±æœƒçœ‹åˆ°ï¼šå¼µä¸‰å°‡æ‰‹ä¸­çš„å¤©é‚ªçŸ­åŠæ’å…¥è…°é–“çš„åŠé˜ã€‚
 
-ÇëÉè¶¨·ÅÏÂ´Ë±øÆ÷µÄĞÅÏ¢[×î³¤²»³¬¹ı25¸öºº×Ö, q ÍË³ö]£º
+è«‹è¨­å®šæ”¾ä¸‹æ­¤å…µå™¨çš„ä¿¡æ¯[æœ€é•·ä¸è¶…é25å€‹æ¼¢å­—, q é€€å‡º]ï¼š
 ");
 	input_to((: get_self_weapon_unwield_msg :), me, ob);
 }
@@ -1213,14 +1213,14 @@ protected void get_self_weapon_unwield_msg(string str, object me, object ob)
 	if(!stringp(str) || !sizeof(str))
 	{
 		tell_object(me, "
-Éè¶¨·ÅÏÂ´Ë±øÆ÷Ê±µÄĞÅÏ¢
- $N Îª·ÅÏÂ´Ë±øÆ÷µÄÈË
- $n Îª´Ë±øÆ÷
-ÀıÈç£º
-  ĞÅÏ¢Éè¶¨Îª£º$N½«ÊÖÖĞµÄ$n²åÈëÑü¼äµÄ½£ÇÊ¡£
-  ·ÅÏÂ´Ë±øÆ÷±ğÈË¾Í»á¿´µ½£ºÕÅÈı½«ÊÖÖĞµÄÌìĞ°¶Ì½£²åÈëÑü¼äµÄ½£ÇÊ¡£
+è¨­å®šæ”¾ä¸‹æ­¤å…µå™¨æ™‚çš„ä¿¡æ¯
+ $N ç‚ºæ”¾ä¸‹æ­¤å…µå™¨çš„äºº
+ $n ç‚ºæ­¤å…µå™¨
+ä¾‹å¦‚ï¼š
+  ä¿¡æ¯è¨­å®šç‚ºï¼š$Nå°‡æ‰‹ä¸­çš„$næ’å…¥è…°é–“çš„åŠé˜ã€‚
+  æ”¾ä¸‹æ­¤å…µå™¨åˆ¥äººå°±æœƒçœ‹åˆ°ï¼šå¼µä¸‰å°‡æ‰‹ä¸­çš„å¤©é‚ªçŸ­åŠæ’å…¥è…°é–“çš„åŠé˜ã€‚
 
-ÇëÉè¶¨·ÅÏÂ´Ë±øÆ÷µÄĞÅÏ¢[×î³¤²»³¬¹ı25¸öºº×Ö, q ÍË³ö]£º
+è«‹è¨­å®šæ”¾ä¸‹æ­¤å…µå™¨çš„ä¿¡æ¯[æœ€é•·ä¸è¶…é25å€‹æ¼¢å­—, q é€€å‡º]ï¼š
 ");
 		input_to((: get_self_weapon_unwield_msg :), me, ob);
 		return;
@@ -1236,13 +1236,13 @@ protected void get_self_weapon_unwield_msg(string str, object me, object ob)
 	if(sizeof(str) > 50)
 	{
 		tell_object(me, "
-** ĞÅÏ¢×î³¤²»³¬¹ı25¸öºº×Ö **
+** ä¿¡æ¯æœ€é•·ä¸è¶…é25å€‹æ¼¢å­— **
 
-Éè¶¨·ÅÏÂ´Ë±øÆ÷Ê±µÄĞÅÏ¢
- $N Îª·ÅÏÂ´Ë±øÆ÷µÄÈË
- $n Îª´Ë±øÆ÷
+è¨­å®šæ”¾ä¸‹æ­¤å…µå™¨æ™‚çš„ä¿¡æ¯
+ $N ç‚ºæ”¾ä¸‹æ­¤å…µå™¨çš„äºº
+ $n ç‚ºæ­¤å…µå™¨
 
-ÇëÉè¶¨·ÅÏÂ´Ë±øÆ÷µÄĞÅÏ¢[×î³¤²»³¬¹ı25¸öºº×Ö, q ÍË³ö]£º
+è«‹è¨­å®šæ”¾ä¸‹æ­¤å…µå™¨çš„ä¿¡æ¯[æœ€é•·ä¸è¶…é25å€‹æ¼¢å­—, q é€€å‡º]ï¼š
 ");
 		input_to((: get_self_weapon_unwield_msg :), me, ob);
 		return;
@@ -1255,7 +1255,7 @@ protected void get_self_weapon_unwield_msg(string str, object me, object ob)
 
 	if(!(pay = player_pay(me, 500)) || (pay == 2) )
 	{
-		tell_object(me, sprintf("´òÔì´Ë±øÆ÷ĞèÒª»¨·Ñ 5 Á½°×Òø£¬ÄãÉíÉÏµÄÇ®²»¹»¡£\n"));
+		tell_object(me, sprintf("æ‰“é€ æ­¤å…µå™¨éœ€è¦èŠ±è²» 5 å…©ç™½éŠ€ï¼Œä½ èº«ä¸Šçš„éŒ¢ä¸å¤ ã€‚\n"));
 		destruct(ob);
 		return;
 	}
@@ -1270,7 +1270,7 @@ protected void get_self_weapon_unwield_msg(string str, object me, object ob)
 			(: $1->is_iron_class_res() && ($1->query_mine_class() == BLACK_IRON) :))))
 			{
 				destruct(ob);
-				tell_object(me, sprintf("´òÔìÕâ¼ş±øÆ÷ĞèÒª %d ½ïÔ­ÁÏ£¬ÄãÉíÉÏÃ»ÓĞ¡£\n", cost/10000));
+				tell_object(me, sprintf("æ‰“é€ é€™ä»¶å…µå™¨éœ€è¦ %d æ–¤åŸæ–™ï¼Œä½ èº«ä¸Šæ²’æœ‰ã€‚\n", cost/10000));
 				return;
 			}
 	}
@@ -1287,7 +1287,7 @@ protected void get_self_weapon_unwield_msg(string str, object me, object ob)
 		if(wt < cost)
 		{
 			destruct(ob);
-			tell_object(me, sprintf("´òÔìÕâ¼ş±øÆ÷ĞèÒª %d ½ïÔ­ÁÏ£¬ÄãÉíÉÏ²»¹»¡£\n", cost/10000));
+			tell_object(me, sprintf("æ‰“é€ é€™ä»¶å…µå™¨éœ€è¦ %d æ–¤åŸæ–™ï¼Œä½ èº«ä¸Šä¸å¤ ã€‚\n", cost/10000));
 			return;
 		}
 
@@ -1327,7 +1327,7 @@ protected void get_self_weapon_unwield_msg(string str, object me, object ob)
 		if(wt < cost)
 		{
 			destruct(ob);
-			tell_object(me, sprintf("´òÔìÕâ¼ş±øÆ÷ĞèÒª %d ½ïÔ­ÁÏ£¬ÄãÉíÉÏ²»¹»¡£\n", cost/1000));
+			tell_object(me, sprintf("æ‰“é€ é€™ä»¶å…µå™¨éœ€è¦ %d æ–¤åŸæ–™ï¼Œä½ èº«ä¸Šä¸å¤ ã€‚\n", cost/1000));
 			return;
 		}
 
@@ -1369,10 +1369,10 @@ protected void get_self_weapon_unwield_msg(string str, object me, object ob)
 
 	if( !ob->move(me) && !ob->move(environment()) )
 	{
-		tell_object(me, sprintf("%sËµµÀ£ºÄãÄÃ²»ÁËÄãµÄ%sÁË£¬Ã»°ì·¨¡£\n", name(), ob->name()));
+		tell_object(me, sprintf("%sèªªé“ï¼šä½ æ‹¿ä¸äº†ä½ çš„%säº†ï¼Œæ²’è¾¦æ³•ã€‚\n", name(), ob->name()));
 		destruct(ob);
 		return;
 	}
 
-	tell_object(me, sprintf("%sËµµÀ£º%s´òÔìºÃÁË£¬¿´¿´ÂúÒâ²»ÂúÒâ¡£\n", name(), ob->name()));
+	tell_object(me, sprintf("%sèªªé“ï¼š%sæ‰“é€ å¥½äº†ï¼Œçœ‹çœ‹æ»¿æ„ä¸æ»¿æ„ã€‚\n", name(), ob->name()));
 }

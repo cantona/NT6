@@ -2,16 +2,16 @@
 inherit ITEM;
 void create()
 {
-        set_name(HIG "±ù¼¡ÏÉ²İ" NOR, ({"bingjixiancao"}));
+        set_name(HIG "å†°è‚Œä»™è‰" NOR, ({"bingjixiancao"}));
         set_weight(1);
         if (clonep())
                 set_default_object(__FILE__);
         else {  
-        	set("long", HIG "±ù¼¡ÏÉ²İÄË³¤ÓÚÀ¥ÂØÉ½¶¥£¬Ç§Äê·½¿É³ÉĞÎ£¬²İÉ«ÈçÍ¬ÈËÌå¼¡·ôÇÒ½à°×ËÆÑ©£¬±ùĞÄÍ¸¹Ç£¡\n" + 
-        	                "·şÊ³(fushi bingjixiancao)ºó¿ÉÓÀ¾ÃÌáÉı»ù±¾ÄÚ¹¦1¼¶¡£\n" HIC
-        	                "ÓµÓĞÕß£ºtwai\n" NOR);
-                set("unit", "Êø");
-                set("owner", "twai"); // °ó¶¨ÓµÓĞÕß
+        	set("long", HIG "å†°è‚Œä»™è‰ä¹ƒé•·äºæ˜†ä¾–å±±é ‚ï¼Œåƒå¹´æ–¹å¯æˆå½¢ï¼Œè‰è‰²å¦‚åŒäººé«”è‚Œè†šä¸”æ½”ç™½ä¼¼é›ªï¼Œå†°å¿ƒé€éª¨ï¼\n" + 
+        	                "æœé£Ÿ(fushi bingjixiancao)å¾Œå¯æ°¸ä¹…æå‡åŸºæœ¬å…§åŠŸ1ç´šã€‚\n" HIC
+        	                "æ“æœ‰è€…ï¼štwai\n" NOR);
+                set("unit", "æŸ");
+                set("owner", "twai"); // ç¶å®šæ“æœ‰è€…
 	        set("no_drop", 1);set("no_give", 1);set("no_store", 1);set("no_sell", 1);
         }
         setup();
@@ -29,19 +29,19 @@ int do_use(string arg)
 	me = this_player();
 
 	if (! arg || arg != query("id"))
-		return notify_fail("ÄãÒª·şÊ³Ê²Ã´£¿\n");
+		return notify_fail("ä½ è¦æœé£Ÿä»€éº¼ï¼Ÿ\n");
 
 	if (! objectp(ob = present(arg, me)))
-		return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâ¸ö¶«Î÷£¡\n");
+		return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™å€‹æ±è¥¿ï¼\n");
 		
 	if (ob->query("owner") != me->query("id"))
-		return notify_fail(ob->name() + NOR "ÒÑ¾­ÓÚÆäËûÍæ¼Ò°ó¶¨£¡\n");
+		return notify_fail(ob->name() + NOR "å·²ç¶“äºå…¶ä»–ç©å®¶ç¶å®šï¼\n");
 	
 	me->set_skill("force", me->query_skill("force", 1) + 1);
 	
-	tell_object(me, HIG "¹§Ï²£¡Äã·şÏÂ" + ob->name() + HIG "ºó£¬»ù±¾ÄÚ¹¦ÌáÉı1¼¶£¡\n");
+	tell_object(me, HIG "æ­å–œï¼ä½ æœä¸‹" + ob->name() + HIG "å¾Œï¼ŒåŸºæœ¬å…§åŠŸæå‡1ç´šï¼\n");
 	
-	log_file("super/"+ filter_color(query("name")) , me->query("id") + " at " + ctime(time()) + " Ê¹ÓÃ" + ob->name() + "¡£\n");
+	log_file("super/"+ filter_color(query("name")) , me->query("id") + " at " + ctime(time()) + " ä½¿ç”¨" + ob->name() + "ã€‚\n");
 	
 	me->save();
 	

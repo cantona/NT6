@@ -1,16 +1,16 @@
-// baishou.c ������
+// baishou.c 白自在
 #include <ansi.h>
 inherit NPC;
 
 void create()
 {
-        set_name("������", ({ "bai zizai", "bai" }));
-        set("nickname", "ѩɽ����������");
-        set("title", "�����޵�");
+        set_name("白自在", ({ "bai zizai", "bai" }));
+        set("nickname", "雪山劍派掌門人");
+        set("title", "鐵劍無敵");
         set("long",
-                "������ѩɽ���ɵ������ˣ�ϰ����ԣ�����Ϊ�����书��һ��\n"
-                "����Լ��ʮ���꣬�����ܸɣ�������������һ�\n");
-        set("gender", "����");
+                "他就是雪山劍派的掌門人，習武成性，自認為天下武功第一，\n"
+                "他大約五十多歲，精明能幹，嫉惡如仇，性如烈火。\n");
+        set("gender", "男性");
         set("age", 55);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -78,9 +78,9 @@ void greeting(object ob)
         {
                 if( query("shen", ob)>0 )
                 {
-                        command("say �ұ�����ѧ�䣬��Ϊ����?");
-                        command("say �������壬���������Ȼ�Ǳ��֣���ȴ��ʹ֮С�ߡ�");
-                        command("say Ϊ��Ϊ����֮���ߣ���˸��֣��պ��������£���Ϊ�������Ĵ�����");
+                        command("say 我輩練功學武，所為何事?");
+                        command("say 行俠仗義，濟人困厄固然是本分，但卻是使之小者。");
+                        command("say 為國為民，俠之大者，這八個字，日後名揚天下，成為萬民敬仰的大俠。");
 
                         obj = all_inventory(environment(me));
                         for(i=0; i<sizeof(obj); i++)
@@ -89,19 +89,19 @@ void greeting(object ob)
                                         continue;
                                 if( random(query("kar", ob))>28 )
                                 {
-command("say ���ܵ��ˣ���Ϊ������Ե��������������������ȥ�ɡ�\n");
+command("say 既能到此，既為你我有緣，我這有樣東西，你拿去吧。\n");
                                         obn = new("/d/xiakedao/obj/shane-bu");
                                         obn->move(ob);
-command("say �����͵����������ѧ�书�ɣ���������һ��֮����\n");
+command("say 到俠客島來，想必是學武功吧，我在助你一臂之力。\n");
                                         ob->move("/d/xiakedao/neiting");
-tell_object(ob,HIR"��ֻ����ǰһ�ڣ�ʲôҲ��֪���ˣ�����ȴ���صĳ�����һ�������ڡ�\n"NOR);
+tell_object(ob,HIR"你只覺眼前一黑，什麼也不知道了，醒來卻神秘的出現在一個大廳內。\n"NOR);
                                 }
-command("say ���ܵ��ˣ���Ϊ��Ե���ں���һ�ѽ�������Ե������ȥ�ɡ�\n");
+command("say 既能到此，既為有緣，在後洞有一把劍，如有緣，你拿去吧。\n");
                         }
                 }
                 else
                 {
-                        command("say ������Ӧ������·����ȥ�ɡ�");
+                        command("say 年輕人應該走正路，你去吧。");
                 }
         }
 }

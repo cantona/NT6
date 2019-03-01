@@ -5,12 +5,12 @@ inherit ROOM;
 
 void create()
 {
-        set("short","����");
+        set("short","馬廄");
         set("long",@LONG
-�����ų�������ǣ����깩Ӧ���ʲ��ϡ�������紾�ӣ������ǻ�
-����ǣ�����Ǻ����տ���������ι�����㣬��ϴˢ�ø�Ǭ������һֱ��
-�򵽿�����·�����������µ���ľ���϶���һ����ľ��(paizi)��
-    �����жѷ������Ѳ��ϣ�������һ����ۡ�
+這是榕城驛的馬廄，常年供應新鮮草料。福州民風淳樸，馬夫們會
+把馬牽到馬廄好生照看，將它們喂飽飲足，再洗刷得幹乾凈凈，一直伺
+候到客人上路。馬廄雨檐下的爛木柱上釘著一塊破木牌(paizi)。
+    馬廄中堆放著幾堆草料，正中有一口泔槽。
 LONG);
         set("outdoors", "fuzhou");
         set("no_fight", "1");
@@ -24,10 +24,10 @@ LONG);
         ]));
         set("item_desc", ([
                 "paizi": @TEXT
-������ֻҪ������һ�����������Ϳ��Թ͵�һƥ���ˡ�
+客人們只要給馬夫一兩白銀的租金就可以雇到一匹馬了。
 
-ǰ��      ���ݳ�:  rideyz
-          Ȫ�ݳ�:  rideqz
+前往      揚州城:  rideyz
+          泉州城:  rideqz
 
 TEXT]));
         set("exits",([ /* sizeof() == 1 */

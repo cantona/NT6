@@ -6,13 +6,13 @@ inherit F_UNIQUE;
  
 void create()
 {
-        set_name(HIC"¡¸ºÓÍ¼¡¹"NOR, ({ "hetu","tu", }));
+        set_name(HIC"ã€Œæ²³åœ–ã€"NOR, ({ "hetu","tu", }));
         set_weight(500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
-                set("long","ÕâÊÇÒ»±¾ÓÃ±¡¾îĞ´³ÉµÄÊé¡£ÉÏÊé¶ş×Ö¹Å×­£º¡°ºÓÍ¼¡±¡£\nÊéÆ¤·º»Æ£¬¿´À´ÒÑ¾­±£´æºÜ¾ÃÁË¡£\n" );
+                set("unit", "æœ¬");
+                set("long","é€™æ˜¯ä¸€æœ¬ç”¨è–„çµ¹å¯«æˆçš„æ›¸ã€‚ä¸Šæ›¸äºŒå­—å¤ç¯†ï¼šâ€œæ²³åœ–â€ã€‚\næ›¸çš®æ³›é»ƒï¼Œçœ‹ä¾†å·²ç¶“ä¿å­˜å¾ˆä¹…äº†ã€‚\n" );
                 set("value", 0);
                 set("material", "silk");
                 set("skill", ([

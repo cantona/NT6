@@ -4,11 +4,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("ºúÒ»µ¶", ({"hu yidao", "hu", "yidao"}));
-        set("gender", "ÄĞĞÔ");
-        set("nickname", "ÁÉ¶«´óÏÀ");
+        set_name("èƒ¡ä¸€åˆ€", ({"hu yidao", "hu", "yidao"}));
+        set("gender", "ç”·æ€§");
+        set("nickname", "é¼æ±å¤§ä¿ ");
         set("age", 35);
-        set("long","ÕâÈËÉúµÃµ±ÕæĞ×¶ñ£¬Ò»ÕÅºÚÆáÁ³Æ¤£¬ÂúÈùÅ¨÷×£¬Í··¢È´ÓÖ²»½á±è×Ó£¬ÅîÅîËÉËÉµÄ¶ÑÔÚÍ·ÉÏ¡£ËûÉúÆ½Ö»ÒªÓöµ½×ö»µÊÂµÄ£¬Á¢Ê±Ò»µ¶É±ÁË£¬ËùÒÔÃû×Ö½Ğ×÷ºúÒ»µ¶¡£\n");
+        set("long","é€™äººç”Ÿå¾—ç•¶çœŸå…‡æƒ¡ï¼Œä¸€å¼µé»‘æ¼†è‡‰çš®ï¼Œæ»¿è…®æ¿ƒé«¯ï¼Œé ­ç™¼å»åˆä¸çµè¾®å­ï¼Œè“¬è“¬é¬†é¬†çš„å †åœ¨é ­ä¸Šã€‚ä»–ç”Ÿå¹³åªè¦é‡åˆ°åšå£äº‹çš„ï¼Œç«‹æ™‚ä¸€åˆ€æ®ºäº†ï¼Œæ‰€ä»¥åå­—å«ä½œèƒ¡ä¸€åˆ€ã€‚\n");
         set("attitude", "peaceful");
         set("no_get", "1");
         set("str", 45);
@@ -27,13 +27,13 @@ void create()
         set("combat_exp", 190000);
         set("score", 20000);
          
-        set_skill("force", 110);             // »ù±¾ÄÚ¹¦
-        set_skill("hujia-daofa", 150);       // ºú¼Òµ¶·¨        
-        set_skill("blade", 120);             // »ù±¾µ¶·¨
-        set_skill("hunyuan-yiqi", 120);      // »ìÔªÒ»Æø¹¦
-        set_skill("dodge", 120);             // »ù±¾¶ãÉÁ
-        set_skill("shaolin-shenfa", 120);    // ºú¼ÒÉí·¨
-        set_skill("parry", 120);             // »ù±¾ÕĞ¼Ü
+        set_skill("force", 110);             // åŸºæœ¬å…§åŠŸ
+        set_skill("hujia-daofa", 150);       // èƒ¡å®¶åˆ€æ³•        
+        set_skill("blade", 120);             // åŸºæœ¬åˆ€æ³•
+        set_skill("hunyuan-yiqi", 120);      // æ··å…ƒä¸€æ°£åŠŸ
+        set_skill("dodge", 120);             // åŸºæœ¬èº²é–ƒ
+        set_skill("shaolin-shenfa", 120);    // èƒ¡å®¶èº«æ³•
+        set_skill("parry", 120);             // åŸºæœ¬æ‹›æ¶
                 
         map_skill("force", "hunyuan-yiqi");
         map_skill("blade", "hujia-daofa");

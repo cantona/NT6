@@ -48,30 +48,30 @@ int main(object me, string arg)
                 return 0;
 
         if( !query("env/setcoor", me) )
-                return notify_fail("Î£ÏÕÖ¸Áî£¬É÷ÓÃ£¡É÷ÓÃ£¡\n");
+                return notify_fail("å±éšªæŒ‡ä»¤ï¼Œæ…ç”¨ï¼æ…ç”¨ï¼\n");
 
         set_eval_limit(900000000);
         reset_eval_cost();
 
         if( !arg ) {
                 if( query("border", env)){
-                        write("·¿¼ä " + base_name(env) + " ÒÑ·Ç±ß½ç¡£\n");
+                        write("æˆ¿é–“ " + base_name(env) + " å·²éé‚Šç•Œã€‚\n");
                         delete("border", env);
                         return 1;
                 } else
-                        return notify_fail("ÕâÀï±¾À´¾Í²»ÊÇ±ß½ç¡£\n");
+                        return notify_fail("é€™è£¡æœ¬ä¾†å°±ä¸æ˜¯é‚Šç•Œã€‚\n");
         }
 
         if( member_array(arg, keys(map_dirs)) != -1 ) {
                 if( query("border/"+arg, env) ) {
-                        write("·¿¼ä " + base_name(env) + " µÄ" + arg + "·½ÏòÒÑ·Ç±ß½ç¡£\n");
+                        write("æˆ¿é–“ " + base_name(env) + " çš„" + arg + "æ–¹å‘å·²éé‚Šç•Œã€‚\n");
                         delete("border/"+arg, env);
                         if( !sizeof(query("border", env)) )
                                 delete("border", env);
                         return 1;
                 } else {
                         set("border/"+arg, 1, env);
-                        write("·¿¼ä " + base_name(env) + " µÄ" + arg + "·½ÏòÒÑÉèÎª±ß½ç¡£\n");
+                        write("æˆ¿é–“ " + base_name(env) + " çš„" + arg + "æ–¹å‘å·²è¨­ç‚ºé‚Šç•Œã€‚\n");
                         return 1;
                 }
         }
@@ -98,9 +98,9 @@ int main(object me, string arg)
                         clear_old_coor(env);
 
                 if( query("coor", env) != 0 )
-                        write("·¿¼ä " + base_name(env) + " ×ø±êÖØĞÂÉè¶¨³É¹¦¡£\n");
+                        write("æˆ¿é–“ " + base_name(env) + " åæ¨™é‡æ–°è¨­å®šæˆåŠŸã€‚\n");
                 else
-                        write("·¿¼ä " + base_name(env) + " ×ø±êÉè¶¨³É¹¦¡£\n");
+                        write("æˆ¿é–“ " + base_name(env) + " åæ¨™è¨­å®šæˆåŠŸã€‚\n");
                 set("coor/x", x, env);
                 set("coor/y", y, env);
                 set("coor/z", z, env);
@@ -143,7 +143,7 @@ int non_recur_do(object room, int x, int y, int z, string prefix)
                         x, y, z));
         write_file(base_name(room) + ".c", file, 1);
         file_count ++;
-        write("·¿¼ä " + base_name(room) + " ×ø±êÉè¶¨³É¹¦¡£\n");
+        write("æˆ¿é–“ " + base_name(room) + " åæ¨™è¨­å®šæˆåŠŸã€‚\n");
         all += ([base_name(room) : room]);
         roomlist += ([base_name(room) : room]);
 
@@ -208,14 +208,14 @@ int non_recur_do(object room, int x, int y, int z, string prefix)
                                                 x1, y1, z1));
                                 write_file(base_name(next_room) + ".c", file, 1);
                                 file_count ++;
-                                write("·¿¼ä " + base_name(next_room) + " ×ø±êÉè¶¨³É¹¦¡£\n");
+                                write("æˆ¿é–“ " + base_name(next_room) + " åæ¨™è¨­å®šæˆåŠŸã€‚\n");
 
                                 all += ([base_name(next_room) : next_room]);
                                 roomlist += ([base_name(next_room) : next_room]);
                         }
                 }
         }
-        write("¹²¶¨Î» " + sprintf("%d", file_count) + " ¸ö·¿¼ä¡£\n");
+        write("å…±å®šä½ " + sprintf("%d", file_count) + " å€‹æˆ¿é–“ã€‚\n");
         return 1;
 }
 
@@ -246,18 +246,18 @@ void clear_old_coor(object room)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ :
-        setcoor <²ÎÊı> x,y,z
+æŒ‡ä»¤æ ¼å¼ :
+        setcoor <åƒæ•¸> x,y,z
 
-ÓÃ·¨£º
-        setcoor            Çå³ıµ±Ç°·¿¼äËùÓĞ·½ÏòµÄ±ß½çÊôĞÔ¡£
-        setcoor <·½Ïò>     Èô¸Ãµ±Ç°·¿¼äµÄ¸Ã·½ÏòÒÑÎª±ß½ç£¬ÔòÇå³ıÖ®£¬·ñÔò
-                           ÉèÖÃ¸Ã·½ÏòÎª±ß½ç¡£
-        setcoor x,y,z      ÎŞÂÛµ±Ç°·¿¼äÊÇ·ñÒÑ¶¨Î»£¬ÖØĞÂ²¢µ¥¶À´¦Àí¸Ã·¿¼ä¡£
-        setcoor -s x,y,z   ÎŞÂÛµ±Ç°·¿¼äÊÇ·ñÒÑ¶¨Î»£¬ÖØĞÂ¶¨Î»µ±Ç°·¿¼äµÄ×ø
-                           ±ê£¬²¢Á¬Ëø´¦Àí£¬Ö±µ½Í¬Ò»Ä¿Â¼ÏÂËùÓĞ·¿¼ä¶¼±»´¦
-                           Àí¹ıÎªÖ¹¡£
-        setcoor -a x,y,z   Í¬ÉÏ£¬µ«ÎŞÍ¬Ò»Ä¿Â¼ÏŞÖÆ¡£
+ç”¨æ³•ï¼š
+        setcoor            æ¸…é™¤ç•¶å‰æˆ¿é–“æ‰€æœ‰æ–¹å‘çš„é‚Šç•Œå±¬æ€§ã€‚
+        setcoor <æ–¹å‘>     è‹¥è©²ç•¶å‰æˆ¿é–“çš„è©²æ–¹å‘å·²ç‚ºé‚Šç•Œï¼Œå‰‡æ¸…é™¤ä¹‹ï¼Œå¦å‰‡
+                           è¨­ç½®è©²æ–¹å‘ç‚ºé‚Šç•Œã€‚
+        setcoor x,y,z      ç„¡è«–ç•¶å‰æˆ¿é–“æ˜¯å¦å·²å®šä½ï¼Œé‡æ–°ä¸¦å–®ç¨è™•ç†è©²æˆ¿é–“ã€‚
+        setcoor -s x,y,z   ç„¡è«–ç•¶å‰æˆ¿é–“æ˜¯å¦å·²å®šä½ï¼Œé‡æ–°å®šä½ç•¶å‰æˆ¿é–“çš„å
+                           æ¨™ï¼Œä¸¦é€£é–è™•ç†ï¼Œç›´åˆ°åŒä¸€ç›®éŒ„ä¸‹æ‰€æœ‰æˆ¿é–“éƒ½è¢«è™•
+                           ç†éç‚ºæ­¢ã€‚
+        setcoor -a x,y,z   åŒä¸Šï¼Œä½†ç„¡åŒä¸€ç›®éŒ„é™åˆ¶ã€‚
 
 HELP
 );

@@ -7,11 +7,11 @@ void init()
 }
 void create()
 {
-        set_name(HIC"³¤Ê¯Æ¬"NOR, ({ "chang shipian", "stone", "shipian" }) );
+        set_name(HIC"é•·çŸ³ç‰‡"NOR, ({ "chang shipian", "stone", "shipian" }) );
         set_weight(5000);
-        set("unit", "¿é");
+        set("unit", "å¡Š");
         set("long",HIC@LONG
-Ò»¿éÆÕÆÕÍ¨Í¨µÄ³¤ÌõÊ¯Æ¬£¬ÉÏÃæÓĞĞ©Ï¸Ï¸µÄÎÆÂ·£¬¿´²»³öÊ²Ã´ÌØ±ğÖ®´¦¡£
+ä¸€å¡Šæ™®æ™®é€šé€šçš„é•·æ¢çŸ³ç‰‡ï¼Œä¸Šé¢æœ‰äº›ç´°ç´°çš„ç´‹è·¯ï¼Œçœ‹ä¸å‡ºä»€éº¼ç‰¹åˆ¥ä¹‹è™•ã€‚
 LONG
 NOR
 );
@@ -24,18 +24,18 @@ int do_study(string arg)
         object me = this_player();
         int dugulevel = me->query_skill("dugu-jiujian-sword",1);
         if ( (arg != "stone") && (arg != "shipian") && (arg != "chang shipian") )
-                return notify_fail("ÄãÒªÑ§Ê²Ã´£¿\n");
+                return notify_fail("ä½ è¦å­¸ä»€éº¼ï¼Ÿ\n");
         if ((dugulevel >= 150) && (dugulevel <= 250) )
         {
                if( query("combat_exp", me)<dugulevel*dugulevel*dugulevel/10 )
-                        return notify_fail("ÄãÖ»¾õµÃÊ¯Í·µÄÎÆÀí°µºÏ¡¸¶À¹Â¾Å½£¡¹µÄ½£Òâ£¬¿ÉÊÇ¾ÍÊÇÀí²»³ö\nÍ·Ğ÷£¬¿´À´ÊÇÊµÕ½¾­Ñé²»¹»¡£\n");
+                        return notify_fail("ä½ åªè¦ºå¾—çŸ³é ­çš„ç´‹ç†æš—åˆã€Œç¨å­¤ä¹åŠã€çš„åŠæ„ï¼Œå¯æ˜¯å°±æ˜¯ç†ä¸å‡º\né ­ç·’ï¼Œçœ‹ä¾†æ˜¯å¯¦æˆ°ç¶“é©—ä¸å¤ ã€‚\n");
                if( query("jing", me)<25 )
-                        return notify_fail("ÄãÏÖÔÚ¹ıÓÚÆ£¾ë£¬ÎŞ·¨×¨ĞÄÏÂÀ´ÑĞ¶ÁĞÂÖª¡£\n");
+                        return notify_fail("ä½ ç¾åœ¨éäºç–²å€¦ï¼Œç„¡æ³•å°ˆå¿ƒä¸‹ä¾†ç ”è®€æ–°çŸ¥ã€‚\n");
                 me->receive_damage("jing", 25);
                 me->improve_skill("dugu-jiujian-sword",(query("int", me))*(query("combat_exp", me)/20000));
-                message("vision","ÄãÄÃ³ö³¤Ê¯Ìõ×ĞÏ¸ÑĞ¾¿£¬¾¹´ÓÊ¯ÌõµÄÎÆÀíÉÏÁìÎò³ö¡¸¶À¹Â¾Å½£¡¹\nµÄ½£Òâ£¬¡¸¶À¹Â¾Å½£¡¹´óÓĞ³¤½ø¡£\n",me);
-                message("vision",query("name", me)+"×ĞÏ¸ÑĞ¶ÁÒ»¿éÊ¯Æ¬¡£\n",environment(me),me);
+                message("vision","ä½ æ‹¿å‡ºé•·çŸ³æ¢ä»”ç´°ç ”ç©¶ï¼Œç«Ÿå¾çŸ³æ¢çš„ç´‹ç†ä¸Šé ˜æ‚Ÿå‡ºã€Œç¨å­¤ä¹åŠã€\nçš„åŠæ„ï¼Œã€Œç¨å­¤ä¹åŠã€å¤§æœ‰é•·é€²ã€‚\n",me);
+                message("vision",query("name", me)+"ä»”ç´°ç ”è®€ä¸€å¡ŠçŸ³ç‰‡ã€‚\n",environment(me),me);
                 return 1;
         }
-        return notify_fail("Äã¶Ô×ÅÊ¯Í·¿´À´¿´È¥£¬Ã»¿´³öÊ²Ã´µÀÀí³öÀ´¡£\n");
+        return notify_fail("ä½ å°è‘—çŸ³é ­çœ‹ä¾†çœ‹å»ï¼Œæ²’çœ‹å‡ºä»€éº¼é“ç†å‡ºä¾†ã€‚\n");
 }

@@ -10,23 +10,23 @@ int exert(object me, object target)
 {
         int skill;
 
-        if( target != me ) return notify_fail("你只能用不死神龙大法提升自己的战斗力。\n");
+        if( target != me ) return notify_fail("浣犲彧鑳界敤涓嶆绁為緧澶ф硶鎻愬崌鑷繁鐨勬埌楝ュ姏銆俓n");
 
         if( (int)me->query_skill("busi-shenlong",1) < 50 )
-          return notify_fail("你的内功火候还不够，无法使用不死神龙大法！\n");
+          return notify_fail("浣犵殑鍏у姛鐏�欓倓涓嶅锛岀劇娉曚娇鐢ㄤ笉姝荤榫嶅ぇ娉曪紒\n");
 
         if( query("neili", me)<100 )
-                return notify_fail("你的内力不够!\n");
+                return notify_fail("浣犵殑鍏у姏涓嶅!\n");
         if( query_temp("powerup", me) )
-                return notify_fail("你已经在运功中了。\n");
+                return notify_fail("浣犲凡缍撳湪閬嬪姛涓簡銆俓n");
 
         skill = me->query_skill("force");
 
         addn("neili", -100, me);
 
         message_combatd(
-          HIR "$N双目赤红，纵声大呼：洪教主神通护佑，众弟子勇气百倍，以一当百，以百当万！\n"NOR, me);
-        tell_object(me,HIW"你顿时感觉武功大进，劲力比先前大了数倍！\n" NOR);
+          HIR "$N闆欑洰璧ょ磪锛岀副鑱插ぇ鍛硷細娲暀涓荤閫氳浣戯紝鐪惧紵瀛愬媷姘ｇ櫨鍊嶏紝浠ヤ竴鐣剁櫨锛屼互鐧剧暥钀紒\n"NOR, me);
+        tell_object(me,HIW"浣犻爴鏅傛劅瑕烘鍔熷ぇ閫诧紝鍕佸姏姣斿厛鍓嶅ぇ浜嗘暩鍊嶏紒\n" NOR);
 
         addn_temp("apply/attack", skill/3, me);
         addn_temp("apply/defense", skill/3, me);
@@ -46,6 +46,6 @@ void remove_effect(object me, int amount)
                 addn_temp("apply/attack", -amount, me);
                 addn_temp("apply/defense", -amount, me);
                 delete_temp("powerup", me);
-                tell_object(me, "你的不死神龙大法运行完毕，汗如泉涌，呼呼喘气。\n");
+                tell_object(me, "浣犵殑涓嶆绁為緧澶ф硶閬嬭瀹岀暍锛屾睏濡傛硥婀э紝鍛煎懠鍠樻埃銆俓n");
         }
 }

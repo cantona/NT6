@@ -3,7 +3,7 @@
 
 #include <ansi.h>
 
-string head="\t---- "+"”√ªß’À∫≈π‹¿Ì∆˜"+" ----";
+string head="\t---- "+"Áî®Êà∂Ë≥¨ËôüÁÆ°ÁêÜÂô®"+" ----";
 
 nomask int main(object me, string arg)
 {
@@ -13,16 +13,16 @@ nomask int main(object me, string arg)
                 return 0;
         
         if (! SECURITY_D->valid_grant(me, "(arch)"))
-                return notify_fail("÷ª”–(arch)“‘…œµƒŒ◊ ¶≤≈ƒ‹÷¥––∂‘”√ªß’À∫≈µƒπ‹¿Ì\n");
+                return notify_fail("Âè™Êúâ(arch)‰ª•‰∏äÁöÑÂ∑´Â∏´ÊâçËÉΩÂü∑Ë°åÂ∞çÁî®Êà∂Ë≥¨ËôüÁöÑÁÆ°ÁêÜ\n");
                 
         seteuid(ROOT_UID);
 
-        write("\n" + head + "\n\n\n\t1> ∑‚À¯“ª∏ˆ”√ªß’À∫≈°£");
-        write("\n\n\t2> Ω´“ª∏ˆ“—∑‚À¯µƒ”√ªß’À∫≈Ω‚∑‚°£");
-        write("\n\n\t3> ≤È—Ø“ª∏ˆ”√ªß’À∫≈ «∑Ò±ª∑‚À¯°£");
-        write("\n\n\t4> ¡–≥ˆÀ˘”–±ª∑‚À¯µƒ”√ªß’À∫≈°£\n\n\n");
+        write("\n" + head + "\n\n\n\t1> Â∞ÅÈéñ‰∏ÄÂÄãÁî®Êà∂Ë≥¨Ëôü„ÄÇ");
+        write("\n\n\t2> Â∞á‰∏ÄÂÄãÂ∑≤Â∞ÅÈéñÁöÑÁî®Êà∂Ë≥¨ËôüËß£Â∞Å„ÄÇ");
+        write("\n\n\t3> Êü•Ë©¢‰∏ÄÂÄãÁî®Êà∂Ë≥¨ËôüÊòØÂê¶Ë¢´Â∞ÅÈéñ„ÄÇ");
+        write("\n\n\t4> ÂàóÂá∫ÊâÄÊúâË¢´Â∞ÅÈéñÁöÑÁî®Êà∂Ë≥¨Ëôü„ÄÇ\n\n\n");
 
-        write("—°‘Ò ˝◊÷(1-4)£¨[return] ∑µªÿ…œº∂£¨q ÕÀ≥ˆ>");
+        write("ÈÅ∏ÊìáÊï∏Â≠ó(1-4)Ôºå[return] ËøîÂõû‰∏äÁ¥öÔºåq ÈÄÄÂá∫>");
         input_to("do_select", 0, me);
         return 1;
 }
@@ -42,8 +42,8 @@ protected void do_select(string arg,object me)
         if( (s<1) || (s>4) )
         {
                 printf(CUP(2));
-                write(HIY"<ø…—°‘Òµƒ ˝◊÷∑∂Œß(1-4)>                                \n"NOR);
-                write("—°‘Ò ˝◊÷(1-4)£¨[return] ∑µªÿ…œº∂£¨q ÕÀ≥ˆ>");
+                write(HIY"<ÂèØÈÅ∏ÊìáÁöÑÊï∏Â≠óËåÉÂúç(1-4)>                                \n"NOR);
+                write("ÈÅ∏ÊìáÊï∏Â≠ó(1-4)Ôºå[return] ËøîÂõû‰∏äÁ¥öÔºåq ÈÄÄÂá∫>");
                 input_to("do_select",0,me);
                 return;
         }
@@ -51,17 +51,17 @@ protected void do_select(string arg,object me)
         switch (s)
         {
                 case 1:
-                        promot = "«Î ‰»Îƒ„“™∑‚À¯µƒ”√ªß’À∫≈£∫";
+                        promot = "Ë´ãËº∏ÂÖ•‰Ω†Ë¶ÅÂ∞ÅÈéñÁöÑÁî®Êà∂Ë≥¨ËôüÔºö";
                         break;
                 case 2:
-                        promot = "«Î ‰»Îƒ„“™Ω‚∑‚µƒ”√ªß’À∫≈£∫";
+                        promot = "Ë´ãËº∏ÂÖ•‰Ω†Ë¶ÅËß£Â∞ÅÁöÑÁî®Êà∂Ë≥¨ËôüÔºö";
                         break;
                 case 3:
-                        promot = "«Î ‰»Îƒ„“™≤È—Øµƒ”√ªß’À∫≈£∫";
+                        promot = "Ë´ãËº∏ÂÖ•‰Ω†Ë¶ÅÊü•Ë©¢ÁöÑÁî®Êà∂Ë≥¨ËôüÔºö";
                         break;
                 case 4:
                         me->start_more(AHACK_D->blocked_list());
-                        write("\n[∞¥»Œ“‚º¸ºÃ–¯]\n");
+                        write("\n[Êåâ‰ªªÊÑèÈçµÁπºÁ∫å]\n");
                         input_to("break_point",0,me);
                         return;
                 default:
@@ -78,17 +78,17 @@ protected void do_process(string arg,int s,object me)
 {
         if( (s<1) || (s>3) )
         {
-                write("÷¥––œÓƒø¥ÌŒÛ°£\n");
+                write("Âü∑Ë°åÈ†ÖÁõÆÈåØË™§„ÄÇ\n");
                 return;
         }
 
         if(arg == "")
         {
-                write("\n"+head+"\n\n\n\t1> ∑‚À¯“ª∏ˆ”√ªß’À∫≈°£");
-                write("\n\n\t2> Ω´“ª∏ˆ“—∑‚À¯µƒ”√ªß’À∫≈Ω‚∑‚°£");
-                write("\n\n\t3> ≤È—Ø“ª∏ˆ”√ªß’À∫≈ «∑Ò±ª∑‚À¯°£");
-                write("\n\n\t4> ¡–≥ˆÀ˘”–±ª∑‚À¯µƒ”√ªß’À∫≈°£\n\n\n");
-                write("—°‘Ò ˝◊÷1-4£¨[return] ∑µªÿ…œº∂£¨q ÕÀ≥ˆ>");
+                write("\n"+head+"\n\n\n\t1> Â∞ÅÈéñ‰∏ÄÂÄãÁî®Êà∂Ë≥¨Ëôü„ÄÇ");
+                write("\n\n\t2> Â∞á‰∏ÄÂÄãÂ∑≤Â∞ÅÈéñÁöÑÁî®Êà∂Ë≥¨ËôüËß£Â∞Å„ÄÇ");
+                write("\n\n\t3> Êü•Ë©¢‰∏ÄÂÄãÁî®Êà∂Ë≥¨ËôüÊòØÂê¶Ë¢´Â∞ÅÈéñ„ÄÇ");
+                write("\n\n\t4> ÂàóÂá∫ÊâÄÊúâË¢´Â∞ÅÈéñÁöÑÁî®Êà∂Ë≥¨Ëôü„ÄÇ\n\n\n");
+                write("ÈÅ∏ÊìáÊï∏Â≠ó1-4Ôºå[return] ËøîÂõû‰∏äÁ¥öÔºåq ÈÄÄÂá∫>");
                 input_to("do_select",0,me);
                 return;
         }
@@ -104,16 +104,16 @@ protected void do_process(string arg,int s,object me)
                 case 1:
                         printf(CUP(2));
                         if(wiz_level(me) < wiz_level(arg))
-                                write(HIR"<ƒ„√ª”–»®¡¶∑‚À¯“ª∏ˆŒ◊ ¶º∂±±»ƒ„∏ﬂµƒ’À∫≈°£>\n"NOR);
+                                write(HIR"<‰Ω†Ê≤íÊúâÊ¨äÂäõÂ∞ÅÈéñ‰∏ÄÂÄãÂ∑´Â∏´Á¥öÂà•ÊØî‰Ω†È´òÁöÑË≥¨Ëôü„ÄÇ>\n"NOR);
                         else if(AHACK_D->block_account(arg))
                         {
-                                write(HIG"<’À∫≈ "+arg+" “—æ≠±ª≥…π¶∑‚À¯°£>\n"NOR);
-                                log_file("block",sprintf("%s(%s) Ω´’À∫≈ %s >>>∑‚À¯£¨ ±º‰ %s°£\n",
+                                write(HIG"<Ë≥¨Ëôü "+arg+" Â∑≤Á∂ìË¢´ÊàêÂäüÂ∞ÅÈéñ„ÄÇ>\n"NOR);
+                                log_file("block",sprintf("%s(%s) Â∞áË≥¨Ëôü %s >>>Â∞ÅÈéñÔºåÊôÇÈñì %s„ÄÇ\n",
                                         query("name", me),query("id", me),arg,ctime(time())));
                         }
                         else
-                                write(HIY"<’À∫≈ "+arg+" “—‘⁄∑‚À¯¡–±Ì£¨≤ªƒ‹‘Ÿ¥Œ∑‚À¯°£>\n"NOR);
-                        write("—°‘Ò ˝◊÷1-4£¨[return] ∑µªÿ…œº∂£¨q ÕÀ≥ˆ>");
+                                write(HIY"<Ë≥¨Ëôü "+arg+" Â∑≤Âú®Â∞ÅÈéñÂàóË°®Ôºå‰∏çËÉΩÂÜçÊ¨°Â∞ÅÈéñ„ÄÇ>\n"NOR);
+                        write("ÈÅ∏ÊìáÊï∏Â≠ó1-4Ôºå[return] ËøîÂõû‰∏äÁ¥öÔºåq ÈÄÄÂá∫>");
                         input_to("do_select",0,me);
                         return;
 
@@ -121,22 +121,22 @@ protected void do_process(string arg,int s,object me)
                         printf(CUP(2));
                         if(AHACK_D->unblock_account(arg))
                         {
-                                write(HIG"<’À∫≈ "+arg+" “—æ≠±ª≥…π¶±ªΩ‚∑‚°£>\n"NOR);
-                                log_file("block",sprintf("%s(%s) Ω´’À∫≈ %s Ω‚∑‚£¨ ±º‰ %s°£\n",
+                                write(HIG"<Ë≥¨Ëôü "+arg+" Â∑≤Á∂ìË¢´ÊàêÂäüË¢´Ëß£Â∞Å„ÄÇ>\n"NOR);
+                                log_file("block",sprintf("%s(%s) Â∞áË≥¨Ëôü %s Ëß£Â∞ÅÔºåÊôÇÈñì %s„ÄÇ\n",
                                         query("name", me),query("id", me),arg,ctime(time())));
                         }
                         else
-                                write(HIY"<’À∫≈ "+arg+" √ª”–±ª∑‚À¯£¨Œﬁ∑®Ω‚∑‚°£>\n"NOR);
-                        write("—°‘Ò ˝◊÷1-4£¨[return] ∑µªÿ…œº∂£¨q ÕÀ≥ˆ>");
+                                write(HIY"<Ë≥¨Ëôü "+arg+" Ê≤íÊúâË¢´Â∞ÅÈéñÔºåÁÑ°Ê≥ïËß£Â∞Å„ÄÇ>\n"NOR);
+                        write("ÈÅ∏ÊìáÊï∏Â≠ó1-4Ôºå[return] ËøîÂõû‰∏äÁ¥öÔºåq ÈÄÄÂá∫>");
                         input_to("do_select",0,me);
                         return;
                 case 3:
                         printf(CUP(2));
                         if(AHACK_D->query_block(arg))
-                                write(HIY"<’À∫≈ "+arg+" ƒø«∞¥¶”⁄±ª∑‚À¯◊¥Ã¨°£>\n"NOR);
+                                write(HIY"<Ë≥¨Ëôü "+arg+" ÁõÆÂâçËôï‰∫éË¢´Â∞ÅÈéñÁãÄÊÖã„ÄÇ>\n"NOR);
                         else
-                                write(HIY"<’À∫≈ "+arg+" √ª”–±ª∑‚À¯°£>\n"NOR);
-                        write("—°‘Ò ˝◊÷1-4£¨[return] ∑µªÿ…œº∂£¨q ÕÀ≥ˆ>");
+                                write(HIY"<Ë≥¨Ëôü "+arg+" Ê≤íÊúâË¢´Â∞ÅÈéñ„ÄÇ>\n"NOR);
+                        write("ÈÅ∏ÊìáÊï∏Â≠ó1-4Ôºå[return] ËøîÂõû‰∏äÁ¥öÔºåq ÈÄÄÂá∫>");
                         input_to("do_select",0,me);
                         return;
                 default:
@@ -146,12 +146,12 @@ protected void do_process(string arg,int s,object me)
 
 protected void break_point(string arg,object me)
 {
-        write("\n"+head+"\n\n\n\t1> ∑‚À¯“ª∏ˆ”√ªß’À∫≈°£");
-        write("\n\n\t2> Ω´“ª∏ˆ“—∑‚À¯µƒ”√ªß’À∫≈Ω‚∑‚°£");
-        write("\n\n\t3> ≤È—Ø“ª∏ˆ”√ªß’À∫≈ «∑Ò±ª∑‚À¯°£");
-        write("\n\n\t4> ¡–≥ˆÀ˘”–±ª∑‚À¯µƒ”√ªß’À∫≈°£\n\n\n");
+        write("\n"+head+"\n\n\n\t1> Â∞ÅÈéñ‰∏ÄÂÄãÁî®Êà∂Ë≥¨Ëôü„ÄÇ");
+        write("\n\n\t2> Â∞á‰∏ÄÂÄãÂ∑≤Â∞ÅÈéñÁöÑÁî®Êà∂Ë≥¨ËôüËß£Â∞Å„ÄÇ");
+        write("\n\n\t3> Êü•Ë©¢‰∏ÄÂÄãÁî®Êà∂Ë≥¨ËôüÊòØÂê¶Ë¢´Â∞ÅÈéñ„ÄÇ");
+        write("\n\n\t4> ÂàóÂá∫ÊâÄÊúâË¢´Â∞ÅÈéñÁöÑÁî®Êà∂Ë≥¨Ëôü„ÄÇ\n\n\n");
 
-        write("—°‘Ò ˝◊÷1-4£¨[return] ∑µªÿ…œº∂£¨q ÕÀ≥ˆ>");
+        write("ÈÅ∏ÊìáÊï∏Â≠ó1-4Ôºå[return] ËøîÂõû‰∏äÁ¥öÔºåq ÈÄÄÂá∫>");
         input_to("do_select",0,me);
         return;
 }
@@ -160,9 +160,9 @@ protected void break_point(string arg,object me)
 int help(object me)
 {
         write(@HELP
-÷∏¡Ó∏Ò Ω : block
+Êåá‰ª§Ê†ºÂºè : block
 
-∂‘’ÀªßµƒΩ˚÷πµ«¬Ωµƒπ‹¿Ì°£
+Â∞çË≥¨Êà∂ÁöÑÁ¶ÅÊ≠¢ÁôªÈô∏ÁöÑÁÆ°ÁêÜ„ÄÇ
 
 HELP
     );

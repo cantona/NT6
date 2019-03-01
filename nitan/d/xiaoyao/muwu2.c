@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Сľ��");
+        set("short", "小木屋");
         set("long", @LONG
-����һ�䲻�Ǻܴ��ľͷ���ӣ����￴�������ҩ�ң����аڷ���
-���ֲ�ͬ����ҩ���þߺ�һЩ�Ѿ�����˵�ҩ��
+這是一間不是很大的木頭屋子，這裡看起來象個藥室，室中擺放著
+各種不同的配藥的用具和一些已經配好了的藥。
 LONG );
         set("exits", ([
                 "south" : __DIR__"xiaodao3",

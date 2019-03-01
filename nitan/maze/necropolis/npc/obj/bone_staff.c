@@ -2,19 +2,19 @@
 #include <weapon.h>
 inherit STAFF; 
 void create() {
-        set_name("¹ÇÕÈ", ({ "bone staff" }) );
+        set_name("éª¨æ–", ({ "bone staff" }) );
         set_weight(2000);
         set("maze_item",1); 
         set("no_put",1);
         if(clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ù");
-                set("long", "ÕâÊÇÒ»¸ù²»ÖªµÀÊ²Ã´µÄ¹ÇÍ·×ö³ÉµÄ·¨ÕÈ¡£");
+                set("unit", "æ ¹");
+                set("long", "é€™æ˜¯ä¸€æ ¹ä¸çŸ¥é“ä»€éº¼çš„éª¨é ­åšæˆçš„æ³•æ–ã€‚");
                 set("value", 300);
                 set("material", "wood");
-                set("wield_msg", "$N°Ñ$n½ô½ôµØÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$NËÉ¿ªÁËÊÖÖĞµÄ$n¡£\n");
+                set("wield_msg", "$NæŠŠ$nç·Šç·Šåœ°æ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Né¬†é–‹äº†æ‰‹ä¸­çš„$nã€‚\n");
         }
         ::init_staff(30);
 }

@@ -6,10 +6,10 @@ inherit F_GUARDER;
 
 void create()
 {
-        set_name("ÌÆ¿´", ({ "tang kan", "tang", "kan"}));
-        set("nickname", HIR "µÕÏµËÀÊ¿" NOR); 
-        set("long", "ÕâÊÇµÕÏµËÀÊ¿Ö®Ò»£¬Ò»ÉíµÄ¹¦·òÈ´ÊÇ²»·²¡£\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("å”çœ‹", ({ "tang kan", "tang", "kan"}));
+        set("nickname", HIR "å«¡ç³»æ­»å£«" NOR); 
+        set("long", "é€™æ˜¯å«¡ç³»æ­»å£«ä¹‹ä¸€ï¼Œä¸€èº«çš„åŠŸå¤«å»æ˜¯ä¸å‡¡ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 55);
         set("class", "tangmen");
         set("attitude", "peaceful");
@@ -54,7 +54,7 @@ void create()
         
         prepare_skill("hand", "boyun-suowu");
 
-        create_family("ÌÆÃÅÊÀ¼Ò", 2, "µÜ×Ó");
+        create_family("å”é–€ä¸–å®¶", 2, "å¼Ÿå­");
         
         set("chat_chance_combat", 20);
         set("chat_msg_combat", ({

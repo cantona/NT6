@@ -5,27 +5,27 @@
 #define IMMORTAL             2
 #define WIZARD               4
 
-#define CHAT                 (1<<0)        //ÏĞÁÄ
-#define RUMOR                (1<<1)        //Ò¥ÑÔ
-#define MESS                 (1<<2)        //½­ºş
-#define WIZ                  (1<<3)        //Î×Ê¦
-#define SYS                  (1<<4)        //ÏµÍ³
-#define NCH                  (1<<5)        //¼à²â
-#define NEWS                 (1<<6)        //ĞÂÎÅ
-#define SOS                  (1<<7)        //ÇóÖú
-#define GWIZ                 (1<<8)        //¹ú¼ÊÎ×Ê¦
-#define OTHER                (1<<9)        //ÆäËû
-#define AD                   (1<<10)       //¹ã¸æ
-#define FAMILY               (1<<11)       //ÃÅÅÉ
-#define WAR                  (1<<12)       //Õ½³¡
-#define TCH                  (1<<13)       //±¨¸æ 
-#define PARTY                (1<<14)       //°ïÅÉ
-#define STOCK                (1<<15)       //¹ÉÆ±
-#define AUC                  (1<<16)       //ÅÄÂô
-#define DEBUG                (1<<17)       //²âÊÔ
-#define COMBAT		     (1<<18)	   //Õ½¶·
-#define GROUP		     (1<<19)       //¶ÓÎé
-#define SPORT		     (1<<20)	   //ÔË¶¯
+#define CHAT                 (1<<0)        //é–’èŠ
+#define RUMOR                (1<<1)        //è¬ è¨€
+#define MESS                 (1<<2)        //æ±Ÿæ¹–
+#define WIZ                  (1<<3)        //å·«å¸«
+#define SYS                  (1<<4)        //ç³»çµ±
+#define NCH                  (1<<5)        //ç›£æ¸¬
+#define NEWS                 (1<<6)        //æ–°è
+#define SOS                  (1<<7)        //æ±‚åŠ©
+#define GWIZ                 (1<<8)        //åœ‹éš›å·«å¸«
+#define OTHER                (1<<9)        //å…¶ä»–
+#define AD                   (1<<10)       //å»£å‘Š
+#define FAMILY               (1<<11)       //é–€æ´¾
+#define WAR                  (1<<12)       //æˆ°å ´
+#define TCH                  (1<<13)       //å ±å‘Š 
+#define PARTY                (1<<14)       //å¹«æ´¾
+#define STOCK                (1<<15)       //è‚¡ç¥¨
+#define AUC                  (1<<16)       //æ‹è³£
+#define DEBUG                (1<<17)       //æ¸¬è©¦
+#define COMBAT		     (1<<18)	   //æˆ°é¬¥
+#define GROUP		     (1<<19)       //éšŠä¼
+#define SPORT		     (1<<20)	   //é‹å‹•
 
 #define SPECIAL_NPC     ({ "/adm/npc/youxun" })
 
@@ -60,7 +60,7 @@ string *info =
         TCH,
         "tch",
         PLAYER,
-        WHT "¡¾"HIW"µ¼"NOR WHT"Ê¦"HIW"¡¿"NOR,
+        WHT "ã€"HIW"å°"NOR WHT"å¸«"HIW"ã€‘"NOR,
         ([
                 "msgcolor"      : NOR HIW
         ]),
@@ -69,7 +69,7 @@ string *info =
         WAR,
         "war",
         PLAYER,
-        BLU "¡¾"HIB"Õ½"NOR BLU"³¡"HIB"¡¿"NOR,
+        BLU "ã€"HIB"æˆ°"NOR BLU"å ´"HIB"ã€‘"NOR,
         ([
                 "msgcolor"      : NOR HIB,
                 "noemote"       : 1,
@@ -79,7 +79,7 @@ string *info =
         CHAT,
         "chat",
         PLAYER,
-        CYN "¡¾"HIC"ÏĞ"NOR CYN"ÁÄ"HIC"¡¿"NOR,
+        CYN "ã€"HIC"é–’"NOR CYN"èŠ"HIC"ã€‘"NOR,
         ([
                 "msgcolor"      : NOR HIC,
         ]),
@@ -88,7 +88,7 @@ string *info =
         RUMOR,
         "rumor",
         PLAYER,
-        MAG "¡¾"NOR HIM"Ò¥"NOR MAG"ÑÔ"NOR HIM"¡¿"NOR,
+        MAG "ã€"NOR HIM"è¬ "NOR MAG"è¨€"NOR HIM"ã€‘"NOR,
         ([
                 "wizlevel"      : 1,
                 "msgcolor"      : NOR HIM,
@@ -98,7 +98,7 @@ string *info =
         MESS,
         "mess",
         PLAYER,
-        HIG "¡¾"HIR"½­ºş"NOR HIG"¡¿"NOR,
+        HIG "ã€"HIR"æ±Ÿæ¹–"NOR HIG"ã€‘"NOR,
         ([
                 "time"          : 1,
                 "msgcolor"      : NOR HIG,
@@ -109,7 +109,7 @@ string *info =
         WIZ,
         "wiz",
         IMMORTAL,
-        YEL "¡¾"HIY"Î×Ê¦"NOR YEL"¡¿"NOR,
+        YEL "ã€"HIY"å·«å¸«"NOR YEL"ã€‘"NOR,
         ([
                 "msgcolor"      : NOR HIG,
                 "nameraw"       : 1,
@@ -119,9 +119,9 @@ string *info =
         SYS,
         "sys",
         WIZARD,
-        RED "¡¾"HIR"Ïµ"NOR RED"Í³"HIR"¡¿"NOR,
+        RED "ã€"HIR"ç³»"NOR RED"çµ±"HIR"ã€‘"NOR,
         ([
-                "time"          : 1,    // ÏÔÊ¾Ê±¼ä
+                "time"          : 1,    // é¡¯ç¤ºæ™‚é–“
                 "msgcolor"      : NOR RED,
         ]),
     }),
@@ -129,7 +129,7 @@ string *info =
         NCH,
         "nch",
         WIZARD,
-        BLU "¡¾"HIB"¼à"NOR BLU"²â"HIB"¡¿"NOR,
+        BLU "ã€"HIB"ç›£"NOR BLU"æ¸¬"HIB"ã€‘"NOR,
         ([
                 "time"          : 1,
                 "msgcolor"      : NOR HIB,
@@ -140,7 +140,7 @@ string *info =
         DEBUG,
         "debug",
         WIZARD,
-        WHT "¡¾"HIW"µ÷"NOR WHT"ÊÔ"HIW"¡¿"NOR,
+        WHT "ã€"HIW"èª¿"NOR WHT"è©¦"HIW"ã€‘"NOR,
         ([
                 "time"          : 1,
                 "msgcolor"      : NOR HIW,
@@ -150,7 +150,7 @@ string *info =
         NEWS,
         "news",
         PLAYER,
-        GRN "¡¾"HIG"ĞÂ"NOR GRN"ÎÅ"HIG"¡¿"NOR,
+        GRN "ã€"HIG"æ–°"NOR GRN"è"HIG"ã€‘"NOR,
         ([
                 "time"          : 1,
                 "nameraw"       : 1,
@@ -159,11 +159,11 @@ string *info =
         ]),
     }),
     ({
-        //GWIZ ±»±ğµÄµØ·½¶¨Òå¹ı
+        //GWIZ è¢«åˆ¥çš„åœ°æ–¹å®šç¾©é
         256,
         "gwiz",
         WIZARD,
-        GRN "¡¾"HIG"Íø¼Ê%T"NOR GRN"¡¿"NOR,
+        GRN "ã€"HIG"ç¶²éš›%T"NOR GRN"ã€‘"NOR,
         ([
                 "nameraw"       : 1,
                 "msgcolor"      : NOR HIG,
@@ -177,7 +177,7 @@ string *info =
         OTHER,
         "other",
         PLAYER,
-        CYN "¡¾"HIC"Î´Öª"NOR CYN"%T"HIC"¡¿"NOR,
+        CYN "ã€"HIC"æœªçŸ¥"NOR CYN"%T"HIC"ã€‘"NOR,
         ([
                 "msgcolor"      : NOR CYN,
                 "intermud"      : INTERMUD2_D,
@@ -190,7 +190,7 @@ string *info =
         AD,
         "ad",
         PLAYER,
-        HIK "¡¾"WHT"¹ã"NOR HIK"¸æ"WHT"¡¿"NOR,
+        HIK "ã€"WHT"å»£"NOR HIK"å‘Š"WHT"ã€‘"NOR,
         ([
                 "nameraw"       : 1,
                 "noemote"       : 1,
@@ -201,31 +201,31 @@ string *info =
         FAMILY,
         "family",
         PLAYER,
-        HIW"¡¾"NOR"%T"NOR HIW"¡¿"NOR,
+        HIW"ã€"NOR"%T"NOR HIW"ã€‘"NOR,
         ([
                 "msgcolor"      : NOR HIG,
                 "subchannel"    : 1,
                 "filter"        : (: $1->query_family() == (stringp($2) ? $2 : $2->query_family()) || wiz_level($1) > 1 :),
-                "newtitle"      : (: (stringp($1) ? $1 : $1->query_family()) || "ÎŞÃÅÅÉ":),
+                "newtitle"      : (: (stringp($1) ? $1 : $1->query_family()) || "ç„¡é–€æ´¾":),
         ]),
     }),
     ({
         PARTY,
         "party",
         PLAYER,
-        HIW"¡¾"NOR"%T"NOR HIW"¡¿"NOR,
+        HIW"ã€"NOR"%T"NOR HIW"ã€‘"NOR,
         ([
                 "msgcolor"      : NOR HIG,
                 "subchannel"    : 1,
                 "filter"        : (: $1->query_bunch() == (stringp($2) ? $2 : $2->query_bunch()) || wiz_level($1) > 1 :),
-                "newtitle"      : (: (stringp($1) ? $1 : $1->query_bunch()) || "ÎŞ°ïÅÉ":),
+                "newtitle"      : (: (stringp($1) ? $1 : $1->query_bunch()) || "ç„¡å¹«æ´¾":),
         ]),
     }),
     ({
         STOCK,
         "stock",
         PLAYER,
-        YEL "¡¾"NOR HIY"¹É"NOR YEL"ÊĞ" NOR HIY"¡¿"NOR,
+        YEL "ã€"NOR HIY"è‚¡"NOR YEL"å¸‚" NOR HIY"ã€‘"NOR,
         ([
                 "time"          : 1,
                 "nameraw"       : 1,
@@ -236,7 +236,7 @@ string *info =
         AUC,
         "auc",
         PLAYER,
-        BLU "¡¾"NOR HIB"ÅÄÂô" NOR BLU"¡¿"NOR,
+        BLU "ã€"NOR HIB"æ‹è³£" NOR BLU"ã€‘"NOR,
         ([
                 "time"          : 1,
                 "notalk"        : 1,
@@ -247,7 +247,7 @@ string *info =
     	COMBAT,
 	"combat",
 	PLAYER,
-        HIR "¡¾"NOR RED"Õ½"HIR"¶·" NOR HIR"¡¿"NOR,
+        HIR "ã€"NOR RED"æˆ°"HIR"é¬¥" NOR HIR"ã€‘"NOR,
 	([
 	        "time"	        : 1,
 	        "notalk"	: 1,
@@ -258,7 +258,7 @@ string *info =
 	SOS,
 	"sos",
 	PLAYER,
-        HIG "¡¾"NOR HIR"ÇóÖú" NOR HIG"¡¿"NOR,
+        HIG "ã€"NOR HIR"æ±‚åŠ©" NOR HIG"ã€‘"NOR,
 	([
 	        "msgcolor"      : NOR HIR,
 	        "nameraw"       : 1,
@@ -268,12 +268,12 @@ string *info =
 	GROUP,
 	"gt",
 	PLAYER,
-	HIW"¡¾"NOR WHT"%T"HIW"¡¿"NOR,
+	HIW"ã€"NOR WHT"%T"HIW"ã€‘"NOR,
 	([
 	        "msgcolor"      : NOR HIW,
 	        "subchannel":	1,
                 "filter"        : (: query_temp("battle/team_name", $1) == (stringp($2) ? $2 : query_temp("battle/team_name", $2)) || wiz_level($1) > 1 :),
-                "newtitle"      : (: (stringp($1) ? $1 : query_temp("battle/team_name", $1)) || "ÎŞ¶ÓÎé":),
+                "newtitle"      : (: (stringp($1) ? $1 : query_temp("battle/team_name", $1)) || "ç„¡éšŠä¼":),
 	]),
     }),
 /*
@@ -281,7 +281,7 @@ string *info =
         SPORT,
 	"sport",
 	PLAYER,
-	WHT "¡¾"NOR HIW"ÔË"NOR WHT"¶¯" NOR HIW"¡¿"NOR,
+	WHT "ã€"NOR HIW"é‹"NOR WHT"å‹•" NOR HIW"ã€‘"NOR,
 	([
 	        "msgcolor"      : NOR HIW,
 	        "time"	:	1,
@@ -292,13 +292,13 @@ string *info =
 });
 
 nosave mapping replace_word = ([
-        "¸ÉÄãÄï":       "******",
-        "Âè±Æ":         "******",
-        "ÂèµÄ±Æ":       "******", 
-        "Âè¸ö±Æ":       "******",
-        "ÂèµÄ¸ö±Æ":     "******",   
-        "±ÆÑøµÄ":       "******",
-        "Éµ±Æ":         "******",
+        "å¹¹ä½ å¨˜":       "******",
+        "åª½é€¼":         "******",
+        "åª½çš„é€¼":       "******", 
+        "åª½å€‹é€¼":       "******",
+        "åª½çš„å€‹é€¼":     "******",   
+        "é€¼é¤Šçš„":       "******",
+        "å‚»é€¼":         "******",
 ]);
 
 int valid_channel(int level, string channel)
@@ -324,14 +324,14 @@ varargs int do_channel(object me, string channel, string msg, mixed raw)
         if( !channel || channel == "" || !me ) return 0;
 
         if( query("chblk_on", me) )
-                return notify_fail("ÄãµÄÁÄÌìÆµµÀ¸ø¹Ø±ÕÁË£¡Î¨Ò»µÄ°ì·¨¾ÍÊÇÇëÇóÔÚÏßÍæ¼ÒÍ¶Æ±¿ªÍ¨¡£\n");
+                return notify_fail("ä½ çš„èŠå¤©é »é“çµ¦é—œé–‰äº†ï¼å”¯ä¸€çš„è¾¦æ³•å°±æ˜¯è«‹æ±‚åœ¨ç·šç©å®¶æŠ•ç¥¨é–‹é€šã€‚\n");
                                         
         if( me->is_chatter() )
-                return notify_fail("ÁÄÌì»êÆÇÄ¿Ç°²»ÄÜÊ¹ÓÃ¸÷ÖÖÆµµÀ¡£\n");
+                return notify_fail("èŠå¤©é­‚é­„ç›®å‰ä¸èƒ½ä½¿ç”¨å„ç¨®é »é“ã€‚\n");
         
         if( playerp(me) && me->ban_say(1) ) return 0;
         
-        // ¼ì²éÊÇ·ñÎª±íÇéÖ¸Áî
+        // æª¢æŸ¥æ˜¯å¦ç‚ºè¡¨æƒ…æŒ‡ä»¤
         if( channel[<1] == '*' ) { emote = 1; channel = channel[0..<2]; }
 
         if( sscanf(channel, "gwiz-%s", subchannel) ) channel = "gwiz"; 
@@ -344,31 +344,31 @@ varargs int do_channel(object me, string channel, string msg, mixed raw)
                 if( query("jing", me)>50 ) 
                         addn("jing",-random(36), me); 
                 else
-                        return notify_fail("ÄãÒÑ¾­Ã»Á¦ÆøÉ¢²¥Ò¥ÑÔÁË£¡\n");
+                        return notify_fail("ä½ å·²ç¶“æ²’åŠ›æ°£æ•£æ’­è¬ è¨€äº†ï¼\n");
         
         if( query("doing", me) == "scheme"){
                 if( query("jing", me)<100 )
-                        return notify_fail("ÄãÏÖÔÚµÄ¾«Éñ²»¼Ã£¬µÈÒ»»á¶ù°É¡£\n");
+                        return notify_fail("ä½ ç¾åœ¨çš„ç²¾ç¥ä¸æ¿Ÿï¼Œç­‰ä¸€æœƒå…’å§ã€‚\n");
                 addn("jing", -50, me);
         }
                 
         if( channel == "family" && interactive(me) && !wizardp(me) && !query("family", me) )
-                return notify_fail(pnoun(2, me)+"²¢Î´¼ÓÈëÈÎºÎÃÅÅÉ¡£\n");
+                return notify_fail(pnoun(2, me)+"ä¸¦æœªåŠ å…¥ä»»ä½•é–€æ´¾ã€‚\n");
                 
         if( channel == "party" && interactive(me) && !wizardp(me) && !query("bunch", me) )
-                return notify_fail(pnoun(2, me)+"²¢Î´¼ÓÈëÈÎºÎ°ïÅÉ¡£\n");
+                return notify_fail(pnoun(2, me)+"ä¸¦æœªåŠ å…¥ä»»ä½•å¹«æ´¾ã€‚\n");
 
         if( channel == "tch" && interactive(me) && !wizardp(me) && !query("viremploy", me) )
-                return notify_fail(pnoun(2, me)+"²»ÊÇĞÂÊÖµ¼Ê¦£¬ÎŞ·¨Ê¹ÓÃ¸ÃÆµµÀ¡£\n");
+                return notify_fail(pnoun(2, me)+"ä¸æ˜¯æ–°æ‰‹å°å¸«ï¼Œç„¡æ³•ä½¿ç”¨è©²é »é“ã€‚\n");
                 
-        my_id = me->query_id(1); // ²»´øÑÕÉ«
+        my_id = me->query_id(1); // ä¸å¸¶é¡è‰²
         name_raw = ch->extra["nameraw"];
-        my_idname = me->query_idname(name_raw); // ÊÇ·ñ¼Ù×°ÁË±ğÈË
+        my_idname = me->query_idname(name_raw); // æ˜¯å¦å‡è£äº†åˆ¥äºº
 
-        // ÈôÓĞ×ÓÆµµÀ±ê¼Ç, Ôò·ÖÎö×ÓÆµµÀÃû³Æ
+        // è‹¥æœ‰å­é »é“æ¨™è¨˜, å‰‡åˆ†æå­é »é“åç¨±
         if( ch->extra["subchannel"] )
                 if( msg && sscanf(msg, "[%s] %s", subchannel, msg) ) internal_flag=1;
-        // ¼ì²é±¾ÆµµÀÖ®ÌØÊâÌæ»»ÆµµÀÃû
+        // æª¢æŸ¥æœ¬é »é“ä¹‹ç‰¹æ®Šæ›¿æ›é »é“å
         if( ch->extra["newtitle"] )
         {
 
@@ -377,30 +377,30 @@ varargs int do_channel(object me, string channel, string msg, mixed raw)
         else
                 channel_title = ch->msg;
 
-        // ¼ÙÈçÊÇÊ¹ÓÃÕß, Ôò¼ì²éÆµµÀ×¢²á
+        // å‡å¦‚æ˜¯ä½¿ç”¨è€…, å‰‡æª¢æŸ¥é »é“æ³¨å†Š
         if( interactive(me) && !(ch->number & users[me]) )
         {
                 if( wiz_level(my_id) < ch->level ) return 0;
 
                 users[me] |= ch->number;
                 set("channels", query("channels",me) | ch->number, me);
-                tell(me, "¿ªÆô "+channel_title+" ÆµµÀ¡£\n");
+                tell(me, "é–‹å•Ÿ "+channel_title+" é »é“ã€‚\n");
 
                 if( !msg ) return 1;
         }
 
-        // ÈôÃ»ÓĞÊäÈëÑ¶Ï¢
-        msg = msg || (emote ? "¿´ÆğÀ´±íÇé·á¸»¡£" : "..." );
+        // è‹¥æ²’æœ‰è¼¸å…¥è¨Šæ¯
+        msg = msg || (emote ? "çœ‹èµ·ä¾†è¡¨æƒ…è±å¯Œã€‚" : "..." );
 
-        // ¼ì²éID, NAME
+        // æª¢æŸ¥ID, NAME
         idname = my_idname || query("channel_id", me) || "NO_IDNAME";
         if( channel == "rumor" && idname == "NO_IDNAME" ) idname = "";
 
-        // ÕûÀí³öÕıÔÚÊ¹ÓÃ±¾ÆµµÀµÄÆµµÀÊ¹ÓÃÕß
+        // æ•´ç†å‡ºæ­£åœ¨ä½¿ç”¨æœ¬é »é“çš„é »é“ä½¿ç”¨è€…
         fit_users = keys(filter(users, (: $(ch->number) & $2 :)));
         fit_users -= ({ 0 }); 
 
-        // ¼ì²é±¾ÆµµÀµÄÊ¹ÓÃÖ®¹ıÂËÌõ¼ş
+        // æª¢æŸ¥æœ¬é »é“çš„ä½¿ç”¨ä¹‹éæ¿¾æ¢ä»¶
         if( ch->extra["filter"] )
         {
                 if( sizeof(fit_users) )
@@ -408,7 +408,7 @@ varargs int do_channel(object me, string channel, string msg, mixed raw)
         }
 
 
-        // Èô´ËÆµµÀÓĞÏÔÊ¾Ê±¼ä±ê¼Ç
+        // è‹¥æ­¤é »é“æœ‰é¡¯ç¤ºæ™‚é–“æ¨™è¨˜
         if( ch->extra["time"] == 1 )
                 time = HIW+ctime(time())[11..15]+NOR" ";
         else if( ch->extra["time"] == 2 )
@@ -416,12 +416,12 @@ varargs int do_channel(object me, string channel, string msg, mixed raw)
         else
                 time = "";
 
-        // ÈôÊ¹ÓÃ±íÇéÄ£Ê½
+        // è‹¥ä½¿ç”¨è¡¨æƒ…æ¨¡å¼
         if( emote )
         {
                 string verb, arg;
                 if( ch->extra["noemote"] )
-                        return notify_fail("Õâ¸öÆµµÀ²»Ö§³Ö±íÇé¶¯´Ê¡£\n");
+                        return notify_fail("é€™å€‹é »é“ä¸æ”¯æŒè¡¨æƒ…å‹•è©ã€‚\n");
                 verb = msg;
                 sscanf(msg, "%s %s", verb, arg);
 
@@ -431,7 +431,7 @@ varargs int do_channel(object me, string channel, string msg, mixed raw)
                         msg = idname + msg;
         }
 
-        // Èô´ËÆµµÀÓĞÉè¶¨ÌØ¶¨Ñ¶Ï¢ÑÕÉ«
+        // è‹¥æ­¤é »é“æœ‰è¨­å®šç‰¹å®šè¨Šæ¯é¡è‰²
         if( ch->extra["msgcolor"] )
         {
                 color = ch->extra["msgcolor"];
@@ -443,7 +443,7 @@ varargs int do_channel(object me, string channel, string msg, mixed raw)
         else
                 color = "";
 
-        // ÏŞÖÆÏ´Ó«Ä»µÄĞĞÎª
+        // é™åˆ¶æ´—ç†’å¹•çš„è¡Œç‚º
         if( undefinedp(raw) && previous_object() != this_object() && me->is_character() )
         {
                 int nowtime = time();
@@ -452,11 +452,11 @@ varargs int do_channel(object me, string channel, string msg, mixed raw)
                 {
                         if( addn_temp("lastchat/warning", 1, me) > 100 )
                         {
-                                tell(me, "ÓÉÓÚ"+pnoun(2, me)+"´óÁ¿ÖØ¸²³¢ÊÔ²»ºÏ·¨µÄÆµµÀ·¢ÑÔ¶¯×÷£¬´ÓÏÖÔÚÆğ½«×Ô¶¯·âËø"+pnoun(2, me)+"µÄÖ¸Áî¹¦ÄÜ¡£\n");
+                                tell(me, "ç”±äº"+pnoun(2, me)+"å¤§é‡é‡è¦†å˜—è©¦ä¸åˆæ³•çš„é »é“ç™¼è¨€å‹•ä½œï¼Œå¾ç¾åœ¨èµ·å°‡è‡ªå‹•å°é–"+pnoun(2, me)+"çš„æŒ‡ä»¤åŠŸèƒ½ã€‚\n");
                                 set_temp("command_delay", time()+30, me);
-                                CHANNEL_D->channel_broadcast("sys", me->query_idname()+"´óÁ¿ÖØ¸²³¢ÊÔ²»ºÏ·¨µÄÆµµÀ·¢ÑÔ¶¯×÷£¬´ÓÏÖÔÚÆğ½«×Ô¶¯ÏŞÖÆÖ¸ÁîËÙ¶È¡£\n");
+                                CHANNEL_D->channel_broadcast("sys", me->query_idname()+"å¤§é‡é‡è¦†å˜—è©¦ä¸åˆæ³•çš„é »é“ç™¼è¨€å‹•ä½œï¼Œå¾ç¾åœ¨èµ·å°‡è‡ªå‹•é™åˆ¶æŒ‡ä»¤é€Ÿåº¦ã€‚\n");
                         }
-                        return notify_fail("¹«¿ªÆµµÀ²»ÄÜÁ¬Ğø·¢ËÍÑ¶Ï¢¡£\n");
+                        return notify_fail("å…¬é–‹é »é“ä¸èƒ½é€£çºŒç™¼é€è¨Šæ¯ã€‚\n");
                 }
                 if( query_temp("lastchat/msg", me) == msg && nowtime - query_temp("lastchat/time", me) < 300 )
                 {
@@ -464,11 +464,11 @@ varargs int do_channel(object me, string channel, string msg, mixed raw)
                         {
                                 if( addn_temp("lastchat/warning", 1, me) > 100 )
                                 {
-                                        tell(me, "ÓÉÓÚ"+pnoun(2, me)+"´óÁ¿ÖØ¸²³¢ÊÔ²»ºÏ·¨µÄÆµµÀ·¢ÑÔ¶¯×÷£¬´ÓÏÖÔÚÆğ½«×Ô¶¯·âËø"+pnoun(2, me)+"µÄÖ¸Áî¹¦ÄÜ¡£\n");
+                                        tell(me, "ç”±äº"+pnoun(2, me)+"å¤§é‡é‡è¦†å˜—è©¦ä¸åˆæ³•çš„é »é“ç™¼è¨€å‹•ä½œï¼Œå¾ç¾åœ¨èµ·å°‡è‡ªå‹•å°é–"+pnoun(2, me)+"çš„æŒ‡ä»¤åŠŸèƒ½ã€‚\n");
                                         set_temp("command_delay", time()+30, me);
-                                        CHANNEL_D->channel_broadcast("sys", me->query_idname()+"´óÁ¿ÖØ¸²³¢ÊÔ²»ºÏ·¨µÄÆµµÀ·¢ÑÔ¶¯×÷£¬´ÓÏÖÔÚÆğ½«×Ô¶¯ÏŞÖÆÖ¸ÁîËÙ¶È¡£\n");
+                                        CHANNEL_D->channel_broadcast("sys", me->query_idname()+"å¤§é‡é‡è¦†å˜—è©¦ä¸åˆæ³•çš„é »é“ç™¼è¨€å‹•ä½œï¼Œå¾ç¾åœ¨èµ·å°‡è‡ªå‹•é™åˆ¶æŒ‡ä»¤é€Ÿåº¦ã€‚\n");
                                 }
-                                return notify_fail("¹«¿ªÆµµÀ²»ÄÜÁ¬Ğø·¢ËÍÏàÍ¬Ñ¶Ï¢¡£\n");
+                                return notify_fail("å…¬é–‹é »é“ä¸èƒ½é€£çºŒç™¼é€ç›¸åŒè¨Šæ¯ã€‚\n");
                         }
                 }
                 else
@@ -479,15 +479,15 @@ varargs int do_channel(object me, string channel, string msg, mixed raw)
 
                 set_temp("lastchat/time", nowtime, me);
         }
-        // Íæ¼ÒÎŞ·¨ÓÃ News ÆµµÀ·¢ÑÔ
+        // ç©å®¶ç„¡æ³•ç”¨ News é »é“ç™¼è¨€
         if( ch->extra["notalk"] )
         {
                 if( !wizardp(me) && interactive(me) )
                 {
-                        return notify_fail("Íæ¼ÒÎŞ·¨Ê¹ÓÃÕâ¸öÆµµÀ·¢ÑÔ¡£\n");
+                        return notify_fail("ç©å®¶ç„¡æ³•ä½¿ç”¨é€™å€‹é »é“ç™¼è¨€ã€‚\n");
                 }
         }
-        // ÈôÊÇÍø¼ÊÆµµÀ
+        // è‹¥æ˜¯ç¶²éš›é »é“
         if( ch->extra["intermud"] && interactive(me) )
         {
                 string intermud_msg = msg;
@@ -498,17 +498,17 @@ varargs int do_channel(object me, string channel, string msg, mixed raw)
                 else
                 if((!internal_flag && subchannel!="") || ( internal_flag && member_array(subchannel,keys(channels))==-1 )) 
                         ch->extra["intermud"]->send_gchannel_msg(subchannel, capitalize(me->query_id(1)), me->query_name(), intermud_msg, emote);
-                else         subchannel="Õ¾ÄÚ";
+                else         subchannel="ç«™å…§";
         }
 
-        // ÈôÓĞ´¿Ñ¶Ï¢²ÎÊı»ò±íÇé²ÎÊı, send_msg = ÆµµÀÃû³Æ + Ñ¶Ï¢
+        // è‹¥æœ‰ç´”è¨Šæ¯åƒæ•¸æˆ–è¡¨æƒ…åƒæ•¸, send_msg = é »é“åç¨± + è¨Šæ¯
         if( !undefinedp(raw) || emote )
                 send_msg = channel_title+time+color;
         else
-                send_msg = channel_title+time+color+idname+"£º"+color;
+                send_msg = channel_title+time+color+idname+"ï¼š"+color;
 
 
-        // ´¦Àí¾«¼ò×Ö´®
+        // è™•ç†ç²¾ç°¡å­—ä¸²
         send_msg = send_msg + msg + NOR + (noansi_strlen(msg) > 0 && remove_ansi(msg)[<1] == '\n' ? "" : "\n");
 
 
@@ -520,7 +520,7 @@ varargs int do_channel(object me, string channel, string msg, mixed raw)
 	//send_msg = replace_usa_ansi(send_msg);
 
         fit_users -= ({ 0 });
-        // Ê¹ÓÃÕßÈ¨ÏŞ´¦Àí, µÈ¼¶¸ßµÈÓÚËµ»°ÕßÖ±½ÓÏÔÊ¾Ãû³Æ
+        // ä½¿ç”¨è€…æ¬Šé™è™•ç†, ç­‰ç´šé«˜ç­‰äºèªªè©±è€…ç›´æ¥é¡¯ç¤ºåç¨±
         if( ch->extra["wizlevel"] && me->is_character() )
         {
                 int my_level = wiz_level(my_id);
@@ -541,8 +541,8 @@ varargs int do_channel(object me, string channel, string msg, mixed raw)
                                 else
                                         random_idname = fit_users_without_wiz[random(sizeof(fit_users_without_wiz))]->query_idname();
 
-                                level_send_msg = replace_string(send_msg, my_idname, "["+my_idname+"]-¼ÙÃ°µÄ" + random_idname );
-                                send_msg = replace_string(send_msg, my_idname, "¼ÙÃ°µÄ" + random_idname );
+                                level_send_msg = replace_string(send_msg, my_idname, "["+my_idname+"]-å‡å†’çš„" + random_idname );
+                                send_msg = replace_string(send_msg, my_idname, "å‡å†’çš„" + random_idname );
                                 break;
                         }
                 case 2:
@@ -552,40 +552,40 @@ varargs int do_channel(object me, string channel, string msg, mixed raw)
                                         water_number += 1 + random(50);
                                         set_temp("rumor_serial", water_number,me);
                                 }
-                                level_send_msg = replace_string(send_msg, my_idname, "["+my_idname+"]-"+(query("gender", me) == "ÄĞĞÔ"?"Mr.":"Miss")+  query_temp("rumor_serial",me) );
-                                send_msg = replace_string(send_msg, my_idname, (query("gender", me) == "ÄĞĞÔ"?"Mr.":"Miss")+  query_temp("rumor_serial",me));
+                                level_send_msg = replace_string(send_msg, my_idname, "["+my_idname+"]-"+(query("gender", me) == "ç”·æ€§"?"Mr.":"Miss")+  query_temp("rumor_serial",me) );
+                                send_msg = replace_string(send_msg, my_idname, (query("gender", me) == "ç”·æ€§"?"Mr.":"Miss")+  query_temp("rumor_serial",me));
 
                                 break;
                         }
                 default:
-                        level_send_msg = replace_string(send_msg, my_idname, "["+my_idname+"]-Ä³ÈË(Someone.)");
-                        send_msg = replace_string(send_msg, my_idname, "Ä³ÈË(Someone.)");
+                        level_send_msg = replace_string(send_msg, my_idname, "["+my_idname+"]-æŸäºº(Someone.)");
+                        send_msg = replace_string(send_msg, my_idname, "æŸäºº(Someone.)");
                         break;
                 }
                 else
                 {
 
-                        level_send_msg = replace_string(send_msg, my_idname, "["+my_idname+"]-´©°ïµÄ"+my_idname);
-                        send_msg = replace_string(send_msg, my_idname, "´©°ïµÄ"+my_idname);
+                        level_send_msg = replace_string(send_msg, my_idname, "["+my_idname+"]-ç©¿å¹«çš„"+my_idname);
+                        send_msg = replace_string(send_msg, my_idname, "ç©¿å¹«çš„"+my_idname);
                 }
 
                 fit_users -= level_fit_users;
                          
-                // È¨ÏŞ×ã¹»Ö®Ê¹ÓÃÕß
+                // æ¬Šé™è¶³å¤ ä¹‹ä½¿ç”¨è€…
                 //tell(level_fit_users, level_send_msg, CHNMSG);
-                tell(level_fit_users, level_send_msg, "channel:"+channel); // Ö§³Ötomud
+                tell(level_fit_users, level_send_msg, "channel:"+channel); // æ”¯æŒtomud
                 
                 level_fit_users->add_msg_log(channel, level_send_msg);
                 SPECIAL_NPC->receive_report(me, channel);
         }
 
         //tell(fit_users, send_msg, CHNMSG);
-        tell(fit_users, send_msg, "channel:"+channel); // Ö§³Ötomud        
+        tell(fit_users, send_msg, "channel:"+channel); // æ”¯æŒtomud        
 
         if( userp(me) && random(100) < 20 )
         {
                 addn("active", 1, me);
-                tell_object(me, HIY "\nÓÉÓÚÄúµÄÓ»Ô¾·¢ÑÔÈÃĞ¦°Á½­ºş¸ü¼ÓÈÈÂç£¬ÌØ±ğÎªÄúÔö¼Ó»îÔ¾ÖµÒ»µã¡£\n" NOR);
+                tell_object(me, HIY "\nç”±äºæ‚¨çš„è¸´èºç™¼è¨€è®“ç¬‘å‚²æ±Ÿæ¹–æ›´åŠ ç†±çµ¡ï¼Œç‰¹åˆ¥ç‚ºæ‚¨å¢åŠ æ´»èºå€¼ä¸€é»ã€‚\n" NOR);
         }
 
         fit_users->add_msg_log(channel, send_msg);
@@ -651,7 +651,7 @@ void register_relay_channel(string channel)
         else    ch->extra["listener"] = ({ ob });
 }
 
-/* ×¢²áÆµµÀ */
+/* æ³¨å†Šé »é“ */
 nomask void register_channel(object me, int channel)
 {
         if( !channel ) return;
@@ -659,7 +659,7 @@ nomask void register_channel(object me, int channel)
         else users[me] |= channel;
 }
 
-/* ÒÆ³ı×¢²á */
+/* ç§»é™¤æ³¨å†Š */
 nomask void remove_register(object me, int channel)
 {
         if( !channel ) return;
@@ -667,13 +667,13 @@ nomask void remove_register(object me, int channel)
         if( users[me] == 0 ) map_delete(users, me);
 }
 
-/* Ö±½ÓÒÆ³ıÒ»Î»Ê¹ÓÃÕß */
+/* ç›´æ¥ç§»é™¤ä¸€ä½ä½¿ç”¨è€… */
 nomask void remove_user(object me)
 {
         map_delete(users, me);
 }
 
-/* ËùÓĞÍæ¼ÒÖØĞÂ×¢²áÆµµÀ */
+/* æ‰€æœ‰ç©å®¶é‡æ–°æ³¨å†Šé »é“ */
 nomask void reset_all_register()
 {
         users = allocate_mapping(0);
@@ -720,7 +720,7 @@ nomask varargs mixed query_using_channel(object user, int flag)
                 }
         
         if( flag ) return using_ch;
-        return using_channel == "" ? "ÎŞ" : using_channel;
+        return using_channel == "" ? "ç„¡" : using_channel;
 }
 
 varargs void channel_broadcast(string channel, string msg, mixed arg)
@@ -728,9 +728,9 @@ varargs void channel_broadcast(string channel, string msg, mixed arg)
         switch(channel)
         {
         case "family":
-                msg = NOR GRN"ÃÅÅÉ"+HIG+"ĞÂÎÅ "NOR+msg; break;
+                msg = NOR GRN"é–€æ´¾"+HIG+"æ–°è "NOR+msg; break;
         case "party":
-                msg = NOR CYN"°ïÅÉ"+HIC+"ĞÂÎÅ "NOR+msg; break;
+                msg = NOR CYN"å¹«æ´¾"+HIC+"æ–°è "NOR+msg; break;
         default: break;
         }
 
@@ -745,7 +745,7 @@ varargs void channel_broadcast(string channel, string msg, mixed arg)
 
 varargs void announce(object me, string msg)
 {
-        shout("\n\a"HIR + (objectp(me) ? me->query_idname() + HIR"·¢²¼":"") + "ÏµÍ³¹«¸æ ("HIW + ctime(time()) + NOR + HIR")£º\n\n"NOR + msg + NOR"\n\n");
+        shout("\n\a"HIR + (objectp(me) ? me->query_idname() + HIR"ç™¼å¸ƒ":"") + "ç³»çµ±å…¬å‘Š ("HIW + ctime(time()) + NOR + HIR")ï¼š\n\n"NOR + msg + NOR"\n\n");
 }
 
 
@@ -756,7 +756,7 @@ void create()
         if( clonep() ) destruct(this_object());
         
         seteuid(getuid());
-        set("channel_id", "ÆµµÀ¾«Áé");
+        set("channel_id", "é »é“ç²¾éˆ");
         
         channels = allocate_mapping(0);
         users = allocate_mapping(0);
@@ -777,5 +777,5 @@ void create()
 
 string query_name()
 {
-        return "ÆµµÀÏµÍ³(CHANNEL_D)";
+        return "é »é“ç³»çµ±(CHANNEL_D)";
 }

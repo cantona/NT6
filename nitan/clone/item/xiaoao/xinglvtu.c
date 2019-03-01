@@ -3,20 +3,20 @@ inherit ITEM;
 
 void create()
 {
-        set_name(NOR + HIG "��Ϫɽ����ͼ��" NOR, ({ "xishan xinglvtu",
+        set_name(NOR + HIG "「溪山行旅圖」" NOR, ({ "xishan xinglvtu",
                  "tu", "xishan", "xinglvtu" }));
         set_weight(600);
         if (clonep())
                 destruct(this_object());
         else {
-                set("unit", "��");
-                set("no_sell", "�ҵ��죬�㡭��֪������ɶô��Ҳ��������\n");
+                set("unit", "冊");
+                set("no_sell", "我的天，你…你知道這是啥麼？也拿來賣？\n");
                 set("long", HIG @LONG
-����һ����Ϊ�¾ɵ�ͼ�������Ͻ����š����η���
-��Ϫɽ����ͼ��ʮ�֣�һ����ɽ�������ī����
-�������۾�֮����ʵ�Ǿ���֮����������ɽɭȻ
-���ʣ�����ֽ�ϵ�ͼ����Ҳ���˲����������˸�ɽ
-��ֹ֮�С�
+這是一幅極為陳舊的圖畫，右上角題著「北宋范中
+立溪山行旅圖」十字，一座高山沖天而起，墨韻凝
+厚，氣勢雄峻之極，實是精絕之作。但見那山森然
+高聳，雖是紙上的圖畫，也令人不由自主的興高山
+仰止之感。
 LONG NOR);
                 set("value", 1);
                 set("material", "paper");

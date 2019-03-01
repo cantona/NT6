@@ -1,5 +1,5 @@
 // This program is a part of NITAN MudLIB
-// /adm/daemons/x_pointd.c µãÕóÈÎÎñÊØ»¤³ÌĞò
+// /adm/daemons/x_pointd.c é»é™£ä»»å‹™å®ˆè­·ç¨‹åº
 // from huaxia
 
 #include <ansi.h>
@@ -8,14 +8,14 @@
 #define is_GB1(x)       ((x)>=0xa1 && (x)<=0xf7)
 #define is_GB2(x)       ((x)>=0xa1 && (x)<=0xfe)
 
-public string make_msg(mapping num);                        //Êı×ÖµãÕó
-public string make_chn_msg(mapping num);                    //ÖĞÎÄµãÕó
-public mapping get_question();                              //µãÕó²úÉú
-public string *trouble(string *str_point);                  //µãÕó¸ÉÈÅ
-public string make_mask(string msg, string arg, int i);     //µãÕóÕÚÕÖ
-public string *Get_Point(string src);                       //µãÕóÈ¡Öµ
+public string make_msg(mapping num);                        //æ•¸å­—é»é™£
+public string make_chn_msg(mapping num);                    //ä¸­æ–‡é»é™£
+public mapping get_question();                              //é»é™£ç”¢ç”Ÿ
+public string *trouble(string *str_point);                  //é»é™£å¹¹æ“¾
+public string make_mask(string msg, string arg, int i);     //é»é™£é®ç½©
+public string *Get_Point(string src);                       //é»é™£å–å€¼
 
-//Êı×ÖµãÕó
+//æ•¸å­—é»é™£
 public string make_msg(mapping num)
 {
     int x;
@@ -37,10 +37,10 @@ public string make_msg(mapping num)
         {
             get_msg = "";
             if(x == 1)
-                get_msg += sprintf("%s", "BJ¡ñ"NOR);
+                get_msg += sprintf("%s", "BJâ—"NOR);
             get_msg += sprintf("%s%s",
                        numbers[atoi(num["num"+j])][i],
-                       (i_num[j-1]) ? "BJ¡ñ"NOR : "BJ¡ñ¡ñ"NOR);
+                       (i_num[j-1]) ? "BJâ—"NOR : "BJâ—â—"NOR);
 
             get_msg = replace_string(get_msg,"BJ", num["bjcolor"+j]);
             get_msg = replace_string(get_msg,"QJ", num["qjcolor"+j]);
@@ -49,11 +49,11 @@ public string make_msg(mapping num)
         msg += "\n";
     }
 
-    msg = make_mask(msg, "¡ñ", 7*7*5);
+    msg = make_mask(msg, "â—", 7*7*5);
     return msg;
 }
 
-//ÖĞÎÄµãÕó
+//ä¸­æ–‡é»é™£
 public string make_chn_msg(mapping num)
 {
     int x, y;
@@ -68,12 +68,12 @@ public string make_chn_msg(mapping num)
     the_point1 = Get_Point(num["num1"]);
     if(!the_point1)
         log_file("static/chn_num",
-            sprintf("Õâ¸öºº×ÖÃ»ÓĞÈ¡µ½µãÕó£º%s£¬Çë×ĞÏ¸²é¿´\n", num["num1"]));
+            sprintf("é€™å€‹æ¼¢å­—æ²’æœ‰å–åˆ°é»é™£ï¼š%sï¼Œè«‹ä»”ç´°æŸ¥çœ‹\n", num["num1"]));
 
     the_point2 = Get_Point(num["num2"]);
     if(!the_point2)
         log_file("static/chn_num",
-            sprintf("Õâ¸öºº×ÖÃ»ÓĞÈ¡µ½µãÕó£º%s£¬Çë×ĞÏ¸²é¿´\n", num["num2"]));
+            sprintf("é€™å€‹æ¼¢å­—æ²’æœ‰å–åˆ°é»é™£ï¼š%sï¼Œè«‹ä»”ç´°æŸ¥çœ‹\n", num["num2"]));
 
 //    the_point1 = trouble(the_point1);
 //    the_point2 = trouble(the_point2);
@@ -83,24 +83,24 @@ public string make_chn_msg(mapping num)
     reset_eval_cost();
     for(int i = 0 ; i < 16 ; i++)
     {
-        the_point1[i] = replace_string(the_point1[i], "b", "BJ¡ñ"NOR);
-        the_point1[i] = replace_string(the_point1[i], "q", "QJ¡ñ"NOR);
-        the_point2[i] = replace_string(the_point2[i], "b", "BJ¡ñ"NOR);
-        the_point2[i] = replace_string(the_point2[i], "q", "QJ¡ñ"NOR);
+        the_point1[i] = replace_string(the_point1[i], "b", "BJâ—"NOR);
+        the_point1[i] = replace_string(the_point1[i], "q", "QJâ—"NOR);
+        the_point2[i] = replace_string(the_point2[i], "b", "BJâ—"NOR);
+        the_point2[i] = replace_string(the_point2[i], "q", "QJâ—"NOR);
 
         get_msg1 = "";
         if(x == 0)
-            get_msg1 += sprintf("%s", "BJ¡ñ"NOR);
-        get_msg1 += sprintf("%s%s", the_point1[i], (i_num[0]) ? ""NOR : "BJ¡ñ"NOR);
+            get_msg1 += sprintf("%s", "BJâ—"NOR);
+        get_msg1 += sprintf("%s%s", the_point1[i], (i_num[0]) ? ""NOR : "BJâ—"NOR);
         if(x == 1 && y == 1)
-            get_msg1 += sprintf("%s", "BJ¡ñ"NOR);
+            get_msg1 += sprintf("%s", "BJâ—"NOR);
 
         get_msg2 = "";
         if(y == 0)
-            get_msg2 += sprintf("%s", "BJ¡ñ"NOR);
-        get_msg2 += sprintf("%s%s", the_point2[i], (i_num[1]) ? ""NOR : "BJ¡ñ"NOR);
+            get_msg2 += sprintf("%s", "BJâ—"NOR);
+        get_msg2 += sprintf("%s%s", the_point2[i], (i_num[1]) ? ""NOR : "BJâ—"NOR);
         if(y == 1)
-            get_msg2 += sprintf("%s", "BJ¡ñ"NOR);
+            get_msg2 += sprintf("%s", "BJâ—"NOR);
         get_msg2 += "\n";
 
         get_msg1 = replace_string(get_msg1, "BJ", num["bjcolor1"]);
@@ -110,7 +110,7 @@ public string make_chn_msg(mapping num)
         msg += get_msg1 + get_msg2;
     }
 
-    msg = make_mask(msg, "¡ñ", 18*18*2);
+    msg = make_mask(msg, "â—", 18*18*2);
     return msg;
 }
 
@@ -130,7 +130,7 @@ public string make_mask(string msg, string arg, int i)
     return msg;
 }
 
-//µãÕóÈÎÎñ
+//é»é™£ä»»å‹™
 public mapping get_question()
 {
     int the_num, i, j;
@@ -180,7 +180,7 @@ public mapping get_question()
     return quest;
 }
 
-//µãÕó¸ÉÈÅ
+//é»é™£å¹¹æ“¾
 public string *trouble(string *str_point)
 {
     int i, j, random_col, random_line, get_it;

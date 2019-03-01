@@ -5,13 +5,13 @@ inherit NECK;
 
 void create()
 {
-        set_name( HIC "Î§²±" NOR, ({ "wei bo", "bo" }) );
+        set_name( HIC "åœè„–" NOR, ({ "wei bo", "bo" }) );
         set_weight(500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ìõ");
-                set("long", "ÕâÊÇÒ»Æ¤Î§²±£¬ÓÃÒÔ±£»¤¾±²¿¡£\n");
+                set("unit", "æ¢");
+                set("long", "é€™æ˜¯ä¸€çš®åœè„–ï¼Œç”¨ä»¥ä¿è­·é ¸éƒ¨ã€‚\n");
                 set("value", 100);
                 set("material", "neck");
                 set("armor_prop/armor", 3);

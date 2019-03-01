@@ -46,24 +46,24 @@ string extra_long()
         if( amount = query("liquid/remaining") ) {
                 max = query("max_liquid");
                 if( amount == max )
-                        str = "ÀïÃæ×°ÂúÁË" + query("liquid/name") + "¡£\n";
+                        str = "è£¡é¢è£æ»¿äº†" + query("liquid/name") + "ã€‚\n";
                 else if( amount >= max * 2 / 3 )
-                        str = "ÀïÃæ×°ÁËÆß¡¢°Ë·ÖÂúµÄ" + query("liquid/name") + "¡£\n";
+                        str = "è£¡é¢è£äº†ä¸ƒã€å…«åˆ†æ»¿çš„" + query("liquid/name") + "ã€‚\n";
                 else if( amount >= max * 2 / 5 )
-                        str = "ÀïÃæ×°ÁËÎå¡¢Áù·ÖÂúµÄ" + query("liquid/name") + "¡£\n";
+                        str = "è£¡é¢è£äº†äº”ã€å…­åˆ†æ»¿çš„" + query("liquid/name") + "ã€‚\n";
                 else if( amount >= 1 )
-                        str = "ÀïÃæ×°ÁËÉÙĞíµÄ" + query("liquid/name") + "¡£\n";
+                        str = "è£¡é¢è£äº†å°‘è¨±çš„" + query("liquid/name") + "ã€‚\n";
         }
 
-        str += "ÎïÆ·ÀàĞÍ    £º    ÈİÆ÷\n";
-        str += sprintf("Êô    ĞÔ    £º    %s\n", query("liquid/name"));
-        str += sprintf("ÖØ    Á¿    £º    %d\n", this_object()->query_weight());
-        str += sprintf("ÄÜ    Á¿    £º    %d\n", query("max_liquid"));
-        str += sprintf("Ê£    Óà    £º    %d\n", query("liquid/remaining"));
-        str += sprintf("Ê¹ÓÃ·½Ê½    £º    ÊäÈëÖ¸Áî drink %s ÒûÓÃ¡£\n", query("id"));
+        str += "ç‰©å“é¡å‹    ï¼š    å®¹å™¨\n";
+        str += sprintf("å±¬    æ€§    ï¼š    %s\n", query("liquid/name"));
+        str += sprintf("é‡    é‡    ï¼š    %d\n", this_object()->query_weight());
+        str += sprintf("èƒ½    é‡    ï¼š    %d\n", query("max_liquid"));
+        str += sprintf("å‰©    ä½™    ï¼š    %d\n", query("liquid/remaining"));
+        str += sprintf("ä½¿ç”¨æ–¹å¼    ï¼š    è¼¸å…¥æŒ‡ä»¤ drink %s é£²ç”¨ã€‚\n", query("id"));
         if( this_object()->query_autoload() )
-                str += "ÏÂÏß¶ªÊ§    £º    ·ñ\n";
+                str += "ä¸‹ç·šä¸Ÿå¤±    ï¼š    å¦\n";
         else
-                str += "ÏÂÏß¶ªÊ§    £º    ÊÇ\n";
+                str += "ä¸‹ç·šä¸Ÿå¤±    ï¼š    æ˜¯\n";
         return str;
 }

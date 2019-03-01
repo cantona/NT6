@@ -1,15 +1,15 @@
-// shouwu.c ºÎÊ×ÎÚ
+// shouwu.c ä½•é¦–çƒ
 
 inherit ITEM;
 
 void create()
 {
-        set_name("ºÎÊ×ÎÚ", ({"heshou wu", "wu"}));
+        set_name("ä½•é¦–çƒ", ({"heshou wu", "wu"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Ã");
-                set("long", "ÕâÊÇÒ»¿Ã³õ¾ßÈËĞÎµÄºÎÊ×ÎÚ¡£\n");
+                set("unit", "æ£µ");
+                set("long", "é€™æ˜¯ä¸€æ£µåˆå…·äººå½¢çš„ä½•é¦–çƒã€‚\n");
                 set("value", 10000);
                 set("only_do_effect", 1);
         }
@@ -22,7 +22,7 @@ int do_effect(object me)
         if( query("max_neili", me)>me->query_neili_limit() )
                 set("max_neili", me->query_neili_limit(), me);
 
-        message_vision("$N³ÔÏÂÒ»¿ÃºÎÊ×ÎÚ£¬¶ÙÊ±¼ä¾õµÃÈ«Éí³äÂúÁË»îÁ¦£¡\n", me);
+        message_vision("$Nåƒä¸‹ä¸€æ£µä½•é¦–çƒï¼Œé “æ™‚é–“è¦ºå¾—å…¨èº«å……æ»¿äº†æ´»åŠ›ï¼\n", me);
         destruct(this_object());
         return 1;
 }

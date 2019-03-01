@@ -1,12 +1,12 @@
 // This program is a part of NITAN MudLIB
-// shang.c ÉË×Ö¾÷
+// shang.c å‚·å­—è¨£
 
 #include <ansi.h>
 #include <combat.h>
 
 inherit F_SSERVER;
 
-string name() { return HIW "ÉË×Ö¾÷" NOR; }
+string name() { return HIW "å‚·å­—è¨£" NOR; }
 
 int perform(object me, object target)
 {
@@ -22,25 +22,25 @@ int perform(object me, object target)
         }
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(name() + "Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(name() + "åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if ((int)me->query_skill("qishang-quan", 1) < 120)
-                return notify_fail("ÄãµÄÆßÉËÈ­²»¹»æµÊì£¬ÎÞ·¨Ê©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„ä¸ƒå‚·æ‹³ä¸å¤ å«»ç†Ÿï¼Œç„¡æ³•æ–½å±•" + name() + "ã€‚\n");
 
         if ((int)me->query_skill("force", 1) < 120)
-                return notify_fail("ÄãµÄÄÚ¹¦ÐÞÎª»¹²»¹»£¬ÎÞ·¨Ê©Õ¹" + name() + "\n");
+                return notify_fail("ä½ çš„å…§åŠŸä¿®ç‚ºé‚„ä¸å¤ ï¼Œç„¡æ³•æ–½å±•" + name() + "\n");
 
         if ((int)query("neili", me) < 300)
-                return notify_fail("ÄãÏÖÔÚÕæÆø²»¹»£¬ÎÞ·¨Ê©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çœŸæ°£ä¸å¤ ï¼Œç„¡æ³•æ–½å±•" + name() + "ã€‚\n");
 
         if (me->query_skill_prepared("cuff") != "qishang-quan")
-                return notify_fail("ÄãÃ»ÓÐ×¼±¸Ê¹ÓÃÆßÉËÈ­£¬ÎÞ·¨Ê©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æº–å‚™ä½¿ç”¨ä¸ƒå‚·æ‹³ï¼Œç„¡æ³•æ–½å±•" + name() + "ã€‚\n");
 
         if (! living(target))
-              return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+              return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIY "$N" HIY "Å­ºÈÒ»Éù£¬Ê©³ö¾øÕÐ¡¸" HIW "ÉË×Ö¾÷" HIY "¡¹£¬Ë«È­Ñ¸ÃÍÎÞ±È"
-              "µÄÏ®Ïò$n" HIY "¡£\n" NOR;
+        msg = HIY "$N" HIY "æ€’å–ä¸€è²ï¼Œæ–½å‡ºçµ•æ‹›ã€Œ" HIW "å‚·å­—è¨£" HIY "ã€ï¼Œé›™æ‹³è¿…çŒ›ç„¡æ¯”"
+              "çš„è¥²å‘$n" HIY "ã€‚\n" NOR;
 
         ap = attack_power(me, "cuff") +
              me->query_con() * 20;
@@ -54,13 +54,13 @@ int perform(object me, object target)
                 damage+= query("jiali", me);
                 addn("neili", -260, me);
                 msg += COMBAT_D->do_damage(me, target, UNARMED_ATTACK, damage, 120,
-                                           HIR "Ö»¼û$P" HIR "ÕâÒ»È­°Ñ$p" HIR
-                                           "·ÉÁË³öÈ¥£¬ÖØÖØµÄË¤ÔÚµØÉÏ£¬ÍÂÑª²»Ö¹£¡\n" NOR);
+                                           HIR "åªè¦‹$P" HIR "é€™ä¸€æ‹³æŠŠ$p" HIR
+                                           "é£›äº†å‡ºåŽ»ï¼Œé‡é‡çš„æ‘”åœ¨åœ°ä¸Šï¼Œåè¡€ä¸æ­¢ï¼\n" NOR);
                 me->start_busy(2);
         } else
         {
-                msg += HIC "¿ÉÊÇ$p" HIC "·ÜÁ¦ÕÐ¼Ü£¬Ó²ÉúÉúµÄµ²¿ªÁË$P"
-                       HIC "ÕâÒ»ÕÐ¡£\n"NOR;
+                msg += HIC "å¯æ˜¯$p" HIC "å¥®åŠ›æ‹›æž¶ï¼Œç¡¬ç”Ÿç”Ÿçš„æ“‹é–‹äº†$P"
+                       HIC "é€™ä¸€æ‹›ã€‚\n"NOR;
                 addn("neili", -120, me);
                 me->start_busy(3);
         }

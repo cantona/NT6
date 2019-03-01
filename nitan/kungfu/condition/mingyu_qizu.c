@@ -13,12 +13,12 @@ int update_condition(object me, int duration)
         if (me->query_condition("killer") &&
             query("no_fight", environment(me)) )
         {
-                tell_object(me, HIR "�㷢��������񹦺����ܵ����ƣ���Ѫδ���Զ��ָ���\n" NOR );
+                tell_object(me, HIR "你發現你的明玉功好象受到限制，氣血未能自動恢復！\n" NOR );
         }
         else
         {
-                tell_object(me, HIR "������񹦷�������Ч���о���ʧ����Ѫ�������ָ���\n" NOR );
-                message_vision(HIW "$N�۾������������â�����ϵ��˿��漣��������ˡ�\n" NOR, me);
+                tell_object(me, HIR "你的明玉功發揮了奇效，感覺損失的氣血在慢慢恢復！\n" NOR );
+                message_vision(HIW "$N眼睛中射出異樣光芒，身上的傷口奇跡般地癒合了。\n" NOR, me);
         
                 set("eff_qi",query("max_qi",  me), me);
                 set("qi",query("eff_qi",  me), me);
@@ -29,7 +29,7 @@ int update_condition(object me, int duration)
         
         if( duration < 1 ) 
         {
-                message_vision(HIC "$N�ġ����㡹�湦������ϣ���ɫ��ʱһƬ�԰ס�\n" NOR, me);
+                message_vision(HIC "$N的「氣足」奇功運行完畢，臉色頓時一片蒼白。\n" NOR, me);
 
                 return 0;
         }

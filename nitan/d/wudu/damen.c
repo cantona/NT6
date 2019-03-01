@@ -3,10 +3,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�嶾�̴���");
+        set("short", "五毒教大門");
         set("long", @LONG
-������һ����û��ɽ���еĴ�լԺ���߸ߵ�Χǽ�����ɫ�Ĵ��ţ�
-������һ����Ǯ�˼ҵı����Ժ��
+這裡是一座隱沒于山林中的大宅院，高高的圍牆，朱紅色的大門，
+好象是一座有錢人家的避暑別院。
 LONG);
         set("outdoors", "wudujiao");
 

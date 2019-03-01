@@ -4,9 +4,9 @@ inherit NPC;
 
 void create()
 {
-        set_name("Ò©µêÕÆ¹ñ", ({ "zhang gui", "boss"}));
-        set("gender", "ÄĞĞÔ");
-        set("long", "Ëû¿´ÉÏÈ¥ÊÇ¸ö·çÑÅÖ®ÈË£¬²»ÖªµÀÒ½ÊõÈçºÎ¡£\n");
+        set_name("è—¥åº—æŒæ«ƒ", ({ "zhang gui", "boss"}));
+        set("gender", "ç”·æ€§");
+        set("long", "ä»–çœ‹ä¸Šå»æ˜¯å€‹é¢¨é›…ä¹‹äººï¼Œä¸çŸ¥é“é†«è¡“å¦‚ä½•ã€‚\n");
         set("age", 45);
 
         set("int", 30);

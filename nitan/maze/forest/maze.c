@@ -15,13 +15,13 @@ string *unique_rooms = ({
 
 void create() 
 { 
-        //�Թ��������̳е�����ĵ������ơ� 
+        //迷宮房間所繼承的物件的檔案名稱。 
         set_inherit_room( ROOM ); 
                         
-        //Ψһ����
+        //唯一房間
         set_unique_room( unique_rooms ); 
 
-        //�Թ�������Ĺ�� 
+        //迷宮房間裡的怪物。 
         set_maze_npcs( ([
                 /*
                 "/maze/forest/npc/toad": !random(5), 
@@ -44,62 +44,62 @@ void create()
 
         set_lonely_create(1);
 
-        //�Թ��ĵ��߳� 
+        //迷宮的單邊長 
         set_maze_long(8); 
         
-        //��ڷ���(�����ڶ���) 
+        //入口方向(出口在對面) 
         set_entry_dir("east"); 
                         
-        //�������������ӷ��� 
+        //入口與區域的連接方向 
         set_link_entry_dir("east"); 
                         
-        //�������������ӵ����� 
+        //入口與區域的連接檔案名 
         set_link_entry_room(__DIR__"enter"); 
                         
-        //��������������ӷ��� 
+        //出口與區域的連接方向 
         set_link_exit_dir("west"); 
                         
-        //��������������ӵ����� 
+        //出口與區域的連接檔案名 
         set_link_exit_room(__DIR__"out"); 
                         
-        //�������������
+        //以下是入口坐標
         set_link_entry_room_x(ENTER_ROOM_X);
         set_link_entry_room_y(ENTER_ROOM_Y);
         set_link_entry_room_z(ENTER_ROOM_Z);
                         
-        //��ͨ��������
-        set_maze_room_short(HIG"ԭʼɭ��"NOR);
+        //普通房間描述
+        set_maze_room_short(HIG"原始森林"NOR);
                         
         set_maze_room_desc(@LONG
-ԭʼɭ����Ҷ�Ժ���ǣ�������գ����������ſ�Ҷ����
-����֬��ϵ�ζ�������ϵ�̦����Ҷ����ȥ������ģ����滹
-����Ұ�޵ĺۼ�������Ũ�ܵ�ɽ�����������Էֱ淽��
+原始森林樹葉蒼黑如蓋，遮天蔽日，林中彌漫著枯葉腐爛
+和樹脂混合的味道，地上的苔鮮落葉踩上去軟綿綿的，上面還
+布滿野獸的痕跡，四周濃密的山霧，讓人難以分辨方向。
 LONG); 
 
-        //��ڷ�������� 
-        set_entry_short(HIR"ԭʼɭ�����"NOR); 
+        //入口房間短描述 
+        set_entry_short(HIR"原始森林入口"NOR); 
                         
-        //��ڷ������� 
+        //入口房間描述 
         set_entry_desc(@LONG
-ԭʼɭ����Ҷ�Ժ���ǣ�������գ����������ſ�Ҷ����
-����֬��ϵ�ζ�������ϵ�̦����Ҷ����ȥ������ģ����滹
-����Ұ�޵ĺۼ�������Ũ�ܵ�ɽ�����������Էֱ淽��
+原始森林樹葉蒼黑如蓋，遮天蔽日，林中彌漫著枯葉腐爛
+和樹脂混合的味道，地上的苔鮮落葉踩上去軟綿綿的，上面還
+布滿野獸的痕跡，四周濃密的山霧，讓人難以分辨方向。
 LONG);
                         
-        //���ڷ�������� 
-        set_exit_short(HIY"ԭʼɭ�ֳ���"NOR); 
+        //出口房間短描述 
+        set_exit_short(HIY"原始森林出口"NOR); 
                         
-        //���ڷ������� 
+        //出口房間描述 
         set_exit_desc(@LONG
-ԭʼɭ����Ҷ�Ժ���ǣ�������գ����������ſ�Ҷ����
-����֬��ϵ�ζ�������ϵ�̦����Ҷ����ȥ������ģ����滹
-����Ұ�޵ĺۼ�������Ũ�ܵ�ɽ�����������Էֱ淽��
+原始森林樹葉蒼黑如蓋，遮天蔽日，林中彌漫著枯葉腐爛
+和樹脂混合的味道，地上的苔鮮落葉踩上去軟綿綿的，上面還
+布滿野獸的痕跡，四周濃密的山霧，讓人難以分辨方向。
 LONG);
 
-        // �Թ������Ƿ�Ϊ���ⷿ�䣿 
+        // 迷宮房間是否為戶外房間？ 
         set_outdoors(1);                                                
 
-        // �Թ������Ƿ�ˢ����ˢ��ʱ������
+        // 迷宮房間是否刷新且刷新時間設置
         //set_maze_refresh(180);
         
 } 

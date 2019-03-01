@@ -11,14 +11,14 @@ int exert(object me, object target)
   !query("perform/powerup", me) && 
   !query("can_perform/qingming-xuangong/powerup", me) && 
   !query_temp("murong/xingyi", me) )
-   return notify_fail("ÄãËùÊ¹ÓÃµÄÄÚ¹¦ÖĞÃ»ÓĞÕâÖÖ¹¦ÄÜ¡£");
+   return notify_fail("ä½ æ‰€ä½¿ç”¨çš„å…§åŠŸä¸­æ²’æœ‰é€™ç¨®åŠŸèƒ½ã€‚");
 
         if( target != me )
-                return notify_fail("ÄãÖ»ÄÜÓÃÇàÚ¤Ğş¹¦ÌáÉı×Ô¼ºµÄÕ½¶·Á¦¡£\n");
+                return notify_fail("ä½ åªèƒ½ç”¨é’å†¥ç„åŠŸæå‡è‡ªå·±çš„æˆ°é¬¥åŠ›ã€‚\n");
         if( query("neili", me)<100 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ã€‚\n");
         if( query_temp("powerup", me) )
-                return notify_fail("ÄãÒÑ¾­ÔÚÔË¹¦ÖĞÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“åœ¨é‹åŠŸä¸­äº†ã€‚\n");
 
         skill = me->query_skill("force");
 
@@ -26,7 +26,7 @@ int exert(object me, object target)
         addn("neili", -100, me);
         me->receive_damage("qi",0);
 
-        message_combatd(HIB"$NÎ¢Ò»ÄıÉñ£¬ÔËÆğÇàÚ¤Ğş¹¦£¬Á³ÉÏºöµØÃ°³öÒ»¹ÉÇàÆø£¬Ë³²±¾±ÏòÏÂÓÎ×ß£¬Ö»É²ÄÇ¼ä×ß±éÈ«Éí£¬ÒÂĞä¿ã¹Ü¶ÙÊ±Èç³äÆø°ã¹ÄÕÍÆğÀ´£¡\n" NOR, me);
+        message_combatd(HIB"$Nå¾®ä¸€å‡ç¥ï¼Œé‹èµ·é’å†¥ç„åŠŸï¼Œè‡‰ä¸Šå¿½åœ°å†’å‡ºä¸€è‚¡é’æ°£ï¼Œé †è„–é ¸å‘ä¸‹éŠèµ°ï¼Œåªå‰é‚£é–“èµ°éå…¨èº«ï¼Œè¡£è¢–è¤²ç®¡é “æ™‚å¦‚å……æ°£èˆ¬é¼“è„¹èµ·ä¾†ï¼\n" NOR, me);
 
         addn_temp("apply/attack", skill/3, me);
         addn_temp("apply/dodge", skill/3, me);
@@ -41,19 +41,19 @@ void remove_effect(object me, int amount)
         addn_temp("apply/attack", -amount, me);
         addn_temp("apply/dodge", -amount, me);
         delete_temp("powerup", me);
-        tell_object(me, "ÄãµÄÇàÚ¤Ğş¹¦ÔËĞĞÍê±Ï£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï¡£\n");
+        tell_object(me, "ä½ çš„é’å†¥ç„åŠŸé‹è¡Œå®Œç•¢ï¼Œå°‡å…§åŠ›æ”¶å›ä¸¹ç”°ã€‚\n");
 }
 
 int help(object me)
 {
-        write(WHT"\nÇàÚ¤Ğş¹¦Ö®¼ÓÁ¦£º"NOR"\n");
+        write(WHT"\né’å†¥ç„åŠŸä¹‹åŠ åŠ›ï¼š"NOR"\n");
         write(@HELP
 
-        Ê¹ÓÃ¹¦Ğ§£º
-                ÌáÉı×Ô¼ºµÄ¹¥»÷·ÀÓùÄÜÁ¦
+        ä½¿ç”¨åŠŸæ•ˆï¼š
+                æå‡è‡ªå·±çš„æ”»æ“Šé˜²å¾¡èƒ½åŠ›
 
-        ³öÊÖÒªÇó£º
-                ÄÚÁ¦100
+        å‡ºæ‰‹è¦æ±‚ï¼š
+                å…§åŠ›100
 HELP
         );
         return 1;

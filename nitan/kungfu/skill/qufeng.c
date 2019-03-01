@@ -1,4 +1,4 @@
-// qufeng.c Çý·äÖ®Êõ
+// qufeng.c é©…èœ‚ä¹‹è¡“
 
 #include <ansi.h>;
 inherit SKILL;
@@ -14,29 +14,29 @@ int power_point(object me) { return 1; }
 int valid_learn(object me)
 {
         if ((int)me->query_skill("yunv-xinfa", 1) < 30)
-                return notify_fail("ÄãµÄÓñÅ®ÐÄ·¨»ðºò²»¹»£¬ÎÞ·¨Ñ§Çý·äÖ®Êõ¡£\n");
+                return notify_fail("ä½ çš„çŽ‰å¥³å¿ƒæ³•ç«å€™ä¸å¤ ï¼Œç„¡æ³•å­¸é©…èœ‚ä¹‹è¡“ã€‚\n");
 
         if( query("max_neili", me)<300 )
-                return notify_fail("ÄãµÄÄÚÁ¦Ì«Èõ£¬ÎÞ·¨Ñ§Ï°Çý·äÖ®Êõ¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›å¤ªå¼±ï¼Œç„¡æ³•å­¸ç¿’é©…èœ‚ä¹‹è¡“ã€‚\n");
 
         return 1;
 }
 int practice_skill(object me)
 {
-        return notify_fail("Çý·äÖ®ÊõÖ»ÄÜ¿¿Ñ§Ï°À´Ìá¸ß¡£\n");
+        return notify_fail("é©…èœ‚ä¹‹è¡“åªèƒ½é å­¸ç¿’ä¾†æé«˜ã€‚\n");
 }
 
 int help(object me)
 {
-        write(HIC"\nÇý·äÖ®Êõ£º"NOR"\n");
+        write(HIC"\né©…èœ‚ä¹‹è¡“ï¼š"NOR"\n");
         write(@HELP
 
-    ¹ÅÄ¹µÜ×ÓÈç¹ûÉí¾ßÇý·äÊõ£¬Ê¹ÓÃ·ä½¬Æ¿¼´¿ÉÇý·ä¿ËµÐ¡£
-    Çëhelp qufeng¡£
+    å¤å¢“å¼Ÿå­å¦‚æžœèº«å…·é©…èœ‚è¡“ï¼Œä½¿ç”¨èœ‚æ¼¿ç“¶å³å¯é©…èœ‚å…‹æ•µã€‚
+    è«‹help qufengã€‚
 
-        Ñ§Ï°ÒªÇó£º
-                ÓñÅ®ÐÄ·¨10¼¶
-                ÄÚÁ¦30
+        å­¸ç¿’è¦æ±‚ï¼š
+                çŽ‰å¥³å¿ƒæ³•10ç´š
+                å…§åŠ›30
 HELP
         );
         return 1;

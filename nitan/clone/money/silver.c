@@ -6,15 +6,15 @@ inherit MONEY;
 
 void create()
 {
-        set_name(WHT "Òø×Ó" NOR, ({"silver", "ingot", "silver_money"}));
+        set_name(WHT "éŠ€å­" NOR, ({"silver", "ingot", "silver_money"}));
         if( clonep() )
                 set_default_object(__FILE__);
         else {
                 set("money_id", "silver");
-                set("long", "°×»¨»¨µÄÒø×Ó£¬ÈË¼ûÈË°®µÄÒø×Ó¡£\n");
-                set("unit", "Ğ©");
+                set("long", "ç™½èŠ±èŠ±çš„éŠ€å­ï¼Œäººè¦‹äººæ„›çš„éŠ€å­ã€‚\n");
+                set("unit", "äº›");
                 set("base_value", 100);
-                set("base_unit", "Á½");
+                set("base_unit", "å…©");
                 set("base_weight", 80);
         }
         set_amount(1);

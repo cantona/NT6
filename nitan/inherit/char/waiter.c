@@ -1,4 +1,4 @@
-// µêÆÌ»ï¼Æ³ÌĞò
+// åº—èˆ–ä¼™è¨ˆç¨‹åº
 
 inherit NPC;
 
@@ -7,14 +7,14 @@ int is_waiter()
         return 1;
 }
 
-// ĞŞ¸ÄÊôĞÔ
+// ä¿®æ”¹å±¬æ€§
 int do_modify(string arg)
 {
         write(SHOP_D->do_modify(this_object(), this_player(), arg));
         return 1;
 }
 
-// ±ê¼Û»õÎï
+// æ¨™åƒ¹è²¨ç‰©
 int do_stock(string arg)
 {
         //write(SHOP_D->do_stock(this_object(), this_player(), arg));
@@ -23,7 +23,7 @@ int do_stock(string arg)
         return 1;
 }
 
-// È¡ÏÂ»õÎï
+// å–ä¸‹è²¨ç‰©
 int do_unstock(string arg)
 {
        //write(SHOP_D->do_unstock(this_object(), this_player(), arg));
@@ -31,7 +31,7 @@ int do_unstock(string arg)
        return 1;
 }
 
-// ²éÑ¯»õÎïÁĞ±í
+// æŸ¥è©¢è²¨ç‰©åˆ—è¡¨
 int do_list(string arg)
 {
         //write(SHOP_D->do_list(this_object(), this_player(), arg));
@@ -39,21 +39,21 @@ int do_list(string arg)
         return 1;
 }
 
-// ¹ºÂò»õÎï
+// è³¼è²·è²¨ç‰©
 int do_buy(string arg)
 {
         //return SHOP_D->do_buy(this_object(), this_player(), arg);
         write(environment(this_object())->do_buy(this_object(), this_player(), arg));
 }
 
-// µêÖ÷½áÕÊ
+// åº—ä¸»çµå¸³
 int do_jiezhang()
 {
         write(SHOP_D->do_jiezhang(this_object(), this_player()));
         return 1;
 }
 
-// ÉèÖÃ¡¢²éÑ¯¹ó±ö
+// è¨­ç½®ã€æŸ¥è©¢è²´è³“
 int do_invite(string arg)
 {
         string msg;
@@ -67,7 +67,7 @@ int do_invite(string arg)
         return 1;
 }
 
-// ÉèÖÃ¡¢²éÑ¯¹ó±ö
+// è¨­ç½®ã€æŸ¥è©¢è²´è³“
 int do_ban(string arg)
 {
         string msg;
@@ -79,7 +79,7 @@ int do_ban(string arg)
         return 1;
 }
 
-//Ô¤Ô¼ÉÌÆ·
+//é ç´„å•†å“
 int do_order(string arg)
 {
         string msg;

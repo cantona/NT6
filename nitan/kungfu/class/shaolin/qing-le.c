@@ -16,18 +16,18 @@ nosave string *check_skill = ({
 
 void create()
 {
-        set_name("ÇåÀÖ±ÈÇğ", ({
+        set_name("æ¸…æ¨‚æ¯”ä¸˜", ({
                 "qingle biqiu",
                 "qingle",
                 "biqiu",
         }));
         set("long",
-                "ËûÊÇÒ»Î»Ìå¸ñÇ¿½¡µÄ×³ÄêÉ®ÈË£¬ËûÉíµÃ»¢±³ĞÜÑü£¬È«ÉíËÆºõÔÌº¬\n"
-                "×ÅÎŞÇî¾¢Á¦¡£ËûÉí´©Ò»Ï®°×²¼ºÚ±ßôÂôÄ£¬ËÆºõÉí»³ÎäÒÕ¡£\n"
+                "ä»–æ˜¯ä¸€ä½é«”æ ¼å¼·å¥çš„å£¯å¹´åƒ§äººï¼Œä»–èº«å¾—è™èƒŒç†Šè…°ï¼Œå…¨èº«ä¼¼ä¹è˜Šå«\n"
+                "è‘—ç„¡çª®å‹åŠ›ã€‚ä»–èº«ç©¿ä¸€è¥²ç™½å¸ƒé»‘é‚Šè¢ˆè£Ÿï¼Œä¼¼ä¹èº«æ‡·æ­¦è—ã€‚\n"
         );
 
 
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("attitude", "friendly");
         set("class", "bonze");
 
@@ -62,12 +62,12 @@ void create()
 
         prepare_skill("claw", "yingzhua-gong");
 
-        create_family("ÉÙÁÖÅÉ", 40, "µÜ×Ó");
+        create_family("å°‘æ—æ´¾", 40, "å¼Ÿå­");
 
         set("inquiry", ([
-                "ÊÖÚÍ"       : (: ask_me_1 :),
-                "ÆßÊ®¶ş¾øÒÕ" : (: ask_me_1 :),
-                "´ïÄ¦Áî" :     (: ask_me_2 :)
+                "æ‰‹è«­"       : (: ask_me_1 :),
+                "ä¸ƒåäºŒçµ•è—" : (: ask_me_1 :),
+                "é”æ‘©ä»¤" :     (: ask_me_2 :)
         ]));
 
         set("master_ob",1);
@@ -84,17 +84,17 @@ string ask_me_1()
         string *sname;
         int i;
         
-        if( !(fam=query("family", this_player())) || fam["family_name"] != "ÉÙÁÖÅÉ" )
+        if( !(fam=query("family", this_player())) || fam["family_name"] != "å°‘æ—æ´¾" )
                 return RANK_D->query_respect(this_player()) + 
-                "Óë±¾ÅÉËØÎŞÀ´Íù£¬²»Öª´Ë»°´ÓºÎÌ¸Æğ£¿";
+                "èˆ‡æœ¬æ´¾ç´ ç„¡ä¾†å¾€ï¼Œä¸çŸ¥æ­¤è©±å¾ä½•è«‡èµ·ï¼Ÿ";
 
         if( query("guilty", this_player())>0 )
                 return RANK_D->query_respect(this_player()) + 
-                "ÄãÀÛ·¸Êı½ä£¬Éí´øÖØ×ï£¬ÎÒÈçºÎÄÜ¸øÄãÕâÊÖÚÍ£¡";
+                "ä½ ç´¯çŠ¯æ•¸æˆ’ï¼Œèº«å¸¶é‡ç½ªï¼Œæˆ‘å¦‚ä½•èƒ½çµ¦ä½ é€™æ‰‹è«­ï¼";
 
         if ( (int)this_player()->query_int() < 30 )
                 return RANK_D->query_respect(this_player()) + 
-                "×ÊÖÊ²»¹»£¬²»ÄÜ½øÈë²Ø¾­Â¥¡£";
+                "è³‡è³ªä¸å¤ ï¼Œä¸èƒ½é€²å…¥è—ç¶“æ¨“ã€‚";
 
         skl = this_player()->query_skills();
         sname  = sort_array( keys(skl), (: strcmp :) );
@@ -102,18 +102,18 @@ string ask_me_1()
         for(i=0; i<sizeof(check_skill); i++) {
                 if (skl[check_skill[i]] < 100) 
                         return RANK_D->query_respect(this_player()) + 
-                               "¹¦Á¦²»¹»£¬²»¹»×Ê¸ñÁìÈ¡ÊÖÚÍ¡£";
+                               "åŠŸåŠ›ä¸å¤ ï¼Œä¸å¤ è³‡æ ¼é ˜å–æ‰‹è«­ã€‚";
         }
 
         if ( (int)this_player()->query_skill("buddhism",1) < 150 )
                 return RANK_D->query_respect(this_player()) + 
-                "ÏëÑ§Ï°ÉÏ³ËÎä¹¦£¬ÏÈÒªÒÔ¸ßÉî·ğ·¨»¯½âËüÃÇµÄìåÆø£¬·ñÔòºó»ÚÎŞ¼°¡£";
+                "æƒ³å­¸ç¿’ä¸Šä¹˜æ­¦åŠŸï¼Œå…ˆè¦ä»¥é«˜æ·±ä½›æ³•åŒ–è§£å®ƒå€‘çš„æˆ¾æ°£ï¼Œå¦å‰‡å¾Œæ‚”ç„¡åŠã€‚";
 
         ob = new("/d/shaolin/obj/allow-letter");
         ob->move(this_player());
-        message_vision("$N»ñµÃÒ»·âÊÖÚÍ¡£\n",this_player());
+        message_vision("$Nç²å¾—ä¸€å°æ‰‹è«­ã€‚\n",this_player());
 
-        return "ºÃ°É£¬Æ¾Õâ·âÊÖÚÍ£¬Äã¿É×ÔÓÉ½øÈë²Ø¾­¸ó¶şÂ¥ÑĞÏ°ÉÏ³ËÎä¹¦¡£";
+        return "å¥½å§ï¼Œæ†‘é€™å°æ‰‹è«­ï¼Œä½ å¯è‡ªç”±é€²å…¥è—ç¶“é–£äºŒæ¨“ç ”ç¿’ä¸Šä¹˜æ­¦åŠŸã€‚";
 
 }
 
@@ -126,21 +126,21 @@ string ask_me_2()
         
         me = this_player();
         if( !(fam=query("family", me)) || 
-            fam["family_name"] != "ÉÙÁÖÅÉ")
+            fam["family_name"] != "å°‘æ—æ´¾")
                 return RANK_D->query_respect(me) + 
-                "Óë±¾ÅÉËØÎŞÀ´Íù£¬²»Öª´Ë»°´ÓºÎÌ¸Æğ£¿";
+                "èˆ‡æœ¬æ´¾ç´ ç„¡ä¾†å¾€ï¼Œä¸çŸ¥æ­¤è©±å¾ä½•è«‡èµ·ï¼Ÿ";
 
         for(i=0; i< sizeof(check_skill); i++) {
                 if (me->query_skill(check_skill[i], 1) < 30)
                 return RANK_D->query_respect(me) +
-                       "Äã" + to_chinese(check_skill[i]) +
-                       "µÄ¹¦Á¦²»¹»£¬²»ÄÜÁìÈ¡´ïÄ¦Áî¡£";
+                       "ä½ " + to_chinese(check_skill[i]) +
+                       "çš„åŠŸåŠ›ä¸å¤ ï¼Œä¸èƒ½é ˜å–é”æ‘©ä»¤ã€‚";
         }
 
         ob = new("/d/shaolin/obj/damo-ling");
         ob->move(me);
-        message_vision("$N»ñµÃÒ»Ãæ´ïÄ¦Áî¡£\n",this_player());
+        message_vision("$Nç²å¾—ä¸€é¢é”æ‘©ä»¤ã€‚\n",this_player());
 
-        return "ºÃ°É£¬Æ¾ÕâÃæ´ïÄ¦Áî£¬Äã¿É×ÔÓÉÏòÄãµÄÊ¦×ğÌôÕ½¡£";
+        return "å¥½å§ï¼Œæ†‘é€™é¢é”æ‘©ä»¤ï¼Œä½ å¯è‡ªç”±å‘ä½ çš„å¸«å°ŠæŒ‘æˆ°ã€‚";
 
 }

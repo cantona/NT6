@@ -8,18 +8,18 @@ inherit ROOM;
 void create()
 {        
         seteuid(getuid());
-        set("short", "Êé·¿");
+        set("short", "æ›¸æˆ¿");
         set("long",
-"ÕâÊÇÁ«ÅºĞ¡ÖşÀïµÄÊé·¿¡£ÌÆÃÅµÜ×Ó¿ÉÒÔÔÚÕâÀïÑĞÑ§Ê«»­¡£¿¿Ç½²¢ÅÅ°Ú\n"
-"×Å¼¸¸öÊé¼Ü£¬Ò»±¾ÌÆÊ«Ñ¡¼¯(shi)ÒıÆğÁËÄãµÄ×¢Òâ£¬ÁíÍâÇ½ÉÏ»¹¹ÒÁË¼¸·ù\n"
-"×Ö»­(hua)£¬¿´À´ÔÚÕâÀï¿ÉÒÔÑ§µ½²»ÉÙ¶«Î÷¡£\n"
+"é€™æ˜¯è“®è—•å°ç¯‰è£¡çš„æ›¸æˆ¿ã€‚å”é–€å¼Ÿå­å¯ä»¥åœ¨é€™è£¡ç ”å­¸è©©ç•«ã€‚é ç‰†ä¸¦æ’æ“º\n"
+"è‘—å¹¾å€‹æ›¸æ¶ï¼Œä¸€æœ¬å”è©©é¸é›†(shi)å¼•èµ·äº†ä½ çš„æ³¨æ„ï¼Œå¦å¤–ç‰†ä¸Šé‚„æ›äº†å¹¾å¹…\n"
+"å­—ç•«(hua)ï¼Œçœ‹ä¾†åœ¨é€™è£¡å¯ä»¥å­¸åˆ°ä¸å°‘æ±è¥¿ã€‚\n"
 );        
         set("exits", ([        
                 "east" : __DIR__"nzlangw3",
         ]));
         set("item_desc", ([
-                "shi" : "ÕâÊÇÒ»±¾ºÜÆ½³£µÄÌÆÊ«Ñ¡¼¯¡£²»ÉÙµÜ×ÓÔÚÒ÷ËÌ(yin)¡£\n",
-                "hua" : "ÕâÊÇÒ»·ùÁÙÄ¡Ö£°åÇÅµÄ×Ö»­¡£²»ÉÙµÜ×ÓÔÚ¿´(kan)¡£\n",
+                "shi" : "é€™æ˜¯ä¸€æœ¬å¾ˆå¹³å¸¸çš„å”è©©é¸é›†ã€‚ä¸å°‘å¼Ÿå­åœ¨åŸé Œ(yin)ã€‚\n",
+                "hua" : "é€™æ˜¯ä¸€å¹…è‡¨æ‘¹é„­æ¿æ©‹çš„å­—ç•«ã€‚ä¸å°‘å¼Ÿå­åœ¨çœ‹(kan)ã€‚\n",
         ]));
 
         set("no_steal", "1");
@@ -49,17 +49,17 @@ int do_look(string arg)
         if ( cost < 1) cost = 0;
 
         if ( me->is_busy() )
-                return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£å¿™è‘—å‘¢ã€‚\n");
 
         if ( arg == "hua")
         {
                 if( (int)me->query_skill("literate", 1) > 50 )
-                        return notify_fail("Äã¶Ô×Å×Ö»­×ĞÏ¸´§Ä¦ÁËÒ»»á¶ù£¬·¢ÏÖ´ÓÖĞÒÑ¾­Ñ§²»µ½Ê²Ã´ÁË¡£\n");
+                        return notify_fail("ä½ å°è‘—å­—ç•«ä»”ç´°æ£æ‘©äº†ä¸€æœƒå…’ï¼Œç™¼ç¾å¾ä¸­å·²ç¶“å­¸ä¸åˆ°ä»€éº¼äº†ã€‚\n");
 
                 if( query("jing", me)>cost && 
                     query("potential", me)-query("learned_points", me) >= 1 )
                 {
-                        tell_object(me, "Äã×¨ĞÄµØÑĞ¶ÁÇ½ÉÏµÄ×Ö»­£¬²»Ê±»¹Éì³öÊÖÖ¸ÁÙÄ¡Ò»·¬¡£\n");
+                        tell_object(me, "ä½ å°ˆå¿ƒåœ°ç ”è®€ç‰†ä¸Šçš„å­—ç•«ï¼Œä¸æ™‚é‚„ä¼¸å‡ºæ‰‹æŒ‡è‡¨æ‘¹ä¸€ç•ªã€‚\n");
                         me->improve_skill("literate", random( (int)me->query_skill("literate", 1) / 2 ) + 10 );
                         me->receive_damage("jing", cost );
                         addn("potential", -1, me);
@@ -67,10 +67,10 @@ int do_look(string arg)
                 else
                 {
                         if( query("jing", me) <= cost )
-                                write("ÄãÏÖÔÚ¹ıÓÚÆ£¾ë£¬ÎŞ·¨×¨ĞÄÏÂÀ´ÑĞ¶ÁĞÂÖª¡£\n");
+                                write("ä½ ç¾åœ¨éäºç–²å€¦ï¼Œç„¡æ³•å°ˆå¿ƒä¸‹ä¾†ç ”è®€æ–°çŸ¥ã€‚\n");
 
                         if( query("potential", me)-query("learned_points", me) <= 0 )
-                                write("Äã¿´×Å×Ö»­·´¸´×ÁÄ¥£¬¾¹Ã»ÓĞÒ»Ë¿ĞÄµÃ¡£\n");
+                                write("ä½ çœ‹è‘—å­—ç•«åå¾©ç¢ç£¨ï¼Œç«Ÿæ²’æœ‰ä¸€çµ²å¿ƒå¾—ã€‚\n");
                 }
                 return 1;
         }
@@ -89,20 +89,20 @@ int do_du(string arg)
         if ( cost < 1) cost = 0;
 
         if ( me->is_busy() )
-                return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£å¿™è‘—å‘¢ã€‚\n");
 
         if ( arg == "shi")
         {
                 if( (int)me->query_skill("literate", 1) < 51 )
-                        return notify_fail("ÄãÄÃÆğÌÆÊ«Ñ¡¼¯£¬·­¿ªÒ»Ò³·¢ÏÖ¾¹Ê²Ã´Ò²¿´²»¶®¡£\n");
+                        return notify_fail("ä½ æ‹¿èµ·å”è©©é¸é›†ï¼Œç¿»é–‹ä¸€é ç™¼ç¾ç«Ÿä»€éº¼ä¹Ÿçœ‹ä¸æ‡‚ã€‚\n");
 
                 if( (int)me->query_skill("literate", 1) > 101 )
-                        return notify_fail("ÄãÄÃÆğÌÆÊ«Ñ¡¼¯£¬·­ÁË·­·¢ÏÖÃ»ÓĞÊ²Ã´¿ÉÑ§µÄÁË¡£\n");
+                        return notify_fail("ä½ æ‹¿èµ·å”è©©é¸é›†ï¼Œç¿»äº†ç¿»ç™¼ç¾æ²’æœ‰ä»€éº¼å¯å­¸çš„äº†ã€‚\n");
 
                 if( query("jing", me)>cost && 
                     query("potential", me)-query("learned_points", me) >= 1 )
                 {
-                        tell_object(me, "Äã×¨ĞÄµØÑĞ¶ÁÊé¼ÜÉÏµÄÊ«¼¯£¬¶Áµ½ÍüÇéÊ±¾¹¶Á³öÁËÉù¡£\n");
+                        tell_object(me, "ä½ å°ˆå¿ƒåœ°ç ”è®€æ›¸æ¶ä¸Šçš„è©©é›†ï¼Œè®€åˆ°å¿˜æƒ…æ™‚ç«Ÿè®€å‡ºäº†è²ã€‚\n");
                         me->improve_skill("literate", random( (int)me->query_skill("literate", 1) / 2 ) + 20 );
                         me->receive_damage("jing", cost );
                         addn("potential", -1, me);
@@ -111,10 +111,10 @@ int do_du(string arg)
                 else
                 {
                         if( query("jing", me) <= cost )
-                                write("ÄãÏÖÔÚ¹ıÓÚÆ£¾ë£¬ÎŞ·¨×¨ĞÄÏÂÀ´ÑĞ¶ÁĞÂÖª¡£\n");
+                                write("ä½ ç¾åœ¨éäºç–²å€¦ï¼Œç„¡æ³•å°ˆå¿ƒä¸‹ä¾†ç ”è®€æ–°çŸ¥ã€‚\n");
 
                         if( query("potential", me) <= query("learned_points", me) )
-                                write("Äã¿´×ÅÊ«¼¯·´¸´×ÁÄ¥£¬¾¹Ã»ÓĞÒ»Ë¿ĞÄµÃ¡£\n");
+                                write("ä½ çœ‹è‘—è©©é›†åå¾©ç¢ç£¨ï¼Œç«Ÿæ²’æœ‰ä¸€çµ²å¿ƒå¾—ã€‚\n");
                 }
                 return 1;
         }

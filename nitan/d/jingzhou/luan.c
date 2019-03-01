@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�ҷظ�");
+        set("short", "亂墳崗");
         set("long", @LONG
-������һ���ҷظڣ����������˹��˸ߵĳ��ݣ���˵�����ֹ���
-����û�˸�����һ�����������ŵ��������ë����
+這裡是一處亂墳崗，到處長滿了過人高的長草，聽說經常鬧鬼，
+所以沒人敢來。一陣冷風刮來，嚇的你根根體毛豎起。
 LONG );
 
         set("exits", ([

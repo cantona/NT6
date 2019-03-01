@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-        set("short","�軨԰��");
+        set("short","茶花園門");
         set("long", @LONG
-�����軨�ھ����£����������Ĳ軨��Ȼ���Ƿ�Ʒ����վ�ڲ軨
-԰�ڣ�������԰��ɫ��������ϲ���������߾ͽ�԰�ˣ�������һ����
-�����ϱ���һ���᷿����������Ϣ�ĵط���
+大理茶花冠絕天下，鎮南王府的茶花自然更非凡品。你站在茶花
+園口，對著滿園春色，不禁大喜過望。東邊就進園了，北邊是一個庫
+房。南邊是一棟廂房，那裡是休息的地方。
 LONG );
         set("outdoors", "dali");
         set("exits",([ /* sizeof() == 1 */

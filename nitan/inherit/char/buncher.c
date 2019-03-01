@@ -29,8 +29,8 @@ string long()
         if (query("bunch/bunch_name"))
                 return desc;
 
-        desc += HIW + (query("gender") == "ÄĞĞÔ" ? "Ëû" : "Ëı") +
-                "ÕıÔÚÑ°Çó°ïÅÉÊÆÁ¦µÄ±Ó»¤£¬¿ÉÑûÇë¼ÓÈë°ïÅÉ¡£\n" NOR;
+        desc += HIW + (query("gender") == "ç”·æ€§" ? "ä»–" : "å¥¹") +
+                "æ­£åœ¨å°‹æ±‚å¹«æ´¾å‹¢åŠ›çš„åº‡è­·ï¼Œå¯é‚€è«‹åŠ å…¥å¹«æ´¾ã€‚\n" NOR;
 
         return desc;
 }
@@ -48,11 +48,11 @@ int init_area_npc(object ob)
                 set("bunch/zhengzhao", 3);
 
         areas = BUNCH_D->query_all_areas();
-        // Èç¹ûµØÅÌÃ»ÓĞ¼ÓÔØµ½ÏµÍ³ÖĞ£¬Ôò¸ÃµØÅÌÃ»ÓĞ±»°ïÅÉÕ¼Áì
+        // å¦‚æœåœ°ç›¤æ²’æœ‰åŠ è¼‰åˆ°ç³»çµ±ä¸­ï¼Œå‰‡è©²åœ°ç›¤æ²’æœ‰è¢«å¹«æ´¾ä½”é ˜
         if (undefinedp(areas[base_name(room)]))
                 return 0;
 
-        if (areas[base_name(room)]["bunch_name"] == "¶ÀÁ¢ÖĞ")
+        if (areas[base_name(room)]["bunch_name"] == "ç¨ç«‹ä¸­")
                 return 0;
 
         data = ([ "bunch_name"     : areas[base_name(room)]["bunch_name"],
@@ -78,27 +78,27 @@ int accept_object(object who, object ob)
 
         if (!query("bunch/bunch_name", who))
         {
-                command("say ¼´È»" + RANK_D->query_respect(who) +
-                        "Èç´Ë¿ÍÆø£¬ÄÇÎÒ¾ÍÊÕÏÂÁË¡£\n");
+                command("say å³ç„¶" + RANK_D->query_respect(who) +
+                        "å¦‚æ­¤å®¢æ°£ï¼Œé‚£æˆ‘å°±æ”¶ä¸‹äº†ã€‚\n");
                 return 1;
         }
 
         if (query("bunch/bunch_name", who) == query("bunch/bunch_name"))
         {
-                command("say ¶¼ÊÇ°ïÖĞĞÖµÜ£¬ºÎ±ØÈç´Ë¿ÍÆø£¿\n");
+                command("say éƒ½æ˜¯å¹«ä¸­å…„å¼Ÿï¼Œä½•å¿…å¦‚æ­¤å®¢æ°£ï¼Ÿ\n");
                 return 0;
         }
 
         if (query("startroom") != base_name(environment(this_object())))
         {
-                command("say ÎÒÉíÌåÓĞµã²»ÊÊ£¬ÄãÓĞÊÂµÈÎÒ»ØÈ¥ÔÙËµ°É¡£\n");
+                command("say æˆ‘èº«é«”æœ‰é»ä¸é©ï¼Œä½ æœ‰äº‹ç­‰æˆ‘å›å»å†èªªå§ã€‚\n");
                 return 0;
         }
 
         if (query("bunch/zhengzhao") == 1)
         {
                 command("say " + RANK_D->query_self(this_object()) +
-                        "Ö»¶ÔÎä¹¦¸ĞĞËÈ¤£¬ÆäËûÒ»¸ÅÃâÌ¸¡£\n");
+                        "åªå°æ­¦åŠŸæ„Ÿèˆˆè¶£ï¼Œå…¶ä»–ä¸€æ¦‚å…è«‡ã€‚\n");
                 return 0;
         }
 
@@ -106,31 +106,31 @@ int accept_object(object who, object ob)
         {
                 if (query_temp("invite/target") != who)
                 {
-                        command("say ÎŞ¹¦²»ÊÜÂ»£¬²»Öª" +
-                                RANK_D->query_respect(who) + "¸øÎÒ" + ob->name() +
-                                "ÓĞºÎÓÃÒâ£¿\n");
+                        command("say ç„¡åŠŸä¸å—ç¥¿ï¼Œä¸çŸ¥" +
+                                RANK_D->query_respect(who) + "çµ¦æˆ‘" + ob->name() +
+                                "æœ‰ä½•ç”¨æ„ï¼Ÿ\n");
                         return 0;
                 }
 
                 if (!query("money_id", ob))
                 {
                         command("say " + RANK_D->query_self_rude(this_object()) +
-                                 "Ö»¶ÔÇ®ÓĞĞËÈ¤£¬ÄãµÄÆÆÍæÒâ×Ô¼ºÁô×Å°É¡£\n");
+                                 "åªå°éŒ¢æœ‰èˆˆè¶£ï¼Œä½ çš„ç ´ç©æ„è‡ªå·±ç•™è‘—å§ã€‚\n");
                         return 0;
                 }
 
                 if (ob->value() < query_temp("invite/money") * 10)
                 {
-                        command("say ÎÒ²»ÊÇËµ¹ıÁËÂğ£¿" +
+                        command("say æˆ‘ä¸æ˜¯èªªéäº†å—ï¼Ÿ" +
                                 chinese_number(query_temp("invite/money") / 1000) +
-                                "Á½»Æ½ğ£¬ÉÙÒ»ÏÂ×ÓÒ²²»ĞĞ£¡\n");
+                                "å…©é»ƒé‡‘ï¼Œå°‘ä¸€ä¸‹å­ä¹Ÿä¸è¡Œï¼\n");
                         return 0;
                 }
 
                 if (query("bunch/bunch_name") &&
                     query("bunch/zhongcheng") > who->query_kar())
                 {
-                        command("say ÈôÊÇÊÕÁËÄãµÄÇ®£¬ÎÒÈçºÎ¶ÔµÃÆğ°ïÖĞÆäËûµÜĞÖ£¿\n");
+                        command("say è‹¥æ˜¯æ”¶äº†ä½ çš„éŒ¢ï¼Œæˆ‘å¦‚ä½•å°å¾—èµ·å¹«ä¸­å…¶ä»–å¼Ÿå…„ï¼Ÿ\n");
                         return 0;
                 }
 
@@ -147,9 +147,9 @@ int accept_object(object who, object ob)
 
                 if (member_array(query("id", who), obj) == -1)
                 {
-                        command("say ÄãÎÒËØ²»ÏàÊ¶£¬ÎªºÎ¸ø" +
+                        command("say ä½ æˆ‘ç´ ä¸ç›¸è­˜ï¼Œç‚ºä½•çµ¦" +
                                 RANK_D->query_self(this_object()) + ob->name() +
-                                "£¿\n");
+                                "ï¼Ÿ\n");
                         return 0;
                 }
 
@@ -159,16 +159,16 @@ int accept_object(object who, object ob)
                 ||  stuffid != query("id", ob))
                 {
                         command("say " + RANK_D->query_respect(who) +
-                                "£¬ÎÒÏëÒªµÄÊÇ" + stuffname + "(" +
-                                stuffid + ")£¬²»ÊÇ" + query("name", ob) +
-                                "(" + query("id", ob) + ")£¡\n");
+                                "ï¼Œæˆ‘æƒ³è¦çš„æ˜¯" + stuffname + "(" +
+                                stuffid + ")ï¼Œä¸æ˜¯" + query("name", ob) +
+                                "(" + query("id", ob) + ")ï¼\n");
                         return 0;
                 }
 
                 if (query("bunch/bunch_name") &&
                     query("bunch/zhongcheng") > query("meili", who))
                 {
-                        command("say ÈôÊÇÊÕÁËÄãµÄ¶«Î÷£¬ÎÒÈçºÎ¶ÔµÃÆğ°ïÖĞÆäËûµÜĞÖ£¿\n");
+                        command("say è‹¥æ˜¯æ”¶äº†ä½ çš„æ±è¥¿ï¼Œæˆ‘å¦‚ä½•å°å¾—èµ·å¹«ä¸­å…¶ä»–å¼Ÿå…„ï¼Ÿ\n");
                         return 0;
                 }
 
@@ -182,22 +182,22 @@ int do_join_bunch(object who)
 
         if (! stringp(bunch = query("bunch/bunch_name", who)))
         {
-                command("say ß×£¿ÄãÃ»ÓĞ¼ÓÈë°ï»á£¬ÄÇÎÒÈçºÎ¼ÓÈëÄØ£¿\n");
+                command("say å’¦ï¼Ÿä½ æ²’æœ‰åŠ å…¥å¹«æœƒï¼Œé‚£æˆ‘å¦‚ä½•åŠ å…¥å‘¢ï¼Ÿ\n");
                 return 0;
         }
 
         if (bunch == query("bunch/bunch_name"))
         {
-                command("say ÔÛÃÇ¶¼ÊÇÍ¬°ïµÜĞÖ£¬ÓĞÊÂºÃÉÌÁ¿Âï¡£\n");
+                command("say å’±å€‘éƒ½æ˜¯åŒå¹«å¼Ÿå…„ï¼Œæœ‰äº‹å¥½å•†é‡å˜›ã€‚\n");
                 return 0;
         }
 
         area = base_name(environment(this_object()));
 
-        command("say ¼ÈÈ»" + RANK_D->query_respect(who) +
-                "Èç´Ë¿´µÃÆğ" + RANK_D->query_self(this_object()) +
-                "£¬ÄÇÎÒÒ²²»ÄÜ¶Ô²»ÆğÄã°¡¡£\n");
-        message_vision("$N¾ö¶¨¼ÓÈë°ï»á¡¸" + bunch + "¡¹£¡\n",
+        command("say æ—¢ç„¶" + RANK_D->query_respect(who) +
+                "å¦‚æ­¤çœ‹å¾—èµ·" + RANK_D->query_self(this_object()) +
+                "ï¼Œé‚£æˆ‘ä¹Ÿä¸èƒ½å°ä¸èµ·ä½ å•Šã€‚\n");
+        message_vision("$Næ±ºå®šåŠ å…¥å¹«æœƒã€Œ" + bunch + "ã€ï¼\n",
                 this_object());
 
         BUNCH_D->add_area_into_bunch(bunch, area, environment(this_object())->short(), this_object());
@@ -219,11 +219,11 @@ void die()
         room = environment(this_object());
 
         areas = BUNCH_D->query_all_areas();
-        // Èç¹ûµØÅÌÃ»ÓĞ¼ÓÔØµ½ÏµÍ³ÖĞ£¬Ôò¸ÃµØÅÌÃ»ÓĞ±»°ïÅÉÕ¼Áì
+        // å¦‚æœåœ°ç›¤æ²’æœ‰åŠ è¼‰åˆ°ç³»çµ±ä¸­ï¼Œå‰‡è©²åœ°ç›¤æ²’æœ‰è¢«å¹«æ´¾ä½”é ˜
         if (undefinedp(areas[base_name(room)]))
                 return ::die();
 
-        if (query("bunch/bunch_name") == "¶ÀÁ¢ÖĞ")
+        if (query("bunch/bunch_name") == "ç¨ç«‹ä¸­")
                 return ::die();
 
         kaifa = areas[base_name(room)]["kaifa"];
@@ -239,8 +239,8 @@ void die()
 
         set("bunch/zhongcheng", zhongcheng);
 
-        message("channel:rumor", HIM "¡¾Ò¥ÑÔ¡¿Ä³ÈË£ºÓÉÓÚ" + query("name") + "±»É±£¬" +
-                                 room->short() + "µÄ¿ª·¢¶È½µÎª" + kaifa + "£¡\n" NOR, users());
+        message("channel:rumor", HIM "ã€è¬ è¨€ã€‘æŸäººï¼šç”±äº" + query("name") + "è¢«æ®ºï¼Œ" +
+                                 room->short() + "çš„é–‹ç™¼åº¦é™ç‚º" + kaifa + "ï¼\n" NOR, users());
 
         return ::die();
 }

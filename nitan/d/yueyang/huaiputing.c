@@ -5,24 +5,24 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "»³¸¦Í¤");
+        set("short", "æ‡·ç”«äº­");
         set("long", @LONG
-¡°»³¸¦Í¤¡±ÊÇµ±Äê¶Å¸¦Á÷Âä°ÍÁê£¬Æ¶ÇîÁÊµ¹£¬»¹ÎªÔÀÑôÁôÏÂÁË¡¶µÇ
-ÔÀÑôÂ¥¡·µÈ²»ÐàÊ«Æª(poem)¡£¶Å¸¦ºóÀ´×äÓÚÔÀÑô¡£ÓÉ´ËÊ°¼¶Î÷ÉÏ¼´ÊÇÔÀ
-ÑôÂ¥¡£
+â€œæ‡·ç”«äº­â€æ˜¯ç•¶å¹´æœç”«æµè½å·´é™µï¼Œè²§çª®æ½¦å€’ï¼Œé‚„ç‚ºå²³é™½ç•™ä¸‹äº†ã€Šç™»
+å²³é™½æ¨“ã€‹ç­‰ä¸æœ½è©©ç¯‡(poem)ã€‚æœç”«å¾Œä¾†å’äºŽå²³é™½ã€‚ç”±æ­¤æ‹¾ç´šè¥¿ä¸Šå³æ˜¯å²³
+é™½æ¨“ã€‚
 LONG );
         set("outdoors", "yueyang");
         set("no_clean_up", 0);
         set("item_desc", ([
                 "poem" : "
-                        µÇÔÀÑôÂ¥
-¡¡¡¡
-                 ¡¡¡¡      ¡¡¡¡¶Å¸¦
+                        ç™»å²³é™½æ¨“
+ã€€ã€€
+                 ã€€ã€€      ã€€ã€€æœç”«
 
-                 ÎôÎÅ¶´Í¥Ë®£¬½ñÉÏÔÀÑôÂ¥¡£
-                 Îâ³þ¶«ÄÏÛå£¬Ç¬À¤ÈÕÒ¹¸¡¡£
-                 Ç×ÅóÎÞÒ»×Ö£¬ÀÏ²¡ÓÐ¹ÂÖÛ¡£
-                 ÈÖÂí¹ØÉ½±±£¬Æ¾ÐùÌéãôÁ÷¡£\n"
+                 æ˜”èžæ´žåº­æ°´ï¼Œä»Šä¸Šå²³é™½æ¨“ã€‚
+                 å³æ¥šæ±å—å¼ï¼Œä¹¾å¤æ—¥å¤œæµ®ã€‚
+                 è¦ªæœ‹ç„¡ä¸€å­—ï¼Œè€ç—…æœ‰å­¤èˆŸã€‚
+                 æˆŽé¦¬é—œå±±åŒ—ï¼Œæ†‘è»’æ¶•æ³—æµã€‚\n"
         ]));
         set("exits", ([
                 "east"   : __DIR__"loumen",

@@ -1,21 +1,21 @@
-// Room: /d/playtown/chunzhangjia.c ´å³¤¼Ò
+// Room: /d/playtown/chunzhangjia.c æ‘é•·å®¶
 // Build 199.12.10 bmw
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "´å³¤¼Ò");
+        set("short", "æ‘é•·å®¶");
         set("long",
-"Äã×ß½øÀ´±ã¾õµÃÕâÀïÓëÆäËû´åÀïÈËµÄ¾ÓËùÓÐËù²»Í¬£¬Ã÷ÏÔÔÚÃÅÃæÉÏÆø\n"
-"ÅÉÁËÐí¶à£¬Á½ÕÅ°µºìÉ«µÄÍ©Ä¾³¤ÒÎ½«Ò»ÕÅ²è¼¸¼ÐÔÚÖÐ¼ä£¬ÉÏÃæ¹Ò×ÅÒ»¸±´ó\n"
-"´óµÄ²ÆÉñ»­Ïñ£¬Ò»¸±¶ÔÁª(duilian)ÓÉÓÚÊ±¼äÓÆ¾Ã£¬ÔçÒÑ¿´²»Ì«ÇåÎú£¬µ«\n"
-"ÄÇºá·ùÈÔÈ»Ê®·ÖÏÔÑÛ£¬ºÕÈ»Ð´µÀ¡°²ÆÔ´¹ö¹ö¡±¡£\n"
+"ä½ èµ°é€²ä¾†ä¾¿è¦ºå¾—é€™è£¡èˆ‡å…¶ä»–æ‘è£¡äººçš„å±…æ‰€æœ‰æ‰€ä¸åŒï¼Œæ˜Žé¡¯åœ¨é–€é¢ä¸Šæ°£\n"
+"æ´¾äº†è¨±å¤šï¼Œå…©å¼µæš—ç´…è‰²çš„æ¡æœ¨é•·æ¤…å°‡ä¸€å¼µèŒ¶å¹¾å¤¾åœ¨ä¸­é–“ï¼Œä¸Šé¢æŽ›è‘—ä¸€å‰¯å¤§\n"
+"å¤§çš„è²¡ç¥žç•«åƒï¼Œä¸€å‰¯å°è¯(duilian)ç”±äºŽæ™‚é–“æ‚ ä¹…ï¼Œæ—©å·²çœ‹ä¸å¤ªæ¸…æ™°ï¼Œä½†\n"
+"é‚£æ©«å¹…ä»ç„¶ååˆ†é¡¯çœ¼ï¼Œèµ«ç„¶å¯«é“â€œè²¡æºæ»¾æ»¾â€ã€‚\n"
 );
 
 //      set("no_clean_up", 0);
         set("item_desc",([
-                "duilian"        :        "ÉÏÃæÒÑ¾­¿´²»Ì«Çå³þÁË£¬Ö»Ä£Ä£ºýºýµØÈÏµÃÇå¼¸¸ö×Ö¡£\n",
+                "duilian"        :        "ä¸Šé¢å·²ç¶“çœ‹ä¸å¤ªæ¸…æ¥šäº†ï¼Œåªæ¨¡æ¨¡ç³Šç³Šåœ°èªå¾—æ¸…å¹¾å€‹å­—ã€‚\n",
         ]));
         
         set("exits", ([

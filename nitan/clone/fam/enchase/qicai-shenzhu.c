@@ -3,18 +3,18 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIR "Æß"HIY"²Ê"HIC"Éñ"HIG"Öé" NOR, ({"qicai shenshi"}));
+        set_name(HIR "ä¸ƒ"HIY"å½©"HIC"ç¥"HIG"ç " NOR, ({"qicai shenshi"}));
         set_weight(2000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Á£");
+                set("unit", "ç²’");
                 set("value", 500000);
-                set("enchase/name", "Æß²ÊÉñÖé");
+                set("enchase/name", "ä¸ƒå½©ç¥ç ");
                 set("enchase/point", 1);
                 set("enchase/type", "neck");
                                 set("enchase/cur_firm", 100);
-                                set("nine_object", 1); // ¾Å¿×ÏâÇ¶ÎïÆ·±ê¼Ç
+                                set("nine_object", 1); // ä¹å­”é‘²åµŒç‰©å“æ¨™è¨˜
                                 set("enchase/spe_data", ([]) );  
         }
         setup();

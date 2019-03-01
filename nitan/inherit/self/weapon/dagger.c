@@ -1,6 +1,6 @@
 // dagger.c
-// ×ÔÔìÎïÆ· (by Find.)
-// Ã»ÓĞ°²È«ÎÊÌâµ«Ì«Âé·³
+// è‡ªé€ ç‰©å“ (by Find.)
+// æ²’æœ‰å®‰å…¨å•é¡Œä½†å¤ªéº»ç…©
 
 #include <mine_def.h>
 #include <weapon.h>
@@ -11,7 +11,7 @@ inherit DAGGER;
 
 protected int weapon_attr_flag, require_res;
 
-string query_selling_msg() { return "×ÔÔì±øÆ÷"; }
+string query_selling_msg() { return "è‡ªé€ å…µå™¨"; }
 
 int query_weapon_attr() { return weapon_attr_flag; }
 int set_weapon_attr(int n)
@@ -86,7 +86,7 @@ nomask mixed set(string prop, mixed data)
 
 protected void create(class weapon_args arg)
 {
-        set("unit", "°Ñ");
+        set("unit", "æŠŠ");
         if( clonep() )
                 set_default_object(__FILE__);
 
@@ -112,13 +112,13 @@ protected void create(class weapon_args arg)
 
         else
         {
-                set_name("Ø°Ê×", ({ "bi shou" }) );
+                set_name("åŒ•é¦–", ({ "bi shou" }) );
                 set_weight(1000);
-                set("long", "ÕâÊÇÒ»°Ñ¿´ÆğÏàµ±ÆÕÍ¨µÄØ°Ê×¡£\n");
+                set("long", "é€™æ˜¯ä¸€æŠŠçœ‹èµ·ç›¸ç•¶æ™®é€šçš„åŒ•é¦–ã€‚\n");
                 set("value", 100);
                 set("material", "steel");
-                set("wield_msg", "$N´Ó»³ÖĞÃş³öÒ»°Ñ$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²ØÈë»³ÖĞ¡£\n");        
+                set("wield_msg", "$Nå¾æ‡·ä¸­æ‘¸å‡ºä¸€æŠŠ$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°‡æ‰‹ä¸­çš„$nè—å…¥æ‡·ä¸­ã€‚\n");        
                 init_dagger(10);
         }
 

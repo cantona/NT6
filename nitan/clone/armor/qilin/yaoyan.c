@@ -6,20 +6,20 @@ inherit EARRING;
 
 void create()
 {
-        set_name(HIR "»ğ÷è÷ë¡¤ÑıÑæ" NOR, ({ "yaoyan erhuan", "yaoyan", "erhuan" }));
+        set_name(HIR "ç«éº’éºŸï¹’å¦–ç‡„" NOR, ({ "yaoyan erhuan", "yaoyan", "erhuan" }));
         set_weight(100);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸±");
-                set("long", HIR "Äã¶¨¾¦Ò»¿´£¬È´ÎŞ·¨±çÊ¶Çå³ş£¬ÑıÑæµÄ»ğ¹âÉÁÒ«´ÌÑÛ£¬ÁîÈË¾´Î·¡£\n" NOR);
+                set("unit", "å‰¯");
+                set("long", HIR "ä½ å®šç›ä¸€çœ‹ï¼Œå»ç„¡æ³•è¾¯è­˜æ¸…æ¥šï¼Œå¦–ç‡„çš„ç«å…‰é–ƒè€€åˆºçœ¼ï¼Œä»¤äººæ•¬ç•ã€‚\n" NOR);
                 set("value", 200000);
                 set("material", "gold");
                 set("armor_prop/con", 40);
                 set("armor_prop/magic_find", 10);
                 set("limit", ([
                         "exp" : 10000000,
-                        "sex" : 1, // 1 ÎªÅ®ĞÔ
+                        "sex" : 1, // 1 ç‚ºå¥³æ€§
                 ]));
         }
         setup();

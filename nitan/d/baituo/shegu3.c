@@ -1,4 +1,4 @@
-// shegu.c Éß¹È
+// shegu.c è›‡è°·
 // maco 7/15/2000
 
 #include <ansi.h>
@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Éß¹ÈÉ½µÀ");
+        set("short", "è›‡è°·å±±é“");
         set("long", @LONG
-ÕâÊÇ°×ÍÕÉ½Éß¹ÈÖÐµÄÉ½Â·£¬ÊÇÒ»ÌõÈËÂí²È³öÀ´µÄÐ¡µÀ£¬Ëæ×ÅµØÊÆ
-ÇúÕÛÆð·ü£¬òêÑÑÄÑÐÐ¡£
+é€™æ˜¯ç™½é§å±±è›‡è°·ä¸­çš„å±±è·¯ï¼Œæ˜¯ä¸€æ¢äººé¦¬è¸©å‡ºä¾†çš„å°é“ï¼Œéš¨è‘—åœ°å‹¢
+æ›²æŠ˜èµ·ä¼ï¼Œèœ¿èœ’é›£è¡Œã€‚
 LONG );
 
         set("exits", ([ 

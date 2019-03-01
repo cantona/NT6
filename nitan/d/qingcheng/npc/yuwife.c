@@ -4,11 +4,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÓàĞ¡ĞÇ",({ "yu wife"}) );
-        set("gender", "Å®ĞÔ" );
+        set_name("ä½™å°æ˜Ÿ",({ "yu wife"}) );
+        set("gender", "å¥³æ€§" );
         set("age", 26);
         set("long", 
-"ÕâÊÇ¸ö¶şÊ®Áù¡¢ÆßËêµÄ´¨ÃÃ×Ó£¬²»ÖªµÀÊÇÓàÀÏµÀµÄµÚ¼¸·¿Ğ¡æª¡£\n");
+"é€™æ˜¯å€‹äºŒåå…­ã€ä¸ƒæ­²çš„å·å¦¹å­ï¼Œä¸çŸ¥é“æ˜¯ä½™è€é“çš„ç¬¬å¹¾æˆ¿å°å¦¾ã€‚\n");
         set_temp("apply/defense", 5);
         set("combat_exp", 70);
         set("shen_type", 1);

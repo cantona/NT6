@@ -4,15 +4,15 @@ inherit F_FOOD;
 
 void create()
 {
-        set_name(HIC "½´Å£Èâ" NOR, ({"rou"}));
+        set_name(HIC "é†¬ç‰›è‚‰" NOR, ({"rou"}));
         set_weight(50);
 
         if (clonep())
                 set_default_object(__FILE__);
         else
         {
-                set("unit", "ÅÌ");
-                set("long", "ÕâÊÇÒ»ÅÌ½´ÖÆÁËÈı¸öÔÂµÄÊìÅ£Èâ£¬ÊÇÏÂ¾ÆµÄºÃ²Ë¡£\n");
+                set("unit", "ç›¤");
+                set("long", "é€™æ˜¯ä¸€ç›¤é†¬åˆ¶äº†ä¸‰å€‹æœˆçš„ç†Ÿç‰›è‚‰ï¼Œæ˜¯ä¸‹é…’çš„å¥½èœã€‚\n");
                 set("value", 0);
                 set("food_remaining", 5);
                 set("food_supply", 20);

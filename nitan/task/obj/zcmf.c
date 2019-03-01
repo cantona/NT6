@@ -2,15 +2,15 @@
 inherit TASK;
 void create()
 {
-    set_name(MAG"�洫�ط�"NOR, ({ "zuchuan mifang" }) );
+    set_name(MAG"祖傳秘方"NOR, ({ "zuchuan mifang" }) );
     set_weight(10);
     if( clonep() )
             destruct(this_object());
     else {
-            set("unit", "��");
+            set("unit", "張");
             set("material", "paper");
-            set("long", "һ�ŷǳ��¾ɵĻ�ֽƬ��\n");
+            set("long", "一張非常陳舊的黃紙片。\n");
           }
-    set("owner", "Ҧ��");
+    set("owner", "姚春");
     setup();
 }

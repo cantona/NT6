@@ -1,15 +1,15 @@
-// liapo.c Àî°¢ÆÅ
+// liapo.c æé˜¿å©†
 
 inherit NPC;
 inherit F_DEALER;
 
 void create()
 {
-        set_name("Àî°¢ÆÅ", ({ "li apo", "li", "apo" }));
+        set_name("æé˜¿å©†", ({ "li apo", "li", "apo" }));
         set("str", 18);
-        set("gender", "Å®ĞÔ");
+        set("gender", "å¥³æ€§");
         set("age", 58);
-        set("long", "Àî°¢ÆÅÔÚÑïÖİ»îÁË¼¸Ê®Äê£¬¾Í¿¿×ß½Ö´®ÏïÂô¾»²Ë¹ıÈÕ×Ó¡£\n");
+        set("long", "æé˜¿å©†åœ¨æšå·æ´»äº†å¹¾åå¹´ï¼Œå°±é èµ°è¡—ä¸²å··è³£å‡ˆèœéæ—¥å­ã€‚\n");
         set("combat_exp", 250);
         set("attitude", "friendly");
         set("vendor_goods", ({

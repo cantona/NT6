@@ -22,7 +22,7 @@ void distributed_preload()
         object ob;
 
 #ifdef LONELY_IMPROVED
-        // ¹Ø±ÕÏµÍ³ĞÄÌø
+        // é—œé–‰ç³»çµ±å¿ƒè·³
         set_heartbeat_interval(0);
 
         foreach(ob in loginuser)
@@ -33,18 +33,18 @@ void distributed_preload()
         if( !sizeof(preload_list) ) {
                 foreach( ob in loginuser ) {
                         if( objectp(ob) ) {
-                                ob->directly_receive("\n"+MUD_FULL_NAME+"Æô¶¯Íê±Ï£¬ÖØĞÂÁ¬ÏßÖĞ...¡£\n");
+                                ob->directly_receive("\n"+MUD_FULL_NAME+"å•Ÿå‹•å®Œç•¢ï¼Œé‡æ–°é€£ç·šä¸­...ã€‚\n");
                                 destruct(ob);
                         }
                 }
 #ifdef LONELY_IMPROVED
-                // Æô¶¯ÏµÍ³ĞÄÌø
+                // å•Ÿå‹•ç³»çµ±å¿ƒè·³
                 set_heartbeat_interval(1);
 #endif
                 return;
         }
 
-        //log_file("static/preload",sprintf("ÔØÈë %s\n", preload_list[0]));
+        //log_file("static/preload",sprintf("è¼‰å…¥ %s\n", preload_list[0]));
 
 
 
@@ -54,13 +54,13 @@ void distributed_preload()
 
                 if( err = catch(ob = load_object(preload_list[0])) )
                 {
-                        broadcast(sprintf(HIW+"%'0'3d "NOR"- ÔØÈë %s ...", sizeof(preload_list), preload_list[0]));
+                        broadcast(sprintf(HIW+"%'0'3d "NOR"- è¼‰å…¥ %s ...", sizeof(preload_list), preload_list[0]));
                         broadcast(HIR"Failed\n"NOR);
-                        log_file("static/preload",sprintf("ÔØÈë %s Ê±·¢Éú´íÎó: %O\n", preload_list[0], err));
+                        log_file("static/preload",sprintf("è¼‰å…¥ %s æ™‚ç™¼ç”ŸéŒ¯èª¤: %O\n", preload_list[0], err));
                 }
                 else
                 {
-                        broadcast(sprintf(HIW+"%'0'3d "NOR"- ÔØÈë %s ...", sizeof(preload_list), preload_list[0]->query_name() || preload_list[0]));
+                        broadcast(sprintf(HIW+"%'0'3d "NOR"- è¼‰å…¥ %s ...", sizeof(preload_list), preload_list[0]->query_name() || preload_list[0]));
                         broadcast(sprintf(HIG"Done (%.2f Kbytes)\n"NOR, memory_info(ob)/1024.));
                 }
                 preload_list = preload_list[1..];
@@ -68,7 +68,7 @@ void distributed_preload()
         }
         else
         {
-                broadcast(sprintf(HIW+"%'0'3d "NOR"- ÔØÈë %s ...", sizeof(preload_list), preload_list[0]->query_name() || preload_list[0]));
+                broadcast(sprintf(HIW+"%'0'3d "NOR"- è¼‰å…¥ %s ...", sizeof(preload_list), preload_list[0]->query_name() || preload_list[0]));
                 broadcast(sprintf(HIC"Loaded (%.2f Kbytes)\n"NOR, memory_info(ob)/1024.));
                 preload_list = preload_list[1..];
                 distributed_preload();
@@ -108,7 +108,7 @@ void distributed_system_preload()
                         preload_list -= ({ path });
         }
 
-        log_file("static/preload",sprintf("Preload ÁĞ±í %O\n", preload_list));
+        log_file("static/preload",sprintf("Preload åˆ—è¡¨ %O\n", preload_list));
 
         distributed_preload();
 }
@@ -152,7 +152,7 @@ string query_network_packet_stats()
 #ifdef LONELY_IMPROVED
         mapping networkstats = network_stats();
 
-        return sprintf("ÒÑ½ÓÊÕ %s ·â°ü(%.2f/sec)£¬ÒÑ´«ËÍ %s ·â°ü(%.2f/sec)",
+        return sprintf("å·²æ¥æ”¶ %s å°åŒ…(%.2f/sec)ï¼Œå·²å‚³é€ %s å°åŒ…(%.2f/sec)",
                         NUMBER_D->number_symbol(networkstats["incoming packets total"]),
                         to_float(networkstats["incoming packets total"])/uptime(),
                         NUMBER_D->number_symbol(networkstats["outgoing packets total"]),
@@ -167,7 +167,7 @@ string query_network_volume_stats()
 #ifdef LONELY_IMPROVED
         mapping networkstats = network_stats();
 
-        return sprintf("ÒÑ½ÓÊÕ %s ×ÊÁÏ(%.3f KBytes/sec)£¬ÒÑ´«ËÍ %s ×ÊÁÏ(%.3f KBytes/sec)",
+        return sprintf("å·²æ¥æ”¶ %s è³‡æ–™(%.3f KBytes/sec)ï¼Œå·²å‚³é€ %s è³‡æ–™(%.3f KBytes/sec)",
                         dsize(networkstats["incoming volume total"]),
                         to_float(networkstats["incoming volume total"])/1024./uptime(),
                         dsize(networkstats["outgoing volume total"]),
@@ -190,18 +190,18 @@ string query_total_system_info()
                         ++module_room;
         }
 
-        msg += "ÕæÊµÊ±¼ä   - "+TIME_D->replace_ctime(time())+"\n";
-        msg += "ÓÎÏ·Ê±¼ä   - "+TIME_D->game_time_description()+"\n";
-        msg += "Æô¶¯Ê±¼ä   - "+CHINESE_D->chinese_period(uptime())+"\n";
-        msg += "Ê¹ÓÃÕß×ÜÊı - "+sizeof(users())+" ÈË\n";
-        msg += "Îï¼ş×ÜÊı   - "+sizeof(objects())+" ¸ö\n";
-        msg += "·¿¼äÄ£×éÊı - "+module_room+" ¼ä\n";
-        msg += "ĞÄÌø×ÜÊı   - "+sizeof(heart_beats())+" ¸ö\n";
-        msg += "ÑÓ³Ùºô½ĞÊı - "+sizeof(call_out_info())+" ¸ö\n";
-        msg += "ÏµÍ³¸ºÔØ   - "+query_load_average()+"¡¢Æ½¾ù CPU ¸ººÉ£º"+sprintf("%.2f", cpuload)+"%\n";
-        msg += "·â°ü´«Êä   - "+query_network_packet_stats()+"\n";
-        msg += "×ÊÁÏ´«Êä   - "+query_network_volume_stats()+"\n";
-        msg += "¼ÇÒäÌåÊ¹ÓÃ - "+sprintf("%.6f MBytes\n", memory_info()/1024./1024. );
+        msg += "çœŸå¯¦æ™‚é–“   - "+TIME_D->replace_ctime(time())+"\n";
+        msg += "éŠæˆ²æ™‚é–“   - "+TIME_D->game_time_description()+"\n";
+        msg += "å•Ÿå‹•æ™‚é–“   - "+CHINESE_D->chinese_period(uptime())+"\n";
+        msg += "ä½¿ç”¨è€…ç¸½æ•¸ - "+sizeof(users())+" äºº\n";
+        msg += "ç‰©ä»¶ç¸½æ•¸   - "+sizeof(objects())+" å€‹\n";
+        msg += "æˆ¿é–“æ¨¡çµ„æ•¸ - "+module_room+" é–“\n";
+        msg += "å¿ƒè·³ç¸½æ•¸   - "+sizeof(heart_beats())+" å€‹\n";
+        msg += "å»¶é²å‘¼å«æ•¸ - "+sizeof(call_out_info())+" å€‹\n";
+        msg += "ç³»çµ±è² è¼‰   - "+query_load_average()+"ã€å¹³å‡ CPU è² è·ï¼š"+sprintf("%.2f", cpuload)+"%\n";
+        msg += "å°åŒ…å‚³è¼¸   - "+query_network_packet_stats()+"\n";
+        msg += "è³‡æ–™å‚³è¼¸   - "+query_network_volume_stats()+"\n";
+        msg += "è¨˜æ†¶é«”ä½¿ç”¨ - "+sprintf("%.6f MBytes\n", memory_info()/1024./1024. );
 
         return msg;
 }
@@ -249,16 +249,16 @@ void startup_save_all(int level)
 {
         int costtime;
 
-        // ¹Ø±ÕÏµÍ³ĞÄÌø¼ÆËã
+        // é—œé–‰ç³»çµ±å¿ƒè·³è¨ˆç®—
         set_heartbeat_interval(0);
 
         costtime = time_expression { catch(save_all(level)); };
 
-        CHANNEL_D->channel_broadcast("news", sprintf("ÏµÍ³×ÊÁÏÈ«Ãæ´¢´æÍê±Ï(Lv "+level+")£¬¹²»¨·Ñ %.3f Ãë¡£", costtime/1000000.));
+        CHANNEL_D->channel_broadcast("news", sprintf("ç³»çµ±è³‡æ–™å…¨é¢å„²å­˜å®Œç•¢(Lv "+level+")ï¼Œå…±èŠ±è²» %.3f ç§’ã€‚", costtime/1000000.));
 
         set("system/save_all/time/"+level, costtime/1000000., SYSDATABASE_D->query_ob());
 
-        // ÖØĞÂÆô¶¯ÏµÍ³ĞÄÌø¼ÆËã
+        // é‡æ–°å•Ÿå‹•ç³»çµ±å¿ƒè·³è¨ˆç®—
         set_heartbeat_interval(1);
 }
 
@@ -268,7 +268,7 @@ void prepare_to_save_all(int level)
 
 
         if( undefinedp(estimate_time) )
-                CHANNEL_D->channel_broadcast("news", "ÎåÃëÖÓºóÏµÍ³½øĞĞ×ÊÁÏÈ«Ãæ´¢´æ(Lv "+level+")£¬´æµµ¹ı³Ì¿ÉÄÜºÄ·ÑÊıÃëÖÓÖÁÊı·ÖÖÓ£¬ÇëÉÔºò¡£");
+                CHANNEL_D->channel_broadcast("news", "äº”ç§’é˜å¾Œç³»çµ±é€²è¡Œè³‡æ–™å…¨é¢å„²å­˜(Lv "+level+")ï¼Œå­˜æª”éç¨‹å¯èƒ½è€—è²»æ•¸ç§’é˜è‡³æ•¸åˆ†é˜ï¼Œè«‹ç¨å€™ã€‚");
         else
         {
                 int low = to_int(estimate_time - estimate_time/5);
@@ -276,7 +276,7 @@ void prepare_to_save_all(int level)
 
                 if( low < 0 ) low = 0;
 
-                CHANNEL_D->channel_broadcast("news", "ÎåÃëÖÓºóÏµÍ³½øĞĞ×ÊÁÏÈ«Ãæ´¢´æ(Lv "+level+")£¬´æµµ¹ı³Ì¹À¼ÆÔ¼ĞèÒªºÄ·Ñ "+low+" ÖÁ "+high+" Ãë×óÓÒ£¬ÇëÉÔºò¡£");
+                CHANNEL_D->channel_broadcast("news", "äº”ç§’é˜å¾Œç³»çµ±é€²è¡Œè³‡æ–™å…¨é¢å„²å­˜(Lv "+level+")ï¼Œå­˜æª”éç¨‹ä¼°è¨ˆç´„éœ€è¦è€—è²» "+low+" è‡³ "+high+" ç§’å·¦å³ï¼Œè«‹ç¨å€™ã€‚");
         }
         call_out((: startup_save_all :), 5, level);
 }
@@ -294,5 +294,5 @@ int remove()
 }
 string query_name()
 {
-        return "ÖĞÑë¹ÜÀíÏµÍ³(SYSTEM_D)";
+        return "ä¸­å¤®ç®¡ç†ç³»çµ±(SYSTEM_D)";
 }

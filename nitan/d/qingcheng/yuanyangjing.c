@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-        set("short", "ԧ�쾮");
+        set("short", "鴛鴦井");
         set("long", @LONG
-���������ԧ�쾮��һ��һԲ��Ȫ����ͨ��Բ��ˮ�ǣ�����ˮ
-�塣��ˮһ��һ����������ʫԻ����˭֪�Ͻ����ɿͣ�Ҳ��������
-̬ͬ����
+上清殿左有鴛鴦井，一方一圓，泉流暗通。圓者水濁，方者水
+清。井水一溫一涼，昔人題詩曰：“誰知上界神仙客，也與炎涼世
+態同”。
 LONG );
         set("outdoors","qingcheng");
         set("resource/water", 1);

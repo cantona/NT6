@@ -5,10 +5,10 @@ inherit F_DEALER;
 
 void create()
 {
-        set_name("���С��",({"waiter","xiaoer","xiao","xiaoer","er"}));
+        set_name("茶館小二",({"waiter","xiaoer","xiao","xiaoer","er"}));
         set("shop_id",({"waiter","xiaoer","xiao","er"}));
-        set("shop_title","���С��");
-        set("gender", "����");
+        set("shop_title","茶館小二");
+        set("gender", "男性");
         set("combat_exp", 1000);
         set("age", 26);
         set("per", 24);
@@ -44,18 +44,18 @@ void greeting(object ob)
         switch(random(3))
         {
         case 0:
-                say("С����Ц�����˵������λ" +
+                say("小二兒笑咪咪地說道：這位" +
                     RANK_D->query_respect(ob) +
-                    "�������ȱ��裬ЪЪ�Ȱɡ�\n");
+                    "，進來喝杯茶，歇歇腿吧。\n");
                 break;
         case 1:
-                say("С������ë��Ĩ��Ĩ���ߵ�һ�����ӣ�˵"
-                    "������λ" + RANK_D->query_respect(ob) +
-                    "���������\n");
+                say("小二兒用毛巾抹了抹身邊的一張桌子，說"
+                    "道：這位" + RANK_D->query_respect(ob) +
+                    "，快請進。\n");
                 break;
         case 2:
-                say("С����˵������λ" + RANK_D->query_respect(ob) +
-                    "���������������²ɵĲ�Ҷ�ɡ�׼�������⡣\n");
+                say("小二兒說道：這位" + RANK_D->query_respect(ob) +
+                    "，進來嘗嘗我們新採的茶葉吧。準保您滿意。\n");
                 break;
         }
 }

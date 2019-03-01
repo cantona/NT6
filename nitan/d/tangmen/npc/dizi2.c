@@ -3,12 +3,12 @@ inherit SMITH;
 
 void create()
 {
-        set_name("ÌÆ±ø±ø", ({ "tang bingbing", "tang", "bingbing" }) );
-        set("title",HIC "ÌÆÃÅ°µÆ÷×¨Âôµê   µêÖ÷" NOR);
-        set("gender", "ÄÐÐÔ" );
+        set_name("å”å…µå…µ", ({ "tang bingbing", "tang", "bingbing" }) );
+        set("title",HIC "å”é–€æš—å™¨å°ˆè³£åº—   åº—ä¸»" NOR);
+        set("gender", "ç”·æ€§" );
         set("age", 22);
         set("long",
-                "ÕâÊÇÌÆÃÅ×¨ÃÅÂô±øÆ÷µÄÐ¡»ï×Ó£¬×æ´«µÄ°µÆ÷×¨ÂôµêµÄ¸ºÔðÈË¡£\n");
+                "é€™æ˜¯å”é–€å°ˆé–€è³£å…µå™¨çš„å°ä¼™å­ï¼Œç¥–å‚³çš„æš—å™¨å°ˆè³£åº—çš„è² è²¬äººã€‚\n");
         set("combat_exp", 100);
         set("attitude", "friendly");
         set("no_get", "1");
@@ -46,12 +46,12 @@ void greeting(object ob)
         switch( random(2) ) 
         {
                 case 0:
-                        say( HIC"ÌÆ±ø±øÐ¦ßäßäµØËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-                                + "£¬À´Âò°µÆ÷°¡¡£\n"NOR);
+                        say( HIC"å”å…µå…µç¬‘å’ªå’ªåœ°èªªé“ï¼šé€™ä½" + RANK_D->query_respect(ob)
+                                + "ï¼Œä¾†è²·æš—å™¨å•Šã€‚\n"NOR);
                         break;
                 case 1:
-                        say( HIG"ÌÆ±ø±ø´êÁË´êÊÖ£¬ËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-                                + "£¬ÏëÂòµãÊ²Ã´°¡¡£\n"NOR);
+                        say( HIG"å”å…µå…µæ“äº†æ“æ‰‹ï¼Œèªªé“ï¼šé€™ä½" + RANK_D->query_respect(ob)
+                                + "ï¼Œæƒ³è²·é»žä»€éº¼å•Šã€‚\n"NOR);
                         break;
         }
 }

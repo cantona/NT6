@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����");
+        set("short", "西廳");
         set("long", @LONG
-ƫ�����õ���Ϊ���ţ�˿��û�������ϵ��������ա�һ�ź�
-ľ���������и���񣬹�����˸�ʽ�������顣ǽ�Ϲ��ż�����
-��������������ʱ�������ֿ��Ե��鷿�á�
+偏廳布置的頗為優雅，絲毫沒有正廳上的嚴肅氣氛。一張紅
+木大桌邊上有個書櫃，櫃裡擺了各式各樣的書。牆上掛著幾幅字
+畫。看來客人少時，這裡又可以當書房用。
 LONG);
         set("exits", ([
                 "east"  : __DIR__"shang_dating",

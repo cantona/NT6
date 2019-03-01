@@ -4,9 +4,9 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Ğ¡Åï×Ó");
+        set("short", "å°æ£šå­");
         set("long", @LONG
-ÕâÊÇÒ»¸öÁÙÊ±´îÆğÀ´µÄĞ¡Åï×Ó¡£
+é€™æ˜¯ä¸€å€‹è‡¨æ™‚æ­èµ·ä¾†çš„å°æ£šå­ã€‚
 LONG );
         set("exits", ([ /* sizeof() == 1 */
             "west" : __DIR__"temple1",
@@ -19,8 +19,8 @@ LONG );
 
 int valid_leave(object me, string dir)
 {
-        if( query_temp("marks/Íõ", this_player()) )
-                set_temp("marks/Íõ", 0, this_player());
+        if( query_temp("marks/ç‹", this_player()) )
+                set_temp("marks/ç‹", 0, this_player());
 
         return 1;
 }

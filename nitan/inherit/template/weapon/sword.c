@@ -1,7 +1,7 @@
 // $file_name.c                                         /* COMMENT_ENTRY */
 // Create by TEMPLATE_D. $time.                         /* COMMENT_ENTRY */
 // sword.c
-// ×Ô¶¯´´½¨½£µÄ»ù×¼ÎÄ¼ş¡£                               /* COMMENT_EXIT  */
+// è‡ªå‹•å‰µå»ºåŠçš„åŸºæº–æ–‡ä»¶ã€‚                               /* COMMENT_EXIT  */
 
 #include <weapon.h>
 
@@ -12,19 +12,19 @@ inherit SWORD;
 void create()
 {
 //**    set_name("$name", ({ "$id", }));                /* NAME_ENTRY */
-        set_name("½£", ({ "sword", }));                 /* NAME_EXIT  */
+        set_name("åŠ", ({ "sword", }));                 /* NAME_EXIT  */
 
         if (clonep())
                 set_default_object(__FILE__);
         else
         {
 //**            set("$dbase_key", "$dbase_value\n");    /* DBASE_ENTRY */
-                set("long", "ÕâÊÇÒ»±úÆÕÍ¨µÄ³¤½£¡£\n");  /* DBASE_EXIT  */
-                set("unit", "±ú");
+                set("long", "é€™æ˜¯ä¸€æŸ„æ™®é€šçš„é•·åŠã€‚\n");  /* DBASE_EXIT  */
+                set("unit", "æŸ„");
                 set("value", 200);
                 set("material", "steel");
-                set("wield_msg", "$N¡¸à§¡¹µÄÒ»Éù³é³öÒ»±ú$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²å»Ø½£ÇÊ¡£\n");
+                set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€è²æŠ½å‡ºä¸€æŸ„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°‡æ‰‹ä¸­çš„$næ’å›åŠé˜ã€‚\n");
         }
 
 //**    $function_name($argument);                      /* FUNCTION_ENTRY */

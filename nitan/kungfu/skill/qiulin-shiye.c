@@ -1,13 +1,13 @@
-// qiulin-shiye.c ����ʰҶ
+// qiulin-shiye.c 秋林拾葉
 
 inherit SKILL;
 
 string *dodge_msg = ({
-        "ֻ��$n��һ��ͷ����������ʰҶ������׾ٵĶ��$N��һ�С�\n",
-        "����$nĿ����ת��˫��΢�����Ų������ѱܿ���$N�Ĺ�����\n",
-        "Ȼ��$n΢΢�Ʋ���ǰ���·�ֱ���й�ȴ��Ʈ��������$N�Ĺ���ȫ����ա�\n"
-        "����$n��������Ҷ���裬�������$N�ĳ���Ʈ��������Ҫ���У�ȴ�����\n",
-        "����$n������ת���·���ͥɢ������ȴ�����������⣬��������һ�С�\n",
+        "只見$n略一低頭，形似彎腰拾葉，輕而易舉的躲過$N這一招。\n",
+        "但是$n目光流轉，雙肩微動，腳步輕移已避開了$N的攻擊。\n",
+        "然而$n微微移步向前，仿佛直走中宮卻又飄忽不定，$N的攻勢全部落空。\n"
+        "但是$n身形如竹葉飛舞，隨風繞著$N的出招飄動，好象要擊中，卻若無物。\n",
+        "可是$n身隨意轉，仿佛閒庭散步，人卻已在數丈以外，閃過了這一招。\n",
         
         });
 
@@ -26,7 +26,7 @@ string query_dodge_msg(string limb)
 int practice_skill(object me)
 {
         if( query("qi", me)<40 )
-                return notify_fail("�������̫���ˣ�����������ʰҶ��\n");
+                return notify_fail("你的體力太差了，不能練秋林拾葉。\n");
         me->receive_damage("qi", 30);
         return 1;
 }

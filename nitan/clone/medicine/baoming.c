@@ -5,12 +5,12 @@
 
 void create()
 {
-        set_name(YEL "ÌìÍõ±£Ãüµ¤" NOR, ({"baoming dan", "dan"}));
+        set_name(YEL "å¤©ç‹ä¿å‘½ä¸¹" NOR, ({"baoming dan", "dan"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", YEL "ÕâÊÇÒ»¿Åµ­»ÆµÄµÄÒ©Íè£¬ÊÇÉñÁúµºµÄÃØÒ©£¬¹¦Ğ§ÆæÃîÎŞ±È¡£\n" NOR);
-                set("base_unit", "¿Å");
+                set("long", YEL "é€™æ˜¯ä¸€é¡†æ·¡é»ƒçš„çš„è—¥ä¸¸ï¼Œæ˜¯ç¥é¾å³¶çš„ç§˜è—¥ï¼ŒåŠŸæ•ˆå¥‡å¦™ç„¡æ¯”ã€‚\n" NOR);
+                set("base_unit", "é¡†");
                 set("base_value", 8000);
                 set("base_weight", 80);
                 set("only_do_effect", 1);
@@ -43,17 +43,17 @@ int do_effect(object me)
 
         if( time()-query_temp("last_eat/baoming", me)<1800 )
         {
-                write("Äã¸Õ·şÓÃ¹ıÒ©£¬ĞèÒ©ĞÔ·¢»ÓÍêĞ§ÓÃÒÔºó²ÅÄÜ¼ÌĞø·şÓÃ¡£\n");
+                write("ä½ å‰›æœç”¨éè—¥ï¼Œéœ€è—¥æ€§ç™¼æ®å®Œæ•ˆç”¨ä»¥å¾Œæ‰èƒ½ç¹¼çºŒæœç”¨ã€‚\n");
                 return 1;
         }
 
         set_temp("last_eat/baoming", time(), me);
 
-        message_vision(HIG "$N" HIG "³ÔÏÂÒ»Á£" + name() +
-                       HIG "£¬ÑÛ¾¦Ö±Ã°ÂÌ¹â£¡\n", me);
-        tell_object(me, HIG "²»Ò»»á¶ùÄãÖ»¾õµÃ¾«Éñ±¥Âú£¬ÉñÆøÍê×ã£¬ÄÚÁ¦³äÅæÖ®¼«¡£\n" NOR);
+        message_vision(HIG "$N" HIG "åƒä¸‹ä¸€ç²’" + name() +
+                       HIG "ï¼Œçœ¼ç›ç›´å†’ç¶ å…‰ï¼\n", me);
+        tell_object(me, HIG "ä¸ä¸€æœƒå…’ä½ åªè¦ºå¾—ç²¾ç¥é£½æ»¿ï¼Œç¥æ°£å®Œè¶³ï¼Œå…§åŠ›å……æ²›ä¹‹æ¥µã€‚\n" NOR);
 
-        log_file("static/using", sprintf("%s(%s) eat ÌìÍõ±£Ãüµ¤ at %s.\n",
+        log_file("static/using", sprintf("%s(%s) eat å¤©ç‹ä¿å‘½ä¸¹ at %s.\n",
                         me->name(1),query("id", me),ctime(time())));
 
         my = me->query_entire_dbase();

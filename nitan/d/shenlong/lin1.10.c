@@ -2,9 +2,9 @@ inherit DEMONROOM;
 
 void create()
 {
-        set("short", "��������");
+        set("short", "東部叢林");
         set("long",@LONG
-����һƬԭʼ���֣����ر����ܸ��ʵ���ľ�ڱΣ��쳣������
+這是一片原始叢林，陽關被四周高聳的樹木遮蔽，異常陰暗。
 LONG);
 
 	set("exits", ([

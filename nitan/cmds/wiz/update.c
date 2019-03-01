@@ -29,7 +29,7 @@ int main(object me, string file)
 
         if (! file) file = query("cwf", me);
         if (! file)
-                return notify_fail("ÄãÒªÖØĞÂ±àÒëÊ²÷áµµ°¸£¿\n");
+                return notify_fail("ä½ è¦é‡æ–°ç·¨è­¯ä»€éº¼æª”æ¡ˆï¼Ÿ\n");
 
         if ((obj = present(file, environment(me))) && playerp(obj) ||
             (obj = find_player(file)) && playerp(obj))
@@ -44,7 +44,7 @@ int main(object me, string file)
         }
 
         if (file_size(file) == -1)
-                return notify_fail("Ã»ÓĞÕâ¸öµµ°¸¡£\n");
+                return notify_fail("æ²’æœ‰é€™å€‹æª”æ¡ˆã€‚\n");
 
         set("cwf", file, me);
 
@@ -53,13 +53,13 @@ int main(object me, string file)
                 if (obj == environment(me))
                 {
                         if (file_name(obj) == VOID_OB)
-                                return notify_fail("Äã²»ÄÜÔÚ VOID_OB ÀïÖØĞÂ±àÒë VOID_OB¡£\n");
+                                return notify_fail("ä½ ä¸èƒ½åœ¨ VOID_OB è£¡é‡æ–°ç·¨è­¯ VOID_OBã€‚\n");
                         inv = all_inventory(obj);
                         i = sizeof(inv);
                         while (i--)
                                 if (playerp(inv[i]) || inv[i]->is_chatter() ||
                                     query_temp("owner", inv[i]) )
-                                        // Íæ¼Ò¡¢ÁÄÌì»êÆÇ¡¢ÓĞÖ÷µÄÎïÆ·»òÈËÎï
+                                        // ç©å®¶ã€èŠå¤©é­‚é­„ã€æœ‰ä¸»çš„ç‰©å“æˆ–äººç‰©
                                         inv[i]->move(VOID_OB, 1);
                                 else    inv[i] = 0;
                 }
@@ -67,9 +67,9 @@ int main(object me, string file)
                 if (obj == find_object(VERSION_D) &&
                     VERSION_D->is_release_server())
                 {
-                        // Èç¹ûÊÇ°æ±¾·¢²¼µÄ·şÎñÆ÷£¬ÔòÉ¾³ı
-                        // VERSION_D µÄ bin ´úÂë£¬ÒòÎªÔÚÃ»ÓĞ
-                        // VERSION_D µÄÊ±ºò driver ÊÇ²»Óè±àÒëµÄ¡£
+                        // å¦‚æœæ˜¯ç‰ˆæœ¬ç™¼å¸ƒçš„æœå‹™å™¨ï¼Œå‰‡åˆªé™¤
+                        // VERSION_D çš„ bin ä»£ç¢¼ï¼Œå› ç‚ºåœ¨æ²’æœ‰
+                        // VERSION_D çš„æ™‚å€™ driver æ˜¯ä¸äºˆç·¨è­¯çš„ã€‚
                         bin_file = "/binaries" + base_name(obj) + ".b";
                         write("Remove: " + bin_file + "\n");
                         rm(bin_file);
@@ -78,15 +78,15 @@ int main(object me, string file)
                 destruct(obj);
         }
 
-        if (obj) return notify_fail("ÎŞ·¨Çå³ı¾É³ÌÊ½Âë¡£\n");
+        if (obj) return notify_fail("ç„¡æ³•æ¸…é™¤èˆŠç¨‹å¼ç¢¼ã€‚\n");
 
-        write("ÖØĞÂ±àÒë " + file + "£º");
+        write("é‡æ–°ç·¨è­¯ " + file + "ï¼š");
         err = catch(call_other(file, "???"));
         if (err)
-                write(sprintf( "·¢Éú´íÎó£º\n%s\n", err));
+                write(sprintf( "ç™¼ç”ŸéŒ¯èª¤ï¼š\n%s\n", err));
         else
         {
-                write("³É¹¦£¡\n");
+                write("æˆåŠŸï¼\n");
                 if ((i = sizeof(inv)) && (obj = find_object(file)))
                         while (i--)
                                 if (inv[i]) inv[i]->move(obj, 1);
@@ -103,10 +103,10 @@ protected int update_player(object me)
         int i;
 
         if (me->is_chatter())
-                return notify_fail("Äã²»ÄÜ¸üĞÂÁÄÌìID¡£\n");
+                return notify_fail("ä½ ä¸èƒ½æ›´æ–°èŠå¤©IDã€‚\n");
 
         if (wiz_level(me) > wiz_level(this_player()))
-                return notify_fail("ÄãÃ»ÓĞÈ¨ÏŞ¸üĞÂÕâ¸öÈËÎï¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¬Šé™æ›´æ–°é€™å€‹äººç‰©ã€‚\n");
 
         seteuid(getuid());
         env = environment(me);
@@ -119,7 +119,7 @@ protected int update_player(object me)
                 set("id",query("id",  me), link_ob);
                 if (! link_ob->restore())
                 {
-                        write("ÕÒ²»µ½¸ÃÍæ¼ÒµÄ´æÅÌÊı¾İ¡£\n");
+                        write("æ‰¾ä¸åˆ°è©²ç©å®¶çš„å­˜ç›¤æ•¸æ“šã€‚\n");
                         return 1;
                 }
                 if (interactive(me))
@@ -128,8 +128,8 @@ protected int update_player(object me)
 
         if( query("id", link_ob) != getuid(me) )
         {
-                write (sprintf("Á¬½Ó¶ÔÏóµÄID(%s)ºÍÓÃ»§µÄID(%s)²»ÏàÍ¬£¬²»ÄÜ"
-                       "¸üĞÂ¸ÃÍæ¼Ò¡£\n",query("id", link_ob),getuid(me)));
+                write (sprintf("é€£æ¥å°è±¡çš„ID(%s)å’Œç”¨æˆ¶çš„ID(%s)ä¸ç›¸åŒï¼Œä¸èƒ½"
+                       "æ›´æ–°è©²ç©å®¶ã€‚\n",query("id", link_ob),getuid(me)));
                 return 1;
         }
 
@@ -143,10 +143,10 @@ protected int update_player(object me)
                 equip += ([ ob[i] : query("equipped", ob[i]) ]);
         ob->move(VOID_OB);
 
-        // ±£´æÓÃ»§µÄ½ø¶È
+        // ä¿å­˜ç”¨æˆ¶çš„é€²åº¦
         me->save();
 
-        // Èç¹ûÔÚÏß£¬ÒÆ¶¯»¥¶¯¶ÔÏó
+        // å¦‚æœåœ¨ç·šï¼Œç§»å‹•äº’å‹•å°è±¡
         if (interactive(me))
                 exec(link_ob, me);
         destruct(me);
@@ -158,7 +158,7 @@ protected int update_player(object me)
         for (i = 0; i < sizeof(dob); i++)
                 destruct(dob[i]);
 
-        write("ÉíÌå¸üĞÂÍê±Ï¡£\n\n");
+        write("èº«é«”æ›´æ–°å®Œç•¢ã€‚\n\n");
         obj->move(env);
         ob->move(obj);
 
@@ -180,11 +180,11 @@ protected int update_player(object me)
 int help(object me)
 {
   write(@HELP
-Ö¸Áî¸ñÊ½ : update <µµÃû|here|me|Íæ¼ÒÃû>
+æŒ‡ä»¤æ ¼å¼ : update <æª”å|here|me|ç©å®¶å>
 
-Õâ¸öÖ¸Áî¿ÉÒÔ¸üĞÂµµ°¸, ²¢½«ĞÂµµµÄÄÚÈİÔØÈë¼ÇÒäÌåÄÚ. ÈôÄ¿±êÎª
-'here' Ôò¸üĞÂËùÔÚ»·¾³. ÈôÄ¿±êÎª 'me' Ôò¸üĞÂ×Ô¼ºµÄÈËÎï. ÈôÄ¿
-±êÎªÍæ¼ÒÔò¿É¸üĞÂÍæ¼ÒÎï¼ş.
+é€™å€‹æŒ‡ä»¤å¯ä»¥æ›´æ–°æª”æ¡ˆ, ä¸¦å°‡æ–°æª”çš„å…§å®¹è¼‰å…¥è¨˜æ†¶é«”å…§. è‹¥ç›®æ¨™ç‚º
+'here' å‰‡æ›´æ–°æ‰€åœ¨ç’°å¢ƒ. è‹¥ç›®æ¨™ç‚º 'me' å‰‡æ›´æ–°è‡ªå·±çš„äººç‰©. è‹¥ç›®
+æ¨™ç‚ºç©å®¶å‰‡å¯æ›´æ–°ç©å®¶ç‰©ä»¶.
 
 HELP
     );

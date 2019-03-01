@@ -7,9 +7,9 @@ inherit F_CLEAN_UP;
 void create()
 {
         seteuid(getuid());
-        set("name", "ºô½ĞÖ¸Áî");
+        set("name", "å‘¼å«æŒ‡ä»¤");
                 set("id", "call");  
-        set("channel_id",HIW"ºô½Ğ¾«Áé");
+        set("channel_id",HIW"å‘¼å«ç²¾éˆ");
 }
 
 
@@ -31,16 +31,16 @@ int main(object me, string arg)
                 if (sscanf(arg, "-%s %s", euid, arg) == 2)
                 {
                         if ((string)SECURITY_D->get_status(me) != "(admin)")
-                                return notify_fail("Äã²»ÄÜÉè¶¨×Ô¼ºµÄ euid¡£\n");
+                                return notify_fail("ä½ ä¸èƒ½è¨­å®šè‡ªå·±çš„ euidã€‚\n");
                         seteuid(euid);
                 }
                 else
                         seteuid(geteuid(this_player()));
 
                 if (sscanf(arg, "%s->%s(%s", objname, func, param) != 3)
-                        return notify_fail("Ö¸Áî¸ñÊ½£ºcall <Îï¼ş>-><º¯Êı>( <²ÎÊı>, ... )\n");
+                        return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šcall <ç‰©ä»¶>-><å‡½æ•¸>( <åƒæ•¸>, ... )\n");
         } else
-                return notify_fail("Ö¸Áî¸ñÊ½£ºcall <Îï¼ş>-><º¯Êı>( <²ÎÊı>, ... )\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šcall <ç‰©ä»¶>-><å‡½æ•¸>( <åƒæ•¸>, ... )\n");
 
         if (strlen(param) >= 1 && param[strlen(param) - 1] == ')')
                 param = param[0..<2];
@@ -51,7 +51,7 @@ int main(object me, string arg)
         if (! obj || ! me->visible(obj))
                 obj=find_object(resolve_path(query("cwd", me),objname));
         if (objname == "me") obj = me;
-        if (! obj) return notify_fail("ÕÒ²»µ½Ö¸¶¨µÄÎï¼ş¡£\n");
+        if (! obj) return notify_fail("æ‰¾ä¸åˆ°æŒ‡å®šçš„ç‰©ä»¶ã€‚\n");
 
         // check privilege
         if (! me->is_admin() && query("id", me) != "luoyun")
@@ -63,31 +63,31 @@ int main(object me, string arg)
 
                 case "self":
                         if (obj != me)
-                                return notify_fail("ÄãÖ»ÄÜÊ¹ÓÃ¸ÃÃüÁîºô½Ğ×ÔÉíµÄº¯Êı¡£\n");
+                                return notify_fail("ä½ åªèƒ½ä½¿ç”¨è©²å‘½ä»¤å‘¼å«è‡ªèº«çš„å‡½æ•¸ã€‚\n");
                         break;
 
                 case "npc":
                         if (playerp(obj) || ! obj->is_character())
-                                return notify_fail("ÄãÖ»ÄÜºô½Ğ NPC µÄº¯Êı¡£\n");
+                                return notify_fail("ä½ åªèƒ½å‘¼å« NPC çš„å‡½æ•¸ã€‚\n");
                         break;
 
                 case "user":
                         if (! playerp(obj))
-                                return notify_fail("ÄãÖ»ÄÜ¶ÔÍæ¼ÒÊ¹ÓÃÕâ¸öÃüÁî¡£\n");
+                                return notify_fail("ä½ åªèƒ½å°ç©å®¶ä½¿ç”¨é€™å€‹å‘½ä»¤ã€‚\n");
                         break;
 
                 case "nonechar":
                         if (obj->is_character())
-                                return notify_fail("ÄãÖ»ÄÜ¶Ô·Ç½ÇÉ«¶ÔÏóÊ¹ÓÃÕâ¸öÃüÁî¡£\n");
+                                return notify_fail("ä½ åªèƒ½å°éè§’è‰²å°è±¡ä½¿ç”¨é€™å€‹å‘½ä»¤ã€‚\n");
                         break;
 
                 case "wizard":
                         if (! wizardp(obj))
-                                return notify_fail("ÄãÖ»ÄÜ¶ÔÎ×Ê¦Ê¹ÓÃÕâ¸öÃüÁî¡£\n");
+                                return notify_fail("ä½ åªèƒ½å°å·«å¸«ä½¿ç”¨é€™å€‹å‘½ä»¤ã€‚\n");
                         break;
 
                 default:
-                        return notify_fail("Äã²»ÄÜÊ¹ÓÃ¸ÃÃüÁî¡£\n");
+                        return notify_fail("ä½ ä¸èƒ½ä½¿ç”¨è©²å‘½ä»¤ã€‚\n");
                 }
         }
 
@@ -101,7 +101,7 @@ int main(object me, string arg)
                                 obj->name(1), geteuid(obj), func, param));
         } else
         if (! master()->valid_write(base_name(obj), me, "set"))
-                return notify_fail("ÄãÃ»ÓĞÖ±½Óºô½ĞÕâ¸öÎï¼şµÄº¯ÊıµÄÈ¨Á¦¡£\n");
+                return notify_fail("ä½ æ²’æœ‰ç›´æ¥å‘¼å«é€™å€‹ç‰©ä»¶çš„å‡½æ•¸çš„æ¬ŠåŠ›ã€‚\n");
 
         args = explode(param, ",");
         for (i = 0; i < sizeof(args); i++)
@@ -122,8 +122,8 @@ int main(object me, string arg)
         if (func == "set" && playerp(obj) &&
             sizeof(args) && args[0] == "name")
         {
-                write(HIY "½¨Òé²»ÒªÓÃ call ÃüÁîĞŞ¸ÄÍæ¼ÒµÄÃû"
-                      "×Ö£¬Çë²Î¼û changename ÃüÁî¡£\n" NOR);
+                write(HIY "å»ºè­°ä¸è¦ç”¨ call å‘½ä»¤ä¿®æ”¹ç©å®¶çš„å"
+                      "å­—ï¼Œè«‹åƒè¦‹ changename å‘½ä»¤ã€‚\n" NOR);
         }
 
         args = ({ func }) + args;
@@ -132,7 +132,7 @@ int main(object me, string arg)
         e = eval_cost();
         if (catch(result = call_other(obj, args)))
         {
-                write(HIR "ºô½ĞÖĞ·¢ÉúÁË´íÎó¡£\n" NOR);
+                write(HIR "å‘¼å«ä¸­ç™¼ç”Ÿäº†éŒ¯èª¤ã€‚\n" NOR);
                 return 1;
         }
 
@@ -143,7 +143,7 @@ int main(object me, string arg)
                 args[i] = sprintf("%O", args[i]);
 
         me->start_more(sprintf("%O->%s(%s) = %O\n"
-                               WHT "Total eval cost:%d  CPU time: %d+%d ºÁÃë\n" NOR,
+                               WHT "Total eval cost:%d  CPU time: %d+%d æ¯«ç§’\n" NOR,
                                obj, func, 
                                implode(args[1..sizeof(args)-1], ", "), result, e,
                                linfo["utime"] - info["utime"],
@@ -154,14 +154,14 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : call <Îï¼ş>-><º¯Êı>(<²ÎÊı>, ...... )
+æŒ‡ä»¤æ ¼å¼ : call <ç‰©ä»¶>-><å‡½æ•¸>(<åƒæ•¸>, ...... )
  
-ºô½Ğ<Îï¼ş>ÀïµÄ<º¯Êı>²¢´«ÈëÏà¹Ø<²ÎÊı>.
+å‘¼å«<ç‰©ä»¶>è£¡çš„<å‡½æ•¸>ä¸¦å‚³å…¥ç›¸é—œ<åƒæ•¸>.
 
-¸ÃÃüÁîÔÚ¿ÉÒÔ±»ÊÚÈ¨Ê¹ÓÃµÄĞÅÏ¢°üÀ¨£º
-self¡¢npc¡¢user¡¢nonechar¡¢wizard¡¢all¡£
+è©²å‘½ä»¤åœ¨å¯ä»¥è¢«æˆæ¬Šä½¿ç”¨çš„ä¿¡æ¯åŒ…æ‹¬ï¼š
+selfã€npcã€userã€nonecharã€wizardã€allã€‚
 
-Ïà¹ØÃüÁî£ºfindusr
+ç›¸é—œå‘½ä»¤ï¼šfindusr
 HELP );
         return 1;
 }

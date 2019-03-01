@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�����");
+        set("short", "三清殿");
         set("long", @LONG
-����������������񣬲������⸮�ڵľ����ൽ�������
-ȥ���㻹Ը�ˣ��������𲢲���������Ҳ��ͷ�����������ᡣ����
-ȥ�����߸ߵĸ�¥��������ʸ�
+三清殿供奉的是三清神像，不過開封府內的居民大多到大相國寺
+去燒香還願了，這裡的香火並不旺。神像也蓬頭垢面無人理會。西行
+去有座高高的閣樓，就是玉皇閣。
 LONG );
         set("objects", ([
                   __DIR__"npc/obj/sanqingxiang" : 1,

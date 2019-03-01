@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��԰");
+        set("short", "後花園");
         set("long", @LONG
-���Ǿ���ȵĺ�԰������԰��Ⱥ�����涷�ޣ�ż�Ż���
-�˱ǣ��������顣���ܴ�ľ����������׷����Ϸ������һ����
-�¡�
+這是絕情谷的後花園，但見園中群花爭奇鬥艷，偶聞花香
+撲鼻，醉人心扉。四周翠木叢生，飛禽追逐嬉戲，別有一番景
+致。
 LONG);
         set("exits", ([
                "north"   : __DIR__"zizhuxuan",

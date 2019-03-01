@@ -15,20 +15,20 @@ int update_condition(object me, int duration)
 
         if( query_temp("where", me)){
         if( query_temp("where", me) != environment(me)){
-                message_vision(HIY"Ò»¸öËÎ±øÅÜ¹ýÀ´¶Ô$NËµµÀ£º½ÐÄãÊØ³Ç£¬ÄãÈ´µ½´¦ÏÐ¹ä£¬ÎÒÈ¥±¨¸æ¹ù´óÈË£¡\n"NOR,me);
+                message_vision(HIY"ä¸€å€‹å®‹å…µè·‘éŽä¾†å°$Nèªªé“ï¼šå«ä½ å®ˆåŸŽï¼Œä½ å»åˆ°è™•é–’é€›ï¼Œæˆ‘åŽ»å ±å‘Šéƒ­å¤§äººï¼\n"NOR,me);
                 set_temp("job_failed", 1, me);
                 return 0;
         }
         }
 
         if( query_temp("start_job", me)){
-        message_vision(HIY"$NÕýÕ¾ÔÚ³ÇÇ½ÉÏÃÜÇÐ×¢ÊÓ×Å³ÇÏÂ"HIR"ÃÉ¹Å±ø"HIY"µÄÒ»¾ÙÒ»¶¯¡£\n"NOR,ob);
+        message_vision(HIY"$Næ­£ç«™åœ¨åŸŽç‰†ä¸Šå¯†åˆ‡æ³¨è¦–è‘—åŸŽä¸‹"HIR"è’™å¤å…µ"HIY"çš„ä¸€èˆ‰ä¸€å‹•ã€‚\n"NOR,ob);
         }
         me->apply_condition("jobshadi_limit", duration - 1);
 
         if(duration<1)
         {
-                message_vision(CYN"\nÒ»¸öÊØ³ÇËÎ±øÅÜ¹ýÀ´ËµµÀ£ºÃÉ¹Å÷°×ÓÔÝÊ±±»»÷ÍËÁË£¬$N¿ÉÒÔ»ØÈ¥¸´ÃüÁË£¡\n"NOR,ob);
+                message_vision(CYN"\nä¸€å€‹å®ˆåŸŽå®‹å…µè·‘éŽä¾†èªªé“ï¼šè’™å¤é¼å­æš«æ™‚è¢«æ“Šé€€äº†ï¼Œ$Nå¯ä»¥å›žåŽ»å¾©å‘½äº†ï¼\n"NOR,ob);
         if( query_temp("start_job", me)){
                 set_temp("job_over", 1, ob);
         }

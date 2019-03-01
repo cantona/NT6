@@ -71,16 +71,16 @@ nomask int evaluate_command(string verb, string arg)
         if( stringp(file = find_command(verb)) && call_other(file, "main", me, arg) )
                 ; else
         if( me->is_in_prison() ) 
-                return notify_fail("Óü×äºÈµÀ£ºÄãÀÏÀÏÊµÊµµÄ´ô×Å±ð¶¯£¡" + appromix_time(me->query_time_to_leave(), 1) + "·ÅÄã³öÈ¥£¡\n")
+                return notify_fail("ç„å’å–é“ï¼šä½ è€è€å¯¦å¯¦çš„å‘†è‘—åˆ¥å‹•ï¼" + appromix_time(me->query_time_to_leave(), 1) + "æ”¾ä½ å‡ºåŽ»ï¼\n")
                 ; else
         if( query("id") == "guest" )
-                return notify_fail("¼ÈÈ»½ö½öÊÇÀ´²Î¹Û£¬»¹ÊÇ²»ÒªËµ»°ÁË£¡\n")
+                return notify_fail("æ—¢ç„¶åƒ…åƒ…æ˜¯ä¾†åƒè§€ï¼Œé‚„æ˜¯ä¸è¦èªªè©±äº†ï¼\n")
                 ; else
         if( EMOTE_D->do_emote(me, verb, arg) )
                 ; else
         if( CHANNEL_D->do_channel(me, verb, arg) )
                 ; else
-        if( mapp(para) && para["auto_say"] && query_fail_msg() == "Ê²Ã´£¿\n" &&
+        if( mapp(para) && para["auto_say"] && query_fail_msg() == "ä»€éº¼ï¼Ÿ\n" &&
                 stringp(file = find_command("say")) && !me->is_direct_command() &&
                 call_other(file, "main", me, me->query_orginal_input()) )
                 ; else
@@ -116,7 +116,7 @@ protected nomask int command_hook(string arg)
         };
         if( !objectp(me) ) return 1;
         if( command_timecost > 200000 )
-                CHANNEL_D->channel_broadcast("nch", sprintf("%sÏÂ´ïÖ¸Áî %s ³¬¹ýÏµÍ³ÏÞÖÆ£¬Ö´ÐÐÊ±¼ä(%fs) \n", me->query_idname(1), verb+ " " +arg, to_float(command_timecost)/1000000));
+                CHANNEL_D->channel_broadcast("nch", sprintf("%sä¸‹é”æŒ‡ä»¤ %s è¶…éŽç³»çµ±é™åˆ¶ï¼ŒåŸ·è¡Œæ™‚é–“(%fs) \n", me->query_idname(1), verb+ " " +arg, to_float(command_timecost)/1000000));
 #else
         result = evaluate_command(verb, arg);
         if( !objectp(me) ) return 1;
@@ -160,7 +160,7 @@ nomask void enable_player()
         if( !enabled ) {
                 enable_commands();
                 enabled = 1;
-                // ÓÉevaluate_commandÌæ´ú
+                // ç”±evaluate_commandæ›¿ä»£
                 add_action("command_hook", "", 1);
         }
 

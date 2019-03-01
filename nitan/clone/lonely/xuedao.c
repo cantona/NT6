@@ -5,23 +5,23 @@ inherit BLADE;
 
 void create()
 {
-        set_name(HIR "Ñªµ¶" NOR,({ "xue dao", "dao", "xue", "blade" }) );
+        set_name(HIR "è¡€åˆ€" NOR,({ "xue dao", "dao", "xue", "blade" }) );
         set_weight(6000);
         if (clonep())
                 destruct(this_object());
         else {
-                set("long", HIR "ÕâÊÇÒ»°Ñ²øÔÚÑü¼äµÄ±¦µ¶£¬µ¶·æ´ø×Åµ­µ­µÄ"
-                            "ÑªÓ°¡£\n" NOR);
-                set("unit", "±ú");
+                set("long", HIR "é€™æ˜¯ä¸€æŠŠçºåœ¨è…°é–“çš„å¯¶åˆ€ï¼Œåˆ€é‹’å¸¶è‘—æ·¡æ·¡çš„"
+                            "è¡€å½±ã€‚\n" NOR);
+                set("unit", "æŸ„");
                 set("value", 800000);
                 set("material", "steel");
-                set("no_sell", "Õâ¡­Õâ²»ÊÇÑªµ¶ÃÅµÄ¶«Î÷Âğ£¿ÎÒ»¹ÒªÄÔ´ü£¬Äã"
-                               "×Ô¸öÁô×Å°É£¡");
-                set("wield_msg", HIR "$N" HIR "Ò»ÉùÒõĞ¦£¬³é³öÒ»±úÑªºìÉ«"
-                               "µÄµ¥µ¶¸ß¸ßÑïÆğ£¬¿ÕÆøÖĞ¶ÙÊ±ÃÖÂş³öÒ»¹ÉÉ±Æø"
-                               "¡£\n" NOR);
-                set("unwield_msg", HIR "$N" HIR "Ò»ÉùÇáºß£¬½«ÊÖÖĞÑªµ¶²å"
-                               "»Ø±³ºó¡£\n" NOR);
+                set("no_sell", "é€™â€¦é€™ä¸æ˜¯è¡€åˆ€é–€çš„æ±è¥¿å—ï¼Ÿæˆ‘é‚„è¦è…¦è¢‹ï¼Œä½ "
+                               "è‡ªå€‹ç•™è‘—å§ï¼");
+                set("wield_msg", HIR "$N" HIR "ä¸€è²é™°ç¬‘ï¼ŒæŠ½å‡ºä¸€æŸ„è¡€ç´…è‰²"
+                               "çš„å–®åˆ€é«˜é«˜æšèµ·ï¼Œç©ºæ°£ä¸­é “æ™‚å½Œæ¼«å‡ºä¸€è‚¡æ®ºæ°£"
+                               "ã€‚\n" NOR);
+                set("unwield_msg", HIR "$N" HIR "ä¸€è²è¼•å“¼ï¼Œå°‡æ‰‹ä¸­è¡€åˆ€æ’"
+                               "å›èƒŒå¾Œã€‚\n" NOR);
                 set("stable", 100);
         }
         init_blade(160);
@@ -42,15 +42,15 @@ mixed hit_ob(object me, object victim, int damage_bonus)
         case 0:
                 if (! victim->is_busy())
                 victim->start_busy(me->query_skill("blade") / 10 + 2);
-                return HIR "$N" HIR "Ò»Éù´óºÈ£¬ÊÖÖĞÑªµ¶Áè¿ÕÅüÕ¶¶ø³ö£¬»®"
-                       "³öÒ»µÀµÀÑªÉ«µ¶Ã¢£¬Ö±±ÆµÃ$n" HIR "Á¬Á¬ºóÍË£¡\n"
+                return HIR "$N" HIR "ä¸€è²å¤§å–ï¼Œæ‰‹ä¸­è¡€åˆ€å‡Œç©ºåŠˆæ–¬è€Œå‡ºï¼ŒåŠƒ"
+                       "å‡ºä¸€é“é“è¡€è‰²åˆ€èŠ’ï¼Œç›´é€¼å¾—$n" HIR "é€£é€£å¾Œé€€ï¼\n"
                        NOR;
         case 1:
                 n = me->query_skill("blade");
                 victim->receive_damage("qi", n, me);
                 victim->receive_wound("qi", n, me);
-                return HIR "$n" HIR "¼ûÖÜÎ§Ñª¹âÂşÌì£¬µ¶Ó°ÖØÖØ£¬²»ÓÉµÃĞÄ"
-                       "ÉúÎ·¾å£¬Ö»ÄÜ¹»ÃãÇ¿×÷³öµÖµ²£¡\n" NOR;
+                return HIR "$n" HIR "è¦‹å‘¨åœè¡€å…‰æ¼«å¤©ï¼Œåˆ€å½±é‡é‡ï¼Œä¸ç”±å¾—å¿ƒ"
+                       "ç”Ÿç•æ‡¼ï¼Œåªèƒ½å¤ å‹‰å¼·ä½œå‡ºæŠµæ“‹ï¼\n" NOR;
         }
         return damage_bonus;
 }

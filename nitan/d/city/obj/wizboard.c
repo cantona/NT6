@@ -1,4 +1,4 @@
-// wizboard.c Î×Ê¦°æ
+// wizboard.c æ‹µå‘‡å”³
 
 #include <ansi.h>
 
@@ -6,22 +6,22 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIG"·ç³¾¾ÉÓÑ°å"NOR, ({ "board", "ban" }) );
+        set_name(HIG"ç‘é³¥å°è¡­å•£"NOR, ({ "board", "ban" }) );
         set_weight(3000);
         set_max_encumbrance(5000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿é");
+                set("unit", "è¼¸");
                 set("long", HIM"
-          ÏÀ¿ÍĞĞÒ»°ÙÒ»¾Å¾ÅÆßÄê´ºÌì´´Á¢ÖÁ½ñ"HIR"Î×Ê¦Ãû²á\n"HIC"
-¡Ô"HIY"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"HIC"¡Ô"HIG"
+          ç‹¨è«¦ä¿´ç¨å•ƒç¨å¬å¬ï›¯çˆ›æ™¯æ¯æ–è•¾ç¥«è¸"HIR"æ‹µå‘‡é¡èŠ\n"HIC"
+âˆš"HIY"å²¸å²¸å²¸å²¸å²¸å²¸å²¸å²¸å²¸å²¸å²¸å²¸å²¸å²¸å²¸å²¸å²¸å²¸å²¸å²¸å²¸å²¸å²¸å²¸å²¸å²¸å²¸å²¸å²¸å²¸å²¸å²¸"HIC"âˆš"HIG"
 ahda                along               constant            evil
-fandog              jacki               java"HIB"(´´Ê¼ÈË)"HIG"        kiler
-osdine              rknn                sega                sherry"HIB"(´´Ê¼ÈË)"HIG"
-sir                 solomon"HIB"(´´Ê¼ÈË)"HIG"     spe                 suncity
-winder"HIB"(´´Ê¼ÈË)"HIG"      wuzw"HIC"
-¡Ô"HIY"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"HIC"¡Ô\n"NOR);
+fandog              jacki               java"HIB"(æ–å®ï •)"HIG"        kiler
+osdine              rknn                sega                sherry"HIB"(æ–å®ï •)"HIG"
+sir                 solomon"HIB"(æ–å®ï •)"HIG"     spe                 suncity
+winder"HIB"(æ–å®ï •)"HIG"      wuzw"HIC"
+âˆš"HIY"å²¸å²¸å²¸å²¸å²¸å²¸å²¸å²¸å²¸å²¸å²¸å²¸å²¸å²¸å²¸å²¸å²¸å²¸å²¸å²¸å²¸å²¸å²¸å²¸å²¸å²¸å²¸å²¸å²¸å²¸å²¸å²¸"HIC"âˆš\n"NOR);
                 set("material", "wood");
                 set("no_get",1);
                 set("no_drop",1);

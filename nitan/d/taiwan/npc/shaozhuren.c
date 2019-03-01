@@ -1,4 +1,4 @@
-// shaozhuren.c ÉÛ×åÄĞÈË
+// shaozhuren.c é‚µæ—ç”·äºº
 // Last Modifyed by Ahda on Jan. 4 2002
 
 inherit NPC;
@@ -8,8 +8,8 @@ void create()
         int age;
         age = 20 + random(40);
         
-        set_name("ÉÛ×åÄĞ×Ó", ({ "shaozhu man", "shaozhu", "man", "people", }));
-        set("gender", "ÄĞĞÔ");
+        set_name("é‚µæ—ç”·å­", ({ "shaozhu man", "shaozhu", "man", "people", }));
+        set("gender", "ç”·æ€§");
         set("age", age);
 
         set_skill("unarmed", 20);

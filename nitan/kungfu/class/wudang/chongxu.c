@@ -1,4 +1,4 @@
-// chongxu.c ³åĞé
+// chongxu.c æ²–è™›
 
 //#include "daozhang.h"
 inherit NPC;
@@ -6,9 +6,9 @@ inherit NPC;
 
 void create()
 {
-        set_name("³åĞéµÀ³¤", ({ "chongxu daozhang", "chongxu", "daozhang" }));
-        set("long","Ëû¾ÍÊÇÓáÁ«ÖÛµÄµÜ×Ó³åĞéµÀ³¤¡£\nËû½ñÄêËÄÊ®°ËËê£¬Ö÷¹ÜÎäµ±ÅÉ½ğ¶¥µÄË×ÊÂ¡£\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("æ²–è™›é“é•·", ({ "chongxu daozhang", "chongxu", "daozhang" }));
+        set("long","ä»–å°±æ˜¯ä¿è“®èˆŸçš„å¼Ÿå­æ²–è™›é“é•·ã€‚\nä»–ä»Šå¹´å››åå…«æ­²ï¼Œä¸»ç®¡æ­¦ç•¶æ´¾é‡‘é ‚çš„ä¿—äº‹ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 48);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -46,7 +46,7 @@ void create()
         map_skill("sword", "wudang-jian");
 
         set("env/wimpy", 60);
-        create_family("Îäµ±ÅÉ", 3, "µÜ×Ó");
+        create_family("æ­¦ç•¶æ´¾", 3, "å¼Ÿå­");
         set("class", "taoist");
 
         setup();

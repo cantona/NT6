@@ -10,16 +10,16 @@ int main(object me, string arg)
         string filename, dir;
         
         if (me->is_busy())
-                return notify_fail("ÄãÏÖÔÚÕıÃ¦¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£å¿™ã€‚\n");
 
         if( !wizardp(me) && (time()-query_temp("maze/map", me)<3) )
-                return notify_fail("ÏµÍ³Æø´­ĞêµØÌ¾µÀ£ºÂıÂıÀ´ ....\n");  
+                return notify_fail("ç³»çµ±æ°£å–˜å™“åœ°å˜†é“ï¼šæ…¢æ…¢ä¾† ....\n");  
         
         if( !query("maze", environment(me)) )
-                return notify_fail("ÕâÀï²»ÊÇÃÔ¹¬ÇøÓò£¬ÇëÓÃ help here ²é¿´¡£\n");  
+                return notify_fail("é€™è£¡ä¸æ˜¯è¿·å®®å€åŸŸï¼Œè«‹ç”¨ help here æŸ¥çœ‹ã€‚\n");  
                 
         if( query("jing", me)<5 )
-                return notify_fail("ÄãÏÖÔÚ¾«Éñ×´Ì¬²»¼Ñ£¬»¹ÊÇµÈ»áÔÙ²é°É¡£\n");
+                return notify_fail("ä½ ç¾åœ¨ç²¾ç¥ç‹€æ…‹ä¸ä½³ï¼Œé‚„æ˜¯ç­‰æœƒå†æŸ¥å§ã€‚\n");
 
         addn("jing", -5, me);
         set_temp("maze/map", time(), me);
@@ -75,7 +75,7 @@ int main(object me, string arg)
                         {
                                 for (int i=0; i<10; i++)
                                         content = replace_string(content, sprintf("%d", i), " ");                                       
-                                content = replace_string(content, "$HBWHT$  ", "$HBWHT$$BLU$¡ï");
+                                content = replace_string(content, "$HBWHT$  ", "$HBWHT$$BLU$â˜…");
                                 write(color_filter(content + "\n"));
                                 return 1;
                         }
@@ -84,7 +84,7 @@ int main(object me, string arg)
                         {
                                 for (int i=0; i<10; i++)
                                         content = replace_string(content, sprintf("%d", i), " "); 
-                                content = replace_string(content, "$HBRED$  ", "$HBRED$$BLU$¡ï");
+                                content = replace_string(content, "$HBRED$  ", "$HBRED$$BLU$â˜…");
                                 write(color_filter(content + "\n"));
                                 return 1;
                         }                         
@@ -99,7 +99,7 @@ int main(object me, string arg)
                                 if(!sscanf(str[idx+1..],"%d",y))
                                         return 0;
                                         
-                                content = replace_string(content, sprintf("%d%d", x, y), "$BLU$¡ï$NOR$");
+                                content = replace_string(content, sprintf("%d%d", x, y), "$BLU$â˜…$NOR$");
                                 for (int i=0; i<10; i++)
                                         content = replace_string(content, sprintf("%d", i), " "); 
                                 write(color_filter(content + "\n"));

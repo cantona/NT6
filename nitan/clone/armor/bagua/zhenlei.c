@@ -5,17 +5,17 @@ inherit WRISTS;
 
 void create()
 {
-        set_name(HIY "°ËØÔÕğÀ×Íó" NOR, ({ "zhenlei wan", "zhenlei", "wan" }));
+        set_name(HIY "å…«å¦éœ‡é›·è…•" NOR, ({ "zhenlei wan", "zhenlei", "wan" }));
         set_weight(100);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIY"Ñ×»Æ·çÓêÊ®Äê¼ÍÄîÌ××°Ö®£º°ËØÔÕğÀ×Íó\n" NOR);
-                set("unit", "Ë«");
+                set("long", HIY"ç‚é»ƒé¢¨é›¨åå¹´ç´€å¿µå¥—è£ä¹‹ï¼šå…«å¦éœ‡é›·è…•\n" NOR);
+                set("unit", "é›™");
                 set("value", 100);
                 set("armor_prop/armor", 100);
                 set("armor_prop/int", 10);
-                set("armor_prop/T_bagua", 1); // Ì××°¼ÆÊı±êÖ¾
+                set("armor_prop/T_bagua", 1); // å¥—è£è¨ˆæ•¸æ¨™å¿—
         }
         setup();
 }

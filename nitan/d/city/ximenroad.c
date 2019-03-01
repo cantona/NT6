@@ -7,11 +7,11 @@ string look_gaoshi();
 
 void create()
 {
-    	set("short", "Î÷ÃÅ´óµÀ");
+    	set("short", "è¥¿é–€å¤§é“");
         set("long", @LONG
-ÕâÀïÊÇÑïÖÝÎ÷³ÇÃÅÍâ´óµÀ¡£Î÷Í¨ÂåÑô³Ç£¬Ïò¶«¾ÍÊÇÎ÷ÃÅÁË¡£ÄÏ±ß£¬
-ÐÂ¿ªÁË¸öÎäµÀ´ó»á³¡£¬Ã¿µ½±ÈÎäÖ®ÆÚ£¬ÈËÉù¶¦·Ð£¬Äã²»½ûÏëÈ¥¼ûÊ¶Ò»
-ÏÂµ±½ñµÄ³ÉÃûÈËÎï¡£±±±ß¾ÍÊÇ´óÃû¶¦¶¦µÄÏÀÒåÃËÑïÖÝ·Ö²¿ÁË¡£
+é€™è£¡æ˜¯æšå·žè¥¿åŸŽé–€å¤–å¤§é“ã€‚è¥¿é€šæ´›é™½åŸŽï¼Œå‘æ±å°±æ˜¯è¥¿é–€äº†ã€‚å—é‚Šï¼Œ
+æ–°é–‹äº†å€‹æ­¦é“å¤§æœƒå ´ï¼Œæ¯åˆ°æ¯”æ­¦ä¹‹æœŸï¼Œäººè²é¼Žæ²¸ï¼Œä½ ä¸ç¦æƒ³åŽ»è¦‹è­˜ä¸€
+ä¸‹ç•¶ä»Šçš„æˆåäººç‰©ã€‚åŒ—é‚Šå°±æ˜¯å¤§åé¼Žé¼Žçš„ä¿ ç¾©ç›Ÿæšå·žåˆ†éƒ¨äº†ã€‚
 LONG );
         set("outdoors", "city");
 	set("exits", ([

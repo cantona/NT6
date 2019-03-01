@@ -1,11 +1,11 @@
 // This program is a part of NT MudLIB
-// xiangmo.c ½ğ¸Õ½µÄ§
+// xiangmo.c é‡‘å‰›é™é­”
 
 #include <ansi.h>
 #include <combat.h>
 inherit F_SSERVER;
 
-string name() { return "½ğ¸Õ½µÄ§"; }
+string name() { return "é‡‘å‰›é™é­”"; }
 
 int perform(object me, object target)
 {
@@ -30,32 +30,32 @@ TEXT;
         if (!target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("¡º½ğ¸Õ½µÄ§¡»Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€é‡‘å‰›é™é­”ã€åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         weapon=query_temp("weapon", me);
         if( !objectp(weapon) || query("skill_type", weapon) != "hammer" )
-                return notify_fail("ÄãÊÖÖĞÎŞèÆ£¬ÈçºÎ½µÄ§£¿\n");
+                return notify_fail("ä½ æ‰‹ä¸­ç„¡æµï¼Œå¦‚ä½•é™é­”ï¼Ÿ\n");
 
         if (me->query_skill("longxiang", 1) < 150 && me->query_skill("mizong-neigong",1) < 150 )
-                return notify_fail("ÄãµÄÄÚ¹¦»ğºòÎ´µ½£¬ÎŞ·¨Ê©Õ¹½µÄ§¾ø¼¼£¡\n");
+                return notify_fail("ä½ çš„å…§åŠŸç«å€™æœªåˆ°ï¼Œç„¡æ³•æ–½å±•é™é­”çµ•æŠ€ï¼\n");
 
         if (me->query_skill("xiangmo-chu", 1) < 150)
-                return notify_fail("ÄãµÄ½µÄ§èÆ»ğºòÎ´µ½£¬ÎŞ·¨Ê©Õ¹½µÄ§¾ø¼¼£¡\n");
+                return notify_fail("ä½ çš„é™é­”æµç«å€™æœªåˆ°ï¼Œç„¡æ³•æ–½å±•é™é­”çµ•æŠ€ï¼\n");
 
         if (me->query_skill("necromancy",1) < 200)
-                return notify_fail("Äã½µ·ü·¨ĞŞÎª²»¹»£¬ÈçºÎ½µ·üËûÈË£¿\n");
+                return notify_fail("ä½ é™ä¼æ³•ä¿®ç‚ºä¸å¤ ï¼Œå¦‚ä½•é™ä¼ä»–äººï¼Ÿ\n");
 
         if( query("neili", me) <= 1000 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»Ê¹ÓÃ¡º½ğ¸Õ½µÄ§¡»£¡\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ä½¿ç”¨ã€é‡‘å‰›é™é­”ã€ï¼\n");
 
         if( query("jingli", me) <= 500 )
-                return notify_fail("ÄãµÄ¾«Á¦²»¹»Ê¹ÓÃ¡º½ğ¸Õ½µÄ§¡»£¡\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤ ä½¿ç”¨ã€é‡‘å‰›é™é­”ã€ï¼\n");
 
         if( query_temp("xiangmo_busy", me) )
-                return notify_fail("ÄãÏëÔÙÊ¹ÓÃ½µ·ü´ó·¨£¬È´ÔõÃ´Ò²Ê¹²»³öÀ´£¡\n");
+                return notify_fail("ä½ æƒ³å†ä½¿ç”¨é™ä¼å¤§æ³•ï¼Œå»æ€éº¼ä¹Ÿä½¿ä¸å‡ºä¾†ï¼\n");
 
         if( target->is_busy() )
-                return notify_fail(target->name() + "Ä¿Ç°Õı×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É¡£\n");
+                return notify_fail(target->name() + "ç›®å‰æ­£è‡ªé¡§ä¸æš‡ï¼Œæ”¾è†½æ”»æ“Šå§ã€‚\n");
 
         nec = me->query_skill("necromancy",1);
         quick = (int)(me->query_skill("longxiang",1)/100);
@@ -66,8 +66,8 @@ TEXT;
         addn_temp("apply/damage", amount, me);
         addn_temp("apply/attack", amount*2, me);
         set_temp("xiangmo_busy", 1, me);
-        message_combatd(HIR"\n$N´óºôº¨Õ½£¬¿ÚÄîÃÜ×Ú²»¶¯Ã÷ÍõÕæÑÔ£¬Ê¹³ö¡º½ğ¸Õ½µÄ§¡»´ó·¨¡£\n"NOR,me,target);
-        message_combatd("$NÒ»Éù¸ßºô£¬ÉíĞÎ¶¸×ª£¬ÓÌÈçÑ©±ªÏÂÉ½¡£\n",me,target);
+        message_combatd(HIR"\n$Nå¤§å‘¼é…£æˆ°ï¼Œå£å¿µå¯†å®—ä¸å‹•æ˜ç‹çœŸè¨€ï¼Œä½¿å‡ºã€é‡‘å‰›é™é­”ã€å¤§æ³•ã€‚\n"NOR,me,target);
+        message_combatd("$Nä¸€è²é«˜å‘¼ï¼Œèº«å½¢é™¡è½‰ï¼ŒçŒ¶å¦‚é›ªè±¹ä¸‹å±±ã€‚\n",me,target);
         message_combatd(HIW+str+NOR,me,target);
         ap = nec + attack_power(me, "hammer");
         dp = defense_power(target, "force");
@@ -79,7 +79,7 @@ TEXT;
                 if( query("id", weapon) == "xiangmo chu")damage*=3/2;
                 if (random(ap)>dp/2 || !living(target))
                 {
-                        message_combatd(HIR"\n$n¼û´ËÇé¾°£¬ÒÑ²»ÖªËù´ë£¬Ö»¾õÍ·»èÑÛ»¨£¬ÍêÈ«±»$N½µ·ü¡£\n"NOR, me,target);
+                        message_combatd(HIR"\n$nè¦‹æ­¤æƒ…æ™¯ï¼Œå·²ä¸çŸ¥æ‰€æªï¼Œåªè¦ºé ­æ˜çœ¼èŠ±ï¼Œå®Œå…¨è¢«$Né™ä¼ã€‚\n"NOR, me,target);
                         target->receive_wound("qi", damage/3 + random(damage/3), me);
                         target->receive_wound("jing", damage/5 + random(damage/3), me);
                         str=COMBAT_D->status_msg(query("qi", target)*100/query("max_qi", target));
@@ -88,22 +88,22 @@ TEXT;
                                 target->start_busy(2);
                 }
                 else
-                {       message_combatd(HIR"\n$n¼û´ËÇé¾°£¬¼«Á¦°ÚÍÑ£¬½á¹û¾«Á¦´óºÄ²ÅÌø³ö$NµÄ½µÄ§»ÃÓ°¡£\n"NOR,me,target);
+                {       message_combatd(HIR"\n$nè¦‹æ­¤æƒ…æ™¯ï¼Œæ¥µåŠ›æ“ºè„«ï¼Œçµæœç²¾åŠ›å¤§è€—æ‰è·³å‡º$Nçš„é™é­”å¹»å½±ã€‚\n"NOR,me,target);
                         target->receive_damage("jing", damage/5 + random(damage/3), me);
                         target->receive_wound("qi", damage/4 + random(damage/3), me);
                         str=COMBAT_D->status_msg(query("qi", target)*100/query("max_qi", target));
                         message_combatd("($N"+str+")\n", target);
                         if( !target->is_busy() )
                                 target->start_busy(1+random(3));
-                        message_combatd(HIR"\n$N¼û$nÂ©³öÆÆÕÀ£¬¸ß¾ÙÊÖÖĞ"+query("name", weapon)+HIR"Ïò$nÏ®À´¡£\n"NOR,me,target);
+                        message_combatd(HIR"\n$Nè¦‹$næ¼å‡ºç ´ç¶»ï¼Œé«˜èˆ‰æ‰‹ä¸­"+query("name", weapon)+HIR"å‘$nè¥²ä¾†ã€‚\n"NOR,me,target);
                         COMBAT_D->do_attack(me,target,query_temp("weapon", me),1);
                 }
                 me->start_busy(3);
         }
         else
         {
-                message_combatd(HIR"$n¼û´ËÇé¾°£¬Ú¤Ë¼Ò»·­£¬ÖÕÓÚÊ¶ÆÆÁË$NµÄ½µÄ§»ÃÓ°¡£\n"NOR, me, target);
-                message_combatd("Ö»¼û$n²»ÍË·´½ø£¬ÉíÈçÆ®·ç£¬·´¶øÏò$N·¢Æğ½ø¹¥,$N¶ÙÊ±²»ÖªËù´ë¡£\n",me,target);
+                message_combatd(HIR"$nè¦‹æ­¤æƒ…æ™¯ï¼Œå†¥æ€ä¸€ç¿»ï¼Œçµ‚äºè­˜ç ´äº†$Nçš„é™é­”å¹»å½±ã€‚\n"NOR, me, target);
+                message_combatd("åªè¦‹$nä¸é€€åé€²ï¼Œèº«å¦‚é£„é¢¨ï¼Œåè€Œå‘$Nç™¼èµ·é€²æ”»,$Né “æ™‚ä¸çŸ¥æ‰€æªã€‚\n",me,target);
                 me->start_busy(4);
         }
         addn_temp("apply/damage", -amount, me);
@@ -117,5 +117,5 @@ void remove_effect(object me)
 {
         if (!me) return;
         delete_temp("xiangmo_busy", me);
-        tell_object(me, HIY"\nÄãµ÷Ï¢Æ¬¿Ì£¬½µ·ü´ó·¨ÓÖ¿ÉÊÕ·Å×ÔÈçÁË¡£\n"NOR);
+        tell_object(me, HIY"\nä½ èª¿æ¯ç‰‡åˆ»ï¼Œé™ä¼å¤§æ³•åˆå¯æ”¶æ”¾è‡ªå¦‚äº†ã€‚\n"NOR);
 }

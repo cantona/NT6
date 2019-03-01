@@ -1,24 +1,24 @@
 // This program is a part of NT MudLIB
 
 /*
-Ãû³Æ£º
-        valid_save_binary - ¿ØÖÆÒ»¸öÎï¼şÊÇ·ñ¿ÉÒÔ´¢´æËüÒÑÔØÈëµÄ³ÌÊ½¡£
-Óï·¨£º
+åç¨±ï¼š
+        valid_save_binary - æ§åˆ¶ä¸€å€‹ç‰©ä»¶æ˜¯å¦å¯ä»¥å„²å­˜å®ƒå·²è¼‰å…¥çš„ç¨‹å¼ã€‚
+èªæ³•ï¼š
         int valid_save_binary( string file );
 
-        ÕûÊı valid_save_binary( ×Ö´® file );
-ÓÃ·¨£º
-        Ö»ÓĞÆô¶¯ BINARIES Ê±ÓĞĞ§¡£
+        æ•´æ•¸ valid_save_binary( å­—ä¸² file );
+ç”¨æ³•ï¼š
+        åªæœ‰å•Ÿå‹• BINARIES æ™‚æœ‰æ•ˆã€‚
 
-        Çı¶¯³ÌÊ½±àÒëÊ±£¬Èç¹û¶¨ÒåÁË ALWAYS_SAVE_BINARIES£»»òÊÇÒ»¸öÎï¼şÖĞÊ¹
-        ÓÃÁË #pragma save_binary£¬¾Í»áÒÔ³ÌÊ½µÄµµ°¸Ãû³Æ×÷Îª²ÎÊıºô½Ğ
-        valid_save_binary¡£Èç¹û valid_save_binary ´«»Ø 1£¬´Ë³ÌÊ½»á´¢´æµ½Ó²
-        µúÖĞÒÔ¼Ó¿ìÖØĞÂÔØÈëµÄÊ±¼ä¡£·´Ö®Ôò²»´¢´æ£¬ÏÂ´ÎÖØĞÂÔØÈëÊ±»áÈçÍ¬Íù³£Ò»
-        ÑùÖØĞÂ±àÒëÒ»´Î¡£
-×÷Õß£º
+        é©…å‹•ç¨‹å¼ç·¨è­¯æ™‚ï¼Œå¦‚æœå®šç¾©äº† ALWAYS_SAVE_BINARIESï¼›æˆ–æ˜¯ä¸€å€‹ç‰©ä»¶ä¸­ä½¿
+        ç”¨äº† #pragma save_binaryï¼Œå°±æœƒä»¥ç¨‹å¼çš„æª”æ¡ˆåç¨±ä½œç‚ºåƒæ•¸å‘¼å«
+        valid_save_binaryã€‚å¦‚æœ valid_save_binary å‚³å› 1ï¼Œæ­¤ç¨‹å¼æœƒå„²å­˜åˆ°ç¡¬
+        ç¢Ÿä¸­ä»¥åŠ å¿«é‡æ–°è¼‰å…¥çš„æ™‚é–“ã€‚åä¹‹å‰‡ä¸å„²å­˜ï¼Œä¸‹æ¬¡é‡æ–°è¼‰å…¥æ™‚æœƒå¦‚åŒå¾€å¸¸ä¸€
+        æ¨£é‡æ–°ç·¨è­¯ä¸€æ¬¡ã€‚
+ä½œè€…ï¼š
         Tim Hollebeek  Beek@ZorkMUD, Lima Bean, IdeaExchange, and elsewhere
-·­Òë£º
-        spock@muds.net          2000.May.21.    v22 °æ
+ç¿»è­¯ï¼š
+        spock@muds.net          2000.May.21.    v22 ç‰ˆ
 */
 
 // valid_save_binary: controls whether an object can save a binary

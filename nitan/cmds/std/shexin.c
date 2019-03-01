@@ -13,70 +13,70 @@ int main(object me, string arg)
         seteuid(getuid());
 
         if( query("no_ansuan", environment(me)) )
-                return notify_fail("ÕâÀï½ûÖ¹Õ½¶·¡£\n");
+                return notify_fail("é€™è£¡ç¦æ­¢æˆ°é¬¥ã€‚\n");
         if( query("no_fight", environment(me)) )
-                return notify_fail("ÕâÀï½ûÖ¹Õ½¶·¡£\n");
+                return notify_fail("é€™è£¡ç¦æ­¢æˆ°é¬¥ã€‚\n");
         if( me->is_busy() )
-                return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓÐÍê³É£¡\n");
+                return notify_fail("ä½ ä¸Šä¸€å€‹å‹•ä½œé‚„æ²’æœ‰å®Œæˆï¼\n");
         if( me != this_player() ) return 0;
         me = this_player();
-        if( (!(fam=query("family", me)) || fam["family_name"] != "Ñ©É½ËÂ") )
-                return notify_fail("Ö»ÓÐÑ©É½ËÂµÜ×Ó²ÅÄÜÐÐÊ¹ÉåÐÄÊõ£¡\n");
+        if( (!(fam=query("family", me)) || fam["family_name"] != "é›ªå±±å¯º") )
+                return notify_fail("åªæœ‰é›ªå±±å¯ºå¼Ÿå­æ‰èƒ½è¡Œä½¿æ‡¾å¿ƒè¡“ï¼\n");
         if (me->query_skill("necromancy",1) < 40)
-                return notify_fail("ÄãµÄ½µ·ü·¨»¹Ì«Ç³±¡ÁË£¬Ã»·¨ÐÐÊ¹ÉåÐÄÊõ¡£\n");
+                return notify_fail("ä½ çš„é™ä¼æ³•é‚„å¤ªæ·ºè–„äº†ï¼Œæ²’æ³•è¡Œä½¿æ‡¾å¿ƒè¡“ã€‚\n");
 
         if( !arg || sscanf(arg, "%s to %s", dest, cmd) != 2 )
-                return notify_fail("Ö¸Áî¸ñÊ½: shexin <Ä³ÈË> to <Ö¸Áî>\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼: shexin <æŸäºº> to <æŒ‡ä»¤>\n");
 
 //        if (!ob = get_object( dest ) )
         if( !objectp(ob = present(dest, environment(me))))
-                return notify_fail("ÕÒ²»µ½" + dest + "¡£\n");
+                return notify_fail("æ‰¾ä¸åˆ°" + dest + "ã€‚\n");
         if( !living(ob) || query_temp("noliving", ob) )
-                return notify_fail("Õâ¸öÎï¼þ²»ÄÜ±»ÉåÐÄ¡£\n");
+                return notify_fail("é€™å€‹ç‰©ä»¶ä¸èƒ½è¢«æ‡¾å¿ƒã€‚\n");
         if( query("id", ob) == "renzhi" )
-                return notify_fail("Äã¶Ô"+ob->name() + "ÐÐÊ¹ÉåÐÄÊõ¿É²»³É¡£\n");
+                return notify_fail("ä½ å°"+ob->name() + "è¡Œä½¿æ‡¾å¿ƒè¡“å¯ä¸æˆã€‚\n");
         if( userp(me) && query("owner", ob) && query("id", me) != query("owner", ob) )
-                        return notify_fail("²»ÊÇÄãÒª×¥µÄÈË£¬´ÕÊ²Ã´ÈÈÄÖ£¡\n");                                                
-        notify_fail("´ËÈËÀ´Í·²»Ð¡£¬»¹ÊÇÉÙÈÇÎªÃî¡£\n");
+                        return notify_fail("ä¸æ˜¯ä½ è¦æŠ“çš„äººï¼Œæ¹Šä»€éº¼ç†±é¬§ï¼\n");                                                
+        notify_fail("æ­¤äººä¾†é ­ä¸å°ï¼Œé‚„æ˜¯å°‘æƒ¹ç‚ºå¦™ã€‚\n");
         if (!userp(ob) && !ob->accept_hit(me)) return 0;                
 
         if( query("no_get", ob) || query("no_get_from", ob) )
-                return notify_fail("Äã¶Ô"+ob->name() + "ÐÐÊ¹ÉåÐÄÊõ¿É²»³É¡£\n");
-        if( wizardp(ob) ) return notify_fail("Î×Ê¦²»ÄÜ±»ÄãÉåÐÄ¡£\n");
+                return notify_fail("ä½ å°"+ob->name() + "è¡Œä½¿æ‡¾å¿ƒè¡“å¯ä¸æˆã€‚\n");
+        if( wizardp(ob) ) return notify_fail("å·«å¸«ä¸èƒ½è¢«ä½ æ‡¾å¿ƒã€‚\n");
         if( wiz_level(me) < wiz_level(ob) )
-                return notify_fail("ÄãÃ»·¨¶Ô" + ob->name() + "ÐÐÊ¹ÉåÐÄÊõ¡£\n");
+                return notify_fail("ä½ æ²’æ³•å°" + ob->name() + "è¡Œä½¿æ‡¾å¿ƒè¡“ã€‚\n");
 message_vision("
-$NµÄÒ»¶ÔÑÛ¾¦°ëÃÐ×Å£¬Ö»ÈçÁ½µÀÏ¸·ì£¬µ«Ï¸·ìÖÐÓ¨È»ÓÐ¹â£¬ÑÛÉñÉõÊÇÇåÀÊ¡£
-$nÎ¢¾õ²»Í×£¬ÒªÏë×ªÍ·±Ü¿ª$NµÄÑÛ¹â£¬¿ÉÊÇÒ»Ë«ÑÛ¾¦¾¹ËÆ±»$NµÄÄ¿¹âÎü×¡ÁË£¬
-²»ÓÉ×ÔÖ÷µÄÄýÊÓ×ÅËû¡£\n", me, ob);
+$Nçš„ä¸€å°çœ¼ç›åŠçœ¯è‘—ï¼Œåªå¦‚å…©é“ç´°ç¸«ï¼Œä½†ç´°ç¸«ä¸­ç‘©ç„¶æœ‰å…‰ï¼Œçœ¼ç¥žç”šæ˜¯æ¸…æœ—ã€‚
+$nå¾®è¦ºä¸å¦¥ï¼Œè¦æƒ³è½‰é ­é¿é–‹$Nçš„çœ¼å…‰ï¼Œå¯æ˜¯ä¸€é›™çœ¼ç›ç«Ÿä¼¼è¢«$Nçš„ç›®å…‰å¸ä½äº†ï¼Œ
+ä¸ç”±è‡ªä¸»çš„å‡è¦–è‘—ä»–ã€‚\n", me, ob);
         if( random(me->query_skill("necromancy",1)) < random(ob->query_skill("force",1)))
         {
-                message_vision("Í»È»$nÃÍµØÒ»ÕóÇåÐÑ£¬ÓÚÊÇ£¬$n´óºÈÒ»Éù£ºÄã»îÄåÁË£¬¸ÒÀ´¶ÔÎÒÊ©ÉåÐÄÊõ£¿\n", me, ob);
+                message_vision("çªç„¶$nçŒ›åœ°ä¸€é™£æ¸…é†’ï¼ŒäºŽæ˜¯ï¼Œ$nå¤§å–ä¸€è²ï¼šä½ æ´»è†©äº†ï¼Œæ•¢ä¾†å°æˆ‘æ–½æ‡¾å¿ƒè¡“ï¼Ÿ\n", me, ob);
                 if( query("age", ob)>17)ob->kill_ob(me);
                 return 1;
         }
         if (strsrch(cmd, "give ") >= 0)
         {
-                message_vision("ÓÚÊÇ£¬$nÃÔÃÔºýºýÒ²²»ÖªµÀÊÇµÝÁËÐ©Ê²Ã´¸ø$N¡£\n", me, ob);
+                message_vision("äºŽæ˜¯ï¼Œ$nè¿·è¿·ç³Šç³Šä¹Ÿä¸çŸ¥é“æ˜¯éžäº†äº›ä»€éº¼çµ¦$Nã€‚\n", me, ob);
         }
         else
         {
                 if (strsrch(cmd, "go ") >= 0)
                 {
                         if( !userp(ob) )
-                                return notify_fail("ÄãÖ»ÄÜ¶ÔÍæ¼ÒÐÐÊ¹ÉåÐÄÊõ¡£\n");
-                        message_vision("½á¹û£¬$nÃÔÃÔºýºýÒ²²»ÖªµÀÔõÃ´»ØÊÂ¾ÍÍùÇ°Ãþ×Å×ß¿ªÁË¡£\n", me, ob);
+                                return notify_fail("ä½ åªèƒ½å°çŽ©å®¶è¡Œä½¿æ‡¾å¿ƒè¡“ã€‚\n");
+                        message_vision("çµæžœï¼Œ$nè¿·è¿·ç³Šç³Šä¹Ÿä¸çŸ¥é“æ€Žéº¼å›žäº‹å°±å¾€å‰æ‘¸è‘—èµ°é–‹äº†ã€‚\n", me, ob);
                 }
                 else
                 {
                         if (strsrch(cmd, "follow ") >= 0)
                         {
                                 if( !userp(ob) )
-                                        return notify_fail("ÄãÖ»ÄÜ¶ÔÍæ¼ÒÐÐÊ¹ÉåÐÄÊõ¡£\n");
-                                message_vision("¹ûÈ»£¬$nÃÔÃÔºýºýµØ¾Í¸úÔÚ$NµÄÆ¨¹ÉºóÃæ×ßÁË¡£\n", me, ob);
+                                        return notify_fail("ä½ åªèƒ½å°çŽ©å®¶è¡Œä½¿æ‡¾å¿ƒè¡“ã€‚\n");
+                                message_vision("æžœç„¶ï¼Œ$nè¿·è¿·ç³Šç³Šåœ°å°±è·Ÿåœ¨$Nçš„å±è‚¡å¾Œé¢èµ°äº†ã€‚\n", me, ob);
                         }
                         else
-                                return notify_fail("ÄãÖ»ÄÜÉåÐÄÈË¼Ò×ö£ºgive¡¢goºÍfollow¡£\n");
+                                return notify_fail("ä½ åªèƒ½æ‡¾å¿ƒäººå®¶åšï¼šgiveã€goå’Œfollowã€‚\n");
                 }
         }
         me->start_busy(5);
@@ -89,16 +89,16 @@ $nÎ¢¾õ²»Í×£¬ÒªÏë×ªÍ·±Ü¿ª$NµÄÑÛ¹â£¬¿ÉÊÇÒ»Ë«ÑÛ¾¦¾¹ËÆ±»$NµÄÄ¿¹âÎü×¡ÁË£¬
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½: shexin <Ä³ÈË> to <Ö¸Áî>
+æŒ‡ä»¤æ ¼å¼: shexin <æŸäºº> to <æŒ‡ä»¤>
 
     shexin sb to give sth to sb
     shexin sb to follow sb
     shexin sb to go <dir>
 
-    ÀûÓÃÉåÐÄÊõÓÕ»óÄ³ÈË×ö°ÑÉíÉÏµÄ¶«Î÷¸øÄã, »òÍùÄÇÀïÀë¿ª£¬»òÕß
-¸ú×ÅÄã¡£µ±È»Äã±ØÐëÊÇÑ©É½ÅÉµÜ×Ó£¬ÇÒÓÐÏàµ±µÄ½µ·ü·¨ÐÞÎª¡£
-    ¶Ô·½Èç¹ûÄÚ¹¦Éîºñ£¬¶øÄãÑ§ÒÕ²»¾«£¬±ØÈ»Ò²»áÕÐÖÂÒÔÑÀ»¹ÑÀ¡£µ±
-ÐÄ£¡
+    åˆ©ç”¨æ‡¾å¿ƒè¡“èª˜æƒ‘æŸäººåšæŠŠèº«ä¸Šçš„æ±è¥¿çµ¦ä½ , æˆ–å¾€é‚£è£¡é›¢é–‹ï¼Œæˆ–è€…
+è·Ÿè‘—ä½ ã€‚ç•¶ç„¶ä½ å¿…é ˆæ˜¯é›ªå±±æ´¾å¼Ÿå­ï¼Œä¸”æœ‰ç›¸ç•¶çš„é™ä¼æ³•ä¿®ç‚ºã€‚
+    å°æ–¹å¦‚æžœå…§åŠŸæ·±åŽšï¼Œè€Œä½ å­¸è—ä¸ç²¾ï¼Œå¿…ç„¶ä¹Ÿæœƒæ‹›è‡´ä»¥ç‰™é‚„ç‰™ã€‚ç•¶
+å¿ƒï¼
 HELP
         );
         return 1;

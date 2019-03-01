@@ -1,22 +1,22 @@
 #include <ansi.h>
-// È«Õæ»¯¼×Êõ huajia-shu
+// å…¨çœŸåŒ–ç”²è¡“ huajia-shu
 inherit SKILL; 
 string type() { return "knowledge"; } 
 
 int is_fmsk() { return 1; }
-string family_name() { return "È«Õæ½Ì"; }
+string family_name() { return "å…¨çœŸæ•™"; }
 
 int valid_learn(object me)
 {        
         if (me->query_skill("quanzhen-jian", 1) < 30)
-                return notify_fail("ÄãÈ«Õæ½£·¨»ğºò²»×ã£¬ÎŞ·¨ÑĞÏ°»¯¼×Êõ¡£\n");        
+                return notify_fail("ä½ å…¨çœŸåŠæ³•ç«å€™ä¸è¶³ï¼Œç„¡æ³•ç ”ç¿’åŒ–ç”²è¡“ã€‚\n");        
         
         if( query("family/family_name", me) != family_name() )
-                return notify_fail("»¯¼×ÊõÖ»ÄÜÈ«Õæ½ÌµÜ×Ó·½¿ÉÑĞÏ°¡£\n");
+                return notify_fail("åŒ–ç”²è¡“åªèƒ½å…¨çœŸæ•™å¼Ÿå­æ–¹å¯ç ”ç¿’ã€‚\n");
 
         if (me->query_skill("taoism", 1) < 
             me->query_skill("huajia-shu", 1) * 60 /100)
-                return notify_fail("ÄãµÀÑ§ĞÄ·¢ĞŞÎª²»×ã£¬ÎŞ·¨¼ÌĞøÑĞÏ°»¯¼×Êõ¡£\n");
+                return notify_fail("ä½ é“å­¸å¿ƒç™¼ä¿®ç‚ºä¸è¶³ï¼Œç„¡æ³•ç¹¼çºŒç ”ç¿’åŒ–ç”²è¡“ã€‚\n");
 
         return 1;
 }

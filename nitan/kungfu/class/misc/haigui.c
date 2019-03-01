@@ -8,9 +8,9 @@ string get_long();
 
 void create()
 {
-        set_name(NOR + YEL "ÍòÄêº£¹ê" NOR, ({ "hero of chelonian", "chelonian", "hero" }) );
-        set("title", HIM "Á·¹¦·¨±¦" NOR);
-        set("gender", "ÄĞĞÔ");
+        set_name(NOR + YEL "è¬å¹´æµ·é¾œ" NOR, ({ "hero of chelonian", "chelonian", "hero" }) );
+        set("title", HIM "ç·´åŠŸæ³•å¯¶" NOR);
+        set("gender", "ç”·æ€§");
         set("age", 88888);
         set("long", get_long());
 
@@ -64,15 +64,15 @@ string get_long()
                 string msg;
 
                 msg =  "\n" NOR + YEL
-"´ò²»ËÀµÄÍòÄêÓ¢ĞÛº£¹ê£¬ÊÊºÏÓÃÀ´ÊµÑéÎä¹¦»ò±©Á¦·¢Ğ¹£¡\n" HIC
-"ÏÈÌìÎòĞÔ£º1\n"
-"ÏÈÌì¸ù¹Ç£º30\n"
-"ÏÈÌìÉí·¨£º1\n"
-"ÏÈÌì±ÛÁ¦£º1\n"
-"¼Ó   Á¦£º 0\n"
-"Î£ÏÕ³Ì¶È£ºÎ¢Ğ¡\n" HIG
-"¿ÉÊ¹ÓÃÖ¸Áî crave <ĞÅÏ¢> ÔÚº£¹ê±³ÉÏ½øĞĞµñ¿Ì£¡\n\n" HIR 
-"µ«¼ûÍòÄêº£¹ê±³ÉÏÃÜÃÜÂéÂé¿ÌÂúÁËºÜ¶àÎÄ×Ö¡£\n\n" NOR;
+"æ‰“ä¸æ­»çš„è¬å¹´è‹±é›„æµ·é¾œï¼Œé©åˆç”¨ä¾†å¯¦é©—æ­¦åŠŸæˆ–æš´åŠ›ç™¼æ³„ï¼\n" HIC
+"å…ˆå¤©æ‚Ÿæ€§ï¼š1\n"
+"å…ˆå¤©æ ¹éª¨ï¼š30\n"
+"å…ˆå¤©èº«æ³•ï¼š1\n"
+"å…ˆå¤©è‡‚åŠ›ï¼š1\n"
+"åŠ    åŠ›ï¼š 0\n"
+"å±éšªç¨‹åº¦ï¼šå¾®å°\n" HIG
+"å¯ä½¿ç”¨æŒ‡ä»¤ crave <ä¿¡æ¯> åœ¨æµ·é¾œèƒŒä¸Šé€²è¡Œé›•åˆ»ï¼\n\n" HIR 
+"ä½†è¦‹è¬å¹´æµ·é¾œèƒŒä¸Šå¯†å¯†éº»éº»åˆ»æ»¿äº†å¾ˆå¤šæ–‡å­—ã€‚\n\n" NOR;
 
         return msg;
 }
@@ -125,7 +125,7 @@ int receive_damage(string type, int damage, object who)
         if (! objectp(who))return 1;
 
 /*
-        // ×ªÊÀºóÎŞĞ§
+        // è½‰ä¸–å¾Œç„¡æ•ˆ
         if (query("reborn/times", who))
         {
                 return 1;
@@ -135,8 +135,8 @@ int receive_damage(string type, int damage, object who)
         set("env/combatd", 4, who);
         
         
-                // µÛÍõ·ûÍ¼
-                // ±àºÅ36-38
+                // å¸ç‹ç¬¦åœ–
+                // ç·¨è™Ÿ36-38
                 if( MEMBER_D->is_valid_member(who) && query("quest_tuteng/start", who) ) 
                 {
                         int n_tt;
@@ -148,14 +148,14 @@ int receive_damage(string type, int damage, object who)
                                 ob_tt = new("/clone/tuteng/diwang-suipian" + sprintf("%d", n_tt));
                                 if (ob_tt)
                                 {
-                                        write(HIG "Äã»ñµÃÁËÒ»ÕÅµÛÍõ·ûÍ¼ËéÆ¬¡£\n" NOR);
+                                        write(HIG "ä½ ç²å¾—äº†ä¸€å¼µå¸ç‹ç¬¦åœ–ç¢ç‰‡ã€‚\n" NOR);
                                         ob_tt->move(who, 1);
                                 }
                         }
                 }
                         
-        // Ê®Íò¾­ÑéÒÔÏÂ¿ÉÔö¼Ó¾­ÑéºÍQN
-        // Ëæ»ú»ñµÃÒ»Ğ©ÎïÆ·
+        // åè¬ç¶“é©—ä»¥ä¸‹å¯å¢åŠ ç¶“é©—å’ŒQN
+        // éš¨æ©Ÿç²å¾—ä¸€äº›ç‰©å“
         if (query("combat_exp", who) <= 500000)
         {
                 if (MEMBER_D->is_valid_member(who))
@@ -170,7 +170,7 @@ int receive_damage(string type, int damage, object who)
                         addn("potential", 1 + random(2), who);
                         addn("experience", random(2), who);
                 }
-                // »ñµÃÇ®
+                // ç²å¾—éŒ¢
                 if (random(200) == 1) money = new("/clone/money/gold");
                 else if (random(100) == 1) money = new("/clone/money/silver");
                 else if (random(30) == 1)
@@ -187,11 +187,11 @@ int receive_damage(string type, int damage, object who)
                                 if ( query("id", money) == "coin" )amount = 10 + random(30);
                                 money->set_amount(amount);
                                 money->move(who, 1);
-                                tell_object(who, HIG "Äã´ÓÍòÄêº£¹êÉíÉÏ»ñµÃÁË" + sprintf("%d", amount) + 
-                                        query("base_unit", money) + money->name() + "¡£\n" NOR);                                
+                                tell_object(who, HIG "ä½ å¾è¬å¹´æµ·é¾œèº«ä¸Šç²å¾—äº†" + sprintf("%d", amount) + 
+                                        query("base_unit", money) + money->name() + "ã€‚\n" NOR);                                
                         }                                               
                 }       
-                // Ëæ»ú»ñµÃÎïÆ·
+                // éš¨æ©Ÿç²å¾—ç‰©å“
                 if (random(10000) == 1 && random(3) == 1)
                 {
                         ob = new(gift[random(sizeof(gift))]);
@@ -199,7 +199,7 @@ int receive_damage(string type, int damage, object who)
                         if (objectp(ob))
                         {
                                 ob->move(who, 1);
-                                tell_object(who, HIR "Äã´ÓÍòÄêº£¹êÉíÉÏ»ñµÃÁËÒ»" + query("base_unit", ob) + ob->name() + "¡£\n" NOR);                            
+                                tell_object(who, HIR "ä½ å¾è¬å¹´æµ·é¾œèº«ä¸Šç²å¾—äº†ä¸€" + query("base_unit", ob) + ob->name() + "ã€‚\n" NOR);                            
                         }
                 }
                 if (random(10000) == 1 && random(3) == 1)
@@ -209,7 +209,7 @@ int receive_damage(string type, int damage, object who)
                         if (objectp(weapon))
                         {
                                 weapon->move(who, 1);
-                                tell_object(who, HIR "Äã´ÓÍòÄêº£¹êÉíÉÏ»ñµÃÁËÒ»" + query("base_unit", weapon) + weapon->name() + "¡£\n" NOR);                            
+                                tell_object(who, HIR "ä½ å¾è¬å¹´æµ·é¾œèº«ä¸Šç²å¾—äº†ä¸€" + query("base_unit", weapon) + weapon->name() + "ã€‚\n" NOR);                            
                         }
                 }
                 if (random(300000) == 1 && random(4) == 1)
@@ -219,7 +219,7 @@ int receive_damage(string type, int damage, object who)
                         if (objectp(armor))
                         {
                                 armor->move(who, 1);
-                                tell_object(who, HIR "Äã´ÓÍòÄêº£¹êÉíÉÏ»ñµÃÁËÒ»" + query("base_unit", armor) + armor->name() + "¡£\n" NOR);                              
+                                tell_object(who, HIR "ä½ å¾è¬å¹´æµ·é¾œèº«ä¸Šç²å¾—äº†ä¸€" + query("base_unit", armor) + armor->name() + "ã€‚\n" NOR);                              
                         }
                 }
                 if (random(500000) == 1 && random(4) == 1)
@@ -229,7 +229,7 @@ int receive_damage(string type, int damage, object who)
                         if (objectp(armor2))
                         {
                                 armor2->move(who, 1);
-                                tell_object(who, HIR "Äã´ÓÍòÄêº£¹êÉíÉÏ»ñµÃÁËÒ»" + query("base_unit", armor2) + armor2->name() + "¡£\n" NOR);                            
+                                tell_object(who, HIR "ä½ å¾è¬å¹´æµ·é¾œèº«ä¸Šç²å¾—äº†ä¸€" + query("base_unit", armor2) + armor2->name() + "ã€‚\n" NOR);                            
                         }
                 }
         }       

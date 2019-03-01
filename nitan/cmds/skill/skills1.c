@@ -32,23 +32,23 @@ string *valid_types = ({
 });
 
 string *skill_level_desc = ({
-        BLU"²»¿°Ò»»÷",BLU"ºÁ²»×ãÂÇ",BLU"²»×ã¹Ò³Ý",BLU"³õÑ§Õ§Á·",BLU"ÃãÃãÇ¿Ç¿",
-        HIB"³õ¿úÃÅ¾¶",HIB"³õ³öÃ©Â®",HIB"ÂÔÖªÒ»¶þ",HIB"ÆÕÆÕÍ¨Í¨",HIB"Æ½Æ½µ­µ­",
-        CYN"Æ½µ­ÎÞÆæ",CYN"´ÖÍ¨Æ¤Ã«",CYN"°ëÉú²»Êì",CYN"ÂíÂí»¢»¢",CYN"ÂÔÓÐÐ¡³É",
-        HIC"ÒÑÓÐÐ¡³É",HIC"º×Á¢¼¦Èº",HIC"¼ÝÇá¾ÍÊì",HIC"Çà³öÓÚÀ¶",HIC"ÈÚ»á¹áÍ¨",
-        HIG"ÐÄÁìÉñ»á",HIG"Â¯»ð´¿Çà",HIG"ÁËÈ»ÓÚÐØ",HIG"ÂÔÓÐ´ó³É",HIG"ÒÑÓÐ´ó³É",
-        YEL"»íÈ»¹áÍ¨",YEL"³öÀà°ÎÝÍ",YEL"ÎÞ¿ÉÆ¥µÐ",YEL"¼¼¹ÚÈºÐÛ",YEL"ÉñºõÆä¼¼",
-        HIY"³öÉñÈë»¯",HIY"·ÇÍ¬·²Ïì",HIY"°ÁÊÓÈºÐÛ",HIY"µÇ·åÔì¼«",HIY"ÎÞÓëÂ×±È",
-        RED"ËùÏòÅûÃÒ",RED"Ò»´ú×ÚÊ¦",RED"¾«Éî°ÂÃî",RED"Éñ¹¦¸ÇÊÀ",RED"¾ÙÊÀÎÞË«",
-        WHT"¾ªÊÀº§Ë×",WHT"º³Ìì¶¯µØ",WHT"Õð¹Åîå½ñ",WHT"³¬·²ÈëÊ¥",WHT"ÍþÕòå¾Óî",
-        HIW"¿ÕÇ°¾øºó",HIW"ÌìÈËºÏÒ»",MAG"Éî²Ø²»Â¶",HIM"Éî²»¿É²â",HIR"·µè±¹éÕæ"
+        BLU"ä¸å ªä¸€æ“Š",BLU"æ¯«ä¸è¶³æ…®",BLU"ä¸è¶³æŽ›é½’",BLU"åˆå­¸ä¹ç·´",BLU"å‹‰å‹‰å¼·å¼·",
+        HIB"åˆçªºé–€å¾‘",HIB"åˆå‡ºèŒ…å»¬",HIB"ç•¥çŸ¥ä¸€äºŒ",HIB"æ™®æ™®é€šé€š",HIB"å¹³å¹³æ·¡æ·¡",
+        CYN"å¹³æ·¡ç„¡å¥‡",CYN"ç²—é€šçš®æ¯›",CYN"åŠç”Ÿä¸ç†Ÿ",CYN"é¦¬é¦¬è™Žè™Ž",CYN"ç•¥æœ‰å°æˆ",
+        HIC"å·²æœ‰å°æˆ",HIC"é¶´ç«‹é›žç¾¤",HIC"é§•è¼•å°±ç†Ÿ",HIC"é’å‡ºäºŽè—",HIC"èžæœƒè²«é€š",
+        HIG"å¿ƒé ˜ç¥žæœƒ",HIG"çˆç«ç´”é’",HIG"äº†ç„¶äºŽèƒ¸",HIG"ç•¥æœ‰å¤§æˆ",HIG"å·²æœ‰å¤§æˆ",
+        YEL"è±ç„¶è²«é€š",YEL"å‡ºé¡žæ‹”èƒ",YEL"ç„¡å¯åŒ¹æ•µ",YEL"æŠ€å† ç¾¤é›„",YEL"ç¥žä¹Žå…¶æŠ€",
+        HIY"å‡ºç¥žå…¥åŒ–",HIY"éžåŒå‡¡éŸ¿",HIY"å‚²è¦–ç¾¤é›„",HIY"ç™»å³°é€ æ¥µ",HIY"ç„¡èˆ‡å€«æ¯”",
+        RED"æ‰€å‘æŠ«é¡",RED"ä¸€ä»£å®—å¸«",RED"ç²¾æ·±å¥§å¦™",RED"ç¥žåŠŸè“‹ä¸–",RED"èˆ‰ä¸–ç„¡é›™",
+        WHT"é©šä¸–é§­ä¿—",WHT"æ’¼å¤©å‹•åœ°",WHT"éœ‡å¤é‘ ä»Š",WHT"è¶…å‡¡å…¥è–",WHT"å¨éŽ®å¯°å®‡",
+        HIW"ç©ºå‰çµ•å¾Œ",HIW"å¤©äººåˆä¸€",MAG"æ·±è—ä¸éœ²",HIM"æ·±ä¸å¯æ¸¬",HIR"è¿”ç’žæ­¸çœŸ"
 });
 
 string *knowledge_level_desc = ({
-        BLU"ÐÂÑ§Õ§ÓÃ",BLU"³õ¿úÃÅ¾¶",HIB"ÂÔÖªÒ»¶þ",HIB"°ëÉú²»Êì",
-        CYN"ÂíÂí»¢»¢",CYN"ÒÑÓÐÐ¡³É",HIC"ÈÚ»á¹áÍ¨",HIC"ÐÄÁìÉñ»á",
-        GRN"ÁËÈ»ì¶ÐØ",GRN"»íÈ»¹áÍ¨",YEL"·ÇÍ¬·²Ïì",YEL"¾ÙÊÀÎÞË«",
-        HIY"Õð¹Åîå½ñ",RED"ÎÞÓëÂ×±È",WHT"³¬·²ÈëÊ¥",HIW"¿ÕÇ°¾øºó",
+        BLU"æ–°å­¸ä¹ç”¨",BLU"åˆçªºé–€å¾‘",HIB"ç•¥çŸ¥ä¸€äºŒ",HIB"åŠç”Ÿä¸ç†Ÿ",
+        CYN"é¦¬é¦¬è™Žè™Ž",CYN"å·²æœ‰å°æˆ",HIC"èžæœƒè²«é€š",HIC"å¿ƒé ˜ç¥žæœƒ",
+        GRN"äº†ç„¶æ–¼èƒ¸",GRN"è±ç„¶è²«é€š",YEL"éžåŒå‡¡éŸ¿",YEL"èˆ‰ä¸–ç„¡é›™",
+        HIY"éœ‡å¤é‘ ä»Š",RED"ç„¡èˆ‡å€«æ¯”",WHT"è¶…å‡¡å…¥è–",HIW"ç©ºå‰çµ•å¾Œ",
 });
 
 int sort_skill(string sk1, string sk2, mapping spos);
@@ -142,8 +142,8 @@ int main(object me, string arg)
                                 arg = 0;
                                 skill1 = 0;
                         } else
-                                return notify_fail("Ã»ÓÐ(" + skill1 +
-                                                   ")ÕâÖÖ¼¼ÄÜ¡£\n");
+                                return notify_fail("æ²’æœ‰(" + skill1 +
+                                                   ")é€™ç¨®æŠ€èƒ½ã€‚\n");
                 }
 
                 if (! ob || ! ob->is_character())
@@ -158,7 +158,7 @@ int main(object me, string arg)
                 }
 
                 if (! ob || ! ob->is_character() || ! me->visible(ob))
-                        return notify_fail("ÄãÒª²ì¿´Ë­µÄ¼¼ÄÜ£¿\n");
+                        return notify_fail("ä½ è¦å¯Ÿçœ‹èª°çš„æŠ€èƒ½ï¼Ÿ\n");
         }
 
         if (ob != me)
@@ -191,21 +191,21 @@ int main(object me, string arg)
         }
 
         if (! valid_check)
-                return notify_fail("Ö»ÓÐÎ×Ê¦»òÓÐÊ¦Í½/·òÆÞ/½á°Ý/Í¬ÃË¹ØÏµµÄÈË"
-                                   "²ÅÄÜ²ì¿´ËûÈËµÄ¼¼ÄÜ¡£\n");
+                return notify_fail("åªæœ‰å·«å¸«æˆ–æœ‰å¸«å¾’/å¤«å¦»/çµæ‹œ/åŒç›Ÿé—œç³»çš„äºº"
+                                   "æ‰èƒ½å¯Ÿçœ‹ä»–äººçš„æŠ€èƒ½ã€‚\n");
 
         skl = ob->query_skills();
         if (! sizeof(skl))
         {
-                write((ob==me ? "Äã" : ob->name()) +
-                      "Ä¿Ç°²¢Ã»ÓÐÑ§»áÈÎºÎ¼¼ÄÜ¡£\n");
+                write((ob==me ? "ä½ " : ob->name()) +
+                      "ç›®å‰ä¸¦æ²’æœ‰å­¸æœƒä»»ä½•æŠ€èƒ½ã€‚\n");
                 return 1;
         }
 
         // calucate spos to sort
         sname = keys(skl);
 
-        str = (ob == me ? "Äã" : ob->name()) + "Ä¿Ç°ËùÑ§µ½µÄ";
+        str = (ob == me ? "ä½ " : ob->name()) + "ç›®å‰æ‰€å­¸åˆ°çš„";
         // filter array by skill1
         if (skill1)
         {
@@ -216,7 +216,7 @@ int main(object me, string arg)
                         sname = filter_array(sname, (: filter_for_enable :), skill1);
                         // sname = sort_array(sname, (: sort_skill :), ob);
                         sname = sort_array(sname, (: $(skl)[$2] - $(skl)[$1] :));
-                        str += to_chinese(skill1) + "¼°Ïà¹Ø¼¼ÄÜ";
+                        str += to_chinese(skill1) + "åŠç›¸é—œæŠ€èƒ½";
                 } else
                 if (SKILL_D(skill1)->main_skill() &&
                     member_array(SKILL_D(skill1)->main_skill(), sname) == -1)
@@ -224,18 +224,18 @@ int main(object me, string arg)
                         // skill1 is a sub skill
                         skill1 = SKILL_D(skill1)->main_skill();
                         sname = filter_array(sname, (: filter_for_main :), skill1);
-                        str += to_chinese(skill1) + "ÖÐµÄÕÐÊ½";
+                        str += to_chinese(skill1) + "ä¸­çš„æ‹›å¼";
                 } else
                 {
                         sname = filter_array(sname, (: filter_for_combine :), skill1);
-                        str += to_chinese(skill1) + "ºÍ¿ÉÒÔ¼¤·¢µÄ»ù´¡Îä¼¼ÓëÄÜ¹»»¥±¸µÄ¼¼ÄÜ";
+                        str += to_chinese(skill1) + "å’Œå¯ä»¥æ¿€ç™¼çš„åŸºç¤Žæ­¦æŠ€èˆ‡èƒ½å¤ äº’å‚™çš„æŠ€èƒ½";
                 }
         } else
-                str += "ËùÓÐ¼¼ÄÜ";
+                str += "æ‰€æœ‰æŠ€èƒ½";
 
         if (! sizeof(sname))
         {
-                write("ÄãÄ¿Ç°»¹Ã»ÓÐÕÆÎÕ¸Ã¼¼ÄÜ¡£\n");
+                write("ä½ ç›®å‰é‚„æ²’æœ‰æŽŒæ¡è©²æŠ€èƒ½ã€‚\n");
                 return 1;
         }
 
@@ -318,7 +318,7 @@ int main(object me, string arg)
         lrn = ob->query_learned();
         if (! mapp(lrn)) lrn = ([]);
         str += "\n\n";
-        str += HIC "¡Ô" HIY "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤" HIC "¡Ô\n" NOR;
+        str += HIC "â‰¡" HIY "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€" HIC "â‰¡\n" NOR;
 
         for (i = 0; i < sizeof(sname); i++)
         {
@@ -354,13 +354,13 @@ int main(object me, string arg)
                 str += sprintf("%s%s%s%-40s" NOR WHT " - %-10s" NOR WHT "%4d/%3d%%\n" NOR,
                         skcolor,
                         (lrn[sname[i]] >= (skl[sname[i]]+1) * (skl[sname[i]]+1)) ? HIM : "",
-                        (member_array(sname[i], mapped)==-1? "  ": "¡õ"),
+                        (member_array(sname[i], mapped)==-1? "  ": "â–¡"),
                         skillname + " (" + sname[i] + ")",
                         filter_color(skill_level(SKILL_D(sname[i])->type(), lvl)),
                         lvl, percent);
         }
 
-        str += HIC "¡Ô" HIY "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤" HIC "¡Ô\n" NOR;
+        str += HIC "â‰¡" HIY "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€" HIC "â‰¡\n" NOR;
         str = column_string(str, SKILLS_D->skill_mix_stats(ob), 70);
         me->start_more(str);
         return 1;
@@ -391,28 +391,28 @@ int filter_for_combine(string skill, string skill1)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : skills|cha [<¼¼ÄÜÃû> of <Ä³ÈË | me >] | [<Ä³ÈË>]
+æŒ‡ä»¤æ ¼å¼ : skills|cha [<æŠ€èƒ½å> of <æŸäºº | me >] | [<æŸäºº>]
 
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄã(Äã)²éÑ¯ËùÑ§¹ýµÄ¼¼ÄÜ¡£
+é€™å€‹æŒ‡ä»¤å¯ä»¥è®“ä½ (ä½ )æŸ¥è©¢æ‰€å­¸éŽçš„æŠ€èƒ½ã€‚
 
-ÄãÒ²¿ÉÒÔÖ¸¶¨Ò»¸öºÍÄãÓÐÊ¦Í½¹ØÏµµÄ¶ÔÏó£¬ÓÃ skills ¿ÉÒÔ²éÖª¶Ô·½µÄ¼¼ÄÜ×´¿ö¡£
-Ò²¿ÉÒÔ²éÑ¯Ä³ÈËÄ³Ïî¼¼ÄÜµÄÇé¿ö£¬±ÈÈçskills taiji-shengong of song£¬ »òÕß
-ÊÇskills literate of me£¬ ÓÃÕâÖÖ·½·¨²éÑ¯Ê±·ÖÒÔÏÂ¼¸ÖÖÇé¿ö£º
+ä½ ä¹Ÿå¯ä»¥æŒ‡å®šä¸€å€‹å’Œä½ æœ‰å¸«å¾’é—œç³»çš„å°è±¡ï¼Œç”¨ skills å¯ä»¥æŸ¥çŸ¥å°æ–¹çš„æŠ€èƒ½ç‹€æ³ã€‚
+ä¹Ÿå¯ä»¥æŸ¥è©¢æŸäººæŸé …æŠ€èƒ½çš„æƒ…æ³ï¼Œæ¯”å¦‚skills taiji-shengong of songï¼Œ æˆ–è€…
+æ˜¯skills literate of meï¼Œ ç”¨é€™ç¨®æ–¹æ³•æŸ¥è©¢æ™‚åˆ†ä»¥ä¸‹å¹¾ç¨®æƒ…æ³ï¼š
 
-1 Èç¹û²éÑ¯µÄ¼¼ÄÜÊÇÒ»ÖÖ»ù±¾Îä¼¼£¬½«Í¬Ê±·µ»ØËùÓÐÔÚÕâÖÖ»ù±¾Îä¼¼µÄ»ù´¡ÉÏÄÜ
-  ¹»¼¤·¢µÄÎä¹¦¼¼ÄÜ¡£
+1 å¦‚æžœæŸ¥è©¢çš„æŠ€èƒ½æ˜¯ä¸€ç¨®åŸºæœ¬æ­¦æŠ€ï¼Œå°‡åŒæ™‚è¿”å›žæ‰€æœ‰åœ¨é€™ç¨®åŸºæœ¬æ­¦æŠ€çš„åŸºç¤Žä¸Šèƒ½
+  å¤ æ¿€ç™¼çš„æ­¦åŠŸæŠ€èƒ½ã€‚
 
-2 Èç¹û²éÑ¯µÄ¼¼ÄÜÊÇÒ»ÖÖÎä¼¼ÖÐµÄÄ³Ð©ÕÐÊ½Â·Êý£¬±ÈÈç½µÁúÊ®°ËÕÆ£¬»òÊÇ½µÁúÊ®
-  °ËÕÆÖÐµÄÉñÁú°ÚÎ²µÈ£¬ÔòÏÔÊ¾Íæ¼ÒÑ§µ½ÓëÖ®Ïà¹ØµÄÕÐÊ½Â·Êý¡£Èç¹ûÍæ¼ÒÒÑ¾­½«
-  ÕâÖÖÎä¼¼ÈÚ»á¹áÍ¨£¬Ôò°´ÕÕÆÕÍ¨¼¼ÄÜÏÔÊ¾(3)¡£
+2 å¦‚æžœæŸ¥è©¢çš„æŠ€èƒ½æ˜¯ä¸€ç¨®æ­¦æŠ€ä¸­çš„æŸäº›æ‹›å¼è·¯æ•¸ï¼Œæ¯”å¦‚é™é¾åå…«æŽŒï¼Œæˆ–æ˜¯é™é¾å
+  å…«æŽŒä¸­çš„ç¥žé¾æ“ºå°¾ç­‰ï¼Œå‰‡é¡¯ç¤ºçŽ©å®¶å­¸åˆ°èˆ‡ä¹‹ç›¸é—œçš„æ‹›å¼è·¯æ•¸ã€‚å¦‚æžœçŽ©å®¶å·²ç¶“å°‡
+  é€™ç¨®æ­¦æŠ€èžæœƒè²«é€šï¼Œå‰‡æŒ‰ç…§æ™®é€šæŠ€èƒ½é¡¯ç¤º(3)ã€‚
 
-3 Èç¹û²éÑ¯µÄ¼¼ÄÜÊÇÒ»ÖÖÆÕÍ¨µÄÎä¼¼£¬ÔòÏÔÊ¾¿ÉÒÔ¼¤·¢µÄ»ù±¾Îä¼¼»ù´¡ºÍ¿ÉÒÔÓë
-  Ö®»¥±¸µÄÎä¹¦¡£
+3 å¦‚æžœæŸ¥è©¢çš„æŠ€èƒ½æ˜¯ä¸€ç¨®æ™®é€šçš„æ­¦æŠ€ï¼Œå‰‡é¡¯ç¤ºå¯ä»¥æ¿€ç™¼çš„åŸºæœ¬æ­¦æŠ€åŸºç¤Žå’Œå¯ä»¥èˆ‡
+  ä¹‹äº’å‚™çš„æ­¦åŠŸã€‚
 
-Ê¹ÓÃ¸ÃÃüÁî¿ÉÒÔÁË½âÄãÑ§µ½µÄÎä¹¦¼¼ÄÜ¡£Íæ¼Ò²éÑ¯µÄÊ±ºò²»ÐèÒªÖ¸Ã÷me²ÎÊý£¬¿É
-ÒÔÖ±½ÓÊäÈë<¼¼ÄÜÃû>²ÎÊý¡£
+ä½¿ç”¨è©²å‘½ä»¤å¯ä»¥äº†è§£ä½ å­¸åˆ°çš„æ­¦åŠŸæŠ€èƒ½ã€‚çŽ©å®¶æŸ¥è©¢çš„æ™‚å€™ä¸éœ€è¦æŒ‡æ˜Žmeåƒæ•¸ï¼Œå¯
+ä»¥ç›´æŽ¥è¼¸å…¥<æŠ€èƒ½å>åƒæ•¸ã€‚
 
-Î×Ê¦¿ÉÒÔ²éÑ¯ÈÎºÎÈË»ò NPC µÄ¼¼ÄÜ×´¿ö¡£
+å·«å¸«å¯ä»¥æŸ¥è©¢ä»»ä½•äººæˆ– NPC çš„æŠ€èƒ½ç‹€æ³ã€‚
 
 HELP
     );

@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�ܵ�");
+        set("short", "密道");
         set("long", @LONG
-������һ���ص��ľ�ͷ��ʯǽ֮��Ƕ����յ�͵ƣ�����ٿ������
-ǰ��ȥ���ڰ��в�֪������
+這裡是一條秘道的盡頭，石牆之上嵌入兩盞油燈，火苗倏忽，向
+前望去，黑暗中不知所往。
 LONG );
         set("exits", ([
                 "north" : __DIR__"rjqjiguan",

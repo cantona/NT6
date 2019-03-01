@@ -9,14 +9,14 @@ int exert(object me, object target)
         int n, t;
 
         if (me != target)
-                return notify_fail("ÄãÖ»ÄÜÓÃÄÚ¹¦»Ö¸´×Ô¼ºµÄÌåÁ¦¡£\n");
+                return notify_fail("ä½ åªèƒ½ç”¨å…§åŠŸæ¢å¾©è‡ªå·±çš„é«”åŠ›ã€‚\n");
 
         if( query("neili", me)<20 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ã€‚\n");
 
         t=query("max_tili", me)-query("tili", me);
         if (t < 10)
-                return notify_fail("ÄãÏÖÔÚÌåÁ¦³äÅæ¡£\n");
+                return notify_fail("ä½ ç¾åœ¨é«”åŠ›å……æ²›ã€‚\n");
         n = me->query_skill("force");
         if (n < 20) n = 20;
         if( query("neili", me)<n)n=query("neili", me);
@@ -26,7 +26,7 @@ int exert(object me, object target)
         if( query("tili", me)>query("max_tili", me) )
                 set("tili",query("max_tili",  me), me);
         
-        message_combatd("$NÎüÁË¿ÚÆø£¬µ¤ÌïÕæÆøÓÎ×ßËÄÖ«£¬È«ÉíÒ²½¥½¥ÓĞÁËÁ¦Æø¡£\n", me);
+        message_combatd("$Nå¸äº†å£æ°£ï¼Œä¸¹ç”°çœŸæ°£éŠèµ°å››è‚¢ï¼Œå…¨èº«ä¹Ÿæ¼¸æ¼¸æœ‰äº†åŠ›æ°£ã€‚\n", me);
 
         if( me->is_fighting() ) me->start_busy(1);
         
@@ -34,15 +34,15 @@ int exert(object me, object target)
 }
 int help(object me)
 {
-        write(WHT"\n»ù±¾ÄÚ¹¦Ö®²¹³äÌåÁ¦£º"NOR"\n");
+        write(WHT"\nåŸºæœ¬å…§åŠŸä¹‹è£œå……é«”åŠ›ï¼š"NOR"\n");
         write(@HELP
 
-        Ê¹ÓÃ¹¦Ğ§£º
-                ²¹³ä×Ô¼ºÏûºÄµÄÌåÁ¦¡¡
+        ä½¿ç”¨åŠŸæ•ˆï¼š
+                è£œå……è‡ªå·±æ¶ˆè€—çš„é«”åŠ›ã€€
 
-        ³öÊÖÒªÇó£º
-                »ù±¾ÄÚ¹¦
-                ÄÚÁ¦20
+        å‡ºæ‰‹è¦æ±‚ï¼š
+                åŸºæœ¬å…§åŠŸ
+                å…§åŠ›20
 HELP
         );
         return 1;

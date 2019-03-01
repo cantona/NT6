@@ -1,5 +1,5 @@
 // This program is a part of NITAN MudLIB
-// cong-buqi.c  ´Ô²»Æú
+// cong-buqi.c  å¢ä¸æ£„
 
 #include <ansi.h>
 inherit NPC;
@@ -7,13 +7,13 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("´Ô²»Æú", ({ "cong buqi", "cong" }) );
-        set("gender", "ÄĞĞÔ");
+        set_name("å¢ä¸æ£„", ({ "cong buqi", "cong" }) );
+        set("gender", "ç”·æ€§");
         set("class", "swordsman");
-        set("title", "»ªÉ½½£×ÚµÚÊ®Èı´úµÜ×Ó");
+        set("title", "è¯å±±åŠå®—ç¬¬åä¸‰ä»£å¼Ÿå­");
         set("age", 52);
         set("long",
-                "´Ô²»ÆúÊÇ»ªÉ½½£×Ú¸ßÊÖ¡£\n");
+                "å¢ä¸æ£„æ˜¯è¯å±±åŠå®—é«˜æ‰‹ã€‚\n");
         set("attitude", "peaceful");
         set("str", 26);
         set("con", 30);
@@ -63,7 +63,7 @@ void create()
         prepare_skill("strike", "hunyuan-zhang");
         prepare_skill("cuff", "poyu-quan");
 
-        create_family("»ªÉ½½£×Ú", 13, "µÜ×Ó");
+        create_family("è¯å±±åŠå®—", 13, "å¼Ÿå­");
 
         set_temp("apply/attack", 220);
         set_temp("apply/defense", 220);
@@ -79,5 +79,5 @@ void create()
 
 void attempt_apprentice(object ob)
 {
-        command("say ÀÏ·ò²»ÏëÊÕÍ½¡£");
+        command("say è€å¤«ä¸æƒ³æ”¶å¾’ã€‚");
 }

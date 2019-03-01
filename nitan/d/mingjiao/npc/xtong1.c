@@ -3,9 +3,9 @@ inherit NPC;
 string ask_tea();
 void create()
 {
-        set_name("ÊÌ²èĞ¡Ù×",({"xiao tong","xiao","tong"}));
-               set("long", "Ëı¾ÍÊÇ×¨ÃÅÊÌ²èµÄĞ¡Ù×¡£Ëı³¤µÃÃ¼ÇåÄ¿Ğã¡£\n");
-        set("gender", "Å®ĞÔ");
+        set_name("ä¾èŒ¶å°åƒ®",({"xiao tong","xiao","tong"}));
+               set("long", "å¥¹å°±æ˜¯å°ˆé–€ä¾èŒ¶çš„å°åƒ®ã€‚å¥¹é•·å¾—çœ‰æ¸…ç›®ç§€ã€‚\n");
+        set("gender", "å¥³æ€§");
         set("age", 16);
         set("attitude", "friendly");
         set("shen_type", 1);
@@ -26,7 +26,7 @@ void create()
         set_skill("force", 20);
         set_skill("sword", 20);
         set("inquiry", ([
-                        "²è" : (: ask_tea :),                        
+                        "èŒ¶" : (: ask_tea :),                        
                 ]));
         setup();
         carry_object("/d/mingjiao/obj/green-cloth")->wear();
@@ -45,8 +45,8 @@ void init()
 void greeting(object ob)
 {
         if( !ob || environment(ob) != environment() ) return;
-        say(CYN"ÊÌ²èĞ¡Ù×Ğ¦Ò÷Ò÷µØËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-             + "ÇëÁË£¬ÎÒÕâ¾Í¸øÄúÅİ²è¡£\n"NOR);
+        say(CYN"ä¾èŒ¶å°åƒ®ç¬‘åŸåŸåœ°èªªé“ï¼šé€™ä½" + RANK_D->query_respect(ob)
+             + "è«‹äº†ï¼Œæˆ‘é€™å°±çµ¦æ‚¨æ³¡èŒ¶ã€‚\n"NOR);
 }
 
 string ask_tea()
@@ -56,12 +56,12 @@ string ask_tea()
         ob=this_object();
         me=this_player();
                if( (query("water", me)*10/me->max_water_capacity())>8 )
-                return "ÄãÔõÃ´ºÈ±¥ÁË»¹ÏëÒª£¿\n";
+                return "ä½ æ€éº¼å–é£½äº†é‚„æƒ³è¦ï¼Ÿ\n";
         if ( present("suanmei tang", this_player()))
-                return "ÏÈºÈÍêÁËÎÒ¸øÄãµÄÔÙËµ°É¡£\n";
+                return "å…ˆå–å®Œäº†æˆ‘çµ¦ä½ çš„å†èªªå§ã€‚\n";
         if ( present("suanmei tang",  environment(me)) )
-                return "ÄÇ²»ÊÇÓĞÂğ£¿ÏÈºÈÍêÁËÔÙËµ¡£\n";
+                return "é‚£ä¸æ˜¯æœ‰å—ï¼Ÿå…ˆå–å®Œäº†å†èªªã€‚\n";
         ob=new("/d/mingjiao/obj/tang");
                ob->move(environment(this_object()));
-        return "Õâ±­ÓÖÌğÓÖÈÈµÄËáÃ·ÌÀ¸øÄã°É£¬ÇëÂıµãºÈÓ´¡£";
+        return "é€™æ¯åˆç”œåˆç†±çš„é…¸æ¢…æ¹¯çµ¦ä½ å§ï¼Œè«‹æ…¢é»å–å–²ã€‚";
 }

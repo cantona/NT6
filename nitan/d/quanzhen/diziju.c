@@ -1,4 +1,4 @@
-// diziju.c µÜ×Ó¾Ó
+// diziju.c å¼Ÿå­å±…
 // Winder Oct.10 1998
 
 inherit ROOM;
@@ -6,11 +6,11 @@ int do_pull(string arg);
 
 void create()
 {
-        set("short", "µÜ×Ó¾Ó");
+        set("short", "å¼Ÿå­å±…");
         set("long", @LONG
-ÕâÀïÊÇÈ«Õæ½ÌµÜ×Ó¾Ó×¡µÄ·¿¼ä¡£·¿¼äºÜ´ó£¬ÕûÆëµØÆÌ×ÅÒ»ÅÅÒ»ÅÅ
-µÄ´²£¬´²ÉÏ±»Èì¶¼ÕÛµşµÃÕûÕûÆëÆë£¬µ«ÊÇÒ»¸öÈË¶¼Ã»ÓĞ£¬Ò²ĞíËùÓĞµÄ
-µÜ×Ó¶¼È¥Á·¹¦È¥ÁË¡£¿¿Ç½µÄµØ·½ÓĞÒ»¸ö¹ñ×Ó(cabinet)¡£
+é€™è£¡æ˜¯å…¨çœŸæ•™å¼Ÿå­å±…ä½çš„æˆ¿é–“ã€‚æˆ¿é–“å¾ˆå¤§ï¼Œæ•´é½Šåœ°èˆ–è‘—ä¸€æ’ä¸€æ’
+çš„åºŠï¼ŒåºŠä¸Šè¢«è¤¥éƒ½æŠ˜ç–Šå¾—æ•´æ•´é½Šé½Šï¼Œä½†æ˜¯ä¸€å€‹äººéƒ½æ²’æœ‰ï¼Œä¹Ÿè¨±æ‰€æœ‰çš„
+å¼Ÿå­éƒ½å»ç·´åŠŸå»äº†ã€‚é ç‰†çš„åœ°æ–¹æœ‰ä¸€å€‹æ«ƒå­(cabinet)ã€‚
 LONG
         );
         set("sleep_room",1);
@@ -18,7 +18,7 @@ LONG
                 "north" : __DIR__"jingxiushi",
         ]));
         set("item_desc", ([
-            "cabinet": "Ò»¸ö¹ñ×Ó£¬Ò²ĞíÊÇ¶Ñ·ÅÒÂÎïÓÃµÄ¡£\n"
+            "cabinet": "ä¸€å€‹æ«ƒå­ï¼Œä¹Ÿè¨±æ˜¯å †æ”¾è¡£ç‰©ç”¨çš„ã€‚\n"
         ]) );
         set("no_clean_up", 0);
         set("coor/x", -2730);
@@ -38,10 +38,10 @@ int do_pull(string arg)
         object me=this_player();
 
         if( !arg || arg != "cabinet" ) {
-                return notify_fail("ÄãÒªÀ­¿ªÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦æ‹‰é–‹ä»€éº¼ï¼Ÿ\n");
         }
 
-        message_vision("$NÊ¹¾¢°Ñ¹ñ×ÓÀ­¿ª£¬ÏÖ³öÒ»¸ö¶´¿Ú¡£Ô­À´ÕâÀïÊÇÃÜÊÒµÄÈë¿Ú¡£\n", this_player());
+        message_vision("$Nä½¿å‹æŠŠæ«ƒå­æ‹‰é–‹ï¼Œç¾å‡ºä¸€å€‹æ´å£ã€‚åŸä¾†é€™è£¡æ˜¯å¯†å®¤çš„å…¥å£ã€‚\n", this_player());
         set("exits/down", __DIR__"mishi");
         remove_call_out("close");
         call_out("close", 8, this_object());
@@ -51,6 +51,6 @@ int do_pull(string arg)
 
 void close(object room)
 {
-        message("vision","¹ñ×ÓÓÖÖ¨Ö¨µØ»Øµ½Ô­µØ£¬°ÑÈë¿Úµ²×¡ÁË¡£\n", room);
+        message("vision","æ«ƒå­åˆå±å±åœ°å›åˆ°åŸåœ°ï¼ŒæŠŠå…¥å£æ“‹ä½äº†ã€‚\n", room);
         delete("exits/down", room);
 }

@@ -6,12 +6,12 @@ int do_look(string arg);
 
 void create()
 {
-        set("short", HIY "ÑÝÎä´óÌü" NOR);
+        set("short", HIY "æ¼”æ­¦å¤§å»³" NOR);
         set("long", @LONG
-ÕâÊÇÒ»¸ö¿í³¨µÄ´ó·¿¼ä£¬¿¿±±Ç½´î×ÅÒ»¸ö¾Þ´óµÄÀÞÌ¨(leitai)£¬
-ÀÞÌ¨ºó±»Ò»¿é²¼Á±ÕÚµ²µÄÃÜÃÜÊµÊµ£¬µ«ÊÇÒ»¹ÉÅ¨ºñµÄÉ±ÆøÈÔÈ»´Ó²¼Á±
-ºóÉ¢·¢³öÀ´£¬ÃÖÂþÔÚ¿ÕÆøÀï£¬Ö±×êÈëÄãÄÚÐÄ¡£ÔÚ¶«ÃæÇ½ÉÏ£¬Ðü¹Ò×ÅÙ¼
-´óµÄÒ»¸ö´óØÒ(dabian)¡£
+é€™æ˜¯ä¸€å€‹å¯¬æ•žçš„å¤§æˆ¿é–“ï¼Œé åŒ—ç‰†æ­è‘—ä¸€å€‹å·¨å¤§çš„æ“‚å°(leitai)ï¼Œ
+æ“‚å°å¾Œè¢«ä¸€å¡Šå¸ƒç°¾é®æ“‹çš„å¯†å¯†å¯¦å¯¦ï¼Œä½†æ˜¯ä¸€è‚¡æ¿ƒåŽšçš„æ®ºæ°£ä»ç„¶å¾žå¸ƒç°¾
+å¾Œæ•£ç™¼å‡ºä¾†ï¼Œå½Œæ¼«åœ¨ç©ºæ°£è£¡ï¼Œç›´é‘½å…¥ä½ å…§å¿ƒã€‚åœ¨æ±é¢ç‰†ä¸Šï¼Œæ‡¸æŽ›è‘—åŒ
+å¤§çš„ä¸€å€‹å¤§åŒ¾(dabian)ã€‚
 LONG );
 
         set("no_fight", 1);
@@ -20,7 +20,7 @@ LONG );
         set("fight_room", 1);
 
         set("item_desc",([
-                "leitai" : "Ò»¸öËÄËÄ·½·½µÄ´óÀÞÌ¨£¬Äã¿ÉÒÔÌø(jump)ÉÏÈ¥¡£\n",
+                "leitai" : "ä¸€å€‹å››å››æ–¹æ–¹çš„å¤§æ“‚å°ï¼Œä½ å¯ä»¥è·³(jump)ä¸ŠåŽ»ã€‚\n",
         ]));
 
         set("objects",([
@@ -57,7 +57,7 @@ int do_no()
         me = this_player();
         if (wizardp(me)) return 0;
 
-        tell_object(me, "ÔÚÕâÀïÄãÏë¸ÉÊ²Ã´£¿\n");
+        tell_object(me, "åœ¨é€™è£¡ä½ æƒ³å¹¹ä»€éº¼ï¼Ÿ\n");
         return 1;
 }
 
@@ -69,12 +69,12 @@ int do_look(string arg)
 
         if (arg != "dabian") return 0;
         paiming = XINRUI_D->query_tops();
-        msg = HIC "      *          Ðñ       ÈÕ       ¶«       Éý          *\n"NOR;
+        msg = HIC "      *          æ—­       æ—¥       æ±       å‡          *\n"NOR;
         msg += HIC "-------------------------------------------------------------\n";
         msg += "\n";
         for (i = 0;i < sizeof(paiming);i++)
         {
-                msg += HIY + "   ¡¾µÚ" + chinese_number(i+1) + "ÐÂÈñ¡¿ " + NOR + paiming[i]["title"] + "\n";
+                msg += HIY + "   ã€ç¬¬" + chinese_number(i+1) + "æ–°éŠ³ã€‘ " + NOR + paiming[i]["title"] + "\n";
                 msg += "\n";
         }
         msg += HIC "-------------------------------------------------------------\n";
@@ -90,20 +90,20 @@ int do_jump(string arg)
 
         if (arg != "leitai")
         {
-                tell_object(me, "ÄãÒªÍùÄÄÀïÌø°¡£¿\n");
+                tell_object(me, "ä½ è¦å¾€å“ªè£¡è·³å•Šï¼Ÿ\n");
                 return 1;
         }
 
 
         if (wizardp(me))
         {
-                tell_object(me,"ÄãÊÇÎ×Ê¦°¡£¬¾Í±ðÀ´¸úÍæ¼ÒÕùÊ²Ã´µÚÒ»µÚ¶þÁË£¡\n");
+                tell_object(me,"ä½ æ˜¯å·«å¸«å•Šï¼Œå°±åˆ¥ä¾†è·ŸçŽ©å®¶çˆ­ä»€éº¼ç¬¬ä¸€ç¬¬äºŒäº†ï¼\n");
                 return 1;
         }
 
         if( query("age", me)>25 || query("jieti", me) )
         {
-                tell_object(me, "ÄãÄê¼ÍÒ²²»Ð¡ÁË£¬¸úºóÉúÍí±²ÇÀÊ²Ã´µÚÒ»µÚ¶þ£¬ëý²»ëý°¡£¡\n");
+                tell_object(me, "ä½ å¹´ç´€ä¹Ÿä¸å°äº†ï¼Œè·Ÿå¾Œç”Ÿæ™šè¼©æ¶ä»€éº¼ç¬¬ä¸€ç¬¬äºŒï¼Œè‡Šä¸è‡Šå•Šï¼\n");
                 return 1;
         }
 

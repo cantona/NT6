@@ -18,7 +18,7 @@ int main(object me, string arg)
                 ob = present(arg, environment(me));
                 if (!ob) ob = find_player(arg);
                 if (!ob) ob = find_living(arg);
-                if (!ob) return notify_fail("ÄãÒª²ì¿´Ë­µÄ×´Ì¬£¿\n");
+                if (!ob) return notify_fail("ä½ è¦å¯Ÿçœ‹èª°çš„ç‹€æ…‹ï¼Ÿ\n");
         } else
                 ob = me;
         
@@ -26,14 +26,14 @@ int main(object me, string arg)
         cont_list = ob->query_condition();
         vend_list = query("vendetta", ob);
         
-        tell_object(me, WHT"\t¡¡¡¡µ±Ç°×´Ì¬£º\n"NOR);
-        tell_object(me, HIR BLK"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n"NOR);
+        tell_object(me, WHT"\tã€€ã€€ç•¶å‰ç‹€æ…‹ï¼š\n"NOR);
+        tell_object(me, HIR BLK"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n"NOR);
 
         if( (!mapp(buff_list) || !sizeof(buff_list)) && 
             (!mapp(cont_list) || !sizeof(cont_list)) && 
             (!mapp(vend_list) || !sizeof(vend_list)) ) {
-                tell_object(me, "Ã»ÓĞÈÎºÎÒì³£×´Ì¬×÷ÓÃÖĞ¡£\n");
-                tell_object(me, HIR BLK"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n"NOR);
+                tell_object(me, "æ²’æœ‰ä»»ä½•ç•°å¸¸ç‹€æ…‹ä½œç”¨ä¸­ã€‚\n");
+                tell_object(me, HIR BLK"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n"NOR);
                 return 1;
         }
         
@@ -69,7 +69,7 @@ int main(object me, string arg)
         
         if( mapp(cont_list) && sizeof(cont_list) )
         {
-                write(HIR BLK"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n"NOR);
+                write(HIR BLK"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n"NOR);
                 lists = keys(cont_list);
                 num  = values(cont_list);
                 for( i=0; i< sizeof(lists);i++ )
@@ -79,28 +79,28 @@ int main(object me, string arg)
                                 name = CONDITION_D(lists[i])->name();
                         if( stringp(name) &&  num["remain"]>0 )
                         {
-                                tell_object (me, sprintf(MAG"%-16s%3d ´Î\n", name, num["remain"]));
+                                tell_object (me, sprintf(MAG"%-16s%3d æ¬¡\n", name, num["remain"]));
                         }       
                 } 
         }       
         
         if( mapp(vend_list) && sizeof(vend_list) )
         {
-                write(HIR BLK"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n"NOR);
+                write(HIR BLK"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n"NOR);
                 lists = keys(vend_list);
                 for (i=0; i< sizeof(lists);i++)
                 {
                         if(lists[i] == "shaolin" && num[i])
-                                tell_object (me, sprintf(HIB"%-16s%3d \n", "ÉÙÁÖ·Ë", num[i]));
+                                tell_object (me, sprintf(HIB"%-16s%3d \n", "å°‘æ—åŒª", num[i]));
                         else if(lists[i] == "authority" && num[i])
-                                tell_object (me, sprintf(HIB"%-16s%3d \n", "¹Ù·Ë", num[i]));
+                                tell_object (me, sprintf(HIB"%-16s%3d \n", "å®˜åŒª", num[i]));
                         else if(lists[i] == "demon" && num[i])
-                                tell_object (me, sprintf(HIB"%-16s%3d \n", "Ä§½Ì·Ë", num[i]));
+                                tell_object (me, sprintf(HIB"%-16s%3d \n", "é­”æ•™åŒª", num[i]));
                                                         
                 } 
         }       
          
-        tell_object(me, HIR BLK"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n"NOR);
+        tell_object(me, HIR BLK"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n"NOR);
 
 
         return 1;
@@ -111,13 +111,13 @@ int help(object me)
 {
 write(@HELP
 
-[0;1;37m©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤[0m
-[0;1;36mÖ¸Áî¸ñÊ½ :     stat [0m
-[0;1;37m©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤[0m   
+[0;1;37mâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€[0m
+[0;1;36mæŒ‡ä»¤æ ¼å¼ :     stat [0m
+[0;1;37mâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€[0m   
 
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄãÖªµÀÄãÄ¿Ç°ËùÓµÓĞµÄËùÓĞÒì³£×´Ì¬Óë³ÖĞøÊ±¼ä¡£
+é€™å€‹æŒ‡ä»¤å¯ä»¥è®“ä½ çŸ¥é“ä½ ç›®å‰æ‰€æ“æœ‰çš„æ‰€æœ‰ç•°å¸¸ç‹€æ…‹èˆ‡æŒçºŒæ™‚é–“ã€‚
 
-[0;1;37m©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤[0m  
+[0;1;37mâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€[0m  
 HELP
     );
     return 1;

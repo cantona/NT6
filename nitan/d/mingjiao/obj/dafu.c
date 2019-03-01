@@ -1,21 +1,21 @@
-// dafu.c ´ó¸«
+// dafu.c å¤§æ–§
 
 #include <weapon.h>
 inherit AXE;
 
 void create()
 {
-        set_name("´ó¸«", ({ "dafu","fu" }));
+        set_name("å¤§æ–§", ({ "dafu","fu" }));
         set_weight(10000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
-                set("long", "ÕâÊÇÒ»±ú´ó¸«Í·¡£\n");
+                set("unit", "æŸ„");
+                set("long", "é€™æ˜¯ä¸€æŸ„å¤§æ–§é ­ã€‚\n");
                 set("value", 5000);
                 set("material", "steel");
-                set("wield_msg", "$N¡¸à§¡¹µÄÒ»Éù³é³öÒ»±ú$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²å»ØÑü¼ä¡£\n");
+                set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€è²æŠ½å‡ºä¸€æŸ„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°‡æ‰‹ä¸­çš„$næ’å›è…°é–“ã€‚\n");
         }
       init_axe(20);
         setup();

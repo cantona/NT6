@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��ʸ����");
+        set("short", "玉皇閣二層");
         set("long", @LONG
-��¥�д�ɨ�û���ɾ���������ʿ�Ƕ���������Ȼ�������⣬��
-��ʻ���ͦ���صġ��˵ع�������𺺰������ʴ��������ϸ�壬
-�ƿ����������ܿ��������Ŀ���־���
+閣樓中打掃得還算幹凈，看來道士們對于三清雖然不大在意，對
+玉皇還是挺尊重的。此地供奉的是尊漢白玉雕玉皇大帝像，紋理細膩，
+推開窗欄，還能看到繁華的開封街景。
 LONG );
         set("objects", ([
                   __DIR__"npc/obj/yudixiang" : 1,

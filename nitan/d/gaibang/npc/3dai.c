@@ -6,9 +6,9 @@ inherit NPC;
 void create()                                                                   
 {
         NPC_D->generate_cn_name(this_object());
-        set("gender", "ÄĞĞÔ");
-        set("long", "ÕâÊÇÎ»ÒÂ×ÅÆÆÀÃµÄØ¤°ïµÜ×Ó£¬Ã¼Ä¿¼äÍ¸³ö¹ÉÓ¢Æø¡£\n");
-        set("title", "Ø¤°ïÈı´üµÜ×Ó");
+        set("gender", "ç”·æ€§");
+        set("long", "é€™æ˜¯ä½è¡£è‘—ç ´çˆ›çš„ä¸å¹«å¼Ÿå­ï¼Œçœ‰ç›®é–“é€å‡ºè‚¡è‹±æ°£ã€‚\n");
+        set("title", "ä¸å¹«ä¸‰è¢‹å¼Ÿå­");
         set("age", 38);
         set("attitude", "peaceful");
         set("class", "beggar");
@@ -49,7 +49,7 @@ void create()
 
         prepare_skill("hand", "shexing-diaoshou");
 
-        create_family("Ø¤°ï", 20, "µÜ×Ó");
+        create_family("ä¸å¹«", 20, "å¼Ÿå­");
 
         set("chat_chance_combat", 120);
         set("chat_msg_combat", ({

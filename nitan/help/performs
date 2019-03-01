@@ -231,7 +231,7 @@ varargs string do_damage(object me, object target, mixed type,
                 // do damage
                 target->receive_damage("qi", damage, me);
                 wound = (damage - random(armor)) * percent / 100;
-                if (target->query("character") == "光明磊落")
+                if (target->query("character") == "鍏夋槑纾婅惤")
                         wound -= wound * 20 / 100;
                 if (wound > 0) target->receive_wound("qi", wound, me);
                 if (functionp(final)) final = evaluate(final);
@@ -241,7 +241,7 @@ varargs string do_damage(object me, object target, mixed type,
                         {
                                 if (sscanf(final, "%s:%s", result, damage_type) != 2)
                                 {
-                                        result = HIR "这招打了个正中！";
+                                        result = HIR "閫欐嫑鎵撲簡鍊嬫涓紒";
                                         damage_type = final;
                                 }
                                 if (sscanf(limb, "?%*s"))
@@ -250,7 +250,7 @@ varargs string do_damage(object me, object target, mixed type,
                                         limbs = target->query("limbs");
                                         if (! arrayp(limbs))
                                         {
-                                                limbs = ({ "身体" });
+                                                limbs = ({ "韬珨" });
                                                 target->set("limbs", limbs);
                                         }
                                         limb = limbs[random(sizeof(limbs))];

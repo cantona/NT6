@@ -1,5 +1,5 @@
 // This program is a part of NT MudLIB
-// peng.c ÅíÓĞ¾´
+// peng.c å½­æœ‰æ•¬
 
 #include <ansi.h>
 #include "gaibang.h"
@@ -16,15 +16,15 @@ mixed ask_skill2();
 
 void create()
 {
-        set_name("ÅíÓĞ¾´", ({ "peng youjing", "peng", "youjing" }));
+        set_name("å½­æœ‰æ•¬", ({ "peng youjing", "peng", "youjing" }));
         set("long", @LONG
-ÅíÓĞ¾´ÊÇØ¤°ïÖĞ¾»ÒÂÅÉµÄÊ×Áì£¬ÒÂ×Å¸É¾»»ªÀö
-²»Ïó½Ğ»¯×Ó¡£ËûÁ³ÉÏ¹Ò×Å´ÈÏéµÄĞ¦Èİ£¬Ò»Ë«ÑÛ
-¾¦ÓĞÉãÈËĞÄÆÇµÄÁ¦Á¿¡£
+å½­æœ‰æ•¬æ˜¯ä¸å¹«ä¸­å‡ˆè¡£æ´¾çš„é¦–é ˜ï¼Œè¡£è‘—å¹¹å‡ˆè¯éº—
+ä¸è±¡å«åŒ–å­ã€‚ä»–è‡‰ä¸Šæ›è‘—æ…ˆç¥¥çš„ç¬‘å®¹ï¼Œä¸€é›™çœ¼
+ç›æœ‰æ”äººå¿ƒé­„çš„åŠ›é‡ã€‚
 LONG);
-        set("nickname", WHT "ÕÆ²§ÁúÍ·" NOR);
-        set("title", "Ø¤°ï¾Å´ü³¤ÀÏ");
-        set("gender", "ÄĞĞÔ");
+        set("nickname", WHT "æŒç µé¾é ­" NOR);
+        set("title", "ä¸å¹«ä¹è¢‹é•·è€");
+        set("gender", "ç”·æ€§");
         set("age", 48);
         set("attitude", "peaceful");
         set("class", "beggar");
@@ -76,9 +76,9 @@ LONG);
 
         prepare_skill("hand", "shexing-diaoshou");
 
-        // set("no_teach/mihun-dafa",  "ÄãÅª´íÁË°É£¿ÕâÖÖÏÂÈıÀÄµÄ¶«Î÷ÎÒÔõÃ´»á¡£");
+        // set("no_teach/mihun-dafa",  "ä½ å¼„éŒ¯äº†å§ï¼Ÿé€™ç¨®ä¸‹ä¸‰æ¿«çš„æ±è¥¿æˆ‘æ€éº¼æœƒã€‚");
 
-        create_family("Ø¤°ï", 18, "³¤ÀÏ");
+        create_family("ä¸å¹«", 18, "é•·è€");
 
         set("coagents", ({
                 ([ "startroom" : "/d/city/gbxiaowu",
@@ -86,8 +86,8 @@ LONG);
         }));
 
         set("inquiry", ([
-                "ÈºÄ§ÂÒÎè" : (: ask_skill1 :),
-                "ÉåĞÄÊõ"   : (: ask_skill2 :),
+                "ç¾¤é­”äº‚èˆ" : (: ask_skill1 :),
+                "æ‡¾å¿ƒè¡“"   : (: ask_skill2 :),
         ]));
 
         set("chat_chance_combat", 120);
@@ -117,23 +117,23 @@ void attempt_apprentice(object ob)
 
         if( query("level", ob)<5 )
         {
-                command("say ÄãµÄ½­ºş¾­Ñé²»¹»£¬»¹ÊÇÏÈÏò¸÷Î»³¤ÀÏÑ§Ï°°É¡£");
+                command("say ä½ çš„æ±Ÿæ¹–ç¶“é©—ä¸å¤ ï¼Œé‚„æ˜¯å…ˆå‘å„ä½é•·è€å­¸ç¿’å§ã€‚");
                 return;
         }
 
         if( query("family/beggarlvl", ob)<4 )
         {
-                command("say ÄãÔÚ±¾°ïµÄµØÎ»Ì«µÍ£¬»¹ÊÇÏÈÏòÆäËûÊ¦¸¸Ñ§Ï°°É¡£");
+                command("say ä½ åœ¨æœ¬å¹«çš„åœ°ä½å¤ªä½ï¼Œé‚„æ˜¯å…ˆå‘å…¶ä»–å¸«çˆ¶å­¸ç¿’å§ã€‚");
                 return;
         }
 
         if (ob->query_skill("force") < 90)
         {
-                command("say ÄãµÄÄÚ¹¦»ğºò»¹²»¹»£¬»¹ÊÇÏÈÏòÆäËûÊ¦¸¸Ñ§Ï°°É¡£");
+                command("say ä½ çš„å…§åŠŸç«å€™é‚„ä¸å¤ ï¼Œé‚„æ˜¯å…ˆå‘å…¶ä»–å¸«çˆ¶å­¸ç¿’å§ã€‚");
                 return;
         }
         command("grin");
-        command("say ÄÇÄãÒÔºó¾Í¸ú×ÅÎÒ°É¡£");
+        command("say é‚£ä½ ä»¥å¾Œå°±è·Ÿè‘—æˆ‘å§ã€‚");
         command("recruit "+query("id", ob));
 
         if( query("class", ob) != "beggar" )
@@ -153,31 +153,31 @@ mixed ask_skill1()
         me = this_player();
 
         if( query("can_perform/fengmo-zhang/luan", me) )
-                return "ÕâÕĞÎÒ²»ÊÇÒÑ¾­½Ì»áÄãÁËÂğ£¿";
+                return "é€™æ‹›æˆ‘ä¸æ˜¯å·²ç¶“æ•™æœƒä½ äº†å—ï¼Ÿ";
 
         if( query("family/family_name", me) != query("family/family_name") )
-                return "¸óÏÂÓëÔÚÏÂËØ²»ÏàÊ¶£¬²»Öª´Ë»°´ÓºÎËµÆğ£¿";
+                return "é–£ä¸‹èˆ‡åœ¨ä¸‹ç´ ä¸ç›¸è­˜ï¼Œä¸çŸ¥æ­¤è©±å¾ä½•èªªèµ·ï¼Ÿ";
 
         if (me->query_skill("fengmo-zhang", 1) < 1)
-                return "ÄãÁ¬·èÄ§ÕÈ·¨¶¼Ã»Ñ§£¬ºÎÌ¸¾øÕĞ¿ÉÑÔ£¿";
+                return "ä½ é€£ç˜‹é­”æ–æ³•éƒ½æ²’å­¸ï¼Œä½•è«‡çµ•æ‹›å¯è¨€ï¼Ÿ";
 
         if( query("family/gongji", me)<400 )
-                return "ÄãÔÚÎÒÃÇØ¤°ïÄÚÉõÎŞ×÷Îª£¬ÕâÕĞÎÒÔİÊ±»¹²»ÄÜ´«Äã¡£";
+                return "ä½ åœ¨æˆ‘å€‘ä¸å¹«å…§ç”šç„¡ä½œç‚ºï¼Œé€™æ‹›æˆ‘æš«æ™‚é‚„ä¸èƒ½å‚³ä½ ã€‚";
 
         if (me->query_skill("fengmo-zhang", 1) < 120)
-                return "ÄãµÄ·èÄ§ÕÈ·¨»ğºò»¹²»¹»£¬»¹ÊÇÏÂÈ¥Á·¸ßµãÔÙÀ´°É¡£";
+                return "ä½ çš„ç˜‹é­”æ–æ³•ç«å€™é‚„ä¸å¤ ï¼Œé‚„æ˜¯ä¸‹å»ç·´é«˜é»å†ä¾†å§ã€‚";
 
         if (me->query_skill("force") < 150)
-                return "ÄãÏÖÔÚµÄÄÚ¹¦ĞŞÎª²»×ã£¬»¹ÊÇÁ·¸ßµãÔÙÀ´°É¡£";
+                return "ä½ ç¾åœ¨çš„å…§åŠŸä¿®ç‚ºä¸è¶³ï¼Œé‚„æ˜¯ç·´é«˜é»å†ä¾†å§ã€‚";
 
-        message_sort(HIY "\n$n" HIY "µãÁËµãÍ·£¬¶Ô$N" HIY "ËµµÀ£º¡°¸ø"
-                     "ÎÒ¿´Çå³şÁË¡£¡±Í»È»¶¸Ìı$n" HIY "Ò»Éù±©ºÈ£¬ÊÖÖĞÌú"
-                     "ÕÈÒ»ÕóÂÒÎè£¬¾¹ËÆºÁÎŞÕÂÀí£¬»ÓÎè³öÊıµÀÕÈÓ°£¬ÆøÊÆ"
-                     "ÅìÅÈ£¬Á¦²»¿Éµ²¡£ÕıÊÇ·èÄ§ÕÈ·¨µÄ¾«ÒªËùÔÚ¡£\n\n" NOR,
+        message_sort(HIY "\n$n" HIY "é»äº†é»é ­ï¼Œå°$N" HIY "èªªé“ï¼šâ€œçµ¦"
+                     "æˆ‘çœ‹æ¸…æ¥šäº†ã€‚â€çªç„¶é™¡è½$n" HIY "ä¸€è²æš´å–ï¼Œæ‰‹ä¸­éµ"
+                     "æ–ä¸€é™£äº‚èˆï¼Œç«Ÿä¼¼æ¯«ç„¡ç« ç†ï¼Œæ®èˆå‡ºæ•¸é“æ–å½±ï¼Œæ°£å‹¢"
+                     "æ¾æ¹ƒï¼ŒåŠ›ä¸å¯æ“‹ã€‚æ­£æ˜¯ç˜‹é­”æ–æ³•çš„ç²¾è¦æ‰€åœ¨ã€‚\n\n" NOR,
                      me, this_object());
 
-        command("say Ã÷°×ÁËÃ´¡£");
-        tell_object(me, HIC "ÄãÑ§»áÁË¡¸ÈºÄ§ÂÒÎè¡¹¡£\n" NOR);
+        command("say æ˜ç™½äº†éº¼ã€‚");
+        tell_object(me, HIC "ä½ å­¸æœƒäº†ã€Œç¾¤é­”äº‚èˆã€ã€‚\n" NOR);
         if (me->can_improve_skill("staff"))
                 me->improve_skill("staff", 1500000);
         if (me->can_improve_skill("fengmo-zhang"))
@@ -196,26 +196,26 @@ mixed ask_skill2()
         me = this_player();
 
         if( query("can_exert/huntian-qigong/shexin", me) )
-                return "ÕâÕĞÎÒ²»ÊÇÒÑ¾­½Ì»áÄãÁËÂğ£¿";
+                return "é€™æ‹›æˆ‘ä¸æ˜¯å·²ç¶“æ•™æœƒä½ äº†å—ï¼Ÿ";
 
         if( query("family/family_name", me) != query("family/family_name") )
-                return "¸óÏÂÓëÔÚÏÂËØ²»ÏàÊ¶£¬²»Öª´Ë»°´ÓºÎËµÆğ£¿";
+                return "é–£ä¸‹èˆ‡åœ¨ä¸‹ç´ ä¸ç›¸è­˜ï¼Œä¸çŸ¥æ­¤è©±å¾ä½•èªªèµ·ï¼Ÿ";
 
         if( query("family/gongji", me)<400 )
-                return "ÄãÔÚÎÒÃÇØ¤°ïÄÚÉõÎŞ×÷Îª£¬ÕâÕĞÎÒÔİÊ±»¹²»ÄÜ´«Äã¡£";
+                return "ä½ åœ¨æˆ‘å€‘ä¸å¹«å…§ç”šç„¡ä½œç‚ºï¼Œé€™æ‹›æˆ‘æš«æ™‚é‚„ä¸èƒ½å‚³ä½ ã€‚";
 
         if (me->query_skill("huntian-qigong", 1) < 120)
-                return "ÄãµÄ»ìÌìÆø¹¦»ğºò»¹²»¹»£¬»¹ÊÇÏÂÈ¥Á·¸ßµãÔÙÀ´°É¡£";
+                return "ä½ çš„æ··å¤©æ°£åŠŸç«å€™é‚„ä¸å¤ ï¼Œé‚„æ˜¯ä¸‹å»ç·´é«˜é»å†ä¾†å§ã€‚";
 
         if (me->query_skill("force") < 150)
-                return "ÄãÏÖÔÚµÄÄÚ¹¦ĞŞÎª²»×ã£¬»¹ÊÇÁ·¸ßµãÔÙÀ´°É¡£";
+                return "ä½ ç¾åœ¨çš„å…§åŠŸä¿®ç‚ºä¸è¶³ï¼Œé‚„æ˜¯ç·´é«˜é»å†ä¾†å§ã€‚";
 
-        message_sort(HIY "\n$n" HIY "µãÁËµãÍ·£¬¶Ô$N" HIY "¹íËîµÄËµµÀ£º¡°¸ø"
-                     "ÎÒÌıÇå³şÁË¡±¡£È»ºó¿ªÊ¼Ğ¡ÉùµØ¶Ô$N½²½âÉãĞÄÊõµÄ¾«ÒªËùÔÚ¡£\n\n" NOR,
+        message_sort(HIY "\n$n" HIY "é»äº†é»é ­ï¼Œå°$N" HIY "é¬¼ç¥Ÿçš„èªªé“ï¼šâ€œçµ¦"
+                     "æˆ‘è½æ¸…æ¥šäº†â€ã€‚ç„¶å¾Œé–‹å§‹å°è²åœ°å°$Nè¬›è§£æ”å¿ƒè¡“çš„ç²¾è¦æ‰€åœ¨ã€‚\n\n" NOR,
                      me, this_object());
 
-        command("say Ã÷°×ÁËÃ´¡£");
-        tell_object(me, HIC "ÄãÑ§»áÁË¡¸ÉãĞÄÊõ¡¹¡£\n" NOR);
+        command("say æ˜ç™½äº†éº¼ã€‚");
+        tell_object(me, HIC "ä½ å­¸æœƒäº†ã€Œæ”å¿ƒè¡“ã€ã€‚\n" NOR);
         if (me->can_improve_skill("force"))
                 me->improve_skill("force", 1500000);
         if (me->can_improve_skill("huntian-qigong"))
@@ -231,16 +231,16 @@ int accept_ask(object me, string topic)
 {
         switch (topic)
         {
-        case "ÀúÁ·" :
-        case "ÀúÁ¶" :
-        case "¶ÍÁ¶" :
+        case "æ­·ç·´" :
+        case "æ­·ç…‰" :
+        case "é›ç…‰" :
                 return QUEST_D->accept_ask(this_object(), me, topic);
                 break;
 
-        case "Á¬»·¾÷" :
+        case "é€£ç’°è¨£" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/liuhe-dao/lian",
-                           "name"    : "Á¬»·¾÷",
+                           "name"    : "é€£ç’°è¨£",
                            "sk1"     : "liuhe-dao",
                            "lv1"     : 100,
                            "sk2"     : "force",
@@ -250,10 +250,10 @@ int accept_ask(object me, string topic)
                            "shen"    : 4000, ]));
                 break;
 
-        case "»ìÌìÉñî¸" :
+        case "æ··å¤©ç¥ç½¡" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_exert/huntian-qigong/shengang",
-                           "name"    : "»ìÌìÉñî¸",
+                           "name"    : "æ··å¤©ç¥ç½¡",
                            "sk1"     : "huntian-qigong",
                            "lv1"     : 140,
                            "sk2"     : "force",

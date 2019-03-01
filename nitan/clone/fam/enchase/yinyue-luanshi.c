@@ -3,14 +3,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIM "ÒõÔÂ¡¤ÂÒÊÀ" NOR, ({"yinyue luanshi", "yinyue luanshi" }));
+        set_name(HIM "é™°æœˆï¹’äº‚ä¸–" NOR, ({"yinyue luanshi", "yinyue luanshi" }));
         set_weight(900);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿é");
+                set("unit", "å¡Š");
                 set("value", 50000);
-                set("enchase/name", "ÒõÔÂ¡¤ÂÒÊÀ");
+                set("enchase/name", "é™°æœˆï¹’äº‚ä¸–");
                 set("enchase/point", 70);
                 set("enchase/type", "all");
                 set("enchase/cur_firm", 85);

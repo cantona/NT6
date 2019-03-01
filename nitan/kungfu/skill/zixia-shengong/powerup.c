@@ -9,21 +9,21 @@ int exert(object me, object target)
         int skill;
         
         if (target != me) 
-                return notify_fail("你只能用紫霞神功提升自己的战斗力。\n");
+                return notify_fail("浣犲彧鑳界敤绱湠绁炲姛鎻愬崌鑷繁鐨勬埌楝ュ姏銆俓n");
                 
         if( query("neili", me)<100 )
-                return notify_fail("你的内力不够。\n");
+                return notify_fail("浣犵殑鍏у姏涓嶅銆俓n");
                 
         if( query_temp("powerup", me) )
-                return notify_fail("你已经在运功中了。\n");
+                return notify_fail("浣犲凡缍撳湪閬嬪姛涓簡銆俓n");
 
         skill = me->query_skill("force");
 
         addn("neili", -100, me);
         me->receive_damage("qi", 0);
 
-        message_combatd(MAG "$N微一凝神，运起紫霞神功，背转身去，脸上突然紫气大盛！"
-                        "只是那紫气一现即隐，转过身来，脸上又回复如常。\n" NOR, me);
+        message_combatd(MAG "$N寰竴鍑濈锛岄亱璧风传闇炵鍔燂紝鑳岃綁韬幓锛岃噳涓婄獊鐒剁传姘ｅぇ鐩涳紒"
+                        "鍙槸閭ｇ传姘ｄ竴鐝惧嵆闅憋紝杞夐亷韬締锛岃噳涓婂張鍥炲京濡傚父銆俓n" NOR, me);
 
         addn_temp("apply/attack", skill*2/5, me);
         addn_temp("apply/defense", skill*2/5, me);
@@ -43,7 +43,7 @@ void remove_effect(object me, int amount)
                 addn_temp("apply/attack", -amount, me);
                 addn_temp("apply/defense", -amount, me);
                 delete_temp("powerup", me);
-                tell_object(me, "你的紫霞神功运行完毕，将内力收回丹田。\n");
+                tell_object(me, "浣犵殑绱湠绁炲姛閬嬭瀹岀暍锛屽皣鍏у姏鏀跺洖涓圭敯銆俓n");
         }
 }
 

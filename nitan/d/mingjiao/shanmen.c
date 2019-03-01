@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Ã÷½ÌÉ½ÃÅ");
+        set("short", "æ˜æ•™å±±é–€");
         set("long", @LONG
-Ò»¸ö¾Ş´óµÄÌìÈ»Ê¯ÇÅºá¿çÔÚÁ½Æ¬É½±ÚÖ®¼ä£¬Ê¯ÇÅÕıÉÏ·½ÁúÅÌ·ïÎè
-¿Ì×ÅÁ½¸ö´ó×Ö£º¡ºÃ÷½Ì¡»¡£×Ö¼£ÓĞĞ©°şÂä£¬¿´ÉÏÈ¥Äê´ú¾ÃÔ¶¡£Á½Î»Èı
-Ê®À´ËêµÄ´óººÊÖ³Ö¸Ö½£ÊØÔÚÉ½ÃÅÁ½²à¡£
+ä¸€å€‹å·¨å¤§çš„å¤©ç„¶çŸ³æ©‹æ©«è·¨åœ¨å…©ç‰‡å±±å£ä¹‹é–“ï¼ŒçŸ³æ©‹æ­£ä¸Šæ–¹é¾ç›¤é³³èˆ
+åˆ»è‘—å…©å€‹å¤§å­—ï¼šã€æ˜æ•™ã€ã€‚å­—è·¡æœ‰äº›å‰è½ï¼Œçœ‹ä¸Šå»å¹´ä»£ä¹…é ã€‚å…©ä½ä¸‰
+åä¾†æ­²çš„å¤§æ¼¢æ‰‹æŒé‹¼åŠå®ˆåœ¨å±±é–€å…©å´ã€‚
 LONG );
         set("exits", ([
                 "westup" : __DIR__"shanlu1",
@@ -29,17 +29,17 @@ int valid_leave(object me, string dir)
         object *inv;
         int i;
 
-        if (me->query_family() != "Ã÷½Ì" &&
-            me->query_family() != "Îäµ±ÅÉ"  &&
+        if (me->query_family() != "æ˜æ•™" &&
+            me->query_family() != "æ­¦ç•¶æ´¾"  &&
             dir == "westup")
         {
                 inv = all_inventory(me);
                 for(i=sizeof(inv)-1; i>=0; i--)
                         if(query("weapon_prop", inv[i]) && ((string)query("equipped", inv[i])=="wielded"))
                                 if(objectp(present("da han", environment(me))))
-                                        return notify_fail("´óººÀ¹×¡ÄãËµµÀ£ºÕâÎ»" +
-                                                RANK_D->query_respect(me) + "Çë·ÅÏÂ±øÈĞ¡£ÎÒ½Ì½Ì¹æÑÏ"
-                                                "À÷£¬Íâ¿Í²»\nµÃ³Ö±øÈĞÉÏÉ½¡£Çë¼ûÁÂ¡£\n");
+                                        return notify_fail("å¤§æ¼¢æ””ä½ä½ èªªé“ï¼šé€™ä½" +
+                                                RANK_D->query_respect(me) + "è«‹æ”¾ä¸‹å…µåˆƒã€‚æˆ‘æ•™æ•™è¦åš´"
+                                                "å²ï¼Œå¤–å®¢ä¸\nå¾—æŒå…µåˆƒä¸Šå±±ã€‚è«‹è¦‹è«’ã€‚\n");
         }
         return ::valid_leave(me, dir);
 }

@@ -1,4 +1,4 @@
-// juemi.c ÌìµØ¾øÃğ
+// juemi.c å¤©åœ°çµ•æ»…
  
 #include <ansi.h>
 #include <combat.h>
@@ -19,25 +19,25 @@ int perform(object me, object target)
         }
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail("ÌìµØ¾øÃğÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("å¤©åœ°çµ•æ»…åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
  
         if (me->query_skill("never-defeated", 1) < 120)
-                return notify_fail("ÄãµÄ²»°ÜÉñ¹¦»¹²»¹»æµÊì£¬²»ÄÜÊ¹ÓÃÌìµØ¾øÃğ£¡\n");
+                return notify_fail("ä½ çš„ä¸æ•—ç¥åŠŸé‚„ä¸å¤ å«»ç†Ÿï¼Œä¸èƒ½ä½¿ç”¨å¤©åœ°çµ•æ»…ï¼\n");
 
         if( !objectp(weapon=query_temp("weapon", me)) )
-                return notify_fail("Äã±ØĞëÊÖ³Ö±øÈĞ²ÅÄÜÊ©Õ¹ÌìµØ¾øÃğ£¡\n");
+                return notify_fail("ä½ å¿…é ˆæ‰‹æŒå…µåˆƒæ‰èƒ½æ–½å±•å¤©åœ°çµ•æ»…ï¼\n");
         
         if (me->query_skill_mapped("sword") != "never-defeated") 
-                return notify_fail("ÄãÏÖÔÚÃ»ÓĞ¼¤·¢²»°ÜÉñ¹¦Îª½£·¨£¬ÄÑÒÔÊ©Õ¹ÌìµØ¾øÃğ¡£\n"); 
+                return notify_fail("ä½ ç¾åœ¨æ²’æœ‰æ¿€ç™¼ä¸æ•—ç¥åŠŸç‚ºåŠæ³•ï¼Œé›£ä»¥æ–½å±•å¤©åœ°çµ•æ»…ã€‚\n"); 
 
         if( query("neili", me)<200 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬²»ÄÜÊ¹ÓÃÌìµØ¾øÃğ£¡\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ï¼Œä¸èƒ½ä½¿ç”¨å¤©åœ°çµ•æ»…ï¼\n");
  
         if (! living(target))
-              return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+              return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIC "$N" HIC "Ëæ±ã×ßÁË¼¸²½£¬ºöÈ»Ò»µ´ÊÖÖĞµÄ" + weapon->name() +
-              HIC "£¬Ñ¸½İÎŞ±ÈµÄÉ¨Ïò$n" HIC "£¬±ä»¯¸´ÔÓÖ®¼«£¬²»¿ÉË¼Òé£¡\n" NOR;
+        msg = HIC "$N" HIC "éš¨ä¾¿èµ°äº†å¹¾æ­¥ï¼Œå¿½ç„¶ä¸€ç›ªæ‰‹ä¸­çš„" + weapon->name() +
+              HIC "ï¼Œè¿…æ·ç„¡æ¯”çš„æƒå‘$n" HIC "ï¼Œè®ŠåŒ–å¾©é›œä¹‹æ¥µï¼Œä¸å¯æ€è­°ï¼\n" NOR;
  
         ap = attack_power(me, "sword") + me->query_int();
         dp = defense_power(target, "dodge") + target->query_dex();
@@ -46,16 +46,16 @@ int perform(object me, object target)
         addn("neili", -50, me);
         if (ap / 2 + random(ap) < dp)
         {
-                msg += HIG "Ö»¼û$n" HIG "²¢²»»ÅÕÅ£¬Ö»ÊÇÇáÇáÒ»ÉÁ£¬¾Í¶ã¹ıÁË$N"
-                       HIG "ÕâÒ»»÷£¡\n"NOR;
+                msg += HIG "åªè¦‹$n" HIG "ä¸¦ä¸æ…Œå¼µï¼Œåªæ˜¯è¼•è¼•ä¸€é–ƒï¼Œå°±èº²éäº†$N"
+                       HIG "é€™ä¸€æ“Šï¼\n"NOR;
         } else
         {
                 addn("neili", -70, me);
                 damage = damage_power(me, "sword");
  
                 msg += COMBAT_D->do_damage(me, target, REMOTE_ATTACK, damage, 90,
-                                           HIR "$n" HIR "Á¬Ã¦¸ñµ²£¬¿ÉÊÇÕâÒ»ÕĞÊµÔÚÊÇ¹íÉñÄª"
-                                           "²â£¬ÄÄÀï×ÁÄ¥µÃÍ¸£¿µÇÊ±ÖĞÁË$P" HIR "µÄÖØ´´£¡\n" NOR);
+                                           HIR "$n" HIR "é€£å¿™æ ¼æ“‹ï¼Œå¯æ˜¯é€™ä¸€æ‹›å¯¦åœ¨æ˜¯é¬¼ç¥è«"
+                                           "æ¸¬ï¼Œå“ªè£¡ç¢ç£¨å¾—é€ï¼Ÿç™»æ™‚ä¸­äº†$P" HIR "çš„é‡å‰µï¼\n" NOR);
         }
 
         message_combatd(msg, me, target);

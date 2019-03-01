@@ -9,11 +9,11 @@ inherit NPC;
 
 void create()
 {
-	set_name(HIW "Ç§Äêó¸òÜ" NOR, ({ "qiannian chanchu", "qiannian", "chanchu" }) );
-	set("gender", "ÄĞĞÔ");
+	set_name(HIW "åƒå¹´èŸ¾èœ" NOR, ({ "qiannian chanchu", "qiannian", "chanchu" }) );
+	set("gender", "ç”·æ€§");
 	set("age", 1000);
 	set("long", @LONG
-ÕâÊÇÒ»Ö»¾Ş´óµÄó¸òÜ£¬¿ÚÖĞÍÂ×ÅÂÌÉ«¶¾Æø£¬ÉõÊÇ¿ÉÅÂ¡£
+é€™æ˜¯ä¸€åªå·¨å¤§çš„èŸ¾èœï¼Œå£ä¸­åè‘—ç¶ è‰²æ¯’æ°£ï¼Œç”šæ˜¯å¯æ€•ã€‚
 LONG );
 	set("combat_exp", 2000000000);
 	set("shen_type", 0);
@@ -28,7 +28,7 @@ LONG );
         set("jingli", 5000000);
         set("max_jingli", 5000000);
 
-        set("no_nuoyi", 1); // ²»±»Å²ÒÆÓ°Ïì
+        set("no_nuoyi", 1); // ä¸è¢«æŒªç§»å½±éŸ¿
 
         set("str", 100);
         set("int", 100);
@@ -61,7 +61,7 @@ LONG );
 
 int accept_fight(object ob)
 {
-        message_vision("$NÒ»Éù¹Ö½Ğ£¬ÆËÁË¹ıÀ´¡£\n",
+        message_vision("$Nä¸€è²æ€ªå«ï¼Œæ’²äº†éä¾†ã€‚\n",
                        this_object(), ob);
         kill_ob(ob);
         return -1;
@@ -81,7 +81,7 @@ mixed hit_ob(object me, object ob, int damage_bouns)
 {
 	ob->start_busy(5 + random(5));
 	me->receive_wound("qi", 3000 + random(3000), ob);
-        return HIY "$N" HIY "ÖÜÎ§¶¾Æøë³ëµ£¬Ö±±ÆµÃ$n" HIY "Í·ÔÎÄ¿Ñ£¡£\n" NOR;
+        return HIY "$N" HIY "å‘¨åœæ¯’æ°£æ°¤æ°³ï¼Œç›´é€¼å¾—$n" HIY "é ­æšˆç›®çœ©ã€‚\n" NOR;
 }
 
 void heart_beat()
@@ -94,7 +94,7 @@ void heart_beat()
 
 void unconcious()
 {
-	    // ·ÀÖ¹Ö±½Ócall_die()
+	    // é˜²æ­¢ç›´æ¥call_die()
 		if (query("qi") > 100000)
 		{
 			revive();
@@ -106,18 +106,18 @@ void unconcious()
 
 void die(object killer)
 {
-        object dob;             // ´òÔÎÕâ¸öNPCµÄÈË
-        int n;                  // ¿ÉÒÔ½±ÀøµÄÈËµÄÊıÄ¿
-        int exp;                // ĞèÒª¹Ï·ÖµÄ¾­Ñé
-        int pot;                // ĞèÒª¹Ï·ÖµÄÇ±ÄÜ
-        int weiwang;            // ĞèÒª¹Ï·ÖµÄÍşÍû
-        int score;              // ĞèÒª¹Ï·ÖµÄÔÄÀú
-        object *t;              // É±ËÀÎÒµÄÈËµÄ¶ÓÎéÁĞ±í
+        object dob;             // æ‰“æšˆé€™å€‹NPCçš„äºº
+        int n;                  // å¯ä»¥çå‹µçš„äººçš„æ•¸ç›®
+        int exp;                // éœ€è¦ç“œåˆ†çš„ç¶“é©—
+        int pot;                // éœ€è¦ç“œåˆ†çš„æ½›èƒ½
+        int weiwang;            // éœ€è¦ç“œåˆ†çš„å¨æœ›
+        int score;              // éœ€è¦ç“œåˆ†çš„é–±æ­·
+        object *t;              // æ®ºæ­»æˆ‘çš„äººçš„éšŠä¼åˆ—è¡¨
         object tob;
         int i;
 
-        // ¶¨Òå½±ÀøÎïÆ·ÁĞ±í
-		// ¼¸ÂÊ  X / Íò·ÖÖ®Ò»
+        // å®šç¾©çå‹µç‰©å“åˆ—è¡¨
+		// å¹¾ç‡  X / è¬åˆ†ä¹‹ä¸€
 		mixed oblist = ([
 			"/clone/armor/fenghuang-chai2"           :        	1,
 			"/clone/armor/haizhi-xin2"               :        	1,
@@ -132,14 +132,14 @@ void die(object killer)
 		string s_gift, *key_s_gift;
 		int gift_point;
 		
-	    // ·ÀÖ¹Ö±½Ócall_die()
+	    // é˜²æ­¢ç›´æ¥call_die()
 		if (query("qi") > 100000)
 		{
 			revive();
 			return;
 		}
 
-        // ÕÒµ½É±ÁËÎÒ(NPC)»òÊÇ´òÔÎÎÒµÄÈË
+        // æ‰¾åˆ°æ®ºäº†æˆ‘(NPC)æˆ–æ˜¯æ‰“æšˆæˆ‘çš„äºº
         if (! objectp(dob = killer))
                 dob = query_last_damage_from();
 
@@ -187,7 +187,7 @@ void die(object killer)
 									         "pot"      : pot + ((tob == dob) ? 1000 : 0),
 										     "weiwang"  : weiwang + ((tob == dob) ? 1000 : 0),
 											 "score"    : score + ((tob == dob) ? 1000 : 0),
-									         "prompt"   : "ÄãµÄ¶ÓÎéÉ±ËÀ" + name() + "Ö®ºó"]), 999);
+									         "prompt"   : "ä½ çš„éšŠä¼æ®ºæ­»" + name() + "ä¹‹å¾Œ"]), 999);
 
 						 }
 					}
@@ -199,48 +199,48 @@ void die(object killer)
 									         "pot"      : pot,
 										     "weiwang"  : weiwang,
 											 "score"    : score,
-									         "prompt"   : "ÄãÔÚÉ±ËÀ" + name() + "Ö®ºó"]), 999);
+									         "prompt"   : "ä½ åœ¨æ®ºæ­»" + name() + "ä¹‹å¾Œ"]), 999);
 				}
 
         }
 
-        // Ò»¶¨¼¸ÂÊµôÎïÆ·ÔÚÉ±ÎÒµÄÈËÉíÉÏdob
+        // ä¸€å®šå¹¾ç‡æ‰ç‰©å“åœ¨æ®ºæˆ‘çš„äººèº«ä¸Šdob
 		if (objectp(dob) && environment(dob) == environment(this_object()))
 		{
 			key_s_gift = keys(oblist);
 			s_gift = key_s_gift[random(sizeof(key_s_gift))];
 			gift_point = oblist[s_gift];
 
-			// ÅĞ¶Ï¼¸ÂÊ
+			// åˆ¤æ–·å¹¾ç‡
 			if (MEMBER_D->is_valib_member(dob->query("id")) 
 				&& random(MAX_POINT / ITEM_D->gift_point()) < gift_point)
 			{
-				// »ñµÃÎïÆ·--±¬³öÎïÆ·Ö±½Ó·ÅÔÚdobÉíÉÏ
+				// ç²å¾—ç‰©å“--çˆ†å‡ºç‰©å“ç›´æ¥æ”¾åœ¨dobèº«ä¸Š
 				gift_ob = new(s_gift);
 				if (objectp(gift_ob))
 				{
-					message_vision(HIR "¶£~~Ò»Éù£¬´Ó$N" HIR "µô³öÒ»Ñù¶«Î÷£¬$n" HIR 
-						           "¸Ï½ô¼ğÁËÆğÀ´¡£\n" NOR, this_object(), dob);
-					tell_object(dob, BLINK + HIG "ÄãµÃµ½ÁË" + gift_ob->name() + BLINK + HIG "¡£\n" NOR);
+					message_vision(HIR "å®~~ä¸€è²ï¼Œå¾$N" HIR "æ‰å‡ºä¸€æ¨£æ±è¥¿ï¼Œ$n" HIR 
+						           "è¶•ç·Šæ€äº†èµ·ä¾†ã€‚\n" NOR, this_object(), dob);
+					tell_object(dob, BLINK + HIG "ä½ å¾—åˆ°äº†" + gift_ob->name() + BLINK + HIG "ã€‚\n" NOR);
 					gift_ob->move(dob, 1);
 				}
-				else // ¼ÍÂ¼Ö® 
+				else // ç´€éŒ„ä¹‹ 
 				{
 					log_file("killed-gift-none", s_gift + "\n");
 				}
 			}
 		}
 
-        // ÏûÊ§
-	message_vision("$N³¤Ğ¥Ò»Éù£¬È»ºó»¯ÎªÒ»Ì²ÑªË®£¬ÉøÈëµØÏÂ¡£\n", this_object());
+        // æ¶ˆå¤±
+	message_vision("$Né•·å˜¯ä¸€è²ï¼Œç„¶å¾ŒåŒ–ç‚ºä¸€ç˜è¡€æ°´ï¼Œæ»²å…¥åœ°ä¸‹ã€‚\n", this_object());
 
-        // ÅĞ¶ÏÊÇ·ñ¿ÉÒÔÑ§»áperform tuitian
+        // åˆ¤æ–·æ˜¯å¦å¯ä»¥å­¸æœƒperform tuitian
         if (dob->query_skill("jiuyin-hamagong", 1) && ! dob->query("can_perform/jiuyin-hamagong/puji"))
         {
         	dob->set("can_perform/jiuyin-hamagong/puji", 1);
         	dob->save();
         	
-        	tell_object(dob, HIG "¹§Ï²Äã£¬ÄãÍ¨¹ıÉ±ËÀÇ§Äêó¸òÜ£¬ÁìÎò³öÁË¾ÅÒõ¸òó¡¹¦µÄ¾øÕĞ[ÍÆÌìÊ½]!\n");
+        	tell_object(dob, HIG "æ­å–œä½ ï¼Œä½ é€šéæ®ºæ­»åƒå¹´èŸ¾èœï¼Œé ˜æ‚Ÿå‡ºäº†ä¹é™°è›¤èŸ†åŠŸçš„çµ•æ‹›[æ¨å¤©å¼]!\n");
         }
         
         destruct(this_object());
@@ -252,7 +252,7 @@ void random_move()
 {
 	if (time() - query("born_time") > 1800)
 	{
-		message_vision("$N³¤Ğ¥Ò»Éù£¬»¯×öÒ»Ì²ÑªË®£¬ÉøÈëµØÏÂ¡£\n", this_object());
+		message_vision("$Né•·å˜¯ä¸€è²ï¼ŒåŒ–åšä¸€ç˜è¡€æ°´ï¼Œæ»²å…¥åœ°ä¸‹ã€‚\n", this_object());
        
 		destruct(this_object());
 		return;

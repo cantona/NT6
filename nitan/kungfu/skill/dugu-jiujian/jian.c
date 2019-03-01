@@ -1,6 +1,6 @@
 #include <ansi.h>
 
-#define HUA "¡¸" MAG "½£ÐÄÍ¨Ã÷" NOR "¡¹"
+#define HUA "ã€Œ" MAG "åŠå¿ƒé€šæ˜Ž" NOR "ã€"
 
 inherit F_SSERVER;
 
@@ -15,30 +15,30 @@ int perform(object me, object target)
         int skill;
 
         if( !query("scborn/ok", me) )
-                return notify_fail("ÄãËùÊ¹ÓÃµÄÍâ¹¦ÖÐÃ»ÓÐÕâ¸ö¹¦ÄÜ¡£\n");
+                return notify_fail("ä½ æ‰€ä½¿ç”¨çš„å¤–åŠŸä¸­æ²’æœ‰é€™å€‹åŠŸèƒ½ã€‚\n");
 
         if (me->query_skill_mapped("sword") != "dugu-jiujian")
-                return notify_fail("Äã»¹Ã»ÓÐ¼¤·¢¶À¹Â¾Å½£¡£\n");
+                return notify_fail("ä½ é‚„æ²’æœ‰æ¿€ç™¼ç¨å­¤ä¹åŠã€‚\n");
                 
         if( !query("can_learn/dugu-jiujian/nothing", me) )
-                return notify_fail("Äã»¹Ã»ÓÐ½øÈëÎÞÕÐ¾³½ç£¬ºÎÌ¸½£ÐÄÍ¨Ã÷£¿\n");
+                return notify_fail("ä½ é‚„æ²’æœ‰é€²å…¥ç„¡æ‹›å¢ƒç•Œï¼Œä½•è«‡åŠå¿ƒé€šæ˜Žï¼Ÿ\n");
                 
         if ((int)me->query_skill("dugu-jiujian", 1) < 1000)
-                return notify_fail("ÄãµÄ¶À¹Â¾Å½£µÈ¼¶²»¹»£¬ÄÑÒÔÊ©Õ¹" HUA "¡£\n");
+                return notify_fail("ä½ çš„ç¨å­¤ä¹åŠç­‰ç´šä¸å¤ ï¼Œé›£ä»¥æ–½å±•" HUA "ã€‚\n");
                                         
         if( query_temp("dugu_sword", me) )
-                return notify_fail("ÄãÒÑ¾­ÔËÆð" HUA "ÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“é‹èµ·" HUA "äº†ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me)) )
-                return notify_fail("ÄãËùÊ¹ÓÃµÄÎäÆ÷²»¶Ô£¡\n");
+                return notify_fail("ä½ æ‰€ä½¿ç”¨çš„æ­¦å™¨ä¸å°ï¼\n");
                 
         if( query("skill_type", weapon) != "sword" )
-                return notify_fail("ÄãËùÊ¹ÓÃµÄÎäÆ÷²»¶Ô£¡\n");
+                return notify_fail("ä½ æ‰€ä½¿ç”¨çš„æ­¦å™¨ä¸å°ï¼\n");
                 
         if( query("neili", me)<250 )
-                return notify_fail("Äã´ËÊ±µÄÄÚÁ¦²»×ã£¬ÄÑÒÔÊ©Õ¹" HUA "¡£\n");
+                return notify_fail("ä½ æ­¤æ™‚çš„å…§åŠ›ä¸è¶³ï¼Œé›£ä»¥æ–½å±•" HUA "ã€‚\n");
 
-        msg = MAG "$N" MAG "ÄýÉñ¾ÛÆø£¬»ÓÈ÷ÊÖÖÐ±øÆ÷£¬½øÈëÎÞÕÐÎÞÎÒ£¬½£ÐÄÍ¨Ã÷¾³½ç£¡\n\n" NOR;
+        msg = MAG "$N" MAG "å‡ç¥žèšæ°£ï¼Œæ®æ´’æ‰‹ä¸­å…µå™¨ï¼Œé€²å…¥ç„¡æ‹›ç„¡æˆ‘ï¼ŒåŠå¿ƒé€šæ˜Žå¢ƒç•Œï¼\n\n" NOR;
 
         message_combatd(msg, me, target);
 
@@ -62,6 +62,6 @@ void remove_effect(object me, int amount)
         {
                 addn_temp("apply/damage", -1*amount, me);
                 delete_temp("dugu_sword", me);
-                tell_object(me, "ÄãµÄ" HUA "ÔËÐÐÍê±Ï£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï¡£\n");
+                tell_object(me, "ä½ çš„" HUA "é‹è¡Œå®Œç•¢ï¼Œå°‡å…§åŠ›æ”¶å›žä¸¹ç”°ã€‚\n");
         }
 }

@@ -21,11 +21,11 @@ int main(object me, string arg)
                 if( query_temp("im_fd", me) 
                 && IM_D->query_users()[query_temp("im_fd", me)]["obj"] == me)   
                 {
-                        tell( me, "\n[IM Message]:ÄãÕıÔÚµÇÈëÖĞ£¬ÇëÓÃ im quit ÀëÏß¡£\n");
+                        tell( me, "\n[IM Message]:ä½ æ­£åœ¨ç™»å…¥ä¸­ï¼Œè«‹ç”¨ im quit é›¢ç·šã€‚\n");
                         return 1;
                 }
 
-                tell( me, "\n[IM Message]:¿ªÊ¼µÇÈë¼´Ê±Í¨Ñ¶¾«Áé¡£\n");
+                tell( me, "\n[IM Message]:é–‹å§‹ç™»å…¥å³æ™‚é€šè¨Šç²¾éˆã€‚\n");
                 IM_D->login_irc(me);
                 return 1;
         }
@@ -42,7 +42,7 @@ int main(object me, string arg)
                 {
                         IM_D->send_command(query_temp("im_fd", me),"QUIT\r\n");
                         delete_temp("im_fd", me);
-                        tell( me, "\n[IM Message]:¼´Ê±Í¨Ñ¶¾«ÁéÀëÏßÁË¡£\n");
+                        tell( me, "\n[IM Message]:å³æ™‚é€šè¨Šç²¾éˆé›¢ç·šäº†ã€‚\n");
                         return 1;
                 }
 
@@ -65,12 +65,12 @@ int main(object me, string arg)
                 {
                         if(who != "msn" && who != "yahoo")
                         {
-                                tell( me, "\n[IM Message]:Ä¿Ç°Ö»ÄÜ¼ÓÈë msn »òÊÇ yahoo µÄºÃÓÑÃûµ¥¡£\n");
+                                tell( me, "\n[IM Message]:ç›®å‰åªèƒ½åŠ å…¥ msn æˆ–æ˜¯ yahoo çš„å¥½å‹åå–®ã€‚\n");
                                 return 1;
                         }
                         IM_D->send_command(query_temp("im_fd", me), "PRIVMSG #bitlbee :add "+who+" "+msg);
 
-                        tell( me, "\n[IM Message]:Äã°Ñ "+msg +" ¼ÓÈëÄãµÄ "+who +" ºÃÓÑÃûµ¥¡£\n");
+                        tell( me, "\n[IM Message]:ä½ æŠŠ "+msg +" åŠ å…¥ä½ çš„ "+who +" å¥½å‹åå–®ã€‚\n");
                         return 1;
                 }
 
@@ -82,45 +82,45 @@ int main(object me, string arg)
                         && !undefinedp(IM_D->query_users()[fd]["list"][who]))
                         {
                                 IM_D->send_command(fd,  "PRIVMSG #bitlbee :remove "+who);
-                                tell( me, "\n[IM Message]:Äã°Ñ "+who +" ´ÓÄãµÄºÃÓÑÃûµ¥É¾³ı¡£\n");
+                                tell( me, "\n[IM Message]:ä½ æŠŠ "+who +" å¾ä½ çš„å¥½å‹åå–®åˆªé™¤ã€‚\n");
                                 return 1;
                         }
 
-                        tell( me, "\n[IM Message]:Ã»ÓĞÕâ¸öÈËÅ¶£¡\n");
+                        tell( me, "\n[IM Message]:æ²’æœ‰é€™å€‹äººå“¦ï¼\n");
                         return 1;
                 }
 
                 if(arg == "yes") 
                 {
                         IM_D->send_command(query_temp("im_fd", me), "PRIVMSG #bitlbee : yes");
-                        tell( me, "\n[IM Message]:ÄãÍ¬ÒâËû°ÑÄã¼ÓÈëËûµÄºÃÓÑÃûµ¥¡£\n");
+                        tell( me, "\n[IM Message]:ä½ åŒæ„ä»–æŠŠä½ åŠ å…¥ä»–çš„å¥½å‹åå–®ã€‚\n");
                         return 1;
                 }
 
                 if(arg == "no")
                 {
                         IM_D->send_command(query_temp("im_fd", me),  "PRIVMSG #bitlbee : no");
-                        tell( me, "\n[IM Message]:Äã²»Í¬ÒâËû¼ÓÄã½øÈëËûµÄºÃÓÑÃûµ¥¡£\n");
+                        tell( me, "\n[IM Message]:ä½ ä¸åŒæ„ä»–åŠ ä½ é€²å…¥ä»–çš„å¥½å‹åå–®ã€‚\n");
                         return 1;
                 }
 
                 if(sscanf(arg,"nick %s",msg))
                 {
-                        tell( me, "\n[IM Message]:Äã½«Ãû×Ö¸ÄÎª£º"+msg+"¡£\n");
+                        tell( me, "\n[IM Message]:ä½ å°‡åå­—æ”¹ç‚ºï¼š"+msg+"ã€‚\n");
                         IM_D->send_command(query_temp("im_fd", me),  "PRIVMSG #bitlbee :nick msn \""+msg+"\"");
                         return 1;
                 }
-                tell( me,"\n[IM Message]:Ã»ÓĞÕâÏî¹¦ÄÜÅ¶¡£\n");
+                tell( me,"\n[IM Message]:æ²’æœ‰é€™é …åŠŸèƒ½å“¦ã€‚\n");
         }
         else 
-                tell( me,"Äã²¢Ã»ÓĞµÇÈë\n");
+                tell( me,"ä½ ä¸¦æ²’æœ‰ç™»å…¥\n");
         return 1;
 }
 
 void who_list(object me)
 {
         mapping map = IM_D->query_users();
-        tell( me,"ºÃÓÑÃûµ¥ÁĞ±í£º\n");
+        tell( me,"å¥½å‹åå–®åˆ—è¡¨ï¼š\n");
 
         foreach(int fd,mapping m in map)
         {
@@ -130,7 +130,7 @@ void who_list(object me)
                         {
                                 if(v[2] == m["id"] || v[2] == "root") continue;
 
-                        tell( me, sprintf("(%-4s)[%-10s] %-70s \n",v[3]=="G"?"Àë¿ª":"ÏßÉÏ",v[2],v[4]+"("+v[0]+"@"+v[1]+")"));
+                        tell( me, sprintf("(%-4s)[%-10s] %-70s \n",v[3]=="G"?"é›¢é–‹":"ç·šä¸Š",v[2],v[4]+"("+v[0]+"@"+v[1]+")"));
                         }
                 }
         }
@@ -139,7 +139,7 @@ void who_list(object me)
 
 void register(object me,string pro)
 {
-        tell( me,"[IM Message] ÇëÊäÈëÄãµÄ "+pro+" ÕÊºÅ£¬»òÊÇ°´ . È¡Ïû:");
+        tell( me,"[IM Message] è«‹è¼¸å…¥ä½ çš„ "+pro+" å¸³è™Ÿï¼Œæˆ–æ˜¯æŒ‰ . å–æ¶ˆ:");
         input_to("register_step1",me, pro);
         return;
 }
@@ -148,17 +148,17 @@ void register_step1(string arg,object me,string pro)
 {
         if(arg[0] == '.') 
         {
-                tell( me, "[IM Message] È¡ÏûÉè¶¨¡£\n");
+                tell( me, "[IM Message] å–æ¶ˆè¨­å®šã€‚\n");
                 return;
         }
 
         if(strlen(arg) < 5) 
         {
-                tell( me, "[IM Message] ÇëÊäÈëÄãµÄ "+pro+" ÕÊºÅ£¬»òÊÇ°´ . È¡Ïû:");
+                tell( me, "[IM Message] è«‹è¼¸å…¥ä½ çš„ "+pro+" å¸³è™Ÿï¼Œæˆ–æ˜¯æŒ‰ . å–æ¶ˆ:");
                 input_to("register_step1",me,pro);
         }
 
-        tell( me, "[IM Message] ÇëÊäÈëÄãµÄ "+pro+" ÃÜÂë£¬»òÊÇ°´ . È¡Ïû:");
+        tell( me, "[IM Message] è«‹è¼¸å…¥ä½ çš„ "+pro+" å¯†ç¢¼ï¼Œæˆ–æ˜¯æŒ‰ . å–æ¶ˆ:");
         input_to("register_step2",me,pro,arg);
 }
 
@@ -166,46 +166,46 @@ void register_step2(string arg,object me,string pro,string account)
 {
         if(arg[0] == '.') 
         {
-                tell( me, "[IM Message] È¡ÏûÉè¶¨¡£\n");
+                tell( me, "[IM Message] å–æ¶ˆè¨­å®šã€‚\n");
                 return;
         }
 
 
         if(strlen(arg) < 5) 
         {
-                tell( me, "[IM Message] ÇëÊäÈëÄãµÄ "+pro+" ÃÜÂë£¬»òÊÇ°´ . È¡Ïû:");
+                tell( me, "[IM Message] è«‹è¼¸å…¥ä½ çš„ "+pro+" å¯†ç¢¼ï¼Œæˆ–æ˜¯æŒ‰ . å–æ¶ˆ:");
                 input_to("register_step2",me,pro,account);
         }
 
         IM_D->del_account( query_temp("im_fd", me), pro);
         IM_D->register_account( query_temp("im_fd", me),pro,account,arg);
-        tell( me, "[IM Message] "+pro+" ÕÊºÅĞÂÔö»òĞŞ¸ÄÍê±Ï¡£\n");
+        tell( me, "[IM Message] "+pro+" å¸³è™Ÿæ–°å¢æˆ–ä¿®æ”¹å®Œç•¢ã€‚\n");
 }
 
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : im [¸÷Ïî²ÎÊı]
+æŒ‡ä»¤æ ¼å¼ : im [å„é …åƒæ•¸]
             
-    Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄãµÇÈëÍøÂ·ÉÏÁ÷ĞĞµÄ¼´Ê±Í¨Ñ¶ÈíÌå¡£Ä¿Ç°Ö§Ô®µÄ         
-¼´Ê±Í¨Ñ¶ÈíÌåÓĞ MSN ¡¢ YAHOO Õâ¶şÏî¡£
+    é€™å€‹æŒ‡ä»¤å¯ä»¥è®“ä½ ç™»å…¥ç¶²è·¯ä¸Šæµè¡Œçš„å³æ™‚é€šè¨Šè»Ÿé«”ã€‚ç›®å‰æ”¯æ´çš„         
+å³æ™‚é€šè¨Šè»Ÿé«”æœ‰ MSN ã€ YAHOO é€™äºŒé …ã€‚
 
-    ²»¹ÜÄãÊÇµÚ¼¸´ÎÊ¹ÓÃ£¬ÒªÊ¹ÓÃ im Ê±£¬±ØĞèÏÈ´ò im login ×÷
-µÇÈëµÄ¶¯×÷¡£
+    ä¸ç®¡ä½ æ˜¯ç¬¬å¹¾æ¬¡ä½¿ç”¨ï¼Œè¦ä½¿ç”¨ im æ™‚ï¼Œå¿…éœ€å…ˆæ‰“ im login ä½œ
+ç™»å…¥çš„å‹•ä½œã€‚
 
-    ÒòÎªÍøÂ·´«ÊäµÄ¹ØÏµ£¬ÓĞĞ©Ñ¶Ï¢¿ÉÄÜ»áÑÓ³ÙÒ»Ğ©Ê±¼ä²Å»áÊÕµ½¡£
+    å› ç‚ºç¶²è·¯å‚³è¼¸çš„é—œç³»ï¼Œæœ‰äº›è¨Šæ¯å¯èƒ½æœƒå»¶é²ä¸€äº›æ™‚é–“æ‰æœƒæ”¶åˆ°ã€‚
      
-     im login           - µÇÈë im ÏµÍ³¡£
-     im quit            - µÇ³ö im ÏµÍ³¡£
-     im who             - ÁĞ³öÄãµÄºÃÓÑÃûµ¥¡£
-     im register msn    - ×¢²á msn ÕÊºÅ¡£
-     im register yahoo  - ×¢²á yahoo ÕÊºÅ¡£
-     im add <protocol> <account> - ĞÂÔöºÃÓÑ¡£
-     im remove <account>- ÒÆ³ıºÃÓÑ¡£
-     im no              - ²»Í¬ÒâËûÈË°ÑÄã¼ÓÈëºÃÓÑÃûµ¥¡£
-     im yes             - Í¬ÒâËûÈË°ÑÄã¼ÓÈëºÃÓÑÃûµ¥¡£
-     im nick <nick>     - ĞŞ¸Ä msn µÄêÇ³Æ¡£
-     im tell <id> <msg> - ´«Ñ¶¸øÄ³ÈË¡£
+     im login           - ç™»å…¥ im ç³»çµ±ã€‚
+     im quit            - ç™»å‡º im ç³»çµ±ã€‚
+     im who             - åˆ—å‡ºä½ çš„å¥½å‹åå–®ã€‚
+     im register msn    - æ³¨å†Š msn å¸³è™Ÿã€‚
+     im register yahoo  - æ³¨å†Š yahoo å¸³è™Ÿã€‚
+     im add <protocol> <account> - æ–°å¢å¥½å‹ã€‚
+     im remove <account>- ç§»é™¤å¥½å‹ã€‚
+     im no              - ä¸åŒæ„ä»–äººæŠŠä½ åŠ å…¥å¥½å‹åå–®ã€‚
+     im yes             - åŒæ„ä»–äººæŠŠä½ åŠ å…¥å¥½å‹åå–®ã€‚
+     im nick <nick>     - ä¿®æ”¹ msn çš„æš±ç¨±ã€‚
+     im tell <id> <msg> - å‚³è¨Šçµ¦æŸäººã€‚
 HELP
         );
         return 1;

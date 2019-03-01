@@ -1,14 +1,14 @@
-// ´óÌÆË«Áú´«
+// å¤§å”é›™é¾å‚³
  
-// girl.Å®×Ó¡£
+// girl.å¥³å­ã€‚
 
 inherit NPC;
 
 void create()
 {
-  set_name("É®ÈË", ({"seng ren","seng","ren"}));
-  set("long","ÕâÊÇÁé¾²ËÂµÄÉ®ÈË£¬ÔÚÕâÀïÕÆ¹ÜËÂÄÚÊÂÎï¡£\n");
-  set("gender", "ÄĞĞÔ");
+  set_name("åƒ§äºº", ({"seng ren","seng","ren"}));
+  set("long","é€™æ˜¯éˆéœå¯ºçš„åƒ§äººï¼Œåœ¨é€™è£¡æŒç®¡å¯ºå…§äº‹ç‰©ã€‚\n");
+  set("gender", "ç”·æ€§");
   set("class","bonze");
   set("combat_exp", 90000);
   set("age", 18);

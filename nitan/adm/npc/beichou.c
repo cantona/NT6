@@ -5,28 +5,28 @@
 inherit NPC;
 
 string *quest_msg = ({
-        HIW "���󳤳��ĳ���һ������Ȼ���ͳ�һ��Ӣ�������ݵ�����ǰ����\n" NOR,
-        HIW "����˵��������ׯ������֣���Ӧ�ò���İ���ɡ�\n" NOR,
-        HIW "ǰЩʱ�������ֵܺ�Ѧ��ҽ�ڽ����Ϲ㷢Ӣ�������ټ�����Ӣ�ۺ��ܹ�������ׯ���μ����ִ�ᡣ\n" NOR,
-        HIW "���������Ǹ���ģ������������ĺ�Ϊ�ң����޶���������ׯ�������ӵ����˾Ͱ����Ӣ�����͵����������ˣ�ϣ���ҿ����ҵ��㡣\n" NOR,
-        HIW "����������ִ�᾿����Ϊ���£�������Ҳ���Ǻ������ֻ��˵��ؤ����Ī��Ĺ�ϵ�������ϵķ��Զ��������ȥ�ģ��������ŵ��Ѿ������ˡ�\n" NOR,
-        HIW "������ȥ������ؤ����쳤�ϣ�����������������ġ�\n" NOR,
+        HIW "北醜長長的出了一口氣，然後掏出一張英雄貼來遞到你面前……\n" NOR,
+        HIW "北醜說道：聚賢莊這個名字，你應該不會陌生吧。\n" NOR,
+        HIW "前些時候，遊氏兄弟和薛神醫在江湖上廣發英雄帖，召集天下英雄豪傑共赴聚賢莊，參加武林大會。\n" NOR,
+        HIW "這張帖子是給你的，但是你向來四海為家，居無定所，聚賢莊發派帖子的下人就把你的英雄貼送到我這裡來了，希望我可以找到你。\n" NOR,
+        HIW "至于這次武林大會究竟是為何事，老朽我也不是很清楚，只聽說和丐幫有莫大的關系，江湖上的風言耳語，傳來傳去的，可以相信的已經不多了。\n" NOR,
+        HIW "你現在去洛陽找丐幫的徐長老，他會告訴你具體情況的。\n" NOR,
 });
 
 int ask_juxianzhuang();
 
 void create()
 {
-        set_name("����", ({ "bei chou", "bei", "chou", "xizi" }));
+        set_name("北醜", ({ "bei chou", "bei", "chou", "xizi" }));
         set("long", @LONG
-����һ������Ϸ�Ӵ�����С��ͷ�����ü���
-����������һ�����ࡣ˭����֪����ǵ�����
-���кųơ����ͱ���Ϸ�ӱ�������������
-����֮�£���ȴҲ��������ƽ��η��֮�ˡ�
+這是一個身著戲子打扮的瘦小老頭，長得尖嘴
+猴腮，天生一副姦相。誰人能知這便是當今武
+林中號稱「南賢北醜」戲子北醜。雖其排名在
+南賢之下，但卻也是南賢生平最畏懼之人。
 LONG);
-        set("nickname", HIW "��Ϸ��" NOR);
-        set("title", HIC "����̩��" NOR);
-        set("gender", "����" );
+        set("nickname", HIW "北戲子" NOR);
+        set("title", HIC "武林泰鬥" NOR);
+        set("gender", "男性" );
         set("age", 68);
         set("attitude", "friendly");
         set("max_jing", 50000);
@@ -118,14 +118,14 @@ LONG);
         }));
 
         set("inquiry", ([
-                "����"  :"Ҫ��������������ӣ������������������Ȼ�� team bunch <������> �Ϳ����ˡ�\n",
-                "Ӣ����": (: ask_juxianzhuang :),
-                "��սBOSS" : "����սBOSS������ ask bei chou about <BOSS����> ���ɽ�����ս�ռ�", 
+                "幫派"  :"要創建幫派請先組隊，人數不能少于五個，然後 team bunch <幫派名> 就可以了。\n",
+                "英雄貼": (: ask_juxianzhuang :),
+                "挑戰BOSS" : "想挑戰BOSS？輸入 ask bei chou about <BOSS名稱> 即可進入挑戰空間", 
         ]) );
 
         set("chat_chance", 1);
         set("chat_msg",({
-                CYN "���������е�˵��������㲻�����㣬��������ô��Ϸ���Ҷ�֪����\n" NOR,
+                CYN "北醜賊眯眯的說：天算地算不如人算，可是再怎麼算戲子我都知道。\n" NOR,
         }));
 
         setup();
@@ -135,7 +135,7 @@ LONG);
         if (! clonep(this_object()))
         {
                 move("/d/xiakedao/haibin");
-                message_vision(CYN "\n$N" CYN "Ц���������������ˣ�Ϸ�������ˡ�\n"
+                message_vision(CYN "\n$N" CYN "笑嘻嘻道：來了來了，戲子我來了。\n"
                                NOR, this_object());
                 set("startroom", "/d/xiakedao/haibin");
         }
@@ -176,9 +176,9 @@ mixed accept_ask(object me, string arg)
         if( !arg || arg == "" || arg == "all" )
                 return 0;
         
-        if( arg == "��սBOSS" || arg == "��սboss" || arg == "BOSS" || arg == "boss" )
+        if( arg == "挑戰BOSS" || arg == "挑戰boss" || arg == "BOSS" || arg == "boss" )
         {
-                write(HIW"��Ҫ��սBOSS������ ask shizhe about <BOSS����> ���ɽ�����ս�ռ䡣\n"NOR);
+                write(HIW"想要挑戰BOSS？輸入 ask shizhe about <BOSS名稱> 即可進入挑戰空間。\n"NOR);
                 return 1;
         }
         
@@ -187,23 +187,23 @@ mixed accept_ask(object me, string arg)
                 FUBEN_D->enter_fuben(me, arg);
         else {
                 if( valid == 0 )
-                        write("��ʵս���鲻�㣬����սBOSS���в��⣬����������һ�������ɡ�\n");
+                        write("您實戰經驗不足，進挑戰BOSS恐有不測，還是先歷練一下再來吧。\n");
                 else if( valid == -1 )
-                        write("������̫���ˣ��Ͳ�Ҫ��ȥ�۸���Щ������С�����˰ɡ�\n");
+                        write("您經驗太高了，就不要進去欺負那些可憐的小怪物了吧。\n");
                 else if( valid == -2 )
-                        write("��Ϸ��Ŀǰ��û�п��Ÿ�BOSS�������˶Ժ����ԡ�\n");
+                        write("遊戲中目前並沒有開放該BOSS，請您核對後再試。\n");
                 else if( valid == -3 )
-                        write("��սBOSS����IP���ؽ��룬���Ѿ�����������ޡ�\n");
+                        write("挑戰BOSS限制IP多重進入，您已經超過最高上限。\n");
                 else if( valid == -4 )
-                        write("��BOSS����ʦ�رգ�����ʱ�޷����롣\n");
+                        write("該BOSS被巫師關閉，您暫時無法進入。\n");
                 else if( valid == -5 )
-                        write("�����ϴ���ս��BOSS��ʱ��̫�̣�����Ϣ��������\n");
+                        write("你離上次挑戰該BOSS的時間太短，請休息會再來。\n");
                 else if( valid == -6 )
-                        write("��BOSS������Ӳ��ܽ��롣\n");
+                        write("該BOSS必須組隊才能進入。\n");
                 else if( valid == -7 )
-                        write("��Ķ�������������BOSS�涨�����ޡ�\n");
+                        write("你的隊伍人數超過該BOSS規定的上限。\n");
                 else if( valid == -8 )
-                        write("��BOSSҪ������ս���������ɢ���鷽�ɽ��롣\n");
+                        write("該BOSS要求單人挑戰，您必須解散隊伍方可進入。\n");
         }        
         return 1;
 }
@@ -213,7 +213,7 @@ void fight_ob(object ob)
         if (is_fighting(ob))
                 return;
 
-        command("say �ߣ���֪���");
+        command("say 哼！不知死活。");
         command("exert powerup");
         command("exert sword");
         ::fight_ob(ob);
@@ -221,13 +221,13 @@ void fight_ob(object ob)
 
 int accept_fight(object who)
 {
-        command("say û��Ȥ��");
+        command("say 沒興趣。");
         return 0;
 }
 
 int accept_ansuan(object who)
 {
-        return notify_fail("����밵�㣬������ǰһ��������̫�����\n");
+        return notify_fail("你剛想暗算，可是眼前一花，看不太清楚。\n");
 }
 
 varargs void die(object killer)

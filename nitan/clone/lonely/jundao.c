@@ -5,18 +5,18 @@ inherit BLADE;
 
 void create()
 {
-        set_name(WHT "´³Íõ¾üµ¶" NOR, ({ "chuangwang jundao", "chuangwang", "jundao", "dao", "blade" }) );
+        set_name(WHT "é—–ç‹è»åˆ€" NOR, ({ "chuangwang jundao", "chuangwang", "jundao", "dao", "blade" }) );
         set_weight(6200);
         if (clonep())
                 destruct(this_object());
         else {
-                set("long", WHT "ÕâÊÇ´³ÍõËùÊ¹ÓÃ¹ıµÄµ¶£¬ÉÏÃæ¿ÌÓĞ¼¸ĞĞĞ¡×Ö¡£\n" NOR);
-                set("unit", "±ú");
+                set("long", WHT "é€™æ˜¯é—–ç‹æ‰€ä½¿ç”¨éçš„åˆ€ï¼Œä¸Šé¢åˆ»æœ‰å¹¾è¡Œå°å­—ã€‚\n" NOR);
+                set("unit", "æŸ„");
                 set("value", 800000);
                 set("no_sell", 1);
                 set("material", "steel");
-                set("wield_msg", WHT "$N" WHT "×İÉù´óĞ¦£¬´ÓÑü¼ä³é³öÒ»±úÆÄÎª¹Å¾ÉµÄÍäµ¶¡£\n" NOR);
-                set("unwield_msg", WHT "$N" WHT "»·¹ËËÄÖÜ£¬ÇáÌ¾Ò»Éù£¬½«´³Íõ¾üµ¶²å»ØÑü¼ä¡£\n" NOR);
+                set("wield_msg", WHT "$N" WHT "ç¸±è²å¤§ç¬‘ï¼Œå¾è…°é–“æŠ½å‡ºä¸€æŸ„é —ç‚ºå¤èˆŠçš„å½åˆ€ã€‚\n" NOR);
+                set("unwield_msg", WHT "$N" WHT "ç’°é¡§å››å‘¨ï¼Œè¼•å˜†ä¸€è²ï¼Œå°‡é—–ç‹è»åˆ€æ’å›è…°é–“ã€‚\n" NOR);
                 set("stable", 100);
         }
         init_blade(120);
@@ -36,15 +36,15 @@ mixed hit_ob(object me, object victim, int damage_bonus)
         case 0:
                 if (! victim->is_busy())
                 victim->start_busy(me->query_skill("blade") / 12 + 2);
-                return WHT "$N" WHT "Ò»ÉùÅ­ºÈ£¬ÊÖÖĞ´³Íõ¾üµ¶ºáÅü¶ø³ö£¬µ¶ÊÆÁİÙı£¬¶ÙÊ±½«$n"
-                       WHT "±ÆÍËÊı²½£¡\n" NOR;
+                return WHT "$N" WHT "ä¸€è²æ€’å–ï¼Œæ‰‹ä¸­é—–ç‹è»åˆ€æ©«åŠˆè€Œå‡ºï¼Œåˆ€å‹¢å‡œå†½ï¼Œé “æ™‚å°‡$n"
+                       WHT "é€¼é€€æ•¸æ­¥ï¼\n" NOR;
 
         case 1:
                 n = me->query_skill("blade");
                 victim->receive_damage("qi", n / 2, me);
                 victim->receive_wound("qi", n / 2, me);
-                return WHT "$N" WHT "ºá×ªÊÖÖĞ´³Íõ¾üµ¶£¬µ¶·æ¶ÙÊ±¹´ÀÕ³öÒ»µÀÁèÀ÷µÄ¾¢Ã¢£¬Ö±"
-                       "Ó¿$n" WHT "¶øÈ¥£¡\n" NOR;
+                return WHT "$N" WHT "æ©«è½‰æ‰‹ä¸­é—–ç‹è»åˆ€ï¼Œåˆ€é‹’é “æ™‚å‹¾å‹’å‡ºä¸€é“å‡Œå²çš„å‹èŠ’ï¼Œç›´"
+                       "æ¹§$n" WHT "è€Œå»ï¼\n" NOR;
         }
         return damage_bonus;
 }

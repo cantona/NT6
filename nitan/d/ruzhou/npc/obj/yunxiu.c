@@ -6,14 +6,14 @@ inherit CLOTH;
 
 void create()
 {
-        set_name(CYN"Çà±ß"NOR HIR"´÷»¨"NOR HIM"Ë®ÔÆĞä"NOR, ({ "yunxiu" }));
-        set("long", "ÕâÊÇÒ»¼şÕ¸ĞÂµÄĞÂÄï³ö¸óÊ±´©µÄÀñ·ş¡£\n");
+        set_name(CYN"é’é‚Š"NOR HIR"æˆ´èŠ±"NOR HIM"æ°´é›²è¢–"NOR, ({ "yunxiu" }));
+        set("long", "é€™æ˜¯ä¸€ä»¶å¶„æ–°çš„æ–°å¨˜å‡ºé–£æ™‚ç©¿çš„ç¦®æœã€‚\n");
         set_weight(2000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
                 set("material", "cloth");
-                set("unit", "¼ş");
+                set("unit", "ä»¶");
 set("armor_prop/armor", 100);
     set("female_only", 1);
         }

@@ -10,12 +10,12 @@ string ask_me();
 
 void create()
 {
-        set_name("Â½¸ßĞù", ({ "lu gaoxuan", "lu" ,"gaoxuan"}));
-        set("title", HIY"ÉñÁú½Ì"NOR"¾üÊ¦");
-        set("nickname",HIC "Éñ»úÃîËã" NOR);
-        set("long", "ËûÌìÍ¥±¥Âú£¬µØÀ«·½Ô²£¬ÈİÃ²ÆÄÎªÓ¢¿¡¡£\nÈ»¶øÂúÃæ³îÈİ£¬Ç¡"
-                    "ËÆÇê¿Ì¼ä±ãÓĞÉ±ÉíÖ®»öÒ»°ã¡£\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("é™¸é«˜è»’", ({ "lu gaoxuan", "lu" ,"gaoxuan"}));
+        set("title", HIY"ç¥é¾æ•™"NOR"è»å¸«");
+        set("nickname",HIC "ç¥æ©Ÿå¦™ç®—" NOR);
+        set("long", "ä»–å¤©åº­é£½æ»¿ï¼Œåœ°é—Šæ–¹åœ“ï¼Œå®¹è²Œé —ç‚ºè‹±ä¿Šã€‚\nç„¶è€Œæ»¿é¢æ„å®¹ï¼Œæ°"
+                    "ä¼¼é ƒåˆ»é–“ä¾¿æœ‰æ®ºèº«ä¹‹ç¦ä¸€èˆ¬ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 37);
 
         set("str", 24);
@@ -53,18 +53,18 @@ void create()
         map_skill("staff", "shedao-qigong");
         prepare_skill("hand", "shenlong-bashi");
 
-        create_family("ÉñÁú½Ì", 0, "ÏĞÉ¢½ÌÖÚ");
+        create_family("ç¥é¾æ•™", 0, "é–’æ•£æ•™çœ¾");
 
         set_temp("apply/damage", 60);
         set("book_count", 1);
 
         set("inquiry", ([
-                "ÉñÁú½Ì" : "Ò»°ãÈËÊÇÈë²»ÁËÎÒÉñÁú½ÌµÄ(join shenlongjiao).\n",
-                "Èë½Ì"   : "Ò»°ãÈËÊÇÈë²»ÁËÎÒÉñÁú½ÌµÄ(join shenlongjiao).\n",
-                "ºé°²Í¨" : "½ÌÖ÷Æ¢Æø²»ºÃ,ÒªÌÖËû»¶ĞÄ²ÅºÃ¡£\n",
-                "½ÌÖ÷"   : "½ÌÖ÷Æ¢Æø²»ºÃ,ÒªÌÖËû»¶ĞÄ²ÅºÃ¡£\n",
-                "¿ÚºÅ"   : "ÍòÄê²»ÀÏ£¡ÓÀÏíÏÉ¸££¡ÊÙÓëÌìÆë£¡ÎÄÎäÈÊÊ¥£¡",
-                "ÃØ¼®"   : (: ask_me :),
+                "ç¥é¾æ•™" : "ä¸€èˆ¬äººæ˜¯å…¥ä¸äº†æˆ‘ç¥é¾æ•™çš„(join shenlongjiao).\n",
+                "å…¥æ•™"   : "ä¸€èˆ¬äººæ˜¯å…¥ä¸äº†æˆ‘ç¥é¾æ•™çš„(join shenlongjiao).\n",
+                "æ´ªå®‰é€š" : "æ•™ä¸»è„¾æ°£ä¸å¥½,è¦è¨ä»–æ­¡å¿ƒæ‰å¥½ã€‚\n",
+                "æ•™ä¸»"   : "æ•™ä¸»è„¾æ°£ä¸å¥½,è¦è¨ä»–æ­¡å¿ƒæ‰å¥½ã€‚\n",
+                "å£è™Ÿ"   : "è¬å¹´ä¸è€ï¼æ°¸äº«ä»™ç¦ï¼å£½èˆ‡å¤©é½Šï¼æ–‡æ­¦ä»è–ï¼",
+                "ç§˜ç±"   : (: ask_me :),
         ]) );
         set("master_ob", 3);
         setup();
@@ -98,7 +98,7 @@ void greeting(object ob)
 void attempt_apprentice(object ob)
 {
         command("sigh");
-        command("say ÀÏ·òÃ¦µÃºÜ£¬ÏÖ²»ÊÕÍ½¡£");
+        command("say è€å¤«å¿™å¾—å¾ˆï¼Œç¾ä¸æ”¶å¾’ã€‚");
 }
 
 string ask_me()
@@ -106,12 +106,12 @@ string ask_me()
         mapping fam;
         object ob;
 
-        if( !(fam=query("family", this_player())) || fam["family_name"] != "ÉñÁú½Ì" )
+        if( !(fam=query("family", this_player())) || fam["family_name"] != "ç¥é¾æ•™" )
                 return RANK_D->query_respect(this_player()) +
-                "Óë±¾½ÌËØÎŞÀ´Íù£¬²»Öª´Ë»°´ÓºÎÌ¸Æğ£¿";
+                "èˆ‡æœ¬æ•™ç´ ç„¡ä¾†å¾€ï¼Œä¸çŸ¥æ­¤è©±å¾ä½•è«‡èµ·ï¼Ÿ";
 
         if (query("book_count") < 1)
-                return "ÄãÀ´ÍíÁË£¬±¾½ÌµÄÃØ¼®²»ÔÚ´Ë´¦¡£";
+                return "ä½ ä¾†æ™šäº†ï¼Œæœ¬æ•™çš„ç§˜ç±ä¸åœ¨æ­¤è™•ã€‚";
 
         addn("book_count", -1);
 
@@ -119,5 +119,5 @@ string ask_me()
         else ob = new("/clone/book/bufa");
 
         ob->move(this_player());
-        return "ºÃ°É£¬Õâ±¾¡¸"+query("name", ob)+"¡¹ÄãÄÃ»ØÈ¥ºÃºÃ×êÑĞ¡£";
+        return "å¥½å§ï¼Œé€™æœ¬ã€Œ"+query("name", ob)+"ã€ä½ æ‹¿å›å»å¥½å¥½é‘½ç ”ã€‚";
 }

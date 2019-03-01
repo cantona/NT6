@@ -5,7 +5,7 @@
 
 int is_scborn() { return 1; }
 
-string name() { return HIY "Ğ¦Ì¸ÌìÏÂ" NOR; }
+string name() { return HIY "ç¬‘è«‡å¤©ä¸‹" NOR; }
 
 int perform(object me, string skill, string arg)
 {
@@ -16,40 +16,40 @@ int perform(object me, string skill, string arg)
 
         joblv = me->query_joblv();
 
-        t = me->query_team(); // ±ØĞëÒª×é¶Ó²ÅÄÜÊ©Õ¹
+        t = me->query_team(); // å¿…é ˆè¦çµ„éšŠæ‰èƒ½æ–½å±•
 
         if (me->query_temp("special2/tianxia"))
-                return notify_fail("¡¸Ğ¦Ì¸ÌìÏÂ¡¹µÄ¹¦Ğ§»¹Î´ÏûÊ§£¬ÎŞ·¨Ê©Õ¹¡£\n");
+                return notify_fail("ã€Œç¬‘è«‡å¤©ä¸‹ã€çš„åŠŸæ•ˆé‚„æœªæ¶ˆå¤±ï¼Œç„¡æ³•æ–½å±•ã€‚\n");
 
-        if (me->query("yhjob/job") != "ÒşÊ¿")
-                return notify_fail("ÄãµÄÖ°Òµ´íÎó£¬ÎŞ·¨Ê©Õ¹¡£\n");
+        if (me->query("yhjob/job") != "éš±å£«")
+                return notify_fail("ä½ çš„è·æ¥­éŒ¯èª¤ï¼Œç„¡æ³•æ–½å±•ã€‚\n");
                 
         if (me->query("neili") < 1000)
-                return notify_fail("ÄãµÄÄÚÁ¦²»×ã£¬ÎŞ·¨Ê©Õ¹¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸è¶³ï¼Œç„¡æ³•æ–½å±•ã€‚\n");
 
         if (joblv < 30)
-                return notify_fail("ÄãµÄÖ°ÒµµÈ¼¶²»×ã£¬ÎŞ·¨Ê©Õ¹¡£\n");                
+                return notify_fail("ä½ çš„è·æ¥­ç­‰ç´šä¸è¶³ï¼Œç„¡æ³•æ–½å±•ã€‚\n");                
 
         if (! arrayp(t))
-                return notify_fail("¸Ã¼¼ÄÜÖ»ÄÜÔÚ×é¶ÓµÄÊ±ºòÊ©Õ¹¡£\n");
+                return notify_fail("è©²æŠ€èƒ½åªèƒ½åœ¨çµ„éšŠçš„æ™‚å€™æ–½å±•ã€‚\n");
         t -= ({ 0 });
         if (sizeof(t) <= 1)
-                return notify_fail("¸Ã¼¼ÄÜÖ»ÄÜÔÚ¶àÈË×é¶ÓµÄÊ±ºòÊ©Õ¹¡£\n");
+                return notify_fail("è©²æŠ€èƒ½åªèƒ½åœ¨å¤šäººçµ„éšŠçš„æ™‚å€™æ–½å±•ã€‚\n");
                         
-        if (me->is_busy())return notify_fail("µÈÄãÃ¦ÍêÔÙËµ°É£¡\n");
+        if (me->is_busy())return notify_fail("ç­‰ä½ å¿™å®Œå†èªªå§ï¼\n");
 
-        message_vision(HIR "$N" HIR "Ãæ´øÎ¢Ğ¦£¬ºöÈ»ÊÖ±ÛÒ»»Ó£¬¿ñ·ç´óÆğ ¡­¡­¡­¡­¡£\n" NOR, me);
+        message_vision(HIR "$N" HIR "é¢å¸¶å¾®ç¬‘ï¼Œå¿½ç„¶æ‰‹è‡‚ä¸€æ®ï¼Œç‹‚é¢¨å¤§èµ· â€¦â€¦â€¦â€¦ã€‚\n" NOR, me);
 
         foreach (tob in t)
         {
                 if (1)
                 {                        
-                        tell_object(tob, HIW + me->name() + "Ê©Õ¹³ö¾øÕĞ¡¸Ğ¦Ì¸ÌìÏÂ¡¹£¬Ìá¸ßËùÓĞ¶ÓÓÑµÄ»Ø±Ü¼°ÓĞ"
-                                         "Ğ§Çá¹¦µÈ¼¶¡£\n" NOR);
+                        tell_object(tob, HIW + me->name() + "æ–½å±•å‡ºçµ•æ‹›ã€Œç¬‘è«‡å¤©ä¸‹ã€ï¼Œæé«˜æ‰€æœ‰éšŠå‹çš„å›é¿åŠæœ‰"
+                                         "æ•ˆè¼•åŠŸç­‰ç´šã€‚\n" NOR);
                         dex = 10 + me->query_joblv() * 4 + me->query("lhpoint/special/tianxia") * 20;
                         dodge = 20 + me->query_joblv() + me->query("lhpoint/special/tianxia") * 10;
 
-                               // ²»ÄÜÖØ¸´Ê©Õ¹
+                               // ä¸èƒ½é‡å¾©æ–½å±•
                         if (! tob->query_temp("special2/tianxia"))
                         {
                                 tob->set_temp("special2/tianxia", 1);
@@ -76,7 +76,7 @@ void remove_effect(object me, int dex, int dodge)
                 me->add_temp("dex", -1 * dex);
                 me->add_temp("apply/dodge", -1 * dodge);
                 me->delete_temp("special2/tianxia");
-                tell_object(me, "¡¸Ğ¦Ì¸ÌìÏÂ¡¹µÄ¹¦Ğ§ÒÑ¾­ÏûÊ§¡£\n");
+                tell_object(me, "ã€Œç¬‘è«‡å¤©ä¸‹ã€çš„åŠŸæ•ˆå·²ç¶“æ¶ˆå¤±ã€‚\n");
         }
 }
 

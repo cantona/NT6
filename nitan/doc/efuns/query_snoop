@@ -1,13 +1,13 @@
         query_snoop(3)                LP MudOSv21c7        (7 Jul 1996)
-        º¯ÊýÃû³Æ:
-                query_snoop() - ´«»ØË­ÕýÔÚ¼àÌýÖ¸¶¨µÄ»¥¶¯ (interactive) Îï¼þ.
-        º¯ÊýÓï·¨:
+        å‡½æ•¸åç¨±:
+                query_snoop() - å‚³å›žèª°æ­£åœ¨ç›£è½æŒ‡å®šçš„äº’å‹• (interactive) ç‰©ä»¶.
+        å‡½æ•¸èªžæ³•:
                 object query_snoop( object ob );
-                Îï¼þ query_snoop( Îï¼þ ob );
-        º¯ÊýÓÃ·¨:
-                Èç¹û»¥¶¯Îï¼þ ob Õý±»ÁíÒ»¸ö»¥¶¯Îï¼þ¼àÌý, ¾Í´«»Ø¼àÌýÕßÎï¼þ.
-                Èç¹ûÃ»ÓÐ¼àÌýÕß, Ôò´«»Ø 0.
-        ²Î¿¼º¯Êý:
+                ç‰©ä»¶ query_snoop( ç‰©ä»¶ ob );
+        å‡½æ•¸ç”¨æ³•:
+                å¦‚æžœäº’å‹•ç‰©ä»¶ ob æ­£è¢«å¦ä¸€å€‹äº’å‹•ç‰©ä»¶ç›£è½, å°±å‚³å›žç›£è½è€…ç‰©ä»¶.
+                å¦‚æžœæ²’æœ‰ç›£è½è€…, å‰‡å‚³å›ž 0.
+        åƒè€ƒå‡½æ•¸:
                 snoop(3), query_snooping(3)
-        ÊÖ²á·­Òë:
+        æ‰‹å†Šç¿»è­¯:
                 Phoebus@ZH        97.May.1.                (Writen 5/23/97)

@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����");
+        set("short", "地牢");
         set("long", @LONG
-������ѩɽ���ڵ�һ����������ʪ���η�����е���ֵ�������
-�᲻ʱ����һ�����ȴ��ôҲ�Ҳ������ء�
+這裡是雪山寺內的一個陰暗、潮濕的牢房。你感到奇怪的是怎麼
+會不時聽到一點怪聲卻怎麼也找不到人呢。
 LONG );
         set("exits", ([
                 "southup" : __DIR__"houyuan",

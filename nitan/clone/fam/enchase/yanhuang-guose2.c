@@ -3,15 +3,15 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIR "Ñ×»Æ¡¤¹úÉ«ÌìÏã" NOR, ({"guose tianxiang", "guose", "tianxiang" }));
+        set_name(HIR "ç‚é»ƒï¹’åœ‹è‰²å¤©é¦™" NOR, ({"guose tianxiang", "guose", "tianxiang" }));
         set_weight(900);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIR "Ñ×»Æ¡¤¹úÉ«ÌìÏãÄËÑ×»ÆÖ®ÉñÆ·£¬·ÅÔÚÊÖĞÄ£¬Ö»¼û´ÓÖĞÍ¸Éä³öÕóÕó×íÈËµÄ¹âÃ¢¡£\n" NOR);
-                set("unit", "¿é");
+                set("long", HIR "ç‚é»ƒï¹’åœ‹è‰²å¤©é¦™ä¹ƒç‚é»ƒä¹‹ç¥å“ï¼Œæ”¾åœ¨æ‰‹å¿ƒï¼Œåªè¦‹å¾ä¸­é€å°„å‡ºé™£é™£é†‰äººçš„å…‰èŠ’ã€‚\n" NOR);
+                set("unit", "å¡Š");
                 set("value", 5000);
-                set("enchase/name", "Ñ×»Æ¡¤¹úÉ«ÌìÏã");
+                set("enchase/name", "ç‚é»ƒï¹’åœ‹è‰²å¤©é¦™");
                 set("enchase/point", 160);
                 set("enchase/type", "all");
                 set("enchase/cur_firm", 100);

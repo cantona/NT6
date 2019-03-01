@@ -1,4 +1,4 @@
-// xiaobao.c Ğ¡±¦
+// xiaobao.c å°å¯¶
 
 #include <ansi.h>
 
@@ -6,14 +6,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name(YEL "Ğ¡±¦" NOR, ({ "xiao bao", "bao", "xiaobao" }) );
+        set_name(YEL "å°å¯¶" NOR, ({ "xiao bao", "bao", "xiaobao" }) );
         set_weight(200);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¿Å½ğ²Ó²ÓµÄµ¤Ò©£¬¾İËµ¿ÉÒÔÑøÑªÃÀÑÕ¡£\n");
+                set("long", "ä¸€é¡†é‡‘ç‡¦ç‡¦çš„ä¸¹è—¥ï¼Œæ“šèªªå¯ä»¥é¤Šè¡€ç¾é¡ã€‚\n");
                 set("value", 20000);
-                set("unit", "¿Å");
+                set("unit", "é¡†");
                 set("per",5);
                 set("time",864000);
                 set("only_do_effect", 1);
@@ -24,21 +24,21 @@ int do_effect(object me)
 {
         if( query("have_meirong_dan", me) )
         {
-                tell_object(me, "ÄãÒÑ¾­·şÓÃ¹ıÀàËÆµÄÒ©Æ·£¬Ò©Á¦ÉĞÎ´ÏûÊ§£¬²»ÊÊÒË¼ÌĞø·şÓÃ£¡\n");
+                tell_object(me, "ä½ å·²ç¶“æœç”¨éé¡ä¼¼çš„è—¥å“ï¼Œè—¥åŠ›å°šæœªæ¶ˆå¤±ï¼Œä¸é©å®œç¹¼çºŒæœç”¨ï¼\n");
                 return 1;
         }
         
-        log_file("static/using", sprintf("%s(%s) eat Ğ¡±¦ at %s.\n",
+        log_file("static/using", sprintf("%s(%s) eat å°å¯¶ at %s.\n",
                  me->name(1),query("id", me),ctime(time())));
 
-        message_vision("$NÒ»Ñö²±£¬ÍÌÏÂÁËÒ»¿Å" + this_object()->name() +
-                       "¡£\n", me);
+        message_vision("$Nä¸€ä»°è„–ï¼Œåä¸‹äº†ä¸€é¡†" + this_object()->name() +
+                       "ã€‚\n", me);
 
-        message("vision", "ÄãËÆºõ¸Ğ¾õ" + me->name() + "µÄÃæÈİ½¥½¥Ä£ºıÆğÀ´£¬²»ÓÉÏÅÁËÒ»´óÌø£¡\n",
+        message("vision", "ä½ ä¼¼ä¹æ„Ÿè¦º" + me->name() + "çš„é¢å®¹æ¼¸æ¼¸æ¨¡ç³Šèµ·ä¾†ï¼Œä¸ç”±åš‡äº†ä¸€å¤§è·³ï¼\n",
                           environment(me), ({ me }));
 
-        tell_object(me, HIY "ÄãÖÜÉíµÄÆ¤·ôÑ÷Ñ÷µÄËÆºõÒª±ÀÁÑ¿ªÀ´£¬"
-                        "ºÃÔÚÒ»»á¶ù¾ÍÍ£ÁËÏÂÀ´£¬»ëÉíÉÏÏÂÇáËÉºÜ¶à¡£\n" NOR);
+        tell_object(me, HIY "ä½ å‘¨èº«çš„çš®è†šç™¢ç™¢çš„ä¼¼ä¹è¦å´©è£‚é–‹ä¾†ï¼Œ"
+                        "å¥½åœ¨ä¸€æœƒå…’å°±åœäº†ä¸‹ä¾†ï¼Œæ¸¾èº«ä¸Šä¸‹è¼•é¬†å¾ˆå¤šã€‚\n" NOR);
 
         set("have_meirong_dan",query("per",  this_object()), me);
         set("meirong_time", time()+query("time", this_object()), me);

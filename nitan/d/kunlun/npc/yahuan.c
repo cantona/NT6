@@ -1,14 +1,14 @@
 // Last Modified by winder on Jun. 29 2001
-// Npc: /d/kunlun/npc/yahuan.c Ñ¾÷ß
+// Npc: /d/kunlun/npc/yahuan.c ä¸«é¬Ÿ
 
 #include <ansi.h>;
 inherit NPC;
 
 void create()
 {
-        set_name("Ğ¡·ï", ({ "xiao feng", "feng" }));
-        set("title", HIR"ºìÃ·É½×¯Ñ¾÷ß"NOR);
-        set("gender", "Å®ĞÔ");
+        set_name("å°é³³", ({ "xiao feng", "feng" }));
+        set("title", HIR"ç´…æ¢…å±±èŠä¸«é¬Ÿ"NOR);
+        set("gender", "å¥³æ€§");
         set("age", 35);
 
         set("combat_exp", 4000);

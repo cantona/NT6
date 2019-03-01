@@ -4,7 +4,7 @@
 #include <ansi.h>
 inherit F_CLEAN_UP;
 
-string chinese_name() { return "Ğş±ù±Ì»ğ¾Æ¶¾ËØ"; }
+string chinese_name() { return "ç„å†°ç¢§ç«é…’æ¯’ç´ "; }
 
 int dispel(object me, object ob, int duration)
 {
@@ -14,11 +14,11 @@ int dispel(object me, object ob, int duration)
 
         if (me != ob)
         {
-                tell_object(ob, "ÄãÖ»¾õ" + me->name() + "µÄÄÚÁ¦Ê¹µÃÈÈº®Á½¹ÉÕæ"
-                                "Æø¿¹¾ÜµÃ¸üÎª¼¤ÁÒ£¬µÇÊ±ÑÛÇ°Ò»ºÚ¡£\n");
+                tell_object(ob, "ä½ åªè¦º" + me->name() + "çš„å…§åŠ›ä½¿å¾—ç†±å¯’å…©è‚¡çœŸ"
+                                "æ°£æŠ—æ‹’å¾—æ›´ç‚ºæ¿€çƒˆï¼Œç™»æ™‚çœ¼å‰ä¸€é»‘ã€‚\n");
 
-                tell_object(me, "ÄãÊÔÍ¼°ïÖú" + ob->name() + "½â¶¾£¬È´·¢ÏÖ¶Ô·½"
-                                "ÈÈº®Á½¹ÉÕæÆø¶ÙÉú·´µ¯£¬²»ÓÉ´ó¾ª£¬Á¬Ã¦×¡ÊÖ¡£\n");
+                tell_object(me, "ä½ è©¦åœ–å¹«åŠ©" + ob->name() + "è§£æ¯’ï¼Œå»ç™¼ç¾å°æ–¹"
+                                "ç†±å¯’å…©è‚¡çœŸæ°£é “ç”Ÿåå½ˆï¼Œä¸ç”±å¤§é©šï¼Œé€£å¿™ä½æ‰‹ã€‚\n");
 
                 if (living(ob))
                         ob->unconcious();
@@ -28,24 +28,24 @@ int dispel(object me, object ob, int duration)
 
         if (me->query_skill_mapped("force") != "luohan-fumogong")
         {
-                tell_object(me, HIB "Äã¾õµÃÈ«ÉíºöÈç" HIW "±ù³¹" NOR +
-                                HIB "£¬ºöÈç" HIR "»ğÖË" NOR + HIB "¡£"
-                                "È«È»ÎŞ·¨½«ÄÚÏ¢Äı¾Û¡£\n" NOR);
+                tell_object(me, HIB "ä½ è¦ºå¾—å…¨èº«å¿½å¦‚" HIW "å†°å¾¹" NOR +
+                                HIB "ï¼Œå¿½å¦‚" HIR "ç«ç‚™" NOR + HIB "ã€‚"
+                                "å…¨ç„¶ç„¡æ³•å°‡å…§æ¯å‡èšã€‚\n" NOR);
                 return -1;
         }
 
         if (me->query_skill("luohan-fumogong", 1) < 180)
         {
-                tell_object(me, HIB "Äã·¢ÏÖ×ÔÉíµÄ" + to_chinese(f) +
-                                HIB "ĞŞÎª²»×ã£¬ÄÑÒÔ½«ÌåÄÚµÄÒõÑôÁ½ÖÖ"
-                                "ÕæÆøµ÷ºÍ¡£\n");
+                tell_object(me, HIB "ä½ ç™¼ç¾è‡ªèº«çš„" + to_chinese(f) +
+                                HIB "ä¿®ç‚ºä¸è¶³ï¼Œé›£ä»¥å°‡é«”å…§çš„é™°é™½å…©ç¨®"
+                                "çœŸæ°£èª¿å’Œã€‚\n");
                 return -1;
         }
 
         n = me->query_condition("xuanbing-jiu") - lvl / 15;
 
-        tell_object(me, "ÄãÄ¬Ä¬µÄÔËÓÃ" + to_chinese(f) + "»¯½âÌåÄÚ"
-                        "µÄÒìÖÖÕæÆø¡£\n");
+        tell_object(me, "ä½ é»˜é»˜çš„é‹ç”¨" + to_chinese(f) + "åŒ–è§£é«”å…§"
+                        "çš„ç•°ç¨®çœŸæ°£ã€‚\n");
 
         if (n < 1)
         {
@@ -59,18 +59,18 @@ int dispel(object me, object ob, int duration)
 
                 if( me->addn("can_perform/luohan-fumogong/jiu",1+random(5))<100 )
                 {
-                        tell_object(me, HIC "\nÍ»È»¼äÄã·¢¾õÌåÄÚÒõÑôÁ½ÖÖÕæ"
-                                        "ÆøÂıÂı½»ÈÚ£¬Ëµ²»³öµÄÊæ·şÊÜÓÃ¡£\n"
+                        tell_object(me, HIC "\nçªç„¶é–“ä½ ç™¼è¦ºé«”å…§é™°é™½å…©ç¨®çœŸ"
+                                        "æ°£æ…¢æ…¢äº¤èï¼Œèªªä¸å‡ºçš„èˆ’æœå—ç”¨ã€‚\n"
                                         "\n" NOR);
                 } else
                 {
                         set("skybook/item/xuanbingjiu", 1, me);
-                        tell_object(me, HIW "\nÄã·¢¾õÌåÄÚÒõÑôÁ½ÖÖÕæÆøÂıÂı"
-                                        "½»ÈÚ£¬¾¹Ê¹µÃÄÚ¹¦´ïµ½ÁËÒ»¸öÇ°ËùÎ´"
-                                        "ÓĞµÄ¾³½ç¡£\n\n" HIC "Äã¶ÔÂŞºº·üÄ§"
-                                        "Éñ¹¦ÓĞÁËĞÂµÄÁìÎò¡£\n" NOR);
-                        tell_object(me, HIC "ÄãÑ§»áÁË¡¸" HIW "±ù" HIR "»ğ"
-                                        HIW "¾ÅÖØÌì" HIC "¡¹¡£\n" NOR);
+                        tell_object(me, HIW "\nä½ ç™¼è¦ºé«”å…§é™°é™½å…©ç¨®çœŸæ°£æ…¢æ…¢"
+                                        "äº¤èï¼Œç«Ÿä½¿å¾—å…§åŠŸé”åˆ°äº†ä¸€å€‹å‰æ‰€æœª"
+                                        "æœ‰çš„å¢ƒç•Œã€‚\n\n" HIC "ä½ å°ç¾…æ¼¢ä¼é­”"
+                                        "ç¥åŠŸæœ‰äº†æ–°çš„é ˜æ‚Ÿã€‚\n" NOR);
+                        tell_object(me, HIC "ä½ å­¸æœƒäº†ã€Œ" HIW "å†°" HIR "ç«"
+                                        HIW "ä¹é‡å¤©" HIC "ã€ã€‚\n" NOR);
                         if (me->can_improve_skill("force"))
                                 me->improve_skill("force", 1500000);
                         if (me->can_improve_skill("force"))
@@ -101,7 +101,7 @@ int update_condition(object me, int duration)
         if( !living(me) && (query("eff_qi", me)<20
             || query("eff_jing", me)<10) )
         {
-                set_temp("die_reason", "Ì°ÒûĞş±ù±Ì»ğ¾Æ£¬ÄÚÏ¢ÎÉÂÒ¶øÍö", me);
+                set_temp("die_reason", "è²ªé£²ç„å†°ç¢§ç«é…’ï¼Œå…§æ¯ç´Šäº‚è€Œäº¡", me);
                 me->die();
                 return 0;
         } else
@@ -115,27 +115,27 @@ int update_condition(object me, int duration)
                 switch (random(3))
                 {
                 case 0:
-                        tell_object(me, HIR "Í»È»¼äÄãÖ»¾õµ¤Ìï´¦ÓĞÈç»ğÉÕ£¬È«Éí"
-                                        "ÕæÆø¹Äµ´£¬±ãËÆÒª±¬ÁÑ¿ªÒ»°ã¡£\n" NOR);
-                        message("vision", HIR "ºö¼û" + me->name() + HIR "Ğë·¢"
-                                "½¹¾í£¬È«ÉíÉ¢·¢×Å¹ö¹öÈÈÆø£¬Ë»ÑÆ×ÅÉ¤×ÓÂÒº¿¡£\n"
+                        tell_object(me, HIR "çªç„¶é–“ä½ åªè¦ºä¸¹ç”°è™•æœ‰å¦‚ç«ç‡’ï¼Œå…¨èº«"
+                                        "çœŸæ°£é¼“ç›ªï¼Œä¾¿ä¼¼è¦çˆ†è£‚é–‹ä¸€èˆ¬ã€‚\n" NOR);
+                        message("vision", HIR "å¿½è¦‹" + me->name() + HIR "é ˆç™¼"
+                                "ç„¦å·ï¼Œå…¨èº«æ•£ç™¼è‘—æ»¾æ»¾ç†±æ°£ï¼Œå˜¶å•è‘—å—“å­äº‚åšã€‚\n"
                                 NOR, environment(me), me);
                         break;
 
                 case 1:
-                        tell_object(me, HIW "ö®Ê±ÄãÖ»¾õÈçÍ¬ÖÃÉí±ù¼áµØÓü£¬º®Æø"
-                                        "Ë²¼äÓÎ±éÈ«Éí£¬Ëµ²»³öµÄÄÑÊÜ¡£\n" NOR);
-                        message("vision", HIW "ºö¼û" + me->name() + HIW "É¢·¢"
-                                "³öË¿Ë¿º®Æø£¬È«ÉíÉÏÏÂ¾¹È»±»ÕÖÉÏÁËÒ»²ã±¡±ù¡£\n"
+                        tell_object(me, HIW "éœæ™‚ä½ åªè¦ºå¦‚åŒç½®èº«å†°å …åœ°ç„ï¼Œå¯’æ°£"
+                                        "ç¬é–“éŠéå…¨èº«ï¼Œèªªä¸å‡ºçš„é›£å—ã€‚\n" NOR);
+                        message("vision", HIW "å¿½è¦‹" + me->name() + HIW "æ•£ç™¼"
+                                "å‡ºçµ²çµ²å¯’æ°£ï¼Œå…¨èº«ä¸Šä¸‹ç«Ÿç„¶è¢«ç½©ä¸Šäº†ä¸€å±¤è–„å†°ã€‚\n"
                                 NOR, environment(me), me);
                         break;
 
                 default:
-                        tell_object(me, HIB "ÄãÖ»¾õµ¤Ìï´¦Á½ÖÖÕæÆøÏà»¥µÖ´¥£¬ºö"
-                                        "Èç" HIW "±ù³¹" NOR + HIB "£¬ºöÈç" HIR
-                                        "»ğÖË" NOR + HIB "£¬¿à²»¿±ÑÔ¡£\n" NOR);
-                        message("vision", HIB "Í»È»" + me->name() + HIB "Ò»Éù"
-                                "¼âĞ¥£¬Á³²¿Å¤ÇúµÃ²»³ÉÈËÑù£¬ÔÚµØÉÏ²»×¡²ü¶¶¡£\n"
+                        tell_object(me, HIB "ä½ åªè¦ºä¸¹ç”°è™•å…©ç¨®çœŸæ°£ç›¸äº’æŠµè§¸ï¼Œå¿½"
+                                        "å¦‚" HIW "å†°å¾¹" NOR + HIB "ï¼Œå¿½å¦‚" HIR
+                                        "ç«ç‚™" NOR + HIB "ï¼Œè‹¦ä¸å‹˜è¨€ã€‚\n" NOR);
+                        message("vision", HIB "çªç„¶" + me->name() + HIB "ä¸€è²"
+                                "å°–å˜¯ï¼Œè‡‰éƒ¨æ‰­æ›²å¾—ä¸æˆäººæ¨£ï¼Œåœ¨åœ°ä¸Šä¸ä½é¡«æŠ–ã€‚\n"
                                 NOR, environment(me), me);
                         break;
                 }

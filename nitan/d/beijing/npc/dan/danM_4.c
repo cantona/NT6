@@ -4,17 +4,17 @@ inherit COMBINED_ITEM;
 
 void create()
 {
-        set_name(HIW "ÍòÊÙµ¤" NOR, ({"wanshou dan", "dan"}));
+        set_name(HIW "è¬å£½ä¸¹" NOR, ({"wanshou dan", "dan"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("base_unit", "Á£");
-                set("no_drop", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
-                set("no_sell", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
-                set("no_put", "ÕâÑù¶«Î÷²»ÄÜ·ÅÔÚÄÇ¶ù¡£\n");
-                set("no_get", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄÇ¶ù¡£\n");
-                set("no_steal", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄÇ¶ù¡£\n");
-                set("no_beg", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄÇ¶ù¡£\n");
+                set("base_unit", "ç²’");
+                set("no_drop", "é€™æ¨£æ±è¥¿ä¸èƒ½é›¢é–‹ä½ ã€‚\n");
+                set("no_sell", "é€™æ¨£æ±è¥¿ä¸èƒ½é›¢é–‹ä½ ã€‚\n");
+                set("no_put", "é€™æ¨£æ±è¥¿ä¸èƒ½æ”¾åœ¨é‚£å…’ã€‚\n");
+                set("no_get", "é€™æ¨£æ±è¥¿ä¸èƒ½é›¢é–‹é‚£å…’ã€‚\n");
+                set("no_steal", "é€™æ¨£æ±è¥¿ä¸èƒ½é›¢é–‹é‚£å…’ã€‚\n");
+                set("no_beg", "é€™æ¨£æ±è¥¿ä¸èƒ½é›¢é–‹é‚£å…’ã€‚\n");
                 set("base_value", 0);
                 set("only_do_effect", 1);
         }
@@ -28,7 +28,7 @@ int do_effect(object me)
 
         if( time()-query_temp("last_eat/dan(M, me)")<400 )
         {
-                write("Äã¸Õ·şÓÃ¹ıÒ©£¬ĞèÒ©ĞÔ·¢»ÓÍêĞ§ÓÃÒÔºó²ÅÄÜ¼ÌĞø·şÓÃ¡£\n");
+                write("ä½ å‰›æœç”¨éè—¥ï¼Œéœ€è—¥æ€§ç™¼æ®å®Œæ•ˆç”¨ä»¥å¾Œæ‰èƒ½ç¹¼çºŒæœç”¨ã€‚\n");
                 return 1;
         }
 
@@ -37,9 +37,9 @@ int do_effect(object me)
 //        me->set_temp("last_eat/dan(M)", time());
 
         if(me->improve_neili(5))
-                message_vision(HIW "$N" HIW "³ÔÏÂÒ»Á£ÍòÊÙµ¤£¬¸Ğµ½ÄÚÁ¦ÓÖĞÛºñÁËÒ»Ğ©¡£\n" NOR, me); 
+                message_vision(HIW "$N" HIW "åƒä¸‹ä¸€ç²’è¬å£½ä¸¹ï¼Œæ„Ÿåˆ°å…§åŠ›åˆé›„åšäº†ä¸€äº›ã€‚\n" NOR, me); 
         else
-                message_vision(HIW "$N" HIW "³ÔÏÂÒ»Á£ÍòÊÙµ¤£¬¸Ğ¾õºÃÏóÃ»Ê²Ã´Ğ§¹û¡£\n" NOR, me); 
+                message_vision(HIW "$N" HIW "åƒä¸‹ä¸€ç²’è¬å£½ä¸¹ï¼Œæ„Ÿè¦ºå¥½è±¡æ²’ä»€éº¼æ•ˆæœã€‚\n" NOR, me); 
 
         me->start_busy(1);  
 

@@ -2,13 +2,13 @@
 inherit ITEM;
 void create()
 {
-      	set_name(YEL"ÆĞÌá×Ó"NOR, ({ "puti zi","zi"}));
+      	set_name(YEL"è©æå­"NOR, ({ "puti zi","zi"}));
      	set_weight(100);
      	if( clonep() )
             	set_default_object(__FILE__);
       	else 
 	{       
-         	set("unit", "¿Å"); 
+         	set("unit", "é¡†"); 
             	set("no_get",1);
              	set("no_give",1);
      	}
@@ -27,11 +27,11 @@ int do_eat(string arg)
     	maxneili=query("max_neili", me);
     
   	if(!id(arg)) return 0;
-  	if(me->is_busy()) return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É¡£\n");
+  	if(me->is_busy()) return notify_fail("ä½ ä¸Šä¸€å€‹å‹•ä½œé‚„æ²’æœ‰å®Œæˆã€‚\n");
         if( time()-query("eat_drug/putizi", me)<1800 )
-                return notify_fail("Äã¾õµÃÏÖÔÚÄÚÏ¢Î´¶¨£¬¾­ÂöÒşÒş»¹ÄÜ¸Ğµ½ÕæÆø³åµ´£¬²»¸ÒÃ³È»·şÊ³¡£\n");
+                return notify_fail("ä½ è¦ºå¾—ç¾åœ¨å…§æ¯æœªå®šï¼Œç¶“è„ˆéš±éš±é‚„èƒ½æ„Ÿåˆ°çœŸæ°£æ²–ç›ªï¼Œä¸æ•¢è²¿ç„¶æœé£Ÿã€‚\n");
 
-        addn("max_neili", 10+random(15), me);message_vision(HIG"$NÄÃÆğÆĞÌá×Ó³ÔÁËÏÂÈ¥,¸Ğ¾õµ¤Ìï´«À´Ò»ÕóÕóÈÈÒâ,ÄÚÁ¦ĞŞÎªºÃÏóÓĞËùÔö¼Ó!!!!!\n"NOR,me);
+        addn("max_neili", 10+random(15), me);message_vision(HIG"$Næ‹¿èµ·è©æå­åƒäº†ä¸‹å»,æ„Ÿè¦ºä¸¹ç”°å‚³ä¾†ä¸€é™£é™£ç†±æ„,å…§åŠ›ä¿®ç‚ºå¥½è±¡æœ‰æ‰€å¢åŠ !!!!!\n"NOR,me);
       set("eat_drug/putizi", time(), me);
       	destruct(this_object());
       	return 1;

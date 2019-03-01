@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�ĵ�");
+        set("short", "荒道");
         set("long", @LONG
-����ĵ�����һ�ֻƺ�ɫ�����ɫ��ʯ����Ƕ��ϸϸ�Ļ�
-ɳ֮�У������Լ������ĸо������������������ԭ���м�
-�ش������������Ǳ�����
+這裡的地上是一種黃褐色，紅褐色的石礫鑲嵌在細細的黃
+沙之中，給人以極其怪異的感覺。這裡就是西域與中原的中間
+地帶，再往西就是邊塞。
 LONG);
         set("outdoors", "gaochang");
         set("exits", ([

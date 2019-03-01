@@ -5,11 +5,11 @@ string look_shibei();
 
 void create()
 {
-        set("short", "ËÉÁÖÐ¡Â·");
+        set("short", "é¬†æž—å°è·¯");
         set("long", @LONG
-ÕâÊÇÉ½½ÅËÉÁÖÖÐµÄÐ¡Â·£¬Á½±ß³¤Âú²ÎÌìµÄºìËÉÊ÷£¬Ö»ÄÜ¿´¼ûÒ»Ïß
-Ìì¿Õ¡£Â·ÅÔÓÐµÀÊ¿ÔÚ·ÜÁ¦¿³Ê÷¡£¶«±ß¿É»Ø´óµÀ¡£Â·±ßÓÐ¸öÊ¯±®(shibe
-i)£¬ºÜ¶àÓÎ¿ÍÔÚÎ§ÄÇÀï¡£Ô­À´Î÷±ßÉÏÈ¥¾ÍÊÇÃûÕòÌìÏÂµÄ½â½£ÑÒÁË£¬
+é€™æ˜¯å±±è…³é¬†æž—ä¸­çš„å°è·¯ï¼Œå…©é‚Šé•·æ»¿åƒå¤©çš„ç´…é¬†æ¨¹ï¼Œåªèƒ½çœ‹è¦‹ä¸€ç·š
+å¤©ç©ºã€‚è·¯æ—æœ‰é“å£«åœ¨å¥®åŠ›ç æ¨¹ã€‚æ±é‚Šå¯å›žå¤§é“ã€‚è·¯é‚Šæœ‰å€‹çŸ³ç¢‘(shibe
+i)ï¼Œå¾ˆå¤šéŠå®¢åœ¨åœé‚£è£¡ã€‚åŽŸä¾†è¥¿é‚Šä¸ŠåŽ»å°±æ˜¯åéŽ®å¤©ä¸‹çš„è§£åŠå·–äº†ï¼Œ
 LONG );
         set("outdoors", "wudang");
         set("item_desc", ([
@@ -31,13 +31,13 @@ LONG );
 string look_shibei()
 {
         return WHT "\n\n"
-        "  ¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n"
-        "  ¡ù¡ù¡ù¡ù¡¡        ¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ù¡ù¡ù¡ù\n"
-        "  ¡ù¡ù¡ù¡ù" HIW "¡¡        ¡¡Îäµ±ÅÉÍ¨¸æ" NOR + WHT "    ¡¡¡¡¡¡¡¡¡ù¡ù¡ù¡ù\n"
-        "  ¡ù¡ù¡ù¡ù¡¡                            ¡¡¡¡¡ù¡ù¡ù¡ù\n"
-        "  ¡ù¡ù¡ù¡ù" HIW "¡¡    ÍùÇ°¾ÍÊÇÎäµ±É½½â½£ÑÒ¡£ËùÓÐ" NOR + WHT "¡¡¡ù¡ù¡ù¡ù\n"
-        "  ¡ù¡ù¡ù¡ù" HIW "¡¡ÍâÀ´ÈË¿ÍÇë×Ô¾õ½â½£¡£Ð°Ä§ÍâµÀµ½" NOR + WHT "¡¡¡ù¡ù¡ù¡ù\n"
-        "  ¡ù¡ù¡ù¡ù" HIW "¡¡´ËÖ¹²½¡£" NOR + WHT "                ¡¡¡¡¡¡¡¡¡ù¡ù¡ù¡ù\n"
-        "  ¡ù¡ù¡ù¡ù¡¡¡¡¡¡¡¡¡¡                ¡¡¡¡¡¡¡¡¡ù¡ù¡ù¡ù\n"
-        "  ¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n\n\n" NOR;
+        "  â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»\n"
+        "  â€»â€»â€»â€»ã€€        ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â€»â€»â€»â€»\n"
+        "  â€»â€»â€»â€»" HIW "ã€€        ã€€æ­¦ç•¶æ´¾é€šå‘Š" NOR + WHT "    ã€€ã€€ã€€ã€€â€»â€»â€»â€»\n"
+        "  â€»â€»â€»â€»ã€€                            ã€€ã€€â€»â€»â€»â€»\n"
+        "  â€»â€»â€»â€»" HIW "ã€€    å¾€å‰å°±æ˜¯æ­¦ç•¶å±±è§£åŠå·–ã€‚æ‰€æœ‰" NOR + WHT "ã€€â€»â€»â€»â€»\n"
+        "  â€»â€»â€»â€»" HIW "ã€€å¤–ä¾†äººå®¢è«‹è‡ªè¦ºè§£åŠã€‚é‚ªé­”å¤–é“åˆ°" NOR + WHT "ã€€â€»â€»â€»â€»\n"
+        "  â€»â€»â€»â€»" HIW "ã€€æ­¤æ­¢æ­¥ã€‚" NOR + WHT "                ã€€ã€€ã€€ã€€â€»â€»â€»â€»\n"
+        "  â€»â€»â€»â€»ã€€ã€€ã€€ã€€ã€€                ã€€ã€€ã€€ã€€â€»â€»â€»â€»\n"
+        "  â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»\n\n\n" NOR;
 }

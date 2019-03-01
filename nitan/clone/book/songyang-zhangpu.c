@@ -1,4 +1,4 @@
-// songyang-zhangpu.c ´óáÔÑôÕÆÆ×
+// songyang-zhangpu.c å¤§åµ©é™½æŒè­œ
 // Last Modified by Winder on Jul. 15 2001
 
 #include <ansi.h>
@@ -7,19 +7,19 @@ inherit F_UNIQUE;
 
 void create()
 {
-        set_name(RED"´óáÔÑôÕÆÆ×" NOR, ({ "songyang zhangpu","zhangpu", }));
+        set_name(RED"å¤§åµ©é™½æŒè­œ" NOR, ({ "songyang zhangpu","zhangpu", }));
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit","±¾");
-                set("long","ÕâÊÇÒ»ÕÅÂéÖ½Ğ¡²á£¬ÉÏÃæºÃÏó»¹ÓĞÒ»Ğ©Ğ¡ÈË»ÓÎèÈ­½ÅµÄÍ¼ĞÎ¡£\n",
+                set("unit","æœ¬");
+                set("long","é€™æ˜¯ä¸€å¼µéº»ç´™å°å†Šï¼Œä¸Šé¢å¥½è±¡é‚„æœ‰ä¸€äº›å°äººæ®èˆæ‹³è…³çš„åœ–å½¢ã€‚\n",
          );
          set("value", 0);
          set("material", "paper");
          set("skill", ([
                         "name"         : "songyang-strike",
-			"family_name" : "áÔÉ½ÅÉ",
+			"family_name" : "åµ©å±±æ´¾",
                         "exp_required" : 10000,
                         "jing_cost"    : 30,
                         "difficulty"   : 20,

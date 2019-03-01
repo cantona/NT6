@@ -1,12 +1,12 @@
         master(3)                LP MudOSv21c7                (7 Jul 1996)
-        º¯ÊıÃû³Æ:
-                master() - ´«»ØÖ÷Ô×Îï¼ş (master object)
-        º¯ÊıÓï·¨:
+        å‡½æ•¸åç¨±:
+                master() - å‚³å›ä¸»å®°ç‰©ä»¶ (master object)
+        å‡½æ•¸èªæ³•:
                 object master( void );
-                Îï¼ş master( ÎŞ²ÎÊı );
-        º¯ÊıÓÃ·¨:
-                ´«»ØÖ¸ÏòÖ÷Ô×Îï¼ş (master object) µÄÖ¸±ê (pointer).
-        ²Î¿¼º¯Êı:
+                ç‰©ä»¶ master( ç„¡åƒæ•¸ );
+        å‡½æ•¸ç”¨æ³•:
+                å‚³å›æŒ‡å‘ä¸»å®°ç‰©ä»¶ (master object) çš„æŒ‡æ¨™ (pointer).
+        åƒè€ƒå‡½æ•¸:
                 find_object(3)
-        ÊÖ²á·­Òë:
+        æ‰‹å†Šç¿»è­¯:
                 Phoebus@ZH        97.Apr.13.                (Writen 5/23/97)

@@ -7,11 +7,11 @@
 
 inherit ITEM;
 
-// ÊÇ·ñÌÖÂÛ°å£¿
+// æ˜¯å¦è¨è«–æ¿ï¼Ÿ
 int is_board()  { return 1; }
 
-// create() Ê±µ÷ÓÃ£¬Ö÷ÒªÓÃÓÚ¸ù¾İÊı¾İ¿âÄÚ±£ÁôµÄĞÅÏ¢ÉèÖÃ
-// °æÃæµÄ³¤ÃèÊö¡£
+// create() æ™‚èª¿ç”¨ï¼Œä¸»è¦ç”¨äºæ ¹æ“šæ•¸æ“šåº«å…§ä¿ç•™çš„ä¿¡æ¯è¨­ç½®
+// ç‰ˆé¢çš„é•·æè¿°ã€‚
 void setup()
 {
         string loc;
@@ -40,7 +40,7 @@ void init()
         add_action("do_discard", "discard");
 }
 
-// °æÃæµÄ¶ÌÃèÊö£¬Òª·µ»ØÎ´¶ÁµÄÎÄÕÂ/Ö÷ÌâÊı¡£
+// ç‰ˆé¢çš„çŸ­æè¿°ï¼Œè¦è¿”å›æœªè®€çš„æ–‡ç« /ä¸»é¡Œæ•¸ã€‚
 string short()
 {
         mapping *notes;
@@ -63,10 +63,10 @@ string short()
                       : BOARD_D->query_all_topics(ob));
         time = (mode ? POST_TIME : TOPIC_TIME);
 
-        str = mode ? "ÎÄÕÂ" : "Ö÷Ìâ";
+        str = mode ? "æ–‡ç« " : "ä¸»é¡Œ";
 
         if (! arrayp(notes) || ! sizeof(notes))
-                return ::short() + " [ Ã»ÓĞÈÎºÎ" + str + " ]";
+                return ::short() + " [ æ²’æœ‰ä»»ä½•" + str + " ]";
 
         last_read_time = query("board_last_read/" + query("board_id"), me);
         max = sizeof(notes) - 1;
@@ -76,13 +76,13 @@ string short()
 
         max++;
         if (unread)
-                return sprintf(HIC + "%s" + NOR + " [ %d Æª%s£¬" + HIY + "%d" + NOR + " Æª" +
-                               HIR + "Î´¶Á" + NOR + "]", ::short(), max, str, unread);
+                return sprintf(HIC + "%s" + NOR + " [ %d ç¯‡%sï¼Œ" + HIY + "%d" + NOR + " ç¯‡" +
+                               HIR + "æœªè®€" + NOR + "]", ::short(), max, str, unread);
         else
-                return sprintf("%s [ " WHT "%d" NOR " Æª%s ]", ::short(), max, str);
+                return sprintf("%s [ " WHT "%d" NOR " ç¯‡%s ]", ::short(), max, str);
 }
 
-// °æÃæµÄ³¤ÃèÊö£¬·µ»ØËùÓĞÎÄÕÂ/Ö÷ÌâµÄÁĞ±í¡£
+// ç‰ˆé¢çš„é•·æè¿°ï¼Œè¿”å›æ‰€æœ‰æ–‡ç« /ä¸»é¡Œçš„åˆ—è¡¨ã€‚
 string long()
 {
         mixed *notes;
@@ -94,14 +94,14 @@ string long()
         me = this_player();
         if (! DATABASE_D->query_db_status())
                 DATABASE_D->connect_to_database();
-        // bbs Ä£Ê½
+        // bbs æ¨¡å¼
         if (is_bbs_mode(me))
         {
                 notes = BOARD_D->query_all_posts(this_object());
-                msg = sprintf("¡º " HIW "%s" NOR " ¡»(" WHT "%s" NOR ")\n%s"
-                              "\n" WHT "Ä¿Ç°ËùÓĞµÄÎÄÕÂÓĞ£º\n" NOR
-                              "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"
-                              "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n", query("name"),
+                msg = sprintf("ã€ " HIW "%s" NOR " ã€(" WHT "%s" NOR ")\n%s"
+                              "\n" WHT "ç›®å‰æ‰€æœ‰çš„æ–‡ç« æœ‰ï¼š\n" NOR
+                              "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"
+                              "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n", query("name"),
                               sprintf(FORUM_URL, query("forum_id")),
                               query("long"));
                 if (! arrayp(notes) || ! sizeof(notes)) return query("long");
@@ -111,7 +111,7 @@ string long()
                 if (i < 0) i = 0;
                 for (; i < sizeof(notes); i++)
                 {
-                        // ¼ÓÉÏ 1 ²ÎÊıÔò²»·µ»Ø msg
+                        // åŠ ä¸Š 1 åƒæ•¸å‰‡ä¸è¿”å› msg
                         pinfo = BOARD_D->query_post_info(notes[i][POST_ID], 1);
                         if (pinfo[POST_SUBJECT] == "")
                         {
@@ -127,16 +127,16 @@ string long()
                                        BOARD_D->query_user_name(notes[i][POSTER_ID]),
                                        ctime(notes[i][POST_TIME])[0..15]);
                 }
-                msg += "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"
-                       "©¤©¤©¤[ " WHT "BBS Ä£Ê½" NOR " ]\n\n";
+                msg += "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"
+                       "â”€â”€â”€[ " WHT "BBS æ¨¡å¼" NOR " ]\n\n";
         } else
         {
-                // ¼ÓÉÏ 1 ²ÎÊıÔò²»·µ»ØºóÈıÏî
+                // åŠ ä¸Š 1 åƒæ•¸å‰‡ä¸è¿”å›å¾Œä¸‰é …
                 notes = BOARD_D->query_all_topics(this_object(), 1);
-                msg = sprintf("¡º " HIW "%s" NOR " ¡»(" WHT "%s" NOR ")\n%s"
-                              "\n" WHT "Ä¿Ç°ËùÓĞµÄÖ÷ÌâÓĞ£º\n" NOR
-                              "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"
-                              "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n", query("name"),
+                msg = sprintf("ã€ " HIW "%s" NOR " ã€(" WHT "%s" NOR ")\n%s"
+                              "\n" WHT "ç›®å‰æ‰€æœ‰çš„ä¸»é¡Œæœ‰ï¼š\n" NOR
+                              "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"
+                              "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n", query("name"),
                               sprintf(FORUM_URL, query("forum_id")),
                               query("long"));
 
@@ -153,13 +153,13 @@ string long()
                                        BOARD_D->query_user_name(notes[i][TOPIC_POSTER]),
                                        ctime(notes[i][TOPIC_TIME])[0..15]);
                 }
-                msg += "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"
-                       "©¤©¤©¤[ " WHT "Web Ä£Ê½" NOR " ]\n\n";
+                msg += "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"
+                       "â”€â”€â”€[ " WHT "Web æ¨¡å¼" NOR " ]\n\n";
         }
         return msg;
 }
 
-// Õâ½«±»Íæ¼ÒÎï¼şÖĞµÄ F_EDIT ºô½Ğ
+// é€™å°‡è¢«ç©å®¶ç‰©ä»¶ä¸­çš„ F_EDIT å‘¼å«
 void done_post(object me, string title, string text)
 {
         int i;
@@ -175,7 +175,7 @@ void done_post(object me, string title, string text)
 
         if (strlen(text) > 64 * 1024)
         {
-                tell_object(me, "ÄãµÄÎÄÕÂÌ«³¤ÁË£¬ÇëÂÔÈ¥Ò»Ğ©²»±ØÒªµÄ¡£\n");
+                tell_object(me, "ä½ çš„æ–‡ç« å¤ªé•·äº†ï¼Œè«‹ç•¥å»ä¸€äº›ä¸å¿…è¦çš„ã€‚\n");
                 return;
         }
 
@@ -183,13 +183,13 @@ void done_post(object me, string title, string text)
         i = sizeof(lines);
         if (i > 2000)
         {
-                tell_object(me, "ÄãµÄÎÄÕÂÌ«³¤ÁË£¬ÇëÂÔÈ¥Ò»Ğ©²»±ØÒªµÄ¡£\n");
+                tell_object(me, "ä½ çš„æ–‡ç« å¤ªé•·äº†ï¼Œè«‹ç•¥å»ä¸€äº›ä¸å¿…è¦çš„ã€‚\n");
                 return;
         }
 
         if (i > 20 && strlen(text) / i < 10)
         {
-                tell_object(me, "ÄãµÄÎÄÕÂÖĞ¶Ì¾äÌ«¶àÁË£¬Çëµ÷ÕûÒ»ÏÂÒÔ±ãËûÈËÔÄ¶Á¡£\n");
+                tell_object(me, "ä½ çš„æ–‡ç« ä¸­çŸ­å¥å¤ªå¤šäº†ï¼Œè«‹èª¿æ•´ä¸€ä¸‹ä»¥ä¾¿ä»–äººé–±è®€ã€‚\n");
                 return;
         }
 
@@ -198,13 +198,13 @@ void done_post(object me, string title, string text)
                 // scan all lines
                 if (strlen(lines[i]) > 300)
                 {
-                        tell_object(me, "ÄãÎÄÕÂÖĞÓĞĞ©ĞĞÌ«³¤ÁË£¬Çë·ÖĞĞÒÔ±ãËûÈËÔÄ¶Á¡£\n");
+                        tell_object(me, "ä½ æ–‡ç« ä¸­æœ‰äº›è¡Œå¤ªé•·äº†ï¼Œè«‹åˆ†è¡Œä»¥ä¾¿ä»–äººé–±è®€ã€‚\n");
                         return;
                 }
         }
 
-        // Óëä¯ÀÀÆ÷·½Ê½¼æÈİ
-        text = replace_string(text, "  ", "¡¡");
+        // èˆ‡ç€è¦½å™¨æ–¹å¼å…¼å®¹
+        text = replace_string(text, "  ", "ã€€");
         ob = this_object();
         mode = is_bbs_mode(me);
         if (! DATABASE_D->query_db_status())
@@ -213,28 +213,28 @@ void done_post(object me, string title, string text)
         if (sscanf(title, "re last %d", num)) topic_id = BOARD_D->query_number_topic(ob, -num, mode);
         if (sscanf(title, "re %d", num)) topic_id = BOARD_D->query_number_topic(ob, (num - 1), mode);
 
-        // »Ø¸´¾ÉÖ÷Ìâ£¿
+        // å›å¾©èˆŠä¸»é¡Œï¼Ÿ
         if (topic_id)
         {
                 if (! BOARD_D->reply_topic(ob, topic_id,
                                            query("id", me), text,
                                            query_ip_number(me)))
-                        tell_object(me, "»Ø¸´Ê§°Ü£¬ÇëÏòÎ×Ê¦²éÑ¯Ô­Òò¡£\n");
+                        tell_object(me, "å›å¾©å¤±æ•—ï¼Œè«‹å‘å·«å¸«æŸ¥è©¢åŸå› ã€‚\n");
                 else
-                        tell_object(me, "»Ø¸´Íê±Ï¡£\n");
+                        tell_object(me, "å›å¾©å®Œç•¢ã€‚\n");
                 return;
         }
 
-        // ·¢±íĞÂÖ÷Ìâ£¿
+        // ç™¼è¡¨æ–°ä¸»é¡Œï¼Ÿ
         if (! BOARD_D->post_new_topic(ob, title,
                                       query("id", me), text,
                                       query_ip_number(me)))
         {
-                tell_object(me, "·¢±íÊ§°Ü£¬ÇëÏòÎ×Ê¦²éÑ¯Ô­Òò¡£\n");
+                tell_object(me, "ç™¼è¡¨å¤±æ•—ï¼Œè«‹å‘å·«å¸«æŸ¥è©¢åŸå› ã€‚\n");
                 return;
         }
 
-        tell_object(me, "·¢±íÍê±Ï¡£\n");
+        tell_object(me, "ç™¼è¡¨å®Œç•¢ã€‚\n");
         return;
 }
 
@@ -243,23 +243,23 @@ int do_post(string arg, int n)
         object me;
 
         if (! arg)
-                return notify_fail("·¢±íÎÄÕÂÇëÖ¸¶¨Ò»¸ö±êÌâ¡£\n");
+                return notify_fail("ç™¼è¡¨æ–‡ç« è«‹æŒ‡å®šä¸€å€‹æ¨™é¡Œã€‚\n");
 
         me = this_player();
         if (wiz_level(me) < 1)
         {
                 if (query("mud_age", me) < 1800)
-                        return notify_fail("Äã±ØĞëÔÚÍê³É×¢²áÈıÊ®·ÖÖÓÒÔºó²ÅÄÜÊ¹ÓÃÌÖÂÛ°æ£¬Õâ¶Î"
-                                           "Ê±¼äÄÚÇëÏÈÔÄ¶ÁËûÈËµÄÁôÑÔ¡£\n");
+                        return notify_fail("ä½ å¿…é ˆåœ¨å®Œæˆæ³¨å†Šä¸‰ååˆ†é˜ä»¥å¾Œæ‰èƒ½ä½¿ç”¨è¨è«–ç‰ˆï¼Œé€™æ®µ"
+                                           "æ™‚é–“å…§è«‹å…ˆé–±è®€ä»–äººçš„ç•™è¨€ã€‚\n");
 
                 if (query("jing", me) < 50)
-                        return notify_fail("ÄãÏÖÔÚ¾«Éñ²»¼Ã£¬ĞİÏ¢Ò»»á¶ùÔÙËµ°É¡£\n");
+                        return notify_fail("ä½ ç¾åœ¨ç²¾ç¥ä¸æ¿Ÿï¼Œä¼‘æ¯ä¸€æœƒå…’å†èªªå§ã€‚\n");
 
                 me->receive_damage("jing", 50);
         }
 
         if (replace_string(arg, " ", "") == "")
-                arg = "ÎŞ±êÌâ";
+                arg = "ç„¡æ¨™é¡Œ";
 
         me->edit((: done_post, me, arg :));
         return 1;
@@ -278,19 +278,19 @@ int do_read(string arg)
         ob = this_object();
         last_read_time = query("board_last_read", me);
         myid = query("board_id");
-        // ÊÇ·ñÊ¹ÓÃ bbs Ä£Ê½£¿
+        // æ˜¯å¦ä½¿ç”¨ bbs æ¨¡å¼ï¼Ÿ
         mode = is_bbs_mode(me);
 
-        if (! arg) return notify_fail("Ö¸Áî¸ñÊ½£ºread <ÎÄÕÂ / Ö÷Ìâ±àºÅ> | new | next\n");
+        if (! arg) return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šread <æ–‡ç«  / ä¸»é¡Œç·¨è™Ÿ> | new | next\n");
 
         if (! DATABASE_D->query_db_status())
                 DATABASE_D->connect_to_database();
-        // »ñµÃ±¾°æËùÓĞÁôÑÔ
+        // ç²å¾—æœ¬ç‰ˆæ‰€æœ‰ç•™è¨€
         notes = (mode ? BOARD_D->query_all_posts(ob)
                       : BOARD_D->query_all_topics(ob));
         time = (mode ? POST_TIME : TOPIC_TIME);
 
-        if (! sizeof(notes)) return notify_fail("ÌÖÂÛ°åÉÏÃ»ÓĞÈÎºÎÎÄÕÂ¡£\n");
+        if (! sizeof(notes)) return notify_fail("è¨è«–æ¿ä¸Šæ²’æœ‰ä»»ä½•æ–‡ç« ã€‚\n");
 
         if (arg == "new" || arg == "next")
         {
@@ -307,38 +307,38 @@ int do_read(string arg)
                 }
         } else
         if (! sscanf(arg, "%d", num))
-                return notify_fail("ÄãÒª¶ÁµÚ¼¸ÆªÎÄÕÂ£¿\n");
+                return notify_fail("ä½ è¦è®€ç¬¬å¹¾ç¯‡æ–‡ç« ï¼Ÿ\n");
 
         if (num < 1 || num > sizeof(notes))
-                return notify_fail("Ã»ÓĞÕâÆªÎÄÕÂ¡£\n");
+                return notify_fail("æ²’æœ‰é€™ç¯‡æ–‡ç« ã€‚\n");
         num--;
 
-        // bbs Ä£Ê½
+        // bbs æ¨¡å¼
         if (mode)
         {
-                // ±¾ÌûÏà¹ØµÄÒ»Ğ©ĞÅÏ¢
+                // æœ¬å¸–ç›¸é—œçš„ä¸€äº›ä¿¡æ¯
                 pinfo = BOARD_D->query_post_info(notes[num][POST_ID]);
-                // ·¢ÌùµÄÊ±¼ä
+                // ç™¼è²¼çš„æ™‚é–“
                 t = notes[num][POST_TIME];
                 tinfo = BOARD_D->query_topic_info(notes[num][TOPIC_ID]);
                 title = ((sizeof(tinfo) && pinfo[POST_SUBJECT] == "") ? ("Re: " + tinfo[TOPIC_TITLE]) :
                         pinfo[POST_SUBJECT]);
 
                 msg = sprintf("[" WHT "%3d" NOR "]" WHT " %-40s " NOR "(%s) [ " WHT "%s" NOR " ]\n"
-                              "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"
-                              "©¤©¤©¤©¤©¤©¤©¤©¤\n" NOR "%s\n©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"
-                              "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤[ " WHT "BBS Ä£Ê½"
+                              "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"
+                              "â”€â”€â”€â”€â”€â”€â”€â”€\n" NOR "%s\nâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"
+                              "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€[ " WHT "BBS æ¨¡å¼"
                               NOR " ]\n" NOR, num + 1,
                               title, ctime(t)[0..9],
                               BOARD_D->query_mud_name(notes[num][POSTER_ID]), pinfo[POST_TEXT]);
 
                 BOARD_D->add_topic_view(notes[num][TOPIC_ID], 1);
 
-                // ´ËÌùÊÇÄÄÆªÖ÷ÌâµÄ»Ø¸´£¿
+                // æ­¤è²¼æ˜¯å“ªç¯‡ä¸»é¡Œçš„å›å¾©ï¼Ÿ
                 if (sizeof(tinfo))
-                        msg += sprintf("´ËÌùÊÇÖ÷Ìâ " WHT "%s" NOR " (%d) µÄ%s¡£\nWeb µØÖ·£º " WHT "(%s)" NOR,
+                        msg += sprintf("æ­¤è²¼æ˜¯ä¸»é¡Œ " WHT "%s" NOR " (%d) çš„%sã€‚\nWeb åœ°å€ï¼š " WHT "(%s)" NOR,
                                        tinfo[TOPIC_TITLE], BOARD_D->query_topic_number(ob, tinfo[TOPIC_ID]),
-                                       (tinfo[TOPIC_FIRST_ID] == notes[num][POST_ID] ? "Ê×Ìù" : "»Ø¸´"),
+                                       (tinfo[TOPIC_FIRST_ID] == notes[num][POST_ID] ? "é¦–è²¼" : "å›å¾©"),
                                        sprintf(TOPIC_URL, tinfo[TOPIC_ID]));
         } else
         {
@@ -349,17 +349,17 @@ int do_read(string arg)
 //              DEBUG_MSG(sprintf(HIC "pinfo = " WHT "%O\n" NOR, pinfo));
 
                 msg = sprintf("[" WHT "%3d" NOR "]" WHT " %-40s " NOR "(%s) [ " WHT "%s" NOR " ]\n"
-                              "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"
-                              "©¤©¤©¤©¤©¤©¤©¤©¤\n" NOR "%s\n©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"
-                              "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤[ " WHT "Web Ä£Ê½"
-                              NOR " ]\nWeb µØÖ·£º" WHT "(%s)" NOR, num + 1,
+                              "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"
+                              "â”€â”€â”€â”€â”€â”€â”€â”€\n" NOR "%s\nâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"
+                              "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€[ " WHT "Web æ¨¡å¼"
+                              NOR " ]\nWeb åœ°å€ï¼š" WHT "(%s)" NOR, num + 1,
                               notes[num][TOPIC_TITLE], ctime(t)[0..9],
                               BOARD_D->query_mud_name(notes[num][TOPIC_POSTER]), pinfo[POST_TEXT],
                               sprintf(TOPIC_URL, notes[num][TOPIC_ID]));
 
                 BOARD_D->add_topic_view(notes[num][TOPIC_ID], 1);
 
-                // ÊÇ·ñÓĞ»Ø¸´ÄØ£¿
+                // æ˜¯å¦æœ‰å›å¾©å‘¢ï¼Ÿ
                 if (notes[num][TOPIC_REPLIES])
                 {
                         mode = query("env/reply_mode", me);
@@ -370,7 +370,7 @@ int do_read(string arg)
                                                                      notes[num][TOPIC_FIRST_ID]);
                                 switch (mode)
                                 {
-                                // ÏÔÊ¾×îºóÒ»Æª»Ø¸´
+                                // é¡¯ç¤ºæœ€å¾Œä¸€ç¯‡å›å¾©
                                 case 1 :
                                         reply = replies[sizeof(replies) - 1];
                                         pinfo = BOARD_D->query_post_info(reply[POST_ID]);
@@ -378,14 +378,14 @@ int do_read(string arg)
 
                                         msg += sprintf(WHT "\nRe: %-42s "
                                                        NOR "(%s) [ " WHT "%s" NOR " ]\n"
-                                                       "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"
-                                                       "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"
-                                                       "©¤©¤©¤©¤©¤\n" NOR "%s\n" NOR,
+                                                       "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"
+                                                       "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"
+                                                       "â”€â”€â”€â”€â”€\n" NOR "%s\n" NOR,
                                                        notes[num][TOPIC_TITLE], ctime(t)[0..9],
                                                        BOARD_D->query_mud_name(reply[POSTER_ID]),
                                                        pinfo[POST_TEXT]);
                                         break;
-                                // ÏÔÊ¾ËùÓĞ»Ø¸´
+                                // é¡¯ç¤ºæ‰€æœ‰å›å¾©
                                 // case 2 :
                                 default :
                                         foreach (reply in replies)
@@ -395,24 +395,24 @@ int do_read(string arg)
 
                                                 msg += sprintf(WHT "\nRe: %-42s "
                                                                NOR "(%s) [ " WHT "%s" NOR " ]\n"
-                                                               "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"
-                                                               "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"
-                                                               "©¤©¤©¤©¤©¤\n" NOR "%s\n" NOR,
+                                                               "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"
+                                                               "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"
+                                                               "â”€â”€â”€â”€â”€\n" NOR "%s\n" NOR,
                                                                notes[num][TOPIC_TITLE], ctime(t)[0..9],
                                                                BOARD_D->query_mud_name(reply[POSTER_ID]),
                                                                pinfo[POST_TEXT]);
                                         }
                                         break;
                                 }
-                                msg += "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"
-                                       "©¤©¤©¤©¤©¤©¤©¤©¤\n";
+                                msg += "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"
+                                       "â”€â”€â”€â”€â”€â”€â”€â”€\n";
                         }
-                        msg += "±¾Ö÷Ìâ¹²ÓĞ " WHT + notes[num][TOPIC_REPLIES] + NOR " Æª»Ø¸´¡£\n";
+                        msg += "æœ¬ä¸»é¡Œå…±æœ‰ " WHT + notes[num][TOPIC_REPLIES] + NOR " ç¯‡å›å¾©ã€‚\n";
                 }
         }
         me->start_more(msg);
 
-        // ¼ÇÂ¼ÉÏ´ÎÔÄ¶Áµ½ÄÄÀï
+        // è¨˜éŒ„ä¸Šæ¬¡é–±è®€åˆ°å“ªè£¡
         if (! mapp(last_read_time))
                 set("board_last_read", ([myid:t]), me);
         else
@@ -436,7 +436,7 @@ int do_discard(string arg)
         ob = this_object();
 
         if (! arg || sscanf(arg, "%d", num) != 1)
-                return notify_fail("Ö¸Áî¸ñÊ½£ºdiscard <ÁôÑÔ±àºÅ>\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šdiscard <ç•™è¨€ç·¨è™Ÿ>\n");
 
         if (! DATABASE_D->query_db_status())
                 DATABASE_D->connect_to_database();
@@ -446,31 +446,31 @@ int do_discard(string arg)
         {
                 post_id = BOARD_D->query_number_post(ob, num - 1);
                 if (! post_id)
-                        return notify_fail("Ã»ÓĞÕâÆªÎÄÕÂ¡£\n");
+                        return notify_fail("æ²’æœ‰é€™ç¯‡æ–‡ç« ã€‚\n");
 
                 pdata = BOARD_D->query_post_data(post_id);
 
                 if (BOARD_D->query_user_name(pdata[POSTER_ID]) != query("id", me) &&
                     wiz_level(me) < wiz_level("(wizard)"))
-                        return notify_fail("ÕâÆªÎÄÕÂ²»ÊÇÄãĞ´µÄ£¬ÄãÒ²Ã»ÓĞÉ¾³ıÎÄÕÂµÄÈ¨ÏŞ¡£\n");
+                        return notify_fail("é€™ç¯‡æ–‡ç« ä¸æ˜¯ä½ å¯«çš„ï¼Œä½ ä¹Ÿæ²’æœ‰åˆªé™¤æ–‡ç« çš„æ¬Šé™ã€‚\n");
 
                 BOARD_D->delete_post(ob, post_id);
-                write("É¾³ıµÚ " + num + " ÆªÎÄÕÂ....Ok¡£\n");
+                write("åˆªé™¤ç¬¬ " + num + " ç¯‡æ–‡ç« ....Okã€‚\n");
                 return 1;
         } else
         {
                 topic_id = BOARD_D->query_number_topic(ob, num - 1, mode);
                 if (! topic_id)
-                        return notify_fail("Ã»ÓĞÕâÆªÎÄÕÂ¡£\n");
+                        return notify_fail("æ²’æœ‰é€™ç¯‡æ–‡ç« ã€‚\n");
 
                 tinfo = BOARD_D->query_topic_info(topic_id);
 
                 if (BOARD_D->query_user_name(tinfo[TOPIC_POSTER]) != query("id", me) &&
                     wiz_level(me) < wiz_level("(wizard)"))
-                        return notify_fail("ÕâÆªÎÄÕÂ²»ÊÇÄãĞ´µÄ£¬ÄãÒ²Ã»ÓĞÉ¾³ıÎÄÕÂµÄÈ¨ÏŞ¡£\n");
+                        return notify_fail("é€™ç¯‡æ–‡ç« ä¸æ˜¯ä½ å¯«çš„ï¼Œä½ ä¹Ÿæ²’æœ‰åˆªé™¤æ–‡ç« çš„æ¬Šé™ã€‚\n");
 
                 BOARD_D->delete_topic(ob, topic_id);
-                write("É¾³ıµÚ " + num + " ÆªÖ÷Ìâ....Ok¡£\n");
+                write("åˆªé™¤ç¬¬ " + num + " ç¯‡ä¸»é¡Œ....Okã€‚\n");
                 return 1;
         }
 }

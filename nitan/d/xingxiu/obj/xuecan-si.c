@@ -5,15 +5,15 @@ inherit ITEM;
 #include <ansi.h>;
 void create()
 {
-        set_name("Ñ©²ÏË¿", ({"xuecan si", "can si","cansi"}));
+        set_name("é›ªè ¶çµ²", ({"xuecan si", "can si","cansi"}));
         set_weight(80);
         set_max_encumbrance(10);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-         set("long", "ÕâÊÇÒ»¸ùÑ©²ÏË¿£¬ÊÇÐÇËÞº£ÅÔµÄÑ©²ÏËùÍÂÖ®Ë¿¡£Ñ©²ÏÐÎÌåÔ¶½Ï±ù²ÏÎªÐ¡£¬Ò²ÎÞ¶¾ÐÔ£¬
-ÍÂ³öÀ´µÄ²ÏË¿È´ÈÍÁ¦´óµÃÒìºõÑ°³££¬Ò»¸ùµ¥Ë¿±ãÒÑ²»Ò×À­¶Ï¡£\n");
-                set("unit", "¸ù");
+         set("long", "é€™æ˜¯ä¸€æ ¹é›ªè ¶çµ²ï¼Œæ˜¯æ˜Ÿå®¿æµ·æ—çš„é›ªè ¶æ‰€åä¹‹çµ²ã€‚é›ªè ¶å½¢é«”é è¼ƒå†°è ¶ç‚ºå°ï¼Œä¹Ÿç„¡æ¯’æ€§ï¼Œ
+åå‡ºä¾†çš„è ¶çµ²å»éŸŒåŠ›å¤§å¾—ç•°ä¹Žå°‹å¸¸ï¼Œä¸€æ ¹å–®çµ²ä¾¿å·²ä¸æ˜“æ‹‰æ–·ã€‚\n");
+                set("unit", "æ ¹");
                 set("value", 0);
                 set("busy_source", random(5)+1);
         }
@@ -39,40 +39,40 @@ int do_shou(string arg)
                         target=inv[i];
                 }
         if (!target) 
-                return notify_fail("ÄãÏëÊÕË­£¿\n");
+                return notify_fail("ä½ æƒ³æ”¶èª°ï¼Ÿ\n");
         
         if(target==me)
-                return notify_fail("Äã²»ÄÜÊÕ×Ô¼º£¡\n");
+                return notify_fail("ä½ ä¸èƒ½æ”¶è‡ªå·±ï¼\n");
 
 //      if(!userp(target))
-//              return notify_fail("ÄãÖ»ÄÜÊÕÍæ¼Ò£¡\n");
+//              return notify_fail("ä½ åªèƒ½æ”¶çŽ©å®¶ï¼\n");
         
         if(me->is_busy())
-                return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓÐÍê³É£¡\n");
+                return notify_fail("ä½ ä¸Šä¸€å€‹å‹•ä½œé‚„æ²’æœ‰å®Œæˆï¼\n");
 
         if(!me->is_fighting() || !target->is_fighting() || !living(target))
-                return notify_fail("Äã±ØÐëÔÚÕ½¶·ÖÐ²ÅÄÜÊ¹ÓÃÑ©²ÏË¿£¡\n");
+                return notify_fail("ä½ å¿…é ˆåœ¨æˆ°é¬¥ä¸­æ‰èƒ½ä½¿ç”¨é›ªè ¶çµ²ï¼\n");
 
         if(me->query_skill_mapped("throwing") != "feixing-shu")
-                return notify_fail("Äã²»¼¤·¢·ÉÐÇÊõ£¬ÎÞ·¨ÕÆÎÕÑ©²ÏË¿µÄÊ¹ÓÃ·½·¨¡£\n");
+                return notify_fail("ä½ ä¸æ¿€ç™¼é£›æ˜Ÿè¡“ï¼Œç„¡æ³•æŽŒæ¡é›ªè ¶çµ²çš„ä½¿ç”¨æ–¹æ³•ã€‚\n");
 
         if(me->query_skill("feixing-shu",1)<30)
-                return notify_fail("ÒÔÄãÏÖÔÚµÄ·ÉÐÇÊõ¹¦Á¦¿ÖÅÂÓÃ²»ÁËÑ©²ÏË¿£¡\n");
+                return notify_fail("ä»¥ä½ ç¾åœ¨çš„é£›æ˜Ÿè¡“åŠŸåŠ›ææ€•ç”¨ä¸äº†é›ªè ¶çµ²ï¼\n");
 
         if(target->is_busy())
-                return notify_fail(query("name", target)+"Õý×Ô¹Ë²»Ï¾£¬·ÅÊÖ¹¥»÷°É£¡\n");
+                return notify_fail(query("name", target)+"æ­£è‡ªé¡§ä¸æš‡ï¼Œæ”¾æ‰‹æ”»æ“Šå§ï¼\n");
    
-        message_vision( HIY "$N¿ñÐ¦¼¸Éù£¬ÊÖÖÐËÆºõÓÐÊ²Ã´¶«Î÷Ïò$nÈöÈ¥¡£\n" NOR,me,target);
+        message_vision( HIY "$Nç‹‚ç¬‘å¹¾è²ï¼Œæ‰‹ä¸­ä¼¼ä¹Žæœ‰ä»€éº¼æ±è¥¿å‘$næ’’åŽ»ã€‚\n" NOR,me,target);
         if(random(me->query_skill("feixing-shu",1)) > random(target->query_skill("dodge",1)))
                 {
-                 tell_object(target,HIR "ÄãºöÈ»¾õµÃÒ»ÌõÏ¸Ïß²øÉÏÈ«Éí£¬ÊÖ½Å¶¼ÒÑ¾­²»ÊÜ¿ØÖÆ£¡\n" NOR);
-                 tell_object(me,HIG "ÄãÊÖÖÐÒ»½ô£¬ÐÄÖÐ°µÏ²£¬¿´À´ÒÑ¾­µÃÊÖÁË£¡\n" NOR);
+                 tell_object(target,HIR "ä½ å¿½ç„¶è¦ºå¾—ä¸€æ¢ç´°ç·šçºä¸Šå…¨èº«ï¼Œæ‰‹è…³éƒ½å·²ç¶“ä¸å—æŽ§åˆ¶ï¼\n" NOR);
+                 tell_object(me,HIG "ä½ æ‰‹ä¸­ä¸€ç·Šï¼Œå¿ƒä¸­æš—å–œï¼Œçœ‹ä¾†å·²ç¶“å¾—æ‰‹äº†ï¼\n" NOR);
                  target->start_busy(query("busy_source", ob));
 //                 me->start_busy(1);
                 }
         else {
-                message_vision(HIY "$nÉÁÉíÒ»Ô¾£¬±Ü¿ªÁË$NÊÖÖÐµÄ¶«Î÷£¡\n" NOR,me,target);
-                tell_object(me,HIG "Äã¸Ï½ô·´ÊÖÒ»¿Û£¬ÊÕ»ØÁËÑ©²ÏË¿¡£\n" NOR);
+                message_vision(HIY "$né–ƒèº«ä¸€èºï¼Œé¿é–‹äº†$Næ‰‹ä¸­çš„æ±è¥¿ï¼\n" NOR,me,target);
+                tell_object(me,HIG "ä½ è¶•ç·Šåæ‰‹ä¸€æ‰£ï¼Œæ”¶å›žäº†é›ªè ¶çµ²ã€‚\n" NOR);
                 me->start_busy(2);
              }          
         addn("neili", -50, me);

@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÖñÁÖ");
+        set("short", "ç«¹æ—");
         set("long", @LONG
-ÕâÊÇÒ»Æ¬ÃÜÃÜµÄÖñÁÖ¡£ÕâÀïÈË¼£º±ÖÁ£¬Î©ÎÅ×ãµ×ßµ»÷Â·Ãæ£¬ÓĞÉ®
-ÇÃÄ¾ÓãÉù£»Î¢·ç´µ·÷ÖñÒ¶£¬ÓÖÈçóùóùìø³ª¡£ÁîÈË³¾ĞÄÎªÖ®Ò»µÓ£¬ÕæÊÇ
-¾ø¼ÑµÄìøĞŞËùÔÚ¡£
+é€™æ˜¯ä¸€ç‰‡å¯†å¯†çš„ç«¹æ—ã€‚é€™è£¡äººè·¡ç½•è‡³ï¼ŒæƒŸèè¶³åº•å©æ“Šè·¯é¢ï¼Œæœ‰åƒ§
+æ•²æœ¨é­šè²ï¼›å¾®é¢¨å¹æ‹‚ç«¹è‘‰ï¼Œåˆå¦‚ç°Œç°Œç¦ªå”±ã€‚ä»¤äººå¡µå¿ƒç‚ºä¹‹ä¸€æ»Œï¼ŒçœŸæ˜¯
+çµ•ä½³çš„ç¦ªä¿®æ‰€åœ¨ã€‚
 LONG );
         set("exits", ([
                 "northeast" : __DIR__"bamboo"+(random(13)+1),
@@ -19,7 +19,7 @@ LONG );
                 "southeast" : __DIR__"bamboo"+(random(13)+1),
                 "south" : __DIR__"qfdian",
         ]));
-        create_door("south","Ä¾ÃÅ","north",DOOR_CLOSED);
+        create_door("south","æœ¨é–€","north",DOOR_CLOSED);
         set("outdoors", "shaolin");
         set("no_clean_up", 0);
         setup();

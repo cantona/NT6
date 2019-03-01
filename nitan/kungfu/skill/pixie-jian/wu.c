@@ -1,4 +1,4 @@
-// wu.c ÈºÄ§ÂÒÎè
+// wu.c ç¾¤é­”äº‚èˆ
 
 #include <ansi.h>
 
@@ -19,34 +19,34 @@ int perform(object me, object target)
         }
 
         if( userp(me) && !query("can_perform/pixie-jian/wu", me) )
-                return notify_fail("Äã»¹²»»áÊ¹ÓÃ¡¸ÈºÄ§ÂÒÎè¡¹¡£\n");
+                return notify_fail("ä½ é‚„ä¸æœƒä½¿ç”¨ã€Œç¾¤é­”äº‚èˆã€ã€‚\n");
 
-        if( query("gender", me) != "ÎŞĞÔ" && !query("tianmo_jieti", me) )
-                return notify_fail("ÄãµÄĞÔ±ğÓëÈÕÔÂÄÚ¹¦Ïà³â£¬ÎŞ·¨Ê¹ÓÃ´Ë¾øÕĞ£¡\n");  
+        if( query("gender", me) != "ç„¡æ€§" && !query("tianmo_jieti", me) )
+                return notify_fail("ä½ çš„æ€§åˆ¥èˆ‡æ—¥æœˆå…§åŠŸç›¸æ–¥ï¼Œç„¡æ³•ä½¿ç”¨æ­¤çµ•æ‹›ï¼\n");  
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail("ÈºÄ§ÂÒÎèÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ç¾¤é­”äº‚èˆåªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me)) || 
             query("skill_type", weapon) != "sword" )
-                return notify_fail("ÄãÃ»ÓĞ×°±¸½££¬²»ÄÜÓÃÕâÒ»ÕĞ¡£\n");
+                return notify_fail("ä½ æ²’æœ‰è£å‚™åŠï¼Œä¸èƒ½ç”¨é€™ä¸€æ‹›ã€‚\n");
 
         if( me->query_skill_mapped("sword") != "pixie-jian") 
-                return notify_fail("Äã²¢Ã»ÓĞÊ¹ÓÃ±ÙĞ°½£·¨£¬ÎŞ·¨Ê¹ÓÃ´Ë¾øÕĞ£¡\n"); 
+                return notify_fail("ä½ ä¸¦æ²’æœ‰ä½¿ç”¨è¾Ÿé‚ªåŠæ³•ï¼Œç„¡æ³•ä½¿ç”¨æ­¤çµ•æ‹›ï¼\n"); 
 
         if( query("neili", me)<300 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬ÎŞ·¨Ê©Õ¹ÈºÄ§ÂÒÎè£¡\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼Œç„¡æ³•æ–½å±•ç¾¤é­”äº‚èˆï¼\n");
 
         if ((lvl = (int)me->query_skill("pixie-jian", 1)) < 350)
-                return notify_fail("ÄãµÄ±ÙĞ°½£·¨»ğºò²»¹»£¬ÎŞ·¨Ê©Õ¹ÈºÄ§ÂÒÎè£¡\n");
+                return notify_fail("ä½ çš„è¾Ÿé‚ªåŠæ³•ç«å€™ä¸å¤ ï¼Œç„¡æ³•æ–½å±•ç¾¤é­”äº‚èˆï¼\n");
 
-        msg = HIR "$N" HIR "Ò»Éù³¤Ò÷£¬ÉíĞÎ±äµÃÆæ¿ìÎŞ±È£¬½ÓÁ¬Ïò$n"
-              HIR "¹¥³öÊıÕĞ£¡\n" NOR;
+        msg = HIR "$N" HIR "ä¸€è²é•·åŸï¼Œèº«å½¢è®Šå¾—å¥‡å¿«ç„¡æ¯”ï¼Œæ¥é€£å‘$n"
+              HIR "æ”»å‡ºæ•¸æ‹›ï¼\n" NOR;
         i = 7;
         if (lvl / 2 + random(lvl) > (int)target->query_skill("parry") || !living(target))
         {
-                msg += HIR "$n" HIR "Ö»¾õµÃÑÛÇ°Ò»»¨£¬·¢ÏÖËÄÖÜ¶¼ÊÇ$N"
-                       HIR "µÄÉíÓ°£¬²»ÓÉ°µÉú¾åÒâ£¬½ÓÁ¬ºóÍË¡£\n" NOR;
+                msg += HIR "$n" HIR "åªè¦ºå¾—çœ¼å‰ä¸€èŠ±ï¼Œç™¼ç¾å››å‘¨éƒ½æ˜¯$N"
+                       HIR "çš„èº«å½±ï¼Œä¸ç”±æš—ç”Ÿæ‡¼æ„ï¼Œæ¥é€£å¾Œé€€ã€‚\n" NOR;
                 count = (lvl + (int)me->query_skill("riyue-guanghua", 1)) / 2;
                 if( me->query_skill_mapped("force") != "riyue-guanghua")
                 count /= 2;
@@ -54,8 +54,8 @@ int perform(object me, object target)
                 i += random(6);
         } else
         {
-                msg += CYN "$n" CYN "¼û$N" CYN "Éí·¨ºÃ¿ì£¬ÄÄÀï"
-                       "¸Òµ¡Âı£¬Á¬Ã¦´òÆğ¾«ÉñĞ¡ĞÄÓ¦¶Ô¡£\n" NOR;
+                msg += CYN "$n" CYN "è¦‹$N" CYN "èº«æ³•å¥½å¿«ï¼Œå“ªè£¡"
+                       "æ•¢æ€ æ…¢ï¼Œé€£å¿™æ‰“èµ·ç²¾ç¥å°å¿ƒæ‡‰å°ã€‚\n" NOR;
                 count = 0;
         }
 

@@ -4,11 +4,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("Àî×¾µÀÈË", ({ "li zhuo", "zhuo", "li" }) );
-        set("gender", "ÄÐÐÔ");
+        set_name("æŽæ‹™é“äºº", ({ "li zhuo", "zhuo", "li" }) );
+        set("gender", "ç”·æ€§");
         set("age", 20);
         set("long",
-                "ÕâÊÇÒ»¸öÊ®·ÖÐ×¶ñµÄáÇá¼ÅÉµÀÈË¡£\n");
+                "é€™æ˜¯ä¸€å€‹ååˆ†å…‡æƒ¡çš„å´†å³’æ´¾é“äººã€‚\n");
         set("combat_exp", 120000);
         set("shen_type", -1);
         set("attitude", "aggressive");
@@ -18,7 +18,7 @@ void create()
         set_skill("sword", 100);
         set_skill("dodge", 100);
 
-        create_family("áÇá¼ÅÉ", 5, "µÜ×Ó");
+        create_family("å´†å³’æ´¾", 5, "å¼Ÿå­");
         setup();
         carry_object("/d/wudang/obj/greenrobe")->wear();
         carry_object("/clone/weapon/changjian")->wield();

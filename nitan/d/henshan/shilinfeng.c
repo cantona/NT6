@@ -3,11 +3,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Ê¯âŞ·å");
+        set("short", "çŸ³å»©å³°");
         set("long", @LONG
-Ü½ÈØ·åÊÇºâÉ½Îå·åÖ®Ò»£¬Ã¿·êÏÂÓêµÄÊ±ºò£¬ÓêË®´òÔÚ·åÖĞµÄÑÒÊ¯
-ÉÏ£¬·¢³ö¾Ş´óµÄ»ØÉù£¬ÉùÒôºéÁÁ£¬ÓÌÈçÊéÔºÖĞµÄ¶ÁÊéÉù£¬ÊÇÒÔ¸Ã·åÓÉ
-´Ë¶øÀ´£¬ºâÉ½ÅÉµÄÊ¯âŞ½£·¨Ò²ÓÉ´Ë¶øÎò¡£
+èŠ™è“‰å³°æ˜¯è¡¡å±±äº”å³°ä¹‹ä¸€ï¼Œæ¯é€¢ä¸‹é›¨çš„æ™‚å€™ï¼Œé›¨æ°´æ‰“åœ¨å³°ä¸­çš„å·–çŸ³
+ä¸Šï¼Œç™¼å‡ºå·¨å¤§çš„å›è²ï¼Œè²éŸ³æ´ªäº®ï¼ŒçŒ¶å¦‚æ›¸é™¢ä¸­çš„è®€æ›¸è²ï¼Œæ˜¯ä»¥è©²å³°ç”±
+æ­¤è€Œä¾†ï¼Œè¡¡å±±æ´¾çš„çŸ³å»©åŠæ³•ä¹Ÿç”±æ­¤è€Œæ‚Ÿã€‚
 LONG );
 
         set("exits", ([
@@ -42,20 +42,20 @@ int do_think(string arg)
                 add = me->query_int() * 3;
 
         if (! living(me) || arg != "feng")
-                return notify_fail("ÄãÒª²ÎÎòÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦åƒæ‚Ÿä»€éº¼ï¼Ÿ\n");
 
         if (me->is_busy() || me->is_fighting())
-                return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£å¿™è‘—å‘¢ã€‚\n");
 
         if ((int)me->query_skill("sword", 1) < 30)
-                return notify_fail("ÄãµÄ»ù±¾½£·¨»ğºò²»¹»£¬ÎŞ·¨ÁìÎòÊ¯âŞ½£·¨¡£\n");
+                return notify_fail("ä½ çš„åŸºæœ¬åŠæ³•ç«å€™ä¸å¤ ï¼Œç„¡æ³•é ˜æ‚ŸçŸ³å»©åŠæ³•ã€‚\n");
 
         if ((int)me->query_skill("shilin-jian", 1) > 120)
-                return notify_fail("Äã·¢ÏÖÒÑ¾­²»ÄÜ´ÓÕâÀïÔÙÁìÎò¸ü¸ßµÄÊ¯âŞ½£·¨¡£\n");
+                return notify_fail("ä½ ç™¼ç¾å·²ç¶“ä¸èƒ½å¾é€™è£¡å†é ˜æ‚Ÿæ›´é«˜çš„çŸ³å»©åŠæ³•ã€‚\n");
 
         if( query("jing", me)<25 )
-                return notify_fail("ÄãÏÖÔÚ¾«Éñ²»¼Ã£¬¹ıÓÚÆ£¾ë£¬»¹ÊÇĞİÏ¢"
-                                   "Ò»»á°É¡£\n");
+                return notify_fail("ä½ ç¾åœ¨ç²¾ç¥ä¸æ¿Ÿï¼Œéäºç–²å€¦ï¼Œé‚„æ˜¯ä¼‘æ¯"
+                                   "ä¸€æœƒå§ã€‚\n");
 
         me->receive_damage("jing", 20);
 
@@ -63,8 +63,8 @@ int do_think(string arg)
                 me->improve_skill("shilin-jian", add);
 
         me->start_busy(random(2));
-        message_vision(HIY "\n$N" HIY "¾Û¾«»áÉñµÄ²ÎÏêÊ¯âŞ·å£¬"
-                       "ËÆÓĞËùÎò¡£\n" NOR, me);
-        write(HIC "Äã¶Ô¡¸Ê¯âŞ½£·¨¡¹ÓĞÁËĞÂµÄÁìÎò¡£\n" NOR);
+        message_vision(HIY "\n$N" HIY "èšç²¾æœƒç¥çš„åƒè©³çŸ³å»©å³°ï¼Œ"
+                       "ä¼¼æœ‰æ‰€æ‚Ÿã€‚\n" NOR, me);
+        write(HIC "ä½ å°ã€ŒçŸ³å»©åŠæ³•ã€æœ‰äº†æ–°çš„é ˜æ‚Ÿã€‚\n" NOR);
         return 1;
 }

@@ -1,16 +1,16 @@
 
-//ÎÞ¶ÔÏóÊ±        
-#define NONE_ALL                0  //ÏÔÊ¾¸ø×Ô¼ºÓë´ó¼Ò
-#define NONE_ALL_ARG            1  //ÏÔÊ¾¸ø×Ô¼ºÓë´ó¼Ò, ²¢¸½¼ÓÎÄ×Ö
+//ç„¡å°è±¡æ™‚        
+#define NONE_ALL                0  //é¡¯ç¤ºçµ¦è‡ªå·±èˆ‡å¤§å®¶
+#define NONE_ALL_ARG            1  //é¡¯ç¤ºçµ¦è‡ªå·±èˆ‡å¤§å®¶, ä¸¦é™„åŠ æ–‡å­—
 
-//¶ÔÏóÎª×Ô¼ºÊ±
-#define ME_ALL                  2  //ÏÔÊ¾¸ø×Ô¼º¸ú´ó¼Ò
-#define ME_ALL_ARG              3  //ÏÔÊ¾¸ø×Ô¼º¸ú´ó¼Ò, ²¢¸½¼ÓÎÄ×Ö
+//å°è±¡ç‚ºè‡ªå·±æ™‚
+#define ME_ALL                  2  //é¡¯ç¤ºçµ¦è‡ªå·±è·Ÿå¤§å®¶
+#define ME_ALL_ARG              3  //é¡¯ç¤ºçµ¦è‡ªå·±è·Ÿå¤§å®¶, ä¸¦é™„åŠ æ–‡å­—
 
-//¶ÔÏóÎª±ðÈËÊ±
-#define YOU_ALL                 4  //ÏÔÊ¾¸øÆäËûÈË
-#define YOU_ALL_ARG             5  //ÏÔÊ¾¸øÆäËûÈË, ²¢¸½¼ÓÎÄ×Ö
+//å°è±¡ç‚ºåˆ¥äººæ™‚
+#define YOU_ALL                 4  //é¡¯ç¤ºçµ¦å…¶ä»–äºº
+#define YOU_ALL_ARG             5  //é¡¯ç¤ºçµ¦å…¶ä»–äºº, ä¸¦é™„åŠ æ–‡å­—
 
-#define NOTE                    6  //×¢½âÀ¸
-#define USE                     7  //Ê¹ÓÃ´ÎÊý
+#define NOTE                    6  //æ³¨è§£æ¬„
+#define USE                     7  //ä½¿ç”¨æ¬¡æ•¸
 

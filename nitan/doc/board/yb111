@@ -1,51 +1,51 @@
-ÀÏ»°ÖØËµ                                 µêÐ¡¶þ-waiter(Tue Jan 26)
+è€è©±é‡èªª                                 åº—å°äºŒ-waiter(Tue Jan 26)
 ----------------------------------------------------------------------
-ÎÒÒ»Ïò¶Ô¶àÖØpowerupÓÐ³É¼û, µ«Ëæ×Åxem¹¦·òÈÕ³¤, Ô½À´Ô½½Ó½ümud¹¥·ÀÁ¦¼«ÏÞ,
-ËùÎ½Á·µÄÔ½¶à, ÀÏÉ§Ô½ÉÙ, Ò²¾ÍÀÁµÃÔÙÌá. ½ñÌì¿´ÁËÁ½Æª¹ØÓÚÉÙÁÖºÍÃ÷½ÌµÄposts,
-¾õµÃ»¹ÊÇÔÙËµËµºÃ.
+æˆ‘ä¸€å‘å°å¤šé‡powerupæœ‰æˆè¦‹, ä½†éš¨è‘—xemåŠŸå¤«æ—¥é•·, è¶Šä¾†è¶ŠæŽ¥è¿‘mudæ”»é˜²åŠ›æ¥µé™,
+æ‰€è¬‚ç·´çš„è¶Šå¤š, è€é¨·è¶Šå°‘, ä¹Ÿå°±æ‡¶å¾—å†æ. ä»Šå¤©çœ‹äº†å…©ç¯‡é—œäºŽå°‘æž—å’Œæ˜Žæ•™çš„posts,
+è¦ºå¾—é‚„æ˜¯å†èªªèªªå¥½.
 
-´ó¶àÊýexert powerup, ¶¼»áÓÐÕâÑùµÄ»°: `ÔËÆðXXXX, °ÑÈ«ÉíÇ±Á¦¾¡ÊýÌáÆð'
-ÕâÒ²¾ÍÒâÎ¶×Å¹¥·ÀÁ¦´ïµ½×î´óÖµ, ÄÚ¹¦Îª±¾, Íâ¹¦ÎªÓÃ, Íâ¹¦ÊÇ´ò¼ÜµÄÕÐÊ½, ²»
-¿ÉÄÜÓÃÀ´Ìá¸ß¶àÉÙ¹¥·ÀÁ¦, ¸üºÎ¿öÈ«ÉíÇ±Á¦ÒÑ±»ÄÚ¹¦ÍÚ¾ò¹âÁË, ×Ü²»ÄÜ³¬Ö§°É?
-ËùÒÔËµÓÃÍâ¹¦µÄ¾øÕÐÀ´Ìá¸ß¹¥·ÀÁ¦, ³Ì¶ÈºÜÓÐÏÞ, Ïózuida, jingangÕâÀà¹¦·ò, 
-Ð§¹ûÊÇexert powerupµÄÊ®¶à±¶, ËäËµÊÇÀÏxkxµÄÒÅ²ú, Æä³ÉÁ¢ÐÔ´ó¿É»³ÒÉ.
+å¤§å¤šæ•¸exert powerup, éƒ½æœƒæœ‰é€™æ¨£çš„è©±: `é‹èµ·XXXX, æŠŠå…¨èº«æ½›åŠ›ç›¡æ•¸æèµ·'
+é€™ä¹Ÿå°±æ„å‘³è‘—æ”»é˜²åŠ›é”åˆ°æœ€å¤§å€¼, å…§åŠŸç‚ºæœ¬, å¤–åŠŸç‚ºç”¨, å¤–åŠŸæ˜¯æ‰“æž¶çš„æ‹›å¼, ä¸
+å¯èƒ½ç”¨ä¾†æé«˜å¤šå°‘æ”»é˜²åŠ›, æ›´ä½•æ³å…¨èº«æ½›åŠ›å·²è¢«å…§åŠŸæŒ–æŽ˜å…‰äº†, ç¸½ä¸èƒ½è¶…æ”¯å§?
+æ‰€ä»¥èªªç”¨å¤–åŠŸçš„çµ•æ‹›ä¾†æé«˜æ”»é˜²åŠ›, ç¨‹åº¦å¾ˆæœ‰é™, è±¡zuida, jingangé€™é¡žåŠŸå¤«, 
+æ•ˆæžœæ˜¯exert powerupçš„åå¤šå€, é›–èªªæ˜¯è€xkxçš„éºç”¢, å…¶æˆç«‹æ€§å¤§å¯æ‡·ç–‘.
 
-nuoyiÑÏ¸ñËµÀ´ÊÇÒ»ÖÖÐÄ·¨, ²»È»Î×Ê¦²»»á°ÑËüÉèÎªÖ»ÄÜ¶Á, ²»ÄÜÁ·, ËüµÄÐ§¹û
-ÊÇ°ÑÈ«Éí¾¢Á¦¼¯ÖÐÓÚÒ»µã, ´Ó¶ø¿ÉÒÔÔÚexert powerupºó½øÒ»²½Ìá¸ß¹¥·ÀÁ¦. ÎÒ
-ÏÖÔÚÒªËµµÄÊÇÒò×ÓÎÊÌâ, ´ÓÇ°ÕÅÎÞ¼ÉµÄÇ¬À¤´óÅ²ÒÆÊÇ500¼¶, ÖÚËùÖÜÖª, ÕÅÁ·µ½
-ÁËÇ¬À¤´óÅ²ÒÆµÄ×î¸ß²ã---µÚÆß²ã, Ã¿²ãµÄ±êÖ¾¾ÍÊÇ±äÁ³´ÎÊý, ÕÅ500¼¶µÄÇ¬À¤´ó
-Å²ÒÆ±äÁ³Æß´Î, Ò²¾ÍÊÇ¹¥·ÀÁ¦³ËÁËÆß±¶, ÏÖÔÚÇ¬À¤´óÅ²ÒÆÊé¶Áµ½¶¥ÊÇ250¼¶, Ò²
-¾ÍÊÇÐÞ¸ÄºóÕÅÎÞ¼ÉµÄ¼¶Êý, µ«ÏÖÔÚµÄÍæ¼ÒÃ¿20¼¶±äÒ»´ÎÁ³, ×î¸ß±ä12´Î, ¹¥»÷
-Á¦³Ë12.5, ÊÇ²»ÊÇÀëµãÆ×?
+nuoyiåš´æ ¼èªªä¾†æ˜¯ä¸€ç¨®å¿ƒæ³•, ä¸ç„¶å·«å¸«ä¸æœƒæŠŠå®ƒè¨­ç‚ºåªèƒ½è®€, ä¸èƒ½ç·´, å®ƒçš„æ•ˆæžœ
+æ˜¯æŠŠå…¨èº«å‹åŠ›é›†ä¸­äºŽä¸€é»ž, å¾žè€Œå¯ä»¥åœ¨exert powerupå¾Œé€²ä¸€æ­¥æé«˜æ”»é˜²åŠ›. æˆ‘
+ç¾åœ¨è¦èªªçš„æ˜¯å› å­å•é¡Œ, å¾žå‰å¼µç„¡å¿Œçš„ä¹¾å¤å¤§æŒªç§»æ˜¯500ç´š, çœ¾æ‰€å‘¨çŸ¥, å¼µç·´åˆ°
+äº†ä¹¾å¤å¤§æŒªç§»çš„æœ€é«˜å±¤---ç¬¬ä¸ƒå±¤, æ¯å±¤çš„æ¨™å¿—å°±æ˜¯è®Šè‡‰æ¬¡æ•¸, å¼µ500ç´šçš„ä¹¾å¤å¤§
+æŒªç§»è®Šè‡‰ä¸ƒæ¬¡, ä¹Ÿå°±æ˜¯æ”»é˜²åŠ›ä¹˜äº†ä¸ƒå€, ç¾åœ¨ä¹¾å¤å¤§æŒªç§»æ›¸è®€åˆ°é ‚æ˜¯250ç´š, ä¹Ÿ
+å°±æ˜¯ä¿®æ”¹å¾Œå¼µç„¡å¿Œçš„ç´šæ•¸, ä½†ç¾åœ¨çš„çŽ©å®¶æ¯20ç´šè®Šä¸€æ¬¡è‡‰, æœ€é«˜è®Š12æ¬¡, æ”»æ“Š
+åŠ›ä¹˜12.5, æ˜¯ä¸æ˜¯é›¢é»žè­œ?
 
-²¢·Ç¶àÖØpowerupÒ»¶¨²»Í×, ÎÒÊÔ¹ý¶ëÃ¼µÄ·çÔÆ×¯, Ø¤°ïµÄ½µÁú´ó·¨, ÉßµºµÄ³ª
-ÏÉ·¨, ¹ÅÄ¹µÄË«½£ºÏèµ, Ò²¼û¹ý»ªÉ½µÄÀ×¶¯¾ÍÌì, ÕâÐ©performÔÚÐ§¹ûÉÏÌá¸ß¹¥
-·ÀÁ¦²»¼°powerup, ÔÚ¾­Ñé¹¦·ò²î²»¶àµÄÍæ¼Ò¼ä±ÈÎäºÜÓÐÐ§, µ«²¢²»¹ý·Ö.
+ä¸¦éžå¤šé‡powerupä¸€å®šä¸å¦¥, æˆ‘è©¦éŽå³¨çœ‰çš„é¢¨é›²èŽŠ, ä¸å¹«çš„é™é¾å¤§æ³•, è›‡å³¶çš„å”±
+ä»™æ³•, å¤å¢“çš„é›™åŠåˆç’§, ä¹Ÿè¦‹éŽè¯å±±çš„é›·å‹•å°±å¤©, é€™äº›performåœ¨æ•ˆæžœä¸Šæé«˜æ”»
+é˜²åŠ›ä¸åŠpowerup, åœ¨ç¶“é©—åŠŸå¤«å·®ä¸å¤šçš„çŽ©å®¶é–“æ¯”æ­¦å¾ˆæœ‰æ•ˆ, ä½†ä¸¦ä¸éŽåˆ†.
 
-ÎªÁËÌåÑé¶àÖØpowerup, ÎÒÓÃÁËÒ»¸öchar¶ÁÁË220¶à¼¶µÄÇ¬À¤´óÅ²ÒÆ, »ù±¾ÉÏÃ¿
-´ÎÅ²ÒÆ×Ô¼º, ¹¥·ÀÁ¦¶¼³Ë11×óÓÒ, ÔÙ¼ÓÄÚ¹¦µÄpowerup, ³Ë15ºÁÎÞÎÊÌâ, xemÒÔ
-550¶à¼¶µÄÁÙ¼Ã×¯, powerupÒ»´Î¹¥»÷Á¦Ö»²»¹ý³Ë2×óÓÒ, ¾­Ñé¼ÓÒ»±¶¹¥·ÀÁ¦Ò²
-Î´±Ø¼Ó±¶, ÄÇÃ´250¼¶Ç¬À¤´óÅ²ÒÆÏàµ±ÓÚ¶àÉÙ¾­ÑéºÍ¹¦·ò? ¼òÖ±²»¿ÉÏëÏó. ÉÙÁÖ
-µÄzuida+jingangÐ§¹û±ÈÃ÷½ÌµÄnuoyi+powerup»¹ºÃ,×î´ó¹¥»÷Á¦´ó¸Å¿É´ï20±¶, 
-Èç´ËÇ¿ºáµÄ¹¥·ÀÁ¦, ÈÃ±ðÅÉµÄÍæ¼ÒÈçºÎÍæ?
+ç‚ºäº†é«”é©—å¤šé‡powerup, æˆ‘ç”¨äº†ä¸€å€‹charè®€äº†220å¤šç´šçš„ä¹¾å¤å¤§æŒªç§», åŸºæœ¬ä¸Šæ¯
+æ¬¡æŒªç§»è‡ªå·±, æ”»é˜²åŠ›éƒ½ä¹˜11å·¦å³, å†åŠ å…§åŠŸçš„powerup, ä¹˜15æ¯«ç„¡å•é¡Œ, xemä»¥
+550å¤šç´šçš„è‡¨æ¿ŸèŽŠ, powerupä¸€æ¬¡æ”»æ“ŠåŠ›åªä¸éŽä¹˜2å·¦å³, ç¶“é©—åŠ ä¸€å€æ”»é˜²åŠ›ä¹Ÿ
+æœªå¿…åŠ å€, é‚£éº¼250ç´šä¹¾å¤å¤§æŒªç§»ç›¸ç•¶äºŽå¤šå°‘ç¶“é©—å’ŒåŠŸå¤«? ç°¡ç›´ä¸å¯æƒ³è±¡. å°‘æž—
+çš„zuida+jingangæ•ˆæžœæ¯”æ˜Žæ•™çš„nuoyi+powerupé‚„å¥½,æœ€å¤§æ”»æ“ŠåŠ›å¤§æ¦‚å¯é”20å€, 
+å¦‚æ­¤å¼·æ©«çš„æ”»é˜²åŠ›, è®“åˆ¥æ´¾çš„çŽ©å®¶å¦‚ä½•çŽ©?
 
-zhouyiËµÉÙÁÖÃ÷½ÌÁ½ÅÉÔÚ800k expÒÔÏÂ²»Èç3Á÷ÃÅÅÉ£¬ÎÒ´ÓÃ»ÌýËµ¹ý, ´ÓÇ°ÓÐ¸ö
-ÓüÖ®¶ñÄ§,Ó¦¸ÃÊÇµÚÒ»¸öÁ·Ã÷½ÌµÄ, ÔÚËû800kÊ±, ³ýÁËÉÙÁÖµÄluoyz, 1M×óÓÒµÄ
-ÌìÏÂ¸ßÊÖÎÞÒ»ÊÇËûµÄ¶ÔÊÖ, ÉõÖÁ2MµÄqinqinÒ²ÔøÊ§ÊÖËÀÔÚËûÊÖÀï. ÖÁÓÚÉÙÁÖ, 
-¸ü²»ÓÃËµ, 2MµÄ»ªÉ½qinqinºÍdsds±ÈÎä¼¸ºõÎÞ·¨Ó®1.2MµÄluoyz, ÉÙÁÖµÄyang
-potian(´ó¸Å700-800K) ´òµÃµ±Ê±1M¶àµÄØ¤°ï°×²Ë×ÐÎÞ·¨»¹ÊÖ, 1.5MµÄÉÙÁÖ
-jintian¿¿zuida+jingangÇáËÉµØ´ò°Üµ±Ê±3.6MµÄxem.
+zhouyièªªå°‘æž—æ˜Žæ•™å…©æ´¾åœ¨800k expä»¥ä¸‹ä¸å¦‚3æµé–€æ´¾ï¼Œæˆ‘å¾žæ²’è½èªªéŽ, å¾žå‰æœ‰å€‹
+ç„ä¹‹æƒ¡é­”,æ‡‰è©²æ˜¯ç¬¬ä¸€å€‹ç·´æ˜Žæ•™çš„, åœ¨ä»–800kæ™‚, é™¤äº†å°‘æž—çš„luoyz, 1Må·¦å³çš„
+å¤©ä¸‹é«˜æ‰‹ç„¡ä¸€æ˜¯ä»–çš„å°æ‰‹, ç”šè‡³2Mçš„qinqinä¹Ÿæ›¾å¤±æ‰‹æ­»åœ¨ä»–æ‰‹è£¡. è‡³äºŽå°‘æž—, 
+æ›´ä¸ç”¨èªª, 2Mçš„è¯å±±qinqinå’Œdsdsæ¯”æ­¦å¹¾ä¹Žç„¡æ³•è´1.2Mçš„luoyz, å°‘æž—çš„yang
+potian(å¤§æ¦‚700-800K) æ‰“å¾—ç•¶æ™‚1Må¤šçš„ä¸å¹«ç™½èœä»”ç„¡æ³•é‚„æ‰‹, 1.5Mçš„å°‘æž—
+jintiané zuida+jingangè¼•é¬†åœ°æ‰“æ•—ç•¶æ™‚3.6Mçš„xem.
 
-ÏÖÔÚµÄxemÈ«¸±Îä×°ºó, ²»ÓÃpowerup, ÔÚÕ½¶·ÖÐ·ÀÓùÁ¦ÒÑ¾­Òç³ö±ä¸º, ±ðÅÉµÄ
-¶àÖØpowerup Ò²ÍþÐ²²»µ½xem, ÎÒÒÀÈ»ÌáÉÙÁÖzuida+jingang, Ã÷½Ìnuoyi+powerup, 
-¾ÍÊÇÏ£ÍûÎ×Ê¦ºÍÖÚÍæ¼ÒÌå»áÒ»ÏÂÕâ¼¸¸ö¶«Î÷Ç¿µÃÊÇ·ñÌ«¹ý·ÖÁË.
+ç¾åœ¨çš„xemå…¨å‰¯æ­¦è£å¾Œ, ä¸ç”¨powerup, åœ¨æˆ°é¬¥ä¸­é˜²å¾¡åŠ›å·²ç¶“æº¢å‡ºè®Šè² , åˆ¥æ´¾çš„
+å¤šé‡powerup ä¹Ÿå¨è„…ä¸åˆ°xem, æˆ‘ä¾ç„¶æå°‘æž—zuida+jingang, æ˜Žæ•™nuoyi+powerup, 
+å°±æ˜¯å¸Œæœ›å·«å¸«å’Œçœ¾çŽ©å®¶é«”æœƒä¸€ä¸‹é€™å¹¾å€‹æ±è¥¿å¼·å¾—æ˜¯å¦å¤ªéŽåˆ†äº†.
 
-Ë³±ãÌáÒ»ÏÂ, asia ÓÃÈý¼Ç7 cuff ¾øÕÐ´òËÀ kiler ²»È«ÔÚÓÚ 7 cuff perform 
-Ç¿, ¶øÊÇasia nuoyi×Ô¼ººó¹¥»÷Á¦±Èkiler¸ßµÃÌ«¶à, ËäÈ»asia exp µÍ, µ«
-performµÄ³É¹¦ÂÊÒònuoyi¶øÌá¸ß, ×ÔÈ»ÕÐÕÐÖÐ.
+é †ä¾¿æä¸€ä¸‹, asia ç”¨ä¸‰è¨˜7 cuff çµ•æ‹›æ‰“æ­» kiler ä¸å…¨åœ¨äºŽ 7 cuff perform 
+å¼·, è€Œæ˜¯asia nuoyiè‡ªå·±å¾Œæ”»æ“ŠåŠ›æ¯”kileré«˜å¾—å¤ªå¤š, é›–ç„¶asia exp ä½Ž, ä½†
+performçš„æˆåŠŸçŽ‡å› nuoyiè€Œæé«˜, è‡ªç„¶æ‹›æ‹›ä¸­.
 
-Ð¹Â¶¸öbug, Ã÷½ÌµÜ×Ó±ðÔÚ¿ªÊÇ´ò¼ÜºóÔÙnuoyi×Ô¼º, ·ñÔòÓÐÖÐÕÐ¼´ËÀµÄ¿ÉÄÜÐÔ,
- solarking Òò´ËËÀÓÚÕÅÎÞ¼ÉµÄÒ»¼Ç7 cuff, ÎÒµÄcharËÀÓÚÁÖ³¯Ó¢Ò»ÕÐÓñÅ®½£, 
-ÐÅÎÒµÄ, ´©½ð¸ÕÕÖ¶¼Ã»ÓÃ .
+æ³„éœ²å€‹bug, æ˜Žæ•™å¼Ÿå­åˆ¥åœ¨é–‹æ˜¯æ‰“æž¶å¾Œå†nuoyiè‡ªå·±, å¦å‰‡æœ‰ä¸­æ‹›å³æ­»çš„å¯èƒ½æ€§,
+ solarking å› æ­¤æ­»äºŽå¼µç„¡å¿Œçš„ä¸€è¨˜7 cuff, æˆ‘çš„charæ­»äºŽæž—æœè‹±ä¸€æ‹›çŽ‰å¥³åŠ, 
+ä¿¡æˆ‘çš„, ç©¿é‡‘å‰›ç½©éƒ½æ²’ç”¨ .
 
 

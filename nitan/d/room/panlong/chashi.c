@@ -1,4 +1,4 @@
-// chashi.c ÅÌÁú¾Ó²èÊÒ
+// chashi.c ç›¤é¾å±…èŒ¶å®¤
 
 #include <room.h>
 
@@ -7,14 +7,14 @@ inherit ROOM;                                   /* EXAMPLE */
 
 void create()
 {
-        set("short", "²èÊÒ");
+        set("short", "èŒ¶å®¤");
         set("long", @LONG
-ÕâÊÇÒ»¸öÁáççĞ¡ÇÉµÄ²èÊÒ£¬ºÜÊÇÏÔµÃ¾«ÖÂ¡£ÕıÖĞÓĞÒ»²è¼¸¡£
+é€™æ˜¯ä¸€å€‹ç²ç“å°å·§çš„èŒ¶å®¤ï¼Œå¾ˆæ˜¯é¡¯å¾—ç²¾è‡´ã€‚æ­£ä¸­æœ‰ä¸€èŒ¶å¹¾ã€‚
 LONG );
 
-        set("default_long", "ÊÇÒ»¸öÁáççĞ¡ÇÉµÄ²èÊÒ£¬ºÜÊÇÏÔµÃ¾«ÖÂ¡£Õı" /* EXAMPLE */
-                            "ÖĞÓĞÒ»²è¼¸£¬Á½ÅÔÁ¢×ÅÁ½¸öÃîÁäÉÙÅ®£¬ÕıÔÚ" /* EXAMPLE */
-                            "ÌıºòÖ÷ÈËµÄ·Ô¸À(tea)¡£" );               /* EXAMPLE */
+        set("default_long", "æ˜¯ä¸€å€‹ç²ç“å°å·§çš„èŒ¶å®¤ï¼Œå¾ˆæ˜¯é¡¯å¾—ç²¾è‡´ã€‚æ­£" /* EXAMPLE */
+                            "ä¸­æœ‰ä¸€èŒ¶å¹¾ï¼Œå…©æ—ç«‹è‘—å…©å€‹å¦™é½¡å°‘å¥³ï¼Œæ­£åœ¨" /* EXAMPLE */
+                            "è½å€™ä¸»äººçš„å©å’(tea)ã€‚" );               /* EXAMPLE */
                                                                      /* EXAMPLE */
 
         set("exits", ([
@@ -25,7 +25,7 @@ LONG );
 //**            "/d/room/roomnpc/teagirl" : 2,
 //**    ]));
 
-        create_door("west", "Ä¾ÃÅ", "east", DOOR_CLOSED);
+        create_door("west", "æœ¨é–€", "east", DOOR_CLOSED);
 
         set("no_sleep_room", 1);
         setup();

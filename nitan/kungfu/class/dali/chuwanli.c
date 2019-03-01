@@ -11,10 +11,10 @@ inherit F_GUARDER;
 
 void create()
 {
-        set_name("ñÒÍòÀï", ({ "chu wanli", "chu" }));
-        set("title", "´óÀí¹ú»¤ÎÀ" );
-        set("long", "ËûÊÇ´óÀí¹úËÄ´ó»¤ÎÀÖ®Ò»£¬Ó¢Æø±ÆÈË¡£\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("è¤šè¬è£¡", ({ "chu wanli", "chu" }));
+        set("title", "å¤§ç†åœ‹è­·è¡›" );
+        set("long", "ä»–æ˜¯å¤§ç†åœ‹å››å¤§è­·è¡›ä¹‹ä¸€ï¼Œè‹±æ°£é€¼äººã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 40);
         set("class", "officer");
         set("attitude", "friendly");
@@ -63,15 +63,15 @@ void create()
         }));
 
         set("guarder", ([
-                "refuse_home" : CYN "$N" CYN "À¹×¡$n" CYN "µÀ£º¶Ô²»"
-                                "Æğ£¡ÍõÒ¯ÓĞÁî£¬³öÁË¶Î¼Ò¾ÍÄª»ØÀ´¡£\n" NOR,
-                "refuse_other": CYN "$N" CYN "Ò»°ÑÀ¹×¡$n" CYN "£¬ºÈ"
-                                "µÀ£ºÏĞÔÓÈËµÈ£¬²»ÄÜÈëÄÚ¡£\n" NOR,
-                "refuse_carry": CYN "$N" CYN "Åã×ÅĞ¦Á³¶Ô$n" CYN "µÀ"
-                                "£º¿É·ñ½«¡­Äã±³µÄÈË·ÅÏÂÔÙ½øÍõ¸®£¿\n" NOR,
+                "refuse_home" : CYN "$N" CYN "æ””ä½$n" CYN "é“ï¼šå°ä¸"
+                                "èµ·ï¼ç‹çˆºæœ‰ä»¤ï¼Œå‡ºäº†æ®µå®¶å°±è«å›ä¾†ã€‚\n" NOR,
+                "refuse_other": CYN "$N" CYN "ä¸€æŠŠæ””ä½$n" CYN "ï¼Œå–"
+                                "é“ï¼šé–’é›œäººç­‰ï¼Œä¸èƒ½å…¥å…§ã€‚\n" NOR,
+                "refuse_carry": CYN "$N" CYN "é™ªè‘—ç¬‘è‡‰å°$n" CYN "é“"
+                                "ï¼šå¯å¦å°‡â€¦ä½ èƒŒçš„äººæ”¾ä¸‹å†é€²ç‹åºœï¼Ÿ\n" NOR,
         ]));
 
-        create_family("¶ÎÊÏ»Ê×å", 15, "¼Ò³¼");
+        create_family("æ®µæ°çš‡æ—", 15, "å®¶è‡£");
 
         set("chat_chance_combat", 120);
         set("chat_msg_combat", ({
@@ -93,6 +93,6 @@ void attempt_apprentice(object ob)
                 return;
 
         command("shake");
-        command("say ÊÀ×ÓµîÏÂºÎĞèÈç´Ë£¬Ö»ÒªÓĞÊÂ·Ô¸ÀÔÚÏÂÒ»Éù±ãÊÇ¡£");
+        command("say ä¸–å­æ®¿ä¸‹ä½•éœ€å¦‚æ­¤ï¼Œåªè¦æœ‰äº‹å©å’åœ¨ä¸‹ä¸€è²ä¾¿æ˜¯ã€‚");
         return;
 }

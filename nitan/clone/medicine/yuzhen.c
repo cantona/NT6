@@ -1,16 +1,16 @@
-// yuzhen.c  ÓñÕæÉ¢  by sinb
+// yuzhen.c  ç‰çœŸæ•£  by sinb
 
 #include <ansi.h>
 #include "medicine.h"
 
 void create()
 {
-        set_name(CYN "ÓñÕæÉ¢" NOR, ({"yuzhen san", "san"}));
+        set_name(CYN "ç‰çœŸæ•£" NOR, ({"yuzhen san", "san"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»°üÓñÕæÉ¢£¬·Ç³£Õä¹óµÄÁÆÉËÒ©Æ·¡£\n");
-                set("base_unit", "°ü");
+                set("long", "é€™æ˜¯ä¸€åŒ…ç‰çœŸæ•£ï¼Œéå¸¸çè²´çš„ç™‚å‚·è—¥å“ã€‚\n");
+                set("base_unit", "åŒ…");
                 set("base_value", 20000);
                 set("base_weight", 50);
                 set("only_do_effect", 1);
@@ -39,21 +39,21 @@ int do_effect(object me)
 
         if( time()-query_temp("last_eat/yuzhen", me)<10 )
         {
-                write("Äã¸Õ·şÓÃ¹ıÒ©£¬ĞèÒ©ĞÔ·¢»ÓÍêĞ§ÓÃÒÔºó²ÅÄÜ¼ÌĞø·şÓÃ¡£\n");
+                write("ä½ å‰›æœç”¨éè—¥ï¼Œéœ€è—¥æ€§ç™¼æ®å®Œæ•ˆç”¨ä»¥å¾Œæ‰èƒ½ç¹¼çºŒæœç”¨ã€‚\n");
                 return 1;
         }
 
         my = me->query_entire_dbase();
         if (my["eff_qi"] == my["max_qi"])
         {
-                write("ÄãÏÖÔÚ²¢Ã»ÓĞÊÜÉË£¬²»±Ø·şÓÃ" + name() + "¡£\n");
+                write("ä½ ç¾åœ¨ä¸¦æ²’æœ‰å—å‚·ï¼Œä¸å¿…æœç”¨" + name() + "ã€‚\n");
                 return 1;
         }
 
         set_temp("last_eat/yuzhen", time(), me);
 
-        message_vision(CYN "$N" CYN "ÕÅ¿ª×ì£¬ÃÍµØÍÌÏÂÁË" + name() +
-                       CYN "£¬ÇáÇáµÄºßÁËÒ»Éù¡£\n" NOR, me);
+        message_vision(CYN "$N" CYN "å¼µé–‹å˜´ï¼ŒçŒ›åœ°åä¸‹äº†" + name() +
+                       CYN "ï¼Œè¼•è¼•çš„å“¼äº†ä¸€è²ã€‚\n" NOR, me);
 
         set("eff_qi", my["max_qi"], me);
         set("qi", my["max_qi"], me);

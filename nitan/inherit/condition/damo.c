@@ -90,7 +90,7 @@ int dispel(object me, object ob, mapping cnd)
         pos = cnd["name"];
         if (query("neili", me) < 200)
         {
-                tell_object(me, "ÄãÄÚÁ¦²»×ã£¬ÎŞ·¨»¯½â" + pos + "¡£\n");
+                tell_object(me, "ä½ å…§åŠ›ä¸è¶³ï¼Œç„¡æ³•åŒ–è§£" + pos + "ã€‚\n");
                 return -1;
         }
 
@@ -107,17 +107,17 @@ int dispel(object me, object ob, mapping cnd)
         {
                 if (me == ob)
                 {
-                        tell_object(me, MAG "ÄãÔËÓÃÄÚ¹¦»¯½â" + pos +
-                                    "£¬È»¶øËÆºõÃ»ÓĞ°ëµãĞ§¹û¡£\n" NOR);
+                        tell_object(me, MAG "ä½ é‹ç”¨å…§åŠŸåŒ–è§£" + pos +
+                                    "ï¼Œç„¶è€Œä¼¼ä¹æ²’æœ‰åŠé»æ•ˆæœã€‚\n" NOR);
                         me->start_busy(1);
                         return -1;
                 } else
                 {
-                        tell_object(me, MAG "ÄãÔËÓÃÄÚ¹¦°ïÖú" + ob->name() +
-                                    "»¯½â" + pos + "£¬È»¶øËÆºõÃ»ÓĞ°ëµãĞ§¹û¡£"
+                        tell_object(me, MAG "ä½ é‹ç”¨å…§åŠŸå¹«åŠ©" + ob->name() +
+                                    "åŒ–è§£" + pos + "ï¼Œç„¶è€Œä¼¼ä¹æ²’æœ‰åŠé»æ•ˆæœã€‚"
                                     "\n" NOR);
-                        tell_object(ob, MAG + me->name() + "½«ÄÚÁ¦»º»ºµÄÊä"
-                                    "ÈëÄãµÄÌåÁ¦£¬Äã¾õµÃÒ»Õó¶ñĞÄ£¬¼¸ÓûÅ»ÍÂ¡£"
+                        tell_object(ob, MAG + me->name() + "å°‡å…§åŠ›ç·©ç·©çš„è¼¸"
+                                    "å…¥ä½ çš„é«”åŠ›ï¼Œä½ è¦ºå¾—ä¸€é™£æƒ¡å¿ƒï¼Œå¹¾æ¬²å˜”åã€‚"
                                     "\n" NOR);
                         if (! me->is_busy())
                         me->start_busy(1);
@@ -127,14 +127,14 @@ int dispel(object me, object ob, mapping cnd)
                 }
         }
 
-        // È¥Òì³£ÄÜÁ¦
+        // å»ç•°å¸¸èƒ½åŠ›
         power = me->query_skill("force") + me->query_skill("poison") / 2;
         if (me == ob)
         {
                 if (cnd["id"] == query("id", me))
                 {
-                        tell_object(me, WHT "ÄãÔËÓÃÄÚ¹¦£¬½«" + pos +
-                                    "ÍêÈ«»¯½â¡£\n" NOR);
+                        tell_object(me, WHT "ä½ é‹ç”¨å…§åŠŸï¼Œå°‡" + pos +
+                                    "å®Œå…¨åŒ–è§£ã€‚\n" NOR);
                         addn("neili", -100, me);
                         cnd["remain"] = 0;
                         me->start_busy(1);
@@ -149,12 +149,12 @@ int dispel(object me, object ob, mapping cnd)
                                 dis = cnd["remain"];
                                 cost_neili = cnd["remain"] * 2 * (cnd["level"] + 1) /
                                              power;
-                                tell_object(me, WHT "ÄãÔËÓÃÄÚ¹¦£¬½«" + pos +
-                                            "ÍêÈ«»¯½â¡£\n" NOR);
+                                tell_object(me, WHT "ä½ é‹ç”¨å…§åŠŸï¼Œå°‡" + pos +
+                                            "å®Œå…¨åŒ–è§£ã€‚\n" NOR);
                         } else
                         {
-                                tell_object(me, WHT "ÄãÔËÓÃÄÚ¹¦£¬»¯½âÁËÒ»µã" + pos +
-                                            "¡£\n" NOR);
+                                tell_object(me, WHT "ä½ é‹ç”¨å…§åŠŸï¼ŒåŒ–è§£äº†ä¸€é»" + pos +
+                                            "ã€‚\n" NOR);
                         }
                         cnd["remain"] -= dis;
                         if (cnd["remain"] < 0)
@@ -166,8 +166,8 @@ int dispel(object me, object ob, mapping cnd)
         {
                 if (cnd["id"] == query("id", me))
                 {
-                        tell_object(me, WHT "ÄãÔËÓÃÄÚ¹¦£¬°ïÖú" + ob->name() +
-                                    "½«" + pos + "¾¡Êı»¯½â¡£\n" NOR);
+                        tell_object(me, WHT "ä½ é‹ç”¨å…§åŠŸï¼Œå¹«åŠ©" + ob->name() +
+                                    "å°‡" + pos + "ç›¡æ•¸åŒ–è§£ã€‚\n" NOR);
                         addn("neili", -150, me);
                         cnd["remain"] = 0;
                         me->start_busy(2);
@@ -183,12 +183,12 @@ int dispel(object me, object ob, mapping cnd)
                                 dis = cnd["remain"];
                                 cost_neili = cnd["remain"] * 4 * (cnd["level"] + 1) /
                                              power;
-                                tell_object(me, WHT "ÄãÔËÓÃÄÚ¹¦£¬°ïÖú" + ob->name() +
-                                            "½«" + pos + "¾¡Êı»¯½â¡£\n" NOR);
+                                tell_object(me, WHT "ä½ é‹ç”¨å…§åŠŸï¼Œå¹«åŠ©" + ob->name() +
+                                            "å°‡" + pos + "ç›¡æ•¸åŒ–è§£ã€‚\n" NOR);
                         } else
                         {
-                                tell_object(me, WHT "ÄãÔËÓÃÄÚ¹¦£¬°ïÖú" + ob->name() +
-                                            "»¯½âÁËÒ»µã" + pos + "¡£\n" NOR);
+                                tell_object(me, WHT "ä½ é‹ç”¨å…§åŠŸï¼Œå¹«åŠ©" + ob->name() +
+                                            "åŒ–è§£äº†ä¸€é»" + pos + "ã€‚\n" NOR);
                         }
                         cnd["remain"] -= dis;
                         if (cnd["remain"] < 0)
@@ -209,10 +209,10 @@ int dispel(object me, object ob, mapping cnd)
 // die reason
 string die_reason(string name)
 {
-        if (! name || name == "¶¾")
-                return "¶¾·¢ÉíÍöÁË";
+        if (! name || name == "æ¯’")
+                return "æ¯’ç™¼èº«äº¡äº†";
         else
-                return name + HIM "·¢×÷ÉíÍöÁË÷";
+                return name + HIM "ç™¼ä½œèº«äº¡äº†â–¡;
 }
 
 int update_condition(object me, mapping cnd)
@@ -278,12 +278,12 @@ int update_condition(object me, mapping cnd)
         {
                 if (cnd["remain"] <= cnd["level"])
                 {
-                        message("vision", HIM + me->name() + "³¤³¤µÄÓõ"
-                                "ÁËÒ»¿ÚÆø£¬¿´ÆğÀ´ÉñÉ«ºÃ¶àÁË¡£\n" NOR,
+                        message("vision", HIM + me->name() + "é•·é•·çš„å"
+                                "äº†ä¸€å£æ°£ï¼Œçœ‹èµ·ä¾†ç¥è‰²å¥½å¤šäº†ã€‚\n" NOR,
                                 environment(me), ({ me }));
-                        tell_object(me, HIM "Äã¾õµÃÉíÉÏµÄ" + cnd["name"] +
-                                    HIM "½¥½¥µÄ²»·¢Éú×÷ÓÃÁË£¬²»"
-                                    "½û³¤³¤µÄÓõÁËÒ»¿ÚÆø¡£\n" NOR);
+                        tell_object(me, HIM "ä½ è¦ºå¾—èº«ä¸Šçš„" + cnd["name"] +
+                                    HIM "æ¼¸æ¼¸çš„ä¸ç™¼ç”Ÿä½œç”¨äº†ï¼Œä¸"
+                                    "ç¦é•·é•·çš„åäº†ä¸€å£æ°£ã€‚\n" NOR);
                         return 0;
                 }
 

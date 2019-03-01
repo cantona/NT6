@@ -4,14 +4,14 @@ inherit BOOK;
 
 void create()
 {
-        set_name("Ö¸·¨Ïê½â", ({ "finger book", "book" }));
+        set_name("æŒ‡æ³•è©³è§£", ({ "finger book", "book" }));
         set_weight(600);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
+                set("unit", "æœ¬");
                 set("long",
-"·âÃæÉÏĞ´Öø¡¸Ö¸·¨Ïê½â£©¡¹\n");
+"å°é¢ä¸Šå¯«è‘—ã€ŒæŒ‡æ³•è©³è§£ï¼‰ã€\n");
                 set("value", 10000);
                 set("material", "paper");
                 set("skill", ([

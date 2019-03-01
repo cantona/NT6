@@ -1,4 +1,4 @@
-// Npc: /d/kunlun/npc/wu.c ÎäÇàÓ¤
+// Npc: /d/kunlun/npc/wu.c æ­¦é’å¬°
 // Last Modified by winder on Jun. 29 2001
 
 #include <ansi.h>
@@ -6,10 +6,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÎäÇàÓ¤", ({ "wu qingying", "wu"}));
-        set("long", "Ëı´©×ÅÒ»¼şºÚÉ«õõôÃ£¬ÉíĞÎÃçÌõ£¬ÑÔĞĞ¾ÙÖ¹ÉõÊÇË¹ÎÄ¡£\n");
-        set("nickname", HIW"Ñ©ÁëË«æ­"NOR);
-        set("gender", "Å®ĞÔ");
+        set_name("æ­¦é’å¬°", ({ "wu qingying", "wu"}));
+        set("long", "å¥¹ç©¿è‘—ä¸€ä»¶é»‘è‰²è²‚è£˜ï¼Œèº«å½¢è‹—æ¢ï¼Œè¨€è¡Œèˆ‰æ­¢ç”šæ˜¯æ–¯æ–‡ã€‚\n");
+        set("nickname", HIW"é›ªå¶ºé›™å§"NOR);
+        set("gender", "å¥³æ€§");
         set("per", 30);
         set("age", 17);
 

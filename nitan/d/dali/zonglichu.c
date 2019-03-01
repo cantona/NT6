@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-        set("short","¹úÎñ×ÜÀí´¦");
+        set("short","åœ‹å‹™ç¸½ç†è™•");
         set("long", @LONG
-×ÜÀí´¦ÊÇÕòÄÏÍõ»ÊÌ«µÜ×ÜÀí¹úÎñÖ®´¦£¬Âú×ÀµÄ×àÕÂÕûÀíµÃ¾®¾®ÓÐ
-Ìõ¡£ËÄÖÜ°ÚÁËºÜ¶à²è»¨£¬ÕùÆæ¶·ÑÞ¡£²è»¨ÊÇ´óÀí¹ú»¨£¬¿´À´Ö÷ÈË¶ÔËü
-Ò²ÊÇÖÓ°®ÓÐ¼Ó¡£
+ç¸½ç†è™•æ˜¯éŽ®å—çŽ‹çš‡å¤ªå¼Ÿç¸½ç†åœ‹å‹™ä¹‹è™•ï¼Œæ»¿æ¡Œçš„å¥ç« æ•´ç†å¾—äº•äº•æœ‰
+æ¢ã€‚å››å‘¨æ“ºäº†å¾ˆå¤šèŒ¶èŠ±ï¼Œçˆ­å¥‡é¬¥è‰·ã€‚èŒ¶èŠ±æ˜¯å¤§ç†åœ‹èŠ±ï¼Œçœ‹ä¾†ä¸»äººå°å®ƒ
+ä¹Ÿæ˜¯é˜æ„›æœ‰åŠ ã€‚
 LONG );
         set("objects", ([
             "/d/dali/obj/shanchahua": 1,

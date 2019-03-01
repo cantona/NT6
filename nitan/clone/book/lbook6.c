@@ -3,14 +3,14 @@
 inherit ITEM;
 void create()
 {
-        set_name(YEL"¡¸Ê·¼Ç¡¹"NOR, ({ "literateb6", "shu6", "book6" }));
+        set_name(YEL"ã€Œå²è¨˜ã€"NOR, ({ "literateb6", "shu6", "book6" }));
         set_weight(200);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¾í");
+                set("unit", "å·");
                 set("value", 1000);
-                set("long", "Ò»±¾ºÜ¹Å¾ÉµÄÏß×°Êé£¬À¼Æ¤ÉÏĞ´×ÅÁ½¸ö×­×Ö'Ê·¼Ç'£¬ÀïÃæµÄÄÚÈİºÜ¶à¶¼ÒÑ¾­Ä£ºı²»Çå¡£\n");
+                set("long", "ä¸€æœ¬å¾ˆå¤èˆŠçš„ç·šè£æ›¸ï¼Œè˜­çš®ä¸Šå¯«è‘—å…©å€‹ç¯†å­—'å²è¨˜'ï¼Œè£¡é¢çš„å…§å®¹å¾ˆå¤šéƒ½å·²ç¶“æ¨¡ç³Šä¸æ¸…ã€‚\n");
                 set("material", "paper");
         }
 }
@@ -27,7 +27,7 @@ int do_read(string arg)
 
         if( arg=="literateb6" || arg=="shu6" || arg=="book6")
         {
-                write("Õâ±¾ÊéÌ«ÆÆ¾ÉÁË£¬ÏÖÔÚÃ»·¨¶Á¡£\n");
+                write("é€™æœ¬æ›¸å¤ªç ´èˆŠäº†ï¼Œç¾åœ¨æ²’æ³•è®€ã€‚\n");
                 return 1;
         }
 }

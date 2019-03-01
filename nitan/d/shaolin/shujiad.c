@@ -3,11 +3,11 @@ inherit ROOM;
 void create()
 {
         int i;
-        set("short", "Êé¼Ü¶¥");
+        set("short", "æ›¸æ¶é ‚");
         set("long", @LONG
-Êé¼Ü¶¥ÉÏ»ıÂúÁËºñºñµÄÒ»²ã»Ò³¾£¬Êé¼Ü¶¥ºÍ·¿Áº»¹ÓĞÈı³ß¶à¸ßµÄ
-¾àÀëÓÉÓÚ²»¾­³£´òÉ¨£¬ÕâÀï²½ÂúÁËÖ©ÖëË¿£¬Êé¼Ü¶¥µÄ¸¡³¾ÉÏ»¹ÄÜÒÀÏ¡
-¼ûµ½Ò»Ğ©ÅÀ³æÁôÏÂµÄºÛ¼£ÓĞÊ±ºòÓĞĞ©Ğ¡ÄñÒ²»áÔÚÕâÀïÖş³²¡£
+æ›¸æ¶é ‚ä¸Šç©æ»¿äº†åšåšçš„ä¸€å±¤ç°å¡µï¼Œæ›¸æ¶é ‚å’Œæˆ¿æ¨‘é‚„æœ‰ä¸‰å°ºå¤šé«˜çš„
+è·é›¢ç”±äºä¸ç¶“å¸¸æ‰“æƒï¼Œé€™è£¡æ­¥æ»¿äº†èœ˜è››çµ²ï¼Œæ›¸æ¶é ‚çš„æµ®å¡µä¸Šé‚„èƒ½ä¾ç¨€
+è¦‹åˆ°ä¸€äº›çˆ¬èŸ²ç•™ä¸‹çš„ç—•è·¡æœ‰æ™‚å€™æœ‰äº›å°é³¥ä¹Ÿæœƒåœ¨é€™è£¡ç¯‰å·¢ã€‚
 LONG );
         set("exits", ([ /* sizeof() == 1 */
                 "down" : "/d/shaolin/cjlou1",
@@ -29,9 +29,9 @@ int do_pull()
         object ob, *obs, me = this_player();
         
         if (me->is_busy())
-                return notify_fail("ÄãÕıÃ¦×ÅÄØ£¡\n");
+                return notify_fail("ä½ æ­£å¿™è‘—å‘¢ï¼\n");
                 
-        message_vision("$N×ĞÏ¸µØ´òÉ¨ÁËÊé¼Ü¶¥ÉÏµÄ»Ò³¾,¿´ÉÏÈ¥¸É¾»¶àÁË¡£\n", me);
+        message_vision("$Nä»”ç´°åœ°æ‰“æƒäº†æ›¸æ¶é ‚ä¸Šçš„ç°å¡µ,çœ‹ä¸Šå»å¹¹å‡ˆå¤šäº†ã€‚\n", me);
         me->start_busy(5);
         
         // obs = filter_array(children("/clone/book/yijinjing.c"), (: clonep :));
@@ -41,7 +41,7 @@ int do_pull()
                     ob = new("/clone/book/yijin_book"); 
                 ob->move(me, 1);
                 addn("bamboo_count", -1);
-                CHANNEL_D->do_channel(this_object(),"rumor",sprintf("%s¸ãµ½ÁËÉÙÁÖÕòËÂÖ®±¦Ò×½î¾­ÃØ¼®À²¡£",query("name", me)));
+                CHANNEL_D->do_channel(this_object(),"rumor",sprintf("%sæåˆ°äº†å°‘æ—é®å¯ºä¹‹å¯¶æ˜“ç­‹ç¶“ç§˜ç±å•¦ã€‚",query("name", me)));
         } else
         if (query("yijinjing_count") > 0)
         {
@@ -49,7 +49,7 @@ int do_pull()
                 else ob = new("/clone/book/yijinjing");
                 ob->move(me, 1);
                 addn("yijinjing_count", -1);
-                CHANNEL_D->do_channel(this_object(),"rumor",sprintf("%s¸ãµ½ÁËÉÙÁÖÕòËÂÖ®±¦Ò×½î¾­²ĞÆ×À²¡£",query("name", me)));
+                CHANNEL_D->do_channel(this_object(),"rumor",sprintf("%sæåˆ°äº†å°‘æ—é®å¯ºä¹‹å¯¶æ˜“ç­‹ç¶“æ®˜è­œå•¦ã€‚",query("name", me)));
         }
         return 1;
 }

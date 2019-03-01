@@ -1,4 +1,4 @@
-// longsword.c ³¤½£
+// longsword.c é•·åŠ
 
 #include <weapon.h>
 #include <ansi.h>
@@ -7,17 +7,17 @@ inherit SWORD;
 
 void create()
 {
-        set_name(HIR "Õ¶ÌìÖ®ÈĞ" NOR, ({ "zhantian zhiren", "zhantian", "zhiren" }));
+        set_name(HIR "æ–¬å¤©ä¹‹åˆƒ" NOR, ({ "zhantian zhiren", "zhantian", "zhiren" }));
         set_weight(1);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
-                set("long", HIR "´«ËµÕ¶ÌìÖ®ÈĞ¿ÉÒÔ¿ªÌì±ÙµØ£¬ÆÆÆø´©¼×£¬ÎŞËù²»ÄÜ¡£\n" NOR);
+                set("unit", "æŸ„");
+                set("long", HIR "å‚³èªªæ–¬å¤©ä¹‹åˆƒå¯ä»¥é–‹å¤©è¾Ÿåœ°ï¼Œç ´æ°£ç©¿ç”²ï¼Œç„¡æ‰€ä¸èƒ½ã€‚\n" NOR);
                 set("value", 2000);
                 set("material", "tian jing");
-                set("wield_msg", HIR "¡¸à§¡¹µÄÒ»Éù³é³öÒ»±ú$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²å»Ø½£ÇÊ¡£\n");
+                set("wield_msg", HIR "ã€Œå”°ã€çš„ä¸€è²æŠ½å‡ºä¸€æŸ„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°‡æ‰‹ä¸­çš„$næ’å›åŠé˜ã€‚\n");
         }
         init_sword(1000);
         setup();

@@ -31,7 +31,7 @@ void create()
         set("xxtarget",1);
 
         set("inquiry", ([
-                "Õ½¶·"   : (: do_move :),
+                "æˆ°é¬¥"   : (: do_move :),
                 "challenge"  : (: do_move :),
         ]) );
 
@@ -78,13 +78,13 @@ int accept_fight()
 
         myfam=query("family", me);
 
-        if (myfam["family_name"] == "ĞÇËŞÅÉ"){
-                command("say ²»ÓÃ±ÈÊÔÁË£¬ÄãÄÃÃüÀ´°É£¡");
+        if (myfam["family_name"] == "æ˜Ÿå®¿æ´¾"){
+                command("say ä¸ç”¨æ¯”è©¦äº†ï¼Œä½ æ‹¿å‘½ä¾†å§ï¼");
                 if( !npc->is_killing(me) ) npc->kill_ob(me);
         }
         else {
                 command("shake");
-                command("say ´ó¼Ò¶¼ÊÇ½­ºşÍ¬µÀ£¬ÎŞ¹Ê¶¯ÎäÆñ²»ÊÇÉËÁËºÍÆø£¿");
+                command("say å¤§å®¶éƒ½æ˜¯æ±Ÿæ¹–åŒé“ï¼Œç„¡æ•…å‹•æ­¦è±ˆä¸æ˜¯å‚·äº†å’Œæ°£ï¼Ÿ");
                 return 0;
         }
         return 1;
@@ -93,7 +93,7 @@ int accept_fight()
 
 int accept_hit(object ob)
 {
-        command("say ÄãËÀÈ¥°É£¡");
+        command("say ä½ æ­»å»å§ï¼");
         command("yun powerup");
         kill_ob(ob);
         return 1;
@@ -101,7 +101,7 @@ int accept_hit(object ob)
 
 int accept_kill(object ob)
 {
-        command("say ºß£¡ÕÒËÀ£¡");
+        command("say å“¼ï¼æ‰¾æ­»ï¼");
         command("yun powerup");
         return 1;
 }
@@ -110,7 +110,7 @@ void random_move()
 {
         if (time() - query_temp("born_time") > 900)
         {
-                message_vision("$N¼±¼±Ã¦Ã¦µÄ×ßÁË¡£\n", this_object());
+                message_vision("$Næ€¥æ€¥å¿™å¿™çš„èµ°äº†ã€‚\n", this_object());
                 destruct(this_object());
                 return;
         }
@@ -128,9 +128,9 @@ string do_move()
         exits=query("exits", room);
         dirs = keys(exits);
         command("go "+dirs[random(sizeof(dirs))]);
-        return "³öÈ¥¾Í³öÈ¥£¬ÓĞÊ²Ã´²»¸Ò£¿";
+        return "å‡ºå»å°±å‡ºå»ï¼Œæœ‰ä»€éº¼ä¸æ•¢ï¼Ÿ";
     }else {
-        return "ÎÒ½ñÌì²»ÊÇÀ´ÕÒÄãµÄ£¬ÄãÏÈÒ»±ßÈ¥£¿";
+        return "æˆ‘ä»Šå¤©ä¸æ˜¯ä¾†æ‰¾ä½ çš„ï¼Œä½ å…ˆä¸€é‚Šå»ï¼Ÿ";
     }
 }
 
@@ -145,7 +145,7 @@ void die()
                 if( query("id", killer) == query("player", this_object())){
                         ob = new("/d/xingxiu/obj/lingpai");
                         ob->move(environment());
-message_vision("Ö»Ìı¼ûÅ¾µÄÒ»Éù£¬´Ó$NÉíÉÏµôÏÂÀ´Ò»¼şÎïÊÂ¡£\n", this_object());
+message_vision("åªè½è¦‹å•ªçš„ä¸€è²ï¼Œå¾$Nèº«ä¸Šæ‰ä¸‹ä¾†ä¸€ä»¶ç‰©äº‹ã€‚\n", this_object());
                         set("player",query("id",  killer), ob);
                         set("menpai", query("menpai"), ob);
                 }

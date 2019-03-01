@@ -5,9 +5,9 @@ inherit F_MASTER;
 #include <ansi.h>;
 void create()
 {
-        set_name("Ï¹×Ó", ({ "xia zi", "xia", "zi" }) );
-        set("long", "Õâ¾ÍÊÇ±»Áîºü³å´ÌÏ¹µÄÏ¹×Ó¡£");
-        set("gender", "ÄÐÐÔ");
+        set_name("çžŽå­", ({ "xia zi", "xia", "zi" }) );
+        set("long", "é€™å°±æ˜¯è¢«ä»¤ç‹æ²–åˆºçžŽçš„çžŽå­ã€‚");
+        set("gender", "ç”·æ€§");
         set("class", "swordsman");
         set("age", 25);
         set("attitude", "aggressive");
@@ -44,7 +44,7 @@ void create()
         map_skill("force", "hanbing-zhenqi");
         prepare_skill("strike", "songyang-strike");
         prepare_skill("hand", "poyun-hand");
-        create_family("áÔÉ½ÅÉ", 14, "µÜ×Ó");
+        create_family("åµ©å±±æ´¾", 14, "å¼Ÿå­");
         setup();
 
         carry_object(WEAPON_DIR+"kuojian")->wield();

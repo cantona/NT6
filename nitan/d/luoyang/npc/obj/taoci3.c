@@ -3,13 +3,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIR "µ­ÖìÆĞÌáÊ÷" NOR, ({ "puti shu", "puti", "shu"}) );
+        set_name(HIR "æ·¡æœ±è©ææ¨¹" NOR, ({ "puti shu", "puti", "shu"}) );
         set_weight(5000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ö»");
-                set("long", HIR "¾­ÌÆÈı²ÊÉÕÖÆµÄµ­ÖìÆĞÌáÊ÷£¬·Ç³£µÄ°º¹ó¡£\n" NOR);
+                set("unit", "åª");
+                set("long", HIR "ç¶“å”ä¸‰å½©ç‡’åˆ¶çš„æ·¡æœ±è©ææ¨¹ï¼Œéå¸¸çš„æ˜‚è²´ã€‚\n" NOR);
                 set("value", 1500);
         }
 }

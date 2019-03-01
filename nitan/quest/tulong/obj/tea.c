@@ -5,13 +5,13 @@ void do_eat();
 
 void create()
 {
-        set_name("Î×É½ÔÆ²è",({"tea", "cha", "yuncha"}));
+        set_name("å·«å±±é›²èŒ¶",({"tea", "cha", "yuncha"}));
         set_weight(50);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»±­ÈÈ²è£¬Ò¹³½Ç×ÊÖ²ÉÕªÎ×É½ÜÔÀò»¨Ò¶£¬ÁúÈªÉ½²è»¨°ê£¬×ÏÖñÁÖÖñĞ¾£¬ÔÙµ÷ºÍ³¿Â¶£¬·¼ÏãÎŞ±È£¡\n");
-                set("unit", "±­");
+                set("long", "ä¸€æ¯ç†±èŒ¶ï¼Œå¤œè¾°è¦ªæ‰‹æ¡æ‘˜å·«å±±èŒ‰è‰èŠ±è‘‰ï¼Œé¾æ³‰å±±èŒ¶èŠ±ç“£ï¼Œç´«ç«¹æ—ç«¹èŠ¯ï¼Œå†èª¿å’Œæ™¨éœ²ï¼ŒèŠ³é¦™ç„¡æ¯”ï¼\n");
+                set("unit", "æ¯");
                 set("value", 1000);
         set("remaining", 20);
         set("drink_supply", 25);
@@ -33,10 +33,10 @@ int do_drink(string arg)
 
         if( !this_object()->id(arg) ) return 0;
         if( this_player()->is_busy() )
-                return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É¡£\n");
+                return notify_fail("ä½ ä¸Šä¸€å€‹å‹•ä½œé‚„æ²’æœ‰å®Œæˆã€‚\n");
         if( query("water", this_player() )
            >= (int)this_player()->max_water_capacity() )
-                return notify_fail("ÄãÒÑ¾­ºÈÌ«¶àÁË£¬ÔÙÒ²¹à²»ÏÂÒ»µÎË®ÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“å–å¤ªå¤šäº†ï¼Œå†ä¹ŸçŒä¸ä¸‹ä¸€æ»´æ°´äº†ã€‚\n");
 
         set("value", 0);
         addn("water", (int)query("drink_supply"), this_player());
@@ -69,11 +69,11 @@ int do_drink(string arg)
         addn("remaining", -1);
         if ( query("remaining") )
         {
-                message_vision("$N¶ËÆğ±­Î×É½ÔÆ²è£¬ÓĞ×ÌÓĞÎ¶µØÆ·ÁË¼¸¿Ú¡£\n"+
-                "Ò»¹ÉÏãÆøÖ±ÈëĞÄÆ¢£¬$N¾«Éñ´óÕñ¡£\n", this_player());
+                message_vision("$Nç«¯èµ·æ¯å·«å±±é›²èŒ¶ï¼Œæœ‰æ»‹æœ‰å‘³åœ°å“äº†å¹¾å£ã€‚\n"+
+                "ä¸€è‚¡é¦™æ°£ç›´å…¥å¿ƒè„¾ï¼Œ$Nç²¾ç¥å¤§æŒ¯ã€‚\n", this_player());
         } else 
         { 
-                message_vision("$N½«Î×É½ÔÆ²èÒ»Òû¶ø¾¡£¬ÒâÓÌÎ´¾¡¡£\n", this_player());
+                message_vision("$Nå°‡å·«å±±é›²èŒ¶ä¸€é£²è€Œç›¡ï¼Œæ„çŒ¶æœªç›¡ã€‚\n", this_player());
                 destruct(this_object());
         }
         return 1;

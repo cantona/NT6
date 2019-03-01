@@ -6,17 +6,17 @@ inherit BLADE;
 
 void create()
 {
-        set_name("ÑãÔÆµ¶", ({"yanyun blade", "blade"}));
+        set_name("é›é›²åˆ€", ({"yanyun blade", "blade"}));
         set_weight(8000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "Ò»°Ñ°×²Ó²ÓµÄÍìÊÖºúµ¶£¬·¢×ÅÒõÉøÉøµÄÉ±Æø£®\n");
+                set("unit", "æŠŠ");
+                set("long", "ä¸€æŠŠç™½ç‡¦ç‡¦çš„æŒ½æ‰‹èƒ¡åˆ€ï¼Œç™¼è‘—é™°æ»²æ»²çš„æ®ºæ°£ï¼\n");
                 set("value", 1500);
                 set("material", "crimsonsteel");
-                set("wield_msg", "$N¡¸à§¡¹µØÒ»Éù³é³öÒ»°Ñ$nÎÕÔÚÊÖÖĞ£¬Á³É«¸ü¼ÓÒõ³ÁÁË£¡\n");
-                set("unwield_msg","$N½«ÊÖÖĞµÄ$n²åÈëÑü¼ä£¬×ì½ÇÂ¶³öÒ»Ë¿Ğ¦Òâ¡£\n");
+                set("wield_msg", "$Nã€Œå”°ã€åœ°ä¸€è²æŠ½å‡ºä¸€æŠŠ$næ¡åœ¨æ‰‹ä¸­ï¼Œè‡‰è‰²æ›´åŠ é™°æ²‰äº†ï¼\n");
+                set("unwield_msg","$Nå°‡æ‰‹ä¸­çš„$næ’å…¥è…°é–“ï¼Œå˜´è§’éœ²å‡ºä¸€çµ²ç¬‘æ„ã€‚\n");
                 set("weapon_prop/courage", 10);
         }
         init_blade(40);

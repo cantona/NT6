@@ -2,11 +2,11 @@ inherit BUILD_ROOM;
 
 void create()
 {
-        set("short", "×ÏÆøÌ¨");
+        set("short", "ç´«æ°£å°");
         set("long", @LONG
-×ÏÆøÌ¨ÖÕÄêÔÆÕÚÎíÑÚ£¬ÃÔÃÉ²»¼ûÌìÈÕ£¬¸üÎª¹ÖÒìµÄÊÇ£ºÃ¿·êÏÂÓê
-Ìì£¬É½¹ÈÖ®ÖÐ¾ÍÒþÒþÓÐ×ÏÆø³öÏÖ¡£¼«Ä¿ËÄÍû£¬·ç¾°Èç»­¡£ÔÚÕâÀïÒþ¾Ó
-Ïà±Ø·Ç³£ã«Òâ¡£
+ç´«æ°£å°çµ‚å¹´é›²é®éœ§æŽ©ï¼Œè¿·è’™ä¸è¦‹å¤©æ—¥ï¼Œæ›´ç‚ºæ€ªç•°çš„æ˜¯ï¼šæ¯é€¢ä¸‹é›¨
+å¤©ï¼Œå±±è°·ä¹‹ä¸­å°±éš±éš±æœ‰ç´«æ°£å‡ºç¾ã€‚æ¥µç›®å››æœ›ï¼Œé¢¨æ™¯å¦‚ç•«ã€‚åœ¨é€™è£¡éš±å±…
+ç›¸å¿…éžå¸¸æ„œæ„ã€‚
 LONG );
         set("outdoors", "huashan");
         set("exits",([ /* sizeof() == 1 */

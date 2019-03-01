@@ -1,5 +1,5 @@
 // This program is a part of NT MudLIB
-// moon.c ÔÂÆÇ
+// moon.c æœˆé­„
 
 #include <ansi.h>
 
@@ -7,14 +7,14 @@ inherit TESSERA;
 
 void create()
 {
-        set_name(WHT "ÔÂÆÇ" NOR, ({ "moon soul", "moon" }) );
+        set_name(WHT "æœˆé­„" NOR, ({ "moon soul", "moon" }) );
         set_weight(1);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", WHT "Ì«ÒõÕæ»ğÄı¾Û¶ø³É£¬ÔÂ°×É«£¬ÄÜÉãĞÄ¶¨Éñ£¬°ÙĞ°²»ÇÖ¡£¡£\n" NOR);
+                set("long", WHT "å¤ªé™°çœŸç«å‡èšè€Œæˆï¼Œæœˆç™½è‰²ï¼Œèƒ½æ”å¿ƒå®šç¥ï¼Œç™¾é‚ªä¸ä¾µã€‚ã€‚\n" NOR);
                 set("value", 50000);
-                set("unit", "¿é");
+                set("unit", "å¡Š");
                 set("can_enchant", "armor");
                 set("auto_load", 1);
         }
@@ -34,29 +34,29 @@ int do_extract(object obj)
 
         ob = this_object();
 
-        if( !obj ) return notify_fail("Ã»ÓĞÕâ¸öÎïÆ·¡£\n");
+        if( !obj ) return notify_fail("æ²’æœ‰é€™å€‹ç‰©å“ã€‚\n");
 
         if( query("enchase", ob) )
-                return notify_fail("ÔÂÆÇÒÑ¾­¸½Ä§¹ıÊôĞÔÁË¡£\n");
+                return notify_fail("æœˆé­„å·²ç¶“é™„é­”éå±¬æ€§äº†ã€‚\n");
 
         if( !query("enchase", obj) || !(applied_prop=query("enchase/apply_prop", obj)) )
-                return notify_fail("Õâ¸öÎïÆ·ÉÏÃæÃ»ÓĞ¿ÉÓÃÀ´¸½Ä§µÄÊôĞÔ¡£\n");
+                return notify_fail("é€™å€‹ç‰©å“ä¸Šé¢æ²’æœ‰å¯ç”¨ä¾†é™„é­”çš„å±¬æ€§ã€‚\n");
 
         if( obj->is_item_make() || !(ins=query("enchase/inset", obj)) )
-                return notify_fail("Õâ¸öÎïÆ·ÎŞ·¨ÓÃÀ´¸½Ä§µÄÊôĞÔ¡£\n");
+                return notify_fail("é€™å€‹ç‰©å“ç„¡æ³•ç”¨ä¾†é™„é­”çš„å±¬æ€§ã€‚\n");
 
         if( query("skill_type", obj) || query("armor_type", obj) != "hands" || query("armor_type", obj) != "finger" )
-                return notify_fail("ÈÕ»êÖ»ÄÜÓÃÀ´¸½Ä§·À¾ßÀàÎïÆ·µÄÊôĞÔ¡£\n");
+                return notify_fail("æ—¥é­‚åªèƒ½ç”¨ä¾†é™„é­”é˜²å…·é¡ç‰©å“çš„å±¬æ€§ã€‚\n");
 
         if( random(100) < 20 )
-                return notify_fail("¸½Ä§Ê§°Ü¡£\n");
+                return notify_fail("é™„é­”å¤±æ•—ã€‚\n");
 
         res = ins[random(sizeof(ins))];
         ins -= ({ res });
 
         enchase_prop = res["enchase_prop"];
         if( !mapp(enchase_prop) )
-                return notify_fail("¸½Ä§Ê§°Ü¡£\n");
+                return notify_fail("é™„é­”å¤±æ•—ã€‚\n");
 
         set("enchase/inset", ins, obj);
         apply = keys(enchase_prop);

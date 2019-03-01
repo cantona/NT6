@@ -5,18 +5,18 @@ void init();
 
 void create()
 {
-        set_name("±­×Ó", ({ "cup", "beizi" }));
+        set_name("æ¯å­", ({ "cup", "beizi" }));
         set_weight(50);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¸ö´Å±­×Ó¡£\n");
-                set("unit", "¸ö");
+                set("long", "ä¸€å€‹ç£æ¯å­ã€‚\n");
+                set("unit", "å€‹");
                 set("max_liquid", 5);
         }
         
         set("liquid", ([
-                "name": "¶¹½¬",
+                "name": "è±†æ¼¿",
                 "remaining": 8,
         ]));
         setup();

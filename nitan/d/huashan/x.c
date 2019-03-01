@@ -5,18 +5,18 @@ inherit ROOM;
 void create()
 {
         object ob;
-        set("short", "¿ÕÊÒ");
+        set("short", "ç©ºå®¤");
         set("exits", ([
                 "out"   : __DIR__"s",
         ]));
 
         set("long", @LONG
-ÕâÊÇÒ»¼ä¿Õ¿õµÄÊ¯ÊÒ£¬²»Ô¶´¦ÓÐ¸öÒ»Ê¯µÊ£¬Äã²»½ûÏëÏóÕâÀïÔø¾­
-ÏñÊÇÓÐÈËÔÚÉÏÃæÀ´´ò×ø»òÕß²ÎÎòÎäÑ§ÖÁ¸ß¾³½ç¡£ÄãÒþÔ¼·¢ÏÖÇ°·½Ê¯±Ú
-£¨bi£©ÉÏÏñÊÇ¿Ì×ÅÊ²Ã´¶«Î÷¡£
+é€™æ˜¯ä¸€é–“ç©ºæ› çš„çŸ³å®¤ï¼Œä¸é è™•æœ‰å€‹ä¸€çŸ³å‡³ï¼Œä½ ä¸ç¦æƒ³è±¡é€™è£¡æ›¾ç¶“
+åƒæ˜¯æœ‰äººåœ¨ä¸Šé¢ä¾†æ‰“åæˆ–è€…åƒæ‚Ÿæ­¦å­¸è‡³é«˜å¢ƒç•Œã€‚ä½ éš±ç´„ç™¼ç¾å‰æ–¹çŸ³å£
+ï¼ˆbiï¼‰ä¸Šåƒæ˜¯åˆ»è‘—ä»€éº¼æ±è¥¿ã€‚
 LONG );
         set("item_desc", ([
-               "bi"  :   HIW "\n\t\tŸo\n\t\tÕÐ\n\t\tÊ¤\n\t\tÓÐ\n\t\tÕÐ\n\n¡¹" NOR,
+               "bi"  :   HIW "\n\t\tâ–¡\n\t\tæ‹›\n\t\tå‹\n\t\tæœ‰\n\t\tæ‹›\n\nã€" NOR,
         ]));                       
         
         set("no_clean_up", 0);

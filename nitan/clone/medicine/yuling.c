@@ -1,16 +1,16 @@
-// yuling.c  ÓñÁéÉ¢  by sinb
+// yuling.c  ç‰éˆæ•£  by sinb
 
 #include <ansi.h>
 #include "medicine.h"
 
 void create()
 {
-        set_name(CYN "ÓñÁéÉ¢" NOR, ({"yuling san", "san"}));
+        set_name(CYN "ç‰éˆæ•£" NOR, ({"yuling san", "san"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»°üÓñÁéÉ¢£¬ÓÃÀ´»Ö¸´ÄãµÄ¾«Á¦¡£\n");
-                set("base_unit", "°ü");
+                set("long", "é€™æ˜¯ä¸€åŒ…ç‰éˆæ•£ï¼Œç”¨ä¾†æ¢å¾©ä½ çš„ç²¾åŠ›ã€‚\n");
+                set("base_unit", "åŒ…");
                 set("base_value", 20000);
                 set("base_weight", 50);
                 set("only_do_effect", 1);
@@ -39,21 +39,21 @@ int do_effect(object me)
 
         if( time()-query_temp("last_eat/yuling", me)<10 )
         {
-                write("Äã¸Õ·şÓÃ¹ıÒ©£¬ĞèÒ©ĞÔ·¢»ÓÍêĞ§ÓÃÒÔºó²ÅÄÜ¼ÌĞø·şÓÃ¡£\n");
+                write("ä½ å‰›æœç”¨éè—¥ï¼Œéœ€è—¥æ€§ç™¼æ®å®Œæ•ˆç”¨ä»¥å¾Œæ‰èƒ½ç¹¼çºŒæœç”¨ã€‚\n");
                 return 1;
         }
 
         my = me->query_entire_dbase();
         if (my["eff_jing"] == my["max_jing"])
         {
-                write("ÄãÏÖÔÚ²¢Ã»ÓĞÊÜÉË£¬²»±Ø·şÓÃ" + name() + "¡£\n");
+                write("ä½ ç¾åœ¨ä¸¦æ²’æœ‰å—å‚·ï¼Œä¸å¿…æœç”¨" + name() + "ã€‚\n");
                 return 1;
         }
 
         set_temp("last_eat/yuling", time(), me);
 
-        message_vision(CYN "$N" CYN "ÕÅ¿ª×ì£¬ÃÍµØÍÌÏÂÁË" + name() +
-                       CYN "£¬Á³ÉÏÂ¶³öÒ»Ë¿Î¢Ğ¦¡£\n" NOR, me);
+        message_vision(CYN "$N" CYN "å¼µé–‹å˜´ï¼ŒçŒ›åœ°åä¸‹äº†" + name() +
+                       CYN "ï¼Œè‡‰ä¸Šéœ²å‡ºä¸€çµ²å¾®ç¬‘ã€‚\n" NOR, me);
 
         set("eff_jing", my["max_jing"], me);
         set("jing", my["max_jing"], me);

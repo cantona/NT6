@@ -2,13 +2,13 @@
 inherit ITEM;
 void create()
 {
-    set_name("ÊØÎÀÊé", ({ "shouwei shu", "shu" }) );
+    set_name("å®ˆè¡›æ›¸", ({ "shouwei shu", "shu" }) );
        set_weight(1000);
        if( clonep() )
                set_default_object(__FILE__);
        else {
-               set("unit", "Æ¬");
-                set("long", "ÕâÊÇÒ»Æ¬ÓÃÖñÆ¬ËùÖÆµÄÁîÅÆ£¬ÊÇÃ÷½ÌÊØÎÀµÜ×ÓµÄÉí·İÖ¤Ã÷¡£\n");
+               set("unit", "ç‰‡");
+                set("long", "é€™æ˜¯ä¸€ç‰‡ç”¨ç«¹ç‰‡æ‰€åˆ¶çš„ä»¤ç‰Œï¼Œæ˜¯æ˜æ•™å®ˆè¡›å¼Ÿå­çš„èº«ä»½è¨¼æ˜ã€‚\n");
                set("value", 20);
                set("material", "bamboo");          
        }

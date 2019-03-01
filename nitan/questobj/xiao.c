@@ -6,18 +6,18 @@ inherit DAGGER;
 
 void create()
 {
-        set_name(HIG"ÂÌÓñ¶´óï"NOR, ({ "lvyv xiao", "xiao"}));
+        set_name(HIG"ç¶ ç‰æ´ç°«"NOR, ({ "lvyv xiao", "xiao"}));
         set_weight(4000);
         set("taskobj", 1);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ù");
-                set("long", "ÕâÊÇÒ»¸ùÓÃÂÌÓñ×ö³ÉµÄ¶´óï¡£\n");
+                set("unit", "æ ¹");
+                set("long", "é€™æ˜¯ä¸€æ ¹ç”¨ç¶ ç‰åšæˆçš„æ´ç°«ã€‚\n");
                 set("value", 0);
                 set("material", "steel");
-                set("wield_msg", "$N¡¸à§¡¹µÄÒ»Éù´Ó»³ÖĞÌÍ³öÒ»¸ù$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n´§»Ø»³Àï¡£\n");
+                set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€è²å¾æ‡·ä¸­æå‡ºä¸€æ ¹$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°‡æ‰‹ä¸­çš„$næ£å›æ‡·è£¡ã€‚\n");
         }
         setup();
 }

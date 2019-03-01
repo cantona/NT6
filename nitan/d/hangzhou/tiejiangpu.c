@@ -4,29 +4,29 @@
 inherit ROOM;
 void create()
 {
-        set("short", "������");
+        set("short", "鐵匠舖");
         set("long", @LONG
-����һ�Ҳ�С�Ĵ����̣�������˼�����¯��һλ�������ڻ�¯
-����ͷ�󺹵ش��춫����һλ�������ڱ��ϡ���¯�߷��Ų��ٴ����
-��������
+這是一家不小的打鐵舖，店裡擺了幾座火爐，一位鐵匠正在火爐
+旁滿頭大汗地打造東西。一位老者坐在邊上。火爐邊放著不少打好了
+的鐵器。
 LONG);
-///    �ſڹ���һ������(paizi)��
+///    門口掛著一塊牌子(paizi)。
         set("exits", ([ /* sizeof() == 2 */
             "west" : __DIR__"road11",
         ]));
         set("item_desc", ([
             "cannotsawpaizi" :
-"��Ҫ'����'������ŷұʦ����\n"
-"���������ı����Ͽ��´�ɫ���֣������ڱ�����\n"
-"ǰ�����$XXX$���ڱ�������ǵûָ�Ϊ$NOR$��\n"
-"$BLK$ - ��ɫ            $NOR$ - �ָ�������ɫ\n"
-"$RED$ - ��ɫ            $HIR$ - ����ɫ\n"
-"$GRN$ - ��ɫ            $HIG$ - ����ɫ\n"
-"$YEL$ - ����ɫ          $HIY$ - ��ɫ\n"
-"$BLU$ - ����ɫ          $HIB$ - ��ɫ\n"
-"$MAG$ - ǳ��ɫ          $HIM$ - �ۺ�ɫ\n"
-"$CYN$ - ����ɫ          $HIC$ - ����ɫ\n"
-"$WHT$ - ǳ��ɫ          $HIW$ - ��ɫ\n",
+"若要'鑄劍'，請找歐冶師傅。\n"
+"如果想在你的兵器上刻下帶色的字，可以在寶劍名\n"
+"前面加上$XXX$，在寶劍名後記得恢復為$NOR$。\n"
+"$BLK$ - 黑色            $NOR$ - 恢復正常顏色\n"
+"$RED$ - 紅色            $HIR$ - 亮紅色\n"
+"$GRN$ - 綠色            $HIG$ - 亮綠色\n"
+"$YEL$ - 土黃色          $HIY$ - 黃色\n"
+"$BLU$ - 深藍色          $HIB$ - 藍色\n"
+"$MAG$ - 淺紫色          $HIM$ - 粉紅色\n"
+"$CYN$ - 藍綠色          $HIC$ - 天青色\n"
+"$WHT$ - 淺灰色          $HIW$ - 白色\n",
         ]));
         set("objects", ([ /* sizeof() == 1 */
 //            __DIR__"npc/ouyezi" : 1,
@@ -43,7 +43,7 @@ int valid_leave(object me, string dir)
         if (dir == "west")
         if( query_temp("marks/ouyezi", me) )
         {
-           return notify_fail("�����������������λ�͹٣����˱������ߣ�\n");
+           return notify_fail("鐵匠對你道：哎，這位客官，拿了兵器再走！\n");
         }
         return 1;
 }

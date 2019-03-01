@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-        set("short", "�غ����");
+        set("short", "沿湖大道");
         set("long", @LONG
-һ�������Ĵ����ȴ����ϡ�١�ԭ��������·ס�ŵĶ��Ǵ�ٹ�
-�ˡ������羰����֮����ȴ�Ե�һƬ��ɪ��·��������һ��ׯ԰����
-�����ϱ����졣
+一條寬敞的大道上卻遊人稀少。原來這裡沿路住著的都是達官貴
+人。本來風景秀麗之處，卻顯的一片蕭瑟。路的西邊是一座莊園，大
+道向南北延伸。
 LONG);
         set("exits", ([
             "north"     : __DIR__"road5",

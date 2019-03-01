@@ -2,11 +2,11 @@ inherit ROOM;
 #include <ansi.h> 
 void create()
 {
-        set("short", "ÁúÌ¶");
+        set("short", "é¾æ½­");
         set("long",
-"[1;31mÕâÀï¾ÍÊÇÁúÌ¶£¬Ò»Ö»¾ŞÁúÅÌ¾áÔÚÕâÀï£¬¿´¼ûÓĞÈË½øÀ´£¬·¢³ö\n"
-"Ò»ÉùÕğÌì¾Şºğ£¬È»ºó±ã·¢ÆğÁË¹¥»÷¡£ÌıËµËüÊØ»¤×Å¾«ÁéÍõÁôÏÂÀ´µÄ±¦²Ø¡£\n"
-"ÓĞ¿ÕµÄ»°£¬ËÑË÷(search)Ò»ÏÂ»òĞí»áÓĞÊÕ»ñ¡£\n"
+"[1;31mé€™è£¡å°±æ˜¯é¾æ½­ï¼Œä¸€åªå·¨é¾ç›¤è¸åœ¨é€™è£¡ï¼Œçœ‹è¦‹æœ‰äººé€²ä¾†ï¼Œç™¼å‡º\n"
+"ä¸€è²éœ‡å¤©å·¨å¼ï¼Œç„¶å¾Œä¾¿ç™¼èµ·äº†æ”»æ“Šã€‚è½èªªå®ƒå®ˆè­·è‘—ç²¾éˆç‹ç•™ä¸‹ä¾†çš„å¯¶è—ã€‚\n"
+"æœ‰ç©ºçš„è©±ï¼Œæœç´¢(search)ä¸€ä¸‹æˆ–è¨±æœƒæœ‰æ”¶ç²ã€‚\n"
 );
         set("exits", ([ 
               // "south" : __DIR__"spirit6", 
@@ -26,7 +26,7 @@ void init()
   add_action ("do_quit","train");}
 
 int do_quit(string arg){
-        write(query("name", this_player())+"£¬ÁúÒ²ÊÇ¿ÉÒÔÑ±µÄÃ´£¿£¡\n");
+        write(query("name", this_player())+"ï¼Œé¾ä¹Ÿæ˜¯å¯ä»¥é¦´çš„éº¼ï¼Ÿï¼\n");
         return 1;
 } 
 int do_search (string arg)
@@ -37,31 +37,31 @@ int do_search (string arg)
 
  if (query("book_count") < 1) 
   {
-    message_vision ("$NËÄ´¦ËÑË÷ÁËÒ»·¬£¬Ê²Ã´Ò²Ã»ÓĞÕÒµ½¡£\n",who);  
-    message_vision ("Ò²ĞíÊÇ±»ÄÃ¹âÁË¡£\n",who);  
+    message_vision ("$Nå››è™•æœç´¢äº†ä¸€ç•ªï¼Œä»€éº¼ä¹Ÿæ²’æœ‰æ‰¾åˆ°ã€‚\n",who);  
+    message_vision ("ä¹Ÿè¨±æ˜¯è¢«æ‹¿å…‰äº†ã€‚\n",who);  
     return 1;
   }
         if (  present("night's diary", who) ) {
-                return notify_fail("Äã¶¼ÓĞÕâ±¾ÊéÁË£¬»¹ÒªÕÒÊ²Ã´¡£\n");
+                return notify_fail("ä½ éƒ½æœ‰é€™æœ¬æ›¸äº†ï¼Œé‚„è¦æ‰¾ä»€éº¼ã€‚\n");
           }
  if( query_temp("mark/diary", who) )
    {
-    message_vision ("$NËÄ´¦ËÑË÷ÁËÒ»·¬£¬Ê²Ã´Ò²Ã»ÓĞÕÒµ½¡£\n",who);  
-    message_vision ("¿´Ñù×ÓÊÇ²»ÄÜ¶àÄÃµÄ¡£\n",who);  
+    message_vision ("$Nå››è™•æœç´¢äº†ä¸€ç•ªï¼Œä»€éº¼ä¹Ÿæ²’æœ‰æ‰¾åˆ°ã€‚\n",who);  
+    message_vision ("çœ‹æ¨£å­æ˜¯ä¸èƒ½å¤šæ‹¿çš„ã€‚\n",who);  
     return 1;
   }
 
   if (random(10))
   {
-    message_vision ("$NËÄ´¦ËÑË÷ÁËÒ»·¬£¬Ê²Ã´Ò²Ã»ÓĞÕÒµ½¡£\n",who);  
+    message_vision ("$Nå››è™•æœç´¢äº†ä¸€ç•ªï¼Œä»€éº¼ä¹Ÿæ²’æœ‰æ‰¾åˆ°ã€‚\n",who);  
   }
   else
   {
     book = new ("/quest/tulong/obj/diary");
-    message_vision ("$N¾¹´Ó¿İÊ÷Ò¶¼äÕÒ³öÒ»±¾"+YEL"Ò¹³½ÈÕ¼Ç"NOR+"£¡\n",who,book);
+    message_vision ("$Nç«Ÿå¾æ¯æ¨¹è‘‰é–“æ‰¾å‡ºä¸€æœ¬"+YEL"å¤œè¾°æ—¥è¨˜"NOR+"ï¼\n",who,book);
      set_temp("mark/diary", 1, who);
     book->move(who);  
-message("channel:rumor",HIR"¡¾¾«ÁéÉñ½ç¡¿Ä³ÈË£º"+query("name", this_player())+"ÕÒµ½Ò¹³½ÈÕ¼ÇÀ²¡£\n"NOR,users());
+message("channel:rumor",HIR"ã€ç²¾éˆç¥ç•Œã€‘æŸäººï¼š"+query("name", this_player())+"æ‰¾åˆ°å¤œè¾°æ—¥è¨˜å•¦ã€‚\n"NOR,users());
    addn("book_count", -1);
   }
   return 1;

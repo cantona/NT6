@@ -6,9 +6,9 @@ int update_condition(object me, int duration)
   if (me->is_ghost()) return 1;
         if( query_temp("nopoison", me))return 0;
         if( duration < 1 ) return 0;
-        me->receive_wound("qi", 15+random(15),"òÚò¼¶¾·¢×÷");
-        me->receive_damage("jing", 15+random(15),"òÚò¼¶¾·¢×÷");
-        tell_object(me, HIG"Äã¾õµÃÉË¿Ú»ğÀ±À±µØÍ´£¬²»½ûÖåÁËÖåÃ¼Í·¡£ÄãÖĞµÄòÚò¼¶¾·¢×÷ÁË£¡\n" NOR );
+        me->receive_wound("qi", 15+random(15),"èœˆèš£æ¯’ç™¼ä½œ");
+        me->receive_damage("jing", 15+random(15),"èœˆèš£æ¯’ç™¼ä½œ");
+        tell_object(me, HIG"ä½ è¦ºå¾—å‚·å£ç«è¾£è¾£åœ°ç—›ï¼Œä¸ç¦çšºäº†çšºçœ‰é ­ã€‚ä½ ä¸­çš„èœˆèš£æ¯’ç™¼ä½œäº†ï¼\n" NOR );
         if( query("eff_jing", me)<0 || query("eff_qi", me)<0)return 0;
         me->apply_condition("wugong_poison", duration - 1);
         return 1;

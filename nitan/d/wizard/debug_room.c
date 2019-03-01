@@ -8,9 +8,9 @@ int is_chat_room() { return 1; }
 
 void create()
 {
-        set("short", HIM "ÊÔ½£Í¤" NOR);
+        set("short", HIM "è©¦åŠäº­" NOR);
         set("long", @LONG
-ÕâÀïÊÇÌìÉñÓÃÀ´µ÷ÊÔ³ÌĞòµÄµØ·½¡£
+é€™è£¡æ˜¯å¤©ç¥ç”¨ä¾†èª¿è©¦ç¨‹åºçš„åœ°æ–¹ã€‚
 LONG );
 
         set("exits", ([

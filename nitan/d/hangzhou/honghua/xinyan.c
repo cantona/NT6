@@ -1,4 +1,4 @@
-// xinyan.c ĞÄÑâ
+// xinyan.c å¿ƒç¡¯
 
 #include <ansi.h>
 
@@ -7,11 +7,11 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("ĞÄÑâ", ({ "xin yan", "yan" }));
-        set("title", HIR "ºì»¨»á"HIG"ÊéÙ×" NOR);
+        set_name("å¿ƒç¡¯", ({ "xin yan", "yan" }));
+        set("title", HIR "ç´…èŠ±æœƒ"HIG"æ›¸åƒ®" NOR);
         set("long", 
-"ËûÊÇºì»¨»á×Ü¶æÖ÷³Â¼ÒÂåµÄÌùÉíÊéÙ×¡£\n");
-        set("gender", "ÄĞĞÔ");
+"ä»–æ˜¯ç´…èŠ±æœƒç¸½èˆµä¸»é™³å®¶æ´›çš„è²¼èº«æ›¸åƒ®ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("class", "scholar");
         set("age", 15);
         set("attitude", "friendly");

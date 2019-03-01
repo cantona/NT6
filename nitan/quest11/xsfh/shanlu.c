@@ -1,14 +1,14 @@
 #include <ansi.h>
 inherit ROOM;
-#define QUESTDIR2 "quest/Ñ©É½·Éºü/¸´³ğÆª/"
+#define QUESTDIR2 "quest/é›ªå±±é£›ç‹/å¾©ä»‡ç¯‡/"
 
 void create()
 {
-        set("short","É½Â·");
+        set("short","å±±è·¯");
         set("long", @LONG
-Ò»Ìõ±»²¶ÉßÈËÌ¤³öµÄĞ¡µÀ£¬ÍäÍäÇúÇúµÄÏòÎ÷±±·½ÏòµÄÉ½ÓÄÉìÕ¹¡£µÀÅÔµÄÔÓ
-²İ(grass) ¸ß´ïÎå³ß£¬ÕÚ×¡ÁËÌì¹â¡£É½ÓÄÖĞµÄÒ»ÇĞ¶¼ÏÔµÄÒõÉ­ÓÄ°µ¡£¼¸ºõÊ¹Äã
-·Ö²»ÇåÇ°·½µÄµÀÂ·¡£
+ä¸€æ¢è¢«æ•è›‡äººè¸å‡ºçš„å°é“ï¼Œå½å½æ›²æ›²çš„å‘è¥¿åŒ—æ–¹å‘çš„å±±å¹½ä¼¸å±•ã€‚é“æ—çš„é›œ
+è‰(grass) é«˜é”äº”å°ºï¼Œé®ä½äº†å¤©å…‰ã€‚å±±å¹½ä¸­çš„ä¸€åˆ‡éƒ½é¡¯çš„é™°æ£®å¹½æš—ã€‚å¹¾ä¹ä½¿ä½ 
+åˆ†ä¸æ¸…å‰æ–¹çš„é“è·¯ã€‚
 LONG
         );
 
@@ -16,8 +16,8 @@ LONG
                 "southeast" : __DIR__"slu1",
         ]));
         set("item_desc", ([
-                "grass": "ÕâÀïÔÓ²İ(grass)ºÜÃÜ£¬µ«ÄãËÆºõ¿ÉÒÔ²¦¿ª(push)ËüÃÇ¡£\n",
-                "ÔÓ²İ": "ÕâÀïµÄÔÓ²İ(grass)ºÜÃÜ£¬µ«ÄãËÆºõ¿ÉÒÔ²¦¿ª(push)ËüÃÇ¡£\n"
+                "grass": "é€™è£¡é›œè‰(grass)å¾ˆå¯†ï¼Œä½†ä½ ä¼¼ä¹å¯ä»¥æ’¥é–‹(push)å®ƒå€‘ã€‚\n",
+                "é›œè‰": "é€™è£¡çš„é›œè‰(grass)å¾ˆå¯†ï¼Œä½†ä½ ä¼¼ä¹å¯ä»¥æ’¥é–‹(push)å®ƒå€‘ã€‚\n"
         ]));
         setup();
 }
@@ -28,9 +28,9 @@ void init()
 int do_push(string arg)
 {
 	  object me=this_player();
-        if( arg == "grass" || arg == "Ã©²İ" || arg == "²İ")
+        if( arg == "grass" || arg == "èŒ…è‰" || arg == "è‰")
         {
-        message_vision("$N²¦¿ªÂ·±ßµÄÔÓ²İ£¬·¢ÏÖÁËÒ»ÌõÏòÎ÷±±µÄÂ·¡£\n", this_player());
+        message_vision("$Næ’¥é–‹è·¯é‚Šçš„é›œè‰ï¼Œç™¼ç¾äº†ä¸€æ¢å‘è¥¿åŒ—çš„è·¯ã€‚\n", this_player());
         if(me->query(QUESTDIR2+"start")&& me->query_temp(QUESTDIR2+"zhenxiang") && !random(3))
         {
            set("exits/northwest", __DIR__"houshan_copy");
@@ -50,7 +50,7 @@ void close_path()
 {
         if( !query("exits/northwest") ) return;
         message("vision",
-"Ò»Õó·ç´µ¹ı£¬ÔÓ²İ»ÎÁË»Î£¬ÓÖÑÍÃ»ÁËÏòÎ÷±±µÄÂ·¡£\n",
+"ä¸€é™£é¢¨å¹éï¼Œé›œè‰æ™ƒäº†æ™ƒï¼Œåˆæ·¹æ²’äº†å‘è¥¿åŒ—çš„è·¯ã€‚\n",
                 this_object() );
                 delete("exits/northwest");
 }

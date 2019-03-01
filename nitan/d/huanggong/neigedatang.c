@@ -4,9 +4,9 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�ڸ����");
+        set("short", "內閣大堂");
         set("long", @LONG
-�ڸ��������伮��, ��Ҫ�ռ�����; ����, ʵ¼��ʥѵ����.
+內閣大堂內設典籍庫, 主要收集國朝; 檔案, 實錄和聖訓等書.
 LONG
         );
         set("exits", ([

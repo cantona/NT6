@@ -13,21 +13,21 @@ int main(object me, string arg)
         object ob, env;
 
 	if (! arg)
-                return notify_fail("Ö¸Áî¸ñÊ½£º lured <ÓÕ¶ü> \n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼š lured <èª˜é¤Œ> \n");
 
 	if (! objectp(ob = present(arg, me)))
-		return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+		return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™æ¨£æ±è¥¿ã€‚\n");
 
 	if( !query("lure", ob) )
-		return notify_fail("Õâ¶«Î÷ºÃÏó²»ÊÇÓÕ¶ü°É£¡\n");
+		return notify_fail("é€™æ±è¥¿å¥½è±¡ä¸æ˜¯èª˜é¤Œå§ï¼\n");
 
 	if (me->is_busy())
-		return notify_fail("µÈÄãÃ¦ÍêÁËÔÙËµ°É£¡\n");
+		return notify_fail("ç­‰ä½ å¿™å®Œäº†å†èªªå§ï¼\n");
 
 	if( query_temp("hunting", me) )
-		return notify_fail("±ğ×Å¼±£¬ÔÙµÈµÈ£¡\n");
+		return notify_fail("åˆ¥è‘—æ€¥ï¼Œå†ç­‰ç­‰ï¼\n");
 
-	message_vision(HIG "$N½«" + ob->name() + "·ÅÔÚµØÉÏ£¬¶ãÔÚÒ»ÅÔ¾²¾²ÊØºî×Å ¡­¡­\n" NOR, me);
+	message_vision(HIG "$Nå°‡" + ob->name() + "æ”¾åœ¨åœ°ä¸Šï¼Œèº²åœ¨ä¸€æ—éœéœå®ˆä¾¯è‘— â€¦â€¦\n" NOR, me);
 
 	me->start_busy(3 + random(5));
 set_temp("hunting", 1, 	me);
@@ -60,7 +60,7 @@ void do_hunt(object me, object env, object ob)
 
 delete_temp("hunting", 	me);
 
-        // »ñµÃ¼¸ÂÊÅĞ¶ÏÊÇ·ñ¶¯Îï³öÏÖ
+        // ç²å¾—å¹¾ç‡åˆ¤æ–·æ˜¯å¦å‹•ç‰©å‡ºç¾
 	point = quarry[temp[i]];
 	if( MEMBER_D->is_valid_member(query("id", me)) )
 		point += 3;
@@ -72,7 +72,7 @@ delete_temp("hunting", 	me);
 	{
 		if (base_name(environment(me)) == base_name(env))
 		{
-			write(HIY "µÈÁË°ëÌìÈ´²»¼ûÁÔÎï³öÏÖ£¬ÄãÖ»ºÃ°Ñ" + ob->name() + HIY "ÊÕÁËÆğÀ´¡£\n");
+			write(HIY "ç­‰äº†åŠå¤©å»ä¸è¦‹çµç‰©å‡ºç¾ï¼Œä½ åªå¥½æŠŠ" + ob->name() + HIY "æ”¶äº†èµ·ä¾†ã€‚\n");
 		}
 		else
 		{
@@ -84,30 +84,30 @@ delete_temp("hunting", 	me);
 	obq = new("/clone/quarry/" + temp[i]);
 	obq->move(env);
 set("owner",query("id",  me), 	obq);
-        set("name", HIR+me->name()+"("+query("id", me)+")ÁÔ³öµÄ"+obq->name()+NOR, obq);
+        set("name", HIR+me->name()+"("+query("id", me)+")çµå‡ºçš„"+obq->name()+NOR, obq);
   
 	if (environment(me) == env)
 	{
 		switch(random(4))
 		{
 			case 0:
-			message_vision(HIG "²»Ò»»á¶ù£¬Ò»Ö»" + obq->name() + HIG "´ÜÁË³öÀ´£¬½«" + 
-                                       ob->name() + HIG "Ò»¿ÚÒ§ÔÚ×ìÀï¡£\n" NOR, me);
+			message_vision(HIG "ä¸ä¸€æœƒå…’ï¼Œä¸€åª" + obq->name() + HIG "ç«„äº†å‡ºä¾†ï¼Œå°‡" + 
+                                       ob->name() + HIG "ä¸€å£å’¬åœ¨å˜´è£¡ã€‚\n" NOR, me);
 			break;
 
 			case 1:
-			message_vision(HIM "×ªÑÛ¼ä£¬Ò»Ö»" + obq->name() + HIG "Í»È»³öÏÖ£¬½«" + 
-                                       ob->name() + HIG "ÍÌ½ø×ìÀï¡£\n" NOR, me);
+			message_vision(HIM "è½‰çœ¼é–“ï¼Œä¸€åª" + obq->name() + HIG "çªç„¶å‡ºç¾ï¼Œå°‡" + 
+                                       ob->name() + HIG "åé€²å˜´è£¡ã€‚\n" NOR, me);
 			break;
 
 			case 2:
-			message_vision(HIW "Á¼¾Ã£¬Ò»Ö»" + obq->name() + HIG "´óÒ¡´ó°ÚµØ×ßÁË³öÀ´£¬×ĞÏ¸µØ´òÁ¿×Å" + 
-                                       ob->name() + HIG "¡£\n" NOR, me);
+			message_vision(HIW "è‰¯ä¹…ï¼Œä¸€åª" + obq->name() + HIG "å¤§æ–å¤§æ“ºåœ°èµ°äº†å‡ºä¾†ï¼Œä»”ç´°åœ°æ‰“é‡è‘—" + 
+                                       ob->name() + HIG "ã€‚\n" NOR, me);
 			break;
 
 			default:
-			message_vision(HIC "ÉÙÊ±£¬Ò»Ö»" + obq->name() + HIG "´ÜÁË¹ıÀ´£¬Ò»¿Ú½«" + 
-                                       ob->name() + HIG "µğÔÚÁË×ìÉÏ£¬ÏàÃ²Ì°À·Ö®¼«¡£\n" NOR, me);
+			message_vision(HIC "å°‘æ™‚ï¼Œä¸€åª" + obq->name() + HIG "ç«„äº†éä¾†ï¼Œä¸€å£å°‡" + 
+                                       ob->name() + HIG "å¼åœ¨äº†å˜´ä¸Šï¼Œç›¸è²Œè²ªå©ªä¹‹æ¥µã€‚\n" NOR, me);
 			break;
 		}
 	}
@@ -120,10 +120,10 @@ set("owner",query("id",  me), 	obq);
 int help(object me)
 {
 	write(@HELP
-Ö¸Áî¸ñÊ½ :
+æŒ‡ä»¤æ ¼å¼ :
 
-        lured <ÓÕ¶ü>£ºÔÚµ±Ç°µØµã·ÅÖÃÓÕ¶üµÈ´ıÁÔÎï³öÏÖ¡£
-                     ×¢£ºÒ»´ÎÖ»ÄÜ·ÅÒ»¸öÓÕ¶ü¡£
+        lured <èª˜é¤Œ>ï¼šåœ¨ç•¶å‰åœ°é»æ”¾ç½®èª˜é¤Œç­‰å¾…çµç‰©å‡ºç¾ã€‚
+                     æ³¨ï¼šä¸€æ¬¡åªèƒ½æ”¾ä¸€å€‹èª˜é¤Œã€‚
                      
 HELP
     );

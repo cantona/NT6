@@ -3,12 +3,12 @@ inherit F_MASTER;
 #include <ansi.h>
 void create()
 {
-        set_name("¹éÖÓ", ({ "gui zhong", "gui" }));
-        set("title", "¹éÐÄÊ÷Ö®×Ó");
+        set_name("æ­¸é˜", ({ "gui zhong", "gui" }));
+        set("title", "æ­¸å¿ƒæ¨¹ä¹‹å­");
         set("long", 
-"Ò»¸öðì²¡¹í£¬²»×¡µÄ¿ÈËÔ£¬ÉñÇéÈ´ÓÖÓÌÈçÐ¡º¢×ÓÒ»\n"
-"°ã£¬Ëû±ãÊÇ¹éÐÄÊ÷Ö®×Ó¡ª¹éÖÓ£¬´ÓÐ¡±ãÌåÈõ¶à²¡¡£\n");
-        set("gender", "ÄÐÐÔ");
+"ä¸€å€‹ç™†ç—…é¬¼ï¼Œä¸ä½çš„å’³å—½ï¼Œç¥žæƒ…å»åˆçŒ¶å¦‚å°å­©å­ä¸€\n"
+"èˆ¬ï¼Œä»–ä¾¿æ˜¯æ­¸å¿ƒæ¨¹ä¹‹å­â”€æ­¸é˜ï¼Œå¾žå°ä¾¿é«”å¼±å¤šç—…ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 34);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -48,12 +48,12 @@ void create()
         prepare_skill("cuff", "poyu-quan");
        set("chat_chance", 80);
        set("chat_msg", ({
-                "¹éÖÓÇáÇáµØ¿ÈËÔÁË¼¸Éù¡£\n",
-                "¹éÖÓ¿ÈËÔÁË¼¸Éù£¬Ò»ÕÅÁ³ÕÇµÃÍ¨ºì¡£\n",
+                "æ­¸é˜è¼•è¼•åœ°å’³å—½äº†å¹¾è²ã€‚\n",
+                "æ­¸é˜å’³å—½äº†å¹¾è²ï¼Œä¸€å¼µè‡‰æ¼²å¾—é€šç´…ã€‚\n",
         }) );       
 
 
-        create_family("»ªÉ½ÅÉ", 32, "µÜ×Ó");
+        create_family("è¯å±±æ´¾", 32, "å¼Ÿå­");
 
         set("chat_chance_combat", 60);
         set("chat_msg_combat", ({
@@ -73,7 +73,7 @@ void kill_ob (object ob)
   ::kill_ob(ob);
   if (guard && !guard->is_fighting())
    {
-        message_vision ("$N´óÅ­£º¸óÏÂÆÛÈËÌ«Éõ£¬±ð¹ÖÎÒÎÞÇé£¡\n",guard);
+        message_vision ("$Nå¤§æ€’ï¼šé–£ä¸‹æ¬ºäººå¤ªç”šï¼Œåˆ¥æ€ªæˆ‘ç„¡æƒ…ï¼\n",guard);
         guard->kill_ob(ob);
    }
 }

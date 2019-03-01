@@ -5,14 +5,14 @@ int exert(object me, object target)
         int n, q;
     
         if (me != target)
-                return notify_fail("ÄãÖ»ÄÜÓÃÄÚ¹¦»Ö¸´×Ô¼ºµÄ¾«Á¦¡£\n");
+                return notify_fail("ä½ åªèƒ½ç”¨å…§åŠŸæ¢å¾©è‡ªå·±çš„ç²¾åŠ›ã€‚\n");
         
         if( query("neili", me)<20 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ã€‚\n");
         
         q=query("max_jingli", me)-query("jingli", me);
         if (q < 10)
-                return notify_fail("ÄãÏÖÔÚ¾«Á¦³äÅæ¡£\n");
+                return notify_fail("ä½ ç¾åœ¨ç²¾åŠ›å……æ²›ã€‚\n");
     
         n = 100 * q / me->query_skill("force");
         n = 100 * n / me->query_con();
@@ -27,7 +27,7 @@ int exert(object me, object target)
         if( query("jingli", me)>query("max_jingli", me) )
         set("jingli",query("max_jingli",  me), me);
     
-        message_vision("$NÉîÉîÎüÁË¼¸¿ÚÆø£¬¸Ð¾õµ½ÓÖ³äÂúÁË»îÁ¦¡£\n", me);
+        message_vision("$Næ·±æ·±å¸äº†å¹¾å£æ°£ï¼Œæ„Ÿè¦ºåˆ°åˆå……æ»¿äº†æ´»åŠ›ã€‚\n", me);
         if (me->is_fighting()) me->start_busy(2);
         return 1;
 }

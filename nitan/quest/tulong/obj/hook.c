@@ -3,14 +3,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name("Ğ¡¹³×Ó", ({ "hook" , "gou zi"}) );
+        set_name("å°é‰¤å­", ({ "hook" , "gou zi"}) );
         set_weight(100);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
-                set("long", "Ò»¸öĞ¡Ğ¡µÄ¹³×Ó£¬¿´ÆğÀ´ºÜÏóÓÃÀ´µöÓãµÄ¹³×Ó£¬Ò²ĞíÄã¿ÉÒÔÓÃ
-ËüÀ´×öÒ»¸öµöÓã¸Ë¡£(make) \n");
+                set("unit", "å€‹");
+                set("long", "ä¸€å€‹å°å°çš„é‰¤å­ï¼Œçœ‹èµ·ä¾†å¾ˆè±¡ç”¨ä¾†é‡£é­šçš„é‰¤å­ï¼Œä¹Ÿè¨±ä½ å¯ä»¥ç”¨
+å®ƒä¾†åšä¸€å€‹é‡£é­šæ¡¿ã€‚(make) \n");
                 set("value", 10);
         }
 }
@@ -30,8 +30,8 @@ int do_make(string arg)
    inv = all_inventory(me);
    for(i=0; i<sizeof(inv); i++)
    {
-      if( query("name", inv[i]) == "Ï¸ÂéÏß"){xxan=1;xan=inv[i];}
-      if( query("name", inv[i]) == "ÌÒÖ¦"){taozhi1=1;taozhi=inv[i];}
+      if( query("name", inv[i]) == "ç´°éº»ç·š"){xxan=1;xan=inv[i];}
+      if( query("name", inv[i]) == "æ¡ƒæ"){taozhi1=1;taozhi=inv[i];}
    }
    if ( xxan && taozhi1)
    {
@@ -39,11 +39,11 @@ int do_make(string arg)
       destruct(taozhi);
       fpole = new(__DIR__"fpole");
       fpole->move(me);
-      message_vision("$NÓÃÁéÇÉµÄË«ÊÖÔì³ÉÁËÒ»¸ö±ğÖÂµÄĞ¡Óã¸Ë¡£\n", me);
+      message_vision("$Nç”¨éˆå·§çš„é›™æ‰‹é€ æˆäº†ä¸€å€‹åˆ¥è‡´çš„å°é­šæ¡¿ã€‚\n", me);
       destruct(this_object());
    }
    else
-      message_vision("$N°ÚÅª×ÅÊÖÀïµÄÏ¸ÂéÏß¡£\n", me);
+      message_vision("$Næ“ºå¼„è‘—æ‰‹è£¡çš„ç´°éº»ç·šã€‚\n", me);
    return 1;
 }
 

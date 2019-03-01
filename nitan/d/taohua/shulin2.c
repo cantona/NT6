@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����");
+        set("short", "樹林");
         set("long", @LONG
-����һƬ��ͨ���֣��뵺��һ�����ʧ��������ֲ���һ��������һ
-��С·��ᶫ�������������Խ��Խ�ߣ��ƺ�����ɽ�壻��������������
-ï�ܣ�������̫���ߡ�
+這是一片普通樹林，與島上一入就迷失方向的桃林不大一樣。林中一
+條小路橫貫東西。東北面地勢越來越高，似乎有座山峰；往東走樹林癒現
+茂密，看來不太好走。
 LONG );
          set("exits", ([
                 "west" : __DIR__"shulin",

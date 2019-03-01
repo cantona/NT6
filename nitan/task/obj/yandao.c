@@ -3,18 +3,18 @@
 inherit TASK;
 void create()
 {
-        set_name(MAG"ÑËµ¶"NOR, ({ "yan dao", "dao" }) );
+        set_name(MAG"é–¹åˆ€"NOR, ({ "yan dao", "dao" }) );
         set_weight(4000);
         if( clonep() )
             destruct(this_object());
         else {
-                set("unit", "±ú");
+                set("unit", "æŸ„");
                 set("jungle",1);
                 set("material", "iron");
-                set("long", "ÕâÊÇÒ»°Ñ×¨ÃÅÑË¸îÌ«¼àµÄÑËµ¶¡£\n");
-                set("wield_msg", "$N³é³öÒ»°ÑºÚÓÍÓÍµÄ$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unequip_msg", "$N½«ÊÖÖĞµÄ$n²åÈëÑü¼ä¡£\n");
+                set("long", "é€™æ˜¯ä¸€æŠŠå°ˆé–€é–¹å‰²å¤ªç›£çš„é–¹åˆ€ã€‚\n");
+                set("wield_msg", "$NæŠ½å‡ºä¸€æŠŠé»‘æ²¹æ²¹çš„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unequip_msg", "$Nå°‡æ‰‹ä¸­çš„$næ’å…¥è…°é–“ã€‚\n");
         }
-        set("owner", "º£¹«¹«");
+        set("owner", "æµ·å…¬å…¬");
         setup();
 } 

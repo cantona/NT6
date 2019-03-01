@@ -10,11 +10,11 @@ string look_tiaofu();
 
 void create()
 {
-        set("short", "ÀŞÌ¨");
+        set("short", "æ“‚å°");
         set("long", @LONG
-ÕâÊÇÒ»¸öËÄÕÉ¼û·½µÄÀŞÌ¨¡£´Ö×³½áÊµµÄÄ¾Öù³ÅÆğÒ»Æ¬Æ½Ì¨£¬ËÄ½Ç
-µÄÖ§ÖùÉÏ¸ß¹Ò×ÅËÄ¸±¶ÔÁª£¬ËÄÃæµÄ¹ÛÖÚ¶¼ÄÜÇå³şµØ¿´µ½Ì¨ÉÏµÄÊÖÆğ½Å
-Âä¡£ÁºÉÏÌù×ÅÒ»³¤Ìõ·ù(tiaofu)£¬ÉÏÃæĞ´ÁËÒ»Ğ©¶«Î÷¡£
+é€™æ˜¯ä¸€å€‹å››ä¸ˆè¦‹æ–¹çš„æ“‚å°ã€‚ç²—å£¯çµå¯¦çš„æœ¨æŸ±æ’èµ·ä¸€ç‰‡å¹³å°ï¼Œå››è§’
+çš„æ”¯æŸ±ä¸Šé«˜æ›è‘—å››å‰¯å°è¯ï¼Œå››é¢çš„è§€çœ¾éƒ½èƒ½æ¸…æ¥šåœ°çœ‹åˆ°å°ä¸Šçš„æ‰‹èµ·è…³
+è½ã€‚æ¨‘ä¸Šè²¼è‘—ä¸€é•·æ¢å¹…(tiaofu)ï¼Œä¸Šé¢å¯«äº†ä¸€äº›æ±è¥¿ã€‚
 LONG );
         set("outdoors", "city");
         set("item_desc", ([
@@ -47,17 +47,17 @@ string look_tiaofu()
 
         ob = query("close_by");
         if (! objectp(ob))
-                return "±¾ÀŞÌ¨ÏÖÔÚ×ÔÓÉ¿ª·Å£¬ÈçÓĞĞËÈ¤×ÔĞĞ±È"
-                       "Îä£¬Ê§ÊÖÉËÈËÖÂÃü£¬¸Å²»¸ºÔğ¡£\n\n"
-                       "×¢£ºÎ×Ê¦ÇëÓÃ" HIY "lopen" NOR "/"
-                       HIY "lclose" NOR "ÃüÁî¿ª·Å¹Ø±ÕÀŞÌ¨¡£\n";
+                return "æœ¬æ“‚å°ç¾åœ¨è‡ªç”±é–‹æ”¾ï¼Œå¦‚æœ‰èˆˆè¶£è‡ªè¡Œæ¯”"
+                       "æ­¦ï¼Œå¤±æ‰‹å‚·äººè‡´å‘½ï¼Œæ¦‚ä¸è² è²¬ã€‚\n\n"
+                       "æ³¨ï¼šå·«å¸«è«‹ç”¨" HIY "lopen" NOR "/"
+                       HIY "lclose" NOR "å‘½ä»¤é–‹æ”¾é—œé–‰æ“‚å°ã€‚\n";
 
-        return "±¾ÀŞÌ¨ÏÖÔÚ±»" + ob->name(1) + "ÔİÊ±¹Ø±Õ£¬"
-               "×éÖ¯±ÈÎä£¬ÏĞÔÓÈËµÈÎğÒªĞú»©¡£\n"
-               "Î×Ê¦ÇëÓÃ" HIY "invite" NOR "ÃüÁîÑûÇëËûÈËÉÏÌ¨£¬"
-               "»òÔÚÌ¨ÏÂÊ¹ÓÃ" HIY "pass" NOR "ÃüÁî\n"
-               "Ö¸¶¨Ä³ÈËÉÏÌ¨±ÈÎä£¬ÓÃ" HIY "kickout" NOR
-               "ÌßÄ³ÈËÏÂÌ¨¡£\n";
+        return "æœ¬æ“‚å°ç¾åœ¨è¢«" + ob->name(1) + "æš«æ™‚é—œé–‰ï¼Œ"
+               "çµ„ç¹”æ¯”æ­¦ï¼Œé–’é›œäººç­‰å‹¿è¦å–§å˜©ã€‚\n"
+               "å·«å¸«è«‹ç”¨" HIY "invite" NOR "å‘½ä»¤é‚€è«‹ä»–äººä¸Šå°ï¼Œ"
+               "æˆ–åœ¨å°ä¸‹ä½¿ç”¨" HIY "pass" NOR "å‘½ä»¤\n"
+               "æŒ‡å®šæŸäººä¸Šå°æ¯”æ­¦ï¼Œç”¨" HIY "kickout" NOR
+               "è¸¢æŸäººä¸‹å°ã€‚\n";
 }
 
 int refuse(object ob)
@@ -75,19 +75,19 @@ int do_lclose(string arg)
 
         me = this_player();
         if (wiz_level(me) < 3)
-                return notify_fail("ÄãÃ»ÓĞ×Ê¸ñ¹Ø±ÕÀŞÌ¨¡£\n");
+                return notify_fail("ä½ æ²’æœ‰è³‡æ ¼é—œé–‰æ“‚å°ã€‚\n");
 
         if (arg != "here")
-                return notify_fail("Èç¹ûÄãÒª¹Ø±ÕÀŞÌ¨£¬ÇëÊäÈë(lclose here)¡£\n");
+                return notify_fail("å¦‚æœä½ è¦é—œé–‰æ“‚å°ï¼Œè«‹è¼¸å…¥(lclose here)ã€‚\n");
 
         if (objectp(query("close_by")))
-                return notify_fail("Õâ¸öÀŞÌ¨ÒÑ¾­±»" +
+                return notify_fail("é€™å€‹æ“‚å°å·²ç¶“è¢«" +
                                    query("close_by")->name(1) +
-                                   "¹Ø±ÕÓÃÓÚ±ÈÎäÁË¡£\n");
+                                   "é—œé–‰ç”¨äºæ¯”æ­¦äº†ã€‚\n");
 
         set("close_by", me);
-        message("vision", HIW "¡¾ÎäÁÖÊ¢»á¡¿" + me->name(1) +
-                "¹Ø±ÕÁËÀŞÌ¨£¬¿ªÊ¼¾ÙĞĞ±ÈÎäÊ¢»á¡£\n" NOR,
+        message("vision", HIW "ã€æ­¦æ—ç››æœƒã€‘" + me->name(1) +
+                "é—œé–‰äº†æ“‚å°ï¼Œé–‹å§‹èˆ‰è¡Œæ¯”æ­¦ç››æœƒã€‚\n" NOR,
                 all_interactive());
 
         foreach (ob in all_inventory(this_object())) 
@@ -96,7 +96,7 @@ int do_lclose(string arg)
                 {
                         ob->move("/d/city/wudao1");
                         if (living(ob))
-                                tell_object(ob,"¹«Æ½×Ó¶ÔÄãËµ£ºÀŞÌ¨¸ø¹Ø±ÕÁË£¬ÄúÏÈÇëÏÂÌ¨µÈ´ı°É£¡\n");
+                                tell_object(ob,"å…¬å¹³å­å°ä½ èªªï¼šæ“‚å°çµ¦é—œé–‰äº†ï¼Œæ‚¨å…ˆè«‹ä¸‹å°ç­‰å¾…å§ï¼\n");
                 }
         }
 
@@ -110,20 +110,20 @@ int do_lopen(string arg)
 
         me = this_player();
         if (wiz_level(me) < 3)
-                return notify_fail("ÄãÃ»ÓĞ×Ê¸ñ´ò¿ªÀŞÌ¨¡£\n");
+                return notify_fail("ä½ æ²’æœ‰è³‡æ ¼æ‰“é–‹æ“‚å°ã€‚\n");
 
         if (! objectp(query("close_by")))
-                return notify_fail("Õâ¸öÀŞÌ¨Ä¿Ç°²¢Ã»ÓĞ±»¹Ø±Õ¡£\n");
+                return notify_fail("é€™å€‹æ“‚å°ç›®å‰ä¸¦æ²’æœ‰è¢«é—œé–‰ã€‚\n");
 
         if (query("close_by")->name(1) != me->name())
-                return notify_fail("Ö»ÄÜÓÉÖ÷³Ö±ÈÎä´ó»áµÄÎ×Ê¦²ÅÄÜ´ò¿ªÀŞÌ¨¡£\n");
+                return notify_fail("åªèƒ½ç”±ä¸»æŒæ¯”æ­¦å¤§æœƒçš„å·«å¸«æ‰èƒ½æ‰“é–‹æ“‚å°ã€‚\n");
 
         if (arg != "here")
-                return notify_fail("Èç¹ûÄãÒª´ò¿ªÀŞÌ¨£¬ÇëÊäÈë(lopen here)¡£\n");
+                return notify_fail("å¦‚æœä½ è¦æ‰“é–‹æ“‚å°ï¼Œè«‹è¼¸å…¥(lopen here)ã€‚\n");
 
         delete("close_by");
-        message("vision", HIW "¡¾ÎäÁÖÊ¢»á¡¿" + me->name(1) +
-                "½áÊøÁË±ÈÎä£¬ÖØĞÂ¿ª·ÅÁËÀŞÌ¨¡£\n" NOR, all_interactive());
+        message("vision", HIW "ã€æ­¦æ—ç››æœƒã€‘" + me->name(1) +
+                "çµæŸäº†æ¯”æ­¦ï¼Œé‡æ–°é–‹æ”¾äº†æ“‚å°ã€‚\n" NOR, all_interactive());
 
         delete("biwu_room");
         return 1;
@@ -149,52 +149,52 @@ int do_invite(string arg)
 
         me = this_player();
         if (! wizardp(me))
-                return notify_fail("Äã²»ÊÇÎ×Ê¦£¬Ã»ÓĞ×Ê¸ñÑûÇëÈË¼ÒÉÏÀ´¡£\n");
+                return notify_fail("ä½ ä¸æ˜¯å·«å¸«ï¼Œæ²’æœ‰è³‡æ ¼é‚€è«‹äººå®¶ä¸Šä¾†ã€‚\n");
 
         if (! query("close_by"))
-                return notify_fail("ÏÖÔÚÀŞÌ¨²¢Ã»ÓĞ¹Ø±Õ£¬ÎŞĞèÌØµØÑûÇë±ğÈË¡£\n");
+                return notify_fail("ç¾åœ¨æ“‚å°ä¸¦æ²’æœ‰é—œé–‰ï¼Œç„¡éœ€ç‰¹åœ°é‚€è«‹åˆ¥äººã€‚\n");
 
         if (query("close_by")->name(1) != me->name())
-                return notify_fail("Ö»ÄÜÓÉÖ÷³Ö±ÈÎä´ó»áµÄÎ×Ê¦²ÅÄÜÑûÇëÑ¡ÊÖÉÏÌ¨¡£\n");
+                return notify_fail("åªèƒ½ç”±ä¸»æŒæ¯”æ­¦å¤§æœƒçš„å·«å¸«æ‰èƒ½é‚€è«‹é¸æ‰‹ä¸Šå°ã€‚\n");
 
         if (! arg ||
             ! objectp(ob = find_player(arg)))
-                return notify_fail("ÄãÏëÈÃË­ÉÏÀ´£¿\n");
+                return notify_fail("ä½ æƒ³è®“èª°ä¸Šä¾†ï¼Ÿ\n");
 
         if (environment(ob) == this_object())
-                return notify_fail("àÅ£¿ÏÖÔÚ²»ÊÇÒÑ¾­ÔÚÕâÀïÁËÃ´£¿\n");
+                return notify_fail("å—¯ï¼Ÿç¾åœ¨ä¸æ˜¯å·²ç¶“åœ¨é€™è£¡äº†éº¼ï¼Ÿ\n");
 
         if (wizardp(ob))
-                return notify_fail("ÈË¼Ò×Ô¼ºÏëÉÏÀ´×Ô¼º»áÉÏÀ´£¬²»ÀÍÄã·ÑĞÄ¡£\n");
+                return notify_fail("äººå®¶è‡ªå·±æƒ³ä¸Šä¾†è‡ªå·±æœƒä¸Šä¾†ï¼Œä¸å‹ä½ è²»å¿ƒã€‚\n");
 
         if (! living(ob))
-                return notify_fail("ºÃ´õÄãµÃÅªĞÑÈË¼Ò°É£¿\n");
+                return notify_fail("å¥½æ­¹ä½ å¾—å¼„é†’äººå®¶å§ï¼Ÿ\n");
 
         if (mapp(ob->query_condition()))
-                return notify_fail("¶Ô²»Æğ£¬¶Ô·½µÄÉíÌå×´¿ö²»ºÃ£¬²»ÄÜÉÏÌ¨£¡\n");
+                return notify_fail("å°ä¸èµ·ï¼Œå°æ–¹çš„èº«é«”ç‹€æ³ä¸å¥½ï¼Œä¸èƒ½ä¸Šå°ï¼\n");
 
         if( query("eff_qi", ob)<query("max_qi", ob) )
-               return notify_fail("¶Ô²»Æğ£¬¶Ô·½µÄÆøÑªÊÜÉËÁË£¬²»ÄÜÉÏÌ¨£¡\n");
+               return notify_fail("å°ä¸èµ·ï¼Œå°æ–¹çš„æ°£è¡€å—å‚·äº†ï¼Œä¸èƒ½ä¸Šå°ï¼\n");
 
         if( query("eff_jing", ob)<query("max_jing", ob) )
-               return notify_fail("¶Ô²»Æğ£¬¶Ô·½µÄ¾«ÆøÊÜÉËÁË£¬²»ÄÜÉÏÌ¨£¡\n");
+               return notify_fail("å°ä¸èµ·ï¼Œå°æ–¹çš„ç²¾æ°£å—å‚·äº†ï¼Œä¸èƒ½ä¸Šå°ï¼\n");
 
         inv = deep_inventory(ob);
         for (i = 0; i < sizeof(inv); i++)
         {
                 if (! userp(inv[i])) continue;
-                return notify_fail("¶Ô·½ÉíÉÏ±³×Å¸ö´ó»îÈËÄØ£¬²»ÄÜÉÏÌ¨£¡\n");
+                return notify_fail("å°æ–¹èº«ä¸ŠèƒŒè‘—å€‹å¤§æ´»äººå‘¢ï¼Œä¸èƒ½ä¸Šå°ï¼\n");
         }
 
-        message("vision", HIW + me->name() + "Ò»Éù³¤Ğ¥£º" + ob->name() +
-                          "£¬Äã»¹²»¿ì¿ìÉÏÀ´£¿\n" NOR, all_interactive());
-        message_vision("Ö»¼û$N¼±¼±Ã¦Ã¦µÄ×ßÁË¿ªÈ¥¡£\n", ob);
-        message("vision", "Ö»¼ûÒ»ÉùºôÉÚ£¬" + ob->name() + "Ó¦ÉùÔ¾ÉÏÌ¨À´£¬½Ã½¡Ö®¼«¡£\n",
+        message("vision", HIW + me->name() + "ä¸€è²é•·å˜¯ï¼š" + ob->name() +
+                          "ï¼Œä½ é‚„ä¸å¿«å¿«ä¸Šä¾†ï¼Ÿ\n" NOR, all_interactive());
+        message_vision("åªè¦‹$Næ€¥æ€¥å¿™å¿™çš„èµ°äº†é–‹å»ã€‚\n", ob);
+        message("vision", "åªè¦‹ä¸€è²å‘¼å“¨ï¼Œ" + ob->name() + "æ‡‰è²èºä¸Šå°ä¾†ï¼ŒçŸ¯å¥ä¹‹æ¥µã€‚\n",
                 this_object());
 
         ob->move(this_object());
-        tell_object(ob, HIY "ÄãÒ»ÕóÄ¿Ñ££¬¶¨ÉñÒ»¿´£¬Õâ²Å·¢ÏÖ×Ô¼ºÒÑ¾­µ½ÁË" +
-                    environment(ob)->short() + HIY "¡£\n");
+        tell_object(ob, HIY "ä½ ä¸€é™£ç›®çœ©ï¼Œå®šç¥ä¸€çœ‹ï¼Œé€™æ‰ç™¼ç¾è‡ªå·±å·²ç¶“åˆ°äº†" +
+                    environment(ob)->short() + HIY "ã€‚\n");
         return 1;
 }
 
@@ -209,40 +209,40 @@ int do_jiangli(string arg)
         int place, gift;
 
         if (wiz_level(me) < 3)
-                return notify_fail("ÄãÃ»ÓĞ×Ê¸ñ¸ø±ğÈË½±Àø¡£\n");
+                return notify_fail("ä½ æ²’æœ‰è³‡æ ¼çµ¦åˆ¥äººçå‹µã€‚\n");
 
         if (! objectp(query("close_by")))
-                return notify_fail("ÏÖÔÚÀŞÌ¨²¢Ã»ÓĞÓÃÓÚÕÙ¿ª±ÈÎä´ó»á£¬Äã" +
-                                   "²»ÄÜ¸ø±ğÈË½±Àø¡£\n");
+                return notify_fail("ç¾åœ¨æ“‚å°ä¸¦æ²’æœ‰ç”¨äºå¬é–‹æ¯”æ­¦å¤§æœƒï¼Œä½ " +
+                                   "ä¸èƒ½çµ¦åˆ¥äººçå‹µã€‚\n");
 
         if (query("close_by")->name(1) != me->name())
-                return notify_fail("Äã²¢²»ÊÇÖ÷³Ö±ÈÎä´ó»áµÄÎ×Ê¦£¬" +
-                                   "²»ÄÜ¸ø±ğÈË½±Àø¡£\n");
+                return notify_fail("ä½ ä¸¦ä¸æ˜¯ä¸»æŒæ¯”æ­¦å¤§æœƒçš„å·«å¸«ï¼Œ" +
+                                   "ä¸èƒ½çµ¦åˆ¥äººçå‹µã€‚\n");
 
         if (! arg || sscanf(arg, "%s %d %d", player, place, gift) != 3)
         {
-                msg = "Ö¸Áî¸ñÊ½£ºjiangli <ID> <Ãû´Î> <½±Æ·>¡£\n\n";
+                msg = "æŒ‡ä»¤æ ¼å¼ï¼šjiangli <ID> <åæ¬¡> <çå“>ã€‚\n\n";
                 msg += "Example: jiangli haiyan 2 5\n\n";
-                msg += "½±Æ·´úºÅÈçÏÂ£º\n";
-                msg += "0 - Ğş»Æ×ÏÇåµ¤\n";
-                msg += "1 - ¾Å×ª½ğµ¤\n";
-                msg += "2 - ÌìÏãÓñÂ¶\n";
-                msg += "3 - ÆĞÌá×Ó\n";
-                msg += "4 - ÏÉµ¤\n";
-                msg += "5 - Ï´Ëèµ¤\n";
-                msg += "6 - ÉñÁ¦Íè\n";
-                msg += "7 - »ğºìÏÉµ¤\n";
-                msg += "8 - ²¹ÌìÊ¯\n";
-                msg += "9 - ±ù²ÏË¿\n\n";
+                msg += "çå“ä»£è™Ÿå¦‚ä¸‹ï¼š\n";
+                msg += "0 - ç„é»ƒç´«æ¸…ä¸¹\n";
+                msg += "1 - ä¹è½‰é‡‘ä¸¹\n";
+                msg += "2 - å¤©é¦™ç‰éœ²\n";
+                msg += "3 - è©æå­\n";
+                msg += "4 - ä»™ä¸¹\n";
+                msg += "5 - æ´—é«“ä¸¹\n";
+                msg += "6 - ç¥åŠ›ä¸¸\n";
+                msg += "7 - ç«ç´…ä»™ä¸¹\n";
+                msg += "8 - è£œå¤©çŸ³\n";
+                msg += "9 - å†°è ¶çµ²\n\n";
                 me->start_more(msg);
                 return 1;
         }
 
         if ( place < 1 || place > 5)
-                return notify_fail("ÄãÖ»ÄÜ½±ÀøÇ°ÎåÃû¡£\n");
+                return notify_fail("ä½ åªèƒ½çå‹µå‰äº”åã€‚\n");
 
         if (! objectp(ob = present(player, this_object())))
-                return notify_fail("ÄãÒª½±ÀøË­£¿\n");
+                return notify_fail("ä½ è¦çå‹µèª°ï¼Ÿ\n");
 
         if( !query("winner", me))winner=([]);
         else
@@ -252,11 +252,11 @@ int do_jiangli(string arg)
                 par = values(winner);
 
                 if (member_array(place, mc) != -1)
-                       return notify_fail("µÚ" + chinese_number(place) +
-                                          "ÃûÒÑ¾­²úÉúÁË¡£\n");
+                       return notify_fail("ç¬¬" + chinese_number(place) +
+                                          "åå·²ç¶“ç”¢ç”Ÿäº†ã€‚\n");
 
                 if (member_array(player, par) != -1)
-                       return notify_fail(player + "ÒÑ¾­È¡µÃÃû´ÎÁË¡£\n");
+                       return notify_fail(player + "å·²ç¶“å–å¾—åæ¬¡äº†ã€‚\n");
         }
 
         switch(gift)
@@ -293,12 +293,12 @@ int do_jiangli(string arg)
                 break;
         }
 
-        message("vision",HIW"¡¾ÎäÁÖÊ¢»á¡¿¹§Ï²"+query("name", ob)+"("+
-                query("id", ob)+")»ñµÃ±¾½ì±ÈÎä´ó»áµÚ"+
-                chinese_number(place) + "Ãû¡£\n" NOR,
+        message("vision",HIW"ã€æ­¦æ—ç››æœƒã€‘æ­å–œ"+query("name", ob)+"("+
+                query("id", ob)+")ç²å¾—æœ¬å±†æ¯”æ­¦å¤§æœƒç¬¬"+
+                chinese_number(place) + "åã€‚\n" NOR,
                 all_interactive());
-        message_vision("$NÔÚ»³ÀïÌÍÁË°ëÌì£¬Ãş³öÒ»"+query("unit", obv)+
-                       obv->name() + "½»¸øÁË$n£¡\n", me, ob);
+        message_vision("$Nåœ¨æ‡·è£¡æäº†åŠå¤©ï¼Œæ‘¸å‡ºä¸€"+query("unit", obv)+
+                       obv->name() + "äº¤çµ¦äº†$nï¼\n", me, ob);
 
         winner+=([place:query("id", ob)]);
         set("winner", winner, me);

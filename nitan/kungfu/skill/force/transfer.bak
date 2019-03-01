@@ -1,4 +1,4 @@
-// transfer.c ×ªÄÚÁ¦
+// transfer.c è½‰å…§åŠ›
 // Modified by Venus Oct.1997
 #include <ansi.h>
 
@@ -7,36 +7,36 @@ int exert(object me, object target)
     int force, trans;
 
         if( !query("breakup", me) )
-                return notify_fail("Äã»¹Ã»ÓĞÁìÎò´«ËÍÕæÆøµÄ¾÷ÇÏ¡£\n"); 
+                return notify_fail("ä½ é‚„æ²’æœ‰é ˜æ‚Ÿå‚³é€çœŸæ°£çš„è¨£ç«…ã€‚\n"); 
 
     if( query_ip_name(target)==query_ip_name(me))
-       return notify_fail("ÄãÒª½«ÕæÆø´«¸øË­£¿\n");
+       return notify_fail("ä½ è¦å°‡çœŸæ°£å‚³çµ¦èª°ï¼Ÿ\n");
 
     if( !target || target==me || !living(target) )
-       return notify_fail("ÄãÒª½«ÕæÆø´«¸øÄÄÎ»£¿\n");
+       return notify_fail("ä½ è¦å°‡çœŸæ°£å‚³çµ¦å“ªä½ï¼Ÿ\n");
 
     if( me->query_skill_mapped("force") != target->query_skill_mapped("force") )
-       return notify_fail(target->name()+"ËùÊ¹ÓÃµÄÄÚ¹¦ºÍÄã²»Í¬£¬²»ÄÜ´«ÄÚÁ¦¡£\n");
+       return notify_fail(target->name()+"æ‰€ä½¿ç”¨çš„å…§åŠŸå’Œä½ ä¸åŒï¼Œä¸èƒ½å‚³å…§åŠ›ã€‚\n");
 
     if( query("neili", me) <= query("max_neili", me)/3 )
-       return notify_fail("ÄãµÄÕæÆø²»×ã¡£\n");
+       return notify_fail("ä½ çš„çœŸæ°£ä¸è¶³ã€‚\n");
 
     if( query("max_neili", me) <= query("max_neili", target) )
-       return notify_fail("ÄãµÄÕæÆø»¹²»ÈçÈË¼Ò¶à£¬´«²»¹ıÈ¥¡£\n");
+       return notify_fail("ä½ çš„çœŸæ°£é‚„ä¸å¦‚äººå®¶å¤šï¼Œå‚³ä¸éå»ã€‚\n");
 
     if( query("neili", target) >= query("max_neili", target)*4 )
-       return notify_fail("¶Ô·½µÄÕæÆø³äÅæ£¬²»ĞèÒªÄãµÄÕæÆø¡£\n");
+       return notify_fail("å°æ–¹çš„çœŸæ°£å……æ²›ï¼Œä¸éœ€è¦ä½ çš„çœŸæ°£ã€‚\n");
 
     force=query("neili", me)-(query("max_neili", me)/3);
 
-    if( force/2 < 1 ) return notify_fail("ÄãµÄÕæÆø²»×ã¡£\n");
+    if( force/2 < 1 ) return notify_fail("ä½ çš„çœŸæ°£ä¸è¶³ã€‚\n");
     addn("neili", -force/3, me);
     if( query("max_neili", me) <= query("max_neili", target)*5/4 )
        addn("max_neili", -1, me);
 
-    message_combatd(HIW"$NÒ»ÕÆÅÄÔÚ$n±³ĞÄ£¬Ë³ÊÆÔËÆø½«ÌåÄÚÕæÆø´«ËÍ¹ıÈ¥¡£\n"NOR, me,target);
+    message_combatd(HIW"$Nä¸€æŒæ‹åœ¨$nèƒŒå¿ƒï¼Œé †å‹¢é‹æ°£å°‡é«”å…§çœŸæ°£å‚³é€éå»ã€‚\n"NOR, me,target);
     addn("neili", force/2, target);
-    write("Ok¡£\n");
-    tell_object(target, HIW "Äã¾õµÃÒ»¹ÉÈÈÆø´Ó"+me->name()+"µÄÊÖÕÆÖĞ´«ÁË¹ıÀ´¡£\n" NOR);
+    write("Okã€‚\n");
+    tell_object(target, HIW "ä½ è¦ºå¾—ä¸€è‚¡ç†±æ°£å¾"+me->name()+"çš„æ‰‹æŒä¸­å‚³äº†éä¾†ã€‚\n" NOR);
     return 1;
 }

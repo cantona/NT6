@@ -1,4 +1,4 @@
-// jinyantu.c ½ğÑãÍ¼Æ×
+// jinyantu.c é‡‘é›åœ–è­œ
 // By Lgg,1998.9
 
 #include <ansi.h>
@@ -7,20 +7,20 @@ inherit F_UNIQUE;
 
 void create()
 {
-        set_name(HIC"½ğÑãÍ¼Æ×" NOR, ({ "jinyan tu","tu", }));
+        set_name(HIC"é‡‘é›åœ–è­œ" NOR, ({ "jinyan tu","tu", }));
         set_weight(800);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
+                set("unit", "æœ¬");
                 set("long",
-                "ÕâÊÇ±¾ºÜÆÕÍ¨µÄÊé£¬ÊéÀïÃæºÃÏóÓĞÒ»Ğ©Ğ¡ÈË·ÉÎèµÄÍ¼ĞÎ¡£\n",
+                "é€™æ˜¯æœ¬å¾ˆæ™®é€šçš„æ›¸ï¼Œæ›¸è£¡é¢å¥½è±¡æœ‰ä¸€äº›å°äººé£›èˆçš„åœ–å½¢ã€‚\n",
                 );
                 set("value", 0);
                 set("material", "paper");
                 set("skill", ([
                         "name":       "jinyan-gong",
-            			"family_name" : "È«ÕæÅÉ",
+            			"family_name" : "å…¨çœŸæ´¾",
                         "exp_required" : 10000,
                         "jing_cost":  25,
                         "difficulty": 18,

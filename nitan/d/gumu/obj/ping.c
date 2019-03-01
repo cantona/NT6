@@ -9,17 +9,17 @@ void init()
 
 void create()
 {
-        set_name("·ä½¬Æ¿", ({ "fengjiang ping", "ping" }) );
+        set_name("èœ‚æ¼¿ç“¶", ({ "fengjiang ping", "ping" }) );
         set_weight(4500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-        set("unit", "¸ö");
+        set("unit", "å€‹");
         set("value", 0);
         set("jian",5) ;
-        set("material", "Óñ");
-        set("long", "ÕâÊÇÒ»¸öÓÃÉÏ¹ÅÃÀÓñµñ³ÉµÄĞ¡Æ¿£¬»¹Î´°Î¿ªÆ¿Èû£¬¾Í¿ÉÒÔÎÅµ½\n"
-                    "Ò»¹ÉÅ¨ÓôµÄÏãÎ¶£¬¿ÉÒÔÓÃÀ´Çı·ä¡£\n") ;
+        set("material", "ç‰");
+        set("long", "é€™æ˜¯ä¸€å€‹ç”¨ä¸Šå¤ç¾ç‰é›•æˆçš„å°ç“¶ï¼Œé‚„æœªæ‹”é–‹ç“¶å¡ï¼Œå°±å¯ä»¥èåˆ°\n"
+                    "ä¸€è‚¡æ¿ƒé¬±çš„é¦™å‘³ï¼Œå¯ä»¥ç”¨ä¾†é©…èœ‚ã€‚\n") ;
         }
         setup();
 }
@@ -33,28 +33,28 @@ int do_qufeng(string arg)
 
         me = this_player();
         if( query("no_fight", environment(me)) )
-                return notify_fail("ÕâÀï½ûÖ¹Õ½¶·¡£\n");
+                return notify_fail("é€™è£¡ç¦æ­¢æˆ°é¬¥ã€‚\n");
 
         if (! arg)
-                return notify_fail("ÄãÏëÇı·ä¹¥»÷Ë­£¿\n");
+                return notify_fail("ä½ æƒ³é©…èœ‚æ”»æ“Šèª°ï¼Ÿ\n");
 
         if( query("jian", this_object())<1 )
-                return notify_fail("Ğ¡Æ¿ÀïµÄÓñ·äÃÛÒÑ¾­¸øÓÃ¹âÁË¡£\n");
+                return notify_fail("å°ç“¶è£¡çš„ç‰èœ‚èœœå·²ç¶“çµ¦ç”¨å…‰äº†ã€‚\n");
 
         if (! objectp(obj = present(arg, environment(me))))
-                return notify_fail("ÕâÀïÃ»ÓĞÕâ¸öÈË¡£\n");
+                return notify_fail("é€™è£¡æ²’æœ‰é€™å€‹äººã€‚\n");
 
         if (! obj->is_character() || obj->is_corpse())
-                return notify_fail("¿´Çå³şÒ»µã£¬ÄÇ²¢²»ÊÇ»îÎï¡£\n");
+                return notify_fail("çœ‹æ¸…æ¥šä¸€é»ï¼Œé‚£ä¸¦ä¸æ˜¯æ´»ç‰©ã€‚\n");
 
         if (me->is_busy())
-                return notify_fail("ÄãÏÖÔÚÕıÃ¦£¬Ã»ÓĞÊ±¼äÇı·ä¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£å¿™ï¼Œæ²’æœ‰æ™‚é–“é©…èœ‚ã€‚\n");
 
         if (obj == me)
-                return notify_fail("Óñ·ä²»ÄÜ¹¥»÷Äã¡£\n");
+                return notify_fail("ç‰èœ‚ä¸èƒ½æ”»æ“Šä½ ã€‚\n");
 
         if (! me->is_fighting(obj))
-                return notify_fail("Çı·äÖ»ÄÜÔÚÕ½¶·ÖĞ¶Ô¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("é©…èœ‚åªèƒ½åœ¨æˆ°é¬¥ä¸­å°å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         myexp=query("combat_exp", me);
         objexp=query("combat_exp", obj);
@@ -64,33 +64,33 @@ int do_qufeng(string arg)
         obforce = obj->query_skill("force" );
 
         if (mylev <= 0)
-                return notify_fail("Äã²»»áÇı·äÖ®Êõ£¬²»ÄÜÇıÊ¹Óñ·äÎªÄã¹¥»÷µĞÈË£¡\n");
+                return notify_fail("ä½ ä¸æœƒé©…èœ‚ä¹‹è¡“ï¼Œä¸èƒ½é©…ä½¿ç‰èœ‚ç‚ºä½ æ”»æ“Šæ•µäººï¼\n");
 
         myexp = 30 * objexp/myexp;
         if (myexp < 30) myexp = 30 ;
 
         if( query("jing", me)<myexp )
-                return notify_fail("ÄãµÄ¾«²»×ãÒÔÇı¶¯Óñ·äÉËµĞ£¡\n");
+                return notify_fail("ä½ çš„ç²¾ä¸è¶³ä»¥é©…å‹•ç‰èœ‚å‚·æ•µï¼\n");
 
         if (myforce + 15 <= obforce)
-                return notify_fail("¶ÔÊÖµÄÄÚ¹¦Ì«ÉîºñÁË£¬Çı·äÊõ¶ÔËû²»Æğ×÷ÓÃ£¡\n");
+                return notify_fail("å°æ‰‹çš„å…§åŠŸå¤ªæ·±åšäº†ï¼Œé©…èœ‚è¡“å°ä»–ä¸èµ·ä½œç”¨ï¼\n");
 
         addn("jian", -1, this_object());
         steps = (mylev - objlev) * 1;
         if (steps < 2) steps = 2 ;
-        message_vision(HIY "$N" HIY "°Î¿ªÓñÆ¿Èû£¬ÊÖÎæÓñÆ¿Ç±ÔËÄÚÁ¦£¬Ê¹"
-                       "µÃÆ¿ÖĞµÄÏãÆøÔ¶Ô¶Æ®ÁË¿ªÈ¥£¬\nÍ»È»ÎËÎËÖ®Éù´ó×÷£¬"
-                       "²»ÖªµÀ´ÓÄÄÀï·ÉÀ´Ò»´óÈºÓñ·ä£¬Ïò$n" HIY "Î§ÁË¹ıÈ¥¡£\n" NOR,
+        message_vision(HIY "$N" HIY "æ‹”é–‹ç‰ç“¶å¡ï¼Œæ‰‹æ‚ç‰ç“¶æ½›é‹å…§åŠ›ï¼Œä½¿"
+                       "å¾—ç“¶ä¸­çš„é¦™æ°£é é é£„äº†é–‹å»ï¼Œ\nçªç„¶å—¡å—¡ä¹‹è²å¤§ä½œï¼Œ"
+                       "ä¸çŸ¥é“å¾å“ªè£¡é£›ä¾†ä¸€å¤§ç¾¤ç‰èœ‚ï¼Œå‘$n" HIY "åœäº†éå»ã€‚\n" NOR,
                        me, obj);
         me->start_busy(3);
 
         if (random(mylev) < objlev * 2 / 3)
-                message_vision(YEL "µ«$n" YEL "´é´½Ò»Ğ¥£¬Óñ·äËÆºõÌı"
-                               "¶®ÁËºÅÁî£¬Ô¶Ô¶±ÜÁË¿ªÈ¥¡£\n" NOR, me, obj);
+                message_vision(YEL "ä½†$n" YEL "æ’®å”‡ä¸€å˜¯ï¼Œç‰èœ‚ä¼¼ä¹è½"
+                               "æ‡‚äº†è™Ÿä»¤ï¼Œé é é¿äº†é–‹å»ã€‚\n" NOR, me, obj);
         else
         {
-                tell_object(obj, HIR "ÄãÖÜÎ§É²ÄÇ¼ä¾¡ÊÇÓñ·äÎ§ÈÆ£¬Ò»Ö»Ö»Óñ·äº·²»Î·ËÀµØÏòÄã\n"
-                                 "òØÁË¹ıÀ´£¬ÄãÖ»¾õµÃ±³ĞÄÎ¢Î¢Ò»Í´£¬ÒÑ±»Óñ·äòØÖĞ£¡\n" NOR  ) ;
+                tell_object(obj, HIR "ä½ å‘¨åœå‰é‚£é–“ç›¡æ˜¯ç‰èœ‚åœç¹ï¼Œä¸€åªåªç‰èœ‚æ‚ä¸ç•æ­»åœ°å‘ä½ \n"
+                                 "èœ‡äº†éä¾†ï¼Œä½ åªè¦ºå¾—èƒŒå¿ƒå¾®å¾®ä¸€ç—›ï¼Œå·²è¢«ç‰èœ‚èœ‡ä¸­ï¼\n" NOR  ) ;
                 obj->receive_damage("jing", steps * 5, me);
                 obj->receive_damage("qi", steps * 6, me);
                 if (! obj->is_busy()) obj->start_busy(3);

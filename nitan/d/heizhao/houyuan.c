@@ -5,12 +5,12 @@ inherit ROOM;
 #include <ansi.h>;
 void create()
 {
-        set("short", "��Ժ");
+        set("short", "後院");
         set("long", @LONG
-��Ժ���й��������ջ�ϲ�𣬷�����ͦ����һ�����͵��ֳ�
-���ƵĻ���Τ�ӡ����������Ͼ�������һ����ɮ�����봹�أ����
-��ɮ��ֱ������գ����Ե�ü�붨���м����Ϻ��С�Сɳ��������
-�ԡ�
+後院正中供奉著彌勒歡喜佛，佛像背面挺立著一個威猛的手持
+長杵的護法韋陀。房內蒲團上居中坐著一個老僧，銀須垂胸，厚厚
+的僧衣直裹到面頰，正自低眉入定。有幾名老和尚、小沙彌侍立兩
+旁。
 LONG );
         set("no_clean_up", 0);
         set("objects", ([

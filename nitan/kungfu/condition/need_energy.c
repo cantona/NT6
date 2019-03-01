@@ -19,23 +19,23 @@ int update_condition(object me, int duration)
         if (duration == 4)
         {
                 if( objectp(ob=find_player(query("owner", me))) )
-                        tell_object(ob,HIR"ÄãµÄÄ§»ÃÊÞ("+query("name", me)+HIR+")¿ìÒª¶öËÀÁË£¡\n"NOR);
+                        tell_object(ob,HIR"ä½ çš„é­”å¹»ç¸("+query("name", me)+HIR+")å¿«è¦é¤“æ­»äº†ï¼\n"NOR);
                         
-                message_vision(HIY "$N" HIY "¿´ÆðÀ´ÓÖ¼¢ÓÖ¿Ê£¬ÒÑ¾­Æ£±¹²»¿°¡£\n" NOR, me);
+                message_vision(HIY "$N" HIY "çœ‹èµ·ä¾†åˆé¥‘åˆæ¸´ï¼Œå·²ç¶“ç–²æ†Šä¸å ªã€‚\n" NOR, me);
         }
         else
         if (duration == 7)
         {
                 if( objectp(ob=find_player(query("owner", me))) )
-                        tell_object(ob,HIR"ÄãµÄÄ§»ÃÊÞ("+query("name", me)+HIR+")¿ìÒª¶öËÀÁË£¡\n"NOR);
+                        tell_object(ob,HIR"ä½ çš„é­”å¹»ç¸("+query("name", me)+HIR+")å¿«è¦é¤“æ­»äº†ï¼\n"NOR);
                                         
-                message_vision(HIY "$N" HIY "¿´ÆðÀ´ÓÖ¼¢ÓÖ¿Ê£¬´¦ÓÚËÀÍöµÄ±ßÔµ¡£\n" NOR, me);
+                message_vision(HIY "$N" HIY "çœ‹èµ·ä¾†åˆé¥‘åˆæ¸´ï¼Œè™•äºŽæ­»äº¡çš„é‚Šç·£ã€‚\n" NOR, me);
         }
         else
         if (duration >= 21)
         {
                 if( objectp(ob=find_player(query("owner", me))) )
-                        tell_object(ob,HIY"ÄãµÄÄ§»ÃÊÞ("+query("name", me)+HIY+")ÒÑ¾­¶öËÀÁË£¡\n"NOR);
+                        tell_object(ob,HIY"ä½ çš„é­”å¹»ç¸("+query("name", me)+HIY+")å·²ç¶“é¤“æ­»äº†ï¼\n"NOR);
                 
                 me->receive_damage("qi", 0);
                 me->unconcious();

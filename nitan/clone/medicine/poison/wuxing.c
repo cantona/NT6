@@ -6,15 +6,15 @@ inherit COMBINED_ITEM;
 void create()
 {
 
-        set_name("ÎŞĞÎÖ®¶¾", ({ "wuxing du","yao"}) );
+        set_name("ç„¡å½¢ä¹‹æ¯’", ({ "wuxing du","yao"}) );
         if( clonep() )
                 set_default_object(__FILE__);
         else {
                 set("long",
-                        "ÕâÊÇÒ»°üÎå¶¾½ÌµÄÃØÖÆµÄ¶¾Ò©£¬³ÔÁËËü±ØËÀÎŞÒÉ¡£\nÄã¿ÉÒÔÓÃ(xpour)ÃüÁîÊÔÊÔ¡£\n" );
-                set("unit", "Ğ©");
+                        "é€™æ˜¯ä¸€åŒ…äº”æ¯’æ•™çš„ç§˜åˆ¶çš„æ¯’è—¥ï¼Œåƒäº†å®ƒå¿…æ­»ç„¡ç–‘ã€‚\nä½ å¯ä»¥ç”¨(xpour)å‘½ä»¤è©¦è©¦ã€‚\n" );
+                set("unit", "äº›");
                 set("base_value", 200);
-                set("base_unit", "°ü");
+                set("base_unit", "åŒ…");
                 set("base_weight", 30);
                 set("pour_type", "wuxing_poison");
                 set("value", 800);
@@ -35,28 +35,28 @@ int do_xpour(string arg)
         function f;
         me = this_player();
         if( !arg || sscanf(arg, "%s in %s", who, what)!=2 || victim == me)
-                return notify_fail("ÃüÁî¸ñÊ½: xpour <ÈËÎï> in <ÎïÆ·>¡£\n");
+                return notify_fail("å‘½ä»¤æ ¼å¼: xpour <äººç‰©> in <ç‰©å“>ã€‚\n");
         victim = present(who, environment(me));
-        if( !victim || victim==me) return notify_fail("Ã»ÓĞÄãÏëÏÂ¶¾µÄÈËÅ¶¡£\n");
-        if( query("family/family_name", me) != "Îå¶¾½Ì" )
-                return notify_fail("ÏÂ¶¾£¡£¡ÄãÔõÃ´ÄÜ¸ÉÕâÃ´±°±ÉµÄÊÂÅ¶£¿\n");
+        if( !victim || victim==me) return notify_fail("æ²’æœ‰ä½ æƒ³ä¸‹æ¯’çš„äººå“¦ã€‚\n");
+        if( query("family/family_name", me) != "äº”æ¯’æ•™" )
+                return notify_fail("ä¸‹æ¯’ï¼ï¼ä½ æ€éº¼èƒ½å¹¹é€™éº¼å‘é„™çš„äº‹å“¦ï¼Ÿ\n");
         if ((int)me->query_skill("five_poison", 1) < 50)
-                return notify_fail("²ÅÕâÃ´µã±¾ÊÂ¾ÍÏëº¦ÈË£¿±ğÈõÁËÎÒÎå¶¾½ÌµÄÍşÃû°¡£¡\n");
+                return notify_fail("æ‰é€™éº¼é»æœ¬äº‹å°±æƒ³å®³äººï¼Ÿåˆ¥å¼±äº†æˆ‘äº”æ¯’æ•™çš„å¨åå•Šï¼\n");
         ob = present(what, victim);
         if( !ob )
-                return notify_fail("¶Ô·½ÉíÉÏÃ»ÓĞ" + what + "ÕâÑù¶«Î÷¡£\n");
+                return notify_fail("å°æ–¹èº«ä¸Šæ²’æœ‰" + what + "é€™æ¨£æ±è¥¿ã€‚\n");
 //        if( me->query_temp("being_toudu") )
-//                return notify_fail("ÄãÒÑ¾­ÔÚÕÒ»ú»áÏÂÊÖÁË£¡\n");
+//                return notify_fail("ä½ å·²ç¶“åœ¨æ‰¾æ©Ÿæœƒä¸‹æ‰‹äº†ï¼\n");
         if( query("max_liquid", ob) )
         {
                 int myskill=(me->query_skill("poison",1))*10+query("neili", me);
                 int skill=query("neili", victim);
                 if( query("liquid/remaining", ob)<1 )
-                        return notify_fail("ÄÇ¸öÈİÆ÷ÊÇ¿ÕµÄ£¬²»ÄÜÓÃÀ´ÈÜ½â¶¾·Û£¡\n");
+                        return notify_fail("é‚£å€‹å®¹å™¨æ˜¯ç©ºçš„ï¼Œä¸èƒ½ç”¨ä¾†æº¶è§£æ¯’ç²‰ï¼\n");
                 if (random(myskill)<random(skill))
                 {
-                        tell_object(me, HIR "Ôã¸â£¡ÄãÊ§ÊÖÁË£¡\n\n" NOR);
-                        message_vision("$NÒ»»ØÍ·£¬ÕıºÃ·¢ÏÖ$nÕıÏëÏò$PÉíÉÏµÄ" + ob->name() + "ÏÂ¶¾£¡\n\n" + "$NºÈµÀ£º¡¸¸ÉÊ²Ã´£¡¡¹\n\n", victim, me);
+                        tell_object(me, HIR "ç³Ÿç³•ï¼ä½ å¤±æ‰‹äº†ï¼\n\n" NOR);
+                        message_vision("$Nä¸€å›é ­ï¼Œæ­£å¥½ç™¼ç¾$næ­£æƒ³å‘$Pèº«ä¸Šçš„" + ob->name() + "ä¸‹æ¯’ï¼\n\n" + "$Nå–é“ï¼šã€Œå¹¹ä»€éº¼ï¼ã€\n\n", victim, me);
                         if( userp(victim) )
                         {
                                 victim->fight_ob(me);
@@ -73,14 +73,14 @@ int do_xpour(string arg)
                 f = (: call_other, __FILE__, "drink_drug" :);
                 set("liquid/drink_func", bind(f,ob), ob);
                 addn("liquid/slumber_effect", 50, ob);
-                message("vision","ÄãÓë" + victim->name() + "²ÁÉí¶ø¹ı£¬ÍµÍµ½«¡¶" + name() + "¡·È÷½øËûµÄ" + ob->name()+ "ÀïÃæ¡£\n", this_player());
+                message("vision","ä½ èˆ‡" + victim->name() + "æ“¦èº«è€Œéï¼Œå·å·å°‡ã€Š" + name() + "ã€‹æ´’é€²ä»–çš„" + ob->name()+ "è£¡é¢ã€‚\n", this_player());
                 add_amount(-1);
                 me->start_busy(2);
                 if( random(myskill) < skill/2 )
-                        message("vision","Äã¿´µ½"+me->name()+"¹í¹íËîËîµØÔÚ"+victim->name()+"ÉíÉÏµÄÒ»"+query("unit", ob)+ob->name()+"ÀïÈ÷ÈëÁËÒ»Ğ©"+name()+"£¡\n",environment(me),({me,victim}));
+                        message("vision","ä½ çœ‹åˆ°"+me->name()+"é¬¼é¬¼ç¥Ÿç¥Ÿåœ°åœ¨"+victim->name()+"èº«ä¸Šçš„ä¸€"+query("unit", ob)+ob->name()+"è£¡æ´’å…¥äº†ä¸€äº›"+name()+"ï¼\n",environment(me),({me,victim}));
                 return 1;
         }
-        else return notify_fail("¶¾Ö»ÄÜÏÂÔÚÒûË®ÀïÃæ£¡\n");
+        else return notify_fail("æ¯’åªèƒ½ä¸‹åœ¨é£²æ°´è£¡é¢ï¼\n");
         return 1;
 }
 

@@ -1,4 +1,4 @@
-// Í¨ÌìÀÏÏÉ ÕÆ¹Ü×ªÊÀ
+// é€šå¤©è€ä»™ æŒç®¡è½‰ä¸–
 // Create By Rcwiz 09/2003
 
 #include <ansi.h>
@@ -13,11 +13,11 @@ mixed start_kaoyan();
 
 void create()
 {
-        set_name(HIW "Í¨ÌìÀÏÏÉ" NOR, ({ "tongtian laoxian", "tongtian", "laoxian" }));
-        set("long", HIW "    ´ËÄËÕòÊØÌìÍâÌìµÄÌì½ç´óÉñ¡ªÍ¨ÌìÀÏÏÉ£¬¾İËµËû\n"
-                        "ÕÆ¹Ü×ÅÌì½ç×ªÊÀÖ®Â·×îºóÒ»µÀµ½´óÃÅ¡£\n" NOR);
+        set_name(HIW "é€šå¤©è€ä»™" NOR, ({ "tongtian laoxian", "tongtian", "laoxian" }));
+        set("long", HIW "    æ­¤ä¹ƒé®å®ˆå¤©å¤–å¤©çš„å¤©ç•Œå¤§ç¥â”€é€šå¤©è€ä»™ï¼Œæ“šèªªä»–\n"
+                        "æŒç®¡è‘—å¤©ç•Œè½‰ä¸–ä¹‹è·¯æœ€å¾Œä¸€é“åˆ°å¤§é–€ã€‚\n" NOR);
 
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("age", 199);
         set("attitude", "friendly");
         set("shen_type", 1);
@@ -47,8 +47,8 @@ void create()
         map_skill("unarmed", "yinyang-shiertian");
         
         set("inquiry", ([
-                "×ªÊÀ"   :   (: start_scborn :),
-                "¿¼Ñé"   :   (: start_kaoyan :),
+                "è½‰ä¸–"   :   (: start_scborn :),
+                "è€ƒé©—"   :   (: start_kaoyan :),
         ]));
         set("chat_chance_combat", 120);
         set("chat_msg_combat", ({
@@ -60,7 +60,7 @@ void create()
         carry_object(__DIR__"obj/xianpao")->wear();
 }
 
-// ×ªÊÀºó¿¼Ñé¹ı12Ìì¿ÉÒÔÔÙ»ñµÃ2µãÂÖ»Øµã
+// è½‰ä¸–å¾Œè€ƒé©—é12å¤©å¯ä»¥å†ç²å¾—2é»è¼ªå›é»
 mixed start_kaoyan()
 {
            object me;
@@ -69,38 +69,38 @@ mixed start_kaoyan()
 
            if (! me->query("scborn/ok"))
            {
-                   write("Äã»¹Ã»×ªÊÀÄØ¡£\n");
+                   write("ä½ é‚„æ²’è½‰ä¸–å‘¢ã€‚\n");
                    return 0;
            }
 
        if (me->query("sky12/floor") != 13)
        {
-              write("Äã»¹Ã»ÓĞÍ¨¹ıÊ®¶şÖØÌì½çµÄ¿¼Ñé£¡²»ÖªµÀÔõÃ´ÅÜÀ´µÄ£¬¿ì¹ö£¡\n");
+              write("ä½ é‚„æ²’æœ‰é€šéåäºŒé‡å¤©ç•Œçš„è€ƒé©—ï¼ä¸çŸ¥é“æ€éº¼è·‘ä¾†çš„ï¼Œå¿«æ»¾ï¼\n");
                           me->move("/d/city/wumiao");
               return 0;
        }
 
-           // ¼ì²éÊÇ·ñÒÑ¾­»ñµÃ¹ı
+           // æª¢æŸ¥æ˜¯å¦å·²ç¶“ç²å¾—é
            if (me->query("scborn/get_lunhui_point_12t"))
            {
-                          write("ÄãÒÑ¾­»ñÈ¡¹ıÂÖ»ØµãÁË¡£\n");
+                          write("ä½ å·²ç¶“ç²å–éè¼ªå›é»äº†ã€‚\n");
                           return 0;
            }
 
            if (me->query("scborn/total_lunhui_point") >= 17)
            {
-                          write("Êı¾İ´íÎó¡£\n");
+                          write("æ•¸æ“šéŒ¯èª¤ã€‚\n");
                           return 0;
            }
 
-           // »ñµÃÂÖ»Øµã
+           // ç²å¾—è¼ªå›é»
            me->add("scborn/total_lunhui_point", 2);
            me->add("scborn/cur_lunhui_point", 2);
            me->set("scborn/get_lunhui_point_12t", 1);
 
            me->save();
 
-           write("¹§Ï²Äã¾­¹ıÊ®¶şÖØÌì¿¼Ñé£¬»ñµÃ Á½ µãÂÖ»Øµã¡£\n");
+           write("æ­å–œä½ ç¶“éåäºŒé‡å¤©è€ƒé©—ï¼Œç²å¾— å…© é»è¼ªå›é»ã€‚\n");
            return 1;
 }
 
@@ -109,23 +109,23 @@ mixed start_scborn()
 {
         object me = this_player();
         
-        // ¼ì²é×ªÊÀÌõ¼ş
+        // æª¢æŸ¥è½‰ä¸–æ¢ä»¶
         if (! SCBORN_D->check_data2(me))return 1;
 
         if (me->query("sky12/haotianta"))
         {
-                tell_object(me, HIG "Í¨ÌìÀÏÏÉ¶ÔÄãËµµÀ£ºê»ÌìËşÕÒµ½ÁËÂğ£¿\n" NOR);
+                tell_object(me, HIG "é€šå¤©è€ä»™å°ä½ èªªé“ï¼šæ˜Šå¤©å¡”æ‰¾åˆ°äº†å—ï¼Ÿ\n" NOR);
                 return 1;
         }
 
-        message_sort(HIM "\n$N" HIM "¶Ô$n" HIM "ËµµÀ£ºÈËÖ®ÉúÀÏ²¡ËÀ¡¢×ªÊÀÂÖ»Ø½ÔÓĞ¶¨Êı£¬"
-                     "ÄËÉÏÌì×¢¶¨£¬Èç¹û·ÇÒªÄæÌì¶øĞĞ£¬ÔòĞè´òÍ¨ÖØÖØÄÑ¹Ø£¬ÄãÏÖÔÚ´òÍ¨ÁËÌì½ç"
-                     "Ê®¶şÖØÌì£¬Ô­±¾Ó¦¸Ã¿ÉÒÔ×ªÊÀÖØÉú£¬µ«ÓÉÓÚÄãÎ¥ÄæÌìµÀ£¬ÈËµÀ£¬ÈçÒªË³Àû"
-                     "×ªÊÀÖØĞÂ×öÈË»¹Ğè½«×ÔÉíÎüÈëê»ÌìËşÖĞ£¬½èÓÃ´ËÉñÆ÷ÎüĞÇ»»ÔÂÖ®Á¦·½¿É¡£\n" NOR,
+        message_sort(HIM "\n$N" HIM "å°$n" HIM "èªªé“ï¼šäººä¹‹ç”Ÿè€ç—…æ­»ã€è½‰ä¸–è¼ªå›çš†æœ‰å®šæ•¸ï¼Œ"
+                     "ä¹ƒä¸Šå¤©æ³¨å®šï¼Œå¦‚æœéè¦é€†å¤©è€Œè¡Œï¼Œå‰‡éœ€æ‰“é€šé‡é‡é›£é—œï¼Œä½ ç¾åœ¨æ‰“é€šäº†å¤©ç•Œ"
+                     "åäºŒé‡å¤©ï¼ŒåŸæœ¬æ‡‰è©²å¯ä»¥è½‰ä¸–é‡ç”Ÿï¼Œä½†ç”±äºä½ é•é€†å¤©é“ï¼Œäººé“ï¼Œå¦‚è¦é †åˆ©"
+                     "è½‰ä¸–é‡æ–°åšäººé‚„éœ€å°‡è‡ªèº«å¸å…¥æ˜Šå¤©å¡”ä¸­ï¼Œå€Ÿç”¨æ­¤ç¥å™¨å¸æ˜Ÿæ›æœˆä¹‹åŠ›æ–¹å¯ã€‚\n" NOR,
                      this_object(), me);
                      
-        tell_object(me, HIG "Í¨ÌìÀÏÏÉÇÄÇÄ¸æËßÄã£ºÈç¹ûÄãÕÒµ½ê»ÌìËş¾Í°ÑËü½»¸øÎÒ£¬ÎÒ»á°ïÖú"
-                        "ÄãÍê³É×ªÊÀ£¡\n" NOR);
+        tell_object(me, HIG "é€šå¤©è€ä»™æ‚„æ‚„å‘Šè¨´ä½ ï¼šå¦‚æœä½ æ‰¾åˆ°æ˜Šå¤©å¡”å°±æŠŠå®ƒäº¤çµ¦æˆ‘ï¼Œæˆ‘æœƒå¹«åŠ©"
+                        "ä½ å®Œæˆè½‰ä¸–ï¼\n" NOR);
         
         me->set("sky12/haotianta", 1);
 
@@ -137,7 +137,7 @@ void init()
         add_action("do_yhjob", "yhjob");
 }
 
-// Ñ¡ÔñÖ°Òµ
+// é¸æ“‡è·æ¥­
 int do_yhjob(string arg)
 {
         object me;
@@ -145,31 +145,31 @@ int do_yhjob(string arg)
 
         me = this_player();
 
-    // ½éÉÜ
+    // ä»‹ç´¹
         if (! arg)
         {
-                // Ò»×ª½éÉÜ
-                msg  = HIR "\nÄúÄ¿Ç°¿ÉÒÔÑ¡ÔñÒÔÏÂÖ°Òµ×÷ÎªÄú×ªÊÀºóµÄÖ°Òµ£º\n" NOR;
-                msg += HIC "ÏÀ¿Í£ºÁî½­ºşÖĞÈË¾°ÑöµÄÖ°Òµ£¬ÓµÓĞÕıÆøÀà¹¥»÷ÌØ¼¼¡£\n" NOR;
-                msg += HIM "Ä§Ê¦: ÁîÊÀÈËÎ·¾åµÄÖ°Òµ£¬ÓµÓĞĞ°ÒìÀà¹¥»÷ÌØ¼¼¡£\n" NOR;
-                msg += HIG "ÒşÊ¿: ±»ÊÀÈËËùÒÅÍü£¬Òş¾ÓÊÀÍâ£¬ÓµÓĞ¶àÖÖ¸¨ÖúÀàÌØ¼¼¡£\n" NOR;
-                msg += HIY "¾ßÌåÖ°Òµ½éÉÜÇë²Î¼û×ªÊÀÖ°Òµ°ïÖúÎÄ¼ş help scborn_yhjob\n" NOR;
-                msg += HIY "ÇëÊäÈëÖ¸Áî" HIR " yhjob Ö°Òµ " HIY "À´Ñ¡ÔñÄú×ªÊÀºóµÄÖ°Òµ£¬Ñ¡ÔñÇ°ÇëÈÏÕæÔÄ¶Á×ªÊÀÖ°Òµ°ïÖúÎÄ¼ş¡£\n\n" NOR;
+                // ä¸€è½‰ä»‹ç´¹
+                msg  = HIR "\næ‚¨ç›®å‰å¯ä»¥é¸æ“‡ä»¥ä¸‹è·æ¥­ä½œç‚ºæ‚¨è½‰ä¸–å¾Œçš„è·æ¥­ï¼š\n" NOR;
+                msg += HIC "ä¿ å®¢ï¼šä»¤æ±Ÿæ¹–ä¸­äººæ™¯ä»°çš„è·æ¥­ï¼Œæ“æœ‰æ­£æ°£é¡æ”»æ“Šç‰¹æŠ€ã€‚\n" NOR;
+                msg += HIM "é­”å¸«: ä»¤ä¸–äººç•æ‡¼çš„è·æ¥­ï¼Œæ“æœ‰é‚ªç•°é¡æ”»æ“Šç‰¹æŠ€ã€‚\n" NOR;
+                msg += HIG "éš±å£«: è¢«ä¸–äººæ‰€éºå¿˜ï¼Œéš±å±…ä¸–å¤–ï¼Œæ“æœ‰å¤šç¨®è¼”åŠ©é¡ç‰¹æŠ€ã€‚\n" NOR;
+                msg += HIY "å…·é«”è·æ¥­ä»‹ç´¹è«‹åƒè¦‹è½‰ä¸–è·æ¥­å¹«åŠ©æ–‡ä»¶ help scborn_yhjob\n" NOR;
+                msg += HIY "è«‹è¼¸å…¥æŒ‡ä»¤" HIR " yhjob è·æ¥­ " HIY "ä¾†é¸æ“‡æ‚¨è½‰ä¸–å¾Œçš„è·æ¥­ï¼Œé¸æ“‡å‰è«‹èªçœŸé–±è®€è½‰ä¸–è·æ¥­å¹«åŠ©æ–‡ä»¶ã€‚\n\n" NOR;
 
                 write(msg);
                 return 1;        
         }
 
-        if (arg != "ÏÀ¿Í" && arg != "Ä§Ê¦" && arg != "ÒşÊ¿")
-                return notify_fail("ÇëÑ¡ÔñÕıÈ·µÄÖ°Òµ£ºÏÀ¿Í¡¢Ä§Ê¦¡¢ÒşÊ¿¡£\n");
+        if (arg != "ä¿ å®¢" && arg != "é­”å¸«" && arg != "éš±å£«")
+                return notify_fail("è«‹é¸æ“‡æ­£ç¢ºçš„è·æ¥­ï¼šä¿ å®¢ã€é­”å¸«ã€éš±å£«ã€‚\n");
         
         if (me->query("scborn"))
-                return notify_fail("¶Ô²»Æğ£¬Äú²»ÄÜÑ¡Ôñ¸ÃÖÖÖ°Òµ¡£\n");
+                return notify_fail("å°ä¸èµ·ï¼Œæ‚¨ä¸èƒ½é¸æ“‡è©²ç¨®è·æ¥­ã€‚\n");
 
-        if (me->query("yhjob/job") && me->query("yhjob/job") != "ÎäÊ¿")
-                return notify_fail("¶Ô²»Æğ£¬Äú²»ÄÜÑ¡Ôñ¸ÃÖÖÖ°Òµ¡£\n");
+        if (me->query("yhjob/job") && me->query("yhjob/job") != "æ­¦å£«")
+                return notify_fail("å°ä¸èµ·ï¼Œæ‚¨ä¸èƒ½é¸æ“‡è©²ç¨®è·æ¥­ã€‚\n");
 
-        write(HIG "ÄúÑ¡ÔñÁË " + arg + " µÄÖ°Òµ¡£\n");
+        write(HIG "æ‚¨é¸æ“‡äº† " + arg + " çš„è·æ¥­ã€‚\n");
 
         me->set("yhjob/job" , arg);
         me->save();
@@ -187,48 +187,48 @@ int accept_object(object me, object ob)
 
                 if (me->query("scborn/ok"))
                 {
-                        write("ÄãÒÑ¾­×ª¹ıÊÀÁË¡£\n");
+                        write("ä½ å·²ç¶“è½‰éä¸–äº†ã€‚\n");
                         return 0;
                 }
                 
-        // ¼ì²é×ªÊÀÌõ¼ş
+        // æª¢æŸ¥è½‰ä¸–æ¢ä»¶
         if (! SCBORN_D->check_data2(me))return 0;
         
         obj = filter_color(ob->name());
 
-        if (obj != "ê»ÌìËş" || 
+        if (obj != "æ˜Šå¤©å¡”" || 
             ob->is_item_make() ||
             ! ob->is_magic_item())return 0;
 
                 if (! me->query("yhjob"))
                 {
-                        write("Äú»¹Ã»ÓĞÑ¡ÔñÄã×ªÊÀºóµÄÖ°ÒµÄØ£¬ÇëÊäÈëÖ¸Áî yhjob ¿ªÊ¼Ñ¡ÔñÄúµÄÖ°Òµ£¡\n");
+                        write("æ‚¨é‚„æ²’æœ‰é¸æ“‡ä½ è½‰ä¸–å¾Œçš„è·æ¥­å‘¢ï¼Œè«‹è¼¸å…¥æŒ‡ä»¤ yhjob é–‹å§‹é¸æ“‡æ‚¨çš„è·æ¥­ï¼\n");
                         return 0;
                 }
 
                 job = me->query("yhjob/job");
 
-                if (job != "ÏÀ¿Í" && job != "Ä§Ê¦" && job != "ÒşÊ¿")
+                if (job != "ä¿ å®¢" && job != "é­”å¸«" && job != "éš±å£«")
                 {
-                        write("ÄúÑ¡ÔñµÄÖ°Òµ²»ÕıÈ·£¬ÇëÖØĞÂÑ¡Ôñ¡£\n");
+                        write("æ‚¨é¸æ“‡çš„è·æ¥­ä¸æ­£ç¢ºï¼Œè«‹é‡æ–°é¸æ“‡ã€‚\n");
                         return 0;
                 }
 
-        // ¿ªÊ¼×ªÊÀ
+        // é–‹å§‹è½‰ä¸–
         if (! SCBORN_D->start_scborn(me))
         {
-                write("×ªÊÀÊ±Êı¾İ³ö´í£¡\n");
+                write("è½‰ä¸–æ™‚æ•¸æ“šå‡ºéŒ¯ï¼\n");
                 return 0;
         }
         destruct(ob);
 
-        message_sort(HIC "\n$N" HIC "ÄîÆğÖäÓï£¬¼ÀÆğÊÖÖĞµÄê»ÌìËş£¬É²Ê±¼ä£¬ÆßµÀ¹âÃ¢´Ó"
-                         "ê»ÌìËşÖĞ±¼ÌÚ¶ø³ö£¬½«$n" HIC "¾íÁË½øÈ¥ ¡­¡­\n" NOR,
+        message_sort(HIC "\n$N" HIC "å¿µèµ·å’’èªï¼Œç¥­èµ·æ‰‹ä¸­çš„æ˜Šå¤©å¡”ï¼Œå‰æ™‚é–“ï¼Œä¸ƒé“å…‰èŠ’å¾"
+                         "æ˜Šå¤©å¡”ä¸­å¥”é¨°è€Œå‡ºï¼Œå°‡$n" HIC "å·äº†é€²å» â€¦â€¦\n" NOR,
                          this_object(), me);
                          
 
         me->move("/kungfu/class/sky/haotian");
-        tell_object(me, HIG "Äã´©ËóÊ±¿Õ£¬½øÈëÁËÀ´ÊÀ£¡\n\n" NOR);
+        tell_object(me, HIG "ä½ ç©¿æ¢­æ™‚ç©ºï¼Œé€²å…¥äº†ä¾†ä¸–ï¼\n\n" NOR);
 
         me->move("/d/city/wumiao");
                 
@@ -238,27 +238,27 @@ int accept_object(object me, object ob)
         if (MEMBER_D->is_valib_member(me->query("id")) &&
             sizeof(spes) == 2)
         {
-                msg = SCBORN_D->get_special_name(spes[0]) + "¡¢";
+                msg = SCBORN_D->get_special_name(spes[0]) + "ã€";
                 msg += SCBORN_D->get_special_name(spes[1]);
         }
         else 
                 msg = SCBORN_D->get_special_name(spes[0]);
 
 
-                // ÉèÖÃÖ°Òµ¼¼ÄÜ
-                if (job == "ÏÀ¿Í")
+                // è¨­ç½®è·æ¥­æŠ€èƒ½
+                if (job == "ä¿ å®¢")
                 {
                         me->set("special_skill/haoran",1);
                         me->set("special_skill/xiagu",1);
                         me->set("special_skill/shewo",1);
                 }
-                else if (job == "Ä§Ê¦")
+                else if (job == "é­”å¸«")
                 {
                         me->set("special_skill/moxin",1);
                         me->set("special_skill/youran",1);
                         me->set("special_skill/haoling",1);
                 }
-                else // ÒşÊ¿
+                else // éš±å£«
                 {
                         me->set("special_skill/haina",1);
                         me->set("special_skill/xianyun",1);
@@ -274,17 +274,17 @@ int accept_object(object me, object ob)
 int notify_all(object me, string msg, mixed spes)
 {
                 CHANNEL_D->do_channel(this_object(), "rumor", 
-                               HIY "ÌıËµ" + me->name() + HIY + 
-                               "´òÍ¨Ê®¶şÖØÌì£¬´©ËóÊ±¿Õ£¬½øÈëÁËÀ´ÊÀ£¡\n" NOR);
+                               HIY "è½èªª" + me->name() + HIY + 
+                               "æ‰“é€šåäºŒé‡å¤©ï¼Œç©¿æ¢­æ™‚ç©ºï¼Œé€²å…¥äº†ä¾†ä¸–ï¼\n" NOR);
          
-         tell_object(me, HIW "\nÄã»ñµÃ×ªÊÀ¼¼ÄÜ£º" + msg + "\n" NOR);
+         tell_object(me, HIW "\nä½ ç²å¾—è½‰ä¸–æŠ€èƒ½ï¼š" + msg + "\n" NOR);
 
-                 // »ñµÃÂÖ»Øµã
-                 tell_object(me, HIG"×ªÊÀ³É¹¦£¬»ñµÃ Îå µãÂÖ»Øµã£¬ÒÔºóÇëÊ¹ÓÃ power Ö¸Áî²é¿´¡£\n");
+                 // ç²å¾—è¼ªå›é»
+                 tell_object(me, HIG"è½‰ä¸–æˆåŠŸï¼Œç²å¾— äº” é»è¼ªå›é»ï¼Œä»¥å¾Œè«‹ä½¿ç”¨ power æŒ‡ä»¤æŸ¥çœ‹ã€‚\n");
                  me->add("scborn/total_lunhui_point", 5);
                  me->add("scborn/cur_lunhui_point", 5);
 
-         // ÖØĞÂÉèÖÃ×ªÊÀ¼¼ÄÜ£¬update_d->born_player()ÒªÉ¾³ıËùÓĞ¼¼ÄÜ
+         // é‡æ–°è¨­ç½®è½‰ä¸–æŠ€èƒ½ï¼Œupdate_d->born_player()è¦åˆªé™¤æ‰€æœ‰æŠ€èƒ½
          if (MEMBER_D->is_valib_member(me->query("id")) &&
              sizeof(spes) == 2)
          {
@@ -296,7 +296,7 @@ int notify_all(object me, string msg, mixed spes)
                 
          me->save();
          
-         // Í¨ÖªÊı¾İ±¸·İÏûÏ¢
+         // é€šçŸ¥æ•¸æ“šå‚™ä»½æ¶ˆæ¯
          call_out("notify_me", 1, me);
          
          return 1;
@@ -304,7 +304,7 @@ int notify_all(object me, string msg, mixed spes)
 
 int notify_me(object me)
 {
-        tell_object(me, HIR "\nÄã×ªÊÀÇ°µÄÊı¾İÒÑ±¸·İ£¬ÆßÈÕÄÚÈç·¢ÏÖÊı¾İÒì³££¬Çë¼°Ê±Í¨Öª±¾Õ¾admin£¡\n\n" NOR);
+        tell_object(me, HIR "\nä½ è½‰ä¸–å‰çš„æ•¸æ“šå·²å‚™ä»½ï¼Œä¸ƒæ—¥å…§å¦‚ç™¼ç¾æ•¸æ“šç•°å¸¸ï¼Œè«‹åŠæ™‚é€šçŸ¥æœ¬ç«™adminï¼\n\n" NOR);
         return 1;
 }
 void unconcious()

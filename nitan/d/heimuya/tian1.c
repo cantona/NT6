@@ -2,9 +2,9 @@ inherit ROOM;
  
 void create()
 {
-        set("short", "������");
+        set("short", "天香堂");
         set("long", @LONG
-�����Ǻ�ľ�µĵ��Ĵ��á������á���һ���긾�˺�ü���ڵ��ء�
+這裡是黑木崖的第四大堂『天香堂』。一中年婦人橫眉立在當地。
 LONG );
         set("exits", ([
             "northdown"   : __DIR__"dating4",

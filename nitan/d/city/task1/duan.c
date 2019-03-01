@@ -1,19 +1,19 @@
-// duan.c ¶ÎÑÓÇì
+// duan.c æ®µå»¶æ…¶
 inherit NPC;
 
 #include <ansi.h>
 void create()
 {
 
-        set_name("¶ÎÑÓÇì", ({ "duan  yanqing"}));
-        set("gender", "ÄĞĞÔ");
-        set("nickname", HIC"¶ñ¹áÂúÓ¯"NOR);
+        set_name("æ®µå»¶æ…¶", ({ "duan  yanqing"}));
+        set("gender", "ç”·æ€§");
+        set("nickname", HIC"æƒ¡è²«æ»¿ç›ˆ"NOR);
         set("age", 54);
         set("str", 25);
         set("dex", 16);
         set("per", 21);
-        set("long", "ËûÒ»ÉíÇàÅÛÈË£¬³¤Ğë´¹ĞØ£¬ÃæÄ¿ÆáºÚ£¬Ò»Ë«ÑÛÕö´ó´óµÄ£¬
-Ò»ö®Ò²²»ö®¡£\n");
+        set("long", "ä»–ä¸€èº«é’è¢äººï¼Œé•·é ˆå‚èƒ¸ï¼Œé¢ç›®æ¼†é»‘ï¼Œä¸€é›™çœ¼çœå¤§å¤§çš„ï¼Œ
+ä¸€éœä¹Ÿä¸éœã€‚\n");
         set("combat_exp", 3000000+ random(1000000));
         set("attitude", "peaceful");
         set("neili", 3000);

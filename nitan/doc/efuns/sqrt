@@ -1,12 +1,12 @@
         sqrt(3)                        LP MudOSv21c7                (7 Jul 1996)
-        º¯ÊýÃû³Æ:
-                sqrt() - ´«»ØÒ»¸ö¸¡µãÊýµÄÆ½·½¸ù (square root).
-        º¯ÊýÓï·¨:
+        å‡½æ•¸åç¨±:
+                sqrt() - å‚³å›žä¸€å€‹æµ®é»žæ•¸çš„å¹³æ–¹æ ¹ (square root).
+        å‡½æ•¸èªžæ³•:
                 float sqrt( float f );
-                ¸¡µãÊý sqrt( ¸¡µãÊý f );
-        º¯ÊýÓÃ·¨:
-                sqrt() ´«»Ø²ÎÊý f  µÄÕýÆ½·½¸ù. f ²»¿ÉÎª¸º.
-        ²Î¿¼º¯Êý:
+                æµ®é»žæ•¸ sqrt( æµ®é»žæ•¸ f );
+        å‡½æ•¸ç”¨æ³•:
+                sqrt() å‚³å›žåƒæ•¸ f  çš„æ­£å¹³æ–¹æ ¹. f ä¸å¯ç‚ºè² .
+        åƒè€ƒå‡½æ•¸:
                 exp(3), log(3), pow(3)
-        ÊÖ²á·­Òë:
+        æ‰‹å†Šç¿»è­¯:
                 Phoebus@ZH        97.jul.23.                (Writen 5/23/97)

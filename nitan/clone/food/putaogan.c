@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è©±ä¸–ç•Œï¹’è¥¿éŠè¨˜ï¹’ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 inherit ITEM;
@@ -7,13 +7,13 @@ void eat();
 
 void create()
 {
-        set_name("ÆÏÌÑ¸É", ({"putao gan", "gan"}));
+        set_name("è‘¡è„å¹¹", ({"putao gan", "gan"}));
         set_weight(300);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "ÆÏÌÑ¸ÉÊÇÎ÷±±±ß½®µÄÌØ²ú£¬³ÔÆğÀ´ÏãÌğ¿É¿Ú£®\n");
-                set("unit", "°Ñ");
+                set("long", "è‘¡è„å¹¹æ˜¯è¥¿åŒ—é‚Šç–†çš„ç‰¹ç”¢ï¼Œåƒèµ·ä¾†é¦™ç”œå¯å£ï¼\n");
+                set("unit", "æŠŠ");
                 set("value", 60);
                 set("food_remaining", 4);
                 set("food_supply", 10);
@@ -31,15 +31,15 @@ int do_chi(string arg)
      return 0;
 
         if( this_player()->is_busy() )
-            return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É¡£\n");
+            return notify_fail("ä½ ä¸Šä¸€å€‹å‹•ä½œé‚„æ²’æœ‰å®Œæˆã€‚\n");
 
         if(!arg) 
-     return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+     return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
            
         if( query("food", this_player()) >= this_player()->max_food_capacity() )
-                return notify_fail("ÄãÒÑ¾­³ÔÌ«±¥ÁË£¬ÔÙÒ²Èû²»ÏÂÈÎºÎ¶«Î÷ÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“åƒå¤ªé£½äº†ï¼Œå†ä¹Ÿå¡ä¸ä¸‹ä»»ä½•æ±è¥¿äº†ã€‚\n");
 
-        message_vision("$N´Ó¶µÀïÌÍ³ö°ÑÆÏÌÑ¸É£¬Ò»¿ÅÒ»¿ÅµÄÈûµ½×ìÀï£¬\nÒ»¿Å£¬Ò»¿Å£¬ÓÖÒ»¿Å£®£®£®\n" , this_player());
+        message_vision("$Nå¾å…œè£¡æå‡ºæŠŠè‘¡è„å¹¹ï¼Œä¸€é¡†ä¸€é¡†çš„å¡åˆ°å˜´è£¡ï¼Œ\nä¸€é¡†ï¼Œä¸€é¡†ï¼Œåˆä¸€é¡†ï¼ï¼ï¼\n" , this_player());
    addn("food", 30, this_player());
    destruct(this_object());
         return 1;

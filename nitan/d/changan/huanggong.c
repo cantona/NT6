@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create ()
 {
-        set ("short", "»Ê¹¬´óµî");
+        set ("short", "çš‡å®®å¤§æ®¿");
         set("long", @LONG
-»Ê¹¬´óµî×øÂäÈ«¹¬ºËÐÄ£¬×óÓÒÊÇÁ½¸öÆ«µî£¬¸÷ÓÐÒ»ÌõÔ¼¶þÊ®ÕÉ³¤
-µÄÀÈµÀÏàÁ¬£¬ÈçÁ½±ß·É³öÑãÒí¡£Á½¸ö¸±µî£¬ÒÔ×óÒíµîºÍÓÒÒíµîÎªÃû¡£
+çš‡å®®å¤§æ®¿åè½å…¨å®®æ ¸å¿ƒï¼Œå·¦å³æ˜¯å…©å€‹åæ®¿ï¼Œå„æœ‰ä¸€æ¢ç´„äºŒåä¸ˆé•·
+çš„å»Šé“ç›¸é€£ï¼Œå¦‚å…©é‚Šé£›å‡ºé›ç¿¼ã€‚å…©å€‹å‰¯æ®¿ï¼Œä»¥å·¦ç¿¼æ®¿å’Œå³ç¿¼æ®¿ç‚ºåã€‚
 LONG );
         set("exits", ([
                 "south"   : "/d/changan/bridge2",

@@ -18,13 +18,13 @@ int main(object me, string arg)
         object obj, dest;
 
         if (!arg)
-                return notify_fail("ÄãÒªÍùÄÄ¶ùÍ¿Ä¨¶¾Ò©£¿\n");
+                return notify_fail("ä½ è¦å¾€å“ªå…’å¡—æŠ¹æ¯’è—¥ï¼Ÿ\n");
 
         if (me->is_busy())
-                return notify_fail("ÏÈÃ¦ÍêÁËÄãµÄÊÂÇéÔÙÏëÔõÃ´º¦ÈË°É£¡\n");
+                return notify_fail("å…ˆå¿™å®Œäº†ä½ çš„äº‹æƒ…å†æƒ³æ€éº¼å®³äººå§ï¼\n");
 
         if (me->is_fighting())
-                return notify_fail("ÄãÏÖÔÚÕıÔÚ´ò¼Ü£¬Ã»Ê±¼ä×öÕâĞ©ÊÂÇé¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£åœ¨æ‰“æ¶ï¼Œæ²’æ™‚é–“åšé€™äº›äº‹æƒ…ã€‚\n");
 
         if (sscanf(arg, "with %s", item) == 1)
                 target = "hand";
@@ -35,7 +35,7 @@ int main(object me, string arg)
         if (sscanf(arg, "%s on %s", item, target) == 2)
                 ;
         else
-                return notify_fail("ÄãÒªÍùÄÄ¶ùÍ¿Ä¨¶¾Ò©£¿\n");
+                return notify_fail("ä½ è¦å¾€å“ªå…’å¡—æŠ¹æ¯’è—¥ï¼Ÿ\n");
 
         if (! present("hand", me) && target == "hand" ||
             target == "me")
@@ -47,37 +47,37 @@ int main(object me, string arg)
                 dest = present(target, me);
                 if (! dest) dest = present(target, environment(me));
                 if (! dest)
-                        return notify_fail("ÕâÀïÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+                        return notify_fail("é€™è£¡æ²’æœ‰é€™æ¨£æ±è¥¿ã€‚\n");
 
                 if (dest->is_character())
                 {
                         if (dest != me && ! dest->is_corpse())
                         {
-                                return notify_fail("ÄãÍù" + dest->name() +
-                                                   "ÉÏÃæÍ¿Ê²Ã´£¬ÕÒ±â°¡£¿\n");
+                                return notify_fail("ä½ å¾€" + dest->name() +
+                                                   "ä¸Šé¢å¡—ä»€éº¼ï¼Œæ‰¾æ‰å•Šï¼Ÿ\n");
                         }
                         // daub on me
                 } else
                 if( !mapp(query("armor_prop", dest)) && 
                     !mapp(query("weapon_prop", dest)) )
                 {
-                        return notify_fail("ÄÇ¼È²»ÊÇÎäÆ÷£¬Ò²²»ÊÇ·À¾ß£¬"
-                                           "ÄãÔõÃ´Í¿Ä¨¶¾Ò©ÄØ£¿\n");
+                        return notify_fail("é‚£æ—¢ä¸æ˜¯æ­¦å™¨ï¼Œä¹Ÿä¸æ˜¯é˜²å…·ï¼Œ"
+                                           "ä½ æ€éº¼å¡—æŠ¹æ¯’è—¥å‘¢ï¼Ÿ\n");
                 }
         }
 
         if (!objectp(obj = present(item, me)))
-                return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+                return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™æ¨£æ±è¥¿ã€‚\n");
 
         if( !stringp(query("poison_type", obj)) )
-                return notify_fail(obj->name() + "²»ÊÇ¶¾Ò©°¡¡£\n");
+                return notify_fail(obj->name() + "ä¸æ˜¯æ¯’è—¥å•Šã€‚\n");
 
-        if( query("poison/name", obj) == "ÌÆÃÅÆæ¶¾" && !query("reborn", me) && 
-            (!query("family", me) || query("family/family_name", me) != "ÌÆÃÅÊÀ¼Ò") )
-                return notify_fail(obj->name() + "¶¾ĞÔÇ¿ÁÒ£¬Äã±ØĞëÖªÏşÌÆÃÅ¶ÀÌØÏÂ¶¾¼¼ÇÉ²ÅÄÜÊ¹×Ô¼º²»±»ÉËº¦¡£\n");
+        if( query("poison/name", obj) == "å”é–€å¥‡æ¯’" && !query("reborn", me) && 
+            (!query("family", me) || query("family/family_name", me) != "å”é–€ä¸–å®¶") )
+                return notify_fail(obj->name() + "æ¯’æ€§å¼·çƒˆï¼Œä½ å¿…é ˆçŸ¥æ›‰å”é–€ç¨ç‰¹ä¸‹æ¯’æŠ€å·§æ‰èƒ½ä½¿è‡ªå·±ä¸è¢«å‚·å®³ã€‚\n");
 
         if( !query("can_daub", obj) )
-                return notify_fail("ÕâÖÖ¶¾Ò©²»ÄÜÓÃÀ´Í¿Ä¨¡£\n");
+                return notify_fail("é€™ç¨®æ¯’è—¥ä¸èƒ½ç”¨ä¾†å¡—æŠ¹ã€‚\n");
 
         set_temp("daub/who_id",query("id",  me), dest);
         set_temp("daub/who_name",query("name",  me), dest);
@@ -87,19 +87,19 @@ int main(object me, string arg)
                 POISON->mixed_poison(query_temp("daub/poison", dest),query("poison", obj)), dest);
         if (dest == me)
         {
-                message("vision", sprintf("%sÄÃ³öÒ»Ğ©¶«Î÷ÔÚ×Ô¼ºÉíÉÏÍ¿À´"
-                                          "Ä¨È¥µÄ£¬²»ÖªµÀÔÚ¸ÉÊ²Ã´¡£\n",
+                message("vision", sprintf("%sæ‹¿å‡ºä¸€äº›æ±è¥¿åœ¨è‡ªå·±èº«ä¸Šå¡—ä¾†"
+                                          "æŠ¹å»çš„ï¼Œä¸çŸ¥é“åœ¨å¹¹ä»€éº¼ã€‚\n",
                                           me->name()), environment(me), ({ me }));
-                tell_object(me, HIG "Äã°Ñ" + obj->name() + HIG "Í¿Ä¨µ½×Ô¼ºÊÖÉÏ¡£\n" NOR);
+                tell_object(me, HIG "ä½ æŠŠ" + obj->name() + HIG "å¡—æŠ¹åˆ°è‡ªå·±æ‰‹ä¸Šã€‚\n" NOR);
                 check_poison(me, dest, I_KNOW);
                 destruct(obj);
                 return 1;
         }
 
-        message("vision", sprintf("%sÄÃ³öÒ»Ğ©¶«Î÷Í¿Ä¨ÔÚ%sÉÏÃæ¡£\n",
+        message("vision", sprintf("%sæ‹¿å‡ºä¸€äº›æ±è¥¿å¡—æŠ¹åœ¨%sä¸Šé¢ã€‚\n",
                                   me->name(), dest->name()),
                           environment(me), ({ me }));
-        tell_object(me, HIG "Äã°Ñ" + obj->name() + HIG "Í¿Ä¨µ½" + dest->name() + HIG "ÉÏ¡£\n" NOR);
+        tell_object(me, HIG "ä½ æŠŠ" + obj->name() + HIG "å¡—æŠ¹åˆ°" + dest->name() + HIG "ä¸Šã€‚\n" NOR);
         if( query("equipped", dest) == "worn" && 
             query("armor_type", dest) != "hands" && 
             environment(dest) == me)
@@ -136,43 +136,43 @@ void check_poison(object me, object dest, int iknow)
         lvl = me->query_skill("force") + query("poison", me) / 2;
         if (lvl < 100 || lvl < (int)p["level"])
         {
-                message("vision", HIC "ºöÈ»" + me->name() + HIC "Ã¼Í·"
-                                  "½ôËõ£¬ÉñÇéÍ´¿à£¬¿´À´ÊÇÓöµ½Âé·³ÁË¡£\n" NOR,
+                message("vision", HIC "å¿½ç„¶" + me->name() + HIC "çœ‰é ­"
+                                  "ç·Šç¸®ï¼Œç¥æƒ…ç—›è‹¦ï¼Œçœ‹ä¾†æ˜¯é‡åˆ°éº»ç…©äº†ã€‚\n" NOR,
                                   environment(me), ({ me }));
-                tell_object(me, HIC "ºöÈ»Äã¾õµÃÓĞµã²»¶Ô¾¢£¬²»ºÃ£¬¿ÉÄÜÊÇÖĞ¶¾ÁË¡£\n" NOR);
+                tell_object(me, HIC "å¿½ç„¶ä½ è¦ºå¾—æœ‰é»ä¸å°å‹ï¼Œä¸å¥½ï¼Œå¯èƒ½æ˜¯ä¸­æ¯’äº†ã€‚\n" NOR);
                 me->affect_by(type, p);
                 delete_temp("daub", dest);
                 return;
         }
 
-        message("vision", HIC + me->name() + HIC "Ã¼Í·"
-                          "Î¢Î¢Ò»Öå£¬Ëæ¼´ÊæÕ¹¿ªÀ´¡£\n" NOR,
+        message("vision", HIC + me->name() + HIC "çœ‰é ­"
+                          "å¾®å¾®ä¸€çšºï¼Œéš¨å³èˆ’å±•é–‹ä¾†ã€‚\n" NOR,
                           environment(me), ({ me }));
 
         if (p["level"] > 120)
         {
                 if (iknow)
-                        tell_object(me, HIC "Äã·¢ÏÖÕâ" + name + HIC "¶¾ĞÔÉõ"
-                                        "ÊÇÃÍÁÒ£¬ĞÒºÃÄÚ¹¦¸ßÉî£¬µÖµ²µÃ×¡¡£\n" NOR);
+                        tell_object(me, HIC "ä½ ç™¼ç¾é€™" + name + HIC "æ¯’æ€§ç”š"
+                                        "æ˜¯çŒ›çƒˆï¼Œå¹¸å¥½å…§åŠŸé«˜æ·±ï¼ŒæŠµæ“‹å¾—ä½ã€‚\n" NOR);
                 else
-                        tell_object(me, HIC "Äã·¢ÏÖÕâ" + dest->name() + HIC "ÉÏµÄ" +
-                                        name + HIC "¶¾ĞÔÉõ"
-                                        "ÊÇÃÍÁÒ£¬¿÷µÃÄãÄÚ¹¦¸ßÉî£¬²ÅĞÒÃâÎŞÊÂ¡£\n" NOR);
+                        tell_object(me, HIC "ä½ ç™¼ç¾é€™" + dest->name() + HIC "ä¸Šçš„" +
+                                        name + HIC "æ¯’æ€§ç”š"
+                                        "æ˜¯çŒ›çƒˆï¼Œè™§å¾—ä½ å…§åŠŸé«˜æ·±ï¼Œæ‰å¹¸å…ç„¡äº‹ã€‚\n" NOR);
         } else
         if( !iknow && query_temp("who_id", dest) != query("id", me) )
         {
-                tell_object(me, HIC "Äã·¢ÏÖÕâ" + name + HIC "ÉÏÃæ´ø¶¾¡£\n" NOR);
+                tell_object(me, HIC "ä½ ç™¼ç¾é€™" + name + HIC "ä¸Šé¢å¸¶æ¯’ã€‚\n" NOR);
         }
 }
 
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : daub <¶¾Æ·Ãû³Æ> on <ÎäÆ÷> | <·À¾ß> | hand
-           daub <ÎäÆ÷> | <·À¾ß> | [hand] with <¶¾Æ·Ãû³Æ>
+æŒ‡ä»¤æ ¼å¼ : daub <æ¯’å“åç¨±> on <æ­¦å™¨> | <é˜²å…·> | hand
+           daub <æ­¦å™¨> | <é˜²å…·> | [hand] with <æ¯’å“åç¨±>
 
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄã½«Ä³Ñù¶¾Æ·Í¿Ä¨µ½ÎäÆ÷ÉÏ£¬·À¾ß»òÊÇÊÖÉÏ£¬µ±È»£¬Í¿Ä¨µ½
-·À¾ß»òÊÇÊÖÉÏµÄµÄ¶¾×îºÃ²»ÒªÊ¹×Ô¼ºÖĞ¶¾¡£
+é€™å€‹æŒ‡ä»¤å¯ä»¥è®“ä½ å°‡æŸæ¨£æ¯’å“å¡—æŠ¹åˆ°æ­¦å™¨ä¸Šï¼Œé˜²å…·æˆ–æ˜¯æ‰‹ä¸Šï¼Œç•¶ç„¶ï¼Œå¡—æŠ¹åˆ°
+é˜²å…·æˆ–æ˜¯æ‰‹ä¸Šçš„çš„æ¯’æœ€å¥½ä¸è¦ä½¿è‡ªå·±ä¸­æ¯’ã€‚
 HELP
     );
     return 1;

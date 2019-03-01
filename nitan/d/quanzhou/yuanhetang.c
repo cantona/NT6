@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Դ����");
+        set("short", "源和堂");
         set("long", @LONG
-����Զ���������۽������̣���ɫˮ���������ǵļӹ����ζ���أ�
-������壬�̶������������ɬ���ֿ��Գ��ڱ��棬Զ�������⡣
+這是遠近聞名的蜜餞制作舖，各色水果經過他們的加工後風味獨特，
+甜而不膩，咸而不過，酸而不澀，又可以長期保存，遠銷海內外。
 LONG );
         set("no_clean_up", 0);
         set("exits", ([

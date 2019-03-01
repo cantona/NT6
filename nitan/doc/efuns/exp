@@ -1,13 +1,13 @@
         exp(3)                        LP MudOSv21c7                (7 Jul 1996)
-        º¯ÊýÃû³Æ:
-                exp() - ÒÔÒ»¸ö¸¡µãÊýÎªÖ¸Êý, ×ÔÈ»¶ÔÊý e  Îªµ×Êý
-                        ¼ÆËãÆäÖµ.
-        º¯ÊýÓï·¨:
+        å‡½æ•¸åç¨±:
+                exp() - ä»¥ä¸€å€‹æµ®é»žæ•¸ç‚ºæŒ‡æ•¸, è‡ªç„¶å°æ•¸ e  ç‚ºåº•æ•¸
+                        è¨ˆç®—å…¶å€¼.
+        å‡½æ•¸èªžæ³•:
                 float exp( float f );
-                ¸¡µãÊý exp( ¸¡µãÊý f );
-        º¯ÊýÓÃ·¨:
-                exp() ´«»Ø e^f µÄÖµ.
-        ²Î¿¼º¯Êý:
+                æµ®é»žæ•¸ exp( æµ®é»žæ•¸ f );
+        å‡½æ•¸ç”¨æ³•:
+                exp() å‚³å›ž e^f çš„å€¼.
+        åƒè€ƒå‡½æ•¸:
                 log(3), pow(3), sqrt(3)
-        ÊÖ²á·­Òë:
+        æ‰‹å†Šç¿»è­¯:
                 Phoebus@ZH        97.Feb.12.                (Writen 5/23/97)

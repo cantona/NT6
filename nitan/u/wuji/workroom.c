@@ -8,10 +8,10 @@ int is_chat_room() { return 1; }
 
 void create()
 {
-        set("short", "Ä½ÈİÎŞ¼«µÄ¹¤×÷ÊÒ");
+        set("short", "æ…•å®¹ç„¡æ¥µçš„å·¥ä½œå®¤");
         set("long", @LONG
-ÕâÊÇÃ»ÓĞ½¨Ôì¹¤×÷ÊÒµÄÎ×Ê¦µÄÁÙÊ±×¡´¦£¬ÕâÀïµÄÉè±¸·Ç³£¼òµ¥£¬Ö»ÓĞ
-Ò»Ğ©³£ÓÃÎïÆ·¡£
+é€™æ˜¯æ²’æœ‰å»ºé€ å·¥ä½œå®¤çš„å·«å¸«çš„è‡¨æ™‚ä½è™•ï¼Œé€™è£¡çš„è¨­å‚™éå¸¸ç°¡å–®ï¼Œåªæœ‰
+ä¸€äº›å¸¸ç”¨ç‰©å“ã€‚
 LONG );
 
         set("exits", ([ /* sizeof() == 1 */
@@ -28,7 +28,7 @@ LONG );
 int valid_leave(object me, string dir)
 {
         if (dir == "north" && ! wizardp(me))
-                return notify_fail("ÄÇÀïÖ»ÓĞÎ×Ê¦²ÅÄÜ½øÈ¥¡£\n");
+                return notify_fail("é‚£è£¡åªæœ‰å·«å¸«æ‰èƒ½é€²å»ã€‚\n");
 
         return ::valid_leave(me, dir);
 }

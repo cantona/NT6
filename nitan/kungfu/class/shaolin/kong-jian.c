@@ -7,13 +7,13 @@ inherit F_GUARDER;
 
 void create()
 {
-        set_name("¿Õ¼û", ({ "kong jian", "kongjian" }));
+        set_name("ç©ºè¦‹", ({ "kong jian", "kongjian" }));
         set("long",
-                "ËûÊÇÒ»Î»Ğë·¢»¨°×µÄÀÏÉ®£¬ÉíĞÎÊİÏ÷£¬ÈİÃ²´ÈºÍ¡£\n"
+                "ä»–æ˜¯ä¸€ä½é ˆç™¼èŠ±ç™½çš„è€åƒ§ï¼Œèº«å½¢ç˜¦å‰Šï¼Œå®¹è²Œæ…ˆå’Œã€‚\n"
         );
 
-        set("nickname", HIR "ÉñÉ®" NOR);
-        set("gender", "ÄĞĞÔ");
+        set("nickname", HIR "ç¥åƒ§" NOR);
+        set("gender", "ç”·æ€§");
         set("attitude", "friendly");
         set("class", "bonze");
 
@@ -61,12 +61,12 @@ void create()
         }));
 
         set("guarder", ([
-                "refuse_other": "$N¶Ô$nµÀ£ºÉÆÔÕ£¬ºóµîÖ»ÓĞÉÙÁÖµÜ×Ó²ÅÄÜÈëÄÚ£¬Ê©Ö÷»¹ÊÇÇë»Ø°É£¡",
-                "refuse_carry": "$N¶Ô$nµÀ£ºÄã±³ÉÏ±³µÄÊÇË­£¿»¹²»¿ì¿ì·ÅÏÂÀ´£¿",
+                "refuse_other": "$Nå°$né“ï¼šå–„å“‰ï¼Œå¾Œæ®¿åªæœ‰å°‘æ—å¼Ÿå­æ‰èƒ½å…¥å…§ï¼Œæ–½ä¸»é‚„æ˜¯è«‹å›å§ï¼",
+                "refuse_carry": "$Nå°$né“ï¼šä½ èƒŒä¸ŠèƒŒçš„æ˜¯èª°ï¼Ÿé‚„ä¸å¿«å¿«æ”¾ä¸‹ä¾†ï¼Ÿ",
         ]));
 
         set("inquiry", ([
-                "½ğ¸Õ²»»µÌå" : "ÎÒÃÇÉÙÁÖµÜ×Ó²»¿ÉÇáÒ×É±Éú£¬ÕâÃÅÎä¹¦µ¹ÊÇºÏÊÊ¡£",
+                "é‡‘å‰›ä¸å£é«”" : "æˆ‘å€‘å°‘æ—å¼Ÿå­ä¸å¯è¼•æ˜“æ®ºç”Ÿï¼Œé€™é–€æ­¦åŠŸå€’æ˜¯åˆé©ã€‚",
         ]));
 
         set("chat_chance_combat", 120);
@@ -77,7 +77,7 @@ void create()
                 (: exert_function, "powerup" :),
         }));
 
-        create_family("ÉÙÁÖÅÉ", 36, "µÜ×Ó");
+        create_family("å°‘æ—æ´¾", 36, "å¼Ÿå­");
 
         setup();
 
@@ -86,7 +86,7 @@ void create()
 
 void attempt_apprentice(object ob)
 {
-        message_vision("$NË«ÊÖºÏÊ®¶Ô$nµÀ£ºÉÆÔÕÉÆÔÕ£¬ÀÏñÄÔçÒÑ²»ÊÕÍ½ÁË¡£\n",
+        message_vision("$Né›™æ‰‹åˆåå°$né“ï¼šå–„å“‰å–„å“‰ï¼Œè€è¡²æ—©å·²ä¸æ”¶å¾’äº†ã€‚\n",
                        this_object(), ob);
 }
 
@@ -100,14 +100,14 @@ int recognize_apprentice(object me, string skill)
 
         if (me->query_skill("buddhism", 1) < 250)
         {
-                command("say °¦£¡Äã»¹ÊÇºÃºÃĞŞÏ°·ğ·¨°É£¬²»Òªµ¢ÓÚÎäÑ§¡£");
+                command("say å”‰ï¼ä½ é‚„æ˜¯å¥½å¥½ä¿®ç¿’ä½›æ³•å§ï¼Œä¸è¦è€½äºæ­¦å­¸ã€‚");
                 return -1;
         }
 
         if( query_temp("can_learn/kongjian/jingang-buhuaiti", me) )
                 return 1;
 
-        command("say ºÃ°É£¬ÎÒ¾Í´«ÄãÎÒÉÙÁÖÅÉµÄ»¤ÌåÉñ¹¦£¬ÈÕºóÆÕ¶ÉÖÚÉú£¬È´ÉÙ²»ÁËËü¡£");
+        command("say å¥½å§ï¼Œæˆ‘å°±å‚³ä½ æˆ‘å°‘æ—æ´¾çš„è­·é«”ç¥åŠŸï¼Œæ—¥å¾Œæ™®æ¸¡çœ¾ç”Ÿï¼Œå»å°‘ä¸äº†å®ƒã€‚");
         set_temp("can_learn/kongjian/jingang-buhuaiti", 1, me);
         return 1;
 }
@@ -116,10 +116,10 @@ int accept_ask(object me, string topic)
 {
         switch (topic)
         {
-        case "½ğ¸Õ²»»µ" :
+        case "é‡‘å‰›ä¸å£" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/jingang-buhuaiti/protect",
-                           "name"    : "½ğ¸Õ²»»µ",
+                           "name"    : "é‡‘å‰›ä¸å£",
                            "sk1"     : "jingang-buhuaiti",
                            "lv1"     : 100,
                            "sk2"     : "force",

@@ -2,7 +2,7 @@
 
 #include <ansi.h>
 
-string name() { return MAG "Éñ¹âÀëºÏ" NOR; }
+string name() { return MAG "ç¥å…‰é›¢åˆ" NOR; }
 
 void remove_effect(object me);
 
@@ -11,28 +11,28 @@ int perform(object me, object target)
         string msg;
 
         if( !query("reborn/times", me) )
-                return notify_fail("ÄãÉĞÎ´×ªÊÀÖØÉú£¬ÎŞ·¨Ê©Õ¹" + name() + "¡£\n" NOR);
+                return notify_fail("ä½ å°šæœªè½‰ä¸–é‡ç”Ÿï¼Œç„¡æ³•æ–½å±•" + name() + "ã€‚\n" NOR);
 
         if( me->query_skill("lingbo-weibu", 1) < 1000 )
-                return notify_fail("ÄãµÄÁè²¨Î¢²½»¹²»¹»ÊìÁ·£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n" NOR);
+                return notify_fail("ä½ çš„å‡Œæ³¢å¾®æ­¥é‚„ä¸å¤ ç†Ÿç·´ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n" NOR);
 
         if( query("jingli", me)<2000 )
-                return notify_fail("ÄãÏÖÔÚÕæÆø²»×ã£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n" NOR);
+                return notify_fail("ä½ ç¾åœ¨çœŸæ°£ä¸è¶³ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n" NOR);
 
         if( query("neili", me)<5000 )
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦²»¹»£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n" NOR);
+                return notify_fail("ä½ ç¾åœ¨å…§åŠ›ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n" NOR);
 
         if( query_temp("immortal", me) )
-                return notify_fail("ÄãÒÑ¾­ÔËÆğ" + name() + "¡£\n" NOR);
+                return notify_fail("ä½ å·²ç¶“é‹èµ·" + name() + "ã€‚\n" NOR);
 
         if( time() - query_temp("last_immortal", me) < 20 )
-                return notify_fail("ÄãÎŞ·¨Á¬ĞøÎŞÏŞÖÆµÄÊ¹ÓÃ" + name() + "¡£\n" NOR);
+                return notify_fail("ä½ ç„¡æ³•é€£çºŒç„¡é™åˆ¶çš„ä½¿ç”¨" + name() + "ã€‚\n" NOR);
 
         addn("neili", -1000, me);
         me->receive_damage("qi", 0);
         set_temp("immortal", 1, me);
 
-        msg = MAG "\n$N" MAG "ÌáÆğÕæÆø£¬Ê©Õ¹" + name() + "£¬ÉíĞÎĞé»Î£¬Éñ¹â½»´í£¬ÀëºÏÄÑ·Ö£¬ÈÃÈËÄÑÒÔ¿´ÇåËùÔÚ¡£\n" NOR;
+        msg = MAG "\n$N" MAG "æèµ·çœŸæ°£ï¼Œæ–½å±•" + name() + "ï¼Œèº«å½¢è™›æ™ƒï¼Œç¥å…‰äº¤éŒ¯ï¼Œé›¢åˆé›£åˆ†ï¼Œè®“äººé›£ä»¥çœ‹æ¸…æ‰€åœ¨ã€‚\n" NOR;
 
         message_combatd(msg, me);
         set_temp("last_immortal", time(), me);
@@ -49,6 +49,6 @@ void remove_effect(object me)
         if( query_temp("immortal", me) )
         {
                 delete_temp("immortal", me);
-                tell_object(me, "ÄãµÄ¡¸Éñ¹âÀëºÏ¡¹ÔË¹¦Íê±Ï£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï¡£\n");
+                tell_object(me, "ä½ çš„ã€Œç¥å…‰é›¢åˆã€é‹åŠŸå®Œç•¢ï¼Œå°‡å…§åŠ›æ”¶å›ä¸¹ç”°ã€‚\n");
         }
 }

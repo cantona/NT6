@@ -1,4 +1,4 @@
-// baishulin4.c °ØÊ÷ÁÖ
+// baishulin4.c æŸæ¨¹æ—
 // Winder Oct.10 1998
 
 inherit ROOM;
@@ -6,10 +6,10 @@ int do_kan(string arg);
 
 void create()
 {
-        set("short", "°ØÊ÷ÁÖ");
+        set("short", "æŸæ¨¹æ—");
         set("long", @LONG
-ÕâÀïÊÇÊ÷ÁÖµÄ±ßÔµ£¬¹âÏßÁÁµÄ¶àÁË¡£²ÎÌìµÄ°ØÊ÷Ò²Ï¡ÊèÁËºÜ¶à¡£
-ÅÔ±ßÓĞÒ»´Ô¹àÄ¾(frutex)ÔÓÉú¡£¹àÄ¾ÔÙÍùÇ°£¬¾ÍÊÇĞüÑÂÁË¡£
+é€™è£¡æ˜¯æ¨¹æ—çš„é‚Šç·£ï¼Œå…‰ç·šäº®çš„å¤šäº†ã€‚åƒå¤©çš„æŸæ¨¹ä¹Ÿç¨€ç–äº†å¾ˆå¤šã€‚
+æ—é‚Šæœ‰ä¸€å¢çŒæœ¨(frutex)é›œç”Ÿã€‚çŒæœ¨å†å¾€å‰ï¼Œå°±æ˜¯æ‡¸å´–äº†ã€‚
 LONG
         );
         set("outdoors", "zhongnan");
@@ -20,7 +20,7 @@ LONG
         set("no_clean_up", 0);
         set("count",1);
         set("item_desc", ([
-            "frutex": "Ò»´ÔÄã½Ğ²»³öÃû×ÖµÄ¹àÄ¾£¬ÆäÖĞ¼ĞÔÓ×ÅºÜ¶àĞ¡´Ì¡£\n"
+            "frutex": "ä¸€å¢ä½ å«ä¸å‡ºåå­—çš„çŒæœ¨ï¼Œå…¶ä¸­å¤¾é›œè‘—å¾ˆå¤šå°åˆºã€‚\n"
         ]) );
 
         set("coor/x", -3130);
@@ -41,23 +41,23 @@ int do_kan(string arg)
         object ob;
 
         if( !arg || arg != "frutex" ) {
-                return notify_fail("ÄãÒª¿³Ê²Ã´£¿\n");
+                return notify_fail("ä½ è¦ç ä»€éº¼ï¼Ÿ\n");
         }
 
         if( !objectp(weapon=query_temp("weapon", me)) )
-                return notify_fail("²»ÓÃ¼Ò»ï¿ÖÅÂ²»ĞĞ°É£¡\n");
+                return notify_fail("ä¸ç”¨å®¶ä¼™ææ€•ä¸è¡Œå§ï¼\n");
 
         if (query("count")>0) {
-        message_vision("$N°Î³ö±øÈĞ£¬×ßµ½¹àÄ¾´Ô¸úÇ°Ò»ÕóÂÒ¿³£¬°ÑÃæÇ°Ò»Ğ©ËÊÁ¢µÄ¹àÄ¾\n",me);
-        message_vision("¿³µ¹ÒÔºó£¬$N·¢¾õÏÂÃæÉú³¤×ÅÒ»¿ÃÊ²Ã´Ğ¡²İ£¬ÓÚÊÇË³ÊÖ°ÎÁËÆğÀ´£¬\n", me);
-        message_vision("Ã»Ïëµ½Õâ¶«Î÷ÏÂÃæÁ¬×ÅºÃ´óÒ»¿é¸ù¾¥¡£\n",me);
+        message_vision("$Næ‹”å‡ºå…µåˆƒï¼Œèµ°åˆ°çŒæœ¨å¢è·Ÿå‰ä¸€é™£äº‚ç ï¼ŒæŠŠé¢å‰ä¸€äº›è³ç«‹çš„çŒæœ¨\n",me);
+        message_vision("ç å€’ä»¥å¾Œï¼Œ$Nç™¼è¦ºä¸‹é¢ç”Ÿé•·è‘—ä¸€æ£µä»€éº¼å°è‰ï¼Œäºæ˜¯é †æ‰‹æ‹”äº†èµ·ä¾†ï¼Œ\n", me);
+        message_vision("æ²’æƒ³åˆ°é€™æ±è¥¿ä¸‹é¢é€£è‘—å¥½å¤§ä¸€å¡Šæ ¹è–ã€‚\n",me);
         addn("count",-1);
         ob=new("/clone/medicine/vegetable/fuling");
         ob->move(me);
         }
         else {
-        message_vision("$N°Î³ö±øÈĞ£¬×ßµ½¹àÄ¾´Ô¸úÇ°Ò»ÕóÂÒ¿³£¬°ÑÃæÇ°Ò»Ğ©ËÊÁ¢µÄ¹àÄ¾\n",me);
-        message_vision("¿³µ¹ÁË¡£$NÀÛµÄ¹»Çº¡£\n", me);
+        message_vision("$Næ‹”å‡ºå…µåˆƒï¼Œèµ°åˆ°çŒæœ¨å¢è·Ÿå‰ä¸€é™£äº‚ç ï¼ŒæŠŠé¢å‰ä¸€äº›è³ç«‹çš„çŒæœ¨\n",me);
+        message_vision("ç å€’äº†ã€‚$Nç´¯çš„å¤ å—†ã€‚\n", me);
         }
 
         return 1;

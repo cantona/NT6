@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��Ʒ��");
+        set("short", "物品房");
         set("long", @LONG
-������Ʒ����һ������ӡ�����ŵ��������룬��������
-�Ĺܼ��Ǻ����渺��ģ�һЩ�����ڸ�����Ʒ���ߵ�����˵��
-ʲô��
+這是物品房，一個大架子。上面放的整整齊齊，看來這裡
+的管家是很認真負責的，一些人正在跟管物品工具的青年說著
+什麼。
 LONG);
         set("no_fight", 1);
         set("exits", ([

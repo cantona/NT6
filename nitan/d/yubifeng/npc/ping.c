@@ -1,14 +1,14 @@
-// ping.c Æ½°¢ËÄ
+// ping.c å¹³é˜¿å››
 
 #include <ansi.h>
 inherit NPC;
 
 void create()
 {
-        set_name("Æ½°¢ËÄ", ({ "ping asi", "asi", "ping" }) );
-        set("gender", "ÄĞĞÔ");
+        set_name("å¹³é˜¿å››", ({ "ping asi", "asi", "ping" }) );
+        set("gender", "ç”·æ€§");
         set("age", 53);
-        set("long","ËûÊÇÑ©É½·ÉºüµÄ¼ÒÆÍ¡£Ò»Éú¸úËæºúÒ»µ¶¸¸×Ó¡£\n");
+        set("long","ä»–æ˜¯é›ªå±±é£›ç‹çš„å®¶åƒ•ã€‚ä¸€ç”Ÿè·Ÿéš¨èƒ¡ä¸€åˆ€çˆ¶å­ã€‚\n");
         set("attitude", "friendly");
         set("str", 15);
         set("int", 15);

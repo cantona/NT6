@@ -1,15 +1,15 @@
-// /d/xiakedao/shihole4.c ���͵� ʯ��4
+// /d/xiakedao/shihole4.c 俠客島 石洞4
 
 inherit ROOM;
 
 int do_learn(string arg);
 void create()
 {
-        set("short", "ʯ��");
+        set("short", "石洞");
         set("long", @LONG
-�˶�����ȴ�ִ���ͬ��ȴ����������ɽһ�㡣ֻ��һɫ�첼�
-ᣣ���֧�ִ�ĺ�������Ľǡ�һ��վ��������״󺺣������䵶��
-�����Ϻ�ӣ�ʹ������д������۽���κ���壺��������项��
+此洞氣氛卻又大不相同，卻似來到火燄山一般。只見一色紅布帷
+幔，八支粗大的紅燭分列四角。一旁站立的是虯髯大漢，各佩彎刀，
+刀柄上紅櫻低垂。正中大字是雄健的魏碑體：「烈燄豪情」。
 LONG );
         set("exits", ([
                 "out"   : __DIR__"shihole3",

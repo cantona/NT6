@@ -2,14 +2,14 @@
 inherit ITEM;
 void create()
 {
-    set_name(YEL "Ò¹³½ÈÕ¼Ç" NOR, ({ "night's diary","diary" }) );
+    set_name(YEL "å¤œè¾°æ—¥è¨˜" NOR, ({ "night's diary","diary" }) );
     set_weight(1);
     if( clonep() )
             set_default_object(__FILE__);
     else {
-            set("unit", "±¾");
+            set("unit", "æœ¬");
             set("material", "paper");
-            set("long", "Ò»±¾Î×Ê¦Ò¹³½ÒÔÇ°µÄÈÕ¼Ç£¬Äã¿ÉÒÔ¶ÁÒ»¶Á£¨£ò£å£á£ä£©£¬Ëµ²»¶¨»áÓĞÊ²Ã´·¢ÏÖ¡£\n");
+            set("long", "ä¸€æœ¬å·«å¸«å¤œè¾°ä»¥å‰çš„æ—¥è¨˜ï¼Œä½ å¯ä»¥è®€ä¸€è®€ï¼ˆï½’ï½…ï½ï½„ï¼‰ï¼Œèªªä¸å®šæœƒæœ‰ä»€éº¼ç™¼ç¾ã€‚\n");
           }
 
     setup();
@@ -33,14 +33,14 @@ if(find_call_out("markit")== -1)
 call_out("markit",random(60)+20,me);
 if( !mapp(exits=query("exits", environment(me))) )
 {
-tell_object(me,"ÓĞÒ»Åú±¦²Ø¾ÍÔÚ¸½½ü£¡\n");
+tell_object(me,"æœ‰ä¸€æ‰¹å¯¶è—å°±åœ¨é™„è¿‘ï¼\n");
 return 1;
 }
         dirs = keys(exits);
         thisdir = dirs[random(sizeof(dirs))];
         if(!sizeof(thisdir)) return 1;
         set("thisdir",thisdir);
-        tell_object(me,"ÓĞÒ»Åú±¦²Ø¾ÍÔÚ"+thisdir+"µÄ·½Ïò£¡\n");
+        tell_object(me,"æœ‰ä¸€æ‰¹å¯¶è—å°±åœ¨"+thisdir+"çš„æ–¹å‘ï¼\n");
         return 1;
 }
 
@@ -57,12 +57,12 @@ if( query_temp("going", me) <= 20 || environment() != me)return 1;
 if(!query("already"))
 {
 gold = new("/clone/money/gold");
-tell_object(me,"\n\nÄãÍäÑü×ĞÏ¸²éÕÒ£¬´Ó¡ºÒ¹³½ÈÕ¼Ç¡»ËùÖ¸Ê¾µÄµØ·½ÍÚ³öĞ©½ğ×Ó£¡\n");
+tell_object(me,"\n\nä½ å½è…°ä»”ç´°æŸ¥æ‰¾ï¼Œå¾ã€å¤œè¾°æ—¥è¨˜ã€æ‰€æŒ‡ç¤ºçš„åœ°æ–¹æŒ–å‡ºäº›é‡‘å­ï¼\n");
 gold->set_amount(50);
 gold->move(me);
 delete_temp("going", me);
 set("already",1);
-        message_vision("\n$N»¯ÎªÇáÑÌ£¬½¥½¥É¢È¥ÁË¡£\n", this_object());
+        message_vision("\n$NåŒ–ç‚ºè¼•ç…™ï¼Œæ¼¸æ¼¸æ•£å»äº†ã€‚\n", this_object());
         destruct(this_object());
 }
 return 1;

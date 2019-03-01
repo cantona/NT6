@@ -10,16 +10,16 @@ int update_condition(object me, int duration)
 
         if (! living(me) && (me->query("eff_qi") < 100 || me->query("eff_jing") < 50))
         {
-                me->set_temp("die_reason", "ÒòÎªÇ¿×ÔĞŞÁ¶Äæ¾ÅÒõĞÄ·¨£¬×ß»ğÈëÄ§¶øËÀ");
+                me->set_temp("die_reason", "å› ç‚ºå¼·è‡ªä¿®ç…‰é€†ä¹é™°å¿ƒæ³•ï¼Œèµ°ç«å…¥é­”è€Œæ­»");
                 me->die();
                 return 0;
         } else
         {
                 me->receive_wound("qi", 100);
                 me->receive_wound("jing", 50);
-                tell_object(me, HIR "Äã¾õµÃµ¤ÌïÕóÕóº®Àä£¬¿ÉÊÇÁ³ÉÏÈ´"
-                            "ºÃÏñ·¢ÉÕÒ»Ñù»ğÈÈÖ®¼«¡£\n" NOR);
-                message("vision", me->name() + "Á³É«ºöÇàºöºì£¬Ç¿ÈÌ×ÅÔË¹¦¿¹Õù¡£\n",
+                tell_object(me, HIR "ä½ è¦ºå¾—ä¸¹ç”°é™£é™£å¯’å†·ï¼Œå¯æ˜¯è‡‰ä¸Šå»"
+                            "å¥½åƒç™¼ç‡’ä¸€æ¨£ç«ç†±ä¹‹æ¥µã€‚\n" NOR);
+                message("vision", me->name() + "è‡‰è‰²å¿½é’å¿½ç´…ï¼Œå¼·å¿è‘—é‹åŠŸæŠ—çˆ­ã€‚\n",
                         environment(me), me);
         }
 

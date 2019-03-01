@@ -2,11 +2,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("¹ô×ÓÊÖ", ({ "guizi shou", "guizi", "shou" }));
+        set_name("åŠŠå­æ‰‹", ({ "guizi shou", "guizi", "shou" }));
         set("long", 
-                "Ò»¸öÉí²ÄØâº·µÄÄĞ×Ó£¬ÊÖÀïÌá×Å±ú¸Öµ¶¡£\n"
-              "ÔÚĞÌ³¡ÖĞ×¨ÃÅ¸ºÔğÍÀÈË¡£\n");
-        set("gender", "ÄĞĞÔ");
+                "ä¸€å€‹èº«æå‰½æ‚çš„ç”·å­ï¼Œæ‰‹è£¡æè‘—æŸ„é‹¼åˆ€ã€‚\n"
+              "åœ¨åˆ‘å ´ä¸­å°ˆé–€è² è²¬å± äººã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 30);
         set("attitude", "heroism");
         set("shen_type", 1);

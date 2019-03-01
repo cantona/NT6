@@ -25,17 +25,17 @@ int main(object me, string arg)
                 return help(me);
                 
         obj = find_player(target);
-        write(HIG "\n �㾯��" + obj->name(1) + "������" + msg + "����Ϊ�� \n" NOR);
+        write(HIG "\n 你警告" + obj->name(1) + "，因其" + msg + "的行為。 \n" NOR);
         
-        tell_object(obj, sprintf( HIR "\n ��Ϸ�����߾����㣺\n \n \n \n" + "      ���" HIW "��%s��" HIR "��ΪΥ������Ϸ����������"HIW" help rules "HIR"��ѯ��Ϸ�����ش˾��档\n \n"+"      �����κ����⣬���������ߡ������ٷ��������չ�������\n \n \n \n \n \n" NOR, msg));
+        tell_object(obj, sprintf( HIR "\n 遊戲管理者警告你：\n \n \n \n" + "      你的" HIW "「%s」" HIR "行為違反了遊戲規則，請輸入"HIW" help rules "HIR"查詢遊戲規則，特此警告。\n \n"+"      如有任何問題，請立刻申訴。若有再犯，將按照規則處理。\n \n \n \n \n \n" NOR, msg));
 
         if (! wizardp(me) && member_array(query("id", me), SHOUT_LIST) == -1)
-                return notify_fail("Ŀǰ�ݲ�������� shout��\n");
+                return notify_fail("目前暫不開放玩家 shout。\n");
                 
-        if (! arg) return notify_fail("����Ҫ���ʲô��\n");
+        if (! arg) return notify_fail("你想要大叫什麼？\n");
 
-        shout( HIG "��ϵͳ��Ϣ����̶���棺"+ obj->name(1) + "��Ϊ" + msg + "��ϵͳ���档\n" NOR );
-        write( HIG "��ϵͳ��Ϣ����̶���棺"+ obj->name(1) + "��Ϊ" + msg + "��ϵͳ���档\n" NOR );
+        shout( HIG "【系統信息】泥潭公告："+ obj->name(1) + "因為" + msg + "被系統警告。\n" NOR );
+        write( HIG "【系統信息】泥潭公告："+ obj->name(1) + "因為" + msg + "被系統警告。\n" NOR );
 
         return 1;
 }
@@ -46,9 +46,9 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-ָ���ʽ��alarm <ĳ��> <ѶϢ>
-����������ָ���Υ���������ҡ�
-ͬʱ���ɱ������������ֱ�Ӵ���Υ����ҵ�Ȩ����
+指令格式：alarm <某人> <訊息>
+你可以用這個指令警告違反規則的玩家。
+同時神仙保留不經警告就直接處理違規玩家的權利。
 HELP
         );
         return 1;

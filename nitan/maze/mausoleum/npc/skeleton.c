@@ -4,12 +4,12 @@ inherit CLASS_D("generate") + "/boss";
 void sp_attack();
 void create()
 {
-        string *names = ({"÷¼÷ÃÎäÊ¿"});
+        string *names = ({"éª·é«æ­¦å£«"});
 
         ::create();
         set_name( names[random(sizeof(names))], ({ "skeleton fighter","skeleton", "fighter" }));
-        set("long", "ÕâÊÇÒ»Ö»¹ÇÍ·¼Ü×Ó¡£\n");
-        set("title", HIB "(¹íÆø)" NOR);
+        set("long", "é€™æ˜¯ä¸€åªéª¨é ­æ¶å­ã€‚\n");
+        set("title", HIB "(é¬¼æ°£)" NOR);
 
         set("str", 50);
         set("con", 120);
@@ -24,7 +24,7 @@ void create()
         /*
         set("chat_chance", 1);
         set("chat_msg", ({
-                "÷¼÷Ã¿Õ¶´µÄÑÛ¿ôÀïÉÁË¸×Å¿ÉÅÂµÄÓ«¹â¡£\n"
+                "éª·é«ç©ºæ´çš„çœ¼çœ¶è£¡é–ƒçˆè‘—å¯æ€•çš„ç†’å…‰ã€‚\n"
         }) );
         */
         set("chat_chance_combat", 120);
@@ -40,7 +40,7 @@ void create()
                 "mar" : 10,
         ]));
         //set("level", 20 );
-        set("death_msg",BLU"\n$NÉ¢³ÉÁËÒ»¶ÑËé¹ÇÍ·¡£\n\n"NOR);
+        set("death_msg",BLU"\n$Næ•£æˆäº†ä¸€å †ç¢éª¨é ­ã€‚\n\n"NOR);
         set_temp("apply/attack", 2000+random(1000));
         set_temp("apply/unarmed_damage",2000+random(1000));
         set_temp("apply/armor", 2000+random(1000));
@@ -76,8 +76,8 @@ void sp_attack()
         if( objectp(weapon) ) weapon->unequip();
         if( objectp(ob = present("long sword", this_object())) ) {
                 ob->wield();
-                msg = HIB"$NË«ÑÛÍ»È»·¢³öÇ¿ÁÒµÄÀ¶¹â£¬Áî$nÕö²»¿ªÑÛ£¬$n¸Ğµ½Ò»Õó¾ßÍ´¡£\nÆ¬¿Ìºó¹âÃ¢É¢È¥£¬$nºÕÈ»·¢ÏÖ$NµÄÊÖÖĞ³¤½£ÕıÔÚµÎÑª£¬\n"
-                 "$n±»$NÊ¹³öÒ»Ì×Ê§´«ÒÑ¾ÃµÄ¹Å´ú½£·¨ËùÉË£¡\n"NOR;
+                msg = HIB"$Né›™çœ¼çªç„¶ç™¼å‡ºå¼·çƒˆçš„è—å…‰ï¼Œä»¤$nçœä¸é–‹çœ¼ï¼Œ$næ„Ÿåˆ°ä¸€é™£å…·ç—›ã€‚\nç‰‡åˆ»å¾Œå…‰èŠ’æ•£å»ï¼Œ$nèµ«ç„¶ç™¼ç¾$Nçš„æ‰‹ä¸­é•·åŠæ­£åœ¨æ»´è¡€ï¼Œ\n"
+                 "$nè¢«$Nä½¿å‡ºä¸€å¥—å¤±å‚³å·²ä¹…çš„å¤ä»£åŠæ³•æ‰€å‚·ï¼\n"NOR;
                 message_vision(append_color(msg, HIB),this_object(),enemy);
                 enemy->receive_damage("qi",2000+random(2000),this_object());
                 COMBAT_D->report_status(enemy);

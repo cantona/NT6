@@ -4,7 +4,7 @@ inherit ITEM;
 
 void create()
 {
-        set_name("×íÊ¯", ({ "zui shi", "drunk stone", "shi", "stone" }) );
+        set_name("é†‰çŸ³", ({ "zui shi", "drunk stone", "shi", "stone" }) );
         set_weight(500);
         set_max_encumbrance(80000);
         set("no_get", 1);
@@ -13,9 +13,9 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿é");
-                set("long", "Àî°××í¾ÆÎÔÃßµÄ×íÊ¯£¬Ê¯ÉÏÒ»ÈËĞÎÒÀÏ¡¿É¼û£¬¹ÛÆäĞÎ×´Ç¡ËÆ
-¾ÆÖÁº¨´¦¡£\n");
+                set("unit", "å¡Š");
+                set("long", "æç™½é†‰é…’è‡¥çœ çš„é†‰çŸ³ï¼ŒçŸ³ä¸Šä¸€äººå½¢ä¾ç¨€å¯è¦‹ï¼Œè§€å…¶å½¢ç‹€æ°ä¼¼
+é…’è‡³é…£è™•ã€‚\n");
                 set("value", 1);
                 set("skill", ([
                         "name"         : "literate",

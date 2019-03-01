@@ -4,11 +4,11 @@
 inherit NPC;
 void create()
 {
-    set_name(HIB"¶¾Ö©Öë"NOR, ({ "du zhizhu" }));
-    set("long", "Ò»Ö»ÓĞ¶¾Ö©Öë¡£\n");
+    set_name(HIB"æ¯’èœ˜è››"NOR, ({ "du zhizhu" }));
+    set("long", "ä¸€åªæœ‰æ¯’èœ˜è››ã€‚\n");
 
-    set("race", "À¥³æ");
-        set("subrace", "ÅÀ³æ");
+    set("race", "æ˜†èŸ²");
+        set("subrace", "çˆ¬èŸ²");
     set("age", 3);
     set("attitude", "peaceful");
 
@@ -17,7 +17,7 @@ void create()
     set("str", 10);
     set("cor", 50);
 
-    set("limbs", ({ "×ì","´¥½Ç", "ÉíÌå", "Î²´Ì"}));
+    set("limbs", ({ "å˜´","è§¸è§’", "èº«é«”", "å°¾åˆº"}));
     set("verbs", ({ "bite" }) );
 
     set_temp("apply/attack", 10);
@@ -32,10 +32,10 @@ int hit_ob(object me, object ob, int damage)
 {
         if( random(damage)>query_temp("apply/armor", ob) && 
             ob->affect_by("poison", ([ "level" : random(10) + 10,
-                                       "name"  : "Öë¶¾",
+                                       "name"  : "è››æ¯’",
                                        "id"    : "nature poison",
                                        "duration" : 5 + random(10), ])))
         {
-                tell_object(ob, HIG "Äã¸Ğµ½ÉíÌå±äµÃ±ùÁ¹£¡\n" NOR );
+                tell_object(ob, HIG "ä½ æ„Ÿåˆ°èº«é«”è®Šå¾—å†°æ¶¼ï¼\n" NOR );
         }
 }

@@ -1,12 +1,12 @@
 // This program is a part of NITAN MudLIB
-// xiang.c ÁúÏè¾ÅÌì
+// xiang.c é¾ç¿”ä¹å¤©
 
 #include <ansi.h>
 #include <combat.h>
 
 inherit F_SSERVER;
 
-string name() { return "ÁúÏè¾ÅÌì"; }
+string name() { return "é¾ç¿”ä¹å¤©"; }
 
 int perform(object me, object target)
 {
@@ -22,34 +22,34 @@ int perform(object me, object target)
         }
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail("¡¸ÁúÏè¾ÅÌì¡¹Ö»ÄÜÔÚÕ½¶·ÖĞ¶Ô¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œé¾ç¿”ä¹å¤©ã€åªèƒ½åœ¨æˆ°é¬¥ä¸­å°å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( query_temp("weapon", me) || query_temp("secondary_weapon", me) )
-                return notify_fail("¡¸ÁúÏè¾ÅÌì¡¹Ö»ÄÜ¿ÕÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œé¾ç¿”ä¹å¤©ã€åªèƒ½ç©ºæ‰‹ä½¿ç”¨ã€‚\n");
 
         if( query("max_neili", me)<2000 )
-                return notify_fail("ÄãµÄÄÚÁ¦ĞŞÎª»¹²»¹»£¬ÎŞ·¨Ê©Õ¹¡¸ÁúÏè¾ÅÌì¡¹¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¿®ç‚ºé‚„ä¸å¤ ï¼Œç„¡æ³•æ–½å±•ã€Œé¾ç¿”ä¹å¤©ã€ã€‚\n");
 
         if( query("neili", me)<500 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¡\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼\n");
 
         if( query("qi", me)<800 )
-                return notify_fail("ÄãµÄÌåÁ¦ÏÖÔÚ²»¹»£¡\n");
+                return notify_fail("ä½ çš„é«”åŠ›ç¾åœ¨ä¸å¤ ï¼\n");
 
         if ((int)me->query_skill("dragon-strike", 1) < 150)
-                return notify_fail("ÄãµÄ½µÁúÊ®°ËÕÆ»ğºò²»¹»£¬ÎŞ·¨Ê¹ÓÃ¡¸ÁúÏè¾ÅÌì¡¹£¡\n");
+                return notify_fail("ä½ çš„é™é¾åå…«æŒç«å€™ä¸å¤ ï¼Œç„¡æ³•ä½¿ç”¨ã€Œé¾ç¿”ä¹å¤©ã€ï¼\n");
 
         if ((int)me->query_skill("force") < 300)
-                return notify_fail("ÄãµÄÄÚ¹¦ĞŞÎª²»¹»£¬ÎŞ·¨Ê¹ÓÃ¡¸ÁúÏè¾ÅÌì¡¹£¡\n");
+                return notify_fail("ä½ çš„å…§åŠŸä¿®ç‚ºä¸å¤ ï¼Œç„¡æ³•ä½¿ç”¨ã€Œé¾ç¿”ä¹å¤©ã€ï¼\n");
 
         if (me->query_skill_prepared("strike") != "dragon-strike")
-                return notify_fail("ÄãÏÖÔÚÃ»ÓĞ×¼±¸Ê¹ÓÃ½µÁúÊ®°ËÕÆ£¬ÎŞ·¨Ê¹ÓÃ¡¸ÁúÏè¾ÅÌì¡¹£¡\n");
+                return notify_fail("ä½ ç¾åœ¨æ²’æœ‰æº–å‚™ä½¿ç”¨é™é¾åå…«æŒï¼Œç„¡æ³•ä½¿ç”¨ã€Œé¾ç¿”ä¹å¤©ã€ï¼\n");
 
        if (! living(target))
-              return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+              return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIY "$N" HIY "ÉîÎüÒ»¿ÚÆø£¬¿çÇ°Ò»²½£¬Ë«ÕÆÃÍÈ»·­¹ö£¬"
-              "çÍ·×¶ø³ö£¬ÍğÈçÒ»ÌõÉñÁúÅÊÑÑÓÚ¾ÅÌìÖ®ÉÏ£¡\n\n" NOR;
+        msg = HIY "$N" HIY "æ·±å¸ä¸€å£æ°£ï¼Œè·¨å‰ä¸€æ­¥ï¼Œé›™æŒçŒ›ç„¶ç¿»æ»¾ï¼Œ"
+              "ç¹½ç´›è€Œå‡ºï¼Œå®›å¦‚ä¸€æ¢ç¥é¾æ”€èœ’äºä¹å¤©ä¹‹ä¸Šï¼\n\n" NOR;
 
         ap = attack_power(me, "strike") + me->query_str();
         dp = defense_power(target, "parry") + target->query_dex();
@@ -57,12 +57,12 @@ int perform(object me, object target)
         if (ap / 2 + random(ap) > dp)
         {
                 count = ap / 9;
-                msg += HIR "$n" HIR "Ãæ¶Ô$P" HIR "ÕâÅÅÉ½µ¹º£¹¥ÊÆ£¬ÍêÈ«"
-                       "ÎŞ·¨µÖµ²£¬Î¨ÓĞÍËºó¡£\n" NOR;
+                msg += HIR "$n" HIR "é¢å°$P" HIR "é€™æ’å±±å€’æµ·æ”»å‹¢ï¼Œå®Œå…¨"
+                       "ç„¡æ³•æŠµæ“‹ï¼Œå”¯æœ‰é€€å¾Œã€‚\n" NOR;
         } else
         {
-                msg += HIC "$n" HIC "ÄıÉñÓ¦Õ½£¬½ß¾¡ËùÄÜ»¯½â$P" HIC
-                       "Õâ¼¸ÕÆ¡£\n" NOR;
+                msg += HIC "$n" HIC "å‡ç¥æ‡‰æˆ°ï¼Œç«­ç›¡æ‰€èƒ½åŒ–è§£$P" HIC
+                       "é€™å¹¾æŒã€‚\n" NOR;
                 count = 0;
         }
 

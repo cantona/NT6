@@ -3,16 +3,16 @@
 inherit ROOM;
 void create()
 {
-        set("short", "´óÉ½¶´");
+        set("short", "å¤§å±±æ´");
         set("long", @LONG
-ÕâÊÇÎ÷É½ÉÏÒ»¸ö´óÉ½¶´£¬ÀïÃæºÚºõºõµÄ£¬Ê²Ã´Ò²Ã»ÓĞ¡£ÄãÕöÑÛ×ĞÏ¸
-¹Û²ì£¬·¢ÏÖ¶´ÖĞÓĞÒ»´Ô´ÔÆë¼çµÄ³¤²İ(cao)¡£
+é€™æ˜¯è¥¿å±±ä¸Šä¸€å€‹å¤§å±±æ´ï¼Œè£¡é¢é»‘ä¹ä¹çš„ï¼Œä»€éº¼ä¹Ÿæ²’æœ‰ã€‚ä½ çœçœ¼ä»”ç´°
+è§€å¯Ÿï¼Œç™¼ç¾æ´ä¸­æœ‰ä¸€å¢å¢é½Šè‚©çš„é•·è‰(cao)ã€‚
 LONG );
         set("exits", ([
                 "out"  : __DIR__"tulu4",
         ]));
         set("item_desc", ([
-            "cao" : "³¤²İÃÜ¼¯ºñÊµ£¬ºÃÏóÕÚ¸Ç×¡ÁËÊ²Ã´£¬ÄãÊµÔÚ¿´²»Çå³ş¡£\n",
+            "cao" : "é•·è‰å¯†é›†åšå¯¦ï¼Œå¥½è±¡é®è“‹ä½äº†ä»€éº¼ï¼Œä½ å¯¦åœ¨çœ‹ä¸æ¸…æ¥šã€‚\n",
         ]));
         set("no_clean_up", 0);
         set("coor/x", -7131);
@@ -34,7 +34,7 @@ int do_use(string arg)
         if (!present("fire", me))  return 0;
         if( arg=="fire" )
         {
-                write("ÄãµãÈ¼ÁË»ğÕÛ£¬·¢ÏÖ²İºóÃæºÃÏó»¹ÓĞ¸ö¶´£¬ËÆºõ¿ÉÒÔ×ê(zuan)½øÈ¥¡£\n");
+                write("ä½ é»ç‡ƒäº†ç«æŠ˜ï¼Œç™¼ç¾è‰å¾Œé¢å¥½è±¡é‚„æœ‰å€‹æ´ï¼Œä¼¼ä¹å¯ä»¥é‘½(zuan)é€²å»ã€‚\n");
                 set_temp("marks/dashandong", 1, me);
                 return 1;
         }
@@ -45,14 +45,14 @@ int do_zuan(string arg)
         object me = this_player();
 
         if( query_temp("marks/dashandong", me)){
-                message("vision", me->name() + "Íù²İ´ÔÖĞ×ÌÁïÒ»×ê¾Í²»¼ûÁË¡£\n", environment(me), ({me}) );
+                message("vision", me->name() + "å¾€è‰å¢ä¸­æ»‹æºœä¸€é‘½å°±ä¸è¦‹äº†ã€‚\n", environment(me), ({me}) );
                 me->move(__DIR__"shandong");
-                message("vision", me->name() + "´Ó²İ´ÔÖĞ×êÁË¹ıÀ´¡£\n", environment(me), ({me}) );
+                message("vision", me->name() + "å¾è‰å¢ä¸­é‘½äº†éä¾†ã€‚\n", environment(me), ({me}) );
                 delete_temp("marks/dashandong", me);
                 return 1;
         }
         else {
-                write("ÄãÏëÍùÄÄ¶ù×ê£¿£¡\n");
+                write("ä½ æƒ³å¾€å“ªå…’é‘½ï¼Ÿï¼\n");
                 return 1;
         }
 }

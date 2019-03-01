@@ -19,7 +19,7 @@ int update_condition(object me, int duration)
                 delete_temp("where", me);
                 delete_temp("mingchen", me);
                 set_temp("tmjob_failed", 1, me);
-                tell_object(me, "你抓蚊子消耗的时间太长了，任务失败！\n");
+                tell_object(me, "浣犳姄铓婂瓙娑堣�楃殑鏅傞枔澶暦浜嗭紝浠诲嫏澶辨晽锛乗n");
                 me->apply_condition("tmjob", 0);
                 return 0;
         }

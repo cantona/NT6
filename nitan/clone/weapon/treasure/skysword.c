@@ -1,4 +1,4 @@
-// skysword.c ÒĞÌì½£ 
+// skysword.c å€šå¤©åŠ 
 // Last Modified by winder on Sep. 7 2001
 
 #include <ansi.h>;
@@ -8,21 +8,21 @@ inherit F_UNIQUE;
 
 void create()
 {
-        set_name(CYN"ÒĞÌì½£"NOR,({"sky sword", "sword", "jian"}));
+        set_name(CYN"å€šå¤©åŠ"NOR,({"sky sword", "sword", "jian"}));
         set_weight(30000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
-                set("long", "´Ë½£ÓÉ¹ù¾¸»ÆÈØ·ò¸¾´òÔì£¬ÊÇÌìÏÂÉñ±ø¡£\n");
+                set("unit", "æŸ„");
+                set("long", "æ­¤åŠç”±éƒ­é–é»ƒè“‰å¤«å©¦æ‰“é€ ï¼Œæ˜¯å¤©ä¸‹ç¥å…µã€‚\n");
                 set("material", "steel");
-                set("no_drop", "Èç´Ë±¦¹óµÄÎäÆ÷ÔÙÊÀÄÑÇó°¡¡£\n");
-                set("no_get", "ËÍÈË£¿¿÷ÄãÏëµÄ³öÀ´£¡\n");
-                set("no_put", "ÕäÏ§Ëü°É¡£\n");
+                set("no_drop", "å¦‚æ­¤å¯¶è²´çš„æ­¦å™¨å†ä¸–é›£æ±‚å•Šã€‚\n");
+                set("no_get", "é€äººï¼Ÿè™§ä½ æƒ³çš„å‡ºä¾†ï¼\n");
+                set("no_put", "çæƒœå®ƒå§ã€‚\n");
                 set("value",100);
-                set("wield_msg", CYN "ÒĞÌì½£ÈçÁéÉß°ãÔ¾³ö½£ÇÊ£¬ÂäÔÚ$NÊÖÖĞ£¬·ÅÉä³ö
-è­è²µÄºÁ¹â£¬ÌìµØÎªÖ®±äÉ«¡£\n" NOR);
-                set("unwield_msg", CYN "$NÊÖÖĞ½£¹â½¥½¥°µµ­£¬ÌìÄ»½¥½¥»À³ö¹âÃ¢¡£\n" NOR);
+                set("wield_msg", CYN "å€šå¤©åŠå¦‚éˆè›‡èˆ¬èºå‡ºåŠé˜ï¼Œè½åœ¨$Næ‰‹ä¸­ï¼Œæ”¾å°„å‡º
+ç’€ç’¨çš„æ¯«å…‰ï¼Œå¤©åœ°ç‚ºä¹‹è®Šè‰²ã€‚\n" NOR);
+                set("unwield_msg", CYN "$Næ‰‹ä¸­åŠå…‰æ¼¸æ¼¸æš—æ·¡ï¼Œå¤©å¹•æ¼¸æ¼¸ç…¥å‡ºå…‰èŠ’ã€‚\n" NOR);
        }
        init_sword(300);
        setup();

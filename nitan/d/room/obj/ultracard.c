@@ -1,6 +1,6 @@
-// nfeecard.c ÎŞÉÏÃâ·Ñ¿¨
+// nfeecard.c ç„¡ä¸Šå…è²»å¡
 //
-// Ê¹ÓÃÃâ·Ñ¿¨½¨·¿²»ĞèÒª»¨·ÑÈÎºÎÒøÁ½
+// ä½¿ç”¨å…è²»å¡å»ºæˆ¿ä¸éœ€è¦èŠ±è²»ä»»ä½•éŠ€å…©
 
 #include <ansi.h>
 
@@ -8,14 +8,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIY "Ãâ·Ñ¿¨" NOR, ({ "card", "fee free card" }));
+        set_name(HIY "å…è²»å¡" NOR, ({ "card", "fee free card" }));
         set_weight(10);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "ÕÅ");
-                set("long", "ÕâÊÇÒ»ÕÅÎŞÉÏ×¡·¿Ãâ·Ñ¿¨£¬Æ¾ÕâÕÅ¿¨¿ÉÒÔÃâ·Ñ"
-                            "¹ºÂòÈÎºÎ×¡·¿¡£\n");
+                set("unit", "å¼µ");
+                set("long", "é€™æ˜¯ä¸€å¼µç„¡ä¸Šä½æˆ¿å…è²»å¡ï¼Œæ†‘é€™å¼µå¡å¯ä»¥å…è²»"
+                            "è³¼è²·ä»»ä½•ä½æˆ¿ã€‚\n");
                 set("material", "paper");
                 set("fee free", 2000000000);
                 set("value", 1);

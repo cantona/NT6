@@ -4,17 +4,17 @@ inherit TASK;
 
 void create()
 {
-        set_name( HIB "°ËØÔµÀÅÛ" NOR, ({ "daopao" }) );
+        set_name( HIB "å…«å¦é“è¢" NOR, ({ "daopao" }) );
         set_weight(3000);
         if( clonep() )
             destruct(this_object());
         else {
-                set("unit", "¼ş");
-                set("long", "ÕâÊÇÒ»¼ş»­ÓĞ°ËØÔµÄÅÛ\n");
+                set("unit", "ä»¶");
+                set("long", "é€™æ˜¯ä¸€ä»¶ç•«æœ‰å…«å¦çš„è¢\n");
                 set("value", 1000);
                 set("material", "cloth");
                 set("armor_prop/armor", 2);
         }
-        set("owner", "ÅÖÍ·ÍÓ");
+        set("owner", "èƒ–é ­é™€");
         setup();
 }

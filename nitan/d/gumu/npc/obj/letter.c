@@ -4,15 +4,15 @@ inherit ITEM;
 
 void create()
 {
-        set_name("ĞÅ", ({"long xin", "xin", "letter"}));
+        set_name("ä¿¡", ({"long xin", "xin", "letter"}));
         set_weight(100);
         set("value",1);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "·â");
-                set("long","ÕâÊÇÒ»·âÑî¹ı¸øĞ¡ÁúÅ®µÄÊéĞÅ¡£\n");
-//                set("no_drop", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
+                set("unit", "å°");
+                set("long","é€™æ˜¯ä¸€å°æ¥Šéçµ¦å°é¾å¥³çš„æ›¸ä¿¡ã€‚\n");
+//                set("no_drop", "é€™æ¨£æ±è¥¿ä¸èƒ½é›¢é–‹ä½ ã€‚\n");
                 set("material", "paper");
         }
 }

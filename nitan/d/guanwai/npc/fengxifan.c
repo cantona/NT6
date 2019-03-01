@@ -5,13 +5,13 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("·ëÎı·¶", ({ "feng xifan", "feng" }) );
-        set("nickname", HIR"Ò»½£ÎŞÑª"NOR);
-        set("gender", "ÄĞĞÔ");
+        set_name("é¦®éŒ«èŒƒ", ({ "feng xifan", "feng" }) );
+        set("nickname", HIR"ä¸€åŠç„¡è¡€"NOR);
+        set("gender", "ç”·æ€§");
         set("class", "swordsman");
         set("age", 45);
         set("long",
-                "·ëÎı·¶ÊÇÑÓÆ½Íõ¸®ÎÀ¶Ó³¤£¬ÎäÒÄÅÉµÚÒ»¸ßÊÖ£¬Ò»ÕÅ°×Õ¿Õ¿µÄÃæÆ¤¡£\n");
+                "é¦®éŒ«èŒƒæ˜¯å»¶å¹³ç‹åºœè¡›éšŠé•·ï¼Œæ­¦å¤·æ´¾ç¬¬ä¸€é«˜æ‰‹ï¼Œä¸€å¼µç™½æ¹›æ¹›çš„é¢çš®ã€‚\n");
         set("attitude", "peaceful");
         set("str", 26);
         set("con", 30);

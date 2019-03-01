@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-          set ("short", "�ӻ���");
+          set ("short", "雜貨舖");
           set ("long", @LONG
-���������ݳ�����һ���ӻ��̣���Ȼ���ڵĶ������٣���
-��Ϊ�ش��ıȽ�ƫƧ����������Ҳ���������塣
+這裡是中州城西的一家雜貨舖，雖然店內的東西不少，可
+因為地處的比較偏僻，所以生意也是冷冷清清。
 LONG);
 
           set("exits", ([  

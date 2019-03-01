@@ -5,20 +5,20 @@ inherit ROOM;
 
 void create()
 {
-        set("short","ÔÆÉ½¸ó");
+        set("short","é›²å±±é–£");
         set("long",@LONG
-ÔÆÉ½¸ó£¬ÃæÄÏÎåéº£¬¸ó¸ßÓÚµØÃæ²»¼°Ò»ÕÉ£¬ÖÐ¼äÉèÌ¨½×ÉÏÏÂ£¬ÍâÖÐ
-ÖùÐü¹ÒÊéÎº¼ÎçøÁª(lian)¡£
+é›²å±±é–£ï¼Œé¢å—äº”æ¥¹ï¼Œé–£é«˜äºŽåœ°é¢ä¸åŠä¸€ä¸ˆï¼Œä¸­é–“è¨­å°éšŽä¸Šä¸‹ï¼Œå¤–ä¸­
+æŸ±æ‡¸æŽ›æ›¸é­å˜‰ç‘›è¯(lian)ã€‚
 LONG );
         set("item_desc", ([
                 "lian" : HIG"
-        ¼÷        ¸ó
-        Ç°        Íâ
-        ´º        Çï
-        É«        Éù
-        ³¤        Êñ
-        µÌ        Áë
-        Áø        ËÉ
+        æª»        é–£
+        å‰        å¤–
+        æ˜¥        ç§‹
+        è‰²        è²
+        é•·        èœ€
+        å ¤        å¶º
+        æŸ³        é¬†
 \n"NOR,
         ]));
 

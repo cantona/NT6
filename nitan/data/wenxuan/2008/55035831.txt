@@ -1,17 +1,17 @@
-subject : ½â¡¤Ã÷½ÌÖ®¡¶Ç¬À¤´óÅ²ÒÆ¡·
-author_name : ÈçÀ´¸ç¸ç
+subject : è§£ï¹’æ˜Žæ•™ä¹‹ã€Šä¹¾å¤å¤§æŒªç§»ã€‹
+author_name : å¦‚ä¾†å“¥å“¥
 author_id : zxcvbnm
 time : 1222193594
-board : ÈçÀ´¸ç¸çµÄÁôÑÔ°å
+board : å¦‚ä¾†å“¥å“¥çš„ç•™è¨€æ¿
 file : /data/analecta/2008/55035831.txt
 add_time : 1222201768
 content :
-Ê×ÏÈask zhang Ç¬À¤´óÅ²ÒÆ
-rideto mingjiao;w;w;w;wu;wu;w;w;enter½øÈëÃÜµÀÈë¿Ú
-´ËÊ±ÐèÒª»ù±¾ÄÚ¹¦300¼¶ÒÔÉÏ£¬break men;enter;#4 n(ÈçÓöÎÞÂ·ÓÃ"open north"À´´òÍ¨)
-¿´µ½Á½¾ßº¡¹Ç£¬Ê¹ÓÃketouÖ¸Áî¾Í»áµô³öÒ»·âÑô½ÌÖ÷µÄÒÅÐÅºÍÒ»ÕÅÑòÆ¤(Ç¬À¤´óÅ²ÒÆÐÄ·¨)¡£
+é¦–å…ˆask zhang ä¹¾å¤å¤§æŒªç§»
+rideto mingjiao;w;w;w;wu;wu;w;w;enteré€²å…¥å¯†é“å…¥å£
+æ­¤æ™‚éœ€è¦åŸºæœ¬å…§åŠŸ300ç´šä»¥ä¸Šï¼Œbreak men;enter;#4 n(å¦‚é‡ç„¡è·¯ç”¨"open north"ä¾†æ‰“é€š)
+çœ‹åˆ°å…©å…·éª¸éª¨ï¼Œä½¿ç”¨ketouæŒ‡ä»¤å°±æœƒæŽ‰å‡ºä¸€å°é™½æ•™ä¸»çš„éºä¿¡å’Œä¸€å¼µç¾Šçš®(ä¹¾å¤å¤§æŒªç§»å¿ƒæ³•)ã€‚
 
-¶ÁÇ¬À¤´óÅ²ÒÆÐèÓÐ450ÒÔÉÏµÄjifaÄÚ¹¦µÈ¼¶£¬¾ßÌåÇë²ÎÕÕhelp mingjiao¡£
-»¹ÓÐÒª×¢ÒâµÄÊÇ×îºÃÓÐ11000ÒÔÉÏµÄÄÚÁ¦È¥¶Á£¬²¢ÇÒÔÚjifaÁËqkÖ®ºójifaµÄÕÐ¼ÜµÈ¼¶²»Òª³¬¹ýÄÚ¹¦µÈ¼¶µÄ2/3£¬
-·ñÔòÒªÖÐ¶¾£¬´Ë¶¾ÉõÊÇÄÑ½â£¬ÇÐ¼Ç£¡
+è®€ä¹¾å¤å¤§æŒªç§»éœ€æœ‰450ä»¥ä¸Šçš„jifaå…§åŠŸç­‰ç´šï¼Œå…·é«”è«‹åƒç…§help mingjiaoã€‚
+é‚„æœ‰è¦æ³¨æ„çš„æ˜¯æœ€å¥½æœ‰11000ä»¥ä¸Šçš„å…§åŠ›åŽ»è®€ï¼Œä¸¦ä¸”åœ¨jifaäº†qkä¹‹å¾Œjifaçš„æ‹›æž¶ç­‰ç´šä¸è¦è¶…éŽå…§åŠŸç­‰ç´šçš„2/3ï¼Œ
+å¦å‰‡è¦ä¸­æ¯’ï¼Œæ­¤æ¯’ç”šæ˜¯é›£è§£ï¼Œåˆ‡è¨˜ï¼
 [2;37;0m

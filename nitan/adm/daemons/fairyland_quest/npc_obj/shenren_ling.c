@@ -1,9 +1,9 @@
-//                ±ê×¼ÃèÊö³¤¶ÈÊ¾Àý                                   |
-// ÉñÈËÁî  £¬ ³Ö´ËÁî¿ÉÁîNPC²»ÔÙ¹¥»÷×Ô¼º¡£
-// by naihe  2002-10-28  ÓÚÃ¯Ãû
-// ±¾À´Ð´ÁËÎªÁË²âÊÔÊ±ÓÃ£¬µ«ÏëÏë£¬¼ÓÈëÓÎÏ·ÄÚÒ²ÊÇ·Ç³£ÓÐÒâË¼Ñ½¡£¡£¡£
-// naihe 05-9-4 12:27 Ç¿»¯ÁË£¬³ÖÁîÕß¿É¶ã±ÜÀ´×Ô¸÷·½ÃæµÄÒ»ÇÐ¹¥»÷ÐÐÎª£¬
-//       °üÀ¨NPC¡¢Íæ¼Ò¹¥»÷£»ÇýÖð¡¢·¢´ôÆìÖ®ÀàµÄ¹¥»÷µÈ¡£
+//                æ¨™æº–æè¿°é•·åº¦ç¤ºä¾‹                                   |
+// ç¥žäººä»¤  ï¼Œ æŒæ­¤ä»¤å¯ä»¤NPCä¸å†æ”»æ“Šè‡ªå·±ã€‚
+// by naihe  2002-10-28  äºŽèŒ‚å
+// æœ¬ä¾†å¯«äº†ç‚ºäº†æ¸¬è©¦æ™‚ç”¨ï¼Œä½†æƒ³æƒ³ï¼ŒåŠ å…¥éŠæˆ²å…§ä¹Ÿæ˜¯éžå¸¸æœ‰æ„æ€å‘€ã€‚ã€‚ã€‚
+// naihe 05-9-4 12:27 å¼·åŒ–äº†ï¼ŒæŒä»¤è€…å¯èº²é¿ä¾†è‡ªå„æ–¹é¢çš„ä¸€åˆ‡æ”»æ“Šè¡Œç‚ºï¼Œ
+//       åŒ…æ‹¬NPCã€çŽ©å®¶æ”»æ“Šï¼›é©…é€ã€ç™¼å‘†æ——ä¹‹é¡žçš„æ”»æ“Šç­‰ã€‚
 
 #include <ansi.h>
 
@@ -11,15 +11,15 @@ inherit ITEM;
 
 void create()
 {
-    set_name(HIY"Éñ"HIM"ÈË"HIR"Áî"NOR, ({"shenren ling","ling"}));
+    set_name(HIY"ç¥ž"HIM"äºº"HIR"ä»¤"NOR, ({"shenren ling","ling"}));
     set_weight(100);
     if (clonep())
         set_default_object(__FILE__);
 
     else
     {
-        set("long", "ÕâÊÇÒ»¸ö¡¸ÉñÈËÁî¡¹£¬ËüÄÜÉ¢·¢ÉñÊ¥Ö®Æø£¬ÈÃÖîÐ°¶ñÄ§µÈ²»¸Ò¹¥»÷Äã¡£\n");
-        set("unit", "¸ö");
+        set("long", "é€™æ˜¯ä¸€å€‹ã€Œç¥žäººä»¤ã€ï¼Œå®ƒèƒ½æ•£ç™¼ç¥žè–ä¹‹æ°£ï¼Œè®“è«¸é‚ªæƒ¡é­”ç­‰ä¸æ•¢æ”»æ“Šä½ ã€‚\n");
+        set("unit", "å€‹");
         set("value", 0);
     }
 
@@ -27,20 +27,20 @@ void create()
     setup();
 
     call_out("delete_me", 3 );
-    // ·¢ÏÖÎ´Öªbug¡£ËùÒÔ±ØÐëµ÷ÓÃ´Ëº¯Êý£¬¶øÈÎºÎ¸´ÖÆ´ËÎïÆ·µÄÖ÷¶Ë£¬¶¼ÐèÒªÒÔ waiting_delete()
-    // À´ÉèÖÃÊýÖµ¡£
+    // ç™¼ç¾æœªçŸ¥bugã€‚æ‰€ä»¥å¿…é ˆèª¿ç”¨æ­¤å‡½æ•¸ï¼Œè€Œä»»ä½•å¾©åˆ¶æ­¤ç‰©å“çš„ä¸»ç«¯ï¼Œéƒ½éœ€è¦ä»¥ waiting_delete()
+    // ä¾†è¨­ç½®æ•¸å€¼ã€‚
 }
 
 
-// ÆäËûµØ·½¸´ÖÆ´ËÎÄ¼þÊ±£¬±ØÐëÆô¶¯±¾º¯Êý£¬ÉèÖÃÉ¾³ýÊ±¼ä¡£
-// ²»ÔÊÐíÓÐÒÔÇ°µÄ¡°Î×Ê¦ÓÃ¡±µÄÇé¿ö¡£ÎÞÂÛÈçºÎ£¬¶¼Òª¶¨ÆÚÉ¾³ý¡£
+// å…¶ä»–åœ°æ–¹å¾©åˆ¶æ­¤æ–‡ä»¶æ™‚ï¼Œå¿…é ˆå•Ÿå‹•æœ¬å‡½æ•¸ï¼Œè¨­ç½®åˆªé™¤æ™‚é–“ã€‚
+// ä¸å…è¨±æœ‰ä»¥å‰çš„â€œå·«å¸«ç”¨â€çš„æƒ…æ³ã€‚ç„¡è«–å¦‚ä½•ï¼Œéƒ½è¦å®šæœŸåˆªé™¤ã€‚
 void waiting_delete( int del_time )
 {
     if( !del_time ) del_time = 3;
     if( del_time > 600 ) del_time = 600;
-    // ×î¶à 10 ·ÖÖÓÒªÉ¾³ý¡£
+    // æœ€å¤š 10 åˆ†é˜è¦åˆªé™¤ã€‚
 
-    set( "for_wiz_check_delete_time", del_time ); // ²éÑ¯Ê±¿ÉÒÔÖªµÀ¸ÃÁîÊÇ·ñÔÚÑÓ³Ù delete ÖÐ
+    set( "for_wiz_check_delete_time", del_time ); // æŸ¥è©¢æ™‚å¯ä»¥çŸ¥é“è©²ä»¤æ˜¯å¦åœ¨å»¶é² delete ä¸­
     remove_call_out( "delete_me" );
     call_out("delete_me", del_time );
 }
@@ -48,6 +48,6 @@ void waiting_delete( int del_time )
 void delete_me()
 {
     if( !environment(this_object()) ) return;
-    message_vision("$NºöµØÉÁ³öÒ«ÑÛ¹âÃ¢£¬Ëæ¼´ÏûÊ§²»¼ûÁË¡£\n",this_object());
+    message_vision("$Nå¿½åœ°é–ƒå‡ºè€€çœ¼å…‰èŠ’ï¼Œéš¨å³æ¶ˆå¤±ä¸è¦‹äº†ã€‚\n",this_object());
     destruct(this_object());
 }

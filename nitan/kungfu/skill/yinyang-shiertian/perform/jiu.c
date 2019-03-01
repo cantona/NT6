@@ -3,7 +3,7 @@
 
 inherit F_SSERVER;
 
-string name() { return HIW "¾Å×ªÇ¬À¤" NOR; }
+string name() { return HIW "ä¹è½‰ä¹¾å¤" NOR; }
 
 int perform(object me, object target)
 {
@@ -15,25 +15,25 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(name()+ "Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(name()+ "åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( query("neili", me)<900 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬ÎŞ·¨Ê©Õ¹" +name()+ "£¡\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼Œç„¡æ³•æ–½å±•" +name()+ "ï¼\n");
 
         if( query("max_neili", me)<9000 )
-                return notify_fail("ÄãµÄÄÚÁ¦ĞŞÎª»¹²»×ãÒÔÊ¹³ö" +name()+ "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¿®ç‚ºé‚„ä¸è¶³ä»¥ä½¿å‡º" +name()+ "ã€‚\n");
 
         if ((int)me->query_skill("force") < 900)
-                return notify_fail("ÄãµÄÄÚ¹¦»ğºò²»¹»£¬ÄÑÒÔÊ©Õ¹" +name()+ "£¡\n");
+                return notify_fail("ä½ çš„å…§åŠŸç«å€™ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" +name()+ "ï¼\n");
 
         if ((lvl = (int)me->query_skill("yinyang-shiertian", 1)) < 810)
-                return notify_fail("ÄãµÄÒõÑô¾Å×ªÊ®¶şÖØÌì»¹²»¹»ÊìÁ·£¬ÎŞ·¨Ê¹ÓÃ" +name()+ "£¡\n");
+                return notify_fail("ä½ çš„é™°é™½ä¹è½‰åäºŒé‡å¤©é‚„ä¸å¤ ç†Ÿç·´ï¼Œç„¡æ³•ä½¿ç”¨" +name()+ "ï¼\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        message_combatd(HIM "\n$N" HIM "ÔËÆğÒõÑô¾Å×ªÊ®¶şÖØÌì£¬·Â·ğ¾ÅÌìÉñÁú°¿ÏèÌì¼Ê£¬"
-                     HIM "ÕıÊÇÎŞÉÏ¾øÑ§" +name()+ HIM "£¡\n" NOR, me, target);
+        message_combatd(HIM "\n$N" HIM "é‹èµ·é™°é™½ä¹è½‰åäºŒé‡å¤©ï¼Œä»¿ä½›ä¹å¤©ç¥é¾ç¿±ç¿”å¤©éš›ï¼Œ"
+                     HIM "æ­£æ˜¯ç„¡ä¸Šçµ•å­¸" +name()+ HIM "ï¼\n" NOR, me, target);
 
         ap = attack_power(me, "force");
         dp = defense_power(target, "dodge") + target->query_skill("yinyang-shiertian", 1);
@@ -43,8 +43,8 @@ int perform(object me, object target)
                 if (! me->is_fighting(target))
                         break;
 
-                message_combatd(HIW "\n$N" HIW "ÉíÈôÓÎÁú£¬Ğ®·çÀ×Ö®Á¦£¬´Ó¿ÕÖĞÏò$n"
-                                HIW "ÃÍÆËÏÂÀ´£¡\n" NOR, me, target);
+                message_combatd(HIW "\n$N" HIW "èº«è‹¥éŠé¾ï¼ŒæŒ¾é¢¨é›·ä¹‹åŠ›ï¼Œå¾ç©ºä¸­å‘$n"
+                                HIW "çŒ›æ’²ä¸‹ä¾†ï¼\n" NOR, me, target);
 
                 if (ap * 3 / 2 + random(ap) > dp)
                 {
@@ -52,20 +52,20 @@ int perform(object me, object target)
                         if( query_temp("weapon", me) )
                         {
                                 msg = COMBAT_D->do_damage(me, target, WEAPON_ATTACK, damage, (i + 1) * 10 ,
-                                                          HIR "½á¹û$n" HIR "¶ãÉÁ²»¼°£¬$N" HIR
-                                                          "µÄÄÚ¾¢ÒÑÆÆÌå¶øÈë£¬$nºíÍ·Ò»Ìğ£¬Åç³öÒ»´ó"
-                                                          "¿ÚÏÊÑª¡£\n" NOR);
+                                                          HIR "çµæœ$n" HIR "èº²é–ƒä¸åŠï¼Œ$N" HIR
+                                                          "çš„å…§å‹å·²ç ´é«”è€Œå…¥ï¼Œ$nå–‰é ­ä¸€ç”œï¼Œå™´å‡ºä¸€å¤§"
+                                                          "å£é®®è¡€ã€‚\n" NOR);
                         } else
                         {
                                 msg = COMBAT_D->do_damage(me, target, UNARMED_ATTACK, damage, (i + 1) * 10,
-                                                          HIR "½á¹û$n" HIR "¶ãÉÁ²»¼°£¬$N" HIR
-                                                          "µÄÄÚ¾¢ÒÑÆÆÌå¶øÈë£¬$nºíÍ·Ò»Ìğ£¬Åç³öÒ»´ó"
-                                                          "¿ÚÏÊÑª¡£\n" NOR);
+                                                          HIR "çµæœ$n" HIR "èº²é–ƒä¸åŠï¼Œ$N" HIR
+                                                          "çš„å…§å‹å·²ç ´é«”è€Œå…¥ï¼Œ$nå–‰é ­ä¸€ç”œï¼Œå™´å‡ºä¸€å¤§"
+                                                          "å£é®®è¡€ã€‚\n" NOR);
                         }
                 } else
                 {
-                        msg = CYN "$n" CYN "ÆøÄıË«±Û£¬·ÜÁ¦ÕĞ¼Ü£¬½«"
-                              "$N" CYN "µÄÄÚ¾¢Ğ¶µô¡£\n" NOR;
+                        msg = CYN "$n" CYN "æ°£å‡é›™è‡‚ï¼Œå¥®åŠ›æ‹›æ¶ï¼Œå°‡"
+                              "$N" CYN "çš„å…§å‹å¸æ‰ã€‚\n" NOR;
                 }
 
                 message_combatd(msg, me, target);

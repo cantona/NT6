@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����Է");
+        set("short", "梨香苑");
         set("long", @LONG
-Ľ�ݼҵĺ�ԺҲ���ڲ�ͬ��Բ��Ժ���Ͽ��С�����Է�����֣�Ժ
-��ѩ�׵��滨������֦ͷ��������ǽӴ�������������ˣ�������һ
-�������ĳ��ȡ�
+慕容家的後院也與眾不同，圓形院門上刻有「梨香苑」三字，院
+中雪白的梨花開滿了枝頭。西側就是接待貴賓的龍鳳廳了，東側有一
+條精美的長廊。
 LONG );
         set("outdoors", "yanziwu");
         set("exits", ([

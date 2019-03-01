@@ -4,9 +4,9 @@ inherit NPC;
 
 void create()
 {
-        set_name("Öª¿ÍÉ®", ({ "zhike seng", "zhike", "seng" }));
-        set("long", "ËûÊÇÒ»Î»Î´Í¨ÊÀ¹ÊµÄÉÙÄêºÍÉĞ£¬Á³ÉÏ¹Ò×ÅÌìÕæµÄÖÉĞ¦¡£\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("çŸ¥å®¢åƒ§", ({ "zhike seng", "zhike", "seng" }));
+        set("long", "ä»–æ˜¯ä¸€ä½æœªé€šä¸–æ•…çš„å°‘å¹´å’Œå°šï¼Œè‡‰ä¸Šæ›è‘—å¤©çœŸçš„ç¨šç¬‘ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("attitude", "peaceful");
         set("class", "bonze");
 

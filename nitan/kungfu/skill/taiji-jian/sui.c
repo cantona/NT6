@@ -1,9 +1,9 @@
 // This program is a part of NITAN MudLIB
-// sui.c Ëæ×Ö¾÷
+// sui.c éš¨å­—è¨£
 
 #include <ansi.h>
 
-string name() { return "Ëæ×Ö¾÷"; }
+string name() { return "éš¨å­—è¨£"; }
 
 inherit F_SSERVER;
 
@@ -22,27 +22,27 @@ int perform(object me, object target)
         }
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail("¡¸" + name() + "¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œ" + name() + "ã€åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me)) ||
             query("skill_type", weapon) != "sword" )
-                return notify_fail("±ØĞëÄÃ½£²ÅÄÜÊ©Õ¹¡¸" + name() + "¡¹¡£\n");
+                return notify_fail("å¿…é ˆæ‹¿åŠæ‰èƒ½æ–½å±•ã€Œ" + name() + "ã€ã€‚\n");
 
         if ((int)me->query_skill("taiji-jian", 1) < 100)
-                return notify_fail("ÄãµÄÌ«¼«½£·¨²»¹»æµÊì£¬²»»áÊ¹ÓÃ¡¸" + name() + "¡¹¡£\n");
+                return notify_fail("ä½ çš„å¤ªæ¥µåŠæ³•ä¸å¤ å«»ç†Ÿï¼Œä¸æœƒä½¿ç”¨ã€Œ" + name() + "ã€ã€‚\n");
 
         if ((int)me->query_skill("taiji-shengong", 1) < 80)
-                return notify_fail("ÄãµÄÌ«¼«Éñ¹¦»ğºò²»¹»£¬ÄÑÒÔÊ©Õ¹¡¸" + name() + "¡¹¡£\n");
+                return notify_fail("ä½ çš„å¤ªæ¥µç¥åŠŸç«å€™ä¸å¤ ï¼Œé›£ä»¥æ–½å±•ã€Œ" + name() + "ã€ã€‚\n");
 
         if( query("neili", me)<query("max_neili", me)/50 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ã€‚\n");
 
         if( query_temp("tjj_sui", me) )
-                return notify_fail("ÄãÒÑ¾­ÔÚÔË¹¦ÖĞÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“åœ¨é‹åŠŸä¸­äº†ã€‚\n");
 
         skill = me->query_skill("taiji-jian");
-        msg = HIC "$NÊ¹³öÌ«¼«½£·¨¡¸Ëæ¡¹×Ö¾÷£¬½£È¦Öğ½¥ËõĞ¡£¬ÊÖÖĞ" + weapon->name() +
-              HIC "»Ã³öµÀµÀ¹â»·£¬½«ÖÜÉí»¤×¡¡£\n" NOR;
+        msg = HIC "$Nä½¿å‡ºå¤ªæ¥µåŠæ³•ã€Œéš¨ã€å­—è¨£ï¼ŒåŠåœˆé€æ¼¸ç¸®å°ï¼Œæ‰‹ä¸­" + weapon->name() +
+              HIC "å¹»å‡ºé“é“å…‰ç’°ï¼Œå°‡å‘¨èº«è­·ä½ã€‚\n" NOR;
         message_combatd(msg, me, target);
 
         addn_temp("apply/attack", -skill/6, me);
@@ -62,5 +62,5 @@ void remove_effect(object me, int a_amount, int d_amount)
         addn_temp("apply/attack", a_amount, me);
         addn_temp("apply/defense", -d_amount, me);
         delete_temp("tjj_sui", me);
-        tell_object(me, HIG "ÄãµÄ¡¸" + name() + "¡¹ÔËĞĞÍê±Ï£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï¡£\n" NOR);
+        tell_object(me, HIG "ä½ çš„ã€Œ" + name() + "ã€é‹è¡Œå®Œç•¢ï¼Œå°‡å…§åŠ›æ”¶å›ä¸¹ç”°ã€‚\n" NOR);
 }

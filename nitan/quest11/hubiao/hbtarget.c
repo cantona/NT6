@@ -12,7 +12,7 @@ void create()
 
 	name = RNAME_D->get_random_name(i);
 	set_name(name["name"], name["id"]);
-	set("gender", (i==0?"Å®ĞÔ":"ÄĞĞÔ"));
+	set("gender", (i==0?"å¥³æ€§":"ç”·æ€§"));
 	set("age", random(20)+25);      
 	set("str", 20+random(5));
 	set("int", 20+random(5));  
@@ -44,7 +44,7 @@ void dest(object ob)
 {
 	if (!ob) return;
 	if (!environment(ob)) return;
-	message_vision("$NºÃÏóÍ»È»ÏëÆğÊ²Ã´ÊÂ£¬¼±¼±Ã¦Ã¦µÄ×ß¿ªÁË¡£\n", ob);
+	message_vision("$Nå¥½è±¡çªç„¶æƒ³èµ·ä»€éº¼äº‹ï¼Œæ€¥æ€¥å¿™å¿™çš„èµ°é–‹äº†ã€‚\n", ob);
 	destruct(ob);
 }
 

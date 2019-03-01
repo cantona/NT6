@@ -2,15 +2,15 @@
 inherit NPC;
 void create()
 {
-        set_name("¹¬ÖĞÊÌÎÀ", ({ "shi wei", "wei"}));
-        set("gender", "ÄĞĞÔ");
+        set_name("å®®ä¸­ä¾è¡›", ({ "shi wei", "wei"}));
+        set("gender", "ç”·æ€§");
         set("age", random(20) + 20);
         set("str", 160);
         set("dex", 160);
         set("con", 160);
 
         set("long", 
-"ÕâÊÇÒ»¸ö¾©³Ç»Ê¹¬ÖĞµÄÒ»ÃûÊÌÎÀ£¬ÕıÍş·çÁİÁİµØÑ²ÊÓ×Å¹ıÍùµÄÈËÈº¡£\n");
+"é€™æ˜¯ä¸€å€‹äº¬åŸçš‡å®®ä¸­çš„ä¸€åä¾è¡›ï¼Œæ­£å¨é¢¨å‡œå‡œåœ°å·¡è¦–è‘—éå¾€çš„äººç¾¤ã€‚\n");
 
         set("combat_exp", 8000000);
         set("attitude", "peaceful");

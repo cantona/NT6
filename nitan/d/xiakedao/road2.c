@@ -1,13 +1,13 @@
-// /d/xiakedao/road2.c ���͵� ɽ·2
+// /d/xiakedao/road2.c 俠客島 山路2
 inherit ROOM;
 
 void create()
 {
-        set("short", "ɽ·");
+        set("short", "山路");
         set("long", @LONG
-С·�������۵�ͨ��ɽ�����Ų�������һȺ��������������
-ʧ�ڿ��С�������ȴ��Щ������·�߲ݴԼ䲻ʱ����ɳɳ�����죬
-�����Ƕ��ߣ����ǿ���뿪�ĺá�
+小路曲曲折折地通向山頂，腳步聲驚起一群飛鳥，撲簌簌地消
+失在空中。空氣中卻有些腥氣，路邊草叢間不時傳來沙沙的輕響，
+可能是毒蛇，還是快點離開的好。
 LONG );
         set("outdoors", "xiakedao");
         set("exits", ([

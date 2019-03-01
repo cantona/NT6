@@ -7,16 +7,16 @@ inherit NPC;
 void create()
 {
         int i;
-        set_name("¶«å­ÎäÊ¿", ({ "dongying wushi", "dongyin", "wushi", "shi" }));
-        set("gender", "ÄÐÐÔ");
-        set("long", "¡¡¡¡À´×ÔÓÚ¶«å­µÄÎä¹Ù£¬ÉÕÉ±½ÙÂÔÎÞ¶ñ²»×÷¡£\n");
+        set_name("æ±ç€›æ­¦å£«", ({ "dongying wushi", "dongyin", "wushi", "shi" }));
+        set("gender", "ç”·æ€§");
+        set("long", "ã€€ã€€ä¾†è‡ªäºŽæ±ç€›çš„æ­¦å®˜ï¼Œç‡’æ®ºåŠ«ç•¥ç„¡æƒ¡ä¸ä½œã€‚\n");
         set("age", random(18) + 10);
         set("str", 20 + random(10));
         set("int", 20 + random(10));
         set("con", 20 + random(10));
         set("dex", 20 + random(10));
-        create_family("ÎäÊ¿µÀ", 4, "ÎäÊ¿");
-        //shifu("¶«å­Îä¹Ù");
+        create_family("æ­¦å£«é“", 4, "æ­¦å£«");
+        //shifu("æ±ç€›æ­¦å®˜");
         if (random(10)>6)i=60+random(30);
         else i=40-random(20);
         set("chat_chance_combat", i);
@@ -42,7 +42,7 @@ void init()
         ob = this_object();
 
         if( interactive(me=this_player()) && query_temp("japan/job", me)){
-                message_vision(HIR "$N¶Ô$nËµµÀ£º¡¸¥°¥¤¥¹£¬¥×¥¿£¡¡¹\n" NOR, ob, me);
+                message_vision(HIR "$Nå°$nèªªé“ï¼šã€Œâ–¡â–¡â–¡ï¼Œâ–¡â–¡ï¼ã€\n" NOR, ob, me);
                 ob->kill_ob(me);
                 me->fight_ob(ob);
                 me->start_busy(1);
@@ -81,7 +81,7 @@ void dest()
 
         if ( !me ) return;
 
-        message_vision("$N¼±¼±Ã¦Ã¦Àë¿ªÁË¡£\n", me);
+        message_vision("$Næ€¥æ€¥å¿™å¿™é›¢é–‹äº†ã€‚\n", me);
         destruct(me);
 }
 
@@ -100,11 +100,11 @@ void die()
                 pot = reward["pot_reward"];
                 addn("combat_exp", exp, me);
                 addn("potential", pot, me);
-                tell_object(me, MAG"É±µÐÓÐ¹¦£¬Äã»ñµÃÁË" + exp + "µãÊµÕ½¾­Ñé£¬" + pot + "µãÇ±ÄÜ¡£\n"NOR);
+                tell_object(me, MAG"æ®ºæ•µæœ‰åŠŸï¼Œä½ ç²å¾—äº†" + exp + "é»žå¯¦æˆ°ç¶“é©—ï¼Œ" + pot + "é»žæ½›èƒ½ã€‚\n"NOR);
                 set_temp("japan/kill", 1, me);
         }
         corpse = new(CORPSE_OB);
-        corpse->set_name( victim->name(1) + "µÄÊ¬Ìå", ({ "corpse" }) );
+        corpse->set_name( victim->name(1) + "çš„å±é«”", ({ "corpse" }) );
         set("age",query("age",  victim), corpse);
         set("gender",query("gender",  victim), corpse);
         set("victim_name", victim->name(1), corpse);
@@ -135,7 +135,7 @@ void die()
                 }
                 else inv[i]->move(corpse);
         }
-        set("long", victim->long(1) + "È»¶ø£¬" + gender_pronoun(query("gender", victim)) + "ÒÑ¾­ËÀÁË£¬Ö»Ê£ÏÂÒ»¾ßÊ¬Ìå¾²¾²µØÌÉÔÚÕâÀï¡£\n", corpse);
+        set("long", victim->long(1) + "ç„¶è€Œï¼Œ" + gender_pronoun(query("gender", victim)) + "å·²ç¶“æ­»äº†ï¼Œåªå‰©ä¸‹ä¸€å…·å±é«”éœéœåœ°èººåœ¨é€™è£¡ã€‚\n", corpse);
         corpse->move(environment(victim));
         destruct(victim);
 }

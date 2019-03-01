@@ -13,16 +13,16 @@ string ask_me();
 
 void create()
 {
-        set_name("ÑîåÐ", ({"yang xiao","yang","xiao",}));
+        set_name("æ¥Šé€", ({"yang xiao","yang","xiao",}));
         set("long",
-        "ËûÊÇÒ»Î»ÖÐÄêÊéÉú£¬Éí´©°×²¼³¤ÅÛ¡£\n"
-        "ËûÏàÃ²¿¡ÑÅ£¬Ö»ÊÇË«Ã¼ÂÔÏòÏÂ´¹£¬×ì±ßÂ¶³ö¼¸ÌõÉîÉîµÄÖåÎÆ£¬²»ÃâÂÔ´øË¥ÀÏÆà¿à\n"
-        "Ö®Ïà¡£Ëû²»ÑÔ²»¶¯£¬ÉñÉ«Ä®È»£¬ËÆºõÐÄ³ÛÔ¶·½£¬ÕýÔÚÏëÊ²Ã´ÊÂÇé¡£\n"
+        "ä»–æ˜¯ä¸€ä½ä¸­å¹´æ›¸ç”Ÿï¼Œèº«ç©¿ç™½å¸ƒé•·è¢ã€‚\n"
+        "ä»–ç›¸è²Œä¿Šé›…ï¼Œåªæ˜¯é›™çœ‰ç•¥å‘ä¸‹åž‚ï¼Œå˜´é‚Šéœ²å‡ºå¹¾æ¢æ·±æ·±çš„çšºç´‹ï¼Œä¸å…ç•¥å¸¶è¡°è€å‡„è‹¦\n"
+        "ä¹‹ç›¸ã€‚ä»–ä¸è¨€ä¸å‹•ï¼Œç¥žè‰²æ¼ ç„¶ï¼Œä¼¼ä¹Žå¿ƒé¦³é æ–¹ï¼Œæ­£åœ¨æƒ³ä»€éº¼äº‹æƒ…ã€‚\n"
         );
 
-        set("title",HIG "Ã÷½Ì" HIR "¹âÃ÷×óÊ¹" NOR);
+        set("title",HIG "æ˜Žæ•™" HIR "å…‰æ˜Žå·¦ä½¿" NOR);
         set("level",11);
-        set("gender", "ÄÐÐÔ");
+        set("gender", "ç”·æ€§");
         set("attitude", "peaceful");
 
         set("age", 42);
@@ -70,9 +70,9 @@ void create()
         prepare_skill("strike", "guangming-zhang");
 
         set("inquiry", ([
-                "¹âÃ÷Ê¥»ðÕó"  : (: ask_me :),
-                "Ã÷½ÌÊ¥»ðÕó"  : (: ask_me :),
-                "Ê¥»ðÕó"      : (: ask_me :),
+                "å…‰æ˜Žè–ç«é™£"  : (: ask_me :),
+                "æ˜Žæ•™è–ç«é™£"  : (: ask_me :),
+                "è–ç«é™£"      : (: ask_me :),
         ]));
 
         set("chat_chance_combat", 20);
@@ -87,8 +87,8 @@ void create()
         set_temp("apply/unarmed_damage", 120);
         set_temp("apply/armor", 120);
 
-        set("inherit_title",HIG"Ã÷½Ì"HIC"»¤½Ì·¨Íõ"NOR);
-        create_family("Ã÷½Ì", 34, "¹âÃ÷×óÊ¹");
+        set("inherit_title",HIG"æ˜Žæ•™"HIC"è­·æ•™æ³•çŽ‹"NOR);
+        create_family("æ˜Žæ•™", 34, "å…‰æ˜Žå·¦ä½¿");
         set("master_ob",4);
         set("coagents", ({
                 ([ "startroom" : "/d/mingjiao/dadian",
@@ -105,10 +105,10 @@ int accept_ask(object me, string topic)
         switch (topic)
         {
         /*
-        case "×íÀïÇ¬À¤" :
+        case "é†‰è£¡ä¹¾å¤" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/pomopima-jian/zui",
-                           "name"    : "×íÀïÇ¬À¤",
+                           "name"    : "é†‰è£¡ä¹¾å¤",
                            "sk1"     : "pomopima-jian",
                            "lv1"     : 120,
                            "force"   : 180,
@@ -116,10 +116,10 @@ int accept_ask(object me, string topic)
                            "shen"    : 80000, ]));
                 break;
         */
-        case "·É½£¾÷" :
+        case "é£›åŠè¨£" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/xiaoyao-jian/fei",
-                           "name"    : "·É½£¾÷",
+                           "name"    : "é£›åŠè¨£",
                            "sk1"     : "xiaoyao-jian",
                            "lv1"     : 60,
                            "gongxian": 400,
@@ -127,10 +127,10 @@ int accept_ask(object me, string topic)
                 break;
 
 
-        case "¿ì½£¾÷" :
+        case "å¿«åŠè¨£" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/xiaoyao-jian/kuai",
-                           "name"    : "¿ì½£¾÷",
+                           "name"    : "å¿«åŠè¨£",
                            "sk1"     : "xiaoyao-jian",
                            "lv1"     : 160,
                            "dodge"   : 260,
@@ -139,10 +139,10 @@ int accept_ask(object me, string topic)
                 break;
 
 
-        case "Ææ½£¾÷" :
+        case "å¥‡åŠè¨£" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/xiaoyao-jian/qi",
-                           "name"    : "Ææ½£¾÷",
+                           "name"    : "å¥‡åŠè¨£",
                            "sk1"     : "xiaoyao-jian",
                            "lv1"     : 160,
                            "neili"   : 3000,
@@ -151,7 +151,7 @@ int accept_ask(object me, string topic)
                 break;
 
 
-         case "»ÃÁé½£" :
+         case "å¹»éˆåŠ" :
                 return MASTER_D->give_item(me, this_object(),
                                (["item"     :  JIAN,
                                  "master"   :  1,

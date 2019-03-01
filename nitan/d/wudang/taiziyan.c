@@ -1,13 +1,13 @@
-//Room: taiziyan.c Ì«×ÓÑÒ
+//Room: taiziyan.c å¤ªå­å·–
 //Date: Sep 22 1997
 
 inherit ROOM;
 
 void create()
 {
-      set("short","Ì«×ÓÑÒ");
+      set("short","å¤ªå­å·–");
         set("long", @LONG
-ÕâÀïÊÇÈºÉ½»·±§ÖĞµÄÌ«×ÓÑÒ£¬ÑÒÉÏÓĞÒ»¿éÈıÇåÊ¯ºÍÒ»×ùÌ«×ÓÍ¤¡£
+é€™è£¡æ˜¯ç¾¤å±±ç’°æŠ±ä¸­çš„å¤ªå­å·–ï¼Œå·–ä¸Šæœ‰ä¸€å¡Šä¸‰æ¸…çŸ³å’Œä¸€åº§å¤ªå­äº­ã€‚
 LONG );
       set("exits",([ /* sizeof() == 1 */
            "northdown":__DIR__"shanlu4",

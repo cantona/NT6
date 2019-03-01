@@ -4,13 +4,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIR "µÛÍõ·ûÍ¼-Ñô" NOR, ({ "diwang futu6", "diwang", "futu6" }) );
+        set_name(HIR "å¸ç‹ç¬¦åœ–-é™½" NOR, ({ "diwang futu6", "diwang", "futu6" }) );
         set_weight(100);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "ÕÅ");
-                set("long", HIR "´«ËµÄËÉÏ¹Å»ÆµÛ£¬Ñ×µÛ¼°ò¿ÓÈÁôÏÂµÄÍ¼ÌÚËéÆ¬£¬ÍâĞÎ²ĞÈ±²»È«£¬ËÆºõ¿´²»³öÊ²Ã´ÌØ±ğµÄ¡£\n" NOR);
+                set("unit", "å¼µ");
+                set("long", HIR "å‚³èªªä¹ƒä¸Šå¤é»ƒå¸ï¼Œç‚å¸åŠèš©å°¤ç•™ä¸‹çš„åœ–é¨°ç¢ç‰‡ï¼Œå¤–å½¢æ®˜ç¼ºä¸å…¨ï¼Œä¼¼ä¹çœ‹ä¸å‡ºä»€éº¼ç‰¹åˆ¥çš„ã€‚\n" NOR);
                 set("value", 0);
                 set("no_give", 1);
                 set("no_drop", 1);

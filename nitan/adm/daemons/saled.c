@@ -45,7 +45,7 @@ protected void log_buyinfo(object ob, string which, int value)
         string buyinfo;
 
         buyinfo = MEMBER_D->db_query_member(ob, "buyinfo");
-        buyinfo += sprintf("%s(%s)ÓÚ%s»¨·Ñ %d $NT¹ºÂòÎïÆ· %s 1¡£\n",
+        buyinfo += sprintf("%s(%s)äº%sèŠ±è²» %d $NTè³¼è²·ç‰©å“ %s 1ã€‚\n",
                            ob->name(1),
                            query("id", ob),
                            TIME_D->replace_ctime(time()),
@@ -70,49 +70,49 @@ public string do_stock(object me, string arg)
 
         id=query("id", me);
         if( !arg || sscanf(arg, "%s value %d", arg, value) != 2 )
-                return "Ö¸Áî¸ñÊ½£ºstock <»õÎï> value * (ÆäÖĞ * ÊÇÒÔÄàÌ¶±Ò($NT)×÷µ¥Î»µÄ¼Û¸ñ)\n";
+                return "æŒ‡ä»¤æ ¼å¼ï¼šstock <è²¨ç‰©> value * (å…¶ä¸­ * æ˜¯ä»¥æ³¥æ½­å¹£($NT)ä½œå–®ä½çš„åƒ¹æ ¼)\n";
 
         if( !value || value < 0 )
-                return "Ö¸Áî¸ñÊ½£ºstock <»õÎï> value * (ÆäÖĞ * ÊÇÒÔÄàÌ¶±Ò($NT)×÷µ¥Î»µÄ¼Û¸ñ)\n";
+                return "æŒ‡ä»¤æ ¼å¼ï¼šstock <è²¨ç‰©> value * (å…¶ä¸­ * æ˜¯ä»¥æ³¥æ½­å¹£($NT)ä½œå–®ä½çš„åƒ¹æ ¼)\n";
 
         if( value > 100000000 )
-                return "×î¶à±ê¼ÛÒ»ÒÚÄàÌ¶±Ò($NT)£¬Äã¾Í±ğÄÇÃ´ĞÄºÚÁË°É¡£\n";
+                return "æœ€å¤šæ¨™åƒ¹ä¸€å„„æ³¥æ½­å¹£($NT)ï¼Œä½ å°±åˆ¥é‚£éº¼å¿ƒé»‘äº†å§ã€‚\n";
 
         if( !objectp(ob = present(arg, me)) )
-                return "ÄãÉíÉÏ²¢Ã»ÓĞÕâ¸ö»õÎï°¡£¡\n";
+                return "ä½ èº«ä¸Šä¸¦æ²’æœ‰é€™å€‹è²¨ç‰©å•Šï¼\n";
 
         if( query("no_sell", ob) || query("id", ob) == "key" )
-                return "Õâ¸ö¶«Î÷Ì«ÕĞÒ¡ÁË£¬»¹ÊÇ±ğÄÃ³öÀ´··Âô¡£\n";
+                return "é€™å€‹æ±è¥¿å¤ªæ‹›æ–äº†ï¼Œé‚„æ˜¯åˆ¥æ‹¿å‡ºä¾†è²©è³£ã€‚\n";
 
         if( query("task_ob", ob) )
-                return "Õâ¸ö¶«Î÷Ì«ÕĞÒ¡ÁË£¬»¹ÊÇ±ğÄÃ³öÀ´··Âô¡£\n";
+                return "é€™å€‹æ±è¥¿å¤ªæ‹›æ–äº†ï¼Œé‚„æ˜¯åˆ¥æ‹¿å‡ºä¾†è²©è³£ã€‚\n";
 
         if( ob->is_item_make() || query("unique", ob) )
-                return "Õâ¸ö¶«Î÷Ì«ÕĞÒ¡ÁË£¬»¹ÊÇ±ğÄÃ³öÀ´··Âô¡£\n";
+                return "é€™å€‹æ±è¥¿å¤ªæ‹›æ–äº†ï¼Œé‚„æ˜¯åˆ¥æ‹¿å‡ºä¾†è²©è³£ã€‚\n";
 
         if( sscanf(base_name(ob), "/data/%*s") )
-                return "Õâ¸ö¶«Î÷Ì«ÕĞÒ¡ÁË£¬»¹ÊÇ±ğÄÃ³öÀ´··Âô¡£\n";
+                return "é€™å€‹æ±è¥¿å¤ªæ‹›æ–äº†ï¼Œé‚„æ˜¯åˆ¥æ‹¿å‡ºä¾†è²©è³£ã€‚\n";
 
         file = file_name(ob);
         if( strsrch(file, "#") == -1 )
-                return "¶Ô²»Æğ£¬¸ÃÎïÆ·²»¿ÉÒÔ¼ÄÊÛ£¡\n";
+                return "å°ä¸èµ·ï¼Œè©²ç‰©å“ä¸å¯ä»¥å¯„å”®ï¼\n";
 
         if( ob->is_character() )
-                return "Äã²»ÄÜ··Âô»îÎï¡£\n";
+                return "ä½ ä¸èƒ½è²©è³£æ´»ç‰©ã€‚\n";
 
         if( query("money_id", ob) )
-                return "Äã°ÑÇ®Ò²ÄÃÀ´³öÊÛ£¿\n";
+                return "ä½ æŠŠéŒ¢ä¹Ÿæ‹¿ä¾†å‡ºå”®ï¼Ÿ\n";
 
         if( query("bindable", ob) )
                 delete("bind_owner", ob);
 
         key = "data/" + id + "/";
         if( sizeof(query(key+"objects")) >= MAX_OBS )
-                return "¶Ô²»Æğ£¬ÄãÒÑ¾­¼ÄÊÛÁË" + query(key + "cnt") +
-                       "¼şÎïÆ·ÁË¡£²»ÄÜÔÙ¼ÄÊÛ¸ü¶àµÄ¶«Î÷ÁË¡£\n";
+                return "å°ä¸èµ·ï¼Œä½ å·²ç¶“å¯„å”®äº†" + query(key + "cnt") +
+                       "ä»¶ç‰©å“äº†ã€‚ä¸èƒ½å†å¯„å”®æ›´å¤šçš„æ±è¥¿äº†ã€‚\n";
 
         str=query("unit", ob);
-        if( !str ) str = "¸ö";
+        if( !str ) str = "å€‹";
         if( n = ob->query_amount() )
                 db = "";
         else {
@@ -140,19 +140,19 @@ public string do_stock(object me, string arg)
         set(key + "cnt", n);
         set(key + "objects/" + n, data);
 
-        message_vision(HIW "$N" HIW "½«¡º" HIG + ob->name(1) +
-                       HIW "¡»±êÉÏ" HIY + value +
-                       HIW "NT¼Û¸ñ¿ªÊ¼³öÊÛ¡£\n" NOR, me);
+        message_vision(HIW "$N" HIW "å°‡ã€" HIG + ob->name(1) +
+                       HIW "ã€æ¨™ä¸Š" HIY + value +
+                       HIW "NTåƒ¹æ ¼é–‹å§‹å‡ºå”®ã€‚\n" NOR, me);
         destruct(ob);
 
         if( objectp(ob) ) {
                 set(key + "cnt", n - 1);
                 delete(key + "objects/" + n);
                 save();
-                return "´íÎó£¡¼ÄÊÛÊ§°Ü£¬ÇëÁªÏµ¹ÜÀíÔ±¡£\n";
+                return "éŒ¯èª¤ï¼å¯„å”®å¤±æ•—ï¼Œè«‹è¯ç³»ç®¡ç†å“¡ã€‚\n";
         } else {
                 save();
-                return data["name"] + "ÒÑ¾­¼ÄÊÛºÃÁË£¡±àºÅ£º" + n + " ¡£\n";
+                return data["name"] + "å·²ç¶“å¯„å”®å¥½äº†ï¼ç·¨è™Ÿï¼š" + n + " ã€‚\n";
         }
 }
 
@@ -166,16 +166,16 @@ public string do_unstock(object me, string arg)
         id=query("id", me);
 
         if( !arg || arg == "" )
-                return "Ö¸Áî¸ñÊ½£ºunstock <ÎïÆ·> | <ÎïÆ·±àºÅ>\n";
+                return "æŒ‡ä»¤æ ¼å¼ï¼šunstock <ç‰©å“> | <ç‰©å“ç·¨è™Ÿ>\n";
 
         arg = lower_case(arg);
         kid = "data/" + id + "/objects";
         data = query(kid);
         if( sizeof(data) < 1 )
-                return "ÄãÊ²Ã´ÎïÆ·¶¼Ã»ÓĞ¼ÄÊÛ×Å£¬»¹ÏëÄÃ×ßÊ²Ã´£¿\n";
+                return "ä½ ä»€éº¼ç‰©å“éƒ½æ²’æœ‰å¯„å”®è‘—ï¼Œé‚„æƒ³æ‹¿èµ°ä»€éº¼ï¼Ÿ\n";
 
         if( sizeof(all_inventory(me)) >= MAX_ITEM_CARRIED )
-                return "ÄãÉíÉÏµÄ¶«Î÷Ì«¶àÁË£¬Ã»·¨´Ó»õ¼ÜÉÏÈ¡¶«Î÷¡£\n";
+                return "ä½ èº«ä¸Šçš„æ±è¥¿å¤ªå¤šäº†ï¼Œæ²’æ³•å¾è²¨æ¶ä¸Šå–æ±è¥¿ã€‚\n";
 
         ks = keys(data);
         for( i = 0; i < sizeof(ks); i++ ) {
@@ -200,12 +200,12 @@ public string do_unstock(object me, string arg)
                         ob->move(me, 1);
                         delete(kid+"/"+ks[i]);
                         save();
-                        message_vision( HIW "$N" HIW "½«¡º" HIG + ob->name(1) +
-                                        HIW "¡»´Ó»õ¼ÜÉÏÈ¡ÏÂÀ´²»ÂôÁË¡£\n" NOR, me );
-                        return "Äã´Ó¼ÄÊÛ¹ñÈ¡³öÁË"+data["name"]+"("+data["id"]+") ¡£\n";
+                        message_vision( HIW "$N" HIW "å°‡ã€" HIG + ob->name(1) +
+                                        HIW "ã€å¾è²¨æ¶ä¸Šå–ä¸‹ä¾†ä¸è³£äº†ã€‚\n" NOR, me );
+                        return "ä½ å¾å¯„å”®æ«ƒå–å‡ºäº†"+data["name"]+"("+data["id"]+") ã€‚\n";
                 }
         }
-        return "ÏÖÔÚ" + environment(me)->short() + "µÄ»õ¼ÜÉÏ²¢Ã»ÓĞÕâÑù»õÎï¡£\n";
+        return "ç¾åœ¨" + environment(me)->short() + "çš„è²¨æ¶ä¸Šä¸¦æ²’æœ‰é€™æ¨£è²¨ç‰©ã€‚\n";
 }
 
 public string do_list(object me, string arg)
@@ -217,9 +217,9 @@ public string do_list(object me, string arg)
 
         data = query("data");
         if( !mapp(data) || sizeof(data) < 1 )
-                return "Ä¿Ç°²¢Ã»ÓĞ³öÊÛÈÎºÎ»õÎï¡£\n";
+                return "ç›®å‰ä¸¦æ²’æœ‰å‡ºå”®ä»»ä½•è²¨ç‰©ã€‚\n";
 
-        msg = "¸Ã¼ÄÊÛµêÄ¿Ç°³öÊÛÒÔÏÂÎïÆ·£º\n";
+        msg = "è©²å¯„å”®åº—ç›®å‰å‡ºå”®ä»¥ä¸‹ç‰©å“ï¼š\n";
         msg += "-------------------------------------------------------\n";
         ks = keys(data);
         j=0;
@@ -229,7 +229,7 @@ public string do_list(object me, string arg)
                         foreach(k in keys(m)) {
                                 om = m[k];
                                 j++;
-                                msg+=sprintf("µÚ%d¸öÎïÆ· ±àºÅ%5s £º %20s(%10s) ÊıÁ¿£º%5d ÊÛ¼Û£º%8d$NT (%s) %s\n",
+                                msg+=sprintf("ç¬¬%då€‹ç‰©å“ ç·¨è™Ÿ%5s ï¼š %20s(%10s) æ•¸é‡ï¼š%5d å”®åƒ¹ï¼š%8d$NT (%s) %s\n",
                                              j,k,om["name"],om["id"],om["num"],om["value"],ks[i],(w?om["file"]:""));
                         }
                 }
@@ -237,7 +237,7 @@ public string do_list(object me, string arg)
 
         msg += "-------------------------------------------------------\n";
 
-        msg += "×Ü¹²" + chinese_number(j) + "¼ş»õÎï¡£\n";
+        msg += "ç¸½å…±" + chinese_number(j) + "ä»¶è²¨ç‰©ã€‚\n";
 
         // me->start_more(msg);
         return msg;
@@ -254,19 +254,19 @@ public string do_buy(object me, string arg)
         int m;
 
         if( me->is_busy() )
-                return "Ê²Ã´ÊÂ¶¼µÃµÈÄãÃ¦ÍêÔÙËµ°É£¡\n";
+                return "ä»€éº¼äº‹éƒ½å¾—ç­‰ä½ å¿™å®Œå†èªªå§ï¼\n";
 
         if( !arg || sscanf(arg, "%s from %s", arg, id) != 2 )
-                return "buy <Ä³Îï> from <id>\n";
+                return "buy <æŸç‰©> from <id>\n";
 
         if( sizeof(all_inventory(me)) >= MAX_ITEM_CARRIED )
-                return "ÄãÉíÉÏµÄ¶«Î÷Ì«¶àÁË£¬ÏÈ´¦ÀíÒ»ÏÂÔÙÂò¶«Î÷°É¡£\n";
+                return "ä½ èº«ä¸Šçš„æ±è¥¿å¤ªå¤šäº†ï¼Œå…ˆè™•ç†ä¸€ä¸‹å†è²·æ±è¥¿å§ã€‚\n";
 
         arg = lower_case(arg);
         kid = "data/" + id + "/objects";
         data = query(kid);
         if( sizeof(data) < 1 )
-                return "ËûÊ²Ã´ÎïÆ·¶¼Ã»ÓĞ¼ÄÊÛ×Å¡£\n";
+                return "ä»–ä»€éº¼ç‰©å“éƒ½æ²’æœ‰å¯„å”®è‘—ã€‚\n";
 
         ks = keys(data);
         for( i = 0; i < sizeof(ks); i++ ) {
@@ -281,18 +281,18 @@ public string do_buy(object me, string arg)
                 value = data["value"];
                 money = MEMBER_D->db_query_member(me, "money");
                 if( money < value )
-                        return "¶Ô²»Æğ£¬ÄúµÄÄàÌ¶½ğ±ÒÊıÁ¿²»¹»£¬Çë³åÖµºóÔÙÀ´£¡\n";
+                        return "å°ä¸èµ·ï¼Œæ‚¨çš„æ³¥æ½­é‡‘å¹£æ•¸é‡ä¸å¤ ï¼Œè«‹æ²–å€¼å¾Œå†ä¾†ï¼\n";
 
                 fees = (int)value * TAX / 100;
                 if( fees > 0 ) {
                         if( !MEMBER_D->player_pay(me, fees) ||
                             !MEMBER_D->player_pay(me, (value - fees), id) )
-                                return "¹ºÂòÎïÆ·Ê§°Ü£¬ÇëÓë±¾Õ¾Î×Ê¦ÁªÏµ£¡\n";
+                                return "è³¼è²·ç‰©å“å¤±æ•—ï¼Œè«‹èˆ‡æœ¬ç«™å·«å¸«è¯ç³»ï¼\n";
                 }
                 else
                 {
                         if( !MEMBER_D->player_pay(me, value, id) )
-                                return "¹ºÂòÎïÆ·Ê§°Ü£¬ÇëÓë±¾Õ¾Î×Ê¦ÁªÏµ£¡\n";
+                                return "è³¼è²·ç‰©å“å¤±æ•—ï¼Œè«‹èˆ‡æœ¬ç«™å·«å¸«è¯ç³»ï¼\n";
                 }
 
                 file = data["file"];
@@ -306,18 +306,18 @@ public string do_buy(object me, string arg)
                 if( objectp(ob) ) {
                         ob->set_amount(data["num"]);
                         if( ob->query_amount() )
-                                message_vision("$NÂòÏÂÁË" + ob->short() + "¡£\n", me);
+                                message_vision("$Nè²·ä¸‹äº†" + ob->short() + "ã€‚\n", me);
                         else
-                                message_vision("$NÄÇÀïÂòÏÂÁËÒ»"+query("unit", ob)+
-                                                query("name", ob)+"¡£\n",me);
+                                message_vision("$Né‚£è£¡è²·ä¸‹äº†ä¸€"+query("unit", ob)+
+                                                query("name", ob)+"ã€‚\n",me);
 
                         ob->move(me, 1);
                         delete(kid+"/"+ks[i]);
                         save();
                         me->start_busy(1);
                         log_buyinfo(me, data["name"], value);
-                        return "Äã´Ó¼ÄÊÛ¹ñÈ¡³öÁË"+data["name"]+"("+data["id"]+") ¡£\n";
+                        return "ä½ å¾å¯„å”®æ«ƒå–å‡ºäº†"+data["name"]+"("+data["id"]+") ã€‚\n";
                 }
         }
-        return "ÏÖÔÚ" + environment(me)->short() + "µÄ»õ¼ÜÉÏ²¢Ã»ÓĞÕâÑù»õÎï¡£\n";
+        return "ç¾åœ¨" + environment(me)->short() + "çš„è²¨æ¶ä¸Šä¸¦æ²’æœ‰é€™æ¨£è²¨ç‰©ã€‚\n";
 }

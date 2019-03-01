@@ -1,20 +1,20 @@
-// Àë´åÇ°ÉèÖÃĞÔ¸ñ¼°Ìì¸³µÈÊı¾İ
+// é›¢æ‘å‰è¨­ç½®æ€§æ ¼åŠå¤©è³¦ç­‰æ•¸æ“š
 
 #include <ansi.h>
 
 inherit NPC;
 
-mixed ask_chucun();       //ÇëÇó³ö´å
+mixed ask_chucun();       //è«‹æ±‚å‡ºæ‘
 
 void create()
 {
-        set_name(HIC "»¨²®" NOR, ({ "hua bo", "hua", "bo" }));
+        set_name(HIC "èŠ±ä¼¯" NOR, ({ "hua bo", "hua", "bo" }));
         set("long", @LONG
-ÕâÊÇÒ»¸ö¾«¸ÉµÄÀÏÕß£¬¿´ÆğÀ´ÓĞ°ËÊ®¶àËê£¬ËûÊÇÀÏ´å³¤µÄÍ½µÜ£¬
-Èç¹ûÄãÒª³ö´å£¬¿ÉÒÔÕÒËû£¨ask hua about ³ö´å£©¡£
+é€™æ˜¯ä¸€å€‹ç²¾å¹¹çš„è€è€…ï¼Œçœ‹èµ·ä¾†æœ‰å…«åå¤šæ­²ï¼Œä»–æ˜¯è€æ‘é•·çš„å¾’å¼Ÿï¼Œ
+å¦‚æœä½ è¦å‡ºæ‘ï¼Œå¯ä»¥æ‰¾ä»–ï¼ˆask hua about å‡ºæ‘ï¼‰ã€‚
 LONG);        
-        set("gender", "ÄĞĞÔ" );
-        set("title", HIR "¹Å´åÊØÎÀ" NOR); 
+        set("gender", "ç”·æ€§" );
+        set("title", HIR "å¤æ‘å®ˆè¡›" NOR); 
         set("age", 88);
         set("attitude", "friendly");
         set("max_jing", 5000000);
@@ -31,7 +31,7 @@ LONG);
         set("combat_exp", 100000000);
 
         set("inquiry", ([
-                "³ö´å" : (: ask_chucun :),
+                "å‡ºæ‘" : (: ask_chucun :),
         ]));
 
         set_skill("dodge", 800);
@@ -114,8 +114,8 @@ LONG);
 
 int accept_fight(object me)
 {
-          tell_object(me, HIG "ÕâÎ»" + RANK_D->query_respect(me) +
-                "£¬Äã»¹ÊÇµ½Á·Îä³¡ÕÒÈË±ÈÊÔ°É£¡\n" NOR);
+          tell_object(me, HIG "é€™ä½" + RANK_D->query_respect(me) +
+                "ï¼Œä½ é‚„æ˜¯åˆ°ç·´æ­¦å ´æ‰¾äººæ¯”è©¦å§ï¼\n" NOR);
           return 0;
 }
 
@@ -127,21 +127,21 @@ mixed ask_chucun()
         me = this_player();
 
         if( !query("newbie_quest_completed/can_out", me) )
-                return "Ã»ÓĞ×ğÊ¦µÄÔÊĞí£¬ÎÒ¿É²»¸ÒÈÃÄã³ö´å£¡\n";
+                return "æ²’æœ‰å°Šå¸«çš„å…è¨±ï¼Œæˆ‘å¯ä¸æ•¢è®“ä½ å‡ºæ‘ï¼\n";
 
         if( query("combat_exp", me)>200000 )
         {
-                return "¶Ô²»Æğ£¬Äã¾­ÑéÌ«¸ßÁË£¬¿ÖÅÂÎÒÒ²°ï²»ÁËÄãÁË£¨¾­Ñé²»ÄÜ³¬¹ı20Íò£©£¡\n";
+                return "å°ä¸èµ·ï¼Œä½ ç¶“é©—å¤ªé«˜äº†ï¼Œææ€•æˆ‘ä¹Ÿå¹«ä¸äº†ä½ äº†ï¼ˆç¶“é©—ä¸èƒ½è¶…é20è¬ï¼‰ï¼\n";
         }
 
-        msg = HIG "ºÃ°É£¡ÄãÑ¡ÔñÄãÒªÈ¥µÄµØ·½°É£º\n" NOR;
+        msg = HIG "å¥½å§ï¼ä½ é¸æ“‡ä½ è¦å»çš„åœ°æ–¹å§ï¼š\n" NOR;
         msg+= HIW "--------------------------------------------\n" NOR;
-        msg+= HIC "1. Ö±½Ó³ö´å£¨µ½ÑïÖİÎäÃí£©\n" NOR;
-        msg+= HIC "2. µ½¹ù¸®ÀúÁ·£¨µ½¹ù¸®´óÃÅÍâ£©\n" NOR;
-        msg+= HIC "3. °İÊ¦£¨µ½ÃÅÅÉÈëÃÅÊ¦¸µ´¦£©\n" NOR;
-        msg+= HIC "4. ÎÒ»¹ÊÇÏÈÔÚ¹Å´åËÄ´¦¹ä¹ä°É¡£\n" NOR;
+        msg+= HIC "1. ç›´æ¥å‡ºæ‘ï¼ˆåˆ°æšå·æ­¦å»Ÿï¼‰\n" NOR;
+        msg+= HIC "2. åˆ°éƒ­åºœæ­·ç·´ï¼ˆåˆ°éƒ­åºœå¤§é–€å¤–ï¼‰\n" NOR;
+        msg+= HIC "3. æ‹œå¸«ï¼ˆåˆ°é–€æ´¾å…¥é–€å¸«å‚…è™•ï¼‰\n" NOR;
+        msg+= HIC "4. æˆ‘é‚„æ˜¯å…ˆåœ¨å¤æ‘å››è™•é€›é€›å§ã€‚\n" NOR;
         msg+= HIW "--------------------------------------------\n" NOR;
-        msg+= HIR "ÇëÊäÈë1¡ª4±àºÅ¡£\n\n" NOR;
+        msg+= HIR "è«‹è¼¸å…¥1â”€4ç·¨è™Ÿã€‚\n\n" NOR;
 
         tell_object(me, msg);
 
@@ -158,7 +158,7 @@ void get_select(string arg, object me)
 
         if (arg != "1" && arg != "2" && arg != "3")
         {
-                tell_object(me, HIG "ÇëÊäÈë 1¡ª4 ÖĞµÄÊı×Ö£¡\n");
+                tell_object(me, HIG "è«‹è¼¸å…¥ 1â”€4 ä¸­çš„æ•¸å­—ï¼\n");
                 input_to("get_select", me);
                 return;
         }
@@ -169,17 +169,17 @@ void get_select(string arg, object me)
                 me->move("/d/city/wumiao");
                 set("startroom", "/d/city/wumiao", me);
 
-                // ³ö´å¸øÓè5Íò¾­Ñé10ÍòÇ±ÄÜ
+                // å‡ºæ‘çµ¦äºˆ5è¬ç¶“é©—10è¬æ½›èƒ½
                 addn("combat_exp", 50000, me);
                 addn("potential", 100000, me);
-                tell_object(HIG "ĞÂÊÖ½±Àø£ºÄã³É¹¦³ö¹Å´å£¬»ñµÃ5Íò¾­ÑéºÍ10ÍòÇ±ÄÜµÄ½±Àø£¡\n" NOR);
+                tell_object(HIG "æ–°æ‰‹çå‹µï¼šä½ æˆåŠŸå‡ºå¤æ‘ï¼Œç²å¾—5è¬ç¶“é©—å’Œ10è¬æ½›èƒ½çš„çå‹µï¼\n" NOR);
                         
-                // È¡Ïû°İÊ¦±êÖ¾
+                // å–æ¶ˆæ‹œå¸«æ¨™å¿—
                 delete("family", me);
                 delete("title", me);
-                set("title", "ÆÕÍ¨°ÙĞÕ", me);
+                set("title", "æ™®é€šç™¾å§“", me);
 
-                // ÉèÖÃÄêÁä
+                // è¨­ç½®å¹´é½¡
                 set("mud_age", 0, me);
                 me->save();
                 return;
@@ -187,46 +187,46 @@ void get_select(string arg, object me)
         if (arg == "2")
         {
                 me->move("/d/wuguan/guofu_gate");
-                tell_object(me, BLINK + HIR "\nÊäÈëÖ¸Áî join ¹ù¸® ¼ÓÈë¹ù¸®£¡\n" NOR);
+                tell_object(me, BLINK + HIR "\nè¼¸å…¥æŒ‡ä»¤ join éƒ­åºœ åŠ å…¥éƒ­åºœï¼\n" NOR);
                 set("startroom", "/d/wuguan/guofu_gate", me);
 
-                // ³ö´å¸øÓè5Íò¾­Ñé10ÍòÇ±ÄÜ
+                // å‡ºæ‘çµ¦äºˆ5è¬ç¶“é©—10è¬æ½›èƒ½
                 addn("combat_exp", 50000, me);
                 addn("potential", 100000, me);
-                tell_object(HIG "ĞÂÊÖ½±Àø£ºÄã³É¹¦³ö¹Å´å£¬»ñµÃ5Íò¾­ÑéºÍ10ÍòÇ±ÄÜµÄ½±Àø£¡\n" NOR);
+                tell_object(HIG "æ–°æ‰‹çå‹µï¼šä½ æˆåŠŸå‡ºå¤æ‘ï¼Œç²å¾—5è¬ç¶“é©—å’Œ10è¬æ½›èƒ½çš„çå‹µï¼\n" NOR);
                                 
-                // È¡Ïû°İÊ¦±êÖ¾
+                // å–æ¶ˆæ‹œå¸«æ¨™å¿—
                 delete("family", me);
                 delete("title", me);
-                set("title", "ÆÕÍ¨°ÙĞÕ", me);
-                // ÉèÖÃÄêÁä
+                set("title", "æ™®é€šç™¾å§“", me);
+                // è¨­ç½®å¹´é½¡
                 set("mud_age", 0, me);
                 me->save();
                 return;
         }
         if (arg == "3")
         {
-                msg = HIC "ÇëÑ¡ÔñÄãÒªÈ¥µÄÃÅÅÉ£¨ÎÒ½«ËÍÄãµ½ÃÅÅÉ°İÊ¦´¦£©£º\n" NOR;
+                msg = HIC "è«‹é¸æ“‡ä½ è¦å»çš„é–€æ´¾ï¼ˆæˆ‘å°‡é€ä½ åˆ°é–€æ´¾æ‹œå¸«è™•ï¼‰ï¼š\n" NOR;
                 msg+= HIW "------------------------------------------\n" NOR;
-                msg+= HIY "f1.  »ªÉ½ÅÉ            f15. Ñªµ¶ÃÅ\n"
-                          "f2.  áÔÉ½ÅÉ            f16. ´óÂÖËÂ\n"
-                          "f3.  ºâÉ½ÅÉ            f17. Ø¤  °ï\n"
-                          "f4.  ÉÙÁÖÅÉ            f18. ÌúÕÆ°ï\n"
-                          "f5.  Îäµ±ÅÉ            f19. ºì»¨»á\n"
-                          "f6.  ¶ëáÒÅÉ            f20. Îå¶¾½Ì\n"
-                          "f7.  åĞÒ£ÅÉ            f21. Ã÷  ½Ì\n"
-                          "f8.  ÁéğÕ¹¬            f22. ĞşÚ¤¹È\n"
-                          "f9.  ĞÇËŞÅÉ            f23. Ã·  ×¯\n" 
-                          "f10. ¹ÅÄ¹ÅÉ            f24. Ñ©É½ÅÉ\n"
-                          "f11. È«ÕæÅÉ            f25. ÕòÔ¶ïÚ¾Ö\n"
-                          "f12. À¥ÂØÅÉ            f26. ¾øÇé¹È\n"
-                          "f13. ÌÒ»¨µº            f27. ÈÕÔÂÉñ½Ì\n"
-                          "f14. Ò©Íõ¹È\n\n"
-                          "s1.  Å·ÑôÊÀ¼Ò          s2.  ÖĞÔ­Ãç¼Ò\n"
-                          "s3.  Ä½ÈİÊÀ¼Ò          s4.  °ËØÔµ¶ÉÌ¼Ò±¤\n"
-                          "s5.  ¹ØÍâºú¼Ò          s6.  ´óÀí¶ÎÊÏ\n\n" NOR;
+                msg+= HIY "f1.  è¯å±±æ´¾            f15. è¡€åˆ€é–€\n"
+                          "f2.  åµ©å±±æ´¾            f16. å¤§è¼ªå¯º\n"
+                          "f3.  è¡¡å±±æ´¾            f17. ä¸  å¹«\n"
+                          "f4.  å°‘æ—æ´¾            f18. éµæŒå¹«\n"
+                          "f5.  æ­¦ç•¶æ´¾            f19. ç´…èŠ±æœƒ\n"
+                          "f6.  å³¨åµ‹æ´¾            f20. äº”æ¯’æ•™\n"
+                          "f7.  é€é™æ´¾            f21. æ˜  æ•™\n"
+                          "f8.  éˆé·²å®®            f22. ç„å†¥è°·\n"
+                          "f9.  æ˜Ÿå®¿æ´¾            f23. æ¢…  èŠ\n" 
+                          "f10. å¤å¢“æ´¾            f24. é›ªå±±æ´¾\n"
+                          "f11. å…¨çœŸæ´¾            f25. é®é é¢å±€\n"
+                          "f12. æ˜†ä¾–æ´¾            f26. çµ•æƒ…è°·\n"
+                          "f13. æ¡ƒèŠ±å³¶            f27. æ—¥æœˆç¥æ•™\n"
+                          "f14. è—¥ç‹è°·\n\n"
+                          "s1.  æ­é™½ä¸–å®¶          s2.  ä¸­åŸè‹—å®¶\n"
+                          "s3.  æ…•å®¹ä¸–å®¶          s4.  å…«å¦åˆ€å•†å®¶å ¡\n"
+                          "s5.  é—œå¤–èƒ¡å®¶          s6.  å¤§ç†æ®µæ°\n\n" NOR;
                msg+= HIW "--------------------------------------\n" NOR;
-               msg+= HIR "ÇëÊäÈëf1¡ªf15£¬s1¡ªs6±àºÅ¡£\n\n" NOR;
+               msg+= HIR "è«‹è¼¸å…¥f1â”€f15ï¼Œs1â”€s6ç·¨è™Ÿã€‚\n\n" NOR;
 
                tell_object(me, msg);
                input_to("get_sel_fam", me);
@@ -285,20 +285,20 @@ void get_sel_fam(string arg, object me)
 
         if (arg == "f14")
         {
-                tell_object(me, HIG "Ò©Íõ¹ÈÔİÊ±»¹Ã»¿ª·Å£¡\n" NOR);
+                tell_object(me, HIG "è—¥ç‹è°·æš«æ™‚é‚„æ²’é–‹æ”¾ï¼\n" NOR);
                 get_select("3", me);
                 return;
         }
         if (arg == "f25")
         {
-                tell_object(me, HIG "ÕòÔ¶ïÚ¾ÖÔİÊ±»¹Ã»¿ª·Å£¡\n" NOR);
+                tell_object(me, HIG "é®é é¢å±€æš«æ™‚é‚„æ²’é–‹æ”¾ï¼\n" NOR);
                 get_select("3", me);
                 return;
         }
-        // ÈÕÔÂÉñ½Ì·ÖÄĞÅ®
+        // æ—¥æœˆç¥æ•™åˆ†ç”·å¥³
         if (arg == "f27")
         {
-                if( query("gender", me) == "ÄĞĞÔ" )
+                if( query("gender", me) == "ç”·æ€§" )
                 {
                         where = "/d/heimuya/pingdingzhou";
                 }
@@ -311,29 +311,29 @@ void get_sel_fam(string arg, object me)
 
         if (! stringp(where))
         {
-                tell_object(me, HIR "ÊäÈë±àºÅ´íÎó£¡\n" NOR);
+                tell_object(me, HIR "è¼¸å…¥ç·¨è™ŸéŒ¯èª¤ï¼\n" NOR);
                 get_select("3", me);
                 return;
         }
 
 
-        // ³ö´å¸øÓè5Íò¾­Ñé10ÍòÇ±ÄÜ
+        // å‡ºæ‘çµ¦äºˆ5è¬ç¶“é©—10è¬æ½›èƒ½
         addn("combat_exp", 50000, me);
         addn("potential", 100000, me);
-        tell_object(HIG "ĞÂÊÖ½±Àø£ºÄã³É¹¦³ö¹Å´å£¬»ñµÃ5Íò¾­ÑéºÍ10ÍòÇ±ÄÜµÄ½±Àø£¡\n"
-                        "µ½ÑïÖİÎäÃí(ÄÏÏÍ)´¦ÊäÈëÖ¸Áî ask nanxian ĞÂÊÖ¸£Àû »¹¿ÉÁìÈ¡ĞÂÊÖ¸£Àû!\n" NOR);
+        tell_object(HIG "æ–°æ‰‹çå‹µï¼šä½ æˆåŠŸå‡ºå¤æ‘ï¼Œç²å¾—5è¬ç¶“é©—å’Œ10è¬æ½›èƒ½çš„çå‹µï¼\n"
+                        "åˆ°æšå·æ­¦å»Ÿ(å—è³¢)è™•è¼¸å…¥æŒ‡ä»¤ ask nanxian æ–°æ‰‹ç¦åˆ© é‚„å¯é ˜å–æ–°æ‰‹ç¦åˆ©!\n" NOR);
                 
-        // È¡Ïû°İÊ¦±êÖ¾
+        // å–æ¶ˆæ‹œå¸«æ¨™å¿—
         delete("family", me);
         delete("title", me);
-                set("title", "ÆÕÍ¨°ÙĞÕ", me);
-        // ÉèÖÃÄêÁä
+                set("title", "æ™®é€šç™¾å§“", me);
+        // è¨­ç½®å¹´é½¡
         set("mud_age", 0, me);
-        // È¡ÏûµÇÂ½µØµã
+        // å–æ¶ˆç™»é™¸åœ°é»
         set("startroom", where, me);
 
         //write("where = " + where +"\n");
-        // ÒÆ¶¯¹ıÈ¥
+        // ç§»å‹•éå»
         me->move(where);
         me->save();
 
@@ -346,8 +346,8 @@ void init()
 
         me = this_player();
 
-        tell_object(me, HIG "\n»¨²®¶ÔÄãËµµÀ£ºÕâÎ»" + RANK_D->query_respect(me) +
-                "£¬Èç¹ûÒª³ö´åÊäÈë " HIR "ask hua about ³ö´å \n\n" NOR);
+        tell_object(me, HIG "\nèŠ±ä¼¯å°ä½ èªªé“ï¼šé€™ä½" + RANK_D->query_respect(me) +
+                "ï¼Œå¦‚æœè¦å‡ºæ‘è¼¸å…¥ " HIR "ask hua about å‡ºæ‘ \n\n" NOR);
 
         return;
 

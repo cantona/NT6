@@ -5,19 +5,19 @@ inherit RINGS;
 
 void create()
 {
-        set_name(MAG "×ÏÑª»·" NOR, ({ "zixue huan", "zixue", "huan" }));
+        set_name(MAG "ç´«è¡€ç’°" NOR, ({ "zixue huan", "zixue", "huan" }));
         set_weight(500);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ã¶");
-                set("long", MAG "º±¼ûµÄ×ÏÉ«ÑªÓñ¶ÍÔì¶ø³É£¬ÈëÊÖ±ùÀä´Ì¹Ç£¬Åå´÷ºóÓĞÌØÊâ¹¦Ğ§¡£\n" NOR);
+                set("unit", "æš");
+                set("long", MAG "ç½•è¦‹çš„ç´«è‰²è¡€ç‰é›é€ è€Œæˆï¼Œå…¥æ‰‹å†°å†·åˆºéª¨ï¼Œä½©æˆ´å¾Œæœ‰ç‰¹æ®ŠåŠŸæ•ˆã€‚\n" NOR);
                 set("value", 20000000);
                 set("material", "gold");
                 set("armor_prop/damage", 1000);
                 set("armor_prop/int", 10);
-                set("armor_prop/add_tihui_gift", 5); // Ôö¼ÓÌå»á½±Àø5% giftd.cÖĞ´¦Àí
-                set("special/desc", HIR "É±¹Ö¡¢É±BOSSËùµÃÌå»á½±Àø¶îÍâÔö¼Ó5%¡£" NOR);
+                set("armor_prop/add_tihui_gift", 5); // å¢åŠ é«”æœƒçå‹µ5% giftd.cä¸­è™•ç†
+                set("special/desc", HIR "æ®ºæ€ªã€æ®ºBOSSæ‰€å¾—é«”æœƒçå‹µé¡å¤–å¢åŠ 5%ã€‚" NOR);
                 set("limit", ([ 
                          "exp" : 100000000,
                          "scborn" : 1,

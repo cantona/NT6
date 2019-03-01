@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ˮ����");
+        set("short", "水簾洞");
         set("long", @LONG
-����Ⱥ����ʣ������������֣����·ת��ʯ����¶���й��ζ��ߣ�����
-ˮ����̦�����̰ವ����ʯ���ס��꼾ɽ������ֱ����ˮ�������д�����
+這裡群峰高聳，沿曲徑入幽林，峰回路轉，石壁中露出有拱形洞窟，洞內
+水鏽青苔，紅綠班駁，亂石穿孔。雨季山頂飛流直下如水簾，因有此名。
 LONG);
         set("outdoors", "silu");
         set("exits", ([

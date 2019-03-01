@@ -3,7 +3,7 @@
 
 int is_scborn() { return 1; }
 
-string name() { return HIC "½£ÁéÖ®°§ÉË" NOR; }
+string name() { return HIC "åŠéˆä¹‹å“€å‚·" NOR; }
 
 int perform(object me, string skill, string arg)
 {
@@ -12,7 +12,7 @@ int perform(object me, string skill, string arg)
         string msg;
         
         if( query_temp("special2/aishang", me) )
-                return notify_fail("ÄãÒÑ¾­´¦ÓÚ¼«¶ÈµÄ°§ÉËµ±ÖĞÁË£¬ÉÔºóÔÙÊ©Õ¹°É¡£\n");
+                return notify_fail("ä½ å·²ç¶“è™•äºæ¥µåº¦çš„å“€å‚·ç•¶ä¸­äº†ï¼Œç¨å¾Œå†æ–½å±•å§ã€‚\n");
         
         set_temp("special2/aishang", 1, me);
         
@@ -27,9 +27,9 @@ int perform(object me, string skill, string arg)
         addn_temp("apply/dodge", sk, me);
         addn_temp("apply/force", sk, me);
 
-        msg = HIY "$N" HIY "Çá¸§¡¸½£ÁéÖ®°§ÉË¡¹£¬É²ÄÇ¼ä£¬»ëÉíÉ¢·¢³öµ­À¶É«µÄ¹âÃ¢£¬Ò»Ö±À¶É«µÄºûµû´Ó$N" HIY "ÉíÌåÄÚÉıÆğ£¬²»¶ÏÉ¿¶¯×Å³á°ò¡£"
-              "ºûµû½¥½¥µØ»¯×÷Ò»¸öÏÉ×ÓµÄÄ£Ñù£¬ÄıÊÓ×Å$N" HIY "ÉíÉÏµÄ¡¸½£ÁéÖ®°§ÉË¡¹£¬ÂıÂıµØµÎÏÂÑÛÀá ¡­¡­ $N" HIY "²»ÓÉ×ÔÖ÷µØÒ»Õó°§ÉË£¬ËÆ"
-              "ºõÔÚ´Ë¿ÌÓë½£ÁéºÏÎªÒ»Ìå£¡\n" NOR;
+        msg = HIY "$N" HIY "è¼•æ’«ã€ŒåŠéˆä¹‹å“€å‚·ã€ï¼Œå‰é‚£é–“ï¼Œæ¸¾èº«æ•£ç™¼å‡ºæ·¡è—è‰²çš„å…‰èŠ’ï¼Œä¸€ç›´è—è‰²çš„è´è¶å¾$N" HIY "èº«é«”å…§å‡èµ·ï¼Œä¸æ–·ç…½å‹•è‘—ç¿…è†€ã€‚"
+              "è´è¶æ¼¸æ¼¸åœ°åŒ–ä½œä¸€å€‹ä»™å­çš„æ¨¡æ¨£ï¼Œå‡è¦–è‘—$N" HIY "èº«ä¸Šçš„ã€ŒåŠéˆä¹‹å“€å‚·ã€ï¼Œæ…¢æ…¢åœ°æ»´ä¸‹çœ¼æ·š â€¦â€¦ $N" HIY "ä¸ç”±è‡ªä¸»åœ°ä¸€é™£å“€å‚·ï¼Œä¼¼"
+              "ä¹åœ¨æ­¤åˆ»èˆ‡åŠéˆåˆç‚ºä¸€é«”ï¼\n" NOR;
         message_vision(sort_msg(msg), me) ;
         
         me->start_call_out( (: call_other, __FILE__, "remove_effect", me, armor, damage, sk :), 600);   
@@ -50,6 +50,6 @@ void remove_effect(object me, int armor, int damage, int skill)
                 addn_temp("apply/dodge", -1*skill, me);
                 addn_temp("apply/force", -1*skill, me);
                 delete_temp("special2/aishang", me);
-                tell_object(me, HIG "Äã½£ÁéÖ®°§ÉËÊ©Õ¹Íê±Ï¡£\n" NOR);
+                tell_object(me, HIG "ä½ åŠéˆä¹‹å“€å‚·æ–½å±•å®Œç•¢ã€‚\n" NOR);
         }
 }

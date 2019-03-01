@@ -10,27 +10,27 @@ int main(object me, string arg)
                 return 0;
 
         seteuid(geteuid(me));
-        if (! arg) return notify_fail("Ö¸Áî¸ñÊ½ : readfile <µµÃû>|<Îï¼şÃû>,n1,n2  n1±íÊ¾¿ªÊ¼ĞĞ£¬n2±íÊ¾ÖÕÖ¹ĞĞ¡£n1,n2Ã»ÓĞÔòÓëmoreÖ¸ÁîÒ»Ñù£¬ºÙºÙ¡£\n");
+        if (! arg) return notify_fail("æŒ‡ä»¤æ ¼å¼ : readfile <æª”å>|<ç‰©ä»¶å>,n1,n2  n1è¡¨ç¤ºé–‹å§‹è¡Œï¼Œn2è¡¨ç¤ºçµ‚æ­¢è¡Œã€‚n1,n2æ²’æœ‰å‰‡èˆ‡moreæŒ‡ä»¤ä¸€æ¨£ï¼Œå˜¿å˜¿ã€‚\n");
         if (sscanf(arg, "%s,%d,%d", arg, a, x) != 3)
-                return notify_fail("ÇëÊäÈëĞĞÊı£ºn1,n2¡£\n");
+                return notify_fail("è«‹è¼¸å…¥è¡Œæ•¸ï¼šn1,n2ã€‚\n");
         if ( a <= 0 || x < 0 || x - a < 0)
-                return notify_fail("ÄãÕæÓĞË¼Ïë£¬Åå·ş¡£\n");
+                return notify_fail("ä½ çœŸæœ‰æ€æƒ³ï¼Œä½©æœã€‚\n");
         file=resolve_path(query("cwd", me),arg);
         if (file_size(file) < 0)
         {
                 ob = present(arg, me);
                 if (! ob) ob = present(arg, environment(me));
-                if (! ob) return notify_fail("Ã»ÓĞÕâ¸öµµ°¸¡£\n");
+                if (! ob) return notify_fail("æ²’æœ‰é€™å€‹æª”æ¡ˆã€‚\n");
                 file = base_name(ob) + ".c";
         }
         if (! SECURITY_D->valid_read(file, me, "read_file"))
-                return notify_fail("ÄãÃ»ÓĞÈ¨ÏŞ²é¿´Õâ¸öÎÄ¼ş¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¬Šé™æŸ¥çœ‹é€™å€‹æ–‡ä»¶ã€‚\n");
 
                 b = x - a + 1;
 
-        message("", HIG "ÄúËùÔÄ¶ÁµÄÎÄ¼şÎª"HIY + file + NOR "\n"
-                                HIG "ÄúËùÑ¡È¡µÄÊÇ´ÓµÚ"  HIW + a + NOR  HIG "ĞĞµ½µÚ"  HIW + x + NOR HIG"ĞĞ\n"
-                                HIG "¾ßÌåÄÚÈİÈçÏÂ£º\n"NOR,me);
+        message("", HIG "æ‚¨æ‰€é–±è®€çš„æ–‡ä»¶ç‚º"HIY + file + NOR "\n"
+                                HIG "æ‚¨æ‰€é¸å–çš„æ˜¯å¾ç¬¬"  HIW + a + NOR  HIG "è¡Œåˆ°ç¬¬"  HIW + x + NOR HIG"è¡Œ\n"
+                                HIG "å…·é«”å…§å®¹å¦‚ä¸‹ï¼š\n"NOR,me);
         result = HIC + read_file(file,a,b) + "\n";
         me->start_more(result);
         return 1;
@@ -39,7 +39,7 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : readfile <µµ°¸Ãû>,ÆğÊ¼ĞĞÊı£¬½áÊøĞĞÊı
+æŒ‡ä»¤æ ¼å¼ : readfile <æª”æ¡ˆå>,èµ·å§‹è¡Œæ•¸ï¼ŒçµæŸè¡Œæ•¸
 HELP );
         return 1;
 }

@@ -4,11 +4,11 @@ inherit  ROOM;
 
 void create()
 {
-        set("short",  "�θ���Ժ");
+        set("short",  "遊府後院");
         set("long",  @LONG
-�������θ��ĺ�Ժ���������۴����ߣ�Ϊ��ε�Ӣ�����æµ�š�
-��Ժһ�Ǿ�����һ����ؤ��������̸��ʲô���ԱߵĽ�����ʿ�ƺ���
-������Ϊ��м������������ǰ��̸��
+這裡是遊府的後院，幾個僕役穿梭奔走，為這次的英雄宴而忙碌著。
+後院一角聚坐著一幫乞丐，低聲商談著什麼，旁邊的江湖人士似乎對
+他們頗為不屑，甚少有人上前攀談。
 LONG);
         set("exits",  ([  /*  sizeof()  ==  2  */
                 "east"  :  __DIR__"neitang",

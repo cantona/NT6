@@ -4,14 +4,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIB"º®Ã·»¨Â¶"NOR, ({ "hanmei hualu", "hualu" }));
+        set_name(HIB"å¯’æ¢…èŠ±éœ²"NOR, ({ "hanmei hualu", "hualu" }));
         set_weight(1500);
         set("taskobj", 1);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»Æ¿º®Ã·»¨Â¶£¬¿´À´ÊÇ»¨ÁË²»ÉÙĞÄÑªÅİÖÆ³ÉµÄ¡£\n");
-                set("unit", "Æ¿");
+                set("long", "é€™æ˜¯ä¸€ç“¶å¯’æ¢…èŠ±éœ²ï¼Œçœ‹ä¾†æ˜¯èŠ±äº†ä¸å°‘å¿ƒè¡€æ³¡åˆ¶æˆçš„ã€‚\n");
+                set("unit", "ç“¶");
                 set("value", 0);
         }
 }

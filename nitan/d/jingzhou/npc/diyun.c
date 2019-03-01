@@ -6,9 +6,9 @@ string ask_me();
 void create ()
 {
         object weapon;
-        set_name("µÒÔÆ", ({"di yun","di"}));
-        set("long", "Ëû³¤Á³÷îºÚ£¬È§¹ÇÎ¢¸ß£¬´ÖÊÖ´ó½Å£¬ÏóÊÇÏæÎ÷ÏçÏÂ³£¼ûµÄ×¯¼Úºº×Ó¡£\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("ç‹„é›²", ({"di yun","di"}));
+        set("long", "ä»–é•·è‡‰é»é»‘ï¼Œé¡´éª¨å¾®é«˜ï¼Œç²—æ‰‹å¤§è…³ï¼Œè±¡æ˜¯æ¹˜è¥¿é„‰ä¸‹å¸¸è¦‹çš„èŠç¨¼æ¼¢å­ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 24);
         set("combat_exp", 1500000);
         set("str", 24);
@@ -30,7 +30,7 @@ void create ()
         map_skill("unarmed", "shenzhaojing");
         map_skill("dodge", "yanfly");
         set("inquiry", ([
-                "Ë®óÏ" : (: ask_me :),
+                "æ°´ç¬™" : (: ask_me :),
         ]));
         set("wucan_count", 1);
         setup();
@@ -54,18 +54,18 @@ string ask_me()
         object ob;
         
         if (query("wucan_count") < 1)
-                return "Ë®óÏ¹ÃÄï£¿ËıÔÚÑ©ÓòµÈ×ÅÎÒ£¿";
+                return "æ°´ç¬™å§‘å¨˜ï¼Ÿå¥¹åœ¨é›ªåŸŸç­‰è‘—æˆ‘ï¼Ÿ";
 
         addn("wucan_count", -1);
         set_temp("marks/wucan", 1, this_player());
-        return "Ë®óÏ¹ÃÄï£¿ËıÔÚÑ©ÓòµÈ×ÅÎÒ£¿ËıÓĞÊ²Ã´¶«Î÷ÉÓ¸øÎÒÃ´£¿";
+        return "æ°´ç¬™å§‘å¨˜ï¼Ÿå¥¹åœ¨é›ªåŸŸç­‰è‘—æˆ‘ï¼Ÿå¥¹æœ‰ä»€éº¼æ±è¥¿æçµ¦æˆ‘éº¼ï¼Ÿ";
 }
 int accept_object(object who, object ob)
 {
         object obj;
         if( query("id", ob) != "dachang" )
-                return notify_fail("¸øÎÒÕâ¶«Î÷ÓĞÊ²Ã´ÓÃ£¿");
-        message_vision("µÒÔÆĞ¦×ÅËµµÀ£º¡°Ğ»Ğ»Äã£¡ÕâÎ»" + RANK_D->query_respect(ob) +"£¬ĞÁ¿àÄãÁË¡£¡±\n", who);
+                return notify_fail("çµ¦æˆ‘é€™æ±è¥¿æœ‰ä»€éº¼ç”¨ï¼Ÿ");
+        message_vision("ç‹„é›²ç¬‘è‘—èªªé“ï¼šâ€œè¬è¬ä½ ï¼é€™ä½" + RANK_D->query_respect(ob) +"ï¼Œè¾›è‹¦ä½ äº†ã€‚â€\n", who);
         if( !query_temp("marks/wucan", who) )
         {
                 return 1;
@@ -77,7 +77,7 @@ int accept_object(object who, object ob)
                 destruct( obj );
                 return 1;
         }
-        message_vision("µÒÔÆ¶Ô$NËµµÀ£º¡°Õâ¼şÎÚ²ÏÒÂÒ²²»ËãÊÇÊ²Ã´±¦±´£¬ÁÄ±íĞÄÒâ°É£¡¡±µÒÔÆ´Ó»³ÀïÌÍ³öÒ»ÍÅ²»ÆğÑÛµÄ¶«Î÷£¬µİµ½$NµÄÊÖÉÏ¡£\n", who);
+        message_vision("ç‹„é›²å°$Nèªªé“ï¼šâ€œé€™ä»¶çƒè ¶è¡£ä¹Ÿä¸ç®—æ˜¯ä»€éº¼å¯¶è²ï¼ŒèŠè¡¨å¿ƒæ„å§ï¼â€ç‹„é›²å¾æ‡·è£¡æå‡ºä¸€åœ˜ä¸èµ·çœ¼çš„æ±è¥¿ï¼Œéåˆ°$Nçš„æ‰‹ä¸Šã€‚\n", who);
         obj->move(this_player());
         return 1;
 }

@@ -1,21 +1,21 @@
 #include <ansi.h>
-// Îå¶¾½ÌÎå¶¾Úå wudu-jing
+// äº”æ¯’æ•™äº”æ¯’é˜± wudu-jing
 inherit SKILL; 
 string type() { return "knowledge"; } 
 
 int is_fmsk() { return 1; }
-string family_name() { return "Îå¶¾½Ì"; }
+string family_name() { return "äº”æ¯’æ•™"; }
 
 int valid_learn(object me)
 {        
         if (me->query_skill("wudu-qishu", 1) < 200)
-                return notify_fail("ÄãÎå¶¾ÆæÊõ»ðºò²»×ã£¬ÎÞ·¨ÑÐÏ°Îå¶¾Úå¡£\n");        
+                return notify_fail("ä½ äº”æ¯’å¥‡è¡“ç«å€™ä¸è¶³ï¼Œç„¡æ³•ç ”ç¿’äº”æ¯’é˜±ã€‚\n");        
         
         if( query("family/family_name", me) != family_name() )
-                return notify_fail("Îå¶¾ÚåÖ»ÄÜÎå¶¾½ÌµÜ×Ó·½¿ÉÑÐÏ°¡£\n");
+                return notify_fail("äº”æ¯’é˜±åªèƒ½äº”æ¯’æ•™å¼Ÿå­æ–¹å¯ç ”ç¿’ã€‚\n");
 
         if (me->query_skill("qianzhu-wandushou", 1) < 180)
-                return notify_fail("ÄãÇ§ÖëÍò¶¾ÊÖÐÞÎª²»×ã£¬ÎÞ·¨¼ÌÐøÑÐÏ°Îå¶¾Úå¡£\n");
+                return notify_fail("ä½ åƒè››è¬æ¯’æ‰‹ä¿®ç‚ºä¸è¶³ï¼Œç„¡æ³•ç¹¼çºŒç ”ç¿’äº”æ¯’é˜±ã€‚\n");
 
         return 1;
 }

@@ -1,10 +1,10 @@
-// Inherit: snake.c ÉßÀà
+// Inherit: snake.c è›‡é¡
 // Update by Vin for Heros.cn
-// ÉèÖÃ¶¾Éß¶¾ĞÔlevelºÍ¶¾ÒºµÄÁ¿remain/maximum£¬¶¾ÉßÃ¿´ÎÒ§ÖĞ¶Ô
-// ·½£¬¶¼»á½«perhit Ö¸Ã÷µÄ¶¾Á¿×¢Èëµ½¶Ô·½µÄÌåÄÚ£¬Ã¿¹ıÒ»¶ÎÊ±¼ä
-// ¶¾Éß»á×Ô¶¯»Ö¸´supply Á¿µÄ¶¾Òº¡£level½«ºÍÎä¹¦µÄforce×ö±È½Ï¡£
-// ÉèÖÃlevelÊ±ºòÓ¦¸Ã²Î¿¼ÄÚ¹¦µÈ¼¶¡£¶¾Á¿ºÍÖĞ¶¾UPDATE_CONDITION
-// µÄ´ÎÊı³ÉÕı±È£¬ÉèÖÃ¶¾Á¿µÄÊ±ºòÓ¦¸Ã²Î¿¼ÆøºÍ¾«¡£
+// è¨­ç½®æ¯’è›‡æ¯’æ€§levelå’Œæ¯’æ¶²çš„é‡remain/maximumï¼Œæ¯’è›‡æ¯æ¬¡å’¬ä¸­å°
+// æ–¹ï¼Œéƒ½æœƒå°‡perhit æŒ‡æ˜çš„æ¯’é‡æ³¨å…¥åˆ°å°æ–¹çš„é«”å…§ï¼Œæ¯éä¸€æ®µæ™‚é–“
+// æ¯’è›‡æœƒè‡ªå‹•æ¢å¾©supply é‡çš„æ¯’æ¶²ã€‚levelå°‡å’Œæ­¦åŠŸçš„forceåšæ¯”è¼ƒã€‚
+// è¨­ç½®levelæ™‚å€™æ‡‰è©²åƒè€ƒå…§åŠŸç­‰ç´šã€‚æ¯’é‡å’Œä¸­æ¯’UPDATE_CONDITION
+// çš„æ¬¡æ•¸æˆæ­£æ¯”ï¼Œè¨­ç½®æ¯’é‡çš„æ™‚å€™æ‡‰è©²åƒè€ƒæ°£å’Œç²¾ã€‚
 
 #include <ansi.h>
 inherit NPC;
@@ -18,9 +18,9 @@ void setup()
 {
         mapping p;
 
-        set("race", "ÉßÀà");
-        set("unit", "Ìõ");
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "Æß´ç", "Î²°Í" }));
+        set("race", "è›‡é¡");
+        set("unit", "æ¢");
+        set("limbs", ({ "é ­éƒ¨", "èº«é«”", "ä¸ƒå¯¸", "å°¾å·´" }));
         set("verbs", ({ "bite" }));
         set("attitude", "aggressive");
 
@@ -50,7 +50,7 @@ void init()
         if (! interactive(me = this_player()))
                 return;
 
-        // ×Ô¶¯¹¥»÷Éß¶¾ÆæÇÉµÈ¼¶²»¸ßµÄÍæ¼Ò
+        // è‡ªå‹•æ”»æ“Šè›‡æ¯’å¥‡å·§ç­‰ç´šä¸é«˜çš„ç©å®¶
         if (! present("xiong huang", this_player()) &&
             query_temp("owner") != query("id", me) &&
             (int)me->query_skill("shedu-qiqiao", 1) < 100)
@@ -93,34 +93,34 @@ mixed hit_ob(object me, object ob, int damage)
         {
                 if (query("qi", ob) < 150)
                 {
-                        msg = HIR "Äã¾õµÃÉË¿ÚÓĞĞ©·¢Âé£¬Á¬Ã¦ÔË¹¦»¯½â£¬µ«"
-                              "ÊÇÒ»Ê±ÌåÁ¦²»Ö§£¬ÄÑÒÔÊ©Îª¡£\n" NOR;
+                        msg = HIR "ä½ è¦ºå¾—å‚·å£æœ‰äº›ç™¼éº»ï¼Œé€£å¿™é‹åŠŸåŒ–è§£ï¼Œä½†"
+                              "æ˜¯ä¸€æ™‚é«”åŠ›ä¸æ”¯ï¼Œé›£ä»¥æ–½ç‚ºã€‚\n" NOR;
                 } else
                 if (query("jing", ob) < 60)
                 {
-                        msg = HIR "Äã¾õµÃÉË¿ÚÓĞĞ©·¢Âé£¬Á¬Ã¦ÔË¹¦»¯½â£¬µ«"
-                              "ÊÇÒ»Ê±¾«Éñ²»¼Ã£¬ÄÑÒÔÊ©Îª¡£\n" NOR;
+                        msg = HIR "ä½ è¦ºå¾—å‚·å£æœ‰äº›ç™¼éº»ï¼Œé€£å¿™é‹åŠŸåŒ–è§£ï¼Œä½†"
+                              "æ˜¯ä¸€æ™‚ç²¾ç¥ä¸æ¿Ÿï¼Œé›£ä»¥æ–½ç‚ºã€‚\n" NOR;
                 } else
                 if (query("neili", ob) < damage / 5 + 50)
                 {
-                        msg = HIR "Äã¾õµÃÉË¿ÚÓĞĞ©·¢Âé£¬Á¬Ã¦ÔË¹¦»¯½â£¬µ«"
-                              "ÊÇÒ»Ê±ÄÚÁ¦²»×ã£¬ÄÑÒÔÊ©Îª¡£\n" NOR;
+                        msg = HIR "ä½ è¦ºå¾—å‚·å£æœ‰äº›ç™¼éº»ï¼Œé€£å¿™é‹åŠŸåŒ–è§£ï¼Œä½†"
+                              "æ˜¯ä¸€æ™‚å…§åŠ›ä¸è¶³ï¼Œé›£ä»¥æ–½ç‚ºã€‚\n" NOR;
                 } else
                 {
                         addn("neili", -damage/5, ob);
                         ob->receive_damage("qi", 20);
                         ob->receive_damage("jing", 10);
-                        return HIM "Äã¾õµÃ±»Ò§ÖĞµÄµØ·½ÓĞĞ©·¢Âé£¬Á¬Ã¦ÔË¹¦"
-                               "»¯½â¶¾ĞÔ¡£\n" NOR;
+                        return HIM "ä½ è¦ºå¾—è¢«å’¬ä¸­çš„åœ°æ–¹æœ‰äº›ç™¼éº»ï¼Œé€£å¿™é‹åŠŸ"
+                               "åŒ–è§£æ¯’æ€§ã€‚\n" NOR;
                 }
         }
 
         if (ob->affect_by("poison", ([ "level" : (int)p["level"],
-                                       "name"  : "Éß¶¾",
+                                       "name"  : "è›‡æ¯’",
                                        "id"    : "nature poison",
                                        "duration" : dur, ])))
         {
-                msg += HIR "$n" HIR "Á³É«Ò»±ä£¬Ö»¾õ±»Ò§ÖĞµÄµØ·½Ò»ÕóÂéÄ¾¡£\n" NOR;
+                msg += HIR "$n" HIR "è‡‰è‰²ä¸€è®Šï¼Œåªè¦ºè¢«å’¬ä¸­çš„åœ°æ–¹ä¸€é™£éº»æœ¨ã€‚\n" NOR;
         }
         return msg;
 }
@@ -132,17 +132,17 @@ void die(object killer)
         int power, skill;
         string msg;
 
-        message_vision(HIR "\nÖ»¼û$N" HIR "¾í×ÅÉí×ÓÔÚµØÉÏÆËÌÚÁË"
-                       "¼¸ÏÂ£¬ËÀÁË¡£\n\n" NOR, ob);
+        message_vision(HIR "\nåªè¦‹$N" HIR "å·è‘—èº«å­åœ¨åœ°ä¸Šæ’²é¨°äº†"
+                       "å¹¾ä¸‹ï¼Œæ­»äº†ã€‚\n\n" NOR, ob);
 
         if (objectp(me = killer)
            || objectp(me = query_last_damage_from()))
         {
-                // Èç¹ûÎª×Ô¼ºµÄÁÔÎï£¬Ôò½±ÀøÖ®
+                // å¦‚æœç‚ºè‡ªå·±çš„çµç‰©ï¼Œå‰‡çå‹µä¹‹
                 if (query("owner", ob) == query("id", me)
                    && query("combat_exp", me) <= 500000)
                 {
-                        // ¸ù¾İÁÔÎïÉè¶¨µÄ²ÎÊıÀ´¸øÓè½±Àø
+                        // æ ¹æ“šçµç‰©è¨­å®šçš„åƒæ•¸ä¾†çµ¦äºˆçå‹µ
                         power = query("power", ob);
 
                         if (power < 5)
@@ -151,33 +151,33 @@ void die(object killer)
                         if (power > 500)
                                 power = 500;
 
-                        GIFT_D->delay_bonus(me, ([ "prompt" : "Í¨¹ıÕâ´ÎÁÔÈ¡" + ob->name() +
-                                                              HIG "µÄ¾­Àú",
+                        GIFT_D->delay_bonus(me, ([ "prompt" : "é€šéé€™æ¬¡çµå–" + ob->name() +
+                                                              HIG "çš„ç¶“æ­·",
                                                    "exp"    : random(power) + power,
                                                    "pot"    : random(power / 3) + power / 3,
                                                    "score"  : random(power / 4), ]));
                 }
                 skill = me->query_skill("hunting", 1);
 
-                // »ñµÃÎïÆ·
+                // ç²å¾—ç‰©å“
                 if (query("item1") && random(skill) > 10)
                 {
                         item = new(query("item1"));
                         item->move(me, 1);
 
-                        msg = HIC "Äã×ĞÏ¸·­Ñ°" + ob->name() +
-                              HIC "µÄÊ¬Ìå£¬´ÓÉÏÃæ¸îÏÂÁËÒ»" +
+                        msg = HIC "ä½ ä»”ç´°ç¿»å°‹" + ob->name() +
+                              HIC "çš„å±é«”ï¼Œå¾ä¸Šé¢å‰²ä¸‹äº†ä¸€" +
                               query("base_unit", item) +
                               item->name() + HIC;
 
-                        // Ò»¶¨¼¸ÂÊ»ñµÃ¸ß¼¶ÎïÆ·
+                        // ä¸€å®šå¹¾ç‡ç²å¾—é«˜ç´šç‰©å“
                         if (query("item3") && random(skill) > 60
                            && random(5) > 3)
                         {
                                 item = new(query("item3"));
                                 item->move(me, 1);
 
-                                msg += "¼°Ò»" + query("base_unit", item) +
+                                msg += "åŠä¸€" + query("base_unit", item) +
                                        item->name() + HIC;
                         } else
                         if (query("item2") && random(skill) > 30
@@ -186,10 +186,10 @@ void die(object killer)
                                 item = new(query("item2"));
                                 item->move(me, 1);
 
-                                msg += "¼°Ò»" + query("base_unit", item) +
+                                msg += "åŠä¸€" + query("base_unit", item) +
                                        item->name() + HIC;
                         }
-                        msg += "¡£\n\n" NOR;
+                        msg += "ã€‚\n\n" NOR;
                         tell_object(me, msg);
                 }
         }

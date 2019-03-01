@@ -1,4 +1,4 @@
-// lian.c Î÷ÑóÁ¬»·½£
+// lian.c è¥¿æ´‹é€£ç’°åŠ
 
 #include <ansi.h>
 
@@ -17,29 +17,29 @@ int perform(object me, object target)
         }
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail("¡¸Á¬»·½£¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œé€£ç’°åŠã€åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
  
         if( !objectp(weapon=query_temp("weapon", me)) || 
             query("skill_type", weapon) != "sword" )
-                return notify_fail("±ØĞëÄÃ½£²ÅÄÜÊ©Õ¹¡¸Á¬»·½£¡¹£¡\n");
+                return notify_fail("å¿…é ˆæ‹¿åŠæ‰èƒ½æ–½å±•ã€Œé€£ç’°åŠã€ï¼\n");
 
         if( query("neili", me)<100 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬ÎŞ·¨Ê©Õ¹¡¸Á¬»·½£¡¹£¡\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼Œç„¡æ³•æ–½å±•ã€Œé€£ç’°åŠã€ï¼\n");
 
         if ((int)me->query_skill("force") < 100)
-                return notify_fail("ÄãµÄÄÚ¹¦»ğºò²»¹»£¬ÄÑÒÔÊ©Õ¹¡¸Á¬»·½£¡¹£¡\n");
+                return notify_fail("ä½ çš„å…§åŠŸç«å€™ä¸å¤ ï¼Œé›£ä»¥æ–½å±•ã€Œé€£ç’°åŠã€ï¼\n");
 
         if ((int)me->query_skill("xiyang-jian", 1) < 80)
-                return notify_fail("ÄãµÄÎ÷Ñó½£Êõ»¹²»µ½¼Ò£¬ÎŞ·¨Ê¹ÓÃÁ¬»·½££¡\n");
+                return notify_fail("ä½ çš„è¥¿æ´‹åŠè¡“é‚„ä¸åˆ°å®¶ï¼Œç„¡æ³•ä½¿ç”¨é€£ç’°åŠï¼\n");
 
         if (me->query_skill_mapped("sword") != "xiyang-jian")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢Î÷Ñó½£Êõ£¬ÎŞ·¨Ê¹ÓÃÁ¬»·½££¡\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼è¥¿æ´‹åŠè¡“ï¼Œç„¡æ³•ä½¿ç”¨é€£ç’°åŠï¼\n");
 
        if (! living(target))
-              return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+              return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIC "\n$N" HIC "¿ñºÈÒ»Éù£¬Ö»¼ûÉÏÒ»½£¡¢ÏÂÒ»½£¡¢×óÒ»½£¡¢ÓÒÒ»½£¡¢µ±ÖĞÒ»½££¬Ò»Æğ´ÌÏò$n"
-              HIC "£¡\n" NOR;
+        msg = HIC "\n$N" HIC "ç‹‚å–ä¸€è²ï¼Œåªè¦‹ä¸Šä¸€åŠã€ä¸‹ä¸€åŠã€å·¦ä¸€åŠã€å³ä¸€åŠã€ç•¶ä¸­ä¸€åŠï¼Œä¸€èµ·åˆºå‘$n"
+              HIC "ï¼\n" NOR;
         message_combatd(msg, me, target);
         addn("neili", -100, me);
 

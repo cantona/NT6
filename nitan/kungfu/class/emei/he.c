@@ -1,5 +1,5 @@
 // This program is a part of NT MudLIB
-// he.c ¾²ºÍÊ¦Ì«
+// he.c éœå’Œå¸«å¤ª
 
 #include <command.h>
 #include <ansi.h>
@@ -9,10 +9,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("¾²ºÍÊ¦Ì«", ({ "jinghe shitai","jinghe","shitai"}));
+        set_name("éœå’Œå¸«å¤ª", ({ "jinghe shitai","jinghe","shitai"}));
         set("long",
-            "ËıÊÇÒ»Î»ÖĞÄê³ö¼ÒµÀ¹Ã£¬µÀ¹Ú¸ßÂ££¬´ÈÃ¼ÉÆÄ¿¡£\n");
-        set("gender", "Å®ĞÔ");
+            "å¥¹æ˜¯ä¸€ä½ä¸­å¹´å‡ºå®¶é“å§‘ï¼Œé“å† é«˜æ”ï¼Œæ…ˆçœ‰å–„ç›®ã€‚\n");
+        set("gender", "å¥³æ€§");
         set("age", 45);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -60,10 +60,10 @@ void create()
         map_skill("parry","yanxing-dao");
 
         set("inquiry",([
-                "³ö¼Ò"  : (: ask_for_join :),
+                "å‡ºå®¶"  : (: ask_for_join :),
         ]));
 
-        create_family("¶ëáÒÅÉ", 4, "µÜ×Ó");
+        create_family("å³¨åµ‹æ´¾", 4, "å¼Ÿå­");
 
         setup();
         carry_object(WEAPON_DIR"gangdao")->wield();
@@ -73,7 +73,7 @@ void create()
 
 void attempt_apprentice(object ob)
 {
-        command ("say °¢ÃÖÍÓ·ğ£¡Æ¶Äá²»ÊÕµÜ×Ó¡£\n");
-        command ("say ÄãÈôÏë¼ÌĞøÑ§¶ëáÒÅÉµÄ¹¦·ò£¬»¹ÊÇÈ¥ÕÒÎÒË×¼ÒÊ¦ÃÃ°É¡£\n");
+        command ("say é˜¿å½Œé™€ä½›ï¼è²§å°¼ä¸æ”¶å¼Ÿå­ã€‚\n");
+        command ("say ä½ è‹¥æƒ³ç¹¼çºŒå­¸å³¨åµ‹æ´¾çš„åŠŸå¤«ï¼Œé‚„æ˜¯å»æ‰¾æˆ‘ä¿—å®¶å¸«å¦¹å§ã€‚\n");
         return;
 }

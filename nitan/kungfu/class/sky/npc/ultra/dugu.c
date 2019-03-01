@@ -8,11 +8,11 @@ void check_weapon();
 
 void create()
 {
-        set_name("¶À¹ÂÇó°Ü", ({ "dugu qiubai", "dugu" }) );
-        set("title", HIC "´ó×ÚÊ¦" NOR);
-        set("gender", "ÄÐÐÔ");
+        set_name("ç¨å­¤æ±‚æ•—", ({ "dugu qiubai", "dugu" }) );
+        set("title", HIC "å¤§å®—å¸«" NOR);
+        set("gender", "ç”·æ€§");
         set("age", 48);
-        set("long", "´ËÈË³Ï¿Ò¶Øºñ£¬Ã¼Ä¿Áâ½Ç·ÖÃ÷£¬ÆøÓîÐù°º¡£\n");
+        set("long", "æ­¤äººèª æ‡‡æ•¦åŽšï¼Œçœ‰ç›®è±è§’åˆ†æ˜Žï¼Œæ°£å®‡è»’æ˜‚ã€‚\n");
         set("attitude", "peaceful");
         set("str", 38);
         set("int", 39);
@@ -65,7 +65,7 @@ void create()
                 (: check_weapon :),
         }) );
 
-        set("rank_info/self", "ÔÚÏÂ");
+        set("rank_info/self", "åœ¨ä¸‹");
 
         set("chat_chance_combat", 100);
         set("chat_msg_combat", ({
@@ -145,7 +145,7 @@ void die()
                          if (arrayp(ob->query_team()))
                          {
                                  command("heng");
-                                 command("say Ê¤Ö®²»Îä£¡");
+                                 command("say å‹ä¹‹ä¸æ­¦ï¼");
                                  set("qi", 500000);
                                  set("jing", 500000);
                                  set("eff_qi", 500000);
@@ -163,7 +163,7 @@ void die()
              if (ob->query("sky12/floor") == 7)
              {
                       ob->set("sky12/floor", 8);
-                 command("say ¸óÏÂÇë±ã°É£¡");
+                 command("say é–£ä¸‹è«‹ä¾¿å§ï¼");
              }
         }
 
@@ -182,7 +182,7 @@ void die()
 
 
 
-// ÆøÑªÐ¡ÓÚ1000ÔòËÀÍö£¬±ÜÃâËûÈËÐ­Öú°ïÃ¦×ªÊÀ
+// æ°£è¡€å°äºŽ1000å‰‡æ­»äº¡ï¼Œé¿å…ä»–äººå”åŠ©å¹«å¿™è½‰ä¸–
 void heart_beat()
 {
         if (this_object()->query("qi") < 1000 || this_object()->query("eff_qi") < 1000)

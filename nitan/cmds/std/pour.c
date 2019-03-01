@@ -13,39 +13,39 @@ int main(object me, string arg)
         function f;
 
         if (! arg)
-                return notify_fail("ÄãÒªÏÂÊ²Ã´¶¾£¿\n");
+                return notify_fail("ä½ è¦ä¸‹ä»€éº¼æ¯’ï¼Ÿ\n");
 
         if (me->is_busy())
-                return notify_fail("ÏÈÃ¦ÍêÁËÄãµÄÊÂÇéÔÙÏëÔõÃ´º¦ÈË°É£¡\n");
+                return notify_fail("å…ˆå¿™å®Œäº†ä½ çš„äº‹æƒ…å†æƒ³æ€éº¼å®³äººå§ï¼\n");
 
         if (me->is_fighting())
-                return notify_fail("ÄãÏÖÔÚÕıÔÚ´ò¼Ü£¬Ã»Ê±¼ä×öÕâĞ©ÊÂÇé¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£åœ¨æ‰“æ¶ï¼Œæ²’æ™‚é–“åšé€™äº›äº‹æƒ…ã€‚\n");
 
         if (sscanf(arg, "%s in %s", item, target) != 2)
-                return notify_fail("ÄãÒªÍùÄÄÀïÏÂ¶¾£¿\n");
+                return notify_fail("ä½ è¦å¾€å“ªè£¡ä¸‹æ¯’ï¼Ÿ\n");
 
         dest = present(target, me);
-        if (! dest) return notify_fail("ÕâÀïÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+        if (! dest) return notify_fail("é€™è£¡æ²’æœ‰é€™æ¨£æ±è¥¿ã€‚\n");
 
         if (! objectp(obj = present(item, me)))
-                return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+                return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™æ¨£æ±è¥¿ã€‚\n");
 
         if( !stringp(query("poison_type", obj)) )
-                return notify_fail("Õâ²»ÊÇ¶¾Ò©°¡¡£\n");
+                return notify_fail("é€™ä¸æ˜¯æ¯’è—¥å•Šã€‚\n");
 
         if( !query("can_pour", obj) )
-                return notify_fail("ÕâÖÖ¶¾Ò©²»ÄÜÈÜÔÚË®Àï¡£\n");
+                return notify_fail("é€™ç¨®æ¯’è—¥ä¸èƒ½æº¶åœ¨æ°´è£¡ã€‚\n");
 
         if( query("liquid/remaining", dest)<1 )
         {
-                tell_object(me, "ÀïÃæÒ»µãºÈµÄ¶¼Ã»ÓĞÊÇ²»ÄÜÏÂ¶¾µÄ¡£\n");
+                tell_object(me, "è£¡é¢ä¸€é»å–çš„éƒ½æ²’æœ‰æ˜¯ä¸èƒ½ä¸‹æ¯’çš„ã€‚\n");
                 return 1;
         }
 
-        message("vision", sprintf("%s½«Ò»Ğ©¶«Î÷ÍµÍµ·Å½ø%s£¬Ò¡ÁËÒ»Ò¡¡£\n",
+        message("vision", sprintf("%så°‡ä¸€äº›æ±è¥¿å·å·æ”¾é€²%sï¼Œæ–äº†ä¸€æ–ã€‚\n",
                 me->name(), dest->name()), environment(me), ({ me }));
 
-        message("vision", sprintf("Äã½«Ò»%s%sÍµÍµ·Å½ø%s£¬Ò¡ÁËÒ»Ò¡¡£\n",
+        message("vision", sprintf("ä½ å°‡ä¸€%s%så·å·æ”¾é€²%sï¼Œæ–äº†ä¸€æ–ã€‚\n",
                 query("unit", obj),obj->name(),dest->name()),me);
 
         
@@ -92,10 +92,10 @@ int do_effect(string type, mixed para)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : pour <¶¾Ò©> in <ÈİÆ÷>
+æŒ‡ä»¤æ ¼å¼ : pour <æ¯’è—¥> in <å®¹å™¨>
  
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄã½«Ä³Ñù¶¾Æ··Å½øÒ»¸öÈİÆ÷£¬µ±È»£¬Ê×ÏÈÄãÒªÓµÓĞÕâÑùÎïÆ·¡£
-ÈİÆ÷ÀïÓĞºÈµÄ¶«Î÷¡£
+é€™å€‹æŒ‡ä»¤å¯ä»¥è®“ä½ å°‡æŸæ¨£æ¯’å“æ”¾é€²ä¸€å€‹å®¹å™¨ï¼Œç•¶ç„¶ï¼Œé¦–å…ˆä½ è¦æ“æœ‰é€™æ¨£ç‰©å“ã€‚
+å®¹å™¨è£¡æœ‰å–çš„æ±è¥¿ã€‚
 HELP
     );
     return 1;

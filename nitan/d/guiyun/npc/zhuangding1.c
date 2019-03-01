@@ -1,14 +1,14 @@
-// Npc: /d/guiyun/npc/zhuangding1.c ×¯¶¡
+// Npc: /d/guiyun/npc/zhuangding1.c èŠä¸
 // Last Modified by winder on Jul. 9 2001
 
 inherit NPC;
 
 void create()
 {
-        set_name("×¯¶¡", ({ "zhuang ding", "zhuang", "ding" }));
-        set("gender", "ÄĞĞÔ");
+        set_name("èŠä¸", ({ "zhuang ding", "zhuang", "ding" }));
+        set("gender", "ç”·æ€§");
         set("age", 32);
-        set("long", "ËûÊÇ¹éÔÆ×¯µÄ×¯¶¡¡£\n");
+        set("long", "ä»–æ˜¯æ­¸é›²èŠçš„èŠä¸ã€‚\n");
         
         set("combat_exp", 4000 + random(300));
         set("shen_type", 0);
@@ -26,12 +26,12 @@ void create()
         set("jiali", 8);
 
         set("inquiry",([
-                "name" : "ÎÒÖ»ÊÇÒ»¸öĞ¡½ÇÉ«£¬ÄÄÓĞĞÕÃû¿ÉÑÔ£¿",
+                "name" : "æˆ‘åªæ˜¯ä¸€å€‹å°è§’è‰²ï¼Œå“ªæœ‰å§“åå¯è¨€ï¼Ÿ",
         ]));
         setup();
         set("chat_chance",10);
         set("chat_msg",({
-                "×¯¶¡¶Ô×ÅÄãĞ¦ÁËĞ¦µÀ£ºÇëËæ±ã¹ä£¬µ½ÎÒÃÇÕâÀïÀ´¾Í²»±Ø¾ĞÊø¡£\n",
+                "èŠä¸å°è‘—ä½ ç¬‘äº†ç¬‘é“ï¼šè«‹éš¨ä¾¿é€›ï¼Œåˆ°æˆ‘å€‘é€™è£¡ä¾†å°±ä¸å¿…æ‹˜æŸã€‚\n",
         }));
         carry_object("/clone/misc/cloth")->wear();
 }

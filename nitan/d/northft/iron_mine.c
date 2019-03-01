@@ -1,5 +1,5 @@
 // iron_mine.c
-// Ìú¿ó³¡
+// éµç¤¦å ´
 
 #include <mine_def.h>
 
@@ -7,15 +7,15 @@ inherit MINE_FIELD;
 
 void create()
 {
-	set_maze_long(10);				// ¿óÇøµ¥±ß³¤
-	set_mine_room(__DIR__"mine_room");		// ÓĞ¿ó·¿¼ä
-	set_no_mine_room(__DIR__"no_mine_room");	// ÎŞ¿ó·¿¼ä
-	set_contain_quantity(10000000);			// µ¥Î»(Á½),100Íò½ï
-	set_contain_persent(15);			// ÔÌ²Ø±ÈÀı
-	set_reset_time_sect(20);			// ÔÙÉúÆÚ£¨GameÄê£©
-	set_mine_class(IRON_MINE);			// Ìú¿ó
-	set_entry_dir("west");				// Èë¿Ú·½Ïò
-	set_link_entry_dir("west");			// Èë¿ÚºÍÇøÓòµÄÁ¬½Ó·½Ïò
-	set_link_entry_room(__DIR__"ftn13");		// Èë¿ÚËùÁ¬½ÓÇøÓòµµ°¸µÄÎÄ¼şÃû
+	set_maze_long(10);				// ç¤¦å€å–®é‚Šé•·
+	set_mine_room(__DIR__"mine_room");		// æœ‰ç¤¦æˆ¿é–“
+	set_no_mine_room(__DIR__"no_mine_room");	// ç„¡ç¤¦æˆ¿é–“
+	set_contain_quantity(10000000);			// å–®ä½(å…©),100è¬æ–¤
+	set_contain_persent(15);			// è˜Šè—æ¯”ä¾‹
+	set_reset_time_sect(20);			// å†ç”ŸæœŸï¼ˆGameå¹´ï¼‰
+	set_mine_class(IRON_MINE);			// éµç¤¦
+	set_entry_dir("west");				// å…¥å£æ–¹å‘
+	set_link_entry_dir("west");			// å…¥å£å’Œå€åŸŸçš„é€£æ¥æ–¹å‘
+	set_link_entry_room(__DIR__"ftn13");		// å…¥å£æ‰€é€£æ¥å€åŸŸæª”æ¡ˆçš„æ–‡ä»¶å
         set_outdoors(1); 
 }

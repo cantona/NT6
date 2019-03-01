@@ -3,30 +3,30 @@
 
 mapping fam_info = ([
 
-      "Îäµ±ÅÉ"    :     ([ "shen_type"     :    1,                               // ÃÅÅÉÉñÀàĞÍ1ÎªÕıÉñ£¬-1Îª¸ºÉñ
-                           "master_id"     :    "zhang sanfeng",                 // ÃÅÅÉ×î¸ßMaster ID
-                           "master_name"   :    "ÕÅÈı·á",                        // ÃÅÅÉ×î¸ßMaster name
-                           "master_rank"   :    "ÕÅÕæÈË",                        // ÃÅÅÉ×î¸ßMaster rank
-                           "master_file"   :    CLASS_D("wudang") + "/zhang",    // ÃÅÅÉ×î¸ßMasterËùÊôÎÄ¼ş
-                           "master_room"   :    "/d/wudang/xiaoyuan",            // ÃÅÅÉ×î¸ßMasterÆğÊ¼·¿¼ä
-                           "fir_room_fi"   :    "/d/wudang/toutiangate",         // ÌôÅÏÕß³õÊ¼¾Û¼¯µØ
-                           "fir_room_nm"   :    "Í·ÌìÃÅ",
-                           "tar_room_fi"   :    "/d/wudang/xiaoyuan",            // ÌôÅÏÕß¶áÈ¡Ä¿±êµØµã
-                           "tar_room_nm"   :    "ºóÉ½Ğ¡Ôº",
-                           "guard_room_fi" :    "/d/wudang/wulaofeng",           // ÃÅÅÉNPCÊØÎÀµØµã
-                           "guard_room_nm" :    "ÎåÀÏ·å",
+      "æ­¦ç•¶æ´¾"    :     ([ "shen_type"     :    1,                               // é–€æ´¾ç¥é¡å‹1ç‚ºæ­£ç¥ï¼Œ-1ç‚ºè² ç¥
+                           "master_id"     :    "zhang sanfeng",                 // é–€æ´¾æœ€é«˜Master ID
+                           "master_name"   :    "å¼µä¸‰è±",                        // é–€æ´¾æœ€é«˜Master name
+                           "master_rank"   :    "å¼µçœŸäºº",                        // é–€æ´¾æœ€é«˜Master rank
+                           "master_file"   :    CLASS_D("wudang") + "/zhang",    // é–€æ´¾æœ€é«˜Masteræ‰€å±¬æ–‡ä»¶
+                           "master_room"   :    "/d/wudang/xiaoyuan",            // é–€æ´¾æœ€é«˜Masterèµ·å§‹æˆ¿é–“
+                           "fir_room_fi"   :    "/d/wudang/toutiangate",         // æŒ‘ç•”è€…åˆå§‹èšé›†åœ°
+                           "fir_room_nm"   :    "é ­å¤©é–€",
+                           "tar_room_fi"   :    "/d/wudang/xiaoyuan",            // æŒ‘ç•”è€…å¥ªå–ç›®æ¨™åœ°é»
+                           "tar_room_nm"   :    "å¾Œå±±å°é™¢",
+                           "guard_room_fi" :    "/d/wudang/wulaofeng",           // é–€æ´¾NPCå®ˆè¡›åœ°é»
+                           "guard_room_nm" :    "äº”è€å³°",
                            "npc_list"      :    ({ 
-                                                   "yu lianzhou",                // ÃÅÅÉÖĞµÄÆäËûNPC²ÎÓë½ÓÊÜÌôÅÏ
-                                                   "yin litin",                  // ÕâĞ©NPC¾ù»áÔÚ¿ªÊ¼Ê±ÒÆ¶¯µ½
-                                                   "yu daiyan",                  // master_room ²¢Óëmaster×é¶Ó
+                                                   "yu lianzhou",                // é–€æ´¾ä¸­çš„å…¶ä»–NPCåƒèˆ‡æ¥å—æŒ‘ç•”
+                                                   "yin litin",                  // é€™äº›NPCå‡æœƒåœ¨é–‹å§‹æ™‚ç§»å‹•åˆ°
+                                                   "yu daiyan",                  // master_room ä¸¦èˆ‡masterçµ„éšŠ
                                                    "song qingshu", 
                                                    "zhang songxi",
                                                    "song yuanqiao",
                                                    "mo shenggu",
                                                 }),
-                           "route_list"    :    ({                               // ¼ÇÂ¼ÌôÅÏÕß¹¥´ò¸ÃÃÅÅÉËù¾­¹ıµÄÂ·ÓÉ 
-                                                   "north",                      // Ã¿´Îrandom_move()¶¼¶ÁÈ¡¸ÃÂ·ÓÉ±í
-                                                   "north",                      // °´ÕÕÕâ¸öË³ĞòÒ»Ö±×ßµ½ÖÕµã
+                           "route_list"    :    ({                               // è¨˜éŒ„æŒ‘ç•”è€…æ”»æ‰“è©²é–€æ´¾æ‰€ç¶“éçš„è·¯ç”± 
+                                                   "north",                      // æ¯æ¬¡random_move()éƒ½è®€å–è©²è·¯ç”±è¡¨
+                                                   "north",                      // æŒ‰ç…§é€™å€‹é †åºä¸€ç›´èµ°åˆ°çµ‚é»
                                                    "northdown", 
                                                    "northdown", 
                                                    "northdown", 
@@ -36,30 +36,30 @@ mapping fam_info = ([
                                                    "northdown", 
                                                    "northdown", 
                                                    "west", 
-                                                   "west", // Îäµ±¹ã³¡
+                                                   "west", // æ­¦ç•¶å»£å ´
                                                    "south",
                                                    "south",
                                                    "south",
                                                    "south",
                                                    "south",
                                                  }),
-                          "skill"          :     "Ì«¼«½£·¨ºÍÌ«¼«Éñ¹¦",
-                          "family"         :     "Îäµ±ÅÉ",
+                          "skill"          :     "å¤ªæ¥µåŠæ³•å’Œå¤ªæ¥µç¥åŠŸ",
+                          "family"         :     "æ­¦ç•¶æ´¾",
                           "spe_cmds"       :     "open door",
                         ]),
 
-      "åĞÒ£ÅÉ"    :     ([ "shen_type"     :    1,
+      "é€é™æ´¾"    :     ([ "shen_type"     :    1,
                            "master_id"     :    "su xinghe",
-                           "master_name"   :    "ËÕĞÇºÓ",
-                           "master_rank"   :    "ÕÆÃÅÈË",
+                           "master_name"   :    "è˜‡æ˜Ÿæ²³",
+                           "master_rank"   :    "æŒé–€äºº",
                            "master_file"   :    CLASS_D("xiaoyao") + "/suxingh",
                            "master_room"   :    "/d/xiaoyao/qingcaop",
                            "fir_room_fi"   :    "/d/xiaoyao/shulin3",
-                           "fir_room_nm"   :    "åĞÒ£ÅÉÊ÷ÁÖ",
+                           "fir_room_nm"   :    "é€é™æ´¾æ¨¹æ—",
                            "tar_room_fi"   :    "/d/xiaoyao/shishi",
-                           "tar_room_nm"   :    "Ê¯ÊÒ",
+                           "tar_room_nm"   :    "çŸ³å®¤",
                            "guard_room_fi" :    "/d/xiaoyao/qingcaop",
-                           "guard_room_nm" :    "Çà²İÆº",
+                           "guard_room_nm" :    "é’è‰åª",
                            "npc_list"      :    ({ 
                                                    "xue muhua",
                                                    "wu lingjun",
@@ -76,22 +76,22 @@ mapping fam_info = ([
                                                    "enter",
                                                    "down",
                                                  }),
-                          "skill"          :     "ÌìÉ½ÁùÑôÕÆºÍ±±Ú¤Éñ¹¦",
-                          "family"         :     "åĞÒ£ÅÉ",
+                          "skill"          :     "å¤©å±±å…­é™½æŒå’ŒåŒ—å†¥ç¥åŠŸ",
+                          "family"         :     "é€é™æ´¾",
                         ]),
 
-      "¶ëáÒÅÉ"    :     ([ "shen_type"     :    1,
+      "å³¨åµ‹æ´¾"    :     ([ "shen_type"     :    1,
                            "master_id"     :    "miejue shitai",
-                           "master_name"   :    "Ãğ¾øÊ¦Ì«",
-                           "master_rank"   :    "ÕÆÃÅÈË",
+                           "master_name"   :    "æ»…çµ•å¸«å¤ª",
+                           "master_rank"   :    "æŒé–€äºº",
                            "master_file"   :    CLASS_D("emei") + "/miejue",
                            "master_room"   :    "/d/emei/hcahoudian",
                            "fir_room_fi"   :    "/d/emei/shierpan1",
-                           "fir_room_nm"   :    "Ê®¶şÅÌ",
+                           "fir_room_nm"   :    "åäºŒç›¤",
                            "tar_room_fi"   :    "/d/emei/hcahoudian",
-                           "tar_room_nm"   :    "»ª²ØâÖºóµî",
+                           "tar_room_nm"   :    "è¯è—åºµå¾Œæ®¿",
                            "guard_room_fi" :    "/d/emei/leidongping",
-                           "guard_room_nm" :    "À×¶´Æº",
+                           "guard_room_nm" :    "é›·æ´åª",
                            "npc_list"      :    ({
                                                    "bei jinyi",
                                                    "jingdao shitai",
@@ -127,29 +127,29 @@ mapping fam_info = ([
                                                    "southup",
                                                    "southeast",
                                                    "westup",
-                                                   "southup", // ½ğ¶¥
+                                                   "southup", // é‡‘é ‚
                                                    "southeast",
                                                    "enter",
                                                    "south",
                                                    "south",
                                                    "south",
                                                  }),
-                          "skill"          :     "»Ø·ç·÷Áø½£ºÍ¶ëáÒ¾ÅÑôÉñ¹¦",
-                          "family"         :     "¶ëáÒÅÉ",
+                          "skill"          :     "å›é¢¨æ‹‚æŸ³åŠå’Œå³¨åµ‹ä¹é™½ç¥åŠŸ",
+                          "family"         :     "å³¨åµ‹æ´¾",
                         ]),
 
-      "ÁéğÕ¹¬"    :     ([ "shen_type"     :    1,
+      "éˆé·²å®®"    :     ([ "shen_type"     :    1,
                            "master_id"     :    "xuzhu zhi",
-                           "master_name"   :    "ĞéÖñ×Ó",
-                           "master_rank"   :    "ÕÆÃÅÈË",
+                           "master_name"   :    "è™›ç«¹å­",
+                           "master_rank"   :    "æŒé–€äºº",
                            "master_file"   :    CLASS_D("lingjiu") + "/xuzhu",
                            "master_room"   :    "/d/lingjiu/dating",
                            "fir_room_fi"   :    "/d/lingjiu/shanjiao",
-                           "fir_room_nm"   :    "çÎç¿·åÉ½½Å",
+                           "fir_room_nm"   :    "ç¸¹ç·²å³°å±±è…³",
                            "tar_room_fi"   :    "/d/lingjiu/dating",
-                           "tar_room_nm"   :    "¶À×ğÌü",
+                           "tar_room_nm"   :    "ç¨å°Šå»³",
                            "guard_room_fi" :    "/d/lingjiu/xianchou",
-                           "guard_room_nm" :    "ÏÉ³îÃÅ",
+                           "guard_room_nm" :    "ä»™æ„é–€",
                            "npc_list"      :    ({
                                                    "cheng qingshuang",
                                                    "duanmu yuan",
@@ -173,23 +173,23 @@ mapping fam_info = ([
                                                    "north",
                                                    "north",
                                                  }),
-                          "skill"          :     "°Ë»ÄÁùºÏÎ¨ÎÒ¶À×ğ¹¦ºÍÌìÉ½ÁùÑôÕÆ",
-                          "family"         :     "ÁéğÕ¹¬",
+                          "skill"          :     "å…«è’å…­åˆå”¯æˆ‘ç¨å°ŠåŠŸå’Œå¤©å±±å…­é™½æŒ",
+                          "family"         :     "éˆé·²å®®",
                           "spe_cmds"       :     "zou tiesuo",
                         ]),
 
-      "ĞÇËŞÅÉ"    :     ([ "shen_type"     :    -1,
+      "æ˜Ÿå®¿æ´¾"    :     ([ "shen_type"     :    -1,
                            "master_id"     :    "ding chunqiu",
-                           "master_name"   :    "¶¡´ºÇï",
-                           "master_rank"   :    "ÀÏÏÉ",
+                           "master_name"   :    "ä¸æ˜¥ç§‹",
+                           "master_rank"   :    "è€ä»™",
                            "master_file"   :    CLASS_D("xingxiu") + "/ding",
                            "master_room"   :    "/d/xingxiu/riyuedong",
                            "fir_room_fi"   :    "/d/xingxiu/shanjiao",
-                           "fir_room_nm"   :    "ÌìÉ½½ÅÏÂ",
+                           "fir_room_nm"   :    "å¤©å±±è…³ä¸‹",
                            "tar_room_fi"   :    "/d/xingxiu/riyuedong",
-                           "tar_room_nm"   :    "ÈÕÔÂ¶´",
+                           "tar_room_nm"   :    "æ—¥æœˆæ´",
                            "guard_room_fi" :    "/d/xingxiu/xxh1",
-                           "guard_room_nm" :    "ĞÇËŞº£",
+                           "guard_room_nm" :    "æ˜Ÿå®¿æµ·",
                            "npc_list"      :    ({
                                                    "chuchen zi",
                                                    "tianlang zi",
@@ -202,21 +202,21 @@ mapping fam_info = ([
                                                    "north",
                                                    "north",
                                                  }),
-                          "skill"          :     "³éËèÕÆºÍ¶¾¼¼",
-                          "family"         :     "ĞÇËŞÅÉ",
+                          "skill"          :     "æŠ½é«“æŒå’Œæ¯’æŠ€",
+                          "family"         :     "æ˜Ÿå®¿æ´¾",
                         ]),
-      "È«ÕæÅÉ"    :     ([ "shen_type"     :    1,
+      "å…¨çœŸæ´¾"    :     ([ "shen_type"     :    1,
                            "master_id"     :    "wang chongyang",
-                           "master_name"   :    "ÍõÖØÑô",
-                           "master_rank"   :    "ÕÆÃÅÈË",
+                           "master_name"   :    "ç‹é‡é™½",
+                           "master_rank"   :    "æŒé–€äºº",
                            "master_file"   :    CLASS_D("quanzhen") + "/wang",
                            "master_room"   :    "/d/quanzhen/shandong",
                            "fir_room_fi"   :    "/d/gumu/riyueyan",
-                           "fir_room_nm"   :    "ÈÕÔÂÑÒ",
+                           "fir_room_nm"   :    "æ—¥æœˆå·–",
                            "tar_room_fi"   :    "/d/quanzhen/shandong",
-                           "tar_room_nm"   :    "ºóÉ½É½¶´",
+                           "tar_room_nm"   :    "å¾Œå±±å±±æ´",
                            "guard_room_fi" :    "/d/gumu/daxiaochang",
-                           "guard_room_nm" :    "´óĞ£³¡",
+                           "guard_room_nm" :    "å¤§æ ¡å ´",
                            "npc_list"      :    ({
                                                    "hao datong",
                                                    "liu chuxuan",
@@ -244,7 +244,7 @@ mapping fam_info = ([
                                                    "eastup",
                                                    "southup",
                                                    "east", // jiaobei
-                                                   "eastup", // ÓĞÃÅ
+                                                   "eastup", // æœ‰é–€
                                                    "east",
                                                    "east",
                                                    "east",
@@ -253,14 +253,14 @@ mapping fam_info = ([
                                                    "east",
                                                    "east",
                                                    "east",
-                                                   "east", // ºóÉ½ - /d/quanzhen/houshan
+                                                   "east", // å¾Œå±± - /d/quanzhen/houshan
                                                    "northeast",
                                                    "northeast",
                                                    "east",
                                                    "enter",
                                                  }),
-                          "skill"          :     "È«Õæ½£·¨ºÍÏÈÌì¹¦",
-                          "family"         :     "È«Õæ½Ì",
+                          "skill"          :     "å…¨çœŸåŠæ³•å’Œå…ˆå¤©åŠŸ",
+                          "family"         :     "å…¨çœŸæ•™",
                           "spe_cmds"       :     "open door",
                         ]),
 ]);

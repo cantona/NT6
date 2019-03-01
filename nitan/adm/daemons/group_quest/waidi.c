@@ -1,4 +1,4 @@
-// group_quest:waidi Èº×éÈÎÎñ¡ª¡ªÍâµĞÈëÇÖ
+// group_quest:waidi ç¾¤çµ„ä»»å‹™â”€â”€å¤–æ•µå…¥ä¾µ
 
 #include <ansi.h>
 #include "waidi.h"
@@ -14,8 +14,8 @@ void create()
         }
 }
 
-//string prompt() { return HIR "¡¾ÍâµĞÈëÇÖ¡¿" NOR; }
-string prompt() { return HIR "¡¾ÍâµĞ¡¿" NOR; }
+//string prompt() { return HIR "ã€å¤–æ•µå…¥ä¾µã€‘" NOR; }
+string prompt() { return HIR "ã€å¤–æ•µã€‘" NOR; }
 
 int select_quest()
 {
@@ -28,7 +28,7 @@ int select_quest()
         all = sizeof(users())/2;
 
         if (all<10) 
-                return 0;                       //Íæ¼ÒÌ«ÉÙ£¬ÖÕÖ¹±¾´ÎÈÎÎñ¡£
+                return 0;                       //ç©å®¶å¤ªå°‘ï¼Œçµ‚æ­¢æœ¬æ¬¡ä»»å‹™ã€‚
         if (all>80)
                 all = 80;
 
@@ -50,13 +50,13 @@ string create_waidi()
         string title;
 
         title = GROUP_QUEST_D->get_title(the_nation,1);
-        special = random(all);          //Ëæ»úÑ¡ÔñÒ»¸öÍâµĞ·ÅÖÃÒ»¸ö±¦Ê¯²ĞÆ¬
+        special = random(all);          //éš¨æ©Ÿé¸æ“‡ä¸€å€‹å¤–æ•µæ”¾ç½®ä¸€å€‹å¯¶çŸ³æ®˜ç‰‡
         for (i = 0;i < all;i ++)
         {
                 lvl = random(17) + 1;
                 ob = GROUP_QUEST_D->create_npc(the_nation,lvl);
-                //GROUP_QUEST_D->place_npc(ob,"ÍâµĞÈëÇÖ",place,lvl);
-                GROUP_QUEST_D->place_npc(ob,"ÍâµĞ",place,lvl);
+                //GROUP_QUEST_D->place_npc(ob,"å¤–æ•µå…¥ä¾µ",place,lvl);
+                GROUP_QUEST_D->place_npc(ob,"å¤–æ•µ",place,lvl);
                 set("title", title, ob);
                 ob->random_move();
                 ob->random_move();
@@ -69,7 +69,7 @@ string create_waidi()
                 }
         }
         GROUP_QUEST_D->set_enemy(all);
-        return "·ËÍ½ÃÇ¸ßºô£º¡ºÎÒÃÇÊÇ" + filter_color(title) + "£¬ÁôÏÂÄãÃÇµÄĞÔÃüÇ®²Æ£¡¿¹ÃüÕßÉ±£¡£¡¡»";
+        return "åŒªå¾’å€‘é«˜å‘¼ï¼šã€æˆ‘å€‘æ˜¯" + filter_color(title) + "ï¼Œç•™ä¸‹ä½ å€‘çš„æ€§å‘½éŒ¢è²¡ï¼æŠ—å‘½è€…æ®ºï¼ï¼ã€";
 }
 
 string jiuming()
@@ -83,13 +83,13 @@ string jiuming()
 
         the_place = place;
         if (!stringp(npc_dir = place_npcfile[the_place]))
-                return "µêĞ¡¶ş´óº°£º¡º¾ÈÃü°¡£¡¡»";
+                return "åº—å°äºŒå¤§å–Šï¼šã€æ•‘å‘½å•Šï¼ã€";
 
         seteuid(getuid());
         file = get_dir(npc_dir, -1);
         file = filter_array(file,(: $1[1] != -2 :));
         if (! sizeof(file))
-                return "µêĞ¡¶ş´óº°£º¡º¾ÈÃü°¡£¡¡»";
+                return "åº—å°äºŒå¤§å–Šï¼šã€æ•‘å‘½å•Šï¼ã€";
         i = 0;
         msg = "";
         while(1)
@@ -109,9 +109,9 @@ string jiuming()
                         break;
         }
         if (!npc)
-                return "µêĞ¡¶ş´óº°£º¡º¾ÈÃü°¡£¡¡»";
+                return "åº—å°äºŒå¤§å–Šï¼šã€æ•‘å‘½å•Šï¼ã€";
 
-        if( query("gender", npc) == "Å®ĞÔ" && random(2) )
+        if( query("gender", npc) == "å¥³æ€§" && random(2) )
         {
                 msg = npc->name() + woman_jiuming[random(sizeof(woman_jiuming))];
                 destruct(npc);
@@ -122,7 +122,7 @@ string jiuming()
         }
         
         if (!msg || msg == "")
-                return "µêĞ¡¶ş´óº°£º¡º¾ÈÃü°¡£¡¡»";
+                return "åº—å°äºŒå¤§å–Šï¼šã€æ•‘å‘½å•Šï¼ã€";
         else
                 return msg;
 }

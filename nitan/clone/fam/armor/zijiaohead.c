@@ -5,26 +5,26 @@ inherit HEAD;
 
 void create()
 {
-        set_name(NOR + MAG "×ÏòÔÍ·Â­" NOR, ({ "yanlong shenguan", "shenguan", "yanlong" }));
+        set_name(NOR + MAG "ç´«è›Ÿé ­é¡±" NOR, ({ "yanlong shenguan", "shenguan", "yanlong" }));
         set_weight(4000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", NOR + MAG "Ò»¶¥ÓÃòÔÁú½ÇºÍòÔÁúÆ¤¸ï×ö³ÉµÄ×ÏòÔÄ£ÑùÍ·¹Ú¡£\n" NOR
-                            HIC "ÓĞĞ§ÕĞ¼ÜĞŞÕı£º+ 10       ÓĞĞ§Çá¹¦ĞŞÕı£º  + 5\n" NOR
-                            HIC "¿¹¶¾Ğ§¹ûĞŞÕı£º+ 5%       ·ÀÓùĞ§¹ûµÈ¼¶£º   10\n" NOR
-                            HIC "¿¹¶¾»Ø±ÜĞŞÕı£º+ 5%\n" NOR);
-                set("unit", "¶¥");
+                set("long", NOR + MAG "ä¸€é ‚ç”¨è›Ÿé¾è§’å’Œè›Ÿé¾çš®é©åšæˆçš„ç´«è›Ÿæ¨¡æ¨£é ­å† ã€‚\n" NOR
+                            HIC "æœ‰æ•ˆæ‹›æ¶ä¿®æ­£ï¼š+ 10       æœ‰æ•ˆè¼•åŠŸä¿®æ­£ï¼š  + 5\n" NOR
+                            HIC "æŠ—æ¯’æ•ˆæœä¿®æ­£ï¼š+ 5%       é˜²å¾¡æ•ˆæœç­‰ç´šï¼š   10\n" NOR
+                            HIC "æŠ—æ¯’å›é¿ä¿®æ­£ï¼š+ 5%\n" NOR);
+                set("unit", "é ‚");
                 set("value", 500000);
                 set("armor_prop/armor", 10);
                 set("armor_prop/avoid_poison", 5);
                 set("armor_prop/reduce_poison", 5);
                 set("armor_prop/dodge", 10);
                 set("armor_prop/parry", 10);
-                set("wear_msg", NOR + MAG "$N" NOR + MAG "ÇáÇáµØ°Ñ$n"
-                    NOR + MAG "´÷ÔÚÍ·ÉÏ¡£\n" NOR);
-                set("remove_msg", HIC "$N" HIC "ÇáÇáµØ°Ñ$n"
-                    HIC "´ÓÑü¼äÈ¡ÁËÏÂÀ´¡£\n" NOR);
+                set("wear_msg", NOR + MAG "$N" NOR + MAG "è¼•è¼•åœ°æŠŠ$n"
+                    NOR + MAG "æˆ´åœ¨é ­ä¸Šã€‚\n" NOR);
+                set("remove_msg", HIC "$N" HIC "è¼•è¼•åœ°æŠŠ$n"
+                    HIC "å¾è…°é–“å–äº†ä¸‹ä¾†ã€‚\n" NOR);
         }
         setup();
 }

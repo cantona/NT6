@@ -1,13 +1,13 @@
-// /d/mingjiao/npc/laohu.c 老虎
+// /d/mingjiao/npc/laohu.c 鑰佽檸
 inherit NPC;
 void create()
 {
-        set_name("老虎", ({ "lao hu", "hu" }) );
-        set("race", "野兽");
+        set_name("鑰佽檸", ({ "lao hu", "hu" }) );
+        set("race", "閲庣嵏");
         set("age", 5);
-        set("long", "一只凶猛的大老虎。\n");
+        set("long", "涓�鍙厙鐚涚殑澶ц�佽檸銆俓n");
         set("attitude", "aggressive");
-        set("limbs", ({ "头部", "身体", "前爪", "后爪", "尾巴" }) );
+        set("limbs", ({ "闋儴", "韬珨", "鍓嶇埅", "寰岀埅", "灏惧反" }) );
         set("verbs", ({ "bite", "claw" }) );
         set("combat_exp", 200000);
         set("str", 80);

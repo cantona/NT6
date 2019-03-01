@@ -6,18 +6,18 @@ inherit BOOK;
 
 void create()
 {
-        set_name(MAG "ÉñÕÕ¾­" NOR, ({ "shenzhao jing", "jing", "book"})); 
+        set_name(MAG "ç¥ç…§ç¶“" NOR, ({ "shenzhao jing", "jing", "book"})); 
         set_weight(300);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "ÕÅ");
-                set("long", "ÕâÊÇÒ»ÕÅºÜÆÕÍ¨µÄÖ½£¬ÉÏÃæ³­Â¼ÁËÒ»Ğ©¿Ú¾÷£¬ËÆºõÊÇÒ»"
-                            "ÖÖ½Ğ×öÉñÕÕ¾­\nµÄ¾øÊÀÎä¹¦¾÷ÇÏ¡£\n");
+                set("unit", "å¼µ");
+                set("long", "é€™æ˜¯ä¸€å¼µå¾ˆæ™®é€šçš„ç´™ï¼Œä¸Šé¢æŠ„éŒ„äº†ä¸€äº›å£è¨£ï¼Œä¼¼ä¹æ˜¯ä¸€"
+                            "ç¨®å«åšç¥ç…§ç¶“\nçš„çµ•ä¸–æ­¦åŠŸè¨£ç«…ã€‚\n");
                 set("material", "paper");
                 set("skill", ([
                         "name"        :  "shenzhaojing",
-                        "family_name" : "Ñªµ¶ÃÅ",
+                        "family_name" : "è¡€åˆ€é–€",
                         "exp_required":  100000,
                         "jing_cost"   :  30,
                         "difficulty"  :  25,

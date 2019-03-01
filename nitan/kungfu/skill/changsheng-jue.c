@@ -22,24 +22,24 @@ int valid_learn(object me)
 {
         int lvl = (int)me->query_skill("changsheng-jue", 1);
 
-        if( query("character", me) != "½Æ÷ï¶à±ä" )
-                return notify_fail("ÄãĞÄÖĞ°µÏë£ºÕâ²»¹ıÊÇµÀ¼ÒÁ·ÆøµÄ¿Ú¾÷°ÕÁË£¬ÄÄÀïÊÇÊ²Ã´Éñ¹¦£¿\n");
+        if( query("character", me) != "ç‹¡é» å¤šè®Š" )
+                return notify_fail("ä½ å¿ƒä¸­æš—æƒ³ï¼šé€™ä¸éæ˜¯é“å®¶ç·´æ°£çš„å£è¨£ç½·äº†ï¼Œå“ªè£¡æ˜¯ä»€éº¼ç¥åŠŸï¼Ÿ\n");
 
         if( query("int", me)<35 )
-                return notify_fail("Äã¾õµÃ³¤Éú¾ö¹ıÓÚ¼èÉî£¬ÄÑÒÔÀí½â¡£\n");
+                return notify_fail("ä½ è¦ºå¾—é•·ç”Ÿæ±ºéäºè‰±æ·±ï¼Œé›£ä»¥ç†è§£ã€‚\n");
 
         if( query("con", me)<31 )
-                return notify_fail("ÒÀÕÕÄãµÄ¸ù¹ÇÎŞ·¨ĞŞÁ¶³¤Éú¾ö¡£\n");
+                return notify_fail("ä¾ç…§ä½ çš„æ ¹éª¨ç„¡æ³•ä¿®ç…‰é•·ç”Ÿæ±ºã€‚\n");
 
         if ((int)me->query_skill("martial-cognize", 1) < 300)
-                return notify_fail("ÄãµÄÎäÑ§ĞŞÑøÃ»ÓĞ°ì·¨Àí½âÆäÖĞµÄ¾«Éñ°ÂÒå¡£\n");
+                return notify_fail("ä½ çš„æ­¦å­¸ä¿®é¤Šæ²’æœ‰è¾¦æ³•ç†è§£å…¶ä¸­çš„ç²¾ç¥å¥§ç¾©ã€‚\n");
 
         return ::valid_learn(me);
 }
 
 int practice_skill(object me)
 {
-        return notify_fail("³¤Éú¾öÖ»ÄÜÓÃÑ§(learn)µÄÀ´Ôö¼ÓÊìÁ·¶È¡£\n");
+        return notify_fail("é•·ç”Ÿæ±ºåªèƒ½ç”¨å­¸(learn)çš„ä¾†å¢åŠ ç†Ÿç·´åº¦ã€‚\n");
 }
 
 string exert_function_file(string func)

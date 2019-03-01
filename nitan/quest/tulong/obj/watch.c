@@ -15,9 +15,9 @@ void create()
         id=query("id", me);
         birthday=query("birthday", me);
         }
-        set_name("µç×Ó±í", ({ "watch" }) );
+        set_name("é›»å­è¡¨", ({ "watch" }) );
         set("long", (: do_long :) );
-        set("unit", "¿é");
+        set("unit", "å¡Š");
         set("value", 0);
 
         setup();
@@ -40,19 +40,19 @@ int do_zeng(string arg)
         string item, target;;
 
         me = this_player();
-        if(!arg||sscanf(arg, "%s to %s", item, target)!=2) return notify_fail("zeng <ÎïÆ·> to <Ä³ÈË>\n");
+        if(!arg||sscanf(arg, "%s to %s", item, target)!=2) return notify_fail("zeng <ç‰©å“> to <æŸäºº>\n");
         obj = present(item, me);
         ob = present(target, environment(me));
-        if(!ob) return notify_fail("ÕâÀïÃ»ÓĞÕâ¸öÈË¡£\n");
-        if(!obj) return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑùÎïÆ·¡£\n");
-        if(obj!=this_object()) return notify_fail("ÕâÑù¶«Î÷»¹ÊÇ²»ÔùµÄºÃ¡£\n");
-        if( id != query("id", me))return notify_fail("Äã²»ÊÇÕâ¸öÎïÆ·µÄÖ÷ÈË£¬ÎŞÈ¨×ªÔù£¡\n");
+        if(!ob) return notify_fail("é€™è£¡æ²’æœ‰é€™å€‹äººã€‚\n");
+        if(!obj) return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™æ¨£ç‰©å“ã€‚\n");
+        if(obj!=this_object()) return notify_fail("é€™æ¨£æ±è¥¿é‚„æ˜¯ä¸è´ˆçš„å¥½ã€‚\n");
+        if( id != query("id", me))return notify_fail("ä½ ä¸æ˜¯é€™å€‹ç‰©å“çš„ä¸»äººï¼Œç„¡æ¬Šè½‰è´ˆï¼\n");
         name=query("name", ob);
         id=query("id", ob);
         birthday=query("birthday", ob);
         obj->move(ob);
-        if( query("id", me) == "wop")message_vision("$NÔù¸ø$nÒ»"+query("unit", obj)+query("name", obj)+"¡£\n",me,ob);
-        else message_vision("$N½«"+query("name", obj)+"×ªÔù¸øÁË$n¡£\n",me,ob);
+        if( query("id", me) == "wop")message_vision("$Nè´ˆçµ¦$nä¸€"+query("unit", obj)+query("name", obj)+"ã€‚\n",me,ob);
+        else message_vision("$Nå°‡"+query("name", obj)+"è½‰è´ˆçµ¦äº†$nã€‚\n",me,ob);
         return 1;
 }
 
@@ -79,18 +79,18 @@ string do_long()
         else y = local[5] - 1; 
         gt = CHINESE_D->chinese_number(y/1000) + CHINESE_D->chinese_number((y/100)%10)
                 + CHINESE_D->chinese_number((y/10)%10) + CHINESE_D->chinese_number(y%10)
-                + "Äê" + CHINESE_D->chinese_number(birth[4]+1) + "ÔÂ"
-                + CHINESE_D->chinese_number(birth[3]) + "ÈÕ";
+                + "å¹´" + CHINESE_D->chinese_number(birth[4]+1) + "æœˆ"
+                + CHINESE_D->chinese_number(birth[3]) + "æ—¥";
 
-        printf("ÕâÊÇÒ»¿é¾«ÖÂµÄµç×Ó±í£¬±íÉÏÏÔÊ¾ÏÖÔÚµÄÊ±¼äÊÇ£º\n\n");
-        printf(HIY"\t\t"HBBLU"©³©¥©¥©¥©¥©¥©¥©¥©·\n"NOR);
-        printf(HIY"\t\t"HBBLU"©§  "HIR"%s"YEL"  ©§\n"NOR, ld);
-        printf(HIY"\t\t"HBBLU"©§  "HIR"%s"YEL"  ©§\n"NOR, lt);
-        printf(HIY"\t\t"HBBLU"©»©¥©¥©¥©¥©¥©¥©¥©¿\n"NOR);
-        printf("\n±íµÄ±³ºó¿Ì×ÅÒ»ĞĞĞ¡×Ö£º\n\n");
-        printf(HIY"\tÔù%s£º\n\n"NOR, name);
-        printf(HIR"\t\t×£ÌìÌì¿ìÀÖ!\n\n"NOR);
-        printf(HIB"\t\t\t\t\tÒ¹³½(nightstar)ÔùÓÚ\n"NOR);
+        printf("é€™æ˜¯ä¸€å¡Šç²¾è‡´çš„é›»å­è¡¨ï¼Œè¡¨ä¸Šé¡¯ç¤ºç¾åœ¨çš„æ™‚é–“æ˜¯ï¼š\n\n");
+        printf(HIY"\t\t"HBBLU"â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡\n"NOR);
+        printf(HIY"\t\t"HBBLU"â–¡  "HIR"%s"YEL"  â–¡\n"NOR, ld);
+        printf(HIY"\t\t"HBBLU"â–¡  "HIR"%s"YEL"  â–¡\n"NOR, lt);
+        printf(HIY"\t\t"HBBLU"â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡\n"NOR);
+        printf("\nè¡¨çš„èƒŒå¾Œåˆ»è‘—ä¸€è¡Œå°å­—ï¼š\n\n");
+        printf(HIY"\tè´ˆ%sï¼š\n\n"NOR, name);
+        printf(HIR"\t\tç¥å¤©å¤©å¿«æ¨‚!\n\n"NOR);
+        printf(HIB"\t\t\t\t\tå¤œè¾°(nightstar)è´ˆäº\n"NOR);
         printf(HIB"\t\t\t\t\t%s\n"NOR, gt);
         return "";
 }

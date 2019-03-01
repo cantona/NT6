@@ -1,95 +1,95 @@
 inherit SKILL;
 
 mapping *action = ({
-([        "action": "$N½£¼âÏòÓÒ£¬ÈÆÉíÒ»ÖÜ£¬Ò»Ê½¡¸°Ùº×ÃùÏş¡¹£¬$wÍ»È»Ïò$nµÄ$l´ÌÈ¥£¬",
+([        "action": "$NåŠå°–å‘å³ï¼Œç¹èº«ä¸€å‘¨ï¼Œä¸€å¼ã€Œç™¾é¶´é³´æ›‰ã€ï¼Œ$wçªç„¶å‘$nçš„$låˆºå»ï¼Œ",
         "force" : 35,
         "dodge" : -40,
         "parry" : -40,
         "attack": 2,
         "damage": 3,
         "lvl"   : 0,
-        "skill_name" : "°Ùº×ÃùÏş",
-        "damage_type":"´ÌÉË"
+        "skill_name" : "ç™¾é¶´é³´æ›‰",
+        "damage_type":"åˆºå‚·"
 ]),
-([        "action": "$NÊ¹³öÒ»Ê½¡¸ÏÉº×Î÷À´¡¹£¬ÉíÌåÁè¿Õ²à·­£¬Ò»½£´ÓÉíÏÂ´Ì³ö",
+([        "action": "$Nä½¿å‡ºä¸€å¼ã€Œä»™é¶´è¥¿ä¾†ã€ï¼Œèº«é«”å‡Œç©ºå´ç¿»ï¼Œä¸€åŠå¾èº«ä¸‹åˆºå‡º",
         "force" : 59,
         "dodge" : -35,
         "parry" : -35,
         "attack": 3,
         "damage": 4,
         "lvl"   : 20,
-        "skill_name" : "ÏÉº×Î÷À´",
-        "damage_type":"´ÌÉË"
+        "skill_name" : "ä»™é¶´è¥¿ä¾†",
+        "damage_type":"åˆºå‚·"
 ]),
-([        "action": "$N×óÊÖ½£Ö¸ÑªÖ¸£¬ÓÒÊÖ$wÊ¹³öÒ»ÕĞ¡¸³Ëº×¶«¹é¡¹£¬ÓÉÉÏÖÁÏÂÃÍÏò$nµÄ$lÅü´Ì",
+([        "action": "$Nå·¦æ‰‹åŠæŒ‡è¡€æŒ‡ï¼Œå³æ‰‹$wä½¿å‡ºä¸€æ‹›ã€Œä¹˜é¶´æ±æ­¸ã€ï¼Œç”±ä¸Šè‡³ä¸‹çŒ›å‘$nçš„$låŠˆåˆº",
         "force" : 77,
         "dodge" : -23,
         "parry" : -23,
         "attack": 5,
         "damage": 7,
         "lvl"   : 40,
-        "skill_name" : "³Ëº×¶«¹é",
-        "damage_type":"´ÌÉË"
+        "skill_name" : "ä¹˜é¶´æ±æ­¸",
+        "damage_type":"åˆºå‚·"
 ]),
-([        "action": "$N³·²½ËõÉí£¬$w°´²ØÓÚ±ÛÏÂ£¬Ò»ÕĞ¡¸Ò»º×³åÏü¡¹£¬¿ìÈçÉÁµç°ã´ÌÏò$nµÄ$l",
+([        "action": "$Næ’¤æ­¥ç¸®èº«ï¼Œ$wæŒ‰è—äºè‡‚ä¸‹ï¼Œä¸€æ‹›ã€Œä¸€é¶´æ²–å®µã€ï¼Œå¿«å¦‚é–ƒé›»èˆ¬åˆºå‘$nçš„$l",
         "force" : 83,
         "dodge" : -18,
         "parry" : -18,
         "attack": 9,
         "damage": 10,
         "lvl"   : 60,
-        "skill_name" : "Ò»º×³åÏü",
-        "damage_type":"´ÌÉË"
+        "skill_name" : "ä¸€é¶´æ²–å®µ",
+        "damage_type":"åˆºå‚·"
 ]),
-([        "action": "$NÌ¤²½ÏòÇ°£¬Ò»Ê½¡¸º×±´ÏàÕù¡¹£¬ÊÖÖĞ³¤½£°Ú¶¯£¬½£¼â´ÌÏò$nµÄ$l",
+([        "action": "$Nè¸æ­¥å‘å‰ï¼Œä¸€å¼ã€Œé¶´è²ç›¸çˆ­ã€ï¼Œæ‰‹ä¸­é•·åŠæ“ºå‹•ï¼ŒåŠå°–åˆºå‘$nçš„$l",
         "force" : 127,
         "dodge" : -9,
         "parry" : -9,
         "attack": 11,
         "damage": 12,
         "lvl"   : 80,
-        "skill_name" : "º×±´ÏàÕù",
-        "damage_type":"´ÌÉË"
+        "skill_name" : "é¶´è²ç›¸çˆ­",
+        "damage_type":"åˆºå‚·"
 ]),
-([        "action": "$NÒ»ÕĞ¡¸ÔÆº×ÈıÎè¡¹£¬ÉíÌå±³×ª£¬ÊÖÖĞ$wÓÉÓÒ¼çÉÏ·½·´ÊÖÏòÏÂ´Ì³ö",
+([        "action": "$Nä¸€æ‹›ã€Œé›²é¶´ä¸‰èˆã€ï¼Œèº«é«”èƒŒè½‰ï¼Œæ‰‹ä¸­$wç”±å³è‚©ä¸Šæ–¹åæ‰‹å‘ä¸‹åˆºå‡º",
         "force" : 179,
         "dodge" : -5,
         "parry" : -5,
         "attack": 31,
         "damage": 44,
         "lvl"   : 100,
-        "skill_name" : "ÔÆº×ÈıÎè",
-        "damage_type":"ÅüÉË"
+        "skill_name" : "é›²é¶´ä¸‰èˆ",
+        "damage_type":"åŠˆå‚·"
 ]),
-([        "action": "$NÒ»Ê½¡¸ÔÆº×ÆßÎè¡¹£¬½£×ßÖĞ·æ£¬ÆøÊÆÍşÑÏ£¬½«$nÁıÕÖÓÚÖØÖØ½£ÆøÖ®ÖĞ",
+([        "action": "$Nä¸€å¼ã€Œé›²é¶´ä¸ƒèˆã€ï¼ŒåŠèµ°ä¸­é‹’ï¼Œæ°£å‹¢å¨åš´ï¼Œå°‡$nç± ç½©äºé‡é‡åŠæ°£ä¹‹ä¸­",
         "force" : 217,
         "dodge" : 5,
         "parry" : 5,
         "attack": 35,
         "damage": 56,
         "lvl"   : 130,
-        "skill_name" : "ÔÆº×ÆßÎè",
-        "damage_type":"ÅüÉË"
+        "skill_name" : "é›²é¶´ä¸ƒèˆ",
+        "damage_type":"åŠˆå‚·"
 ]),
-([        "action": "$NÏòÇ°ÍäÉí£¬Ò»ÕĞ¡¸ÔÆº×¾ÅÎè¡¹£¬$wºöÈ»´ÓÉíÏÂ´Ì³ö£¬¿ìÈçÁ÷ĞÇÉÁµç",
+([        "action": "$Nå‘å‰å½èº«ï¼Œä¸€æ‹›ã€Œé›²é¶´ä¹èˆã€ï¼Œ$wå¿½ç„¶å¾èº«ä¸‹åˆºå‡ºï¼Œå¿«å¦‚æµæ˜Ÿé–ƒé›»",
         "force" : 260,
         "dodge" : 10,
         "parry" : 10,
         "attack": 48,
         "damage": 72,
         "lvl"   : 160,
-        "skill_name" : "ÔÆº×¾ÅÎè",
-        "damage_type":"´ÌÉË"
+        "skill_name" : "é›²é¶´ä¹èˆ",
+        "damage_type":"åˆºå‚·"
 ]),
-([        "action": "$NºáÎÕ$w£¬×óÓÒ»Î¶¯£¬Ò»ÕĞ¡¸º×ÎèÊ®¶şÌì¡¹£¬½£ÆøÖ±±Æ$nµÄÑü²¿Òªº¦",
+([        "action": "$Næ©«æ¡$wï¼Œå·¦å³æ™ƒå‹•ï¼Œä¸€æ‹›ã€Œé¶´èˆåäºŒå¤©ã€ï¼ŒåŠæ°£ç›´é€¼$nçš„è…°éƒ¨è¦å®³",
         "force" : 305,
         "dodge" : 14,
         "parry" : 14,
         "attack": 51,
         "damage": 84,
         "lvl"   : 200,
-        "skill_name" : "º×ÎèÊ®¶şÌì",
-        "damage_type":"´ÌÉË"
+        "skill_name" : "é¶´èˆåäºŒå¤©",
+        "damage_type":"åˆºå‚·"
 ]),
 });
 
@@ -98,16 +98,16 @@ int valid_enable(string usage) { return usage == "sword" || usage == "parry"; }
 int valid_learn(object me)
 {
         if( query("max_neili", me)<100 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ã€‚\n");
 
         if ((int)me->query_skill("force") < 20)
-                return notify_fail("ÄãµÄÄÚ¹¦»ğºòÌ«Ç³¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸç«å€™å¤ªæ·ºã€‚\n");
 
         if ((int)me->query_skill("sword") < 30)
-                return notify_fail("ÄãµÄ»ù±¾½£·¨»ğºòÌ«Ç³£¬ÎŞ·¨ĞŞÁ¶ÔÆº×Æß½£¡£\n");
+                return notify_fail("ä½ çš„åŸºæœ¬åŠæ³•ç«å€™å¤ªæ·ºï¼Œç„¡æ³•ä¿®ç…‰é›²é¶´ä¸ƒåŠã€‚\n");
 
         if ((int)me->query_skill("sword", 1) < (int)me->query_skill("yunhe-jian", 1))
-                return notify_fail("ÄãµÄ»ù±¾½£·¨Ë®Æ½ÓĞÏŞ£¬ÎŞ·¨Áì»á¸ü¸ßÉîµÄÔÆº×Æß½£¡£\n");
+                return notify_fail("ä½ çš„åŸºæœ¬åŠæ³•æ°´å¹³æœ‰é™ï¼Œç„¡æ³•é ˜æœƒæ›´é«˜æ·±çš„é›²é¶´ä¸ƒåŠã€‚\n");
 
         return 1;
 }
@@ -136,13 +136,13 @@ int practice_skill(object me)
 
         if( !objectp(weapon=query_temp("weapon", me)) || 
             query("skill_type", weapon) != "sword" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ã€‚\n");
 
         if( query("qi", me)<60 )
-                return notify_fail("ÄãµÄÌåÁ¦²»¹»Á·ÔÆº×Æß½£¡£\n");
+                return notify_fail("ä½ çš„é«”åŠ›ä¸å¤ ç·´é›²é¶´ä¸ƒåŠã€‚\n");
 
         if( query("neili", me)<50 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»Á·ÔÆº×Æß½£¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ç·´é›²é¶´ä¸ƒåŠã€‚\n");
 
         me->receive_damage("qi", 50);
         addn("neili", -45, me);

@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����");
+        set("short", "洞口");
         set("long", @LONG
-������ɽ�������ѵĶ��ڣ�����ɽ�������ڶ�ǰ�����ص�Ѳ���ţ�
-�ر�����ɭ�ϡ�
+這裡是山賊的老窩的洞口，幾個山賊把守在洞前，來回的巡視著，
+守備很是森嚴。
 LONG );
         set("outdoors", "baituo");
         set("exits", ([

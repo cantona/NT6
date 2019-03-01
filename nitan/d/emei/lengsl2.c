@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-      set("short", "��ɼ��");
+      set("short", "冷杉林");
         set("long", @LONG
-����Ƭ������յ���ɼ�֡�����Ҳ�ϱ�����������ɼ������һ�飬
-֦��Ҷï����һ�����ɡ��������գ��������ڵ�˿��Ҳ�ޡ�������
-���Ŀ�֦��Ҷ����Ȼ�οͺ���̤��˴���
+這是片遮天蔽日的冷杉林。數人也合抱不過來的冷杉樹簇在一塊，
+枝繁葉茂，象一蓬蓬巨傘恆伸向天空，把陽光遮得絲毫也無。看地上
+厚厚的枯枝爛葉，顯然遊客很少踏足此處。
 LONG );
       set("exits", ([
           "east"      : __DIR__"bashisipan1",

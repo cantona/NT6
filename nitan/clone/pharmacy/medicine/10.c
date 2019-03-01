@@ -4,14 +4,14 @@ inherit MEDICINE;
 
 void create()
 {
-        set_name(RED"ÖìÈ¸µ¤"NOR, ({"zhuque dan", "dan"}));
-        set("unit", "¿Å");
+        set_name(RED"æœ±é›€ä¸¹"NOR, ({"zhuque dan", "dan"}));
+        set("unit", "é¡†");
 
         set("upgrade_stat", ([ "kee" : 20,
                                "sen" : 20 ]));
         set("apply_condition", ([ "drunk" : 20 ]));
-        set("env_message", RED"$NÈ¡³öÒ»¿ÅºìÉ«µÄÍè×Ó£¬Ò»ÑöÍ·³ÔÁËÏÂÈ¥£¬¶ÙÊ±Á³É«±äµÃºì»ğ¡£");
-        set("prv_message", HIR"Äã¾õµÃ¸¹ÄÚºÃÏóÓĞ»ğÔÚÉÕ£¬Ò»¹ÉÈÈÆøË³×ÅÑªĞĞ»ãÈëÁËÆæ¾­°ÙÂö¡£");
+        set("env_message", RED"$Nå–å‡ºä¸€é¡†ç´…è‰²çš„ä¸¸å­ï¼Œä¸€ä»°é ­åƒäº†ä¸‹å»ï¼Œé “æ™‚è‡‰è‰²è®Šå¾—ç´…ç«ã€‚");
+        set("prv_message", HIR"ä½ è¦ºå¾—è…¹å…§å¥½è±¡æœ‰ç«åœ¨ç‡’ï¼Œä¸€è‚¡ç†±æ°£é †è‘—è¡€è¡ŒåŒ¯å…¥äº†å¥‡ç¶“ç™¾è„ˆã€‚");
 
         setup();
 }

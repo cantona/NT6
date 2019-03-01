@@ -9,10 +9,10 @@ int do_climb();
 
 void create()
 {
-        set("short", "·ö·åÉ½");
+        set("short", "æ‰¶å³°å±±");
         set("long", @LONG
-·ö·åÉ½¼«¸ßÇÒÊ®·Ö¶¸ÇÍ£¬É½ÑüÒÔÉÏ¾¡Ã»ÈëÃ£Ã£ÔÆº£ÖÐ£¬·å¶¥ÖÕÄê»ý
-Ñ©£¬É½ÑüÒÔÏÂÈ´ÊÇÓôÓô²Ô²Ô£¬ÁÖÄ¾Ã¯ÃÜ£¬»¨ÍÅ½õ´Ø£¬´ºÒâÀÃÂþ¡£
+æ‰¶å³°å±±æ¥µé«˜ä¸”ååˆ†é™¡å³­ï¼Œå±±è…°ä»¥ä¸Šç›¡æ²’å…¥èŒ«èŒ«é›²æµ·ä¸­ï¼Œå³°é ‚çµ‚å¹´ç©
+é›ªï¼Œå±±è…°ä»¥ä¸‹å»æ˜¯é¬±é¬±è’¼è’¼ï¼Œæž—æœ¨èŒ‚å¯†ï¼ŒèŠ±åœ˜éŒ¦ç°‡ï¼Œæ˜¥æ„çˆ›æ¼«ã€‚
 LONG );
         set("outdoors", "kunlun");
         set("exits", ([
@@ -25,7 +25,7 @@ LONG );
         ]));
 */
         set("no_clean_up",0);
-        create_door("enter", "Ð¡ÃÅ", "out", DOOR_CLOSED);
+        create_door("enter", "å°é–€", "out", DOOR_CLOSED);
         set("coor/x", -119980);
         set("coor/y", 40170);
         set("coor/z", 90);
@@ -44,16 +44,16 @@ int do_climb()
         {
                 me->receive_damage("qi", 50);
                 me->receive_wound("qi", 50);
-                message_vision(HIR"$NÒ»²»Ð¡ÐÄ½ÅÏÂÌ¤ÁË¸ö¿Õ... °¡...£¡\n"NOR, me);
+                message_vision(HIR"$Nä¸€ä¸å°å¿ƒè…³ä¸‹è¸äº†å€‹ç©º... å•Š...ï¼\n"NOR, me);
                 me->move(__DIR__"fufengshan.c");
                 tell_object(me,
-                HIR"Äã´ÓÉ½ÉÏ¹öÁËÏÂÀ´£¬Ö»¾õµÃ»ëÉíÎÞ´¦²»ÌÛ£¬»¹ÊÜÁË¼¸´¦ÉË¡£\n"NOR);
-                message("vision",HIR"Ö»¼û"+query("name", me)+
-                "´ÓÉ½ÉÏ¹ÇÂµÂµµØ¹öÁËÏÂÀ´£¬ÌÉÔÚµØÉÏ°ëÌìÅÀ²»ÆðÀ´£¡\n"NOR, environment(me), ({me}));
+                HIR"ä½ å¾žå±±ä¸Šæ»¾äº†ä¸‹ä¾†ï¼Œåªè¦ºå¾—æ¸¾èº«ç„¡è™•ä¸ç–¼ï¼Œé‚„å—äº†å¹¾è™•å‚·ã€‚\n"NOR);
+                message("vision",HIR"åªè¦‹"+query("name", me)+
+                "å¾žå±±ä¸Šéª¨ç¢Œç¢Œåœ°æ»¾äº†ä¸‹ä¾†ï¼Œèººåœ¨åœ°ä¸ŠåŠå¤©çˆ¬ä¸èµ·ä¾†ï¼\n"NOR, environment(me), ({me}));
                 return 1;
         }
         message("vision",
-        me->name() + "ÌáÒ»¿ÚÕæÆø£¬×ã¼âÁ¬µãÊýÏÂ£¬·¢×ãÏòÉ½ÉÏ±¼È¥¡£\n",
+        me->name() + "æä¸€å£çœŸæ°£ï¼Œè¶³å°–é€£é»žæ•¸ä¸‹ï¼Œç™¼è¶³å‘å±±ä¸Šå¥”åŽ»ã€‚\n",
                 environment(me), ({me}) );
         me->move(__DIR__"sanshengao");
         return 1;

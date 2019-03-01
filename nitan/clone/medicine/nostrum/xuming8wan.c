@@ -5,16 +5,16 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIW"ĞøÃü°ËÍè"NOR, ({"xuming bawan", "bawan", "8wan"}));
+        set_name(HIW"çºŒå‘½å…«ä¸¸"NOR, ({"xuming bawan", "bawan", "8wan"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Á£");
+                set("unit", "ç²’");
                 set("vegetable", 86);
                 set("nostrum", 121);
                 set("no_sell",1);
                 set("level", 160);
-                set("long","ÕâÊÇ»¨ÁËÒ»Ê®¶şÄêÊ±¹â£¬²É¼¯Ç§ÄêÈË²Î¡¢·üÜß¡¢ÁéÖ¥¡¢Â¹È×¡¢Ê×ÎÚ¡¢ÁéÖ¬¡¢ĞÜµ¨¡¢ÈıÆß¡¢÷êÏãÖÖÖÖÕä¹óÖ®¼«µÄÒ©Îï£¬¾ÅÕô¾ÅÉ¹£¬ÖÆ³É°Ë¿ÅÆğËÀ»ØÉúµÄ¡°ĞøÃü°ËÍè¡±¡£ÓĞµÄ¼«³ô£¬ÓĞµÄ¼«¿à£¬ÓĞµÄÈë¿ÚÈçµ¶¸î£¬ÓĞµÄĞÁÀ±Èç»ğÖË¡£Ö»ÒªÍÌ·şÁËÕâ¡°ĞøÃü°ËÍè¡±£¬²»ÂÛ¶à´óµÄÄÚÉËÍâÉË£¬¶¨È»ÆğËÀ»ØÉú¡£\n");
+                set("long","é€™æ˜¯èŠ±äº†ä¸€åäºŒå¹´æ™‚å…‰ï¼Œæ¡é›†åƒå¹´äººåƒã€ä¼è‹“ã€éˆèŠã€é¹¿èŒ¸ã€é¦–çƒã€éˆè„‚ã€ç†Šè†½ã€ä¸‰ä¸ƒã€éºé¦™ç¨®ç¨®çè²´ä¹‹æ¥µçš„è—¥ç‰©ï¼Œä¹è’¸ä¹æ›¬ï¼Œåˆ¶æˆå…«é¡†èµ·æ­»å›ç”Ÿçš„â€œçºŒå‘½å…«ä¸¸â€ã€‚æœ‰çš„æ¥µè‡­ï¼Œæœ‰çš„æ¥µè‹¦ï¼Œæœ‰çš„å…¥å£å¦‚åˆ€å‰²ï¼Œæœ‰çš„è¾›è¾£å¦‚ç«ç‚™ã€‚åªè¦åæœäº†é€™â€œçºŒå‘½å…«ä¸¸â€ï¼Œä¸è«–å¤šå¤§çš„å…§å‚·å¤–å‚·ï¼Œå®šç„¶èµ·æ­»å›ç”Ÿã€‚\n");
                 set("value", 0);
         }
         set("pour_type", "1");
@@ -33,22 +33,22 @@ int do_eat(string arg)
 {
         object me = this_player();
 
-        if(!id(arg)) return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+        if(!id(arg)) return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if(!present(this_object(), me))
-                return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if( me->is_busy() )
-                return notify_fail("±ğ¼±£¬ÂıÂı³Ô£¬Ğ¡ĞÄ±ğÒ­×ÅÁË¡£\n");
+                return notify_fail("åˆ¥æ€¥ï¼Œæ…¢æ…¢åƒï¼Œå°å¿ƒåˆ¥å™è‘—äº†ã€‚\n");
 
         if( !wizardp(me) &&
                 (!query("dietime", me) || time()-query("dietime", me)>600) )
         {
-                write("ÄãÏÖÔÚ²»ÒË³ÔĞøÃü°ËÍèÁË¡£\n");
+                write("ä½ ç¾åœ¨ä¸å®œåƒçºŒå‘½å…«ä¸¸äº†ã€‚\n");
                 return 1;
         }
-        if(!id(arg)) return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+        if(!id(arg)) return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if( me->is_busy() )
-                return notify_fail("±ğ¼±£¬ÂıÂı³Ô£¬Ğ¡ĞÄ±ğÒ­×ÅÁË¡£\n");
-        message_vision("$N³ÔÏÂÒ»Á£" + name() + "¡£\n", me);
+                return notify_fail("åˆ¥æ€¥ï¼Œæ…¢æ…¢åƒï¼Œå°å¿ƒåˆ¥å™è‘—äº†ã€‚\n");
+        message_vision("$Nåƒä¸‹ä¸€ç²’" + name() + "ã€‚\n", me);
         log_file("eat_dan", sprintf("[%s] %s eat xuming8wan \n", ctime(time()), geteuid(me)));
         delete("dietime", me);
         me->reincarnate();
@@ -69,6 +69,6 @@ int do_eat(string arg)
 
 void destwan()
 {
-        message_vision("$NÂıÂı¸ÉºÔ»¯³É»Ò£¬Ò»»á¾ÍÆ®ÂäµØÉÏÏûÊ§ÁË¡£\n",this_object());
+        message_vision("$Næ…¢æ…¢å¹¹æ¶¸åŒ–æˆç°ï¼Œä¸€æœƒå°±é£„è½åœ°ä¸Šæ¶ˆå¤±äº†ã€‚\n",this_object());
         destruct(this_object());
 }

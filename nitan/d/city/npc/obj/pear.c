@@ -1,18 +1,18 @@
 // Code of ShenZhou
-// pear ÎýÉ½Ñ¼Àæ
+// pear éŒ«å±±é´¨æ¢¨
 #include <ansi.h>
 inherit ITEM;
 inherit F_FOOD;
 
 void create()
 {
-        set_name("Ñ¼Àæ", ({"ya li", "li", "pear"}));
+        set_name("é´¨æ¢¨", ({"ya li", "li", "pear"}));
         set_weight(80);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¸öÐÂÏÊÏãÌðµÄÑ¼Àæ¡£\n");
-                set("unit", "¸ö");
+                set("long", "ä¸€å€‹æ–°é®®é¦™ç”œçš„é´¨æ¢¨ã€‚\n");
+                set("unit", "å€‹");
                 set("value", 20);
                 set("food_remaining", 2);
                 set("food_supply", 15);

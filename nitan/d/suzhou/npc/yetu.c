@@ -1,13 +1,13 @@
-// yetu.c Ò°ÍÃ
+// yetu.c é‡Žå…”
 
 inherit NPC;
 
 void create()
 {
-        set_name("Ò°ÍÃ", ({ "ye tu", "ye", "hare" }) );
-        set("race", "×ßÐó");
+        set_name("é‡Žå…”", ({ "ye tu", "ye", "hare" }) );
+        set("race", "èµ°ç•œ");
         set("age", 5);
-        set("long", "Ò»Ö»ºÃ¿É°®µÄÐ¡Ò°ÍÃ¡£\n");
+        set("long", "ä¸€åªå¥½å¯æ„›çš„å°é‡Žå…”ã€‚\n");
         set("attitude", "peaceful");
 
         set("combat_exp", 500);
@@ -22,7 +22,7 @@ void create()
 void die()
 {
         object ob;
-        message_vision("$NÆà²ÒµÄº¿ÁË¼¸Éù£¬ËÀÁË¡£\n", this_object());
+        message_vision("$Nå‡„æ…˜çš„åšŽäº†å¹¾è²ï¼Œæ­»äº†ã€‚\n", this_object());
         ob = new(__DIR__"turou");
         ob->move(environment(this_object()));
         destruct(this_object());

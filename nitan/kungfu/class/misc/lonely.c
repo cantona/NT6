@@ -24,11 +24,11 @@ string *lonelysword = ({
 
 void create()
 {
-        set_name("¸ß´¦²»Ê¤º®", ({ "gaochu bushenghan" }));
-        set("title", HIY "ÍõÕß÷âÏÂÃğÌìÆïÊ¿ÍÅ" NOR "ÆÆÌìÍõ");
-        set("nickname",HIR "ÌìµØ½»Õ÷" NOR);
-        set("long", "±ğÈÇ£¡ÄãÈÇ²»Æğ£¡\n" );
-        set("gender", "ÄĞĞÔ");
+        set_name("é«˜è™•ä¸å‹å¯’", ({ "gaochu bushenghan" }));
+        set("title", HIY "ç‹è€…éº¾ä¸‹æ»…å¤©é¨å£«åœ˜" NOR "ç ´å¤©ç‹");
+        set("nickname",HIR "å¤©åœ°äº¤å¾" NOR);
+        set("long", "åˆ¥æƒ¹ï¼ä½ æƒ¹ä¸èµ·ï¼\n" );
+        set("gender", "ç”·æ€§");
         set("age", 30);
 
         set("str", 200);
@@ -84,7 +84,7 @@ void create()
         set("can_perform/jiuyin-baiguzhao/shenzhao",1);
         set("can_perform/lonely-sword", lonelysword);
 
-        create_family("ÄàÌ¶", 1, "´´ÊÀÉñ½«");
+        create_family("æ³¥æ½­", 1, "å‰µä¸–ç¥å°‡");
 
         setup();
         carry_object("/clone/misc/cloth")->wear();

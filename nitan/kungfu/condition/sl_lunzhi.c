@@ -10,7 +10,7 @@ int update_condition(object me, int duration)
         seteuid(getuid());
         if (duration < 1)
         {
-                tell_object(me,HIY"你轮值的时间已到，快回去复命(lunzhi ok)吧！\n" NOR);
+                tell_object(me,HIY"浣犺吉鍊肩殑鏅傞枔宸插埌锛屽揩鍥炲幓寰╁懡(lunzhi ok)鍚э紒\n" NOR);
                 return 0;
         }
         if (!duration) return 0;

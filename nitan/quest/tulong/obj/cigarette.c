@@ -6,14 +6,14 @@ int smoking(int);
 
 void create()
 {
-        string *order = ({"ÖĞ»ª","´óÇ°ÃÅ", "ÈáºÍÆßĞÇ", "ºìËşÉ½", "Íò±¦Â·", "Ï£¶û¶Ù", "ÔÆÑÌ"});
+        string *order = ({"ä¸­è¯","å¤§å‰é–€", "æŸ”å’Œä¸ƒæ˜Ÿ", "ç´…å¡”å±±", "è¬å¯¶è·¯", "å¸Œçˆ¾é “", "é›²ç…™"});
         set_name( (order[random(7)]), ({ "cigarette" }) );
         set_weight(80);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»ºĞÏãÑÌ£¬¿ÉÒÔ(xiyan)¡£\n");
-                set("unit", "ºĞ");
+                set("long", "ä¸€ç›’é¦™ç…™ï¼Œå¯ä»¥(xiyan)ã€‚\n");
+                set("unit", "ç›’");
                 set("count",6);
                 set("value", 50);
         }
@@ -30,27 +30,27 @@ int do_smoke()
         object obj = this_object();
 
         if( query("no_smoke", environment(me)) )
-                return notify_fail("ÕâÀï²»×¼³éÑÌ£¡\n");
+                return notify_fail("é€™è£¡ä¸æº–æŠ½ç…™ï¼\n");
 
         if( me->is_busy() )
-                return notify_fail("ÄãÕıÃ¦×ÅÄØ£¬Ã»¿Õ³éÑÌ£¡¡£\n");
+                return notify_fail("ä½ æ­£å¿™è‘—å‘¢ï¼Œæ²’ç©ºæŠ½ç…™ï¼ã€‚\n");
 
         if(query("count") == 6) 
-                message_vision("$N³é³öÒ»Ö§$n£¬µã×ÅÁË»ğ£¬ÃÀ×Ì×ÌµØÎüÁËÆğÀ´¡£\n", me, this_object());
+                message_vision("$NæŠ½å‡ºä¸€æ”¯$nï¼Œé»è‘—äº†ç«ï¼Œç¾æ»‹æ»‹åœ°å¸äº†èµ·ä¾†ã€‚\n", me, this_object());
         else if (query("count") == 1 ) {
-                message_vision("$NÃÍÎüÁËÒ»¿ÚÊ£ÏÂµÄÑÌÆ¨¹É£¬Á½¸öÊÖ²»ÓÉ×ÔÖ÷µØÓÖÈ¥Ä£¿Ú´ü¡£\n", me);
+                message_vision("$NçŒ›å¸äº†ä¸€å£å‰©ä¸‹çš„ç…™å±è‚¡ï¼Œå…©å€‹æ‰‹ä¸ç”±è‡ªä¸»åœ°åˆå»æ¨¡å£è¢‹ã€‚\n", me);
                 destruct(this_object());
                 return 1;
         } else 
         switch(random(4)) {
                 
-                case 0: message_vision("$NÍÂ³öÒ»´®ÑÌÈ¦£¬¿´×ÅËüÓÆÏĞµÄÉ¢¿ª¡£\n", me);
+                case 0: message_vision("$Nåå‡ºä¸€ä¸²ç…™åœˆï¼Œçœ‹è‘—å®ƒæ‚ é–’çš„æ•£é–‹ã€‚\n", me);
                         break;
-                case 1: message_vision("$NºİºİµÄÎüÁËÒ»¿Ú$n£¬´ó¸ÅÊÇÎüµÃÌ«ÃÍÁË£¬Ò»ÕÅÁ³ÕÇµÄÍ¨ºì¡£\n", me, obj);
+                case 1: message_vision("$Nç‹ ç‹ çš„å¸äº†ä¸€å£$nï¼Œå¤§æ¦‚æ˜¯å¸å¾—å¤ªçŒ›äº†ï¼Œä¸€å¼µè‡‰æ¼²çš„é€šç´…ã€‚\n", me, obj);
                         break;
-                case 2: message_vision("$NÎüÁËÒ»¿Ú$n£¬Ò¡Í·»ÎÄÔµØËµµÀ£º¡°·¹ºóÒ»Ö§ÑÌ£¬Èü¹ı»îÉñÏÉ¡£¡±\n", me, obj );
+                case 2: message_vision("$Nå¸äº†ä¸€å£$nï¼Œæ–é ­æ™ƒè…¦åœ°èªªé“ï¼šâ€œé£¯å¾Œä¸€æ”¯ç…™ï¼Œè³½éæ´»ç¥ä»™ã€‚â€\n", me, obj );
                         break;
-                case 3: message_vision("$NÇÌÆğ¶şÀÉÍÈ£¬ÃĞÉÏÑÛ¾¦£¬ÃÍÎüÁËÒ»¿Ú$n£¬×ÔÑÔ×ÔÓïµÀ£º¡°Õâ¶«Î÷º¦ÈËÓÖº¦¼º£¬ÎªÉ¶ÎÒ»¹ÄÇÃ´Ï²»¶£¿¡±\n", me, obj);
+                case 3: message_vision("$Nç¿¹èµ·äºŒéƒè…¿ï¼Œçœ¯ä¸Šçœ¼ç›ï¼ŒçŒ›å¸äº†ä¸€å£$nï¼Œè‡ªè¨€è‡ªèªé“ï¼šâ€œé€™æ±è¥¿å®³äººåˆå®³å·±ï¼Œç‚ºå•¥æˆ‘é‚„é‚£éº¼å–œæ­¡ï¼Ÿâ€\n", me, obj);
                         break;
                 default:
                         break;

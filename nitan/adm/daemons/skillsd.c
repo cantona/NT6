@@ -30,12 +30,12 @@ mapping all_skills = ([ ]);
 mapping all_record = ([ ]);
 mapping initial_skills = ([ ]);
 class mix {
-string name;            // ¼¼ÄÜ×éºÏÃû³Æ
-string dodge;           // ¼¼ÄÜ×éºÏÇá¹¦
-string parry;           // ¼¼ÄÜ×éºÏÕĞ¼Ü
-string force;           // ¼¼ÄÜ×éºÏÄÚ¹¦
-mapping need;           // ¼¼ÄÜÌØĞ§Ìõ¼ş
-mapping stats;          // ¼¼ÄÜ×éºÏĞ§¹û
+string name;            // æŠ€èƒ½çµ„åˆåç¨±
+string dodge;           // æŠ€èƒ½çµ„åˆè¼•åŠŸ
+string parry;           // æŠ€èƒ½çµ„åˆæ‹›æ¶
+string force;           // æŠ€èƒ½çµ„åˆå…§åŠŸ
+mapping need;           // æŠ€èƒ½ç‰¹æ•ˆæ¢ä»¶
+mapping stats;          // æŠ€èƒ½çµ„åˆæ•ˆæœ
 }
 class mix *all_mixs = ({ });
 // initialization,initializtion
@@ -104,39 +104,39 @@ int kungfu_restraint_effect(string type1, string type2)
 }
 
 nosave mapping family_name = ([
-        "shaolin"  : "ÉÙÁÖ",
-        "wudang"   : "Îäµ±",
-        "gaibang"  : "Ø¤°ï",
-        "quanzhen" : "È«Õæ",
-        "huashan"  : "»ªÉ½",
-        "duan"     : "¶ÎÊÏ",
-        "murong"   : "Ä½Èİ",
-        "xueshan"  : "Ñ©É½",
-        "lingjiu"  : "ÁéğÕ",
-        "emei"     : "¶ëáÒ",
-        "taohua"   : "ÌÒ»¨",
-        "shenlong" : "ÉñÁú",
-        "gumu"     : "¹ÅÄ¹",
-        "xingxiu"  : "ĞÇËŞ",
-        "xiaoyao"  : "åĞÒ£",
-        "xuedao"   : "Ñªµ¶",
-        "ouyang"   : "Å·Ñô",
-        "hu"       : "ºú¼Ò",
-        "mingjiao" : "Ã÷½Ì",
-        "tang"     : "ÌÆÃÅ",
-        "riyue"    : "ÈÕÔÂ",
-        "mojiao"   : "Ä§½Ì",
-        "taishan"  : "Ì©É½",
-        "songshan" : "áÔÉ½",
-        "hengshan" : "ºâÉ½",
-        "henshan"  : "ºãÉ½",
-        "qingcheng": "Çà³Ç",
-        "lingxiao" : "ÁèÏö",
-        "tiezhang" : "ÌúÕÆ",
-        "honghua"  : "ºì»¨",
-        "yunlong"  : "ÔÆÁú",
-        "wudu"     : "Îå¶¾",
-        "kunlun"   : "À¥ÂØ",
+        "shaolin"  : "å°‘æ—",
+        "wudang"   : "æ­¦ç•¶",
+        "gaibang"  : "ä¸å¹«",
+        "quanzhen" : "å…¨çœŸ",
+        "huashan"  : "è¯å±±",
+        "duan"     : "æ®µæ°",
+        "murong"   : "æ…•å®¹",
+        "xueshan"  : "é›ªå±±",
+        "lingjiu"  : "éˆé·²",
+        "emei"     : "å³¨åµ‹",
+        "taohua"   : "æ¡ƒèŠ±",
+        "shenlong" : "ç¥é¾",
+        "gumu"     : "å¤å¢“",
+        "xingxiu"  : "æ˜Ÿå®¿",
+        "xiaoyao"  : "é€é™",
+        "xuedao"   : "è¡€åˆ€",
+        "ouyang"   : "æ­é™½",
+        "hu"       : "èƒ¡å®¶",
+        "mingjiao" : "æ˜æ•™",
+        "tang"     : "å”é–€",
+        "riyue"    : "æ—¥æœˆ",
+        "mojiao"   : "é­”æ•™",
+        "taishan"  : "æ³°å±±",
+        "songshan" : "åµ©å±±",
+        "hengshan" : "è¡¡å±±",
+        "henshan"  : "æ†å±±",
+        "qingcheng": "é’åŸ",
+        "lingxiao" : "å‡Œéœ„",
+        "tiezhang" : "éµæŒ",
+        "honghua"  : "ç´…èŠ±",
+        "yunlong"  : "é›²é¾",
+        "wudu"     : "äº”æ¯’",
+        "kunlun"   : "æ˜†ä¾–",
 ]);
 
 void create()
@@ -167,22 +167,22 @@ void load_skill()
         file = read_file(SKILL_FILE);
         if( !stringp(file) ) return;
 
-        // È¥µô"\r"±£Ö¤ºÍMSDOSµÄÎÄ¼ş¸ñÊ½¼æÈİ
+        // å»æ‰"\r"ä¿è¨¼å’ŒMSDOSçš„æ–‡ä»¶æ ¼å¼å…¼å®¹
         file = replace_string(file, "\r", "");
 
         tmp = explode(file, "\n");
         foreach( line in tmp )
         {
                 reset_eval_cost();
-                // È¥µôĞĞÊ×µÄ¿Õ¸ñ
+                // å»æ‰è¡Œé¦–çš„ç©ºæ ¼
                 while( strlen(line) && line[0] == ' ' ) line = line[1..<1];
                 if( line[0] == '#' )
-                        // ×¢ÊÍ
+                        // æ³¨é‡‹
                         continue;
 
                 if( line[0] == '&' )
                 {
-                        // ±»ÏµÍ³×¢ÊÍµÄ
+                        // è¢«ç³»çµ±æ³¨é‡‹çš„
                         line = line[1..<1];
                         while( strlen(line) && line[0] == ' ' ) line = line[1..<1];
                 }
@@ -307,20 +307,20 @@ public string skill_mix_stats(object me)
 
 
         msg += "\n\n\n\n\n\n";
-        msg += sprintf(NOR HIW "©³©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©·\n" NOR);
-        msg += sprintf(NOR HIW "©§Çá¹¦->%-14s" NOR HIW "©§\n" NOR, to_chinese(temp->dodge));
-        msg += sprintf(NOR HIW "©§ÕĞ¼Ü->%-14s" NOR HIW "©§\n" NOR, to_chinese(temp->parry));
-        msg += sprintf(NOR HIW "©§ÄÚ¹¦->%-14s" NOR HIW "©§\n" NOR, to_chinese(temp->force));
+        msg += sprintf(NOR HIW "â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡\n" NOR);
+        msg += sprintf(NOR HIW "â–¡è¼•åŠŸ->%-14s" NOR HIW "â–¡\n" NOR, to_chinese(temp->dodge));
+        msg += sprintf(NOR HIW "â–¡æ‹›æ¶->%-14s" NOR HIW "â–¡\n" NOR, to_chinese(temp->parry));
+        msg += sprintf(NOR HIW "â–¡å…§åŠŸ->%-14s" NOR HIW "â–¡\n" NOR, to_chinese(temp->force));
 
         need = temp->need;
         keys_need = keys(need);
         for (i=0;i<sizeof(keys_need);i++)
-                msg += sprintf(NOR HIW "©§ÆäËû->%-14s" NOR HIW "©§\n" NOR,
+                msg += sprintf(NOR HIW "â–¡å…¶ä»–->%-14s" NOR HIW "â–¡\n" NOR,
                                need[keys_need[i]] + to_chinese(keys_need[i]));
 
-        msg += sprintf(NOR HIW "©»©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¿\n" NOR);
+        msg += sprintf(NOR HIW "â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡\n" NOR);
         msg += sprintf(" %-22s\n" NOR, trans_color(temp->name, 3));
-        msg += sprintf(NOR HIC "©³©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©·" NOR "\n" );
+        msg += sprintf(NOR HIC "â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡" NOR "\n" );
 
         stats = temp->stats;
         keys_stats = keys(stats);
@@ -330,9 +330,9 @@ public string skill_mix_stats(object me)
 #ifndef LONELY_IMPROVED
                 len = color_len(str);
 #endif
-                msg += sprintf(NOR HIC "©§" NOR "%-" + (20 + len) + "s" NOR HIC "©§" NOR "\n", str);
+                msg += sprintf(NOR HIC "â–¡" NOR "%-" + (20 + len) + "s" NOR HIC "â–¡" NOR "\n", str);
         }
-        msg += sprintf(NOR HIC "©»©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¿" NOR "\n");
+        msg += sprintf(NOR HIC "â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡" NOR "\n");
 
         return msg;
 }
@@ -459,10 +459,10 @@ varargs void query_skill_power(object me, string arg)
         int i, delta;
         mixed n;
 
-        msg = WHT "Ä¿Ç°½­ºşÉÏËùÓĞÎä¹¦¸÷ÖÖ²ÎÊıÖµÈçÏÂ\n\n" NOR;
-        msg += "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n";
-        msg += BBLU HIW "¼¼ÄÜÃû³Æ                      ÃüÖĞ  ¶ãÉÁ  ÕĞ¼Ü  ÉËº¦  ÄÚ¹¦  ÄÑ¶È  ¼¶±ğ  ÃÅÅÉ  µ÷Õû\n" NOR;
-        msg += "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n";
+        msg = WHT "ç›®å‰æ±Ÿæ¹–ä¸Šæ‰€æœ‰æ­¦åŠŸå„ç¨®åƒæ•¸å€¼å¦‚ä¸‹\n\n" NOR;
+        msg += "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n";
+        msg += BBLU HIW "æŠ€èƒ½åç¨±                      å‘½ä¸­  èº²é–ƒ  æ‹›æ¶  å‚·å®³  å…§åŠŸ  é›£åº¦  ç´šåˆ¥  é–€æ´¾  èª¿æ•´\n" NOR;
+        msg += "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n";
 
         if( stringp(arg) && ! undefinedp(all_skills[arg]) )
         {
@@ -482,17 +482,17 @@ varargs void query_skill_power(object me, string arg)
                         switch(arg)
                         {
                         case "attack"   :
-                        case "¹¥»÷"     : n = 0; break;
+                        case "æ”»æ“Š"     : n = 0; break;
                         case "dodge"    :
-                        case "¶ãÉÁ"     : n = 1; break;
+                        case "èº²é–ƒ"     : n = 1; break;
                         case "parry"    :
-                        case "ÕĞ¼Ü"     : n = 2; break;
+                        case "æ‹›æ¶"     : n = 2; break;
                         case "damage"   :
-                        case "ÉËº¦"     : n = 3; break;
+                        case "å‚·å®³"     : n = 3; break;
                         case "force"    :
-                        case "ÄÚ¹¦"     : n = 4; break;
+                        case "å…§åŠŸ"     : n = 4; break;
                         case "difficult":
-                        case "ÄÑ¶È"     : n = 5; break;
+                        case "é›£åº¦"     : n = 5; break;
                         case "ultimate" :
                         case "expert"   :
                         case "advance"  :
@@ -558,21 +558,21 @@ varargs void query_skill_power(object me, string arg)
                         delta = 0;
 
                 if( skl[RANK] == "ultimate" )
-                        str1 = "ÖÕ¼«";
+                        str1 = "çµ‚æ¥µ";
                 else
                 if( skl[RANK] == "expert" )
-                        str1 = "³¬¼¶";
+                        str1 = "è¶…ç´š";
                 else
                 if( skl[RANK] == "advance" )
-                        str1 = "¸ß¼¶";
+                        str1 = "é«˜ç´š";
                 else
-                        str1 = "ÆÕÍ¨";
+                        str1 = "æ™®é€š";
 
                 if( skl[ATTRIBUTE] == "public" )
-                        str2 = "¹«¹²";
+                        str2 = "å…¬å…±";
                 else
                 if( skl[ATTRIBUTE] == "private" )
-                        str2 = "×Ô´´";
+                        str2 = "è‡ªå‰µ";
                 else
                         str2 = family_name[skl[ATTRIBUTE]];
 
@@ -586,7 +586,7 @@ varargs void query_skill_power(object me, string arg)
                                 (delta < 0) ? HIR "-" : WHT "+",
                                  abs(delta), NOR);
         }
-        msg += "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n";
+        msg += "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n";
         me->start_more(msg);
 }
 
@@ -983,7 +983,7 @@ int defense_power(object me, string skill)
         object ob;
 
         if( !objectp(me) ) return 0;
-        if( query_temp("freeze", me) ) return 0; // ±ù¶³×´Ì¬
+        if( query_temp("freeze", me) ) return 0; // å†°å‡ç‹€æ…‹
 
         ob = query_temp("last_opponent", me);
         if( objectp(ob) && me->is_fighting(ob) )
@@ -997,7 +997,7 @@ int defense_power(object me, string skill)
                      me->query_skill("martial-cognize", 1) +
                      query("level", me)*30;
 
-                /* ¹¥»÷¼ÆËãÊ±ºòÒÑ¾­¼ÓÈë×ªÊÀ±È½Ï£¬·ÀÓùÊ±ºò¾ÍÃ»ÓĞ±ØÒªÔÙ´Î±È½Ï
+                /* æ”»æ“Šè¨ˆç®—æ™‚å€™å·²ç¶“åŠ å…¥è½‰ä¸–æ¯”è¼ƒï¼Œé˜²å¾¡æ™‚å€™å°±æ²’æœ‰å¿…è¦å†æ¬¡æ¯”è¼ƒ
                 if( objectp(ob) )
                         dp += dp *
                               (query("reborn/times", me) - query("reborn/times", ob))*20/100;
@@ -1009,7 +1009,7 @@ int defense_power(object me, string skill)
 
                 if( me->query_weak() ) dp /= 2;
 
-                if( me->in_array() ) dp *= 2; // Õó·¨
+                if( me->in_array() ) dp *= 2; // é™£æ³•
 
                 return dp;
         }
@@ -1054,7 +1054,7 @@ int defense_power(object me, string skill)
              me->query_skill("martial-cognize", 1) +
              query("level", me)*30;
 
-        /* ¹¥»÷¼ÆËãÊ±ºòÒÑ¾­¼ÓÈë×ªÊÀ±È½Ï£¬·ÀÓùÊ±ºò¾ÍÃ»ÓĞ±ØÒªÔÙ´Î±È½Ï
+        /* æ”»æ“Šè¨ˆç®—æ™‚å€™å·²ç¶“åŠ å…¥è½‰ä¸–æ¯”è¼ƒï¼Œé˜²å¾¡æ™‚å€™å°±æ²’æœ‰å¿…è¦å†æ¬¡æ¯”è¼ƒ
         if( objectp(ob) )
                 dp += dp *
                       (query("reborn/times", me) - query("reborn/times", ob))*20/100;
@@ -1067,7 +1067,7 @@ int defense_power(object me, string skill)
 
         if( me->query_weak() ) dp /= 2;
 
-        if( me->in_array() ) dp *= 2; // Õó·¨
+        if( me->in_array() ) dp *= 2; // é™£æ³•
 
         for( i = 0; i < sizeof(all_poison); i++ )
                 if( me->query_condition(all_poison[i]) )
@@ -1176,7 +1176,7 @@ mapping trans_data(string mark)
         mapping temp_map;
 
         temp_stats = ([ ]);
-        // ¿ªÊ¼½âÎö
+        // é–‹å§‹è§£æ
         while (sscanf(mark, "%*s<%s>%s</%s>%s", key, temp_str, key, mark) > 3)
         {
                 temp_map = ([ ]);
@@ -1196,7 +1196,7 @@ mapping trans_data(string mark)
                                 if (sscanf(temp_arr[i], "%s:%d", temp_key, temp_value) != 2)
                                         sscanf(temp_arr[i], "%s:%s", temp_key, temp_value);
 
-                                // ½âÎöVALUE
+                                // è§£æVALUE
                                 if (stringp(temp_value) && strsrch(temp_value, '/') != -1)
                                 {
                                         temp_val = explode(temp_value, "/");
@@ -1207,7 +1207,7 @@ mapping trans_data(string mark)
                                                 else
                                                         temp_value += temp_val[i];
                                 }
-                                // ½âÎöKEY
+                                // è§£æKEY
                                 if (stringp(temp_key) && strsrch(temp_key, '/') != -1)
                                         _set( temp_map, explode(temp_key, "/"), temp_value );
                                 else
@@ -1361,15 +1361,15 @@ void broadcast_news()
                 {
                         ob = obs[random(sizeof(obs))];
                         ob->add_skill(skill, 10 + random(6));
-                        tell_object(ob, HIM "ÄãÄÔÖĞÍ»È»Áé¹âÒ»ÉÁ£¬Äã¶Ô" +
-                                        to_chinese(skill) + "ÓĞÁË¸üÉîµÄÁìÎò£¡\n" NOR);
+                        tell_object(ob, HIM "ä½ è…¦ä¸­çªç„¶éˆå…‰ä¸€é–ƒï¼Œä½ å°" +
+                                        to_chinese(skill) + "æœ‰äº†æ›´æ·±çš„é ˜æ‚Ÿï¼\n" NOR);
                 }
                 else
                         ob = 0;
 
                 CHANNEL_D->channel_broadcast("mess",
-                                        "ÎäÑ§´ó×ÚÊ¦" + (ob ? ob->name(1) : "ÎŞÃûÀÏÈË") + "±Õ¹ØĞŞĞĞÑĞ¾¿" +
-                                        to_chinese(skill) + "£¬ÖÕÓÚÎò³öÆäÆÆ½âÖ®Êõ£¬²¢¹ãÎªÁ÷´«¡£");
+                                        "æ­¦å­¸å¤§å®—å¸«" + (ob ? ob->name(1) : "ç„¡åè€äºº") + "é–‰é—œä¿®è¡Œç ”ç©¶" +
+                                        to_chinese(skill) + "ï¼Œçµ‚äºæ‚Ÿå‡ºå…¶ç ´è§£ä¹‹è¡“ï¼Œä¸¦å»£ç‚ºæµå‚³ã€‚");
         }
 
         if( sizeof(add_skills) > 0 )
@@ -1387,15 +1387,15 @@ void broadcast_news()
                 {
                         ob = obs[random(sizeof(obs))];
                         ob->add_skill(skill, 10 + random(6));
-                        tell_object(ob, HIM "ÄãÄÔÖĞÍ»È»Áé¹âÒ»ÉÁ£¬Äã¶Ô" +
-                                        to_chinese(skill) + "ÓĞÁË¸üÉîµÄÁìÎò£¡\n" NOR);
+                        tell_object(ob, HIM "ä½ è…¦ä¸­çªç„¶éˆå…‰ä¸€é–ƒï¼Œä½ å°" +
+                                        to_chinese(skill) + "æœ‰äº†æ›´æ·±çš„é ˜æ‚Ÿï¼\n" NOR);
                 }
                 else
                         ob = 0;
 
                 CHANNEL_D->channel_broadcast("mess",
-                                        "ÎäÑ§´ó×ÚÊ¦" + (ob ? ob->name(1) : "ÎŞÃûÀÏÈË") + "±Õ¹ØĞŞĞĞÑĞ¾¿" +
-                                        to_chinese(skill) + "£¬ÖÕÓÚÍêÉÆÆäÆÆÕÀÖ®´¦£¬²¢¹ãÎªÁ÷´«¡£");
+                                        "æ­¦å­¸å¤§å®—å¸«" + (ob ? ob->name(1) : "ç„¡åè€äºº") + "é–‰é—œä¿®è¡Œç ”ç©¶" +
+                                        to_chinese(skill) + "ï¼Œçµ‚äºå®Œå–„å…¶ç ´ç¶»ä¹‹è™•ï¼Œä¸¦å»£ç‚ºæµå‚³ã€‚");
         }
         save();
 }
@@ -1426,7 +1426,7 @@ int valid_perform(object me, string file)
             !me->query_skill("douzhuan-xingyi") &&
             !me->query_skill("qiankun-danuoyi")*/ )
         {
-                tell_object(me, "Äã»¹Ã»ÓĞÊÜ¹ı¸ßÈËÖ¸µã£¬ÎŞ·¨Ê©Õ¹¡£\n");
+                tell_object(me, "ä½ é‚„æ²’æœ‰å—éé«˜äººæŒ‡é»ï¼Œç„¡æ³•æ–½å±•ã€‚\n");
                 return 0;
         }
 
@@ -1462,10 +1462,10 @@ int skill_summary(object me, string skill, int level)
                 ski_lst = ([]);
                 ski_lst[ski] = 1;
                 CHANNEL_D->channel_broadcast(
-                        "news", sprintf("%s(%s)µÄ%sÒÑ¾­´ïµ½ÁË"+msg+NOR+YEL"µÄ¾³½ç£¨¹Å½ñÎäÁÖµÚÒ»ÈË£©¡£",
+                        "news", sprintf("%s(%s)çš„%så·²ç¶“é”åˆ°äº†"+msg+NOR+YEL"çš„å¢ƒç•Œï¼ˆå¤ä»Šæ­¦æ—ç¬¬ä¸€äººï¼‰ã€‚",
                                         query("name", me),query("id", me),to_chinese(skill)));
 
-                HISTORY_D->add_history("¼¼ÄÜµÈ¼¶ÅÅÃû", query("id", me), sprintf("%s %d ¼¶£¬ÄêÁä %d ÅÅÃû: 1.\n",
+                HISTORY_D->add_history("æŠ€èƒ½ç­‰ç´šæ’å", query("id", me), sprintf("%s %d ç´šï¼Œå¹´é½¡ %d æ’å: 1.\n",
                                         to_chinese(skill), level, query("age", me)));
 
                 record = 1;
@@ -1483,10 +1483,10 @@ int skill_summary(object me, string skill, int level)
                                         map_delete(ski_lst,ski_term[i]);
                                         ski_lst[ski]=1;
                                         CHANNEL_D->channel_broadcast(
-                                                "news",sprintf("%s(%s)µÄ%sÒÑ¾­´ïµ½ÁË"+msg+NOR+YEL"µÄ¾³½ç£¨µ±½ñÎäÁÖµÚÒ»ÈË£©¡£",
+                                                "news",sprintf("%s(%s)çš„%så·²ç¶“é”åˆ°äº†"+msg+NOR+YEL"çš„å¢ƒç•Œï¼ˆç•¶ä»Šæ­¦æ—ç¬¬ä¸€äººï¼‰ã€‚",
                                                                 query("name", me),query("id", me),to_chinese(skill)));
                                         
-                                        HISTORY_D->add_history("¼¼ÄÜµÈ¼¶ÅÅÃû", query("id", me), sprintf("%s %d ¼¶£¬ÄêÁä %d ÅÅÃû: 1.\n",
+                                        HISTORY_D->add_history("æŠ€èƒ½ç­‰ç´šæ’å", query("id", me), sprintf("%s %d ç´šï¼Œå¹´é½¡ %d æ’å: 1.\n",
                                                                 to_chinese(skill), level, query("age", me)));
                                         record = 1;
                                 }
@@ -1495,7 +1495,7 @@ int skill_summary(object me, string skill, int level)
                                 {
                                         ski_lst[ski_term[i]] +=1;
                                         CHANNEL_D->channel_broadcast(
-                                                "news",sprintf("%s(%s)µÄ%sÒÑ¾­´ïµ½ÁË"+msg+NOR+YEL"µÄ¾³½ç£¨µ±½ñÎäÁÖµÚ%sÈË£©¡£",
+                                                "news",sprintf("%s(%s)çš„%så·²ç¶“é”åˆ°äº†"+msg+NOR+YEL"çš„å¢ƒç•Œï¼ˆç•¶ä»Šæ­¦æ—ç¬¬%säººï¼‰ã€‚",
                                                                 query("name", me),query("id", me),to_chinese(skill), chinese_number(ski_lst[ski_term[i]])));
                                         record = 1;
                                 }
@@ -1504,7 +1504,7 @@ int skill_summary(object me, string skill, int level)
                                 {
                                         /*
                                         CHANNEL_D->channel_broadcast(
-                                                "news",sprintf("%s(%s)µÄ%sÒÑ¾­´ïµ½ÁË"+msg+NOR+YEL"µÄ¾³½ç¡£",
+                                                "news",sprintf("%s(%s)çš„%så·²ç¶“é”åˆ°äº†"+msg+NOR+YEL"çš„å¢ƒç•Œã€‚",
                                                                 query("name", me),query("id", me),to_chinese(skill)));
                                         */
                                         record = 2;
@@ -1514,10 +1514,10 @@ int skill_summary(object me, string skill, int level)
                 if (!record)
                 {
                         CHANNEL_D->channel_broadcast(
-                                "news",sprintf("%s(%s)µÄ%sÒÑ¾­´ïµ½ÁË"+msg+NOR+YEL"µÄ¾³½ç£¨×Ô¹ÅÎäÁÖµÚÒ»ÈË£©¡£",
+                                "news",sprintf("%s(%s)çš„%så·²ç¶“é”åˆ°äº†"+msg+NOR+YEL"çš„å¢ƒç•Œï¼ˆè‡ªå¤æ­¦æ—ç¬¬ä¸€äººï¼‰ã€‚",
                                                 query("name", me),query("id", me),to_chinese(skill)));
                         ski_lst[ski] = 1;
-                        HISTORY_D->add_history("¼¼ÄÜµÈ¼¶ÅÅÃû", query("id", me), sprintf("%s %d ¼¶£¬ÄêÁä %d ÅÅÃû: 1.\n",
+                        HISTORY_D->add_history("æŠ€èƒ½ç­‰ç´šæ’å", query("id", me), sprintf("%s %d ç´šï¼Œå¹´é½¡ %d æ’å: 1.\n",
                                                 to_chinese(skill), level, query("age", me)));
                         record = 1;
                 }

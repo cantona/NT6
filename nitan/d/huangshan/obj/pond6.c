@@ -5,7 +5,7 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIG"ôä´ä³Ø"NOR, ({ "feicui chi", "chi", "feicui" }) );
+        set_name(HIG"ç¿¡ç¿ æ± "NOR, ({ "feicui chi", "chi", "feicui" }) );
         set_weight(500);
         set_max_encumbrance(80000);
         set("no_get", 1);
@@ -13,8 +13,8 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
-                set("long", HIG"Ò»¸öË®É«Îªôä´äµÄ³ØÌ¶¡£\n"NOR);
+                set("unit", "å€‹");
+                set("long", HIG"ä¸€å€‹æ°´è‰²ç‚ºç¿¡ç¿ çš„æ± æ½­ã€‚\n"NOR);
                 set("value", 1);
         }
 }

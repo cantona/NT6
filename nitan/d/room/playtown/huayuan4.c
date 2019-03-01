@@ -1,16 +1,16 @@
-// Room: /d/playertown/huayuan4.c 花园
+// Room: /d/playertown/huayuan4.c 鑺卞湌
 // Build 199.12.10 bmw
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "花园");
+        set("short", "鑺卞湌");
         set("long",
-"你走在一条青砖小道上，两边整整齐齐地排着两排杨柳，湖上总有几\n"
-"艘渔船正在打渔，渔夫们欢快地唱着歌，拖起一网活蹦乱跳的鱼儿。湖畔\n"
-"边上是一片片翠绿的草坪，上面几对夫妇正相依在那，低头吟语着，偶尔\n"
-"还传来一阵涩笑。\n"
+"浣犺蛋鍦ㄤ竴姊濋潚纾氬皬閬撲笂锛屽叐閭婃暣鏁撮綂榻婂湴鎺掕憲鍏╂帓妤婃煶锛屾箹涓婄附鏈夊咕\n"
+"鑹樻紒鑸规鍦ㄦ墦婕侊紝婕佸か鍊戞蹇湴鍞辫憲姝岋紝鎷栬捣涓�缍叉椿韫︿簜璺崇殑榄氬厭銆傛箹鐣擻n"
+"閭婁笂鏄竴鐗囩墖缈犵稜鐨勮崏鍧紝涓婇潰骞惧皪澶│姝ｇ浉渚濆湪閭ｏ紝浣庨牠鍚熻獮钁楋紝鍋剁埦\n"
+"閭勫偝渚嗕竴闄ｆ線绗戙�俓n"
 );
         set("outdoors", "playertown");
 //      set("no_clean_up", 0);

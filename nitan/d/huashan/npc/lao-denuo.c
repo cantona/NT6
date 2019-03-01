@@ -7,11 +7,11 @@ int permit_pass(object me, string dir);
 
 void create()
 {
-        set_name("ÀÍµÂÅµ", ({ "lao denuo","lao","denuo" }) );
-        set("nickname", "ÀÏºÃÈË");
-        set("gender", "ÄĞĞÔ");
+        set_name("å‹å¾·è«¾", ({ "lao denuo","lao","denuo" }) );
+        set("nickname", "è€å¥½äºº");
+        set("gender", "ç”·æ€§");
         set("age", 61);
-        set("long", "ÀÍµÂÅµÊÇÔÀ²»ÈºµÄ¶şµÜ×Ó¡£\n");
+        set("long", "å‹å¾·è«¾æ˜¯å²³ä¸ç¾¤çš„äºŒå¼Ÿå­ã€‚\n");
         set("attitude", "peaceful");
 
         set("str", 26);
@@ -62,7 +62,7 @@ void create()
                    "id"        : "yue buqun" ]),
         }));
 
-        create_family("»ªÉ½ÅÉ", 14, "µÜ×Ó");
+        create_family("è¯å±±æ´¾", 14, "å¼Ÿå­");
         setup();
 
         carry_object("/clone/weapon/changjian")->wield();
@@ -77,44 +77,44 @@ int permit_pass(object me, string dir)
         if (! living(this_object()))
                 return 1;
 
-        if( query("family/family_name", me) == "»ªÉ½½£×Ú" && 
+        if( query("family/family_name", me) == "è¯å±±åŠå®—" && 
             dir == "southup")
         {
                 if( query_temp("beg_huashan", me) )
                 {
-                        command("say »ØÍ·ÊÇ°¶£¬»ØÍ·ÊÇ°¶°¡£¡");
+                        command("say å›é ­æ˜¯å²¸ï¼Œå›é ­æ˜¯å²¸å•Šï¼");
                         return 1;
                 }
 
-                message_vision("$NÈ°µÀ£º¼ÒÊ¦ÓĞ½»´ú£¬½£×ÚØ¥ÎåÄê"
-                               "Ç°¾ÍÀë¿ª»ªÉ½ÁË£¬×ÔÈÏ²»ÊÇ»ªÉ½µÜ×ÓÁË¡£\n"
-                               "ÎÒËäÊÇÀÏºÃÈË£¬ÕâÎ»" + RANK_D->query_respect(me) +
-                               "»¹ÊÇÇë»Ø°É¡£\n", this_object());
+                message_vision("$Nå‹¸é“ï¼šå®¶å¸«æœ‰äº¤ä»£ï¼ŒåŠå®—å»¿äº”å¹´"
+                               "å‰å°±é›¢é–‹è¯å±±äº†ï¼Œè‡ªèªä¸æ˜¯è¯å±±å¼Ÿå­äº†ã€‚\n"
+                               "æˆ‘é›–æ˜¯è€å¥½äººï¼Œé€™ä½" + RANK_D->query_respect(me) +
+                               "é‚„æ˜¯è«‹å›å§ã€‚\n", this_object());
                 return -1;
         }
 
 
-        notify_fail("¿´À´" + name() + "²»´òËãÈÃÄã¹ıÈ¥¡£\n");
+        notify_fail("çœ‹ä¾†" + name() + "ä¸æ‰“ç®—è®“ä½ éå»ã€‚\n");
 
         inv = deep_inventory(me);
         for (i = 0; i < sizeof(inv); i++)
         {
                 if (! playerp(inv[i])) continue;
-                if( query("family/family_name", inv[i]) != "»ªÉ½ÅÉ" )
+                if( query("family/family_name", inv[i]) != "è¯å±±æ´¾" )
                 {
-                        message_vision("$N¶Ô$nºÈµÀ£ºÄã±³µÄÊÇË­£¿»¹²»¿ì¿ì·ÅÏÂ£¡\n",
+                        message_vision("$Nå°$nå–é“ï¼šä½ èƒŒçš„æ˜¯èª°ï¼Ÿé‚„ä¸å¿«å¿«æ”¾ä¸‹ï¼\n",
                                        this_object(), me);
                         return 0;
                 }
         }
 
         if( query("family/family_name", me) && 
-            query("family/family_name", me) != "»ªÉ½ÅÉ" || 
+            query("family/family_name", me) != "è¯å±±æ´¾" || 
             !query("family/family_name", me) && 
             query("combat_exp", me)>20000 )
         {
-                message_vision("$N¶Ô$nµÀ£º¶Ô²»Æğ£¬²»ÊÇÎÒÃÇ»ªÉ½ÅÉµÄÈË"
-                               "ÇëÎğÈë±¾ÅÉÖØµØ¡£\n", this_object(), me);
+                message_vision("$Nå°$né“ï¼šå°ä¸èµ·ï¼Œä¸æ˜¯æˆ‘å€‘è¯å±±æ´¾çš„äºº"
+                               "è«‹å‹¿å…¥æœ¬æ´¾é‡åœ°ã€‚\n", this_object(), me);
                 return 0;
         }
 
@@ -150,14 +150,14 @@ void relay_emote(object me, string verb)
                 return;
         }
 
-        if( query("family/family_name", me) != "»ªÉ½½£×Ú" )
+        if( query("family/family_name", me) != "è¯å±±åŠå®—" )
         {
                 command("poor"+query("id", me));
                 return;
         }
 
         command("sigh");
-        command("say ÕâÎ»" + RANK_D->query_respect(me) +
-                "£¡ÈëÁË½£×Ú£¬ºó»ÚÁË°É£¿²»Òª½ô£¬»ØÍ·ÊÇ°¶Âï£¡");
+        command("say é€™ä½" + RANK_D->query_respect(me) +
+                "ï¼å…¥äº†åŠå®—ï¼Œå¾Œæ‚”äº†å§ï¼Ÿä¸è¦ç·Šï¼Œå›é ­æ˜¯å²¸å˜›ï¼");
         set_temp("beg_huashan", 1, me);
 }

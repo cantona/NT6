@@ -6,19 +6,19 @@ inherit HEAD;
  
 void create()
 {
-        set_name(HIW "Ë®¾§¹Ú" NOR, ({ "shuijing guan", "shuijing", "guan" }) );
+        set_name(HIW "æ°´æ™¶å† " NOR, ({ "shuijing guan", "shuijing", "guan" }) );
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
                 set("material", "steel");
-                set("unit", "¶¥");
-                set("long", HIM "ÕâÊÇÒ»¶¥ÓÃË®¾§µñ×Á¶ø³ÉµÄÍ·¹Ú£¬ÊÖ¹¤¾«ÇÉÎŞ±È£¬ÈË¼äº±ÓĞ¡£\n" 
-                            HIC "Åå´øºó¿ÉÌá¸ßÑĞ¾¿¼°Ñ§Ï°´ÎÊıÉÏÏŞ10%¡£\n" NOR);
+                set("unit", "é ‚");
+                set("long", HIM "é€™æ˜¯ä¸€é ‚ç”¨æ°´æ™¶é›•ç¢è€Œæˆçš„é ­å† ï¼Œæ‰‹å·¥ç²¾å·§ç„¡æ¯”ï¼Œäººé–“ç½•æœ‰ã€‚\n" 
+                            HIC "ä½©å¸¶å¾Œå¯æé«˜ç ”ç©¶åŠå­¸ç¿’æ¬¡æ•¸ä¸Šé™10%ã€‚\n" NOR);
                 set("value", 3500000);
                 set("armor_prop/armor", 100);
                 set("armor_prop/yanjiu_times", 10);
-                set("special/desc", HIR "Åå´øºó¿ÉÌá¸ßÑĞ¾¿¼°Ñ§Ï°´ÎÊıÉÏÏŞ10%¡£" NOR);
+                set("special/desc", HIR "ä½©å¸¶å¾Œå¯æé«˜ç ”ç©¶åŠå­¸ç¿’æ¬¡æ•¸ä¸Šé™10%ã€‚" NOR);
                 set("require", ([
                         "int"             :  30,
                         "exp"             :  5000000,

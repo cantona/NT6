@@ -4,35 +4,35 @@
 #include <ansi.h>
 inherit NPC;
 
-string comeon = HIB"ÄãÍ»È»Ìýµ½Ò»ÉùÀ÷Ð¥£¬·Â·ð¸Ðµ½Ò»¸ö³¤·¢¹ÖÎïÒ»ÉÁ¶ø¹ý¡£\n"NOR; 
+string comeon = HIB"ä½ çªç„¶è½åˆ°ä¸€è²åŽ²å˜¯ï¼Œä»¿ä½›æ„Ÿåˆ°ä¸€å€‹é•·ç™¼æ€ªç‰©ä¸€é–ƒè€ŒéŽã€‚\n"NOR; 
 
 string *stya = ({ 
-HIB"$N¸Ðµ½³¤·¢´ÓÁ³ÉÏÉ¨¹ý£¬¶ÙÊ±Ò»Õó»ðÀ±À±µÄÌÛÍ´¡£\n"NOR, 
-HIB"$Nºö¾õ×ì´½±»½ô½ôÎü×¡£¬Ò»¹É"HIR"ÏÊÑª"HIB"´Ó¿ÚÄÚ¼±Ðº¶ø³ö¡£\n"NOR, 
-HIR"$nÕÅ¿ªÕýµÎ×ÅÑªµÄ´ó¿Ú£¬ÔÚ$NÉíÉÏÒ»ÕóÂÒÒ§¡£\n"NOR, 
-HIB"$NÍ»È»¾õµÃÉíÉÏ±»½ô½ô×¥×¡£¬´ó¾ªÊ§É«£¬Á¬Ã¦ºóÍËÊý²½¡£\n"NOR
+HIB"$Næ„Ÿåˆ°é•·ç™¼å¾žè‡‰ä¸ŠæŽƒéŽï¼Œé “æ™‚ä¸€é™£ç«è¾£è¾£çš„ç–¼ç—›ã€‚\n"NOR, 
+HIB"$Nå¿½è¦ºå˜´å”‡è¢«ç·Šç·Šå¸ä½ï¼Œä¸€è‚¡"HIR"é®®è¡€"HIB"å¾žå£å…§æ€¥ç€‰è€Œå‡ºã€‚\n"NOR, 
+HIR"$nå¼µé–‹æ­£æ»´è‘—è¡€çš„å¤§å£ï¼Œåœ¨$Nèº«ä¸Šä¸€é™£äº‚å’¬ã€‚\n"NOR, 
+HIB"$Nçªç„¶è¦ºå¾—èº«ä¸Šè¢«ç·Šç·ŠæŠ“ä½ï¼Œå¤§é©šå¤±è‰²ï¼Œé€£å¿™å¾Œé€€æ•¸æ­¥ã€‚\n"NOR
 }); 
 
 string *styb = ({ 
-HIC"$N¾ÙÆðÊÖÖÐµÄ"HIY"·ûÖ½"HIC"£¬¿´Çå$nÀ´ÊÆ£¬¼²ÅÄ¶ø³ö¡£\n"NOR,
-HIY"$N»Ó¶¯"HIM"ÌÒÄ¾½£"HIY"£¬»Ã»¯³öÎÞÊý½ð¹â½£Ó°£¬ÊÖÍóÒ»¶¶£¬Ïò$n´Ì³ö¡£\n"NOR
+HIC"$Nèˆ‰èµ·æ‰‹ä¸­çš„"HIY"ç¬¦ç´™"HIC"ï¼Œçœ‹æ¸…$nä¾†å‹¢ï¼Œç–¾æ‹è€Œå‡ºã€‚\n"NOR,
+HIY"$Næ®å‹•"HIM"æ¡ƒæœ¨åŠ"HIY"ï¼Œå¹»åŒ–å‡ºç„¡æ•¸é‡‘å…‰åŠå½±ï¼Œæ‰‹è…•ä¸€æŠ–ï¼Œå‘$nåˆºå‡ºã€‚\n"NOR
 });
 
 void check_time();
 
 void create()
 {
-    set_name("ÎüÑª¹í", ({ "leech ghost", "ghost" }));
-    set("gender", "Å®ÐÔ");
-    set("race", "ÑýÄ§");
+    set_name("å¸è¡€é¬¼", ({ "leech ghost", "ghost" }));
+    set("gender", "å¥³æ€§");
+    set("race", "å¦–é­”");
     set("age", 200);
     set("per", 25);
     set("long",
-        "Ò»ÖÖ×¨ÃÅÎüÊ³ÈËÑªµÄ¹í»ê¡£³£³£±ä³ÉÃÀÀöµÄÅ®×ÓÃÔ»ó¶àÇéµÄÄÐÈË£¬Îü¸ÉËûµÄÑª¡£\n");
+        "ä¸€ç¨®å°ˆé–€å¸é£Ÿäººè¡€çš„é¬¼é­‚ã€‚å¸¸å¸¸è®Šæˆç¾Žéº—çš„å¥³å­è¿·æƒ‘å¤šæƒ…çš„ç”·äººï¼Œå¸å¹¹ä»–çš„è¡€ã€‚\n");
     set("combat_exp", 100000);
     set("shen_type", -1);
     set("attitude", "peaceful");
-    set("limbs", ({ "ÑÀ³Ý", "ÊÖ×¦" }) );
+    set("limbs", ({ "ç‰™é½’", "æ‰‹çˆª" }) );
     set("verbs", ({ "bite", "claw" }) );
     set("env/invisible", 1);
     set("water", 200);

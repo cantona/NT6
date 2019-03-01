@@ -1,14 +1,14 @@
-// /d/playertown/road1.c ËéÊ¯Ð¡µÀ
+// /d/playertown/road1.c ç¢ŽçŸ³å°é“
 // Build 1999.12.10 bmw
 
 inherit BUILD_ROOM;
 
 void create()
 {
-        set("short","ËéÊ¯Ð¡µÀ");
+        set("short","ç¢ŽçŸ³å°é“");
         set("long",
-"ÕâÊÇÒ»ÌõËéÊ¯Ð¡µÀ¡£±±ÃæÊÇÈý²íµÀ£¬ÄÏÃæÑÓÉìÖÁ´åÍâµÄÐ¡Â·£¬¶øÔÚ¶«\n"
-"Ãæ£¬Ò»×ùÐ¡ÃíÒÙÁ¢ÔÚÄÇ£¬ÀïÃæ´«À´ÏçÇ×ÃÇµÄµ»¸æÉù¡£\n"
+"é€™æ˜¯ä¸€æ¢ç¢ŽçŸ³å°é“ã€‚åŒ—é¢æ˜¯ä¸‰å²”é“ï¼Œå—é¢å»¶ä¼¸è‡³æ‘å¤–çš„å°è·¯ï¼Œè€Œåœ¨æ±\n"
+"é¢ï¼Œä¸€åº§å°å»Ÿå±¹ç«‹åœ¨é‚£ï¼Œè£¡é¢å‚³ä¾†é„‰è¦ªå€‘çš„ç¦±å‘Šè²ã€‚\n"
 );
 
         set("recordable_room",1);

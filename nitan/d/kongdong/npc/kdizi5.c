@@ -3,12 +3,12 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÉÕ»ğĞ¡µÀÊ¿", ({ "shaohuo daoshi","daoshi" }) );
-        set("title","áÇá¼µÜ×Ó");
-        set("gender", "ÄĞĞÔ" );
+        set_name("ç‡’ç«å°é“å£«", ({ "shaohuo daoshi","daoshi" }) );
+        set("title","å´†å³’å¼Ÿå­");
+        set("gender", "ç”·æ€§" );
         set("class","taoist");
         set("age",16);
-	create_family("áÇá¼ÅÉ", 2, "µÜ×Ó");
+	create_family("å´†å³’æ´¾", 2, "å¼Ÿå­");
 	set_wugong("dahong-quan",60,60,1);
 	set_wugong("jiben-qinggong",60,60,1);
 	set_xiuwei("unarmed",250);
@@ -36,28 +36,28 @@ void init()
 void show_msg(object ob)
 {
         if(!ob||!present(ob,environment(this_object())))return;
-        say("Õâ¼¸¸öĞ¡µÀÊ¿ÕıÊÖÃ¦½ÅÂÒµØÒı»ğ×ö·¹£¬Ã»ÓĞ×¢Òâµ½Äã¡£\n");
+        say("é€™å¹¾å€‹å°é“å£«æ­£æ‰‹å¿™è…³äº‚åœ°å¼•ç«åšé£¯ï¼Œæ²’æœ‰æ³¨æ„åˆ°ä½ ã€‚\n");
 }
 int do_yao()
 {
     object who = this_player();
     object me = this_object();
 
-    if( who->query("family/family_name")!="áÇá¼ÅÉ" || query("food_apply") < 0 )
+    if( who->query("family/family_name")!="å´†å³’æ´¾" || query("food_apply") < 0 )
         {
-               message_vision("Ğ¡µÀÊ¿¶Ô×Å$NÒ¡ÁËÒ¡Í·Ëµ£ºÕâÎ»Ê©Ö÷£¬ÊµÔÚ¶Ô²»Æğ£¬\n"
-                        "Õ«·¹»¹Ã»ÓĞ×öºÃ£¬·³Çë¶àµÈÒ»»á¶ù¡£\n",who);  
+               message_vision("å°é“å£«å°è‘—$Næ–äº†æ–é ­èªªï¼šé€™ä½æ–½ä¸»ï¼Œå¯¦åœ¨å°ä¸èµ·ï¼Œ\n"
+                        "é½‹é£¯é‚„æ²’æœ‰åšå¥½ï¼Œç…©è«‹å¤šç­‰ä¸€æœƒå…’ã€‚\n",who);  
                return 1;
         }
     if ( (who->query("water") >= who->max_water_capacity()/2)
         &&(who->query("food") >= who->max_food_capacity()/2) ){
-        return notify_fail("Äã³ÔµÃ±¥±¥µÄ£¬ºÈµÃ×ã×ãÀ´ÕâÀïÌíÊ²Ã´ÂÒ£¿£¡\n");
+        return notify_fail("ä½ åƒå¾—é£½é£½çš„ï¼Œå–å¾—è¶³è¶³ä¾†é€™è£¡æ·»ä»€éº¼äº‚ï¼Ÿï¼\n");
         }
 
-    message_vision("$NÈà×Å¶Ç×Ó¿ÉÁ¯ÙâÙâµÃ¶Ô$nËµ£º\n"
-        "¡°Ğ¡Ê¦ĞÖ£¬»¹ÓĞÊ£·¹Âğ£¿ÊµÔÚÊÇ¶öµÃ²»ĞĞÁË¡£¡±\n\n",who,me);
-        printf("Ğ¡µÀÊ¿Ã¦Ëµ£ºÕâÎ»%s£¬·¹»¹Ã»ºÃ£¬ÎÒÏÈÕÒ¸øÄãµã¶«Î÷³ä¼¢°É¡£\n",
-                (who->query("gender")=="ÄĞĞÔ") ? "Ê¦ĞÖ" : "Ê¦½ã" );
+    message_vision("$Næ‰è‘—è‚šå­å¯æ†å…®å…®å¾—å°$nèªªï¼š\n"
+        "â€œå°å¸«å…„ï¼Œé‚„æœ‰å‰©é£¯å—ï¼Ÿå¯¦åœ¨æ˜¯é¤“å¾—ä¸è¡Œäº†ã€‚â€\n\n",who,me);
+        printf("å°é“å£«å¿™èªªï¼šé€™ä½%sï¼Œé£¯é‚„æ²’å¥½ï¼Œæˆ‘å…ˆæ‰¾çµ¦ä½ é»æ±è¥¿å……é¥‘å§ã€‚\n",
+                (who->query("gender")=="ç”·æ€§") ? "å¸«å…„" : "å¸«å§" );
     who->set("food" ,who->max_food_capacity());
     who->set("water",who->max_water_capacity());
 
@@ -68,18 +68,18 @@ int accept_object(object who, object ob)
 {
         if(ob->value() >= 1000)
         {
-                message_vision("Ğ¡µÀÊ¿³ÙÒÉµØ¿´×Å"+ob->name()+"£¬×ìÀïà½àì×Å£º\n"
-                "ÕâÔõÃ´ºÃÒâË¼ÄØ£¿\n",who);
-                message_vision("Ğ¡µÀÊ¿ÏëÁËÏë£¬´ÓÊ³³÷ÀïÄÃ¸ø$NÒ»¿éËØ±ıºÍÒ»¸öºù"
-                        "Â«£¬\nËµ£ºÒªÓĞÈËÎÊÆğ£¬Äã¿É±ğËµÊÇÎÒÄÃ¸øÄãµÄ¡£\n",who);
-                message_vision("Ğ¡µÀÊ¿×ª¹ıÉíÈ¥£¬¼ÌĞøÒı»ğ¡£\n",who);
+                message_vision("å°é“å£«é²ç–‘åœ°çœ‹è‘—"+ob->name()+"ï¼Œå˜´è£¡å˜Ÿå›”è‘—ï¼š\n"
+                "é€™æ€éº¼å¥½æ„æ€å‘¢ï¼Ÿ\n",who);
+                message_vision("å°é“å£«æƒ³äº†æƒ³ï¼Œå¾é£Ÿæ«¥è£¡æ‹¿çµ¦$Nä¸€å¡Šç´ é¤…å’Œä¸€å€‹è‘«"
+                        "è˜†ï¼Œ\nèªªï¼šè¦æœ‰äººå•èµ·ï¼Œä½ å¯åˆ¥èªªæ˜¯æˆ‘æ‹¿çµ¦ä½ çš„ã€‚\n",who);
+                message_vision("å°é“å£«è½‰éèº«å»ï¼Œç¹¼çºŒå¼•ç«ã€‚\n",who);
                 new(__DIR__"obj/subing")->move(who);
                 new(__DIR__"obj/hulu")->move(who);
                 return 1;
         }
         else 
         {
-                message_vision("Ğ¡µÀÊ¿Ò¡Ò¡Í·£ºÊ¦¸µËµ¹ı£¬²»ÄÜËæ±ãÒª±ğÈËµÄ¶«Î÷¡£\n",who);
+                message_vision("å°é“å£«æ–æ–é ­ï¼šå¸«å‚…èªªéï¼Œä¸èƒ½éš¨ä¾¿è¦åˆ¥äººçš„æ±è¥¿ã€‚\n",who);
                 return 0;
         }
 }

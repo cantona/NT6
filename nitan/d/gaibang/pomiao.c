@@ -5,13 +5,13 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÍÁµØÃí");
+        set("short", "åœŸåœ°å»Ÿ");
         set("long", @LONG
-ÕâÊÇÒ»¼äÆÆÆÆÀÃÀÃµÄÍÁµØÃí£¬ÃíÀïÆÆ°Ü²»¿°£¬ÍÁµØÉñÏñÍÆÔÚÒ»ÅÔ£¬
-ÁºÉÏµØÏÂÒ²²¼ÂúÁË»Ò³¾¡£Ò»¿´¾ÍÖªµÀÒÑ¾­ºÜ¾ÃÃ»ÓĞÈËÀ´ÇåÀí¹ıÁË¡£ÕıÖĞ
-·Å×Å¸ö´óÏã°¸£¬ÉÏÃæÁãÂÒµØÈÓ×Å¼¸¸ù³ÔÊ£ÏÂÀ´µÄ¼¦¹ÇÍ·¡£Ò²ĞíÕıÊÇÒòÎª
-Òş±ÎµÄÔ­Òò°É£¬¾İËµØ¤°ï½­ÄÏ·Ö¶æ¾Í±»ÉèÔÚ´Ë´¦¡£Ïã°¸ºÚ¶´¶´µÄ£¬ºÃÏó
-ÏÂ±ßÓĞ¸ö´ó¶´(dong)¡£
+é€™æ˜¯ä¸€é–“ç ´ç ´çˆ›çˆ›çš„åœŸåœ°å»Ÿï¼Œå»Ÿè£¡ç ´æ•—ä¸å ªï¼ŒåœŸåœ°ç¥åƒæ¨åœ¨ä¸€æ—ï¼Œ
+æ¨‘ä¸Šåœ°ä¸‹ä¹Ÿå¸ƒæ»¿äº†ç°å¡µã€‚ä¸€çœ‹å°±çŸ¥é“å·²ç¶“å¾ˆä¹…æ²’æœ‰äººä¾†æ¸…ç†éäº†ã€‚æ­£ä¸­
+æ”¾è‘—å€‹å¤§é¦™æ¡ˆï¼Œä¸Šé¢é›¶äº‚åœ°æ‰”è‘—å¹¾æ ¹åƒå‰©ä¸‹ä¾†çš„é›éª¨é ­ã€‚ä¹Ÿè¨±æ­£æ˜¯å› ç‚º
+éš±è”½çš„åŸå› å§ï¼Œæ“šèªªä¸å¹«æ±Ÿå—åˆ†èˆµå°±è¢«è¨­åœ¨æ­¤è™•ã€‚é¦™æ¡ˆé»‘æ´æ´çš„ï¼Œå¥½è±¡
+ä¸‹é‚Šæœ‰å€‹å¤§æ´(dong)ã€‚
 LONG );
         set("region", "yz_zone");
         set("valid_startroom", 1);
@@ -26,7 +26,7 @@ LONG );
                 CLASS_D("gaibang") + "/lu" : 1,
                 CLASS_D("gaibang") + "/peng" : 1,
         ]));
-        create_door("enter", "Ğ¡ÃÅ", "out", DOOR_CLOSED);
+        create_door("enter", "å°é–€", "out", DOOR_CLOSED);
         set("coor/x", 70);
         set("coor/y", 60);
         set("coor/z", 0);
@@ -51,19 +51,19 @@ int do_enter(string arg)
 
         if( arg=="dong" )
         {
-                if( (fam=query("family", me)) && fam["family_name"] == "Ø¤°ï" )
+                if( (fam=query("family", me)) && fam["family_name"] == "ä¸å¹«" )
                 {
                         message("vision",
-                                me->name() + "ÔËÆğØ¤°ïËõ¹Ç¹¦£¬Ò»ÍäÑüÍùÏã°¸ÏÂµÄ¶´Àï×êÁË½øÈ¥¡£\n",
+                                me->name() + "é‹èµ·ä¸å¹«ç¸®éª¨åŠŸï¼Œä¸€å½è…°å¾€é¦™æ¡ˆä¸‹çš„æ´è£¡é‘½äº†é€²å»ã€‚\n",
                                 environment(me), ({me}) );
                         me->move("/d/gaibang/undergb");
                         message("vision",
-                                me->name() + "´Ó¶´Àï×ßÁË½øÀ´¡£\n",
+                                me->name() + "å¾æ´è£¡èµ°äº†é€²ä¾†ã€‚\n",
                                 environment(me), ({me}) );
                         return 1;
                 }
                 else
-                        return notify_fail("ÕâÃ´Ğ¡µÄ¶´£¬Äã×êµÃ½øÈ¥Âğ£¿\n");
+                        return notify_fail("é€™éº¼å°çš„æ´ï¼Œä½ é‘½å¾—é€²å»å—ï¼Ÿ\n");
         }
 }
 
@@ -73,10 +73,10 @@ int valid_leave(object me, string dir)
         object lu;
         myfam=query("family", me);
 
-        if ((!myfam || myfam["family_name"] != "Ø¤°ï") &&
+        if ((!myfam || myfam["family_name"] != "ä¸å¹«") &&
             (dir == "west" || dir == "east") &&
                 objectp(lu = present("lu youjiao", environment(me))) && living(lu))
-           return notify_fail("Â³ÓĞ½ÅÀ¹×¡ÄãËµ£º´Ë´¦ÄË±¾°ï½ûµØ£¬ÇëÖ¹²½¡£\n");
+           return notify_fail("é­¯æœ‰è…³æ””ä½ä½ èªªï¼šæ­¤è™•ä¹ƒæœ¬å¹«ç¦åœ°ï¼Œè«‹æ­¢æ­¥ã€‚\n");
 
         return ::valid_leave(me, dir);
 }

@@ -2,13 +2,13 @@
 
 void create()
 {
-        set_name(YEL "²õÍÉ" NOR, ({"chan tui"}));
+        set_name(YEL "èŸ¬è›»" NOR, ({"chan tui"}));
         if (clonep())
                 set_default_object(__FILE__);
         else 
         {
-                set("long", "²õÍÉ£º²õÓÉÓ×³æÍÉ±äÖÁ³É³æËùÒÅµÄ¿Ç£¬ÓĞÈ¥·çÊªµÄĞ§¹û¡£\n");
-                set("base_unit", "¸ö");
+                set("long", "èŸ¬è›»ï¼šèŸ¬ç”±å¹¼èŸ²è›»è®Šè‡³æˆèŸ²æ‰€éºçš„æ®¼ï¼Œæœ‰å»é¢¨æ¿•çš„æ•ˆæœã€‚\n");
+                set("base_unit", "å€‹");
                 set("base_value", 4000);
                 set("base_weight", 60);
                 set("cure_s", 3);

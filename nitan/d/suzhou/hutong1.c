@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��ͬ");
+        set("short", "胡同");
         set("long", @LONG
-����һ���ڰ��������С������з·�Ʈ����һ��������Ϣ��
-������ͨ��С��������˾��ӵ�Ȼ�ǲ������Ǳ���ȥ�ġ������߾ͻ�
-�ص����д�·�ˡ�
+這是一條黑暗、骯臟的小巷，空氣中仿佛飄揚著一股罪惡的氣息，
+東北邊通向小巷深處，正人君子當然是不會往那邊走去的。往南走就會
+回到城中大路了。
 LONG );
         set("outdoors", "suzhou");
         set("no_clean_up", 0);

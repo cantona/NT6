@@ -5,15 +5,15 @@ inherit ITEM;
 
 void create()
 {
-        set_name("Ãæ¾ß", ({ "mian ju", "mask" }) );
+        set_name("é¢å…·", ({ "mian ju", "mask" }) );
         set_weight(3000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
-                set("long", "ÕâËÆºõÊÇÒ»¸öÓÉÈËÆ¤ÖÆ³ÉµÄÃæ¾ß¡£\n");
-                set("no_drop", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
-                set("no_get", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄÇ¶ù¡£\n");
+                set("unit", "å€‹");
+                set("long", "é€™ä¼¼ä¹Žæ˜¯ä¸€å€‹ç”±äººçš®åˆ¶æˆçš„é¢å…·ã€‚\n");
+                set("no_drop", "é€™æ¨£æ±è¥¿ä¸èƒ½é›¢é–‹ä½ ã€‚\n");
+                set("no_get", "é€™æ¨£æ±è¥¿ä¸èƒ½é›¢é–‹é‚£å…’ã€‚\n");
         }
         setup();
 }
@@ -27,20 +27,20 @@ int do_pretend(string arg)
 {
         object who;
         if (!arg)
-                return notify_fail("ÄãÏë¼Ù×°Ë­£¿\n");
+                return notify_fail("ä½ æƒ³å‡è£èª°ï¼Ÿ\n");
         if (arg == "none" || arg == "cancel") {
                 delete_temp("apply/name", this_player());
 //                this_player()->delete_temp("apply/id");
                 delete_temp("apply/short", this_player());
                 delete_temp("apply/long", this_player());
-                message_vision("$N´ÓÁ³ÉÏÈ¡ÏÂÁËÒ»¸öÈËÆ¤Ãæ¾ß¡£\n", this_player());
+                message_vision("$Nå¾žè‡‰ä¸Šå–ä¸‹äº†ä¸€å€‹äººçš®é¢å…·ã€‚\n", this_player());
                 return 1;
         }
         if(!objectp(who = present(arg, environment(this_player()))) || 
                 !living(who))
-                return notify_fail("ÄãÏë¼Ù×°Ë­£¿\n");
-        write("Äã¿ªÊ¹¼Ù×°" + who->name() + "¡£\n");
-//        message_vision("$N´÷ÉÏÁËÒ»¸ö¾«¹¦ÖÆ³ÉµÄÈËÆ¤Ãæ¾ß¡£\n", this_player());
+                return notify_fail("ä½ æƒ³å‡è£èª°ï¼Ÿ\n");
+        write("ä½ é–‹ä½¿å‡è£" + who->name() + "ã€‚\n");
+//        message_vision("$Næˆ´ä¸Šäº†ä¸€å€‹ç²¾åŠŸåˆ¶æˆçš„äººçš®é¢å…·ã€‚\n", this_player());
         set_temp("apply/name", ({who->name()}), this_player());
 //        this_player()->set_temp("apply/id", ({who->id()}));
         set_temp("apply/short", ({who->short()}), this_player());

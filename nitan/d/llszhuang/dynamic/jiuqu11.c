@@ -2,11 +2,11 @@
 inherit ROOM;
 void create()
 {
-        set("short", "ÆßÇú¾Å»ØÀÈ");
+        set("short", "ä¸ƒæ›²ä¹å›å»Š");
         set("long",
-"ÕâÀïÊÇÆß¡¢°ËÊ®µÀ³¤ÀÈ£¬Ïà»¥½ÓÁ¬£¬Á¬Ãà²»¾ø£¬Ö±ÊÇÎŞÇîÎŞ¾¡¡£Ã¿¸ö\n"
-"³¤ÀÈ×ªÍä´¦¶¼ÓĞÒ»ÕµÍğÈç¹í»ğ°ãÒ¡»Î²»¶¨µÄ»ÆµÆ¡£ÀÈ±ßµÄÌ¶Ë®ÔÚµÆ¹âÕÕÉä\n"
-"ÏÂ·¢³öÄ«ÂÌµÄÒì¹â¡£\n"
+"é€™è£¡æ˜¯ä¸ƒã€å…«åé“é•·å»Šï¼Œç›¸äº’æ¥é€£ï¼Œé€£ç¶¿ä¸çµ•ï¼Œç›´æ˜¯ç„¡çª®ç„¡ç›¡ã€‚æ¯å€‹\n"
+"é•·å»Šè½‰å½è™•éƒ½æœ‰ä¸€ç›å®›å¦‚é¬¼ç«èˆ¬æ–æ™ƒä¸å®šçš„é»ƒç‡ˆã€‚å»Šé‚Šçš„æ½­æ°´åœ¨ç‡ˆå…‰ç…§å°„\n"
+"ä¸‹ç™¼å‡ºå¢¨ç¶ çš„ç•°å…‰ã€‚\n"
 );
         set("no_magic", "1");
         setup();
@@ -14,12 +14,12 @@ void create()
 int valid_leave(object me, string dir)
 {
      if( random(query("kar", me))<15 )
-message_vision(GRN"¡°¶£¡±µÄÒ»ÉùÇáÏì...Ò»ÅîÅ£Ã«Ï¸ÕëÏò$NÉäÀ´¡£\n"NOR,me);
+message_vision(GRN"â€œå®â€çš„ä¸€è²è¼•éŸ¿...ä¸€è“¬ç‰›æ¯›ç´°é‡å‘$Nå°„ä¾†ã€‚\n"NOR,me);
      if(random(me->query_skill("dodge") / 100) > 10 ) {
-     message_vision(RED"Ö»Ìı$NÒ»Éù²Òº¿£¬Ï¸ÕëÉîÉîµØ¶¤ÔÚÁË$NµÄÉíÉÏ£¡\n"NOR,me);
+     message_vision(RED"åªè½$Nä¸€è²æ…˜åšï¼Œç´°é‡æ·±æ·±åœ°é‡˜åœ¨äº†$Nçš„èº«ä¸Šï¼\n"NOR,me);
      me->receive_wound("qi",random(me->query_skill("dodge") / 10));
      }
      else
-     message_vision(GRN"$NÇáËÉµÄ¶ãÁË¿ªÈ¥¡£\n"NOR,me);
+     message_vision(GRN"$Nè¼•é¬†çš„èº²äº†é–‹å»ã€‚\n"NOR,me);
      return ::valid_leave(me, dir);
 }

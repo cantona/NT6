@@ -6,12 +6,12 @@
 inherit ROOM;
 void create()
 {
-        set("short", "�ʹ��㳡");
+        set("short", "皇宮廣場");
         set("long", @LONG
-�����ǻʹ���Ĺ㳡���м���һ����������ʯ��·��·��������
-������������ʿ��ʮ��һ�ڣ��岽һ�ڣ������ֳֳ�ǹ��ꪣ��˵���
-�ƷǷ������ĵľ����ɴ˿ɼ�һ�ߡ��ϱ��ǻʹ����ţ������������
-�����ſ������ڴ�ͭ�ף���������ˮ��
+這裡是皇宮裡的廣場，中間是一條寬闊的青石板路，路的兩邊是
+鎧甲鮮明的武士，十步一崗，五步一哨，個個手持長槍大戟，端的氣
+勢非凡，西夏的軍力由此可見一斑。南邊是皇宮正門，北面就是議事
+大殿。殿門口有兩口大銅缸，儲滿了清水。
 LONG );
         set("exits", ([
                 "north" : __DIR__"ysdian",
@@ -21,7 +21,7 @@ LONG );
                 __DIR__"npc/gongweishi": 2,
         ]));
         set("outdoors", "xixiagong");
-        create_door("south" , "���Ṭ��", "north" , DOOR_CLOSED);
+        create_door("south" , "紅漆宮門", "north" , DOOR_CLOSED);
         set("coor/x", -6265);
         set("coor/y", 2955);
         set("coor/z", 0);

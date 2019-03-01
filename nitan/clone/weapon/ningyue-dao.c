@@ -4,16 +4,16 @@ inherit BLADE;
 
 void create()
 {
-        set_name(NOR + WHT "ÄıÔÂµ¶" NOR, ({ "ningyue dao", "ningyue", "dao", "blade" }));
+        set_name(NOR + WHT "å‡æœˆåˆ€" NOR, ({ "ningyue dao", "ningyue", "dao", "blade" }));
         set_weight(500);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
-                set("long", NOR + WHT "ÕâÊÇÒ»±úÁÁ»Î»ÎµÄ±¦µ¶£¬ÔÚÔÂ¹âÏÂÏÔµÃ¸ñÍâÒ«ÑÛ¡£\n" NOR);
+                set("unit", "æŸ„");
+                set("long", NOR + WHT "é€™æ˜¯ä¸€æŸ„äº®æ™ƒæ™ƒçš„å¯¶åˆ€ï¼Œåœ¨æœˆå…‰ä¸‹é¡¯å¾—æ ¼å¤–è€€çœ¼ã€‚\n" NOR);
                 set("material", "steel");
-                set("wield_msg", "$N¡¸à§¡¹µÄÒ»Éù³é³öÒ»±ú$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²å»Øµ¶ÇÊ¡£\n");
+                set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€è²æŠ½å‡ºä¸€æŸ„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°‡æ‰‹ä¸­çš„$næ’å›åˆ€é˜ã€‚\n");
                 set("value", 100000);
         }
         init_blade(300);

@@ -4,10 +4,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÊÌÕß", ({ "waiter","zhe"}) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("ä¾è€…", ({ "waiter","zhe"}) );
+        set("gender", "ç”·æ€§" );
         set("age", 14);
-        set("long", "Ò»¸öÉí×Å»ÆÒÂµÄºº×Ó¡£\n");
+        set("long", "ä¸€å€‹èº«è‘—é»ƒè¡£çš„æ¼¢å­ã€‚\n");
         set("shen_type", 1);
         set("combat_exp", 3000);
         set("str", 20);
@@ -15,7 +15,7 @@ void create()
         set("con", 20);
         set("int", 25);
         set("attitude", "friendly");
-        create_family("ÏÀ¿Íµº", 2, "µÜ×Ó");
+        create_family("ä¿ å®¢å³¶", 2, "å¼Ÿå­");
         setup();
         carry_object("/clone/misc/cloth")->wear();
 }

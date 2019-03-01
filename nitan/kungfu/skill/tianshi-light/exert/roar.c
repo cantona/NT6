@@ -1,4 +1,4 @@
-// roar.c ÃÎ»ÃÔ²ÎèÇú
+// roar.c å¤¢å¹»åœ“èˆæ›²
 #include <ansi.h>
 inherit F_CLEAN_UP;
 int exert(object me, object target)
@@ -8,7 +8,7 @@ int exert(object me, object target)
     if ( !wizardp(me)) return 0 ;
     skill = me->query_skill("force");
     message_vision(
-        HIY "$NÆøÄıµ¤Ìï£¬ÔË¼¯È«ÉíÄÚÁ¦Ò÷³öÒ»Çú¡¸ÃÎ»ÃÔ²ÎèÇú¡¹£¡\n" NOR, me);
+        HIY "$Næ°£å‡ä¸¹ç”°ï¼Œé‹é›†å…¨èº«å…§åŠ›åŸå‡ºä¸€æ›²ã€Œå¤¢å¹»åœ“èˆæ›²ã€ï¼\n" NOR, me);
     ob = all_inventory(environment(me));
     for(i=0; i<sizeof(ob); i++) {
         if( !living(ob[i]) || ob[i]==me ) continue;
@@ -20,7 +20,7 @@ int exert(object me, object target)
             ob[i]->receive_damage("jing", damage * 2 );
             if( query("neili", ob[i])<skill*2 )
                 ob[i]->receive_wound("jing", damage);
-            tell_object(ob[i], "ÄãÖ»¾õµÃÑÛÇ°Ò»Æ¬Ä£ºı£¬ëüëÊÖĞ......\n");
+            tell_object(ob[i], "ä½ åªè¦ºå¾—çœ¼å‰ä¸€ç‰‡æ¨¡ç³Šï¼Œæœ¦æœ§ä¸­......\n");
         }       
         if( !ob[i]->is_killing(me) ) ob[i]->kill_ob(me);
         if( !me->is_killing(ob[i]) ) me->fight_ob(ob[i]);

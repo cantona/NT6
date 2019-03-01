@@ -1,4 +1,4 @@
-// ding.c È«Õæ½£-¶¨ÑôÕë
+// ding.c å…¨çœŸåŠ-å®šé™½é‡
 
 #include <ansi.h>
 
@@ -13,23 +13,23 @@ int perform(object me, object target)
         if( !target ) target = offensive_target(me);
 
         if( !target || !target->is_character() || !me->is_fighting(target) )
-                return notify_fail("¿ñ²İÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ç‹‚è‰åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me) )
          || query("skill_type", weapon) != "dagger" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ã€‚\n");
 
         if( (int)me->query_skill("shigu-bifa", 1) < 140 )
-                return notify_fail("ÄãµÄÊ¯¹Ä´òÑ¨±Ê·¨²»¹»æµÊì£¬²»ÄÜÊ¹ÓÃ¿ñ²İ¡£\n");
+                return notify_fail("ä½ çš„çŸ³é¼“æ‰“ç©´ç­†æ³•ä¸å¤ å«»ç†Ÿï¼Œä¸èƒ½ä½¿ç”¨ç‹‚è‰ã€‚\n");
 
         if( (int)me->query_skill("wuzheng-xinfa", 1) < 140 )
-                     return notify_fail("ÄãµÄ±¾ÃÅÄÚ¹¦²»¹»æµÊì£¬²»ÄÜÊ¹ÓÃ¿ñ²İ¡£\n");
+                     return notify_fail("ä½ çš„æœ¬é–€å…§åŠŸä¸å¤ å«»ç†Ÿï¼Œä¸èƒ½ä½¿ç”¨ç‹‚è‰ã€‚\n");
 
         if( query("neili",1, me)<950 )
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ£¬²»ÄÜÊ¹ÓÃ¿ñ²İ¡£\n");
+                return notify_fail("ä½ ç¾åœ¨å…§åŠ›å¤ªå¼±ï¼Œä¸èƒ½ä½¿ç”¨ç‹‚è‰ã€‚\n");
         
        
-        msg = HIM "$NÊ¹³ö¡¶Åá½«¾üÊ«¡·±Ê·¨£¬¿ÚÖĞÄîµÀ£º£º¡°Åá½«¾ü£¡´ó¾ıÖÆÁùºÏ£¬ÃÍ½«Çå¾ÅÛò¡£Õ½ÂíÈôÁú»¢£¬ÌÚÁêºÎ×³ÔÕ£¡¡±¡£\n"NOR;
+        msg = HIM "$Nä½¿å‡ºã€Šè£´å°‡è»è©©ã€‹ç­†æ³•ï¼Œå£ä¸­å¿µé“ï¼šï¼šâ€œè£´å°‡è»ï¼å¤§å›åˆ¶å…­åˆï¼ŒçŒ›å°‡æ¸…ä¹å“ã€‚æˆ°é¦¬è‹¥é¾è™ï¼Œé¨°é™µä½•å£¯å“‰ï¼â€ã€‚\n"NOR;
 
         //if( !target->is_killing(me) ) target->kill_ob(me);
 
@@ -38,7 +38,7 @@ int perform(object me, object target)
                 me->start_busy(1);
 
                 damage = (int)me->query_skill("dagger", 1) + (int)me->query_skill("force",1);
-                //(È«Õæ½£·¨¼¶±ğ+»ù±¾ÄÚ¹¦)
+                //(å…¨çœŸåŠæ³•ç´šåˆ¥+åŸºæœ¬å…§åŠŸ)
 
                 damage = damage/2 + random(damage/2);
 
@@ -49,16 +49,16 @@ int perform(object me, object target)
               if(me->query_skill("shigu-bifa", 1) > 160)
                 call_out("perform2", time+3, me, target);    
 
-                msg += HIR"$n²»Öª$NĞ´µÄÊÇÊ²Ã´£¬±»¹¥ÁË¸ö´ëÊÖ²»¼°£¡\n"NOR;me->start_perform( 8+random(3), "¡¸¿ñ²İ¡¹");
+                msg += HIR"$nä¸çŸ¥$Nå¯«çš„æ˜¯ä»€éº¼ï¼Œè¢«æ”»äº†å€‹æªæ‰‹ä¸åŠï¼\n"NOR;me->start_perform( 8+random(3), "ã€Œç‹‚è‰ã€");
 
         }
         else
         {
                 me->start_busy(3);
-                msg += BGRN"$NÕâÂ·¿ñ²İÃ¿Ò»ÕĞÖ»Ê¹³ö°ëÕĞ,Á¢¿Ì±»$n·â×¡¡£\n"NOR;
+                msg += BGRN"$Né€™è·¯ç‹‚è‰æ¯ä¸€æ‹›åªä½¿å‡ºåŠæ‹›,ç«‹åˆ»è¢«$nå°ä½ã€‚\n"NOR;
         }
         message_vision(msg, me, target);
-        me->start_perform(5,"¡¸¿ñ²İ¡¹");
+        me->start_perform(5,"ã€Œç‹‚è‰ã€");
         return 1;
 }
 int perform2(object me, object target)
@@ -70,14 +70,14 @@ int perform2(object me, object target)
     weapon=query_temp("weapon", me);
               
         if(!living(target)) 
-          return notify_fail("¶ÔÊÖÒÑ¾­²»ÄÜÔÙÕ½¶·ÁË¡£\n");
+          return notify_fail("å°æ‰‹å·²ç¶“ä¸èƒ½å†æˆ°é¬¥äº†ã€‚\n");
 
         if( query("neili",1, me)<300 )
-                return notify_fail("Äã´ıÒªÔÙ³öµÚ¶ş»÷£¬È´·¢ÏÖ×Ô¼ºµÄÄÚÁ¦²»¹»ÁË£¡\n");     
+                return notify_fail("ä½ å¾…è¦å†å‡ºç¬¬äºŒæ“Šï¼Œå»ç™¼ç¾è‡ªå·±çš„å…§åŠ›ä¸å¤ äº†ï¼\n");     
 
         if( !objectp(weapon=query_temp("weapon", me)) || query("skill_type", weapon) != "dagger" )
-    return notify_fail("ÄãÏÖÔÚÃ»ÓĞÊ¹½££¬ÎŞ·¨½øÒ»²½¹¥»÷¡£\n");
-             msg = HIY+BRED "$N´óºÈÒ»Éù£¬±Ê·¨µÇ±ä£¬²»ÔÙÈçÊÊ²ÅÄÇÃ´í§ËÁÁ÷¶¯£¬¶øÊÇ¾¢¹áÖĞ·æ£¬±ÊÖÂÄıÖØ£¬µ«·æÃ¢½Ç³ö£¬½£°ÎåóÕÅ£¬´óÓĞÀÚÂä²¨íİÒâÌ¬£¡\n" NOR;
+    return notify_fail("ä½ ç¾åœ¨æ²’æœ‰ä½¿åŠï¼Œç„¡æ³•é€²ä¸€æ­¥æ”»æ“Šã€‚\n");
+             msg = HIY+BRED "$Nå¤§å–ä¸€è²ï¼Œç­†æ³•ç™»è®Šï¼Œä¸å†å¦‚é©æ‰é‚£éº¼æ£è‚†æµå‹•ï¼Œè€Œæ˜¯å‹è²«ä¸­é‹’ï¼Œç­†è‡´å‡é‡ï¼Œä½†é‹’èŠ’è§’å‡ºï¼ŒåŠæ‹”å¼©å¼µï¼Œå¤§æœ‰ç£Šè½æ³¢ç£”æ„æ…‹ï¼\n" NOR;
         
         message_vision(msg, me,target);
         me->clean_up_enemy();
@@ -87,7 +87,7 @@ int perform2(object me, object target)
         addn("neili", -100, me);
     time= 1+((int)me->query_skill("dagger",1)/50);
         if(me->query_skill("shigu-bifa", 1) > 180)
-               call_out("perform3", time, me, target);    me->start_perform(5,"¡¸¿ñ²İ¡¹");  
+               call_out("perform3", time, me, target);    me->start_perform(5,"ã€Œç‹‚è‰ã€");  
         return 1;
 }
 
@@ -101,16 +101,16 @@ int perform3(object me, object target)
     weapon=query_temp("weapon", me);
               
         if(!living(target)) 
-          return notify_fail("¶ÔÊÖÒÑ¾­²»ÄÜÔÙÕ½¶·ÁË¡£\n");
+          return notify_fail("å°æ‰‹å·²ç¶“ä¸èƒ½å†æˆ°é¬¥äº†ã€‚\n");
 
         if( query("neili",1, me)<400 )
-                return notify_fail("Äã´ıÒªÔÙ³öµÚÈı»÷£¬È´·¢ÏÖ×Ô¼ºµÄÄÚÁ¦²»¹»ÁË£¡\n");     
+                return notify_fail("ä½ å¾…è¦å†å‡ºç¬¬ä¸‰æ“Šï¼Œå»ç™¼ç¾è‡ªå·±çš„å…§åŠ›ä¸å¤ äº†ï¼\n");     
 
         if( !objectp(weapon=query_temp("weapon", me)) || query("skill_type", weapon) != "dagger" )
-    return notify_fail("ÄãÏÖÔÚÃ»ÓĞÊ¹½££¬ÎŞ·¨½øÒ»²½¹¥»÷¡£\n");
+    return notify_fail("ä½ ç¾åœ¨æ²’æœ‰ä½¿åŠï¼Œç„¡æ³•é€²ä¸€æ­¥æ”»æ“Šã€‚\n");
         addn("neili", -300, me);
         addn("jingli", -100, me);
-        message_vision(HBBLU "\n$N±Ê·¨ÓÖ±ä£¬´óÊé¡¶»³ËØ×ÔĞğÌû¡·ÖĞµÄ²İÊé£¬×İºáÆ®ºö£¬Á÷×ªÎŞ·½£¬²İÖĞ¼Ó²İ,¾¢Á¦³äÅæ£¬ÁîÈËÑÛ»¨çÔÂÒ£¡\n" NOR,me, target);
+        message_vision(HBBLU "\n$Nç­†æ³•åˆè®Šï¼Œå¤§æ›¸ã€Šæ‡·ç´ è‡ªæ•˜å¸–ã€‹ä¸­çš„è‰æ›¸ï¼Œç¸±æ©«é£„å¿½ï¼Œæµè½‰ç„¡æ–¹ï¼Œè‰ä¸­åŠ è‰,å‹åŠ›å……æ²›ï¼Œä»¤äººçœ¼èŠ±ç¹šäº‚ï¼\n" NOR,me, target);
 
         addn_temp("apply/damage", 50, me);
         COMBAT_D->do_attack(me,target,query_temp("weapon", me),1);
@@ -124,7 +124,7 @@ int perform3(object me, object target)
         i = (int)me->query_skill("dagger")/30;
         if( 15 - i <= 4) i = 4;
         call_out("remove_effect", i, me);
-         me->start_perform(5,"¡¸¿ñ²İ¡¹");
+         me->start_perform(5,"ã€Œç‹‚è‰ã€");
         
         return 1;
 }

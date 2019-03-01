@@ -4,10 +4,10 @@
 inherit ROOM;
 void create()
 {
-        set("short", "����ŵ�");
+        set("short", "三彎九倒");
         set("long", @LONG
-ɽ��Խ��Խ���ͣ�ʯ�ݼ����������չ�����ͤ��ԶԶ�������
-ɽ�ۣ���̨ɽ֮���ķ������ߣ����幬���ˡ�
+山勢越來越陡峭，石梯幾近壁立，拐過觀日亭，遠遠看到青城
+山巔，高台山之陽的飛檐流瓦，上清宮到了。
 LONG );
         set("outdoors","qingcheng");
         set("exits", ([

@@ -5,14 +5,14 @@ inherit NPC;
 #include <ansi.h>;
 void create()
 {
-        set_name("Å¬¶ùº£", ({ "nu erhai", "nu" }));
-        set("title", HIM"Î÷ÏÄÒ»Æ·ÌÃ"HIG"½ÓÒıÊ¹"NOR);
-        set("gender", "ÄĞĞÔ");
+        set_name("åŠªå…’æµ·", ({ "nu erhai", "nu" }));
+        set("title", HIM"è¥¿å¤ä¸€å“å ‚"HIG"æ¥å¼•ä½¿"NOR);
+        set("gender", "ç”·æ€§");
         set("age", random(10) + 20);
         set("str", 25);
         set("dex", 16);
         set("per", 13);
-        set("long", "Ò»¸öÉíĞÎ¼«¸ß¡¢±Ç×Ó¼«´ó£¬ÉùÒôÒõÑô¹ÖÆøµÄºº×Ó¡£\n");
+        set("long", "ä¸€å€‹èº«å½¢æ¥µé«˜ã€é¼»å­æ¥µå¤§ï¼Œè²éŸ³é™°é™½æ€ªæ°£çš„æ¼¢å­ã€‚\n");
 
         set("combat_exp", 100000);
         set("shen_type", 1);
@@ -50,7 +50,7 @@ void init()
 
 string ask_me()
 {
-        return "³ÏÕĞÌìÏÂºÀ½Ü¡£ÄãÏë¼ÓÈëÎÒÒ»Æ·ÌÃ(join yipintang)Âğ£¿";
+        return "èª æ‹›å¤©ä¸‹è±ªå‚‘ã€‚ä½ æƒ³åŠ å…¥æˆ‘ä¸€å“å ‚(join yipintang)å—ï¼Ÿ";
 }
 
 int do_join(string arg)
@@ -60,13 +60,13 @@ int do_join(string arg)
 
         ob = this_player () ;
         if( !arg || arg!="yipintang" )
-                return notify_fail("Å¬¶ùº£ÎÊµÀ£º¡°ÄãÒª¼ÓÈëÊ²Ã´×éÖ¯£¿¡±\n");
+                return notify_fail("åŠªå…’æµ·å•é“ï¼šâ€œä½ è¦åŠ å…¥ä»€éº¼çµ„ç¹”ï¼Ÿâ€\n");
            if( query("yipin/joined", ob) )
-                return notify_fail("Å¬¶ùº£Ææ¹ÖµØËµµÀ£º¡°Äã¿ªÊ²Ã´ÍæĞ¦£¿ÄãÒÑ¾­ÊÇÌÃÖĞÈËÁË¡£¡±\n");
+                return notify_fail("åŠªå…’æµ·å¥‡æ€ªåœ°èªªé“ï¼šâ€œä½ é–‹ä»€éº¼ç©ç¬‘ï¼Ÿä½ å·²ç¶“æ˜¯å ‚ä¸­äººäº†ã€‚â€\n");
            if( query("combat_exp", ob)<1000 )
-                return notify_fail("Å¬¶ùº£¹şµÄÒ»Éù´óĞ¦ÆğÀ´£º¡°ÎÒÃÇÖ»Òª½­ºşÖĞµÄ³ÉÃûÓ¢ĞÛ¡£ÄãËãÊ²Ã´²ÄÁÏ£¿¡±\n");
+                return notify_fail("åŠªå…’æµ·å“ˆçš„ä¸€è²å¤§ç¬‘èµ·ä¾†ï¼šâ€œæˆ‘å€‘åªè¦æ±Ÿæ¹–ä¸­çš„æˆåè‹±é›„ã€‚ä½ ç®—ä»€éº¼ææ–™ï¼Ÿâ€\n");
         command("gongxi"+query("id", ob));
-        message_vision("Å¬¶ùº£³å×Å$NĞ¦µÀ£º¡°ÄÇºÃ£¬ÔÛÃÇÏÖÔÚ¾ÍÊÇÒ»µîÖ®³¼£¬Ò»¼ÒÈËÁË£¡¡±\n",ob);
+        message_vision("åŠªå…’æµ·æ²–è‘—$Nç¬‘é“ï¼šâ€œé‚£å¥½ï¼Œå’±å€‘ç¾åœ¨å°±æ˜¯ä¸€æ®¿ä¹‹è‡£ï¼Œä¸€å®¶äººäº†ï¼â€\n",ob);
         set("yipin/joined", 1, ob);
         return 1;
 }

@@ -21,41 +21,41 @@ int perform(object me, object target)
         
          if( !target ) target = offensive_target(me);
          if( !target || !target->is_character() || !me->is_fighting(target) )
-               return notify_fail("¡¸Ñ£µ¶¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+               return notify_fail("ã€Œçœ©åˆ€ã€åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
         
          
         if( !objectp(weapon=query_temp("weapon", me) )
          || query("skill_type", weapon) != "blade" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ã€‚\n");
         
-        if (phase < 0 || phase > 5) {tell_object(me,"Ã»ÓĞÈÕ¹âÔõÃ´ÓÃ¡¸Ñ£µ¶¡¹£¿\n");return 1;}
+        if (phase < 0 || phase > 5) {tell_object(me,"æ²’æœ‰æ—¥å…‰æ€éº¼ç”¨ã€Œçœ©åˆ€ã€ï¼Ÿ\n");return 1;}
 
           if( uptime()-query_temp("last_pf_time", me)<2 )
-          return notify_fail("³öÆæ²ÅÄÜÖÁÊ¤¡£\n");
-         //ÓÃ±ùµ¶¼Ó2ÕĞ
+          return notify_fail("å‡ºå¥‡æ‰èƒ½è‡³å‹ã€‚\n");
+         //ç”¨å†°åˆ€åŠ 2æ‹›
          if( query("id", weapon) == "iceblade")count=2;
          
            
          
         if( query("neili", me)<200 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»ÁË£¡\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ äº†ï¼\n");
 
         if( (int)me->query_skill("blade") < 160 ||
             me->query_skill_mapped("blade") != "bingpo-blade")
-                return notify_fail("ÄãµÄ¡¸»ù±¾µ¶·¨¡¹»¹²»µ½¼Ò£¬ÎŞ·¨Ê¹ÓÃ¡¸Ñ£µ¶¡¹£¡\n");
+                return notify_fail("ä½ çš„ã€ŒåŸºæœ¬åˆ€æ³•ã€é‚„ä¸åˆ°å®¶ï¼Œç„¡æ³•ä½¿ç”¨ã€Œçœ©åˆ€ã€ï¼\n");
         
         if( (int)me->query_skill("blade") < 160 )
-            return notify_fail("ÄãµÄ¡¸±ùÆÇº®µ¶¡¹»¹²»µ½¼Ò£¬ÎŞ·¨Ê¹ÓÃ¡¸Ñ£µ¶¡¹£¡\n");
+            return notify_fail("ä½ çš„ã€Œå†°é­„å¯’åˆ€ã€é‚„ä¸åˆ°å®¶ï¼Œç„¡æ³•ä½¿ç”¨ã€Œçœ©åˆ€ã€ï¼\n");
         
-        msg = HIW "$NÃÍÈ»½«µ¶ÉíÒ»ºá£¬Ã÷»Î»ÎµÄµ¶ÉíÔÚÈÕ¹âÏÂ·´ÉäÒ»Æ¬°×¹â,Ö±Éä$nµÄÃæÃÅ£¡\n" NOR;
+        msg = HIW "$NçŒ›ç„¶å°‡åˆ€èº«ä¸€æ©«ï¼Œæ˜æ™ƒæ™ƒçš„åˆ€èº«åœ¨æ—¥å…‰ä¸‹åå°„ä¸€ç‰‡ç™½å…‰,ç›´å°„$nçš„é¢é–€ï¼\n" NOR;
         message_vision(msg, me, target);
         if( random(query("combat_exp", me))>query("combat_exp", target)/2 )
-         {  msg = HIW "$NÖ»¾õÒ»µÀÑ£¹â´ÌµÃË«ÑÛÊ²Ã´¶¼¿´²»¼ûÁË£¬$n¼û×´´óÏ²Á¬ĞøÈıµ¶£¬´ÓÈı¸ö²»Í¬µÄ·½Ïò¿³À´£¡\n" NOR;        
+         {  msg = HIW "$Nåªè¦ºä¸€é“çœ©å…‰åˆºå¾—é›™çœ¼ä»€éº¼éƒ½çœ‹ä¸è¦‹äº†ï¼Œ$nè¦‹ç‹€å¤§å–œé€£çºŒä¸‰åˆ€ï¼Œå¾ä¸‰å€‹ä¸åŒçš„æ–¹å‘ç ä¾†ï¼\n" NOR;        
             message_vision(msg, target,me);
              extra = me->query_skill("bingpo-blade",1) / 50;
             if(extra>4) extra = 4 ; target->start_busy(extra + count);
           }else{
-               msg = "¿ÉÊÇ$n¿´ÆÆÁË$NµÄÆóÍ¼£¬ÍùÅÔÒ»ÉÁ¶ãÁË¹ıÈ¥¡£\n" NOR;
+               msg = "å¯æ˜¯$nçœ‹ç ´äº†$Nçš„ä¼åœ–ï¼Œå¾€æ—ä¸€é–ƒèº²äº†éå»ã€‚\n" NOR;
                message_vision(msg, me, target);
                 set_temp("last_pf_time", uptime(), me);
                me->start_busy(1+random(3));

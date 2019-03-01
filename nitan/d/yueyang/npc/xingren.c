@@ -1,13 +1,13 @@
-// xingren.c ĞĞÈË
+// xingren.c è¡Œäºº
 
 inherit NPC;
 
 void create()
 {
-        set_name("ĞĞÈË", ({ "xing ren", "ren" }));
-        set("gender", "ÄĞĞÔ");
+        set_name("è¡Œäºº", ({ "xing ren", "ren" }));
+        set("gender", "ç”·æ€§");
         set("age", 19);
-        set("long", "ËûÊÇÒ»¸ö´Ò´Ò¸ÏÂ·µÄĞĞÈË£¬Ã»¿ÕÀíÄã¡£\n");
+        set("long", "ä»–æ˜¯ä¸€å€‹åŒ†åŒ†è¶•è·¯çš„è¡Œäººï¼Œæ²’ç©ºç†ä½ ã€‚\n");
         set("combat_exp", 1000);
         set("shen_type", 1);
         set("attitude", "peaceful");

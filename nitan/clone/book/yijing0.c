@@ -5,13 +5,13 @@ inherit F_UNIQUE;
  
 void create()
 {
-        set_name(HIY"¡¸Ò×¾­ĞòØÔÆª¡¹"NOR, ({ "yijing xugua","yijing0", }));
+        set_name(HIY"ã€Œæ˜“ç¶“åºå¦ç¯‡ã€"NOR, ({ "yijing xugua","yijing0", }));
         set_weight(500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
-                set("long","ÕâÊÇÒ»±¾ÓÃ±¡¾îĞ´³ÉµÄÊé¡£ÉÏÊé£º¡°Ò×¾­ĞòØÔÆª¡±¡£\nÊéÆ¤·º»Æ£¬¿´À´ÒÑ¾­±£´æºÜ¾ÃÁË¡£\n");
+                set("unit", "æœ¬");
+                set("long","é€™æ˜¯ä¸€æœ¬ç”¨è–„çµ¹å¯«æˆçš„æ›¸ã€‚ä¸Šæ›¸ï¼šâ€œæ˜“ç¶“åºå¦ç¯‡â€ã€‚\næ›¸çš®æ³›é»ƒï¼Œçœ‹ä¾†å·²ç¶“ä¿å­˜å¾ˆä¹…äº†ã€‚\n");
                 set("value", 0);
                 set("material", "silk");
                 set("skill", ([

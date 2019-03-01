@@ -1,4 +1,4 @@
-//Room: majiu1.c ����
+//Room: majiu1.c 馬廄
 //Date: Oct. 2 1997 by That
 
 #include <room.h>
@@ -6,13 +6,13 @@ inherit TRANS_ROOM;
 
 void create()
 {
-        set("short","����");
+        set("short","馬廄");
         set("long",@LONG
-����������͵������ǣ����깩Ӧ���ʲ��ϡ������Թźų����ã�
-���ݵĿ͵�㼯�ĺ����͡������ǻ����ǣ�����Ǻ����տ���������ι��
-���㣬��ϴˢ�ø�Ǭ������һֱ�ź򵽿�����·�����������µ���ľ����
-����һ����ľ��(paizi)��
-    �����жѷ������Ѳ��ϣ�������һ����ۡ�
+這是天外天客店後的馬廄，常年供應新鮮草料。杭州自古號稱天堂，
+杭州的客店匯集四海賓客。馬夫們會把馬牽到馬廄好生照看，將它們喂飽
+飲足，再洗刷得幹乾凈凈，一直伺候到客人上路。馬廄雨檐下的爛木柱上
+釘著一塊破木牌(paizi)。
+    馬廄中堆放著幾堆草料，正中有一口泔槽。
 LONG);
         set("outdoors", "xihu"); 
         set("no_fight", "1");
@@ -25,9 +25,9 @@ LONG);
         ]));
         set("item_desc", ([
                 "paizi": @TEXT
-������ֻҪ������һ�����������Ϳ��Թ͵�һƥ���ˡ�
+客人們只要給馬夫一兩白銀的租金就可以雇到一匹馬了。
 
-ǰ��        ���ݳ�:  rideyz
+前往        揚州城:  rideyz
 
 
 TEXT]));

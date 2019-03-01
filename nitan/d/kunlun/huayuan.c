@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��԰");
+        set("short", "後花園");
         set("long", @LONG
-�����������ɵĺ�԰��԰���з��أ�Ե��������ɽ���ȱ߻�ľ��
-�裬��Ӱ�βɽȪ���ģ���Ȼ���н���԰�ֵ���Ȥ�������������ɵ�
-���š�
+這裡是昆侖派的後花園。園內有方池，緣池是座假山。廊邊花木扶
+疏，竹影參差，山泉急湍，竟然富有江南園林的情趣。西面是昆侖派的
+側門。
 LONG );
         set("exits", ([
                 "west"      :__DIR__"cemen",

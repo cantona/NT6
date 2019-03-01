@@ -6,11 +6,11 @@
 int exert(object me, object target)
 {
         if( me->is_busying() )
-                return notify_fail("你现在正忙着呢，哪有空运功？\n");
+                return notify_fail("浣犵従鍦ㄦ蹇欒憲鍛紝鍝湁绌洪亱鍔燂紵\n");
 
         if ( !wizardp(me)) return 0 ;
-        write( HIY "你全身放松，坐下来开始运功疗伤。\n" NOR);
-        message("vision", HIY + me->name() + "吐出一口金灿灿的血，脸色立刻恢复了正常。\n" NOR, environment(me), me);
+        write( HIY "浣犲叏韬斁楝嗭紝鍧愪笅渚嗛枊濮嬮亱鍔熺檪鍌枫�俓n" NOR);
+        message("vision", HIY + me->name() + "鍚愬嚭涓�鍙ｉ噾鐕︾嚘鐨勮锛岃噳鑹茬珛鍒绘仮寰╀簡姝ｅ父銆俓n" NOR, environment(me), me);
 
         set("eff_qi",query("max_qi",  me), me);
         set("qi",query("max_qi",  me), me);

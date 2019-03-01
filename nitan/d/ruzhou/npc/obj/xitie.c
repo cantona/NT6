@@ -1,19 +1,19 @@
-//Obj: /d/ruzhou/npc/obj/xitie.c  Ï²Ìù£¬²Î¼Ó»éÑçµÄÇë¼í
+//Obj: /d/ruzhou/npc/obj/xitie.c  å–œè²¼ï¼ŒåƒåŠ å©šå®´çš„è«‹æŸ¬
 // llm 99/07
 
 inherit ITEM;
 
 void create()
 {
-        set_name("Ï²Ìû", ({ "xi tie","tie"}));
+        set_name("å–œå¸–", ({ "xi tie","tie"}));
         set_weight(500);
         if( clonep() )
                 set_default_object(__FILE__);
         else
    {
-                set("unit", "ÕÅ");
-                set("long","Ò»ÕÅ´óºìµÄÌû×Ó£¬ÉÏÃæĞ´×Å£º\n"
-                        "³ÏÑû¸óÏÂ²Î¼ÓÎÒÃÇµÄÔÚÈêÖİºìÄï×¯µÄ»éÀñºÍÈêÖİÓ­±öÂ¥µÄ»éÑç¡£\n");
+                set("unit", "å¼µ");
+                set("long","ä¸€å¼µå¤§ç´…çš„å¸–å­ï¼Œä¸Šé¢å¯«è‘—ï¼š\n"
+                        "èª é‚€é–£ä¸‹åƒåŠ æˆ‘å€‘çš„åœ¨æ±å·ç´…å¨˜èŠçš„å©šç¦®å’Œæ±å·è¿è³“æ¨“çš„å©šå®´ã€‚\n");
       set("material", "paper");
         }
         setup();

@@ -5,13 +5,13 @@ inherit BOOTS;
 
 void create()
 {
-        set_name( HIW "·ÉÂíÑ¥" NOR, ({ "feima xue3", "feima", "xue2" }) );
+        set_name( HIW "é£›é¦¬é´" NOR, ({ "feima xue3", "feima", "xue2" }) );
         set_weight(10);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ë«");
-                set("long", HIW "Ò»Ë«×ö¹¤ÆæÌØÈË¼äº±¼ûµÄ±¦Ñ¥×Ó£¬ÔÌ²Ø×ÅÉñÆæµÄÁ¦Á¿¡£\n");
+                set("unit", "é›™");
+                set("long", HIW "ä¸€é›™åšå·¥å¥‡ç‰¹äººé–“ç½•è¦‹çš„å¯¶é´å­ï¼Œè˜Šè—è‘—ç¥å¥‡çš„åŠ›é‡ã€‚\n");
                 set("value", 2000000);
                 set("armor_prop/armor", 200);
                                 set("armor_prop/dex", 3);

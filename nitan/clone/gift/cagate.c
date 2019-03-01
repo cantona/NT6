@@ -1,4 +1,4 @@
-// cagate.c Âêè§²ÐÆ¬
+// cagate.c ç‘ªç‘™æ®˜ç‰‡
 
 #include <ansi.h>
 #include <armor.h>
@@ -9,20 +9,20 @@ int is_enchase_ob(){ return 1; }
 
 void create()
 {
-        set_name(HIR "Âêè§²ÐÆ¬" NOR, ({ "chipped agate" }) );
+        set_name(HIR "ç‘ªç‘™æ®˜ç‰‡" NOR, ({ "chipped agate" }) );
         set_weight(25);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", HIR "Ò»Æ¬µÄÂêè§ËéÆ¬£¬·¢³öÎ¢ÈõµÄºì¹â¡£\n" NOR);
+                set("long", HIR "ä¸€ç‰‡çš„ç‘ªç‘™ç¢Žç‰‡ï¼Œç™¼å‡ºå¾®å¼±çš„ç´…å…‰ã€‚\n" NOR);
                 set("value", 20000);
-                set("unit", "Æ¬");
+                set("unit", "ç‰‡");
                 set("armor_prop/per", 3);
                 set("no_identify", 1);
-                set("wear_msg", HIC "$N" HIC "ÇáÇáµØ°Ñ$n"
-                    HIC "´÷ÔÚÍ·ÉÏ¡£\n" NOR);
-                set("remove_msg", HIC "$N" HIC "ÇáÇáµØ°Ñ$n"
-                    HIC "´ÓÍ·ÉÏÕªÁËÏÂÀ´¡£\n" NOR);
+                set("wear_msg", HIC "$N" HIC "è¼•è¼•åœ°æŠŠ$n"
+                    HIC "æˆ´åœ¨é ­ä¸Šã€‚\n" NOR);
+                set("remove_msg", HIC "$N" HIC "è¼•è¼•åœ°æŠŠ$n"
+                    HIC "å¾žé ­ä¸Šæ‘˜äº†ä¸‹ä¾†ã€‚\n" NOR);
         }
         setup();
 }

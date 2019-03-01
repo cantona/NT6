@@ -1,19 +1,19 @@
-// Ì××°×éºÏÁĞ±íÎÄ¼ş±í
+// å¥—è£çµ„åˆåˆ—è¡¨æ–‡ä»¶è¡¨
 // boss.xml
-// BOSS×¨ÓÃÌ××°
+// BOSSå°ˆç”¨å¥—è£
 
 #modlist
-// ¶ÔÓ¦µÄÌ××°
+// å°æ‡‰çš„å¥—è£
 <M3000>
-<mod_name>$CYNGRN$ÁúÖ®ÉñÁ¦$NOR$</mod_name>
+<mod_name>$CYNGRN$é¾ä¹‹ç¥åŠ›$NOR$</mod_name>
 <mod_parts>
-A3000:$CYNGRN$ÁúÉñ»¤Íó$NOR$
-A3001:$CYNGRN$ÁúÉñÁÛ¼×$NOR$
-A3002:$CYNGRN$ÁúÉñÖ®Òí$NOR$
-A3003:$CYNGRN$ÁúÉñÊø´ø$NOR$
-A3004:$CYNGRN$ÁúÉñÖ®´¥$NOR$
-A3005:$CYNGRN$ÁúÉñëÖ¼×$NOR$
-A3006:$CYNGRN$ÁúÉñÕ½¼×$NOR$
+A3000:$CYNGRN$é¾ç¥è­·è…•$NOR$
+A3001:$CYNGRN$é¾ç¥é±—ç”²$NOR$
+A3002:$CYNGRN$é¾ç¥ä¹‹ç¿¼$NOR$
+A3003:$CYNGRN$é¾ç¥æŸå¸¶$NOR$
+A3004:$CYNGRN$é¾ç¥ä¹‹è§¸$NOR$
+A3005:$CYNGRN$é¾ç¥è„›ç”²$NOR$
+A3006:$CYNGRN$é¾ç¥æˆ°ç”²$NOR$
 </mod_parts>
 <bas>3</bas>
 <num>7</num>
@@ -35,14 +35,14 @@ reduce_damage:20
 #listend
 
 #eqlist
-// Ì××°µÄ²¿¼ş
+// å¥—è£çš„éƒ¨ä»¶
 <A3000>
 <type>armor/wrists</type>
-<name>$CYNGRN$ÁúÉñ»¤Íó$NOR$</name>
+<name>$CYNGRN$é¾ç¥è­·è…•$NOR$</name>
 <id>dragon wrists</id>
 <value>10000</value>
 <mod_level>M3000</mod_level>
-<mod_name>$CYNGRN$ÁúÖ®ÉñÁ¦$NOR$</mod_name>
+<mod_name>$CYNGRN$é¾ä¹‹ç¥åŠ›$NOR$</mod_name>
 <require>
 level:20
 con:30
@@ -62,13 +62,13 @@ used:2
 <insert>
 [1]
 id:magic stone
-name:ĞşÊ¯
+name:ç„çŸ³
 apply_prop/armor1:60
 apply_prop/str:2
 [/1]
 [2]
 id:magic stone
-name:ĞşÊ¯
+name:ç„çŸ³
 apply_prop/con:2
 apply_prop/force:2
 [/2]
@@ -77,11 +77,11 @@ apply_prop/force:2
 
 <A3001>
 <type>armor/armor</type>
-<name>$CYNGRN$ÁúÉñÁÛ¼×$NOR$</name>
+<name>$CYNGRN$é¾ç¥é±—ç”²$NOR$</name>
 <id>dragon armor</id>
 <value>10000</value>
 <mod_level>M3000</mod_level>
-<mod_name>$CYNGRN$ÁúÖ®ÉñÁ¦$NOR$</mod_name>
+<mod_name>$CYNGRN$é¾ä¹‹ç¥åŠ›$NOR$</mod_name>
 <require>
 level:20
 con:30
@@ -101,13 +101,13 @@ used:2
 <insert>
 [1]
 id:magic stone
-name:ĞşÊ¯
+name:ç„çŸ³
 apply_prop/armor1:60
 apply_prop/str:2
 [/1]
 [2]
 id:magic stone
-name:ĞşÊ¯
+name:ç„çŸ³
 apply_prop/con:2
 apply_prop/force:2
 [/2]
@@ -116,11 +116,11 @@ apply_prop/force:2
 
 <A3002>
 <type>armor/surcoat</type>
-<name>$CYNGRN$ÁúÉñÖ®Òí$NOR$</name>
+<name>$CYNGRN$é¾ç¥ä¹‹ç¿¼$NOR$</name>
 <id>dragon surcoat</id>
 <value>10000</value>
 <mod_level>M3000</mod_level>
-<mod_name>$CYNGRN$ÁúÖ®ÉñÁ¦$NOR$</mod_name>
+<mod_name>$CYNGRN$é¾ä¹‹ç¥åŠ›$NOR$</mod_name>
 <require>
 level:20
 con:30
@@ -140,13 +140,13 @@ used:2
 <insert>
 [1]
 id:magic stone
-name:ĞşÊ¯
+name:ç„çŸ³
 apply_prop/armor1:10
 apply_prop/str:2
 [/1]
 [2]
 id:magic stone
-name:ĞşÊ¯
+name:ç„çŸ³
 apply_prop/dex:1
 apply_prop/dodge:1
 [/2]
@@ -155,11 +155,11 @@ apply_prop/dodge:1
 
 <A3003>
 <type>armor/waist</type>
-<name>$CYNGRN$ÁúÉñÊø´ø$NOR$</name>
+<name>$CYNGRN$é¾ç¥æŸå¸¶$NOR$</name>
 <id>dragon waist</id>
 <value>10000</value>
 <mod_level>M3000</mod_level>
-<mod_name>$CYNGRN$ÁúÖ®ÉñÁ¦$NOR$</mod_name>
+<mod_name>$CYNGRN$é¾ä¹‹ç¥åŠ›$NOR$</mod_name>
 <require>
 level:20
 con:30
@@ -179,13 +179,13 @@ used:2
 <insert>
 [1]
 id:magic stone
-name:ĞşÊ¯
+name:ç„çŸ³
 apply_prop/armor1:30
 apply_prop/parry:10
 [/1]
 [2]
 id:magic stone
-name:ĞşÊ¯
+name:ç„çŸ³
 apply_prop/str:2
 apply_prop/int:2
 [/2]
@@ -194,11 +194,11 @@ apply_prop/int:2
 
 <A3004>
 <type>armor/head</type>
-<name>$CYNGRN$ÁúÉñÖ®´¥$NOR$</name>
+<name>$CYNGRN$é¾ç¥ä¹‹è§¸$NOR$</name>
 <id>dragon head</id>
 <value>10000</value>
 <mod_level>M3000</mod_level>
-<mod_name>$CYNGRN$ÁúÖ®ÉñÁ¦$NOR$</mod_name>
+<mod_name>$CYNGRN$é¾ä¹‹ç¥åŠ›$NOR$</mod_name>
 <require>
 level:20
 con:30
@@ -217,12 +217,12 @@ used:2
 <insert>
 [1]
 id:magic stone
-name:ĞşÊ¯
+name:ç„çŸ³
 apply_prop/armor1:60
 [/1]
 [2]
 id:magic stone
-name:ĞşÊ¯
+name:ç„çŸ³
 apply_prop/str:2
 apply_prop/int:2
 [/2]
@@ -231,11 +231,11 @@ apply_prop/int:2
 
 <A3005>
 <type>armor/boots</type>
-<name>$CYNGRN$ÁúÉñëÖ¼×$NOR$</name>
+<name>$CYNGRN$é¾ç¥è„›ç”²$NOR$</name>
 <id>dragon boots</id>
 <value>10000</value>
 <mod_level>M3000</mod_level>
-<mod_name>$CYNGRN$ÁúÖ®ÉñÁ¦$NOR$</mod_name>
+<mod_name>$CYNGRN$é¾ä¹‹ç¥åŠ›$NOR$</mod_name>
 <require>
 level:20
 con:30
@@ -255,13 +255,13 @@ used:2
 <insert>
 [1]
 id:magic stone
-name:ĞşÊ¯
+name:ç„çŸ³
 apply_prop/armor1:30
 apply_prop/dodge:10
 [/1]
 [2]
 id:magic stone
-name:ĞşÊ¯
+name:ç„çŸ³
 apply_prop/str:2
 apply_prop/dex:5
 [/2]
@@ -270,11 +270,11 @@ apply_prop/dex:5
 
 <A3006>
 <type>armor/cloth</type>
-<name>$CYNGRN$ÁúÉñÕ½¼×$NOR$</name>
+<name>$CYNGRN$é¾ç¥æˆ°ç”²$NOR$</name>
 <id>dragon cloth</id>
 <value>10000</value>
 <mod_level>M3000</mod_level>
-<mod_name>$CYNGRN$ÁúÖ®ÉñÁ¦$NOR$</mod_name>
+<mod_name>$CYNGRN$é¾ä¹‹ç¥åŠ›$NOR$</mod_name>
 <require>
 level:20
 con:30
@@ -294,13 +294,13 @@ used:2
 <insert>
 [1]
 id:magic stone
-name:ĞşÊ¯
+name:ç„çŸ³
 apply_prop/armor1:80
 apply_prop/force:10
 [/1]
 [2]
 id:magic stone
-name:ĞşÊ¯
+name:ç„çŸ³
 apply_prop/str:2
 apply_prop/con:2
 [/2]
@@ -308,17 +308,17 @@ apply_prop/con:2
 </A3006>
 
 
-//×¢ÖØ¹¥»÷¡¢ÉËº¦¼ÓÇ¿
+//æ³¨é‡æ”»æ“Šã€å‚·å®³åŠ å¼·
 <M3001>
-<mod_name>$HBBLU$ÆÆ»µÉñÖ®»ÙÃğ$NOR$</mod_name>
+<mod_name>$HBBLU$ç ´å£ç¥ä¹‹æ¯€æ»…$NOR$</mod_name>
 <mod_parts>
-A3010:$HBBLU$ÆÆ»µÉñÕ½¼×$NOR$
-A3011:$HBBLU$ÆÆ»µÉñÅû·ç$NOR$
-A3012:$HBBLU$ÆÆ»µÉñÑü´ø$NOR$
-A3013:$HBBLU$ÆÆ»µÉñÍ·¿ø$NOR$
-A3014:$HBBLU$ÆÆ»µÉñÕ½Ñ¥$NOR$
-A3015:$HBBLU$ÆÆ»µÉñ»¤Íó$NOR$
-A3016:$HBBLU$ÆÆ»µÉñÕ½ÒÂ$NOR$
+A3010:$HBBLU$ç ´å£ç¥æˆ°ç”²$NOR$
+A3011:$HBBLU$ç ´å£ç¥æŠ«é¢¨$NOR$
+A3012:$HBBLU$ç ´å£ç¥è…°å¸¶$NOR$
+A3013:$HBBLU$ç ´å£ç¥é ­ç›”$NOR$
+A3014:$HBBLU$ç ´å£ç¥æˆ°é´$NOR$
+A3015:$HBBLU$ç ´å£ç¥è­·è…•$NOR$
+A3016:$HBBLU$ç ´å£ç¥æˆ°è¡£$NOR$
 </mod_parts>
 <bas>4</bas>
 <num>7</num>
@@ -338,15 +338,15 @@ counter_damage:50
 </M3001>
 
 
-// Áù¸öÅä¼ş
+// å…­å€‹é…ä»¶
 <A3010>
 <type>armor/armor</type>
-<name>$HBBLU$ÆÆ»µÉñÕ½¼×$NOR$</name>
+<name>$HBBLU$ç ´å£ç¥æˆ°ç”²$NOR$</name>
 <id>diablo armor</id>
-<long>´Ë×°±¸Ö»ÊÇÇÆÉÏÒ»ÑÛ£¬ÒÑ¾­ÈÃÈËÉ±ÒâÌÚÌÚ¡¢ÑªÂöÅçÕÅ¡¢Õ½ÒâÎŞÇî¡£</long>
+<long>æ­¤è£å‚™åªæ˜¯ç§ä¸Šä¸€çœ¼ï¼Œå·²ç¶“è®“äººæ®ºæ„é¨°é¨°ã€è¡€è„ˆå™´å¼µã€æˆ°æ„ç„¡çª®ã€‚</long>
 <value>300000</value>
 <mod_level>M3001</mod_level>
-<mod_name>$HBBLU$ÆÆ»µÉñÖ®»ÙÃğ$NOR$</mod_name>
+<mod_name>$HBBLU$ç ´å£ç¥ä¹‹æ¯€æ»…$NOR$</mod_name>
 <require>
 level:30
 str:60
@@ -367,13 +367,13 @@ used:2
 <insert>
 [1]
 id:magic stone
-name:ĞşÊ¯
+name:ç„çŸ³
 apply_prop/armor1:80
 apply_prop/defense:50
 [/1]
 [2]
 id:magic stone
-name:ĞşÊ¯
+name:ç„çŸ³
 apply_prop/dp_power:2
 apply_prop/reduce_busy:1
 [/2]
@@ -382,12 +382,12 @@ apply_prop/reduce_busy:1
 
 <A3011>
 <type>armor/surcoat</type>
-<name>$HBBLU$ÆÆ»µÉñÅû·ç$NOR$</name>
+<name>$HBBLU$ç ´å£ç¥æŠ«é¢¨$NOR$</name>
 <id>diablo surcoat</id>
-<long>´Ë×°±¸Ö»ÊÇÇÆÉÏÒ»ÑÛ£¬ÒÑ¾­ÈÃÈËÉ±ÒâÌÚÌÚ¡¢ÑªÂöÅçÕÅ¡¢Õ½ÒâÎŞÇî¡£</long>
+<long>æ­¤è£å‚™åªæ˜¯ç§ä¸Šä¸€çœ¼ï¼Œå·²ç¶“è®“äººæ®ºæ„é¨°é¨°ã€è¡€è„ˆå™´å¼µã€æˆ°æ„ç„¡çª®ã€‚</long>
 <value>300000</value>
 <mod_level>M3001</mod_level>
-<mod_name>$HBBLU$ÆÆ»µÉñÖ®»ÙÃğ$NOR$</mod_name>
+<mod_name>$HBBLU$ç ´å£ç¥ä¹‹æ¯€æ»…$NOR$</mod_name>
 <require>
 level:30
 str:60
@@ -408,13 +408,13 @@ used:2
 <insert>
 [1]
 id:magic stone
-name:ĞşÊ¯
+name:ç„çŸ³
 apply_prop/armor1:30
 apply_prop/defense:10
 [/1]
 [2]
 id:magic stone
-name:ĞşÊ¯
+name:ç„çŸ³
 apply_prop/dp_power:2
 apply_prop/reduce_damage:3
 [/2]
@@ -423,12 +423,12 @@ apply_prop/reduce_damage:3
 
 <A3012>
 <type>armor/waist</type>
-<name>$HBBLU$ÆÆ»µÉñÑü´ø$NOR$</name>
+<name>$HBBLU$ç ´å£ç¥è…°å¸¶$NOR$</name>
 <id>diablo waist</id>
-<long>´Ë×°±¸Ö»ÊÇÇÆÉÏÒ»ÑÛ£¬ÒÑ¾­ÈÃÈËÉ±ÒâÌÚÌÚ¡¢ÑªÂöÅçÕÅ¡¢Õ½ÒâÎŞÇî¡£</long>
+<long>æ­¤è£å‚™åªæ˜¯ç§ä¸Šä¸€çœ¼ï¼Œå·²ç¶“è®“äººæ®ºæ„é¨°é¨°ã€è¡€è„ˆå™´å¼µã€æˆ°æ„ç„¡çª®ã€‚</long>
 <value>300000</value>
 <mod_level>M3001</mod_level>
-<mod_name>$HBBLU$ÆÆ»µÉñÖ®»ÙÃğ$NOR$</mod_name>
+<mod_name>$HBBLU$ç ´å£ç¥ä¹‹æ¯€æ»…$NOR$</mod_name>
 <require>
 level:30
 str:60
@@ -449,13 +449,13 @@ used:2
 <insert>
 [1]
 id:magic stone
-name:ĞşÊ¯
+name:ç„çŸ³
 apply_prop/armor1:30
 apply_prop/defense:10
 [/1]
 [2]
 id:magic stone
-name:ĞşÊ¯
+name:ç„çŸ³
 apply_prop/dp_power:2
 apply_prop/reduce_damage:3
 [/2]
@@ -464,12 +464,12 @@ apply_prop/reduce_damage:3
 
 <A3013>
 <type>armor/head</type>
-<name>$HBBLU$ÆÆ»µÉñÍ·¿ø$NOR$</name>
+<name>$HBBLU$ç ´å£ç¥é ­ç›”$NOR$</name>
 <id>diablo head</id>
-<long>´Ë×°±¸Ö»ÊÇÇÆÉÏÒ»ÑÛ£¬ÒÑ¾­ÈÃÈËÉ±ÒâÌÚÌÚ¡¢ÑªÂöÅçÕÅ¡¢Õ½ÒâÎŞÇî¡£</long>
+<long>æ­¤è£å‚™åªæ˜¯ç§ä¸Šä¸€çœ¼ï¼Œå·²ç¶“è®“äººæ®ºæ„é¨°é¨°ã€è¡€è„ˆå™´å¼µã€æˆ°æ„ç„¡çª®ã€‚</long>
 <value>300000</value>
 <mod_level>M3001</mod_level>
-<mod_name>$HBBLU$ÆÆ»µÉñÖ®»ÙÃğ$NOR$</mod_name>
+<mod_name>$HBBLU$ç ´å£ç¥ä¹‹æ¯€æ»…$NOR$</mod_name>
 <require>
 level:30
 str:60
@@ -490,13 +490,13 @@ used:2
 <insert>
 [1]
 id:magic stone
-name:ĞşÊ¯
+name:ç„çŸ³
 apply_prop/armor1:50
 apply_prop/defense:20
 [/1]
 [2]
 id:magic stone
-name:ĞşÊ¯
+name:ç„çŸ³
 apply_prop/dp_power:2
 apply_prop/reduce_damage:3
 [/2]
@@ -505,12 +505,12 @@ apply_prop/reduce_damage:3
 
 <A3014>
 <type>armor/boots</type>
-<name>$HBBLU$ÆÆ»µÉñÕ½Ñ¥$NOR$</name>
+<name>$HBBLU$ç ´å£ç¥æˆ°é´$NOR$</name>
 <id>diablo boots</id>
-<long>´Ë×°±¸Ö»ÊÇÇÆÉÏÒ»ÑÛ£¬ÒÑ¾­ÈÃÈËÉ±ÒâÌÚÌÚ¡¢ÑªÂöÅçÕÅ¡¢Õ½ÒâÎŞÇî¡£</long>
+<long>æ­¤è£å‚™åªæ˜¯ç§ä¸Šä¸€çœ¼ï¼Œå·²ç¶“è®“äººæ®ºæ„é¨°é¨°ã€è¡€è„ˆå™´å¼µã€æˆ°æ„ç„¡çª®ã€‚</long>
 <value>300000</value>
 <mod_level>M3001</mod_level>
-<mod_name>$HBBLU$ÆÆ»µÉñÖ®»ÙÃğ$NOR$</mod_name>
+<mod_name>$HBBLU$ç ´å£ç¥ä¹‹æ¯€æ»…$NOR$</mod_name>
 <require>
 level:30
 str:60
@@ -531,13 +531,13 @@ used:2
 <insert>
 [1]
 id:magic stone
-name:ĞşÊ¯
+name:ç„çŸ³
 apply_prop/armor1:30
 apply_prop/defense:10
 [/1]
 [2]
 id:magic stone
-name:ĞşÊ¯
+name:ç„çŸ³
 apply_prop/dp_power:2
 apply_prop/reduce_busy:1
 [/2]
@@ -546,12 +546,12 @@ apply_prop/reduce_busy:1
 
 <A3015>
 <type>armor/wrists</type>
-<name>$HBBLU$ÆÆ»µÉñ»¤Íó$NOR$</name>
+<name>$HBBLU$ç ´å£ç¥è­·è…•$NOR$</name>
 <id>diablo wrists</id>
-<long>´Ë×°±¸Ö»ÊÇÇÆÉÏÒ»ÑÛ£¬ÒÑ¾­ÈÃÈËÉ±ÒâÌÚÌÚ¡¢ÑªÂöÅçÕÅ¡¢Õ½ÒâÎŞÇî¡£</long>
+<long>æ­¤è£å‚™åªæ˜¯ç§ä¸Šä¸€çœ¼ï¼Œå·²ç¶“è®“äººæ®ºæ„é¨°é¨°ã€è¡€è„ˆå™´å¼µã€æˆ°æ„ç„¡çª®ã€‚</long>
 <value>300000</value>
 <mod_level>M3001</mod_level>
-<mod_name>$HBBLU$ÆÆ»µÉñÖ®»ÙÃğ$NOR$</mod_name>
+<mod_name>$HBBLU$ç ´å£ç¥ä¹‹æ¯€æ»…$NOR$</mod_name>
 <require>
 level:30
 str:60
@@ -572,13 +572,13 @@ used:2
 <insert>
 [1]
 id:magic stone
-name:ĞşÊ¯
+name:ç„çŸ³
 apply_prop/armor1:30
 apply_prop/defense:10
 [/1]
 [2]
 id:magic stone
-name:ĞşÊ¯
+name:ç„çŸ³
 apply_prop/dp_power:2
 apply_prop/reduce_busy:1
 [/2]
@@ -587,12 +587,12 @@ apply_prop/reduce_busy:1
 
 <A3016>
 <type>armor/cloth</type>
-<name>$HBBLU$ÆÆ»µÉñÕ½ÒÂ$NOR$</name>
+<name>$HBBLU$ç ´å£ç¥æˆ°è¡£$NOR$</name>
 <id>diablo wrists</id>
-<long>´Ë×°±¸Ö»ÊÇÇÆÉÏÒ»ÑÛ£¬ÒÑ¾­ÈÃÈËÉ±ÒâÌÚÌÚ¡¢ÑªÂöÅçÕÅ¡¢Õ½ÒâÎŞÇî¡£</long>
+<long>æ­¤è£å‚™åªæ˜¯ç§ä¸Šä¸€çœ¼ï¼Œå·²ç¶“è®“äººæ®ºæ„é¨°é¨°ã€è¡€è„ˆå™´å¼µã€æˆ°æ„ç„¡çª®ã€‚</long>
 <value>300000</value>
 <mod_level>M3001</mod_level>
-<mod_name>$HBBLU$ÆÆ»µÉñÖ®»ÙÃğ$NOR$</mod_name>
+<mod_name>$HBBLU$ç ´å£ç¥ä¹‹æ¯€æ»…$NOR$</mod_name>
 <require>
 level:30
 str:60
@@ -613,13 +613,13 @@ used:2
 <insert>
 [1]
 id:magic stone
-name:ĞşÊ¯
+name:ç„çŸ³
 apply_prop/armor1:80
 apply_prop/defense:30
 [/1]
 [2]
 id:magic stone
-name:ĞşÊ¯
+name:ç„çŸ³
 apply_prop/dp_power:2
 apply_prop/reduce_damage:3
 [/2]

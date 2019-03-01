@@ -1,4 +1,4 @@
-// zhenwu-jian.c ÕæÎä½£
+// zhenwu-jian.c çœŸæ­¦åŠ
 // Created by Lonely for only one object in mud
 #include <ansi.h>
 #include <weapon.h>
@@ -6,13 +6,13 @@ inherit SWORD;
 inherit F_UNIQUE;
 void create()
 {
-        set_name(HIW"ÕæÎä½£"NOR, ({"zhenwu jian", "sword", "jian"}));
+        set_name(HIW"çœŸæ­¦åŠ"NOR, ({"zhenwu jian", "sword", "jian"}));
         set_weight(15000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "Ò»°ÑºÁ²»ÆğÑÛµÄ¹Å½£,½£Éí²»¹æÔòµÄ»¨ÎÆÉÏËÆºõ»¹´øÓĞĞ©ÌúĞâ,½£·æÉÏ¾ÓÈ»»¹ÓĞ¼¸¸öÈ±¿Ú¡£\n");
+                set("unit", "æŠŠ");
+                set("long", "ä¸€æŠŠæ¯«ä¸èµ·çœ¼çš„å¤åŠ,åŠèº«ä¸è¦å‰‡çš„èŠ±ç´‹ä¸Šä¼¼ä¹é‚„å¸¶æœ‰äº›éµé½,åŠé‹’ä¸Šå±…ç„¶é‚„æœ‰å¹¾å€‹ç¼ºå£ã€‚\n");
                 set("value", 100000);
                 set("material", "blacksteel");
                 set("weapon_prop/dodge", -2);
@@ -26,8 +26,8 @@ void create()
                 set("wield_maxneili", 700);
                 set("wield_str", 22);        
                 set("enchase/flute", 5);        
-                set("wield_msg",HIW"$N[àá]µÄÒ»Éù³é³öÒ»°ÑÕæÎä½£,¿ÕÆøÖĞ¶ÙÊ±³äÂúÁËÎŞ±ßµÄÉ±Æø¡£\n"NOR);
-                set("unwield_msg",HIW"$N°ÑÊÖÖĞµÄ±¦½£²åÈë½£ÇÊ¡£ËÄÖÜµÄÉ±ÆøÒ²¸ú×ÅÏûÊ§ÁË¡£\n"NOR);
+                set("wield_msg",HIW"$N[å™Œ]çš„ä¸€è²æŠ½å‡ºä¸€æŠŠçœŸæ­¦åŠ,ç©ºæ°£ä¸­é “æ™‚å……æ»¿äº†ç„¡é‚Šçš„æ®ºæ°£ã€‚\n"NOR);
+                set("unwield_msg",HIW"$NæŠŠæ‰‹ä¸­çš„å¯¶åŠæ’å…¥åŠé˜ã€‚å››å‘¨çš„æ®ºæ°£ä¹Ÿè·Ÿè‘—æ¶ˆå¤±äº†ã€‚\n"NOR);
         }
         init_sword(400,2);
         setup();

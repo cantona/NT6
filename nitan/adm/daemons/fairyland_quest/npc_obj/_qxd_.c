@@ -1,6 +1,6 @@
-//                ±ê×¼ÃèÊö³¤¶ÈÊ¾Àý                                   |
-// Ã¿¸ö½øÈë¡°»Ã¾³¡±ÓÎÏ·µÄplayer±ØÐëÐ¯´øµÄÎïÆ·   _qxd_.c
-// by naihe  2002-10-24 ÖÁ 10-31  ÓÚÃ¯Ãû
+//                æ¨™æº–æè¿°é•·åº¦ç¤ºä¾‹                                   |
+// æ¯å€‹é€²å…¥â€œå¹»å¢ƒâ€éŠæˆ²çš„playerå¿…é ˆæ”œå¸¶çš„ç‰©å“   _qxd_.c
+// by naihe  2002-10-24 è‡³ 10-31  äºŽèŒ‚å
 
 #include <ansi.h>
 inherit ITEM;
@@ -13,4 +13,4 @@ inherit ITEM;
 
 #include "qxd_file/_qxd_.h"
 
-// ÄÎºÎ°´£ºÕâÑùÂÞàÂµØ·ÅÎÄ¼þ£¬Ö÷ÒªÊÇ¿´ÆðÀ´Êæ·þ¹þ¹þ¹þ
+// å¥ˆä½•æŒ‰ï¼šé€™æ¨£ç¾…å—¦åœ°æ”¾æ–‡ä»¶ï¼Œä¸»è¦æ˜¯çœ‹èµ·ä¾†èˆ’æœå“ˆå“ˆå“ˆ

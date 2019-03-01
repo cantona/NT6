@@ -2,15 +2,15 @@
 inherit ITEM;
 void create()
 {
-        set_name(HIY "ÔªÉñÎåĞĞµ¤" NOR, ({"yuanshenwuxingdan"}));
+        set_name(HIY "å…ƒç¥äº”è¡Œä¸¹" NOR, ({"yuanshenwuxingdan"}));
         set_weight(1);
         if (clonep())
                 set_default_object(__FILE__);
         else {  
-        	set("long", HIY "Ê¹ÓÃ£¨changewx ÎåĞĞ£©ÔªÉñÎåĞĞµ¤ºó¿ÉÖ¸¶¨¸ü»»ÔªÉñÎåĞĞÊôĞÔÒ»´Î¡£\n" + HIC
-        			/*"ÓµÓĞÕß£ºÓµÓĞÕßID*/"\n" NOR);
-                set("unit", "¿Å");
-                set("owner", "ÓµÓĞÕßID"); // °ó¶¨ÓµÓĞÕß
+        	set("long", HIY "ä½¿ç”¨ï¼ˆchangewx äº”è¡Œï¼‰å…ƒç¥äº”è¡Œä¸¹å¾Œå¯æŒ‡å®šæ›´æ›å…ƒç¥äº”è¡Œå±¬æ€§ä¸€æ¬¡ã€‚\n" + HIC
+        			/*"æ“æœ‰è€…ï¼šæ“æœ‰è€…ID*/"\n" NOR);
+                set("unit", "é¡†");
+                set("owner", "æ“æœ‰è€…ID"); // ç¶å®šæ“æœ‰è€…
 	        set("no_drop", 1);set("no_store", 1);set("no_sell", 1);
         }
         setup();
@@ -29,41 +29,41 @@ int do_use(string arg)
 	string wuxing;
 	
 	mapping wx = ([
-	   "½ğ" : 0,
-	   "Ä¾" : 1,
-	   "Ë®" : 2,
-	   "»ğ" : 3,
-	   "ÍÁ" : 4,
+	   "é‡‘" : 0,
+	   "æœ¨" : 1,
+	   "æ°´" : 2,
+	   "ç«" : 3,
+	   "åœŸ" : 4,
 	]);
 
 	me = this_player();
 
 	if (! arg )
-		return notify_fail("Ö¸Áî¸ñÊ½£ºchangewx [ÎåĞĞ]\n");
+		return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šchangewx [äº”è¡Œ]\n");
 
-	if (arg != "½ğ" && arg != "Ä¾" && arg != "Ë®" &&
-	    arg != "ÍÁ" && arg !="»ğ")
-	    	return notify_fail("ÎåĞĞÊäÈë´íÎó£¬·¶Î§£º½ğÄ¾Ë®»ğÍÁ£¡\n");
+	if (arg != "é‡‘" && arg != "æœ¨" && arg != "æ°´" &&
+	    arg != "åœŸ" && arg !="ç«")
+	    	return notify_fail("äº”è¡Œè¼¸å…¥éŒ¯èª¤ï¼ŒèŒƒåœï¼šé‡‘æœ¨æ°´ç«åœŸï¼\n");
 
 	wuxing = arg;
 	
 	arg = "yuanshenwuxingdan";
 
 	if( query("yuanshen/wuxing", me) == wx[wuxing] )
-		return notify_fail("ÄãÎåĞĞÒÑ¾­ÊÇ" + wuxing + "ÊôĞÔÁË£¡\n");
+		return notify_fail("ä½ äº”è¡Œå·²ç¶“æ˜¯" + wuxing + "å±¬æ€§äº†ï¼\n");
 
 	if (! objectp(ob = present(arg, me)))
-		return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâ¸ö¶«Î÷£¡\n");
+		return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™å€‹æ±è¥¿ï¼\n");
 
 /*
 	if( query("owner", ob) != query("id", me) )
-		return notify_fail(ob->name() + NOR "ÒÑ¾­ÓÚÆäËûÍæ¼Ò°ó¶¨£¡\n");
+		return notify_fail(ob->name() + NOR "å·²ç¶“äºå…¶ä»–ç©å®¶ç¶å®šï¼\n");
 */	
 
-	tell_object(me, HIG "¹§Ï²£¡Äã·şÏÂ" + ob->name() + HIG "ºó£¬ÔªÉñÎåĞĞ±ä¸üÎª£º" HIC + wuxing + HIG "£¡\n");
+	tell_object(me, HIG "æ­å–œï¼ä½ æœä¸‹" + ob->name() + HIG "å¾Œï¼Œå…ƒç¥äº”è¡Œè®Šæ›´ç‚ºï¼š" HIC + wuxing + HIG "ï¼\n");
 	
-	log_file("super/"+"dugu_"+filter_color(query("name")),query("id", me)+"at"+ctime(time())+"Ê¹ÓÃ"+ob->name()+
-	                                                "ÔªÉñÎåĞĞ±ä¸üÎª£º" + wuxing + "£¡\n");
+	log_file("super/"+"dugu_"+filter_color(query("name")),query("id", me)+"at"+ctime(time())+"ä½¿ç”¨"+ob->name()+
+	                                                "å…ƒç¥äº”è¡Œè®Šæ›´ç‚ºï¼š" + wuxing + "ï¼\n");
 
 set("yuanshen/wuxing", wx[wuxing], 	me);
 set("yuanshen/last_change_wuxing", time(), 	me);

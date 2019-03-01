@@ -1,11 +1,11 @@
-// jin.c 神魔金身
+// jin.c 绁為瓟閲戣韩
 // Created by rcwiz for yhonline
 
 #include <ansi.h>
 
 int is_scborn() { return 1; }
 
-string name() { return HIC "神魔金身" NOR; }
+string name() { return HIC "绁為瓟閲戣韩" NOR; }
 
 void remove_effect(object me, int amount);
 
@@ -14,9 +14,9 @@ int perform(object me, string skill)
         int i;
 
         if ((int)me->query_temp("special2/jin"))
-                return notify_fail("你神魔金身之术已在施展中了。\n");
+                return notify_fail("浣犵榄旈噾韬箣琛撳凡鍦ㄦ柦灞曚腑浜嗐�俓n");
 
-        message_vision(HIY "$N" HIY "施展出神魔金身之术，刹那间全身真气迸发，犹如蚩尤再现，威猛无比！\n" NOR, me);
+        message_vision(HIY "$N" HIY "鏂藉睍鍑虹榄旈噾韬箣琛擄紝鍓庨偅闁撳叏韬湡姘ｈ扛鐧硷紝鐚跺铓╁挨鍐嶇従锛屽▉鐚涚劇姣旓紒\n" NOR, me);
 
         i = me->query_skill("force");
 
@@ -40,7 +40,7 @@ void remove_effect(object me, int amount)
                 me->add_temp("apply/armor", -amount);
                 me->delete_temp("special2/jin");
                 me->add_temp("apply/parry", -200);
-                tell_object(me, "你神魔金身之术已施展完毕。\n");
+                tell_object(me, "浣犵榄旈噾韬箣琛撳凡鏂藉睍瀹岀暍銆俓n");
         }
         
 }

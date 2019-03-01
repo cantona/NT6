@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "С��");
+        set("short", "小巷");
         set("long", @LONG
-һ��С�ﲻ֪ͨ���δ������߸�ǽԺ�䣬���Ե�С��Ļ�
-����˭Ҳ���������ֵط��������ֻ����ǰ���ߣ�����ǰ�浽
-��ͨ�����
+一條小巷不知通到何處，兩邊高牆院落，更顯的小巷的昏
+暗。誰也不想在這種地方多呆，你只想往前走走，看看前面到
+底通到哪裡。
 LONG);
 
         set("outdoors", "zhongzhou");

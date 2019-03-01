@@ -6,20 +6,20 @@ inherit MEDAL2;
 
 void create()
 {
-        set_name(HIY "×ªÊÀÑ«ÕÂ£¨Ç¬À¤£©" NOR, ({ "qiankun xunzhang", "qiankun", "xunzhang" }));
-        set("long", HIY "×ªÊÀºó»ñµÃµÄÑ«ÕÂ£¬ÉÏ»æÇ¬À¤Í¼£¬ÉÁÉÁ·¢ÁÁ£¬ÉõÊÇ¾«ÖÂ¡£\n" NOR);
+        set_name(HIY "è½‰ä¸–å‹›ç« ï¼ˆä¹¾å¤ï¼‰" NOR, ({ "qiankun xunzhang", "qiankun", "xunzhang" }));
+        set("long", HIY "è½‰ä¸–å¾Œç²å¾—çš„å‹›ç« ï¼Œä¸Šç¹ªä¹¾å¤åœ–ï¼Œé–ƒé–ƒç™¼äº®ï¼Œç”šæ˜¯ç²¾è‡´ã€‚\n" NOR);
         set_weight(500);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ã¶");
+                set("unit", "æš");
                 set("value", 200000);
                 set("material", "bronze");
                 set("armor_prop/damage", 500);
                 set("armor_prop/con", 10);
                 set("armor_prop/scborn", 1);
                 set("armor_prop/force", "apply_armor() * 3");
-                set("special/desc", HIR "ÓÃÄªĞ°Ê¥·ûÉı¼¶ºó¿ÉÏâÇ¶Ìá¸ßÓĞĞ§ÄÚ¹¦µÈ¼¶¡£" NOR); 
+                set("special/desc", HIR "ç”¨è«é‚ªè–ç¬¦å‡ç´šå¾Œå¯é‘²åµŒæé«˜æœ‰æ•ˆå…§åŠŸç­‰ç´šã€‚" NOR); 
                 set("limit", ([
                         "scborn" : 1, 
                 ]));

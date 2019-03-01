@@ -6,14 +6,14 @@ inherit RINGS;
 
 void create()
 {
-        set_name(HIR "»ğ÷è÷ë¡¤äÎÃğ" NOR, ({ "yanmie ring", "yanmie", "ring" }));
+        set_name(HIR "ç«éº’éºŸï¹’æ¹®æ»…" NOR, ({ "yanmie ring", "yanmie", "ring" }));
         set_weight(500);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ã¶");
-                set("long", HIR "»ğ÷è÷ëÄËÉÏ¹ÅÉñÊŞ£¬ÓµÓĞÎŞÇîÉñÁ¦£¬Ö±µ½ÓĞÒ»Ìì£¬±»¸üÇ¿´óµÄÁ¦Á¿ÏûÃğºó£¬\n"
-                                "ÁÙËÀÖ®Ç°µÄÅ­Ô¹£¬ÔÚÒ»Ë²¼äÄı¾Û³ÉµÄäÎÃğÖ®½ä£¬ÔÌº­ÁË¾Ş´óµÄÍşÁ¦¡£\n" NOR);
+                set("unit", "æš");
+                set("long", HIR "ç«éº’éºŸä¹ƒä¸Šå¤ç¥ç¸ï¼Œæ“æœ‰ç„¡çª®ç¥åŠ›ï¼Œç›´åˆ°æœ‰ä¸€å¤©ï¼Œè¢«æ›´å¼·å¤§çš„åŠ›é‡æ¶ˆæ»…å¾Œï¼Œ\n"
+                                "è‡¨æ­»ä¹‹å‰çš„æ€’æ€¨ï¼Œåœ¨ä¸€ç¬é–“å‡èšæˆçš„æ¹®æ»…ä¹‹æˆ’ï¼Œè˜Šæ¶µäº†å·¨å¤§çš„å¨åŠ›ã€‚\n" NOR);
                 set("value", 20000000);
                 set("material", "gold");
                 set("armor_prop/damage", 4000);

@@ -1,19 +1,19 @@
 
         db_status()
 
-        Ãû³Æ£º
-                db_status() ·µ»ØÊý¾Ý¿âÀ©Õ¹°üµÄµ±Ç°×´Ì¬ÃèÊöµÄ×Ö·û´®
+        åç¨±ï¼š
+                db_status() è¿”å›žæ•¸æ“šåº«æ“´å±•åŒ…çš„ç•¶å‰ç‹€æ…‹æè¿°çš„å­—ç¬¦ä¸²
 
-        Óï·¨£º
+        èªžæ³•ï¼š
                 string db_status()
 
-                ×Ö·û´® db_status()
+                å­—ç¬¦ä¸² db_status()
 
-        ÓÃ·¨£º
-                Õâ¸öº¯Êý·µ»ØÊý¾Ý¿âÀ©Õ¹°üµÄµ±Ç°×´Ì¬ÃèÊöµÄ×Ö·û´®£¬
-                ×Ö·û´®°üÀ¨Êý¾Ý¿âÀàÐÍ£¨ÀýÈç£ºmysql£©ÒÔ¼°ÒÑ¾­½¨Á¢
-                µÄÓÐÐ§Á¬½ÓÊý¡£
+        ç”¨æ³•ï¼š
+                é€™å€‹å‡½æ•¸è¿”å›žæ•¸æ“šåº«æ“´å±•åŒ…çš„ç•¶å‰ç‹€æ…‹æè¿°çš„å­—ç¬¦ä¸²ï¼Œ
+                å­—ç¬¦ä¸²åŒ…æ‹¬æ•¸æ“šåº«é¡žåž‹ï¼ˆä¾‹å¦‚ï¼šmysqlï¼‰ä»¥åŠå·²ç¶“å»ºç«‹
+                çš„æœ‰æ•ˆé€£æŽ¥æ•¸ã€‚
 
-        by ·¢ÏÖºÅ(Find@tx)
+        by ç™¼ç¾è™Ÿ(Find@tx)
 
 

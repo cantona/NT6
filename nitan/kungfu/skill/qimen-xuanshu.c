@@ -4,16 +4,16 @@ inherit SKILL;
 string type() { return "knowledge"; } 
 
 int is_fmsk() { return 1; }
-string family_name() { return "ÌÒ»¨µº"; }
+string family_name() { return "æ¡ƒèŠ±å³¶"; }
 
 int valid_learn(object me)
 {        
         
         if (me->query_skill("qimen-wuxing", 1) < 100)
-                return notify_fail("ÄãÆæÃÅÎåÐÐÕÆÎÕµÃ²»¹»¡£\n");
+                return notify_fail("ä½ å¥‡é–€äº”è¡ŒæŽŒæ¡å¾—ä¸å¤ ã€‚\n");
 
         if( query("family/family_name", me) != family_name() )
-                return notify_fail("ÆæÃÅÐþÊõÖ»ÄÜÌÒ»¨µºµÜ×Ó·½¿ÉÑÐÏ°¡£\n");
+                return notify_fail("å¥‡é–€çŽ„è¡“åªèƒ½æ¡ƒèŠ±å³¶å¼Ÿå­æ–¹å¯ç ”ç¿’ã€‚\n");
 
         return 1;
 }

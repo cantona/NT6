@@ -1,4 +1,4 @@
-// reserve.c ¸òó¡¹¦¾­Âöµ¹×ª
+// reserve.c è›¤èŸ†åŠŸç¶“è„ˆå€’è½‰
 
 #include <ansi.h>
 
@@ -13,23 +13,23 @@ int exert(object me, object target)
         string msg;
 
         if ((int)me->query_skill("hamagong", 1) < 120)
-                return notify_fail("ÄãµÄ¸òó¡¹¦²»¹»æµÊì£¬²»»á¾­Âöµ¹×ª¡£\n");
+                return notify_fail("ä½ çš„è›¤èŸ†åŠŸä¸å¤ å«»ç†Ÿï¼Œä¸æœƒç¶“è„ˆå€’è½‰ã€‚\n");
 
         if( query("neili", me)<200 )
-                return notify_fail("ÄãÏÖÔÚµÄÕæÆø²»¹»¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çš„çœŸæ°£ä¸å¤ ã€‚\n");
 
         if( query_temp("reverse", me) )
-                return notify_fail("ÄãÒÑ¾­µ¹×ª¾­ÂöÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“å€’è½‰ç¶“è„ˆäº†ã€‚\n");
 
         skill = me->query_skill("hamagong", 1);
-        msg = HIB "$N" HIB "ºöµØË«ÊÖ³ÅµØµ¹Á¢£¬ÄæÔË¾­Âö£¬¶ÙÊ±"
-              "ÄÚÏ¢°µÉú£¬·ÀÓùÁ¦´óÔö¡£\n" NOR;
+        msg = HIB "$N" HIB "å¿½åœ°é›™æ‰‹æ’åœ°å€’ç«‹ï¼Œé€†é‹ç¶“è„ˆï¼Œé “æ™‚"
+              "å…§æ¯æš—ç”Ÿï¼Œé˜²å¾¡åŠ›å¤§å¢ã€‚\n" NOR;
         message_combatd(msg, me);
 
         addn_temp("apply/defense", skill/4, me);
         addn_temp("apply/armor", skill/2, me);
         addn_temp("apply/dispel_poison", skill/2, me);
-        addn_temp("apply/reduce_poison", 10, me);//Ìá¸ß10%µÄ¿¹¶¾
+        addn_temp("apply/reduce_poison", 10, me);//æé«˜10%çš„æŠ—æ¯’
         set_temp("reverse", skill, me);
 
         addn("neili", -100, me);
@@ -49,7 +49,7 @@ void show_effect(object me, int skill)
 
         if( query("neili", me)<200 )
         {
-              write(HIG "ÄãÄæÔË¾­Âö£¬ÄÚÁ¦ºÄ¾¡£¬ÃÍÈ»¼äÆøÑªÉÏÓ¿£¬Äã¸Ğ¾õ×Ô¼ºÄÚÁ¦ÊÜµ½ÁËËğÉË¡£\n" NOR);
+              write(HIG "ä½ é€†é‹ç¶“è„ˆï¼Œå…§åŠ›è€—ç›¡ï¼ŒçŒ›ç„¶é–“æ°£è¡€ä¸Šæ¹§ï¼Œä½ æ„Ÿè¦ºè‡ªå·±å…§åŠ›å—åˆ°äº†æå‚·ã€‚\n" NOR);
               addn("max_neili", -1, me);
               set("neili", 0, me);
               delete_temp("hmg_dzjm", me);

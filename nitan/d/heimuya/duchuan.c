@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�ɴ�");
+        set("short", "渡船");
         set("long", @LONG
-�ƺ��ϵ�С�۶������ֺܼ�ª��С�ۡ�һλ����������վ�ڴ�β
-�������ƶ棬һλ����׳˶��С����Ҳ�ڴ�ͷ�þ��ػ�ˮ�Ŵ����ƺ�
-ˮ���ļ������»��ܿ죬���ȴ������
+黃河上的小舟都是這種很簡陋的小舟。一位中年艄公正站在船尾
+吃力地掌舵，一位膀子壯碩的小伙子也在船頭用勁地劃水撐船。黃河
+水流湍急，船下滑很快，橫渡卻很慢。
 LONG );
         set("no_clean_up", 0);
         set("outdoors", "heimuya");

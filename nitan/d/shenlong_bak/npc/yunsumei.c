@@ -5,10 +5,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÔÆËØÃ·", ({"yun sumei", "yun"}));
-        set("long", "ÕâÊÇÒ»¸öÉñÁú½ÌÅ®µÜ×Ó£¬Ò»Ï®ºìÒÂ£¬³¤µÃÆÄÎª¿É°®¡£\n");
+        set_name("é›²ç´ æ¢…", ({"yun sumei", "yun"}));
+        set("long", "é€™æ˜¯ä¸€å€‹ç¥é¾æ•™å¥³å¼Ÿå­ï¼Œä¸€è¥²ç´…è¡£ï¼Œé•·å¾—é —ç‚ºå¯æ„›ã€‚\n");
 
-        set("gender", "Å®ĞÔ");
+        set("gender", "å¥³æ€§");
         set("attitude", "peaceful");
 
         set("age", 10+random(10));
@@ -33,10 +33,10 @@ void create()
         map_skill("hand","shenlong-bashi");
         map_skill("sword","meiren-sanzhao");
         prepare_skill("hand","shenlong-bashi");
-        set("party/party_name", HIY"ÉñÁú½Ì"NOR);
-        set("party/rank", HIR"³àÁúÃÅ"NOR"½ÌÖÚ");
+        set("party/party_name", HIY"ç¥é¾æ•™"NOR);
+        set("party/rank", HIR"èµ¤é¾é–€"NOR"æ•™çœ¾");
         set("party/level", 1);
-        create_family("ÉñÁú½Ì",3,"µÜ×Ó");
+        create_family("ç¥é¾æ•™",3,"å¼Ÿå­");
 
         setup();
         carry_object(VEGETABLE_DIR"xionghuang");

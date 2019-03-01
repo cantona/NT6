@@ -9,63 +9,63 @@ void create()
 { 
         set_lonely_create(1);
         
-        //�Թ��������̳е�����ĵ������ơ� 
+        //迷宮房間所繼承的物件的檔案名稱。 
         set_inherit_room( ROOM ); 
         
-        //�Թ��ĵ��߳� 
+        //迷宮的單邊長 
         set_maze_long(8); 
         
         set_maze_boxs(3);
         
         //set_maze_traps(3);
                         
-        //��ڷ���(�����ڶ���) 
+        //入口方向(出口在對面) 
         set_entry_dir("east"); 
                         
-        //��������������ӷ��� 
+        //出口與區域的連接方向 
         set_link_exit_dir("west"); 
                         
-        //��������������ӵ����� 
+        //出口與區域的連接檔案名 
         set_link_exit_room(__DIR__"leave"); 
 
-        //������������� 
+        //以下是入口坐標 
         set_link_entry_room_x(ENTER_ROOM_X); 
         set_link_entry_room_y(ENTER_ROOM_Y); 
         set_link_entry_room_z(ENTER_ROOM_Z); 
                         
-        //��ͨ��������
-        set_maze_room_short("�Թ�");
+        //普通房間描述
+        set_maze_room_short("迷宮");
                         
         set_maze_room_desc(@LONG
-����һ�������ʯ�ݣ����ܾ�ʯ�ݾ͵�ǽ�ڷ������ĵ���ɫ��â����յ��ͭ
-���³�һ�߸ߵĻ��棬Ʈ����˸��żȻ�еƻ����ѵ����죬�����˸е���Ϣ���
-�ž���������������������ʯ���̾ͣ���������һ���ɫʯ�������Ŀ�������
-����ϸ�ܵ�ͼ�ƣ����˲�������������ǰ�鿴��mazemap��һ����
+這是一間寬敞的石屋，四周巨石壘就的牆壁泛出幽幽的青色光芒，兩盞青銅
+燈吐出一尺高的火燄，飄忽閃爍，偶然有燈花爆裂的輕響，更令人感到窒息般的
+寂靜。地上是丈許見方的青石板舖就，房間中央一塊白色石板格外醒目，上面雕
+刻著細密的圖紋，讓人不由自主的想上前查看（mazemap）一番。
 LONG); 
 
-        //��ڷ�������� 
-        set_entry_short("�Թ����"); 
+        //入口房間短描述 
+        set_entry_short("迷宮入口"); 
                         
-        //��ڷ������� 
+        //入口房間描述 
         set_entry_desc(@LONG
-����һ�������ʯ�ݣ����ܾ�ʯ�ݾ͵�ǽ�ڷ������ĵ���ɫ��â����յ��ͭ
-���³�һ�߸ߵĻ��棬Ʈ����˸��żȻ�еƻ����ѵ����죬�����˸е���Ϣ���
-�ž���������������������ʯ���̾ͣ���������һ���ɫʯ�������Ŀ�������
-����ϸ�ܵ�ͼ�ƣ����˲�������������ǰ�鿴��mazemap��һ����
+這是一間寬敞的石屋，四周巨石壘就的牆壁泛出幽幽的青色光芒，兩盞青銅
+燈吐出一尺高的火燄，飄忽閃爍，偶然有燈花爆裂的輕響，更令人感到窒息般的
+寂靜。地上是丈許見方的青石板舖就，房間中央一塊白色石板格外醒目，上面雕
+刻著細密的圖紋，讓人不由自主的想上前查看（mazemap）一番。
 LONG);
                         
-        //���ڷ�������� 
-        set_exit_short("�Թ�����"); 
+        //出口房間短描述 
+        set_exit_short("迷宮出口"); 
                         
-        //���ڷ������� 
+        //出口房間描述 
         set_exit_desc(@LONG
-����һ�������ʯ�ݣ����ܾ�ʯ�ݾ͵�ǽ�ڷ������ĵ���ɫ��â����յ��ͭ
-���³�һ�߸ߵĻ��棬Ʈ����˸��żȻ�еƻ����ѵ����죬�����˸е���Ϣ���
-�ž���������������������ʯ���̾ͣ���������һ���ɫʯ�������Ŀ�������
-����ϸ�ܵ�ͼ�ƣ����˲�������������ǰ�鿴��mazemap��һ����
+這是一間寬敞的石屋，四周巨石壘就的牆壁泛出幽幽的青色光芒，兩盞青銅
+燈吐出一尺高的火燄，飄忽閃爍，偶然有燈花爆裂的輕響，更令人感到窒息般的
+寂靜。地上是丈許見方的青石板舖就，房間中央一塊白色石板格外醒目，上面雕
+刻著細密的圖紋，讓人不由自主的想上前查看（mazemap）一番。
 LONG);
  
-        // �Թ�������߽���ȼ�
+        // 迷宮限制最高進入等級
         set_remove_time(1800); 
 } 
 

@@ -1,15 +1,15 @@
-// ¸ÃÎï¼şÓÃÓÚ¼ÇÂ¼A-F·¿¼ä¿ªËø×´Ì¬ºÍËæ»ú·ÖÅä·¿¼ä²ÎÊı
-// ¸ÃÎÄ¼ş³£×¤ÄÚ´æÖ±µ½ÏµÍ³¹Ø±Õ
+// è©²ç‰©ä»¶ç”¨äºè¨˜éŒ„A-Fæˆ¿é–“é–‹é–ç‹€æ…‹å’Œéš¨æ©Ÿåˆ†é…æˆ¿é–“åƒæ•¸
+// è©²æ–‡ä»¶å¸¸é§å…§å­˜ç›´åˆ°ç³»çµ±é—œé–‰
 
 inherit ITEM;
 #include <ansi.h>
 
-public string openlock(string lock); // Íâ²¿µ÷ÓÃ¿ªËøº¯Êı
-public void init_data(string arg); // ³õÊ¼»¯Îï¼şÊı¾İ
+public string openlock(string lock); // å¤–éƒ¨èª¿ç”¨é–‹é–å‡½æ•¸
+public void init_data(string arg); // åˆå§‹åŒ–ç‰©ä»¶æ•¸æ“š
 private string get_result(string str1, string str2);
 
 mapping unlock = ([
-// ¶ÔÓ¦·¿¼ä¿É¿ªÆôËøµÄĞòÁĞ
+// å°æ‡‰æˆ¿é–“å¯é–‹å•Ÿé–çš„åºåˆ—
 
         "A" : "1345",
         "B" : "236",
@@ -21,7 +21,7 @@ mapping unlock = ([
 
 void create()
 {
-        set_name("¶À¹Â¾Å½£½âÃÔ¹ÜÀíÎï¼ş", ({ "tsr_dugu-jiujian" }) );
+        set_name("ç¨å­¤ä¹åŠè§£è¿·ç®¡ç†ç‰©ä»¶", ({ "tsr_dugu-jiujian" }) );
         set_weight(1);
         set("no_clean_up", 1);
         
@@ -39,9 +39,9 @@ public void init_data(string arg)
          int ran_num;
          object s;
 
-         // Ëæ»ú·ÖÅä·¿¼ä²ÎÊı£¬Ã¿´ÎrebootºóË³Ğò¶¼²»Ò»Ñù
-         // ³õÊÔ»¯¸ö·¿¼äÊı¾İ£¬¸÷¸ö·¿¼äÊı¾İÍ³Ò»½»¸ÃÎï¼ş¹ÜÀí£¬±ãÓÚÍ³Ò»
-         // Ôö¼ÓÁË½âÃÔµÄÄÑ¶È
+         // éš¨æ©Ÿåˆ†é…æˆ¿é–“åƒæ•¸ï¼Œæ¯æ¬¡rebootå¾Œé †åºéƒ½ä¸ä¸€æ¨£
+         // åˆè©¦åŒ–å€‹æˆ¿é–“æ•¸æ“šï¼Œå„å€‹æˆ¿é–“æ•¸æ“šçµ±ä¸€äº¤è©²ç‰©ä»¶ç®¡ç†ï¼Œä¾¿äºçµ±ä¸€
+         // å¢åŠ äº†è§£è¿·çš„é›£åº¦
          ran_num = random(6);
          set("number/lockroom1", rn[ran_num]);
  
@@ -64,15 +64,15 @@ public void init_data(string arg)
          rn -= ({ rn[ran_num] });
          set("number/lockroom6", rn[0]);
             
-         set("lock/unlocked", 0); // ËùÓĞËøÊÇ·ñ½â¿ª
-         set("lock/opened", ""); // ÒÑ¾­´ò¿ªµÄËøĞòÁĞ
+         set("lock/unlocked", 0); // æ‰€æœ‰é–æ˜¯å¦è§£é–‹
+         set("lock/opened", ""); // å·²ç¶“æ‰“é–‹çš„é–åºåˆ—
   
          if (arg == "enter")
          {
                  if (! s = find_object("/d/huashan/s"))
                            s = load_object("/d/huashan/s");
 
-                 tell_room(s, HIG "Ö»ÌıµÃºäÂ¡Â¡¼¸Éù£¬Ê¯ÃÅÉıÆğ½«É½¶´·â×¡ÁË¡£\n" NOR);
+                 tell_room(s, HIG "åªè½å¾—è½Ÿéš†éš†å¹¾è²ï¼ŒçŸ³é–€å‡èµ·å°‡å±±æ´å°ä½äº†ã€‚\n" NOR);
                  delete("exits/enter", s);
          }
 
@@ -80,7 +80,7 @@ public void init_data(string arg)
 
 }
 
-// Íâ²¿µ÷ÓÃ´Ëº¯Êı´«µİ²ÎÊılockÎª: "A"-"F"    
+// å¤–éƒ¨èª¿ç”¨æ­¤å‡½æ•¸å‚³éåƒæ•¸lockç‚º: "A"-"F"    
 public string openlock(string lock)
 {       
         string opened, str_want_open;
@@ -112,8 +112,8 @@ public string openlock(string lock)
 
              set("exits/enter", __DIR__"x", s);
 
-             tell_room(s, HIG "Ö»ÌıµÃºäÂ¡Â¡¼¸Éù£¬Ê¯ÃÅÒÑÏİÈëµØÏÂ£¬Â¶³öÁËÉ½¶´µÄÈë¿Ú¡£\n" NOR);
-             call_out("init_data", 180 + random(10), "enter"); // ¶ş·ÖÖÓºóÖØĞÂ³õÊ¼»¯ËùÓĞÊı¾İ
+             tell_room(s, HIG "åªè½å¾—è½Ÿéš†éš†å¹¾è²ï¼ŒçŸ³é–€å·²é™·å…¥åœ°ä¸‹ï¼Œéœ²å‡ºäº†å±±æ´çš„å…¥å£ã€‚\n" NOR);
+             call_out("init_data", 180 + random(10), "enter"); // äºŒåˆ†é˜å¾Œé‡æ–°åˆå§‹åŒ–æ‰€æœ‰æ•¸æ“š
              return "UNLOCKED";
         }
         set("lock/opened", result);

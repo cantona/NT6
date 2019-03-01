@@ -1,4 +1,4 @@
-// unarmed.c »ù±¾È­½Å
+// unarmed.c åŸºæœ¬æ‹³è…³
 // Last Modified by winder on Mar. 10 2000
 
 #include <ansi.h>;
@@ -16,13 +16,13 @@ void skill_improved(object me)
 
 int help(object me)
 {
-        write(HIC"\n»ù±¾È­½Å£º"NOR"\n");
+        write(HIC"\nåŸºæœ¬æ‹³è…³ï¼š"NOR"\n");
         write(@HELP
 
-    È­½ÅÀàÎä¼¼µÄ»ù±¾¹¦£¬²¢ÄÜ¸ÄÉÆÄãºóÌìµÄëöÁ¦¡£
+    æ‹³è…³é¡æ­¦æŠ€çš„åŸºæœ¬åŠŸï¼Œä¸¦èƒ½æ”¹å–„ä½ å¾Œå¤©çš„è†‚åŠ›ã€‚
 
-        Ñ§Ï°ÒªÇó£º
-                ÎŞ
+        å­¸ç¿’è¦æ±‚ï¼š
+                ç„¡
 HELP
         );
         return 1;

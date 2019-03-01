@@ -1,15 +1,15 @@
-// meng.c ÃÏÕıÅô
+// meng.c å­Ÿæ­£éµ¬
 
 #include <ansi.h>
 inherit NPC;
 
 void create()
 {
-        set_name("ÃÏÕıÅô", ({ "meng  zhengpeng"}));
-        set("nickname", "Îå·ïµ¶ÕÆÃÅ");
+        set_name("å­Ÿæ­£éµ¬", ({ "meng  zhengpeng"}));
+        set("nickname", "äº”é³³åˆ€æŒé–€");
         set("long",
-        "Îå·ïµ¶µÄÕÆÃÅ£¬Ò»Éíµ¶·¨´«ËµÉõÎªÁËµÃ¡£\n");
-        set("gender", "ÄĞĞÔ");
+        "äº”é³³åˆ€çš„æŒé–€ï¼Œä¸€èº«åˆ€æ³•å‚³èªªç”šç‚ºäº†å¾—ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 52);
         set("attitude", "peaceful");
         set("str", 25);

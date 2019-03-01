@@ -1,4 +1,4 @@
-//jiaowei qin ΩπŒ≤«Ÿ
+//jiaowei qin ÁÑ¶Â∞æÁê¥
 
 #include <weapon.h>
 #include <ansi.h>
@@ -7,19 +7,19 @@ inherit SWORD;
 
 void create()
 {
-        set_name(HIM"ΩπŒ≤«Ÿ"NOR,({"jiaowei qin","qin"}));
+        set_name(HIM"ÁÑ¶Â∞æÁê¥"NOR,({"jiaowei qin","qin"}));
         set("taskobj", 1);
         set_weight(500);
         if(clonep())
                  set_default_object(__FILE__);
         else{
-                set("unit","’≈");
+                set("unit","Âºµ");
                 set("value",0);
                 set("material","steel");
-                set("long","œ‡¥´’‚±„ «µ±ƒÍ≤ÃŒƒºß¥”ª÷–À˘æ»≥ˆµƒΩπƒæ◊ˆ≥…µƒ√¿«Ÿ£¨«ŸµƒŒ≤∂À»‘ø…º˚Ωπ∫⁄…´°£\n");
-                set("wield_msg",HIY"$N…Ï ÷«·«·“ªª”,“ª’≈ΩπŒ≤«Ÿ±„“—≥ˆœ÷‘⁄$N ÷÷–.\n"NOR);
-                set("unwield_msg",HIY"$N Æ÷∏“ª∑˜£¨«Ÿ…˘“∑»ª∂¯÷π°£$N ’∆ΩπŒ≤«Ÿ£¨∑≈Ω¯±≥◊≈µƒ∞¸∏§¿Ô°£\n"NOR);
-                set("unequip_msg",HIY"ƒ„ Æ÷∏“ª∑˜£¨«Ÿ…˘“∑»ª∂¯÷π°£ƒ„ ’∆ΩπŒ≤«Ÿ£¨∑≈Ω¯±≥◊≈µƒ∞¸∏§¿Ô°£.\n"NOR);
+                set("long","Áõ∏ÂÇ≥ÈÄô‰æøÊòØÁï∂Âπ¥Ëî°ÊñáÂß¨ÂæûÁÅ´‰∏≠ÊâÄÊïëÂá∫ÁöÑÁÑ¶Êú®ÂÅöÊàêÁöÑÁæéÁê¥ÔºåÁê¥ÁöÑÂ∞æÁ´Ø‰ªçÂèØË¶ãÁÑ¶ÈªëËâ≤„ÄÇ\n");
+                set("wield_msg",HIY"$N‰º∏ÊâãËºïËºï‰∏ÄÊèÆ,‰∏ÄÂºµÁÑ¶Â∞æÁê¥‰æøÂ∑≤Âá∫ÁèæÂú®$NÊâã‰∏≠.\n"NOR);
+                set("unwield_msg",HIY"$NÂçÅÊåá‰∏ÄÊãÇÔºåÁê¥ËÅ≤Êõ≥ÁÑ∂ËÄåÊ≠¢„ÄÇ$NÊî∂Ëµ∑ÁÑ¶Â∞æÁê¥ÔºåÊîæÈÄ≤ËÉåËëóÁöÑÂåÖË¢±Ë£°„ÄÇ\n"NOR);
+                set("unequip_msg",HIY"‰Ω†ÂçÅÊåá‰∏ÄÊãÇÔºåÁê¥ËÅ≤Êõ≥ÁÑ∂ËÄåÊ≠¢„ÄÇ‰Ω†Êî∂Ëµ∑ÁÑ¶Â∞æÁê¥ÔºåÊîæÈÄ≤ËÉåËëóÁöÑÂåÖË¢±Ë£°„ÄÇ.\n"NOR);
         }
         setup();
 }
@@ -29,7 +29,7 @@ int wield()
         object ob = environment();
 
 /*        if (ob && !wizardp(ob)) {
-                tell_object(ob, name() + " «Œ◊ ¶”√∆∑£¨ƒ„≤ªƒ‹ π”√£¨«Î¬Ì…œœÚŒ◊ ¶±®∏Ê£¨∑Ò‘Ú∫Ûπ˚◊‘∏∫°£\n");
+                tell_object(ob, name() + "ÊòØÂ∑´Â∏´Áî®ÂìÅÔºå‰Ω†‰∏çËÉΩ‰ΩøÁî®ÔºåË´ãÈ¶¨‰∏äÂêëÂ∑´Â∏´Â†±ÂëäÔºåÂê¶ÂâáÂæåÊûúËá™Ë≤†„ÄÇ\n");
                 call_out("let_him_die", 300, ob);
                 return 0;
         }*/
@@ -40,7 +40,7 @@ void let_him_die(object ob)
 {
         if (ob = environment()) {
                 addn("combat_exp", -30000, ob);
-                set_temp("last_damage_from", "µ¡”√Œ◊ ¶”√∆∑÷–∂æ", ob);
+                set_temp("last_damage_from", "ÁõúÁî®Â∑´Â∏´Áî®ÂìÅ‰∏≠ÊØí", ob);
                 ob->die();
         }
 }

@@ -1,6 +1,6 @@
 mapping familys = ([
 
-        "Îäµ±ÅÉ" : ([
+        "æ­¦ç•¶æ´¾" : ([
                 "place" : ({ "/d/wudang/shijie1", "/d/wudang/shibapan","/d/wudang/haohanpo", 
                              "/d/wudang/guangchang", "/d/wudang/tynroad", "/d/wudang/mozhenjing",
                              "/d/wudang/fuzhenguan", "/d/wudang/shiliang", "/d/wudang/yuzhengong",
@@ -13,7 +13,7 @@ mapping familys = ([
                 "master_place" : "/d/wudang/xiaoyuan",
         ]),
 
-        "ÉÙÁÖÅÉ" : ([
+        "å°‘æ—æ´¾" : ([
                 "place" : ({ "/d/shaolin/xiaojing1", "/d/shaolin/xiaojing2", "/d/shaolin/shijie1",
                              "/d/shaolin/shijie2", "/d/shaolin/shijie3", "/d/shaolin/shijie4",
                              "/d/shaolin/guangchang1", "/d/shaolin/shijie5", "/d/shaolin/shijie6", 
@@ -24,7 +24,7 @@ mapping familys = ([
                 "master_place" : "/d/shaolin/fzlou2",
         ]),
 
-        "Ø¤°ï" : ([
+        "ä¸å¹«" : ([
                 "place" : ({ "/d/city/ml1", "/d/city/ml2",
                              "/d/city/ml3", "/d/city/pomiao", 
                              "/d/gaibang/shoushe", "/d/gaibang/inhole",
@@ -35,7 +35,7 @@ mapping familys = ([
                 "master_place" : "/d/city/gbxiaowu",            
         ]),
         
-        "¶ëáÒÅÉ" : ([
+        "å³¨åµ‹æ´¾" : ([
                 "place" : ({ "/d/emei/qianfoan", "/d/emei/qingyinge", 
                              "/d/emei/yunufeng", "/d/emei/woyunan", 
                              "/d/emei/shierpan3", "/d/emei/qsjie1", 
@@ -46,7 +46,7 @@ mapping familys = ([
                 "master_place" : "/d/emei/hcahoudian",
         ]),
 
-        "ĞÇËŞÅÉ" : ([
+        "æ˜Ÿå®¿æ´¾" : ([
                 "place" : ({ "/d/xingxiu/xxroad1", "/d/xingxiu/riyuedong", 
                              "/d/xingxiu/xxh6", "/d/xingxiu/xxh5", "/d/xingxiu/xxh4", 
                              "/d/xingxiu/xxh1", "/d/xingxiu/xxh2", "/d/xingxiu/xxh3", 
@@ -56,7 +56,7 @@ mapping familys = ([
                 "master_place" : "/d/xingxiu/riyuedong",
         ]),
         
-        "»ªÉ½ÅÉ" : ([
+        "è¯å±±æ´¾" : ([
                 "place" : ({ "/d/huashan/yunu", "/d/huashan/square", 
                              "/d/huashan/zhenyue", "/d/huashan/pingxinshi",
                              "/d/huashan/yuquan", "/d/huashan/chaoyang", 
@@ -67,7 +67,7 @@ mapping familys = ([
                 "master_place" : "/d/huashan/qunxianguan",
         ]),
 
-        "¶ÎÊÏ»Ê×å" : ([
+        "æ®µæ°çš‡æ—" : ([
                 "place" : ({ "/d/dali/shilin1", "/d/dali/shilin2", "/d/dali/gudao",
                              "/d/dali/road3", "/d/dali/road4", "/d/dali/road5",
                              "/d/dali/dalinorth", "/d/dali/ershuiqiao", "/d/dali/gaolishan2", 
@@ -79,7 +79,7 @@ mapping familys = ([
                 "master_place" : "/d/dali/qiandian",
         ]),
         
-        "Ã÷½Ì" : ([
+        "æ˜æ•™" : ([
                 "place" : ({ "/d/mingjiao/shanlu1", "/d/mingjiao/bshantan", "/d/mingjiao/cangshui", 
                              "/d/mingjiao/dadian", "/d/mingjiao/eastdian", "/d/mingjiao/fangtang", 
                              "/d/mingjiao/hsqchanglang", "/d/mingjiao/hsqdating", "/d/mingjiao/hsqmen", 
@@ -91,7 +91,7 @@ mapping familys = ([
                 "master_place" : "/d/mingjiao/dadian",
         ]),
 
-        "´óÂÖËÂ" : ([
+        "å¤§è¼ªå¯º" : ([
                 "place" : ({ "/d/xueshan/shanjiao", "/d/xueshan/cangjing", "/d/xueshan/cangjingge",
                              "/d/xueshan/caoyuan", "/d/xueshan/cedian1", "/d/xueshan/cedian2", 
                              "/d/xueshan/chang", "/d/xueshan/chanshi", "/d/xueshan/dadian",  
@@ -103,7 +103,7 @@ mapping familys = ([
                 "master_place" : "/d/xueshan/neidian",                
         ]),
 
-        "È«Õæ½Ì" : ([
+        "å…¨çœŸæ•™" : ([
                 "place" : ({ "/d/quanzhen/cetang", "/d/quanzhen/huizhentang", "/d/quanzhen/shijianyan",
                              "/d/quanzhen/damen", "/d/quanzhen/guozhendian", "/d/quanzhen/xianzhentang",
                              "/d/quanzhen/datang1", "/d/quanzhen/datang2", "/d/quanzhen/datang3",
@@ -114,7 +114,7 @@ mapping familys = ([
                 "master_place" : "/d/quanzhen/shandong",
         ]),
 
-        "¹ÅÄ¹ÅÉ" : ([ 
+        "å¤å¢“æ´¾" : ([ 
                 "place" : ({ "/d/gumu/liangong3", "/d/gumu/liangong2", "/d/gumu/liangong",
                              "/d/gumu/zhengting", "/d/gumu/houting", "/d/gumu/xiaoting",
                              "/d/gumu/qianting", "/d/gumu/xiaoting", "/d/gumu/mumen", 
@@ -124,7 +124,7 @@ mapping familys = ([
                 "master_place" : "/d/gumu/zhengting",
         ]),
 
-        "ÁéğÕ¹¬" : ([
+        "éˆé·²å®®" : ([
                 "place" : ({ "/d/lingjiu/xianchou", "/d/lingjiu/dadao1", "/d/lingjiu/dadao2",
                              "/d/lingjiu/changl15", "/d/lingjiu/changl6", "/d/lingjiu/dating",
                              "/d/lingjiu/changl7", "/d/lingjiu/changl8", "/d/lingjiu/changl4",
@@ -136,7 +136,7 @@ mapping familys = ([
                 "master_place" : "/d/lingjiu/dating",
         ]), 
 
-        "Å·ÑôÊÀ¼Ò" : ([
+        "æ­é™½ä¸–å®¶" : ([
                 "place" : ({ "/d/baituo/houyuan", "/d/baituo/tuyuan", "/d/baituo/zhuyuan",
                              "/d/baituo/shoushe", "/d/baituo/menlang", "/d/baituo/huayuan",
                              "/d/baituo/damen", "/d/baituo/yuanzi", "/d/baituo/dating", 
@@ -146,7 +146,7 @@ mapping familys = ([
                 "master_place" : "/d/baituo/dating",
         ]), 
 
-        "ÌÒ»¨µº" : ([
+        "æ¡ƒèŠ±å³¶" : ([
                 "place" : ({ "/d/taohua/wofang", "/d/taohua/hyjuchu", "/d/taohua/changlang2", 
                              "/d/taohua/changlang", "/d/taohua/shuilong", "/d/taohua/jingshe",
                              "/d/taohua/haitan", "/d/taohua/tuqiu", "/d/taohua/zhulin",
@@ -157,7 +157,7 @@ mapping familys = ([
                 "master_place" : "/d/taohua/dating",
         ]),
 
-        "Ñªµ¶ÃÅ" : ([
+        "è¡€åˆ€é–€" : ([
                 "place" : ({ "/d/xuedao/sroad7", "/d/xuedao/sroad8", "/d/xuedao/shandong1", 
                              "/d/xuedao/wangyougu", "/d/xuedao/sroad9", "/d/xuedao/shandong2",
                              "/d/xuedao/shandong3", }),
@@ -166,7 +166,7 @@ mapping familys = ([
                 "master_place" : "/d/xuedao/shandong3",
         ]),
 
-        "¹ØÍâºú¼Ò" : ([
+        "é—œå¤–èƒ¡å®¶" : ([
                 "place" : ({ "/d/guanwai/caoguduo", "/d/guanwai/baihe", "/d/guanwai/xiaoyuan", 
                              "/d/guanwai/milin1", "/d/guanwai/xiaowu", "d/guanwai/houyuan",
                              "/d/guanwai/liangonge", "/d/guanwai/liangong", "/d/guanwai/jingxiu",}),
@@ -175,7 +175,7 @@ mapping familys = ([
                 "master_place" : "/d/guanwai/xiaowu",
         ]),
 
-        "ÉñÁú½Ì" : ([
+        "ç¥é¾æ•™" : ([
                 "place" : ({ "/d/shenlong/zoulang", "/d/shenlong/zhulin", "/d/shenlong/jushi", 
                              "/d/shenlong/road2", "/d/shenlong/road", "/d/shenlong/kongdi",
                              "/d/shenlong/xiaowu", "/d/shenlong/caodi", "/d/shenlong/haitan",}),
@@ -184,7 +184,7 @@ mapping familys = ([
                 "master_place" : "/d/shenlong/dating",
         ]),
 
-        "Ä½ÈİÊÀ¼Ò" : ([
+        "æ…•å®¹ä¸–å®¶" : ([
                 "place" : ({ "/d/yanziwu/shuwu", "/d/yanziwu/lanyue", "/d/yanziwu/shuwu", 
                              "/d/yanziwu/zuijing", "/d/yanziwu/canheju", "/d/yanziwu/qiushuan",
                              "/d/yanziwu/huayuan", "/d/yanziwu/jiashan", "/d/yanziwu/jiashan",
@@ -195,7 +195,7 @@ mapping familys = ([
                 "master_place" : "/d/yanziwu/canheju",
         ]),
 
-        "åĞÒ£ÅÉ" : ([
+        "é€é™æ´¾" : ([
                 "place" : ({ "/d/xiaoyao/mubanlu", "/d/xiaoyao/liangong", "/d/xiaoyao/xiaodao4", 
                              "/d/xiaoyao/muwu1", "/d/xiaoyao/xiaodao5", "/d/xiaoyao/qingcaop",
                              "/d/xiaoyao/muwu2", "/d/xiaoyao/xiaodao3", "/d/xiaoyao/xiaodao1",
@@ -205,7 +205,7 @@ mapping familys = ([
                 "master_place" : "/d/xiaoyao/qingcaop",
         ]),
 
-        "»ªÉ½½£×Ú" : ([ 
+        "è¯å±±åŠå®—" : ([ 
                 "place" : ({ "/d/huashan/jzroad1", "/d/village/hsroad2", "/d/huashan/jzroad1", 
                              "/d/huashan/jzroad2", "/d/huashan/jzroad3", "/d/huashan/jzroad4",  
                              "/d/huashan/jzroad5", "/d/huashan/jzroad6", "/d/huashan/shangu",}),  
@@ -213,7 +213,7 @@ mapping familys = ([
                 "master_id" : "feng buping", 
                 "master_place" : "/d/huashan/xiaowu",
         ]),
-        "ÌÆÃÅÊÀ¼Ò" : ([ 
+        "å”é–€ä¸–å®¶" : ([ 
                 "place" : ({ "/d/tangmen/ximen", "/d/tangmen/xdajie", "/d/tangmen/zhongxin", 
                              "/d/tangmen/bdajie1", "/d/tangmen/bdajie2", "/d/tangmen/ndajie",  
                              "/d/tangmen/edajie",}),  
@@ -222,7 +222,7 @@ mapping familys = ([
                 "master_place" : "/d/tangmen/tangltt",
         ]),
         
-        "ÈÕÔÂÉñ½Ì" : ([ 
+        "æ—¥æœˆç¥æ•™" : ([ 
                 "place" : ({ "/d/heimuya/linjxd1", "/d/heimuya/guang", "/d/heimuya/linjxd2", 
                              "/d/heimuya/shidao1", "/d/heimuya/shidao2", "/d/heimuya/xingxingtan",  
                              "/d/heimuya/changtan",}),  

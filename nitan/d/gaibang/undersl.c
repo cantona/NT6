@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÎÝ½Ç±ß");
+        set("short", "å±‹è§’é‚Š");
         set("long", @LONG
-ÕâÊÇÀÏÇÇ¼Ò³ø·¿´óÄ¾²ñ¶ÑÏÂÃæ¡£ÀïÃæÆÆÆÆÀÃÀÃµÄ£¬¶ªÂúÁË¸÷ÖÖÔÓ
-Îï£¬»¹ÓÐØ¤°ïµÜ×ÓÊÕ¼¯µÄÆÆÍ­ÀÃÌúµÈ¡£´ÓÕâÀïÍ¨ÍùØ¤°ïµÄÃØÃÜÍ¨µÀ¡£
+é€™æ˜¯è€å–¬å®¶å»šæˆ¿å¤§æœ¨æŸ´å †ä¸‹é¢ã€‚è£¡é¢ç ´ç ´çˆ›çˆ›çš„ï¼Œä¸Ÿæ»¿äº†å„ç¨®é›œ
+ç‰©ï¼Œé‚„æœ‰ä¸å¹«å¼Ÿå­æ”¶é›†çš„ç ´éŠ…çˆ›éµç­‰ã€‚å¾žé€™è£¡é€šå¾€ä¸å¹«çš„ç§˜å¯†é€šé“ã€‚
 LONG );
         set("exits", ([
                 "up"        : "/d/shaolin/chufang2",

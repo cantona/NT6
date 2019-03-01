@@ -1,4 +1,4 @@
-// hook.c »ù±¾¹³·¨
+// hook.c åŸºæœ¬é‰¤æ³•
 // Last Modified by winder on Mar. 10 2000
 
 #include <ansi.h>;
@@ -13,13 +13,13 @@ int power_point(object me) { return 1; }
 
 int help(object me)
 {
-        write(HIC"\n»ù±¾¹³·¨£º"NOR"\n");
+        write(HIC"\nåŸºæœ¬é‰¤æ³•ï¼š"NOR"\n");
         write(@HELP
 
-    ¹³ÀàÎä¼¼µÄ»ù±¾¹¦¡£
+    é‰¤é¡æ­¦æŠ€çš„åŸºæœ¬åŠŸã€‚
 
-        Ñ§Ï°ÒªÇó£º
-                ÎŞ
+        å­¸ç¿’è¦æ±‚ï¼š
+                ç„¡
 HELP
         );
         return 1;

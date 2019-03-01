@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Óæ¸Û");
+        set("short", "æ¼æ¸¯");
         set("long", @LONG
-ÕâÀïÊÇ¸öÐ¡Ð¡Óæ¸Û¡£ÄÏÃæº£ÃæÆ¯¸¡×Å¼¸ËÒÐ¡´¬£¬Ì§ÑÛÍû£¬º£ÌìÏà
-Á¬£¬ÎÞ±ßÎÞ¼Ê¡£º£Å¸ÂÓ¹ýÀË¼â£¬ÓÆÓÆôæÈ»¡£
+é€™è£¡æ˜¯å€‹å°å°æ¼æ¸¯ã€‚å—é¢æµ·é¢æ¼‚æµ®è‘—å¹¾è‰˜å°èˆ¹ï¼ŒæŠ¬çœ¼æœ›ï¼Œæµ·å¤©ç›¸
+é€£ï¼Œç„¡é‚Šç„¡éš›ã€‚æµ·é·—æŽ éŽæµªå°–ï¼Œæ‚ æ‚ ç¿©ç„¶ã€‚
 LONG );
         set("outdoors", "nanhai");
         set("exits", ([
@@ -41,22 +41,22 @@ int do_enter(string arg)
         string dir;
 
         if (arg != "boat")
-                return notify_fail("ÄãÒªÈ¥ÄÄ¶ù£¿\n" );
+                return notify_fail("ä½ è¦åŽ»å“ªå…’ï¼Ÿ\n" );
 
         ob = this_player();
 
         if (! lingpai = present("shangfa ling", ob))
-                return notify_fail(HIC "´¬·òËµµÀ£º¡°ÄãÃ»ÓÐÉÍÉÆ·£¶ñÁî£¬²»ÄÜµ½ÏÀ¿ÍµºÈ¥£¡\n" NOR);
+                return notify_fail(HIC "èˆ¹å¤«èªªé“ï¼šâ€œä½ æ²’æœ‰è³žå–„ç½°æƒ¡ä»¤ï¼Œä¸èƒ½åˆ°ä¿ å®¢å³¶åŽ»ï¼\n" NOR);
 
-        message_vision(HIG "´¬·òµãÁËµãÍ·µÀ£º¡°¼ÈÈ»¸óÏÂÓÐÉÍÉÆ·£¶ñÁî£¬ÎÒ¾ÍËÍÄãµ½ÏÀ¿ÍµºÈ¥£¡¡±\n" NOR, ob);
+        message_vision(HIG "èˆ¹å¤«é»žäº†é»žé ­é“ï¼šâ€œæ—¢ç„¶é–£ä¸‹æœ‰è³žå–„ç½°æƒ¡ä»¤ï¼Œæˆ‘å°±é€ä½ åˆ°ä¿ å®¢å³¶åŽ»ï¼â€\n" NOR, ob);
         
         destruct(lingpai);
 
-        message_vision("´¬·òÒ»¼ûÓÐÈËÉÏ´¬£¬Ã¦½ÐÁËÒ»Éù£º¿ª´¬à¶£¡\n", ob);
-        message_vision("´¬·òÉýÆð·«£¬´¬¾ÍÏòÄÏ·½º½ÐÐ¡£\n", ob);
+        message_vision("èˆ¹å¤«ä¸€è¦‹æœ‰äººä¸Šèˆ¹ï¼Œå¿™å«äº†ä¸€è²ï¼šé–‹èˆ¹å˜ï¼\n", ob);
+        message_vision("èˆ¹å¤«å‡èµ·å¸†ï¼Œèˆ¹å°±å‘å—æ–¹èˆªè¡Œã€‚\n", ob);
         
         ob->move("/d/xiakedao/duchuan");
-        tell_object(ob, BLU "ÄãÔÚº£ÉÏº½ÐÐÁËÒ»ÕûÌì.......\n" NOR ) ;
+        tell_object(ob, BLU "ä½ åœ¨æµ·ä¸Šèˆªè¡Œäº†ä¸€æ•´å¤©.......\n" NOR ) ;
         call_out("home", 7, ob);
         return 1;
 }
@@ -66,8 +66,8 @@ void home(object ob)
         if (! objectp(ob))
                 return;
 
-        tell_object(ob, "´ó´¬ÖÕÓÚµÖ´ïÁËÄÏº£°¶±ß¡£Äã×ßÏÂ´¬À´¡£\n");
+        tell_object(ob, "å¤§èˆ¹çµ‚äºŽæŠµé”äº†å—æµ·å²¸é‚Šã€‚ä½ èµ°ä¸‹èˆ¹ä¾†ã€‚\n");
         ob->move (__DIR__"haitan");
-        message("vision", ob->name() + "ÏÂÁËÐ¡ÖÛ£¬×ßÁË¹ýÀ´¡£\n",
+        message("vision", ob->name() + "ä¸‹äº†å°èˆŸï¼Œèµ°äº†éŽä¾†ã€‚\n",
                 environment(ob), ob);
 }

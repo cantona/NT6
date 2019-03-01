@@ -5,17 +5,17 @@ inherit WAIST;
 
 void create()
 {
-        set_name(NOR + CYN "º¬É³ÉäÓ°" NOR, ({ "hansha sheying", "han", "sha", "hansha", "sheying" }) );
+        set_name(NOR + CYN "å«æ²™å°„å½±" NOR, ({ "hansha sheying", "han", "sha", "hansha", "sheying" }) );
         set_weight(500);
         if (clonep())
                 destruct(this_object());
         else {
-                set("long", CYN "ÕâÊÇÎå¶¾½ÌµÄÆæÃÅ°µÆ÷¡¸º¬É³ÉäÓ°¡¹£¬Ñù×ÓÏóÒ»ÌõÑü\n"
-                                "´ø£¬¿ÉÒÔÊøÔÚÑü¼ä¡£´øÖĞ¼äÓĞÒ»¸ö±â±âµÄĞ¡ÌúºĞ£¬Ö»\n"
-                                "ÒªÔÚÑü¼äÒ»°´(shot)¾Í¿ÉÒÔ·¢Éä³öÏ¸ÈçÅ£Ã«µÄ¶¾Õë¡£\n" NOR) ;
-                set("unit", "¸ö");
+                set("long", CYN "é€™æ˜¯äº”æ¯’æ•™çš„å¥‡é–€æš—å™¨ã€Œå«æ²™å°„å½±ã€ï¼Œæ¨£å­è±¡ä¸€æ¢è…°\n"
+                                "å¸¶ï¼Œå¯ä»¥æŸåœ¨è…°é–“ã€‚å¸¶ä¸­é–“æœ‰ä¸€å€‹æ‰æ‰çš„å°éµç›’ï¼Œåª\n"
+                                "è¦åœ¨è…°é–“ä¸€æŒ‰(shot)å°±å¯ä»¥ç™¼å°„å‡ºç´°å¦‚ç‰›æ¯›çš„æ¯’é‡ã€‚\n" NOR) ;
+                set("unit", "å€‹");
                 set("value", 800000);
-                set("no_sell", "¹Ô¹Ô£¬Õâ¡­Õâ²»ÊÇºÎ¡­½ÌÖ÷µÄ¡­¡­");
+                set("no_sell", "ä¹–ä¹–ï¼Œé€™â€¦é€™ä¸æ˜¯ä½•â€¦æ•™ä¸»çš„â€¦â€¦");
                 set("zhen", 10);
                 set("material", "iron");
                 set("armor_prop/armor", 3);
@@ -39,64 +39,64 @@ int do_shot(string arg)
         me = this_player();
 
         if( query("no_fight", environment(me)) )
-                return notify_fail ("ÕâÀï²»×¼Õ½¶·£¡\n");
+                return notify_fail ("é€™è£¡ä¸æº–æˆ°é¬¥ï¼\n");
 
         if( query_temp("armor/waist", me) != this_object() )
-                return notify_fail("ÄãÊ×ÏÈµÃ½«º¬É³ÉäÓ°×°±¸ÔÚÑü¼ä¡£\n");
+                return notify_fail("ä½ é¦–å…ˆå¾—å°‡å«æ²™å°„å½±è£å‚™åœ¨è…°é–“ã€‚\n");
 
         if (! arg)
-                return notify_fail("ÄãÏë¶ÔË­·¢Éäº¬É³ÉäÓ°£¿\n");
+                return notify_fail("ä½ æƒ³å°èª°ç™¼å°„å«æ²™å°„å½±ï¼Ÿ\n");
 
         if (! objectp(target = present(arg, environment(me))))
-                return notify_fail("ÕâÀïÃ»ÓĞÕâ¸öÈË¡£\n");
+                return notify_fail("é€™è£¡æ²’æœ‰é€™å€‹äººã€‚\n");
 
         if( query("id", target) == query("id", me) )
-                return notify_fail("ÄãÏëÉ±×Ô¼ºÂğ£¿\n");
+                return notify_fail("ä½ æƒ³æ®ºè‡ªå·±å—ï¼Ÿ\n");
 
         if (! me->is_fighting(target))
-                return notify_fail("ÄãÖ»ÄÜÉäÉ±Õ½¶·ÖĞµÄ¶ÔÊÖ¡£\n");
+                return notify_fail("ä½ åªèƒ½å°„æ®ºæˆ°é¬¥ä¸­çš„å°æ‰‹ã€‚\n");
 
         if (! target->is_character() || target->is_corpse())
-                return notify_fail("¿´Çå³şÒ»µã£¬ÄÇ²¢²»ÊÇ»îÎï¡£\n");
+                return notify_fail("çœ‹æ¸…æ¥šä¸€é»ï¼Œé‚£ä¸¦ä¸æ˜¯æ´»ç‰©ã€‚\n");
 
         if (me->is_busy())
-                return notify_fail("ÄãÕıÃ¦×ÅÄÄ¡£\n");
+                return notify_fail("ä½ æ­£å¿™è‘—å“ªã€‚\n");
 
         if( query("zhen", this_object())<1 )
-                return notify_fail("ÌúºĞÖĞµÄ¶¾ÕëÒÑ¾­Éä¹âÁË¡£\n");
+                return notify_fail("éµç›’ä¸­çš„æ¯’é‡å·²ç¶“å°„å…‰äº†ã€‚\n");
 
         if (! objectp(ob = present("hansha sheying", me)))
-                return notify_fail("ÄãÃ»ÓĞÕâÖÖ¶«Î÷¡£\n");
+                return notify_fail("ä½ æ²’æœ‰é€™ç¨®æ±è¥¿ã€‚\n");
 
         myskill = me->query_skill("hansha-sheying", 1) + me->query_skill("dodge", 1);
         tgskill = target->query_skill("dodge");
         mylev = me->query_skill("hansha-sheying", 1);
 
         if (mylev <= 50)
-                return notify_fail("ÄãµÄº¬É³ÉäÓ°»¹²»ÊìÁ·£¬ÎŞ·¨Ê¹ÓÃ´ËÎïÆ·£¡\n");
+                return notify_fail("ä½ çš„å«æ²™å°„å½±é‚„ä¸ç†Ÿç·´ï¼Œç„¡æ³•ä½¿ç”¨æ­¤ç‰©å“ï¼\n");
 
         addn("zhen", -1, this_object());
-        message_vision(HIW "\n$N" HIW "Ò»ÉùÇáĞ¦£¬×óÊÖ²»¾­ÒâµÄÔÚÑü¼äÒ»°´¡£Ö»Ìı"
-                       "µÃÒ»Õó¡°àÍàÍàÍ¡±µÄÆÆ¿ÕÉù¡£\n" NOR, me, target);
+        message_vision(HIW "\n$N" HIW "ä¸€è²è¼•ç¬‘ï¼Œå·¦æ‰‹ä¸ç¶“æ„çš„åœ¨è…°é–“ä¸€æŒ‰ã€‚åªè½"
+                       "å¾—ä¸€é™£â€œå—¤å—¤å—¤â€çš„ç ´ç©ºè²ã€‚\n" NOR, me, target);
         me->start_busy(2 + random(2)) ;
 
         if (random(myskill) < tgskill)
         {
-                message_vision(HIY "$n" HIY "´ó½ĞÒ»Éù£¬ÃÍµÄÒ»¸öºµµØ°Î´ĞÉíĞĞ"
-                        "³åÆğÊıÕÉÀ´¸ß£¬¶ã¿ªÁË$N" HIY "µÄ¶¾Õë£¡\n\n" NOR,
+                message_vision(HIY "$n" HIY "å¤§å«ä¸€è²ï¼ŒçŒ›çš„ä¸€å€‹æ—±åœ°æ‹”è”¥èº«è¡Œ"
+                        "æ²–èµ·æ•¸ä¸ˆä¾†é«˜ï¼Œèº²é–‹äº†$N" HIY "çš„æ¯’é‡ï¼\n\n" NOR,
                         me, target);
         } else
         {
-                message_vision(HIR "$n" HIR "¶ãÉÁ²»¼°£¬±»ÎŞÊıÏ¸ÈçÅ£Ã«µÄ¶¾Õë"
-                               "´òÁËÒ»Éí£¬²»ÓÉ²Òº¿Á¬Á¬£¡\n\n" NOR, me, target);
+                message_vision(HIR "$n" HIR "èº²é–ƒä¸åŠï¼Œè¢«ç„¡æ•¸ç´°å¦‚ç‰›æ¯›çš„æ¯’é‡"
+                               "æ‰“äº†ä¸€èº«ï¼Œä¸ç”±æ…˜åšé€£é€£ï¼\n\n" NOR, me, target);
 
                 target->affect_by("sha_poison",
                                (["level":query("jiali", me)+random(query("jiali", me)),
                                   "id":query("id", me),
                                   "duration" : mylev / 50 + random(mylev / 20) ]));
 
-                tell_object (target, HIB "ÄãÖ»¾õµÃÁ³ÉÏ¡¢ĞØÇ°Ò»Í´£¬¶øºóÊÇÆæ"
-                                     "Ñ÷ÄÑ°¾¡£\n" NOR);
+                tell_object (target, HIB "ä½ åªè¦ºå¾—è‡‰ä¸Šã€èƒ¸å‰ä¸€ç—›ï¼Œè€Œå¾Œæ˜¯å¥‡"
+                                     "ç™¢é›£ç†¬ã€‚\n" NOR);
 
                 damage=mylev*4-(query("max_neili", target)/10);
                 if (damage < 100 ) damage = 100;

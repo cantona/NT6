@@ -6,17 +6,17 @@ inherit CLUB;
 
 void create()
 {
-        set_name(HIY"´óÊ÷¸É"NOR,({ "da shugan", "shugan" }) );
+        set_name(HIY"å¤§æ¨¹å¹¹"NOR,({ "da shugan", "shugan" }) );
         set_weight(1500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ù");
+                set("unit", "æ ¹");
                 set("value", 0);
                 set("material", "bamboo");
-                set("long", "ÕâÊÇÒ»¸ù¸ÉµôµÄµÄ´óÊ÷¸É¡£\n");
-                set("wield_msg", "$NÄÃ³öÒ»¸ù$n£¬ÎÕÔÚÊÖÖĞ¡£\n");
-                set("unequip_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+                set("long", "é€™æ˜¯ä¸€æ ¹å¹¹æ‰çš„çš„å¤§æ¨¹å¹¹ã€‚\n");
+                set("wield_msg", "$Næ‹¿å‡ºä¸€æ ¹$nï¼Œæ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unequip_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
         }
         init_club(8);
         setup();

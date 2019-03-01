@@ -7,14 +7,14 @@ inherit NPC;
 int ask_zsh(object me, object ob); 
 void create() 
 { 
-     set_name("йьню",({"shou wei","guard"}) ); 
-     set("long","уБйгр╩н╩Ё╓╣дс╒вк╡╙╡╙╣ддЙгАхк║ё\n"); 
-     set("title","воию╩А╩Ажз"); 
-     set("gender","дппт"); 
+     set_name("Е╝┬Х║⌡",({"shou wei","guard"}) ); 
+     set("long","И─≥Ф≤╞Д╦─Д╫█И∙╥Г └Х▀╠Е╖©Е▀┐Е▀┐Г └Е╧╢Х╪∙Д╨╨Ц─┌\n"); 
+     set("title","Г╢╚Х║╚Ф°┐Ф°┐Г°╬"); 
+     set("gender","Г■╥Ф─╖"); 
      set("age",20); 
      set("combat_exp",100); 
      set("inquiry",([ 
-          "воию╩А" : (: ask_zsh :), 
+          "Г╢╚Х║╚Ф°┐" : (: ask_zsh :), 
      ]) ); 
      setup(); 
      carry_object("/clone/cloth/cloth")->wear();  
@@ -25,19 +25,19 @@ int ask_zsh(object me, object ob)
 { 
      me=this_player(); 
      ob=this_object(); 
-     if( query("bunch/bunch_name", me) != "воию╩А" && query("shen", me) >= 0 )
+     if( query("bunch/bunch_name", me) != "Г╢╚Х║╚Ф°┐" && query("shen", me) >= 0 )
      { 
-           tell_object(me,"йьнюиоиообоб©╢ак©╢дЦё╛Юеакр╩иЫ║ё\n"); 
-           tell_object(me,"йьню╤тдЦк╣╣юё╨║╟оК╪схКвоию╩Аё©╣╠╪р╣дтзюОцФё╛дЦвт╪╨╫Ьх╔╟и║ё║╠\n"); 
+           tell_object(me,"Е╝┬Х║⌡Д╦┼Д╦┼Д╦▀Д╦▀Г°▀Д╨├Г°▀Д╫═О╪▄Е≈╞Д╨├Д╦─Х│╡Ц─┌\n"); 
+           tell_object(me,"Е╝┬Х║⌡Е╟█Д╫═Х╙╙И│⌠О╪ Б─°Ф┐ЁЕ┼═Е┘╔Г╢╚Х║╚Ф°┐О╪÷Г∙╤Е╝╤Г └Е°╗Хё║И²╒О╪▄Д╫═Х┤╙Е╥╠И─╡Е▌╩Е░╖Ц─┌Б─²\n"); 
            set_temp("good_zsh", 1, me);
            return 1; 
      } 
      if( bad_bunch(me) || query("shen", me)<0 )
      { 
-           command("say ╨ъё║╩╧╡╩©Л╧Жё©нрвоию╩А╤тдЦуБжжхкйг╡╩аТгИцФ╣дё║"); 
+           command("say Е⌠╪О╪│И┌└Д╦█Е©╚Ф╩╬О╪÷Ф┬▒Г╢╚Х║╚Ф°┐Е╟█Д╫═И─≥Г╗╝Д╨╨Ф≤╞Д╦█Г∙≥Ф┐┘И²╒Г └О╪│"); 
            return 1; 
      } 
 
-     tell_object(me,"йьнюфФ╧ж╣юё╨║╟╢С╪р╤╪йг╩Адзпж╣эё╛дЦ╨нЁЖ╢кят╟║ё©║╠\n"); 
+     tell_object(me,"Е╝┬Х║⌡Е╔┤Ф─╙И│⌠О╪ Б─°Е╓╖Е╝╤И┐╫Ф≤╞Ф°┐Е┘╖Е┘└Е╪÷О╪▄Д╫═Д╫∙Е┤╨Ф╜╓Х╗─Е∙┼О╪÷Б─²\n"); 
      return 1; 
 } 

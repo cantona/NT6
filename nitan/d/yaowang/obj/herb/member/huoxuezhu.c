@@ -2,12 +2,12 @@
 
 void create()
 {
-        set_name(HIB "»îÑªÖé" NOR, ({ "huoxuezhu", "Pleione bulbocodioides", "herb_hxzhu" }));
+        set_name(HIB "æ´»è¡€ç " NOR, ({ "huoxuezhu", "Pleione bulbocodioides", "herb_hxzhu" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "À¼¿ÆÖ²Îï¶ÀËâÀ¼(Pleione bulbocodioides)µÄ¼ÙÁÛ¾¥¡£ÒòÆä¼ÙÁÛ¾¥µ×²¿Ô²ĞÎËÆÖé£¬¾ßÊæ½î»îÑª¹¦Ğ§£¬¹ÊµÃ´ËÃû¡£\n" NOR);
-                set("base_unit", "¸ù");
+                set("long", HIW "è˜­ç§‘æ¤ç‰©ç¨è’œè˜­(Pleione bulbocodioides)çš„å‡é±—è–ã€‚å› å…¶å‡é±—è–åº•éƒ¨åœ“å½¢ä¼¼ç ï¼Œå…·èˆ’ç­‹æ´»è¡€åŠŸæ•ˆï¼Œæ•…å¾—æ­¤åã€‚\n" NOR);
+                set("base_unit", "æ ¹");
                 set("base_value", 30000);
                 set("base_weight", 100);
         }

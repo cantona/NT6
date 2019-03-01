@@ -5,17 +5,17 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "С�ӱ�");
+        set("short", "小河邊");
         set("long", @LONG
-�˴�λ�����ɽ��һƫƧ����ֻ��Ũ���ѵأ����⸡������Χ��
-�������ľ���ľ��ľ�֮������Զ����С����ɽ��(dong)��ӿ����Ȫ
-ˮ���γɣ����ȵ�ˮ���������������˳����������ͨ��ɽ�����
-�����ɽ���ɽ���С�
+此處位於終南山角一偏僻處，只見濃蔭匝地，花光浮動，周圍盡
+是三天古木，頗具幽靜之美。不遠處的小河由山洞(dong)中湧出的泉
+水所形成，淙淙的水聲更讓你覺得身心順暢。往北可通往山林深處。
+往西可進入山洞中。
 LONG
         );
         set("outdoors", "zhongnan");
         set("item_desc", ([
-                "dong" : "һ�����䡢�İ����ֲ���Сɽ����\n",
+                "dong" : "一個深邃、幽暗、恐怖的小山洞。\n",
         ]));
         set("exits", ([
                 "enter" : __DIR__"shandong1",

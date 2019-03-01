@@ -1,4 +1,4 @@
-// danggui.c µ±¹é
+// danggui.c ç•¶æ­¸
 
 inherit ITEM;
 #include <ansi.h>
@@ -11,13 +11,13 @@ void init()
 
 void create()
 {
-        set_name(YEL"µ±¹é"NOR, ({"danggui"}));
+        set_name(YEL"ç•¶æ­¸"NOR, ({"danggui"}));
         set_weight(500);
         set("vegetable", 2);
         set("value", 300);
         set("nostrum", 2);
-        set("unit", "¿é");
-        set("long", "ÕâÊÇÒ»¿éºæ¸É¹ıµÄµ±¹é£¬¿´À´¿ÉÒÔÈëÒ©¡£\n");
+        set("unit", "å¡Š");
+        set("long", "é€™æ˜¯ä¸€å¡Šçƒ˜å¹¹éçš„ç•¶æ­¸ï¼Œçœ‹ä¾†å¯ä»¥å…¥è—¥ã€‚\n");
         set("pour_type", "1");
         setup();
 }
@@ -26,13 +26,13 @@ int do_eat(string arg)
 {
         object me = this_player();
 
-        if(!id(arg)) return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+        if(!id(arg)) return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if(!present(this_object(), me))
-                return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if( me->is_busy() )
-                return notify_fail("±ğ¼±£¬ÂıÂı³Ô£¬Ğ¡ĞÄ±ğÒ­×ÅÁË¡£\n");
+                return notify_fail("åˆ¥æ€¥ï¼Œæ…¢æ…¢åƒï¼Œå°å¿ƒåˆ¥å™è‘—äº†ã€‚\n");
 
-        write("ÄãÈı¿ÚÁ½¿Ú¾Í°Ñµ±¹é³ÔÁËÏÂÈ¥¡£\n");
+        write("ä½ ä¸‰å£å…©å£å°±æŠŠç•¶æ­¸åƒäº†ä¸‹å»ã€‚\n");
         destruct(this_object());
         return 1;
 }

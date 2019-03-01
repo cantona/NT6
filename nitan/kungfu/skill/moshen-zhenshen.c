@@ -9,13 +9,13 @@ int valid_enable(string usage) { return usage == "parry"; }
 int valid_learn(object me)
 {
         if ((int)me->query_skill("force") < 300)
-                return notify_fail("ÄãµÄÄÚ¹¦»ðºò²»¹»£¬ÄÑÒÔÐÞÏ°ÕâµÈÉñ¹¦¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸç«å€™ä¸å¤ ï¼Œé›£ä»¥ä¿®ç¿’é€™ç­‰ç¥žåŠŸã€‚\n");
 
         if( query("max_neili", me)<3000 )
-                return notify_fail("ÄãµÄÄÚÁ¦»¹²»×ãÒÔÐÞÏ°ÕâµÈÉñ¹¦¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›é‚„ä¸è¶³ä»¥ä¿®ç¿’é€™ç­‰ç¥žåŠŸã€‚\n");
 
         if ((int)me->query_skill("force", 1) < (int)me->query_skill("moshen-zhenshen", 1))
-                return notify_fail("ÄãµÄ»ù±¾ÄÚ¹¦Ë®Æ½ÓÐÏÞ£¬ÎÞ·¨Áì»á¸ü¸ßÉîµÄÄ§ÉñÕæÉí¡£\n");
+                return notify_fail("ä½ çš„åŸºæœ¬å…§åŠŸæ°´å¹³æœ‰é™ï¼Œç„¡æ³•é ˜æœƒæ›´é«˜æ·±çš„é­”ç¥žçœŸèº«ã€‚\n");
 
         return 1;
 }
@@ -27,7 +27,7 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
         int cost;
 
         if ((int)me->query_skill("moshen-zhenshen", 1) < 100 ||
-            query("family/family_name", ob) == "ÉÙÁÖÅÉ" || 
+            query("family/family_name", ob) == "å°‘æž—æ´¾" || 
             query("neili", me)<300 )
                 return;
 
@@ -43,14 +43,14 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
                 addn("neili", -cost, me);
                 result = ([ "damage": -damage ]);
  
-                result += (["msg" : HIY "$n" HIY "ÄÚÁ¦Ò»Õó¹Äµ´£¬ÐÎ³ÉÒ»¸öÎÞÓ°µÄÇ½±Ú£¬µ²¿ªÁË$N"
-                                    HIY "µÄ¹¥»÷¡£\n" NOR]);
+                result += (["msg" : HIY "$n" HIY "å…§åŠ›ä¸€é™£é¼“ç›ªï¼Œå½¢æˆä¸€å€‹ç„¡å½±çš„ç‰†å£ï¼Œæ“‹é–‹äº†$N"
+                                    HIY "çš„æ”»æ“Šã€‚\n" NOR]);
  
                 return result;
         }
         else if (mp >= 100)
         {
-                result = HIY "$nÉíÇ°·Â·ðÓÐÒ»µÀÎÞÐÎÆøÇ½£¬µ«$NÔçÒÑ¿´ÆÆ$nÆÆÕÀ£¬Ö±¹¥Ïò$nÒªº¦¡£\n";
+                result = HIY "$nèº«å‰ä»¿ä½›æœ‰ä¸€é“ç„¡å½¢æ°£ç‰†ï¼Œä½†$Næ—©å·²çœ‹ç ´$nç ´ç¶»ï¼Œç›´æ”»å‘$nè¦å®³ã€‚\n";
 
                 COMBAT_D->set_bhinfo(result);
         }
@@ -73,15 +73,15 @@ int query_effect_parry(object attacker, object me)
 
 int practice_skill(object me)
 {
-        return notify_fail("Ä§ÉñÕæÉíÖ»ÄÜÓÃÑ§Ï°»òÑÐ¾¿À´Ìá¸ß¡£\n"); 
+        return notify_fail("é­”ç¥žçœŸèº«åªèƒ½ç”¨å­¸ç¿’æˆ–ç ”ç©¶ä¾†æé«˜ã€‚\n"); 
         if (me->query_skill("moshen-zhenshen", 1) < 100)
-                return notify_fail("Äã¶ÔÄ§ÉñÕæÉíµÄÁË½âÉõÇ³£¬»¹²»×ãÒÔ×ÔÐÐ¶ÍÁ¶¡£\n");
+                return notify_fail("ä½ å°é­”ç¥žçœŸèº«çš„äº†è§£ç”šæ·ºï¼Œé‚„ä¸è¶³ä»¥è‡ªè¡Œé›ç…‰ã€‚\n");
 
         if( query("qi", me)<70 )
-                return notify_fail("ÄãµÄÌåÁ¦Ì«µÍÁË¡£\n");
+                return notify_fail("ä½ çš„é«”åŠ›å¤ªä½Žäº†ã€‚\n");
 
         if( query("neili", me)<100 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»Á·»¤ÌåÉñ¹¦¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ç·´è­·é«”ç¥žåŠŸã€‚\n");
 
         me->receive_damage("qi", 50);
         addn("neili", -85, me);

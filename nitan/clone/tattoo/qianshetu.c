@@ -4,18 +4,18 @@ inherit __DIR__"tattoo";
 
 void create()
 {
-        set_name(HIG "Ç§Éß²øÉíÍ¼" NOR, ({ "qianshe tu", "qianshe", "tu" }));
+        set_name(HIG "åƒè›‡çºèº«åœ–" NOR, ({ "qianshe tu", "qianshe", "tu" }));
         set_weight(3000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»ÕÅ¹Å¾ÉµÄÍ¼Æ¬£¬ÉÏÃæ»æ×ÅĞ©ÎÆÑù¡£");
-                set("unit", "ÕÅ");
+                set("long", "é€™æ˜¯ä¸€å¼µå¤èˆŠçš„åœ–ç‰‡ï¼Œä¸Šé¢ç¹ªè‘—äº›ç´‹æ¨£ã€‚");
+                set("unit", "å¼µ");
                 set("value", 10000000);
                 set("material", "paper");
-                set("tattoo_long", "ÎŞÊıÖ»¶¾Éß²øÈÆµÄÍ¼Ñù");
-                set("can_tattoo", ({ "ºó±³"}));
-                set("tattoo_type", ({ "Éí·¨" }));
+                set("tattoo_long", "ç„¡æ•¸åªæ¯’è›‡çºç¹çš„åœ–æ¨£");
+                set("can_tattoo", ({ "å¾ŒèƒŒ"}));
+                set("tattoo_type", ({ "èº«æ³•" }));
                 set("tattoo_dex", 10);
                                 set("tattoo_con", -6);
                                 set("scborn", 1);

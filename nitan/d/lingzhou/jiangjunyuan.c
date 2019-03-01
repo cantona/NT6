@@ -6,11 +6,11 @@
 inherit ROOM;
 void create()
 {
-        set("short", "½«¾ü¸®´óÔº");
+        set("short", "å°‡è»åºœå¤§é™¢");
         set("long", @LONG
-ÕâÀïÊÇ½«¾ü¸®µÄ´óÔº£¬µ±ÃæÒ»¶Â¿íÀ«µÄ°×ÓñÕÕ±Ú£¬ÉÏÊé¡°ÖÒÐÄ±¨¹ú¡±
-ËÄ¸ö´ó×Ö£¬Âä¿îÊÇµ±½ñÎ÷ÏÄ»ÊµÛÀîÔªê»¡£Ò»É«µÄÇà×©ÆÌµØ£¬ÓÐ¼¸¸öÆÍÒÛ
-ÕýÔÚÔºÖÐÈ÷É¨£¬ÄÏÃæÊÇÄÚÕ¬£¬Î÷ÃæÊÇÕÊ·¿£¬¶«ÃæÊÇ¸öÐ¡Ôº¡£
+é€™è£¡æ˜¯å°‡è»åºœçš„å¤§é™¢ï¼Œç•¶é¢ä¸€å µå¯¬é—Šçš„ç™½çŽ‰ç…§å£ï¼Œä¸Šæ›¸â€œå¿ å¿ƒå ±åœ‹â€
+å››å€‹å¤§å­—ï¼Œè½æ¬¾æ˜¯ç•¶ä»Šè¥¿å¤çš‡å¸æŽå…ƒæ˜Šã€‚ä¸€è‰²çš„é’ç£šèˆ–åœ°ï¼Œæœ‰å¹¾å€‹åƒ•å½¹
+æ­£åœ¨é™¢ä¸­æ´’æŽƒï¼Œå—é¢æ˜¯å…§å®…ï¼Œè¥¿é¢æ˜¯å¸³æˆ¿ï¼Œæ±é¢æ˜¯å€‹å°é™¢ã€‚
 LONG );
         set("exits", ([
 //                "east"  : __DIR__"xiaoyuan",
@@ -26,6 +26,6 @@ LONG );
         set("coor/y", 32050);
         set("coor/z", 0);
         setup();
-        create_door("north" , "ÓÍÄ¾´óÃÅ", "south" , DOOR_CLOSED);
-//        create_door("south" , "¾íÁ±ÃÅ", "north" , DOOR_CLOSED);
+        create_door("north" , "æ²¹æœ¨å¤§é–€", "south" , DOOR_CLOSED);
+//        create_door("south" , "å·ç°¾é–€", "north" , DOOR_CLOSED);
 }

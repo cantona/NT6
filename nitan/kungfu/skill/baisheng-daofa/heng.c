@@ -5,7 +5,7 @@
 
 inherit F_SSERVER;
 
-string name() { return HIR "ºáÉ¨Ç§¾ü" NOR; }
+string name() { return HIR "æ©«æŽƒåƒè»" NOR; }
 
 string final(object me, object target, int ap, int dp);
 
@@ -23,36 +23,36 @@ int perform(object me, object target)
         }
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(name() + "Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(name() + "åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me)) ||
             query("skill_type", weapon) != "blade" )
-                return notify_fail("ÄãËùÊ¹ÓÃµÄÎäÆ÷²»¶Ô£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ æ‰€ä½¿ç”¨çš„æ­¦å™¨ä¸å°ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if ((int)me->query_skill("baisheng-daofa", 1) < 150)
-                return notify_fail("Äã°ÙÊ¤µ¶·¨»¹²»µ½¼Ò£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ ç™¾å‹åˆ€æ³•é‚„ä¸åˆ°å®¶ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (me->query_skill_mapped("blade") != "baisheng-daofa")
-                return notify_fail("ÄãÃ»ÓÐ¼¤·¢°ÙÊ¤µ¶·¨£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼ç™¾å‹åˆ€æ³•ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if ((int)me->query_skill("force") < 200)
-                return notify_fail("ÄãµÄÄÚ¹¦»ðºò²»¹»£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸç«å€™ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if( query("neili", me)<500 )
-                return notify_fail("ÄãÏÖÔÚµÄÕæÆø²»¹»£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çš„çœŸæ°£ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
         ap = attack_power(me, "blade") + me->query_str()*10;
-        if( query("character", me) == "¹âÃ÷ÀÚÂä" || query("character", me) == "¹úÍÁÎÞË«" )
+        if( query("character", me) == "å…‰æ˜Žç£Šè½" || query("character", me) == "åœ‹åœŸç„¡é›™" )
         {
-                msg = HIR "$N" HIR "àÁÄ¿´óºÈ£¬É±ÆøÁÝÈ»¶øÆð£¬ÊÖ³Ö" + weapon->name() +
-                      HIR "ÒåÎÞ·´¹ËµÄÃÍÈ»ºáÉ¨$n" HIR "£¬È«È»²»¹ËÉúËÀ£¬ºÆÆøâêÈ»£¡\n" NOR;
+                msg = HIR "$N" HIR "å—”ç›®å¤§å–ï¼Œæ®ºæ°£å‡œç„¶è€Œèµ·ï¼Œæ‰‹æŒ" + weapon->name() +
+                      HIR "ç¾©ç„¡åé¡§çš„çŒ›ç„¶æ©«æŽƒ$n" HIR "ï¼Œå…¨ç„¶ä¸é¡§ç”Ÿæ­»ï¼Œæµ©æ°£æ‚µç„¶ï¼\n" NOR;
                 ap += ap * 1 / 4;
         } else
-                msg = HIR "$N" HIR "¿ñÌáÄÚ¾¢£¬½«È«ÉíÁ¦µÀ¹à×¢ÓÚ" + weapon->name() +
-                      HIR "Ö®ÉÏ¼²Õ¶Åü³ö£¬¡°à§¡±µÄÒ»ÉùÉ¨Ïò$n" HIR "¶øÈ¥£¡\n" NOR;
+                msg = HIR "$N" HIR "ç‹‚æå…§å‹ï¼Œå°‡å…¨èº«åŠ›é“çŒæ³¨äºŽ" + weapon->name() +
+                      HIR "ä¹‹ä¸Šç–¾æ–¬åŠˆå‡ºï¼Œâ€œå”°â€çš„ä¸€è²æŽƒå‘$n" HIR "è€ŒåŽ»ï¼\n" NOR;
 
         dp = defense_power(target, "force")  + target->query_str()*10;
 
@@ -65,7 +65,7 @@ int perform(object me, object target)
                 me->start_busy(2);
         } else
         {
-                msg += HIC "$n" HIC "·ÜÁ¦ÕÐ¼Ü£¬Ó²ÉúÉúµÄµ²×¡ÁËÕâÁîÌìµØÊ§É«Ö®±ØÉ±Ò»»÷£¡\n" NOR;
+                msg += HIC "$n" HIC "å¥®åŠ›æ‹›æž¶ï¼Œç¡¬ç”Ÿç”Ÿçš„æ“‹ä½äº†é€™ä»¤å¤©åœ°å¤±è‰²ä¹‹å¿…æ®ºä¸€æ“Šï¼\n" NOR;
                 addn("neili", -150, me);
                 me->start_busy(2);
         }
@@ -79,16 +79,16 @@ string final(object me, object target, int ap, int dp)
         object weapon;
         string msg;
 
-        msg = HIR "$n" HIR "Á¬Ã¦µÖµ²£¬È´ÄÇÀïÕÐ¼ÜµÃ×¡£¬Õû¸öÈË"
-              "±»ÕâÒ»»÷´òµÃ·ÉÉí¶øÆð£¬Ô¶ÂäÆ½É³¡£";
+        msg = HIR "$n" HIR "é€£å¿™æŠµæ“‹ï¼Œå»é‚£è£¡æ‹›æž¶å¾—ä½ï¼Œæ•´å€‹äºº"
+              "è¢«é€™ä¸€æ“Šæ‰“å¾—é£›èº«è€Œèµ·ï¼Œé è½å¹³æ²™ã€‚";
         if (ap / 3 > dp)
         {
-                msg += "¾Í´Ë±ÐÃü£¡\n" NOR;
+                msg += "å°±æ­¤æ–ƒå‘½ï¼\n" NOR;
                 call_out("char_killed", 0, target, me);
         } else
         if( (ap/2>dp) && objectp(weapon=query_temp("weapon", target)) )
         {
-                msg += "ÊÖÖÐµÄ" + weapon->name() + HIR "ÔÙÒ²ÄÃÄó²»×¡£¬Ó¦Éù¶ø³ö¡£\n" NOR;
+                msg += "æ‰‹ä¸­çš„" + weapon->name() + HIR "å†ä¹Ÿæ‹¿æä¸ä½ï¼Œæ‡‰è²è€Œå‡ºã€‚\n" NOR;
                 weapon->unequip();
                 weapon->move(environment(me));
         } else

@@ -1,13 +1,13 @@
 // This program is a part of NITAN MudLIB
-// Luan-blade.c ÂÒµ¶£¨Ìï²®¹â£©
+// Luan-blade.c äº‚åˆ€ï¼ˆç”°ä¼¯å…‰ï¼‰
 
 inherit SKILL;
 
 string *action_msg = ({
-        "$NÊÖÖĞ$w×óÒ»»ÓÓÒÒ»À¹£¬¶Ô×¼$nµÄ$l¾ÍÊÇÒ»´Á",
-        "$NÊÖÖĞ$wÉÏÒ»ÌôÏÂÒ»ÁÃ£¬Ïò$nµÄ$lÍ±È¥",
-        "$NÊÖÖĞ$w¶«Ò»ÅüÎ÷Ò»²å£¬µ¶·æÖ¸Ïò$nµÄ$l",
-        "$NÊÖÖĞ$wÇ°Ò»Ö¸ºóÒ»É¨£¬µ¶¼âÌôÏò$nµÄ$l",
+        "$Næ‰‹ä¸­$wå·¦ä¸€æ®å³ä¸€æ””ï¼Œå°æº–$nçš„$lå°±æ˜¯ä¸€æˆ³",
+        "$Næ‰‹ä¸­$wä¸Šä¸€æŒ‘ä¸‹ä¸€æ’©ï¼Œå‘$nçš„$læ…å»",
+        "$Næ‰‹ä¸­$wæ±ä¸€åŠˆè¥¿ä¸€æ’ï¼Œåˆ€é‹’æŒ‡å‘$nçš„$l",
+        "$Næ‰‹ä¸­$wå‰ä¸€æŒ‡å¾Œä¸€æƒï¼Œåˆ€å°–æŒ‘å‘$nçš„$l",
 });
 
 int valid_enable(string usage) { return usage == "blade" || usage == "parry"; }
@@ -25,16 +25,16 @@ mapping query_action(object me, object weapon)
                 "attack": 60 + random(21),
                 "dodge" : -60 + random(21),
                 "parry" : -60 + random(21),
-                "damage_type" : random(2) ? "´ìÉË" : "¸îÉË",
+                "damage_type" : random(2) ? "æŒ«å‚·" : "å‰²å‚·",
         ]);
 }
 
 int practice_skill(object me)
 {
         if( query("qi", me)<60 )
-                return notify_fail("ÄãµÄ¾«Á¦Ì«µÍÁË¡£\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›å¤ªä½äº†ã€‚\n");
         if( query("neili", me)<60 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»Á·ÂÒµ¶¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ç·´äº‚åˆ€ã€‚\n");
         me->receive_damage("qi", 50);
         addn("neili", -50, me);
         return 1;

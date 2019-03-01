@@ -14,32 +14,32 @@ int perform(object me, object target)
 
         /*
         if( query_temp("jinshe/tuwu", me) )
-                return notify_fail("Äã²ÅÓÃµÄ½ğÉßÍÂÎí£¬Ã»·¨½Ó×Å¾Í³öÕĞ¡£\n");
+                return notify_fail("ä½ æ‰ç”¨çš„é‡‘è›‡åéœ§ï¼Œæ²’æ³•æ¥è‘—å°±å‡ºæ‹›ã€‚\n");
         */
 
         if (! target) target = offensive_target(me);
         if (! target || ! me->is_fighting(target))
-                return notify_fail("½ğÉßÍÂÎíÖ»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ¡£\n");
+                return notify_fail("é‡‘è›‡åéœ§åªèƒ½åœ¨æˆ°é¬¥ä¸­ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon=query_temp("handing", me)) || 
             // (string)weapon->query("id") != "jinshe zhui" ||
             weapon->query_amount() < 1)
-                // return notify_fail("ÄãÊÖÀïÃ»ÄÃ½ğÉß×¶£¬²»ÄÜÊ¹ÓÃ¾øÕĞ£¡\n");
-                return notify_fail("ÄãÊÖÀïÃ»ÄÃ½ğÉß×¶»òÆäËû°µÆ÷£¬²»ÄÜÊ¹ÓÃ¾øÕĞ£¡\n");
+                // return notify_fail("ä½ æ‰‹è£¡æ²’æ‹¿é‡‘è›‡éŒï¼Œä¸èƒ½ä½¿ç”¨çµ•æ‹›ï¼\n");
+                return notify_fail("ä½ æ‰‹è£¡æ²’æ‹¿é‡‘è›‡éŒæˆ–å…¶ä»–æš—å™¨ï¼Œä¸èƒ½ä½¿ç”¨çµ•æ‹›ï¼\n");
 
         if ((skill = me->query_skill("jinshe-zhui", 1)) < 100)
-                return notify_fail("ÄãµÄ½ğÉß×¶·¨²»¹»æµÊì£¬²»»áÊ¹ÓÃ½ğÉßÍÂÎí¡£\n");
+                return notify_fail("ä½ çš„é‡‘è›‡éŒæ³•ä¸å¤ å«»ç†Ÿï¼Œä¸æœƒä½¿ç”¨é‡‘è›‡åéœ§ã€‚\n");
 
         if( query("neili", me)<300 )
-                return notify_fail("ÄãÄÚÁ¦²»¹»ÁË¡£\n");
+                return notify_fail("ä½ å…§åŠ›ä¸å¤ äº†ã€‚\n");
 
         if( query_temp("jinshe/tuwu", target) )
-                return notify_fail("¶Ô·½ÒÑ¾­ÕâÑùÁË£¬Äã¾Í²»±ØÁË°É¡£\n");
+                return notify_fail("å°æ–¹å·²ç¶“é€™æ¨£äº†ï¼Œä½ å°±ä¸å¿…äº†å§ã€‚\n");
 
         weapon->add_amount(-1);
 
-        msg = HIY "$N" HIY "Ò»ÉùÇáĞ¥£¬ÉíĞÎÎ¢¶¯£¬ÊÖÖĞ½ğÉß×¶¾¹È»ÏòÉÏ·É"
-              "ÆğÈÆÁË¸öÈ¦£¬Ëæ¶øÑ¸ËÙÏ®Ïò$n" HIY "µÄÃæÇ°¡£\n" NOR;
+        msg = HIY "$N" HIY "ä¸€è²è¼•å˜¯ï¼Œèº«å½¢å¾®å‹•ï¼Œæ‰‹ä¸­é‡‘è›‡éŒç«Ÿç„¶å‘ä¸Šé£›"
+              "èµ·ç¹äº†å€‹åœˆï¼Œéš¨è€Œè¿…é€Ÿè¥²å‘$n" HIY "çš„é¢å‰ã€‚\n" NOR;
 
         ap = attack_power(me, "strike");
         dp = defense_power(target, "dodge");
@@ -51,10 +51,10 @@ int perform(object me, object target)
                 target->receive_damage("qi", damage, me);
                 target->receive_wound("qi", damage / 3, me);
         
-                msg += HIM "Ö»ÌıÒ»Õó¿ñ·çÉ¨Ò¶°ãµÄÉùÏìÖĞ£¬$N" HIM "ÊÖÖĞµÄ"
-                       "½ğÉß×¶ÉÁ³ö¶áÄ¿µÄ¹âÃ¢£¬ÉÁÒ«µÃ$n" HIM "ÑÛÃ°½ğ»¨£¬"
-                       "\n³ıÁËÑÛÇ°Ò»ÖØÖØµÄÎíÆøÍâ£¬$n" HIM
-                       "É¶Ò²¿´²»¼ûÁË£¡\n" NOR;
+                msg += HIM "åªè½ä¸€é™£ç‹‚é¢¨æƒè‘‰èˆ¬çš„è²éŸ¿ä¸­ï¼Œ$N" HIM "æ‰‹ä¸­çš„"
+                       "é‡‘è›‡éŒé–ƒå‡ºå¥ªç›®çš„å…‰èŠ’ï¼Œé–ƒè€€å¾—$n" HIM "çœ¼å†’é‡‘èŠ±ï¼Œ"
+                       "\né™¤äº†çœ¼å‰ä¸€é‡é‡çš„éœ§æ°£å¤–ï¼Œ$n" HIM
+                       "å•¥ä¹Ÿçœ‹ä¸è¦‹äº†ï¼\n" NOR;
                 message_combatd(msg, me, target);
                 set_temp("jinshe/tuwu", 1, target);
                 set_temp("block_msg/all", 1, target);
@@ -62,8 +62,8 @@ int perform(object me, object target)
                                    skill / 100);
         } else
         {
-                msg += CYN "$n" CYN "ĞÄÖĞ°µ°µÒ»¾ª£¬¼±Ã¦ºó"
-                       "ÍË£¬ÉÁ¿ªÁËÕâÃ¶½ğÉß×¶¡£\n" NOR;
+                msg += CYN "$n" CYN "å¿ƒä¸­æš—æš—ä¸€é©šï¼Œæ€¥å¿™å¾Œ"
+                       "é€€ï¼Œé–ƒé–‹äº†é€™æšé‡‘è›‡éŒã€‚\n" NOR;
                 message_combatd(msg, me, target);
         }
 
@@ -75,10 +75,10 @@ void tuwu_end(object me, object target)
 {
         if (target && living(target))
         {
-                message_combatd("$NÄ¨ÁËÄ¨ÂúÁ³µÄ" HIR "ÏÊÑª" NOR "£¬ÖÕÓÚÕö¿ªÁËÑÛ¡£\n",
+                message_combatd("$NæŠ¹äº†æŠ¹æ»¿è‡‰çš„" HIR "é®®è¡€" NOR "ï¼Œçµ‚äºçœé–‹äº†çœ¼ã€‚\n",
                                 target);
                 set_temp("block_msg/all", 0, target);
-                write(HIR "ÄãÖÕÓÚÄ¨µôÁËÂúÁ³µÄÏÊÑª£¬¿´µ½ÁËÖÜÎ§µÄÇé¾°¡£\n"NOR);
+                write(HIR "ä½ çµ‚äºæŠ¹æ‰äº†æ»¿è‡‰çš„é®®è¡€ï¼Œçœ‹åˆ°äº†å‘¨åœçš„æƒ…æ™¯ã€‚\n"NOR);
                 delete_temp("jinshe/tuwu", target);
         }
 

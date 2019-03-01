@@ -3,10 +3,10 @@ inherit ROOM;
  
 void create()
 {
-        set("short", "����");
+        set("short", "轎內");
         set("long", @LONG
-���ڽ�������ȣ����ҡ��ҡ��̧������ǰ���ˡ���ֻ���Ľ���
-����ҡ��ҡ����Ҳ��֪�����˶�ã�һ·���Ͼ��û����˯������������
+你在轎裡剛坐穩，快轎搖了搖，抬起來往前走了。你只覺的轎子
+慢慢搖骸搖骸，也不知道走了多久，一路上老覺得昏昏欲睡。。。。。。
 LONG );
         set("no_clean_up", 0);
         setup();

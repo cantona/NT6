@@ -1,14 +1,14 @@
-// ruanshizhong.c ÈîÊ¿ÖĞ
+// ruanshizhong.c é˜®å£«ä¸­
 
 #include <ansi.h>
 inherit NPC;
 
 void create()
 {
-        set_name("ÈîÊ¿ÖĞ", ({ "ruan shizhong", "shizhong", "ruan" }) );
-        set("gender", "ÄĞĞÔ");
-        set("title", "ÁÉ¶«ÌìÁúÃÅ±±×ÚµÚÎå´úµÜ×Ó");
-        set("nickname", "ÆßĞÇÊÖ");
+        set_name("é˜®å£«ä¸­", ({ "ruan shizhong", "shizhong", "ruan" }) );
+        set("gender", "ç”·æ€§");
+        set("title", "é¼æ±å¤©é¾é–€åŒ—å®—ç¬¬äº”ä»£å¼Ÿå­");
+        set("nickname", "ä¸ƒæ˜Ÿæ‰‹");
         set("age", 43);
         set("attitude", "friendly");
         set("str", 20);

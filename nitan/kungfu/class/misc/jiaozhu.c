@@ -6,8 +6,8 @@ inherit "/inherit/char/punisher";
 
 void create()
 {
-        set_name("°×ÅÛÀÏÈË", ({"baipao laoren", "laoren"}));
-        set("gender", "ÄĞĞÔ");
+        set_name("ç™½è¢è€äºº", ({"baipao laoren", "laoren"}));
+        set("gender", "ç”·æ€§");
         set("age", 21);
         set("shen_type", -1);
 
@@ -60,7 +60,7 @@ void create()
 
         prepare_skill("strike", "moshen-zhangfa");
         
-        create_family("Ä§½Ì", 0, "½ÌÖ÷");
+        create_family("é­”æ•™", 0, "æ•™ä¸»");
   
         set("chat_chance_combat", 120); 
         set("chat_msg_combat", ({

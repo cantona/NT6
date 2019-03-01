@@ -3,13 +3,13 @@
 inherit ITEM;
 void create()
 {
-        set_name(HIB BLINK "ÁúÖé" NOR, ({ "long zhu" ,"zhu", }) );
+        set_name(HIB BLINK "é¾ç " NOR, ({ "long zhu" ,"zhu", }) );
         set_weight(100000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
-                set("long","ÕâÊÇ¿ÅÁúÑÛ£¬¿´À´»¹Öµ¼¸¸öÇ®¡£\n");
+                set("unit", "é¡†");
+                set("long","é€™æ˜¯é¡†é¾çœ¼ï¼Œçœ‹ä¾†é‚„å€¼å¹¾å€‹éŒ¢ã€‚\n");
                 set("value", 1000000);
                 set("material", "dainomd");
               }
@@ -30,7 +30,7 @@ int do_pushin(string arg)
          || !query_temp("climb", me )
          || query_temp("chan", me) )
         return 0;
-        message_vision("$NÅõÆðÒ»¿Å"+query("name")+"Èû½øÁËÊ¯ÃÅµÄ¶´ÄÚ¡£\n",me);
+        message_vision("$Næ§èµ·ä¸€é¡†"+query("name")+"å¡žé€²äº†çŸ³é–€çš„æ´žå…§ã€‚\n",me);
         addn("in_zhu", 1, room);
         if( query("in_zhu", room) == 2){
                 room->open_door(me,1);

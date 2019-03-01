@@ -2,16 +2,16 @@
 inherit NPC;
 void create()
 {
-        set_name("ÀîËÄ´Ý", ({ "li sicui","li","sicui"}) );
+        set_name("æŽå››æ‘§", ({ "li sicui","li","sicui"}) );
         set("long",@LONG
-ËûÒ»¸±ÂýÌõË¹ÀíµÄÓÆÏÐÉñÌ¬¡£ÊÝÏ÷µÄÁ³ÅÓ£¬¸ßÍ¦Î¢¹´µÄ±Ç£¬ÂÖÀªÇå³þ·ÖÃ÷£¬
-Á½ÑÛËÆ¿ªËÆ±Õ£¬Ê±ÓÐ¾«¹âµçÉÁ£¬Ò»¿´±ãÖªµÀÊÇÄÑÈÇµÄÈËÎï¡£Ëû¿´À´Ö»ÓÐÈýÊ®Ðí£¬
-»¹ËãµÃÉÏÏàµ±Ó¢¿¡£¬µ«Ëû³ÉÃû½­ºþ×îÉÙÓÐËÄÊ®ÄêÒÔÉÏ£¬Èç´Ë¹À¼Æ£¬ËûµÄÄêËêÓ¦¸Ã
-²»ÉÙì¶ÁùÊ®¡£Ö»²»¹ýÏÈÌìÆø¹¦µ½ÁËËûÃÇÕâÀà¾³½ç£¬ÍùÍùÄÜ¿Ë·þË¥ÀÏÕâ¸öÕÏ°­¡£
+ä»–ä¸€å‰¯æ…¢æ¢æ–¯ç†çš„æ‚ é–’ç¥žæ…‹ã€‚ç˜¦å‰Šçš„è‡‰é¾ï¼Œé«˜æŒºå¾®å‹¾çš„é¼»ï¼Œè¼ªå»“æ¸…æ¥šåˆ†æ˜Žï¼Œ
+å…©çœ¼ä¼¼é–‹ä¼¼é–‰ï¼Œæ™‚æœ‰ç²¾å…‰é›»é–ƒï¼Œä¸€çœ‹ä¾¿çŸ¥é“æ˜¯é›£æƒ¹çš„äººç‰©ã€‚ä»–çœ‹ä¾†åªæœ‰ä¸‰åè¨±ï¼Œ
+é‚„ç®—å¾—ä¸Šç›¸ç•¶è‹±ä¿Šï¼Œä½†ä»–æˆåæ±Ÿæ¹–æœ€å°‘æœ‰å››åå¹´ä»¥ä¸Šï¼Œå¦‚æ­¤ä¼°è¨ˆï¼Œä»–çš„å¹´æ­²æ‡‰è©²
+ä¸å°‘æ–¼å…­åã€‚åªä¸éŽå…ˆå¤©æ°£åŠŸåˆ°äº†ä»–å€‘é€™é¡žå¢ƒç•Œï¼Œå¾€å¾€èƒ½å…‹æœè¡°è€é€™å€‹éšœç¤™ã€‚
 LONG
          );
-        set("title",RED"Éñ¼ý°ËÐÛ"NOR);
-       set("nickname","¶¾ÊÖ¼ý");
+        set("title",RED"ç¥žç®­å…«é›„"NOR);
+       set("nickname","æ¯’æ‰‹ç®­");
         set("max_jing", 6000);
         set("max_qi", 6000);                    
         set("max_sen", 6000);
@@ -26,7 +26,7 @@ LONG
         set_skill("dodge", 500);
         set_skill("parry", 500);
         set_skill("sword",420);
-        set_skill("force",800); //·ÀÖ¹±ðÈËÀ´µ¯Ö¸
+        set_skill("force",800); //é˜²æ­¢åˆ¥äººä¾†å½ˆæŒ‡
         set_skill("hamagong",400);
         set_skill("tiyunzong",500);
         map_skill("sword","pixie-jian");

@@ -5,10 +5,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÎÚÑ»", ({ "wuya", "craw" }) );
-        set("race", "·ÉÇİ");
+        set_name("çƒé´‰", ({ "wuya", "craw" }) );
+        set("race", "é£›ç¦½");
         set("age", 3);
-        set("long", "Ò»Ö»ºÚÉ«µÄÎÚÑ»£¬³óÂª¼«ÁË¡£\n");
+        set("long", "ä¸€åªé»‘è‰²çš„çƒé´‰ï¼Œé†œé™‹æ¥µäº†ã€‚\n");
         set("attitude", "peaceful");
 
         set("combat_exp", 300);
@@ -18,8 +18,8 @@ void create()
 
         set("chat_chance", 10);
         set("chat_msg", ({
-                "ÎÚÑ»¡¸¸Â¸Â¡¹½ĞÁË¼¸Éù¡£\n",
-                "ÎÚÑ»½ĞµÀ£º¡¸¸Â¸Â¡¹¡£\n",
+                "çƒé´‰ã€Œå˜å˜ã€å«äº†å¹¾è²ã€‚\n",
+                "çƒé´‰å«é“ï¼šã€Œå˜å˜ã€ã€‚\n",
         }) );
 
         setup();

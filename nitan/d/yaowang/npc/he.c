@@ -3,16 +3,16 @@ inherit NPC;
 
 void create()
 {
-        set_name(HIW"º×"NOR, ({ "he"}) );
-        set("race", "Ò°ÊÞ");
+        set_name(HIW"é¶´"NOR, ({ "he"}) );
+        set("race", "é‡Žç¸");
         set("age", 4);
-        set("long", "Ò»Ö»°×É«µÄº×£¬Í·¶¥µÄºì°ßÌØ±ðÏÔÑÛ¡£\n");
+        set("long", "ä¸€åªç™½è‰²çš„é¶´ï¼Œé ­é ‚çš„ç´…æ–‘ç‰¹åˆ¥é¡¯çœ¼ã€‚\n");
         set("attitude", "peaceful");
  
         set("str", 30);
         set("cor", 26);
 
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "×¦×Ó", "³á°ò"}) );
+        set("limbs", ({ "é ­éƒ¨", "èº«é«”", "çˆªå­", "ç¿…è†€"}) );
         set("verbs", ({ "bite" }) );
  
         set("combat_exp", 3000);
@@ -29,7 +29,7 @@ void create()
 void die()
 {
         object ob;
-        message_vision(HIR"$NÆËÀâÁËÁ½ÏÂ³á°ò£¬µ¹ÔÚµØÉÏ£¬$NËÀÁË¡£\n"NOR, this_object());
+        message_vision(HIR"$Næ’²æ£±äº†å…©ä¸‹ç¿…è†€ï¼Œå€’åœ¨åœ°ä¸Šï¼Œ$Næ­»äº†ã€‚\n"NOR, this_object());
         if(random(10)>8)
         {
         ob = new(__DIR__"obj/hedinghong");

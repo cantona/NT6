@@ -6,15 +6,15 @@ inherit WHIP;
  
 void create()
 {
-        set_name(HIY "Éñ" HIW "Ö®" HIM "×£¸£" NOR HIC "³¤±Ş" NOR, ({ "zhufu whip", "whip", "bian" }) );
+        set_name(HIY "ç¥" HIW "ä¹‹" HIM "ç¥ç¦" NOR HIC "é•·é­" NOR, ({ "zhufu whip", "whip", "bian" }) );
         set_weight(500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
-                set("long", HIY "Õâ±ãÊÇÉñÖ®×£¸£³¤±Ş¡£\n" NOR);
+                set("unit", "æŸ„");
+                set("long", HIY "é€™ä¾¿æ˜¯ç¥ä¹‹ç¥ç¦é•·é­ã€‚\n" NOR);
                 set("value", 3000); 
-                set("no_sell", "ÕâÑù¶«Î÷²»ÄÜÂô¡£\n");
+                set("no_sell", "é€™æ¨£æ±è¥¿ä¸èƒ½è³£ã€‚\n");
                 set("rigidity",8000);   
                 set("material", "tian jing");
                 set("no_pawn", 1);

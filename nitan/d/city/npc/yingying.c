@@ -1,13 +1,13 @@
-// yingying.c ´Şİºİº
+// yingying.c å´”é¶¯é¶¯
 
 inherit NPC;
 
 void create()
 {
-        set_name("´Şİºİº", ({ "cui yingying", "cui", "ying" }));
-        set("long", "Ëı³¤µÃ¼«ÃÀ£¬ÓÈÆäÊÇÄÇ¶ÔÑÛ¾¦£¬ÃÄµÃÖ±¿ÉÒÔ¹´ÈË»êÆÇ¡£\n");
-        set("title", "²ÆÖ÷Å®¶ù");
-        set("gender", "Å®ĞÔ");
+        set_name("å´”é¶¯é¶¯", ({ "cui yingying", "cui", "ying" }));
+        set("long", "å¥¹é•·å¾—æ¥µç¾ï¼Œå°¤å…¶æ˜¯é‚£å°çœ¼ç›ï¼Œåªšå¾—ç›´å¯ä»¥å‹¾äººé­‚é­„ã€‚\n");
+        set("title", "è²¡ä¸»å¥³å…’");
+        set("gender", "å¥³æ€§");
         set("age", 17);
 
         set_skill("unarmed", 40);

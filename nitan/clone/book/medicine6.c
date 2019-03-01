@@ -7,13 +7,13 @@ inherit F_UNIQUE;
 
 void create()
 {
-        set_name(HIC"ºúÇàÅ£Ò½¾­"NOR, ({ "huqingniu yijing", "yijing", "jing"}));
+        set_name(HIC"èƒ¡é’ç‰›é†«ç¶“"NOR, ({ "huqingniu yijing", "yijing", "jing"}));
         set_weight(10);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
-                set("long","ÕâÊÇµû¹ÈÒ½ÏÉºúÇàÅ£Ò»ÉúĞÄÑª»ã¼¯³ÉµÄÒ½Êé¡£\n");
+                set("unit", "æœ¬");
+                set("long","é€™æ˜¯è¶è°·é†«ä»™èƒ¡é’ç‰›ä¸€ç”Ÿå¿ƒè¡€åŒ¯é›†æˆçš„é†«æ›¸ã€‚\n");
                 set("value", 1500);
                 set("material", "paper");
                 set("skill", ([

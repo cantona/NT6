@@ -2,12 +2,12 @@
 
 void create()
 {
-        set_name(NOR + YEL "½­±ßÒ»ÍëË®" NOR, ({ "diphylleia sinensis", "herb" }));
+        set_name(NOR + YEL "æ±Ÿé‚Šä¸€ç¢—æ°´" NOR, ({ "diphylleia sinensis", "herb" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", NOR + WHT "ÄÏ·½É½ºÉÒ¶(Diphylleia sinensis)µÄ¸ÉÔï¸ù¾¥¡£ÒòÆä¸ù¾¥µÄÃ¿Ò»¾¥½Ú´¦ÓĞÒ»Íë×´Ğ¡°¼ÎÑ(¾¥ºÛ)£¬ÇÒ×î³õÊÇÔÚºÓ±ß¸ßÉ½ÆÂÁÖÏÂÍÚµÃ´ËÒ©£¬¹ÊµÃ´ËÃû¡£Æä¸ù¾¥»ÆºÖÉ« ......\n" NOR);
-                set("base_unit", "¸ù");
+                set("long", NOR + WHT "å—æ–¹å±±è·è‘‰(Diphylleia sinensis)çš„å¹¹ç‡¥æ ¹è–ã€‚å› å…¶æ ¹è–çš„æ¯ä¸€è–ç¯€è™•æœ‰ä¸€ç¢—ç‹€å°å‡¹çª©(è–ç—•)ï¼Œä¸”æœ€åˆæ˜¯åœ¨æ²³é‚Šé«˜å±±å¡æ—ä¸‹æŒ–å¾—æ­¤è—¥ï¼Œæ•…å¾—æ­¤åã€‚å…¶æ ¹è–é»ƒè¤è‰² ......\n" NOR);
+                set("base_unit", "æ ¹");
                 set("base_value", 300000);
                 set("base_weight", 20);
         }

@@ -1,4 +1,4 @@
-//eting.c                �Ĵ����š���ƫ��
+//eting.c                四川唐門─東偏廳
 
 #include <ansi.h>
 #include <room.h>
@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��ƫ��");
+        set("short", "東偏廳");
         set("long",
-"���������Ƹ󶫲��ƫ����һЩ���ŵ���ϲ�������ﺣ����գ�����\n"
-"��̸�����ڰ������������Σ�����Ϫ����������ľ�дС�һ��д�������\n"
-"��Ϣ������Ʈ��������е�����Ϊ֮һˬ��\n"
+"這裡是蓮雲閣東側的偏廳。一些唐門弟子喜歡到這裡海闊天空，聚首\n"
+"閒談。廳內擺設了器具桌椅，廳外溪流潺潺，草木蔥蔥。一陣夾帶著泥土\n"
+"氣息的涼風飄進來，你感到精神為之一爽。\n"
 );
         set("exits", ([
              "west" : __DIR__"lianyunge",

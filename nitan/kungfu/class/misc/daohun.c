@@ -3,15 +3,15 @@ inherit NPC;
 
 void create()
 {
-       // set_name(HIY "µ¶»ê" NOR, ({ "daohun" }) );
+       // set_name(HIY "åˆ€é­‚" NOR, ({ "daohun" }) );
 
-        set("gender", "ÎŞĞÔ");
+        set("gender", "ç„¡æ€§");
         set("age", 35);
 
         // yun perform
         set("chat_chance_combat", 120); 
         set("chat_msg_combat", ({ 
-              // °Ôµ¶
+              // éœ¸åˆ€
               (: command("perform blade.daosha") :), 
               (: command("perform blade.juan") :),
               (: command("perform blade.gui") :), 
@@ -41,18 +41,18 @@ void init_npc(object me)
         ob = this_object();
         env = environment(me);
 
-        // ÉèÖÃ³öÉúÊ±¼ä
+        // è¨­ç½®å‡ºç”Ÿæ™‚é–“
         set("start_time", time(), ob);
-        // ÉèÖÃ³öÉúµØµã
+        // è¨­ç½®å‡ºç”Ÿåœ°é»
         set("start_place", env, ob);
-        // ÉèÖÃ¹éÊô
+        // è¨­ç½®æ­¸å±¬
         set("owner",query("id",  me), ob);
 
-        set_name(HIB+me->name()+HIB"µÄµ¶»ê"NOR,({query("id", me)+"daohun"}));
-        set("long", HIM "¾İËµµ±°ÔµÀĞŞÁ¶µ½Ò»¶¨³Ì¶È±ãÄÜ¹»´ïµ½µ¶ÈËºÏÒ»µÄ\n"
-                        "¾³½ç£¬ÄÜ¹»Ê¹ÊÖÖĞµÄµ¶¸»ÓĞÁéÆø£¬´Ó¶ø»Ã»¯³öµ¶»ê¡£\n" NOR);
+        set_name(HIB+me->name()+HIB"çš„åˆ€é­‚"NOR,({query("id", me)+"daohun"}));
+        set("long", HIM "æ“šèªªç•¶éœ¸é“ä¿®ç…‰åˆ°ä¸€å®šç¨‹åº¦ä¾¿èƒ½å¤ é”åˆ°åˆ€äººåˆä¸€çš„\n"
+                        "å¢ƒç•Œï¼Œèƒ½å¤ ä½¿æ‰‹ä¸­çš„åˆ€å¯Œæœ‰éˆæ°£ï¼Œå¾è€Œå¹»åŒ–å‡ºåˆ€é­‚ã€‚\n" NOR);
 
-        // ÉèÖÃ°Ù·Ö±È
+        // è¨­ç½®ç™¾åˆ†æ¯”
         if (me->query_skill("badao") >= 7000)
         {
                 percent = 120;
@@ -102,10 +102,10 @@ void init_npc(object me)
                 percent = 82;
         }
         
-        // Ï÷ÈõĞŞÕı
+        // å‰Šå¼±ä¿®æ­£
         percent -= 20;
         
-        // ÉèÖÃ¼¼ÄÜ     
+        // è¨­ç½®æŠ€èƒ½     
         if (mapp(map_status = me->query_skill_map()))
         {
                 mname = keys(map_status);
@@ -113,11 +113,11 @@ void init_npc(object me)
                 temp = sizeof(map_status);
                 for (i = 0; i < temp; i++)
                 {
-                       // ÉèÖÃ»ù±¾¼¼ÄÜ
+                       // è¨­ç½®åŸºæœ¬æŠ€èƒ½
                        ob->set_skill(mname[i], me->query_skill(mname[i], 1) * percent / 100); 
-                       // ÉèÖÃ¼¤·¢¼¼ÄÜ
+                       // è¨­ç½®æ¿€ç™¼æŠ€èƒ½
                        ob->set_skill(map_status[mname[i]], me->query_skill(map_status[mname[i]], 1) * percent / 100);
-                       // ¼¤·¢¼¼ÄÜ
+                       // æ¿€ç™¼æŠ€èƒ½
                        ob->map_skill(mname[i], map_status[mname[i]]);
                 }
         }
@@ -151,9 +151,9 @@ void init_npc(object me)
 
         ::setup();
 
-        // ÒÂ·ş
+        // è¡£æœ
         carry_object("/clone/armor/daohun-cloth")->wear();
-        // ÎäÆ÷
+        // æ­¦å™¨
         carry_object("/clone/weapon/daohun-blade")->wield();
 }
 
@@ -164,20 +164,20 @@ void heart_beat()
         
         keep_heart_beat();
         
-        // Ã¿3´ÎĞÄÌø¼ì²é1´Î
+        // æ¯3æ¬¡å¿ƒè·³æª¢æŸ¥1æ¬¡
         if (time() - query("last_check_heart_beat") >= 6)
         {
                 set("last_check_heart_beat", time());
                 
-                // Èç¹û²»ÔÚ³öÉú·¿¼ä³¬¹ı1´ÎÔòÏûÊ§
+                // å¦‚æœä¸åœ¨å‡ºç”Ÿæˆ¿é–“è¶…é1æ¬¡å‰‡æ¶ˆå¤±
                 env = environment(this_object());
                 if (! objectp(env) || env != query("start_place"))
                 {
                         if (query("no_in_place") > 0)
                         {
-                                // ÏûÊ§
-                                message_vision(HIG "$N" HIG "ÖÜÉí°×¹âÁıÕÖ£¬°éËæ×Å´ÌÑÛµÄ¹âÃ¢£¬$N" HIG 
-                                                   "Ë²¼ä»¯ÎªÎÚÓĞ£¡\n" NOR, this_object());
+                                // æ¶ˆå¤±
+                                message_vision(HIG "$N" HIG "å‘¨èº«ç™½å…‰ç± ç½©ï¼Œä¼´éš¨è‘—åˆºçœ¼çš„å…‰èŠ’ï¼Œ$N" HIG 
+                                                   "ç¬é–“åŒ–ç‚ºçƒæœ‰ï¼\n" NOR, this_object());
                                 destruct(this_object());
                                 return;
                         }
@@ -186,29 +186,29 @@ void heart_beat()
                                 addn("no_in_place", 1);
                         }
                 }
-                // Èç¹û³¬¹ıÊ±¼äÔòÏûÊ§
+                // å¦‚æœè¶…éæ™‚é–“å‰‡æ¶ˆå¤±
                 if (time() - query("start_time") > 5*60)
                 {
-                        message_vision(HIG "$N" HIG "ÖÜÉí°×¹âÁıÕÖ£¬°éËæ×Å´ÌÑÛµÄ¹âÃ¢£¬$N" HIG 
-                                        "Ë²¼ä»¯ÎªÎÚÓĞ£¡\n" NOR, this_object()); 
+                        message_vision(HIG "$N" HIG "å‘¨èº«ç™½å…‰ç± ç½©ï¼Œä¼´éš¨è‘—åˆºçœ¼çš„å…‰èŠ’ï¼Œ$N" HIG 
+                                        "ç¬é–“åŒ–ç‚ºçƒæœ‰ï¼\n" NOR, this_object()); 
                         destruct(this_object());
                         return;
                 }
                 
-                // Èı´Î¼ì²éOWNER²»´æÔÚÔòÏûÊ§
+                // ä¸‰æ¬¡æª¢æŸ¥OWNERä¸å­˜åœ¨å‰‡æ¶ˆå¤±
                 owner = find_player(query("owner"));
                 if (! objectp(owner))
                 {
                         addn("no_find_owner", 1);
                         if (query("no_find_ower") >= 3)
                         {
-                                message_vision(HIG "$N" HIG "ÖÜÉí°×¹âÁıÕÖ£¬°éËæ×Å´ÌÑÛµÄ¹âÃ¢£¬$N" HIG 
-                                                "Ë²¼ä»¯ÎªÎÚÓĞ£¡\n" NOR, this_object()); 
+                                message_vision(HIG "$N" HIG "å‘¨èº«ç™½å…‰ç± ç½©ï¼Œä¼´éš¨è‘—åˆºçœ¼çš„å…‰èŠ’ï¼Œ$N" HIG 
+                                                "ç¬é–“åŒ–ç‚ºçƒæœ‰ï¼\n" NOR, this_object()); 
                                 destruct(this_object());
                                 return;                         
                         }
                 }
-                else // Ëæ»ú¹¥»÷OWNER¹¥»÷µÄÄ¿±ê
+                else // éš¨æ©Ÿæ”»æ“ŠOWNERæ”»æ“Šçš„ç›®æ¨™
                 {
                         if (owner->is_fighting() && ! this_object()->is_fighting())
                         {
@@ -216,7 +216,7 @@ void heart_beat()
                                 if (sizeof(obs))
                                 {
                                         obtar = obs[random(sizeof(obs))];
-                                        message_combatd(HIR "\n$N" HIR "¶Ô$n" HIR "·¢¶¯¹¥»÷¡­¡­\n\n" NOR, this_object(), obtar); 
+                                        message_combatd(HIR "\n$N" HIR "å°$n" HIR "ç™¼å‹•æ”»æ“Šâ€¦â€¦\n\n" NOR, this_object(), obtar); 
                                         this_object()->kill_ob(obtar);
                                 }
                         }
@@ -255,8 +255,8 @@ void unconcious()
 
 void die(object killer)
 {
-        message_vision(HIG "$N" HIG "ÖÜÉí°×¹âÁıÕÖ£¬°éËæ×Å´ÌÑÛµÄ¹âÃ¢£¬$N" HIG 
-                                     "Ë²¼ä»¯ÎªÎÚÓĞ£¡\n" NOR, this_object());
+        message_vision(HIG "$N" HIG "å‘¨èº«ç™½å…‰ç± ç½©ï¼Œä¼´éš¨è‘—åˆºçœ¼çš„å…‰èŠ’ï¼Œ$N" HIG 
+                                     "ç¬é–“åŒ–ç‚ºçƒæœ‰ï¼\n" NOR, this_object());
         destruct(this_object());
         return;
 }

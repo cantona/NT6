@@ -5,11 +5,11 @@ inherit F_DEALER;
 
 void create()
 {
-        set_name("¾Æ¹İÀÏ°å", ({ "lao ban" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("é…’é¤¨è€æ¿", ({ "lao ban" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 32);
         set("long",
-                "ÕâÎ»¾Æ¹İÀÏ°åÂúÉí¹·ÈâÏã£¬µãÍ·¹şÑü×Å¶ÔÄãĞ¦×Å¡£\n");
+                "é€™ä½é…’é¤¨è€æ¿æ»¿èº«ç‹—è‚‰é¦™ï¼Œé»é ­å“ˆè…°è‘—å°ä½ ç¬‘è‘—ã€‚\n");
         set("combat_exp", 500);
         set("attitude", "friendly");
         set("no_get", "1");
@@ -33,7 +33,7 @@ void init()
         if( interactive(ob) && !is_fighting() ) {
 /*
                 if( (myfam=query("family", ob) )
-                && myfam["family_name"] == "Ø¤°ï" 
+                && myfam["family_name"] == "ä¸å¹«" 
                 && ob->query_skill("begging",1) > 10 )
                 {
                         remove_call_out("saying");
@@ -55,11 +55,11 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
         switch( random(2) ) {
                 case 0:
-                        say( "¾Æ¹İÀÏ°åµÃÒâµÄËµµÀ£ºÕâÃ´ÀäµÄÌì£¬ºÈÍë¹·ÈâÌÀÊÇ×îÄÜÅ¯ºÍÉí×ÓµÄ£¡\n");
+                        say( "é…’é¤¨è€æ¿å¾—æ„çš„èªªé“ï¼šé€™éº¼å†·çš„å¤©ï¼Œå–ç¢—ç‹—è‚‰æ¹¯æ˜¯æœ€èƒ½æš–å’Œèº«å­çš„ï¼\n");
                         break;
                 case 1:
-                        say( "¾Æ¹İÀÏ°å´êÁË´êÊÖ£¬ËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-                                + "£¬¹·Èâ´ó²¹°¡£¬³¢³¢°É¡£\n");
+                        say( "é…’é¤¨è€æ¿æ“äº†æ“æ‰‹ï¼Œèªªé“ï¼šé€™ä½" + RANK_D->query_respect(ob)
+                                + "ï¼Œç‹—è‚‰å¤§è£œå•Šï¼Œå˜—å˜—å§ã€‚\n");
                         break;
         }
 }
@@ -68,7 +68,7 @@ void saying(object ob)
 {
         if (!ob || environment(ob) != environment()) return;
 
-        say("\n¾Æ¹İÀÏ°å´óºÈÒ»Éù£ºÄãÕâ³ôÒª·¹µÄ½øÀ´¸ÉÊ²÷á£¿ ¸øÎÒ¹ö³öÈ¥£¡\n\n");
+        say("\né…’é¤¨è€æ¿å¤§å–ä¸€è²ï¼šä½ é€™è‡­è¦é£¯çš„é€²ä¾†å¹¹ä»€éº¼ï¼Ÿ çµ¦æˆ‘æ»¾å‡ºå»ï¼\n\n");
         remove_call_out("kicking");
         call_out("kicking", 1, ob);
         
@@ -79,6 +79,6 @@ void kicking(object ob)
         if (!ob || environment(ob) != environment()) return;
 
         ob->move("/d/guanwai/nancheng");
-        message("vision","Ö»Ìı¡°Æ¹¡±µØÒ»Éù£¬"+query("name", ob)+
-                "±»ÈË´ÓÏãÈâ¹İÀïÒ»½ÅÌßÁË³öÀ´£¬ÀÇ±·Íò×´µÄÌÓ¿ªÁË¡£\n", environment(ob), ob);
+        message("vision","åªè½â€œä¹’â€åœ°ä¸€è²ï¼Œ"+query("name", ob)+
+                "è¢«äººå¾é¦™è‚‰é¤¨è£¡ä¸€è…³è¸¢äº†å‡ºä¾†ï¼Œç‹¼ç‹½è¬ç‹€çš„é€ƒé–‹äº†ã€‚\n", environment(ob), ob);
 }

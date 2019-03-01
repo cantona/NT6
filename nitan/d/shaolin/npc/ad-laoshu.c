@@ -1,16 +1,16 @@
-// laoshu.c 老鼠
+// laoshu.c 鑰侀紶
 
 inherit NPC;
 
 void create()
 {
-        set_name("老鼠", ({ "lao shu", "shu", "mouse" }) );
-        set("race", "野兽");
+        set_name("鑰侀紶", ({ "lao shu", "shu", "mouse" }) );
+        set("race", "閲庣嵏");
         set("age", 2);
-        set("long", "一只赃兮兮的小老鼠。\n");
+        set("long", "涓�鍙磽鍏叜鐨勫皬鑰侀紶銆俓n");
         set("attitude", "peaceful");
         
-        set("limbs", ({ "头部", "身体", "前脚", "后脚", "尾巴" }) );
+        set("limbs", ({ "闋儴", "韬珨", "鍓嶈叧", "寰岃叧", "灏惧反" }) );
         set("verbs", ({ "bite", "claw" }) );
 
         set("combat_exp", 100);
@@ -50,7 +50,7 @@ int random_move()
 void die()
 {
         object ob;
-        message_vision("$N凄惨的嚎了几声，死了。\n", this_object());
+        message_vision("$N鍑勬厴鐨勫殠浜嗗咕鑱诧紝姝讳簡銆俓n", this_object());
         ob = new("/d/shaolin/npc/shurou");
         ob->move(environment(this_object()));
         destruct(this_object());

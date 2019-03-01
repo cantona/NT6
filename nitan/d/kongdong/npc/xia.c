@@ -3,12 +3,12 @@ inherit NPC;
 
 void create()
 {
-	set_name("ÏÄĞÇÄ»",({"xia xingmu","xia","xingmu"}) );
-    set("title","áÇá¼ÅÉÈıÊ¦ĞÖ");
-    set("gender", "ÄĞĞÔ" );
+	set_name("å¤æ˜Ÿå¹•",({"xia xingmu","xia","xingmu"}) );
+    set("title","å´†å³’æ´¾ä¸‰å¸«å…„");
+    set("gender", "ç”·æ€§" );
     set("class","taoist");
     set("age",22);
-    create_family("áÇá¼ÅÉ", 2, "µÜ×Ó");
+    create_family("å´†å³’æ´¾", 2, "å¼Ÿå­");
     set_wugong("unarmed",100,100);
     set_wugong("shizi-zhan",80,80,1);
     set_wugong("dahong-quan",50,45,1);
@@ -22,7 +22,7 @@ void create()
     set("social_exp",200);
     set("combat_exp",10000);
     set("positive_score",1000);
-    set("class_score/áÇá¼ÅÉ",450);
+    set("class_score/å´†å³’æ´¾",450);
     set("force",200);
     set("max_force",200);
     set("force_factor",10);

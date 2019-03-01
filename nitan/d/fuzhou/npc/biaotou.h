@@ -10,32 +10,32 @@ int ask_jiaobiao()
 
         if( query_temp("fuwei_destm", me) != query("id", ob) )
         {
-                message_vision(HIR"$NÎÊ$nµÀ£º¡°¸ã´íÁË£¡¸ã´íÁË£¡ÄãÔõÃ´°Ñ¸ø"+query_temp("fuwei_dest", me)+"·Ö¾ÖµÄïÚ³µËÍµ½ÎÒÕâÀ´ÄØ£¿¡±\n"NOR,ob,me);
+                message_vision(HIR"$Nå•$né“ï¼šâ€œæéŒ¯äº†ï¼æéŒ¯äº†ï¼ä½ æ€éº¼æŠŠçµ¦"+query_temp("fuwei_dest", me)+"åˆ†å±€çš„é¢è»Šé€åˆ°æˆ‘é€™ä¾†å‘¢ï¼Ÿâ€\n"NOR,ob,me);
                 return 1;
         }
         if (! objectp(cart = present("cart", environment(me))))
         {
-                message_vision("$NÎÊ$nµÀ£º¡°ïÚ³µÄØ£¿ÄÇÉÏÃæ¿ÉÊÇÓĞºÃ¼¸ÍòïÚÒø°¡£¡¡±\n",ob,me);
+                message_vision("$Nå•$né“ï¼šâ€œé¢è»Šå‘¢ï¼Ÿé‚£ä¸Šé¢å¯æ˜¯æœ‰å¥½å¹¾è¬é¢éŠ€å•Šï¼â€\n",ob,me);
                 return 1;
         }
         if (! objectp(biaotou = present("biao tou", environment(me))))
         {
-                message_vision("$NÎÊ$nµÀ£º¡°Ëæ¶ÓïÚÍ·ÄØ£¿Â·ÉÏ¶ªÊ§ÈËÊÖ£¬Äã»¹¸ÒÀ´¼ûÎÒ£¡¡±\n",ob,me);
+                message_vision("$Nå•$né“ï¼šâ€œéš¨éšŠé¢é ­å‘¢ï¼Ÿè·¯ä¸Šä¸Ÿå¤±äººæ‰‹ï¼Œä½ é‚„æ•¢ä¾†è¦‹æˆ‘ï¼â€\n",ob,me);
                 return 1;
         }
         if( query("guarded", cart) != query("id", me) )
         {
-                message_vision("$N¿´ÁË¿´ïÚ³µ£¬¶Ô$nËµµÀ£º¡°ÕâïÚ³µ²»ÊÇÄãÑºµÄ¡£Äã°ÑïÚ³µ¶ªÄÄÈ¥ÁË£¿¡±\n",ob,me);
+                message_vision("$Nçœ‹äº†çœ‹é¢è»Šï¼Œå°$nèªªé“ï¼šâ€œé€™é¢è»Šä¸æ˜¯ä½ æŠ¼çš„ã€‚ä½ æŠŠé¢è»Šä¸Ÿå“ªå»äº†ï¼Ÿâ€\n",ob,me);
                 return 1;
         }
         if( query("leader_name", biaotou) != query("id", me) )
         {
-                message_vision("$NÖ¸×Å$nËµµÀ£º¡°ÎÒ²»ÊÇºÍËûÒ»Â·µÄ£¬ÎÒ²»ÈÏÊ¶Ëû¡£¡±\n",biaotou, me);
+                message_vision("$NæŒ‡è‘—$nèªªé“ï¼šâ€œæˆ‘ä¸æ˜¯å’Œä»–ä¸€è·¯çš„ï¼Œæˆ‘ä¸èªè­˜ä»–ã€‚â€\n",biaotou, me);
                 return 1;
         }
-        tell_object(me,HIW+query("name", ob)+"Ğ¦µÀ£º¹§Ï²Äã³É¹¦½«ïÚ³µËÍµ½Ä¿µÄµØ£¬Íê³ÉÁËÕâÏîÈÎÎñ£¡\n\n"NOR);
+        tell_object(me,HIW+query("name", ob)+"ç¬‘é“ï¼šæ­å–œä½ æˆåŠŸå°‡é¢è»Šé€åˆ°ç›®çš„åœ°ï¼Œå®Œæˆäº†é€™é …ä»»å‹™ï¼\n\n"NOR);
 
-        message("channel:chat",HIM"¡¾Ò¥ÑÔ¡¿ÌıËµ"+query("guardby", cart)+"³É¹¦½«ïÚ³µËÍµ½Ä¿µÄµØÁË£¡\n"NOR,users());
+        message("channel:chat",HIM"ã€è¬ è¨€ã€‘è½èªª"+query("guardby", cart)+"æˆåŠŸå°‡é¢è»Šé€åˆ°ç›®çš„åœ°äº†ï¼\n"NOR,users());
 
         i = 0;
         give_exp=lay_exp*query("total_steps", biaotou);
@@ -47,9 +47,9 @@ int ask_jiaobiao()
                 i++;
         }
 
-        message_vision(YEL"$N³¤³öÁËÒ»¿ÚÆøµÀ£º¡°°¥£¬ÖÕÓÚµ½ÁË¡£ÎÒ¿ÉºÍ»ï¼ÆÃÇºÈ¾ÆÈ¥ÁË¡£¡±\n"NOR,biaotou);
-        message_vision(YEL"$NºÍ"+query_temp("fuwei_dest", me)+"·Ö¾ÖµÄÌË×ÓÊÖÃÇÒ»Õó´ÖÑÔ»àÓï¡¢º°µùÂîÄïµØ¹´¼ç´î±³Ò»Óµ³öÃÅÈ¥ÁË¡£\n"NOR,biaotou);
-        message_vision(HIC"ïÚ³µ¸ø"+query_temp("fuwei_dest", me)+"·Ö¾ÖµÄ»ï¼ÆÃÇÍÆ½øÁË¿â·¿¡£\n\n"NOR,biaotou);
+        message_vision(YEL"$Né•·å‡ºäº†ä¸€å£æ°£é“ï¼šâ€œå“ï¼Œçµ‚äºåˆ°äº†ã€‚æˆ‘å¯å’Œä¼™è¨ˆå€‘å–é…’å»äº†ã€‚â€\n"NOR,biaotou);
+        message_vision(YEL"$Nå’Œ"+query_temp("fuwei_dest", me)+"åˆ†å±€çš„è¶Ÿå­æ‰‹å€‘ä¸€é™£ç²—è¨€ç©¢èªã€å–Šçˆ¹ç½µå¨˜åœ°å‹¾è‚©æ­èƒŒä¸€æ“å‡ºé–€å»äº†ã€‚\n"NOR,biaotou);
+        message_vision(HIC"é¢è»Šçµ¦"+query_temp("fuwei_dest", me)+"åˆ†å±€çš„ä¼™è¨ˆå€‘æ¨é€²äº†åº«æˆ¿ã€‚\n\n"NOR,biaotou);
         destruct(biaotou);
         destruct(cart);
 
@@ -60,15 +60,15 @@ int ask_jiaobiao()
         money->set_amount(40);
         money->move(me);
 
-        tell_object(me,sprintf(HIR+query("name", ob)+"¶Ô"+query("name", me)+"³ÆĞíµÀ£º¡°Äã±»½±ÀøÁË£¡µÃµ½%sµã¾­ÑéºÍ%sµãÇ±ÄÜºÍ%sµã½­ºşÔÄÀú¡£ïÚ¾Ö·¢¸øÄãËÄÊ®Á½»Æ½ğ×öÄãµÄĞ½½ğºÍ²¹³¥ÄãµÄÑº½ğ¡£¡±\n"NOR,chinese_number(give_exp),chinese_number(give_pot),chinese_number(give_score))+NOR);
-        message_vision("$N¸ø$nÒ»Ğ©"YEL"»Æ½ğ"NOR"¡£\n"NOR, ob, me);
-        log_file("mission/ms_biaoche",sprintf("%20s×öÔËËÍïÚ³µÈÎÎñ£¬µÃµ½£º%4iµãEXPºÍ%4iµãÇ±ÄÜ¡£\n",
+        tell_object(me,sprintf(HIR+query("name", ob)+"å°"+query("name", me)+"ç¨±è¨±é“ï¼šâ€œä½ è¢«çå‹µäº†ï¼å¾—åˆ°%sé»ç¶“é©—å’Œ%sé»æ½›èƒ½å’Œ%sé»æ±Ÿæ¹–é–±æ­·ã€‚é¢å±€ç™¼çµ¦ä½ å››åå…©é»ƒé‡‘åšä½ çš„è–ªé‡‘å’Œè£œå„Ÿä½ çš„æŠ¼é‡‘ã€‚â€\n"NOR,chinese_number(give_exp),chinese_number(give_pot),chinese_number(give_score))+NOR);
+        message_vision("$Nçµ¦$nä¸€äº›"YEL"é»ƒé‡‘"NOR"ã€‚\n"NOR, ob, me);
+        log_file("mission/ms_biaoche",sprintf("%20såšé‹é€é¢è»Šä»»å‹™ï¼Œå¾—åˆ°ï¼š%4ié»EXPå’Œ%4ié»æ½›èƒ½ã€‚\n",
        query("name", me)+"("+getuid(me)+")",give_exp,give_pot));
         addn("combat_exp", give_exp, me);
         addn("potential", give_pot, me);
         addn("score", give_score, me);
         addn("baobiao", 1, me);
-        set_temp("prize_reason", "ÔËïÚ", ob);
+        set_temp("prize_reason", "é‹é¢", ob);
         set_temp("can_give_prize", 1, ob);
         set_temp("prize_exp", give_exp, ob);
         set_temp("prize_pot", give_pot, ob);

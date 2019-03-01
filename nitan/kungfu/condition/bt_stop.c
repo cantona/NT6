@@ -5,7 +5,7 @@
 int update_condition(object me, int duration)
 {
         if (duration < 1) {
-                tell_object(me, "你可以再去为知府大人效力了！\n");
+                tell_object(me, "浣犲彲浠ュ啀鍘荤偤鐭ュ簻澶т汉鏁堝姏浜嗭紒\n");
                 return 0;
         }
         me->apply_condition("bt_stop", duration - 1);

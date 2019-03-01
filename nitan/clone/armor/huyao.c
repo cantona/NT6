@@ -8,13 +8,13 @@ inherit WAIST;
 
 void create()
 {
-        set_name( "»¤Ñü", ({ "hu yao", "huyao" }) );
+        set_name( "è­·è…°", ({ "hu yao", "huyao" }) );
         set_weight(500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ìõ");
-                set("long", "ÕâÊÇÒ»¼şÆ¤ÖÊµÄ»¤Ñü£¬ÉÏÃæÂú²¼Ìú¶¤£¬ÓÃÒÔ±£»¤Ñü²¿¡£\n");
+                set("unit", "æ¢");
+                set("long", "é€™æ˜¯ä¸€ä»¶çš®è³ªçš„è­·è…°ï¼Œä¸Šé¢æ»¿å¸ƒéµé‡˜ï¼Œç”¨ä»¥ä¿è­·è…°éƒ¨ã€‚\n");
                 set("value", 6000);
                 set("material", "waist");
                 set("armor_prop/armor", 5);

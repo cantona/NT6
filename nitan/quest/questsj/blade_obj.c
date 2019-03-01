@@ -3,45 +3,45 @@
 #include <ansi.h>
 
 mapping blade_obj = ([
-        "/d/xueshan/obj/xblade1":1,             //ÔİÊ±ÎŞ´¦»ñÈ¡
-        "/d/xueshan/obj/xblade":30,             //Ñªµ¶ÀÏ×æ¡¢ºìÈÕ×ğÕß
-        "/d/xiaoyao/obj/blade":25,              //åĞÒ£´òÌúÎİ
-        "/d/xiaoyao/npc/obj/blade":30,          //åĞÒ£ÃÉÃæÈË
-        "/d/xiangyang/npc/obj/mudao":5,         //Ä¾½³¹ºÂò
-        "/d/xiakedao/obj/knife":5,              //ÏÀ¿ÍµºµÄÒ»ÂÉÁ®¼Û
-        "/d/xiakedao/obj/gangdao":5,            //ÏÀ¿ÍµºµÄÒ»ÂÉÁ®¼Û
-        "/d/shaolin/obj/mudao":25,              //ÉÙÁÖÎäÆ÷¿â
-        "/d/shaolin/obj/jiedao":10,             //ºÜ¶à
-        "/d/quanzhou/npc/obj/wodao":24,         //ÙÁ¿Ü£¨Áù¸ö£©
-        "/d/quanzhen/npc/obj/gangdao":18,       //È«Õæìø·¿¡¢Îä¹¦Õò¹Ù±ø£¨ËÄ¸ö£©
-        "/d/mingjiao/obj/jiedao":1,             //ÔİÊ±ÎŞ´¦»ñÈ¡
-        "/d/mingjiao/obj/gangdao":1,            //ÔİÊ±ÎŞ´¦»ñÈ¡
-        "/d/heimuya/npc/obj/dadao":25,          //¼Ö²¼¡¢»Æ²®Á÷¡¢ÉÏ¹ÙÔÆ¡¢Í¯°ÙĞÜ
-        "/d/guiyun/npc/obj/jiandao":36,         //ÕÅ°¢Éú
-        "/d/guanwai/obj/lengyue":36,            //ºúì³
-        "/d/guanwai/obj/cwbdao":40,             //ºúì³
-        "/d/foshan/npc/obj/caidao":36,          //ÖÓËÄÉ©
-        "/d/dali/npc/obj/mandao":36,            //´ö×åÊ×Áì
-        "/d/dali/npc/obj/kandao":26,            //²ÉËñÈË£¨Á½¸ö£©¡¢¿³ÖñÈË£¨Á½¸ö£©
-        "/d/city/obj/gangdao":5,                //ºÜ¶à
-        "/d/city/npc/obj/gangdao":5,            //ºÜ¶à
-        "/d/changan/npc/obj/gangdao":5,         //ºÜ¶à
-        "/d/changan/npc/obj/blade":5,           //ºÜ¶à
-        "/d/beijing/npc/obj/blade3":10,         //±±¾©¹Ù±ø£¨Ïàµ±¶à£©
-        "/d/beijing/npc/obj/blade2":5,          //½­ºşºÀ¿Í£¨ËÄ¸ö£©¡¢¶¾ÀÉÖĞ£¨ÎŞÊı£©¡¢ÀîÁ¦ÊÀ
-        "/d/beijing/npc/obj/blade1":5,          //ºÜ¶à
-        "/d/baituo/obj/dadao":18,               //°×ÍÕÉ½Îå¸öÃÅÎÀ¡¢Èı¸öÉ½Ôô¡¢Ò»¸öÉ½ÔôÍ·
-        "/d/baituo/obj/chaidao":30,             //éÔ·ò¡¢ÀÏ²Ä
-        "/d/baituo/npc/obj/dadao":1,            //ÔİÊ±ÎŞ´¦»ñÈ¡
-        "/d/baituo/npc/obj/chaidao":1,          //ÔİÊ±ÎŞ´¦»ñÈ¡
-        "/clone/weapon/wandao":7,               //¿ÉÒÔ¹ºÂò:12Á½°×Òø
-        "/clone/weapon/tudao":8,                //¿ÉÒÔ¹ºÂò:20Á½°×Òø
-        "/clone/weapon/mudao":5,                //ºÜ¶à
-        "/clone/weapon/jpn-dao":10,             //ÈÕ±¾ÍâµĞ
-        "/clone/weapon/jiedao":1,               //ÔİÊ±ÎŞ´¦»ñÈ¡
-        "/clone/weapon/gangdao":5,              //ºÜ¶à
-        "/clone/weapon/dadao":36,               //Âí³¬ĞË
-        "/clone/weapon/blade":5,                //ºÜ¶à
+        "/d/xueshan/obj/xblade1":1,             //æš«æ™‚ç„¡è™•ç²å–
+        "/d/xueshan/obj/xblade":30,             //è¡€åˆ€è€ç¥–ã€ç´…æ—¥å°Šè€…
+        "/d/xiaoyao/obj/blade":25,              //é€é™æ‰“éµå±‹
+        "/d/xiaoyao/npc/obj/blade":30,          //é€é™è’™é¢äºº
+        "/d/xiangyang/npc/obj/mudao":5,         //æœ¨åŒ è³¼è²·
+        "/d/xiakedao/obj/knife":5,              //ä¿ å®¢å³¶çš„ä¸€å¾‹å»‰åƒ¹
+        "/d/xiakedao/obj/gangdao":5,            //ä¿ å®¢å³¶çš„ä¸€å¾‹å»‰åƒ¹
+        "/d/shaolin/obj/mudao":25,              //å°‘æ—æ­¦å™¨åº«
+        "/d/shaolin/obj/jiedao":10,             //å¾ˆå¤š
+        "/d/quanzhou/npc/obj/wodao":24,         //å€­å¯‡ï¼ˆå…­å€‹ï¼‰
+        "/d/quanzhen/npc/obj/gangdao":18,       //å…¨çœŸç¦ªæˆ¿ã€æ­¦åŠŸé®å®˜å…µï¼ˆå››å€‹ï¼‰
+        "/d/mingjiao/obj/jiedao":1,             //æš«æ™‚ç„¡è™•ç²å–
+        "/d/mingjiao/obj/gangdao":1,            //æš«æ™‚ç„¡è™•ç²å–
+        "/d/heimuya/npc/obj/dadao":25,          //è³ˆå¸ƒã€é»ƒä¼¯æµã€ä¸Šå®˜é›²ã€ç«¥ç™¾ç†Š
+        "/d/guiyun/npc/obj/jiandao":36,         //å¼µé˜¿ç”Ÿ
+        "/d/guanwai/obj/lengyue":36,            //èƒ¡æ–
+        "/d/guanwai/obj/cwbdao":40,             //èƒ¡æ–
+        "/d/foshan/npc/obj/caidao":36,          //é˜å››å«‚
+        "/d/dali/npc/obj/mandao":36,            //å‚£æ—é¦–é ˜
+        "/d/dali/npc/obj/kandao":26,            //æ¡ç­äººï¼ˆå…©å€‹ï¼‰ã€ç ç«¹äººï¼ˆå…©å€‹ï¼‰
+        "/d/city/obj/gangdao":5,                //å¾ˆå¤š
+        "/d/city/npc/obj/gangdao":5,            //å¾ˆå¤š
+        "/d/changan/npc/obj/gangdao":5,         //å¾ˆå¤š
+        "/d/changan/npc/obj/blade":5,           //å¾ˆå¤š
+        "/d/beijing/npc/obj/blade3":10,         //åŒ—äº¬å®˜å…µï¼ˆç›¸ç•¶å¤šï¼‰
+        "/d/beijing/npc/obj/blade2":5,          //æ±Ÿæ¹–è±ªå®¢ï¼ˆå››å€‹ï¼‰ã€æ¯’éƒä¸­ï¼ˆç„¡æ•¸ï¼‰ã€æåŠ›ä¸–
+        "/d/beijing/npc/obj/blade1":5,          //å¾ˆå¤š
+        "/d/baituo/obj/dadao":18,               //ç™½é§å±±äº”å€‹é–€è¡›ã€ä¸‰å€‹å±±è³Šã€ä¸€å€‹å±±è³Šé ­
+        "/d/baituo/obj/chaidao":30,             //æ¨µå¤«ã€è€æ
+        "/d/baituo/npc/obj/dadao":1,            //æš«æ™‚ç„¡è™•ç²å–
+        "/d/baituo/npc/obj/chaidao":1,          //æš«æ™‚ç„¡è™•ç²å–
+        "/clone/weapon/wandao":7,               //å¯ä»¥è³¼è²·:12å…©ç™½éŠ€
+        "/clone/weapon/tudao":8,                //å¯ä»¥è³¼è²·:20å…©ç™½éŠ€
+        "/clone/weapon/mudao":5,                //å¾ˆå¤š
+        "/clone/weapon/jpn-dao":10,             //æ—¥æœ¬å¤–æ•µ
+        "/clone/weapon/jiedao":1,               //æš«æ™‚ç„¡è™•ç²å–
+        "/clone/weapon/gangdao":5,              //å¾ˆå¤š
+        "/clone/weapon/dadao":36,               //é¦¬è¶…èˆˆ
+        "/clone/weapon/blade":5,                //å¾ˆå¤š
 ]);
 
 int check_value(string filename)

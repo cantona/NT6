@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����");
+        set("short", "海船");
         set("long", @LONG
-һ�Һ������������ʮ�ߡ��˸��ˡ�������˶��ˮ�����ڴ�ͷ��βæ
-��æȥ��
+一艘海船，大概能載十七、八個人。幾名健碩的水手正在船頭船尾忙
+來忙去。
 LONG );
 
         set("valid_startroom", 1);

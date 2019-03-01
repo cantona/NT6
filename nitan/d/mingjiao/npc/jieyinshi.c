@@ -10,19 +10,19 @@ string ask_for_join();
 
 void create()
 {
-        set_name("½ÓÒıÊ¹", ({"jieyin shi","jieyin","shi",}));
+        set_name("æ¥å¼•ä½¿", ({"jieyin shi","jieyin","shi",}));
         set("long",
-                "ËûÊÇÒ»Î»¾«Ã÷µÄÖĞÄêÈË£¬Éí´©Ò»¼ş°×²¼³¤ÅÛ¡£\n"
-                "ËûÕıÔÚÉÏÏÂ´òÁ¿×ÅÄã¡£\n"
+                "ä»–æ˜¯ä¸€ä½ç²¾æ˜çš„ä¸­å¹´äººï¼Œèº«ç©¿ä¸€ä»¶ç™½å¸ƒé•·è¢ã€‚\n"
+                "ä»–æ­£åœ¨ä¸Šä¸‹æ‰“é‡è‘—ä½ ã€‚\n"
                 );
 
-        set("title", HIG "Ã÷½Ì" NOR);
+        set("title", HIG "æ˜æ•™" NOR);
 
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("attitude", "friendly");
 
         set("inquiry",([
-                "Ã÷½Ì"        : (: ask_for_join :),
+                "æ˜æ•™"        : (: ask_for_join :),
                 ]));
 
         set("age", 30);
@@ -69,7 +69,7 @@ void init()
 
 string ask_for_join()
 {
-        return "ÓĞ½éÉÜĞÅ¾Í¿ÉÒÔÕÒ¹âÃ÷×óÊ¹¼ÓÈëÎÒÃ÷½Ì¡£\n";
+        return "æœ‰ä»‹ç´¹ä¿¡å°±å¯ä»¥æ‰¾å…‰æ˜å·¦ä½¿åŠ å…¥æˆ‘æ˜æ•™ã€‚\n";
 }
 
 int accept_object(object ob, object obj)
@@ -85,38 +85,38 @@ int accept_object(object ob, object obj)
             query_temp("have_letter", ob) )
         {
                 if( query("can_apprentice_menzhu", ob) )
-                        return notify_fail("»¹²»¸Ï¿ìÈ¥ÕÒ·ç×ÖÃÅÃÅÖ÷ÍØ°ÏÑ§ÎÒ¹âÃ÷Ê¥½ÌµÄÈëÃÅÎä¹¦!\n");
+                        return notify_fail("é‚„ä¸è¶•å¿«å»æ‰¾é¢¨å­—é–€é–€ä¸»æ‹“è·‹å­¸æˆ‘å…‰æ˜è–æ•™çš„å…¥é–€æ­¦åŠŸ!\n");
 
                    if( !mapp(family=query("family", ob)) || !ob->query_family() )
                    {
                         delete_temp("have_letter", ob);
 
-                        if( query("gender", ob) == "Å®ĞÔ" )
-                                command("say ÎÒÃ÷½ÌÓÖµÃÒ»Å®ÖĞºÀ½Ü£¬ÕæÊÇ¿É"
-                                        "Ï²¿ÉºØ£¡");
+                        if( query("gender", ob) == "å¥³æ€§" )
+                                command("say æˆ‘æ˜æ•™åˆå¾—ä¸€å¥³ä¸­è±ªå‚‘ï¼ŒçœŸæ˜¯å¯"
+                                        "å–œå¯è³€ï¼");
                         else 
-                                command("say ÎÒÃ÷½ÌÓÖµÃÒ»Ó¢ĞÛºÃºº£¬ÕæÊÇ¿É"
-                                        "Ï²¿ÉºØ£¡");
+                                command("say æˆ‘æ˜æ•™åˆå¾—ä¸€è‹±é›„å¥½æ¼¢ï¼ŒçœŸæ˜¯å¯"
+                                        "å–œå¯è³€ï¼");
 
-                        set("can_apprentice_menzhu", "·ç×ÖÃÅ", ob);
+                        set("can_apprentice_menzhu", "é¢¨å­—é–€", ob);
 
                         command("smile");
-                        tell_object(ob,"½ÓÒıÊ¹Õß¶ÔÄãËµµÀ£º¹âÃ÷Ê¥½Ì¹âÃ÷×óÊ¹ÊÖÏÂÓĞÌì¡¢µØ¡¢·ç¡¢À×ËÄÃÅ£¬ÄãÏÈµ½·ç×ÖÃÅÃÅÖ÷ÍØ°ÏÄÇÀïÑ§ÈëÃÅÎä¹¦°É£¡\n");
+                        tell_object(ob,"æ¥å¼•ä½¿è€…å°ä½ èªªé“ï¼šå…‰æ˜è–æ•™å…‰æ˜å·¦ä½¿æ‰‹ä¸‹æœ‰å¤©ã€åœ°ã€é¢¨ã€é›·å››é–€ï¼Œä½ å…ˆåˆ°é¢¨å­—é–€é–€ä¸»æ‹“è·‹é‚£è£¡å­¸å…¥é–€æ­¦åŠŸå§ï¼\n");
                         destruct(obj);
                         return 1;
                 }
 
-                if (family["family_name"] != "Ã÷½Ì")
+                if (family["family_name"] != "æ˜æ•™")
                 {
-                        message_vision("$N¶Ô$nÒ¡Ò¡Í·£¬ËµµÀ£ºÄãÒÑ¾­¼ÓÈë"
-                                       "ÆäËûÃÅÅÉÁË£¬²»ÄÜÔÙÈëÎÒÃ÷½Ì¡£\n",
+                        message_vision("$Nå°$næ–æ–é ­ï¼Œèªªé“ï¼šä½ å·²ç¶“åŠ å…¥"
+                                       "å…¶ä»–é–€æ´¾äº†ï¼Œä¸èƒ½å†å…¥æˆ‘æ˜æ•™ã€‚\n",
                                        me, ob);
                         return 1;
                 } else
-                        message_vision("$NÒ¡Ò¡Í·£¬¶Ô$nËµµÀ£ºÄãÒÑ¾­ÊÇÎÒÃ÷½Ì"
-                                       "µÄÈËÁË¡£\n", me, ob);
+                        message_vision("$Næ–æ–é ­ï¼Œå°$nèªªé“ï¼šä½ å·²ç¶“æ˜¯æˆ‘æ˜æ•™"
+                                       "çš„äººäº†ã€‚\n", me, ob);
         }
         command("?");
-        command("say Õâ¶«Î÷¸øÎÒ¿ÉÃ»ÓĞÊ²÷áÓÃ¡£");
+        command("say é€™æ±è¥¿çµ¦æˆ‘å¯æ²’æœ‰ä»€éº¼ç”¨ã€‚");
         return 0;
 }

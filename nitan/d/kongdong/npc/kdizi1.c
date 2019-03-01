@@ -4,11 +4,11 @@ int ask_me(object me);
 
 void create()
 {
-        set_name("áÇá¼µÜ×Ó", ({ "kongdong dizi","dizi" }) );
-        set("gender", "ÄÐÐÔ" );
+        set_name("å´†å³’å¼Ÿå­", ({ "kongdong dizi","dizi" }) );
+        set("gender", "ç”·æ€§" );
         set("class","taoist");
         set("age",18);
-	create_family("áÇá¼ÅÉ", 2, "µÜ×Ó");
+	create_family("å´†å³’æ´¾", 2, "å¼Ÿå­");
 	set_wugong("shizi-zhan",100,100,1);
 	set_wugong("jiben-qinggong",100,100,1);
 	set_xiuwei("dodge",500);
@@ -35,6 +35,6 @@ void init()
 void greeting(object ob)
 {
         if(!ob||!present(ob,environment(this_object())))return;
-        say("áÇá¼µÜ×ÓÏòÄã×÷ÁË¸öÒ¾£º¡°ÕâÎ»"+RANK_D->query_respect(ob)
-            +"£¬´ËµØµØÊÆÏÕ¾þ£¬\n¿ÉµÃÐ¡ÐÄÑ½¡£\n");
+        say("å´†å³’å¼Ÿå­å‘ä½ ä½œäº†å€‹æ–ï¼šâ€œé€™ä½"+RANK_D->query_respect(ob)
+            +"ï¼Œæ­¤åœ°åœ°å‹¢éšªå³»ï¼Œ\nå¯å¾—å°å¿ƒå‘€ã€‚\n");
         }

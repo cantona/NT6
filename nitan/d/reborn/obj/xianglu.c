@@ -6,7 +6,7 @@ inherit ITEM;
 
 void create()
 {
-        set_name(YEL "ÇàÍ­¶¦ÏãÂ¯" NOR, ({ "xiang lu"}) );
+        set_name(YEL "é’éŠ…é¼é¦™çˆ" NOR, ({ "xiang lu"}) );
         set_weight(500);
         set_max_encumbrance(800000);
         set("no_get", 1);
@@ -14,8 +14,8 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("prep", "in");
-                set("unit", "Ö»");
-                set("long", HIR "Ò»Ö»ÇàÍ­¶¦ÏãÂ¯£¬ÉÕÏã¼ÀìëÓÃµÄ£¬³£ÄêÏã»ğ²»Ãğ¡£\n" NOR);
+                set("unit", "åª");
+                set("long", HIR "ä¸€åªé’éŠ…é¼é¦™çˆï¼Œç‡’é¦™ç¥­ç¥€ç”¨çš„ï¼Œå¸¸å¹´é¦™ç«ä¸æ»…ã€‚\n" NOR);
                 set("value", 1);
         }
 }

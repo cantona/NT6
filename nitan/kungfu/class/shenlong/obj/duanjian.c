@@ -1,21 +1,21 @@
-// shortsword.c ¶Ì½£
+// shortsword.c çŸ­åŠ
 
 #include <weapon.h>
 inherit SWORD;
 
 void create()
 {
-        set_name("¶Ì½£", ({ "duanjian", "jian" }));
+        set_name("çŸ­åŠ", ({ "duanjian", "jian" }));
         set_weight(2000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
-                set("long", "ÕâÊÇÒ»±ú½£Éí¶ÌĞ¡µÄ·æÈñĞ¡½££¬½­ºşÉÏ¾øÉÙÓĞÈËÅä´ø¡£\n");
+                set("unit", "æŸ„");
+                set("long", "é€™æ˜¯ä¸€æŸ„åŠèº«çŸ­å°çš„é‹’éŠ³å°åŠï¼Œæ±Ÿæ¹–ä¸Šçµ•å°‘æœ‰äººé…å¸¶ã€‚\n");
                 set("value", 500);
                 set("material", "steel");
-                set("wield_msg", "$N¡¸à§¡¹µÄÒ»Éù³é³öÒ»±ú$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²å»Ø½£ÇÊ¡£\n");
+                set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€è²æŠ½å‡ºä¸€æŸ„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°‡æ‰‹ä¸­çš„$næ’å›åŠé˜ã€‚\n");
         }
         init_sword(75);
         setup();

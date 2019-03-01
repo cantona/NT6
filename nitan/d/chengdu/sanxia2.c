@@ -3,11 +3,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��Ͽ");
+        set("short", "巫峽");
         set("long", @LONG
-�����ǳ�����Ͽ�е���Ͽ��Ҳ�����������һ��Ͽ�ȣ���Ů���
-�ߵ������ڽ��ߣ�ԶԶ��ȥ������һΪͤͤ��������Ů�������羰��
-��ʤ�ա�
+這裡是長江三峽中的巫峽，也是最大最美的一個峽谷，神女峰高
+高的聳立在江邊，遠遠看去，由如一為亭亭玉立的少女，兩岸風景美
+不勝收。
 LONG );
         set("exits", ([
                 "east" :  __DIR__"sanxia1",

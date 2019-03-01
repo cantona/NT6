@@ -13,93 +13,93 @@ int perform(object me, object target)
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("¡ºÄ§ÆøÉ±¡»Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€é­”æ°£æ®ºã€åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
   
 /*
         if( me->query_skill_mapped("blade")!="bingpo-blade" )
-         return notify_fail("ÄãÃ»ÓĞ×°±¸±ùÆÆº®µ¶¡£ \n");
+         return notify_fail("ä½ æ²’æœ‰è£å‚™å†°ç ´å¯’åˆ€ã€‚ \n");
 */
    if( me->query_skill("bingpo-blade",1)<100 )
-         return notify_fail("ÄãµÄ±ùÆÆº®µ¶¼¼ÇÉ²»×ã¡£ \n");
+         return notify_fail("ä½ çš„å†°ç ´å¯’åˆ€æŠ€å·§ä¸è¶³ã€‚ \n");
 
    if( me->query_skill("blade",1)<100 )
-         return notify_fail("ÄãµÄµ¶·¨²»¹»ºÃ¡£ \n");
+         return notify_fail("ä½ çš„åˆ€æ³•ä¸å¤ å¥½ã€‚ \n");
    if( query("neili", me)<1000 )
-         return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+         return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ã€‚\n");
    if( target->is_busy() )
-      return notify_fail(target->name() + "ÎªÁË¶ã±ÜÄãµÄÉ±Æø,Ä¿Ç°Õı×Ô¹Ë²»Ï¾!\n");
-msg = HIY "$N×Ô²Ğ¼ºÉí,ÒÔÑªÆø×ª»»³ÉÉ±Æø¡£\n
-            ¡­¡­$NÉíÉÏ·¢³öÒ»¹ÉÇ¿´óµÄÉ±Æø¡­¡­\n
-    ¡ö$NÉíÉÏÉ±ÆøÖğ½¥µØ¾Û¼¯ÔÚË«ÊÖ,ÔÚË«ÊÖÉÏĞÎ³ÉÁ½ÍÅÄ§Æø¡ö\n
-            $NÙ¿µØ´óºÈÒ»Éù£­£­Ä§ Æø É±£­£­\n\n" NOR;
+      return notify_fail(target->name() + "ç‚ºäº†èº²é¿ä½ çš„æ®ºæ°£,ç›®å‰æ­£è‡ªé¡§ä¸æš‡!\n");
+msg = HIY "$Nè‡ªæ®˜å·±èº«,ä»¥è¡€æ°£è½‰æ›æˆæ®ºæ°£ã€‚\n
+            â€¦â€¦$Nèº«ä¸Šç™¼å‡ºä¸€è‚¡å¼·å¤§çš„æ®ºæ°£â€¦â€¦\n
+    â– $Nèº«ä¸Šæ®ºæ°£é€æ¼¸åœ°èšé›†åœ¨é›™æ‰‹,åœ¨é›™æ‰‹ä¸Šå½¢æˆå…©åœ˜é­”æ°£â– \n
+            $Nå€åœ°å¤§å–ä¸€è²ï¼ï¼é­” æ°£ æ®ºï¼ï¼\n\n" NOR;
 
      if( ski_value+50<random(max_lv) && query("combat_exp", me)>2000000){
-     msg += HIR BLINK "$NÍ»È»ºíÍ·Ò»¶¯¡«¡«¡¡Ö»¼û$N¿ÚÖĞÅç³öÒ»µÀÑªÖùÍù$nÉäÈ¥¡«¡«\n
-´ËÄËÄ§ÆøÉ±Ö®
-            ×îÖÕÉ±ÕĞ ¡ºÄ§ Ñª Æø É±¡»\n\n
-$nÔâµ½Ç°ËùÎ´ÓĞµÄ´ò»÷,µ«$NÒ²ÊÜÉË²»Çá¡£\n" NOR;
+     msg += HIR BLINK "$Nçªç„¶å–‰é ­ä¸€å‹•ï½ï½ã€€åªè¦‹$Nå£ä¸­å™´å‡ºä¸€é“è¡€æŸ±å¾€$nå°„å»ï½ï½\n
+æ­¤ä¹ƒé­”æ°£æ®ºä¹‹
+            æœ€çµ‚æ®ºæ‹› ã€é­” è¡€ æ°£ æ®ºã€\n\n
+$né­åˆ°å‰æ‰€æœªæœ‰çš„æ‰“æ“Š,ä½†$Nä¹Ÿå—å‚·ä¸è¼•ã€‚\n" NOR;
      target->start_busy( (int)me->query_skill("bingpo-blade") / 20 + 3);
      target->receive_damage("qi",query("max_qi", target)*70/100);
      me->receive_damage("qi",query("qi", me)*30/100);
      addn("neili", -50, me);
      }
    else if( ski_value < 20 ){
-      msg +="$NÕæÆøËù×ª»»µÄÉ±Æø²»¹»´ó,¶ÔµĞÈËºÁÎŞÓ°Ïì¡£\n";
+      msg +="$NçœŸæ°£æ‰€è½‰æ›çš„æ®ºæ°£ä¸å¤ å¤§,å°æ•µäººæ¯«ç„¡å½±éŸ¿ã€‚\n";
       me->receive_damage("qi",query("qi", me)*1/100);
       addn("neili", -50, me);}
      
     
     else if( ski_value <  70 ){
-     msg += HIM "µÚÒ»ÕĞ ¡ºÄ§ÆøÎŞ³£¡»\n\n$nÊÜµ½ÉËº¦,¶¯µ¯²»µÃ£¡\n" NOR;
+     msg += HIM "ç¬¬ä¸€æ‹› ã€é­”æ°£ç„¡å¸¸ã€\n\n$nå—åˆ°å‚·å®³,å‹•å½ˆä¸å¾—ï¼\n" NOR;
      target->start_busy( (int)me->query_skill("bingpo-blade") /100 + 1);
 
      addn("neili", -query("max_neili", me)*2/10, me);}
     
     else if( ski_value <  90 ){
-     msg += HIG "µÚ¶şÕĞ ¡º»ğÄ§É·Éñ¡»\n\n$nÊÜµ½ÉËº¦,¶¯µ¯²»µÃ£¡\n" NOR;
+     msg += HIG "ç¬¬äºŒæ‹› ã€ç«é­”ç…ç¥ã€\n\n$nå—åˆ°å‚·å®³,å‹•å½ˆä¸å¾—ï¼\n" NOR;
      target->start_busy( (int)me->query_skill("bingpo-blade") /100 + 1);
  
      addn("neili", -query("max_neili", me)*3/10, me);}
      
      else  if( ski_value < 100 ){
-     msg += HIC "µÚÈıÕĞ ¡ºÉÌ»êÄ§Éí¡»\n\n$nÊÜµ½ÉËº¦,¶¯µ¯²»µÃ¡£\n" NOR;
+     msg += HIC "ç¬¬ä¸‰æ‹› ã€å•†é­‚é­”èº«ã€\n\n$nå—åˆ°å‚·å®³,å‹•å½ˆä¸å¾—ã€‚\n" NOR;
      target->start_busy( (int)me->query_skill("bingpo-blade") /100 + 1);
 
      addn("neili", -query("max_neili", me)*4/10, me);}
 
      else if( ski_value <  120 ){
-     msg += HIB "µÚËÄÕĞ ¡º½£Ä§ÃğÊÀ¡»\n\n$nÊÜµ½ÉËº¦,¶¯µ¯²»µÃ£¡\n" NOR;
+     msg += HIB "ç¬¬å››æ‹› ã€åŠé­”æ»…ä¸–ã€\n\n$nå—åˆ°å‚·å®³,å‹•å½ˆä¸å¾—ï¼\n" NOR;
      target->start_busy( (int)me->query_skill("bingpo-blade") /100 + 1);
 
      addn("neili", -query("max_neili", me)*5/10, me);}
 
      else if( ski_value <  140 ){
-     msg += HIW "µÚÎåÕĞ ¡º¿ñÄ§ÆÆ¿Õ¡»\n\n$nÊÜµ½ÉËº¦,¶¯µ¯²»µÃ£¡\n" NOR;
+     msg += HIW "ç¬¬äº”æ‹› ã€ç‹‚é­”ç ´ç©ºã€\n\n$nå—åˆ°å‚·å®³,å‹•å½ˆä¸å¾—ï¼\n" NOR;
      target->start_busy( (int)me->query_skill("bingpo-blade") /100 + 2);
 
      addn("neili", -query("max_neili", me)*6/10, me);}
 
 
      else if( ski_value <  160 ){
-     msg += CYN "µÚÁùÕĞ ¡ºÈºÄ§ÂÒÎè¡»\n\n$nÊÜµ½ÉËº¦,¶¯µ¯²»µÃ£¡\n" NOR;
+     msg += CYN "ç¬¬å…­æ‹› ã€ç¾¤é­”äº‚èˆã€\n\n$nå—åˆ°å‚·å®³,å‹•å½ˆä¸å¾—ï¼\n" NOR;
      target->start_busy( (int)me->query_skill("bingpo-blade") /100 + 2);
 
      addn("neili", -query("max_neili", me)*7/10, me);}
 
      else if( ski_value <  180 ){
-     msg +=  YEL "µÚÆßÕĞ ¡ºÌì¼«Ä§É±¡»\n\n$nÊÜµ½ÉËº¦,¶¯µ¯²»µÃ£¡\n" NOR;
+     msg +=  YEL "ç¬¬ä¸ƒæ‹› ã€å¤©æ¥µé­”æ®ºã€\n\n$nå—åˆ°å‚·å®³,å‹•å½ˆä¸å¾—ï¼\n" NOR;
      target->start_busy( (int)me->query_skill("bingpo-blade") /100 + 2);
 
      addn("neili", -query("max_neili", me)*8/10, me);}
 
      else if( ski_value <  200 ){
-     msg += BLU "µÚ°ËÕĞ ¡º¶·Ä§ÎŞÉú»ê¡»\n\n$nÊÜµ½ÉËº¦,¶¯µ¯²»µÃ£¡\n" NOR;
+     msg += BLU "ç¬¬å…«æ‹› ã€é¬¥é­”ç„¡ç”Ÿé­‚ã€\n\n$nå—åˆ°å‚·å®³,å‹•å½ˆä¸å¾—ï¼\n" NOR;
      target->start_busy( (int)me->query_skill("bingpo-blade") /100 + 2);
 
      addn("neili", -query("max_neili", me)*9/10, me);}
 
      else                    {
-     msg += RED "µÚ¾ÅÕĞ ¡º·çÄ§¿ñ×ªÒµ¡»\n\n$nÊÜµ½ÉËº¦,¶¯µ¯²»µÃ¡£\n" NOR;
+     msg += RED "ç¬¬ä¹æ‹› ã€é¢¨é­”ç‹‚è½‰æ¥­ã€\n\n$nå—åˆ°å‚·å®³,å‹•å½ˆä¸å¾—ã€‚\n" NOR;
      target->start_busy( (int)me->query_skill("bingpo-blade") /100 + 2);
  
      addn("neili", -query("max_neili", me)*9/10, me);}

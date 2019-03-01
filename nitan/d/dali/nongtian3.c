@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-        set("short","ũ��");
+        set("short","農田");
         set("long",@LONG
-�����Ѿ���ƽԭ�ľ�ͷ����������վ���ɽ���ˣ�һЩ��ũ���
-��٤������ķ������ǵطֲ���ɽ���£�һЩ�������������������
-����·���ϵ�ɽ�����Ѷ�ȥ��
+這裡已經是平原的盡頭，對面就是險峻的山嶺了，一些的農田和
+羅伽部村民的房屋零星地分布在山腳下，一些村民正在田裡耕作。有
+條道路向東南的山上蜿蜒而去。
 LONG);
         set("objects", ([
            __DIR__"npc/nongfu2": 1,

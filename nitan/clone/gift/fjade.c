@@ -1,4 +1,4 @@
-// fjade.c Ï¡ÊÀôä´ä
+// fjade.c ç¨€ä¸–ç¿¡ç¿ 
 
 #include <ansi.h>
 #include <armor.h>
@@ -9,20 +9,20 @@ int is_enchase_ob(){ return 1; }
 
 void create()
 {
-        set_name(HIG "Ï¡ÊÀôä´ä" NOR, ({ "flawless jade" }) );
+        set_name(HIG "ç¨€ä¸–ç¿¡ç¿ " NOR, ({ "flawless jade" }) );
         set_weight(40);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", HIG "Ò»¿éÃÀµÃÎÞÓëÂ×±ÈµÄ´óôä´ä¡£\n" NOR);
+                set("long", HIG "ä¸€å¡Šç¾Žå¾—ç„¡èˆ‡å€«æ¯”çš„å¤§ç¿¡ç¿ ã€‚\n" NOR);
                 set("value", 100000);
-                set("unit", "¿é");
+                set("unit", "å¡Š");
                 set("armor_prop/per", 7);
                 set("no_identify", 1);
-                set("wear_msg", HIC "$N" HIC "ÇáÇáµØ°Ñ$n"
-                    HIC "´÷ÔÚÍ·ÉÏ¡£\n" NOR);
-                set("remove_msg", HIC "$N" HIC "ÇáÇáµØ°Ñ$n"
-                    HIC "´ÓÍ·ÉÏÕªÁËÏÂÀ´¡£\n" NOR);
+                set("wear_msg", HIC "$N" HIC "è¼•è¼•åœ°æŠŠ$n"
+                    HIC "æˆ´åœ¨é ­ä¸Šã€‚\n" NOR);
+                set("remove_msg", HIC "$N" HIC "è¼•è¼•åœ°æŠŠ$n"
+                    HIC "å¾žé ­ä¸Šæ‘˜äº†ä¸‹ä¾†ã€‚\n" NOR);
         }
         setup();
 }

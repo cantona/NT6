@@ -4,11 +4,11 @@ inherit ROOM;
 void message_competition(string msg);
 void create()
 {
-        set("short", "ºï×ÓÍûÔÂ");
+        set("short", "çŒ´å­æœ›æœˆ");
         set("long", @LONG
-´Ë´¦Ô­ÊÇÒ»Øğ¸ßËÊÈëÔÆµÄÇÍ±Ú£¬²»ÖªºÎÄêÓÉÈË´ÓÇÍ±ÚµÄ°ëÑüÓ²ÊÇ
-¿ª³öÒ»ÌõÕ»µÀÀ´£¬Õ»µÀÅÔÓĞÒ»´ÖÊ®ÓàÕÉµÄÇæÌìÊ¯Öù£¬Ê¯Öù¶¥ÉúÒ»ËÉ£¬
-ËÉÅÔÓĞÒ»ÌìÉúÆæÊ¯£¬ÍğÈçÇÌÊ×ÍûÔÂµÄºï×Ó¡£ 
+æ­¤è™•åŸæ˜¯ä¸€ä»é«˜è³å…¥é›²çš„å³­å£ï¼Œä¸çŸ¥ä½•å¹´ç”±äººå¾å³­å£çš„åŠè…°ç¡¬æ˜¯
+é–‹å‡ºä¸€æ¢æ£§é“ä¾†ï¼Œæ£§é“æ—æœ‰ä¸€ç²—åä½™ä¸ˆçš„æ“å¤©çŸ³æŸ±ï¼ŒçŸ³æŸ±é ‚ç”Ÿä¸€é¬†ï¼Œ
+é¬†æ—æœ‰ä¸€å¤©ç”Ÿå¥‡çŸ³ï¼Œå®›å¦‚ç¿¹é¦–æœ›æœˆçš„çŒ´å­ã€‚ 
 LONG );
         set("exits", ([ /* sizeof() == 3 */
                 "southdown" : __DIR__"liyubei",
@@ -42,7 +42,7 @@ int do_open()
         object me = this_player();
 
         if (query("exits/up"))
-                return notify_fail("ÃÅÒÑ¾­ÊÇ¿ª×ÅµÄÁË¡£\n");
+                return notify_fail("é–€å·²ç¶“æ˜¯é–‹è‘—çš„äº†ã€‚\n");
 
         set("exits", ([ /* sizeof() == 3 */
                 "southdown" : __DIR__"liyubei",
@@ -54,11 +54,11 @@ int do_open()
                 "4" : "/adm/npc/biwu4",
         ]));
 
-        message_vision(HIY "$N" HIY "ÇáÇáÒ»ÍÆ£¬½«Í¨ÏòÎäÁÖ´ó»á»á³¡µÄ"
-                       "´óÃÅ¿ªÆôÁË¡£\n" NOR, me);
+        message_vision(HIY "$N" HIY "è¼•è¼•ä¸€æ¨ï¼Œå°‡é€šå‘æ­¦æ—å¤§æœƒæœƒå ´çš„"
+                       "å¤§é–€é–‹å•Ÿäº†ã€‚\n" NOR, me);
 
-        shout(HIY "¡¾»ªÉ½ÂÛ½£¡¿" NOR + WHT + me->name() + WHT "[" +
-              query("id", me)+WHT"]¿ªÆôÁË»ªÉ½¾ø¶¥µÄÎäÁÖ´ó»á»á³¡¡£\n"NOR);
+        shout(HIY "ã€è¯å±±è«–åŠã€‘" NOR + WHT + me->name() + WHT "[" +
+              query("id", me)+WHT"]é–‹å•Ÿäº†è¯å±±çµ•é ‚çš„æ­¦æ—å¤§æœƒæœƒå ´ã€‚\n"NOR);
 
         return 1;
 }
@@ -68,13 +68,13 @@ int do_close()
         object me = this_player();
 
         if (! query("exits/up"))
-                return notify_fail("ÃÅÒÑ¾­ÊÇ¹Ø×ÅµÄÁË¡£\n");
+                return notify_fail("é–€å·²ç¶“æ˜¯é—œè‘—çš„äº†ã€‚\n");
 
         set("exits", ([ /* sizeof() == 3 */
                 "southdown" : __DIR__"liyubei",
         ]));
-        message_vision(WHT "$N" WHT "Ë³ÊÖÒ»´ø£¬½«Í¨ÏòÎäÁÖ´ó»á»á³¡µÄ"
-                       "´óÃÅ¹ØÉÏÁË¡£\n" NOR, me);
+        message_vision(WHT "$N" WHT "é †æ‰‹ä¸€å¸¶ï¼Œå°‡é€šå‘æ­¦æ—å¤§æœƒæœƒå ´çš„"
+                       "å¤§é–€é—œä¸Šäº†ã€‚\n" NOR, me);
         return 1;
 }
 
@@ -98,27 +98,27 @@ int valid_leave(object me, string dir)
         for(i=sizeof(inv)-1; i>=0; i--)
         {
                 if (me->query_condition("killer"))
-                        return notify_fail("É±ÈËÕß²»¿ÉÒÔ½øÈë±ÈÎä³¡£¡£¡£¡\n");
+                        return notify_fail("æ®ºäººè€…ä¸å¯ä»¥é€²å…¥æ¯”æ­¦å ´ï¼ï¼ï¼\n");
 
                 if (! wizardp(me) &&
                     inv[i]->is_cruise_ob())
-                        return notify_fail("²»¿ÉÒÔĞ¯´ø"+inv[i]->name(1)+"½øÈë±ÈÎä³¡£¡£¡£¡\n");
+                        return notify_fail("ä¸å¯ä»¥æ”œå¸¶"+inv[i]->name(1)+"é€²å…¥æ¯”æ­¦å ´ï¼ï¼ï¼\n");
 
                 if (! wizardp(me) &&
                     inv[i]->is_item_make())
-                        return notify_fail("²»¿ÉÒÔĞ¯´ø"+inv[i]->name(1)+"½øÈë±ÈÎä³¡£¡£¡£¡\n");
+                        return notify_fail("ä¸å¯ä»¥æ”œå¸¶"+inv[i]->name(1)+"é€²å…¥æ¯”æ­¦å ´ï¼ï¼ï¼\n");
 
                 if (! wizardp(me) &&
                     query("weapon_prop", inv[i]) )
-                        return notify_fail("²»¿ÉÒÔĞ¯´ø"+inv[i]->name(1)+"½øÈë±ÈÎä³¡£¡£¡£¡\n");
+                        return notify_fail("ä¸å¯ä»¥æ”œå¸¶"+inv[i]->name(1)+"é€²å…¥æ¯”æ­¦å ´ï¼ï¼ï¼\n");
 
                 if (! wizardp(me) &&
                     query("armor_prop", inv[i]) )
-                        return notify_fail("²»¿ÉÒÔĞ¯´ø"+inv[i]->name(1)+"½øÈë±ÈÎä³¡£¡£¡£¡\n");
+                        return notify_fail("ä¸å¯ä»¥æ”œå¸¶"+inv[i]->name(1)+"é€²å…¥æ¯”æ­¦å ´ï¼ï¼ï¼\n");
                 /*
                 if (! wizardp(me) &&
                     query("id", inv[i]) == "tang hua" )
-                        return notify_fail("²»¿ÉÒÔĞ¯´ø°µÆ÷ÌÆ»¨½øÈë±ÈÎä³¡£¡£¡£¡\n");
+                        return notify_fail("ä¸å¯ä»¥æ”œå¸¶æš—å™¨å”èŠ±é€²å…¥æ¯”æ­¦å ´ï¼ï¼ï¼\n");
                 */
         }
 
@@ -136,21 +136,21 @@ int valid_leave(object me, string dir)
         ||  (dir == "4" && query("level", me) >= 10 && query("level", me) <= 200))
         {
                 /*
-                message_competition((ultrap(me) ? "´ó×ÚÊ¦" : "") +
-                            me->name(1) + "½øÈë»ªÉ½¾ø¶¥µÄÎäÁÖ´ó»á»á³¡¡£");
+                message_competition((ultrap(me) ? "å¤§å®—å¸«" : "") +
+                            me->name(1) + "é€²å…¥è¯å±±çµ•é ‚çš„æ­¦æ—å¤§æœƒæœƒå ´ã€‚");
                 */
                 return 1;
         }
         if (dir == "northup")
         {
                 /*
-                message_competition((ultrap(me) ? "´ó×ÚÊ¦" : "") +
-                            me->name(1) + "½øÈë»ªÉ½¾ø¶¥µÄÎäÁÖ´ó»á»á³¡¡£");
+                message_competition((ultrap(me) ? "å¤§å®—å¸«" : "") +
+                            me->name(1) + "é€²å…¥è¯å±±çµ•é ‚çš„æ­¦æ—å¤§æœƒæœƒå ´ã€‚");
                 */
                 if (me->query_condition("killer"))
-                        return notify_fail("É±ÈËÕß²»¿ÉÒÔ½øÈë±ÈÎä³¡£¡£¡£¡\n");
+                        return notify_fail("æ®ºäººè€…ä¸å¯ä»¥é€²å…¥æ¯”æ­¦å ´ï¼ï¼ï¼\n");
                 return 1;
         }
-        return notify_fail("Äã²»¿ÉÒÔµ½ÄÇ±ß±ÈÎä£¡£¡\n");
+        return notify_fail("ä½ ä¸å¯ä»¥åˆ°é‚£é‚Šæ¯”æ­¦ï¼ï¼\n");
 }
 

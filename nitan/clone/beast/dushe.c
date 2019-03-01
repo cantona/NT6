@@ -3,8 +3,8 @@ inherit SNAKE;
 
 void create()
 {
-        set_name(HIG "¶¾Éß" NOR, ({ "du she", "du", "she" }));
-        set("long", HIG "Ò»Ö§°ºÊ×ÍÂÐÅµÄ¶¾ÉßÕý»¢ÊÓíñíñµØ¶¢ÖøÄã¡£\n" NOR);
+        set_name(HIG "æ¯’è›‡" NOR, ({ "du she", "du", "she" }));
+        set("long", HIG "ä¸€æ”¯æ˜‚é¦–åä¿¡çš„æ¯’è›‡æ­£è™Žè¦–çœˆçœˆåœ°ç›¯è‘—ä½ ã€‚\n" NOR);
 
         set("age", 1);
         set("str", 15);
@@ -38,13 +38,13 @@ int convert(string arg)
         object ob;
 
         if (arg!="snake" && arg!="du she") return 0;
-        if( query("family/family_name", me) != "Å·ÑôÊÀ¼Ò" )
-                return notify_fail("Äã²»ÄÜ»¯ÉßÎªÕÈ¡£\n");
+        if( query("family/family_name", me) != "æ­é™½ä¸–å®¶" )
+                return notify_fail("ä½ ä¸èƒ½åŒ–è›‡ç‚ºæ–ã€‚\n");
         if (random(me->query_skill("training",1)) <20) {
                 kill_ob(me);
                 return 1;
         }
-        message_vision("$N×óÊÖ°´×¡¶¾ÉßµÄÍ·£¬ÓÒÊÖÇá¸§ÆäÆß´ç£¬¿ÚÖÐÄîÄîÓÐ´Ê£¬Æ¬¿Ì¼ä½«Éß»¯ÎªÒ»¸ùÉßÕÈ¡£\n",
+        message_vision("$Nå·¦æ‰‹æŒ‰ä½æ¯’è›‡çš„é ­ï¼Œå³æ‰‹è¼•æ’«å…¶ä¸ƒå¯¸ï¼Œå£ä¸­å¿µå¿µæœ‰è©žï¼Œç‰‡åˆ»é–“å°‡è›‡åŒ–ç‚ºä¸€æ ¹è›‡æ–ã€‚\n",
                 me,);
                 ob = new("/d/baituo/obj/shezhang");
         ob->move(environment(this_object()));

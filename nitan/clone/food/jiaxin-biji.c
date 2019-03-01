@@ -1,18 +1,18 @@
 // Last Modified by winder on May. 29 2001
-// jiaxin-biji.c ¼ĞĞÄİ©Üù
+// jiaxin-biji.c å¤¾å¿ƒè¸è–º
 
 inherit ITEM;
 inherit F_FOOD;
 
 void create()
 {
-        set_name("¼ĞĞÄİ©Üù", ({"jiaxin biji", "biji"}));
+        set_name("å¤¾å¿ƒè¸è–º", ({"jiaxin biji", "biji"}));
         set_weight(200);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long","Ò»ÅèĞÎÌ¬¾«ÇÉ±ğÖÂ£¬Íâ´àÀïÄÛ£¬¶øÓÖ±ğÓĞ·çÎ¶µÄ¼ĞĞÄİ©Üù¡£\n");
-                set("unit", "Åè");
+                set("long","ä¸€ç›†å½¢æ…‹ç²¾å·§åˆ¥è‡´ï¼Œå¤–è„†è£¡å«©ï¼Œè€Œåˆåˆ¥æœ‰é¢¨å‘³çš„å¤¾å¿ƒè¸è–ºã€‚\n");
+                set("unit", "ç›†");
                 set("value", 150);
                 set("food_remaining", 4);
                 set("food_supply", 40);

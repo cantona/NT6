@@ -3,15 +3,15 @@
 #include <ansi.h>;
 inherit NPC;
 
-string *duo = ({ "ÈÊ", "Òå", "Àñ", "ÖÇ", "ÐÅ", "ÓÂ" });
+string *duo = ({ "ä»", "ç¾©", "ç¦®", "æ™º", "ä¿¡", "å‹‡" });
 void create()
 {
         int level;
         level = random(7)+1;
-        set_name("Ø¤°ïµÜ×Ó", ({ "gaibang dizi", "gangbang", "dizi" }));
-        set("long", "ÕâÊÇÎ»ÒÂ×ÅÆÆÀÃµÄØ¤°ïµÜ×Ó£¬Ã¼Ä¿¼äÍ¸³ö¹ÉÓ¢Æø¡£\n");
-        set("title", "Ø¤°ï"+chinese_number(level)+"´üµÜ×Ó");
-        set("gender", "ÄÐÐÔ");
+        set_name("ä¸å¹«å¼Ÿå­", ({ "gaibang dizi", "gangbang", "dizi" }));
+        set("long", "é€™æ˜¯ä½è¡£è‘—ç ´çˆ›çš„ä¸å¹«å¼Ÿå­ï¼Œçœ‰ç›®é–“é€å‡ºè‚¡è‹±æ°£ã€‚\n");
+        set("title", "ä¸å¹«"+chinese_number(level)+"è¢‹å¼Ÿå­");
+        set("gender", "ç”·æ€§");
         set("age", 15+level*5);
         set("attitude", "peaceful");
         set("class", "beggar");
@@ -51,10 +51,10 @@ void create()
 
         set("auto_perform", 1);
 
-        //set("party/party_name", HIC"Ø¤°ï"NOR);
-        //set("party/rank", GRN+"´ó"+duo[random(6)]+"·Ö¶æ"HIY+chinese_number(level)+"´üµÜ×Ó"NOR);
+        //set("party/party_name", HIC"ä¸å¹«"NOR);
+        //set("party/rank", GRN+"å¤§"+duo[random(6)]+"åˆ†èˆµ"HIY+chinese_number(level)+"è¢‹å¼Ÿå­"NOR);
         //set("party/level", level);
-        create_family("Ø¤°ï", 20, "µÜ×Ó");
+        create_family("ä¸å¹«", 20, "å¼Ÿå­");
 
         setup();
         carry_object("/clone/cloth/cloth")->wear();

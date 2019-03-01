@@ -4,14 +4,14 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "°×Ã·Ô°"); 
+        set("short", "ç™½æ¢…åœ’"); 
         set("long", @LONG
-ÕâÀï±ãÊÇ°×Ã·Ô°ÁË£¬Æ½³£½ðÊ¨¾Í×îÏ²»¶µ½ÕâÀï×ß×ß£¬ËµÊÇÔÚÇåÑÅ
-µÄÃ·ÏãÖÐÄÜ¾²ÏÂÐÄÏëÐ©ÊÂÇé£¬Ã¿·ê´ËÊ±£¬ÒøÁú¶¨»áÆ²Æ²ÏÂ×ì£¬²»Ð¼µÀ£º
-Ò»¸öÈËµÄÉíÉÏ´©µÄÈô»¹ÊÇ´ºÌìµÄ±¡ÒÂ·þ£¬¶Ç×ÓÀï×°µÄÈô»¹ÊÇ×òÌì³ÔµÄ
-Ñô´ºÃæ£¬ËûÎ¨Ò»»¹ÓÐÐÄÇéÐÀÉÍµÄ¶«Î÷¾ÍÊÇ¿ÉÒÔÍù×ìÀïÍÌÏÂÈ¥¡¢Èû±¥¶Ç
-×ÓµÄ£¬¾ö²»»áÊÇÊ²Ã´Ã·»¨¡£µ±È»Ã·»¨ÈôÊÇ»»³ÉÀ±½·ÄÇµ¹¿ÉÒÔ¿¼ÂÇ¿¼ÂÇ¡£
-ÇïÌìµÄÃ·Ê÷ÉÏÃ»Ê²Ã´»¨£¬µ«Ææ¹ÖµÄÊÇÕâÀïÈÔÆ®É¢×ÅÒ»¹ÉÇåÏã¡£
+é€™è£¡ä¾¿æ˜¯ç™½æ¢…åœ’äº†ï¼Œå¹³å¸¸é‡‘ç…å°±æœ€å–œæ­¡åˆ°é€™è£¡èµ°èµ°ï¼Œèªªæ˜¯åœ¨æ¸…é›…
+çš„æ¢…é¦™ä¸­èƒ½éœä¸‹å¿ƒæƒ³äº›äº‹æƒ…ï¼Œæ¯é€¢æ­¤æ™‚ï¼ŒéŠ€é¾å®šæœƒæ’‡æ’‡ä¸‹å˜´ï¼Œä¸å±‘é“ï¼š
+ä¸€å€‹äººçš„èº«ä¸Šç©¿çš„è‹¥é‚„æ˜¯æ˜¥å¤©çš„è–„è¡£æœï¼Œè‚šå­è£¡è£çš„è‹¥é‚„æ˜¯æ˜¨å¤©åƒçš„
+é™½æ˜¥é¢ï¼Œä»–å”¯ä¸€é‚„æœ‰å¿ƒæƒ…æ¬£è³žçš„æ±è¥¿å°±æ˜¯å¯ä»¥å¾€å˜´è£¡åžä¸‹åŽ»ã€å¡žé£½è‚š
+å­çš„ï¼Œæ±ºä¸æœƒæ˜¯ä»€éº¼æ¢…èŠ±ã€‚ç•¶ç„¶æ¢…èŠ±è‹¥æ˜¯æ›æˆè¾£æ¤’é‚£å€’å¯ä»¥è€ƒæ…®è€ƒæ…®ã€‚
+ç§‹å¤©çš„æ¢…æ¨¹ä¸Šæ²’ä»€éº¼èŠ±ï¼Œä½†å¥‡æ€ªçš„æ˜¯é€™è£¡ä»é£„æ•£è‘—ä¸€è‚¡æ¸…é¦™ã€‚
 LONG );
         set("type","forest");
         set("outdoors", "wansong");
@@ -21,10 +21,10 @@ LONG );
                 "north":__DIR__"chaifang",
         ]) );
         set("item_desc", ([
-                "Ã·Ê÷": "Ã·Ê÷ÉÏÃ»ÓÐ»¨£¬Ê÷¸ÉÉÏ¶¤ÁËÒ»¿éÐ¡ÅÆ×Ó£¬Äê´ú¿´À´ºÜ¾ÃÔ¶ÁË¡£\n",
-                "tree": "Ã·Ê÷ÉÏÃ»ÓÐ»¨£¬Ê÷¸ÉÉÏ¶¤ÁËÒ»¿éÐ¡ÅÆ×Ó£¬Äê´ú¿´À´ºÜ¾ÃÔ¶ÁË¡£\n",
-                "ÅÆ×Ó": "ÅÆ×ÓÉÏÐ´×Å-[..¶¯Âñ....´¦¡£]£¬µ«ÊÇÄê´ú¾ÃÔ¶£¬ÓÐ¼¸¸ö×Ö¿´²»ÇåÁË¡£\n",
-                "paizi": "ÅÆ×ÓÉÏÐ´×Å-[..¶¯Âñ....´¦¡£]£¬µ«ÊÇÄê´ú¾ÃÔ¶£¬ÓÐ¼¸¸ö×Ö¿´²»ÇåÁË¡£\n"
+                "æ¢…æ¨¹": "æ¢…æ¨¹ä¸Šæ²’æœ‰èŠ±ï¼Œæ¨¹å¹¹ä¸Šé‡˜äº†ä¸€å¡Šå°ç‰Œå­ï¼Œå¹´ä»£çœ‹ä¾†å¾ˆä¹…é äº†ã€‚\n",
+                "tree": "æ¢…æ¨¹ä¸Šæ²’æœ‰èŠ±ï¼Œæ¨¹å¹¹ä¸Šé‡˜äº†ä¸€å¡Šå°ç‰Œå­ï¼Œå¹´ä»£çœ‹ä¾†å¾ˆä¹…é äº†ã€‚\n",
+                "ç‰Œå­": "ç‰Œå­ä¸Šå¯«è‘—-[..å‹•åŸ‹....è™•ã€‚]ï¼Œä½†æ˜¯å¹´ä»£ä¹…é ï¼Œæœ‰å¹¾å€‹å­—çœ‹ä¸æ¸…äº†ã€‚\n",
+                "paizi": "ç‰Œå­ä¸Šå¯«è‘—-[..å‹•åŸ‹....è™•ã€‚]ï¼Œä½†æ˜¯å¹´ä»£ä¹…é ï¼Œæœ‰å¹¾å€‹å­—çœ‹ä¸æ¸…äº†ã€‚\n"
         ]) );
         set("objects",([
                 CLASS_D("mojiao/jinshi") : 1,
@@ -46,15 +46,15 @@ int dig_notify(object obj, int i)
         qi=query("qi", me);
         max_qi=query("max_qi", me);
         if (qi < max_qi/4) {
-                message_vision("$NÂÕÊÖÖÐµÄ"+obj->name()+"£¬µ«ÊÇÄÔÖÐÍ»È»Ò»ÕóÑ£ÔÎ......\n" , me);
+                message_vision("$NæŽ„æ‰‹ä¸­çš„"+obj->name()+"ï¼Œä½†æ˜¯è…¦ä¸­çªç„¶ä¸€é™£çœ©æšˆ......\n" , me);
            me->unconcious();
         }
         else {
-                message_vision("$NÊÖÖÐµÄ"+obj->name()+"Åöµ½¼áÓ²µÄµØÃæ£¬·¢³ö£§¶££§µÄÒ»Éù¡£\n" , me);
+                message_vision("$Næ‰‹ä¸­çš„"+obj->name()+"ç¢°åˆ°å …ç¡¬çš„åœ°é¢ï¼Œç™¼å‡ºâ€²å®â€²çš„ä¸€è²ã€‚\n" , me);
                 me->receive_damage("qi",query("max_qi", me)/4);
                 if (query("digged")) 
                 {
-                        message_vision("$NÐÁÐÁ¿à¿àÍÚÁË°ëÌìÊ²Ã´Ò²Ã»ÍÚµ½¡£\n", me);
+                        message_vision("$Nè¾›è¾›è‹¦è‹¦æŒ–äº†åŠå¤©ä»€éº¼ä¹Ÿæ²’æŒ–åˆ°ã€‚\n", me);
                         return 1;
                 }
                 else
@@ -62,18 +62,18 @@ int dig_notify(object obj, int i)
                         switch ( random(3) )
                         {
                           case 0: 
-                                message_vision("$N·¢ÏÖµØÏÂËÆºõÓÐ¸ö¾ÆÌ³×Ó¡£\n",this_player());
+                                message_vision("$Nç™¼ç¾åœ°ä¸‹ä¼¼ä¹Žæœ‰å€‹é…’å£‡å­ã€‚\n",this_player());
                                 jt = new(__DIR__"obj/bottle");
                                 jt->move(this_player());
                                 set("digged",1);
-                                message_vision("$N¼¤¶¯µØÈÓµô"+obj->name()+"£¬Á¬Ã¦¼ñÆð"+jt->name()+"¡£ \n",this_player());
+                                message_vision("$Næ¿€å‹•åœ°æ‰”æŽ‰"+obj->name()+"ï¼Œé€£å¿™æ’¿èµ·"+jt->name()+"ã€‚ \n",this_player());
                                 destruct(obj);
                                 break;
                           case 1:
-                                message_vision("µØÉÏµÄÍÁ±»$N·­ÆðÒ»¿é,Ã»Ê²Ã´·¢ÏÖ¡£\n",obj);
+                                message_vision("åœ°ä¸Šçš„åœŸè¢«$Nç¿»èµ·ä¸€å¡Š,æ²’ä»€éº¼ç™¼ç¾ã€‚\n",obj);
                                 break;
                           case 2:
-                                message_vision("ïÏ£®£®µÃÒ»Éù£¬$NÊÖÖÐµÄ"+obj->name()+"¶ÏÁË¡£\n",this_player());
+                                message_vision("é˜ï¼Žï¼Žå¾—ä¸€è²ï¼Œ$Næ‰‹ä¸­çš„"+obj->name()+"æ–·äº†ã€‚\n",this_player());
                                 destruct(obj);
                                 break;
                         }

@@ -6,17 +6,17 @@ inherit MYHEART;
 
 void create()
 {
-        set_name(HIY "÷Ò÷Ñ·û" NOR, ({ "taolie fu", "taolie", "fu" }) );
+        set_name(HIY "é¥•é¤®ç¬¦" NOR, ({ "taolie fu", "taolie", "fu" }) );
         set_weight(1);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
                 set("material", "paper");
-                set("unit", "ÕÅ");
-                set("long", HIY "ÕâÊÇÒ»ÕÅµÀ·û£¬ÉÏÃæ»­×ÅÒ»¸ö¹Å¹ÖµÄ¾ŞÊŞ¡£\n" NOR);
+                set("unit", "å¼µ");
+                set("long", HIY "é€™æ˜¯ä¸€å¼µé“ç¬¦ï¼Œä¸Šé¢ç•«è‘—ä¸€å€‹å¤æ€ªçš„å·¨ç¸ã€‚\n" NOR);
                 set("value", 10000);
                 set("armor_prop/greedy", 1);
-                set("special/desc", "5%¼¸ÂÊ´òÖĞ¶ÔÊÖ½µµÍ¶Ô·½Ê³Îï¼°ÒûË®Á¿¡£");
+                set("special/desc", "5%å¹¾ç‡æ‰“ä¸­å°æ‰‹é™ä½å°æ–¹é£Ÿç‰©åŠé£²æ°´é‡ã€‚");
         }
         setup();
 }

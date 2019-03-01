@@ -3,13 +3,13 @@
 
 void create()
 {
-        set_name(HIW "ÌïÆßöèµ¨Íè" NOR, ({"shadan wan", "wan"}));
+        set_name(HIW "ç”°ä¸ƒé¯Šè†½ä¸¸" NOR, ({"shadan wan", "wan"}));
         set_weight(50);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "¼¯½áÊıÖĞÃû¹óÒ©²ÄÁ¶ÖÆ¶ø³ÉµÄµ¤Ò©£¬ÄËÊÇÌÒ»¨µºµÄ¶ÀÃÅÆæÒ©¡£\n" NOR);
-                set("base_unit", "¿Å");
+                set("long", HIW "é›†çµæ•¸ä¸­åè²´è—¥æç…‰åˆ¶è€Œæˆçš„ä¸¹è—¥ï¼Œä¹ƒæ˜¯æ¡ƒèŠ±å³¶çš„ç¨é–€å¥‡è—¥ã€‚\n" NOR);
+                set("base_unit", "é¡†");
                 set("base_value", 5000);
                 set("base_weight", 70);
                 set("only_do_effect", 1);
@@ -40,20 +40,20 @@ int do_effect(object me)
 
         if( time()-query_temp("last_eat/wuchang", me)<80 )
         {
-                write("Äã¸Õ·şÓÃ¹ıÒ©£¬ĞèÒ©ĞÔ·¢»ÓÍêĞ§ÓÃÒÔºó²ÅÄÜ¼ÌĞø·şÓÃ¡£\n");
+                write("ä½ å‰›æœç”¨éè—¥ï¼Œéœ€è—¥æ€§ç™¼æ®å®Œæ•ˆç”¨ä»¥å¾Œæ‰èƒ½ç¹¼çºŒæœç”¨ã€‚\n");
                 return 1;
         }
 
         if( query("neili", me) >= query("max_neili", me) )
         {
-                write("ÄãÏÖÔÚÄÚÁ¦±¥Âú£¬ÎŞĞè·şÓÃÌïÆßöèµ¨Íè¡£\n");
+                write("ä½ ç¾åœ¨å…§åŠ›é£½æ»¿ï¼Œç„¡éœ€æœç”¨ç”°ä¸ƒé¯Šè†½ä¸¸ã€‚\n");
                 return 1;
         }
 
         set_temp("last_eat/wuchang", time(), me);
 
-        message_vision(HIW "$N" HIW "ÍÌÏÂÌïÆßöèµ¨Íè£¬³¤ºô³öÒ»¿ÚÆø£¬Á³É«±äµÃºìÈóÆğÀ´¡£\n" NOR, me);
-        tell_object(me, HIC "ÄãÖ»¾õµÃÕæÆø³äÅæ£¬ËÆºõÓĞÊ¹²»ÍêµÄÁ¦Æø¡£\n" NOR);
+        message_vision(HIW "$N" HIW "åä¸‹ç”°ä¸ƒé¯Šè†½ä¸¸ï¼Œé•·å‘¼å‡ºä¸€å£æ°£ï¼Œè‡‰è‰²è®Šå¾—ç´…æ½¤èµ·ä¾†ã€‚\n" NOR, me);
+        tell_object(me, HIC "ä½ åªè¦ºå¾—çœŸæ°£å……æ²›ï¼Œä¼¼ä¹æœ‰ä½¿ä¸å®Œçš„åŠ›æ°£ã€‚\n" NOR);
 
         my = me->query_entire_dbase();
         my["neili"] = my["max_neili"];

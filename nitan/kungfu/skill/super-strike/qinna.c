@@ -3,7 +3,7 @@
 inherit F_SSERVER;
 #include <ansi.h>
 
-string perform_name(){ return HBBLU"ÌúÕÆÇÜÄÃ"NOR; }
+string perform_name(){ return HBBLU"éµæŽŒæ“’æ‹¿"NOR; }
 int perform(object me, object target)
 {
         string msg;
@@ -11,31 +11,31 @@ int perform(object me, object target)
         if( !target
         ||  !target->is_character()
         ||  !me->is_fighting(target) )
-                return notify_fail("¡¸ÌúÕÆÇÜÄÃÊÖ¡¹Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€ŒéµæŽŒæ“’æ‹¿æ‰‹ã€åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
         if( (int)me->query_skill("force", 1) < 150 )
-                return notify_fail("ÄãµÄ¹éÔªÍÂÄÉ·¨ÐÞÎªÎ´µ½£¬ÎÞ·¨Ê¹³öÌúÕÆÇÜÄÃÊÖ¡£\n");
+                return notify_fail("ä½ çš„æ­¸å…ƒåç´æ³•ä¿®ç‚ºæœªåˆ°ï¼Œç„¡æ³•ä½¿å‡ºéµæŽŒæ“’æ‹¿æ‰‹ã€‚\n");
         if( (int)me->query_skill("dodge", 1) < 150 )
-                return notify_fail("ÄãµÄË®ÉÏÆ¯ÐÞÎªÎ´µ½£¬ÎÞ·¨Ê¹³öÌúÕÆÇÜÄÃÊÖ¡£\n");
+                return notify_fail("ä½ çš„æ°´ä¸Šæ¼‚ä¿®ç‚ºæœªåˆ°ï¼Œç„¡æ³•ä½¿å‡ºéµæŽŒæ“’æ‹¿æ‰‹ã€‚\n");
         if( (int)me->query_skill("super-strike", 1) < 150 )
-                return notify_fail("ÄãµÄÌúÕÆÐÞÎªÎ´µ½£¬ÎÞ·¨Ê¹³öÌúÕÆÇÜÄÃÊÖ¡£\n");
+                return notify_fail("ä½ çš„éµæŽŒä¿®ç‚ºæœªåˆ°ï¼Œç„¡æ³•ä½¿å‡ºéµæŽŒæ“’æ‹¿æ‰‹ã€‚\n");
         if( (int)me->query("jingli") < 1000 )
-                return notify_fail("ÄãÏÖÔÚ¾«Á¦Ì«Èõ£¬²»ÄÜ³öÌúÕÆÇÜÄÃÊÖ¡£\n");
+                return notify_fail("ä½ ç¾åœ¨ç²¾åŠ›å¤ªå¼±ï¼Œä¸èƒ½å‡ºéµæŽŒæ“’æ‹¿æ‰‹ã€‚\n");
         if (target->is_busy())
-                return notify_fail("ËûÒÑ¾­±»»÷ÖÐÁË£¬²»ÐèÒªÔÙÊ¹ÓÃÌúÕÆÇÜÄÃÊÖ¡£\n");
+                return notify_fail("ä»–å·²ç¶“è¢«æ“Šä¸­äº†ï¼Œä¸éœ€è¦å†ä½¿ç”¨éµæŽŒæ“’æ‹¿æ‰‹ã€‚\n");
 
-        me->start_perform(4,"ÌúÕÆÇÜÄÃÊÖ");
+        me->start_perform(4,"éµæŽŒæ“’æ‹¿æ‰‹");
 
-        msg = HBBLU"\n$NÊ¹³öÌúÕÆÇÜÄÃÊÖ£¬¿´×¼$nµÄÊÖÍó£¬Ò»°Ñ×¥È¥£¡\n"NOR;
+        msg = HBBLU"\n$Nä½¿å‡ºéµæŽŒæ“’æ‹¿æ‰‹ï¼Œçœ‹æº–$nçš„æ‰‹è…•ï¼Œä¸€æŠŠæŠ“åŽ»ï¼\n"NOR;
         if (random(me->query_dex()) > target->query_dex() || random(me->query_str()) > target->query_str())
         {
-                msg = HIR"\n$NÌúÕÆÇÜÄÃÊÖÒ»°Ñ×¥×¡$nÊÖÍó£¬ÍùÍâÒ»°â£¬$n¾çÍ´ÏÂÖ»µÃÍ£Ö¹¹¥»÷£¬²ÉÈ¡ÊØÊÆ¡£\n"NOR;
+                msg = HIR"\n$NéµæŽŒæ“’æ‹¿æ‰‹ä¸€æŠŠæŠ“ä½$næ‰‹è…•ï¼Œå¾€å¤–ä¸€æ‰³ï¼Œ$nåŠ‡ç—›ä¸‹åªå¾—åœæ­¢æ”»æ“Šï¼ŒæŽ¡å–å®ˆå‹¢ã€‚\n"NOR;
                 target->set_temp("lost_attack",3+random(3));
                 if (!target->is_busy()) target->start_busy(3);
         }
         else {
                 me->start_busy(1);
                 target->start_busy(1);
-                msg += HIR"$nÏò$N¼±¹¥ÊýÕÐ£¬$NÖ»µÃ»ØÊÖ×Ô¾È¡£\n"NOR;
+                msg += HIR"$nå‘$Næ€¥æ”»æ•¸æ‹›ï¼Œ$Nåªå¾—å›žæ‰‹è‡ªæ•‘ã€‚\n"NOR;
         }
         me->add("jingli",-(200+random(100)));
         message_vision(msg, me, target);

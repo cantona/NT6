@@ -1,5 +1,5 @@
 // Code of ShenZhou
-// /d/shenlong/obj/bmdan.c ÌìÍõ±£Ãüµ¤
+// /d/shenlong/obj/bmdan.c å¤©ç‹ä¿å‘½ä¸¹
 // by Aln  1/98
 
 #include <ansi.h>
@@ -7,18 +7,18 @@
 inherit ITEM;
 void create()
 {
-        set_name("ÌìÍõ±£Ãüµ¤", ({"baoming dan", "dan"}));
+        set_name("å¤©ç‹ä¿å‘½ä¸¹", ({"baoming dan", "dan"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
+                set("unit", "é¡†");
                 set("value", 4000);
                 set("long", 
-"ÕâÌìÍõ±£Ãüµ¤ÊÇÓÉÈı°ÙÄêÀÏÉ½ÈË²Î¡¢°×ĞÜµ¨¡¢Ñ©Á«µÈÎïÁ¶³ÉµÄÁéµ¤\n");
+"é€™å¤©ç‹ä¿å‘½ä¸¹æ˜¯ç”±ä¸‰ç™¾å¹´è€å±±äººåƒã€ç™½ç†Šè†½ã€é›ªè“®ç­‰ç‰©ç…‰æˆçš„éˆä¸¹\n");
                 set("medicine", 1);
                 set("no_sell", 1);
                 set("only_do_effect", 1);  
-                set("no_drop", "ÌìÍõ±£Ãüµ¤Á¶ÖÆ²»Ò×£¬ÄÄÄÜÂÒÈÓ£¡\n");
+                set("no_drop", "å¤©ç‹ä¿å‘½ä¸¹ç…‰åˆ¶ä¸æ˜“ï¼Œå“ªèƒ½äº‚æ‰”ï¼\n");
         }
 
         setup();
@@ -28,21 +28,21 @@ int do_effect(object me)
 {
         if( query("eff_qi", me)*10>query("max_qi", me)*3
          && query("eff_jing", me)*10>query("max_jing", me)*3){
-                write("ÄãÏÖÔÚÓÃ²»×Å·şÌìÍõ±£Ãüµ¤¡£\n");
+                write("ä½ ç¾åœ¨ç”¨ä¸è‘—æœå¤©ç‹ä¿å‘½ä¸¹ã€‚\n");
                 return 1;
         }
 
         if( !me->is_fighting() ) {
-                write("ÏÖÔÚÓÖ²»ÊÇÎ£¼±¹ØÍ·£¬±ğÀË·ÑÁË£¡\n");
+                write("ç¾åœ¨åˆä¸æ˜¯å±æ€¥é—œé ­ï¼Œåˆ¥æµªè²»äº†ï¼\n");
                 return 1;
         }
 
-        message_vision("$N³ÔÏÂÒ»¿Å" + name() + "¡£\n", me);
+        message_vision("$Nåƒä¸‹ä¸€é¡†" + name() + "ã€‚\n", me);
 
         set("eff_qi",query("max_qi",  me), me);
         set("eff_jing",query("max_jing",  me), me);
 
-        message_vision(YEL "$NÖ»¾õÉËÊÆÈ«ÓúÁË¡£\n\n" NOR, me);
+        message_vision(YEL "$Nåªè¦ºå‚·å‹¢å…¨ç™’äº†ã€‚\n\n" NOR, me);
         destruct(this_object());
         return 1;
 }

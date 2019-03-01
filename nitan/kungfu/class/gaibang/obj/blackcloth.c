@@ -1,4 +1,4 @@
-// blackcloth.c ºÚÅÛ
+// blackcloth.c é»‘è¢
 //
 
 #include <armor.h>
@@ -7,14 +7,14 @@ inherit CLOTH;
 
 void create()
 {
-        set_name("ºÚÅÛ", ({ "hei pao","pao","blackcloth" }) );
+        set_name("é»‘è¢", ({ "hei pao","pao","blackcloth" }) );
         set_weight(10000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼ş");
+                set("unit", "ä»¶");
                 set("material", "steel");
-                        set("long","ÕâÊÇÒ»¼şÉ±ÊÖ×îÏ²»¶´©µÄºÚÉ«³¤ÅÛ");
+                        set("long","é€™æ˜¯ä¸€ä»¶æ®ºæ‰‹æœ€å–œæ­¡ç©¿çš„é»‘è‰²é•·è¢");
                                 set("value", 0);
                 set("armor_prop/armor", 50);
         }

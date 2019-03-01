@@ -3,11 +3,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Ժ��");
+        set("short", "院子");
         set("long", @LONG
-����һ����Ժ�ӣ���ɨ��һ����Ⱦ������װ���ż����������
-�������¡������������⡣������һ�䴢���ң����Źر��š�������
-����ɽׯ�Ĵ������ϱ߾��Ǵ����ˡ�
+這是一個大院子，打掃得一塵不染。四周裝點著幾株青青翠竹，
+錯落有致。西邊是武器庫。東邊有一間儲藏室，房門關閉著。北邊是
+白駝山莊的大廳。南邊就是大門了。
 LONG );
         set("exits", ([
                 "northup" : __DIR__"dating",
@@ -15,7 +15,7 @@ LONG );
                 "east"    : __DIR__"storeroom",
                 "south"   : __DIR__"damen",
         ]));
-        create_door("east", "ľ��", "west", DOOR_CLOSED);
+        create_door("east", "木門", "west", DOOR_CLOSED);
         set("coor/x", -49970);
         set("coor/y", 20010);
         set("coor/z", 20);

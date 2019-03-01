@@ -22,11 +22,11 @@ int main(object me, string arg)
         if (! arg)
         {
                 if( !query("title", me) )
-                        write("ÄãÏÖÔÚ²¢Ã»ÓĞÈÎºÎ³ÆºÅ¡£\n");
+                        write("ä½ ç¾åœ¨ä¸¦æ²’æœ‰ä»»ä½•ç¨±è™Ÿã€‚\n");
                 else
-                        write("ÄãÏÖÔÚµÄ½­ºş³ÆºÅ£º"+query("title", me)+"\n");
+                        write("ä½ ç¾åœ¨çš„æ±Ÿæ¹–ç¨±è™Ÿï¼š"+query("title", me)+"\n");
                         if( stringp(query_temp("title", me)) )
-                                write("ÓÎÏ·¸³ÓèÄãµÄÌØÊâ³ÆºÅ£º"+query_temp("title", me)+"\n");
+                                write("éŠæˆ²è³¦äºˆä½ çš„ç‰¹æ®Šç¨±è™Ÿï¼š"+query_temp("title", me)+"\n");
                 return 1;
         }
 
@@ -37,7 +37,7 @@ int main(object me, string arg)
                 return list_title();
 
         if (sscanf(arg, "%s %s", sw, arg) != 2)
-                return notify_fail("Çë²Î¼û help title »ñµÃ¸ÃÃüÁîµÄÊ¹ÓÃ·½·¨¡£\n");
+                return notify_fail("è«‹åƒè¦‹ help title ç²å¾—è©²å‘½ä»¤çš„ä½¿ç”¨æ–¹æ³•ã€‚\n");
 
         switch (sw)
         {
@@ -47,11 +47,11 @@ int main(object me, string arg)
         case "-r": return replace_title(arg); break;
         case "-s": return set_title(arg);     break;
         case "-l": return list_title();       break;
-        default:   return notify_fail("²ÎÊı´íÎó¡£\n");
+        default:   return notify_fail("åƒæ•¸éŒ¯èª¤ã€‚\n");
         }
 }
 
-// ´´½¨³ÆºÅ
+// å‰µå»ºç¨±è™Ÿ
 protected int create_title(string arg)
 {
         int n = 1;
@@ -61,12 +61,12 @@ protected int create_title(string arg)
         ts = UPDATE_D->query_title_base();
         if (! arrayp(ts)) ts = ({ });
         if (n + sizeof(ts) >= 100)
-                return notify_fail("ÏµÍ³ÖĞ×î¶àÖ»ÄÜÓĞÒ»°Ù¸ö³ÆºÅ£¬ËùÒÔÇëÄã¿¼ÂÇÏÈÈ¡ÏûÒ»Ğ©¡£\n");
+                return notify_fail("ç³»çµ±ä¸­æœ€å¤šåªèƒ½æœ‰ä¸€ç™¾å€‹ç¨±è™Ÿï¼Œæ‰€ä»¥è«‹ä½ è€ƒæ…®å…ˆå–æ¶ˆä¸€äº›ã€‚\n");
 
         if (! stringp(arg = check_title(arg)))
                 return 0;
 
-        write("´´½¨ÁË" + chinese_number(n) + "¸ö³ÆºÅ£º" + arg + "\n");
+        write("å‰µå»ºäº†" + chinese_number(n) + "å€‹ç¨±è™Ÿï¼š" + arg + "\n");
         while (n--)
                 ts += ({ ({ arg, 0 }) });
         UPDATE_D->set_title_base(ts);
@@ -74,7 +74,7 @@ protected int create_title(string arg)
         return 1;
 }
 
-// É¾³ı³ÆºÅ
+// åˆªé™¤ç¨±è™Ÿ
 protected int delete_title(string arg)
 {
         mixed ts;
@@ -85,18 +85,18 @@ protected int delete_title(string arg)
 
         ts = UPDATE_D->query_title_base();
         if (! arrayp(ts))
-                return notify_fail("Ä¿Ç°ÓÎÏ·ÖĞ²¢Ã»ÓĞÈÎºÎÌØÊâ³ÆºÅ¡£\n");
+                return notify_fail("ç›®å‰éŠæˆ²ä¸­ä¸¦æ²’æœ‰ä»»ä½•ç‰¹æ®Šç¨±è™Ÿã€‚\n");
 
         if (sscanf(arg, "%d", n))
         {
                 if (n < 1 || n > sizeof(ts))
-                        return notify_fail("³ÆºÅµÄ´úºÅÊÇ´Ó 1 µ½ " +
-                                           sizeof(ts) + " £¬ÇëÊäÈëÓĞĞ§µÄ´úºÅ¡£\n");
+                        return notify_fail("ç¨±è™Ÿçš„ä»£è™Ÿæ˜¯å¾ 1 åˆ° " +
+                                           sizeof(ts) + " ï¼Œè«‹è¼¸å…¥æœ‰æ•ˆçš„ä»£è™Ÿã€‚\n");
 
                 n--;
                 if (stringp(ts[n][1]) && wiz_level(ts[n][1]) > wiz_level(this_player()))
-                        return notify_fail("ÄãÃ»ÓĞÈ¨ÏŞÉ¾³ı " + ts[n][1] +
-                                           " ÓµÓĞµÄ³ÆºÅ¡£\n");
+                        return notify_fail("ä½ æ²’æœ‰æ¬Šé™åˆªé™¤ " + ts[n][1] +
+                                           " æ“æœ‰çš„ç¨±è™Ÿã€‚\n");
 
                 if (stringp(ts[n][1]) && objectp(ob = find_player(ts[n][1])))
                 {
@@ -107,12 +107,12 @@ protected int delete_title(string arg)
                 ds = ts[0..n - 1] + ts[n + 1..<1];
                 UPDATE_D->set_title_base(ds);
                 UPDATE_D->save();
-                write("È¥µôÁËµÚ " + (n + 1) + " ¸ö³ÆºÅ¡£\n");
+                write("å»æ‰äº†ç¬¬ " + (n + 1) + " å€‹ç¨±è™Ÿã€‚\n");
                 return 1;
         }
 
         if (! stringp(arg = check_title(arg)))
-                return notify_fail("Ä¿Ç°ÓÎÏ·ÖĞ²¢Ã»ÓĞÕâ¸ö³ÆºÅ¡£\n");;
+                return notify_fail("ç›®å‰éŠæˆ²ä¸­ä¸¦æ²’æœ‰é€™å€‹ç¨±è™Ÿã€‚\n");;
 
         arg = filter_color(arg);
 
@@ -139,12 +139,12 @@ protected int delete_title(string arg)
         ds = ds[0..n - 1];
         UPDATE_D->set_title_base(ds);
         UPDATE_D->save();
-        write("È¥µôÁË³ÆºÅ£º" + arg + "¡£\n");
+        write("å»æ‰äº†ç¨±è™Ÿï¼š" + arg + "ã€‚\n");
 
         return 1;
 }
 
-// ¸ü»»³ÆºÅ
+// æ›´æ›ç¨±è™Ÿ
 protected int replace_title(string arg)
 {
         string new_title;
@@ -154,40 +154,40 @@ protected int replace_title(string arg)
         int n;
 
         if (sscanf(arg, "%s %s", arg, new_title) != 2)
-                return notify_fail("Äã´òËã°ÑÕâĞ©³ÆºÅĞŞ¸Ä³ÉÊ²Ã´£¿\n");
+                return notify_fail("ä½ æ‰“ç®—æŠŠé€™äº›ç¨±è™Ÿä¿®æ”¹æˆä»€éº¼ï¼Ÿ\n");
 
         if (! stringp(new_title = check_title(new_title)))
                 return 0;
 
         ts = UPDATE_D->query_title_base();
         if (! arrayp(ts))
-                return notify_fail("Ä¿Ç°ÓÎÏ·ÖĞ²¢Ã»ÓĞÈÎºÎÌØÊâ³ÆºÅ¡£\n");
+                return notify_fail("ç›®å‰éŠæˆ²ä¸­ä¸¦æ²’æœ‰ä»»ä½•ç‰¹æ®Šç¨±è™Ÿã€‚\n");
 
         if (sscanf(arg, "%d", n))
         {
                 if (n < 1 || n > sizeof(ts))
-                        return notify_fail("³ÆºÅµÄ´úºÅÊÇ´Ó 1 µ½ " +
-                                           sizeof(ts) + " £¬ÇëÊäÈëÓĞĞ§µÄ´úºÅ¡£\n");
+                        return notify_fail("ç¨±è™Ÿçš„ä»£è™Ÿæ˜¯å¾ 1 åˆ° " +
+                                           sizeof(ts) + " ï¼Œè«‹è¼¸å…¥æœ‰æ•ˆçš„ä»£è™Ÿã€‚\n");
 
                 n--;
                 if (! stringp(ts[n][1]) || wiz_level(ts[n][1]) <= wiz_level(this_player()))
                 {
-                        // ¿ÉÒÔĞŞ¸ÄÕâ¸ö³ÆºÅ
+                        // å¯ä»¥ä¿®æ”¹é€™å€‹ç¨±è™Ÿ
                         ts[n][0] = new_title;
                         if (stringp(ts[n][1]) &&
                             objectp(ob = find_player(ts[n][1])))
                                 set_temp("title", new_title, ob);
                 } else
-                        return notify_fail("ÄãÃ»ÓĞÈ¨ÏŞĞŞ¸Ä " + ts[n][1] + " ËùÓµÓĞµÄ³ÆºÅ¡£\n");
+                        return notify_fail("ä½ æ²’æœ‰æ¬Šé™ä¿®æ”¹ " + ts[n][1] + " æ‰€æ“æœ‰çš„ç¨±è™Ÿã€‚\n");
 
                 UPDATE_D->set_title_base(ts);
                 UPDATE_D->save();
-                write("ĞŞ¸ÄÁËµÚ " + (n + 1) + " ¸ö³ÆºÅ¡£\n");
+                write("ä¿®æ”¹äº†ç¬¬ " + (n + 1) + " å€‹ç¨±è™Ÿã€‚\n");
                 return 1;
         }
 
         if (! stringp(arg = check_title(arg)))
-                return notify_fail("Ä¿Ç°ÓÎÏ·ÖĞ²¢Ã»ÓĞÕâ¸ö³ÆºÅ¡£\n");;
+                return notify_fail("ç›®å‰éŠæˆ²ä¸­ä¸¦æ²’æœ‰é€™å€‹ç¨±è™Ÿã€‚\n");;
 
         n = 0;
         arg = filter_color(arg);
@@ -200,7 +200,7 @@ protected int replace_title(string arg)
                 {
                         if (! stringp(item[1]) || wiz_level(item[1]) <= wiz_level(this_player()))
                         {
-                                // ¿ÉÒÔĞŞ¸ÄÕâ¸ö³ÆºÅ
+                                // å¯ä»¥ä¿®æ”¹é€™å€‹ç¨±è™Ÿ
                                 n++;
                                 item[0] = new_title;
                                 if (stringp(item[1]) && objectp(ob = find_player(item[1])))
@@ -211,39 +211,39 @@ protected int replace_title(string arg)
         }
 
         if (! n)
-                return notify_fail("Ä¿Ç°ÓÎÏ·ÖĞ²¢Ã»ÓĞ¿ÉÒÔÈÃÄãĞŞ¸ÄµÄ³ÆºÅ¡£\n");
+                return notify_fail("ç›®å‰éŠæˆ²ä¸­ä¸¦æ²’æœ‰å¯ä»¥è®“ä½ ä¿®æ”¹çš„ç¨±è™Ÿã€‚\n");
 
         UPDATE_D->set_title_base(ts);
         UPDATE_D->save();
-        write("ĞŞ¸Ä³ÆºÅ¡°" + arg + "¡±Îª¡±" + new_title + "¡±¡£\n");
+        write("ä¿®æ”¹ç¨±è™Ÿâ€œ" + arg + "â€ç‚ºâ€" + new_title + "â€ã€‚\n");
 
         return 1;
 }
 
-// ÉèÖÃ³ÆºÅ
+// è¨­ç½®ç¨±è™Ÿ
 protected int set_title(string arg)
 {
         string user;
         object ob;
 
         if (sscanf(arg, "%s %s", user, arg) != 2)
-                return notify_fail("ÄãÒªÎªË­ÉèÖÃÊ²Ã´³ÆºÅ£¿\n");
+                return notify_fail("ä½ è¦ç‚ºèª°è¨­ç½®ä»€éº¼ç¨±è™Ÿï¼Ÿ\n");
 
         if (! objectp(ob = find_player(user)))
-                return notify_fail("Õâ¸öÍæ¼Ò²»ÔÚÓÎÏ·ÖĞ£¬²»ÄÜÉè¶¨³ÆºÅ¡£\n");
+                return notify_fail("é€™å€‹ç©å®¶ä¸åœ¨éŠæˆ²ä¸­ï¼Œä¸èƒ½è¨­å®šç¨±è™Ÿã€‚\n");
 
         if (! stringp(arg = check_title(arg)))
                 return 0;
 
         if (wiz_level(this_player()) < wiz_level(ob))
-                return notify_fail("Äã²»ÄÜÎª" + ob->name(1) + "Éè¶¨³ÆºÅ¡£\n");
+                return notify_fail("ä½ ä¸èƒ½ç‚º" + ob->name(1) + "è¨­å®šç¨±è™Ÿã€‚\n");
 
         set("title", arg, ob);
-        write("Îª" + ob->name(1) + "Éè¶¨ÁË³ÆºÅ¡£\n");
+        write("ç‚º" + ob->name(1) + "è¨­å®šäº†ç¨±è™Ÿã€‚\n");
         return 1;
 }
 
-// ÊÚÓè³ÆºÅ
+// æˆäºˆç¨±è™Ÿ
 protected int grant_title(string arg)
 {
         string user;
@@ -255,60 +255,60 @@ protected int grant_title(string arg)
 
         if (sscanf(arg, "%s none", user) == 1)
         {
-                // Çå³ıËûÔ­ÏÈµÄ title
+                // æ¸…é™¤ä»–åŸå…ˆçš„ title
                 write(UPDATE_D->clear_user_data(user, "title"));
                 return 1;
         }
 
         if (sscanf(arg, "%s %d", user, i) != 2)
-                return notify_fail("ÊÚÓè³ÆºÅÄã±ØĞëÖ¸¶¨Íæ¼ÒºÍ³ÆºÅµÄ´úºÅ¡£\n");
+                return notify_fail("æˆäºˆç¨±è™Ÿä½ å¿…é ˆæŒ‡å®šç©å®¶å’Œç¨±è™Ÿçš„ä»£è™Ÿã€‚\n");
 
         ts = UPDATE_D->query_title_base();
         if (i < 1 || i > sizeof(ts))
-                return notify_fail("³ÆºÅµÄ´úºÅÊÇ´Ó 1 µ½ " +
-                                   sizeof(ts) + " £¬ÇëÊäÈëÓĞĞ§µÄ´úºÅ¡£\n");
+                return notify_fail("ç¨±è™Ÿçš„ä»£è™Ÿæ˜¯å¾ 1 åˆ° " +
+                                   sizeof(ts) + " ï¼Œè«‹è¼¸å…¥æœ‰æ•ˆçš„ä»£è™Ÿã€‚\n");
         i--;
         item = ts[i];
 
         if (! objectp(nob = UPDATE_D->global_find_player(user)))
-                return notify_fail("ÄãÖ»ÄÜÊÚÓè³ÆºÅ¸øÒÑ¾­×¢²áµÄÍæ¼Ò¡£\n");
+                return notify_fail("ä½ åªèƒ½æˆäºˆç¨±è™Ÿçµ¦å·²ç¶“æ³¨å†Šçš„ç©å®¶ã€‚\n");
 
         if (item[1] == user)
         {
-                notify_fail(nob->name(1) + "µÄ³ÆºÅÄ¿Ç°ÕıÊÇÕâ¸ö¡£\n");
+                notify_fail(nob->name(1) + "çš„ç¨±è™Ÿç›®å‰æ­£æ˜¯é€™å€‹ã€‚\n");
                 UPDATE_D->global_destruct_player(nob);
                 return 0;
         }
 
         if (wiz_level(this_player()) < wiz_level(nob))
         {
-                notify_fail("Äã²»ÄÜÎª" + nob->name(1) + "Éè¶¨³ÆºÅ¡£\n");
+                notify_fail("ä½ ä¸èƒ½ç‚º" + nob->name(1) + "è¨­å®šç¨±è™Ÿã€‚\n");
                 UPDATE_D->global_destruct_player(nob);
                 return 0;
         }
 
-        // Çå³ıËûÔ­ÏÈµÄ title
+        // æ¸…é™¤ä»–åŸå…ˆçš„ title
         UPDATE_D->remove_title(nob);
 
         if (stringp(item[1]) && objectp(ob = find_player(item[1])))
         {
-                // »Ö¸´Õâ¸öÍæ¼ÒµÄÔ­ÏÈ³ÆºÅ
+                // æ¢å¾©é€™å€‹ç©å®¶çš„åŸå…ˆç¨±è™Ÿ
                 delete_temp("title", ob);
                 delete("granted_title", ob);
         }
 
-        // ÖØĞÂÉèÖÃÏµÍ³µÄ title ¼ÇÂ¼
+        // é‡æ–°è¨­ç½®ç³»çµ±çš„ title è¨˜éŒ„
         item[1] = user;
         ts[i] = item;
 
-        // ÖØĞÂÉèÖÃÍæ¼ÒµÃ title
+        // é‡æ–°è¨­ç½®ç©å®¶å¾— title
         set_temp("title", item[0], nob);
         set("granted_title", 1, nob);
         nob->save();
 
         UPDATE_D->set_title_base(ts);
         UPDATE_D->save();
-        write("Îª" + nob->name(1) + "ÊÚÓèÁË¡°" + item[0] + "¡±µÄ³ÆºÅ¡£\n");
+        write("ç‚º" + nob->name(1) + "æˆäºˆäº†â€œ" + item[0] + "â€çš„ç¨±è™Ÿã€‚\n");
         UPDATE_D->global_destruct_player(nob);
 
         return 1;
@@ -323,10 +323,10 @@ protected int list_title()
 
         ts = UPDATE_D->query_title_base();
         if (! arrayp(ts) || sizeof(ts) < 1)
-                return notify_fail("Ä¿Ç°ÓÎÏ·ÖĞÃ»ÓĞÈÎºÎÌØÊâ³ÆºÅ¡£\n");
+                return notify_fail("ç›®å‰éŠæˆ²ä¸­æ²’æœ‰ä»»ä½•ç‰¹æ®Šç¨±è™Ÿã€‚\n");
 
         i = 1;
-        str = "Ä¿Ç°ÏµÍ³ÖĞµÄÌØÊâ³ÆºÅÓĞ " CYN + sizeof(ts) + NOR " ¸ö£º\n";
+        str = "ç›®å‰ç³»çµ±ä¸­çš„ç‰¹æ®Šç¨±è™Ÿæœ‰ " CYN + sizeof(ts) + NOR " å€‹ï¼š\n";
         foreach (item in ts)
         {
                 str += sprintf("%3d. %-" + (30 + color_len(item[0])) + "s%s\n",
@@ -358,7 +358,7 @@ protected mixed check_title(string arg)
         arg = replace_string(arg, "$NOR$", NOR);
 
         if (strlen(filter_color(arg)) > 30 || strlen(arg) > 100)
-                return notify_fail("Õâ¸öÍâºÅÌ«³¤ÁË£¬ÎªÁË½ÚÔ¼×ÊÔ´£¬ÇëÄãÖØĞÂÉè¶¨¡£\n");
+                return notify_fail("é€™å€‹å¤–è™Ÿå¤ªé•·äº†ï¼Œç‚ºäº†ç¯€ç´„è³‡æºï¼Œè«‹ä½ é‡æ–°è¨­å®šã€‚\n");
 
         return arg + NOR;
 }
@@ -366,46 +366,46 @@ protected mixed check_title(string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : title -c <³ÆºÅ> [<ÊıÁ¿>]
-           title -d <³ÆºÅ´úÂë> | <³ÆºÅ>
-           title -g <sb> <³ÆºÅ´úÂë> | <none>
-           title -r <³ÆºÅ´úÂë> | <³ÆºÅ> <ĞÂ³ÆºÅ>
-           title -s <Íæ¼Ò> <ĞÂ³ÆºÅ>
+æŒ‡ä»¤æ ¼å¼ : title -c <ç¨±è™Ÿ> [<æ•¸é‡>]
+           title -d <ç¨±è™Ÿä»£ç¢¼> | <ç¨±è™Ÿ>
+           title -g <sb> <ç¨±è™Ÿä»£ç¢¼> | <none>
+           title -r <ç¨±è™Ÿä»£ç¢¼> | <ç¨±è™Ÿ> <æ–°ç¨±è™Ÿ>
+           title -s <ç©å®¶> <æ–°ç¨±è™Ÿ>
            title -l
  
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄãÎªÄ³ÈËÈ¡Ò»¸öÏìÁÁµÄÍ·ÏÎ£¬µ«ÊÇÖ»ÓĞÎ×
-Ê¦²Å¿ÉÒÔÊ¹ÓÃ£¬ÄãÈç¹ûÏ£ÍûÔÚÍâºÅÖĞÊ¹ÓÃ ANSI µÄ¿ØÖÆ×Ö
-Ôª¸Ä±äÑÕÉ«£¬¿ÉÒÔÓÃÒÔÏÂµÄ¿ØÖÆ×Ö´®£º
+é€™å€‹æŒ‡ä»¤å¯ä»¥è®“ä½ ç‚ºæŸäººå–ä¸€å€‹éŸ¿äº®çš„é ­éŠœï¼Œä½†æ˜¯åªæœ‰å·«
+å¸«æ‰å¯ä»¥ä½¿ç”¨ï¼Œä½ å¦‚æœå¸Œæœ›åœ¨å¤–è™Ÿä¸­ä½¿ç”¨ ANSI çš„æ§åˆ¶å­—
+å…ƒæ”¹è®Šé¡è‰²ï¼Œå¯ä»¥ç”¨ä»¥ä¸‹çš„æ§åˆ¶å­—ä¸²ï¼š
 
-$BLK$ - ºÚÉ«                $NOR$ - »Ö¸´Õı³£ÑÕÉ«
-$RED$ - ºìÉ«                $HIR$ - ÁÁºìÉ«
-$GRN$ - ÂÌÉ«                $HIG$ - ÁÁÂÌÉ«
-$YEL$ - ÍÁ»ÆÉ«                $HIY$ - »ÆÉ«
-$BLU$ - ÉîÀ¶É«                $HIB$ - À¶É«
-$MAG$ - Ç³×ÏÉ«                $HIM$ - ·ÛºìÉ«
-$CYN$ - À¶ÂÌÉ«                $HIC$ - ÌìÇàÉ«
-$WHT$ - Ç³»ÒÉ«                $HIW$ - °×É«
+$BLK$ - é»‘è‰²                $NOR$ - æ¢å¾©æ­£å¸¸é¡è‰²
+$RED$ - ç´…è‰²                $HIR$ - äº®ç´…è‰²
+$GRN$ - ç¶ è‰²                $HIG$ - äº®ç¶ è‰²
+$YEL$ - åœŸé»ƒè‰²                $HIY$ - é»ƒè‰²
+$BLU$ - æ·±è—è‰²                $HIB$ - è—è‰²
+$MAG$ - æ·ºç´«è‰²                $HIM$ - ç²‰ç´…è‰²
+$CYN$ - è—ç¶ è‰²                $HIC$ - å¤©é’è‰²
+$WHT$ - æ·ºç°è‰²                $HIW$ - ç™½è‰²
  
-ÆäÖĞÏµÍ³×Ô¶¯»áÔÚ×Ö´®Î²¶Ë¼ÓÒ»¸ö $NOR$¡£
+å…¶ä¸­ç³»çµ±è‡ªå‹•æœƒåœ¨å­—ä¸²å°¾ç«¯åŠ ä¸€å€‹ $NOR$ã€‚
 
-ÊÚÓè³ÆºÅ¿ÉÒÔÊ¹ÓÃ -g ²ÎÊı¡£ÊÚÓèÇ°Ê×ÏÈĞèÒª´´½¨³ÆºÅ£ºÊ¹ÓÃ -c ²Î
-Êı¿ÉÒÔÔÚÓÎÏ·ÖĞ´´½¨Ò»¸ö»ò¶à¸ö³ÆºÅ¡£Ê¹ÓÃ -d ¿ÉÒÔÈ¥µôÕâĞ©³ÆºÅ¡£
-¶ø -l ²ÎÊıÔòÄÜ¹»ÁĞ³öËùÓĞÕâĞ©³ÆºÅºÍÄ¿Ç°µÄÊÚÓèÇé¿ö¡£Ê¹ÓÃ -r ²Î
-Êı¿ÉÒÔ½«Ä¿Ç°µÄÄ³Ğ©³ÆºÅ¸ü»»ÃèÊö£¬¶ø -s ²ÎÊıÔò¿ÉÒÔÉèÖÃÍæ¼ÒµÄÔ­
-Ê¼³ÆºÅ£º×¢Òâ£¬Õâ¸ö³ÆºÅÔÚ°İÊ¦»òÕßÊÇÄ³Ğ©³¡ºÏÏÂ¿ÉÄÜ»á±»ĞŞ¸Ä¡£
+æˆäºˆç¨±è™Ÿå¯ä»¥ä½¿ç”¨ -g åƒæ•¸ã€‚æˆäºˆå‰é¦–å…ˆéœ€è¦å‰µå»ºç¨±è™Ÿï¼šä½¿ç”¨ -c åƒ
+æ•¸å¯ä»¥åœ¨éŠæˆ²ä¸­å‰µå»ºä¸€å€‹æˆ–å¤šå€‹ç¨±è™Ÿã€‚ä½¿ç”¨ -d å¯ä»¥å»æ‰é€™äº›ç¨±è™Ÿã€‚
+è€Œ -l åƒæ•¸å‰‡èƒ½å¤ åˆ—å‡ºæ‰€æœ‰é€™äº›ç¨±è™Ÿå’Œç›®å‰çš„æˆäºˆæƒ…æ³ã€‚ä½¿ç”¨ -r åƒ
+æ•¸å¯ä»¥å°‡ç›®å‰çš„æŸäº›ç¨±è™Ÿæ›´æ›æè¿°ï¼Œè€Œ -s åƒæ•¸å‰‡å¯ä»¥è¨­ç½®ç©å®¶çš„åŸ
+å§‹ç¨±è™Ÿï¼šæ³¨æ„ï¼Œé€™å€‹ç¨±è™Ÿåœ¨æ‹œå¸«æˆ–è€…æ˜¯æŸäº›å ´åˆä¸‹å¯èƒ½æœƒè¢«ä¿®æ”¹ã€‚
 
-±ÈÈçÏëÊÚÓèÄ³¸öÍæ¼Ò¡°¶«Ğ°¡±Õâ¸ö³ÆºÅ¿ÉÒÔ£º
-title -c $HIY$¶«Ğ°
-title -l ²é¿´µ½¡°¶«Ğ°¡±Õâ¸ö³ÆºÅµÄ´úºÅÊÇ2¡£
+æ¯”å¦‚æƒ³æˆäºˆæŸå€‹ç©å®¶â€œæ±é‚ªâ€é€™å€‹ç¨±è™Ÿå¯ä»¥ï¼š
+title -c $HIY$æ±é‚ª
+title -l æŸ¥çœ‹åˆ°â€œæ±é‚ªâ€é€™å€‹ç¨±è™Ÿçš„ä»£è™Ÿæ˜¯2ã€‚
 title -g player 2
-ÌÈÈô¶Ô¡°¶«Ğ°¡±Õâ¸ö³ÆºÅ²»ÂúÒâ£¬¿ÉÒÔ£º
-title -r ¶«Ğ° Î÷¶¾
-½«Õâ¸ö³ÆºÅµÄÃû×Ö¸ü»»¡£
-Èç¹ûĞèÒª°ş¶áÕâ¸ö³ÆºÅ¿ÉÒÔ£º
+å€˜è‹¥å°â€œæ±é‚ªâ€é€™å€‹ç¨±è™Ÿä¸æ»¿æ„ï¼Œå¯ä»¥ï¼š
+title -r æ±é‚ª è¥¿æ¯’
+å°‡é€™å€‹ç¨±è™Ÿçš„åå­—æ›´æ›ã€‚
+å¦‚æœéœ€è¦å‰å¥ªé€™å€‹ç¨±è™Ÿå¯ä»¥ï¼š
 title -g player none
 
-Ö»ÓĞĞèÒªÓÀ¾Ã±£ÁôµÄ title ²ÅÊ¹ÓÃ title -c ´´½¨È»ºóÊÚÓèÍæ¼Ò£¬
-Ò»°ãĞŞ¸Ä title Ó¦¸ÃÊ¹ÓÃ title -s <Íæ¼Ò> <³ÆºÅ> ÒÔ½ÚÔ¼×ÊÔ´¡£
+åªæœ‰éœ€è¦æ°¸ä¹…ä¿ç•™çš„ title æ‰ä½¿ç”¨ title -c å‰µå»ºç„¶å¾Œæˆäºˆç©å®¶ï¼Œ
+ä¸€èˆ¬ä¿®æ”¹ title æ‡‰è©²ä½¿ç”¨ title -s <ç©å®¶> <ç¨±è™Ÿ> ä»¥ç¯€ç´„è³‡æºã€‚
 
 HELP );
         return 1;

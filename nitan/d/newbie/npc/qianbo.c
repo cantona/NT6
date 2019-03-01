@@ -4,13 +4,13 @@ inherit F_DEALER;
 
 void create()
 {
-        set_name("Ç®²®", ({ "qian bo", "qian", "bo" }));
-        set("nickname", HIM "¼ûÀûÍüÒå" NOR);
-        set("title", "ÔÓ»õÆÌÀÏ°å");
+        set_name("éŒ¢ä¼¯", ({ "qian bo", "qian", "bo" }));
+        set("nickname", HIM "è¦‹åˆ©å¿˜ç¾©" NOR);
+        set("title", "é›œè²¨èˆ–è€æ¿");
         set("long", @LONG
-Ò»¸öÅÖÅÖµÄÀÏ°å£¬ÂôÒ»Ð©ÆÕÍ¨µÄÎïÆ·¡£¿ÉÊ¹ÓÃ list ²é¿´¿É¹ºÂòµÄÎïÆ·¡£
+ä¸€å€‹èƒ–èƒ–çš„è€æ¿ï¼Œè³£ä¸€äº›æ™®é€šçš„ç‰©å“ã€‚å¯ä½¿ç”¨ list æŸ¥çœ‹å¯è³¼è²·çš„ç‰©å“ã€‚
 LONG);
-        set("gender", "ÄÐÐÔ");
+        set("gender", "ç”·æ€§");
         set("age", 44);
         set("per", 24);
         set_skill("unarmed", 200);
@@ -54,8 +54,8 @@ void greeting(object ob)
 {
         if( !ob || environment(ob) != environment() ) return;
 
-        say(CYN "Ç®²®Ð¦×ÅËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)+ "ÄãÐè"
-            "ÂòÐ©Ê²Ã´£¬ÇëËæ±ã¿´£¨ÊäÈëÖ¸Áî list ²é¿´£©¡£\n" NOR);
+        say(CYN "éŒ¢ä¼¯ç¬‘è‘—èªªé“ï¼šé€™ä½" + RANK_D->query_respect(ob)+ "ä½ éœ€"
+            "è²·äº›ä»€éº¼ï¼Œè«‹éš¨ä¾¿çœ‹ï¼ˆè¼¸å…¥æŒ‡ä»¤ list æŸ¥çœ‹ï¼‰ã€‚\n" NOR);
 
         return;
 }

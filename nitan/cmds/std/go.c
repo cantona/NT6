@@ -5,26 +5,26 @@
 inherit F_CLEAN_UP;
 
 mapping default_dirs = ([
-        "north":        "±±·½",
-        "south":        "ÄÏ·½",
-        "east":         "¶«·½",
-        "west":         "Î÷·½",
-        "northup":      "±±±ß",
-        "southup":      "ÄÏ±ß",
-        "eastup":       "¶«±ß",
-        "westup":       "Î÷±ß",
-        "northdown":    "±±±ß",
-        "southdown":    "ÄÏ±ß",
-        "eastdown":     "¶«±ß",
-        "westdown":     "Î÷±ß",
-        "northeast":    "¶«±±",
-        "northwest":    "Î÷±±",
-        "southeast":    "¶«ÄÏ",
-        "southwest":    "Î÷ÄÏ",
-        "up":           "ÉÏÃæ",
-        "down":         "ÏÂÃæ",
-        "enter":        "ÀïÃæ",
-        "out":          "ÍâÃæ",
+        "north":        "åŒ—æ–¹",
+        "south":        "å—æ–¹",
+        "east":         "æ±æ–¹",
+        "west":         "è¥¿æ–¹",
+        "northup":      "åŒ—é‚Š",
+        "southup":      "å—é‚Š",
+        "eastup":       "æ±é‚Š",
+        "westup":       "è¥¿é‚Š",
+        "northdown":    "åŒ—é‚Š",
+        "southdown":    "å—é‚Š",
+        "eastdown":     "æ±é‚Š",
+        "westdown":     "è¥¿é‚Š",
+        "northeast":    "æ±åŒ—",
+        "northwest":    "è¥¿åŒ—",
+        "southeast":    "æ±å—",
+        "southwest":    "è¥¿å—",
+        "up":           "ä¸Šé¢",
+        "down":         "ä¸‹é¢",
+        "enter":        "è£¡é¢",
+        "out":          "å¤–é¢",
 ]);
 
 nosave mapping empty_mapping = ([ ]);
@@ -51,19 +51,19 @@ int main(object me, string arg)
 
         int i, my_dex, count = 0;
 
-        if (! arg) return notify_fail("ÄãÒªÍùÄÄ¸ö·½Ïò×ß£¿\n");
+        if (! arg) return notify_fail("ä½ è¦å¾€å“ªå€‹æ–¹å‘èµ°ï¼Ÿ\n");
 
         if (me->over_encumbranced() && userp(me))
-                return notify_fail("ÄãµÄ¸ººÉ¹ıÖØ£¬¶¯µ¯²»µÃ¡£\n");
+                return notify_fail("ä½ çš„è² è·éé‡ï¼Œå‹•å½ˆä¸å¾—ã€‚\n");
 
         if (me->query_encumbrance() < 0 && userp(me))
-                return notify_fail("ÄãµÄ¸ººÉ³öÏÖ¹ÊÕÏ£¬¶¯µ¯²»µÃ¡£\n");
+                return notify_fail("ä½ çš„è² è·å‡ºç¾æ•…éšœï¼Œå‹•å½ˆä¸å¾—ã€‚\n");
 
         if( me->is_busy() || (query("doing", me) && query("doing", me) != "scheme" && query("doing", me) != "trigger") )
-                return notify_fail("ÄãµÄ¶¯×÷»¹Ã»ÓĞÍê³É£¬²»ÄÜÒÆ¶¯¡£\n");
+                return notify_fail("ä½ çš„å‹•ä½œé‚„æ²’æœ‰å®Œæˆï¼Œä¸èƒ½ç§»å‹•ã€‚\n");
 
         env = environment(me);
-        if (! env) return notify_fail("ÄãÄÄÀïÒ²È¥²»ÁË¡£\n");
+        if (! env) return notify_fail("ä½ å“ªè£¡ä¹Ÿå»ä¸äº†ã€‚\n");
 
         if (me->is_fighting())
         {
@@ -110,24 +110,24 @@ int main(object me, string arg)
                         gp += query("dex", g_ob) * 15;
 
                         if( !query("not_living", g_ob) && (fp / 2 + random(fp)) < (gp * 3 / 4) )
-                        //µÈÍ­ÈËÍ³Ò»ºó»Ö¸´ÉÏÃæÅĞ¶Ï¹«Ê½
+                        //ç­‰éŠ…äººçµ±ä¸€å¾Œæ¢å¾©ä¸Šé¢åˆ¤æ–·å…¬å¼
                         //if( 5+random(query("dex", me)) <= random(query("dex", g_ob)) )
                         {
                                 me->start_busy(1);
                                 if (me->is_fighting(g_ob))
                                 {
-                                        message_vision("$N¼ûÊÆ²»ºÃ£¬×ªÉíÒª×ß£¬"
-                                                       "±»$nÒ»°ÑÀ¹ÔÚÃæÇ°¡£Ïë×ß"
-                                                       "£¿¿ÉÃ»ÄÇÃ´ÈİÒ×£¡\n",
+                                        message_vision("$Nè¦‹å‹¢ä¸å¥½ï¼Œè½‰èº«è¦èµ°ï¼Œ"
+                                                       "è¢«$nä¸€æŠŠæ””åœ¨é¢å‰ã€‚æƒ³èµ°"
+                                                       "ï¼Ÿå¯æ²’é‚£éº¼å®¹æ˜“ï¼\n",
                                                        me, g_ob);
-                                        tell_object(me, "ÄãÌÓÅÜÊ§°Ü¡£\n");
+                                        tell_object(me, "ä½ é€ƒè·‘å¤±æ•—ã€‚\n");
                                 } else
                                 {
-                                        message_vision("$N¸ÕÏëÀë¿ª£¬±»$nÒ»°Ñ"
-                                                       "À¹×¡£ºÂı×Å£¡Ïë´òÎÒÕâ"
-                                                       "¶ù¹ı£¬Ã»ÃÅ£¡\n",
+                                        message_vision("$Nå‰›æƒ³é›¢é–‹ï¼Œè¢«$nä¸€æŠŠ"
+                                                       "æ””ä½ï¼šæ…¢è‘—ï¼æƒ³æ‰“æˆ‘é€™"
+                                                       "å…’éï¼Œæ²’é–€ï¼\n",
                                                        me, g_ob);
-                                        tell_object(me, "Äã±»À¹×¡ÁËÈ¥Â·¡£\n");
+                                        tell_object(me, "ä½ è¢«æ””ä½äº†å»è·¯ã€‚\n");
                                 }
 
                                 if (userp(g_ob))
@@ -141,22 +141,22 @@ int main(object me, string arg)
 
                                         if (force_power > target_power * 3)
                                         {
-                                                message_vision("$N×İÉù³¤Ğ¦£º¡°Êó±²£¡°²¸ÒÆÛÎá£¿¡±Ëµ°Õ"
-                                                               "ÍùÇ°Ò»³å£¬½«$n´ø³öÊı²½£¬µøµ¹ÔÚµØ¡£\n",
+                                                message_vision("$Nç¸±è²é•·ç¬‘ï¼šâ€œé¼ è¼©ï¼å®‰æ•¢æ¬ºå¾ï¼Ÿâ€èªªç½·"
+                                                               "å¾€å‰ä¸€æ²–ï¼Œå°‡$nå¸¶å‡ºæ•¸æ­¥ï¼Œè·Œå€’åœ¨åœ°ã€‚\n",
                                                                me, g_ob);
                                                 g_ob->unconcious();
                                         } else
                                         if (force_power > target_power * 2)
                                         {
-                                                message_vision("$NÀí¶¼Ã»ÓĞÀí$n£¬Ö»ÊÇÅÔÈôÎŞÈËÍùÇ°×ßÈ¥"
-                                                               "£¬½«$n×²µÃ±ÇÇàÁ³Ö×¡£",
+                                                message_vision("$Nç†éƒ½æ²’æœ‰ç†$nï¼Œåªæ˜¯æ—è‹¥ç„¡äººå¾€å‰èµ°å»"
+                                                               "ï¼Œå°‡$næ’å¾—é¼»é’è‡‰è…«ã€‚",
                                                                me, g_ob);
                                                 g_ob->receive_wound("qi", 100 + random(100));
                                         } else
                                         if (force_power > target_power)
                                         {
-                                                message_vision("$NÒ»ÉùÀäĞ¦£¬´óÌ¤²½µÄÏòÇ°³å"
-                                                               "È¥£¬ÅÒµÄÒ»ÏÂ½«$n×²µ½ÁËÒ»±ß¡£",
+                                                message_vision("$Nä¸€è²å†·ç¬‘ï¼Œå¤§è¸æ­¥çš„å‘å‰æ²–"
+                                                               "å»ï¼Œä¹“çš„ä¸€ä¸‹å°‡$næ’åˆ°äº†ä¸€é‚Šã€‚",
                                                                me, g_ob);
                                                 g_ob->receive_wound("qi", 50 + random(50));
                                         }
@@ -164,7 +164,7 @@ int main(object me, string arg)
                                                 // return 1;
                                 } else
                                         return 1;
-                                // Ã»ÓĞ×èµ²³É¹¦£¬¼ÌĞøÇ°½ø
+                                // æ²’æœ‰é˜»æ“‹æˆåŠŸï¼Œç¹¼çºŒå‰é€²
                         }
                 }
         }
@@ -173,11 +173,11 @@ int main(object me, string arg)
         if( !mapp(exit=query("exits", env)) || undefinedp(exit[arg]) )
         {
                 if (query_verb() == "go")
-                        notify_fail("Õâ¸ö·½ÏòÃ»ÓĞ³öÂ·¡£\n");
+                        notify_fail("é€™å€‹æ–¹å‘æ²’æœ‰å‡ºè·¯ã€‚\n");
                 return 0;
         }
 
-        notify_fail("Äã¹ı²»È¥¡£\n");
+        notify_fail("ä½ éä¸å»ã€‚\n");
         result = env->valid_leave(me, arg);
         if (! objectp(me))
                 return 1;
@@ -192,11 +192,11 @@ int main(object me, string arg)
         dest = exit[arg];
         if (! (obj = find_object(dest)))
                 if (! objectp(obj = load_object(dest)))
-                        return notify_fail(sprintf("Ä¿±êÎï¼şÎŞ·¨ÕÒµ½£¬ÎŞ"
-                                                   "·¨Ïò %s ÒÆ¶¯¡£\n", dest ) );
+                        return notify_fail(sprintf("ç›®æ¨™ç‰©ä»¶ç„¡æ³•æ‰¾åˆ°ï¼Œç„¡"
+                                                   "æ³•å‘ %s ç§»å‹•ã€‚\n", dest ) );
         
         if (function_exists("valid_enter", obj) && ! obj->valid_enter(me))
-                return notify_fail(obj->short() + "ÄÇÀïÏÖÔÚ²»ÔÊĞíÄã½øÈë¡£\n"); 
+                return notify_fail(obj->short() + "é‚£è£¡ç¾åœ¨ä¸å…è¨±ä½ é€²å…¥ã€‚\n"); 
 
         /*
         if (my_temp["is_riding"] &&
@@ -206,7 +206,7 @@ int main(object me, string arg)
             arg != "northwest" && arg != "southwest")
         */
         if (objectp(riding = my_temp["is_riding"]) && member_array(arg, keys(default_dirs)) == -1)
-                return notify_fail("Õâ¸ö·½ÏòÃ»·¨ÆïÔÚ×ùÆïÉÏ¹ıÈ¥¡£\n");
+                return notify_fail("é€™å€‹æ–¹å‘æ²’æ³•é¨åœ¨åº§é¨ä¸Šéå»ã€‚\n");
 
         if (! undefinedp(default_dirs[arg]))
                 dir = default_dirs[arg];
@@ -220,50 +220,50 @@ int main(object me, string arg)
 
         if (me->is_fighting())
         {
-                mout = me->name() + "Íù" + dir + "Âä»Ä¶øÌÓÁË¡£\n";
-                min = me->name() + "µøµø×²×²µØÅÜÁË¹ıÀ´£¬Ä£ÑùÓĞĞ©ÀÇ±·¡£\n";
+                mout = me->name() + "å¾€" + dir + "è½è’è€Œé€ƒäº†ã€‚\n";
+                min = me->name() + "è·Œè·Œæ’æ’åœ°è·‘äº†éä¾†ï¼Œæ¨¡æ¨£æœ‰äº›ç‹¼ç‹½ã€‚\n";
         } else
         {
                 if (objectp(thing = my_armor["cloth"]))
-                        thing_msg="Éí×Å"+query("name", thing);
+                        thing_msg="èº«è‘—"+query("name", thing);
                 else
                 if (userp(me))
-                        thing_msg = "Ò»Ë¿²»¹ÒµÄ";
+                        thing_msg = "ä¸€çµ²ä¸æ›çš„";
                 else
                         thing_msg = "";
 
                 if (objectp(thing = my_temp["weapon"]))
-                        thing_msg+="ÊÖÖ´"+query("name", thing);
+                        thing_msg+="æ‰‹åŸ·"+query("name", thing);
 
-                if (my["race"] == "Ò°ÊŞ")
+                if (my["race"] == "é‡ç¸")
                 {
                         if( mout = query("leave_msg", me) )
-                                mout = me->name() + "Íù" + dir + mout +" ¡£\n";
+                                mout = me->name() + "å¾€" + dir + mout +" ã€‚\n";
                         else
-                                mout = me->name() + "ºôµØÍù" + dir + "Ò»´Ü¾ÍÏûÊ§ÁË¡£\n";
+                                mout = me->name() + "å‘¼åœ°å¾€" + dir + "ä¸€ç«„å°±æ¶ˆå¤±äº†ã€‚\n";
                         if( min = query("arrive_msg", me) )
-                                min = me->name() + min + " ¡£\n";
+                                min = me->name() + min + " ã€‚\n";
                         else
-                                min = me->name() + "ºôµØ´ÜÁË³öÀ´£¬¾¯ÌèµØËÄÖÜÕÅÍû×Å¡£\n";
+                                min = me->name() + "å‘¼åœ°ç«„äº†å‡ºä¾†ï¼Œè­¦æƒ•åœ°å››å‘¨å¼µæœ›è‘—ã€‚\n";
                 } else
                 {
                         //if (objectp(riding = my_temp["is_riding"]))
                         if (objectp(riding))
                         {
-                                mout = me->name() + "Æï×Å" + riding->name() +
-                                       "Ïò" + dir + "¼²³Û¶øÈ¥¡£\n";
-                                min = me->name() + thing_msg + "Æï×Å" +
-                                      riding->name() + "Ò»Â·¼²³Û¶øÀ´¡£\n";
+                                mout = me->name() + "é¨è‘—" + riding->name() +
+                                       "å‘" + dir + "ç–¾é¦³è€Œå»ã€‚\n";
+                                min = me->name() + thing_msg + "é¨è‘—" +
+                                      riding->name() + "ä¸€è·¯ç–¾é¦³è€Œä¾†ã€‚\n";
                         } else
                         {
                                 if( mout = query("leave_msg", me) )
-                                        mout = me->name() + "Íù" + dir + mout +" ¡£\n";
+                                        mout = me->name() + "å¾€" + dir + mout +" ã€‚\n";
                                 else
-                                        mout = me->name() + "Íù" + dir + "Àë¿ª¡£\n";
+                                        mout = me->name() + "å¾€" + dir + "é›¢é–‹ã€‚\n";
                                 if( min = query("arrive_msg", me) )
-                                        min = me->name() + thing_msg + min + " ¡£\n";
+                                        min = me->name() + thing_msg + min + " ã€‚\n";
                                 else
-                                        min = me->name() + thing_msg + "×ßÁË¹ıÀ´¡£\n";
+                                        min = me->name() + thing_msg + "èµ°äº†éä¾†ã€‚\n";
                         }
                 }
         }
@@ -328,7 +328,7 @@ int main(object me, string arg)
 
         if (me->query_weak())
         {
-                tell_object(me,"ÄãĞéÈõµÄÉíÌåºÃÏñÃ¿Âõ³öÒ»²½¶¼ÒªÓÃ³öÈ«ÉíµÄÁ¦Æø¡£\n");
+                tell_object(me,"ä½ è™›å¼±çš„èº«é«”å¥½åƒæ¯é‚å‡ºä¸€æ­¥éƒ½è¦ç”¨å‡ºå…¨èº«çš„åŠ›æ°£ã€‚\n");
                 me->start_busy(1);
         }               
 
@@ -344,7 +344,7 @@ void do_flee(object me)
         exits=query("exits", environment(me));
         if (! mapp(exits) || ! sizeof(exits)) return;
         directions = keys(exits);
-        tell_object(me, "¿´À´¸ÃÕÒ»ú»áÌÓÅÜÁË...\n");
+        tell_object(me, "çœ‹ä¾†è©²æ‰¾æ©Ÿæœƒé€ƒè·‘äº†...\n");
         main(me, directions[random(sizeof(directions))]);
 }
 
@@ -387,9 +387,9 @@ string query_chinese_dir(string dir)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : go <·½Ïò>
+æŒ‡ä»¤æ ¼å¼ : go <æ–¹å‘>
  
-ÈÃÄãÍùÖ¸¶¨µÄ·½ÏòÒÆ¶¯¡£
+è®“ä½ å¾€æŒ‡å®šçš„æ–¹å‘ç§»å‹•ã€‚
  
 HELP );
         return 1;

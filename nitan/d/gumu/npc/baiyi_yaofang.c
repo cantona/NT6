@@ -1,4 +1,4 @@
-// longnv.c °×ÒÂÉÙÅ®
+// longnv.c ç™½è¡£å°‘å¥³
 // by April 01/09/26
 
 #include <ansi.h>
@@ -9,10 +9,10 @@ void create()
 {
         object bj;
 
-        set_name("°×ÒÂÉÙÅ®", ({ "baiyi girl", "girl"}));
+        set_name("ç™½è¡£å°‘å¥³", ({ "baiyi girl", "girl"}));
         set("long", 
-                "ËıÅûÖøÒ»Ï®ÇáÉ´°ãµÄ°×ÒÂ£¬ÃæÈİĞãÃÀ¾øË×¡£\n");
-        set("gender", "Å®ĞÔ");
+                "å¥¹æŠ«è‘—ä¸€è¥²è¼•ç´—èˆ¬çš„ç™½è¡£ï¼Œé¢å®¹ç§€ç¾çµ•ä¿—ã€‚\n");
+        set("gender", "å¥³æ€§");
         set("age", 26);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -62,15 +62,15 @@ void create()
 
         prepare_skill("cuff", "meinv-quan");
 
-        create_family("¹ÅÄ¹ÅÉ", 5, "µÜ×Ó");
+        create_family("å¤å¢“æ´¾", 5, "å¼Ÿå­");
 
     set("chat_chance_combat", 50);
 
         set("inquiry", ([
-            "ÅäÒ©" : (: ask_aoyao :),
-            "Á¶Ò©" : (: ask_aoyao :),
-            "ÖÆÒ©" : (: ask_aoyao :),
-            "°¾Ò©" : (: ask_aoyao :),
+            "é…è—¥" : (: ask_aoyao :),
+            "ç…‰è—¥" : (: ask_aoyao :),
+            "åˆ¶è—¥" : (: ask_aoyao :),
+            "ç†¬è—¥" : (: ask_aoyao :),
         ]));
 
         setup();
@@ -91,11 +91,11 @@ void init()
 int ask_aoyao()
 {
         object me = this_player();
-        message_vision(query("name")+"Ïò$N½âÊÍµÀ£º\n",me);
-        message_vision("ÄãÏÈ½«¸Ç×Ó´ò¿ª[open lip]£¬È»ºó¼ÓÈëËùĞèµÄÒ©²Ä[add **** in lu]\n",me);
-        message_vision("¼Ç×ÅÊÊÁ¿µ¹Ò»Ğ©Óñ·äÃÛ[pour mi]£¬ÕâÊÇÎÒ¹ÅÄ¹Ê¥Ò©µÄÒ©Òı¡£ÔÙ¿ÛºÃ¸Ç×Ó[close lip]\n",me);
-        message_vision("°ÑÌ¿ÅèµãÈ¼[burn coal]£¬µÈÂ¯»ğÍúÆğÀ´ÁË¡£¾Í¿ÉÒÔ°¾Ò©ÁË[aoyao]¡£\n",me);
-        message_vision("°¾Ò©Ê±ÒªËæÊ±¿ØÖÆ»ğºò£¬»¹Òª²»Í£½Á°è£¬ºÜÀÛÈËµÄ¡£Ò©°¾ºÃÁËÖ®ºó£¬\n",me);
-        message_vision("¼ÇµÃÏÈÃğÁË»ğ[mie huo]ÔÙÈ¡Ò©[qu yao]£¬ÒÔÃâ±»ÌÌÉË¡£\n",me);
+        message_vision(query("name")+"å‘$Nè§£é‡‹é“ï¼š\n",me);
+        message_vision("ä½ å…ˆå°‡è“‹å­æ‰“é–‹[open lip]ï¼Œç„¶å¾ŒåŠ å…¥æ‰€éœ€çš„è—¥æ[add **** in lu]\n",me);
+        message_vision("è¨˜è‘—é©é‡å€’ä¸€äº›ç‰èœ‚èœœ[pour mi]ï¼Œé€™æ˜¯æˆ‘å¤å¢“è–è—¥çš„è—¥å¼•ã€‚å†æ‰£å¥½è“‹å­[close lip]\n",me);
+        message_vision("æŠŠç‚­ç›†é»ç‡ƒ[burn coal]ï¼Œç­‰çˆç«æ—ºèµ·ä¾†äº†ã€‚å°±å¯ä»¥ç†¬è—¥äº†[aoyao]ã€‚\n",me);
+        message_vision("ç†¬è—¥æ™‚è¦éš¨æ™‚æ§åˆ¶ç«å€™ï¼Œé‚„è¦ä¸åœæ”ªæ‹Œï¼Œå¾ˆç´¯äººçš„ã€‚è—¥ç†¬å¥½äº†ä¹‹å¾Œï¼Œ\n",me);
+        message_vision("è¨˜å¾—å…ˆæ»…äº†ç«[mie huo]å†å–è—¥[qu yao]ï¼Œä»¥å…è¢«ç‡™å‚·ã€‚\n",me);
         return 1;
 }

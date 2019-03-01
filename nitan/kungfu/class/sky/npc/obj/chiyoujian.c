@@ -3,17 +3,17 @@
 inherit SWORD;
 void create()
 {
-        set_name( WHT "Ğşò¿Éñ½£" NOR,  ({ "chiyou jian", "sword", "jian" }));
+        set_name( WHT "ç„èš©ç¥åŠ" NOR,  ({ "chiyou jian", "sword", "jian" }));
         set_weight(20000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
-                set("long", "Ò»±úĞşÌúÖıÔìµÄ³¤½££¬½£±úÉÏµñÓĞò¿ÓÈµÄÍ·Ïñ¡£\n");
+                set("unit", "æŸ„");
+                set("long", "ä¸€æŸ„ç„éµé‘„é€ çš„é•·åŠï¼ŒåŠæŸ„ä¸Šé›•æœ‰èš©å°¤çš„é ­åƒã€‚\n");
                 set("value", 100000);
                 set("material", "gold");
-                set("wield_msg", HIR "$N" HIR "³é³öĞşò¿Éñ½£»ÓÎèÁË¸ö½£»¨£¬Ö»¸Ğµ½Ò»Õó"
-                                 NOR + HIW "º®Æø" NOR + HIR "ÆËÃæ¶øÀ´¡£\n" NOR);
+                set("wield_msg", HIR "$N" HIR "æŠ½å‡ºç„èš©ç¥åŠæ®èˆäº†å€‹åŠèŠ±ï¼Œåªæ„Ÿåˆ°ä¸€é™£"
+                                 NOR + HIW "å¯’æ°£" NOR + HIR "æ’²é¢è€Œä¾†ã€‚\n" NOR);
         }
         init_sword(200);
         setup();

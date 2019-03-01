@@ -1,10 +1,10 @@
 inherit ROOM;
 void create()
 {
-        set("short", "Ǯׯ");
+        set("short", "錢莊");
         set("long", @LONG
-����һ�����ֺŵ�Ǯׯ�����м��������ʷ����ȫ�����ض��з�
-�ꡣ�����е���Ʊ�����ǳ��ã�ͨ��ȫ����
+這是一家老字號的錢莊，已有幾百年的歷史，在全國各地都有分
+店。它發行的銀票信譽非常好，通行全國。
 LONG );
         set("no_fight", 1);
         set("exits", ([

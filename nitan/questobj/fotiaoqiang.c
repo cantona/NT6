@@ -5,14 +5,14 @@ inherit F_FOOD;
 
 void create()
 {
-        set_name(RED"·ğÌøÇ½"NOR, ({"fotiaoqiang"}));
+        set_name(RED"ä½›è·³ç‰†"NOR, ({"fotiaoqiang"}));
         set("taskobj", 1);
         set_weight(1000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»ÍëÏãÅçÅçµÄ·ğÌøÇ½£¬ÊÇ¸£½¨µÚÒ»Ãû²Ë¡£\n");
-                set("unit", "Íë");
+                set("long", "ä¸€ç¢—é¦™å™´å™´çš„ä½›è·³ç‰†ï¼Œæ˜¯ç¦å»ºç¬¬ä¸€åèœã€‚\n");
+                set("unit", "ç¢—");
                 set("value", 0);
         }
 }

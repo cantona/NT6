@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�����±�¥");
+        set("short", "懸空寺北樓");
         set("long", @LONG
-�����������µı���¥��Ҳ�Ǳ���ͤ����¥���ӣ�������Ԩ���ȵ�
-��������ڼ䵤�����������ջ��ͨ����¥��
+這裡是懸空寺的北門樓，也是北碑亭。登樓俯視，如臨深淵，谷底
+仰望，如壁間丹鳳。向南有懸空棧橋通往南樓。
 LONG
         );
         set("exits", ([

@@ -7,15 +7,15 @@ inherit NECK;
 
 void create()
 {
-        set_name(HIC"ĞşÅ®Áé·û" NOR, ({ "xuannv-lingfu", "lingfu" }));
-               set("long", "Ò»ÕÅÆÕÆÕÍ¨Í¨µÄ·ûÖ½£¬¾İËµÊÇ¾ÅÌìĞşÅ®¿ª¹ı¹âµÄ£¬¿ÉÒÔ±£ÓÓ»éÒöË³Àû¡£\n");
+        set_name(HIC"ç„å¥³éˆç¬¦" NOR, ({ "xuannv-lingfu", "lingfu" }));
+               set("long", "ä¸€å¼µæ™®æ™®é€šé€šçš„ç¬¦ç´™ï¼Œæ“šèªªæ˜¯ä¹å¤©ç„å¥³é–‹éå…‰çš„ï¼Œå¯ä»¥ä¿ä½‘å©šå§»é †åˆ©ã€‚\n");
         set("weight", 100);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "ÕÅ");
+                set("unit", "å¼µ");
                 set("value", 5000);
-                set("material", "Ö½");
+                set("material", "ç´™");
                 set("armor_prop/armor", 2);
                 }
         setup();

@@ -11,7 +11,7 @@ int main(object me, string arg)
                 return 0;
 
         if (! arg || sscanf(arg, "%s %s", dest, func) != 2)
-                return notify_fail("Ö¸Áî¸ñÊ½£ºff <Îï¼ş> <º¯ÊıÃû³Æ>\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šff <ç‰©ä»¶> <å‡½æ•¸åç¨±>\n");
 
         if (dest == "me") ob = me; else
         if (dest == "here") ob = environment(me); else
@@ -19,22 +19,22 @@ int main(object me, string arg)
 
         if (! ob) ob = present(dest, environment(me));
         if (! ob) ob = find_object(resolve_path(query("cwd", me), dest));
-        if (! ob) return notify_fail("ÕâÀïÃ»ÓĞ¡¸" + dest + "¡¹¡£\n");
+        if (! ob) return notify_fail("é€™è£¡æ²’æœ‰ã€Œ" + dest + "ã€ã€‚\n");
 
         file = function_exists(func, ob, 1);
         if (! file)
-                write(sprintf("Îï¼ş %O ²¢Ã»ÓĞ¶¨Òå %s Õâ¸öº¯Êı¡£\n", ob, func));
+                write(sprintf("ç‰©ä»¶ %O ä¸¦æ²’æœ‰å®šç¾© %s é€™å€‹å‡½æ•¸ã€‚\n", ob, func));
         else
-                write(sprintf("Îï¼ş %O µÄ %s º¯Êı¶¨ÒåÔÚ %s.c¡£\n", ob, func, file));
+                write(sprintf("ç‰©ä»¶ %O çš„ %s å‡½æ•¸å®šç¾©åœ¨ %s.cã€‚\n", ob, func, file));
         return 1;
 }
 
 int help()
 {
         write(@TEXT
-Ö¸Áî¸ñÊ½£ºff <Îï¼ş> <º¯ÊıÃû³Æ>
+æŒ‡ä»¤æ ¼å¼ï¼šff <ç‰©ä»¶> <å‡½æ•¸åç¨±>
 
-Õâ¸öÖ¸Áî¿ÉÒÔÕÒ³öÖ¸¶¨Îï¼şÖĞµÄÄ³¸öº¯Êı¶¨ÒåÔÚÄÄÒ»¸öµµ°¸Àï¡£
+é€™å€‹æŒ‡ä»¤å¯ä»¥æ‰¾å‡ºæŒ‡å®šç‰©ä»¶ä¸­çš„æŸå€‹å‡½æ•¸å®šç¾©åœ¨å“ªä¸€å€‹æª”æ¡ˆè£¡ã€‚
 TEXT );
         return 1;
 }

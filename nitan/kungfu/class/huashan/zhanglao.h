@@ -23,13 +23,13 @@ int accept_kill(object ob)
 
         if( query("id", me) == "ailao" && obj=present("gaolao",environment(me)) )
         {
-                command("say ºÃ¼Ò»ï£¬¾¹ÏëÄ±º¦ÀÏ·ò£¡Ê¦µÜ£¬×¼±¸Ë«µ¶ºÏ±Ú£¡");
+                command("say å¥½å®¶ä¼™ï¼Œç«Ÿæƒ³è¬€å®³è€å¤«ï¼å¸«å¼Ÿï¼Œæº–å‚™é›™åˆ€åˆå£ï¼");
                 obj->kill_ob(ob);
         }
 
         if( query("id", me) == "gaolao" && obj=present("ailao",environment(me)) )
         {
-                command("say Ê¦ĞÖ£¬×¼±¸Ë«µ¶ºÏ±Ú³¬¶ÉÕâ¼Ò»ï£¡");
+                command("say å¸«å…„ï¼Œæº–å‚™é›™åˆ€åˆå£è¶…æ¸¡é€™å®¶ä¼™ï¼");
                 obj->kill_ob(ob);
         }
 
@@ -91,7 +91,7 @@ int accept_object(object me, object obj)
                 return r;
 
         if (me->is_fighting())
-                return notify_fail("»ëÕÊ£¡ÄãÃ»¼ûÎÒÕıÃ¦×ÅÂğ£¿\n");
+                return notify_fail("æ¸¾å¸³ï¼ä½ æ²’è¦‹æˆ‘æ­£å¿™è‘—å—ï¼Ÿ\n");
 
         if( query("id", obj) != "zixiapaper" )
                 return 0;
@@ -103,7 +103,7 @@ int accept_object(object me, object obj)
                 return 1;
         }
 
-        if( query("family/family_name", ob) != "»ªÉ½ÅÉ" )
+        if( query("family/family_name", ob) != "è¯å±±æ´¾" )
         {
                 remove_call_out("thank_other");
                 call_out("thank_other", 1, me, obj, ob);
@@ -121,8 +121,8 @@ int ask_why(object obj, object ob)
 {
         object me = this_object();
 
-        message_vision("$NÖå×ÅÃ¼Í·¶Ô$nËµµÀ£ºß×£¡Äã²»ÊÇÒÑ±Õ¹Ø¾²ĞŞ¹ıÁËÂğ£¿\n", me, ob);
-        command("say ×ÏÏ¼ÒÅÒ³½»¸øÎÒ±£¹ÜÒ²ºÃ£¬Äã»¹ÓĞÉõ÷áÊÂÂğ£¿");
+        message_vision("$Nçšºè‘—çœ‰é ­å°$nèªªé“ï¼šå’¦ï¼ä½ ä¸æ˜¯å·²é–‰é—œéœä¿®éäº†å—ï¼Ÿ\n", me, ob);
+        command("say ç´«éœéºé äº¤çµ¦æˆ‘ä¿ç®¡ä¹Ÿå¥½ï¼Œä½ é‚„æœ‰ç”šéº¼äº‹å—ï¼Ÿ");
 
         destruct(obj);
         return 1;
@@ -130,10 +130,10 @@ int ask_why(object obj, object ob)
 
 int thank_other(object me, object obj, object ob)
 {
-        message_vision("$NÊ§Éù½ĞµÀ£º°¡£¡Õâ¾¹ÊÇ±¾ÅÉÒÅÊ§¶àÄêµÄ×ÏÏ¼ÒÅÒ³£¡Õâ¡£¡£¡£±¾ÅÉÕæÊÇÎŞÒÔÎª±¨¡£\n", me);
-        command("say ÇëÊÜÀÏĞà´ú±í»ªÉ½Ò»ÂöÏò" + RANK_D->query_respect(ob) + "ÖÁÒâ¡£");
+        message_vision("$Nå¤±è²å«é“ï¼šå•Šï¼é€™ç«Ÿæ˜¯æœ¬æ´¾éºå¤±å¤šå¹´çš„ç´«éœéºé ï¼é€™ã€‚ã€‚ã€‚æœ¬æ´¾çœŸæ˜¯ç„¡ä»¥ç‚ºå ±ã€‚\n", me);
+        command("say è«‹å—è€æœ½ä»£è¡¨è¯å±±ä¸€è„ˆå‘" + RANK_D->query_respect(ob) + "è‡³æ„ã€‚");
         command("bow");
-        message_vision("$NËµÍê±ã·ÉÉíÀëÈ¥¡£\n", me);
+        message_vision("$Nèªªå®Œä¾¿é£›èº«é›¢å»ã€‚\n", me);
 
         destruct(obj);
         destruct(me);
@@ -144,23 +144,23 @@ int thank_huashan(object obj, object ob)
 {
         object ob1, me = this_object();
 
-        message_vision("$NÊ§Éù½ĞµÀ£º°¡£¡Õâ¾¹ÊÇ±¾ÅÉÒÅÊ§¶àÄêµÄ×ÏÏ¼ÒÅÒ³£¡\n", me);
+        message_vision("$Nå¤±è²å«é“ï¼šå•Šï¼é€™ç«Ÿæ˜¯æœ¬æ´¾éºå¤±å¤šå¹´çš„ç´«éœéºé ï¼\n", me);
 
         if( query("id", me) == "gaolao" && ob1=present("ailao",environment(me)) )
         {
-                command("say ÈÃÎÒºÍÊ¦¸çÉÌÁ¿ÉÌÁ¿£¬Äã±ãÔÚ´ËµÈ×Å°É¡£");
-                message_vision("$N½«°«ÀÏÕßÀ­µ½Ò»ÅÔÏ¸ËµÁËÒ»·¬£¬Ö»¼û°«ÀÏÕßÁ³É«±äÁË¼¸±ä£¬Á½ÈËµÍÍ·³ÁË¼×Å¡£\n", me);
+                command("say è®“æˆ‘å’Œå¸«å“¥å•†é‡å•†é‡ï¼Œä½ ä¾¿åœ¨æ­¤ç­‰è‘—å§ã€‚");
+                message_vision("$Nå°‡çŸ®è€è€…æ‹‰åˆ°ä¸€æ—ç´°èªªäº†ä¸€ç•ªï¼Œåªè¦‹çŸ®è€è€…è‡‰è‰²è®Šäº†å¹¾è®Šï¼Œå…©äººä½é ­æ²‰æ€è‘—ã€‚\n", me);
                 me = ob1;
         }
         else if( query("id", me) == "ailao" && present("gaolao",environment(me)) )
         {
-                command("say ÈÃÎÒºÍÊ¦µÜÉÌÁ¿ÉÌÁ¿£¬Äã±ãÔÚ´ËµÈ×Å°É¡£");
-                message_vision("$N½«¸ßÀÏÕßÀ­µ½Ò»ÅÔÏ¸ËµÁËÒ»·¬¡£¸ßÀÏÕßÌı°ÕÁ³É«±äÁË¼¸±ä£¬Á½ÈËµÍÍ·³ÁË¼×Å¡£\n", me);
+                command("say è®“æˆ‘å’Œå¸«å¼Ÿå•†é‡å•†é‡ï¼Œä½ ä¾¿åœ¨æ­¤ç­‰è‘—å§ã€‚");
+                message_vision("$Nå°‡é«˜è€è€…æ‹‰åˆ°ä¸€æ—ç´°èªªäº†ä¸€ç•ªã€‚é«˜è€è€…è½ç½·è‡‰è‰²è®Šäº†å¹¾è®Šï¼Œå…©äººä½é ­æ²‰æ€è‘—ã€‚\n", me);
         }
         else
         {
-                command("say ÈÃÎÒ×ĞÏ¸ÑĞ¾¿´Ë¼ã£¬Äã±ãÔÚ´ËµÈ×Å°É¡£");
-                message_vision("$NËµÍêáá±ã¶À×Ô×ßµ½Ò»ÅÔ×øÏÂ£¬È«Éñ¹á×¢µØÑĞ¶ÁÆğ×Å×ÏÏ¼ÒÅÒ³À´¡£\n", me);
+                command("say è®“æˆ‘ä»”ç´°ç ”ç©¶æ­¤ç®‹ï¼Œä½ ä¾¿åœ¨æ­¤ç­‰è‘—å§ã€‚");
+                message_vision("$Nèªªå®Œå¾Œä¾¿ç¨è‡ªèµ°åˆ°ä¸€æ—åä¸‹ï¼Œå…¨ç¥è²«æ³¨åœ°ç ”è®€èµ·è‘—ç´«éœéºé ä¾†ã€‚\n", me);
         }
 
         remove_call_out("open_room");
@@ -171,26 +171,26 @@ int thank_huashan(object obj, object ob)
 
 int open_room(object me, object ob, object obj)
 {
-        message_vision("$N×ßÁË¹ıÀ´£¬Ïò$nÄıÊÓÁËÒ»Õó¡£\n", me, ob);
-        command("say Äã¼ÈÄÜÕÒ»Ø×ÏÏ¼ÒÅÒ³£¬ÊµÔÚÊÇÎª±¾ÅÉÁ¢ÁË¸ö´ó¹¦¡£»ªÉ½ÓĞĞÒÁË£¡ ");
+        message_vision("$Nèµ°äº†éä¾†ï¼Œå‘$nå‡è¦–äº†ä¸€é™£ã€‚\n", me, ob);
+        command("say ä½ æ—¢èƒ½æ‰¾å›ç´«éœéºé ï¼Œå¯¦åœ¨æ˜¯ç‚ºæœ¬æ´¾ç«‹äº†å€‹å¤§åŠŸã€‚è¯å±±æœ‰å¹¸äº†ï¼ ");
 
         if (file_name(environment(me)) != "/d/huashan/chaoyang")
         {
-                command("say Äã¿ì»Ø»ªÉ½È¥°É£¬°ÑÏ²Ñ¶¸æËß´óâ·¶ù£¡");
-                message_vision("$NËµÍê±ã·ÉÉíÀëÈ¥¡£\n", me);
+                command("say ä½ å¿«å›è¯å±±å»å§ï¼ŒæŠŠå–œè¨Šå‘Šè¨´å¤§å¤¥å…’ï¼");
+                message_vision("$Nèªªå®Œä¾¿é£›èº«é›¢å»ã€‚\n", me);
                 destruct(obj);
                 if (objectp(me))
                         destruct(me);
         }
         else
         {
-                command("say ºÃ£¡ÎÒ±ãÎªÄã»¤·¨¡£Äã°²ĞÄÔÚÃÜÊÒÀï±Õ¹ØĞŞÁ·Ğş¹¦°É¡£");
-                message_vision("$N½«×ÏÏ¼ÒÅÒ³½»»¹¸ø$n¡£\n", me, ob);
-                message_vision("½Ó×Å$N×ªÉíÏòÇ½ÉÏÒ»´¦Ò»°´Ò»ÏÆ£¬Ç½±ÚÕıÖĞºäÂ¡Â¡ÏìÁËÒ»Õó£¬Â¶³öÒ»µÀÃÅÀ´¡£\n", me);
-                command("say °¦£¡ÊıÊ®ÄêÀ´ÎÒÊ¼ÖÕ×êÑĞ²»Í¸ÃÜÊÒÀïµÄÓÃ´¦£¬Ô­À´»¹ÓĞÕâ¸öÃØÃÜ¡£");
-                command("say ºÃºÃÀûÓÃÃÜÊÒÀïµÄ¶«Î÷£¬Ğ¡ĞÄ±ğ°ÑÁ·¹¦µÄ²½Öè¸ã´íÁË£¡");
+                command("say å¥½ï¼æˆ‘ä¾¿ç‚ºä½ è­·æ³•ã€‚ä½ å®‰å¿ƒåœ¨å¯†å®¤è£¡é–‰é—œä¿®ç·´ç„åŠŸå§ã€‚");
+                message_vision("$Nå°‡ç´«éœéºé äº¤é‚„çµ¦$nã€‚\n", me, ob);
+                message_vision("æ¥è‘—$Nè½‰èº«å‘ç‰†ä¸Šä¸€è™•ä¸€æŒ‰ä¸€æ€ï¼Œç‰†å£æ­£ä¸­è½Ÿéš†éš†éŸ¿äº†ä¸€é™£ï¼Œéœ²å‡ºä¸€é“é–€ä¾†ã€‚\n", me);
+                command("say å”‰ï¼æ•¸åå¹´ä¾†æˆ‘å§‹çµ‚é‘½ç ”ä¸é€å¯†å®¤è£¡çš„ç”¨è™•ï¼ŒåŸä¾†é‚„æœ‰é€™å€‹ç§˜å¯†ã€‚");
+                command("say å¥½å¥½åˆ©ç”¨å¯†å®¤è£¡çš„æ±è¥¿ï¼Œå°å¿ƒåˆ¥æŠŠç·´åŠŸçš„æ­¥é©ŸæéŒ¯äº†ï¼");
                 obj->move(ob);
-                message_vision("$N×ßÈëÁËÃÅÄÚ£¬Ê¯ÃÅ±ã»º»º¹Ø±ÕÆğÀ´¡£\n", ob);
+                message_vision("$Nèµ°å…¥äº†é–€å…§ï¼ŒçŸ³é–€ä¾¿ç·©ç·©é—œé–‰èµ·ä¾†ã€‚\n", ob);
                 ob->move("/d/huashan/stair");
         }
 

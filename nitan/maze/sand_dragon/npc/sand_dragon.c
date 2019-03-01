@@ -9,11 +9,11 @@ int dragonblow ();
 
 void create()
 {
-	set_name("É³º£ÕÝÁú", ({ "hibernating dragon", "boss","dragon" }) );
-	set("race", "Áú");
-	set("gender", "ÐÛÐÔ");
-	set("long", "Õâ±¾ÊÇÒ»ÌõÔÚº£µ×ÐÞÁ¶µÄÉñÁú¡£ÒòÎª²×º£É£ÌïµÄ±äÇ¨£¬Ô­À´µÄº²º£±ä³É
-ÁËÉ³Ä®¡£ËüÔÚÕâÀïÕÝ·üÏÂÀ´£¬Ò²²»ÖªµÀÓÐ¼¸Ç§¼¸ÍòÄêÁË¡£ \n");
+	set_name("æ²™æµ·èŸ„é¾", ({ "hibernating dragon", "boss","dragon" }) );
+	set("race", "é¾");
+	set("gender", "é›„æ€§");
+	set("long", "é€™æœ¬æ˜¯ä¸€æ¢åœ¨æµ·åº•ä¿®ç…‰çš„ç¥žé¾ã€‚å› ç‚ºæ»„æµ·æ¡‘ç”°çš„è®Šé·ï¼ŒåŽŸä¾†çš„ç¿°æµ·è®Šæˆ
+äº†æ²™æ¼ ã€‚å®ƒåœ¨é€™è£¡èŸ„ä¼ä¸‹ä¾†ï¼Œä¹Ÿä¸çŸ¥é“æœ‰å¹¾åƒå¹¾è¬å¹´äº†ã€‚ \n");
 	
 	set("combat_exp", 15000000);
 	
@@ -60,7 +60,7 @@ int dragon_attack(){
 
 
 int dragonbreath ()	{
-	message_vision(HIR"\n\n$NÉíÉÏºöÈ»·¢³öµ­µ­µÄºì¹â£¬×ªË²¼ä£¬¹âÃ¢Ô½À´Ô½Ç¿ÁÒ¡£¡£¡£\n\n"NOR,
+	message_vision(HIR"\n\n$Nèº«ä¸Šå¿½ç„¶ç™¼å‡ºæ·¡æ·¡çš„ç´…å…‰ï¼Œè½‰çž¬é–“ï¼Œå…‰èŠ’è¶Šä¾†è¶Šå¼·çƒˆã€‚ã€‚ã€‚\n\n"NOR,
 			this_object());
 	call_out("hurting",10);
 	set("dragon/breath",time());
@@ -70,7 +70,7 @@ int dragonbreath ()	{
 int hurting()	{
 	int i,dam;
 	object *inv;
-	message_vision(HIR"\n\n$NÒ»ÕÅ×ì£¬ÎÞÊýµÀÁÒÑæÓ­ÃæÏòÄãÆËÀ´£¬ÉÁÎÞ¿ÉÉÁ£¬±ÜÎÞ¿É±Ü¡£\n\n"NOR,this_object());
+	message_vision(HIR"\n\n$Nä¸€å¼µå˜´ï¼Œç„¡æ•¸é“çƒˆç‡„è¿Žé¢å‘ä½ æ’²ä¾†ï¼Œé–ƒç„¡å¯é–ƒï¼Œé¿ç„¡å¯é¿ã€‚\n\n"NOR,this_object());
 	inv = all_inventory(environment(this_object()));
         for(i=sizeof(inv)-1; i>=0; i--)
 		if( living(inv[i]))
@@ -90,7 +90,7 @@ int dragonblow()	{
 int dragonstun()	{
 	int i,dam;
 	object *inv;
-	message_vision(HIW"\n\n$NºöÖ±Á¢¶øÆð£¬ÓÖÖØÖØÔ¾ÏÂ£¬ÌìÒ¡µØ¶¯£¬É³Ñ¨Õð²ü¡£¡£¡£¡£\n\n"NOR,this_object());
+	message_vision(HIW"\n\n$Nå¿½ç›´ç«‹è€Œèµ·ï¼Œåˆé‡é‡èºä¸‹ï¼Œå¤©æ–åœ°å‹•ï¼Œæ²™ç©´éœ‡é¡«ã€‚ã€‚ã€‚ã€‚\n\n"NOR,this_object());
 	inv = all_inventory(environment(this_object()));
         for(i=sizeof(inv)-1; i>=0; i--)
 		if( living(inv[i]))
@@ -98,7 +98,7 @@ int dragonstun()	{
 			if (random(this_object()->query("combat_exp"))*5<inv[i]->query("combat_exp"))
 				continue;
 			inv[i]->perform_busy(2);
-			message_vision(YEL"$NÖ»¾õÐÄµ¨¾ãÁÑ£¬Ä¿µÉ¿Ú´ô£¬¶¯µ¯²»µÃ¡£\n"NOR,inv[i]);
+			message_vision(YEL"$Nåªè¦ºå¿ƒè†½ä¿±è£‚ï¼Œç›®çžªå£å‘†ï¼Œå‹•å½ˆä¸å¾—ã€‚\n"NOR,inv[i]);
         	}
 	set("is_stunning",time());
 	return 1;
@@ -113,7 +113,7 @@ int dragonclaw()	{
 	ob->set("bite_time",time());
 	enemy=ob->query_enemy();
 	me=enemy[random(sizeof(enemy))];
-	message_vision(HIG"\n$N¾ÙÆð¾ÞÁé°ãµÄÇ°×¦£¬Ð®·çÀ×Ö®ÊÆ£¬Ñ¸¼±µØÏò$nµÄÍ·²¿Ò»×¥¡£\n"NOR,ob,me);
+	message_vision(HIG"\n$Nèˆ‰èµ·å·¨éˆèˆ¬çš„å‰çˆªï¼ŒæŒ¾é¢¨é›·ä¹‹å‹¢ï¼Œè¿…æ€¥åœ°å‘$nçš„é ­éƒ¨ä¸€æŠ“ã€‚\n"NOR,ob,me);
 	me->receive_wound("kee",1000+random(1000),ob);
 	COMBAT_D->report_status(me);
 	return 1;
@@ -136,9 +136,9 @@ void die()
 	// The purpose is, everyone present who contributed hate can get mark
 	// the stone ... one at time, give whoever you want :D
 	if(objectp(me)) { 
-		CHANNEL_D->do_channel("rumor","Ò»¸öÐÂµÄÎäÁÖÉñ»°µÄµ®Éú¡£¡£¡£¡£");
-		CHANNEL_D->do_channel("rumor",sprintf("%s£¬%sÓÚ%s%s%s¡£", NATURE_D->game_time(),
-				me->query("name"), environment(this_object())->query("short"),"Õ¶É±", name())); 
+		CHANNEL_D->do_channel("rumor","ä¸€å€‹æ–°çš„æ­¦æž—ç¥žè©±çš„èª•ç”Ÿã€‚ã€‚ã€‚ã€‚");
+		CHANNEL_D->do_channel("rumor",sprintf("%sï¼Œ%säºŽ%s%s%sã€‚", NATURE_D->game_time(),
+				me->query("name"), environment(this_object())->query("short"),"æ–¬æ®º", name())); 
 	    
 	    hate = query_hate_list();
 	    if (sizeof(hate))
@@ -148,17 +148,17 @@ void die()
 	    }
 	    if (sizeof(ppl_present)) 
 	    for (i=0;i<sizeof(ppl_present);i++) 	
-	        REWARD_D->riddle_done(ppl_present[i], "ÕÝÁú³àµ¤", 200, 1);
+	        REWARD_D->riddle_done(ppl_present[i], "èŸ„é¾èµ¤ä¸¹", 200, 1);
 		
 		rstone = new("/obj/specials/stone/rstone");
 		if (objectp(rstone)) {
-			message_vision(HIR"\nÒ»µãºì¹â´ÓÉ³º£ÕÝÁúË«Ä¿¼äÂäÏÂ¸ÕºÃµôÈë$nÊÖÖÐ¡£\n"NOR, this_object(), me);
+			message_vision(HIR"\nä¸€é»žç´…å…‰å¾žæ²™æµ·èŸ„é¾é›™ç›®é–“è½ä¸‹å‰›å¥½æŽ‰å…¥$næ‰‹ä¸­ã€‚\n"NOR, this_object(), me);
 			if (!rstone->move(me))
 				rstone->move(environment(me));
 //			me->set("stone_mark/rstone", 1);
 //			rstone->set("stone_owner", me);
 			log_file("riddle/IMBUE_LOG",
-			sprintf("%s(%s) ½Ò¿ª É³º£ÕÝÁú µÃµ½ÕÝÁú³àµ¤ %s \n",
+			sprintf("%s(%s) æ­é–‹ æ²™æµ·èŸ„é¾ å¾—åˆ°èŸ„é¾èµ¤ä¸¹ %s \n",
 				me->name(1), geteuid(me), ctime(time()) ));			
 		}
 	} 

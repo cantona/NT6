@@ -1,13 +1,13 @@
 // /d/gaoli/xuanwumen
-// Room in ����
+// Room in 高麗
 // rich 99/03/28
 inherit ROOM;
 void create()        
 {
-        set("short", "ɽ·");
+        set("short", "山路");
         set("long", @LONG
-������һ��ɽ·�ϡ��ϱ߾��Ǹ������������ˡ�����ĵ��������
-��Щ��᫡���������˱Ƚ϶ࡣ�м��������ڸ�����Ұ�ˡ�
+你走在一條山路上。南邊就是高麗的玉龍門了。這裡的地形起伏，
+有些崎嶇。這裡的行人比較多。有幾個人正在附近挖野菜。
 LONG
         );
 set("outdoors", "gaoli");

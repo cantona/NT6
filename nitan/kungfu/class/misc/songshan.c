@@ -4,9 +4,9 @@ inherit "/inherit/char/punisher";
 
 void create()
 {
-        set_name("¹ÖÏÀ", ({ "guai xia", "guai", "xia" }));
-        set("long",  "Ëû¾ÍÊÇáÔÉ½ÅÉµÄ¸ßÊÖÈË³Æ¹ÖÏÀ¡£\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("æ€ªä¿ ", ({ "guai xia", "guai", "xia" }));
+        set("long",  "ä»–å°±æ˜¯åµ©å±±æ´¾çš„é«˜æ‰‹äººç¨±æ€ªä¿ ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 55);
         set("attitude", "peaceful");
         set("shen_type", -1);
@@ -52,7 +52,7 @@ void create()
 
         prepare_skill("strike", "hanbing-zhang");
 
-        create_family("áÔÉ½ÅÉ", 0, "¸ßÈË");
+        create_family("åµ©å±±æ´¾", 0, "é«˜äºº");
 
         set("chat_chance_combat", 120);
         set("chat_msg_combat", ({

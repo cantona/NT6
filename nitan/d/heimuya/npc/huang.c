@@ -5,15 +5,15 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("»Æ²®Á÷", ({ "huang boliu", "huang", "boliu"}));
-        set("title", "»ÆºÓ°ï°ïÖ÷");
-        set("nickname", HIW "Òø÷×òÔ" NOR);
+        set_name("é»ƒä¼¯æµ", ({ "huang boliu", "huang", "boliu"}));
+        set("title", "é»ƒæ²³å¹«å¹«ä¸»");
+        set("nickname", HIW "éŠ€é«¯è›Ÿ" NOR);
         set("long", @LONG
-Õâ±ãÊÇÈÕÔÂÉñ½Ì»ÆºÓ°ï°ïÖ÷»Æ²®Á÷£¬Ëû¿´ÉÏÈ¥
-ÒÑ¾­ÉõÎª²ÔÀÏÁË£¬µ«ÊÇË«Ä¿¾«¹âËÄÉä£¬Òø÷×Æ®
-Æ®£¬Ä£ÑùÍşÎäÖ®¼«¡£
+é€™ä¾¿æ˜¯æ—¥æœˆç¥æ•™é»ƒæ²³å¹«å¹«ä¸»é»ƒä¼¯æµï¼Œä»–çœ‹ä¸Šå»
+å·²ç¶“ç”šç‚ºè’¼è€äº†ï¼Œä½†æ˜¯é›™ç›®ç²¾å…‰å››å°„ï¼ŒéŠ€é«¯é£„
+é£„ï¼Œæ¨¡æ¨£å¨æ­¦ä¹‹æ¥µã€‚
 LONG);
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("class", "scholar");
         set("age", 81);
         set("attitude", "friendly");
@@ -59,7 +59,7 @@ LONG);
         prepare_skill("claw", "poyue-zhao");
         prepare_skill("cuff", "zhenyu-quan");
 
-        create_family("»ÆºÓ°ï", 7, "°ïÖ÷");
+        create_family("é»ƒæ²³å¹«", 7, "å¹«ä¸»");
 
         set("chat_chance_combat", 120);
         set("chat_msg_combat", ({
@@ -78,5 +78,5 @@ LONG);
 
 void attempt_apprentice(object ob)
 {
-             command("say ÎÒ²»ÊÕÍ½¡£");
+             command("say æˆ‘ä¸æ”¶å¾’ã€‚");
 }

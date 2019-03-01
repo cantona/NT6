@@ -1,4 +1,4 @@
-// gaibang.h for fight and get ÇàÖñÁî
+// gaibang.h for fight and get é’ç«¹ä»¤
 
 int accept_object(object ob, object obj)
 {
@@ -7,15 +7,15 @@ int accept_object(object ob, object obj)
         mappingmy_fam=query("family", me);
         mappingob_fam=query("family", ob);
 
-        if (!ob_fam || (ob_fam["family_name"] != "Ø¤°ï"))
+        if (!ob_fam || (ob_fam["family_name"] != "ä¸å¹«"))
         {
-                command("say ÄãÄÄÀïÀ´µÄÇàÖñÁî£¿\n");
+                command("say ä½ å“ªè£¡ä¾†çš„é’ç«¹ä»¤ï¼Ÿ\n");
                 return 0;
         }
 
         if( query_temp("have_cloth", ob) || present("pobu",ob) )
         {
-                command("say Äã²»ÊÇÒÑ¾­ÓĞÆÆ²¼Ã´?");
+                command("say ä½ ä¸æ˜¯å·²ç¶“æœ‰ç ´å¸ƒéº¼?");
                 return 0;
         }
 
@@ -36,7 +36,7 @@ int accept_object(object ob, object obj)
                 ((query("beggarlvl", ob) >= 7) && 
                 (query("combat_exp", ob) <= 30000)) )
         {
-                command("say ¾ÍÄãÄÇµãÅ§Ë®£¿ÎÒ¿´¾ÍËãÁË°É¡£\n");
+                command("say å°±ä½ é‚£é»è†¿æ°´ï¼Ÿæˆ‘çœ‹å°±ç®—äº†å§ã€‚\n");
                 return 1;
         }
         if( ((query("beggarlvl", ob) == 0) && 
@@ -61,15 +61,15 @@ int accept_object(object ob, object obj)
                 if( (query("id", obj) == "qingzhuling") && !query_temp("have_cloth", ob) )
                 {
                         set_temp("fight_ok",query("beggarlvl",  me), ob);
-                        command("say ºÃ£¬¼ÈÈ»ÒÑÓĞÇàÖñÁî£¬ÄÇ¾Í¿´ÄãµÄÔËÆøÁË¡£\n");
+                        command("say å¥½ï¼Œæ—¢ç„¶å·²æœ‰é’ç«¹ä»¤ï¼Œé‚£å°±çœ‹ä½ çš„é‹æ°£äº†ã€‚\n");
                         remove_call_out("destroying");
                         call_out("destroying", 1, me, obj);
                         return 1;
                 }
         }
         command("smile");
-        command("say Éı´üµ±È»Ö»Éı²»½µ¡£ÌøÉıÒ²ÊÇ²»ĞĞµÄ¡£\n");
-        command("say Õâ¶«Î÷¸øÄã»¹ÊÇ×Ô¼ºÁô×Å°É¡£\n");
+        command("say å‡è¢‹ç•¶ç„¶åªå‡ä¸é™ã€‚è·³å‡ä¹Ÿæ˜¯ä¸è¡Œçš„ã€‚\n");
+        command("say é€™æ±è¥¿çµ¦ä½ é‚„æ˜¯è‡ªå·±ç•™è‘—å§ã€‚\n");
         command("give"+query("id", obj)+"to"+query("id", me));
         return 0;
 }
@@ -83,10 +83,10 @@ void destroying(object me, object obj)
 int accept_fight(object ob)
 {
         object me = this_object();
-        if( query("family/family_name", ob) != "Ø¤°ï")return 0;
+        if( query("family/family_name", ob) != "ä¸å¹«")return 0;
         if( query_temp("fight_ok", ob) != query("beggarlvl", me) )
         {
-                command("sayÄãÊÇ±¾°ï"+chinese_number(query("beggarlvlk", ob))+"£¬²»ÄÜÏòÎÒÌôÕ½£¡\n");
+                command("sayä½ æ˜¯æœ¬å¹«"+chinese_number(query("beggarlvlk", ob))+"ï¼Œä¸èƒ½å‘æˆ‘æŒ‘æˆ°ï¼\n");
                 return 0;
         }
 
@@ -114,8 +114,8 @@ int checking(object me, object ob)
 
         if( (query("qi", me)*100/my_max_qi) <= 50 )
         {
-                command("say ´óÒ¯½ñÌìĞÄÇéºÃ£¬ËãÄãÔËÆø¡£ÄÃÕâ¿éÆÆ²¼ÕÒ¼ò³¤ÀÏÈ¥£¡\n");
-                message_vision("$N½»¸ø$nÒ»¿éÆÆ²¼¡£\n", me, ob);
+                command("say å¤§çˆºä»Šå¤©å¿ƒæƒ…å¥½ï¼Œç®—ä½ é‹æ°£ã€‚æ‹¿é€™å¡Šç ´å¸ƒæ‰¾ç°¡é•·è€å»ï¼\n");
+                message_vision("$Näº¤çµ¦$nä¸€å¡Šç ´å¸ƒã€‚\n", me, ob);
                 set_temp("have_cloth", 1, ob);
                 obj=new(__DIR__"obj/po-bu");
                 obj->move(ob);
@@ -124,7 +124,7 @@ int checking(object me, object ob)
 
         if( (query("qi", ob)*100/his_max_qi)<50 )
         {
-                command("say ¿´À´" + RANK_D->query_respect(ob) + "ÏëÉı´ü£¿Ò²²»µàÁ¿µàÁ¿×Ô¼ÒµÄ½ïÁ½£¡\n");
+                command("say çœ‹ä¾†" + RANK_D->query_respect(ob) + "æƒ³å‡è¢‹ï¼Ÿä¹Ÿä¸æ‚é‡æ‚é‡è‡ªå®¶çš„æ–¤å…©ï¼\n");
                 return 1;
         }
         return 1;

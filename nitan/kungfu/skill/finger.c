@@ -1,4 +1,4 @@
-// finger.c »ù±¾Ö¸·¨
+// finger.c åŸºæœ¬æŒ‡æ³•
 // Last Modified by winder on Mar. 10 2000
 
 #include <ansi.h>;
@@ -13,13 +13,13 @@ int power_point(object me) { return 1; }
 
 int help(object me)
 {
-        write(HIC"\n»ù±¾Ö¸·¨£º"NOR"\n");
+        write(HIC"\nåŸºæœ¬æŒ‡æ³•ï¼š"NOR"\n");
         write(@HELP
 
-    Ö¸·¨ÀàÎä¼¼µÄ»ù±¾¹¦£¬²¢ÄÜ¸ÄÉÆÄãºóÌìµÄëöÁ¦¡£
+    æŒ‡æ³•é¡æ­¦æŠ€çš„åŸºæœ¬åŠŸï¼Œä¸¦èƒ½æ”¹å–„ä½ å¾Œå¤©çš„è†‚åŠ›ã€‚
 
-        Ñ§Ï°ÒªÇó£º
-                ÎŞ
+        å­¸ç¿’è¦æ±‚ï¼š
+                ç„¡
 HELP
         );
         return 1;

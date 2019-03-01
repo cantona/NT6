@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-string name() { return HIW "ÌìºéµØÂ¯¹Û" HIR "ÈÕ" HIW "Éñ¾÷" NOR; }
+string name() { return HIW "å¤©æ´ªåœ°çˆè§€" HIR "æ—¥" HIW "ç¥è¨£" NOR; }
 
 inherit F_SSERVER;
 
@@ -17,32 +17,32 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(name()+ "Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(name()+ "åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me)) || 
             query("skill_type", weapon) != "sword" )
-                return notify_fail("ÄãËùÊ¹ÓÃµÄÎäÆ÷²»¶Ô£¬ÄÑÒÔÊ©Õ¹" +name()+ "¡£\n");
+                return notify_fail("ä½ æ‰€ä½¿ç”¨çš„æ­¦å™¨ä¸å°ï¼Œé›£ä»¥æ–½å±•" +name()+ "ã€‚\n");
 
         if ((int)me->query_skill("guanri-jian", 1) < 280)
-                return notify_fail("Äã¹ÛÈÕ½£·¨²»¹»æµÊì£¬ÄÑÒÔÊ©Õ¹" +name()+ "¡£\n");
+                return notify_fail("ä½ è§€æ—¥åŠæ³•ä¸å¤ å«»ç†Ÿï¼Œé›£ä»¥æ–½å±•" +name()+ "ã€‚\n");
 
         if (me->query_skill_mapped("sword") != "guanri-jian")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢¹ÛÈÕ½£·¨£¬ÄÑÒÔÊ©Õ¹" +name()+ "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼è§€æ—¥åŠæ³•ï¼Œé›£ä»¥æ–½å±•" +name()+ "ã€‚\n");
 
         if( query("max_neili", me)<5000 )
-                return notify_fail("ÄãµÄÄÚÁ¦ĞŞÎª²»¹»£¬ÄÑÒÔÊ©Õ¹" +name()+ "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¿®ç‚ºä¸å¤ ï¼Œé›£ä»¥æ–½å±•" +name()+ "ã€‚\n");
 
         if( query("neili", me)<800 )
-                return notify_fail("ÄãÏÖÔÚµÄÕæÆø²»×ã£¬ÄÑÒÔÊ©Õ¹" +name()+ "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çš„çœŸæ°£ä¸è¶³ï¼Œé›£ä»¥æ–½å±•" +name()+ "ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = WHT "$N" WHT "Ê©³ö¹ÛÈÕ½£·¨Ö®¡¸" HIW "ÌìºéµØÂ¯¹Û"
-              HIR "ÈÕ" HIW "Éñ¾÷" NOR + WHT "¡¹£¬½«ÄÚÁ¦¾¡Êı×¢"
-              "Èë" + weapon->name() + WHT "½£ÉíÖ±±¼\n$n" WHT
-              "¶øÈ¥¡£ö®Ê±¼ä³ãÑ×±©ÕÇ£¬ÈÈÀËÆËÃæ¾íÀ´£¬ËÄÖÜ¿ÕÆø±ã"
-              "ËÆ·ĞÌÚÒ»°ã¡£\n" NOR;
+        msg = WHT "$N" WHT "æ–½å‡ºè§€æ—¥åŠæ³•ä¹‹ã€Œ" HIW "å¤©æ´ªåœ°çˆè§€"
+              HIR "æ—¥" HIW "ç¥è¨£" NOR + WHT "ã€ï¼Œå°‡å…§åŠ›ç›¡æ•¸æ³¨"
+              "å…¥" + weapon->name() + WHT "åŠèº«ç›´å¥”\n$n" WHT
+              "è€Œå»ã€‚éœæ™‚é–“ç†¾ç‚æš´æ¼²ï¼Œç†±æµªæ’²é¢å·ä¾†ï¼Œå››å‘¨ç©ºæ°£ä¾¿"
+              "ä¼¼æ²¸é¨°ä¸€èˆ¬ã€‚\n" NOR;
 
         ap = attack_power(me, "sword");
         dp = defense_power(target, "force");
@@ -58,7 +58,7 @@ int perform(object me, object target)
         } else
         {
                 me->start_busy(2);
-                msg += CYN "¿ÉÊÇ$n" CYN "¿´ÆÆÁË$N" CYN "µÄÆóÍ¼£¬Ğ±Ô¾±Ü¿ª¡£\n" NOR;
+                msg += CYN "å¯æ˜¯$n" CYN "çœ‹ç ´äº†$N" CYN "çš„ä¼åœ–ï¼Œæ–œèºé¿é–‹ã€‚\n" NOR;
         }
         message_combatd(msg, me, target);
 
@@ -66,9 +66,9 @@ int perform(object me, object target)
         addn_temp("apply/attack", count, me);
         addn_temp("apply/damage", count, me);
 
-        message_combatd(WHT "½ô¸ú×Å$N" WHT "Ò»ÉùÀäĞ¦£¬ÉíĞÎİëµØÇ°Ô¾ÕÉ"
-                        "Ğí£¬ÊÖÖĞ" + weapon->name() + WHT "¡¸à§à§à§¡¹"
-                        "Á¬³ö¾Å½£¡£\n" NOR, me, target);
+        message_combatd(WHT "ç·Šè·Ÿè‘—$N" WHT "ä¸€è²å†·ç¬‘ï¼Œèº«å½¢é©€åœ°å‰èºä¸ˆ"
+                        "è¨±ï¼Œæ‰‹ä¸­" + weapon->name() + WHT "ã€Œå”°å”°å”°ã€"
+                        "é€£å‡ºä¹åŠã€‚\n" NOR, me, target);
 
         for (i = 0; i < 9; i++)
               {
@@ -92,6 +92,6 @@ string final(object me, object target, int damage)
                    "id":query("id", me),
                    "duration" : lvl / 50 + random(lvl / 20) ]));
 
-        return  HIR "Ö»Ìı$p" HIR "Ò»Éù²Òº¿£¬¼¸ÖùÏÊÑªÉä³ö£¬½£ÉË"
-                "´¦¾¹ÌÚÆğÒ»µÀÁÒ»ğ£¬ÉÕµÃàÍàÍ×÷Ïì¡£\n" NOR;
+        return  HIR "åªè½$p" HIR "ä¸€è²æ…˜åšï¼Œå¹¾æŸ±é®®è¡€å°„å‡ºï¼ŒåŠå‚·"
+                "è™•ç«Ÿé¨°èµ·ä¸€é“çƒˆç«ï¼Œç‡’å¾—å—¤å—¤ä½œéŸ¿ã€‚\n" NOR;
 }

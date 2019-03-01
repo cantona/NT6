@@ -4,9 +4,9 @@ inherit NPC;
 
 void create()
 {
-        set_name("œÙ‘±Õ‚", ({"xiao yuanwai", "xiao","yuanwai" }));
-        set("gender", "ƒ––‘");
-        set("rank_info/respect", "¿œ‘±Õ‚");
+        set_name("Ëï≠Âì°Â§ñ", ({"xiao yuanwai", "xiao","yuanwai" }));
+        set("gender", "Áî∑ÊÄß");
+        set("rank_info/respect", "ËÄÅÂì°Â§ñ");
         set("age", 50);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -42,7 +42,7 @@ int accept_object (object who, object ob)
 {
         object me = this_object();
         object room = environment(me);
-        if( query("short", room) != "œÙº“¥ÛÃ¸" )
+        if( query("short", room) != "Ëï≠ÂÆ∂Â§ßÂª≥" )
                 return 0;
 
         if( query("id", ob) == "xin" )
@@ -59,16 +59,16 @@ void read_letter(object me, object who, object ob)
         destruct (ob);
         reset_eval_cost();
 
-        message_vision("$Nø¥ÕÍ–≈£¨≤ª”…µ√ÃÈ¿·æ„œ¬°£\n"
-                       "$Nµ¿£∫’‚–©ÃÏŒ“≤Ó»À—∞±È≥§∞≤≥«£¨“≤√ª’“"
-                       "µΩŒ“ƒ«∫¢∂˘£¨\n‘≠¿¥æπ±ª»Àπ’¬ÙµΩ¡À«‡¬•÷Æ÷–°£\n\n",
+        message_vision("$NÁúãÂÆå‰ø°Ôºå‰∏çÁî±ÂæóÊ∂ïÊ∑ö‰ø±‰∏ã„ÄÇ\n"
+                       "$NÈÅìÔºöÈÄô‰∫õÂ§©ÊàëÂ∑Æ‰∫∫Â∞ãÈÅçÈï∑ÂÆâÂüéÔºå‰πüÊ≤íÊâæ"
+                       "Âà∞ÊàëÈÇ£Â≠©ÂÖíÔºå\nÂéü‰æÜÁ´üË¢´‰∫∫ÊãêË≥£Âà∞‰∫ÜÈùíÊ®ì‰πã‰∏≠„ÄÇ\n\n",
                        me);
 
-        message_vision("$N∂‘$nµ¿£∫»Ù∑«’‚Œª" +
+        message_vision("$NÂ∞ç$nÈÅìÔºöËã•ÈùûÈÄô‰Ωç" +
                        RANK_D->query_respect(who)+
-                       "«∞¿¥œ‡∏Ê£¨Œ“ø…ƒ‹ΩÒ…˙æÕº˚≤ªµΩŒ“µƒ≈Æ∂˘¡À£¨\n" +
+                       "Ââç‰æÜÁõ∏ÂëäÔºåÊàëÂèØËÉΩ‰ªäÁîüÂ∞±Ë¶ã‰∏çÂà∞ÊàëÁöÑÂ•≥ÂÖí‰∫ÜÔºå\n" +
                        RANK_D->query_respect(who) +
-                       "’‚∑›∂˜µ¬Ω–¿œ∑Ú»Á∫Œ±®¥∞°£°\n", me, who);
+                       "ÈÄô‰ªΩÊÅ©Âæ∑Âè´ËÄÅÂ§´Â¶Ç‰ΩïÂ†±Á≠îÂïäÔºÅ\n", me, who);
 
         remove_call_out("send_to_fight");
         call_out("send_to_fight",3,me,who);
@@ -78,15 +78,15 @@ void send_to_fight (object me, object who)
 {
         object yupei = new("/d/changan/npc/obj/yupei");
         yupei->move(who);
-        message_vision("$N∂‘$nÀµµ¿£∫ªπ«Î’‚Œª" +
+        message_vision("$NÂ∞ç$nË™™ÈÅìÔºöÈÇÑË´ãÈÄô‰Ωç" +
                        RANK_D->query_respect(who) +
-                       "‘Ÿ∞Ô∞Ô√¶£¨Ω´Œ“≈Æ∂˘¥Óæ»≥ˆ¿¥£°\n\n",
+                       "ÂÜçÂπ´Âπ´ÂøôÔºåÂ∞áÊàëÂ•≥ÂÖíÊê≠ÊïëÂá∫‰æÜÔºÅ\n\n",
                        me, who);
 
-        message_vision("$N¥”“¬¥¸ƒ⁄»°≥ˆ“ªøÈ”Ò≈ÂΩª∏¯$n£¨µ¿"
-                       "°∞’‚ «Œ“º“¥´”Ò≈Â£¨œÊœÊº˚µΩª·»œµ√µƒ£°\n",
+        message_vision("$NÂæûË°£Ë¢ãÂÖßÂèñÂá∫‰∏ÄÂ°äÁéâ‰Ω©‰∫§Áµ¶$nÔºåÈÅì"
+                       "‚ÄúÈÄôÊòØÊàëÂÆ∂ÂÇ≥Áéâ‰Ω©ÔºåÊπòÊπòË¶ãÂà∞ÊúÉË™çÂæóÁöÑÔºÅ\n",
                        me, who);
-        message_vision("$N∏¯$n“ªøÈ”Ò≈Â°£\n", me, who);
+        message_vision("$NÁµ¶$n‰∏ÄÂ°äÁéâ‰Ω©„ÄÇ\n", me, who);
         who->save();
 }
 
@@ -97,7 +97,7 @@ void check_daughter(object me)
           object who;
           object yupei;
           reset_eval_cost();
-          if( query("short", room) != "œÙº“¥ÛÃ¸" )
+          if( query("short", room) != "Ëï≠ÂÆ∂Â§ßÂª≥" )
                     return;
 
           if( !xiangxiang || !query("leader", xiangxiang) )
@@ -117,7 +117,7 @@ void check_daughter(object me)
 void cry_daughter(object me, object xiangxiang, object who, object yupei)
 {
         object book;
-        message_vision("$Nº˚¡À$n“ª„∂£¨»ª∫Û¿œ¿·◊›∫·µÿΩ´$n¿≠π˝»•°£\n",
+        message_vision("$NË¶ã‰∫Ü$n‰∏ÄÊÑ£ÔºåÁÑ∂ÂæåËÄÅÊ∑öÁ∏±Ê©´Âú∞Â∞á$nÊãâÈÅéÂéª„ÄÇ\n",
                        me, xiangxiang); 
         destruct(xiangxiang);
       
@@ -125,10 +125,10 @@ void cry_daughter(object me, object xiangxiang, object who, object yupei)
         yupei->move(me);
         destruct(yupei);
         command("thank "+query("id", who));
-        command("say ’‚Œª" + RANK_D->query_respect(who) +
-                "æ»Œ“∂˘œÊœÊÃ”≥ˆƒß’∆£°¿œ∑Ú’‚¿Ô”–“ª±æ È£¨\n «"
-                "◊Ê…œ¥´œ¬¿¥µƒ£¨æÕÀÕ∏¯" + RANK_D->query_respect(who) +
-                "∞…£°\n");
+        command("say ÈÄô‰Ωç" + RANK_D->query_respect(who) +
+                "ÊïëÊàëÂÖíÊπòÊπòÈÄÉÂá∫È≠îÊéåÔºÅËÄÅÂ§´ÈÄôË£°Êúâ‰∏ÄÊú¨Êõ∏Ôºå\nÊòØ"
+                "Á•ñ‰∏äÂÇ≥‰∏ã‰æÜÁöÑÔºåÂ∞±ÈÄÅÁµ¶" + RANK_D->query_respect(who) +
+                "ÂêßÔºÅ\n");
         carry_object("/d/changan/npc/obj/book");
         command("give book to "+query("id", who));
 }

@@ -7,7 +7,7 @@ inherit SKILL;
 int valid_learn(object me)
 {
         if( (int)me->query_skill("force", 1) < 10 )
-                return notify_fail("ƒ„µƒª˘±æƒ⁄π¶ª∫Ú≤ªπª£¨≤ªƒ‹—ßœ∞Ãÿ ‚ƒ⁄π¶°£\n");
+                return notify_fail("‰Ω†ÁöÑÂü∫Êú¨ÂÖßÂäüÁÅ´ÂÄô‰∏çÂ§†Ôºå‰∏çËÉΩÂ≠∏ÁøíÁâπÊÆäÂÖßÂäü„ÄÇ\n");
 
         return 1;
 }
@@ -52,20 +52,20 @@ mixed hit_ob(object me, object victim, int damage_bonus, int factor)
                         me->receive_damage("qi", damage * 4, victim);
                         me->receive_wound("qi", damage * 4, victim);
                         if( damage < 10 )
-                                result += ([ "msg" : HIY "$N" HIY " ‹µΩ$n"
-                                                     HIY "µƒƒ⁄¡¶∑¥’£¨√∆∫ﬂ“ª…˘°£\n" NOR ]);
+                                result += ([ "msg" : HIY "$N" HIY "ÂèóÂà∞$n"
+                                                     HIY "ÁöÑÂÖßÂäõÂèçÈúáÔºåÊÇ∂Âìº‰∏ÄËÅ≤„ÄÇ\n" NOR ]);
                         else if( damage < 20 )
-                                result += ([ "msg" : YEL "$N" YEL "±ª$n"
-                                                     YEL "“‘ƒ⁄¡¶∑¥’£¨°∏∫Ÿ°πµÿ“ª…˘ÕÀ¡À¡Ω≤Ω°£\n" NOR ]);
+                                result += ([ "msg" : YEL "$N" YEL "Ë¢´$n"
+                                                     YEL "‰ª•ÂÖßÂäõÂèçÈúáÔºå„ÄåÂòø„ÄçÂú∞‰∏ÄËÅ≤ÈÄÄ‰∫ÜÂÖ©Ê≠•„ÄÇ\n" NOR ]);
                         else if( damage < 40 )
-                                result += ([ "msg" : HIC "$N" HIC "±ª$n"
-                                                     HIC "“‘ƒ⁄¡¶“ª’£¨–ÿø⁄”–»Á ‹µΩ“ªº«÷ÿ¥∏£¨¡¨ÕÀ¡ÀŒÂ¡˘≤Ω£°\n" NOR ]);
+                                result += ([ "msg" : HIC "$N" HIC "Ë¢´$n"
+                                                     HIC "‰ª•ÂÖßÂäõ‰∏ÄÈúáÔºåËÉ∏Âè£ÊúâÂ¶ÇÂèóÂà∞‰∏ÄË®òÈáçÈåòÔºåÈÄ£ÈÄÄ‰∫Ü‰∫îÂÖ≠Ê≠•ÔºÅ\n" NOR ]);
                         else if( damage < 80 )
-                                result += ([ "msg" : HIR "$N" HIR "±ª$n"
-                                                     HIR "µƒƒ⁄¡¶“ª’£¨—€«∞“ª∫⁄£¨…Ì◊”œÚ∫Û∑…≥ˆ’…–Ì£°£°\n" NOR ]);
+                                result += ([ "msg" : HIR "$N" HIR "Ë¢´$n"
+                                                     HIR "ÁöÑÂÖßÂäõ‰∏ÄÈúáÔºåÁúºÂâç‰∏ÄÈªëÔºåË∫´Â≠êÂêëÂæåÈ£õÂá∫‰∏àË®±ÔºÅÔºÅ\n" NOR ]);
                         else
-                                result += ([ "msg" : RED "$N" RED "±ª$n"
-                                                     RED "µƒƒ⁄¡¶“ª’£¨÷ªæıªÎ…Ìæ≠¬ˆ”˚∂œ£¨∆¯—™µπ¡˜£¨º∏∫ı‘Œ¡Àπ˝»•°£\n" NOR ]);
+                                result += ([ "msg" : RED "$N" RED "Ë¢´$n"
+                                                     RED "ÁöÑÂÖßÂäõ‰∏ÄÈúáÔºåÂè™Ë¶∫Ê∏æË∫´Á∂ìËÑàÊ¨≤Êñ∑ÔºåÊ∞£Ë°ÄÂÄíÊµÅÔºåÂπæ‰πéÊöà‰∫ÜÈÅéÂéª„ÄÇ\n" NOR ]);
                         return result;
                 }
 
@@ -108,8 +108,8 @@ int shaolin_check(object me)
 
         if( n < 10000 ) return 0;
         lvl = me->query_skill("buddhism", 1);
-        //∑«…Ÿ¡÷µ‹◊”£¨ø…“‘”√taoism°¢mahayana°¢lamaism’€À„≥…Ï¯◊⁄
-        if( query("family/family_name", me) != "…Ÿ¡÷≈…"){
+        //ÈùûÂ∞ëÊûóÂºüÂ≠êÔºåÂèØ‰ª•Áî®taoism„ÄÅmahayana„ÄÅlamaismÊäòÁÆóÊàêÁ¶™ÂÆó
+        if( query("family/family_name", me) != "Â∞ëÊûóÊ¥æ"){
                 if( me->query_skill("taoism", 1) >= 100 )
                         lvl += me->query_skill("taoism", 1) * 3 / 5;
                 if( me->query_skill("mahayana", 1) >= 100 )
@@ -117,32 +117,32 @@ int shaolin_check(object me)
                 if( me->query_skill("lamaism", 1) >= 100 )
                         lvl += me->query_skill("lamaism", 1) * 3 / 5;
         }
-        if( query("family/family_name", me) == "…Ÿ¡÷≈…" )
+        if( query("family/family_name", me) == "Â∞ëÊûóÊ¥æ" )
                 lvl += lvl * 5 / 2;
         lvl *= lvl / 25;
         if( lvl < n * 9 / 10 ) {
-                write(RED "ƒ„÷ªæıµ√–ƒ÷–“ª’ÛΩ Õ¥£¨ÕÍ»´Œﬁ∑®øÿ÷∆ƒ⁄œ¢£¨»Ã"
-                      "≤ª◊°¥ÛΩ–“ª…˘£¨ª∆∂π∞„µƒ∫π÷È‰π‰π∂¯œ¬°£\n" NOR);
-                message("vision", RED + me->name() + RED "∫ˆ»ª¥ÛΩ–“ª…˘£¨"
-                        "ª∆∂π∞„µƒ∫π÷È‰π‰π∂¯œ¬£¨ø¥—˘◊”Õ¥ø‡÷Æº´°£\n" NOR,
+                write(RED "‰Ω†Âè™Ë¶∫ÂæóÂøÉ‰∏≠‰∏ÄÈô£ÁµûÁóõÔºåÂÆåÂÖ®ÁÑ°Ê≥ïÊéßÂà∂ÂÖßÊÅØÔºåÂøç"
+                      "‰∏ç‰ΩèÂ§ßÂè´‰∏ÄËÅ≤ÔºåÈªÉË±ÜËà¨ÁöÑÊ±óÁè†Ê∂îÊ∂îËÄå‰∏ã„ÄÇ\n" NOR);
+                message("vision", RED + me->name() + RED "ÂøΩÁÑ∂Â§ßÂè´‰∏ÄËÅ≤Ôºå"
+                        "ÈªÉË±ÜËà¨ÁöÑÊ±óÁè†Ê∂îÊ∂îËÄå‰∏ãÔºåÁúãÊ®£Â≠êÁóõËã¶‰πãÊ•µ„ÄÇ\n" NOR,
                         environment(me), ({ me }));
                 me->receive_damage("jing", 200 + random(200));
                 me->receive_damage("qi", 400 + random(400));
                 return 1;
         } else if( lvl < n ) {
-                write(HIR "ƒ„÷ªæıµ√ƒ⁄œ¢“ª’ÛŒ…¬“£¨Àƒ÷´∞Ÿ∫°∂Ÿ ±±˘¿‰£¨ ÷"
-                      "◊„√º∑¢∂º≤ª”…◊‘÷˜µƒ≤¸∂Ø°£\n" NOR);
-                message("vision", HIR + me->name() + RED "ªÎ…Ì∂º≤ª◊°µƒ"
-                        "∂∂∂Ø£¨¡¨√º∑¢∂º‘⁄Œ¢Œ¢≤¸∂Ø°£\n" NOR,
+                write(HIR "‰Ω†Âè™Ë¶∫ÂæóÂÖßÊÅØ‰∏ÄÈô£Á¥ä‰∫ÇÔºåÂõõËÇ¢ÁôæÈ™∏È†ìÊôÇÂÜ∞ÂÜ∑ÔºåÊâã"
+                      "Ë∂≥ÁúâÁôºÈÉΩ‰∏çÁî±Ëá™‰∏ªÁöÑÈ°´Âãï„ÄÇ\n" NOR);
+                message("vision", HIR + me->name() + RED "Ê∏æË∫´ÈÉΩ‰∏ç‰ΩèÁöÑ"
+                        "ÊäñÂãïÔºåÈÄ£ÁúâÁôºÈÉΩÂú®ÂæÆÂæÆÈ°´Âãï„ÄÇ\n" NOR,
                         environment(me), ({ me }));
                 me->receive_damage("jing", 100 + random(100));
                 me->receive_damage("qi", 200 + random(200));
                 return 1;
         } else if( lvl < n * 11 / 10 ) {
-                write(HIY "ƒ„æıµ√”–µ„–ƒ∑≥“‚¬“£¨µ§ÃÔ÷–»»∆¯»Á"
-                      "∑Ÿ£¨ƒ⁄¡¶‘À––”––©ºËƒ—°£\n" NOR);
+                write(HIY "‰Ω†Ë¶∫ÂæóÊúâÈªûÂøÉÁÖ©ÊÑè‰∫ÇÔºå‰∏πÁî∞‰∏≠ÁÜ±Ê∞£Â¶Ç"
+                      "ÁÑöÔºåÂÖßÂäõÈÅãË°åÊúâ‰∫õËâ±Èõ£„ÄÇ\n" NOR);
         } else if( lvl < n * 13 / 10 ) {
-                write(HIC "ƒ„–ƒ÷–”–µ„“Ï—˘µƒ∏–æı°£\n" NOR);
+                write(HIC "‰Ω†ÂøÉ‰∏≠ÊúâÈªûÁï∞Ê®£ÁöÑÊÑüË¶∫„ÄÇ\n" NOR);
         }
 
         return 0;
@@ -159,15 +159,15 @@ int hatred_check(object me)
         if( hatred < 3 * force )
                 return 0;
         else if( hatred < 4 * force )
-                write(HIY "ƒ„÷ªæıµ√–ƒ—™≥±∂Ø£¨æ≠¬ˆ÷Æº‰’Ê∆¯≥Âµ¥°£\n" NOR);
+                write(HIY "‰Ω†Âè™Ë¶∫ÂæóÂøÉË°ÄÊΩÆÂãïÔºåÁ∂ìËÑà‰πãÈñìÁúüÊ∞£Ê≤ñÁõ™„ÄÇ\n" NOR);
         else if( hatred < 5 * force )
-                write(HIR "ƒ„÷ªæıµ√—™¬ˆÍ⁄’≈£¨ªÎ…Ì…±∆¯¥¿¥¿”˚∂Ø£¨“ª ±»Ã≤ª◊°÷ªœÎ∑≈…˘¥Û∫Ù°£\n" NOR);
+                write(HIR "‰Ω†Âè™Ë¶∫ÂæóË°ÄËÑàË≥ÅÂºµÔºåÊ∏æË∫´ÊÆ∫Ê∞£Ë†¢Ë†¢Ê¨≤ÂãïÔºå‰∏ÄÊôÇÂøç‰∏ç‰ΩèÂè™ÊÉ≥ÊîæËÅ≤Â§ßÂëº„ÄÇ\n" NOR);
         else if( hatred < 6 * force ) {
-                write(HIR "ƒ„–ƒÕ∑“ªÕ¥£¨ƒ⁄œ¢º∏”˚øÿ÷∆≤ª◊°£¨÷ªæıµ√—€«∞Ω¯––¬“√∞°£\n" NOR);
+                write(HIR "‰Ω†ÂøÉÈ†≠‰∏ÄÁóõÔºåÂÖßÊÅØÂπæÊ¨≤ÊéßÂà∂‰∏ç‰ΩèÔºåÂè™Ë¶∫ÂæóÁúºÂâçÈÄ≤Ë°å‰∫ÇÂÜí„ÄÇ\n" NOR);
                 return 1;
         } else {
-                write(RED "“ª ±º‰ƒ„÷ªæıµ√…±∆¯¥Û≥§£¨»À»ÁøÒ»Á≥’£¨’Ê∆¯Àƒœ¬≥Âµ¥£¨º∏”˚∆∆ÃÂ∂¯≥ˆ°£\n"
-                          "ƒ„“°“°ªŒªŒ«ø÷ß∆¨øÃ£¨…§—€“ªÃ£¨—€«∞µ« ±æÕ «“ª∫⁄£¨°∞πæﬂÀ°±“ªœ¬µπ‘⁄µÿ…œ°£\n" NOR);
+                write(RED "‰∏ÄÊôÇÈñì‰Ω†Âè™Ë¶∫ÂæóÊÆ∫Ê∞£Â§ßÈï∑Ôºå‰∫∫Â¶ÇÁãÇÂ¶ÇÁó¥ÔºåÁúüÊ∞£Âõõ‰∏ãÊ≤ñÁõ™ÔºåÂπæÊ¨≤Á†¥È´îËÄåÂá∫„ÄÇ\n"
+                          "‰Ω†ÊêñÊêñÊôÉÊôÉÂº∑ÊîØÁâáÂàªÔºåÂóìÁúº‰∏ÄÁîúÔºåÁúºÂâçÁôªÊôÇÂ∞±ÊòØ‰∏ÄÈªëÔºå‚ÄúÂíïÂíö‚Äù‰∏Ä‰∏ãÂÄíÂú®Âú∞‰∏ä„ÄÇ\n" NOR);
                 me->unconcious();
                 call_out("do_owner_die", 0, me);
                 return 1;
@@ -197,7 +197,7 @@ void do_owner_die(object me)
         if( query("max_neili", me)>500 )
                 set("max_neili",query("max_neili",  me)/2, me);
 
-        set_temp("die_reason", "…±¬æÃ´÷ÿ£¨”Ù∆¯ÃÓ–ƒ∂¯À¿", me);
+        set_temp("die_reason", "ÊÆ∫ÊàÆÂ§™ÈáçÔºåÈ¨±Ê∞£Â°´ÂøÉËÄåÊ≠ª", me);
         me->die();
         set("total_hatred",query("total_hatred",  me)/2, me);
 }

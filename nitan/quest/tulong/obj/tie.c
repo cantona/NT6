@@ -19,37 +19,37 @@ void init(){
 add_action("do_trans","trans");
 }
 void create(){
-set_name("Ä§·¨´«ËÍÌû",({"trans site","site"}));
+set_name("é­”æ³•å‚³é€å¸–",({"trans site","site"}));
 set_weight(100); set_max_encumbrance(8000);
-set("no_drop", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
+set("no_drop", "é€™æ¨£æ±è¥¿ä¸èƒ½é›¢é–‹ä½ ã€‚\n");
         if( clonep() )                set_default_object(__FILE__);
- else {     set("long",              "Ò»ÕÅÄ§·¨´«ËÍÌû£¬ÒÔËüµÄÄ§Á¦ÏÖÔÚËùÄÜµ½´ï(trans)µÄµØ·½ÈçÏÂ¡£\n
-\tÖĞÑë¹ã³¡(gc)    ÉÙÁÖËÂ(sl)  °×ÍÕÉ½(bt)  Ìì°²ÃÅ(tam) \n
-\tºÚÄ¾ÑÂ(hmy)     »ªÉ½(hs)    Îäµ±É½(wd)  Ì©É½(ts)    \n
-\tåĞÒ£ÅÉ(xy)      ĞÇËŞº£(xx)  Ñ©É½ËÂ(xs)  ÉñÁú½Ì(shl) \n
-\tÈªÖİ(qz)        ÁéğÕ¹¬(lj)\n");
-set("unit","ÕÅ"); 
+ else {     set("long",              "ä¸€å¼µé­”æ³•å‚³é€å¸–ï¼Œä»¥å®ƒçš„é­”åŠ›ç¾åœ¨æ‰€èƒ½åˆ°é”(trans)çš„åœ°æ–¹å¦‚ä¸‹ã€‚\n
+\tä¸­å¤®å»£å ´(gc)    å°‘æ—å¯º(sl)  ç™½é§å±±(bt)  å¤©å®‰é–€(tam) \n
+\té»‘æœ¨å´–(hmy)     è¯å±±(hs)    æ­¦ç•¶å±±(wd)  æ³°å±±(ts)    \n
+\té€é™æ´¾(xy)      æ˜Ÿå®¿æµ·(xx)  é›ªå±±å¯º(xs)  ç¥é¾æ•™(shl) \n
+\tæ³‰å·(qz)        éˆé·²å®®(lj)\n");
+set("unit","å¼µ"); 
 set("use_count", 6);}
 }
 int do_trans(string arg){
         object me,obj;string msg,str;str=where_map[arg];
-        if( !arg||!stringp(str)) return notify_fail("ÄãÒªÈ¥ÄÄÀï£¿\n");
+        if( !arg||!stringp(str)) return notify_fail("ä½ è¦å»å“ªè£¡ï¼Ÿ\n");
 me=this_player();
              if( !query("outdoors", environment(me)) )
- return notify_fail("ÔÚÕâ·¿¼äÀïÎŞ·¨Ê¹ÓÃÄ§·¨´«ËÍ¡£\n");
+ return notify_fail("åœ¨é€™æˆ¿é–“è£¡ç„¡æ³•ä½¿ç”¨é­”æ³•å‚³é€ã€‚\n");
  if (me->is_fighting())
-return notify_fail("Õ½¶·ÖĞÎŞ·¨Ê¹ÓÃÄ§·¨´«ËÍ£¡");
+return notify_fail("æˆ°é¬¥ä¸­ç„¡æ³•ä½¿ç”¨é­”æ³•å‚³é€ï¼");
 str+=".c";
         if(file_size(str)<0) 
-return notify_fail("Ã»ÓĞÕâ¸öµØ·½¡£\n");
+return notify_fail("æ²’æœ‰é€™å€‹åœ°æ–¹ã€‚\n");
         if (query("use_count") < 1) 
             {
-message_vision("Ä§·¨´«ËÍÌûÉÁ³öÒ»µÀ½ğ¹â£¬Ëæºó±ãÏûÊ§ÁË¡£\n",me); 
+message_vision("é­”æ³•å‚³é€å¸–é–ƒå‡ºä¸€é“é‡‘å…‰ï¼Œéš¨å¾Œä¾¿æ¶ˆå¤±äº†ã€‚\n",me); 
           destruct(this_object());
           return 1;            }
     if( stringp(msg=query("env/msg_mout", me))){if( msg != "")message_vision(msg+"\n",me);}
-       else                message_vision("Ö»¼ûÒ»ÕóÑÌÎí¹ıáá£¬$NµÄÉíÓ°ÒÑ¾­²»¼ûÁË¡£\n", me);
+       else                message_vision("åªè¦‹ä¸€é™£ç…™éœ§éå¾Œï¼Œ$Nçš„èº«å½±å·²ç¶“ä¸è¦‹äº†ã€‚\n", me);
 me->move(str); 
 addn("use_count",-1);if( stringp(msg=query("env/msg_min", me)) )
        {if (msg!="") message_vision(msg+"\n", me);}
-        else                message_vision("$NµÄÉíÓ°Í»È»³öÏÖÔÚÒ»ÕóÑÌÎíÖ®ÖĞ¡£\n", me);        return 1;}
+        else                message_vision("$Nçš„èº«å½±çªç„¶å‡ºç¾åœ¨ä¸€é™£ç…™éœ§ä¹‹ä¸­ã€‚\n", me);        return 1;}

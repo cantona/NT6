@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-        set ("short", "б��");
+        set ("short", "斜坡");
         set ("long", @LONG
-���ߵ�����ϡϡ����ģ������������ĺ��紵���з���ɳɳ��������
-����Ĳ�ԭ��ţ���ڳԲݣ�����Ĺ�������Ļ��ű��ӣ������������
-�м�������͸��һ��ɱ����
+兩邊的樹林稀稀落落的，在西北邊塞的寒風吹動中發出沙沙的響聲。
+北面的草原上牛羊在吃草，放羊的姑娘輕輕的揮著鞭子，南面的樹林中
+有幾個帳篷，透出一股殺氣。
 LONG);
         set("outdoors", "huijiang");
         set("exits", ([ /* sizeof() == 2 */

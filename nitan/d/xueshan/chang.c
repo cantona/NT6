@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�䳡");
+        set("short", "武場");
         set("long", @LONG
- ������ѩɽ�µĴ����䳡�����źö�ľ׮��ɳ����ɮ�����ճ���
-�ڴ˿̿�ϰ�䡣�����ߴ������������䳡���ǹ㳡�������и�С�ⷿ��
-�ϱ�һ��Ƭ�����أ�����ѩɽ�������ڵļ�̳��
+ 這裡是雪山寺的大練武場，豎著好多木樁和沙袋，僧人們日常均
+在此刻苦習武。往東走穿過整個大練武場就是廣場，西邊有個小庫房，
+南邊一大片開闊地，就是雪山聞名海內的祭壇。
 LONG );
         set("outdoors", "xueshan");
         set("exits", ([

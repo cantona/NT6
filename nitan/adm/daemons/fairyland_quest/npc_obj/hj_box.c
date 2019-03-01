@@ -1,6 +1,6 @@
-//                ±ê×¼ÃèÊö³¤¶ÈÊ¾Àı                                   |
-// ¡°»Ã¾³¡±ÀïµÄ±¦Ïä
-// by naihe  2002-10-23  ÓÚÃ¯Ãû
+//                æ¨™æº–æè¿°é•·åº¦ç¤ºä¾‹                                   |
+// â€œå¹»å¢ƒâ€è£¡çš„å¯¶ç®±
+// by naihe  2002-10-23  äºèŒ‚å
 
 #include <ansi.h>
 
@@ -21,22 +21,22 @@ string *color=({
 
 void create()
 {
-    set_name( color[random(8)] +"±¦Ïä"NOR, ({"box","bao xiang","xiang"}));
+    set_name( color[random(8)] +"å¯¶ç®±"NOR, ({"box","bao xiang","xiang"}));
 
     set_weight(10000000);
     if (clonep())
         set_default_object(__FILE__);
     else
     {
-        set("long", "Ò»¸öÎ´Ôø¿ªÆô(open)µÄ±¦Ïä¡£\n");
-        set("unit", "¸ö");
+        set("long", "ä¸€å€‹æœªæ›¾é–‹å•Ÿ(open)çš„å¯¶ç®±ã€‚\n");
+        set("unit", "å€‹");
         set("value", 0);
     }
 
     set("hj_game/obj","box");
     set("no_get","1");
     set("be_open","no");
-    set("no_refresh",1); // ²»»á±»·¿¼ä¸üĞÂ¡£
+    set("no_refresh",1); // ä¸æœƒè¢«æˆ¿é–“æ›´æ–°ã€‚
     setup();
 }
 
@@ -49,40 +49,40 @@ int do_open(string arg)
 {
     string *obj_list=({
         "/clone/money/silver",
-        __DIR__"hj_obj_quest",   // ÉñÃØÊ¯ÀàÁìÎò¼¼ÄÜµÄÎïÆ·
-        __DIR__"hj_obj_tools",   // ¶Ô±¾ÓÎÏ·ÓĞ°ïÖúµÄÎïÆ·£¨Èç¶¨ÏòË®¾§£©
-        __DIR__"hj_obj_weapon",  // ÎäÆ÷ĞÍµÄÎïÆ·
-        __DIR__"hj_obj_other",   // ¹ûÆ·¡¢±¦Ê¯µÈ
-        __DIR__"hj_obj_other",   // ¹ûÆ·¡¢±¦Ê¯Àà³öÏÖµÄ¼¸ÂÊÉÏµ÷
+        __DIR__"hj_obj_quest",   // ç¥ç§˜çŸ³é¡é ˜æ‚ŸæŠ€èƒ½çš„ç‰©å“
+        __DIR__"hj_obj_tools",   // å°æœ¬éŠæˆ²æœ‰å¹«åŠ©çš„ç‰©å“ï¼ˆå¦‚å®šå‘æ°´æ™¶ï¼‰
+        __DIR__"hj_obj_weapon",  // æ­¦å™¨å‹çš„ç‰©å“
+        __DIR__"hj_obj_other",   // æœå“ã€å¯¶çŸ³ç­‰
+        __DIR__"hj_obj_other",   // æœå“ã€å¯¶çŸ³é¡å‡ºç¾çš„å¹¾ç‡ä¸Šèª¿
     });
 
     object obj,me;
     int temp;
-    string msg=""HIB"Ö»¼ûÒ»ÕóÑÌÎíÃ°Æğ¡­¡­ÕâÀïËÆºõ¶àÁËÒ»Ğ©Ê²Ã´£¡"NOR"\n";
+    string msg=""HIB"åªè¦‹ä¸€é™£ç…™éœ§å†’èµ·â€¦â€¦é€™è£¡ä¼¼ä¹å¤šäº†ä¸€äº›ä»€éº¼ï¼"NOR"\n";
 
     me=this_player();
-    temp=1+random(3); // ×î¶àÊ±´ò¿ªÒ»¸öÏä×Ó¿É»ñµÃ3¸ö»ú»á
+    temp=1+random(3); // æœ€å¤šæ™‚æ‰“é–‹ä¸€å€‹ç®±å­å¯ç²å¾—3å€‹æ©Ÿæœƒ
 
     if(arg!="box" && arg!="bao xiang" && arg!="xiang")
         return 0;
 
     if(query("be_open") == "yes")
-        return notify_fail("Õâ¸ö±¦ÏäÒÑ±»´ò¿ª¹ıÁË¡£\n");
+        return notify_fail("é€™å€‹å¯¶ç®±å·²è¢«æ‰“é–‹éäº†ã€‚\n");
 
     if( me->is_busy() || query_temp("hj_need_waiting", me) )
-        return notify_fail("Äã»¹Ã¦×ÅÄØ¡£\n");
+        return notify_fail("ä½ é‚„å¿™è‘—å‘¢ã€‚\n");
 
-    message_vision(CYN"$N"NOR+CYN"Ğ¡ĞÄµØ°Ñ"+query("name")+NOR+CYN"´òÁË¿ªÀ´¡£\n"NOR,me);
+    message_vision(CYN"$N"NOR+CYN"å°å¿ƒåœ°æŠŠ"+query("name")+NOR+CYN"æ‰“äº†é–‹ä¾†ã€‚\n"NOR,me);
     me->start_busy(1);
     set("be_open","yes");
-    set("long","Õâ¸ö±¦ÏäÒÑ¾­±»´ò¿ª¹ıÁË¡£\n");
-    set_name(CYN"´ò¿ªµÄ±¦Ïä"NOR,({"box","bao xiang","xiang"}));
+    set("long","é€™å€‹å¯¶ç®±å·²ç¶“è¢«æ‰“é–‹éäº†ã€‚\n");
+    set_name(CYN"æ‰“é–‹çš„å¯¶ç®±"NOR,({"box","bao xiang","xiang"}));
 
 
-    // ÓÉ±¦Ïä³é³öµÄÎï¼şÍ³Ò»ÃèÊö¡£
+    // ç”±å¯¶ç®±æŠ½å‡ºçš„ç‰©ä»¶çµ±ä¸€æè¿°ã€‚
     while( temp-- )
     {
-    // ¹öÊ¯Ö®¼¼Î¨Ò»ÌåÏÖ£¬´ò¿ª±¦ÏäÊ±µÃµ½¼¼ÄÜÊ¯µÄ¼¸ÂÊÌáÉı
+    // æ»¾çŸ³ä¹‹æŠ€å”¯ä¸€é«”ç¾ï¼Œæ‰“é–‹å¯¶ç®±æ™‚å¾—åˆ°æŠ€èƒ½çŸ³çš„å¹¾ç‡æå‡
         if( query_temp("hj_special/xs", me) && !random(3) )
             obj = new( __DIR__"hj_obj_quest" );
         else obj=new( obj_list[random(sizeof(obj_list))] );
@@ -96,6 +96,6 @@ int do_open(string arg)
 
 void delete_me()
 {
-    message_vision("$NºöµØÏûÊ§²»¼ûÁË¡£\n",this_object());
+    message_vision("$Nå¿½åœ°æ¶ˆå¤±ä¸è¦‹äº†ã€‚\n",this_object());
     destruct(this_object());
 }

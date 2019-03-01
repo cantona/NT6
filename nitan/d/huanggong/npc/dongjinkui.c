@@ -4,12 +4,12 @@ inherit NPC;
 
 void create()
 {
-        set_name("¶­½ğ¿ı", ({ "dong jinkui", "dong" ,"jinkui"}));
-        set("gender", "ÎŞĞÔ");
-        set("title", HIC"´ÈÄş¹¬Ì«¼à"NOR);
+        set_name("è‘£é‡‘é­", ({ "dong jinkui", "dong" ,"jinkui"}));
+        set("gender", "ç„¡æ€§");
+        set("title", HIC"æ…ˆå¯§å®®å¤ªç›£"NOR);
         set("age", 26);
         set("per", 20);
-        set("long", "Ò»¸ö×³Ë¶ºº×Ó£¬Í¦ĞØÍ¹¶Ç£¬¼ÜÊÆÆÄÎª²»ÉÆ¡£\n");
+        set("long", "ä¸€å€‹å£¯ç¢©æ¼¢å­ï¼ŒæŒºèƒ¸å‡¸è‚šï¼Œæ¶å‹¢é —ç‚ºä¸å–„ã€‚\n");
 
         set("combat_exp", 30000);
         set("shen_type", 0);

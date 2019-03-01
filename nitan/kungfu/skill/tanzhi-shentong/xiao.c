@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-string name() { return HIG "Ð¥²×º£" NOR; }
+string name() { return HIG "å˜¯æ»„æµ·" NOR; }
 
 inherit F_SSERVER;
 
@@ -15,31 +15,31 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(name() + "Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(name() + "åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( query_temp("weapon", me) || query_temp("secondary_weapon", me) )
-                return notify_fail(name() + "Ö»ÄÜ¿ÕÊÖÊ©Õ¹¡£\n");
+                return notify_fail(name() + "åªèƒ½ç©ºæ‰‹æ–½å±•ã€‚\n");
 
         if ((int)me->query_skill("tanzhi-shentong", 1) < 200)
-                return notify_fail("ÄãµÄµ¯Ö¸ÉñÍ¨²»¹»æµÊì£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„å½ˆæŒ‡ç¥žé€šä¸å¤ å«»ç†Ÿï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (me->query_skill_mapped("finger") != "tanzhi-shentong")
-                return notify_fail("ÄãÃ»ÓÐ¼¤·¢µ¯Ö¸ÉñÍ¨£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼å½ˆæŒ‡ç¥žé€šï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (me->query_skill_prepared("finger") != "tanzhi-shentong")
-                return notify_fail("ÄãÃ»ÓÐ×¼±¸µ¯Ö¸ÉñÍ¨£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æº–å‚™å½ˆæŒ‡ç¥žé€šï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if( query("max_neili", me)<3000 )
-                return notify_fail("ÄãµÄÄÚÁ¦ÐÞÎª²»×ã£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¿®ç‚ºä¸è¶³ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if( query("neili", me)<800 )
-                return notify_fail("ÄãÏÖÔÚµÄÕæÆø²»¹»£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çš„çœŸæ°£ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIG "Í»È»¼ä$N" HIG "Ö¸·æÒ»×ª£¬Á¦¾ÛÖ¸¼â¡°àÍ¡±µÄµ¯³öÒ»µÀ×ÏÃ¢£¬Ö±Ï®$n"
-              HIG "Æøº£´óÑ¨¡£\n" NOR;
+        msg = HIG "çªç„¶é–“$N" HIG "æŒ‡é‹’ä¸€è½‰ï¼ŒåŠ›èšæŒ‡å°–â€œå—¤â€çš„å½ˆå‡ºä¸€é“ç´«èŠ’ï¼Œç›´è¥²$n"
+              HIG "æ°£æµ·å¤§ç©´ã€‚\n" NOR;
 
         ap = attack_power(me, "finger");
         dp = defense_power(target, "force");
@@ -56,13 +56,13 @@ int perform(object me, object target)
                 if( query("neili", target)<0 )
                         set("neili", 0, target);
 
-                msg += HIR "$n" HIR "Ö»¾õ$N" HIR "Ö¸·çÏ®Ìå£¬Ëæ¼´ÉÏÌåÒ»"
-                       "Õó±ùÁ¹£¬¶Ù¸ÐÕæÆø»ÁÉ¢¼¸ÓûÔÎØÊ¡£\n" NOR;
+                msg += HIR "$n" HIR "åªè¦º$N" HIR "æŒ‡é¢¨è¥²é«”ï¼Œéš¨å³ä¸Šé«”ä¸€"
+                       "é™£å†°æ¶¼ï¼Œé “æ„ŸçœŸæ°£æ¸™æ•£å¹¾æ¬²æšˆåŽ¥ã€‚\n" NOR;
                 me->start_busy(2);
         } else
         {
-                msg += CYN "¿ÉÊÇ$p" CYN "·ÀÊØÑÏÃÜ£¬½ôÊØÃÅ»§£¬¶ÙÊ±Áî$P"
-                       CYN "µÄ¹¥ÊÆ»¯ÎªÎÚÓÐ¡£\n" NOR;
+                msg += CYN "å¯æ˜¯$p" CYN "é˜²å®ˆåš´å¯†ï¼Œç·Šå®ˆé–€æˆ¶ï¼Œé “æ™‚ä»¤$P"
+                       CYN "çš„æ”»å‹¢åŒ–ç‚ºçƒæœ‰ã€‚\n" NOR;
                 me->start_busy(3);
         }
         message_combatd(msg, me, target);

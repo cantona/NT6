@@ -1,13 +1,13 @@
-// shop.c ������С�� 
+// shop.c 哈薩克小店 
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "������С��");
+        set("short", "哈薩克小店");
         set("long", @LONG
-�������������ƾɣ��ƺ���ú����˾�û����������������ߵ��ǹ�
-�˲��ٶ�����ţƤ������ȵȣ����������Ǹ�С��Ʒ�㡣
+這座帳篷略顯破舊，似乎搭好後主人就沒再修整過它。帳篷邊到是掛
+了不少東西，牛皮筋，鈴鐺等等，看來這裡是個小雜品點。
 LONG);
         set("exits", ([            
             "south" : __DIR__"pmchang",

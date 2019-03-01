@@ -1,4 +1,4 @@
-// lÏåÑô±£ÎÀÕ½£¬ÕÜ±ğ×¨ÓÃ¹­
+// lè¥„é™½ä¿è¡›æˆ°ï¼Œå“²åˆ¥å°ˆç”¨å¼“
 
 #include <ansi.h>
 
@@ -6,16 +6,16 @@ inherit __DIR__"bow";
 
 void create()
 {
-        set_name(HIW "´óÄ®Ö®Ó¥" NOR, ({ "damo bow", "bow", "damo", "gong" }));
+        set_name(HIW "å¤§æ¼ ä¹‹é·¹" NOR, ({ "damo bow", "bow", "damo", "gong" }));
         set_weight(2000);
         if (clonep())
                 set_default_object(__FILE__);
         else
         {
-                set("unit", "ÕÅ");
-                set("long", HIW "Ò»ÕÅÓÃ»Æ½ğ´òÔìµÄ³¤¹­£¬ÉÏÃæµñ¿Ì×ÅÒ»Ö»·ÉÏèµÄÓ¥£¬´Ë¹­²ú×Ô´óÄ®£¬ÄËÉñ¹­¡£\n");
+                set("unit", "å¼µ");
+                set("long", HIW "ä¸€å¼µç”¨é»ƒé‡‘æ‰“é€ çš„é•·å¼“ï¼Œä¸Šé¢é›•åˆ»è‘—ä¸€åªé£›ç¿”çš„é·¹ï¼Œæ­¤å¼“ç”¢è‡ªå¤§æ¼ ï¼Œä¹ƒç¥å¼“ã€‚\n");
                 set("value", 80000);
-                set("accuracy", 100000);   // ×¼È·¶È£¬¼¸ºõ100%ÃüÖĞ
+                set("accuracy", 100000);   // æº–ç¢ºåº¦ï¼Œå¹¾ä¹100%å‘½ä¸­
         }
         setup();
 }

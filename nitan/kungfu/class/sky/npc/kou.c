@@ -4,11 +4,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("¿ÜÖÙ", ({ "kou zhong", "kou", "zhong"}));
-        set("long", "Ò»¸öÉí×ÅÁúÅÛµÄ¿ýÎàÉÙÄê£¬Ëû¾ÍÊÇÉÙË§¾üµÄÍ³Ë§¿ÜÖÙ¡£\n"); 
-        set("nickname", HIR "´óÌÆË«Áú" NOR);
-        set("title", HIY "´ó×ÚÊ¦" NOR);
-        set("gender", "ÄÐÐÔ");
+        set_name("å¯‡ä»²", ({ "kou zhong", "kou", "zhong"}));
+        set("long", "ä¸€å€‹èº«è‘—é¾è¢çš„é­æ¢§å°‘å¹´ï¼Œä»–å°±æ˜¯å°‘å¸¥è»çš„çµ±å¸¥å¯‡ä»²ã€‚\n"); 
+        set("nickname", HIR "å¤§å”é›™é¾" NOR);
+        set("title", HIY "å¤§å®—å¸«" NOR);
+        set("gender", "ç”·æ€§");
         set("age", 27);
         set("attitude", "friendly");
         set("shen_type", 1);
@@ -82,7 +82,7 @@ void kill_ob (object ob)
         ::kill_ob(ob);
         if (guard && !guard->is_fighting())
          {
-                 message_vision (CYN "$Nµ­Ð¦£ºÎÒÃÇÁ½ÐÖµÜ·îÃüÔÚ´ËÊØºî£¬¸óÏÂÐÝ¹ÖÎÒÃÇÎÞÇé£¡\n" NOR, guard);
+                 message_vision (CYN "$Næ·¡ç¬‘ï¼šæˆ‘å€‘å…©å…„å¼Ÿå¥‰å‘½åœ¨æ­¤å®ˆä¾¯ï¼Œé–£ä¸‹ä¼‘æ€ªæˆ‘å€‘ç„¡æƒ…ï¼\n" NOR, guard);
                  guard->kill_ob(ob);
          }
 }
@@ -103,7 +103,7 @@ void die()
                          if (arrayp(ob->query_team()))
                          {
                                  command("heng");
-                                 command("say Ê¤Ö®²»Îä£¡");
+                                 command("say å‹ä¹‹ä¸æ­¦ï¼");
                                  set("qi", 320000);
                                  set("jing", 120000);
                                  set("neili", 35000);
@@ -121,7 +121,7 @@ void die()
              if (ob->query("sky12/floor") == 4)
              {
                       ob->set("sky12/floor", 5);
-                 command("say ¸óÏÂÇë±ã°É£¡");
+                 command("say é–£ä¸‹è«‹ä¾¿å§ï¼");
              }
         }
 
@@ -138,7 +138,7 @@ void die()
 }
 
 
-// ÆøÑªÐ¡ÓÚ1000ÔòËÀÍö£¬±ÜÃâËûÈËÐ­Öú°ïÃ¦×ªÊÀ
+// æ°£è¡€å°äºŽ1000å‰‡æ­»äº¡ï¼Œé¿å…ä»–äººå”åŠ©å¹«å¿™è½‰ä¸–
 void heart_beat()
 {
         if (this_object()->query("qi") < 1000 || this_object()->query("eff_qi") < 1000)

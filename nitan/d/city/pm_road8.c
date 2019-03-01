@@ -4,17 +4,17 @@
 inherit ROOM;
 
 #define HEIDIAN "hengyang"
-#define HEIDIAN_NAME "ºâÑôºÚµê"
+#define HEIDIAN_NAME "è¡¡é™½é»‘åº—"
 
 int do_look(string arg);
 
 void create()
 {
-    set("short", HIY"½ğÉ«×ßÀÈ"NOR);
+    set("short", HIY"é‡‘è‰²èµ°å»Š"NOR);
         set("long", @LONG
-ÕâÀïÊÇÒ»Ìõ½ğ±Ì»Ô»ÍµÄ×ßÀÈ£¬Ç°ÃæÍ¨ÍùÅÄÂôĞİÏ¢ÊÒ£¬Ç½±ÚÉÏ»­×Å
-Ò»¿éºÚµ×½ğ×ÖµÄ´óØÒ(dabian)£¬Õû¸ö×ßÀÈ¾²Ú×ÑÏËà£¬ÁîÈË²»¸Ò´óÉùĞú
-»©¡£
+é€™è£¡æ˜¯ä¸€æ¢é‡‘ç¢§è¼ç…Œçš„èµ°å»Šï¼Œå‰é¢é€šå¾€æ‹è³£ä¼‘æ¯å®¤ï¼Œç‰†å£ä¸Šç•«è‘—
+ä¸€å¡Šé»‘åº•é‡‘å­—çš„å¤§åŒ¾(dabian)ï¼Œæ•´å€‹èµ°å»Šéœè¬åš´è‚…ï¼Œä»¤äººä¸æ•¢å¤§è²å–§
+å˜©ã€‚
 LONG );
 
     set("no_fight",1);
@@ -46,13 +46,13 @@ int do_look(string arg)
     pms = load_object("/adm/npc/feng");
     heidian_record=query(HEIDIAN, pms);
     destruct(pms);
-    msg = HIC +LOCAL_MUD_NAME()+ HIY HEIDIAN_NAME HIC " Àú´úµêÖ÷£º\n"NOR;
+    msg = HIC +LOCAL_MUD_NAME()+ HIY HEIDIAN_NAME HIC " æ­·ä»£åº—ä¸»ï¼š\n"NOR;
     msg += HIC "-------------------------------------------------------------------------\n" NOR;
     if (!sizeof(heidian_record))
-        msg += HIY "Ä¿Ç°»¹Ã»ÓĞÊı¾İ¡£\n";
+        msg += HIY "ç›®å‰é‚„æ²’æœ‰æ•¸æ“šã€‚\n";
     else
     {
-        msg += sprintf(HIW"%-25s%-30s%-10s%s\n"NOR,"ĞÕÃû","ÅÄÂôÊ±¼ä","ÅÄÂôÊ¦","¼Û¸ñ");
+        msg += sprintf(HIW"%-25s%-30s%-10s%s\n"NOR,"å§“å","æ‹è³£æ™‚é–“","æ‹è³£å¸«","åƒ¹æ ¼");
         for (i = 0;i < sizeof(heidian_record);i++)
             msg += sprintf(HIY"%-25s%-30s%-10s%d\n"NOR,
                    heidian_record[i]["name"]+"("+heidian_record[i]["id"]+")",
@@ -71,11 +71,11 @@ int valid_leave(object me, string dir)
        if (dir != "north") return 1;
        if (wizardp(me)) return 1;
 	if( !query("is_vendor", me) )
-               return notify_fail("¶Ô²»Æğ£¬Äã²¢²»ÊÇÉÌÈË£¬²»ÄÜÈëÄÚ£¡\n");
+               return notify_fail("å°ä¸èµ·ï¼Œä½ ä¸¦ä¸æ˜¯å•†äººï¼Œä¸èƒ½å…¥å…§ï¼\n");
 	if( query("balance", me)<200000000 )
-               return notify_fail("¶Ô²»Æğ£¬ÄãµÄ´æ¿î²»×ãÁ½ÍòÁ½»Æ½ğ£¬»¹ÊÇ±ğ½øÈ¥ÁË°É¡£\n");
+               return notify_fail("å°ä¸èµ·ï¼Œä½ çš„å­˜æ¬¾ä¸è¶³å…©è¬å…©é»ƒé‡‘ï¼Œé‚„æ˜¯åˆ¥é€²å»äº†å§ã€‚\n");
 	if( query("vendor_score", me)<5000 )
-               return notify_fail("¶Ô²»Æğ£¬ÄãµÄÉÌÒµÆÀ¼Û»¹²»×ã5000£¬²»ÄÜÈëÄÚ£¡\n");
+               return notify_fail("å°ä¸èµ·ï¼Œä½ çš„å•†æ¥­è©•åƒ¹é‚„ä¸è¶³5000ï¼Œä¸èƒ½å…¥å…§ï¼\n");
 
 	return 1;
 }

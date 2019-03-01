@@ -3,12 +3,12 @@ inherit ITEM;
 
 void create()
 {
-        set_name(CYN"ÎŞ¸ù²İ"NOR, ({"wugen cao", "wugen"}));
+        set_name(CYN"ç„¡æ ¹è‰"NOR, ({"wugen cao", "wugen"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Öê");
-                set("long", "ÕâÊÇÒ»ÖêÎŞ¸ù²İ£¬¾İËµÓĞ¶¾¡£\n");
+                set("unit", "æ ª");
+                set("long", "é€™æ˜¯ä¸€æ ªç„¡æ ¹è‰ï¼Œæ“šèªªæœ‰æ¯’ã€‚\n");
                 set("yaowang", 1);
                 set("dig", 1);
                 set("value", 1000);

@@ -1,5 +1,5 @@
 // Code of JHSH
-// mutong.c Ä¾Í°
+// mutong.c æœ¨æ¡¶
 
 #include <ansi.h>
 
@@ -8,13 +8,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name("Ä¾Í°", ({"mu tong", "tong", "bucket"}));
+        set_name("æœ¨æ¡¶", ({"mu tong", "tong", "bucket"}));
         set_weight(1000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¸öÓÃÀ´×°Ë®µÄÄ¾Í°¡£\n");
-                set("unit", "¸ö");
+                set("long", "ä¸€å€‹ç”¨ä¾†è£æ°´çš„æœ¨æ¡¶ã€‚\n");
+                set("unit", "å€‹");
                 set("amount", 0);
                 set("no_drop",1);
         }
@@ -28,16 +28,16 @@ string extra_long()
         switch(query("amount"))
         {
                 case 0: 
-                        str="ÀïÃæÊ²Ã´Ò²Ã»ÓĞ¡£\n";
+                        str="è£¡é¢ä»€éº¼ä¹Ÿæ²’æœ‰ã€‚\n";
                         break;
                 case 1:
-                        str="ÀïÃæÓĞÉÙĞíµÄ±ùË®¡£\n";
+                        str="è£¡é¢æœ‰å°‘è¨±çš„å†°æ°´ã€‚\n";
                         break;
                 case 2:
-                        str="ÀïÃæµÄ±ùË®¿ìÂúÁË¡£\n";
+                        str="è£¡é¢çš„å†°æ°´å¿«æ»¿äº†ã€‚\n";
                         break;
                 case 3:
-                        str="ÀïÃæ×°ÂúÁË±ùË®¡£\n";
+                        str="è£¡é¢è£æ»¿äº†å†°æ°´ã€‚\n";
                         break;
         }
         
@@ -61,22 +61,22 @@ int do_fill(string arg)
         if (arg!="tong"&& arg!="bucket") return 0;
 
         if (me->is_busy()||me->is_fighting())
-                return notify_fail("ÄãÕıÃ¦×ÅÄØ£¡\n");
+                return notify_fail("ä½ æ­£å¿™è‘—å‘¢ï¼\n");
 
-        if( query("short", environment(me)) != "±ÌË®º®Ì¶" )
-                return notify_fail("ÕâÀïÃ»ÓĞÀäË®¡£\n");
+        if( query("short", environment(me)) != "ç¢§æ°´å¯’æ½­" )
+                return notify_fail("é€™è£¡æ²’æœ‰å†·æ°´ã€‚\n");
 
         if (query("amount") >= max_volume)
-                return notify_fail("Ä¾Í°ÒÑ¾­×°ÂúË®ÁË¡£\n");
+                return notify_fail("æœ¨æ¡¶å·²ç¶“è£æ»¿æ°´äº†ã€‚\n");
 
         if( query("jing", me)<50 || query("qi", me)<50 )
-                return notify_fail("ÄãÒÑ¾­¾«Æ£Á¦½ßÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“ç²¾ç–²åŠ›ç«­äº†ã€‚\n");
 
-        message_vision("$NĞ¡ĞÄÒíÒíµØ´Ó±ÌË®º®Ì¶ÀïÒ¨ÁËĞ©±ùË®ÉÏÀ´¡£\n",me);
+        message_vision("$Nå°å¿ƒç¿¼ç¿¼åœ°å¾ç¢§æ°´å¯’æ½­è£¡èˆ€äº†äº›å†°æ°´ä¸Šä¾†ã€‚\n",me);
         addn("amount",1);
         if ( random(me->query_con()) > 20)
         {
-                message_vision("Ò»¹Éº®Æø´ÓÌ¶µ×Ö±Ã°ÉÏÀ´£¬¶³µÃ$N´òÁË¸ö¶ßàÂ£¡\n",me);
+                message_vision("ä¸€è‚¡å¯’æ°£å¾æ½­åº•ç›´å†’ä¸Šä¾†ï¼Œå‡å¾—$Næ‰“äº†å€‹å“†å—¦ï¼\n",me);
                 me->receive_damage("qi",random(10) + 5);
         }
         addn("qi", -30, me);
@@ -98,22 +98,22 @@ int do_pour(string arg)
                 return 0;
 
         if (me->is_busy() || me->is_fighting() )
-                return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ æ­£å¿™è‘—å‘¢ã€‚\n");
 
-        if ((item != "Ë®" && item!="water") || (target!="Ë®¸×" && target!="gang"))
-                return notify_fail("ÄãÒª½«Ê²Ã´¶«Î÷µ¹½øÄÄÀï£¿\n");
+        if ((item != "æ°´" && item!="water") || (target!="æ°´ç¼¸" && target!="gang"))
+                return notify_fail("ä½ è¦å°‡ä»€éº¼æ±è¥¿å€’é€²å“ªè£¡ï¼Ÿ\n");
 
         if (!(gang=present("shui gang",environment(me))))
-                return notify_fail("ÕâÀïÃ»ÓĞË®¸×¡£\n");
+                return notify_fail("é€™è£¡æ²’æœ‰æ°´ç¼¸ã€‚\n");
         
         if (!(amount = query("amount")))
-                return notify_fail("Ä¾Í°ÀïÊ²Ã´¶¼Ã»ÓĞ¡£\n");
+                return notify_fail("æœ¨æ¡¶è£¡ä»€éº¼éƒ½æ²’æœ‰ã€‚\n");
 
-        message_vision("$N°ÑÄ¾Í°ÀïµÄË®È«²¿µ¹½ø´óË®¸×Àï¡£\n",me);
+        message_vision("$NæŠŠæœ¨æ¡¶è£¡çš„æ°´å…¨éƒ¨å€’é€²å¤§æ°´ç¼¸è£¡ã€‚\n",me);
         set("amount",0);
         addn("amount", amount, gang);
         addn_temp("water_amount", amount, me);
         if( query_temp("water_amount", me) >= 15 )
-                tell_object(me,HIG"Äã·ö×ÅËáÍ´µÄÑü£¬ĞÄÀïÏëÓ¦¸Ã¿ÉÒÔ»ØÈ¥½»²îÁË°É£¿\n"NOR);
+                tell_object(me,HIG"ä½ æ‰¶è‘—é…¸ç—›çš„è…°ï¼Œå¿ƒè£¡æƒ³æ‡‰è©²å¯ä»¥å›å»äº¤å·®äº†å§ï¼Ÿ\n"NOR);
         return 1;
 }

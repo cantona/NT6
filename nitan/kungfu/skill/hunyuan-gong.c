@@ -1,4 +1,4 @@
-//hunyuan-gong.c »ìÔª¹¦
+//hunyuan-gong.c æ··å…ƒåŠŸ
 
 inherit FORCE;
 
@@ -20,14 +20,14 @@ int query_neili_improve(object me)
 int valid_learn(object me)
 {
         if (me->query_skill("force", 1) < 30)
-                return notify_fail("ÄãµÄ»ù±¾ÄÚ¹¦»ðºò²»¹»£¬ÎÞ·¨Ñ§Ï°»ìÔª¹¦¡£\n");
+                return notify_fail("ä½ çš„åŸºæœ¬å…§åŠŸç«å€™ä¸å¤ ï¼Œç„¡æ³•å­¸ç¿’æ··å…ƒåŠŸã€‚\n");
 
             return 1;
 }
 
 int practice_skill(object me)
 {
-            return notify_fail("»ìÔª¹¦Ö»ÄÜÓÃÑ§(learn)µÄÀ´Ôö¼ÓÊìÁ·¶È¡£\n");
+            return notify_fail("æ··å…ƒåŠŸåªèƒ½ç”¨å­¸(learn)çš„ä¾†å¢žåŠ ç†Ÿç·´åº¦ã€‚\n");
 }
 
 string exert_function_file(string func)

@@ -4,19 +4,19 @@
 inherit AXE;
 void create()
 {
-        set_name(HIW "¾Ş¸«" NOR, ({"big axe","axe"}));
+        set_name(HIW "å·¨æ–§" NOR, ({"big axe","axe"}));
         set_weight(500);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "ÕâÊÇÅÌ¹ÅÓÃÀ´¿ªÌì±ÙµØµÄ¾Ş¸«£¬´«ËµÓĞÉñÆæµÄÁ¦Á¿¡£\n");
+                set("unit", "æŠŠ");
+                set("long", "é€™æ˜¯ç›¤å¤ç”¨ä¾†é–‹å¤©è¾Ÿåœ°çš„å·¨æ–§ï¼Œå‚³èªªæœ‰ç¥å¥‡çš„åŠ›é‡ã€‚\n");
                 set("value", 1);
                 set("flag", 1);
                 set("no_sell", 1);
                 set("material", "steel");
-                set("wield_msg", "$N´Ó±³ÉÏ°Î³öÒ»°Ñ"+HIW+"¾Ş¸«"+NOR+"£¬ÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«Ò»°Ñ"+HIW+"¾Ş¸«"+NOR+"²åÔÚ±³ÉÏ¡£\n");
+                set("wield_msg", "$Nå¾èƒŒä¸Šæ‹”å‡ºä¸€æŠŠ"+HIW+"å·¨æ–§"+NOR+"ï¼Œæ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°‡ä¸€æŠŠ"+HIW+"å·¨æ–§"+NOR+"æ’åœ¨èƒŒä¸Šã€‚\n");
         }  
         init_axe(1000,1);
         setup();

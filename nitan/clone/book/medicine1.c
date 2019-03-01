@@ -6,13 +6,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIY"»ÆµÛÄÚ¾­"NOR, ({ "huangdi neijing", "neijing", "jing"}));
+        set_name(HIY"é»ƒå¸å…§ç¶“"NOR, ({ "huangdi neijing", "neijing", "jing"}));
         set_weight(10);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
-                set("long","ÕâÊÇ¾İ´«ÉÏ¹ÅÊ±´úĞùÔ¯»ÆµÛ´«ÊÀµÄÒ½Êé¡£\n");
+                set("unit", "æœ¬");
+                set("long","é€™æ˜¯æ“šå‚³ä¸Šå¤æ™‚ä»£è»’è½…é»ƒå¸å‚³ä¸–çš„é†«æ›¸ã€‚\n");
                 set("value", 1500);
                 set("material", "paper");
                 set("skill", ([

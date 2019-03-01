@@ -1,7 +1,7 @@
 // Copyright (C) 2005, by Lonely. All rights reserved.
 // This software can not be used, copied, or modified 
 // in any form without the written permission from authors.
-// cruised.c ÂşÓÎ¾«Áé
+// cruised.c æ¼«éŠç²¾éˆ
 
 #ifdef LONELY_IMPROVED
 
@@ -17,35 +17,35 @@ inherit F_DBASE;
 
 #include "/adm/etc/database.h"
 
-// ÂşÓÎ¾«ÁéÈçºÎ¹¤×÷£¿
-// Ã¿¸öÕ¾µãµÄÂşÓÎ¾«Áé¸ºÔğ½øĞĞÈÏÖ¤ºÍÊı¾İ´«Êä¡£Æô¶¯ÒÔºó£¬ÂşÓÎ
-// ¾«Áé»á¼àÌıÒ»¸ö¶Ë¿Ú£¬²éÑ¯À´×ÔÆäËûÕ¾µãµÄÇëÇó¡£
+// æ¼«éŠç²¾éˆå¦‚ä½•å·¥ä½œï¼Ÿ
+// æ¯å€‹ç«™é»çš„æ¼«éŠç²¾éˆè² è²¬é€²è¡Œèªè¨¼å’Œæ•¸æ“šå‚³è¼¸ã€‚å•Ÿå‹•ä»¥å¾Œï¼Œæ¼«éŠ
+// ç²¾éˆæœƒç›£è½ä¸€å€‹ç«¯å£ï¼ŒæŸ¥è©¢ä¾†è‡ªå…¶ä»–ç«™é»çš„è«‹æ±‚ã€‚
 //
-// Êı¾İÂşÓÎ£º
-// Èç¹ûÄ³¸öÕ¾µãµÇÂ½ÁËÆäËûÕ¾µãÂşÓÎ¹ıÀ´µÄÊ¹ÓÃÕß£¬Ôò±¾Õ¾µã´ÓÔ­
-// Ê¼Õ¾µãÂşÓÎ¾«ÁéÄÇÀï»ñµÃ¸ÃÍæ¼ÒµÄÊı¾İ£¬°üÀ¨ login & user ÒÔ
-// ¼° item Èı²¿·Ö£¬ÓÉÓÚ dbased ºÍ news ÀïµÄÊı¾İÓÃµÄÊÇÊı¾İ¿â
-// À´´¦Àí£¬ËùÒÔ¾Í²»ĞèÒªÂşÓÎ¡£È»ºó¸ù¾İÕâĞ©Êı¾İÔÚ±¾Õ¾µã¹¹ÔìÒ»
-// ¸öÍæ¼Ò£¬ÕâĞ©Êı¾İ»áÔÚÔ­Ê¼Õ¾±»É¾³ıÒÔÈ·±£¸÷Õ¾Êı¾İÎ¨Ò»ĞÔ£¬ÔÚ
-// ÍË³öµÄÊ±ºò²»»á´«µİ»ØÔ­ÏÈµÄÕ¾µã£¬¶ø±£ÁôÔÚÏÖÔÚµÄÕ¾µã¡£Íæ¼Ò
-// Ê¹ÓÃÕâÖÖ·½Ê½½øĞĞÂşÓÎ¡£
+// æ•¸æ“šæ¼«éŠï¼š
+// å¦‚æœæŸå€‹ç«™é»ç™»é™¸äº†å…¶ä»–ç«™é»æ¼«éŠéä¾†çš„ä½¿ç”¨è€…ï¼Œå‰‡æœ¬ç«™é»å¾åŸ
+// å§‹ç«™é»æ¼«éŠç²¾éˆé‚£è£¡ç²å¾—è©²ç©å®¶çš„æ•¸æ“šï¼ŒåŒ…æ‹¬ login & user ä»¥
+// åŠ item ä¸‰éƒ¨åˆ†ï¼Œç”±äº dbased å’Œ news è£¡çš„æ•¸æ“šç”¨çš„æ˜¯æ•¸æ“šåº«
+// ä¾†è™•ç†ï¼Œæ‰€ä»¥å°±ä¸éœ€è¦æ¼«éŠã€‚ç„¶å¾Œæ ¹æ“šé€™äº›æ•¸æ“šåœ¨æœ¬ç«™é»æ§‹é€ ä¸€
+// å€‹ç©å®¶ï¼Œé€™äº›æ•¸æ“šæœƒåœ¨åŸå§‹ç«™è¢«åˆªé™¤ä»¥ç¢ºä¿å„ç«™æ•¸æ“šå”¯ä¸€æ€§ï¼Œåœ¨
+// é€€å‡ºçš„æ™‚å€™ä¸æœƒå‚³éå›åŸå…ˆçš„ç«™é»ï¼Œè€Œä¿ç•™åœ¨ç¾åœ¨çš„ç«™é»ã€‚ç©å®¶
+// ä½¿ç”¨é€™ç¨®æ–¹å¼é€²è¡Œæ¼«éŠã€‚
 //
-// ÅäÌ×Ö§³Ö£º
-// Êı¾İ¿â mysql Ğè¼ÇÂ¼Íæ¼ÒµÄ id  ËùÔÚµÄÕ¾µã¡¢ÃÜÂëÒÔ¼°ĞÕÃûÒÔ
-// ±£Ö¤ id µÄÎ¨Ò»ĞÔ¡£Êı¾İ¿â»¹Ğè´¦Àí dbased ÖĞÊı¾İÒÔ±£Ö¤ÂşÓÎ
-// ¹ıÀ´µÄÊı¾İÄÜµÃµ½ÓĞĞ§Ê¹ÓÃ¡£
+// é…å¥—æ”¯æŒï¼š
+// æ•¸æ“šåº« mysql éœ€è¨˜éŒ„ç©å®¶çš„ id  æ‰€åœ¨çš„ç«™é»ã€å¯†ç¢¼ä»¥åŠå§“åä»¥
+// ä¿è¨¼ id çš„å”¯ä¸€æ€§ã€‚æ•¸æ“šåº«é‚„éœ€è™•ç† dbased ä¸­æ•¸æ“šä»¥ä¿è¨¼æ¼«éŠ
+// éä¾†çš„æ•¸æ“šèƒ½å¾—åˆ°æœ‰æ•ˆä½¿ç”¨ã€‚
 //
-// ÈÏÖ¤Á÷³Ì£º
-// ÂşÓÎ¾«Áé½ÓÊÜÀ´×ÔÁ¬Ïß¾«ÁéµÄÊı¾İÑéÖ¤ÇëÇó£¬²¢½«´ÓĞèÒªÇëÇóµÃ
-// Õ¾µã»òµÄÊı¾İ¡£·¢ËÍÇëÇóÊÇĞèÒª°üÀ¨ÓÃ»§ÃûºÍÕ¾µã -- Õâ¸ö±ØĞë
-// Í¨¹ıÒ»¶¨ÊÖ¶Î½øĞĞ±£ÃÜ¡£½ÓÊÜÇëÇóÒÔºó½«²éÑéÊÇ·ñÍ¨¹ı²¢·µ»ØÏà
-// Ó¦µÄĞÅÏ¢¡£½ÓÊÕµ½·µ»ØµÄÕıÈ·ĞÅÏ¢ÒÔºó£¬ÂşÓÎ¾«ÁéÖØĞÂÇı¶¯ÆğÁ¬
-// Ïß¾«Áé¡£
+// èªè¨¼æµç¨‹ï¼š
+// æ¼«éŠç²¾éˆæ¥å—ä¾†è‡ªé€£ç·šç²¾éˆçš„æ•¸æ“šé©—è¨¼è«‹æ±‚ï¼Œä¸¦å°‡å¾éœ€è¦è«‹æ±‚å¾—
+// ç«™é»æˆ–çš„æ•¸æ“šã€‚ç™¼é€è«‹æ±‚æ˜¯éœ€è¦åŒ…æ‹¬ç”¨æˆ¶åå’Œç«™é» -- é€™å€‹å¿…é ˆ
+// é€šéä¸€å®šæ‰‹æ®µé€²è¡Œä¿å¯†ã€‚æ¥å—è«‹æ±‚ä»¥å¾Œå°‡æŸ¥é©—æ˜¯å¦é€šéä¸¦è¿”å›ç›¸
+// æ‡‰çš„ä¿¡æ¯ã€‚æ¥æ”¶åˆ°è¿”å›çš„æ­£ç¢ºä¿¡æ¯ä»¥å¾Œï¼Œæ¼«éŠç²¾éˆé‡æ–°é©…å‹•èµ·é€£
+// ç·šç²¾éˆã€‚
 //
-// ¼àÌıµÄ¶Ë¿Ú(ÒÔMUDµÄÆô¶¯¶Ë¿ÚÎª»ù×¼)
+// ç›£è½çš„ç«¯å£(ä»¥MUDçš„å•Ÿå‹•ç«¯å£ç‚ºåŸºæº–)
 #define CRUISE_PORT                     21
 
-// ¾­¹ıÊÚÈ¨µÄµØÖ·
+// ç¶“éæˆæ¬Šçš„åœ°å€
 #define AGENT_IP   ({ "127.0.0.1", "61.184.100.7", "219.134.89.94", "202.110.119.87", "218.89.171.162" }) 
 
 #if 0
@@ -54,7 +54,7 @@ inherit F_DBASE;
 #define DEBUG_LOG(s)
 #endif
 
-// ´Ó°æ±¾·şÎñÆ÷È¡»ØµÄÎÄ¼şºó×º
+// å¾ç‰ˆæœ¬æœå‹™å™¨å–å›çš„æ–‡ä»¶å¾Œç¶´
 #define APPENDFIX       ".cru"
 #define STATUS_INIT                     0
 #define STATUS_CONNECT                  1
@@ -64,19 +64,19 @@ nosave int status = STATUS_INIT;
 nosave mixed *cruise_queue = allocate(MAX_AUTHENTICATING_USER);
 nosave int next_cruise = 0, queue_pointer = 0;
 
-// ±£´æ¶ş½øÖÆ´úÂëµÄÂ·¾¶
+// ä¿å­˜äºŒé€²åˆ¶ä»£ç¢¼çš„è·¯å¾‘
 nosave string bin_path;
 
 nosave int cfd;
 nosave string *cruise_file = ({ });
 nosave mapping socket_info;
 
-// ¿Í»§¶ËµÄÁ¬½ÓĞÅÏ¢
+// å®¢æˆ¶ç«¯çš„é€£æ¥ä¿¡æ¯
 nosave mixed *client_info = 0;
-// ´«ËÍµÄÎÄ¼ş
+// å‚³é€çš„æ–‡ä»¶
 string *fetch_file_list = 0;
 
-// Ìá¹©¸øÍâ²¿µÄ½Ó¿Ú
+// æä¾›çµ¦å¤–éƒ¨çš„æ¥å£
 int fetch_file(string file, string sites);
 int authenticate_user(object ob, string sites);
 
@@ -114,7 +114,7 @@ void create()
 {
         seteuid(ROOT_UID);
         bin_path = get_config(__SAVE_BINARIES_DIR__);
-        set("channel_id", "ÂşÓÎ¾«Áé");
+        set("channel_id", "æ¼«éŠç²¾éˆ");
 
         call_out("server_init", 0);
 }
@@ -188,20 +188,20 @@ void remove(string euid)
                 return;
 
         if (sizeof(socket_info) > 0)
-                error("ÂşÓÎ¾«Áé£ºÄ¿Ç°ÕıÔÚÓĞÕ¾µãºÍ±¾Õ¾ÂşÓÎÊı¾İ£¬Äã²»ÄÜ´İ»ÙÂşÓÎ¾«Áé¡£\n");
+                error("æ¼«éŠç²¾éˆï¼šç›®å‰æ­£åœ¨æœ‰ç«™é»å’Œæœ¬ç«™æ¼«éŠæ•¸æ“šï¼Œä½ ä¸èƒ½æ‘§æ¯€æ¼«éŠç²¾éˆã€‚\n");
 
         if (cfd && arrayp(client_info) && client_info[STATUS] != STATUS_FINISHED)
-                error("ÂşÓÎ¾«Áé£ºÄ¿Ç°Êı¾İÕıÔÚÂşÓÎÖĞ£¬Äã²»ÄÜ´İ»ÙÂşÓÎ¾«Áé¡£\n");
+                error("æ¼«éŠç²¾éˆï¼šç›®å‰æ•¸æ“šæ­£åœ¨æ¼«éŠä¸­ï¼Œä½ ä¸èƒ½æ‘§æ¯€æ¼«éŠç²¾éˆã€‚\n");
 }
 
-// Ìá¹©°æ±¾·şÎñ
+// æä¾›ç‰ˆæœ¬æœå‹™
 protected void server_init()
 {
         int port;
 
-        CHANNEL_D->do_channel(this_object(), "sys", "ÂşÓÎ¾«ÁéÒÑ¾­Æô¶¯¡£");
+        CHANNEL_D->do_channel(this_object(), "sys", "æ¼«éŠç²¾éˆå·²ç¶“å•Ÿå‹•ã€‚");
 
-        // ´´½¨ÂşÓÎÍ¨Ñ¶µÄSOCKET
+        // å‰µå»ºæ¼«éŠé€šè¨Šçš„SOCKET
         cfd = socket_create(STREAM_BINARY,
                             "in_read_callback",
                             "in_close_callback" );
@@ -212,7 +212,7 @@ protected void server_init()
                 return;
         }
 
-        // È»ºó°ó¶¨SOCKET
+        // ç„¶å¾Œç¶å®šSOCKET
         port = __PORT__ + CRUISE_PORT;
         if (socket_bind(cfd, port) < 0)
         {
@@ -221,18 +221,18 @@ protected void server_init()
                 return;
         }
 
-        // ×îºó¼àÌı
+        // æœ€å¾Œç›£è½
         if (socket_listen(cfd, "in_listen_callback" ) < 0)
         {
                 log_file("cruise", sprintf("%s Failed to listen to socket.\n", log_time()));
                 return;
         }
 
-        // ³õÊ¼»¯Á¬½ÓĞÅÏ¢
+        // åˆå§‹åŒ–é€£æ¥ä¿¡æ¯
         socket_info = ([ ]);
 }
 
-// ±¾µØÕ¾¼àÌıÀ´×ÔÆäËûÕ¾µãµÄÇëÇó
+// æœ¬åœ°ç«™ç›£è½ä¾†è‡ªå…¶ä»–ç«™é»çš„è«‹æ±‚
 protected void in_listen_callback(int fd)
 {
         int new_fd;
@@ -242,7 +242,7 @@ protected void in_listen_callback(int fd)
 
         if ((new_fd = socket_accept(fd, "in_read_callback",
                                         "in_write_callback")) < 0)
-                // Ã»ÓĞ³É¹¦µÄ½ÓÊÕÕâ¸öÁ¬½ÓÇëÇó
+                // æ²’æœ‰æˆåŠŸçš„æ¥æ”¶é€™å€‹é€£æ¥è«‹æ±‚
                 return;
 
         address = socket_address(new_fd);
@@ -250,29 +250,29 @@ protected void in_listen_callback(int fd)
             // ! CONFIG_D->query(ip))
             member_array(ip, AGENT_IP) == -1)
         {
-                // Õâ¸öµØÖ·Ã»ÓĞ¾­¹ıÊÚÈ¨
-                sys_info(sprintf("Õ¾µã %s µØÖ·Ã»ÓĞ¾­¹ıÊÚÈ¨¡£", 
+                // é€™å€‹åœ°å€æ²’æœ‰ç¶“éæˆæ¬Š
+                sys_info(sprintf("ç«™é» %s åœ°å€æ²’æœ‰ç¶“éæˆæ¬Šã€‚", 
                          stringp(address) ? address : "unknow"));            
                 socket_close(new_fd);
                 return;
         }
 
-        sys_info(sprintf("Õ¾µã %s Á¬½Ó±¾·şÎñÆ÷¿ªÊ¼¹¹½¨Í¨Ñ¶¡£", ip));
+        sys_info(sprintf("ç«™é» %s é€£æ¥æœ¬æœå‹™å™¨é–‹å§‹æ§‹å»ºé€šè¨Šã€‚", ip));
 
         socket_info[new_fd] = allocate(8);
         socket_info[new_fd][STATUS] = STATUS_LOGIN;
         socket_info[new_fd][CMD_BUFFER] = "";
         socket_info[new_fd][CMD_QUEUE] = ({ });
         socket_info[new_fd][PENDING_WRITE] = ({ });
-        socket_info[new_fd][SUB_SITES] = "²»Ïê";
+        socket_info[new_fd][SUB_SITES] = "ä¸è©³";
         
-        // ¸üĞÂ×´Ì¬
+        // æ›´æ–°ç‹€æ…‹
         socket_info[new_fd][STATUS] = STATUS_WAIT_COMMAND;
         in_write_callback(new_fd);
 
 }
 
-// ½ÓÊÜĞÅÏ¢
+// æ¥å—ä¿¡æ¯
 protected void in_read_callback(int fd, mixed mess)
 {
         int cc;
@@ -284,11 +284,11 @@ protected void in_read_callback(int fd, mixed mess)
                 return;
 
         if (stringp(mess))
-                // ½ÓÊÕµ½ÁË×Ö·û´®
+                // æ¥æ”¶åˆ°äº†å­—ç¬¦ä¸²
                 str = mess;
         else
         if (bufferp(mess))
-                // ½ÓÊÕµ½ÁË»º³åÇø
+                // æ¥æ”¶åˆ°äº†ç·©æ²–å€
                 str = read_buffer(mess, 0, sizeof(mess));
         else
                 return;
@@ -306,16 +306,16 @@ protected void in_read_callback(int fd, mixed mess)
 
         if (sizeof(cmds) > 1)
         {
-                // ½«ÕâĞ©ÃüÁî·ÅÈëµ½ÃüÁî¶ÓÁĞÖĞ
+                // å°‡é€™äº›å‘½ä»¤æ”¾å…¥åˆ°å‘½ä»¤éšŠåˆ—ä¸­
                 cc = sizeof(socket_info[fd][CMD_QUEUE]);
                 socket_info[fd][CMD_QUEUE] += cmds[0..<2];
                 if (socket_info[fd][STATUS] == STATUS_WAIT_COMMAND)
-                        // ÕıÔÚ½ÓÊÜÃüÁî×´Ì¬
+                        // æ­£åœ¨æ¥å—å‘½ä»¤ç‹€æ…‹
                         parse_cmd(fd);
         }
 }
 
-// ³É¹¦Ğ´Èë
+// æˆåŠŸå¯«å…¥
 protected void in_write_callback(int fd)
 {
         buffer buf;
@@ -325,28 +325,28 @@ protected void in_write_callback(int fd)
 
         for (i = 0; i < 32; i++)
         {
-                // Ñ­»·´¦ÀíÏûÏ¢
+                // å¾ªç’°è™•ç†æ¶ˆæ¯
                 reset_eval_cost();
 
-                // ÒÑ¾­´¦ÀíÍêÁË£¿
+                // å·²ç¶“è™•ç†å®Œäº†ï¼Ÿ
                 if (! arrayp(socket_info[fd]))
-                        // ÊÇ£¬Õâ¸ö²»ĞèÒª¼ÌĞø´¦ÀíÁË
+                        // æ˜¯ï¼Œé€™å€‹ä¸éœ€è¦ç¹¼çºŒè™•ç†äº†
                         return;
 
-                // Èç¹ûÓĞ×èÈûµÄÆÕÍ¨ÏûÏ¢£¬ÔòÎÒ·¢ËÍ³öÈ¥
+                // å¦‚æœæœ‰é˜»å¡çš„æ™®é€šæ¶ˆæ¯ï¼Œå‰‡æˆ‘ç™¼é€å‡ºå»
                 while (sizeof(socket_info[fd][PENDING_WRITE]))
                 {
-                        // ÓĞ×èÈûµÄÏûÏ¢£¬·¢ËÍÖ®
+                        // æœ‰é˜»å¡çš„æ¶ˆæ¯ï¼Œç™¼é€ä¹‹
                         if (send_pending_msg(fd) != 0)
-                                // Ã»ÓĞ³É¹¦µÄ·¢ËÍ£¬µÈ´ıÏÂÒ»´Î·¢ËÍ
+                                // æ²’æœ‰æˆåŠŸçš„ç™¼é€ï¼Œç­‰å¾…ä¸‹ä¸€æ¬¡ç™¼é€
                                 return;
                 }
 
-                // ¸ù¾İµ±Ç°µÄ×´Ì¬½øĞĞ½øÒ»²½´¦Àí
+                // æ ¹æ“šç•¶å‰çš„ç‹€æ…‹é€²è¡Œé€²ä¸€æ­¥è™•ç†
                 switch (socket_info[fd][STATUS])
                 {
                 case STATUS_SENDING:
-                        // ÕıÔÚ·¢ËÍÎÄ¼ş
+                        // æ­£åœ¨ç™¼é€æ–‡ä»¶
                         pos = socket_info[fd][FILE_POS];
                         len = socket_info[fd][FILE_SIZE] - pos;
                         if (len > FILE_BLOCK)
@@ -355,77 +355,77 @@ protected void in_write_callback(int fd)
                         {
                                 buf = read_buffer((string) socket_info[fd][FILE_NAME], pos, len);
                                 if (sizeof(buf) != len)
-                                        // ¶ÁÈ¡Ã»ÓĞÍêÈ«³É¹¦£¿ÌîĞ´Áã·¢ËÍ¡£
+                                        // è®€å–æ²’æœ‰å®Œå…¨æˆåŠŸï¼Ÿå¡«å¯«é›¶ç™¼é€ã€‚
                                         buf = allocate_buffer(len);
-                                // ÅĞ¶ÏÕâ´Î²Ù×÷µÄ½á¹û
+                                // åˆ¤æ–·é€™æ¬¡æ“ä½œçš„çµæœ
                                 switch (socket_write(fd, buf))
                                 {
                                 case EESUCCESS:
-                                        // ÒÆ¶¯ÓÎ±ê
+                                        // ç§»å‹•éŠæ¨™
                                         pos += len;
                                         break;
 
                                 case EECALLBACK:
-                                        // ÒÆ¶¯ÓÎ±ê
+                                        // ç§»å‹•éŠæ¨™
                                         pos += len;
 
-                                        // µÈ´ıCALLBACK£¬ÏÈ²»¼ÌĞø´¦Àí
+                                        // ç­‰å¾…CALLBACKï¼Œå…ˆä¸ç¹¼çºŒè™•ç†
                                         socket_info[fd][FILE_POS] = pos;
                                         return;
 
                                 case EEWOULDBLOCK:
-                                        // ·¢ËÍÃ¦
+                                        // ç™¼é€å¿™
                                         call_out("in_write_callback", 2, fd);
                                         return;
 
                                 default:
-                                        // ·¢ËÍÊ§°Ü£¬µÈ´ıÏÂ´Îcallback
+                                        // ç™¼é€å¤±æ•—ï¼Œç­‰å¾…ä¸‹æ¬¡callback
                                         return;
                                 }
                         }
 
-                        // ÅĞ¶ÏÎÄ¼şÊÇ·ñ·¢ËÍÍê±Ï
+                        // åˆ¤æ–·æ–‡ä»¶æ˜¯å¦ç™¼é€å®Œç•¢
                         if ((socket_info[fd][FILE_POS] = pos) >=
                             socket_info[fd][FILE_SIZE])
                         {  
                                 file = socket_info[fd][FILE_NAME];
-                                // ÔİÊ±È¡ÏûÁË½«±»ÂşÓÎµÄ×ÊÁÏÎÄ¼ş¸üÃû¼´È¡ÏûÁËÉ¾³ı±»ÂşÓÎµÄ×ÊÁÏÎÄ¼ş
+                                // æš«æ™‚å–æ¶ˆäº†å°‡è¢«æ¼«éŠçš„è³‡æ–™æ–‡ä»¶æ›´åå³å–æ¶ˆäº†åˆªé™¤è¢«æ¼«éŠçš„è³‡æ–™æ–‡ä»¶
                                 // rename(file, file + ".oo");  
                                                               
-                                // ÎÄ¼şÒÑ¾­·¢ËÍÍê±Ï£¬¸üĞÂ×´Ì¬
+                                // æ–‡ä»¶å·²ç¶“ç™¼é€å®Œç•¢ï¼Œæ›´æ–°ç‹€æ…‹
                                 socket_info[fd][STATUS] = STATUS_WAIT_COMMAND;
                                 if (! sizeof(socket_info[fd][CMD_QUEUE]))
-                                        // ÒÑ¾­Ã»ÓĞ´ı´¦ÀíµÄÃüÁîÁË
+                                        // å·²ç¶“æ²’æœ‰å¾…è™•ç†çš„å‘½ä»¤äº†
                                         return;
 
-                                // ¼ÌĞø´¦ÀíÃüÁî£ºÎªÊ²Ã´ÒªÓÃ
-                                // this_object() ½øĞĞºô½Ğ£¿
-                                // Õâ¸öÊÇ²»ÄÜÊ¡ÂÔµÄ£¬ÒòÎªÕâ
-                                // ÑùÆäËü²¿·ÖµÄº¯Êı¾Í¿ÉÒÔ¸ù
-                                // ¾İprevious_object() ·Ö±æ
-                                // ÊÇ·ñÊÔÔËĞĞÔÚcallbackÄÚ¡£
+                                // ç¹¼çºŒè™•ç†å‘½ä»¤ï¼šç‚ºä»€éº¼è¦ç”¨
+                                // this_object() é€²è¡Œå‘¼å«ï¼Ÿ
+                                // é€™å€‹æ˜¯ä¸èƒ½çœç•¥çš„ï¼Œå› ç‚ºé€™
+                                // æ¨£å…¶å®ƒéƒ¨åˆ†çš„å‡½æ•¸å°±å¯ä»¥æ ¹
+                                // æ“šprevious_object() åˆ†è¾¨
+                                // æ˜¯å¦è©¦é‹è¡Œåœ¨callbackå…§ã€‚
                                 this_object()->parse_cmd(fd);
 
-                                // ¼ÌĞø£¬Ñ­»·½«»á´¦ÀíÃüÁî²úÉúµÄ½á¹û
+                                // ç¹¼çºŒï¼Œå¾ªç’°å°‡æœƒè™•ç†å‘½ä»¤ç”¢ç”Ÿçš„çµæœ
                         }
 
-                        // ·¢ËÍ´¦ÀíÍê±Ï
+                        // ç™¼é€è™•ç†å®Œç•¢
                         break;
         
                 default:
-                        // Î´¶¨Òå×´Ì¬£¬ÎŞ²Ù×÷
+                        // æœªå®šç¾©ç‹€æ…‹ï¼Œç„¡æ“ä½œ
                         return;
                 }
 
-                // Ò»´Î´¦Àí(switch)Íê±Ï£¬Ñ­»·¼ÌĞø´¦Àí
+                // ä¸€æ¬¡è™•ç†(switch)å®Œç•¢ï¼Œå¾ªç’°ç¹¼çºŒè™•ç†
         }
 
-        // ÔËĞĞÌ«¾ÃÁË
-        debug_info("Ïò SOCKET Ğ´ÈëÊı¾İÌ«¶à£¬Ôİ»º¡£");
+        // é‹è¡Œå¤ªä¹…äº†
+        debug_info("å‘ SOCKET å¯«å…¥æ•¸æ“šå¤ªå¤šï¼Œæš«ç·©ã€‚");
         call_out("in_write_callback", 1, fd);
 }
 
-// Á¬½Ó¶Ï¿ª
+// é€£æ¥æ–·é–‹
 protected void in_close_callback(int fd)
 {
         string address;
@@ -436,13 +436,13 @@ protected void in_close_callback(int fd)
         else
                 address = "unknow";
 
-        sys_info(sprintf("Õ¾µã %s ºÍ±¾Õ¾¶Ï¿ªÁËÁ¬½Ó¡£", address));
+        sys_info(sprintf("ç«™é» %s å’Œæœ¬ç«™æ–·é–‹äº†é€£æ¥ã€‚", address));
 
-        // Çå³ıĞÅÏ¢
+        // æ¸…é™¤ä¿¡æ¯
         map_delete(socket_info, fd);
 }
 
-// ¹© LOGIN_D µ÷ÓÃµÄ½Ó¿Ú
+// ä¾› LOGIN_D èª¿ç”¨çš„æ¥å£
 int authenticate_user(object ob, string sites)
 {
         int is_cruise;
@@ -454,7 +454,7 @@ int authenticate_user(object ob, string sites)
                 
         if (! stringp(sites) || sites == LOCAL_STATION)
         {
-                write(HIY "¸ÃÈËÎïËùÔÚµÄÕ¾µãÃ»ÓĞµÃµ½È·ÈÏ»òÕıÔÚ±¾Õ¾£¬ÂşÓÎ±»Ç¿ĞĞÖĞÖ¹¡£\n" NOR);
+                write(HIY "è©²äººç‰©æ‰€åœ¨çš„ç«™é»æ²’æœ‰å¾—åˆ°ç¢ºèªæˆ–æ­£åœ¨æœ¬ç«™ï¼Œæ¼«éŠè¢«å¼·è¡Œä¸­æ­¢ã€‚\n" NOR);
                 return 0;
         }
         
@@ -465,15 +465,15 @@ int authenticate_user(object ob, string sites)
                               
         if (is_cruise == 3)
         {
-                write(HIY "ÓÉÓÚÍ¬Ê±ÔÚÂşÓÎ¸ÃÈËÎïµµ°¸£¬ÂşÓÎ±»Ç¿ĞĞÖĞÖ¹¡£\n" NOR);
+                write(HIY "ç”±äºåŒæ™‚åœ¨æ¼«éŠè©²äººç‰©æª”æ¡ˆï¼Œæ¼«éŠè¢«å¼·è¡Œä¸­æ­¢ã€‚\n" NOR);
                 return 0;
         }
  
         next_next = (next_cruise + 1) % MAX_AUTHENTICATING_USER;
         if (next_next == queue_pointer) 
         {
-                // Í¬Ê±ÔÊĞíÂşÓÎµÄÍæ¼ÒÊıÁ¿³¬¹ıÉÏÏŞ
-                write(HIY "ÂşÓÎ¶ÓÁĞÒÑÂú£¬ÇëÉÔºóÔÚÔÙ½øĞĞÊı¾İÂşÓÎ¡£\n" NOR);
+                // åŒæ™‚å…è¨±æ¼«éŠçš„ç©å®¶æ•¸é‡è¶…éä¸Šé™
+                write(HIY "æ¼«éŠéšŠåˆ—å·²æ»¿ï¼Œè«‹ç¨å¾Œåœ¨å†é€²è¡Œæ•¸æ“šæ¼«éŠã€‚\n" NOR);
                 return 0;
         }
         
@@ -484,25 +484,25 @@ int authenticate_user(object ob, string sites)
 
         DATABASE_D->db_set_user(cruise_id, "online", 3);
 
-        write(HIR "Á¬½ÓÕ¾µã·şÎñÆ÷»ñÈ¡ÈËÎïµÄÊı¾İÖĞ..£¬ÇëÉÔºóÔÙ³¢ÊÔµÇÂ½¡£\n" NOR);
+        write(HIR "é€£æ¥ç«™é»æœå‹™å™¨ç²å–äººç‰©çš„æ•¸æ“šä¸­..ï¼Œè«‹ç¨å¾Œå†å˜—è©¦ç™»é™¸ã€‚\n" NOR);
         
         set_heart_beat(1);
         return 1;
 }                         
 
-// ÏòÕ¾µã·şÎñÆ÷¶Ë·¢ËÍÃüÁî
+// å‘ç«™é»æœå‹™å™¨ç«¯ç™¼é€å‘½ä»¤
 void send_command(int fd, string cmd)
 {
         if (! fd)
-                // ¼ì²éµ±Ç°Á¬½ÓµÄCFD
+                // æª¢æŸ¥ç•¶å‰é€£æ¥çš„CFD
                 if (! (fd = cfd)) return;
                 
 
         cmd += "\n";
         if (sizeof(client_info[PENDING_WRITE]))
         {
-                // ÒÑ¾­ÓĞ×èÈûĞèÒª·¢ËÍµÄÊı¾İÁË£¬Õâ´Î·¢ËÍµÄÊı
-                // ¾İÏÈ×èÈû
+                // å·²ç¶“æœ‰é˜»å¡éœ€è¦ç™¼é€çš„æ•¸æ“šäº†ï¼Œé€™æ¬¡ç™¼é€çš„æ•¸
+                // æ“šå…ˆé˜»å¡
                 client_info[PENDING_WRITE] += ({ cmd });
                 return;
         }
@@ -511,23 +511,23 @@ void send_command(int fd, string cmd)
         {
         case EESUCCESS:
         case EECALLBACK:
-                // ·¢ËÍ³É¹¦ÁË
+                // ç™¼é€æˆåŠŸäº†
                 return;
 
         case EEWOULDBLOCK:
-                // ·¢ËÍÊı¾İ×èÈû
+                // ç™¼é€æ•¸æ“šé˜»å¡
                 client_info[PENDING_WRITE] += ({ cmd });
                 call_out("syn_write_callback", 2, fd);
                 return;
 
         default:
-                // ·¢ËÍÊ§°Ü
+                // ç™¼é€å¤±æ•—
                 client_info[PENDING_WRITE] += ({ cmd });
                 return;
         }
 }
 
-// ·¢ËÍ×èÈûµÄÏûÏ¢
+// ç™¼é€é˜»å¡çš„æ¶ˆæ¯
 
 protected int send_pending_msg(int fd)
 {
@@ -538,17 +538,17 @@ protected int send_pending_msg(int fd)
         switch (socket_write(fd, result))
         {
         case EESUCCESS:
-                // ·¢ËÍ³É¹¦ÁË
+                // ç™¼é€æˆåŠŸäº†
                 socket_info[fd][PENDING_WRITE] = socket_info[fd][PENDING_WRITE][1..<1];
                 return 0;
 
         case EECALLBACK:
-                // ĞèÒªµÈ´ı
+                // éœ€è¦ç­‰å¾…
                 socket_info[fd][PENDING_WRITE] = socket_info[fd][PENDING_WRITE][1..<1];
                 return -1;
 
         case EEWOULDBLOCK:
-                // ·¢ËÍÊı¾İ×èÈû
+                // ç™¼é€æ•¸æ“šé˜»å¡
                 call_out("in_write_callback", 2, fd);
                 return -1;
 
@@ -556,13 +556,13 @@ protected int send_pending_msg(int fd)
         }
 }
 
-// ÓÉÓÚÃüÁî¼òµ¥£¬²»²ÉÓÃ³£¹æµÄÓï·¨·ÖÎö¡£
+// ç”±äºå‘½ä»¤ç°¡å–®ï¼Œä¸æ¡ç”¨å¸¸è¦çš„èªæ³•åˆ†æã€‚
 protected void parse_cmd(int fd)
 {
         string cmd;
         string word, arg;
 
-        // È¡³öÒ»ÌõÃüÁî½øĞĞ´¦Àí
+        // å–å‡ºä¸€æ¢å‘½ä»¤é€²è¡Œè™•ç†
         cmd = socket_info[fd][CMD_QUEUE][0];
         socket_info[fd][CMD_QUEUE] = socket_info[fd][CMD_QUEUE][1..<1];
 
@@ -588,7 +588,7 @@ protected void parse_cmd(int fd)
         }
 }
 
-// ¶ÁÈ¡Íæ¼Ò×ÔÔìÊı¾İ
+// è®€å–ç©å®¶è‡ªé€ æ•¸æ“š
 protected void cmd_getfile(int fd, string arg)
 {
         string id;
@@ -596,7 +596,7 @@ protected void cmd_getfile(int fd, string arg)
 
         if (stringp(arg) && sscanf(arg, "%s from %s", id, mudn) == 2)
         {
-                sys_info(sprintf("Õ¾µã %sÕıÔÚ¶ÁÈ¡ÑéÖ¤ĞÅÏ¢£¬×¼±¸ÂşÓÎÍæ¼Ò(%s)Êı¾İ¡£", mudn, id));
+                sys_info(sprintf("ç«™é» %sæ­£åœ¨è®€å–é©—è¨¼ä¿¡æ¯ï¼Œæº–å‚™æ¼«éŠç©å®¶(%s)æ•¸æ“šã€‚", mudn, id));
                 socket_info[fd][SUB_SITES] = mudn;
         }
 
@@ -604,13 +604,13 @@ protected void cmd_getfile(int fd, string arg)
         return;
 }
 
-// ¶ÁÈ¡Ä³Ò»¸öÎÄ¼ş
+// è®€å–æŸä¸€å€‹æ–‡ä»¶
 protected void cmd_get(int fd, string arg)
 {
         string ban;
         int last;
 
-        // ²é¿´ÎÄ¼ş
+        // æŸ¥çœ‹æ–‡ä»¶
         if (! arg || arg[0] != '/')
         {
                 send_error_msg(fd, sprintf("no such file(%O).\n", arg));
@@ -619,11 +619,11 @@ protected void cmd_get(int fd, string arg)
 
         last = strlen(arg) - 2;
         
-        // ·¢ËÍ°æ±¾¼ÇÂ¼ÏÂµÄÎÄ¼ş
+        // ç™¼é€ç‰ˆæœ¬è¨˜éŒ„ä¸‹çš„æ–‡ä»¶
         send_file(fd, arg, arg);
 }
 
-// ¹Ø±ÕÁ¬½Ó
+// é—œé–‰é€£æ¥
 protected void cmd_close(int fd, string arg)
 {
         string address;
@@ -634,12 +634,12 @@ protected void cmd_close(int fd, string arg)
         else
                 address = "unknow";
 
-        sys_info(sprintf("Õ¾µã %s ºÍ±¾Õ¾Êı¾İÂşÓÎÍê±Ï¡£", address));
+        sys_info(sprintf("ç«™é» %s å’Œæœ¬ç«™æ•¸æ“šæ¼«éŠå®Œç•¢ã€‚", address));
 
         send_result(fd, RESULT_FINISH "ok\n");
 }
 
-// Ïò¶Ô·½·¢ËÍÒ»Ìõ½á¹ûĞÅÏ¢
+// å‘å°æ–¹ç™¼é€ä¸€æ¢çµæœä¿¡æ¯
 protected int send_result(int fd, string msg)
 {
         string result;
@@ -648,8 +648,8 @@ protected int send_result(int fd, string msg)
 
         if (sizeof(socket_info[fd][PENDING_WRITE]))
         {
-                // ÒÑ¾­ÓĞ×èÈûĞèÒª·¢ËÍµÄÊı¾İÁË£¬Õâ´Î·¢ËÍµÄÊı
-                // ¾İÏÈ×èÈû
+                // å·²ç¶“æœ‰é˜»å¡éœ€è¦ç™¼é€çš„æ•¸æ“šäº†ï¼Œé€™æ¬¡ç™¼é€çš„æ•¸
+                // æ“šå…ˆé˜»å¡
                 socket_info[fd][PENDING_WRITE] += ({ result });
                 return -1;
         }
@@ -657,16 +657,16 @@ protected int send_result(int fd, string msg)
         switch (socket_write(fd, result))
         {
         case EESUCCESS:
-                // ·¢ËÍ³É¹¦ÁË
+                // ç™¼é€æˆåŠŸäº†
                 return 0;
 
         case EECALLBACK:
-                // ĞèÒªµÈ´ı
+                // éœ€è¦ç­‰å¾…
                 // socket_info[fd][PENDING_WRITE] += ({ result });
                 return -1;
 
         case EEWOULDBLOCK:
-                // ·¢ËÍÊı¾İ×èÈû
+                // ç™¼é€æ•¸æ“šé˜»å¡
                 socket_info[fd][PENDING_WRITE] += ({ result });
                 call_out("in_write_callback", 2, fd);
                 return -1;
@@ -676,37 +676,37 @@ protected int send_result(int fd, string msg)
         }
 }
 
-// Ïò¶Ô·½·¢ËÍÒ»Ìõ´íÎóĞÅÏ¢
+// å‘å°æ–¹ç™¼é€ä¸€æ¢éŒ¯èª¤ä¿¡æ¯
 protected int send_error_msg(int fd, string msg)
 {
         return send_result(fd, RESULT_ERR + msg);
 }
 
-// Ïò¶Ô·½·¢ËÍÒ»¸öÎÄ¼ş
+// å‘å°æ–¹ç™¼é€ä¸€å€‹æ–‡ä»¶
 protected void send_file(int fd, string file, string peer_name)
 {
         int fs;
 
-        // Ö±½Ó·¢ËÍ
+        // ç›´æ¥ç™¼é€
         if ((fs = file_size(file)) < 0)
         {
                 send_error_msg(fd, sprintf("read file(%s) error.\n", file));
                 return;
         }
 
-        // ¸üĞÂ×´Ì¬£¬È»ºóÊ×ÏÈ·¢ËÍÎÄ¼şµÄ³¤¶È
+        // æ›´æ–°ç‹€æ…‹ï¼Œç„¶å¾Œé¦–å…ˆç™¼é€æ–‡ä»¶çš„é•·åº¦
         socket_info[fd][FILE_NAME] = file;
         socket_info[fd][FILE_SIZE] = fs;
         socket_info[fd][FILE_POS] = 0;
         socket_info[fd][STATUS] = STATUS_SENDING;
         if (send_result(fd, sprintf(RESULT_FILE "%s %d\n", peer_name, fs)) == 0 &&
             previous_object() != this_object())
-                // ³É¹¦·¢ËÍÁËµÄÓ¦´ğ£¬²¢ÇÒµ±Ç°²»ÊÇÓÉin_write_callback
-                // µ÷ÓÃ½øÈë£¬Ôò¼ÌĞø·¢ËÍÎÄ¼ş
+                // æˆåŠŸç™¼é€äº†çš„æ‡‰ç­”ï¼Œä¸¦ä¸”ç•¶å‰ä¸æ˜¯ç”±in_write_callback
+                // èª¿ç”¨é€²å…¥ï¼Œå‰‡ç¹¼çºŒç™¼é€æ–‡ä»¶
                 in_write_callback(fd);     
 }
 
-// ½ÓÊÕÎÄ¼şÄÚÈİ
+// æ¥æ”¶æ–‡ä»¶å…§å®¹
 protected int syn_receive_file(buffer buf)
 {
         mixed *st;
@@ -717,43 +717,43 @@ protected int syn_receive_file(buffer buf)
         file = client_info[FILE_NAME];
         len =  client_info[FILE_SIZE] - client_info[FILE_POS];
         if (len > sizeof(buf))
-                // ²»ĞèÒª½«bufÖĞµÄÊı¾İÈ«²¿Ğ´Èë
+                // ä¸éœ€è¦å°‡bufä¸­çš„æ•¸æ“šå…¨éƒ¨å¯«å…¥
                 len = sizeof(buf);
 
         write_buffer(file + APPENDFIX,
                      client_info[FILE_POS], buf[0..len - 1]);
         client_info[FILE_POS] += len;
         if (client_info[FILE_POS] < client_info[FILE_SIZE])
-                // ÎÄ¼ş»¹Ã»ÓĞ½ÓÊÕÍê±Ï
+                // æ–‡ä»¶é‚„æ²’æœ‰æ¥æ”¶å®Œç•¢
                 return len;
 
-        // ³É¹¦»ñÈ¡ÎÄ¼şÍê±Ï
+        // æˆåŠŸç²å–æ–‡ä»¶å®Œç•¢
         log_file("cruise", sprintf("%s got file %s.\n",
                                     log_time(), client_info[FILE_NAME]));
         client_info[FILE_POS] = 0;
         client_info[FILE_NAME] = 0;
         client_info[FILE_SIZE] = 0;
 
-        // ²é¿´µ±Ç°µÄ×´Ì¬
+        // æŸ¥çœ‹ç•¶å‰çš„ç‹€æ…‹
         switch (client_info[STATUS])
         {
         case STATUS_SYN:
-                // ½«ÎÄ¼şÃû×ÖĞŞ¸ÄÎªÕı³£µÄÃû×Ö
+                // å°‡æ–‡ä»¶åå­—ä¿®æ”¹ç‚ºæ­£å¸¸çš„åå­—
                 rm(file);
                 rename(file + APPENDFIX, file);
 
-                // Èç¹ûÕâ¸öÎÄ¼şÊÇÒ»¸öCÎÄ¼ş£¬ÄÇÃ´ÎÒ±ØĞëÉ¾³ı
-                // ËüµÄBIN ÎÄ¼ş£¬ÒòÎªÎÒĞèÒªÖØĞÂ±àÒëËü¡£
+                // å¦‚æœé€™å€‹æ–‡ä»¶æ˜¯ä¸€å€‹Cæ–‡ä»¶ï¼Œé‚£éº¼æˆ‘å¿…é ˆåˆªé™¤
+                // å®ƒçš„BIN æ–‡ä»¶ï¼Œå› ç‚ºæˆ‘éœ€è¦é‡æ–°ç·¨è­¯å®ƒã€‚
                 sl = strlen(file) - 2;
                 if (sl > 0 && file[sl] == '.' && file[sl + 1] == 'c')
                         rm(bin_path + file[0..sl] + "b");
                 break;
 
         default:
-                // ´íÎóµÄ×´Ì¬
+                // éŒ¯èª¤çš„ç‹€æ…‹
         }
 
-        // ·µ»ØÊ¹ÓÃµÄBUFFERµÄ³¤¶È
+        // è¿”å›ä½¿ç”¨çš„BUFFERçš„é•·åº¦
         return len;
 }
 
@@ -767,10 +767,10 @@ protected int connect_server()
 
         cruise = cruise_queue[queue_pointer];
 
-        CHANNEL_D->do_channel(this_object(), "sys", "ÂşÓÎÏµÍ³³¢ÊÔÏò<" +
-                              cruise[USER_SITE] + ">»ñÈ¡ÈËÎï×ÊÁÏ¡£");
+        CHANNEL_D->do_channel(this_object(), "sys", "æ¼«éŠç³»çµ±å˜—è©¦å‘<" +
+                              cruise[USER_SITE] + ">ç²å–äººç‰©è³‡æ–™ã€‚");
                                               
-        // ´´½¨°æ±¾Í¨Ñ¶µÄSOCKET
+        // å‰µå»ºç‰ˆæœ¬é€šè¨Šçš„SOCKET
         cfd = socket_create(STREAM_BINARY,
                             "syn_read_callback",
                             "syn_close_callback" );
@@ -787,12 +787,12 @@ protected int connect_server()
                                             log_time()));
                 return 0;
         }
-        // Ä¿µÄÎª¹Ø±Õ¸Ã cfd£¬ÏµÍ³¼àÌıµÄcfdÔÚÕâÀï±»¸Ä±äÁË£¬ËùÒÔ¼àÌıµÄcfd²»»á±»¹Ø±Õ
+        // ç›®çš„ç‚ºé—œé–‰è©² cfdï¼Œç³»çµ±ç›£è½çš„cfdåœ¨é€™è£¡è¢«æ”¹è®Šäº†ï¼Œæ‰€ä»¥ç›£è½çš„cfdä¸æœƒè¢«é—œé–‰
         status = STATUS_CONNECT;
         remove_call_out("send_timeout");
         call_out("send_timeout", 180, cfd);
         
-        // ³õÊ¼»¯¿Í»§¶ËĞÅÏ¢
+        // åˆå§‹åŒ–å®¢æˆ¶ç«¯ä¿¡æ¯
         client_info = allocate(8);
         client_info[STATUS] = STATUS_CONNECTING;
         client_info[FILE_NAME] = 0;
@@ -803,7 +803,7 @@ protected int connect_server()
 
         sites = cruise[USER_SITE];
         port = __PORT__ + CRUISE_PORT;
-        // Éú³É°æ±¾·şÎñÆ÷µÄÁ¬½ÓµØÖ·
+        // ç”Ÿæˆç‰ˆæœ¬æœå‹™å™¨çš„é€£æ¥åœ°å€
         addr = sprintf("%s %d", sites, port);
 
         ret_val = socket_connect(cfd, addr,
@@ -829,7 +829,7 @@ protected int connect_server()
         return 1;
 }
 
-// ´¦Àí±¾µØ½ÓÊÕµ½µÄÀ´×ÔÆäËûÕ¾µãµÄÊı¾İ
+// è™•ç†æœ¬åœ°æ¥æ”¶åˆ°çš„ä¾†è‡ªå…¶ä»–ç«™é»çš„æ•¸æ“š
 protected void syn_read_callback(int fd, buffer buf)
 {
         string str;
@@ -845,32 +845,32 @@ protected void syn_read_callback(int fd, buffer buf)
         {
                 if (! client_info[FILE_NAME])
                 {
-                        // Ã»ÓĞÎÄ¼şÃû×Ö£¬½ÓÊÕµÄÊÇÆÕÍ¨Ó¦´ğĞÅÏ¢
+                        // æ²’æœ‰æ–‡ä»¶åå­—ï¼Œæ¥æ”¶çš„æ˜¯æ™®é€šæ‡‰ç­”ä¿¡æ¯
         
-                        // ¼ÆËãÎÒÓ¦¸Ã´Ó»º³åÇøÖĞ¶Á³öµÄ×Ö½ÚÊıÄ¿£¬ÒòÎª
-                        // ¿ÉÄÜ²»ÄÜÒ»´Î»ñµÃÆÕÍ¨µÄÓ¦´ğĞÅÏ¢£¬Òò´ËÎÒ½«
-                        // ÕâĞ©ĞÅÏ¢ÀÛ¼Æµ½RESULT_BUFFERÖĞ£¬ Ò»Ö±µ½¶Á
-                        // ÂúÆÚÍûµÄ×Ö½ÚÎªÖ¹¡£ÄÇÃ´ÎÒÕâ´Î´Ó»º³åÇø¶Á³ö
-                        // À´µÄÓ¦¸ÃÊÇ¶àÉÙ¸ö×Ö½Ú£¬¾ÍÓ¦¸Ã¼ÆËã¡£ÆäÖĞ±£
-                        // ´æÔÚFILE_POSÖĞµÄÊÇÎÒÒÑ¾­¶Á³öµÄ×Ö·û¡£
+                        // è¨ˆç®—æˆ‘æ‡‰è©²å¾ç·©æ²–å€ä¸­è®€å‡ºçš„å­—ç¯€æ•¸ç›®ï¼Œå› ç‚º
+                        // å¯èƒ½ä¸èƒ½ä¸€æ¬¡ç²å¾—æ™®é€šçš„æ‡‰ç­”ä¿¡æ¯ï¼Œå› æ­¤æˆ‘å°‡
+                        // é€™äº›ä¿¡æ¯ç´¯è¨ˆåˆ°RESULT_BUFFERä¸­ï¼Œ ä¸€ç›´åˆ°è®€
+                        // æ»¿æœŸæœ›çš„å­—ç¯€ç‚ºæ­¢ã€‚é‚£éº¼æˆ‘é€™æ¬¡å¾ç·©æ²–å€è®€å‡º
+                        // ä¾†çš„æ‡‰è©²æ˜¯å¤šå°‘å€‹å­—ç¯€ï¼Œå°±æ‡‰è©²è¨ˆç®—ã€‚å…¶ä¸­ä¿
+                        // å­˜åœ¨FILE_POSä¸­çš„æ˜¯æˆ‘å·²ç¶“è®€å‡ºçš„å­—ç¬¦ã€‚
                         len = NORMAL_RESULT_LEN - client_info[FILE_POS];
                         if (len > sizeof(buf))
-                                // Õâ´ÎÃ»ÓĞÕâÃ´¶à×Ö½Ú¿ÉÒÔÈÃÎÒ¶Á
+                                // é€™æ¬¡æ²’æœ‰é€™éº¼å¤šå­—ç¯€å¯ä»¥è®“æˆ‘è®€
                                 len = sizeof(buf);
                         client_info[FILE_POS] += len;
                         client_info[RESULT_BUFFER] += read_buffer(buf, 0, len);
-                        // È¡Ê£ÓàµÄbuffer
+                        // å–å‰©ä½™çš„buffer
                         buf = buf[len..<1];
         
                         if (client_info[FILE_POS] >= NORMAL_RESULT_LEN)
                         {
-                                // ¶Áµ½ÁËÒ»ÌõÍ¨³£µÄ·µ»ØĞÅÏ¢£¬ÖØĞÂÉè
-                                // ÖÃ»º³åÇø¡£
+                                // è®€åˆ°äº†ä¸€æ¢é€šå¸¸çš„è¿”å›ä¿¡æ¯ï¼Œé‡æ–°è¨­
+                                // ç½®ç·©æ²–å€ã€‚
                                 str = client_info[RESULT_BUFFER];
                                 client_info[RESULT_BUFFER] = "";
                                 client_info[FILE_POS] = 0;
         
-                                // ´¦Àí½ÓÊÕµ½µÄ½á¹ûĞÅÏ¢
+                                // è™•ç†æ¥æ”¶åˆ°çš„çµæœä¿¡æ¯
                                 syn_receive_result(str);
                         }
                 }
@@ -880,14 +880,14 @@ protected void syn_read_callback(int fd, buffer buf)
                                                           client_info[FILE_NAME],
                                                           client_info[FILE_POS]));
                 if (bufferp(buf) && client_info[FILE_NAME])
-                        // ½ÓÊÕÎÄ¼ş
+                        // æ¥æ”¶æ–‡ä»¶
                         buf = buf[syn_receive_file(buf)..<1];
 
-                // Èç¹ûbuf²»Îª¿Õ£¬Ôò¼ÌĞø´¦Àí
+                // å¦‚æœbufä¸ç‚ºç©ºï¼Œå‰‡ç¹¼çºŒè™•ç†
         } while (sizeof(buf) && client_info[STATUS] != STATUS_FINISHED);
 }
 
-// ÂşÓÎÊ±¿Í»§¶ËÁ¬½ÓµÄĞ´»Øµ÷º¯Êı
+// æ¼«éŠæ™‚å®¢æˆ¶ç«¯é€£æ¥çš„å¯«å›èª¿å‡½æ•¸
 void syn_write_callback(int fd)
 {
         if (fd != cfd)
@@ -898,46 +898,46 @@ void syn_write_callback(int fd)
 
         while (sizeof(client_info[PENDING_WRITE]))
         {
-                // ÓĞ×èÈûµÄÏûÏ¢£¬·¢ËÍÖ®
+                // æœ‰é˜»å¡çš„æ¶ˆæ¯ï¼Œç™¼é€ä¹‹
                 if (send_client_pending_msg() != 0)
-                        // Ã»ÓĞ³É¹¦µÄ·¢ËÍ£¬µÈ´ıÏÂÒ»´Î·¢ËÍ
+                        // æ²’æœ‰æˆåŠŸçš„ç™¼é€ï¼Œç­‰å¾…ä¸‹ä¸€æ¬¡ç™¼é€
                         return;
         }
 
-        // ¸ù¾İµ±Ç°µÄ×´Ì¬´¦Àí
+        // æ ¹æ“šç•¶å‰çš„ç‹€æ…‹è™•ç†
         switch (client_info[STATUS])
         {
         case STATUS_CONNECTING:
                 if (fetch_file_list)
                 {
-                        // Ö¸¶¨»ñµÃÄ³Ğ©ÎÄ¼ş
+                        // æŒ‡å®šç²å¾—æŸäº›æ–‡ä»¶
                         syn_fetch_file_from_server();
                         break;
                 }     
-                // ¸Õ¸ÕÁ¬½Ó£¬·¢ËÍÈ¡Íæ¼Ò×ÔÔìÊı¾İµÄÃüÁî
+                // å‰›å‰›é€£æ¥ï¼Œç™¼é€å–ç©å®¶è‡ªé€ æ•¸æ“šçš„å‘½ä»¤
                 send_command(fd, sprintf("getfile %s from %s(%s)", cruise_queue[queue_pointer][USER_ID],
                                          LOCAL_MUD_NAME(), INTERMUD_MUD_NAME,
                                          __PORT__));
                 client_info[STATUS] = STATUS_GET_ITEM;
-                sys_info("°æ±¾¾«Áé³É¹¦µÄºÍ·şÎñÆ÷½¨Á¢ÁËÍ¨Ñ¶¡£");                     
+                sys_info("ç‰ˆæœ¬ç²¾éˆæˆåŠŸçš„å’Œæœå‹™å™¨å»ºç«‹äº†é€šè¨Šã€‚");                     
                 break;
         default:
                 return;                
         }
 }
-// ÏµÍ³ĞÅÏ¢
+// ç³»çµ±ä¿¡æ¯
 protected void sys_info(string msg)
 {
         CHANNEL_D->do_channel(this_object(), "sys", msg);
 }
 
-// µ÷ÊÔĞÅÏ¢
+// èª¿è©¦ä¿¡æ¯
 protected void debug_info(string msg)
 {
         CHANNEL_D->do_channel(this_object(), "debug", msg);
 }
 
-// ¿Í»§¶Ë·¢ËÍ×èÈûµÄÏûÏ¢
+// å®¢æˆ¶ç«¯ç™¼é€é˜»å¡çš„æ¶ˆæ¯
 
 protected int send_client_pending_msg()
 {
@@ -947,33 +947,33 @@ protected int send_client_pending_msg()
         switch (socket_write(cfd, msg))
         {
         case EESUCCESS:
-                // ·¢ËÍ³É¹¦ÁË
+                // ç™¼é€æˆåŠŸäº†
                 client_info[PENDING_WRITE] = client_info[PENDING_WRITE][1..<1];
                 return 0;
 
         case EECALLBACK:
-                // ĞèÒªµÈ´ı
+                // éœ€è¦ç­‰å¾…
                 client_info[PENDING_WRITE] = client_info[PENDING_WRITE][1..<1];
                 return -1;
 
         case EEWOULDBLOCK:
-                // ·¢ËÍÊı¾İ×èÈû
+                // ç™¼é€æ•¸æ“šé˜»å¡
                 call_out("syn_write_callback", 2, cfd);
                 return -1;
 
         default:
-                // ·¢ËÍÊ§°Ü
+                // ç™¼é€å¤±æ•—
                 return -1;
         }
 }
 
-// Í¬²½Ê±¿Í»§¶ËÁ¬½ÓµÄ¶Á»Øµ÷º¯Êı
-// ÓÉÓÚ·şÎñÆ÷¿ÉÄÜ»á·µ»ØÁ½ÖÖÊı¾İ£º1 ÆÕÍ¨Ó¦´ğĞÅÏ¢  2 ¶ş½øÖÆÎÄ
-// ¼şÊı¾İ¡£Òò´Ë½ÓÊÕº¯ÊıÒÀ¾İ×´Ì¬ÖĞµÄÎÄ¼şÃû×Ö´æÔÚÓë·ñÀ´¼ø±ğÕâ
-// Á½ÖÖ×´Ì¬£ºÈç¹ûÓĞÎÄ¼şÃû×Ö£¬ÄÇÃ´¾ÍÈÏÎªÊÇ½ÓÊÕÎÄ¼şÖĞ£¬Èç¹ûÃ»
-// ÓĞ£¬ÔòÊÇ½ÓÊÕÆÕÍ¨Ó¦´ğĞÅÏ¢¡£ÆÕÍ¨Ó¦´ğĞÅÏ¢Ò»¶¨ÊÇ¹Ì¶¨¸ö×Ö½Ú£¬
-// ÒÔASCII ·½Ê½´æ·Å¡£Èç¹ûÒ»´Î½ÓÊÕÃ»ÓĞÂú×ãÆÚÍûµÄ×Ö½Ú£¬ÄÇÃ´³¤
-// ¶È½«±£´æÔÚFILE_POSÀïÃæ¡£
+// åŒæ­¥æ™‚å®¢æˆ¶ç«¯é€£æ¥çš„è®€å›èª¿å‡½æ•¸
+// ç”±äºæœå‹™å™¨å¯èƒ½æœƒè¿”å›å…©ç¨®æ•¸æ“šï¼š1 æ™®é€šæ‡‰ç­”ä¿¡æ¯  2 äºŒé€²åˆ¶æ–‡
+// ä»¶æ•¸æ“šã€‚å› æ­¤æ¥æ”¶å‡½æ•¸ä¾æ“šç‹€æ…‹ä¸­çš„æ–‡ä»¶åå­—å­˜åœ¨èˆ‡å¦ä¾†é‘’åˆ¥é€™
+// å…©ç¨®ç‹€æ…‹ï¼šå¦‚æœæœ‰æ–‡ä»¶åå­—ï¼Œé‚£éº¼å°±èªç‚ºæ˜¯æ¥æ”¶æ–‡ä»¶ä¸­ï¼Œå¦‚æœæ²’
+// æœ‰ï¼Œå‰‡æ˜¯æ¥æ”¶æ™®é€šæ‡‰ç­”ä¿¡æ¯ã€‚æ™®é€šæ‡‰ç­”ä¿¡æ¯ä¸€å®šæ˜¯å›ºå®šå€‹å­—ç¯€ï¼Œ
+// ä»¥ASCII æ–¹å¼å­˜æ”¾ã€‚å¦‚æœä¸€æ¬¡æ¥æ”¶æ²’æœ‰æ»¿è¶³æœŸæœ›çš„å­—ç¯€ï¼Œé‚£éº¼é•·
+// åº¦å°‡ä¿å­˜åœ¨FILE_POSè£¡é¢ã€‚
 
 protected void syn_receive_result(string str)
 {
@@ -984,7 +984,7 @@ protected void syn_receive_result(string str)
 
         if ((len = strsrch(str, '\n')) == -1)
         {
-                // ·µ»ØµÄĞÅÏ¢²»ÕıÈ· - ±ØĞë°üº¬'\n'
+                // è¿”å›çš„ä¿¡æ¯ä¸æ­£ç¢º - å¿…é ˆåŒ…å«'\n'
                 log_file("cruise", sprintf("%s respond without '\\n' from server: %s.\n",
                                             log_time(), str));
                 DEBUG_LOG(sprintf(HIR "error syntax str = %s\n" NOR, str));
@@ -997,13 +997,13 @@ protected void syn_receive_result(string str)
 
         if (sscanf(str, RESULT_ERR "%s", msg))
         {
-                // Óöµ½ÁË´íÎó£¬ÏÈ¼ÇÂ¼½øÈëÈÕÖ¾
+                // é‡åˆ°äº†éŒ¯èª¤ï¼Œå…ˆè¨˜éŒ„é€²å…¥æ—¥å¿—
                 log_file("cruise", sprintf("%s error respond: %s\n",
                                             log_time(), msg));
                 DEBUG_LOG(str + "\n");
         }
 
-        // ¸ù¾İµ±Ç°µÄ×´Ì¬½øĞĞ´¦Àí
+        // æ ¹æ“šç•¶å‰çš„ç‹€æ…‹é€²è¡Œè™•ç†
         switch (client_info[STATUS])
         {
         case STATUS_GET_ITEM:
@@ -1017,16 +1017,16 @@ protected void syn_receive_result(string str)
                 }                
                                                 
                 // syn_get_id_data();
-                // Ã»ÓĞ·µ»ØÕı³£µÄÍæ¼ÒÊı¾İĞÅÏ¢
+                // æ²’æœ‰è¿”å›æ­£å¸¸çš„ç©å®¶æ•¸æ“šä¿¡æ¯
                 // log_file("cruise", sprintf("%s can not get cruise. server report: %s\n",
                 //                            log_time(), str));
 
-                // ÔõÃ´°ì£¿Ö»ÓĞ½áÊøÂşÓÎ
+                // æ€éº¼è¾¦ï¼Ÿåªæœ‰çµæŸæ¼«éŠ
                 // syn_finish();
                 break;
                 
         case STATUS_SYN:
-                // ½ÓÊÕÎÄ¼şµÄ³¤¶È
+                // æ¥æ”¶æ–‡ä»¶çš„é•·åº¦
                 if (! sscanf(str, RESULT_FILE "%s %d", file, len))
                 {
                         if (sscanf(str, RESULT_FINISH "%*s"))
@@ -1041,32 +1041,32 @@ protected void syn_receive_result(string str)
 
                 DEBUG_LOG(sprintf("file: %s len = %d\n", file, len));
 
-                // ¼ÇÂ¼µÄ½ÓÊÕÎÄ¼ş×´Ì¬ºÍĞÅÏ¢
+                // è¨˜éŒ„çš„æ¥æ”¶æ–‡ä»¶ç‹€æ…‹å’Œä¿¡æ¯
 
-                // ¼ÇÂ¼´«ËÍÀ´µÄÎÄ¼şµÄĞÅÏ¢
+                // è¨˜éŒ„å‚³é€ä¾†çš„æ–‡ä»¶çš„ä¿¡æ¯
                 client_info[FILE_NAME] = file;
                 client_info[FILE_POS] = 0;
                 client_info[FILE_SIZE] = len;
 
-                // Èç¹ûÓĞ£¬É¾³ıÕâ¸öÎÄ¼şµÄÁÙÊ±ÎÄ¼ş
+                // å¦‚æœæœ‰ï¼Œåˆªé™¤é€™å€‹æ–‡ä»¶çš„è‡¨æ™‚æ–‡ä»¶
                 rm(file + APPENDFIX);
 
                 sys_info(sprintf("getting(%s)...", file));
                 break;
 
         default:
-                // ²»Ó¦¸Ã½ÓÊÕµ½ĞÅÏ¢
+                // ä¸æ‡‰è©²æ¥æ”¶åˆ°ä¿¡æ¯
         }
 }
 
-// ÂşÓÎÊı¾İ½áÊø
-// ½áÊøÊ±¿ÉÄÜ³É¹¦µÄÂşÓÎÁË£¬Ò²¿ÉÄÜÃ»ÓĞ¡£
+// æ¼«éŠæ•¸æ“šçµæŸ
+// çµæŸæ™‚å¯èƒ½æˆåŠŸçš„æ¼«éŠäº†ï¼Œä¹Ÿå¯èƒ½æ²’æœ‰ã€‚
 protected void syn_finish()
 {
         mixed *cruise;
 
         seteuid(ROOT_UID);
-        sys_info("ÂşÓÎ¾«Áé£ºÂşÓÎÍæ¼ÒÊı¾İ½áÊø¡£");
+        sys_info("æ¼«éŠç²¾éˆï¼šæ¼«éŠç©å®¶æ•¸æ“šçµæŸã€‚");
 
         cruise = cruise_queue[queue_pointer];
                 
@@ -1094,7 +1094,7 @@ protected void syn_finish()
         fetch_file_list = 0;
 }
 
-// ´Ó·şÎñÆ÷ÉÏ»ñÈ¡Ò»ÅúÎÄ¼ş
+// å¾æœå‹™å™¨ä¸Šç²å–ä¸€æ‰¹æ–‡ä»¶
 protected void syn_fetch_file_from_server()
 {
         int i;
@@ -1131,7 +1131,7 @@ protected void send_cruise_file(string cruise_id, int fd)
         
         if (objectp(ob = find_player(cruise_id)))
         {
-                tell_object(HIY "ÓÉÓÚÄãµÄÈËÎïÊı¾İÕıÔÚÂşÓÎ£¬ÏµÍ³Ç¿ĞĞÊ¹ÄãÀëÏß¡£\n" NOR);             
+                tell_object(HIY "ç”±äºä½ çš„äººç‰©æ•¸æ“šæ­£åœ¨æ¼«éŠï¼Œç³»çµ±å¼·è¡Œä½¿ä½ é›¢ç·šã€‚\n" NOR);             
                 ob->save();
                 destruct(ob);
         }
@@ -1221,7 +1221,7 @@ int syn_get_id_data()
                 }
         }        
 
-        sys_info(sprintf("Á¬½ÓÕ¾µã %s ³É¹¦£¬¿ªÊ¼ÂşÓÎÈËÎï %s µÄÊı¾İ¡£", cruise[USER_SITE], cruise[USER_ID]));
+        sys_info(sprintf("é€£æ¥ç«™é» %s æˆåŠŸï¼Œé–‹å§‹æ¼«éŠäººç‰© %s çš„æ•¸æ“šã€‚", cruise[USER_SITE], cruise[USER_ID]));
         syn_fetch_file_from_server();
         return 1;
 }
@@ -1233,8 +1233,8 @@ int fetch_file(string file, string sites)
         next_next = (next_cruise + 1) % MAX_AUTHENTICATING_USER;
         if (next_next == queue_pointer) 
         {
-                // Í¬Ê±ÔÊĞíÂşÓÎµÄÍæ¼ÒÊıÁ¿³¬¹ıÉÏÏŞ
-                write(HIY "ÂşÓÎ¶ÓÁĞÒÑÂú£¬ÇëÉÔºóÔÚÔÙ½øĞĞÊı¾İÂşÓÎ¡£\n" NOR);
+                // åŒæ™‚å…è¨±æ¼«éŠçš„ç©å®¶æ•¸é‡è¶…éä¸Šé™
+                write(HIY "æ¼«éŠéšŠåˆ—å·²æ»¿ï¼Œè«‹ç¨å¾Œåœ¨å†é€²è¡Œæ•¸æ“šæ¼«éŠã€‚\n" NOR);
                 return 0;
         }
 
@@ -1245,7 +1245,7 @@ int fetch_file(string file, string sites)
         cruise_queue[next_cruise][USER_SITE] = sites;
         next_cruise = next_next;
 
-        write("ÕıÔÚÁ¬½Ó·şÎñÆ÷»ñÈ¡ÎÄ¼ş¡£\n");        
+        write("æ­£åœ¨é€£æ¥æœå‹™å™¨ç²å–æ–‡ä»¶ã€‚\n");        
         set_heart_beat(1);
         return 1;
 }
@@ -1257,11 +1257,11 @@ protected void send_timeout(int fd)
         syn_close_callback(fd);
 }
 
-// ÂşÓÎÊ±¿Í»§¶ËÁ¬½Ó¶Ï¿ªµÄ»Øµ÷º¯Êı
+// æ¼«éŠæ™‚å®¢æˆ¶ç«¯é€£æ¥æ–·é–‹çš„å›èª¿å‡½æ•¸
 protected void syn_close_callback(int fd)
 {   
         remove_call_out("send_timeout");
-        // ·ÀÖ¹»¹ÔÚÂşÓÎÖĞ±»¹Ø±Õ
+        // é˜²æ­¢é‚„åœ¨æ¼«éŠä¸­è¢«é—œé–‰
         if (queue_pointer == next_cruise &&
             status != STATUS_INIT)
                 return;
@@ -1281,7 +1281,7 @@ int clear_syn_info()
         if (previous_object() && ! is_root(previous_object()))
                 return 0;
 
-        // ·şÎñÆ÷¶Ë£ºÇå³ıÌ×½Ó×ÖµÄÁ¬½ÓĞÅÏ¢
+        // æœå‹™å™¨ç«¯ï¼šæ¸…é™¤å¥—æ¥å­—çš„é€£æ¥ä¿¡æ¯
 
         if (sizeof(socket_info) > 0)
         {
@@ -1295,10 +1295,10 @@ int clear_syn_info()
         return 0;
 
 
-        // ¿Í»§¶Ë£ºÇå³ıÂşÓÎµÄSOCKETºÍĞÅÏ¢
+        // å®¢æˆ¶ç«¯ï¼šæ¸…é™¤æ¼«éŠçš„SOCKETå’Œä¿¡æ¯
         if (cfd)
         {
-                log_file("cruise", sprintf("%s ÔİÍ£ÁËÂşÓÎÊı¾İµÄ²Ù×÷¡£\n", log_time()));
+                log_file("cruise", sprintf("%s æš«åœäº†æ¼«éŠæ•¸æ“šçš„æ“ä½œã€‚\n", log_time()));
                 syn_finish();
                 return 1;
         }

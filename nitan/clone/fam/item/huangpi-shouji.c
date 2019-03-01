@@ -23,35 +23,35 @@ mixed check_title(string arg)
         arg = replace_string(arg, "$NOR$", NOR);
 
         if (strlen(filter_color(arg)) > 30 || strlen(arg) > 100)
-                return notify_fail("Õâ¸öÍâºÅÌ«³¤ÁË£¬ÎªÁË½ÚÔ¼×ÊÔ´£¬ÇëÄãÖØĞÂÉè¶¨¡£\n");
+                return notify_fail("é€™å€‹å¤–è™Ÿå¤ªé•·äº†ï¼Œç‚ºäº†ç¯€ç´„è³‡æºï¼Œè«‹ä½ é‡æ–°è¨­å®šã€‚\n");
 
     return arg + NOR;
 }
 
 void create()
 {
-        set_name(NOR + YEL "¡¶»ÆÆ¤ÊÖ¼Ç¡·" NOR, ({ "huangpi shouji" }) );
+        set_name(NOR + YEL "ã€Šé»ƒçš®æ‰‹è¨˜ã€‹" NOR, ({ "huangpi shouji" }) );
         set_weight(100);
 
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", YEL "ÕâÊÇÒ»±¾·º»ÆµÄÆ¤²á×Ó£¬ÀïÃæ¼ÇÔØ×ÅÈçºÎĞŞ¸ÄÄúµÄÍ·ÏÎµÄÃØ¾÷¡£\n"
-                                                "Ê¹ÓÃºó¿ÉĞŞ¸ÄÄúµÄÍ·ÏÎ£¨TITLE£©£¬Ö¸Áî£ºretitle Í·ÏÎ ¼´¿É¡£\n" 
-                                                                "ÏÂÏß¶ªÊ§:·ñ\n" 
-                                                        "ÑÕÉ«¶¨Òå£¬Äú¿ÉÒÔÔÚÄúµÄÍ·ÏÎÖĞ¼ÓÈëÖ¸¶¨ÑÕÉ«£º\n"
-                                                                "$BLK$ - ºÚÉ«      $NOR$ - »Ö¸´Õı³£ÑÕÉ«\n"
-                                                                "$RED$ - ºìÉ«      $HIR$ - ÁÁºìÉ«\n"
-                                                                "$GRN$ - ÂÌÉ«      $HIG$ - ÁÁÂÌÉ«\n"
-                                                                "$YEL$ - ÍÁ»ÆÉ«    $HIY$ - »ÆÉ«\n"
-                                                                "$BLU$ - ÉîÀ¶É«    $HIB$ - À¶É«\n"
-                                                                "$MAG$ - Ç³×ÏÉ«    $HIM$ - ·ÛºìÉ«\n"
-                                                                "$CYN$ - À¶ÂÌÉ«    $HIC$ - ÌìÇàÉ«\n"
-                                                                "$WHT$ - Ç³»ÒÉ«    $HIW$ - °×É«£¨»òµ­×ÏÉ«£©\n\n"
-                                                                "¸ù¾İÏµÍ³µÄ²»Í¬£¬ÒÔÉÏÑÕÉ«¶¨ÒåÓĞÒ»¶¨Æ«²î¡£\n" NOR);
+                set("long", YEL "é€™æ˜¯ä¸€æœ¬æ³›é»ƒçš„çš®å†Šå­ï¼Œè£¡é¢è¨˜è¼‰è‘—å¦‚ä½•ä¿®æ”¹æ‚¨çš„é ­éŠœçš„ç§˜è¨£ã€‚\n"
+                                                "ä½¿ç”¨å¾Œå¯ä¿®æ”¹æ‚¨çš„é ­éŠœï¼ˆTITLEï¼‰ï¼ŒæŒ‡ä»¤ï¼šretitle é ­éŠœ å³å¯ã€‚\n" 
+                                                                "ä¸‹ç·šä¸Ÿå¤±:å¦\n" 
+                                                        "é¡è‰²å®šç¾©ï¼Œæ‚¨å¯ä»¥åœ¨æ‚¨çš„é ­éŠœä¸­åŠ å…¥æŒ‡å®šé¡è‰²ï¼š\n"
+                                                                "$BLK$ - é»‘è‰²      $NOR$ - æ¢å¾©æ­£å¸¸é¡è‰²\n"
+                                                                "$RED$ - ç´…è‰²      $HIR$ - äº®ç´…è‰²\n"
+                                                                "$GRN$ - ç¶ è‰²      $HIG$ - äº®ç¶ è‰²\n"
+                                                                "$YEL$ - åœŸé»ƒè‰²    $HIY$ - é»ƒè‰²\n"
+                                                                "$BLU$ - æ·±è—è‰²    $HIB$ - è—è‰²\n"
+                                                                "$MAG$ - æ·ºç´«è‰²    $HIM$ - ç²‰ç´…è‰²\n"
+                                                                "$CYN$ - è—ç¶ è‰²    $HIC$ - å¤©é’è‰²\n"
+                                                                "$WHT$ - æ·ºç°è‰²    $HIW$ - ç™½è‰²ï¼ˆæˆ–æ·¡ç´«è‰²ï¼‰\n\n"
+                                                                "æ ¹æ“šç³»çµ±çš„ä¸åŒï¼Œä»¥ä¸Šé¡è‰²å®šç¾©æœ‰ä¸€å®šåå·®ã€‚\n" NOR);
                 set("value", 1);
                 set("no_sell", 1);
-                        set("unit", "±¾");
+                        set("unit", "æœ¬");
         }
 
         setup();
@@ -71,7 +71,7 @@ int do_retitle(string arg)
 
                 me = this_player();
 
-                if (! arg)return notify_fail("Ö¸Áî¸ñÊ½: retitle Í·ÏÎ\n");
+                if (! arg)return notify_fail("æŒ‡ä»¤æ ¼å¼: retitle é ­éŠœ\n");
 
         if (! stringp(arg = check_title(arg)))return 1;
 
@@ -79,7 +79,7 @@ int do_retitle(string arg)
 
                 me->save();
 
-                write(HIG "ĞŞ¸ÄÍ·ÏÎ³É¹¦£¡ÄúÏÖÔÚµÄ½­ºş³ÆºÅÊÇ£º" + arg + "¡£\n" NOR);
+                write(HIG "ä¿®æ”¹é ­éŠœæˆåŠŸï¼æ‚¨ç¾åœ¨çš„æ±Ÿæ¹–ç¨±è™Ÿæ˜¯ï¼š" + arg + "ã€‚\n" NOR);
 
                 destruct(this_object());
 

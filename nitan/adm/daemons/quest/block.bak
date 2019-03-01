@@ -1,22 +1,22 @@
-// Íæ¼ÒÈÎÎñÊØ»¤½ø³Ì£ºblock.c
+// çŽ©å®¶ä»»å‹™å®ˆè­·é€²ç¨‹ï¼šblock.c
 
-// ³õ²½¹¹Ë¼£º
-// 1¡¢ÓÉ¹ÊÊÂÏµÍ³¶¨Ê±ÍÆ³öÑãÃÅ¹ØÍâ×è»÷¹ÊÊÂ£¬»½ÐÑÈÎÎñÊØ»¤¡£
-// 2¡¢ÈÎÎñÊØ»¤½øÐÐ³¡¾°µÄ³õÊ¼»¯£¬ÒÆ¶¯ÐèÒªµÄ NPC µ½³¡¾°¡£
-// 3¡¢ÈÎÎñÊØ»¤Æô¶¯ÈÎÎñÎï¼þ£¬ÈÎÎñÎï¼þ°´ÕÕÐÄÌø£¬¶¨Ê±ÅÉ³ö
-//    Æõµ¤ÎäÊ¿¶Ô³¡¾°½øÐÐ¹¥»÷¡£
-// 4¡¢Èç¹ûÈÎÒ»Æõµ¤ÎäÊ¿Í»ÆÆÑãÃÅ¹ØÔòÐû¸æ×è»÷Ê§°Ü£¬²¥·ÅÊ§
-//    °ÜÇé½Ú¹ÊÊÂ¡£
-// 5¡¢Ã¿É±ËÀÒ»¸öÆõµ¤ÎäÊ¿¶¼ÓÐÒ»¶¨½±Àø£¬È«¼ßÔòÓÐ×·¼Ó½±Àø£¬
-//    ²¥·Å³É¹¦Çé½Ú¹ÊÊÂ¡£
-// 6¡¢Íæ¼ÒÒ²¿ÉÒÔÕ¾ÔÚÁÉ¹úÒ»·½£¬³¢ÊÔÉ±ËÀ²ÎÓë×è»÷µÄ NPC£¬
-//    ³É¹¦ÕßÍ¬ÑùÓÐ½±Àø£¬Èô×è»÷Ê§°Ü£¬ÔòÓÐ×·¼Ó½±Àø¡£
+// åˆæ­¥æ§‹æ€ï¼š
+// 1ã€ç”±æ•…äº‹ç³»çµ±å®šæ™‚æŽ¨å‡ºé›é–€é—œå¤–é˜»æ“Šæ•…äº‹ï¼Œå–šé†’ä»»å‹™å®ˆè­·ã€‚
+// 2ã€ä»»å‹™å®ˆè­·é€²è¡Œå ´æ™¯çš„åˆå§‹åŒ–ï¼Œç§»å‹•éœ€è¦çš„ NPC åˆ°å ´æ™¯ã€‚
+// 3ã€ä»»å‹™å®ˆè­·å•Ÿå‹•ä»»å‹™ç‰©ä»¶ï¼Œä»»å‹™ç‰©ä»¶æŒ‰ç…§å¿ƒè·³ï¼Œå®šæ™‚æ´¾å‡º
+//    å¥‘ä¸¹æ­¦å£«å°å ´æ™¯é€²è¡Œæ”»æ“Šã€‚
+// 4ã€å¦‚æžœä»»ä¸€å¥‘ä¸¹æ­¦å£«çªç ´é›é–€é—œå‰‡å®£å‘Šé˜»æ“Šå¤±æ•—ï¼Œæ’­æ”¾å¤±
+//    æ•—æƒ…ç¯€æ•…äº‹ã€‚
+// 5ã€æ¯æ®ºæ­»ä¸€å€‹å¥‘ä¸¹æ­¦å£«éƒ½æœ‰ä¸€å®šçŽå‹µï¼Œå…¨æ®²å‰‡æœ‰è¿½åŠ çŽå‹µï¼Œ
+//    æ’­æ”¾æˆåŠŸæƒ…ç¯€æ•…äº‹ã€‚
+// 6ã€çŽ©å®¶ä¹Ÿå¯ä»¥ç«™åœ¨é¼åœ‹ä¸€æ–¹ï¼Œå˜—è©¦æ®ºæ­»åƒèˆ‡é˜»æ“Šçš„ NPCï¼Œ
+//    æˆåŠŸè€…åŒæ¨£æœ‰çŽå‹µï¼Œè‹¥é˜»æ“Šå¤±æ•—ï¼Œå‰‡æœ‰è¿½åŠ çŽå‹µã€‚
 
 #include <ansi.h>
 
 void startup();
 
-// ÐÂÈÎÎñÄÜ¹»ÔÚµÄµØµã
+// æ–°ä»»å‹™èƒ½å¤ åœ¨çš„åœ°é»ž
 string *env_room = ({ 
         "/d/yanmen/gate",
         "/d/yanmen/shance",
@@ -41,7 +41,7 @@ string *block_npcs = ({
         "/d/yanmen/npc/huanghe",
 });
 
-// ÈÎÎñ¶ÔÏó´´½¨
+// ä»»å‹™å°è±¡å‰µå»º
 void create()
 {
         seteuid(getuid());
@@ -50,22 +50,22 @@ void create()
 
 void start_quest()
 {
-        object npc;              // µ±Ê±²Ù×÷µÄNPC¶ÔÏó
-        string name;             // µ±Ê±²Ù×÷µÄNPCÎÄ¼þÃû×Ö
-        string *npcs;            // ×Ü¹²Ê¹ÓÃ¹ýµÄNPC¶ÔÏó
-        object *obs;             // Ä¿Ç°ËùÓÐµÄ(BLOCK)ÈÎÎñ
-        object env;              // µ±Ê±²Ù×÷µÄ·¿¼ä
-        object qob;              // ÈÎÎñÎï¼þ
-        int i;                   // ÓÐ¹ØÊýÖµ
-        int env_count, npc_count;// Í³¼Æ×ÊÁÏ
+        object npc;              // ç•¶æ™‚æ“ä½œçš„NPCå°è±¡
+        string name;             // ç•¶æ™‚æ“ä½œçš„NPCæ–‡ä»¶åå­—
+        string *npcs;            // ç¸½å…±ä½¿ç”¨éŽçš„NPCå°è±¡
+        object *obs;             // ç›®å‰æ‰€æœ‰çš„(BLOCK)ä»»å‹™
+        object env;              // ç•¶æ™‚æ“ä½œçš„æˆ¿é–“
+        object qob;              // ä»»å‹™ç‰©ä»¶
+        int i;                   // æœ‰é—œæ•¸å€¼
+        int env_count, npc_count;// çµ±è¨ˆè³‡æ–™
 
-        // Èç¹ûÈÎÎñÒÑ¾­Õ¹¿ªÁË£¬ÄÇÃ´²»Æô¶¯
+        // å¦‚æžœä»»å‹™å·²ç¶“å±•é–‹äº†ï¼Œé‚£éº¼ä¸å•Ÿå‹•
         obs = children("/clone/quest/block");
         if (arrayp(obs) && sizeof(obs) > 0)
                 return;
 
         if (sizeof(env_room) < 1)
-                // ÎÞ·¨ÕÒµ½ÕâÑùµÄµØµã
+                // ç„¡æ³•æ‰¾åˆ°é€™æ¨£çš„åœ°é»ž
                 return;
 
         npcs = block_npcs;
@@ -74,39 +74,39 @@ void start_quest()
                 if (! arrayp(npcs) || ! sizeof(npcs))
                         break;
 
-                // Éú³ÉÒ»¸ö¿ÉÓÃµÄNPC
+                // ç”Ÿæˆä¸€å€‹å¯ç”¨çš„NPC
                 name = npcs[random(sizeof(npcs))];
                 if (! objectp(npc = new(name)))
                         continue;
                 npcs -= ({ name });
                 npc_count++;
                 
-                // Ñ°ÕÒÒ»¸öÊÊºÏµÄµØµã
+                // å°‹æ‰¾ä¸€å€‹é©åˆçš„åœ°é»ž
                 if (! objectp(env = get_object(env_room[i])))
                         continue;
                 npc->move(env);
-                npc->set_short_desc("ÕýÔÚ" + (random(2) ? "¾Û¾«»áÉñ" : "´óÆø²»¸Ò´­") +
-                                    "µØÂñ·ü×Å¡£");
+                npc->set_short_desc("æ­£åœ¨" + (random(2) ? "èšç²¾æœƒç¥ž" : "å¤§æ°£ä¸æ•¢å–˜") +
+                                    "åœ°åŸ‹ä¼è‘—ã€‚");
                 env_count++;
         }
         qob = new("/clone/quest/block");
         qob->init_quest();
 
         CHANNEL_D->do_channel(find_object(QUEST_D),
-                              "sys", "½ø³Ì(BLOCK)ÔÚ " + env_count +
-                              HIR " ´¦µØµãÀûÓÃ " + npc_count +
-                              HIR " ¸ö NPC ´´½¨ÁËÒ»¸öÈÎÎñ¡£");
+                              "sys", "é€²ç¨‹(BLOCK)åœ¨ " + env_count +
+                              HIR " è™•åœ°é»žåˆ©ç”¨ " + npc_count +
+                              HIR " å€‹ NPC å‰µå»ºäº†ä¸€å€‹ä»»å‹™ã€‚");
 }
 
-// ÓÉ¹ÊÊÂÏµÍ³»½ÐÑÕâ¸ö½ø³Ì
+// ç”±æ•…äº‹ç³»çµ±å–šé†’é€™å€‹é€²ç¨‹
 void startup()
 {
-        // Æô¶¯
+        // å•Ÿå‹•
         if (! find_object(QUEST_D))
                 return;
 
         CHANNEL_D->do_channel(find_object(QUEST_D),
-                              "sys", "½ø³Ì(BLOCK)Æô¶¯ÁË¡£");
-        // Æô¶¯Ê±´´½¨ÈÎÎñ
+                              "sys", "é€²ç¨‹(BLOCK)å•Ÿå‹•äº†ã€‚");
+        // å•Ÿå‹•æ™‚å‰µå»ºä»»å‹™
         start_quest();
 }

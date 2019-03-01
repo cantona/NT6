@@ -1,5 +1,5 @@
 // Room: /d/xiangyang/wall.c
-// Create by Zeratul Jan 15 2001,ÏåÑô³ÇÇ½µÄÊ¯½×¶¼¼Ì³Ğ´ËÎÄ¼ş
+// Create by Zeratul Jan 15 2001,è¥„é™½åŸç‰†çš„çŸ³éšéƒ½ç¹¼æ‰¿æ­¤æ–‡ä»¶
 
 inherit ROOM;
 

@@ -3,7 +3,7 @@
 
 #include <ansi.h>
 
-#define HUAXUE "¡¸" HIR "Éñµ¶»¯Ñª" NOR "¡¹"
+#define HUAXUE "ã€Œ" HIR "ç¥åˆ€åŒ–è¡€" NOR "ã€"
 
 inherit F_SSERVER;
 
@@ -16,27 +16,27 @@ int exert(object me, object target)
         int skill;
 
         if( query_temp("huaxue", me) )
-                return notify_fail(HIG "ÄãÒÑ¾­ÔËÆğ" + HUAXUE + HIG "ÁË¡£\n");
+                return notify_fail(HIG "ä½ å·²ç¶“é‹èµ·" + HUAXUE + HIG "äº†ã€‚\n");
 
         /*
         if (! me->is_fighting())
-                return notify_fail(HUAXUE + "Ö»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ¡£\n");
+                return notify_fail(HUAXUE + "åªèƒ½åœ¨æˆ°é¬¥ä¸­ä½¿ç”¨ã€‚\n");
         */
 
         if( query("neili", me)<200 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¡\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼\n");
 
         if ((int)me->query_skill("force") < 150)
-                return notify_fail("ÄãµÄò¿ÓÈ¿ñÕ½¾öĞŞÎª²»¹»£¬²»ÄÜÊ¹ÓÃ" + HUAXUE + "£¡\n");
+                return notify_fail("ä½ çš„èš©å°¤ç‹‚æˆ°æ±ºä¿®ç‚ºä¸å¤ ï¼Œä¸èƒ½ä½¿ç”¨" + HUAXUE + "ï¼\n");
 
         weapon=query_temp("weapon", me);
 
         if( !objectp(weapon) || query("skill_type", weapon) != "blade" )
-                return notify_fail("ÄãÃ»ÓĞ×°±¸µ¶£¬ÄÑÒÔÊ©Õ¹" + HUAXUE + "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰è£å‚™åˆ€ï¼Œé›£ä»¥æ–½å±•" + HUAXUE + "ã€‚\n");
 
-        msg = HIR "$N" HIR "ÄıÉñ±ÕÄ¿£¬ÓÒÊÖ³Öµ¶£¬×óÊÖË³×Å" + weapon->name() +
-              HIR "µ¶ÈĞÒ»Ä¨£¬ÏÊÑª¶ÙÊ±½«" + weapon->name() + HIR "È¾ºì¡£\n´ıµ½$N"
-              HIR "Ë«Ä¿Õö¿ª£¬¶ÙÊ±É±Æø³åÌì£¡\n" NOR;
+        msg = HIR "$N" HIR "å‡ç¥é–‰ç›®ï¼Œå³æ‰‹æŒåˆ€ï¼Œå·¦æ‰‹é †è‘—" + weapon->name() +
+              HIR "åˆ€åˆƒä¸€æŠ¹ï¼Œé®®è¡€é “æ™‚å°‡" + weapon->name() + HIR "æŸ“ç´…ã€‚\nå¾…åˆ°$N"
+              HIR "é›™ç›®çœé–‹ï¼Œé “æ™‚æ®ºæ°£æ²–å¤©ï¼\n" NOR;
 
         skill = (int)me->query_skill("moshen-xinfa", 1);
 
@@ -61,6 +61,6 @@ void remove_effect(object me, int amount)
                 addn_temp("apply/unarmed_damage", -amount*5, me);
                 addn_temp("apply/blade", -amount, me);
                 delete_temp("huaxue", me);
-                tell_object(me, "ÄãµÄ" + HUAXUE + "ÔËĞĞÍê±Ï£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï¡£\n");
+                tell_object(me, "ä½ çš„" + HUAXUE + "é‹è¡Œå®Œç•¢ï¼Œå°‡å…§åŠ›æ”¶å›ä¸¹ç”°ã€‚\n");
         }
 }

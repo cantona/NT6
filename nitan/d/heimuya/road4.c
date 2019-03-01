@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����·");
+        set("short", "黃土路");
         set("long", @LONG
-������һ������·�ϡ�������ɽ���ؽ磬�����ͽ���ӱ��ˡ���
-�����ﲻ��̫ƽʱ�ڣ����ǿ���߰ɡ�
+你走在一條黃土路上。這裡是山西地界，往東就進入河北了。現
+在這裡不是太平時節，還是快點走吧。
 LONG );
         set("outdoors", "heimuya");
         set("exits", ([

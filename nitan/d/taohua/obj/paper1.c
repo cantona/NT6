@@ -4,14 +4,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name("ĞÅ¼ã", ({"letter paper", "paper"}));
+        set_name("ä¿¡ç®‹", ({"letter paper", "paper"}));
         set_weight(100);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "ÕÅ");
+                set("unit", "å¼µ");
                 set("long",
-"ÆòØ¤ºÎÔøÓĞ¶şÆŞ£¿ÁÚ¼ÒÑÉµÃĞí¶à¼¦£¿µ±Ê±ÉĞÓĞÖÜÌì×Ó£¬ºÎÊÂ·×·×ËµÎºÆë¡£\n");
+"ä¹ä¸ä½•æ›¾æœ‰äºŒå¦»ï¼Ÿé„°å®¶ç„‰å¾—è¨±å¤šé›ï¼Ÿç•¶æ™‚å°šæœ‰å‘¨å¤©å­ï¼Œä½•äº‹ç´›ç´›èªªé­é½Šã€‚\n");
                 set("material", "paper");
         }
 }

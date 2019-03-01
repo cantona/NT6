@@ -4,13 +4,13 @@ inherit TESSERA;
 
 void create()
 {
-        set_name(HIM "À×ÉñÖ®Í«¡¤µç" NOR, ({"leishen tong", "leishen", "tong"}));
+        set_name(HIM "é›·ç¥ä¹‹ç³ï¹’é›»" NOR, ({"leishen tong", "leishen", "tong"}));
         set_weight(300);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIM "Çê¿Ì¼ä£¬Æß²ÊÖ®¹âÍ¸ÉäÌìµØ£¬´ËÄËÌì½çÖ®Ê¥Îï£¬ÓµÓĞ×ÅÉñÒ»°ãµÄÁ¦Á¿¡£\n" NOR);
-                set("unit", "¿Å");
+                set("long", HIM "é ƒåˆ»é–“ï¼Œä¸ƒå½©ä¹‹å…‰é€å°„å¤©åœ°ï¼Œæ­¤ä¹ƒå¤©ç•Œä¹‹è–ç‰©ï¼Œæ“æœ‰è‘—ç¥ä¸€èˆ¬çš„åŠ›é‡ã€‚\n" NOR);
+                set("unit", "é¡†");
                 set("value", 12000);
                 set("can_be_enchased", 1);
                 set("enchase/cur_firm", 100); 

@@ -1,14 +1,14 @@
 // /d/gaoli/sishi
-// Room in ����
+// Room in 高麗
 // rich 99/03/28
 inherit ROOM;
 void create()        
 {
-        set("short", "˽��");
+        set("short", "私塾");
         set("long", @LONG
-������һ����������ķ��䣬ֻ���ı���������ܣ�����ϵ��鼮
-�����Ӱټҵ�ʫ�ʸ踳Ӧ�о��С����䵱����һ��̴����������ǽ����
-����һ���ֻ���һλ��������������
+你來到一間寬敞明亮的房間，只見四壁排滿了書架，書架上的書籍
+從諸子百家到詩詞歌賦應有盡有。房間當中有一紫檀書桌，靠窗牆上懸
+掛著一副字畫，一位老先生坐在桌後。
 LONG
         );
 set("exits", ([

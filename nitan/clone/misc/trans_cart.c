@@ -7,7 +7,7 @@ inherit ITEM;
 
 void create()
 {
-        set_name("´ó³µ", ({ "cart" }));
+        set_name("å¤§è»Š", ({ "cart" }));
         set_weight(200000);
         set_max_encumbrance(1000000);
         if (clonep())
@@ -18,10 +18,10 @@ void create()
         else
         {
                 set("value", 1);
-                set("long", "ÕâÊÇÒ»Á¾ÆÕÍ¨µÄÂí³µ£¬ĞĞÊ»ÔÚ´ó¹ÙµÀÉÏ£¬Äã¾õµÃ»Î»ÎÓÆÓÆµÄ¡£\n");
-                set("unit", "Á¾");
+                set("long", "é€™æ˜¯ä¸€è¼›æ™®é€šçš„é¦¬è»Šï¼Œè¡Œé§›åœ¨å¤§å®˜é“ä¸Šï¼Œä½ è¦ºå¾—æ™ƒæ™ƒæ‚ æ‚ çš„ã€‚\n");
+                set("unit", "è¼›");
                 set("material", "wood");
-                set("no_get", "ºÃ¼Ò»ï£¬³µÄãÒ²Ïë¿¸ÔÚ¼çÉÏ£¿\n");
+                set("no_get", "å¥½å®¶ä¼™ï¼Œè»Šä½ ä¹Ÿæƒ³æ‰›åœ¨è‚©ä¸Šï¼Ÿ\n");
         }
         setup();
 }

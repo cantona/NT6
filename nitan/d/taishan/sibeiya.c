@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "˹����");
+        set("short", "斯碑崖");
         set("long", @LONG
-��Ů�ز��о�ʯ����������������˲�־¡�⡰������������˹׭
-�顶̩ɽ��ʯ����Ƕʯ�ڣ��׳�˹���¡�
+玉女池側有巨石高聳黝黑若鼎，明人查志隆題“天柱”，秦李斯篆
+書《泰山刻石》曾嵌石內，俗稱斯碑崖。
 LONG );
         set("exits", ([
                 "south" : __DIR__"yunuchi",

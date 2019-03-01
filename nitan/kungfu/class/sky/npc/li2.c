@@ -6,13 +6,13 @@ inherit F_COAGENT;
 
 void create()
 {
-        set_name("ÀîåÐÒ£", ({ "li xiaoyao", "li", "xiaoyao"}));
-        set("long", "ÏÉ½£ÆæÏÀ´«ÖÐµÄ´«ÆæÈËÎï£¬ÉÙÄêµÃÊñÉ½½£ÅÉ\n" 
-                    "¸ßÈËÊÚÒÕ£¬¼æÏ°¼Ò´«¾øÑ§·ÉÁúÌ½ÔÆÊÖÒÔ¼°±ù\n"
-                    "ÐÄ¾ö£¬ÄËÒ»´ú²»ÊÀµÄ½£ÏÀ¡£\n"); 
-        set("nickname", HIW "ÊñÉ½½£Éñ" NOR);
-        set("title", HIY "´ó×ÚÊ¦" NOR);
-        set("gender", "ÄÐÐÔ");
+        set_name("æŽé€é™", ({ "li xiaoyao", "li", "xiaoyao"}));
+        set("long", "ä»™åŠå¥‡ä¿ å‚³ä¸­çš„å‚³å¥‡äººç‰©ï¼Œå°‘å¹´å¾—èœ€å±±åŠæ´¾\n" 
+                    "é«˜äººæŽˆè—ï¼Œå…¼ç¿’å®¶å‚³çµ•å­¸é£›é¾æŽ¢é›²æ‰‹ä»¥åŠå†°\n"
+                    "å¿ƒæ±ºï¼Œä¹ƒä¸€ä»£ä¸ä¸–çš„åŠä¿ ã€‚\n"); 
+        set("nickname", HIW "èœ€å±±åŠç¥ž" NOR);
+        set("title", HIY "å¤§å®—å¸«" NOR);
+        set("gender", "ç”·æ€§");
         set("age", 24);
         set("attitude", "friendly");
         set("shen_type", 1);
@@ -91,7 +91,7 @@ void die()
                          if (arrayp(ob->query_team()))
                          {
                                  command("heng");
-                                 command("say Ê¤Ö®²»Îä£¡");
+                                 command("say å‹ä¹‹ä¸æ­¦ï¼");
                                  set("qi", 290000);
                                  set("jing", 90000);
                                  set("neili", 35000);
@@ -109,7 +109,7 @@ void die()
              if (ob->query("sky12/floor") == 2)
              {
                       ob->set("sky12/floor", 3);
-                 command("say ¸óÏÂÇë±ã°É£¡");
+                 command("say é–£ä¸‹è«‹ä¾¿å§ï¼");
              }            
         }
 
@@ -125,7 +125,7 @@ void die()
         return;
 }
 
-// ÆøÑªÐ¡ÓÚ1000ÔòËÀÍö£¬±ÜÃâËûÈËÐ­Öú°ïÃ¦×ªÊÀ
+// æ°£è¡€å°äºŽ1000å‰‡æ­»äº¡ï¼Œé¿å…ä»–äººå”åŠ©å¹«å¿™è½‰ä¸–
 void heart_beat()
 {
         if (this_object()->query("qi") < 1000 || this_object()->query("eff_qi") < 1000)

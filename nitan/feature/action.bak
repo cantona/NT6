@@ -11,7 +11,7 @@ nosave mapping override;
 nosave int perform_busy;
 
 nosave int exert_time;
-nosave string exert_type = "ÄÚ¹¦";
+nosave string exert_type = "å…§åŠŸ";
 
 nosave string *pfm_busy = ({});
 
@@ -21,13 +21,13 @@ varargs void start_exert_busy(int new_exert, string new_type)
                 error("action: Invalid exert time.\n");
         exert_time = new_exert;
         if( !stringp(new_type) )
-                new_type = "ÄÚ¹¦";
+                new_type = "å…§åŠŸ";
         exert_type = new_type;
 }
 
-nosave string perform_type = "Íâ¹¦";
+nosave string perform_type = "å¤–åŠŸ";
 
-// ¼¼ÄÜ¾øÕĞÀä¶³Ê±¼ä
+// æŠ€èƒ½çµ•æ‹›å†·å‡æ™‚é–“
 nomask void start_perform_busy(int new_busy, string new_type)
 {
         object me, ob;
@@ -45,7 +45,7 @@ nomask void start_perform_busy(int new_busy, string new_type)
         if( !objectp(me = this_object()) )
                 return;
                 
-        // ´¦Àí¾øÕĞÀä¶³Ê±¼ä
+        // è™•ç†çµ•æ‹›å†·å‡æ™‚é–“
         pfm_busy += ({ new_type, new_busy });
         //perform_type = new_type;
         
@@ -141,7 +141,7 @@ varargs void start_busy(mixed new_busy, mixed new_interrupt)
                 avd_busy = 0;
                 add_busy = 0;
 
-                // Õ½¶·×´Ì¬ÏÂÃ¦ÂÒ¼°»¯½âÃ¦ÂÒ²ÅÆğ×÷ÓÃ
+                // æˆ°é¬¥ç‹€æ…‹ä¸‹å¿™äº‚åŠåŒ–è§£å¿™äº‚æ‰èµ·ä½œç”¨
                 if( me->is_fighting() && previous_object() &&
                     sscanf(base_name(previous_object()), "/kungfu/skill/%*s") ) {
                         avd_busy = query_temp("apply/avoid_busy");
@@ -174,7 +174,7 @@ varargs void start_busy(mixed new_busy, mixed new_interrupt)
                         new_busy = random(new_busy);
 
                 if( new_busy > 0 && playerp(me) &&
-                    random(10) < 4 && (query("character") == "½Æ÷ï¶à±ä" || query("character") == "¹úÊ¿ÎŞË«") )
+                    random(10) < 4 && (query("character") == "ç‹¡é» å¤šè®Š" || query("character") == "åœ‹å£«ç„¡é›™") )
                         new_busy--;
         }
 

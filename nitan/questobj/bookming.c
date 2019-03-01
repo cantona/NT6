@@ -8,14 +8,14 @@ void init()
 
 void create()
 {
-        set_name("Ã÷Ê·¼­ÂÔ", ({"book ming","book","ming"}));
+        set_name("æ˜å²è¼¯ç•¥", ({"book ming","book","ming"}));
         set_weight(1500);
         set("taskobj", 1);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»±¾ºñºñµÄÊé¡£\n");
-                set("unit", "±¾");
+                set("long", "ä¸€æœ¬åšåšçš„æ›¸ã€‚\n");
+                set("unit", "æœ¬");
                 set("material", "paper");
         }
         setup();

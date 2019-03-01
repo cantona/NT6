@@ -1,4 +1,4 @@
-// head.c ÄÔ´ü
+// head.c è…¦è¢‹
 
 #include <ansi.h>
 
@@ -12,17 +12,17 @@ int is_head() { return 1; }
 
 void create()
 {
-        set_name(RED "Í·Â­" NOR, ({ "head" }));
+        set_name(RED "é ­é¡±" NOR, ({ "head" }));
         set_weight(1500);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
+                set("unit", "é¡†");
                 set("value", 1);
-                set("no_sell", "ÎÒµÄÌì...Õâ...ÕâÄãÒ²ÄÃÀ´Âô...¹Ù...¹Ù¸®ÄØ£¿");
+                set("no_sell", "æˆ‘çš„å¤©...é€™...é€™ä½ ä¹Ÿæ‹¿ä¾†è³£...å®˜...å®˜åºœå‘¢ï¼Ÿ");
                 set("food_supply", 10);
                 set("food_remaining", 4);
-                set("long", RED "Ò»¿ÅÏÊÑªÁÜÁÜµÄÊ×¼¶£¬Ğë·¢É¢ÂÒ£¬ÓàÑªÕı»º»ºÉø³ö¡£\n" NOR);
+                set("long", RED "ä¸€é¡†é®®è¡€æ·‹æ·‹çš„é¦–ç´šï¼Œé ˆç™¼æ•£äº‚ï¼Œä½™è¡€æ­£ç·©ç·©æ»²å‡ºã€‚\n" NOR);
         }
 }
 
@@ -39,12 +39,12 @@ int set_from(object owner)
         set("gender",query("gender", owner));
         if( !stringp(query("victim_name", owner)) )
         {
-                set("name", "¸¯ÀÃµÄÈËÍ·");
-                set("name", "¸¯ÀÃµÄÎŞÍ·Ê¬Ìå", owner);
+                set("name", "è…çˆ›çš„äººé ­");
+                set("name", "è…çˆ›çš„ç„¡é ­å±é«”", owner);
         } else
         {
-                set("name",query("victim_name", owner)+"µÄÈËÍ·");
-                set("name", "ÎŞÍ·Ê¬Ìå", owner);
+                set("name",query("victim_name", owner)+"çš„äººé ­");
+                set("name", "ç„¡é ­å±é«”", owner);
         }
         set_name(RED + query("name") + NOR, ({ "head" }));
         return 1;
@@ -60,9 +60,9 @@ int do_cut(object me, string part)
 
 int finish_eat()
 {
-        set_name(WHT "÷¼÷ÃÍ·" NOR, ({ "bone" }) );
+        set_name(WHT "éª·é«é ­" NOR, ({ "bone" }) );
         set_weight(150);
-        set("long", "Ò»¸ö°×É­É­µÄ÷¼÷ÃÍ·¡£\n");
+        set("long", "ä¸€å€‹ç™½æ£®æ£®çš„éª·é«é ­ã€‚\n");
         return 1;
 }
 

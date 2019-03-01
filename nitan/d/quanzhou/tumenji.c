@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Ϳ�ż�");
+        set("short", "塗門集");
         set("long", @LONG
-����Ȫ�����涫�����һ���ɵ�����ģ�����ϱ���Ȫ�������ĺ�
-����ׯ�������Ǹ����У����߱���ȥ���ۿڵ���Ҫͨ����Ϳ��ˮ�ء���
+這是泉州南面東西向的一條幹道，規模不大。南邊是泉州著名的鴻
+翔綢緞莊。西邊是個集市，東邊便是去往港口的主要通道「塗門水關」。
 LONG );
         set("outdoors", "quanzhou");
         set("objects", ([

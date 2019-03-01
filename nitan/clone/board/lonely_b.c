@@ -4,10 +4,10 @@ inherit BULLETIN_BOARD;
 
 void create()
 {
-        set_name("工作笔记", ({ "board" }) );
+        set_name("宸ヤ綔绛嗚", ({ "board" }) );
         set("location", "/u/lonely/workroom");
         set("board_id", "lonely_b");
-        set("long", "这是一个专供Lonely使用的工作笔记。\n" );
+        set("long", "閫欐槸涓�鍊嬪皥渚汱onely浣跨敤鐨勫伐浣滅瓎瑷樸�俓n" );
         setup();
         set("capacity", 100);
         replace_program(BULLETIN_BOARD);

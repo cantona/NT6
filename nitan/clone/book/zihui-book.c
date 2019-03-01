@@ -1,4 +1,4 @@
-// zihui-book.c ×Ï»ÕĞÄ·¨
+// zihui-book.c ç´«å¾½å¿ƒæ³•
 
 #include <ansi.h>
 
@@ -6,20 +6,20 @@ inherit BOOK;
 
 void create()
 {
-        set_name(MAG "×Ï»ÕĞÄ·¨" NOR, ({ "zihui book", "zihui", "book" }));
+        set_name(MAG "ç´«å¾½å¿ƒæ³•" NOR, ({ "zihui book", "zihui", "book" }));
         set_weight(500);
         if (clonep())
                 set_default_object(__FILE__);
         else
         {
-                set("unit", "±¾");
+                set("unit", "æœ¬");
                 set("no_sell", 1);
-                set("long", "ÕâÊÇÒ»±¾¼ÇÔØÁËÄ½Èİ¼Ò×Ï»ÕĞÄ·¨µÄÃØ¼®¡£\n");
+                set("long", "é€™æ˜¯ä¸€æœ¬è¨˜è¼‰äº†æ…•å®¹å®¶ç´«å¾½å¿ƒæ³•çš„ç§˜ç±ã€‚\n");
                 set("value", 1000);
                 set("material", "paper");
                 set("skill", ([
                         "name":         "zihui-xinfa",  // name of the skill
-                        "family_name" : "Ä½ÈİÊÀ¼Ò",
+                        "family_name" : "æ…•å®¹ä¸–å®¶",
                         "exp_required": 100000,         // minimum combat experience required
                                                         // to learn this skill.
                         "jing_cost" :   50,

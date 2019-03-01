@@ -3,18 +3,18 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIW "Ä»ÌìÊ¯" NOR, ({"mutian shi", "mutian", "shi"}));
+        set_name(HIW "å¹•å¤©çŸ³" NOR, ({"mutian shi", "mutian", "shi"}));
         set_weight(2000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
+                set("unit", "é¡†");
                 set("value", 500000);
-                set("enchase/name", "Ä»ÌìÊ¯");
+                set("enchase/name", "å¹•å¤©çŸ³");
                 set("enchase/point", 100);
                 set("enchase/type", "waist");
                 set("enchase/cur_firm", 100);
-                set("nine_object", 1); // ¾Å¿×ÏâÇ¶ÎïÆ·±ê¼Ç
+                set("nine_object", 1); // ä¹å­”é‘²åµŒç‰©å“æ¨™è¨˜
                 set("enchase/spe_data", ([]) );  
         }
         setup();

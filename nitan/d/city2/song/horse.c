@@ -4,15 +4,15 @@ inherit NPC;
 
 void create()
 {
-        set_name(HIW "高头大马" NOR, ({"zhan ma", "horse", "ma"}));
-        set("race", "野兽");
+        set_name(HIW "楂橀牠澶чΜ" NOR, ({"zhan ma", "horse", "ma"}));
+        set("race", "閲庣嵏");
         set("age", 3);
 
         set("combat_exp", 500000);
         set("long", 
-                "一匹高头大马，全身雪白的毛发，煞是神俊。\n");
+                "涓�鍖归珮闋ぇ棣紝鍏ㄨ韩闆櫧鐨勬瘺鐧硷紝鐓炴槸绁炰繆銆俓n");
 
-        set("limbs", ({ "头部", "身体", "蹄子", "尾巴" }) );
+        set("limbs", ({ "闋儴", "韬珨", "韫勫瓙", "灏惧反" }) );
         set("verbs", ({ "bite", "hoof" }) );
 
         set("str", 20+random(10));
@@ -30,7 +30,7 @@ void create()
 
         set("chat_chance", 5);
         set("chat_msg", ({
-                 HIW"战马不住地低鸣，蹄子不挺地刨打着地面。\n"NOR,
+                 HIW"鎴伴Μ涓嶄綇鍦颁綆槌达紝韫勫瓙涓嶆尯鍦板埁鎵撹憲鍦伴潰銆俓n"NOR,
         }) );
 
         setup();

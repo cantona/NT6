@@ -14,56 +14,56 @@ int main(object me, string arg)
                 return notify_fail(BUSY_MESSAGE);
 
         if( !arg || arg == "" )
-                return notify_fail("Ö¸Áî¸ñÊ½ : chongxue <Ñ¨Î»Í­ÈËID>\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ : chongxue <ç©´ä½éŠ…äººID>\n");
 
         if( (int)me->query_skill("force", 1) < 200 )
-                return notify_fail("ÄãµÄÄÚ¹¦ĞŞÎª²»×ã£¬ÎŞ·¨½«Ï¸Ğ¡¾­ÂöÑ¨Î»´òÍ¨¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸä¿®ç‚ºä¸è¶³ï¼Œç„¡æ³•å°‡ç´°å°ç¶“è„ˆç©´ä½æ‰“é€šã€‚\n");
 
         if( (int)me->query_skill("jingluo-xue", 1) < 100 )
-                return notify_fail("Äã¶Ô¾­ÂçÑ§ÕÆÎÕ²»¹»£¬ÎŞ·¨½«Ï¸Ğ¡¾­ÂöÑ¨Î»´òÍ¨¡£\n");
+                return notify_fail("ä½ å°ç¶“çµ¡å­¸æŒæ¡ä¸å¤ ï¼Œç„¡æ³•å°‡ç´°å°ç¶“è„ˆç©´ä½æ‰“é€šã€‚\n");
 
         if( query("qi", me)*100/query("max_qi", me)<90 )
-                return notify_fail("ÄãÏÖÔÚµÄÆøÌ«ÉÙÁË£¬ÎŞ·¨¾²ĞÄ³åÑ¨¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çš„æ°£å¤ªå°‘äº†ï¼Œç„¡æ³•éœå¿ƒæ²–ç©´ã€‚\n");
 
         if( query("jing", me)*100/query("max_jing", me)<90 )
-                return notify_fail("ÄãÏÖÔÚµÄ¾«Ì«ÉÙÁË£¬ÎŞ·¨¾²ĞÄ³åÑ¨¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çš„ç²¾å¤ªå°‘äº†ï¼Œç„¡æ³•éœå¿ƒæ²–ç©´ã€‚\n");
 
         if( query("max_neili", me)<2000 )
-                return notify_fail("Äã¾õµÃÄÚÁ¦ÆÄÓĞ²»×ã£¬ÎŞ·¨½«Ï¸Ğ¡¾­ÂöÑ¨Î»´òÍ¨¡£\n");
+                return notify_fail("ä½ è¦ºå¾—å…§åŠ›é —æœ‰ä¸è¶³ï¼Œç„¡æ³•å°‡ç´°å°ç¶“è„ˆç©´ä½æ‰“é€šã€‚\n");
 
         if( query("neili", me)*100/query("max_neili", me)<90 )
-                return notify_fail("ÄãÏÖÔÚµÄÄÚÁ¦Ì«ÉÙÁË£¬ÎŞ·¨ÔË¹¦³åÑ¨¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çš„å…§åŠ›å¤ªå°‘äº†ï¼Œç„¡æ³•é‹åŠŸæ²–ç©´ã€‚\n");
 
         if( arg == "all" )
         {
                 if( !query("jingmai/finish", me) )
-                        return notify_fail("Äã²¢Ã»ÓĞÈ«Éí´óĞ¡ÖÜÌì¾­ÂöÑ¨µÀ¹áÍ¨¹ı¡£\n");
+                        return notify_fail("ä½ ä¸¦æ²’æœ‰å…¨èº«å¤§å°å‘¨å¤©ç¶“è„ˆç©´é“è²«é€šéã€‚\n");
 
                 set("breakup", 1, me);
-                message_vision( HIC "Í»È»$N" HIC "´óºÈÒ»Éù£¬Ò»¹ÉÎŞĞÎÆøÀË" 
-                                HIC "¶¸È»É¢²¼¿ªÀ´£¬ËÄÖÜ¿ÕÆøµÇÊ±±äµÃÔïÈÈ¡£\n" NOR, me); 
-                tell_object(me, HIG "Äã¶ÙÊ±¾õµÃ»ëÉíÒ»ÕóÇáËÉ£¬Ò»¹ÉÇåÁ¹Ö®ÒâÓÍÈ»" 
-                                HIG "¶øÆğ£¬ĞÄÁéÒ»Æ¬¿ÕÃ÷£¬ÄÚÁ¦Ã»ÓĞË¿ºÁ×èÖÍ£¬È«Éí¾­ÂöÒÑÈ»³©Í¨£¬ÊæÌ©Ö®¼«¡£\n" NOR); 
+                message_vision( HIC "çªç„¶$N" HIC "å¤§å–ä¸€è²ï¼Œä¸€è‚¡ç„¡å½¢æ°£æµª" 
+                                HIC "é™¡ç„¶æ•£å¸ƒé–‹ä¾†ï¼Œå››å‘¨ç©ºæ°£ç™»æ™‚è®Šå¾—ç‡¥ç†±ã€‚\n" NOR, me); 
+                tell_object(me, HIG "ä½ é “æ™‚è¦ºå¾—æ¸¾èº«ä¸€é™£è¼•é¬†ï¼Œä¸€è‚¡æ¸…æ¶¼ä¹‹æ„æ²¹ç„¶" 
+                                HIG "è€Œèµ·ï¼Œå¿ƒéˆä¸€ç‰‡ç©ºæ˜ï¼Œå…§åŠ›æ²’æœ‰çµ²æ¯«é˜»æ»¯ï¼Œå…¨èº«ç¶“è„ˆå·²ç„¶æš¢é€šï¼Œèˆ’æ³°ä¹‹æ¥µã€‚\n" NOR); 
                 return 1;
         }
 
         if( query("jingmai/finish", me) )
-                return notify_fail("ÄãÒÑ¾­´òÍ¨È«Éí´óĞ¡ÖÜÌì¾­Âö£¬ÎŞĞèÔÙ´Î³åÑ¨¡£\n");
+                return notify_fail("ä½ å·²ç¶“æ‰“é€šå…¨èº«å¤§å°å‘¨å¤©ç¶“è„ˆï¼Œç„¡éœ€å†æ¬¡æ²–ç©´ã€‚\n");
 
         if( !objectp(tongren_ob = present(arg, me)) )
-                return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâ¸öÍ­ÈË£¡\n");
+                return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™å€‹éŠ…äººï¼\n");
 
         if( !tongren_ob->is_tongren() )
-                return notify_fail("ÄãÎŞ·¨Ê¹ÓÃËüÀ´³åÑ¨¡£\n");
+                return notify_fail("ä½ ç„¡æ³•ä½¿ç”¨å®ƒä¾†æ²–ç©´ã€‚\n");
 
         if( query("jingmai/"+query("jingmai_name", tongren_ob)+"/"+arg, me) )
-                return notify_fail("ÄãÒÑ¾­´òÍ¨ÁËÕâ¸öÑ¨Î»¡£\n");
+                return notify_fail("ä½ å·²ç¶“æ‰“é€šäº†é€™å€‹ç©´ä½ã€‚\n");
 
-        message_vision(HIW "$N" HIW "°´ÕÕÍ­ÈËËù¼ÇÔØµÄ³åÑ¨·½Ê½£¬½èÖúÍ­ÈËÖ®Îï£¬°µÔËÄÚ¹¦£¬¿ªÊ¼³åÑ¨¡£\n" NOR, me);
-        message_vision(HIW "Ö»¼û$N" HIW "Í·ÉÏ°×ÎíÌÚÌÚ¡¢»ëÉíÈçÍ¬ÁıÕÖÔÚÔÆÖĞ¡£\n" NOR, me);
+        message_vision(HIW "$N" HIW "æŒ‰ç…§éŠ…äººæ‰€è¨˜è¼‰çš„æ²–ç©´æ–¹å¼ï¼Œå€ŸåŠ©éŠ…äººä¹‹ç‰©ï¼Œæš—é‹å…§åŠŸï¼Œé–‹å§‹æ²–ç©´ã€‚\n" NOR, me);
+        message_vision(HIW "åªè¦‹$N" HIW "é ­ä¸Šç™½éœ§é¨°é¨°ã€æ¸¾èº«å¦‚åŒç± ç½©åœ¨é›²ä¸­ã€‚\n" NOR, me);
 
-        tell_object(me, HIG "Äã¾õµÃÄÚÁ¦ÔÚµ¤ÌïÔ´Ô´¶øÉú£¬¿ìËÙ·­¹ö£¬ÌåÄÚÕæÔªÔË×ªÔ½À´Ô½¿ì£¬\n"
-                        HIG"»ëÉíÔïÈÈÄÑµ±£¬Ò»¹ÉÕæÆøÁ÷³åÏò"+query("xuewei_name", tongren_ob)+"¶øÈ¥¡£\n"NOR);
+        tell_object(me, HIG "ä½ è¦ºå¾—å…§åŠ›åœ¨ä¸¹ç”°æºæºè€Œç”Ÿï¼Œå¿«é€Ÿç¿»æ»¾ï¼Œé«”å…§çœŸå…ƒé‹è½‰è¶Šä¾†è¶Šå¿«ï¼Œ\n"
+                        HIG"æ¸¾èº«ç‡¥ç†±é›£ç•¶ï¼Œä¸€è‚¡çœŸæ°£æµæ²–å‘"+query("xuewei_name", tongren_ob)+"è€Œå»ã€‚\n"NOR);
 
 
         ZHOUTIAN_D->do_chongxue(me, tongren_ob);
@@ -76,10 +76,10 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : chongxue <Ñ¨Î»Í­ÈËID>
-           chongxue all    Èç¹ûÉÏÊÀÔø¾­´óĞ¡ÖÜÌì¾­ÂöÑ¨µÀ¹áÍ¨¹ı£¬Ê¹ÓÃ¸ÃÖ¸Áî³åÑ¨
+æŒ‡ä»¤æ ¼å¼ : chongxue <ç©´ä½éŠ…äººID>
+           chongxue all    å¦‚æœä¸Šä¸–æ›¾ç¶“å¤§å°å‘¨å¤©ç¶“è„ˆç©´é“è²«é€šéï¼Œä½¿ç”¨è©²æŒ‡ä»¤æ²–ç©´
 
-¸ÃÖ¸Áî¿ÉÒÔÏ¸Ğ¡¾­Âö´òÍ¨£¬Á¬½Ó³ÉÍêÕû¾­Âö¡£
+è©²æŒ‡ä»¤å¯ä»¥ç´°å°ç¶“è„ˆæ‰“é€šï¼Œé€£æ¥æˆå®Œæ•´ç¶“è„ˆã€‚
 
 HELP
 );

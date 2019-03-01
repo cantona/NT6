@@ -3,18 +3,18 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ºóÌÃ");
+        set("short", "å¾Œå ‚");
         set("long", @long
-ÕâÀïÊÇÊé³¡µÄºóÌÃ£¬ÀïÃæÓĞÒ»ÕÅ×À×ÓºÍÒ»ÕÅ°«´²£¬Ç½ÉÏµÄ´°»§°ëÑÚ
-×Å£¬Ç½ÉÏ¹Ò×ÅÒ»¸±Äê»­(picture)¡£
+é€™è£¡æ˜¯æ›¸å ´çš„å¾Œå ‚ï¼Œè£¡é¢æœ‰ä¸€å¼µæ¡Œå­å’Œä¸€å¼µçŸ®åºŠï¼Œç‰†ä¸Šçš„çª—æˆ¶åŠæ©
+è‘—ï¼Œç‰†ä¸Šæ›è‘—ä¸€å‰¯å¹´ç•«(picture)ã€‚
 long);
         set("item_desc", ([
-                "picture" : "ÕâÒ»ÕÅÑ°³£Å©¼Ò¹ıÄêÊ±ÌùµÄÄê»­¡£\n",
+                "picture" : "é€™ä¸€å¼µå°‹å¸¸è¾²å®¶éå¹´æ™‚è²¼çš„å¹´ç•«ã€‚\n",
         ]));
         set("exits", ([
                 "out" : __DIR__"shuchang",
         ]));
-        create_door("out", "Ğ¡ÃÅ", "enter", DOOR_CLOSED);
+        create_door("out", "å°é–€", "enter", DOOR_CLOSED);
 	set("coor/x", 1089);
 	set("coor/y", -1051);
 	set("coor/z", -1);
@@ -34,8 +34,8 @@ int do_jie(string arg)
         if (arg !="picture") return 0;
         if (arg=="picture")
         {
-                write("Äã½Ò¿ªÄê»­£¬·¢ÏÖÇ½ÉÏÓĞ¸ö¶´£¬Ç¡ºÃÄÜÈİÄÉÒ»¸öÈË£¬ÄãÈÌ²»×¡ÏëÌø(jump)ÏÂÈ¥¡£\n");
-                set_temp("marks/½Ò1", 1, me);
+                write("ä½ æ­é–‹å¹´ç•«ï¼Œç™¼ç¾ç‰†ä¸Šæœ‰å€‹æ´ï¼Œæ°å¥½èƒ½å®¹ç´ä¸€å€‹äººï¼Œä½ å¿ä¸ä½æƒ³è·³(jump)ä¸‹å»ã€‚\n");
+                set_temp("marks/æ­1", 1, me);
                 return 1;
         }
 }
@@ -43,12 +43,12 @@ int do_jump(string arg)
 {
         object me;
         me=this_player();
-        if( query_temp("marks/½Ò1", me) )
+        if( query_temp("marks/æ­1", me) )
         {
-                message("vision", me->name() + "×ê½øÁËÇ½ÉÏµÄ¶´£¬ÌøÁËÏÂÈ¥£¬Ö»ÌıµÄ¡°Æ¹¡±µÄÒ»ÉùÏì¡£\n", environment(me), ({me}) );
+                message("vision", me->name() + "é‘½é€²äº†ç‰†ä¸Šçš„æ´ï¼Œè·³äº†ä¸‹å»ï¼Œåªè½çš„â€œä¹’â€çš„ä¸€è²éŸ¿ã€‚\n", environment(me), ({me}) );
                 me->move(__DIR__"szyunhe");
-                message("vision", me->name() + "Í»È»¼ä´ÓÉÏÃæË¤ÁËÏÂÀ´¡£\n", environment(me), ({me}) );
-                delete_temp("marks/½Ò1", me);
+                message("vision", me->name() + "çªç„¶é–“å¾ä¸Šé¢æ‘”äº†ä¸‹ä¾†ã€‚\n", environment(me), ({me}) );
+                delete_temp("marks/æ­1", me);
                 return 1;
         }
 }

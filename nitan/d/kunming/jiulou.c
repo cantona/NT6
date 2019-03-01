@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��¥");
+        set("short", "酒樓");
         set("long", @LONG
-����һ�Ҽ�Ϊ��ͨ�ľ�¥��ƽ�������Щ�׾ƣ����ӣ���
-������������˶��������㶫�������ˣ�Ҳ��Щ�˽е㻨��
-�ף��е���ţ�����������ѵġ�
+這是一家極為普通的酒樓，平日裡就賣些米酒，包子，大
+部分來這裡的人都是隨便買點東西就走了，也有些人叫點花生
+米，切點熟牛肉來對飲兩盅的。
 LONG);
         set("exits", ([
                 "west" : __DIR__"nandajie1",

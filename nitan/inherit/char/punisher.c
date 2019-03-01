@@ -27,7 +27,7 @@ int do_halt()
 
         if (this_player() == query_temp("punish_ob"))
         {
-                write(name() + "ºÈµÀ£º¡°ÄæÍ½£¡Ğİ×ß£¡¡±\n");
+                write(name() + "å–é“ï¼šâ€œé€†å¾’ï¼ä¼‘èµ°ï¼â€\n");
                 return 1;
         }
 
@@ -48,8 +48,8 @@ mixed hit_ob(object me, object ob, int damage_bouns)
 {
         ob->receive_wound("qi", 200 + random(200), me);
         set("neili", query("max_neili",me), me);
-        return HIR "$N" HIR "Ò»ÕĞÍ»³ö£¬¾¹È»ÊÇ$n"
-               HIR "ÎÅËùÎ´ÎÅ£¬¼ûËùÎ´¼ûµÄÕĞÊ½£¬Ò»¾ªÖ®ÏÂ£¬ÒÑÈ»ÊÜ´´£¡\n" NOR;
+        return HIR "$N" HIR "ä¸€æ‹›çªå‡ºï¼Œç«Ÿç„¶æ˜¯$n"
+               HIR "èæ‰€æœªèï¼Œè¦‹æ‰€æœªè¦‹çš„æ‹›å¼ï¼Œä¸€é©šä¹‹ä¸‹ï¼Œå·²ç„¶å—å‰µï¼\n" NOR;
 }
 
 void fight_ob(object ob)
@@ -60,7 +60,7 @@ void fight_ob(object ob)
         if (ob != query_temp("punish_ob") &&
             ! is_fighting(ob))
         {
-                message_vision("$N¶Ô$nÀäĞ¦µÀ£º¡°ÎÒÔÚÕâÀïÇåÀíÃÅ»§£¬Äã²åÊÖ×öÉõ£¿¡±\n",
+                message_vision("$Nå°$nå†·ç¬‘é“ï¼šâ€œæˆ‘åœ¨é€™è£¡æ¸…ç†é–€æˆ¶ï¼Œä½ æ’æ‰‹åšç”šï¼Ÿâ€\n",
                                this_object(), ob);
                 if (! ob->is_busy())
                         ob->start_busy(2);
@@ -73,7 +73,7 @@ void fight_ob(object ob)
 
 int accept_fight(object ob)
 {
-        message_vision("$N²»Àí$n¡£\n", this_object(), ob);
+        message_vision("$Nä¸ç†$nã€‚\n", this_object(), ob);
         return 0;
 }
 
@@ -84,7 +84,7 @@ int accept_kill(object ob)
 
 int accept_hit(object ob)
 {
-        command("say ºÙ£¡ÇÒÂı£¡");
+        command("say å˜¿ï¼ä¸”æ…¢ï¼");
         return 1;
 }
 
@@ -93,29 +93,29 @@ void start_punish(object ob, string fam)
         set_temp("punish_ob", ob);
         set_temp("punishing_fam", fam);
         move(environment(ob));
-        message_vision("$N×ßÁË¹ıÀ´£¬¿´µ½$n£¬ÀäĞ¦Ò»Éù¡£\n", this_object(), ob);
+        message_vision("$Nèµ°äº†éä¾†ï¼Œçœ‹åˆ°$nï¼Œå†·ç¬‘ä¸€è²ã€‚\n", this_object(), ob);
         if (! this_object()->chat_punish())
         {
                 // no chat for punish, use default
-                command("chat " + ob->name(1) + "Äã±³ÅÑÊ¦ÃÅ£¬½ñÌìÎÒ¾ÍÌæ" + fam +
-                        "ÇåÀíÄãÕâ¸öÃÅ»§°ÜÀà£¬ÁôÏÂÎä¹¦£¬×ßÄãµÄÂ·£¡");
+                command("chat " + ob->name(1) + "ä½ èƒŒå›å¸«é–€ï¼Œä»Šå¤©æˆ‘å°±æ›¿" + fam +
+                        "æ¸…ç†ä½ é€™å€‹é–€æˆ¶æ•—é¡ï¼Œç•™ä¸‹æ­¦åŠŸï¼Œèµ°ä½ çš„è·¯ï¼");
         }
         command("follow " + query("id", ob));
 
         if (query("no_fight", environment(ob)))
         {
-                tell_object(ob, "Äã¿´µ½" + name() + "£¬²»ÓÉ´ó³ÔÒ»¾ª£¬»ÅÃ¦×ªÉíÌÓ×ß¡£\n");
-                message("vision", ob->name() + "¿´µ½" + name() +
-                        "£¬Á³É«´ó±ä£¬»ÅÀï»ÅÕÅµÄ×ªÉíÌÓ×ß¡£\n" +
-                        name() + "ÀäĞ¦Ò»Éù£¬ºÈµÀ£º¡°ÄÇÀï×ß£¿¡±£¬½ôËæÆäºó×·ÁËÉÏÈ¥¡£\n",
+                tell_object(ob, "ä½ çœ‹åˆ°" + name() + "ï¼Œä¸ç”±å¤§åƒä¸€é©šï¼Œæ…Œå¿™è½‰èº«é€ƒèµ°ã€‚\n");
+                message("vision", ob->name() + "çœ‹åˆ°" + name() +
+                        "ï¼Œè‡‰è‰²å¤§è®Šï¼Œæ…Œè£¡æ…Œå¼µçš„è½‰èº«é€ƒèµ°ã€‚\n" +
+                        name() + "å†·ç¬‘ä¸€è²ï¼Œå–é“ï¼šâ€œé‚£è£¡èµ°ï¼Ÿâ€ï¼Œç·Šéš¨å…¶å¾Œè¿½äº†ä¸Šå»ã€‚\n",
                         environment(ob), ({ ob }));
                 ob->move("/d/city/guangchang");
                 move("/d/city/guangchang");
-                tell_object(ob, HIR "...Õâ...ÕâÊÇÄÄÀï£¿ºÃÊìÏ¤°¡£¿"
-                            "ÄãĞÄµ×Ò»ºá£¬×ª¹ıÉíÀ´£¬ºÈµÀ£º¡°²»ÊÇÓã"
-                            "ËÀ£¬¾ÍÊÇÍøÆÆ£¬À´°É£¡¡±¡£\n" NOR);
-                message("vision", ob->name() + "»Å»ÅÕÅÕÅµÄÅÜÁË¹ıÀ´£¬Ö»¼ûÓĞÒ»ÈË"
-                        "½ôËæÆäºó¶øÀ´¡£\n", environment(ob), ({ ob }));
+                tell_object(ob, HIR "...é€™...é€™æ˜¯å“ªè£¡ï¼Ÿå¥½ç†Ÿæ‚‰å•Šï¼Ÿ"
+                            "ä½ å¿ƒåº•ä¸€æ©«ï¼Œè½‰éèº«ä¾†ï¼Œå–é“ï¼šâ€œä¸æ˜¯é­š"
+                            "æ­»ï¼Œå°±æ˜¯ç¶²ç ´ï¼Œä¾†å§ï¼â€ã€‚\n" NOR);
+                message("vision", ob->name() + "æ…Œæ…Œå¼µå¼µçš„è·‘äº†éä¾†ï¼Œåªè¦‹æœ‰ä¸€äºº"
+                        "ç·Šéš¨å…¶å¾Œè€Œä¾†ã€‚\n", environment(ob), ({ ob }));
         }
 
         command("yun powerup");
@@ -130,8 +130,8 @@ void punish_ob(object ob)
         if (living(ob))
                 ob->unconcious();
 
-        message_vision("$NÉìÊÖÕ³ÔÚ$nµÄºó±³£¬Á³ÉÏÉ·ÆøÒ»Ä¨¶ø¹ı£¬à«à«"
-                       "×ÔÓïµÀ£º¡°Äã×ß°É£¡Îä¹¦ÁôÏÂÁË£¡¡±\n",
+        message_vision("$Nä¼¸æ‰‹ç²˜åœ¨$nçš„å¾ŒèƒŒï¼Œè‡‰ä¸Šç…æ°£ä¸€æŠ¹è€Œéï¼Œå–ƒå–ƒ"
+                       "è‡ªèªé“ï¼šâ€œä½ èµ°å§ï¼æ­¦åŠŸç•™ä¸‹äº†ï¼â€\n",
                        this_object(), ob);
 
         fam = query_temp("punishing_fam");
@@ -147,15 +147,15 @@ void punish_ob(object ob)
         if (is_fighting())
         {
                 // Am I in fighting now ?
-                message_vision("$NÀäÀäµÀ£º¡°½ñÌìÎÒ×ßÁË£¬ÄãÃÇ"
-                               "¼¸¸öÎÒ¸ÄÈÕÔÙÊÕÊ°£¡¡±\n",
+                message_vision("$Nå†·å†·é“ï¼šâ€œä»Šå¤©æˆ‘èµ°äº†ï¼Œä½ å€‘"
+                               "å¹¾å€‹æˆ‘æ”¹æ—¥å†æ”¶æ‹¾ï¼â€\n",
                                this_object());
         }
-        message_vision("$NÆ²ÏÂ$n£¬Ñï³¤¶øÈ¥¡£\n", this_object(), ob);
+        message_vision("$Næ’‡ä¸‹$nï¼Œæšé•·è€Œå»ã€‚\n", this_object(), ob);
 
-        CHANNEL_D->do_channel(this_object(), "rumor", "ÌıËµ" +
-                            ob->name(1) + HIM "ÒòÎª±³ÅÑÊ¦ÃÅ£¬±»" +
-                            name() + HIM "·ÏÈ¥Ò»ÉíÎä¹¦¡£");
+        CHANNEL_D->do_channel(this_object(), "rumor", "è½èªª" +
+                            ob->name(1) + HIM "å› ç‚ºèƒŒå›å¸«é–€ï¼Œè¢«" +
+                            name() + HIM "å»¢å»ä¸€èº«æ­¦åŠŸã€‚");
         destruct(this_object());
         return;
 }
@@ -181,7 +181,7 @@ void unconcious()
 
 void die()
 {
-        command("chat ÌìÄÄ£¡ÎÒ" + name() + "ÄÑµÀ...ÄÑµÀÊÇ²»ÖĞÓÃÁË£¿");
+        command("chat å¤©å“ªï¼æˆ‘" + name() + "é›£é“...é›£é“æ˜¯ä¸ä¸­ç”¨äº†ï¼Ÿ");
         ::die();
 }
 
@@ -199,7 +199,7 @@ void scan()
             environment(ob) != environment() ||
             query("no_fight", environment(ob)))
         {
-                message_vision("$NÊÕ×¡ÕĞÊ½£¬ã¬ã¬µÀ£º¡°ºß¡±£¬Ëæ¼´×ªÉíÀëÈ¥¡£\n",
+                message_vision("$Næ”¶ä½æ‹›å¼ï¼Œæ‚»æ‚»é“ï¼šâ€œå“¼â€ï¼Œéš¨å³è½‰èº«é›¢å»ã€‚\n",
                                this_object());
                 destruct(this_object());
                 return;

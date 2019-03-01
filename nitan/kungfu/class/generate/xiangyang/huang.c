@@ -10,13 +10,13 @@ inherit NPC;
 void create()
 {
         object ob;
-        set_name("»ÆÒ©Ê¦", ({"huang yaoshi", "huang", "yaoshi"}));
-        set("title", "¶«º£ÌÒ»¨µºµºÖ÷");
-        set("nickname", HIC "¶«Ğ°" NOR );
-        set("gender", "ÄĞĞÔ");
+        set_name("é»ƒè—¥å¸«", ({"huang yaoshi", "huang", "yaoshi"}));
+        set("title", "æ±æµ·æ¡ƒèŠ±å³¶å³¶ä¸»");
+        set("nickname", HIC "æ±é‚ª" NOR );
+        set("gender", "ç”·æ€§");
         set("age", 42);
-        set("long", "Ëû¾ÍÊÇÌÒ»¨µºÖ÷¡£ĞĞÊÂºÃ¶ñÈ«ÓÉ¼ºĞÄ£¬Òò´Ë±»\n"
-                    "ÈË³Æ×÷¡¸¶«Ğ°¡¹¡£\n");
+        set("long", "ä»–å°±æ˜¯æ¡ƒèŠ±å³¶ä¸»ã€‚è¡Œäº‹å¥½æƒ¡å…¨ç”±å·±å¿ƒï¼Œå› æ­¤è¢«\n"
+                    "äººç¨±ä½œã€Œæ±é‚ªã€ã€‚\n");
         set("attitude", "peaceful");
         set("class", "scholar");
         set("str", 40);
@@ -83,7 +83,7 @@ void create()
 
         prepare_skill("finger" , "tanzhi-shentong");
 
-        create_family("ÌÒ»¨µº", 1, "µºÖ÷");
+        create_family("æ¡ƒèŠ±å³¶", 1, "å³¶ä¸»");
 
         set("chat_chance_combat", 120);
         set("chat_msg_combat", ({

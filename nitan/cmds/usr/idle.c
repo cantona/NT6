@@ -1,4 +1,4 @@
-// idle.c ·¢´ôÉñ¹¦
+// idle.c ç™¼å‘†ç¥åŠŸ
 
 #include <ansi.h>
 
@@ -14,82 +14,82 @@ int main(object me, string arg)
                 return 0;
 
         if (! arg)
-                return notify_fail("ÄãÒªÈÃÄÄ¸öÍæ¼Ò·¢´ô£¿\n");
+                return notify_fail("ä½ è¦è®“å“ªå€‹ç©å®¶ç™¼å‘†ï¼Ÿ\n");
 
         if (sscanf(arg, "%s %d", arg, n) != 2)
                 n = 1;
 
         if( n > 10 ) n = 10;
         if (! objectp(ob = find_player(arg)) || ! me->visible(ob))
-                return notify_fail("ÄãÒªÈÃÄÄ¸öÍæ¼Ò·¢´ô£¿\n");
+                return notify_fail("ä½ è¦è®“å“ªå€‹ç©å®¶ç™¼å‘†ï¼Ÿ\n");
 
         if (n < 1)
-                return notify_fail("ÄãÒªÈÃ±ğÈË·¢´ô¶à¾Ã£¿\n"); 
+                return notify_fail("ä½ è¦è®“åˆ¥äººç™¼å‘†å¤šä¹…ï¼Ÿ\n"); 
 
         if( time()-query_temp("last/idle", me)<10 )
-                return notify_fail("Èç¹ûÄãÒªÁ¬ĞøÊ¹ÓÃ·¢´ôÉñ¹¦£¬ÇëÊ¹ÓÃidle <Íæ¼Ò> <´ÎÊı>\n");
+                return notify_fail("å¦‚æœä½ è¦é€£çºŒä½¿ç”¨ç™¼å‘†ç¥åŠŸï¼Œè«‹ä½¿ç”¨idle <ç©å®¶> <æ¬¡æ•¸>\n");
 
         if (me == ob)
-                return notify_fail("Äã´óÄÔÓĞË®£¿\n");
+                return notify_fail("ä½ å¤§è…¦æœ‰æ°´ï¼Ÿ\n");
 
         if (wizardp(ob))
-                return notify_fail("ÄãµÄ·¢´ôÉñ¹¦µÈ¼¶»¹Ã»ÓĞÄÇÃ´¸ß¡£\n");
+                return notify_fail("ä½ çš„ç™¼å‘†ç¥åŠŸç­‰ç´šé‚„æ²’æœ‰é‚£éº¼é«˜ã€‚\n");
 
         if( query("env/no_idle", ob) )
-                return notify_fail("Äã²»ÄÜÈÃÕâ¸öÈË·¢´ô...\n");
+                return notify_fail("ä½ ä¸èƒ½è®“é€™å€‹äººç™¼å‘†...\n");
 
         lvl = me->query_skill("idle-force", 1);
         if (! lvl)
-                return notify_fail("ÄãµÄÏÈÑ§ºÃÁË·¢´ôÉñ¹¦ÔÙËµ¡£\n");
+                return notify_fail("ä½ çš„å…ˆå­¸å¥½äº†ç™¼å‘†ç¥åŠŸå†èªªã€‚\n");
 
         if (lvl < 50)
-                return notify_fail("ÄãµÄ·¢´ôÉñ¹¦Ë®Æ½Ì«²î£¬ÎŞ·¨Ê©Õ¹¾ø¼¼¡£\n");
+                return notify_fail("ä½ çš„ç™¼å‘†ç¥åŠŸæ°´å¹³å¤ªå·®ï¼Œç„¡æ³•æ–½å±•çµ•æŠ€ã€‚\n");
 
         if (lvl < 300 && environment(ob) != environment(me))
-                return notify_fail("ÄãµÄ·¢´ôÉñ¹¦Ë®Æ½ÓĞÏŞ£¬ÎŞ·¨Ê©Õ¹ÆæÊõÓÚÇ§ÀïÖ®Íâ£¡\n");
+                return notify_fail("ä½ çš„ç™¼å‘†ç¥åŠŸæ°´å¹³æœ‰é™ï¼Œç„¡æ³•æ–½å±•å¥‡è¡“äºåƒè£¡ä¹‹å¤–ï¼\n");
 
         if( query("jing", me)<10*n )
-                return notify_fail("ÄãµÄ¾«ÉñÌ«²î£¬²»ÄÜÊ©Õ¹ÕâÒ»¿õ¹ÅÉñ¹¦¡£\n");
+                return notify_fail("ä½ çš„ç²¾ç¥å¤ªå·®ï¼Œä¸èƒ½æ–½å±•é€™ä¸€æ› å¤ç¥åŠŸã€‚\n");
 
         if( query("learned_points", me)+n>query("potential", me) )
-                return notify_fail("ÄãµÄÇ±ÄÜ²»¹»£¬ÎŞ·¨Ê©Õ¹ÕâÒ»¿õ¹ÅÉñ¹¦¡£\n");
+                return notify_fail("ä½ çš„æ½›èƒ½ä¸å¤ ï¼Œç„¡æ³•æ–½å±•é€™ä¸€æ› å¤ç¥åŠŸã€‚\n");
 
         set_temp("last/idle", time(), me);
 
         me->receive_damage("jing", 10 * n);
         addn("learned_points", n, me);
 
-        message_vision(HIM "$N" HIM "¿ÚÖĞÄîÄîÓĞ´Ê£º!@#$%^&£¬Ê²Ã´ÒâË¼£¿\n", me);
+        message_vision(HIM "$N" HIM "å£ä¸­å¿µå¿µæœ‰è©ï¼š!@#$%^&ï¼Œä»€éº¼æ„æ€ï¼Ÿ\n", me);
         if( random(lvl*lvl)+lvl*lvl<query("combat_exp", ob) || 
             random(lvl) + lvl / 2 < ob->query_skill("idle-force", 1))
         {
-                write("Ã»ÓĞÈÎºÎĞ§¹û£¬¿´À´ÄãµÄ·¢´ôÉñ¹¦Ê§°ÜÁË£¡\n");
+                write("æ²’æœ‰ä»»ä½•æ•ˆæœï¼Œçœ‹ä¾†ä½ çš„ç™¼å‘†ç¥åŠŸå¤±æ•—äº†ï¼\n");
                 return 1;
         }
 
         switch(random(4))
         {
         case 0:
-                message_vision(HIM "Ìì¿ÕÍ»È»³öÏÖÁËÒ»¸öÈËÍ·£¬¶ñºİºİµÄ¶¢×Å$N"
-                               HIM "£¬ÏÅµÃ$P" HIM "Ä¿µÉ¿Ú´ô£¬Ò»¾ä»°Ò²Ëµ²»ÉÏÀ´¡£\n" NOR,
+                message_vision(HIM "å¤©ç©ºçªç„¶å‡ºç¾äº†ä¸€å€‹äººé ­ï¼Œæƒ¡ç‹ ç‹ çš„ç›¯è‘—$N"
+                               HIM "ï¼Œåš‡å¾—$P" HIM "ç›®çªå£å‘†ï¼Œä¸€å¥è©±ä¹Ÿèªªä¸ä¸Šä¾†ã€‚\n" NOR,
                                ob);
                 break;
         case 1:
-                message_vision(HIM "ÑÌÎíÖĞÍ»È»´Ü³öÁ½¸öĞ¡¹í£¬Ò»°Ñ×¥×¡$N"
-                               HIM "£¬µÀ£º×ß£¬¸ÃÄãÈ¥±¨µ½ÁË£¡ÏÅµÃ$P"
-                               HIM "¿ÚÍÂ°×Ä­£¬¼¸ºõÔÎÁË¹ıÈ¥¡£\n" NOR,
+                message_vision(HIM "ç…™éœ§ä¸­çªç„¶ç«„å‡ºå…©å€‹å°é¬¼ï¼Œä¸€æŠŠæŠ“ä½$N"
+                               HIM "ï¼Œé“ï¼šèµ°ï¼Œè©²ä½ å»å ±åˆ°äº†ï¼åš‡å¾—$P"
+                               HIM "å£åç™½æ²«ï¼Œå¹¾ä¹æšˆäº†éå»ã€‚\n" NOR,
                                ob);
                 break;
         case 2:
-                message_vision(HIM "Ò»¸öÈË·ÉÒ²ËÆµÄÅÜÁË¹ıÀ´£¬´óÉùº°µÀ£º" +
-                               ob->name() + HIM "£¡" + ob->name() + HIM "£¡"
-                               "ÄãµÄ¹ÉÆ±ÓÖµøÁË£¡\n$P"
-                               HIM "ÌıÁËÒ»õÓË¤ÔÚÁËµØÉÏ£¬²»×¡µÄ³é´¤£¡\n" NOR,
+                message_vision(HIM "ä¸€å€‹äººé£›ä¹Ÿä¼¼çš„è·‘äº†éä¾†ï¼Œå¤§è²å–Šé“ï¼š" +
+                               ob->name() + HIM "ï¼" + ob->name() + HIM "ï¼"
+                               "ä½ çš„è‚¡ç¥¨åˆè·Œäº†ï¼\n$P"
+                               HIM "è½äº†ä¸€è·¤æ‘”åœ¨äº†åœ°ä¸Šï¼Œä¸ä½çš„æŠ½æï¼\n" NOR,
                                ob);
                 break;
         default:
-                message_vision(HIM "ºöÈ»¾¯Áå´ó×÷£¬ÓÉÔ¶¼°½ü£¬Ô½À´Ô½Ïì£¬$N" +
-                               HIM "µÇÊ±Á³É«·¢°×£¬Ëµ²»³ö»°À´£¡\n" NOR,
+                message_vision(HIM "å¿½ç„¶è­¦éˆ´å¤§ä½œï¼Œç”±é åŠè¿‘ï¼Œè¶Šä¾†è¶ŠéŸ¿ï¼Œ$N" +
+                               HIM "ç™»æ™‚è‡‰è‰²ç™¼ç™½ï¼Œèªªä¸å‡ºè©±ä¾†ï¼\n" NOR,
                                ob);
                 break;
         }
@@ -98,12 +98,12 @@ int main(object me, string arg)
         lvl *= n;
 
         if (! ob->ban_say(1))
-                CHANNEL_D->do_channel(this_object(), "rumor", "ÌıËµ" +
-                                      me->name(1) + HIM "Ê©Õ¹·¢´ôÉñ¹¦£¬" +
-                                      ob->name(1) + HIM "ÎŞ¹¼ÊÜº¦¡£");
-        ob->ban_say_until(lvl, "Äã±»ÏÅÉµÁË£¬ÏÖÔÚËµ²»ÉÏ»°À´");
-        write(HIC "ÄãµÄ·¢´ôÉñ¹¦³É¹¦ÁË£¬" + ob->name(1) +
-              HIC "ÏÖÔÚ±»ÏÅµÃËµ²»ÉÏ»°À´ÁË£¡\n" NOR);
+                CHANNEL_D->do_channel(this_object(), "rumor", "è½èªª" +
+                                      me->name(1) + HIM "æ–½å±•ç™¼å‘†ç¥åŠŸï¼Œ" +
+                                      ob->name(1) + HIM "ç„¡è¾œå—å®³ã€‚");
+        ob->ban_say_until(lvl, "ä½ è¢«åš‡å‚»äº†ï¼Œç¾åœ¨èªªä¸ä¸Šè©±ä¾†");
+        write(HIC "ä½ çš„ç™¼å‘†ç¥åŠŸæˆåŠŸäº†ï¼Œ" + ob->name(1) +
+              HIC "ç¾åœ¨è¢«åš‡å¾—èªªä¸ä¸Šè©±ä¾†äº†ï¼\n" NOR);
 
         return 1;
 }
@@ -111,12 +111,12 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : idle <Íæ¼Ò> <´ÎÊı>
+æŒ‡ä»¤æ ¼å¼ : idle <ç©å®¶> <æ¬¡æ•¸>
 
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄãÊ¹Ä³Ò»¸öÍæ¼Ò²»ÄÜËµ»°£¬µ±ÄãµÄ·¢´ôÉñ¹¦µ½ÁË
-Èı°Ù¼¶ÒÔºó¿ÉÒÔÊ¹²»ÔÚÄãÃæÇ°µÄÍæ¼Ò±Õ×ì¡£ÔËÓÃ·¢´ôÉñ¹¦µÄ³É¹¦
-ÂÊÓë×Ô¼ºµÄ·¢´ôÉñ¹¦µÈ¼¶ºÍ¶Ô·½µÄ¾­ÑéÓĞ¹Ø£¬Ã¿Ê¹ÓÃÒ»´Î·¢´ôÉñ
-¹¦¶¼»áºÄ·ÑÒ»µãÇ±ÄÜºÍÒ»Ğ©¾«¡£
+é€™å€‹æŒ‡ä»¤å¯ä»¥è®“ä½ ä½¿æŸä¸€å€‹ç©å®¶ä¸èƒ½èªªè©±ï¼Œç•¶ä½ çš„ç™¼å‘†ç¥åŠŸåˆ°äº†
+ä¸‰ç™¾ç´šä»¥å¾Œå¯ä»¥ä½¿ä¸åœ¨ä½ é¢å‰çš„ç©å®¶é–‰å˜´ã€‚é‹ç”¨ç™¼å‘†ç¥åŠŸçš„æˆåŠŸ
+ç‡èˆ‡è‡ªå·±çš„ç™¼å‘†ç¥åŠŸç­‰ç´šå’Œå°æ–¹çš„ç¶“é©—æœ‰é—œï¼Œæ¯ä½¿ç”¨ä¸€æ¬¡ç™¼å‘†ç¥
+åŠŸéƒ½æœƒè€—è²»ä¸€é»æ½›èƒ½å’Œä¸€äº›ç²¾ã€‚
  
 HELP );
         return 1;

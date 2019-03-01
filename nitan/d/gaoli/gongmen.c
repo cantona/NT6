@@ -1,14 +1,14 @@
 // /d/gaoli/donggongmen
-// Room in ����
+// Room in 高麗
 // rich 99/03/28
 inherit ROOM;
 void create()        
 {
-        set("short", "����");
+        set("short", "宮門");
         set("long", @LONG
-���Ǹ����ʹ������ţ��������Ĺ���ֻ���ڰٹ��糯ʱ�ſ�����
-���ڴ��Ž����Ĺ��ţ�һ��ʿ��Ӣ�˲�����վ�ڹ���ǰ������������ѹ
-�֣�ʹ�˾����뿪��
+這是高麗皇宮的正門，北面朱紅的宮門只有在百官早朝時才開啟，
+現在大門緊緊的關著，一隊士兵英姿勃勃的站在宮門前，氣氛寧靜而壓
+抑，使人盡快離開。
 LONG
         );
 set("outdoors", "gaoli");

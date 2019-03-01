@@ -14,20 +14,20 @@ int main(object me, string arg)
         if (me != this_player())
                 return 0;
 
-        if (! arg) return notify_fail("Ö¸Áî¸ñÊ½ :cat <µµ°¸Ãû>\n");
+        if (! arg) return notify_fail("æŒ‡ä»¤æ ¼å¼ :cat <æª”æ¡ˆå>\n");
         file = resolve_path(query("cwd", me), arg);
         if (file_size(file) < 0)
-                return notify_fail("Ã»ÓĞÕâ¸öµµ°¸¡£\n");
+                return notify_fail("æ²’æœ‰é€™å€‹æª”æ¡ˆã€‚\n");
 
         if (! SECURITY_D->valid_read(file, me, "cat"))
-                return notify_fail("Ã»ÓĞÕâ¸öµµ°¸¡£\n");
+                return notify_fail("æ²’æœ‰é€™å€‹æª”æ¡ˆã€‚\n");
 
         if (file_size(file) > 128000)
-                write("ÎÄ¼şÌ«³¤£¬ÇëÓÃ more Ö¸Áî²é¿´¡£\n");
+                write("æ–‡ä»¶å¤ªé•·ï¼Œè«‹ç”¨ more æŒ‡ä»¤æŸ¥çœ‹ã€‚\n");
         else   {
-                write(WHT "¿ªÊ¼ÔÄ¶ÁÎÄ¼ş£º" +  file + "\n" NOR);
+                write(WHT "é–‹å§‹é–±è®€æ–‡ä»¶ï¼š" +  file + "\n" NOR);
                 me->start_more(read_file(file));
-                write(WHT "ÔÄ¶ÁÎÄ¼şÍê±Ï¡£\n" NOR);
+                write(WHT "é–±è®€æ–‡ä»¶å®Œç•¢ã€‚\n" NOR);
                 return 1;
         }
 }
@@ -35,9 +35,9 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ :cat <µµ°¸Ãû>
+æŒ‡ä»¤æ ¼å¼ :cat <æª”æ¡ˆå>
 
-Õâ¸öÖ¸ÁîÈÃÄã¿ÉÒÔ²éÔÄÒ»¸öÎÄ¼şµÄÄÚÈİ¡£
+é€™å€‹æŒ‡ä»¤è®“ä½ å¯ä»¥æŸ¥é–±ä¸€å€‹æ–‡ä»¶çš„å…§å®¹ã€‚
 
 see also: more
 HELP );

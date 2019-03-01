@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "���ݵ�");
+        set("short", "中州道");
         set("long", @LONG
-�����������ݺ����ݵ�Ҫ�������������ϡ����������ݳ�
-�ı��ţ�����ͨ�򳤽��ߵĶɿڡ���·������һ���ޱߵ���
-ɫ��Ұ����һƬ���Ϸ�⡣
+這條連接中州和揚州的要道來往車馬不斷。南面是中州城
+的北門，再向北通向長江邊的渡口。道路兩邊是一望無邊的綠
+色沃野。好一片江南風光。
 LONG);
         set("no_clean_up", 0);
         set("exits", ([

@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�㳡");
+        set("short", "廣場");
         set("long", @LONG
-����ǧ���ǰ��һ���㳡����������̨�׾��ǹ�����������ǧ
-�������ǹ���ز��������ĵزص�����ǹ�����¹�����ʿ��
-���µ����ÿ�궼�в�����;ۼ��ٰ�ˮ½�󷨻ᡣ
+這是千佛殿前的一個廣場。往北上了台階就是供奉西天諸佛的千
+佛殿。往西是供奉地藏王菩薩的地藏殿，往東是供奉白衣觀音大士的
+白衣殿。這裡每年都有不少香客聚集舉辦水陸大法會。
 LONG );
         set("exits", ([
                 "east" : __DIR__"bydian",
@@ -28,7 +28,7 @@ int valid_leave(object me, string dir)
         {
                 if (dir == "southup")
                 {
-                        return notify_fail("�㼶�𲻹������ܽ����ĦԺ��\n");
+                        return notify_fail("你級別不夠，不能進入達摩院。\n");
                 }
         }
         return ::valid_leave(me, dir);

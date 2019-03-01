@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����ɽׯ");
+        set("short", "絕情山莊");
         set("long", @LONG
-�˴����Ǿ���ɽׯ������ɽׯ��ӳ�ڴд����ľ֮�£���
-�������鲼���������ˡ�ʱ�����˵Ļ���Ʈ��������������
-����֮�������˲����Ŀ�������
+此處便是絕情山莊，但見山莊掩映于蔥翠的林木之下，四
+處繁花遍布，景致宜人。時有醉人的花香飄過，間雜著清脆的
+百鳥之聲，令人不由心曠神怡。
 LONG);
         set("outdoors", "jueqing");
         set("exits", ([

@@ -3,11 +3,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Ä¹µØ");
+        set("short", "å¢“åœ°");
         set("long", @LONG
-ÕâÀïÊÇÌÒ»¨µºµºÖ÷·òÈËµÄÄ¹µØ¡£Ä¹µØÖÜÎ§ÖÖÁËÒ»Ğ©°«°«µÄ
-»¨Ê÷¡£Ê÷ÉÏµÄ°×»¨ĞÇĞÇµãµã¡£°×»¨ÖĞ¼äÊÇ¿éÊ¯±® (bei)£¬±®ºó
-ÊÇÁ½ÉÈ¼á¹ÌµÄÊ¯ÃÅ¡£Ä¹µØ¸É¸É¾»¾»£¬ÏÔÈ»ÌìÌìÓĞÈË´òÉ¨¡£
+é€™è£¡æ˜¯æ¡ƒèŠ±å³¶å³¶ä¸»å¤«äººçš„å¢“åœ°ã€‚å¢“åœ°å‘¨åœç¨®äº†ä¸€äº›çŸ®çŸ®çš„
+èŠ±æ¨¹ã€‚æ¨¹ä¸Šçš„ç™½èŠ±æ˜Ÿæ˜Ÿé»é»ã€‚ç™½èŠ±ä¸­é–“æ˜¯å¡ŠçŸ³ç¢‘ (bei)ï¼Œç¢‘å¾Œ
+æ˜¯å…©æ‰‡å …å›ºçš„çŸ³é–€ã€‚å¢“åœ°å¹¹å¹¹å‡ˆå‡ˆï¼Œé¡¯ç„¶å¤©å¤©æœ‰äººæ‰“æƒã€‚
 LONG);
         set("outdoors", "taohua");
         set("exits", ([
@@ -16,8 +16,8 @@ LONG);
                 "north" : __DIR__"road1",
         ]));
         set("item_desc", ([
-                "bei": WHT "\nÊ¯±®ÉÏ¿Ì×Å£º¡¸" HIR "ÌÒ»¨µºÅ®Ö÷·ëÊÏ"
-                       "ÂñÏãÖ®Ä¹" NOR + WHT "¡¹\n" NOR
+                "bei": WHT "\nçŸ³ç¢‘ä¸Šåˆ»è‘—ï¼šã€Œ" HIR "æ¡ƒèŠ±å³¶å¥³ä¸»é¦®æ°"
+                       "åŸ‹é¦™ä¹‹å¢“" NOR + WHT "ã€\n" NOR
         ]) );
         set("no_clean_up", 0);
         set("coor/x", 8970);
@@ -39,14 +39,14 @@ void check_trigger()
            && (int)query("right_trigger")==3
            && ! query("exits/down"))
         {
-                message("vision", HIY "\nÄ¹ÃÅºöÈ»ÔşÔş×÷Ïì£¬»º»ºÏòÁ½±ßÒÆ¶¯Öø£¬Â¶"
-                                  "³öÒ»¸öÏòÏÂµÄ½×Ìİ¡£\n\n" NOR, this_object());
+                message("vision", HIY "\nå¢“é–€å¿½ç„¶è»‹è»‹ä½œéŸ¿ï¼Œç·©ç·©å‘å…©é‚Šç§»å‹•è‘—ï¼Œéœ²"
+                                  "å‡ºä¸€å€‹å‘ä¸‹çš„éšæ¢¯ã€‚\n\n" NOR, this_object());
                 set("exits/down", __DIR__"mudao");
                 if (room = find_object(__DIR__"mudao"))
                 {
                         set("exits/up", __FILE__, room);
-                        message("vision", HIY "\nÄ¹ÃÅºöÈ»ÔşÔş×÷Ïì£¬»º»ºÏòÁ½±ßÒÆ"
-                                          "¶¯Öø£¬Â¶³öÒ»¸öÏòÏÂµÄ½×Ìİ¡£\n\n" NOR,
+                        message("vision", HIY "\nå¢“é–€å¿½ç„¶è»‹è»‹ä½œéŸ¿ï¼Œç·©ç·©å‘å…©é‚Šç§»"
+                                          "å‹•è‘—ï¼Œéœ²å‡ºä¸€å€‹å‘ä¸‹çš„éšæ¢¯ã€‚\n\n" NOR,
                                           room);
                 }
                 delete("left_trigger");
@@ -62,14 +62,14 @@ void close_passage()
         if (! query("exits/down"))
                 return;
 
-        message("vision", WHT "\nÄ¹ÃÅºöÈ»·¢³öÔşÔşµÄÉùÒô£¬»º»ººÏÂ££¬½«ÏòÏÂµÄÍ¨µÀ"
-                          "¸Ç×¡ÁË¡£\n\n" NOR, this_object());
+        message("vision", WHT "\nå¢“é–€å¿½ç„¶ç™¼å‡ºè»‹è»‹çš„è²éŸ³ï¼Œç·©ç·©åˆæ”ï¼Œå°‡å‘ä¸‹çš„é€šé“"
+                          "è“‹ä½äº†ã€‚\n\n" NOR, this_object());
 
         if (room = find_object(__DIR__"mudao"))
         {
                 delete("exits/up", room);
-                message("vision", WHT "\nÄ¹ÃÅºöÈ»·¢³öÔşÔşµÄÉùÒô£¬»º»ººÏÂ££¬½«Ïò"
-                                  "ÉÏµÄÍ¨µÀ¸Ç×¡ÁË¡£\n\n" NOR, room);
+                message("vision", WHT "\nå¢“é–€å¿½ç„¶ç™¼å‡ºè»‹è»‹çš„è²éŸ³ï¼Œç·©ç·©åˆæ”ï¼Œå°‡å‘"
+                                  "ä¸Šçš„é€šé“è“‹ä½äº†ã€‚\n\n" NOR, room);
         }
         delete("exits/down");
 }
@@ -83,19 +83,19 @@ int do_push(string arg)
 
         if (query("exits/down"))
         {
-                write("Ä¹ÃÅ¶¼ÒÑ¾­¿ªÁË£¬Äã»¹ÍÆÄ¹±®¸ÉÂï¡£\n" NOR);
+                write("å¢“é–€éƒ½å·²ç¶“é–‹äº†ï¼Œä½ é‚„æ¨å¢“ç¢‘å¹¹å˜›ã€‚\n" NOR);
                 return 1;
         }
 
         if (arg == "bei" )
         {
-                write(HIC "ÄãÊÔÖøÍÆ¶¯Ä¹±®£¬·¢ÏÖËü¿ÉÒÔ×óÓÒÍÆ¶¯¡£\n" NOR);
+                write(HIC "ä½ è©¦è‘—æ¨å‹•å¢“ç¢‘ï¼Œç™¼ç¾å®ƒå¯ä»¥å·¦å³æ¨å‹•ã€‚\n" NOR);
                 return 1;
         }
 
         if( query("max_neili", this_player())<1000 )
         {
-                write("ÄãÊÔÖøÍÆ¶¯Ä¹±®£¬¿ÉÔõÃ´Ò²ÍÆÖ®²»¶¯¡£\n");
+                write("ä½ è©¦è‘—æ¨å‹•å¢“ç¢‘ï¼Œå¯æ€éº¼ä¹Ÿæ¨ä¹‹ä¸å‹•ã€‚\n");
                 return 1;
         }
 
@@ -103,22 +103,22 @@ int do_push(string arg)
         {
                 if (dir == "right")
                 {
-                        message_vision(WHT "$N" WHT "½«Ä¹±®ÍùÓÒÍÆÈ¥£¬ºöÈ»ÔşÔş¼¸Éù"
-                                       "Ä¹±®ÓÖÒÆ»ØÔ­Î»¡£\n" NOR, this_player());
+                        message_vision(WHT "$N" WHT "å°‡å¢“ç¢‘å¾€å³æ¨å»ï¼Œå¿½ç„¶è»‹è»‹å¹¾è²"
+                                       "å¢“ç¢‘åˆç§»å›åŸä½ã€‚\n" NOR, this_player());
                         addn("right_trigger", 1);
                         check_trigger();
                         return 1;
                 } else
                 if (dir == "left")
                 {
-                        message_vision(WHT "$N" WHT "½«Ä¹±®Íù×óÍÆÈ¥£¬ºöÈ»ÔşÔş¼¸Éù"
-                                       "Ä¹±®ÓÖÒÆ»ØÔ­Î»¡£\n" NOR, this_player());
+                        message_vision(WHT "$N" WHT "å°‡å¢“ç¢‘å¾€å·¦æ¨å»ï¼Œå¿½ç„¶è»‹è»‹å¹¾è²"
+                                       "å¢“ç¢‘åˆç§»å›åŸä½ã€‚\n" NOR, this_player());
                         addn("left_trigger", 1);
                         check_trigger();
                         return 1;
                 } else
                 {
-                        write("ÄãÒª½«Ä¹±®ÍÆÏòÄÇ¸ö·½Ïò£¿\n");
+                        write("ä½ è¦å°‡å¢“ç¢‘æ¨å‘é‚£å€‹æ–¹å‘ï¼Ÿ\n");
                         return 1;
                 }
         }

@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�����ھִ���");
+        set("short", "河洛鏢局大廳");
         set("long", @LONG
-�����еĳ��裬ȫ��ʮ�־��µ���̴ľ�Ҿߣ��������Ⱦ޴�İ�
-ߡ���磬�������˸�ɫ�������ɼ��������İ���ͼ�����Ǻ����Ĺ�
-�����һ��Ƥ���Σ���������һ����ò���͵ĺ��ӡ�
+廳堂中的陳設，全是十分精致的紫檀木家具，單是那扇巨大的八
+摺屏風，上面鑲了各色寶玉，砌成極其生動的八仙圖，已是罕見的古
+物。上首一虎皮交椅，上面坐著一個相貌威猛的漢子。
 LONG );
         set("exits", ([
                 "north" : "/d/changan/biaoju-dayuan",

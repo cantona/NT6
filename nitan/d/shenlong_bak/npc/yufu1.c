@@ -1,4 +1,4 @@
-// yufu1.c Óæ·ò
+// yufu1.c æ¼å¤«
 // Last Modified by winder on Jul. 12 2002
 
 inherit NPC;
@@ -6,10 +6,10 @@ string ask_shenlong();
 
 void create()
 {
-        set_name("Óæ·ò", ({ "yu fu","fu" }) );
-        set("gender", "ÄĞĞÔ");
+        set_name("æ¼å¤«", ({ "yu fu","fu" }) );
+        set("gender", "ç”·æ€§");
         set("age", 35);
-        set("long", "µºÉÏÒÔ´òÓãÎªÉúµÄÓæ·ò¡£\n");
+        set("long", "å³¶ä¸Šä»¥æ‰“é­šç‚ºç”Ÿçš„æ¼å¤«ã€‚\n");
         set("combat_exp", 8800);
         set("shen_type", 0);
         set("attitude", "friendly");
@@ -18,8 +18,8 @@ void create()
         set("apply/defense", 50);
 
         set("inquiry",([
-                "ÉñÁúµº" : (: ask_shenlong :),
-                "ÉñÁú½Ì" : (: ask_shenlong :),
+                "ç¥é¾å³¶" : (: ask_shenlong :),
+                "ç¥é¾æ•™" : (: ask_shenlong :),
         ]));
 
         setup();
@@ -32,15 +32,15 @@ string ask_shenlong()
         mapping fam;
         object ob;
         if( !(fam=query("family", this_player())) || 
-                fam["family_name"] != "ÉñÁú½Ì")
+                fam["family_name"] != "ç¥é¾æ•™")
         {
                 set_temp("marks/shenlong", 1, this_player());
-                write("Óæ·ò¶ÔÄãËµ£ºÉñÁúµº¿ÉÊÇ¸öºÃÈ¥´¦£¬ÄãÏëÈ¥¾Íº°Ğ¡ÈËÒ»Éù¡£\n");
-                return "¿ìÉÏ´¬£¬×ß°É¡£\n";
+                write("æ¼å¤«å°ä½ èªªï¼šç¥é¾å³¶å¯æ˜¯å€‹å¥½å»è™•ï¼Œä½ æƒ³å»å°±å–Šå°äººä¸€è²ã€‚\n");
+                return "å¿«ä¸Šèˆ¹ï¼Œèµ°å§ã€‚\n";
         }
         else
         {
                 command("nod");
-                return "¼ÈÊÇ±¾½ÌµÜ×Ó£¬º°Ò»Éù¾ÍĞĞÁË¡£";
+                return "æ—¢æ˜¯æœ¬æ•™å¼Ÿå­ï¼Œå–Šä¸€è²å°±è¡Œäº†ã€‚";
         }
 }

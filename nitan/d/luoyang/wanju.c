@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��ߵ�");
+        set("short", "玩具店");
         set("long", @LONG
-����һ�����յ꣬���治�󣬵�������ָ������ֹ���Ʒ���治���أ�
-��ʽ������С���ˣ�������ɫ�Ĳ����ޣ�����һЩ��ľ�ĺ��������ɵ�С
-���գ��������������С�����ǵ�ע�⣬�벻��Ҳ������档
+這是一家手藝店，店面不大，但裡面各種各樣的手工制品還真不少呢，
+各式各樣的小泥人，五顏六色的布娃娃，還有一些用木材和竹子做成的小
+玩藝，引起了來這裡的小孩子們的注意，想不想也買個玩玩。
 LONG);
         set("outdoors", "luoyang");
         set("no_clean_up", 0);

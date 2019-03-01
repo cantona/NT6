@@ -7,15 +7,15 @@ inherit BLADE;
  
 void create()
 {
-        set_name(HIY "Éñ" HIW "Ö®" HIM "×£¸£" NOR HIC "±¦µ¶" NOR, ({ "zhufu blade", "blade", "dao" }) );
+        set_name(HIY "ç¥" HIW "ä¹‹" HIM "ç¥ç¦" NOR HIC "å¯¶åˆ€" NOR, ({ "zhufu blade", "blade", "dao" }) );
         set_weight(500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
-                set("long", HIY "Õâ±ãÊÇÉñÖ®×£¸£±¦µ¶£¬Èı³ßÀ´³¤µÄµ¥µ¶¡£\n" NOR);
+                set("unit", "æŸ„");
+                set("long", HIY "é€™ä¾¿æ˜¯ç¥ä¹‹ç¥ç¦å¯¶åˆ€ï¼Œä¸‰å°ºä¾†é•·çš„å–®åˆ€ã€‚\n" NOR);
                 set("value", 3000); 
-                set("no_sell", "ÕâÑù¶«Î÷²»ÄÜÂô¡£\n");
+                set("no_sell", "é€™æ¨£æ±è¥¿ä¸èƒ½è³£ã€‚\n");
                 set("rigidity",8000);   
                 set("material", "tian jing");
                 set("no_pawn", 1);

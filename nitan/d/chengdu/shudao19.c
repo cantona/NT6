@@ -4,10 +4,10 @@ inherit BUNCH_ROOM;
 
 void create()
 {
-        set("short", "¹ÙµÀ");
+        set("short", "å®˜é“");
         set("long", @LONG
-Äã×ßÔÚÒ»Ìõ¹ÙµÀÉÏ£¬Î÷ÃæÒÑ¾­¿ÉÒÔÒþÔ¼¿´¼û³É¶¼³ÇµÄ³ÇÃÅÁË£¬¶«
-È¥ÊÇÊñµÀ¡£
+ä½ èµ°åœ¨ä¸€æ¢å®˜é“ä¸Šï¼Œè¥¿é¢å·²ç¶“å¯ä»¥éš±ç´„çœ‹è¦‹æˆéƒ½åŸŽçš„åŸŽé–€äº†ï¼Œæ±
+åŽ»æ˜¯èœ€é“ã€‚
 LONG );
         set("exits", ([
                 "west" :  __DIR__"road2",

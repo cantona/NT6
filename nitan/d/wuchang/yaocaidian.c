@@ -3,16 +3,16 @@
 inherit ROOM;
 void create()
 {
-        set("short", "ҩ�ĵ�");
+        set("short", "藥材店");
         set("long", @LONG
-����һ��ҩ�ĵ꣬�߽������ŵ��̱ǵ�ҩζ����ҩ���ϼ��ٸ�С��
-����ű����д��ҩ���ͼ۸�ҩ���ƹ����ڲ輸�ԣ����Ժ��Ų裬��
-Ҳ������һ�ۡ�һ��С���վ�ڹ�̨���к��Ź˿͡���̨������һ�ŷ�
-�ƵĹ��(guanggao)��
+這是一家藥材店，走進來便聞到刺鼻的藥味兒。藥櫃上幾百個小抽
+屜分門別類地寫著藥名和價格。藥店掌櫃坐在茶幾旁，獨自喝著茶，看
+也不看你一眼。一名小伙計站在櫃台後招呼著顧客。櫃台上貼著一張發
+黃的廣告(guanggao)。
 LONG );
         set("item_desc", ([
-                "guanggao" : "�����������ҩƷ��
-����  ��֥  ����  ���  ����\n"
+                "guanggao" : "本店出售以下藥品：
+當歸  靈芝  田七  紅參  金釵\n"
         ]));
         set("objects", ([
                 __DIR__"npc/boss1" : 1,

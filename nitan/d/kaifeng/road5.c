@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����");
+        set("short", "御街");
         set("long", @LONG
-�����Ǻ�Ὺ�����Ҫ�ֵ���Ҳ�ǻ��ϳ�Ѳ��Ҫ�����ֵ����ߵ�
-��̨ͤ���ϣ�С����������������������������һ�ɷ������ϱߵĸ�
-�ž������ţ���������ͤ�¡�
+御街是橫貫開封的主要街道，也是皇上出巡的要道。街道兩邊店
+舖亭台不斷，小販叫賣，行人來往，車馬喧嘩，一派繁華，南邊的高
+橋就是州橋，西面是龍亭寺。
 LONG );
         set("no_clean_up", 0);
         set("exits", ([

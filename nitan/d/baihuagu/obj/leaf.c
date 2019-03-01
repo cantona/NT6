@@ -2,13 +2,13 @@
 inherit ITEM;
 void create()
 {
-        set_name(HIM"ÌÒ»¨"NOR, ({"leaf", "flower"}));
+        set_name(HIM"æ¡ƒèŠ±"NOR, ({"leaf", "flower"}));
         set_weight(80);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIM"ÕâÊÇÒ»Ö¦½¿ÑŞµÄÌÒ»¨¡£\n"NOR);
-                set("unit", "Ö¦");
+                set("long", HIM"é€™æ˜¯ä¸€æå¬Œè‰·çš„æ¡ƒèŠ±ã€‚\n"NOR);
+                set("unit", "æ");
                 set("value", 100);
         }
 }

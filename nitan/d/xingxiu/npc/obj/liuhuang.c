@@ -11,13 +11,13 @@ void init()
 
 void create()
 {
-        set_name("Áò»Ç" NOR, ({"liu huang", "sulphur", "huang"}));
+        set_name("ç¡«ç£º" NOR, ({"liu huang", "sulphur", "huang"}));
         set_weight(10);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿é");
-                set("long", "Ò»¿éÁò»Ç£¬Í¨³£ÓÃÀ´ÖÆ×÷»ðÒ©¡£\n");
+                set("unit", "å¡Š");
+                set("long", "ä¸€å¡Šç¡«ç£ºï¼Œé€šå¸¸ç”¨ä¾†åˆ¶ä½œç«è—¥ã€‚\n");
                 set("value", 200);
         }
 }
@@ -27,19 +27,19 @@ int do_make(string arg)
         object  ob, *obj, me = this_player();
         int i;
         if( !arg || arg!="lianxin dan" )
-                return notify_fail("ÄãÒª×öÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦åšä»€éº¼ï¼Ÿ\n");
         if( me->query_skill("poison", 1) < 120)
-                return notify_fail("ÄãµÄ¶¾¼¼»ðºî²»¹»£¬²»ÄÜÖÆ×÷Á¶ÐÄµ¯¡£\n");
+                return notify_fail("ä½ çš„æ¯’æŠ€ç«ä¾¯ä¸å¤ ï¼Œä¸èƒ½åˆ¶ä½œç…‰å¿ƒå½ˆã€‚\n");
         if(! present("wugong ke", me) && !present("xiezi ke", me)
         && !present("shedan", me) && !present("du zhusi", me)
         && !present("shachong ke", me))
-                return notify_fail("ÄãÃ»ÓÐ×ã¹»µÄÔ­ÁÏ£¡\n");
-        message_vision(CYN"$NÐ¡ÐÄÒíÒíµØ°ÑÒ»¿é¶¾Ò©ºÍÁò»Ç·ÅÔÚÒ»Æð£¬×¢½øÄÚÁ¦£¬Äó³ÉÁËÒ»¿ÅÁ¶ÐÄµ¯¡£\n"NOR, me );
+                return notify_fail("ä½ æ²’æœ‰è¶³å¤ çš„åŽŸæ–™ï¼\n");
+        message_vision(CYN"$Nå°å¿ƒç¿¼ç¿¼åœ°æŠŠä¸€å¡Šæ¯’è—¥å’Œç¡«ç£ºæ”¾åœ¨ä¸€èµ·ï¼Œæ³¨é€²å…§åŠ›ï¼Œææˆäº†ä¸€é¡†ç…‰å¿ƒå½ˆã€‚\n"NOR, me );
                 ob = new("/d/xingxiu/obj/lianxin.c");
                 ob->move(me);
         obj = all_inventory(me);
         for(i=sizeof(obj)-1; i>=0; i--) {
-        if( query("name", obj[i]) == "òÚò¼¿Ç" || query("id", obj[i]) == "xiezike"
+        if( query("name", obj[i]) == "èœˆèš£æ®¼" || query("id", obj[i]) == "xiezike"
          || query("id", obj[i]) == "shedan" || query("id", obj[i]) == "duzhusi"
          || query("id", obj[i]) == "shachongke" )
         destruct(obj[i]);

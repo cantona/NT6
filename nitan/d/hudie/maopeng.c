@@ -1,17 +1,17 @@
-// é�� maopeng.c
+// 茅棚 maopeng.c
  
 #include <ansi.h>
 inherit ROOM;
 
 void create() 
 { 
-        set("short", "é��");
+        set("short", "茅棚");
         set("long", @LONG
-������һ���ª��é�����ѷ���һЩ�ɲ��é�ݣ���������
-�������õģ�ǽ�߿���һЩ�����ͽ�ˮ�õ�ˮ����
+這裡是一間簡陋的茅棚，裡面堆放著一些幹柴和茅草，看來是用
+來生火用的，牆邊靠著一些花鋤和澆水用的水壺。
 LONG );
 
-        set("outdoors", "������");
+        set("outdoors", "蝴蝶谷");
 
         set("exits", ([
             "north" : __DIR__"xfang2",

@@ -4,9 +4,9 @@ inherit ROOM;
 
 void create ()
 {
-        set ("short", "×ßÀÈ");
+        set ("short", "èµ°å»Š");
         set ("long", @LONG
-ÕâÊÇÒ»Ìõ³¤³¤µÄ×ßÀÈ¡£×ßÀÈÎ÷±ßÊÇÍò¸®´óÌü¡£¶«±ßµÄ¾¡Í·ÊÇ¸öĞ¡¿ÍÌÃ¡£
+é€™æ˜¯ä¸€æ¢é•·é•·çš„èµ°å»Šã€‚èµ°å»Šè¥¿é‚Šæ˜¯è¬åºœå¤§å»³ã€‚æ±é‚Šçš„ç›¡é ­æ˜¯å€‹å°å®¢å ‚ã€‚
 LONG);
         set("region", "jingzhou");
         set("no_fight", 1);
@@ -29,7 +29,7 @@ int valid_leave(object me, string dir)
         if (!objectp(present("hu cheng", me)) &&
                 dir == "north" &&
                 objectp(present("qi fang", environment(me))))
-                return notify_fail("Æİ·¼À¹×¡ÄãËµ£ºÎÒ·ò¾ıÖĞ¶¾ÎÔ´²£¬ÇëÎğ´òÈÅ¡£\n");
+                return notify_fail("æˆšèŠ³æ””ä½ä½ èªªï¼šæˆ‘å¤«å›ä¸­æ¯’è‡¥åºŠï¼Œè«‹å‹¿æ‰“æ“¾ã€‚\n");
 
         return ::valid_leave(me, dir);
 }

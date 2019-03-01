@@ -1,5 +1,5 @@
 // Last Modified by winder on Feb. 28 2001
-// bipin.c ÄÚÁ¦±ÈÆ´
+// bipin.c å…§åŠ›æ¯”æ‹¼
  
 #include <ansi.h>;
 #include <combat.h>;
@@ -14,47 +14,47 @@ int exert(object me, string arg)
         
         seteuid(getuid());
 
-        if(!arg) return notify_fail("ÄãÏëºÍË­±ÈÆ´ÄÚÁ¦£¿\n");
+        if(!arg) return notify_fail("ä½ æƒ³å’Œèª°æ¯”æ‹¼å…§åŠ›ï¼Ÿ\n");
 
         if(!objectp(target = present(arg, environment(me))))
-                return notify_fail("ÕâÀïÃ»ÓĞÕâ¸öÈË¡£\n"); 
+                return notify_fail("é€™è£¡æ²’æœ‰é€™å€‹äººã€‚\n"); 
 
         if( !target->is_fighting() ||
                 !target->is_character() ||
                 !me->is_fighting() )
-                return notify_fail("ÄÚÁ¦±ÈÆ´Ö»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ¡£\n");
+                return notify_fail("å…§åŠ›æ¯”æ‹¼åªèƒ½åœ¨æˆ°é¬¥ä¸­ä½¿ç”¨ã€‚\n");
 
         if( !living(target) || query_temp("noliving", target) )
-                return notify_fail("ÄãËÆºõ²»ÓÃÔÙºÍ"+target->name()+"±ÈÆ´ÄÚÁ¦¡£\n"); 
+                return notify_fail("ä½ ä¼¼ä¹ä¸ç”¨å†å’Œ"+target->name()+"æ¯”æ‹¼å…§åŠ›ã€‚\n"); 
 
-        if(target==me) return notify_fail("ÏëºÍ×Ô¼º±ÈÆ´ÄÚÁ¦£¿\n"); 
+        if(target==me) return notify_fail("æƒ³å’Œè‡ªå·±æ¯”æ‹¼å…§åŠ›ï¼Ÿ\n"); 
 
         if(!me->is_fighting(target))
-                return notify_fail("Äã±ØĞëÔÚ"+target->name()+"ºÍÄãÕ½¶·µÄÊ±ºò£¬²ÅÄÜÊ¹ÓÃÄÚÁ¦±ÈÆ´¡£\n");                
+                return notify_fail("ä½ å¿…é ˆåœ¨"+target->name()+"å’Œä½ æˆ°é¬¥çš„æ™‚å€™ï¼Œæ‰èƒ½ä½¿ç”¨å…§åŠ›æ¯”æ‹¼ã€‚\n");                
 
         if( query_temp("weapon", me) || query_temp("weapon", target) )
-                return notify_fail("ÔÚË«·½¿ÕÊÖÕ½¶·µÄÊ±ºò²ÅÄÜÊ¹ÓÃÄÚÁ¦±ÈÆ´¡£\n");
+                return notify_fail("åœ¨é›™æ–¹ç©ºæ‰‹æˆ°é¬¥çš„æ™‚å€™æ‰èƒ½ä½¿ç”¨å…§åŠ›æ¯”æ‹¼ã€‚\n");
 
         myneili=query("neili", me);
         taneili=query("neili", target);
 
         if(me->query_skill("force", 1) < 50 )
-                return notify_fail("ÄãµÄÄÚ¹¦ĞŞÎª²»×ã£¬ÎŞ·¨ºÍ¶ÔÊÖ½ÏÁ¿ÄÚÁ¦¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸä¿®ç‚ºä¸è¶³ï¼Œç„¡æ³•å’Œå°æ‰‹è¼ƒé‡å…§åŠ›ã€‚\n");
 
         if(myneili < 500 )
-                return notify_fail("ÄãµÄÕæÆøÌ«Èõ£¬ÎŞ·¨ºÍ¶ÔÊÖ½ÏÁ¿ÄÚÁ¦¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°£å¤ªå¼±ï¼Œç„¡æ³•å’Œå°æ‰‹è¼ƒé‡å…§åŠ›ã€‚\n");
 
         if(myneili*2/3 >= taneili)
-                return notify_fail("¶ÔÊÖµÄÄÚ¹¦ĞŞÎªÔ¶²»ÈçÄã£¬»¹ÓÃ±ÈÆ´Ê²Ã´ÄÚÁ¦ÄØ£¿\n");
+                return notify_fail("å°æ‰‹çš„å…§åŠŸä¿®ç‚ºé ä¸å¦‚ä½ ï¼Œé‚„ç”¨æ¯”æ‹¼ä»€éº¼å…§åŠ›å‘¢ï¼Ÿ\n");
 
         if( query("max_neili", me)<500 )
-                return notify_fail("ÄãµÄÄÚÁ¦ĞŞÎªÌ«Èõ£¬ÎŞ·¨ºÍ¶ÔÊÖ½ÏÁ¿ÄÚÁ¦¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¿®ç‚ºå¤ªå¼±ï¼Œç„¡æ³•å’Œå°æ‰‹è¼ƒé‡å…§åŠ›ã€‚\n");
 
         if( query_temp("neili/bipin", me) )
-                return notify_fail("ÄãÕıÔÚºÍÈË±ÈÆ´ÄÚÁ¦¡£\n");
+                return notify_fail("ä½ æ­£åœ¨å’Œäººæ¯”æ‹¼å…§åŠ›ã€‚\n");
 
         if( query_temp("neili/bipin", target) )
-                return notify_fail(target->name()+"ÕıÔÚºÍÈË±ÈÆ´ÄÚÁ¦¡£\n");  
+                return notify_fail(target->name()+"æ­£åœ¨å’Œäººæ¯”æ‹¼å…§åŠ›ã€‚\n");  
 
         myint = me->query_int();
         taint = target->query_int();
@@ -67,12 +67,12 @@ int exert(object me, string arg)
         set_temp("bipin/target",query("id",  target), me);
         set_temp("bipin/target",query("id",  me), target);
 
-        write(HIY"ÄãÄı¾Û±ÏÉú¹¦Á¦»º»ºÍÆ³öÒ»ÕÆ£¬Ò»¹É¾¢·çÒÑÈ»Ñ¹Ïò" + target->name() + "Ñ¹ÁË¹ıÈ¥¡£\n"NOR);
-        tell_room( environment(me), HIY+me->name()+"ÔËÆğ±ÏÉú¹¦Á¦»º»ºÍÆ³öÒ»ÕÆ£¬Ò»¹É¾¢·çÒÑÈ»Ïò" + target->name() + "Ñ¹È¥¡£\n"NOR, ({ me })); 
+        write(HIY"ä½ å‡èšç•¢ç”ŸåŠŸåŠ›ç·©ç·©æ¨å‡ºä¸€æŒï¼Œä¸€è‚¡å‹é¢¨å·²ç„¶å£“å‘" + target->name() + "å£“äº†éå»ã€‚\n"NOR);
+        tell_room( environment(me), HIY+me->name()+"é‹èµ·ç•¢ç”ŸåŠŸåŠ›ç·©ç·©æ¨å‡ºä¸€æŒï¼Œä¸€è‚¡å‹é¢¨å·²ç„¶å‘" + target->name() + "å£“å»ã€‚\n"NOR, ({ me })); 
 
         if (((myint*5+mydex*5+mydodge+myexp*2/100000) >= (taint*5+tadex*5+tadodge+taexp*2/100000)*2/3)&&(random(5)>=2))
         {
-                message_combatd(HIW"$nº§È»ÖÁ¼«£¬Á¬Ã¦Ë«ÍÈµ¯Æğ£¬ÏòºóÔ¾³öÊıÕÉ£¬²ÅÃãÇ¿¶ã¿ª$NÕâĞ×ÃÍÒ»»÷¡£\n"NOR, me, target);
+                message_combatd(HIW"$né§­ç„¶è‡³æ¥µï¼Œé€£å¿™é›™è…¿å½ˆèµ·ï¼Œå‘å¾Œèºå‡ºæ•¸ä¸ˆï¼Œæ‰å‹‰å¼·èº²é–‹$Né€™å…‡çŒ›ä¸€æ“Šã€‚\n"NOR, me, target);
                 addn("neili", -200, me);
                 if( query("neili", me)<0)set("neili", 0, me);
                 me->start_busy(3);
@@ -81,7 +81,7 @@ int exert(object me, string arg)
         } 
         else 
         {
-        message_combatd(HIY"$nÑÛ¿´ÎŞ·¨¶ãÉÁ£¬¼±Ã¦ÔË×ãÕæÆø£¬Ó²½ÓÁË$NµÄË«ÕÆ¡£\n"NOR, me, target);
+        message_combatd(HIY"$nçœ¼çœ‹ç„¡æ³•èº²é–ƒï¼Œæ€¥å¿™é‹è¶³çœŸæ°£ï¼Œç¡¬æ¥äº†$Nçš„é›™æŒã€‚\n"NOR, me, target);
 
         addn("neili", -200, me);
         if( query("neili", me)<0)set("neili", 0, me);
@@ -135,30 +135,30 @@ int start_bipin(object me)
         if(!target || target->is_ghost() ||
                 environment(me)!=environment(target))
         {
-                message_combatd(CYN"$Nµ±ÏÂÄÚ¾¢Ò»ÊÕ£¬Ò»Ë«ÒÂĞä±ã¼´´¹ÏÂ£¬Ò¡Ò¡»Ï»ÏµØÕ¾ÁËÆğÀ´¡£\n"NOR, me);
+                message_combatd(CYN"$Nç•¶ä¸‹å…§å‹ä¸€æ”¶ï¼Œä¸€é›™è¡£è¢–ä¾¿å³å‚ä¸‹ï¼Œæ–æ–å¹Œå¹Œåœ°ç«™äº†èµ·ä¾†ã€‚\n"NOR, me);
                 return 0;
         }
 
         if(neili < myneili_lost)
         {
-                message_combatd(RED"$NÖ»¾õÑ¹Á¦Ô½À´Ô½ÖØ£¬ĞØ¿Ú·³¶ñ£¬½¥½¥Ã¿´­Ò»¿ÚÆø¶¼¸Ğ¼èÄÑ£¬Í»È»ÉíÌåÒ»ÕóÒ¡»Î£¬ÔÎµ½ÔÚÒ»ÅÔ¡£\n"NOR, me);
+                message_combatd(RED"$Nåªè¦ºå£“åŠ›è¶Šä¾†è¶Šé‡ï¼Œèƒ¸å£ç…©æƒ¡ï¼Œæ¼¸æ¼¸æ¯å–˜ä¸€å£æ°£éƒ½æ„Ÿè‰±é›£ï¼Œçªç„¶èº«é«”ä¸€é™£æ–æ™ƒï¼Œæšˆåˆ°åœ¨ä¸€æ—ã€‚\n"NOR, me);
                 me->unconcious();
                 addn("max_neili", -5, me);
                 me->set_delete("bipin/target",);
                 target->set_delete("bipin/target",);
                 delete_temp("neili/bipin", me);
                 delete_temp("neili/bipin", target);
-                message_combatd(HIW"$NÖ»¾õµÃĞÄÉñ¾ãË¥£¬ÉîÉîÎüÁË¿ÚÆø£¬µ«Á³É«²Ò°×ÈçÖ½¡£\n"NOR,target);
+                message_combatd(HIW"$Nåªè¦ºå¾—å¿ƒç¥ä¿±è¡°ï¼Œæ·±æ·±å¸äº†å£æ°£ï¼Œä½†è‡‰è‰²æ…˜ç™½å¦‚ç´™ã€‚\n"NOR,target);
                 return 0;
         } 
         if( (!living(target) || query_temp("noliving", target)) && 
                 (living(me) && !query_temp("noliving", me)) )
         {
-                message_combatd(RED"$NÖ»¾õÑ¹Á¦Ô½À´Ô½ÖØ£¬ĞØ¿Ú·³¶ñ£¬½¥½¥Ã¿´­Ò»¿ÚÆø¶¼¸Ğ¼èÄÑ£¬Í»È»ÉíÌåÒ»ÕóÒ¡»Î£¬ÔÎµ½ÔÚÒ»ÅÔ¡£\n"NOR, target);
+                message_combatd(RED"$Nåªè¦ºå£“åŠ›è¶Šä¾†è¶Šé‡ï¼Œèƒ¸å£ç…©æƒ¡ï¼Œæ¼¸æ¼¸æ¯å–˜ä¸€å£æ°£éƒ½æ„Ÿè‰±é›£ï¼Œçªç„¶èº«é«”ä¸€é™£æ–æ™ƒï¼Œæšˆåˆ°åœ¨ä¸€æ—ã€‚\n"NOR, target);
                 target->unconcious();
                 addn("max_neili", -5, target);
                 target->unconcious();
-                message_combatd(HIW"$NÉîÉîÎüÁË¿ÚÆø£¬Ñ¹×¡É¢ÂÒµÄÕæÆø£¬Á³É«²Ò°×ÈçÖ½¡£\n"NOR,me);
+                message_combatd(HIW"$Næ·±æ·±å¸äº†å£æ°£ï¼Œå£“ä½æ•£äº‚çš„çœŸæ°£ï¼Œè‡‰è‰²æ…˜ç™½å¦‚ç´™ã€‚\n"NOR,me);
                 delete_temp("bipin/target",, me);
                 delete_temp("bipin/target",, target);
                 delete_temp("neili/bipin", me);
@@ -172,8 +172,8 @@ int start_bipin(object me)
                 target->set_delete("bipin/target");
                 delete_temp("neili/bipin", me);
                 delete_temp("neili/bipin", target);
-                message_combatd(HIW"´ËÊ±$NÁ³ÉÏ¶¼ÒÑÎŞ°ëµãÑªÉ«£¬¿´À´ÒÑ¾­µ½ÁËÓÍ¾¡µÆ¿İÖ®Ê±£¡\n"NOR, me);
-                set_temp("last_damage_from", "ºÍ"+target->name()+"Í¬¹éÓÚ¾¡", me);
+                message_combatd(HIW"æ­¤æ™‚$Nè‡‰ä¸Šéƒ½å·²ç„¡åŠé»è¡€è‰²ï¼Œçœ‹ä¾†å·²ç¶“åˆ°äº†æ²¹ç›¡ç‡ˆæ¯ä¹‹æ™‚ï¼\n"NOR, me);
+                set_temp("last_damage_from", "å’Œ"+target->name()+"åŒæ­¸äºç›¡", me);
                 me->die();
                 return 0;
         }
@@ -192,7 +192,7 @@ int start_bipin(object me)
                 case 57:
                         if((neili+neili2) >=1500)
                         {
-                                message_combatd(HIW"²»Ò»»á£¬$NºÍ$nÍ·¶¥¶¼Í¸³öÒ»ÂÆÂÆµÄ°×Æø£¬½¥½¥Ô½À´Ô½Å¨£¬¾ÍÈçÕôÁıÒ»°ã¡£\n"NOR, me, target);
+                                message_combatd(HIW"ä¸ä¸€æœƒï¼Œ$Nå’Œ$né ­é ‚éƒ½é€å‡ºä¸€ç¸·ç¸·çš„ç™½æ°£ï¼Œæ¼¸æ¼¸è¶Šä¾†è¶Šæ¿ƒï¼Œå°±å¦‚è’¸ç± ä¸€èˆ¬ã€‚\n"NOR, me, target);
                         }
                         break;
                 case 63:
@@ -208,11 +208,11 @@ int start_bipin(object me)
                 case 205:  
                         if(neili > neili2)
                         {
-                                message_combatd(HIR"$N´ß¶¯ÄÚ¾¢£¬Í·¶¥°×ÆøÔ½¾ÛÔ½Å¨£¬Ë«ÕÆ»º»ºµÄÏò$nÍÆÈ¥¡£\n"NOR,me, target);
+                                message_combatd(HIR"$Nå‚¬å‹•å…§å‹ï¼Œé ­é ‚ç™½æ°£è¶Šèšè¶Šæ¿ƒï¼Œé›™æŒç·©ç·©çš„å‘$næ¨å»ã€‚\n"NOR,me, target);
                         }
                         else
                         {
-                                message_combatd(HIR"$N´ß¶¯ÄÚ¾¢£¬Í·¶¥°×ÆøÔ½¾ÛÔ½Å¨£¬Ë«ÕÆ»º»ºµÄÏò$nÍÆÈ¥¡£\n"NOR,target,me);
+                                message_combatd(HIR"$Nå‚¬å‹•å…§å‹ï¼Œé ­é ‚ç™½æ°£è¶Šèšè¶Šæ¿ƒï¼Œé›™æŒç·©ç·©çš„å‘$næ¨å»ã€‚\n"NOR,target,me);
                         }
                         break;
                 case 12:
@@ -226,11 +226,11 @@ int start_bipin(object me)
                 case 185:
                         if(neili > neili2)
                         {
-                                message_combatd(HIR"$NÍ·¶¥°×ÆøÄı¾Û²»É¢£¬ÃæÉ«Ô½À´Ô½ÑÏ¾ş£¬²»¶Ï¹Ä¶¯ÄÚ¾¢Ïò$nÍÆÈ¥¡£\n"NOR, me, target);
+                                message_combatd(HIR"$Né ­é ‚ç™½æ°£å‡èšä¸æ•£ï¼Œé¢è‰²è¶Šä¾†è¶Šåš´å³»ï¼Œä¸æ–·é¼“å‹•å…§å‹å‘$næ¨å»ã€‚\n"NOR, me, target);
                         }
                         else
                         {
-                                message_combatd(HIR"$NÍ·¶¥°×ÆøÄı¾Û²»É¢£¬ÃæÉ«Ô½À´Ô½ÑÏ¾ş£¬²»¶Ï¹Ä¶¯ÄÚ¾¢Ïò$nÍÆÈ¥¡£\n"NOR, target, me);
+                                message_combatd(HIR"$Né ­é ‚ç™½æ°£å‡èšä¸æ•£ï¼Œé¢è‰²è¶Šä¾†è¶Šåš´å³»ï¼Œä¸æ–·é¼“å‹•å…§å‹å‘$næ¨å»ã€‚\n"NOR, target, me);
                         }
                         break; 
                 case 36:
@@ -243,11 +243,11 @@ int start_bipin(object me)
                 case 195:
                         if( query("jiali", me)<query("jiali", target) )
                         {
-                                message_combatd(HIR"$NÖ»¾õÊÖÉÏÒ»³Á£¬¶Ô·½Á¦µÀÓ¿À´£¬Ã¦¼Ó¾¢·´»÷¡£\n"NOR,me);
+                                message_combatd(HIR"$Nåªè¦ºæ‰‹ä¸Šä¸€æ²‰ï¼Œå°æ–¹åŠ›é“æ¹§ä¾†ï¼Œå¿™åŠ å‹åæ“Šã€‚\n"NOR,me);
                         }
                         else
                         {
-                                message_combatd(HIR"$NÖ»¾õÊÖÉÏÒ»³Á£¬¶Ô·½Á¦µÀÓ¿À´£¬Ã¦¼Ó¾¢·´»÷¡£\n"NOR,target);
+                                message_combatd(HIR"$Nåªè¦ºæ‰‹ä¸Šä¸€æ²‰ï¼Œå°æ–¹åŠ›é“æ¹§ä¾†ï¼Œå¿™åŠ å‹åæ“Šã€‚\n"NOR,target);
                         }
                         break;
         } 
@@ -262,16 +262,16 @@ int start_bipin(object me)
 
 int help(object me)
 {
-        write(WHT"\n»ù±¾ÄÚ¹¦Ö®ÄÚÁ¦±ÈÆ´£º"NOR"\n");
+        write(WHT"\nåŸºæœ¬å…§åŠŸä¹‹å…§åŠ›æ¯”æ‹¼ï¼š"NOR"\n");
         write(@HELP
 
-        Ê¹ÓÃ¹¦Ğ§£º
-                Óë¶ÔÊÖ±ÈŞÕÄÚÁ¦ÖÁ²»ËÀ²»Ğİ£¬ÒÖ»òÁ½°Ü¾ãÉË
+        ä½¿ç”¨åŠŸæ•ˆï¼š
+                èˆ‡å°æ‰‹æ¯”æ‹šå…§åŠ›è‡³ä¸æ­»ä¸ä¼‘ï¼ŒæŠ‘æˆ–å…©æ•—ä¿±å‚·
 
-        ³öÊÖÒªÇó£º
-                »ù±¾ÄÚ¹¦50¼¶
-                ÄÚÁ¦ĞŞÎª500
-                ÄÚÁ¦500
+        å‡ºæ‰‹è¦æ±‚ï¼š
+                åŸºæœ¬å…§åŠŸ50ç´š
+                å…§åŠ›ä¿®ç‚º500
+                å…§åŠ›500
 HELP
         );
         return 1;

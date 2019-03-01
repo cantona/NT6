@@ -1,4 +1,4 @@
-Ð¦°Á½­ºþ crashed on: Wed Nov 12 17:57:30 2014, error: Process interrupted
+ç¬‘å‚²æ±Ÿæ¹– crashed on: Wed Nov 12 17:57:30 2014, error: Process interrupted
 command_giver: none
 current_object: none
 call_stack(0): ({ /* sizeof() == 1 */
@@ -13,7 +13,7 @@ call_stack(2): ({ /* sizeof() == 1 */
 call_stack(3): ({ /* sizeof() == 1 */
   "driver"
 })
-Ð¦°Á½­ºþ crashed on: Wed Nov 12 17:58:33 2014, error: Process interrupted
+ç¬‘å‚²æ±Ÿæ¹– crashed on: Wed Nov 12 17:58:33 2014, error: Process interrupted
 command_giver: none
 current_object: none
 call_stack(0): ({ /* sizeof() == 1 */

@@ -4,13 +4,13 @@ inherit NPC;
 
 void create()
 {
-        set_name("Àî²©Ô¨", ({"li boyuan", "li", "boyuan"}));
-        set("gender", "ÄĞĞÔ");
+        set_name("æåšæ·µ", ({"li boyuan", "li", "boyuan"}));
+        set("gender", "ç”·æ€§");
         set("age", 45);
-        set("title", "´óÑ§Ê¿");
+        set("title", "å¤§å­¸å£«");
         set("str", 25);
         set("int", 30);
-        set("long", "Àî²©Ô¨ÊÇ¹ú×Ó¼à´óÑ§Ê¿¡£\n");
+        set("long", "æåšæ·µæ˜¯åœ‹å­ç›£å¤§å­¸å£«ã€‚\n");
         set("combat_exp", 40000);
         set("attitude", "friendly");
         set("class", "scholar");
@@ -22,8 +22,8 @@ void create()
         set("neili", 500); 
         set("max_neili", 500);
         set("inquiry", ([
-                "¶ÁÊéÊ¶×Ö": "¶ÔÁË£¬ÄãÊÇÀ´¶ÔµØ·½ÁË£¡\n",
-                "Ñ§Ï°" : "Ñ§Ï°ÊÇÒª½»Ñ§·ÑµÄ\n",
+                "è®€æ›¸è­˜å­—": "å°äº†ï¼Œä½ æ˜¯ä¾†å°åœ°æ–¹äº†ï¼\n",
+                "å­¸ç¿’" : "å­¸ç¿’æ˜¯è¦äº¤å­¸è²»çš„\n",
         ]) );
 
         setup();
@@ -32,21 +32,21 @@ void create()
 
 int recognize_apprentice(object ob)
 {
-        if( query_temp("mark/Àî", ob)<1 )
+        if( query_temp("mark/æ", ob)<1 )
                 return 0;
-        addn_temp("mark/Àî", -1, ob);
+        addn_temp("mark/æ", -1, ob);
         return 1;
 }
 
 int accept_object(object who, object ob)
 {
         object me = this_player();
-        if( !query_temp("mark/Àî", who) )
-        set_temp("mark/Àî", 0, who);
+        if( !query_temp("mark/æ", who) )
+        set_temp("mark/æ", 0, who);
         if( query("money_id", ob) && ob->value() >= 10000 )
         {
-                message_vision("Àî²©Ô¨Í¬ÒâÖ¸µã$NÒ»Ğ©¶ÁÊéĞ´×ÖµÄÎÊÌâ¡£\n", who);
-                addn_temp("mark/Àî", ob->value()/50, who);
+                message_vision("æåšæ·µåŒæ„æŒ‡é»$Nä¸€äº›è®€æ›¸å¯«å­—çš„å•é¡Œã€‚\n", who);
+                addn_temp("mark/æ", ob->value()/50, who);
         
                 return 1; 
         }

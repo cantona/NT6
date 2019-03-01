@@ -1,4 +1,4 @@
-// tiexiao.c Ìúóï
+// tiexiao.c éµç°«
 #include <ansi.h>
 #include <music.h> 
 
@@ -7,15 +7,15 @@ inherit "/inherit/misc/_xiao";
 
 void create()
 {
-        set_name(YEL "Ìúóï" NOR,({ "tie xiao", "xiao" }) );
+        set_name(YEL "éµç°«" NOR,({ "tie xiao", "xiao" }) );
         set_weight(5000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ö§");
+                set("unit", "æ”¯");
                 set("value", 300);
                 set("material", "steel");
-                set("long", "Ò»±úÆÕÍ¨ÌúÖÆ¶´óï£¬³ÁµéµéµÄÓĞĞ©×¹ÊÖ¡£\n");
+                set("long", "ä¸€æŸ„æ™®é€šéµåˆ¶æ´ç°«ï¼Œæ²‰ç”¸ç”¸çš„æœ‰äº›å¢œæ‰‹ã€‚\n");
         }
         setup();
 

@@ -1,12 +1,12 @@
 inherit SKILL;
 
 string *dodge_msg = ({
-    "Ö»¼û$nÒ»ÕÐ¡¸ÉÙÒõ²½¡¹£¬ÉíÌåÏòÉÏ±ÊÖ±µØ×ÝÆðÕÉÓà£¬¶ã¹ýÁË$NÕâÒ»ÕÐ¡£\n",
-    "$nÒ»¸ö¡¸Ç¬¶Ò²½¡¹£¬Ïòºó×Ý³öÊýÕÉÖ®Ô¶£¬±Ü¿ªÁË$NµÄÁèÀ÷¹¥ÊÆ¡£\n",
-    "$nÊ¹³ö¡¸ÀëÕð²½¡¹£¬ÏòÒ»ÅÔÆ®È»×Ý³ö£¬ÇáÇá×ÅµØ¡£\n"
-    "µ«ÊÇ$nÉíÐÎÆ®ºö£¬Ê¹³ö¡¸ÉÙÑô²½¡¹£¬ÇáÇáÒ»×Ý£¬ÔçÒÑ±Ü¿ª¡£\n",
-    "$nÉíËæÒâ×ª¡¸Ì«Òõ²½¡¹£¬Ù¿µØÍùÒ»ÅÔÅ²¿ªÁËÈý³ß£¬±Ü¹ýÁËÕâÒ»ÕÐ¡£\n",
-    "¿ÉÊÇ$n²àÉíÒ»ÈÃ£¬Ò»¸ö¡¸Ùã¿²²½¡¹£¬$NÕâÒ»ÕÐÆËÁË¸ö¿Õ¡£\n",
+    "åªè¦‹$nä¸€æ‹›ã€Œå°‘é™°æ­¥ã€ï¼Œèº«é«”å‘ä¸Šç­†ç›´åœ°ç¸±èµ·ä¸ˆä½™ï¼Œèº²éŽäº†$Né€™ä¸€æ‹›ã€‚\n",
+    "$nä¸€å€‹ã€Œä¹¾å…Œæ­¥ã€ï¼Œå‘å¾Œç¸±å‡ºæ•¸ä¸ˆä¹‹é ï¼Œé¿é–‹äº†$Nçš„å‡ŒåŽ²æ”»å‹¢ã€‚\n",
+    "$nä½¿å‡ºã€Œé›¢éœ‡æ­¥ã€ï¼Œå‘ä¸€æ—é£„ç„¶ç¸±å‡ºï¼Œè¼•è¼•è‘—åœ°ã€‚\n"
+    "ä½†æ˜¯$nèº«å½¢é£„å¿½ï¼Œä½¿å‡ºã€Œå°‘é™½æ­¥ã€ï¼Œè¼•è¼•ä¸€ç¸±ï¼Œæ—©å·²é¿é–‹ã€‚\n",
+    "$nèº«éš¨æ„è½‰ã€Œå¤ªé™°æ­¥ã€ï¼Œå€åœ°å¾€ä¸€æ—æŒªé–‹äº†ä¸‰å°ºï¼Œé¿éŽäº†é€™ä¸€æ‹›ã€‚\n",
+    "å¯æ˜¯$nå´èº«ä¸€è®“ï¼Œä¸€å€‹ã€Œå·½åŽæ­¥ã€ï¼Œ$Né€™ä¸€æ‹›æ’²äº†å€‹ç©ºã€‚\n",
 });
 
 int valid_enable(string usage)
@@ -38,10 +38,10 @@ int query_effect_dodge(object attacker, object me)
 int practice_skill(object me)
 {
         if( query("qi", me)<70 )
-                return notify_fail("ÄãµÄÌåÁ¦Ì«²îÁË£¬²»ÄÜÁ·ËÄÏó²½·¨¡£\n");
+                return notify_fail("ä½ çš„é«”åŠ›å¤ªå·®äº†ï¼Œä¸èƒ½ç·´å››è±¡æ­¥æ³•ã€‚\n");
 
         if( query("neili", me)<80 )
-                return notify_fail("ÄãµÄÄÚÁ¦Ì«²îÁË£¬²»ÄÜÁ·Ï°ËÄÏó²½·¨¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›å¤ªå·®äº†ï¼Œä¸èƒ½ç·´ç¿’å››è±¡æ­¥æ³•ã€‚\n");
 
         me->receive_damage("qi", 58);
         addn("neili", -65, me);

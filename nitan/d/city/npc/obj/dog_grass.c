@@ -5,21 +5,21 @@ inherit HEAD;
 
 void create()
 {
-        set_name(HIG"¹·Î²°Í²İ"NOR, ({"dog grass", "grass"}));
+        set_name(HIG"ç‹—å°¾å·´è‰"NOR, ({"dog grass", "grass"}));
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Êø");
+                set("unit", "æŸ");
                 set("long", 
-"Ò»Êø±ÌÂÌÈçÓñµÄ"HIG"¹·Î²°Í¿µ²İÄËÜ°¡£\n"NOR);
+"ä¸€æŸç¢§ç¶ å¦‚ç‰çš„"HIG"ç‹—å°¾å·´åº·è‰ä¹ƒé¦¨ã€‚\n"NOR);
                 set("value", 5000);
                 set("flower", 1);
                 set("material", "plant");
                 set_weight(10);
                 set("armor_prop/armor", 0);
                 set("armor_prop/per", 3);
-                set("wear_msg", "$NÇáÇáµØ°ÑÒ»Êø$n´÷ÔÚÍ·ÉÏ¡£\n");
-                set("unequip_msg", "$NÇáÇáµØ°Ñ$n´ÓÍ·ÉÏÕªÁËÏÂÀ´¡£\n");
+                set("wear_msg", "$Nè¼•è¼•åœ°æŠŠä¸€æŸ$næˆ´åœ¨é ­ä¸Šã€‚\n");
+                set("unequip_msg", "$Nè¼•è¼•åœ°æŠŠ$nå¾é ­ä¸Šæ‘˜äº†ä¸‹ä¾†ã€‚\n");
         }
         setup();
 }

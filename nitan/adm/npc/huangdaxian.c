@@ -4,15 +4,15 @@ inherit NPC;
 
 string *qian_type =
 ({
-        "»éÒö",
+        "å©šå§»",
 });
 
 void create()
 {
-        set_name("»Æ´óÏÉ", ({ "huang daxian", "daxian", "huang" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("é»ƒå¤§ä»™", ({ "huang daxian", "daxian", "huang" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 85);
-        set("long","Ò»Î»³éÇ©ËãÃüµÄÀÏÏÈÉú¡£\n");
+        set("long","ä¸€ä½æŠ½ç°½ç®—å‘½çš„è€å…ˆç”Ÿã€‚\n");
         set("shen_type", 1);
         set("combat_exp", 10000);
         set("str", 17);
@@ -24,8 +24,8 @@ void create()
         set_skill("unarmed",20);
 
         set("inquiry", ([
-                "ÇóÇ©" : "¹ş¹ş¹ş¹ş£¬ÄãÒ²ÖªµÀÀÏ·ò£¿ÇóÇ©ÒªĞÄ³Ï£¬Òª²»ÒªÊÔÊÔ(qiuqian)£¿",
-                "½âÇ©" : "Õâ¿ÉÊÇÓĞÎ¥ÌìÒâµÄ°¡£¡°ÕÁË£¬ÀÏ·òÄêÊÂÒÑ¸ß£¬Ê±ÈÕÎŞ¶à£¬Äã¾Í°ÑÇ©¸øÀÏ·ò¿´¿´£¡",
+                "æ±‚ç°½" : "å“ˆå“ˆå“ˆå“ˆï¼Œä½ ä¹ŸçŸ¥é“è€å¤«ï¼Ÿæ±‚ç°½è¦å¿ƒèª ï¼Œè¦ä¸è¦è©¦è©¦(qiuqian)ï¼Ÿ",
+                "è§£ç°½" : "é€™å¯æ˜¯æœ‰é•å¤©æ„çš„å•Šï¼ç½·äº†ï¼Œè€å¤«å¹´äº‹å·²é«˜ï¼Œæ™‚æ—¥ç„¡å¤šï¼Œä½ å°±æŠŠç°½çµ¦è€å¤«çœ‹çœ‹ï¼",
         ]));
 
         setup();
@@ -48,10 +48,10 @@ int do_qiuqian()
         ob = this_object();
 
         if( !wizardp(me) && time()-query_temp("last_qiuqian", me)<1800 )
-                return notify_fail("²ÅÇóÇ©²»¾Ã£¬ÓÖÏëÇóÇ©£¬Äãµ±ÕâÊÇÓÎÏ·°¡£¿\n");
+                return notify_fail("æ‰æ±‚ç°½ä¸ä¹…ï¼Œåˆæƒ³æ±‚ç°½ï¼Œä½ ç•¶é€™æ˜¯éŠæˆ²å•Šï¼Ÿ\n");
 
         if (present("zhu qian",me))
-                return notify_fail("ÄãÉíÉÏ²»ÊÇÓĞÒ»¸ùÇ©Ã´£¿ºÃºÃ×ÁÄ¥×ÁÄ¥°É¡£\n");
+                return notify_fail("ä½ èº«ä¸Šä¸æ˜¯æœ‰ä¸€æ ¹ç°½éº¼ï¼Ÿå¥½å¥½ç¢ç£¨ç¢ç£¨å§ã€‚\n");
 
         command("look "+query("id", me));
         command("consider");
@@ -61,11 +61,11 @@ int do_qiuqian()
         set("owner", query("id", me), qian);
 
         if (!qian->move(me))
-                return notify_fail("ÉíÉÏ´øÕâÃ´¶à¶«Î÷»¹À´ÇóÇ©£¬Äãµ±ÊÇ¸Ï¼¯°¡£¿\n");
+                return notify_fail("èº«ä¸Šå¸¶é€™éº¼å¤šæ±è¥¿é‚„ä¾†æ±‚ç°½ï¼Œä½ ç•¶æ˜¯è¶•é›†å•Šï¼Ÿ\n");
 
-        message_vision("$N½«Ò»¸öÇ©Í²µİ¸ø$n£¬ÃæÉ«ÄıÖØµÄ¶£ÖöµÀ£º¡º¼Ç×¡£¬ĞÄ³ÏÔòÁé£¡¡»\n",ob,me);
-        message_vision("$NÎ¢±ÕË«ÑÛ£¬Ä¬Ä¬µ»¸æ£¬ËæºóÅõÆğÇ©Í²¼²Ò¡Æ¬¿Ì£¬Ò»¸ùÇ©µôÁË³öÀ´¡£\n",me);
-        message_vision("$N¸Ï½ô·ÅÏÂÇ©Í²£¬¸©Éí°ÑÇ©¼ğÁËÆğÀ´£¬Ğ¡ĞÄÒíÒíµÄÊÕÈë»³ÖĞ¡£\n",me);
+        message_vision("$Nå°‡ä¸€å€‹ç°½ç­’éçµ¦$nï¼Œé¢è‰²å‡é‡çš„å®å›‘é“ï¼šã€è¨˜ä½ï¼Œå¿ƒèª å‰‡éˆï¼ã€\n",ob,me);
+        message_vision("$Nå¾®é–‰é›™çœ¼ï¼Œé»˜é»˜ç¦±å‘Šï¼Œéš¨å¾Œæ§èµ·ç°½ç­’ç–¾æ–ç‰‡åˆ»ï¼Œä¸€æ ¹ç°½æ‰äº†å‡ºä¾†ã€‚\n",me);
+        message_vision("$Nè¶•ç·Šæ”¾ä¸‹ç°½ç­’ï¼Œä¿¯èº«æŠŠç°½æ€äº†èµ·ä¾†ï¼Œå°å¿ƒç¿¼ç¿¼çš„æ”¶å…¥æ‡·ä¸­ã€‚\n",me);
 
         set_temp("last_qiuqian", time(), me);
         delete_temp("have_gived", me);
@@ -85,27 +85,27 @@ int do_answer(string arg)
         ob = this_object();
 
         if( !query_temp("can_answer", me) )
-                return notify_fail("Ò»±ßÈ¥£¬À´µ·Ê²Ã´ÂÒ£¡\n");
+                return notify_fail("ä¸€é‚Šå»ï¼Œä¾†æ—ä»€éº¼äº‚ï¼\n");
 
         if( !objectp(obj=query_temp("qian", me)) )
         {
                 delete_temp("can_anser", me);
                 delete_temp("qian", me);
-                return notify_fail("Ò»±ßÈ¥£¬À´µ·Ê²Ã´ÂÒ£¡\n");
+                return notify_fail("ä¸€é‚Šå»ï¼Œä¾†æ—ä»€éº¼äº‚ï¼\n");
         }
 
         if (!arg || member_array(arg,qian_type) == -1)
         {
-                str = HIC "ÎÒÕâÀïÓĞºÜ¶àÖÖÇ©£º" NOR;
+                str = HIC "æˆ‘é€™è£¡æœ‰å¾ˆå¤šç¨®ç°½ï¼š" NOR;
                 for (i = 0;i < sizeof(qian_type);i ++)
                 {
                         str += HIW + qian_type[i] + HIC;
                         if (i != sizeof(qian_type) -1)
-                                str += "¡¢";
+                                str += "ã€";
                 }
-                str += "£¬ÄãÏëÇóÄÄÖÖÇ©£¿\n";
+                str += "ï¼Œä½ æƒ³æ±‚å“ªç¨®ç°½ï¼Ÿ\n";
                 tell_object(me, str);
-                tell_object(me, "ÏëºÃÁË¾Í»Ø´ğÎÒ£¡(answer ´ğ°¸)\n");
+                tell_object(me, "æƒ³å¥½äº†å°±å›ç­”æˆ‘ï¼(answer ç­”æ¡ˆ)\n");
                 return 1;
         }
 
@@ -116,30 +116,30 @@ int do_answer(string arg)
         file = "/d/city/npc/qianwen/" + file + ".txt";
 
         document = read_file(file) + "\n";
-        tell_object(me,this_object()->name() + "¿ÚÖĞÄîÄîÓĞ´Ê£º\n");
+        tell_object(me,this_object()->name() + "å£ä¸­å¿µå¿µæœ‰è©ï¼š\n");
         command("walkby "+query("id", me));
         tell_object(me,HIM + qianwen["doc"] + "\n" + NOR);
-        tell_object(me,this_object()->name() + "¶ÔÄãËµµÀ£º" + HIW + qianwen["title"] + NOR + "ÄË" + HIR + qianwen["type"] + NOR + "¡£\n");
-        str = "Ç©ÎÄº¬ÒåÄãºÃºÃ¼Ç×Å£¡\n";
+        tell_object(me,this_object()->name() + "å°ä½ èªªé“ï¼š" + HIW + qianwen["title"] + NOR + "ä¹ƒ" + HIR + qianwen["type"] + NOR + "ã€‚\n");
+        str = "ç°½æ–‡å«ç¾©ä½ å¥½å¥½è¨˜è‘—ï¼\n";
         str += HIG + document + NOR;
         tell_object(me,str);
-        tell_object(me,"ÄãÇóµÄÊÇ" + HIW + arg + NOR + "£¬´ıÀÏ·òÏëÏë£¡\n");
+        tell_object(me,"ä½ æ±‚çš„æ˜¯" + HIW + arg + NOR + "ï¼Œå¾…è€å¤«æƒ³æƒ³ï¼\n");
         switch (arg)
         {
-                case "»éÒö":
+                case "å©šå§»":
                         str = qianwen["love_fate"];
                         break;
                 default:
                         command("yi");
                         command("consider");
-                        message_vision("$N¶¢×ÅÇ©Ñ°Ë¼Á¼¾Ã£¬Á³É«Óú·¢ÄıÖØ£¬Í»È»½«Ç©Èû»Ø$nÊÖÖĞ£¬È´ÊÇÒ»ÑÔ²»·¢£¡\n",this_object(),me);
+                        message_vision("$Nç›¯è‘—ç°½å°‹æ€è‰¯ä¹…ï¼Œè‡‰è‰²ç™’ç™¼å‡é‡ï¼Œçªç„¶å°‡ç°½å¡å›$næ‰‹ä¸­ï¼Œå»æ˜¯ä¸€è¨€ä¸ç™¼ï¼\n",this_object(),me);
                         obj->move(me);
                         return 1;
                         break;
         }
         command("whisper "+query("id", me)+" about "+str);
         command("smile "+query("id", me));
-        message_vision("$N½«Ç©»¹¸øÁË$n¡£\n",this_object(),me);
+        message_vision("$Nå°‡ç°½é‚„çµ¦äº†$nã€‚\n",this_object(),me);
         obj->move(me);
 
         delete_temp("can_answer", me);
@@ -158,26 +158,26 @@ int accept_object(object me, object ob)
         {
                 if( !query_temp("have_gived", me) )
                 {
-                        command("say Ã»ÊÂ¸øÀÏ·òÇ®¸ÉÂï£¿µ±ÀÏ·òÊÇ½Ğ»¯×ÓÃ´£¿");
+                        command("say æ²’äº‹çµ¦è€å¤«éŒ¢å¹¹å˜›ï¼Ÿç•¶è€å¤«æ˜¯å«åŒ–å­éº¼ï¼Ÿ");
                         return 0;
                 }
                 if( ob->value()<query_temp("have_gived", me) )
                 {
-                        command("say ¾ÍÕâµãÇ®Ò²À´ºıÅªÀÏ·ò£¿µ±ÀÏ·òÇî·èÁËÃ´£¿");
+                        command("say å°±é€™é»éŒ¢ä¹Ÿä¾†ç³Šå¼„è€å¤«ï¼Ÿç•¶è€å¤«çª®ç˜‹äº†éº¼ï¼Ÿ");
                         return 0;
                 }
                 command("nod "+query("id", me));
-                command("say Èæ×Ó¿É½ÌÒ²£¡ÇÒ¸æÖªÀÏ·òÄãËùÇóºÎÊÂ£¿");
-                str = HIC "ÕâÇ©¿ÉÊÇÓĞºÜ¶à½â·¨£º" NOR;
+                command("say å­ºå­å¯æ•™ä¹Ÿï¼ä¸”å‘ŠçŸ¥è€å¤«ä½ æ‰€æ±‚ä½•äº‹ï¼Ÿ");
+                str = HIC "é€™ç°½å¯æ˜¯æœ‰å¾ˆå¤šè§£æ³•ï¼š" NOR;
                 for (i = 0;i < sizeof(qian_type);i ++)
                 {
                         str += HIW + qian_type[i] + HIC;
                         if (i != sizeof(qian_type) -1)
-                                str += "¡¢";
+                                str += "ã€";
                 }
-                str += "£¬ÄãÏëÇóÄÄÖÖÇ©£¿\n";
+                str += "ï¼Œä½ æƒ³æ±‚å“ªç¨®ç°½ï¼Ÿ\n";
                 tell_object(me,str);
-                tell_object(me,"ÏëºÃÁË¾Í¸æËßÀÏ·ò£¡(answer ´ğ°¸)\n");
+                tell_object(me,"æƒ³å¥½äº†å°±å‘Šè¨´è€å¤«ï¼(answer ç­”æ¡ˆ)\n");
                 set_temp("can_answer", 1, me);
                 delete_temp("have_gived", me);
                 addn("balance", ob->value(), this_object());
@@ -187,7 +187,7 @@ int accept_object(object me, object ob)
 
         if( query("id", ob) != "zhu qian" )
         {
-                command("say ÕâÊÇÊ²Ã´¶«Î÷£¿ÀÏ·òÒªÀ´ºÎÓÃ£¿");
+                command("say é€™æ˜¯ä»€éº¼æ±è¥¿ï¼Ÿè€å¤«è¦ä¾†ä½•ç”¨ï¼Ÿ");
                 return 0;
         }
 
@@ -195,7 +195,7 @@ int accept_object(object me, object ob)
             query("owner", ob) != query("id", me) )
         {
                 command("haha");
-                command("say ÄãÄÄÀï¼ğÀ´Ò»¸ùÑÀÇ©£¬Ò²ºÃÒâË¼À´ºıÅªÎÒ£¡");
+                command("say ä½ å“ªè£¡æ€ä¾†ä¸€æ ¹ç‰™ç°½ï¼Œä¹Ÿå¥½æ„æ€ä¾†ç³Šå¼„æˆ‘ï¼");
                 return 0;
         }
 
@@ -207,7 +207,7 @@ int accept_object(object me, object ob)
         {
                 command("yi");
                 command("consider");
-                message_vision("$N¶¢×ÅÇ©Ñ°Ë¼Á¼¾Ã£¬Á³É«Óú·¢ÄıÖØ£¬Í»È»½«Ç©Èû»Ø$nÊÖÖĞ£¬È´ÊÇÒ»ÑÔ²»·¢£¡\n",this_object(),me);
+                message_vision("$Nç›¯è‘—ç°½å°‹æ€è‰¯ä¹…ï¼Œè‡‰è‰²ç™’ç™¼å‡é‡ï¼Œçªç„¶å°‡ç°½å¡å›$næ‰‹ä¸­ï¼Œå»æ˜¯ä¸€è¨€ä¸ç™¼ï¼\n",this_object(),me);
                 ob->move(me);
                 return -1;
         }
@@ -220,22 +220,22 @@ int accept_object(object me, object ob)
         {
                 command("yi");
                 command("consider");
-                message_vision("$N¶¢×ÅÇ©Ñ°Ë¼Á¼¾Ã£¬Á³É«Óú·¢ÄıÖØ£¬Í»È»½«Ç©Èû»Ø$nÊÖÖĞ£¬È´ÊÇÒ»ÑÔ²»·¢£¡\n",this_object(),me);
+                message_vision("$Nç›¯è‘—ç°½å°‹æ€è‰¯ä¹…ï¼Œè‡‰è‰²ç™’ç™¼å‡é‡ï¼Œçªç„¶å°‡ç°½å¡å›$næ‰‹ä¸­ï¼Œå»æ˜¯ä¸€è¨€ä¸ç™¼ï¼\n",this_object(),me);
                 ob->move(me);
                 return -1;
         }
 
         switch (qianwen["type"])
         {
-                case "ÉÏÉÏÇ©":
-                case "ÏÂÏÂÇ©":
+                case "ä¸Šä¸Šç°½":
+                case "ä¸‹ä¸‹ç°½":
                         command("heihei");
-                        tell_object(me,"ÕâÇ©¿ÉÊÇ·ÇÍ¬Ğ¡¿É£¬ÀÏ·ò±¾Ò²²»Ó¦Ğ¹Â©Ìì»ú£¬Èç¹ûÄãÔ¸Òâ¸øÎÒÊ®Á½»Æ½ğ£¬ÉĞ¿É¿¼ÂÇ£¡\n");
+                        tell_object(me,"é€™ç°½å¯æ˜¯éåŒå°å¯ï¼Œè€å¤«æœ¬ä¹Ÿä¸æ‡‰æ³„æ¼å¤©æ©Ÿï¼Œå¦‚æœä½ é¡˜æ„çµ¦æˆ‘åå…©é»ƒé‡‘ï¼Œå°šå¯è€ƒæ…®ï¼\n");
                         set_temp("have_gived", 100000, me);
                         break;
                 default:
                         command("say");
-                        tell_object(me,"ÕâÇ©½â´ğËäÊÇÈİÒ×£¬¿ÉÕÒ±ğÈËÎ´±Ø¾ÍÄÜ½âÕıÌìÒâ£¬ÈôÏëÃ÷Æä¾¿¾¹£¬Äã¿ÉÔ¸Òâ¸øÎÒ»Æ½ğÎåÁ½£¿\n");
+                        tell_object(me,"é€™ç°½è§£ç­”é›–æ˜¯å®¹æ˜“ï¼Œå¯æ‰¾åˆ¥äººæœªå¿…å°±èƒ½è§£æ­£å¤©æ„ï¼Œè‹¥æƒ³æ˜å…¶ç©¶ç«Ÿï¼Œä½ å¯é¡˜æ„çµ¦æˆ‘é»ƒé‡‘äº”å…©ï¼Ÿ\n");
                         set_temp("have_gived", 50000, me);
                         break;
         }

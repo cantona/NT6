@@ -8,12 +8,12 @@ inherit CLOTH;
  
 void create()
 {
-        set_name(HIY "…Ò" HIW "÷Æ" HIM "◊£∏£" NOR YEL "’Ω“¬" NOR, ({ "zhufu cloth", "cloth", "buyi" }) );
+        set_name(HIY "Á•û" HIW "‰πã" HIM "Á•ùÁ¶è" NOR YEL "Êà∞Ë°£" NOR, ({ "zhufu cloth", "cloth", "buyi" }) );
         set_weight(500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "º˛");
+                set("unit", "‰ª∂");
                 set("value", 3000); 
                 set("material", "cloth");
                 set("armor_prop/armor", 100);
@@ -22,7 +22,7 @@ void create()
         set("auto_load", 1); 
         set("mod_mark", "A2012");  
         set("mod_level", "M2010");  
-        set("mod_name", HIY"…Ò"HIW"÷Æ"HIM"◊£∏£"NOR YEL"Ã◊◊∞"NOR); 
+        set("mod_name", HIY"Á•û"HIW"‰πã"HIM"Á•ùÁ¶è"NOR YEL"Â•óË£ù"NOR); 
 
         set("enchase", ([ 
                 "flute" : 1,
@@ -36,7 +36,7 @@ void create()
         set("insert", ([ /* sizeof() == 1 */
                 "1" : ([ /* sizeof() == 3 */
                         "id" : "magic stone",
-                        "name" : HIM"–˛ Ø"NOR,
+                        "name" : HIM"ÁéÑÁü≥"NOR,
                         "apply_prop" : ([ /* sizeof() == 2 */
                                 "armor1" : 30,
                                 "int" : 1,

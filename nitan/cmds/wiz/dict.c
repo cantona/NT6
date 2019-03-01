@@ -23,14 +23,14 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-¼´Ê±·­ÒëÖ¸Áî
+å³æ™‚ç¿»è­¯æŒ‡ä»¤
 
-ÀûÓÃ Google Translate ×÷¼´Ê± Mud ·­Òë
+åˆ©ç”¨ Google Translate ä½œå³æ™‚ Mud ç¿»è­¯
 
-Ä¿Ç°¿É·­ÒëÓïÑÔÎª
+ç›®å‰å¯ç¿»è­¯èªè¨€ç‚º
 
-Ö¸Áî¸ñÊ½£ºdict <ÖĞÎÄ> to en      - ÖĞÎÄ·­ÒëÎªÓ¢ÎÄ
-          dict <Ó¢ÎÄ> to zh-CN   - Ó¢ÎÄ·­ÒëÎªÖĞÎÄ
+æŒ‡ä»¤æ ¼å¼ï¼šdict <ä¸­æ–‡> to en      - ä¸­æ–‡ç¿»è­¯ç‚ºè‹±æ–‡
+          dict <è‹±æ–‡> to zh-CN   - è‹±æ–‡ç¿»è­¯ç‚ºä¸­æ–‡
 
 HELP
         );

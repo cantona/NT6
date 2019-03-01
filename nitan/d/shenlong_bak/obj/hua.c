@@ -1,4 +1,4 @@
-//hua.c °ÙÏã»¨
+//hua.c ç™¾é¦™èŠ±
 //
 inherit ITEM;
 #include <ansi.h>
@@ -10,9 +10,9 @@ void init()
 
 void create()
 {
-        set_name(HIG"°ÙÏã»¨"NOR, ({"hua", "baixiang"}));
-        set("unit", "¶ä");
-        set("long", "ÕâÊÇÒ»¶äÏÊÑŞµÄ»¨£¬»¨ÏãÅ¨ÓôÒì³£¡£\n");
+        set_name(HIG"ç™¾é¦™èŠ±"NOR, ({"hua", "baixiang"}));
+        set("unit", "æœµ");
+        set("long", "é€™æ˜¯ä¸€æœµé®®è‰·çš„èŠ±ï¼ŒèŠ±é¦™æ¿ƒé¬±ç•°å¸¸ã€‚\n");
         setup();
 }
 
@@ -24,11 +24,11 @@ int do_eat(string arg)
         neili_limit=query("max_neili", me);
         force_skill = me->query_skill("force", 1);
 
-        if(!id(arg)) return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+        if(!id(arg)) return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if(!present(this_object(), me))
-                return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if( me->is_busy() )
-                return notify_fail("±ğ¼±£¬ÂıÂı³Ô£¬Ğ¡ĞÄ±ğÒ­×ÅÁË¡£\n");
+                return notify_fail("åˆ¥æ€¥ï¼Œæ…¢æ…¢åƒï¼Œå°å¿ƒåˆ¥å™è‘—äº†ã€‚\n");
         if ( neili_limit <= force_limit  )
                 addn("max_neili", 1, me);
         me->unconcious();

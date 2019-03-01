@@ -12,12 +12,12 @@ void init()
 
 void create()
 {
-        set_name("°ËÂñ²èÉ²ÂÞ¾­", ({ "shu", "book"}));
+        set_name("å…«åŸ‹èŒ¶å‰Žç¾…ç¶“", ({ "shu", "book"}));
         set_weight(600);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
+                set("unit", "æœ¬");
                 set("value", 400);
                 set("material", "paper");
 
@@ -37,36 +37,36 @@ int do_du(string arg)
         return 0;
 
         if( query("pigging", where)){
-                write("Äã»¹ÊÇ×¨ÐÄ¹°Öí°É£¡\n");
+                write("ä½ é‚„æ˜¯å°ˆå¿ƒæ‹±è±¬å§ï¼\n");
                 return 1;
         }
         if (me->is_busy()) {
-                write("ÄãÏÖÔÚÕýÃ¦×ÅÄØ¡£\n");
+                write("ä½ ç¾åœ¨æ­£å¿™è‘—å‘¢ã€‚\n");
                 return 1;
         }
 
         if( me->is_fighting() ) {
-                write("ÄãÎÞ·¨ÔÚÕ½¶·ÖÐ×¨ÐÄÏÂÀ´ÑÐ¶ÁÐÂÖª£¡\n");
+                write("ä½ ç„¡æ³•åœ¨æˆ°é¬¥ä¸­å°ˆå¿ƒä¸‹ä¾†ç ”è®€æ–°çŸ¥ï¼\n");
                 return 1;
         }
 
         if (!id(arg)) { 
-                write("ÄãÒª¶ÁÊ²Ã´£¿\n");
+                write("ä½ è¦è®€ä»€éº¼ï¼Ÿ\n");
                 return 1;
         }
         if( !me->query_skill("literate", 1) ){
-                write("ÄãÊÇ¸öÎÄÃ¤£¬ÏÈÑ§µãÎÄ»¯(literate)°É¡£\n");
+                write("ä½ æ˜¯å€‹æ–‡ç›²ï¼Œå…ˆå­¸é»žæ–‡åŒ–(literate)å§ã€‚\n");
                 return 1;
         }
 
-if( query("family/family_name", me) != "Ñ©É½ËÂ"
-         && query("family/family_name", me) != "Ñªµ¶ÃÅ"
+if( query("family/family_name", me) != "é›ªå±±å¯º"
+         && query("family/family_name", me) != "è¡€åˆ€é–€"
          || query("class", me) != "bonze" )
-                return notify_fail("ÄãÎ´Èë·ðÃÅ£¬³¾Ôµ²»¶Ï£¬ÎÞ·¨ÐÞ³ÖÃÜ×ÚÉñ·¨¡£\n");
+                return notify_fail("ä½ æœªå…¥ä½›é–€ï¼Œå¡µç·£ä¸æ–·ï¼Œç„¡æ³•ä¿®æŒå¯†å®—ç¥žæ³•ã€‚\n");
 
-        message("vision", me->name() + "×ÐÏ¸µØÑÐ¶Á¡¶°ËÂñ²èÉ²ÂÞ¾­¡·¡£\n", environment(me), me);
+        message("vision", me->name() + "ä»”ç´°åœ°ç ”è®€ã€Šå…«åŸ‹èŒ¶å‰Žç¾…ç¶“ã€‹ã€‚\n", environment(me), me);
         if( query("jing", me)<15){
-                write("ÄãÏÖÔÚ¹ýÓÚÆ£¾ë£¬ÎÞ·¨×¨ÐÄÏÂÀ´ÑÐ¶ÁÐÂÖª¡£\n");
+                write("ä½ ç¾åœ¨éŽäºŽç–²å€¦ï¼Œç„¡æ³•å°ˆå¿ƒä¸‹ä¾†ç ”è®€æ–°çŸ¥ã€‚\n");
                 return 1;
         }
 
@@ -76,35 +76,35 @@ if( query("family/family_name", me) != "Ñ©É½ËÂ"
 
 
         if( query("neili", me)<neili_lost){
-                write("ÄãÄÚÁ¦²»¹»¡£\n");
+                write("ä½ å…§åŠ›ä¸å¤ ã€‚\n");
                 return 1;
         }
 
             if ((!objectp(ob = present("kulou guan", me)) ) ||
                (!query("equipped", ob))){
-                write("Äã¾õµÃÍ·ÉÏ·Â·ðÉÙÁËµãÊ²÷á£¬¶ÁµÃÍ·»èÑÛ»¨¡£\n");
+                write("ä½ è¦ºå¾—é ­ä¸Šä»¿ä½›å°‘äº†é»žä»€éº¼ï¼Œè®€å¾—é ­æ˜çœ¼èŠ±ã€‚\n");
                 return 1;
         }
             if ((!objectp(ob = present("rentou lian", me)) ) ||
                (!query("equipped", ob))){
-                write("Äã¾õµÃÉíÉÏ·Â·ðÉÙÁËµãÊ²÷á£¬¶ÁµÃÍ·»èÑÛ»¨¡£\n");
+                write("ä½ è¦ºå¾—èº«ä¸Šä»¿ä½›å°‘äº†é»žä»€éº¼ï¼Œè®€å¾—é ­æ˜çœ¼èŠ±ã€‚\n");
                 return 1;
         }
             if ((!objectp(ob = present("lubo", me)) ) ||
                (!query("equipped", ob))){
-                write("Äã¾õµÃÊÖÖÐ·Â·ðÉÙÁËµãÊ²÷á£¬¶ÁµÃÍ·»èÑÛ»¨¡£\n");
+                write("ä½ è¦ºå¾—æ‰‹ä¸­ä»¿ä½›å°‘äº†é»žä»€éº¼ï¼Œè®€å¾—é ­æ˜çœ¼èŠ±ã€‚\n");
                 return 1;
         }
         if(me->query_skill("lamaism", 1) < 30){
-                write("ÄãÑÐ¶ÁÁËÒ»»á¶ù£¬µ«ÊÇ·¢ÏÖÉÏÃæËùËµµÄ¶ÔÄã¶øÑÔÌ«Éî°ÂÁË¡£\n");
+                write("ä½ ç ”è®€äº†ä¸€æœƒå…’ï¼Œä½†æ˜¯ç™¼ç¾ä¸Šé¢æ‰€èªªçš„å°ä½ è€Œè¨€å¤ªæ·±å¥§äº†ã€‚\n");
                 return 1;
         }
         if( me->query_skill("necromancy", 1) > 300){
-                write("ÄãÑÐ¶ÁÁËÒ»»á¶ù£¬µ«ÊÇ·¢ÏÖÉÏÃæËùËµµÄ¶ÔÄã¶øÑÔ¶¼Ì«Ç³ÁË£¬Ã»ÓÐÑ§µ½ÈÎºÎ¶«Î÷¡£\n");
+                write("ä½ ç ”è®€äº†ä¸€æœƒå…’ï¼Œä½†æ˜¯ç™¼ç¾ä¸Šé¢æ‰€èªªçš„å°ä½ è€Œè¨€éƒ½å¤ªæ·ºäº†ï¼Œæ²’æœ‰å­¸åˆ°ä»»ä½•æ±è¥¿ã€‚\n");
                 return 1;
         }
         if ( me->query_skill("necromancy", 1) >= me->query_skill("lamaism", 1)){ 
-                write("ÄãµÄÃÜ×ÚÐÄ·¨ÐÞÎª²»¹»£¬ÔÙÔõÃ´¶ÁÒ²Ã»ÓÃ£¡\n");
+                write("ä½ çš„å¯†å®—å¿ƒæ³•ä¿®ç‚ºä¸å¤ ï¼Œå†æ€Žéº¼è®€ä¹Ÿæ²’ç”¨ï¼\n");
                 return 1;
         }
         me->receive_damage("jing", 40);
@@ -113,7 +113,7 @@ if( query("family/family_name", me) != "Ñ©É½ËÂ"
                 me->set_skill("necromancy", 0);
         }
         me->improve_skill("necromancy", (int)me->query_skill("literate", 1)/3+1);
-        write("ÄãÑÐ¶Á¡¶°ËÂñ²èÉ²ÂÞ¾­¡·£¬ÆÄÓÐÐÄµÃ¡£\n");
+        write("ä½ ç ”è®€ã€Šå…«åŸ‹èŒ¶å‰Žç¾…ç¶“ã€‹ï¼Œé —æœ‰å¿ƒå¾—ã€‚\n");
         return 1;
 }
 

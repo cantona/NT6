@@ -3,10 +3,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("¶¾ÀÉÖĞ", ({ "du langzhong", "langzhong" }));
+        set_name("æ¯’éƒä¸­", ({ "du langzhong", "langzhong" }));
         set("long", 
-                "Ò»¸öÃæÄ¿Ğ×Éñ¶ñÉ²µÄÖĞÄêÈË£¬ÏÖÔÚÔÚµ½´¦ÊÕ¼¯¶¾Ò©¡£\n");
-        set("gender", "ÄĞĞÔ");
+                "ä¸€å€‹é¢ç›®å…‡ç¥æƒ¡å‰çš„ä¸­å¹´äººï¼Œç¾åœ¨åœ¨åˆ°è™•æ”¶é›†æ¯’è—¥ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 50);
         set("attitude", "peaceful");
         set("class", "fighter");
@@ -39,7 +39,7 @@ void create()
         map_skill("blade", "ruyi-dao");
         */
 
-        set("title","Îå¶¾½Ì½ÌÖÚ");
+        set("title","äº”æ¯’æ•™æ•™çœ¾");
         setup();
         carry_object("/d/beijing/npc/obj/cloth1")->wear();
         carry_object("/d/beijing/npc/obj/blade2")->wield();
@@ -55,7 +55,7 @@ void init()
         ob = this_player();
 
         command("grin");
-        command("say ºÙºÙ£¬½ñÌìÕæ²»ÇÉ£¬ÈÃÄãÓö¼ûÁË±¾Ò¯£¬±¾Ò¯½ñÌìÒª²ÆÒªÃü£¡\n");
+        command("say å˜¿å˜¿ï¼Œä»Šå¤©çœŸä¸å·§ï¼Œè®“ä½ é‡è¦‹äº†æœ¬çˆºï¼Œæœ¬çˆºä»Šå¤©è¦è²¡è¦å‘½ï¼\n");
         remove_call_out("kill_ob");
         call_out("kill_ob", 1, ob); 
 }

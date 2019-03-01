@@ -4,10 +4,10 @@ inherit BULLETIN_BOARD;
 
 void create()
 {
-        set_name("Î×Ê¦ÁôÑÔ²¾", ({ "board" }) );
+        set_name("å·«å¸«ç•™è¨€ç°¿", ({ "board" }) );
         set("location", "/d/wizard/wizard_room");
         set("board_id", "wiz_b");
-        set("long", "ÕâÊÇÒ»¸ö×¨¹©Î×Ê¦Ê¹ÓÃµÄÁôÑÔ°å¡£\n" );
+        set("long", "é€™æ˜¯ä¸€å€‹å°ˆä¾›å·«å¸«ä½¿ç”¨çš„ç•™è¨€æ¿ã€‚\n" );
         set("poster_level", 1);
         set("wizard_only", 1);
         setup();

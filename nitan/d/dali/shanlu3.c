@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-        set("short","ɽ·");
+        set("short","山路");
         set("long",@LONG
-һ����ɽ·���Ѵ�����ï�ܵ�ɭ���У��򶫲�Զ�ɴ����������
-��--�����ǣ���ȥ�������ɽ�����ڽӽ��������ģ�����·��������
-��ƽ��������ɽ����᫣���·�������ѡ�
+一條的山路蜿蜒穿行在茂密的森林中，向東不遠可達大理國的中
+心--大理城，西去則進入深山。由于接近大理中心，這條路修整的相
+當平整，盡管山勢崎嶇，行路並不困難。
 LONG);
         set("outdoors", "daliw");
         set("exits",([ /* sizeof() == 1 */

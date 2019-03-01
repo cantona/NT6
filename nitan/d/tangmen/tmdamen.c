@@ -8,12 +8,12 @@ string look_bian();
 
 void create()
 {
-        set("short","ÊñÖĞÌÆÃÅ");
+        set("short","èœ€ä¸­å”é–€");
         set("long",
-"Ò»×ùºêÎ°½¨Öş£¬Ò»¶ÂÀïĞí³¤µÄºìÇ½£¬Ò»¸öïÖ½ğµÄ´óØÒ(bian)¡£ºÃ´óµÄ\n"
-"ÆøÅÉ£¬Ò»¹É¾´ÒâÓÍÈ»¶øÉú£¬Õâ¾ÍÊÇÊñÖĞÌÆÃÅµÄÃÅÂ¥ÁË¡£µ«ÕâÀïÀäÀäÇåÇåµÄ£¬\n"
-"ºÃÏóÃ»ÓĞ¶àÉÙÈËÀ´¹ıÕâÀï¡£Ò²ĞíÊÇÌÆÃÅÈË²»ÔÚ½­ºş×ß¶¯µÄÔ­Òò°É¡£ÃÅ¿ÚÕ¾\n"
-"×Å¼¸¸öÌÆÃÅµÄµÜ×Ó¡£\n"
+"ä¸€åº§å®å‰å»ºç¯‰ï¼Œä¸€å µè£¡è¨±é•·çš„ç´…ç‰†ï¼Œä¸€å€‹é¦é‡‘çš„å¤§åŒ¾(bian)ã€‚å¥½å¤§çš„\n"
+"æ°£æ´¾ï¼Œä¸€è‚¡æ•¬æ„æ²¹ç„¶è€Œç”Ÿï¼Œé€™å°±æ˜¯èœ€ä¸­å”é–€çš„é–€æ¨“äº†ã€‚ä½†é€™è£¡å†·å†·æ¸…æ¸…çš„ï¼Œ\n"
+"å¥½è±¡æ²’æœ‰å¤šå°‘äººä¾†éé€™è£¡ã€‚ä¹Ÿè¨±æ˜¯å”é–€äººä¸åœ¨æ±Ÿæ¹–èµ°å‹•çš„åŸå› å§ã€‚é–€å£ç«™\n"
+"è‘—å¹¾å€‹å”é–€çš„å¼Ÿå­ã€‚\n"
 );
         set("outdoors", "tangmen");
         set("item_desc", ([
@@ -46,10 +46,10 @@ string look_bian()
         {
                
               set_temp("dongdong", 1, me);
-              return HIC"ØÒºóÃæºÃÏóÓĞÒ»¸ö¶«Î÷! Äã¿ÉÒÔÈ¡ÏÂÀ´¿´¿´¡£\n"NOR;
+              return HIC"åŒ¾å¾Œé¢å¥½è±¡æœ‰ä¸€å€‹æ±è¥¿! ä½ å¯ä»¥å–ä¸‹ä¾†çœ‹çœ‹ã€‚\n"NOR;
         }
         
-        return "ËÄ¸öïÖ½ğ´ó×Ö£º"+HIY"Êñ ÖĞ ÌÆ ÃÅ \n"NOR;
+        return "å››å€‹é¦é‡‘å¤§å­—ï¼š"+HIY"èœ€ ä¸­ å” é–€ \n"NOR;
                   
 }
 
@@ -62,17 +62,17 @@ int do_qu(string arg)
         if( !query_temp("dongdong", me))return 0;
         
         if( query_temp("qudong", me) )
-               return notify_fail(HIR"ĞÄ²»ÒªÌ«ºÚ°¡£¡\n"NOR);
+               return notify_fail(HIR"å¿ƒä¸è¦å¤ªé»‘å•Šï¼\n"NOR);
         
         if ( !arg || arg != "dongxi")
-               return notify_fail("ÄãÏëÈ¡Ê²Ã´°¡£¡\n");
+               return notify_fail("ä½ æƒ³å–ä»€éº¼å•Šï¼\n");
                
         if ( me->query_skill("dodge") < 120 )
-               return notify_fail(HIR"ÄãµÄÉíÊÖÌ«²îÁË£¡\n"NOR);
+               return notify_fail(HIR"ä½ çš„èº«æ‰‹å¤ªå·®äº†ï¼\n"NOR);
                
         delete_temp("dongdong", me);
         ob = new("/kungfu/class/tangmen/obj/jie");
-        tell_object(me,HIG"ÄãµÃµ½ÁËÒ»¼ş°µÆ÷¡£\n"NOR);
+        tell_object(me,HIG"ä½ å¾—åˆ°äº†ä¸€ä»¶æš—å™¨ã€‚\n"NOR);
         set_temp("qudong", 1, me);
         ob->move(me);
         return 1;
@@ -99,33 +99,33 @@ int valid_leave(object me, string dir)
         {
                 if( !query("family", me) )
                 {
-                        return notify_fail( "ÕâÎ»"+RANK_D->query_respect(me)+"ÒªÑ§ÒÕµÄ»°µ½ÕòÉÏÕÒÌÆÈá£¿\n");
+                        return notify_fail( "é€™ä½"+RANK_D->query_respect(me)+"è¦å­¸è—çš„è©±åˆ°é®ä¸Šæ‰¾å”æŸ”ï¼Ÿ\n");
                 }
-                if( query("family/family_name", me) != "ÌÆÃÅÊÀ¼Ò" )
+                if( query("family/family_name", me) != "å”é–€ä¸–å®¶" )
                 {
-                        return notify_fail( "ÕâÎ»"+RANK_D->query_respect(me)+"£¬ÄãÒÑÊÇÎäÁÖÖĞÈË£¬²»Öªµ½´ËÓĞºÎ¸É£¡\n");  
+                        return notify_fail( "é€™ä½"+RANK_D->query_respect(me)+"ï¼Œä½ å·²æ˜¯æ­¦æ—ä¸­äººï¼Œä¸çŸ¥åˆ°æ­¤æœ‰ä½•å¹¹ï¼\n");  
                 }    
                 if( query("tangmen/upshan", me) )
                 {
                         if( query("betrayer", me) )
                         {
-                                tell_object(me,"ÌÆ¸ÕËµµÀ£º¡°ÄãÕâ¸ö¿É³ÜµÄ¼Ò»ï£¡¡±\n");
+                                tell_object(me,"å”å‰›èªªé“ï¼šâ€œä½ é€™å€‹å¯æ¥çš„å®¶ä¼™ï¼â€\n");
                                 return 0;
                         }
                         else 
                         {
-                                tell_object(me,"ÌÆ¸ÕËµµÀ£º½øÈ¥°É£¡\n");
+                                tell_object(me,"å”å‰›èªªé“ï¼šé€²å»å§ï¼\n");
                                 me->move("/d/tangmen/qianyuan");
                                 return 1;
                         }
                 }                       
-                else  return notify_fail("ÄãµÄÎä¹¦»¹Ã»ÓĞÁ·µ½¼Ò£¬²»¿É½øÌÆÃÅµÄ£¡\n");
+                else  return notify_fail("ä½ çš„æ­¦åŠŸé‚„æ²’æœ‰ç·´åˆ°å®¶ï¼Œä¸å¯é€²å”é–€çš„ï¼\n");
         } else 
         if ( dir == "enter" )
         {
-                if( !query("family", me) || query("family/family_name", me) != "ÌÆÃÅÊÀ¼Ò" || 
+                if( !query("family", me) || query("family/family_name", me) != "å”é–€ä¸–å®¶" || 
                      !query("tangmen/upshan", me) )
-                        return notify_fail("ÄãÒ»Ì§×ã£¬·¢ÏÖµØÉÏÓĞ¶¾£¬Ã¦³éÍÈÍË»Ø¡£\n");                        
+                        return notify_fail("ä½ ä¸€æŠ¬è¶³ï¼Œç™¼ç¾åœ°ä¸Šæœ‰æ¯’ï¼Œå¿™æŠ½è…¿é€€å›ã€‚\n");                        
         }               
         return ::valid_leave(me, dir);
 }

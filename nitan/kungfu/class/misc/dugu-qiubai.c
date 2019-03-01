@@ -9,12 +9,12 @@ int is_stay_in_room();
 
 void create()
 {
-        set_name(HIY "¶À¹ÂÇó°Ü" NOR, ({ "dugu qiubai", "dugu", "qiubai" }) );
-        set("title", HIR "½£Ä§" NOR);
-        set("long", HIR "Õâ±ãÊÇ´«ËµÖĞµÄ½£Ä§¶À¹Â´óÏÀ£¬¾İËµÌìÏÂ¼ä¾¹ÎŞÒ»µĞÊÖ¡£\n"
-                        "¶À¹ÂÇó°ÜÔø¸Ğ¿®£ºÎØºô£¬ÉúÆ½ÇóÒ»µĞÊÖ¶ø²»¿ÉµÃ£¬³Ï¼ÅÁÈÄÑ¿°Ò²£¡\n" NOR);
+        set_name(HIY "ç¨å­¤æ±‚æ•—" NOR, ({ "dugu qiubai", "dugu", "qiubai" }) );
+        set("title", HIR "åŠé­”" NOR);
+        set("long", HIR "é€™ä¾¿æ˜¯å‚³èªªä¸­çš„åŠé­”ç¨å­¤å¤§ä¿ ï¼Œæ“šèªªå¤©ä¸‹é–“ç«Ÿç„¡ä¸€æ•µæ‰‹ã€‚\n"
+                        "ç¨å­¤æ±‚æ•—æ›¾æ„Ÿæ…¨ï¼šå—šå‘¼ï¼Œç”Ÿå¹³æ±‚ä¸€æ•µæ‰‹è€Œä¸å¯å¾—ï¼Œèª å¯‚å¯¥é›£å ªä¹Ÿï¼\n" NOR);
 
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("age", 59);
 
         set("str", 500);
@@ -71,8 +71,8 @@ void create()
 
         set_skill("jingluo-xue", 4000);
 
-        set("no_nuoyi", 1); // ²»±»Å²ÒÆÓ°Ïì
-        set("lonely-sword/nothing", 1); //ÎŞÕĞ
+        set("no_nuoyi", 1); // ä¸è¢«æŒªç§»å½±éŸ¿
+        set("lonely-sword/nothing", 1); //ç„¡æ‹›
         set("yinyang-shiertian/shier", 12);
         set("yinyang-shiertian/yinyang", 12);
         set("yinyang-shiertian/qiankun", 12);
@@ -94,14 +94,14 @@ void create()
         // yun perform
         set("chat_chance_combat", 120);
         set("chat_msg_combat", ({
-              // ¶À¹Â¾Å½£
+              // ç¨å­¤ä¹åŠ
               (: command("perform sword.jian") :),
               (: command("perform sword.po twice") :),
               (: command("perform sword.qi and sword.yi") :),
               (: command("perform sword.po and finger.tian") :),
               (: command("perform sword.po and sword.yi") :),
                (: command("perform finger.tian twice") :),
-              // ÒõÑô12t
+              // é™°é™½12t
               (: command("perform finger.tian twice") :),
               (: command("perform finger.zhen and finger.jiu") :),
 
@@ -115,10 +115,10 @@ void create()
 
         }));
 
-        set("my_life", 1); // µ±ÆøÑªµÍÓÚ10%µÄÊ±ºò²¹ÂúÒ»´Î£¬ÉèÖÃ¸Ã²ÎÊıÎª0
+        set("my_life", 1); // ç•¶æ°£è¡€ä½äº10%çš„æ™‚å€™è£œæ»¿ä¸€æ¬¡ï¼Œè¨­ç½®è©²åƒæ•¸ç‚º0
 
         //set("auto_perform", 1);
-        set("end_time", 1800);  // ±ØĞëÕ½¶·²»ÉÙÓÚ1800ÃëºóËÀÍö
+        set("end_time", 1800);  // å¿…é ˆæˆ°é¬¥ä¸å°‘äº1800ç§’å¾Œæ­»äº¡
         set("rewards", ([
                 "exp"   : 60000,
                 "pot"   : 20000,
@@ -162,13 +162,13 @@ void create()
         carry_object("/clone/cloth/bupao")->wear();
         carry_object("/clone/weapon/xuantie-jian")->wield();
 
-        // ÉèÖÃµØµã½£Ú£
+        // è¨­ç½®åœ°é»åŠå¡š
         set("startroom", "/d/jianzhong/maigu");
 }
 
 void heart_beat()
 {
-        // ½â³ı²»ÄÜperform yunµÄÏŞÖÆ
+        // è§£é™¤ä¸èƒ½perform yunçš„é™åˆ¶
         if (random(3) == 1)
         {
                 delete_temp("no_perform");
@@ -180,14 +180,14 @@ void heart_beat()
         return ::heart_beat();
 }
 
-// ¼ì²éÎäÆ÷
+// æª¢æŸ¥æ­¦å™¨
 void check_weapon()
 {
         object me, ob;
 
         me = this_object();
 
-        // Í¬Ê±²¹³äÄÚÁ¦
+        // åŒæ™‚è£œå……å…§åŠ›
         set("neili", query("max_neili"));
 
         if (me->is_busy()) me->interrupt_busy(me, 1000);
@@ -225,7 +225,7 @@ void check_weapon()
                 me->clear_condition();
         }
 
-        // ºÜĞ¡¼¸ÂÊ»Ö¸´ÆøÑª
+        // å¾ˆå°å¹¾ç‡æ¢å¾©æ°£è¡€
         if (random(1000) == 1)
         {
                 if (query("eff_qi") < query("max_qi") / 3) addn("eff_qi", query("max_qi") / 5);
@@ -262,7 +262,7 @@ int accept_kill(object me)
 
 void new_life()
 {
-        full_self(); // ²¹ÂúÆøÑª
+        full_self(); // è£œæ»¿æ°£è¡€
 
         delete_temp("no_perform");
         delete_temp("no_exert");
@@ -274,7 +274,7 @@ void new_life()
 
         delete("my_life");
 
-        message_vision(HIG "\n$N" HIG "´óºÈÒ»Éù£¬Ä¿¹â¶ÙÊ±³äÂúÉ±Òâ£¡\n\n" NOR, this_object());
+        message_vision(HIG "\n$N" HIG "å¤§å–ä¸€è²ï¼Œç›®å…‰é “æ™‚å……æ»¿æ®ºæ„ï¼\n\n" NOR, this_object());
 
         return;
 }
@@ -295,7 +295,7 @@ int receive_damage(string type, int damage, object who)
 
         if (query("my_life") && query("qi") < query("max_qi") / 10)
         {
-                new_life(); // ÖØÉúÒ»´Î
+                new_life(); // é‡ç”Ÿä¸€æ¬¡
                 return 0;
         }
 
@@ -320,14 +320,14 @@ void die(object killer)
         if( !objectp(killer) ) killer = this_object()->query_last_damage_from();
         if( !objectp(killer) ) killer = query_temp("last_damage_from");
 
-        // Èç¹û»¹Î´ÖØÉú£¬ÔòÖØÉúÒ»´Î
+        // å¦‚æœé‚„æœªé‡ç”Ÿï¼Œå‰‡é‡ç”Ÿä¸€æ¬¡
         if (query("my_life"))
         {
                 new_life();
                 return;
         }
 
-        if( time() < query_temp("end_time") ) // Ê±¼äÃ»ÓĞµ½£¬ËÀÍö²»ÁË
+        if( time() < query_temp("end_time") ) // æ™‚é–“æ²’æœ‰åˆ°ï¼Œæ­»äº¡ä¸äº†
         {
                 addn("jing", query("max_jing") / 10);
                 if( query("jing") > query("max_jing") ) set("jing", query("max_jing"));
@@ -337,14 +337,14 @@ void die(object killer)
                 if( query("qi") > query("max_qi") ) set("qi", query("max_qi"));
                 addn("eff_qi", query("max_qi") / 10);
                 if( query("eff_qi") > query("max_qi") ) set("eff_qi", query("max_qi"));
-                message_vision(HIR "\n$N" HIR "´óºÈÒ»Éù£¬ÔËÓÃÃØ·¨£¬ÆøÑªÓĞËù»ØÉı£¡\n\n" NOR, this_object());
+                message_vision(HIR "\n$N" HIR "å¤§å–ä¸€è²ï¼Œé‹ç”¨ç§˜æ³•ï¼Œæ°£è¡€æœ‰æ‰€å›å‡ï¼\n\n" NOR, this_object());
                 return;
         }
 
         where = environment();
 
         prop = apply[random(sizeof(apply))];
-        name = EQUIPMENT_D->chinese(prop)+"ÔªËØ";
+        name = EQUIPMENT_D->chinese(prop)+"å…ƒç´ ";
 
         data = ([]);
         data["element"] = prop;
@@ -354,9 +354,9 @@ void die(object killer)
         set("who_get/id", query("id", killer), ob);
         set("who_get/time", time() + 10, ob);
         ob->move(where);
-        message_vision(HIC "¶£~~Ò»Éù£¬´Ó$N" HIC "ÉíÉÏµô³ö" + ob->name() + NOR + HIC "£¬ÂäÔÚµØÉÏ¡£\n" NOR, this_object());
+        message_vision(HIC "å®~~ä¸€è²ï¼Œå¾$N" HIC "èº«ä¸Šæ‰å‡º" + ob->name() + NOR + HIC "ï¼Œè½åœ¨åœ°ä¸Šã€‚\n" NOR, this_object());
 
-        message("vision", HIR +this_object()->name(1) + HIR "ÑöÌì³¤Ğ¥£º¹ş¹ş¹ş£¬ÀÏ·ò½ñÈÕÖÕÓÚÈçÔ¸ÒÔ³¥ ¡­¡­\n" NOR, all_interactive());
+        message("vision", HIR +this_object()->name(1) + HIR "ä»°å¤©é•·å˜¯ï¼šå“ˆå“ˆå“ˆï¼Œè€å¤«ä»Šæ—¥çµ‚äºå¦‚é¡˜ä»¥å„Ÿ â€¦â€¦\n" NOR, all_interactive());
 
         return ::die(killer);
 }
@@ -374,7 +374,7 @@ varargs void unconcious(object defeater)
         return;
 }
 
-// ²»»á±»busy
+// ä¸æœƒè¢«busy
 /*
 varargs void start_busy(mixed new_busy, mixed new_interrupt)
 {

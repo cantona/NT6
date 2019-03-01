@@ -44,5 +44,5 @@ void create()
 
 string query_name()
 {
-	return "历史事件系统(HISTORY_D)";
+	return "姝峰彶浜嬩欢绯荤当(HISTORY_D)";
 }

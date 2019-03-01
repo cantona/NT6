@@ -5,10 +5,10 @@ int check_legal_id(string arg);
 
 void create()
 {
-        set_name("äì½­", ({ "xiaojiang" }) );
-        set("gender", "Å®ĞÔ" );
+        set_name("ç€Ÿæ±Ÿ", ({ "xiaojiang" }) );
+        set("gender", "å¥³æ€§" );
         set("age", 22);
-        set("long","äì½­ĞÕ¹Ë£¬ºó¼Ş¸øÒ»Ğ¡ÍÁ²ÆÖ÷£¬²ÆÖ÷¹ıÊÀºó¾Í¿ªÊ¹Ã¿Ìì±³Ò»¸öĞ¡¿ğÂô£¨£ù£á£î£ç£©³èÎï\n");
+        set("long","ç€Ÿæ±Ÿå§“é¡§ï¼Œå¾Œå«çµ¦ä¸€å°åœŸè²¡ä¸»ï¼Œè²¡ä¸»éä¸–å¾Œå°±é–‹ä½¿æ¯å¤©èƒŒä¸€å€‹å°ç­è³£ï¼ˆï½™ï½ï½ï½‡ï¼‰å¯µç‰©\n");
         set("combat_exp", 5);
         set("chat_chance", 15);
         set("chat_msg", ({
@@ -36,12 +36,12 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
         switch( random(5) ) {
                 case 0:
-                        say( "äì½­ËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-                                + "£¬ÒªÂòĞ¡Ã¨Ğ¡¹·Ã´£¿\n");
+                        say( "ç€Ÿæ±Ÿèªªé“ï¼šé€™ä½" + RANK_D->query_respect(ob)
+                                + "ï¼Œè¦è²·å°è²“å°ç‹—éº¼ï¼Ÿ\n");
                         break;
                 case 1:
-                        say( "äì½­ËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-                                + "£¬ÄãÌ«ÇîËáÁË£¬ÎÒ²»Âô¸øÄã¡£\n");
+                        say( "ç€Ÿæ±Ÿèªªé“ï¼šé€™ä½" + RANK_D->query_respect(ob)
+                                + "ï¼Œä½ å¤ªçª®é…¸äº†ï¼Œæˆ‘ä¸è³£çµ¦ä½ ã€‚\n");
                         break;
         }
 }
@@ -55,17 +55,17 @@ int do_yang(string arg)
         me = this_player();
         id=query("id", me);
         if(!arg || sscanf(arg,"%s %s %s %s",ctype,ccolor,cname,cid ) != 4)
-        return notify_fail("Ö¸Áî¸ñÊ½£ºyang <type> <color> <name> <english name>\n");
+        return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šyang <type> <color> <name> <english name>\n");
         if(me->is_busy())
-        return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É¡£\n");
+        return notify_fail("ä½ ä¸Šä¸€å€‹å‹•ä½œé‚„æ²’æœ‰å®Œæˆã€‚\n");
         if(file_size( me->query_save_file() + ".pet.o") > 0)
-        return notify_fail("ÄãÒÑ¾­ÓµÓĞÄãĞÄ°®µÄ³èÎïÁË¡£\n");
+        return notify_fail("ä½ å·²ç¶“æ“æœ‰ä½ å¿ƒæ„›çš„å¯µç‰©äº†ã€‚\n");
         gold = present("gold_money", this_player());
-        if(!gold) return notify_fail("ÄãÉíÉÏÃ»ÓĞ½ğ×Ó¡£\n");
+        if(!gold) return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é‡‘å­ã€‚\n");
         if((int) gold->query_amount() < 100)
-        return notify_fail("ÄãÉíÉÏÃ»ÓĞÄÇ÷á¶à½ğ×Ó¡£\n");
+        return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é‚£éº¼å¤šé‡‘å­ã€‚\n");
         if( query("score", me)<500 )
-        return notify_fail("ÄãµÄÆÀ¼Û²»¹»¡£\n");
+        return notify_fail("ä½ çš„è©•åƒ¹ä¸å¤ ã€‚\n");
         if( !check_legal_name(cname))
         return notify_fail("");
         if( !check_legal_id(cid))
@@ -89,7 +89,7 @@ int do_yang(string arg)
             ccolor != "$HIC$" &&
             ccolor != "$HIW$" 
         )
-        return notify_fail("²»ÖªÄãÒªÊ²Ã´ÑÕÉ«£®\n");
+        return notify_fail("ä¸çŸ¥ä½ è¦ä»€éº¼é¡è‰²ï¼\n");
         cname = ccolor + cname;
         cname = replace_string(cname, "$BLK$", BLK);
         cname = replace_string(cname, "$RED$", RED);
@@ -112,35 +112,35 @@ int do_yang(string arg)
         newpet = new("/quest/tulong/obj/pet");       
         switch( ctype ) {
                 case "dog":
-                        set("title", "Ğ¡¹·", newpet);
+                        set("title", "å°ç‹—", newpet);
                         set("int", 5+random(10), newpet);
                         break;
                 case "cat":
-                        set("title", "Ğ¡Ã¨", newpet);
+                        set("title", "å°è²“", newpet);
                         set("per", 5+random(10), newpet);
                         break;
                 case "pig":
-                        set("title", "Ğ¡Öí", newpet);
+                        set("title", "å°è±¬", newpet);
                         set("str", 5+random(10), newpet);
                         break;
                 case "monkey":
-                        set("title", "Ğ¡ºï", newpet);
+                        set("title", "å°çŒ´", newpet);
                         set("dex", 5+random(10), newpet);
                         break;
                 case "duck":
-                        set("title", "Ğ¡Ñ¼", newpet);
+                        set("title", "å°é´¨", newpet);
                         set("con", 5+random(10), newpet);
                         break;
                 case "hen":
-                        set("title", "Ğ¡¼¦", newpet);
+                        set("title", "å°é›", newpet);
                         set("kar", 5+random(10), newpet);
                         break;
                 case "hawk":
-                        set("title", "Ğ¡Ó¥", newpet);
+                        set("title", "å°é·¹", newpet);
                         set("dex", 5+random(2), newpet);
                         break;
                 default:
-                        return notify_fail("ÕâÀïÃ»ÓĞÄãÒªµÄ¶«Î÷£®\n");
+                        return notify_fail("é€™è£¡æ²’æœ‰ä½ è¦çš„æ±è¥¿ï¼\n");
         }
         set("owner",query("id",  me), newpet);
         set("possessed", me, newpet);
@@ -151,7 +151,7 @@ int do_yang(string arg)
         gold->add_amount(-100);
         addn("score", -500, me);
         me->start_busy(1);
-        command("say ÄãÊÔ×Å´µÒ»Éù¿ÚÉÚ£¨£÷£è£é£ó£ô£ì£å£©£¬ÄãµÄĞ¡±¦±¦¾Í»áÅÜ¹ıÀ´µÄ£¡\n");
+        command("say ä½ è©¦è‘—å¹ä¸€è²å£å“¨ï¼ˆï½—ï½ˆï½‰ï½“ï½”ï½Œï½…ï¼‰ï¼Œä½ çš„å°å¯¶å¯¶å°±æœƒè·‘éä¾†çš„ï¼\n");
         seteuid(getuid());
         return 1;
 }
@@ -160,16 +160,16 @@ int check_legal_name(string name)
         int i;
         i = strlen(name);
         if( (strlen(name) < 2) || (strlen(name) > 40 ) ) {
-                write("¶Ô²»Æğ£¬ÖĞÎÄÃû×Ö±ØĞëÊÇÒ»µ½¶şÊ®¸öÖĞÎÄ×Ö¡£\n");
+                write("å°ä¸èµ·ï¼Œä¸­æ–‡åå­—å¿…é ˆæ˜¯ä¸€åˆ°äºŒåå€‹ä¸­æ–‡å­—ã€‚\n");
                 return 0;
         }
         while(i--) {
                 if( name[i]<=' ' ) {
-                        write("¶Ô²»Æğ£¬ÖĞÎÄÃû×Ö²»ÄÜÓÃ¿ØÖÆ×ÖÔª¡£\n");
+                        write("å°ä¸èµ·ï¼Œä¸­æ–‡åå­—ä¸èƒ½ç”¨æ§åˆ¶å­—å…ƒã€‚\n");
                         return 0;
                 }
                 if( i%2==0 && !is_chinese(name[i..<0]) ) {
-                        write("¶Ô²»Æğ£¬Ãû×Ö±ØĞèÊÇÖĞÎÄ¡£\n");
+                        write("å°ä¸èµ·ï¼Œåå­—å¿…éœ€æ˜¯ä¸­æ–‡ã€‚\n");
                         return 0;
                 }
         }
@@ -181,7 +181,7 @@ int check_legal_id(string name)
         int i;
         i = strlen(name);
         if( (strlen(name) < 3) || (strlen(name) > 20 ) ) {
-                write("¶Ô²»Æğ£¬Ó¢ÎÄÃû×Ö±ØĞëÊÇÈıµ½¶şÊ®¸ö×Ö¡£\n");
+                write("å°ä¸èµ·ï¼Œè‹±æ–‡åå­—å¿…é ˆæ˜¯ä¸‰åˆ°äºŒåå€‹å­—ã€‚\n");
                 return 0;
         }
 

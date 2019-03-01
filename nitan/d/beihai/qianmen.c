@@ -5,16 +5,16 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ǰ��");
+        set("short", "前門");
         set("long", @LONG
-�����Ǳ�����ǰ�ţ����ڱ�����ר�Ź��ʹ��������ֵĵط�������
-һ���ǽ�������ͨ�ϰ����ǲ����Խ�ȥ�ġ��������ɫ�ģ�����Ϲ���
-һ����(bian)���ſ�վ��������ʿ��
+這裡是北海的前門，由于北海是專門供皇宮貴族遊樂的地方，所以
+一向是禁區，普通老百姓是不可以進去的。門是朱紅色的，門楣上掛這
+一塊匾(bian)，門口站著兩個衛士。
 LONG
         );
         set("cost", 2);
         set("item_desc", ([
-                "bian" : "����һ���ɫ���ң������ý���д���ĸ�����:���� ��Է\n",
+                "bian" : "這是一塊黑色的匾，上面用金漆寫了四個大字:北海 禁苑\n",
         ]));
         set("exits", ([
                 "east"      : __DIR__"shulin",

@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-      set("short", "��ǽ");
+      set("short", "西牆");
         set("long", @LONG
-�����Ƕ�üɽ�����µ���ǽ����Ժ���������ǽ�Ǳ�Ʈ�����ڿ�
-���л��졣һ��ɽϪ������ɽ�ϵĽ����������������ɽ����ȥ��
+這裡是峨眉山報國寺的西牆。寺院裡的鐘聲從牆那邊飄來，在空
+氣中回響。一條山溪從西面山上的解脫橋下流經這裡，向山下淌去。
 LONG );
       set("outdoors", "emei");
       set("exits", ([

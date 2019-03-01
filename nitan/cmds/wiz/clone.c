@@ -14,18 +14,18 @@ int main(object me, string file)
 
         if( !file)file=query("cwf", me);
         if (! file)
-                return notify_fail("ÄãÒª¸´ÖÆÊ²÷áÎï¼ş£¿\n");
+                return notify_fail("ä½ è¦å¾©åˆ¶ä»€éº¼ç‰©ä»¶ï¼Ÿ\n");
 
         file=resolve_path(query("cwd", me),file);
         if (sscanf(file, "%*s.c") != 1) file += ".c";
         set("cwf", file, me);
 
         if (file_size(file) < 0)
-                return notify_fail("Ã»ÓĞÕâ¸öµµ°¸(" + file + ")¡£\n");
+                return notify_fail("æ²’æœ‰é€™å€‹æª”æ¡ˆ(" + file + ")ã€‚\n");
 
         if (! SECURITY_D->valid_read(file, me, "clone"))
         {
-                write("ÄãÃ»ÓĞÈ¨ÏŞ²Ù×÷Õâ¸ö¶ÔÏó¡£\n");
+                write("ä½ æ²’æœ‰æ¬Šé™æ“ä½œé€™å€‹å°è±¡ã€‚\n");
                 return 1;
         }
 
@@ -34,7 +34,7 @@ int main(object me, string file)
                 err = catch(call_other(file, "???"));
                 if (err)
                 {
-                        write("ÔØÈëÊ§°Ü£º" + err + "\n");
+                        write("è¼‰å…¥å¤±æ•—ï¼š" + err + "\n");
                         return 1;
                 }
         }
@@ -46,18 +46,18 @@ int main(object me, string file)
                 case "gift":
                         if (! sscanf(file, "/clone/special/%*s") &&
                             ! sscanf(file, "/clone/gift/%*s"))
-                                return notify_fail("Äã²»ÄÜ¸´ÖÆÕâ¸öÎïÆ·¡£\n");
+                                return notify_fail("ä½ ä¸èƒ½å¾©åˆ¶é€™å€‹ç‰©å“ã€‚\n");
                         break;
 
                 case "all":
                         break;
 
                 default:
-                        return notify_fail("Äã²»ÄÜ¸´ÖÆÎïÆ·¡£\n");
+                        return notify_fail("ä½ ä¸èƒ½å¾©åˆ¶ç‰©å“ã€‚\n");
                 }
 
                 if (! me->is_admin())
-                        message_system(sprintf("%s(%s)¸´ÖÆÁËÎïÆ·£º%s(%s)¡£\n",
+                        message_system(sprintf("%s(%s)å¾©åˆ¶äº†ç‰©å“ï¼š%s(%s)ã€‚\n",
                                                me->name(1),query("id", me),
                                                filter_color(file->name(1)),query("id", get_object(file))));
         }
@@ -67,46 +67,46 @@ int main(object me, string file)
         err = catch(obj = new(file));
         if (err)
         {
-                write("¸´ÖÆÊ§°Ü£º" + err + "\n");
+                write("å¾©åˆ¶å¤±æ•—ï¼š" + err + "\n");
                 return 1;
         }
 
         if (! objectp(obj))
         {
-                write("ÄãÎŞ·¨¸´ÖÆ¸ÃÎïÆ·¡£\n");
+                write("ä½ ç„¡æ³•å¾©åˆ¶è©²ç‰©å“ã€‚\n");
                 return 1;
         }
 
-        msg = "Ö»¼û$NÉìÊÖÁè¿ÕÒ»Ö¸£¬±ä³öÁË$n¡£\n";
+        msg = "åªè¦‹$Nä¼¸æ‰‹å‡Œç©ºä¸€æŒ‡ï¼Œè®Šå‡ºäº†$nã€‚\n";
 
         log_file("static/clone", sprintf("%s %-9s clone %s\n",
                                          log_time(), geteuid(me),
                                          base_name(obj)));
         if( !obj->is_character() && !query("no_get", obj) && obj->move(me) )
         {
-                write(query("name", obj)+"¸´ÖÆ³É¹¦£¬·ÅÔÚÄãµÄÎïÆ·À¸¡£\n");
+                write(query("name", obj)+"å¾©åˆ¶æˆåŠŸï¼Œæ”¾åœ¨ä½ çš„ç‰©å“æ¬„ã€‚\n");
                 message_vision(msg + "\n", me, obj);
                 return 1;
         }
         if (obj->move(environment(me)))
         {
-                write(query("name", obj)+"¸´ÖÆ³É¹¦£¬·ÅÔÚÕâ¸ö·¿¼ä¡£\n");
+                write(query("name", obj)+"å¾©åˆ¶æˆåŠŸï¼Œæ”¾åœ¨é€™å€‹æˆ¿é–“ã€‚\n");
                 message_vision(msg + "\n", me, obj);
                 return 1;
         }
 
         destruct(obj);
-        return notify_fail("ÎŞ·¨¸´ÖÆ²»ÄÜÒÆ¶¯µÄÎï¼ş(" + file + ")¡£\n");
+        return notify_fail("ç„¡æ³•å¾©åˆ¶ä¸èƒ½ç§»å‹•çš„ç‰©ä»¶(" + file + ")ã€‚\n");
 }
 
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : clone <µµÃû>
+æŒ‡ä»¤æ ¼å¼ : clone <æª”å>
 
-ÀûÓÃ´ËÖ¸Áî¿É¸´ÖÆÈÎºÎÄÜÒÆ¶¯Ö®Îï¼ş(º¬ÈËÎï)¡£
+åˆ©ç”¨æ­¤æŒ‡ä»¤å¯å¾©åˆ¶ä»»ä½•èƒ½ç§»å‹•ä¹‹ç‰©ä»¶(å«äººç‰©)ã€‚
 
-¸ÃÃüÁîÔÚ¿ÉÒÔ±»ÊÚÈ¨Ê¹ÓÃµÄĞÅÏ¢°üÀ¨£ºgift¡¢all¡£
+è©²å‘½ä»¤åœ¨å¯ä»¥è¢«æˆæ¬Šä½¿ç”¨çš„ä¿¡æ¯åŒ…æ‹¬ï¼šgiftã€allã€‚
 HELP );
         return 1;
 }

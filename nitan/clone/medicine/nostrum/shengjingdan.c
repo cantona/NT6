@@ -1,4 +1,4 @@
-// shengjingdan.c Éú¾«µ¤
+// shengjingdan.c ç”Ÿç²¾ä¸¹
 
 inherit ITEM;
 #include <ansi.h>
@@ -14,12 +14,12 @@ void init()
 
 void create()
 {
-        set_name(HIG"ÁèÏöÉú¾«µ¤"NOR, ({"shengjing dan", "dan"}));
+        set_name(HIG"å‡Œéœ„ç”Ÿç²¾ä¸¹"NOR, ({"shengjing dan", "dan"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
-                set("long", "Ò»¿Å±ÌÂÌÉ«µÄµ¤Ò©¡£´ËÄËÈ«ÕæÒì±¦¡£\n");
+                set("unit", "é¡†");
+                set("long", "ä¸€é¡†ç¢§ç¶ è‰²çš„ä¸¹è—¥ã€‚æ­¤ä¹ƒå…¨çœŸç•°å¯¶ã€‚\n");
                 set("no_sell", 1);
                 set("no_drop", 1);
                 set("no_give", 1);
@@ -37,19 +37,19 @@ int do_eat(string arg)
         taoism_limit = me->query_skill("taoism", 1)*10;
         jingli_limit=query("max_jingli", me);
         
-        if (!id(arg)) return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+        if (!id(arg)) return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if (!present(this_object(), this_player()))
-                return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if( me->is_busy() )
-                return notify_fail("±ð¼±£¬ÂýÂý³Ô£¬Ð¡ÐÄ±ðÒ­×ÅÁË¡£\n");
+                return notify_fail("åˆ¥æ€¥ï¼Œæ…¢æ…¢åƒï¼Œå°å¿ƒåˆ¥å™Žè‘—äº†ã€‚\n");
 
         if ( (int)me->query_condition("quanzhen_drug" ) > 0 )
-                return notify_fail("ÄãÊÇ·ñ²ÅÁ¶µ¤Ò©»ò²Å·þÊ³ÁËµ¤Ò©£¿ÄãµÄÈ«ÉíÆøÑªÎ´¹éÎ»£¬²»ÒË³Ôµ¤Ò©¡£\n");
+                return notify_fail("ä½ æ˜¯å¦æ‰ç…‰ä¸¹è—¥æˆ–æ‰æœé£Ÿäº†ä¸¹è—¥ï¼Ÿä½ çš„å…¨èº«æ°£è¡€æœªæ­¸ä½ï¼Œä¸å®œåƒä¸¹è—¥ã€‚\n");
 
         if ( me->query_skill_mapped("force") != "xiantian-qigong" )
         {
                 addn("max_jingli", -10, me);
-                message_vision(HIR "$N³ÔÏÂÒ»¿ÅÁèÏöÉú¾«µ¤£¬Ö»¾õµÃ¸¹Í´Èç½Á£¬È«ÉíÈç±»³éÆø°ãµÄ¿ÕÐé¡£Ô­À´´Ëµ¤²»ÊÊÄãËùÁ·ÄÚ¹¦£¬½á¹û´óËðÕæÔª£¡\n" NOR, me);
+                message_vision(HIR "$Nåƒä¸‹ä¸€é¡†å‡Œéœ„ç”Ÿç²¾ä¸¹ï¼Œåªè¦ºå¾—è…¹ç—›å¦‚æ”ªï¼Œå…¨èº«å¦‚è¢«æŠ½æ°£èˆ¬çš„ç©ºè™›ã€‚åŽŸä¾†æ­¤ä¸¹ä¸é©ä½ æ‰€ç·´å…§åŠŸï¼Œçµæžœå¤§æçœŸå…ƒï¼\n" NOR, me);
                 me->start_busy(10);
         }
         else
@@ -58,10 +58,10 @@ int do_eat(string arg)
                 if ( jingli_limit <= taoism_limit  )
                 {
                         addn("max_jingli", 1, me);
-                        message_vision(HIG "$N³ÔÏÂÒ»¿ÅÁèÏöÉú¾«µ¤£¬Ö»¾õµÃÌåÄÚ¾«Á¦Ô´Ô´×ÌÉú£¬È«Éí¶ÙÊ±¾õµÃÊæ³©ÎÞ±È£¡\n" NOR, me);
+                        message_vision(HIG "$Nåƒä¸‹ä¸€é¡†å‡Œéœ„ç”Ÿç²¾ä¸¹ï¼Œåªè¦ºå¾—é«”å…§ç²¾åŠ›æºæºæ»‹ç”Ÿï¼Œå…¨èº«é “æ™‚è¦ºå¾—èˆ’æš¢ç„¡æ¯”ï¼\n" NOR, me);
                 }
                 else
-                        message_vision(HIG "$N³ÔÏÂÒ»¿ÅÁèÏöÉú¾«µ¤£¬Ò²Ã»¾õµÃÓÐÊ²Ã´¸Ð¾õ¡£\n" NOR, me);
+                        message_vision(HIG "$Nåƒä¸‹ä¸€é¡†å‡Œéœ„ç”Ÿç²¾ä¸¹ï¼Œä¹Ÿæ²’è¦ºå¾—æœ‰ä»€éº¼æ„Ÿè¦ºã€‚\n" NOR, me);
 
                 me->apply_condition("quanzhen_drug", 50);
         }

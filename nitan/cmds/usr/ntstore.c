@@ -14,7 +14,7 @@ int main(object me, string arg)
 
         if( !arg || arg == "") return help(me);
         if( time()-query_temp("last_member", me)<3 )
-                return notify_fail("ÏµÍ³Ã¦£¬ÇëÉÔºóÔÙÊÔ£¡\n");
+                return notify_fail("ç³»çµ±å¿™ï¼Œè«‹ç¨å¾Œå†è©¦ï¼\n");
 
         if( !wizardp(me) )
                 set_temp("last_member", time(), me);
@@ -33,7 +33,7 @@ int main(object me, string arg)
         case "buy":
                 if( !GOODS_D->buy_goods(me, str2))
                 {
-                        write("¹ºÂòÊ§°Ü£¡\n");
+                        write("è³¼è²·å¤±æ•—ï¼\n");
                         return 1;
                 }
                 write("Successful!\n");
@@ -53,28 +53,28 @@ int help (object me)
         money = MEMBER_D->db_query_member(me, "money");
         buyvalue = MEMBER_D->db_query_member(me, "buyvalue");
 
-        write(HIY "¡õ ÄúÄ¿Ç°µÄÍõÕß±ÒÎª " + money + " (NT)
-" WHT "¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
+        write(HIY "â–¡ æ‚¨ç›®å‰çš„çŽ‹è€…å¹£ç‚º " + money + " (NT)
+" WHT "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
-" HIM "ÊäÈëÖ¸Áî£º    ntstore show all                  ²é¿´ËùÓÐÉÌ³ÇµÄ»õÎï
-ÊäÈëÖ¸Áî£º    ntstore show object               ÏÔÊ¾ËùÓÐÉÌ³ÇÎïÆ·Àà
-ÊäÈëÖ¸Áî£º    ntstore show pill                 ÏÔÊ¾ËùÓÐÉÌ³Çµ¤Ò©Àà
-ÊäÈëÖ¸Áî£º    ntstore show special              ÏÔÊ¾ËùÓÐÉÌ³ÇÌØ¼¼Àà
-ÊäÈëÖ¸Áî£º    ntstore show story                ÏÔÊ¾ËùÓÐÉÌ³Ç¹ÊÊÂÀà
-ÊäÈëÖ¸Áî£º    ntstore show symbol               ÏÔÊ¾ËùÓÐÉÌ³ÇµÄ·ûÀà
-ÊäÈëÖ¸Áî£º    ntstore show enchase              ÏÔÊ¾ËùÓÐÉÌ³ÇÏâÇ¶Àà
-ÊäÈëÖ¸Áî£º    ntstore show prop                 ÏÔÊ¾ËùÓÐÉÌ³Ç×°±¸Àà
-ÊäÈëÖ¸Áî£º    ntstore show other                ÏÔÊ¾ËùÓÐÉÌ³ÇÆäËûÀà
-ÊäÈëÖ¸Áî£º    ntstore show srv                  ÏÔÊ¾ËùÓÐÉÌ³Ç·þÎñÀà
-ÊäÈëÖ¸Áî£º    ntstore buy <´úºÅ>                ¹ºÂòÖ¸¶¨´úºÅµÄÉÌÆ·
-ÊäÈëÖ¸Áî£º    ntstore look <´úºÅ>               ²é¿´Ö¸¶¨ÎïÆ·µÄÊôÐÔ
+" HIM "è¼¸å…¥æŒ‡ä»¤ï¼š    ntstore show all                  æŸ¥çœ‹æ‰€æœ‰å•†åŸŽçš„è²¨ç‰©
+è¼¸å…¥æŒ‡ä»¤ï¼š    ntstore show object               é¡¯ç¤ºæ‰€æœ‰å•†åŸŽç‰©å“é¡ž
+è¼¸å…¥æŒ‡ä»¤ï¼š    ntstore show pill                 é¡¯ç¤ºæ‰€æœ‰å•†åŸŽä¸¹è—¥é¡ž
+è¼¸å…¥æŒ‡ä»¤ï¼š    ntstore show special              é¡¯ç¤ºæ‰€æœ‰å•†åŸŽç‰¹æŠ€é¡ž
+è¼¸å…¥æŒ‡ä»¤ï¼š    ntstore show story                é¡¯ç¤ºæ‰€æœ‰å•†åŸŽæ•…äº‹é¡ž
+è¼¸å…¥æŒ‡ä»¤ï¼š    ntstore show symbol               é¡¯ç¤ºæ‰€æœ‰å•†åŸŽçš„ç¬¦é¡ž
+è¼¸å…¥æŒ‡ä»¤ï¼š    ntstore show enchase              é¡¯ç¤ºæ‰€æœ‰å•†åŸŽé‘²åµŒé¡ž
+è¼¸å…¥æŒ‡ä»¤ï¼š    ntstore show prop                 é¡¯ç¤ºæ‰€æœ‰å•†åŸŽè£å‚™é¡ž
+è¼¸å…¥æŒ‡ä»¤ï¼š    ntstore show other                é¡¯ç¤ºæ‰€æœ‰å•†åŸŽå…¶ä»–é¡ž
+è¼¸å…¥æŒ‡ä»¤ï¼š    ntstore show srv                  é¡¯ç¤ºæ‰€æœ‰å•†åŸŽæœå‹™é¡ž
+è¼¸å…¥æŒ‡ä»¤ï¼š    ntstore buy <ä»£è™Ÿ>                è³¼è²·æŒ‡å®šä»£è™Ÿçš„å•†å“
+è¼¸å…¥æŒ‡ä»¤ï¼š    ntstore look <ä»£è™Ÿ>               æŸ¥çœ‹æŒ‡å®šç‰©å“çš„å±¬æ€§
 
-" WHT "<´úºÅ>  £º    ¿ÉÓÃÎïÆ·µÄ name »ò id »ò ±àºÅ
-" WHT "¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
-" HIC "ÌÔ±¦³åÖµÁ´½ÓµØÖ·: " HIR "http://shop61698067.taobao.com\n
-" HIY "Äú×Ü¹²ÔÚÓÎÏ·ÉÌ³ÇÏû·Ñ " + buyvalue + " (NT)¡£
+" WHT "<ä»£è™Ÿ>  ï¼š    å¯ç”¨ç‰©å“çš„ name æˆ– id æˆ– ç·¨è™Ÿ
+" WHT "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+" HIC "æ·˜å¯¶æ²–å€¼éˆæŽ¥åœ°å€: " HIR "http://shop61698067.taobao.com\n
+" HIY "æ‚¨ç¸½å…±åœ¨éŠæˆ²å•†åŸŽæ¶ˆè²» " + buyvalue + " (NT)ã€‚
 
-" HIG "Ïà¹Ø²Î¿¼ÎÄ¼þ£ºhelp member\n\n" NOR);
+" HIG "ç›¸é—œåƒè€ƒæ–‡ä»¶ï¼šhelp member\n\n" NOR);
 
         return 1;
 }

@@ -2,10 +2,10 @@ inherit ROOM;
 #include <ansi.h> 
 void create()
 {
-        set("short", "ÉîÌ¶");
+        set("short", "æ·±æ½­");
         set("long",
-"[1;32mÖÜÎ§Ò»Æ¬ºÚ°µ£¬´ó¸ÅÒÑ¾­ÉîÈëµØµ×ÁË°É¡£½å×ÅÌ¦Şº·¢³öµÄÓÄ\n"
-"ÓÄÁ×¹â£¬¿ÉÒÔ¿´µ½Ç°·½²»Ô¶´¦ÓĞÒ»¸öÉîÌ¶(tan)£¬º®Æø±ÆÈË¡£\n"
+"[1;32må‘¨åœä¸€ç‰‡é»‘æš—ï¼Œå¤§æ¦‚å·²ç¶“æ·±å…¥åœ°åº•äº†å§ã€‚è—‰è‘—è‹”è˜šç™¼å‡ºçš„å¹½\n"
+"å¹½ç£·å…‰ï¼Œå¯ä»¥çœ‹åˆ°å‰æ–¹ä¸é è™•æœ‰ä¸€å€‹æ·±æ½­(tan)ï¼Œå¯’æ°£é€¼äººã€‚\n"
 );
         set("exits", ([ 
        "eastup" : __DIR__"spirit6",
@@ -28,14 +28,14 @@ int do_look(string arg)
         object me;
         object room;
         me = this_player();
-        if(!arg || arg != "ÉîÌ¶" && arg != "tan" ) return 0;
+        if(!arg || arg != "æ·±æ½­" && arg != "tan" ) return 0;
         switch ( random (2)) {
                 case 0:
-tell_object(me,"Ì¶±ß³¤ÂúÁËÌ¦Şº£¬»¹ÊÇ²»Òª¿¿£¨£á£ğ£ğ£ò£ï£á£ã£è£©µÄÌ«½ü¡£\n"); 
+tell_object(me,"æ½­é‚Šé•·æ»¿äº†è‹”è˜šï¼Œé‚„æ˜¯ä¸è¦é ï¼ˆï½ï½ï½ï½’ï½ï½ï½ƒï½ˆï¼‰çš„å¤ªè¿‘ã€‚\n"); 
                 break;
                 case 1:
-message_vision("$NÌ½Í·ÏòÌ¶ÀïÍûÈ¥¡£ \n", me); 
-tell_object(me,"ºÚ²»Â¡ßËµÄÌ¶Ë®Éî²»¼ûµ×¡£ \n");
+message_vision("$Næ¢é ­å‘æ½­è£¡æœ›å»ã€‚ \n", me); 
+tell_object(me,"é»‘ä¸éš†å’šçš„æ½­æ°´æ·±ä¸è¦‹åº•ã€‚ \n");
                 break;
         }
 
@@ -47,15 +47,15 @@ int do_approach(string arg)
         object me;
         object room;
         me = this_player();
-        if(!arg || arg != "ÉîÌ¶" && arg != "tan" ) return 0;
+        if(!arg || arg != "æ·±æ½­" && arg != "tan" ) return 0;
         switch ( random (3)) {
                 case 0:
-message_vision("$N×ß½üÉîÌ¶Ì½Í·ÏòÀïÍûÈ¥¡£ \n", me); 
-tell_object(me,"Ì¶Ë®Éî²»¼ûµ×£¬²»¹ıÄãËÆºõ¿ÉÒÔÌıµ½µ×ÏÂÁ÷Ë®µÄÉùÒô¡£ \n");
+message_vision("$Nèµ°è¿‘æ·±æ½­æ¢é ­å‘è£¡æœ›å»ã€‚ \n", me); 
+tell_object(me,"æ½­æ°´æ·±ä¸è¦‹åº•ï¼Œä¸éä½ ä¼¼ä¹å¯ä»¥è½åˆ°åº•ä¸‹æµæ°´çš„è²éŸ³ã€‚ \n");
                 break;
                 case 1:
-message_vision("$N×ß½üÉîÌ¶Ì½Í·ÏòÀïÍûÈ¥¡£°¥Ñ½£¡Ò»²»Ğ¡ĞÄµôÁË½øÈ¥£¡\n", me); 
-message_vision("$NµÄÍ·×²ÔÚÌ¶±ÚÉÏ£¬Ò»ÏÂ×Ó»èÁË¹ıÈ¥£¡\n", me); 
+message_vision("$Nèµ°è¿‘æ·±æ½­æ¢é ­å‘è£¡æœ›å»ã€‚å“å‘€ï¼ä¸€ä¸å°å¿ƒæ‰äº†é€²å»ï¼\n", me); 
+message_vision("$Nçš„é ­æ’åœ¨æ½­å£ä¸Šï¼Œä¸€ä¸‹å­æ˜äº†éå»ï¼\n", me); 
                 call_out("be_saved",8);
                 me->unconcious();
                 room = find_object(__DIR__"spirit10");
@@ -63,7 +63,7 @@ message_vision("$NµÄÍ·×²ÔÚÌ¶±ÚÉÏ£¬Ò»ÏÂ×Ó»èÁË¹ıÈ¥£¡\n", me);
                 me->move(room);
                 break;
                 case 2:
-message_vision("$N×ß½üÉîÌ¶Ì½Í·ÏòÀïÍûÈ¥¡£°¥Ñ½£¡Ò»²»Ğ¡ĞÄµôÁË½øÈ¥£¡\n", me);
+message_vision("$Nèµ°è¿‘æ·±æ½­æ¢é ­å‘è£¡æœ›å»ã€‚å“å‘€ï¼ä¸€ä¸å°å¿ƒæ‰äº†é€²å»ï¼\n", me);
               room = find_object(__DIR__"underwater");
                 if(!objectp(room)) room=load_object(__DIR__"underwater");
                 me->move(room);
@@ -80,7 +80,7 @@ int be_saved()
             me->remove_call_out("revive");
             me->revive();
             me->reincarnate();
-message_vision("$NÂıÂıÇåĞÑ¹ıÀ´£¬·¢ÏÖ×Ô¼ºÔÚÒ»¼äĞ¡ÎİÖĞ£¡\n", me); 
-message_vision("Ò»¸öÃÀÀöµÄ¾«Áé×åÅ®×Ó¿´¼û$N»Ö¸´ÁËÖª¾õ£¬¹ØÇĞµØ×ßÁË¹ıÀ´£¡\n", me);
+message_vision("$Næ…¢æ…¢æ¸…é†’éä¾†ï¼Œç™¼ç¾è‡ªå·±åœ¨ä¸€é–“å°å±‹ä¸­ï¼\n", me); 
+message_vision("ä¸€å€‹ç¾éº—çš„ç²¾éˆæ—å¥³å­çœ‹è¦‹$Næ¢å¾©äº†çŸ¥è¦ºï¼Œé—œåˆ‡åœ°èµ°äº†éä¾†ï¼\n", me);
            return 1;
 }

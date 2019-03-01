@@ -3,19 +3,19 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIM "µØ Áé Ê¯" NOR, ({"diling shi", "diling", "shi" }));
+        set_name(HIM "åœ° éˆ çŸ³" NOR, ({"diling shi", "diling", "shi" }));
         set_weight(1000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
+                set("unit", "é¡†");
                 set("value", 500000);
-                set("enchase/name", "µØ Áé Ê¯");
+                set("enchase/name", "åœ° éˆ çŸ³");
                 set("enchase/point", 1);
                 set("enchase/type", "head");
-                set("limit", 12); // ÖÁÉÙÓĞ12¸ö¿×µÄÊ±ºò·½¿ÉÏâÇ¶
+                set("limit", 12); // è‡³å°‘æœ‰12å€‹å­”çš„æ™‚å€™æ–¹å¯é‘²åµŒ
                 set("enchase/cur_firm", 100);
-                set("enchase/spe_data", (["add_yanjiu" : 15]) );  // Ã¿¸öÌá¸ßÑĞ¾¿Ğ§ÂÊ15%
+                set("enchase/spe_data", (["add_yanjiu" : 15]) );  // æ¯å€‹æé«˜ç ”ç©¶æ•ˆç‡15%
         }
         setup();
 }

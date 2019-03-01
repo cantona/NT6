@@ -6,24 +6,24 @@ int do_climb(string arg);
 
 void create()
 {
-      set("short","·¼²İµØ");
+      set("short","èŠ³è‰åœ°");
       set("long",
-"·Ò·¼µÄ²İµØ£¬µ½´¦ÊÇÆæ»¨Òì²İ¡£ÓĞÒ»¸ö²ÎÌì´óÊ÷(tree)ÔÚ²İÆºÖĞÑë£¬\n"
-"¿´ÆğÀ´ËÆºõÓĞÒ»ÖÖÉñÁ¦¡£\n"
+"èŠ¬èŠ³çš„è‰åœ°ï¼Œåˆ°è™•æ˜¯å¥‡èŠ±ç•°è‰ã€‚æœ‰ä¸€å€‹åƒå¤©å¤§æ¨¹(tree)åœ¨è‰åªä¸­å¤®ï¼Œ\n"
+"çœ‹èµ·ä¾†ä¼¼ä¹æœ‰ä¸€ç¨®ç¥åŠ›ã€‚\n"
 );
       set("exits",([ /* sizeof() == 1 */
           "southdown"  : __DIR__"bamboo1",
           "east"  : __DIR__"hole",
       ]));
       set("item_desc",([
-                 "tree" :"×ÏÉ«µÄÊ÷Éí£¬¼áÓ²ÎŞ±È£¬ÕıÊÇ´«ËµÖĞµÄÈË²Î¹ûÊ÷¡£\n"
+                 "tree" :"ç´«è‰²çš„æ¨¹èº«ï¼Œå …ç¡¬ç„¡æ¯”ï¼Œæ­£æ˜¯å‚³èªªä¸­çš„äººåƒæœæ¨¹ã€‚\n"
       ]));
       set("objects", ([
   //       "/d/shenlong/obj/hua4" : 2,
       ]));
       set("no_magic", 1);
         setup();
-      create_door("east", "Ê¯ÃÅ", "west", DOOR_CLOSED);
+      create_door("east", "çŸ³é–€", "west", DOOR_CLOSED);
 }
 
 void init()
@@ -37,18 +37,18 @@ int do_climb(string arg)
       me = this_player();
       if (!arg || arg != "tree")
    {
-            return notify_fail("ÄãÒªÅÀÊ²Ã´£¿\n");
+            return notify_fail("ä½ è¦çˆ¬ä»€éº¼ï¼Ÿ\n");
     }
         if( query("qi", me)<70 )
-                return notify_fail("ÄãµÄÆø²»×ã£¬¿ÖÅÂÅÀ²»ÉÏÈ¥¡£\n");
+                return notify_fail("ä½ çš„æ°£ä¸è¶³ï¼Œææ€•çˆ¬ä¸ä¸Šå»ã€‚\n");
         if ((int)me->query_skill("dodge", 1) < 130)
 {
-          message_vision("$NÏëÅÀÉÏÊ÷È¥£¬¿ÉÊÇÅÀµ½Ò»°ë¾ÍÒ»Í·ÔÔÁËÏÂÀ´¡£\n\n",me);
+          message_vision("$Næƒ³çˆ¬ä¸Šæ¨¹å»ï¼Œå¯æ˜¯çˆ¬åˆ°ä¸€åŠå°±ä¸€é ­æ ½äº†ä¸‹ä¾†ã€‚\n\n",me);
             me->receive_damage("qi",60);
          return 1;
 }
 else
-          message_vision("$NÍÑµôĞ¬×Ó£¬ÈıÏÂÁ½ÏÂ¾ÍÅÀÉÏÁËÊ÷È¥¡£\n\n",me);
+          message_vision("$Nè„«æ‰é‹å­ï¼Œä¸‰ä¸‹å…©ä¸‹å°±çˆ¬ä¸Šäº†æ¨¹å»ã€‚\n\n",me);
             me->receive_damage("qi",60);
                   me->move(__DIR__"tree");
        return 1;

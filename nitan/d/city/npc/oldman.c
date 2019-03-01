@@ -11,8 +11,8 @@ string *classes = ({
         "tortoise","crocodile","horse","donkey","cattle","rabbit"
 });
 string *title = ({
-        HIY"Áú",HIC"·ï»Ë",YEL"÷è÷ë","Ïó","Ê¨","»¢","±ª","ĞÜ","ºü","ÀÇ","¹·","Öí","Â¹","õõ","Ã¨",
-        "Êó","ºï","Ó¥","µñ","¼¦","Ñ¼","Éß","¹ê","öù","Âí","Â¿","Å£","ÍÃ"
+        HIY"é¾",HIC"é³³å‡°",YEL"éº’éºŸ","è±¡","ç…","è™","è±¹","ç†Š","ç‹","ç‹¼","ç‹—","è±¬","é¹¿","è²‚","è²“",
+        "é¼ ","çŒ´","é·¹","é›•","é›","é´¨","è›‡","é¾œ","é±·","é¦¬","é©¢","ç‰›","å…”"
 });
 int *petstr=({30,20,25,30,25,25,20,25,12,15,12,15,10, 5, 5, 5,12,10,18, 5, 5,15, 5,18,20,18,22,10});
 int *petdex=({30,30,25,10,20,20,25,12,20,20,20,10,22,20,20,18,30,25,25,20,20,15, 5,10,20,22,12,18});
@@ -31,50 +31,50 @@ void addaction(object pet)
 {
         switch(query("class", pet) )
         {
-                case "dragon"   :     //Áú
+                case "dragon"   :     //é¾
                         set("verbs", ({"angel","bite","claw","rope","tail"}), pet);break;
-                case "phenix"   :     //·ï»Ë
+                case "phenix"   :     //é³³å‡°
                         set("verbs", ({"claw","poke","wind"}), pet);break;
-                case "kylin"    :     //÷è÷ë
+                case "kylin"    :     //éº’éºŸ
                         set("verbs", ({"angel","bite","hoof","knock"}), pet);break;
-                case "elephant" :     //Ïó
+                case "elephant" :     //è±¡
                         set("verbs", ({"hoof","knock","snoot"}), pet);break;
-                case "lion"     :     //Ê¨
+                case "lion"     :     //ç…
                         set("verbs", ({"bite","claw","hoof","snap"}), pet);break;
-                case "tiger"    :     //»¢
+                case "tiger"    :     //è™
                         set("verbs", ({"bite","claw","hoof","snap","tail"}), pet);break;
-                case "panther"  :     //±ª
+                case "panther"  :     //è±¹
                         set("verbs", ({"bite","claw","hoof","snap"}), pet);break;
-                case "bear"     :     //ĞÜ
-                case "fox"      :     //ºü
+                case "bear"     :     //ç†Š
+                case "fox"      :     //ç‹
                         set("verbs", ({"bite","claw","hoof"}), pet);break;
-                case "wolf"     :     //ÀÇ
-                case "dog"      :     //¹·
+                case "wolf"     :     //ç‹¼
+                case "dog"      :     //ç‹—
                         set("verbs", ({"bite","claw","hoof","snap"}), pet);break;
-                case "pig"      :     //Öí
+                case "pig"      :     //è±¬
                         set("verbs", ({"bite","hoof","knock"}), pet);break;
-                case "deer"     :     //Â¹
-                case "cattle"   :     //Å£
+                case "deer"     :     //é¹¿
+                case "cattle"   :     //ç‰›
                         set("verbs", ({"angel","hoof","knock"}), pet);break;
-                case "marten"   :     //õõ
-                case "cat"      :     //Ã¨
-                case "monkey"   :     //ºï
-                case "rabbit"   :     //ÍÃ
-                case "mouse"    :     //Êó
+                case "marten"   :     //è²‚
+                case "cat"      :     //è²“
+                case "monkey"   :     //çŒ´
+                case "rabbit"   :     //å…”
+                case "mouse"    :     //é¼ 
                         set("verbs", ({"bite","claw","hoof"}), pet);break;
-                case "eagle"    :     //Ó¥
-                case "vulture"  :     //µñ
-                case "chicken"  :     //¼¦
-                case "duck"     :     //Ñ¼
+                case "eagle"    :     //é·¹
+                case "vulture"  :     //é›•
+                case "chicken"  :     //é›
+                case "duck"     :     //é´¨
                         set("verbs", ({"claw","poke","wind"}), pet);break;
-                case "snake"    :     //Éß
+                case "snake"    :     //è›‡
                         set("verbs", ({"bite","rope","tail"}), pet);break;
-                case "tortise"  :     //¹ê
+                case "tortise"  :     //é¾œ
                         set("verbs", ({"bite"}), pet);break;
-                case "crocodile":     //öù
+                case "crocodile":     //é±·
                         set("verbs", ({"bite","claw","tail"}), pet);break;
-                case "horse"    :     //Âí
-                case "donkey"   :     //Â¿
+                case "horse"    :     //é¦¬
+                case "donkey"   :     //é©¢
                         set("verbs", ({"bite","hoof","knock"}), pet);break;
                 default:
                         set("verbs", ({"bite","claw"}), pet);break;
@@ -82,10 +82,10 @@ void addaction(object pet)
 }
 void create()
 {
-        set_name("°×÷×ÀÏÍ·", ({ "lao tou", "laotou", "oldman"}) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("ç™½é«¯è€é ­", ({ "lao tou", "laotou", "oldman"}) );
+        set("gender", "ç”·æ€§" );
         set("age", 64);
-        set("long","Ò»¸öĞë·¢½Ô°×µÄÀÏÕß£¬¾«ÉñÛÇîå£¬ÂúÃæºì¹â¡£Èç¹ûÄãÓĞĞËÈ¤£¬¿ÉÒÔÏòËûÒªÖ»³èÎïÑøÀ´ÍæÍæ¡£\n");
+        set("long","ä¸€å€‹é ˆç™¼çš†ç™½çš„è€è€…ï¼Œç²¾ç¥çŸé‘ ï¼Œæ»¿é¢ç´…å…‰ã€‚å¦‚æœä½ æœ‰èˆˆè¶£ï¼Œå¯ä»¥å‘ä»–è¦åªå¯µç‰©é¤Šä¾†ç©ç©ã€‚\n");
         set("max_qi", 2000);
         set("max_jing", 2000);
         set("max_neili", 2000);
@@ -97,7 +97,7 @@ void create()
         set_skill("parry", 120);
         set_skill("force",120);
         set("inquiry", ([
-                "³èÎï"  : "ÄãÒª¹ºÂò(goumai)Ê²Ã´³èÎï£¿Çë¿´±¾µêÕĞÅÆ¡£\n",
+                "å¯µç‰©"  : "ä½ è¦è³¼è²·(goumai)ä»€éº¼å¯µç‰©ï¼Ÿè«‹çœ‹æœ¬åº—æ‹›ç‰Œã€‚\n",
         ]) );
         set("vendor_goods", ({
                 FODDER_DIR+"siliao",
@@ -133,11 +133,11 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
         if( query("Pet", ob) )
         {
-                say("°×÷×ÀÏÕßÏÆ÷×Ğ¦µÀ£º¡°ÕâÎ»"+RANK_D->query_respect(ob)+"£¬ÄãµÄ³èÎïÑøµÃÈçºÎÁË°¡£¿¡±\n");
+                say("ç™½é«¯è€è€…æ€é«¯ç¬‘é“ï¼šâ€œé€™ä½"+RANK_D->query_respect(ob)+"ï¼Œä½ çš„å¯µç‰©é¤Šå¾—å¦‚ä½•äº†å•Šï¼Ÿâ€\n");
         }
         else
         {
-                say("°×÷×ÀÏÕßÏÆ÷×Ğ¦µÀ£º¡°ÕâÎ»"+RANK_D->query_respect(ob)+"£¬À´Âò³èÎï°¡£¿¡±\n");
+                say("ç™½é«¯è€è€…æ€é«¯ç¬‘é“ï¼šâ€œé€™ä½"+RANK_D->query_respect(ob)+"ï¼Œä¾†è²·å¯µç‰©å•Šï¼Ÿâ€\n");
         }
 }
 int do_goumai(string arg)
@@ -146,37 +146,37 @@ int do_goumai(string arg)
         int num;
 
         if(!arg)
-                return notify_fail("ÀÏÍ·Ğ¦µÀ£º¡°±ğ¼±£¬ÄãÏë¹ºÂòÊ²Ã´³èÎï£¬ÇëÏÈ¿´Çå³şÕĞÅÆ¡£¡±\n");
+                return notify_fail("è€é ­ç¬‘é“ï¼šâ€œåˆ¥æ€¥ï¼Œä½ æƒ³è³¼è²·ä»€éº¼å¯µç‰©ï¼Œè«‹å…ˆçœ‹æ¸…æ¥šæ‹›ç‰Œã€‚â€\n");
         if( query("Pet", me) && !wizardp(me) )
         {
-                command("say ÕâÎ»"+RANK_D->query_respect(me)+"£¬³èÎïÖ»ÄÜ»¿ÑøÒ»Ö»£¬Èç¹ûÏëÂòĞÂµÄ£¬µÃ°Ñ¾ÉµÄÏÈ»¹(return)¸øÎÒ¡£¡±\n");
+                command("say é€™ä½"+RANK_D->query_respect(me)+"ï¼Œå¯µç‰©åªèƒ½è±¢é¤Šä¸€åªï¼Œå¦‚æœæƒ³è²·æ–°çš„ï¼Œå¾—æŠŠèˆŠçš„å…ˆé‚„(return)çµ¦æˆ‘ã€‚â€\n");
                 return 1;
         }
         if ( member_array(arg, classes) == -1)
-                return notify_fail("ÀÏÍ·Ç¸È»Ğ¦µÀ£º¡°ÔİÊ±Ã»ÓĞÕâÖÖ³èÎï¿ÉÂò£¬Çë¿´Çå³şÕĞÅÆ¡£¡±\n");
+                return notify_fail("è€é ­æ­‰ç„¶ç¬‘é“ï¼šâ€œæš«æ™‚æ²’æœ‰é€™ç¨®å¯µç‰©å¯è²·ï¼Œè«‹çœ‹æ¸…æ¥šæ‹›ç‰Œã€‚â€\n");
         if( !wizardp(me) && query("combat_exp", me)<2000000 && 
                 (arg == "dragon" || arg == "phenix" || arg == "kylin"))
-                return notify_fail("ÀÏÍ·ºÇºÇÒ»Í¨£¬Ğ¦µÀ£º¡°ÄãµÄ¾­Ñé»¹²»×ãÑøÕâĞ©³èÎï¡£¡±\n");
+                return notify_fail("è€é ­å‘µå‘µä¸€é€šï¼Œç¬‘é“ï¼šâ€œä½ çš„ç¶“é©—é‚„ä¸è¶³é¤Šé€™äº›å¯µç‰©ã€‚â€\n");
 
         num = member_array(arg, classes);
         gold = present("gold", me);
-        if(!gold) return notify_fail("ÀÏÍ·Ğ¦ÁËĞ¦£º¡°ÄãÃ»´ø½ğ×ÓÀ´£¿¡±\n");
+        if(!gold) return notify_fail("è€é ­ç¬‘äº†ç¬‘ï¼šâ€œä½ æ²’å¸¶é‡‘å­ä¾†ï¼Ÿâ€\n");
         if((int) gold->query_amount() < value[num])
-                return notify_fail("ÀÏÍ·¿´ÁËÄãÒ»ÑÛ£º¡°ÄãÉíÉÏ»Æ½ğÃ»´ø¹»¡£¡±\n");
+                return notify_fail("è€é ­çœ‹äº†ä½ ä¸€çœ¼ï¼šâ€œä½ èº«ä¸Šé»ƒé‡‘æ²’å¸¶å¤ ã€‚â€\n");
         pet = new("/clone/misc/pet");
         set("class", classes[num], pet);
         set("id", classes[num], pet);
         set("title", title[num]+NOR, pet);
-        set("name", "³èÎï", pet);
-        set("race", "Ò°ÊŞ", pet);
-        pet->set_name("³èÎï", ({classes[num], "pet"}));
-        set("long", "ÕâÊÇÒ»Ö»³èÎï"+title[num]+"¡£\n"NOR, pet);
+        set("name", "å¯µç‰©", pet);
+        set("race", "é‡ç¸", pet);
+        pet->set_name("å¯µç‰©", ({classes[num], "pet"}));
+        set("long", "é€™æ˜¯ä¸€åªå¯µç‰©"+title[num]+"ã€‚\n"NOR, pet);
         set("level", 1, pet);
         set("owner",query("id",  me), pet);
         set_temp("owner",query("id",  me), pet);
         set_temp("ownername",query("name",  me), pet);
         set("Pet/id", classes[num], me);
-        set("Pet/name", "³èÎï", me);
+        set("Pet/name", "å¯µç‰©", me);
 
         set("str", petstr[num]+random(10), pet);
         set("dex", petdex[num]+random(10), pet);
@@ -186,19 +186,19 @@ int do_goumai(string arg)
         set("kar", petkar[num]+random(10), pet);
         set("cor", petcor[num]+random(10), pet);
         set("cps", petcps[num]+random(10), pet);
-        set("obe", 1, pet);//³õÊ¼Ñ±·ş¶È
-        set("age", 1, pet);//ÄêÁä
-// ÖØÁ¿¾ö¶¨Ê³Á¿
+        set("obe", 1, pet);//åˆå§‹é¦´æœåº¦
+        set("age", 1, pet);//å¹´é½¡
+// é‡é‡æ±ºå®šé£Ÿé‡
         set("weight", weight[num]*1000, pet);
         pet->set_weight(weight[num]*1000);
-        if( random(10)>4)set("gender", "´ÆĞÔ", pet);
-        else set("gender", "ĞÛĞÔ", pet);
+        if( random(10)>4)set("gender", "é›Œæ€§", pet);
+        else set("gender", "é›„æ€§", pet);
         gold->add_amount(-value[num]);
 
         addaction(pet);
         pet->move(environment(me));
-        message_vision("$NÌÍ³ö"HIR+chinese_number(value[num])+NOR"Á½"HIY"»Æ½ğ"NOR"£¬Íù¹ñÃæÒ»ÔÒ£º¡°¸øÎÒÀ´Ò»Ö»"+title[num]+NOR"¡£¡±\n", me);
-        message_vision("$N¿´ÁËÒ»ÑÛ"HIY"»Æ½ğ"NOR"³ÉÉ«£¬ÉìÊÖÒ»ŞÛ£¬°ÑËüŞÛµ½³éÌëÀï¡£È»ºó´ÓÉíºóÁı×ÓÀïÈ¡³öÒ»Ö»"+title[num]+NOR"·ÅÔÚµØÉÏ¡£\n", ob);
+        message_vision("$Næå‡º"HIR+chinese_number(value[num])+NOR"å…©"HIY"é»ƒé‡‘"NOR"ï¼Œå¾€æ«ƒé¢ä¸€ç ¸ï¼šâ€œçµ¦æˆ‘ä¾†ä¸€åª"+title[num]+NOR"ã€‚â€\n", me);
+        message_vision("$Nçœ‹äº†ä¸€çœ¼"HIY"é»ƒé‡‘"NOR"æˆè‰²ï¼Œä¼¸æ‰‹ä¸€æ‹ï¼ŒæŠŠå®ƒæ‹åˆ°æŠ½å±œè£¡ã€‚ç„¶å¾Œå¾èº«å¾Œç± å­è£¡å–å‡ºä¸€åª"+title[num]+NOR"æ”¾åœ¨åœ°ä¸Šã€‚\n", ob);
         set("Pet/class",query("class",  pet), me);
         set("Pet/exp",query("combat_exp",  pet), me);
         set("Pet/id",query("id",  pet), me);
@@ -248,9 +248,9 @@ int do_return()
         int i;
 
         if( !query("Pet", me) )
-                return notify_fail("ÀÏÍ·ºÇºÇÀÖÁË£º¡°Äã¾ÍÃ»Ñø³èÎï£¬À´Õâ´ÕÉ¶ÈÈÄÖÀ´×Å£¿¡±\n");
+                return notify_fail("è€é ­å‘µå‘µæ¨‚äº†ï¼šâ€œä½ å°±æ²’é¤Šå¯µç‰©ï¼Œä¾†é€™æ¹Šå•¥ç†±é¬§ä¾†è‘—ï¼Ÿâ€\n");
         if(me->is_busy())
-                return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É¡£\n");
+                return notify_fail("ä½ ä¸Šä¸€å€‹å‹•ä½œé‚„æ²’æœ‰å®Œæˆã€‚\n");
         id=query("id", me);
         ob = all_inventory(environment(me));
         for (i = 0; i < sizeof(ob); i++)
@@ -261,8 +261,8 @@ int do_return()
                 }
         }
         if( i == sizeof(ob) )
-                return notify_fail("ÀÏÍ·Ææ¹ÖµØ¿´ÁËÄãÒ»ÑÛ£º¡°ÄãµÄ³èÎïÃ»´øÀ´£¬ÄÇÄãÔõÃ´»¹¸øÎÒ°¡£¿¡±\n");
-        message_vision("$NÒ»°Ñ±§ÆğµØÉÏµÄ$n£¬µİ¹ı¹ñÌ¨»¹¸øÀÏÍ·¡£\n", me, ob[i]);
+                return notify_fail("è€é ­å¥‡æ€ªåœ°çœ‹äº†ä½ ä¸€çœ¼ï¼šâ€œä½ çš„å¯µç‰©æ²’å¸¶ä¾†ï¼Œé‚£ä½ æ€éº¼é‚„çµ¦æˆ‘å•Šï¼Ÿâ€\n");
+        message_vision("$Nä¸€æŠŠæŠ±èµ·åœ°ä¸Šçš„$nï¼Œééæ«ƒå°é‚„çµ¦è€é ­ã€‚\n", me, ob[i]);
         delete("Pet", me);
         destruct(ob[i]);
         me->start_busy(1);
@@ -274,26 +274,26 @@ int do_lingqu()
         int i;
 
         if(me->is_busy())
-                return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É¡£\n");
+                return notify_fail("ä½ ä¸Šä¸€å€‹å‹•ä½œé‚„æ²’æœ‰å®Œæˆã€‚\n");
         if( !query("Pet", me) )
         {
-                command("say ÕâÎ»"+RANK_D->query_respect(me)+"£¬ÄãÃ»Ôİ´æ(zancun)¹ı³èÎï£¬ÕâÀïÄÄÓĞ¶«Î÷¿ÉÁìÈ¡£¿¡±\n");
+                command("say é€™ä½"+RANK_D->query_respect(me)+"ï¼Œä½ æ²’æš«å­˜(zancun)éå¯µç‰©ï¼Œé€™è£¡å“ªæœ‰æ±è¥¿å¯é ˜å–ï¼Ÿâ€\n");
                 return 1;
         }
 
         obj = objects();
         for (i=0; i<sizeof(obj); i++)
         {
-                if( query("owner", obj[i]) == query("id", me) && //¼éÏ¸Ò²ÓĞowner
+                if( query("owner", obj[i]) == query("id", me) && //å§¦ç´°ä¹Ÿæœ‰owner
                         query("curiousness", obj[i]) )
                 {
                         if(environment(obj[i]) == me )
-                                return notify_fail(ob->name()+ "ËµµÀ£ºÄã²»ÊÇÕıÆïÔÚÄãµÄ³èÎïÉíÉÏÃ´£¿\n");
+                                return notify_fail(ob->name()+ "èªªé“ï¼šä½ ä¸æ˜¯æ­£é¨åœ¨ä½ çš„å¯µç‰©èº«ä¸Šéº¼ï¼Ÿ\n");
                         else
                                 if(environment(obj[i]) != environment(me) )
-                                        return notify_fail(ob->name()+"ËµµÀ£ºÄãµÄ³èÎïÔÚ"+(query("outdoors",environment(obj[i])) ? to_chinese(query("outdoors",environment(obj[i]))) : "ÄÄÀï")+"µÄ"+query("short",environment(obj[i]))+"£¬¸Ï¿ìÈ¥ÕÒ°É¡£\n");
+                                        return notify_fail(ob->name()+"èªªé“ï¼šä½ çš„å¯µç‰©åœ¨"+(query("outdoors",environment(obj[i])) ? to_chinese(query("outdoors",environment(obj[i]))) : "å“ªè£¡")+"çš„"+query("short",environment(obj[i]))+"ï¼Œè¶•å¿«å»æ‰¾å§ã€‚\n");
                                 else
-                                        return notify_fail(ob->name()+ "ËµµÀ£ºÄãµÄ³èÎï²»ÊÇ¾ÍÔÚÄãÅÔ±ßÃ´£¿\n");
+                                        return notify_fail(ob->name()+ "èªªé“ï¼šä½ çš„å¯µç‰©ä¸æ˜¯å°±åœ¨ä½ æ—é‚Šéº¼ï¼Ÿ\n");
                         return 1;
                 }
         }
@@ -308,7 +308,7 @@ int do_lingqu()
         set("title",query("Pet/title",  me), pet);
         set("name",query("Pet/name",  me), pet);
         set("nickname",query("Pet/nickname",  me), pet);
-        set("race", "Ò°ÊŞ", pet);
+        set("race", "é‡ç¸", pet);
         pet->set_name(query("Pet/name", me),({query("Pet/id", me),"pet"}));
         set("long",query("Pet/long",  me), pet);
         set("level",query("Pet/level",  me), pet);
@@ -350,7 +350,7 @@ int do_lingqu()
         addaction(pet);
 
         pet->move(environment(me));
-        message_vision("$N´ÓÉíºóÁı×ÓÀïÈ¡³öÒ»Ö»"+pet->name()+"·ÅÔÚµØÉÏ¡£\n", ob);
+        message_vision("$Nå¾èº«å¾Œç± å­è£¡å–å‡ºä¸€åª"+pet->name()+"æ”¾åœ¨åœ°ä¸Šã€‚\n", ob);
         me->start_busy(1);
         return 1;
 }
@@ -362,9 +362,9 @@ int do_zancun()
         int i;
 
         if( !query("Pet", me) )
-                return notify_fail("ÀÏÍ·ºÇºÇÀÖÁË£º¡°Äã¾ÍÃ»Ñø³èÎï£¬À´Õâ´ÕÉ¶ÈÈÄÖÀ´×Å£¿¡±\n");
+                return notify_fail("è€é ­å‘µå‘µæ¨‚äº†ï¼šâ€œä½ å°±æ²’é¤Šå¯µç‰©ï¼Œä¾†é€™æ¹Šå•¥ç†±é¬§ä¾†è‘—ï¼Ÿâ€\n");
         if(me->is_busy())
-                return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É¡£\n");
+                return notify_fail("ä½ ä¸Šä¸€å€‹å‹•ä½œé‚„æ²’æœ‰å®Œæˆã€‚\n");
         id=query("id", me);
         ob = all_inventory(environment(me));
         for (i = 0; i < sizeof(ob); i++)
@@ -375,9 +375,9 @@ int do_zancun()
                 }
         }
         if( i == sizeof(ob) )
-                return notify_fail("ÀÏÍ·Ææ¹ÖµØ¿´ÁËÄãÒ»ÑÛ£º¡°ÄãµÄ³èÎïÃ»´øÀ´£¬Ôİ´æÉ¶°¡£¿¡±\n");
+                return notify_fail("è€é ­å¥‡æ€ªåœ°çœ‹äº†ä½ ä¸€çœ¼ï¼šâ€œä½ çš„å¯µç‰©æ²’å¸¶ä¾†ï¼Œæš«å­˜å•¥å•Šï¼Ÿâ€\n");
         if( query_temp("feeded", ob[i]) )
-                return notify_fail(ob[i]->name()+"¸Õ³ÔÁË¶«Î÷£¬ÀÁÑóÑóµÄ²»ÏëÀíÄã¡£\n");
+                return notify_fail(ob[i]->name()+"å‰›åƒäº†æ±è¥¿ï¼Œæ‡¶æ´‹æ´‹çš„ä¸æƒ³ç†ä½ ã€‚\n");
 
         set("Pet/class",query("class",  ob[i]), me);
         set("Pet/exp",query("combat_exp",  ob[i]), me);
@@ -418,10 +418,10 @@ int do_zancun()
         set("Pet/dodge", ob[i]->query_skill("dodge",1), me);
         set("Pet/parry", ob[i]->query_skill("parry",1), me);
 
-// È¡Ïû¸úËæ×´Ì¬
+// å–æ¶ˆè·Ÿéš¨ç‹€æ…‹
         delete_temp("comedby", me);
 
-        message_vision("$NÒ»°Ñ±§ÆğµØÉÏµÄ$n£¬µİ¹ı¹ñÌ¨¸øÀÏÍ·Ôİ´æ¡£\n", me, ob[i]);
+        message_vision("$Nä¸€æŠŠæŠ±èµ·åœ°ä¸Šçš„$nï¼Œééæ«ƒå°çµ¦è€é ­æš«å­˜ã€‚\n", me, ob[i]);
         destruct(ob[i]);
         me->start_busy(1);
         return 1;

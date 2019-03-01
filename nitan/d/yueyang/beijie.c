@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����");
+        set("short", "北街");
         set("long", @LONG
-����һ���ֳ��ֿ�����ʯ��������ڵش��Ǳ������Ҳ�Ե��徻һ
-Щ�������棬��һ��ҩ�̣�����һ����ҩ�죬���顰ͬ���á����֣���
-��ܲ����۵����ϡ��ֺš����֡������Ǹ�С�ӻ��̡�
+這是一條又長又寬的青石大道，由于地處城北，因此也顯得清凈一
+些。街西面，有一家藥舖，打著一個膏藥旗，大書“同仁堂”三字，下
+面很不起眼地添上“分號”二字。東邊是個小雜貨舖。
 LONG );
         set("outdoors", "yueyang");
         set("no_clean_up", 0);

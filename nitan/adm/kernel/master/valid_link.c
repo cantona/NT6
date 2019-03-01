@@ -1,23 +1,23 @@
 // This program is a part of NT MudLIB
 
 /*
-Ãû³Æ£º
-        valid_link - ¿ØÖÆ link Íâ²¿º¯Ê½µÄÓÃÍ¾¡£
-Óï·¨£º
+åç¨±ï¼š
+        valid_link - æ§åˆ¶ link å¤–éƒ¨å‡½å¼çš„ç”¨é€”ã€‚
+èªæ³•ï¼š
         int valid_link( string from, string to );
 
-        ÕûÊı valid_link( ×Ö´® from, ×Ö´® to );
-ÓÃ·¨£º
-        Çı¶¯³ÌÊ½»Ø´Ó link(from, to) Íâ²¿º¯Ê½ÀïÃæºô½ĞÖ÷Ô×Îï¼ş (master
-        object) ÀïÃæµÄ valid_link(from, to) º¯Ê½¡£Èç¹û valid_link() ´«»Ø 0
-        £¬Ôò link() µÄ¶¯×÷Ê§°Ü¡£Èç¹û´«»Ø 1£¬»¹ĞèÒªÒÔÍ¬ÑùµÄ²ÎÊıºô½Ğ
-        rename() ³É¹¦¡£
-²Î¿¼£º
+        æ•´æ•¸ valid_link( å­—ä¸² from, å­—ä¸² to );
+ç”¨æ³•ï¼š
+        é©…å‹•ç¨‹å¼å›å¾ link(from, to) å¤–éƒ¨å‡½å¼è£¡é¢å‘¼å«ä¸»å®°ç‰©ä»¶ (master
+        object) è£¡é¢çš„ valid_link(from, to) å‡½å¼ã€‚å¦‚æœ valid_link() å‚³å› 0
+        ï¼Œå‰‡ link() çš„å‹•ä½œå¤±æ•—ã€‚å¦‚æœå‚³å› 1ï¼Œé‚„éœ€è¦ä»¥åŒæ¨£çš„åƒæ•¸å‘¼å«
+        rename() æˆåŠŸã€‚
+åƒè€ƒï¼š
         link
-×÷Õß£º
+ä½œè€…ï¼š
         Tim Hollebeek  Beek@ZorkMUD, Lima Bean, IdeaExchange, and elsewhere
-·­Òë£º
-        spock@muds.net          2000.May.21.    v22 °æ
+ç¿»è­¯ï¼š
+        spock@muds.net          2000.May.21.    v22 ç‰ˆ
 
 */
 

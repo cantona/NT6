@@ -1,4 +1,4 @@
-//                ±ê×¼ÃèÊö³¤¶ÈÊ¾Àı                                   |
+//                æ¨™æº–æè¿°é•·åº¦ç¤ºä¾‹                                   |
 
 void delete_exit();
 void back_exit();
@@ -15,11 +15,11 @@ string the_exit2;
 void create()
 {
     set("room_mark",mark);
-    set("short",MAG"»Ã¾³"NOR+GRN"¡¤ÃÔÊ§Ö®±¦ÎïÒşÄäÖ®ÁÖ"NOR);
+    set("short",MAG"å¹»å¢ƒ"NOR+GRN"ï¹’è¿·å¤±ä¹‹å¯¶ç‰©éš±åŒ¿ä¹‹æ—"NOR);
 
-    set("long","ÕâÀïÊÇÒ»Æ¬Íû²»µ½±ßµÄÃÜÁÖ£¬ÆøÏ¢È´ºÜÊÇ¹Å¹Ö¡£ÖÜÎ§µÄÊ÷Ä¾¶¼¸ß´ó´Ö×³¡¢Ö¦
-ÌÙ¾À½á£¬Äã¼û²»µ½ÈÕÔÂ¹âÁÁ£¬ÖÜÎ§Ò²ÇÄÎŞÉùÏ¢¡£½ÅÏÂµÄÍÁµØÉÏÊ÷Ä¾µÄ¸ùĞëÂûÑÓ¾À
-²ø£¬ÄãºÃ²»ÈİÒ×²ÅÃãÇ¿Ì¤µÃ¼¸ÌõĞ¡¾¶ÍùËÄ´¦Í¨È¥¡£\n");
+    set("long","é€™è£¡æ˜¯ä¸€ç‰‡æœ›ä¸åˆ°é‚Šçš„å¯†æ—ï¼Œæ°£æ¯å»å¾ˆæ˜¯å¤æ€ªã€‚å‘¨åœçš„æ¨¹æœ¨éƒ½é«˜å¤§ç²—å£¯ã€æ
+ç±ç³¾çµï¼Œä½ è¦‹ä¸åˆ°æ—¥æœˆå…‰äº®ï¼Œå‘¨åœä¹Ÿæ‚„ç„¡è²æ¯ã€‚è…³ä¸‹çš„åœŸåœ°ä¸Šæ¨¹æœ¨çš„æ ¹é ˆè”“å»¶ç³¾
+çºï¼Œä½ å¥½ä¸å®¹æ˜“æ‰å‹‰å¼·è¸å¾—å¹¾æ¢å°å¾‘å¾€å››è™•é€šå»ã€‚\n");
 
     set("no_fight", "1");
     set("no_magic", "1");
@@ -27,7 +27,7 @@ void create()
     set("no_sleep_room", "1");
     set("invalid_startroom",1);
 
-// ÏÂÃæÊÇ¶ÔÓ¦µÄ³ö¿Ú¡£
+// ä¸‹é¢æ˜¯å°æ‡‰çš„å‡ºå£ã€‚
 
     set("exits",([
         "east":__DIR__"hj_room"+( mark +1),
@@ -40,51 +40,51 @@ void create()
         "southwest":__DIR__"hj_room"+( mark +9),
     ]));
 
-    if( mark <= 10 ) // ·½ÕóĞÍ·¿¼ä£¬×îÉÏÃæÒ»ºáÎŞ ±±Ïò ·½Ïò
+    if( mark <= 10 ) // æ–¹é™£å‹æˆ¿é–“ï¼Œæœ€ä¸Šé¢ä¸€æ©«ç„¡ åŒ—å‘ æ–¹å‘
     {
         if(query("exits/north")) delete("exits/north");
         if(query("exits/northeast")) delete("exits/northeast");
         if(query("exits/northwest")) delete("exits/northwest");
     }
 
-    if( (mark % 10) == 1 ) // ·½ÕóĞÍ·¿¼ä£¬×î×ó±ßÒ»ÊúÎŞ Î÷Ïò ·½Ïò
+    if( (mark % 10) == 1 ) // æ–¹é™£å‹æˆ¿é–“ï¼Œæœ€å·¦é‚Šä¸€è±ç„¡ è¥¿å‘ æ–¹å‘
     {
         if(query("exits/west")) delete("exits/west");
         if(query("exits/southwest")) delete("exits/southwest");
         if(query("exits/northwest")) delete("exits/northwest");
     }
 
-    if( (mark % 10) == 0 ) // ·½ÕóĞÍ·¿¼ä£¬×îÓÒ±ßÒ»ÊúÎŞ ¶«Ïò ·½Ïò
+    if( (mark % 10) == 0 ) // æ–¹é™£å‹æˆ¿é–“ï¼Œæœ€å³é‚Šä¸€è±ç„¡ æ±å‘ æ–¹å‘
     {
         if(query("exits/east")) delete("exits/east");
         if(query("exits/southeast")) delete("exits/southeast");
         if(query("exits/northeast")) delete("exits/northeast");
     }
 
-    if( mark >= (HJ_ROOM_AMOUNT - 9) ) // ·½ÕóĞÍ·¿¼ä£¬×îÏÂÃæÒ»ºáÎŞ ÄÏÏò ·½Ïò
+    if( mark >= (HJ_ROOM_AMOUNT - 9) ) // æ–¹é™£å‹æˆ¿é–“ï¼Œæœ€ä¸‹é¢ä¸€æ©«ç„¡ å—å‘ æ–¹å‘
     {
         if(query("exits/south")) delete("exits/south");
         if(query("exits/southeast")) delete("exits/southeast");
         if(query("exits/southwest")) delete("exits/southwest");
     }
 
-// ×Ü¹²µÄ·¿¼äÊı±ØĞëÊÇÕûÊ®Êı¡£
+// ç¸½å…±çš„æˆ¿é–“æ•¸å¿…é ˆæ˜¯æ•´åæ•¸ã€‚
 
     set("all_exit","ok");
 
 
-// Î÷±±·½¼´ 1 ºÅ·¿¼ä£¬ÓĞÌØÊâÎÄ¼şÖ§³Ö
-// ÆäÓà¸÷µãÈçÏÂ£º
+// è¥¿åŒ—æ–¹å³ 1 è™Ÿæˆ¿é–“ï¼Œæœ‰ç‰¹æ®Šæ–‡ä»¶æ”¯æŒ
+// å…¶ä½™å„é»å¦‚ä¸‹ï¼š
 
-// µÚÒ»ºá×îºóÒ»¸ö·¿¼ä¼ÓÈëÖ§³ÖÖı½£Ö¸ÁîµÄNPC£¬¼´ÓÒÉÏ½Ç£¨¶«±±·½£©
+// ç¬¬ä¸€æ©«æœ€å¾Œä¸€å€‹æˆ¿é–“åŠ å…¥æ”¯æŒé‘„åŠæŒ‡ä»¤çš„NPCï¼Œå³å³ä¸Šè§’ï¼ˆæ±åŒ—æ–¹ï¼‰
     if( mark == 10 )
         set("objects", ([ __DIR__"npc_obj/hj_npc_zhujian" : 1 ]));
 
-// ×îºóÒ»ºáµÚÒ»¸ö·¿¼ä¼ÓÈëÖ§³ÖÁ¶Ä§Ö¸ÁîµÄNPC£¬¼´×óÏÂ½Ç£¨Î÷ÄÏ·½£©
+// æœ€å¾Œä¸€æ©«ç¬¬ä¸€å€‹æˆ¿é–“åŠ å…¥æ”¯æŒç…‰é­”æŒ‡ä»¤çš„NPCï¼Œå³å·¦ä¸‹è§’ï¼ˆè¥¿å—æ–¹ï¼‰
     if( mark == HJ_ROOM_AMOUNT - 9 )
         set("objects", ([ __DIR__"npc_obj/hj_npc_lianmo" : 1 ]));
 
-// ×îºóÒ»¸öºÅÂëµÄ·¿¼ä¼ÓÈëÖ§³Ö½»Ò×Ö¸ÁîµÄ NPC£¬¼´ÓÒÏÂ½Ç£¨¶«ÄÏ·½£©
+// æœ€å¾Œä¸€å€‹è™Ÿç¢¼çš„æˆ¿é–“åŠ å…¥æ”¯æŒäº¤æ˜“æŒ‡ä»¤çš„ NPCï¼Œå³å³ä¸‹è§’ï¼ˆæ±å—æ–¹ï¼‰
     if( mark == HJ_ROOM_AMOUNT )
         set("objects", ([ __DIR__"npc_obj/hj_npc_trader" : 1 ]));
 
@@ -94,7 +94,7 @@ void create()
 
 void init()
 {
-// ËùÓĞµÄ¹²ÓĞ¶¯×÷(¼´ all_room_info_hj.h ¼° 1_room_info_special.h ¹²ÓĞ)
+// æ‰€æœ‰çš„å…±æœ‰å‹•ä½œ(å³ all_room_info_hj.h åŠ 1_room_info_special.h å…±æœ‰)
 #include "all_common_init.h"
 
     if( query("all_exit", this_object()) == "ok" )
@@ -104,7 +104,7 @@ void init()
     }
 }
 
-// ËùÓĞµÄ¹²ÓĞº¯Êı(¼´ all_room_info_hj.h ¼° 1_room_info_special.h ¹²ÓĞ)
+// æ‰€æœ‰çš„å…±æœ‰å‡½æ•¸(å³ all_room_info_hj.h åŠ 1_room_info_special.h å…±æœ‰)
 #include "all_common_func.h"
 
 
@@ -127,7 +127,7 @@ void delete_exit()
     if(the_exit != "none")
     {
         set("all_exit","be_delete");
-        if(random(3) == 1) message("vision",HIB"ÄãËÆºõ¿´µ½¼¸¿ÃÊ÷Ä¾µÄÎ»ÖÃÒÆ¶¯ÁËÒ»ÏÂ£¡¡­¡­\n"NOR,this_object());
+        if(random(3) == 1) message("vision",HIB"ä½ ä¼¼ä¹çœ‹åˆ°å¹¾æ£µæ¨¹æœ¨çš„ä½ç½®ç§»å‹•äº†ä¸€ä¸‹ï¼â€¦â€¦\n"NOR,this_object());
         remove_call_out("back_exit");
         call_out("back_exit",30+random(90));
     }
@@ -157,7 +157,7 @@ void back_exit()
     if( !undefinedp( the_marks[ the_exit ] ) )
         set( "exits/" + the_exit , __DIR__"hj_room" + the_marks[ the_exit ] );
 
-    if(random(3) == 1) message("vision",HIB"ÄãËÆºõ¿´µ½¼¸¿ÃÊ÷Ä¾µÄÎ»ÖÃÒÆ¶¯ÁËÒ»ÏÂ£¡¡­¡­\n"NOR,this_object());
+    if(random(3) == 1) message("vision",HIB"ä½ ä¼¼ä¹çœ‹åˆ°å¹¾æ£µæ¨¹æœ¨çš„ä½ç½®ç§»å‹•äº†ä¸€ä¸‹ï¼â€¦â€¦\n"NOR,this_object());
     set("all_exit","ok");
 }
 
@@ -181,7 +181,7 @@ void add_exit()
     if( the_exit2 != "none" )
     {
         set("all_exit","be_add");
-        if(random(3) == 1) message("vision",HIB"ÄãËÆºõ¿´µ½¼¸¿ÃÊ÷Ä¾µÄÎ»ÖÃÒÆ¶¯ÁËÒ»ÏÂ£¡¡­¡­\n"NOR,this_object());
+        if(random(3) == 1) message("vision",HIB"ä½ ä¼¼ä¹çœ‹åˆ°å¹¾æ£µæ¨¹æœ¨çš„ä½ç½®ç§»å‹•äº†ä¸€ä¸‹ï¼â€¦â€¦\n"NOR,this_object());
         remove_call_out("back_exit2");
         call_out("back_exit2",30+random(90));
     }
@@ -194,6 +194,6 @@ void back_exit2()
 
     delete( "exits/" + the_exit2 );
 
-    if(random(3) == 1) message("vision",HIB"ÄãËÆºõ¿´µ½¼¸¿ÃÊ÷Ä¾µÄÎ»ÖÃÒÆ¶¯ÁËÒ»ÏÂ£¡¡­¡­\n"NOR,this_object());
+    if(random(3) == 1) message("vision",HIB"ä½ ä¼¼ä¹çœ‹åˆ°å¹¾æ£µæ¨¹æœ¨çš„ä½ç½®ç§»å‹•äº†ä¸€ä¸‹ï¼â€¦â€¦\n"NOR,this_object());
     set("all_exit","ok");
 }

@@ -4,12 +4,12 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "´äÖñÔ°"); 
+        set("short", "ç¿ ç«¹åœ’"); 
         set("long", @LONG
-¡ºÓÐÖñÎÞÈâÐù¡»ËÄÖÜ¾ÍÊÇ´äÖñÔ°£¬ÕâÀïÖÖÂúÁËÖñ£¬Ã¿µ½·çÇåÔÂ°×
-µÄÏÄÒ¹£¬Ô²ÔÂÉ½×¯µÄÀú´úÖ÷ÈËÃÇ±ã»áÀ´´Ë£¬Ò»°ÑÖñÒÎ£¬Ò»ºøÇå²è£¬Ìý
-ÄÇº£ÀË°ãµÄÖñÌÎÉù£¬¿ÉÏ§ÁøÈôËÉºÜ¾ÃÒÑ¾­Ã»Õâ¸öÐËÖÂÁË£¬µ¹ÊÇ»áÊ±³£
-ºÍËûµÄÐÖµÜÃÇ¿³ÖñÂôÇ®»»¾Æ£¬Äê¸´Ò»Äê£¬´äÖñÔ°ÖÐµÄÖñ×ÓÒ²Ô½À´Ô½ÉÙ¡£
+ã€Žæœ‰ç«¹ç„¡è‚‰è»’ã€å››å‘¨å°±æ˜¯ç¿ ç«¹åœ’ï¼Œé€™è£¡ç¨®æ»¿äº†ç«¹ï¼Œæ¯åˆ°é¢¨æ¸…æœˆç™½
+çš„å¤å¤œï¼Œåœ“æœˆå±±èŽŠçš„æ­·ä»£ä¸»äººå€‘ä¾¿æœƒä¾†æ­¤ï¼Œä¸€æŠŠç«¹æ¤…ï¼Œä¸€å£ºæ¸…èŒ¶ï¼Œè½
+é‚£æµ·æµªèˆ¬çš„ç«¹æ¿¤è²ï¼Œå¯æƒœæŸ³è‹¥é¬†å¾ˆä¹…å·²ç¶“æ²’é€™å€‹èˆˆè‡´äº†ï¼Œå€’æ˜¯æœƒæ™‚å¸¸
+å’Œä»–çš„å…„å¼Ÿå€‘ç ç«¹è³£éŒ¢æ›é…’ï¼Œå¹´å¾©ä¸€å¹´ï¼Œç¿ ç«¹åœ’ä¸­çš„ç«¹å­ä¹Ÿè¶Šä¾†è¶Šå°‘ã€‚
 LONG );
         set("outdoors", "wansong");
         set("type","forest");
@@ -18,8 +18,8 @@ LONG );
         ]) );
         
         set("item_desc", ([
-                "bamboo": "ÇàÇàµÄÖñ×ÓËæ·çÒ¡°Ú£¬ÄãËÆºõ¿ÉÒÔÕÛ£¨pick£©¼¸¸ùÏÂÀ´¡£\n",
-                "Öñ×Ó": "ÇàÇàµÄÖñ×ÓËæ·çÒ¡°Ú£¬ÄãËÆºõ¿ÉÒÔÕÛ£¨pick£©¼¸¸ùÏÂÀ´¡£\n",
+                "bamboo": "é’é’çš„ç«¹å­éš¨é¢¨æ–æ“ºï¼Œä½ ä¼¼ä¹Žå¯ä»¥æŠ˜ï¼ˆpickï¼‰å¹¾æ ¹ä¸‹ä¾†ã€‚\n",
+                "ç«¹å­": "é’é’çš„ç«¹å­éš¨é¢¨æ–æ“ºï¼Œä½ ä¼¼ä¹Žå¯ä»¥æŠ˜ï¼ˆpickï¼‰å¹¾æ ¹ä¸‹ä¾†ã€‚\n",
         ]) );
         set("coor/x",-610);
         set("coor/y",210);
@@ -33,18 +33,18 @@ void init()
 int do_pick(string arg)
 {
         object bamboo;
-        if ( !arg && arg != "bamboo" && arg != "Öñ×Ó" )
-                return notify_fail("ÄãÒªÕÛÊ²Ã´£¿\n");
+        if ( !arg && arg != "bamboo" && arg != "ç«¹å­" )
+                return notify_fail("ä½ è¦æŠ˜ä»€éº¼ï¼Ÿ\n");
         if((int) query("picked") <= 3)
         {
-                write("ÄãÕÛÁËÒ»¸ùÇàÇàµÄÖñ×Ó£¬Ð¡ÐÄµÄ·ÅÔÚ»³Àï¡£\n");
+                write("ä½ æŠ˜äº†ä¸€æ ¹é’é’çš„ç«¹å­ï¼Œå°å¿ƒçš„æ”¾åœ¨æ‡·è£¡ã€‚\n");
                 bamboo = new("/clone/weapon/bamboo");
                 bamboo->move(this_player());
                 addn("picked",1);
            return 1;
         }
         else
-        write("Öñ×ÓÒÑ¾­±»ÈËÕÛ¹âÁË£¡£¡\n");
+        write("ç«¹å­å·²ç¶“è¢«äººæŠ˜å…‰äº†ï¼ï¼\n");
         return 1;
 } 
 void reset()

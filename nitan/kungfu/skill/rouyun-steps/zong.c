@@ -1,4 +1,4 @@
-// zong.c¡¸ÈáÔÆ×İ¡¹
+// zong.cã€ŒæŸ”é›²ç¸±ã€
 
 #include <ansi.h>
 
@@ -9,20 +9,20 @@ int perform(object me, object target)
         string msg;
 
         if (! me->is_fighting())
-                return notify_fail("¡¸ÈáÔÆ×İ¡¹Ö»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€ŒæŸ”é›²ç¸±ã€åªèƒ½åœ¨æˆ°é¬¥ä¸­ä½¿ç”¨ã€‚\n");
 
         if ((int)me->query_skill("rouyun-steps",1) < 50)
-                return notify_fail("ÄãµÄÈáÔÆ²½·¨²»¹»ÊìÁ·£¡\n");
+                return notify_fail("ä½ çš„æŸ”é›²æ­¥æ³•ä¸å¤ ç†Ÿç·´ï¼\n");
 
         if( query("jingli", me)<50 )
-                return notify_fail("ÄãµÄ¾«Á¦²»¹»£¡\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤ ï¼\n");
 
-        msg = HIC "$N" HIC "ÉíĞÎ¶¸È»×İÆğ£¬Ê®·ÖÓÅÑÅ£¬Ìì¿ÕÖĞÈ´"
-              "Æ®ÏÂÒ»¶äÔÆ£¬·Ç³£Ææ¹Ö£¡\n" NOR;
+        msg = HIC "$N" HIC "èº«å½¢é™¡ç„¶ç¸±èµ·ï¼Œååˆ†å„ªé›…ï¼Œå¤©ç©ºä¸­å»"
+              "é£„ä¸‹ä¸€æœµé›²ï¼Œéå¸¸å¥‡æ€ªï¼\n" NOR;
         me->receive_damage("jing", 10);
         addn("jingli", -20, me);
         set_temp("no_follow", 1, me);
-        msg += HIC "Ô­À´$N" HIC "ÒÑÊ¹³ö¡¸ÈáÔÆ×İ¡¹£¬³ËÔÆ¶øÈ¥ÁË£¡\n" NOR;
+        msg += HIC "åŸä¾†$N" HIC "å·²ä½¿å‡ºã€ŒæŸ”é›²ç¸±ã€ï¼Œä¹˜é›²è€Œå»äº†ï¼\n" NOR;
         message_combatd(msg, me, target);
         switch (random(3))
         {

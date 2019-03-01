@@ -5,22 +5,22 @@ inherit F_DEALER;
 
 void create()
 {
-        set_name("°¢ÇìÉ©", ({ "aqing sao", "sao" }));
-        set("title", "²è¹ÝÀÏ°åÄï");
-        set("nickname", "ÑïÖÝÒ»Ö§»¨");
+        set_name("é˜¿æ…¶å«‚", ({ "aqing sao", "sao" }));
+        set("title", "èŒ¶é¤¨è€æ¿å¨˜");
+        set("nickname", "æšå·žä¸€æ”¯èŠ±");
         set("shen_type", 1);
 
         set("str", 30);
-        set("gender", "Å®ÐÔ");
+        set("gender", "å¥³æ€§");
         set("age", 25);
         set("long",
-                "°¢ÇìÉ©ÊÇÑïÖÝ³ÇÀïÓÐÃûµÄ´óÃÀÈË£¬ÒòÎªÒ¯¶ùÃÇ×ÜÏ²»¶ÍùËýÕâ¶ù¹ä£¬\n"
-                "ËùÒÔËý¶Ô³ÇÀïµÄÒ»¾ÙÒ»¶¯¶¼ÁËÈçÖ¸ÕÆ¡£\n");
+                "é˜¿æ…¶å«‚æ˜¯æšå·žåŸŽè£¡æœ‰åçš„å¤§ç¾Žäººï¼Œå› ç‚ºçˆºå…’å€‘ç¸½å–œæ­¡å¾€å¥¹é€™å…’é€›ï¼Œ\n"
+                "æ‰€ä»¥å¥¹å°åŸŽè£¡çš„ä¸€èˆ‰ä¸€å‹•éƒ½äº†å¦‚æŒ‡æŽŒã€‚\n");
         set("combat_exp", 500);
         set("attitude", "friendly");
         set("inquiry", ([
-                "°¢Çì" : "ÎÒÃÇ¼Ò°¢ÇìÈ¥±±±ß×öÉúÒâÈ¥ÁËÒ®¡£\n",
-                "ÉúÒâ" : "Õâ¸öÃ´¡­¡­¡£\n",
+                "é˜¿æ…¶" : "æˆ‘å€‘å®¶é˜¿æ…¶åŽ»åŒ—é‚Šåšç”Ÿæ„åŽ»äº†è€¶ã€‚\n",
+                "ç”Ÿæ„" : "é€™å€‹éº¼â€¦â€¦ã€‚\n",
         ]));
 
         set("vendor_goods", ({
@@ -52,12 +52,12 @@ void greeting(object ob)
 
         switch(random(2)) {
         case 0 :
-                say("°¢ÇìÉ©Ð¦ÃÐÃÐµØËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob) +
-                        "£¬¿ìÇë½øÀ´ºÈ±­ÈÈ²è¡£\n");
+                say("é˜¿æ…¶å«‚ç¬‘çœ¯çœ¯åœ°èªªé“ï¼šé€™ä½" + RANK_D->query_respect(ob) +
+                        "ï¼Œå¿«è«‹é€²ä¾†å–æ¯ç†±èŒ¶ã€‚\n");
                 break;
         case 1 :
-                say("°¢ÇìÉ©ËµµÀ£ºÓ´£¡ÕâÎ»" + RANK_D->query_respect(ob) +
-                        "ÄúÀ´ÁË°¡£¡±¾µêÓÐ¸ÕÕ¨ºÃµÄÎåÏã»¨Éú³öÊÛ¡£\n");
+                say("é˜¿æ…¶å«‚èªªé“ï¼šå–²ï¼é€™ä½" + RANK_D->query_respect(ob) +
+                        "æ‚¨ä¾†äº†å•Šï¼æœ¬åº—æœ‰å‰›ç‚¸å¥½çš„äº”é¦™èŠ±ç”Ÿå‡ºå”®ã€‚\n");
                 break;
         }
 }

@@ -2,23 +2,23 @@
 #include <ansi.h>
 int permit_recruit(object ob)
 {
-        if( query("detach/Ò©Íõ¹È", ob) || 
-            query("betrayer/Ò©Íõ¹È", ob) )
+        if( query("detach/è—¥ç‹è°·", ob) || 
+            query("betrayer/è—¥ç‹è°·", ob) )
         {
-                command("say Äã¼ÈÈ»ÒÑ¾­Àë¿ªÁËÒ©Íõ¹È£¬¸ÉÂïÓÖÒª»ØÀ´£¿");
+                command("say ä½ æ—¢ç„¶å·²ç¶“é›¢é–‹äº†è—¥ç‹è°·ï¼Œå¹¹å˜›åˆè¦å›ä¾†ï¼Ÿ");
                 return 0;
         }
 
         if( query("betrayer/times", ob) )
         {
-                command("say ¸óÏÂ²»ÖÒ²»ĞÅ£¬ÎÒÃÇÒ©Íõ¹ÈËäĞ¡£¬µ«È´²»ÊÕÆúÊ¦Ö®Í½¡£");
+                command("say é–£ä¸‹ä¸å¿ ä¸ä¿¡ï¼Œæˆ‘å€‘è—¥ç‹è°·é›–å°ï¼Œä½†å»ä¸æ”¶æ£„å¸«ä¹‹å¾’ã€‚");
                 return 0;
         }
 
         if( query("family/family_name", ob) && 
-            query("family/family_name", ob) != "Ò©Íõ¹È" )
+            query("family/family_name", ob) != "è—¥ç‹è°·" )
         {
-                command("say Äã¼ÈÓĞÁËÃûÊ¦Ö¸µã£¬¾ÍÒªÇÚÏÂ¿à¹¦£¬ÎğÒªÈıĞÄ¶şÒâ£¡");
+                command("say ä½ æ—¢æœ‰äº†åå¸«æŒ‡é»ï¼Œå°±è¦å‹¤ä¸‹è‹¦åŠŸï¼Œå‹¿è¦ä¸‰å¿ƒäºŒæ„ï¼");
                 return 0;
         }
 
@@ -39,14 +39,14 @@ void kill_ob(object ob)
 
 int accept_fight(object ob)
 {
-        command("say ÎÒÃ»ÓĞĞËÈ¤ÅãÄã´ò¼Ü¡£");
+        command("say æˆ‘æ²’æœ‰èˆˆè¶£é™ªä½ æ‰“æ¶ã€‚");
         return 0;
 }
 
 int accept_hit(object ob)
 {
         command("heng");
-        command("command ÄãÒªÕÒËÀÃ´£¿");
+        command("command ä½ è¦æ‰¾æ­»éº¼ï¼Ÿ");
         remove_call_out("check");
         call_out("check",1);
         return 1;
@@ -55,7 +55,7 @@ int accept_hit(object ob)
 int accept_kill(object ob)
 {
         command("haha");
-        command("say À´µÄºÃ£¡ÎÒ¾ÍÒªÄãËÀ¸öÍ´¿ì£¡");
+        command("say ä¾†çš„å¥½ï¼æˆ‘å°±è¦ä½ æ­»å€‹ç—›å¿«ï¼");
         remove_call_out("check");
         call_out("check",1);
         return 1;
@@ -81,12 +81,12 @@ void check()
         {        
         case 0:
         {
-        message_vision(HIR"$NË«ÊÖÒ»»Ó£¬Ò»Ö§¶Ï³¦»¨Ö±³å$n¶øÈ¥£¡\n",ob,me);
+        message_vision(HIR"$Né›™æ‰‹ä¸€æ®ï¼Œä¸€æ”¯æ–·è…¸èŠ±ç›´æ²–$nè€Œå»ï¼\n",ob,me);
 
         if(random(2))
         
                 {
-                message_vision(HIR"$NÖ»¾õÒ»¹Éµ­ÏãÏ®À´,¶ÙÊ±ÄÔÖĞÒ»ÕóÂéÄ¾£¡\n"NOR,me,ob);
+                message_vision(HIR"$Nåªè¦ºä¸€è‚¡æ·¡é¦™è¥²ä¾†,é “æ™‚è…¦ä¸­ä¸€é™£éº»æœ¨ï¼\n"NOR,me,ob);
                 me->receive_damage("jing",query("jing", me)/15);
                 me->receive_wound("jing",query("jing", me)/20);
                 me->receive_damage("qi",query("qi", me)/15);
@@ -97,7 +97,7 @@ void check()
                 }
         else
                 {
-                message_vision(HIR"$NÇá¶øÒ×¾ÙµÄ¶ã¹ıÁË$nµÄ¶Ï³¦»¨£¡\n"NOR,me,ob);
+                message_vision(HIR"$Nè¼•è€Œæ˜“èˆ‰çš„èº²éäº†$nçš„æ–·è…¸èŠ±ï¼\n"NOR,me,ob);
                 call_out("check",2+random(3));
                 }
         }
@@ -106,12 +106,12 @@ void check()
         case 1:
         {
 
-        message_vision(HIR"$NË«ÊÖÒ»´ê£¬¿ÕÆøÖĞË®Öé»¯×÷±ù¿éÏò$nÈ¥£¡\n",ob,me);
+        message_vision(HIR"$Né›™æ‰‹ä¸€æ“ï¼Œç©ºæ°£ä¸­æ°´ç åŒ–ä½œå†°å¡Šå‘$nå»ï¼\n",ob,me);
 
         if(random(2))
 
                 {
-                message_vision(HIR"Ö»¼û±ù¿é×Ô¿ÕÖĞÖ±³å¶øÏÂ£¬×êÈë$NÌåÖĞ²»¼ûÁË£¡\n"NOR,me);
+                message_vision(HIR"åªè¦‹å†°å¡Šè‡ªç©ºä¸­ç›´æ²–è€Œä¸‹ï¼Œé‘½å…¥$Né«”ä¸­ä¸è¦‹äº†ï¼\n"NOR,me);
                 me->receive_damage("jing",query("jing", me)/15);
                 me->receive_wound("jing",query("jing", me)/20);
                 me->receive_damage("qi",query("qi", me)/15);
@@ -122,7 +122,7 @@ void check()
                 }
         else
                 {
-                message_vision(HIR"$NÓ­×Å±ù¿é¶øÈ¥£¬ÓÃÄÚÁ¦½«±ù¿é»÷µÃ·ÛËé!\n"NOR,me);
+                message_vision(HIR"$Nè¿è‘—å†°å¡Šè€Œå»ï¼Œç”¨å…§åŠ›å°‡å†°å¡Šæ“Šå¾—ç²‰ç¢!\n"NOR,me);
                 call_out("check",2+random(3));
                 
                 }
@@ -132,14 +132,14 @@ void check()
         case 2:
         {
 
-        message_vision(HIR"$N°ÑÊÖÖĞÑøÉúµ¤Ïò$nµİÈ¥\n",ob,me);
+        message_vision(HIR"$NæŠŠæ‰‹ä¸­é¤Šç”Ÿä¸¹å‘$néå»\n",ob,me);
 
         if(random(2))
 
                 {
-                message_vision(HIR"$N½Ó¹ıÑøÉúµ¤£¬³ÔÁËÏÂÈ¥£¡\n"NOR,me);
-                message_vision(HIR"$NÖ»¾õ¶Ç×Ó¡¸¹¾¹¾¹¾¡¹½Ğ¸ö²»Í££¬Ëæºó·ÅÁË¸öÆæ³ô"
-                                "ÎŞ±ÈµÄÆ¨£¡\n"NOR,me);
+                message_vision(HIR"$Næ¥éé¤Šç”Ÿä¸¹ï¼Œåƒäº†ä¸‹å»ï¼\n"NOR,me);
+                message_vision(HIR"$Nåªè¦ºè‚šå­ã€Œå’•å’•å’•ã€å«å€‹ä¸åœï¼Œéš¨å¾Œæ”¾äº†å€‹å¥‡è‡­"
+                                "ç„¡æ¯”çš„å±ï¼\n"NOR,me);
                 me->receive_damage("jing",query("jing", me)/15);
                 me->receive_wound("jing",query("jing", me)/20);
                 me->receive_damage("qi",query("qi", me)/15);
@@ -149,13 +149,13 @@ void check()
                 me->apply_condition("hunger", 5 +
                                     (int)me->query_condition("hunger"));
                 remove_call_out("check");
-                message_vision(HIR"$N¶öµÃ¿ìËÀÁË¡£\n"NOR,me);
-                message_vision(HIR"$N¿ÊµÃÒªĞéÍÑÁË¡£\n"NOR,me);
+                message_vision(HIR"$Né¤“å¾—å¿«æ­»äº†ã€‚\n"NOR,me);
+                message_vision(HIR"$Næ¸´å¾—è¦è™›è„«äº†ã€‚\n"NOR,me);
                 }
         else
                 {
-                message_vision(HIR"$N½Ó¹ıÑøÉúµ¤£¬³ÔÁËÏÂÈ¥£¡\n"NOR,me);
-                message_vision(HIR"$NÖ»¸ĞÆ£ÀÍÒ»É¨¶ø¿Õ£¬ÔÙÒ²²»¾õµÃ¼¢¶ö¡£\n"NOR,me);
+                message_vision(HIR"$Næ¥éé¤Šç”Ÿä¸¹ï¼Œåƒäº†ä¸‹å»ï¼\n"NOR,me);
+                message_vision(HIR"$Nåªæ„Ÿç–²å‹ä¸€æƒè€Œç©ºï¼Œå†ä¹Ÿä¸è¦ºå¾—é¥‘é¤“ã€‚\n"NOR,me);
                 if( query("food", me)<400 )
                         set("food", 400, me);
 
@@ -169,12 +169,12 @@ void check()
         case 3:
         {
 
-        message_vision(HIR"$NÓÒÊÖÒ»Ë¦£¬Ò»Ö§Í¸¹ÇÕëÖ±Ïò$n·ÉÈ¥£¡\n",ob,me);
+        message_vision(HIR"$Nå³æ‰‹ä¸€ç”©ï¼Œä¸€æ”¯é€éª¨é‡ç›´å‘$né£›å»ï¼\n",ob,me);
 
         if(random(2))
 
                 {
-                message_vision(HIR"$N¶ÙÊ±ÑªÁ÷Èç×¢£¬Çê¿ÌÈ¾ºìÁËÈ«Éí£¡\n"NOR,me);
+                message_vision(HIR"$Né “æ™‚è¡€æµå¦‚æ³¨ï¼Œé ƒåˆ»æŸ“ç´…äº†å…¨èº«ï¼\n"NOR,me);
                 me->receive_damage("jing",query("jing", me)/15);
                 me->receive_wound("jing",query("jing", me)/20);
                 me->receive_damage("qi",query("qi", me)/15);
@@ -185,7 +185,7 @@ void check()
                 }
         else
                 {
-                message_vision(HIR"$NË³×ÅÍ¸¹ÇÕëµÄ·½Ïò£¬×İÉíÔ¾Æğ£¬¶ã¹ıÕâÖÂÃüÒ»»÷£¡\n"NOR,me);
+                message_vision(HIR"$Né †è‘—é€éª¨é‡çš„æ–¹å‘ï¼Œç¸±èº«èºèµ·ï¼Œèº²éé€™è‡´å‘½ä¸€æ“Šï¼\n"NOR,me);
                 call_out("check",2+random(3));
                 
                 }
@@ -195,7 +195,7 @@ void check()
         }
 /*
         if( random(10) == 9 )
-//      Õâ¸öµØ·½Áô´ıÖĞÆßĞÇº£ÌÄ¶¾£¬µ«Ìõ¼şNPC±ØĞëÊÇÎŞàÁ¡¢Ê¯ÍòàÁ¡£        
+//      é€™å€‹åœ°æ–¹ç•™å¾…ä¸­ä¸ƒæ˜Ÿæµ·æ£ æ¯’ï¼Œä½†æ¢ä»¶NPCå¿…é ˆæ˜¯ç„¡å—”ã€çŸ³è¬å—”ã€‚        
 */
 
 }

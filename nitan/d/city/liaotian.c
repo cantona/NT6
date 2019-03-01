@@ -7,11 +7,11 @@ int is_chat_room()
 
 void create()
 {
-        set("short", "¿Íµê²è·¿");
+        set("short", "å®¢åº—èŒ¶æˆ¿");
         set("long", @LONG
-ÕâÀïÊÇÑïÖÝ¿ÍÕ»µÄ²èÔ°£¬ÓÐÐí¶àÎÞËùÊÂÊÂµÄÈË¶¼°®´ôÔÚÕâÀï£¬µê
-Ð¡¶þ´©ËóÔÚ¿ÍÈËÖÐ¼ä£¬Ã¦¸ö²»Í£¡£Ðí¶àÉÌÈËÐ¡··Ò²Ï²»¶ÔÚÕâÀïÏò´ó¼Ò
-¶µÊÛ»õÎï¡£
+é€™è£¡æ˜¯æšå·žå®¢æ£§çš„èŒ¶åœ’ï¼Œæœ‰è¨±å¤šç„¡æ‰€äº‹äº‹çš„äººéƒ½æ„›å‘†åœ¨é€™è£¡ï¼Œåº—
+å°äºŒç©¿æ¢­åœ¨å®¢äººä¸­é–“ï¼Œå¿™å€‹ä¸åœã€‚è¨±å¤šå•†äººå°è²©ä¹Ÿå–œæ­¡åœ¨é€™è£¡å‘å¤§å®¶
+å…œå”®è²¨ç‰©ã€‚
 LONG );
         set("no_fight", 1);
         set("can_trade", 1);

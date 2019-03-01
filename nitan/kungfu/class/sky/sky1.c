@@ -3,13 +3,13 @@ inherit ROOM;
 
 void create()
 {
-        set("short", HIW "¡¾Ò»ÖØÌì¡¿" NOR);
+        set("short", HIW "ã€ä¸€é‡å¤©ã€‘" NOR);
         set("long", HIW @LONG
 
-                Ò»         ÖØ         Ìì
+                ä¸€         é‡         å¤©
 
-    ÕâÀïÒ»Æ¬Ìì¼Ê£¬Ã£Ã£ÔÆº££¬ËÄÖÜ²»¼ûÈÎºÎÊÂÎï¡£Ô¶·½Ò»ÖØÔÆ²Ê´Ó
-µØÃæÉýÆð£¬¼ÜÆðÁËÒ»×ùÔÆÌÝ(yunti)£¬ËÆºõÁ¬½ÓÉÏ²ãµÄÌì¼Ê¡­¡­¡­¡­
+    é€™è£¡ä¸€ç‰‡å¤©éš›ï¼ŒèŒ«èŒ«é›²æµ·ï¼Œå››å‘¨ä¸è¦‹ä»»ä½•äº‹ç‰©ã€‚é æ–¹ä¸€é‡é›²å½©å¾ž
+åœ°é¢å‡èµ·ï¼Œæž¶èµ·äº†ä¸€åº§é›²æ¢¯(yunti)ï¼Œä¼¼ä¹Žé€£æŽ¥ä¸Šå±¤çš„å¤©éš›â€¦â€¦â€¦â€¦
 
 
 LONG NOR );
@@ -18,7 +18,7 @@ LONG NOR );
                 "out" : __DIR__"tianmen",
 ]));
         set("item_desc", ([
-                "yunti" : HIW "\nÒ»Åî°×É«µÄÔÆ²Ê°ÎµØ¶øÆð£¬Á¬½ÓÉÏ²ãµÄÌì¼Ê¡£\n" NOR,
+                "yunti" : HIW "\nä¸€è“¬ç™½è‰²çš„é›²å½©æ‹”åœ°è€Œèµ·ï¼Œé€£æŽ¥ä¸Šå±¤çš„å¤©éš›ã€‚\n" NOR,
 ]));
         set("sleep_room", 1);
         set("objects", ([
@@ -34,7 +34,7 @@ void init()
         
         if (! me->query("sky12/tianmen") && userp(me))
         {
-                tell_object(me, HIG "Ìú´«¼×¶ÔÄãËµµÀ£ºÄãÃ»ÓÐÊ¹ÓÃ¹ý¶«»ÊÖÓ£¬ÊÇÔõÃ´µ½Ìì½çÀ´µÄ£¬ºß£¡\n" NOR);
+                tell_object(me, HIG "éµå‚³ç”²å°ä½ èªªé“ï¼šä½ æ²’æœ‰ä½¿ç”¨éŽæ±çš‡é˜ï¼Œæ˜¯æ€Žéº¼åˆ°å¤©ç•Œä¾†çš„ï¼Œå“¼ï¼\n" NOR);
 
                 me->delete("sky12");
                 me->save();
@@ -63,13 +63,13 @@ int do_move(string arg)
                 if ( objectp(present("tie chuanjia", environment(me)))
                      && me->query("sky12/floor") < 2)
                 {
-                        write(CYN "Ö»ÌýÌú´«¼×Ò»Éù±©ºÈ£º¡°ÕâÎ»" +
+                        write(CYN "åªè½éµå‚³ç”²ä¸€è²æš´å–ï¼šâ€œé€™ä½" +
                               RANK_D->query_respect(me) + CYN
-                              "£¬ÇëÍ£²½¡£¡±\n" NOR);
+                              "ï¼Œè«‹åœæ­¥ã€‚â€\n" NOR);
                         return 1;
                 }
-                message_vision(HIW "\n$N" HIW "Ë³×ÅÔÆÌÝÇáÇáÒ»"
-                               "×Ý£¬ÉíÌå±ãËæ×ÅÆøÁ÷Æ®ÁËÉÏÈ¥¡­¡­\n"
+                message_vision(HIW "\n$N" HIW "é †è‘—é›²æ¢¯è¼•è¼•ä¸€"
+                               "ç¸±ï¼Œèº«é«”ä¾¿éš¨è‘—æ°£æµé£„äº†ä¸ŠåŽ»â€¦â€¦\n"
                                NOR, this_player());
                 me->move("/kungfu/class/sky/sky2"); 
                 return 1;

@@ -4,9 +4,9 @@ inherit ITEM;
 
 void create()
 {
-        set_name("¿â·¿Ô¿³×", ({"qingcheng key", "yaoshi"}));
-        set("long", "ÕâÊÇÒ»°ÑºÜÆÕÍ¨µÄÔ¿³×¡£\n");
-        set("unit", "°Ñ");
+        set_name("åº«æˆ¿é‘°åŒ™", ({"qingcheng key", "yaoshi"}));
+        set("long", "é€™æ˜¯ä¸€æŠŠå¾ˆæ™®é€šçš„é‘°åŒ™ã€‚\n");
+        set("unit", "æŠŠ");
         set("weight", 10);
         set("no_drop", 1);
 }

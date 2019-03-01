@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÀÏ¾ý¹µ");
+        set("short", "è€å›æº");
         set("long", @LONG
-ÅÀ¹ýÁ½¸öÒªÃüµÄÐüÑÂ£¬¿ÉÔÚÕâÀïÉÔ×÷ÐªÏ¢¡£ÀÏ¾ý¹µÊÇÒ»Ìõ°ëÀï¶à
-³¤µÄÉ½¹µ£¬Ïà´«ÎªÌ«ÉÏÀÏ¾ýµ½´Ë£¬¼ûÎÞÂ·¿ÉÍ¨£¬Òò¶øÌ×ÉÏ´óÇàÅ£ÓÃÌú
-ÀçÀç³öÁËÕâÌõ¹µ×÷ÎªµÇÉ½Í¨µÀ¡£
+çˆ¬éŽå…©å€‹è¦å‘½çš„æ‡¸å´–ï¼Œå¯åœ¨é€™è£¡ç¨ä½œæ­‡æ¯ã€‚è€å›æºæ˜¯ä¸€æ¢åŠè£¡å¤š
+é•·çš„å±±æºï¼Œç›¸å‚³ç‚ºå¤ªä¸Šè€å›åˆ°æ­¤ï¼Œè¦‹ç„¡è·¯å¯é€šï¼Œå› è€Œå¥—ä¸Šå¤§é’ç‰›ç”¨éµ
+çŠçŠå‡ºäº†é€™æ¢æºä½œç‚ºç™»å±±é€šé“ã€‚
 LONG );
         set("exits", ([ /* sizeof() == 2 */
             "westdown" : __DIR__"pingxinshi",

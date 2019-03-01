@@ -1,4 +1,4 @@
-// chufang.c ³ø·¿
+// chufang.c å»šæˆ¿
 // Winder Oct.10 1998
 
 inherit ROOM;
@@ -6,18 +6,18 @@ int do_kan(string arg);
 
 void create()
 {
-        set("short", "³ø·¿");
+        set("short", "å»šæˆ¿");
         set("long", @LONG
-ÕâÀïÊÇÈ«Õæ½ÌµÄ³ø·¿£¬Îİ½ÇÉÏ¶Ñ×ÅÒ»´ó¶ÑÊÖ±Û´ÖÏ¸µÄÄ¾²ñ£¬¿´
-À´»¹Ã»ÓĞÅüºÃ¡£Ò»Î»»ğ¹¤µÀÈËÕı³îÃ¼¿àÁ³µØ×øÔÚÄÇÀï£¬¿´×ÅÄÇ¶Ñ²ñ¡£
-Ç½ÉÏ¹Ò×ÅÒ»¿éÅÆ×Ó(paizi)£¬Ç½±ßÈÓ×ÅÒ»°Ñ²ñµ¶¡£
+é€™è£¡æ˜¯å…¨çœŸæ•™çš„å»šæˆ¿ï¼Œå±‹è§’ä¸Šå †è‘—ä¸€å¤§å †æ‰‹è‡‚ç²—ç´°çš„æœ¨æŸ´ï¼Œçœ‹
+ä¾†é‚„æ²’æœ‰åŠˆå¥½ã€‚ä¸€ä½ç«å·¥é“äººæ­£æ„çœ‰è‹¦è‡‰åœ°ååœ¨é‚£è£¡ï¼Œçœ‹è‘—é‚£å †æŸ´ã€‚
+ç‰†ä¸Šæ›è‘—ä¸€å¡Šç‰Œå­(paizi)ï¼Œç‰†é‚Šæ‰”è‘—ä¸€æŠŠæŸ´åˆ€ã€‚
 LONG
         );
         set("exits",([
                 "west" : __DIR__"shantang",
         ]));
         set("item_desc", ([
-            "paizi": "ÕĞÊÕ¿³²ñ¹¤ÈË£¬´ıÓö´ÓÓÅ¡£\n"
+            "paizi": "æ‹›æ”¶ç æŸ´å·¥äººï¼Œå¾…é‡å¾å„ªã€‚\n"
         ]) );
         set_temp("times" , 20);
         set("objects" , ([
@@ -40,35 +40,35 @@ int do_kan(string arg)
         object me=this_player();
         object ob;
         if (query_temp("times")==0)
-                return notify_fail("½ñÌìµÄ»î¸ÉÍêÁË£¬Ã÷ÌìÔÙÀ´°É£¡\n");
+                return notify_fail("ä»Šå¤©çš„æ´»å¹¹å®Œäº†ï¼Œæ˜å¤©å†ä¾†å§ï¼\n");
 
-        if (!arg || arg != "²ñ")
-                return notify_fail("±ğÂÒ¿³£¬Ğ¡ĞÄÉË×Å×Ô¸ö¶ù¡£\n");
+        if (!arg || arg != "æŸ´")
+                return notify_fail("åˆ¥äº‚ç ï¼Œå°å¿ƒå‚·è‘—è‡ªå€‹å…’ã€‚\n");
 
         if(present("huogong", environment(me)) && living(present("huogong", environment(me))))
         {
         if( query("jing", me)<50 )
-                return notify_fail("ÄãµÄ¾«Á¦²»¹»ÁË£¬ĞİÏ¢Ò»»á¶ùÔÙ¿³°É¡£\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤ äº†ï¼Œä¼‘æ¯ä¸€æœƒå…’å†ç å§ã€‚\n");
 
-        message_vision("$N¼ğÆğ²ñµ¶£¬ÊúÆğÒ»¸ù²ñ»ğ£¬·ÜÁ¦¿³ÏÂÈ¥¡£\n",me);
+        message_vision("$Næ€èµ·æŸ´åˆ€ï¼Œè±èµ·ä¸€æ ¹æŸ´ç«ï¼Œå¥®åŠ›ç ä¸‹å»ã€‚\n",me);
         addn_temp("times",-1);
 
         if (random(3)<2) {
                 me->receive_damage("jing",20+random(20));
-                message_vision("½á¹û$NÓÃÁ¦¹ıÃÍ£¬²ñµ¶Ò»ÏÂ×ÓÇ¶ÔÚÁË²ñÀï¡£$NÓÃ¾¡³ÔÄÌ
-µÄÁ¦Æø°Ñ²ñµ¶°Î³öÀ´£¬ÓÖË¤ÁË¸ö´ó¸ú¶·¡£\n",me);
+                message_vision("çµæœ$Nç”¨åŠ›éçŒ›ï¼ŒæŸ´åˆ€ä¸€ä¸‹å­åµŒåœ¨äº†æŸ´è£¡ã€‚$Nç”¨ç›¡åƒå¥¶
+çš„åŠ›æ°£æŠŠæŸ´åˆ€æ‹”å‡ºä¾†ï¼Œåˆæ‘”äº†å€‹å¤§è·Ÿé¬¥ã€‚\n",me);
         }
         else {
                 me->receive_damage("jing",20+random(40));
                 ob = new("/clone/money/silver");
                 ob->set_amount(10);
                 ob->move(me);
-                message_vision("½á¹ûÄ¾²ñÓ¦Éù±»Åü³ÉÁ½°ë¡£»ğ¹¤µÀÈËĞ¦×Å¶Ô$NËµ£¬Äã¹¤
-×÷µÄ²»´íÑ½£¬ÕâÊÇÄãµÄ³êÀÍ¡£\n",me);
-                message_vision("»ğ¹¤µÀÈË¸ø$NÒ»Ğ©Òø×Ó¡£\n",me);
+                message_vision("çµæœæœ¨æŸ´æ‡‰è²è¢«åŠˆæˆå…©åŠã€‚ç«å·¥é“äººç¬‘è‘—å°$Nèªªï¼Œä½ å·¥
+ä½œçš„ä¸éŒ¯å‘€ï¼Œé€™æ˜¯ä½ çš„é…¬å‹ã€‚\n",me);
+                message_vision("ç«å·¥é“äººçµ¦$Nä¸€äº›éŠ€å­ã€‚\n",me);
         }
         return 1;
         }
         else
-                return notify_fail("ÀÏ°å¶¼²»¼ûÁË£¬ÄãÎªË­°×¸É°¡£¿\n");
+                return notify_fail("è€æ¿éƒ½ä¸è¦‹äº†ï¼Œä½ ç‚ºèª°ç™½å¹¹å•Šï¼Ÿ\n");
 }

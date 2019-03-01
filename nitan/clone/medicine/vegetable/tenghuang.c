@@ -1,4 +1,4 @@
-// tenghuang.c ÌÙ»Æ
+// tenghuang.c ç±é»ƒ
 
 inherit ITEM;
 #include <ansi.h>
@@ -11,15 +11,15 @@ void init()
 
 void create()
 {
-        set_name(YEL"ÌÙ»Æ"NOR, ({"tenghuang" }));
+        set_name(YEL"ç±é»ƒ"NOR, ({"tenghuang" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°ü");
+                set("unit", "åŒ…");
                 set("vegetable", 32);
                 set("value", 350);
                 set("nostrum", 32);
-                set("long", "ÕâÊÇÒ»°üÌÙ»Æ£¬¾İËµ¿ÉÒÔÈëÒ©¡£\n");
+                set("long", "é€™æ˜¯ä¸€åŒ…ç±é»ƒï¼Œæ“šèªªå¯ä»¥å…¥è—¥ã€‚\n");
                 set("value", 1000);
         }
         set("pour_type", "1");
@@ -30,12 +30,12 @@ int do_eat(string arg)
 {
         object me = this_player();
 
-        if(!id(arg)) return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+        if(!id(arg)) return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if(!present(this_object(), me))
-                return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if( me->is_busy() )
-                return notify_fail("±ğ¼±£¬ÂıÂı³Ô£¬Ğ¡ĞÄ±ğÒ­×ÅÁË¡£\n");
+                return notify_fail("åˆ¥æ€¥ï¼Œæ…¢æ…¢åƒï¼Œå°å¿ƒåˆ¥å™è‘—äº†ã€‚\n");
 
-        write("Äã²»ÄÜÕâÑù³ÔÌÙ»Æ¡£\n");
+        write("ä½ ä¸èƒ½é€™æ¨£åƒç±é»ƒã€‚\n");
         return 1;
 }

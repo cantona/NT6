@@ -1,4 +1,4 @@
-// necklace.c ÎäÕßÏîÈ¦
+// necklace.c æ­¦è€…é …åœˆ
  
 #include <armor.h>
  
@@ -6,14 +6,14 @@ inherit NECK;
  
 void create()
 {
-        set_name("ÎäÕßÏîÈ¦", ({ "neck-cycle", "xiang quan", "lian" }) );
+        set_name("æ­¦è€…é …åœˆ", ({ "neck-cycle", "xiang quan", "lian" }) );
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
                 set("material", "steel");
-                set("unit", "´®");
-                set("long", "ÕâÊÇÒ»´®ÌúÖÊµÄÏîÁ´£¬ÓÃÒÔ±£»¤¾±²¿¡£\n");
+                set("unit", "ä¸²");
+                set("long", "é€™æ˜¯ä¸€ä¸²éµè³ªçš„é …éˆï¼Œç”¨ä»¥ä¿è­·é ¸éƒ¨ã€‚\n");
                 set("value", 1800);
                 set("armor_prop/dodge", 5);
         }

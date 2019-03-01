@@ -5,10 +5,10 @@ inherit F_DEALER;
 
 void create()
 {
-        set_name("³ÂÀÏ°å", ({ "chen laoban", "chen","laoban" }));
-        set("title", "Ê×ÊÎµêÀÏ°å");
+        set_name("é™³è€æ¿", ({ "chen laoban", "chen","laoban" }));
+        set("title", "é¦–é£¾åº—è€æ¿");
         set("shop_id", ({"laoban"}));
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("shen_type", 1);
         set("age", 43);
         set("combat_exp", 100000);

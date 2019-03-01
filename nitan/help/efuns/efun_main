@@ -1,7 +1,7 @@
-°ı efun_main.c 
+‚ñ° efun_main.c 
 
-»√ efun match_path() æﬂ”– '/' ¬∑æ∂À——∞π¶ƒ‹
-®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D
+ËÆì efun match_path() ÂÖ∑Êúâ '/' Ë∑ØÂæëÊêúÂ∞ãÂäüËÉΩ
+‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°
 #ifdef F_MATCH_PATH
 void f_match_path PROT((void))
 {
@@ -48,10 +48,10 @@ void f_match_path PROT((void))
     free_mapping(map);
 }
 #endif                          /* F_MATCH_PATH */
-®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D
+‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°
 
-»√ efun this_player() ø…ªÿ¥´ call_out() µƒ command_giver
-®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D
+ËÆì efun this_player() ÂèØÂõûÂÇ≥ call_out() ÁöÑ command_giver
+‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°
 #ifdef F_THIS_PLAYER
 void
 f_this_player PROT((void))
@@ -69,7 +69,7 @@ f_this_player PROT((void))
     }
 }
 #endif
-®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D®D
+‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°
 
-By Clode@RW on 2002/6/3 04:01œ¬ŒÁ
+By Clode@RW on 2002/6/3 04:01‰∏ãÂçà
 

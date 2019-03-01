@@ -4,16 +4,16 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIM "Îå¶¾Öé" NOR, ({ "wudu zhu", "wudu", "zhu" }) );
+        set_name(HIM "äº”æ¯’ç " NOR, ({ "wudu zhu", "wudu", "zhu" }) );
         set_weight(100);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIM "´ËÄËÎå¶¾½ÌÁ·¹¦Ö®ÉñÆ·£¬ÄËÊÇ´ÓÊı°ÙÖÖÌìÏÂÆæ¶¾ÖĞÌáÁ¶¶ø³É£¬·şÓÃ\n"
-                                "ºó¿É´ó´óÔö¼Ó×ÔÉíÌåÄÚ¶¾ĞÔ¡£µ«ÈôÎŞÎå¶¾½ÌĞÄ·¨ÅäºÏ£¬Ò»µ©·şÓÃÁ¢\n"
-                                "¼´±©±Ğ¡££¨·şÓÃÏŞÖÆ²Î¼û help scborn_sk£¬´ËÖéÏÂÏß²»¶ªÊ§)¡£\n" NOR);
+                set("long", HIM "æ­¤ä¹ƒäº”æ¯’æ•™ç·´åŠŸä¹‹ç¥å“ï¼Œä¹ƒæ˜¯å¾æ•¸ç™¾ç¨®å¤©ä¸‹å¥‡æ¯’ä¸­æç…‰è€Œæˆï¼Œæœç”¨\n"
+                                "å¾Œå¯å¤§å¤§å¢åŠ è‡ªèº«é«”å…§æ¯’æ€§ã€‚ä½†è‹¥ç„¡äº”æ¯’æ•™å¿ƒæ³•é…åˆï¼Œä¸€æ—¦æœç”¨ç«‹\n"
+                                "å³æš´æ–ƒã€‚ï¼ˆæœç”¨é™åˆ¶åƒè¦‹ help scborn_skï¼Œæ­¤ç ä¸‹ç·šä¸ä¸Ÿå¤±)ã€‚\n" NOR);
                 set("value", 500000);
-                set("unit", "¿Å");             
+                set("unit", "é¡†");             
                 set("only_do_effect", 1);
                 set("do_effect", 1);
         }
@@ -22,40 +22,40 @@ void create()
 int do_effect(object me)
 {
         if (environment(this_object()) != me)
-                return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+                return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™æ¨£æ±è¥¿ã€‚\n");
                 
         if (query("do_effect") < 1)
-                return notify_fail("Îå¶¾ÖéÒÑ¾­±»·şÓÃ¹ıÁË¡£\n");
+                return notify_fail("äº”æ¯’ç å·²ç¶“è¢«æœç”¨éäº†ã€‚\n");
 
         if (me->query("max_neili") < 10000)
-                return notify_fail("ÄãÄÚÁ¦ĞŞÎª²»×ã£¬¿ÖÅÂ·şÓÃºóÄÑÒÔÎüÊÕ¶¾ĞÔ¡£\n");
+                return notify_fail("ä½ å…§åŠ›ä¿®ç‚ºä¸è¶³ï¼Œææ€•æœç”¨å¾Œé›£ä»¥å¸æ”¶æ¯’æ€§ã€‚\n");
 
         if (me->query("neili") < 10000)
-                return notify_fail("ÄãÄÚÁ¦²»×ã£¬·şÓÃºó¿ÖÅÂÄÑÒÔÔË¹¦µÖÓù¾ç¶¾¡£\n");
+                return notify_fail("ä½ å…§åŠ›ä¸è¶³ï¼Œæœç”¨å¾Œææ€•é›£ä»¥é‹åŠŸæŠµå¾¡åŠ‡æ¯’ã€‚\n");
 
         if (me->query("can_perform/qianzhu-wandushou/suck_time") >= 5)
-                return notify_fail("ÄãÒÑ¾­ÎüÊÕÁË×ã¹»µÄ¶¾ËØ£¬²»ĞèÒªÔÙÖØ¸´ÎüÈ¡ÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“å¸æ”¶äº†è¶³å¤ çš„æ¯’ç´ ï¼Œä¸éœ€è¦å†é‡å¾©å¸å–äº†ã€‚\n");
         
         if (time() - me->query("last_eating_wudu_zhu") < 3600)
-                return notify_fail("Äã¸ÕÎüÊÕ¹ı¶¾ËØ£¬²»ÒËÔÙÎüÊÕ£¡\n");
+                return notify_fail("ä½ å‰›å¸æ”¶éæ¯’ç´ ï¼Œä¸å®œå†å¸æ”¶ï¼\n");
 
-        message_vision(HIM "$N" HIM "·şÏÂÒ»¿ÅÎå¶¾Öé£¬¶¾ÖéÈë¿Ú¼´»¯£¬Æ¬¿Ì£¬$N" HIM "ÃæÉ«ÄıÖØ£¬ËÆºõ¾ç¶¾ÕıÔÚ\n"
-                       "ÖÜÉíÓÎ×ß ¡­¡­\n" NOR, me);
+        message_vision(HIM "$N" HIM "æœä¸‹ä¸€é¡†äº”æ¯’ç ï¼Œæ¯’ç å…¥å£å³åŒ–ï¼Œç‰‡åˆ»ï¼Œ$N" HIM "é¢è‰²å‡é‡ï¼Œä¼¼ä¹åŠ‡æ¯’æ­£åœ¨\n"
+                       "å‘¨èº«éŠèµ° â€¦â€¦\n" NOR, me);
                        
         if (me->query_skill("wudu-qishu", 1) < 300 || me->query_skill("wudu-jing", 1) < 200 ||
-            me->query_skill("qianzhu-wandushou", 1) < 800 || me->query("family/family_name") != "Îå¶¾½Ì" )
+            me->query_skill("qianzhu-wandushou", 1) < 800 || me->query("family/family_name") != "äº”æ¯’æ•™" )
         {
                 if (! me->query("special_skill/zhuha"))
                 {
-                        message_vision(HIR "\n$N" HIR "Í»È»Í´¿àÎŞ±È£¬µ¹µØ±©±Ğ£¬Ä£ÑùÊ®·Ö¿Ö²À£¡\n" NOR, me);
-                        me->set_temp("die_reason", "·şÓÃÎå¶¾Öéºó±©±Ğ");
+                        message_vision(HIR "\n$N" HIR "çªç„¶ç—›è‹¦ç„¡æ¯”ï¼Œå€’åœ°æš´æ–ƒï¼Œæ¨¡æ¨£ååˆ†ææ€–ï¼\n" NOR, me);
+                        me->set_temp("die_reason", "æœç”¨äº”æ¯’ç å¾Œæš´æ–ƒ");
                         me->die();                        
                         destruct(this_object());
                         return 1;
                 }
                 else
                 {
-                        tell_object(me, HIW "ÓÉÓÚÄãÓĞÖì¸òÆæ¶¾¸½Éí£¬Îå¶¾Öé¾ç¶¾ÒÑ±»È«²¿»¯½â¡£\n" NOR);
+                        tell_object(me, HIW "ç”±äºä½ æœ‰æœ±è›¤å¥‡æ¯’é™„èº«ï¼Œäº”æ¯’ç åŠ‡æ¯’å·²è¢«å…¨éƒ¨åŒ–è§£ã€‚\n" NOR);
                         destruct(this_object());
                         return 1;                        
                 }
@@ -74,11 +74,11 @@ int do_effect(object me)
 void start_xishou(object me, int i)
 {
         string* msg = ({
-                "Äã¿ªÊ¼ÔË¹¦µÖÓùÎå¶¾ÖéµÄ¾ç¶¾£¬ÕæÆøÒÑÓÉµ¤ÌïÉıÆğ£¬²¢Ñ¸ËÙÔÚÈ«ÉíÓÎ×ß ¡­¡­\n",
-                "Äã¸Ğ¾õÎå¶¾Öé¾ç¶¾Ğ×ÃÍÎŞ±È£¬ÆÕÍ¨ÕæÆø¾¹ÄÑÒÔÓëÖ®¿¹ºâ£¬Çé¼±Ö®ÏÂÃ¦ÔËÆğÎå¶¾½ÌÃÜÃÅĞÄ·¨ ¡­¡­\n",
-                "½¥½¥µØ£¬Îå¶¾Öé¾ç¶¾¿ªÊ¼ÓĞ¹æÂÉµØÔË¶¯£¬²¢Ëæ×ÅÎå¶¾½ÌĞÄ·¨µÄÇ£Òı¶øÓÎ×ß ¡­¡­\n",
-                "Äã¿ªÊ¼Ê©Õ¹Ç§ÖëÍò¶¾ÊÖĞÄ·¨£¬ÎüÊÕÎå¶¾ÖéÖĞµÄ¶¾ËØ ¡­¡­\n",
-                "Ò»ÖùÏãºó£¬¶¾ËØ¿ªÊ¼ÏòÄãµÄÊ®Ö¸ÒÆ¶¯£¬²¢¿ªÊ¼ÓëÄãÌåÄÚµÄÕæÆøÈÚºÏ ¡­¡­\n",        
+                "ä½ é–‹å§‹é‹åŠŸæŠµå¾¡äº”æ¯’ç çš„åŠ‡æ¯’ï¼ŒçœŸæ°£å·²ç”±ä¸¹ç”°å‡èµ·ï¼Œä¸¦è¿…é€Ÿåœ¨å…¨èº«éŠèµ° â€¦â€¦\n",
+                "ä½ æ„Ÿè¦ºäº”æ¯’ç åŠ‡æ¯’å…‡çŒ›ç„¡æ¯”ï¼Œæ™®é€šçœŸæ°£ç«Ÿé›£ä»¥èˆ‡ä¹‹æŠ—è¡¡ï¼Œæƒ…æ€¥ä¹‹ä¸‹å¿™é‹èµ·äº”æ¯’æ•™å¯†é–€å¿ƒæ³• â€¦â€¦\n",
+                "æ¼¸æ¼¸åœ°ï¼Œäº”æ¯’ç åŠ‡æ¯’é–‹å§‹æœ‰è¦å¾‹åœ°é‹å‹•ï¼Œä¸¦éš¨è‘—äº”æ¯’æ•™å¿ƒæ³•çš„ç‰½å¼•è€ŒéŠèµ° â€¦â€¦\n",
+                "ä½ é–‹å§‹æ–½å±•åƒè››è¬æ¯’æ‰‹å¿ƒæ³•ï¼Œå¸æ”¶äº”æ¯’ç ä¸­çš„æ¯’ç´  â€¦â€¦\n",
+                "ä¸€æŸ±é¦™å¾Œï¼Œæ¯’ç´ é–‹å§‹å‘ä½ çš„åæŒ‡ç§»å‹•ï¼Œä¸¦é–‹å§‹èˆ‡ä½ é«”å…§çš„çœŸæ°£èåˆ â€¦â€¦\n",        
         });
         
         int ran;
@@ -91,14 +91,14 @@ void start_xishou(object me, int i)
         
         if (environment(this_object()) != me)
         {
-                tell_object(me, HIG "Îå¶¾ÖéÒÑ¶ªÊ§£¬ÎüÈ¡Ê§°Ü£¡\n" NOR);
+                tell_object(me, HIG "äº”æ¯’ç å·²ä¸Ÿå¤±ï¼Œå¸å–å¤±æ•—ï¼\n" NOR);
                 destruct(this_object());
                 return;
         }
         
         if (i >= sizeof(msg))
         {
-                // zhuhaÍæ¼Ò60%¼¸ÂÊÎüÊÕ³É¹¦£¬ÆäËûÍæ¼Ò30%ÎüÊÕ³É¹¦
+                // zhuhaç©å®¶60%å¹¾ç‡å¸æ”¶æˆåŠŸï¼Œå…¶ä»–ç©å®¶30%å¸æ”¶æˆåŠŸ
                 if (me->query("special_skill/zhuha"))
                 {
                         ran = 6;        
@@ -108,20 +108,20 @@ void start_xishou(object me, int i)
                         ran = 3;
                 }
                 
-                if (random(10) >= ran) // ÎüÊÕÊ§°Ü
+                if (random(10) >= ran) // å¸æ”¶å¤±æ•—
                 {
-                        tell_object(me, HIG "Í»È»¼ä£¬Äã¸Ğ¾õÎå¶¾ÖéÖĞµÄ¾ç¶¾ÏûÊ§µÃÎŞÓ°ÎŞ×Ù£¬¾¹Î´±»ÄãÌåÄÚÕæÆøÎüÊÕ£¬ÊµÔÚÒÅº¶¡£\n" NOR);
+                        tell_object(me, HIG "çªç„¶é–“ï¼Œä½ æ„Ÿè¦ºäº”æ¯’ç ä¸­çš„åŠ‡æ¯’æ¶ˆå¤±å¾—ç„¡å½±ç„¡è¹¤ï¼Œç«Ÿæœªè¢«ä½ é«”å…§çœŸæ°£å¸æ”¶ï¼Œå¯¦åœ¨éºæ†¾ã€‚\n" NOR);
                         destruct(this_object());
                         return;
                 }
                 
-                tell_object(me, HIG "Çê¿Ì¼ä£¬ÄãÖ»¾õµÃËùÓĞ¶¾ËØÒÑ±»ÄãÕæÆøÎüÊÕ£¬ÈÚºÏÔÚÒ»Æğ£¬¾Û¼¯ÔÚÌåÄÚ£¬ÎªÄãËùÓÃ£¡\n" NOR);
-                tell_object(me, HIG "Äã½«ÕæÆøÔË»Øµ¤Ìï£¬¸Ğ¾õÊæÌ©ÎŞ±È£¡\n" NOR);
-                tell_object(me, HIR "¹§Ï²Äã£¬³É¹¦ÎüÊÕÁËÎå¶¾ÖéÖĞµÄ¾ç¶¾£¡\n" NOR);
+                tell_object(me, HIG "é ƒåˆ»é–“ï¼Œä½ åªè¦ºå¾—æ‰€æœ‰æ¯’ç´ å·²è¢«ä½ çœŸæ°£å¸æ”¶ï¼Œèåˆåœ¨ä¸€èµ·ï¼Œèšé›†åœ¨é«”å…§ï¼Œç‚ºä½ æ‰€ç”¨ï¼\n" NOR);
+                tell_object(me, HIG "ä½ å°‡çœŸæ°£é‹å›ä¸¹ç”°ï¼Œæ„Ÿè¦ºèˆ’æ³°ç„¡æ¯”ï¼\n" NOR);
+                tell_object(me, HIR "æ­å–œä½ ï¼ŒæˆåŠŸå¸æ”¶äº†äº”æ¯’ç ä¸­çš„åŠ‡æ¯’ï¼\n" NOR);
                 me->add("can_perform/qianzhu-wandushou/suck_time", 1);
                 if (me->query("can_perform/qianzhu-wandushou/suck_time") >= 5)
                 {
-                        tell_object(me, HIM "¹§Ï²Äã£¬ÒÑ¾­Á·³ÉÁË¾ÙÊÀÎŞË«µÄ¾øÑ§¡ªÍò¶¾´©ĞÄÊÖ£¡\n" NOR);
+                        tell_object(me, HIM "æ­å–œä½ ï¼Œå·²ç¶“ç·´æˆäº†èˆ‰ä¸–ç„¡é›™çš„çµ•å­¸â”€è¬æ¯’ç©¿å¿ƒæ‰‹ï¼\n" NOR);
                         me->set("can_perform/qianzhu-wandushou/chuan", 1);
                         me->save();
                 }

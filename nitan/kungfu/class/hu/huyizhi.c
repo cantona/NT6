@@ -11,14 +11,14 @@ string ask_me();
 
 void create()
 {
-        set_name("����֮", ({ "hu yizhi", "hu", "yizhi" }));
-        set("gender", "����");
-        set("nickname", HIR "������" NOR);
-        set("character", "��������");
+        set_name("胡逸之", ({ "hu yizhi", "hu", "yizhi" }));
+        set("gender", "男性");
+        set("nickname", HIR "美刀王" NOR);
+        set("character", "光明磊落");
         set("age", 37);
         set("long", @LONG
-���˺������꣬ͷ�Ϲ���һΧ�׽�����������
-һ˫��Ь��ȫȻһ����ũģ����
+這人胡子拉碴，頭上裹著一圍白巾，腳下踢著
+一雙拖鞋，全然一副鄉農模樣。
 LONG);
         set("attitude", "peaceful");
         set("str", 36);
@@ -65,13 +65,13 @@ LONG);
         prepare_skill("strike", "tianchang-zhang");
         prepare_skill("cuff",   "hujia-quan");
 
-        create_family("�������", 13, "����");
+        create_family("關外胡家", 13, "高手");
 
         set("inquiry", ([
-                "��ʤ����" : (: ask_me :),
-                "������"   : "�������Ѿ����ˣ�������������",
-                "��ԲԲ"   : "������Ҳû�ܺ���˵�ϼ��仰��",
-                "��԰԰"   : "������Ҳû�ܺ���˵�ϼ��仰��",
+                "百勝刀法" : (: ask_me :),
+                "美刀王"   : "美刀王已經死了，還提他做甚？",
+                "陳圓圓"   : "唉！我也沒能和她說上幾句話。",
+                "陳園園"   : "唉！我也沒能和她說上幾句話。",
         ]));
 
         set("chat_chance_combat", 120);
@@ -95,29 +95,29 @@ string ask_me()
         object ob, me;
 
         me = this_player();
-        if( query("family/family_name", me) != "�������" )
-                return "���������ó��ı��£���Ҫ��Ҫ����������\n";
+        if( query("family/family_name", me) != "關外胡家" )
+                return "這是在下擅長的本事，你要不要較量較量？\n";
 
-        return "�ܺ�... �ܺ�... ��Ȼ�Ǻ��ҵ��ӣ���û����Ȥѧѧ�ҵİ�ʤ������";
+        return "很好... 很好... 既然是胡家弟子，有沒有興趣學學我的百勝刀法？";
 }
 
 int recognize_apprentice(object ob, string skill)
 {
-        if( query("family/family_name", ob) != "�������" )
+        if( query("family/family_name", ob) != "關外胡家" )
         {
-                command("say ��͵ѧ���Ǻ��Ҿ������ٺ�...");
+                command("say 想偷學我們胡家絕技？嘿嘿...");
                 return -1;
         }
 
         if (skill != "baisheng-daofa")
         {
-                command("say ��ֻ�����ʤ������������������ʦ��ȥѧ�ɡ�");
+                command("say 我只傳你百勝刀法，其他還是找你師傅去學吧。");
                 return -1;
         }
 
         if( !query_temp("can_learn/huyizhi/baisheng-daofa", ob) )
         {
-                command("say �ã��㿴����ˣ�");
+                command("say 好！你看清楚了！");
                 set_temp("can_learn/huyizhi/baisheng-daofa", 1, ob);
         }
 
@@ -128,19 +128,19 @@ int accept_ask(object me, string topic)
 {
         switch (topic)
         {
-        case "��ɨǧ��" :
+        case "橫掃千軍" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/baisheng-daofa/heng",
-                           "name"    : "��ɨǧ��",
+                           "name"    : "橫掃千軍",
                            "sk1"     : "baisheng-daofa",
-                           "msg1"    : "$N΢΢���˵�ͷ����$n��������"
-                                       "�ֹ��˼��䣬�漴������������"
-                                       "������ն�Ȼ���ʾ�˰��졣$n��"
-                                       "һ��Ĭ��������ֱ��$N��ʾ����"
-                                       "��ͻȻ˫��һ�����ƺ�����ѧ��"
-                                       "�������µ�ͻ�ơ�",
-                           "msg2"    : "�������������������������"
-                                       "������ͬС�ɡ�",
+                           "msg1"    : "$N微微點了點頭，在$n耳旁輕聲"
+                                       "嘀咕了幾句，隨即又伸手作刀，"
+                                       "左劈右斬比劃演示了半天。$n在"
+                                       "一旁默不做聲，直到$N演示結束"
+                                       "，突然雙眸一亮，似乎在武學上"
+                                       "又有了新的突破。",
+                           "msg2"    : "這招乃是我窮集畢生精力所創，"
+                                       "威力非同小可。",
                            "lv1"     : 150,
                            "force"   : 200,
                            "gongxian": 600,

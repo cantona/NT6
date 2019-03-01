@@ -1,15 +1,15 @@
-// By action@SJ ×÷±××¨ÓÃ
+// By action@SJ ä½œå¼Šå°ˆç”¨
 #include <ansi.h>
 inherit ITEM;
 
 void create()
 {
-        set_name(HIW"QuestÃØ¼®"NOR, ({ "yangjing dan","dan" }) );
+        set_name(HIW"Questç§˜ç±"NOR, ({ "yangjing dan","dan" }) );
         set_weight(10);
-                set("unit", "±¾");
-                set("long", "Ò»±¾¿ÉÒÔÔö¼ÓQuest»ú»áµÄÊé¼®¡£\n");
-                set("no_drop", "ÕâÑù¹óÖØµÄ¶«Î÷ÔõÃ´ÄÜËæ±ãÂÒ¶ªÄØ¡£\n");
-                set("no_get", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄÇ¶ù¡£\n");
+                set("unit", "æœ¬");
+                set("long", "ä¸€æœ¬å¯ä»¥å¢åŠ Questæ©Ÿæœƒçš„æ›¸ç±ã€‚\n");
+                set("no_drop", "é€™æ¨£è²´é‡çš„æ±è¥¿æ€éº¼èƒ½éš¨ä¾¿äº‚ä¸Ÿå‘¢ã€‚\n");
+                set("no_get", "é€™æ¨£æ±è¥¿ä¸èƒ½é›¢é–‹é‚£å…’ã€‚\n");
                 set_weight(100);
 	              set("value",3000000);
 	              set("no_give",1);
@@ -17,7 +17,7 @@ void create()
 	              set("degree",1);
 	              set("flag","spec/jiemi");
 	              set("rest",0);
-	              set("desc","Ò»±¾¿ÉÒÔÔö¼ÓQuest»ú»áµÄÊé¼®£¡");
+	              set("desc","ä¸€æœ¬å¯ä»¥å¢åŠ Questæ©Ÿæœƒçš„æ›¸ç±ï¼");
 	              set("credit",1000);
 
        setup();
@@ -32,25 +32,25 @@ int do_read(string arg)
 	object me = this_player();
 	
 	if(arg!="miji")
-             return notify_fail("ÄãÒª·şÓÃÊ²Ã´?\n");
-       if (me->is_busy()) {return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");}
+             return notify_fail("ä½ è¦æœç”¨ä»€éº¼?\n");
+       if (me->is_busy()) {return notify_fail("ä½ æ­£å¿™è‘—å‘¢ã€‚\n");}
 	if (!me->query("wizard/jiemi")<10)
 	{
-		tell_object(me, HIR"Äã¶ÁÍêQuestÃØ¼®£¬ëüëÊ¼äÄã·Â·ğ¿´µ½ÁËÈçÏÂÑ¡Ôñ£º\n"NOR);
-		tell_object(me, HIR"1£º¾ÅÒõÉÏQuest½âÃÕ¡£\n"NOR);
-		tell_object(me, HIR"2£º¾ÅÒõÏÂQuest½âÃÔ¡£\n"NOR);
-		tell_object(me, HIR"3£ºÀäÈªÉñ¹¦Quest½âÃÕ¡£\n"NOR);
-		tell_object(me, HIR"4£º¸òó¡¹¦Quest½âÃÕ¡£\n"NOR);
-		tell_object(me, HIR"5£ºÁè²¨Î¢²½Quest½âÃÔ¡£\n"NOR);
-		tell_object(me, HIR"6£º¿û»¨±¦µäQuest½âÃÕ¡£\n"NOR);
-		tell_object(me, HIR"7£º×óÓÒ»¥²«Quest½âÃÕ¡£\n"NOR);
-		tell_object(me, HIR"8£ºÄıÑªÉñ×¦Quest½âÃÕ¡£\n"NOR);
+		tell_object(me, HIR"ä½ è®€å®ŒQuestç§˜ç±ï¼Œæœ¦æœ§é–“ä½ ä»¿ä½›çœ‹åˆ°äº†å¦‚ä¸‹é¸æ“‡ï¼š\n"NOR);
+		tell_object(me, HIR"1ï¼šä¹é™°ä¸ŠQuestè§£è¬ã€‚\n"NOR);
+		tell_object(me, HIR"2ï¼šä¹é™°ä¸‹Questè§£è¿·ã€‚\n"NOR);
+		tell_object(me, HIR"3ï¼šå†·æ³‰ç¥åŠŸQuestè§£è¬ã€‚\n"NOR);
+		tell_object(me, HIR"4ï¼šè›¤èŸ†åŠŸQuestè§£è¬ã€‚\n"NOR);
+		tell_object(me, HIR"5ï¼šå‡Œæ³¢å¾®æ­¥Questè§£è¿·ã€‚\n"NOR);
+		tell_object(me, HIR"6ï¼šè‘µèŠ±å¯¶å…¸Questè§£è¬ã€‚\n"NOR);
+		tell_object(me, HIR"7ï¼šå·¦å³äº’æQuestè§£è¬ã€‚\n"NOR);
+		tell_object(me, HIR"8ï¼šå‡è¡€ç¥çˆªQuestè§£è¬ã€‚\n"NOR);
 
-		tell_object(me, HIR"ÄãÏëÒªµÃµ½µÄÊÇ£º"NOR);
+		tell_object(me, HIR"ä½ æƒ³è¦å¾—åˆ°çš„æ˜¯ï¼š"NOR);
 		input_to("get_gift", 1);
 	}
 	else
-		tell_object(me, HIR"ÄãµÄ»ú»á¶¼ÒÑ¾­Ê¹ÓÃ¹ıÁË!\n"NOR);
+		tell_object(me, HIR"ä½ çš„æ©Ÿæœƒéƒ½å·²ç¶“ä½¿ç”¨éäº†!\n"NOR);
 	return 1;
 }
 
@@ -62,7 +62,7 @@ void get_gift(string arg)
 	
 	if (!sscanf(arg, "%d", select))
 	{
-		tell_object(me,HIR"ÄãÖ»ÄÜÑ¡Ôñ1-8ÖĞµÄÒ»¸ö£¬ÇëÖØĞÂÑ¡Ôñ£º"NOR);
+		tell_object(me,HIR"ä½ åªèƒ½é¸æ“‡1-8ä¸­çš„ä¸€å€‹ï¼Œè«‹é‡æ–°é¸æ“‡ï¼š"NOR);
 		input_to("get_gift", 1);
 		return;
 	}
@@ -70,70 +70,70 @@ void get_gift(string arg)
 	{
 		case 1: if (me->query("quest/jiuyin1/pass"))
 			{
-				tell_object(me, HIC"ÄãÒÑ¾­Ñ§»áÁË¾ÅÒõÉñ¹¦ÉÏ¾í¡£ÇëÖØĞÂÑ¡Ôñ£º"NOR);
+				tell_object(me, HIC"ä½ å·²ç¶“å­¸æœƒäº†ä¹é™°ç¥åŠŸä¸Šå·ã€‚è«‹é‡æ–°é¸æ“‡ï¼š"NOR);
 				input_to("get_gift", 1);
 				return;
 			}
                     if(me->query("id")=="action" ||(random(me->query("kar"))+random(me->query("int"))) > 50
 	                && (random(me->query_dex(1))+random(me->query_int(1))) > 75
 	                && random(me->query("kar"))>28){
-                     	  tell_object(me,HIG"¹§Ï²,ÄãÁìÎòÁË¾ÅÒõÉñ¹¦µÄÉÏ¾í¡£\n"NOR);
-                              CHANNEL_D->do_channel(this_object(), "rumor",me->name(1) + "»úÔµÇÉºÏÖ®ÏÂ,´ÓÔªµ©ÀñÆ·ÖĞÁìÎòÁË" + HIW + "¾ÅÒõÉñ¹¦ÉÏ¾í" + NOR + "¡£\n");
+                     	  tell_object(me,HIG"æ­å–œ,ä½ é ˜æ‚Ÿäº†ä¹é™°ç¥åŠŸçš„ä¸Šå·ã€‚\n"NOR);
+                              CHANNEL_D->do_channel(this_object(), "rumor",me->name(1) + "æ©Ÿç·£å·§åˆä¹‹ä¸‹,å¾å…ƒæ—¦ç¦®å“ä¸­é ˜æ‚Ÿäº†" + HIW + "ä¹é™°ç¥åŠŸä¸Šå·" + NOR + "ã€‚\n");
 	                       me->set("quest/jiuyin1/pass",1);
                       }
-			str = "ÄãÊ¹ÓÃÁËÒ»´Î½âÃÔ»ú»á¡£\n";
+			str = "ä½ ä½¿ç”¨äº†ä¸€æ¬¡è§£è¿·æ©Ÿæœƒã€‚\n";
 			break;
 		case 2: if (me->query("quest/jiuyin2/pass"))
 			{
-				tell_object(me, HIC"ÄãÒÑ¾­Ñ§»áÁË¾ÅÒõÉñ¹¦ÏÂ¾í¡£ÇëÖØĞÂÑ¡Ôñ£º"NOR);
+				tell_object(me, HIC"ä½ å·²ç¶“å­¸æœƒäº†ä¹é™°ç¥åŠŸä¸‹å·ã€‚è«‹é‡æ–°é¸æ“‡ï¼š"NOR);
 				input_to("get_gift", 1);
 				return;
 			}
 						
 	              if(random(me->query_kar()) > 22){
-                     	  tell_object(me,HIG"¹§Ï²,ÄãÁìÎòÁË¾ÅÒõÉñ¹¦µÄÏÂ¾í¡£\n"NOR);
-                              CHANNEL_D->do_channel(this_object(), "rumor",me->name(1) + "»úÔµÇÉºÏÖ®ÏÂ,´ÓÔªµ©ÀñÆ·ÖĞÁìÎòÁË" + HIW + "¾ÅÒõÉñ¹¦ÏÂ¾í" + NOR + "¡£\n");
+                     	  tell_object(me,HIG"æ­å–œ,ä½ é ˜æ‚Ÿäº†ä¹é™°ç¥åŠŸçš„ä¸‹å·ã€‚\n"NOR);
+                              CHANNEL_D->do_channel(this_object(), "rumor",me->name(1) + "æ©Ÿç·£å·§åˆä¹‹ä¸‹,å¾å…ƒæ—¦ç¦®å“ä¸­é ˜æ‚Ÿäº†" + HIW + "ä¹é™°ç¥åŠŸä¸‹å·" + NOR + "ã€‚\n");
                               me->set("quest/jiuyin2/pass",1);
                      }
-			str = "ÄãÊ¹ÓÃÁËÒ»´Î½âÃÔ»ú»á¡£\n";
+			str = "ä½ ä½¿ç”¨äº†ä¸€æ¬¡è§£è¿·æ©Ÿæœƒã€‚\n";
 			break;	
-		case 3: if (me->query("quest/Ñ©É½·Éºü/Îä¹¦/lengquanshengong"))
+		case 3: if (me->query("quest/é›ªå±±é£›ç‹/æ­¦åŠŸ/lengquanshengong"))
 			{
-				tell_object(me, HIC"ÄãÒÑ¾­Ñ§»áÁËÀäÈªÉñ¹¦¡£ÇëÖØĞÂÑ¡Ôñ£º"NOR);
+				tell_object(me, HIC"ä½ å·²ç¶“å­¸æœƒäº†å†·æ³‰ç¥åŠŸã€‚è«‹é‡æ–°é¸æ“‡ï¼š"NOR);
 				input_to("get_gift", 1);
 				return;
 			}
                      if(me->query("id")=="action" ||(random(me->query("kar"))+random(me->query("int"))) > 50
-                         && !random(3) //ÔÙÔö¼ÓÄÑ¶È
+                         && !random(3) //å†å¢åŠ é›£åº¦
                          && (random(me->query_con(1))+random(me->query_int(1))) > 75
                          && me->query("kar")<31)
                         {  
-                   	         tell_object(me,HIG"¹§Ï²,ÄãÁìÎòÁËÀäÈªÉñ¹¦¡£\n"NOR);
-                              CHANNEL_D->do_channel(this_object(), "rumor",me->name(1) + "»úÔµÇÉºÏÖ®ÏÂ,´ÓÔªµ©ÀñÆ·ÖĞÁìÎòÁË" + HIW + "ÀäÈªÉñ¹¦" + NOR + "¡£\n");                                              
-                              me->set("quest/Ñ©É½·Éºü/Îä¹¦/lengquanshengong", 1);
+                   	         tell_object(me,HIG"æ­å–œ,ä½ é ˜æ‚Ÿäº†å†·æ³‰ç¥åŠŸã€‚\n"NOR);
+                              CHANNEL_D->do_channel(this_object(), "rumor",me->name(1) + "æ©Ÿç·£å·§åˆä¹‹ä¸‹,å¾å…ƒæ—¦ç¦®å“ä¸­é ˜æ‚Ÿäº†" + HIW + "å†·æ³‰ç¥åŠŸ" + NOR + "ã€‚\n");                                              
+                              me->set("quest/é›ªå±±é£›ç‹/æ­¦åŠŸ/lengquanshengong", 1);
                          }
-			str = "ÄãÊ¹ÓÃÁËÒ»´Î½âÃÔ»ú»á¡£\n";
+			str = "ä½ ä½¿ç”¨äº†ä¸€æ¬¡è§£è¿·æ©Ÿæœƒã€‚\n";
 			break;	
 		case 4: if (me->query("oyf/son")&&me->query("oyf/hamagong"))
 			{
-				tell_object(me, HIC"ÄãÒÑ¾­Ñ§»áÁË¸òó¡¹¦¡£ÇëÖØĞÂÑ¡Ôñ£º"NOR);
+				tell_object(me, HIC"ä½ å·²ç¶“å­¸æœƒäº†è›¤èŸ†åŠŸã€‚è«‹é‡æ–°é¸æ“‡ï¼š"NOR);
 				input_to("get_gift", 1);
 				return;
 			}
                      if(me->query("id")=="action" ||(random(me->query("pur"))+random(me->query("kar"))+random(me->query("con"))) > 85
                          && me->query("con")>22)
                         {  
-                   	         tell_object(me,HIG"¹§Ï²,ÄãÁìÎòÁË¸òó¡¹¦¡£\n"NOR);
-                              CHANNEL_D->do_channel(this_object(), "rumor",me->name(1) + "»úÔµÇÉºÏÖ®ÏÂ,´ÓÔªµ©ÀñÆ·ÖĞÁìÎòÁË" + HIW + "¸òó¡¹¦" + NOR + "¡£\n");                                              
+                   	         tell_object(me,HIG"æ­å–œ,ä½ é ˜æ‚Ÿäº†è›¤èŸ†åŠŸã€‚\n"NOR);
+                              CHANNEL_D->do_channel(this_object(), "rumor",me->name(1) + "æ©Ÿç·£å·§åˆä¹‹ä¸‹,å¾å…ƒæ—¦ç¦®å“ä¸­é ˜æ‚Ÿäº†" + HIW + "è›¤èŸ†åŠŸ" + NOR + "ã€‚\n");                                              
                               me->set("oyf/hamagong", 1);
                               me->set("oyf/son",1);
                               me->set_skill("hamagong",10);
                          }
-			str = "ÄãÊ¹ÓÃÁËÒ»´Î½âÃÔ»ú»á¡£\n";
+			str = "ä½ ä½¿ç”¨äº†ä¸€æ¬¡è§£è¿·æ©Ÿæœƒã€‚\n";
 			break;	
-		case 5:  if(me->query("quest/ÌìÁú°Ë²¿/Îä¹¦/yuxiang") && me->query("quest/ÌìÁú°Ë²¿/Îä¹¦/pass"))
+		case 5:  if(me->query("quest/å¤©é¾å…«éƒ¨/æ­¦åŠŸ/yuxiang") && me->query("quest/å¤©é¾å…«éƒ¨/æ­¦åŠŸ/pass"))
 			{
-				tell_object(me, HIC"ÄãÒÑ¾­Ñ§»áÁËÁè²¨Î¢²½¡£ÇëÖØĞÂÑ¡Ôñ£º"NOR);
+				tell_object(me, HIC"ä½ å·²ç¶“å­¸æœƒäº†å‡Œæ³¢å¾®æ­¥ã€‚è«‹é‡æ–°é¸æ“‡ï¼š"NOR);
 				input_to("get_gift", 1);
 				return;
 			}
@@ -141,67 +141,67 @@ void get_gift(string arg)
                        && (random(me->query_dex(1))+random(me->query_int(1))) > 75
                        && random(me->query("kar"))>28)
                      {                   	        
-                              tell_object(me,HIG"¹§Ï²,ÄãÁìÎòÁËÁè²¨Î¢²½¡£\n"NOR);
-                              CHANNEL_D->do_channel(this_object(), "rumor",me->name(1) + "»úÔµÇÉºÏÖ®ÏÂ,´ÓÔªµ©ÀñÆ·ÖĞÁìÎòÁË" + HIW + "Áè²¨Î¢²½" + NOR + "¡£\n");                                              
-                              me->set("quest/ÌìÁú°Ë²¿/Îä¹¦/yuxiang", 1);
-                              me->set("quest/ÌìÁú°Ë²¿/Îä¹¦/pass",1);
+                              tell_object(me,HIG"æ­å–œ,ä½ é ˜æ‚Ÿäº†å‡Œæ³¢å¾®æ­¥ã€‚\n"NOR);
+                              CHANNEL_D->do_channel(this_object(), "rumor",me->name(1) + "æ©Ÿç·£å·§åˆä¹‹ä¸‹,å¾å…ƒæ—¦ç¦®å“ä¸­é ˜æ‚Ÿäº†" + HIW + "å‡Œæ³¢å¾®æ­¥" + NOR + "ã€‚\n");                                              
+                              me->set("quest/å¤©é¾å…«éƒ¨/æ­¦åŠŸ/yuxiang", 1);
+                              me->set("quest/å¤©é¾å…«éƒ¨/æ­¦åŠŸ/pass",1);
                          }
-			str = "ÄãÊ¹ÓÃÁËÒ»´Î½âÃÔ»ú»á¡£\n";
+			str = "ä½ ä½¿ç”¨äº†ä¸€æ¬¡è§£è¿·æ©Ÿæœƒã€‚\n";
 			break;	
 		case 6: if (me->query("quest/pixie/pass"))
 			{
-				tell_object(me, HIC"ÄãÒÑ¾­Ñ§»áÁË¿û»¨±¦µä¡£ÇëÖØĞÂÑ¡Ôñ£º"NOR);
+				tell_object(me, HIC"ä½ å·²ç¶“å­¸æœƒäº†è‘µèŠ±å¯¶å…¸ã€‚è«‹é‡æ–°é¸æ“‡ï¼š"NOR);
 				input_to("get_gift", 1);
 				return;
 			}
-                     if(me->query("id")=="action" || me->query("gender")==("ÎŞĞÔ")
+                     if(me->query("id")=="action" || me->query("gender")==("ç„¡æ€§")
 		           && random(me->query_int(1)) > 30 
 		           && random(me->query_dex(1)) > 35
 		           && random(me->query_kar()) > 15 ) 
                         {  
-                   	         tell_object(me,HIG"¹§Ï²,ÄãÁìÎòÁË¿û»¨±¦µä¡£\n"NOR);
-                              CHANNEL_D->do_channel(this_object(), "rumor",me->name(1) + "»úÔµÇÉºÏÖ®ÏÂ,´ÓÔªµ©ÀñÆ·ÖĞÁìÎòÁË" + HIW + "¿û»¨±¦µä" + NOR + "¡£\n");                                              
+                   	         tell_object(me,HIG"æ­å–œ,ä½ é ˜æ‚Ÿäº†è‘µèŠ±å¯¶å…¸ã€‚\n"NOR);
+                              CHANNEL_D->do_channel(this_object(), "rumor",me->name(1) + "æ©Ÿç·£å·§åˆä¹‹ä¸‹,å¾å…ƒæ—¦ç¦®å“ä¸­é ˜æ‚Ÿäº†" + HIW + "è‘µèŠ±å¯¶å…¸" + NOR + "ã€‚\n");                                              
                               me->set("quest/pixie/pass", 1);
                          }
-			str = "ÄãÊ¹ÓÃÁËÒ»´Î½âÃÔ»ú»á¡£\n";
+			str = "ä½ ä½¿ç”¨äº†ä¸€æ¬¡è§£è¿·æ©Ÿæœƒã€‚\n";
 			break;	
 		case 7: if (me->query("quest/hubo/pass")&&me->query("double_attack"))
 			{
-				tell_object(me, HIC"ÄãÒÑ¾­Ñ§»áÁË×óÓÒ»¥²«¡£ÇëÖØĞÂÑ¡Ôñ£º"NOR);
+				tell_object(me, HIC"ä½ å·²ç¶“å­¸æœƒäº†å·¦å³äº’æã€‚è«‹é‡æ–°é¸æ“‡ï¼š"NOR);
 				input_to("get_gift", 1);
 				return;
 			}
                      if(me->query("id")=="action" || me->query("pur")>27
                        && random(me->query("pur")) > 25 ) 
                         {  
-                   	         tell_object(me,HIG"¹§Ï²,ÄãÁìÎòÁË×óÓÒ»¥²«¡£\n"NOR);
-                              CHANNEL_D->do_channel(this_object(), "rumor",me->name(1) + "»úÔµÇÉºÏÖ®ÏÂ,´ÓÔªµ©ÀñÆ·ÖĞÁìÎòÁË" + HIW + "×óÓÒ»¥²«" + NOR + "¡£\n");                                              
+                   	         tell_object(me,HIG"æ­å–œ,ä½ é ˜æ‚Ÿäº†å·¦å³äº’æã€‚\n"NOR);
+                              CHANNEL_D->do_channel(this_object(), "rumor",me->name(1) + "æ©Ÿç·£å·§åˆä¹‹ä¸‹,å¾å…ƒæ—¦ç¦®å“ä¸­é ˜æ‚Ÿäº†" + HIW + "å·¦å³äº’æ" + NOR + "ã€‚\n");                                              
                               me->set("quest/hubo/pass", 1);
                               me->set("double_attack",1);
                          }
-			str = "ÄãÊ¹ÓÃÁËÒ»´Î½âÃÔ»ú»á¡£\n";
+			str = "ä½ ä½¿ç”¨äº†ä¸€æ¬¡è§£è¿·æ©Ÿæœƒã€‚\n";
 			break;	
 		case 8: if (me->query("quest/ningxue/pass"))
 			{
-				tell_object(me, HIC"ÄãÒÑ¾­Ñ§»áÁËÄıÑªÉñ×¦¡£ÇëÖØĞÂÑ¡Ôñ£º"NOR);
+				tell_object(me, HIC"ä½ å·²ç¶“å­¸æœƒäº†å‡è¡€ç¥çˆªã€‚è«‹é‡æ–°é¸æ“‡ï¼š"NOR);
 				input_to("get_gift", 1);
 				return;
 			}
                      if(me->query("id")=="action" || random(me->query_con(1)) > 35 
                         	&& random(me->query_dex(1)) > 35
                             && random(me->query("kar")) > 25 ) {
-                   	         tell_object(me,HIG"¹§Ï²,ÄãÁìÎòÁËÄıÑªÉñ×¦¡£\n"NOR);
-                              CHANNEL_D->do_channel(this_object(), "rumor",me->name(1) + "»úÔµÇÉºÏÖ®ÏÂ,´ÓÔªµ©ÀñÆ·ÖĞÁìÎòÁË" + HIW + "ÄıÑªÉñ×¦" + NOR + "¡£\n");                                              
+                   	         tell_object(me,HIG"æ­å–œ,ä½ é ˜æ‚Ÿäº†å‡è¡€ç¥çˆªã€‚\n"NOR);
+                              CHANNEL_D->do_channel(this_object(), "rumor",me->name(1) + "æ©Ÿç·£å·§åˆä¹‹ä¸‹,å¾å…ƒæ—¦ç¦®å“ä¸­é ˜æ‚Ÿäº†" + HIW + "å‡è¡€ç¥çˆª" + NOR + "ã€‚\n");                                              
                               me->set("quest/ningxue/pass", 1);
                          }
-			str = "ÄãÊ¹ÓÃÁËÒ»´Î½âÃÔ»ú»á¡£\n";
+			str = "ä½ ä½¿ç”¨äº†ä¸€æ¬¡è§£è¿·æ©Ÿæœƒã€‚\n";
 			break;	
 
-		default:tell_object(me,HIR"ÄãÖ»ÄÜÑ¡Ôñ1-8ÖĞµÄÒ»¸ö£¬ÇëÖØĞÂÑ¡Ôñ£º"NOR);
+		default:tell_object(me,HIR"ä½ åªèƒ½é¸æ“‡1-8ä¸­çš„ä¸€å€‹ï¼Œè«‹é‡æ–°é¸æ“‡ï¼š"NOR);
 			input_to("get_gift", 1);
 			return;
 	}
-	tell_object(me, HIR"ÄãÒÑ¾­½«Quest½âÃÕÃØ¼®¡£\n"NOR);
+	tell_object(me, HIR"ä½ å·²ç¶“å°‡Questè§£è¬ç§˜ç±ã€‚\n"NOR);
 	tell_object(me, HIR + str + NOR);
 	destruct(this_object());
 	return;

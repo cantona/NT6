@@ -1,4 +1,4 @@
-// edemote.c emote�༭��
+// edemote.c emote編輯器
 #include <ansi.h>
 inherit ITEM;
 inherit F_AUTOLOAD;
@@ -6,12 +6,12 @@ void setup()
 {}
 void create()
 {
-        set_name(HIC "���鶯�ʱ༭��" NOR, ({"emote editor", "editor"}));
+        set_name(HIC "表情動詞編輯器" NOR, ({"emote editor", "editor"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "��");
-                set("long", "����һ�ܿ������ֵֹ���������������˵��(help editor)��\n");
+                set("unit", "架");
+                set("long", "這是一架看起來怪怪的儀器，上面貼著說明(help editor)。\n");
                 set("value", 1);
                 set("no_sell", 1);
         }
@@ -37,23 +37,23 @@ void init()
 int do_help(string arg)
 {
         if (! arg || ! id(arg))
-                return notify_fail("��Ҫ��ʲô������\n");
+                return notify_fail("你要看什麼幫助？\n");
         write (@HELP
-���ڱ��鶯�ʱ༭����˵����
+關于表情動詞編輯器的說明：
 
 edemote [-d] [-p] verb
-���������ڱ༭����ʾ��ɾ��һ�����鶯�ʡ�����verb�Ǳ��鶯�ʣ�
-���ʹ����-d������ɾ���ö��ʣ����ʹ����-p��������ʾ�ñ�
-�鶯�ʾ���ı���������Ϣ������༭�ı��鶯��ԭ���Ǵ��ڵģ�
-���ڱ༭��ʱ�����ֱ������"." �Ա���ԭ�е���Ӧ��Ŀ��
+該命令用于編輯，顯示，刪除一個表情動詞。其中verb是表情動詞，
+如果使用了-d參數則將刪除該動詞，如果使用了-p參數將顯示該表
+情動詞具體的表情描述信息。如果編輯的表情動詞原先是存在的，
+則在編輯的時候可以直接輸入"." 以保留原有的相應條目。
 
 cpemote emote1 emote2
-��������Խ���һ�����鶯�ʵ��������Ƴɵڶ������ʵ���������
-�Ƶ�ʱ��ԭ�ȱ���û�еڶ������ʵ������������Ժ��һ�����ʵ�
-������Ȼ���ڣ�������������������������ͬ�ı��鶯�ʡ�
+該命令可以將第一個表情動詞的描述復制成第二個動詞的描述。復
+制的時候原先必須沒有第二個動詞的描述，復制以後第一個動詞的
+描述仍然存在，即將有兩個獨立但是描述相同的表情動詞。
 
 rnemote emote1 emote2
-��������Ըĵ�һ�����鶯�ʵ����֣������������仯��
+該命令可以改掉一個表情動詞的名字，但是描述不變化。
 
 HELP );
         return 1;

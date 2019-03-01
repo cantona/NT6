@@ -7,13 +7,13 @@ inherit WRISTS;
 
 void create()
 {
-        set_name("»¤Íó", ({"wrists"}));
+        set_name("è­·è…•", ({"wrists"}));
                 set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
                 set("material", "iron");
-                set("unit", "¸±");
+                set("unit", "å‰¯");
                 set("armor_prop/armor", 1);
         }
         setup();

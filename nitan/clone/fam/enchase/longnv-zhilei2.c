@@ -3,15 +3,15 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIG "ÁúÅ®Ö®Àá" NOR, ({"longnv zhilei", "longnv", "zhilei" }));
+        set_name(HIG "é¾å¥³ä¹‹æ·š" NOR, ({"longnv zhilei", "longnv", "zhilei" }));
         set_weight(900);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIG "´«ËµÁúÅ®Ö®ÀáÄË¶«º£Ğ¡ÁúÅ®ĞÄÀáÄı¶ø³É£¬ÓµÓĞ×ÅÁîÊÀÈËÎŞ·¨¿¹¾ÜµÄÁ¦Á¿¡£\n" NOR);
-                set("unit", "¿é");
+                set("long", HIG "å‚³èªªé¾å¥³ä¹‹æ·šä¹ƒæ±æµ·å°é¾å¥³å¿ƒæ·šå‡è€Œæˆï¼Œæ“æœ‰è‘—ä»¤ä¸–äººç„¡æ³•æŠ—æ‹’çš„åŠ›é‡ã€‚\n" NOR);
+                set("unit", "å¡Š");
                 set("value", 5000);
-                set("enchase/name", "ÁúÅ®Ö®Àá");
+                set("enchase/name", "é¾å¥³ä¹‹æ·š");
                 set("enchase/point", 200);
                   set("enchase/type", "all");
                 set("enchase/cur_firm", 90);

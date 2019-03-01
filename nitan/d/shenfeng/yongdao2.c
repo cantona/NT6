@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��");
+        set("short", "甬道");
         set("long", @LONG
-�߹��˳���һ�������������ӳ���˵�Ӱ�ӣ���ʱ����
-�帹�����׻������������ϣ���ƽ����֮�棬ʵ�Դ�ʱΪ���ˡ�
+走過了長長一條甬道，白玉壁上映出人的影子，此時深入
+峰腹，吉兇禍福，殊難逆料，生平遭遇之奇，實以此時為最了。
 LONG);
         set("exits", ([
                 "north" : __DIR__"yongdao3",

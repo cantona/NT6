@@ -18,19 +18,19 @@ int exert(object me, object target)
         }
 
         if (! me->is_fighting(target))
-                return notify_fail("ÄãÖ»ÄÜÓÃº®Æø¹¥»÷Õ½¶·ÖĞµÄ¶ÔÊÖ¡£\n");
+                return notify_fail("ä½ åªèƒ½ç”¨å¯’æ°£æ”»æ“Šæˆ°é¬¥ä¸­çš„å°æ‰‹ã€‚\n");
 
         if (me->query_skill("bingxin-jue", 1) < 150)
-                return notify_fail("ÄãµÄ±ùĞÄ¾ö»ğºò²»¹»£¬ÎŞ·¨ÔËÓÃº®Æø¡£\n");
+                return notify_fail("ä½ çš„å†°å¿ƒæ±ºç«å€™ä¸å¤ ï¼Œç„¡æ³•é‹ç”¨å¯’æ°£ã€‚\n");
 
         if( query("neili", me)<1000 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»!");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ !");
 
        if (! living(target))
-              return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+              return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIW "$N" HIW "Ä¬ÔË±ùĞÄ¾ö£¬Ò»¹Éº®ÆøÓ­ÃæÆËÏò$n"
-              HIW "£¬ËÄÖÜµÇÊ±Ñ©»¨Æ®Æ®¡£\n" NOR;
+        msg = HIW "$N" HIW "é»˜é‹å†°å¿ƒæ±ºï¼Œä¸€è‚¡å¯’æ°£è¿é¢æ’²å‘$n"
+              HIW "ï¼Œå››å‘¨ç™»æ™‚é›ªèŠ±é£„é£„ã€‚\n" NOR;
 
         ap = me->query_skill("force");
         dp = me->query_skill("force");
@@ -47,12 +47,12 @@ int exert(object me, object target)
                 else
                         set("neili", 0, target);
 
-                msg += HIR "$n" HIR "ºöÈ»¾õµÃÒ»ÕóÍ¸¹Çº®Òâ£¬ö®Ê±¼ä"
-                       "»ëÉíµÄÑªÒº¼¸ºõ¶¼ÒªÄı¹ÌÁË¡£\n" NOR;
+                msg += HIR "$n" HIR "å¿½ç„¶è¦ºå¾—ä¸€é™£é€éª¨å¯’æ„ï¼Œéœæ™‚é–“"
+                       "æ¸¾èº«çš„è¡€æ¶²å¹¾ä¹éƒ½è¦å‡å›ºäº†ã€‚\n" NOR;
                 target->start_busy(1);
         } else
-                msg += HIY "$n" HIY "¸Ğµ½Ò»Õóº®Òâ×ÔĞÄµ×·ºÆğ£¬Á¬Ã¦"
-                       "ÔË¶¯µÖ¿¹£¬¿°¿±ÎŞÊÂ¡£\n" NOR;
+                msg += HIY "$n" HIY "æ„Ÿåˆ°ä¸€é™£å¯’æ„è‡ªå¿ƒåº•æ³›èµ·ï¼Œé€£å¿™"
+                       "é‹å‹•æŠµæŠ—ï¼Œå ªå‹˜ç„¡äº‹ã€‚\n" NOR;
 
         message_combatd(msg, me, target);
 

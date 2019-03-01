@@ -2,16 +2,16 @@
 inherit ITEM;
 void create()
 {
-        set_name(HIR "ÑªÄ¢¹½" NOR, ({"xuemogu"}));
+        set_name(HIR "è¡€è˜‘è‡" NOR, ({"xuemogu"}));
         set_weight(1);
         if (clonep())
                 set_default_object(__FILE__);
         else {  
-        	set("long", HIC "ÑªÄ¢¹½ÄËÎüÊÕÁË99ÖÖÉúÎïÖ®Ñª»¯³É¡£\n" + 
-        	                "·şÊ³(fushi xuemogu)ºó¿ÉÓÀ¾ÃÌáÉı¾«Á¦ÉÏÏŞ5µã¡£\n" HIC
-        	                "ÓµÓĞÕß£ºxxmr\n" NOR);
-                set("unit", "¿Å");
-                set("owner", "xxmr"); // °ó¶¨ÓµÓĞÕß
+        	set("long", HIC "è¡€è˜‘è‡ä¹ƒå¸æ”¶äº†99ç¨®ç”Ÿç‰©ä¹‹è¡€åŒ–æˆã€‚\n" + 
+        	                "æœé£Ÿ(fushi xuemogu)å¾Œå¯æ°¸ä¹…æå‡ç²¾åŠ›ä¸Šé™5é»ã€‚\n" HIC
+        	                "æ“æœ‰è€…ï¼šxxmr\n" NOR);
+                set("unit", "é¡†");
+                set("owner", "xxmr"); // ç¶å®šæ“æœ‰è€…
 	        set("no_drop", 1);set("no_give", 1);set("no_store", 1);set("no_sell", 1);
         }
         setup();
@@ -29,19 +29,19 @@ int do_use(string arg)
 	me = this_player();
 
 	if (! arg || arg != query("id"))
-		return notify_fail("ÄãÒª·şÊ³Ê²Ã´£¿\n");
+		return notify_fail("ä½ è¦æœé£Ÿä»€éº¼ï¼Ÿ\n");
 
 	if (! objectp(ob = present(arg, me)))
-		return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâ¸ö¶«Î÷£¡\n");
+		return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™å€‹æ±è¥¿ï¼\n");
 
 	if (ob->query("owner") != me->query("id"))
-		return notify_fail(ob->name() + NOR "ÒÑ¾­ÓÚÆäËûÍæ¼Ò°ó¶¨£¡\n");
+		return notify_fail(ob->name() + NOR "å·²ç¶“äºå…¶ä»–ç©å®¶ç¶å®šï¼\n");
 	
 	me->add("drug_addjingli", 10);
 
-	tell_object(me, HIG "¹§Ï²£¡Äã·şÏÂ" + ob->name() + HIG "ºó£¬ÌáÉı¾«Á¦ÉÏÏŞ5µã£¡\n");
+	tell_object(me, HIG "æ­å–œï¼ä½ æœä¸‹" + ob->name() + HIG "å¾Œï¼Œæå‡ç²¾åŠ›ä¸Šé™5é»ï¼\n");
 	
-	log_file("super/"+ filter_color(query("name")) , me->query("id") + " at " + ctime(time()) + " Ê¹ÓÃ" + ob->name() + "¡£\n");
+	log_file("super/"+ filter_color(query("name")) , me->query("id") + " at " + ctime(time()) + " ä½¿ç”¨" + ob->name() + "ã€‚\n");
 	
 	me->save();
 	

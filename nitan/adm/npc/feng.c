@@ -1,15 +1,15 @@
-// ±¾³ÌĞòÓÃÓÚµêÆÌÅÄÂô£¬ÓÉWIZLELVELÈ¨ÏŞÒÔÉÏµÄÎ×Ê¦À´Æô¶¯
-// ÔÚÆô¶¯ÅÄÂôÖ®Ç°£¬Ê×ÏÈÇëÓÃcshshopÖ¸Áî³õÊ¼»¯ËùÓĞµêÆÌ×´Ì¬
-// Æô¶¯½ø³ÌÓĞÁ½ÖÖ·½Ê½£ºÎ×Ê¦ÊÖ¹¤²Ù×÷¡¢ÏµÍ³×Ô¶¯ÔËĞĞ
+// æœ¬ç¨‹åºç”¨äºåº—èˆ–æ‹è³£ï¼Œç”±WIZLELVELæ¬Šé™ä»¥ä¸Šçš„å·«å¸«ä¾†å•Ÿå‹•
+// åœ¨å•Ÿå‹•æ‹è³£ä¹‹å‰ï¼Œé¦–å…ˆè«‹ç”¨cshshopæŒ‡ä»¤åˆå§‹åŒ–æ‰€æœ‰åº—èˆ–ç‹€æ…‹
+// å•Ÿå‹•é€²ç¨‹æœ‰å…©ç¨®æ–¹å¼ï¼šå·«å¸«æ‰‹å·¥æ“ä½œã€ç³»çµ±è‡ªå‹•é‹è¡Œ
 
-// Èç¹ûÊÇÆô¶¯ÁËÊÖ¹¤²Ù×÷£¬ÔÚÖ÷³ÖÎ×Ê¦·¢ÉúÈçÏÂ×´¿ö£¬×Ô¶¯½ø³Ì½«½Ó¹ÜÅÄÂô£º
-// Ö÷³ÖÎ×Ê¦Àë¿ªÅÄÂô³¡
-// Ö÷³ÖÎ×Ê¦ÍËÏß
-// Ö÷³ÖÎ×Ê¦²»½øĞĞÈÎºÎÅÄÂô²Ù×÷³¬¹ı¹æ¶¨Ê±¼ä
-// Ö÷³ÖÎ×Ê¦¶ÏÏß
-// Ö÷³ÖÎ×Ê¦»èÃÔ»òÕßËÀÍö
+// å¦‚æœæ˜¯å•Ÿå‹•äº†æ‰‹å·¥æ“ä½œï¼Œåœ¨ä¸»æŒå·«å¸«ç™¼ç”Ÿå¦‚ä¸‹ç‹€æ³ï¼Œè‡ªå‹•é€²ç¨‹å°‡æ¥ç®¡æ‹è³£ï¼š
+// ä¸»æŒå·«å¸«é›¢é–‹æ‹è³£å ´
+// ä¸»æŒå·«å¸«é€€ç·š
+// ä¸»æŒå·«å¸«ä¸é€²è¡Œä»»ä½•æ‹è³£æ“ä½œè¶…éè¦å®šæ™‚é–“
+// ä¸»æŒå·«å¸«æ–·ç·š
+// ä¸»æŒå·«å¸«æ˜è¿·æˆ–è€…æ­»äº¡
 
-// ÅÄÂô¹ı³ÌÖĞ±¾NPCÎï¼şµÄ¸üĞÂ²»»áµ¼ÖÂÅÄÂô½ø³ÌµÄÖĞ¶Ï£¬±ÈÈçupdate,dest & clone
+// æ‹è³£éç¨‹ä¸­æœ¬NPCç‰©ä»¶çš„æ›´æ–°ä¸æœƒå°è‡´æ‹è³£é€²ç¨‹çš„ä¸­æ–·ï¼Œæ¯”å¦‚update,dest & clone
 
 #include <ansi.h>
 #include <getconfig.h>
@@ -17,43 +17,43 @@
 inherit NPC;
 inherit F_SAVE;
 
-#define WIZLEVEL 3 //  ÄÜ¹»Æô¶¯ºÍÖ´ĞĞÅÄÂôµÄÎ×Ê¦µÈ¼¶
-#define DISTANCE 8 //  ÅÄÂôÖĞ¼ä¸ôµÄÊ±¼ä£¨Ãë£©
-#define DELAY 30   //  ÅÄÂôÖĞÖ÷³ÖÎ×Ê¦Ã»ÓĞ½øĞĞÈÎºÎ¶¯×÷µÄµÈ´ıÊ±¼ä£¨Ãë£©
-                   //  ³¬¹ıÕâ¸öÊ±¼ä£¬×Ô¶¯½ø³Ì½Ó¹ÜÅÄÂô
+#define WIZLEVEL 3 //  èƒ½å¤ å•Ÿå‹•å’ŒåŸ·è¡Œæ‹è³£çš„å·«å¸«ç­‰ç´š
+#define DISTANCE 8 //  æ‹è³£ä¸­é–“éš”çš„æ™‚é–“ï¼ˆç§’ï¼‰
+#define DELAY 30   //  æ‹è³£ä¸­ä¸»æŒå·«å¸«æ²’æœ‰é€²è¡Œä»»ä½•å‹•ä½œçš„ç­‰å¾…æ™‚é–“ï¼ˆç§’ï¼‰
+                   //  è¶…éé€™å€‹æ™‚é–“ï¼Œè‡ªå‹•é€²ç¨‹æ¥ç®¡æ‹è³£
 
 string query_save_file();
-int do_start(string arg);                // Æô¶¯ÅÄÂô£¬²»Ê¹ÓÃarg²ÎÊı±íÊ¾Æô¶¯ÊÖ¹¤½ø³Ì
-int do_auction(string arg);                // Ö¸¶¨ÅÄÂôµÄµ±Ç°µêÆÌ
-int begin_auction();                        // µÈ´ıÍæ¼Ò¾ºÍ¶µÄÊØ»¤³ÌĞò
-int stop_auction();                        // ½áÊøµ±Ç°µêÆÌµÄÅÄÂô
-int do_jupai(string arg);                // Íæ¼Ò¾ºÍ¶ÖĞ¶Ï
-int go_jupai();                                // Íæ¼Ò¾ºÍ¶µÄÊØ»¤³ÌĞò
-int do_qiao();                                // Î×Ê¦Ğû¼ÛÒÔ¼°Âäé¢
-int do_auctionlist();                        // ²éÑ¯ÅÄÂôµêÆÌÁĞ±í
-int do_ban(string arg);                        // È¡Ïû|»Ö¸´ Íæ¼ÒÅÄÂô×Ê¸ñ
-int finish_auction(string arg);                // ½áÊøÅÄÂô
-void heart_beat();                        // ĞÄÌøÏß£¬ÊÖ¹¤ÅÄÂôÊØ»¤½ø³Ì
-object check_operator();                // ¼ì²éÖ÷³ÖÎ×Ê¦×´Ì¬º¯Êı
-int do_autoauction();                        // ½«ÊÖ¹¤½ø³Ì×ªÎª×Ô¶¯½ø³Ì
-int last_time = 0;                        // ×îºóÒ»´ÎÊÖ¹¤²Ù×÷µÄÊ±¼ä
-object operator;                        // ±¾±äÁ¿¼ÇÂ¼ÅÄÂôÖ÷³ÖÕß
+int do_start(string arg);                // å•Ÿå‹•æ‹è³£ï¼Œä¸ä½¿ç”¨argåƒæ•¸è¡¨ç¤ºå•Ÿå‹•æ‰‹å·¥é€²ç¨‹
+int do_auction(string arg);                // æŒ‡å®šæ‹è³£çš„ç•¶å‰åº—èˆ–
+int begin_auction();                        // ç­‰å¾…ç©å®¶ç«¶æŠ•çš„å®ˆè­·ç¨‹åº
+int stop_auction();                        // çµæŸç•¶å‰åº—èˆ–çš„æ‹è³£
+int do_jupai(string arg);                // ç©å®¶ç«¶æŠ•ä¸­æ–·
+int go_jupai();                                // ç©å®¶ç«¶æŠ•çš„å®ˆè­·ç¨‹åº
+int do_qiao();                                // å·«å¸«å®£åƒ¹ä»¥åŠè½æ£°
+int do_auctionlist();                        // æŸ¥è©¢æ‹è³£åº—èˆ–åˆ—è¡¨
+int do_ban(string arg);                        // å–æ¶ˆ|æ¢å¾© ç©å®¶æ‹è³£è³‡æ ¼
+int finish_auction(string arg);                // çµæŸæ‹è³£
+void heart_beat();                        // å¿ƒè·³ç·šï¼Œæ‰‹å·¥æ‹è³£å®ˆè­·é€²ç¨‹
+object check_operator();                // æª¢æŸ¥ä¸»æŒå·«å¸«ç‹€æ…‹å‡½æ•¸
+int do_autoauction();                        // å°‡æ‰‹å·¥é€²ç¨‹è½‰ç‚ºè‡ªå‹•é€²ç¨‹
+int last_time = 0;                        // æœ€å¾Œä¸€æ¬¡æ‰‹å·¥æ“ä½œçš„æ™‚é–“
+object operator;                        // æœ¬è®Šé‡è¨˜éŒ„æ‹è³£ä¸»æŒè€…
 
 void create()
 {
         seteuid(getuid());
         restore();
 
-        set_name("·ïÌìÄÏ", ({ "feng tiannan", "feng", "tiannan" }));
+        set_name("é³³å¤©å—", ({ "feng tiannan", "feng", "tiannan" }));
         set("long", @LONG
-Ëû¾ÍÊÇ·ğÉ½Îå»¢ÃÅÕÆÃÅÈË·ïÌìÄÏ£¬µ±ÄêÆ¾Ò»Ì×
-Îå»¢¹÷·¨ÃûÕğ½­ºş¡£ËäÈ»ÎªÎäÁÖÈËÊ¿£¬µ«È´ÊÇ
-¸»¼×Ò»·½¡£È«ÌìÏÂ¸÷´¦¶¼ÓĞËûµÄ²úÒµ¡£
+ä»–å°±æ˜¯ä½›å±±äº”è™é–€æŒé–€äººé³³å¤©å—ï¼Œç•¶å¹´æ†‘ä¸€å¥—
+äº”è™æ£æ³•åéœ‡æ±Ÿæ¹–ã€‚é›–ç„¶ç‚ºæ­¦æ—äººå£«ï¼Œä½†å»æ˜¯
+å¯Œç”²ä¸€æ–¹ã€‚å…¨å¤©ä¸‹å„è™•éƒ½æœ‰ä»–çš„ç”¢æ¥­ã€‚
 LONG);
-        set("title", "·ğÉ½Îå»¢ÃÅÕÆÃÅÈË");
-        set("nickname", HIY "ÄÏ°ÔÌì" NOR);
-        set("channel_id","·ïÌìÄÏ");
-        set("gender", "ÄĞĞÔ");
+        set("title", "ä½›å±±äº”è™é–€æŒé–€äºº");
+        set("nickname", HIY "å—éœ¸å¤©" NOR);
+        set("channel_id","é³³å¤©å—");
+        set("gender", "ç”·æ€§");
         set("age", 45);
         set("combat_exp", 800000);
         set("shen", -1);
@@ -78,8 +78,8 @@ LONG);
         if (! clonep(this_object()))
         {
                 move("/d/foshan/pmc");
-                message_vision(CYN "\n$N" CYN "×ßÁË¹ıÀ´£¬¿´ÁË¿´ÖÜ"
-                               "Î§£¬ÒõĞ¦Á½Éù¡£\n" NOR, this_object());
+                message_vision(CYN "\n$N" CYN "èµ°äº†éä¾†ï¼Œçœ‹äº†çœ‹å‘¨"
+                               "åœï¼Œé™°ç¬‘å…©è²ã€‚\n" NOR, this_object());
                 set("startroom", "/d/foshan/pmc");
         }
 
@@ -105,7 +105,7 @@ void init()
         add_action("do_jupai", "jupai");
 }
 
-//  ´æÅÌÎÄµµ
+//  å­˜ç›¤æ–‡æª”
 string query_save_file()
 {
         return "/data/npc/feng";
@@ -125,12 +125,12 @@ int do_start(string arg)
         ob = this_object();
 
         if( query("auction_start", ob) && !query("auction_end", ob) )
-                return notify_fail("ÏÖÔÚÕıÔÚÅÄÂôÖĞ£¬ÎŞ·¨ÖØĞÂ¿ªÊ¼¡£\n");
+                return notify_fail("ç¾åœ¨æ­£åœ¨æ‹è³£ä¸­ï¼Œç„¡æ³•é‡æ–°é–‹å§‹ã€‚\n");
 
         if (! SHOP_D->is_inited())
         {
-                msg = "µêÆÌÉĞÎ´È«²¿³õÊ¼»¯£¬ÇëÔÚ½øĞĞÅÄÂôÖ®Ç°½«ËùÓĞ"
-                      "µêÆÌ³õÊ¼»¯¡£\n";
+                msg = "åº—èˆ–å°šæœªå…¨éƒ¨åˆå§‹åŒ–ï¼Œè«‹åœ¨é€²è¡Œæ‹è³£ä¹‹å‰å°‡æ‰€æœ‰"
+                      "åº—èˆ–åˆå§‹åŒ–ã€‚\n";
                 write(msg);
                 return 1;
         } else
@@ -146,16 +146,16 @@ int do_start(string arg)
                 remove_call_out("finish_auction");
 
                 all_shop = SHOP_D->query_shop();
-                msg = HIC "³É¹¦³õÊ¼»¯ÅÄÂô³ÌĞò£¬´ıÅÄÂôµêÆÌÁĞ±í£º \n" NOR;
+                msg = HIC "æˆåŠŸåˆå§‹åŒ–æ‹è³£ç¨‹åºï¼Œå¾…æ‹è³£åº—èˆ–åˆ—è¡¨ï¼š \n" NOR;
                 msg += HIC "--------------------------------------\n" NOR;
                 for (i = 0;i < sizeof(all_shop);i++)
                 {
                         shop_list += ({ all_shop[i]["id"] });
                         begin_shop[all_shop[i]["id"]] = all_shop[i]["price"];
-                        msg += sprintf(HIY "%-20s" HIW "\t%dÁ½»Æ½ğ\n" NOR,all_shop[i]["id"],all_shop[i]["price"]);
+                        msg += sprintf(HIY "%-20s" HIW "\t%då…©é»ƒé‡‘\n" NOR,all_shop[i]["id"],all_shop[i]["price"]);
                 }
                 msg += HIC "--------------------------------------\n" NOR;
-                msg += WHT "×Ü¹²ÓĞ" + chinese_number(sizeof(all_shop)) + "¼ÒµêÆÌ¡£\n" NOR;
+                msg += WHT "ç¸½å…±æœ‰" + chinese_number(sizeof(all_shop)) + "å®¶åº—èˆ–ã€‚\n" NOR;
 
                 delete("owner", ob);
                 delete("shop_list", ob);
@@ -175,47 +175,47 @@ int do_start(string arg)
 
                 if (arg)
                 {
-                        CHANNEL_D->do_channel(ob, "sys", "µêÆÌÅÄÂôÏµÍ³ÓÉ" + me->name(1) +
-                                                  "³É¹¦Æô¶¯¡£ÔËĞĞÄ£Ê½£º×Ô¶¯¡£");
+                        CHANNEL_D->do_channel(ob, "sys", "åº—èˆ–æ‹è³£ç³»çµ±ç”±" + me->name(1) +
+                                                  "æˆåŠŸå•Ÿå‹•ã€‚é‹è¡Œæ¨¡å¼ï¼šè‡ªå‹•ã€‚");
 
-                        // ÅÄÂôÉèÖÃÎª×Ô¶¯ÔËĞĞ
+                        // æ‹è³£è¨­ç½®ç‚ºè‡ªå‹•é‹è¡Œ
                         set("operator", "fengtiannan", ob);
 
-                        msg += HIR "ÄúÑ¡ÔñÁËÍ¨¹ı" HIW "×Ô¶¯ÔËĞĞ" HIR "µÄ·½Ê½À´Æô"
-                               "¶¯ÅÄÂô½ø³Ì¡£\n\n" NOR;
+                        msg += HIR "æ‚¨é¸æ“‡äº†é€šé" HIW "è‡ªå‹•é‹è¡Œ" HIR "çš„æ–¹å¼ä¾†å•Ÿ"
+                               "å‹•æ‹è³£é€²ç¨‹ã€‚\n\n" NOR;
                         write(msg);
 
-                        message_vision(CYN "$N" CYN "¹ş¹ş´óĞ¦µÀ£º¼ÈÈ»¸÷Î»¶¼×¼±¸ºÃ"
-                                       "ÁË£¬ÄÇÃ´ÔÛÃÇ¾Í¿ªÊ¼ÅÄÂô°É¡£\n" NOR, ob);
+                        message_vision(CYN "$N" CYN "å“ˆå“ˆå¤§ç¬‘é“ï¼šæ—¢ç„¶å„ä½éƒ½æº–å‚™å¥½"
+                                       "äº†ï¼Œé‚£éº¼å’±å€‘å°±é–‹å§‹æ‹è³£å§ã€‚\n" NOR, ob);
                         operator = ob;
                         ob->save();
                         call_out("do_auction", 0, "automatic");
                 } else
                 {
-                        CHANNEL_D->do_channel(ob, "sys", "µêÆÌÅÄÂôÏµÍ³ÓÉ" + me->name(1) +
-                                                  "³É¹¦Æô¶¯£¬ÔËĞĞÄ£Ê½£ºÈË¹¤¡£");
+                        CHANNEL_D->do_channel(ob, "sys", "åº—èˆ–æ‹è³£ç³»çµ±ç”±" + me->name(1) +
+                                                  "æˆåŠŸå•Ÿå‹•ï¼Œé‹è¡Œæ¨¡å¼ï¼šäººå·¥ã€‚");
 
-                        // ÅÄÂôÉèÖÃÎªÊÖ¹¤ÔËĞĞ
+                        // æ‹è³£è¨­ç½®ç‚ºæ‰‹å·¥é‹è¡Œ
                         set("operator",query("id",  me), ob);
 
-                        msg += HIR "ÄúÑ¡ÔñÁËÍ¨¹ı" HIW "ÈË¹¤²Ù×÷" HIR "µÄ·½Ê½À´Æô"
-                               "¶¯ÅÄÂô½ø³Ì¡£\n\n" NOR;
-                        msg += WHT "ÅÄÂôµÄÖ¸ÁîÎª(" HIY "auction <µêÆÌID>" NOR +
-                               WHT ")¡£\n" NOR;
-                        msg += WHT "Äú¿ÉÒÔÓÃ(" HIY "auto" NOR + WHT ")Ö¸Áî"
-                               "À´½«ÅÄÂô½ø³Ì×ª³É×Ô¶¯ÔËĞĞ¡£\n" NOR;
+                        msg += HIR "æ‚¨é¸æ“‡äº†é€šé" HIW "äººå·¥æ“ä½œ" HIR "çš„æ–¹å¼ä¾†å•Ÿ"
+                               "å‹•æ‹è³£é€²ç¨‹ã€‚\n\n" NOR;
+                        msg += WHT "æ‹è³£çš„æŒ‡ä»¤ç‚º(" HIY "auction <åº—èˆ–ID>" NOR +
+                               WHT ")ã€‚\n" NOR;
+                        msg += WHT "æ‚¨å¯ä»¥ç”¨(" HIY "auto" NOR + WHT ")æŒ‡ä»¤"
+                               "ä¾†å°‡æ‹è³£é€²ç¨‹è½‰æˆè‡ªå‹•é‹è¡Œã€‚\n" NOR;
                         write(msg);
 
-                        message_vision(CYN "$N" CYN "²ÁÁË²Áº¹£¬ÅâĞ¦µÀ£ºÕâ´ÎµÄÅÄÂô"
-                                       "ÓÉ$n" CYN "Ç××ÔÖ÷³Ö¡£\n" NOR, ob, me);
-                        message_vision(HIC "$N" HIC "¸ÉĞ¦Á½Éù£¬½«ÊÖÖĞµÄ´¸×ÓÖ£ÖØ½»"
-                                       "¸ø$n" HIC "¡£\n" NOR, ob, me);
+                        message_vision(CYN "$N" CYN "æ“¦äº†æ“¦æ±—ï¼Œè³ ç¬‘é“ï¼šé€™æ¬¡çš„æ‹è³£"
+                                       "ç”±$n" CYN "è¦ªè‡ªä¸»æŒã€‚\n" NOR, ob, me);
+                        message_vision(HIC "$N" HIC "å¹¹ç¬‘å…©è²ï¼Œå°‡æ‰‹ä¸­çš„éŒ˜å­é„­é‡äº¤"
+                                       "çµ¦$n" HIC "ã€‚\n" NOR, ob, me);
                         operator = me;
 
-                        // ¼ÇÂ¼¸Ã´Î²Ù×÷Ê±¼ä
+                        // è¨˜éŒ„è©²æ¬¡æ“ä½œæ™‚é–“
                         last_time = time();
 
-                        // Æô¶¯ÊÖ¹¤ÅÄÂôÊØ»¤½ø³Ì
+                        // å•Ÿå‹•æ‰‹å·¥æ‹è³£å®ˆè­·é€²ç¨‹
                         set_heart_beat(1);
                         ob->save();
                 }
@@ -233,20 +233,20 @@ int do_auction(string arg)
         int i, now_price;
 
         if (! query("auction_start") || query("auction_end"))
-                return notify_fail("ÏÖÔÚ²¢Ã»ÓĞÔÚ½øĞĞÅÄÂô¡£\n");
+                return notify_fail("ç¾åœ¨ä¸¦æ²’æœ‰åœ¨é€²è¡Œæ‹è³£ã€‚\n");
 
         if (! arg)
-                return notify_fail("Ö¸Áî¸ñÊ½£ºauction <µêÆÌID>\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šauction <åº—èˆ–ID>\n");
 
         if (query("now_shop"))
-                return notify_fail("ÏÖÔÚÕıÔÚ½øĞĞ" + query("now_shop") +
-                                   "µêÆÌµÄÅÄÂô£¬Äú±ğ×Å¼±¡£\n");
+                return notify_fail("ç¾åœ¨æ­£åœ¨é€²è¡Œ" + query("now_shop") +
+                                   "åº—èˆ–çš„æ‹è³£ï¼Œæ‚¨åˆ¥è‘—æ€¥ã€‚\n");
 
         ob = this_object();
 
         if (ob != operator && this_player() != operator)
-                return notify_fail("ÏÖÔÚµÄÅÄÂôÕıÔÚÓÉ" + operator->name(1) +
-                                   "Ö÷³Ö½øĞĞÖĞ¡£\n");
+                return notify_fail("ç¾åœ¨çš„æ‹è³£æ­£åœ¨ç”±" + operator->name(1) +
+                                   "ä¸»æŒé€²è¡Œä¸­ã€‚\n");
 
         remove_call_out("do_auction");
         remove_call_out("finish_auction");
@@ -255,56 +255,56 @@ int do_auction(string arg)
         shop_list = query("shop_list");
         begin_shop = query("begin_shop");
 
-        //  ·Ç×Ô¶¯µÄ
+        //  éè‡ªå‹•çš„
         if (ob != operator)
         {
-                // ÒÑ¾­È«²¿ÅÄÂôÍê±ÏÁË
+                // å·²ç¶“å…¨éƒ¨æ‹è³£å®Œç•¢äº†
                 if (sizeof(shop_list) < 1)
                 {
                         set("can_finish", 1);
                         save();
-                        return notify_fail(WHT "ËùÓĞµêÆÌ¶¼ÒÑ¾­ÅÄÂô½áÊøÁË£¬ÄúÏÖ"
-                                           "ÔÚ¿ÉÒÔ½áÊø(" HIY "finish" NOR + WHT
-                                           ")ÅÄÂôÁË¡£\n" NOR);
+                        return notify_fail(WHT "æ‰€æœ‰åº—èˆ–éƒ½å·²ç¶“æ‹è³£çµæŸäº†ï¼Œæ‚¨ç¾"
+                                           "åœ¨å¯ä»¥çµæŸ(" HIY "finish" NOR + WHT
+                                           ")æ‹è³£äº†ã€‚\n" NOR);
                 }
 
-                //  Ìá½»µÄ²ÎÊı´íÎó£¬ÖØĞÂÏÔÊ¾ËùÓĞ´ıÅÄÂôµêÆÌÁĞ±í
+                //  æäº¤çš„åƒæ•¸éŒ¯èª¤ï¼Œé‡æ–°é¡¯ç¤ºæ‰€æœ‰å¾…æ‹è³£åº—èˆ–åˆ—è¡¨
                 if (! begin_shop[arg])
                 {
-                        msg = HIR "¶Ô²»Æğ£¬ÄúËùÌá½»µÄµêÆÌ²¢²»´æÔÚ¡£\n\n" NOR;
-                        msg += WHT "µÈ´ıÅÄÂôµÄµêÆÌÁĞ±í£º \n" NOR;
+                        msg = HIR "å°ä¸èµ·ï¼Œæ‚¨æ‰€æäº¤çš„åº—èˆ–ä¸¦ä¸å­˜åœ¨ã€‚\n\n" NOR;
+                        msg += WHT "ç­‰å¾…æ‹è³£çš„åº—èˆ–åˆ—è¡¨ï¼š \n" NOR;
                         msg += HIC "--------------------------------------\n" NOR;
                         shop_key = keys(begin_shop);
 
                         for (i = 0; i < sizeof(shop_key); i++)
-                                msg += sprintf(HIW "%-20s" HIY "\t%dÁ½»Æ½ğ\n" NOR,
+                                msg += sprintf(HIW "%-20s" HIY "\t%då…©é»ƒé‡‘\n" NOR,
                                                shop_key[i],
                                                begin_shop[shop_key[i]]);
 
                         msg += HIC "--------------------------------------\n" NOR;
-                        msg += WHT "×Ü¹²ÓĞ" + chinese_number(sizeof(shop_key)) +
-                               "¼ÒµêÆÌ¿ÉÒÔÅÄÂô¡£\n\n";
+                        msg += WHT "ç¸½å…±æœ‰" + chinese_number(sizeof(shop_key)) +
+                               "å®¶åº—èˆ–å¯ä»¥æ‹è³£ã€‚\n\n";
                         write(msg);
                         return 1;
                 }
-                // µ±Ç°ÅÄÂôµêÆÌ
+                // ç•¶å‰æ‹è³£åº—èˆ–
                 now_shop = arg;
-        } else        // ×Ô¶¯ÅÄÂô
+        } else        // è‡ªå‹•æ‹è³£
         {
-                // È«²¿µêÆÌ¶¼ÒÑ¾­ÅÄÂôÍê±Ï
+                // å…¨éƒ¨åº—èˆ–éƒ½å·²ç¶“æ‹è³£å®Œç•¢
                 if (sizeof(shop_list) < 1)
                 {
                         set("can_finish", 1, ob);
                         ob->save();
-                        // µ÷ÓÃ½áÊøÅÄÂô³ÌĞò
+                        // èª¿ç”¨çµæŸæ‹è³£ç¨‹åº
                         call_out("finish_auction", 0, "automatic");
                         return 1;
                 }
-                // µ±Ç°ÅÄÂôµêÆÌ
+                // ç•¶å‰æ‹è³£åº—èˆ–
                 now_shop = shop_list[random(sizeof(shop_list))];
         }
 
-        // ´Ó´ıÅÄµêÆÌÖĞÉ¾³ıµ±Ç°ÅÄÂôµêÆÌ
+        // å¾å¾…æ‹åº—èˆ–ä¸­åˆªé™¤ç•¶å‰æ‹è³£åº—èˆ–
         shop_list -= ({ now_shop });
         now_price = query("begin_shop/" + now_shop);
         set("wait_jupai", 1, ob);
@@ -314,18 +314,18 @@ int do_auction(string arg)
         set("now_price", now_price, ob);
         ob->save();
 
-        CHANNEL_D->do_channel(ob, "sys", "ÏÖÔÚ¿ªÊ¼ÅÄÂô" + now_shop + "µêÆÌ¡£");
+        CHANNEL_D->do_channel(ob, "sys", "ç¾åœ¨é–‹å§‹æ‹è³£" + now_shop + "åº—èˆ–ã€‚");
 
-        message_vision(HIW "\n$N" HIW "´óÉùµÀ£ºÏÖÔÚ¿ªÊ¼ÅÄÂô¡º" HIC +
-                       now_shop + HIC "µêÆÌ" HIW "¡»µ×¼ÛÎª" +
-                       chinese_number(now_price) + "Á½»Æ½ğ£¬ÓĞÒâÕßÇë"
-                       "¾ÙÅÆ¡£\n" NOR, operator);
+        message_vision(HIW "\n$N" HIW "å¤§è²é“ï¼šç¾åœ¨é–‹å§‹æ‹è³£ã€" HIC +
+                       now_shop + HIC "åº—èˆ–" HIW "ã€åº•åƒ¹ç‚º" +
+                       chinese_number(now_price) + "å…©é»ƒé‡‘ï¼Œæœ‰æ„è€…è«‹"
+                       "èˆ‰ç‰Œã€‚\n" NOR, operator);
 
-        // ×Ô¶¯ÅÄÂô
+        // è‡ªå‹•æ‹è³£
         if (ob == operator)
                 call_out("begin_auction", DISTANCE);
         else
-                // ¼ÇÂ¼¸Ã´Î²Ù×÷µÄÊ±¼ä
+                // è¨˜éŒ„è©²æ¬¡æ“ä½œçš„æ™‚é–“
                 last_time = time();
 
         return 1;
@@ -341,7 +341,7 @@ int begin_auction()
 
         m=query("wait_jupai", ob);
 
-        // ÒÑ¾­ÓĞÈË¿ªÊ¼¾ÙÅÆ
+        // å·²ç¶“æœ‰äººé–‹å§‹èˆ‰ç‰Œ
         if (! m)
                 return 1;
 
@@ -359,29 +359,29 @@ int begin_auction()
         {
         case 0:
 
-                message_vision(CYN "\n$N" CYN "½Ó×ÅµÀ£ºÕıÔÚ¿ªÊ¼ÅÄÂô" HIC +
-                               now_shop + NOR + CYN "µêÆÌ¡£±¨¼ÛÎª" YEL +
-                               chinese_number(now_price) + "Á½»Æ½ğ"
-                               CYN "µÚ" + chinese_number(m) + "´Î¡£\n" NOR,
+                message_vision(CYN "\n$N" CYN "æ¥è‘—é“ï¼šæ­£åœ¨é–‹å§‹æ‹è³£" HIC +
+                               now_shop + NOR + CYN "åº—èˆ–ã€‚å ±åƒ¹ç‚º" YEL +
+                               chinese_number(now_price) + "å…©é»ƒé‡‘"
+                               CYN "ç¬¬" + chinese_number(m) + "æ¬¡ã€‚\n" NOR,
                                operator);
                 break;
 
         case 1:
-                message_vision(CYN "\n$N" CYN "¿´ÁË¿´ÖÜÎ§´óÉùµÀ£ºÏÖÔÚ"
-                               YEL + chinese_number(now_price) + "Á½»Æ½ğ"
-                               CYN "µÚ" + chinese_number(m) + "´Î£¬"
-                               YEL + chinese_number(now_price) + "Á½»Æ½ğ"
-                               CYN "µÚ" + chinese_number(m) + "´Î¡£ÅÄÂô" +
-                               HIC + now_shop + NOR + CYN "µêÆÌ¡£\n" NOR,
+                message_vision(CYN "\n$N" CYN "çœ‹äº†çœ‹å‘¨åœå¤§è²é“ï¼šç¾åœ¨"
+                               YEL + chinese_number(now_price) + "å…©é»ƒé‡‘"
+                               CYN "ç¬¬" + chinese_number(m) + "æ¬¡ï¼Œ"
+                               YEL + chinese_number(now_price) + "å…©é»ƒé‡‘"
+                               CYN "ç¬¬" + chinese_number(m) + "æ¬¡ã€‚æ‹è³£" +
+                               HIC + now_shop + NOR + CYN "åº—èˆ–ã€‚\n" NOR,
                                operator);
                 break;
 
         default:
-                message_vision(CYN "\n$N" CYN "¸É¿ÈÁ½Éù£¬´óÉùµÀ£ºÏÖÔÚÎª"
-                               YEL + chinese_number(now_price) + "Á½»Æ½ğ"
-                               CYN "µÚ" + chinese_number(m) + "´Î£¬ÅÄÂô" +
-                               HIC + now_shop + NOR + CYN "µêÆÌ£¬Óû¹º"
-                               "Õß´ÓËÙ¡£\n" NOR, operator);
+                message_vision(CYN "\n$N" CYN "å¹¹å’³å…©è²ï¼Œå¤§è²é“ï¼šç¾åœ¨ç‚º"
+                               YEL + chinese_number(now_price) + "å…©é»ƒé‡‘"
+                               CYN "ç¬¬" + chinese_number(m) + "æ¬¡ï¼Œæ‹è³£" +
+                               HIC + now_shop + NOR + CYN "åº—èˆ–ï¼Œæ¬²è³¼"
+                               "è€…å¾é€Ÿã€‚\n" NOR, operator);
                 break;
         }
 
@@ -389,40 +389,40 @@ int begin_auction()
         {
         case 0:
 
-                message_vision(CYN "$N" CYN "»·¹ËÁËÒ»ÏÂËÄÖÜ£¬½Ó×ÅËµµÀ£ºÇëÓĞ"
-                               "ÒâÕß¾ÙÅÆ(" HIY "jupai" NOR + CYN ")¡£\n" NOR,
+                message_vision(CYN "$N" CYN "ç’°é¡§äº†ä¸€ä¸‹å››å‘¨ï¼Œæ¥è‘—èªªé“ï¼šè«‹æœ‰"
+                               "æ„è€…èˆ‰ç‰Œ(" HIY "jupai" NOR + CYN ")ã€‚\n" NOR,
                                operator);
                 break;
 
         case 1:
-                message_vision(CYN "$N" CYN "ÖåÁËÖåÃ¼Í·£¬ËµµÀ£ºÓĞÈËÔ¸Òâ¹ºÂò"
-                               "Ã´£¿Çë¼´Ê±¾ÙÅÆ(" HIY "jupai" NOR + CYN ")¡£\n"
+                message_vision(CYN "$N" CYN "çšºäº†çšºçœ‰é ­ï¼Œèªªé“ï¼šæœ‰äººé¡˜æ„è³¼è²·"
+                               "éº¼ï¼Ÿè«‹å³æ™‚èˆ‰ç‰Œ(" HIY "jupai" NOR + CYN ")ã€‚\n"
                                NOR, operator);
                 break;
 
         case 2:
-                message_vision(CYN "$N" CYN "Î¢Ğ¦µÀ£º¸÷Î»¿¼ÂÇºÃÁËÃ´£¿ÓĞÈËÔ¸"
-                               "Òâ¹º¾ÙÅÆ(" HIY "jupai" NOR + CYN ")³ö¼ÛÃ´£¿\n"
+                message_vision(CYN "$N" CYN "å¾®ç¬‘é“ï¼šå„ä½è€ƒæ…®å¥½äº†éº¼ï¼Ÿæœ‰äººé¡˜"
+                               "æ„è³¼èˆ‰ç‰Œ(" HIY "jupai" NOR + CYN ")å‡ºåƒ¹éº¼ï¼Ÿ\n"
                                NOR, operator);
                 break;
 
         default:
-                message_vision(CYN "$N" CYN "ÇåÁËÇåÉ¤×Ó£¬¼ÌĞøËµµÀ£ºÅÄÂôÕıÔÚ"
-                               "½øĞĞ£¬Çë¸÷Î»¾ÙÅÆ(" HIY "jupai" NOR + CYN ")Ê¾"
-                               "Òâ¡£\n" NOR, operator);
+                message_vision(CYN "$N" CYN "æ¸…äº†æ¸…å—“å­ï¼Œç¹¼çºŒèªªé“ï¼šæ‹è³£æ­£åœ¨"
+                               "é€²è¡Œï¼Œè«‹å„ä½èˆ‰ç‰Œ(" HIY "jupai" NOR + CYN ")ç¤º"
+                               "æ„ã€‚\n" NOR, operator);
                 break;
         }
 
-        // ×Ô¶¯ÅÄÂô
+        // è‡ªå‹•æ‹è³£
         if (operator == ob)
         {
                 if (! (m >= 3))
                         call_out("begin_auction",DISTANCE);
                 else
                         call_out("stop_auction",DISTANCE);
-        // ÊÖ¹¤ÅÄÂô
+        // æ‰‹å·¥æ‹è³£
         } else
-                // ¼ÇÂ¼×îºóÒ»´Î²Ù×÷µÄÊ±¼ä
+                // è¨˜éŒ„æœ€å¾Œä¸€æ¬¡æ“ä½œçš„æ™‚é–“
                 last_time = time();
 }
 
@@ -457,11 +457,11 @@ int stop_auction()
 
         if (query("wait_jupai"))
         {
-                message_vision(BEEP + HIY "\n$N" HIY "¾ÙÆğÊÖÖĞµÄĞ¡Ä¾é¢ÓÃ"
-                               "Á¦µÄÒ»ÇÃ£¬Ö»ÌıµÃ¡ºµ±¡»µÄÒ»Éù¾ŞÏì¡£\n" NOR,
+                message_vision(BEEP + HIY "\n$N" HIY "èˆ‰èµ·æ‰‹ä¸­çš„å°æœ¨æ£°ç”¨"
+                               "åŠ›çš„ä¸€æ•²ï¼Œåªè½å¾—ã€ç•¶ã€çš„ä¸€è²å·¨éŸ¿ã€‚\n" NOR,
                                operator);
-                message_vision(HIY "$N" HIY "´óÉùĞû²¼µÀ£ºÏÖÔÚ" HIC + now_shop +
-                               HIY "µêÆÌµÄËùÓĞÈ¨ÅÄÂôÁ÷±êÁË¡£\n" NOR,
+                message_vision(HIY "$N" HIY "å¤§è²å®£å¸ƒé“ï¼šç¾åœ¨" HIC + now_shop +
+                               HIY "åº—èˆ–çš„æ‰€æœ‰æ¬Šæ‹è³£æµæ¨™äº†ã€‚\n" NOR,
                                operator);
 
                 end_shop[now_shop] = 0;
@@ -470,10 +470,10 @@ int stop_auction()
                 set("end_shop", end_shop, ob);
                 ob->save();
 
-                // ×Ô¶¯ÅÄÂô
+                // è‡ªå‹•æ‹è³£
                 if (operator == ob)
                 {
-                        // ËùÓĞµêÆÌÅÄÂô½áÊø
+                        // æ‰€æœ‰åº—èˆ–æ‹è³£çµæŸ
                         if (sizeof(shop_list) < 1)
                         {
                                 set("can_finish", 1);
@@ -484,62 +484,62 @@ int stop_auction()
                         call_out("do_auction", 1, "automatic");
                 } else
                 {
-                        // ËùÓĞµêÆÌÅÄÂô½áÊø
+                        // æ‰€æœ‰åº—èˆ–æ‹è³£çµæŸ
                         if (sizeof(shop_list) < 1)
                         {
                                 set("can_finish", 1);
                                 save();
-                                tell_object(operator, WHT "ËùÓĞµêÆÌ¶¼ÒÑ¾­ÅÄÂô½á"
-                                            "Êø£¬ÄúÏÖÔÚ¿ÉÒÔ½áÊø(" HIY "finish"
-                                            NOR + WHT ")ÅÄÂô¡£\n"NOR);
+                                tell_object(operator, WHT "æ‰€æœ‰åº—èˆ–éƒ½å·²ç¶“æ‹è³£çµ"
+                                            "æŸï¼Œæ‚¨ç¾åœ¨å¯ä»¥çµæŸ(" HIY "finish"
+                                            NOR + WHT ")æ‹è³£ã€‚\n"NOR);
                                 return 1;
                         }
 
-                        msg += HIC "µÈ´ıÅÄÂôµÄµêÆÌÁĞ±í£º \n" NOR;
-                        msg += HIC "¡Ô" HIY "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤" HIC "¡Ô\n" NOR;
+                        msg += HIC "ç­‰å¾…æ‹è³£çš„åº—èˆ–åˆ—è¡¨ï¼š \n" NOR;
+                        msg += HIC "â‰¡" HIY "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€" HIC "â‰¡\n" NOR;
                         shop_key = keys(begin_shop);
 
                         for (i = 0; i < sizeof(shop_key); i++)
-                                msg += sprintf(CYN "%-20s" WHT "\t%dÁ½»Æ½ğ\n" NOR,
+                                msg += sprintf(CYN "%-20s" WHT "\t%då…©é»ƒé‡‘\n" NOR,
                                                shop_key[i],
                                                begin_shop[shop_key[i]]);
 
-                        msg += HIC "¡Ô" HIY "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤" HIC "¡Ô\n" NOR;
-                        msg += HIC "×Ü¹²ÓĞ" HIY + chinese_number(sizeof(shop_key)) + HIC
-                               "¼ÒµêÆÌ¿ÉÒÔÅÄÂô¡£\n\n";
+                        msg += HIC "â‰¡" HIY "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€" HIC "â‰¡\n" NOR;
+                        msg += HIC "ç¸½å…±æœ‰" HIY + chinese_number(sizeof(shop_key)) + HIC
+                               "å®¶åº—èˆ–å¯ä»¥æ‹è³£ã€‚\n\n";
 
                         tell_object(operator, msg);
-                        // ¼ÇÂ¼¸Ã´Î²Ù×÷Ê±¼ä
+                        // è¨˜éŒ„è©²æ¬¡æ“ä½œæ™‚é–“
                         last_time = time();
                 }
                 return 1;
         } else
         {
-                //  Ê×ÏÈ¼ì²éµ±Ç°¾ºÍ¶µêÆÌµÄÍæ¼ÒÊÇ·ñÔÚÏß£¬»òÕßÊÇ·ñÔÚÍ¶±êºó¸Ï»Ø
-                //  Ç®×¯È¡×ßÁË´æ¿îÈç¹û¸ÃÍæ¼ÒÊı¾İÒì³££¬Ôò¸ÃµêÆÌÖØĞÂ¹éÈë´ıÅÄµê
-                //  ÆÌÊı×é£¬²¢ÇÒÈ¡Ïû¸ÃÍæ¼ÒµÄÅÄÂô×Ê¸ñ¡£
+                //  é¦–å…ˆæª¢æŸ¥ç•¶å‰ç«¶æŠ•åº—èˆ–çš„ç©å®¶æ˜¯å¦åœ¨ç·šï¼Œæˆ–è€…æ˜¯å¦åœ¨æŠ•æ¨™å¾Œè¶•å›
+                //  éŒ¢èŠå–èµ°äº†å­˜æ¬¾å¦‚æœè©²ç©å®¶æ•¸æ“šç•°å¸¸ï¼Œå‰‡è©²åº—èˆ–é‡æ–°æ­¸å…¥å¾…æ‹åº—
+                //  èˆ–æ•¸çµ„ï¼Œä¸¦ä¸”å–æ¶ˆè©²ç©å®¶çš„æ‹è³£è³‡æ ¼ã€‚
 
                 the_owner = find_player(temp_owner);
 
                 if (! objectp(the_owner)
                     || query("balance", the_owner)<(now_price*10000) )
                 {
-                        // È¡Ïû¸ÃÍæ¼ÒµÄÅÄÂô×Ê¸ñ
+                        // å–æ¶ˆè©²ç©å®¶çš„æ‹è³£è³‡æ ¼
                         do_ban(temp_owner + " 1");
                         begin_shop[now_shop] = 2000;
                         set("begin_shop", begin_shop, ob);
 
-                        message_vision(HIY "$N" HIY "ÀäĞ¦Ò»ÉùµÀ£º¾ÓÈ»¸Ò¸úÎÒÍæ£¿" +
-                                       temp_owner + HIY "Êı¾İÒì³££¬È¡ÏûÅÄÂô×Ê¸ñ"
-                                       "¡£\n\n" NOR, operator);
+                        message_vision(HIY "$N" HIY "å†·ç¬‘ä¸€è²é“ï¼šå±…ç„¶æ•¢è·Ÿæˆ‘ç©ï¼Ÿ" +
+                                       temp_owner + HIY "æ•¸æ“šç•°å¸¸ï¼Œå–æ¶ˆæ‹è³£è³‡æ ¼"
+                                       "ã€‚\n\n" NOR, operator);
 
-                        CHANNEL_D->do_channel(ob, "sys", "ÓÉÓÚ" + temp_owner +
-                                                  "Êı¾İÒì³££¬È¡Ïû¸ÃÍæ¼ÒµÄÅÄÂô×Ê"
-                                                  "¸ñ£¡" + now_shop + "µêÆÌ"
-                                                  "ÖØĞÂ¹éÈë´ıÅÄÂôÁĞ±í£¡");
+                        CHANNEL_D->do_channel(ob, "sys", "ç”±äº" + temp_owner +
+                                                  "æ•¸æ“šç•°å¸¸ï¼Œå–æ¶ˆè©²ç©å®¶çš„æ‹è³£è³‡"
+                                                  "æ ¼ï¼" + now_shop + "åº—èˆ–"
+                                                  "é‡æ–°æ­¸å…¥å¾…æ‹è³£åˆ—è¡¨ï¼");
                 } else
                 {
-                        // ¼ÇÂ¼µêÆÌÀúÊ·Êı¾İ
+                        // è¨˜éŒ„åº—èˆ–æ­·å²æ•¸æ“š
                         record = ([]);
                         shop_record = query(now_shop);
 
@@ -562,28 +562,28 @@ int stop_auction()
                         set("end_shop", end_shop, ob);
                         SHOP_D->change_owner(operator, now_shop, temp_owner);
 
-                        message_vision(BEEP + HIY "\n$N" HIY "¾ÙÆğÊÖÖĞµÄĞ¡Ä¾é¢ÓÃ"
-                                       "Á¦µÄÒ»ÇÃ£¬Ö»ÌıµÃ¡ºµ±¡»µÄÒ»Éù¾ŞÏì¡£\n" NOR,
+                        message_vision(BEEP + HIY "\n$N" HIY "èˆ‰èµ·æ‰‹ä¸­çš„å°æœ¨æ£°ç”¨"
+                                       "åŠ›çš„ä¸€æ•²ï¼Œåªè½å¾—ã€ç•¶ã€çš„ä¸€è²å·¨éŸ¿ã€‚\n" NOR,
                                        operator);
-                        message_vision(HIY "$N" HIY "´óÉùĞû²¼µÀ£º³É½»£¡¹§Ï²" +
-                                       the_owner->name() + HIY "ÒÔ" NOR + YEL +
-                                       chinese_number(now_price) +"Á½»Æ½ğ" HIY
-                                       "µÄ¼Û¸ñ»ñµÃÁË" HIC + now_shop + HIY
-                                       "µêÆÌµÄËùÓĞÈ¨¡£\n" NOR, operator);
+                        message_vision(HIY "$N" HIY "å¤§è²å®£å¸ƒé“ï¼šæˆäº¤ï¼æ­å–œ" +
+                                       the_owner->name() + HIY "ä»¥" NOR + YEL +
+                                       chinese_number(now_price) +"å…©é»ƒé‡‘" HIY
+                                       "çš„åƒ¹æ ¼ç²å¾—äº†" HIC + now_shop + HIY
+                                       "åº—èˆ–çš„æ‰€æœ‰æ¬Šã€‚\n" NOR, operator);
 
-                        shout(HIY "¡¾ÉÌ½ç´«ÎÅ¡¿" NOR + WHT + operator->name() +
-                              WHT"["+query("id", operator)+WHT"]£º¹§Ï²"+
-                              the_owner->name() + NOR + WHT "»ñµÃÁË" + now_shop +
-                              NOR + WHT "µêÆÌµÄËùÓĞÈ¨¡£\n" NOR);
+                        shout(HIY "ã€å•†ç•Œå‚³èã€‘" NOR + WHT + operator->name() +
+                              WHT"["+query("id", operator)+WHT"]ï¼šæ­å–œ"+
+                              the_owner->name() + NOR + WHT "ç²å¾—äº†" + now_shop +
+                              NOR + WHT "åº—èˆ–çš„æ‰€æœ‰æ¬Šã€‚\n" NOR);
 
-                        CHANNEL_D->do_channel(ob, "sys", temp_owner + "»ñµÃÁË" +
-                                                  now_shop + "µêÆÌµÄËùÓĞÈ¨¡£"
-                                                  "×îÖÕ³ö¼Û" + chinese_number(now_price) +
-                                                  "Á½»Æ½ğ£¡");
+                        CHANNEL_D->do_channel(ob, "sys", temp_owner + "ç²å¾—äº†" +
+                                                  now_shop + "åº—èˆ–çš„æ‰€æœ‰æ¬Šã€‚"
+                                                  "æœ€çµ‚å‡ºåƒ¹" + chinese_number(now_price) +
+                                                  "å…©é»ƒé‡‘ï¼");
 
-                        tell_object(the_owner, HIC + BLINK "\n¹§Ï²ÄúÒÔ" +
+                        tell_object(the_owner, HIC + BLINK "\næ­å–œæ‚¨ä»¥" +
                                                chinese_number(now_price) +
-                                               "Á½»Æ½ğµÄ¼Û¸ñ»ñµÃµêÆÌµÄËùÓĞÈ¨¡£\n" NOR);
+                                               "å…©é»ƒé‡‘çš„åƒ¹æ ¼ç²å¾—åº—èˆ–çš„æ‰€æœ‰æ¬Šã€‚\n" NOR);
                 }
                 delete("on_jupai", ob);
                 delete("now_shop", ob);
@@ -591,10 +591,10 @@ int stop_auction()
                 delete("temp_owner", ob);
                 ob->save();
 
-                // ×Ô¶¯ÅÄÂô
+                // è‡ªå‹•æ‹è³£
                 if (operator == ob)
                 {
-                        // ËùÓĞµêÆÌÅÄÂô½áÊø
+                        // æ‰€æœ‰åº—èˆ–æ‹è³£çµæŸ
                         if (sizeof(shop_list) < 1)
                         {
                                 set("can_finish", 1);
@@ -604,33 +604,33 @@ int stop_auction()
                                 call_out("do_auction", 1, "automatic");
                 } else
                 {
-                        // ËùÓĞµêÆÌÅÄÂô½áÊø
+                        // æ‰€æœ‰åº—èˆ–æ‹è³£çµæŸ
                         if (sizeof(shop_list) < 1)
                         {
                                 set("can_finish", 1);
                                 save();
-                                tell_object(operator, WHT "ËùÓĞµêÆÌ¶¼ÒÑ¾­ÅÄÂô½áÊøÁË£¬ÄúÏÖ"
-                                                      "ÔÚ¿ÉÒÔ½áÊø(" HIY "finish" NOR + WHT
-                                                      ")ÅÄÂôÁË¡£\n"NOR);
+                                tell_object(operator, WHT "æ‰€æœ‰åº—èˆ–éƒ½å·²ç¶“æ‹è³£çµæŸäº†ï¼Œæ‚¨ç¾"
+                                                      "åœ¨å¯ä»¥çµæŸ(" HIY "finish" NOR + WHT
+                                                      ")æ‹è³£äº†ã€‚\n"NOR);
                                 return 1;
                         }
 
-                        msg += WHT "µÈ´ıÅÄÂôµÄµêÆÌÁĞ±í£º \n" NOR;
+                        msg += WHT "ç­‰å¾…æ‹è³£çš„åº—èˆ–åˆ—è¡¨ï¼š \n" NOR;
                         msg += HIC "--------------------------------------\n" NOR;
                         shop_key = keys(begin_shop);
 
                         for (i = 0; i < sizeof(shop_key); i++)
-                                msg += sprintf(HIW "%-20s" HIY "\t%dÁ½»Æ½ğ\n" NOR,
+                                msg += sprintf(HIW "%-20s" HIY "\t%då…©é»ƒé‡‘\n" NOR,
                                                shop_key[i],
                                                begin_shop[shop_key[i]]);
 
                         msg += HIC "--------------------------------------\n" NOR;
-                        msg += WHT "×Ü¹²ÓĞ" + chinese_number(sizeof(shop_key)) +
-                               "¼ÒµêÆÌ¿ÉÒÔÅÄÂô¡£\n\n";
+                        msg += WHT "ç¸½å…±æœ‰" + chinese_number(sizeof(shop_key)) +
+                               "å®¶åº—èˆ–å¯ä»¥æ‹è³£ã€‚\n\n";
 
                         tell_object(operator,msg);
 
-                        // ¼ÇÂ¼¸Ã´Î²Ù×÷Ê±¼ä
+                        // è¨˜éŒ„è©²æ¬¡æ“ä½œæ™‚é–“
                         last_time = time();
                 }
                 return 1;
@@ -647,26 +647,26 @@ int do_jupai(string arg)
         buyer = this_player();
 
         if (! query("auction_start"))
-                return notify_fail("ÏÖÔÚÅÄÂô»¹Ã»ÓĞ¿ªÊ¼£¬²»±ØĞÄ¼±¡£\n");
+                return notify_fail("ç¾åœ¨æ‹è³£é‚„æ²’æœ‰é–‹å§‹ï¼Œä¸å¿…å¿ƒæ€¥ã€‚\n");
 
-        //  ÊÖ¹¤ÅÄÂô£¬¼ì²éÖ´ĞĞÎ×Ê¦ÊÇ·ñ»¹ÔÚ£¬Èç¹û²»ÔÚÔò½ø³Ì×ªÎª×Ô¶¯
+        //  æ‰‹å·¥æ‹è³£ï¼Œæª¢æŸ¥åŸ·è¡Œå·«å¸«æ˜¯å¦é‚„åœ¨ï¼Œå¦‚æœä¸åœ¨å‰‡é€²ç¨‹è½‰ç‚ºè‡ªå‹•
         if (operator != ob)
                 operator = check_operator();
 
         if (! query("now_shop"))
-               return notify_fail(operator->name(1) + "»¹Ã»ÓĞĞû²¼"
-                                  "ÒªÅÄÂôÄÄ¼ÒµêÆÌ£¬Äã¼±¸öÉ¶£¿\n");
+               return notify_fail(operator->name(1) + "é‚„æ²’æœ‰å®£å¸ƒ"
+                                  "è¦æ‹è³£å“ªå®¶åº—èˆ–ï¼Œä½ æ€¥å€‹å•¥ï¼Ÿ\n");
 
         if (arrayp(query("owner"))
             && member_array(query("id", buyer),query("owner")) != -1 )
-                return notify_fail("ÄãÒÑ¾­¹ºÂòµ½ÁËµêÆÌ£¬¾Í±ğÌ«ĞÄºÚÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“è³¼è²·åˆ°äº†åº—èˆ–ï¼Œå°±åˆ¥å¤ªå¿ƒé»‘äº†ã€‚\n");
 
         if (arrayp(query("ban"))
             && member_array(query("id", buyer),query("ban")) != -1 )
-                return notify_fail("ÄãÒÑ¾­¸øÈ¡ÏûÁËÅÄÂô×Ê¸ñ£¬ÀÏÊµµã°É¡£\n");
+                return notify_fail("ä½ å·²ç¶“çµ¦å–æ¶ˆäº†æ‹è³£è³‡æ ¼ï¼Œè€å¯¦é»å§ã€‚\n");
 
         if( query("id", buyer) == query("temp_owner") )
-                return notify_fail("µ±Ç°µÄ¼Û¸ñ±¾À´¾ÍÊÇÄãËù¾ºÍ¶µÄ¡£\n");
+                return notify_fail("ç•¶å‰çš„åƒ¹æ ¼æœ¬ä¾†å°±æ˜¯ä½ æ‰€ç«¶æŠ•çš„ã€‚\n");
 
         now_shop = query("now_shop");
         now_price = query("now_price");
@@ -678,11 +678,11 @@ int do_jupai(string arg)
                 if (! (sscanf(arg, "%d", money) == 1)
                    || money < 30
                    || money > 10000)
-                        return notify_fail("Äã´òËã¼Ó¼Û¶àÉÙÁ½(30-10000)»Æ½ğ£¿\n");
+                        return notify_fail("ä½ æ‰“ç®—åŠ åƒ¹å¤šå°‘å…©(30-10000)é»ƒé‡‘ï¼Ÿ\n");
 
         if( query("balance", buyer)<(money+now_price)*10000 )
-                return notify_fail("ÄãÕÊ»§ÀïµÄÇ®²¢²»×ã" +
-                                   chinese_number(money+now_price) + "Á½»Æ½ğ¡£\n");
+                return notify_fail("ä½ å¸³æˆ¶è£¡çš„éŒ¢ä¸¦ä¸è¶³" +
+                                   chinese_number(money+now_price) + "å…©é»ƒé‡‘ã€‚\n");
 
         remove_call_out("begin_auction");
         remove_call_out("go_jupai");
@@ -696,40 +696,40 @@ int do_jupai(string arg)
         delete("wait_jupai", ob);
         ob->save();
 
-        tell_object(buyer, HIC "Äã¾ÙÁË¾ÙÊÖÖĞµÄÅÆ×Ó£¬Ê¾Òâ¼Ó¼Û" +
-                           chinese_number(money) + "Á½»Æ½ğ¡£\n" NOR);
+        tell_object(buyer, HIC "ä½ èˆ‰äº†èˆ‰æ‰‹ä¸­çš„ç‰Œå­ï¼Œç¤ºæ„åŠ åƒ¹" +
+                           chinese_number(money) + "å…©é»ƒé‡‘ã€‚\n" NOR);
 
-        message_vision(HIW "\n$N" HIW "´óĞ¦µÀ£ººÃ£¡ÏÖÔÚ" + buyer->name() +
-                       HIW "³ö¼Û" NOR + YEL + chinese_number(now_price) +
-                       "Á½»Æ½ğ" HIW "£¬¸÷Î»Çë¼ÌĞø³ö¼Û¡£\n" NOR, operator);
+        message_vision(HIW "\n$N" HIW "å¤§ç¬‘é“ï¼šå¥½ï¼ç¾åœ¨" + buyer->name() +
+                       HIW "å‡ºåƒ¹" NOR + YEL + chinese_number(now_price) +
+                       "å…©é»ƒé‡‘" HIW "ï¼Œå„ä½è«‹ç¹¼çºŒå‡ºåƒ¹ã€‚\n" NOR, operator);
 
         switch (random(3))
         {
         case 0:
 
-                message_vision(CYN "$N" CYN "»·¹ËÁËÒ»ÏÂËÄÖÜ£¬½Ó×ÅËµ"
-                               "µÀ£ºÓĞÒâÕß¿É¼ÌĞø¾ÙÅÆ(" HIY "jupai" NOR +
-                               CYN ")ÈÏ¹º¡£\n" NOR, operator);
+                message_vision(CYN "$N" CYN "ç’°é¡§äº†ä¸€ä¸‹å››å‘¨ï¼Œæ¥è‘—èªª"
+                               "é“ï¼šæœ‰æ„è€…å¯ç¹¼çºŒèˆ‰ç‰Œ(" HIY "jupai" NOR +
+                               CYN ")èªè³¼ã€‚\n" NOR, operator);
                 break;
 
         case 1:
-                message_vision(CYN "$N" CYN "Î¢Ğ¦µÀ£ºÓĞÈËÔ¸¼ÌĞøÆ´¼Û"
-                               "Ã´£¿ÇëÓĞÒâÕß¼ÌĞø¾ÙÅÆ(" HIY "jupai" NOR +
-                               CYN ")³ö¼Û¡£\n" NOR, operator);
+                message_vision(CYN "$N" CYN "å¾®ç¬‘é“ï¼šæœ‰äººé¡˜ç¹¼çºŒæ‹¼åƒ¹"
+                               "éº¼ï¼Ÿè«‹æœ‰æ„è€…ç¹¼çºŒèˆ‰ç‰Œ(" HIY "jupai" NOR +
+                               CYN ")å‡ºåƒ¹ã€‚\n" NOR, operator);
                 break;
 
         default:
-                message_vision(CYN "$N" CYN "ÇåÁËÇåÉ¤×Ó£¬½Ó×ÅµÀ£ºÅÄ"
-                               "ÂôÕıÔÚ½øĞĞ£¬Çë¸÷Î»¼ÌĞø¾ÙÅÆ(" HIY "jupai"
-                               NOR + CYN ")Ê¾Òâ¡£\n" NOR, operator);
+                message_vision(CYN "$N" CYN "æ¸…äº†æ¸…å—“å­ï¼Œæ¥è‘—é“ï¼šæ‹"
+                               "è³£æ­£åœ¨é€²è¡Œï¼Œè«‹å„ä½ç¹¼çºŒèˆ‰ç‰Œ(" HIY "jupai"
+                               NOR + CYN ")ç¤ºæ„ã€‚\n" NOR, operator);
                 break;
         }
 
-        // ×Ô¶¯ÅÄÂô
+        // è‡ªå‹•æ‹è³£
         if (operator == ob)
                 call_out("go_jupai", DISTANCE);
         else
-                // ¼ÇÂ¼µ±Ç°²Ù×÷Ê±¼ä
+                // è¨˜éŒ„ç•¶å‰æ“ä½œæ™‚é–“
                 last_time = time();
 
         return 1;
@@ -758,26 +758,26 @@ int go_jupai()
         {
         case 0:
 
-                message_vision(CYN "\n$N" CYN "½Ó×ÅµÀ£ºÏÖÔÚÕıÔÚÅÄÂô" HIC +
-                               now_shop + NOR + CYN "µêÆÌ¡£±¨¼ÛÎª" + YEL +
-                               chinese_number(now_price) + "Á½»Æ½ğ" CYN "µÚ" +
-                               chinese_number(m) + "´Î¡£\n" NOR, operator);
+                message_vision(CYN "\n$N" CYN "æ¥è‘—é“ï¼šç¾åœ¨æ­£åœ¨æ‹è³£" HIC +
+                               now_shop + NOR + CYN "åº—èˆ–ã€‚å ±åƒ¹ç‚º" + YEL +
+                               chinese_number(now_price) + "å…©é»ƒé‡‘" CYN "ç¬¬" +
+                               chinese_number(m) + "æ¬¡ã€‚\n" NOR, operator);
                 break;
 
         case 1:
-                message_vision(CYN "\n$N" CYN "»·¹ËËÄÖÜ´óÉùµÀ£ºÏÖÔÚ±¨¼ÛÎª"
-                               YEL + chinese_number(now_price) + "Á½»Æ½ğ"
-                               CYN "µÚ" + chinese_number(m) + "´Î£¬ÅÄÂô" +
-                               HIC + now_shop + NOR + CYN "µêÆÌ¡£\n" NOR,
+                message_vision(CYN "\n$N" CYN "ç’°é¡§å››å‘¨å¤§è²é“ï¼šç¾åœ¨å ±åƒ¹ç‚º"
+                               YEL + chinese_number(now_price) + "å…©é»ƒé‡‘"
+                               CYN "ç¬¬" + chinese_number(m) + "æ¬¡ï¼Œæ‹è³£" +
+                               HIC + now_shop + NOR + CYN "åº—èˆ–ã€‚\n" NOR,
                                operator);
                 break;
 
         default:
-                message_vision(CYN "\n$N" CYN "¸É¿ÈÁ½Éù£¬´óÉùµÀ£ºÏÖÔÚÎª"
-                               YEL + chinese_number(now_price) + "Á½»Æ½ğ"
-                               CYN "µÚ" + chinese_number(m) + "´Î£¬ÅÄÂô" +
-                               HIC + now_shop + NOR + CYN "µêÆÌ£¬Óû¹º"
-                               "Õß´ÓËÙ¡£\n" NOR, operator);
+                message_vision(CYN "\n$N" CYN "å¹¹å’³å…©è²ï¼Œå¤§è²é“ï¼šç¾åœ¨ç‚º"
+                               YEL + chinese_number(now_price) + "å…©é»ƒé‡‘"
+                               CYN "ç¬¬" + chinese_number(m) + "æ¬¡ï¼Œæ‹è³£" +
+                               HIC + now_shop + NOR + CYN "åº—èˆ–ï¼Œæ¬²è³¼"
+                               "è€…å¾é€Ÿã€‚\n" NOR, operator);
                 break;
         }
 
@@ -785,34 +785,34 @@ int go_jupai()
         {
         case 0:
 
-                message_vision(CYN "$N" CYN "»·¹ËÁËÒ»ÏÂËÄÖÜ£¬½Ó×ÅËµ"
-                               "µÀ£ºÓĞÒâÕß¿É¼ÌĞø¾ÙÅÆ(" HIY "jupai" NOR +
-                               CYN ")ÈÏ¹º¡£\n" NOR, operator);
+                message_vision(CYN "$N" CYN "ç’°é¡§äº†ä¸€ä¸‹å››å‘¨ï¼Œæ¥è‘—èªª"
+                               "é“ï¼šæœ‰æ„è€…å¯ç¹¼çºŒèˆ‰ç‰Œ(" HIY "jupai" NOR +
+                               CYN ")èªè³¼ã€‚\n" NOR, operator);
                 break;
 
         case 1:
-                message_vision(CYN "$N" CYN "Î¢Ğ¦µÀ£ºÓĞÈËÔ¸¼ÌĞøÆ´¼Û"
-                               "Ã´£¿ÇëÓĞÒâÕß¼ÌĞø¾ÙÅÆ(" HIY "jupai" NOR +
-                               CYN ")³ö¼Û¡£\n" NOR, operator);
+                message_vision(CYN "$N" CYN "å¾®ç¬‘é“ï¼šæœ‰äººé¡˜ç¹¼çºŒæ‹¼åƒ¹"
+                               "éº¼ï¼Ÿè«‹æœ‰æ„è€…ç¹¼çºŒèˆ‰ç‰Œ(" HIY "jupai" NOR +
+                               CYN ")å‡ºåƒ¹ã€‚\n" NOR, operator);
                 break;
 
         default:
-                message_vision(CYN "$N" CYN "ÇåÁËÇåÉ¤×Ó£¬½Ó×ÅµÀ£ºÅÄ"
-                               "ÂôÕıÔÚ½øĞĞ£¬Çë¸÷Î»¼ÌĞø¾ÙÅÆ(" HIY "jupai"
-                               NOR + CYN ")Ê¾Òâ¡£\n" NOR, operator);
+                message_vision(CYN "$N" CYN "æ¸…äº†æ¸…å—“å­ï¼Œæ¥è‘—é“ï¼šæ‹"
+                               "è³£æ­£åœ¨é€²è¡Œï¼Œè«‹å„ä½ç¹¼çºŒèˆ‰ç‰Œ(" HIY "jupai"
+                               NOR + CYN ")ç¤ºæ„ã€‚\n" NOR, operator);
                 break;
         }
 
-        // ×Ô¶¯ÅÄÂô
+        // è‡ªå‹•æ‹è³£
         if (operator == ob)
         {
                 if (! (m >= 3))
                         call_out("go_jupai", DISTANCE);
                 else
                         call_out("stop_auction", DISTANCE);
-        // ÊÖ¹¤ÅÄÂô
+        // æ‰‹å·¥æ‹è³£
         } else
-                // ¼ÇÂ¼×îºóÒ»´Î²Ù×÷µÄÊ±¼ä
+                // è¨˜éŒ„æœ€å¾Œä¸€æ¬¡æ“ä½œçš„æ™‚é–“
                 last_time = time();
 
         return 1;
@@ -827,20 +827,20 @@ int do_qiao()
         me = this_player();
 
         if (! query("auction_start"))
-                return notify_fail(WHT "ÏÖÔÚÅÄÂô½ø³Ì»¹Ã»ÓĞÆô¶¯£¬Äú¿ÉÓÃ("
-                                   HIY "start" NOR + WHT ")Ö¸ÁîÀ´Æô¶¯ÅÄ"
-                                   "Âô½ø³Ì¡£\n" NOR);
+                return notify_fail(WHT "ç¾åœ¨æ‹è³£é€²ç¨‹é‚„æ²’æœ‰å•Ÿå‹•ï¼Œæ‚¨å¯ç”¨("
+                                   HIY "start" NOR + WHT ")æŒ‡ä»¤ä¾†å•Ÿå‹•æ‹"
+                                   "è³£é€²ç¨‹ã€‚\n" NOR);
 
         if (operator != me)
-                return notify_fail("ÏÖÔÚÅÄÂô½ø³ÌÕıÓÉ" + operator->name(1) +
-                                   "Ö÷³ÖÖĞ£¬Äú¾Í¿´¿´°É¡£\n");
+                return notify_fail("ç¾åœ¨æ‹è³£é€²ç¨‹æ­£ç”±" + operator->name(1) +
+                                   "ä¸»æŒä¸­ï¼Œæ‚¨å°±çœ‹çœ‹å§ã€‚\n");
 
         remove_call_out("do_auction");
         remove_call_out("begin_auction");
         remove_call_out("stop_auction");
         remove_call_out("go_jupai");
 
-        // ÒÑ¾­Ğû²¼ËùÅÄµêÆÌ£¬µÈ´ı¾ÙÅÆÖĞ
+        // å·²ç¶“å®£å¸ƒæ‰€æ‹åº—èˆ–ï¼Œç­‰å¾…èˆ‰ç‰Œä¸­
         if (m = query("wait_jupai"))
         {
                 if (! (m >= 3))
@@ -855,7 +855,7 @@ int do_qiao()
                 else
                         call_out("stop_auction", 0);
         } else
-                return notify_fail("Äú×¼±¸¼ÌĞøĞû²¼ÅÄÂôÄÄ¸öµêÆÌ£¿\n");
+                return notify_fail("æ‚¨æº–å‚™ç¹¼çºŒå®£å¸ƒæ‹è³£å“ªå€‹åº—èˆ–ï¼Ÿ\n");
 
         return 1;
 }
@@ -875,27 +875,27 @@ int do_auctionlist()
         end_shop = query("end_shop");
 
         if (query("auction_start"))
-                msg += HIC "ÏÖÔÚÕıÔÚÅÄÂôÖ®ÖĞ¡£\n" NOR;
+                msg += HIC "ç¾åœ¨æ­£åœ¨æ‹è³£ä¹‹ä¸­ã€‚\n" NOR;
         else
-                msg += HIC "ÏÖÔÚ²¢Ã»ÓĞÔÚÅÄÂôµêÆÌ¡£\n" NOR;
+                msg += HIC "ç¾åœ¨ä¸¦æ²’æœ‰åœ¨æ‹è³£åº—èˆ–ã€‚\n" NOR;
 
         msg += HIC "--------------------------------------\n" NOR;
 
         if (now_shop)
         {
-                msg += sprintf(HIY "µ±Ç°ÅÄÂôµêÆÌ£º\n" HIW "%-20s"
-                               HIY "\t%dÁ½»Æ½ğ\n" NOR,
+                msg += sprintf(HIY "ç•¶å‰æ‹è³£åº—èˆ–ï¼š\n" HIW "%-20s"
+                               HIY "\t%då…©é»ƒé‡‘\n" NOR,
                                now_shop, now_price);
                 msg += HIC "--------------------------------------\n" NOR;
         }
 
         if (mapp(begin_shop) && sizeof(begin_shop) > 0)
         {
-                msg += WHT "´ıÅÄÂôµêÆÌÁĞ±í£º \n" NOR;
+                msg += WHT "å¾…æ‹è³£åº—èˆ–åˆ—è¡¨ï¼š \n" NOR;
                 shop_key = keys(begin_shop);
 
                 for (i = 0; i < sizeof(shop_key); i++)
-                        msg += sprintf(HIW "%-20s" HIY "\t%dÁ½»Æ½ğ\n" NOR,
+                        msg += sprintf(HIW "%-20s" HIY "\t%då…©é»ƒé‡‘\n" NOR,
                                        shop_key[i],
                                        begin_shop[shop_key[i]]);
 
@@ -904,11 +904,11 @@ int do_auctionlist()
 
         if (mapp(end_shop) && sizeof(end_shop) > 0)
         {
-                msg += HIR "ÒÑ±»ÅÄÂôµêÆÌÁĞ±í£º \n" NOR;
+                msg += HIR "å·²è¢«æ‹è³£åº—èˆ–åˆ—è¡¨ï¼š \n" NOR;
                 shop_key = keys(end_shop);
 
                 for (i = 0; i < sizeof(shop_key); i++)
-                        msg += sprintf(HIW "%-20s" HIY "\t%dÁ½»Æ½ğ\n" NOR,
+                        msg += sprintf(HIW "%-20s" HIY "\t%då…©é»ƒé‡‘\n" NOR,
                                        shop_key[i],
                                        end_shop[shop_key[i]]);
 
@@ -932,20 +932,20 @@ int do_ban(string arg)
         if (! arg)
         {
                 if (sizeof(ban) < 1)
-                        return notify_fail("ÏÖÔÚÃ»ÓĞÍæ¼Ò¸øÈ¡ÏûÅÄÂô×Ê¸ñ¡£\n");
+                        return notify_fail("ç¾åœ¨æ²’æœ‰ç©å®¶çµ¦å–æ¶ˆæ‹è³£è³‡æ ¼ã€‚\n");
 
-                msg = HIC "È¡ÏûÅÄÂô×Ê¸ñµÄÍæ¼ÒÁĞ±í£º\n" NOR;
+                msg = HIC "å–æ¶ˆæ‹è³£è³‡æ ¼çš„ç©å®¶åˆ—è¡¨ï¼š\n" NOR;
                 msg += HIC "------------------------------------\n" NOR;
 
                 for (i = 0; i < sizeof(ban); i++)
                         msg += HIY + ban[i] + "\n" + NOR;
 
                 msg += HIC "------------------------------------\n" NOR;
-                msg += WHT "×Ü¹²" + sizeof(ban) + "Î»Íæ¼Ò¸øÈ¡ÏûÅÄÂô×Ê¸ñ¡£\n" NOR;
+                msg += WHT "ç¸½å…±" + sizeof(ban) + "ä½ç©å®¶çµ¦å–æ¶ˆæ‹è³£è³‡æ ¼ã€‚\n" NOR;
 
-                msg += HIC "\nÖ¸Áî¸ñÊ½£ºban [id] [1|0]\n"
-                       "ÆäÖĞ²ÎÊıidÈ±Ê¡±íÊ¾²éÑ¯£¬Èç¹û²ÎÊıÎª1»òÊÇ"
-                       "È±Ê¡±íÊ¾Ìí¼Ó£¬Îª0±íÊ¾É¾³ı¡£\n" NOR;
+                msg += HIC "\næŒ‡ä»¤æ ¼å¼ï¼šban [id] [1|0]\n"
+                       "å…¶ä¸­åƒæ•¸idç¼ºçœè¡¨ç¤ºæŸ¥è©¢ï¼Œå¦‚æœåƒæ•¸ç‚º1æˆ–æ˜¯"
+                       "ç¼ºçœè¡¨ç¤ºæ·»åŠ ï¼Œç‚º0è¡¨ç¤ºåˆªé™¤ã€‚\n" NOR;
 
                 tell_object(this_player(), msg);
                 return 1;
@@ -983,14 +983,14 @@ int finish_auction(string arg)
                 me = this_player();
 
                 if (! query("auction_start"))
-                        return notify_fail("ÅÄÂô½ø³Ì²¢Ã»ÓĞÆô¶¯¡£\n");
+                        return notify_fail("æ‹è³£é€²ç¨‹ä¸¦æ²’æœ‰å•Ÿå‹•ã€‚\n");
 
                 if (! query("can_finish"))
-                        return notify_fail("ÏÖÔÚÅÄÂôÕıÔÚ½øĞĞÖ®ÖĞ£¬ÎŞ·¨ÖĞÖ¹¡£\n");
+                        return notify_fail("ç¾åœ¨æ‹è³£æ­£åœ¨é€²è¡Œä¹‹ä¸­ï¼Œç„¡æ³•ä¸­æ­¢ã€‚\n");
 
                 if (operator != me)
-                        return notify_fail("ÏÖÔÚÊÇ" + operator->name(1) + "Ö÷³Ö"
-                                           "µêÆÌÅÄÂô£¬Äú¾Í±ğ²ÙĞÄÁË¡£\n");
+                        return notify_fail("ç¾åœ¨æ˜¯" + operator->name(1) + "ä¸»æŒ"
+                                           "åº—èˆ–æ‹è³£ï¼Œæ‚¨å°±åˆ¥æ“å¿ƒäº†ã€‚\n");
         }
 
         remove_call_out("finish_auction");
@@ -1008,30 +1008,30 @@ int finish_auction(string arg)
         delete("owner", ob);
         ob->save();
 
-        message_vision(CYN "\n$N" CYN "ÂúÒâµÄµãÁËµãÍ·£¬µÀ£º±¾´ÎµêÆÌÅÄÂôÔ²"
-                       "Âú½áÊø¡£\n" NOR, operator);
+        message_vision(CYN "\n$N" CYN "æ»¿æ„çš„é»äº†é»é ­ï¼Œé“ï¼šæœ¬æ¬¡åº—èˆ–æ‹è³£åœ“"
+                       "æ»¿çµæŸã€‚\n" NOR, operator);
 
-        CHANNEL_D->do_channel(ob, "sys", "µêÆÌÅÄÂôÍê±Ï¡£" + operator->name(1) +
-                                  "½áÊøÁËÅÄÂô½ø³Ì£¡");
+        CHANNEL_D->do_channel(ob, "sys", "åº—èˆ–æ‹è³£å®Œç•¢ã€‚" + operator->name(1) +
+                                  "çµæŸäº†æ‹è³£é€²ç¨‹ï¼");
 
         if (operator == ob)
         {
                 SHOP_D->open_all(operator);
-                message_vision(CYN "$N" CYN "Ğ¦µÀ£ºÏÖÔÚËùÓĞÅÄ³öµêÆÌÈ«²¿"
-                               "¿ª·Å£¬´ó¼ÒÃ¦È¥°É¡£\n" NOR, operator);
+                message_vision(CYN "$N" CYN "ç¬‘é“ï¼šç¾åœ¨æ‰€æœ‰æ‹å‡ºåº—èˆ–å…¨éƒ¨"
+                               "é–‹æ”¾ï¼Œå¤§å®¶å¿™å»å§ã€‚\n" NOR, operator);
         } else
-                tell_object(operator, WHT "ÄúÏÖÔÚ¿ÉÒÔÓÃ(" HIY "shop open"
-                                      NOR + WHT ")Ö¸Áî¿ª·ÅµêÆÌ¡£\n" NOR);
+                tell_object(operator, WHT "æ‚¨ç¾åœ¨å¯ä»¥ç”¨(" HIY "shop open"
+                                      NOR + WHT ")æŒ‡ä»¤é–‹æ”¾åº—èˆ–ã€‚\n" NOR);
 
-        shout(HIY "¡¾ÉÌ½ç´«ÎÅ¡¿" NOR + WHT + operator->name() + WHT "[" +
-              query("id", operator)+WHT"]£ºÅÄÂô´ó»áµ½´Ë½áÊø£¬¸÷Î»¿ÉÓÃ"
-              "(" HIY "shop" NOR + WHT ")²é¿´¸÷¼ÒµêÆÌÏêÇé¡£\n" NOR);
+        shout(HIY "ã€å•†ç•Œå‚³èã€‘" NOR + WHT + operator->name() + WHT "[" +
+              query("id", operator)+WHT"]ï¼šæ‹è³£å¤§æœƒåˆ°æ­¤çµæŸï¼Œå„ä½å¯ç”¨"
+              "(" HIY "shop" NOR + WHT ")æŸ¥çœ‹å„å®¶åº—èˆ–è©³æƒ…ã€‚\n" NOR);
 
         return 1;
 }
 
-// ĞÄÌøÏß -- ÓÃÓÚ¼ì²éÆô¶¯ÅÄÂô½ø³ÌµÄÎ×Ê¦ÊÇ·ñ×´Ì¬Õı³£
-// Èç¹û×´Ì¬²»Õı³££¬Ôò×ªÎª×Ô¶¯ÔËĞĞÄ£Ê½£¬²¢ÇÒ¹Ø±ÕĞÄÌøÏß
+// å¿ƒè·³ç·š -- ç”¨äºæª¢æŸ¥å•Ÿå‹•æ‹è³£é€²ç¨‹çš„å·«å¸«æ˜¯å¦ç‹€æ…‹æ­£å¸¸
+// å¦‚æœç‹€æ…‹ä¸æ­£å¸¸ï¼Œå‰‡è½‰ç‚ºè‡ªå‹•é‹è¡Œæ¨¡å¼ï¼Œä¸¦ä¸”é—œé–‰å¿ƒè·³ç·š
 void heart_beat()
 {
         int m;
@@ -1063,11 +1063,11 @@ void heart_beat()
                 set_heart_beat(0);
                 operator = this_object();
 
-                command("say Õâ¸ö¡­àÅ¡­¿´À´ËûÓĞµã±ğµÄÊÂÇéÒªÃ¦£¬½ÓÏÂÀ´"
-                        "¾ÍÎÒÀ´´úÌæ°É¡£");
+                command("say é€™å€‹â€¦å—¯â€¦çœ‹ä¾†ä»–æœ‰é»åˆ¥çš„äº‹æƒ…è¦å¿™ï¼Œæ¥ä¸‹ä¾†"
+                        "å°±æˆ‘ä¾†ä»£æ›¿å§ã€‚");
 
-                CHANNEL_D->do_channel(ob, "sys", "ÓÉÓÚ" + the_operator +
-                                          "×´Ì¬Òì³££¬ÏÖÔÚÅÄÂô½ø³Ì×ªÈë×Ô¶¯Ä£Ê½£¡");
+                CHANNEL_D->do_channel(ob, "sys", "ç”±äº" + the_operator +
+                                          "ç‹€æ…‹ç•°å¸¸ï¼Œç¾åœ¨æ‹è³£é€²ç¨‹è½‰å…¥è‡ªå‹•æ¨¡å¼ï¼");
                 set("operator", "feng tiannan");
                 save();
 
@@ -1118,21 +1118,21 @@ int do_autoauction()
         me = this_player();
 
         if (! query("auction_start"))
-                return notify_fail("ÅÄÂô½ø³Ì²¢Ã»ÓĞÆô¶¯£¬ÔõÃ´×Ô¶¯»¯£¿\n");
+                return notify_fail("æ‹è³£é€²ç¨‹ä¸¦æ²’æœ‰å•Ÿå‹•ï¼Œæ€éº¼è‡ªå‹•åŒ–ï¼Ÿ\n");
 
         if (operator != me)
-                return notify_fail("ÏÖÔÚÅÄÂô²¢²»ÊÇÄãÔÚÖ÷³Ö¡£\n");
+                return notify_fail("ç¾åœ¨æ‹è³£ä¸¦ä¸æ˜¯ä½ åœ¨ä¸»æŒã€‚\n");
 
         operator = this_object();
         set_heart_beat(0);
 
-        message_vision(CYN "$N" CYN "ÕĞÊÖ½«$n" CYN "½ĞÉÏÀ´£¬ËµµÀ£ºÎÒ"
-                       "ÓĞµãÆäËüÊÂ£¬ÕâÀï¾ÍÄãÀ´´¦Àí°É¡£\n" NOR, me, ob);
-        message_vision(CYN "$N" CYN "Á¬Ã¦³¯$n" CYN "ÅâĞ¦µÀ£ºÄúÀÏÈË¼Ò"
-                       "Ã¦ÄúµÄ£¬ÕâÀï¾Í½»¸øÎÒ°É¡£\n" NOR, ob, me);
+        message_vision(CYN "$N" CYN "æ‹›æ‰‹å°‡$n" CYN "å«ä¸Šä¾†ï¼Œèªªé“ï¼šæˆ‘"
+                       "æœ‰é»å…¶å®ƒäº‹ï¼Œé€™è£¡å°±ä½ ä¾†è™•ç†å§ã€‚\n" NOR, me, ob);
+        message_vision(CYN "$N" CYN "é€£å¿™æœ$n" CYN "è³ ç¬‘é“ï¼šæ‚¨è€äººå®¶"
+                       "å¿™æ‚¨çš„ï¼Œé€™è£¡å°±äº¤çµ¦æˆ‘å§ã€‚\n" NOR, ob, me);
 
-        CHANNEL_D->do_channel(ob,"sys",query("id", me)+"½«ÅÄÂô½ø"
-                                  "³Ì×ªÈë×Ô¶¯Ä£Ê½£¡");
+        CHANNEL_D->do_channel(ob,"sys",query("id", me)+"å°‡æ‹è³£é€²"
+                                  "ç¨‹è½‰å…¥è‡ªå‹•æ¨¡å¼ï¼");
         set("operator", "feng tiannan");
         save();
 

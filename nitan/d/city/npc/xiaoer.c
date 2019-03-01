@@ -5,13 +5,13 @@ inherit NPC;
 
 void create()
 {
-        set_name("µêĞ¡¶ş", ({ "xiao er", "xiao", "waiter" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("åº—å°äºŒ", ({ "xiao er", "xiao", "waiter" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 22);
-        set("long", "ÕâÎ»µêĞ¡¶şÕıĞ¦ßäßäµØÃ¦Öø£¬»¹²»Ê±ÄÃÆğ¹ÒÔÚ²±×ÓÉÏµÄÄ¨²¼²ÁÁ³¡£\n");
+        set("long", "é€™ä½åº—å°äºŒæ­£ç¬‘å’ªå’ªåœ°å¿™è‘—ï¼Œé‚„ä¸æ™‚æ‹¿èµ·æ›åœ¨è„–å­ä¸Šçš„æŠ¹å¸ƒæ“¦è‡‰ã€‚\n");
         set("combat_exp", 100);
         set("attitude", "friendly");
-        set("rank_info/respect", "Ğ¡¶ş¸ç");
+        set("rank_info/respect", "å°äºŒå“¥");
         setup();
         if (clonep()) keep_heart_beat();
 }
@@ -21,19 +21,19 @@ string accept_ask(object me, string topic)
         switch (random(5))
         {
         case 0:
-                return "àË£¡ÎÒÃ¦×ÅÄØ£¬ÄãºÍÎÒÄÇ×íÏÉÂ¥×ö»îµÄĞÖµÜÁÄÁÄ°É£¡";
+                return "å—¨ï¼æˆ‘å¿™è‘—å‘¢ï¼Œä½ å’Œæˆ‘é‚£é†‰ä»™æ¨“åšæ´»çš„å…„å¼ŸèŠèŠå§ï¼";
 
         case 1:
-                return "Äã¸ÉÉ¶£¿Ã»¿´ÎÒÃ¦×ÅÄØÃ´£¿";
+                return "ä½ å¹¹å•¥ï¼Ÿæ²’çœ‹æˆ‘å¿™è‘—å‘¢éº¼ï¼Ÿ";
 
         case 2:
-                return "°¥Ñ½Ñ½£¬ÄãÃ»¿´ÎÒÃ¦×ÅÄØÃ´£¬Òª´òÌıÏûÏ¢ÄãÈ¥ÕÒÎÒ×íÏÉÂ¥×ö»îµÄĞÖµÜ°É£¿";
+                return "å“å‘€å‘€ï¼Œä½ æ²’çœ‹æˆ‘å¿™è‘—å‘¢éº¼ï¼Œè¦æ‰“è½æ¶ˆæ¯ä½ å»æ‰¾æˆ‘é†‰ä»™æ¨“åšæ´»çš„å…„å¼Ÿå§ï¼Ÿ";
 
         case 3:
-                return "´ºÀ´²è¹İµÄÀÏ°åÄï°¢ÇìÉ©ÏûÏ¢Ò²ÁéÍ¨£¬ÄÇĞ©Ò¯ÃÇÊ²Ã´¶¼¸æËßËı£¬Òª²»ÄãÎÊËıÈ¥£¿";
+                return "æ˜¥ä¾†èŒ¶é¤¨çš„è€æ¿å¨˜é˜¿æ…¶å«‚æ¶ˆæ¯ä¹Ÿéˆé€šï¼Œé‚£äº›çˆºå€‘ä»€éº¼éƒ½å‘Šè¨´å¥¹ï¼Œè¦ä¸ä½ å•å¥¹å»ï¼Ÿ";
 
         default:
-               return "ÎÒÄÇ×íÏÉÂ¥×ö»îµÄĞÖµÜÏûÏ¢²Å½ĞÁéÍ¨£¬ÄãÈ¥ºÍËûÁÄ°É¡£";
+               return "æˆ‘é‚£é†‰ä»™æ¨“åšæ´»çš„å…„å¼Ÿæ¶ˆæ¯æ‰å«éˆé€šï¼Œä½ å»å’Œä»–èŠå§ã€‚";
         }
 }
 
@@ -57,12 +57,12 @@ void greeting(object ob)
         switch( random(2) )
         {
         case 0:
-                say( CYN "µêĞ¡¶şĞ¦ßäßäµØËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-                   + CYN + "£¬½øÀ´ºÈ±­²è£¬ĞªĞªÍÈ°É¡£\n" NOR);
+                say( CYN "åº—å°äºŒç¬‘å’ªå’ªåœ°èªªé“ï¼šé€™ä½" + RANK_D->query_respect(ob)
+                   + CYN + "ï¼Œé€²ä¾†å–æ¯èŒ¶ï¼Œæ­‡æ­‡è…¿å§ã€‚\n" NOR);
                 break;
         case 1:
-                say( CYN "µêĞ¡¶şÓÃ²±×ÓÉÏµÄÃ«½íÄ¨ÁËÄ¨ÊÖ£¬ËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-                   + CYN + "£¬Çë½øÇë½ø¡£\n" NOR);
+                say( CYN "åº—å°äºŒç”¨è„–å­ä¸Šçš„æ¯›å·¾æŠ¹äº†æŠ¹æ‰‹ï¼Œèªªé“ï¼šé€™ä½" + RANK_D->query_respect(ob)
+                   + CYN + "ï¼Œè«‹é€²è«‹é€²ã€‚\n" NOR);
                 break;
         }
 }
@@ -72,7 +72,7 @@ int accept_object(object me, object ob)
         
         if( query("money_id", ob) && ob->value() >= 1000 )
         {
-                tell_object(me, CYN "Ğ¡¶şÒ»¹şÑü£¬ËµµÀ£º¶àĞ»ÄúÀÏ£¬¿Í¹ÙÇëÉÏÂ¥ĞªÏ¢¡£\n" NOR);
+                tell_object(me, CYN "å°äºŒä¸€å“ˆè…°ï¼Œèªªé“ï¼šå¤šè¬æ‚¨è€ï¼Œå®¢å®˜è«‹ä¸Šæ¨“æ­‡æ¯ã€‚\n" NOR);
                 set_temp("rent_paid", 1, me);
                 return 1;
         }
@@ -80,10 +80,10 @@ int accept_object(object me, object ob)
         switch (random(6))
         {
         case 0:
-                command("say ºÃ£¡ºÃ£¡");
+                command("say å¥½ï¼å¥½ï¼");
                 break;
         case 1:
-                command("say ²»ĞèÒªµÄ¶«Î÷È«¸øÎÒ£¡");
+                command("say ä¸éœ€è¦çš„æ±è¥¿å…¨çµ¦æˆ‘ï¼");
                 break;
         }
 
@@ -116,14 +116,14 @@ void heart_beat()
                                 continue;
 
                         if( query("id", ob) == "corpse" )
-                                message_vision(HIC "\n$N" HIC "Õ¾ÆğÉí£¬°Ñ$n" HIC "Áàµ½"
-                                               "ÃÅÍâ£¬È»ºóÓÖÈôÎŞÆäÊÂµØ×ßÁË»ØÀ´¡£\n\n"
+                                message_vision(HIC "\n$N" HIC "ç«™èµ·èº«ï¼ŒæŠŠ$n" HIC "æ‹åˆ°"
+                                               "é–€å¤–ï¼Œç„¶å¾Œåˆè‹¥ç„¡å…¶äº‹åœ°èµ°äº†å›ä¾†ã€‚\n\n"
                                                NOR, this_object(), ob);
-                        else if( query("race", ob) != "Ò°ÊŞ" )
-                                message_vision(CYN "\n$N" CYN "¶Ô$n" CYN "ÂúÁ³Ç¸È»µØËµ"
-                                               "µÀ£º¶Ô²»×¡£¬Ğ¡µêÒÑ¾­Âú×ùÁË¡£\n" HIC "$n"
-                                               HIC "ÌıºóÒ»ã¶£¬Ò¡ÁËÒ¡Í·£¬ÂîÂîßÖßÖµØ×ªÉí"
-                                               "ÀëÈ¥¡£\n" NOR, this_object(), ob);
+                        else if( query("race", ob) != "é‡ç¸" )
+                                message_vision(CYN "\n$N" CYN "å°$n" CYN "æ»¿è‡‰æ­‰ç„¶åœ°èªª"
+                                               "é“ï¼šå°ä¸ä½ï¼Œå°åº—å·²ç¶“æ»¿åº§äº†ã€‚\n" HIC "$n"
+                                               HIC "è½å¾Œä¸€æ„£ï¼Œæ–äº†æ–é ­ï¼Œç½µç½µå’§å’§åœ°è½‰èº«"
+                                               "é›¢å»ã€‚\n" NOR, this_object(), ob);
                         ob->move("/d/city/beidajie1");
                 }
         }
@@ -148,15 +148,15 @@ int do_drop(string arg)
                 if( query_temp("static/drop_npc", me)>1 && 
                     query("combat_exp", me) >= 50000 )
                 {
-                        message_vision(CYN "\n$N" CYN "´óÅ­µÀ£ººÃÄã¸ö" + RANK_D->query_rude(ob)
-                                       + CYN "£¬»¹¸ÒÀ´ÌíÂÒ£¿\n" NOR + HIC "Ëµ°Õ$N" HIC "Ò»Éù´ó"
-                                       "½Ğ£¬±±³ó¶ÙÊ±³åÁË³öÀ´£¬·ÉÆğÁ½½Å£¬½«$n" HIC "ºÍ" + ob->name()
-                                       + HIC "Ò»ÆğÌßÁË³öÈ¥¡£\n\n" NOR, this_object(), me);
+                        message_vision(CYN "\n$N" CYN "å¤§æ€’é“ï¼šå¥½ä½ å€‹" + RANK_D->query_rude(ob)
+                                       + CYN "ï¼Œé‚„æ•¢ä¾†æ·»äº‚ï¼Ÿ\n" NOR + HIC "èªªç½·$N" HIC "ä¸€è²å¤§"
+                                       "å«ï¼ŒåŒ—é†œé “æ™‚æ²–äº†å‡ºä¾†ï¼Œé£›èµ·å…©è…³ï¼Œå°‡$n" HIC "å’Œ" + ob->name()
+                                       + HIC "ä¸€èµ·è¸¢äº†å‡ºå»ã€‚\n\n" NOR, this_object(), me);
 
                         ob->move("/d/city/beidajie1");
                         me->move("/d/city/beidajie1");
-                        message("vision", HIC "Ö»Ìı¿Íµê´¦Åé¶£ßÛà¥Ò»ÕóºäÏì£¬±ã¼û" + me->name()
-                                          + HIC "ºÍ" + ob->name() + HIC "Ò»Æğ·ÉÁË³öÀ´¡£\n"
+                        message("vision", HIC "åªè½å®¢åº—è™•ç °å®â–¡å•·ä¸€é™£è½ŸéŸ¿ï¼Œä¾¿è¦‹" + me->name()
+                                          + HIC "å’Œ" + ob->name() + HIC "ä¸€èµ·é£›äº†å‡ºä¾†ã€‚\n"
                                           NOR, environment(me), me);
 
                         me->receive_damage("qi", 1);
@@ -165,15 +165,15 @@ int do_drop(string arg)
                         return 1;
                 }
 
-                message_vision(CYN "\n$N" CYN "Å­µÀ£º»ŞÆø£¬»ŞÆø£¡ÕâÀïÓÖ²»ÊÇ¹×²Äµê£¬Äã°á¸öÒªËÀ"
-                               "µÄÈË½øÀ´¸ÉÂï£¿\n" NOR + HIC "Ëµ°Õ$N" HIC "Ò»ÕĞÊÖ£¬¶ÙÊ±À´ÁËÒ»Èº"
-                               "±ëĞÎ´óºº£¬½«$n" HIC "ºÍ" + ob->name() + HIC "Ò»Æğ¸ÏÁË³öÈ¥¡£\n\n"
+                message_vision(CYN "\n$N" CYN "æ€’é“ï¼šæ™¦æ°£ï¼Œæ™¦æ°£ï¼é€™è£¡åˆä¸æ˜¯æ£ºæåº—ï¼Œä½ æ¬å€‹è¦æ­»"
+                               "çš„äººé€²ä¾†å¹¹å˜›ï¼Ÿ\n" NOR + HIC "èªªç½·$N" HIC "ä¸€æ‹›æ‰‹ï¼Œé “æ™‚ä¾†äº†ä¸€ç¾¤"
+                               "å½ªå½¢å¤§æ¼¢ï¼Œå°‡$n" HIC "å’Œ" + ob->name() + HIC "ä¸€èµ·è¶•äº†å‡ºå»ã€‚\n\n"
                                NOR, this_object(), me);
 
                 ob->move("/d/city/beidajie1");
                 me->move("/d/city/beidajie1");
-                message("vision", HIC "Ö»Ìı¿Íµê´¦´«À´Ò»ÕóºäÄÖÉù£¬" + me->name() + HIC "±»ÈË¸Ï"
-                                  "ÁË³öÀ´£¬Ëæºó°ëËÀ²»»îµÄ" + ob->name() + HIC "Ò²±»ÈÓÁË³öÀ´¡£"
+                message("vision", HIC "åªè½å®¢åº—è™•å‚³ä¾†ä¸€é™£è½Ÿé¬§è²ï¼Œ" + me->name() + HIC "è¢«äººè¶•"
+                                  "äº†å‡ºä¾†ï¼Œéš¨å¾ŒåŠæ­»ä¸æ´»çš„" + ob->name() + HIC "ä¹Ÿè¢«æ‰”äº†å‡ºä¾†ã€‚"
                                   "\n" NOR, environment(me), me);
                 me->receive_damage("qi", 1);
                 return 1;
@@ -193,14 +193,14 @@ int do_drop(string arg)
                 switch (random(4))
                 {
                 case 0:
-                        command("say Äã²»ÒªÎÒÒª£¡");
+                        command("say ä½ ä¸è¦æˆ‘è¦ï¼");
                         break;
                 case 1:
                         command("sigh"+query("id", this_player()));
-                        command("say ÔãÌ£°¡£¬×÷Äõ°¡£¡");
+                        command("say ç³Ÿè¹‹å•Šï¼Œä½œå­½å•Šï¼");
                         break;
                 case 2:
-                        command("say °Ü¼Ò×Ó£¬°Ü¼Ò×Ó£¡");
+                        command("say æ•—å®¶å­ï¼Œæ•—å®¶å­ï¼");
                         break;
                 default:
                         command("heihei");

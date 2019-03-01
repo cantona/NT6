@@ -2,10 +2,10 @@ inherit NPC;
 
 void create()
 {
-   set_name("°²ÄÏ¹Ù±ø",({ "bing" }) );
-   set("gender", "ÄÐÐÔ" );
+   set_name("å®‰å—å®˜å…µ",({ "bing" }) );
+   set("gender", "ç”·æ€§" );
    set("age", 32);
-   set("long", "ÕâÊÇÒ»¸öÔÚ°²ÄÏ³ÇÄÚÑ²ÂßµÄ¹Ù±ø¡£\n");
+   set("long", "é€™æ˜¯ä¸€å€‹åœ¨å®‰å—åŸŽå…§å·¡é‚çš„å®˜å…µã€‚\n");
        
    set("combat_exp",800000);
 
@@ -65,7 +65,7 @@ void init()
 
 int accept_fight(object me)
 {
-        command("say ´óÒ¯ÎÒÕýÏëÕÒÈËÉ±ÄÅ£¬½ñÌìËãÄãµ¹Ã¹¡£\n");
+        command("say å¤§çˆºæˆ‘æ­£æƒ³æ‰¾äººæ®ºå¶ï¼Œä»Šå¤©ç®—ä½ å€’éœ‰ã€‚\n");
 //        me->apply_condition("killer", 500);
         kill_ob(me);
         return 1;

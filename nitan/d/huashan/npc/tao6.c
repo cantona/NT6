@@ -1,18 +1,18 @@
 // Copyright (C) 2003, by Lonely. All rights reserved.
 // This software can not be used, copied, or modified 
 // in any form without the written permission from authors.
-// tao6.c ÌÒÊµÏÉ
+// tao6.c æ¡ƒå¯¦ä»™
 
 inherit NPC;
 string ask_me();
 
 void create()
 {
-        set_name("ÌÒÊµÏÉ", ({ "tao shixian", "tao", "shixian" }));
-        set("nickname", "ÌÒ¹ÈÁùÏÉÀÏÁù");
+        set_name("æ¡ƒå¯¦ä»™", ({ "tao shixian", "tao", "shixian" }));
+        set("nickname", "æ¡ƒè°·å…­ä»™è€å…­");
         set("long", 
-"ÌÒÊµÏÉÓÚÌÒ¹ÈÁùÏÉÖĞÄê¼Í×îĞ¡£¬Í¬Ê±µ¨×ÓÒ²×îĞ¡¡£\n");
-        set("gender", "ÄĞĞÔ");
+"æ¡ƒå¯¦ä»™äºæ¡ƒè°·å…­ä»™ä¸­å¹´ç´€æœ€å°ï¼ŒåŒæ™‚è†½å­ä¹Ÿæœ€å°ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 55);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -46,15 +46,15 @@ void create()
         set("chat_chance", 6);
 
         set("chat_msg", ({
-                "ÌÒÊµÏÉ¹ËÂÇµØµÀ£ºËû²»ÊÇÌ«Àûº¦°É£¿\n",
-                "ÌÒÊµÏÉ¶Ô´ó»ïËµµÀ£ºÄãÃÇÏÈÉÏ£¬ÎÒÀ´µîºó¡£\n",
+                "æ¡ƒå¯¦ä»™é¡§æ…®åœ°é“ï¼šä»–ä¸æ˜¯å¤ªåˆ©å®³å§ï¼Ÿ\n",
+                "æ¡ƒå¯¦ä»™å°å¤§ä¼™èªªé“ï¼šä½ å€‘å…ˆä¸Šï¼Œæˆ‘ä¾†æ®¿å¾Œã€‚\n",
         }) );
 
         set("inquiry", ([
-                "Áîºü³å"     : "ÁîºüĞÖÊÇÎÒµÄºÃÅóÓÑ£¬³£ËµÔÛÃÇÁùĞÖµÜÊÇ½­ºşÖĞµÄÓ¢ĞÛºÃºº¡£\n",
-                "·çÇåÑï"     : (: ask_me :),
-                "·çÇ°±²"     : (: ask_me :),
-                "·çÇåÑïÇ°±²" : (: ask_me :),
+                "ä»¤ç‹æ²–"     : "ä»¤ç‹å…„æ˜¯æˆ‘çš„å¥½æœ‹å‹ï¼Œå¸¸èªªå’±å€‘å…­å…„å¼Ÿæ˜¯æ±Ÿæ¹–ä¸­çš„è‹±é›„å¥½æ¼¢ã€‚\n",
+                "é¢¨æ¸…æš"     : (: ask_me :),
+                "é¢¨å‰è¼©"     : (: ask_me :),
+                "é¢¨æ¸…æšå‰è¼©" : (: ask_me :),
         ]));
 
         setup();

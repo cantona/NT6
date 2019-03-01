@@ -5,19 +5,19 @@
 int exert(object me, object target, int amount)
 {
         if( me->is_fighting() )
-                return notify_fail("Õ½¶·ÖÐÔË¹¦ÁÆÉË£¿ÕÒËÀÂð£¿\n");
+                return notify_fail("æˆ°é¬¥ä¸­é‹åŠŸç™‚å‚·ï¼Ÿæ‰¾æ­»å—Žï¼Ÿ\n");
 
         if( query("neili", me)-query("max_neili", me)<50 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ã€‚\n");
 
         if( query("eff_qi", me)<query("max_qi", me)/2 )
                 return 
-notify_fail("ÄãÒÑ¾­ÊÜÉË¹ýÖØ£¬Ö»ÅÂÒ»ÔËÕæÆø±ãÓÐÉúÃüÎ£ÏÕ£¡\n");
+notify_fail("ä½ å·²ç¶“å—å‚·éŽé‡ï¼Œåªæ€•ä¸€é‹çœŸæ°£ä¾¿æœ‰ç”Ÿå‘½å±éšªï¼\n");
 
-        write( HIW "ÄãÈ«Éí·ÅËÉ£¬×øÏÂÀ´¿ªÊ¼ÔË¹¦ÁÆÉË¡£\n" NOR);
+        write( HIW "ä½ å…¨èº«æ”¾é¬†ï¼Œåä¸‹ä¾†é–‹å§‹é‹åŠŸç™‚å‚·ã€‚\n" NOR);
         message("vision",
                 HIW + me->name() + 
-"×øÏÂÀ´ÔË¹¦ÁÆÉË£¬Á³ÉÏÒ»ÕóºìÒ»Õó°×£¬²»¾Ã£¬ÍÂ³öÒ»¿ÚðöÑª£¬Á³É«¿´ÆðÀ´ºÃ¶àÁË¡£\n" 
+"åä¸‹ä¾†é‹åŠŸç™‚å‚·ï¼Œè‡‰ä¸Šä¸€é™£ç´…ä¸€é™£ç™½ï¼Œä¸ä¹…ï¼Œåå‡ºä¸€å£ç˜€è¡€ï¼Œè‡‰è‰²çœ‹èµ·ä¾†å¥½å¤šäº†ã€‚\n" 
 NOR,
                 environment(me), me);
 

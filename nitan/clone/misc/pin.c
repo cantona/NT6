@@ -1,4 +1,4 @@
-// pin.c ¸ÖÕë
+// pin.c é‹¼é‡
 
 #include <weapon.h>
 #include <ansi.h>
@@ -7,17 +7,17 @@ inherit PIN;
 
 void create()
 {
-        set_name("¸ÖÕë", ({ "pin", "zhen" }));
+        set_name("é‹¼é‡", ({ "pin", "zhen" }));
         set_weight(15);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ù");
-                set("long", "ÕâÊÇÒ»ÓÃÀ´·ìÖÆÒÂ·şµÄÕë£¬ÆÄÎª´Ö³¤¡£\n");
+                set("unit", "æ ¹");
+                set("long", "é€™æ˜¯ä¸€ç”¨ä¾†ç¸«åˆ¶è¡£æœçš„é‡ï¼Œé —ç‚ºç²—é•·ã€‚\n");
                 set("value", 10);
                 set("material", "steel");
-                set("wield_msg", YEL "$NÊÖÒ»¶¶£¬ÁÁ³öÒ»¸ù$n" YEL "¡£\n");
-                set("unwield_msg", YEL "$NÊÕÆğÁË$n" YEL "¡£\n");
+                set("wield_msg", YEL "$Næ‰‹ä¸€æŠ–ï¼Œäº®å‡ºä¸€æ ¹$n" YEL "ã€‚\n");
+                set("unwield_msg", YEL "$Næ”¶èµ·äº†$n" YEL "ã€‚\n");
         }
 
         init_pin(10);

@@ -4,13 +4,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name("ÓÍ²¼°ü", ({ "bag", "bao" }));
+        set_name("æ²¹å¸ƒåŒ…", ({ "bag", "bao" }));
         set_weight(200);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
-                set("long", "ÕâÊÇÒ»¸öÓÍ²¼°ü¹ü¡£\n");
+                set("unit", "å€‹");
+                set("long", "é€™æ˜¯ä¸€å€‹æ²¹å¸ƒåŒ…è£¹ã€‚\n");
                 set("value", 500);
                 set("material", "cloth");
         }
@@ -33,5 +33,5 @@ int do_open(string arg)
         object where;
 
         if ( !arg ) return 0;
-        return notify_fail("ÓÍ²¼°üÀïÃæÊ²Ã´Ò²Ã»ÓĞÁË¡£\n");
+        return notify_fail("æ²¹å¸ƒåŒ…è£¡é¢ä»€éº¼ä¹Ÿæ²’æœ‰äº†ã€‚\n");
 }

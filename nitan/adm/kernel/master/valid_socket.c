@@ -1,25 +1,25 @@
 /*
-Ãû³Æ£º
-        valid_socket - ±£»¤ socket Íâ²¿º¯Ê½ (efunctions)¡£
-Óï·¨£º
+åç¨±ï¼š
+        valid_socket - ä¿è­· socket å¤–éƒ¨å‡½å¼ (efunctions)ã€‚
+èªæ³•ï¼š
         int valid_socket( object caller, string function, mixed array info );
 
-        ÕûÊı valid_socket( Îï¼ş ºô½ĞÕß, ×Ö´® º¯Ê½, »ìºÏ ÕóÁĞ ×ÊÑ¶ );
-ÓÃ·¨£º
-        Ã¿Ò»¸ö socket Íâ²¿º¯Ê½Ö´ĞĞÖ®Ç°£¬»áÏÈºô½Ğ valid_socket()¡£Èç¹û
-        valid_socket() ´«»Ø 0£¬Ôò´Ë socket Íâ²¿º¯Ê½Ê§°Ü¡£·´Ö®£¬´«»Ø 1 Ôò³É
-        ¹¦¡£µÚÒ»¸ö²ÎÊı caller ÊÇºô½Ğ´Ë socket Íâ²¿º¯Ê½µÄÎï¼ş¡£µÚ¶ş¸ö²ÎÊı
-        function ÊÇ±»ºô½ĞµÄ socket Íâ²¿º¯Ê½Ãû³Æ¡´ÀıÈç socket_write() »ò
-        socket_bind()¡µ¡£µÚÈı¸ö²ÎÊıÊÇÒ»¸ö×ÊÑ¶µÄÕóÁĞ¡£Èç¹ûÓĞ×ÊÑ¶µÄ»°£¬Õâ¸ö
-        ÕóÁĞµÄµÚÒ»¸öÔªËØ (element) ÊÇ±»²Î¿¼µÄµµ°¸ĞğÊöÖµ (file descriptor
-        being referenced)¡£µÚ¶ş¸öÔªËØÊÇÓµÓĞ´Ë socket µÄÎï¼ş¡´Îï¼şĞÍÌ¬¡µ¡£
-        µÚÈı¸öÔªËØÊÇ´Ë socket µÄÔ¶¶ËÎ»Ö· (address of the remote end)¡´×Ö´®
-        ĞÍÌ¬¡µ¡£µÚËÄ¸öÔªËØÊÇÓë socket Ïà¹ØµÄ (associated) Á¬½Ó²ººÅÂë (port
-        number)¡£
-×÷Õß£º
+        æ•´æ•¸ valid_socket( ç‰©ä»¶ å‘¼å«è€…, å­—ä¸² å‡½å¼, æ··åˆ é™£åˆ— è³‡è¨Š );
+ç”¨æ³•ï¼š
+        æ¯ä¸€å€‹ socket å¤–éƒ¨å‡½å¼åŸ·è¡Œä¹‹å‰ï¼Œæœƒå…ˆå‘¼å« valid_socket()ã€‚å¦‚æœ
+        valid_socket() å‚³å› 0ï¼Œå‰‡æ­¤ socket å¤–éƒ¨å‡½å¼å¤±æ•—ã€‚åä¹‹ï¼Œå‚³å› 1 å‰‡æˆ
+        åŠŸã€‚ç¬¬ä¸€å€‹åƒæ•¸ caller æ˜¯å‘¼å«æ­¤ socket å¤–éƒ¨å‡½å¼çš„ç‰©ä»¶ã€‚ç¬¬äºŒå€‹åƒæ•¸
+        function æ˜¯è¢«å‘¼å«çš„ socket å¤–éƒ¨å‡½å¼åç¨±ã€ˆä¾‹å¦‚ socket_write() æˆ–
+        socket_bind()ã€‰ã€‚ç¬¬ä¸‰å€‹åƒæ•¸æ˜¯ä¸€å€‹è³‡è¨Šçš„é™£åˆ—ã€‚å¦‚æœæœ‰è³‡è¨Šçš„è©±ï¼Œé€™å€‹
+        é™£åˆ—çš„ç¬¬ä¸€å€‹å…ƒç´  (element) æ˜¯è¢«åƒè€ƒçš„æª”æ¡ˆæ•˜è¿°å€¼ (file descriptor
+        being referenced)ã€‚ç¬¬äºŒå€‹å…ƒç´ æ˜¯æ“æœ‰æ­¤ socket çš„ç‰©ä»¶ã€ˆç‰©ä»¶å‹æ…‹ã€‰ã€‚
+        ç¬¬ä¸‰å€‹å…ƒç´ æ˜¯æ­¤ socket çš„é ç«¯ä½å€ (address of the remote end)ã€ˆå­—ä¸²
+        å‹æ…‹ã€‰ã€‚ç¬¬å››å€‹å…ƒç´ æ˜¯èˆ‡ socket ç›¸é—œçš„ (associated) é€£æ¥åŸ è™Ÿç¢¼ (port
+        number)ã€‚
+ä½œè€…ï¼š
         Tim Hollebeek  Beek@ZorkMUD, Lima Bean, IdeaExchange, and elsewhere
-·­Òë£º
-        spock@muds.net          2000.May.21.    v22 °æ
+ç¿»è­¯ï¼š
+        spock@muds.net          2000.May.21.    v22 ç‰ˆ
 */
 
 // valid_socket: controls access to socket efunctions
@@ -31,7 +31,7 @@ int valid_socket(object eff_user, string fun, mixed *info)
 /*
 int valid_socket(object caller, string func, mixed *info)
 {
-        // caller ÔÚ login_ob Àï¿ÉÄÜ²»»á´«ÈëÎï¼ş
+        // caller åœ¨ login_ob è£¡å¯èƒ½ä¸æœƒå‚³å…¥ç‰©ä»¶
         if( !objectp(caller) )
                 return 0;
 

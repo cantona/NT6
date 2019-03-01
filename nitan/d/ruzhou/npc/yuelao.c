@@ -4,11 +4,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÔÂÀÏ", ({ "yue lao","yue","lao"}) );
-        set("gender", "ÄĞĞÔ");
+        set_name("æœˆè€", ({ "yue lao","yue","lao"}) );
+        set("gender", "ç”·æ€§");
         set("age", 90);
         set("long",
-                "Ö»¼ûËû³¤µÃº×·¢Í¯ÑÕ£¬Éí²Ä¸ß´ó£¬ÃæÄ¿´ÈÏé¡£\n");
+                "åªè¦‹ä»–é•·å¾—é¶´ç™¼ç«¥é¡ï¼Œèº«æé«˜å¤§ï¼Œé¢ç›®æ…ˆç¥¥ã€‚\n");
         set("combat_exp", 150000);
    set("qi",1000);
    set("jing",1000);
@@ -16,7 +16,7 @@ void create()
    set("jiali",10);
    set("shen_type", 0);
         set("attitude", "heroism");
-   set("channel_id", "ÔÂÀÏ");
+   set("channel_id", "æœˆè€");
 
         set_skill("unarmed", 100);
         set_skill("parry", 100);

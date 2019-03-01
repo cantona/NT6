@@ -5,14 +5,14 @@ inherit ITEM;
 inherit F_EQUIP;
 void create()
 {
-        set_name( HIW"ÊÖ¾î"NOR, ({ "shou juan", "piece"}) );
+        set_name( HIW"æ‰‹çµ¹"NOR, ({ "shou juan", "piece"}) );
         set_weight(200);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "·½");
+                set("unit", "æ–¹");
                 set("material", "cloth");
-                set("long", "ÕâÊÇÒ»·½Ñ©°×µÄÊÖ¾î¡£\n");               
+                set("long", "é€™æ˜¯ä¸€æ–¹é›ªç™½çš„æ‰‹çµ¹ã€‚\n");               
                 set("armor_type", "bandage");
                 set("armor_prop/attack", -10);
                 set("armor_prop/defense", -10);
@@ -38,24 +38,24 @@ int do_look(string arg)
         if(id(arg)){
         if(query("blood_soaked") >= 2 && random(query("kar,me")) < 10 && !query("blooded"))
            {
-            message_vision("$NÕýÄÃ×ÅÕÅÊÖ¾î×ÐÏ¸µØ¶ËÏê×Å¡£\n", me);
+            message_vision("$Næ­£æ‹¿è‘—å¼µæ‰‹çµ¹ä»”ç´°åœ°ç«¯è©³è‘—ã€‚\n", me);
             if(!query_temp("blooded")){            
-                 tell_object(me, HIY "\nÄãÍ»È»·¢ÏÖÕâÕÅÊÖ¾îÓÐµãÆæ¹Ö£¬±»È¾¹ýÑªµÄµØ·½ÓÐÁËµã±ä»¯£¡\n\n"NOR);
+                 tell_object(me, HIY "\nä½ çªç„¶ç™¼ç¾é€™å¼µæ‰‹çµ¹æœ‰é»žå¥‡æ€ªï¼Œè¢«æŸ“éŽè¡€çš„åœ°æ–¹æœ‰äº†é»žè®ŠåŒ–ï¼\n\n"NOR);
                  set_temp("blooded", 1);
                  return 1;
                  }
             else if(query_temp("blooded") < 3){
-                 tell_object(me, HIY "\nÕâÕÅÊÖ¾î±»È¾¹ýÑªµÄµØ·½¿ªÊ¼³öÏÖÁËµã±ä»¯£¡\n"NOR);
+                 tell_object(me, HIY "\né€™å¼µæ‰‹çµ¹è¢«æŸ“éŽè¡€çš„åœ°æ–¹é–‹å§‹å‡ºç¾äº†é»žè®ŠåŒ–ï¼\n"NOR);
                  addn_temp("blooded", 1);
                  return 1;
                  }
             else {                 
-                 tell_object(me, HIY "\nÄã×ÐÏ¸ÑÐ¾¿ÁËÒ»ÏÂ£¬²Å·¢ÏÖÕâÊÇÕÅµØÍ¼£¬±»Ñª½þÁËºó²ÅÂýÂýÏÖ³öÍ¼°¸À´£¡\n\n"NOR);
+                 tell_object(me, HIY "\nä½ ä»”ç´°ç ”ç©¶äº†ä¸€ä¸‹ï¼Œæ‰ç™¼ç¾é€™æ˜¯å¼µåœ°åœ–ï¼Œè¢«è¡€æµ¸äº†å¾Œæ‰æ…¢æ…¢ç¾å‡ºåœ–æ¡ˆä¾†ï¼\n\n"NOR);
                  set("blooded", 1);
                  delete_temp("blooded");
                  if( query("owner") == query("id", me) )
                    set_temp("li_meet", 2, me);
-                 set("long", "ÕâÊÇÒ»ÕÅ±»ÑªÈ¾ºìÁËµÄÊÖ¾î£¬ÉÏÃæµÄÍ¼ÏóÓÐÐ©Ææ¹Ö£¬ºÃÏóÊÇÕÅµØÍ¼¡£\n");
+                 set("long", "é€™æ˜¯ä¸€å¼µè¢«è¡€æŸ“ç´…äº†çš„æ‰‹çµ¹ï¼Œä¸Šé¢çš„åœ–è±¡æœ‰äº›å¥‡æ€ªï¼Œå¥½è±¡æ˜¯å¼µåœ°åœ–ã€‚\n");
                  return 1;
                 }
             }
@@ -71,35 +71,35 @@ int do_bandage(string arg)
 {
         object ob;
         if( (int)query("blood_soaked") >= 2 )
-                return notify_fail( name() + "ÒÑ¾­±»ÏÊÑª½þÍ¸£¬²»ÄÜÔÙÓÃÁË¡£\n");
+                return notify_fail( name() + "å·²ç¶“è¢«é®®è¡€æµ¸é€ï¼Œä¸èƒ½å†ç”¨äº†ã€‚\n");
 
         if( query("equipped") )
-                return notify_fail( name() + "ÒÑ¾­¹üÔÚÄãµÄÉË¿ÚÉÏÁË£¬Èç¹ûÄãÒªÓÃÀ´°üÔú±ðÈË£¬ÇëÄãÏÈ°ÑËü³ýÏÂÀ´¡£\n");
+                return notify_fail( name() + "å·²ç¶“è£¹åœ¨ä½ çš„å‚·å£ä¸Šäº†ï¼Œå¦‚æžœä½ è¦ç”¨ä¾†åŒ…ç´®åˆ¥äººï¼Œè«‹ä½ å…ˆæŠŠå®ƒé™¤ä¸‹ä¾†ã€‚\n");
 
         if( !arg ) ob = this_player();
         else {
                 ob = present(arg, environment(this_player()));
                 if( !ob || !userp(ob))
-                        return notify_fail("ÄãÒªÌæË­¹üÉË£¿\n");
+                        return notify_fail("ä½ è¦æ›¿èª°è£¹å‚·ï¼Ÿ\n");
         }
 
         if( this_player()->is_fighting()
         ||      ob->is_fighting() )
-                return notify_fail("Õ½¶·ÖÐ²»ÄÜ¹üÉË¡£\n");
+                return notify_fail("æˆ°é¬¥ä¸­ä¸èƒ½è£¹å‚·ã€‚\n");
 
         if( query("eff_qi", ob) == query("max_qi", ob) )
-                return notify_fail( (ob==this_player()? "Äã" : ob->name())
-                        + "²¢Ã»ÓÐÊÜµ½ÈÎºÎÍâÉË¡£\n");
+                return notify_fail( (ob==this_player()? "ä½ " : ob->name())
+                        + "ä¸¦æ²’æœ‰å—åˆ°ä»»ä½•å¤–å‚·ã€‚\n");
 
         if( query_temp("armor/bandage", ob) )
-                return notify_fail( ob->name() + "ÉíÉÏµÄÉËÒÑ¾­¹üÖøÆäËû¶«Î÷ÁË¡£\n");
+                return notify_fail( ob->name() + "èº«ä¸Šçš„å‚·å·²ç¶“è£¹è‘—å…¶ä»–æ±è¥¿äº†ã€‚\n");
 
         if( !move(ob) ) return 0;
 
         if( ob==this_player() )
-                message_vision("$NÓÃ" + name() + "Ìæ×Ô¼º¹üÉË¡£\n", this_player());
+                message_vision("$Nç”¨" + name() + "æ›¿è‡ªå·±è£¹å‚·ã€‚\n", this_player());
         else
-                message_vision("$NÓÃ" + name() + "Ìæ$n¹üÉË¡£\n", this_player(), ob);
+                message_vision("$Nç”¨" + name() + "æ›¿$nè£¹å‚·ã€‚\n", this_player(), ob);
         ::wear();
         ob->apply_condition("bandaged", 40);
         addn("blood_soaked", 1);

@@ -3,11 +3,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��ܶ���");
+        set("short", "書架頂部");
         set("long", @LONG
-����������ܵĶ���������������Կ����������ҵ����������
-���߰׹����⣬ȷʵû��ʲôֵ���㻳�ɵĶ��������㷢����ܵĶ�
-���ǳ������ʵ�����һ����
+你現在在書架的頂部，從這裡你可以看見整個密室的情況，除了
+幾具白骨以外，確實沒有什麼值得你懷疑的東西，但你發現書架的頂
+部非常不合適的舖著一塊紅綢。
 LONG );
         set("exits", ([ /* sizeof() == 1 */
             "down" : __DIR__"mishi",

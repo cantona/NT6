@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ʯ��");
+        set("short", "石樑");
         set("long", @LONG
-������ɽ���У���һ��ʯ����Ϫ�����������ǾŶɽ�����������
-��֮ˮ���ڴ˽��㾰ɫ���ѡ�������������С�Ե꣬�������ˣ����
-СסЪЪ�����������Ͼ��Ƕ��͵�ʮ�����ˡ�
+你走入山塢中，有一道石樑跨溪而建，這裡是九渡澗的下流，各
+嶺之水均在此交匯景色極佳。附近設有許多小吃店，遊人至此，大多
+小住歇歇腳力。再往上就是陡峭的十八盤了。
 LONG );
         set("exits", ([
                 "northup"    : __DIR__"taizipo",

@@ -3,11 +3,11 @@ inherit ROOM;
 
 void create()
 { 
-        set("short", "ÌÒ»¨ÃÔÕó");
+        set("short", "æ¡ƒèŠ±è¿·é™£");
         set("long", @LONG
-ÕâÊÇÆ¬ÌÒ»¨µÄº£Ñó¡£ËÄÖÜÒ»ÍûÎŞ¼ÊÈ«ÊÇÊ¢¿ªµÄÌÒ»¨¡£Î¢·ç
-·÷¹ı£¬ÂäÓ¢çÍ·×¡£ÖÜÎ§¾²ÇÄÇÄµÄ¡£Ô¶´¦Å¼¶û´«À´Ò»ÉùÄñ½Ğ¡£Äã
-ĞÄÖĞ²»½û»ÅÂÒÆğÀ´£º»¹ÊÇÔçµã³öÈ¥µÄºÃ¡£
+é€™æ˜¯ç‰‡æ¡ƒèŠ±çš„æµ·æ´‹ã€‚å››å‘¨ä¸€æœ›ç„¡éš›å…¨æ˜¯ç››é–‹çš„æ¡ƒèŠ±ã€‚å¾®é¢¨
+æ‹‚éï¼Œè½è‹±ç¹½ç´›ã€‚å‘¨åœéœæ‚„æ‚„çš„ã€‚é è™•å¶çˆ¾å‚³ä¾†ä¸€è²é³¥å«ã€‚ä½ 
+å¿ƒä¸­ä¸ç¦æ…Œäº‚èµ·ä¾†ï¼šé‚„æ˜¯æ—©é»å‡ºå»çš„å¥½ã€‚
 LONG );
         set("outdoors", "taohua");
         set("exits", ([
@@ -22,7 +22,7 @@ int valid_leave(object me, string dir)
 {
         int total_steps;
 
-        if( query("family/family_name", me) == "ÌÒ»¨µº"
+        if( query("family/family_name", me) == "æ¡ƒèŠ±å³¶"
            || me->query_skill("qimen-wuxing") >= 150)
         {
                 total_steps = 1; 
@@ -30,8 +30,8 @@ int valid_leave(object me, string dir)
         {
                     me->receive_damage("qi", 15);
                     me->receive_wound("qi", 15);
-                    message_vision(HIM "\nÍ»È»¼äÒ»ÕóÌÒ»¨°êÏóÓêµã°ã¼²"
-                               "Éä$N" HIM "¡£\n\n" NOR, me);
+                    message_vision(HIM "\nçªç„¶é–“ä¸€é™£æ¡ƒèŠ±ç“£è±¡é›¨é»èˆ¬ç–¾"
+                               "å°„$N" HIM "ã€‚\n\n" NOR, me);
 
                 total_steps = 30;
         }
@@ -46,7 +46,7 @@ int valid_leave(object me, string dir)
         {
                          me->move(__DIR__"tao_in");
                     delete_temp("taohua/steps", me);
-                    write(HIC "\nÄã×ßÁË°ëÌì£¬ÖÕÓÚ×ß³öÁËÌÒ»¨ÃÔÕó¡£\n\n" NOR);
+                    write(HIC "\nä½ èµ°äº†åŠå¤©ï¼Œçµ‚äºèµ°å‡ºäº†æ¡ƒèŠ±è¿·é™£ã€‚\n\n" NOR);
                    return -1;
         }  
 
@@ -54,7 +54,7 @@ int valid_leave(object me, string dir)
         {  
                 me->move(__DIR__"tao_out");
                     delete_temp("taohua/steps", me);
-                    write(HIC "\nÄã×ßÁË°ëÌì£¬ÖÕÓÚ×ß³öÁËÌÒ»¨ÃÔÕó¡£\n\n" NOR);
+                    write(HIC "\nä½ èµ°äº†åŠå¤©ï¼Œçµ‚äºèµ°å‡ºäº†æ¡ƒèŠ±è¿·é™£ã€‚\n\n" NOR);
                 return -1;
              }
 

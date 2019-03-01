@@ -4,17 +4,17 @@ inherit WHIP;
 
 void create()
 {
-        set_name("·÷³¾", ({ "fuchen" }));
+        set_name("æ‹‚å¡µ", ({ "fuchen" }));
         set_weight(300);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
-                set("long", "ÕâÊÇÒ»±ú·÷³¾£¬×ö¹¤¾«Ï¸£¬ÊÇºÜÒõ¶¾µÄ±øÆ÷¡£\n");
+                set("unit", "æŸ„");
+                set("long", "é€™æ˜¯ä¸€æŸ„æ‹‚å¡µï¼Œåšå·¥ç²¾ç´°ï¼Œæ˜¯å¾ˆé™°æ¯’çš„å…µå™¨ã€‚\n");
                 set("value", 30);
                 set("material", "leather");
-                set("wield_msg", "$N¡¸à§¡¹µÄÒ»Éù´Ó¾±ÖĞ³é³öÒ»±ú$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n±ğ»Ø¾±ÖĞ¡£\n");
+                set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€è²å¾é ¸ä¸­æŠ½å‡ºä¸€æŸ„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°‡æ‰‹ä¸­çš„$nåˆ¥å›é ¸ä¸­ã€‚\n");
         }
         init_whip(50);
         setup();

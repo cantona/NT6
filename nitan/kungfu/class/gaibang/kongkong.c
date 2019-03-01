@@ -11,11 +11,11 @@ inherit F_MASTER;
 void create()
 {
         seteuid(getuid());
-        set_name("¿Õ¿Õ¶ù", ({ "kong kong","beggar","qi gai","kong" }) );
-        set("title", "ÃîÊÖÉñØ¤");
-        set("gender", "ÄÐÐÔ" );
+        set_name("ç©ºç©ºå…’", ({ "kong kong","beggar","qi gai","kong" }) );
+        set("title", "å¦™æ‰‹ç¥žä¸");
+        set("gender", "ç”·æ€§" );
         set("age", 53);
-        set("long", "Ò»¸öÂúÁ³·çËªÖ®É«µÄÀÏÆòØ¤¡£\n");
+        set("long", "ä¸€å€‹æ»¿è‡‰é¢¨éœœä¹‹è‰²çš„è€ä¹žä¸ã€‚\n");
         set("attitude", "peaceful");
         set("class", "beggar");
         set("str", 25);
@@ -67,13 +67,13 @@ void create()
 
         prepare_skill("hand", "shexing-diaoshou");
 
-        create_family("Ø¤°ï", 19, "°Ë´ü³¤ÀÏ");
+        create_family("ä¸å¹«", 19, "å…«è¢‹é•·è€");
 
         set("chat_chance", 20);
         set("chat_msg", ({
-                "¿Õ¿Õ¶ùËµµÀ: ºÃÐÄµÄ´óÒ¯ÄÄ¡« ÉÍÎÒÒª·¹µÄ¼¸¸öÍ­°å°É¡«\n",
-                "¿Õ¿Õ¶ùÀÁÑóÑóµØ´òÁË¸ö¹þÇ·¡£\n",
-                "¿Õ¿Õ¶ùÉìÊÖ×½×¡ÁËÉíÉÏµÄÊ­×Ó£¬ÂîµÀ: ÀÏ×ÓÉíÉÏÃ»¼¸Á½Èâ£¬È«½ÐÄãÃÇ¸øÒ§ÃÓÁË¡£ \n",
+                "ç©ºç©ºå…’èªªé“: å¥½å¿ƒçš„å¤§çˆºå“ªï½ž è³žæˆ‘è¦é£¯çš„å¹¾å€‹éŠ…æ¿å§ï½ž\n",
+                "ç©ºç©ºå…’æ‡¶æ´‹æ´‹åœ°æ‰“äº†å€‹å“ˆæ¬ ã€‚\n",
+                "ç©ºç©ºå…’ä¼¸æ‰‹æ‰ä½äº†èº«ä¸Šçš„è¨å­ï¼Œç½µé“: è€å­èº«ä¸Šæ²’å¹¾å…©è‚‰ï¼Œå…¨å«ä½ å€‘çµ¦å’¬ç³œäº†ã€‚ \n",
                 (: random_move :)
         }) );
 
@@ -104,7 +104,7 @@ void stealing(object ob)
         mapping fam;
 
         if( !ob || environment(ob) != environment()
-                 || ((fam=query("family", ob)) && fam["family_name"] == "Ø¤°ï" )
+                 || ((fam=query("family", ob)) && fam["family_name"] == "ä¸å¹«" )
                 || (int)ob->query_skill("taoism", 1) > 30
                 || ob->query_int() > 30
           ) return;
@@ -145,12 +145,12 @@ int accept_object(object me, object obj)
 {
         if( query("money_id", obj) && obj->value() >= 1){
                  command("smile");
-                 command("say ¶àÐ»À² ! ÆäÊµÎÒ»¹ÊÇÓÐµãÇ®µÄ£¬Õâ´ÎÖ»²»¹ýÊÔÊÔÄã°ÕÁË !");
+                 command("say å¤šè¬å•¦ ! å…¶å¯¦æˆ‘é‚„æ˜¯æœ‰é»žéŒ¢çš„ï¼Œé€™æ¬¡åªä¸éŽè©¦è©¦ä½ ç½·äº† !");
                  command("give10silverto"+query("id", me));
         }
         else {
                  command("shake");
-                 command("say ÕâÖÖ¶«Î÷¹í²ÅÒª ! ¹öÒ»±ßÈ¥ !");
+                 command("say é€™ç¨®æ±è¥¿é¬¼æ‰è¦ ! æ»¾ä¸€é‚ŠåŽ» !");
                  command("give"+query("id", obj)+"to"+query("id", me));
 //               obj->move(this_player());
         }
@@ -160,7 +160,7 @@ int accept_object(object me, object obj)
 
 int accept_fight(object me)
 {
-        command("say " + RANK_D->query_respect(me) + "ÈÄÃü¢¦Ð¡µÄÕâ¾ÍÀë¿ª¢¦\n");
+        command("say " + RANK_D->query_respect(me) + "é¥’å‘½â–¡å°çš„é€™å°±é›¢é–‹â–¡\n");
         return 0;
 }
 
@@ -171,8 +171,8 @@ void attempt_apprentice(object ob)
         if (! permit_recruit(ob))
                 return;
 
-        command("say ºÃ°É£¬Ï£Íû" + RANK_D->query_respect(ob) +
-                "ÄÜºÃºÃÑ§Ï°±¾ÃÅÎä¹¦£¬½«À´ÔÚ½­ºþÖÐ´³³öÒ»·¬×÷Îª¡£");
+        command("say å¥½å§ï¼Œå¸Œæœ›" + RANK_D->query_respect(ob) +
+                "èƒ½å¥½å¥½å­¸ç¿’æœ¬é–€æ­¦åŠŸï¼Œå°‡ä¾†åœ¨æ±Ÿæ¹–ä¸­é—–å‡ºä¸€ç•ªä½œç‚ºã€‚");
         command("recruit "+query("id", ob));
 
         if( query("class", ob) != "beggar" )
@@ -188,7 +188,7 @@ void attempt_apprentice(object ob)
 void die()
 {
         object ob;
-        message_vision("$Nµ¹ÔÚµØÉÏ£¬ÕõÔúÁËÁ½ÏÂ£¬ËÀÁË¡£\n", this_object());
+        message_vision("$Nå€’åœ¨åœ°ä¸Šï¼ŒæŽ™ç´®äº†å…©ä¸‹ï¼Œæ­»äº†ã€‚\n", this_object());
         ob = new("/kungfu/class/gaibang/kongkong");
         ob->move("/d/city/nandajie2");
         destruct(this_object());

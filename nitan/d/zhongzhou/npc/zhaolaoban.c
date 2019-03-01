@@ -3,13 +3,13 @@ inherit F_DEALER;
 
 void create()
 {
-        set_name("ÕÔµÂÑÔ", ({ "zhao deyan", "zhao", "deyan" }));
-        set("title", "ÔÓ»õÆÌÀÏ°å");
+        set_name("è¶™å¾·è¨€", ({ "zhao deyan", "zhao", "deyan" }));
+        set("title", "é›œè²¨èˆ–è€æ¿");
         set("shen_type", 1);
 
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("age", 45);
-        set("long", "ÕÔµÂÑÔÊÇÍÁÉúÍÁ³¤µÄÖĞÖİÈË£¬×öÁË¼¸Ê®ÄêµÄĞ¡ÂòÂô¡£\n");
+        set("long", "è¶™å¾·è¨€æ˜¯åœŸç”ŸåœŸé•·çš„ä¸­å·äººï¼Œåšäº†å¹¾åå¹´çš„å°è²·è³£ã€‚\n");
         set_skill("unarmed", 50);
         set_skill("dodge", 50);
         set_temp("apply/damage", 15);

@@ -1,13 +1,13 @@
-// yelu.c 野鹿
+// yelu.c 閲庨箍
 
 inherit NPC;
 
 void create()
 {
-        set_name( "野鹿", ({ "ye lu", "lu", "deer"}) );
-        set("race", "野兽");
+        set_name( "閲庨箍", ({ "ye lu", "lu", "deer"}) );
+        set("race", "閲庣嵏");
         set("age", 2 + random(3));
-        set("long", "一只满身斑点的小野鹿，不停的蹦蹦跳跳。\n");
+        set("long", "涓�鍙豢韬枒榛炵殑灏忛噹楣匡紝涓嶅仠鐨勮功韫﹁烦璺炽�俓n");
         set("attitude", "peaceful");
         set("str",30);
         set("max_qi",500);
@@ -15,7 +15,7 @@ void create()
         set("max_jingli",800);
         set("jingli",800);
         
-        set("limbs", ({ "头部", "身体", "前脚", "后脚", "尾巴" }) );
+        set("limbs", ({ "闋儴", "韬珨", "鍓嶈叧", "寰岃叧", "灏惧反" }) );
         set("verbs", ({ "knock", "hoof" }) );
 
         set("combat_exp", 30000);

@@ -8,11 +8,11 @@ void setup()
 {}
 void create()
 {
-        set_name(RED"½ðÃ«"NOR, ({"jin mao", "mao"}));
+        set_name(RED"é‡‘æ¯›"NOR, ({"jin mao", "mao"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "´é");
+                set("unit", "æ’®");
                 set("value", 0);
         }
         setup();

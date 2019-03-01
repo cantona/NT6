@@ -9,12 +9,12 @@ string get_killer();
 
 void create()
 {
-        set("short", "Î÷ÃÅ");
+        set("short", "è¥¿é–€");
         set("long",
-"ÕâÊÇÌÆ¼ÒÕòµÄÎ÷ÃÅ£¬ËµÊÇÎ÷ÃÅ£¬ÆäÊµ¾ÍÊÇÒ»¸ö¸ÚÉÚ£¬ËùÓÐÀ´ÍùµÄÐÐ¸ö\n"
-"¶¼ÒªÊÜµ½¼ì²é¡£ÕâÊÇÊñÖÐÌÆÃÅÎªÁË°²È«£¬ÔÚÕâ¶ùÉèÁËÒ»¸öÉÚÎ»¡£¹ýÍùµÄÈË\n"
-"²»×¼Ð¯´ø±øÆ÷¡£³ÇÇ½ÉÏÌù×Å¼¸ÕÅÍ¨¼©¸æÊ¾(gaoshi)¡£Ò»Ìõ±ÊÖ±µÄÇàÊ¯°å´ó\n"
-"µÀÏò¶«Î÷Á½±ßÑÓÉì¡£ÔÙÍùÎ÷±ß¾ÍÊÇÊñÖÐÌÆÃÅÁË£¬¶«±ßÊÇÕòÀï¡£\n"
+"é€™æ˜¯å”å®¶éŽ®çš„è¥¿é–€ï¼Œèªªæ˜¯è¥¿é–€ï¼Œå…¶å¯¦å°±æ˜¯ä¸€å€‹å´—å“¨ï¼Œæ‰€æœ‰ä¾†å¾€çš„è¡Œå€‹\n"
+"éƒ½è¦å—åˆ°æª¢æŸ¥ã€‚é€™æ˜¯èœ€ä¸­å”é–€ç‚ºäº†å®‰å…¨ï¼Œåœ¨é€™å…’è¨­äº†ä¸€å€‹å“¨ä½ã€‚éŽå¾€çš„äºº\n"
+"ä¸æº–æ”œå¸¶å…µå™¨ã€‚åŸŽç‰†ä¸Šè²¼è‘—å¹¾å¼µé€šç·å‘Šç¤º(gaoshi)ã€‚ä¸€æ¢ç­†ç›´çš„é’çŸ³æ¿å¤§\n"
+"é“å‘æ±è¥¿å…©é‚Šå»¶ä¼¸ã€‚å†å¾€è¥¿é‚Šå°±æ˜¯èœ€ä¸­å”é–€äº†ï¼Œæ±é‚Šæ˜¯éŽ®è£¡ã€‚\n"
 );
         set("outdoors", "tangmen");
         set("no_clean_up", 1);
@@ -34,7 +34,7 @@ void create()
 
 string look_gaoshi()
 {
-        return HIR"\n                              ÌÆÃÅÍ¨¼©°ñ                    \n\n\n"NOR+get_killer() +HIC"\n\n                                               ÊñÖÐÌÆÃÅ             \n                                               ÌÆ¾ýÉË     \n"NOR;
+        return HIR"\n                              å”é–€é€šç·æ¦œ                    \n\n\n"NOR+get_killer() +HIC"\n\n                                               èœ€ä¸­å”é–€             \n                                               å”å›å‚·     \n"NOR;
 }
 
 string get_killer()
@@ -45,10 +45,10 @@ string get_killer()
 
         msg = "";
         for (i = 0; i < sizeof(ob); i++)
-                if( ob[i]->query_condition("killer") && query("family/family_name", ob[i]) == "ÌÆÃÅÊÀ¼Ò" )
+                if( ob[i]->query_condition("killer") && query("family/family_name", ob[i]) == "å”é–€ä¸–å®¶" )
                         msg += (ob[i]->short() + "\n");
         if (msg == "")
-                return "Ã»ÓÐÎ¥¹æÕß¡£\n";
+                return "æ²’æœ‰é•è¦è€…ã€‚\n";
         else
-                return "ÏÖÔÚÕýÔÚ¼©ÄÃÒÔÏÂÎ¥¹æµÜ×Ó£º\n\n" + msg;
+                return "ç¾åœ¨æ­£åœ¨ç·æ‹¿ä»¥ä¸‹é•è¦å¼Ÿå­ï¼š\n\n" + msg;
 }

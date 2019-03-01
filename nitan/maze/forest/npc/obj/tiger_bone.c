@@ -4,12 +4,12 @@ inherit COMBINED_ITEM;
 
 void create()
 {
-        set_name("»¢¹Ç", ({"tiger bone"}) );
+        set_name("è™Žéª¨", ({"tiger bone"}) );
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", NOR + YEL "»¢¹Ç¡£\n" NOR);
-                set("base_unit", "¾ß");
+                set("long", NOR + YEL "è™Žéª¨ã€‚\n" NOR);
+                set("base_unit", "å…·");
                 set("base_value", 8000);
                 set("base_weight", 500);
         }

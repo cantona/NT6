@@ -5,17 +5,17 @@ inherit HAMMER;
 
 void create()
 {
-        set_name(HIY "½ğ»ğÇ¹" NOR, ({"jin huoqiang", "jin", "huoqiang"}));
+        set_name(HIY "é‡‘ç«æ§" NOR, ({"jin huoqiang", "jin", "huoqiang"}));
         set_weight(5000);
 
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ö§");
-                set("long", HIY "Ò»Ö§ÓÉ»Æ½ğÖı³É£¬×ö¹¤¾«Ï¸µÄ»ğÇ¹¡£\n" NOR);
+                set("unit", "æ”¯");
+                set("long", HIY "ä¸€æ”¯ç”±é»ƒé‡‘é‘„æˆï¼Œåšå·¥ç²¾ç´°çš„ç«æ§ã€‚\n" NOR);
                 set("value", 25000);
-                set("wield_msg", HIY "$NÃş³öÒ»Ö§½ğ»ÆÉ«µÄ»ğÇ¹ÎÕÔÚÊÖÖĞ¡£\n" NOR);
-                set("unwield_msg", HIY "$N°ÑÊÖÖĞµÄ½ğ»ğÇ¹·ÅÈë»³ÖĞ¡£\n" NOR);
+                set("wield_msg", HIY "$Næ‘¸å‡ºä¸€æ”¯é‡‘é»ƒè‰²çš„ç«æ§æ¡åœ¨æ‰‹ä¸­ã€‚\n" NOR);
+                set("unwield_msg", HIY "$NæŠŠæ‰‹ä¸­çš„é‡‘ç«æ§æ”¾å…¥æ‡·ä¸­ã€‚\n" NOR);
         }
         init_hammer(30);
         setup();

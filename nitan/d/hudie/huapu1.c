@@ -1,17 +1,17 @@
-// »¨ÆÔ huapu1.c
+// èŠ±åœƒ huapu1.c
  
 #include <ansi.h>
 inherit ROOM;
 
 void create() 
 { 
-        set("short", "»¨ÆÔ");
+        set("short", "èŠ±åœƒ");
         set("long", @LONG
-ÕâÀïÊÇºûµû¹ÈµÄ»¨ÆÔ£¬ÊÇ¡º¼ûËÀ²»¾È¡»ºúÇàÅ£ÓÃÀ´ÖÖ¸÷ÖÖ¸÷ÑùÒ©
-²ÄµÄ£¬ÀïÃæÖÖÂúÁËÖî°ã»¨²İ¡£
+é€™è£¡æ˜¯è´è¶è°·çš„èŠ±åœƒï¼Œæ˜¯ã€è¦‹æ­»ä¸æ•‘ã€èƒ¡é’ç‰›ç”¨ä¾†ç¨®å„ç¨®å„æ¨£è—¥
+æçš„ï¼Œè£¡é¢ç¨®æ»¿äº†è«¸èˆ¬èŠ±è‰ã€‚
 LONG );
 
-        set("outdoors", "ºûµû¹È");
+        set("outdoors", "è´è¶è°·");
 
         set("exits", ([ 
                 "west" : __FILE__,
@@ -47,12 +47,12 @@ int valid_leave(object me, string dir)
         if( query_temp("mark/steps", me) >= 5){
             me->move(__DIR__"caojing");
             delete_temp("mark/steps", me);
-              return notify_fail("ÄãÂÒ×ßÒ»Æø£¬ºöÈ»ÑÛÇ°Ò»ÁÁ£¬À´µ½Ò»´¦²İ¾¶¡£\n");
+              return notify_fail("ä½ äº‚èµ°ä¸€æ°£ï¼Œå¿½ç„¶çœ¼å‰ä¸€äº®ï¼Œä¾†åˆ°ä¸€è™•è‰å¾‘ã€‚\n");
         }  
         if( query_temp("mark/steps", me) <= 0){
             me->move(__DIR__"niupeng");
             delete_temp("mark/steps", me);
-              return notify_fail("ÄãÀÛµÃ°ëËÀ£¬È´ÍÇÈ»·¢ÏÖÓÖ×ß»ØÁËÅ£Åï¡£\n");
+              return notify_fail("ä½ ç´¯å¾—åŠæ­»ï¼Œå»é ¹ç„¶ç™¼ç¾åˆèµ°å›äº†ç‰›æ£šã€‚\n");
         }      
         return ::valid_leave(me, dir);
 }

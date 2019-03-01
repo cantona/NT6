@@ -9,23 +9,23 @@ void init()
 
 void create()
 {
-        set_name(HIR"ÈË²Î¹û"NOR, ({"guo", "renshen guo"}));
-        set("unit", "¶ä");
-        set("long", "ÕâÊÇÒ»Ö»ÈË²Î¹û, ÒÑ¾­³ÉĞÍ, ÕæµÄÏó¼«ÁËÈıÖÜ²»ÂúµÄĞ¡º¢¡£\n");
+        set_name(HIR"äººåƒæœ"NOR, ({"guo", "renshen guo"}));
+        set("unit", "æœµ");
+        set("long", "é€™æ˜¯ä¸€åªäººåƒæœ, å·²ç¶“æˆå‹, çœŸçš„è±¡æ¥µäº†ä¸‰å‘¨ä¸æ»¿çš„å°å­©ã€‚\n");
         setup();
 }
 
 int do_eat(string arg)
 {
         object me=this_player();
-        if (!id(arg))  return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+        if (!id(arg))  return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if(arg=="guo")
         {
                 addn("max_neili", 10, me);
                 set("neili",query("max_neili",  me), me);
                 set("eff_qi",query("max_qi",  me), me);
                 set("qi",query("eff_qi",  me), me);
-                message_vision("$N³ÔÏÂÒ»Ã¶ÈË²Î¹û£¬Ö»¾õµÃ¾«Éñ½¡Íú£¬ÆøÑª³äÓ¯£¬ÌåÄÚÕæÁ¦Ô´Ô´×ÌÉú£¬ÉõÖÁ²»ÔÙ¸Ğµ½¼¢¶ö¸É¿Ê!\n",me);
+                message_vision("$Nåƒä¸‹ä¸€æšäººåƒæœï¼Œåªè¦ºå¾—ç²¾ç¥å¥æ—ºï¼Œæ°£è¡€å……ç›ˆï¼Œé«”å…§çœŸåŠ›æºæºæ»‹ç”Ÿï¼Œç”šè‡³ä¸å†æ„Ÿåˆ°é¥‘é¤“å¹¹æ¸´!\n",me);
 
                 destruct(this_object());
         }

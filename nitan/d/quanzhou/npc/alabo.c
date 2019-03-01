@@ -5,10 +5,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("°¢À­²®ÉÌÈË", ({ "alabo shangren", "shangren", "trader" }));
-        set("gender", "ÄÐÐÔ");
+        set_name("é˜¿æ‹‰ä¼¯å•†äºº", ({ "alabo shangren", "shangren", "trader" }));
+        set("gender", "ç”·æ€§");
         set("age", 35);
-        set("long","Ò»¸ö°¢À­²®ÉÌÈË¡£Í·ÉÏ°ü×ÅÒ»¿é°×½í¡£\n");
+        set("long","ä¸€å€‹é˜¿æ‹‰ä¼¯å•†äººã€‚é ­ä¸ŠåŒ…è‘—ä¸€å¡Šç™½å·¾ã€‚\n");
         set("attitude", "friendly");
         set("combat_exp", 6000);
         set("shen_type", 1);
@@ -24,8 +24,8 @@ void create()
         setup();
         set("chat_chance", 15);
         set("chat_msg", ({
-                "°¢À­²®ÉÌÈË¶ÔÄã¼·ÁËÒ»ÏÂÑÛ¾¦¡£\n",
-                "°¢À­²®ÉÌÈË¶ÔÄãËµ£º°¢ÈøÀ¼ÂíÀë¹±£¬ÄÂº±Ä¬µÂÈðËØ°¢À­¡£ÄãÃ»Ìý¶®¡£\n",
+                "é˜¿æ‹‰ä¼¯å•†äººå°ä½ æ“ äº†ä¸€ä¸‹çœ¼ç›ã€‚\n",
+                "é˜¿æ‹‰ä¼¯å•†äººå°ä½ èªªï¼šé˜¿è–©è˜­é¦¬é›¢è²¢ï¼Œç©†ç½•é»˜å¾·ç‘žç´ é˜¿æ‹‰ã€‚ä½ æ²’è½æ‡‚ã€‚\n",
                 (: random_move :)
         }) );
         carry_object("/clone/weapon/blade/wandao")->wield();

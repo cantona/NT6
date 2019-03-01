@@ -1,5 +1,5 @@
 //Cracked by Kafei
-// /d/city/npc/obj/biaoche.c ïÚ³µ
+// /d/city/npc/obj/biaoche.c é¢è»Š
 // sdong,12/05/98 created
 
 #include <ansi.h>
@@ -7,7 +7,7 @@
 inherit ITEM;
 
 string *Robber_Name = ({
-                                         "ÍÁ·Ë","É½´óÍõ","Â·°Ô","É½Ôô","Ã«Ôô","Õ¯Ö÷","°ï·Ë"
+                                         "åœŸåŒª","å±±å¤§ç‹","è·¯éœ¸","å±±è³Š","æ¯›è³Š","å¯¨ä¸»","å¹«åŒª"
 
 });
 
@@ -16,26 +16,26 @@ string *Robber_Name = ({
 
 
 mapping default_dirs = ([
-                  "north":        "±±",
-                  "south":        "ÄÏ",
-                  "east":         "¶«",
-                  "west":         "Î÷",
-                  "northup":      "±±±ß",
-                  "southup":      "ÄÏ±ß",
-                  "eastup":       "¶«±ß",
-                  "westup":       "Î÷±ß",
-                  "northdown":    "±±±ß",
-                  "southdown":    "ÄÏ±ß",
-                  "eastdown":     "¶«±ß",
-                  "westdown":     "Î÷±ß",
-                  "northeast":    "¶«±±",
-                  "northwest":    "Î÷±±",
-                  "southeast":    "¶«ÄÏ",
-                  "southwest":    "Î÷ÄÏ",
-                  "up":           "ÉÏ",
-                  "down":         "ÏÂ",
-                  "out":          "Íâ",
-                  "enter":        "Àï",
+                  "north":        "åŒ—",
+                  "south":        "å—",
+                  "east":         "æ±",
+                  "west":         "è¥¿",
+                  "northup":      "åŒ—é‚Š",
+                  "southup":      "å—é‚Š",
+                  "eastup":       "æ±é‚Š",
+                  "westup":       "è¥¿é‚Š",
+                  "northdown":    "åŒ—é‚Š",
+                  "southdown":    "å—é‚Š",
+                  "eastdown":     "æ±é‚Š",
+                  "westdown":     "è¥¿é‚Š",
+                  "northeast":    "æ±åŒ—",
+                  "northwest":    "è¥¿åŒ—",
+                  "southeast":    "æ±å—",
+                  "southwest":    "è¥¿å—",
+                  "up":           "ä¸Š",
+                  "down":         "ä¸‹",
+                  "out":          "å¤–",
+                  "enter":        "è£¡",
 ]);
 
 
@@ -58,10 +58,10 @@ void robber_rob(object me);
 void create()
 {
         seteuid(getuid());
-        set_name(HIW"ïÚ³µ"NOR, ({"biao che", "che"}));
+        set_name(HIW"é¢è»Š"NOR, ({"biao che", "che"}));
         set("long",
-                "ÕâÊÇÒ»Á¾·Ç³£½áÊµµÄïÚ³µ£¬ÓÉÁ½Æ¥´óÂâ×ÓÀ­×Å£¬²»Öª×°×ÅÊ²Ã´¶«Î÷¡£ïÚ³µÉÏÊú×ÅÒ»Ãæ´óÆì£¬ÉÏÊé¡°¸£ÍşïÚ¾Ö¡±ËÄ¸ö´ó×Ö¡£\n");
-        set("unit", "Á¾");
+                "é€™æ˜¯ä¸€è¼›éå¸¸çµå¯¦çš„é¢è»Šï¼Œç”±å…©åŒ¹å¤§é¨¾å­æ‹‰è‘—ï¼Œä¸çŸ¥è£è‘—ä»€éº¼æ±è¥¿ã€‚é¢è»Šä¸Šè±è‘—ä¸€é¢å¤§æ——ï¼Œä¸Šæ›¸â€œç¦å¨é¢å±€â€å››å€‹å¤§å­—ã€‚\n");
+        set("unit", "è¼›");
         set_weight(10000);
         set_max_encumbrance(5000);
 
@@ -129,7 +129,7 @@ void greeting(object ob)
         }
         else if( query_temp("biao/dest2") && here && (base_name(here) == query_temp("biao/dest2") )&& owner && userp( owner ) )
         {
-                message_vision(HIG"\n$N"+HIG"ÀÛµÃ°ëËÀ£¬×ÜËã¸Ïµ½Ä¿µÄµØ£¡\n\n",owner);
+                message_vision(HIG"\n$N"+HIG"ç´¯å¾—åŠæ­»ï¼Œç¸½ç®—è¶•åˆ°ç›®çš„åœ°ï¼\n\n",owner);
 
                 if( (target = present( query_temp("biao/dest"),here)  ) )
                 {
@@ -137,16 +137,16 @@ void greeting(object ob)
                 }
                 else
                 {
-                        message_vision(RED"¿ÉÊÇ$N"+RED"È´ÕÒ²»µ½Ö÷ÈË£¬°Ñ$P¼±µÃÖ±Ã°º¹£¡\n\n"NOR,owner);
+                        message_vision(RED"å¯æ˜¯$N"+RED"å»æ‰¾ä¸åˆ°ä¸»äººï¼ŒæŠŠ$Pæ€¥å¾—ç›´å†’æ±—ï¼\n\n"NOR,owner);
                         remove_call_out("host_appear");
                         call_out("host_appear", 2 + random(3) );
                 }
         }
         else if( query_temp("biao/dest") && here && (target = present( query_temp("biao/dest"),here)  ) )
         {
-                        message_vision("$N¼±¼±Ã¦Ã¦Àë¿ªÁË£¡\n",target);
+                        message_vision("$Næ€¥æ€¥å¿™å¿™é›¢é–‹äº†ï¼\n",target);
                         target->move( query_temp("biao/dest2")+".c" );
-                        message_vision("$N¼±¼±Ã¦Ã¦×ßÁË¹ıÀ´£¡\n",target);
+                        message_vision("$Næ€¥æ€¥å¿™å¿™èµ°äº†éä¾†ï¼\n",target);
         }
 }
 
@@ -174,13 +174,13 @@ void host_appear()
         else
         {
                 if( target && environment( target) )
-                        message_vision("$N¼±¼±Ã¦Ã¦Àë¿ªÁË£¡\n",target);
+                        message_vision("$Næ€¥æ€¥å¿™å¿™é›¢é–‹äº†ï¼\n",target);
         }
 
         if(target)
         {
                 target->move( query_temp("biao/dest2")+".c" );
-                message_vision("$N¼±¼±Ã¦Ã¦×ßÁË¹ıÀ´£¡\n",target);
+                message_vision("$Næ€¥æ€¥å¿™å¿™èµ°äº†éä¾†ï¼\n",target);
         }
 
 }
@@ -196,7 +196,7 @@ void award2(object dest,object owner)
                 nGold=2+random(2+query("combat_exp", owner)/100000);
 
                 if (MONEY_D->player_job_pay(owner, dest, nGold * 10000))
-                        message_vision(HIY"$N"+HIY"µİ¸ø$n¼¸¶§»Æ½ğ£¬Ëµ£º¡°Ò»µãĞ¡ÒâË¼£¬"+RANK_D->query_respect(owner)+"ÇëĞ¦ÄÉ£¡¡±\n"NOR,dest,owner);
+                        message_vision(HIY"$N"+HIY"éçµ¦$nå¹¾éŒ é»ƒé‡‘ï¼Œèªªï¼šâ€œä¸€é»å°æ„æ€ï¼Œ"+RANK_D->query_respect(owner)+"è«‹ç¬‘ç´ï¼â€\n"NOR,dest,owner);
 
                 delete("biao/dest", owner);
                 delete("biao/dest2", owner);
@@ -213,10 +213,10 @@ void award(object dest,object owner)
 
         if(userp(owner))
         {
-                message_vision(HIY"$N"+HIY"ÌøÏÂÁËïÚ³µ£¡\n"NOR,owner);
+                message_vision(HIY"$N"+HIY"è·³ä¸‹äº†é¢è»Šï¼\n"NOR,owner);
                 delete_temp("riding", owner);
-                message_vision("$NÉÏÇ°¶Ô×Å$n±§È­µÀ£º¡°ÕâÎ»"+RANK_D->query_respect(dest)+"ÇëÁË¡£"+RANK_D->query_self(owner)+"×ÜËã²»¸ºËùÍĞ£¬ÏÖ½«ïÚ»õÔ­Îï·îÉÏ¡£ÇëÄúÇåµã£¡¡±\n",owner,dest);
-                message_vision("$NÂúÁ³¶ÑĞ¦µÄËµ£º¡°ÕâÎ»¸£ÍşïÚ¾ÖµÄ"+RANK_D->query_respect(owner)+"¹ûÈ»Ó¢ĞÛÁËµÃ¡£"+RANK_D->query_self(dest)+"¶àĞ»ÁË£¡¡±\n",dest);
+                message_vision("$Nä¸Šå‰å°è‘—$næŠ±æ‹³é“ï¼šâ€œé€™ä½"+RANK_D->query_respect(dest)+"è«‹äº†ã€‚"+RANK_D->query_self(owner)+"ç¸½ç®—ä¸è² æ‰€æ‰˜ï¼Œç¾å°‡é¢è²¨åŸç‰©å¥‰ä¸Šã€‚è«‹æ‚¨æ¸…é»ï¼â€\n",owner,dest);
+                message_vision("$Næ»¿è‡‰å †ç¬‘çš„èªªï¼šâ€œé€™ä½ç¦å¨é¢å±€çš„"+RANK_D->query_respect(owner)+"æœç„¶è‹±é›„äº†å¾—ã€‚"+RANK_D->query_self(dest)+"å¤šè¬äº†ï¼â€\n",dest);
                 call_out("award2",1,dest,owner);
                 remove_call_out("killer_show");
                 remove_call_out("auto_check");
@@ -258,9 +258,9 @@ void award(object dest,object owner)
 void destroy_cart(object cart)
 {
         if( !objectp(cart) )return;
-        if( query("race", cart) != "ÈËÀà" )
-                message_vision("ÆÍÈËÉÏÇ°°Ñ$NÀ­×ßÁË¡£\n",cart);
-        else message_vision("Ñ¾»·ÉÏÇ°°Ñ$NÇë½øÈ¥ÁË¡£\n",cart);
+        if( query("race", cart) != "äººé¡" )
+                message_vision("åƒ•äººä¸Šå‰æŠŠ$Næ‹‰èµ°äº†ã€‚\n",cart);
+        else message_vision("ä¸«ç’°ä¸Šå‰æŠŠ$Nè«‹é€²å»äº†ã€‚\n",cart);
 
         destruct(cart);
 }
@@ -285,15 +285,15 @@ int do_ride(string arg)
         object cart = this_object();
 
 
-        if (!arg) return notify_fail("ÄãÒªÉÏÊ²Ã´£¿\n");
+        if (!arg) return notify_fail("ä½ è¦ä¸Šä»€éº¼ï¼Ÿ\n");
 
-        if( query_temp("riding", me))return notify_fail("ÄãÒÑ¾­ÔÚïÚ³µÉÏ£¡\n");
+        if( query_temp("riding", me))return notify_fail("ä½ å·²ç¶“åœ¨é¢è»Šä¸Šï¼\n");
 
         if( cart = present("biao che",environment()) );
 
-        if( query("owner") != query("id", me) && query("owner2") != query("id", me))return notify_fail("²»ÊÇÄãµÄ³µ¡£\n");
+        if( query("owner") != query("id", me) && query("owner2") != query("id", me))return notify_fail("ä¸æ˜¯ä½ çš„è»Šã€‚\n");
 
-        message_vision(HIY"$N"+HIY"ÉñÆøµØÌøÉÏÁËïÚ³µ£¬Ò»ÊÖÄÃÆğ±Ş×Ó£¬Ò»ÊÖÎÕ×¡çÖÉş£¬ßººÈÁËÆğÀ´£¡\n"NOR,me);
+        message_vision(HIY"$N"+HIY"ç¥æ°£åœ°è·³ä¸Šäº†é¢è»Šï¼Œä¸€æ‰‹æ‹¿èµ·é­å­ï¼Œä¸€æ‰‹æ¡ä½éŸç¹©ï¼Œå†å–äº†èµ·ä¾†ï¼\n"NOR,me);
         me->set_leader( cart );
         set_temp("riding", 1, me);
         return 1;
@@ -303,9 +303,9 @@ int do_unride(string arg)
 {
         object me = this_player();
 
-        if( !query_temp("riding", me))return notify_fail("ÄãÒÑ¾­²»ÔÚïÚ³µÉÏ£¡\n");
+        if( !query_temp("riding", me))return notify_fail("ä½ å·²ç¶“ä¸åœ¨é¢è»Šä¸Šï¼\n");
 
-        message_vision(HIY"$N"+HIY"ÌøÏÂÁËïÚ³µ£¡\n"NOR,me);
+        message_vision(HIY"$N"+HIY"è·³ä¸‹äº†é¢è»Šï¼\n"NOR,me);
         delete_temp("riding", me);
         return 1;
 }
@@ -359,15 +359,15 @@ void do_leave(object ob)
                 {
                         if( ob->is_busy() || ob->is_fighting())
                         {
-                                message_vision("$NÏòºóÒ»Ìø£¬Ìø³öÕ½È¦£¡\n",ob);
+                                message_vision("$Nå‘å¾Œä¸€è·³ï¼Œè·³å‡ºæˆ°åœˆï¼\n",ob);
                                 if( random(2)==0 )
-                                        message_vision("$NËµµÀ£ºÃ»Ïëµ½¸£ÍşïÚ¾ÖµÄ»¹ÕæÓĞÁ½ÏÂ×Ó¡£"+RANK_D->query_self(ob)+"½ñÌìÔİÇÒÈÄÄãÒ»Ìõ¹·Ãü£¡\n",ob);
+                                        message_vision("$Nèªªé“ï¼šæ²’æƒ³åˆ°ç¦å¨é¢å±€çš„é‚„çœŸæœ‰å…©ä¸‹å­ã€‚"+RANK_D->query_self(ob)+"ä»Šå¤©æš«ä¸”é¥’ä½ ä¸€æ¢ç‹—å‘½ï¼\n",ob);
                                 else
-                                        message_vision("$NËµµÀ£º½ñÌìÀÏ×ÓÊÖÆø²»ºÃ£¬ËãÄãºİ£¬¸ÄÈÕÔÙÀ´ÅãÄãÍæ£¡\n",ob);
+                                        message_vision("$Nèªªé“ï¼šä»Šå¤©è€å­æ‰‹æ°£ä¸å¥½ï¼Œç®—ä½ ç‹ ï¼Œæ”¹æ—¥å†ä¾†é™ªä½ ç©ï¼\n",ob);
                         }
 
                         if(!living(ob))ob->revive(0);
-                        message_vision("$N¼±¼±Ã¦Ã¦Àë¿ªÁË¡£\n",ob);
+                        message_vision("$Næ€¥æ€¥å¿™å¿™é›¢é–‹äº†ã€‚\n",ob);
                         destruct(ob);
                 }
 }
@@ -421,13 +421,13 @@ void run_away()
 
                 return;
 
-        if( !wizardp(ob) && query("short", obj) == "Î×Ê¦ĞİÏ¢ÊÒ" )
+        if( !wizardp(ob) && query("short", obj) == "å·«å¸«ä¼‘æ¯å®¤" )
 
                 return;
 
 
 
-        if( query("short", obj) == "´óÉ³Ä®" || query("short", obj) == "É³Ä®" || query("short", obj) == "²èÍ¤" )
+        if( query("short", obj) == "å¤§æ²™æ¼ " || query("short", obj) == "æ²™æ¼ " || query("short", obj) == "èŒ¶äº­" )
 
                 return;
 
@@ -443,15 +443,15 @@ void run_away()
 
 
 
-        message( "vision", HIY"Ââ×ÓÊÜ¾ª£¬ËÄÌã·¢Á¦£¬·è¿ñµØÀ­ÁËïÚ³µ¾ÍÅÜ¡£\n"NOR,environment(ob), ({ob}));
+        message( "vision", HIY"é¨¾å­å—é©šï¼Œå››è¹„ç™¼åŠ›ï¼Œç˜‹ç‹‚åœ°æ‹‰äº†é¢è»Šå°±è·‘ã€‚\n"NOR,environment(ob), ({ob}));
 
 
 
         if( ob->move(obj) ) {
 
-                        message( "vision", HIY "Ö»¼ûÒ»Á¾"
+                        message( "vision", HIY "åªè¦‹ä¸€è¼›"
 
-                                +ob->name()+HIY"ºäÂ¡Â¡³ÁÖØµÄÊ»ÁË¹ıÀ´¡£\n" NOR, environment(ob), ({ob}));
+                                +ob->name()+HIY"è½Ÿéš†éš†æ²‰é‡çš„é§›äº†éä¾†ã€‚\n" NOR, environment(ob), ({ob}));
 
 
 
@@ -534,10 +534,10 @@ void action(object me, object ob)
 
         if( !ob->is_busy() && !ob->is_fighting() )
         {
-          if(random(3)) message_vision(HIR"\n$N"+HIR"ºÈµÀ£º´ËÊ÷ÊÇÎÒÔÔ£¬´ËÂ·ÊÇÎÒ¿ª£¬Òª´Ó´Ë´¦¹ı£¬ÁôÏÂÂòÂ·Ç®¡£ÏàºÃµÄ£¬Ê¶È¤µã½»³ö±¦±´£¬¾ÍÈÄÄãÒ»Ìõ¹·Ãü£¡\n"NOR, ob);
+          if(random(3)) message_vision(HIR"\n$N"+HIR"å–é“ï¼šæ­¤æ¨¹æ˜¯æˆ‘æ ½ï¼Œæ­¤è·¯æ˜¯æˆ‘é–‹ï¼Œè¦å¾æ­¤è™•éï¼Œç•™ä¸‹è²·è·¯éŒ¢ã€‚ç›¸å¥½çš„ï¼Œè­˜è¶£é»äº¤å‡ºå¯¶è²ï¼Œå°±é¥’ä½ ä¸€æ¢ç‹—å‘½ï¼\n"NOR, ob);
 
-          else if( random(3) ) message_vision(HIR"\n$N"+HIR"ºÈµÀ£º"+RANK_D->query_self(ob)+"ÎÒÕıºÃÈ±¼¸¸öÇ®»¨¡£ÏàºÃµÄ£¬¸Ï¿ì½»³ö±¦±´ÊÜËÀ£¬¾ÍÈÄÄãÒ»ÌõÈ«Ê¬£¡\n"NOR, ob);
-          else message_vision(HIR"\n$N"+HIR"ºÈµÀ£º"+RANK_D->query_self(ob)+"ÎÒÌæÌìĞĞµÀ£¬½Ù¸»¼ÃÆ¶£¬¹·ÍÈ×Ó£¬Ê¶È¤µã½»³ö±¦±´£¬¾ÍÈÄÄã²»ËÀ£¡\n"NOR, ob);
+          else if( random(3) ) message_vision(HIR"\n$N"+HIR"å–é“ï¼š"+RANK_D->query_self(ob)+"æˆ‘æ­£å¥½ç¼ºå¹¾å€‹éŒ¢èŠ±ã€‚ç›¸å¥½çš„ï¼Œè¶•å¿«äº¤å‡ºå¯¶è²å—æ­»ï¼Œå°±é¥’ä½ ä¸€æ¢å…¨å±ï¼\n"NOR, ob);
+          else message_vision(HIR"\n$N"+HIR"å–é“ï¼š"+RANK_D->query_self(ob)+"æˆ‘æ›¿å¤©è¡Œé“ï¼ŒåŠ«å¯Œæ¿Ÿè²§ï¼Œç‹—è…¿å­ï¼Œè­˜è¶£é»äº¤å‡ºå¯¶è²ï¼Œå°±é¥’ä½ ä¸æ­»ï¼\n"NOR, ob);
           ob->kill_ob(me);
         }
 
@@ -547,7 +547,7 @@ void action(object me, object ob)
 
         {
 
-          message_vision(HIR"\n$N"+HIR"Í»È»·ÉÆğÒ»½Å£¬ÏòÂâ×ÓÌßÈ¥£¬½á¹ûÕıºÃÌßÔÚÂâ×ÓµÄÆ¨¹ÉÉÏ¡£\n"NOR, ob);
+          message_vision(HIR"\n$N"+HIR"çªç„¶é£›èµ·ä¸€è…³ï¼Œå‘é¨¾å­è¸¢å»ï¼Œçµæœæ­£å¥½è¸¢åœ¨é¨¾å­çš„å±è‚¡ä¸Šã€‚\n"NOR, ob);
 
           call_out("run_away",0);
 
@@ -560,14 +560,14 @@ void robber_rob(object me)
 {
         object here, target;
 
-        if(random(3)) message_vision(HIR"\n$N"+HIR"ºÈµÀ£º´ËÊ÷ÊÇÎÒÔÔ£¬´ËÂ·ÊÇÎÒ¿ª£¬Òª´Ó´Ë´¦¹ı£¬ÁôÏÂÂòÂ·Ç®¡£ÏàºÃµÄ£¬Ê¶È¤µã½»³ö±¦±´£¬¾ÍÈÄÄãÒ»Ìõ¹·Ãü£¡\n"NOR, me);
-        else if( random(3) ) message_vision(HIR"\n$N"+HIR"ºÈµÀ£º"+RANK_D->query_self(me)+"ÎÒÕıºÃÈ±¼¸¸öÇ®»¨¡£ÏàºÃµÄ£¬¸Ï¿ì½»³ö±¦±´ÊÜËÀ£¬¾ÍÈÄÄãÒ»ÌõÈ«Ê¬£¡\n"NOR, me);
-        else message_vision(HIR"\n$N"+HIR"ºÈµÀ£º"+RANK_D->query_self(me)+"ÎÒÌæÌìĞĞµÀ£¬½Ù¸»¼ÃÆ¶£¬¹·ÍÈ×Ó£¬Ê¶È¤µã½»³ö±¦±´£¬¾ÍÈÄÄã²»ËÀ£¡\n"NOR, me);
+        if(random(3)) message_vision(HIR"\n$N"+HIR"å–é“ï¼šæ­¤æ¨¹æ˜¯æˆ‘æ ½ï¼Œæ­¤è·¯æ˜¯æˆ‘é–‹ï¼Œè¦å¾æ­¤è™•éï¼Œç•™ä¸‹è²·è·¯éŒ¢ã€‚ç›¸å¥½çš„ï¼Œè­˜è¶£é»äº¤å‡ºå¯¶è²ï¼Œå°±é¥’ä½ ä¸€æ¢ç‹—å‘½ï¼\n"NOR, me);
+        else if( random(3) ) message_vision(HIR"\n$N"+HIR"å–é“ï¼š"+RANK_D->query_self(me)+"æˆ‘æ­£å¥½ç¼ºå¹¾å€‹éŒ¢èŠ±ã€‚ç›¸å¥½çš„ï¼Œè¶•å¿«äº¤å‡ºå¯¶è²å—æ­»ï¼Œå°±é¥’ä½ ä¸€æ¢å…¨å±ï¼\n"NOR, me);
+        else message_vision(HIR"\n$N"+HIR"å–é“ï¼š"+RANK_D->query_self(me)+"æˆ‘æ›¿å¤©è¡Œé“ï¼ŒåŠ«å¯Œæ¿Ÿè²§ï¼Œç‹—è…¿å­ï¼Œè­˜è¶£é»äº¤å‡ºå¯¶è²ï¼Œå°±é¥’ä½ ä¸æ­»ï¼\n"NOR, me);
 
         target = find_player( query("owner") );
         remove_call_out("destroy_it");
 
-        message_vision(HIY"$N´ò¿ªïÚ³µ£¬È¡³öÒ»´ó°üïÚ»õ¡£\n",me);
+        message_vision(HIY"$Næ‰“é–‹é¢è»Šï¼Œå–å‡ºä¸€å¤§åŒ…é¢è²¨ã€‚\n",me);
 
         if(target)
 
@@ -577,7 +577,7 @@ void robber_rob(object me)
 
                          target->remove_enemy(me);
 
-                         CHANNEL_D->do_channel(this_object(), "rumor","ÌıËµ"+me->name()+"Ï´½ÙÁË"+target->name()+"µÄïÚ³µ£¡" );
+                         CHANNEL_D->do_channel(this_object(), "rumor","è½èªª"+me->name()+"æ´—åŠ«äº†"+target->name()+"çš„é¢è»Šï¼" );
 
                          delete("biao", target);
 
@@ -587,7 +587,7 @@ void robber_rob(object me)
 
         else
 
-         CHANNEL_D->do_channel(this_object(), "rumor","ÌıËµ"+me->name()+"Ï´½ÙÁË"+ query("owner")+"µÄïÚ³µ£¡" );
+         CHANNEL_D->do_channel(this_object(), "rumor","è½èªª"+me->name()+"æ´—åŠ«äº†"+ query("owner")+"çš„é¢è»Šï¼" );
 
   call_out("do_leave",1,me);
   call_out("destroy_me",3,this_object() );
@@ -665,7 +665,7 @@ private int is_suitable(object victim, object killer)
 
                   if(  !victim || !clonep(victim) || !living(victim) || userp(victim)
 
-                         || query("race", victim) != "ÈËÀà"
+                         || query("race", victim) != "äººé¡"
 
                          || query("shen", victim) >= 0
 
@@ -685,7 +685,7 @@ private int is_suitable(object victim, object killer)
 
                          || query("family/family_name", victim) == query("family/family_name", killer )
 
-                         || query("family/family_name", victim) == "ÌÒ»¨µº"
+                         || query("family/family_name", victim) == "æ¡ƒèŠ±å³¶"
 
                          || member_array(query("id", victim),no_kill_list) != -1 || random(2) == 0 )
 
@@ -758,7 +758,7 @@ void setup_skill(object me,object obj)
         else
                 level = level/2  + random(level*2/3);
 
-        if( query("family/family_name", me) == "¶ëáÒÅÉ")//theirqishort,solowerrobber'sskillabit
+        if( query("family/family_name", me) == "å³¨åµ‹æ´¾")//theirqishort,solowerrobber'sskillabit
 
         {
 
@@ -855,7 +855,7 @@ void killer_show(object me)
 
   ob->move(here);
   setup_skill(me,ob);
-  message_vision("\n$NÍ»È»ÌøÁË³öÀ´!\n", ob);
+  message_vision("\n$Nçªç„¶è·³äº†å‡ºä¾†!\n", ob);
 
   ob->set_leader(me);
   call_out("action",random(3),me,ob);
@@ -874,23 +874,23 @@ int do_attack(string arg)
         string victim;
         int i;
 
-        if (!arg) return notify_fail("ÄãÒª¹¥»÷Ë­£¿\n");
+        if (!arg) return notify_fail("ä½ è¦æ”»æ“Šèª°ï¼Ÿ\n");
 
         victim = arg;
-        if( victim == query("id", me))return notify_fail("Äã·¢·èÀ²£¿\n");
+        if( victim == query("id", me))return notify_fail("ä½ ç™¼ç˜‹å•¦ï¼Ÿ\n");
         here = environment(me);
 
         target = present(victim, here);
-        if (!target) return notify_fail("ÕâÀï²¢ÎŞ´ËÈË£¡\n");
+        if (!target) return notify_fail("é€™è£¡ä¸¦ç„¡æ­¤äººï¼\n");
 
-        if( query("race", target) != "ÈËÀà" )
+        if( query("race", target) != "äººé¡" )
         {
-                return notify_fail("Äã·¢·èÀ²£¿\n");
+                return notify_fail("ä½ ç™¼ç˜‹å•¦ï¼Ÿ\n");
         }
 
         obj = all_inventory(here);
 
-        message_vision(HIR "$N¶Ô×Å$n"+HIR"ºÈµÀ£º"+RANK_D->query_rude(target)+HIR"Ò²Ïë½ÙïÚ£¿µÜĞÖÃÇ£¬¸øÎÒºİºİµØ½ÌÑµ$p£¡\n\n" NOR, me, target);
+        message_vision(HIR "$Nå°è‘—$n"+HIR"å–é“ï¼š"+RANK_D->query_rude(target)+HIR"ä¹Ÿæƒ³åŠ«é¢ï¼Ÿå¼Ÿå…„å€‘ï¼Œçµ¦æˆ‘ç‹ ç‹ åœ°æ•™è¨“$pï¼\n\n" NOR, me, target);
 
         if( query("biao/dest", me) )
         {
@@ -913,7 +913,7 @@ int do_attack(string arg)
 
                                 {
 
-                                        message_vision(HIY "Ö»¼û$NÓ¦Éù³å×Å$nÆËÁË¹ıÈ¥£¡ºÈµÀ£º"+RANK_D->query_rude(target)+HIY"ÄÃÃüÀ´°É£¡\n" NOR, obj[i], target);
+                                        message_vision(HIY "åªè¦‹$Næ‡‰è²æ²–è‘—$næ’²äº†éå»ï¼å–é“ï¼š"+RANK_D->query_rude(target)+HIY"æ‹¿å‘½ä¾†å§ï¼\n" NOR, obj[i], target);
 
                                         obj[i]->kill_ob(target);
 
@@ -923,7 +923,7 @@ int do_attack(string arg)
 
                                 {
 
-                                        message_vision(HIG "Ö»¼û$N¶Ô×Å$n²»Ğ¼µØºßÁËÒ»Éù£ºÕâ¸ö²»ÖªÌì¸ßµØºñµÄ"+RANK_D->query_rude(target)+HIG"¾Í½»¸øÄãÃÇÈ¥ÊÕÊ°ÁË£¡\n" NOR, obj[i], target);
+                                        message_vision(HIG "åªè¦‹$Nå°è‘—$nä¸å±‘åœ°å“¼äº†ä¸€è²ï¼šé€™å€‹ä¸çŸ¥å¤©é«˜åœ°åšçš„"+RANK_D->query_rude(target)+HIG"å°±äº¤çµ¦ä½ å€‘å»æ”¶æ‹¾äº†ï¼\n" NOR, obj[i], target);
 
                                 }
 
@@ -941,8 +941,8 @@ int do_attack(string arg)
 
                 if(random(2)==0)
 
-                        message_vision( HIR "\n$N¶Ô×Å$n"+HIR"ÀäĞ¦Ò»Éù£º¹·ÍÈ×Ó±ãÊÇÈ«ÉÏ£¬°³ÓÖÓĞºÎ¾å£¬¿´ÕĞ£¡\n\n" NOR, target,me );
-                else message_vision( HIR "\n$N¶Ô×Å$n"+HIR"ÀäĞ¦Ò»Éù£ºÏëÒĞ¶àÎªÊ¤£¿¿´ÕĞ£¡\n\n" NOR, target,me );
+                        message_vision( HIR "\n$Nå°è‘—$n"+HIR"å†·ç¬‘ä¸€è²ï¼šç‹—è…¿å­ä¾¿æ˜¯å…¨ä¸Šï¼Œä¿ºåˆæœ‰ä½•æ‡¼ï¼Œçœ‹æ‹›ï¼\n\n" NOR, target,me );
+                else message_vision( HIR "\n$Nå°è‘—$n"+HIR"å†·ç¬‘ä¸€è²ï¼šæƒ³å€šå¤šç‚ºå‹ï¼Ÿçœ‹æ‹›ï¼\n\n" NOR, target,me );
                 target->kill_ob(me);
         }
 
@@ -955,11 +955,11 @@ int do_check()
         object ppl = this_player();
         object obj = this_object();
 
-        if( query_temp("biao/dest", obj) == "daobaifeng")write("ÕâÊÇÓÉ"+query("owner", obj)+"Ñ¹ÔËµÄ´óÀíÍõåúµ¶°×·ïµÄïÚ»õ¡£\n");
-        else if( query_temp("biao/dest", obj) == "hulaoye")write("ÕâÊÇÓÉ"+query("owner", obj)+"Ñ¹ÔËµÄ±±½®Ğ¡Õò°ÍÒÀÍĞËÍµÄÖØïÚ£¬Òª¾¡¿ìËÍµ½¡£\n");
-        else if( query_temp("biao/dest", obj) == "yeerniang")write("ÕâÊÇÎ÷ÏÄÒ¶¶şÄïÍĞËÍµÄÖØïÚ£¬ÓÉ"+query("owner", obj)+"Ñ¹ÔË£¬Òª¾¡¿ìËÍµ½¡£\n");
-        else if( query_temp("biao/dest", obj) == "fengyiming")write("ÕâÊÇ·ğÉ½Ó¢ĞÛ»á¹İ·ïÒ»ÃùµÄÖØïÚ£¬ÓÉ"+query("owner", obj)+"Ñ¹ÔË¡£\n");
-        else if( query_temp("biao/dest", obj) == "wangtongzhi")write("ÕâÊÇÈªÖİ¼ÃÊÀÌÃÀÏµêµÄÖØïÚ£¬ÓÉ"+query("owner", obj)+"Ñ¹ÔË£¬Îñ±Ø½»µ½Ò©ÆÌÕÆ¹ñÍõÍ¨ÖÎÊÖÀï¡£\n");
+        if( query_temp("biao/dest", obj) == "daobaifeng")write("é€™æ˜¯ç”±"+query("owner", obj)+"å£“é‹çš„å¤§ç†ç‹å¦ƒåˆ€ç™½é³³çš„é¢è²¨ã€‚\n");
+        else if( query_temp("biao/dest", obj) == "hulaoye")write("é€™æ˜¯ç”±"+query("owner", obj)+"å£“é‹çš„åŒ—ç–†å°é®å·´ä¾æ‰˜é€çš„é‡é¢ï¼Œè¦ç›¡å¿«é€åˆ°ã€‚\n");
+        else if( query_temp("biao/dest", obj) == "yeerniang")write("é€™æ˜¯è¥¿å¤è‘‰äºŒå¨˜æ‰˜é€çš„é‡é¢ï¼Œç”±"+query("owner", obj)+"å£“é‹ï¼Œè¦ç›¡å¿«é€åˆ°ã€‚\n");
+        else if( query_temp("biao/dest", obj) == "fengyiming")write("é€™æ˜¯ä½›å±±è‹±é›„æœƒé¤¨é³³ä¸€é³´çš„é‡é¢ï¼Œç”±"+query("owner", obj)+"å£“é‹ã€‚\n");
+        else if( query_temp("biao/dest", obj) == "wangtongzhi")write("é€™æ˜¯æ³‰å·æ¿Ÿä¸–å ‚è€åº—çš„é‡é¢ï¼Œç”±"+query("owner", obj)+"å£“é‹ï¼Œå‹™å¿…äº¤åˆ°è—¥èˆ–æŒæ«ƒç‹é€šæ²»æ‰‹è£¡ã€‚\n");
 
         return 1;
 }
@@ -995,10 +995,10 @@ void destroy_it( object obj)
         {
                 if( userp(ppl) && query_temp("riding", ppl) )
                 {
-                        message_vision( HIR"Ââ×ÓÍ»È»·¢·èËÆµÄÀ­×Å$N"+HIR"¾ÍÅÜ£¬°Ñ$n"+HIR"Ò»Æ¨¹ÉË¦ÔÚµØÉÏ£¬×ªÑÛ¾ÍÅÜÃ»Ó°ÁË¡££¡\n",obj,ppl);
+                        message_vision( HIR"é¨¾å­çªç„¶ç™¼ç˜‹ä¼¼çš„æ‹‰è‘—$N"+HIR"å°±è·‘ï¼ŒæŠŠ$n"+HIR"ä¸€å±è‚¡ç”©åœ¨åœ°ä¸Šï¼Œè½‰çœ¼å°±è·‘æ²’å½±äº†ã€‚ï¼\n",obj,ppl);
                 }
                 else
-                        message_vision( HIR"Ââ×ÓÍ»È»·¢·èËÆµÄÀ­×Å$N"+HIR"ÅÜ£¬×ªÑÛ¾ÍÅÜÃ»Ó°ÁË¡££¡\n",obj );
+                        message_vision( HIR"é¨¾å­çªç„¶ç™¼ç˜‹ä¼¼çš„æ‹‰è‘—$N"+HIR"è·‘ï¼Œè½‰çœ¼å°±è·‘æ²’å½±äº†ã€‚ï¼\n",obj );
                 destruct(obj);
         }
 }
@@ -1025,14 +1025,14 @@ int do_rob()
                   query_temp("biao/dest") != query("xbiao/dest", me )
                 )
         )
-                return notify_fail("Ã»ÊÂÂÒ½ÙïÚ£¿µ±ĞÄÄãµÄĞ¡Ãü£¡\n");
+                return notify_fail("æ²’äº‹äº‚åŠ«é¢ï¼Ÿç•¶å¿ƒä½ çš„å°å‘½ï¼\n");
 
         obj = all_inventory(here);
 
 
-        if(random(3)) message_vision(HIR"\n$N"+HIR"ºÈµÀ£º´ËÊ÷ÊÇÎÒÔÔ£¬´ËÂ·ÊÇÎÒ¿ª£¬Òª´Ó´Ë´¦¹ı£¬ÁôÏÂÂòÂ·Ç®¡£ÏàºÃµÄ£¬Ê¶È¤µã½»³ö±¦±´£¬¾ÍÈÄÄãÒ»Ìõ¹·Ãü£¡\n"NOR, me);
-        else if( random(3) ) message_vision(HIR"\n$N"+HIR"ºÈµÀ£º"+RANK_D->query_self(me)+"ÎÒÕıºÃÈ±¼¸¸öÇ®»¨¡£ÏàºÃµÄ£¬¸Ï¿ì½»³ö±¦±´ÊÜËÀ£¬¾ÍÈÄÄãÒ»ÌõÈ«Ê¬£¡\n"NOR, me);
-        else message_vision(HIR"\n$N"+HIR"ºÈµÀ£º"+RANK_D->query_self(me)+"ÎÒÌæÌìĞĞµÀ£¬½Ù¸»¼ÃÆ¶£¬¹·ÍÈ×Ó£¬Ê¶È¤µã½»³ö±¦±´£¬¾ÍÈÄÄã²»ËÀ£¡\n"NOR, me);
+        if(random(3)) message_vision(HIR"\n$N"+HIR"å–é“ï¼šæ­¤æ¨¹æ˜¯æˆ‘æ ½ï¼Œæ­¤è·¯æ˜¯æˆ‘é–‹ï¼Œè¦å¾æ­¤è™•éï¼Œç•™ä¸‹è²·è·¯éŒ¢ã€‚ç›¸å¥½çš„ï¼Œè­˜è¶£é»äº¤å‡ºå¯¶è²ï¼Œå°±é¥’ä½ ä¸€æ¢ç‹—å‘½ï¼\n"NOR, me);
+        else if( random(3) ) message_vision(HIR"\n$N"+HIR"å–é“ï¼š"+RANK_D->query_self(me)+"æˆ‘æ­£å¥½ç¼ºå¹¾å€‹éŒ¢èŠ±ã€‚ç›¸å¥½çš„ï¼Œè¶•å¿«äº¤å‡ºå¯¶è²å—æ­»ï¼Œå°±é¥’ä½ ä¸€æ¢å…¨å±ï¼\n"NOR, me);
+        else message_vision(HIR"\n$N"+HIR"å–é“ï¼š"+RANK_D->query_self(me)+"æˆ‘æ›¿å¤©è¡Œé“ï¼ŒåŠ«å¯Œæ¿Ÿè²§ï¼Œç‹—è…¿å­ï¼Œè­˜è¶£é»äº¤å‡ºå¯¶è²ï¼Œå°±é¥’ä½ ä¸æ­»ï¼\n"NOR, me);
 
          for(i=0;i<sizeof(obj);i++)
          {
@@ -1079,7 +1079,7 @@ int do_rob()
 
                  if(biaohuo)biaohuo->move(me);
 
-                 message_vision(HIY"$N´ò¿ªïÚ³µ£¬È¡³öÒ»´ó°üïÚ»õ¡£\n",me);
+                 message_vision(HIY"$Næ‰“é–‹é¢è»Šï¼Œå–å‡ºä¸€å¤§åŒ…é¢è²¨ã€‚\n",me);
 
                  set("owner",query("id",  me), biaohuo);
 
@@ -1097,7 +1097,7 @@ int do_rob()
 
                          target->remove_enemy(me);
 
-                         CHANNEL_D->do_channel(this_object(), "rumor","ÌıËµ"+me->name()+"Ï´½ÙÁË"+target->name()+"µÄïÚ³µ£¡" );
+                         CHANNEL_D->do_channel(this_object(), "rumor","è½èªª"+me->name()+"æ´—åŠ«äº†"+target->name()+"çš„é¢è»Šï¼" );
 
                          delete("biao", target);
 
@@ -1107,7 +1107,7 @@ int do_rob()
 
                  else
 
-                         CHANNEL_D->do_channel(this_object(),"rumor","ÌıËµ"+me->name()+"Ï´½ÙÁË"+query("xbiao/owner", me)+"µÄïÚ³µ£¡");
+                         CHANNEL_D->do_channel(this_object(),"rumor","è½èªª"+me->name()+"æ´—åŠ«äº†"+query("xbiao/owner", me)+"çš„é¢è»Šï¼");
                  call_out("destroy_me",1,this_object() );
          }
 
@@ -1126,58 +1126,58 @@ int do_drive(string arg)
         object here = environment(me),robber = present("robber",here);
         int busy_time;
 
-        if (!arg) return notify_fail("ÄãÒªÇı¸ÏÊ²Ã´£¿\n");
+        if (!arg) return notify_fail("ä½ è¦é©…è¶•ä»€éº¼ï¼Ÿ\n");
 
-        if( sscanf(arg, "%s %s", victim, dir) != 2 ) return notify_fail("Ö¸Áî´íÎó£¡\n");
+        if( sscanf(arg, "%s %s", victim, dir) != 2 ) return notify_fail("æŒ‡ä»¤éŒ¯èª¤ï¼\n");
 
-        if( victim == query("id", me))return notify_fail("ºÎ±Ø¶à´ËÒ»¾Ù£¿\n");
+        if( victim == query("id", me))return notify_fail("ä½•å¿…å¤šæ­¤ä¸€èˆ‰ï¼Ÿ\n");
 
-        if( !query_temp("riding", me))return notify_fail("ÄãÓÖ²»ÔÚïÚ³µÉÏ£¡ÔõÃ´¸Ï³µ£¿\n");
+        if( !query_temp("riding", me))return notify_fail("ä½ åˆä¸åœ¨é¢è»Šä¸Šï¼æ€éº¼è¶•è»Šï¼Ÿ\n");
 
-        if ( victim != "che" && victim != "da che" ) return notify_fail("ÄãÒªÇı¸ÏÊ²Ã´£¿\n");
+        if ( victim != "che" && victim != "da che" ) return notify_fail("ä½ è¦é©…è¶•ä»€éº¼ï¼Ÿ\n");
 
         ob = present(victim, environment(me));
 
-        if (!ob) return notify_fail("ÕâÀï²¢ÎŞ´ËÈË£¡\n");
+        if (!ob) return notify_fail("é€™è£¡ä¸¦ç„¡æ­¤äººï¼\n");
 
-        if ( me->is_busy() ) return notify_fail("ÄãÔÚÃ¦×ÅÄØ£¡\n");
+        if ( me->is_busy() ) return notify_fail("ä½ åœ¨å¿™è‘—å‘¢ï¼\n");
 
         env = environment(me);
         if( !mapp(exit=query("exits", env)) || undefinedp(exit[dir]) )
-                return notify_fail("ÎŞ´Ë·½Ïò¿ÉÈ¥£¡\n");
+                return notify_fail("ç„¡æ­¤æ–¹å‘å¯å»ï¼\n");
 
         dest = exit[dir];
 
         if( !(obj = find_object(dest)) )
                                          call_other(dest, "???");
                   if( !(obj = find_object(dest)) )
-                                         return notify_fail("ÎŞ·¨×ß£¡\n");
-        if( !wizardp(ob) && query("short", obj) == "Î×Ê¦ĞİÏ¢ÊÒ" )
-                return notify_fail("ÎŞ·¨×ß£¡\n");
+                                         return notify_fail("ç„¡æ³•èµ°ï¼\n");
+        if( !wizardp(ob) && query("short", obj) == "å·«å¸«ä¼‘æ¯å®¤" )
+                return notify_fail("ç„¡æ³•èµ°ï¼\n");
 
         if( !undefinedp(default_dirs[dir]) )
                                          target_dir = default_dirs[dir];
                   else
                                          target_dir = dir;
 
-        message_vision( HIG"$N"+HIG"ÑïÁËÑï±Ş×Ó£¬¸ßÉùÇı¸ÏÂâ×Ó¼İ×Å$n"+HIG"³¯"+target_dir+"Ê»È¥¡£\n" , me, ob);
+        message_vision( HIG"$N"+HIG"æšäº†æšé­å­ï¼Œé«˜è²é©…è¶•é¨¾å­é§•è‘—$n"+HIG"æœ"+target_dir+"é§›å»ã€‚\n" , me, ob);
 
         if( robber && (query("owner", robber) == query("id", me) || query("owner2", robber) == query("id", me)) )
         {
-                message_vision( HIR"$NºÈµÀ£ºÏëÁï£¿Ã»ÃÅ£¡\n"NOR,robber);
+                message_vision( HIR"$Nå–é“ï¼šæƒ³æºœï¼Ÿæ²’é–€ï¼\n"NOR,robber);
                 return 1;
         }
 
         if( query("owner", ob) != query("id", me) && query("owner2", ob) != query("id", me) )
         {
-                message_vision( HIW"¿ÉÊÇÂâ×ÓÀí¶¼²»Àí$N¡£\n" NOR,me);
+                message_vision( HIW"å¯æ˜¯é¨¾å­ç†éƒ½ä¸ç†$Nã€‚\n" NOR,me);
                 return 1;
         }
 
-        message("vision", HIY "Ö»¼û"+ob->name()+HIY"ºäÂ¡Â¡³ÁÖØµÄÏò"+target_dir+"Ê»¹ıÈ¥¡£\n" NOR, environment(ob), ({ob}));
+        message("vision", HIY "åªè¦‹"+ob->name()+HIY"è½Ÿéš†éš†æ²‰é‡çš„å‘"+target_dir+"é§›éå»ã€‚\n" NOR, environment(ob), ({ob}));
 
         if( ob->move(obj) ) {
-                        message( "vision", HIY "Ö»¼ûÒ»Á¾"+ob->name()+HIY"ºäÂ¡Â¡³ÁÖØµÄÊ»ÁË¹ıÀ´¡£\n" NOR, environment(ob), ({ob}));
+                        message( "vision", HIY "åªè¦‹ä¸€è¼›"+ob->name()+HIY"è½Ÿéš†éš†æ²‰é‡çš„é§›äº†éä¾†ã€‚\n" NOR, environment(ob), ({ob}));
 
                         busy_time = 4 + random(4);
 
@@ -1185,9 +1185,9 @@ int do_drive(string arg)
                         {
                                 if( (me=present(query("owner", ob),env)) && query_temp("riding", me) )
                                 {
-                                        message_vision( HIG"$N×øÔÚïÚ³µÉÏÏò"+target_dir+"Ê»¹ıÈ¥¡£\n" NOR,me);
+                                        message_vision( HIG"$Nååœ¨é¢è»Šä¸Šå‘"+target_dir+"é§›éå»ã€‚\n" NOR,me);
                                         me->move(obj);
-                                        message_vision( HIG"$N×øÔÚïÚ³µÉÏÊ»¹ıÀ´¡£\n" NOR,me);
+                                        message_vision( HIG"$Nååœ¨é¢è»Šä¸Šé§›éä¾†ã€‚\n" NOR,me);
                                         me->start_busy( busy_time );
                                         all_inventory(env)->follow_me(me,dir);
                                 }
@@ -1199,9 +1199,9 @@ int do_drive(string arg)
                         {
                                  if( (partner=present(query("owner2", ob),env)) && query_temp("riding", partner) )
                                  {
-                                        message_vision( HIG"$N×øÔÚïÚ³µÉÏÏò"+target_dir+"Ê»¹ıÈ¥¡£\n" NOR,partner);
+                                        message_vision( HIG"$Nååœ¨é¢è»Šä¸Šå‘"+target_dir+"é§›éå»ã€‚\n" NOR,partner);
                                         partner->move(obj);
-                                        message_vision( HIG"$N×øÔÚïÚ³µÉÏÊ»¹ıÀ´¡£\n" NOR,partner);
+                                        message_vision( HIG"$Nååœ¨é¢è»Šä¸Šé§›éä¾†ã€‚\n" NOR,partner);
                                         partner->start_busy( busy_time );
                                         all_inventory(env)->follow_me(partner,dir);
                                  }

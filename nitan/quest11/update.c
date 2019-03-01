@@ -1,1397 +1,1397 @@
 
 
-ºÚÐÜ|ÐÜµ¨¸É|ÐÂÏÊÐÜµ¨$npcen=hei xiong;rd hujia;s;e;eu;su;eu
+é»‘ç†Š|ç†Šè†½å¹¹|æ–°é®®ç†Šè†½$npcen=hei xiong;rd hujia;s;e;eu;su;eu
 
-Ð¡ÆÑÍÅ$rd xiaoyao;npcen=get;w;enter;d;ok$
-»ï¼Æ$rd yongdeng;npcen=huoji;n;e;ok$
-¹·Æ¤$rd yongdeng;buy=1;npcen=huoji;n;e;ok$
-ÀÇ$rd beijing;npcen=wolf2;w;w;n;n;w;w;w;w;w;w;w;sw;w;n;ok$
+å°è’²åœ˜$rd xiaoyao;npcen=get;w;enter;d;ok$
+ä¼™è¨ˆ$rd yongdeng;npcen=huoji;n;e;ok$
+ç‹—çš®$rd yongdeng;buy=1;npcen=huoji;n;e;ok$
+ç‹¼$rd beijing;npcen=wolf2;w;w;n;n;w;w;w;w;w;w;w;sw;w;n;ok$
 
-¡ª¡ªÑïÖÝ¡ª¡ª
-Ïã$npcen=laonian sengren;buy=1;rd dali;#4 n;nw;n;ok|ne;e;s;s;s;e;s;s;w;s;s;w;s;ok$
-ÄÐº¢|²¼ÒÂ$rd gc;npcen=boy;w;w;w;w;w;ok|rd jingzhou;ok$
-½ðË¿¼×|ÐÅ$npcen=ren yingying;rd beijing;w;w;n;n;w;w;w;w;w;w;w;sw;e;e;e;ok$
-Öììä$npcen=zhu xi;rd gc;e;n;ok$
-¡¸°Ù¼ÒÐÕ¡¹|¡¸Ç§×ÖÎÄ¡¹|¡¸Èý×Ö¾­¡¹$npcen=zhu xi;buy=1;rd gc;e;n;ok$
-ÑîÓÀ¸£$npcen=yang yongfu;rd gc;e;s;ok$
-Ãµ¹å$npcen=yang yongfu;buy=1;rd gc;e;s;ok$
-ÌúÊÖÕÆ|Ìú°ËØÔ|½ðË¿¼×1|²ÝÐ¬|¶Ç´ø|»¤Íó|»¤Ñü|»ðÕÛ|Âé²¼´ü|²ø»êË¿|Ä¾²Ä|Å£Æ¤¶Ü|Æ¤±³ÐÄ|Æ¤ÊÖÌ×|Æ¤Ñ¥|Ë¢×Ó|Ë¯´ü|Í·¿ø|ÎäÕßÏîÈ¦|Ð¡¿¾Â¯|Óã¶ü|Ö¸Ì×$npcen=yang yongfu;buy=1;rd gc;e;s;ok$
-ÑòÆ¤$rd mingjiao;npcen=ketou;uu;w;w;w;wu;wu;w;w;ww;enter;break men;enter;ok|open north;n;open north;n;open north;n;open north;n;ketou;get qiankunbook;ok$
-Í·¿ø1$givecash$
-ÔøÈá$npcen=zeng rou;rd gc;e;s;u;ok$
-½á»éÀñ·þ|´äÁøðÐðÄ·þ|¸»¹óÍÅ½ð¹Ó|Èí½ðÊø´ø|Ðå»¨Ð¡·½½í|Ó§×ÓÃ±|À¶±¦Ê¯Ñü´ø|Ò»×ÖåÐÒ£½í|µ­ÑÌÐã²Å×°|Æß²ÊÏ¼ÔÆÒÂ|Îå²ÊÐå»¨È¹|×Ïç±É´ÏæÈ¹|Ç³À¶É«Âí¹Ó|¹ð»¨¸¡ÓñÉÀ|¿×È¸ÓðÒÂ|Àæ»¨Æ®Ñ©ÉÑ|Çí»¨ð¨ÔÂÉÑ|ÐþÉ«½ôÉí°À|ÄÞºìÁ¬ÒÂÈ¹|ÑÞÂ¶ÄýÏãÒÂ|²¼Ð¬|Ðå»¨Ð¬|ÀæÐ¾µ­ÑÌÉ´|ÑòÆ¤Ñ¥|²Ê¶Ð½ôÉí°À$npcen=zeng rou;buy=1;rd gc;e;s;u;ok$
-Ìú½³$npcen=tie jiang;rd luoyang;#5 s;w;ok$
-³¤½£|´óµ¶|°ÙÁ¶¾«Ìú|ÌúóÝ1|³¤¹­|¶Ì¹­|·¨ÂÖ|¸Öµ¶|¸Ö½£|¸ÖÕÈ|½äµ¶|ÀÇÑÀ¼ý|ÆÕÍ¨Ø°Ê×|ÆëÃ¼¹÷|Ìú´¸|Ìú¹÷|Ìú¼×|ÍÀµ¶|Óð¼ý$npcen=tie jiang;buy=1;rd gc;e;e;s;ok$
-Öñ½£$npcen=tie jiang;buy=1;rd gc;e;e;s;ok$
-Æ½Ò»Ö¸$npcen=ping yizhi;rd gc;e;e;n;ok$
-ÐÛ»Æ$npcen=yaopu huoji;buy=1;rd gc;e;e;n;ok$
-±¾²Ý¸ÙÄ¿|ÀÏÉ½²Î|ÑÐ²§|ÐÛ»Æ1$npcen=ping yizhi;buy=1;rd gc;e;e;n;ok$
-ËÅ²èÑ¾÷ß$rd gc;npcen=girl;e;n;u;ok$
-ÆÝ³¤·¢$npcen=qi changfa;rd gc;e;e;e;s;ok$
-ÐÜÈý$npcen=xiong san;rd gc;e;e;e;n;ok$
-Îä½«$npcen=wu jiang;rd gc;w;w;w;w;ok|rd gc;n;n;n;ok|rd gc;s;s;s;ok|rd gc;e;e;e;e;ok$
-¹Ù±ø$npcen=guan bing;rd gc;w;s;ok|rd gc;w;w;w;w;ok|rd gc;n;n;n;ok|rd gc;s;s;s;ok|rd gc;e;e;e;e;ok$
-¾ü·þ$npcen=guan bing;rd gc;w;s;ok|n;rd gc;w;w;w;w;ok|rd gc;n;n;n;ok|rd gc;s;s;s;ok|rd gc;e;e;e;e;ok$
-Âí³¬ÐË$npcen=ma chaoxing;rd gc;n;n;n;ok$
-³¤±Þ$rd dali;npcen=get;n;n;e;n;enter;e;e;e;n;ok|s;npcen=ma chaoxing;rd gc;n;n;n;ok$
-Ã½ÆÅ$rd suzhou;npcen=meipo;e;e;e;ok$
-»¨Ã½ÆÅ$npcen=mei po;rd gc;n;n;ok$
-Å·Ñô¿Ë$npcen=ouyang ke;rd gc;n;ok$
-Ç®ÑÛ¿ª$npcen=qian yankai;rd gc;n;w;ok$
-³¤ÅÛ$npcen=xi zi;rd changan;n;n;n;n;n;e;e;e;e;n;ok|npcen=guan jia;s;s;s;s;s;s;s;e;ok$
-°×É«³¤ÅÛ$npcen=ouyang ke;rd gc;n;ok|npcen=guan jia;rd baituo;nu;nu;n;nu;n;n;ok|npcen=shao nv;n;ok$
-ÉñÏÉ×í¾Æ|Å£Æ¤Ë®´ü|¸ÉÁ¸|°ü×Ó|¿¾¼¦ÍÈ|¿¾Ñ¼|Å£Æ¤¾Æ´ü$npcen=xiao er;buy=1;rd gc;n;n;e;ok$
-ÍõÎå$npcen=wang wu;rd gc;n;n;e;u;ok$
-¾Æ±­$npcen=wang wu;rd gc;n;n;e;u;ok$
-ÙþÀÏ°å$npcen=xian laoban;rd gc;n;n;e;u;ok$
-»¨µñ¾Æ´ü$npcen=xian laoban;buy=1;rd gc;n;n;e;u;ok$
-ÌÒ¸ÉÏÉ$npcen=taogan xian;rd gc;n;n;e;u;u;ok$
-ÌÒ¸ùÏÉ$npcen=taogen xian;rd gc;n;n;e;u;u;ok$
-ÌÒ»¨ÏÉ$npcen=taohua xian;rd gc;n;n;e;u;u;ok$
-ÌÒÊµÏÉ$npcen=taoshi xian;rd gc;n;n;e;u;u;ok$
-ÌÒÒ¶ÏÉ$npcen=taoye xian;rd gc;n;n;e;u;u;ok$
-ÌÒÖ¦ÏÉ$npcen=taozhi xian;rd gc;n;n;e;u;u;ok$
-Ò¦ÔÀÁá$npcen=yao yueling;rd gc;n;n;n;e;ok$
-ëÙÖ¬|»ÙÈÝÍè|´ó±¦|Ð¡±¦|»¨·Û´ü|ÅÙ»¨ÓÍ$npcen=yao yueling;buy=1;rd gc;n;n;n;e;ok$
-Â³°à$npcen=lu ban;rd gc;#6 n;e;ok$
-½ðÁÙ$npcen=jin lin;rd gc;#6 n;e;ok$
-Ê·ÇàÉ½$rd gc;w;s;npcen=guan bing;ok|npcen=shi qingshan;s;ok$
-ÑÃÒÛ$npcen=ya yi;rd gc;w;n;ok$
-ÑÃÒÛ·þ$npcen=ya yi;rd gc;w;n;ok$
-³ÌÒ©·¢$rd gc;w;n;npcen=ya yi;ok|npcen=cheng yaofa;n;ok$
-Ì·ÓÑ¼Í$rd gc;w;n;npcen=ya yi;ok|npcen=tan youji;n;ok$
-³ÌÓñ»·$rd gc;w;n;npcen=ya yi;ok|npcen=cheng yuhuan;n;n;ok$
-³ÂÓÐµÂ$npcen=chen youde;rd gc;w;w;s;ok$
-ÓÎ·½µÀÈË$npcen=youfang daoren;rd gc;w;w;ok$
-ÖØÑôÁî$rd gc;w;w;give 1 gold to youfang daoren$
-´óÀÇ¹·$npcen=wolf dog;rd gc;w;w;n;ok$
-¹·Æ¤$npcen=wolf dog;rd gc;w;w;n;ok$
-¹Ü¼Ò$npcen=guan jia;rd gc;w;w;n;n;ok|s;s;rd changan;s;s;s;e;e;e;e;n;e;ok$
-¼Ò¶¡$npcen=jia ding;rd gc;w;w;n;n;ok|s;s;rd xiangyang;w;n;ok$
-Ô¿³×$npcen=zhu jian;rd lingjiu;zou tiesuo;eu;n;n;n;n;w;w;n;n;e;e;ok$
-´ÞÔ±Íâ$npcen=cui yuanwai;rd gc;w;w;n;n;n;ok$
-ÀÎ·¿Ô¿³×$npcen=cui yuanwai;rd gc;w;w;n;n;n;ok$
-´ÞÝºÝº$npcen=cui yuanwai;rd gc;w;w;n;n;n;kk|npcen=cui yingying;w;ok$
-ºìÄï$npcen=cui yuanwai;rd gc;w;w;n;n;n;kk|npcen=hong niang;get all from corpse;unlock;e;ok$
-ÂäÆÇ¹«×Ó$npcen=gong zi;rd gc;w;w;w;ok$
-·â¹­Ó°$npcen=feng gongying;rd gc;w;w;w;w;ok$
-°×²¼³¤ÅÛ$npcen=feng gongying;rd gc;w;w;w;w;ok|npcen=gao shanwang;rd mingjiao;w;ok|npcen=jieyin shi;w;w;ok$
-Ê·ÆÅÆÅ$npcen=shi popo;rd gc;w;w;w;w;s;ok$
-¹íÈý$npcen=gui san;rd gc;w;w;w;w;s;w;ok$
-Á÷Ã¥$npcen=liu mang;rd gc;s;ok|rd fuzhou;ok$
-Á÷Ã¥Í·$npcen=liumang tou;rd gc;s;ok|rd fuzhou;ok$
-Ð¡»ì»ì$npcen=xiao hunhun;rd gc;s;ok$
-ÌÆéª$npcen=tang nan;rd gc;s;e;ok$
-ÍÐ²§É®$npcen=tuoba seng;rd gc;s;s;ok$
-ÉÙÁÖÓ¢ÐÛÁî$rd gc;s;s;give 1 gold to tuoba seng$
-°¢ÇìÉ©$npcen=aqing sao;rd gc;s;s;w;ok$
-ÎåÏã»¨Éú|ôä´ä¶¹¸¯$npcen=aqing sao;buy=1;rd gc;s;s;w;ok$
-Î¤´º·¼$npcen=wei chunfang;rd gc;s;s;e;ok$
-Ã©Ê®°Ë$npcen=mao shiba;rd gc;s;s;e;ok$
-¿Õ¿Õ¶ù$npcen=kong kong;rd gc;s;s;e;ok$
-¹ê¹«$npcen=gui gong;rd gc;s;s;e;u;ok$
-Ê·ËÉ$npcen=shi song;rd gc;s;s;s;ok$
-ºÚÁú±Þ$npcen=shi song;rd gc;s;s;s;ok$
-½­ÉÏÓÎ$npcen=jiang shangyou;rd gc;s;s;s;w;w;w;ok$
-Äª²»ÊÕ$npcen=mo bushou;rd gc;s;s;s;w;w;w;w;n;ok$
-¿ì»îÈý$npcen=kuaihuo san;rd gc;s;s;s;e;e;ok$
-ÕÔ¹·¶ù$npcen=zhao gouer;rd gc;s;s;s;e;e;e;e;ok$
-ôÃÍò¼Ò$npcen=qiu wanjia;rd gc;e;e;e;e;s;s;ok$
-Ìô·ò$npcen=tiao fu;rd gc;e;e;e;e;e;ok$
-º£¹«¹«$npcen=hai gonggong;rd gc;e;e;e;e;e;e;ok$
-Ð¡¹ð×Ó|Ò©·Û$npcen=xiao guizi;rd gc;e;e;e;e;e;e;ok$
-ÌË×ÓÊÖ$npcen=tangzi shou;rd gc;e;e;e;e;e;e;ok$
-¶Ì½£$npcen=tangzi shou;rd gc;e;e;e;e;e;e;ok$
-×óÈ«$npcen=zuo quan;rd gc;xia;enter dong;ok$
-Áº³¤ÀÏ$npcen=liang zhanglao;rd gc;xia;enter dong;say ÌìÌÃÓÐÂ·Äã²»×ßÑ½;d;ok$
-ºÎ²»¾»$npcen=he bujing;rd gc;xia;enter dong;say ÌìÌÃÓÐÂ·Äã²»×ßÑ½;d;go 3;ne;ne;ok$
-ÓàºéÐË$npcen=yu hongxing;rd gc;xia;enter dong;say ÌìÌÃÓÐÂ·Äã²»×ßÑ½;d;go 4;w;w;ok$
-Âí´óÔª$npcen=ma dayuan;rd gc;xia;enter dong;say ÌìÌÃÓÐÂ·Äã²»×ßÑ½;d;go 8;se;se;ok$
-È«¹ÚÇå$npcen=quan guanqing;rd gc;xia;enter dong;say ÌìÌÃÓÐÂ·Äã²»×ßÑ½;d;go 7;n;ok$
-ÀèÉú$npcen=li sheng;rd gc;xia;enter dong;say ÌìÌÃÓÐÂ·Äã²»×ßÑ½;d;go 5;sw;sw;ok$
-Âí¾ãÎª$npcen=ma juwei;rd gc;xia;enter dong;say ÌìÌÃÓÐÂ·Äã²»×ßÑ½;d;go 1;n;n;ok$
-¸«Í·|¸Ö¾â$npcen=ha dani;buy=1;rd guanwai;ok$
-Àî¸«Í·$npcen=li futou;rd gc;xia;enter dong;say ÌìÌÃÓÐÂ·Äã²»×ßÑ½;d;go 6;nw;nw;ok$
-°×ÊÀ¾µ$npcen=bai shijing;rd gc;xia;enter dong;say ÌìÌÃÓÐÂ·Äã²»×ßÑ½;d;d;w;ok$
-ÞÉ³¤ÀÏ$npcen=xi zhanglao;rd gc;xia;enter dong;say ÌìÌÃÓÐÂ·Äã²»×ßÑ½;d;go 2;ne;ne;ok$
-Â³ÓÐ½Å$npcen=lu youjiao;rd gc;xia;enter dong;say ÌìÌÃÓÐÂ·Äã²»×ßÑ½;d;go 2;ne;ne;up;ok$
-ÅíÓÐ¾´$npcen=peng youjing;rd gc;xia;enter dong;say ÌìÌÃÓÐÂ·Äã²»×ßÑ½;d;go 2;ne;ne;up;ok$
-ÕÈ·¨Í¨½â$rd gc;npcen=get;xia;enter dong;say ÌìÌÃÓÐÂ·Äã²»×ßÑ½;d;d;w;break wall;get paper;ok$
+â”€â”€æšå·žâ”€â”€
+é¦™$npcen=laonian sengren;buy=1;rd dali;#4 n;nw;n;ok|ne;e;s;s;s;e;s;s;w;s;s;w;s;ok$
+ç”·å­©|å¸ƒè¡£$rd gc;npcen=boy;w;w;w;w;w;ok|rd jingzhou;ok$
+é‡‘çµ²ç”²|ä¿¡$npcen=ren yingying;rd beijing;w;w;n;n;w;w;w;w;w;w;w;sw;e;e;e;ok$
+æœ±ç†¹$npcen=zhu xi;rd gc;e;n;ok$
+ã€Œç™¾å®¶å§“ã€|ã€Œåƒå­—æ–‡ã€|ã€Œä¸‰å­—ç¶“ã€$npcen=zhu xi;buy=1;rd gc;e;n;ok$
+æ¥Šæ°¸ç¦$npcen=yang yongfu;rd gc;e;s;ok$
+çŽ«ç‘°$npcen=yang yongfu;buy=1;rd gc;e;s;ok$
+éµæ‰‹æŽŒ|éµå…«å¦|é‡‘çµ²ç”²1|è‰éž‹|è‚šå¸¶|è­·è…•|è­·è…°|ç«æŠ˜|éº»å¸ƒè¢‹|çºé­‚çµ²|æœ¨æ|ç‰›çš®ç›¾|çš®èƒŒå¿ƒ|çš®æ‰‹å¥—|çš®é´|åˆ·å­|ç¡è¢‹|é ­ç›”|æ­¦è€…é …åœˆ|å°çƒ¤çˆ|é­šé¤Œ|æŒ‡å¥—$npcen=yang yongfu;buy=1;rd gc;e;s;ok$
+ç¾Šçš®$rd mingjiao;npcen=ketou;uu;w;w;w;wu;wu;w;w;ww;enter;break men;enter;ok|open north;n;open north;n;open north;n;open north;n;ketou;get qiankunbook;ok$
+é ­ç›”1$givecash$
+æ›¾æŸ”$npcen=zeng rou;rd gc;e;s;u;ok$
+çµå©šç¦®æœ|ç¿ æŸ³é¸šéµ¡æœ|å¯Œè²´åœ˜é‡‘è¤‚|è»Ÿé‡‘æŸå¸¶|ç¹¡èŠ±å°æ–¹å·¾|çº“å­å¸½|è—å¯¶çŸ³è…°å¸¶|ä¸€å­—é€é™å·¾|æ·¡ç…™ç§€æ‰è£|ä¸ƒå½©éœžé›²è¡£|äº”å½©ç¹¡èŠ±è£™|ç´«ç¶¾ç´—æ¹˜è£™|æ·ºè—è‰²é¦¬è¤‚|æ¡‚èŠ±æµ®çŽ‰è¡«|å­”é›€ç¾½è¡£|æ¢¨èŠ±é£„é›ªè£³|ç“ŠèŠ±çšŽæœˆè£³|çŽ„è‰²ç·Šèº«è¥–|éœ“ç´…é€£è¡£è£™|è‰·éœ²å‡é¦™è¡£|å¸ƒéž‹|ç¹¡èŠ±éž‹|æ¢¨èŠ¯æ·¡ç…™ç´—|ç¾Šçš®é´|å½©ç·žç·Šèº«è¥–$npcen=zeng rou;buy=1;rd gc;e;s;u;ok$
+éµåŒ $npcen=tie jiang;rd luoyang;#5 s;w;ok$
+é•·åŠ|å¤§åˆ€|ç™¾ç…‰ç²¾éµ|éµç®1|é•·å¼“|çŸ­å¼“|æ³•è¼ª|é‹¼åˆ€|é‹¼åŠ|é‹¼æ–|æˆ’åˆ€|ç‹¼ç‰™ç®­|æ™®é€šåŒ•é¦–|é½Šçœ‰æ£|éµéŒ˜|éµæ£|éµç”²|å± åˆ€|ç¾½ç®­$npcen=tie jiang;buy=1;rd gc;e;e;s;ok$
+ç«¹åŠ$npcen=tie jiang;buy=1;rd gc;e;e;s;ok$
+å¹³ä¸€æŒ‡$npcen=ping yizhi;rd gc;e;e;n;ok$
+é›„é»ƒ$npcen=yaopu huoji;buy=1;rd gc;e;e;n;ok$
+æœ¬è‰ç¶±ç›®|è€å±±åƒ|ç ”ç µ|é›„é»ƒ1$npcen=ping yizhi;buy=1;rd gc;e;e;n;ok$
+ä¼ºèŒ¶ä¸«é¬Ÿ$rd gc;npcen=girl;e;n;u;ok$
+æˆšé•·ç™¼$npcen=qi changfa;rd gc;e;e;e;s;ok$
+ç†Šä¸‰$npcen=xiong san;rd gc;e;e;e;n;ok$
+æ­¦å°‡$npcen=wu jiang;rd gc;w;w;w;w;ok|rd gc;n;n;n;ok|rd gc;s;s;s;ok|rd gc;e;e;e;e;ok$
+å®˜å…µ$npcen=guan bing;rd gc;w;s;ok|rd gc;w;w;w;w;ok|rd gc;n;n;n;ok|rd gc;s;s;s;ok|rd gc;e;e;e;e;ok$
+è»æœ$npcen=guan bing;rd gc;w;s;ok|n;rd gc;w;w;w;w;ok|rd gc;n;n;n;ok|rd gc;s;s;s;ok|rd gc;e;e;e;e;ok$
+é¦¬è¶…èˆˆ$npcen=ma chaoxing;rd gc;n;n;n;ok$
+é•·éž­$rd dali;npcen=get;n;n;e;n;enter;e;e;e;n;ok|s;npcen=ma chaoxing;rd gc;n;n;n;ok$
+åª’å©†$rd suzhou;npcen=meipo;e;e;e;ok$
+èŠ±åª’å©†$npcen=mei po;rd gc;n;n;ok$
+æ­é™½å…‹$npcen=ouyang ke;rd gc;n;ok$
+éŒ¢çœ¼é–‹$npcen=qian yankai;rd gc;n;w;ok$
+é•·è¢$npcen=xi zi;rd changan;n;n;n;n;n;e;e;e;e;n;ok|npcen=guan jia;s;s;s;s;s;s;s;e;ok$
+ç™½è‰²é•·è¢$npcen=ouyang ke;rd gc;n;ok|npcen=guan jia;rd baituo;nu;nu;n;nu;n;n;ok|npcen=shao nv;n;ok$
+ç¥žä»™é†‰é…’|ç‰›çš®æ°´è¢‹|å¹¹ç³§|åŒ…å­|çƒ¤é›žè…¿|çƒ¤é´¨|ç‰›çš®é…’è¢‹$npcen=xiao er;buy=1;rd gc;n;n;e;ok$
+çŽ‹äº”$npcen=wang wu;rd gc;n;n;e;u;ok$
+é…’æ¯$npcen=wang wu;rd gc;n;n;e;u;ok$
+å†¼è€æ¿$npcen=xian laoban;rd gc;n;n;e;u;ok$
+èŠ±é›•é…’è¢‹$npcen=xian laoban;buy=1;rd gc;n;n;e;u;ok$
+æ¡ƒå¹¹ä»™$npcen=taogan xian;rd gc;n;n;e;u;u;ok$
+æ¡ƒæ ¹ä»™$npcen=taogen xian;rd gc;n;n;e;u;u;ok$
+æ¡ƒèŠ±ä»™$npcen=taohua xian;rd gc;n;n;e;u;u;ok$
+æ¡ƒå¯¦ä»™$npcen=taoshi xian;rd gc;n;n;e;u;u;ok$
+æ¡ƒè‘‰ä»™$npcen=taoye xian;rd gc;n;n;e;u;u;ok$
+æ¡ƒæžä»™$npcen=taozhi xian;rd gc;n;n;e;u;u;ok$
+å§šå²³çŽ²$npcen=yao yueling;rd gc;n;n;n;e;ok$
+èƒ­è„‚|æ¯€å®¹ä¸¸|å¤§å¯¶|å°å¯¶|èŠ±ç²‰è¢‹|åˆ¨èŠ±æ²¹$npcen=yao yueling;buy=1;rd gc;n;n;n;e;ok$
+é­¯ç­$npcen=lu ban;rd gc;#6 n;e;ok$
+é‡‘è‡¨$npcen=jin lin;rd gc;#6 n;e;ok$
+å²é’å±±$rd gc;w;s;npcen=guan bing;ok|npcen=shi qingshan;s;ok$
+è¡™å½¹$npcen=ya yi;rd gc;w;n;ok$
+è¡™å½¹æœ$npcen=ya yi;rd gc;w;n;ok$
+ç¨‹è—¥ç™¼$rd gc;w;n;npcen=ya yi;ok|npcen=cheng yaofa;n;ok$
+è­šå‹ç´€$rd gc;w;n;npcen=ya yi;ok|npcen=tan youji;n;ok$
+ç¨‹çŽ‰ç’°$rd gc;w;n;npcen=ya yi;ok|npcen=cheng yuhuan;n;n;ok$
+é™³æœ‰å¾·$npcen=chen youde;rd gc;w;w;s;ok$
+éŠæ–¹é“äºº$npcen=youfang daoren;rd gc;w;w;ok$
+é‡é™½ä»¤$rd gc;w;w;give 1 gold to youfang daoren$
+å¤§ç‹¼ç‹—$npcen=wolf dog;rd gc;w;w;n;ok$
+ç‹—çš®$npcen=wolf dog;rd gc;w;w;n;ok$
+ç®¡å®¶$npcen=guan jia;rd gc;w;w;n;n;ok|s;s;rd changan;s;s;s;e;e;e;e;n;e;ok$
+å®¶ä¸$npcen=jia ding;rd gc;w;w;n;n;ok|s;s;rd xiangyang;w;n;ok$
+é‘°åŒ™$npcen=zhu jian;rd lingjiu;zou tiesuo;eu;n;n;n;n;w;w;n;n;e;e;ok$
+å´”å“¡å¤–$npcen=cui yuanwai;rd gc;w;w;n;n;n;ok$
+ç‰¢æˆ¿é‘°åŒ™$npcen=cui yuanwai;rd gc;w;w;n;n;n;ok$
+å´”é¶¯é¶¯$npcen=cui yuanwai;rd gc;w;w;n;n;n;kk|npcen=cui yingying;w;ok$
+ç´…å¨˜$npcen=cui yuanwai;rd gc;w;w;n;n;n;kk|npcen=hong niang;get all from corpse;unlock;e;ok$
+è½é­„å…¬å­$npcen=gong zi;rd gc;w;w;w;ok$
+å°å¼“å½±$npcen=feng gongying;rd gc;w;w;w;w;ok$
+ç™½å¸ƒé•·è¢$npcen=feng gongying;rd gc;w;w;w;w;ok|npcen=gao shanwang;rd mingjiao;w;ok|npcen=jieyin shi;w;w;ok$
+å²å©†å©†$npcen=shi popo;rd gc;w;w;w;w;s;ok$
+é¬¼ä¸‰$npcen=gui san;rd gc;w;w;w;w;s;w;ok$
+æµæ°“$npcen=liu mang;rd gc;s;ok|rd fuzhou;ok$
+æµæ°“é ­$npcen=liumang tou;rd gc;s;ok|rd fuzhou;ok$
+å°æ··æ··$npcen=xiao hunhun;rd gc;s;ok$
+å”æ¥ $npcen=tang nan;rd gc;s;e;ok$
+æ‰˜ç µåƒ§$npcen=tuoba seng;rd gc;s;s;ok$
+å°‘æž—è‹±é›„ä»¤$rd gc;s;s;give 1 gold to tuoba seng$
+é˜¿æ…¶å«‚$npcen=aqing sao;rd gc;s;s;w;ok$
+äº”é¦™èŠ±ç”Ÿ|ç¿¡ç¿ è±†è…$npcen=aqing sao;buy=1;rd gc;s;s;w;ok$
+éŸ‹æ˜¥èŠ³$npcen=wei chunfang;rd gc;s;s;e;ok$
+èŒ…åå…«$npcen=mao shiba;rd gc;s;s;e;ok$
+ç©ºç©ºå…’$npcen=kong kong;rd gc;s;s;e;ok$
+é¾œå…¬$npcen=gui gong;rd gc;s;s;e;u;ok$
+å²é¬†$npcen=shi song;rd gc;s;s;s;ok$
+é»‘é¾éž­$npcen=shi song;rd gc;s;s;s;ok$
+æ±Ÿä¸ŠéŠ$npcen=jiang shangyou;rd gc;s;s;s;w;w;w;ok$
+èŽ«ä¸æ”¶$npcen=mo bushou;rd gc;s;s;s;w;w;w;w;n;ok$
+å¿«æ´»ä¸‰$npcen=kuaihuo san;rd gc;s;s;s;e;e;ok$
+è¶™ç‹—å…’$npcen=zhao gouer;rd gc;s;s;s;e;e;e;e;ok$
+è£˜è¬å®¶$npcen=qiu wanjia;rd gc;e;e;e;e;s;s;ok$
+æŒ‘å¤«$npcen=tiao fu;rd gc;e;e;e;e;e;ok$
+æµ·å…¬å…¬$npcen=hai gonggong;rd gc;e;e;e;e;e;e;ok$
+å°æ¡‚å­|è—¥ç²‰$npcen=xiao guizi;rd gc;e;e;e;e;e;e;ok$
+è¶Ÿå­æ‰‹$npcen=tangzi shou;rd gc;e;e;e;e;e;e;ok$
+çŸ­åŠ$npcen=tangzi shou;rd gc;e;e;e;e;e;e;ok$
+å·¦å…¨$npcen=zuo quan;rd gc;xia;enter dong;ok$
+æ¨‘é•·è€$npcen=liang zhanglao;rd gc;xia;enter dong;say å¤©å ‚æœ‰è·¯ä½ ä¸èµ°å‘€;d;ok$
+ä½•ä¸å‡ˆ$npcen=he bujing;rd gc;xia;enter dong;say å¤©å ‚æœ‰è·¯ä½ ä¸èµ°å‘€;d;go 3;ne;ne;ok$
+ä½™æ´ªèˆˆ$npcen=yu hongxing;rd gc;xia;enter dong;say å¤©å ‚æœ‰è·¯ä½ ä¸èµ°å‘€;d;go 4;w;w;ok$
+é¦¬å¤§å…ƒ$npcen=ma dayuan;rd gc;xia;enter dong;say å¤©å ‚æœ‰è·¯ä½ ä¸èµ°å‘€;d;go 8;se;se;ok$
+å…¨å† æ¸…$npcen=quan guanqing;rd gc;xia;enter dong;say å¤©å ‚æœ‰è·¯ä½ ä¸èµ°å‘€;d;go 7;n;ok$
+é»Žç”Ÿ$npcen=li sheng;rd gc;xia;enter dong;say å¤©å ‚æœ‰è·¯ä½ ä¸èµ°å‘€;d;go 5;sw;sw;ok$
+é¦¬ä¿±ç‚º$npcen=ma juwei;rd gc;xia;enter dong;say å¤©å ‚æœ‰è·¯ä½ ä¸èµ°å‘€;d;go 1;n;n;ok$
+æ–§é ­|é‹¼é‹¸$npcen=ha dani;buy=1;rd guanwai;ok$
+æŽæ–§é ­$npcen=li futou;rd gc;xia;enter dong;say å¤©å ‚æœ‰è·¯ä½ ä¸èµ°å‘€;d;go 6;nw;nw;ok$
+ç™½ä¸–é¡$npcen=bai shijing;rd gc;xia;enter dong;say å¤©å ‚æœ‰è·¯ä½ ä¸èµ°å‘€;d;d;w;ok$
+å¥šé•·è€$npcen=xi zhanglao;rd gc;xia;enter dong;say å¤©å ‚æœ‰è·¯ä½ ä¸èµ°å‘€;d;go 2;ne;ne;ok$
+é­¯æœ‰è…³$npcen=lu youjiao;rd gc;xia;enter dong;say å¤©å ‚æœ‰è·¯ä½ ä¸èµ°å‘€;d;go 2;ne;ne;up;ok$
+å½­æœ‰æ•¬$npcen=peng youjing;rd gc;xia;enter dong;say å¤©å ‚æœ‰è·¯ä½ ä¸èµ°å‘€;d;go 2;ne;ne;up;ok$
+æ–æ³•é€šè§£$rd gc;npcen=get;xia;enter dong;say å¤©å ‚æœ‰è·¯ä½ ä¸èµ°å‘€;d;d;w;break wall;get paper;ok$
 
-¡ª¡ªÌ©É½¡ª¡ª
-µ¥Õý$npcen=shan zheng;rd taishan;ok$
-ÌìÒÒµÀÈË$npcen=tianyi daoren;rd taishan;s;s;ok$
-µ¥Õý$npcen=shan zheng;rd taishan$
-×æÇ§Çï$npcen=zu qianqiu;rd taishan;n;w;ne;ok$
-´óºº$npcen=da han;rd mingjiao;w;w;w;ok|rd taishan;n;w;sw;w;ok$
-ºîÍ¨º£$npcen=hou tonghai;rd taishan;n;w;sw;w;w;w;ok|rd guiyun;cross;shang ship$
-Èý¹É²æ$npcen=hou tonghai;rd taishan;n;w;sw;w;w;w;ok|rd guiyun;cross;shang ship$
-ÉòÇà¸Õ$npcen=shen qinggang;rd taishan;n;w;sw;w;w;w;w;ok|rd guiyun;cross;shang ship$
-ÂíÇàÐÛ$npcen=ma qingxiong;rd taishan;n;w;sw;w;w;w;w;ok|rd guiyun;cross;shang ship$
-ÎâÇàÁÒ$npcen=wu qinglie;rd taishan;n;w;sw;w;w;w;w;w;ok|rd guiyun;cross;shang ship$
-Ç®Çà½¡$npcen=qian qingjian;rd taishan;n;w;sw;w;w;w;w;w;ok|rd guiyun;cross;shang ship$
-É¥ÃÅ¸«$npcen=qian qingjian;rd taishan;n;w;sw;w;w;w;w;w;ok|rd guiyun;cross;shang ship$
-É³Í¨Ìì$npcen=sha tongtian;rd taishan;n;w;sw;w;w;w;w;w;w;ok|rd guiyun;cross;shang ship$
-Ìú½°$npcen=sha tongtian;rd taishan;n;w;sw;w;w;w;w;w;w;ok|rd guiyun;cross;shang ship$
-Áº×ÓÎÌ$npcen=liang ziwen;rd taishan;n;w;sw;w;w;w;w;w;w;ok|rd guiyun;cross;shang ship$
-¸ð²¼³¤ÅÛ$npcen=liang ziwen;rd taishan;n;w;sw;w;w;w;w;w;w;ok|rd guiyun;cross;shang ship$
-ÅíÁ¬»¢$npcen=peng lianhu;rd taishan;n;w;sw;w;w;w;w;w;w;ok|rd guiyun;cross;shang ship$
-ÅÐ¹Ù±Ê1$npcen=peng lianhu;rd taishan;n;w;sw;w;w;w;w;w;w;ok|rd guiyun;cross;shang ship$
-Ìì°ØµÀÈË$npcen=tianbai daoren;rd taishan;n;nu;nu;nu;eu;nu;nu;ok$
-ÌìËÉµÀÈË$npcen=tiansong daoren;rd taishan;n;nu;nu;nu;eu;nu;nu;ok$
-»ÒÉ«µÀÅÛ$npcen=tianyi daoren;rd taishan;s;s;ok|npcen=tianbai daoren;rd taishan;n;nu;nu;nu;eu;nu;nu;ok|npcen=tiansong daoren;ok$
-³Ù°Ù³Ç$npcen=chi baicheng;rd taishan;n;nu;nu;nu;eu;nu;nu;nu;nu;ok$
-½¨³ýµÀÈË$npcen=jianchu daoren;rd taishan;n;nu;nu;nu;eu;nu;nu;nu;nu;nu;ok$
-½­°ÙÊ¤$npcen=jiang baisheng;rd taishan;n;nu;nu;nu;eu;nu;nu;nu;nu;nu;nu;ok$
-ÇàÒÂ|¶·Åñ$npcen=yu popo;rd lingjiu;ok|npcen=lan jian;zou tiesuo;eu;n;n;ok|npcen=mei jian;ok$
-ÇàÒÂÎäÊ¿$npcen=wei shi;rd taishan;n;nu;nu;nu;eu;nu;nu;nu;nu;nu;nu;ok$
-ºìÒÂÎäÊ¿$npcen=jiang baisheng;rd taishan;n;nu;nu;nu;eu;nu;nu;nu;nu;nu;nu;ok|npcen=wei shi;nu;ok$
-°×ÒÂ$rd dali;npcen=girl;#7 n;ok$
-°×ÒÂÎäÊ¿$npcen=jiang baisheng;rd taishan;n;nu;nu;nu;eu;nu;nu;nu;nu;nu;nu;ok|npcen=wei shi;nu;up;ok$
-ÌìÃÅµÀÈË$npcen=jiang baisheng;rd taishan;n;nu;nu;nu;eu;nu;nu;nu;nu;nu;nu;ok|npcen=tianmen daoren;nu;ed;ok$
-ÓñÒô×Ó$npcen=yuyin zi;rd taishan;n;nu;nu;nu;eu;nu;nu;nu;nu;nu;nu;eu;ed;nu;ok$
-Óñçá×Ó$npcen=yuji zi;rd taishan;n;nu;nu;nu;eu;nu;nu;nu;nu;nu;nu;eu;ed;nu;ok$
-Óñíà×Ó$npcen=yuqing zi;rd taishan;n;nu;nu;nu;eu;nu;nu;nu;nu;nu;nu;eu;ed;nu;ok$
+â”€â”€æ³°å±±â”€â”€
+å–®æ­£$npcen=shan zheng;rd taishan;ok$
+å¤©ä¹™é“äºº$npcen=tianyi daoren;rd taishan;s;s;ok$
+å–®æ­£$npcen=shan zheng;rd taishan$
+ç¥–åƒç§‹$npcen=zu qianqiu;rd taishan;n;w;ne;ok$
+å¤§æ¼¢$npcen=da han;rd mingjiao;w;w;w;ok|rd taishan;n;w;sw;w;ok$
+ä¾¯é€šæµ·$npcen=hou tonghai;rd taishan;n;w;sw;w;w;w;ok|rd guiyun;cross;shang ship$
+ä¸‰è‚¡å‰$npcen=hou tonghai;rd taishan;n;w;sw;w;w;w;ok|rd guiyun;cross;shang ship$
+æ²ˆé’å‰›$npcen=shen qinggang;rd taishan;n;w;sw;w;w;w;w;ok|rd guiyun;cross;shang ship$
+é¦¬é’é›„$npcen=ma qingxiong;rd taishan;n;w;sw;w;w;w;w;ok|rd guiyun;cross;shang ship$
+å³é’çƒˆ$npcen=wu qinglie;rd taishan;n;w;sw;w;w;w;w;w;ok|rd guiyun;cross;shang ship$
+éŒ¢é’å¥$npcen=qian qingjian;rd taishan;n;w;sw;w;w;w;w;w;ok|rd guiyun;cross;shang ship$
+å–ªé–€æ–§$npcen=qian qingjian;rd taishan;n;w;sw;w;w;w;w;w;ok|rd guiyun;cross;shang ship$
+æ²™é€šå¤©$npcen=sha tongtian;rd taishan;n;w;sw;w;w;w;w;w;w;ok|rd guiyun;cross;shang ship$
+éµæ§³$npcen=sha tongtian;rd taishan;n;w;sw;w;w;w;w;w;w;ok|rd guiyun;cross;shang ship$
+æ¨‘å­ç¿$npcen=liang ziwen;rd taishan;n;w;sw;w;w;w;w;w;w;ok|rd guiyun;cross;shang ship$
+è‘›å¸ƒé•·è¢$npcen=liang ziwen;rd taishan;n;w;sw;w;w;w;w;w;w;ok|rd guiyun;cross;shang ship$
+å½­é€£è™Ž$npcen=peng lianhu;rd taishan;n;w;sw;w;w;w;w;w;w;ok|rd guiyun;cross;shang ship$
+åˆ¤å®˜ç­†1$npcen=peng lianhu;rd taishan;n;w;sw;w;w;w;w;w;w;ok|rd guiyun;cross;shang ship$
+å¤©æŸé“äºº$npcen=tianbai daoren;rd taishan;n;nu;nu;nu;eu;nu;nu;ok$
+å¤©é¬†é“äºº$npcen=tiansong daoren;rd taishan;n;nu;nu;nu;eu;nu;nu;ok$
+ç°è‰²é“è¢$npcen=tianyi daoren;rd taishan;s;s;ok|npcen=tianbai daoren;rd taishan;n;nu;nu;nu;eu;nu;nu;ok|npcen=tiansong daoren;ok$
+é²ç™¾åŸŽ$npcen=chi baicheng;rd taishan;n;nu;nu;nu;eu;nu;nu;nu;nu;ok$
+å»ºé™¤é“äºº$npcen=jianchu daoren;rd taishan;n;nu;nu;nu;eu;nu;nu;nu;nu;nu;ok$
+æ±Ÿç™¾å‹$npcen=jiang baisheng;rd taishan;n;nu;nu;nu;eu;nu;nu;nu;nu;nu;nu;ok$
+é’è¡£|é¬¥ç¯·$npcen=yu popo;rd lingjiu;ok|npcen=lan jian;zou tiesuo;eu;n;n;ok|npcen=mei jian;ok$
+é’è¡£æ­¦å£«$npcen=wei shi;rd taishan;n;nu;nu;nu;eu;nu;nu;nu;nu;nu;nu;ok$
+ç´…è¡£æ­¦å£«$npcen=jiang baisheng;rd taishan;n;nu;nu;nu;eu;nu;nu;nu;nu;nu;nu;ok|npcen=wei shi;nu;ok$
+ç™½è¡£$rd dali;npcen=girl;#7 n;ok$
+ç™½è¡£æ­¦å£«$npcen=jiang baisheng;rd taishan;n;nu;nu;nu;eu;nu;nu;nu;nu;nu;nu;ok|npcen=wei shi;nu;up;ok$
+å¤©é–€é“äºº$npcen=jiang baisheng;rd taishan;n;nu;nu;nu;eu;nu;nu;nu;nu;nu;nu;ok|npcen=tianmen daoren;nu;ed;ok$
+çŽ‰éŸ³å­$npcen=yuyin zi;rd taishan;n;nu;nu;nu;eu;nu;nu;nu;nu;nu;nu;eu;ed;nu;ok$
+çŽ‰ç’£å­$npcen=yuji zi;rd taishan;n;nu;nu;nu;eu;nu;nu;nu;nu;nu;nu;eu;ed;nu;ok$
+çŽ‰ç£¬å­$npcen=yuqing zi;rd taishan;n;nu;nu;nu;eu;nu;nu;nu;nu;nu;nu;eu;ed;nu;ok$
 
-¡ª¡ªÈ«Õæ¡ª¡ª
-ÕÆÒ©µÀ³¤$npcen=zhangyao daozhang;rd quanzhen;e;s;w;ok$
-ÇàÉ«µÀÅÛ$npcen=zhike daozhang;rd wudang;uu;wu;w;ok|npcen=guxu daozhang;su;su;su;su;sd;su;sd;su;su;su;su;s;ok$
-ÖÜ²®Í¨$npcen=zhou botong;rd quanzhen;wd;ok$
-ÇàÉ«µÀÅÛ1$npcen=zhou botong;rd quanzhen;wd;ok$
-ÕÔÖ¾¾´$npcen=zhao zhijing;rd quanzhen;wd;s;ok$
-»ÒÉ«µÀÅÛ1$npcen=zhao zhijing;rd quanzhen;wd;s;ok|npcen=yin zhiping;n;w;ok|npcen=dao tong;ok|su;su;ok$
-Ïã¿Í$npcen=xiang ke;rd quanzhen;wd;nu;nu;ok|sd;sd;w;su;ok|su;s;ok$
-ÓÎ¿Í$npcen=you ke;rd quanzhen;wd;nu;nu;ok|sd;sd;w;su;ok|su;s;ok$
-ÒüÖ¾Æ½$npcen=yin zhiping;rd quanzhen;wd;w;ok$
-µÀÍ¯$npcen=dao tong;rd quanzhen;wd;w;ok|su;su;ok$
-Æ¤ÇåÐþ$npcen=pi qingxuan;rd quanzhen;wd;w;nd;wd;nw;sd;sd;ok$
-¼§ÇåÐé$npcen=ji qingxu;rd quanzhen;wd;w;nd;wd;nw;sd;sd;sd;sd;ok$
-Ã·»¨Â¹$npcen=meihua lu;rd quanzhen;wd;w;nd;wd;nw;sd;sd;sd;sd;sd;s;se;ok$
-³ÂÖ¾Òæ$npcen=chen zhiyi;rd quanzhen;wd;w;nd;wd;nw;sd;sd;sd;sd;sd;s;se;e;ok$
-Öª¿ÍµÀ³¤$npcen=zhike daozhang;rd quanzhen;ok|rd wudang;uu;wu;w;ok$
-ÕÅÖ¾¹â$npcen=zhang zhiguang;rd quanzhen;open door;e;s;ok$
-Ì·´¦¶Ë$npcen=tan chuduan;rd quanzhen;open door;e;s;s;ok$
-´ÞÖ¾·½$npcen=cui zhifang;rd quanzhen;open door;e;n;ok$
-Íõ´¦Ò»$npcen=wang chuyi;rd quanzhen;open door;e;n;n;ok$
-ÕÆÀíµÀ³¤$npcen=zhangli daozhang;rd quanzhen;open door;e;e;ok$
-Ð¡µÀÍ¯$npcen=xiao daotong;rd quanzhen;open door;e;e;ok$
-ÉêÖ¾·²$npcen=shen zhifan;rd quanzhen;open door;e;e;s;ok$
-ºÂ´óÍ¨$npcen=hao datong;rd quanzhen;open door;e;e;s;s;ok$
-ÀîÖ¾³£$npcen=li zhichang;rd quanzhen;open door;e;e;n;ok$
-ÂíîÚ$npcen=ma yu;rd quanzhen;open door;e;e;n;n;ok$
-·¿Ö¾Æð$npcen=fang zhiqi;rd quanzhen;e;e;e;ok$
-ÕÆ¾­µÀ³¤$npcen=zhangjing daozhang;rd quanzhen;open door;e;e;e;n;n;wu;eu;wu;ok$
-³ÌÑþåÈ$npcen=cheng yaojia;rd quanzhen;open door;e;e;e;s;ok$
-Ëï²»¶þ$npcen=sun buer;rd quanzhen;open door;e;e;e;s;s;ok$
-Çð´¦»ú$npcen=qiu chuji;rd quanzhen;open door;e;e;e;e;ok$
-ÍõÖ¾Ì¹$npcen=wang zhitan;rd quanzhen;open door;e;e;e;e;e;e;e;ok$
-ÆîÖ¾³Ï$npcen=qi zhicheng;rd quanzhen;open door;e;e;e;e;n;ok$
-»ð¹¤µÀÈË$npcen=huogong daoren;rd quanzhen;open door;e;e;e;e;e;e;s;se;s;ok|e;ok$
-ÕÆÔ°µÀ³¤$npcen=zhangyuan daozhang;rd quanzhen;open door;e;e;e;e;e;e;e;ne;ok$
-Áõ´¦Ðþ$npcen=liu chuxuan;rd quanzhen;open door;e;e;e;e;e;e;e;e;ok$
-ÍõÖØÑô$npcen=liu chuxuan;rd quanzhen;open door;e;e;e;e;e;e;e;e;ok|npcen=wang chongyang;e;ne;ne;e;enter;ok$
+â”€â”€å…¨çœŸâ”€â”€
+æŽŒè—¥é“é•·$npcen=zhangyao daozhang;rd quanzhen;e;s;w;ok$
+é’è‰²é“è¢$npcen=zhike daozhang;rd wudang;uu;wu;w;ok|npcen=guxu daozhang;su;su;su;su;sd;su;sd;su;su;su;su;s;ok$
+å‘¨ä¼¯é€š$npcen=zhou botong;rd quanzhen;wd;ok$
+é’è‰²é“è¢1$npcen=zhou botong;rd quanzhen;wd;ok$
+è¶™å¿—æ•¬$npcen=zhao zhijing;rd quanzhen;wd;s;ok$
+ç°è‰²é“è¢1$npcen=zhao zhijing;rd quanzhen;wd;s;ok|npcen=yin zhiping;n;w;ok|npcen=dao tong;ok|su;su;ok$
+é¦™å®¢$npcen=xiang ke;rd quanzhen;wd;nu;nu;ok|sd;sd;w;su;ok|su;s;ok$
+éŠå®¢$npcen=you ke;rd quanzhen;wd;nu;nu;ok|sd;sd;w;su;ok|su;s;ok$
+å°¹å¿—å¹³$npcen=yin zhiping;rd quanzhen;wd;w;ok$
+é“ç«¥$npcen=dao tong;rd quanzhen;wd;w;ok|su;su;ok$
+çš®æ¸…çŽ„$npcen=pi qingxuan;rd quanzhen;wd;w;nd;wd;nw;sd;sd;ok$
+å§¬æ¸…è™›$npcen=ji qingxu;rd quanzhen;wd;w;nd;wd;nw;sd;sd;sd;sd;ok$
+æ¢…èŠ±é¹¿$npcen=meihua lu;rd quanzhen;wd;w;nd;wd;nw;sd;sd;sd;sd;sd;s;se;ok$
+é™³å¿—ç›Š$npcen=chen zhiyi;rd quanzhen;wd;w;nd;wd;nw;sd;sd;sd;sd;sd;s;se;e;ok$
+çŸ¥å®¢é“é•·$npcen=zhike daozhang;rd quanzhen;ok|rd wudang;uu;wu;w;ok$
+å¼µå¿—å…‰$npcen=zhang zhiguang;rd quanzhen;open door;e;s;ok$
+è­šè™•ç«¯$npcen=tan chuduan;rd quanzhen;open door;e;s;s;ok$
+å´”å¿—æ–¹$npcen=cui zhifang;rd quanzhen;open door;e;n;ok$
+çŽ‹è™•ä¸€$npcen=wang chuyi;rd quanzhen;open door;e;n;n;ok$
+æŽŒç†é“é•·$npcen=zhangli daozhang;rd quanzhen;open door;e;e;ok$
+å°é“ç«¥$npcen=xiao daotong;rd quanzhen;open door;e;e;ok$
+ç”³å¿—å‡¡$npcen=shen zhifan;rd quanzhen;open door;e;e;s;ok$
+éƒå¤§é€š$npcen=hao datong;rd quanzhen;open door;e;e;s;s;ok$
+æŽå¿—å¸¸$npcen=li zhichang;rd quanzhen;open door;e;e;n;ok$
+é¦¬éˆº$npcen=ma yu;rd quanzhen;open door;e;e;n;n;ok$
+æˆ¿å¿—èµ·$npcen=fang zhiqi;rd quanzhen;e;e;e;ok$
+æŽŒç¶“é“é•·$npcen=zhangjing daozhang;rd quanzhen;open door;e;e;e;n;n;wu;eu;wu;ok$
+ç¨‹ç‘¤è¿¦$npcen=cheng yaojia;rd quanzhen;open door;e;e;e;s;ok$
+å­«ä¸äºŒ$npcen=sun buer;rd quanzhen;open door;e;e;e;s;s;ok$
+ä¸˜è™•æ©Ÿ$npcen=qiu chuji;rd quanzhen;open door;e;e;e;e;ok$
+çŽ‹å¿—å¦$npcen=wang zhitan;rd quanzhen;open door;e;e;e;e;e;e;e;ok$
+ç¥å¿—èª $npcen=qi zhicheng;rd quanzhen;open door;e;e;e;e;n;ok$
+ç«å·¥é“äºº$npcen=huogong daoren;rd quanzhen;open door;e;e;e;e;e;e;s;se;s;ok|e;ok$
+æŽŒåœ’é“é•·$npcen=zhangyuan daozhang;rd quanzhen;open door;e;e;e;e;e;e;e;ne;ok$
+åŠ‰è™•çŽ„$npcen=liu chuxuan;rd quanzhen;open door;e;e;e;e;e;e;e;e;ok$
+çŽ‹é‡é™½$npcen=liu chuxuan;rd quanzhen;open door;e;e;e;e;e;e;e;e;ok|npcen=wang chongyang;e;ne;ne;e;enter;ok$
 
-¡ª¡ªÉÙÁÖ¡ª¡ª
-ÐéÃ÷$npcen=xu ming;rd shaolin;ok$
-ÐéÍ¨$npcen=xu tong;rd shaolin;ok$
-»Æ²¼ôÂôÄ$npcen=xu ming;rd shaolin;ok|npcen=xu tong;ok$
-¾õÔ¶$npcen=jue yuan;rd shaolin;w;sd;ok$
-Çå·¨±ÈÇð$npcen=qingfa biqiu;rd shaolin;uu;eu;www;nu;nu;nu;n;ok$
-ÇåÎª±ÈÇð$npcen=qingwei biqiu;rd shaolin;uu;eu;www;nu;nu;nu;n;w;ok$
-ÇåÎÞ±ÈÇð$npcen=qingwu biqiu;rd shaolin;uu;eu;www;nu;nu;nu;n;e;ok$
-°×²¼ºÚ±ßôÂôÄ$npcen=qingfa biqiu;rd shaolin;uu;eu;www;nu;nu;nu;n;ok|npcen=qingwei biqiu;w;ok|npcen=qingwu biqiu;e;e;ok$
-µÀ¹ûìøÊ¦$npcen=daoguo chanshi;rd shaolin;uu;eu;www;nu;nu;nu;n;takeling;knock gate;n;store ling;n;nu;ok$
-Ä¾Óãé³$rd shaolin;npcen=get;uu;eu;www;nu;nu;nu;n;takeling;knock gate;n;store ling;w;ok|e;e;ok$
-ÇåÉÆ±ÈÇð$npcen=qingshan biqiu;rd shaolin;uu;eu;www;nu;nu;nu;n;takeling;knock gate;n;store ling;n;nu;n;ok$
-µÀÕýìøÊ¦$npcen=daozheng chanshi;rd shaolin;uu;eu;www;nu;nu;nu;n;takeling;knock gate;n;store ling;n;nu;n;nu;ok$
-ÇåÎÅ±ÈÇð$npcen=qingwen biqiu;rd shaolin;uu;eu;www;nu;nu;nu;n;takeling;knock gate;n;store ling;n;nu;n;ok|w;enter;up;up;up;up;up;up;ok$
-ÇåÏþ±ÈÇð$npcen=qingxiao biqiu;rd shaolin;uu;eu;nu;www;nu;nu;n;takeling;knock gate;n;store ling;n;nu;n;ok|e;enter;up;up;up;up;up;up;ok$
-ÉÕ·¹É®$npcen=shaofan seng;rd shaolin;uu;eu;www;nu;nu;nu;n;takeling;knock gate;n;store ling;n;nu;n;n;w;n;n;ok$
-»Û¿Õ×ðÕß$npcen=huikong zunzhe;rd shaolin;uu;eu;www;nu;nu;nu;n;takeling;knock gate;n;store ling;n;nu;n;n;n;ok$
-ìøÕÈ$npcen=huikong zunzhe;rd shaolin;uu;eu;www;nu;nu;nu;n;takeling;knock gate;n;store ling;n;nu;n;n;n;ok|npcen=xuannan dashi;n;n;w;w;ok$
-»ÛÈç×ðÕß$npcen=huiru zunzhe;rd shaolin;uu;eu;www;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;ok$
-Çà²¼Ïâ±ßôÂôÄ$npcen=huikong zunzhe;rd shaolin;uu;eu;www;nu;nu;nu;n;takeling;knock gate;n;store ling;n;nu;n;n;n;ok|npcen=huiru zunzhe;n;ok$
-¿Õ¼û$npcen=kong jian;rd shaolin;uu;eu;www;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;ok$
-µÀ¾õìøÊ¦$npcen=daojue chanshi;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;n;ok$
-»Ò²¼Ïâ±ßôÂôÄ$npcen=daojue chanshi;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;n;ok|npcen=daopin chanshi;s;e;ok$
-ÇåÀÖ±ÈÇð$npcen=qingle biqiu;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;n;n;up;ok$
-µÀÆ·ìøÊ¦$npcen=daopin chanshi;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;e;ok$
-³Î¹Û$npcen=chengguan luohan;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;e;e;n;ok$
-½ð±ßºÚ²¼ôÂôÄ$npcen=chengguan luohan;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;e;e;n;ok|npcen=chengzhi luohan;n;ok|npcen=chengming luohan;n;ok$
-³ÎÖª$npcen=chengzhi luohan;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;e;e;n;n;ok$
-³ÎÃ÷$npcen=chengming luohan;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;e;e;n;n;n;ok$
-³Î¾»$npcen=chengjing luohan;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;e;e;n;n;n;n;ok$
-³Î¼á$npcen=chengjian luohan;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;e;e;n;n;n;n;n;ok$
-Ðþ¿à´óÊ¦$npcen=xuanku dashi;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;e;e;n;n;n;n;n;ok$
-»¤·¨ôÂôÄ$npcen=dingjing shitai;rd nanyang;n;n;n;n;n;n;w;nw;sw;ok|npcen=xuanku dashi;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;e;e;n;n;n;n;n;ok|npcen=xuannan dashi;w;w;w;w;ok$
-³ÎÐÐ$npcen=chengxing luohan;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;e;e;n;n;n;n;n;n;ok$
-³Î¼Å$npcen=chengji luohan;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;e;e;n;n;ok|n;n;n;n;n;ok$
-³ÎÃð$npcen=chengmie luohan;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;e;e;n;n;ok|n;n;n;n;n;n;ok$
-³ÎºÍ$npcen=chenghe luohan;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;e;e;n;n;ok|n;n;n;n;n;n;n;ok$
-µÀ³¾ìøÊ¦$npcen=daochen chanshi;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;n;n;n;e;n;e;open east;e;ok$
-´òÌúÉ®$npcen=datie seng;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;n;n;n;e;n;e;open east;e;ok$
-µÀÏàìøÊ¦$npcen=daoxiang chanshi;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;n;n;n;e;n;e;open east;e;n;ok$
-µÀÏóìøÊ¦$npcen=daoxiang chanshi;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;n;n;n;e;n;e;open east;e;n;n;ok$
-»ÛÐÞ×ðÕß$npcen=huixiu zunzhe;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;n;n;n;e;n;ok$
-»ÛÉ«×ðÕß$npcen=huise zunzhe;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;n;n;n;e;n;n;ok$
-»ÛºÏ×ðÕß$npcen=huihe zunzhe;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;n;n;n;e;ok$
-µÀ³ÉìøÊ¦$npcen=daocheng chanshi;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;n;n;n;ok$
-Çå¹Û±ÈÇð$npcen=qingguan biqiu;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;n;n;n;n;nu;ok$
-»ÛÐé×ðÕß$npcen=huixu zunzhe;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;n;n;n;w;ok$
-»ÛÃû×ðÕß$npcen=huiming zunzhe;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;n;n;n;w;n;ok$
-»Û½à×ðÕß$npcen=huijie zunzhe;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;n;n;n;w;n;n;ok$
-µÀÒ»ìøÊ¦$npcen=daoyi chanshi;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;n;n;n;w;n;w;w;ok$
-ÎÞÃûÀÏÉ®$npcen=wuming laoseng;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;n;n;n;w;n;w;w;ok$
-»ÛÕæ×ðÕß$npcen=daoyi chanshi;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;n;n;n;w;n;w;w;ok|npcen=huizhen zunzhe;up;ok$
-ÐþÄÑ´óÊ¦$npcen=xuannan dashi;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;n;w;w;ok$
-³ÎÖ¾$npcen=chengzhi luohan;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;n;w;w;ok$
-³ÎÐÅ$npcen=chengxin luohan;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;n;w;w;n;ok$
-³ÎÁé$npcen=chengling luohan;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;n;w;w;n;n;ok$
-³ÎÓû$npcen=chengyu luohan;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;n;w;w;n;n;n;ok$
-³ÎÉÐ$npcen=chengshang luohan;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;n;w;w;n;n;n;n;ok$
-³ÎÊ¶$npcen=chengshi luohan;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;n;w;w;s;ok$
-³ÎÐÄ$npcen=chengxin luohan;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;w;w;n;ok$
-³ÎÒâ$npcen=chengyi luohan;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;w;w;n;n;ok$
-³ÎË¼$npcen=chengsi luohan;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;w;w;n;n;ok$
-Ðþ±¯´óÊ¦$npcen=xuanbei dashi;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;n;n;n;nu;up;ok$
-¶É¶ò$npcen=du e;rd shaolin;uu;eu;www;nu;nu;nu;n;e;e;s;e;s;e;n;n;e;w;s;enter;ok$
-¶É½Ù$npcen=du jie;rd shaolin;uu;eu;www;nu;nu;nu;n;e;e;s;e;s;e;n;n;e;w;s;enter;ok$
-¶ÉÄÑ$npcen=du nan;rd shaolin;uu;eu;www;nu;nu;nu;n;e;e;s;e;s;e;n;n;e;w;s;enter;ok$
+â”€â”€å°‘æž—â”€â”€
+è™›æ˜Ž$npcen=xu ming;rd shaolin;ok$
+è™›é€š$npcen=xu tong;rd shaolin;ok$
+é»ƒå¸ƒè¢ˆè£Ÿ$npcen=xu ming;rd shaolin;ok|npcen=xu tong;ok$
+è¦ºé $npcen=jue yuan;rd shaolin;w;sd;ok$
+æ¸…æ³•æ¯”ä¸˜$npcen=qingfa biqiu;rd shaolin;uu;eu;www;nu;nu;nu;n;ok$
+æ¸…ç‚ºæ¯”ä¸˜$npcen=qingwei biqiu;rd shaolin;uu;eu;www;nu;nu;nu;n;w;ok$
+æ¸…ç„¡æ¯”ä¸˜$npcen=qingwu biqiu;rd shaolin;uu;eu;www;nu;nu;nu;n;e;ok$
+ç™½å¸ƒé»‘é‚Šè¢ˆè£Ÿ$npcen=qingfa biqiu;rd shaolin;uu;eu;www;nu;nu;nu;n;ok|npcen=qingwei biqiu;w;ok|npcen=qingwu biqiu;e;e;ok$
+é“æžœç¦ªå¸«$npcen=daoguo chanshi;rd shaolin;uu;eu;www;nu;nu;nu;n;takeling;knock gate;n;store ling;n;nu;ok$
+æœ¨é­šæ§Œ$rd shaolin;npcen=get;uu;eu;www;nu;nu;nu;n;takeling;knock gate;n;store ling;w;ok|e;e;ok$
+æ¸…å–„æ¯”ä¸˜$npcen=qingshan biqiu;rd shaolin;uu;eu;www;nu;nu;nu;n;takeling;knock gate;n;store ling;n;nu;n;ok$
+é“æ­£ç¦ªå¸«$npcen=daozheng chanshi;rd shaolin;uu;eu;www;nu;nu;nu;n;takeling;knock gate;n;store ling;n;nu;n;nu;ok$
+æ¸…èžæ¯”ä¸˜$npcen=qingwen biqiu;rd shaolin;uu;eu;www;nu;nu;nu;n;takeling;knock gate;n;store ling;n;nu;n;ok|w;enter;up;up;up;up;up;up;ok$
+æ¸…æ›‰æ¯”ä¸˜$npcen=qingxiao biqiu;rd shaolin;uu;eu;nu;www;nu;nu;n;takeling;knock gate;n;store ling;n;nu;n;ok|e;enter;up;up;up;up;up;up;ok$
+ç‡’é£¯åƒ§$npcen=shaofan seng;rd shaolin;uu;eu;www;nu;nu;nu;n;takeling;knock gate;n;store ling;n;nu;n;n;w;n;n;ok$
+æ…§ç©ºå°Šè€…$npcen=huikong zunzhe;rd shaolin;uu;eu;www;nu;nu;nu;n;takeling;knock gate;n;store ling;n;nu;n;n;n;ok$
+ç¦ªæ–$npcen=huikong zunzhe;rd shaolin;uu;eu;www;nu;nu;nu;n;takeling;knock gate;n;store ling;n;nu;n;n;n;ok|npcen=xuannan dashi;n;n;w;w;ok$
+æ…§å¦‚å°Šè€…$npcen=huiru zunzhe;rd shaolin;uu;eu;www;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;ok$
+é’å¸ƒé‘²é‚Šè¢ˆè£Ÿ$npcen=huikong zunzhe;rd shaolin;uu;eu;www;nu;nu;nu;n;takeling;knock gate;n;store ling;n;nu;n;n;n;ok|npcen=huiru zunzhe;n;ok$
+ç©ºè¦‹$npcen=kong jian;rd shaolin;uu;eu;www;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;ok$
+é“è¦ºç¦ªå¸«$npcen=daojue chanshi;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;n;ok$
+ç°å¸ƒé‘²é‚Šè¢ˆè£Ÿ$npcen=daojue chanshi;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;n;ok|npcen=daopin chanshi;s;e;ok$
+æ¸…æ¨‚æ¯”ä¸˜$npcen=qingle biqiu;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;n;n;up;ok$
+é“å“ç¦ªå¸«$npcen=daopin chanshi;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;e;ok$
+æ¾„è§€$npcen=chengguan luohan;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;e;e;n;ok$
+é‡‘é‚Šé»‘å¸ƒè¢ˆè£Ÿ$npcen=chengguan luohan;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;e;e;n;ok|npcen=chengzhi luohan;n;ok|npcen=chengming luohan;n;ok$
+æ¾„çŸ¥$npcen=chengzhi luohan;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;e;e;n;n;ok$
+æ¾„æ˜Ž$npcen=chengming luohan;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;e;e;n;n;n;ok$
+æ¾„å‡ˆ$npcen=chengjing luohan;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;e;e;n;n;n;n;ok$
+æ¾„å …$npcen=chengjian luohan;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;e;e;n;n;n;n;n;ok$
+çŽ„è‹¦å¤§å¸«$npcen=xuanku dashi;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;e;e;n;n;n;n;n;ok$
+è­·æ³•è¢ˆè£Ÿ$npcen=dingjing shitai;rd nanyang;n;n;n;n;n;n;w;nw;sw;ok|npcen=xuanku dashi;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;e;e;n;n;n;n;n;ok|npcen=xuannan dashi;w;w;w;w;ok$
+æ¾„è¡Œ$npcen=chengxing luohan;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;e;e;n;n;n;n;n;n;ok$
+æ¾„å¯‚$npcen=chengji luohan;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;e;e;n;n;ok|n;n;n;n;n;ok$
+æ¾„æ»…$npcen=chengmie luohan;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;e;e;n;n;ok|n;n;n;n;n;n;ok$
+æ¾„å’Œ$npcen=chenghe luohan;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;e;e;n;n;ok|n;n;n;n;n;n;n;ok$
+é“å¡µç¦ªå¸«$npcen=daochen chanshi;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;n;n;n;e;n;e;open east;e;ok$
+æ‰“éµåƒ§$npcen=datie seng;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;n;n;n;e;n;e;open east;e;ok$
+é“ç›¸ç¦ªå¸«$npcen=daoxiang chanshi;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;n;n;n;e;n;e;open east;e;n;ok$
+é“è±¡ç¦ªå¸«$npcen=daoxiang chanshi;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;n;n;n;e;n;e;open east;e;n;n;ok$
+æ…§ä¿®å°Šè€…$npcen=huixiu zunzhe;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;n;n;n;e;n;ok$
+æ…§è‰²å°Šè€…$npcen=huise zunzhe;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;n;n;n;e;n;n;ok$
+æ…§åˆå°Šè€…$npcen=huihe zunzhe;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;n;n;n;e;ok$
+é“æˆç¦ªå¸«$npcen=daocheng chanshi;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;n;n;n;ok$
+æ¸…è§€æ¯”ä¸˜$npcen=qingguan biqiu;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;n;n;n;n;nu;ok$
+æ…§è™›å°Šè€…$npcen=huixu zunzhe;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;n;n;n;w;ok$
+æ…§åå°Šè€…$npcen=huiming zunzhe;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;n;n;n;w;n;ok$
+æ…§æ½”å°Šè€…$npcen=huijie zunzhe;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;n;n;n;w;n;n;ok$
+é“ä¸€ç¦ªå¸«$npcen=daoyi chanshi;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;n;n;n;w;n;w;w;ok$
+ç„¡åè€åƒ§$npcen=wuming laoseng;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;n;n;n;w;n;w;w;ok$
+æ…§çœŸå°Šè€…$npcen=daoyi chanshi;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;n;n;n;w;n;w;w;ok|npcen=huizhen zunzhe;up;ok$
+çŽ„é›£å¤§å¸«$npcen=xuannan dashi;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;n;w;w;ok$
+æ¾„å¿—$npcen=chengzhi luohan;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;n;w;w;ok$
+æ¾„ä¿¡$npcen=chengxin luohan;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;n;w;w;n;ok$
+æ¾„éˆ$npcen=chengling luohan;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;n;w;w;n;n;ok$
+æ¾„æ¬²$npcen=chengyu luohan;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;n;w;w;n;n;n;ok$
+æ¾„å°š$npcen=chengshang luohan;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;n;w;w;n;n;n;n;ok$
+æ¾„è­˜$npcen=chengshi luohan;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;n;w;w;s;ok$
+æ¾„å¿ƒ$npcen=chengxin luohan;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;w;w;n;ok$
+æ¾„æ„$npcen=chengyi luohan;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;w;w;n;n;ok$
+æ¾„æ€$npcen=chengsi luohan;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;w;w;n;n;ok$
+çŽ„æ‚²å¤§å¸«$npcen=xuanbei dashi;rd shaolin;uu;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;ok|n;nu;n;n;n;n;n;n;n;nu;up;ok$
+æ¸¡åŽ„$npcen=du e;rd shaolin;uu;eu;www;nu;nu;nu;n;e;e;s;e;s;e;n;n;e;w;s;enter;ok$
+æ¸¡åŠ«$npcen=du jie;rd shaolin;uu;eu;www;nu;nu;nu;n;e;e;s;e;s;e;n;n;e;w;s;enter;ok$
+æ¸¡é›£$npcen=du nan;rd shaolin;uu;eu;www;nu;nu;nu;n;e;e;s;e;s;e;n;n;e;w;s;enter;ok$
 
-¡ª¡ªÄÏÑô¡ª¡ª
-ÐìÏ¼¿Í$npcen=xu xiake;rd nanyang;e;ok$
-¡ºÉÙÁÖ°ÝÊ¦±Ø¶Á¡»|¡ºÉÙÁÖÂÃÓÎÍ¼¡»|ÂéÐ¬|ÊÖÕÈ|Ë®ºø$npcen=xiao fan;buy=1;rd nanyang;ok$
-Ãî·çÊ¹$npcen=miaofeng shi;rd nanyang;n;n;n;e;n;ok$
-»ÔÔÂÊ¹$npcen=huiyue shi;rd nanyang;n;n;n;e;n;ok$
-Á÷ÔÆÊ¹$npcen=liuyun shi;rd nanyang;n;n;n;e;n;e;ok$
-Ê¥»ðÁî$npcen=liuyun shi;rd nanyang;n;n;n;e;n;e;ok$
-²¨Ë¹Ã÷½Ì½Ì·þ$npcen=miaofeng shi;rd nanyang;n;n;n;e;n;ok|npcen=huiyue shi;ok|npcen=liuyun shi;ok$
-µÒÐÞ$npcen=di xiu;rd nanyang;n;n;w;n;n;n;ok$
-ÀÖºñ$npcen=yao hou;rd nanyang;n;n;w;n;n;n;nu;ne;ok$
-Â½°Ø$npcen=lu bai;rd nanyang;n;n;w;n;n;n;nu;ne;up;up;up;ok$
-¶¡Ãã$npcen=ding mian;rd nanyang;n;n;w;n;n;n;nu;nw;nu;nu;nw;nu;w;ok$
-¸ß¿ËÐÂ$npcen=gao kexin;rd nanyang;n;n;w;n;n;n;nu;nw;nu;nu;nw;nu;nw;nu;ok$
-ÖÓÕò$npcen=zhong zhen;rd nanyang;n;n;w;n;n;n;nu;nw;nu;nu;nw;nu;nw;nu;ok$
-µË°ËÄê$npcen=deng banian;rd nanyang;n;n;w;n;n;n;nu;nw;nu;nu;nw;nu;nw;nu;ok$
-·Ñ±ò$npcen=fei bing;rd nanyang;n;n;w;n;n;n;nu;nw;nu;nu;nw;nu;nw;nu;ne;nu;ok$
-ÌÀÓ¢ðÀ$npcen=tang yinghu;rd nanyang;n;n;w;n;n;n;nu;nw;nu;nu;ok|nw;nu;nw;nu;ne;nu;nu;nu;ok$
-Íò´óÆ½$npcen=wan daping;rd nanyang;n;n;w;n;n;n;nu;nw;nu;nu;nw;ok|nu;nw;nu;ne;nu;nu;nu;ok$
-×óÀäìø$npcen=zuo lengchan;rd nanyang;n;n;w;n;n;n;nu;nw;nu;nu;nw;nu;ok|nw;nu;ne;nu;nu;nu;wu;ok$
-Ê·µÇ´ï$npcen=shi dengda;rd nanyang;n;n;w;n;n;n;nu;nw;nu;nu;ok|nw;nu;nw;nu;ne;nu;nu;nu;nu;ok$
+â”€â”€å—é™½â”€â”€
+å¾éœžå®¢$npcen=xu xiake;rd nanyang;e;ok$
+ã€Žå°‘æž—æ‹œå¸«å¿…è®€ã€|ã€Žå°‘æž—æ—…éŠåœ–ã€|éº»éž‹|æ‰‹æ–|æ°´å£º$npcen=xiao fan;buy=1;rd nanyang;ok$
+å¦™é¢¨ä½¿$npcen=miaofeng shi;rd nanyang;n;n;n;e;n;ok$
+è¼æœˆä½¿$npcen=huiyue shi;rd nanyang;n;n;n;e;n;ok$
+æµé›²ä½¿$npcen=liuyun shi;rd nanyang;n;n;n;e;n;e;ok$
+è–ç«ä»¤$npcen=liuyun shi;rd nanyang;n;n;n;e;n;e;ok$
+æ³¢æ–¯æ˜Žæ•™æ•™æœ$npcen=miaofeng shi;rd nanyang;n;n;n;e;n;ok|npcen=huiyue shi;ok|npcen=liuyun shi;ok$
+ç‹„ä¿®$npcen=di xiu;rd nanyang;n;n;w;n;n;n;ok$
+æ¨‚åŽš$npcen=yao hou;rd nanyang;n;n;w;n;n;n;nu;ne;ok$
+é™¸æŸ$npcen=lu bai;rd nanyang;n;n;w;n;n;n;nu;ne;up;up;up;ok$
+ä¸å‹‰$npcen=ding mian;rd nanyang;n;n;w;n;n;n;nu;nw;nu;nu;nw;nu;w;ok$
+é«˜å…‹æ–°$npcen=gao kexin;rd nanyang;n;n;w;n;n;n;nu;nw;nu;nu;nw;nu;nw;nu;ok$
+é˜éŽ®$npcen=zhong zhen;rd nanyang;n;n;w;n;n;n;nu;nw;nu;nu;nw;nu;nw;nu;ok$
+é„§å…«å¹´$npcen=deng banian;rd nanyang;n;n;w;n;n;n;nu;nw;nu;nu;nw;nu;nw;nu;ok$
+è²»å½¬$npcen=fei bing;rd nanyang;n;n;w;n;n;n;nu;nw;nu;nu;nw;nu;nw;nu;ne;nu;ok$
+æ¹¯è‹±éµ $npcen=tang yinghu;rd nanyang;n;n;w;n;n;n;nu;nw;nu;nu;ok|nw;nu;nw;nu;ne;nu;nu;nu;ok$
+è¬å¤§å¹³$npcen=wan daping;rd nanyang;n;n;w;n;n;n;nu;nw;nu;nu;nw;ok|nu;nw;nu;ne;nu;nu;nu;ok$
+å·¦å†·ç¦ª$npcen=zuo lengchan;rd nanyang;n;n;w;n;n;n;nu;nw;nu;nu;nw;nu;ok|nw;nu;ne;nu;nu;nu;wu;ok$
+å²ç™»é”$npcen=shi dengda;rd nanyang;n;n;w;n;n;n;nu;nw;nu;nu;ok|nw;nu;nw;nu;ne;nu;nu;nu;nu;ok$
 
-¡ª¡ªºãÉ½¡ª¡ª
-¶¨¾²Ê¦Ì«$npcen=dingjing shitai;rd nanyang;n;n;n;n;n;n;w;nw;sw;ok$
-éÔ·ò$npcen=qiao fu;rd baituo;w;n;ok|rd nanyang;n;n;n;n;n;n;w;nw;sw;ok$
-ÒÇÎÄ$npcen=yi wen;rd nanyang;n;n;n;n;n;n;w;nw;sw;se;ok$
-ÑÆ¸¾$rd nanyang;npcen=yafu;n;n;n;n;n;n;w;nw;sw;se;se;u;wu;eu;ok$
-ÒÇÖÊ$npcen=yi zhi;rd nanyang;n;n;n;n;n;n;w;nw;sw;se;se;u;wu;eu;s;s;su;su;ok$
-ÒÇºÍ$npcen=yi he;rd nanyang;n;n;n;n;n;n;w;nw;sw;se;se;u;wu;eu;s;s;su;su;e;ne;ne;nu;ok$
-ÒÇÇå$npcen=yi qing;rd nanyang;n;n;n;n;n;n;w;nw;sw;se;se;u;wu;ok|eu;s;s;su;su;e;ne;ne;nu;nu;nu;nu;eu;ok$
-¶¨ÒÝÊ¦Ì«$npcen=dingyi shitai;rd nanyang;n;n;n;n;n;n;w;nw;sw;se;se;u;wu;ok|eu;s;s;su;su;e;ne;ne;nu;nu;nu;nu;eu;ok$
-¶¨ÏÐÊ¦Ì«$npcen=dingxian shitai;rd nanyang;n;n;n;n;n;n;w;nw;sw;se;se;u;wu;ok|eu;s;s;su;su;e;ne;ne;nu;nu;nu;nu;eu;n;ok$
-ÇØ¾î$npcen=qin juan;rd nanyang;n;n;n;n;n;n;w;nw;sw;se;se;u;wu;ok|eu;s;s;su;su;e;ne;ne;nu;nu;nu;nu;eu;n;ok$
-Ö£Ýà$npcen=zheng e;rd nanyang;n;n;n;n;n;n;w;nw;sw;se;se;u;wu;ok|eu;s;s;su;su;e;ne;ne;nu;nu;nu;nu;eu;n;ok$
+â”€â”€æ†å±±â”€â”€
+å®šéœå¸«å¤ª$npcen=dingjing shitai;rd nanyang;n;n;n;n;n;n;w;nw;sw;ok$
+æ¨µå¤«$npcen=qiao fu;rd baituo;w;n;ok|rd nanyang;n;n;n;n;n;n;w;nw;sw;ok$
+å„€æ–‡$npcen=yi wen;rd nanyang;n;n;n;n;n;n;w;nw;sw;se;ok$
+å•žå©¦$rd nanyang;npcen=yafu;n;n;n;n;n;n;w;nw;sw;se;se;u;wu;eu;ok$
+å„€è³ª$npcen=yi zhi;rd nanyang;n;n;n;n;n;n;w;nw;sw;se;se;u;wu;eu;s;s;su;su;ok$
+å„€å’Œ$npcen=yi he;rd nanyang;n;n;n;n;n;n;w;nw;sw;se;se;u;wu;eu;s;s;su;su;e;ne;ne;nu;ok$
+å„€æ¸…$npcen=yi qing;rd nanyang;n;n;n;n;n;n;w;nw;sw;se;se;u;wu;ok|eu;s;s;su;su;e;ne;ne;nu;nu;nu;nu;eu;ok$
+å®šé€¸å¸«å¤ª$npcen=dingyi shitai;rd nanyang;n;n;n;n;n;n;w;nw;sw;se;se;u;wu;ok|eu;s;s;su;su;e;ne;ne;nu;nu;nu;nu;eu;ok$
+å®šé–’å¸«å¤ª$npcen=dingxian shitai;rd nanyang;n;n;n;n;n;n;w;nw;sw;se;se;u;wu;ok|eu;s;s;su;su;e;ne;ne;nu;nu;nu;nu;eu;n;ok$
+ç§¦çµ¹$npcen=qin juan;rd nanyang;n;n;n;n;n;n;w;nw;sw;se;se;u;wu;ok|eu;s;s;su;su;e;ne;ne;nu;nu;nu;nu;eu;n;ok$
+é„­è¼$npcen=zheng e;rd nanyang;n;n;n;n;n;n;w;nw;sw;se;se;u;wu;ok|eu;s;s;su;su;e;ne;ne;nu;nu;nu;nu;eu;n;ok$
 
-¡ª¡ª±±¾©¡ª¡ª
-Ð¡º¢$rd beijing;npcen=kid;ok$w;w;w;ok$
-ÓÎÈË$npcen=you ren;rd beijing;e;e;n;ok$
-ÀÏºº$npcen=old man;rd beijing;ok$
-ÀÏ¸¾$npcen=old woman;rd beijing;s;s;ok$
-¾ÓÃñ$npcen=ju min;rd kunming;e;ok$
-Âô»¨ÉÙÅ®|Ã±×Ó$npcen=shao nv;rd beijing;s;s;e;e;n;ok$
-ÏÊ»¨$npcen=shao nv;buy=1;rd beijing;s;s;e;e;n;ok$
-´òÌú´¸$npcen=tie jiang;rd beijing;s;s;e;e;s;ok$
-µÜ×Ó$rd beijing;npcen=dizi;e;e;n;n;e;e;e;e;e;ne;n;n;break men;n;ok|w;ok|e;e;ok|w;n;ok$
-ÊÌÎÀ$npcen=shi wei;rd beijing;w;w;n;n;e;ok|e;n;n;ok$
-ÂôÒÕÈË$npcen=maiyi ren;rd beijing;ok|s;s;ok|rd lanzhou;ok$
-Ë£ºïÈË$npcen=shuahou ren;rd beijing;s;ok|rd jingzhou;ok$
-ºùÂ«$rd suzhou;npcen=seller;buy=1;s;ok$
-ÇåË®ºùÂ«$rd shaolin;uu;npcen=get;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;n;nu;n;n;w;get qingshui hulu;ok|n;get qingshui hulu;ok$
-±ùÌÇºùÂ«$npcen=xiao fan;buy=1;rd lanzhou;ok$
-±ùÌÇºùÂ«1$npcen=xiao fan;buy=1;rd beijing;s;s;ok$
-¹±ÌÆ²Ö¹úÊ¦$npcen=gongtangcang guoshi;rd beijing;s;s;s;s;s;s;s;w;ok$
-ÊØËÂÉ®±ø|ºÚÉ«ôÂôÄ|É®¹÷$npcen=seng bing;rd beijing;s;s;s;s;s;s;s;w;ok$
-Öª¿ÍÉ®$npcen=zhike seng;rd beijing;s;s;s;s;s;s;s;w;ok$
-É®ÒÂ$rd changan;npcen=monk;s;w;s;ok$
-ÓÎ·½ºÍÉÐ$npcen=seng ren;rd beijing;s;s;s;s;s;s;s;ok|rd taishan;n;#3 nu;eu;ok|rd suzhou;n;n;n;n;sw;s;w;eu;n;ok$
-Çà²¼É®ÒÂ$npcen=seng ren;rd beijing;s;s;s;s;s;s;s;ok|rd taishan;n;#3 nu;eu;ok|rd suzhou;n;n;n;n;sw;s;w;eu;n;ok$
-Ãæ$npcen=xiao er;buy=1;rd nanyang;n;n;n;n;n;w;ok$
-Ãæ¹Ý»ï¼Æ$npcen=mianguan huoji;rd beijing;s;s;w;w;s;ok$
-Ë¤õÓÊÖ$npcen=shuaijiao shou;rd beijing;s;s;w;w;s;ok$
-Ë¤õÓÊÖÍ·Áì$npcen=shuaijiao touling;rd beijing;s;s;w;w;s;ok$
-ÕÆ¹ñ$rd beijing;npcen=zhanggui;s;s;w;w;s;ok|npcen=zhang gui;n;rd wugong;n;n;up;ok$
-¶À±ÛÉñÄá$npcen=dubi shenni;rd beijing;s;s;w;n;n;#4 ci wall;e;ok$
-À®Âï$rd beijing;npcen=lama;s;s;w;n;n;e;ok$
-ºìÉ«ôÂôÄ$npcen=lama;rd beijing;s;s;w;n;n;e;ok$
-¸»¼ÒµÜ×Ó$npcen=fujia dizi;rd kunming;ok|rd beijing;w;w;ok|n;w;w;ok$
-°×É«³¤ÉÀ$npcen=fujia dizi;rd kunming;ok|rd beijing;w;w;ok|n;w;w;ok$
-¹Ù¸®ÓÃ½£$npcen=shi wei;rd beijing;n;n;ok|s;s;s;s;w;s;s;ok|ok$
-¶þÆ·ÊÌÎÀ×°$npcen=shi wei;rd beijing;s;s;w;s;s;ok|ok$
-ÓùÇ°ÊÌÎÀ×°$npcen=shi wei;rd beijing;n;n;ok|s;s;e;e;n;n;w;ok$
-Ö£¿ËË¬$npcen=zheng keshuang;rd beijing;s;s;w;s;s;s;ok$
-»ÆÂí¹Ó$npcen=zheng keshuang;rd beijing;s;s;w;s;s;s;ok|n;n;n;npcen=shi wei;rd beijing;w;w;n;n;n;n;n;n;n;ok|npcen=ao bai;n;n;n;ok$
-·ëÎý·¶$npcen=feng xifan;rd beijing;s;s;w;s;s;s;ok$
-ïÙÌú³¤½£$npcen=feng xifan;rd beijing;s;s;w;s;s;s;ok$
-¶àÂ¡$npcen=duo long;rd beijing;s;s;w;s;s;s;ok$
-Ò»Æ·ÊÌÎÀ×°$npcen=duo long;rd beijing;s;s;w;s;s;s;ok|npcen=shi wei;n;n;n;rd beijing;w;w;n;n;e;ok|npcen=zhao qixian;e;n;n;ok|npcen=zhang kangnian;ok$
-¶Ìµ¶$npcen=jianghu haoke;rd beijing;s;s;w;ok|e;n;n;w;w;w;ok|rd luoyang;s;s;s;ok|w;ok|ok$
-½­ºþºÀ¿Í$npcen=jianghu haoke;rd beijing;s;s;w;ok|e;n;n;w;w;w;ok|rd luoyang;s;s;s;ok|w;ok|ok$
-ÉÙ¸¾$npcen=shao fu;rd beijing;w;ok|e;s;s;w;ok$
-¶ÌÈ¹$npcen=shao fu;rd beijing;w;ok|npcen=shao fu;e;s;s;w;ok$
-ËáÐã²Å$npcen=xiu cai;rd beijing;w;ok|w;n;w;w;ok$
-»Ò°×³¤ÉÀ$npcen=xiu cai;rd beijing;w;ok|w;n;w;w;ok$
-Å®º¢$rd xiangyang;npcen=girl;w;w;n;n;n;n;ok$
-Ð¡Å®º¢$rd beijing;npcen=girl;w;ok$
-ÊéÉú$npcen=shu sheng;rd beijing;e;ok|w;w;w;ok$
-Çà²¼³¤ÉÀ$npcen=jia renda;rd fuzhou;w;w;w;w;w;ok|npcen=yu renyan;n;ok$
-Çà²¼³¤ÉÀ1$npcen=shu sheng;rd beijing;e;ok|w;w;w;ok$
-Ð¡ÄÐº¢$rd beijing;npcen=boy;w;w;ok$
-²èÆÌ»ï¼Æ$npcen=chapu huoji;rd beijing;w;w;s;ok$
-¸ÇÍë²è|Áú¾®²è|ÎÚÁú²è|Ò»¼¶Áú¾®²è$npcen=chapu huoji;buy=1;rd beijing;w;w;s;ok$
-²è²©Ê¿$npcen=cha boshi;rd beijing;w;w;s;ok$
-²è¿Í$npcen=cha ke;rd beijing;w;w;s;ok$
-³ÂÀÏÍ·$npcen=hen laotou;rd beijing;w;w;w;w;ok$
-ÐþÕêµÀ³¤$npcen=xuan zhen;rd beijing;w;w;w;s;s;s;s;s;ok$
-·®¸Ù$npcen=fan gang;rd beijing;w;w;w;s;s;s;s;s;w;ok$
-·ç¼ÊÖÐ$npcen=feng jizhong;rd beijing;w;w;w;s;s;s;s;s;w;ok$
-Æî±ëÇå$npcen=qi biaoqing;rd beijing;w;w;w;s;s;s;s;s;w;ok$
-¹Ø°²»ù$npcen=guan anji;rd beijing;w;w;w;s;s;s;s;s;s;ok$
-¼ÖÀÏÁù$npcen=jia laoliu;rd beijing;w;w;w;s;s;s;s;s;s;ok$
-Ç®ÀÏ±¾$npcen=qian laoben;rd beijing;w;w;w;s;s;s;s;s;s;ok$
-ÐìÌì´¨$npcen=xu tianchuan;rd beijing;w;w;w;s;s;s;s;s;e;ok$
-³Â½üÄÏ$npcen=chen jinnan;rd beijing;w;w;w;s;s;s;s;s;e;s;ok$
-±±¾©¹Ù±ø$npcen=guan bing;rd beijing;ok|n;ok$
-±ø·þ$npcen=guan bing;rd beijing;ok|n;ok|npcen=shi wei;s;w;w;n;n;e;ok$
-ÓùÇ°ÊÌÎÀ$npcen=shi wei;rd beijing;n;n;ok|s;s;e;e;n;n;w;ok$
-¶«³§¹Ù±ø|¶«³§Öý½£|¹Ù·þ$npcen=guan bing;rd beijing;n;n;ok|s;s;e;e;n;n;n;n;w;ok|s;ok$
-»ì»ì$npcen=hun hun;rd beijing;e;e;e;ok$
-ºúÕÆ¹ñ$npcen=hu zhanggui;rd beijing;e;e;e;e;ok$
-ÀîÁ¦ÊÀ$npcen=li lishi;rd beijing;e;e;n;w;ok$
-¹éÖÓ$npcen=li lishi;rd beijing;e;e;n;w;ok|npcen=gui zhong;w;n;n;n;ok$
-¹é¶þÄï$npcen=li lishi;rd beijing;e;e;n;w;ok|npcen=gui erniang;w;n;n;n;ok$
-¹éÐÁÊ÷$npcen=li lishi;rd beijing;e;e;n;w;ok|npcen=gui xinshu;w;n;n;n;ok$
-Áø´óºé$npcen=li lishi;rd beijing;e;e;n;w;ok|npcen=liu dahong;w;n;n;n;ok$
-Ì«¼à$npcen=tai jian;rd beijing;e;e;n;n;w;ok|e;n;n;w;ok|s;ok$
-¹ô×ÓÊÖ$npcen=kui zishou;rd beijing;e;e;n;e;e;ok$
-Æ½ËÄ$npcen=ping si;rd hujia;ok$
-³ÌÀÏ°å$npcen=cheng laoban;rd beijing;e;e;e;n;n;n;n;n;n;u;ok$
-È«¾ÛµÂ¿¾Ñ¼$npcen=cheng laoban;rd beijing;buy=1;e;e;e;n;n;n;n;n;n;u;ok$
-Ò¦´º$npcen=yao chun;rd beijing;w;w;n;e;e;n;ok$
-Ð¡Í¯$npcen=xiao tong;rd beijing;w;w;n;e;e;ok$
-»Ø´ºÍè|¸àÒ©$npcen=yaopu huoji;buy=1;rd beijing;w;w;n;e;ok$
-¹·Æ¤¸àÒ©$rd yongdeng;buy=1;npcen=huoji;n;e;ok$
-Ìú¹«¼¦$npcen=tie gongji;rd beijing;w;w;n;n;n;n;n;n;e;n;ok$
-¿µ¸®ÊÌÎÀ$npcen=shi wei;rd beijing;w;w;n;n;e;ok$
-¸Öµ¶1$npcen=shi wei;rd beijing;w;w;n;n;e;ok|w;n;n;n;n;n;ok$
-¿µ¸®¼Ò¶¡$npcen=shi wei;rd beijing;w;w;n;n;e;ok|npcen=jia ding;e;ok$
-¿µÇ×Íõ|Ïâ±ß»ÆÂí¹Ó$npcen=shi wei;rd beijing;w;w;n;n;e;ok|npcen=kang qinwang;e;n;n;ok$
-ÕÔÆëÏÍ$npcen=shi wei;rd beijing;w;w;n;n;e;ok|npcen=zhao qixian;e;n;n;ok$
-ÕÅ¿µÄê$npcen=shi wei;rd beijing;w;w;n;n;e;ok|npcen=zhang kangnian;e;n;n;ok$
-ÉñÕÕÉÏÈË$npcen=shi wei;rd beijing;w;w;n;n;e;ok|npcen=shen zhao;e;n;n;n;ok$
-ÆëÔª¿­$npcen=shi wei;rd beijing;w;w;n;n;e;ok|npcen=qi yuankai;e;n;n;n;w;ok$
-÷¡¸®ÊÌÎÀ$npcen=shi wei;rd beijing;w;w;n;n;n;n;n;n;n;ok$
-÷¡¸®Ñ¾÷ß$npcen=shi wei;rd beijing;w;w;n;n;n;n;n;n;n;ok|npcen=ya huan;n;ok$
-Ô°¶¡$npcen=shi wei;rd beijing;w;w;n;n;n;n;n;n;n;ok|npcen=yuan ding;n;n;ok$
-÷¡°Ý|õõôÃ$npcen=shi wei;rd beijing;w;w;n;n;n;n;n;n;n;ok|npcen=ao bai;n;n;n;ok$
-²Ë··×Ó$npcen=cai fan;rd beijing;w;w;n;n;n;w;w;ok$
-ºúÂÜ²·|´ó´Ð|°×²Ë|ÂÜ²·|ÍÁ¶¹$npcen=cai fan;buy=1;rd beijing;w;w;n;n;n;w;w;ok$
-ÕÂÀÏÈý$npcen=zhang laosan;rd beijing;e;e;n;n;e;e;e;e;e;ne;n;n;break men;n;ok$
-×¯·òÈË$npcen=san furen;rd beijing;e;e;n;n;e;e;e;e;e;ne;n;n;break men;n;n;n;ok$
-Ë«¶ù$npcen=shuang er;rd beijing;e;e;n;n;e;e;e;e;e;ne;n;n;break men;n;n;n;ok$
+â”€â”€åŒ—äº¬â”€â”€
+å°å­©$rd beijing;npcen=kid;ok$w;w;w;ok$
+éŠäºº$npcen=you ren;rd beijing;e;e;n;ok$
+è€æ¼¢$npcen=old man;rd beijing;ok$
+è€å©¦$npcen=old woman;rd beijing;s;s;ok$
+å±…æ°‘$npcen=ju min;rd kunming;e;ok$
+è³£èŠ±å°‘å¥³|å¸½å­$npcen=shao nv;rd beijing;s;s;e;e;n;ok$
+é®®èŠ±$npcen=shao nv;buy=1;rd beijing;s;s;e;e;n;ok$
+æ‰“éµéŒ˜$npcen=tie jiang;rd beijing;s;s;e;e;s;ok$
+å¼Ÿå­$rd beijing;npcen=dizi;e;e;n;n;e;e;e;e;e;ne;n;n;break men;n;ok|w;ok|e;e;ok|w;n;ok$
+ä¾è¡›$npcen=shi wei;rd beijing;w;w;n;n;e;ok|e;n;n;ok$
+è³£è—äºº$npcen=maiyi ren;rd beijing;ok|s;s;ok|rd lanzhou;ok$
+è€çŒ´äºº$npcen=shuahou ren;rd beijing;s;ok|rd jingzhou;ok$
+è‘«è˜†$rd suzhou;npcen=seller;buy=1;s;ok$
+æ¸…æ°´è‘«è˜†$rd shaolin;uu;npcen=get;eu;nu;nu;nu;n;takeling;knock gate;n;store ling;n;nu;n;n;w;get qingshui hulu;ok|n;get qingshui hulu;ok$
+å†°ç³–è‘«è˜†$npcen=xiao fan;buy=1;rd lanzhou;ok$
+å†°ç³–è‘«è˜†1$npcen=xiao fan;buy=1;rd beijing;s;s;ok$
+è²¢å”å€‰åœ‹å¸«$npcen=gongtangcang guoshi;rd beijing;s;s;s;s;s;s;s;w;ok$
+å®ˆå¯ºåƒ§å…µ|é»‘è‰²è¢ˆè£Ÿ|åƒ§æ£$npcen=seng bing;rd beijing;s;s;s;s;s;s;s;w;ok$
+çŸ¥å®¢åƒ§$npcen=zhike seng;rd beijing;s;s;s;s;s;s;s;w;ok$
+åƒ§è¡£$rd changan;npcen=monk;s;w;s;ok$
+éŠæ–¹å’Œå°š$npcen=seng ren;rd beijing;s;s;s;s;s;s;s;ok|rd taishan;n;#3 nu;eu;ok|rd suzhou;n;n;n;n;sw;s;w;eu;n;ok$
+é’å¸ƒåƒ§è¡£$npcen=seng ren;rd beijing;s;s;s;s;s;s;s;ok|rd taishan;n;#3 nu;eu;ok|rd suzhou;n;n;n;n;sw;s;w;eu;n;ok$
+é¢$npcen=xiao er;buy=1;rd nanyang;n;n;n;n;n;w;ok$
+é¢é¤¨ä¼™è¨ˆ$npcen=mianguan huoji;rd beijing;s;s;w;w;s;ok$
+æ‘”è·¤æ‰‹$npcen=shuaijiao shou;rd beijing;s;s;w;w;s;ok$
+æ‘”è·¤æ‰‹é ­é ˜$npcen=shuaijiao touling;rd beijing;s;s;w;w;s;ok$
+æŽŒæ«ƒ$rd beijing;npcen=zhanggui;s;s;w;w;s;ok|npcen=zhang gui;n;rd wugong;n;n;up;ok$
+ç¨è‡‚ç¥žå°¼$npcen=dubi shenni;rd beijing;s;s;w;n;n;#4 ci wall;e;ok$
+å–‡å˜›$rd beijing;npcen=lama;s;s;w;n;n;e;ok$
+ç´…è‰²è¢ˆè£Ÿ$npcen=lama;rd beijing;s;s;w;n;n;e;ok$
+å¯Œå®¶å¼Ÿå­$npcen=fujia dizi;rd kunming;ok|rd beijing;w;w;ok|n;w;w;ok$
+ç™½è‰²é•·è¡«$npcen=fujia dizi;rd kunming;ok|rd beijing;w;w;ok|n;w;w;ok$
+å®˜åºœç”¨åŠ$npcen=shi wei;rd beijing;n;n;ok|s;s;s;s;w;s;s;ok|ok$
+äºŒå“ä¾è¡›è£$npcen=shi wei;rd beijing;s;s;w;s;s;ok|ok$
+å¾¡å‰ä¾è¡›è£$npcen=shi wei;rd beijing;n;n;ok|s;s;e;e;n;n;w;ok$
+é„­å…‹çˆ½$npcen=zheng keshuang;rd beijing;s;s;w;s;s;s;ok$
+é»ƒé¦¬è¤‚$npcen=zheng keshuang;rd beijing;s;s;w;s;s;s;ok|n;n;n;npcen=shi wei;rd beijing;w;w;n;n;n;n;n;n;n;ok|npcen=ao bai;n;n;n;ok$
+é¦®éŒ«èŒƒ$npcen=feng xifan;rd beijing;s;s;w;s;s;s;ok$
+é‘Œéµé•·åŠ$npcen=feng xifan;rd beijing;s;s;w;s;s;s;ok$
+å¤šéš†$npcen=duo long;rd beijing;s;s;w;s;s;s;ok$
+ä¸€å“ä¾è¡›è£$npcen=duo long;rd beijing;s;s;w;s;s;s;ok|npcen=shi wei;n;n;n;rd beijing;w;w;n;n;e;ok|npcen=zhao qixian;e;n;n;ok|npcen=zhang kangnian;ok$
+çŸ­åˆ€$npcen=jianghu haoke;rd beijing;s;s;w;ok|e;n;n;w;w;w;ok|rd luoyang;s;s;s;ok|w;ok|ok$
+æ±Ÿæ¹–è±ªå®¢$npcen=jianghu haoke;rd beijing;s;s;w;ok|e;n;n;w;w;w;ok|rd luoyang;s;s;s;ok|w;ok|ok$
+å°‘å©¦$npcen=shao fu;rd beijing;w;ok|e;s;s;w;ok$
+çŸ­è£™$npcen=shao fu;rd beijing;w;ok|npcen=shao fu;e;s;s;w;ok$
+é…¸ç§€æ‰$npcen=xiu cai;rd beijing;w;ok|w;n;w;w;ok$
+ç°ç™½é•·è¡«$npcen=xiu cai;rd beijing;w;ok|w;n;w;w;ok$
+å¥³å­©$rd xiangyang;npcen=girl;w;w;n;n;n;n;ok$
+å°å¥³å­©$rd beijing;npcen=girl;w;ok$
+æ›¸ç”Ÿ$npcen=shu sheng;rd beijing;e;ok|w;w;w;ok$
+é’å¸ƒé•·è¡«$npcen=jia renda;rd fuzhou;w;w;w;w;w;ok|npcen=yu renyan;n;ok$
+é’å¸ƒé•·è¡«1$npcen=shu sheng;rd beijing;e;ok|w;w;w;ok$
+å°ç”·å­©$rd beijing;npcen=boy;w;w;ok$
+èŒ¶èˆ–ä¼™è¨ˆ$npcen=chapu huoji;rd beijing;w;w;s;ok$
+è“‹ç¢—èŒ¶|é¾äº•èŒ¶|çƒé¾èŒ¶|ä¸€ç´šé¾äº•èŒ¶$npcen=chapu huoji;buy=1;rd beijing;w;w;s;ok$
+èŒ¶åšå£«$npcen=cha boshi;rd beijing;w;w;s;ok$
+èŒ¶å®¢$npcen=cha ke;rd beijing;w;w;s;ok$
+é™³è€é ­$npcen=hen laotou;rd beijing;w;w;w;w;ok$
+çŽ„è²žé“é•·$npcen=xuan zhen;rd beijing;w;w;w;s;s;s;s;s;ok$
+æ¨Šç¶±$npcen=fan gang;rd beijing;w;w;w;s;s;s;s;s;w;ok$
+é¢¨éš›ä¸­$npcen=feng jizhong;rd beijing;w;w;w;s;s;s;s;s;w;ok$
+ç¥å½ªæ¸…$npcen=qi biaoqing;rd beijing;w;w;w;s;s;s;s;s;w;ok$
+é—œå®‰åŸº$npcen=guan anji;rd beijing;w;w;w;s;s;s;s;s;s;ok$
+è³ˆè€å…­$npcen=jia laoliu;rd beijing;w;w;w;s;s;s;s;s;s;ok$
+éŒ¢è€æœ¬$npcen=qian laoben;rd beijing;w;w;w;s;s;s;s;s;s;ok$
+å¾å¤©å·$npcen=xu tianchuan;rd beijing;w;w;w;s;s;s;s;s;e;ok$
+é™³è¿‘å—$npcen=chen jinnan;rd beijing;w;w;w;s;s;s;s;s;e;s;ok$
+åŒ—äº¬å®˜å…µ$npcen=guan bing;rd beijing;ok|n;ok$
+å…µæœ$npcen=guan bing;rd beijing;ok|n;ok|npcen=shi wei;s;w;w;n;n;e;ok$
+å¾¡å‰ä¾è¡›$npcen=shi wei;rd beijing;n;n;ok|s;s;e;e;n;n;w;ok$
+æ±å» å®˜å…µ|æ±å» é‘„åŠ|å®˜æœ$npcen=guan bing;rd beijing;n;n;ok|s;s;e;e;n;n;n;n;w;ok|s;ok$
+æ··æ··$npcen=hun hun;rd beijing;e;e;e;ok$
+èƒ¡æŽŒæ«ƒ$npcen=hu zhanggui;rd beijing;e;e;e;e;ok$
+æŽåŠ›ä¸–$npcen=li lishi;rd beijing;e;e;n;w;ok$
+æ­¸é˜$npcen=li lishi;rd beijing;e;e;n;w;ok|npcen=gui zhong;w;n;n;n;ok$
+æ­¸äºŒå¨˜$npcen=li lishi;rd beijing;e;e;n;w;ok|npcen=gui erniang;w;n;n;n;ok$
+æ­¸è¾›æ¨¹$npcen=li lishi;rd beijing;e;e;n;w;ok|npcen=gui xinshu;w;n;n;n;ok$
+æŸ³å¤§æ´ª$npcen=li lishi;rd beijing;e;e;n;w;ok|npcen=liu dahong;w;n;n;n;ok$
+å¤ªç›£$npcen=tai jian;rd beijing;e;e;n;n;w;ok|e;n;n;w;ok|s;ok$
+åŠŠå­æ‰‹$npcen=kui zishou;rd beijing;e;e;n;e;e;ok$
+å¹³å››$npcen=ping si;rd hujia;ok$
+ç¨‹è€æ¿$npcen=cheng laoban;rd beijing;e;e;e;n;n;n;n;n;n;u;ok$
+å…¨èšå¾·çƒ¤é´¨$npcen=cheng laoban;rd beijing;buy=1;e;e;e;n;n;n;n;n;n;u;ok$
+å§šæ˜¥$npcen=yao chun;rd beijing;w;w;n;e;e;n;ok$
+å°ç«¥$npcen=xiao tong;rd beijing;w;w;n;e;e;ok$
+å›žæ˜¥ä¸¸|è†è—¥$npcen=yaopu huoji;buy=1;rd beijing;w;w;n;e;ok$
+ç‹—çš®è†è—¥$rd yongdeng;buy=1;npcen=huoji;n;e;ok$
+éµå…¬é›ž$npcen=tie gongji;rd beijing;w;w;n;n;n;n;n;n;e;n;ok$
+åº·åºœä¾è¡›$npcen=shi wei;rd beijing;w;w;n;n;e;ok$
+é‹¼åˆ€1$npcen=shi wei;rd beijing;w;w;n;n;e;ok|w;n;n;n;n;n;ok$
+åº·åºœå®¶ä¸$npcen=shi wei;rd beijing;w;w;n;n;e;ok|npcen=jia ding;e;ok$
+åº·è¦ªçŽ‹|é‘²é‚Šé»ƒé¦¬è¤‚$npcen=shi wei;rd beijing;w;w;n;n;e;ok|npcen=kang qinwang;e;n;n;ok$
+è¶™é½Šè³¢$npcen=shi wei;rd beijing;w;w;n;n;e;ok|npcen=zhao qixian;e;n;n;ok$
+å¼µåº·å¹´$npcen=shi wei;rd beijing;w;w;n;n;e;ok|npcen=zhang kangnian;e;n;n;ok$
+ç¥žç…§ä¸Šäºº$npcen=shi wei;rd beijing;w;w;n;n;e;ok|npcen=shen zhao;e;n;n;n;ok$
+é½Šå…ƒå‡±$npcen=shi wei;rd beijing;w;w;n;n;e;ok|npcen=qi yuankai;e;n;n;n;w;ok$
+é°²åºœä¾è¡›$npcen=shi wei;rd beijing;w;w;n;n;n;n;n;n;n;ok$
+é°²åºœä¸«é¬Ÿ$npcen=shi wei;rd beijing;w;w;n;n;n;n;n;n;n;ok|npcen=ya huan;n;ok$
+åœ’ä¸$npcen=shi wei;rd beijing;w;w;n;n;n;n;n;n;n;ok|npcen=yuan ding;n;n;ok$
+é°²æ‹œ|è²‚è£˜$npcen=shi wei;rd beijing;w;w;n;n;n;n;n;n;n;ok|npcen=ao bai;n;n;n;ok$
+èœè²©å­$npcen=cai fan;rd beijing;w;w;n;n;n;w;w;ok$
+èƒ¡è˜¿åœ|å¤§è”¥|ç™½èœ|è˜¿åœ|åœŸè±†$npcen=cai fan;buy=1;rd beijing;w;w;n;n;n;w;w;ok$
+ç« è€ä¸‰$npcen=zhang laosan;rd beijing;e;e;n;n;e;e;e;e;e;ne;n;n;break men;n;ok$
+èŽŠå¤«äºº$npcen=san furen;rd beijing;e;e;n;n;e;e;e;e;e;ne;n;n;break men;n;n;n;ok$
+é›™å…’$npcen=shuang er;rd beijing;e;e;n;n;e;e;e;e;e;ne;n;n;break men;n;n;n;ok$
 
-¡ª¡ªåÐÒ£¡ª¡ª
-ÃÉÃæÈË$npcen=mengmian ren;rd xiaoyao;ok$
-¹¶¶Á$npcen=gou du;rd xiaoyao;ok$
-·ë°¢Èý$npcen=feng asan;rd xiaoyao;s;s;ok$
-ÎâÁì¾ü$npcen=wu lingjun;rd xiaoyao;n;n;ok$
-¶ÎÓþ$npcen=duan yu;rd xiaoyao;w;ok$
-¶ÎÑÓÇì$npcen=duan yanqing;rd xiaoyao;w;ok|rd dali;n;n;n;n;n;n;n;nw;nd;w;ok|w;w;wu;su;wu;wd;nd;w;pushaside grass;enter;ok|pull ring;enter;n;out;knock duan;n;n;n;ok$
-Ï¸Ìú¸Ë|ÇàÉÀ$npcen=duan yanqing;rd xiaoyao;w;ok$
-ÍõÓïæÌ$npcen=wang yuyan;rd xiaoyao;w;ok$
-Ñ¦Ä½»ª$npcen=xue muhua;rd xiaoyao;w;n;n;ok$
-·¶°ÙÁä$npcen=fan bailing;rd xiaoyao;w;w;ok$
-Ê¯ÇåÂ¶$npcen=shi qinglu;rd xiaoyao;w;w;w;s;ok$
-¿µ¹ãÁê$npcen=kang guangling;rd xiaoyao;w;s;s;ok$
+â”€â”€é€é™â”€â”€
+è’™é¢äºº$npcen=mengmian ren;rd xiaoyao;ok$
+è‹Ÿè®€$npcen=gou du;rd xiaoyao;ok$
+é¦®é˜¿ä¸‰$npcen=feng asan;rd xiaoyao;s;s;ok$
+å³é ˜è»$npcen=wu lingjun;rd xiaoyao;n;n;ok$
+æ®µè­½$npcen=duan yu;rd xiaoyao;w;ok$
+æ®µå»¶æ…¶$npcen=duan yanqing;rd xiaoyao;w;ok|rd dali;n;n;n;n;n;n;n;nw;nd;w;ok|w;w;wu;su;wu;wd;nd;w;pushaside grass;enter;ok|pull ring;enter;n;out;knock duan;n;n;n;ok$
+ç´°éµæ¡¿|é’è¡«$npcen=duan yanqing;rd xiaoyao;w;ok$
+çŽ‹èªžå«£$npcen=wang yuyan;rd xiaoyao;w;ok$
+è–›æ…•è¯$npcen=xue muhua;rd xiaoyao;w;n;n;ok$
+èŒƒç™¾é½¡$npcen=fan bailing;rd xiaoyao;w;w;ok$
+çŸ³æ¸…éœ²$npcen=shi qinglu;rd xiaoyao;w;w;w;s;ok$
+åº·å»£é™µ$npcen=kang guangling;rd xiaoyao;w;s;s;ok$
 
-¡ª¡ª¹éÔÆ¡ª¡ª
-Â½¹ÚÓ¢$npcen=lu guanying;rd guiyun;ok$
-º«Ð¡Ó¨$npcen=han xiaoyin;rd guiyun;ask lu guanying about ¹éÔÆ×¯;decide;cross;n;give guiyun shuxin to jia ding;enter;n;ok$
-ÄÏÏ£ÈÊ|ÊìÌú±âµ£$npcen=nan xiren;rd guiyun;ask lu guanying about ¹éÔÆ×¯;decide;cross;n;give guiyun shuxin to jia ding;enter;n;ok$
-¿³²ñ¸«$npcen=nan xiren;rd guiyun;ask lu guanying about ¹éÔÆ×¯;decide;cross;n;give guiyun shuxin to jia ding;enter;n;ok$
-Çà²¼ÒÂ$npcen=nan xiren;rd guiyun;ask lu guanying about ¹éÔÆ×¯;decide;cross;n;give guiyun shuxin to jia ding;enter;n;ok$
-º«±¦¾Ô$npcen=han baoju;rd guiyun;ask lu guanying about ¹éÔÆ×¯;decide;cross;n;give guiyun shuxin to jia ding;enter;n;ok$
-Öì´Ï$npcen=zhu cong;rd guiyun;ask lu guanying about ¹éÔÆ×¯;decide;cross;n;give guiyun shuxin to jia ding;enter;n;ok$
-ÓÍÖ½ÕÛÉÈ$npcen=zhu cong;rd guiyun;ask lu guanying about ¹éÔÆ×¯;decide;cross;n;give guiyun shuxin to jia ding;enter;n;ok$
-¿ÂÕò¶ñ$npcen=ke zhene;rd guiyun;ask lu guanying about ¹éÔÆ×¯;decide;cross;n;give guiyun shuxin to jia ding;enter;n;ok$
-È«½ð·¢$npcen=quan jinfa;rd guiyun;ask lu guanying about ¹éÔÆ×¯;decide;cross;n;give guiyun shuxin to jia ding;enter;n;ok$
-¸Ë³Ó$npcen=quan jinfa;rd guiyun;ask lu guanying about ¹éÔÆ×¯;decide;cross;n;give guiyun shuxin to jia ding;enter;n;ok$
-ÕÅ°¢Éú$npcen=zhang asheng;rd guiyun;ask lu guanying about ¹éÔÆ×¯;decide;cross;n;give guiyun shuxin to jia ding;enter;n;ok$
-¼âµ¶$npcen=zhang asheng;rd guiyun;ask lu guanying about ¹éÔÆ×¯;decide;cross;n;give guiyun shuxin to jia ding;enter;n;ok$
-ÊéÍ¯$npcen=shu tong;rd guiyun;ask lu guanying about ¹éÔÆ×¯;decide;cross;n;give guiyun shuxin to jia ding;enter;n;e;ok$
-Ð¡À¼|ºìç±°À$npcen=xiao lan;rd guiyun;ask lu guanying about ¹éÔÆ×¯;decide;cross;n;give guiyun shuxin to jia ding;enter;n;n;ok
-Ð¡¾Õ|ºìç±°À$npcen=xiao ju;rd guiyun;ask lu guanying about ¹éÔÆ×¯;decide;cross;n;give guiyun shuxin to jia ding;enter;n;n;n;ok
-Â½³Ë·ç$npcen=lu chengfeng;rd guiyun;ask lu guanying about ¹éÔÆ×¯;decide;cross;n;give guiyun shuxin to jia ding;enter;n;e;ok$
-´ó±¯ÀÏÈË|Ê®°ËÄàÅ¼$npcen=dabei laoren;rd guiyun;n;n;ok$
-Ê®°ËÄ¾Å¼$npcen=dabei laoren;item=Ê®°ËÄàÅ¼;rd guiyun;n;n;ok$
-·¶Ò»·É$npcen=fan yifei;rd guiyun;n;n;w;ok$
-ïÙÌúÅÐ¹Ù±Ê$npcen=fan yifei;rd guiyun;n;n;w;ok$
-ÂÀÕýÆ½$npcen=lu zhengping;rd guiyun;n;n;w;ok$
-¸ßÈýÄï×Ó$npcen=gao san;rd guiyun;n;n;w;nw;ok$
-·çÁ¼$npcen=feng liang;rd guiyun;n;n;w;nw;ok$
-¾Å½Ú±Þ$npcen=feng liang;rd guiyun;n;n;w;nw;ok$
-ôÃÇ§ÕÉ$npcen=qiu qianzhang;rd guiyun;n;ne;ok$
-ÁéÖÇÉÏÈË$npcen=lingzhi shangren;rd guiyun;cross;shang ship$
-´ó½ð±ø$npcen=jin bing;rd guiyun;cross;shang ship$
-ÍêÑÕ¿µ$npcen=wanyan kang;rd guiyun;cross;shang ship$
-ÍêÑÕºéÁÒ$npcen=wanyan honglie;rd guiyun;cross;shang ship$
-¶ÎÌìµÂ$npcen=duan tiande;rd guiyun;cross;shang ship$
-Ì«ºþºÀ½Ü$npcen=hao jie;rd guiyun;cross;shang ship$
+â”€â”€æ­¸é›²â”€â”€
+é™¸å† è‹±$npcen=lu guanying;rd guiyun;ok$
+éŸ“å°ç‘©$npcen=han xiaoyin;rd guiyun;ask lu guanying about æ­¸é›²èŽŠ;decide;cross;n;give guiyun shuxin to jia ding;enter;n;ok$
+å—å¸Œä»|ç†Ÿéµæ‰æ“”$npcen=nan xiren;rd guiyun;ask lu guanying about æ­¸é›²èŽŠ;decide;cross;n;give guiyun shuxin to jia ding;enter;n;ok$
+ç æŸ´æ–§$npcen=nan xiren;rd guiyun;ask lu guanying about æ­¸é›²èŽŠ;decide;cross;n;give guiyun shuxin to jia ding;enter;n;ok$
+é’å¸ƒè¡£$npcen=nan xiren;rd guiyun;ask lu guanying about æ­¸é›²èŽŠ;decide;cross;n;give guiyun shuxin to jia ding;enter;n;ok$
+éŸ“å¯¶é§’$npcen=han baoju;rd guiyun;ask lu guanying about æ­¸é›²èŽŠ;decide;cross;n;give guiyun shuxin to jia ding;enter;n;ok$
+æœ±è°$npcen=zhu cong;rd guiyun;ask lu guanying about æ­¸é›²èŽŠ;decide;cross;n;give guiyun shuxin to jia ding;enter;n;ok$
+æ²¹ç´™æŠ˜æ‰‡$npcen=zhu cong;rd guiyun;ask lu guanying about æ­¸é›²èŽŠ;decide;cross;n;give guiyun shuxin to jia ding;enter;n;ok$
+æŸ¯éŽ®æƒ¡$npcen=ke zhene;rd guiyun;ask lu guanying about æ­¸é›²èŽŠ;decide;cross;n;give guiyun shuxin to jia ding;enter;n;ok$
+å…¨é‡‘ç™¼$npcen=quan jinfa;rd guiyun;ask lu guanying about æ­¸é›²èŽŠ;decide;cross;n;give guiyun shuxin to jia ding;enter;n;ok$
+æ¡¿ç§¤$npcen=quan jinfa;rd guiyun;ask lu guanying about æ­¸é›²èŽŠ;decide;cross;n;give guiyun shuxin to jia ding;enter;n;ok$
+å¼µé˜¿ç”Ÿ$npcen=zhang asheng;rd guiyun;ask lu guanying about æ­¸é›²èŽŠ;decide;cross;n;give guiyun shuxin to jia ding;enter;n;ok$
+å°–åˆ€$npcen=zhang asheng;rd guiyun;ask lu guanying about æ­¸é›²èŽŠ;decide;cross;n;give guiyun shuxin to jia ding;enter;n;ok$
+æ›¸ç«¥$npcen=shu tong;rd guiyun;ask lu guanying about æ­¸é›²èŽŠ;decide;cross;n;give guiyun shuxin to jia ding;enter;n;e;ok$
+å°è˜­|ç´…ç¶¾è¥–$npcen=xiao lan;rd guiyun;ask lu guanying about æ­¸é›²èŽŠ;decide;cross;n;give guiyun shuxin to jia ding;enter;n;n;ok
+å°èŠ|ç´…ç¶¾è¥–$npcen=xiao ju;rd guiyun;ask lu guanying about æ­¸é›²èŽŠ;decide;cross;n;give guiyun shuxin to jia ding;enter;n;n;n;ok
+é™¸ä¹˜é¢¨$npcen=lu chengfeng;rd guiyun;ask lu guanying about æ­¸é›²èŽŠ;decide;cross;n;give guiyun shuxin to jia ding;enter;n;e;ok$
+å¤§æ‚²è€äºº|åå…«æ³¥å¶$npcen=dabei laoren;rd guiyun;n;n;ok$
+åå…«æœ¨å¶$npcen=dabei laoren;item=åå…«æ³¥å¶;rd guiyun;n;n;ok$
+èŒƒä¸€é£›$npcen=fan yifei;rd guiyun;n;n;w;ok$
+é‘Œéµåˆ¤å®˜ç­†$npcen=fan yifei;rd guiyun;n;n;w;ok$
+å‘‚æ­£å¹³$npcen=lu zhengping;rd guiyun;n;n;w;ok$
+é«˜ä¸‰å¨˜å­$npcen=gao san;rd guiyun;n;n;w;nw;ok$
+é¢¨è‰¯$npcen=feng liang;rd guiyun;n;n;w;nw;ok$
+ä¹ç¯€éž­$npcen=feng liang;rd guiyun;n;n;w;nw;ok$
+è£˜åƒä¸ˆ$npcen=qiu qianzhang;rd guiyun;n;ne;ok$
+éˆæ™ºä¸Šäºº$npcen=lingzhi shangren;rd guiyun;cross;shang ship$
+å¤§é‡‘å…µ$npcen=jin bing;rd guiyun;cross;shang ship$
+å®Œé¡åº·$npcen=wanyan kang;rd guiyun;cross;shang ship$
+å®Œé¡æ´ªçƒˆ$npcen=wanyan honglie;rd guiyun;cross;shang ship$
+æ®µå¤©å¾·$npcen=duan tiande;rd guiyun;cross;shang ship$
+å¤ªæ¹–è±ªå‚‘$npcen=hao jie;rd guiyun;cross;shang ship$
 
-¡ª¡ªÃ÷½Ì¡ª¡ª
-ºï×Ó$rd mingjiao;npcen=monkey;ok|npcen=hou zi;rd emei;wu;se;e;ok$
-¸ßÉ½Íõ$npcen=gao shanwang;rd mingjiao;w;ok$
-½ÓÒýÊ¹$npcen=jieyin shi;rd mingjiao;w;w;w;ok$
-Ñô½ÌÖ÷ÒÅÐÅ$rd mingjiao;npcen=ketou;uu;w;w;w;wu;wu;w;w;www;enter;break men;enter;ok|open north;n;open north;n;open north;n;open north;n;ketou;get yi xin;ok$
-Ð¡ÕÑ$npcen=xiao zhao;rd mingjiao;uu;w;w;w;wu;wu;w;www;w;enter;break men;enter;ok|open north;n;open north;n;open north;n;open north;n;up;ok$
-·¶Ò£$npcen=fan yao;rd mingjiao;uu;w;w;w;wu;wu;w;w;www;enter;break men;enter;ok|open north;n;open north;n;open north;n;open north;n;up;out;ok$
-ÑîåÐ$npcen=yang xiao;rd mingjiao;uu;w;w;w;wu;wu;w;w;www;enter;break men;enter;ok|open north;n;open north;n;open north;n;open north;n;up;out;ok$
-Î¤Ò»Ð¦$npcen=wei yixiao;rd mingjiao;uu;w;w;w;wu;wu;w;w;ww;enter;break men;enter;ok|open north;n;open north;n;open north;n;open north;n;up;out;ok$
-ÒóÌìÕý$npcen=yin tianzheng;rd mingjiao;uu;w;w;uu;w;wu;wu;w;w;www;enter;break men;enter;ok|open north;n;open north;n;open north;n;open north;n;up;out;ok$
-ÐÁÈ»$npcen=xin ran;rd mingjiao;uu;w;w;w;wu;wu;nu;nu;nu;nu;enter;ww;e;ok$
-ºúÇàÅ£$npcen=hu qingniu;rd mingjiao;uu;w;w;w;wu;wu;nu;nu;nu;nu;www;enter;enter;ok$
-ÍØ°Ï$rd mingjiao;npcen=tuoba;uu;w;w;w;wu;wu;nu;nu;nu;nu;www;enter;nu;ok$
-ÒóÎÞ¸£$rd mingjiao;npcen=tuoba;uu;w;w;w;wu;wu;nu;nu;nu;nu;www;enter;nu;ok|npcen=yin wufu;nu;nu;nu;ok$
-ÒóÒ°Íõ$rd mingjiao;npcen=tuoba;uu;w;w;w;wu;wu;nu;nu;nu;nu;www;enter;nu;ok|npcen=yin yewang;nu;nu;nu;ok$
-ÒóÎÞÊÙ$rd mingjiao;npcen=tuoba;uu;w;w;w;wu;wu;nu;nu;nu;nu;www;enter;nu;ok|npcen=yin wushou;nu;nu;nu;w;ok$
-ÒóÎÞÂ»$rd mingjiao;npcen=tuoba;uu;w;w;w;wu;wu;nu;nu;nu;nu;www;enter;nu;ok|npcen=yin wulu;nu;nu;nu;e;ok$
-ÀîÌìÔ«$rd mingjiao;npcen=tuoba;uu;w;w;w;wu;wu;nu;nu;nu;nu;www;enter;nu;ok|npcen=li tianyuan;nu;nu;nu;e;ok$
-ÀäÇ«$rd mingjiao;npcen=tuoba;uu;w;w;w;wu;wu;nu;nu;nu;nu;www;enter;nu;ok|npcen=yin yewang;nu;nu;nu;ok|npcen=peng yingyu;n;ok|npcen=zhou dian;ok|npcen=zhang zhong;ok|npcen=shuo bude;ok|e;npcen=leng qian;ok$
-ÅíÓ¨Óñ$rd mingjiao;npcen=tuoba;uu;w;w;w;wu;wu;nu;nu;nu;nu;www;enter;nu;ok|npcen=yin yewang;nu;nu;nu;ok|npcen=peng yingyu;n;ok$
-ÖÜµß$rd mingjiao;npcen=tuoba;uu;w;w;w;wu;wu;nu;nu;nu;nu;enter;www;nu;ok|npcen=yin yewang;nu;nu;nu;ok|npcen=zhou dian;n;ok$
-ÕÅÖÐ$rd mingjiao;npcen=tuoba;uu;w;w;w;wu;wu;nu;nu;nu;nu;enter;www;nu;ok|npcen=yin yewang;nu;nu;nu;ok|npcen=zhang zhong;n;ok$
-Ëµ²»µÃ$rd mingjiao;npcen=tuoba;uu;w;w;w;wu;wu;nu;nu;nu;nu;enter;www;nu;ok|npcen=yin yewang;nu;nu;nu;ok|npcen=shuo bude;n;ok$
-ÑÕÔ«$npcen=yan yuan;rd mingjiao;uu;w;w;w;wu;wu;nu;nu;nu;nw;nw;nw;www;ok|ne;ne;nd;enter;n;e;n;enter;ok$
-ÎÅ²ÔËÉ$npcen=wen cangsong;rd mingjiao;uu;w;w;w;wu;wu;ok|nu;nu;nu;nw;nw;nw;e;enter;n;n;e;n;ok|w;w;w;w;w;w;w;w;w;w;w;w;climb;ok$
-×¯ï£$npcen=zhuang zheng;rd mingjiao;uu;w;w;w;wu;wu;www;ok|nu;nu;nu;ne;ne;ne;w;enter;n;ok$
-ÀÇÑÀ°ô$npcen=wu jincao;rd mingjiao;uu;w;w;w;wu;wu;www;ok|nu;nu;nu;ne;ne;ne;w;enter;s;ok|npcen=zhuang zheng;n;n;ok$
-Îâ¾¢²Ý$npcen=wu jincao;rd mingjiao;uu;w;w;w;wu;wu;www;ok|nu;nu;nu;ne;ne;ne;w;enter;s;ok$
-ÌÆÑó$npcen=tang yang;rd mingjiao;uu;w;w;w;wu;wu;www;ok|nu;nu;nu;ne;ne;ne;nw;nw;n;n;n;n;n;enter;n;ok$
+â”€â”€æ˜Žæ•™â”€â”€
+çŒ´å­$rd mingjiao;npcen=monkey;ok|npcen=hou zi;rd emei;wu;se;e;ok$
+é«˜å±±çŽ‹$npcen=gao shanwang;rd mingjiao;w;ok$
+æŽ¥å¼•ä½¿$npcen=jieyin shi;rd mingjiao;w;w;w;ok$
+é™½æ•™ä¸»éºä¿¡$rd mingjiao;npcen=ketou;uu;w;w;w;wu;wu;w;w;www;enter;break men;enter;ok|open north;n;open north;n;open north;n;open north;n;ketou;get yi xin;ok$
+å°æ˜­$npcen=xiao zhao;rd mingjiao;uu;w;w;w;wu;wu;w;www;w;enter;break men;enter;ok|open north;n;open north;n;open north;n;open north;n;up;ok$
+èŒƒé™$npcen=fan yao;rd mingjiao;uu;w;w;w;wu;wu;w;w;www;enter;break men;enter;ok|open north;n;open north;n;open north;n;open north;n;up;out;ok$
+æ¥Šé€$npcen=yang xiao;rd mingjiao;uu;w;w;w;wu;wu;w;w;www;enter;break men;enter;ok|open north;n;open north;n;open north;n;open north;n;up;out;ok$
+éŸ‹ä¸€ç¬‘$npcen=wei yixiao;rd mingjiao;uu;w;w;w;wu;wu;w;w;ww;enter;break men;enter;ok|open north;n;open north;n;open north;n;open north;n;up;out;ok$
+æ®·å¤©æ­£$npcen=yin tianzheng;rd mingjiao;uu;w;w;uu;w;wu;wu;w;w;www;enter;break men;enter;ok|open north;n;open north;n;open north;n;open north;n;up;out;ok$
+è¾›ç„¶$npcen=xin ran;rd mingjiao;uu;w;w;w;wu;wu;nu;nu;nu;nu;enter;ww;e;ok$
+èƒ¡é’ç‰›$npcen=hu qingniu;rd mingjiao;uu;w;w;w;wu;wu;nu;nu;nu;nu;www;enter;enter;ok$
+æ‹“è·‹$rd mingjiao;npcen=tuoba;uu;w;w;w;wu;wu;nu;nu;nu;nu;www;enter;nu;ok$
+æ®·ç„¡ç¦$rd mingjiao;npcen=tuoba;uu;w;w;w;wu;wu;nu;nu;nu;nu;www;enter;nu;ok|npcen=yin wufu;nu;nu;nu;ok$
+æ®·é‡ŽçŽ‹$rd mingjiao;npcen=tuoba;uu;w;w;w;wu;wu;nu;nu;nu;nu;www;enter;nu;ok|npcen=yin yewang;nu;nu;nu;ok$
+æ®·ç„¡å£½$rd mingjiao;npcen=tuoba;uu;w;w;w;wu;wu;nu;nu;nu;nu;www;enter;nu;ok|npcen=yin wushou;nu;nu;nu;w;ok$
+æ®·ç„¡ç¥¿$rd mingjiao;npcen=tuoba;uu;w;w;w;wu;wu;nu;nu;nu;nu;www;enter;nu;ok|npcen=yin wulu;nu;nu;nu;e;ok$
+æŽå¤©åž£$rd mingjiao;npcen=tuoba;uu;w;w;w;wu;wu;nu;nu;nu;nu;www;enter;nu;ok|npcen=li tianyuan;nu;nu;nu;e;ok$
+å†·è¬™$rd mingjiao;npcen=tuoba;uu;w;w;w;wu;wu;nu;nu;nu;nu;www;enter;nu;ok|npcen=yin yewang;nu;nu;nu;ok|npcen=peng yingyu;n;ok|npcen=zhou dian;ok|npcen=zhang zhong;ok|npcen=shuo bude;ok|e;npcen=leng qian;ok$
+å½­ç‘©çŽ‰$rd mingjiao;npcen=tuoba;uu;w;w;w;wu;wu;nu;nu;nu;nu;www;enter;nu;ok|npcen=yin yewang;nu;nu;nu;ok|npcen=peng yingyu;n;ok$
+å‘¨é¡›$rd mingjiao;npcen=tuoba;uu;w;w;w;wu;wu;nu;nu;nu;nu;enter;www;nu;ok|npcen=yin yewang;nu;nu;nu;ok|npcen=zhou dian;n;ok$
+å¼µä¸­$rd mingjiao;npcen=tuoba;uu;w;w;w;wu;wu;nu;nu;nu;nu;enter;www;nu;ok|npcen=yin yewang;nu;nu;nu;ok|npcen=zhang zhong;n;ok$
+èªªä¸å¾—$rd mingjiao;npcen=tuoba;uu;w;w;w;wu;wu;nu;nu;nu;nu;enter;www;nu;ok|npcen=yin yewang;nu;nu;nu;ok|npcen=shuo bude;n;ok$
+é¡åž£$npcen=yan yuan;rd mingjiao;uu;w;w;w;wu;wu;nu;nu;nu;nw;nw;nw;www;ok|ne;ne;nd;enter;n;e;n;enter;ok$
+èžè’¼é¬†$npcen=wen cangsong;rd mingjiao;uu;w;w;w;wu;wu;ok|nu;nu;nu;nw;nw;nw;e;enter;n;n;e;n;ok|w;w;w;w;w;w;w;w;w;w;w;w;climb;ok$
+èŽŠéŒš$npcen=zhuang zheng;rd mingjiao;uu;w;w;w;wu;wu;www;ok|nu;nu;nu;ne;ne;ne;w;enter;n;ok$
+ç‹¼ç‰™æ£’$npcen=wu jincao;rd mingjiao;uu;w;w;w;wu;wu;www;ok|nu;nu;nu;ne;ne;ne;w;enter;s;ok|npcen=zhuang zheng;n;n;ok$
+å³å‹è‰$npcen=wu jincao;rd mingjiao;uu;w;w;w;wu;wu;www;ok|nu;nu;nu;ne;ne;ne;w;enter;s;ok$
+å”æ´‹$npcen=tang yang;rd mingjiao;uu;w;w;w;wu;wu;www;ok|nu;nu;nu;ne;ne;ne;nw;nw;n;n;n;n;n;enter;n;ok$
 
-¡ª¡ªÎäµ±¡ª¡ª
-´ó»ÆÅ£$rd wudang;npcen=cow;ed;e;e;n;nw;ok$
-ÕÅ´äÉ½$npcen=zhang cuishan;rd wudang;ok$
-·¥Ä¾µÀ³¤$npcen=famu daozhang;rd wudang;ed;s;ok$
-Ð¡à¶ÂÞ$npcen=xiao louluo;rd wudang;ed;n;n;ok|s;s;e;e;ok$
-ÍÁ·Ë$rd wudang;npcen=tufei;ed;e;e;su;ok|s;ok|e;ok$
-ÕÅÈý$npcen=zhang san;rd wudang;ed;e;e;su;ok|s;ok|e;ok$
-ÍÁ·ËÍ·$npcen=tufei tou;rd wudang;ed;e;e;su;s;e;ok$
-½øÏã¿Í$npcen=jinxiang ke;rd wudang;uu;wu;w;su;www;ok|rd dali;#4 n;nw;n;ne;e;s;s;w;ok|e;e;ok$
-ÖÆÏãµÀ³¤$npcen=zhixiang daozhang;rd wudang;uu;wu;w;su;su;www;ok$
-¹ÈÐéµÀ³¤$npcen=guxu daozhang;rd wudang;uu;wu;www;w;su;su;su;su;sd;su;sd;su;su;su;su;s;ok$
-ËÎÔ¶ÇÅ$npcen=song yuanqiao;rd wudang;uu;wu;w;su;www;su;su;su;sd;su;sd;su;su;su;su;s;ok$
-ÕÅËÉÏª$npcen=zhang songxi;rd wudang;uu;wu;w;su;su;www;su;su;sd;su;sd;su;su;su;su;s;e;ok$
-Ð¡´ä$npcen=xiao cui;rd wudang;uu;wu;w;su;su;su;su;sd;www;su;sd;ok|su;su;su;su;s;e;e;s;ok$
-Ë®ÃÛÌÒ|´Ö´Å´óÍë$rd wudang;npcen=get;uu;wu;w;su;su;su;su;www;sd;su;sd;ok|su;su;su;su;s;e;e;s;ok$
-ÒóÀæÍ¤$npcen=yin litin;rd wudang;uu;wu;w;su;su;su;su;sd;su;www;ok|sd;su;su;su;su;s;w;wu;ok$
-ÓáÁ«ÖÛ$npcen=yu lianzhou;rd wudang;uu;wu;w;su;su;su;su;sd;www;su;ok|sd;su;su;su;su;s;s;ok$
-°×É«µÀÅÛ$npcen=yu lianzhou;rd wudang;uu;wu;w;su;su;su;su;sd;www;su;ok|sd;su;su;su;su;s;s;ok|npcen=mo shenggu;n;n;e;e;su;su;sd;wu;ok$
-Ã÷ÔÂ$npcen=ming yue;rd wudang;uu;wu;w;su;su;su;su;sd;ww;su;ok|sd;su;su;su;su;s;s;s;s;ok$
-Çå·ç$npcen=qing feng;rd wudang;uu;wu;w;su;su;su;su;sd;su;www;ok|sd;su;su;su;su;s;s;s;s;ok$
-ÊØÔ°µÀ³¤$npcen=shouyuan daozhang;rd wudang;uu;wu;w;su;su;www;su;su;sd;su;sd;su;su;su;su;ok|e;e;su;su;sd;ok$
-ÄªÉù¹È$npcen=mo shenggu;rd wudang;uu;wu;w;su;su;su;su;sd;su;www;sd;su;su;su;su;ok|e;e;su;su;sd;wu;ok$
-ÇåÐéµÀ³¤$npcen=qingxu daozhang;rd wudang;uu;wu;w;su;su;su;su;sd;www;su;sd;su;su;su;su;ok|e;e;su;su;sd;su;su;su;su;su;ok$
-Ð¡ºìÁ«$rd wudang;npcen=find;uu;wu;w;su;su;su;su;sd;ok|su;sd;su;su;su;www;su;e;e;su;su;ok|sd;su;su;su;su;su;s;s;ok|su;su;su;w;find;ok$
+â”€â”€æ­¦ç•¶â”€â”€
+å¤§é»ƒç‰›$rd wudang;npcen=cow;ed;e;e;n;nw;ok$
+å¼µç¿ å±±$npcen=zhang cuishan;rd wudang;ok$
+ä¼æœ¨é“é•·$npcen=famu daozhang;rd wudang;ed;s;ok$
+å°å˜ç¾…$npcen=xiao louluo;rd wudang;ed;n;n;ok|s;s;e;e;ok$
+åœŸåŒª$rd wudang;npcen=tufei;ed;e;e;su;ok|s;ok|e;ok$
+å¼µä¸‰$npcen=zhang san;rd wudang;ed;e;e;su;ok|s;ok|e;ok$
+åœŸåŒªé ­$npcen=tufei tou;rd wudang;ed;e;e;su;s;e;ok$
+é€²é¦™å®¢$npcen=jinxiang ke;rd wudang;uu;wu;w;su;www;ok|rd dali;#4 n;nw;n;ne;e;s;s;w;ok|e;e;ok$
+åˆ¶é¦™é“é•·$npcen=zhixiang daozhang;rd wudang;uu;wu;w;su;su;www;ok$
+è°·è™›é“é•·$npcen=guxu daozhang;rd wudang;uu;wu;www;w;su;su;su;su;sd;su;sd;su;su;su;su;s;ok$
+å®‹é æ©‹$npcen=song yuanqiao;rd wudang;uu;wu;w;su;www;su;su;su;sd;su;sd;su;su;su;su;s;ok$
+å¼µé¬†æºª$npcen=zhang songxi;rd wudang;uu;wu;w;su;su;www;su;su;sd;su;sd;su;su;su;su;s;e;ok$
+å°ç¿ $npcen=xiao cui;rd wudang;uu;wu;w;su;su;su;su;sd;www;su;sd;ok|su;su;su;su;s;e;e;s;ok$
+æ°´èœœæ¡ƒ|ç²—ç£å¤§ç¢—$rd wudang;npcen=get;uu;wu;w;su;su;su;su;www;sd;su;sd;ok|su;su;su;su;s;e;e;s;ok$
+æ®·æ¢¨äº­$npcen=yin litin;rd wudang;uu;wu;w;su;su;su;su;sd;su;www;ok|sd;su;su;su;su;s;w;wu;ok$
+ä¿žè“®èˆŸ$npcen=yu lianzhou;rd wudang;uu;wu;w;su;su;su;su;sd;www;su;ok|sd;su;su;su;su;s;s;ok$
+ç™½è‰²é“è¢$npcen=yu lianzhou;rd wudang;uu;wu;w;su;su;su;su;sd;www;su;ok|sd;su;su;su;su;s;s;ok|npcen=mo shenggu;n;n;e;e;su;su;sd;wu;ok$
+æ˜Žæœˆ$npcen=ming yue;rd wudang;uu;wu;w;su;su;su;su;sd;ww;su;ok|sd;su;su;su;su;s;s;s;s;ok$
+æ¸…é¢¨$npcen=qing feng;rd wudang;uu;wu;w;su;su;su;su;sd;su;www;ok|sd;su;su;su;su;s;s;s;s;ok$
+å®ˆåœ’é“é•·$npcen=shouyuan daozhang;rd wudang;uu;wu;w;su;su;www;su;su;sd;su;sd;su;su;su;su;ok|e;e;su;su;sd;ok$
+èŽ«è²è°·$npcen=mo shenggu;rd wudang;uu;wu;w;su;su;su;su;sd;su;www;sd;su;su;su;su;ok|e;e;su;su;sd;wu;ok$
+æ¸…è™›é“é•·$npcen=qingxu daozhang;rd wudang;uu;wu;w;su;su;su;su;sd;www;su;sd;su;su;su;su;ok|e;e;su;su;sd;su;su;su;su;su;ok$
+å°ç´…è“®$rd wudang;npcen=find;uu;wu;w;su;su;su;su;sd;ok|su;sd;su;su;su;www;su;e;e;su;su;ok|sd;su;su;su;su;su;s;s;ok|su;su;su;w;find;ok$
 
-¡ª¡ª»ªÉ½¡ª¡ª
-ÀÏÕß$npcen=lao zhe;rd beijing;w;w;n;n;w;w;w;w;w;w;w;sw;ok$
-ÀÍµÂÅµ$npcen=lao denuo;rd huashan;su;su;eu;eu;su;eu;eu;ok$
-Áº·¢$npcen=liang fa;rd huashan;su;su;eu;eu;su;eu;eu;su;su;wu;ok$
-ÔÀÁéÉº|±ÌË®½£$npcen=yue lingshan;rd huashan;su;su;eu;eu;su;eu;eu;su;su;su;su;eu;ok$
-¸ß¸ùÃ÷$npcen=gao genming;rd huashan;su;su;eu;eu;su;eu;eu;su;su;su;su;eu;n;ok$
-Áîºü³å$npcen=linghu chong;rd huashan;su;su;eu;eu;su;eu;eu;su;su;su;su;eu;sd;su;su;enter;ok$
-Â½´óÓÐ$npcen=lu dayou;rd huashan;su;su;eu;eu;su;eu;eu;su;su;su;su;eu;n;n;n;ok$
-Ð¡Ê¦ÃÃ$npcen=lu dayou;rd huashan;su;su;eu;eu;su;eu;eu;su;su;su;su;eu;n;n;n;w;w;ok$
-ÔÀ·òÈË$npcen=yue wife;rd huashan;su;su;eu;eu;su;eu;eu;su;su;su;su;eu;n;n;n;w;n;w;ok$
-Ê©´÷×Ó$npcen=shi daizi;rd huashan;su;su;eu;eu;su;eu;eu;su;su;su;su;eu;n;nw;ne;ok$
-¸ßÀÏÕß$npcen=shi daizi;rd huashan;su;su;eu;eu;su;eu;eu;su;su;su;su;eu;n;nw;ne;ok|npcen=gao laozhe;nu;ok$
-°«ÀÏÕß$npcen=shi daizi;rd huashan;su;su;eu;eu;su;eu;eu;su;su;su;su;eu;n;nw;ne;ok|npcen=ai laozhe;nu;ok$
-ÀîÌú×ì$npcen=fortune teller;rd huashan;nw;n;ok$
-»¨°ê|²èÒ¶|·É»ÈÊ¯|ÌúÁ«×Ó$npcen=tang huai;buy=1;rd chengdu;w;w;n;ne;nw;ok$
-µØ±£$rd huashan;npcen=dibao;nw;w;w;w;n;ok$
-·ëÌú½³|ÉÕºìµÄÌú´¸$rd huashan;npcen=feng;nw;w;w;w;w;s;ok$
-´ä»¨$npcen=cui hua;rd huashan;nw;w;w;w;w;w;nw;sw;ok$
-ÀÏ´óÄï$npcen=old woman;rd huashan;nw;w;w;w;w;w;s;s;s;e;ok$
-ÍõÐ¡¶þ$npcen=wang xiaoer;rd huashan;nw;w;w;w;w;w;s;s;s;e;ask old woman about ¼¦;ask old woman about Á÷Ã¥;ok|w;n;w;nw;ask punk ÍõÐ¡¶þ;se;e;n;n;nw;nw;ne;enter hole;ok$
-ÀîËÄ$npcen=li si;rd huashan;nw;w;w;w;w;n;ok|s;rd kaifeng;wu;wd;s;ok$
-³É²»ÓÇ$npcen=cheng buyou;rd huashan;nw;w;w;w;w;w;s;s;s;s;ok|s;s;se;ne;e;e;eu;su;usefire;zuan;ok$
-´Ô²»Æú$npcen=cong buqi;rd huashan;nw;w;w;w;w;w;s;s;s;s;s;ok|s;se;ne;e;e;eu;su;usefire;zuan;wu;su;ok$
-·â²»Æ½$npcen=feng buping;rd huashan;nw;w;w;w;w;w;s;s;s;s;ok|s;s;se;ne;e;e;eu;su;usefire;zuan;wu;su;s;e;ok$
+â”€â”€è¯å±±â”€â”€
+è€è€…$npcen=lao zhe;rd beijing;w;w;n;n;w;w;w;w;w;w;w;sw;ok$
+å‹žå¾·è«¾$npcen=lao denuo;rd huashan;su;su;eu;eu;su;eu;eu;ok$
+æ¨‘ç™¼$npcen=liang fa;rd huashan;su;su;eu;eu;su;eu;eu;su;su;wu;ok$
+å²³éˆçŠ|ç¢§æ°´åŠ$npcen=yue lingshan;rd huashan;su;su;eu;eu;su;eu;eu;su;su;su;su;eu;ok$
+é«˜æ ¹æ˜Ž$npcen=gao genming;rd huashan;su;su;eu;eu;su;eu;eu;su;su;su;su;eu;n;ok$
+ä»¤ç‹æ²–$npcen=linghu chong;rd huashan;su;su;eu;eu;su;eu;eu;su;su;su;su;eu;sd;su;su;enter;ok$
+é™¸å¤§æœ‰$npcen=lu dayou;rd huashan;su;su;eu;eu;su;eu;eu;su;su;su;su;eu;n;n;n;ok$
+å°å¸«å¦¹$npcen=lu dayou;rd huashan;su;su;eu;eu;su;eu;eu;su;su;su;su;eu;n;n;n;w;w;ok$
+å²³å¤«äºº$npcen=yue wife;rd huashan;su;su;eu;eu;su;eu;eu;su;su;su;su;eu;n;n;n;w;n;w;ok$
+æ–½æˆ´å­$npcen=shi daizi;rd huashan;su;su;eu;eu;su;eu;eu;su;su;su;su;eu;n;nw;ne;ok$
+é«˜è€è€…$npcen=shi daizi;rd huashan;su;su;eu;eu;su;eu;eu;su;su;su;su;eu;n;nw;ne;ok|npcen=gao laozhe;nu;ok$
+çŸ®è€è€…$npcen=shi daizi;rd huashan;su;su;eu;eu;su;eu;eu;su;su;su;su;eu;n;nw;ne;ok|npcen=ai laozhe;nu;ok$
+æŽéµå˜´$npcen=fortune teller;rd huashan;nw;n;ok$
+èŠ±ç“£|èŒ¶è‘‰|é£›è—çŸ³|éµè“®å­$npcen=tang huai;buy=1;rd chengdu;w;w;n;ne;nw;ok$
+åœ°ä¿$rd huashan;npcen=dibao;nw;w;w;w;n;ok$
+é¦®éµåŒ |ç‡’ç´…çš„éµéŒ˜$rd huashan;npcen=feng;nw;w;w;w;w;s;ok$
+ç¿ èŠ±$npcen=cui hua;rd huashan;nw;w;w;w;w;w;nw;sw;ok$
+è€å¤§å¨˜$npcen=old woman;rd huashan;nw;w;w;w;w;w;s;s;s;e;ok$
+çŽ‹å°äºŒ$npcen=wang xiaoer;rd huashan;nw;w;w;w;w;w;s;s;s;e;ask old woman about é›ž;ask old woman about æµæ°“;ok|w;n;w;nw;ask punk çŽ‹å°äºŒ;se;e;n;n;nw;nw;ne;enter hole;ok$
+æŽå››$npcen=li si;rd huashan;nw;w;w;w;w;n;ok|s;rd kaifeng;wu;wd;s;ok$
+æˆä¸æ†‚$npcen=cheng buyou;rd huashan;nw;w;w;w;w;w;s;s;s;s;ok|s;s;se;ne;e;e;eu;su;usefire;zuan;ok$
+å¢ä¸æ£„$npcen=cong buqi;rd huashan;nw;w;w;w;w;w;s;s;s;s;s;ok|s;se;ne;e;e;eu;su;usefire;zuan;wu;su;ok$
+å°ä¸å¹³$npcen=feng buping;rd huashan;nw;w;w;w;w;w;s;s;s;s;ok|s;s;se;ne;e;e;eu;su;usefire;zuan;wu;su;s;e;ok$
 
-¡ª¡ªÄ½ÈÝ¡ª¡ª
-¹«Ò±Ç¬$npcen=gongye qian;rd yanziwu;e;ok$
-°ü²»Í¬$npcen=bao butong;rd yanziwu;nd;eu;ok$
-·ç²¨¶ñ$npcen=feng boe;rd yanziwu;nd;eu;ok$
-°¢±Ì$rd yanziwu;npcen=abi;nd;eu;s;ok$
-´äÂÌ³ñÉÀ$rd yanziwu;npcen=abi;nd;eu;s;ok$
-ÄÐÆÍ$npcen=nan pu;rd yanziwu;nd;eu;e;s;ok$
-±ÌÂÝ´º|ËÄÉ«µãÐÄ$rd yanziwu;npcen=get;nd;eu;e;ok$
-°¢Öì$rd yanziwu;npcen=azhu;nd;eu;e;e;ok$
-µË°Ù´¨$npcen=deng baichuan;rd yanziwu;nd;eu;e;e;ok$
-Ñ¾»·$rd yanziwu;npcen=yahuan;e;e;s;e;e;ok$
-Ä½ÈÝ¸´$npcen=murong fu;rd yanziwu;e;e;s;s;e;e;e;ok$
-Ä½ÈÝ²©$npcen=murong bo;rd yanziwu;e;e;s;s;ok$
-Çá¹¦Æª$rd yanziwu;npcen=get;nd;eu;e;n;w;n;tan qin;get dodgebook$
+â”€â”€æ…•å®¹â”€â”€
+å…¬å†¶ä¹¾$npcen=gongye qian;rd yanziwu;e;ok$
+åŒ…ä¸åŒ$npcen=bao butong;rd yanziwu;nd;eu;ok$
+é¢¨æ³¢æƒ¡$npcen=feng boe;rd yanziwu;nd;eu;ok$
+é˜¿ç¢§$rd yanziwu;npcen=abi;nd;eu;s;ok$
+ç¿ ç¶ ç¶¢è¡«$rd yanziwu;npcen=abi;nd;eu;s;ok$
+ç”·åƒ•$npcen=nan pu;rd yanziwu;nd;eu;e;s;ok$
+ç¢§èžºæ˜¥|å››è‰²é»žå¿ƒ$rd yanziwu;npcen=get;nd;eu;e;ok$
+é˜¿æœ±$rd yanziwu;npcen=azhu;nd;eu;e;e;ok$
+é„§ç™¾å·$npcen=deng baichuan;rd yanziwu;nd;eu;e;e;ok$
+ä¸«ç’°$rd yanziwu;npcen=yahuan;e;e;s;e;e;ok$
+æ…•å®¹å¾©$npcen=murong fu;rd yanziwu;e;e;s;s;e;e;e;ok$
+æ…•å®¹åš$npcen=murong bo;rd yanziwu;e;e;s;s;ok$
+è¼•åŠŸç¯‡$rd yanziwu;npcen=get;nd;eu;e;n;w;n;tan qin;get dodgebook$
 
-¡ª¡ª³¤°²¡ª¡ª
-ÏôÈº$npcen=xiao qun;rd changan;ok$
-ÓùÁÖ¾ü|Õ½¼×$npcen=yulin jun;rd changan;ok|n;n;ok$
-ÕÅºâ$npcen=zhang heng;rd changan;n;n;ok$
-É±Íþ°ô$rd changan;npcen=yayi;s;e;s;ok$
-ÁºÐËÂ»$npcen=liang xinglu;rd changan;s;e;s;s;ok$
-³Â¼ÌÊ¢$npcen=chen jisheng;rd changan;s;e;s;s;ok$
-²¶Í·|ÀÎ·¿Ô¿³×1$npcen=bu tou;rd changan;s;e;e;e;ok$
-ÁõÀÏÊµ$npcen=liu laoshi;rd changan;s;s;s;e;e;n;ok$
-Ä¾ÇÙ$npcen=liu laoshi;buy=1;rd changan;s;s;s;e;e;n;ok$
-Èç»¨$npcen=ru hua;rd changan;s;s;s;e;e;e;e;s;ok$
-Âô»¨¹ÃÄï$npcen=maihua guniang;rd changan;s;s;s;w;n;ok$
-ºìÃµ¹å|»ÆÃµ¹å|À¶Ìì¶ì|×ÏÂÞÀ¼|°×²è»¨|ºÚÄµµ¤$npcen=maihua guniang;buy=1;rd changan;s;s;s;w;n;ok$
-ÀÏÕÅ$npcen=lao zhang;rd changan;s;s;s;w;w;n;ok$
-µ¶Ï÷Ãæ|ÃæÌÀ|Å£ÈâÃæ|ÅÅ¹ÇÃæ$npcen=lao zhang;buy=1;rd changan;s;s;s;w;w;n;ok$
-Ð¡»ï¼Æ$npcen=huo ji;rd changan;s;s;s;w;w;w;w;s;ok|npcen=xiao huoji;rd lingzhou;w;s;ok$
-º£ÏÊ°ü×Ó|ËØ²Ë°ü×Ó|ÖíÈâ°ü×Ó$npcen=huo ji;buy=1;rd changan;s;s;s;w;w;w;w;s;ok$
-Êé³Õ$npcen=shu chi;rd changan;s;s;s;w;w;w;w;n;n;n;n;e;ok$
-¡¼µ¶·¨¼ò½é¡½|¡¼È­·¨¼ò½é¡½$npcen=shu chi;buy=1;rd changan;s;s;s;w;w;w;w;n;n;n;n;e;ok$
-ÁºÏ²Â»$npcen=liang xilu;buy=1;rd changan;s;s;s;w;w;w;w;n;n;n;n;n;n;e;ok$
-ÏôÍòÏ²$npcen=xiao wanxi;rd changan;n;n;n;n;n;w;s;ok$
-ÕÅÀ¼Ïã$npcen=zhang lanxiang;rd changan;n;n;n;n;n;w;w;s;ok$
-¹þÃÜ¹Ï|½Û×Ó|Æ»¹û$npcen=zhang lanxiang;buy=1;rd changan;n;n;n;n;n;w;w;s;ok$
-ËµÊéÀÏÈË$npcen=shuoshu laoren;rd changan;n;n;n;n;n;w;w;n;ok$
-¡º³¤°×É½ÂÃÓÎÍ¼¡»|¹·Èâ|¹·ÈâÌÀ$npcen=lao ban;buy=1;rd guanwai;s;w;ok$
-²è¹ÝÐ¡¶þ$rd changan;npcen=waiter;n;n;n;n;n;w;w;n;ok$
-ºìÉÕ¹·Èâ|Õ¨¼¦ÍÈ$rd changan;npcen=xiaoer;buy=1;n;n;n;n;n;w;w;w;n;ok$
-ÑîÀÏ°å$npcen=yang laoban;rd changan;n;n;n;n;n;w;w;w;n;up;ok$
-ÂÞººöêÓã|ËØÅ¯Ïã¼¦|×íÑ¬·ç$npcen=yang laoban;buy=1;rd changan;n;n;n;n;n;w;w;w;n;up;ok$
-½ð¸´»¹$npcen=jin fuhuan;rd changan;n;n;n;n;n;w;w;w;w;n;ok$
-½ð½äÖ¸$npcen=chen apo;buy=1;rd fuzhou;s;s;w;w;w;ok$
-öÌ½ðÍóÁ´|°×½ðÏîÈ¦|×Ï½ð½äÖ¸$npcen=jin fuhuan;buy=1;rd changan;n;n;n;n;n;w;w;w;w;n;ok$
-´òÊÖ$npcen=da shou;rd changan;n;n;n;n;n;e;s;ok$
-Áè·ÉÑ©$npcen=da shou;rd changan;n;n;n;n;n;e;s;ok|npcen=ling feixue;s;ok$
-±£ïÚ$npcen=da shou;rd changan;n;n;n;n;n;e;s;ok|npcen=lu yi;s;up;s;ok|npcen=hong yi;n;n;ok|npcen=qing yi;s;e;ok$É±ÈºÓñÂ¥ÈÎÒâÒ»¸öxÒÂ³öÏÖ
-ÏæÏæ|»ÆÒÂ$npcen=da shou;rd changan;n;n;n;n;n;e;s;ok|npcen=da shou;s;up;up;e;ok|push bed;npcen=xiangxiang;enter;ok$
-ÎâïÚÊ¦$rd changan;npcen=biaoshi;n;n;n;n;n;e;e;s;ok$
-À¶É«¾¢×°$rd changan;npcen=biaoshi;n;n;n;n;n;e;e;s;ok|s;ok|npcen=wan;s;ok$
-ïÚÍ·$npcen=biao tou;rd xiangyang;e;e;n;e;ok$
-ÖÜïÚÍ·$rd changan;npcen=biaoshi;n;n;n;n;n;e;e;s;s;ok$
-ÍòÇàÉ½$rd changan;npcen=wan;n;n;n;n;n;e;e;s;s;s;ok$
-ÍõÔª°Ô$npcen=wang yuanba;rd changan;n;n;n;n;n;e;e;s;s;s;ok$
-½õ¶Ð$npcen=hou yuanwai;rd wugong;e;s;s;s;s;s;ok$
-½õ¶Ð1$npcen=wang yuanba;rd changan;n;n;n;n;n;e;e;s;s;s;ok$
-³ÂÀÏ°å$npcen=chen laoban;rd changan;n;n;n;n;n;e;e;n;ok$
-°×½ð½äÖ¸|±¦Ê¯½äÖ¸|Òø½äÖ¸|×êÊ¯½äÖ¸$npcen=chen laoban;buy=1;rd changan;n;n;n;n;n;e;e;n;ok$
-Ä½ÈÝºÀ$npcen=murong hao;rd changan;n;n;n;n;n;e;e;e;s;ok$
-Ê±¾Å¹«$npcen=shi jiugong;rd changan;n;n;n;n;n;e;e;e;n;ok$
-³ñÅÛ$npcen=shi jiugong;rd changan;n;n;n;n;n;e;e;e;n;ok|s;npcen=xiao yuanwai;rd changan;s;s;s;e;e;e;e;n;e;e;ok$
-Ï·×Ó$npcen=xi zi;rd changan;n;n;n;n;n;e;e;e;e;n;ok$
-ÏôÔ±Íâ$npcen=xiao yuanwai;rd changan;s;s;s;e;e;e;e;n;e;e;ok$
-ÇáÉ´³¤È¹$rd changan;npcen=yahuan;s;s;s;e;e;e;e;n;e;e;n;ok|s;s;ok$
-Öª¿ÍºÍÉÐ$rd changan;npcen=monk;s;w;s;ok$
-»ÛÍ¨ìøÊ¦$npcen=huitong chanshi;rd changan;s;w;s;s;e;ok$
-¾»Ã÷$npcen=jing ming;rd changan;s;w;s;s;w;ok$
-¾»Ðþ$npcen=jing xuan;rd changan;s;w;s;s;w;ok$
-É®ÅÛ$npcen=huitong chanshi;rd changan;s;w;s;s;e;ok|npcen=jing ming;w;w;ok|npcen=jing xuan;ok$
-Àî²©Ô¨$npcen=li boyuan;rd changan;s;e;e;n;n;n;n;w;n;ok$
+â”€â”€é•·å®‰â”€â”€
+è•­ç¾¤$npcen=xiao qun;rd changan;ok$
+å¾¡æž—è»|æˆ°ç”²$npcen=yulin jun;rd changan;ok|n;n;ok$
+å¼µè¡¡$npcen=zhang heng;rd changan;n;n;ok$
+æ®ºå¨æ£’$rd changan;npcen=yayi;s;e;s;ok$
+æ¨‘èˆˆç¥¿$npcen=liang xinglu;rd changan;s;e;s;s;ok$
+é™³ç¹¼ç››$npcen=chen jisheng;rd changan;s;e;s;s;ok$
+æ•é ­|ç‰¢æˆ¿é‘°åŒ™1$npcen=bu tou;rd changan;s;e;e;e;ok$
+åŠ‰è€å¯¦$npcen=liu laoshi;rd changan;s;s;s;e;e;n;ok$
+æœ¨ç´$npcen=liu laoshi;buy=1;rd changan;s;s;s;e;e;n;ok$
+å¦‚èŠ±$npcen=ru hua;rd changan;s;s;s;e;e;e;e;s;ok$
+è³£èŠ±å§‘å¨˜$npcen=maihua guniang;rd changan;s;s;s;w;n;ok$
+ç´…çŽ«ç‘°|é»ƒçŽ«ç‘°|è—å¤©éµ|ç´«ç¾…è˜­|ç™½èŒ¶èŠ±|é»‘ç‰¡ä¸¹$npcen=maihua guniang;buy=1;rd changan;s;s;s;w;n;ok$
+è€å¼µ$npcen=lao zhang;rd changan;s;s;s;w;w;n;ok$
+åˆ€å‰Šé¢|é¢æ¹¯|ç‰›è‚‰é¢|æŽ’éª¨é¢$npcen=lao zhang;buy=1;rd changan;s;s;s;w;w;n;ok$
+å°ä¼™è¨ˆ$npcen=huo ji;rd changan;s;s;s;w;w;w;w;s;ok|npcen=xiao huoji;rd lingzhou;w;s;ok$
+æµ·é®®åŒ…å­|ç´ èœåŒ…å­|è±¬è‚‰åŒ…å­$npcen=huo ji;buy=1;rd changan;s;s;s;w;w;w;w;s;ok$
+æ›¸ç—´$npcen=shu chi;rd changan;s;s;s;w;w;w;w;n;n;n;n;e;ok$
+â–¡åˆ€æ³•ç°¡ä»‹â–¡|â–¡æ‹³æ³•ç°¡ä»‹â–¡$npcen=shu chi;buy=1;rd changan;s;s;s;w;w;w;w;n;n;n;n;e;ok$
+æ¨‘å–œç¥¿$npcen=liang xilu;buy=1;rd changan;s;s;s;w;w;w;w;n;n;n;n;n;n;e;ok$
+è•­è¬å–œ$npcen=xiao wanxi;rd changan;n;n;n;n;n;w;s;ok$
+å¼µè˜­é¦™$npcen=zhang lanxiang;rd changan;n;n;n;n;n;w;w;s;ok$
+å“ˆå¯†ç“œ|æ¡”å­|è˜‹æžœ$npcen=zhang lanxiang;buy=1;rd changan;n;n;n;n;n;w;w;s;ok$
+èªªæ›¸è€äºº$npcen=shuoshu laoren;rd changan;n;n;n;n;n;w;w;n;ok$
+ã€Žé•·ç™½å±±æ—…éŠåœ–ã€|ç‹—è‚‰|ç‹—è‚‰æ¹¯$npcen=lao ban;buy=1;rd guanwai;s;w;ok$
+èŒ¶é¤¨å°äºŒ$rd changan;npcen=waiter;n;n;n;n;n;w;w;n;ok$
+ç´…ç‡’ç‹—è‚‰|ç‚¸é›žè…¿$rd changan;npcen=xiaoer;buy=1;n;n;n;n;n;w;w;w;n;ok$
+æ¥Šè€æ¿$npcen=yang laoban;rd changan;n;n;n;n;n;w;w;w;n;up;ok$
+ç¾…æ¼¢é¯½é­š|ç´ æš–é¦™é›ž|é†‰ç†é¢¨$npcen=yang laoban;buy=1;rd changan;n;n;n;n;n;w;w;w;n;up;ok$
+é‡‘å¾©é‚„$npcen=jin fuhuan;rd changan;n;n;n;n;n;w;w;w;w;n;ok$
+é‡‘æˆ’æŒ‡$npcen=chen apo;buy=1;rd fuzhou;s;s;w;w;w;ok$
+éŽé‡‘è…•éˆ|ç™½é‡‘é …åœˆ|ç´«é‡‘æˆ’æŒ‡$npcen=jin fuhuan;buy=1;rd changan;n;n;n;n;n;w;w;w;w;n;ok$
+æ‰“æ‰‹$npcen=da shou;rd changan;n;n;n;n;n;e;s;ok$
+å‡Œé£›é›ª$npcen=da shou;rd changan;n;n;n;n;n;e;s;ok|npcen=ling feixue;s;ok$
+ä¿é¢$npcen=da shou;rd changan;n;n;n;n;n;e;s;ok|npcen=lu yi;s;up;s;ok|npcen=hong yi;n;n;ok|npcen=qing yi;s;e;ok$æ®ºç¾¤çŽ‰æ¨“ä»»æ„ä¸€å€‹xè¡£å‡ºç¾
+æ¹˜æ¹˜|é»ƒè¡£$npcen=da shou;rd changan;n;n;n;n;n;e;s;ok|npcen=da shou;s;up;up;e;ok|push bed;npcen=xiangxiang;enter;ok$
+å³é¢å¸«$rd changan;npcen=biaoshi;n;n;n;n;n;e;e;s;ok$
+è—è‰²å‹è£$rd changan;npcen=biaoshi;n;n;n;n;n;e;e;s;ok|s;ok|npcen=wan;s;ok$
+é¢é ­$npcen=biao tou;rd xiangyang;e;e;n;e;ok$
+å‘¨é¢é ­$rd changan;npcen=biaoshi;n;n;n;n;n;e;e;s;s;ok$
+è¬é’å±±$rd changan;npcen=wan;n;n;n;n;n;e;e;s;s;s;ok$
+çŽ‹å…ƒéœ¸$npcen=wang yuanba;rd changan;n;n;n;n;n;e;e;s;s;s;ok$
+éŒ¦ç·ž$npcen=hou yuanwai;rd wugong;e;s;s;s;s;s;ok$
+éŒ¦ç·ž1$npcen=wang yuanba;rd changan;n;n;n;n;n;e;e;s;s;s;ok$
+é™³è€æ¿$npcen=chen laoban;rd changan;n;n;n;n;n;e;e;n;ok$
+ç™½é‡‘æˆ’æŒ‡|å¯¶çŸ³æˆ’æŒ‡|éŠ€æˆ’æŒ‡|é‘½çŸ³æˆ’æŒ‡$npcen=chen laoban;buy=1;rd changan;n;n;n;n;n;e;e;n;ok$
+æ…•å®¹è±ª$npcen=murong hao;rd changan;n;n;n;n;n;e;e;e;s;ok$
+æ™‚ä¹å…¬$npcen=shi jiugong;rd changan;n;n;n;n;n;e;e;e;n;ok$
+ç¶¢è¢$npcen=shi jiugong;rd changan;n;n;n;n;n;e;e;e;n;ok|s;npcen=xiao yuanwai;rd changan;s;s;s;e;e;e;e;n;e;e;ok$
+æˆ²å­$npcen=xi zi;rd changan;n;n;n;n;n;e;e;e;e;n;ok$
+è•­å“¡å¤–$npcen=xiao yuanwai;rd changan;s;s;s;e;e;e;e;n;e;e;ok$
+è¼•ç´—é•·è£™$rd changan;npcen=yahuan;s;s;s;e;e;e;e;n;e;e;n;ok|s;s;ok$
+çŸ¥å®¢å’Œå°š$rd changan;npcen=monk;s;w;s;ok$
+æ…§é€šç¦ªå¸«$npcen=huitong chanshi;rd changan;s;w;s;s;e;ok$
+å‡ˆæ˜Ž$npcen=jing ming;rd changan;s;w;s;s;w;ok$
+å‡ˆçŽ„$npcen=jing xuan;rd changan;s;w;s;s;w;ok$
+åƒ§è¢$npcen=huitong chanshi;rd changan;s;w;s;s;e;ok|npcen=jing ming;w;w;ok|npcen=jing xuan;ok$
+æŽåšæ·µ$npcen=li boyuan;rd changan;s;e;e;n;n;n;n;w;n;ok$
 
-¡ª¡ªº¼ÖÝ¡ª¡ª
-ÀÏºÍÉÐ$npcen=lao heshang;rd jiaxing;s;se;n;ok$
-¹ð»¨ÏÊÀõ¸þ|°Ù¹ûÓÍ°ü|¶«ÆÂÈâ|Áú¾®ÏºÈÊ|Î÷ºþ´×Óã|½Ð»¯Í¯¼¦|¾ÆÆ¿$npcen=xiao er;buy=1;rd hangzhou;e;ok$
-´ÖÁÓ¾ÆÆ¿$npcen=ru hua;buy=1;rd changan;s;s;s;e;e;e;e;s;ok$
-³øÄï$npcen=chu niang;rd hangzhou;e;e;ok$
-Àî¿ÉÐã$npcen=li kexiu;rd hangzhou;s;s;ok$
-ÂÌÓªÇå±ø|³¤Ç¹$npcen=qing bing;rd hangzhou;s;s;ok$
-Âæ±ù$npcen=luo bing;rd hangzhou;s;s;s;sw;ok$
-ÎÄÌ©À´$npcen=wen tailai;rd hangzhou;s;s;s;sw;ok$
-ºúÇìÓà$npcen=hu qingyu;rd hangzhou;s;s;s;sw;e;ok$
-ÂÌÓª»áÖÚ$npcen=hong hua;rd hangzhou;s;s;s;sw;w;w;ok$
-°×Õñ$npcen=bai zhen;rd hangzhou;s;s;s;sw;sw;w;ok$
-ºì»¨»áÖÚ$npcen=hong hua;rd hangzhou;s;s;s;sw;sw;sw;ok$
-ÓàÓãÍ¬$npcen=yu yutong;rd hangzhou;s;s;s;sw;sw;sw;wu;wu;ok$
-ñÒÔ²$npcen=chu yuan;rd hangzhou;s;s;s;sw;sw;sw;wu;wu;wd;wd;w;s;ok$
-¹ùÐ¥Ìì$npcen=guo xiaotian;rd hangzhou;s;s;s;sw;sw;sw;wu;wu;wd;wd;w;s;s;e;ok$
-ÑîÌúÐÄ$npcen=yang tiexin;rd hangzhou;s;s;s;sw;sw;sw;wu;wu;wd;wd;w;s;s;e;ok$
-ÇúÈý$npcen=qu san;rd hangzhou;s;s;s;sw;sw;sw;wu;wu;wd;wd;w;s;s;e;e;ok$
-Áú¿¥|ÌúÝðÞ¼$npcen=long jun;rd hangzhou;s;s;s;sw;sw;w;w;w;ok$
-ÀîãäÜÆ$npcen=li yuanzhi;rd hangzhou;n;w;sw;w;s;s;s;s;ok$
-³Ì³°·ç$npcen=cheng chaofeng;rd hangzhou;n;w;sw;w;n;ok$
-Ô½Å®$npcen=yue nv;rd hangzhou;n;w;sw;w;w;wu;ok|rd jiaxing;e;se;s;up;ok$
-»¤Ôº$npcen=hu yuan;rd hangzhou;n;sw;w;sw;w;wu;n;n;knock 4;knock 2;knock 5;knock 3;n;ok|n;n;n;n;ok$
-¶¡¼á|ºìÓñÔ¿³×$npcen=ding jian;rd hangzhou;n;sw;w;sw;w;wu;n;n;knock 4;knock 2;knock 5;knock 3;n;n;n;ok$
-ÐåÃ·ÇàÒÂ|ïÙÌúÅÐ¹Ù±Ê$npcen=jia ding;rd hangzhou;n;sw;w;sw;w;wu;n;n;knock 4;knock 2;knock 5;knock 3;n;n;n;n;e;s;ok$
-Íº±ÊÎÌ$npcen=tubi weng;rd hangzhou;n;sw;w;sw;w;wu;n;n;knock 4;knock 2;knock 5;knock 3;n;ok|n;n;n;n;n;w;ok$
-µ¤ÇàÉú$npcen=danqing sheng;rd hangzhou;n;sw;w;sw;w;wu;n;n;knock 4;knock 2;knock 5;knock 3;n;ok|n;n;n;n;n;e;ok$
-³øÊ¦$npcen=chu shi;rd baituo;nu;nu;n;nu;n;n;n;e;ok|w;rd nanyang;n;n;w;n;n;n;nu;nw;nu;nu;ok|nw;nu;nw;nu;ne;nu;nu;nu;nu;e;s;ok|n;w;sd;rd hangzhou;n;sw;w;sw;w;wu;n;n;knock 4;knock 2;knock 5;knock 3;n;ok|n;n;n;n;n;n;n;w;ok$
-ºÚ°××Ó$npcen=heibai zi;rd hangzhou;n;sw;w;sw;w;wu;n;n;knock 4;knock 2;knock 5;knock 3;n;ok|n;n;n;n;n;n;n;n;ok$
-Ê©ÁîÍþ$npcen=shi lingwei;rd hangzhou;n;sw;w;sw;w;wu;n;n;knock 4;knock 2;knock 5;knock 3;n;ok|n;n;n;e;n;s;w;sw;e;s;eu;n;n;ok$
-»ÆÖÓ¹«$npcen=huangzhong gong;rd hangzhou;n;sw;w;sw;w;wu;n;n;knock 4;knock 2;knock 5;knock 3;n;ok|n;n;n;e;n;s;w;sw;e;s;eu;n;n;enter;ok$
-°²½¡¸Õ$npcen=an jiangang;rd hangzhou;s;s;s;sw;sw;sw;wu;wu;wd;wd;w;s;s;wu;enter;ok$
-ÃÏ½¡ÐÛ$npcen=meng jianxiong;rd hangzhou;s;s;s;sw;sw;sw;wu;wu;wd;wd;w;s;s;wu;enter;ok$
-Ìúµ¨$npcen=an jiangang;rd hangzhou;s;s;s;sw;sw;sw;wu;wu;wd;wd;w;s;s;wu;enter;ok|npcen=meng jianxiong;ok$
-ÐÄÑâ$npcen=an jiangang;rd hangzhou;s;s;s;sw;sw;sw;wu;wu;wd;wd;w;s;s;wu;enter;ok|npcen=meng jianxiong;ok|npcen=xin yan;up;ok$
-ÖÜç²$npcen=an jiangang;rd hangzhou;s;s;s;sw;sw;sw;wu;wu;wd;wd;w;s;s;wu;enter;ok|npcen=meng jianxiong;ok|npcen=zhou yi;up;ok$
-½¯ËÄ¸ù$npcen=an jiangang;rd hangzhou;s;s;s;sw;sw;sw;wu;wu;wd;wd;w;s;s;wu;enter;ok|npcen=meng jianxiong;ok|npcen=zhou yi;up;ok|npcen=xin yan;ok|npcen=jiang sigen;up;ok$
-Ê¯Ë«Ó¢$npcen=an jiangang;rd hangzhou;s;s;s;sw;sw;sw;wu;wu;wd;wd;w;s;s;wu;enter;ok|npcen=meng jianxiong;ok|npcen=zhou yi;up;ok|npcen=xin yan;ok|npcen=jiang sigen;up;ok|npcen=shi shuangying;up;ok$
-ÎÀ´º»ª$npcen=an jiangang;rd hangzhou;s;s;s;sw;sw;sw;wu;wu;wd;wd;w;s;s;wu;enter;ok|npcen=meng jianxiong;ok|npcen=zhou yi;up;ok|npcen=xin yan;ok|npcen=jiang sigen;up;ok|npcen=shi shuangying;up;ok|npcen=wei chunhua;up;ok$
-Ñî³ÉÐ­|Ìú±Þ$npcen=an jiangang;rd hangzhou;s;s;s;sw;sw;sw;wu;wu;wd;wd;w;s;s;wu;enter;ok|npcen=meng jianxiong;ok|npcen=zhou yi;up;ok|npcen=xin yan;ok|npcen=jiang sigen;up;ok|npcen=shi shuangying;up;ok|npcen=wei chunhua;up;ok|npcen=yang chengxie;up;ok$
-ÐìÌìºê$npcen=an jiangang;rd hangzhou;s;s;s;sw;sw;sw;wu;wu;wd;wd;w;s;s;wu;enter;ok|npcen=meng jianxiong;ok|npcen=zhou yi;up;ok|npcen=xin yan;ok|npcen=jiang sigen;up;ok|npcen=shi shuangying;up;ok|npcen=wei chunhua;up;ok|npcen=yang chengxie;up;ok|npcen=xu tianhong;up;ok$
-³£²®Ö¾$npcen=an jiangang;rd hangzhou;s;s;s;sw;sw;sw;wu;wu;wd;wd;w;s;s;wu;enter;ok|npcen=meng jianxiong;ok|npcen=zhou yi;up;ok|npcen=xin yan;ok|npcen=jiang sigen;up;ok|npcen=shi shuangying;up;ok|npcen=wei chunhua;up;ok|npcen=yang chengxie;up;ok|npcen=xu tianhong;up;ok|npcen=chang bozhi;up;ok$
-³£ºÕÖ¾$npcen=an jiangang;rd hangzhou;s;s;s;sw;sw;sw;wu;wu;wd;wd;w;s;s;wu;enter;ok|npcen=meng jianxiong;ok|npcen=zhou yi;up;ok|npcen=xin yan;ok|npcen=jiang sigen;up;ok|npcen=shi shuangying;up;ok|npcen=wei chunhua;up;ok|npcen=yang chengxie;up;ok|npcen=xu tianhong;up;ok|npcen=chang hezhi;up;ok$
-ÕÔ°ëÉ½$npcen=an jiangang;rd hangzhou;s;s;s;sw;sw;sw;wu;wu;wd;wd;w;s;s;wu;enter;ok|npcen=meng jianxiong;ok|npcen=zhou yi;up;ok|npcen=xin yan;ok|npcen=jiang sigen;up;ok|npcen=shi shuangying;up;ok|npcen=wei chunhua;up;ok|npcen=yang chengxie;up;ok|npcen=xu tianhong;up;ok|npcen=chang bozhi;up;ok|npcen=chang hezhi;ok|npcen=zhao banshan;up;ok$
-ÖÜÖÙÓ¢$npcen=an jiangang;rd hangzhou;s;s;s;sw;sw;sw;wu;wu;wd;wd;w;s;s;wu;enter;ok|npcen=meng jianxiong;ok|npcen=zhou yi;up;ok|npcen=xin yan;ok|npcen=jiang sigen;up;ok|npcen=shi shuangying;up;ok|npcen=wei chunhua;up;ok|npcen=yang chengxie;up;ok|npcen=xu tianhong;up;ok|npcen=chang bozhi;up;ok|npcen=chang hezhi;ok|npcen=zhao banshan;up;ok|npcen=zhou zhongying;up;ok$
-Â½·ÆÇà$npcen=an jiangang;rd hangzhou;s;s;s;sw;sw;sw;wu;wu;wd;wd;w;s;s;wu;enter;ok|npcen=meng jianxiong;ok|npcen=zhou yi;up;ok|npcen=xin yan;ok|npcen=jiang sigen;up;ok|npcen=shi shuangying;up;ok|npcen=wei chunhua;up;ok|npcen=yang chengxie;up;ok|npcen=xu tianhong;up;ok|npcen=chang bozhi;up;ok|npcen=chang hezhi;ok|npcen=zhao banshan;up;ok|npcen=zhou zhongying;up;ok|npcen=lu feiqing;up;ok$
-ÎÞ³¾µÀ³¤$npcen=an jiangang;rd hangzhou;s;s;s;sw;sw;sw;wu;wu;wd;wd;w;s;s;wu;enter;ok|npcen=meng jianxiong;ok|npcen=zhou yi;up;ok|npcen=xin yan;ok|npcen=jiang sigen;up;ok|npcen=shi shuangying;up;ok|npcen=wei chunhua;up;ok|npcen=yang chengxie;up;ok|npcen=xu tianhong;up;ok|npcen=chang bozhi;up;ok|npcen=chang hezhi;ok|npcen=zhao banshan;up;ok|npcen=zhou zhongying;up;ok|npcen=lu feiqing;up;ok|npcen=wuchen daozhang;up;ok$
-³Â¼ÒÂå$npcen=an jiangang;rd hangzhou;s;s;s;sw;sw;sw;wu;wu;wd;wd;w;s;s;wu;enter;ok|npcen=meng jianxiong;ok|npcen=zhou yi;up;ok|npcen=xin yan;ok|npcen=jiang sigen;up;ok|npcen=shi shuangying;up;ok|npcen=wei chunhua;up;ok|npcen=yang chengxie;up;ok|npcen=xu tianhong;up;ok|npcen=chang bozhi;up;ok|npcen=chang hezhi;ok|npcen=zhao banshan;up;ok|npcen=zhou zhongying;up;ok|npcen=lu feiqing;up;ok|npcen=wuchen daozhang;up;ok|npcen=chen jialuo;up;ok$
-Ç¬Â¡»ÊµÛ$npcen=an jiangang;rd hangzhou;s;s;s;sw;sw;sw;wu;wu;wd;wd;w;s;s;wu;enter;ok|npcen=meng jianxiong;ok|npcen=zhou yi;up;ok|npcen=xin yan;ok|npcen=jiang sigen;up;ok|npcen=shi shuangying;up;ok|npcen=wei chunhua;up;ok|npcen=yang chengxie;up;ok|npcen=xu tianhong;up;ok|npcen=chang bozhi;up;ok|npcen=chang hezhi;ok|npcen=zhao banshan;up;ok|npcen=zhou zhongying;up;ok|npcen=lu feiqing;up;ok|npcen=wuchen daozhang;up;ok|npcen=qianlong;up;ok$
+â”€â”€æ­å·žâ”€â”€
+è€å’Œå°š$npcen=lao heshang;rd jiaxing;s;se;n;ok$
+æ¡‚èŠ±é®®æ —ç¾¹|ç™¾æžœæ²¹åŒ…|æ±å¡è‚‰|é¾äº•è¦ä»|è¥¿æ¹–é†‹é­š|å«åŒ–ç«¥é›ž|é…’ç“¶$npcen=xiao er;buy=1;rd hangzhou;e;ok$
+ç²—åŠ£é…’ç“¶$npcen=ru hua;buy=1;rd changan;s;s;s;e;e;e;e;s;ok$
+å»šå¨˜$npcen=chu niang;rd hangzhou;e;e;ok$
+æŽå¯ç§€$npcen=li kexiu;rd hangzhou;s;s;ok$
+ç¶ ç‡Ÿæ¸…å…µ|é•·æ§$npcen=qing bing;rd hangzhou;s;s;ok$
+é§±å†°$npcen=luo bing;rd hangzhou;s;s;s;sw;ok$
+æ–‡æ³°ä¾†$npcen=wen tailai;rd hangzhou;s;s;s;sw;ok$
+èƒ¡æ…¶ä½™$npcen=hu qingyu;rd hangzhou;s;s;s;sw;e;ok$
+ç¶ ç‡Ÿæœƒçœ¾$npcen=hong hua;rd hangzhou;s;s;s;sw;w;w;ok$
+ç™½æŒ¯$npcen=bai zhen;rd hangzhou;s;s;s;sw;sw;w;ok$
+ç´…èŠ±æœƒçœ¾$npcen=hong hua;rd hangzhou;s;s;s;sw;sw;sw;ok$
+ä½™é­šåŒ$npcen=yu yutong;rd hangzhou;s;s;s;sw;sw;sw;wu;wu;ok$
+è¤šåœ“$npcen=chu yuan;rd hangzhou;s;s;s;sw;sw;sw;wu;wu;wd;wd;w;s;ok$
+éƒ­å˜¯å¤©$npcen=guo xiaotian;rd hangzhou;s;s;s;sw;sw;sw;wu;wu;wd;wd;w;s;s;e;ok$
+æ¥Šéµå¿ƒ$npcen=yang tiexin;rd hangzhou;s;s;s;sw;sw;sw;wu;wu;wd;wd;w;s;s;e;ok$
+æ›²ä¸‰$npcen=qu san;rd hangzhou;s;s;s;sw;sw;sw;wu;wu;wd;wd;w;s;s;e;e;ok$
+é¾é§¿|éµè’ºè—œ$npcen=long jun;rd hangzhou;s;s;s;sw;sw;w;w;w;ok$
+æŽæ²…èŠ·$npcen=li yuanzhi;rd hangzhou;n;w;sw;w;s;s;s;s;ok$
+ç¨‹å˜²é¢¨$npcen=cheng chaofeng;rd hangzhou;n;w;sw;w;n;ok$
+è¶Šå¥³$npcen=yue nv;rd hangzhou;n;w;sw;w;w;wu;ok|rd jiaxing;e;se;s;up;ok$
+è­·é™¢$npcen=hu yuan;rd hangzhou;n;sw;w;sw;w;wu;n;n;knock 4;knock 2;knock 5;knock 3;n;ok|n;n;n;n;ok$
+ä¸å …|ç´…çŽ‰é‘°åŒ™$npcen=ding jian;rd hangzhou;n;sw;w;sw;w;wu;n;n;knock 4;knock 2;knock 5;knock 3;n;n;n;ok$
+ç¹¡æ¢…é’è¡£|é‘Œéµåˆ¤å®˜ç­†$npcen=jia ding;rd hangzhou;n;sw;w;sw;w;wu;n;n;knock 4;knock 2;knock 5;knock 3;n;n;n;n;e;s;ok$
+ç¦¿ç­†ç¿$npcen=tubi weng;rd hangzhou;n;sw;w;sw;w;wu;n;n;knock 4;knock 2;knock 5;knock 3;n;ok|n;n;n;n;n;w;ok$
+ä¸¹é’ç”Ÿ$npcen=danqing sheng;rd hangzhou;n;sw;w;sw;w;wu;n;n;knock 4;knock 2;knock 5;knock 3;n;ok|n;n;n;n;n;e;ok$
+å»šå¸«$npcen=chu shi;rd baituo;nu;nu;n;nu;n;n;n;e;ok|w;rd nanyang;n;n;w;n;n;n;nu;nw;nu;nu;ok|nw;nu;nw;nu;ne;nu;nu;nu;nu;e;s;ok|n;w;sd;rd hangzhou;n;sw;w;sw;w;wu;n;n;knock 4;knock 2;knock 5;knock 3;n;ok|n;n;n;n;n;n;n;w;ok$
+é»‘ç™½å­$npcen=heibai zi;rd hangzhou;n;sw;w;sw;w;wu;n;n;knock 4;knock 2;knock 5;knock 3;n;ok|n;n;n;n;n;n;n;n;ok$
+æ–½ä»¤å¨$npcen=shi lingwei;rd hangzhou;n;sw;w;sw;w;wu;n;n;knock 4;knock 2;knock 5;knock 3;n;ok|n;n;n;e;n;s;w;sw;e;s;eu;n;n;ok$
+é»ƒé˜å…¬$npcen=huangzhong gong;rd hangzhou;n;sw;w;sw;w;wu;n;n;knock 4;knock 2;knock 5;knock 3;n;ok|n;n;n;e;n;s;w;sw;e;s;eu;n;n;enter;ok$
+å®‰å¥å‰›$npcen=an jiangang;rd hangzhou;s;s;s;sw;sw;sw;wu;wu;wd;wd;w;s;s;wu;enter;ok$
+å­Ÿå¥é›„$npcen=meng jianxiong;rd hangzhou;s;s;s;sw;sw;sw;wu;wu;wd;wd;w;s;s;wu;enter;ok$
+éµè†½$npcen=an jiangang;rd hangzhou;s;s;s;sw;sw;sw;wu;wu;wd;wd;w;s;s;wu;enter;ok|npcen=meng jianxiong;ok$
+å¿ƒç¡¯$npcen=an jiangang;rd hangzhou;s;s;s;sw;sw;sw;wu;wu;wd;wd;w;s;s;wu;enter;ok|npcen=meng jianxiong;ok|npcen=xin yan;up;ok$
+å‘¨ç¶º$npcen=an jiangang;rd hangzhou;s;s;s;sw;sw;sw;wu;wu;wd;wd;w;s;s;wu;enter;ok|npcen=meng jianxiong;ok|npcen=zhou yi;up;ok$
+è”£å››æ ¹$npcen=an jiangang;rd hangzhou;s;s;s;sw;sw;sw;wu;wu;wd;wd;w;s;s;wu;enter;ok|npcen=meng jianxiong;ok|npcen=zhou yi;up;ok|npcen=xin yan;ok|npcen=jiang sigen;up;ok$
+çŸ³é›™è‹±$npcen=an jiangang;rd hangzhou;s;s;s;sw;sw;sw;wu;wu;wd;wd;w;s;s;wu;enter;ok|npcen=meng jianxiong;ok|npcen=zhou yi;up;ok|npcen=xin yan;ok|npcen=jiang sigen;up;ok|npcen=shi shuangying;up;ok$
+è¡›æ˜¥è¯$npcen=an jiangang;rd hangzhou;s;s;s;sw;sw;sw;wu;wu;wd;wd;w;s;s;wu;enter;ok|npcen=meng jianxiong;ok|npcen=zhou yi;up;ok|npcen=xin yan;ok|npcen=jiang sigen;up;ok|npcen=shi shuangying;up;ok|npcen=wei chunhua;up;ok$
+æ¥Šæˆå”|éµéž­$npcen=an jiangang;rd hangzhou;s;s;s;sw;sw;sw;wu;wu;wd;wd;w;s;s;wu;enter;ok|npcen=meng jianxiong;ok|npcen=zhou yi;up;ok|npcen=xin yan;ok|npcen=jiang sigen;up;ok|npcen=shi shuangying;up;ok|npcen=wei chunhua;up;ok|npcen=yang chengxie;up;ok$
+å¾å¤©å®$npcen=an jiangang;rd hangzhou;s;s;s;sw;sw;sw;wu;wu;wd;wd;w;s;s;wu;enter;ok|npcen=meng jianxiong;ok|npcen=zhou yi;up;ok|npcen=xin yan;ok|npcen=jiang sigen;up;ok|npcen=shi shuangying;up;ok|npcen=wei chunhua;up;ok|npcen=yang chengxie;up;ok|npcen=xu tianhong;up;ok$
+å¸¸ä¼¯å¿—$npcen=an jiangang;rd hangzhou;s;s;s;sw;sw;sw;wu;wu;wd;wd;w;s;s;wu;enter;ok|npcen=meng jianxiong;ok|npcen=zhou yi;up;ok|npcen=xin yan;ok|npcen=jiang sigen;up;ok|npcen=shi shuangying;up;ok|npcen=wei chunhua;up;ok|npcen=yang chengxie;up;ok|npcen=xu tianhong;up;ok|npcen=chang bozhi;up;ok$
+å¸¸èµ«å¿—$npcen=an jiangang;rd hangzhou;s;s;s;sw;sw;sw;wu;wu;wd;wd;w;s;s;wu;enter;ok|npcen=meng jianxiong;ok|npcen=zhou yi;up;ok|npcen=xin yan;ok|npcen=jiang sigen;up;ok|npcen=shi shuangying;up;ok|npcen=wei chunhua;up;ok|npcen=yang chengxie;up;ok|npcen=xu tianhong;up;ok|npcen=chang hezhi;up;ok$
+è¶™åŠå±±$npcen=an jiangang;rd hangzhou;s;s;s;sw;sw;sw;wu;wu;wd;wd;w;s;s;wu;enter;ok|npcen=meng jianxiong;ok|npcen=zhou yi;up;ok|npcen=xin yan;ok|npcen=jiang sigen;up;ok|npcen=shi shuangying;up;ok|npcen=wei chunhua;up;ok|npcen=yang chengxie;up;ok|npcen=xu tianhong;up;ok|npcen=chang bozhi;up;ok|npcen=chang hezhi;ok|npcen=zhao banshan;up;ok$
+å‘¨ä»²è‹±$npcen=an jiangang;rd hangzhou;s;s;s;sw;sw;sw;wu;wu;wd;wd;w;s;s;wu;enter;ok|npcen=meng jianxiong;ok|npcen=zhou yi;up;ok|npcen=xin yan;ok|npcen=jiang sigen;up;ok|npcen=shi shuangying;up;ok|npcen=wei chunhua;up;ok|npcen=yang chengxie;up;ok|npcen=xu tianhong;up;ok|npcen=chang bozhi;up;ok|npcen=chang hezhi;ok|npcen=zhao banshan;up;ok|npcen=zhou zhongying;up;ok$
+é™¸è²é’$npcen=an jiangang;rd hangzhou;s;s;s;sw;sw;sw;wu;wu;wd;wd;w;s;s;wu;enter;ok|npcen=meng jianxiong;ok|npcen=zhou yi;up;ok|npcen=xin yan;ok|npcen=jiang sigen;up;ok|npcen=shi shuangying;up;ok|npcen=wei chunhua;up;ok|npcen=yang chengxie;up;ok|npcen=xu tianhong;up;ok|npcen=chang bozhi;up;ok|npcen=chang hezhi;ok|npcen=zhao banshan;up;ok|npcen=zhou zhongying;up;ok|npcen=lu feiqing;up;ok$
+ç„¡å¡µé“é•·$npcen=an jiangang;rd hangzhou;s;s;s;sw;sw;sw;wu;wu;wd;wd;w;s;s;wu;enter;ok|npcen=meng jianxiong;ok|npcen=zhou yi;up;ok|npcen=xin yan;ok|npcen=jiang sigen;up;ok|npcen=shi shuangying;up;ok|npcen=wei chunhua;up;ok|npcen=yang chengxie;up;ok|npcen=xu tianhong;up;ok|npcen=chang bozhi;up;ok|npcen=chang hezhi;ok|npcen=zhao banshan;up;ok|npcen=zhou zhongying;up;ok|npcen=lu feiqing;up;ok|npcen=wuchen daozhang;up;ok$
+é™³å®¶æ´›$npcen=an jiangang;rd hangzhou;s;s;s;sw;sw;sw;wu;wu;wd;wd;w;s;s;wu;enter;ok|npcen=meng jianxiong;ok|npcen=zhou yi;up;ok|npcen=xin yan;ok|npcen=jiang sigen;up;ok|npcen=shi shuangying;up;ok|npcen=wei chunhua;up;ok|npcen=yang chengxie;up;ok|npcen=xu tianhong;up;ok|npcen=chang bozhi;up;ok|npcen=chang hezhi;ok|npcen=zhao banshan;up;ok|npcen=zhou zhongying;up;ok|npcen=lu feiqing;up;ok|npcen=wuchen daozhang;up;ok|npcen=chen jialuo;up;ok$
+ä¹¾éš†çš‡å¸$npcen=an jiangang;rd hangzhou;s;s;s;sw;sw;sw;wu;wu;wd;wd;w;s;s;wu;enter;ok|npcen=meng jianxiong;ok|npcen=zhou yi;up;ok|npcen=xin yan;ok|npcen=jiang sigen;up;ok|npcen=shi shuangying;up;ok|npcen=wei chunhua;up;ok|npcen=yang chengxie;up;ok|npcen=xu tianhong;up;ok|npcen=chang bozhi;up;ok|npcen=chang hezhi;ok|npcen=zhao banshan;up;ok|npcen=zhou zhongying;up;ok|npcen=lu feiqing;up;ok|npcen=wuchen daozhang;up;ok|npcen=qianlong;up;ok$
 
-¡ª¡ªÍò°²ËÂ¡ª¡ª
-ÕÔÃô$npcen=zhao min;rd beijing;s;s;e;s;up;ok$
-ÕÔÒ»ÉË$npcen=zhao yishang;rd beijing;s;s;e;s;up;ok|d;n;npcen=qianfu zhang;rd beijing;w;w;n;n;w;w;w;w;w;enter;ok|npcen=zhao yishang;enter;ok$
-Ç®¶þ°Ü$npcen=qian erbai;rd beijing;s;s;e;s;up;ok|d;n;npcen=qianfu zhang;rd beijing;w;w;n;n;w;w;w;w;w;enter;ok|npcen=qian erbai;enter;ok$
-·ïÎ²¼ý|µã½ðÅÌÁú¹­$npcen=zhao yishang;rd beijing;s;s;e;s;up;ok|npcen=qian erbai;ok|d;n;npcen=qianfu zhang;rd beijing;w;w;n;n;w;w;w;w;w;enter;ok|npcen=zhao yishang;enter;ok|npcen=li sicui;ok|npcen=sun sanhui;ok$
-ÃÉ¹Å¹Ù±ø|ïÙÌú³¤Ç¹$npcen=guan bing;rd beijing;w;w;n;n;w;w;w;w;w;enter;ok$
-Ç§·ò³¤$npcen=qianfu zhang;rd beijing;w;w;n;n;w;w;w;w;w;enter;ok$
-ÀîËÄ´Ý$npcen=qianfu zhang;rd beijing;w;w;n;n;w;w;w;w;w;enter;ok|npcen=li sicui;enter;ok$
-ËïÈý»Ù$npcen=qianfu zhang;rd beijing;w;w;n;n;w;w;w;w;w;enter;ok|npcen=sun sanhui;enter;ok$
-Íõ°ËË¥$npcen=qianfu zhang;rd beijing;w;w;n;n;w;w;w;w;w;enter;ok|npcen=wang bashuai;enter;ok$
-ÎâÁùÆÆ$npcen=qianfu zhang;rd beijing;w;w;n;n;w;w;w;w;w;enter;ok|npcen=wu liupo;enter;ok$
-Ö£ÆßÃð$npcen=qianfu zhang;rd beijing;w;w;n;n;w;w;w;w;w;enter;ok|npcen=zheng qimie;enter;ok$
-ÖÜÎåÊä$npcen=qianfu zhang;rd beijing;w;w;n;n;w;w;w;w;w;enter;ok|npcen=zhou wushu;enter;ok$
-îàÉ®|Í­îà$rd beijing;w;w;n;n;w;w;w;w;w;enter;kill qianfu zhang | enter;kill zhao yishang | npcen=bo seng;n;n;n;ok$
-µ¶É®|¸Öµ¶(°×É«)$ îàÉ® #2 n
-ÕÈÉ®|¾«ÌúÕÈ(»ÒÉ«)$ µ¶É® up
-½£É®|¸Ö½£(°×É«)$ ÕÈÉ® up
-¡ª¡ªºÚÄ¾ÑÂ¡ª¡ª
-É£ÈýÄï$npcen=sang sanniang;rd beijing;w;w;n;n;w;w;w;w;w;w;w;sw;e;su;ok$
-ÊÌÅ®$npcen=shi nv;rd beijing;w;w;n;n;w;w;w;w;w;w;w;sw;e;e;e;ok$
-ÈÎÓ¯Ó¯$npcen=ren yingying;rd beijing;w;w;n;n;w;w;w;w;w;w;w;sw;e;e;e;ok$
-ÈÕÔÂÉñ½Ì½ÌÍ½$npcen=jiao tu;rd beijing;w;w;n;n;w;w;w;w;w;w;w;sw;w;n;su;ok$
-Ïã²è$rd beijing;npcen=get;w;w;n;n;w;w;w;w;w;w;w;sw;w;n;su;s;w;ok|e;n;nd;e;s;s;w;w;s;s;s;e;ok$
-ÎåÏã²èÒ¶µ°$rd huashan;npcen=seller;buy=1;nw;w;w;s;ok$
-Í¯°ÙÐÜ$npcen=tongbai xiong;rd beijing;w;w;n;n;w;w;w;w;w;w;w;sw;w;n;su;s;s;s;ok$
-×Ï½ð´¸|·çÀ×ÌÃÁîÅÆ$npcen=tongbai xiong;rd beijing;w;w;n;n;w;w;w;w;w;w;w;sw;w;n;su;s;s;s;ok$
-ÉÏ¹ÙÔÆ|´óÕäÖé$npcen=shangguan yun;rd beijing;w;w;n;n;w;w;w;w;w;w;w;sw;w;n;e;s;s;w;w;s;s;ok$
-»ÅÕÅµÄÊÌÅ®|ÇàÁúÌÃÁîÅÆ$npcen=shi nv;rd beijing;w;w;n;n;w;w;w;w;w;w;w;sw;w;w;su;s;s;ok$
-¼Ö²¼$npcen=jia bu;rd beijing;w;w;n;n;w;w;w;w;w;w;w;sw;w;w;su;s;s;s;ok$
-ºÚÒÂÈË$npcen=heiyi ren;rd beijing;w;w;n;n;w;w;w;w;w;w;w;sw;w;w;w;n;ok$
-Íõ³Ï$npcen=wang cheng;rd beijing;w;w;n;n;w;w;w;w;w;w;w;sw;w;w;w;n;ok$
-ÕÔº×|À×Õðµ²|ÉÏµÈÑÌ²Ý$npcen=zhao he;rd heimuya;ed;ed;ok$
-·¶ËÉ|´ó¸«$npcen=fan song;rd heimuya;ed;ed;ed;ok$
-»Æ²®Á÷$npcen=huang boliu;rd heimuya;ed;ed;ed;ed;ed;ed;ok$
-ÕÅ³Ë·ç$npcen=zhang chengfeng;rd heimuya;ok$
-ÕÅ³ËÔÆ$npcen=zhang chengyun;rd heimuya;ed;ok$
+â”€â”€è¬å®‰å¯ºâ”€â”€
+è¶™æ•$npcen=zhao min;rd beijing;s;s;e;s;up;ok$
+è¶™ä¸€å‚·$npcen=zhao yishang;rd beijing;s;s;e;s;up;ok|d;n;npcen=qianfu zhang;rd beijing;w;w;n;n;w;w;w;w;w;enter;ok|npcen=zhao yishang;enter;ok$
+éŒ¢äºŒæ•—$npcen=qian erbai;rd beijing;s;s;e;s;up;ok|d;n;npcen=qianfu zhang;rd beijing;w;w;n;n;w;w;w;w;w;enter;ok|npcen=qian erbai;enter;ok$
+é³³å°¾ç®­|é»žé‡‘ç›¤é¾å¼“$npcen=zhao yishang;rd beijing;s;s;e;s;up;ok|npcen=qian erbai;ok|d;n;npcen=qianfu zhang;rd beijing;w;w;n;n;w;w;w;w;w;enter;ok|npcen=zhao yishang;enter;ok|npcen=li sicui;ok|npcen=sun sanhui;ok$
+è’™å¤å®˜å…µ|é‘Œéµé•·æ§$npcen=guan bing;rd beijing;w;w;n;n;w;w;w;w;w;enter;ok$
+åƒå¤«é•·$npcen=qianfu zhang;rd beijing;w;w;n;n;w;w;w;w;w;enter;ok$
+æŽå››æ‘§$npcen=qianfu zhang;rd beijing;w;w;n;n;w;w;w;w;w;enter;ok|npcen=li sicui;enter;ok$
+å­«ä¸‰æ¯€$npcen=qianfu zhang;rd beijing;w;w;n;n;w;w;w;w;w;enter;ok|npcen=sun sanhui;enter;ok$
+çŽ‹å…«è¡°$npcen=qianfu zhang;rd beijing;w;w;n;n;w;w;w;w;w;enter;ok|npcen=wang bashuai;enter;ok$
+å³å…­ç ´$npcen=qianfu zhang;rd beijing;w;w;n;n;w;w;w;w;w;enter;ok|npcen=wu liupo;enter;ok$
+é„­ä¸ƒæ»…$npcen=qianfu zhang;rd beijing;w;w;n;n;w;w;w;w;w;enter;ok|npcen=zheng qimie;enter;ok$
+å‘¨äº”è¼¸$npcen=qianfu zhang;rd beijing;w;w;n;n;w;w;w;w;w;enter;ok|npcen=zhou wushu;enter;ok$
+éˆ¸åƒ§|éŠ…éˆ¸$rd beijing;w;w;n;n;w;w;w;w;w;enter;kill qianfu zhang | enter;kill zhao yishang | npcen=bo seng;n;n;n;ok$
+åˆ€åƒ§|é‹¼åˆ€(ç™½è‰²)$ éˆ¸åƒ§ #2 n
+æ–åƒ§|ç²¾éµæ–(ç°è‰²)$ åˆ€åƒ§ up
+åŠåƒ§|é‹¼åŠ(ç™½è‰²)$ æ–åƒ§ up
+â”€â”€é»‘æœ¨å´–â”€â”€
+æ¡‘ä¸‰å¨˜$npcen=sang sanniang;rd beijing;w;w;n;n;w;w;w;w;w;w;w;sw;e;su;ok$
+ä¾å¥³$npcen=shi nv;rd beijing;w;w;n;n;w;w;w;w;w;w;w;sw;e;e;e;ok$
+ä»»ç›ˆç›ˆ$npcen=ren yingying;rd beijing;w;w;n;n;w;w;w;w;w;w;w;sw;e;e;e;ok$
+æ—¥æœˆç¥žæ•™æ•™å¾’$npcen=jiao tu;rd beijing;w;w;n;n;w;w;w;w;w;w;w;sw;w;n;su;ok$
+é¦™èŒ¶$rd beijing;npcen=get;w;w;n;n;w;w;w;w;w;w;w;sw;w;n;su;s;w;ok|e;n;nd;e;s;s;w;w;s;s;s;e;ok$
+äº”é¦™èŒ¶è‘‰è›‹$rd huashan;npcen=seller;buy=1;nw;w;w;s;ok$
+ç«¥ç™¾ç†Š$npcen=tongbai xiong;rd beijing;w;w;n;n;w;w;w;w;w;w;w;sw;w;n;su;s;s;s;ok$
+ç´«é‡‘éŒ˜|é¢¨é›·å ‚ä»¤ç‰Œ$npcen=tongbai xiong;rd beijing;w;w;n;n;w;w;w;w;w;w;w;sw;w;n;su;s;s;s;ok$
+ä¸Šå®˜é›²|å¤§çç $npcen=shangguan yun;rd beijing;w;w;n;n;w;w;w;w;w;w;w;sw;w;n;e;s;s;w;w;s;s;ok$
+æ…Œå¼µçš„ä¾å¥³|é’é¾å ‚ä»¤ç‰Œ$npcen=shi nv;rd beijing;w;w;n;n;w;w;w;w;w;w;w;sw;w;w;su;s;s;ok$
+è³ˆå¸ƒ$npcen=jia bu;rd beijing;w;w;n;n;w;w;w;w;w;w;w;sw;w;w;su;s;s;s;ok$
+é»‘è¡£äºº$npcen=heiyi ren;rd beijing;w;w;n;n;w;w;w;w;w;w;w;sw;w;w;w;n;ok$
+çŽ‹èª $npcen=wang cheng;rd beijing;w;w;n;n;w;w;w;w;w;w;w;sw;w;w;w;n;ok$
+è¶™é¶´|é›·éœ‡æ“‹|ä¸Šç­‰ç…™è‰$npcen=zhao he;rd heimuya;ed;ed;ok$
+èŒƒé¬†|å¤§æ–§$npcen=fan song;rd heimuya;ed;ed;ed;ok$
+é»ƒä¼¯æµ$npcen=huang boliu;rd heimuya;ed;ed;ed;ed;ed;ed;ok$
+å¼µä¹˜é¢¨$npcen=zhang chengfeng;rd heimuya;ok$
+å¼µä¹˜é›²$npcen=zhang chengyun;rd heimuya;ed;ok$
 
-¡ª¡ª´óÀí¡ª¡ª
-½­ºþÒÕÈË$npcen=jianghu yiren;rd dali;ok$
-ÐûÍþ»ðÍÈ|Ò¶¶ùôÎ|²èºø|¹ýÇÅÃ×Ïß|Æû¹ø¼¦$npcen=xiao er;buy=1;rd dali;e;ok$
-ÄÏ¹ú¹ÃÄï$npcen=girl;rd dali;s;e;s;ok$
-°×³ñÉÀ$npcen=girl;rd dali;s;e;s;ok|npcen=gong nv;n;w;n;n;n;w;n;n;n;n;ok$
-°ÚÒÄÀÏÛÅ$npcen=old man;rd dali;s;e;s;ok$
-¸èÅ®|ÑþÇÙ$npcen=ge nv;rd dali;e;up;ok$
-°ÚÒÄÐ¡º¢$rd dali;npcen=kid;n;w;ok|e;s;n;n;n;e;eu;e;ed;se;ed;e;e;eu;e;se;e;s;up;ok$
-Ò»µÆ´óÊ¦$npcen=yideng dashi;rd dali;n;w;w;ok$
-»Ò²¼ôÂôÄ$npcen=yideng dashi;rd dali;n;w;w;ok$
-ºÎºìÒ©$npcen=he hongyao;rd dali;n;e;s;ok$
-Ñ¦ÀÏ°å$npcen=xue laoban;rd dali;n;e;n;ok$
-°×É´ÌôÏßÏâ±ßÈ¹|¶ÔñÆ¹Ó×Ó|Ðå»¨Ð¡Ð¬|Õ­ñÌ°À$npcen=xue laoban;buy=1;rd dali;n;e;n;ok$
-Ê¯½³$npcen=shi jiang;rd dali;n;e;e;ok$
-ºúÒÝÖ®$npcen=hu yizhi;rd dali;n;n;ok$
-½õÒÂÎÀÊ¿$npcen=wei shi;rd dali;n;n;w;ok|e;e;n;ok|ok|ok$
-½õÒÂ¾ü·þ$npcen=wei shi;rd dali;n;n;w;ok|e;e;n;ok|ok|ok$
-¶ÎÕýÃ÷$npcen=duan zhengming;rd dali;n;n;w;n;n;ok$
-¹¬Å®$npcen=gong nv;rd dali;n;n;w;n;n;n;n;ok$
-¸µË¼¹é$npcen=fu sigui;rd dali;n;n;e;ok$
-ÊìÍ­¹÷$npcen=fu sigui;rd dali;n;n;e;ok$
-Ê¿±ø|»ÆÒÂ¾ü·þ$npcen=shi bing;rd dali;n;n;n;ok|s;s;s;s;s;ok$
-ñÒÍòÀï|µö¸Ë$npcen=chu wanli;rd dali;n;n;e;n;ok$
-»ÆÒÂÎÀÊ¿$npcen=wei shi;rd dali;n;n;e;n;ok|ok$
-¶ÎÎÞÎ·$npcen=duan wuwei;rd dali;n;n;e;n;enter;e;e;n;ok$
-¹ÅóÆ³Ï$npcen=gu ducheng;rd dali;n;n;e;n;enter;e;e;n;n;ok$
-Öìµ¤³¼$npcen=zhu danchen;rd dali;n;n;e;n;enter;e;e;n;n;e;ok$
-´óÀíÑ©Àæ$rd dali;npcen=get;n;n;e;n;enter;e;e;n;n;w;ok$
-»ôÏÈÉú$npcen=huo xiansheng;rd dali;n;n;e;n;enter;w;ok$
-É½²è»¨$rd dali;npcen=get;n;n;e;n;enter;n;ok|s;out;s;w;n;e;eu;ok|s;ok|n;e;ok$
-¶¾·ä$npcen=;rd dali;n;n;n;e;eu;n;ok
-»ªºÕôÞ$npcen=hua hegen;rd dali;n;n;e;n;enter;n;w;ok$
-·¶æè$npcen=fan ye;rd dali;n;n;e;n;enter;n;e;ok$
-°ÍÌìÊ¯$npcen=ba tianshi;rd dali;n;n;e;n;enter;n;n;ok$
-Ñø»¨Å®$npcen=yanghua nv;rd dali;n;n;e;n;enter;e;e;e;e;ok|se;ne;ok$
-ÂäµÚÐã²Å$rd dali;npcen=get;n;n;e;n;enter;e;e;e;e;ok$
-°ËÏÉ¹ýº£$rd dali;npcen=get;n;n;e;n;enter;e;e;e;e;se;ok$
-°Ë±¦×±|ÑÛ¶ùÃÄ|ÂúÔÂ$rd dali;npcen=get;n;n;e;n;enter;e;e;e;e;ne;ok$
-ÆßÏÉÅ®$rd dali;npcen=get;n;n;e;n;enter;e;e;e;e;ne;n;ok$
-ºì×±ËØ¹ü|ÒÐÀ¸½¿|×¥ÆÆÃÀÈËÁ³$rd dali;npcen=get;n;n;e;n;enter;e;e;e;e;se;ne;ok$
-Ê®°ËÑ§Ê¿|Ê®ÈýÌ«±£|·ç³¾ÈýÏÀ$rd dali;npcen=get;n;n;e;n;enter;e;e;e;e;ne;n;n;e;ok$
-Ä¾ÍñÇå$npcen=mu wanqing;rd dali;n;n;e;n;enter;e;e;e;e;ne;n;n;nu;ok$
-¶þÇÇ$rd dali;npcen=get;n;n;e;n;enter;e;e;e;e;ne;n;n;nu;ok$
-¡¸Æ½Í¨ïÚ¾Ö¡¹ïÚÍ·$npcen=biao tou;rd dali;rd dali;s;s;e;ne;n;nu;ok$
-É®ÈË$npcen=seng ren;rd dali;n;n;n;e;eu;e;ed;se;ed;e;ok$
-¹ó¹«×Ó$rd dali;npcen=gongzi;n;n;n;e;eu;e;ed;se;ed;e;e;eu;e;ok$
-¶ñÅ«$npcen=e nu;rd dali;n;n;n;e;eu;e;ed;se;ed;e;e;eu;e;ok$
-Å©·ò|Ã«Ìº$npcen=nong fu;rd dali;s;s;e;ne;n;nu;eu;ed;e;ne;e;ok|e;ok|se;eu;ed;ne;ok$
-Ë®Å£$npcen=shui niu;rd dali;s;s;e;ne;n;nu;eu;ed;e;ne;e;ok|e;se;eu;ed;ne;e;ok$
-É½Ñò$npcen=shan yang;rd dali;s;s;e;ne;n;nu;eu;ed;e;ne;e;s;ok|n;e;se;eu;ed;ne;e;ok$
-Ì¨ÒÄÉÌ··$npcen=shang fan;rd dali;s;s;s;s;s;s;s;e;ok|rd dali;s;s;e;ne;n;nu;eu;ed;e;ne;e;e;se;eu;ed;ok|su;sw;su;sd;e;ok$
-°ÚÒÄ¶ÌÈ¹$npcen=shang fan;rd dali;s;s;e;ne;n;nu;eu;ed;e;ne;e;e;se;eu;ed;ok|su;sw;su;sd;e;ok$
-²ÉÉ£Å®$npcen=caisang nv;rd dali;s;s;e;ne;n;nu;eu;ed;e;ne;e;e;se;eu;ed;su;ok$
-¼ÀË¾$npcen=ji si;rd dali;s;s;s;s;s;s;s;e;n;up;up;ok$
-ÀÏ¼ÀË¾$npcen=lao jisi;rd dali;n;n;n;e;eu;e;ed;se;ed;e;e;eu;e;se;e;ok|e;se;eu;ed;ne;e;up;ok$
-²ÉËñÈË$npcen=caisun ren;rd dali;n;n;n;e;eu;e;ed;se;ed;e;e;eu;e;se;ok|e;e;se;eu;ed;su;sw;su;ok$
-¿³µ¶$npcen=caisun ren;rd dali;n;n;n;e;eu;e;ed;se;ed;e;e;eu;e;se;ok|e;e;se;eu;ed;su;sw;su;ok|npcen=kan zhuren;sd;ok$
-¿³ÖñÈË$npcen=kanzhu ren;rd dali;n;n;n;e;eu;e;ed;se;ed;e;e;eu;e;se;ok|e;e;se;eu;ed;su;sw;su;sd;ok$
-Ñø²ÏÅ®$npcen=yangcan nv;rd dali;n;n;n;e;eu;e;ed;se;ed;e;e;eu;e;se;ok|e;e;se;eu;ed;su;sw;su;sd;e;e;ok$
-ÂéÈ¸$rd dali;npcen=maque;s;s;e;ne;n;ok$
-Ð¡µÀ¹Ã$npcen=xiao daogu;rd dali;s;s;e;ne;n;w;n;ok$
-µ¶°×·ï$npcen=dao baifeng;rd dali;s;s;e;ne;n;w;n;n;ok$
-·÷³¾$npcen=dao baifeng;rd dali;s;s;e;ne;n;w;n;n;ok|s;s;e;rd emei;npcen=get;wu;wu;wu;wu;su;su;su;sw;ok|su;se;wu;su;se;enter;s;e;s;s;s;ok$
-´å¸¾$npcen=cun fu;rd dali;rd dali;s;s;e;ne;n;nu;eu;ed;e;ok$
-ÊÌÕß$npcen=shi zhe;rd dali;s;s;s;w;w;enter;ok$
-¸ßÉýÌ©|×ÏÅÛ|ÌúµÑ$npcen=gao shengtai;rd dali;s;s;s;w;w;enter;n;ok$
-ËØÒÂÎÀÊ¿$npcen=wei shi;rd dali;s;s;s;w;w;enter;n;ok$
-Åã´Ó$npcen=pei cong;rd dali;s;s;s;w;w;enter;n;up;w;enter;ok$
-´ö×åÊ×Áì|Âùµ¶|»¢Æ¤$npcen=daizu shouling;rd dali;s;s;s;w;w;enter;n;up;e;e;enter;ok$
-Æ¤ôÃ$npcen=pihuo shang;buy=1;rd guanwai;ok$
-°×»¢Æ¤ôÃ$npcen=li lishi;rd beijing;e;e;n;w;ok|npcen=gui zhong;w;n;n;n;ok$
-ÎÞÁ¿½£µÜ×Ó$npcen=wuliang dizi;rd dali;s;s;s;w;w;w;nw;ok$
-ÉñÅ©°ïµÜ×Ó$npcen=shennong dizi;rd dali;s;s;s;w;w;w;nw;ne;ok$
-Ê¢Æ¤ÂÞ¿ÍÉÌ$npcen=ke shang;rd dali;s;s;s;s;s;s;ok$
-Ò°ÍÃ|ÍÃÈâ$npcen=ye tu;rd dali;s;s;s;se;ok$
-°×ºÏ»¨$rd dali;npcen=get;s;s;s;se;se;e;ok$
-Ì¨ÒÄ¹ÃÄï$npcen=gu niang;rd dali;s;s;s;s;s;s;sw;sw;ok$
-Í²È¹$npcen=gu niang;rd dali;s;s;s;s;s;s;sw;sw;ok|npcen=nong fu;s;ok|npcen=caisun ren;n;w;ok$
-Ì¨ÒÄÅ©¸¾$npcen=nong fu;rd dali;s;s;s;s;s;s;sw;sw;s;ok|n;ne;ne;s;e;s;ok$
-Ì¨ÒÄ¶ÌÈ¹$npcen=shang fan;rd dali;s;s;s;s;s;s;s;e;ok|w;se;sw;ok$
-Ì¨ÒÄÍ·½í$npcen=shang fan;rd dali;s;s;s;s;s;s;s;e;ok|npcen=lie ren;e;ok|npcen=shang fan;w;w;se;sw;ok$
-×å³¤$npcen=zu zhang;rd dali;s;s;s;s;s;s;s;e;n;up;ok$
-ÁÔÈË$npcen=lie ren;rd dali;#4 n;nw;n;nw;sw;ok|ne;n;ok$
-Ì¨ÒÄÁÔÈË|Ô²ÁìÐ¡°À$npcen=lie ren;rd dali;s;s;s;s;s;s;s;e;e;ok|w;w;se;sw;s;ok$
-Ì¨ÒÄ¸¾Å®$npcen=fu nv;rd dali;s;s;s;s;s;s;s;se;sw;w;ok$
-Óæ·ò$npcen=yu fu;rd dali;s;s;s;s;s;s;s;se;sw;n;ok|rd suzhou;s;s;s;s;s;sw;ok$
-°ÚÒÄÅ®×Ó$rd dali;npcen=girl;#7 n;ok$
-Ò°Ñ¼$rd dali;npcen=duck;#7 n;nw;sd;ok$
-ÎÚÒÄÉÌ··$npcen=shang fan;rd dali;#4 n;nw;n;ok|ok|nw;n;n;n;nu;ok$
-ÎÚÒÄ´ó÷â$npcen=lie ren;rd dali;#4 n;nw;n;nw;sw;ok|ne;n;ok$
-É¨µØÉ®$npcen=saodi seng;rd dali;#4 n;nw;n;ne;e;s;s;ok$
-ÇàÉ«ôÂôÄ$npcen=saodi seng;rd dali;#4 n;nw;n;ne;e;s;s;ok|npcen=laonian sengren;s;e;s;s;w;s;s;w;s;ok$
-»¤ËþÉ®$npcen=huta seng;rd dali;#4 n;nw;n;ne;e;s;s;s;ok$
-Ð¡É³ÃÖ|»ÆÉ«ôÂôÄ$npcen=xiao shami;rd dali;#4 n;nw;n;ne;e;s;s;s;e;ok|w;w;ok|s;s;ok|e;e;ok$
-ÀÏÄêÉ®ÈË$npcen=laonian sengren;rd dali;#4 n;nw;n;ne;e;s;s;s;e;s;s;w;s;s;w;s;ok$
-½õºÐ$rd dali;npcen=pushin;#4 n;nw;n;ne;e;s;s;s;e;s;s;w;s;s;w;s;se;pushin xiang lu$
-¿ÝÈÙ´óÊ¦$rd dali;npcen=kurong;#4 n;nw;n;ne;e;s;s;s;e;ok|s;s;w;s;s;s;s;s;s;ok$
-±¾²Î$npcen=ben can;rd dali;#4 n;nw;n;ne;e;s;s;s;e;ok|s;s;w;s;s;s;s;s;s;ok$
-±¾¹Û$npcen=ben guan;rd dali;#4 n;nw;n;ne;e;s;s;s;e;ok|s;s;w;s;s;s;s;s;s;ok$
-±¾Ïà$npcen=ben xiang;rd dali;#4 n;nw;n;ne;e;s;s;s;e;ok|s;s;w;s;s;s;s;s;s;ok$
-±¾Òò$npcen=ben yin;rd dali;#4 n;nw;n;ne;e;s;s;s;e;ok|s;s;w;s;s;s;s;s;s;ok$
-ÄÁÑòÅ®|ÎÚÒÄ³¤È¹$npcen=muyang nv;rd dali;#4 n;nw;n;nw;n;n;n;nu;e;n;ok|s;e;ok|w;rd dali;n;n;n;w;w;wu;wd;wd;n;ok$
-ÄÁÑòÈË$npcen=muyang ren;rd dali;#4 n;nw;n;nw;n;n;n;nu;e;e;ok|w;rd dali;n;n;n;w;w;wu;wd;wd;n;n;ok$
-ÆÆÒÉ$npcen=po yi;rd dali;n;n;n;w;w;nu;ok$
-ÆÆàÁ$npcen=po chen;rd dali;n;n;n;w;w;nu;ok$
-ÎÚÒÄÀÏ¼ÀË¾$npcen=lao jisi;rd dali;n;n;n;w;w;wu;wd;wd;n;w;enter;ok$
-ÉÙÅ®$npcen=shao nv;rd dali;n;n;n;w;w;wu;wd;wd;s;s;se;ok$
-·ÄÉ´Å®$npcen=fang shanv;rd dali;s;s;e;ne;n;nu;eu;ed;e;ne;e;e;ok|se;eu;ed;sw;su;sd;e;n;e;up;ok$
-·ÄÉ´»ú$rd dali;npcen=get;s;s;e;ne;n;nu;eu;ed;e;ne;e;e;ok|se;eu;ed;sw;su;sd;e;n;e;up;ok$
-ºÚÉ«¾¢×°$npcen=jianghu haoke;rd dali;n;n;n;n;n;n;n;n;nw;nd;w;w;w;wu;su;wu;ok$
-×åÍ·ÈË$npcen=zu touren;rd dali;s;w;n;enter;up;ok$
-´óÍÁË¾|±´¿ÇÏîÁ´$npcen=da tusi;rd dali;s;w;n;ok|enter;up;ok$
+â”€â”€å¤§ç†â”€â”€
+æ±Ÿæ¹–è—äºº$npcen=jianghu yiren;rd dali;ok$
+å®£å¨ç«è…¿|è‘‰å…’ç²‘|èŒ¶å£º|éŽæ©‹ç±³ç·š|æ±½é‹é›ž$npcen=xiao er;buy=1;rd dali;e;ok$
+å—åœ‹å§‘å¨˜$npcen=girl;rd dali;s;e;s;ok$
+ç™½ç¶¢è¡«$npcen=girl;rd dali;s;e;s;ok|npcen=gong nv;n;w;n;n;n;w;n;n;n;n;ok$
+æ“ºå¤·è€åŸ$npcen=old man;rd dali;s;e;s;ok$
+æ­Œå¥³|ç‘¤ç´$npcen=ge nv;rd dali;e;up;ok$
+æ“ºå¤·å°å­©$rd dali;npcen=kid;n;w;ok|e;s;n;n;n;e;eu;e;ed;se;ed;e;e;eu;e;se;e;s;up;ok$
+ä¸€ç‡ˆå¤§å¸«$npcen=yideng dashi;rd dali;n;w;w;ok$
+ç°å¸ƒè¢ˆè£Ÿ$npcen=yideng dashi;rd dali;n;w;w;ok$
+ä½•ç´…è—¥$npcen=he hongyao;rd dali;n;e;s;ok$
+è–›è€æ¿$npcen=xue laoban;rd dali;n;e;n;ok$
+ç™½ç´—æŒ‘ç·šé‘²é‚Šè£™|å°è¡¿è¤‚å­|ç¹¡èŠ±å°éž‹|çª„è£‰è¥–$npcen=xue laoban;buy=1;rd dali;n;e;n;ok$
+çŸ³åŒ $npcen=shi jiang;rd dali;n;e;e;ok$
+èƒ¡é€¸ä¹‹$npcen=hu yizhi;rd dali;n;n;ok$
+éŒ¦è¡£è¡›å£«$npcen=wei shi;rd dali;n;n;w;ok|e;e;n;ok|ok|ok$
+éŒ¦è¡£è»æœ$npcen=wei shi;rd dali;n;n;w;ok|e;e;n;ok|ok|ok$
+æ®µæ­£æ˜Ž$npcen=duan zhengming;rd dali;n;n;w;n;n;ok$
+å®®å¥³$npcen=gong nv;rd dali;n;n;w;n;n;n;n;ok$
+å‚…æ€æ­¸$npcen=fu sigui;rd dali;n;n;e;ok$
+ç†ŸéŠ…æ£$npcen=fu sigui;rd dali;n;n;e;ok$
+å£«å…µ|é»ƒè¡£è»æœ$npcen=shi bing;rd dali;n;n;n;ok|s;s;s;s;s;ok$
+è¤šè¬è£¡|é‡£æ¡¿$npcen=chu wanli;rd dali;n;n;e;n;ok$
+é»ƒè¡£è¡›å£«$npcen=wei shi;rd dali;n;n;e;n;ok|ok$
+æ®µç„¡ç•$npcen=duan wuwei;rd dali;n;n;e;n;enter;e;e;n;ok$
+å¤ç¯¤èª $npcen=gu ducheng;rd dali;n;n;e;n;enter;e;e;n;n;ok$
+æœ±ä¸¹è‡£$npcen=zhu danchen;rd dali;n;n;e;n;enter;e;e;n;n;e;ok$
+å¤§ç†é›ªæ¢¨$rd dali;npcen=get;n;n;e;n;enter;e;e;n;n;w;ok$
+éœå…ˆç”Ÿ$npcen=huo xiansheng;rd dali;n;n;e;n;enter;w;ok$
+å±±èŒ¶èŠ±$rd dali;npcen=get;n;n;e;n;enter;n;ok|s;out;s;w;n;e;eu;ok|s;ok|n;e;ok$
+æ¯’èœ‚$npcen=;rd dali;n;n;n;e;eu;n;ok
+è¯èµ«è‰®$npcen=hua hegen;rd dali;n;n;e;n;enter;n;w;ok$
+èŒƒé©Š$npcen=fan ye;rd dali;n;n;e;n;enter;n;e;ok$
+å·´å¤©çŸ³$npcen=ba tianshi;rd dali;n;n;e;n;enter;n;n;ok$
+é¤ŠèŠ±å¥³$npcen=yanghua nv;rd dali;n;n;e;n;enter;e;e;e;e;ok|se;ne;ok$
+è½ç¬¬ç§€æ‰$rd dali;npcen=get;n;n;e;n;enter;e;e;e;e;ok$
+å…«ä»™éŽæµ·$rd dali;npcen=get;n;n;e;n;enter;e;e;e;e;se;ok$
+å…«å¯¶å¦|çœ¼å…’åªš|æ»¿æœˆ$rd dali;npcen=get;n;n;e;n;enter;e;e;e;e;ne;ok$
+ä¸ƒä»™å¥³$rd dali;npcen=get;n;n;e;n;enter;e;e;e;e;ne;n;ok$
+ç´…å¦ç´ è£¹|å€šæ¬„å¬Œ|æŠ“ç ´ç¾Žäººè‡‰$rd dali;npcen=get;n;n;e;n;enter;e;e;e;e;se;ne;ok$
+åå…«å­¸å£«|åä¸‰å¤ªä¿|é¢¨å¡µä¸‰ä¿ $rd dali;npcen=get;n;n;e;n;enter;e;e;e;e;ne;n;n;e;ok$
+æœ¨å©‰æ¸…$npcen=mu wanqing;rd dali;n;n;e;n;enter;e;e;e;e;ne;n;n;nu;ok$
+äºŒå–¬$rd dali;npcen=get;n;n;e;n;enter;e;e;e;e;ne;n;n;nu;ok$
+ã€Œå¹³é€šé¢å±€ã€é¢é ­$npcen=biao tou;rd dali;rd dali;s;s;e;ne;n;nu;ok$
+åƒ§äºº$npcen=seng ren;rd dali;n;n;n;e;eu;e;ed;se;ed;e;ok$
+è²´å…¬å­$rd dali;npcen=gongzi;n;n;n;e;eu;e;ed;se;ed;e;e;eu;e;ok$
+æƒ¡å¥´$npcen=e nu;rd dali;n;n;n;e;eu;e;ed;se;ed;e;e;eu;e;ok$
+è¾²å¤«|æ¯›æ¯¯$npcen=nong fu;rd dali;s;s;e;ne;n;nu;eu;ed;e;ne;e;ok|e;ok|se;eu;ed;ne;ok$
+æ°´ç‰›$npcen=shui niu;rd dali;s;s;e;ne;n;nu;eu;ed;e;ne;e;ok|e;se;eu;ed;ne;e;ok$
+å±±ç¾Š$npcen=shan yang;rd dali;s;s;e;ne;n;nu;eu;ed;e;ne;e;s;ok|n;e;se;eu;ed;ne;e;ok$
+å°å¤·å•†è²©$npcen=shang fan;rd dali;s;s;s;s;s;s;s;e;ok|rd dali;s;s;e;ne;n;nu;eu;ed;e;ne;e;e;se;eu;ed;ok|su;sw;su;sd;e;ok$
+æ“ºå¤·çŸ­è£™$npcen=shang fan;rd dali;s;s;e;ne;n;nu;eu;ed;e;ne;e;e;se;eu;ed;ok|su;sw;su;sd;e;ok$
+æŽ¡æ¡‘å¥³$npcen=caisang nv;rd dali;s;s;e;ne;n;nu;eu;ed;e;ne;e;e;se;eu;ed;su;ok$
+ç¥­å¸$npcen=ji si;rd dali;s;s;s;s;s;s;s;e;n;up;up;ok$
+è€ç¥­å¸$npcen=lao jisi;rd dali;n;n;n;e;eu;e;ed;se;ed;e;e;eu;e;se;e;ok|e;se;eu;ed;ne;e;up;ok$
+æŽ¡ç­äºº$npcen=caisun ren;rd dali;n;n;n;e;eu;e;ed;se;ed;e;e;eu;e;se;ok|e;e;se;eu;ed;su;sw;su;ok$
+ç åˆ€$npcen=caisun ren;rd dali;n;n;n;e;eu;e;ed;se;ed;e;e;eu;e;se;ok|e;e;se;eu;ed;su;sw;su;ok|npcen=kan zhuren;sd;ok$
+ç ç«¹äºº$npcen=kanzhu ren;rd dali;n;n;n;e;eu;e;ed;se;ed;e;e;eu;e;se;ok|e;e;se;eu;ed;su;sw;su;sd;ok$
+é¤Šè ¶å¥³$npcen=yangcan nv;rd dali;n;n;n;e;eu;e;ed;se;ed;e;e;eu;e;se;ok|e;e;se;eu;ed;su;sw;su;sd;e;e;ok$
+éº»é›€$rd dali;npcen=maque;s;s;e;ne;n;ok$
+å°é“å§‘$npcen=xiao daogu;rd dali;s;s;e;ne;n;w;n;ok$
+åˆ€ç™½é³³$npcen=dao baifeng;rd dali;s;s;e;ne;n;w;n;n;ok$
+æ‹‚å¡µ$npcen=dao baifeng;rd dali;s;s;e;ne;n;w;n;n;ok|s;s;e;rd emei;npcen=get;wu;wu;wu;wu;su;su;su;sw;ok|su;se;wu;su;se;enter;s;e;s;s;s;ok$
+æ‘å©¦$npcen=cun fu;rd dali;rd dali;s;s;e;ne;n;nu;eu;ed;e;ok$
+ä¾è€…$npcen=shi zhe;rd dali;s;s;s;w;w;enter;ok$
+é«˜å‡æ³°|ç´«è¢|éµç¬›$npcen=gao shengtai;rd dali;s;s;s;w;w;enter;n;ok$
+ç´ è¡£è¡›å£«$npcen=wei shi;rd dali;s;s;s;w;w;enter;n;ok$
+é™ªå¾ž$npcen=pei cong;rd dali;s;s;s;w;w;enter;n;up;w;enter;ok$
+å‚£æ—é¦–é ˜|è »åˆ€|è™Žçš®$npcen=daizu shouling;rd dali;s;s;s;w;w;enter;n;up;e;e;enter;ok$
+çš®è£˜$npcen=pihuo shang;buy=1;rd guanwai;ok$
+ç™½è™Žçš®è£˜$npcen=li lishi;rd beijing;e;e;n;w;ok|npcen=gui zhong;w;n;n;n;ok$
+ç„¡é‡åŠå¼Ÿå­$npcen=wuliang dizi;rd dali;s;s;s;w;w;w;nw;ok$
+ç¥žè¾²å¹«å¼Ÿå­$npcen=shennong dizi;rd dali;s;s;s;w;w;w;nw;ne;ok$
+ç››çš®ç¾…å®¢å•†$npcen=ke shang;rd dali;s;s;s;s;s;s;ok$
+é‡Žå…”|å…”è‚‰$npcen=ye tu;rd dali;s;s;s;se;ok$
+ç™½åˆèŠ±$rd dali;npcen=get;s;s;s;se;se;e;ok$
+å°å¤·å§‘å¨˜$npcen=gu niang;rd dali;s;s;s;s;s;s;sw;sw;ok$
+ç­’è£™$npcen=gu niang;rd dali;s;s;s;s;s;s;sw;sw;ok|npcen=nong fu;s;ok|npcen=caisun ren;n;w;ok$
+å°å¤·è¾²å©¦$npcen=nong fu;rd dali;s;s;s;s;s;s;sw;sw;s;ok|n;ne;ne;s;e;s;ok$
+å°å¤·çŸ­è£™$npcen=shang fan;rd dali;s;s;s;s;s;s;s;e;ok|w;se;sw;ok$
+å°å¤·é ­å·¾$npcen=shang fan;rd dali;s;s;s;s;s;s;s;e;ok|npcen=lie ren;e;ok|npcen=shang fan;w;w;se;sw;ok$
+æ—é•·$npcen=zu zhang;rd dali;s;s;s;s;s;s;s;e;n;up;ok$
+çµäºº$npcen=lie ren;rd dali;#4 n;nw;n;nw;sw;ok|ne;n;ok$
+å°å¤·çµäºº|åœ“é ˜å°è¥–$npcen=lie ren;rd dali;s;s;s;s;s;s;s;e;e;ok|w;w;se;sw;s;ok$
+å°å¤·å©¦å¥³$npcen=fu nv;rd dali;s;s;s;s;s;s;s;se;sw;w;ok$
+æ¼å¤«$npcen=yu fu;rd dali;s;s;s;s;s;s;s;se;sw;n;ok|rd suzhou;s;s;s;s;s;sw;ok$
+æ“ºå¤·å¥³å­$rd dali;npcen=girl;#7 n;ok$
+é‡Žé´¨$rd dali;npcen=duck;#7 n;nw;sd;ok$
+çƒå¤·å•†è²©$npcen=shang fan;rd dali;#4 n;nw;n;ok|ok|nw;n;n;n;nu;ok$
+çƒå¤·å¤§éº¾$npcen=lie ren;rd dali;#4 n;nw;n;nw;sw;ok|ne;n;ok$
+æŽƒåœ°åƒ§$npcen=saodi seng;rd dali;#4 n;nw;n;ne;e;s;s;ok$
+é’è‰²è¢ˆè£Ÿ$npcen=saodi seng;rd dali;#4 n;nw;n;ne;e;s;s;ok|npcen=laonian sengren;s;e;s;s;w;s;s;w;s;ok$
+è­·å¡”åƒ§$npcen=huta seng;rd dali;#4 n;nw;n;ne;e;s;s;s;ok$
+å°æ²™å½Œ|é»ƒè‰²è¢ˆè£Ÿ$npcen=xiao shami;rd dali;#4 n;nw;n;ne;e;s;s;s;e;ok|w;w;ok|s;s;ok|e;e;ok$
+è€å¹´åƒ§äºº$npcen=laonian sengren;rd dali;#4 n;nw;n;ne;e;s;s;s;e;s;s;w;s;s;w;s;ok$
+éŒ¦ç›’$rd dali;npcen=pushin;#4 n;nw;n;ne;e;s;s;s;e;s;s;w;s;s;w;s;se;pushin xiang lu$
+æž¯æ¦®å¤§å¸«$rd dali;npcen=kurong;#4 n;nw;n;ne;e;s;s;s;e;ok|s;s;w;s;s;s;s;s;s;ok$
+æœ¬åƒ$npcen=ben can;rd dali;#4 n;nw;n;ne;e;s;s;s;e;ok|s;s;w;s;s;s;s;s;s;ok$
+æœ¬è§€$npcen=ben guan;rd dali;#4 n;nw;n;ne;e;s;s;s;e;ok|s;s;w;s;s;s;s;s;s;ok$
+æœ¬ç›¸$npcen=ben xiang;rd dali;#4 n;nw;n;ne;e;s;s;s;e;ok|s;s;w;s;s;s;s;s;s;ok$
+æœ¬å› $npcen=ben yin;rd dali;#4 n;nw;n;ne;e;s;s;s;e;ok|s;s;w;s;s;s;s;s;s;ok$
+ç‰§ç¾Šå¥³|çƒå¤·é•·è£™$npcen=muyang nv;rd dali;#4 n;nw;n;nw;n;n;n;nu;e;n;ok|s;e;ok|w;rd dali;n;n;n;w;w;wu;wd;wd;n;ok$
+ç‰§ç¾Šäºº$npcen=muyang ren;rd dali;#4 n;nw;n;nw;n;n;n;nu;e;e;ok|w;rd dali;n;n;n;w;w;wu;wd;wd;n;n;ok$
+ç ´ç–‘$npcen=po yi;rd dali;n;n;n;w;w;nu;ok$
+ç ´å—”$npcen=po chen;rd dali;n;n;n;w;w;nu;ok$
+çƒå¤·è€ç¥­å¸$npcen=lao jisi;rd dali;n;n;n;w;w;wu;wd;wd;n;w;enter;ok$
+å°‘å¥³$npcen=shao nv;rd dali;n;n;n;w;w;wu;wd;wd;s;s;se;ok$
+ç´¡ç´—å¥³$npcen=fang shanv;rd dali;s;s;e;ne;n;nu;eu;ed;e;ne;e;e;ok|se;eu;ed;sw;su;sd;e;n;e;up;ok$
+ç´¡ç´—æ©Ÿ$rd dali;npcen=get;s;s;e;ne;n;nu;eu;ed;e;ne;e;e;ok|se;eu;ed;sw;su;sd;e;n;e;up;ok$
+é»‘è‰²å‹è£$npcen=jianghu haoke;rd dali;n;n;n;n;n;n;n;n;nw;nd;w;w;w;wu;su;wu;ok$
+æ—é ­äºº$npcen=zu touren;rd dali;s;w;n;enter;up;ok$
+å¤§åœŸå¸|è²æ®¼é …éˆ$npcen=da tusi;rd dali;s;w;n;ok|enter;up;ok$
 
-¡ª¡ªºâÑô¡ª¡ª
-Â³Á¬ÈÙ$npcen=lu lianrong;rd henyang;ok|n;n;n;n;n;n;n;n;n;nu;nw;ok|nu;nd;nw;nu;nw;w;w;w;sd;wu;wu;ok$
-Ìï²®¹â$npcen=tian boguang;rd henyang;w;s;up;ok$
-ÒÇÁÕ$npcen=yi lin;rd henyang;w;s;up;ok$
-½£¿Í$npcen=jian ke;rd henyang;w;n;ok|open gate;enter;ok$
-ÁõÇÛ$npcen=liu qin;rd henyang;w;n;open gate;enter;n;w;ok$
-ÁõÝ¼$npcen=liu jing;rd henyang;w;n;open gate;enter;n;w;ok$
-Áõ·òÈË$npcen=liu furen;rd henyang;w;n;open gate;enter;n;e;ok$
-ç³ëÙ$npcen=fei yan;rd henyang;w;w;n;ok$
-Ô¬×ÏÒÂ$npcen=yuan ziyi;rd henyang;w;w;w;w;n;e;ok$
-µ­»ÆÉÀ$npcen=yuan ziyi;rd henyang;w;w;w;w;n;e;ok|w;npcen=song qingshu;rd emei;wu;wu;wu;wu;su;su;su;sw;su;se;wu;ok|su;se;enter;w;jump chuang;s;s;se;ok|npcen=zhou zhiruo;n;ok$
-¶¡µ±$npcen=ding dang;rd henyang;#6 w;ok$
-¾´Ïã¿Í$npcen=jingxiang ke;rd henyang;#7 n;ok$
-Ïò´óÄê$npcen=xiang danian;rd henyang;#9 n;nu;ok|nw;nu;ed;e;eu;ne;nu;nu;ok$
-ÁõÕý·ç|ÊìÂÞ³¤ÅÛ$npcen=liu zhengfeng;rd henyang;#9 n;ok|nu;nw;nu;nd;nw;nu;nw;w;w;nw;nw;ok$
-ÇúÑó|ºÚÉ«²¼ÒÂ$npcen=qu yang;rd henyang;#9 n;nu;ok|nw;nu;nd;nw;nu;nw;w;w;nw;nw;ok$
-Ã×ÎªÒå$npcen=mi weiyi;rd henyang;#9 n;nu;nw;nu;nd;ok|nw;nu;nw;w;w;nw;ne;ne;nu;nu;ok$
-Äª´ó$npcen=mo da;rd henyang;#9 n;nu;nw;nu;nd;ok|nw;nu;nw;w;w;nw;ne;ne;nu;nu;wu;wu;wu;ok$
+â”€â”€è¡¡é™½â”€â”€
+é­¯é€£æ¦®$npcen=lu lianrong;rd henyang;ok|n;n;n;n;n;n;n;n;n;nu;nw;ok|nu;nd;nw;nu;nw;w;w;w;sd;wu;wu;ok$
+ç”°ä¼¯å…‰$npcen=tian boguang;rd henyang;w;s;up;ok$
+å„€ç³$npcen=yi lin;rd henyang;w;s;up;ok$
+åŠå®¢$npcen=jian ke;rd henyang;w;n;ok|open gate;enter;ok$
+åŠ‰èŠ¹$npcen=liu qin;rd henyang;w;n;open gate;enter;n;w;ok$
+åŠ‰è$npcen=liu jing;rd henyang;w;n;open gate;enter;n;w;ok$
+åŠ‰å¤«äºº$npcen=liu furen;rd henyang;w;n;open gate;enter;n;e;ok$
+ç·‹èƒ­$npcen=fei yan;rd henyang;w;w;n;ok$
+è¢ç´«è¡£$npcen=yuan ziyi;rd henyang;w;w;w;w;n;e;ok$
+æ·¡é»ƒè¡«$npcen=yuan ziyi;rd henyang;w;w;w;w;n;e;ok|w;npcen=song qingshu;rd emei;wu;wu;wu;wu;su;su;su;sw;su;se;wu;ok|su;se;enter;w;jump chuang;s;s;se;ok|npcen=zhou zhiruo;n;ok$
+ä¸ç•¶$npcen=ding dang;rd henyang;#6 w;ok$
+æ•¬é¦™å®¢$npcen=jingxiang ke;rd henyang;#7 n;ok$
+å‘å¤§å¹´$npcen=xiang danian;rd henyang;#9 n;nu;ok|nw;nu;ed;e;eu;ne;nu;nu;ok$
+åŠ‰æ­£é¢¨|ç†Ÿç¾…é•·è¢$npcen=liu zhengfeng;rd henyang;#9 n;ok|nu;nw;nu;nd;nw;nu;nw;w;w;nw;nw;ok$
+æ›²æ´‹|é»‘è‰²å¸ƒè¡£$npcen=qu yang;rd henyang;#9 n;nu;ok|nw;nu;nd;nw;nu;nw;w;w;nw;nw;ok$
+ç±³ç‚ºç¾©$npcen=mi weiyi;rd henyang;#9 n;nu;nw;nu;nd;ok|nw;nu;nw;w;w;nw;ne;ne;nu;nu;ok$
+èŽ«å¤§$npcen=mo da;rd henyang;#9 n;nu;nw;nu;nd;ok|nw;nu;nw;w;w;nw;ne;ne;nu;nu;wu;wu;wu;ok$
 
-¡ª¡ªÏåÑô¡ª¡ª
-»ÆÕæ$npcen=huang zhen;rd xiangyang;s;w;ok$
-ËÎ±ø$npcen=song bing;rd xiangyang;ok|e;n;ok$
-Æ«½«$npcen=pian jiang;rd xiangyang;ok|s;s;s;w;ok$
-ÀÏÏÈÉú$npcen=lao xiansheng;rd xiangyang;s;e;ok$
-×ô½«$npcen=zuo jiang;rd xiangyang;s;s;s;w;ok$
-ñÔ½«$npcen=pi jiang;rd xiangyang;s;s;s;s;s;ok$
-ÑÀ½«$npcen=ya jiang;rd xiangyang;s;s;s;s;eu;eu;eu;eu;ok|ne;ok$
-Íõ¼á$npcen=song bing;rd xiangyang;e;n;ok|ok|npcen=wang jian;n;n;ok|
-³ÌÁéËØ$npcen=cheng lingsu;rd xiangyang;s;s;s;s;s;e;ok$
-½ð´´Ò©1|Ñø¾«µ¤|ÉËº®³î|ÍËÉÕÁé|ÏûÊîÍè|Ö¹¿ÈÒ©|ìî´¯·Û|»¯Ê¬·Û$npcen=yaopu huoji;buy=1;rd xiangyang;e;s;ok$
-Ä¾½³$npcen=mu jiang;rd xiangyang;e;e;e;s;ok$
-Ä¾µ¶|Ä¾¹÷|Ä¾½£$npcen=mu jiang;buy=1;rd xiangyang;e;e;e;s;ok$
-ÎäÈýÍ¨$npcen=wu santong;rd xiangyang;w;w;ok$
-Çñº½$npcen=qiu hang;rd xiangyang;w;s;ok$
-Ò®ÂÉÆë$npcen=yelv qi;rd xiangyang;w;n;ok$
-Öì×ÓÁø$npcen=zhu ziliu;rd xiangyang;w;w;s;ok$
-¹ùÜ½|Êø·¢½ð´ø|Èíâ¬¼×$npcen=guo fu;rd xiangyang;w;w;s;s;s;ok$
-ÉÕ·¹Ê¦¸µ$npcen=shaofan shifu;rd xiangyang;w;w;s;s;s;s;ok$
-Îä¶ØÈå$npcen=wu dunru;rd xiangyang;w;w;n;w;ok$
-ÎäÐÞÎÄ$npcen=wu xiuwen;rd xiangyang;w;w;s;s;s;se;ok$
-Æ¤ÊÖÌ×|ÌúÖ¸Ì×|Î§²±|Ìú»¤Íó|Ìú»¤Ñü|Ìú±³ÐÄ$npcen=wu xiuwen;rd xiangyang;w;w;s;s;s;se;ask wu xiuwen about @item;ok$
-ÊéµêÀÏ°å$npcen=shudian laoban;rd xiangyang;w;w;n;n;w;ok$
-¸ßÀöÉÌ$npcen=gaoli shang;rd xiangyang;w;w;n;n;n;e;n;ok$
-ÍÏÀ×|ÇàæõÂí$npcen=tuo lei;rd xiangyang;w;w;n;n;n;e;e;n;n;n;e;ok$
-ÃÉ¹Å±ø$npcen=menggu bing;rd xiangyang;w;w;n;n;n;e;e;n;n;n;e;ok$
-Ò°²ËÌÀÍë1$rd xiangyang;npcen=serve;w;w;s;s;s;s;serve;drop rice;ok$
-¸ßÁ»Ã×·¹1$rd xiangyang;npcen=serve;w;w;s;s;s;s;serve;drop soup;ok$
+â”€â”€è¥„é™½â”€â”€
+é»ƒçœŸ$npcen=huang zhen;rd xiangyang;s;w;ok$
+å®‹å…µ$npcen=song bing;rd xiangyang;ok|e;n;ok$
+åå°‡$npcen=pian jiang;rd xiangyang;ok|s;s;s;w;ok$
+è€å…ˆç”Ÿ$npcen=lao xiansheng;rd xiangyang;s;e;ok$
+ä½å°‡$npcen=zuo jiang;rd xiangyang;s;s;s;w;ok$
+è£¨å°‡$npcen=pi jiang;rd xiangyang;s;s;s;s;s;ok$
+ç‰™å°‡$npcen=ya jiang;rd xiangyang;s;s;s;s;eu;eu;eu;eu;ok|ne;ok$
+çŽ‹å …$npcen=song bing;rd xiangyang;e;n;ok|ok|npcen=wang jian;n;n;ok|
+ç¨‹éˆç´ $npcen=cheng lingsu;rd xiangyang;s;s;s;s;s;e;ok$
+é‡‘å‰µè—¥1|é¤Šç²¾ä¸¹|å‚·å¯’æ„|é€€ç‡’éˆ|æ¶ˆæš‘ä¸¸|æ­¢å’³è—¥|è¢ªç˜¡ç²‰|åŒ–å±ç²‰$npcen=yaopu huoji;buy=1;rd xiangyang;e;s;ok$
+æœ¨åŒ $npcen=mu jiang;rd xiangyang;e;e;e;s;ok$
+æœ¨åˆ€|æœ¨æ£|æœ¨åŠ$npcen=mu jiang;buy=1;rd xiangyang;e;e;e;s;ok$
+æ­¦ä¸‰é€š$npcen=wu santong;rd xiangyang;w;w;ok$
+é‚±èˆª$npcen=qiu hang;rd xiangyang;w;s;ok$
+è€¶å¾‹é½Š$npcen=yelv qi;rd xiangyang;w;n;ok$
+æœ±å­æŸ³$npcen=zhu ziliu;rd xiangyang;w;w;s;ok$
+éƒ­èŠ™|æŸç™¼é‡‘å¸¶|è»Ÿâ–¡ç”²$npcen=guo fu;rd xiangyang;w;w;s;s;s;ok$
+ç‡’é£¯å¸«å‚…$npcen=shaofan shifu;rd xiangyang;w;w;s;s;s;s;ok$
+æ­¦æ•¦å„’$npcen=wu dunru;rd xiangyang;w;w;n;w;ok$
+æ­¦ä¿®æ–‡$npcen=wu xiuwen;rd xiangyang;w;w;s;s;s;se;ok$
+çš®æ‰‹å¥—|éµæŒ‡å¥—|åœè„–|éµè­·è…•|éµè­·è…°|éµèƒŒå¿ƒ$npcen=wu xiuwen;rd xiangyang;w;w;s;s;s;se;ask wu xiuwen about @item;ok$
+æ›¸åº—è€æ¿$npcen=shudian laoban;rd xiangyang;w;w;n;n;w;ok$
+é«˜éº—å•†$npcen=gaoli shang;rd xiangyang;w;w;n;n;n;e;n;ok$
+æ‹–é›·|é’é©„é¦¬$npcen=tuo lei;rd xiangyang;w;w;n;n;n;e;e;n;n;n;e;ok$
+è’™å¤å…µ$npcen=menggu bing;rd xiangyang;w;w;n;n;n;e;e;n;n;n;e;ok$
+é‡Žèœæ¹¯ç¢—1$rd xiangyang;npcen=serve;w;w;s;s;s;s;serve;drop rice;ok$
+é«˜ç²±ç±³é£¯1$rd xiangyang;npcen=serve;w;w;s;s;s;s;serve;drop soup;ok$
 
-¡ª¡ª¹ÅÄ¹¡ª¡ª
-ËïÆÅÆÅ$npcen=sun popo;rd gumu;ok$
-Óñ·ä$npcen=yufeng;rd gumu;ok|n;ok|e;ok$
-Ñî¹ý$npcen=yang guo;rd gumu;move shi;s;s;s;ok$
-ÀîÄª³î$npcen=li mochou;rd gumu;move shi;s;s;s;w;s;s;ok$
-Óñ·ä½¬|Óñ·äÃÛ$rd gumu;npcen=get;move shi;s;s;w;ok|e;e;ok$
-·ä½¬Æ¿$rd gumu;npcen=get;move shi;s;s;e;e;ok$
-°×É´È¹$npcen=baiyi girl;rd gumu;move shi;s;s;w;w;ok$
-ÁÖ³¯Ó¢$npcen=lin chaoying;rd gumu;move shi;s;s;s;s;s;tang coffin;niu lock;e;s;s;s;e;ok$
+â”€â”€å¤å¢“â”€â”€
+å­«å©†å©†$npcen=sun popo;rd gumu;ok$
+çŽ‰èœ‚$npcen=yufeng;rd gumu;ok|n;ok|e;ok$
+æ¥ŠéŽ$npcen=yang guo;rd gumu;move shi;s;s;s;ok$
+æŽèŽ«æ„$npcen=li mochou;rd gumu;move shi;s;s;s;w;s;s;ok$
+çŽ‰èœ‚æ¼¿|çŽ‰èœ‚èœœ$rd gumu;npcen=get;move shi;s;s;w;ok|e;e;ok$
+èœ‚æ¼¿ç“¶$rd gumu;npcen=get;move shi;s;s;e;e;ok$
+ç™½ç´—è£™$npcen=baiyi girl;rd gumu;move shi;s;s;w;w;ok$
+æž—æœè‹±$npcen=lin chaoying;rd gumu;move shi;s;s;s;s;s;tang coffin;niu lock;e;s;s;s;e;ok$
 
-¡ª¡ªËÕÖÝ¡ª¡ª
-Ð¡ºìÄï$npcen=xiao hongniang;rd suzhou;e;e;ok$
-Æ±ÓÑ$npcen=piao you;rd suzhou;n;sw;ok$
-Äá¹Ã$npcen=ni gu;rd suzhou;n;n;w;ok$
-ºÉÒ¶¶¬ËñÌÀ|Ó£ÌÒ»ðÍÈ|Áâ°×ÏºÈÊ$npcen=xiao er;buy=1;rd suzhou;n;n;e;ok$
-¶ìÂÑÊ¯$rd suzhou;npcen=get;n;n;n;n;sw;ok$
-´óÊ¯Í·$rd gc;npcen=get;rd gc;e;e;e;e;s;s;ok|s;ok$
-´óÊ÷Ö¦$rd suzhou;npcen=get;n;n;n;n;sw;ok|rd gc;s;s;s;e;e;e;e;ok|n;n;ok$
-·ëÕý¶«$npcen=ya yi;rd suzhou;sw;n;ok|npcen=feng zhengdong;ok$
-ÕçÓÐÇì$npcen=ya yi;rd suzhou;sw;n;ok|npcen=feng zhengdong;ok|npcen=zhen youqing;ok$
-¹«×Ó¸ç$rd suzhou;npcen=gongzi;sw;w;n;ok$
-ÍõºÏ¼Æ$npcen=wang heji;rd suzhou;se;s;ok$
-Çå³´Ïã¹½|Öñ°ô$rd suzhou;npcen=seller;buy=1;s;ok$
-Ëï°þÆ¤$npcen=sun baopi;rd suzhou;s;s;w;ok$
-æ¾Å®$npcen=pi nv;rd suzhou;s;s;e;e;se;e;ok$
-ËÕÖÝÅ®º¢$npcen=girl;rd suzhou;s;s;s;w;ok|w;w;sw;ok$
-ÕÅÌìÊ¦$npcen=zhang tianshi;rd suzhou;s;s;s;s;s;e;ok$
-ÀÏ·ò×Ó$npcen=lao fuzi;rd suzhou;s;s;sw;ok$
-Æ±ÓÑ$npcen=piao you;rd suzhou;n;w;s;ok$
-¡ª¡ª·ðÉ½¡ª¡ª
-·ïÒ»Ãù$npcen=feng yiming;rd foshan;w;s;ok$
-ÓÄÚ¤µÀÈË$npcen=youming daoren;rd foshan;w;w;w;w;w;ok$
-ÖÓËÄÉ©|²Ëµ¶$npcen=zhong sisao;rd foshan;e;ok$
-ÖÓÐ¡¶þ$npcen=zhong xiaoer;rd foshan;e;ok$
-·ïÆß$npcen=feng qi;rd foshan;e;s;ok$
-ÅÖÉÌÈË$npcen=pang shangren;rd foshan;e;s;up;ok$
-ÊÝÉÌÈË$npcen=shou shangren;rd foshan;e;s;up;ok$
-ÀÏ³¯·î$npcen=lao chaofeng;rd foshan;e;e;s;ok$
-ÕÅ³¯ÌÆ$npcen=zhang chaotang;rd foshan;e;e;e;e;ok$
-ÕÅ¿µ$npcen=zhang kang;rd foshan;e;e;e;e;ok$
-É¯é¡»¨$rd foshan;npcen=get;e;e;e;e;e;ok$
-ÃÛ·ä$rd foshan;npcen=bee;w;w;w;w;w;w;nw;sw;ok$
+â”€â”€è˜‡å·žâ”€â”€
+å°ç´…å¨˜$npcen=xiao hongniang;rd suzhou;e;e;ok$
+ç¥¨å‹$npcen=piao you;rd suzhou;n;sw;ok$
+å°¼å§‘$npcen=ni gu;rd suzhou;n;n;w;ok$
+è·è‘‰å†¬ç­æ¹¯|æ«»æ¡ƒç«è…¿|è±ç™½è¦ä»$npcen=xiao er;buy=1;rd suzhou;n;n;e;ok$
+éµåµçŸ³$rd suzhou;npcen=get;n;n;n;n;sw;ok$
+å¤§çŸ³é ­$rd gc;npcen=get;rd gc;e;e;e;e;s;s;ok|s;ok$
+å¤§æ¨¹æž$rd suzhou;npcen=get;n;n;n;n;sw;ok|rd gc;s;s;s;e;e;e;e;ok|n;n;ok$
+é¦®æ­£æ±$npcen=ya yi;rd suzhou;sw;n;ok|npcen=feng zhengdong;ok$
+ç”„æœ‰æ…¶$npcen=ya yi;rd suzhou;sw;n;ok|npcen=feng zhengdong;ok|npcen=zhen youqing;ok$
+å…¬å­å“¥$rd suzhou;npcen=gongzi;sw;w;n;ok$
+çŽ‹åˆè¨ˆ$npcen=wang heji;rd suzhou;se;s;ok$
+æ¸…ç‚’é¦™è‡|ç«¹æ£’$rd suzhou;npcen=seller;buy=1;s;ok$
+å­«å‰çš®$npcen=sun baopi;rd suzhou;s;s;w;ok$
+å©¢å¥³$npcen=pi nv;rd suzhou;s;s;e;e;se;e;ok$
+è˜‡å·žå¥³å­©$npcen=girl;rd suzhou;s;s;s;w;ok|w;w;sw;ok$
+å¼µå¤©å¸«$npcen=zhang tianshi;rd suzhou;s;s;s;s;s;e;ok$
+è€å¤«å­$npcen=lao fuzi;rd suzhou;s;s;sw;ok$
+ç¥¨å‹$npcen=piao you;rd suzhou;n;w;s;ok$
+â”€â”€ä½›å±±â”€â”€
+é³³ä¸€é³´$npcen=feng yiming;rd foshan;w;s;ok$
+å¹½å†¥é“äºº$npcen=youming daoren;rd foshan;w;w;w;w;w;ok$
+é˜å››å«‚|èœåˆ€$npcen=zhong sisao;rd foshan;e;ok$
+é˜å°äºŒ$npcen=zhong xiaoer;rd foshan;e;ok$
+é³³ä¸ƒ$npcen=feng qi;rd foshan;e;s;ok$
+èƒ–å•†äºº$npcen=pang shangren;rd foshan;e;s;up;ok$
+ç˜¦å•†äºº$npcen=shou shangren;rd foshan;e;s;up;ok$
+è€æœå¥‰$npcen=lao chaofeng;rd foshan;e;e;s;ok$
+å¼µæœå”$npcen=zhang chaotang;rd foshan;e;e;e;e;ok$
+å¼µåº·$npcen=zhang kang;rd foshan;e;e;e;e;ok$
+èŽŽæ¬èŠ±$rd foshan;npcen=get;e;e;e;e;e;ok$
+èœœèœ‚$rd foshan;npcen=bee;w;w;w;w;w;w;nw;sw;ok$
 
-¡ª¡ª¸£ÖÝ¡ª¡ª
-°×¶þ$npcen=bai er;rd fuzhou;w;n;ok$
-³ÂÆß$npcen=chen qi;rd fuzhou;w;n;ok$
-Ê·ïÚÍ·$npcen=shi biaotou;rd fuzhou;w;n;enter;ok$
-ÁÖÕðÄÏ$npcen=lin zhennan;rd fuzhou;w;n;enter;n;ok$
-Íõ·òÈË$npcen=wang furen;rd fuzhou;w;n;enter;n;w;ok$
-Ö£ïÚÍ·$npcen=zheng biaotou;rd fuzhou;w;n;enter;n;n;ok$
-´ÞïÚÍ·$npcen=cui biaotou;rd fuzhou;w;w;ok$
-¼ÖÈË´ï$npcen=jia renda;rd fuzhou;w;w;w;w;w;ok$
-ÓàÈËÑå$npcen=yu renyan;rd fuzhou;w;w;w;w;w;n;ok$
-·½ÈËÖÇ$npcen=fang renzhi;rd fuzhou;w;w;w;w;w;nw;nw;sw;sw;ok$
-ÓÚÈËºÀ$npcen=yu renhao;rd fuzhou;w;w;w;w;w;nw;nw;sw;sw;wu;ok$
-»ªÄÏ»¢$npcen=huanan hu;rd henyang;e;e;ne;se;ok$
-¸êÊ²¹þ$npcen=ge shiha;rd fuzhou;s;w;ok$
-·ðÌøÇ½$npcen=xiao er;buy=1;rd fuzhou;s;e;ok$
-É³Ìì½­$npcen=sha tianjiang;rd fuzhou;s;s;w;ok$
-²·³Á$npcen=bo chen;rd fuzhou;s;s;w;w;n;ok$
-³Â°¢ÆÅ$npcen=chen apo;rd fuzhou;s;s;w;w;w;ok$
-·Ûºì³ñÉÀ|½ðÏîÁ´|Ðå»¨Õë$npcen=chen apo;buy=1;rd fuzhou;s;s;w;w;w;ok$
+â”€â”€ç¦å·žâ”€â”€
+ç™½äºŒ$npcen=bai er;rd fuzhou;w;n;ok$
+é™³ä¸ƒ$npcen=chen qi;rd fuzhou;w;n;ok$
+å²é¢é ­$npcen=shi biaotou;rd fuzhou;w;n;enter;ok$
+æž—éœ‡å—$npcen=lin zhennan;rd fuzhou;w;n;enter;n;ok$
+çŽ‹å¤«äºº$npcen=wang furen;rd fuzhou;w;n;enter;n;w;ok$
+é„­é¢é ­$npcen=zheng biaotou;rd fuzhou;w;n;enter;n;n;ok$
+å´”é¢é ­$npcen=cui biaotou;rd fuzhou;w;w;ok$
+è³ˆäººé”$npcen=jia renda;rd fuzhou;w;w;w;w;w;ok$
+ä½™äººå½¥$npcen=yu renyan;rd fuzhou;w;w;w;w;w;n;ok$
+æ–¹äººæ™º$npcen=fang renzhi;rd fuzhou;w;w;w;w;w;nw;nw;sw;sw;ok$
+äºŽäººè±ª$npcen=yu renhao;rd fuzhou;w;w;w;w;w;nw;nw;sw;sw;wu;ok$
+è¯å—è™Ž$npcen=huanan hu;rd henyang;e;e;ne;se;ok$
+æˆˆä»€å“ˆ$npcen=ge shiha;rd fuzhou;s;w;ok$
+ä½›è·³ç‰†$npcen=xiao er;buy=1;rd fuzhou;s;e;ok$
+æ²™å¤©æ±Ÿ$npcen=sha tianjiang;rd fuzhou;s;s;w;ok$
+åœæ²‰$npcen=bo chen;rd fuzhou;s;s;w;w;n;ok$
+é™³é˜¿å©†$npcen=chen apo;rd fuzhou;s;s;w;w;w;ok$
+ç²‰ç´…ç¶¢è¡«|é‡‘é …éˆ|ç¹¡èŠ±é‡$npcen=chen apo;buy=1;rd fuzhou;s;s;w;w;w;ok$
 
-¡ª¡ª³É¶¼¡ª¡ª
-ÕË·¿ÀÏ·ò×Ó$npcen=lao zhangfang;rd chengdu;e;e;n;nw;ne;ok$
-Ç×±ø$npcen=qin bing;rd chengdu;n;ok|n;ok$
-ÊÌ´Ó$npcen=qin bing;rd chengdu;n;ok|ok|npcen=shi cong;n;ok$
-ÎâÌìµÂ$npcen=qin bing;rd chengdu;n;ok|ok|npcen=wu tiande;n;ok$
-Ð¡Ôô$npcen=xiao zei;rd chengdu;e;e;n;ok|nw;ok$
-ÂíÎåµÂ$npcen=ma wude;rd chengdu;e;e;n;nw;ne;ok$
-Áúîý$npcen=long quan;rd chengdu;e;e;n;nw;ne;s;ok$
-Áõºççø$npcen=liu hongying;rd chengdu;e;e;n;nw;ne;n;ok$
-³Âä°$npcen=chen hu;rd chengdu;e;e;n;nw;ne;e;ok$
-Ò©µê»ï¼Æ$npcen=yaodian huoji;rd chengdu;w;w;n;nw;ok$
-±Ì²Ï·Û$npcen=yaodian huoji;buy=1;rd chengdu;w;w;n;nw;ok$
-ÌÆÕÆ¹ñ$rd chengdu;npcen=tang;e;e;n;ne;ok$
-ÌÆ»±$npcen=tang huai;rd chengdu;w;w;n;ne;nw;ok$
-¼ªÈËÍ¨$npcen=ji rentong;rd chengdu;w;w;n;ne;e;n;n;n;w;n;n;n;ok$
-ÉêÈË¿¡$npcen=shen renjun;rd chengdu;w;w;n;ne;e;n;n;n;w;n;n;n;ok$
-ÂÞÈË½Ü$npcen=luo renjie;rd chengdu;w;w;n;ne;e;n;n;n;w;n;n;n;nw;wu;wu;wu;e;ed;ok$
-ºéÈËÐÛ$npcen=hong renxiong;rd chengdu;w;w;n;ne;e;n;n;n;w;n;n;n;nw;wu;wu;wu;nu;nu;eu;ok$
-Óà²×º£$npcen=yu canghai;rd chengdu;w;w;n;ne;e;n;n;n;w;n;n;n;nw;ok|wu;wu;wu;nu;nu;eu;nu;eu;s;ok$
-ºîÈËÓ¢$npcen=hou renying;rd chengdu;w;w;n;ne;e;n;n;n;w;n;n;n;nw;ok|wu;wu;wu;nu;nu;eu;nu;eu;wu;ok$
-Ïô·É$npcen=xiao fei;rd chengdu;e;e;n;nw;ne;w;ok$
+â”€â”€æˆéƒ½â”€â”€
+è³¬æˆ¿è€å¤«å­$npcen=lao zhangfang;rd chengdu;e;e;n;nw;ne;ok$
+è¦ªå…µ$npcen=qin bing;rd chengdu;n;ok|n;ok$
+ä¾å¾ž$npcen=qin bing;rd chengdu;n;ok|ok|npcen=shi cong;n;ok$
+å³å¤©å¾·$npcen=qin bing;rd chengdu;n;ok|ok|npcen=wu tiande;n;ok$
+å°è³Š$npcen=xiao zei;rd chengdu;e;e;n;ok|nw;ok$
+é¦¬äº”å¾·$npcen=ma wude;rd chengdu;e;e;n;nw;ne;ok$
+é¾éŠ“$npcen=long quan;rd chengdu;e;e;n;nw;ne;s;ok$
+åŠ‰è™¹ç‘›$npcen=liu hongying;rd chengdu;e;e;n;nw;ne;n;ok$
+é™³æ»¸$npcen=chen hu;rd chengdu;e;e;n;nw;ne;e;ok$
+è—¥åº—ä¼™è¨ˆ$npcen=yaodian huoji;rd chengdu;w;w;n;nw;ok$
+ç¢§è ¶ç²‰$npcen=yaodian huoji;buy=1;rd chengdu;w;w;n;nw;ok$
+å”æŽŒæ«ƒ$rd chengdu;npcen=tang;e;e;n;ne;ok$
+å”æ§$npcen=tang huai;rd chengdu;w;w;n;ne;nw;ok$
+å‰äººé€š$npcen=ji rentong;rd chengdu;w;w;n;ne;e;n;n;n;w;n;n;n;ok$
+ç”³äººä¿Š$npcen=shen renjun;rd chengdu;w;w;n;ne;e;n;n;n;w;n;n;n;ok$
+ç¾…äººå‚‘$npcen=luo renjie;rd chengdu;w;w;n;ne;e;n;n;n;w;n;n;n;nw;wu;wu;wu;e;ed;ok$
+æ´ªäººé›„$npcen=hong renxiong;rd chengdu;w;w;n;ne;e;n;n;n;w;n;n;n;nw;wu;wu;wu;nu;nu;eu;ok$
+ä½™æ»„æµ·$npcen=yu canghai;rd chengdu;w;w;n;ne;e;n;n;n;w;n;n;n;nw;ok|wu;wu;wu;nu;nu;eu;nu;eu;s;ok$
+ä¾¯äººè‹±$npcen=hou renying;rd chengdu;w;w;n;ne;e;n;n;n;w;n;n;n;nw;ok|wu;wu;wu;nu;nu;eu;nu;eu;wu;ok$
+è•­é£›$npcen=xiao fei;rd chengdu;e;e;n;nw;ne;w;ok$
 
-¡ª¡ªÐÇËÞ¡ª¡ª
-ÕªÐÇ×Ó$npcen=zhaixing zi;rd xingxiu;ok$
-ÐÇËÞÅÉ¹ÄÊÖ|Í­¹Ä$npcen=gu shou;rd xingxiu;ok|su;ok$
-ÐÇËÞÅÉºÅÊÖ|Í­ºÅ$npcen=hao shou;rd xingxiu;ok|su;ok$
-ÐÇËÞÅÉîàÊÖ|Í­îà$npcen=bo shou;rd xingxiu;ok|su;ok$
-Ê¨ºð×Ó$npcen=shihou zi;rd xingxiu;su;ok$
-¾ÅÒíµÀÈË$npcen=jiuyi daoren;rd xingxiu;su;nu;ok$
-Ñò±Þ$npcen=muyang ren;rd xingxiu;su;s;ok$
-³ö³¾×Ó$npcen=chuchen zi;rd xingxiu;wu;nu;n;ok$
-ÇåÐÄÉ¢|¡ºÐÇËÞ¶¾¾­¡¼ÉÏ²á¡½¡»|Ä¾¶¦|ÃÉº¹Ò©|ÇàºùÂ«|½ðË¿ÊÖÌ×$rd xingxiu;npcen=get;wu;nu;n;enter;ok$
-ÐÇËÞµÜ×Ó$npcen=xingxiu dizi;rd xingxiu;n;ok$
-²É»¨×Ó$npcen=caihua zi;rd xingxiu;n;nw;w;ok$
-²¨Ë¹ÉÌÈË|²¨Ë¹³¤ÅÛ$npcen=bosi shangren;rd xingxiu;su;s;ed;ok|rd lanzhou;n;n;n;n;ok$
-Î×Ê¿|Ä¾ïÛ$rd xingxiu;npcen=wushi;su;s;ed;se;e;se;w;w;s;ok$
-É³³æ|É³³æ¿Ç$npcen=sha chong;rd xingxiu;su;s;ed;se;e;climb mount;ok$
-Î¬Îá¶ûÉÙÅ®$npcen=shao nv;rd xingxiu;su;s;ed;n;ok$
-Î¬Îá¶û×å¸¾Å®|Î¬Îá¶û×å³¤ÅÛ$npcen=fu nv;rd xingxiu;su;s;ed;nw;ok$
-ÂòÂôÌá$rd xingxiu;npcen=maimaiti;su;s;ed;nw;w;ok$
-¶¬²»À­|¹þÃÜ¹Ï$rd xingxiu;npcen=maimaiti;buy=1;su;s;ed;nw;w;ok$
-°¢À­Ä¾º±$npcen=ala muhan;rd xingxiu;su;s;ed;nw;nw;ok$
-°¢·²Ìá$rd xingxiu;npcen=afanti;su;s;ed;nw;e;ok$
-ÇàïýÃæ|Å£Æ¤´ü$npcen=xiao er;rd xingxiu;buy=1;su;s;ed;se;sw;w;w;w;ok$
+â”€â”€æ˜Ÿå®¿â”€â”€
+æ‘˜æ˜Ÿå­$npcen=zhaixing zi;rd xingxiu;ok$
+æ˜Ÿå®¿æ´¾é¼“æ‰‹|éŠ…é¼“$npcen=gu shou;rd xingxiu;ok|su;ok$
+æ˜Ÿå®¿æ´¾è™Ÿæ‰‹|éŠ…è™Ÿ$npcen=hao shou;rd xingxiu;ok|su;ok$
+æ˜Ÿå®¿æ´¾éˆ¸æ‰‹|éŠ…éˆ¸$npcen=bo shou;rd xingxiu;ok|su;ok$
+ç…å¼å­$npcen=shihou zi;rd xingxiu;su;ok$
+ä¹ç¿¼é“äºº$npcen=jiuyi daoren;rd xingxiu;su;nu;ok$
+ç¾Šéž­$npcen=muyang ren;rd xingxiu;su;s;ok$
+å‡ºå¡µå­$npcen=chuchen zi;rd xingxiu;wu;nu;n;ok$
+æ¸…å¿ƒæ•£|ã€Žæ˜Ÿå®¿æ¯’ç¶“â–¡ä¸Šå†Šâ–¡ã€|æœ¨é¼Ž|è’™æ±—è—¥|é’è‘«è˜†|é‡‘çµ²æ‰‹å¥—$rd xingxiu;npcen=get;wu;nu;n;enter;ok$
+æ˜Ÿå®¿å¼Ÿå­$npcen=xingxiu dizi;rd xingxiu;n;ok$
+æŽ¡èŠ±å­$npcen=caihua zi;rd xingxiu;n;nw;w;ok$
+æ³¢æ–¯å•†äºº|æ³¢æ–¯é•·è¢$npcen=bosi shangren;rd xingxiu;su;s;ed;ok|rd lanzhou;n;n;n;n;ok$
+å·«å£«|æœ¨éœ$rd xingxiu;npcen=wushi;su;s;ed;se;e;se;w;w;s;ok$
+æ²™èŸ²|æ²™èŸ²æ®¼$npcen=sha chong;rd xingxiu;su;s;ed;se;e;climb mount;ok$
+ç¶­å¾çˆ¾å°‘å¥³$npcen=shao nv;rd xingxiu;su;s;ed;n;ok$
+ç¶­å¾çˆ¾æ—å©¦å¥³|ç¶­å¾çˆ¾æ—é•·è¢$npcen=fu nv;rd xingxiu;su;s;ed;nw;ok$
+è²·è³£æ$rd xingxiu;npcen=maimaiti;su;s;ed;nw;w;ok$
+å†¬ä¸æ‹‰|å“ˆå¯†ç“œ$rd xingxiu;npcen=maimaiti;buy=1;su;s;ed;nw;w;ok$
+é˜¿æ‹‰æœ¨ç½•$npcen=ala muhan;rd xingxiu;su;s;ed;nw;nw;ok$
+é˜¿å‡¡æ$rd xingxiu;npcen=afanti;su;s;ed;nw;e;ok$
+é’ç¨žé¢|ç‰›çš®è¢‹$npcen=xiao er;rd xingxiu;buy=1;su;s;ed;se;sw;w;w;w;ok$
 
-¡ª¡ªÁéÖÝ¡ª¡ª
-¿¾ÑòÍÈ|ÑòÈâ´®|ÑòÈâÅÝâÉ|ÂíÄÌ¾Æºø|âÎ$npcen=xiao er;buy=1;rd lingzhou;s;w;ok$
-Ð£Î¾$npcen=xiao wei;rd lingzhou;s;s;ok|n;n;e;s;ok$
-ºÂÁ¬ÌúÊ÷$npcen=xiao wei;rd lingzhou;e;s;ok|ok|npcen=haolian tieshu;s;s;ok|
-Î÷ÏÄ±ø$npcen=xixia bing;rd lingzhou;w;w;ok|s;ok$
-Ò°Ñò$rd lingzhou;npcen=sheep;s;s;s;ok$
-Ò°»ÆÑò$npcen=huang yang;rd lingzhou;s;s;ok$
-°¢À­²®Íäµ¶$npcen=xiao huoji;buy=1;rd lingzhou;w;s;ok$
-»Ê¹¬ÎÀÊ¿$npcen=wei shi;rd lingzhou;n;n;ok$
-Ò»Æ·ÌÃÎäÊ¿$npcen=wu shi;rd lingzhou;w;n;ok|open door;n;ok$
-ÔÆÖÐº×$npcen=yun zhonghe;rd lingzhou;w;n;open door;n;ok$
-Çà²¼ÅÛ$npcen=yun zhonghe;rd lingzhou;w;n;open door;n;ok|s;s;e;npcen=nanhai eshen;e;e;ne;n;ne;n;ne;ok|npcen=ye erniang;enter;ok$
-ÕÊ·¿ÏÈÉú$npcen=zhang fang;rd lingzhou;w;n;open door;n;w;ok$
-Å¬¶ùº£$npcen=nu erhai;rd lingzhou;w;n;open door;n;e;ok$
-°ÙËðµÀÈË|°×ÅÛ1$npcen=baisun daoren;rd lingzhou;e;e;ne;ok$
-ÀÏµÀÊ¿$npcen=lao daoshi;rd lingzhou;e;e;ne;n;n;n;e;ok$
-ÄÏº£öùÉñ$npcen=nanhai eshen;rd lingzhou;e;e;ne;n;ne;n;ne;ok$
-Ò¶¶þÄï$npcen=ye erniang;rd lingzhou;e;e;ne;n;ne;n;ne;enter;ok$
-Ê¯ÈËÎäÊ¿$npcen=wu shi;rd lingzhou;e;e;ne;n;ne;n;ne;nw;nd;ok$
+â”€â”€éˆå·žâ”€â”€
+çƒ¤ç¾Šè…¿|ç¾Šè‚‰ä¸²|ç¾Šè‚‰æ³¡é¥ƒ|é¦¬å¥¶é…’å£º|â–¡$npcen=xiao er;buy=1;rd lingzhou;s;w;ok$
+æ ¡å°‰$npcen=xiao wei;rd lingzhou;s;s;ok|n;n;e;s;ok$
+éƒé€£éµæ¨¹$npcen=xiao wei;rd lingzhou;e;s;ok|ok|npcen=haolian tieshu;s;s;ok|
+è¥¿å¤å…µ$npcen=xixia bing;rd lingzhou;w;w;ok|s;ok$
+é‡Žç¾Š$rd lingzhou;npcen=sheep;s;s;s;ok$
+é‡Žé»ƒç¾Š$npcen=huang yang;rd lingzhou;s;s;ok$
+é˜¿æ‹‰ä¼¯å½Žåˆ€$npcen=xiao huoji;buy=1;rd lingzhou;w;s;ok$
+çš‡å®®è¡›å£«$npcen=wei shi;rd lingzhou;n;n;ok$
+ä¸€å“å ‚æ­¦å£«$npcen=wu shi;rd lingzhou;w;n;ok|open door;n;ok$
+é›²ä¸­é¶´$npcen=yun zhonghe;rd lingzhou;w;n;open door;n;ok$
+é’å¸ƒè¢$npcen=yun zhonghe;rd lingzhou;w;n;open door;n;ok|s;s;e;npcen=nanhai eshen;e;e;ne;n;ne;n;ne;ok|npcen=ye erniang;enter;ok$
+å¸³æˆ¿å…ˆç”Ÿ$npcen=zhang fang;rd lingzhou;w;n;open door;n;w;ok$
+åŠªå…’æµ·$npcen=nu erhai;rd lingzhou;w;n;open door;n;e;ok$
+ç™¾æé“äºº|ç™½è¢1$npcen=baisun daoren;rd lingzhou;e;e;ne;ok$
+è€é“å£«$npcen=lao daoshi;rd lingzhou;e;e;ne;n;n;n;e;ok$
+å—æµ·é±·ç¥ž$npcen=nanhai eshen;rd lingzhou;e;e;ne;n;ne;n;ne;ok$
+è‘‰äºŒå¨˜$npcen=ye erniang;rd lingzhou;e;e;ne;n;ne;n;ne;enter;ok$
+çŸ³äººæ­¦å£«$npcen=wu shi;rd lingzhou;e;e;ne;n;ne;n;ne;nw;nd;ok$
 
-¡ª¡ªÎä¹¦¡ª¡ª
-µêÐ¡¶þ$npcen=xiao er;rd wugong;n;n;ok$
-Ð¡Á÷Ã¥$npcen=xiao liumang;rd wugong;w;ok$
-µØÆ¦$npcen=di pi;rd wugong;w;s;ok|n;rd lanzhou;w;s;ok$
-³ÇÃÅ¶½²ì|½õÍÅ¹Ù·þ$npcen=du cha;rd wugong;w;w;ok|e;e;e;e;ok|rd beijing;w;w;n;n;w;w;w;ok|e;e;n;n;n;n;e;e;e;n;n;ok$
-Çîºº$npcen=poor man;rd xiangyang;w;ok|npcen=qiong han;rd wugong;e;s;s;ok$
-ºîÔ±Íâ$npcen=hou yuanwai;rd wugong;e;s;s;s;s;s;ok$
+â”€â”€æ­¦åŠŸâ”€â”€
+åº—å°äºŒ$npcen=xiao er;rd wugong;n;n;ok$
+å°æµæ°“$npcen=xiao liumang;rd wugong;w;ok$
+åœ°ç—ž$npcen=di pi;rd wugong;w;s;ok|n;rd lanzhou;w;s;ok$
+åŸŽé–€ç£å¯Ÿ|éŒ¦åœ˜å®˜æœ$npcen=du cha;rd wugong;w;w;ok|e;e;e;e;ok|rd beijing;w;w;n;n;w;w;w;ok|e;e;n;n;n;n;e;e;e;n;n;ok$
+çª®æ¼¢$npcen=poor man;rd xiangyang;w;ok|npcen=qiong han;rd wugong;e;s;s;ok$
+ä¾¯å“¡å¤–$npcen=hou yuanwai;rd wugong;e;s;s;s;s;s;ok$
 
-¡ª¡ª¼ÎÐË¡ª¡ª
-²É²èÅ®$rd jiaxing;npcen=girl;s;se;ne;ne;su;sd;sw;sw;ok$
-ÎÚÑ»$rd jiaxing;npcen=wuya;s;e;ok$
-ÏòÎÊÌì$npcen=xiang wentian;rd jiaxing;s;s;e;ok$
-ÀÏ´¬·ò$npcen=lao chuanfu;rd jiaxing;e;e;ok$
-³ôÑ¼µ°|ôÕ×Ó$npcen=xiao er;buy=1;rd jiaxing;e;se;s;ok$
-Ïã»ðµÀÈË$npcen=xianghuo daoren;rd jiaxing;s;se;ne;ok$
+â”€â”€å˜‰èˆˆâ”€â”€
+æŽ¡èŒ¶å¥³$rd jiaxing;npcen=girl;s;se;ne;ne;su;sd;sw;sw;ok$
+çƒé´‰$rd jiaxing;npcen=wuya;s;e;ok$
+å‘å•å¤©$npcen=xiang wentian;rd jiaxing;s;s;e;ok$
+è€èˆ¹å¤«$npcen=lao chuanfu;rd jiaxing;e;e;ok$
+è‡­é´¨è›‹|ç²½å­$npcen=xiao er;buy=1;rd jiaxing;e;se;s;ok$
+é¦™ç«é“äºº$npcen=xianghuo daoren;rd jiaxing;s;se;ne;ok$
 
-¡ª¡ªÑ©É½¡ª¡ª
-½ðÂÖ·¨Íõ|Ñ©Á«|×ÏÉ«ôÂôÄ$npcen=jinlun fawang;rd xueshan;wu;n;n;n;e;nu;n;w;ok$
-ÌìÉ½Ñ©Á«$rd xingxiu;npcen=get;wu;jump valley;ok$
-»ô¶¼$npcen=huo du;rd xueshan;wu;n;n;n;e;nu;n;w;n;n;e;ok$
-ð¯Ä¦ÖÇ$npcen=jiumo zhi;rd xueshan;wu;n;n;n;e;nu;w;ok$
-Â­²§|ÈËÍ·Á´|÷¼÷Ã¹Ú$npcen=get;rd xueshan;wu;n;n;n;e;nu;w;sw;jump zuo;ok$
-´ï¶û°Í$npcen=da erba;rd xueshan;wu;n;n;n;e;nu;w;s;ok$
-ÑòÆ¤Êé$npcen=get;rd xueshan;wu;n;n;n;e;nu;w;s;ok$
-À­ÕÂ»î·ð$npcen=lazhang huofo;rd xueshan;wu;n;n;n;ok$
-ÈøÄ¾»î·ð$npcen=samu huofo;rd xueshan;wu;n;n;n;w;ok$
-¼ÎÄ¾»î·ð$npcen=jiamu huofo;rd xueshan;wu;n;n;n;e;ok$
-É®Ã±$npcen=ge lunbu;rd xueshan;wu;ok|npcen=lazhang huofo;n;n;n;ok|npcen=samu huofo;w;ok|npcen=jiamu huofo;e;e;ok$
-¸ðÂ×²¼$npcen=ge lunbu;rd xueshan;wu;ok$
-¼ÀìëÀ®Âï|»ÆÉ«À®ÂïôÂôÄ|·¨èÆ$npcen=jisi lama;rd xueshan;wu;n;ok$
-ÄÌ²è|ÄÌÀÒ$rd xueshan;npcen=get;wu;n;n;e;n;ok$
-Ð¡À®Âï$npcen=xiao lama;rd xueshan;wu;n;n;w;ok|w;ok$
+â”€â”€é›ªå±±â”€â”€
+é‡‘è¼ªæ³•çŽ‹|é›ªè“®|ç´«è‰²è¢ˆè£Ÿ$npcen=jinlun fawang;rd xueshan;wu;n;n;n;e;nu;n;w;ok$
+å¤©å±±é›ªè“®$rd xingxiu;npcen=get;wu;jump valley;ok$
+éœéƒ½$npcen=huo du;rd xueshan;wu;n;n;n;e;nu;n;w;n;n;e;ok$
+é³©æ‘©æ™º$npcen=jiumo zhi;rd xueshan;wu;n;n;n;e;nu;w;ok$
+é¡±ç µ|äººé ­éˆ|éª·é«å† $npcen=get;rd xueshan;wu;n;n;n;e;nu;w;sw;jump zuo;ok$
+é”çˆ¾å·´$npcen=da erba;rd xueshan;wu;n;n;n;e;nu;w;s;ok$
+ç¾Šçš®æ›¸$npcen=get;rd xueshan;wu;n;n;n;e;nu;w;s;ok$
+æ‹‰ç« æ´»ä½›$npcen=lazhang huofo;rd xueshan;wu;n;n;n;ok$
+è–©æœ¨æ´»ä½›$npcen=samu huofo;rd xueshan;wu;n;n;n;w;ok$
+å˜‰æœ¨æ´»ä½›$npcen=jiamu huofo;rd xueshan;wu;n;n;n;e;ok$
+åƒ§å¸½$npcen=ge lunbu;rd xueshan;wu;ok|npcen=lazhang huofo;n;n;n;ok|npcen=samu huofo;w;ok|npcen=jiamu huofo;e;e;ok$
+è‘›å€«å¸ƒ$npcen=ge lunbu;rd xueshan;wu;ok$
+ç¥­ç¥€å–‡å˜›|é»ƒè‰²å–‡å˜›è¢ˆè£Ÿ|æ³•æµ$npcen=jisi lama;rd xueshan;wu;n;ok$
+å¥¶èŒ¶|å¥¶é…ª$rd xueshan;npcen=get;wu;n;n;e;n;ok$
+å°å–‡å˜›$npcen=xiao lama;rd xueshan;wu;n;n;w;ok|w;ok$
 
-¡ª¡ªÑªµ¶¡ª¡ª
-ÉÆÓÂ$npcen=shan yong;rd xuedao;ok$
-Ñë×Ú$npcen=yang zong;rd xuedao;ok$
-×¿Âê$npcen=zhuo ma;rd xuedao;ok$
-Ê¤ÚÐ$npcen=sheng di;rd xuedao;eu;ok$
-±¦Ïó$npcen=bao xiang;rd xuedao;eu;e;ok$
-²ÉÒ©ÈË$npcen=caiyao ren;rd xuedao;wu;nu;ok|rd xingxiu;wu;jump valley;ok$
-Ò©³ú$npcen=caiyao ren;rd xuedao;wu;nu;ok|rd dali;npcen=shennong dizi;n;n;n;w;w;s;ok$
+â”€â”€è¡€åˆ€â”€â”€
+å–„å‹‡$npcen=shan yong;rd xuedao;ok$
+å¤®å®—$npcen=yang zong;rd xuedao;ok$
+å“ç‘ª$npcen=zhuo ma;rd xuedao;ok$
+å‹è«¦$npcen=sheng di;rd xuedao;eu;ok$
+å¯¶è±¡$npcen=bao xiang;rd xuedao;eu;e;ok$
+æŽ¡è—¥äºº$npcen=caiyao ren;rd xuedao;wu;nu;ok|rd xingxiu;wu;jump valley;ok$
+è—¥é‹¤$npcen=caiyao ren;rd xuedao;wu;nu;ok|rd dali;npcen=shennong dizi;n;n;n;w;w;s;ok$
 
-¡ª¡ª¶ëáÒ¡ª¡ª
-Å®µÜ×Ó$npcen=dizi;rd emei;ok|ed;ne;ed;ne;ed;enter;sd;e;ok|e;ed;s;ok$
-ÀîÃ÷Ï¼$npcen=li mingxia;rd emei;ok$
-¾²¿ÕÊ¦Ì«$npcen=jingkong shitai;rd emei;ed;ne;ed;ne;ed;enter;ok$
-ÎÄ·½Ð¡Ê¦Ì«$rd emei;npcen=wenfang;ed;ne;ed;ne;ed;enter;ok$
-¾²ÏÐÊ¦Ì«$npcen=jingxian shitai;rd emei;ed;ne;ed;ne;ed;sd;e;ok$
-¾²»ÛÊ¦Ì«$npcen=jinghui shitai;rd emei;ed;ne;ed;ne;ed;sd;e;s;s;w;enter;ok$
-ÎÄÒôÐ¡Ê¦Ì«$rd emei;npcen=wenyin;ed;ne;ed;ne;ed;sd;e;s;s;w;enter;ok$
-¾²ÕæÊ¦Ì«$npcen=jingzhen shitai;rd emei;ed;ne;ed;ne;ed;sd;e;e;ed;s;ok$
-¾²ÕÕÊ¦Ì«$npcen=jingzhao shitai;rd emei;ed;ne;ed;ne;ed;sd;e;e;ed;s;enter;ok$
-·½±ÌÁÕ$npcen=fang bilin;rd emei;ed;ne;ed;ne;ed;sd;e;e;ed;ed;ed;su;ok$
-µÀÃ÷Ð¡Ê¦¸¸|ÇàÉ«µÀÅÛ2$npcen=daoming;rd chengdu;e;e;e;e;e;se;e;sw;su;s;enter;n;ok$
-¡º¶ëáÒÂÃÓÎÍ¼¡»$npcen=xiao fan;buy=1;rd chengdu;e;e;e;e;e;se;e;sw;w;ok$
-ÄêÇáÉÙ¸¾$npcen=nianqing shaofu;rd chengdu;e;e;e;e;e;se;e;ok$
-ÆÍÈË$npcen=pu ren;rd chengdu;e;e;e;e;e;se;e;ok$
-ËÕÃÎÇå$npcen=su mengqing;rd emei;wu;ok$
-ÕÔÁéÖé$npcen=zhao lingzhu;rd emei;wu;ok$
-òùòð$npcen=bian fu;rd emei;wu;se;enter;ok|n;ok$
-Ð¡ºï$npcen=little monkey;rd emei;wu;se;enter;n;ok$
-¾²åÈÊ¦Ì«$npcen=jingjia shitai;rd emei;wu;wu;wu;wu;su;su;su;sw;su;se;wu;ok$
-·çÁêÊ¦Ì«$npcen=fengling shitai;rd emei;wu;wu;wu;wu;su;su;su;sw;su;se;wu;su;ok$
-¾²ÐþÊ¦Ì«$npcen=jingxuan shitai;rd emei;wu;wu;wu;wu;su;su;su;sw;su;se;wu;su;sw;ok$
-¾²ÐÄÊ¦Ì«$npcen=jingxin shitai;rd emei;wu;wu;wu;wu;su;su;su;sw;su;se;wu;su;se;enter;ok$
-¾²ÐéÊ¦Ì«$npcen=jingxu shitai;rd emei;wu;wu;wu;wu;su;su;su;sw;su;se;wu;su;se;enter;s;ok$
-ÎÄÇåÐ¡Ê¦Ì«$npcen=wenqing;rd emei;wu;wu;wu;wu;su;su;su;sw;su;se;wu;su;se;enter;w;ok$
-¾²ºÍÊ¦Ì«$npcen=jinghe shitai;rd emei;wu;wu;wu;wu;su;su;su;sw;su;se;wu;su;se;enter;e;ok$
-ÎÄêÍÐ¡Ê¦Ì«$npcen=wenhui;rd emei;wu;wu;wu;wu;su;su;su;sw;su;se;wu;su;se;enter;e;ok$
-¾²·çÊ¦Ì«$npcen=jingfeng shitai;rd emei;wu;wu;wu;wu;su;su;su;sw;ok|su;se;wu;su;se;enter;s;e;s;s;s;ok$
-Æ¤Ñü´ø$rd emei;npcen=get;wu;wu;wu;wu;su;su;su;sw;su;ok|se;wu;su;se;enter;s;e;s;s;s;ok$
-¾²µÀÊ¦Ì«$npcen=jingdao shitai;rd emei;wu;wu;wu;wu;su;su;su;sw;su;ok|se;wu;su;se;enter;s;e;s;s;s;up;ok$
-ËÎÇàÊé$npcen=song qingshu;rd emei;wu;wu;wu;wu;su;su;su;sw;su;se;wu;ok|su;se;enter;w;jump chuang;s;s;se;ok$
-ÖÜÜÆÈô$npcen=song qingshu;rd emei;wu;wu;wu;wu;su;su;su;sw;su;se;wu;ok|su;se;enter;w;jump chuang;s;s;se;ok|npcen=zhou zhiruo;n;ok$
-±´½õÒÇ$npcen=bei jinyi;rd emei;wu;wu;wu;wu;su;su;su;sw;su;se;wu;su;sw;se;ok$
+â”€â”€å³¨åµ‹â”€â”€
+å¥³å¼Ÿå­$npcen=dizi;rd emei;ok|ed;ne;ed;ne;ed;enter;sd;e;ok|e;ed;s;ok$
+æŽæ˜Žéœž$npcen=li mingxia;rd emei;ok$
+éœç©ºå¸«å¤ª$npcen=jingkong shitai;rd emei;ed;ne;ed;ne;ed;enter;ok$
+æ–‡æ–¹å°å¸«å¤ª$rd emei;npcen=wenfang;ed;ne;ed;ne;ed;enter;ok$
+éœé–’å¸«å¤ª$npcen=jingxian shitai;rd emei;ed;ne;ed;ne;ed;sd;e;ok$
+éœæ…§å¸«å¤ª$npcen=jinghui shitai;rd emei;ed;ne;ed;ne;ed;sd;e;s;s;w;enter;ok$
+æ–‡éŸ³å°å¸«å¤ª$rd emei;npcen=wenyin;ed;ne;ed;ne;ed;sd;e;s;s;w;enter;ok$
+éœçœŸå¸«å¤ª$npcen=jingzhen shitai;rd emei;ed;ne;ed;ne;ed;sd;e;e;ed;s;ok$
+éœç…§å¸«å¤ª$npcen=jingzhao shitai;rd emei;ed;ne;ed;ne;ed;sd;e;e;ed;s;enter;ok$
+æ–¹ç¢§ç³$npcen=fang bilin;rd emei;ed;ne;ed;ne;ed;sd;e;e;ed;ed;ed;su;ok$
+é“æ˜Žå°å¸«çˆ¶|é’è‰²é“è¢2$npcen=daoming;rd chengdu;e;e;e;e;e;se;e;sw;su;s;enter;n;ok$
+ã€Žå³¨åµ‹æ—…éŠåœ–ã€$npcen=xiao fan;buy=1;rd chengdu;e;e;e;e;e;se;e;sw;w;ok$
+å¹´è¼•å°‘å©¦$npcen=nianqing shaofu;rd chengdu;e;e;e;e;e;se;e;ok$
+åƒ•äºº$npcen=pu ren;rd chengdu;e;e;e;e;e;se;e;ok$
+è˜‡å¤¢æ¸…$npcen=su mengqing;rd emei;wu;ok$
+è¶™éˆç $npcen=zhao lingzhu;rd emei;wu;ok$
+è™è $npcen=bian fu;rd emei;wu;se;enter;ok|n;ok$
+å°çŒ´$npcen=little monkey;rd emei;wu;se;enter;n;ok$
+éœè¿¦å¸«å¤ª$npcen=jingjia shitai;rd emei;wu;wu;wu;wu;su;su;su;sw;su;se;wu;ok$
+é¢¨é™µå¸«å¤ª$npcen=fengling shitai;rd emei;wu;wu;wu;wu;su;su;su;sw;su;se;wu;su;ok$
+éœçŽ„å¸«å¤ª$npcen=jingxuan shitai;rd emei;wu;wu;wu;wu;su;su;su;sw;su;se;wu;su;sw;ok$
+éœå¿ƒå¸«å¤ª$npcen=jingxin shitai;rd emei;wu;wu;wu;wu;su;su;su;sw;su;se;wu;su;se;enter;ok$
+éœè™›å¸«å¤ª$npcen=jingxu shitai;rd emei;wu;wu;wu;wu;su;su;su;sw;su;se;wu;su;se;enter;s;ok$
+æ–‡æ¸…å°å¸«å¤ª$npcen=wenqing;rd emei;wu;wu;wu;wu;su;su;su;sw;su;se;wu;su;se;enter;w;ok$
+éœå’Œå¸«å¤ª$npcen=jinghe shitai;rd emei;wu;wu;wu;wu;su;su;su;sw;su;se;wu;su;se;enter;e;ok$
+æ–‡æš‰å°å¸«å¤ª$npcen=wenhui;rd emei;wu;wu;wu;wu;su;su;su;sw;su;se;wu;su;se;enter;e;ok$
+éœé¢¨å¸«å¤ª$npcen=jingfeng shitai;rd emei;wu;wu;wu;wu;su;su;su;sw;ok|su;se;wu;su;se;enter;s;e;s;s;s;ok$
+çš®è…°å¸¶$rd emei;npcen=get;wu;wu;wu;wu;su;su;su;sw;su;ok|se;wu;su;se;enter;s;e;s;s;s;ok$
+éœé“å¸«å¤ª$npcen=jingdao shitai;rd emei;wu;wu;wu;wu;su;su;su;sw;su;ok|se;wu;su;se;enter;s;e;s;s;s;up;ok$
+å®‹é’æ›¸$npcen=song qingshu;rd emei;wu;wu;wu;wu;su;su;su;sw;su;se;wu;ok|su;se;enter;w;jump chuang;s;s;se;ok$
+å‘¨èŠ·è‹¥$npcen=song qingshu;rd emei;wu;wu;wu;wu;su;su;su;sw;su;se;wu;ok|su;se;enter;w;jump chuang;s;s;se;ok|npcen=zhou zhiruo;n;ok$
+è²éŒ¦å„€$npcen=bei jinyi;rd emei;wu;wu;wu;wu;su;su;su;sw;su;se;wu;su;sw;se;ok$
 
-¡ª¡ª¹ØÍâ¡ª¡ª
-ÂäµÚÐã²Å1$npcen=xiu cai;rd guanwai;n;ok$
-¹þ´ïÄá$npcen=ha dani;rd guanwai;ok$
-Æ¤»õÉÌ$npcen=pihuo shang;rd guanwai;ok$
-ëøÒ»À×|¶À½ÅÍ­ÈË$npcen=teng yilei;rd guanwai;s;ok$
-½¹ÎÄÆÚ|ÌúÅýÅÃ$npcen=jiao wenqi;rd guanwai;e;s;ok$
-ºÕ¶ûËÕ$rd guanwai;npcen=heersu;n;w;s;ok$
-¾Æ¹ÝÀÏ°å$npcen=lao ban;rd guanwai;s;w;ok$
-ÓñÕæ×Ó$npcen=yuzhen zi;rd guanwai;s;s;ok$
-ºöÂ×Èý»¢$npcen=san hu;rd guanwai;s;s;s;s;s;ok$
-ºöÂ×¶þ»¢$npcen=er hu;rd guanwai;s;s;s;s;s;s;ok$
-ºöÂ×ËÄ»¢$npcen=si hu;rd guanwai;s;s;s;s;s;s;ok$
-ºöÂ×´ó»¢$npcen=da hu;rd guanwai;s;s;s;s;s;s;sw;ok$
-ÏôÔ¶É½$npcen=xiao yuanshan;rd guanwai;s;s;s;s;s;s;sw;sw;s;sw;sw;ok$
-Ä½ÈÝÁú³Ç$npcen=murong longcheng;rd guanwai;e;ne;ok$
-ÑÖ»ù$npcen=yan ji;rd guanwai;e;ne;ne;enter;ok$
-°×ÃæÂøÍ·|´Ö´ÉÍë$rd hujia;npcen=get;n;n;n;w;ok$
-Ð»Ñ·$npcen=xie xun;rd hujia;s;s;e;ask chuan jia about ³öº£;give 1 gold to chuan jia|n;n;n;n;n;n;n;n;n;n;s;s;e;enter dong;ok$
-¶«±±»¢$npcen=dongbei hu;rd hujia;s;e;eu;ok$
-×Ïõõ$npcen=zi diao;rd hujia;s;e;eu;su;eu;e;eu;se;sw;w;ok|ok$
-½ðµñ$rd hujia;npcen=diao;s;e;eu;su;eu;e;eu;se;sw;w;ok|ok$
-Ã·»¨´ÆÂ¹$npcen=meihua cilu;rd hujia;s;e;eu;su;eu;e;eu;se;sw;w;ok$
-Ã·»¨ÐÛÂ¹$npcen=meihua xionglu;rd hujia;s;e;eu;su;eu;e;eu;se;sw;w;ok$
+â”€â”€é—œå¤–â”€â”€
+è½ç¬¬ç§€æ‰1$npcen=xiu cai;rd guanwai;n;ok$
+å“ˆé”å°¼$npcen=ha dani;rd guanwai;ok$
+çš®è²¨å•†$npcen=pihuo shang;rd guanwai;ok$
+æ»•ä¸€é›·|ç¨è…³éŠ…äºº$npcen=teng yilei;rd guanwai;s;ok$
+ç„¦æ–‡æœŸ|éµçµç¶$npcen=jiao wenqi;rd guanwai;e;s;ok$
+èµ«çˆ¾è˜‡$rd guanwai;npcen=heersu;n;w;s;ok$
+é…’é¤¨è€æ¿$npcen=lao ban;rd guanwai;s;w;ok$
+çŽ‰çœŸå­$npcen=yuzhen zi;rd guanwai;s;s;ok$
+å¿½å€«ä¸‰è™Ž$npcen=san hu;rd guanwai;s;s;s;s;s;ok$
+å¿½å€«äºŒè™Ž$npcen=er hu;rd guanwai;s;s;s;s;s;s;ok$
+å¿½å€«å››è™Ž$npcen=si hu;rd guanwai;s;s;s;s;s;s;ok$
+å¿½å€«å¤§è™Ž$npcen=da hu;rd guanwai;s;s;s;s;s;s;sw;ok$
+è•­é å±±$npcen=xiao yuanshan;rd guanwai;s;s;s;s;s;s;sw;sw;s;sw;sw;ok$
+æ…•å®¹é¾åŸŽ$npcen=murong longcheng;rd guanwai;e;ne;ok$
+é–»åŸº$npcen=yan ji;rd guanwai;e;ne;ne;enter;ok$
+ç™½é¢é¥…é ­|ç²—ç“·ç¢—$rd hujia;npcen=get;n;n;n;w;ok$
+è¬éœ$npcen=xie xun;rd hujia;s;s;e;ask chuan jia about å‡ºæµ·;give 1 gold to chuan jia|n;n;n;n;n;n;n;n;n;n;s;s;e;enter dong;ok$
+æ±åŒ—è™Ž$npcen=dongbei hu;rd hujia;s;e;eu;ok$
+ç´«è²‚$npcen=zi diao;rd hujia;s;e;eu;su;eu;e;eu;se;sw;w;ok|ok$
+é‡‘é›•$rd hujia;npcen=diao;s;e;eu;su;eu;e;eu;se;sw;w;ok|ok$
+æ¢…èŠ±é›Œé¹¿$npcen=meihua cilu;rd hujia;s;e;eu;su;eu;e;eu;se;sw;w;ok$
+æ¢…èŠ±é›„é¹¿$npcen=meihua xionglu;rd hujia;s;e;eu;su;eu;e;eu;se;sw;w;ok$
 
-¡ª¡ªÁéðÕ¡ª¡ª
-ÓàÆÅÆÅ$npcen=yu popo;rd lingjiu;ok$
-×¿²»·²$npcen=zhuo bufan;rd lingjiu;sd;ok$
-¶ËÄ¾Ôª$npcen=duanmu yuan;rd lingjiu;sd;e;ok$
-×ó×ÓÄÂ$npcen=zuo zimu;rd lingjiu;sd;e;n;ok$
-É£ÍÁ¹«$npcen=sang tugong;rd lingjiu;sd;e;e;ok$
-ËÉÊó$npcen=song shu;rd lingjiu;zou tiesuo;eu;ok$
-À¼½£$npcen=lan jian;rd lingjiu;zou tiesuo;eu;n;n;ok$
-Ã·½£$npcen=mei jian;rd lingjiu;zou tiesuo;eu;n;n;ok$
-ÀîÉ©$npcen=li sao;rd lingjiu;zou tiesuo;eu;n;n;n;n;w;w;w;ok$
-±ùÑ©ôä´ä¸â|ËáÃ·ÌÀ$rd lingjiu;npcen=get;zou tiesuo;eu;n;n;n;n;w;w;w;ok$
-Öñ½£1$npcen=zhu jian;rd lingjiu;zou tiesuo;eu;n;n;n;n;w;w;n;n;e;e;ok$
-·ûÃôÒÇ$npcen=fu mingyi;rd lingjiu;zou tiesuo;eu;n;n;n;n;e;e;n;n;n;ok$
-â¯$npcen=zhang zi;rd lingjiu;zou tiesuo;eu;n;n;n;n;n;ok$
-Ã·»¨Â¹$npcen=meihua lu;rd lingjiu;zou tiesuo;eu;n;n;n;n;n;ok$
-Ê¯É©$npcen=shi sao;rd lingjiu;zou tiesuo;eu;n;n;n;n;n;n;n;n;ok$
-¾Õ½£$npcen=ju jian;rd lingjiu;zou tiesuo;eu;n;n;n;n;n;n;n;n;n;ok$
-ÌìÉ½Í¯ÀÑ$npcen=tong lao;rd lingjiu;zou tiesuo;eu;n;n;n;n;n;n;n;n;n;ok$
-ÃÉÃæÅ®ÀÉ$npcen=nv lang;rd lingjiu;zou tiesuo;eu;n;n;n;n;n;move jiashan;enter;ok$
-ÌìÉ½ÁùÑôÕÆ·¨Í¼ÉÏ²á|ÌìÉ½ÁùÑôÕÆ·¨Í¼ÏÂ²á|ÌìÉ½ÕÛÃ·ÊÖ·¨Í¼ÉÏ¾í|ÌìÉ½ÕÛÃ·ÊÖ·¨Í¼ÏÂ¾í|ÌìÓðÆæ½£½£Æ×$npcen=nv lang;rd lingjiu;zou tiesuo;eu;n;n;n;n;n;move jiashan;enter;ok|nd;nd;ed;#5 n;e;n;w;ok$
+â”€â”€éˆé·²â”€â”€
+ä½™å©†å©†$npcen=yu popo;rd lingjiu;ok$
+å“ä¸å‡¡$npcen=zhuo bufan;rd lingjiu;sd;ok$
+ç«¯æœ¨å…ƒ$npcen=duanmu yuan;rd lingjiu;sd;e;ok$
+å·¦å­ç©†$npcen=zuo zimu;rd lingjiu;sd;e;n;ok$
+æ¡‘åœŸå…¬$npcen=sang tugong;rd lingjiu;sd;e;e;ok$
+é¬†é¼ $npcen=song shu;rd lingjiu;zou tiesuo;eu;ok$
+è˜­åŠ$npcen=lan jian;rd lingjiu;zou tiesuo;eu;n;n;ok$
+æ¢…åŠ$npcen=mei jian;rd lingjiu;zou tiesuo;eu;n;n;ok$
+æŽå«‚$npcen=li sao;rd lingjiu;zou tiesuo;eu;n;n;n;n;w;w;w;ok$
+å†°é›ªç¿¡ç¿ ç³•|é…¸æ¢…æ¹¯$rd lingjiu;npcen=get;zou tiesuo;eu;n;n;n;n;w;w;w;ok$
+ç«¹åŠ1$npcen=zhu jian;rd lingjiu;zou tiesuo;eu;n;n;n;n;w;w;n;n;e;e;ok$
+ç¬¦æ•å„€$npcen=fu mingyi;rd lingjiu;zou tiesuo;eu;n;n;n;n;e;e;n;n;n;ok$
+ç$npcen=zhang zi;rd lingjiu;zou tiesuo;eu;n;n;n;n;n;ok$
+æ¢…èŠ±é¹¿$npcen=meihua lu;rd lingjiu;zou tiesuo;eu;n;n;n;n;n;ok$
+çŸ³å«‚$npcen=shi sao;rd lingjiu;zou tiesuo;eu;n;n;n;n;n;n;n;n;ok$
+èŠåŠ$npcen=ju jian;rd lingjiu;zou tiesuo;eu;n;n;n;n;n;n;n;n;n;ok$
+å¤©å±±ç«¥å§¥$npcen=tong lao;rd lingjiu;zou tiesuo;eu;n;n;n;n;n;n;n;n;n;ok$
+è’™é¢å¥³éƒŽ$npcen=nv lang;rd lingjiu;zou tiesuo;eu;n;n;n;n;n;move jiashan;enter;ok$
+å¤©å±±å…­é™½æŽŒæ³•åœ–ä¸Šå†Š|å¤©å±±å…­é™½æŽŒæ³•åœ–ä¸‹å†Š|å¤©å±±æŠ˜æ¢…æ‰‹æ³•åœ–ä¸Šå·|å¤©å±±æŠ˜æ¢…æ‰‹æ³•åœ–ä¸‹å·|å¤©ç¾½å¥‡åŠåŠè­œ$npcen=nv lang;rd lingjiu;zou tiesuo;eu;n;n;n;n;n;move jiashan;enter;ok|nd;nd;ed;#5 n;e;n;w;ok$
 
-¡ª¡ªÖÐÖÝ¡ª¡ª
-ÃçÈË·ï$npcen=miao renfeng;rd zhongzhou;n;n;n;n;e;e;e;e;e;ok$
-¡ª¡ªÍò½Ù¹È¡ª¡ª
-¸Ê±¦±¦$npcen=gan baobao;rd dali;n;n;n;n;n;n;n;nw;nd;w;ok|w;w;wu;su;wu;wd;nd;w;pushaside grass;enter;ok|pull ring;enter;n;out;knock duan;n;ok$
-ÖÓÍò³ð$npcen=zhong wanchou;rd dali;n;n;n;n;n;n;n;nw;nd;w;ok|w;w;wu;su;wu;wd;nd;w;pushaside grass;enter;ok|pull ring;enter;n;out;knock duan;n;n;ok$
-½øÏ²¶ù$npcen=jin xier;rd dali;n;n;n;n;n;n;n;nw;nd;w;ok|w;w;wu;su;wu;wd;nd;w;pushaside grass;enter;ok|pull ring;enter;n;out;knock duan;n;n;w;ok$
-ÖÓÁé$npcen=zhong ling;rd dali;n;n;n;n;n;n;n;nw;nd;w;ok|w;w;wu;su;wu;wd;nd;w;pushaside grass;enter;ok|pull ring;enter;n;out;knock duan;n;n;w;n;ok$
-Àæ»¨Æ®Ñ©ÉÑ1$rd dali;npcen=get;n;n;n;n;n;n;n;nw;nd;w;ok|w;w;wu;su;wu;wd;nd;w;pushaside grass;enter;ok|pull ring;enter;n;out;knock duan;n;n;e;ok$
-À´¸£¶ù$npcen=lai fuer;rd dali;n;n;n;n;n;n;n;nw;nd;w;ok|w;w;wu;su;wu;wd;nd;w;pushaside grass;enter;ok|pull ring;enter;n;out;knock duan;n;n;e;ok$
-»ÆÃ¼´óÊ¦|Ä¾Óã´¸$npcen=huangmei dashi;rd dali;n;n;n;n;n;n;n;nw;nd;w;ok|w;w;wu;su;wu;wd;nd;w;pushaside grass;enter;ok|pull ring;enter;n;out;knock duan;n;n;n;ok$
+â”€â”€ä¸­å·žâ”€â”€
+è‹—äººé³³$npcen=miao renfeng;rd zhongzhou;n;n;n;n;e;e;e;e;e;ok$
+â”€â”€è¬åŠ«è°·â”€â”€
+ç”˜å¯¶å¯¶$npcen=gan baobao;rd dali;n;n;n;n;n;n;n;nw;nd;w;ok|w;w;wu;su;wu;wd;nd;w;pushaside grass;enter;ok|pull ring;enter;n;out;knock duan;n;ok$
+é˜è¬ä»‡$npcen=zhong wanchou;rd dali;n;n;n;n;n;n;n;nw;nd;w;ok|w;w;wu;su;wu;wd;nd;w;pushaside grass;enter;ok|pull ring;enter;n;out;knock duan;n;n;ok$
+é€²å–œå…’$npcen=jin xier;rd dali;n;n;n;n;n;n;n;nw;nd;w;ok|w;w;wu;su;wu;wd;nd;w;pushaside grass;enter;ok|pull ring;enter;n;out;knock duan;n;n;w;ok$
+é˜éˆ$npcen=zhong ling;rd dali;n;n;n;n;n;n;n;nw;nd;w;ok|w;w;wu;su;wu;wd;nd;w;pushaside grass;enter;ok|pull ring;enter;n;out;knock duan;n;n;w;n;ok$
+æ¢¨èŠ±é£„é›ªè£³1$rd dali;npcen=get;n;n;n;n;n;n;n;nw;nd;w;ok|w;w;wu;su;wu;wd;nd;w;pushaside grass;enter;ok|pull ring;enter;n;out;knock duan;n;n;e;ok$
+ä¾†ç¦å…’$npcen=lai fuer;rd dali;n;n;n;n;n;n;n;nw;nd;w;ok|w;w;wu;su;wu;wd;nd;w;pushaside grass;enter;ok|pull ring;enter;n;out;knock duan;n;n;e;ok$
+é»ƒçœ‰å¤§å¸«|æœ¨é­šéŒ˜$npcen=huangmei dashi;rd dali;n;n;n;n;n;n;n;nw;nd;w;ok|w;w;wu;su;wu;wd;nd;w;pushaside grass;enter;ok|pull ring;enter;n;out;knock duan;n;n;n;ok$
 
-¡ª¡ª°×ÍÕÉ½¡ª¡ª
-´å¹Ã$npcen=cun gu;rd baituo;s;ok$
-Å©¼Ò¸¾Å®$npcen=fu nv;rd baituo;e;ok$
-Å©Ãñ$npcen=nong min;rd baituo;s;e;ok$
-ÎèÉßÈË$npcen=wushe ren;rd baituo;s;e;ok$
-Éßµ¨·Û$npcen=wushe ren;buy=1;rd baituo;s;e;ok$
-ÉßÈâ$npcen=xiao er;buy=1;rd baituo;s;e;s;ok$
-»¨»¨¹«×Ó$rd baituo;npcen=playboy;s;e;e;ok$
-¹Ñ¸¾$npcen=gua fu;rd baituo;s;e;e;ne;ne;ok$
-É½Ôô$npcen=shan zei;rd baituo;s;e;e;ne;nu;nu;ne;ok|n;ok$
-Ð¡É½Ôô$npcen=xiao shanzei;rd baituo;s;e;e;ne;nu;nu;ok$
-É½ÔôÍ·$npcen=shanzei tou;rd baituo;s;e;e;ne;nu;nu;ne;n;n;ok$
-²ÝÝ®$rd baituo;npcen=get;w;n;n;w;sw;ok$
-½ð»¨$npcen=shanzei tou;rd baituo;s;e;e;ne;nu;nu;ne;n;n;ok|npcen=jin hua;w;ok$
-ÃÅÎÀ$npcen=men wei;rd baituo;nu;nu;ok$
-ÊËÎÀ$npcen=shi wei;rd baituo;nu;nu;n;w;ok$
-¹ÅóÝ$rd baituo;npcen=get;nu;nu;n;w;ok$
-Àî¹Ü¼Ò$npcen=li guanjia;rd baituo;nu;nu;n;nu;n;ok$
-Ð¡Çà|ÇàÉ«Ë¿ÅÛ$rd baituo;npcen=qing;nu;nu;n;nu;n;w;s;ok$
-½ÌÁ·$npcen=jiao lian;rd baituo;nu;nu;n;nu;n;e;ok$
-°×ÒÂÉÙÅ®$npcen=shao nv;rd baituo;nu;nu;n;nu;n;n;n;ok|npcen=baiyi girl;rd gumu;s;s;w;w;ok$
-Éß±Þ$npcen=shao nv;rd baituo;nu;nu;n;nu;n;n;n;ok$
-±­×Ó|µ°¸â$rd baituo;npcen=get;nu;nu;n;nu;n;n;n;e;ok$
-²ñµ¶$rd baituo;npcen=get;nu;nu;n;nu;n;n;n;e;e;ok|ask lao cai about ²ñµ¶;ok$
-ÀÏ²Ä$npcen=lao cai;rd baituo;nu;nu;n;nu;n;n;n;e;e;ok$
-ÕÅÂè$npcen=zhang ma;rd baituo;nu;nu;n;nu;n;n;n;n;nw;ok$
-°×ÍÃ$npcen=bai tu;rd baituo;nu;nu;n;nu;n;n;n;n;ne;ok$
-ºüÀê$rd baituo;npcen=fox;nu;nu;n;nu;n;n;n;n;ne;w;ok$
-ÀÏ»¢$rd baituo;npcen=tiger;nu;nu;n;nu;n;n;n;n;ne;w;ok|rd hangzhou;npcen=laohu;s;s;s;sw;sw;sw;wu;wu;wd;ok$
-ÐÛÊ¨$rd baituo;npcen=lion;nu;nu;n;nu;n;n;n;n;ne;w;ok$
-Ò°ÀÇ$rd baituo;npcen=wolf;nu;nu;n;nu;n;n;n;n;ne;w;ok$
+â”€â”€ç™½é§å±±â”€â”€
+æ‘å§‘$npcen=cun gu;rd baituo;s;ok$
+è¾²å®¶å©¦å¥³$npcen=fu nv;rd baituo;e;ok$
+è¾²æ°‘$npcen=nong min;rd baituo;s;e;ok$
+èˆžè›‡äºº$npcen=wushe ren;rd baituo;s;e;ok$
+è›‡è†½ç²‰$npcen=wushe ren;buy=1;rd baituo;s;e;ok$
+è›‡è‚‰$npcen=xiao er;buy=1;rd baituo;s;e;s;ok$
+èŠ±èŠ±å…¬å­$rd baituo;npcen=playboy;s;e;e;ok$
+å¯¡å©¦$npcen=gua fu;rd baituo;s;e;e;ne;ne;ok$
+å±±è³Š$npcen=shan zei;rd baituo;s;e;e;ne;nu;nu;ne;ok|n;ok$
+å°å±±è³Š$npcen=xiao shanzei;rd baituo;s;e;e;ne;nu;nu;ok$
+å±±è³Šé ­$npcen=shanzei tou;rd baituo;s;e;e;ne;nu;nu;ne;n;n;ok$
+è‰èŽ“$rd baituo;npcen=get;w;n;n;w;sw;ok$
+é‡‘èŠ±$npcen=shanzei tou;rd baituo;s;e;e;ne;nu;nu;ne;n;n;ok|npcen=jin hua;w;ok$
+é–€è¡›$npcen=men wei;rd baituo;nu;nu;ok$
+ä»•è¡›$npcen=shi wei;rd baituo;nu;nu;n;w;ok$
+å¤ç®$rd baituo;npcen=get;nu;nu;n;w;ok$
+æŽç®¡å®¶$npcen=li guanjia;rd baituo;nu;nu;n;nu;n;ok$
+å°é’|é’è‰²çµ²è¢$rd baituo;npcen=qing;nu;nu;n;nu;n;w;s;ok$
+æ•™ç·´$npcen=jiao lian;rd baituo;nu;nu;n;nu;n;e;ok$
+ç™½è¡£å°‘å¥³$npcen=shao nv;rd baituo;nu;nu;n;nu;n;n;n;ok|npcen=baiyi girl;rd gumu;s;s;w;w;ok$
+è›‡éž­$npcen=shao nv;rd baituo;nu;nu;n;nu;n;n;n;ok$
+æ¯å­|è›‹ç³•$rd baituo;npcen=get;nu;nu;n;nu;n;n;n;e;ok$
+æŸ´åˆ€$rd baituo;npcen=get;nu;nu;n;nu;n;n;n;e;e;ok|ask lao cai about æŸ´åˆ€;ok$
+è€æ$npcen=lao cai;rd baituo;nu;nu;n;nu;n;n;n;e;e;ok$
+å¼µåª½$npcen=zhang ma;rd baituo;nu;nu;n;nu;n;n;n;n;nw;ok$
+ç™½å…”$npcen=bai tu;rd baituo;nu;nu;n;nu;n;n;n;n;ne;ok$
+ç‹è²$rd baituo;npcen=fox;nu;nu;n;nu;n;n;n;n;ne;w;ok$
+è€è™Ž$rd baituo;npcen=tiger;nu;nu;n;nu;n;n;n;n;ne;w;ok|rd hangzhou;npcen=laohu;s;s;s;sw;sw;sw;wu;wu;wd;ok$
+é›„ç…$rd baituo;npcen=lion;nu;nu;n;nu;n;n;n;n;ne;w;ok$
+é‡Žç‹¼$rd baituo;npcen=wolf;nu;nu;n;nu;n;n;n;n;ne;w;ok$
 
 
-¡ª¡ªÓÀµÇ¡ª¡ª
-µ¶¿Í$npcen=dao ke;rd yongdeng;n;ok|rd chengdu;s;s;w;ok|rd taishan;s;ok$
-ÀÏÐã²Å$npcen=lao xiucai;rd yongdeng;n;n;ok$
-´ó¸«Í·$npcen=qiao fu;rd yongdeng;n;ne;ok$
-ÎÞ¶´ÉÏÈË$npcen=wudong shangren;rd yongdeng;n;ne;n;ok$
-·ÖË®´Ì|Ò¹ÐÐË®¿¿$npcen=mengmian ren;rd yongdeng;n;ne;n;nw;n;ne;ne;ne;ne;ok$
-²ÉÊ¯ÈË|ÌúÇÂ$npcen=caishi ren;rd yongdeng;n;ne;n;nw;n;ne;ne;ne;ne;se;ok$
-ÂíÔô$npcen=ma zei;rd yongdeng;n;ne;n;nw;n;ne;ne;ne;ne;se;s;ok$
-³ÂÐþ·ç$npcen=chen xuanfeng;rd yongdeng;chihe;e;e;ne;ne;w;n;s;enter;ok$
-Ã·³¬·ç$npcen=chen xuanfeng;rd yongdeng;chihe;e;e;ne;ne;w;n;s;enter;ok|npcen=mei chaofeng;ok$
+â”€â”€æ°¸ç™»â”€â”€
+åˆ€å®¢$npcen=dao ke;rd yongdeng;n;ok|rd chengdu;s;s;w;ok|rd taishan;s;ok$
+è€ç§€æ‰$npcen=lao xiucai;rd yongdeng;n;n;ok$
+å¤§æ–§é ­$npcen=qiao fu;rd yongdeng;n;ne;ok$
+ç„¡æ´žä¸Šäºº$npcen=wudong shangren;rd yongdeng;n;ne;n;ok$
+åˆ†æ°´åˆº|å¤œè¡Œæ°´é $npcen=mengmian ren;rd yongdeng;n;ne;n;nw;n;ne;ne;ne;ne;ok$
+æŽ¡çŸ³äºº|éµé¬$npcen=caishi ren;rd yongdeng;n;ne;n;nw;n;ne;ne;ne;ne;se;ok$
+é¦¬è³Š$npcen=ma zei;rd yongdeng;n;ne;n;nw;n;ne;ne;ne;ne;se;s;ok$
+é™³çŽ„é¢¨$npcen=chen xuanfeng;rd yongdeng;chihe;e;e;ne;ne;w;n;s;enter;ok$
+æ¢…è¶…é¢¨$npcen=chen xuanfeng;rd yongdeng;chihe;e;e;ne;ne;w;n;s;enter;ok|npcen=mei chaofeng;ok$
 
-¡ª¡ªÉñÁúµº¡ª¡ª
-ÐíÑ©Í¤$npcen=xu xueting;rd nanyang;n;n;n;e;ask lao chuanfu about ³öº£;give 1 gold to lao chuanfu|n;ww;kan bush;n;n;unwield sword;ok$
-Â½¸ßÐù$npcen=lu gaoxuan;rd nanyang;n;n;n;e;ask lao chuanfu about ³öº£;give 1 gold to lao chuanfu|n;ww;kan bush;n;n;n;n;unwield sword;ok$
-ÄêÇáµÜ×Ó$npcen=young boy;rd nanyang;n;n;n;e;ask lao chuanfu about ³öº£;give 1 gold to lao chuanfu|n;ww;kan bush;n;n;e;n;n;unwield sword;ok$
-ÄêÇáÅ®µÜ×Ó$npcen=young girl;rd nanyang;n;n;n;e;ask lao chuanfu about ³öº£;give 1 gold to lao chuanfu|n;ww;kan bush;n;n;e;n;n;unwield sword;ok|n;ok$
-ÎÞ¸ùµÀ³¤$npcen=wugen daozhang;rd nanyang;n;n;n;e;ask lao chuanfu about ³öº£;give 1 gold to lao chuanfu|n;ww;kan bush;n;n;e;n;n;n;unwield sword;ok$
-ÔÆËØÃ·$npcen=yun sumei;rd nanyang;n;n;n;e;ask lao chuanfu about ³öº£;give 1 gold to lao chuanfu|n;ww;kan bush;n;n;e;n;n;n;unwield sword;ok$
-ºé°²Í¨$npcen=hong antong;rd nanyang;n;n;n;e;ask lao chuanfu about ³öº£;give 1 gold to lao chuanfu|n;ww;kan bush;n;n;e;n;n;n;unwield sword;ok$
-ÕÅµ­ÔÂ$npcen=zhang danyue;rd nanyang;n;n;n;e;ask lao chuanfu about ³öº£;give 1 gold to lao chuanfu|n;ww;kan bush;n;n;e;n;n;n;e;unwield sword;ok$
-ÁúÏÑÏã$rd nanyang;npcen=get;n;n;n;e;ask lao chuanfu about ³öº£;give 1 gold to lao chuanfu|n;ww;kan bush;n;n;e;n;n;n;e;e;unwield sword;ok$
-Òó½õ$npcen=yin jin;rd nanyang;n;n;n;e;ask lao chuanfu about ³öº£;give 1 gold to lao chuanfu|n;ww;kan bush;n;n;e;n;n;n;n;unwield sword;ok$
-·½âù$npcen=fang yi;rd nanyang;n;n;n;e;ask lao chuanfu about ³öº£;give 1 gold to lao chuanfu|n;ww;kan bush;n;n;e;n;n;n;w;w;unwield sword;ok$
-ãå½£ÆÁ$npcen=mu jianping;rd nanyang;n;n;n;e;ask lao chuanfu about ³öº£;give 1 gold to lao chuanfu|n;ww;kan bush;n;n;e;n;n;n;w;w;unwield sword;ok$
-ËÕÜõ$npcen=su quan;rd nanyang;n;n;n;e;ask lao chuanfu about ³öº£;give 1 gold to lao chuanfu|n;ww;kan bush;n;n;e;n;n;n;w;w;unwield sword;ok$
+â”€â”€ç¥žé¾å³¶â”€â”€
+è¨±é›ªäº­$npcen=xu xueting;rd nanyang;n;n;n;e;ask lao chuanfu about å‡ºæµ·;give 1 gold to lao chuanfu|n;ww;kan bush;n;n;unwield sword;ok$
+é™¸é«˜è»’$npcen=lu gaoxuan;rd nanyang;n;n;n;e;ask lao chuanfu about å‡ºæµ·;give 1 gold to lao chuanfu|n;ww;kan bush;n;n;n;n;unwield sword;ok$
+å¹´è¼•å¼Ÿå­$npcen=young boy;rd nanyang;n;n;n;e;ask lao chuanfu about å‡ºæµ·;give 1 gold to lao chuanfu|n;ww;kan bush;n;n;e;n;n;unwield sword;ok$
+å¹´è¼•å¥³å¼Ÿå­$npcen=young girl;rd nanyang;n;n;n;e;ask lao chuanfu about å‡ºæµ·;give 1 gold to lao chuanfu|n;ww;kan bush;n;n;e;n;n;unwield sword;ok|n;ok$
+ç„¡æ ¹é“é•·$npcen=wugen daozhang;rd nanyang;n;n;n;e;ask lao chuanfu about å‡ºæµ·;give 1 gold to lao chuanfu|n;ww;kan bush;n;n;e;n;n;n;unwield sword;ok$
+é›²ç´ æ¢…$npcen=yun sumei;rd nanyang;n;n;n;e;ask lao chuanfu about å‡ºæµ·;give 1 gold to lao chuanfu|n;ww;kan bush;n;n;e;n;n;n;unwield sword;ok$
+æ´ªå®‰é€š$npcen=hong antong;rd nanyang;n;n;n;e;ask lao chuanfu about å‡ºæµ·;give 1 gold to lao chuanfu|n;ww;kan bush;n;n;e;n;n;n;unwield sword;ok$
+å¼µæ·¡æœˆ$npcen=zhang danyue;rd nanyang;n;n;n;e;ask lao chuanfu about å‡ºæµ·;give 1 gold to lao chuanfu|n;ww;kan bush;n;n;e;n;n;n;e;unwield sword;ok$
+é¾æ¶Žé¦™$rd nanyang;npcen=get;n;n;n;e;ask lao chuanfu about å‡ºæµ·;give 1 gold to lao chuanfu|n;ww;kan bush;n;n;e;n;n;n;e;e;unwield sword;ok$
+æ®·éŒ¦$npcen=yin jin;rd nanyang;n;n;n;e;ask lao chuanfu about å‡ºæµ·;give 1 gold to lao chuanfu|n;ww;kan bush;n;n;e;n;n;n;n;unwield sword;ok$
+æ–¹æ€¡$npcen=fang yi;rd nanyang;n;n;n;e;ask lao chuanfu about å‡ºæµ·;give 1 gold to lao chuanfu|n;ww;kan bush;n;n;e;n;n;n;w;w;unwield sword;ok$
+æ²åŠå±$npcen=mu jianping;rd nanyang;n;n;n;e;ask lao chuanfu about å‡ºæµ·;give 1 gold to lao chuanfu|n;ww;kan bush;n;n;e;n;n;n;w;w;unwield sword;ok$
+è˜‡èƒ$npcen=su quan;rd nanyang;n;n;n;e;ask lao chuanfu about å‡ºæµ·;give 1 gold to lao chuanfu|n;ww;kan bush;n;n;e;n;n;n;w;w;unwield sword;ok$
 
-¡ª¡ªÈªÖÝ¡ª¡ª
-Áõ¹úÐù$npcen=liu guoxuan;rd quanzhou;e;enter chuan|unwield sword;ok$
-ºìÃ«¹í|ºÉÀ¼»ðÇ¹$npcen=hongmao gui;rd quanzhou;e;enter chuan|enter zhou|unwield sword;ok$
-ÙÁ¿Ü|ÙÁµ¶$npcen=wo kou;rd quanzhou;e;enter chuan|enter zhou|s;ok|n;n;unwield sword;ok$
+â”€â”€æ³‰å·žâ”€â”€
+åŠ‰åœ‹è»’$npcen=liu guoxuan;rd quanzhou;e;enter chuan|unwield sword;ok$
+ç´…æ¯›é¬¼|è·è˜­ç«æ§$npcen=hongmao gui;rd quanzhou;e;enter chuan|enter zhou|unwield sword;ok$
+å€­å¯‡|å€­åˆ€$npcen=wo kou;rd quanzhou;e;enter chuan|enter zhou|s;ok|n;n;unwield sword;ok$
 
-»ôÇàÍ©|´äÓð|»ÆÉÀ|¶Ì½£1$npcen=huo qingtong;rd lanzhou;#4 n;#8 w;wu;ok|wd;w;w;w;#3 n;#2 w;s;w;ok$
+éœé’æ¡|ç¿ ç¾½|é»ƒè¡«|çŸ­åŠ1$npcen=huo qingtong;rd lanzhou;#4 n;#8 w;wu;ok|wd;w;w;w;#3 n;#2 w;s;w;ok$
 
-Ð¡··$r suzhou;s|r wugong;e
-Ôæºì¶ÐÃæÆ¤ÅÛ|µØÀÎÔ¿³×|ÑîÁ«Í¤|³ÉµÂµîµîÏÂµÜ×Ó/*ÏÈÕÒÈÎÎÒÐÐask ±È½£ÄÃµ½ºÚÄ¾Áî, È»ºógive ling to zhang chengfeng, ÉÏºÚÄ¾ÑÂ, ¿³ËÀÑîÁ«Í¤*/
-×Ï³ñÉÀ|×ÏÉÀÊÌÕß/*ÉÏºÚÄ¾ÑÂºón*/
+å°è²©$r suzhou;s|r wugong;e
+æ£—ç´…ç·žé¢çš®è¢|åœ°ç‰¢é‘°åŒ™|æ¥Šè“®äº­|æˆå¾·æ®¿æ®¿ä¸‹å¼Ÿå­/*å…ˆæ‰¾ä»»æˆ‘è¡Œask æ¯”åŠæ‹¿åˆ°é»‘æœ¨ä»¤, ç„¶å¾Œgive ling to zhang chengfeng, ä¸Šé»‘æœ¨å´–, ç æ­»æ¥Šè“®äº­*/
+ç´«ç¶¢è¡«|ç´«è¡«ä¾è€…/*ä¸Šé»‘æœ¨å´–å¾Œn*/
 
-×ÏÉ«ôÂôÄ/*½ðÂÖ·¨Íõ, ÁúÏóôÂôÄ±»ÈËÄÃÁË, Ëû¾Í´©Õâ¼þ*/
-°å¸«/*³¤°²4¸öÃÅ¸½½üµÄ±øÓªÖÐµÄ¸±½«, Ëæ»úÉíÉÏÓÐ, Èç¹ûÃ»ÓÐ¿³ËÀµÈË¢ÐÂ*/
+ç´«è‰²è¢ˆè£Ÿ/*é‡‘è¼ªæ³•çŽ‹, é¾è±¡è¢ˆè£Ÿè¢«äººæ‹¿äº†, ä»–å°±ç©¿é€™ä»¶*/
+æ¿æ–§/*é•·å®‰4å€‹é–€é™„è¿‘çš„å…µç‡Ÿä¸­çš„å‰¯å°‡, éš¨æ©Ÿèº«ä¸Šæœ‰, å¦‚æžœæ²’æœ‰ç æ­»ç­‰åˆ·æ–°*/
 
-ÐþÌúÊ¯/*Íò½Ù¹È½â¾ÈÄ¾ÍñÇå, ¸øÄ¾ÍñÇå¾øÇé»¨, »¨ÔÚ²ÝÀïÃæ*/
+çŽ„éµçŸ³/*è¬åŠ«è°·è§£æ•‘æœ¨å©‰æ¸…, çµ¦æœ¨å©‰æ¸…çµ•æƒ…èŠ±, èŠ±åœ¨è‰è£¡é¢*/
 
-°×ÅÛ/*ÌÒ»¨µºÂÌÖñÁÖ, É±ÑÆÆÍ*/
-Ã÷Öé|´Ö²¼ÅÛ/*ÌÒ»¨µº·ë·òÈËÄ¹ÀïÃæ, #3 push bei left;#3 push bei right;»á³öÃÜµÀ È»ºó down;down;pick zhu ³öÊØÄ¹ÈË,¿³Ö®, Èç¹ûÄ¹±®ÍÆ´íÁËÍÆ²»¿ª, push beiÖØÖÃ´ÎÊý*/
-¡¸ºÓÍ¼¡¹|¡¸ÂåÊé¡¹/*ÌÒ»¨µº·ë·òÈËÄ¹ÀïÃæ, #3 push bei left;#3 push bei right;»á³öÃÜµÀ È»ºó down,get*/
-ÀÇÑÀ°ô/*Ã÷½ÌÈñ½ðÆì×¯ï£, Îâ¾¢²Ý*/
-Öì¹û|ÎÞÓÇºì»¨/*ÔÚÃ·×¯, É±¶¡¼á, »ñµÃºìÓñÔ¿³×, ¹ý°ÙÄ¾Ô°, µ½ÇÙÐÄÐ¡Ôº, unlock,e,get all from guanmu,get all from wuyou honghua*/
+ç™½è¢/*æ¡ƒèŠ±å³¶ç¶ ç«¹æž—, æ®ºå•žåƒ•*/
+æ˜Žç |ç²—å¸ƒè¢/*æ¡ƒèŠ±å³¶é¦®å¤«äººå¢“è£¡é¢, #3 push bei left;#3 push bei right;æœƒå‡ºå¯†é“ ç„¶å¾Œ down;down;pick zhu å‡ºå®ˆå¢“äºº,ç ä¹‹, å¦‚æžœå¢“ç¢‘æŽ¨éŒ¯äº†æŽ¨ä¸é–‹, push beié‡ç½®æ¬¡æ•¸*/
+ã€Œæ²³åœ–ã€|ã€Œæ´›æ›¸ã€/*æ¡ƒèŠ±å³¶é¦®å¤«äººå¢“è£¡é¢, #3 push bei left;#3 push bei right;æœƒå‡ºå¯†é“ ç„¶å¾Œ down,get*/
+ç‹¼ç‰™æ£’/*æ˜Žæ•™éŠ³é‡‘æ——èŽŠéŒš, å³å‹è‰*/
+æœ±æžœ|ç„¡æ†‚ç´…èŠ±/*åœ¨æ¢…èŽŠ, æ®ºä¸å …, ç²å¾—ç´…çŽ‰é‘°åŒ™, éŽç™¾æœ¨åœ’, åˆ°ç´å¿ƒå°é™¢, unlock,e,get all from guanmu,get all from wuyou honghua*/
 
-ÌÀ°ü|ÓÍÕ¨»¨Éú$r lanzhou;n;n;w;1buy
-êóÅ£Èâ|¾ÆºùÂ«$r lanzhou;w;w;s;s;1buy
-ÀîÎÄÐã|Á÷ÐÇ´¸$r lanzhou;n;hi
-¹Â»êÒ°¹í$r lanzhou;#4 n;#8 w;wu;n
-Íß¶úÀ­Æë$r lanzhou;n;ask li wenxiu about ËÕÆÕ;ask li wenxiu about ¸¸Ä¸;ask li wenxiu about ¸ß²ýµØÍ¼; ÄÃµ½µØÍ¼ºó
+æ¹¯åŒ…|æ²¹ç‚¸èŠ±ç”Ÿ$r lanzhou;n;n;w;1buy
+â–¡ç‰›è‚‰|é…’è‘«è˜†$r lanzhou;w;w;s;s;1buy
+æŽæ–‡ç§€|æµæ˜ŸéŒ˜$r lanzhou;n;hi
+å­¤é­‚é‡Žé¬¼$r lanzhou;#4 n;#8 w;wu;n
+ç“¦è€³æ‹‰é½Š$r lanzhou;n;ask li wenxiu about è˜‡æ™®;ask li wenxiu about çˆ¶æ¯;ask li wenxiu about é«˜æ˜Œåœ°åœ–; æ‹¿åˆ°åœ°åœ–å¾Œ
 r lanzhou;#4 n;#8 w;wu;n;e;e;s;e;n;n;e;e;s;e;#3 nu
 #2 turn huan left;#5 turn huan right;d
 w;n;n;nw;ne;
-¡¸×ÓÂ·ÐÄµÃ¡¹$Íß¶úÀ­Æë2nµÄÃÜÊÒ, ÇÐ¼Ç´ø¸ß²ýµØÍ¼
+ã€Œå­è·¯å¿ƒå¾—ã€$ç“¦è€³æ‹‰é½Š2nçš„å¯†å®¤, åˆ‡è¨˜å¸¶é«˜æ˜Œåœ°åœ–
 
-°ÎË¿É½Ò©|²¤²Ë·ÛÌõ|Ü½ÈØ»¨¹½|ÂéÀ±¶¹¸¯|ÃÛÖ­ÌðÅº|Éºº÷°×²Ë|ÇåË®ºùÂ«$ÉÙÁÖ³ø·¿, ¶ëÃ¼³ø·¿, Íæ¼ÒÅÌÁú¾Ó³ø·¿
-±¡¾î$ÉÙÁÖÄÚ ´óÐÛ±¦µî#n ketou, »òÕßÔÚÏÀ¿ÍµºÊé·¿¡¢Ñ©É½²Ø¾­¸ó¡¢Ñà×ÓÎÙ»¹Ê©Ë®¸óËæ»úË¢ÐÂ
+æ‹”çµ²å±±è—¥|è èœç²‰æ¢|èŠ™è“‰èŠ±è‡|éº»è¾£è±†è…|èœœæ±ç”œè—•|çŠç‘šç™½èœ|æ¸…æ°´è‘«è˜†$å°‘æž—å»šæˆ¿, å³¨çœ‰å»šæˆ¿, çŽ©å®¶ç›¤é¾å±…å»šæˆ¿
+è–„çµ¹$å°‘æž—å…§ å¤§é›„å¯¶æ®¿#n ketou, æˆ–è€…åœ¨ä¿ å®¢å³¶æ›¸æˆ¿ã€é›ªå±±è—ç¶“é–£ã€ç‡•å­éŽ¢é‚„æ–½æ°´é–£éš¨æ©Ÿåˆ·æ–°
 
-Éßµ¨¸à$ÄÃµ½½ðÉßµ¨, ÇàÉßµ¨ºó, ¸ø°×ÍÕÉ½µÄÐ¡Çà(Å·Ñô·æn;w;s)ÖÆ×÷µÃ
-°Ù»¨òóÉß¸à$ÄÃµ½°ÙÏã»¨, òóÉßµ¨, ¸øÉñÁúµºµÄÐíÑ©Í¤ÖÆ×÷µÃ
-°ÙÏã»¨|¶Ï³¦»¨|ÎÞÃû»¨$ÉñÁúµºµÄÐíÑ©Í¤west, ²ÝÆºgetËæ»ú, ×¢ÒâÈç¹ûÓÐ¶Ï³¦»¨»áÖÐ¶¾
+è›‡è†½è†$æ‹¿åˆ°é‡‘è›‡è†½, é’è›‡è†½å¾Œ, çµ¦ç™½é§å±±çš„å°é’(æ­é™½é‹’n;w;s)åˆ¶ä½œå¾—
+ç™¾èŠ±è®è›‡è†$æ‹¿åˆ°ç™¾é¦™èŠ±, è®è›‡è†½, çµ¦ç¥žé¾å³¶çš„è¨±é›ªäº­åˆ¶ä½œå¾—
+ç™¾é¦™èŠ±|æ–·è…¸èŠ±|ç„¡åèŠ±$ç¥žé¾å³¶çš„è¨±é›ªäº­west, è‰åªgetéš¨æ©Ÿ, æ³¨æ„å¦‚æžœæœ‰æ–·è…¸èŠ±æœƒä¸­æ¯’
 
- »Ø¸´ ÒýÓÃ TOP
+ å›žå¾© å¼•ç”¨ TOP
 
 
 
-·¢¶ÌÏûÏ¢
-¼ÓÎªºÃÓÑ
+ç™¼çŸ­æ¶ˆæ¯
+åŠ ç‚ºå¥½å‹
 pyjh
 
-UID370 Ìû×Ó2 ¾«»ª0 »ý·Ö201 ÔÄ¶ÁÈ¨ÏÞ30 ÔÚÏßÊ±¼ä20 Ð¡Ê± ×¢²áÊ±¼ä2010-11-17 ×îºóµÇÂ¼2011-2-28
-½­ºþºÀÏÀ
+UID370 å¸–å­2 ç²¾è¯0 ç©åˆ†201 é–±è®€æ¬Šé™30 åœ¨ç·šæ™‚é–“20 å°æ™‚ æ³¨å†Šæ™‚é–“2010-11-17 æœ€å¾Œç™»éŒ„2011-2-28
+æ±Ÿæ¹–è±ªä¿ 
 
 
  3#
- pyjh·¢±íÓÚ 2010-11-27 12:30 | Ö»¿´¸Ã×÷Õß ³ÌÓ¢/°×Ë¿ÒÂ/×íÏÉ²è/ÌÒ»¨¸â ÓÉÑïÖÝ¹ã³¡6e£¬se£¬s£¬3eµ½´ï¼ÎÐËº£¸Û£¬ask chuanfu about ³öº££¬
-give 1 gold to chuanfu£¬µ½´ïÌÒ»¨µºº£Ì²ºó£¬n½øÈëÌÒ»¨ÁÖ£¬
-È»ºóÍ¨¹ýÁ¬Ðøn;s;w;e;nw;ne;sw;seÂÒ×ß, µ½¾«Éá ask sha Íæ;agree;enter;n;n;n;³ø·¿ÖÐ·¢ÏÖ³ÌÓ¢
-µØÉÏÓÐ¾Íget, Ã»ÓÐ¾Íorder
+ pyjhç™¼è¡¨äºŽ 2010-11-27 12:30 | åªçœ‹è©²ä½œè€… ç¨‹è‹±/ç™½çµ²è¡£/é†‰ä»™èŒ¶/æ¡ƒèŠ±ç³• ç”±æšå·žå»£å ´6eï¼Œseï¼Œsï¼Œ3eåˆ°é”å˜‰èˆˆæµ·æ¸¯ï¼Œask chuanfu about å‡ºæµ·ï¼Œ
+give 1 gold to chuanfuï¼Œåˆ°é”æ¡ƒèŠ±å³¶æµ·ç˜å¾Œï¼Œné€²å…¥æ¡ƒèŠ±æž—ï¼Œ
+ç„¶å¾Œé€šéŽé€£çºŒn;s;w;e;nw;ne;sw;seäº‚èµ°, åˆ°ç²¾èˆ ask sha çŽ©;agree;enter;n;n;n;å»šæˆ¿ä¸­ç™¼ç¾ç¨‹è‹±
+åœ°ä¸Šæœ‰å°±get, æ²’æœ‰å°±order
 
-ÁÖÆ½Ö®: r huashan;su;su;eu;eu;su;eu;eu;#4 su;eu;w;jump cliff; »áÔÎ,ÐÑÁË;climb;e
+æž—å¹³ä¹‹: r huashan;su;su;eu;eu;su;eu;eu;#4 su;eu;w;jump cliff; æœƒæšˆ,é†’äº†;climb;e
 
-´óÇàÍÜ: r emei;#4 wu;#3 su;sw;su;se;wu;su;se;sw;s
-ÉáÉíÑÂ, »ù±¾Çá¹¦>220, sheshen, ·ñÔò»áËÀ, ÏÂÈ¥¾Í¿´µ½ÇàÍÜÁË
-Àë¿ª#10 {wang;n}µ½ÉáÉíÑÂ±Ú, climb
+å¤§é’è›™: r emei;#4 wu;#3 su;sw;su;se;wu;su;se;sw;s
+èˆèº«å´–, åŸºæœ¬è¼•åŠŸ>220, sheshen, å¦å‰‡æœƒæ­», ä¸‹åŽ»å°±çœ‹åˆ°é’è›™äº†
+é›¢é–‹#10 {wang;n}åˆ°èˆèº«å´–å£, climb
 
-½Ð»¨¼¦: ÑïÖÝÖª¸®ÕÒÊ¦Ò¯ r gc;w;n;n;#2 ask tan ½Ð»¨¼¦, È»ºóÈ¥±±¾©È«¾ÛµÂ¾ÆÂ¥r beijing;#3 e;#6 n;u;ask cheng Ì·Ê¦Ò¯;ask cheng ½Ð»¯¼¦;give 5 gold to cheng
+å«èŠ±é›ž: æšå·žçŸ¥åºœæ‰¾å¸«çˆº r gc;w;n;n;#2 ask tan å«èŠ±é›ž, ç„¶å¾ŒåŽ»åŒ—äº¬å…¨èšå¾·é…’æ¨“r beijing;#3 e;#6 n;u;ask cheng è­šå¸«çˆº;ask cheng å«åŒ–é›ž;give 5 gold to cheng
 
-ÇÇÈý»±$r nanyang;n;n;w;w;w;nu;w;nw;move stone
+å–¬ä¸‰æ§$r nanyang;n;n;w;w;w;nu;w;nw;move stone
 
-ÁúÈª½£$r huashan;su;su;eu;eu;su;eu;eu;su;su;su;su;eu;n;n;n;w;n;w ·Ç»ªÉ½µÜ×Ó¿³ËÀÔÀ·òÈË, pick sword
-ÓñÅ®½£Æ×$r huashan;su;su;eu;eu;su;eu;eu;su;su;su;su;eu;n;n;n;w;n;w ·Ç»ªÉ½µÜ×Ó¿³ËÀÔÀ·òÈË,move tai;get all
+é¾æ³‰åŠ$r huashan;su;su;eu;eu;su;eu;eu;su;su;su;su;eu;n;n;n;w;n;w éžè¯å±±å¼Ÿå­ç æ­»å²³å¤«äºº, pick sword
+çŽ‰å¥³åŠè­œ$r huashan;su;su;eu;eu;su;eu;eu;su;su;su;su;eu;n;n;n;w;n;w éžè¯å±±å¼Ÿå­ç æ­»å²³å¤«äºº,move tai;get all
 
-ÂøÍ·|ÇåË®$ºâÉ½³ø·¿»òÕßáÔÉ½³ø·¿ r nanyang;n;n;w;#3 n;nu;ne;u;#5 nu;e;s;serve
-Ã×·¹|Ë®Íë$åÐÒ£³ø·¿»òÕßÈ«Õæ³ø·¿ r xiaoyao;#3 w;s;order
-°Ù»¨Äð|ÏÊ»¨Öà$ÒÆ»¨¹¬³ø·¿ r gc;e;s;buy fire;n;r huashan;su;su;eu;eu;su;eu;eu;su;su;wu;wu;jump down;yun recover
-d;#2 w;#3 nu;jump down;s ºóÃæÒ»Ö±s×ß³ö»¨Õó(ÕóÀï»á¼õÉÙÆøÑª£©;³öÕóºóyun heal ÒÆ»¨¹¬¹¬ÃÅ#2 s;w;order
-Ð¡Ã×·¹|»¨²è$Ã·×¯³ø·¿ r hangzhou;n;sw;w;sw;nw;sw;wu;n;n;knock 4;knock 2;knock 5;knock 3;n;#wa 1000;#7 n;w;serve
-½´Å£Èâ|¶¬¹ÏÌÀ$ÌÆÃÅ³ø·¿Òª r tangmen;e;s;w;w;nw;nu;nu;w;nw;kill tang gang
+é¥…é ­|æ¸…æ°´$è¡¡å±±å»šæˆ¿æˆ–è€…åµ©å±±å»šæˆ¿ r nanyang;n;n;w;#3 n;nu;ne;u;#5 nu;e;s;serve
+ç±³é£¯|æ°´ç¢—$é€é™å»šæˆ¿æˆ–è€…å…¨çœŸå»šæˆ¿ r xiaoyao;#3 w;s;order
+ç™¾èŠ±é‡€|é®®èŠ±ç²¥$ç§»èŠ±å®®å»šæˆ¿ r gc;e;s;buy fire;n;r huashan;su;su;eu;eu;su;eu;eu;su;su;wu;wu;jump down;yun recover
+d;#2 w;#3 nu;jump down;s å¾Œé¢ä¸€ç›´sèµ°å‡ºèŠ±é™£(é™£è£¡æœƒæ¸›å°‘æ°£è¡€ï¼‰;å‡ºé™£å¾Œyun heal ç§»èŠ±å®®å®®é–€#2 s;w;order
+å°ç±³é£¯|èŠ±èŒ¶$æ¢…èŽŠå»šæˆ¿ r hangzhou;n;sw;w;sw;nw;sw;wu;n;n;knock 4;knock 2;knock 5;knock 3;n;#wa 1000;#7 n;w;serve
+é†¬ç‰›è‚‰|å†¬ç“œæ¹¯$å”é–€å»šæˆ¿è¦ r tangmen;e;s;w;w;nw;nu;nu;w;nw;kill tang gang
 enter;#8 n;e;n;w;serve
-¸ßÁ»Ã×·¹|Ò°²ËÌÀÍë$ÏåÑô³ø·¿ r xiangyang;#2 w;#4 s;serve
-µ¾ÏãÐ¡Ã×Öà|±¬ÏãöêÓãÌÀ$ÖÐÖÝÃç¼Ò³ø·¿ r zhongzhou;#4 n;#2 e;n;serve
-»ÆÃ×·¹|ÌÀÍë$»ªÉ½³ø·¿ r huashan;su;su;eu;eu;su;eu;eu;su;su;su;su;eu;n;n;n;w;w;serve
+é«˜ç²±ç±³é£¯|é‡Žèœæ¹¯ç¢—$è¥„é™½å»šæˆ¿ r xiangyang;#2 w;#4 s;serve
+ç¨»é¦™å°ç±³ç²¥|çˆ†é¦™é¯½é­šæ¹¯$ä¸­å·žè‹—å®¶å»šæˆ¿ r zhongzhou;#4 n;#2 e;n;serve
+é»ƒç±³é£¯|æ¹¯ç¢—$è¯å±±å»šæˆ¿ r huashan;su;su;eu;eu;su;eu;eu;su;su;su;su;eu;n;n;n;w;w;serve
 
-Óñóï$É±¶«·½²»°Ü ·ÇÈÕÔÂµÜ×ÓÏÈÈ¥¸úÈÎÎÒÐÐ±È½£»ñµÃºÚÄ¾Áî r heimuya;give ling to zhang chengfeng;
+çŽ‰ç°«$æ®ºæ±æ–¹ä¸æ•— éžæ—¥æœˆå¼Ÿå­å…ˆåŽ»è·Ÿä»»æˆ‘è¡Œæ¯”åŠç²å¾—é»‘æœ¨ä»¤ r heimuya;give ling to zhang chengfeng;
 n;circle wan;d;s;e;n;su;n;enter;e
 
-¶¾Ö©Öë$ÔÚÑ©É½Ñ©¿Ó r xueshan;n;e;e;s;s;s;sd
+æ¯’èœ˜è››$åœ¨é›ªå±±é›ªå‘ r xueshan;n;e;e;s;s;s;sd
 
- »Ø¸´ ÒýÓÃ TOP
+ å›žå¾© å¼•ç”¨ TOP
 
 
 
-·¢¶ÌÏûÏ¢
-¼ÓÎªºÃÓÑ
-corrine (ÂæÊ«Ê«)
+ç™¼çŸ­æ¶ˆæ¯
+åŠ ç‚ºå¥½å‹
+corrine (é§±è©©è©©)
 
-UID34 Ìû×Ó21 ¾«»ª2 »ý·Ö261 ÔÄ¶ÁÈ¨ÏÞ30 ÔÚÏßÊ±¼ä6 Ð¡Ê± ×¢²áÊ±¼ä2010-11-1 ×îºóµÇÂ¼2010-11-30
-½­ºþºÀÏÀ
+UID34 å¸–å­21 ç²¾è¯2 ç©åˆ†261 é–±è®€æ¬Šé™30 åœ¨ç·šæ™‚é–“6 å°æ™‚ æ³¨å†Šæ™‚é–“2010-11-1 æœ€å¾Œç™»éŒ„2010-11-30
+æ±Ÿæ¹–è±ªä¿ 
 
 
  4#
- corrine·¢±íÓÚ 2010-11-27 22:50 | Ö»¿´¸Ã×÷Õß ÐèÒª»áá÷ÁÔ¼¼ÇÉ (hunting)²ÅÄÜ³öµÄÎïÆ·
-½ðÉßµ¨$É±½ð»·Éß, µØµã:°×ÍÕÉßÔ°, °×ÍÕÎ÷ÃÅÍâ, Ø¤°ïÆÆÃíÉßÔ°, ÉñÁúµº¹àÄ¾´Ô$
-ÇàÉßµ¨$É±ÖñÒ¶ÇàÉß, µØµã:°×ÍÕÉßÔ°, °×ÍÕÎ÷ÃÅÍâ, Ø¤°ïÆÆÃíÉßÔ°, ÉñÁúµº¹àÄ¾´Ô$
-òóÉßµ¨$É±òóÉß, µØµã:°×ÍÕÉßÔ°, Ø¤°ïÆÆÃíÉßÔ°, ÉñÁúµº¹àÄ¾´Ô$
-ÉßÆ¤$É±òþÉß, µØµã:°×ÍÕÎ÷ÃÅ³öÈ¥ÑÒ¶´$
-ÉßÈâ$É±¶¾Éß
+ corrineç™¼è¡¨äºŽ 2010-11-27 22:50 | åªçœ‹è©²ä½œè€… éœ€è¦æœƒç‹©çµæŠ€å·§ (hunting)æ‰èƒ½å‡ºçš„ç‰©å“
+é‡‘è›‡è†½$æ®ºé‡‘ç’°è›‡, åœ°é»ž:ç™½é§è›‡åœ’, ç™½é§è¥¿é–€å¤–, ä¸å¹«ç ´å»Ÿè›‡åœ’, ç¥žé¾å³¶çŒæœ¨å¢$
+é’è›‡è†½$æ®ºç«¹è‘‰é’è›‡, åœ°é»ž:ç™½é§è›‡åœ’, ç™½é§è¥¿é–€å¤–, ä¸å¹«ç ´å»Ÿè›‡åœ’, ç¥žé¾å³¶çŒæœ¨å¢$
+è®è›‡è†½$æ®ºè®è›‡, åœ°é»ž:ç™½é§è›‡åœ’, ä¸å¹«ç ´å»Ÿè›‡åœ’, ç¥žé¾å³¶çŒæœ¨å¢$
+è›‡çš®$æ®ºèŸ’è›‡, åœ°é»ž:ç™½é§è¥¿é–€å‡ºåŽ»å·–æ´ž$
+è›‡è‚‰$æ®ºæ¯’è›‡
 
- »Ø¸´ ÒýÓÃ TOP
+ å›žå¾© å¼•ç”¨ TOP
 
 
 
-·¢¶ÌÏûÏ¢
-¼ÓÎªºÃÓÑ
-Ò¶·É
+ç™¼çŸ­æ¶ˆæ¯
+åŠ ç‚ºå¥½å‹
+è‘‰é£›
 
-UID548 Ìû×Ó6 ¾«»ª0 »ý·Ö3 ÔÄ¶ÁÈ¨ÏÞ10 ÔÚÏßÊ±¼ä30 Ð¡Ê± ×¢²áÊ±¼ä2010-12-25 ×îºóµÇÂ¼2011-2-11
-³õÈëÎäÁÖ
+UID548 å¸–å­6 ç²¾è¯0 ç©åˆ†3 é–±è®€æ¬Šé™10 åœ¨ç·šæ™‚é–“30 å°æ™‚ æ³¨å†Šæ™‚é–“2010-12-25 æœ€å¾Œç™»éŒ„2011-2-11
+åˆå…¥æ­¦æž—
 
 
  5#
- Ò¶·É·¢±íÓÚ 2010-12-25 01:20 | Ö»¿´¸Ã×÷Õß ±¾Ìû×îºóÓÉ Ò¶·É ÓÚ 2010-12-25 09:35 ±à¼­
+ è‘‰é£›ç™¼è¡¨äºŽ 2010-12-25 01:20 | åªçœ‹è©²ä½œè€… æœ¬å¸–æœ€å¾Œç”± è‘‰é£› äºŽ 2010-12-25 09:35 ç·¨è¼¯
 
-»ÆÈØ  r gc;#6 e;se;s;#3 e;ask chuanfu about ³öº£; give 1 gold to chuanfu;n    ½øÈëÌÒ»¨ÁÖ£¬
-È»ºóÍ¨¹ýÁ¬Ðøn;s;w;e;nw;ne;sw;seÂÒ×ßµ½Ð¡¾¶¡£#3 n; e;n;w;n; ask sha Íæ;agree;enter;w;w;w;s
+é»ƒè“‰  r gc;#6 e;se;s;#3 e;ask chuanfu about å‡ºæµ·; give 1 gold to chuanfu;n    é€²å…¥æ¡ƒèŠ±æž—ï¼Œ
+ç„¶å¾Œé€šéŽé€£çºŒn;s;w;e;nw;ne;sw;seäº‚èµ°åˆ°å°å¾‘ã€‚#3 n; e;n;w;n; ask sha çŽ©;agree;enter;w;w;w;s
 
- »Ø¸´ ÒýÓÃ TOP
+ å›žå¾© å¼•ç”¨ TOP
 
 
 
-·¢¶ÌÏûÏ¢
-¼ÓÎªºÃÓÑ
-ÎµÀ¶º£°¶2010
+ç™¼çŸ­æ¶ˆæ¯
+åŠ ç‚ºå¥½å‹
+è”šè—æµ·å²¸2010
 
-UID545 Ìû×Ó6 ¾«»ª0 »ý·Ö3 ÔÄ¶ÁÈ¨ÏÞ10 ÔÚÏßÊ±¼ä0 Ð¡Ê± ×¢²áÊ±¼ä2010-12-24 ×îºóµÇÂ¼2011-1-16
-³õÈëÎäÁÖ
+UID545 å¸–å­6 ç²¾è¯0 ç©åˆ†3 é–±è®€æ¬Šé™10 åœ¨ç·šæ™‚é–“0 å°æ™‚ æ³¨å†Šæ™‚é–“2010-12-24 æœ€å¾Œç™»éŒ„2011-1-16
+åˆå…¥æ­¦æž—
 
 
  6#
- ÎµÀ¶º£°¶2010·¢±íÓÚ 2010-12-25 09:11 | Ö»¿´¸Ã×÷Õß ±¾Ìû×îºóÓÉ ÎµÀ¶º£°¶2010 ÓÚ 2010-12-25 09:14 ±à¼­
+ è”šè—æµ·å²¸2010ç™¼è¡¨äºŽ 2010-12-25 09:11 | åªçœ‹è©²ä½œè€… æœ¬å¸–æœ€å¾Œç”± è”šè—æµ·å²¸2010 äºŽ 2010-12-25 09:14 ç·¨è¼¯
 
-Àî°¢ÆÅ Õâ¸öÃ»ÓÐ¡£¡£¸£ÖÝÄÇ¸öÊÇ³Â°¢ÆÅ
+æŽé˜¿å©† é€™å€‹æ²’æœ‰ã€‚ã€‚ç¦å·žé‚£å€‹æ˜¯é™³é˜¿å©†
 
-½â¾öÁË£¬¾ÓÈ»ÔÚÑïÖÝ¹ã³¡¡£¡£¡£
+è§£æ±ºäº†ï¼Œå±…ç„¶åœ¨æšå·žå»£å ´ã€‚ã€‚ã€‚
 
- »Ø¸´ ÒýÓÃ TOP
+ å›žå¾© å¼•ç”¨ TOP
 
 
 
-·¢¶ÌÏûÏ¢
-¼ÓÎªºÃÓÑ
-ÎµÀ¶º£°¶2010
+ç™¼çŸ­æ¶ˆæ¯
+åŠ ç‚ºå¥½å‹
+è”šè—æµ·å²¸2010
 
-UID545 Ìû×Ó6 ¾«»ª0 »ý·Ö3 ÔÄ¶ÁÈ¨ÏÞ10 ÔÚÏßÊ±¼ä0 Ð¡Ê± ×¢²áÊ±¼ä2010-12-24 ×îºóµÇÂ¼2011-1-16
-³õÈëÎäÁÖ
+UID545 å¸–å­6 ç²¾è¯0 ç©åˆ†3 é–±è®€æ¬Šé™10 åœ¨ç·šæ™‚é–“0 å°æ™‚ æ³¨å†Šæ™‚é–“2010-12-24 æœ€å¾Œç™»éŒ„2011-1-16
+åˆå…¥æ­¦æž—
 
 
  7#
- ÎµÀ¶º£°¶2010·¢±íÓÚ 2011-1-16 07:06 | Ö»¿´¸Ã×÷Õß ²¹³äÒ»¸ö£º¾«ÌúÕÈ Íò°²ËÂËþ ÕÌÉ®
+ è”šè—æµ·å²¸2010ç™¼è¡¨äºŽ 2011-1-16 07:06 | åªçœ‹è©²ä½œè€… è£œå……ä¸€å€‹ï¼šç²¾éµæ– è¬å®‰å¯ºå¡” ä»—åƒ§
 
- »Ø¸´ ÒýÓÃ TOP
+ å›žå¾© å¼•ç”¨ TOP
 
 
 
-·¢¶ÌÏûÏ¢
-¼ÓÎªºÃÓÑ
-ÄÏ¼«ÐÜ
+ç™¼çŸ­æ¶ˆæ¯
+åŠ ç‚ºå¥½å‹
+å—æ¥µç†Š
 
-UID2 Ìû×Ó41 ¾«»ª9 »ý·Ö486 ÔÄ¶ÁÈ¨ÏÞ30 ÔÚÏßÊ±¼ä57 Ð¡Ê± ×¢²áÊ±¼ä2010-9-8 ×îºóµÇÂ¼2011-5-2
-½­ºþºÀÏÀ
+UID2 å¸–å­41 ç²¾è¯9 ç©åˆ†486 é–±è®€æ¬Šé™30 åœ¨ç·šæ™‚é–“57 å°æ™‚ æ³¨å†Šæ™‚é–“2010-9-8 æœ€å¾Œç™»éŒ„2011-5-2
+æ±Ÿæ¹–è±ªä¿ 
 
 
  8#
- ÄÏ¼«ÐÜ·¢±íÓÚ 2011-1-25 23:26 | Ö»¿´¸Ã×÷Õß ºûµû$rd yanziwu;npcen=hudie;nd;eu;e;e;s;s;e;e;ok$
-µ¤¶¥º×$rd yanziwu;npcen=danding he;nd;eu;e;e;s;s;e;e;ok$
-Ð¡ÃÛ·ä$Îäµ±ÌÒÔ°Ëæ»ú³ör wudang;wu;w;#4 su;sd;su;sd;#4 su;ed;e;e;ed;sd;ed;sd;ed;#5 e
+ å—æ¥µç†Šç™¼è¡¨äºŽ 2011-1-25 23:26 | åªçœ‹è©²ä½œè€… è´è¶$rd yanziwu;npcen=hudie;nd;eu;e;e;s;s;e;e;ok$
+ä¸¹é ‚é¶´$rd yanziwu;npcen=danding he;nd;eu;e;e;s;s;e;e;ok$
+å°èœœèœ‚$æ­¦ç•¶æ¡ƒåœ’éš¨æ©Ÿå‡ºr wudang;wu;w;#4 su;sd;su;sd;#4 su;ed;e;e;ed;sd;ed;sd;ed;#5 e
 
- »Ø¸´ ÒýÓÃ TOP
+ å›žå¾© å¼•ç”¨ TOP
 
 
 
-·¢¶ÌÏûÏ¢
-¼ÓÎªºÃÓÑ
+ç™¼çŸ­æ¶ˆæ¯
+åŠ ç‚ºå¥½å‹
 loveles
 
-UID543 Ìû×Ó5 ¾«»ª1 »ý·Ö68 ÔÄ¶ÁÈ¨ÏÞ20 ÔÚÏßÊ±¼ä142 Ð¡Ê± ×¢²áÊ±¼ä2010-12-24 ×îºóµÇÂ¼2011-2-14
-½­ºþÐÂÐã
+UID543 å¸–å­5 ç²¾è¯1 ç©åˆ†68 é–±è®€æ¬Šé™20 åœ¨ç·šæ™‚é–“142 å°æ™‚ æ³¨å†Šæ™‚é–“2010-12-24 æœ€å¾Œç™»éŒ„2011-2-14
+æ±Ÿæ¹–æ–°ç§€
 
 
  9#
- loveles·¢±íÓÚ 2011-2-1 15:33 | Ö»¿´¸Ã×÷Õß Ì«ÐÐÉ½ÍÁ·Ë Õâ¸öÃ»ÓÐ¡£¡£Ï£ÍûÓÐÈËÖªµÀ
-==== ¶À¹Â²»ÐèÒªÕâ¸öÈË, ÄÇÖ»ÊÇ¸öÇé¾°Óï¾ä...
+ lovelesç™¼è¡¨äºŽ 2011-2-1 15:33 | åªçœ‹è©²ä½œè€… å¤ªè¡Œå±±åœŸåŒª é€™å€‹æ²’æœ‰ã€‚ã€‚å¸Œæœ›æœ‰äººçŸ¥é“
+==== ç¨å­¤ä¸éœ€è¦é€™å€‹äºº, é‚£åªæ˜¯å€‹æƒ…æ™¯èªžå¥...
 
- »Ø¸´ ÒýÓÃ TOP
+ å›žå¾© å¼•ç”¨ TOP
 
 
 
-·¢¶ÌÏûÏ¢
-¼ÓÎªºÃÓÑ
+ç™¼çŸ­æ¶ˆæ¯
+åŠ ç‚ºå¥½å‹
 cbingler
 
-UID401 Ìû×Ó14 ¾«»ª0 »ý·Ö7 ÔÄ¶ÁÈ¨ÏÞ10 ÔÚÏßÊ±¼ä127 Ð¡Ê± ×¢²áÊ±¼ä2010-11-20 ×îºóµÇÂ¼2011-5-6
-³õÈëÎäÁÖ
+UID401 å¸–å­14 ç²¾è¯0 ç©åˆ†7 é–±è®€æ¬Šé™10 åœ¨ç·šæ™‚é–“127 å°æ™‚ æ³¨å†Šæ™‚é–“2010-11-20 æœ€å¾Œç™»éŒ„2011-5-6
+åˆå…¥æ­¦æž—
 
 
  10#
- cbingler·¢±íÓÚ 2011-2-3 12:54 | Ö»¿´¸Ã×÷Õß µÀµÂ¾­ÉÏ²á, µÀµÂ¾­ÏÂ²á µÀµÂ¾­xÕÂ Îäµ±²Ø¾­¸ó(¹ÈÐéw;nu) Ëæ»úget
-»òÕß
-µÀµÂ¾­ÉÏ²á£¬È«Õæ ÕÆÀíµÀ³¤ ask zhangli about µÀµÂ¾­  ÐèÈ«ÕæµÜ×Ó | Îäµ± ¹ÈÐéµÀ³¤ ask guxu µÀµÂ¾­ ÐèÎäµ±µÜ×Ó
-µÀµÂ¾­ÏÂ²á£¬È«Õæ ÕÆ¾­µÀ³¤ ask zhangjing about µÀµÂ¾­  ÐèÈ«ÕæµÜ×Ó |Îäµ± ³¯Ìì¹¬ ÇåÐéµÀ³¤ ask qingxu µÀµÂ¾­ ÐèÎäµ±µÜ×Ó
+ cbinglerç™¼è¡¨äºŽ 2011-2-3 12:54 | åªçœ‹è©²ä½œè€… é“å¾·ç¶“ä¸Šå†Š, é“å¾·ç¶“ä¸‹å†Š é“å¾·ç¶“xç«  æ­¦ç•¶è—ç¶“é–£(è°·è™›w;nu) éš¨æ©Ÿget
+æˆ–è€…
+é“å¾·ç¶“ä¸Šå†Šï¼Œå…¨çœŸ æŽŒç†é“é•· ask zhangli about é“å¾·ç¶“  éœ€å…¨çœŸå¼Ÿå­ | æ­¦ç•¶ è°·è™›é“é•· ask guxu é“å¾·ç¶“ éœ€æ­¦ç•¶å¼Ÿå­
+é“å¾·ç¶“ä¸‹å†Šï¼Œå…¨çœŸ æŽŒç¶“é“é•· ask zhangjing about é“å¾·ç¶“  éœ€å…¨çœŸå¼Ÿå­ |æ­¦ç•¶ æœå¤©å®® æ¸…è™›é“é•· ask qingxu é“å¾·ç¶“ éœ€æ­¦ç•¶å¼Ÿå­
 
- »Ø¸´ ÒýÓÃ TOP
+ å›žå¾© å¼•ç”¨ TOP
 
 
 
-·¢¶ÌÏûÏ¢
-¼ÓÎªºÃÓÑ
+ç™¼çŸ­æ¶ˆæ¯
+åŠ ç‚ºå¥½å‹
 ltyxmud
 
-UID596 Ìû×Ó10 ¾«»ª0 »ý·Ö205 ÔÄ¶ÁÈ¨ÏÞ30 ÔÚÏßÊ±¼ä26 Ð¡Ê± ×¢²áÊ±¼ä2011-1-8 ×îºóµÇÂ¼2011-2-26
-½­ºþºÀÏÀ
+UID596 å¸–å­10 ç²¾è¯0 ç©åˆ†205 é–±è®€æ¬Šé™30 åœ¨ç·šæ™‚é–“26 å°æ™‚ æ³¨å†Šæ™‚é–“2011-1-8 æœ€å¾Œç™»éŒ„2011-2-26
+æ±Ÿæ¹–è±ªä¿ 
 
 
  11#
- ltyxmud·¢±íÓÚ 2011-2-3 22:27 | Ö»¿´¸Ã×÷Õß ¿µµÂµîµîÏÂµÜ×Ó£ºÕâ¸öÈç¹û²»ÊÇÈÕÔÂÉñ½ÌµÄµÜ×Ó£¬¿ÉÒÔ¿ª¸öÈÕÔÂÐ¡ºÅ£¬r heimuya;ask zhang ÉÏÑÂ£¬ÉÏºÚÄ¾ÑÂºó£¬fight»òÕßhitµÜ×Ó£¬´ò»èºóget dizi£¬¿¸ÏÂÉ½£¬drop dizi£¬È»ºóÈÃÖ´ÐÐÈÎÎñµÄºÅÉ±Ö®£¡
+ ltyxmudç™¼è¡¨äºŽ 2011-2-3 22:27 | åªçœ‹è©²ä½œè€… åº·å¾·æ®¿æ®¿ä¸‹å¼Ÿå­ï¼šé€™å€‹å¦‚æžœä¸æ˜¯æ—¥æœˆç¥žæ•™çš„å¼Ÿå­ï¼Œå¯ä»¥é–‹å€‹æ—¥æœˆå°è™Ÿï¼Œr heimuya;ask zhang ä¸Šå´–ï¼Œä¸Šé»‘æœ¨å´–å¾Œï¼Œfightæˆ–è€…hitå¼Ÿå­ï¼Œæ‰“æ˜å¾Œget diziï¼Œæ‰›ä¸‹å±±ï¼Œdrop diziï¼Œç„¶å¾Œè®“åŸ·è¡Œä»»å‹™çš„è™Ÿæ®ºä¹‹ï¼
 
-ÆäËû·Çµ±µØÃÅÅÉ²»¿ÉµÄÈÎÎñ¶¼¿ÉÒÔÓÃÀàËÆ·½Ê½¡£
+å…¶ä»–éžç•¶åœ°é–€æ´¾ä¸å¯çš„ä»»å‹™éƒ½å¯ä»¥ç”¨é¡žä¼¼æ–¹å¼ã€‚
 
-±¬½ªöêÓãÌÀ$r zhongzhou;n;n;n;n;e;e;n;serve;s;w;w
+çˆ†å§œé¯½é­šæ¹¯$r zhongzhou;n;n;n;n;e;e;n;serve;s;w;w

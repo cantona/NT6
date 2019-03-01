@@ -5,10 +5,10 @@ inherit F_DEALER;
 
 void create()
 {
-        set_name("Êé³Õ", ({ "shu chi", "chi", }) );
-        set("gender", "ÄÐÐÔ" );
+        set_name("æ›¸ç—´", ({ "shu chi", "chi", }) );
+        set("gender", "ç”·æ€§" );
         set("age", 40);
-        set("title", "»ãÎÄ¸óÀÏ°å");
+        set("title", "åŒ¯æ–‡é–£è€æ¿");
         set("combat_exp", 50000);
         set_skill("dodge", 50);
         set_skill("parry", 50);
@@ -42,5 +42,5 @@ void greeting(object ob)
 {
         if (! ob || ! visible(ob) || environment(ob) != environment())
                 return;
-        command("say ÕâÎ»" + RANK_D->query_respect(ob) + "¿ìÇë½ø£¬¿ìÇë½ø¡£");
+        command("say é€™ä½" + RANK_D->query_respect(ob) + "å¿«è«‹é€²ï¼Œå¿«è«‹é€²ã€‚");
 }

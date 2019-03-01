@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�޳���");
+        set("short", "無常閣");
         set("long", @LONG
-����������������ǰ�����㻹Ըʱ��Ϣ�ĵط�������̴��¯��
-��齰�����һӦ��ȫ���徲֮����Ȼ͸��һ˿����֮��
+這是歷代大理王侯前來進香還願時休息的地方。閣內檀象寶爐，
+軟榻矮幾，一應俱全，清靜之中隱然透出一絲富貴之象。
 LONG );
         set("exits", ([
                 "north": __DIR__"ruihemen",                            

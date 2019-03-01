@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define SHENG "¡¸" HIW "Á¬»·¾ö" NOR "¡¹"
+#define SHENG "ã€Œ" HIW "é€£ç’°æ±º" NOR "ã€"
 
 inherit F_SSERVER;
  
@@ -14,26 +14,26 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(SHENG "Ö»ÄÜÔÚÕ½¶·ÖĞ¶Ô¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(SHENG "åªèƒ½åœ¨æˆ°é¬¥ä¸­å°å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me)) || 
               query("skill_type", weapon) != "sword" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô£¬ÄÑÒÔÊ©Õ¹" SHENG "¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ï¼Œé›£ä»¥æ–½å±•" SHENG "ã€‚\n");
 
         if (me->query_skill("tianjian", 1) < 20)
-                return notify_fail("ÄãµÄÌì½£ĞŞÎª²»¹»£¨ÒªÇóÌì½£¶şÊ®¼¶£©£¬ÄÑÒÔÊ©Õ¹" SHENG "¡£\n");
+                return notify_fail("ä½ çš„å¤©åŠä¿®ç‚ºä¸å¤ ï¼ˆè¦æ±‚å¤©åŠäºŒåç´šï¼‰ï¼Œé›£ä»¥æ–½å±•" SHENG "ã€‚\n");
 
         if (me->query_skill_mapped("sword") != "tianjian")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢Ìì½££¬ÄÑÒÔÊ©Õ¹" SHENG "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼å¤©åŠï¼Œé›£ä»¥æ–½å±•" SHENG "ã€‚\n");
 
         if( query("neili", me)<15 )
-                return notify_fail("ÄãÏÖÔÚÕæÆø£¨ÒªÇó15µÄÄÚÁ¦£©²»¹»£¬ÄÑÒÔÊ©Õ¹" SHENG "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çœŸæ°£ï¼ˆè¦æ±‚15çš„å…§åŠ›ï¼‰ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" SHENG "ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¨¶Ô·½ÒÑËÀÍö£©£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼ˆå°æ–¹å·²æ­»äº¡ï¼‰ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIY "$N" HIY "Éí·¨ºö¿ì£¬ÊÖÖĞ" + weapon->name() +
-              HIY "»Ø×ª£¬Í»È»¡¸à§£¡à§£¡¡¹Êı½££¬Á¬Á¬´ÌÏò$n" HIY "¡£\n" NOR;
+        msg = HIY "$N" HIY "èº«æ³•å¿½å¿«ï¼Œæ‰‹ä¸­" + weapon->name() +
+              HIY "å›è½‰ï¼Œçªç„¶ã€Œå”°ï¼å”°ï¼ã€æ•¸åŠï¼Œé€£é€£åˆºå‘$n" HIY "ã€‚\n" NOR;
 
         message_combatd(msg, me, target);
 
@@ -57,7 +57,7 @@ int perform(object me, object target)
                 {
                                 set("newbie_quest/completed", 1, me);
                                 me->save();
-                                tell_object(me, HIG "ÄãÒÑ¾­Ñ§»áÁËÈçºÎÊ©Õ¹¾øÕĞ£¬¿ì»ØÈ¥ÕÒÀÏ´å³¤ÁìÈ¡½±Àø°É£¡\n" NOR);
+                                tell_object(me, HIG "ä½ å·²ç¶“å­¸æœƒäº†å¦‚ä½•æ–½å±•çµ•æ‹›ï¼Œå¿«å›å»æ‰¾è€æ‘é•·é ˜å–çå‹µå§ï¼\n" NOR);
                 }
 
         return 1;

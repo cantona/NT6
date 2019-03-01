@@ -9,7 +9,7 @@ int update_condition(object me, int duration)
         if( duration == 0 )
         {
                 tell_object(me, 
-HIB "忽然你全身感到一阵乏力，一肚皮不自在，原来你的大小庄收功了！\n" NOR );
+HIB "蹇界劧浣犲叏韬劅鍒颁竴闄ｄ箯鍔涳紝涓�鑲氱毊涓嶈嚜鍦紝鍘熶締浣犵殑澶у皬鑾婃敹鍔熶簡锛乗n" NOR );
                 addn("max_jing",query("linji/jing",  me), me);
                 addn("eff_jing",query("linji/jing",  me), me);
                 addn("jing",query("linji/jing",  me), me);

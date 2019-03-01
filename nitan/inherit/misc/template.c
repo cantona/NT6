@@ -2,34 +2,34 @@
 
 #include <template.h>
 
-nosave mixed  *dbase_format;    // dbase ¸ñÊ½
-nosave mixed  *function_format; // º¯Êý¸ñÊ½
+nosave mixed  *dbase_format;    // dbase æ ¼å¼
+nosave mixed  *function_format; // å‡½æ•¸æ ¼å¼
 
-nosave mapping template_data;   // Ä£°åÊý¾Ý
-nosave string  base_file;       // »ù×¼ÎÄ¼þ
+nosave mapping template_data;   // æ¨¡æ¿æ•¸æ“š
+nosave string  base_file;       // åŸºæº–æ–‡ä»¶
 
-// ÕâÊÇÒ»¸öÄ£°å
+// é€™æ˜¯ä¸€å€‹æ¨¡æ¿
 int is_template() { return 1; }
 
-// ²éÑ¯ dbase ¸ñÊ½
+// æŸ¥è©¢ dbase æ ¼å¼
 mixed *query_dbase_format()
 {
         return (sizeof(dbase_format) ? dbase_format : 0);
 }
 
-// ²éÑ¯º¯Êý¸ñÊ½
+// æŸ¥è©¢å‡½æ•¸æ ¼å¼
 mixed *query_function_format()
 {
         return (sizeof(function_format) ? function_format : 0);
 }
 
-// ²éÑ¯»ù×¼ÎÄ¼þ
+// æŸ¥è©¢åŸºæº–æ–‡ä»¶
 string query_base_file() { return sprintf("%s%s.c", BASIC_OB_DIR, base_file); }
 
-// ²éÑ¯È«²¿Ä£°åÊý¾Ý
+// æŸ¥è©¢å…¨éƒ¨æ¨¡æ¿æ•¸æ“š
 mapping query_entire_data() { return template_data; }
 
-// ²éÑ¯Ö¸¶¨Ä£°åÊý¾Ý
+// æŸ¥è©¢æŒ‡å®šæ¨¡æ¿æ•¸æ“š
 mixed *query_template_data(string template)
 {
         if( undefinedp(template_data[template]) )
@@ -54,7 +54,7 @@ void set_function_format(string *format)
         function_format = format;
 }
 
-// ÉèÖÃ»ù×¼ÎÄ¼þ
+// è¨­ç½®åŸºæº–æ–‡ä»¶
 void set_base_file(string file)
 {
         if( !stringp(file) || file == "" )
@@ -63,7 +63,7 @@ void set_base_file(string file)
         base_file = file;
 }
 
-// ÉèÖÃÄ£°åÊý¾Ý
+// è¨­ç½®æ¨¡æ¿æ•¸æ“š
 void set_template_data(mapping data)
 {
         if( !mapp(data) || !sizeof(data) )
@@ -72,7 +72,7 @@ void set_template_data(mapping data)
         template_data = data;
 }
 
-// Ä£°åµÄ³õÊ¼»¯
+// æ¨¡æ¿çš„åˆå§‹åŒ–
 void setup()
 {
         if( !this_object()->is_template() )

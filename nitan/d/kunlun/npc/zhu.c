@@ -6,10 +6,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("Öì³¤Áä", ({ "zhu changling", "zhu" }));
-        set("title",HIR"ºìÃ·É½×¯×¯Ö÷"NOR);
-        set("nickname",HIY"¾ªÌìÒ»±Ê"NOR);
-        set("gender", "ÄÐÐÔ");
+        set_name("æœ±é•·é½¡", ({ "zhu changling", "zhu" }));
+        set("title",HIR"ç´…æ¢…å±±èŽŠèŽŠä¸»"NOR);
+        set("nickname",HIY"é©šå¤©ä¸€ç­†"NOR);
+        set("gender", "ç”·æ€§");
         set("age", 45);
 
         set_skill("finger", 90);

@@ -3,8 +3,8 @@ inherit ITEM;
 
 void create()
 {
-set_name("ÍùÉúÊ¯",({"wangsheng shi","sheng shi","shi","stone"}));
-set("unit","¿é");
+set_name("å¾€ç”ŸçŸ³",({"wangsheng shi","sheng shi","shi","stone"}));
+set("unit","å¡Š");
 setup();
 }
 
@@ -25,29 +25,29 @@ object me = this_player();
 if ( !id || !wizardp(me) )
         return 0;
 if ( file_size(sprintf("/data/login/%c/%s.o",id[0],id))>0 )
-        write(id+"µÄÉÏÏßµµ°¸ÒÑ¾­´æÔÚ£¬È¡Ïû´Ë²½Öè£¬¼ÌĞøÏÂÒ»²½¡£\n");
+        write(id+"çš„ä¸Šç·šæª”æ¡ˆå·²ç¶“å­˜åœ¨ï¼Œå–æ¶ˆæ­¤æ­¥é©Ÿï¼Œç¹¼çºŒä¸‹ä¸€æ­¥ã€‚\n");
 else if ( file_size(sprintf("/backup/2013-6-24/login/%c/%s.o",id[0],id))<=0 )
         {
-        write(id+"µÄÉÏÏßµµ°¸±¸·İÄ¿Â¼ÖĞÃ»ÓĞ£¬ÎŞ·¨»Ö¸´¡£\n");
+        write(id+"çš„ä¸Šç·šæª”æ¡ˆå‚™ä»½ç›®éŒ„ä¸­æ²’æœ‰ï¼Œç„¡æ³•æ¢å¾©ã€‚\n");
         return 1;
         }
 else    {
         arg1 = sprintf("/backup/2006-7-6/login/%c/%s.o",id[0],id);     
         arg2 = sprintf("/data/login/%c/%s.o",id[0],id);
         if ( !("/cmds/adm/adcp.c")->main(me,arg1+" "+arg2) )
-                return notify_fail(id+"ÉÏÏß¼ÇÂ¼»Ö¸´Ê§°Ü¡£\n");
-        write(id+"ÉÏÏß¼ÇÂ¼»Ö¸´Íê±Ï¡£\n");       
+                return notify_fail(id+"ä¸Šç·šè¨˜éŒ„æ¢å¾©å¤±æ•—ã€‚\n");
+        write(id+"ä¸Šç·šè¨˜éŒ„æ¢å¾©å®Œç•¢ã€‚\n");       
         }
         
 if ( file_size(sprintf("/data/user/%c/%s.o",id[0],id))>0 )
-        return notify_fail(id+"µÄµµ°¸ÒÑ¾­´æÔÚ£¬ÇëÊÖ¶¯»Ö¸´¡£\n");
+        return notify_fail(id+"çš„æª”æ¡ˆå·²ç¶“å­˜åœ¨ï¼Œè«‹æ‰‹å‹•æ¢å¾©ã€‚\n");
 if ( file_size(sprintf("/data/user/%c/%s.oo.o",id[0],id))<=0 )
-        return notify_fail(id+"µÄµµ°¸±¸·İÄ¿Â¼ÖĞÃ»ÓĞ£¬ÎŞ·¨»Ö¸´¡£\n");
+        return notify_fail(id+"çš„æª”æ¡ˆå‚™ä»½ç›®éŒ„ä¸­æ²’æœ‰ï¼Œç„¡æ³•æ¢å¾©ã€‚\n");
 arg1 = sprintf("/data/user/%c/%s.oo.o",id[0],id);
 arg2 = sprintf("/data/user/%c/%s.o",id[0],id);
 if ( !("/cmds/adm/adcp.c")->main(me,arg1+" "+arg2) )
-        return notify_fail(id+"¼ÇÂ¼»Ö¸´Ê§°Ü¡£\n");
-write(id+"¼ÇÂ¼»Ö¸´Íê±Ï¡£\n");
-message("shout",HIR"¡¾"BLK"ÏµÍ³"NOR HIR"¡¿"BLK"Êı¾İ»Ö¸´£º"+id+" Êı¾İ»Ö¸´Íê±Ï¡£\n"NOR,users());
+        return notify_fail(id+"è¨˜éŒ„æ¢å¾©å¤±æ•—ã€‚\n");
+write(id+"è¨˜éŒ„æ¢å¾©å®Œç•¢ã€‚\n");
+message("shout",HIR"ã€"BLK"ç³»çµ±"NOR HIR"ã€‘"BLK"æ•¸æ“šæ¢å¾©ï¼š"+id+" æ•¸æ“šæ¢å¾©å®Œç•¢ã€‚\n"NOR,users());
 return 1;
 }

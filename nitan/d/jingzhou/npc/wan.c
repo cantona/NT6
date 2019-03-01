@@ -1,17 +1,17 @@
-// wan ÍòÕğÉ½
+// wan è¬éœ‡å±±
 
 inherit NPC;
 
 void create()
 {
-        set_name("ÍòÕğÉ½", ({ "wan zhenshan", "wan" }));
-        set("title", "ÍòÃÅ´óµ±¼Ò");
-        set("gender", "ÄĞĞÔ");
+        set_name("è¬éœ‡å±±", ({ "wan zhenshan", "wan" }));
+        set("title", "è¬é–€å¤§ç•¶å®¶");
+        set("gender", "ç”·æ€§");
         
         set("age", 50);
         set("str", 25);
         set("dex", 28);
-        set("long", "Ëû¾ÍÊÇÍòÕğÉ½£¬¾£ÖİÍòÃÅµÄÀÏ´ó¡£\n");
+        set("long", "ä»–å°±æ˜¯è¬éœ‡å±±ï¼ŒèŠå·è¬é–€çš„è€å¤§ã€‚\n");
         set("combat_exp", 35000);
         set("shen_type", 0);
         set("attitude", "heroism");

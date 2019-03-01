@@ -1,33 +1,33 @@
-¡¾ÓÎÏ·¸Å¿ö½éÉÜ¡¿
-$WHT$¡¼feature    ¡½$NOR$ $HIY$ÓÎÏ·ÌØÉ«×Ü»ã$NOR$  $WHT$¡¼tfskill    ¡½$NOR$ $HIY$Ìì¸³Éñ¹¦¸ÅÊö$NOR$  $WHT$¡¼ability    ¡½$NOR$ $HIY$ÄÜÁ¦½ø½×¸ÅÊö$NOR$
-$WHT$¡¼combatd    ¡½$NOR$ Õ½¶·ÏµÍ³ÏêÎö$NOR$  $WHT$¡¼skillmix   ¡½$NOR$ ¼¼ÄÜ×éºÏÌØÐ§$NOR$  $WHT$¡¼myskill    ¡½$NOR$ ×Ô´´Îä¹¦ËµÃ÷$NOR$
-$WHT$¡¼zhoutian   ¡½$NOR$ ´óÐ¡ÖÜÌì½éÉÜ$NOR$  $WHT$¡¼reborn     ¡½$NOR$ ×ªÊÀÖØÉú×ÛÊö$NOR$  $WHT$¡¼warcraft   ¡½$NOR$ »ÃÊÞÏµÍ³½éÉÜ$NOR$
-$WHT$¡¼equip      ¡½$NOR$ ×°±¸ÏµÍ³¸ÅÊö$NOR$  $WHT$¡¼combine    ¡½$NOR$ ±¦Ê¯ÏâÇ¶ºÏ³É$NOR$  $WHT$¡¼qianghua   ¡½$NOR$ ×°±¸Ç¿»¯ÏêÎö$NOR$
-$WHT$¡¼reform     ¡½$NOR$ ×°±¸¸ÄÔìËµÃ÷$NOR$  $WHT$¡¼suit       ¡½$NOR$ Ì××°ÏµÍ³¼ò½é$NOR$  $WHT$¡¼ntstore    ¡½$NOR$ $HIC$ÄàÌ¶ÉÌ³Ç½éÉÜ$NOR$ 
+ã€éŠæˆ²æ¦‚æ³ä»‹ç´¹ã€‘
+$WHT$â–¡feature    â–¡$NOR$ $HIY$éŠæˆ²ç‰¹è‰²ç¸½åŒ¯$NOR$  $WHT$â–¡tfskill    â–¡$NOR$ $HIY$å¤©è³¦ç¥žåŠŸæ¦‚è¿°$NOR$  $WHT$â–¡ability    â–¡$NOR$ $HIY$èƒ½åŠ›é€²éšŽæ¦‚è¿°$NOR$
+$WHT$â–¡combatd    â–¡$NOR$ æˆ°é¬¥ç³»çµ±è©³æž$NOR$  $WHT$â–¡skillmix   â–¡$NOR$ æŠ€èƒ½çµ„åˆç‰¹æ•ˆ$NOR$  $WHT$â–¡myskill    â–¡$NOR$ è‡ªå‰µæ­¦åŠŸèªªæ˜Ž$NOR$
+$WHT$â–¡zhoutian   â–¡$NOR$ å¤§å°å‘¨å¤©ä»‹ç´¹$NOR$  $WHT$â–¡reborn     â–¡$NOR$ è½‰ä¸–é‡ç”Ÿç¶œè¿°$NOR$  $WHT$â–¡warcraft   â–¡$NOR$ å¹»ç¸ç³»çµ±ä»‹ç´¹$NOR$
+$WHT$â–¡equip      â–¡$NOR$ è£å‚™ç³»çµ±æ¦‚è¿°$NOR$  $WHT$â–¡combine    â–¡$NOR$ å¯¶çŸ³é‘²åµŒåˆæˆ$NOR$  $WHT$â–¡qianghua   â–¡$NOR$ è£å‚™å¼·åŒ–è©³æž$NOR$
+$WHT$â–¡reform     â–¡$NOR$ è£å‚™æ”¹é€ èªªæ˜Ž$NOR$  $WHT$â–¡suit       â–¡$NOR$ å¥—è£ç³»çµ±ç°¡ä»‹$NOR$  $WHT$â–¡ntstore    â–¡$NOR$ $HIC$æ³¥æ½­å•†åŸŽä»‹ç´¹$NOR$ 
 
-$WHT$¡¼intro      ¡½$NOR$ ÄàÌ¶×ÜÌå¼ò½é$NOR$  $WHT$¡¼cmds       ¡½$NOR$ ÄàÌ¶³£ÓÃÖ¸Áî$NOR$  $WHT$¡¼maps       ¡½$NOR$ ÄàÌ¶µØÍ¼×Ü²á$NOR$
-$WHT$¡¼schedule   ¡½$NOR$ ¼Æ»®Á·¹¦ËµÃ÷$NOR$  $WHT$¡¼trigger    ¡½$NOR$ ÀëÏß´¥·¢Á·¹¦$NOR$  $WHT$¡¼poison     ¡½$NOR$ ÄàÌ¶¶¾¹¦ËµÃ÷$NOR$  
-$WHT$¡¼closed     ¡½$NOR$ ×ÚÊ¦±Õ¹ØËµÃ÷$NOR$  $WHT$¡¼event      ¡½$NOR$ ÌØÊâÊÂ¼þËµÃ÷$NOR$  $WHT$¡¼bunch.2    ¡½$NOR$ °ïÅÉÏµÍ³ËµÃ÷$NOR$
-$WHT$¡¼trade      ¡½$NOR$ ÉÌÒµÏµÍ³ËµÃ÷$NOR$  $WHT$¡¼gift       ¡½$NOR$ Ìì¸³ÊôÐÔËµÃ÷$NOR$  $WHT$¡¼contest    ¡½$NOR$ ÑÝÎäÏµÍ³ËµÃ÷$NOR$
-$WHT$¡¼marry      ¡½$NOR$ »éÒöÏµÍ³ËµÃ÷$NOR$  $WHT$¡¼room       ¡½$NOR$ ×¡·¿ÏµÍ³ËµÃ÷$NOR$  $WHT$¡¼baby       ¡½$NOR$ Éú¶ùÓýÅ®ËµÃ÷$NOR$
-$WHT$¡¼rules      ¡½$NOR$ Íæ¼Ò¹æÔòÁÐ±í$NOR$  $WHT$¡¼newbie     ¡½$NOR$ ÄàÌ¶ÐÂÊÖÖ¸ÄÏ$NOR$  $WHT$¡¼protect    ¡½$NOR$ $HIC$ËÀÍö±£»¤½éÉÜ$NOR$  
-$WHT$¡¼levelseal  ¡½$HIR$ µÈ¼¶·âÓ¡¹æÔò$NOR$  $WHT$¡¼pk         ¡½$HIR$ £Ð£ËºìÃûÖÆ¶È$NOR$
+$WHT$â–¡intro      â–¡$NOR$ æ³¥æ½­ç¸½é«”ç°¡ä»‹$NOR$  $WHT$â–¡cmds       â–¡$NOR$ æ³¥æ½­å¸¸ç”¨æŒ‡ä»¤$NOR$  $WHT$â–¡maps       â–¡$NOR$ æ³¥æ½­åœ°åœ–ç¸½å†Š$NOR$
+$WHT$â–¡schedule   â–¡$NOR$ è¨ˆåŠƒç·´åŠŸèªªæ˜Ž$NOR$  $WHT$â–¡trigger    â–¡$NOR$ é›¢ç·šè§¸ç™¼ç·´åŠŸ$NOR$  $WHT$â–¡poison     â–¡$NOR$ æ³¥æ½­æ¯’åŠŸèªªæ˜Ž$NOR$  
+$WHT$â–¡closed     â–¡$NOR$ å®—å¸«é–‰é—œèªªæ˜Ž$NOR$  $WHT$â–¡event      â–¡$NOR$ ç‰¹æ®Šäº‹ä»¶èªªæ˜Ž$NOR$  $WHT$â–¡bunch.2    â–¡$NOR$ å¹«æ´¾ç³»çµ±èªªæ˜Ž$NOR$
+$WHT$â–¡trade      â–¡$NOR$ å•†æ¥­ç³»çµ±èªªæ˜Ž$NOR$  $WHT$â–¡gift       â–¡$NOR$ å¤©è³¦å±¬æ€§èªªæ˜Ž$NOR$  $WHT$â–¡contest    â–¡$NOR$ æ¼”æ­¦ç³»çµ±èªªæ˜Ž$NOR$
+$WHT$â–¡marry      â–¡$NOR$ å©šå§»ç³»çµ±èªªæ˜Ž$NOR$  $WHT$â–¡room       â–¡$NOR$ ä½æˆ¿ç³»çµ±èªªæ˜Ž$NOR$  $WHT$â–¡baby       â–¡$NOR$ ç”Ÿå…’è‚²å¥³èªªæ˜Ž$NOR$
+$WHT$â–¡rules      â–¡$NOR$ çŽ©å®¶è¦å‰‡åˆ—è¡¨$NOR$  $WHT$â–¡newbie     â–¡$NOR$ æ³¥æ½­æ–°æ‰‹æŒ‡å—$NOR$  $WHT$â–¡protect    â–¡$NOR$ $HIC$æ­»äº¡ä¿è­·ä»‹ç´¹$NOR$  
+$WHT$â–¡levelseal  â–¡$HIR$ ç­‰ç´šå°å°è¦å‰‡$NOR$  $WHT$â–¡pk         â–¡$HIR$ ï¼°ï¼«ç´…ååˆ¶åº¦$NOR$
 
-$WHT$¡¼family     ¡½$NOR$ $HIY$½­ºþÃÅÅÉ½éÉÜ$NOR$  $WHT$¡¼fam_feature¡½$NOR$ $HIY$ÃÅÅÉÌØµã½éÉÜ$NOR$  $WHT$¡¼famsk      ¡½$NOR$ $HIY$ÃÅÅÉ°ÂÒå½éÉÜ$NOR$
-$WHT$¡¼work       ¡½$NOR$ ¼òµ¥¹¤×÷½éÉÜ$NOR$  $WHT$¡¼free_quest ¡½$NOR$ ¹«ÖÚÈÎÎñ½éÉÜ$NOR$  $WHT$¡¼quest      ¡½$NOR$ ÃÅÅÉÈÎÎñ½éÉÜ$NOR$
-$WHT$¡¼bunch_quest¡½$NOR$ °ïÅÉÈÎÎñ½éÉÜ$NOR$  $WHT$¡¼ultra_quest¡½$NOR$ ×ÚÊ¦ÈÎÎñ½éÉÜ$NOR$  $WHT$¡¼group_quest¡½$NOR$ Èº×éÈÎÎñ½éÉÜ$NOR$
-$WHT$¡¼tuteng     ¡½$NOR$ ·âÓ¡Í¼ÌÚ½éÉÜ$NOR$  $WHT$¡¼task       ¡½$NOR$ ½­ºþÊ¹Ãü½éÉÜ$NOR$  $WHT$¡¼skybook    ¡½$NOR$ Ê®ËÄÌìÊé½éÉÜ$NOR$
-$WHT$¡¼fuben      ¡½$NOR$ ¸±±¾ÈÎÎñ½éÉÜ$NOR$  $WHT$¡¼boss       ¡½$NOR$ ´ò¹ÖÈÎÎñ½éÉÜ$NOR$  $WHT$¡¼bunch_war  ¡½$NOR$ $HIR$°ïÅÉÕ½³¡½éÉÜ$NOR$
-$WHT$¡¼family_war ¡½$NOR$ $HIR$ÃÅÅÉÊÔÁ¶½éÉÜ$NOR$  $WHT$¡¼king_war   ¡½$NOR$ $HIR$¹úÕ½Õ½³¡½éÉÜ$NOR$  $WHT$¡¼team_war   ¡½$NOR$ $HIR$¾º¼¼Õ½³¡½éÉÜ$NOR$
+$WHT$â–¡family     â–¡$NOR$ $HIY$æ±Ÿæ¹–é–€æ´¾ä»‹ç´¹$NOR$  $WHT$â–¡fam_featureâ–¡$NOR$ $HIY$é–€æ´¾ç‰¹é»žä»‹ç´¹$NOR$  $WHT$â–¡famsk      â–¡$NOR$ $HIY$é–€æ´¾å¥§ç¾©ä»‹ç´¹$NOR$
+$WHT$â–¡work       â–¡$NOR$ ç°¡å–®å·¥ä½œä»‹ç´¹$NOR$  $WHT$â–¡free_quest â–¡$NOR$ å…¬çœ¾ä»»å‹™ä»‹ç´¹$NOR$  $WHT$â–¡quest      â–¡$NOR$ é–€æ´¾ä»»å‹™ä»‹ç´¹$NOR$
+$WHT$â–¡bunch_questâ–¡$NOR$ å¹«æ´¾ä»»å‹™ä»‹ç´¹$NOR$  $WHT$â–¡ultra_questâ–¡$NOR$ å®—å¸«ä»»å‹™ä»‹ç´¹$NOR$  $WHT$â–¡group_questâ–¡$NOR$ ç¾¤çµ„ä»»å‹™ä»‹ç´¹$NOR$
+$WHT$â–¡tuteng     â–¡$NOR$ å°å°åœ–é¨°ä»‹ç´¹$NOR$  $WHT$â–¡task       â–¡$NOR$ æ±Ÿæ¹–ä½¿å‘½ä»‹ç´¹$NOR$  $WHT$â–¡skybook    â–¡$NOR$ åå››å¤©æ›¸ä»‹ç´¹$NOR$
+$WHT$â–¡fuben      â–¡$NOR$ å‰¯æœ¬ä»»å‹™ä»‹ç´¹$NOR$  $WHT$â–¡boss       â–¡$NOR$ æ‰“æ€ªä»»å‹™ä»‹ç´¹$NOR$  $WHT$â–¡bunch_war  â–¡$NOR$ $HIR$å¹«æ´¾æˆ°å ´ä»‹ç´¹$NOR$
+$WHT$â–¡family_war â–¡$NOR$ $HIR$é–€æ´¾è©¦ç…‰ä»‹ç´¹$NOR$  $WHT$â–¡king_war   â–¡$NOR$ $HIR$åœ‹æˆ°æˆ°å ´ä»‹ç´¹$NOR$  $WHT$â–¡team_war   â–¡$NOR$ $HIR$ç«¶æŠ€æˆ°å ´ä»‹ç´¹$NOR$
 
-$WHT$¡¼skills     ¡½$NOR$ Îä¹¦ËµÃ÷×Ü»ã$NOR$  $WHT$¡¼fam_skill  ¡½$NOR$ ÃÅÅÉ¼¼ÄÜ½âÃÜ$NOR$  $WHT$¡¼pub_skill  ¡½$NOR$ ¹«¹²¼¼ÄÜ½âÃÜ$NOR$
-$WHT$¡¼skill_gift ¡½$NOR$ ¼¼ÄÜÌì¸³ÒªÇó$NOR$  $WHT$¡¼fam_gift   ¡½$NOR$ ÃÅÅÉÌì¸³Ö¸ÄÏ$NOR$  $WHT$¡¼path       ¡½$NOR$ ÄàÌ¶Â·¾¶°ïÖú  $NOR$
-$WHT$¡¼riddle     ¡½$NOR$ ÓÎÏ·ÃÔÌâ½éÉÜ$NOR$  $WHT$¡¼start      ¡½$NOR$ $HIR$ÐÂÊÖÈçºÎ¿ªÊ¼$NOR$
+$WHT$â–¡skills     â–¡$NOR$ æ­¦åŠŸèªªæ˜Žç¸½åŒ¯$NOR$  $WHT$â–¡fam_skill  â–¡$NOR$ é–€æ´¾æŠ€èƒ½è§£å¯†$NOR$  $WHT$â–¡pub_skill  â–¡$NOR$ å…¬å…±æŠ€èƒ½è§£å¯†$NOR$
+$WHT$â–¡skill_gift â–¡$NOR$ æŠ€èƒ½å¤©è³¦è¦æ±‚$NOR$  $WHT$â–¡fam_gift   â–¡$NOR$ é–€æ´¾å¤©è³¦æŒ‡å—$NOR$  $WHT$â–¡path       â–¡$NOR$ æ³¥æ½­è·¯å¾‘å¹«åŠ©  $NOR$
+$WHT$â–¡riddle     â–¡$NOR$ éŠæˆ²è¿·é¡Œä»‹ç´¹$NOR$  $WHT$â–¡start      â–¡$NOR$ $HIR$æ–°æ‰‹å¦‚ä½•é–‹å§‹$NOR$
 
-¡¾¸½ÊôÓÎÏ·½éÉÜ¡¿
-$WHT$¡¼pig_game   ¡½$NOR$ ¹°ÖíÓÎÏ·ËµÃ÷$NOR$  $WHT$¡¼huanjing   ¡½$NOR$ »Ã¾³ÓÎÏ·ËµÃ÷$NOR$  $WHT$¡¼hanghai    ¡½$NOR$ º½º£Ê±´úËµÃ÷
+ã€é™„å±¬éŠæˆ²ä»‹ç´¹ã€‘
+$WHT$â–¡pig_game   â–¡$NOR$ æ‹±è±¬éŠæˆ²èªªæ˜Ž$NOR$  $WHT$â–¡huanjing   â–¡$NOR$ å¹»å¢ƒéŠæˆ²èªªæ˜Ž$NOR$  $WHT$â–¡hanghai    â–¡$NOR$ èˆªæµ·æ™‚ä»£èªªæ˜Ž
 
- Äã¿ÉÒÔÓÃ£º$HIC$help $NOR$$HIR$<Ö÷Ìâ>$NOR$ µÃµ½¸ü½øÒ»²½µÄËµÃ÷£¬ÒÔÉÏÊÇËµÃ÷ÎÄ¼þµÄÖ÷Ìâ¡£
- Äã¿ÉÒÔÓÃ£º$HIC$grep <help/news/all> ²éÕÒÄÚÈÝ$NOR$ ËÑË÷Ö¸¶¨²éÕÒµÄÄÚÈÝµÄÎÄ¼þ¡£
+ ä½ å¯ä»¥ç”¨ï¼š$HIC$help $NOR$$HIR$<ä¸»é¡Œ>$NOR$ å¾—åˆ°æ›´é€²ä¸€æ­¥çš„èªªæ˜Žï¼Œä»¥ä¸Šæ˜¯èªªæ˜Žæ–‡ä»¶çš„ä¸»é¡Œã€‚
+ ä½ å¯ä»¥ç”¨ï¼š$HIC$grep <help/news/all> æŸ¥æ‰¾å…§å®¹$NOR$ æœç´¢æŒ‡å®šæŸ¥æ‰¾çš„å…§å®¹çš„æ–‡ä»¶ã€‚
 
 

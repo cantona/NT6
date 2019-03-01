@@ -3,13 +3,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(NOR + YEL "ÌìÊ¦¹í·û" NOR, ({"tianshi guifu", "tianshi", "guifu"}));
+        set_name(NOR + YEL "å¤©å¸«é¬¼ç¬¦" NOR, ({"tianshi guifu", "tianshi", "guifu"}));
         set_weight(2000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "ÕÅ");
-                set("long", NOR + YEL "ÕâÊÇÒ»ÕÅµÀ·û£¬ÄËÕÅÌìÊ¦ÎªÁË½µ·ü¹í¹Ö¶øÖÆ¡£\n"  NOR);
+                set("unit", "å¼µ");
+                set("long", NOR + YEL "é€™æ˜¯ä¸€å¼µé“ç¬¦ï¼Œä¹ƒå¼µå¤©å¸«ç‚ºäº†é™ä¼é¬¼æ€ªè€Œåˆ¶ã€‚\n"  NOR);
 
                 set("value", 500000);
         }

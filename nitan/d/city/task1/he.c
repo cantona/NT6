@@ -1,18 +1,18 @@
-// he.c º×±ÊÎÌ
+// he.c é¶´ç­†ç¿
 
 inherit NPC;
 
 #include <ansi.h>
 void create()
 {
-        set_name("º×±ÊÎÌ", ({ "he  biweng"}));
-        set("gender", "ÄĞĞÔ");
-        set("nickname", HIC"ĞşÚ¤¶şÀÏ"NOR);
+        set_name("é¶´ç­†ç¿", ({ "he  biweng"}));
+        set("gender", "ç”·æ€§");
+        set("nickname", HIC"ç„å†¥äºŒè€"NOR);
         set("age", 54);
         set("str", 25);
         set("dex", 16);
         set("per", 21);
-        set("long", "ËûÒ»Éí³¤Ğë´¹ĞØ£¬ĞÔ×ÓºİÀ±£¬ĞÔºÃ¾Æ¡£\n");
+        set("long", "ä»–ä¸€èº«é•·é ˆå‚èƒ¸ï¼Œæ€§å­ç‹ è¾£ï¼Œæ€§å¥½é…’ã€‚\n");
         set("combat_exp", 3000000+ random(1000000));
         set("attitude", "peaceful");
         set("neili", 2000);

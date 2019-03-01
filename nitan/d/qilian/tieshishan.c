@@ -6,11 +6,11 @@ inherit ROOM;
 void create()
 {
         object ob;
-        set("short", "��ʯɽ");
+        set("short", "鐵石山");
         set("long", @LONG
-����������ɽ������ʮ�ﴦ��ɽ����ף�ͨɽһɫ��ڣ���ͺͺ��
-û��һ����������ɽ�����ʯ����ɫ��ī�����ճ�������������������
-���������ߣ��ͽ��뱱����ɽ���ˡ�
+這裡是祁連山以西四十裡處，山勢崢嶙，通山一色漆黑，光禿禿的
+沒有一點生氣。遍山盡是□石，其色如墨，火燒成鐵，制器極剛利。從
+這再往西走，就進入北祁連山區了。
 LONG );
         set("outdoors", "qilian");
         set("exits", ([

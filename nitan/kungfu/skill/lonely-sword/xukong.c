@@ -1,7 +1,7 @@
 
 #include <ansi.h>
 
-#define HUA "¡¸" MAG "Ğé¿ÕÖ®ºÛ" NOR "¡¹"
+#define HUA "ã€Œ" MAG "è™›ç©ºä¹‹ç—•" NOR "ã€"
 
 inherit F_SSERVER;
 
@@ -17,37 +17,37 @@ int perform(object me, object target)
         
         if (! objectp(me))return 1;
         
-        // Ö»ÓĞ½£Áé¿ÉÒÔÓÃ
+        // åªæœ‰åŠéˆå¯ä»¥ç”¨
         if (base_name(me) != "/kungfu/class/misc/jianling")
-                return notify_fail("ÄãËùÊ¹ÓÃµÄÍâ¹¦ÖĞÃ»ÓĞÕâ¸ö¹¦ÄÜ¡£\n");
+                return notify_fail("ä½ æ‰€ä½¿ç”¨çš„å¤–åŠŸä¸­æ²’æœ‰é€™å€‹åŠŸèƒ½ã€‚\n");
 
-        // À¶µûÏÉ×Ó»¹´æÔÚÊ±ºò²»ÄÜÓÃ
+        // è—è¶ä»™å­é‚„å­˜åœ¨æ™‚å€™ä¸èƒ½ç”¨
         landie=query("mylandie", me);
         if (objectp(landie))return 1;
         
-        // ¾àÀëÉÏ´ÎÀ¶µûÏûÊ§²»×ã3·ÖÖÓÎŞ·¨Ê©Õ¹
-        if( query("first_landie", me))//ÒÑ¾­ÕÙ»½¹ıÀ¶µû²ÅÊÜ´ËÏŞÖÆ
+        // è·é›¢ä¸Šæ¬¡è—è¶æ¶ˆå¤±ä¸è¶³3åˆ†é˜ç„¡æ³•æ–½å±•
+        if( query("first_landie", me))//å·²ç¶“å¬å–šéè—è¶æ‰å—æ­¤é™åˆ¶
         {
                 if( time()-query("last_summon_landie", me)<180 )
                         return 1; 
         }
 
-        msg = HIC "$N" HIC "ÉîÎüÒ»¿ÚÆø£¬ÊÖÖĞÀ¶µû±¦½£¶ÙÊ±¹âÃ¢±©ÏÖ£¬ÔÚÌì¿Õ»®³öÒ»µÀÃÀÀöµÄ»¡Ïß ¡­¡­"
-              "¶ÙÊ±£¬Ìì¿ÕÖ®ÖĞËº¿ªÒ»ÌõÁÑ·ì£¬ÓÌÈçÅ®æ´²¹ÌìÊ±µÄĞé¿ÕÖ®ºÛ£¡Ò»µÀÀ¶¹â´ÓÁÑ·ìÖĞÂû³ö£¬ÍòÇ§"
-              "¹âÃ¢ÁıÕÖ£¬Ò»Î»ÃÀÀöµÄÏÉ×Ó´ÓÌì¶ø½µ£¬ÊØ»¤×Å½£Áé£¡\n" NOR;
+        msg = HIC "$N" HIC "æ·±å¸ä¸€å£æ°£ï¼Œæ‰‹ä¸­è—è¶å¯¶åŠé “æ™‚å…‰èŠ’æš´ç¾ï¼Œåœ¨å¤©ç©ºåŠƒå‡ºä¸€é“ç¾éº—çš„å¼§ç·š â€¦â€¦"
+              "é “æ™‚ï¼Œå¤©ç©ºä¹‹ä¸­æ’•é–‹ä¸€æ¢è£‚ç¸«ï¼ŒçŒ¶å¦‚å¥³åª§è£œå¤©æ™‚çš„è™›ç©ºä¹‹ç—•ï¼ä¸€é“è—å…‰å¾è£‚ç¸«ä¸­è”“å‡ºï¼Œè¬åƒ"
+              "å…‰èŠ’ç± ç½©ï¼Œä¸€ä½ç¾éº—çš„ä»™å­å¾å¤©è€Œé™ï¼Œå®ˆè­·è‘—åŠéˆï¼\n" NOR;
 
-        // ¼ÇÂ¼±¾´ÎÊÇ·ñÊÇµÚÒ»´ÎÕÙ»½À¶µû
+        // è¨˜éŒ„æœ¬æ¬¡æ˜¯å¦æ˜¯ç¬¬ä¸€æ¬¡å¬å–šè—è¶
         if( !query("first_landie", me) )
                 set("first_landie", 1, me);
 
         env = environment(me);
-        // ³õÊ¼»¯À¶µûÏÉ×Ó
+        // åˆå§‹åŒ–è—è¶ä»™å­
         landie = new("/kungfu/class/misc/landie-xianzi");
-        // Ëæ»úÑ¡Ôñµ±Ç°·¿¼äÒ»ÃûÍæ¼Ò
+        // éš¨æ©Ÿé¸æ“‡ç•¶å‰æˆ¿é–“ä¸€åç©å®¶
         obs = all_inventory(env);
         obs = filter_array(obs, (: userp($1) :));
         
-        if (! sizeof(obs))return notify_fail("Ã»ÓĞÕÒµ½Íæ¼Ò£¡\n");
+        if (! sizeof(obs))return notify_fail("æ²’æœ‰æ‰¾åˆ°ç©å®¶ï¼\n");
 
         wanjia = obs[random(sizeof(obs))];      
         if( !objectp(obs) ) return 1;
@@ -56,7 +56,7 @@ int perform(object me, object target)
         
         set("mylandie", landie, me);
 
-        msg += HIY "\n$n" HIY "ÄıÉñ¹ÛÍû£¬ËÆºõ¿´ÆÆÁËÀ¶µûÏÉ×ÓµÄÆÆÕÀ¡£\n" NOR;
+        msg += HIY "\n$n" HIY "å‡ç¥è§€æœ›ï¼Œä¼¼ä¹çœ‹ç ´äº†è—è¶ä»™å­çš„ç ´ç¶»ã€‚\n" NOR;
         
         message_vision(sort_msg(msg), me, wanjia);
         

@@ -24,16 +24,16 @@ int main(object me, string arg)
                 if (! ob) ob = find_living(arg);
         }
 
-        if (! ob) return notify_fail("ÄãÒª»Ö¸´Ë­µÄ×´Ì¬£¿\n");
+        if (! ob) return notify_fail("ä½ è¦æ¢å¾©èª°çš„ç‹€æ…‹ï¼Ÿ\n");
  
         if (ob != me)
         {
                 if (wiz_level(me) < wiz_level("(wizard)"))
-                        return notify_fail("ÄãÃ»ÓĞÈ¨ÏŞ»Ö¸´" + ob->name() + "¡£\n");
+                        return notify_fail("ä½ æ²’æœ‰æ¬Šé™æ¢å¾©" + ob->name() + "ã€‚\n");
 
                     /*
                 if (! me->is_admin())
-                        message_system(sprintf("%s(%s)Îª%s(%s)»Ö¸´ÁË×´Ì¬¡£\n",
+                        message_system(sprintf("%s(%s)ç‚º%s(%s)æ¢å¾©äº†ç‹€æ…‹ã€‚\n",
                                                me->name(1),query("id", me),
                                                ob->name(1),query("id", ob)));
                     */
@@ -49,15 +49,15 @@ int main(object me, string arg)
 
         if (me == ob)
         {
-                message_vision(HIY "$N" HIY "¿ÚÖĞÄîÄîÓĞ´Ê£¬²»Ò»»á¶ù¾Í±äµÃ"
-                               "¾«Éñ»À·¢£¬Éñ²ÉŞÈŞÈ¡£\n" NOR, me);
+                message_vision(HIY "$N" HIY "å£ä¸­å¿µå¿µæœ‰è©ï¼Œä¸ä¸€æœƒå…’å°±è®Šå¾—"
+                               "ç²¾ç¥ç…¥ç™¼ï¼Œç¥æ¡å¥•å¥•ã€‚\n" NOR, me);
                 if (me->is_ghost()) me->reincarnate();
                 me->clear_condition();
                 ob->clear_weak();
         } else
         {
-                message_vision(HIY "$N" HIY "ÉìÊÖÒ»Ö¸£¬$n" HIY "Á¢¿Ì¾«Éñ»À"
-                               "·¢£¬Éñ²ÉŞÈŞÈ¡£\n" NOR,
+                message_vision(HIY "$N" HIY "ä¼¸æ‰‹ä¸€æŒ‡ï¼Œ$n" HIY "ç«‹åˆ»ç²¾ç¥ç…¥"
+                               "ç™¼ï¼Œç¥æ¡å¥•å¥•ã€‚\n" NOR,
                                me, ob);
                 if (! living(ob)) ob->revive();
                 if (ob->is_ghost()) ob->reincarnate();
@@ -75,9 +75,9 @@ int main(object me, string arg)
 int help()
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : recover <¶ÔÏóÃû³Æ>
+æŒ‡ä»¤æ ¼å¼ : recover <å°è±¡åç¨±>
  
-Õâ¸öÖ¸Áî¿ÉÒÔ»Ö¸´Äã(Äã)»òÖ¸¶¨¶ÔÏó(º¬¹ÖÎï)µÄ¾«, Æø, ÄÚÁ¦µÈÊıÖµ¡£
+é€™å€‹æŒ‡ä»¤å¯ä»¥æ¢å¾©ä½ (ä½ )æˆ–æŒ‡å®šå°è±¡(å«æ€ªç‰©)çš„ç²¾, æ°£, å…§åŠ›ç­‰æ•¸å€¼ã€‚
  
 HELP );
         return 1;

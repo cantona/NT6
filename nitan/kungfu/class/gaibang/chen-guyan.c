@@ -7,12 +7,12 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("³Â¹ÂÑã", ({"chen guyan", "chen", "guyan"}));
-        set("nickname", "³¤±ÛÛÅ");
-        set("gender", "ÄĞĞÔ");
-        set("title", "Ø¤°ï¾Å´ü³¤ÀÏ");
+        set_name("é™³å­¤é›", ({"chen guyan", "chen", "guyan"}));
+        set("nickname", "é•·è‡‚åŸ");
+        set("gender", "ç”·æ€§");
+        set("title", "ä¸å¹«ä¹è¢‹é•·è€");
         set("age", 50);
-        set("long","ËûÊÇÒ»¸öÁ½ÌõÊÖ±ÛÉõ³¤µÄÀÏÕß¡£\n");
+        set("long","ä»–æ˜¯ä¸€å€‹å…©æ¢æ‰‹è‡‚ç”šé•·çš„è€è€…ã€‚\n");
         set("attitude", "peaceful");
         set("class", "beggar");
          set("beggarlvl", 9);
@@ -33,18 +33,18 @@ void create()
         set("combat_exp", 100000);
         set("score", 20000);
 
-        set_skill("force", 90); // »ù±¾ÄÚ¹¦
-        set_skill("huntian-qigong", 90); // »ìÌìÆø¹¦
-        set_skill("blade", 120); // »ù±¾µ¶·¨
-        set_skill("liuhe-dao", 120); // ËÄÏóÁùºÏµ¶
-        set_skill("hand", 85); // »ù±¾ÊÖ·¨
-        set_skill("suohou-hand", 80); // ËøºíÇÜÄÃÊÖ
-        set_skill("dodge", 95); // »ù±¾¶ãÉÁ
-        set_skill("xiaoyaoyou", 85); // åĞÒ£ÓÎ
-        set_skill("parry", 90); // »ù±¾ÕĞ¼Ü
+        set_skill("force", 90); // åŸºæœ¬å…§åŠŸ
+        set_skill("huntian-qigong", 90); // æ··å¤©æ°£åŠŸ
+        set_skill("blade", 120); // åŸºæœ¬åˆ€æ³•
+        set_skill("liuhe-dao", 120); // å››è±¡å…­åˆåˆ€
+        set_skill("hand", 85); // åŸºæœ¬æ‰‹æ³•
+        set_skill("suohou-hand", 80); // é–å–‰æ“’æ‹¿æ‰‹
+        set_skill("dodge", 95); // åŸºæœ¬èº²é–ƒ
+        set_skill("xiaoyaoyou", 85); // é€é™éŠ
+        set_skill("parry", 90); // åŸºæœ¬æ‹›æ¶
 
-        set_skill("strike",85);  // »ù±¾ÕÆ·¨
-        set_skill("lianhua-zhang",85); // Á«»¨ÕÆ
+        set_skill("strike",85);  // åŸºæœ¬æŒæ³•
+        set_skill("lianhua-zhang",85); // è“®èŠ±æŒ
         set_skill("dragon-strike",85);
 
         map_skill("strike","lianhua-zhang");
@@ -56,10 +56,10 @@ void create()
         map_skill("dodge", "xiaoyaoyou");
         prepare_skill("hand", "suohou-hand");
 
-        //set("party/party_name", HIC"Ø¤°ï"NOR);
-        //set("party/rank", RED"¾Å´ü³¤ÀÏ"NOR);
+        //set("party/party_name", HIC"ä¸å¹«"NOR);
+        //set("party/rank", RED"ä¹è¢‹é•·è€"NOR);
         //set("party/level", 9);
-        create_family("Ø¤°ï", 18, "µÜ×Ó");
+        create_family("ä¸å¹«", 18, "å¼Ÿå­");
 
         setup();
 
@@ -69,5 +69,5 @@ void create()
 
 void attempt_apprentice(object ob)
 {
-        command("say ÀÏ·ò²»ÊÕÍ½µÜ£¬" + RANK_D->query_respect(ob) + "»¹ÊÇÇë»Ø°É¡£");
+        command("say è€å¤«ä¸æ”¶å¾’å¼Ÿï¼Œ" + RANK_D->query_respect(ob) + "é‚„æ˜¯è«‹å›å§ã€‚");
 }

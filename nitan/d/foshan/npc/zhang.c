@@ -4,13 +4,13 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÕÅ³¯ÌÆ", ({ "zhang chaotang", "zhang" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("å¼µæœå”", ({ "zhang chaotang", "zhang" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 22);
         set("int", 28);
         set("per", 23);
         set("long", 
-"ÕâÊÇ¸ö±¥¶ÁÊ«ÊéµÄÄÏÑóÊéÉú£¬ËûÒ»Ö±ÏòÍùÖĞÍÁÎÄ»¯£¬ÌØÀ´¸Ï¿¼¡£\n");
+"é€™æ˜¯å€‹é£½è®€è©©æ›¸çš„å—æ´‹æ›¸ç”Ÿï¼Œä»–ä¸€ç›´å‘å¾€ä¸­åœŸæ–‡åŒ–ï¼Œç‰¹ä¾†è¶•è€ƒã€‚\n");
 
         set("attitude", "peaceful");
         set_skill("literate", 40);

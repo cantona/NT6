@@ -5,24 +5,24 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIG "´òÔìÌ¨" NOR, ({ "dazao tai", "tai" }) );
+        set_name(HIG "æ‰“é€ å°" NOR, ({ "dazao tai", "tai" }) );
         set_weight(3000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
           set("long", HIG @LONG
-ÕâÊÇÒ»¸ö¶ÍÔì¡¢¸ÄÔì¡¢Ç¿»¯¡¢Éı¼¶×°±¸µÄ´òÔìÌ¨¡£
-ÏâÇ¶ÎïÆ·              enchase
-¸½Ä§ÊôĞÔ              enchant
-×°±¸´ò¿×              notch
-±¦Ê¯ºÏ²¢              combine
-Ï´ ×° ±¸              melt
-×°±¸Ç¿»¯              steady
-×°±¸¸ÄÔì              increase
-×°±¸Éı¼¶              forging
+é€™æ˜¯ä¸€å€‹é›é€ ã€æ”¹é€ ã€å¼·åŒ–ã€å‡ç´šè£å‚™çš„æ‰“é€ å°ã€‚
+é‘²åµŒç‰©å“              enchase
+é™„é­”å±¬æ€§              enchant
+è£å‚™æ‰“å­”              notch
+å¯¶çŸ³åˆä¸¦              combine
+æ´— è£ å‚™              melt
+è£å‚™å¼·åŒ–              steady
+è£å‚™æ”¹é€               increase
+è£å‚™å‡ç´š              forging
 LONG NOR );
                 set("value", 2000);
-                set("unit", "Æ¬");
+                set("unit", "ç‰‡");
                 set("no_get", 1);
                 set("auto_load", 1);
         }

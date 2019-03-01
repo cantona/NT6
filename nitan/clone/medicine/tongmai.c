@@ -5,14 +5,14 @@
 
 void create()
 {
-        set_name(WHT "¹áÆøÍ¨Âöµ¤" NOR, ({"tongmai dan", "dan"}));
+        set_name(WHT "è²«æ°£é€šè„ˆä¸¹" NOR, ({"tongmai dan", "dan"}));
         set_weight(50);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", WHT "ÕâÊÇÒ»Á£Ò©Íè£¬¿´ÉÏÈ¥Òø¹âÉÁÉÁ£¬ÊµÊÇĞ§¹û¼«¼ÑÁÆÉË"
-                            "Ê¥Ò©¡£\n" NOR);
-                set("base_unit", "Á£");
+                set("long", WHT "é€™æ˜¯ä¸€ç²’è—¥ä¸¸ï¼Œçœ‹ä¸Šå»éŠ€å…‰é–ƒé–ƒï¼Œå¯¦æ˜¯æ•ˆæœæ¥µä½³ç™‚å‚·"
+                            "è–è—¥ã€‚\n" NOR);
+                set("base_unit", "ç²’");
                 set("base_value", 3000);
                 set("base_weight", 85);
                 set("only_do_effect", 1);
@@ -43,21 +43,21 @@ int do_effect(object me)
 
         if( time()-query_temp("last_eat/tongmai", me)<30 )
         {
-                write("Äã¸Õ·şÓÃ¹ıÒ©£¬ĞèÒ©ĞÔ·¢»ÓÍêĞ§ÓÃÒÔºó²ÅÄÜ¼ÌĞø·şÓÃ¡£\n");
+                write("ä½ å‰›æœç”¨éè—¥ï¼Œéœ€è—¥æ€§ç™¼æ®å®Œæ•ˆç”¨ä»¥å¾Œæ‰èƒ½ç¹¼çºŒæœç”¨ã€‚\n");
                 return 1;
         }
 
         my = me->query_entire_dbase();
         if (my["eff_qi"] == my["max_qi"])
         {
-                write("ÄãÏÖÔÚ²¢Ã»ÓĞÊÜÉË£¬²»±Ø·şÓÃ" + name() + "¡£\n");
+                write("ä½ ç¾åœ¨ä¸¦æ²’æœ‰å—å‚·ï¼Œä¸å¿…æœç”¨" + name() + "ã€‚\n");
                 return 1;
         }
 
         set_temp("last_eat/tongmai", time(), me);
 
-        message_vision(WHT "$N" WHT "°Ñ" + name() +
-                       WHT "¹¾ßËÒ»ÉùÍÌÏÂÁË¶Ç£¬Á¢¿ÌÆøÉ«¿´ÆğÀ´ºÃ¶àÁË¡£\n" NOR, me);
+        message_vision(WHT "$N" WHT "æŠŠ" + name() +
+                       WHT "å’•å’šä¸€è²åä¸‹äº†è‚šï¼Œç«‹åˆ»æ°£è‰²çœ‹èµ·ä¾†å¥½å¤šäº†ã€‚\n" NOR, me);
 
         me->receive_curing("qi", 1000);
         me->receive_heal("qi", 1000);

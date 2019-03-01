@@ -9,15 +9,15 @@ int do_start(object me);
 
 void create()
 {
-        set_name("´ò¹·°ôÆ×", ({ "dgb book", "book" }));
+        set_name("æ‰“ç‹—æ£’è­œ", ({ "dgb book", "book" }));
         set_weight(600);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
-        set("long", "´ò¹·°ôµÄ¿Ú¾÷ÏòÀ´¶¼ÊÇ¿Ú´«£¬Õâ¸ö²á×Ó¼ÇÔØ×Å´ò¹·°ôµÄ×îºóÒ»ÕĞÌìÏÂÎŞ¹·µÄÏê½â¡£\n");
+                set("unit", "æœ¬");
+        set("long", "æ‰“ç‹—æ£’çš„å£è¨£å‘ä¾†éƒ½æ˜¯å£å‚³ï¼Œé€™å€‹å†Šå­è¨˜è¼‰è‘—æ‰“ç‹—æ£’çš„æœ€å¾Œä¸€æ‹›å¤©ä¸‹ç„¡ç‹—çš„è©³è§£ã€‚\n");
                 set("material", "paper");
-                                set("no_drop","ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
+                                set("no_drop","é€™æ¨£æ±è¥¿ä¸èƒ½é›¢é–‹ä½ ã€‚\n");
                                 set("no_get",1);
                                 set("no_steal",1);
                 set("value", 300000);
@@ -38,51 +38,51 @@ int do_lingwu(string arg)
         int i;
         me=this_player();
          if (me->is_busy())
-            return notify_fail("ÄãÕıÃ¦×ÅÄØ!\n");
+            return notify_fail("ä½ æ­£å¿™è‘—å‘¢!\n");
 
         
-        if( arg != query("id", this_object()))return notify_fail("ÄãÒªÁìÎòÊ²Ã´?\n");
+        if( arg != query("id", this_object()))return notify_fail("ä½ è¦é ˜æ‚Ÿä»€éº¼?\n");
         if(me->query_skill("dagou-bang", 1) <250)
-        return notify_fail("ÄãÁ¬´ò¹·°ô·¨×î»ù±¾µÄÕĞÊ½»¹Î´æµÊìÄØ£¿\n");
+        return notify_fail("ä½ é€£æ‰“ç‹—æ£’æ³•æœ€åŸºæœ¬çš„æ‹›å¼é‚„æœªå«»ç†Ÿå‘¢ï¼Ÿ\n");
         if( query("wugou", me)>500 )
         {
             set("can_perform/dagou-bang/tian", 1, me);
-        return notify_fail("ÄãÒÑ¾­ÍêÈ«ÁìÎòÁË´ò¹·°ôµÄ¾øÕĞ¡£\n");
+        return notify_fail("ä½ å·²ç¶“å®Œå…¨é ˜æ‚Ÿäº†æ‰“ç‹—æ£’çš„çµ•æ‹›ã€‚\n");
         }
-        if( query("no_fight", environment(me)))return notify_fail("ÕâÀï¿ÕÆø²»ºÃ£¬ÎŞ·¨×¨ĞÄÁìÎò¡£\n");
+        if( query("no_fight", environment(me)))return notify_fail("é€™è£¡ç©ºæ°£ä¸å¥½ï¼Œç„¡æ³•å°ˆå¿ƒé ˜æ‚Ÿã€‚\n");
         ob = all_inventory(environment(me));
         for(i=0; i<sizeof(ob); i++) {
-            if( query("race", ob[i]) == "ÈËÀà" && ob[i] != me )
-            return notify_fail("´ò¹·°ôµÄ¾øÕĞ¿É²»ÄÜÇáÒ×ÈÃÈË¿´µÄÅ¶¡£\n");
+            if( query("race", ob[i]) == "äººé¡" && ob[i] != me )
+            return notify_fail("æ‰“ç‹—æ£’çš„çµ•æ‹›å¯ä¸èƒ½è¼•æ˜“è®“äººçœ‹çš„å“¦ã€‚\n");
         }
         if( !objectp(weapon=query_temp("weapon", me)) )
-        return notify_fail("ÄãÊÖÖĞÎŞ´ò¹·°ôÈçºÎÁìÎò¾øÕĞ!\n");
+        return notify_fail("ä½ æ‰‹ä¸­ç„¡æ‰“ç‹—æ£’å¦‚ä½•é ˜æ‚Ÿçµ•æ‹›!\n");
         
         if( query("skill_type", weapon) != "staff" )
-        return notify_fail("ÊÖÖĞÄÃ×ÅÖñÕÈ²ÅÄÜÁìÎò´ò¹·°ô·¨µÄ¾øÕĞ!\n");
+        return notify_fail("æ‰‹ä¸­æ‹¿è‘—ç«¹æ–æ‰èƒ½é ˜æ‚Ÿæ‰“ç‹—æ£’æ³•çš„çµ•æ‹›!\n");
         if( query("qi", me)<query("max_qi", me) || query("jing", me)<query("max_jing", me) )
-        return notify_fail("ÄãµÄÉíÌå×´¿ö²»¼Ñ£¡\n");
+        return notify_fail("ä½ çš„èº«é«”ç‹€æ³ä¸ä½³ï¼\n");
         if( query("neili", me)<query("max_neili", me) || query("jingli", me)<query("max_jingli", me) )
-        return notify_fail("ÄãµÄ¾«Á¦£¬ÄÚÁ¦»¹Î´³äÓ¯£¬ÎŞ·¨ÁìÎò£¡\n");
+        return notify_fail("ä½ çš„ç²¾åŠ›ï¼Œå…§åŠ›é‚„æœªå……ç›ˆï¼Œç„¡æ³•é ˜æ‚Ÿï¼\n");
         if( query("max_neili", me)<1000 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»Éîºñ£¬ÎŞ·¨ÁìÎò´ò¹·°ô·¨£¡\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ æ·±åšï¼Œç„¡æ³•é ˜æ‚Ÿæ‰“ç‹—æ£’æ³•ï¼\n");
         if( query("master", this_object()) != query("id", me) )
         {
         if( query("max_neili", me)<20 )
-                return notify_fail("Äã¾õµÃ»ëÉíÎŞÁ¦£¬ËÆºõÒ»ÉíÄÚ¹¦ÒÑ¾­¾¡ÊıÉ¢È¥¡£\n");
+                return notify_fail("ä½ è¦ºå¾—æ¸¾èº«ç„¡åŠ›ï¼Œä¼¼ä¹ä¸€èº«å…§åŠŸå·²ç¶“ç›¡æ•¸æ•£å»ã€‚\n");
         addn("max_neili", -20, me);
-        return notify_fail(HIR"Äã²»Öª¿Ú¾÷£¬Ç¿ĞĞÁìÎòÕĞÊ½£¬Í»È»ĞÄ¿ÚÓĞËµ²»³öµÄÄÑÊÜ¡£\n"NOR);
+        return notify_fail(HIR"ä½ ä¸çŸ¥å£è¨£ï¼Œå¼·è¡Œé ˜æ‚Ÿæ‹›å¼ï¼Œçªç„¶å¿ƒå£æœ‰èªªä¸å‡ºçš„é›£å—ã€‚\n"NOR);
 
         }
 if (wizardp(me)) printf("int = %d\n",me->query_int());
-        message_vision(HIY"$NÄ¬Äî¿Ú¾÷£¬ÊÖÄÃ´ò¹·°ô£¬°´ÕÕÊéÖĞµÄ×ËÊÆ±È»®×Å......\n"NOR,me);
+        message_vision(HIY"$Né»˜å¿µå£è¨£ï¼Œæ‰‹æ‹¿æ‰“ç‹—æ£’ï¼ŒæŒ‰ç…§æ›¸ä¸­çš„å§¿å‹¢æ¯”åŠƒè‘—......\n"NOR,me);
         if (random(me->query_int())>35 || random(10)==3)
         {
                  addn("wugou", 1, me);
                 if( query("wugou", me)<60 )
-                 tell_object  (me,HIR"ÄãËÆºõ¶Ô´ò¹·°ô×îºóÒ»ÕĞÓĞÒ»Ë¿ÁìÎò¡£\n"NOR);
+                 tell_object  (me,HIR"ä½ ä¼¼ä¹å°æ‰“ç‹—æ£’æœ€å¾Œä¸€æ‹›æœ‰ä¸€çµ²é ˜æ‚Ÿã€‚\n"NOR);
                  else if( query("wugou", me) == 60 )
-                 tell_object  (me,HIR"ÄãÁìÎò³öÁùÊ½ÌìÏÂÎŞ¹·ÖĞµÄÈıÊ½£¬Ò²ĞíÄã¸ÃÊÔÑéÊÔÑéÁË¡£\n"NOR);
+                 tell_object  (me,HIR"ä½ é ˜æ‚Ÿå‡ºå…­å¼å¤©ä¸‹ç„¡ç‹—ä¸­çš„ä¸‰å¼ï¼Œä¹Ÿè¨±ä½ è©²è©¦é©—è©¦é©—äº†ã€‚\n"NOR);
                  else if( query("wugou", me)>500 )
                  {
                          set("can_perform/dagou-bang/tian", 1, me);
@@ -99,14 +99,14 @@ if (wizardp(me)) printf("int = %d\n",me->query_int());
              if (me->can_improve_skill("dagou-bang")) 
                      me->improve_skill("dagou-bang", 1500000); 
              me->improve_skill("martial-cognize", 1500000); 
-                 tell_object  (me,HIR"ÄãÖÕÓÚÁìÎò³öÌìÏÂÎŞ¹·µÄËùÓĞµÄ¾øÕĞ¡£\n"NOR);
+                 tell_object  (me,HIR"ä½ çµ‚äºé ˜æ‚Ÿå‡ºå¤©ä¸‹ç„¡ç‹—çš„æ‰€æœ‰çš„çµ•æ‹›ã€‚\n"NOR);
              }
                  else
-                 tell_object  (me,HIR"Äã¶ÔÌìÏÂÎŞ¹·ÕâÕĞÓĞÁË¸üÉîµÄÁË½â¡£\n"NOR);
+                 tell_object  (me,HIR"ä½ å°å¤©ä¸‹ç„¡ç‹—é€™æ‹›æœ‰äº†æ›´æ·±çš„äº†è§£ã€‚\n"NOR);
         }
         else
         {
-                tell_object(me,HIR"ÄãĞÄ·³ÒâÂÒ£¬·Ñ¾¡ĞÄÉñÒ²ÄÑÒÔÁìÎò¡£\n"NOR);
+                tell_object(me,HIR"ä½ å¿ƒç…©æ„äº‚ï¼Œè²»ç›¡å¿ƒç¥ä¹Ÿé›£ä»¥é ˜æ‚Ÿã€‚\n"NOR);
         }
         addn("qi", -100, me);
         addn("jing", -100, me);

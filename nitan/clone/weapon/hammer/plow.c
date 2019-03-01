@@ -6,17 +6,17 @@ inherit HAMMER;
 
 void create()
 {
-        set_name("ÀçÍ·", ({"li tou", "plow", "li"}));
+        set_name("çŠé ­", ({"li tou", "plow", "li"}));
         set_weight(50000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "ÕâÊÇÒ»°ÑºÚ÷î÷îµÄÀçÍ·£¬¿´ÉÏÈ¥È·ÊµÖ»ÓĞÀÏÅ£²ÅÀ­µÃ¶¯¡£\n");
+                set("unit", "æŠŠ");
+                set("long", "é€™æ˜¯ä¸€æŠŠé»‘é»é»çš„çŠé ­ï¼Œçœ‹ä¸Šå»ç¢ºå¯¦åªæœ‰è€ç‰›æ‰æ‹‰å¾—å‹•ã€‚\n");
                 set("value", 5000);
                 set("material", "iron");
-                set("wield_msg", "$NºáÎÕÆğ$n£¬·¢ÏÖÊµÔÚÌ«²»ÊÊÊÖ£¬¸É´à±§ÔÚ»³Àï¡£\n");
-                set("unwield_msg", "$N·ÅÏÂÊÖÖĞµÄ$n£¬ÀÛµÃ»ëÉí¶¼ÊÇ³ôº¹£¬¾Í¿ìĞéÍÑÁË¡£\n");
+                set("wield_msg", "$Næ©«æ¡èµ·$nï¼Œç™¼ç¾å¯¦åœ¨å¤ªä¸é©æ‰‹ï¼Œå¹¹è„†æŠ±åœ¨æ‡·è£¡ã€‚\n");
+                set("unwield_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nï¼Œç´¯å¾—æ¸¾èº«éƒ½æ˜¯è‡­æ±—ï¼Œå°±å¿«è™›è„«äº†ã€‚\n");
         }
 
         init_hammer(30, TWO_HANDED);

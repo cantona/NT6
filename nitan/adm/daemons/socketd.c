@@ -4,7 +4,7 @@
 #include <net/socket_errors.h>
 
 #define DEBUG
-#define monitor(x)              CHANNEL_D->channel_broadcast("nch", "SOCKET_D ���飺"+(string)x)
+#define monitor(x)              CHANNEL_D->channel_broadcast("nch", "SOCKET_D 精靈："+(string)x)
 #define PROCESS_TIMEOUT         30
 
 inherit F_DBASE;
@@ -87,8 +87,8 @@ void write_callback(int fd)
                 map_delete(sockets[fd], "connect_handle");
         }
 
-        // ����յ� socket write callback ʱ
-        // buffer ����ѶϢδ�������������ͣ������ buffer
+        // 如果收到 socket write callback 時
+        // buffer 內有訊息未傳送則立即傳送，並清除 buffer
         if (sockets[fd]["write_buffer"])
         {
                 socket_write(fd, sockets[fd]["write_buffer"]);
@@ -133,13 +133,13 @@ void socket_send(int fd, mixed buf)
         int res;
 
 #ifdef DEBUG
-        monitor("�ͳ�ѶϢ: " + buf);
+        monitor("送出訊息: " + buf);
 #endif
 
         if (! buf || buf == "")
                 return;
 
-        // ��δ�յ� socket write callback ǰ���������͵�ѶϢ���� buffer
+        // 尚未收到 socket write callback 前，將欲傳送的訊息存入 buffer
         if (! sockets[fd]["write_fd"])
         {
                 if (! sockets[fd]["write_buffer"])
@@ -149,7 +149,7 @@ void socket_send(int fd, mixed buf)
                 return;
         }
 
-        // ��� buffer ����ѶϢ��δ�ͳ������뱾��ѶϢͬʱ�ͳ�
+        // 如果 buffer 中有訊息尚未送出，則與本次訊息同時送出
         if( sockets[fd]["write_buffer"] )
         {
                 sockets[fd]["write_buffer"] += buf;
@@ -159,20 +159,20 @@ void socket_send(int fd, mixed buf)
 
         switch (res)
         {
-        case EESUCCESS:                         /* ����ɹ� */
-        case EECALLBACK:                        /* �ȴ���� */
+        case EESUCCESS:                         /* 傳輸成功 */
+        case EECALLBACK:                        /* 等待完成 */
                 sockets[fd]["write_buffer"] = 0;
                 break;
 
-        case EEALREADY:                         /* �����ѽ��� */
-        case EEWOULDBLOCK:                      /* ����ͣ�� */
-        case EESEND:                            /* �������ϴ��� */
+        case EEALREADY:                         /* 程序已進行 */
+        case EEWOULDBLOCK:                      /* 程序停滯 */
+        case EESEND:                            /* 傳送資料錯誤 */
                 if (! sockets[fd]["write_buffer"])
                         sockets[fd]["write_buffer"] = buf;
 
                 call_out((: socket_send :), 1, fd, "");
                 break;
-        default:                                /* �������� */
+        default:                                /* 其他錯誤 */
                 if (objectp(sockets[fd]["owner"]))
                         evaluate(sockets[fd]["stat_callback"], fd, socket_error(res));
 
@@ -197,7 +197,7 @@ varargs int socket_open(string host, int port, int mode,
         if (! is_ip(hostip))
         {
                 resolve(hostip, "resolve_callback");
-                monitor(sprintf("��������λ��: %O", hostip));
+                monitor(sprintf("解析主機位置: %O", hostip));
         }
 
 #ifdef DEBUG
@@ -248,7 +248,7 @@ varargs int socket_open(string host, int port, int mode,
 void create()
 {
         seteuid(ROOT_UID);
-        set("channel_id", "SOCKET����");
+        set("channel_id", "SOCKET精靈");
 }
 
 void remove(string euid)
@@ -257,5 +257,5 @@ void remove(string euid)
                 return;
 
         if( sizeof(sockets) > 0 )
-                error("SOCKET���飺Ŀǰ����ִ��SOCKET�����㲻�ܴݻ�SOCKET���顣\n");
+                error("SOCKET精靈：目前正在執行SOCKET任務，你不能摧毀SOCKET精靈。\n");
 }

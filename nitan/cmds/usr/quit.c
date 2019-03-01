@@ -20,9 +20,9 @@ void destruct_ob(object me)
 void create()
 {
         seteuid(getuid());
-        set("name", "ÀëÏßÖ¸Áî");
+        set("name", "é›¢ç·šæŒ‡ä»¤");
         set("id", "quit");
-        set("channel_id", "ÀëÏß¾«Áé");
+        set("channel_id", "é›¢ç·šç²¾éˆ");
 }
 
 int main(object me, string arg)
@@ -34,36 +34,36 @@ int main(object me, string arg)
         object *users;
 
         if (LOGIN_D->get_madlock())
-                return notify_fail("Ê±¿ÕÒÑ¾­·â±Õ£¬Ã»ÓĞÈËÄÜ¹»ÍË³öÕâ¸öÊ±¿ÕÁË¡£\n");
+                return notify_fail("æ™‚ç©ºå·²ç¶“å°é–‰ï¼Œæ²’æœ‰äººèƒ½å¤ é€€å‡ºé€™å€‹æ™‚ç©ºäº†ã€‚\n");
 
         if( me->is_busy() && !query("doing", me) )
-                return notify_fail("ÄãÏÖÔÚÕıÃ¦×Å×öÆäËûÊÂ£¬²»ÄÜÍË³öÓÎÏ·£¡\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£å¿™è‘—åšå…¶ä»–äº‹ï¼Œä¸èƒ½é€€å‡ºéŠæˆ²ï¼\n");
 
         if (me->is_fighting())
-                return notify_fail("ÄãÏÖÔÚÕıÔÚ´ò¼Ü£¬ÔõÃ´ÄÜËµ×ß¾Í×ß£¿\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£åœ¨æ‰“æ¶ï¼Œæ€éº¼èƒ½èªªèµ°å°±èµ°ï¼Ÿ\n");
 
         if (me->query_competitor())
-                return notify_fail("ºÃ¼Ò»ï£¬ÄãÕıÔÚºÍÈË±ÈÎä£¬ÔõÃ´ÄÜ¿ªÁï£¿\n");
+                return notify_fail("å¥½å®¶ä¼™ï¼Œä½ æ­£åœ¨å’Œäººæ¯”æ­¦ï¼Œæ€éº¼èƒ½é–‹æºœï¼Ÿ\n");
 
         if (me->dps_count() > 0)
-                return notify_fail("ºÃ¼Ò»ï£¬Äã´òÔÎÁË±ğÈË¾ÍÏë¿ªÁï£¿\n");
+                return notify_fail("å¥½å®¶ä¼™ï¼Œä½ æ‰“æšˆäº†åˆ¥äººå°±æƒ³é–‹æºœï¼Ÿ\n");
 
         if (me->query_condition("killer"))
-                return notify_fail("ºÃ¼Ò»ï£¬ÄãÉ±ÁËÈË¾Í±ğÏë¿ªÁï£¡\n");
+                return notify_fail("å¥½å®¶ä¼™ï¼Œä½ æ®ºäº†äººå°±åˆ¥æƒ³é–‹æºœï¼\n");
 
         if( time()-query("combat/pktime", me)<28800 )
-                return notify_fail("ºÃ¼Ò»ï£¬ÄãÉ±ÁËÈË¾Í±ğÏë¿ªÁï£¡\n");
+                return notify_fail("å¥½å®¶ä¼™ï¼Œä½ æ®ºäº†äººå°±åˆ¥æƒ³é–‹æºœï¼\n");
 
         if (me->over_encumbranced())
-                return notify_fail("ÄãÉíÉÏ±³µÄ¶«Î÷Ì«¶àÁË£¬ÎŞ·¨Àë¿ªÕâ¸öÊÀ½ç¡£\n");
+                return notify_fail("ä½ èº«ä¸ŠèƒŒçš„æ±è¥¿å¤ªå¤šäº†ï¼Œç„¡æ³•é›¢é–‹é€™å€‹ä¸–ç•Œã€‚\n");
 
         if (me->run_override("quit"))
                 return 1;
 
         if( time()-query("birthday", me)<1800 && !query("reborn", me) && !wizardp(me) )
         {
-                write(HIG "\nÄãµÄÕËºÅÊÇĞÂ½¨µÄ£¬±¾Õ¾¹æ¶¨ĞÂ½¨ÕËºÅ±ØĞëÁ¬ĞøÔÚÏß°ëĞ¡Ê±²ÅÄÜ±»ÓĞĞ§±£\n"
-                          "Áô£¬ÍË³ö¸ÃÓÎÏ·½«É¾³ıÄãµÄÕËºÅ£¬ÄãÈ·¶¨Òª·ÅÆú¸ÃÕÊºÅ¶øÍË³öÂğ£¿£¨" HIR "y" HIG "/" HIY "n" HIG "£©\n" NOR);
+                write(HIG "\nä½ çš„è³¬è™Ÿæ˜¯æ–°å»ºçš„ï¼Œæœ¬ç«™è¦å®šæ–°å»ºè³¬è™Ÿå¿…é ˆé€£çºŒåœ¨ç·šåŠå°æ™‚æ‰èƒ½è¢«æœ‰æ•ˆä¿\n"
+                          "ç•™ï¼Œé€€å‡ºè©²éŠæˆ²å°‡åˆªé™¤ä½ çš„è³¬è™Ÿï¼Œä½ ç¢ºå®šè¦æ”¾æ£„è©²å¸³è™Ÿè€Œé€€å‡ºå—ï¼Ÿï¼ˆ" HIR "y" HIG "/" HIY "n" HIG "ï¼‰\n" NOR);
                 input_to((: confirm :), me);
                 return 1;
         }
@@ -76,7 +76,7 @@ int main(object me, string arg)
                 // Are we possessing in others body ?
                 if (link_ob->is_character())
                 {
-                        write("ÄãµÄ»êÆÇ»Øµ½" + link_ob->name(1) + "µÄÉíÉÏ¡£\n");
+                        write("ä½ çš„é­‚é­„å›åˆ°" + link_ob->name(1) + "çš„èº«ä¸Šã€‚\n");
                         exec(link_ob, me);
                         link_ob->setup();
                         link_ob->write_prompt();
@@ -100,16 +100,16 @@ int main(object me, string arg)
                 if (! interactive(me))
                         return 1;
 
-                write("ÄãÔİÊ±ÀëÏß£¬ÈËÎï²»ÍË³ö...\n");
-                message("vision", me->name() + "ÀëÏßÁË¡£\n",
+                write("ä½ æš«æ™‚é›¢ç·šï¼Œäººç‰©ä¸é€€å‡º...\n");
+                message("vision", me->name() + "é›¢ç·šäº†ã€‚\n",
                                   environment(me), ({ me }));
                 me->save();
                 link_ob = new(LOGIN_OB);
                 exec(link_ob, me);
                 destruct(link_ob);
 #ifdef DB_SAVE
-                DATABASE_D->db_set_player(query("id", me),"online",2);//ÀëÏßÁ·¹¦
-                DATABASE_D->db_set_user(query("id", me),"online",2);//ÀëÏßÁ·¹¦
+                DATABASE_D->db_set_player(query("id", me),"online",2);//é›¢ç·šç·´åŠŸ
+                DATABASE_D->db_set_user(query("id", me),"online",2);//é›¢ç·šç·´åŠŸ
 #endif
                 return 1;
         }
@@ -134,10 +134,10 @@ int main(object me, string arg)
                         if( !inv[i]->query_autoload() && !query("equipped", inv[i]) )
                                         flag += DROP_CMD->do_drop(me, inv[i], 1);
                 if (flag)
-                        message("vision", me->name() + "½«ÉíÉÏµÄ¶«Î÷¶¼¶ªÁËÏÂÀ´¡£\n",
+                        message("vision", me->name() + "å°‡èº«ä¸Šçš„æ±è¥¿éƒ½ä¸Ÿäº†ä¸‹ä¾†ã€‚\n",
                                 environment(me), ({ me }));
         }
-#else  // Èç¹û²»¶ªÎïÆ·Ôò±ØĞëÅĞ¶ÏÄ³Ğ©ÎïÆ·ÊÇ±ØĞë´İ»ÙµÄ
+#else  // å¦‚æœä¸ä¸Ÿç‰©å“å‰‡å¿…é ˆåˆ¤æ–·æŸäº›ç‰©å“æ˜¯å¿…é ˆæ‘§æ¯€çš„
 */
 #ifdef NO_QUIT_DROP
         inv = all_inventory(me);
@@ -145,7 +145,7 @@ int main(object me, string arg)
                 if (userp(inv[i]) || inv[i]->query_unique() ||
                     query("maze_item", inv[i]) || 
                     (! clonep(inv[i]) &&
-                    ! sscanf(base_name(inv[i]), "/data/%*s/%*s"))) // Èç¹û³ÉÁ¢±íÊ¾´ËÎïÆ·ÊÇ·Ç /data Ä¿Â¼ÏÂµÄÔ­¼ş
+                    ! sscanf(base_name(inv[i]), "/data/%*s/%*s"))) // å¦‚æœæˆç«‹è¡¨ç¤ºæ­¤ç‰©å“æ˜¯é /data ç›®éŒ„ä¸‹çš„åŸä»¶
                 {
                         if( query("equipped", inv[i]) )
                                 inv[i]->unequip();
@@ -156,16 +156,16 @@ int main(object me, string arg)
                 }
 #endif
 
-        // write("»¶Ó­ÏÂ´ÎÔÙÀ´£¡\n");
+        // write("æ­¡è¿ä¸‹æ¬¡å†ä¾†ï¼\n");
         color_cat(QUITMSG);
         if (environment(me))
         {
-                message("vision", me->name() + "Àë¿ªÓÎÏ·¡£\n",
+                message("vision", me->name() + "é›¢é–‹éŠæˆ²ã€‚\n",
                         environment(me), ({ me }));
         }
 
         CHANNEL_D->do_channel(this_object(), "sys",
-                me->name()+"("+query("id", me)+")Àë¿ªÓÎÏ·ÁË¡£");
+                me->name()+"("+query("id", me)+")é›¢é–‹éŠæˆ²äº†ã€‚");
 
 
         log_file("stat", sprintf("%-8s %-10s %-18s %-18s %-15s.\n",
@@ -198,15 +198,15 @@ int force_quit(object me)
 
         if (previous_object() != me ||
             ! playerp(me))
-                return notify_fail("Äã²»ÄÜ´İ»ÙÕâ¸ö¶ÔÏó¡£\n");
+                return notify_fail("ä½ ä¸èƒ½æ‘§æ¯€é€™å€‹å°è±¡ã€‚\n");
 
         seteuid(getuid());
 
         if (me->query_condition("killer"))
-                return notify_fail("ºÃ¼Ò»ï£¬É±ÁËÈË¾Í±ğÏë¿ªÁï£¡\n");
+                return notify_fail("å¥½å®¶ä¼™ï¼Œæ®ºäº†äººå°±åˆ¥æƒ³é–‹æºœï¼\n");
 
         if( time()-query("combat/pktime", me)<28800 )
-                return notify_fail("ºÃ¼Ò»ï£¬ÄãÉ±ÁËÈË¾Í±ğÏë¿ªÁï£¡\n");
+                return notify_fail("å¥½å®¶ä¼™ï¼Œä½ æ®ºäº†äººå°±åˆ¥æƒ³é–‹æºœï¼\n");
 
         if( query("mud_age", me)<1800 && !query("reborn", me) )
         {
@@ -225,7 +225,7 @@ int force_quit(object me)
         message("system", REM2(me), users);
 
 #ifdef DB_SAVE
-             DATABASE_D->db_set_player(query("id", me),"online",0);//ÀëÏßÁ·¹¦
+             DATABASE_D->db_set_player(query("id", me),"online",0);//é›¢ç·šç·´åŠŸ
 #endif
         destruct(me);
         return 1;
@@ -243,7 +243,7 @@ int confirm(string yn, object me)
                                     log_time(), log_id(me),
                                     query_ip_number(me)));
 
-                write(HIW "ÄúÑ¡ÔñÁË·ÅÆú¸ÃÕËºÅÍË³öÄàÌ¶£¬µµ°¸±»É¾³ı¡£¡£¡£¡£¡£¡£\n" NOR);
+                write(HIW "æ‚¨é¸æ“‡äº†æ”¾æ£„è©²è³¬è™Ÿé€€å‡ºæ³¥æ½­ï¼Œæª”æ¡ˆè¢«åˆªé™¤ã€‚ã€‚ã€‚ã€‚ã€‚ã€‚\n" NOR);
 
                 users=filter_array(users(),(:query_temp("tomud", $1):));
                 message("system", REM2(me), users);
@@ -252,7 +252,7 @@ int confirm(string yn, object me)
                 return 1;
         } else
         {
-                write(HIG "ÄúÑ¡ÔñÁË·ÅÆúÍË³ö(quit)£¬¼ÌĞøÓÎÏ·¡£\n" NOR);
+                write(HIG "æ‚¨é¸æ“‡äº†æ”¾æ£„é€€å‡º(quit)ï¼Œç¹¼çºŒéŠæˆ²ã€‚\n" NOR);
                 return 1;
         }
 }
@@ -260,9 +260,9 @@ int confirm(string yn, object me)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : quit | exit
+æŒ‡ä»¤æ ¼å¼ : quit | exit
 
-µ±Äã(Äã)ÏëÔİÊ±Àë¿ªÊ±, ¿ÉÀûÓÃ´ËÒ»Ö¸Áî¡£
+ç•¶ä½ (ä½ )æƒ³æš«æ™‚é›¢é–‹æ™‚, å¯åˆ©ç”¨æ­¤ä¸€æŒ‡ä»¤ã€‚
 HELP );
     return 1;
 }

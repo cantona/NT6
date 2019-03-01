@@ -1,4 +1,4 @@
-// popo.c ÆÅÆÅ
+// popo.c å©†å©†
 
 #include <ansi.h>
 
@@ -6,9 +6,9 @@ inherit "/inherit/char/punisher";
 
 void create()
 {
-        set_name("ÀÏÆÅÆÅ", ({ "lao popo", "popo" }));
-        set("long",  "ÕâÊÇ¹ÅÄ¹ÅÉ²»³öÊÀµÄ¸ßÈË£¬½­ºşÉÏÏÊÓĞÈËÖª¡£\n");
-        set("gender", "Å®ĞÔ");
+        set_name("è€å©†å©†", ({ "lao popo", "popo" }));
+        set("long",  "é€™æ˜¯å¤å¢“æ´¾ä¸å‡ºä¸–çš„é«˜äººï¼Œæ±Ÿæ¹–ä¸Šé®®æœ‰äººçŸ¥ã€‚\n");
+        set("gender", "å¥³æ€§");
         set("age", 53);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -54,7 +54,7 @@ void create()
         prepare_skill("unarmed", "meinv-quan");
         prepare_skill("strike", "fireice-strike");
 
-        create_family("¹ÅÄ¹ÅÉ", 0, "¸ßÈË");
+        create_family("å¤å¢“æ´¾", 0, "é«˜äºº");
 
         set("chat_chance_combat", 120);
         set("chat_msg_combat", ({

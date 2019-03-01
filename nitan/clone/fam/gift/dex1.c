@@ -3,19 +3,19 @@ inherit __DIR__"gift";
 
 void create()
 {
-        set_name(NOR + HIC "¸£ÊÙ¸à" NOR, ({ "fushou gao", "fushou", "gao" }));
+        set_name(NOR + HIC "ç¦å£½è†" NOR, ({ "fushou gao", "fushou", "gao" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIC "ÕâÊÇÒ»¿éÖÆ×÷¾«ÖÂµÄ¸âµã£¬¾İËµ³ÔÁË¿ÉÒÔÔöÇ¿Éí·¨¡£\n" NOR);
-                set("base_unit", "¿é");
+                set("long", HIC "é€™æ˜¯ä¸€å¡Šåˆ¶ä½œç²¾è‡´çš„ç³•é»ï¼Œæ“šèªªåƒäº†å¯ä»¥å¢å¼·èº«æ³•ã€‚\n" NOR);
+                set("base_unit", "å¡Š");
                 set("base_value", 10000);
                 set("base_weight", 50);
                 set("only_do_effect", 1);
                 set("gift_type", "dex");
-                set("gift_name", "ÏÈÌìÉí·¨");
+                set("gift_name", "å…ˆå¤©èº«æ³•");
                 set("gift_point", 40);
-                set("gift_msg", HIW "Í»È»ÄãÖ»¾õÈ«ÉíÇáÆ®Æ®µÄ£¬ÓĞ¹ÉÌÚÔÆ¼İÎíµÄ¸Ğ¾õ¡£\n" NOR);
+                set("gift_msg", HIW "çªç„¶ä½ åªè¦ºå…¨èº«è¼•é£„é£„çš„ï¼Œæœ‰è‚¡é¨°é›²é§•éœ§çš„æ„Ÿè¦ºã€‚\n" NOR);
         }
         setup();
 }

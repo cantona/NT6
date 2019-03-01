@@ -1,4 +1,4 @@
-// /d/shenlong/qianlong Ç±ÁúÌÃ
+// /d/shenlong/qianlong æ½›é¾å ‚
 // Last Modified by winder on Jul. 12 2002
 
 #include <ansi.h>
@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Ç±ÁúÌÃ");
+        set("short", "æ½›é¾å ‚");
         set("long", @LONG
-ÕâÊÇÉñÁú½ÌµÄÇ±ÁúÌÃ£¬¾ÓÖĞÁ½ÕÅ´óÖñÒÎ£¬ÏÂÃæÉèÁËÎåÕÅ°åµÊ£¬½ÌÖ÷
-ºÍÎåÁúÊ¹³£ÔÚ´ËÉÌÁ¿ÃÜÊÂ£¬Õâ¶ù·Ç½ÌÖ÷ÔÊĞíÊÇ²»¿ÉÒÔ½øÈë´ËµØµÄ¡£
+é€™æ˜¯ç¥é¾æ•™çš„æ½›é¾å ‚ï¼Œå±…ä¸­å…©å¼µå¤§ç«¹æ¤…ï¼Œä¸‹é¢è¨­äº†äº”å¼µæ¿å‡³ï¼Œæ•™ä¸»
+å’Œäº”é¾ä½¿å¸¸åœ¨æ­¤å•†é‡å¯†äº‹ï¼Œé€™å…’éæ•™ä¸»å…è¨±æ˜¯ä¸å¯ä»¥é€²å…¥æ­¤åœ°çš„ã€‚
 LONG
         );
         set("exits", ([
@@ -27,12 +27,12 @@ void init()
 {
         object *inv, me = this_player();
 
-        if( !(query("family/family_name", me) == "ÉñÁú½Ì" || 
+        if( !(query("family/family_name", me) == "ç¥é¾æ•™" || 
                 query("sg/spy", me)) )
         {
                 inv = all_inventory(this_object());
                 for(int i = 0; i < sizeof(inv); i++ )
-                        if( (query("family/family_name", inv[i]) == "ÉñÁú½Ì" || 
+                        if( (query("family/family_name", inv[i]) == "ç¥é¾æ•™" || 
                                 query("sg/spy", inv[i])) && living(inv[i]) )
                                 inv[i]->kill_ob(me);
                 me->start_busy(1);

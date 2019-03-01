@@ -2,7 +2,7 @@
 
 inherit F_SSERVER;
 
-string name() { return HIG "Ç§Éß³ö¶´" NOR; }
+string name() { return HIG "åƒè›‡å‡ºæ´" NOR; }
 
 int perform(object me, object target)
 {
@@ -20,37 +20,37 @@ int perform(object me, object target)
         }
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(name() + "Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(name() + "åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me)) ||
             query("skill_type", weapon) != "staff" )
-                return notify_fail("Äã±ØĞëÊÖ³ÖÒ»°ÑÕÈ²ÅÄÜÊ©Õ¹" + name() + "£¡\n");
+                return notify_fail("ä½ å¿…é ˆæ‰‹æŒä¸€æŠŠæ–æ‰èƒ½æ–½å±•" + name() + "ï¼\n");
 
         if ((int)me->query_skill("force") < 150)
-                return notify_fail("ÄãµÄÄÚ¹¦»ğºò²»¹»£¬ÄÑÒÔÊ©Õ¹" + name() + "£¡\n");
+                return notify_fail("ä½ çš„å…§åŠŸç«å€™ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" + name() + "ï¼\n");
 
         if( query("neili", me)<100 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬ÎŞ·¨Ê©Õ¹" + name() + "£¡\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼Œç„¡æ³•æ–½å±•" + name() + "ï¼\n");
 
         if ((lvl = (int)me->query_skill("lingshe-zhangfa", 1)) < 120)
-                return notify_fail("ÄãµÄÁéÉßÕÈ·¨»¹²»µ½¼Ò£¬ÎŞ·¨Ê¹ÓÃ" + name() + "£¡\n");
+                return notify_fail("ä½ çš„éˆè›‡æ–æ³•é‚„ä¸åˆ°å®¶ï¼Œç„¡æ³•ä½¿ç”¨" + name() + "ï¼\n");
 
         if (me->query_skill_mapped("staff") != "lingshe-zhangfa")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢ÁéÉßÕÈ·¨£¬ÎŞ·¨Ê¹ÓÃ" + name() + "£¡\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼éˆè›‡æ–æ³•ï¼Œç„¡æ³•ä½¿ç”¨" + name() + "ï¼\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIW "$N" HIW "´óºÈÒ»Éù£¬ÆËÉíÉÏÇ°£¬ÊÖÖĞµÄ" + weapon->name() +
-              HIW "»¯×÷ÍòµÀ¹âÃ¢£¬Ò»ÆëÉäÏò$n" HIW "£¡\n" NOR;
+        msg = HIW "$N" HIW "å¤§å–ä¸€è²ï¼Œæ’²èº«ä¸Šå‰ï¼Œæ‰‹ä¸­çš„" + weapon->name() +
+              HIW "åŒ–ä½œè¬é“å…‰èŠ’ï¼Œä¸€é½Šå°„å‘$n" HIW "ï¼\n" NOR;
 
         ap = attack_power(me, "staff");
         dp = defense_power(target, "parry");
 
         if (ap / 2 + random(ap) > dp)
         {
-                msg += HIY "$n" HIY "¼û$N" HIY "°Ñ" + weapon->name() +
-                       HIY "Ê¹µÃ»îÁé»îÏÖ£¬ÓÌÈçÕæÎïÒ»°ã£¬ÊµÔÚÊÇÄÑÒÔµÖµ²£¬Ö»ÓĞºóÍË¡£\n" NOR;
+                msg += HIY "$n" HIY "è¦‹$N" HIY "æŠŠ" + weapon->name() +
+                       HIY "ä½¿å¾—æ´»éˆæ´»ç¾ï¼ŒçŒ¶å¦‚çœŸç‰©ä¸€èˆ¬ï¼Œå¯¦åœ¨æ˜¯é›£ä»¥æŠµæ“‹ï¼Œåªæœ‰å¾Œé€€ã€‚\n" NOR;
                 count = lvl / 20;
                 addn_temp("apply/attack", count, me);
         } else

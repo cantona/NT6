@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ѧ��");
+        set("short", "學堂");
         set("long", @LONG
-���ǳ����һ��ѧ�ã����е��ӵܱ��ڴ��ϿΡ�ѧ����Ĺ������
-�����鼮������������������Ȫ�ݵ�ŷ��ղ������
+這是城裡的一所學堂，城中的子弟便在此上課。學堂裡的櫃子裡擺
+滿了書籍。教書先生便是響譽泉州的歐陽詹先生。
 LONG );
         set("no_clean_up", 0);
         set("exits", ([

@@ -3,11 +3,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", HIW"¹­±øÓª"NOR);
+        set("short", HIW"å¼“å…µç‡Ÿ"NOR);
         set("long", @LONG
-ÕâÀï¾ÍÊÇ¡¸´óËÎ¡¹¹­±øÑµÁ·´óÓª£¬Ò»ÅúÅúµÄËÎ¾üÉñ¼ýÊÖ´ÓÕâÀïÑµ
-Á·²úÉú£¬ÈÃÃÉ¹Å¾üµ¨º®£¬Á½¾ü½»·æ£¬¹­¼ýµÄÊ¹ÓÃÍùÍùÄÜ³öÆæÖÆÊ¤£¬Òò
-´Ë´óËÎÒ²¼ÓÇ¿ÁË¹­¼ýÊÖµÄÑµÁ·¡£
+é€™è£¡å°±æ˜¯ã€Œå¤§å®‹ã€å¼“å…µè¨“ç·´å¤§ç‡Ÿï¼Œä¸€æ‰¹æ‰¹çš„å®‹è»ç¥žç®­æ‰‹å¾žé€™è£¡è¨“
+ç·´ç”¢ç”Ÿï¼Œè®“è’™å¤è»è†½å¯’ï¼Œå…©è»äº¤é‹’ï¼Œå¼“ç®­çš„ä½¿ç”¨å¾€å¾€èƒ½å‡ºå¥‡åˆ¶å‹ï¼Œå› 
+æ­¤å¤§å®‹ä¹ŸåŠ å¼·äº†å¼“ç®­æ‰‹çš„è¨“ç·´ã€‚
 LONG );
         set("train", "archer");
         set("no_magic", "1");

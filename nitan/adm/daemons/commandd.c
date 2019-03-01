@@ -31,12 +31,12 @@ void rehash(string dir)
         i = sizeof(cmds);
         cmdlist = allocate_mapping(i);
 
-        // È¡ËùÓÐÃüÁî
+        // å–æ‰€æœ‰å‘½ä»¤
         while (i--)
                 if (sscanf(cmds[i], "%s.c", cmds[i]))
                         cmdlist[cmds[i]] = dir + cmds[i] + ".c";
 
-        // È¡ËùÓÐÃüÁîµÄ±ðÃû
+        // å–æ‰€æœ‰å‘½ä»¤çš„åˆ¥å
         i = sizeof(cmds);
         while (i--)
                 if (sscanf(cmds[i], "%s.alias", cmds[i]))
@@ -112,16 +112,16 @@ int do_command(object me, string verb, string arg, string *path)
                 call_other(file, "main", me, arg) )
                 ; else
         if( me->is_in_prison() ) 
-                return notify_fail("Óü×äºÈµÀ£ºÄãÀÏÀÏÊµÊµµÄ´ô×Å±ð¶¯£¡" + appromix_time(me->query_time_to_leave(), 1) + "·ÅÄã³öÈ¥£¡\n")
+                return notify_fail("ç„å’å–é“ï¼šä½ è€è€å¯¦å¯¦çš„å‘†è‘—åˆ¥å‹•ï¼" + appromix_time(me->query_time_to_leave(), 1) + "æ”¾ä½ å‡ºåŽ»ï¼\n")
                 ; else
         if( query("id") == "guest" )
-                return notify_fail("¼ÈÈ»½ö½öÊÇÀ´²Î¹Û£¬»¹ÊÇ²»ÒªËµ»°ÁË£¡\n")
+                return notify_fail("æ—¢ç„¶åƒ…åƒ…æ˜¯ä¾†åƒè§€ï¼Œé‚„æ˜¯ä¸è¦èªªè©±äº†ï¼\n")
                 ; else
         if( EMOTE_D->do_emote(me, verb, arg) )
                 ; else
         if( CHANNEL_D->do_channel(me, verb, arg) )
                 ; else
-        if( mapp(para) && para["auto_say"] && query_fail_msg() == "Ê²Ã´£¿\n" &&
+        if( mapp(para) && para["auto_say"] && query_fail_msg() == "ä»€éº¼ï¼Ÿ\n" &&
                 stringp(file = (string)find_command("say", path)) && !me->is_direct_command() &&
                 call_other(file, "main", me, me->query_orginal_input()) )
                 ; else
@@ -150,7 +150,7 @@ int evaluate_command(object me, string verb, string arg, string *path)
         };
         if( !objectp(me) ) return 1;
         if( command_timecost > 80000 )
-                CHANNEL_D->channel_broadcast("nch", sprintf("%sÏÂ´ïÖ¸Áî %s ³¬¹ýÏµÍ³ÏÞÖÆ£¬Ö´ÐÐÊ±¼ä(%fs) \n", me->query_idname(1), verb+ " " +arg, to_float(command_timecost)/1000000));
+                CHANNEL_D->channel_broadcast("nch", sprintf("%sä¸‹é”æŒ‡ä»¤ %s è¶…éŽç³»çµ±é™åˆ¶ï¼ŒåŸ·è¡Œæ™‚é–“(%fs) \n", me->query_idname(1), verb+ " " +arg, to_float(command_timecost)/1000000));
 #else
         //result = me->evaluate_command(verb, arg);
         result = do_command(me, verb, arg, path);

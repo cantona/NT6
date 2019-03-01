@@ -3,13 +3,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name("ÆÆ²¼", ({"po bu", "piece"}));
+        set_name("ç ´å¸ƒ", ({"po bu", "piece"}));
         set_weight(80);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿é");
-                set("long","ÕâÊÇÒ»¿éÆÆ²¼£¬Æ¾´Ë¿ÉÖ±½ÓÏò¼ò³¤ÀÏÒªÇóÉı´ü¡£\n");
+                set("unit", "å¡Š");
+                set("long","é€™æ˜¯ä¸€å¡Šç ´å¸ƒï¼Œæ†‘æ­¤å¯ç›´æ¥å‘ç°¡é•·è€è¦æ±‚å‡è¢‹ã€‚\n");
                 set("material", "cloth");
         }
 }

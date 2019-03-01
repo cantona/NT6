@@ -5,14 +5,14 @@ inherit F_LIQUID;
 
 void create()
 {
-        set_name(NOR + YEL "Å£Æ¤Ë®´ü" NOR, ({ "shui dai", "shui", "dai" }));
+        set_name(NOR + YEL "ç‰›çš®æ°´è¢‹" NOR, ({ "shui dai", "shui", "dai" }));
         set_weight(50);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", NOR + YEL "ÕâÊÇÒ»Ö§ÌØ´óºÅµÄÅ£Æ¤Ë®´ü£¬ÖÊÁ¿"
-                            "Ïàµ±²»´í¡£ÉõÖÁ¿ÉÒÔÓÃËüÀ´´©Ô½É³Ä®¡£\n" NOR);
-                set("unit", "Ö§");
+                set("long", NOR + YEL "é€™æ˜¯ä¸€æ”¯ç‰¹å¤§è™Ÿçš„ç‰›çš®æ°´è¢‹ï¼Œè³ªé‡"
+                            "ç›¸ç•¶ä¸éŒ¯ã€‚ç”šè‡³å¯ä»¥ç”¨å®ƒä¾†ç©¿è¶Šæ²™æ¼ ã€‚\n" NOR);
+                set("unit", "æ”¯");
                 set("value", 5000);
                 set("max_liquid", 30000);
                 set("can_drink", 1);
@@ -20,7 +20,7 @@ void create()
         }
         set("liquid", ([
                 "type"         : "water",
-                "name"         : "ÇåË®",
+                "name"         : "æ¸…æ°´",
                 "remaining"    : 30000,
                 "drunk_supply" : 3000,
         ]));
@@ -32,10 +32,10 @@ int do_effect(object me)
 
         if ((remain = query("liquid/remaining")) < 1)
         {
-                write(name() + "ÀïµÄ" + query("liquid/name") + "ÒÑ¾­±»ºÈµÃÒ»µÎÒ²²»Ê£ÁË¡£\n"); 
+                write(name() + "è£¡çš„" + query("liquid/name") + "å·²ç¶“è¢«å–å¾—ä¸€æ»´ä¹Ÿä¸å‰©äº†ã€‚\n"); 
         if( query("env/auto_drinkout", me) && environment(this_object()) != environment(me) )
            {
-                message_vision("$N¶ªÏÂÒ»¸ö$n¡£\n", me, this_object());  
+                message_vision("$Nä¸Ÿä¸‹ä¸€å€‹$nã€‚\n", me, this_object());  
                 this_object()->move(environment(me));  
            }
                 return 1;
@@ -43,11 +43,11 @@ int do_effect(object me)
         
         if( query("water", me) >= me->max_water_capacity() )
         {
-                write("ÄãÒÑ¾­ºÈÌ«¶àÁË£¬ÔÙÒ²¹à²»ÏÂÒ»µÎË®ÁË¡£\n"); 
+                write("ä½ å·²ç¶“å–å¤ªå¤šäº†ï¼Œå†ä¹ŸçŒä¸ä¸‹ä¸€æ»´æ°´äº†ã€‚\n"); 
                 return 1;
         }
 
-        message_vision("$NÄÃÆğ" + name() + "¹¾ààààµØºÈÁË¼¸´ó¿Ú" + query("liquid/name") + "¡£\n" NOR, me);
+        message_vision("$Næ‹¿èµ·" + name() + "å’•åš•åš•åœ°å–äº†å¹¾å¤§å£" + query("liquid/name") + "ã€‚\n" NOR, me);
         
         if (remain < 3000)
         {
@@ -63,7 +63,7 @@ int do_effect(object me)
             query("env/auto_drinkout", me) && 
             environment(this_object()) != environment(me)) 
         {
-                message_vision("$N¶ªÏÂÒ»¸ö$n¡£\n", me, this_object()); 
+                message_vision("$Nä¸Ÿä¸‹ä¸€å€‹$nã€‚\n", me, this_object()); 
                 this_object()->move(environment(me)); 
         }
         

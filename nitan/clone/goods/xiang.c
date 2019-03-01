@@ -4,29 +4,29 @@ inherit BAOXIANG_ITEM;
 
 void create()
 {
-        set_name(HIM"×Ï½ğÑ«ÕÂÏä×Ó"NOR,({"xiang"}));
-        //Õâ¸öÒ»¶¨ÒªÉèÖÃ£º
+        set_name(HIM"ç´«é‡‘å‹›ç« ç®±å­"NOR,({"xiang"}));
+        //é€™å€‹ä¸€å®šè¦è¨­ç½®ï¼š
         set("BAOXIANG_LIST",([
-                "/clone/goods/learn-emblem":400,   //ÎïÆ·ÎÄ¼şÃû:¸ÅÂÊ
-                "/clone/goods/practice-emblem":200,   //ÎïÆ·ÎÄ¼şÃû:¸ÅÂÊ
-                "/clone/goods/derive-emblem":150,   //ÎïÆ·ÎÄ¼şÃû:¸ÅÂÊ
-                "/clone/goods/research-emblem":150,   //ÎïÆ·ÎÄ¼şÃû:¸ÅÂÊ
-                "/clone/goods/research-emblem2":100,   //ÎïÆ·ÎÄ¼şÃû:¸ÅÂÊ
-        ])); //¸ÅÂÊÊÇÒÔ1000×÷Îª×ÜÊı£¬ÇÒ¼¸ÏîµÄ¸ÅÂÊ×ÜºÍÎª1000£¬¸ÅÂÊ´óµÄ³öÏÖ¼¸ÂÊ¸ß¡£¡£¡£
+                "/clone/goods/learn-emblem":400,   //ç‰©å“æ–‡ä»¶å:æ¦‚ç‡
+                "/clone/goods/practice-emblem":200,   //ç‰©å“æ–‡ä»¶å:æ¦‚ç‡
+                "/clone/goods/derive-emblem":150,   //ç‰©å“æ–‡ä»¶å:æ¦‚ç‡
+                "/clone/goods/research-emblem":150,   //ç‰©å“æ–‡ä»¶å:æ¦‚ç‡
+                "/clone/goods/research-emblem2":100,   //ç‰©å“æ–‡ä»¶å:æ¦‚ç‡
+        ])); //æ¦‚ç‡æ˜¯ä»¥1000ä½œç‚ºç¸½æ•¸ï¼Œä¸”å¹¾é …çš„æ¦‚ç‡ç¸½å’Œç‚º1000ï¼Œæ¦‚ç‡å¤§çš„å‡ºç¾å¹¾ç‡é«˜ã€‚ã€‚ã€‚
         
-        set("long", HIY "ÕâÊÇÒ»Ö»½ğÉ«µÄ±¦Ïä£¬×°ÊÎµÄÖé¹â±¦Æø£¬Äã»òĞí¿ÉÒÔ´ò¿ª£¨open£©Ëü¡£\n" NOR); 
-        set("unit", "Ğ©");
-        set("base_unit", "¸ö");
+        set("long", HIY "é€™æ˜¯ä¸€åªé‡‘è‰²çš„å¯¶ç®±ï¼Œè£é£¾çš„ç å…‰å¯¶æ°£ï¼Œä½ æˆ–è¨±å¯ä»¥æ‰“é–‹ï¼ˆopenï¼‰å®ƒã€‚\n" NOR); 
+        set("unit", "äº›");
+        set("base_unit", "å€‹");
         set("no_give",1);
         set("no_drop",1);
         set("base_weight",1);
         set("base_value",1);
-        set_amount(1); //ÒòÎªÊÇ¸öcombinedÎïÆ· ËùÒÔÕâ¸öÒ»¶¨ÒªÉèÖÃ£¬²»È»±¨´íµÄ
+        set_amount(1); //å› ç‚ºæ˜¯å€‹combinedç‰©å“ æ‰€ä»¥é€™å€‹ä¸€å®šè¦è¨­ç½®ï¼Œä¸ç„¶å ±éŒ¯çš„
 
 }
 void init()
 {
-        add_action("do_open","open"); //Íæ¼ÒÊ¹ÓÃµÄ½Ó¿Ú ¾ßÌåÄÚÈİÔÚstdÀï
-        add_action("do_test","test"); //ÓÃÓÚÎ×Ê¦²âÊÔÓÃ ²âÊÔokÇë×¢ÊÍ´ËĞĞ
+        add_action("do_open","open"); //ç©å®¶ä½¿ç”¨çš„æ¥å£ å…·é«”å…§å®¹åœ¨stdè£¡
+        add_action("do_test","test"); //ç”¨äºå·«å¸«æ¸¬è©¦ç”¨ æ¸¬è©¦okè«‹æ³¨é‡‹æ­¤è¡Œ
 }
 

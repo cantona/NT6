@@ -5,20 +5,20 @@ inherit HEAD;
 
 void create()
 {
-    set_name(HIM "¾«ÁéÖ®»¨" NOR, ({ "flower" }) );
+    set_name(HIM "ç²¾éˆä¹‹èŠ±" NOR, ({ "flower" }) );
         set_weight(10);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¶ä½¿ÑŞÃÀÀö£¬²»Õ´°ëµãÊÀ¼äÑÌ»ğµÄ¾«ÁéÖ®»¨¡£\n");
-                set("unit", "¶ä");
+                set("long", "ä¸€æœµå¬Œè‰·ç¾éº—ï¼Œä¸æ²¾åŠé»ä¸–é–“ç…™ç«çš„ç²¾éˆä¹‹èŠ±ã€‚\n");
+                set("unit", "æœµ");
                 set("value", 6); 
                 set("no_get", 1);
                 set("material", "plant");
                 set("armor_prop/armor", 0);
                 set("armor_prop/per", 3);
-                set("wear_msg", "$NÇáÇáµØ°ÑÒ»¶ä$n´÷ÔÚÍ·ÉÏ¡£\n");
-                set("unwield_msg", "$NÇáÇáµØ°Ñ$n´ÓÍ·ÉÏ³ıÁËÏÂÀ´¡£\n");
+                set("wear_msg", "$Nè¼•è¼•åœ°æŠŠä¸€æœµ$næˆ´åœ¨é ­ä¸Šã€‚\n");
+                set("unwield_msg", "$Nè¼•è¼•åœ°æŠŠ$nå¾é ­ä¸Šé™¤äº†ä¸‹ä¾†ã€‚\n");
                 set("female_only", 1);
 
         }
@@ -36,15 +36,15 @@ int do_get(string arg)
         me=this_player();
         ob=this_object(); 
 
-    if( !arg ) return notify_fail("ÄãÒª¼ñÆğÊ²÷á¶«Î÷£¿\n");
+    if( !arg ) return notify_fail("ä½ è¦æ’¿èµ·ä»€éº¼æ±è¥¿ï¼Ÿ\n");
         if (arg=="flower" ) 
          {
-        write(HIM"¾«ÁéÖ®»¨"NOR+HIG"ÖĞ³öÏÖÁËÒ»Ö»Ğ¡¾«Áé£¬\n
-Ğ¡¾«ÁéÕñ¶¯×Å³á°òËµ£ºĞ»Ğ»Äã½â¿ªÁËµÚÈı¸ö·âÓ¡£¬Çë¹ı¹Ø°É£¡\n"NOR);
+        write(HIM"ç²¾éˆä¹‹èŠ±"NOR+HIG"ä¸­å‡ºç¾äº†ä¸€åªå°ç²¾éˆï¼Œ\n
+å°ç²¾éˆæŒ¯å‹•è‘—ç¿…è†€èªªï¼šè¬è¬ä½ è§£é–‹äº†ç¬¬ä¸‰å€‹å°å°ï¼Œè«‹éé—œå§ï¼\n"NOR);
         ob->move(me);   
- message_vision(HIG"$N±»Ò»ÕóÇå·çËÍµ½ÁËÁíÒ»¸ö·¿¼ä¡£\n"NOR, me); 
+ message_vision(HIG"$Nè¢«ä¸€é™£æ¸…é¢¨é€åˆ°äº†å¦ä¸€å€‹æˆ¿é–“ã€‚\n"NOR, me); 
         me->move("/d/dragon/spirit5");
-                set_temp("m_success/³õ¼¶", 1, me);
+                set_temp("m_success/åˆç´š", 1, me);
         destruct(ob);        return 1;
          }
 }

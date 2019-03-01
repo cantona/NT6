@@ -3,14 +3,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIG "Ìì½Î¡¤·üÄ§" NOR, ({"tianjiao fumo", "fumo" }));
+        set_name(HIG "å¤©è½ï¹’ä¼é­”" NOR, ({"tianjiao fumo", "fumo" }));
         set_weight(900);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿é");
+                set("unit", "å¡Š");
                 set("value", 50000);
-                set("enchase/name", "Ìì½Î¡¤·üÄ§");
+                set("enchase/name", "å¤©è½ï¹’ä¼é­”");
                 set("enchase/point", 70);
                 set("enchase/type", "all");
                 set("enchase/cur_firm", 80);

@@ -3,13 +3,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(NOR + MAG "×ÏòÔÆ¤¸ï" NOR, ({ "dragon pige", "pige" }));
+        set_name(NOR + MAG "ç´«è›Ÿçš®é©" NOR, ({ "dragon pige", "pige" }));
         set_weight(8000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", NOR + MAG "Ò»ÕÅ¾Ş´óòÔÆ¤£¬³Ê×ÏºÚÉ«£¬¼áÓ²ÎŞ±È¡£\n" NOR);
-                set("unit", "ÕÅ");
+                set("long", NOR + MAG "ä¸€å¼µå·¨å¤§è›Ÿçš®ï¼Œå‘ˆç´«é»‘è‰²ï¼Œå …ç¡¬ç„¡æ¯”ã€‚\n" NOR);
+                set("unit", "å¼µ");
                 set("value", 1000000);
         }
         setup();

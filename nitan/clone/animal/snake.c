@@ -6,15 +6,15 @@ inherit "/inherit/char/trainee";
 
 void create()
 {
-        set_name("¶¾Éß", ({ "snake", "she" }) );
-        set("race", "ÅÀÉß");
+        set_name("æ¯’è›‡", ({ "snake", "she" }) );
+        set("race", "çˆ¬è›‡");
         set("age", 4);
-        set("long", "Ò»Ö»ÓÐ×ÅÈý½ÇÐÎÄÔ´üµÄÉß£¬Î²°ÍÉ³É³×öÏì¡£\n");
+        set("long", "ä¸€åªæœ‰è‘—ä¸‰è§’å½¢è…¦è¢‹çš„è›‡ï¼Œå°¾å·´æ²™æ²™åšéŸ¿ã€‚\n");
         set("attitude", "peaceful");
 
-        set("msg_fail", "$n³å$NË»µØÒ»ÍÂÉàÍ·");
-        set("msg_succ", "$nË»Ë»×öÏì£¬ÉßÍ·Ëæ×Å$NµÄÊÖ¶¯ÁËÆðÀ´");
-        set("msg_trained","$nÇÄÎÞÉùÏ¢µØÓÎµ½$NµÄ½ÅÏÂ²»¶¯ÁË");
+        set("msg_fail", "$næ²–$Nå˜¶åœ°ä¸€åèˆŒé ­");
+        set("msg_succ", "$nå˜¶å˜¶åšéŸ¿ï¼Œè›‡é ­éš¨è‘—$Nçš„æ‰‹å‹•äº†èµ·ä¾†");
+        set("msg_trained","$næ‚„ç„¡è²æ¯åœ°éŠåˆ°$Nçš„è…³ä¸‹ä¸å‹•äº†");
         set("auto_follow",0);
         set("wildness", 9);
 
@@ -36,7 +36,7 @@ void init()
         ::init();
         add_action("convert","bian");
         if (interactive(ob = this_player()) &&
-                query("family/family_name", ob) != "°×ÍÕÉ½" && 
+                query("family/family_name", ob) != "ç™½é§å±±" && 
                 random(ob->query_kar() + ob->query_per()) < 30) {
                         remove_call_out("kill_ob");
                         call_out("kill_ob", 1, ob); 
@@ -44,7 +44,7 @@ void init()
 }
 void unconcious()
 {        
-        write("¶¾ÉßàÂµØÒ»ÏÂÌÓµôÁË¡£\n");
+        write("æ¯’è›‡å—¦åœ°ä¸€ä¸‹é€ƒæŽ‰äº†ã€‚\n");
         destruct(this_object());
 }
 void die()
@@ -68,13 +68,13 @@ int convert(string arg)
         object ob;
 
         if (arg!="snake" && arg!="she") return 0;
-        if( query("family/family_name", me) != "°×ÍÕÉ½" )
-                return notify_fail("Äã²»ÄÜ»¯ÉßÎªÕÈ¡£\n");
+        if( query("family/family_name", me) != "ç™½é§å±±" )
+                return notify_fail("ä½ ä¸èƒ½åŒ–è›‡ç‚ºæ–ã€‚\n");
         if (random(me->query_skill("training",1)) <20) {
                 kill_ob(me);
                 return 1;
         }
-        message_vision("$N×óÊÖ°´×¡¶¾ÉßµÄÍ·£¬ÓÒÊÖÇá¸§ÆäÆß´ç£¬¿ÚÖÐÄîÄîÓÐ´Ê£¬Æ¬¿Ì¼ä½«Éß»¯ÎªÒ»¸ùÉßÕÈ¡£\n", me,);
+        message_vision("$Nå·¦æ‰‹æŒ‰ä½æ¯’è›‡çš„é ­ï¼Œå³æ‰‹è¼•æ’«å…¶ä¸ƒå¯¸ï¼Œå£ä¸­å¿µå¿µæœ‰è©žï¼Œç‰‡åˆ»é–“å°‡è›‡åŒ–ç‚ºä¸€æ ¹è›‡æ–ã€‚\n", me,);
         ob = new(__DIR__"obj/shezhang");
         ob->move(environment(this_object()));
         destruct(this_object());

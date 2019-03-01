@@ -3,10 +3,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�һ������");
+        set("short", "烈火旗大廳");
         set("long", @LONG
-�������һ���Ĵ��������к�����չ����ǹӳѪ��������³�ñ��
-����ӵס�һ�������ʹ��Ȼ��
+這裡是烈火旗的大廳，廳中紅旗招展，刀槍映血，教眾絳衣赤帽，
+團團擁住烈火旗掌旗使辛然。
 LONG );
         set("exits", ([
                 "west" : __DIR__"lhqyuan",

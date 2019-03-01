@@ -1,4 +1,4 @@
-// jinchuang.c ½ğ´´Ò©
+// jinchuang.c é‡‘å‰µè—¥
 
 inherit ITEM;
 
@@ -6,12 +6,12 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIY "½ğ´´Ò©" NOR, ({"jinchuang yao", "jinchuang", "yao"}));
+        set_name(HIY "é‡‘å‰µè—¥" NOR, ({"jinchuang yao", "jinchuang", "yao"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°ü");
-                set("long", "ÕâÊÇÒ»°üÎäÁÖÈËÊ¿±Ø±¸µÄ½ğ´´Ò©¡£\n");
+                set("unit", "åŒ…");
+                set("long", "é€™æ˜¯ä¸€åŒ…æ­¦æ—äººå£«å¿…å‚™çš„é‡‘å‰µè—¥ã€‚\n");
                 set("value", 1000);
                 set("only_do_effect", 1);
         }
@@ -21,14 +21,14 @@ void create()
 int do_effect(object me)
 {
         if (me->is_busy())
-                return notify_fail("±ğ¼±£¬ÂıÂı³Ô£¬Ğ¡ĞÄ±ğÒ­×ÅÁË¡£\n");
+                return notify_fail("åˆ¥æ€¥ï¼Œæ…¢æ…¢åƒï¼Œå°å¿ƒåˆ¥å™è‘—äº†ã€‚\n");
 
         if( query("eff_qi", me) == query("max_qi", me) )
-                return notify_fail("ÄãÏÖÔÚ²»ĞèÒªÓÃ½ğ´´Ò©¡£\n");
+                return notify_fail("ä½ ç¾åœ¨ä¸éœ€è¦ç”¨é‡‘å‰µè—¥ã€‚\n");
         else
         {
                 me->receive_curing("qi", 50);
-                message_vision("$N³ÔÏÂÒ»°ü½ğ´´Ò©£¬ÆøÉ«¿´ÆğÀ´ºÃ¶àÁË¡£\n", me);
+                message_vision("$Nåƒä¸‹ä¸€åŒ…é‡‘å‰µè—¥ï¼Œæ°£è‰²çœ‹èµ·ä¾†å¥½å¤šäº†ã€‚\n", me);
                 me->start_busy(2);
                 destruct(this_object());
                 return 1;

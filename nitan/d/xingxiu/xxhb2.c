@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "���޺�");
+        set("short", "星宿海");
         set("long", @LONG
-���������޺��ߡ�˵�Ǻ�����ʵ��Ƭ���������󣬵���ʮ���ն�
-����ͨ�����޺������
+這裡是星宿海邊。說是海，其實是片湖泊和沼澤，地形十分險惡。
+這裡通向星宿海的深處。
 LONG );
         set("objects", ([
                 __DIR__"npc/haoshou" : 1,

@@ -1,4 +1,4 @@
-// baihongjian.c °×ºç½£
+// baihongjian.c ç™½è™¹åŠ
 // Last Modified by winder on Sep. 7 2001
 
 #include <weapon.h>;
@@ -7,18 +7,18 @@ inherit F_UNIQUE;
 
 void create()
 {
-        set_name("°×ºç½£", ({ "baihong jian", "sword", "jian" }));
+        set_name("ç™½è™¹åŠ", ({ "baihong jian", "sword", "jian" }));
         set_weight(8000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
-                set("long", "ÕâÊÇÒ»¿ÚÏ÷ÌúÈçÄàµÄ±¦½£¡£\n");
+                set("unit", "æŸ„");
+                set("long", "é€™æ˜¯ä¸€å£å‰Šéµå¦‚æ³¥çš„å¯¶åŠã€‚\n");
                 set("value", 10000);
                 set("material", "steel");
                 set("weapon_prop/per", 8);
-                set("wield_msg", "$N¡¸à§¡¹µÄÒ»Éù³é³öÒ»±úº®¹âÉÁÉÁµÄ$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²å»Ø½£ÇÊ¡£\n");
+                set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€è²æŠ½å‡ºä¸€æŸ„å¯’å…‰é–ƒé–ƒçš„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°‡æ‰‹ä¸­çš„$næ’å›åŠé˜ã€‚\n");
         }
         init_sword(100);
         setup();

@@ -1,16 +1,16 @@
-// lupi.c Ò°Â¹Æ¤
+// lupi.c é‡é¹¿çš®
 
 inherit ITEM;
 
 void create()
 {
-        set_name("Ò°Â¹Æ¤", ({"lu pi", "pi"}));
+        set_name("é‡é¹¿çš®", ({"lu pi", "pi"}));
         set_weight(50);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»ÕÅÍêÕûµÄÒ°Â¹Æ¤£¬ÃşÉÏÈ¥ÈáÈí¹â»¬¡£\n");
-                set("unit", "ÕÅ");
+                set("long", "ä¸€å¼µå®Œæ•´çš„é‡é¹¿çš®ï¼Œæ‘¸ä¸Šå»æŸ”è»Ÿå…‰æ»‘ã€‚\n");
+                set("unit", "å¼µ");
                 set("value", 200);
         }
 }

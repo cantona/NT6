@@ -13,17 +13,17 @@ int perform(object me, object target)
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("±¯Í´ÄªÃ÷Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("æ‚²ç—›è«æ˜åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( target->is_busy() )
-                return notify_fail(target->name() + "ÒÑ¾­²»ÄÜ¶¯ÁË£¡\n");
+                return notify_fail(target->name() + "å·²ç¶“ä¸èƒ½å‹•äº†ï¼\n");
                 
         if( (int)me->query_skill("dabei-zhang", 1) < 100 )
-                return notify_fail("ÄãµÄ´ó±¯ÕÆ²»¹»æµÊì£¬²»»áÊ¹ÓÃ¡¸±¯Í´ÄªÃ÷¡¹¡£\n");
+                return notify_fail("ä½ çš„å¤§æ‚²æŒä¸å¤ å«»ç†Ÿï¼Œä¸æœƒä½¿ç”¨ã€Œæ‚²ç—›è«æ˜ã€ã€‚\n");
 
-        msg = HIB "$NÁ³ÉÏÂ¶³öÒ»Ë¿±¯Í´µÄÉñÇé£¬ºÍÊÖÄîÁËÒ»Éù°¢ÃÖÍÓ·ğ,\n"NOR;
-        msg += HIB "Ë«ÊÖ»º»ºµÄÍÆ³ö£¬¿´ËÆÆ½³£µÄÒ»ÕĞ£¬¿ÉÊÇ¿´²»³öÒ»Ë¿\n"NOR;
-        msg += HIW "ÆÆÕÀ£¬´ÎÕĞÕıÊÇ´ó±¯ÕÆ×îºó¾ø¼¼¡¸±¯Í´ÄªÃ÷¡¹¡£\n"NOR;
+        msg = HIB "$Nè‡‰ä¸Šéœ²å‡ºä¸€çµ²æ‚²ç—›çš„ç¥æƒ…ï¼Œå’Œæ‰‹å¿µäº†ä¸€è²é˜¿å½Œé™€ä½›,\n"NOR;
+        msg += HIB "é›™æ‰‹ç·©ç·©çš„æ¨å‡ºï¼Œçœ‹ä¼¼å¹³å¸¸çš„ä¸€æ‹›ï¼Œå¯æ˜¯çœ‹ä¸å‡ºä¸€çµ²\n"NOR;
+        msg += HIW "ç ´ç¶»ï¼Œæ¬¡æ‹›æ­£æ˜¯å¤§æ‚²æŒæœ€å¾Œçµ•æŠ€ã€Œæ‚²ç—›è«æ˜ã€ã€‚\n"NOR;
         
         ap = attack_power(me, "strike");
 
@@ -31,14 +31,14 @@ int perform(object me, object target)
              
         if (ap / 2 + random(ap) > dp)
         {
-                msg += HIW "$pÆóÍ¼Í»ÆÆ$NµÄ¹¥»÷·¶Î§£¬µ«ÊÇ±»$NµÄÕÆ·ç±ÜµÄºÁÎŞÍËÂ·¡£\n" NOR;
+                msg += HIW "$pä¼åœ–çªç ´$Nçš„æ”»æ“ŠèŒƒåœï¼Œä½†æ˜¯è¢«$Nçš„æŒé¢¨é¿çš„æ¯«ç„¡é€€è·¯ã€‚\n" NOR;
                 target->start_busy(3 +random(4));
                 addn("neili", -500, me);
         } else 
         {
                 me->start_busy(2);
                 addn("neili", -300, me);
-                msg += HIC "$pÒ»ÑÛ¿´³öÁË$NµÄÆÆÕÀ£¬¶ãÁË¹ıÈ¥¡£\n" NOR;
+                msg += HIC "$pä¸€çœ¼çœ‹å‡ºäº†$Nçš„ç ´ç¶»ï¼Œèº²äº†éå»ã€‚\n" NOR;
         }
         message_combatd(msg, me, target);
 

@@ -12,14 +12,14 @@ void init()
 
 void create()
 {
-       set_name("º¡¹Ç", ({"haigu","skeleton"}) );
+       set_name("éª¸éª¨", ({"haigu","skeleton"}) );
        set_weight(10000);
        set_max_encumbrance(6000000);
        if( clonep() )
                set_default_object(__FILE__);
        else{
-       set("unit", "¾ß");
-       set("long", "Õâ¸±º¡¹ÇÌÉÔÚÕâÀïÒÑ¾­ºÜ¾ÃÁË¡£\n");
+       set("unit", "å…·");
+       set("long", "é€™å‰¯éª¸éª¨èººåœ¨é€™è£¡å·²ç¶“å¾ˆä¹…äº†ã€‚\n");
        set("value", 0);
        set("material","wood");
        set("no_get",1);
@@ -37,21 +37,21 @@ int do_move(string arg)
         if( query_temp("wumu_shanshui", this_player())){
                 if (!present("wumu yishu",me)){
                 message_vision(
-HIY"$NÇáÇáµØÅ²¶¯º¡¹Ç£¬·¢ÏÖÏÂÃæÓĞÒ»±¾Êé£¬$N¼±Ã¦¼ğÆğ´§µ½»³ÖĞ¡£\n"NOR
-RED"ÄÇº¡¹ÇÍ»È»Ó­Í·Ïò$NÆË½«ÏÂÀ´£¬Ë¤ÔÚµØÉÏ£¬ËÄÏÂÉ¢¿ª£¬ÏÅÁË$NÒ»Ìø£¡\n"NOR,this_player());
+HIY"$Nè¼•è¼•åœ°æŒªå‹•éª¸éª¨ï¼Œç™¼ç¾ä¸‹é¢æœ‰ä¸€æœ¬æ›¸ï¼Œ$Næ€¥å¿™æ€èµ·æ£åˆ°æ‡·ä¸­ã€‚\n"NOR
+RED"é‚£éª¸éª¨çªç„¶è¿é ­å‘$Næ’²å°‡ä¸‹ä¾†ï¼Œæ‘”åœ¨åœ°ä¸Šï¼Œå››ä¸‹æ•£é–‹ï¼Œåš‡äº†$Nä¸€è·³ï¼\n"NOR,this_player());
                 book = new(__DIR__"wumu-yishu");
                 book->move(me);
                 destruct(this_object());
                 return 1;
                 }
                 message_vision(
-HIM"º¡¹Ç¼±µÀ£ºÊé¶¼ÄÃµ½ÁË»¹²»¿ì¹ö£¬Ã»ÊÂ°ÑÀÏ×ÓÅ²À´Å²È¥µÄ¸ÉÊ²Ã´£¿£¿£¿\n"NOR, this_player());
+HIM"éª¸éª¨æ€¥é“ï¼šæ›¸éƒ½æ‹¿åˆ°äº†é‚„ä¸å¿«æ»¾ï¼Œæ²’äº‹æŠŠè€å­æŒªä¾†æŒªå»çš„å¹¹ä»€éº¼ï¼Ÿï¼Ÿï¼Ÿ\n"NOR, this_player());
                 return 1;
                 }
                 else {
                 message_vision(
-HIR"$NÇáÇáµØÅ²¶¯º¡¹Ç£¬Í»È»´Óº¡¹ÇµÄÏÂÃæÃ°³öÒ»¹É¶¾Æø£¬×ê½ø$NµÄ±Ç×ÓÖĞ¡£\n"NOR, this_player());
-                set_temp("last_damage_from", "ÖĞ¶¾", me);
+HIR"$Nè¼•è¼•åœ°æŒªå‹•éª¸éª¨ï¼Œçªç„¶å¾éª¸éª¨çš„ä¸‹é¢å†’å‡ºä¸€è‚¡æ¯’æ°£ï¼Œé‘½é€²$Nçš„é¼»å­ä¸­ã€‚\n"NOR, this_player());
+                set_temp("last_damage_from", "ä¸­æ¯’", me);
                 me->die();
                 return 1;
         }

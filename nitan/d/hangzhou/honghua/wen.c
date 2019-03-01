@@ -1,4 +1,4 @@
-// wen.c ÎÄÌ©À´
+// wen.c æ–‡æ³°ä¾†
 
 #include <ansi.h>
 
@@ -7,12 +7,12 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("ÎÄÌ©À´", ({ "wen tailai", "wen","tailai" }));
-        set("title", HIR "ºì»¨»á"HIG"ËÄµ±¼Ò" NOR);
-        set("nickname", HIW "±¼À×ÊÖ" NOR);
-        set("long", "ÎÄÌ©À´ºÅ³Æ¡°±¼À×ÊÖ¡±£¬Ê®ÎåËêÆğÀËµ´½­ºş£¬ÊÖÕÆÏÂ²»Öª»÷±Ğ
-¹ı¶àÉÙÉñ¼é¾Şí­¡¢Ğ×Í½¶ñ°Ô¡£\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("æ–‡æ³°ä¾†", ({ "wen tailai", "wen","tailai" }));
+        set("title", HIR "ç´…èŠ±æœƒ"HIG"å››ç•¶å®¶" NOR);
+        set("nickname", HIW "å¥”é›·æ‰‹" NOR);
+        set("long", "æ–‡æ³°ä¾†è™Ÿç¨±â€œå¥”é›·æ‰‹â€ï¼Œåäº”æ­²èµ·æµªç›ªæ±Ÿæ¹–ï¼Œæ‰‹æŒä¸‹ä¸çŸ¥æ“Šæ–ƒ
+éå¤šå°‘ç¥å§¦å·¨æ†ã€å…‡å¾’æƒ¡éœ¸ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("class", "fighter");
         set("age", 32);
         set("attitude", "friendly");

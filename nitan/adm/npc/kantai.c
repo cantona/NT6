@@ -4,10 +4,10 @@ inherit ROOM;
 int is_chat_room() { return 1; }
 
 void create() {
-        set("short", "���俴̨");
+        set("short", "比武看台");
         set("long", @LONG
-�����Ǳ��䳡�Ŀ�̨�������Ѿ����������У�Ⱥ�����۷׷ף����ڲ�
-��˭���۹�������Щ���ӡ�
+這裡是比武場的看台。現在已經是人聲鼎沸，群雄議論紛紛，都在猜
+測誰能折桂。四周有些桌子。
 LONG
     );
         set("exits", ([

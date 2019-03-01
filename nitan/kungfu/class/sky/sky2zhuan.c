@@ -3,15 +3,15 @@ inherit ROOM;
 
 void create()
 {
-        set("short", HIM "¡¾ÌìÍâÌÒÔ´¡¿" NOR);
+        set("short", HIM "ã€å¤©å¤–æ¡ƒæºã€‘" NOR);
         set("long", HIM @LONG
 
-                Ìì     Íâ     ÌÒ      Ô´
-    Ìì¿ÕµÄ¾¡Í·ÊÇÒ»´¦ÌÒÔ´Ê¤µØ£¬ÓîÖæËÆºõÃ»ÓÐÖÕµã£¬ÄãÊ¼ÖÕÄÜ·¢ÏÖ
-²»Ò»ÑùµÄÌìµØ£¬ËÄÖÜ×ÏÆøë³ëµ£¬°×ÔÆçÔÈÆ£¬ÄÑµÀÊÇ´«ËµÖÐµÄÏÉ¾³£¿ÇÙ
-ÒôÓÖÔÙÏìÆð£¬µ«ËÆºõÌýµÃ¸ü¼ÓÇåÎúÁË£¬ÒþÔ¼¼ä£¬ÄãÃæÇ°³öÏÖÁËÒ»Î»Êì
-Ï¤µÄÇàÄê£¬ËûËæÒâ²¦Åª×Å¹ÅÇÙ£¬ÕóÕóÌìô¥Ö®ÒôÁîÄãÐÄ¿õÉñâù¡£ÄãÖ»Ïë
-ÓÀÔ¶ÁôÔÚ´Ë´¦£¬²»ÔÙÀí»áÈË¼äµÄ·×ÕùÓëÇé³ð¡£
+                å¤©     å¤–     æ¡ƒ      æº
+    å¤©ç©ºçš„ç›¡é ­æ˜¯ä¸€è™•æ¡ƒæºå‹åœ°ï¼Œå®‡å®™ä¼¼ä¹Žæ²’æœ‰çµ‚é»žï¼Œä½ å§‹çµ‚èƒ½ç™¼ç¾
+ä¸ä¸€æ¨£çš„å¤©åœ°ï¼Œå››å‘¨ç´«æ°£æ°¤æ°³ï¼Œç™½é›²ç¹šç¹žï¼Œé›£é“æ˜¯å‚³èªªä¸­çš„ä»™å¢ƒï¼Ÿç´
+éŸ³åˆå†éŸ¿èµ·ï¼Œä½†ä¼¼ä¹Žè½å¾—æ›´åŠ æ¸…æ™°äº†ï¼Œéš±ç´„é–“ï¼Œä½ é¢å‰å‡ºç¾äº†ä¸€ä½ç†Ÿ
+æ‚‰çš„é’å¹´ï¼Œä»–éš¨æ„æ’¥å¼„è‘—å¤ç´ï¼Œé™£é™£å¤©ç±Ÿä¹‹éŸ³ä»¤ä½ å¿ƒæ› ç¥žæ€¡ã€‚ä½ åªæƒ³
+æ°¸é ç•™åœ¨æ­¤è™•ï¼Œä¸å†ç†æœƒäººé–“çš„ç´›çˆ­èˆ‡æƒ…ä»‡ã€‚
 LONG NOR );
 
         set("sleep_room", 1);
@@ -21,8 +21,8 @@ LONG NOR );
         ]));
         set("no_clean_up", 1);
         set("no_roar", 1);
-        set("no_flyto", 1);    // ²»ÄÜÆïÂí»òMISSµ½ÕâÀï£¬ÒÑ¾­ÔÚhorse.c×öÏÞÖÆ
-        set("no_rideto", 1);   // ²»ÄÜÆïÂí»òMISSµ½ÕâÀï£¬ÒÑ¾­ÔÚhorse.c×öÏÞÖÆ
+        set("no_flyto", 1);    // ä¸èƒ½é¨Žé¦¬æˆ–MISSåˆ°é€™è£¡ï¼Œå·²ç¶“åœ¨horse.cåšé™åˆ¶
+        set("no_rideto", 1);   // ä¸èƒ½é¨Žé¦¬æˆ–MISSåˆ°é€™è£¡ï¼Œå·²ç¶“åœ¨horse.cåšé™åˆ¶
         set("no_obsend", 1);
         set("no_paimai", 1);
         set("sky", 1);
@@ -34,5 +34,5 @@ void init()
 {
         object me = this_player();
         
-        tell_object(me, HIG "\n¹§Ï²Äã£¬ÒÑ¾­Íê³ÉËùÓÐ¶þ×ªÈÎÎñ£¬ÓëÌìÉñ¶Ô»°¼´¿ÉÍê³É¶þ×ª£¡\n" NOR);
+        tell_object(me, HIG "\næ­å–œä½ ï¼Œå·²ç¶“å®Œæˆæ‰€æœ‰äºŒè½‰ä»»å‹™ï¼Œèˆ‡å¤©ç¥žå°è©±å³å¯å®ŒæˆäºŒè½‰ï¼\n" NOR);
 }

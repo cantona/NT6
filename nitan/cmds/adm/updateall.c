@@ -27,7 +27,7 @@ int main(object me, string arg)
         {
                 dir=query("cwd", me);
                 if (! dir)
-                        return notify_fail("ÄãÒªÖØĞÂ±àÒëÄÇ¸öÂ·¾¶ÏÂµµ°¸£¿\n");
+                        return notify_fail("ä½ è¦é‡æ–°ç·¨è­¯é‚£å€‹è·¯å¾‘ä¸‹æª”æ¡ˆï¼Ÿ\n");
         } else
         {
                 dir=resolve_path(query("cwd", me),dir);
@@ -36,20 +36,20 @@ int main(object me, string arg)
                 dir += "/";
 
         if (file_size(dir) != -2)
-                return notify_fail("Ã»ÓĞ" + dir + "Õâ¸öÂ·¾¶¡£\n");
+                return notify_fail("æ²’æœ‰" + dir + "é€™å€‹è·¯å¾‘ã€‚\n");
 
         set("cwd", dir, me);
 
-        message_system("ÕûÀíÅúÁ¿µµ°¸ÖĞ£¬ÇëÉÔºò...");
+        message_system("æ•´ç†æ‰¹é‡æª”æ¡ˆä¸­ï¼Œè«‹ç¨å€™...");
         if (! update_dir(me, dir, continueable, total))
         {
-                write(HIR "±àÒëÓöµ½´íÎóÖĞÖ¹¡£\n" NOR);
+                write(HIR "ç·¨è­¯é‡åˆ°éŒ¯èª¤ä¸­æ­¢ã€‚\n" NOR);
         }
 
         if (total[0] > 0)
-                write(HIC "×Ü¹²ÓĞ" + HIW + total[0] + HIC "¸öµµ°¸±»³É¹¦±àÒë£¡\n" NOR);
+                write(HIC "ç¸½å…±æœ‰" + HIW + total[0] + HIC "å€‹æª”æ¡ˆè¢«æˆåŠŸç·¨è­¯ï¼\n" NOR);
         else
-                write(HIC "Ã»ÓĞ±àÒëÈÎºÎµµ°¸¡£\n" NOR);
+                write(HIC "æ²’æœ‰ç·¨è­¯ä»»ä½•æª”æ¡ˆã€‚\n" NOR);
 
         return 1;
 }
@@ -69,13 +69,13 @@ int update_dir(object me, string dir, int continueable, int *total)
         if (! sizeof(file))
         {
                 if (file_size(dir) == -2)
-                        write(dir + "Õâ¸öÄ¿Â¼ÊÇ¿ÕµÄ¡£\n");
+                        write(dir + "é€™å€‹ç›®éŒ„æ˜¯ç©ºçš„ã€‚\n");
                 else
-                        write("Ã»ÓĞ" + dir + "Õâ¸öÄ¿Â¼¡£\n");
+                        write("æ²’æœ‰" + dir + "é€™å€‹ç›®éŒ„ã€‚\n");
                 return 1;
         }
 
-        write (HIY "¿ªÊ¼±àÒëÄ¿Â¼" + dir + "ÏÂÃæµÄËùÓĞÎÄ¼ş¡£\n" NOR);
+        write (HIY "é–‹å§‹ç·¨è­¯ç›®éŒ„" + dir + "ä¸‹é¢çš„æ‰€æœ‰æ–‡ä»¶ã€‚\n" NOR);
         i = sizeof(file);
         compcount = 0;
         filecount = 0;
@@ -102,8 +102,8 @@ int update_dir(object me, string dir, int continueable, int *total)
 
                 // continue to compile next file
         }
-        write(HIC "\nÕûÀíÁËÄ¿Â¼" + dir + "ÏÂµÄ" + HIW + filecount + HIC +
-              "¸öÎÄ¼ş£¬±àÒëÁËÆäÖĞ" + HIW + compcount + HIC + "¸öµµ°¸¡£\n" NOR );
+        write(HIC "\næ•´ç†äº†ç›®éŒ„" + dir + "ä¸‹çš„" + HIW + filecount + HIC +
+              "å€‹æ–‡ä»¶ï¼Œç·¨è­¯äº†å…¶ä¸­" + HIW + compcount + HIC + "å€‹æª”æ¡ˆã€‚\n" NOR );
 
         i = sizeof(file);
         while (i--)
@@ -138,7 +138,7 @@ int update_file(object me, string file)
                 if (obj == environment(me))
                 {
                         if (file_name(obj) == VOID_OB)
-                                return notify_fail("\nÄã²»ÄÜÔÚ VOID_OB ÀïÖØĞÂ±àÒë VOID_OB¡£\n");
+                                return notify_fail("\nä½ ä¸èƒ½åœ¨ VOID_OB è£¡é‡æ–°ç·¨è­¯ VOID_OBã€‚\n");
 
                         inv = all_inventory(obj);
                         i = sizeof(inv);
@@ -151,12 +151,12 @@ int update_file(object me, string file)
                 destruct(obj);
         }
 
-        if (obj) return notify_fail("\nÎŞ·¨Çå³ı¾É³ÌÊ½Âë¡£\n");
+        if (obj) return notify_fail("\nç„¡æ³•æ¸…é™¤èˆŠç¨‹å¼ç¢¼ã€‚\n");
 
         err = catch( call_other(file, "???") );
         if (err)
         {
-                printf( "\n·¢Éú´íÎó£º\n%s\n", err );
+                printf( "\nç™¼ç”ŸéŒ¯èª¤ï¼š\n%s\n", err );
                 return 0;
         } else
         {
@@ -173,10 +173,10 @@ int update_file(object me, string file)
 int help(object me)
 {
   write(@HELP
-Ö¸Áî¸ñÊ½ : updateall <Â·¾¶Ãû> [1]
+æŒ‡ä»¤æ ¼å¼ : updateall <è·¯å¾‘å> [1]
  
-Õâ¸öÖ¸Áî¿ÉÒÔ¸üĞÂÄ³¸öÂ·¾¶ÏÂµÄÈ«²¿µµ°¸, ²¢½«ĞÂµµµÄÄÚÈİÔØÈë¼Ç
-ÒäÌåÄÚ. Èç¹ûºóÃæÎ²Ëæ±êÖ¾1£¬ Ôò±àÒëÓöµ½´íÎóÊ±½«²»»áÖĞÖ¹¡£
+é€™å€‹æŒ‡ä»¤å¯ä»¥æ›´æ–°æŸå€‹è·¯å¾‘ä¸‹çš„å…¨éƒ¨æª”æ¡ˆ, ä¸¦å°‡æ–°æª”çš„å…§å®¹è¼‰å…¥è¨˜
+æ†¶é«”å…§. å¦‚æœå¾Œé¢å°¾éš¨æ¨™å¿—1ï¼Œ å‰‡ç·¨è­¯é‡åˆ°éŒ¯èª¤æ™‚å°‡ä¸æœƒä¸­æ­¢ã€‚
 HELP
     );
     return 1;

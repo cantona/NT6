@@ -1,4 +1,4 @@
-// kuangquan.c ¿óÈªË®
+// kuangquan.c ç¤¦æ³‰æ°´
 
 #include <ansi.h>
 
@@ -8,16 +8,16 @@ int filter_user(object ob);
 
 void create()
 {
-        set_name(HIG "¿óÈªË®" NOR, ({ "water" }));
+        set_name(HIG "ç¤¦æ³‰æ°´" NOR, ({ "water" }));
         set_weight(100);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»Æ¿¿óÈªË®£¬¿ÉÒÔÖÎÁÆ¿Ú¸ÉÉà"
-                            "Ôï£¬ÔâÊÜ·Éµ¯Ï®»÷ÒÔºó¸Ð¾õ¸ñÍâÁ¼ºÃ¡£\n");
+                set("long", "é€™æ˜¯ä¸€ç“¶ç¤¦æ³‰æ°´ï¼Œå¯ä»¥æ²»ç™‚å£å¹¹èˆŒ"
+                            "ç‡¥ï¼Œé­å—é£›å½ˆè¥²æ“Šä»¥å¾Œæ„Ÿè¦ºæ ¼å¤–è‰¯å¥½ã€‚\n");
                 set("value", 8000);
                 set("no_sell", 1);
-                set("unit", "Æ¿");
+                set("unit", "ç“¶");
         }
 }
 
@@ -31,11 +31,11 @@ int do_drink(string arg)
         object me;
 
         if (! arg || ! id(arg))
-                return notify_fail("ÄãÒªºÈÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦å–ä»€éº¼ï¼Ÿ\n");
 
         me = this_player();
-        message_vision(HIG "$NÌÍ³öÒ»Æ¿" + name() + HIG
-                       "£¬¡°¹¾ßË¹¾ßË¡±ºÈÁË¸ö¸É¸É¾»¾»¡£\n" NOR, me);
+        message_vision(HIG "$NæŽå‡ºä¸€ç“¶" + name() + HIG
+                       "ï¼Œâ€œå’•å’šå’•å’šâ€å–äº†å€‹å¹¹å¹¹å‡ˆå‡ˆã€‚\n" NOR, me);
         set("water", me->max_water_capacity(), me);
         me->permit_say(6000);
         destruct(this_object());

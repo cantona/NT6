@@ -1,4 +1,4 @@
-// yuan.c 破元大法
+// yuan.c 鐮村厓澶ф硶
 // Created by rcwiz for yhonline
 
 #include <ansi.h>
@@ -7,19 +7,19 @@ inherit F_CLEAN_UP;
 
 int is_scborn() { return 1; }
 
-string name() { return HIC "破元大法" NOR; }
+string name() { return HIC "鐮村厓澶ф硶" NOR; }
 
 int perform(object me, string skill)
 {
         mapping my;
 
         if (me->query_condition("pk"))
-                return notify_fail("你正处于 PK 惩罚阶段，无法使用该特技。\n");
+                return notify_fail("浣犳铏曚簬 PK 鎳茬桨闅庢锛岀劇娉曚娇鐢ㄨ┎鐗规妧銆俓n");
 
         if (time() - me->query("special2/yuan") < 86400 / 2)
-                return notify_fail("破元大法12小时只能施展一次！\n");
+                return notify_fail("鐮村厓澶ф硶12灏忔檪鍙兘鏂藉睍涓�娆★紒\n");
 
-        message_vision(HIC "$N" HIC "施展出破元大法，真气突破奇经八脉，恢复所有状态！\n" NOR, me);
+        message_vision(HIC "$N" HIC "鏂藉睍鍑虹牬鍏冨ぇ娉曪紝鐪熸埃绐佺牬濂囩稉鍏剤锛屾仮寰╂墍鏈夌媭鎱嬶紒\n" NOR, me);
        
         me->set("special2/yuan", time());
         
@@ -33,7 +33,7 @@ int perform(object me, string skill)
 
         me->clear_condition();
 
-        log_file("static/special2", sprintf("%s(%s) 施展破元大法 at %s", 
+        log_file("static/special2", sprintf("%s(%s) 鏂藉睍鐮村厓澶ф硶 at %s", 
                                   me->name(),
                                   me->query("id"),
                                   ctime(time())));

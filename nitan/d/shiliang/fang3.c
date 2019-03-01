@@ -2,10 +2,10 @@
 inherit ROOM;
 void create()
 {
-        set("short", "�෿");
+        set("short", "側房");
         set("long", @LONG
-��������¼������·�ʩ��ס������˵����ʯ���ڱ���̫�ã�
-��Ҫ�Ǻ�ɫ���㿴������������һ��Ѿ���ڵ��顣
+這裡就是溫家老四溫方施的住處，據說他在石樑口碑不太好，
+主要是好色，你看，他現在正和一個丫鬟在調情。
 LONG
         );
         set("exits", ([ 

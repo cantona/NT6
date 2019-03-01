@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��¥");
+        set("short", "鐘樓");
         set("long", @LONG
-һ��С�ɶ����ʵĸ�¥�����Ϻõ���ľ��������һ�ɵ��������㡣
-¥�ϵ����Ӿ���һ���ǧ��ǵ�������¸�ɮ�������£���ʩ����
-�ġ�
+一座小巧而高聳的閣樓，用上好的檜木所建，有一股淡淡的清香。
+樓上的鐵鐘凈重一萬八千斤，是當年相國寺高僧雲遊天下，布施而成
+的。
 LONG );
         set("no_clean_up", 0);
         set("exits", ([

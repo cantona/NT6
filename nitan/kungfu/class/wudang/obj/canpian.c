@@ -14,13 +14,13 @@ int do_jie(string arg);
 
 void create()
 {
-    set_name(YEL "¾ÅÑôÉñ¹¦²ĞÆª" NOR, ({"canpian", "book"}));
+    set_name(YEL "ä¹é™½ç¥åŠŸæ®˜ç¯‡" NOR, ({"canpian", "book"}));
     set_weight(100);
     if (clonep())
         set_default_object(__FILE__);
     else {
-        set("unit", "²¿");
-        set("long", "ÕâÊÇÎäµ±ÅÉ×æÊ¦ÕÅÈı·áÕæÈË±ÊÂ¼µÄ²¿·Ö¾ÅÑôÉñ¹¦¡£\n");
+        set("unit", "éƒ¨");
+        set("long", "é€™æ˜¯æ­¦ç•¶æ´¾ç¥–å¸«å¼µä¸‰è±çœŸäººç­†éŒ„çš„éƒ¨åˆ†ä¹é™½ç¥åŠŸã€‚\n");
         set("material", "paper");
         set("value", 1);
                 set("skill", ([
@@ -46,16 +46,16 @@ int do_canwu(string arg)
     string my_skill, your_skill;
     int my_lvl, your_lvl;
 
-    if (!arg) return notify_fail("ÄãÒª¸úË­Ò»Æğ²ÎÎò?\n");
+    if (!arg) return notify_fail("ä½ è¦è·Ÿèª°ä¸€èµ·åƒæ‚Ÿ?\n");
     target = present(arg, env);
-    if (!objectp(target))  return notify_fail("ÄãÒª¸úË­Ò»Æğ²ÎÎò?\n");
-    if (!userp(target))    return notify_fail("ÄãÖ»ÄÜ¸úÍæ¼ÒÒ»Æğ²ÎÎò¡£\n");
-    if (player->is_busy()) return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
+    if (!objectp(target))  return notify_fail("ä½ è¦è·Ÿèª°ä¸€èµ·åƒæ‚Ÿ?\n");
+    if (!userp(target))    return notify_fail("ä½ åªèƒ½è·Ÿç©å®¶ä¸€èµ·åƒæ‚Ÿã€‚\n");
+    if (player->is_busy()) return notify_fail("ä½ æ­£å¿™è‘—å‘¢ã€‚\n");
     
     my_lvl = player->query_skill("taiji-shengong", 1);
     your_lvl = player->query_skill("hunyuan-yiqi", 1);
     if (my_lvl < 200 && your_lvl < 200) 
-        return notify_fail("ÄãµÄÌ«¼«Éñ¹¦»òÕß»ìÔªÒ»Æø¹¦²»¹»¸ß£¬ÎŞ·¨²ÎÎò¡£\n");
+        return notify_fail("ä½ çš„å¤ªæ¥µç¥åŠŸæˆ–è€…æ··å…ƒä¸€æ°£åŠŸä¸å¤ é«˜ï¼Œç„¡æ³•åƒæ‚Ÿã€‚\n");
     if (my_lvl >= 200) {
         my_skill = "taiji-shengong";
         your_skill = "hunyuan-yiqi";
@@ -67,13 +67,13 @@ int do_canwu(string arg)
         your_skill = "taiji-shengong";
     }
     if (your_lvl < my_lvl-10)
-        return notify_fail(target->name(1)+"µÄ±¾ÃÅÄÚ¹¦Ô¶Ñ·ÓÚÄã£¬ÒÑ²»ÄÜ°ïÄã²ÎÎòÁË¡£\n");
+        return notify_fail(target->name(1)+"çš„æœ¬é–€å…§åŠŸé éœäºä½ ï¼Œå·²ä¸èƒ½å¹«ä½ åƒæ‚Ÿäº†ã€‚\n");
     if( query("jing", player)<1000 )
-        return notify_fail("Äã¾«Éñ²»¼Ã£¬Á¬»°¶¼Ëµ²»Çå³şÁË¡£\n");
+        return notify_fail("ä½ ç²¾ç¥ä¸æ¿Ÿï¼Œé€£è©±éƒ½èªªä¸æ¸…æ¥šäº†ã€‚\n");
     if( query("jing", target)<1000 )
-        return notify_fail("ÄãÏëÏò"+target->name(1)+"Çë½ÌÓĞ¹Ø"+
-                to_chinese(your_skill)+"µÄÎÊÌâ£¬¿ÉÈË¼ÒÃ»¾«´ò²ÉµÄ²»ÀíÄã¡£\n");
-    message_vision("$NÄÃ³ö¾ÅÑôÉñ¹¦²ĞÆª£¬¸ú$nÏà»¥²ÎÎò£¬Ë«·½ËÆÓĞËùÎò¡£\n",
+        return notify_fail("ä½ æƒ³å‘"+target->name(1)+"è«‹æ•™æœ‰é—œ"+
+                to_chinese(your_skill)+"çš„å•é¡Œï¼Œå¯äººå®¶æ²’ç²¾æ‰“æ¡çš„ä¸ç†ä½ ã€‚\n");
+    message_vision("$Næ‹¿å‡ºä¹é™½ç¥åŠŸæ®˜ç¯‡ï¼Œè·Ÿ$nç›¸äº’åƒæ‚Ÿï¼Œé›™æ–¹ä¼¼æœ‰æ‰€æ‚Ÿã€‚\n",
         player, target);
 
     if (wizardp(player)) {

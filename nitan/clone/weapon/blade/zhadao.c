@@ -6,15 +6,15 @@ inherit BLADE;
 
 void create()
 {
-        set_name("Õ¡µ¶", ({ "zhadao", "blade", "dao" }) );
+        set_name("é˜åˆ€", ({ "zhadao", "blade", "dao" }) );
         set_weight(3500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»°ÑÓÃÀ´Õ¡²İ£¬¿³Ğ¡Ê÷Ö¦µÄÕ¡µ¶¡£\n");
-                set("unit", "°Ñ");
-                set("wield_msg", "$N³é³öÒ»±ú$nºáÎÕÔÚÊÖÖĞ£¬µ½Ò²Íş·çÁİÁİ¡£\n");
-                set("unwield_msg", "$N·ÅÏÂÊÖÖĞ$n£¬ÄÑµ½ÒªÁ¢µØ³É·ğ£¿\n");
+                set("long", "ä¸€æŠŠç”¨ä¾†é˜è‰ï¼Œç å°æ¨¹æçš„é˜åˆ€ã€‚\n");
+                set("unit", "æŠŠ");
+                set("wield_msg", "$NæŠ½å‡ºä¸€æŸ„$næ©«æ¡åœ¨æ‰‹ä¸­ï¼Œåˆ°ä¹Ÿå¨é¢¨å‡œå‡œã€‚\n");
+                set("unwield_msg", "$Næ”¾ä¸‹æ‰‹ä¸­$nï¼Œé›£åˆ°è¦ç«‹åœ°æˆä½›ï¼Ÿ\n");
                 set("value", 400);
                 set("material","wood");
         }

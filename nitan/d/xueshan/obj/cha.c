@@ -1,16 +1,16 @@
-// cha.c ÄÌ²è
+// cha.c å¥¶èŒ¶
 
 inherit ITEM;
 
 void create()
 {
-        set_name("ÄÌ²è",({ "tea", "cha", "nai cha"}));
+        set_name("å¥¶èŒ¶",({ "tea", "cha", "nai cha"}));
         set_weight(50);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»ÍëÅ¨Å¨µÄÄÌ²è£¬É¢·¢³öÓÕÈËµÄÏãÆø¡£\n");
-                set("unit", "Íë");
+                set("long", "ä¸€ç¢—æ¿ƒæ¿ƒçš„å¥¶èŒ¶ï¼Œæ•£ç™¼å‡ºèª˜äººçš„é¦™æ°£ã€‚\n");
+                set("unit", "ç¢—");
                 set("value", 300);
                 set("remaining", 5);
                 set("drink_supply", 60);
@@ -24,7 +24,7 @@ void create()
 int do_effect(object me)
 {
         if( query("water", me) >= me->max_water_capacity() )
-                return notify_fail("ÄãÒÑ¾­ºÈÌ«¶àÁË£¬ÔÙÒ²¹à²»ÏÂÒ»µÎË®ÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“å–å¤ªå¤šäº†ï¼Œå†ä¹ŸçŒä¸ä¸‹ä¸€æ»´æ°´äº†ã€‚\n");
 
         set("value", 0);
         addn("water", query("drink_supply"), me);
@@ -33,12 +33,12 @@ int do_effect(object me)
         addn("remaining", -1);
         if (query("remaining"))
         {
-                message_vision("$N¶ËÆğÄÌ²è£¬¡°¹¾ßË¹¾ßË¡±ºÈÁË¼¸¿Ú£¬¾õ"
-                               "µÃÌåÁ¦³äÅæ¶àÁË¡£\n", me);
+                message_vision("$Nç«¯èµ·å¥¶èŒ¶ï¼Œâ€œå’•å’šå’•å’šâ€å–äº†å¹¾å£ï¼Œè¦º"
+                               "å¾—é«”åŠ›å……æ²›å¤šäº†ã€‚\n", me);
         } else 
         { 
-                message_vision("$N¡°¹¾ßË¹¾ßË¡±½«Ê£ÏÂµÄÄÌ²èÒ»Òû"
-                               "¶ø¾¡£¬Ö»¾õµÃÒ»¹ÉÁ¦Á¿Ó¿ÁËÉÏÀ´¡£\n", me);
+                message_vision("$Nâ€œå’•å’šå’•å’šâ€å°‡å‰©ä¸‹çš„å¥¶èŒ¶ä¸€é£²"
+                               "è€Œç›¡ï¼Œåªè¦ºå¾—ä¸€è‚¡åŠ›é‡æ¹§äº†ä¸Šä¾†ã€‚\n", me);
                 destruct(this_object());
         }
         return 1;

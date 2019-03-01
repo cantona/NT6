@@ -3,11 +3,11 @@
 inherit ROOM;
 void create()
 {
-        set("short", "ɽ��");
+        set("short", "山道");
         set("long", @LONG
-����һ���Է���ũ��̤������ɽ����ż���ɼ�һ�����������˱���
-���������ŵ����߹���������һƬ������ɽ�֣��ϱ߾��������İ׵۳�
-�ˡ�
+這是一條樵夫鄉農踐踏出來的山道，偶而可見一兩個江湖中人背著
+包袱，別著刀劍走過。北面是一片蓊鬱的山林，南邊就是有名的白帝城
+了。
 LONG );
         set("exits", ([
                 "south" : __DIR__"baidicheng",

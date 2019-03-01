@@ -5,11 +5,11 @@ int is_chat_room() { return 1; }
 
 void create()
 {
-        set("short", HIY "¡¾ÓÎÏ·Ðû´«¹¤×÷ÊÒ¡¿" NOR);
+        set("short", HIY "ã€éŠæˆ²å®£å‚³å·¥ä½œå®¤ã€‘" NOR);
         set("long", @LONG
-ÕâÀïÊÇÓÎÏ·Ðû´«ÈËÔ±¹¤×÷µÄµØ·½£¬µØÉÏÉ¢Âä×Å¸÷ÖÖÖ½Æ¬£¬ÁôÑÔ
-°æÉÏÐ´Âú×Å¹¤×÷¼ÇÂ¼¡£
-Çë½«¹¤×÷Çé¿öpostµ½ÁôÑÔ°æ£¬Î×Ê¦»á¶¨ÆÚ²éÑ¯¡£
+é€™è£¡æ˜¯éŠæˆ²å®£å‚³äººå“¡å·¥ä½œçš„åœ°æ–¹ï¼Œåœ°ä¸Šæ•£è½è‘—å„ç¨®ç´™ç‰‡ï¼Œç•™è¨€
+ç‰ˆä¸Šå¯«æ»¿è‘—å·¥ä½œè¨˜éŒ„ã€‚
+è«‹å°‡å·¥ä½œæƒ…æ³poståˆ°ç•™è¨€ç‰ˆï¼Œå·«å¸«æœƒå®šæœŸæŸ¥è©¢ã€‚
 LONG
 );
 

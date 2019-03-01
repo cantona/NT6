@@ -5,82 +5,82 @@
 
 mapping weapon_actions = ([
         "slash": ([
-                "damage_type":  "¸îÉË",
-                "action":       "$N»Ó¶¯$w£¬Õ¶Ïò$nµÄ$l",
+                "damage_type":  "å‰²å‚·",
+                "action":       "$Næ®å‹•$wï¼Œæ–¬å‘$nçš„$l",
                 "parry":        20,
                 "post_action":  (: call_other, __FILE__, "slash_weapon" :),
         ]),
         "slice": ([
-                "damage_type":  "ÅüÉË",
-                "action":       "$NÓÃ$wÍù$nµÄ$l¿³È¥",
+                "damage_type":  "åŠˆå‚·",
+                "action":       "$Nç”¨$wå¾€$nçš„$lç åŽ»",
                 "dodge":        20,
                 "post_action":  (: call_other, __FILE__, "slash_weapon" :),
         ]),
         "chop": ([
-                "damage_type":  "ÅüÉË",
-                "action":       "$NµÄ$w³¯Öø$nµÄ$lÅü½«¹ýÈ¥",
+                "damage_type":  "åŠˆå‚·",
+                "action":       "$Nçš„$wæœè‘—$nçš„$låŠˆå°‡éŽåŽ»",
                 "parry":        -20,
                 "post_action":  (: call_other, __FILE__, "slash_weapon" :),
         ]),
         "hack": ([
-                "action":       "$N»ÓÎè$w£¬¶Ô×¼$nµÄ$lÒ»ÕóÂÒ¿³",
-                "damage_type":  "ÅüÉË",
+                "action":       "$Næ®èˆž$wï¼Œå°æº–$nçš„$lä¸€é™£äº‚ç ",
+                "damage_type":  "åŠˆå‚·",
                 "damage":       30,
                 "dodge":               30,
                 "post_action":  (: call_other, __FILE__, "slash_weapon" :),
         ]),
         "thrust": ([
-                "damage_type":  "´ÌÉË",
-                "action":       "$NÓÃ$wÍù$nµÄ$l´ÌÈ¥",
+                "damage_type":  "åˆºå‚·",
+                "action":       "$Nç”¨$wå¾€$nçš„$låˆºåŽ»",
                 "dodge":        15,
                 "parry":        -15,
                 "post_action":  (: call_other, __FILE__, "slash_weapon" :),
         ]),
         "pierce": ([
-                "action":       "$NµÄ$wÍù$nµÄ$lºÝºÝµØÒ»Í±",
-                "damage_type":  "´ÌÉË",
+                "action":       "$Nçš„$wå¾€$nçš„$lç‹ ç‹ åœ°ä¸€æ…",
+                "damage_type":  "åˆºå‚·",
                 "dodge":        -30,
                 "parry":        -30,
                 "post_action":  (: call_other, __FILE__, "slash_weapon" :),
         ]),
         "whip": ([
-                "action":       "$N½«$wÒ»Ñï£¬Íù$nµÄ$l³éÈ¥",
-                "damage_type":  "±ÞÉË",
+                "action":       "$Nå°‡$wä¸€æšï¼Œå¾€$nçš„$læŠ½åŽ»",
+                "damage_type":  "éž­å‚·",
                 "dodge":        -20,
                 "parry":        30,
         ]),
         "impale": ([
-                "action":       "$NÓÃ$wÍù$nµÄ$lÖ±´Á¹ýÈ¥",
-                "damage_type":  "´ÌÉË",
+                "action":       "$Nç”¨$wå¾€$nçš„$lç›´æˆ³éŽåŽ»",
+                "damage_type":  "åˆºå‚·",
                 "dodge":        -10,
                 "parry":        -10,
                 "post_action":  (: call_other, __FILE__, "slash_weapon" :),
         ]),
         "strike": ([
-                "action":       "$NÒ»¸ö´óÊæ±ÛÂÕÆð$w£¬¶Ô×Å$nµÄ$lÍùÏÂÒ»ÔÒ",
-                "damage_type":  "ÖþÉË",
+                "action":       "$Nä¸€å€‹å¤§èˆ’è‡‚æŽ„èµ·$wï¼Œå°è‘—$nçš„$lå¾€ä¸‹ä¸€ç ¸",
+                "damage_type":  "ç¯‰å‚·",
                 "dodge":        -10,
                 "parry":        -10,
                 "post_action":  (: call_other, __FILE__, "slash_weapon" :),
         ]),
         "bash": ([
-                "action":       "$N»ÓÎè$w£¬Íù$nµÄ$lÓÃÁ¦Ò»ÔÒ",
-                "damage_type":  "´ìÉË",
+                "action":       "$Næ®èˆž$wï¼Œå¾€$nçš„$lç”¨åŠ›ä¸€ç ¸",
+                "damage_type":  "æŒ«å‚·",
                 "post_action":  (: call_other, __FILE__, "bash_weapon" :),
         ]),
         "crush": ([
-                "action":       "$N¸ß¸ß¾ÙÆð$w£¬Íù$nµÄ$lµ±Í·ÔÒÏÂ",
-                "damage_type":  "´ìÉË",
+                "action":       "$Né«˜é«˜èˆ‰èµ·$wï¼Œå¾€$nçš„$lç•¶é ­ç ¸ä¸‹",
+                "damage_type":  "æŒ«å‚·",
                 "post_action":  (: call_other, __FILE__, "bash_weapon" :),
         ]),
         "slam": ([
-                "action":       "$NÊÖÎÕ$w£¬ÑÛÂ¶Ð×¹â£¬ÃÍµØ¶Ô×¼$nµÄ$l»ÓÁË¹ýÈ¥",
-                "damage_type":  "´ìÉË",
+                "action":       "$Næ‰‹æ¡$wï¼Œçœ¼éœ²å…‡å…‰ï¼ŒçŒ›åœ°å°æº–$nçš„$læ®äº†éŽåŽ»",
+                "damage_type":  "æŒ«å‚·",
                 "post_action":  (: call_other, __FILE__, "bash_weapon" :),
         ]),
         "throw": ([
-                "action":       "$N½«$w¶Ô×¼$nµÄ$lÉäÁË¹ýÈ¥",
-                "damage_type":  "´ÌÉË",
+                "action":       "$Nå°‡$wå°æº–$nçš„$lå°„äº†éŽåŽ»",
+                "damage_type":  "åˆºå‚·",
                 "post_action":  (: call_other, __FILE__, "throw_weapon" :),
         ]),
 ]);
@@ -107,7 +107,7 @@ void throw_weapon(object me, object victim, object weapon, int damage)
                 if( (int)weapon->query_amount()==1 )
                 {
                         weapon->unequip();
-                        tell_object(me,"\nÄãµÄ"+query("name", weapon)+"ÓÃÍêÁË£¡\n\n");
+                        tell_object(me,"\nä½ çš„"+query("name", weapon)+"ç”¨å®Œäº†ï¼\n\n");
                 }
                 weapon->add_amount(-1);
         }
@@ -131,28 +131,28 @@ void bash_weapon(object me, object victim, object weapon, int damage)
 
                 if( wap > 5 * wdp)
                 {
-                        message_vision(HIM"Ö»Ìý¼û¡¸Å¾¡¹µØÒ»Éù£¬$NÊÖÖÐµÄ"+ob->name()+HIM"ÒÑ¾­¶ÏÎªÁ½½Ø£¡\n"NOR,victim);
+                        message_vision(HIM"åªè½è¦‹ã€Œå•ªã€åœ°ä¸€è²ï¼Œ$Næ‰‹ä¸­çš„"+ob->name()+HIM"å·²ç¶“æ–·ç‚ºå…©æˆªï¼\n"NOR,victim);
                         ob->unequip();
                         ob->move(environment(victim));
-                        set("name", "¶ÏµôµÄ"+query("name", ob), ob);
+                        set("name", "æ–·æŽ‰çš„"+query("name", ob), ob);
                         set("value", 49, ob);
                         set("weapon_prop", 0, ob);
                         victim->reset_action();
                 } 
                 else if( wap > 3 * wdp )
                         {
-                                message_vision(HIY"$NÖ»¾õµÃÊÖÖÐ"+ob->name()+HIY"°Ñ³Ö²»¶¨£¬ÍÑÊÖ·É³ö£¡\n"NOR,victim);
+                                message_vision(HIY"$Nåªè¦ºå¾—æ‰‹ä¸­"+ob->name()+HIY"æŠŠæŒä¸å®šï¼Œè„«æ‰‹é£›å‡ºï¼\n"NOR,victim);
                                 ob->unequip();
                                 ob->move(environment(victim));
                                 victim->reset_action();
                         } 
                         else if( wap > wdp )
                                 {
-                                        message_vision(HIW "$NÖ»¾õµÃÊÖÖÐ" + ob->name() + HIW"Ò»Õð£¬ÏÕÐ©ÍÑÊÖ£¡\n"NOR, victim);
+                                        message_vision(HIW "$Nåªè¦ºå¾—æ‰‹ä¸­" + ob->name() + HIW"ä¸€éœ‡ï¼Œéšªäº›è„«æ‰‹ï¼\n"NOR, victim);
                                 }
                                 else
                                 {
-                                        message_vision(HIR"$NµÄ"+weapon->name()+HIR"ºÍ$nµÄ"+ob->name()+HIR"Ïà»÷£¬Ã°³öµãµãµÄ»ðÐÇ¡£\n"NOR,me,victim);
+                                        message_vision(HIR"$Nçš„"+weapon->name()+HIR"å’Œ$nçš„"+ob->name()+HIR"ç›¸æ“Šï¼Œå†’å‡ºé»žé»žçš„ç«æ˜Ÿã€‚\n"NOR,me,victim);
                                 }
         }
 }
@@ -175,10 +175,10 @@ void slash_weapon(object me, object victim, object weapon, int damage)
                 if( wp > 0 && wp > (wp1 + wp2) * 5 &&
                         random(query("str", me))>query("str", victim)/2 )
                 {
-                        message_vision(WHT "Ö»Ìý¼û¡¸ßÑ¡¹µØÒ»ÉùÇáÏì£¬$NÊÖÖÐµÄ"+weapon1->name()+WHT"ÒÑ¾­±»"+weapon->name()+WHT"Ï÷ÎªÁ½½Ø£¡\n"NOR, victim );
+                        message_vision(WHT "åªè½è¦‹ã€Œâ–¡ã€åœ°ä¸€è²è¼•éŸ¿ï¼Œ$Næ‰‹ä¸­çš„"+weapon1->name()+WHT"å·²ç¶“è¢«"+weapon->name()+WHT"å‰Šç‚ºå…©æˆªï¼\n"NOR, victim );
                         weapon1->unequip();
                         weapon1->move(environment(victim));
-                        set("name", "¶ÏµôµÄ"+query("name", weapon1), weapon1);
+                        set("name", "æ–·æŽ‰çš„"+query("name", weapon1), weapon1);
                         set("value", 49, weapon1);
                         set("weapon_prop", 0, weapon1);
                         victim->reset_action();
@@ -191,10 +191,10 @@ void slash_weapon(object me, object victim, object weapon, int damage)
                         && poison1 > 1 && victim->query_condition(poison) < 50)
                 {
                         if (poison1 == 2)                   
-                                set_temp("apply/long", ({query("long", weapon)+"ºÃÏóÊÇ±»Î¹¹ý¾ç¶¾£¬²»¹ýÐ§¹ûÒÑ¾­²»Ã÷ÏÔÁË¡£\n"}), weapon);
+                                set_temp("apply/long", ({query("long", weapon)+"å¥½è±¡æ˜¯è¢«å–‚éŽåŠ‡æ¯’ï¼Œä¸éŽæ•ˆæžœå·²ç¶“ä¸æ˜Žé¡¯äº†ã€‚\n"}), weapon);
                                 addn("poison_number", -1, weapon);
                                 victim->apply_condition(poison, victim->query_condition(poison) + random(10));
-                                message_vision(HIR"$nÖ»¾õµÃÉË¿ÚÉÏÒ»Âé£¬´ó½ÐÒ»Éù£º²»ºÃ£¡\n"NOR,me,victim);
+                                message_vision(HIR"$nåªè¦ºå¾—å‚·å£ä¸Šä¸€éº»ï¼Œå¤§å«ä¸€è²ï¼šä¸å¥½ï¼\n"NOR,me,victim);
                                 if( !victim->is_killing(query("id", me)))victim->kill_ob(me);
                 }
 }

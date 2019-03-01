@@ -6,10 +6,10 @@ int do_giveto(object me, object obj);
 
 void create()
 {
-        set_name("¼Ò¶¡", ({ "jia ding", "ding"}));
+        set_name("å®¶ä¸", ({ "jia ding", "ding"}));
         set("long", 
-"¼Ò¶¡xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx¡£\n");
-        set("gender", "ÄĞĞÔ");
+"å®¶ä¸xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 35);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -27,7 +27,7 @@ void create()
         set_skill("blade", 40);
         set_skill("strike", 50);
 
-        create_family("ÌÆÃÅÊÀ¼Ò", 4, "¼Ò¶¡");
+        create_family("å”é–€ä¸–å®¶", 4, "å®¶ä¸");
 
         setup();
         carry_object("/clone/misc/cloth")->wear();
@@ -46,25 +46,25 @@ int do_give(string arg)
 
         me = this_player();
 
-        if(!arg) return notify_fail("ÄãÒª¸øË­Ê²Ã´¶«Î÷£¿\n");
+        if(!arg) return notify_fail("ä½ è¦çµ¦èª°ä»€éº¼æ±è¥¿ï¼Ÿ\n");
 
         if( sscanf(arg, "%s to ding", item) == 1 || sscanf(arg, "ding %s", item)==1 );
                 else 
-                        return notify_fail("ÄãÒª¸øË­Ê²Ã´¶«Î÷£¿\n");
+                        return notify_fail("ä½ è¦çµ¦èª°ä»€éº¼æ±è¥¿ï¼Ÿ\n");
 
         if(!objectp(who = present("jia ding", environment(me))) || !living(who))
-                return notify_fail("ÕâÀïÃ»ÓĞÕâ¸öÈË¡£\n");
+                return notify_fail("é€™è£¡æ²’æœ‰é€™å€‹äººã€‚\n");
 
         if(sscanf(item, "%d %s", amount, item)==2)
         {
                 if( !objectp(obj = present(item, me)) )        
-                        return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+                        return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™æ¨£æ±è¥¿ã€‚\n");
                 if( !obj->query_amount() )        
-                        return notify_fail( obj->name() + "²»ÄÜ±»·Ö¿ª¸øÈË¡£\n");
+                        return notify_fail( obj->name() + "ä¸èƒ½è¢«åˆ†é–‹çµ¦äººã€‚\n");
                 if( amount < 1 )
-                        return notify_fail("¶«Î÷µÄÊıÁ¿ÖÁÉÙÊÇÒ»¸ö¡£\n");
+                        return notify_fail("æ±è¥¿çš„æ•¸é‡è‡³å°‘æ˜¯ä¸€å€‹ã€‚\n");
                 if( amount > obj->query_amount() ) 
-                        return notify_fail("ÄãÃ»ÓĞÄÇÃ´¶àµÄ" + obj->name() + "¡£\n");
+                        return notify_fail("ä½ æ²’æœ‰é‚£éº¼å¤šçš„" + obj->name() + "ã€‚\n");
                 else 
                         if( amount == (int)obj->query_amount() )
                                 return do_giveto(me, obj2);
@@ -95,7 +95,7 @@ int do_give(string arg)
         }
 
         if(!objectp(obj = present(item, me)))
-                return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+                return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™æ¨£æ±è¥¿ã€‚\n");
         return do_giveto(me, obj);
 }
 
@@ -103,19 +103,19 @@ int do_giveto(object me, object obj)
 {
         if( !environment() || base_name(environment()) != query("startroom") )
         {
-                write("¼Ò¶¡ËµµÀ£ºÕæÊÇ±§Ç¸£¬ÇëÄúµÈÒ»ÏÂµ½´¢ÁÏ·¿À´ÕÒÎÒ°É¡£\n");
+                write("å®¶ä¸èªªé“ï¼šçœŸæ˜¯æŠ±æ­‰ï¼Œè«‹æ‚¨ç­‰ä¸€ä¸‹åˆ°å„²æ–™æˆ¿ä¾†æ‰¾æˆ‘å§ã€‚\n");
                 return 0;
         }
 
         if( !query_temp("yao", me) || !query_temp("tangmen", me) )
         {
-                message_vision("¼Ò¶¡ºÜ¹ÖÒìµÄ¿´×Å$N£¬Ç·ÉíËµµÀ£º¡°ÄúÓ¦¸ÃÃ»ÓĞ×öÕâÀïµÄ¹¤×÷°É£¡¡±\n", me);
+                message_vision("å®¶ä¸å¾ˆæ€ªç•°çš„çœ‹è‘—$Nï¼Œæ¬ èº«èªªé“ï¼šâ€œæ‚¨æ‡‰è©²æ²’æœ‰åšé€™è£¡çš„å·¥ä½œå§ï¼â€\n", me);
                 return 0;
         }        
 
         if( query("id", obj) == "caoyao" && !userp(obj) )
         {
-                message_vision("¼Ò¶¡³å×Å$NÒ»¹§Éí£¬ËµµÀ£º¡°ĞÁ¿àÄúÁË£¬¶«Î÷¾Í½»¸øÎÒ°É£¡¡±\n", me);
+                message_vision("å®¶ä¸æ²–è‘—$Nä¸€æ­èº«ï¼Œèªªé“ï¼šâ€œè¾›è‹¦æ‚¨äº†ï¼Œæ±è¥¿å°±äº¤çµ¦æˆ‘å§ï¼â€\n", me);
                 destruct(obj);
                 delete_temp("tangmen", me);
                 delete_temp("yao", me);
@@ -126,7 +126,7 @@ int do_giveto(object me, object obj)
         }
         else
         {
-                message_vision("¼Ò¶¡ºÜÎªÄÑµÄ¿´×Å$N£¬Ç·ÉíËµµÀ£º¡°Õâ²»ÊÇÄãÓ¦¸ÃÕÒµ½µÄ¶«Î÷°É£¡¡±\n", me);
+                message_vision("å®¶ä¸å¾ˆç‚ºé›£çš„çœ‹è‘—$Nï¼Œæ¬ èº«èªªé“ï¼šâ€œé€™ä¸æ˜¯ä½ æ‡‰è©²æ‰¾åˆ°çš„æ±è¥¿å§ï¼â€\n", me);
                 return 0;
         }
 }

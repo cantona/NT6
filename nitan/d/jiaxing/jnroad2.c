@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ɽ·");
+        set("short", "山路");
         set("long", @LONG
-�����ڽ��ϵ�һ��ɽ·�ϣ�����ݺ�ɲݳ���ʱֵ���գ�·�Ե�ɽ��
-�Ͽ����˽��ɫ���Ͳ˻��������ǽ������Ǽ��ˡ����߾�������������
-�ݸ��ˡ�
+你走在江南的一條山路上，到處鶯飛草長。時值春日，路旁的山坡
+上開滿了金黃色的油菜花。東面是江南名城嘉興。西邊就是天下名城蘇
+州府了。
 LONG );
         set("exits", ([
                 "south" : __DIR__"jnroad3",

@@ -1,22 +1,22 @@
-// luzhang.c Â¹½ÇÕÈ
+// luzhang.c é¹¿è§’æ–
 
 #include <weapon.h>
 inherit STAFF;
 
 void create()
 {
-        set_name("Â¹½ÇÕÈ", ({ "luzhang" }));
+        set_name("é¹¿è§’æ–", ({ "luzhang" }));
         set_weight(5000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ù");
-                set("long", "ÕâÊÇÒ»¸ù¶ÌÕÈ£¬ÕÈÍ··Ö²æ£¬×÷Â¹½ÇÖ®ĞÎ£¬Í¨Ìå÷îºÚ£¬²»ÖªÊÇºÎÎïÖı³É¡£\n");
+                set("unit", "æ ¹");
+                set("long", "é€™æ˜¯ä¸€æ ¹çŸ­æ–ï¼Œæ–é ­åˆ†å‰ï¼Œä½œé¹¿è§’ä¹‹å½¢ï¼Œé€šé«”é»é»‘ï¼Œä¸çŸ¥æ˜¯ä½•ç‰©é‘„æˆã€‚\n");
                 set("value", 1500);
                 set("rigidity",100);
                 set("material", "steel");
-                set("wield_msg", "$N³é³öÒ»¸ù$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²å»ØÑü¼ä¡£\n");
+                set("wield_msg", "$NæŠ½å‡ºä¸€æ ¹$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°‡æ‰‹ä¸­çš„$næ’å›è…°é–“ã€‚\n");
         }
           init_staff(50);
         setup();

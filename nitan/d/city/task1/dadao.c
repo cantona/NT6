@@ -1,14 +1,14 @@
-// dadao.c ½­Ñó´óµÁ
+// dadao.c æ±Ÿæ´‹å¤§ç›œ
 
 #include <ansi.h>
 inherit NPC;
 
 void create()
 {
-        set_name("½­Ñó´óµÁ", ({ "jiangyang  dadao"}));
+        set_name("æ±Ÿæ´‹å¤§ç›œ", ({ "jiangyang  dadao"}));
         set("long",
-        "Ò»¸öÎŞ¶ñ²»×öµÄ½­Ñó´óµÁ£¬ËÄ´¦´ò¼Ò½ÙÉá£¬×÷¶ñ¶à¶Ë¡£\n");
-        set("gender", "ÄĞĞÔ");
+        "ä¸€å€‹ç„¡æƒ¡ä¸åšçš„æ±Ÿæ´‹å¤§ç›œï¼Œå››è™•æ‰“å®¶åŠ«èˆï¼Œä½œæƒ¡å¤šç«¯ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", random(20) + 25);
         set("attitude", "peaceful");
         set("str", 25);

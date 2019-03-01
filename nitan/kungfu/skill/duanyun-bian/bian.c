@@ -2,7 +2,7 @@
 #include <ansi.h>
 
 inherit F_SSERVER;
-string name() { return "·çÔÆ±äÉ«"; }
+string name() { return "é¢¨é›²è®Šè‰²"; }
 
 int perform(object me, object target)
 {
@@ -14,31 +14,31 @@ int perform(object me, object target)
         if( !target
         ||        !target->is_character()
         ||        !me->is_fighting(target) )
-                return notify_fail("·çÔÆ±äÉ«Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("é¢¨é›²è®Šè‰²åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
 
          /*
         if( me->query_skill_mapped("force") != "xiantian-gong" )
-                 return notify_fail("ÄãËùÓÃµÄ²¢·ÇÐþÃÅÏÈÌì¹¦£¬Ê©Õ¹²»³ö·çÔÆ±äÉ«£¡\n");
+                 return notify_fail("ä½ æ‰€ç”¨çš„ä¸¦éžçŽ„é–€å…ˆå¤©åŠŸï¼Œæ–½å±•ä¸å‡ºé¢¨é›²è®Šè‰²ï¼\n");
          */
 
         if( me->query_skill("force") < 140 )
-                return notify_fail("ÄãµÄ»ù±¾ÄÚ¹¦»ðºòÎ´µ½£¬ÎÞ·¨Ê©Õ¹·çÔÆ±äÉ«£¡\n");
+                return notify_fail("ä½ çš„åŸºæœ¬å…§åŠŸç«å€™æœªåˆ°ï¼Œç„¡æ³•æ–½å±•é¢¨é›²è®Šè‰²ï¼\n");
 
         if( me->query_skill("whip") < 135 )
-                return notify_fail("·çÔÆ±äÉ«ÐèÒª¾«Õ¿µÄ¶ÏÔÆ±Þ·¨·½ÄÜÓÐÐ§Ê©Õ¹£¡\n");
+                return notify_fail("é¢¨é›²è®Šè‰²éœ€è¦ç²¾æ¹›çš„æ–·é›²éž­æ³•æ–¹èƒ½æœ‰æ•ˆæ–½å±•ï¼\n");
 
         if( !query_temp("weapon", me) || query("skill_type", query_temp("weapon", me)) != "whip" )
-                return notify_fail("Äã²¢Ã»ÓÐ×°±¸±Þ×÷ÎªÎäÆ÷¡£\n");
+                return notify_fail("ä½ ä¸¦æ²’æœ‰è£å‚™éž­ä½œç‚ºæ­¦å™¨ã€‚\n");
 
         power=random(query("neili", me)/50)+query("jiali", me)/2;
         if(power<150) power=150;
         if(power>1000) power=1000;
 
         if( query("neili", me) <= 200+power*2 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»Ê¹ÓÃ·çÔÆ±äÉ«£¡\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ä½¿ç”¨é¢¨é›²è®Šè‰²ï¼\n");
 
-        message_combatd(HIW"$NÔË×ãÄÚÁ¦£¬ÃÍµØÒ»Ñï"NOR+"$n"+HIW"¾íÆðÎÞ±ß·çÔÆÕÚÔÂÑÚÈÕ£¬Ò»¹É"NOR+HIM"î¸·ç"NOR+HIW"ËæÖøÂþÌì±ÞÓ°ÆËÌì¸ÇµØµÄÏòµÐÈËÏ®À´¡£\n\n"NOR,me,query_temp("weapon", me));
+        message_combatd(HIW"$Né‹è¶³å…§åŠ›ï¼ŒçŒ›åœ°ä¸€æš"NOR+"$n"+HIW"å·èµ·ç„¡é‚Šé¢¨é›²é®æœˆæŽ©æ—¥ï¼Œä¸€è‚¡"NOR+HIM"ç½¡é¢¨"NOR+HIW"éš¨è‘—æ¼«å¤©éž­å½±æ’²å¤©è“‹åœ°çš„å‘æ•µäººè¥²ä¾†ã€‚\n\n"NOR,me,query_temp("weapon", me));
 
         addn_temp("apply/attack", power/2, me);
         addn_temp("apply/damage", power/5, me);

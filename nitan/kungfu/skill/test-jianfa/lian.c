@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define PFM "¡¸" HIW "ÕýÔÚ²âÊÔ×Ô´´Îä¹¦ÏµÍ³" NOR "¡¹"
+#define PFM "ã€Œ" HIW "æ­£åœ¨æ¸¬è©¦è‡ªå‰µæ­¦åŠŸç³»çµ±" NOR "ã€"
 
 #define PMSKILLS_D "/adm/daemons/pmskillsd"
 
@@ -22,34 +22,34 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(PFM "Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(PFM "åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( member_array(query("pmskills/types", me),weapon_sk) != -1 )
         {
                 if( !objectp(weapon=query_temp("weapon", me) )
                     || query("skill_type", weapon) != query("pmskills/types", me) )
-                        return notify_fail("ÄãËùÊ¹ÓÃµÄÎäÆ÷²»¶Ô£¬ÄÑÒÔÊ©Õ¹" PFM "¡£\n");
+                        return notify_fail("ä½ æ‰€ä½¿ç”¨çš„æ­¦å™¨ä¸å°ï¼Œé›£ä»¥æ–½å±•" PFM "ã€‚\n");
         }
         else
         {
                 if( query_temp("weapon", me) || query_temp("secondary_weapon", me) )
-                        return notify_fail(PFM "Ö»ÄÜ¿ÕÊÖÊ¹ÓÃ¡£\n");                
+                        return notify_fail(PFM "åªèƒ½ç©ºæ‰‹ä½¿ç”¨ã€‚\n");                
         }
         if( me->query_skill(query("pmskills/skid", me),1)<260 )
-                return notify_fail("Äã"+CHINESE_D->chinese(query("pmskills/skid", me))+
-                                   "²»¹»æµÊì£¬ÄÑÒÔÊ©Õ¹" PFM "¡£\n");
+                return notify_fail("ä½ "+CHINESE_D->chinese(query("pmskills/skid", me))+
+                                   "ä¸å¤ å«»ç†Ÿï¼Œé›£ä»¥æ–½å±•" PFM "ã€‚\n");
 
         if( member_array(query("pmskills/types", me),weapon_sk) == -1 )
         {
                 if( me->query_skill_prepared(query("pmskills/types", me)) != query("pmskills/skid", me) )
-                        return notify_fail("ÄãÃ»ÓÐ×¼±¸"+CHINESE_D->chinese(query("pmskills/skid", me))+
-                                           "£¬ÄÑÒÔÊ©Õ¹" PFM "¡£\n");
+                        return notify_fail("ä½ æ²’æœ‰æº–å‚™"+CHINESE_D->chinese(query("pmskills/skid", me))+
+                                           "ï¼Œé›£ä»¥æ–½å±•" PFM "ã€‚\n");
         }
         if( query("neili", me)<300 )
-                return notify_fail("ÄãÏÖÔÚµÄÕæÆø²»¹»£¬ÄÑÒÔÊ©Õ¹" PFM "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çš„çœŸæ°£ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" PFM "ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
         msg = HIW "sd" + "\n" + NOR;
 

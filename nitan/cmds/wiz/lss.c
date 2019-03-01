@@ -6,7 +6,7 @@
 #include <localtime.h>
 
 inherit F_CLEAN_UP;
-#define L_LINE sprintf("%-30s%8s  %s", "����޸�ʱ��", "�ߴ�", "�ļ���")
+#define L_LINE sprintf("%-30s%8s  %s", "最後修改時間", "尺寸", "文件名")
 #define DASHES "-----------------------------------------------------------------"
 #define F_FLAG  1
 #define S_FLAG  2
@@ -60,15 +60,15 @@ int main(object me, string arg)
     }
     if (arg[<1..<1] == " ")   arg = arg[0..<2];
     if (arg == "/..") {
-           write("ls: û��������Ŀ¼��\n");
+           write("ls: 沒有這樣的目錄。\n");
            return 1;
     }
-//  '-l'��'-s'�ǲ��ܼ��ݵĲ���
+//  '-l'和'-s'是不能兼容的參數
     if (active & L_FLAG) active &= ~S_FLAG;
 
     arg=resolve_path(query("cwd", me),arg);
 
-//  ��ֹ�ڸ�Ŀ¼ʹ��'-r' ����    
+//  防止在根目錄使用'-r' 參數    
     output=explode(arg,"/");
     if (!sizeof(output) && R_FLAG)
         active &=~R_FLAG;
@@ -78,7 +78,7 @@ int main(object me, string arg)
     }
     return 1;
 }
-//  �����ļ����ڵ�Ŀ¼
+//  返回文件所在的目錄
 
 protected string get_path(string str)
 {
@@ -115,7 +115,7 @@ protected mixed internal_ls(string arg, int active, int internal_call)
 
     pathname=get_path(arg);
 
-    output = ({ sprintf("Ŀ¼: [%s]", pathname) });
+    output = ({ sprintf("目錄: [%s]", pathname) });
 
     if (internal_call) {
               path = arg;
@@ -135,7 +135,7 @@ protected mixed internal_ls(string arg, int active, int internal_call)
 
     junk = get_dir(arg, -1);
     if (!sizeof(junk)) {
-              write("ls: "+arg+" û���������ļ�����Ŀ¼��\n");
+              write("ls: "+arg+" 沒有這樣的文件或者目錄。\n");
               return 0;
     }
    junk=filter_array(junk,"filter_valid_directories",this_object());
@@ -145,8 +145,8 @@ protected mixed internal_ls(string arg, int active, int internal_call)
                             "filter_no_period", this_object());
            if (!sizeof(junk)) {
               if (internal_call)
-                return ({ sprintf("%s: Ŀ¼�ǿյġ�", path) });
-              write(pathname+" Ŀ¼�ǿյġ�\n");
+                return ({ sprintf("%s: 目錄是空的。", path) });
+              write(pathname+" 目錄是空的。\n");
               return 0;
            }
     }
@@ -195,7 +195,7 @@ protected mixed internal_ls(string arg, int active, int internal_call)
 
            for (i = 0; i < max-1; i++) {
               local=localtime(times[i]);
-              file_time=sprintf("%4d��%2d��%2d��%2dʱ%2d��%2d��",local[LT_YEAR],local[LT_MON]+1,local[LT_MDAY],local[LT_HOUR],local[LT_MIN]+1,local[LT_SEC]+1);
+              file_time=sprintf("%4d年%2d月%2d日%2d時%2d分%2d秒",local[LT_YEAR],local[LT_MON]+1,local[LT_MDAY],local[LT_HOUR],local[LT_MIN]+1,local[LT_SEC]+1);
               output[out_idx++] = (sizes[i] >= 0) ?
                    sprintf("%-30s %8d %s", file_time, sizes[i], files[i]) :
                    sprintf("%-30s %8s %s", file_time, "<DIR>", files[i]);
@@ -269,25 +269,25 @@ int filter_valid_directories(mixed junk)
 int help(object me)
 {
     write(@HELP
-ָ���ʽ: ls [ -aslFrtx1 ] [<·����>]
+指令格式: ls [ -aslFrtx1 ] [<路徑名>]
  
-�г�Ŀ¼�����е���Ŀ¼������, ���û��ָ��Ŀ¼, ���г�����Ŀ¼
-�����ݣ����г��ĵ����к����ʾ * �ŵ����Ѿ�����������
+列出目錄下所有的子目錄及檔案, 如果沒有指定目錄, 則列出所在目錄
+的內容，所列出的檔案中後面標示 * 號的是已經載入的物件。
  
-��:
-'ls /' ���г�����λ�ڸ�Ŀ¼�µĵ�������Ŀ¼.
-  ������
-        -a  �г�����ָ��Ŀ¼�µ��ļ�������'.'��'..'
-        -A  �����ڲ���-a�����˲���ʾ'.' �� '..'
-        -s  ���ļ�ǰ��KilloBytes�Ľ���ֵ��ʾ�ļ���С
-        -F  ��Ŀ¼������ '/' ��ʾһ��Ŀ¼����'*' ��ʾһ���Ѿ�������ļ�
-        -l  ����ϸ�ĸ�ʽ��ʾ
-        -r  �ݹ���ʾָ��Ŀ¼�µ��ļ�����Ŀ¼�µ��ļ�
-        -t  ��ʱ��˳������
-        -x  ���ļ�����չ������
-        -1  ��һ��һ���ļ��ĸ�ʽ��ʾ
-        ��֧�ֵĲ����������ԡ�
-        �����ͨ��alias �趨�Լ�ϲ���Ĳ������磺 alias ls ls -F $*
+例:
+'ls /' 會列出所有位于根目錄下的檔案及子目錄.
+  參數：
+        -a  列出所有指定目錄下的文件，包括'.'和'..'
+        -A  類似于參數-a，除了不顯示'.' 和 '..'
+        -s  在文件前以KilloBytes的近似值顯示文件大小
+        -F  在目錄名後以 '/' 表示一個目錄，以'*' 表示一個已經載入的文件
+        -l  以詳細的格式顯示
+        -r  遞歸顯示指定目錄下的文件及子目錄下的文件
+        -t  按時間順序排列
+        -x  按文件的擴展名排列
+        -1  以一行一個文件的格式顯示
+        不支持的參數將被忽略。
+        你可以通過alias 設定自己喜歡的參數，如： alias ls ls -F $*
  
 HELP
     );

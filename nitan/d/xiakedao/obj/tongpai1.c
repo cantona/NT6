@@ -1,20 +1,20 @@
 // /d/xiakedao/obj/tongpai1.c
 //edit by noz
-// Modified by Zeratul Jan 11 2001 Í­ÅÆÍË³ö²»¶ª£¬²»ÄÜ¸øÈË
+// Modified by Zeratul Jan 11 2001 éŠ…ç‰Œé€€å‡ºä¸ä¸Ÿï¼Œä¸èƒ½çµ¦äºº
 /*
 #include <ansi.h>
 inherit ITEM;
 
 void create()
 {
-        set_name( "ÉÍÉÆÍ­ÅÆ",({"shan pai"}));
+        set_name( "è³å–„éŠ…ç‰Œ",({"shan pai"}));
           set_weight(100);
 
           if( clonep() )
                 set_default_object(__FILE__);
 
-          set("unit", "¿é");
-          set("long", "ÕâÊÇÒ»¿éÉÁÉÁ·¢¹âµÄ°×Í­Æ¬×Ó£¬Ô¼ÓĞ°ÍÕÆ´óĞ¡£¬ÅÆ×ÓÕıÃæ¿Ì×ÅÒ»ÕÅĞ¦Á³£¬ºÍ°ª´ÈÏé¡£\n");
+          set("unit", "å¡Š");
+          set("long", "é€™æ˜¯ä¸€å¡Šé–ƒé–ƒç™¼å…‰çš„ç™½éŠ…ç‰‡å­ï¼Œç´„æœ‰å·´æŒå¤§å°ï¼Œç‰Œå­æ­£é¢åˆ»è‘—ä¸€å¼µç¬‘è‡‰ï¼Œå’Œè—¹æ…ˆç¥¥ã€‚\n");
         set("no_put",1);
         set("no_get",1);
         set("no_drop",1);
@@ -53,7 +53,7 @@ int init()
         stringlong_msg=query("long", this_object());
 
           if( query("xkd/time", this_player()) )
-                  long_msg+=HIC"ÅÆ×Ó±³Ãæ¿ÌµÃÓĞ×Ö£ºÏÀ¿ÍµºÓÚ"+CHINESE_D->chinese_date(((query("xkd/time", this_player())-950000000)*60))+"Ç°¹§ºò´ó¼İ¡£\n"NOR;
+                  long_msg+=HIC"ç‰Œå­èƒŒé¢åˆ»å¾—æœ‰å­—ï¼šä¿ å®¢å³¶äº"+CHINESE_D->chinese_date(((query("xkd/time", this_player())-950000000)*60))+"å‰æ­å€™å¤§é§•ã€‚\n"NOR;
           set("long", long_msg, this_object());
         return 1;
 }
@@ -66,15 +66,15 @@ inherit ITEM;
 
 void create()
 {
-        set_name( "ÉÍÉÆÍ­ÅÆ", ({"shan pai"}));
+        set_name( "è³å–„éŠ…ç‰Œ", ({"shan pai"}));
         set_weight(100);
 
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿é");
-                set("long", "ÕâÊÇÒ»¿éÉÁÉÁ·¢¹âµÄ°×Í­Æ¬×Ó£¬Ô¼ÓĞ°ÍÕÆ´óĞ¡£¬ÅÆ×ÓÕı"
-                            "Ãæ¿Ì×ÅÒ»ÕÅĞ¦Á³£¬ºÍ°ª´ÈÏé¡£\n");
+                set("unit", "å¡Š");
+                set("long", "é€™æ˜¯ä¸€å¡Šé–ƒé–ƒç™¼å…‰çš„ç™½éŠ…ç‰‡å­ï¼Œç´„æœ‰å·´æŒå¤§å°ï¼Œç‰Œå­æ­£"
+                            "é¢åˆ»è‘—ä¸€å¼µç¬‘è‡‰ï¼Œå’Œè—¹æ…ˆç¥¥ã€‚\n");
                 set("value", 100);
         }
 

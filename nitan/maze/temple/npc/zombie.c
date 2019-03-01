@@ -4,10 +4,10 @@ inherit BOSS;
 void do_bite();
 void create()
 {
-        set_name("½©Ê¬", ({ "zombie" }));
+        set_name("åƒµå±", ({ "zombie" }));
         set("vendetta_mark","zombie");
-        set("long", "ÕâÊÇÒ»¸ö¸¯ÀÃµÄ½©Ê¬¡£\n");
-        set("title", HIB "(¹íÆø)" NOR); 
+        set("long", "é€™æ˜¯ä¸€å€‹è…çˆ›çš„åƒµå±ã€‚\n");
+        set("title", HIB "(é¬¼æ°£)" NOR); 
 
         set("str", 50);
         set("con", 120);
@@ -26,7 +26,7 @@ void create()
         }) ); 
         set("combat_exp", 100000000);
         set("bellicosity", 5 );
-        set("death_msg", RED"\n$N»¯×÷ÁËÒ»Ì²ÑªË®¡£\n\n"NOR);
+        set("death_msg", RED"\n$NåŒ–ä½œäº†ä¸€ç˜è¡€æ°´ã€‚\n\n"NOR);
         
         set_skill("force", 300);
         set_skill("dodge", 300);
@@ -72,8 +72,8 @@ void do_bite()
                 return;
         enemy = enemies[random(sizeof(enemies))];
         if( !userp(enemy) ) return;
-        message_vision(RED"$NÂ¶³öÉ­É­µÄ°×ÑÀ£¬ÆËÏò$n£¡\n"NOR,this_object(), enemy);
-        message_vision(HIR"$NÒ§×¡$n²±×ÓÃÍÎüÑª£¡\n"NOR,this_object(),enemy);
+        message_vision(RED"$Néœ²å‡ºæ£®æ£®çš„ç™½ç‰™ï¼Œæ’²å‘$nï¼\n"NOR,this_object(), enemy);
+        message_vision(HIR"$Nå’¬ä½$nè„–å­çŒ›å¸è¡€ï¼\n"NOR,this_object(),enemy);
         enemy->receive_damage("qi",5000+random(5000),this_object());
         msg = "( $n" + 
               COMBAT_D->status_msg(enemy->query("qi") * 100 / 

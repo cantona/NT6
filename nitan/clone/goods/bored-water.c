@@ -1,4 +1,4 @@
-// Ğş±øÊ¥Ë®ÓÃÓÚ¿ª¿×±øÆ÷
+// ç„å…µè–æ°´ç”¨äºé–‹å­”å…µå™¨
 
 #include <ansi.h>
 
@@ -6,17 +6,17 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIW "Ğş±øÊ¥Ë®" NOR, ({ "bored water", "water" }) );
+        set_name(HIW "ç„å…µè–æ°´" NOR, ({ "bored water", "water" }) );
         set_weight(30);
 
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "Ò»Æ¿Ó¨ÌŞÍ¸Ê¥Ë®£¬É¢Éä³öÑ¤Ä¿µÄ¹â²Ê¡£\n"
-                            "Ëû¿ÉÒÔÓÃÀ´×î´ó»¯¿ª¿×±øÆ÷»ò·À¾ß¡£\n" NOR);
+                set("long", HIW "ä¸€ç“¶ç‘©å‰”é€è–æ°´ï¼Œæ•£å°„å‡ºçµ¢ç›®çš„å…‰å½©ã€‚\n"
+                            "ä»–å¯ä»¥ç”¨ä¾†æœ€å¤§åŒ–é–‹å­”å…µå™¨æˆ–é˜²å…·ã€‚\n" NOR);
                 set("value", 1);
                 set("no_sell", 1);
-                set("unit", "Æ¿");
+                set("unit", "ç“¶");
         }
 
         setup();

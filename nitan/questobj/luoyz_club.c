@@ -5,17 +5,17 @@ inherit CLUB;
 
 void create()
 {
-        set_name(RED"½ğ¹¿°ô"NOR, ({ "jingubang", "club" }));
+        set_name(RED"é‡‘ç®æ£’"NOR, ({ "jingubang", "club" }));
         set_weight(6000);
         set("taskobj", 1);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
+                set("unit", "æŸ„");
                 set("value", 0);
                 set("material", "steel");
-                set("wield_msg", "$NÍùÑüÖĞÒ»Ãş£¬ÄÃ³öÁËÒ»°Ñ$n£¬¶ËÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$NÊÖÖĞ$n¶¶³öÒ»¸ö¹÷»¨£¬Õ£ÑÛ¼äÒÑÈ»²»¼ûÓ°×Ù¡£\n");
+                set("wield_msg", "$Nå¾€è…°ä¸­ä¸€æ‘¸ï¼Œæ‹¿å‡ºäº†ä¸€æŠŠ$nï¼Œç«¯åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Næ‰‹ä¸­$næŠ–å‡ºä¸€å€‹æ£èŠ±ï¼Œçœ¨çœ¼é–“å·²ç„¶ä¸è¦‹å½±è¹¤ã€‚\n");
         }
         setup();
 }

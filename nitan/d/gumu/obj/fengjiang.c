@@ -1,4 +1,4 @@
-// fengjiang.c Óñ·ä½¬
+// fengjiang.c çŽ‰èœ‚æ¼¿
 // By Lgg,1998.9
 
 #include <ansi.h>
@@ -7,13 +7,13 @@ inherit ITEM;
 int decayed = 0;
 void create()
 {
-        set_name("Óñ·ä½¬", ({"jiang", "feng jiang"}));
+        set_name("çŽ‰èœ‚æ¼¿", ({"jiang", "feng jiang"}));
         set_weight(100);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»Æ¿ÓÃÓñ·ä³²µ·³ÉµÄ½¬¡£\n");
-                set("unit", "Æ¿");
+                set("long", "ä¸€ç“¶ç”¨çŽ‰èœ‚å·¢æ—æˆçš„æ¼¿ã€‚\n");
+                set("unit", "ç“¶");
                 set("value", 30);
                 set("only_do_effect", 1); 
                 set("can_fulan",1);
@@ -23,11 +23,11 @@ void create()
 int do_effect(object me)
 {
         set("jing",query("max_jing",  me), me);
-        message_vision(HIY"$N·þÏÂÁËÒ»Æ¿Óñ·ä½¬£¬ÄÇÓñ·ä½¬·Ç³£µÄ¸ÊÌð£¬ÊµÔÚÊÇºÃ³Ô¡£\n"NOR,me);
+        message_vision(HIY"$Næœä¸‹äº†ä¸€ç“¶çŽ‰èœ‚æ¼¿ï¼Œé‚£çŽ‰èœ‚æ¼¿éžå¸¸çš„ç”˜ç”œï¼Œå¯¦åœ¨æ˜¯å¥½åƒã€‚\n"NOR,me);
         if (me->query_condition("yufengdu") > 0)
         {
                 me->clear_condition("yufengdu");
-                tell_object(me,HIY "Äã¸Ð¾õÌåÄÚµÄ·ä¶¾ÒÑÂýÂýÏûÈ¥¡£\n" NOR, me);
+                tell_object(me,HIY "ä½ æ„Ÿè¦ºé«”å…§çš„èœ‚æ¯’å·²æ…¢æ…¢æ¶ˆåŽ»ã€‚\n" NOR, me);
         }
         destruct(this_object());
         return 1;
@@ -44,18 +44,18 @@ int do_effect(object me)
         switch(phase)
         {
                 case 1:
-                        msg =  name(1) + "¿ªÊ¼±äÖÊÁË£¬·¢³öÒ»¹ÉÄÑÎÅµÄâÈÎ¶¡£\n";
+                        msg =  name(1) + "é–‹å§‹è®Šè³ªäº†ï¼Œç™¼å‡ºä¸€è‚¡é›£èžçš„é¤¿å‘³ã€‚\n";
                         set("old_name",name(1));
-                        set_name("±äÖÊµÄ" + query("old_name"),({ query("id") }));
+                        set_name("è®Šè³ªçš„" + query("old_name"),({ query("id") }));
                         call_out("decay", 120, phase + 1);
                         break;
                 case 2:
-                        msg = name(1) + "¿ªÊ¼¸¯ÀÃÁË£¬ÉÏÃæ³¤³öÐí¶àÂÌÃ«£¬·¢³öÄÑÎÅµÄ³ôÎ¶¡£\n";
-                        set_name("¸¯ÀÃµÄ" + query("old_name"),({ query("id") }));
+                        msg = name(1) + "é–‹å§‹è…çˆ›äº†ï¼Œä¸Šé¢é•·å‡ºè¨±å¤šç¶ æ¯›ï¼Œç™¼å‡ºé›£èžçš„è‡­å‘³ã€‚\n";
+                        set_name("è…çˆ›çš„" + query("old_name"),({ query("id") }));
                         call_out("decay", 60, phase + 1);
                         break;
                 case 3:
-                        msg = "Ò»Õó·ç´µ¹ý£¬°Ñ" + name(1) + "»¯³É»Ò´µÉ¢ÁË¡£\n";
+                        msg = "ä¸€é™£é¢¨å¹éŽï¼ŒæŠŠ" + name(1) + "åŒ–æˆç°å¹æ•£äº†ã€‚\n";
                         if( env )
                                 all_inventory(this_object())->move(env);
                         tell_room(env, msg);

@@ -1,13 +1,13 @@
-// mystery.c 玄黄聚纳
+// mystery.c 鐜勯粌鑱氱磵
 // Created by Doing Lu 10/7/2K
 
 #include <ansi.h>
 
 inherit F_CLEAN_UP;
 
-string name() { return HIY "玄黄聚纳" NOR; }
+string name() { return HIY "鐜勯粌鑱氱磵" NOR; }
 
 int perform(object me, string skill)
 {
-        return notify_fail("这项技能能够提升你的最大内力，不需要运用。\n");
+        return notify_fail("閫欓爡鎶�鑳借兘澶犳彁鍗囦綘鐨勬渶澶у収鍔涳紝涓嶉渶瑕侀亱鐢ㄣ�俓n");
 }

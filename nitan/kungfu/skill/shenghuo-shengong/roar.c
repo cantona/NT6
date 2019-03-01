@@ -1,4 +1,4 @@
-// roar.c Ê¥»ğÊ¨×Óºğ
+// roar.c è–ç«ç…å­å¼
 
 #include <ansi.h>
 
@@ -10,10 +10,10 @@ int exert(object me, object target)
         int i, skill, damage;
 
         if( (int)query("neili", me) < 600 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ã€‚\n");
 
         if( query("no_fight", environment(me)) )
-                return notify_fail("ÔÚÕâÀï²»ÄÜ¹¥»÷ËûÈË¡£\n");
+                return notify_fail("åœ¨é€™è£¡ä¸èƒ½æ”»æ“Šä»–äººã€‚\n");
 
         skill = me->query_skill("force");
 
@@ -22,7 +22,7 @@ int exert(object me, object target)
 
         me->start_busy(5);
         message_combatd(
-                HIY "$NÉîÉîµØÎüÒ»àíÆø£¬ÕæÁ¦±Å·¢£¬·¢³öÒ»Éù¾ªÌì¶¯µØµÄ¾Şºğ¢¦\n" NOR, me);
+                HIY "$Næ·±æ·±åœ°å¸ä¸€å›—æ°£ï¼ŒçœŸåŠ›è¿¸ç™¼ï¼Œç™¼å‡ºä¸€è²é©šå¤©å‹•åœ°çš„å·¨å¼â–¡\n" NOR, me);
 
         ob = all_inventory(environment(me));
         for (i = 0; i < sizeof(ob); i++)
@@ -44,7 +44,7 @@ int exert(object me, object target)
                         ob[i]->receive_damage("jing", damage * 2, me);
                         if( (int)query("neili", ob[i]) < skill * 2 )
                                 ob[i]->receive_wound("jing", damage, me);
-                        tell_object(ob[i], "Äã¾õµÃÑÛÇ°Ò»Õó½ğĞÇÂÒÃ°£¬¶ú¶äÍ´µÃÏñÊÇÒªÁÑ¿ªÒ»Ñù¢¦\n");
+                        tell_object(ob[i], "ä½ è¦ºå¾—çœ¼å‰ä¸€é™£é‡‘æ˜Ÿäº‚å†’ï¼Œè€³æœµç—›å¾—åƒæ˜¯è¦è£‚é–‹ä¸€æ¨£â–¡\n");
                 }
 
         }

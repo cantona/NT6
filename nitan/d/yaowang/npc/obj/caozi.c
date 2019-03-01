@@ -7,41 +7,41 @@ inherit ITEM;
 #define CAO_MEM        "/d/yaowang/obj/herb/member/"
 #define MEMBER_D       "/adm/daemons/memberd" 
 
-// »áÔ±²İÒ©ÁĞ±í
+// æœƒå“¡è‰è—¥åˆ—è¡¨
 string *MEM_LIST = ({ "huanyang", "huoxuezhu", "hy-bc",
                          "hy-js", "hy-ly", "hy-mh", "hy-sb", "hy-ty",
                            "hy-yq", "hy-ys", "hy-zhu", "jiegudan", 
                          "jiujia", "lgshenjin", "shujincao", "tbrenshen",
                          "wugong", "zhjcao", });
 
-// »áÔ±ÌØÊâ²İÒ©ÁĞ±í
+// æœƒå“¡ç‰¹æ®Šè‰è—¥åˆ—è¡¨
   string *MEM_SM_LIST = ({ "qixing-haitang", "tihuxiang", "bi", "heye",
                      "yanling", "hua", });
 
-// ÌØÊâ²İÒ©ÁĞ±í
+// ç‰¹æ®Šè‰è—¥åˆ—è¡¨
 string *SM_LIST = ({ "tihuxiang", "huoxuezhu", "hy-bc",
                          "hy-js", "hy-ly", "hy-mh", "hy-sb", "hy-ty",
                            "hy-yq", "hy-ys", "hy-zhu", "jiegudan", 
                          "jiujia", "lgshenjin", "shujincao", "tbrenshen",
                          "wugong", "zhjcao", });
                      
-// ÆÕÍ¨²İÒ©ÁĞ±í //ÏÈĞ´ÕâÃ´¶à£¬ÒÔºóÔÚ²¹³ä
+// æ™®é€šè‰è—¥åˆ—è¡¨ //å…ˆå¯«é€™éº¼å¤šï¼Œä»¥å¾Œåœ¨è£œå……
 string *NOR_LIST = ({ "chaihu", "chenpi", "chongcao",
                          "chuanwu", "dahuang", "danggui", "duhuo", "fangfeng",
                          "fuzi", "qianjinzi", });
 
-//²İÒ©ÏÈĞ´ÕâÃ´¶à£¬ÒÔºóÔÚ²¹³ä
+//è‰è—¥å…ˆå¯«é€™éº¼å¤šï¼Œä»¥å¾Œåœ¨è£œå……
 
 void create()
 {
-        set_name("²İ×Ñ", ({"cao zi"}));
+        set_name("è‰ç±½", ({"cao zi"}));
         set_weight(10);
         set("no_clean_up", 1);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Á£");
-                set("long", "Ò»Á£µ­ºÖÉ«µÄ²İ×Ñ£¬ÖÖÔÚÌïµØÀï(zhong)»á³¤³É²İÒ©¡£\n");
+                set("unit", "ç²’");
+                set("long", "ä¸€ç²’æ·¡è¤è‰²çš„è‰ç±½ï¼Œç¨®åœ¨ç”°åœ°è£¡(zhong)æœƒé•·æˆè‰è—¥ã€‚\n");
                 set("value", 10);
         }
         setup();
@@ -61,34 +61,34 @@ int do_zhong(string arg)
         where=environment(me);
         whereob=environment(ob);
 
-          if( query("family/family_name", me) != "Ò©Íõ¹È" || me->query_skill("baicao-jue",1)<10 || me->query_skill("bencao-changshi",1)<10 || me->query_skill("medical",1)<60 )
-                return notify_fail("Äã²»»áÖÖÖ²²İÒ©£¡\n");
+          if( query("family/family_name", me) != "è—¥ç‹è°·" || me->query_skill("baicao-jue",1)<10 || me->query_skill("bencao-changshi",1)<10 || me->query_skill("medical",1)<60 )
+                return notify_fail("ä½ ä¸æœƒç¨®æ¤è‰è—¥ï¼\n");
 
         if(me->is_fighting() || me->is_busy())
-                return notify_fail("ÄãºÜÃ¦£¬Ã»Ê±¼ä¡£\n");
+                return notify_fail("ä½ å¾ˆå¿™ï¼Œæ²’æ™‚é–“ã€‚\n");
 
         if( !arg || !present(arg, me))
-                return notify_fail("Ö¸Áî¸ñÊ½£ºzhong cao zi\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šzhong cao zi\n");
 
         if( !query("yaotian", where) )
-                return notify_fail("Ö»ÄÜÖÖÔÚÒ©ÌïÀï¡£\n");
+                return notify_fail("åªèƒ½ç¨®åœ¨è—¥ç”°è£¡ã€‚\n");
 
         if( query("zhongyao", where) >= 10 )
-                return notify_fail("ÕâÀïÒÑ¾­Ã»µØ·½ÖÖÒ©²ÄÁË¡£\n");
+                return notify_fail("é€™è£¡å·²ç¶“æ²’åœ°æ–¹ç¨®è—¥æäº†ã€‚\n");
 
         if( query("jingli", me) <= 20 )
-                return notify_fail("ÄãÌ«ÀÛÁË£¬»¹ÊÇÏÈĞİÏ¢Ò»ÏÂ°É£¡\n");
+                return notify_fail("ä½ å¤ªç´¯äº†ï¼Œé‚„æ˜¯å…ˆä¼‘æ¯ä¸€ä¸‹å§ï¼\n");
         
         if( query("jingli", me) <= 20 )
-                return notify_fail("ÄãÌ«ÀÛÁË£¬»¹ÊÇÏÈĞİÏ¢Ò»ÏÂ°É£¡\n");
+                return notify_fail("ä½ å¤ªç´¯äº†ï¼Œé‚„æ˜¯å…ˆä¼‘æ¯ä¸€ä¸‹å§ï¼\n");
                 
         if( query_temp("growing", me) )
-                return notify_fail("ÄãÒÑ¾­ÔÚÖÖÖ²²İÒ©ÁË£¡\n");
+                return notify_fail("ä½ å·²ç¶“åœ¨ç¨®æ¤è‰è—¥äº†ï¼\n");
                 
         if( query("value", ob) != 10 )
-                return notify_fail("ÒÑ¾­ÖÖÔÚµØÀïÁË£¡\n");
+                return notify_fail("å·²ç¶“ç¨®åœ¨åœ°è£¡äº†ï¼\n");
 
-        message_vision("$NÇáÇá½«$nÖÖÔÚµØÀï£¡\n", me, ob);
+        message_vision("$Nè¼•è¼•å°‡$nç¨®åœ¨åœ°è£¡ï¼\n", me, ob);
 
         ob->move(where);
 
@@ -98,9 +98,9 @@ int do_zhong(string arg)
                 remove_call_out("grow_d");
                 remove_call_out("grow_e");
 
-        message_vision(WHT"²İ×ÑÂıÂı³¤³öÁËÑ¿¡£\n"NOR, ob);
-        set_name( "Ğ¡Çà²İ" , ({"xiao qingcao"}));
-        set("long", "Ò»Öêµ­ÂÌÉ«µÄĞ¡Çà²İ£¬»¹Ã»ÓĞ³¤³É¡£\n");
+        message_vision(WHT"è‰ç±½æ…¢æ…¢é•·å‡ºäº†èŠ½ã€‚\n"NOR, ob);
+        set_name( "å°é’è‰" , ({"xiao qingcao"}));
+        set("long", "ä¸€æ ªæ·¡ç¶ è‰²çš„å°é’è‰ï¼Œé‚„æ²’æœ‰é•·æˆã€‚\n");
         set("value", 0);
         set("no_get", 1);
 
@@ -132,15 +132,15 @@ int grow_b(object ob, object me)
         if (environment(ob)==environment(me))
         {
                 int i=10+random(5);
-                message_vision(WHT"Ğ¡Çà²İÂıÂıµØ³¤³öÁËÒ»Æ¬Ò¶×Ó¡£\n"NOR, ob);
-                set_name( "Çà²İ" , ({"qingcao"}));
-                set("long", "Ò»Öêµ­ÂÌÉ«µÄÇà²İ£¬»¹Ã»ÓĞ³¤³É¡£\n");
+                message_vision(WHT"å°é’è‰æ…¢æ…¢åœ°é•·å‡ºäº†ä¸€ç‰‡è‘‰å­ã€‚\n"NOR, ob);
+                set_name( "é’è‰" , ({"qingcao"}));
+                set("long", "ä¸€æ ªæ·¡ç¶ è‰²çš„é’è‰ï¼Œé‚„æ²’æœ‰é•·æˆã€‚\n");
                 call_out("grow_c", i, ob, me);
                 return 1;
         }else
         {
-                message_vision(WHT"ÓÉÓÚÖ÷ÈËÃ»ÓĞ¹ÜÀí£¬Ğ¡Çà²İ¿İÎ®ÁË¡£\n"NOR, ob);
-                tell_object(me, HIC "ÓÉÓÚÄãÃ»ÓĞ¼ÓÇ¿¶ÔĞ¡Çà²İµÄ¹ÜÀí£¬Ğ¡Çà²İ¿İÎ®ÁË¡£\n" NOR);
+                message_vision(WHT"ç”±äºä¸»äººæ²’æœ‰ç®¡ç†ï¼Œå°é’è‰æ¯èäº†ã€‚\n"NOR, ob);
+                tell_object(me, HIC "ç”±äºä½ æ²’æœ‰åŠ å¼·å°å°é’è‰çš„ç®¡ç†ï¼Œå°é’è‰æ¯èäº†ã€‚\n" NOR);
                 delete_temp("growing", me);
                 destruct(ob);
         }
@@ -151,13 +151,13 @@ int grow_c(object ob, object me)
         if (environment(ob)==environment(me))
         {
                 int i=10+random(5);
-                message_vision(WHT"Çà²İÂıÂıµØ³¤´óÁËÒ»µã¡£\n"NOR, ob);
+                message_vision(WHT"é’è‰æ…¢æ…¢åœ°é•·å¤§äº†ä¸€é»ã€‚\n"NOR, ob);
                 call_out("grow_d", i, ob, me);  
                 return 1;
         }else
         {
-                message_vision(WHT"ÓÉÓÚÖ÷ÈËÃ»ÓĞ¹ÜÀí£¬Çà²İ¿İÎ®ÁË¡£\n"NOR, ob);
-                tell_object(me, HIC "ÓÉÓÚÄãÃ»ÓĞ¼ÓÇ¿¶ÔÇà²İµÄ¹ÜÀí£¬Çà²İ¿İÎ®ÁË¡£\n" NOR);
+                message_vision(WHT"ç”±äºä¸»äººæ²’æœ‰ç®¡ç†ï¼Œé’è‰æ¯èäº†ã€‚\n"NOR, ob);
+                tell_object(me, HIC "ç”±äºä½ æ²’æœ‰åŠ å¼·å°é’è‰çš„ç®¡ç†ï¼Œé’è‰æ¯èäº†ã€‚\n" NOR);
                 delete_temp("growing", me);
                 destruct(ob);
         }
@@ -168,15 +168,15 @@ int grow_d(object ob, object me)
         if (environment(ob)==environment(me))
         {                       
                 int i=10+random(10);
-                message_vision(WHT"Çà²İÂıÂıµØÓÖ³¤´óÁËÒ»Ğ©¡£\n"NOR, ob);
-                set_name( CYN"´óÇà²İ"NOR , ({"da qingcao"}));
-                set("long", "Ò»ÖêÂÌÉ«µÄ´óÇà²İ£¬»¹Ã»ÓĞ³¤³É¡£\n");
+                message_vision(WHT"é’è‰æ…¢æ…¢åœ°åˆé•·å¤§äº†ä¸€äº›ã€‚\n"NOR, ob);
+                set_name( CYN"å¤§é’è‰"NOR , ({"da qingcao"}));
+                set("long", "ä¸€æ ªç¶ è‰²çš„å¤§é’è‰ï¼Œé‚„æ²’æœ‰é•·æˆã€‚\n");
                 call_out("grow_e", i, ob, me);  
                 return 1;
         }else
         {
-                message_vision(WHT"ÓÉÓÚÖ÷ÈËÃ»ÓĞ¹ÜÀí£¬´óÇà²İ¿İÎ®ÁË¡£\n"NOR, ob);
-                tell_object(me, HIC "ÓÉÓÚÄãÃ»ÓĞ¼ÓÇ¿¶Ô´óÇà²İµÄ¹ÜÀí£¬´óÇà²İ¿İÎ®ÁË¡£\n" NOR);
+                message_vision(WHT"ç”±äºä¸»äººæ²’æœ‰ç®¡ç†ï¼Œå¤§é’è‰æ¯èäº†ã€‚\n"NOR, ob);
+                tell_object(me, HIC "ç”±äºä½ æ²’æœ‰åŠ å¼·å°å¤§é’è‰çš„ç®¡ç†ï¼Œå¤§é’è‰æ¯èäº†ã€‚\n" NOR);
                 delete_temp("growing", me);
                 destruct(ob);
         }
@@ -198,14 +198,14 @@ int grow_e(object ob, object me)
                 
         if (environment(ob)!=environment(me))
         {                       
-                message_vision(WHT"ÓÉÓÚÖ÷ÈËÃ»ÓĞ¹ÜÀí£¬´óÇà²İ¿İÎ®ÁË¡£\n"NOR, ob);
-                tell_object(me, HIC "ÓÉÓÚÄãÃ»ÓĞ¼ÓÇ¿¶Ô´óÇà²İµÄ¹ÜÀí£¬´óÇà²İ¿İÎ®ÁË¡£\n" NOR);
+                message_vision(WHT"ç”±äºä¸»äººæ²’æœ‰ç®¡ç†ï¼Œå¤§é’è‰æ¯èäº†ã€‚\n"NOR, ob);
+                tell_object(me, HIC "ç”±äºä½ æ²’æœ‰åŠ å¼·å°å¤§é’è‰çš„ç®¡ç†ï¼Œå¤§é’è‰æ¯èäº†ã€‚\n" NOR);
                 delete_temp("growing", me);
                 destruct(ob);
                 return 1;
         }
         
-        message_vision(WHT"´óÇà²İ³¤³ÉÁË£¬¿ÉÒÔÍÚÆğÀ´ÁË(dig)¡£\n"NOR, me);
+        message_vision(WHT"å¤§é’è‰é•·æˆäº†ï¼Œå¯ä»¥æŒ–èµ·ä¾†äº†(dig)ã€‚\n"NOR, me);
         me->receive_damage("jing", 50 + random(30));
         me->receive_damage("qi", 50 + random(30));
         if (random(skill) < 100 && random(3) == 1) 
@@ -216,8 +216,8 @@ int grow_e(object ob, object me)
                 obj->move(environment(ob)); 
                 addn("combat_exp", exp, me);
                 me->improve_potential(pot);
-                        tell_object(me, HIC "Äã»ñµÃÁË" + chinese_number(exp) +
-                                "µã¾­ÑéºÍ" + chinese_number(pot) + "µãÇ±ÄÜ¡£\n"NOR );      
+                        tell_object(me, HIC "ä½ ç²å¾—äº†" + chinese_number(exp) +
+                                "é»ç¶“é©—å’Œ" + chinese_number(pot) + "é»æ½›èƒ½ã€‚\n"NOR );      
                 addn("zhongyao", -1, (environment(ob)));
                 destruct(ob); 
         } else
@@ -226,10 +226,10 @@ int grow_e(object ob, object me)
         {
                 if (random(skill) > 300 && random(5) == 1)
                 {
-                        message_vision(HIY "$NÖÖÖ²µÄ²İÒ©³¤³ÉÁË£¬¿ÉÒÔÍÚÆğÀ´ÁË(dig)¡£$NºöÈ»·¢ÏÖÉÏÃæºÃÏóĞü¸¡×ÅÒ»µÀ½ğ¹â¡£\n"NOR, me);
+                        message_vision(HIY "$Nç¨®æ¤çš„è‰è—¥é•·æˆäº†ï¼Œå¯ä»¥æŒ–èµ·ä¾†äº†(dig)ã€‚$Nå¿½ç„¶ç™¼ç¾ä¸Šé¢å¥½è±¡æ‡¸æµ®è‘—ä¸€é“é‡‘å…‰ã€‚\n"NOR, me);
                 delete_temp("growing", me);
                         obj = new(CAO_MEM_SM + MEM_SM_LIST[random(sizeof(MEM_SM_LIST))]);
-                        tell_object(me, HIC "ÄãÖÖ³ÉÁËÏ¡ÓĞ²İÒ©¡¸" + NOR + obj->name() + NOR + HIC "¡¹¡£\n" NOR);                
+                        tell_object(me, HIC "ä½ ç¨®æˆäº†ç¨€æœ‰è‰è—¥ã€Œ" + NOR + obj->name() + NOR + HIC "ã€ã€‚\n" NOR);                
                         set("owner",query("id",  me), obj);
                         set("no_get", 1, obj);
                         obj->move(environment(ob)); 
@@ -237,75 +237,75 @@ int grow_e(object ob, object me)
                         pot += pot;
                         addn("combat_exp", exp, me);
                         me->improve_potential(pot);
-                        tell_object(me, HIC "Äã»ñµÃÁË" + chinese_number(exp) +
-                                "µã¾­ÑéºÍ" + chinese_number(pot) + "µãÇ±ÄÜ¡£\n"NOR );
+                        tell_object(me, HIC "ä½ ç²å¾—äº†" + chinese_number(exp) +
+                                "é»ç¶“é©—å’Œ" + chinese_number(pot) + "é»æ½›èƒ½ã€‚\n"NOR );
                         addn("zhongyao", -1, (environment(ob)));
                         destruct(ob); 
         
                         if (me->can_improve_skill("baicao-jue") && skilla < 500)
                         {
                                 me->improve_skill("baicao-jue",query("int", me)+10);
-                                tell_object(me, HIC "ÔÚÖÖ²İ¹ı³ÌÖĞÄãµÄ¡¸°Ù²İ¾÷¡¹Ìá¸ßÁË£¡\n" NOR);
+                                tell_object(me, HIC "åœ¨ç¨®è‰éç¨‹ä¸­ä½ çš„ã€Œç™¾è‰è¨£ã€æé«˜äº†ï¼\n" NOR);
                         }
                         if (me->can_improve_skill("bencao-changshi") && skillb < 500)
                         {
                                 me->improve_skill("bencao-changshi",query("int", me)+10);
-                                tell_object(me, HIC "ÔÚÖÖ²İ¹ı³ÌÖĞÄãµÄ¡¸±¾²İ³£Ê¶¡¹Ìá¸ßÁË£¡\n" NOR);
+                                tell_object(me, HIC "åœ¨ç¨®è‰éç¨‹ä¸­ä½ çš„ã€Œæœ¬è‰å¸¸è­˜ã€æé«˜äº†ï¼\n" NOR);
                         }
                         
                 } else 
                 if (random(skill) > 100 && random(2) == 1)
                 {
-                        message_vision(HIC "$NÖÖÖ²µÄ²İÒ©³¤³ÉÁË£¬¿ÉÒÔÍÚÆğÀ´ÁË(dig)¡£\n" NOR, me);
+                        message_vision(HIC "$Nç¨®æ¤çš„è‰è—¥é•·æˆäº†ï¼Œå¯ä»¥æŒ–èµ·ä¾†äº†(dig)ã€‚\n" NOR, me);
                         delete_temp("growing", me);
                         obj = new(CAO_MEM + MEM_LIST[random(sizeof(MEM_LIST))]);
-                        tell_object(me, HIC "ÄãÖÖ³ÉÁË¡¸" + NOR + obj->name() + NOR + HIC "¡¹¡£\n" NOR);
+                        tell_object(me, HIC "ä½ ç¨®æˆäº†ã€Œ" + NOR + obj->name() + NOR + HIC "ã€ã€‚\n" NOR);
                         set("owner",query("id",  me), obj);
                         set("no_get", 1, obj);
                         obj->move(environment(ob)); 
                         addn("combat_exp", exp, me);
                         me->improve_potential(pot);
-                        tell_object(me, HIC "Äã»ñµÃÁË" + chinese_number(exp) +
-                                "µã¾­ÑéºÍ" + chinese_number(pot) + "µãÇ±ÄÜ¡£\n"NOR );
+                        tell_object(me, HIC "ä½ ç²å¾—äº†" + chinese_number(exp) +
+                                "é»ç¶“é©—å’Œ" + chinese_number(pot) + "é»æ½›èƒ½ã€‚\n"NOR );
                         addn("zhongyao", -1, (environment(ob)));
                         destruct(ob); 
         
                         if (me->can_improve_skill("baicao-jue") && skilla < 500)
                         {
                                 me->improve_skill("baicao-jue",query("int", me)/4);
-                                tell_object(me, HIC "ÔÚÖÖ²İ¹ı³ÌÖĞÄãµÄ¡¸°Ù²İ¾÷¡¹Ìá¸ßÁË£¡\n" NOR);
+                                tell_object(me, HIC "åœ¨ç¨®è‰éç¨‹ä¸­ä½ çš„ã€Œç™¾è‰è¨£ã€æé«˜äº†ï¼\n" NOR);
                         }
                         if (me->can_improve_skill("bencao-changshi") && skillb < 500)
                         {
                                 me->improve_skill("bencao-changshi",query("int", me)/4);
-                                tell_object(me, HIC "ÔÚÖÖ²İ¹ı³ÌÖĞÄãµÄ¡¸±¾²İ³£Ê¶¡¹Ìá¸ßÁË£¡\n" NOR);
+                                tell_object(me, HIC "åœ¨ç¨®è‰éç¨‹ä¸­ä½ çš„ã€Œæœ¬è‰å¸¸è­˜ã€æé«˜äº†ï¼\n" NOR);
                         }
                 }
                 else
                 {
-                        message_vision(HIC "$NÖÖÖ²µÄ²İÒ©³¤³ÉÁË£¬¿ÉÒÔÍÚÆğÀ´ÁË(dig)¡£\n" NOR, me);
+                        message_vision(HIC "$Nç¨®æ¤çš„è‰è—¥é•·æˆäº†ï¼Œå¯ä»¥æŒ–èµ·ä¾†äº†(dig)ã€‚\n" NOR, me);
                         delete_temp("growing", me);
                         obj = new(CAO_NOR + NOR_LIST[random(sizeof(NOR_LIST))]);
-                        tell_object(me, HIC "ÄãÖÖ³ÉÁË¡¸" + NOR + obj->name() + NOR + HIC "¡¹¡£\n" NOR);
+                        tell_object(me, HIC "ä½ ç¨®æˆäº†ã€Œ" + NOR + obj->name() + NOR + HIC "ã€ã€‚\n" NOR);
                         set("owner",query("id",  me), obj);
                         set("no_get", 1, obj);
                         obj->move(environment(ob)); 
                         addn("combat_exp", exp, me);
                         me->improve_potential(pot);
-                        tell_object(me, HIC "Äã»ñµÃÁË" + chinese_number(exp) +
-                                "µã¾­ÑéºÍ" + chinese_number(pot) + "µãÇ±ÄÜ¡£\n"NOR );
+                        tell_object(me, HIC "ä½ ç²å¾—äº†" + chinese_number(exp) +
+                                "é»ç¶“é©—å’Œ" + chinese_number(pot) + "é»æ½›èƒ½ã€‚\n"NOR );
                         addn("zhongyao", -1, (environment(ob)));
                         destruct(ob); 
         
                         if (me->can_improve_skill("baicao-jue") && skilla < 500)
                         {
                                 me->improve_skill("baicao-jue",query("int", me)/4);
-                                tell_object(me, HIC "ÔÚÖÖ²İ¹ı³ÌÖĞÄãµÄ¡¸°Ù²İ¾÷¡¹Ìá¸ßÁË£¡\n" NOR);
+                                tell_object(me, HIC "åœ¨ç¨®è‰éç¨‹ä¸­ä½ çš„ã€Œç™¾è‰è¨£ã€æé«˜äº†ï¼\n" NOR);
                         }
                         if (me->can_improve_skill("bencao-changshi") && skillb < 500)
                         {
                                 me->improve_skill("bencao-changshi",query("int", me)/4);
-                                tell_object(me, HIC "ÔÚÖÖ²İ¹ı³ÌÖĞÄãµÄ¡¸±¾²İ³£Ê¶¡¹Ìá¸ßÁË£¡\n" NOR);
+                                tell_object(me, HIC "åœ¨ç¨®è‰éç¨‹ä¸­ä½ çš„ã€Œæœ¬è‰å¸¸è­˜ã€æé«˜äº†ï¼\n" NOR);
                         }
                 }
                                 
@@ -313,10 +313,10 @@ int grow_e(object ob, object me)
 
         if (random(skill) > 300 && random(10) == 1)
         {
-                message_vision(HIY "$NÖÖÖ²µÄ²İÒ©³¤³ÉÁË£¬¿ÉÒÔÍÚÆğÀ´ÁË(dig)¡£$NºöÈ»·¢ÏÖÉÏÃæºÃÏóĞü¸¡×ÅÒ»µÀ½ğ¹â¡£\n"NOR, me);
+                message_vision(HIY "$Nç¨®æ¤çš„è‰è—¥é•·æˆäº†ï¼Œå¯ä»¥æŒ–èµ·ä¾†äº†(dig)ã€‚$Nå¿½ç„¶ç™¼ç¾ä¸Šé¢å¥½è±¡æ‡¸æµ®è‘—ä¸€é“é‡‘å…‰ã€‚\n"NOR, me);
                         delete_temp("growing", me);
                 obj = new(CAO_SM + SM_LIST[random(sizeof(SM_LIST))]);
-                tell_object(me, HIC "ÄãÖÖ³ÉÁËÏ¡ÓĞ²İÒ©¡¸" + NOR + obj->name() + NOR + HIC "¡¹¡£\n" NOR);                
+                tell_object(me, HIC "ä½ ç¨®æˆäº†ç¨€æœ‰è‰è—¥ã€Œ" + NOR + obj->name() + NOR + HIC "ã€ã€‚\n" NOR);                
                 set("owner",query("id",  me), obj);
                 set("no_get", 1, obj);
                 obj->move(environment(ob)); 
@@ -324,47 +324,47 @@ int grow_e(object ob, object me)
                 pot += pot;
                 addn("combat_exp", exp, me);
                 me->improve_potential(pot);
-                tell_object(me, HIC "Äã»ñµÃÁË" + chinese_number(exp) +
-                        "µã¾­ÑéºÍ" + chinese_number(pot) + "µãÇ±ÄÜ¡£\n"NOR );
+                tell_object(me, HIC "ä½ ç²å¾—äº†" + chinese_number(exp) +
+                        "é»ç¶“é©—å’Œ" + chinese_number(pot) + "é»æ½›èƒ½ã€‚\n"NOR );
                 addn("zhongyao", -1, (environment(ob)));
                 destruct(ob); 
 
                 if (me->can_improve_skill("baicao-jue") && skilla < 400)
                 {
                         me->improve_skill("baicao-jue",query("int", me)+10);
-                        tell_object(me, HIC "ÔÚÖÖ²İ¹ı³ÌÖĞÄãµÄ¡¸°Ù²İ¾÷¡¹Ìá¸ßÁË£¡\n" NOR);
+                        tell_object(me, HIC "åœ¨ç¨®è‰éç¨‹ä¸­ä½ çš„ã€Œç™¾è‰è¨£ã€æé«˜äº†ï¼\n" NOR);
                 }
                 if (me->can_improve_skill("bencao-changshi") && skillb < 400)
                 {
                         me->improve_skill("bencao-changshi",query("int", me)+10);
-                        tell_object(me, HIC "ÔÚÖÖ²İ¹ı³ÌÖĞÄãµÄ¡¸±¾²İ³£Ê¶¡¹Ìá¸ßÁË£¡\n" NOR);
+                        tell_object(me, HIC "åœ¨ç¨®è‰éç¨‹ä¸­ä½ çš„ã€Œæœ¬è‰å¸¸è­˜ã€æé«˜äº†ï¼\n" NOR);
                 }
                 
         } else
         {
-                message_vision(HIC "$NÖÖÖ²µÄ²İÒ©³¤³ÉÁË£¬¿ÉÒÔÍÚÆğÀ´ÁË(dig)¡£\n" NOR, me);
+                message_vision(HIC "$Nç¨®æ¤çš„è‰è—¥é•·æˆäº†ï¼Œå¯ä»¥æŒ–èµ·ä¾†äº†(dig)ã€‚\n" NOR, me);
                         delete_temp("growing", me);
                 obj = new(CAO_NOR + NOR_LIST[random(sizeof(NOR_LIST))]);
-                tell_object(me, HIC "ÄãÖÖ³ÉÁË¡¸" + NOR + obj->name() + NOR + HIC "¡¹¡£\n" NOR);
+                tell_object(me, HIC "ä½ ç¨®æˆäº†ã€Œ" + NOR + obj->name() + NOR + HIC "ã€ã€‚\n" NOR);
                 set("owner",query("id",  me), obj);
                 set("no_get", 1, obj);
                 obj->move(environment(ob)); 
                 addn("combat_exp", exp, me);
                 me->improve_potential(pot);
-                tell_object(me, HIC "Äã»ñµÃÁË" + chinese_number(exp) +
-                        "µã¾­ÑéºÍ" + chinese_number(pot) + "µãÇ±ÄÜ¡£\n"NOR );
+                tell_object(me, HIC "ä½ ç²å¾—äº†" + chinese_number(exp) +
+                        "é»ç¶“é©—å’Œ" + chinese_number(pot) + "é»æ½›èƒ½ã€‚\n"NOR );
                 addn("zhongyao", -1, (environment(ob)));
                 destruct(ob); 
 
                 if (me->can_improve_skill("baicao-jue") && skilla < 400)
                 {
                         me->improve_skill("baicao-jue",query("int", me)/4);
-                        tell_object(me, HIC "ÔÚÖÖ²İ¹ı³ÌÖĞÄãµÄ¡¸°Ù²İ¾÷¡¹Ìá¸ßÁË£¡\n" NOR);
+                        tell_object(me, HIC "åœ¨ç¨®è‰éç¨‹ä¸­ä½ çš„ã€Œç™¾è‰è¨£ã€æé«˜äº†ï¼\n" NOR);
                 }
                 if (me->can_improve_skill("bencao-changshi") && skillb < 400)
                 {
                         me->improve_skill("bencao-changshi",query("int", me)/4);
-                        tell_object(me, HIC "ÔÚÖÖ²İ¹ı³ÌÖĞÄãµÄ¡¸±¾²İ³£Ê¶¡¹Ìá¸ßÁË£¡\n" NOR);
+                        tell_object(me, HIC "åœ¨ç¨®è‰éç¨‹ä¸­ä½ çš„ã€Œæœ¬è‰å¸¸è­˜ã€æé«˜äº†ï¼\n" NOR);
                 }
         }
 

@@ -4,9 +4,9 @@ inherit NPC;
 
 void create()
 {
-        set_name("¾»Ğş", ({"jing xuan", "monk" }));
-        set("title","±¦ÏóËÂ³¤ÀÏ");
-        set("gender", "ÄĞĞÔ");
+        set_name("å‡ˆç„", ({"jing xuan", "monk" }));
+        set("title","å¯¶è±¡å¯ºé•·è€");
+        set("gender", "ç”·æ€§");
         set("age", 80);
         set("attitude", "friendly");
         set("shen_type", 1);
@@ -31,7 +31,7 @@ void create()
 
 int accept_fight(object me)
 {
-        command("say ÕâÎ»"+ RANK_D->query_respect(me) +
-                "ÄãÎÒÎŞÔ©ÎŞ³ğ£¬ÕâÑùÓÖÊÇºÎ±ØÄØ£¿");        
+        command("say é€™ä½"+ RANK_D->query_respect(me) +
+                "ä½ æˆ‘ç„¡å†¤ç„¡ä»‡ï¼Œé€™æ¨£åˆæ˜¯ä½•å¿…å‘¢ï¼Ÿ");        
         return 0;
 }

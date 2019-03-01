@@ -17,39 +17,39 @@ int main(object me, string arg)
                 return notify_fail(BUSY_MESSAGE);
 
         if( !arg || arg == "" ) {
-                msg  = HIC "¾­ÂöÃû³åÑ¨×´Ì¬\n" NOR;
-                msg += HIC "¡Ô" HIY "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤" HIC "¡Ô\n" NOR;
-                msg += HIC "\t\tĞ¡ÖÜÌì¾­Âö\n" NOR;
-                msg += HIC "¡Ô" HIY "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤" HIC "¡Ô\n" NOR;
-                msg+=HIG"ÒõõÎÂö\t\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/ÒõõÎÂö/chongxue_ok", me))?HIM"ÒÑ´òÍ¨":HIR"Î´´òÍ¨")+"\n"NOR;
-                msg+=HIG"ÑôõÎÂö\t\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/ÑôõÎÂö/chongxue_ok", me))?HIM"ÒÑ´òÍ¨":HIR"Î´´òÍ¨")+"\n"NOR;
-                msg+=HIG"ÒõÎ¬Âö\t\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/ÒõÎ¬Âö/chongxue_ok", me))?HIM"ÒÑ´òÍ¨":HIR"Î´´òÍ¨")+"\n"NOR;
-                msg+=HIG"ÑôÎ¬Âö\t\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/ÑôÎ¬Âö/chongxue_ok", me))?HIM"ÒÑ´òÍ¨":HIR"Î´´òÍ¨")+"\n"NOR;
-                msg+=HIG"´øÂö\t\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/´øÂö/chongxue_ok", me))?HIM"ÒÑ´òÍ¨":HIR"Î´´òÍ¨")+"\n"NOR;
-                msg+=HIG"³åÂö\t\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/³åÂö/chongxue_ok", me))?HIM"ÒÑ´òÍ¨":HIR"Î´´òÍ¨")+"\n"NOR;
-                msg+=HIG"ÈÎÍâÂö\t\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/ÈÎÍâÂö/chongxue_ok", me))?HIM"ÒÑ´òÍ¨":HIR"Î´´òÍ¨")+"\n"NOR;
-                msg+=HIG"¶½ÍâÂö\t\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/¶½ÍâÂö/chongxue_ok", me))?HIM"ÒÑ´òÍ¨":HIR"Î´´òÍ¨")+"\n"NOR;
-                msg+=HIG"¾­ÍâÆæÂö\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/¾­ÍâÆæÂö/chongxue_ok", me))?HIM"ÒÑ´òÍ¨":HIR"Î´´òÍ¨")+"\n"NOR;
-                msg += HIC "¡Ô" HIY "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤" HIC "¡Ô\n" NOR;
-                msg += HIY "\t\t´óÖÜÌì¾­Âö\n" NOR;
-                msg += HIC "¡Ô" HIY "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤" HIC "¡Ô\n" NOR;
-                msg+=HIG"ÊÖÌ«ÒõÂö\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/ÊÖÌ«ÒõÂö/chongxue_ok", me))?HIM"ÒÑ´òÍ¨":HIR"Î´´òÍ¨")+"\n"NOR;
-                msg+=HIG"ÊÖÌ«ÑôÂö\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/ÊÖÌ«ÑôÂö/chongxue_ok", me))?HIM"ÒÑ´òÍ¨":HIR"Î´´òÍ¨")+"\n"NOR;
-                msg+=HIG"×ãÌ«ÒõÂö\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/×ãÌ«ÒõÂö/chongxue_ok", me))?HIM"ÒÑ´òÍ¨":HIR"Î´´òÍ¨")+"\n"NOR;
-                msg+=HIG"×ãÌ«ÑôÂö\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/×ãÌ«ÑôÂö/chongxue_ok", me))?HIM"ÒÑ´òÍ¨":HIR"Î´´òÍ¨")+"\n"NOR;
-                msg+=HIG"ÊÖÉÙÒõÂö\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/ÊÖÉÙÒõÂö/chongxue_ok", me))?HIM"ÒÑ´òÍ¨":HIR"Î´´òÍ¨")+"\n"NOR;
-                msg+=HIG"ÊÖÉÙÑôÂö\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/ÊÖÉÙÑôÂö/chongxue_ok", me))?HIM"ÒÑ´òÍ¨":HIR"Î´´òÍ¨")+"\n"NOR;
-                msg+=HIG"×ãÉÙÒõÂö\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/×ãÉÙÒõÂö/chongxue_ok", me))?HIM"ÒÑ´òÍ¨":HIR"Î´´òÍ¨")+"\n"NOR;
-                msg+=HIG"×ãÉÙÑôÂö\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/×ãÉÙÑôÂö/chongxue_ok", me))?HIM"ÒÑ´òÍ¨":HIR"Î´´òÍ¨")+"\n"NOR;
-                msg+=HIG"ÊÖÑôÃ÷Âö\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/ÊÖÑôÃ÷Âö/chongxue_ok", me))?HIM"ÒÑ´òÍ¨":HIR"Î´´òÍ¨")+"\n"NOR;
-                msg+=HIG"×ãÑôÃ÷Âö\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/×ãÑôÃ÷Âö/chongxue_ok", me))?HIM"ÒÑ´òÍ¨":HIR"Î´´òÍ¨")+"\n"NOR;
-                msg+=HIG"ÊÖØÊÒõÂö\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/ÊÖØÊÒõÂö/chongxue_ok", me))?HIM"ÒÑ´òÍ¨":HIR"Î´´òÍ¨")+"\n"NOR;
-                msg+=HIG"×ãØÊÒõÂö\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/×ãØÊÒõÂö/chongxue_ok", me))?HIM"ÒÑ´òÍ¨":HIR"Î´´òÍ¨")+"\n"NOR;
-                msg += HIC "¡Ô" HIY "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤" HIC "¡Ô\n" NOR;
+                msg  = HIC "ç¶“è„ˆåæ²–ç©´ç‹€æ…‹\n" NOR;
+                msg += HIC "â‰¡" HIY "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€" HIC "â‰¡\n" NOR;
+                msg += HIC "\t\tå°å‘¨å¤©ç¶“è„ˆ\n" NOR;
+                msg += HIC "â‰¡" HIY "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€" HIC "â‰¡\n" NOR;
+                msg+=HIG"é™°è¹ºè„ˆ\t\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/é™°è¹ºè„ˆ/chongxue_ok", me))?HIM"å·²æ‰“é€š":HIR"æœªæ‰“é€š")+"\n"NOR;
+                msg+=HIG"é™½è¹ºè„ˆ\t\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/é™½è¹ºè„ˆ/chongxue_ok", me))?HIM"å·²æ‰“é€š":HIR"æœªæ‰“é€š")+"\n"NOR;
+                msg+=HIG"é™°ç¶­è„ˆ\t\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/é™°ç¶­è„ˆ/chongxue_ok", me))?HIM"å·²æ‰“é€š":HIR"æœªæ‰“é€š")+"\n"NOR;
+                msg+=HIG"é™½ç¶­è„ˆ\t\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/é™½ç¶­è„ˆ/chongxue_ok", me))?HIM"å·²æ‰“é€š":HIR"æœªæ‰“é€š")+"\n"NOR;
+                msg+=HIG"å¸¶è„ˆ\t\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/å¸¶è„ˆ/chongxue_ok", me))?HIM"å·²æ‰“é€š":HIR"æœªæ‰“é€š")+"\n"NOR;
+                msg+=HIG"æ²–è„ˆ\t\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/æ²–è„ˆ/chongxue_ok", me))?HIM"å·²æ‰“é€š":HIR"æœªæ‰“é€š")+"\n"NOR;
+                msg+=HIG"ä»»å¤–è„ˆ\t\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/ä»»å¤–è„ˆ/chongxue_ok", me))?HIM"å·²æ‰“é€š":HIR"æœªæ‰“é€š")+"\n"NOR;
+                msg+=HIG"ç£å¤–è„ˆ\t\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/ç£å¤–è„ˆ/chongxue_ok", me))?HIM"å·²æ‰“é€š":HIR"æœªæ‰“é€š")+"\n"NOR;
+                msg+=HIG"ç¶“å¤–å¥‡è„ˆ\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/ç¶“å¤–å¥‡è„ˆ/chongxue_ok", me))?HIM"å·²æ‰“é€š":HIR"æœªæ‰“é€š")+"\n"NOR;
+                msg += HIC "â‰¡" HIY "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€" HIC "â‰¡\n" NOR;
+                msg += HIY "\t\tå¤§å‘¨å¤©ç¶“è„ˆ\n" NOR;
+                msg += HIC "â‰¡" HIY "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€" HIC "â‰¡\n" NOR;
+                msg+=HIG"æ‰‹å¤ªé™°è„ˆ\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/æ‰‹å¤ªé™°è„ˆ/chongxue_ok", me))?HIM"å·²æ‰“é€š":HIR"æœªæ‰“é€š")+"\n"NOR;
+                msg+=HIG"æ‰‹å¤ªé™½è„ˆ\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/æ‰‹å¤ªé™½è„ˆ/chongxue_ok", me))?HIM"å·²æ‰“é€š":HIR"æœªæ‰“é€š")+"\n"NOR;
+                msg+=HIG"è¶³å¤ªé™°è„ˆ\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/è¶³å¤ªé™°è„ˆ/chongxue_ok", me))?HIM"å·²æ‰“é€š":HIR"æœªæ‰“é€š")+"\n"NOR;
+                msg+=HIG"è¶³å¤ªé™½è„ˆ\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/è¶³å¤ªé™½è„ˆ/chongxue_ok", me))?HIM"å·²æ‰“é€š":HIR"æœªæ‰“é€š")+"\n"NOR;
+                msg+=HIG"æ‰‹å°‘é™°è„ˆ\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/æ‰‹å°‘é™°è„ˆ/chongxue_ok", me))?HIM"å·²æ‰“é€š":HIR"æœªæ‰“é€š")+"\n"NOR;
+                msg+=HIG"æ‰‹å°‘é™½è„ˆ\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/æ‰‹å°‘é™½è„ˆ/chongxue_ok", me))?HIM"å·²æ‰“é€š":HIR"æœªæ‰“é€š")+"\n"NOR;
+                msg+=HIG"è¶³å°‘é™°è„ˆ\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/è¶³å°‘é™°è„ˆ/chongxue_ok", me))?HIM"å·²æ‰“é€š":HIR"æœªæ‰“é€š")+"\n"NOR;
+                msg+=HIG"è¶³å°‘é™½è„ˆ\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/è¶³å°‘é™½è„ˆ/chongxue_ok", me))?HIM"å·²æ‰“é€š":HIR"æœªæ‰“é€š")+"\n"NOR;
+                msg+=HIG"æ‰‹é™½æ˜è„ˆ\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/æ‰‹é™½æ˜è„ˆ/chongxue_ok", me))?HIM"å·²æ‰“é€š":HIR"æœªæ‰“é€š")+"\n"NOR;
+                msg+=HIG"è¶³é™½æ˜è„ˆ\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/è¶³é™½æ˜è„ˆ/chongxue_ok", me))?HIM"å·²æ‰“é€š":HIR"æœªæ‰“é€š")+"\n"NOR;
+                msg+=HIG"æ‰‹å¥é™°è„ˆ\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/æ‰‹å¥é™°è„ˆ/chongxue_ok", me))?HIM"å·²æ‰“é€š":HIR"æœªæ‰“é€š")+"\n"NOR;
+                msg+=HIG"è¶³å¥é™°è„ˆ\t\t\t\t"+((query("jingmai/finish", me) || query("jingmai/è¶³å¥é™°è„ˆ/chongxue_ok", me))?HIM"å·²æ‰“é€š":HIR"æœªæ‰“é€š")+"\n"NOR;
+                msg += HIC "â‰¡" HIY "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€" HIC "â‰¡\n" NOR;
                 write(msg);
                 help(me);
 
-                if( query("jingmai/finish", me) || query("jingmai/ÒõõÎÂö/chongxue_ok", me) )
+                if( query("jingmai/finish", me) || query("jingmai/é™°è¹ºè„ˆ/chongxue_ok", me) )
                         MYGIFT_D->check_mygift(me, "newbie_mygift/yinqiaomai");
 
                 return 1;
@@ -69,11 +69,11 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-²é¿´Ö¸¶¨¾­Âö³åÑ§Çé¿öÊ¹ÓÃÖ¸Áî jingmai <¾­ÂöÃû> ²éÑ¯¡£
-²é¿´Ğ¡ÖÜÌìÍ­ÈË±àºÅÊäÈë jingmai bh ²éÑ¯¡£
-²é¿´´óÖÜÌìÍ­ÈË±àºÅÊäÈë jingmai bh2 ²éÑ¯¡£
-²é¿´´óĞ¡ÖÜÌìÍ­ÈË±àºÅÊäÈë jingmai all ²éÑ¯¡£
-¸üÏêÏ¸µÄ²Î¿¼ÎÄ¼şÇëÍ¨¹ı°ïÖúÎÄ¼ş help zhoutian ²é¿´¡£
+æŸ¥çœ‹æŒ‡å®šç¶“è„ˆæ²–å­¸æƒ…æ³ä½¿ç”¨æŒ‡ä»¤ jingmai <ç¶“è„ˆå> æŸ¥è©¢ã€‚
+æŸ¥çœ‹å°å‘¨å¤©éŠ…äººç·¨è™Ÿè¼¸å…¥ jingmai bh æŸ¥è©¢ã€‚
+æŸ¥çœ‹å¤§å‘¨å¤©éŠ…äººç·¨è™Ÿè¼¸å…¥ jingmai bh2 æŸ¥è©¢ã€‚
+æŸ¥çœ‹å¤§å°å‘¨å¤©éŠ…äººç·¨è™Ÿè¼¸å…¥ jingmai all æŸ¥è©¢ã€‚
+æ›´è©³ç´°çš„åƒè€ƒæ–‡ä»¶è«‹é€šéå¹«åŠ©æ–‡ä»¶ help zhoutian æŸ¥çœ‹ã€‚
 
 HELP
 );

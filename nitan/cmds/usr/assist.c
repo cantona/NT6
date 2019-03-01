@@ -16,10 +16,10 @@ int main(object me, string arg)
         if (! arg)
         {
                 if( objectp(ob=query_temp("quest/assist", me)) )
-                        write("ÄãÏÖÔÚÕý°ïÖú" CYN + ob->name(1) +
-                              NOR "Íê³ÉÃÅÅÉµÄÈÎÎñ¡£\n");
+                        write("ä½ ç¾åœ¨æ­£å¹«åŠ©" CYN + ob->name(1) +
+                              NOR "å®Œæˆé–€æ´¾çš„ä»»å‹™ã€‚\n");
                 else
-                        write("ÄãÏÖÔÚ²¢Ã»ÓÐ°ïÖúÈÎºÎÈËÍê³ÉÃÅÅÉµÄÈÎÎñ¡£\n");
+                        write("ä½ ç¾åœ¨ä¸¦æ²’æœ‰å¹«åŠ©ä»»ä½•äººå®Œæˆé–€æ´¾çš„ä»»å‹™ã€‚\n");
                 return 1;
         }
 
@@ -27,30 +27,30 @@ int main(object me, string arg)
         {
                 if( objectp(ob=query_temp("pending/assist", me)) )
                 {
-                        write("Äã´òÏûÁË°ïÖú" + ob->name(1) + "µÄÄîÍ·¡£\n");
+                        write("ä½ æ‰“æ¶ˆäº†å¹«åŠ©" + ob->name(1) + "çš„å¿µé ­ã€‚\n");
                         delete_temp("pending/assist", me);
                         return 1;
                 }
 
                 if( !objectp(ob=query_temp("quest/assist", me)) )
                 {
-                        write("ÄãÏÖÔÚ²¢Ã»ÓÐÈ¥°ïÖú±ðÈË°¡£¡\n");
+                        write("ä½ ç¾åœ¨ä¸¦æ²’æœ‰åŽ»å¹«åŠ©åˆ¥äººå•Šï¼\n");
                         return 1;
                 }
 
                 if (environment(ob) == environment(me))
-                        message_vision("$N»ÓÁËÒ»»ÓÊÖ£¬¶Ô$nµÀ£º¡°ÎÒ»¹ÓÐ"
-                                       "ÊÂ£¬ÏÈ²»°ïÄãÁË£¬¸ÄÈÕÔÙ¼û£¡¡±\n",
+                        message_vision("$Næ®äº†ä¸€æ®æ‰‹ï¼Œå°$né“ï¼šâ€œæˆ‘é‚„æœ‰"
+                                       "äº‹ï¼Œå…ˆä¸å¹«ä½ äº†ï¼Œæ”¹æ—¥å†è¦‹ï¼â€\n",
                                        me, ob);
 
-                // ½â³ý°ïÖú×´Ì¬
+                // è§£é™¤å¹«åŠ©ç‹€æ…‹
                 delete_temp("quest/assist", me);
                 team = me->query_team();
                 if (arrayp(team) && team[0] == ob)
                 {
-                        // ÎÒÔÚ°ïÖú¶ÔÏóµÄ¶ÓÎéÖÐ£¬×Ô¶¯½â³ý
+                        // æˆ‘åœ¨å¹«åŠ©å°è±¡çš„éšŠä¼ä¸­ï¼Œè‡ªå‹•è§£é™¤
                         me->dismiss_team();
-                        message_vision("$NÀë¿ªÁË$nµÄ¶ÓÎé¡£\n",
+                        message_vision("$Né›¢é–‹äº†$nçš„éšŠä¼ã€‚\n",
                                        me, ob);
                 }
                 return 1;
@@ -58,60 +58,60 @@ int main(object me, string arg)
 
         if( objectp(ob=query_temp("quest/assist", me)) )
         {
-                write("ÄãÏÖÔÚ²»ÊÇÕý´òËã°ïÖú" + ob->name(1) +
-                      "Íê³ÉÈÎÎñÃ´£¿ÊÇ²»ÊÇÏëÈ¡Ïû(assist cancel)ÁË£¿\n");
+                write("ä½ ç¾åœ¨ä¸æ˜¯æ­£æ‰“ç®—å¹«åŠ©" + ob->name(1) +
+                      "å®Œæˆä»»å‹™éº¼ï¼Ÿæ˜¯ä¸æ˜¯æƒ³å–æ¶ˆ(assist cancel)äº†ï¼Ÿ\n");
                 return 1;
         }
 
-        // °ïÖúÄ³ÈËÍê³ÉÈÎÎñ
+        // å¹«åŠ©æŸäººå®Œæˆä»»å‹™
         ob = present(arg, environment(me));
         if (! objectp(ob))
         {
-                write("ÄãÏë°ïÖúË­£¿\n");
+                write("ä½ æƒ³å¹«åŠ©èª°ï¼Ÿ\n");
                 return 1;
         }
 
         if( !stringp(query("family/family_name", ob)) || 
             query("family/family_name", ob) != query("family/family_name", me) )
         {
-                write("ÄãºÍ" + ob->name() + "²¢²»ÊÇÍ¬Ò»¸öÃÅÅÉ"
-                      "µÄÑ½£¬¿´À´Õâ·ÝºÃÒâÖ»ÄÜÈÃ¶Ô·½ÐÄÁìÁË¡£\n");
+                write("ä½ å’Œ" + ob->name() + "ä¸¦ä¸æ˜¯åŒä¸€å€‹é–€æ´¾"
+                      "çš„å‘€ï¼Œçœ‹ä¾†é€™ä»½å¥½æ„åªèƒ½è®“å°æ–¹å¿ƒé ˜äº†ã€‚\n");
                 return 1;
         }
 
         if (! living(ob))
         {
-                write("¿´À´" + ob->name() + "ÏÖÔÚÃ»·¨½ÓÊÜÄãµÃºÃÒâÁË¡£\n");
+                write("çœ‹ä¾†" + ob->name() + "ç¾åœ¨æ²’æ³•æŽ¥å—ä½ å¾—å¥½æ„äº†ã€‚\n");
                 return 1;
         }
 
         if( ob == query_temp("pending/assist", me) )
         {
-                write("ÄãÏë°ïÖú" + ob->name(1) + "£¬¿ÉÊÇÈË¼Ò»¹Ã»ÓÐ´ðÓ¦ÄãÄØ¡£\n");
+                write("ä½ æƒ³å¹«åŠ©" + ob->name(1) + "ï¼Œå¯æ˜¯äººå®¶é‚„æ²’æœ‰ç­”æ‡‰ä½ å‘¢ã€‚\n");
                 return 1;
         }
 
         if( query("quest", me) )
         {
-                write("ÄãÏÖÔÚÕýÓÐÈÎÎñÔÚÉí£¬»¹ÊÇÏÈÃ¦Íê×Ô¼ºµÄ"
-                      "ÊÂÇéÔÙËµ°É£¡\n");
+                write("ä½ ç¾åœ¨æ­£æœ‰ä»»å‹™åœ¨èº«ï¼Œé‚„æ˜¯å…ˆå¿™å®Œè‡ªå·±çš„"
+                      "äº‹æƒ…å†èªªå§ï¼\n");
                 return 1;
         }
 
-        write("Äã¾ö¶¨¿ªÊ¼°ïÖú" + ob->name(1) + "Íê³ÉÈÎÎñ¡£\n");
-        message_vision("$N¶Ô$nµÀ£º¡°" + ob->name() +
-                       "£¬ÎÒºÍÄãÒ»ÆðÈ¥°É£¡¡±\n", me, ob);
+        write("ä½ æ±ºå®šé–‹å§‹å¹«åŠ©" + ob->name(1) + "å®Œæˆä»»å‹™ã€‚\n");
+        message_vision("$Nå°$né“ï¼šâ€œ" + ob->name() +
+                       "ï¼Œæˆ‘å’Œä½ ä¸€èµ·åŽ»å§ï¼â€\n", me, ob);
         set_temp("pending/assist", ob, me);
         if (! playerp(ob))
         {
-                message_vision("$n¶Ô$NËµ£º¡°ÎÒ»¹ÓÐ±ðµÄÊÂÇéÅ¶£¬"
-                               "²»ÓÃÄã°ïÃ¦À²£¡¡±\n", me, ob);
+                message_vision("$nå°$Nèªªï¼šâ€œæˆ‘é‚„æœ‰åˆ¥çš„äº‹æƒ…å“¦ï¼Œ"
+                               "ä¸ç”¨ä½ å¹«å¿™å•¦ï¼â€\n", me, ob);
                 return 1;
         }
 
-        tell_object(ob, YEL + me->name(1) + YEL "¾ö¶¨°ïÖúÄãÒ»"
-                    "Í¬Íê³ÉÈÎÎñ£¬ÄãÊÇ·ñÍ¬Òâ(right|refuse " +
-                    query("id", me)+")£¿\n"NOR);
+        tell_object(ob, YEL + me->name(1) + YEL "æ±ºå®šå¹«åŠ©ä½ ä¸€"
+                    "åŒå®Œæˆä»»å‹™ï¼Œä½ æ˜¯å¦åŒæ„(right|refuse " +
+                    query("id", me)+")ï¼Ÿ\n"NOR);
 
         ob->set_temp("pending/answer/"+query("id", me)+"/right",
                      bind((: call_other, __FILE__, "do_right", ob, me :), ob));
@@ -121,87 +121,87 @@ int main(object me, string arg)
         return 1;
 }
 
-// ÔÊÅµ¶Ô·½¼ÓÈë
+// å…è«¾å°æ–¹åŠ å…¥
 int do_right(object me, object ob)
 {
         object *ob_team;
 
         if( query_temp("pending/assist", ob) != me )
         {
-                // ¶Ô·½»¹Ã»ÓÐËµÔ¸ÒâÄã°ïÖúÄãÄØ
-                write(ob->name() + "ÏÖÔÚÃ»´òËã°ïÖúÄãÑ½£¬Äã»¹ÊÇÔÙÎÊÎÊ°É£¡\n");
+                // å°æ–¹é‚„æ²’æœ‰èªªé¡˜æ„ä½ å¹«åŠ©ä½ å‘¢
+                write(ob->name() + "ç¾åœ¨æ²’æ‰“ç®—å¹«åŠ©ä½ å‘€ï¼Œä½ é‚„æ˜¯å†å•å•å§ï¼\n");
                 return 1;
         }
 
         delete_temp("pending/assist", ob);
 
-        // ¶Ô·½Ô¸ÒâÄã°ïÖúÄã
-        message_vision("$NË¬¿ìµÄ¶Ô$nËµ£º¡°ºÃ°É£¡¶àÐ»ÁË£¡¡±\n",
+        // å°æ–¹é¡˜æ„ä½ å¹«åŠ©ä½ 
+        message_vision("$Nçˆ½å¿«çš„å°$nèªªï¼šâ€œå¥½å§ï¼å¤šè¬äº†ï¼â€\n",
                        me, ob);
-        tell_object(ob, me->name(1) + "Ô¸Òâ½ÓÊÜÄãµÄ°ïÖú¡£\n");
+        tell_object(ob, me->name(1) + "é¡˜æ„æŽ¥å—ä½ çš„å¹«åŠ©ã€‚\n");
         set_temp("quest/assist", me, ob);
 
         if (! pointerp(me->query_team()) || me->is_team_leader())
         {
                 if (sizeof(me->query_team()) >= 12)
                 {
-                        write("ÄãÕâ¸ö¶ÓÎéÖÐµÄÈËÌ«¶àÁË£¬Ã»·¨ÑûÇë" +
-                              ob->name(1) + "¼ÓÈë£¬ÕâÑùÈÃËû°ïÖú"
-                              "¾Í²»·½±ãÁË¡£\n");
+                        write("ä½ é€™å€‹éšŠä¼ä¸­çš„äººå¤ªå¤šäº†ï¼Œæ²’æ³•é‚€è«‹" +
+                              ob->name(1) + "åŠ å…¥ï¼Œé€™æ¨£è®“ä»–å¹«åŠ©"
+                              "å°±ä¸æ–¹ä¾¿äº†ã€‚\n");
                         return 1;
                 }
 
-                // ÎÒ²»ÔÚ¶ÓÎéÖÐ»òÊÇÎÒ¾ÍÊÇ¶ÓÎéµÄÁìÐä£¬ÔòÈÃ°ïÊÖ¼ÓÈë¶ÓÎé
+                // æˆ‘ä¸åœ¨éšŠä¼ä¸­æˆ–æ˜¯æˆ‘å°±æ˜¯éšŠä¼çš„é ˜è¢–ï¼Œå‰‡è®“å¹«æ‰‹åŠ å…¥éšŠä¼
                 if (pointerp(ob_team = ob->query_team()))
                 {
-                        // °ïÊÖÒ²ÔÚÒ»¸ö¶ÓÎéÖÐ£¬¿´¿´ÊÇÄÄ¸ö¶ÓÎé
+                        // å¹«æ‰‹ä¹Ÿåœ¨ä¸€å€‹éšŠä¼ä¸­ï¼Œçœ‹çœ‹æ˜¯å“ªå€‹éšŠä¼
                         if (ob_team[0] == me)
-                                // °ïÊÖÒÑ¾­ÔÚÎÒµÄ¶ÓÎéÖÐÁË
+                                // å¹«æ‰‹å·²ç¶“åœ¨æˆ‘çš„éšŠä¼ä¸­äº†
                                 return 1;
 
-                        // °ïÊÖÔÚÆäËü¶ÓÎéÖÐ£¬ÏÈÍË³öÀ´
+                        // å¹«æ‰‹åœ¨å…¶å®ƒéšŠä¼ä¸­ï¼Œå…ˆé€€å‡ºä¾†
                         ob->dismiss_team();
                 }
 
-                // °ïÊÖ¼ÓÈëÎÒµÄ¶ÓÎé
+                // å¹«æ‰‹åŠ å…¥æˆ‘çš„éšŠä¼
                 me->add_team_member(ob);
-                message_vision("$n¼ÓÈëÁË$NµÄ¶ÓÎé£¬Ò»Í¬ÐÐ×ß½­ºþ¡£\n",
+                message_vision("$nåŠ å…¥äº†$Nçš„éšŠä¼ï¼Œä¸€åŒè¡Œèµ°æ±Ÿæ¹–ã€‚\n",
                                me, ob);
         } else
-                tell_object(me, "ÈÃ" + ob->name() + "°ïÖúÄã×î"
-                            "ºÃÊÇºÍÄãÔÚÒ»¸ö¶ÓÎéÖÐ£¬Èç¹û¿ÉÒÔµÄ"
-                            "»°£¬¾ÍÑûÇë¶Ô·½×é¶Ó°É£¡\n");
+                tell_object(me, "è®“" + ob->name() + "å¹«åŠ©ä½ æœ€"
+                            "å¥½æ˜¯å’Œä½ åœ¨ä¸€å€‹éšŠä¼ä¸­ï¼Œå¦‚æžœå¯ä»¥çš„"
+                            "è©±ï¼Œå°±é‚€è«‹å°æ–¹çµ„éšŠå§ï¼\n");
 
         return 1;
 }
 
-// ¾Ü¾ø¶Ô·½¼ÓÈë
+// æ‹’çµ•å°æ–¹åŠ å…¥
 int do_refuse(object me, object ob)
 {
         object *ob_team;
 
         if( query_temp("pending/assist", ob) != me )
         {
-                // ¶Ô·½»¹Ã»ÓÐËµÔ¸ÒâÄã°ïÖúÄãÄØ£¬Äã¸ÉÊ²Ã´ÄØ£¿
-                write(ob->name() + "ÏÖÔÚÃ»´òËã°ïÖúÄãÑ½£¬Äã¾Ü¾øÊ²Ã´£¿\n");
+                // å°æ–¹é‚„æ²’æœ‰èªªé¡˜æ„ä½ å¹«åŠ©ä½ å‘¢ï¼Œä½ å¹¹ä»€éº¼å‘¢ï¼Ÿ
+                write(ob->name() + "ç¾åœ¨æ²’æ‰“ç®—å¹«åŠ©ä½ å‘€ï¼Œä½ æ‹’çµ•ä»€éº¼ï¼Ÿ\n");
                 return 1;
         }
 
         delete_temp("pending/assist", ob);
-        message_vision("$NÒ¡Ò¡Í·£¬¶ÔµÀ£º¡°ÄãµÄºÃÒâÎÒÐÄÁìÁË£¬"
-                       "²»¹ýÏÖÔÚ»¹²»ÐèÒªÀÍ¶¯´ó¼Ý¡£¡±\n", me, ob);
+        message_vision("$Næ–æ–é ­ï¼Œå°é“ï¼šâ€œä½ çš„å¥½æ„æˆ‘å¿ƒé ˜äº†ï¼Œ"
+                       "ä¸éŽç¾åœ¨é‚„ä¸éœ€è¦å‹žå‹•å¤§é§•ã€‚â€\n", me, ob);
         return 1;
 }
 
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : assist <Íæ¼ÒID>
+æŒ‡ä»¤æ ¼å¼ : assist <çŽ©å®¶ID>
 
-Õâ¸öÖ¸Áî±íÊ¾ÄãÏë°ïÖúÁíÒ»¸öÈËÒ»Í¬Íê³ÉÕÆÃÅ»òÊÇÊÀ¼Ò³¤ÀÏ·ÖÅä¸øËû
-µÄÉ±ÈËÈÎÎñ¡£µ±È»Äã±ØÐëºÍËûÊÇÍ¬ÃÅ£¬¶øÇÒÄãµ±Ê±Ã»ÓÐÈÎÎñ¡£Èç¹û¶Ô
-·½Í¬Òâ½ÓÊÜÄãµÄ°ïÖú£¬ÄÇÃ´Äã»á×Ô¶¯¼ÓÈëµ½¶Ô·½µÄ¶ÓÎéÖÐ£¨³ý·Ç¶Ô·½
-ÔÚÁíÍâÒ»¸ö¶ÓÎéÖÐ²¢ÇÒ²»ÊÇ¶Ó³¤£©¡£
+é€™å€‹æŒ‡ä»¤è¡¨ç¤ºä½ æƒ³å¹«åŠ©å¦ä¸€å€‹äººä¸€åŒå®ŒæˆæŽŒé–€æˆ–æ˜¯ä¸–å®¶é•·è€åˆ†é…çµ¦ä»–
+çš„æ®ºäººä»»å‹™ã€‚ç•¶ç„¶ä½ å¿…é ˆå’Œä»–æ˜¯åŒé–€ï¼Œè€Œä¸”ä½ ç•¶æ™‚æ²’æœ‰ä»»å‹™ã€‚å¦‚æžœå°
+æ–¹åŒæ„æŽ¥å—ä½ çš„å¹«åŠ©ï¼Œé‚£éº¼ä½ æœƒè‡ªå‹•åŠ å…¥åˆ°å°æ–¹çš„éšŠä¼ä¸­ï¼ˆé™¤éžå°æ–¹
+åœ¨å¦å¤–ä¸€å€‹éšŠä¼ä¸­ä¸¦ä¸”ä¸æ˜¯éšŠé•·ï¼‰ã€‚
 HELP );
         return 1;
 }

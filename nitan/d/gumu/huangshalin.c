@@ -8,11 +8,11 @@ int do_move(string arg);
 
 void create()
 {
-        set("short", "��ɳ��");
+        set("short", "黃沙嶺");
         set("long", @LONG
-�˴�λ�����ɽ������ֻ��Զ������ԭ�ϣ�������һ���ɻ�ɳ�ѻ�
-���ɵ�ɽ�룬����Ϊ���ء��ݵ�����˵���������̳���һλ����½����
-���ˣ��÷���ǲ��һ�ɻ�ɳ���ɡ�������һƬ���֡�
+此處位於終南山西部。只見遠處王曲原上，孤立著一座由荒沙堆積
+而成的山嶺，波紋為奇特。據當地人說，這是在商朝，一位名叫陸亞仙
+的人，用法力遣來一股黃沙而成。往東是一片密林。
 LONG        );
         set("outdoors", "gumu");
         set("exits", ([

@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ǰԺ");
+        set("short", "前院");
         set("long", @LONG
-һ���۳ɻ�ɫ��ΧǽȦ�����Ժ�ӣ�һ����ʯ��ͨ���������
-������������µĴ��ţ�����һ����¥�ǹ�¥����������¥��
+一帶粉成黃色的圍牆圈起這個院子，一條青石道通向北面的天王
+殿，南面就是相國寺的大門，東邊一座高樓是鼓樓，西面是鐘樓。
 LONG );
         set("no_clean_up", 0);
         set("exits", ([

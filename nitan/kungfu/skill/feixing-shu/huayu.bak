@@ -16,30 +16,30 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail("ÂúÌì»¨ÓêÖ»ÄÜÔÚÕ½¶·ÖÐ¶Ô¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("æ»¿å¤©èŠ±é›¨åªèƒ½åœ¨æˆ°é¬¥ä¸­å°å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon=query_temp("handing", me)) || 
             query("skill_type", weapon) != "throwing" )
-                return notify_fail("ÄãÏÖÔÚÊÖÖÐ²¢Ã»ÓÐÄÃ×Å°µÆ÷¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ‰‹ä¸­ä¸¦æ²’æœ‰æ‹¿è‘—æš—å™¨ã€‚\n");
 
         if (weapon->query_amount() < 10)
-                return notify_fail("ÖÁÉÙÒªÓÐÊ®Ã¶°µÆ÷Äã²ÅÄÜÊ©Õ¹ÂúÌì»¨Óê¡£\n");
+                return notify_fail("è‡³å°‘è¦æœ‰åæžšæš—å™¨ä½ æ‰èƒ½æ–½å±•æ»¿å¤©èŠ±é›¨ã€‚\n");
 
         if ((skill = me->query_skill("feixing-shu", 1)) < 100)
-                return notify_fail("ÄãµÄ·ÉÐÇÊõ²»¹»æµÊì£¬²»»áÊ¹ÓÃÂúÌì»¨Óê¡£\n");
+                return notify_fail("ä½ çš„é£›æ˜Ÿè¡“ä¸å¤ å«»ç†Ÿï¼Œä¸æœƒä½¿ç”¨æ»¿å¤©èŠ±é›¨ã€‚\n");
 
         if ((int)me->query_skill("force") < 150)
-                return notify_fail("ÄãµÄÄÚ¹¦»ðºò²»¹»£¬²»ÄÜÊ¹ÓÃÂúÌì»¨Óê¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸç«å€™ä¸å¤ ï¼Œä¸èƒ½ä½¿ç”¨æ»¿å¤©èŠ±é›¨ã€‚\n");
 
         if( query("neili", me)<150 )
-                return notify_fail("ÄãÄÚÁ¦²»¹»ÁË¡£\n");
+                return notify_fail("ä½ å…§åŠ›ä¸å¤ äº†ã€‚\n");
 
         addn("neili", -100, me);
         weapon->add_amount(-10);
 
-        msg= HIG "Ö»ÌýÒ»¹É¾¢·ç´Ó$N" HIG "µÄÓÒ²à·¢³ö£¬$N" HIG
-             "ÊÖÖÐµÄ" + weapon->name() + HIG "ÈçÑÌÓê°ãÏò$n"
-             HIG "ÁýÕÖ¹ýÈ¥£¡\n";
+        msg= HIG "åªè½ä¸€è‚¡å‹é¢¨å¾ž$N" HIG "çš„å³å´ç™¼å‡ºï¼Œ$N" HIG
+             "æ‰‹ä¸­çš„" + weapon->name() + HIG "å¦‚ç…™é›¨èˆ¬å‘$n"
+             HIG "ç± ç½©éŽåŽ»ï¼\n";
 
         me->start_busy(2);
         my_exp=query("combat_exp", me)/100+skill*skill/1000*skill;
@@ -52,9 +52,9 @@ int perform(object me, object target)
                 if (random(my_exp) > ob_exp) n += 1 + random(2);
                 if (random(my_exp / 2) > ob_exp) n += 1 + random(2);
                 if (random(my_exp / 4) > ob_exp) n += 1 + random(2);
-                msg += "½á¹û$p" HIG "·´Ó¦²»¼°£¬ÖÐÁË$P" HIG +
+                msg += "çµæžœ$p" HIG "åæ‡‰ä¸åŠï¼Œä¸­äº†$P" HIG +
                        chinese_number(n)+query("base_unit", weapon)+
-                       weapon->name() + HIG "£¡\n" NOR;
+                       weapon->name() + HIG "ï¼\n" NOR;
                 target->receive_wound("qi", skill / 3 + random(skill / 3), me);
                 while (n--)
                 {
@@ -67,8 +67,8 @@ int perform(object me, object target)
                 message_combatd(msg, me, target);
         } else
         {
-                msg += "¿ÉÊÇ$p" HIG "¶ã¹ýÁË$P" HIG "·¢³öµÄËùÓÐ" +
-                       weapon->name() + HIG "¡£\n" NOR;
+                msg += "å¯æ˜¯$p" HIG "èº²éŽäº†$P" HIG "ç™¼å‡ºçš„æ‰€æœ‰" +
+                       weapon->name() + HIG "ã€‚\n" NOR;
                 message_combatd(msg, me, target);
         }
 

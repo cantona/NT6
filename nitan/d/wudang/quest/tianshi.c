@@ -1,4 +1,4 @@
-// tianshi.c ÀîÌìÊ¦
+// tianshi.c æå¤©å¸«
 // Modified by haiyan
 
 #include <ansi.h>
@@ -10,10 +10,10 @@ int accept_object(object me, object ob);
 
 void create()
 {
-        set_name("ÀîÌìÊ¦", ({ "li tianshi", "li", "tianshi" }));
-        set("long", "ÕâÊÇÒ»Î»ÏÉ·çµÀ¹ÇµÄ·¨Ê¦£¬ÉíÉÏµÄµÀÅÛÉÏ»­×ÅÒ»Ğ©ÇıÄ§·ûºÅ¡£\n");
-        set("nickname", HIY"ÕòÑıÕæÈË"NOR);
-        set("gender", "ÄĞĞÔ");
+        set_name("æå¤©å¸«", ({ "li tianshi", "li", "tianshi" }));
+        set("long", "é€™æ˜¯ä¸€ä½ä»™é¢¨é“éª¨çš„æ³•å¸«ï¼Œèº«ä¸Šçš„é“è¢ä¸Šç•«è‘—ä¸€äº›é©…é­”ç¬¦è™Ÿã€‚\n");
+        set("nickname", HIY"é®å¦–çœŸäºº"NOR);
+        set("gender", "ç”·æ€§");
         set("age", 30);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -49,10 +49,10 @@ void create()
 
         set("inquiry", ([
                 "job"   : (: ask_ghost :),
-                "×½¹í"  : (: ask_ghost :),
-                "Ê§°Ü"  : (: ask_fail :),
+                "æ‰é¬¼"  : (: ask_ghost :),
+                "å¤±æ•—"  : (: ask_fail :),
                 "fail"  : (: ask_fail :),
-                "ÌÒÄ¾½£": "ÌÒÄ¾½£ÊÇ×½¹íµÄ±Ø±¸Ö®Îï£¬×Ô¼ºÈ¥×öÒ»°ÑºÃÁË¡£",
+                "æ¡ƒæœ¨åŠ": "æ¡ƒæœ¨åŠæ˜¯æ‰é¬¼çš„å¿…å‚™ä¹‹ç‰©ï¼Œè‡ªå·±å»åšä¸€æŠŠå¥½äº†ã€‚",
         ]));
 
         setup();
@@ -70,23 +70,23 @@ mixed ask_ghost()
       int dam;
       me = this_player();
 
-      if( query("family/family_name", me) != "Îäµ±ÅÉ" && 
-          query("family/family_name", me) != "È«Õæ½Ì" )
-           return "ÕâÎ»" + RANK_D->query_respect(me) + "Ò²ÓĞ×½¹íµÄ±¾ÊÂÂğ£¿";
+      if( query("family/family_name", me) != "æ­¦ç•¶æ´¾" && 
+          query("family/family_name", me) != "å…¨çœŸæ•™" )
+           return "é€™ä½" + RANK_D->query_respect(me) + "ä¹Ÿæœ‰æ‰é¬¼çš„æœ¬äº‹å—ï¼Ÿ";
 
       if (me->query_skill("taoism", 1) < 50)
-           return "»¹ÊÇËãÁË°É£¡ÄãÕâµãµÀĞĞÖ»ÅÂ¸ø¹í×½ÁË¡£";
+           return "é‚„æ˜¯ç®—äº†å§ï¼ä½ é€™é»é“è¡Œåªæ€•çµ¦é¬¼æ‰äº†ã€‚";
 
       if( query("combat_exp", me)>400000 )
-           return "ÄãÉíÊÖÄÇÃ´¸ß£¬ÕâÖÖĞ¡ÊÂÔõÃ´¸ÒÀÍÄã¶¯ÊÖ£¡";
+           return "ä½ èº«æ‰‹é‚£éº¼é«˜ï¼Œé€™ç¨®å°äº‹æ€éº¼æ•¢å‹ä½ å‹•æ‰‹ï¼";
 
       if( query_temp("gui/shougui", me) )
-           return "¸Õ²Å²»ÊÇÈÃÄãÈ¥×½¹íÁËÂï£¿ÔõÃ´ÓÖ»ØÀ´ÁË£¿";
+           return "å‰›æ‰ä¸æ˜¯è®“ä½ å»æ‰é¬¼äº†å˜›ï¼Ÿæ€éº¼åˆå›ä¾†äº†ï¼Ÿ";
 
       kp = keys(dirs);
       p = kp[random(sizeof(kp))];
       room = dirs[p][random(sizeof(dirs[p]))];
-      if( wizardp(me) )  tell_object(me,sprintf("<¹í³öÏÖÔÚ %s µØµã>\n",room));
+      if( wizardp(me) )  tell_object(me,sprintf("<é¬¼å‡ºç¾åœ¨ %s åœ°é»>\n",room));
 
       dam = me->query_skill("taoism", 1) + random(10) - random(10);
       ghost = new(gui[random(sizeof(gui))] );
@@ -96,17 +96,17 @@ mixed ask_ghost()
       set_temp("damage", dam*2/5, ghost);
       ghost->set_skill("claw", dam);
 
-      tell_object(me, this_object()->name() + "¶ÔÄãµÀ£º¾İËµ×î½ü" +
-                  p + "³£ÓĞ" + ghost->name() + "³öÃ»£¬¸½½ü¾ÓÃñ"
-                  "ÉîÊÜÆäº¦¡£ÄãÈ¥°ÑËüÊÕÁË°É¡£\n");
-      message("vision", this_object()->name() + "ÔÚ" + me->name() + "¶ú±ß·Ô¸À×ÅÊ²Ã´£¬" +
-              me->name() + "Ò»±ßÌı£¬Ò»±ß²»×¡µØµãÍ·¡£\n", environment(me), me);
+      tell_object(me, this_object()->name() + "å°ä½ é“ï¼šæ“šèªªæœ€è¿‘" +
+                  p + "å¸¸æœ‰" + ghost->name() + "å‡ºæ²’ï¼Œé™„è¿‘å±…æ°‘"
+                  "æ·±å—å…¶å®³ã€‚ä½ å»æŠŠå®ƒæ”¶äº†å§ã€‚\n");
+      message("vision", this_object()->name() + "åœ¨" + me->name() + "è€³é‚Šå©å’è‘—ä»€éº¼ï¼Œ" +
+              me->name() + "ä¸€é‚Šè½ï¼Œä¸€é‚Šä¸ä½åœ°é»é ­ã€‚\n", environment(me), me);
       ob = new("/d/wudang/quest/obj/fuzhi");
       ob->move(this_object());
       command("givefuzhito"+query("id", me));
-      tell_object(me, this_object()->name() + "¼ÌĞøµÀ£º" + ob->name() +
-                  "¿ÉÒÔÈÃ¹í»êÏÖÉí£¬¿É±ğÅª¶ªÁË¡£\n");
-      message_vision("$n¶Ô$NËµµÀ£º¿ì¶¯Éí°É£¬¶à¼ÓĞ¡ĞÄ¡£\n", me, this_object());
+      tell_object(me, this_object()->name() + "ç¹¼çºŒé“ï¼š" + ob->name() +
+                  "å¯ä»¥è®“é¬¼é­‚ç¾èº«ï¼Œå¯åˆ¥å¼„ä¸Ÿäº†ã€‚\n");
+      message_vision("$nå°$Nèªªé“ï¼šå¿«å‹•èº«å§ï¼Œå¤šåŠ å°å¿ƒã€‚\n", me, this_object());
       set_temp("gui/shougui", 1, me);
       return 1;
 }
@@ -116,7 +116,7 @@ string ask_fail()
       object me = this_player();
 
       if( !query_temp("gui/shougui", me) )
-           return "ÎÒÃ»ÓĞ¸øÄãÊ²Ã´ÈÎÎñ°¡£¿";
+           return "æˆ‘æ²’æœ‰çµ¦ä½ ä»€éº¼ä»»å‹™å•Šï¼Ÿ";
 
       if (present("fu zhi", me))
           destruct(present("fu zhi", me));
@@ -125,8 +125,8 @@ string ask_fail()
       command("sigh"+query("id", me));
       addn("weiwang", -random(20), me);
       if( query("weiwang", me)<0)set("weiwang", 0, me);
-      tell_object(me, HIR"ÄãµÄ½­ºşÍşÍû½µµÍÁË£¡\n"NOR);
-      return "Äã²»ÄÜ¸É£¬ÎÒÖ»ºÃÇë±ğÈËÈ¥ÁË£¡";
+      tell_object(me, HIR"ä½ çš„æ±Ÿæ¹–å¨æœ›é™ä½äº†ï¼\n"NOR);
+      return "ä½ ä¸èƒ½å¹¹ï¼Œæˆ‘åªå¥½è«‹åˆ¥äººå»äº†ï¼";
 }
 
 
@@ -135,16 +135,16 @@ int accept_object(object me, object ob)
     int base, exp, pot;
     if( !me || environment(me) != environment() ) return 0;
     if ( !objectp(ob) ) return 0;
-    if ( !present(ob, me) ) return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷¡£");
+    if ( !present(ob, me) ) return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™æ¨£æ±è¥¿ã€‚");
     if( query("id", ob) == "fuzhi" )
     {
          if( !query_temp("gui/finish", me) )
          {
              command("sneer"+query("id", me));
-             command("say ÏëÃÉÆ­±¾ÌìÊ¦Âğ£¿");
+             command("say æƒ³è’™é¨™æœ¬å¤©å¸«å—ï¼Ÿ");
              addn("weiwang", -random(50), me);
              if( query("weiwang", me)<0)set("weiwang", 0, me);
-             tell_object(me, HIR"ÄãµÄÍşÍû½µµÍÁË£¡\n"NOR);
+             tell_object(me, HIR"ä½ çš„å¨æœ›é™ä½äº†ï¼\n"NOR);
              return 1;
          }
 
@@ -152,10 +152,10 @@ int accept_object(object me, object ob)
          exp = base + random(base/2);
          pot = exp/3 + random(exp/3);
          if( query("potential", me) >= me->query_potential_limit())pot=1;
-         message_vision("$n¶Ô$NµãÁËµãÍ·£º²»´í£¬²»´í¡£\n", me, this_object());
-         tell_object(me, HIG "Í¨¹ıÕâ´ÎìÑÁ¶£¬Äã»ñµÃÁË" + chinese_number(exp) +
-                     "µã¾­ÑéºÍ" + chinese_number(pot) + "µãÇ±ÄÜ¡£\n" NOR);
-         tell_object(me, HIC"Äã¶ÔµÀÑ§ĞÄ·¨ÓĞÁËĞÂµÄÁìÎò£¡\n"NOR);
+         message_vision("$nå°$Né»äº†é»é ­ï¼šä¸éŒ¯ï¼Œä¸éŒ¯ã€‚\n", me, this_object());
+         tell_object(me, HIG "é€šéé€™æ¬¡â–¡ç…‰ï¼Œä½ ç²å¾—äº†" + chinese_number(exp) +
+                     "é»ç¶“é©—å’Œ" + chinese_number(pot) + "é»æ½›èƒ½ã€‚\n" NOR);
+         tell_object(me, HIC"ä½ å°é“å­¸å¿ƒæ³•æœ‰äº†æ–°çš„é ˜æ‚Ÿï¼\n"NOR);
          me->improve_skill("taoism", me->query_int()*2);
          addn("combat_exp", exp, me);
          addn("shen", exp/2+random(exp/2), me);
@@ -168,7 +168,7 @@ int accept_object(object me, object ob)
     }
     else
     {
-        command("say Äã¸øÎÒÕâÖÖ¶«Î÷¸ÉÊ²Ã´£¿");
+        command("say ä½ çµ¦æˆ‘é€™ç¨®æ±è¥¿å¹¹ä»€éº¼ï¼Ÿ");
         return 0;
     }
 }

@@ -4,11 +4,11 @@ mixed ask_for_zhou();
 
 void create()
 {
-        set_name("ËÎÇàÊé", ({ "song qingshu", "song" }));
+        set_name("å®‹é’æ›¸", ({ "song qingshu", "song" }));
         set("long",
-                "Ëû¾ÍÊÇËÎÔ¶ÇÅµÄ¶ù×ÓËÎÇàÊé¡£\n"
-                "Ëû½ñÄê¶şÊ®Ëê£¬ÄËÊÇÎäµ±µÚÈı´úÖĞ³öÀà°ÎİÍµÄÈËÎï¡£\n");
-        set("gender", "ÄĞĞÔ");
+                "ä»–å°±æ˜¯å®‹é æ©‹çš„å…’å­å®‹é’æ›¸ã€‚\n"
+                "ä»–ä»Šå¹´äºŒåæ­²ï¼Œä¹ƒæ˜¯æ­¦ç•¶ç¬¬ä¸‰ä»£ä¸­å‡ºé¡æ‹”èƒçš„äººç‰©ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 20);
         set("attitude", "aggressive");
         set("shen_type", -1);
@@ -29,7 +29,7 @@ void create()
         set("combat_exp", 1800000);
 
         set("inquiry",([
-                "ÖÜÜÆÈô"  : (: ask_for_zhou :),
+                "å‘¨èŠ·è‹¥"  : (: ask_for_zhou :),
         ]));
 
         set_skill("force", 200);
@@ -68,7 +68,7 @@ void create()
         prepare_skill("strike", "cuixin-zhang");
         prepare_skill("claw", "jiuyin-baiguzhao");
 
-        create_family("Îäµ±ÅÉ", 3, "µÜ×Ó");
+        create_family("æ­¦ç•¶æ´¾", 3, "å¼Ÿå­");
 
         set("chat_chance_combat", 120);
         set("chat_msg_combat", ({
@@ -90,7 +90,7 @@ mixed ask_for_zhou()
         object ob;
         ob = this_player();
         command("heng");
-        command("say"+query("name", ob)+"ÄãÊÇÊ²Ã´¶«Î÷£¿¸ÒÖ±ºôÜÆÈôµÄÃû×Ö£¿\n");
+        command("say"+query("name", ob)+"ä½ æ˜¯ä»€éº¼æ±è¥¿ï¼Ÿæ•¢ç›´å‘¼èŠ·è‹¥çš„åå­—ï¼Ÿ\n");
         kill_ob(this_player());
         return -1;
 }

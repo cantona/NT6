@@ -1,4 +1,4 @@
-// taiyaren.c Ì©ÑÅ×åÄĞ×Ó
+// taiyaren.c æ³°é›…æ—ç”·å­
 // Last Modifyed by Ahda on Jan. 4 2002
 
 inherit NPC;
@@ -8,8 +8,8 @@ void create()
         int age;
         age = 20 + random(40);
         
-        set_name("Ì©ÑÅ×åÄĞ×Ó", ({ "taiya man", "taiya", "man", "ren", }));
-        set("gender", "ÄĞĞÔ");
+        set_name("æ³°é›…æ—ç”·å­", ({ "taiya man", "taiya", "man", "ren", }));
+        set("gender", "ç”·æ€§");
         set("age", age);
 
         set_skill("unarmed", 20);

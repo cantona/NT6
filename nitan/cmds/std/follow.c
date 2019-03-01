@@ -9,7 +9,7 @@ int main(object me, string arg)
         if (me->is_chatter())
                 return 0;
 
-        if( !arg ) return notify_fail("Ö¸Áî¸ñÊ½£ºfollow <Ä³ÈË>|none¡£\n");
+        if( !arg ) return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šfollow <æŸäºº>|noneã€‚\n");
 
         if( arg=="none")
                 if( me->query_leader() ) {
@@ -17,24 +17,24 @@ int main(object me, string arg)
                         write("Ok.\n");
                         return 1;
                 } else {
-                        write("ÄãÏÖÔÚ²¢Ã»ÓĞ¸úËæÈÎºÎÈË¡£\n");
+                        write("ä½ ç¾åœ¨ä¸¦æ²’æœ‰è·Ÿéš¨ä»»ä½•äººã€‚\n");
                         return 1;
                 }
 
         if( query_temp("is_riding_follow", me) )
-                return notify_fail("Äã»¹ÊÇÏÈ´Ó×øÆïÉÏÏÂÀ´ºóÔÚ¸úËæ±ğÈË°É¡£ \n");
+                return notify_fail("ä½ é‚„æ˜¯å…ˆå¾åé¨ä¸Šä¸‹ä¾†å¾Œåœ¨è·Ÿéš¨åˆ¥äººå§ã€‚ \n");
 
         if( !objectp(ob = present(arg, environment(me))) )
-                return notify_fail("ÕâÀïÃ»ÓĞ " + arg + "¡£\n");
+                return notify_fail("é€™è£¡æ²’æœ‰ " + arg + "ã€‚\n");
 
         if( !ob->is_character() )
-                return notify_fail("Ê²Ã´£¿¸úËæ...." + ob->name() + "¡£\n");
+                return notify_fail("ä»€éº¼ï¼Ÿè·Ÿéš¨...." + ob->name() + "ã€‚\n");
 
         if( ob==me )
-                return notify_fail("¸úËæ×Ô¼º£¿\n");
+                return notify_fail("è·Ÿéš¨è‡ªå·±ï¼Ÿ\n");
 
         me->set_leader(ob);
-        message_vision("$N¾ö¶¨¿ªÊ¼¸úËæ$nÒ»ÆğĞĞ¶¯¡£\n", me, ob);
+        message_vision("$Næ±ºå®šé–‹å§‹è·Ÿéš¨$nä¸€èµ·è¡Œå‹•ã€‚\n", me, ob);
 
         return 1;
 }
@@ -42,10 +42,10 @@ int main(object me, string arg)
 int help (object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : follow [<ÉúÎï>|none]
+æŒ‡ä»¤æ ¼å¼ : follow [<ç”Ÿç‰©>|none]
  
-Õâ¸öÖ¸ÁîÈÃÄãÄÜ¸úËæÄ³ÈË»òÉúÎï¡£
-Èç¹ûÊäÈë follow none ÔòÍ£Ö¹¸úËæ¡£
+é€™å€‹æŒ‡ä»¤è®“ä½ èƒ½è·Ÿéš¨æŸäººæˆ–ç”Ÿç‰©ã€‚
+å¦‚æœè¼¸å…¥ follow none å‰‡åœæ­¢è·Ÿéš¨ã€‚
  
 HELP
 );

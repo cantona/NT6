@@ -7,13 +7,13 @@ int ask_riddle();
 
 void create()
 {
-        set_name("Â½ÀöÏÉ", ({ "lu lixian", "lu", "lixian" }) );
-        set("gender", "Å®ĞÔ" );
-        set("title", MAG"¸è¼§"NOR );
-        set("nickname", YEL"½ğ¶§´ıÏµÉú"NOR);
+        set_name("é™¸éº—ä»™", ({ "lu lixian", "lu", "lixian" }) );
+        set("gender", "å¥³æ€§" );
+        set("title", MAG"æ­Œå§¬"NOR );
+        set("nickname", YEL"é‡‘éŒ å¾…ç³»ç”Ÿ"NOR);
         set("age", 18);
         set("long", 
-"ºìĞß´äÇÓ£¬½¿Ãæº¬´º£¬Éí´©Ê±»¨Ğå°À£¬µÍÊøÂŞÈ¹£¬Ã²ÈçÏÉ×Ó£¬ÑüËÆĞ¡Âù£¬ÏË²»Ó¯ÎÕ¡£\n");
+"ç´…ç¾ç¿ æ€¯ï¼Œå¬Œé¢å«æ˜¥ï¼Œèº«ç©¿æ™‚èŠ±ç¹¡è¥–ï¼Œä½æŸç¾…è£™ï¼Œè²Œå¦‚ä»™å­ï¼Œè…°ä¼¼å°è »ï¼Œçº–ä¸ç›ˆæ¡ã€‚\n");
 
         set("per", 28);
         set("int", 28);
@@ -21,8 +21,8 @@ void create()
 
         set("attitude", "peaceful");
         set("inquiry", ([
-                "²ÂÃÕ" : (: ask_riddle :),
-                "ÃÕÓï" : (: ask_riddle :),
+                "çŒœè¬" : (: ask_riddle :),
+                "è¬èª" : (: ask_riddle :),
         ]) );
         set("times", 100);
         setup();
@@ -46,34 +46,34 @@ int ask_riddle()
 
         if( query("trill_marks/guessing", me) )
         {
-                write("Â½ÀöÏÉĞ¦ÁËĞ¦£¬Ëµ£ºÄãÏÈ°ÑÉÏ¸öÃÕ²Â³öÀ´ÔÙËµ¡£\n");
+                write("é™¸éº—ä»™ç¬‘äº†ç¬‘ï¼Œèªªï¼šä½ å…ˆæŠŠä¸Šå€‹è¬çŒœå‡ºä¾†å†èªªã€‚\n");
                 return 1;
         }
         else
         {
                 switch(query("trill_marks/guess", me)){
                 case 0:
-                        message_vision("Â½ÀöÏÉÇÉĞ¦×Å¶Ô$NËµ£ºÔÛÃÇ²Â¸öÃÕÓï°É£º\n", me);
-                        write("Ò£ÍûÉ½¼ÒÕıÎç´¶ ´ò¡¶ºìÂ¥ÃÎ¡·ÈËÃûÒ»\n");
+                        message_vision("é™¸éº—ä»™å·§ç¬‘è‘—å°$Nèªªï¼šå’±å€‘çŒœå€‹è¬èªå§ï¼š\n", me);
+                        write("é™æœ›å±±å®¶æ­£åˆç‚Š æ‰“ã€Šç´…æ¨“å¤¢ã€‹äººåä¸€\n");
                         set("trill_marks/guessing", 1, me);
                         break;
                 case 1:
-                        message_vision("Â½ÀöÏÉÇÉĞ¦×Å¶Ô$NËµ£ºÔÛÃÇ²Â¸öÃÕÓï°É£º\n", me);
-                        write("·É¶ÉÅîÀ³ÎÒ²»¾å ´ò¡¶ºìÂ¥ÃÎ¡·Ê«¾äÒ»\n");
+                        message_vision("é™¸éº—ä»™å·§ç¬‘è‘—å°$Nèªªï¼šå’±å€‘çŒœå€‹è¬èªå§ï¼š\n", me);
+                        write("é£›æ¸¡è“¬èŠæˆ‘ä¸æ‡¼ æ‰“ã€Šç´…æ¨“å¤¢ã€‹è©©å¥ä¸€\n");
                         set("trill_marks/guessing", 2, me);
                         break;
                 case 2:
-                        message_vision("Â½ÀöÏÉÇÉĞ¦×Å¶Ô$NËµ£ºÔÛÃÇ²Â¸öÃÕÓï°É£º\n", me);
-                        write("ÅË½ğÁ«ÏÓÎä´ó   ´ò¡¶Ê«¾­¡·Ê«¾äÒ»\n");
+                        message_vision("é™¸éº—ä»™å·§ç¬‘è‘—å°$Nèªªï¼šå’±å€‘çŒœå€‹è¬èªå§ï¼š\n", me);
+                        write("æ½˜é‡‘è“®å«Œæ­¦å¤§   æ‰“ã€Šè©©ç¶“ã€‹è©©å¥ä¸€\n");
                         set("trill_marks/guessing", 3, me);
                         break;
                 default :
                         command("sigh");
-                        message_vision("Â½ÀöÏÉ¶Ô$NËµµÀ£ºÃÕ¶¼±»Äã²Â¹âÁË£¬µÈÎÒÖÆ³öĞÂµÄÔÙËµ°É£¡\n", me);
+                        message_vision("é™¸éº—ä»™å°$Nèªªé“ï¼šè¬éƒ½è¢«ä½ çŒœå…‰äº†ï¼Œç­‰æˆ‘åˆ¶å‡ºæ–°çš„å†èªªå§ï¼\n", me);
                 return 1;
         }
-        write("ÏëºÃÁË»Ø´ğ (answer) ÎÒ¡£¼Ç×¡£¬²»¿ÉĞ¹Â¶ÃÕÓï»òÃÕµ×¡£\n");
-        message("vision", "Â½ÀöÏÉ¶Ô×Å"+me->name()+"àÖ¹¾ÁË¼¸¾ä»°¡£\n", environment(me), ({me}));
+        write("æƒ³å¥½äº†å›ç­” (answer) æˆ‘ã€‚è¨˜ä½ï¼Œä¸å¯æ³„éœ²è¬èªæˆ–è¬åº•ã€‚\n");
+        message("vision", "é™¸éº—ä»™å°è‘—"+me->name()+"å˜€å’•äº†å¹¾å¥è©±ã€‚\n", environment(me), ({me}));
         return 1;
         }
 }
@@ -86,38 +86,38 @@ int do_answer(string arg)
         riddle=query("trill_marks/guessing", me);
 
         if (!riddle) {
-                write("Ê²Ã´£¿ÄãÏë¸ÉÂğ£¿\n");
+                write("ä»€éº¼ï¼Ÿä½ æƒ³å¹¹å—ï¼Ÿ\n");
                 return 1;
         }
 
         if( !arg || arg=="" ) {
-                write("ÏëºÃÃÕµ×ÔÙ»Ø´ğ¡£\n");
+                write("æƒ³å¥½è¬åº•å†å›ç­”ã€‚\n");
                 return 1;
         }
-        message("vision", me->name() + "°Ñ×ì´Õµ½Â½ÀöÏÉµÄ¶ú±ßàÖàÖ¹¾¹¾¡£\n", environment(me), ({me}) );
+        message("vision", me->name() + "æŠŠå˜´æ¹Šåˆ°é™¸éº—ä»™çš„è€³é‚Šå˜€å˜€å’•å’•ã€‚\n", environment(me), ({me}) );
 
         switch (arg)
         {
-        case "á¶ÑÌ": soln=1; break;
-        case "ĞÏá¶ÑÌ" : soln=1; break;
-        case "ÈÎÆ¾ÈõË®ÈıÇ§" : soln=2; break;
-        case "²»ÈçÊåÒ²" : soln=3; break;
+        case "å²«ç…™": soln=1; break;
+        case "é‚¢å²«ç…™" : soln=1; break;
+        case "ä»»æ†‘å¼±æ°´ä¸‰åƒ" : soln=2; break;
+        case "ä¸å¦‚å”ä¹Ÿ" : soln=3; break;
         default :
-                say("Â½ÀöÏÉÑÚ×Å×ìĞ¦ÁËÆğÀ´£¬ËµµÀ£º²»¶Ô£¬²»¶Ô¡£\n"
-                 + me->name() + "µÄÁ³à§µÄºìÁËÆğÀ´¡£\n");
+                say("é™¸éº—ä»™æ©è‘—å˜´ç¬‘äº†èµ·ä¾†ï¼Œèªªé“ï¼šä¸å°ï¼Œä¸å°ã€‚\n"
+                 + me->name() + "çš„è‡‰å”°çš„ç´…äº†èµ·ä¾†ã€‚\n");
         return 1;
         }
 
         if ( riddle == soln )
         {
                 set("trill_marks/guess", riddle, me);
-                message_vision("Â½ÀöÏÉÓä¿ìµÄ¶Ô$NÎ¢Ğ¦×Å¡£\n", me);
+                message_vision("é™¸éº—ä»™æ„‰å¿«çš„å°$Nå¾®ç¬‘è‘—ã€‚\n", me);
                 set("score",query("score",  me)+80, me);
                 delete("trill_marks/guessing", me);
-                write ("ÄãµÄ½­ºşÔÄÀúÔö¼ÓÁË£¡\n");
+                write ("ä½ çš„æ±Ÿæ¹–é–±æ­·å¢åŠ äº†ï¼\n");
         }
         else
-                write ("²»¶Ô£¬²»¶Ô£¡£¡Ï¹²Â¿É²»ºÃ£¡\n");
+                write ("ä¸å°ï¼Œä¸å°ï¼ï¼ççŒœå¯ä¸å¥½ï¼\n");
         return 1;
 }
 
@@ -128,13 +128,13 @@ int do_enjoy()
         int jin, e_jin, m_jin, bonus;
 
         if( query("times") < 0)
-                return notify_fail("Â½ÀöÏÉÆ£±¹µØĞ¦ÁËĞ¦£º¡°½ñ¶ùÎÒÀÛÁË£¬Äã¸ÄÌìÔÙÀ´°É¡£¡±\n");
+                return notify_fail("é™¸éº—ä»™ç–²æ†Šåœ°ç¬‘äº†ç¬‘ï¼šâ€œä»Šå…’æˆ‘ç´¯äº†ï¼Œä½ æ”¹å¤©å†ä¾†å§ã€‚â€\n");
         addn("times", -1);
         me = this_player();
-        me_msg="¹ûÈ»";
+        me_msg="æœç„¶";
         if ( objectp( present( "zizhu xiao",me) ) )
-                me_msg = "$N´µóïºÍÖ®£¬Éùµ÷ÇåÁÁ£¬ÒôÔÏÓÆÈ»£¬\n¹ûÈ»";
-        msg = "Â½ÀöÏÉĞ¦ÁËÒ»Éù£¬Ğì½«±¦Ñ¼ÌíÏã£¬È»ºóËÄÏÒÈë±§£¬°ëÃæÕÚĞß£¬àĞàĞÇĞÇĞ£¬´íÔÓµ¯À´¡£\n"+me_msg+"´µµ¯µÄÇå·çĞìÀ´£¬Ö¦ÄñĞìÌä£¬ÇÄÈ»Çú¾¡¶øÉĞôÁÓàÒô¡£\n";
+                me_msg = "$Nå¹ç°«å’Œä¹‹ï¼Œè²èª¿æ¸…äº®ï¼ŒéŸ³éŸ»æ‚ ç„¶ï¼Œ\næœç„¶";
+        msg = "é™¸éº—ä»™ç¬‘äº†ä¸€è²ï¼Œå¾å°‡å¯¶é´¨æ·»é¦™ï¼Œç„¶å¾Œå››å¼¦å…¥æŠ±ï¼ŒåŠé¢é®ç¾ï¼Œå˜ˆå˜ˆåˆ‡åˆ‡ï¼ŒéŒ¯é›œå½ˆä¾†ã€‚\n"+me_msg+"å¹å½ˆçš„æ¸…é¢¨å¾ä¾†ï¼Œæé³¥å¾å•¼ï¼Œæ‚„ç„¶æ›²ç›¡è€Œå°šè£Šä½™éŸ³ã€‚\n";
         message_vision(msg, me);
         jin=query("jing", me);
         e_jin=query("eff_jing", me);
@@ -143,7 +143,7 @@ int do_enjoy()
         if ( bonus < 0 ) bonus = 0;
         if ( bonus )
         {
-                write("ÄãÌıÍêÒ»Çú£¬¾õµÃÉñÍêÆø×ã¡£\n");
+                write("ä½ è½å®Œä¸€æ›²ï¼Œè¦ºå¾—ç¥å®Œæ°£è¶³ã€‚\n");
                 if ( jin < e_jin )
                 {
                         if ( ( jin + bonus ) > e_jin ) jin = e_jin;

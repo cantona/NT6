@@ -3,7 +3,7 @@
 inherit ITEM;
 void create()
 {
-        set_name("»ÆÙ©", ({ "huang kan","huang", "kan" }) );
+        set_name("é»ƒä¾ƒ", ({ "huang kan","huang", "kan" }) );
         set_weight(500);
         set_max_encumbrance(80000);
         set("no_get", 1);
@@ -11,8 +11,8 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "×ù");
-                set("long", "Ò»×ùÏÉ·çµÀ¹Ç£¬ÊÖ³ÖÁîÅÆ»ÆÙ©ËÜÏñ¡£\n");
+                set("unit", "åº§");
+                set("long", "ä¸€åº§ä»™é¢¨é“éª¨ï¼Œæ‰‹æŒä»¤ç‰Œé»ƒä¾ƒå¡‘åƒã€‚\n");
                 set("value", 1);
         }
 }

@@ -7,14 +7,14 @@ inherit F_LIQUID;
 
 void create()
 {
-        string *order = ({HIW "ÎåÁ¸Òº" NOR,HIM "½£ÄÏ´º" NOR, HIY "È«ĞË´óÇú" NOR, HIR "ÎÄ¾ı" NOR, HIG "¹Å¾®¹±¾Æ" NOR});
+        string *order = ({HIW "äº”ç³§æ¶²" NOR,HIM "åŠå—æ˜¥" NOR, HIY "å…¨èˆˆå¤§æ›²" NOR, HIR "æ–‡å›" NOR, HIG "å¤äº•è²¢é…’" NOR});
         set_name( (order[random(5)]), ({ "wine" }) );
         set_weight(10);
         if( clonep() )
              set_default_object(__FILE__);
         else {
-        set("long", "Ò»Æ¿Ãû¾Æ¡£\n");
-                set("unit", "Æ¿");
+        set("long", "ä¸€ç“¶åé…’ã€‚\n");
+                set("unit", "ç“¶");
                 set("value", 0);
                 set("max_liquid", 20);
         }
@@ -22,7 +22,7 @@ void create()
         // in each cloned copy.
         set("liquid", ([
                 "type": "alcohol",
-                "name": "¾Æ",
+                "name": "é…’",
                 "remaining": 20,
                 "drunk_apply": 5,
         ]) );

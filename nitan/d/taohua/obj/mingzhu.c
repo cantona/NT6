@@ -2,9 +2,9 @@ inherit ITEM;
 
 void create()
 {
-    set_name("Ã÷Öé", ({ "ming zhu" ,"zhu", }) );
-    set("unit", "¿Å");
+    set_name("æ˜ç ", ({ "ming zhu" ,"zhu", }) );
+    set("unit", "é¡†");
  set("value",10000);
-    set("long","ÕâÊÇÒ»¿Åº±¼ûµÄÉÏºÃÃ÷Öé£¬¿´À´Öµ²»ÉÙÇ®¡£\n");
+    set("long","é€™æ˜¯ä¸€é¡†ç½•è¦‹çš„ä¸Šå¥½æ˜ç ï¼Œçœ‹ä¾†å€¼ä¸å°‘éŒ¢ã€‚\n");
     set_weight(100);
 }

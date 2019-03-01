@@ -1,14 +1,14 @@
         mapp(3)                        LP MudOSv21c7                ( 5 Sep 1994 )
-        Ãû³Æ :
-                mapp() - ÅĞ¶ÏÒ»¸öÖ¸¶¨µÄ±äÊıÊÇ·ñÎªÓ³Éä±äÊı (mapping).
-        Óï·¨ :
+        åç¨± :
+                mapp() - åˆ¤æ–·ä¸€å€‹æŒ‡å®šçš„è®Šæ•¸æ˜¯å¦ç‚ºæ˜ å°„è®Šæ•¸ (mapping).
+        èªæ³• :
                 int mapp( mixed arg );
-                ÕûÊı mapp( »ìºÏ arg );
-        ÓÃ·¨ :
-                Èç¹û arg ÊÇ¸öÓ³Éä±äÊı, Ôò´«»Ø 1.
-        ²Î¿¼ :
+                æ•´æ•¸ mapp( æ··åˆ arg );
+        ç”¨æ³• :
+                å¦‚æœ arg æ˜¯å€‹æ˜ å°„è®Šæ•¸, å‰‡å‚³å› 1.
+        åƒè€ƒ :
                 stringp(3), pointerp(3), objectp(3), intp(3),
                 bufferp(3), floatp(3) functionp(3), nullp(3),
                 undefinedp(3), errorp(3)
-        ·­Òë :
+        ç¿»è­¯ :
                 Phoebus@ZH        97.Mar.14.                (Writen 5/23/97)

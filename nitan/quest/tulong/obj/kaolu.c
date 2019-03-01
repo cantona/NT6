@@ -1,15 +1,15 @@
 inherit ITEM;
 void create()
 {
-    set_name("ºìÄàĞ¡¿¾Â¯", ({ "kaolu" }) );
+    set_name("ç´…æ³¥å°çƒ¤çˆ", ({ "kaolu" }) );
     set_weight(10000);
     if( clonep() )
             set_default_object(__FILE__);
     else {
-            set("unit", "¸ö");
+            set("unit", "å€‹");
             set("value", 100);
             set("material", "stone");
-            set("long", "Ò»¸öºìÄàÖÆ³ÉµÄĞ¡¿¾Â¯£¬ÄãËÆºõ¿ÉÒÔÓÃËü¿¾£¨£æ£ò£ù£©Ğ©Ê²Ã´\n");
+            set("long", "ä¸€å€‹ç´…æ³¥åˆ¶æˆçš„å°çƒ¤çˆï¼Œä½ ä¼¼ä¹å¯ä»¥ç”¨å®ƒçƒ¤ï¼ˆï½†ï½’ï½™ï¼‰äº›ä»€éº¼\n");
           }
 
     setup();
@@ -29,26 +29,26 @@ int do_kao(string arg)
         int decayed;
         me = this_player();
         if( !arg || arg == "")
-                return notify_fail("Äã¿¾Ê²Ã´£¿\n");
+                return notify_fail("ä½ çƒ¤ä»€éº¼ï¼Ÿ\n");
         if(!objectp(tar = present(arg, me)) )
-                return notify_fail("Äã¿¾Ê²Ã´£¿\n");
+                return notify_fail("ä½ çƒ¤ä»€éº¼ï¼Ÿ\n");
         if(tar->is_character() && !tar->is_corpse())
-                return notify_fail("Ìì...°¡£¡ÉÏÌìÓĞºÃÉúÖ®µÂ£¬Äã»¹ÊÇÈÃËü°²ÀÖËÀ°É£¡\n");
+                return notify_fail("å¤©...å•Šï¼ä¸Šå¤©æœ‰å¥½ç”Ÿä¹‹å¾·ï¼Œä½ é‚„æ˜¯è®“å®ƒå®‰æ¨‚æ­»å§ï¼\n");
         if( !tar->is_character() && !tar->is_corpse())
-                return notify_fail("ÕâÊÇÄã²»¿ÉÒÔ¿¾µÄ¶«Î÷£®\n");
+                return notify_fail("é€™æ˜¯ä½ ä¸å¯ä»¥çƒ¤çš„æ±è¥¿ï¼\n");
         if( tar->is_corpse())
         {
            name=query("name", tar);
-           name=replace_string(name,"Ò»¾ß","");
-           name=replace_string(name,"µÄÊ¬Ìå","");
-           if (name!="¸¯ÀÃ")         
+           name=replace_string(name,"ä¸€å…·","");
+           name=replace_string(name,"çš„å±é«”","");
+           if (name!="è…çˆ›")         
            {
               decayed=0;
-              name="¿¾"+name+"Èâ";
+              name="çƒ¤"+name+"è‚‰";
            }
            else
            {
-               name="¸¯ÀÃµÄ¿¾Èâ";
+               name="è…çˆ›çš„çƒ¤è‚‰";
                decayed=1;
            }
            meat = new(__DIR__"meat");
@@ -56,8 +56,8 @@ int do_kao(string arg)
            set("decayed", decayed, meat);
            meat->move(me);
             }
-        message_vision("$N½«$nÇĞ³ÉÆ¬·Åµ½Ğ¡¿¾Â¯Àï£¬$nÒ»»á¶ù¾Í±ä³ÉÁËÒ»´®ÏãÅçÅçµÄ¿¾
-Èâ´®¡£\n", me, tar);
+        message_vision("$Nå°‡$nåˆ‡æˆç‰‡æ”¾åˆ°å°çƒ¤çˆè£¡ï¼Œ$nä¸€æœƒå…’å°±è®Šæˆäº†ä¸€ä¸²é¦™å™´å™´çš„çƒ¤
+è‚‰ä¸²ã€‚\n", me, tar);
         tar->move(environment(me));
         destruct(tar);
         return 1;

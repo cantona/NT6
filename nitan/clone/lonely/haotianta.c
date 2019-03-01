@@ -6,17 +6,17 @@ int is_magic_item() { return 1; }
 
 void create()
 {
-        set_name(HIM + "ê»ÌìËþ" NOR, ({ "haotian ta", "haotian", "ta" }) );
+        set_name(HIM + "æ˜Šå¤©å¡”" NOR, ({ "haotian ta", "haotian", "ta" }) );
         set_weight(300);
         if (clonep())
                 set_default_object(__FILE__);
         else
         {
-                set("unit", "¸ö");
-                set("long", HIM "ÕâÊÇÒ»¸öÓµÓÐÎüÐÇ»»ÔÂÖ®Á¦µÄ±¦Ëþ£¬²»Ê±µØ´ÓÖÐÍ¶Éä³ö\n"
-                                "ÆæÒìµÄ¹âÃ¢¡£\n"                                
-                                "µ±Äã´òÍ¨Ê®¶þÖØÌì´ïµ½ÌìÍâÌìºó£¬ÄÜ½èÓÃ¸ÃËþÖ®Á¦½øÈëÀ´ÊÀ¡£\n" 
-                                "*¿ÉÓÃÖ®ÉñÁ¦½øÈëÂÖ»ØË¾ÖÐ£¨use haotian ta£©¡£\n"NOR);
+                set("unit", "å€‹");
+                set("long", HIM "é€™æ˜¯ä¸€å€‹æ“æœ‰å¸æ˜Ÿæ›æœˆä¹‹åŠ›çš„å¯¶å¡”ï¼Œä¸æ™‚åœ°å¾žä¸­æŠ•å°„å‡º\n"
+                                "å¥‡ç•°çš„å…‰èŠ’ã€‚\n"                                
+                                "ç•¶ä½ æ‰“é€šåäºŒé‡å¤©é”åˆ°å¤©å¤–å¤©å¾Œï¼Œèƒ½å€Ÿç”¨è©²å¡”ä¹‹åŠ›é€²å…¥ä¾†ä¸–ã€‚\n" 
+                                "*å¯ç”¨ä¹‹ç¥žåŠ›é€²å…¥è¼ªå›žå¸ä¸­ï¼ˆuse haotian taï¼‰ã€‚\n"NOR);
 
         }
         setup();
@@ -36,13 +36,13 @@ int do_use(string arg)
         if(! objectp(present("haotian ta", me)))return 0;
         
         if (me->is_fighting() || me->is_busy())
-                 return notify_fail("ÄãÕýÃ¦ÄØ£¡\n");
+                 return notify_fail("ä½ æ­£å¿™å‘¢ï¼\n");
         
         if( !query("outdoors", environment(me)) )
-                 return notify_fail("ÄãµÃÏÈµ½»§ÍâÈ¥¡£\n");
+                 return notify_fail("ä½ å¾—å…ˆåˆ°æˆ¶å¤–åŽ»ã€‚\n");
                  
-        message_sort(HIM + "\n$N" HIM "¼ÀÆðÊÖÖÐµÄê»ÌìËþ£¬ÃÍÈ»¼ä£¬ÆßÉ«¹âÃ¢×Ôê»ÌìËþÖÐÉä"
-                     "³ö£¬½«$N¾íÁË½øÈ¥¡£\n" NOR, me);
+        message_sort(HIM + "\n$N" HIM "ç¥­èµ·æ‰‹ä¸­çš„æ˜Šå¤©å¡”ï¼ŒçŒ›ç„¶é–“ï¼Œä¸ƒè‰²å…‰èŠ’è‡ªæ˜Šå¤©å¡”ä¸­å°„"
+                     "å‡ºï¼Œå°‡$Nå·äº†é€²åŽ»ã€‚\n" NOR, me);
                 
         me->move("/kungfu/class/sky/lunhuisi");
         set("startroom", "/kungfu/class/sky/lunhuisi", me);

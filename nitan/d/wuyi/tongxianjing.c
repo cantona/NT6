@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ͨ�ɾ�");
+        set("short", "通仙井");
         set("long", @LONG
-ͨ�ɾ�λ������԰�ڣ���������Ȫ����ˮ��������Ϊ�Ʋ���ϵ�
-��ˮ���ų�����ɽ��һ����ʫԻ����ʯ��մ�����Ƹ�ʯ��������걸�
-���������˶����Ρ���
+通仙井位于御茶園內，又名呼來泉。井水清冽甘甜，為制茶的上等
+好水，號稱武夷山第一井。詩曰：“石乳沾余潤，雲根石髓流。玉甌浮
+動處，神人洞天遊。”
 LONG );
         set("outdoors", "wuyi");
         set("no_clean_up", 0);

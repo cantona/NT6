@@ -11,14 +11,14 @@ object creat_weapon();
 
 void create()
 {
-        set_name("Å·Ò±×Ó", ({ "ouye zi", "zi" }) );
-        set("nickname", RED "³àĞÄ½£µ¨" NOR );
-        set("gender", "ÄĞĞÔ" );
+        set_name("æ­å†¶å­", ({ "ouye zi", "zi" }) );
+        set("nickname", RED "èµ¤å¿ƒåŠè†½" NOR );
+        set("gender", "ç”·æ€§" );
         set("age", 60);
         set("no_get", 1);
-        set("long", "ËûÍ·ÉÏ°ü×ÅÍ·½í£¬ÈıÂÆ³¤÷×Æ®È÷ĞØÇ°£¬ÃæÄ¿ÇåÊİµ«ºìÔÎÓĞ¹â£¬\n"
-                "¶şÄ¿¾¼¾¼ÓĞÉñ£¬Ë¸Ë¸ÉÁ×Å¾¹ËÆÊÇÁİÁİµÄ½£¹â£¬»ëÉíËÆºõ¶¼°üÎ§\n"
-                "ÔÚÒ»¹É½£ÆøÖ®ÖĞ¡£\n");
+        set("long", "ä»–é ­ä¸ŠåŒ…è‘—é ­å·¾ï¼Œä¸‰ç¸·é•·é«¯é£„æ´’èƒ¸å‰ï¼Œé¢ç›®æ¸…ç˜¦ä½†ç´…æšˆæœ‰å…‰ï¼Œ\n"
+                "äºŒç›®ç‚¯ç‚¯æœ‰ç¥ï¼Œçˆçˆé–ƒè‘—ç«Ÿä¼¼æ˜¯å‡œå‡œçš„åŠå…‰ï¼Œæ¸¾èº«ä¼¼ä¹éƒ½åŒ…åœ\n"
+                "åœ¨ä¸€è‚¡åŠæ°£ä¹‹ä¸­ã€‚\n");
         set("str", 25);
         set("dex", 20);
         set("con", 17);
@@ -53,17 +53,17 @@ void create()
         set("attitude", "peaceful");
         
         set("inquiry", ([
-                "Öı½£" : "Öı½£¿ÉÊÇ¼şÊ®·Ö¼è¿àµÄÊÂ£¬ÒªÏûºÄÈËµÄ¾«ÆøºÍÄÚÁ¦£¬ÄãÓĞ¾öĞÄºÍÒãÁ¦Âğ£¿\n",
-                "Ô­ÁÏ" : "Öı½£¿ÉÓÃÇ§ÄêĞşÌú¡£¡£¡£ÄãÕÒµ½ÁËÎÒ²ÅÄÜ°ïÄãÖı½£¡£\n",
-                "±øÆ÷" : (: do_weapon() :),
+                "é‘„åŠ" : "é‘„åŠå¯æ˜¯ä»¶ååˆ†è‰±è‹¦çš„äº‹ï¼Œè¦æ¶ˆè€—äººçš„ç²¾æ°£å’Œå…§åŠ›ï¼Œä½ æœ‰æ±ºå¿ƒå’Œæ¯…åŠ›å—ï¼Ÿ\n",
+                "åŸæ–™" : "é‘„åŠå¯ç”¨åƒå¹´ç„éµã€‚ã€‚ã€‚ä½ æ‰¾åˆ°äº†æˆ‘æ‰èƒ½å¹«ä½ é‘„åŠã€‚\n",
+                "å…µå™¨" : (: do_weapon() :),
         ]) );
 
         setup();
         set("chat_chance", 3);
         set("chat_msg", ({
-                "Å·Ò±×Ó¸§½£¶ø¸è£º¾ŞãÚÉñ±øÙâ£¬ÈËÖı¾Í¡£¸ÇÊÀ±¦½£Ùâ£¬ÅäÓ¢ĞÛ£¡\n",
-                "Å·Ò±×ÓµÍÍ·³ÁÒ÷£¬ËÆºõÔÚË¼¿¼Ê²Ã´¡£\n"
-                "Å·Ò±×ÓÌ¾ÁËÒ»¿ÚÆø£ºÉñ±øÅäÓ¢ĞÛ£¬¿ÉÓ¢ĞÛ¡£¡£¡£¡£¡£¡£\n"
+                "æ­å†¶å­æ’«åŠè€Œæ­Œï¼šå·¨é—•ç¥å…µå…®ï¼Œäººé‘„å°±ã€‚è“‹ä¸–å¯¶åŠå…®ï¼Œé…è‹±é›„ï¼\n",
+                "æ­å†¶å­ä½é ­æ²‰åŸï¼Œä¼¼ä¹åœ¨æ€è€ƒä»€éº¼ã€‚\n"
+                "æ­å†¶å­å˜†äº†ä¸€å£æ°£ï¼šç¥å…µé…è‹±é›„ï¼Œå¯è‹±é›„ã€‚ã€‚ã€‚ã€‚ã€‚ã€‚\n"
         }) );
         carry_object("/clone/misc/cloth")->wear();
         carry_object("/clone/weapon/changjian")->wield();
@@ -79,20 +79,20 @@ int accept_object(object who, object ob)
 {        
         switch(query("name", ob) )
         {
-                case "ÙÁµ¶" :
-                case "½Ğ»¯¼¦" :
-                case "ÑòÆ¤Êé":
-                case "Èí½£":
-                case "±ÙĞ°½£Æ×":
+                case "å€­åˆ€" :
+                case "å«åŒ–é›" :
+                case "ç¾Šçš®æ›¸":
+                case "è»ŸåŠ":
+                case "è¾Ÿé‚ªåŠè­œ":
                         if( (query_temp("condition", who)) != query("name", ob) )
                         {
-                                message_vision(HIC "Å·Ò±×ÓÒ»ã¶£ºÎÒ¶ÔÄãËµ¹ıÎÒÒªÕâÑù¶«Î÷Ã´£¿\n" NOR, who);
+                                message_vision(HIC "æ­å†¶å­ä¸€æ„£ï¼šæˆ‘å°ä½ èªªéæˆ‘è¦é€™æ¨£æ±è¥¿éº¼ï¼Ÿ\n" NOR, who);
                                 return 0;
                         }
                         else
                         {
                                 delete_temp("condition", who);
-                                message_vision(HIG "Å·Ò±×ÓÎ¢Ğ¦×Å£ººÜºÃºÜºÃ£¡ÄÇÎÒ¾Í°ïÄãÕâÒ»´Î°É£¡\n" NOR, who);
+                                message_vision(HIG "æ­å†¶å­å¾®ç¬‘è‘—ï¼šå¾ˆå¥½å¾ˆå¥½ï¼é‚£æˆ‘å°±å¹«ä½ é€™ä¸€æ¬¡å§ï¼\n" NOR, who);
                                 set_temp("condition_ok", 1, who);
                                 destruct(ob);
                                 do_give_weapon(who);
@@ -101,7 +101,7 @@ int accept_object(object who, object ob)
         }
         if( (query("weapon/make", who)) )
         {
-                say("Å·Ò±×ÓÒ»Á³Ã£È»£ºÄúÒÑ¾­ÓĞÒ»°Ñ×ÔÔìµÄÎäÆ÷ÁË£¬»¹À´¸ÉÊ²Ã´£¿ÄÑµ½²»ºÏÊÖÃ´£¿\n");
+                say("æ­å†¶å­ä¸€è‡‰èŒ«ç„¶ï¼šæ‚¨å·²ç¶“æœ‰ä¸€æŠŠè‡ªé€ çš„æ­¦å™¨äº†ï¼Œé‚„ä¾†å¹¹ä»€éº¼ï¼Ÿé›£åˆ°ä¸åˆæ‰‹éº¼ï¼Ÿ\n");
                 return 0;
         }
         switch(query("id", ob) )
@@ -123,22 +123,22 @@ int accept_object(object who, object ob)
                         set_temp("get_orc", 1, who);
                         break;
                 default :
-                        message("vision","ÕâÊÇÊ²Ã´£¡Õâ²»ÄÜÓÃÀ´´òÔì±øÆ÷£¡",who);
+                        message("vision","é€™æ˜¯ä»€éº¼ï¼é€™ä¸èƒ½ç”¨ä¾†æ‰“é€ å…µå™¨ï¼",who);
                         return 0;
         }
-        message("vision","Å·Ò±×ÓµÍÍ·¼ìÊÓÁËÒ»ÏÂÊÖÖĞµÄ"+query("name", ob)+"µãÁËµãÍ·Ëµ£º\n",who);
-        write("ÎÒÕâ¶ù¿ÉÒÔ´òÔìÒÔÏÂ±øÆ÷£º\n"+
-                "     ½£(sword)\n"+
-                "     µ¶(blade)\n"+
-                "     Ç¹(spear)\n"+
-                "     ¹÷(club)\n"+
-                "     °ô(stick)\n"+
-                "     ÕÈ(staff)\n"+
-                "     ´¸(hammer)\n"+
-                "     ¹³(hook)\n"+
-                "     ¸«(axe)\n"+
-                "     ±Ş(whip)\n");                  
-        say("ÕâÎ»"+RANK_D->query_respect(who)+"ÒªÔìÊ²Ã´±øÆ÷£¿¾ö¶¨ÁË¸æËßÎÒ(answer)¡£\n");
+        message("vision","æ­å†¶å­ä½é ­æª¢è¦–äº†ä¸€ä¸‹æ‰‹ä¸­çš„"+query("name", ob)+"é»äº†é»é ­èªªï¼š\n",who);
+        write("æˆ‘é€™å…’å¯ä»¥æ‰“é€ ä»¥ä¸‹å…µå™¨ï¼š\n"+
+                "     åŠ(sword)\n"+
+                "     åˆ€(blade)\n"+
+                "     æ§(spear)\n"+
+                "     æ£(club)\n"+
+                "     æ£’(stick)\n"+
+                "     æ–(staff)\n"+
+                "     éŒ˜(hammer)\n"+
+                "     é‰¤(hook)\n"+
+                "     æ–§(axe)\n"+
+                "     é­(whip)\n");                  
+        say("é€™ä½"+RANK_D->query_respect(who)+"è¦é€ ä»€éº¼å…µå™¨ï¼Ÿæ±ºå®šäº†å‘Šè¨´æˆ‘(answer)ã€‚\n");
         return 2;
 
 }
@@ -149,97 +149,97 @@ int do_answer(string arg)
         me = this_player();
         if( !(query_temp("get_orc", me)) )
         {
-//                write("ÄãÕÒµ½Ô­ÁÏÁËÂğ£¿\n");
+//                write("ä½ æ‰¾åˆ°åŸæ–™äº†å—ï¼Ÿ\n");
                 return 0;
         }
         
         if(!arg)
         {
-                write("ÄãÒªÔìÊ²Ã´±øÆ÷£¿\n");
+                write("ä½ è¦é€ ä»€éº¼å…µå™¨ï¼Ÿ\n");
                 return 0;
         }
 
-        message("vision",me->name()+"¶ÔÅ·Ò±×ÓÇáÉùËµÁË¼¸¾ä¡£\n",environment(me), ({me}) );
+        message("vision",me->name()+"å°æ­å†¶å­è¼•è²èªªäº†å¹¾å¥ã€‚\n",environment(me), ({me}) );
         switch (arg)
         {
                 case "sword" :
                         addn_temp("sword", 1, me);
-                        write("´ø×ÅÔ­ÁÏÈ¥ÕÒÊÌ½£°É£¡\n");
-                        message("vision","È¥°É£¡"+me->name()+"£¡\n",me);
+                        write("å¸¶è‘—åŸæ–™å»æ‰¾ä¾åŠå§ï¼\n");
+                        message("vision","å»å§ï¼"+me->name()+"ï¼\n",me);
                         break;
                 case "blade" :
                         addn_temp("blade", 1, me);
-                        write("´ø×ÅÔ­ÁÏÈ¥ÕÒÊÌµ¶°É£¡\n");
-                        message("vision","È¥°É£¡"+me->name()+"£¡\n",me);
+                        write("å¸¶è‘—åŸæ–™å»æ‰¾ä¾åˆ€å§ï¼\n");
+                        message("vision","å»å§ï¼"+me->name()+"ï¼\n",me);
                         break;
                 case "spear" :
                         addn_temp("spear", 1, me);
-                        write("´ø×ÅÔ­ÁÏÈ¥ÕÒÊÌÇ¹°É£¡\n");
-                        message("vision","È¥°É£¡"+me->name()+"£¡\n",me);
+                        write("å¸¶è‘—åŸæ–™å»æ‰¾ä¾æ§å§ï¼\n");
+                        message("vision","å»å§ï¼"+me->name()+"ï¼\n",me);
                         break;
                 case "club" :
                         addn_temp("club", 1, me);
-                        write("´ø×ÅÔ­ÁÏÈ¥ÕÒÊÌ¹÷°É£¡\n");
-                        message("vision","È¥°É£¡"+me->name()+"£¡\n",me);
+                        write("å¸¶è‘—åŸæ–™å»æ‰¾ä¾æ£å§ï¼\n");
+                        message("vision","å»å§ï¼"+me->name()+"ï¼\n",me);
                         break;
                 case "stick" :
                         addn_temp("stick", 1, me);
-                        write("´ø×ÅÔ­ÁÏÈ¥ÕÒÊÌ°ô°É£¡\n");
-                        message("vision","È¥°É£¡"+me->name()+"£¡\n",me);
+                        write("å¸¶è‘—åŸæ–™å»æ‰¾ä¾æ£’å§ï¼\n");
+                        message("vision","å»å§ï¼"+me->name()+"ï¼\n",me);
                         break;
                 case "staff" :
                         addn_temp("staff", 1, me);
-                        write("´ø×ÅÔ­ÁÏÈ¥ÕÒÊÌÕÈ°É£¡\n");
-                        message("vision","È¥°É£¡"+me->name()+"£¡\n",me);
+                        write("å¸¶è‘—åŸæ–™å»æ‰¾ä¾æ–å§ï¼\n");
+                        message("vision","å»å§ï¼"+me->name()+"ï¼\n",me);
                         break;
                 case "axe" :
                         addn_temp("axe", 1, me);
-                        write("´ø×ÅÔ­ÁÏÈ¥ÕÒÊÌ¸«°É£¡\n");
-                        message("vision","È¥°É£¡"+me->name()+"£¡\n",me);
+                        write("å¸¶è‘—åŸæ–™å»æ‰¾ä¾æ–§å§ï¼\n");
+                        message("vision","å»å§ï¼"+me->name()+"ï¼\n",me);
                         break;
                 case "hammer" :
                         addn_temp("hammer", 1, me);
-                        write("´ø×ÅÔ­ÁÏÈ¥ÕÒÊÌ´¸°É£¡\n");
-                        message("vision","È¥°É£¡"+me->name()+"£¡\n",me);
+                        write("å¸¶è‘—åŸæ–™å»æ‰¾ä¾éŒ˜å§ï¼\n");
+                        message("vision","å»å§ï¼"+me->name()+"ï¼\n",me);
                         break;
                 case "hook" :
                         addn_temp("hook", 1, me);
-                        write("´ø×ÅÔ­ÁÏÈ¥ÕÒÊÌ¹³°É£¡\n");
-                        message("vision","È¥°É£¡"+me->name()+"£¡\n",me);
+                        write("å¸¶è‘—åŸæ–™å»æ‰¾ä¾é‰¤å§ï¼\n");
+                        message("vision","å»å§ï¼"+me->name()+"ï¼\n",me);
                         break;
                 case "whip" :
                         addn_temp("whip", 1, me);
-                        write("´ø×ÅÔ­ÁÏÈ¥ÕÒÊÌ±Ş°É£¡\n");
-                        message("vision","È¥°É£¡"+me->name()+"£¡\n",me);
+                        write("å¸¶è‘—åŸæ–™å»æ‰¾ä¾é­å§ï¼\n");
+                        message("vision","å»å§ï¼"+me->name()+"ï¼\n",me);
                         break;
                 default :
-                        message_vision(HIC"Å·Ò±×ÓÒ»Á³ºüÒÉ£ºÊ²Ã´±øÆ÷£¿\n"NOR,me);
-                        return notify_fail("Å·Ò±×Ó×ĞÏ¸µÄËµ£º´ËÊÂ²»¿É¶ùÏ·£¬ÇëÉ÷ÖØ£¡£¡\n");
+                        message_vision(HIC"æ­å†¶å­ä¸€è‡‰ç‹ç–‘ï¼šä»€éº¼å…µå™¨ï¼Ÿ\n"NOR,me);
+                        return notify_fail("æ­å†¶å­ä»”ç´°çš„èªªï¼šæ­¤äº‹ä¸å¯å…’æˆ²ï¼Œè«‹æ…é‡ï¼ï¼\n");
         }
         switch(query_temp("or", me) )
         {
                 case 1:
 //                        w_or = new("/d/npc/m_weapon/tan/item/shenmu",1);
 //                        w_or->move(me);                        
-//                        message_vision(HIC"Å·Ò±×Ó¸øÁË$NÒ»¿éÇ§ÄêÉñÄ¾¡£\n"NOR,me);
+//                        message_vision(HIC"æ­å†¶å­çµ¦äº†$Nä¸€å¡Šåƒå¹´ç¥æœ¨ã€‚\n"NOR,me);
                 command("giveshenmuto"+query("id", me));
                         break;
                 case 2:
 //                        w_or = new("/d/npc/m_weapon/tan/item/jinmu",1);
 //                        w_or->move(me);
-//                        message_vision(HIC"Å·Ò±×Ó¸øÁË$NÒ»¿éº£µ×½ğÄ¸¡£\n"NOR,me);
+//                        message_vision(HIC"æ­å†¶å­çµ¦äº†$Nä¸€å¡Šæµ·åº•é‡‘æ¯ã€‚\n"NOR,me);
                 command("givejinmuto"+query("id", me));
                         break;
                 case 3:
 //                        w_or = new("/d/npc/m_weapon/tan/item/hanzhu",1);
 //                        w_or->move(me);
-//                        message_vision(HIC"Å·Ò±×Ó¸øÁË$NÒ»¿éº®Ë¿ÓğÖñ¡£\n"NOR,me);
+//                        message_vision(HIC"æ­å†¶å­çµ¦äº†$Nä¸€å¡Šå¯’çµ²ç¾½ç«¹ã€‚\n"NOR,me);
                 command("givehanzhuto"+query("id", me));
                         break;
                 case 4:
 //                        w_or = new("/d/qilian/obj/ironstone",1);
 //                        w_or->move(me);
-//                        message_vision(HIC"Å·Ò±×Ó¸øÁË$NÒ»¿éÔÉĞÇÌúÊ¯¡£\n"NOR,me);
+//                        message_vision(HIC"æ­å†¶å­çµ¦äº†$Nä¸€å¡Šéš•æ˜ŸéµçŸ³ã€‚\n"NOR,me);
                 command("giveironstoneto"+query("id", me));
                         break;
         }
@@ -256,45 +256,45 @@ int do_weapon()
         me = this_player();
         w_id=query("weapon/id", me);
         if( !(query("weapon/make", me)) )
-                return notify_fail("ÄãÔì¹ı±øÆ÷Âğ£¿\n");
+                return notify_fail("ä½ é€ éå…µå™¨å—ï¼Ÿ\n");
 
         if( objectp(obj = present(w_id, me)) )
         {
-                say("Å·Ò±×ÓÁ³É«Ò»³Á£ºÄúµÄÎäÆ÷²»¾ÍÔÚÄãÊÖ±ßÃ´£¿»¹À´¸ÉÊ²Ã´£¡\n");
+                say("æ­å†¶å­è‡‰è‰²ä¸€æ²‰ï¼šæ‚¨çš„æ­¦å™¨ä¸å°±åœ¨ä½ æ‰‹é‚Šéº¼ï¼Ÿé‚„ä¾†å¹¹ä»€éº¼ï¼\n");
                 return 1;
         }
         if( query_temp("condition", me) )
         {
-                say("Å·Ò±×ÓÁ³É«Ò»³Á£º²»ÊÇÈÃÄãÈ¥ÄÃ"+(query_temp("condition", me))+
-"ÁËÃ´£¿»¹Ã»ÄÃµ½»ØÀ´¸ÉÂï£¡\n");
+                say("æ­å†¶å­è‡‰è‰²ä¸€æ²‰ï¼šä¸æ˜¯è®“ä½ å»æ‹¿"+(query_temp("condition", me))+
+"äº†éº¼ï¼Ÿé‚„æ²’æ‹¿åˆ°å›ä¾†å¹¹å˜›ï¼\n");
                 return 1;
         }
 
         if( !(query_temp("condition_ok", me)) )
         {
-                message_vision(HIY"ÕâÎ»"+RANK_D->query_respect(me)+"ÏëÒªÖØĞÂµÃµ½±øÆ÷£¿Õâ²»ÄÑ¡£²»¹ı......\n" NOR, me);
-                message_vision(HIY"Å·Ò±×Ó³ÁÒ÷ÁËÒ»ÏÂËµ£ºÄãµÃÕÒµ½ÎÒÒªµÄ¶«Î÷¡£\n" NOR, me);
+                message_vision(HIY"é€™ä½"+RANK_D->query_respect(me)+"æƒ³è¦é‡æ–°å¾—åˆ°å…µå™¨ï¼Ÿé€™ä¸é›£ã€‚ä¸é......\n" NOR, me);
+                message_vision(HIY"æ­å†¶å­æ²‰åŸäº†ä¸€ä¸‹èªªï¼šä½ å¾—æ‰¾åˆ°æˆ‘è¦çš„æ±è¥¿ã€‚\n" NOR, me);
                 switch( random(5) )
                 {
                         case 0:
-                                message_vision("ÄÃµ½ÙÁµ¶£¬ÔÙÀ´°É£¡\n",me);
-                                set_temp("condition", "ÙÁµ¶", me);
+                                message_vision("æ‹¿åˆ°å€­åˆ€ï¼Œå†ä¾†å§ï¼\n",me);
+                                set_temp("condition", "å€­åˆ€", me);
                                 break;
                         case 1:
-                                message_vision("¸øÎÒ½Ğ»¯¼¦£¬ÎÒ¾Í°ïÄã£¡£¡\n",me);
-                                set_temp("condition", "½Ğ»¯¼¦", me);
+                                message_vision("çµ¦æˆ‘å«åŒ–é›ï¼Œæˆ‘å°±å¹«ä½ ï¼ï¼\n",me);
+                                set_temp("condition", "å«åŒ–é›", me);
                                 break;
                         case 2:
-                                message_vision("àÅ..Äã¾ÍÄÃÑòÆ¤ÊéÀ´»»°É£¡\n",me);
-                                set_temp("condition", "ÑòÆ¤Êé", me);
+                                message_vision("å—¯..ä½ å°±æ‹¿ç¾Šçš®æ›¸ä¾†æ›å§ï¼\n",me);
+                                set_temp("condition", "ç¾Šçš®æ›¸", me);
                                 break;
                         case 3:
-                                message_vision("..ÎÒÏë¿´¿´Èí½££¡\n",me);
-                                set_temp("condition", "Èí½£", me);
+                                message_vision("..æˆ‘æƒ³çœ‹çœ‹è»ŸåŠï¼\n",me);
+                                set_temp("condition", "è»ŸåŠ", me);
                                 break;
                         case 4:
-                                message_vision("Èç¹ûÄãÄÜÌæÎÒÕÒµ½±ÙĞ°½£Æ×µÄ»°......\n",me);
-                                set_temp("condition", "±ÙĞ°½£Æ×", me);
+                                message_vision("å¦‚æœä½ èƒ½æ›¿æˆ‘æ‰¾åˆ°è¾Ÿé‚ªåŠè­œçš„è©±......\n",me);
+                                set_temp("condition", "è¾Ÿé‚ªåŠè­œ", me);
                                 break;
                 }
         }
@@ -322,13 +322,13 @@ int do_give_weapon(object me)
         sscanf(base_name(env),"/%*s/%s/%*s",area);
         area=to_chinese(area);
                                 if (env->is_character())
-                                  env_name=query("name", env)+"ÊÖÖĞ";
+                                  env_name=query("name", env)+"æ‰‹ä¸­";
                                 else
                                   env_name=query("short", env);
                           if (!userp(env))
-                            env_name = area +"µÄ" + env_name;
-                          message_vision("$NËµµÀ£ºÄãµÄ"+query("name", obs[i])+
-                          "ÔÚ"+ env_name+"£¬¿ìÈ¥ÕÒ°É¡£\n",this_object());
+                            env_name = area +"çš„" + env_name;
+                          message_vision("$Nèªªé“ï¼šä½ çš„"+query("name", obs[i])+
+                          "åœ¨"+ env_name+"ï¼Œå¿«å»æ‰¾å§ã€‚\n",this_object());
                           return 1;
                         }
                 }
@@ -349,34 +349,34 @@ object creat_weapon()
 /*
         switch(mask)
         {
-                case "½£":
+                case "åŠ":
                         weapon = new("/d/npc/m_weapon/weapon/m_sword",1);
                         return weapon;
-                case "µ¶":
+                case "åˆ€":
                         weapon = new("/d/npc/m_weapon/weapon/m_blade",1);
                         return weapon;
-                case "Ç¹":
+                case "æ§":
                         weapon = new("/d/npc/m_weapon/weapon/m_spear",1);
                         return weapon;
-                case "¹÷":
+                case "æ£":
                         weapon = new("/d/npc/m_weapon/weapon/m_club",1);
                         return weapon;
-                case "°ô":
+                case "æ£’":
                         weapon = new("/d/npc/m_weapon/weapon/m_stick",1);
                         return weapon;
-                case "ÕÈ":
+                case "æ–":
                         weapon = new("/d/npc/m_weapon/weapon/m_staff",1);
                         return weapon;
-                case "´¸":
+                case "éŒ˜":
                         weapon = new("/d/npc/m_weapon/weapon/m_hammer",1);
                         return weapon;
-                case "¹³":
+                case "é‰¤":
                         weapon = new("/d/npc/m_weapon/weapon/m_hook",1);
                         return weapon;
-                case "±Ş":
+                case "é­":
                         weapon = new("/d/npc/m_weapon/weapon/m_whip",1);
                         return weapon;
-                case "¸«":
+                case "æ–§":
                         weapon = new("/d/npc/m_weapon/weapon/m_axe",1);
                         return weapon;
         }

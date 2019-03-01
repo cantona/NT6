@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "̩ɽ����");
+        set("short", "泰山腳下");
         set("long", @LONG
-̩ɽ�ų��ɽ��Ϊ�����Ķ�����Ϊ���̵ڶ�С���죬���С�������
-��֮�������ԡ�̩ɽ�����ۡ��������ڡ������͵�������ڷ���ǰͥ
-ң��ͤ�ˡ�
+泰山古稱岱山，為五岳的東岳，為道教第二小洞天，向有“五岳獨
+尊”之稱譽，以“泰山天下雄”名聞域內。往北就到進入岱宗坊的前庭
+遙參亭了。
 LONG );
         set("exits", ([
                 "north" : __DIR__"yaocan",

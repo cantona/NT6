@@ -7,13 +7,13 @@ int do_open(string arg);
 
 void create()
 {
-        set("short", "ÁèÏöÄÚÃÅ");
+        set("short", "å‡Œéœ„å…§é–€");
         set("long", 
-"ÕâÀïÊÇÁèÏö³ÇµÄ³ÇÃÅ¡£±¾À´ÁèÏö³ÇÉÙÓĞÍâµĞÈëÇÖ£¬µ«ÓÉÓÚµØ
-´¦Î÷Óò£¬Â¡¶¬Ö®¼Ê³£ÓĞ¶öÀÇÇ°À´ÇÖÏ®£¬¹ÊĞŞÖş´Ë´ó³ÇÒÔ×öÎªµÖµ²¡£
-Ïò³ÇÄÚÍûÈ¥£¬Ö»¼ûÈËÍ·ÈÁÈÁ£¬ºÜÊÇ·±»ª£¬Ïë²»µ½ÔÚÕâÎ÷ÓòÑ©É½¾ø
-¶¥£¬È´ÓĞ×ÅÒ»¸öÈç´ËÈ¥´¦¡£ÄÚÃÅÇ°ÄÇÕÅºñºñµÄµõÇÅ(bridge)Õı½ô
-½ô¹Ø±Õ×Å¡£Èç¹ûÏëÒª½øÈëµÄ»°£¬±ØĞëÒªÇëÈË¿ª(open)²ÅĞĞ¡£
+"é€™è£¡æ˜¯å‡Œéœ„åŸçš„åŸé–€ã€‚æœ¬ä¾†å‡Œéœ„åŸå°‘æœ‰å¤–æ•µå…¥ä¾µï¼Œä½†ç”±äºåœ°
+è™•è¥¿åŸŸï¼Œéš†å†¬ä¹‹éš›å¸¸æœ‰é¤“ç‹¼å‰ä¾†ä¾µè¥²ï¼Œæ•…ä¿®ç¯‰æ­¤å¤§åŸä»¥åšç‚ºæŠµæ“‹ã€‚
+å‘åŸå…§æœ›å»ï¼Œåªè¦‹äººé ­æ”˜æ”˜ï¼Œå¾ˆæ˜¯ç¹è¯ï¼Œæƒ³ä¸åˆ°åœ¨é€™è¥¿åŸŸé›ªå±±çµ•
+é ‚ï¼Œå»æœ‰è‘—ä¸€å€‹å¦‚æ­¤å»è™•ã€‚å…§é–€å‰é‚£å¼µåšåšçš„åŠæ©‹(bridge)æ­£ç·Š
+ç·Šé—œé–‰è‘—ã€‚å¦‚æœæƒ³è¦é€²å…¥çš„è©±ï¼Œå¿…é ˆè¦è«‹äººé–‹(open)æ‰è¡Œã€‚
 \n");
 
         set("outdoors", "lingxiao");
@@ -27,7 +27,7 @@ void create()
                 __DIR__"npc/dizi" : 3,
         ]));
         set("item_desc", ([
-                "bridge" : WHT "\nÕâÊÇÒ»ÕÅ¼«´óµÄµõÇÅ£¬ÄËÊÇÁèÏö³ÇµÄÒ»µÀ·ÀÏß¡£\n" NOR,
+                "bridge" : WHT "\né€™æ˜¯ä¸€å¼µæ¥µå¤§çš„åŠæ©‹ï¼Œä¹ƒæ˜¯å‡Œéœ„åŸçš„ä¸€é“é˜²ç·šã€‚\n" NOR,
         ]) );
         setup();
 } 
@@ -47,24 +47,24 @@ void close_bridge()
         if (objectp(room))
         {
                 delete("exits/south");
-                message("vision", HIY "¼¸Î»ÁèÏöµÜ×ÓÉÏÇ°°ÑµõÇÅ¹ØÁËÆğÀ´¡£\n"
+                message("vision", HIY "å¹¾ä½å‡Œéœ„å¼Ÿå­ä¸Šå‰æŠŠåŠæ©‹é—œäº†èµ·ä¾†ã€‚\n"
                                   NOR, this_object());
                 delete("exits/north", room);
-                message("vision", HIY "Ö»Ìı¡°¸Â¸Â¸Â¸Â¡±¼¸Éù£¬µõÇÅÓÖ±»¹ØÁË"
-                                  "ÆğÀ´¡£\n" NOR, room);
+                message("vision", HIY "åªè½â€œå˜å˜å˜å˜â€å¹¾è²ï¼ŒåŠæ©‹åˆè¢«é—œäº†"
+                                  "èµ·ä¾†ã€‚\n" NOR, room);
         }
 }
 
 int do_close(string arg)
 {
         if (! query("exits/south"))
-                return notify_fail("µõÇÅÒÑ¾­ÊÇ¹Ø×ÅµÄÁË¡£\n");
+                return notify_fail("åŠæ©‹å·²ç¶“æ˜¯é—œè‘—çš„äº†ã€‚\n");
 
         if (!arg || (arg != "bridge" && arg != "south"))
-                return notify_fail("ÄãÒª¹ØÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦é—œä»€éº¼ï¼Ÿ\n");
 
-        message_vision(HIY "$N" HIY "³¯ÁèÏöµÜ×ÓÕĞÁËÒ»ÏÂÊÖ£¬¼¸Î»µÜ×ÓµãÁËµã"
-                       "Í·£¬ÉÏÇ°½«µõÇÅµõÁËÉÏÈ¥¡£\n" NOR, this_player());
+        message_vision(HIY "$N" HIY "æœå‡Œéœ„å¼Ÿå­æ‹›äº†ä¸€ä¸‹æ‰‹ï¼Œå¹¾ä½å¼Ÿå­é»äº†é»"
+                       "é ­ï¼Œä¸Šå‰å°‡åŠæ©‹åŠäº†ä¸Šå»ã€‚\n" NOR, this_player());
 
         remove_call_out("close_bridge");
         call_out("close_bridge", 2);
@@ -77,19 +77,19 @@ int do_open(string arg)
         object room;
 
         if (query("exits/south"))
-                return notify_fail("µõÇÅÒÑ¾­·ÅÏÂÀ´ÁË¡£\n");
+                return notify_fail("åŠæ©‹å·²ç¶“æ”¾ä¸‹ä¾†äº†ã€‚\n");
 
         if (! arg || (arg != "bridge" && arg != "south"))
-                return notify_fail("ÄãÒª¿ªÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦é–‹ä»€éº¼ï¼Ÿ\n");
 
         if (! ( room = find_object(__DIR__"shanya")) )
                 room = load_object(__DIR__"shanya");
         if (objectp(room))
         {
                 set("exits/south", __DIR__"shanya");
-                message_vision(HIY "$N" HIY "ÈÃÁèÏöµÜ×Ó°ÑµõÇÅ·ÅÁËÏÂÀ´¡£\n" NOR, this_player());
+                message_vision(HIY "$N" HIY "è®“å‡Œéœ„å¼Ÿå­æŠŠåŠæ©‹æ”¾äº†ä¸‹ä¾†ã€‚\n" NOR, this_player());
                 set("exits/north", __FILE__, room);
-                message("vision", HIY "Ö»Ìı¡°¸Â¸Â¸Â¸Â¡±¼¸Éù£¬µõÇÅ±»·ÅÁËÏÂÀ´¡£\n" NOR, room);
+                message("vision", HIY "åªè½â€œå˜å˜å˜å˜â€å¹¾è²ï¼ŒåŠæ©‹è¢«æ”¾äº†ä¸‹ä¾†ã€‚\n" NOR, room);
                 remove_call_out("close_bridge");
                 call_out("close_bridge", 10);
         }
@@ -105,7 +105,7 @@ int valid_leave(object me, string dir)
 
         myfam=query("family", me);
 
-            if ((! myfam || myfam["family_name"] != "ÁèÏö³Ç" ) && dir == "north")
+            if ((! myfam || myfam["family_name"] != "å‡Œéœ„åŸ" ) && dir == "north")
         {
                 inv = all_inventory(me);
                 for( i = sizeof(inv)-1; i >= 0; i--)
@@ -114,8 +114,8 @@ int valid_leave(object me, string dir)
                           query("equipped", inv[i]) )
 
                 if (objectp(present("wen wanfu", environment(me))))
-                            return notify_fail(CYN "ÎÅÍò·òÉíĞÎÒ»Õ¹£¬µ²×¡ÄãµÀ£ºÁèÏö³ÇÀúÄê"
-                                           "À´µÄ¹æ¾Ø£¬ÍâÈËÈë³Ç²»µÃÅå´ø±øÈĞ¡£\n");
+                            return notify_fail(CYN "èè¬å¤«èº«å½¢ä¸€å±•ï¼Œæ“‹ä½ä½ é“ï¼šå‡Œéœ„åŸæ­·å¹´"
+                                           "ä¾†çš„è¦çŸ©ï¼Œå¤–äººå…¥åŸä¸å¾—ä½©å¸¶å…µåˆƒã€‚\n");
             }
             return ::valid_leave(me, dir);
 }

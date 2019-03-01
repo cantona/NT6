@@ -4,10 +4,10 @@
 inherit ROOM;
 void create()
 {
-        set("short", "铁索");
+        set("short", "閻电储");
         set("long", @LONG
 
-∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞
+鈭炩垶鈭炩垶鈭炩垶鈭炩垶鈭炩垶鈭炩垶鈭炩垶鈭炩垶鈭炩垶鈭炩垶鈭炩垶鈭炩垶鈭炩垶鈭炩垶鈭炩垶
 
 LONG
         );
@@ -26,10 +26,10 @@ void init()
         if(me->query_kar() < random(30))
         {
                 me->move(this_object());
-                message_vision("$N脚下一个不稳，从铁索上直摔下去！\n", me);
+                message_vision("$N鑵充笅涓�鍊嬩笉绌╋紝寰為惖绱笂鐩存憯涓嬪幓锛乗n", me);
                 ob = load_object(__DIR__"kuzhu");
                 me->move(ob);
-                message_vision("只听到一声惨叫，$N不知从什么地方重重的摔了下来！\n", me);
+                message_vision("鍙伣鍒颁竴鑱叉厴鍙紝$N涓嶇煡寰炰粈楹煎湴鏂归噸閲嶇殑鎽斾簡涓嬩締锛乗n", me);
                 me->unconcious();
         }
         return;

@@ -6,12 +6,12 @@ inherit HEAD;
 
 void create()
 {
-        set_name("¶·óÒ", ({ "dou li", "douli" }) );
+        set_name("é ˆé¯œ", ({ "dou li", "douli" }) );
         set_weight(800);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¶¥");
+                set("unit", "éšŽ");
                 set("material", "cloth");
                 set("value", 150);
                 set("armor_prop/armor", 2);

@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�����");
+        set("short", "鐵嶺關");
         set("long", @LONG
-�سʳ����Σ�שʯ�ṹ�����е������¥Ϊ�½�������صش�ˮ½
-Ҫ��ǵ�¥���ȿ����������ܷ�����������ԫ���˺ӡ�ʯ������ɵ�
-���Ϲ��£���ʱ��Ϊ�˷����ϵֿ����ŵ����ܡ�
+關呈長方形，磚石結構，正中的三層敵樓為新建。鐵嶺關地處水陸
+要沖登敵樓，既可了望，又能放炮射箭。這關垣、運河、石橋所組成的
+聯合工事，當時是為了防御合抵抗侵擾的倭寇。
 LONG );
         set("outdoors", "suzhou");
 //        set("no_clean_up", 0);

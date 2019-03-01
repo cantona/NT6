@@ -8,18 +8,18 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("µÀÆ·ìøÊ¦", ({
+        set_name("é“å“ç¦ªå¸«", ({
                 "daopin chanshi",
                 "daopin",
                 "chanshi",
         }));
         set("long",
-                "ËûÊÇÒ»Î»Éí²Ä¸ß´óµÄÖĞÄêÉ®ÈË£¬Á½±Û´Ö×³£¬°òÀ«ÑüÔ²¡£ËûÊÖ³Ö±ø\n"
-                "ÈĞ£¬Éí´©Ò»Ï®»Ò²¼Ïâ±ßôÂôÄ£¬ËÆºõÓĞÒ»ÉíÎäÒÕ¡£\n"
+                "ä»–æ˜¯ä¸€ä½èº«æé«˜å¤§çš„ä¸­å¹´åƒ§äººï¼Œå…©è‡‚ç²—å£¯ï¼Œè†€é—Šè…°åœ“ã€‚ä»–æ‰‹æŒå…µ\n"
+                "åˆƒï¼Œèº«ç©¿ä¸€è¥²ç°å¸ƒé‘²é‚Šè¢ˆè£Ÿï¼Œä¼¼ä¹æœ‰ä¸€èº«æ­¦è—ã€‚\n"
         );
 
 
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("attitude", "friendly");
         set("class", "bonze");
 
@@ -58,7 +58,7 @@ void create()
 
         prepare_skill("finger", "nianhua-zhi");
 
-        create_family("ÉÙÁÖÅÉ", 39, "µÜ×Ó");
+        create_family("å°‘æ—æ´¾", 39, "å¼Ÿå­");
 
         set("master_ob",1);
         setup();

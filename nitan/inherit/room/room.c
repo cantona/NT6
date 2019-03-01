@@ -93,10 +93,10 @@ void reset()
                         foreach (ob in obs)
                                 destruct(ob);
                         if (query("outdoors"))
-                                message("vision", "Ò»Õó·ç´µ¹ý£¬¾í×ßÁËÒ»Ð©¶«Î÷¡£\n",
+                                message("vision", "ä¸€é™£é¢¨å¹éŽï¼Œå·èµ°äº†ä¸€äº›æ±è¥¿ã€‚\n",
                                         this_object());
                         else
-                                message("vision", "Í»È»¶£¶£ßÛßÛÒ»ÕóÏìÉù¹ýºó£¬ºÃÏñÉÙÁËµãÊ²Ã´ËÆµÄ¡£\n",
+                                message("vision", "çªç„¶å®å®â–¡â–¡ä¸€é™£éŸ¿è²éŽå¾Œï¼Œå¥½åƒå°‘äº†é»žä»€éº¼ä¼¼çš„ã€‚\n",
                                         this_object());
                 }
         }
@@ -160,11 +160,11 @@ void reset()
 string look_door(string dir)
 {
         if (! mapp(doors) || undefinedp(doors[dir]))
-                return "ÄãÒª¿´Ê²Ã´£¿\n";
+                return "ä½ è¦çœ‹ä»€éº¼ï¼Ÿ\n";
         if (doors[dir]["status"] & DOOR_CLOSED)
-                return "Õâ¸ö" + doors[dir]["name"] + "ÊÇ¹Ø×ÅµÄ¡£\n";
+                return "é€™å€‹" + doors[dir]["name"] + "æ˜¯é—œè‘—çš„ã€‚\n";
         else
-                return "Õâ¸ö" + doors[dir]["name"] + "ÊÇ¿ª×ÅµÄ¡£\n";
+                return "é€™å€‹" + doors[dir]["name"] + "æ˜¯é–‹è‘—çš„ã€‚\n";
 }
 
 varargs int open_door(string dir, int from_other_side)
@@ -173,17 +173,17 @@ varargs int open_door(string dir, int from_other_side)
         object ob;
 
         if (! mapp(doors) || undefinedp(doors[dir]))
-                return notify_fail("Õâ¸ö·½ÏòÃ»ÓÐÃÅ¡£\n");
+                return notify_fail("é€™å€‹æ–¹å‘æ²’æœ‰é–€ã€‚\n");
 
         if (! (doors[dir]["status"] & DOOR_CLOSED))
-                return notify_fail(doors[dir]["name"] + "ÒÑ¾­ÊÇ¿ª×ÅµÄÁË¡£\n");
+                return notify_fail(doors[dir]["name"] + "å·²ç¶“æ˜¯é–‹è‘—çš„äº†ã€‚\n");
 
         exits = query("exits");
         if (! mapp(exits) || undefinedp(exits[dir]))
                 error("Room: open_door: attempt to open a door with out an exit.\n");
 
         if (from_other_side)
-                message("vision", "ÓÐÈË´ÓÁíÒ»±ß½«" + doors[dir]["name"] + "´ò¿ªÁË¡£\n", this_object());
+                message("vision", "æœ‰äººå¾žå¦ä¸€é‚Šå°‡" + doors[dir]["name"] + "æ‰“é–‹äº†ã€‚\n", this_object());
         else
         if (objectp(ob = find_object(exits[dir])))
         {
@@ -200,17 +200,17 @@ varargs int close_door(string dir, int from_other_side)
         object ob;
 
         if (! mapp(doors) || undefinedp(doors[dir]))
-                return notify_fail("Õâ¸ö·½ÏòÃ»ÓÐÃÅ¡£\n");
+                return notify_fail("é€™å€‹æ–¹å‘æ²’æœ‰é–€ã€‚\n");
 
         if ((doors[dir]["status"] & DOOR_CLOSED))
-                return notify_fail(doors[dir]["name"] + "ÒÑ¾­ÊÇ¹Ø×ÅµÄÁË¡£\n");
+                return notify_fail(doors[dir]["name"] + "å·²ç¶“æ˜¯é—œè‘—çš„äº†ã€‚\n");
 
         exits = query("exits");
         if (! mapp(exits) || undefinedp(exits[dir]))
                 error("Room: close_door: attempt to open a door with out an exit.\n");
 
         if (from_other_side)
-                message("vision", "ÓÐÈË´ÓÁíÒ»±ß½«" + doors[dir]["name"] + "¹ØÉÏÁË¡£\n", this_object());
+                message("vision", "æœ‰äººå¾žå¦ä¸€é‚Šå°‡" + doors[dir]["name"] + "é—œä¸Šäº†ã€‚\n", this_object());
         else
         if (objectp(ob = find_object(exits[dir])))
         {
@@ -278,7 +278,7 @@ int valid_leave(object me, string dir)
         if (mapp(doors) && !undefinedp(doors[dir]))
         {
                 if (doors[dir]["status"] & DOOR_CLOSED && ! wizardp(me))
-                        return notify_fail("Äã±ØÐëÏÈ°Ñ" + doors[dir]["name"] + "´ò¿ª£¡\n");
+                        return notify_fail("ä½ å¿…é ˆå…ˆæŠŠ" + doors[dir]["name"] + "æ‰“é–‹ï¼\n");
         }
         return 1;
 }
@@ -413,11 +413,11 @@ void open_gate()
                         exits += gate_dir;
                         set("exits",exits);
                 }
-                tell_object(this_object(),"ÐñÈÕ¶«Éý£¬"+gate_name+"´ò¿ªÁË¡£\n");
+                tell_object(this_object(),"æ—­æ—¥æ±å‡ï¼Œ"+gate_name+"æ‰“é–‹äº†ã€‚\n");
         }
 
-        // Ã¿´ÎÖçÒ¹¸üÌæ¶¼ºÍ mud_time ¶ÔÒ»´ÎÊ±£¬±£³Ö¿ª¹ØÃÅÊ±¼ä¾«È·¡£
-        // Í¬Ê±Ò²±£Ö¤ÃÅÁ½±ß·¿¼ä¿ª¹ØÃÅµÄÍ¬²½¡£
+        // æ¯æ¬¡æ™å¤œæ›´æ›¿éƒ½å’Œ mud_time å°ä¸€æ¬¡æ™‚ï¼Œä¿æŒé–‹é—œé–€æ™‚é–“ç²¾ç¢ºã€‚
+        // åŒæ™‚ä¹Ÿä¿è¨¼é–€å…©é‚Šæˆ¿é–“é–‹é—œé–€çš„åŒæ­¥ã€‚
         if( sscanf( NATURE_D->day_or_night(),"%s %d",day_night,time) ) {
                 if( day_night == "day" )
                         call_out("close_gate",time);
@@ -433,10 +433,10 @@ void close_gate()
 
         remove_call_out("close_gate");
         do_close_gate();
-        tell_object(this_object(),"ÌìÉ«ÒÑÍí£¬"+query("gate_name")+"¹ØÉÏÁË¡£\n");
+        tell_object(this_object(),"å¤©è‰²å·²æ™šï¼Œ"+query("gate_name")+"é—œä¸Šäº†ã€‚\n");
 
-        // Ã¿´ÎÖçÒ¹¸üÌæ¶¼ºÍ mud_time ¶ÔÒ»´ÎÊ±£¬±£³Ö¿ª¹ØÃÅÊ±¼ä¾«È·¡£
-        // Í¬Ê±Ò²±£Ö¤ÃÅÁ½±ß·¿¼ä¿ª¹ØÃÅµÄÍ¬²½¡£
+        // æ¯æ¬¡æ™å¤œæ›´æ›¿éƒ½å’Œ mud_time å°ä¸€æ¬¡æ™‚ï¼Œä¿æŒé–‹é—œé–€æ™‚é–“ç²¾ç¢ºã€‚
+        // åŒæ™‚ä¹Ÿä¿è¨¼é–€å…©é‚Šæˆ¿é–“é–‹é—œé–€çš„åŒæ­¥ã€‚
         if( sscanf( NATURE_D->day_or_night(),"%s %d",day_night,time) ) {
                 if( day_night == "day" )
                         call_out("open_gate",time+600);

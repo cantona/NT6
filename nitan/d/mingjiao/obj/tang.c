@@ -1,4 +1,4 @@
-// xiangcha.c ËáÃ·ÌÀ
+// xiangcha.c é…¸æ¢…æ¹¯
 
 inherit ITEM;
 #include <ansi.h>
@@ -7,13 +7,13 @@ void do_eat();
 
 void create()
 {
-        set_name("ËáÃ·ÌÀ",({"suanmei tang", "tang"}));
+        set_name("é…¸æ¢…æ¹¯",({"suanmei tang", "tang"}));
         set_weight(50);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»±­ÈÈÈÈµÄËáÃ·ÌÀ£¬¿´¼û¾ÍÁîÈËÁ÷¿ÚË®¡«¡«¡«\n");
-                set("unit", "±­");
+                set("long", "ä¸€æ¯ç†±ç†±çš„é…¸æ¢…æ¹¯ï¼Œçœ‹è¦‹å°±ä»¤äººæµå£æ°´ï½ï½ï½\n");
+                set("unit", "æ¯");
                 set("value", 10);
                 set("remaining", 3);
                 set("drink_supply", 30);
@@ -35,9 +35,9 @@ int do_drink(string arg)
         
         if( !this_object()->id(arg) ) return 0;
         if( this_player()->is_busy() )
-            return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É¡£\n");
+            return notify_fail("ä½ ä¸Šä¸€å€‹å‹•ä½œé‚„æ²’æœ‰å®Œæˆã€‚\n");
         if( query("water", this_player()) >= this_player()->max_water_capacity() )
-            return notify_fail("ÄãÒÑ¾­ºÈÌ«¶àÁË£¬ÔÙÒ²¹à²»ÏÂÒ»µÎË®ÁË¡£\n");
+            return notify_fail("ä½ å·²ç¶“å–å¤ªå¤šäº†ï¼Œå†ä¹ŸçŒä¸ä¸‹ä¸€æ»´æ°´äº†ã€‚\n");
         set("value", 0);
         addn("water", query("drink_supply"), this_player());
         jing=query("jing", this_player());
@@ -56,12 +56,12 @@ int do_drink(string arg)
         addn("remaining", -1);
 
         if ( query("remaining")){
-           message_vision("$N¶ËÆğ±­ËáÃ·ÌÀ£¬ÓĞ×ÌÓĞÎ¶µØÆ·ÁË¼¸¿Ú¡£\n"+
-                          "Ò»¹ÉËáÌğÖ®Î¶Ö±ÈëĞÄÍ·£¬$N¾õµÃ¾«ÉñºÃ¶àÁË¡£\n", this_player());
+           message_vision("$Nç«¯èµ·æ¯é…¸æ¢…æ¹¯ï¼Œæœ‰æ»‹æœ‰å‘³åœ°å“äº†å¹¾å£ã€‚\n"+
+                          "ä¸€è‚¡é…¸ç”œä¹‹å‘³ç›´å…¥å¿ƒé ­ï¼Œ$Nè¦ºå¾—ç²¾ç¥å¥½å¤šäº†ã€‚\n", this_player());
         }
         else { 
-           message_vision("$N¶ËÆğĞ¡±­£¬°ÑÊ£ÏÂµÄËáÃ·ÌÀÒ»Òû¶ø¾¡¡£\n"+
-                          "Ò»¹ÉËáÌğÖ®Î¶Ö±ÈëĞÄÍ·£¬$N¾õµÃ¾«ÉñºÃ¶àÁË¡£\n", this_player());
+           message_vision("$Nç«¯èµ·å°æ¯ï¼ŒæŠŠå‰©ä¸‹çš„é…¸æ¢…æ¹¯ä¸€é£²è€Œç›¡ã€‚\n"+
+                          "ä¸€è‚¡é…¸ç”œä¹‹å‘³ç›´å…¥å¿ƒé ­ï¼Œ$Nè¦ºå¾—ç²¾ç¥å¥½å¤šäº†ã€‚\n", this_player());
            destruct(this_object());
         }
         return 1;

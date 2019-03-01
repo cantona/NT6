@@ -3,5 +3,5 @@ void create() { seteuid(getuid()); }
 string type() { return "knowledge"; }
 int practice_skill(object me)
 {   
-        return notify_fail("Á¶µ¤ÊõÖ»ÄÜÍ¨¹ıÑ§Ï°(learn)£¬»òÕßÔÚÊµ¼ùÖĞÌá¸ß!\n");
+        return notify_fail("ç…‰ä¸¹è¡“åªèƒ½é€šéå­¸ç¿’(learn)ï¼Œæˆ–è€…åœ¨å¯¦è¸ä¸­æé«˜!\n");
 }

@@ -1,16 +1,16 @@
-// yljing.c ÔÆÁú¾­
+// yljing.c é›²é¾ç¶“
 
 inherit ITEM;
 
 void create()
 {
-        set_name( "ÔÆÁú¾­", ({ "shu", "book" }));
+        set_name( "é›²é¾ç¶“", ({ "shu", "book" }));
         set_weight(200);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
-                set("long", "ÕâÊÇÒ»²áÔÆÁú¾­,·âÆ¤ÉÏÒ»Ìõ³¤ÁúÔÚÔÆÖĞÈôÒşÈôÏÖ¡£\n");
+                set("unit", "æœ¬");
+                set("long", "é€™æ˜¯ä¸€å†Šé›²é¾ç¶“,å°çš®ä¸Šä¸€æ¢é•·é¾åœ¨é›²ä¸­è‹¥éš±è‹¥ç¾ã€‚\n");
                 set("value", 1000);
                 set("material", "paper");
                 set("skill", ([

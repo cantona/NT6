@@ -4,13 +4,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIG "Éß¾«ÁÛÆ¬" NOR, ({"shejing linpian", "shejing", "linpian"}));
+        set_name(HIG "è›‡ç²¾é±—ç‰‡" NOR, ({"shejing linpian", "shejing", "linpian"}));
         set_weight(300);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIG "Ò»Æ¬´ÓÉß¾«ÉíÉÏ»ñÈ¡µÄÁÛÆ¬£¬ÊÇÓÂÕßµÄÏóÕ÷¡£\n" NOR);
-                set("unit", "Æ¬");
+                set("long", HIG "ä¸€ç‰‡å¾è›‡ç²¾èº«ä¸Šç²å–çš„é±—ç‰‡ï¼Œæ˜¯å‹‡è€…çš„è±¡å¾ã€‚\n" NOR);
+                set("unit", "ç‰‡");
         }
 }
 

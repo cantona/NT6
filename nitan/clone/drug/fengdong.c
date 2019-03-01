@@ -11,11 +11,11 @@ void setup_ob(object me,object victim);
 
 void create()
 {
-                  set("short","·ç¶´");
+                  set("short","é¢¨æ´");
 
                   set("long",@LONG
-Õâ¸ö´ó¶´ÓÖ¸ßÓÖ¿í£¬ÓÉÁ½´ó»¨¸ÚÑÒ¼ĞÖÅ¶ø³É¡£¶´ÄÚÇå·çÏ°Ï°£¬Á¹Æøì¬ì¬£¬
-¹Ê³Æ·ç¶´¡£ÌıËµÓĞÊ±»á¿ñ·ç´ó×÷£¬¿´À´ÒªĞ¡ĞÄÒ»Ğ©¡£
+é€™å€‹å¤§æ´åˆé«˜åˆå¯¬ï¼Œç”±å…©å¤§èŠ±å´—å·–å¤¾å³™è€Œæˆã€‚æ´å…§æ¸…é¢¨ç¿’ç¿’ï¼Œæ¶¼æ°£é¢¼é¢¼ï¼Œ
+æ•…ç¨±é¢¨æ´ã€‚è½èªªæœ‰æ™‚æœƒç‹‚é¢¨å¤§ä½œï¼Œçœ‹ä¾†è¦å°å¿ƒä¸€äº›ã€‚
 LONG);
 
                   set("exits",([
@@ -36,16 +36,16 @@ void init()
 int do_throw(string arg)
 {
         object ob;
-        if(!arg)return notify_fail("ÄãÏëÈÓÊ²Ã´£¿");
+        if(!arg)return notify_fail("ä½ æƒ³æ‰”ä»€éº¼ï¼Ÿ");
         ob = present(arg,this_player());
-        if(!ob)return notify_fail("ÄãÏëÈÓÊ²Ã´£¿");
-        message_vision( HIY"\n$N°Ñ$nÍùÍâÈÓÈ¥£¡\n"NOR, this_player(), ob);
+        if(!ob)return notify_fail("ä½ æƒ³æ‰”ä»€éº¼ï¼Ÿ");
+        message_vision( HIY"\n$NæŠŠ$nå¾€å¤–æ‰”å»ï¼\n"NOR, this_player(), ob);
         remove_call_out("blow");
         call_out("blow",1  );
         if(userp(ob))
         {
                 ob->move("/d/zhongnan/shanlu18");
-                message_vision( HIY"\n$N±»ÈÓÁË³öÀ´£¡\n"NOR, ob);
+                message_vision( HIY"\n$Nè¢«æ‰”äº†å‡ºä¾†ï¼\n"NOR, ob);
          }
         else destruct(ob);
         return 1;
@@ -62,11 +62,11 @@ int blow()
         if(!environment(this_player())) return 1;
         if( base_name(environment(this_player())) != "/d/zhongnan/fengdong") return 1;
 
-        message_vision( HIY"\nÍ»È»Ò»Õó¿ñ·ç¼Ğ´øÊ¯¿éÏò·ç¶´Ï®À´£¬ÉùÊÆ¾ªÈË£¡\n"NOR, this_player() );
+        message_vision( HIY"\nçªç„¶ä¸€é™£ç‹‚é¢¨å¤¾å¸¶çŸ³å¡Šå‘é¢¨æ´è¥²ä¾†ï¼Œè²å‹¢é©šäººï¼\n"NOR, this_player() );
 
         for ( i=0 ; i < sizeof(inv); i++)
         {
-                if( query("race", inv[i]) == "ÈËÀà" )
+                if( query("race", inv[i]) == "äººé¡" )
                 {
                         blow_result(inv[i]);
                 }
@@ -87,7 +87,7 @@ private int blow_result(object victim)
         {
                 ob2=new("/d/zhongnan/npc/bigbear");
                 ob2->move(environment(victim));
-                message_vision(HIR"Í»È»´Ó¶´¿ÚÖĞ×ß½øÒ»Ö»$N£¬Ëü¿´µ½ÓĞÈË£¬´ó¸ÅÊÜÁË¾ªÏÅ£¬·¢·èËÆµØÏò$n·¢Æğ½ø¹¥£¡\n"NOR, ob2,victim);
+                message_vision(HIR"çªç„¶å¾æ´å£ä¸­èµ°é€²ä¸€åª$Nï¼Œå®ƒçœ‹åˆ°æœ‰äººï¼Œå¤§æ¦‚å—äº†é©šåš‡ï¼Œç™¼ç˜‹ä¼¼åœ°å‘$nç™¼èµ·é€²æ”»ï¼\n"NOR, ob2,victim);
                 setup_ob(ob2,victim);
                 ob2->kill_ob(victim);
                 addn_temp("offenders/"+query("id", victim), 1, ob2);
@@ -105,17 +105,17 @@ private int blow_result(object victim)
 
         if ( ap > dp){
         limbs=query("limbs", victim);
-                victim->receive_wound("qi", random(20), "±»Ê¯¿éÔÒËÀÁË£¡");
-                victim->receive_damage("qi", random(ob->query_weight()/100), "±»Ê¯¿éÔÒËÀÁË£¡");
+                victim->receive_wound("qi", random(20), "è¢«çŸ³å¡Šç ¸æ­»äº†ï¼");
+                victim->receive_damage("qi", random(ob->query_weight()/100), "è¢«çŸ³å¡Šç ¸æ­»äº†ï¼");
 
-                message_vision(CYN"$Nâ§²»¼°·À£¬$n"+CYN+"ÔÒÔÚÁË$NµÄ"+limbs[random(sizeof(limbs))]
-                          +"ÉÏ¡£\n"NOR, victim, ob);
+                message_vision(CYN"$NçŒä¸åŠé˜²ï¼Œ$n"+CYN+"ç ¸åœ¨äº†$Nçš„"+limbs[random(sizeof(limbs))]
+                          +"ä¸Šã€‚\n"NOR, victim, ob);
                 destruct(ob);
                 //ob->move(environment(victim));
         }
         else if ( ap < dp/7 && ob->query_weight() < 7000
-                 && query("race", victim) == "ÈËÀà"){
-                message_vision(CYN"²»ÁÏ$NÑÛÃ÷ÊÖ¿ì£¬Éí×ÓÒ»²à£¬°Ñ$n"+CYN+"ÇáÇáµØ½ÓÔÚÊÖÀï¡£\n\n"NOR, victim, ob);
+                 && query("race", victim) == "äººé¡"){
+                message_vision(CYN"ä¸æ–™$Nçœ¼æ˜æ‰‹å¿«ï¼Œèº«å­ä¸€å´ï¼ŒæŠŠ$n"+CYN+"è¼•è¼•åœ°æ¥åœ¨æ‰‹è£¡ã€‚\n\n"NOR, victim, ob);
 
                 ob->move(victim);
 
@@ -124,7 +124,7 @@ private int blow_result(object victim)
 
                 dodge_skill = victim->query_skill_mapped("dodge");
                 if( !dodge_skill ) dodge_skill = "dodge";
-                message_vision("$NÒ»ÉÁ£¬ÕıºÃ¶ã¹ı"+query("name", ob)+".\n",victim);
+                message_vision("$Nä¸€é–ƒï¼Œæ­£å¥½èº²é"+query("name", ob)+".\n",victim);
 
                 destruct(ob);
         }

@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define HUI "¡¸" HIR "Õæ¡¤ÁùµÀÂÖ»Ø" NOR "¡¹"
+#define HUI "ã€Œ" HIR "çœŸï¹’å…­é“è¼ªå›" NOR "ã€"
 
 inherit F_SSERVER;
 
@@ -20,45 +20,45 @@ int perform(object me, object target)
         int ap, dp, damage;
 
         if( userp(me) && !query("can_perform/lunhui-jian/hui", me) )
-                return notify_fail("ÄãËùÊ¹ÓÃµÄÍâ¹¦ÖĞÃ»ÓĞÕâÖÖ¹¦ÄÜ¡£\n");
+                return notify_fail("ä½ æ‰€ä½¿ç”¨çš„å¤–åŠŸä¸­æ²’æœ‰é€™ç¨®åŠŸèƒ½ã€‚\n");
 
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(HUI "Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(HUI "åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me) )
             || query("skill_type", weapon) != "sword" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô£¬ÄÑÒÔÊ©Õ¹" HUI "¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ï¼Œé›£ä»¥æ–½å±•" HUI "ã€‚\n");
 
         if ((int)me->query_skill("force") < 750)
-                return notify_fail("ÄãµÄÄÚ¹¦ĞŞÎª²»¹»£¬ÄÑÒÔÊ©Õ¹" HUI "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸä¿®ç‚ºä¸å¤ ï¼Œé›£ä»¥æ–½å±•" HUI "ã€‚\n");
 
         if( query("max_neili", me)<10000 )
-                return notify_fail("ÄãµÄÄÚÁ¦ĞŞÎª²»¹»£¬ÄÑÒÔÊ©Õ¹" HUI "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¿®ç‚ºä¸å¤ ï¼Œé›£ä»¥æ–½å±•" HUI "ã€‚\n");
 
         if ((int)me->query_skill("buddhism", 1) < 500)
-                return notify_fail("Äã¶Ôìø×ÚĞÄ·¨²ÎÎò²»¹»£¬ÄÑÒÔÊ©Õ¹" HUI "¡£\n");
+                return notify_fail("ä½ å°ç¦ªå®—å¿ƒæ³•åƒæ‚Ÿä¸å¤ ï¼Œé›£ä»¥æ–½å±•" HUI "ã€‚\n");
 
         if ((int)me->query_skill("lunhui-jian", 1) < 500)
-                return notify_fail("ÄãÊÍåÈÂÖ»Ø½£»ğºò²»¹»£¬ÄÑÒÔÊ©Õ¹" HUI "¡£\n");
+                return notify_fail("ä½ é‡‹è¿¦è¼ªå›åŠç«å€™ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" HUI "ã€‚\n");
 
         if (me->query_skill_mapped("sword") != "lunhui-jian")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢ÊÍåÈÂÖ»Ø½££¬ÄÑÒÔÊ©Õ¹" HUI "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼é‡‹è¿¦è¼ªå›åŠï¼Œé›£ä»¥æ–½å±•" HUI "ã€‚\n");
 
         if( query("neili", me)<1000 )
-                return notify_fail("ÄãÏÖÔÚÕæÆø²»¹»£¬ÄÑÒÔÊ©Õ¹" HUI "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çœŸæ°£ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" HUI "ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
         wn = weapon->name();
 
-        message_combatd(HIW "$N" HIW "ÃæÂ¶Äé»¨Ö®Òâ£¬¼ÀÆğÊÖÖĞ" + wn +
-                        HIW "£¬ö®Ê±±Ì²¨Á÷×ª£¬»ª¹âÍòÕÉ£¬Ëµ²»¾¡µÄÏéºÍ¡£"
+        message_combatd(HIW "$N" HIW "é¢éœ²æ‹ˆèŠ±ä¹‹æ„ï¼Œç¥­èµ·æ‰‹ä¸­" + wn +
+                        HIW "ï¼Œéœæ™‚ç¢§æ³¢æµè½‰ï¼Œè¯å…‰è¬ä¸ˆï¼Œèªªä¸ç›¡çš„ç¥¥å’Œã€‚"
                         "\n" NOR, me, target);
 
-        //  ¼ÇÂ¼ÏÂ×î³õµÄ·¿¼ä
+        //  è¨˜éŒ„ä¸‹æœ€åˆçš„æˆ¿é–“
         if (! objectp(sroom = environment(me)))
                 return 1;
 
@@ -70,7 +70,7 @@ int perform(object me, object target)
 
         damage = ap + random(ap);
 
-        // ÁùµÀÂÖ»ØÖ®ÈË¼äµÀ
+        // å…­é“è¼ªå›ä¹‹äººé–“é“
         room = find_object("/d/special/liudaolunhui/rendao");
         if (! room) room = load_object("/d/special/liudaolunhui/rendao");
 
@@ -80,8 +80,8 @@ int perform(object me, object target)
                 target->move(room);
         }
 
-        message_vision(HIY "\n$N" HIY "×óÊÖÇáÇáÒ»²¦£¬ÓÒÊÖËù³ÖµÄ" + wn +
-                       HIY "¶£ßÊ×öÏì£¬½£×ËËµ²»³öµÄäìÈ÷ÃîÂü¡£\n" NOR, me, target);
+        message_vision(HIY "\n$N" HIY "å·¦æ‰‹è¼•è¼•ä¸€æ’¥ï¼Œå³æ‰‹æ‰€æŒçš„" + wn +
+                       HIY "å®å‘¤åšéŸ¿ï¼ŒåŠå§¿èªªä¸å‡ºçš„ç€Ÿæ´’å¦™æ›¼ã€‚\n" NOR, me, target);
 
         if (ap / 2 + random(ap) > dp)
         {
@@ -89,12 +89,12 @@ int perform(object me, object target)
                                            (: attack1, me, target, damage :));
         } else
         {
-                msg = CYN "¿ÉÊÇ$n" CYN "ÊÕÁ²ĞÄÉñ£¬·ÜÁ¦ÕĞ"
-                      "¼Ü£¬½«½£ÕĞĞ¶ÓÚÎŞĞÎ¡£\n" NOR;
+                msg = CYN "å¯æ˜¯$n" CYN "æ”¶æ–‚å¿ƒç¥ï¼Œå¥®åŠ›æ‹›"
+                      "æ¶ï¼Œå°‡åŠæ‹›å¸äºç„¡å½¢ã€‚\n" NOR;
         }
         message_vision(msg, me, target);
 
-        // ÁùµÀÂÖ»ØÖ®ĞóÉúµÀ
+        // å…­é“è¼ªå›ä¹‹ç•œç”Ÿé“
         room = find_object("/d/special/liudaolunhui/chushengdao");
         if (! room) room = load_object("/d/special/liudaolunhui/chushengdao");
 
@@ -105,8 +105,8 @@ int perform(object me, object target)
         }
 
 
-        message_vision(HIY "\nÈ´¼û$N" HIY "ÃæÎŞ±íÇé£¬½«ÊÖÖĞ" + wn +
-                       HIY "ÃÍµÄÍùÇ°Ò»µİ£¬ÓÌÈç¶¾Éß°ãÊÉÏò$n" HIY "¡£\n"
+        message_vision(HIY "\nå»è¦‹$N" HIY "é¢ç„¡è¡¨æƒ…ï¼Œå°‡æ‰‹ä¸­" + wn +
+                       HIY "çŒ›çš„å¾€å‰ä¸€éï¼ŒçŒ¶å¦‚æ¯’è›‡èˆ¬å™¬å‘$n" HIY "ã€‚\n"
                        NOR, me, target);
 
         if (ap / 2 + random(ap) > dp)
@@ -115,12 +115,12 @@ int perform(object me, object target)
                                            (: attack2, me, target, damage :));
         } else
         {
-                msg = CYN "¿ÉÊÇ$n" CYN "ÊÕÁ²ĞÄÉñ£¬·ÜÁ¦ÕĞ"
-                      "¼Ü£¬½«½£ÕĞĞ¶ÓÚÎŞĞÎ¡£\n" NOR;
+                msg = CYN "å¯æ˜¯$n" CYN "æ”¶æ–‚å¿ƒç¥ï¼Œå¥®åŠ›æ‹›"
+                      "æ¶ï¼Œå°‡åŠæ‹›å¸äºç„¡å½¢ã€‚\n" NOR;
         }
         message_vision(msg, me, target);
 
-        // ÁùµÀÂÖ»ØÖ®¶ö¹íµÀ
+        // å…­é“è¼ªå›ä¹‹é¤“é¬¼é“
         room = find_object("/d/special/liudaolunhui/eguidao");
         if (! room) room = load_object("/d/special/liudaolunhui/eguidao");
 
@@ -131,8 +131,8 @@ int perform(object me, object target)
         }
 
 
-        message_vision(HIY "\n$N" HIY "Ò»Éù³¤Ì¾£¬×óÊÖÄó×Å½£¾÷£¬ºöÎÅ" +
-                       wn + HIY "ÉÏÑªĞÈÖ®Æø½¥Å¨£¬³¯$n" HIY "Ó­Í·Õ¶Âä¡£\n"
+        message_vision(HIY "\n$N" HIY "ä¸€è²é•·å˜†ï¼Œå·¦æ‰‹æè‘—åŠè¨£ï¼Œå¿½è" +
+                       wn + HIY "ä¸Šè¡€è…¥ä¹‹æ°£æ¼¸æ¿ƒï¼Œæœ$n" HIY "è¿é ­æ–¬è½ã€‚\n"
                        NOR, me, target);
 
         if (ap / 2 + random(ap) > dp)
@@ -141,12 +141,12 @@ int perform(object me, object target)
                                            (: attack3, me, target, damage :));
         } else
         {
-                msg = CYN "¿ÉÊÇ$n" CYN "ÊÕÁ²ĞÄÉñ£¬·ÜÁ¦ÕĞ"
-                      "¼Ü£¬½«½£ÕĞĞ¶ÓÚÎŞĞÎ¡£\n" NOR;
+                msg = CYN "å¯æ˜¯$n" CYN "æ”¶æ–‚å¿ƒç¥ï¼Œå¥®åŠ›æ‹›"
+                      "æ¶ï¼Œå°‡åŠæ‹›å¸äºç„¡å½¢ã€‚\n" NOR;
         }
         message_vision(msg, me, target);
 
-        // ÁùµÀÂÖ»ØÖ®ĞŞÂŞµÀ
+        // å…­é“è¼ªå›ä¹‹ä¿®ç¾…é“
         room = find_object("/d/special/liudaolunhui/xiuluodao");
         if (! room) room = load_object("/d/special/liudaolunhui/xiuluodao");
 
@@ -157,8 +157,8 @@ int perform(object me, object target)
         }
 
 
-        message_vision(HIY "\nºö¼û$N" HIY "ÉíĞÎÎ¢»Î£¬¶ÙÊ±»Ã³öÊ®Êı¸öÉí"
-                       "Ó°£¬Ê®Êı±ú" + wn + HIY "ÆëÏò$n" HIY "´ÌÈ¥¡£"
+        message_vision(HIY "\nå¿½è¦‹$N" HIY "èº«å½¢å¾®æ™ƒï¼Œé “æ™‚å¹»å‡ºåæ•¸å€‹èº«"
+                       "å½±ï¼Œåæ•¸æŸ„" + wn + HIY "é½Šå‘$n" HIY "åˆºå»ã€‚"
                        "\n" NOR, me, target);
 
         if (ap / 2 + random(ap) > dp)
@@ -167,12 +167,12 @@ int perform(object me, object target)
                                            (: attack4, me, target, damage :));
         } else
         {
-                msg = CYN "¿ÉÊÇ$n" CYN "ÊÕÁ²ĞÄÉñ£¬·ÜÁ¦ÕĞ"
-                      "¼Ü£¬½«½£ÕĞĞ¶ÓÚÎŞĞÎ¡£\n" NOR;
+                msg = CYN "å¯æ˜¯$n" CYN "æ”¶æ–‚å¿ƒç¥ï¼Œå¥®åŠ›æ‹›"
+                      "æ¶ï¼Œå°‡åŠæ‹›å¸äºç„¡å½¢ã€‚\n" NOR;
         }
         message_vision(msg, me, target);
 
-        // ÁùµÀÂÖ»ØÖ®µØÓüµÀ
+        // å…­é“è¼ªå›ä¹‹åœ°ç„é“
         room = find_object("/d/special/liudaolunhui/diyudao");
         if (! room) room = load_object("/d/special/liudaolunhui/diyudao");
 
@@ -183,8 +183,8 @@ int perform(object me, object target)
         }
 
 
-        message_vision(HIY "\n½ô½Ó×Å$N" HIY + wn + HIY "Ò»²ü£¬ÓĞÈôÁúÒ÷"
-                       "£¬½£ÉíÌÚÆğÒ»µÀÌÏÌìº®Á÷£¬ÏòËÄÖÜÀ©É¢¿ªÈ¥¡£\n" NOR,
+        message_vision(HIY "\nç·Šæ¥è‘—$N" HIY + wn + HIY "ä¸€é¡«ï¼Œæœ‰è‹¥é¾åŸ"
+                       "ï¼ŒåŠèº«é¨°èµ·ä¸€é“æ»”å¤©å¯’æµï¼Œå‘å››å‘¨æ“´æ•£é–‹å»ã€‚\n" NOR,
                        me, target);
 
         if (ap / 2 + random(ap) > dp)
@@ -193,12 +193,12 @@ int perform(object me, object target)
                                            (: attack5, me, target, damage :));
         } else
         {
-                msg = CYN "¿ÉÊÇ$n" CYN "ÊÕÁ²ĞÄÉñ£¬·ÜÁ¦ÕĞ"
-                      "¼Ü£¬½«½£ÕĞĞ¶ÓÚÎŞĞÎ¡£\n" NOR;
+                msg = CYN "å¯æ˜¯$n" CYN "æ”¶æ–‚å¿ƒç¥ï¼Œå¥®åŠ›æ‹›"
+                      "æ¶ï¼Œå°‡åŠæ‹›å¸äºç„¡å½¢ã€‚\n" NOR;
         }
         message_vision(msg, me, target);
 
-        // ÁùµÀÂÖ»ØÖ®Ìì¼«µÀ
+        // å…­é“è¼ªå›ä¹‹å¤©æ¥µé“
         room = find_object("/d/special/liudaolunhui/tiandao");
         if (! room) room = load_object("/d/special/liudaolunhui/tiandao");
 
@@ -209,8 +209,8 @@ int perform(object me, object target)
         }
 
 
-        message_vision(HIY "\n$N" HIY "ÉíÍâ»¯Éí£¬½£Íâ»¯½££¬ÊÖÖĞ" + wn +
-                       HIY "±ãËÆòÔÁúÌÚ¿Õ£¬²¦ÔÆ¼ûÈÕ£¬ÌìµØÎªÖ®Ê§É«¡£\n"
+        message_vision(HIY "\n$N" HIY "èº«å¤–åŒ–èº«ï¼ŒåŠå¤–åŒ–åŠï¼Œæ‰‹ä¸­" + wn +
+                       HIY "ä¾¿ä¼¼è›Ÿé¾é¨°ç©ºï¼Œæ’¥é›²è¦‹æ—¥ï¼Œå¤©åœ°ç‚ºä¹‹å¤±è‰²ã€‚\n"
                        NOR, me, target);
 
         if (ap / 2 + random(ap) > dp)
@@ -219,19 +219,19 @@ int perform(object me, object target)
                                            (: attack6, me, target, damage :));
         } else
         {
-                msg = CYN "¿ÉÊÇ$n" CYN "ÊÕÁ²ĞÄÉñ£¬·ÜÁ¦ÕĞ"
-                      "¼Ü£¬½«½£ÕĞĞ¶ÓÚÎŞĞÎ¡£\n" NOR;
+                msg = CYN "å¯æ˜¯$n" CYN "æ”¶æ–‚å¿ƒç¥ï¼Œå¥®åŠ›æ‹›"
+                      "æ¶ï¼Œå°‡åŠæ‹›å¸äºç„¡å½¢ã€‚\n" NOR;
         }
         message_vision(msg, me, target);
 
         me->start_busy(3 + random(3));
         addn("neili", -500-random(500), me);
 
-        // ÎªÊ²Ã´ÌáĞĞ£¿ÎªÁË»­Ãæ¸üÎªÉÍĞÄÔÃÄ¿¶øÒÑ
+        // ç‚ºä»€éº¼æè¡Œï¼Ÿç‚ºäº†ç•«é¢æ›´ç‚ºè³å¿ƒæ‚…ç›®è€Œå·²
         tell_object(me, "\n\n");
         tell_object(target, "\n\n");
 
-        // ×ªÒÆ»Ø×î³õµÄ·¿¼ä
+        // è½‰ç§»å›æœ€åˆçš„æˆ¿é–“
         if (base_name(sroom) != "/d/shenlong/shejingdong")
         {
                 me->move(sroom);
@@ -239,7 +239,7 @@ int perform(object me, object target)
         }
 
 
-        // ²»ÄÜÍ¨¹ı¶ÏÏßÀ´±£Ãü
+        // ä¸èƒ½é€šéæ–·ç·šä¾†ä¿å‘½
         if( query("qi", target)<0 )
                 target->die(me);
 
@@ -250,13 +250,13 @@ string attack1(object me, object target, int damage)
 {
         string msg;
 
-        msg = HIR "$n" HIR "Ö»¾õĞÄÍ·Ò»ÕóÆà¿à£¬¾¹ÈÌ²»×¡ÒªÂä"
-              "ÏÂÀáÀ´£¬ºíÁüÒ»Ìğ£¬Å»³öÒ»¿ÚÏÊÑª¡£\n" NOR;
+        msg = HIR "$n" HIR "åªè¦ºå¿ƒé ­ä¸€é™£å‡„è‹¦ï¼Œç«Ÿå¿ä¸ä½è¦è½"
+              "ä¸‹æ·šä¾†ï¼Œå–‰åš¨ä¸€ç”œï¼Œå˜”å‡ºä¸€å£é®®è¡€ã€‚\n" NOR;
 
         if( !query_temp("liudaolunhui", target) )
         {
-                msg += WHT "$pºöÈ»²ì¾õµ½È«ÉíµÄÁ¦Æø¾¹ËÆÒ»Ë¿"
-                       "Ë¿Ô¶Àë×Ô¼º¶øÈ¥£¬ÎŞÖúÖ®¼«¡£\n" NOR;
+                msg += WHT "$på¿½ç„¶å¯Ÿè¦ºåˆ°å…¨èº«çš„åŠ›æ°£ç«Ÿä¼¼ä¸€çµ²"
+                       "çµ²é é›¢è‡ªå·±è€Œå»ï¼Œç„¡åŠ©ä¹‹æ¥µã€‚\n" NOR;
 
                 addn_temp("apply/attack", -damage, target);
                 addn_temp("apply/parry", -damage, target);
@@ -271,14 +271,14 @@ string attack2(object me, object target, int damage)
         object weapon;
         string wn, msg;
 
-        msg = HIR "ºöÈ»¼ä$n" HIR "¸Ğµ½ĞØ¿Ú´¦Ò»Õó»ğÈÈ£¬½£Æø"
-              "Ï®Ìå£¬´ø³öÒ»ÅîÑªÓê¡£\n" NOR;
+        msg = HIR "å¿½ç„¶é–“$n" HIR "æ„Ÿåˆ°èƒ¸å£è™•ä¸€é™£ç«ç†±ï¼ŒåŠæ°£"
+              "è¥²é«”ï¼Œå¸¶å‡ºä¸€è“¬è¡€é›¨ã€‚\n" NOR;
 
         if( objectp(weapon=query_temp("weapon", target)) )
         {
                 wn = weapon->name();
-                msg += WHT "ºöÌı¡¸ïÏïÏïÏ¡¹¼¸Éù´àÏì£¬$n" WHT "µÄ" + wn +
-                       WHT "¾¹±»$N" WHT "½Ê³ÉÁË¿é¿éËéÆ¬¡£\n" NOR;
+                msg += WHT "å¿½è½ã€Œé˜é˜é˜ã€å¹¾è²è„†éŸ¿ï¼Œ$n" WHT "çš„" + wn +
+                       WHT "ç«Ÿè¢«$N" WHT "çµæˆäº†å¡Šå¡Šç¢ç‰‡ã€‚\n" NOR;
 
                 set("consistence", 0, weapon);
                 weapon->move(target);
@@ -291,8 +291,8 @@ string attack3(object me, object target, int damage)
         int shd;
         string msg;
 
-        msg = HIR "½£·æ¹ı´¦£¬¾íÆğÂşÌìÑªÀË£¬$n" HIR "Ö»¸ĞÍ·ÔÎÄ¿"
-              "Ñ££¬ËÄÖ«·¦Á¦£¬ÄÑÒÔÔÙÕ½¡£\n" NOR;
+        msg = HIR "åŠé‹’éè™•ï¼Œå·èµ·æ¼«å¤©è¡€æµªï¼Œ$n" HIR "åªæ„Ÿé ­æšˆç›®"
+              "çœ©ï¼Œå››è‚¢ä¹åŠ›ï¼Œé›£ä»¥å†æˆ°ã€‚\n" NOR;
 
         if( query_temp("shield", target) )
         {
@@ -301,8 +301,8 @@ string attack3(object me, object target, int damage)
                 addn_temp("apply/armor", -shd, target);
                 delete_temp("shield", target);
 
-                msg += WHT "$N" WHT "Æø¾¢Ó¿ÖÁ£¬ÍğÈôµ¶¸î£¬¶ÙÊ±½«$n"
-                       WHT "µÄ»¤ÌåÕæÆø´İ»ÙµÃµ´È»ÎŞ´æ¡£\n" NOR;
+                msg += WHT "$N" WHT "æ°£å‹æ¹§è‡³ï¼Œå®›è‹¥åˆ€å‰²ï¼Œé “æ™‚å°‡$n"
+                       WHT "çš„è­·é«”çœŸæ°£æ‘§æ¯€å¾—ç›ªç„¶ç„¡å­˜ã€‚\n" NOR;
         }
         return msg;
 }
@@ -312,14 +312,14 @@ string attack4(object me, object target, int damage)
         object cloth, armor;
         string cn, an, msg;
 
-        msg = HIR "$n" HIR "¶ÙÊ±´ó¾ªÊ§É«£¬Ë²¼äÒÑ±»$N" HIR "Á¬ÖĞ"
-              "Êı½££¬Ö±Ï÷µÃÑªÈâÄ£ºı¡£\n" NOR;
+        msg = HIR "$n" HIR "é “æ™‚å¤§é©šå¤±è‰²ï¼Œç¬é–“å·²è¢«$N" HIR "é€£ä¸­"
+              "æ•¸åŠï¼Œç›´å‰Šå¾—è¡€è‚‰æ¨¡ç³Šã€‚\n" NOR;
 
         if( objectp(cloth=query_temp("armor/cloth", target)) )
         {
                 cn = cloth->name();
-                msg += WHT "ºöÌıºäÈ»Éù´ó×÷£¬$n" WHT "Éí×ÅµÄ" + cn +
-                       WHT "ÔÚ$N" WHT "ÄÚÁ¦¼¤µ´ÏÂ£¬¾¹±»ÕğµÃ·ÛËé¡£\n"
+                msg += WHT "å¿½è½è½Ÿç„¶è²å¤§ä½œï¼Œ$n" WHT "èº«è‘—çš„" + cn +
+                       WHT "åœ¨$N" WHT "å…§åŠ›æ¿€ç›ªä¸‹ï¼Œç«Ÿè¢«éœ‡å¾—ç²‰ç¢ã€‚\n"
                        NOR;
 
                 set("consistence", 0, cloth);
@@ -328,8 +328,8 @@ string attack4(object me, object target, int damage)
         if( objectp(armor=query_temp("armor/armor", target)) )
         {
                 an = armor->name();
-                msg += WHT "ºöÌı¡¸ßêÀ²¡¹Ò»Éù´àÏì£¬$n" WHT "Éí×ÅµÄ" +
-                       an + WHT "¾¹±»$N" WHT "ÕğÁÑ£¬»¯³É¿é¿éËéÆ¬¡£\n"
+                msg += WHT "å¿½è½ã€Œå“§å•¦ã€ä¸€è²è„†éŸ¿ï¼Œ$n" WHT "èº«è‘—çš„" +
+                       an + WHT "ç«Ÿè¢«$N" WHT "éœ‡è£‚ï¼ŒåŒ–æˆå¡Šå¡Šç¢ç‰‡ã€‚\n"
                        NOR;
 
                 set("consistence", 0, armor);
@@ -342,19 +342,19 @@ string attack5(object me, object target, int damage)
 {
         string msg;
 
-        msg = HIR "Ö»¼û$n" HIR "È«ÉíÒ»Õó³é´¤£¬±»½£·æËùĞ¯µÄ¼«º®ÆøÁ÷"
-              "°ü¹üÆäÖĞ£¬´ÌÍ´ÄÑµ±¡£\n" NOR;
+        msg = HIR "åªè¦‹$n" HIR "å…¨èº«ä¸€é™£æŠ½æï¼Œè¢«åŠé‹’æ‰€æ”œçš„æ¥µå¯’æ°£æµ"
+              "åŒ…è£¹å…¶ä¸­ï¼Œåˆºç—›é›£ç•¶ã€‚\n" NOR;
 
         if (! target->query_condition("poison"))
         {
                 target->affect_by("poison",
                         ([ "level"    : damage * 2,
-                           "name"     : "Á¶Óüº®Ñæ",
+                           "name"     : "ç…‰ç„å¯’ç‡„",
                            "id":query("id", me),
                            "duration" : damage / 20 ]));
 
-                msg += WHT "ö®Ê±¼ä$n" WHT "ºö¾õÒ»¹ÉÆæº®É¢ÈëÆß¾­°ËÂö"
-                       "£¬·Â·ğÁ¬ÑªÒº¶¼Í£Ö¹ÁËÁ÷¶¯¡£\n" NOR;
+                msg += WHT "éœæ™‚é–“$n" WHT "å¿½è¦ºä¸€è‚¡å¥‡å¯’æ•£å…¥ä¸ƒç¶“å…«è„ˆ"
+                       "ï¼Œä»¿ä½›é€£è¡€æ¶²éƒ½åœæ­¢äº†æµå‹•ã€‚\n" NOR;
         }
         return msg;
 }
@@ -364,8 +364,8 @@ string attack6(object me, object target, int damage)
 
         string msg;
 
-        msg = HIR "$N" HIR "½£ÊÆÑ¸ÃÍÖ®¼«£¬Áî$n" HIR "ºÁÎŞÕĞ¼ÜÓàµØ£¬"
-              "¾¹ÕòÇÓµ±³¡£¬ËØÊÖ´ı±Ğ¡£\n" NOR;
+        msg = HIR "$N" HIR "åŠå‹¢è¿…çŒ›ä¹‹æ¥µï¼Œä»¤$n" HIR "æ¯«ç„¡æ‹›æ¶ä½™åœ°ï¼Œ"
+              "ç«Ÿé®æ€¯ç•¶å ´ï¼Œç´ æ‰‹å¾…æ–ƒã€‚\n" NOR;
 
         if( !query_temp("no_exert", target )
             || !query_temp("no_perform", target) )
@@ -373,8 +373,8 @@ string attack6(object me, object target, int damage)
                 set_temp("no_exert", 1, target);
                 set_temp("no_perform", 1, target);
 
-                msg += WHT "$n" WHT "Ö»¸Ğµ½È«ÉíÕæÆø»ÁÉ¢£¬µ¤ÔªÍß½â£¬ËÆ"
-                       "ºõËùÓĞµÄÎä¹¦¾¹¶¼ÏûÊÅ´ù¾¡¡£\n" NOR;
+                msg += WHT "$n" WHT "åªæ„Ÿåˆ°å…¨èº«çœŸæ°£æ¸™æ•£ï¼Œä¸¹å…ƒç“¦è§£ï¼Œä¼¼"
+                       "ä¹æ‰€æœ‰çš„æ­¦åŠŸç«Ÿéƒ½æ¶ˆé€æ®†ç›¡ã€‚\n" NOR;
         }
         return msg;
 }

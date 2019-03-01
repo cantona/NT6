@@ -8,10 +8,10 @@ int do_push(string);
 
 void create()
 {
-        set_name("����ͨ", ({ "wu santong", "nong", "farmer", "wu" }));
+        set_name("武三通", ({ "wu santong", "nong", "farmer", "wu" }));
         set("long",
-                        "һ������ũ��\n");
-        set("gender", "����");
+                        "一個中年農夫。\n");
+        set("gender", "男性");
         set("age", 35);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -44,7 +44,7 @@ void create()
         prepare_skill("finger", "sun-finger");
 
         set("inquiry", ([
-                "��ɽ" : "ʲô��ɽ��ɽ��û�����Ҷ���ͦ��ס���𣿣�\n",
+                "上山" : "什麼上山下山，沒看見我都快挺不住了嗎？！\n",
         ]));
 
         setup();
@@ -65,13 +65,13 @@ int do_push(string arg)
         if (arg!="rock") { return 0; }
         if (environment(me)!=find_object("/d/heizhao/yideng5.c")) { return 0; }
         if( me->query_str()>25 && query("max_neili", me) >= 1000){
-                write("���һ�������壬��ס���������㣡����\n");
-                write("��ʹ��ȫ��������˫�����ƣ���ũ�򽫴�ʯ����������ߣ�\n");
-                write("ũ������һ�Σ����ڴ�ʯ֮�⣬ȴ��ȥǣţ����һ˫���۽������²�ͣ�ش�����\n\n");
+                write("你大喊一聲：大叔，頂住，我來幫你！！！\n");
+                write("你使出全身力氣，雙掌上推，幫農夫將大石推起尺許來高！\n");
+                write("農夫身形一晃，閃在大石之外，卻不去牽牛，把一雙大眼將你上下不停地打量！\n\n");
                 me->move("/d/heizhao/yideng6.c");
                 return 1;
         }
 
-        write("����ͼ������ũ���ƿ���ʯ��������Ȼ������������������ҲûЧ����\n");
+        write("你試圖用力助農夫推開大石，無奈顯然功力不夠，怎樣用力也沒效果。\n");
         return 1;
 }

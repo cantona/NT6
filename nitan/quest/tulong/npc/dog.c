@@ -6,17 +6,17 @@ inherit NPC;
 
 void create()
 {
-      set_name("Ğ¡¹·", ({ "dog" }) );
-      set("title", "¿É°®µÄĞ¡¶«Î÷");
-      set("race", "Ò°ÊŞ");
-      set("gender", "ĞÛĞÔ" );
+      set_name("å°ç‹—", ({ "dog" }) );
+      set("title", "å¯æ„›çš„å°æ±è¥¿");
+      set("race", "é‡ç¸");
+      set("gender", "é›„æ€§" );
       set("age", 10);
       set("str", 22);
       set("int", 30);
       set("cps", 30);
       set("con", 30);
 
-      set("long", "Äã¿´µ½µÄÊÇÒ»Ö»³¤Ã«µÄĞ¡¹·¡£\n");
+      set("long", "ä½ çœ‹åˆ°çš„æ˜¯ä¸€åªé•·æ¯›çš„å°ç‹—ã€‚\n");
       set("combat_exp", 2000000);
       set("attitude", "friendly");
 
@@ -45,15 +45,15 @@ void init()
 void wangwang(object ob)
 {
       if( query("id", ob) == "night" )
-            message_vision("Ğ¡¹·¸ßĞËµØ³åÄãÖ±Ò¡Î²°Í¡£\n",ob);
+            message_vision("å°ç‹—é«˜èˆˆåœ°æ²–ä½ ç›´æ–å°¾å·´ã€‚\n",ob);
       else
-            message_vision("Ğ¡¹·²»¸ßĞËµØµØ³åÄãÍôÍôÁ½Éù¡£\n",ob);
+            message_vision("å°ç‹—ä¸é«˜èˆˆåœ°åœ°æ²–ä½ æ±ªæ±ªå…©è²ã€‚\n",ob);
 }
 
 int do_pat(string arg)
 {
       set("chanxin/save", 1, this_player());
-      message_vision("Ğ¡¹·¸ßĞËµØ³åÄãÒ¡ÁËÁ½ÏÂÎ²°Í¡£\n",this_player());
+      message_vision("å°ç‹—é«˜èˆˆåœ°æ²–ä½ æ–äº†å…©ä¸‹å°¾å·´ã€‚\n",this_player());
       return 1;
 }
 
@@ -62,12 +62,12 @@ int do_wei(string arg)
       if( query("chanxin/save", this_player()) >= 1 )
       {
             set("chanxin/save", 2, this_player());
-            message_vision("Ğ¡¹·¸ßĞËµØ³åÄãÒ¡ÁËÁ½ÏÂÎ²°Í¡£\n",this_player());
+            message_vision("å°ç‹—é«˜èˆˆåœ°æ²–ä½ æ–äº†å…©ä¸‹å°¾å·´ã€‚\n",this_player());
             return 1;
       }
       else
       {
-            message_vision("Ğ¡¹·¸ßĞËµØ³åÄãÒ¡ÁËÁ½ÏÂÎ²°Í¡£\n",this_player());
+            message_vision("å°ç‹—é«˜èˆˆåœ°æ²–ä½ æ–äº†å…©ä¸‹å°¾å·´ã€‚\n",this_player());
             return 1;
       }
 }

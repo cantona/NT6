@@ -3,31 +3,31 @@
 inherit SKILL;
 
 mapping *action = ({
-([        "action" : "$nһʽ�����ĺ��ǡ����������࣬��$N���ߺ�Ծ������\n",
+([        "action" : "$n一式「天涯海角」，身輕如燕，從$N身邊橫躍而過。\n",
         "dodge"  : 10
 ]),
-([        "action" : "$nһʽ��Ѫ��Ʈ�㡹����һ����磬�滺��������$N���������ơ�\n",
+([        "action" : "$n一式「血海飄香」，如一陣清風，舒緩地閃過了$N的凌厲攻勢。\n",
         "dodge"  : 20
 ]),
-([        "action" : "$nһʽ��ѪӰ���١�����ӯ��һԾ��һת�ۼ���Ƶ���$N������\n",
+([        "action" : "$n一式「血影無蹤」，輕盈地一躍，一轉眼間便繞到了$N的身後。\n",
         "dodge"  : 30
 ]),
-([        "action" : "$nһʽ����Ѫ��������һת���䣬���Ʈ����һ��Զ\n",
+([        "action" : "$n一式「心血來潮」，一轉身間，向後飄出近一丈遠\n",
         "dodge"  : 40
 ]),
-([        "action" : "$nһʽ��Ѫ��ãã�����εض����ڰ����һת�����䵽����Զ�ĵط���\n",
+([        "action" : "$n一式「血海茫茫」，拔地而起，在半空中一轉，已落到幾丈遠的地方。\n",
         "dodge"  : 50
 ]),
-([        "action" : "$nһʽ��Ѫ��֮Ӱ������ã�з��ƿ�����ɫ�ĵ��⡣\n",
+([        "action" : "$n一式「血刀之影」，淼茫中防似看到紅色的刀光。\n",
         "dodge"  : 60
 ]),
-([        "action" : "$nһʽ��Ѫϴ���졹��˫�ŵ�أ�ȫ����Ϊһ����Ӱ����������$N���˼�ת��\n",
+([        "action" : "$n一式「血洗情天」，雙腳點地，全身化為一道白影，急速繞著$N打了幾轉。\n",
         "dodge"  : 70
 ]),
-([        "action" : "$nһʽ��Ѫħ֮Ӱ���������Ӱ��Χ��$N���ٵ������˼�Ȧ��\n",
+([        "action" : "$n一式「血魔之影」，漫天紅影，圍著$N急速地盤旋了幾圈。\n",
         "dodge"  : 80
 ]),
-([        "action" : "$nһʽ��ѪѪѪ���������Ӱ��Χ��$N���ٵ������˼�Ȧ��\n",
+([        "action" : "$n一式「血血血」，漫天紅影，圍著$N急速地盤旋了幾圈。\n",
         "dodge"  : 90
 ])
 });
@@ -75,7 +75,7 @@ string query_dodge_msg(string limb)
 int practice_skill(object me)
 {
         if( query("qi", me)<40 )
-                return notify_fail("�������̫���ˣ�������ѪӰ������\n");
+                return notify_fail("你的體力太差了，不能練血影身法。\n");
         me->receive_damage("qi", 30);
         return 1;
 }

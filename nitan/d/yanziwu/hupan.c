@@ -4,12 +4,12 @@ inherit RIVER;
 
 void create()
 {
-        set("short", "̫������");
+        set("short", "太湖湖畔");
         set("long", @LONG
-̫��������֮�䡣���������������֮ˮ�����ڴˣ���������
-�ų������������ (river)����Ψ������Զ�������۽Ա̣���ʮ����
-�Դ�ͦ����������ǧ�겨��֮�У�ʹ���Ľ��ֱ�����쳤Х������
-����ϲ�֡�
+太湖處江浙之間。她襟帶三江，東南之水盡匯于此，周行五百裡，
+古稱五湖。矗立湖 (river)岸，唯見長天遠波，放眼皆碧，七十二峰
+蒼翠挺立在三萬六千頃波濤之中，使人心襟大開直欲仰天長嘯，方能
+表此喜樂。
 LONG );
         //set("arrive_room", "/d/yanziwu/bozhou");
         set("to", __DIR__"bozhou");

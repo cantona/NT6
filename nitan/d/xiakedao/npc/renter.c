@@ -1,4 +1,4 @@
-// renter.c µÜ×Ó
+// renter.c å¼Ÿå­
 
 #include <ansi.h>
 
@@ -92,21 +92,21 @@ mapping *info = ({
 
 void create()
 {
-        set_name("»ÆÒÂÊ¹Õß", ({ "xiake dizi", "dizi", "renter" }));
-        set("long", "ËûÉí×Å»ÆÉÀ£¬±íÇéÓôÓô£¬ËÆºõÉíÓĞÎä¹¦¡£\n");
+        set_name("é»ƒè¡£ä½¿è€…", ({ "xiake dizi", "dizi", "renter" }));
+        set("long", "ä»–èº«è‘—é»ƒè¡«ï¼Œè¡¨æƒ…é¬±é¬±ï¼Œä¼¼ä¹èº«æœ‰æ­¦åŠŸã€‚\n");
 
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("age", 25);
         set("shen_type", 1);
         set("attitude", "peaceful");
 
         set("inquiry", ([
-                "Í¬ÃÅ" : (: ask_rent :), 
-                "Ê¦ĞÖ" : (: ask_rent :), 
+                "åŒé–€" : (: ask_rent :), 
+                "å¸«å…„" : (: ask_rent :), 
                 "rent" : (: ask_rent :), 
         ]));
 
-        create_family("ÏÀ¿Íµº", 0, "µÜ×Ó");
+        create_family("ä¿ å®¢å³¶", 0, "å¼Ÿå­");
         setup();
         carry_object("/clone/misc/cloth")->wear();
 
@@ -128,29 +128,29 @@ mixed ask_rent()
                 fam = query("family/family_name");
                 obs=filter_array(obs,(:query("family/family_name", $1) == $(fam):));
                 if (sizeof(obs))
-                        return "ÏÖÔÚ²»ÊÇÓĞ" + obs[0]->name() + "ºÍÄãÔÚÒ»ÆğÃ´£¿Äã»¹ÏëÔõÃ´Ñù£¿";
+                        return "ç¾åœ¨ä¸æ˜¯æœ‰" + obs[0]->name() + "å’Œä½ åœ¨ä¸€èµ·éº¼ï¼Ÿä½ é‚„æƒ³æ€éº¼æ¨£ï¼Ÿ";
         }
 
         obs = query_temp("helpers");
         if (! arrayp(obs) || (obs = obs - ({ 0 }),sizeof(obs) < 1))
-                return "ÎÒµÄÊ¦ĞÖµÜ¶¼×ßÀ²£¬Äã»¹ÊÇµÈÁ½ÌìÔÙÀ´°É¡£";
+                return "æˆ‘çš„å¸«å…„å¼Ÿéƒ½èµ°å•¦ï¼Œä½ é‚„æ˜¯ç­‰å…©å¤©å†ä¾†å§ã€‚";
 
-        msg = "$NĞ¦ÁËĞ¦£¬µÀ£º¡°ÏÖÔÚÎÒÉí±ßµÄÊ¦ĞÖµÜÓĞÕâÃ´¼¸¸ö£¬Äã¿´¿´°É¡£¡±\n";
+        msg = "$Nç¬‘äº†ç¬‘ï¼Œé“ï¼šâ€œç¾åœ¨æˆ‘èº«é‚Šçš„å¸«å…„å¼Ÿæœ‰é€™éº¼å¹¾å€‹ï¼Œä½ çœ‹çœ‹å§ã€‚â€\n";
         for (i = 0; i < sizeof(obs); i++)
-                msg += sprintf("%2d. %-27s  µÈ¼¶£º%d\n",
+                msg += sprintf("%2d. %-27s  ç­‰ç´šï¼š%d\n",
                                i + 1,
                                obs[i]->name(1)+"("+query("id", obs[i])+")",
                                query("npc_level", obs[i]));
         switch (random(5))
         {
         case 0:
-                msg += "$N¿´ÁË¿´$n£¬µÀ£º¡°ÄãÏëÕÒË­°ïÄãµÄÃ¦£¬²»·ÁºÍÎÒËµËµ¡£¡±\n";
+                msg += "$Nçœ‹äº†çœ‹$nï¼Œé“ï¼šâ€œä½ æƒ³æ‰¾èª°å¹«ä½ çš„å¿™ï¼Œä¸å¦¨å’Œæˆ‘èªªèªªã€‚â€\n";
                 break;
         case 1:
-                msg += "$N¶Ô$nµÀ£º¡°ÎÒµÄÊ¦ĞÖµÜË®Æ½¸÷ÓĞ¸ßÏÂ£¬ÄãÕÒÒ»¸öÅÉµÃÉÏÓÃ³¡µÄ°É£¡¡±\n";
+                msg += "$Nå°$né“ï¼šâ€œæˆ‘çš„å¸«å…„å¼Ÿæ°´å¹³å„æœ‰é«˜ä¸‹ï¼Œä½ æ‰¾ä¸€å€‹æ´¾å¾—ä¸Šç”¨å ´çš„å§ï¼â€\n";
                 break;
         case 2:
-                msg += "$NÎ¢Î¢Ò»Ğ¦£¬¶Ô$nµÀ£º¡°Äã¾õµÃË­ºÏÊÊ£¿¡±\n";
+                msg += "$Nå¾®å¾®ä¸€ç¬‘ï¼Œå°$né“ï¼šâ€œä½ è¦ºå¾—èª°åˆé©ï¼Ÿâ€\n";
                 break;
         }
         message_vision(msg, this_object(), me);
@@ -169,7 +169,7 @@ int accept_object(object me, object ob)
 
         if( !objectp(helper=query_temp("pending/rent/helper", me)) )
         {
-                command("say Äã¸øÎÒÇ®¸ÉÊ²Ã´£¿ÔŞÖúÎÒÃÇÏÀ¿ÍµºÃ´£¿");
+                command("say ä½ çµ¦æˆ‘éŒ¢å¹¹ä»€éº¼ï¼Ÿè®šåŠ©æˆ‘å€‘ä¿ å®¢å³¶éº¼ï¼Ÿ");
                 return 0;
         }
 
@@ -177,32 +177,32 @@ int accept_object(object me, object ob)
         n = ob->value() / 10000;
         if (n < cost)
         {
-                command("say ÎÒÃÇÕâÀï¿É²»ÄÜ´òÕÛ£¬Äã»¹ÊÇÃâÁË°É£¡");
+                command("say æˆ‘å€‘é€™è£¡å¯ä¸èƒ½æ‰“æŠ˜ï¼Œä½ é‚„æ˜¯å…äº†å§ï¼");
                 if( n*2 >= cost && query("special_skill/treat", me) )
-                        message_vision("$N¹òÔÚµØÉÏ£¬±§×Å$n£¬¿Şº°µÀ£º¡°Äã¾Í"
-                                       "¿ÉÁ¯¿ÉÁ¯ÎÒÕâÇî¹í°É£¡¡±\n$n¿´ÁË£¬ÆÄ"
-                                       "ÎªÎŞÄÎ£¬Ò¡Ò¡Í·£¬Ì¾¿ÚÆøµÀ£º¡°ºÃ°ÉºÃ"
-                                       "°É£¬ËãÁË¡£¡±\n", me, this_object());
+                        message_vision("$Nè·ªåœ¨åœ°ä¸Šï¼ŒæŠ±è‘—$nï¼Œå“­å–Šé“ï¼šâ€œä½ å°±"
+                                       "å¯æ†å¯æ†æˆ‘é€™çª®é¬¼å§ï¼â€\n$nçœ‹äº†ï¼Œé —"
+                                       "ç‚ºç„¡å¥ˆï¼Œæ–æ–é ­ï¼Œå˜†å£æ°£é“ï¼šâ€œå¥½å§å¥½"
+                                       "å§ï¼Œç®—äº†ã€‚â€\n", me, this_object());
                 else
                         return 0;
         }
 
-        message_vision("$n½Ó¹ı$Nµİ¹ıÀ´µÄ" + ob->name() +
-                       "£¬¼ÇÔÚÕÊÉÏ£¬ÓĞµÀ£º¡°µÈ»á¶ù£¡¡±\n",
+        message_vision("$næ¥é$Nééä¾†çš„" + ob->name() +
+                       "ï¼Œè¨˜åœ¨å¸³ä¸Šï¼Œæœ‰é“ï¼šâ€œç­‰æœƒå…’ï¼â€\n",
                        me, this_object());
         destruct(ob);
-        message_vision("$N¸ßÉùº°µÀ£º¡°" + helper->name() +
-                       "£¡¿ìÀ´£¬¿ìÀ´°¡£¬ËÍÇ®µÄÉÏÃÅÁË£¡¡±\n", this_object());
+        message_vision("$Né«˜è²å–Šé“ï¼šâ€œ" + helper->name() +
+                       "ï¼å¿«ä¾†ï¼Œå¿«ä¾†å•Šï¼Œé€éŒ¢çš„ä¸Šé–€äº†ï¼â€\n", this_object());
         helper->move(environment());
-        message_vision("$n×ßÁË¹ıÀ´£¬¿´ÁË¿´$N¡£\n", me, helper);
-        command("say ºÃÀ²£¬" + helper->name() + "£¬¾ÍÊÇÕâÎ»" +
-                RANK_D->query_respect(me) + "£¬ÄãÒ»Í¬È¥°É¡£");
-        message_vision("$nµãµãÍ·£¬ºÍ$Nº®êÑÁ½¾ä£¬¸úÔÚÁË$PµÄÉíºó¡£\n",
+        message_vision("$nèµ°äº†éä¾†ï¼Œçœ‹äº†çœ‹$Nã€‚\n", me, helper);
+        command("say å¥½å•¦ï¼Œ" + helper->name() + "ï¼Œå°±æ˜¯é€™ä½" +
+                RANK_D->query_respect(me) + "ï¼Œä½ ä¸€åŒå»å§ã€‚");
+        message_vision("$né»é»é ­ï¼Œå’Œ$Nå¯’æš„å…©å¥ï¼Œè·Ÿåœ¨äº†$Pçš„èº«å¾Œã€‚\n",
                        me, helper);
 
-        // ³õÊ¼»¯¹ÍÓ¶µÄÈË
-        // ÉèÖÃ¹ÍÓ¶¿ªÊ¼µÄÊ±¼ä£¬Ö÷ÈË£¬È¥µôÄ¿Ç°µÄÕıÔÚ¹ÍÓ¶µÄ×´
-        // Ì¬£¬¸úËæÖ÷ÈË£¬¿ªÊ¼²¢Î¬³ÖĞÄÌø¡£
+        // åˆå§‹åŒ–é›‡å‚­çš„äºº
+        // è¨­ç½®é›‡å‚­é–‹å§‹çš„æ™‚é–“ï¼Œä¸»äººï¼Œå»æ‰ç›®å‰çš„æ­£åœ¨é›‡å‚­çš„ç‹€
+        // æ…‹ï¼Œè·Ÿéš¨ä¸»äººï¼Œé–‹å§‹ä¸¦ç¶­æŒå¿ƒè·³ã€‚
         set_temp("help_time", time(), helper);
         set_temp("owner", me, helper);
         set_temp("owner_name", me->name(1), helper);
@@ -211,7 +211,7 @@ int accept_object(object me, object ob)
         helper->set_leader(me);
         helper->keep_heart_beat();
 
-        // ÉèÖÃÖ÷ÈËµÄĞÅÏ¢
+        // è¨­ç½®ä¸»äººçš„ä¿¡æ¯
         obs=query_temp("hire", me);
         if (arrayp(obs))
         {
@@ -233,7 +233,7 @@ int accept_object(object me, object ob)
         set_temp("helpers", obs);
 
         CHANNEL_D->do_channel(this_object(), "rumor",
-                me->name(1) + "ÔÚÄÏº£ÑûÇëµ½ÁËÒ»ÃûÏÀ¿ÍµºµÜ×Ó¡£");
+                me->name(1) + "åœ¨å—æµ·é‚€è«‹åˆ°äº†ä¸€åä¿ å®¢å³¶å¼Ÿå­ã€‚");
         return -1;
 }
 
@@ -249,9 +249,9 @@ mixed accept_ask(object me, string topic)
                 if (ob->id(topic) || ob->name(1) == topic)
                         return try_to_hire(me, ob);
 
-        message_vision(CYN "$N" CYN "¿´ÁË¿´$n" CYN "£¬ÒÉÎÊµÀ"
-                       "£º¡°ÄãÏë¸ÉÊ²Ã´£¿ÊÇÒªÕÒÎÒµÄ" HIY "Í¬ÃÅ"
-                       NOR CYN "Ê¦ĞÖµÜÃ´£¿¡±\n" NOR,
+        message_vision(CYN "$N" CYN "çœ‹äº†çœ‹$n" CYN "ï¼Œç–‘å•é“"
+                       "ï¼šâ€œä½ æƒ³å¹¹ä»€éº¼ï¼Ÿæ˜¯è¦æ‰¾æˆ‘çš„" HIY "åŒé–€"
+                       NOR CYN "å¸«å…„å¼Ÿéº¼ï¼Ÿâ€\n" NOR,
                        this_object(), me);
         return 1;
 }
@@ -263,19 +263,19 @@ mixed try_to_hire(object me, object ob)
         int cost;
 
         if( query("weiwang", me)<1000 )
-                return "ÄãÕâµãÃûÍ·Ò²ÄÜÊ¹»½ÈË£¿ËãÁË°É£¡"; 
+                return "ä½ é€™é»åé ­ä¹Ÿèƒ½ä½¿å–šäººï¼Ÿç®—äº†å§ï¼"; 
 
         if( query("score", me)<10000 )
-                return "Äã½­ºşÔÄÀúÌ«Ç³£¬»¹ÊÇÃâÁË¡£"; 
+                return "ä½ æ±Ÿæ¹–é–±æ­·å¤ªæ·ºï¼Œé‚„æ˜¯å…äº†ã€‚"; 
 
         if( query("combat_exp", me)<50000 )
-                return "ÄãµÄÎä¹¦Ì«²î£¬ÏëÖ§Ê¹Ë­Ñ½£¿"; 
+                return "ä½ çš„æ­¦åŠŸå¤ªå·®ï¼Œæƒ³æ”¯ä½¿èª°å‘€ï¼Ÿ"; 
 
         if( query("combat/DPS", me)>30 )
-                return "ÄãÕâÈË£¬ÉËÈËÌ«¶à£¬ÎÒÃÇÏÀ¿ÍµºµÄµÜ×Ó¿É²»ÄÜÖúæûÎªÅ°¡£";
+                return "ä½ é€™äººï¼Œå‚·äººå¤ªå¤šï¼Œæˆ‘å€‘ä¿ å®¢å³¶çš„å¼Ÿå­å¯ä¸èƒ½åŠ©ç´‚ç‚ºè™ã€‚";
 
         if( query("combat/WPK", me)>30 )
-                return "ÄãÕâÈËÑ½£¡À±ÊÖÎŞÇé£¬É±ÈËÎŞËã£¬ÕÅĞÖÀîĞÖÃ»ÕÒÄãËãÕÊ¾Í²»´íÁË¡£";
+                return "ä½ é€™äººå‘€ï¼è¾£æ‰‹ç„¡æƒ…ï¼Œæ®ºäººç„¡ç®—ï¼Œå¼µå…„æå…„æ²’æ‰¾ä½ ç®—å¸³å°±ä¸éŒ¯äº†ã€‚";
 
         if( arrayp(obs=query_temp("hire", me)) )
         {
@@ -283,20 +283,20 @@ mixed try_to_hire(object me, object ob)
                 fam = query("family/family_name");
                 obs=filter_array(obs,(:query("family/family_name", $1) == $(fam):));
                 if (sizeof(obs))
-                        return obs[0]->name() + "ÏÖÔÚ²»ÊÇÕıºÍÄãÔÚÒ»ÆğÃ´£¿»¹²»¹»°¡£¿";
+                        return obs[0]->name() + "ç¾åœ¨ä¸æ˜¯æ­£å’Œä½ åœ¨ä¸€èµ·éº¼ï¼Ÿé‚„ä¸å¤ å•Šï¼Ÿ";
         }
 
         if( query("combat_exp", me)<query("combat_exp", ob)*2/3 )
-                return "ËãÁË°É£¬" + ob->name() + "Îä¹¦Ò²Ç¿ÄãÌ«¶à£¬Ëû¿ÉÃ»ĞËÈ¤°ïÄã¡£";
+                return "ç®—äº†å§ï¼Œ" + ob->name() + "æ­¦åŠŸä¹Ÿå¼·ä½ å¤ªå¤šï¼Œä»–å¯æ²’èˆˆè¶£å¹«ä½ ã€‚";
 
         if( query("combat_exp", ob)*2<query("combat_exp", me) )
-                return "Å¶£¿ÄãÎä¹¦ÕâÃ´ºÃ£¬" + ob->name() + "¿ÖÅÂ°ï²»ÉÏÄãÊ²Ã´Ã¦°É¡£";
+                return "å“¦ï¼Ÿä½ æ­¦åŠŸé€™éº¼å¥½ï¼Œ" + ob->name() + "ææ€•å¹«ä¸ä¸Šä½ ä»€éº¼å¿™å§ã€‚";
 
         cost = info[query("npc_level",ob) - 1]["cost"];
-        message_vision("$NÎ¢Î¢Ò»Ğ¦£¬µÀ£º¡°ºÃ°É£¬²»¹ıÄãÒ²µÃÒâ"
-                       "Ë¼ÒâË¼°¡£¬ÎÒÃÇÏÀ¿Íµº¿ªÏúÒ²²»Ğ¡µÄ¡£¡±\n"
-                       "$N×ĞÏ¸¿¼ÂÇÁËÒ»»á¶ù£¬¶Ô$nµÀ£º¡°ÕâÑù°É£¬¾Í" +
-                       chinese_number(cost) + "Á½»Æ½ğ°É¡£ ¡±\n",
+        message_vision("$Nå¾®å¾®ä¸€ç¬‘ï¼Œé“ï¼šâ€œå¥½å§ï¼Œä¸éä½ ä¹Ÿå¾—æ„"
+                       "æ€æ„æ€å•Šï¼Œæˆ‘å€‘ä¿ å®¢å³¶é–‹éŠ·ä¹Ÿä¸å°çš„ã€‚â€\n"
+                       "$Nä»”ç´°è€ƒæ…®äº†ä¸€æœƒå…’ï¼Œå°$né“ï¼šâ€œé€™æ¨£å§ï¼Œå°±" +
+                       chinese_number(cost) + "å…©é»ƒé‡‘å§ã€‚ â€\n",
                        this_object(), me);
         set_temp("pending/rent/cost", cost, me);
         set_temp("pending/rent/helper", ob, me);
@@ -330,7 +330,7 @@ void create_all_helper()
                 ob->init_man(info[lvl - 1]);
                 lvls -= ({ lvl });
                 obs += ({ ob });
-                ob->create_family("ÏÀ¿Íµº", 0, "µÜ×Ó");
+                ob->create_family("ä¿ å®¢å³¶", 0, "å¼Ÿå­");
         }
 
         obs=sort_array(obs,(:query("npc_level", $1)-query("npc_level", $2):));
@@ -346,7 +346,7 @@ void remove()
         if (! arrayp(obs)) return;
         obs -= ({ 0 });
 
-        // Îö¹¹ËùÓĞµÄÊ¦ĞÖµÜ
+        // ææ§‹æ‰€æœ‰çš„å¸«å…„å¼Ÿ
         foreach (ob in obs) ob->destruct_by_owner();
 }
 

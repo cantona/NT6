@@ -7,13 +7,13 @@ inherit ROOM;
 
 void create()
 {
-	set("short","ÒÉÎŞÂ·");
+	set("short","ç–‘ç„¡è·¯");
 	set("long",@LONG
-ÔÚ¹â»¬µÄÑÂ±ÚÉÏ£¬´¹ÏÂÀ´Ò»ÌõÈıÕÉâÅ³¤µÄÌúË÷Ìİ£¬ºÚ÷î÷î£¬É½·ç´µÆğ²»Ê±µØ
-°Ú¶¯£¬×²ÔÚÊ¯±ÚÉÏ·¢³öï£ï£ïÏïÏµÄÏìÉù£¬ÁîÈË²»º®¶øÀõ¡£ÑÂ¶¥ÓÖÊÇÒ»Ìõ³¤³¤µÄÌì
-ÇÅÕ»µÀ£¬Ò»ÃæÁÙÑÂ£¬Ò»ÃæĞü¿Õ£¬ÓÃ¸ÖÇ¥¶¤ÈëÑÂ±Ú£¬ÆäÉÏ¼ÜĞ©Ä¾°å£¬Ê®·ÖÏÕ¾ş£¬ÏÂ
-½ÅÉÔÖØ£¬Ä¾°åÁíÒ»Í·¾ÍÇÌÆğ£¬°ÑÈËÏÅµÃÉ¥»êÊ§ÆÇ¡£ËùÒÔ³ıÁËĞŞÎªºÜÉîµÄÕæÈË£¬Ë­
-Ò²²»¸ÒÅÀÉÏÑÂ±ÚÈ¥¡£
+åœ¨å…‰æ»‘çš„å´–å£ä¸Šï¼Œå‚ä¸‹ä¾†ä¸€æ¢ä¸‰ä¸ˆé¤˜é•·çš„éµç´¢æ¢¯ï¼Œé»‘é»é»ï¼Œå±±é¢¨å¹èµ·ä¸æ™‚åœ°
+æ“ºå‹•ï¼Œæ’åœ¨çŸ³å£ä¸Šç™¼å‡ºéŒšéŒšé˜é˜çš„éŸ¿è²ï¼Œä»¤äººä¸å¯’è€Œæ —ã€‚å´–é ‚åˆæ˜¯ä¸€æ¢é•·é•·çš„å¤©
+æ©‹æ£§é“ï¼Œä¸€é¢è‡¨å´–ï¼Œä¸€é¢æ‡¸ç©ºï¼Œç”¨é‹¼â–¡é‡˜å…¥å´–å£ï¼Œå…¶ä¸Šæ¶äº›æœ¨æ¿ï¼Œååˆ†éšªå³»ï¼Œä¸‹
+è…³ç¨é‡ï¼Œæœ¨æ¿å¦ä¸€é ­å°±ç¿¹èµ·ï¼ŒæŠŠäººåš‡å¾—å–ªé­‚å¤±é­„ã€‚æ‰€ä»¥é™¤äº†ä¿®ç‚ºå¾ˆæ·±çš„çœŸäººï¼Œèª°
+ä¹Ÿä¸æ•¢çˆ¬ä¸Šå´–å£å»ã€‚
 LONG);
 	set("not_startroom",1);
 	set("exits",
@@ -41,21 +41,21 @@ int do_climb(string arg)
                 int i;
 	object me =this_player();
 	
-	if(!arg||arg!="Õ»µÀ")
-	return notify_fail("ÄãÒªÍùÄÄÀïÈ¥£¿¿É²»ÊÇÄÖ×ÅÍæµÄ£¡\n");
+	if(!arg||arg!="æ£§é“")
+	return notify_fail("ä½ è¦å¾€å“ªè£¡å»ï¼Ÿå¯ä¸æ˜¯é¬§è‘—ç©çš„ï¼\n");
 	if(me->query_temp("climbing"))
-	return notify_fail("ÄãÕıÔÚÕ½Õ½¾¤¾¤µØ¹ıÕ»µÀÄØ£¡\n");
+	return notify_fail("ä½ æ­£åœ¨æˆ°æˆ°å…¢å…¢åœ°éæ£§é“å‘¢ï¼\n");
 
        all=all_inventory(me);
             for(i=0;i<sizeof(all);i++)
                 if(userp(all[i])){
-                    message_vision("$N°Ñ$nÍùµØÏÂÒ»Ë¤£¬ÓÂ¸ÒµÄÌøÁËÏÂÈ¥¡£\n",me,all[i]);
+                    message_vision("$NæŠŠ$nå¾€åœ°ä¸‹ä¸€æ‘”ï¼Œå‹‡æ•¢çš„è·³äº†ä¸‹å»ã€‚\n",me,all[i]);
                     all[i]->move("/d/menpai/kongdong/yiwu_lu");
                 }        
-    me->start_busy(30,"ĞÔÃüØü¹ØÄÄ\n");
+    me->start_busy(30,"æ€§å‘½æ”¸é—œå“ª\n");
 	call_out("pashan", 5, me, 0);
 	me->set_temp("climbing",1);
-        message_vision( HIG"$NÉîÉîÎüÁË¼¸¿ÚÆø£¬ÑØ×Å²ü²üÓÆÓÆµÄÕ»µÀ×ßÁË¹ıÈ¥......\n"NOR ,me);
+        message_vision( HIG"$Næ·±æ·±å¸äº†å¹¾å£æ°£ï¼Œæ²¿è‘—é¡«é¡«æ‚ æ‚ çš„æ£§é“èµ°äº†éå»......\n"NOR ,me);
 	return 1;
 
 }
@@ -71,21 +71,21 @@ case 1:
 case 2:
 case 3:
 case 4:
-message_vision( HIR"$NÂıÂıµØÒ»²½Ò»²½µØÍùÇ°Å²......\n"NOR ,me);
+message_vision( HIR"$Næ…¢æ…¢åœ°ä¸€æ­¥ä¸€æ­¥åœ°å¾€å‰æŒª......\n"NOR ,me);
 break;
 case 5:
-message_vision( HIG"ÑÛ¿´$NÒÑ¾­µ½ÁËÕ»µÀÖĞÑëÁË......\n"NOR,me );
+message_vision( HIG"çœ¼çœ‹$Nå·²ç¶“åˆ°äº†æ£§é“ä¸­å¤®äº†......\n"NOR,me );
 break;
 case 6:
 case 7:
 case 8:
 case 9:
-message_vision( HIR"$NÂıÂıµØÒ»²½Ò»²½µØÍùÇ°Å²......\n"NOR ,me);
+message_vision( HIR"$Næ…¢æ…¢åœ°ä¸€æ­¥ä¸€æ­¥åœ°å¾€å‰æŒª......\n"NOR ,me);
 break;
 default:
 if( !random(7)&&me->query("id")=="zhou zhenren" && !present("zhou zhenren",dong))
 {
-message_vision( HIG"ÖÕÓÚ£¬$Nµ½´ïÁË¶ÔÃæµÄÊ¯±Ú....ºÃÏÕÑ½£¡\n",me);
+message_vision( HIG"çµ‚äºï¼Œ$Nåˆ°é”äº†å°é¢çš„çŸ³å£....å¥½éšªå‘€ï¼\n",me);
 me->move("/d/menpai/kongdong/xuanhe_dong");
 inv = all_inventory(this_object());
 for (j = 0; j < sizeof(inv); j++)
@@ -93,13 +93,13 @@ for (j = 0; j < sizeof(inv); j++)
   inv[j]->set("marks/kongdong/zhou",1);
 return;	
 	}
-message_vision( HIY"Í»È»Ò»¸öõÔõÄ£¬$NÍáÏòÒ»±ß£¬»ÎÁËÁ½»Î¾ÍµôÁËÏÂÈ¥.....\n"NOR, me);
+message_vision( HIY"çªç„¶ä¸€å€‹è¸‰è¹Œï¼Œ$Næ­ªå‘ä¸€é‚Šï¼Œæ™ƒäº†å…©æ™ƒå°±æ‰äº†ä¸‹å».....\n"NOR, me);
 if( me->query_xiuwei("dodge")>3200&&present("zhou zhenren",dong)&&random(me->query_kar())>28)
-{message_vision( HIG"Ê¯±Ú¶ÔÃæµÄÖÜÕæÈËÅ×³öÒ»µÀÌúË÷£¬ÕıºÃ²øÔÚ$NµÄÑü¼ä£¬°Ñ$N¾ÈÁËÉÏÈ¥....ºÃÏÕÑ½£¡\n"NOR,me );
+{message_vision( HIG"çŸ³å£å°é¢çš„å‘¨çœŸäººæ‹‹å‡ºä¸€é“éµç´¢ï¼Œæ­£å¥½çºåœ¨$Nçš„è…°é–“ï¼ŒæŠŠ$Næ•‘äº†ä¸Šå»....å¥½éšªå‘€ï¼\n"NOR,me );
 me->move("/d/menpai/kongdong/xuanhe_dong");
 }
 else
-{message_vision( HIY"Ö»Ìı$NÒ»Éí²Ò½Ğ£¬ÒÑ×¹ÏÂÍòÕÉÉîÔ¨......\n"NOR,me);
+{message_vision( HIY"åªè½$Nä¸€èº«æ…˜å«ï¼Œå·²å¢œä¸‹è¬ä¸ˆæ·±æ·µ......\n"NOR,me);
 me->set("eff_sen",me->query("eff_sen")/2);
 me->move(__DIR__"xiangtou_ya");
 me->delete_temp("climbing");
@@ -119,7 +119,7 @@ return;
 int valid_leave(object me,string dir)
 {
     if(dir=="up")
-      return notify_fail("Ö»ÓĞÅÀ¹ıÕ»µÀ²ÅÄÜ×ß¹ıÈ¥µÄ£¬¿ÉÒÔ³¢ÊÔ(climb Õ»µÀ)¡£\n");
+      return notify_fail("åªæœ‰çˆ¬éæ£§é“æ‰èƒ½èµ°éå»çš„ï¼Œå¯ä»¥å˜—è©¦(climb æ£§é“)ã€‚\n");
     return ::valid_leave(me,dir);
 }
 */

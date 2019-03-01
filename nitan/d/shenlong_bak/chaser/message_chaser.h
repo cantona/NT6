@@ -16,7 +16,7 @@ void message_chaser()
 
         remove_call_out("message_chaser");
 //        call_out("message_chaser", 130 + random(100));
-  //’‚∏ˆ ’ºØŒ®“ªŒÔ∆∑∫‹∫ƒ◊ ‘¥µƒ
+  //ÈÄôÂÄãÊî∂ÈõÜÂîØ‰∏ÄÁâ©ÂìÅÂæàËÄóË≥áÊ∫êÁöÑ
         call_out("message_chaser", 600 + random(100));
 
         filenames = keys(wanted_list);
@@ -32,7 +32,7 @@ void message_chaser()
                 {
                         ob->move(this_object()); continue;
                 }
-                if( query("race", owner) != "»À¿‡" )
+                if( query("race", owner) != "‰∫∫È°û" )
                 {
                         ob->move(this_object()); continue;
                 }
@@ -49,7 +49,7 @@ void message_chaser()
                                 if( !query("keep", owner))continue;
                                 if( (random(50) == 1) || (query("skill", ob) && random(20) == 1) )
                                 {
-                                        message("channel:snow",sprintf(HIM"°æ“•—‘°øƒ≥»À£∫Ã˝Àµ%s"+HIM+"∫√œÛ¬‰‘⁄%sµƒ%s"+HIM+" ÷¿Ô¡À£°\n"NOR,
+                                        message("channel:snow",sprintf(HIM"„ÄêË¨†Ë®Ä„ÄëÊüê‰∫∫ÔºöËÅΩË™™%s"+HIM+"Â•ΩË±°ËêΩÂú®%sÁöÑ%s"+HIM+"ÊâãË£°‰∫ÜÔºÅ\n"NOR,
                                         ob->name(),
                                         to_chinese(explode(base_name(environment(owner)), "/")[1]),
                                         owner->name()),users());
@@ -57,7 +57,7 @@ void message_chaser()
                                 continue;
                         }
                         else if (!wizardp(ob) && random(300)==1)
-                                message("channel:snow",sprintf(HIM"°æ“•—‘°øƒ≥»À£∫Ã˝Àµ%s"+HIM+"∫√œÛ¬‰‘⁄%s"+HIM+" ÷¿Ô¡À£°\n"NOR, 
+                                message("channel:snow",sprintf(HIM"„ÄêË¨†Ë®Ä„ÄëÊüê‰∫∫ÔºöËÅΩË™™%s"+HIM+"Â•ΩË±°ËêΩÂú®%s"+HIM+"ÊâãË£°‰∫ÜÔºÅ\n"NOR, 
                                 ob->name(),
                                 query("name", owner)),users());
                 if( !userp(owner) ) continue;
@@ -90,10 +90,10 @@ void message_chaser()
                         if( !living(thief_ob) || thief_ob->is_fighting() )
                                 return;
                         if( dest == room ) return;
-                        message("vision", thief_ob->name() + "º±º±√¶√¶µÿ¿Îø™¡À°£\n", room, ({thief_ob}));
+                        message("vision", thief_ob->name() + "ÊÄ•ÊÄ•ÂøôÂøôÂú∞Èõ¢Èñã‰∫Ü„ÄÇ\n", room, ({thief_ob}));
                 }
                 thief_ob->move(dest);
-                message("vision", thief_ob->name() + "◊ﬂ¡Àπ˝¿¥°£\n", dest, ({thief_ob}));
+                message("vision", thief_ob->name() + "Ëµ∞‰∫ÜÈÅé‰æÜ„ÄÇ\n", dest, ({thief_ob}));
                 return;
         }
         delete("unique_hold", victim);
@@ -120,7 +120,7 @@ private int is_keeper(object ob, object obj)
                 "gongping zi",
         });
 
-        if( !clonep(ob) || userp(ob) || query("race", ob) != "»À¿‡")return 0;
+        if( !clonep(ob) || userp(ob) || query("race", ob) != "‰∫∫È°û")return 0;
         if( !(env = environment(ob)) ) return 0;
         if( !query("exits", env) || query("no_fight", env))return 0;
 

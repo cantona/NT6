@@ -11,40 +11,40 @@ int main(object me, string str)
         int p, mp;
 
         if( !str )
-                return notify_fail("ÄãÒªÄýÁ·Ê²Ã´ÎïÆ·£¿\n");
+                return notify_fail("ä½ è¦å‡ç·´ä»€éº¼ç‰©å“ï¼Ÿ\n");
 
         if( me->is_busy() )
-                return notify_fail("ÏÈÃ¦ÍêÁËÄãµÄÊÂÇéÔÙ×öÕâ¼þÊÂÇé°É¡£\n");
+                return notify_fail("å…ˆå¿™å®Œäº†ä½ çš„äº‹æƒ…å†åšé€™ä»¶äº‹æƒ…å§ã€‚\n");
 
         if( me->is_fighting() )
-                return notify_fail("ÄãÏÖÔÚÕýÔÚ´ò¼Ü£¬Ã»Ê±¼ä×öÕâÐ©ÊÂÇé¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£åœ¨æ‰“æž¶ï¼Œæ²’æ™‚é–“åšé€™äº›äº‹æƒ…ã€‚\n");
 
         if( !objectp(ob = present(str, me)) )
-                return notify_fail("ÄãÉíÉÏÃ»ÓÐÕâ¼þÎïÆ·¡£\n");
+                return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™ä»¶ç‰©å“ã€‚\n");
 
         if( me->query_skill("force") < 300 )
-                return notify_fail("ÄãµÄÄÚ¹¦ÐÞÎª²»¹»£¬ÄÑÒÔÄýÁ·ÎïÆ·¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸä¿®ç‚ºä¸å¤ ï¼Œé›£ä»¥å‡ç·´ç‰©å“ã€‚\n");
 
         if( query("max_neili", me)<5000 )
-                return notify_fail("ÄãµÄÄÚÁ¦ÐÞÎª²»¹»£¬ÄÑÒÔÄýÁ·ÎïÆ·¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¿®ç‚ºä¸å¤ ï¼Œé›£ä»¥å‡ç·´ç‰©å“ã€‚\n");
 
         if( query("neili", me)<3000 )
-                return notify_fail("ÄãÏÖÔÚµÄÄÚÁ¦²»×ã£¬ÄÑÒÔÄýÁ·ÎïÆ·¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çš„å…§åŠ›ä¸è¶³ï¼Œé›£ä»¥å‡ç·´ç‰©å“ã€‚\n");
 
         if( !query("can_sign", ob) || !(p=query("quality_level", ob)) )
-                return notify_fail("Õâ¶«Î÷ËÆºõÄýÁ·²»³öÊ²Ã´¡£\n");
+                return notify_fail("é€™æ±è¥¿ä¼¼ä¹Žå‡ç·´ä¸å‡ºä»€éº¼ã€‚\n");
 
         if( !query("require/level", ob) || query("require/level", ob) < 20 )
-                return notify_fail("±ØÐëÊÇ20¼¶ÒÔÉÏµÄ×°±¸²ÅÄÜÄýÁ·¡£\n");
+                return notify_fail("å¿…é ˆæ˜¯20ç´šä»¥ä¸Šçš„è£å‚™æ‰èƒ½å‡ç·´ã€‚\n");
 
-        message_vision(HIM "$N" HIM "½«" + ob->name() +
-                       HIM "ÎÕÓÚÕÆÖÐ£¬Ä¬Ä¬ÔË×ªÄÚÁ¦£¬¿ªÊ¼ÄýÁ¶¡£\n" NOR, me);
+        message_vision(HIM "$N" HIM "å°‡" + ob->name() +
+                       HIM "æ¡äºŽæŽŒä¸­ï¼Œé»˜é»˜é‹è½‰å…§åŠ›ï¼Œé–‹å§‹å‡ç…‰ã€‚\n" NOR, me);
 
         if (random(100)<50 )
         {
-                message_vision(HIR "Í»È»È´¼û" + ob->name() +
-                               HIR "àÍµÄ»¯×÷Ò»¹ÉÇàÑÌ£¬Ê²Ã´¶¼"
-                               "Ã»ÓÐÁôÏÂ¡£\n" NOR, me);
+                message_vision(HIR "çªç„¶å»è¦‹" + ob->name() +
+                               HIR "å—¤çš„åŒ–ä½œä¸€è‚¡é’ç…™ï¼Œä»€éº¼éƒ½"
+                               "æ²’æœ‰ç•™ä¸‹ã€‚\n" NOR, me);
                 destruct(ob);
                 return 1;
         }
@@ -57,8 +57,8 @@ int main(object me, string str)
                 stone = new("/clone/enchase/"+type+"_soul"+p);
         }
 
-        message_vision(HIM "ö®Ê±Ö»¼û$N" HIM "ÕÆÐÄ°×ÎíÕôÌÚ£¬ËÆºõ·¢"
-                       "ÉúÁËÊ²Ã´²»Í¬Ñ°³£µÄÊÂÇé¡£\n" NOR, me);
+        message_vision(HIM "éœŽæ™‚åªè¦‹$N" HIM "æŽŒå¿ƒç™½éœ§è’¸é¨°ï¼Œä¼¼ä¹Žç™¼"
+                       "ç”Ÿäº†ä»€éº¼ä¸åŒå°‹å¸¸çš„äº‹æƒ…ã€‚\n" NOR, me);
 
         if( query("value", stone) )
         {
@@ -68,9 +68,9 @@ int main(object me, string str)
                 if (mp > 100) mp = 100;
 
                 addn("magic_points", mp, me);
-                tell_object(me, HIC "ÄãÍ¨¹ýÄýÁ·"+ stone->name() +
-                                HIC "µÄ¹ý³Ì£¬´Ó¶ø»ñµÃÁË" +
-                                chinese_number(mp) + "µãÁé»Û¡£\n" NOR);
+                tell_object(me, HIC "ä½ é€šéŽå‡ç·´"+ stone->name() +
+                                HIC "çš„éŽç¨‹ï¼Œå¾žè€Œç²å¾—äº†" +
+                                chinese_number(mp) + "é»žéˆæ…§ã€‚\n" NOR);
         }
         addn("max_neili", -1, me);
         addn("neili", -3000, me);
@@ -84,11 +84,11 @@ int main(object me, string str)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½£ºconcise <ÎïÆ·ID>
+æŒ‡ä»¤æ ¼å¼ï¼šconcise <ç‰©å“ID>
 
-´ËÖ¸Áî¿ÉÈÃÄã½«Ä³Ð©ÎïÆ·ÄýÁ¶¡£Ò»°ãÀ´ËµËùÓÐ¹ÖÍâµôÂäµÄ×°±¸¶¼¿ÉÒÔ
-±»ÄýÁ·£¬²»¹ýÄýÁ·ÎïÆ·ÐèÒª±È½Ï¸ßµÄÄÚ¹¦µÈ¼¶ºÍÄÚÁ¦ÐÞÎª£¬Ã¿´Î³É¹¦
-µÄÄýÁ·¶¼»áÔö¼ÓÒ»¶¨ÊýÁ¿µÄÁé»Û£¬µ«ÊÇ»áÏûºÄÒ»µã×î´óÄÚÁ¦¡£
+æ­¤æŒ‡ä»¤å¯è®“ä½ å°‡æŸäº›ç‰©å“å‡ç…‰ã€‚ä¸€èˆ¬ä¾†èªªæ‰€æœ‰æ€ªå¤–æŽ‰è½çš„è£å‚™éƒ½å¯ä»¥
+è¢«å‡ç·´ï¼Œä¸éŽå‡ç·´ç‰©å“éœ€è¦æ¯”è¼ƒé«˜çš„å…§åŠŸç­‰ç´šå’Œå…§åŠ›ä¿®ç‚ºï¼Œæ¯æ¬¡æˆåŠŸ
+çš„å‡ç·´éƒ½æœƒå¢žåŠ ä¸€å®šæ•¸é‡çš„éˆæ…§ï¼Œä½†æ˜¯æœƒæ¶ˆè€—ä¸€é»žæœ€å¤§å…§åŠ›ã€‚
 HELP);
         return 1;
 }

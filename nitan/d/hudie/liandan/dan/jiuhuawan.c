@@ -2,14 +2,14 @@
 inherit ITEM;
 void create()
 {
-     	set_name(HIW"¾Å»¨ÓñÂ¶Íè"NOR, ({ "jiuhuayulu wan","wan"}));
+     	set_name(HIW"ä¹èŠ±ç‰éœ²ä¸¸"NOR, ({ "jiuhuayulu wan","wan"}));
      	set_weight(100);
      	if( clonep() )
             	set_default_object(__FILE__);
      	else 
 	{
-             	set("long", "¾Å»¨ÓñÂ¶ÍèÊÇÌÒ»¨µº»ÆÒ©Ê¦µÄÁÆÉËÊ¥Ò©£¬Ö»Òª»¹ÓĞÒ»¿ÚÆøÔÚ£¬¾ÍÄÜ°ÑÃü¾È»ØÀ´¡£\n");
-             	set("unit", "¿Å"); 
+             	set("long", "ä¹èŠ±ç‰éœ²ä¸¸æ˜¯æ¡ƒèŠ±å³¶é»ƒè—¥å¸«çš„ç™‚å‚·è–è—¥ï¼Œåªè¦é‚„æœ‰ä¸€å£æ°£åœ¨ï¼Œå°±èƒ½æŠŠå‘½æ•‘å›ä¾†ã€‚\n");
+             	set("unit", "é¡†"); 
             	set("no_get",1);
             	set("no_give",1);   
              	set("value",100000);
@@ -35,18 +35,18 @@ int do_eat(string arg)
     
 addn("combat_exp", random(5000), 	me);
  
-//¾«Á¦
+//ç²¾åŠ›
      set("jingli",query("max_jingli",  me), 	me);
-//¾«Éñ
+//ç²¾ç¥
       set("eff_jing",query("max_jing",  me), 	me);
      set("jing",query("max_jing",  me), 	me);
-//ÄÚÁ¦
+//å…§åŠ›
      set("neili",query("max_neili",  me), 	me);
-//ÆøÑª
+//æ°£è¡€
      set("eff_qi",query("max_qi",  me), 	me);
      set("qi",query("max_qi",  me), 	me);
     
-  	message_vision(HIR"$N³ÔÏÂÒ»¿Å¾Å»¨ÓñÂ¶Íè£¬ËùÓĞÉËÊÆË²¼äÈ¬Óú£¬¾«ÉñÒ²½¡ÍúÁËĞí¶à¡£\n"NOR,me);
+  	message_vision(HIR"$Nåƒä¸‹ä¸€é¡†ä¹èŠ±ç‰éœ²ä¸¸ï¼Œæ‰€æœ‰å‚·å‹¢ç¬é–“ç—Šç™’ï¼Œç²¾ç¥ä¹Ÿå¥æ—ºäº†è¨±å¤šã€‚\n"NOR,me);
      	destruct(this_object());
      	return 1;
 }

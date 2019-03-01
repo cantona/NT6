@@ -1,7 +1,7 @@
 #include <ansi.h>
 
 inherit F_SSERVER;
-string name() { return "Íò¹ÆÊÉÌì"; }
+string name() { return "è¬è ±å™¬å¤©"; }
 
 int perform(object me, object target)
 {
@@ -17,32 +17,32 @@ int perform(object me, object target)
         }
 
         if (! me->is_fighting(target))
-                return notify_fail("¡¸Íò¹ÆÊÉÌì¡¹Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œè¬è ±å™¬å¤©ã€åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if (me->query_skill_prepared("hand") != "qianzhu-wandushou")
-                return notify_fail("ÄãÃ»ÓÐ×¼±¸Ê¹ÓÃÇ§ÖëÍò¶¾ÊÖ£¬ÎÞ·¨Ê©Õ¹Íò¹ÆÊÉÌì¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æº–å‚™ä½¿ç”¨åƒè››è¬æ¯’æ‰‹ï¼Œç„¡æ³•æ–½å±•è¬è ±å™¬å¤©ã€‚\n");
 
         skill = me->query_skill("qianzhu-wandushou", 1);
 
         if (skill < 220)
-                return notify_fail("ÄãµÄÇ§ÖëÍò¶¾ÊÖÐÞÎªÓÐÏÞ£¬ÎÞ·¨Ê©Õ¹Íò¹ÆÊÉÌì¡£\n");
+                return notify_fail("ä½ çš„åƒè››è¬æ¯’æ‰‹ä¿®ç‚ºæœ‰é™ï¼Œç„¡æ³•æ–½å±•è¬è ±å™¬å¤©ã€‚\n");
 
         if (me->query_skill("force") < 300)
-                return notify_fail("ÄãµÄÄÚ¹¦»ðºò²»¹»£¬ÄÑÒÔÊ©Õ¹Íò¹ÆÊÉÌì¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸç«å€™ä¸å¤ ï¼Œé›£ä»¥æ–½å±•è¬è ±å™¬å¤©ã€‚\n");
 
         if( query("max_neili", me)<3500 )
-                return notify_fail("ÄãµÄÄÚÁ¦ÐÞÎªÃ»ÓÐ´ïµ½ÄÇ¸ö¾³½ç£¬ÎÞ·¨ÔË×ªÄÚÁ¦Ê©Õ¹Íò¹ÆÊÉÌì¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¿®ç‚ºæ²’æœ‰é”åˆ°é‚£å€‹å¢ƒç•Œï¼Œç„¡æ³•é‹è½‰å…§åŠ›æ–½å±•è¬è ±å™¬å¤©ã€‚\n");
 
         if( query("neili", me)<500 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬ÏÖÔÚÎÞ·¨Ê©Õ¹Íò¹ÆÊÉÌì¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼Œç¾åœ¨ç„¡æ³•æ–½å±•è¬è ±å™¬å¤©ã€‚\n");
 
         if( query_temp("weapon", me) )
-                return notify_fail("Äã±ØÐëÊÇ¿ÕÊÖ²ÅÄÜÊ©Õ¹Íò¹ÆÊÉÌì¡£\n");
+                return notify_fail("ä½ å¿…é ˆæ˜¯ç©ºæ‰‹æ‰èƒ½æ–½å±•è¬è ±å™¬å¤©ã€‚\n");
 
-        msg = RED "\n$N" RED "ÑöÌìÒ»Éù³¤Ð¥£¬Ç¿´ßÄÚ¾¢£¬È«Éí"
-              "¾¹¸¡ÏÖ³öÒþÒþ±ÌÂÌÖ®É«¡£ºÈµÀ£º¡°Íò¹ÆÊÉÌì¡±,Ë«"
-              "ÕÆÃÍ\nÈ»ÅÄ³ö£¬µÇÊ±»Ã³öÂþÌì±ÌÂÌÉ«ÕÆÓ°£¬¶¾ÆøÃÖ"
-              "Âþ£¬ÁýÕÖ$n" RED "È«Éí£¡\n\n" NOR;
+        msg = RED "\n$N" RED "ä»°å¤©ä¸€è²é•·å˜¯ï¼Œå¼·å‚¬å…§å‹ï¼Œå…¨èº«"
+              "ç«Ÿæµ®ç¾å‡ºéš±éš±ç¢§ç¶ ä¹‹è‰²ã€‚å–é“ï¼šâ€œè¬è ±å™¬å¤©â€,é›™"
+              "æŽŒçŒ›\nç„¶æ‹å‡ºï¼Œç™»æ™‚å¹»å‡ºæ¼«å¤©ç¢§ç¶ è‰²æŽŒå½±ï¼Œæ¯’æ°£å½Œ"
+              "æ¼«ï¼Œç± ç½©$n" RED "å…¨èº«ï¼\n\n" NOR;
 
         message_combatd(msg, me, target);
 

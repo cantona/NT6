@@ -23,13 +23,13 @@ string chinese_mine_class(string cs)
         {
                 case IRON_MINE:
                 case IRON_RES_CU:
-                        return "´ÖÌú";
+                        return "ç²—éµ";
                 case IRON_RES_JING:
-                        return "¾«Ìú";
+                        return "ç²¾éµ";
                 case STEEL_RES:
-                        return "¸Ö";
+                        return "é‹¼";
                 case BLACK_IRON:
-                        return "ĞşÌú";
+                        return "ç„éµ";
                 default:
                         return 0;
         }
@@ -56,11 +56,11 @@ object query_mine_class_up_ob(string cs)
 {
         switch (cs)
         {
-                case IRON_MINE:                // Ìú¿ó -> ´ÖÌú
+                case IRON_MINE:                // éµç¤¦ -> ç²—éµ
                         return new(MINE_DIR"iron_cu");
-                case IRON_RES_CU:        // ´ÖÌú -> ¾«Ìú
+                case IRON_RES_CU:        // ç²—éµ -> ç²¾éµ
                         return new(MINE_DIR"iron_jing");
-                case IRON_RES_JING:        // ¾«Ìú -> ¸Ö
+                case IRON_RES_JING:        // ç²¾éµ -> é‹¼
                         return new(MINE_DIR"iron_steel");
                 case BLACK_IRON:
                         return new(MINE_DIR"black_iron");
@@ -73,9 +73,9 @@ int query_mine_class_up_quantity(string cs)
 {
         switch (cs)
         {
-                case IRON_RES_CU:        // ´ÖÌú -> ¾«Ìú
+                case IRON_RES_CU:        // ç²—éµ -> ç²¾éµ
                         return 3;
-                case IRON_RES_JING:        // ¾«Ìú -> ¸Ö
+                case IRON_RES_JING:        // ç²¾éµ -> é‹¼
                         return 3;
                 default:
                         return 0;

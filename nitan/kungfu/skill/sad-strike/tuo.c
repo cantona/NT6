@@ -1,13 +1,13 @@
 // This program is a part of NITAN MudLIB
 // tuo.c
-// Ñî¹ı¾öÕ½½ğÂÖ·¨ÍõÊ±ËùÊ©Õ¹µÄ¾ö¶¨Ê¤¸ºµÄÒ»ÕĞ¡£
+// æ¥Šéæ±ºæˆ°é‡‘è¼ªæ³•ç‹æ™‚æ‰€æ–½å±•çš„æ±ºå®šå‹è² çš„ä¸€æ‹›ã€‚
 
 #include <ansi.h>
 #include <combat.h>
 
 inherit F_SSERVER;
 
-string name() { return HIM "ÍÏÄà´øË®" NOR; }
+string name() { return HIM "æ‹–æ³¥å¸¶æ°´" NOR; }
 
 int perform(object me, object target)
 {
@@ -21,34 +21,34 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(name() + "Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(name() + "åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( query("static/marry", me)>1 )
-                return notify_fail("Äã¸ĞÇéÔçÒÑ²»´¿£¬ÄÄÀï»¹ÄÜÁìÂÔµ½ÄÇÖÖ÷öÈ»Ïú»êµÄ¸Ğ¾õ£¿\n");
+                return notify_fail("ä½ æ„Ÿæƒ…æ—©å·²ä¸ç´”ï¼Œå“ªè£¡é‚„èƒ½é ˜ç•¥åˆ°é‚£ç¨®é»¯ç„¶éŠ·é­‚çš„æ„Ÿè¦ºï¼Ÿ\n");
 
         if ((int)me->query_skill("force") < 250)
-                return notify_fail("ÄãµÄÄÚ¹¦»ğºò²»¹»£¬Ê¹²»³ö" + name() + "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸç«å€™ä¸å¤ ï¼Œä½¿ä¸å‡º" + name() + "ã€‚\n");
 
         if ((int)me->query_skill("sad-strike", 1) < 180)
-                return notify_fail("ÄãµÄ÷öÈ»Ïú»êÕÆ²»¹»ÊìÁ·£¬²»»áÊ¹ÓÃ" + name() + "¡£\n");
+                return notify_fail("ä½ çš„é»¯ç„¶éŠ·é­‚æŒä¸å¤ ç†Ÿç·´ï¼Œä¸æœƒä½¿ç”¨" + name() + "ã€‚\n");
 
         if( query("neili", me)<500 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬ÎŞ·¨Ê¹ÓÃ" + name() + "¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼Œç„¡æ³•ä½¿ç”¨" + name() + "ã€‚\n");
 
         if (me->query_skill_mapped("unarmed") != "sad-strike")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢÷öÈ»Ïú»êÕÆ£¬ÎŞ·¨Ê¹ÓÃ" + name() + "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼é»¯ç„¶éŠ·é­‚æŒï¼Œç„¡æ³•ä½¿ç”¨" + name() + "ã€‚\n");
 
         if( !stringp(couple=query("couple/couple_id", me)) )
-                return notify_fail("ÄãÃ»ÓĞÆŞ×Ó£¬Ìå»á²»µ½ÕâÖÖÍòÄî¾ã»ÒµÄ¸Ğ¾õ¡£\n");
+                return notify_fail("ä½ æ²’æœ‰å¦»å­ï¼Œé«”æœƒä¸åˆ°é€™ç¨®è¬å¿µä¿±ç°çš„æ„Ÿè¦ºã€‚\n");
         /*
         if (! objectp(cob = find_player(couple)))
-                return notify_fail("ÀÏÆÅ²»ÔÚ°¡£¬¿àÃÆÏòË­·¢£¿\n");
+                return notify_fail("è€å©†ä¸åœ¨å•Šï¼Œè‹¦æ‚¶å‘èª°ç™¼ï¼Ÿ\n");
         */
         if( time()-query_temp("last_perform/sad-strike/tuo", me)<60 )
-                return notify_fail("Äã¸Õ¸ÕÊ©Õ¹ÍêÍÏÄà´øË®£¬ÏÖÔÚĞÄÇéÃ»ÓĞÄÇÃ´ÓôÃÆÁË¡£\n");
+                return notify_fail("ä½ å‰›å‰›æ–½å±•å®Œæ‹–æ³¥å¸¶æ°´ï¼Œç¾åœ¨å¿ƒæƒ…æ²’æœ‰é‚£éº¼é¬±æ‚¶äº†ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
         effqi=query("eff_qi", me);
         maxqi=query("max_qi", me);
@@ -63,15 +63,15 @@ int perform(object me, object target)
 
         if (effqi < maxqi / 3)
         {
-                msg = HIR "$N" HIR "ĞÄÏÂÍòÄî¾ã»Ò£¬ÆàÈ»ÏòÆŞ×Ó"
-                      HIR "ÍûÁËÒ»ÑÛ£¬°µµÀ£º¡°±ğÁË£¡Äã×Ô¼º±£ÖØ¡£¡±\n"
-                      "µ±ÏÂÊ§»êÂäÆÇ£¬ËæÊÖÒ»ÕĞ£¬Ç¡ºÃÊ¹³öÁË÷öÈ»Ïú»êÕÆÖĞ"
-                      "µÄ¡¸ÍÏÄà´øË®¡¹¡£\n" NOR;
+                msg = HIR "$N" HIR "å¿ƒä¸‹è¬å¿µä¿±ç°ï¼Œå‡„ç„¶å‘å¦»å­"
+                      HIR "æœ›äº†ä¸€çœ¼ï¼Œæš—é“ï¼šâ€œåˆ¥äº†ï¼ä½ è‡ªå·±ä¿é‡ã€‚â€\n"
+                      "ç•¶ä¸‹å¤±é­‚è½é­„ï¼Œéš¨æ‰‹ä¸€æ‹›ï¼Œæ°å¥½ä½¿å‡ºäº†é»¯ç„¶éŠ·é­‚æŒä¸­"
+                      "çš„ã€Œæ‹–æ³¥å¸¶æ°´ã€ã€‚\n" NOR;
                 ap += ap  / 5;
         } else
         {
-                msg = HIM "Ö»¼û$N" HIM "Ã»¾«´ò²ÉµÄ»ÓĞä¾í³ö£¬ÅÄ³öÒ»ÕÆ£¬ÕıÊÇ"
-                      "÷öÈ»Ïú»êÕÆÖĞµÄ¡¸ÍÏÄà´øË®¡¹¡£\n"NOR;
+                msg = HIM "åªè¦‹$N" HIM "æ²’ç²¾æ‰“æ¡çš„æ®è¢–å·å‡ºï¼Œæ‹å‡ºä¸€æŒï¼Œæ­£æ˜¯"
+                      "é»¯ç„¶éŠ·é­‚æŒä¸­çš„ã€Œæ‹–æ³¥å¸¶æ°´ã€ã€‚\n"NOR;
         }
         if (ap / 2 + random(ap) > dp)
         {
@@ -79,14 +79,14 @@ int perform(object me, object target)
                 damage+= query("jiali", me);
                 addn("neili", -300, me);
                 msg += COMBAT_D->do_damage(me, target, UNARMED_ATTACK, damage, 200,
-                                           HIR "Ö»Ìı$n" HIR "Ò»ÉùÃÆºß£¬¡°àÛ¡±µÄÒ»"
-                                           "Éù£¬ÕâÒ»ÕÆÕıºÃ»÷ÔÚ$p" HIR "¼çÍ·¡£ \n"
+                                           HIR "åªè½$n" HIR "ä¸€è²æ‚¶å“¼ï¼Œâ€œå™—â€çš„ä¸€"
+                                           "è²ï¼Œé€™ä¸€æŒæ­£å¥½æ“Šåœ¨$p" HIR "è‚©é ­ã€‚ \n"
                                            NOR);
                 set_temp("last_perform/sad-strike/tuo", 1, me);
         } else
         {
                 addn("neili", -100, me);
-                msg += HIC "¿ÉÊÇ$p" HIC "Ğ¡ĞÄÓ¦¸¶¡¢·ÜÁ¦ÕĞ¼Ü£¬µ²¿ªÁËÕâÒ»ÕĞ¡£\n"
+                msg += HIC "å¯æ˜¯$p" HIC "å°å¿ƒæ‡‰ä»˜ã€å¥®åŠ›æ‹›æ¶ï¼Œæ“‹é–‹äº†é€™ä¸€æ‹›ã€‚\n"
                        NOR;
         }
         message_combatd(msg, me, target);

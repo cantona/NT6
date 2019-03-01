@@ -25,13 +25,13 @@ int main(object me, string arg)
 	exits = env->query("exits");
 
 	if(!mapp(exits) || !sizeof(exits))
-		return notify_fail("ÕâÀïÃ»ÓĞ¿ÉÓÃÓÚ´´½¨ÃÅµÄ³ö¿Ú¡£\n");
+		return notify_fail("é€™è£¡æ²’æœ‰å¯ç”¨äºå‰µå»ºé–€çš„å‡ºå£ã€‚\n");
 
 	ye = keys(exits);
 
 	if(!mapp(doors = env->query_doors()) || !sizeof(doors))
 	{
-		out = sprintf("ÕâÀï¿ÉÓÃÓÚ´´½¨ÃÅµÄ³ö¿ÚÓĞ£º\n%s\nÇëÉè¶¨Óû´´½¨ÃÅµÄÖĞÎÄÃû[1-5¸öºº×Ö](q ÍË³ö)£º\n",
+		out = sprintf("é€™è£¡å¯ç”¨äºå‰µå»ºé–€çš„å‡ºå£æœ‰ï¼š\n%s\nè«‹è¨­å®šæ¬²å‰µå»ºé–€çš„ä¸­æ–‡å[1-5å€‹æ¼¢å­—](q é€€å‡º)ï¼š\n",
 			implode(ye,",") );
 		write(out);
 		input_to( (: get_door_cname :), me, env, ye, yd);
@@ -39,16 +39,16 @@ int main(object me, string arg)
 	}
 
 	yd = keys(doors);
-	out = "ÕâÀïµÄ³ö¿ÚÇé¿ö£º\n";
+	out = "é€™è£¡çš„å‡ºå£æƒ…æ³ï¼š\n";
 
 	foreach(string tmp in ye)
-		out += sprintf("  %s%s\n", tmp, (member_array(tmp,yd) == -1)?"":" [ÓĞÃÅ]");
+		out += sprintf("  %s%s\n", tmp, (member_array(tmp,yd) == -1)?"":" [æœ‰é–€]");
 
-	out += "ÇëÑ¡Ôñ²Ù×÷£º\n(1). É¾³ıÒ»ÉÈÃÅ¡£\n";
+	out += "è«‹é¸æ“‡æ“ä½œï¼š\n(1). åˆªé™¤ä¸€æ‰‡é–€ã€‚\n";
 	if(sizeof(ye) > sizeof(yd))
-		out += "(2). ´´½¨Ò»ÉÈÃÅ¡£\n";
+		out += "(2). å‰µå»ºä¸€æ‰‡é–€ã€‚\n";
 
-	out += "(q). ÍË³ö¡£\n";
+	out += "(q). é€€å‡ºã€‚\n";
 
 	write(out);
 	input_to( (: decide_action_do :), me, env, ye, yd);
@@ -65,9 +65,9 @@ protected void decide_action_do(string str, object who, object env, string *ye, 
 		return;
 	}
 
-	if(sizeof(str) && (str[0] == '1'))	// É¾³ı
+	if(sizeof(str) && (str[0] == '1'))	// åˆªé™¤
 	{
-		tell_object(who, "ÇëÑ¡ÔñÉ¾³ıÃÅµÄ·½Ïò(q ÍË³ö)£º\n");
+		tell_object(who, "è«‹é¸æ“‡åˆªé™¤é–€çš„æ–¹å‘(q é€€å‡º)ï¼š\n");
 		input_to( (: del_door :), who, env, ye, yd);
 		return;
 	}
@@ -76,24 +76,24 @@ protected void decide_action_do(string str, object who, object env, string *ye, 
 	{
 		if(sizeof(yd) >= sizeof(ye))
 		{
-			tell_object(who, "ÕâÀïÒÑ¾­Ã»ÓĞ¿ÉÓÃÓÚ´´½¨ÃÅµÄ³ö¿Ú¡£\n·Ç·¨²Ù×÷¡£\n");
+			tell_object(who, "é€™è£¡å·²ç¶“æ²’æœ‰å¯ç”¨äºå‰µå»ºé–€çš„å‡ºå£ã€‚\néæ³•æ“ä½œã€‚\n");
 			return;
 		}
-		tell_object(who, "ÇëÉè¶¨Óû´´½¨ÃÅµÄÖĞÎÄÃû[1-5¸öºº×Ö](q ÍË³ö)£º\n");
+		tell_object(who, "è«‹è¨­å®šæ¬²å‰µå»ºé–€çš„ä¸­æ–‡å[1-5å€‹æ¼¢å­—](q é€€å‡º)ï¼š\n");
 		input_to( (: get_door_cname :), who, env, ye, yd);
 		return;
 	}
 
-	out = "ÕâÀïµÄ³ö¿ÚÇé¿ö£º\n";
+	out = "é€™è£¡çš„å‡ºå£æƒ…æ³ï¼š\n";
 
 	foreach(string tmp in ye)
-		out += sprintf("  %s%s\n", tmp, member_array(tmp,yd) == -1?"":" [ÓĞÃÅ]");
+		out += sprintf("  %s%s\n", tmp, member_array(tmp,yd) == -1?"":" [æœ‰é–€]");
 
-	out += "ÇëÑ¡Ôñ²Ù×÷£º\n(1). É¾³ıÒ»ÉÈÃÅ¡£\n";
+	out += "è«‹é¸æ“‡æ“ä½œï¼š\n(1). åˆªé™¤ä¸€æ‰‡é–€ã€‚\n";
 	if(sizeof(ye) > sizeof(yd))
-		out += "(2). ´´½¨Ò»ÉÈÃÅ¡£\n";
+		out += "(2). å‰µå»ºä¸€æ‰‡é–€ã€‚\n";
 
-	out += "(q). ÍË³ö¡£\n";
+	out += "(q). é€€å‡ºã€‚\n";
 
 	tell_object(who, out);
 	input_to( (: decide_action_do :), who, env, ye, yd);
@@ -108,7 +108,7 @@ protected void get_door_cname(string str, object who, object env, string *ye, st
 
 	if(!stringp(str) || (str == ""))
 	{
-		tell_object(who, "ÇëÉè¶¨Óû´´½¨ÃÅµÄÖĞÎÄÃû[1-5¸öºº×Ö](q ÍË³ö)£º\n");
+		tell_object(who, "è«‹è¨­å®šæ¬²å‰µå»ºé–€çš„ä¸­æ–‡å[1-5å€‹æ¼¢å­—](q é€€å‡º)ï¼š\n");
 		input_to( (: get_door_cname :), who, env, ye, yd);
 		return;
 	}
@@ -122,7 +122,7 @@ protected void get_door_cname(string str, object who, object env, string *ye, st
 
 	if( ((l = strlen(str)) < 2) || (l > 10) )
 	{
-		tell_object(who, "ÃÅµÄÃû³Æ±ØĞëÎª1-5¸öºº×Ö£¬ÊäÈë('q'ÍË³ö)£º\n");
+		tell_object(who, "é–€çš„åç¨±å¿…é ˆç‚º1-5å€‹æ¼¢å­—ï¼Œè¼¸å…¥('q'é€€å‡º)ï¼š\n");
 		input_to( (: get_door_cname :), who, env, ye, yd);
 		return;
 	}
@@ -133,7 +133,7 @@ protected void get_door_cname(string str, object who, object env, string *ye, st
 
                 if( str[l]<128 )
 		{
-			tell_object(who, "ÃÅµÄÃû³Æ±ØĞëÊ¹ÓÃÖĞÎÄ£¬ÊäÈë('q'ÍË³ö)£º\n");
+			tell_object(who, "é–€çš„åç¨±å¿…é ˆä½¿ç”¨ä¸­æ–‡ï¼Œè¼¸å…¥('q'é€€å‡º)ï¼š\n");
 			input_to( (: get_door_cname :), who, env, ye, yd);
 			return;
                 }
@@ -145,14 +145,14 @@ protected void get_door_cname(string str, object who, object env, string *ye, st
 			if( (section < 16)
 			|| (section > 87) )
 			{
-				tell_object(who,"\nÃÅµÄÃû³Æ±ØĞëÊ¹ÓÃ³£ÓÃ¡¸ºº×Ö¡¹£¬ÊäÈë(q ÍË³ö)£º\n");
+				tell_object(who,"\né–€çš„åç¨±å¿…é ˆä½¿ç”¨å¸¸ç”¨ã€Œæ¼¢å­—ã€ï¼Œè¼¸å…¥(q é€€å‡º)ï¼š\n");
 				input_to( (: get_door_cname :), who, env, ye, yd);
 				return;
 			}
 		}
 	}
 
-	tell_object(who, "ÇëÑ¡Ôñ´´½¨ÃÅµÄ·½Ïò(q ÍË³ö)£º\n");
+	tell_object(who, "è«‹é¸æ“‡å‰µå»ºé–€çš„æ–¹å‘(q é€€å‡º)ï¼š\n");
 	input_to( (: add_door :), who, env, ye, yd, str);
 }
 
@@ -165,7 +165,7 @@ protected void add_door(string str, object who, object env, string *ye, string *
 
 	if(!stringp(str) || !sizeof(str))
 	{
-		tell_object(who, "ÇëÑ¡Ôñ´´½¨ÃÅµÄ·½Ïò(q ÍË³ö)£º\n");
+		tell_object(who, "è«‹é¸æ“‡å‰µå»ºé–€çš„æ–¹å‘(q é€€å‡º)ï¼š\n");
 		input_to( (: add_door :), who, env, ye, yd, cname);
 		return;
 	}
@@ -178,31 +178,31 @@ protected void add_door(string str, object who, object env, string *ye, string *
 
 	if(!sizeof(ye) || (member_array(str, ye) == -1))
 	{
-		tell_object(who, "Ã»ÓĞÕâ¸ö³ö¿Ú£¬Ñ¡Ôñ´íÎó¡£\n");
+		tell_object(who, "æ²’æœ‰é€™å€‹å‡ºå£ï¼Œé¸æ“‡éŒ¯èª¤ã€‚\n");
 		return;
 	}
 
 	if(sizeof(yd) && (member_array(str, yd) != -1))
 	{
-		tell_object(who, "Õâ¸ö·½ÏòµÄ³ö¿ÚÒÑ¾­ÓĞÃÅ£¬Ñ¡Ôñ´íÎó¡£\n");
+		tell_object(who, "é€™å€‹æ–¹å‘çš„å‡ºå£å·²ç¶“æœ‰é–€ï¼Œé¸æ“‡éŒ¯èª¤ã€‚\n");
 		return;
 	}
 
 	if(undefinedp(r_dir[str]))
 	{
-		tell_object(who, "Õâ¸ö³ö¿ÚÎª·Ç±ê×¼³ö¿Ú£¬²»ÄÜ´´½¨ÃÅ¡£\n");
+		tell_object(who, "é€™å€‹å‡ºå£ç‚ºéæ¨™æº–å‡ºå£ï¼Œä¸èƒ½å‰µå»ºé–€ã€‚\n");
 		return;
 	}
 
 	if(environment(who) != env)
 	{
-		tell_object(who, "ÄãµÄÎ»ÖÃ·¢ÉúÁË±ä»¯£¬ĞŞ¸Ä±»Í£Ö¹¡£\n");
+		tell_object(who, "ä½ çš„ä½ç½®ç™¼ç”Ÿäº†è®ŠåŒ–ï¼Œä¿®æ”¹è¢«åœæ­¢ã€‚\n");
 		return;
 	}
 
 	if(!dfname = env->query("exits/"+str))
 	{
-		tell_object(who, "³ö¿Ú¼ÇÂ¼ÓĞ´íÎó£¬ĞŞ¸Ä±»Í£Ö¹¡£\n");
+		tell_object(who, "å‡ºå£è¨˜éŒ„æœ‰éŒ¯èª¤ï¼Œä¿®æ”¹è¢«åœæ­¢ã€‚\n");
 		return;
 	}
 
@@ -210,32 +210,32 @@ protected void add_door(string str, object who, object env, string *ye, string *
 		dest = load_object(dfname);
 	if(!dest)
 	{
-		tell_object(who, "ÎŞ·¨ÔØÈëÄ¿µÄ·¿¼ä£¬ĞŞ¸Ä±»Í£Ö¹¡£\n");
+		tell_object(who, "ç„¡æ³•è¼‰å…¥ç›®çš„æˆ¿é–“ï¼Œä¿®æ”¹è¢«åœæ­¢ã€‚\n");
 		return;
 	}
 
 	if(!mapp(dexits = dest->query("exits")) || !sizeof(dexits) || undefinedp(dexits[r_dir[str]]))
 	{
-		tell_object(who, "Ä¿µÄ·¿¼ä³ö¿Ú³öÏÖ´íÎó£¬ĞŞ¸Ä±»Í£Ö¹¡£\n");
+		tell_object(who, "ç›®çš„æˆ¿é–“å‡ºå£å‡ºç¾éŒ¯èª¤ï¼Œä¿®æ”¹è¢«åœæ­¢ã€‚\n");
 		return;
 	}
 
 	fname = base_name(env);
 	if(dexits[r_dir[str]] != fname)
 	{
-		tell_object(who, "Ä¿µÄ·¿¼äµÄ¶ÔÓ¦³ö¿Ú´íÎó£¬ĞŞ¸Ä±»Í£Ö¹¡£\n");
+		tell_object(who, "ç›®çš„æˆ¿é–“çš„å°æ‡‰å‡ºå£éŒ¯èª¤ï¼Œä¿®æ”¹è¢«åœæ­¢ã€‚\n");
 		return;
 	}
 
 	if(!in_same_dir(fname, dfname))
 	{
-		tell_object(who, "ÄãÃ»ÓĞÈ¨ÀûĞŞ¸ÄÄ¿µÄ·¿¼ä¡£\nĞŞ¸ÄÊ§°Ü¡£\n");
+		tell_object(who, "ä½ æ²’æœ‰æ¬Šåˆ©ä¿®æ”¹ç›®çš„æˆ¿é–“ã€‚\nä¿®æ”¹å¤±æ•—ã€‚\n");
 		return;
 	}
 
 	if(mapp(ddoors = dest->query_doors()) && !undefinedp(ddoors[r_dir[str]]))
 	{
-		tell_object(who, "Ä¿µÄ·¿¼äÔÚ¶ÔÓ¦³ö¿ÚÉÏÒÑÓĞÃÅ£¬ĞŞ¸Ä±»Í£Ö¹¡£\n");
+		tell_object(who, "ç›®çš„æˆ¿é–“åœ¨å°æ‡‰å‡ºå£ä¸Šå·²æœ‰é–€ï¼Œä¿®æ”¹è¢«åœæ­¢ã€‚\n");
 		return;
 	}
 
@@ -243,13 +243,13 @@ protected void add_door(string str, object who, object env, string *ye, string *
 
 	if(!(dcontent = read_file(dfname)))
 	{
-		tell_object(who, "ÎŞ·¨¶ÁÈëÄ¿µÄ·¿¼äµµ°¸£¬ĞŞ¸Ä±»Í£Ö¹¡£\n");
+		tell_object(who, "ç„¡æ³•è®€å…¥ç›®çš„æˆ¿é–“æª”æ¡ˆï¼Œä¿®æ”¹è¢«åœæ­¢ã€‚\n");
 		return;
 	}
 
 	if(!BUNCH_D->parse_function_body(ref dcontent, "void", "create", ref df_sect, ref dm_sect, ref de_sect, 0))
 	{
-		tell_object(who, "ÎŞ·¨ÆÊÎöÄ¿µÄ·¿¼äµµ°¸£¬ĞŞ¸Ä±»Í£Ö¹¡£\n");
+		tell_object(who, "ç„¡æ³•å‰–æç›®çš„æˆ¿é–“æª”æ¡ˆï¼Œä¿®æ”¹è¢«åœæ­¢ã€‚\n");
 		return;
 	}
 
@@ -257,13 +257,13 @@ protected void add_door(string str, object who, object env, string *ye, string *
 
 	if(!(content = read_file(fname)))
 	{
-		tell_object(who, "ÎŞ·¨¶ÁÈë·¿¼äµµ°¸£¬ĞŞ¸Ä±»Í£Ö¹¡£\n");
+		tell_object(who, "ç„¡æ³•è®€å…¥æˆ¿é–“æª”æ¡ˆï¼Œä¿®æ”¹è¢«åœæ­¢ã€‚\n");
 		return;
 	}
 
 	if(!BUNCH_D->parse_function_body(ref content, "void", "create", ref f_sect, ref m_sect, ref e_sect, 0))
 	{
-		tell_object(who, "ÎŞ·¨ÆÊÎö·¿¼äµµ°¸£¬ĞŞ¸Ä±»Í£Ö¹¡£\n");
+		tell_object(who, "ç„¡æ³•å‰–ææˆ¿é–“æª”æ¡ˆï¼Œä¿®æ”¹è¢«åœæ­¢ã€‚\n");
 		return;
 	}
 
@@ -287,29 +287,29 @@ protected void add_door(string str, object who, object env, string *ye, string *
 
 	if(!write_file(dfname, dresult, 1))
 	{
-		tell_object(who, "ÎŞ·¨Ğ´ÈëÄ¿µÄ·¿¼äµµ°¸£¬²Ù×÷Ê§°Ü¡£\n");
+		tell_object(who, "ç„¡æ³•å¯«å…¥ç›®çš„æˆ¿é–“æª”æ¡ˆï¼Œæ“ä½œå¤±æ•—ã€‚\n");
 		return;
 	}
 
 	if(!write_file(fname, result, 1))
 	{
-		tell_object(who, "ÎŞ·¨Ğ´Èë·¿¼äµµ°¸£¬²Ù×÷Ê§°Ü¡£\n");
+		tell_object(who, "ç„¡æ³•å¯«å…¥æˆ¿é–“æª”æ¡ˆï¼Œæ“ä½œå¤±æ•—ã€‚\n");
 		return;
 	}
 
 	if( !BUNCH_D->update_room(env) )
 	{
-		tell_object(who, "ÎŞ·¨ÔØÈë·¿¼ä£¬ĞŞ¸ÄÊ§°Ü¡£\n");
+		tell_object(who, "ç„¡æ³•è¼‰å…¥æˆ¿é–“ï¼Œä¿®æ”¹å¤±æ•—ã€‚\n");
 		return;
 	}
 
 	if( !BUNCH_D->update_room(dest) )
 	{
-		tell_object(who, "ÎŞ·¨ÔØÈëÄ¿µÄ·¿¼ä£¬ĞŞ¸ÄÊ§°Ü¡£\n");
+		tell_object(who, "ç„¡æ³•è¼‰å…¥ç›®çš„æˆ¿é–“ï¼Œä¿®æ”¹å¤±æ•—ã€‚\n");
 		return;
 	}
 
-	tell_object(who, sprintf("%s´´½¨³É¹¦¡£\n", cname));
+	tell_object(who, sprintf("%så‰µå»ºæˆåŠŸã€‚\n", cname));
 }
 
 protected void del_door(string str, object who, object env, string *ye, string *yd)
@@ -321,7 +321,7 @@ protected void del_door(string str, object who, object env, string *ye, string *
 
 	if(!stringp(str) || !sizeof(str))
 	{
-		tell_object(who, "ÇëÑ¡ÔñÉ¾³ıÃÅµÄ·½Ïò(q ÍË³ö)£º\n");
+		tell_object(who, "è«‹é¸æ“‡åˆªé™¤é–€çš„æ–¹å‘(q é€€å‡º)ï¼š\n");
 		input_to( (: del_door :), who, env, ye, yd);
 		return;
 	}
@@ -334,31 +334,31 @@ protected void del_door(string str, object who, object env, string *ye, string *
 
 	if(!sizeof(ye) || (member_array(str, ye) == -1))
 	{
-		tell_object(who,"Õâ¸ö·½ÏòÃ»ÓĞ³ö¿Ú£¬ĞŞÊ§°Ü¡£\n");
+		tell_object(who,"é€™å€‹æ–¹å‘æ²’æœ‰å‡ºå£ï¼Œä¿®å¤±æ•—ã€‚\n");
 		return;
 	}
 
 	if(!sizeof(yd) || (member_array(str, yd) == -1))
 	{
-		tell_object(who,"Õâ¸ö·½ÏòÃ»ÓĞÃÅ£¬ĞŞÊ§°Ü¡£\n");
+		tell_object(who,"é€™å€‹æ–¹å‘æ²’æœ‰é–€ï¼Œä¿®å¤±æ•—ã€‚\n");
 		return;
 	}
 
 	if(environment(who) != env)
 	{
-		tell_object(who, "ÄãµÄÎ»ÖÃ·¢ÉúÁË±ä»¯£¬ĞŞ¸Ä±»Í£Ö¹¡£\n");
+		tell_object(who, "ä½ çš„ä½ç½®ç™¼ç”Ÿäº†è®ŠåŒ–ï¼Œä¿®æ”¹è¢«åœæ­¢ã€‚\n");
 		return;
 	}
 
 	if(undefinedp(r_dir[str]))
 	{
-		tell_object(who, "Õâ¸ö³ö¿ÚÎª·Ç±ê×¼³ö¿Ú£¬²»ÄÜĞŞ¸Ä¡£\n");
+		tell_object(who, "é€™å€‹å‡ºå£ç‚ºéæ¨™æº–å‡ºå£ï¼Œä¸èƒ½ä¿®æ”¹ã€‚\n");
 		return;
 	}
 
 	if(!dfname = env->query("exits/" + str))
 	{
-		tell_object(who, "³ö¿Ú¼ÇÂ¼ÓĞ´íÎó£¬ĞŞ¸Ä±»Í£Ö¹¡£\n");
+		tell_object(who, "å‡ºå£è¨˜éŒ„æœ‰éŒ¯èª¤ï¼Œä¿®æ”¹è¢«åœæ­¢ã€‚\n");
 		return;
 	}
 
@@ -366,26 +366,26 @@ protected void del_door(string str, object who, object env, string *ye, string *
 		dest = load_object(dfname);
 	if(!dest)
 	{
-		tell_object(who, "ÎŞ·¨ÔØÈëÄ¿µÄ·¿¼ä£¬ĞŞ¸Ä±»Í£Ö¹¡£\n");
+		tell_object(who, "ç„¡æ³•è¼‰å…¥ç›®çš„æˆ¿é–“ï¼Œä¿®æ”¹è¢«åœæ­¢ã€‚\n");
 		return;
 	}
 
 	if(!mapp(dexits = dest->query("exits")) || !sizeof(dexits) || undefinedp(dexits[r_dir[str]]))
 	{
-		tell_object(who, "Ä¿µÄ·¿¼ä³ö¿Ú³öÏÖ´íÎó£¬ĞŞ¸Ä±»Í£Ö¹¡£\n");
+		tell_object(who, "ç›®çš„æˆ¿é–“å‡ºå£å‡ºç¾éŒ¯èª¤ï¼Œä¿®æ”¹è¢«åœæ­¢ã€‚\n");
 		return;
 	}
 
 	fname = base_name(env);
 	if(dexits[r_dir[str]] != fname)
 	{
-		tell_object(who, "Ä¿µÄ·¿¼äµÄ¶ÔÓ¦³ö¿Ú´íÎó£¬ĞŞ¸Ä±»Í£Ö¹¡£\n");
+		tell_object(who, "ç›®çš„æˆ¿é–“çš„å°æ‡‰å‡ºå£éŒ¯èª¤ï¼Œä¿®æ”¹è¢«åœæ­¢ã€‚\n");
 		return;
 	}
 
 	if(!in_same_dir(fname, dfname))
 	{
-		tell_object(who, "ÄãÃ»ÓĞÈ¨ÀûĞŞ¸ÄÄ¿µÄ·¿¼ä¡£\nĞŞ¸ÄÊ§°Ü¡£\n");
+		tell_object(who, "ä½ æ²’æœ‰æ¬Šåˆ©ä¿®æ”¹ç›®çš„æˆ¿é–“ã€‚\nä¿®æ”¹å¤±æ•—ã€‚\n");
 		return;
 	}
 
@@ -393,13 +393,13 @@ protected void del_door(string str, object who, object env, string *ye, string *
 
 	if(!dcontent = read_file(dfname))
 	{
-		tell_object(who, "ÎŞ·¨¶ÁÈëÄ¿µÄµµ°¸ÎÄ¼ş£¬ĞŞ¸ÄÊ§°Ü¡£\n");
+		tell_object(who, "ç„¡æ³•è®€å…¥ç›®çš„æª”æ¡ˆæ–‡ä»¶ï¼Œä¿®æ”¹å¤±æ•—ã€‚\n");
 		return;
 	}
 
 	if(!BUNCH_D->parse_set_value(ref dcontent, r_dir[str], ref df_sect, ref de_sect, "create_door"))
 	{
-		tell_object(who, "ÎŞ·¨ÆÊÎöÄ¿µÄµµ°¸ÎÄ¼ş£¬ĞŞ¸ÄÊ§°Ü¡£\n");
+		tell_object(who, "ç„¡æ³•å‰–æç›®çš„æª”æ¡ˆæ–‡ä»¶ï¼Œä¿®æ”¹å¤±æ•—ã€‚\n");
 		return;
 	}
 
@@ -409,13 +409,13 @@ protected void del_door(string str, object who, object env, string *ye, string *
 
 	if(!content = read_file(fname))
 	{
-		tell_object(who, "ÎŞ·¨¶ÁÈëµµ°¸ÎÄ¼ş£¬ĞŞ¸ÄÊ§°Ü¡£\n");
+		tell_object(who, "ç„¡æ³•è®€å…¥æª”æ¡ˆæ–‡ä»¶ï¼Œä¿®æ”¹å¤±æ•—ã€‚\n");
 		return;
 	}
 
 	if(!BUNCH_D->parse_set_value(ref content, str, ref f_sect, ref e_sect, "create_door"))
 	{
-		tell_object(who, "ÎŞ·¨ÆÊÎöµµ°¸ÎÄ¼ş£¬ĞŞ¸ÄÊ§°Ü¡£\n");
+		tell_object(who, "ç„¡æ³•å‰–ææª”æ¡ˆæ–‡ä»¶ï¼Œä¿®æ”¹å¤±æ•—ã€‚\n");
 		return;
 	}
 
@@ -423,27 +423,27 @@ protected void del_door(string str, object who, object env, string *ye, string *
 
 	if(!write_file(dfname, dresult, 1))
 	{
-		tell_object(who, "ÎŞ·¨Ğ´ÈëÄ¿µÄ·¿¼äµµ°¸£¬²Ù×÷Ê§°Ü¡£\n");
+		tell_object(who, "ç„¡æ³•å¯«å…¥ç›®çš„æˆ¿é–“æª”æ¡ˆï¼Œæ“ä½œå¤±æ•—ã€‚\n");
 		return;
 	}
 
 	if(!write_file(fname, result, 1))
 	{
-		tell_object(who, "ÎŞ·¨Ğ´Èë·¿¼äµµ°¸£¬²Ù×÷Ê§°Ü¡£\n");
+		tell_object(who, "ç„¡æ³•å¯«å…¥æˆ¿é–“æª”æ¡ˆï¼Œæ“ä½œå¤±æ•—ã€‚\n");
 		return;
 	}
 
 	if( !BUNCH_D->update_room(env) )
 	{
-		tell_object(who, "ÎŞ·¨ÔØÈë·¿¼ä£¬ĞŞ¸ÄÊ§°Ü¡£\n");
+		tell_object(who, "ç„¡æ³•è¼‰å…¥æˆ¿é–“ï¼Œä¿®æ”¹å¤±æ•—ã€‚\n");
 		return;
 	}
 
 	if( !BUNCH_D->update_room(dest) )
 	{
-		tell_object(who, "ÎŞ·¨ÔØÈëÄ¿µÄ·¿¼ä£¬ĞŞ¸ÄÊ§°Ü¡£\n");
+		tell_object(who, "ç„¡æ³•è¼‰å…¥ç›®çš„æˆ¿é–“ï¼Œä¿®æ”¹å¤±æ•—ã€‚\n");
 		return;
 	}
 
-	tell_object(who, "É¾³ı³É¹¦¡£\n");
+	tell_object(who, "åˆªé™¤æˆåŠŸã€‚\n");
 }

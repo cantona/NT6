@@ -8,10 +8,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Ãñ·¿");
+        set("short", "æ°‘æˆ¿");
         set("long", @LONG
-ÕâÊÇÒ»¸ö·Ç³£¼òÂªµÄ·¿×Ó£¬Ò»´²Ò»¼¸£¬´²ÉÏ¹ÒÁËÉ´ÕÊ£¬Ç½ÉÏ¹Ò×Å
-Ò»¸±ËÆÊÇÃû¼ÒµÄ»­(picture)£¬´ËÍâ±ðÎÞËûÎï¡£
+é€™æ˜¯ä¸€å€‹éžå¸¸ç°¡é™‹çš„æˆ¿å­ï¼Œä¸€åºŠä¸€å¹¾ï¼ŒåºŠä¸ŠæŽ›äº†ç´—å¸³ï¼Œç‰†ä¸ŠæŽ›è‘—
+ä¸€å‰¯ä¼¼æ˜¯åå®¶çš„ç•«(picture)ï¼Œæ­¤å¤–åˆ¥ç„¡ä»–ç‰©ã€‚
 LONG );
         set("exits", ([
                 "north" : "/d/city/ximen",
@@ -21,7 +21,7 @@ LONG );
                 __DIR__"npc/guisan" : 1,
         ]));
         set("item_desc", ([
-                "picture" : "ÏÂÓêÌìµÄÃû»­¡£\n",
+                "picture" : "ä¸‹é›¨å¤©çš„åç•«ã€‚\n",
         ]));
 
         set("no_clean_up", 0);
@@ -36,7 +36,7 @@ int valid_leave(object me, string dir)
 {
         if (dir == "enter") 
         {
-                say (me->name() + "×ß½ø°µ¶´¡£¹íÈýÓÖ°Ñ°µÃÅ¹ØÆðÀ´¡£\n");
+                say (me->name() + "èµ°é€²æš—æ´žã€‚é¬¼ä¸‰åˆæŠŠæš—é–€é—œèµ·ä¾†ã€‚\n");
                 set_temp("new_valid_dest", "/d/city/didao", me);
                 me->move("/d/city/didao");
                 delete("exits/enter");

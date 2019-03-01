@@ -15,15 +15,15 @@ void init()
 
 void create()
 {
-       set_name("Óã³¦½£", ({"yuchang jian","jian"}) );
+       set_name("é­šè…¸åŠ", ({"yuchang jian","jian"}) );
        set_weight(10000);
        
        if( clonep() )
                set_default_object(__FILE__);
        else{
-       set("unit", "±ú");
-       set("long", "Õâ¾ÍÊÇ´«ËµÖÐµÄÓã³¦½££¬Ã»Ïëµ½»áÔÚÕâÀï³öÏÖ£¡\n"
-                   "ÄãÈÌ²»×¡Ïë°ÑËü¼ñ(jian)ÆðÀ´£¡£¡£¡\n");
+       set("unit", "æŸ„");
+       set("long", "é€™å°±æ˜¯å‚³èªªä¸­çš„é­šè…¸åŠï¼Œæ²’æƒ³åˆ°æœƒåœ¨é€™è£¡å‡ºç¾ï¼\n"
+                   "ä½ å¿ä¸ä½æƒ³æŠŠå®ƒæ’¿(jian)èµ·ä¾†ï¼ï¼ï¼\n");
        set("value",1000000);
        set("material", "steel");
        set("no_get",1);
@@ -42,7 +42,7 @@ int do_jian(string arg)
                 
                 {
                 message_vision(
-HIR"$NÇáÇáµØ¼ñÆðÓã³¦½££¬Í»È»´Ó½£ºóÉä³öÒ»Ã¶¸ÖÕë£¬ÉîÉîµÄ´ÌÈë$NµÄÌåÄÚ¡£\n"NOR, this_player());
+HIR"$Nè¼•è¼•åœ°æ’¿èµ·é­šè…¸åŠï¼Œçªç„¶å¾žåŠå¾Œå°„å‡ºä¸€æžšé‹¼é‡ï¼Œæ·±æ·±çš„åˆºå…¥$Nçš„é«”å…§ã€‚\n"NOR, this_player());
                 me->unconcious();
          me->move("/d/tiezhang/shanlu-6");
                 return 1;

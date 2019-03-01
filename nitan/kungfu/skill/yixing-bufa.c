@@ -1,5 +1,5 @@
 // This program is a part of NITAN MudLIB
-// yixing-bufa.c ÒâÐÎ²½·¨
+// yixing-bufa.c æ„å½¢æ­¥æ³•
 
 #include <ansi.h>
 inherit SKILL;
@@ -7,14 +7,14 @@ string type() { return "martial"; }
 string martialtype() { return "dodge"; }
 
 string *dodge_msg = ({
-        BLU"$nÂþ²»¾­ÐÄµÄÏò×óÂõ³öÒ»²½£¬¸ÕºÃ±Ü¹ý$NµÄÁèÀ÷¹¥ÊÆ¡£\n"NOR,
-        MAG"¿ÉÊÇ$n²»½ô²»ÂýÍùÓÒ×ßÁËÒ»²½£¬¶ã¹ýÁË$NÕâÒ»ÕÐ¡£\n"NOR,
-        MAG"µ«ÊÇ$nÉíÐÎÆ®ºö£¬ÇáÇáÒ»×Ý£¬ÔçÒÑ±Ü¿ª¡£\n"NOR,
-        MAG"$nÉíËæÒâ×ª£¬Ù¿µØÍùÒ»ÅÔÅ²¿ªÁËÈý³ß£¬±Ü¹ýÁËÕâÒ»ÕÐ¡£\n"NOR,
-        BLU"¿ÉÊÇ$n²àÉíÒ»ÈÃ£¬$NÕâÒ»ÕÐÆËÁË¸ö¿Õ¡£\n"NOR,
-        BLU"È´¼û$n×ã²»µãµØ£¬ÍùÅÔ´Ü¿ªÊý³ß£¬¶ãÁË¿ªÈ¥¡£\n"NOR,
-        BLU"$nÉíÐÎÎ¢»Î£¬ÓÐ¾ªÎÞÏÕµØ±Ü¿ªÁË$NÕâÒ»ÕÐ¡£\n"NOR,
-        MAG"$n¿´ËÆÎÞÐÄµØÐÅÊÖÒ»·÷£¬¼çÍ·Î¢²à£¬¿°¿°±Ü¹ýÁË$NÕâÒ»ÕÐ¡£\n"NOR,
+        BLU"$næ¼«ä¸ç¶“å¿ƒçš„å‘å·¦é‚å‡ºä¸€æ­¥ï¼Œå‰›å¥½é¿éŽ$Nçš„å‡ŒåŽ²æ”»å‹¢ã€‚\n"NOR,
+        MAG"å¯æ˜¯$nä¸ç·Šä¸æ…¢å¾€å³èµ°äº†ä¸€æ­¥ï¼Œèº²éŽäº†$Né€™ä¸€æ‹›ã€‚\n"NOR,
+        MAG"ä½†æ˜¯$nèº«å½¢é£„å¿½ï¼Œè¼•è¼•ä¸€ç¸±ï¼Œæ—©å·²é¿é–‹ã€‚\n"NOR,
+        MAG"$nèº«éš¨æ„è½‰ï¼Œå€åœ°å¾€ä¸€æ—æŒªé–‹äº†ä¸‰å°ºï¼Œé¿éŽäº†é€™ä¸€æ‹›ã€‚\n"NOR,
+        BLU"å¯æ˜¯$nå´èº«ä¸€è®“ï¼Œ$Né€™ä¸€æ‹›æ’²äº†å€‹ç©ºã€‚\n"NOR,
+        BLU"å»è¦‹$nè¶³ä¸é»žåœ°ï¼Œå¾€æ—ç«„é–‹æ•¸å°ºï¼Œèº²äº†é–‹åŽ»ã€‚\n"NOR,
+        BLU"$nèº«å½¢å¾®æ™ƒï¼Œæœ‰é©šç„¡éšªåœ°é¿é–‹äº†$Né€™ä¸€æ‹›ã€‚\n"NOR,
+        MAG"$nçœ‹ä¼¼ç„¡å¿ƒåœ°ä¿¡æ‰‹ä¸€æ‹‚ï¼Œè‚©é ­å¾®å´ï¼Œå ªå ªé¿éŽäº†$Né€™ä¸€æ‹›ã€‚\n"NOR,
 });
 
 int valid_enable(string usage) { return usage == "dodge"; }
@@ -29,9 +29,9 @@ string query_dodge_msg(string limb)
 int practice_skill(object me)
 {
         if( query("qi", me)<50 )
-                return notify_fail("ÄãµÄÌåÁ¦Ì«µÍÁË¡£\n");
+                return notify_fail("ä½ çš„é«”åŠ›å¤ªä½Žäº†ã€‚\n");
         if( query("neili", me)<50 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»Á·ÒâÐÎ²½·¨¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ç·´æ„å½¢æ­¥æ³•ã€‚\n");
         me->receive_damage("qi", 40);
         addn("neili", -40, me);
         return 1;
@@ -49,13 +49,13 @@ int power_point(object me) { return 1.4; }
 
 int help(object me)
 {
-        write(HIC"\nÒâÐÎ²½·¨£º"NOR"\n");
+        write(HIC"\næ„å½¢æ­¥æ³•ï¼š"NOR"\n");
         write(@HELP
 
-    ÒâÐÎ²½·¨ÎªÉñÁúµº¶ÀÃÅÇá¹¦Éí·¨¡£
+    æ„å½¢æ­¥æ³•ç‚ºç¥žé¾å³¶ç¨é–€è¼•åŠŸèº«æ³•ã€‚
 
-        Ñ§Ï°ÒªÇó£º
-          ¶¾Áú´ó·¨10¼¶
+        å­¸ç¿’è¦æ±‚ï¼š
+          æ¯’é¾å¤§æ³•10ç´š
 HELP
         );
         return 1;

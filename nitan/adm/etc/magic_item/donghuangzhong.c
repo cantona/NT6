@@ -1,6 +1,6 @@
-// ÉÏ¹ÅÊ®´óÉñÆ÷Ö® ¶«»ÊÖÓ
+// ä¸Šå¤åå¤§ç¥å™¨ä¹‹ æ±çš‡é˜
 // Create by Rcwiz for Hero.cn 2003/09
-// ÔÚ /d/songshan/fengchangtai.c¿ÉÒÔ´ò¿ªÌì½çÖ®ÃÅ
+// åœ¨ /d/songshan/fengchangtai.cå¯ä»¥æ‰“é–‹å¤©ç•Œä¹‹é–€
 
 #include <ansi.h>
 
@@ -10,15 +10,15 @@ int is_magic_item() { return 1; }
 
 void create()
 {
-        set_name(HIC "¶«»ÊÖÓ" NOR, ({ "donghuang zhong", "donghuang", "zhong" }) );
+        set_name(HIC "æ±çš‡é˜" NOR, ({ "donghuang zhong", "donghuang", "zhong" }) );
         set_weight(200);
         if (clonep())
                 set_default_object(__FILE__);
         else
         {
-                set("unit", "¿Ú");
-                set("long", HIC "ÕâÊÇÒ»¿Ú¿´ËÆÆÕÍ¨µÄ¹ÅÖÓ£¬È´ÓĞÒ»ÖÖÁîÈËÉñÍùµÄÆøÆÇ¡£\n"                                
-                                "¿ÉÓÃÖ®À´´ò¿ª(qiao)Ìì½çÖ®ÃÅ£¬½øÈëÍ¨ÌìÃÅ¡£\n" NOR);
+                set("unit", "å£");
+                set("long", HIC "é€™æ˜¯ä¸€å£çœ‹ä¼¼æ™®é€šçš„å¤é˜ï¼Œå»æœ‰ä¸€ç¨®ä»¤äººç¥å¾€çš„æ°£é­„ã€‚\n"                                
+                                "å¯ç”¨ä¹‹ä¾†æ‰“é–‹(qiao)å¤©ç•Œä¹‹é–€ï¼Œé€²å…¥é€šå¤©é–€ã€‚\n" NOR);
 
         }
         setup();
@@ -38,15 +38,15 @@ int do_qiao(string arg)
         if(! objectp(present("donghuang zhong", me)))return 0;
         
         if (me->is_fighting() || me->is_busy())
-                 return notify_fail("ÄãÕıÃ¦ÄØ£¡\n");
+                 return notify_fail("ä½ æ­£å¿™å‘¢ï¼\n");
 
-        if (environment(me)->query("short") != "·âìøÌ¨")
-                 return notify_fail("ÄãµÃµ½·âìøÌ¨²ÅÄÜ´ò¿ªÌì½çÖ®ÃÅ¡£\n");
+        if (environment(me)->query("short") != "å°ç¦ªå°")
+                 return notify_fail("ä½ å¾—åˆ°å°ç¦ªå°æ‰èƒ½æ‰“é–‹å¤©ç•Œä¹‹é–€ã€‚\n");
 
-        message_sort(HIC "\n$N" HIC "½«¶«»ÊÖÓ·ÅÔÚµØÉÏ£¬È»ºóÓÃÁ¦Ò»ÇÃ£¬Ö»"
-                         "ÌıµÃÒ»Éù¾ŞÏì£¬É²ÄÇ¼ä£¬Ìì¼Ê³öÏÖÒ»µÀ²ÊÉ«Ö®ÃÅ£¬°é"
-                         "Ëæ×ÅÇ§ÍòµÀĞşÄ¿µÄ¹â»ª£¬¶«»ÊÖÓ½«$N" HIC "¾íÁË½ø"
-                         "È¥ ¡­¡­\n" NOR, me);
+        message_sort(HIC "\n$N" HIC "å°‡æ±çš‡é˜æ”¾åœ¨åœ°ä¸Šï¼Œç„¶å¾Œç”¨åŠ›ä¸€æ•²ï¼Œåª"
+                         "è½å¾—ä¸€è²å·¨éŸ¿ï¼Œå‰é‚£é–“ï¼Œå¤©éš›å‡ºç¾ä¸€é“å½©è‰²ä¹‹é–€ï¼Œä¼´"
+                         "éš¨è‘—åƒè¬é“ç„ç›®çš„å…‰è¯ï¼Œæ±çš‡é˜å°‡$N" HIC "å·äº†é€²"
+                         "å» â€¦â€¦\n" NOR, me);
 
         me->move("/kungfu/class/sky/tianmen0");
         destruct(this_object());

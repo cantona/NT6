@@ -10,15 +10,15 @@ inherit ITEM;
 void create()
 {
 //**    set_name("$name", ({ "$id", }));                        /* NAME_ENTRY */
-        set_name(YEL "ÔªËØ" NOR, ({ "element" }));              /* NAME_EXIT  */
+        set_name(YEL "å…ƒç´ " NOR, ({ "element" }));              /* NAME_EXIT  */
         set_weight(10);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
 //**            set("$dbase_key", "$dbase_value\n");            /* DBASE_ENTRY */
-                set("long", YEL "´ÓÌØÊâµÄË®¾§ÖĞ´âÈ¡³öÀ´µÄÔªËØ·ÛÄ©¡£\n" NOR); /* DBASE_EXIT  */
+                set("long", YEL "å¾ç‰¹æ®Šçš„æ°´æ™¶ä¸­ç²¹å–å‡ºä¾†çš„å…ƒç´ ç²‰æœ«ã€‚\n" NOR); /* DBASE_EXIT  */
                 set("value", 100);
-                set("unit", "¿Å");
+                set("unit", "é¡†");
         }
         setup();
 }

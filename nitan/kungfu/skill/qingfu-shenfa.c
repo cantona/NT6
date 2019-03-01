@@ -1,5 +1,5 @@
 // This program is a part of NT MudLIB
-// qingfu-shenfa.c ÇàòğÉí·¨
+// qingfu-shenfa.c é’è èº«æ³•
 
 #include <ansi.h>;
 inherit SKILL;
@@ -7,10 +7,10 @@ string type() { return "martial"; }
 string martialtype() { return "dodge"; }
 
 string *dodge_msg = ({
-        "Ö»¼û$nÒ»ÕĞ"HIC"¡¸¸£ÂúÇ¬À¤¡¹"NOR"£¬ÉíĞÎ¶¸È»×İÆğ£¬¶ã¹ıÁË$NÕâÒ»ÕĞ¡£\n",
-        "$nÒ»Ê½"HIC"¡¸ÎåòğÏ×ÊÙ¡¹"NOR"£¬ÉíĞÎ»Î¶¯£¬ÏòÒ»ÅÔÆ®³ö£¬±Ü¿ªÁË$NÕâÒ»ÕĞ¡£¡£\n",
-        "$nÊ¹³ö"HIC"¡¸¶´Ìì¸£µØ¡¹"NOR"£¬Ò»¸ö¿ÕĞÄ½î¶·Ïòºó·­³ö£¬±Ü¿ªÁË$NµÄÁèÀ÷¹¥ÊÆ¡£\n",
-        "$nÒ»ÕĞ"HIC"¡¸ÔÆÁú°Ùòğ¡¹"NOR"£¬ÉíËæÒâ×ª£¬$NÖ»¾õÑÛÇ°Ò»»¨£¬$nÒÑÈÆÖÁ$NµÄÉíºó¡£\n",
+        "åªè¦‹$nä¸€æ‹›"HIC"ã€Œç¦æ»¿ä¹¾å¤ã€"NOR"ï¼Œèº«å½¢é™¡ç„¶ç¸±èµ·ï¼Œèº²éäº†$Né€™ä¸€æ‹›ã€‚\n",
+        "$nä¸€å¼"HIC"ã€Œäº”è ç»å£½ã€"NOR"ï¼Œèº«å½¢æ™ƒå‹•ï¼Œå‘ä¸€æ—é£„å‡ºï¼Œé¿é–‹äº†$Né€™ä¸€æ‹›ã€‚ã€‚\n",
+        "$nä½¿å‡º"HIC"ã€Œæ´å¤©ç¦åœ°ã€"NOR"ï¼Œä¸€å€‹ç©ºå¿ƒç­‹é¬¥å‘å¾Œç¿»å‡ºï¼Œé¿é–‹äº†$Nçš„å‡Œå²æ”»å‹¢ã€‚\n",
+        "$nä¸€æ‹›"HIC"ã€Œé›²é¾ç™¾è ã€"NOR"ï¼Œèº«éš¨æ„è½‰ï¼Œ$Nåªè¦ºçœ¼å‰ä¸€èŠ±ï¼Œ$nå·²ç¹è‡³$Nçš„èº«å¾Œã€‚\n",
 });
 
 int valid_enable(string usage) { return usage == "dodge" || usage == "move"; }
@@ -18,21 +18,21 @@ int valid_learn(object me)
 {
         /*
         if( query("dex", me)<26 )
-                return notify_fail("ÄãÏÈÌìÉí·¨Ì«²î£¬ÎŞ·¨Ñ§Ï°ÇàòğÉí·¨¡£\n");
+                return notify_fail("ä½ å…ˆå¤©èº«æ³•å¤ªå·®ï¼Œç„¡æ³•å­¸ç¿’é’è èº«æ³•ã€‚\n");
         */
 
         if (me->query_skill("dodge", 1) < 100)
-                return notify_fail("ÄãÇá¹¦¸ù»ù²»×ã£¬ÎŞ·¨Ñ§Ï°ÇàòğÉí·¨¡£\n");
+                return notify_fail("ä½ è¼•åŠŸæ ¹åŸºä¸è¶³ï¼Œç„¡æ³•å­¸ç¿’é’è èº«æ³•ã€‚\n");
         return 1;
 }
 
 int practice_skill(object me)
 {
         if( (int)query("qi", me) < 60 )
-                return notify_fail("ÄãµÄÌåÁ¦Ì«µÍÁË£¬²»ÄÜÁ·ÇàòğÉí·¨¡£\n");
+                return notify_fail("ä½ çš„é«”åŠ›å¤ªä½äº†ï¼Œä¸èƒ½ç·´é’è èº«æ³•ã€‚\n");
 
         if( (int)query("neili", me) < 60 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»Á·ÇàòğÉí·¨¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ç·´é’è èº«æ³•ã€‚\n");
 
         me->receive_damage("qi", 50);
         addn("neili", -55, me);
@@ -80,14 +80,14 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
                 switch (random(2))
                 {
                 case 0:
-                        result += (["msg" : HIG "Ö»¼û$n" HIG "³¤Ğ¥Ò»ÉùÓÌÈçÒ»Ö»òù"
-                                            "òğÒ»Ñù×İÉí¶øÆğ£¬ÓÚ°ë¿Õµ¹Á¢£¬$N" HIG
-                                            "ÕâÕĞÈ´ÆËÁË¸ö¿Õ¡£\n" NOR]);
+                        result += (["msg" : HIG "åªè¦‹$n" HIG "é•·å˜¯ä¸€è²çŒ¶å¦‚ä¸€åªè™"
+                                            "è ä¸€æ¨£ç¸±èº«è€Œèµ·ï¼ŒäºåŠç©ºå€’ç«‹ï¼Œ$N" HIG
+                                            "é€™æ‹›å»æ’²äº†å€‹ç©ºã€‚\n" NOR]);
                         break;
 
                 default:
-                        result += (["msg" : HIG "µ«¼û$n" HIG "Éí·¨ÇáÓ¯ÎŞ±È£¬ºöÈ»Ô¾"
-                                    "¸ßºö¶øÂäÏÂ£¬Áî$N" HIG "ÍêÈ«ÎŞ´Ó¹¥»÷¡£\n" NOR]);
+                        result += (["msg" : HIG "ä½†è¦‹$n" HIG "èº«æ³•è¼•ç›ˆç„¡æ¯”ï¼Œå¿½ç„¶èº"
+                                    "é«˜å¿½è€Œè½ä¸‹ï¼Œä»¤$N" HIG "å®Œå…¨ç„¡å¾æ”»æ“Šã€‚\n" NOR]);
                         break;
                 }
                 return result;
@@ -97,14 +97,14 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
                 switch (random(2))
                 {
                 case 0:
-                        result = HIY "Ö»¼û$n" HIY "³¤Ğ¥Ò»ÉùÓÌÈçÒ»Ö»òù"
-                                 "òğÒ»Ñù×İÉí¶øÆğ£¬ÓÚ°ë¿Õµ¹Á¢£¬¿ÉÊÇ$N"
-                                 HIY "¾«Í¨Ò×Àí£¬½«ÆäÖĞĞéÊµ±æµÃÇåÇå³ş³ş¡£\n" NOR;
+                        result = HIY "åªè¦‹$n" HIY "é•·å˜¯ä¸€è²çŒ¶å¦‚ä¸€åªè™"
+                                 "è ä¸€æ¨£ç¸±èº«è€Œèµ·ï¼ŒäºåŠç©ºå€’ç«‹ï¼Œå¯æ˜¯$N"
+                                 HIY "ç²¾é€šæ˜“ç†ï¼Œå°‡å…¶ä¸­è™›å¯¦è¾¨å¾—æ¸…æ¸…æ¥šæ¥šã€‚\n" NOR;
 
                 default:
-                        result = HIY "µ«¼û$n" HIY "Éí·¨ÇáÓ¯ÎŞ±È£¬ºöÈ»Ô¾"
-                                     "¸ßºö¶øÂäÏÂ£¬$N" HIY "²»¼ÙË¼Ë÷£¬·É"
-                                     "Éí³öÕĞ£¬¸üÊÇÇÉÃîÎŞ·½¡£\n" NOR;
+                        result = HIY "ä½†è¦‹$n" HIY "èº«æ³•è¼•ç›ˆç„¡æ¯”ï¼Œå¿½ç„¶èº"
+                                     "é«˜å¿½è€Œè½ä¸‹ï¼Œ$N" HIY "ä¸å‡æ€ç´¢ï¼Œé£›"
+                                     "èº«å‡ºæ‹›ï¼Œæ›´æ˜¯å·§å¦™ç„¡æ–¹ã€‚\n" NOR;
                         break;
                 }
                 COMBAT_D->set_bhinfo(result);
@@ -118,13 +118,13 @@ int power_point(object me) { return 1.4; }
 
 int help(object me)
 {
-        write(HIC"\nÇàòğÉí·¨£º"NOR"\n");
+        write(HIC"\né’è èº«æ³•ï¼š"NOR"\n");
         write(@HELP
 
-    Ã÷½ÌµÄ±¾ÃÅÇá¹¦Éí·¨¡£Ö÷ÒªÊÇ´ÓÎ¤Ò»Ğ¦µÄÇá¹¦Éí·¨¶øÀ´¡£
+    æ˜æ•™çš„æœ¬é–€è¼•åŠŸèº«æ³•ã€‚ä¸»è¦æ˜¯å¾éŸ‹ä¸€ç¬‘çš„è¼•åŠŸèº«æ³•è€Œä¾†ã€‚
 
-        Ñ§Ï°ÒªÇó£º
-                ÎŞ
+        å­¸ç¿’è¦æ±‚ï¼š
+                ç„¡
 HELP
         );
         return 1;

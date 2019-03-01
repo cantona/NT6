@@ -6,7 +6,7 @@ void create()
 	int i;
         object a;
 
-        set_name("Ò©ºĞ", ({ "yao he" }) );
+        set_name("è—¥ç›’", ({ "yao he" }) );
         set_weight(500);
         set_max_encumbrance(8000);
      set("value", 200000);
@@ -22,8 +22,8 @@ void create()
           }
         else 
           {
-          set("unit", "¸ö");
-          set("long", "Ò»¸ö×°Ò©µÄºĞ×Ó¡£\n");
+          set("unit", "å€‹");
+          set("long", "ä¸€å€‹è£è—¥çš„ç›’å­ã€‚\n");
           set("no_give", 1);
   set("no_sell",1);         }
 }

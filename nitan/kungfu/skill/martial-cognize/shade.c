@@ -17,38 +17,38 @@ int perform(object me, object target)
           !sizeof(can_perform) || 
           member_array("shade",can_perform) == -1
          )
-                return notify_fail("Äã»¹Ã»ÓĞÑ§»áÊ¹ÓÃ£ÛÌìÁúÖ®Îí£İ£¡\n");
+                return notify_fail("ä½ é‚„æ²’æœ‰å­¸æœƒä½¿ç”¨ï¹å¤©é¾ä¹‹éœ§ï¹ï¼\n");
 
         if (me->is_busy())
-                return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É£¬ÎŞ·¨Ê¹ÓÃÌìÁúÖ®Îí¡£\n");
+                return notify_fail("ä½ ä¸Šä¸€å€‹å‹•ä½œé‚„æ²’æœ‰å®Œæˆï¼Œç„¡æ³•ä½¿ç”¨å¤©é¾ä¹‹éœ§ã€‚\n");
 
         lvl = (int)me->query_skill("martial-cognize",1);
 
        if(lvl < 250)
-                return notify_fail("ÄãµÄÎäÑ§ĞŞÑø²»¹»¸ßÉî£¡\n");
+                return notify_fail("ä½ çš„æ­¦å­¸ä¿®é¤Šä¸å¤ é«˜æ·±ï¼\n");
 
         if( query("jingli", me)<500 )
-                return notify_fail("ÄãµÄ¾«Á¦²»¹»£¡\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤ ï¼\n");
 
         if( query("max_jingli", me)<1000 )
-                return notify_fail("ÄãµÄ¾«Á¦»¹Ã»ÓĞ´ïµ½×ã¹»µÄ²ã´Î£¡\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›é‚„æ²’æœ‰é”åˆ°è¶³å¤ çš„å±¤æ¬¡ï¼\n");
 
        if( query("jing", me) <= 300 )
-                return notify_fail("ÄãµÄ¾«Éñ×´Ì¬²»ºÃ£¡\n");
+                return notify_fail("ä½ çš„ç²¾ç¥ç‹€æ…‹ä¸å¥½ï¼\n");
 
        if( query("env/invisibility", me) )
-                return notify_fail("ÄãÕıÔÚÊ©Õ¹£ÛÌìÁúÖ®Îí£İ\n");
+                return notify_fail("ä½ æ­£åœ¨æ–½å±•ï¹å¤©é¾ä¹‹éœ§ï¹\n");
 
        if( time()-query("last_shade_time", me)<600 )
-                return notify_fail("Äã¸ÕÊ¹ÓÃ¹ı£ÛÌìÁúÖ®Îí£İ²»¾Ã£¬»¹Ã»ÓĞÍêÈ«»Ö¸´¹ıÀ´£¬ÏÈĞİÏ¢Ò»»á°É¡£\n");
+                return notify_fail("ä½ å‰›ä½¿ç”¨éï¹å¤©é¾ä¹‹éœ§ï¹ä¸ä¹…ï¼Œé‚„æ²’æœ‰å®Œå…¨æ¢å¾©éä¾†ï¼Œå…ˆä¼‘æ¯ä¸€æœƒå§ã€‚\n");
 
        if( environment(me) && query("no_fight", environment(me)) )
-                return notify_fail("ÕâÀï²»ÄÜÊ¹ÓÃ£ÛÌìÁúÖ®Îí£İ!\n");
+                return notify_fail("é€™è£¡ä¸èƒ½ä½¿ç”¨ï¹å¤©é¾ä¹‹éœ§ï¹!\n");
 
         addn("jingli", -300, me);
         me->receive_damage("jing", 200);
 
-        message_vision(HIW "$NÃæÉ«ÄıÖØ£¬Á½µÀ¾«¹â´ÓË«Ä¿±¬Éä¶ø³ö£¬Ò»Õó°×É«ÎíÆøÑ¸ËÙÓ¿³ö±Ç¿×£¬°Ñ×Ô¼º»ëÉíÉÏÏÂ¶¼°üÎ§×Å£¬Õû¸öÈË½¥½¥Ğé»¯£®£®£®\n" NOR, me);
+        message_vision(HIW "$Né¢è‰²å‡é‡ï¼Œå…©é“ç²¾å…‰å¾é›™ç›®çˆ†å°„è€Œå‡ºï¼Œä¸€é™£ç™½è‰²éœ§æ°£è¿…é€Ÿæ¹§å‡ºé¼»å­”ï¼ŒæŠŠè‡ªå·±æ¸¾èº«ä¸Šä¸‹éƒ½åŒ…åœè‘—ï¼Œæ•´å€‹äººæ¼¸æ¼¸è™›åŒ–ï¼ï¼ï¼\n" NOR, me);
                 set("env/invisible", 1, me);
 
        set("last_shade_time", time(), me);
@@ -60,6 +60,6 @@ int perform(object me, object target)
 void remove_effect(object me)
 {
         delete("env/invisible", me);
-        tell_object(me,"ÄãµÄÌìÁúÖ®ÎíÊ§Ğ§ÁË£¡\n");
-        message_vision(HIW "Ò»ÕóÎíÆøÍ»È»³öÏÖ£¬²¢ÇÒÔ½À´Ô½Å¨£¬Ğı¼´ÓÖËÄÉ¢¶øÈ´£¬$NÏÔÉíÁË¡£\n" NOR,me);
+        tell_object(me,"ä½ çš„å¤©é¾ä¹‹éœ§å¤±æ•ˆäº†ï¼\n");
+        message_vision(HIW "ä¸€é™£éœ§æ°£çªç„¶å‡ºç¾ï¼Œä¸¦ä¸”è¶Šä¾†è¶Šæ¿ƒï¼Œæ—‹å³åˆå››æ•£è€Œå»ï¼Œ$Né¡¯èº«äº†ã€‚\n" NOR,me);
 }

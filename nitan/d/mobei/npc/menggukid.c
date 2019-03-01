@@ -4,7 +4,7 @@
 inherit NPC;
 void create()
 {
-        set_name("ÃÉ¹ÅĞ¡º¢",({"kid"}));
+        set_name("è’™å¤å°å­©",({"kid"}));
         set("age",9);
         set("combat_exp",200);
         set_skill("dodge",10);

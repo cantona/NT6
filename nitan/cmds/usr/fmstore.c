@@ -14,7 +14,7 @@ int main(object me, string arg)
 
         if( !arg || arg == "") return help(me);
         if( time()-query_temp("last_member", me)<3 )
-                return notify_fail("ÏµÍ³Ã¦£¬ÇëÉÔºóÔÙÊÔ£¡\n");
+                return notify_fail("ç³»çµ±å¿™ï¼Œè«‹ç¨å¾Œå†è©¦ï¼\n");
 
         if( !wizardp(me) )
                 set_temp("last_member", time(), me);
@@ -28,9 +28,9 @@ int main(object me, string arg)
                 return GOODS_D->show_goods(me, str2);
 
         case "exchange":
-                // ·ÀÖ¹×¢²áidË¢ÎïÆ·
+                // é˜²æ­¢æ³¨å†Šidåˆ·ç‰©å“
                 if( query("combat_exp", me) < 3000000 && !MEMBER_D->is_valid_member(me) )
-                        return notify_fail("ÄãÔİÊ±»¹Ã»ÓĞ×Ê¸ñ½«¹±Ï×µã¶Ò»»ÎªÎïÆ·£¡\n");
+                        return notify_fail("ä½ æš«æ™‚é‚„æ²’æœ‰è³‡æ ¼å°‡è²¢ç»é»å…Œæ›ç‚ºç‰©å“ï¼\n");
                 
                 if( sscanf(str2, "%s %d", str2, amount) != 2 )
                         amount = 1;
@@ -39,7 +39,7 @@ int main(object me, string arg)
                 if( amount < 1 ) amount = 1;        
                 if( !GOODS_D->exchange_goods(me, str2, amount))
                 {
-                        write("¶Ò»»Ê§°Ü£¡\n");
+                        write("å…Œæ›å¤±æ•—ï¼\n");
                         return 1;
                 }
                 write("Successful!\n");
@@ -58,14 +58,14 @@ int help (object me)
 
         money = query("family/gongji", me);
 
-        write(HIY "¡õ ÄúÄ¿Ç°µÄÃÅÅÉ¹±Ï×Îª " + money + " (NT)
-" WHT "¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
+        write(HIY "â–¡ æ‚¨ç›®å‰çš„é–€æ´¾è²¢ç»ç‚º " + money + " (NT)
+" WHT "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
-" HIM "ÊäÈëÖ¸Áî£º    fmstore show all                  ²é¿´ËùÓĞÉÌ³ÇµÄ»õÎï
-ÊäÈëÖ¸Áî£º    fmstore exchange <´úºÅ> <ÊıÁ¿>    ¶Ò»»Ö¸¶¨´úºÅµÄÉÌÆ·
+" HIM "è¼¸å…¥æŒ‡ä»¤ï¼š    fmstore show all                  æŸ¥çœ‹æ‰€æœ‰å•†åŸçš„è²¨ç‰©
+è¼¸å…¥æŒ‡ä»¤ï¼š    fmstore exchange <ä»£è™Ÿ> <æ•¸é‡>    å…Œæ›æŒ‡å®šä»£è™Ÿçš„å•†å“
 
-" WHT "<´úºÅ>  £º    ¿ÉÓÃÎïÆ·µÄ name »ò ±àºÅ
-" WHT "¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª\n" NOR);
+" WHT "<ä»£è™Ÿ>  ï¼š    å¯ç”¨ç‰©å“çš„ name æˆ– ç·¨è™Ÿ
+" WHT "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n" NOR);
 
         return 1;
 }

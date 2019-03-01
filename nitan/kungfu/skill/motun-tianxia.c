@@ -1,21 +1,21 @@
 #include <ansi.h>
-// Ä§½Ì motun-tianxia
+// é­”æ•™ motun-tianxia
 inherit SKILL; 
 string type() { return "knowledge"; } 
 
 int is_fmsk() { return 1; }
-string family_name() { return "Ä§½Ì"; }
+string family_name() { return "é­”æ•™"; }
 
 int valid_learn(object me)
 {        
         if (me->query_skill("chiyou-kuangzhanjue", 1) < 120)
-                return notify_fail("Äãò¿ÓÈ¿ñÕ½¾ö»ðºò²»×ã£¬ÎÞ·¨ÑÐÏ°Ä§ÍÌÌìÏÂ¡£\n");
+                return notify_fail("ä½ èš©å°¤ç‹‚æˆ°æ±ºç«å€™ä¸è¶³ï¼Œç„¡æ³•ç ”ç¿’é­”åžå¤©ä¸‹ã€‚\n");
         
         if( query("family/family_name", me) != family_name() )
-                return notify_fail("Ä§ÍÌÌìÏÂÖ»ÄÜÄ§½ÌµÜ×Ó·½¿ÉÑÐÏ°¡£\n");
+                return notify_fail("é­”åžå¤©ä¸‹åªèƒ½é­”æ•™å¼Ÿå­æ–¹å¯ç ”ç¿’ã€‚\n");
 
         if (me->query_skill("moon-blade", 1) < 150)
-                return notify_fail("ÄãÔ²ÔÂÍäµ¶ÐÞÎª²»×ã£¬ÎÞ·¨¼ÌÐøÑÐÏ°Ä§ÍÌÌìÏÂ¡£\n");
+                return notify_fail("ä½ åœ“æœˆå½Žåˆ€ä¿®ç‚ºä¸è¶³ï¼Œç„¡æ³•ç¹¼çºŒç ”ç¿’é­”åžå¤©ä¸‹ã€‚\n");
 
         return 1;
 }

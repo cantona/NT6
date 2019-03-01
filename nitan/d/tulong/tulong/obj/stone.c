@@ -5,13 +5,13 @@ inherit HAMMER;
 
 void create()
 {
-        set_name(WHT "´óÊ¯Í·" NOR, ({ "stone" }) );
+        set_name(WHT "å¤§çŸ³é ­" NOR, ({ "stone" }) );
         set_weight(16000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿é");
-                set("long", "Ò»¿é´ó´óµÄÔ²¹ö¹öµÄÊ¯Í·¡£\n");
+                set("unit", "å¡Š");
+                set("long", "ä¸€å¡Šå¤§å¤§çš„åœ“æ»¾æ»¾çš„çŸ³é ­ã€‚\n");
                 set("value", 0);
                 set("material", "iron");
         }

@@ -6,17 +6,17 @@ inherit SPEAR;
 
 void create()
 {
-        set_name("Ä¾Ç¹", ({"mu qiang", "qiang", "spear"}));
+        set_name("æœ¨æ§", ({"mu qiang", "qiang", "spear"}));
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
+                set("unit", "æŠŠ");
                 set("value", 100);
                 set("material", "wood");
-                set("long", "ÕâÊÇÒ»Ä¾ÖÆµÄÄ¾Ç¹£¬ÊÇÁ·ÎäÊ±ÓÃµÄ£®\n");
-                set("wield_msg", "$N³é³öÒ»°Ñ$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unequip_msg", "$N½«ÊÖÖĞµÄ$n²åÈëÑüºó£®\n");
+                set("long", "é€™æ˜¯ä¸€æœ¨åˆ¶çš„æœ¨æ§ï¼Œæ˜¯ç·´æ­¦æ™‚ç”¨çš„ï¼\n");
+                set("wield_msg", "$NæŠ½å‡ºä¸€æŠŠ$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unequip_msg", "$Nå°‡æ‰‹ä¸­çš„$næ’å…¥è…°å¾Œï¼\n");
         }
         init_spear(15);
         setup();

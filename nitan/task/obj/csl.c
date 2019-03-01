@@ -2,15 +2,15 @@
 inherit TASK;
 void create()
 {
-    set_name(HIR"´ÌÉ±Áî" NOR, ({ "csl" }) );
+    set_name(HIR"åˆºæ®ºä»¤" NOR, ({ "csl" }) );
     set_weight(1);
     if( clonep() )
             destruct(this_object());
     else {
-            set("unit", "¿é");
+            set("unit", "å¡Š");
             set("material", "stone");
-            set("long", "Ò»¿éÑª¼£°ß°ßµÄÁîÅÆ¡£\n");
+            set("long", "ä¸€å¡Šè¡€è·¡æ–‘æ–‘çš„ä»¤ç‰Œã€‚\n");
     }
-    set("owner", "È«¹ÚÇå");
+    set("owner", "å…¨å† æ¸…");
     setup();
 }

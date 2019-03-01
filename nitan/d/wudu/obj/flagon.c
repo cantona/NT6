@@ -1,24 +1,24 @@
-// flagon.c  ¾Æºø
+// flagon.c  é…’å£º
 
 inherit ITEM;
 inherit F_LIQUID;
 
 void create()
 {
-        set_name("¾Æºø", ({"jiu hu", "hu", "flagon"}));
+        set_name("é…’å£º", ({"jiu hu", "hu", "flagon"}));
         set_weight(700);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¸öÓÃÀ´×°ÉÕ¾ÆµÄ´ó¾Æºø¡£\n");
-                set("unit", "¸ö");
+                set("long", "ä¸€å€‹ç”¨ä¾†è£ç‡’é…’çš„å¤§é…’å£ºã€‚\n");
+                set("unit", "å€‹");
                 set("value", 100);
                 set("max_liquid", 15);
         }
 
         set("liquid", ([
                 "type": "alcohol",
-                "name": "ÉÕ¾Æ",
+                "name": "ç‡’é…’",
                 "remaining": 15,
                 "drunk_apply": 3,
                 "slumber_effect": 100,

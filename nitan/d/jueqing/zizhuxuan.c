@@ -6,10 +6,10 @@ string look_ge();
 
 void create()
 {
-        set("short", "×ÏÖñÐù");
+        set("short", "ç´«ç«¹è»’");
         set("long", @LONG
-µ½µÃ´Ë´¦£¬ÕóÕóÄàÍÁµÄÇåÏãÆËÃæ¶øÀ´£¬·ÅÑÛËÄÖÜÖ»¼û²»Ô¶
-´¦ÓÐÒ»Â¶ÌìÍ¤¸ó(ting ge)ÑÚÓ³ÓÚ´äÖñÖ®ÏÂ¡£
+åˆ°å¾—æ­¤è™•ï¼Œé™£é™£æ³¥åœŸçš„æ¸…é¦™æ’²é¢è€Œä¾†ï¼Œæ”¾çœ¼å››å‘¨åªè¦‹ä¸é 
+è™•æœ‰ä¸€éœ²å¤©äº­é–£(ting ge)æŽ©æ˜ äºŽç¿ ç«¹ä¹‹ä¸‹ã€‚
 LONG);
 
         set("item_desc",([
@@ -35,18 +35,18 @@ LONG);
 
 string look_ge()
 {
-        return HIC "\nµ«¼ûÍ¤¸óÑÚÓ³ÓÚ´äÖñÖ®ÏÂ£¬Ö®ÉÏÁ¢ÓÐÒ»ºáØÒ£¬ÉÏÊé£º"
+        return HIC "\nä½†è¦‹äº­é–£æŽ©æ˜ äºŽç¿ ç«¹ä¹‹ä¸‹ï¼Œä¹‹ä¸Šç«‹æœ‰ä¸€æ©«åŒ¾ï¼Œä¸Šæ›¸ï¼š"
                HIG "\n\n"
-        "\t\t¡ù¡ù¡ù¡ù¡ù¡ù¡ù        \n"
-        "\t\t¡ù¡ù¡ù¡ù¡ù¡ù¡ù        \n"
-        "\t\t¡ù¡ù      ¡ù¡ù        \n"
-        "\t\t¡ù¡ù" NOR + MAG "¡¡×Ï " HIG " ¡ù¡ù\n" HIG    
-        "\t\t¡ù¡ù¡¡ ¡¡ ¡ù¡ù        \n" HIG 
-        "\t\t¡ù¡ù" NOR + MAG "¡¡Öñ " HIG " ¡ù¡ù\n" HIG    
-        "\t\t¡ù¡ù¡¡ ¡¡ ¡ù¡ù        \n" HIG
-        "\t\t¡ù¡ù" NOR + MAG "¡¡Ðù " HIG " ¡ù¡ù\n" HIG
-        "\t\t¡ù¡ù      ¡ù¡ù\n"     
-        "\t\t¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n" HIG
-        "\t\t¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n\n" NOR;
+        "\t\tâ€»â€»â€»â€»â€»â€»â€»        \n"
+        "\t\tâ€»â€»â€»â€»â€»â€»â€»        \n"
+        "\t\tâ€»â€»      â€»â€»        \n"
+        "\t\tâ€»â€»" NOR + MAG "ã€€ç´« " HIG " â€»â€»\n" HIG    
+        "\t\tâ€»â€»ã€€ ã€€ â€»â€»        \n" HIG 
+        "\t\tâ€»â€»" NOR + MAG "ã€€ç«¹ " HIG " â€»â€»\n" HIG    
+        "\t\tâ€»â€»ã€€ ã€€ â€»â€»        \n" HIG
+        "\t\tâ€»â€»" NOR + MAG "ã€€è»’ " HIG " â€»â€»\n" HIG
+        "\t\tâ€»â€»      â€»â€»\n"     
+        "\t\tâ€»â€»â€»â€»â€»â€»â€»\n" HIG
+        "\t\tâ€»â€»â€»â€»â€»â€»â€»\n\n" NOR;
 
 }

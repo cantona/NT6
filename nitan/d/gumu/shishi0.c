@@ -6,14 +6,14 @@ inherit ROOM;
 
 void create()
 { 
-        set("short",HIB"Ê¯ÊÒ"NOR);
+        set("short",HIB"çŸ³å®¤"NOR);
         set("long", @LONG
-Í·¶¥µÄÊ¯±Ú (shibi)ÓÖ»Ö¸´ÁËÔ­×´£¬Äã·¢ÏÖ×Ô¼ºÖÃÉíÓÚÒ»¼äÒõ³ÁµÄ
-Ê¯ÊÒÖĞ£¬¿Õµ´µ´µÄ¸Ğ¾õÊ¹ÄãĞÄÖĞÖ»ÓĞ¿Ö¾å£¬ÉõÖÁÍü¼Ç¹Â¶À¡£Äã²»ÖªÉí´¦
-ºÎµØ£¬ËÄÖÜÈç´ËÆáºÚÒ»Æ¬£¬Ö»ÄÜ¿¿ÃşË÷Ç°ĞĞ¡£
+é ­é ‚çš„çŸ³å£ (shibi)åˆæ¢å¾©äº†åŸç‹€ï¼Œä½ ç™¼ç¾è‡ªå·±ç½®èº«äºä¸€é–“é™°æ²‰çš„
+çŸ³å®¤ä¸­ï¼Œç©ºç›ªç›ªçš„æ„Ÿè¦ºä½¿ä½ å¿ƒä¸­åªæœ‰ææ‡¼ï¼Œç”šè‡³å¿˜è¨˜å­¤ç¨ã€‚ä½ ä¸çŸ¥èº«è™•
+ä½•åœ°ï¼Œå››å‘¨å¦‚æ­¤æ¼†é»‘ä¸€ç‰‡ï¼Œåªèƒ½é æ‘¸ç´¢å‰è¡Œã€‚
 LONG        );
         set("item_desc", ([
-                "shibi": "Ê¯±Ú»Ö¸´ÁËÔ­×´£¬ÓëÖÜÎ§ÎÇºÏµØÌìÒÂÎŞ·ì£¬Äã²»ÓÉ¸ĞÌ¾Æä¸ß³¬ÔìÒè¡£\n"NOR,
+                "shibi": "çŸ³å£æ¢å¾©äº†åŸç‹€ï¼Œèˆ‡å‘¨åœå»åˆåœ°å¤©è¡£ç„¡ç¸«ï¼Œä½ ä¸ç”±æ„Ÿå˜†å…¶é«˜è¶…é€ è©£ã€‚\n"NOR,
         ]));
         set("exits", ([
                 "out" : __DIR__"shishi1",
@@ -35,20 +35,20 @@ int do_tui(string arg)
         object me = this_player();
 
         if (me->is_busy() || me->is_fighting())
-                return notify_fail("ÄãÕıÃ¦×ÅÄÄ£¡\n");
+                return notify_fail("ä½ æ­£å¿™è‘—å“ªï¼\n");
         if (arg =="shibi")
         {
-                message_vision(YEL "$NË«ÊÖ°ÑÊ¯±ÚÓÃÁ¦ÏòÉÏÍÆÈ¥£¬¿©Ö¨Ö¨Ò»Éù£¬Ê¯±Ú»º»ºÒÆ¿ª¡£\n"NOR,me);
+                message_vision(YEL "$Né›™æ‰‹æŠŠçŸ³å£ç”¨åŠ›å‘ä¸Šæ¨å»ï¼Œå’¯å±å±ä¸€è²ï¼ŒçŸ³å£ç·©ç·©ç§»é–‹ã€‚\n"NOR,me);
                 set("exits/up", __DIR__"woshi");
                 remove_call_out("close");
                 call_out("close", 5, this_object());
                 return 1;
         }
-        return notify_fail("ÄãÒªÍÆÊ²Ã´£¿\n");
+        return notify_fail("ä½ è¦æ¨ä»€éº¼ï¼Ÿ\n");
 }
 
 void close(object room)
 {
-        message("vision",HIY"Ê¯±ÚÂıÂıÒÆÁË»ØÀ´£¬»Ö¸´ÁËÔ­×´¡£\n"NOR, room);
+        message("vision",HIY"çŸ³å£æ…¢æ…¢ç§»äº†å›ä¾†ï¼Œæ¢å¾©äº†åŸç‹€ã€‚\n"NOR, room);
         delete("exits/up", room);
 }

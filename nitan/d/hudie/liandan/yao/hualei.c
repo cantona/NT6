@@ -1,5 +1,5 @@
 #include <ansi.h>
-//»¨ÀàÒ©²Ä
+//èŠ±é¡è—¥æ
 
 inherit ITEM; 
 mapping *ansi= ({
@@ -16,39 +16,39 @@ mapping *ansi= ({
 
 });
 mapping *yao= ({
-([     "name":     "ºì»¨",
+([     "name":     "ç´…èŠ±",
        "id":       "hong hua",
        "yaoxing":  100,
 ]),
-([     "name":     "¶¡Ïã",
+([     "name":     "ä¸é¦™",
        "id":       "ding xiang",
        "yaoxing":  200,
 ]),
-([     "name":     "Ä¾éÈ",
+([     "name":     "æœ¨æ§¿",
        "id":       "mu jin",
        "yaoxing":  300,
 ]),
-([     "name":     "Á«»¨",
+([     "name":     "è“®èŠ±",
        "id":       "lian hua",
        "yaoxing":  400,
 ]),
-([     "name":     "½ğÒø»¨",
+([     "name":     "é‡‘éŠ€èŠ±",
        "id":       "jinyin hua",
        "yaoxing":  500,
 ]),
-([     "name":     "¾Õ»¨",
+([     "name":     "èŠèŠ±",
        "id":       "ju hua",
        "yaoxing":  600,
 ]),
-([     "name":     "ÔÂ¼¾",
+([     "name":     "æœˆå­£",
        "id":       "yue ji",
        "yaoxing":  700,
 ]),
-([     "name":     "À°Ã·",
+([     "name":     "è‡˜æ¢…",
        "id":       "la mei",
        "yaoxing":  800,
 ]),
-([     "name":     "ĞÁÒÄ",
+([     "name":     "è¾›å¤·",
        "id":       "xin yi",
        "yaoxing":  900,
 ]),
@@ -75,7 +75,7 @@ void create()
     if( clonep() )
     set_default_object(__FILE__);
     else {
-         set("unit", "¶ä");                        
+         set("unit", "æœµ");                        
         }
 
    set("yaoxing",yaoxing);

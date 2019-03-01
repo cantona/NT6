@@ -5,11 +5,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÌÆÎÅ", ({ "tang wen", "tang", "wen"}));
-        set("nickname", HIR "µÕÏµËÀÊ¿" NOR); 
+        set_name("å”è", ({ "tang wen", "tang", "wen"}));
+        set("nickname", HIR "å«¡ç³»æ­»å£«" NOR); 
         set("long",
-"ÌÆÃÅ¶ş´úµÜ×Ó£¬ÔÚÌÆÃÅµØÎ»ÆÄ¸ß¡£\n");
-        set("gender", "ÄĞĞÔ");
+"å”é–€äºŒä»£å¼Ÿå­ï¼Œåœ¨å”é–€åœ°ä½é —é«˜ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 55);
         set("class", "tangmen");
         set("attitude", "peaceful");
@@ -55,7 +55,7 @@ void create()
         
         prepare_skill("hand", "boyun-suowu");
         
-        create_family("ÌÆÃÅÊÀ¼Ò", 2, "µÜ×Ó");
+        create_family("å”é–€ä¸–å®¶", 2, "å¼Ÿå­");
 
         set_temp("apply/damage", 100);  
         set_temp("apply/unarmed_damage", 100);  

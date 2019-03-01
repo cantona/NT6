@@ -6,13 +6,13 @@ inherit SWORD;
 
 void create()
 {
-        set_name("ÌÒÄ¾½£", ({"taomu jian", "sword", "jian"}));
+        set_name("æ¡ƒæœ¨åŠ", ({"taomu jian", "sword", "jian"}));
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long","Ò»°ÑÌÒÄ¾ÖÆ³ÉµÄ³¤½££¬Ò»°ãÊÇÓÃÀ´Ğ´Öä»­·ûµÄ£®\n");
-                set("unit", "°Ñ");
+                set("long","ä¸€æŠŠæ¡ƒæœ¨åˆ¶æˆçš„é•·åŠï¼Œä¸€èˆ¬æ˜¯ç”¨ä¾†å¯«å’’ç•«ç¬¦çš„ï¼\n");
+                set("unit", "æŠŠ");
                 set("value", 200);
 
         }

@@ -2,9 +2,9 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�ձ���");
+        set("short", "日本島");
         set("long",@LONG
-���а�����9��18�±�����������ʿ��Ϊ���ǵ�Ӣ�۱���ɣ�ɱ���ձ������尡~~
+深切哀悼在9﹒18事變中犧牲的烈士，為我們的英雄報仇吧，殺入日本島，沖啊~~
 LONG);
 
 	set("exits", ([

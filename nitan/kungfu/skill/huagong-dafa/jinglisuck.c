@@ -13,41 +13,41 @@ int exert(object me, object target)
         if( !target ) target = offensive_target(me);
 
         if( !objectp(target) || target == me)
-                return notify_fail("ÄãÒªÎüÈ¡Ë­µÄ¾«Á¦£¿\n");
+                return notify_fail("ä½ è¦å¸å–èª°çš„ç²¾åŠ›ï¼Ÿ\n");
 
         if( query("no_fight", environment(me)) )
-                return notify_fail("ÕâÀï²»ÄÜÕ½¶·£¬Äã²»¿ÉÒÔÊ¹ÓÃ»¯¹¦´ó·¨ÎüÈËµÄ¾«Á¦¡£\n");
+                return notify_fail("é€™è£¡ä¸èƒ½æˆ°é¬¥ï¼Œä½ ä¸å¯ä»¥ä½¿ç”¨åŒ–åŠŸå¤§æ³•å¸äººçš„ç²¾åŠ›ã€‚\n");
 
         if( query_temp("sucked", me) )
-                return notify_fail("Äã¸Õ¸ÕÎüÈ¡¹ı¾«Á¦£¡\n");
+                return notify_fail("ä½ å‰›å‰›å¸å–éç²¾åŠ›ï¼\n");
 
         if( objectp(query_temp("weapon", me)) )
-                return notify_fail("±ØĞë¿ÕÊÖ²ÅÄÜ¹»ÎüÈ¡±ğÈËµÄ¾«Á¦£¡\n");
+                return notify_fail("å¿…é ˆç©ºæ‰‹æ‰èƒ½å¤ å¸å–åˆ¥äººçš„ç²¾åŠ›ï¼\n");
 
         if( !me->is_fighting() || !target->is_fighting() || !living(target) )
-                return notify_fail("Äã±ØĞëÔÚÕ½¶·ÖĞ²ÅÄÜÎüÈ¡¶Ô·½µÄ¾«Á¦£¡\n");
+                return notify_fail("ä½ å¿…é ˆåœ¨æˆ°é¬¥ä¸­æ‰èƒ½å¸å–å°æ–¹çš„ç²¾åŠ›ï¼\n");
 
         if( (int)me->query_skill("huagong-dafa",1) < 90 )
-                return notify_fail("ÄãµÄ»¯¹¦´ó·¨¹¦Á¦²»¹»£¬²»ÄÜÎüÈ¡¶Ô·½µÄÄÚÁ¦£¡\n");
+                return notify_fail("ä½ çš„åŒ–åŠŸå¤§æ³•åŠŸåŠ›ä¸å¤ ï¼Œä¸èƒ½å¸å–å°æ–¹çš„å…§åŠ›ï¼\n");
 
         if( query("neili", me)<300 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬²»ÄÜÊ¹ÓÃ»¯¹¦´ó·¨¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ï¼Œä¸èƒ½ä½¿ç”¨åŒ–åŠŸå¤§æ³•ã€‚\n");
 
         if( query("jingli", me)<100 )
-                return notify_fail("ÄãµÄ¾«Á¦²»¹»£¬²»ÄÜÊ¹ÓÃ»¯¹¦´ó·¨¡£\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤ ï¼Œä¸èƒ½ä½¿ç”¨åŒ–åŠŸå¤§æ³•ã€‚\n");
 
         if( query("jingli", me) >= query("max_jingli", me)*5/2 )
-                return notify_fail("ÄãÎüÈ¡µÄ¾«Á¦³äÈûÈ«Éí£¬ÎŞ·¨ÔÙÎüÈ¡¾«Á¦£¡\n");
+                return notify_fail("ä½ å¸å–çš„ç²¾åŠ›å……å¡å…¨èº«ï¼Œç„¡æ³•å†å¸å–ç²¾åŠ›ï¼\n");
 
         if( query("max_jingli", target) <= 0 )
                 return notify_fail( target->name() +
-                        "Ã»ÓĞÈÎºÎ¾«Á¦£¡\n");
+                        "æ²’æœ‰ä»»ä½•ç²¾åŠ›ï¼\n");
 
         if( query("jingli", target)<query("max_jingli", target)/10 )
-                return notify_fail( target->name() + "ÒÑ¾­¾«Á¦»ÁÉ¢£¬ÄãÒÑ¾­ÎŞ·¨´ÓËûÌåÄÚÎüÈ¡ÈÎºÎ¾«Á¦ÁË£¡\n");
+                return notify_fail( target->name() + "å·²ç¶“ç²¾åŠ›æ¸™æ•£ï¼Œä½ å·²ç¶“ç„¡æ³•å¾ä»–é«”å…§å¸å–ä»»ä½•ç²¾åŠ›äº†ï¼\n");
 
 
-        message_vision(HIR "$N³¯$nÎ¢Î¢Ò»Ğ¦£¬Í»È»·­ÕÆ±ä×¦£¬¿ÛÏò$nµÄÊÖÍó£¡\n\n" NOR, me, target );
+        message_vision(HIR "$Næœ$nå¾®å¾®ä¸€ç¬‘ï¼Œçªç„¶ç¿»æŒè®Šçˆªï¼Œæ‰£å‘$nçš„æ‰‹è…•ï¼\n\n" NOR, me, target );
 
         if( !target->is_killing(me) ) target->kill_ob(me);
 
@@ -60,8 +60,8 @@ int exert(object me, object target)
 
         if( random(sp+dp) > dp )
         {
-                tell_object(target, HIR "ÄãÍóÄÚ»á×ÚÑ¨±»" + me->name() + "Í»È»¿Û×¡£¬¶¯µ¯²»µÃ£¬Ö»¾õ¾«Á¦ÈçºéË®°ã×Ô»á×ÚÑ¨±¼ÌÚ¶ø³ö£¡\n" NOR);
-                tell_object(me, HIG "Äã¾õµÃ" + target->name() + "µÄ¾«Á¦×ÔÊÖÕÆÔ´Ô´²»¾øµØÁ÷ÁË½øÀ´¡£\n" NOR);
+                tell_object(target, HIR "ä½ è…•å…§æœƒå®—ç©´è¢«" + me->name() + "çªç„¶æ‰£ä½ï¼Œå‹•å½ˆä¸å¾—ï¼Œåªè¦ºç²¾åŠ›å¦‚æ´ªæ°´èˆ¬è‡ªæœƒå®—ç©´å¥”é¨°è€Œå‡ºï¼\n" NOR);
+                tell_object(me, HIG "ä½ è¦ºå¾—" + target->name() + "çš„ç²¾åŠ›è‡ªæ‰‹æŒæºæºä¸çµ•åœ°æµäº†é€²ä¾†ã€‚\n" NOR);
 
                 jl = (1+random(3)) * (int)me->query_skill("huagong-dafa", 1)/2;
                 if( query("jingli", target)>jl )
@@ -88,7 +88,7 @@ int exert(object me, object target)
         }
         else
         {
-                message_vision(HIY "¿ÉÊÇ$p¿´ÆÆÁË$PµÄÆóÍ¼£¬Ã»ÈÃ$P¿Û×¡ÊÖÍó¡£\n" NOR, me, target);
+                message_vision(HIY "å¯æ˜¯$pçœ‹ç ´äº†$Pçš„ä¼åœ–ï¼Œæ²’è®“$Pæ‰£ä½æ‰‹è…•ã€‚\n" NOR, me, target);
                 addn("jingli", -20, me);
                 me->start_busy(2+random(2));
                 call_out("del_sucked", 5, me);

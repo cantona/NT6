@@ -4,13 +4,13 @@ inherit ITEM;
 #include <ansi.h>;
 void create()
 {
-        set_name(HIW"°×²¼Ð¡ÄÒ"NOR, ({"baibu xiaonan", "xiaonan"}));
+        set_name(HIW"ç™½å¸ƒå°å›Š"NOR, ({"baibu xiaonan", "xiaonan"}));
         set_weight(80);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»Ö»°×²¼Ð¡ÄÒ£¬ºÃÏó¿ÉÒÔ´ò¿ªµÄ¡£\n");
-                set("unit", "Ö»");
+                set("long", "é€™æ˜¯ä¸€åªç™½å¸ƒå°å›Šï¼Œå¥½è±¡å¯ä»¥æ‰“é–‹çš„ã€‚\n");
+                set("unit", "åª");
                 set("value", 1);
         }
 }
@@ -24,10 +24,10 @@ int do_dakai(string arg)
         string message;
         int col;
 
-        if(!id(arg)) return notify_fail("ÄãÒª²ðÊ²Ã´£¿\n");
+        if(!id(arg)) return notify_fail("ä½ è¦æ‹†ä»€éº¼ï¼Ÿ\n");
         if(!present(this_object(), me))
-                return notify_fail("ÄãÒª²ðÊ²Ã´£¿\n");
-        message_vision("$N²ð¿ª°×²¼Ð¡ÄÒ£¬Ì¯¿ª·¢ÏÖÊÇÕÅ°×²¼£¡\n", me);
+                return notify_fail("ä½ è¦æ‹†ä»€éº¼ï¼Ÿ\n");
+        message_vision("$Næ‹†é–‹ç™½å¸ƒå°å›Šï¼Œæ”¤é–‹ç™¼ç¾æ˜¯å¼µç™½å¸ƒï¼\n", me);
         bu = new(__DIR__"whitecloth");
         bu->move(me);
         destruct(this_object());

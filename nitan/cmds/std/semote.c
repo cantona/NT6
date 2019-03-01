@@ -6,21 +6,21 @@
 
 inherit F_CLEAN_UP;
 
-#define BAR     "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n"
+#define BAR     "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n"
 
 string help = @HELP
-±íÇé²éÑ¯Ö¸Áî
+è¡¨æƒ…æŸ¥è©¢æŒ‡ä»¤
 
-Õâ¸öÖ¸Áî»áÁÐ³öÄ¿Ç°ËùÓÐ¿ÉÒÔÊ¹ÓÃµÄ±íÇéÖ¸Áî
+é€™å€‹æŒ‡ä»¤æœƒåˆ—å‡ºç›®å‰æ‰€æœ‰å¯ä»¥ä½¿ç”¨çš„è¡¨æƒ…æŒ‡ä»¤
 
-Ö¸Áî¸ñÊ½:
+æŒ‡ä»¤æ ¼å¼:
 semote
-semote -t               ²é¿´±íÇéÖ¸ÁîµÄÊ¹ÓÃÅÅÐÐ±í
-semote -l               ²é¿´±íÇéÖ¸ÁîµÄ¼òÒ×ËµÃ÷
-semote <±íÇé´úºÅ>       ²é¿´ <±íÇé´úºÅ> µÄÏêÏ¸±íÇéÑ¶Ï¢
+semote -t               æŸ¥çœ‹è¡¨æƒ…æŒ‡ä»¤çš„ä½¿ç”¨æŽ’è¡Œè¡¨
+semote -l               æŸ¥çœ‹è¡¨æƒ…æŒ‡ä»¤çš„ç°¡æ˜“èªªæ˜Ž
+semote <è¡¨æƒ…ä»£è™Ÿ>       æŸ¥çœ‹ <è¡¨æƒ…ä»£è™Ÿ> çš„è©³ç´°è¡¨æƒ…è¨Šæ¯
 
 
-Ïà¹ØÖ¸Áî: command
+ç›¸é—œæŒ‡ä»¤: command
 HELP;
 
 int help(object me) 
@@ -34,9 +34,9 @@ int help(object me)
 private string replace_keys(string description)
 {
 
-        description = replace_string(description, "$ME", HIC"Äã"NOR);
-        description = replace_string(description, "$YOU", HIG"Ä³ÈË"NOR);
-        description = replace_string(description, "$T", HIM"ÊÂÎï"NOR);
+        description = replace_string(description, "$ME", HIC"ä½ "NOR);
+        description = replace_string(description, "$YOU", HIG"æŸäºº"NOR);
+        description = replace_string(description, "$T", HIM"äº‹ç‰©"NOR);
 
         return description;
 }
@@ -56,9 +56,9 @@ int main(object me, string arg)
 
                 emotions = sort_array(emotions, (: count( $(emotion_sort)[$1],">",$(emotion_sort)[$2] )? -1:1:));
 
-                msg = "±íÇéÖ¸ÁîÊ¹ÓÃÅÅÃû:\n";
+                msg = "è¡¨æƒ…æŒ‡ä»¤ä½¿ç”¨æŽ’å:\n";
                 foreach( string e in emotions )
-                        msg += sprintf("%4s %-20s %-10s ´Î\n", HIW+(++i)+"."NOR, e, emotion_sort[e]);
+                        msg += sprintf("%4s %-20s %-10s æ¬¡\n", HIW+(++i)+"."NOR, e, emotion_sort[e]);
 
                 me->start_more(msg+"\n");
                 return 1;
@@ -74,10 +74,10 @@ int main(object me, string arg)
 
                 emotions = sort_array(emotions, (: strcmp($1, $2) :));
 
-                msg = "±íÇéÖ¸Áî¼ò½éËµÃ÷\n";
+                msg = "è¡¨æƒ…æŒ‡ä»¤ç°¡ä»‹èªªæ˜Ž\n";
                 foreach( string e in emotions )
                 {
-                        msg += sprintf("%4s %-20s %-10s\n", HIW+(++i)+"."NOR, e, emotion_sort[e]||WHT"ÎÞ¼ò½é"NOR);
+                        msg += sprintf("%4s %-20s %-10s\n", HIW+(++i)+"."NOR, e, emotion_sort[e]||WHT"ç„¡ç°¡ä»‹"NOR);
                 }
                 me->start_more(msg+"\n");
                 return 1;
@@ -87,18 +87,18 @@ int main(object me, string arg)
                 array emotion = EMOTE_D->query_emotion(arg);
 
                 if( undefinedp(emotion) )
-                        return tell(me, "Ã»ÓÐ " + arg + " Õâ¸ö±íÇéÖ¸Áî¡£\n", "CMDMSG");
+                        return tell(me, "æ²’æœ‰ " + arg + " é€™å€‹è¡¨æƒ…æŒ‡ä»¤ã€‚\n", "CMDMSG");
 
-                msg = "±íÇé "+arg+" Ö®ÏêÏ¸ÐðÊöÈçÏÂ£º\n"BAR;
+                msg = "è¡¨æƒ… "+arg+" ä¹‹è©³ç´°æ•˜è¿°å¦‚ä¸‹ï¼š\n"BAR;
 
-                msg += NOR WHT"1.ÎÞ¶ÔÏóÎÞ¸½¼ÓÎÄ×Ö    £º"NOR+replace_keys(emotion[NONE_ALL])+"\n";
-                msg += NOR WHT"2.ÎÞ¶ÔÏóÓÐ¸½¼ÓÎÄ×Ö    £º"NOR+replace_keys(emotion[NONE_ALL_ARG])+"\n";
-                msg += NOR WHT"3.¶ÔÏóÎª×Ô¼ºÎÞ¸½¼ÓÎÄ×Ö£º"NOR+replace_keys(emotion[ME_ALL])+"\n";
-                msg += NOR WHT"4.¶ÔÏóÎª×Ô¼ºÓÐ¸½¼ÓÎÄ×Ö£º"NOR+replace_keys(emotion[ME_ALL_ARG])+"\n";
-                msg += NOR WHT"5.¶ÔÏóÎªÄ³ÈËÎÞ¸½¼ÓÎÄ×Ö£º"NOR+replace_keys(emotion[YOU_ALL])+"\n";
-                msg += NOR WHT"6.¶ÔÏóÎªÄ³ÈËÓÐ¸½¼ÓÎÄ×Ö£º"NOR+replace_keys(emotion[YOU_ALL_ARG])+"\n";
-                msg += NOR WHT"7.±íÇé×¢½â            £º"NOR+(emotion[NOTE] || "ÎÞ×¢½â")+"\n";
-                msg += NOR WHT"8.Ê¹ÓÃ´ÎÊý            £º"NOR+emotion[USE]+" ´Î\n";
+                msg += NOR WHT"1.ç„¡å°è±¡ç„¡é™„åŠ æ–‡å­—    ï¼š"NOR+replace_keys(emotion[NONE_ALL])+"\n";
+                msg += NOR WHT"2.ç„¡å°è±¡æœ‰é™„åŠ æ–‡å­—    ï¼š"NOR+replace_keys(emotion[NONE_ALL_ARG])+"\n";
+                msg += NOR WHT"3.å°è±¡ç‚ºè‡ªå·±ç„¡é™„åŠ æ–‡å­—ï¼š"NOR+replace_keys(emotion[ME_ALL])+"\n";
+                msg += NOR WHT"4.å°è±¡ç‚ºè‡ªå·±æœ‰é™„åŠ æ–‡å­—ï¼š"NOR+replace_keys(emotion[ME_ALL_ARG])+"\n";
+                msg += NOR WHT"5.å°è±¡ç‚ºæŸäººç„¡é™„åŠ æ–‡å­—ï¼š"NOR+replace_keys(emotion[YOU_ALL])+"\n";
+                msg += NOR WHT"6.å°è±¡ç‚ºæŸäººæœ‰é™„åŠ æ–‡å­—ï¼š"NOR+replace_keys(emotion[YOU_ALL_ARG])+"\n";
+                msg += NOR WHT"7.è¡¨æƒ…æ³¨è§£            ï¼š"NOR+(emotion[NOTE] || "ç„¡æ³¨è§£")+"\n";
+                msg += NOR WHT"8.ä½¿ç”¨æ¬¡æ•¸            ï¼š"NOR+emotion[USE]+" æ¬¡\n";
         }
         else
         {
@@ -106,10 +106,10 @@ int main(object me, string arg)
                 string *emotions = sort_array(EMOTE_D->query_emotions(), 1);
 
                 size = sizeof(emotions);
-                msg = "Ä¿Ç°¹²ÓÐ "+size+" ÖÖ±íÇéÖ¸Áî¿ÉÒÔÊ¹ÓÃ£¬ÁÐ±íÈçÏÂ£º\n"BAR;
+                msg = "ç›®å‰å…±æœ‰ "+size+" ç¨®è¡¨æƒ…æŒ‡ä»¤å¯ä»¥ä½¿ç”¨ï¼Œåˆ—è¡¨å¦‚ä¸‹ï¼š\n"BAR;
 
                 msg += sprintf("%-=80s", sprintf("%@-:10s", emotions)) + "\n";
-                msg += "\nÇëÊäÈë semote <±íÇé´úºÅ> ¹Û¿´ÏêÏ¸ÐðÊö¡£\n";
+                msg += "\nè«‹è¼¸å…¥ semote <è¡¨æƒ…ä»£è™Ÿ> è§€çœ‹è©³ç´°æ•˜è¿°ã€‚\n";
         }
 
         me->start_more(msg + BAR);

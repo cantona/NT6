@@ -11,115 +11,115 @@ int query_neili_improve(object me)
 }
 
 mapping *action = ({
-([  "action" : "$NÊ©³öÒ»ÕÐ" HIB "µå²×º£" NOR "Ö®¡¸" HIB "ÀËÌÎÊÆ" NOR "¡¹£¬Ò»"
-               "È­ÃÍÈ»¹¥³ö£¬ÆøÊÆ»Öºë£¬ÆøÁ÷ÅìÅÈ£¬Ö±´ò$nµÄ$l",
+([  "action" : "$Næ–½å‡ºä¸€æ‹›" HIB "é›æ»„æµ·" NOR "ä¹‹ã€Œ" HIB "æµªæ¿¤å‹¢" NOR "ã€ï¼Œä¸€"
+               "æ‹³çŒ›ç„¶æ”»å‡ºï¼Œæ°£å‹¢æ¢å¼˜ï¼Œæ°£æµæ¾Žæ¹ƒï¼Œç›´æ‰“$nçš„$l",
     "dodge"  : 137,
     "attack" : 161,
     "parry"  : 114,
     "force"  : 481,
     "damage" : 131,
-    "weapon" : HIB "µå²×º£Æø¾¢" NOR,
-    "damage_type": "¸îÉË"
+    "weapon" : HIB "é›æ»„æµ·æ°£å‹" NOR,
+    "damage_type": "å‰²å‚·"
 ]),
-([  "action" : "$N´í²½ÉÏÇ°£¬Ò»ÕÐ" HIB "µå²×º£" NOR "Ö®¡¸" HIB "ÉîÔ¨ÊÆ" NOR
-               "¡¹£¬Ë«ÕÆÃÍÈ»¾íÒ»¹ÉÌÏÌìº®Á÷£¬Ï¯¾í$nÈ«Éí",
+([  "action" : "$NéŒ¯æ­¥ä¸Šå‰ï¼Œä¸€æ‹›" HIB "é›æ»„æµ·" NOR "ä¹‹ã€Œ" HIB "æ·±æ·µå‹¢" NOR
+               "ã€ï¼Œé›™æŽŒçŒ›ç„¶å·ä¸€è‚¡æ»”å¤©å¯’æµï¼Œå¸­å·$nå…¨èº«",
     "dodge"  : 138,
     "attack" : 180,
     "parry"  : 121,
     "force"  : 485,
     "damage" : 137,
-    "weapon" : HIB "µå²×º£Æø¾¢" NOR,
-    "damage_type": "¸îÉË"
+    "weapon" : HIB "é›æ»„æµ·æ°£å‹" NOR,
+    "damage_type": "å‰²å‚·"
 ]),
-([  "action" : "$N¶¸È»Ê¹³ö" HIB "µå²×º£" NOR "¡¸" HIB "¾¨ÍÌÊÆ" NOR "¡¹£¬Ë«ÕÆ"
-               "ÉÏÏÂ½»´í£¬çÍ·×¹á³ö£¬ÆÌÌìÕÆÓ°¶ÙÊ±ÁýÕÖ$n",
+([  "action" : "$Né™¡ç„¶ä½¿å‡º" HIB "é›æ»„æµ·" NOR "ã€Œ" HIB "é¯¨åžå‹¢" NOR "ã€ï¼Œé›™æŽŒ"
+               "ä¸Šä¸‹äº¤éŒ¯ï¼Œç¹½ç´›è²«å‡ºï¼Œèˆ–å¤©æŽŒå½±é “æ™‚ç± ç½©$n",
     "dodge"  : 121,
     "attack" : 193,
     "parry"  : 113,
     "force"  : 451,
     "damage" : 241,
-    "weapon" : HIB "µå²×º£Æø¾¢" NOR,
-    "damage_type": "¸îÉË"
+    "weapon" : HIB "é›æ»„æµ·æ°£å‹" NOR,
+    "damage_type": "å‰²å‚·"
 ]),
-([  "action" : "$NÒ»Éù¾ÞºÈ£¬¹á³ö" HIB "µå²×º£" NOR "ÐÄ·¨Ö®¡¸" HIB "ÌÏÌìÊÆ" NOR
-               "¡¹£¬Ë«ÕÆÏÆÆð·­Ìì¾ÞÀË£¬Ò»¹ÉÁÝÙýº®Á÷´Ó¾ÅÌì¶ø½µ£¬ÁýÕÖ$n",
+([  "action" : "$Nä¸€è²å·¨å–ï¼Œè²«å‡º" HIB "é›æ»„æµ·" NOR "å¿ƒæ³•ä¹‹ã€Œ" HIB "æ»”å¤©å‹¢" NOR
+               "ã€ï¼Œé›™æŽŒæŽ€èµ·ç¿»å¤©å·¨æµªï¼Œä¸€è‚¡å‡œå†½å¯’æµå¾žä¹å¤©è€Œé™ï¼Œç± ç½©$n",
     "dodge"  : 121,
     "attack" : 193,
     "parry"  : 113,
     "force"  : 451,
     "damage" : 241,
-    "weapon" : HIB "µå²×º£Æø¾¢" NOR,
-    "damage_type": "¸îÉË"
+    "weapon" : HIB "é›æ»„æµ·æ°£å‹" NOR,
+    "damage_type": "å‰²å‚·"
 ]),
-([  "action" : "$NÊ©Õ¹" HIR "Ñªñ·²Ô" NOR "ÐÄ·¨Ö®¡¸" HIR "ÑªÎíÃÔ×Ù" NOR "¡¹£¬"
-               "¶ÙÊ±¸¡ÏÖ³öÒ»²ãÑªÆø£¬Éí·¨±ä»»ÎÞ¶¨£¬È«Éí»¯×÷Ò»µÀÑª¹â¹¥Ïò$n",
+([  "action" : "$Næ–½å±•" HIR "è¡€ç©¹è’¼" NOR "å¿ƒæ³•ä¹‹ã€Œ" HIR "è¡€éœ§è¿·è¹¤" NOR "ã€ï¼Œ"
+               "é “æ™‚æµ®ç¾å‡ºä¸€å±¤è¡€æ°£ï¼Œèº«æ³•è®Šæ›ç„¡å®šï¼Œå…¨èº«åŒ–ä½œä¸€é“è¡€å…‰æ”»å‘$n",
     "dodge"  : 241,
     "attack" : 221,
     "parry"  : 209,
     "force"  : 261,
     "damage" : 233,
-    "weapon" : HIR "Ñªñ·²ÔÆø¾¢" NOR,
-    "damage_type": "¸îÉË"
+    "weapon" : HIR "è¡€ç©¹è’¼æ°£å‹" NOR,
+    "damage_type": "å‰²å‚·"
 ]),
-([  "action" : "$N¶¸È»Ê¹³ö" HIR "Ñªñ·²Ô" NOR "Ö®¡¸" HIR "²Ôñ·ÎÞÑÂ" NOR "¡¹£¬Ë«ÕÆ"
-               "¸ß¾Ù¹ý¶¥£¬Ò»ÉùÃÆºÈ£¬Ç§ÍòÕÆ·æÅìÅÈÓ¿³ö£¬ÆÌÌì¸ÇµØÏ¯¾í$n",
+([  "action" : "$Né™¡ç„¶ä½¿å‡º" HIR "è¡€ç©¹è’¼" NOR "ä¹‹ã€Œ" HIR "è’¼ç©¹ç„¡å´–" NOR "ã€ï¼Œé›™æŽŒ"
+               "é«˜èˆ‰éŽé ‚ï¼Œä¸€è²æ‚¶å–ï¼Œåƒè¬æŽŒé‹’æ¾Žæ¹ƒæ¹§å‡ºï¼Œèˆ–å¤©è“‹åœ°å¸­å·$n",
     "dodge"  : 261,
     "attack" : 103,
     "parry"  : 241,
     "force"  : 373,
     "damage" : 391,
-    "weapon" : HIR "Ñªñ·²ÔÆø¾¢" NOR,
-    "damage_type": "¸îÉË"
+    "weapon" : HIR "è¡€ç©¹è’¼æ°£å‹" NOR,
+    "damage_type": "å‰²å‚·"
 ]),
-([  "action" : "$NÊ©³öÒ»ÕÐ" HIR "Ñªñ·²Ô" NOR "Ö®¡¸" HIR "ÑªÑôËºÌì" NOR "¡¹£¬Áè¿Õ"
-               "·ÉÔ¾£¬Ë«×¦Ð¯×ÅÌìñ·Ö®¾¢»Ã³öÁ½µÀÑª¹âÏ®³ö£¬Ö±¹¥$n$l",
+([  "action" : "$Næ–½å‡ºä¸€æ‹›" HIR "è¡€ç©¹è’¼" NOR "ä¹‹ã€Œ" HIR "è¡€é™½æ’•å¤©" NOR "ã€ï¼Œå‡Œç©º"
+               "é£›èºï¼Œé›™çˆªæ”œè‘—å¤©ç©¹ä¹‹å‹å¹»å‡ºå…©é“è¡€å…‰è¥²å‡ºï¼Œç›´æ”»$n$l",
     "dodge"  : 272,
     "attack" : 239,
     "parry"  : 254,
     "force"  : 424,
     "damage" : 353,
-    "weapon" : HIR "Ñªñ·²ÔÆø¾¢" NOR,
-    "damage_type": "´ÌÉË"
+    "weapon" : HIR "è¡€ç©¹è’¼æ°£å‹" NOR,
+    "damage_type": "åˆºå‚·"
 ]),
-([  "action" : "$NÕ¾Á¢²»¶¯£¬Ò»Éù±©ºÈ£¬Ê©³ö" HIR "Ñªñ·²Ô" NOR "Ö®¡¸" HIR "²Ôñ·ÎÞ»Ú"
-               NOR "¡¹£¬¶ÙÊ±ÌÏÌìÑªÀËÖÁ¾ÅÌì¶ø½µ£¬ÑªÆø¶ÙÊ±ÁýÕÖ$nµÄËÄÃæ°Ë·½",
+([  "action" : "$Nç«™ç«‹ä¸å‹•ï¼Œä¸€è²æš´å–ï¼Œæ–½å‡º" HIR "è¡€ç©¹è’¼" NOR "ä¹‹ã€Œ" HIR "è’¼ç©¹ç„¡æ‚”"
+               NOR "ã€ï¼Œé “æ™‚æ»”å¤©è¡€æµªè‡³ä¹å¤©è€Œé™ï¼Œè¡€æ°£é “æ™‚ç± ç½©$nçš„å››é¢å…«æ–¹",
     "dodge"  : 267,
     "attack" : 298,
     "parry"  : 254,
     "force"  : 484,
     "damage" : 339,
-    "weapon" : HIR "Ñªñ·²ÔÆø¾¢" NOR,
-    "damage_type": "´ÌÉË"
+    "weapon" : HIR "è¡€ç©¹è’¼æ°£å‹" NOR,
+    "damage_type": "åˆºå‚·"
 ]),
-([  "action" : "$NÊ©Õ¹" HIY "½ð³¿êØ" NOR "ÐÄ·¨Ö®¡¸" HIY "½ðÎÚÈÚÑ©" NOR "¡¹£¬"
-               "Ò»È­»÷µ½$nÃæÃÅ£¬¶¸È»±ã×¦£¬»Ã³öÒ»µÀ½ð¹âÉäÏò$n$l",
+([  "action" : "$Næ–½å±•" HIY "é‡‘æ™¨æ›¦" NOR "å¿ƒæ³•ä¹‹ã€Œ" HIY "é‡‘çƒèžé›ª" NOR "ã€ï¼Œ"
+               "ä¸€æ‹³æ“Šåˆ°$né¢é–€ï¼Œé™¡ç„¶ä¾¿çˆªï¼Œå¹»å‡ºä¸€é“é‡‘å…‰å°„å‘$n$l",
     "dodge"  : 329,
     "attack" : 251,
     "parry"  : 304,
     "force"  : 884,
     "damage" : 358,
-    "weapon" : HIY "½ð³¿êØÆø¾¢" NOR,
-    "damage_type": "´ÌÉË"
+    "weapon" : HIY "é‡‘æ™¨æ›¦æ°£å‹" NOR,
+    "damage_type": "åˆºå‚·"
 ]),
-([  "action" : "$N¶¸È»Ê¹³ö" HIY "½ð³¿êØ" NOR "Ö®¡¸" HIY "Ê®Ñô¹éÒ»" NOR "¡¹£¬Ë«ÕÆ"
-               "Á¬»·Ê¹³ö£¬ÆÌÌì¸ÇµØµÄ¹¥Ïò$n",
+([  "action" : "$Né™¡ç„¶ä½¿å‡º" HIY "é‡‘æ™¨æ›¦" NOR "ä¹‹ã€Œ" HIY "åé™½æ­¸ä¸€" NOR "ã€ï¼Œé›™æŽŒ"
+               "é€£ç’°ä½¿å‡ºï¼Œèˆ–å¤©è“‹åœ°çš„æ”»å‘$n",
     "dodge"  : 321,
     "attack" : 393,
     "parry"  : 513,
     "force"  : 703,
     "damage" : 461,
-    "weapon" : HIY "½ð³¿êØÆø¾¢" NOR,
-    "damage_type": "´ÌÉË"
+    "weapon" : HIY "é‡‘æ™¨æ›¦æ°£å‹" NOR,
+    "damage_type": "åˆºå‚·"
 ]),
-([  "action" : "$NÊ©³öÒ»ÕÐ" HIY "½ð³¿êØ" NOR "Ö®¡¸" HIY "½ðÑôÆÆÁë" NOR "¡¹£¬Ë«ÊÖ"
-               "×÷×¶£¬Ð¯´ø×ÅÎÞ±ÈÁèÀ÷µÄÄÚ¾¢ÃÍÈ»¹á³ö£¬Ö±×ê$nµÄ$l",
+([  "action" : "$Næ–½å‡ºä¸€æ‹›" HIY "é‡‘æ™¨æ›¦" NOR "ä¹‹ã€Œ" HIY "é‡‘é™½ç ´å¶º" NOR "ã€ï¼Œé›™æ‰‹"
+               "ä½œéŒï¼Œæ”œå¸¶è‘—ç„¡æ¯”å‡ŒåŽ²çš„å…§å‹çŒ›ç„¶è²«å‡ºï¼Œç›´é‘½$nçš„$l",
     "dodge"  : 312,
     "attack" : 398,
     "parry"  : 454,
     "force"  : 884,
     "damage" : 433,
-    "weapon" : HIY "½ð³¿êØÆø¾¢" NOR,
-    "damage_type": "´ÌÉË"
+    "weapon" : HIY "é‡‘æ™¨æ›¦æ°£å‹" NOR,
+    "damage_type": "åˆºå‚·"
 ]),
 });
 
@@ -139,12 +139,12 @@ mapping query_action(object me)
 
 int valid_learn(object me)
 {
-        return notify_fail("%¡­¡­¡ª£¨%£¤¡¤£¡¡¤£¡¡¤*#¡ª\n");
+        return notify_fail("%â€¦â€¦â”€ï¼ˆ%ï¼„ï¹’ï¼ï¹’ï¼ï¹’*#â”€\n");
 }
 
 int practice_skill(object me)
 {
-        return notify_fail("%¡­¡­¡ª£¨%£¤¡¤£¡¡¤£¡¡¤*#¡ª\n");
+        return notify_fail("%â€¦â€¦â”€ï¼ˆ%ï¼„ï¹’ï¼ï¹’ï¼ï¹’*#â”€\n");
 }
 
 int difficult_level()

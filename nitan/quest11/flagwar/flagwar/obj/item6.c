@@ -4,10 +4,10 @@ inherit ITEM;
 
 void create()
 {
-	      set_name(HIG"ÇÀÆìÕ½ - "HIW"¶¨Éí·û"NOR, ({"fwar ding seal","seal"}) );
+	      set_name(HIG"æ¶æ——æˆ° - "HIW"å®šèº«ç¬¦"NOR, ({"fwar ding seal","seal"}) );
         set_weight(300);
-        set("unit", "¸ö");
-        set("long", "ÇÀÆìÕ½×¨ÓÃÌØÊâÎïÆ·£¬Ê¹ÓÃ(shoot seal on <Ä¿±ê>)ºóÁîÄ¿±êÎŞ·¨ĞĞ¶¯¡£\n");
+        set("unit", "å€‹");
+        set("long", "æ¶æ——æˆ°å°ˆç”¨ç‰¹æ®Šç‰©å“ï¼Œä½¿ç”¨(shoot seal on <ç›®æ¨™>)å¾Œä»¤ç›®æ¨™ç„¡æ³•è¡Œå‹•ã€‚\n");
         set("value", 1);
         set("no_store",1);
         set("no_sell", 1);
@@ -28,16 +28,16 @@ int do_shoot(string arg) {
 	me = this_player();
 	if(!me) return 0;
 	ob = this_object();
-  if(environment() != me) return notify_fail(name()+"²»ÔÚÄãÉíÉÏ¡£\n");
-  if(me->is_busy()) return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É¡£\n");
+  if(environment() != me) return notify_fail(name()+"ä¸åœ¨ä½ èº«ä¸Šã€‚\n");
+  if(me->is_busy()) return notify_fail("ä½ ä¸Šä¸€å€‹å‹•ä½œé‚„æ²’æœ‰å®Œæˆã€‚\n");
 
-  if(!sscanf(base_name(environment(me)), "/d/flagwar/%*s")) return notify_fail(name()+"Ö»ÄÜÔÚÇÀÆìÕ½³¡Ê¹ÓÃ¡£\n");
-  if(!sizeof(me->query_temp("flag_war"))) return notify_fail(name()+"Ö»ÄÜÔÚÇÀÆìÕ½µÄÊ±ºòÊ¹ÓÃ¡£\n");
-  if(!arg || sscanf(arg, "seal on %s", id) != 1) return notify_fail("Ö¸Áî¸ñÊ½£ºshoot seal on <Ä¿±ê>¡£\n");
-  if(!target = present(id, environment(me))) return notify_fail("ÕâÀïÃ»ÓĞÕâ¸öÈË¡£\n");
-  if(target == me) return notify_fail("ÄãÖ»ÄÜÉä±ğÈË¡£\n");
-  if(!target->query_temp("flag_war")) return notify_fail("ÄãÖ»ÄÜ¶ÔÇÀÆìÕ½µÄÈËÊ¹ÓÃ¡£\n");
-  message_vision("$NÄÃ×Å$n¶Ô×¼"+target->name()+"£¬×ìÖĞ†ˆ³öà«à«Ö®Éù¡£\n$n»¯×÷Ò»µÀ°×¹âÖ±ÆË"+target->name()+"¶øÈ¥¡£\n", me, ob);
+  if(!sscanf(base_name(environment(me)), "/d/flagwar/%*s")) return notify_fail(name()+"åªèƒ½åœ¨æ¶æ——æˆ°å ´ä½¿ç”¨ã€‚\n");
+  if(!sizeof(me->query_temp("flag_war"))) return notify_fail(name()+"åªèƒ½åœ¨æ¶æ——æˆ°çš„æ™‚å€™ä½¿ç”¨ã€‚\n");
+  if(!arg || sscanf(arg, "seal on %s", id) != 1) return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šshoot seal on <ç›®æ¨™>ã€‚\n");
+  if(!target = present(id, environment(me))) return notify_fail("é€™è£¡æ²’æœ‰é€™å€‹äººã€‚\n");
+  if(target == me) return notify_fail("ä½ åªèƒ½å°„åˆ¥äººã€‚\n");
+  if(!target->query_temp("flag_war")) return notify_fail("ä½ åªèƒ½å°æ¶æ——æˆ°çš„äººä½¿ç”¨ã€‚\n");
+  message_vision("$Næ‹¿è‘—$nå°æº–"+target->name()+"ï¼Œå˜´ä¸­â–¡å‡ºå–ƒå–ƒä¹‹è²ã€‚\n$nåŒ–ä½œä¸€é“ç™½å…‰ç›´æ’²"+target->name()+"è€Œå»ã€‚\n", me, ob);
   me->want_kill(ob);
   damage = 1000+random(2000);
   target->receive_damage("qi", damage, me);
@@ -45,10 +45,10 @@ int do_shoot(string arg) {
   me->fight_ob(target); 
   target->kill_ob(me);
   me->start_busy(1);
-  message_vision(HIY"Í»È»¼ä$n¹â»ª´óÊ¢£¬$N±»ÏÅµÄ¶¯¶¼²»¸Ò¶¯¡£\n", target, ob);
+  message_vision(HIY"çªç„¶é–“$nå…‰è¯å¤§ç››ï¼Œ$Nè¢«åš‡çš„å‹•éƒ½ä¸æ•¢å‹•ã€‚\n", target, ob);
     	if(target->query_temp("flag_war/guard")) {
     		target->add_temp("flag_war/guard", -1);
-    		message_vision(HIY"$NÉíÉÏµÄÌØÊâ·À»¤Ğ§¹û·¢»ÓĞ§ÓÃµÖµ²×¡Õâ´Î¹¥»÷¡£\n"NOR, target);
+    		message_vision(HIY"$Nèº«ä¸Šçš„ç‰¹æ®Šé˜²è­·æ•ˆæœç™¼æ®æ•ˆç”¨æŠµæ“‹ä½é€™æ¬¡æ”»æ“Šã€‚\n"NOR, target);
     	} else target->start_busy(10);
   destruct(ob);
   return 1;

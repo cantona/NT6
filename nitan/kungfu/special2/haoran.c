@@ -5,7 +5,7 @@ inherit F_CLEAN_UP;
 
 int is_scborn() { return 1; }
 
-string name() { return HIW "ºÆÈ»ÕıÆø" NOR; }
+string name() { return HIW "æµ©ç„¶æ­£æ°£" NOR; }
 
 int perform(object me, string skill, string arg)
 {
@@ -14,31 +14,31 @@ int perform(object me, string skill, string arg)
 	joblv = me->query_joblv();
 
         if (me->query_temp("special2/haoran"))
-                return notify_fail("ÄãÒÑ¾­ÔÚÔË¹¦ÖĞÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“åœ¨é‹åŠŸä¸­äº†ã€‚\n");
 
-		if (me->query("yhjob/job") != "ÏÀ¿Í")
-				return notify_fail("ÄãµÄÖ°Òµ´íÎó£¬ÎŞ·¨Ê©Õ¹¡£\n");
+		if (me->query("yhjob/job") != "ä¿ å®¢")
+				return notify_fail("ä½ çš„è·æ¥­éŒ¯èª¤ï¼Œç„¡æ³•æ–½å±•ã€‚\n");
 
 		if (me->query("neili") < 600)
-				return notify_fail("ÄãµÄÄÚÁ¦²»×ã£¬ÎŞ·¨Ê©Õ¹¡£\n");
+				return notify_fail("ä½ çš„å…§åŠ›ä¸è¶³ï¼Œç„¡æ³•æ–½å±•ã€‚\n");
 
 		if (joblv < 20)
-				return notify_fail("ÄãµÄÖ°ÒµµÈ¼¶²»×ã£¬ÎŞ·¨Ê©Õ¹¡£\n");		
+				return notify_fail("ä½ çš„è·æ¥­ç­‰ç´šä¸è¶³ï¼Œç„¡æ³•æ–½å±•ã€‚\n");		
 
-        if (me->is_busy())return notify_fail("µÈÄãÃ¦ÍêÔÙËµ°É£¡\n");
+        if (me->is_busy())return notify_fail("ç­‰ä½ å¿™å®Œå†èªªå§ï¼\n");
 
-        message_vision(HIM "$N" HIM "Ê©Õ¹³öºÆÈ»ÕıÆø£¬¶ÙÊ±È«Éí±»½ğ¹âÁıÕÖ£¡\n" NOR, me);
+        message_vision(HIM "$N" HIM "æ–½å±•å‡ºæµ©ç„¶æ­£æ°£ï¼Œé “æ™‚å…¨èº«è¢«é‡‘å…‰ç± ç½©ï¼\n" NOR, me);
  
         me->add("neili", -600);
         me->start_busy(1);
 
-	// ÂÖ»ØµãÔö¼ÓÍşÁ¦
+	// è¼ªå›é»å¢åŠ å¨åŠ›
 	joblv = joblv + me->query("lhpoint/special/haoran") * 8;
 
         me->set_temp("special2/haoran", joblv);
 	me->add_temp("apply/damage", joblv * 100);
 	me->add_temp("apply/unarmed_damage", joblv * 100);
-	// ÉËº¦¶îÍâÌáÉı15%
+	// å‚·å®³é¡å¤–æå‡15%
 	damage_up = me->query_temp("apply/damage") * 9 / 20;
 	me->add_temp("apply/damage", damage_up);
 
@@ -54,7 +54,7 @@ void remove_effect(object me, int joblv, int damage_up)
 		me->add_temp("apply/unarmed_damage", -1 * joblv * 100);
 		me->add_temp("apply/damage", -1 * damage_up);
 	        me->delete_temp("special2/haoran");
-	        tell_object(me, "ÄãºÆÈ»ÕıÆøÔË¹¦Íê±Ï¡£\n");
+	        tell_object(me, "ä½ æµ©ç„¶æ­£æ°£é‹åŠŸå®Œç•¢ã€‚\n");
         }
 }
 

@@ -36,7 +36,7 @@ string ps(string arg)
 /*
 void decode_buffer (unsigned  char* buff,int size,int current_block)
 {
-    //对文件按字节解密;
+    //灏嶆枃浠舵寜瀛楃瘈瑙ｅ瘑;
 
     int i = 0;
     while (i < size)

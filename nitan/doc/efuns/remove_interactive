@@ -1,19 +1,19 @@
 
         remove_interactive()
 
-        ���ƣ�
-                remove_interactive() ��һ������������ߡ�
+        名稱：
+                remove_interactive() 將一個互動物件斷線。
 
-        �﷨��
+        語法：
                 int remove_interactive(object);
-                ���� remove_interactive(���);
+                整數 remove_interactive(物件);
 
-        �÷���
-                �������ָ��������ǻ����ģ�����û�б��ݻ٣�
-                ������ߣ�ʧȥ����״̬����
-                ����ɹ��򷵻� 1������ 0 ��ʾʧ�ܡ�
+        用法：
+                如果參數指定的物件是互動的，並且沒有被摧毀，
+                則將其斷線（失去互動狀態）。
+                如果成功則返回 1，返回 0 表示失敗。
 
-        �˺�����Ҫ���� MudOS ʱ�������ļ��ﶨ���� PACKAGE_CONTRIB��
+        此函數需要編譯 MudOS 時在配置文件裡定義了 PACKAGE_CONTRIB。
 
-        by ���ֺ�(Find@tx)
+        by 發現號(Find@tx)
 

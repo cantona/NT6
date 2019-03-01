@@ -8,16 +8,16 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIG "º®ÓñÏô" NOR, ({"hanyu xiao", "xiao"}));
+        set_name(HIG "å¯’çŽ‰è•­" NOR, ({"hanyu xiao", "xiao"}));
         set_weight(4500);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIG "Õâ¸ùº®ÓñÏôÊÇ¹íÈýµÄ´«¼Ò±¦¡£\n" NOR);
-                set("unit", "°Ñ");
+                set("long", HIG "é€™æ ¹å¯’çŽ‰è•­æ˜¯é¬¼ä¸‰çš„å‚³å®¶å¯¶ã€‚\n" NOR);
+                set("unit", "æŠŠ");
                 set("value", 5000);
                 set("item_origin", 1);
                 set("material_attrib", "hanyu");
-                set("material_name", HIG "º®Óñ" NOR);
+                set("material_name", HIG "å¯’çŽ‰" NOR);
         }
 }

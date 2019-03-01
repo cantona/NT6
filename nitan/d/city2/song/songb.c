@@ -10,8 +10,8 @@ void create()
         int exp;
 
         NPC_D->generate_cn_name(this_object());
-        set("gender", "ÄĞĞÔ");
-        set("long", "ÕâÊÇÒ»Ãû´óËÎ½«¾ü£¬ÕıÍş·çÁİÁİµØÑ²ÊÓ×Å×Ô¼ºµÄ¶ÓÎé¡£\n");
+        set("gender", "ç”·æ€§");
+        set("long", "é€™æ˜¯ä¸€åå¤§å®‹å°‡è»ï¼Œæ­£å¨é¢¨å‡œå‡œåœ°å·¡è¦–è‘—è‡ªå·±çš„éšŠä¼ã€‚\n");
 
         set("int", 30);
         set("str", 30 + random(20));
@@ -101,7 +101,7 @@ int do_kill(string arg)
 
         if (this_object()->id(arg))
         {
-                write("ÓĞÃ»ÓĞ¸ã´í£¬ÄÇÊÇ¾ü¶ÓÒ®£¬»¹²»¿ìÅÜ£¿£¡\n");
+                write("æœ‰æ²’æœ‰æéŒ¯ï¼Œé‚£æ˜¯è»éšŠè€¶ï¼Œé‚„ä¸å¿«è·‘ï¼Ÿï¼\n");
                 return 1;
         } else
         if ((sscanf(arg, "%s from %s",what, who) == 2 ||
@@ -109,12 +109,12 @@ int do_kill(string arg)
              sscanf(arg, "%s on %s", what, who) == 2 ||
              sscanf(arg, "%s %s", what, who) == 2) &&
              this_object()->id(who)) {
-                write("ÓĞÃ»ÓĞ¸ã´í£¬ÄÇÊÇ¾ü¶ÓÒ®£¬»¹²»¿ìÅÜ£¿£¡\n");
+                write("æœ‰æ²’æœ‰æéŒ¯ï¼Œé‚£æ˜¯è»éšŠè€¶ï¼Œé‚„ä¸å¿«è·‘ï¼Ÿï¼\n");
                 return 1;
         } else
         if (arg == "roar" || arg == "hou")
         {
-                write("ÓĞÃ»ÓĞ¸ã´í£¬ÄÇÊÇ¾ü¶ÓÒ®£¬»¹²»¿ìÅÜ£¿£¡\n");
+                write("æœ‰æ²’æœ‰æéŒ¯ï¼Œé‚£æ˜¯è»éšŠè€¶ï¼Œé‚„ä¸å¿«è·‘ï¼Ÿï¼\n");
                 return 1;
         }
 
@@ -123,8 +123,8 @@ int do_kill(string arg)
 
 void die()
 {
-        message_vision("$NÂÊÁìµÄËÎ¾ü½«Ê¿¹Ñ²»µĞÖÚ£¬²»ĞÒ" +
-                     HIR "È«¾ü¸²Ã»" NOR "£¡\n", this_object());
+        message_vision("$Nç‡é ˜çš„å®‹è»å°‡å£«å¯¡ä¸æ•µçœ¾ï¼Œä¸å¹¸" +
+                     HIR "å…¨è»è¦†æ²’" NOR "ï¼\n", this_object());
 
         return ::die();
 }

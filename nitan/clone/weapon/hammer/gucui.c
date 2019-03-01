@@ -6,12 +6,12 @@ inherit HAMMER;
 
 void create()
 {
-        set_name("¹Ä´¸", ({"guchui", "hammer"}));
+        set_name("é¼“éŒ˜", ({"guchui", "hammer"}));
         set_weight(200);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
+                set("unit", "å€‹");
         }
         init_hammer(1);
         setup();

@@ -9,14 +9,14 @@ void init()
 
 void create()
 {
-        set_name(HIC "¶¬¹ÏÌÀ" NOR, ({"tang"}));
+        set_name(HIC "å†¬ç“œæ¹¯" NOR, ({"tang"}));
         set_weight(50);
         if (clonep())
                 set_default_object(__FILE__);
         else
         {
-                set("unit", "Íë");
-                set("long", "ÕâÊÇÒ»ÍëÎ¶µÀÏÊÃÀµÄ¶¬¹ÏÌÀ¡£\n");
+                set("unit", "ç¢—");
+                set("long", "é€™æ˜¯ä¸€ç¢—å‘³é“é®®ç¾çš„å†¬ç“œæ¹¯ã€‚\n");
                 set("value", 0);
                 set("drink_remaining", 5);
                 set("drink_supply", 30);
@@ -29,10 +29,10 @@ int do_drink(string arg)
         if ( !this_object()->id(arg) ) return 0;
 
         if ( this_player()->is_busy() )
-                return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É¡£\n");
+                return notify_fail("ä½ ä¸Šä¸€å€‹å‹•ä½œé‚„æ²’æœ‰å®Œæˆã€‚\n");
 
         if( query("water", this_player()) >= this_player()->max_water_capacity() )
-                return notify_fail("ÄãÒÑ¾­ºÈÌ«¶àÁË£¬ÔÙÒ²¹à²»ÏÂÒ»µÎË®ÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“å–å¤ªå¤šäº†ï¼Œå†ä¹ŸçŒä¸ä¸‹ä¸€æ»´æ°´äº†ã€‚\n");
 
         addn("water", query("drink_supply"), this_player());
 
@@ -43,11 +43,11 @@ int do_drink(string arg)
 
         if ( query("drink_remaining") )
         {
-                   message_vision("$NÅõÆğÌÀÍë£¬ÃÀÃÀµÄºÈÁËÒ»¿ÚÏÊÌÀ¡£\n", this_player());
+                   message_vision("$Næ§èµ·æ¹¯ç¢—ï¼Œç¾ç¾çš„å–äº†ä¸€å£é®®æ¹¯ã€‚\n", this_player());
         }
         else 
         { 
-                   message_vision("$NÅõÆğÌÀÍë£¬ºÈ¸ÉÁË×îºóÒ»µÎÏÊÌÀ¡£\n", this_player());
+                   message_vision("$Næ§èµ·æ¹¯ç¢—ï¼Œå–å¹¹äº†æœ€å¾Œä¸€æ»´é®®æ¹¯ã€‚\n", this_player());
                 destruct(this_object());
         }
 

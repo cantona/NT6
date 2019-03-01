@@ -1,15 +1,15 @@
 // This program is a part of NT MudLIB
 
-// ´¦ÀíÇı¶¯³ÌÊ½Æô¶¯Ê±ËùÖ¸¶¨µÄ mudlib ÌØ¶¨Æì±ê
-// ÓÃÀ´ debug... Æ½Ê±ÎŞĞèÔØÈë
+// è™•ç†é©…å‹•ç¨‹å¼å•Ÿå‹•æ™‚æ‰€æŒ‡å®šçš„ mudlib ç‰¹å®šæ——æ¨™
+// ç”¨ä¾† debug... å¹³æ™‚ç„¡éœ€è¼‰å…¥
 void flag( string arg )
 {
         string file, func;
         if( previous_object() ) return;
 
         if( sscanf(arg,"load:%s %s",file,func) )
-                printf( "MASTER: "+file+"'s "+func+"() »Ø´«"+call_other(file, func) );
+                printf( "MASTER: "+file+"'s "+func+"() å›å‚³"+call_other(file, func) );
         else
-                printf( "MASTER: Î´ÖªÆì±ê\n" );
+                printf( "MASTER: æœªçŸ¥æ——æ¨™\n" );
         return;
 }

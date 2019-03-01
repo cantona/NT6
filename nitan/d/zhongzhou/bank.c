@@ -3,11 +3,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Ç®×¯");
+        set("short", "éŒ¢èŽŠ");
         set("long", @LONG
-ÕâÊÇÖÐÖÝ³ÇÄÚÒ»¼ÒÀÏ×ÖºÅÇ®×¯£¬¾ÝËµÕâÀïµÄÐÅÓþºÜºÃ¡£¼¸
-¸ö»ï¼ÆÔÚ¹ñÌ¨ÉÏÃ¦×Å¡£¹ñÌ¨ÉÏ»¹ÓÐÒ»¿éÅÆ×Ó (paizi)£¬ÒòÊÇ¸É
-Ç®µÄÓªÉú£¬ÕâÀïµÄ±£ïÚÉíÊÖ²»·²£¬ÈÃÄã´ò²»µ½Ê²Ã´»µÖ÷Òâ¡£
+é€™æ˜¯ä¸­å·žåŸŽå…§ä¸€å®¶è€å­—è™ŸéŒ¢èŽŠï¼Œæ“šèªªé€™è£¡çš„ä¿¡è­½å¾ˆå¥½ã€‚å¹¾
+å€‹ä¼™è¨ˆåœ¨æ«ƒå°ä¸Šå¿™è‘—ã€‚æ«ƒå°ä¸Šé‚„æœ‰ä¸€å¡Šç‰Œå­ (paizi)ï¼Œå› æ˜¯å¹¹
+éŒ¢çš„ç‡Ÿç”Ÿï¼Œé€™è£¡çš„ä¿é¢èº«æ‰‹ä¸å‡¡ï¼Œè®“ä½ æ‰“ä¸åˆ°ä»€éº¼å£žä¸»æ„ã€‚
 LONG);
         set("no_fight", 1);
         set("no_steal", 1);
@@ -17,20 +17,20 @@ LONG);
                  
         ]));
         set("item_desc", ([
-                "paizi" : WHT "\n\n        ¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n"
-                              "        ¡ù                  ¡ù\n"
-                              "        ¡ù     ¹«Æ½½»Ò×     ¡ù\n"
-                              "        ¡ù                  ¡ù\n"
-                              "        ¡ù  " NOR + HIW "´æÇ®" NOR + WHT "£º " NOR + HIY "deposit" NOR + WHT "  ¡ù\n"
-                              "        ¡ù                  ¡ù\n"
-                              "        ¡ù  " NOR + HIW "È¡Ç®" NOR + WHT "£º " NOR + HIY "withdraw" NOR + WHT " ¡ù\n"
-                              "        ¡ù                  ¡ù\n"
-                              "        ¡ù  " NOR + HIW "¶Ò»»" NOR + WHT "£º " NOR + HIY "convert" NOR + WHT "  ¡ù\n"
-                              "        ¡ù                  ¡ù\n"
-                              "        ¡ù  " NOR + HIW "²éÕÊ" NOR + WHT "£º " NOR + HIY "check" NOR + WHT "    ¡ù\n"
-                              "        ¡ù                  ¡ù\n"
-                              "        ¡ù                  ¡ù\n"
-                              "        ¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n\n\n" NOR,
+                "paizi" : WHT "\n\n        â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»\n"
+                              "        â€»                  â€»\n"
+                              "        â€»     å…¬å¹³äº¤æ˜“     â€»\n"
+                              "        â€»                  â€»\n"
+                              "        â€»  " NOR + HIW "å­˜éŒ¢" NOR + WHT "ï¼š " NOR + HIY "deposit" NOR + WHT "  â€»\n"
+                              "        â€»                  â€»\n"
+                              "        â€»  " NOR + HIW "å–éŒ¢" NOR + WHT "ï¼š " NOR + HIY "withdraw" NOR + WHT " â€»\n"
+                              "        â€»                  â€»\n"
+                              "        â€»  " NOR + HIW "å…Œæ›" NOR + WHT "ï¼š " NOR + HIY "convert" NOR + WHT "  â€»\n"
+                              "        â€»                  â€»\n"
+                              "        â€»  " NOR + HIW "æŸ¥å¸³" NOR + WHT "ï¼š " NOR + HIY "check" NOR + WHT "    â€»\n"
+                              "        â€»                  â€»\n"
+                              "        â€»                  â€»\n"
+                              "        â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»\n\n\n" NOR,
         ]));
 
         set("objects" , ([

@@ -1,24 +1,24 @@
-// jiunang.c  ´ó¾ÆÄÒ
+// jiunang.c  å¤§é…’å›Š
 
 inherit ITEM;
 inherit F_LIQUID;
 
 void create()
 {
-        set_name("´ó¾ÆÄÒ", ({"jiunang", "wineskin", "skin"}));
+        set_name("å¤§é…’å›Š", ({"jiunang", "wineskin", "skin"}));
         set_weight(700);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»Ö»ÊÇ²İÔ­ÄÁÃñµÄ´ó¾ÆÄÒ£¬ÀïÃæ×°ÂúÁËÏãÀ±µÄÂíÄÌ¾Æ¡£\n");
-                set("unit", "Ö»");
+                set("long", "ä¸€åªæ˜¯è‰åŸç‰§æ°‘çš„å¤§é…’å›Šï¼Œè£¡é¢è£æ»¿äº†é¦™è¾£çš„é¦¬å¥¶é…’ã€‚\n");
+                set("unit", "åª");
                 set("value", 250);
                 set("max_liquid", 400);
         }
 
         set("liquid", ([
                 "type": "alcohol",
-                "name": "ÂíÄÌ¾Æ",
+                "name": "é¦¬å¥¶é…’",
                 "remaining": 10,
                 "drunk_apply": 40,
         ]));

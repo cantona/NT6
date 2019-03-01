@@ -1,5 +1,5 @@
 // This program is a part of NT MudLIB
-// longcheng.c Ä½ÈİÁú³Ç
+// longcheng.c æ…•å®¹é¾åŸ
 
 #include <ansi.h>
 
@@ -10,12 +10,12 @@ mixed try_learn_sk();
 
 void create()
 {
-        set_name("Ä½ÈİÁú³Ç", ({ "murong longcheng", "murong", "longcheng" }));
+        set_name("æ…•å®¹é¾åŸ", ({ "murong longcheng", "murong", "longcheng" }));
         set("long", @LONG
-ËûÊÇ¹ÃËÕÄ½ÈİµÄ´«ÈË£¬Ò»ÊÖ´´ÔìÁË¾øÊÀÎä¹¦¶·×ªĞÇÒÆ£¬´Ó¶ø
-Ê¹Ä½Èİ¼ÒõÒÉíÎªÎäÁÖÊÀ¼ÒµØÎ»¡£
+ä»–æ˜¯å§‘è˜‡æ…•å®¹çš„å‚³äººï¼Œä¸€æ‰‹å‰µé€ äº†çµ•ä¸–æ­¦åŠŸé¬¥è½‰æ˜Ÿç§»ï¼Œå¾è€Œ
+ä½¿æ…•å®¹å®¶èº‹èº«ç‚ºæ­¦æ—ä¸–å®¶åœ°ä½ã€‚
 LONG );
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("age", 54);
         set("attitude", "peaceful");
 
@@ -68,15 +68,15 @@ LONG );
         prepare_skill("cuff", "qixing-quan");
 
         set("inquiry", ([
-                "¾øÕĞ"   : (: ask_me :),
-                "¾ø¼¼"   : (: ask_me :),
-                "·çÓê½»¼Ó": (: ask_me :),
+                "çµ•æ‹›"   : (: ask_me :),
+                "çµ•æŠ€"   : (: ask_me :),
+                "é¢¨é›¨äº¤åŠ ": (: ask_me :),
         ]));
 
-        create_family("Ä½ÈİÊÀ¼Ò", 12, "´«ÈË");
+        create_family("æ…•å®¹ä¸–å®¶", 12, "å‚³äºº");
         set("chat_chance", 1);
         set("chat_msg",({
-                "Ä½ÈİÁú³ÇµÍÍ·²»Óï¡£\n",
+                "æ…•å®¹é¾åŸä½é ­ä¸èªã€‚\n",
         }));
 
         setup();
@@ -89,10 +89,10 @@ void attempt_apprentice(object ob)
 {
         if( query("family/family_name", ob) == query("family/family_name") )
         {
-                command("say ÎÒÔç¾Í²»ÊÕÍ½µÜÁË£¬²»¹ıÄãÒ²ÊÇÎÒÃÇ"
-                        "Ä½Èİ¼ÒµÄ´«ÈË£¬ÎÒ¾Í´«ÄãÒ»Ì×µ¶·¨(longcheng-shendao)°É£¡");
+                command("say æˆ‘æ—©å°±ä¸æ”¶å¾’å¼Ÿäº†ï¼Œä¸éä½ ä¹Ÿæ˜¯æˆ‘å€‘"
+                        "æ…•å®¹å®¶çš„å‚³äººï¼Œæˆ‘å°±å‚³ä½ ä¸€å¥—åˆ€æ³•(longcheng-shendao)å§ï¼");
         } else
-                command("say ÎÒ²»ÊÕÍ½µÜ¡£");
+                command("say æˆ‘ä¸æ”¶å¾’å¼Ÿã€‚");
 }
 
 int recognize_apprentice(object ob)
@@ -106,21 +106,21 @@ mixed ask_me()
 
         me = this_player();
         if( query("can_perform/longcheng-shendao/feng", me) )
-                return "ºÃºÃÁ·¹¦°É£¡¹â¸´´óÑà¾Í¿¿ÄãÃÇÕâÅúÈËÀ²£¡£¡";
+                return "å¥½å¥½ç·´åŠŸå§ï¼å…‰å¾©å¤§ç‡•å°±é ä½ å€‘é€™æ‰¹äººå•¦ï¼ï¼";
 
         if( query("family/family_name", me) != query("family/family_name") )
-                return "ÄãÊÇÄÄ¶ùÀ´µÄ£¿ÎÒ¿É²»ÈÏÊ¶Äã¡£";
+                return "ä½ æ˜¯å“ªå…’ä¾†çš„ï¼Ÿæˆ‘å¯ä¸èªè­˜ä½ ã€‚";
 
         if (me->query_skill("longcheng-shendao", 1) < 120)
-                return "ÏëÑ§·çÓê½»¼ÓÊ×ÏÈ¿ÉµÃÁ·ºÃÎÒµÄÁú³ÇÉñµ¶°¡£¡";
+                return "æƒ³å­¸é¢¨é›¨äº¤åŠ é¦–å…ˆå¯å¾—ç·´å¥½æˆ‘çš„é¾åŸç¥åˆ€å•Šï¼";
 
-        message_vision(HIC "$n" HIC "»º»ºµÄÃş³öÒ»¸ù´ø×Ó£¬ÇáÇáÒ»¶¶£¬Á¢¿Ì"
-                       "±äµÃ±ÊÖ±£¬Ëæ¼´Åü³ö£¬$N" HIC "Ö»ÄÜ¿´µÃµ½ĞÇ¹âµãµã¡£\n$n"
-                       HIC "ºöµÄÊÕ»Øµ¶ÊÆ£¬ÂıÂıµÄÓÖÅü³öÎåµ¶£¬$N"
-                       HIC "¿´ÁË²»½û»ĞÈ»´óÎò£¡\n" NOR,
+        message_vision(HIC "$n" HIC "ç·©ç·©çš„æ‘¸å‡ºä¸€æ ¹å¸¶å­ï¼Œè¼•è¼•ä¸€æŠ–ï¼Œç«‹åˆ»"
+                       "è®Šå¾—ç­†ç›´ï¼Œéš¨å³åŠˆå‡ºï¼Œ$N" HIC "åªèƒ½çœ‹å¾—åˆ°æ˜Ÿå…‰é»é»ã€‚\n$n"
+                       HIC "å¿½çš„æ”¶å›åˆ€å‹¢ï¼Œæ…¢æ…¢çš„åˆåŠˆå‡ºäº”åˆ€ï¼Œ$N"
+                       HIC "çœ‹äº†ä¸ç¦æç„¶å¤§æ‚Ÿï¼\n" NOR,
                        me, this_object());
-        command("say ÖªµÀÁË°É£¿");
-        tell_object(me, HIG "ÄãÑ§»áÁË·çÓê½»¼Ó¡£\n" NOR);
+        command("say çŸ¥é“äº†å§ï¼Ÿ");
+        tell_object(me, HIG "ä½ å­¸æœƒäº†é¢¨é›¨äº¤åŠ ã€‚\n" NOR);
         if (me->can_improve_skill("blade"))
                 me->improve_skill("blade", 160000);
         set("can_perform/longcheng-shendao/feng", 1, me);

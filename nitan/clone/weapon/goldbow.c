@@ -6,18 +6,18 @@ inherit __DIR__"bow";
 
 void create()
 {
-        set_name(HIY "µã½ğÅÌÁú¹­" NOR, ({ "panlong gong", "gong", "panlong", "bow" }));
+        set_name(HIY "é»é‡‘ç›¤é¾å¼“" NOR, ({ "panlong gong", "gong", "panlong", "bow" }));
         set_weight(5000);
         if (clonep())
                 set_default_object(__FILE__);
         else
         {
-                set("unit", "ÕÅ");
-                set("long", HIY "ÕâÊÇÒ»ÕÅ½ğÍ­ËùÖı£¬ÅÌÁúµñÎÆ£¬ÖÆ×÷·Ç³£¾«Ï¸µÄ³¤¹­¡£\n" NOR);
-                set("no_sell", "ÎÒµÄÌì¡­¿¤Íõ¸®µÄ¶«Î÷ÄãÒ²¸ÒÄÃÀ´Âô£¿");
+                set("unit", "å¼µ");
+                set("long", HIY "é€™æ˜¯ä¸€å¼µé‡‘éŠ…æ‰€é‘„ï¼Œç›¤é¾é›•ç´‹ï¼Œåˆ¶ä½œéå¸¸ç²¾ç´°çš„é•·å¼“ã€‚\n" NOR);
+                set("no_sell", "æˆ‘çš„å¤©â€¦éƒ¡ç‹åºœçš„æ±è¥¿ä½ ä¹Ÿæ•¢æ‹¿ä¾†è³£ï¼Ÿ");
                 set("value", 80000);
-                set("power", 250000);   // ¹¥»÷ÍşÁ¦
-                set("accuracy", 120);   // ×¼È·¶È120%
+                set("power", 250000);   // æ”»æ“Šå¨åŠ›
+                set("accuracy", 120);   // æº–ç¢ºåº¦120%
         }
         setup();
 }

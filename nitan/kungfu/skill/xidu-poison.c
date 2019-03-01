@@ -1,4 +1,4 @@
-// xidu-poison.c Î÷¶¾¶¾¼¼
+// xidu-poison.c è¥¿æ¯’æ¯’æŠ€
 // Last Modified by winder on Mar. 10 2000
 // Modified by Java Mar.1998
 
@@ -17,28 +17,28 @@ int valid_learn(object me)
 {
         mapping myfam;
         myfam=query("family", me);
-        if (!myfam || (myfam["family_name"] != "°×ÍÕÉ½ÅÉ"))
-                return notify_fail("Äã²»ÊÇ°×ÍÕÉ½µÜ×Ó£¬²»ÄÜĞŞÁ¶Î÷¶¾¶¾¼¼¡£\n");
+        if (!myfam || (myfam["family_name"] != "ç™½é§å±±æ´¾"))
+                return notify_fail("ä½ ä¸æ˜¯ç™½é§å±±å¼Ÿå­ï¼Œä¸èƒ½ä¿®ç…‰è¥¿æ¯’æ¯’æŠ€ã€‚\n");
         if( query("shen", me) <= 0 )
-          return notify_fail("ĞŞÁ¶Î÷¶¾¶¾¼¼ÒªĞÄºİÊÖÀ±£¬¼é¶ñ´õ¶¾£¬ÄãµÄ±íÏÖ»¹²»¹»£¡\n");
+          return notify_fail("ä¿®ç…‰è¥¿æ¯’æ¯’æŠ€è¦å¿ƒç‹ æ‰‹è¾£ï¼Œå§¦æƒ¡æ­¹æ¯’ï¼Œä½ çš„è¡¨ç¾é‚„ä¸å¤ ï¼\n");
         return 1;
 }
 
 int practice_skill(object me)
 {
-        return notify_fail("Î÷¶¾¶¾¼¼Ö»ÄÜ¿¿Ñ§Ï°À´Ìá¸ß¡£\n");
+        return notify_fail("è¥¿æ¯’æ¯’æŠ€åªèƒ½é å­¸ç¿’ä¾†æé«˜ã€‚\n");
 }
 int help(object me)
 {
-        write(HIC"\nÎ÷¶¾¶¾¼¼£º"NOR"\n");
+        write(HIC"\nè¥¿æ¯’æ¯’æŠ€ï¼š"NOR"\n");
         write(@HELP
 
-    Î÷¶¾µÜ×ÓÏÂ¶¾±Ø¾ßÎä¹¦£¬ÏÂ¶¾µÄĞ§¹ûºÍÎ÷¶¾¶¾¼¼µÄ¸ßµÍÓĞºÜ´ó
-µÄ¹ØÏµ¡£
+    è¥¿æ¯’å¼Ÿå­ä¸‹æ¯’å¿…å…·æ­¦åŠŸï¼Œä¸‹æ¯’çš„æ•ˆæœå’Œè¥¿æ¯’æ¯’æŠ€çš„é«˜ä½æœ‰å¾ˆå¤§
+çš„é—œç³»ã€‚
 
-        Ñ§Ï°ÒªÇó£º
-                ÃûÃÅÕıÅÉµÄĞÄ·¨²»ÄÜÑ§
-                ·Ç°×ÍÕÉ½ÅÉµÜ×Ó²»ÄÜÑ§
+        å­¸ç¿’è¦æ±‚ï¼š
+                åé–€æ­£æ´¾çš„å¿ƒæ³•ä¸èƒ½å­¸
+                éç™½é§å±±æ´¾å¼Ÿå­ä¸èƒ½å­¸
 HELP
         );
         return 1;

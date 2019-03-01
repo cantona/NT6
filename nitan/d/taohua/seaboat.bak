@@ -12,12 +12,12 @@ void reset();
 
 void create()
 {
-        set("short", "º£´¬");
+        set("short", "æµ·èˆ¹");
         set("long", @LONG
-ÕâÊÇÒ»ËÒºÜÆÕÍ¨µÄÓæ´¬£¬¼¸ÃûË®ÊÖ°ÚÅª×Å·«Åñ£¬¸İ½°£¬ÉşË÷£¬ºÍ´¬Î²
-Ä¾¶æ¡£ÒÔÏÂÖ¸ÁîÓĞÖúÓÚÄãµÄº½ĞĞ£º(1)start£¬(2)stop£¬(3)go£¬(4)looko
-ut£¬(5)locate¡£[34mËÄÖÜÊÇÁÉÀ«µÄº£Ãæ£¬º£·çÔÚÄã¶ú±ßÇáÇá´µ¹ı£¬º£ÀË
-Ò»¸ö½ÓÒ»¸öÏò´¬ÆÃ´ò¹ıÀ´¡£[2£»37£»0m
+é€™æ˜¯ä¸€è‰˜å¾ˆæ™®é€šçš„æ¼èˆ¹ï¼Œå¹¾åæ°´æ‰‹æ“ºå¼„è‘—å¸†ç¯·ï¼Œç¯™æ§³ï¼Œç¹©ç´¢ï¼Œå’Œèˆ¹å°¾
+æœ¨èˆµã€‚ä»¥ä¸‹æŒ‡ä»¤æœ‰åŠ©äºä½ çš„èˆªè¡Œï¼š(1)startï¼Œ(2)stopï¼Œ(3)goï¼Œ(4)looko
+utï¼Œ(5)locateã€‚[34må››å‘¨æ˜¯é¼é—Šçš„æµ·é¢ï¼Œæµ·é¢¨åœ¨ä½ è€³é‚Šè¼•è¼•å¹éï¼Œæµ·æµª
+ä¸€å€‹æ¥ä¸€å€‹å‘èˆ¹æ½‘æ‰“éä¾†ã€‚[2ï¼›37ï¼›0m
 LONG );
         set("invalid_startroom", 1);
 
@@ -31,14 +31,14 @@ string long_desc()
 {
         string desc;
 
-        desc ="ÕâÊÇÒ»ËÒºÜÆÕÍ¨µÄÓæ´¬£¬¼¸ÃûË®ÊÖ°ÚÅª×Å·«Åñ£¬¸İ½°£¬ÉşË÷£¬ºÍ´¬Î²Ä¾¶æ¡£\n";
-        desc += "ÒÔÏÂÖ¸ÁîÓĞÖúÓÚÄãµÄº½ĞĞ£º(1)start, (2)stop, (3)go, (4)lookout, (5)locate¡£\n\n";
+        desc ="é€™æ˜¯ä¸€è‰˜å¾ˆæ™®é€šçš„æ¼èˆ¹ï¼Œå¹¾åæ°´æ‰‹æ“ºå¼„è‘—å¸†ç¯·ï¼Œç¯™æ§³ï¼Œç¹©ç´¢ï¼Œå’Œèˆ¹å°¾æœ¨èˆµã€‚\n";
+        desc += "ä»¥ä¸‹æŒ‡ä»¤æœ‰åŠ©äºä½ çš„èˆªè¡Œï¼š(1)start, (2)stop, (3)go, (4)lookout, (5)locateã€‚\n\n";
 
         if( !query("exits/out") )
                 switch((int)query_temp("navigate/weather")) {
-                        case 1: desc += BLU"Ìì¿ÕÖĞÍ®ÔÆÃÜ²¼£¬Ö»ÓĞ¼¸Ö»º£Å¸»¹ÔÚ·ÜÁ¦Õ¹³á£¬º£´¬×óÓÒÒ¡»Î²»ÒÑ£¬Äã¸Ğµ½ÓĞ\nµãÁ¢×ã²»ÎÈ¡£\n"NOR; break;
-                        case 2: desc += BLU"º£ÃæĞÚÓ¿ÅìÅÈ£¬¼¸ÕÉ¸ßµÄ¾ŞÀËÅÅÉ½µ¹º£ËÆµÃÑ¹À´£¬ËæÊ±¶¼ÓĞ¿ÉÄÜ½«´¬ÏÆ·­£¬Äã\nÊ±¶ø²»µÃ²»½ô½ô±§×¡´¬¸Ë£¬ÒÔÃâÂäº£¡£\n"NOR; break;
-                        default: desc += BLU"ËÄÖÜÊÇÁÉÀ«µÄº£Ãæ£¬º£·çÔÚÄã¶ú±ßÇáÇá´µ¹ı£¬º£ÀËÒ»¸ö½ÓÒ»¸öÏò´¬ÆÃ´ò¹ıÀ´¡£\n"NOR;  break;
+                        case 1: desc += BLU"å¤©ç©ºä¸­å½¤é›²å¯†å¸ƒï¼Œåªæœ‰å¹¾åªæµ·é·—é‚„åœ¨å¥®åŠ›å±•ç¿…ï¼Œæµ·èˆ¹å·¦å³æ–æ™ƒä¸å·²ï¼Œä½ æ„Ÿåˆ°æœ‰\né»ç«‹è¶³ä¸ç©©ã€‚\n"NOR; break;
+                        case 2: desc += BLU"æµ·é¢æ´¶æ¹§æ¾æ¹ƒï¼Œå¹¾ä¸ˆé«˜çš„å·¨æµªæ’å±±å€’æµ·ä¼¼å¾—å£“ä¾†ï¼Œéš¨æ™‚éƒ½æœ‰å¯èƒ½å°‡èˆ¹æ€ç¿»ï¼Œä½ \næ™‚è€Œä¸å¾—ä¸ç·Šç·ŠæŠ±ä½èˆ¹æ¡¿ï¼Œä»¥å…è½æµ·ã€‚\n"NOR; break;
+                        default: desc += BLU"å››å‘¨æ˜¯é¼é—Šçš„æµ·é¢ï¼Œæµ·é¢¨åœ¨ä½ è€³é‚Šè¼•è¼•å¹éï¼Œæµ·æµªä¸€å€‹æ¥ä¸€å€‹å‘èˆ¹æ½‘æ‰“éä¾†ã€‚\n"NOR;  break;
                 }
         return desc;
 }
@@ -64,33 +64,33 @@ int do_start()
 
         inv = filter_array(all_inventory(this_object()), "is_owner", this_object(), me);
         if( sizeof(inv) > 0 )
-                return notify_fail("³¤ÕâÃ´´óÁ¬Ò»µã½­ºş¹æ¾Ø¶¼²»¶®£¿\n");
+                return notify_fail("é•·é€™éº¼å¤§é€£ä¸€é»æ±Ÿæ¹–è¦çŸ©éƒ½ä¸æ‡‚ï¼Ÿ\n");
 
         if( !query("exits/out") )
-                return notify_fail("´¬ÒÑ¾­³öº£ÁË¡£\n");
+                return notify_fail("èˆ¹å·²ç¶“å‡ºæµ·äº†ã€‚\n");
 
         if( !(shipside = find_object(query("exits/out"))) )
                 shipside = load_object(query("exits/out"));
 
         switch(query("short", shipside)){
-                case "ÖÛÉ½":
+                case "èˆŸå±±":
                         set_temp("navigate/locx", 0);
                         set_temp("navigate/locy", 0);
                         break;
-                case "¸ÛÍå":
+                case "æ¸¯ç£":
                         set_temp("navigate/locx", 35);
                         set_temp("navigate/locy", 35);
                         break;
-                case "º£Ì²":
+                case "æµ·ç˜":
                         set_temp("navigate/locx", 35);
                         set_temp("navigate/locy", 35);
                         break;
         }
 
-        message("vision", "Óæ´¬ÀëÁË°¶£¬Ê»ÏòÃ£Ã£µÄ´óº£¡£\n", shipside);
+        message("vision", "æ¼èˆ¹é›¢äº†å²¸ï¼Œé§›å‘èŒ«èŒ«çš„å¤§æµ·ã€‚\n", shipside);
         delete("exits/enter", shipside);
 
-        message_vision("$N´óºÈÒ»Éù¡°¿ª´¬¡±£¬ÓÚÊÇ´¬±ãÀëÁË°¶¡£\n", me);
+        message_vision("$Nå¤§å–ä¸€è²â€œé–‹èˆ¹â€ï¼Œäºæ˜¯èˆ¹ä¾¿é›¢äº†å²¸ã€‚\n", me);
         delete("exits/out");
 
         call_out("shipweather", 1);
@@ -108,14 +108,14 @@ int navigate()
 
         if( !random(40) && !query("exist/out")
         &&  query_temp("navigate/weather") == 2 ) {
-                tell_room(this_object(), HIR"\nÍ»È»¼ä¿ñ·ç´ó×÷£¬²»Ò»»á¶ù´¬¾Í·­ÁË£¡\n\n"NOR);
+                tell_room(this_object(), HIR"\nçªç„¶é–“ç‹‚é¢¨å¤§ä½œï¼Œä¸ä¸€æœƒå…’èˆ¹å°±ç¿»äº†ï¼\n\n"NOR);
                 do_drop();
                 return 1;
         }
 
         if( query_temp("navigate/locx") > 100 + random(50)
         || query_temp("navigate/locy") > 100 + random(50) ){
-                tell_room(this_object(), HIR"\nÍ»È»¼ä¿ñ·ç´ó×÷£¬²»Ò»»á¶ù´¬¾Í·­ÁË£¡\n\n"NOR);
+                tell_room(this_object(), HIR"\nçªç„¶é–“ç‹‚é¢¨å¤§ä½œï¼Œä¸ä¸€æœƒå…’èˆ¹å°±ç¿»äº†ï¼\n\n"NOR);
                 do_drop();
                 return 1;
         }
@@ -124,11 +124,11 @@ int navigate()
                 if( !random(40) ) {
                         addn_temp("navigate/wait", 1);
                         if( query_temp("navigate/wait") > 5 ) {
-                                tell_room(this_object(), "´¬·òÃÇ°Ñ´ó¼Ò¶¼ÈÓ½øÁËº£Àï¡£\n");
+                                tell_room(this_object(), "èˆ¹å¤«å€‘æŠŠå¤§å®¶éƒ½æ‰”é€²äº†æµ·è£¡ã€‚\n");
                                 do_drop();
                                 return 1;
                         }
-                        tell_room(this_object(),"Ë®ÊÖÃÇÕıµÈ×ÅÄãÏÂÁîÆôº½£®\n");
+                        tell_room(this_object(),"æ°´æ‰‹å€‘æ­£ç­‰è‘—ä½ ä¸‹ä»¤å•Ÿèˆªï¼\n");
                 }                        
                 call_out("navigate", 1);
                 return 1;
@@ -136,16 +136,16 @@ int navigate()
 
         step = 1 + random(2);
         switch(dir) {
-                case "¶«":
+                case "æ±":
                         addn_temp("navigate/locx", step);
                         break;
-                case "ÄÏ":
+                case "å—":
                         addn_temp("navigate/locy", -step);
                         break;
-                case "Î÷":
+                case "è¥¿":
                         addn_temp("navigate/locx", -step);
                         break;
-                case "±±":
+                case "åŒ—":
                         addn_temp("navigate/locy", step);
                         break;
                 default:
@@ -155,7 +155,7 @@ int navigate()
 
         locx = query_temp("navigate/locx");
         if( locx < 0 ) {
-                tell_room(this_object(),"ÄãÖ»¾õ½ÅÏÂÒ»³Á£¬´¬ËÆºõÒÑ¾­Åöµ½ÁËÂ½µØ¡£\n");
+                tell_room(this_object(),"ä½ åªè¦ºè…³ä¸‹ä¸€æ²‰ï¼Œèˆ¹ä¼¼ä¹å·²ç¶“ç¢°åˆ°äº†é™¸åœ°ã€‚\n");
                 set("exits/out", __DIR__"zhoushan");
 
                 delete_temp("navigate");
@@ -163,14 +163,14 @@ int navigate()
 
                 dest = find_object(__DIR__"zhoushan");
                 set("exits/enter", __DIR__"seaboat", dest);
-                message("vision", "Ò»ÌõÓæ´¬Ê»ÁË¹ıÀ´¡£\n", dest);
+                message("vision", "ä¸€æ¢æ¼èˆ¹é§›äº†éä¾†ã€‚\n", dest);
                 return 1;
         }
 
         locy = query_temp("navigate/locy");
         if( locx >= 38 && locx <= 43 
         &&  locy >= 38 && locy <=43 ) {
-                tell_room(this_object(),"´¬·òËµ£º¡°ÌÒ»¨µºµ½À²£¬¿ìÉÏ°¶°É£¬ÎÒ¿É²»Ô¸ÒâÔÚÕâ¹íµØ·½¶à´ı£¡¡±¡£\n");
+                tell_room(this_object(),"èˆ¹å¤«èªªï¼šâ€œæ¡ƒèŠ±å³¶åˆ°å•¦ï¼Œå¿«ä¸Šå²¸å§ï¼Œæˆ‘å¯ä¸é¡˜æ„åœ¨é€™é¬¼åœ°æ–¹å¤šå¾…ï¼â€ã€‚\n");
                 set("exits/out", __DIR__"haitan");
 
                 delete_temp("navigate");
@@ -178,13 +178,13 @@ int navigate()
 
                   dest = find_object(__DIR__"haitan");
 //                dest->set("exits/enter", __DIR__"seaboat");
-//                message("vision", "Ò»ÌõÓæ´¬Ê»ÁË¹ıÀ´¡£\n", dest);
-                tell_room(dest, "Ò»ÌõÓæ´¬Ê»ÁË¹ıÀ´¡£\n");
+//                message("vision", "ä¸€æ¢æ¼èˆ¹é§›äº†éä¾†ã€‚\n", dest);
+                tell_room(dest, "ä¸€æ¢æ¼èˆ¹é§›äº†éä¾†ã€‚\n");
                 return 1;
         }
 
         if( !random(3) )
-                tell_room(this_object(), "´¬ÕıÍù" + dir + "·½ÏòÇ°½ø¡£\n");
+                tell_room(this_object(), "èˆ¹æ­£å¾€" + dir + "æ–¹å‘å‰é€²ã€‚\n");
         call_out("navigate", 1);
 
         return 1;
@@ -197,7 +197,7 @@ int do_go(string arg)
         mixed inv;
 
         if( query("exits/out") )
-                return notify_fail("´¬»¹Ã»¿ªÄØ¡£\n");
+                return notify_fail("èˆ¹é‚„æ²’é–‹å‘¢ã€‚\n");
 
         if( !query_temp("navigate/control") ) {
                 call_out("shipweather", 1);
@@ -207,31 +207,31 @@ int do_go(string arg)
 
         inv = filter_array(all_inventory(this_object()), "is_owner", this_object(), me);
         if( sizeof(inv) > 0 )
-                return notify_fail("³¤ÕâÃ´´óÁ¬Ò»µã½­ºş¹æ¾Ø¶¼²»¶®£¿\n");
+                return notify_fail("é•·é€™éº¼å¤§é€£ä¸€é»æ±Ÿæ¹–è¦çŸ©éƒ½ä¸æ‡‚ï¼Ÿ\n");
 
         switch(arg) {
                 case "e":
                 case "east": 
-                        dir = "¶«";
+                        dir = "æ±";
                         break;
                 case "s": 
                 case "south": 
-                        dir = "ÄÏ";
+                        dir = "å—";
                         break;
                 case "w": 
                 case "west": 
-                        dir = "Î÷";
+                        dir = "è¥¿";
                         break;
                 case "n": 
                 case "north": 
-                        dir = "±±";
+                        dir = "åŒ—";
                         break;
                 default:
-                        return notify_fail("ÄãÒª´¬ÍùÄÄ¸ö·½Ïò¿ª£¿\n");
+                        return notify_fail("ä½ è¦èˆ¹å¾€å“ªå€‹æ–¹å‘é–‹ï¼Ÿ\n");
         }
 
         set_temp("navigate/dir", dir);
-        message_vision("$N¶Ô´¬·òÊ¾Òâ³¯" + dir + "¿ª¡£\n", me);
+        message_vision("$Nå°èˆ¹å¤«ç¤ºæ„æœ" + dir + "é–‹ã€‚\n", me);
         return 1;
 }
 
@@ -242,12 +242,12 @@ int do_stop()
 
         inv = filter_array(all_inventory(this_object()), "is_owner", this_object(), me);
         if( sizeof(inv) > 0 )
-                return notify_fail("³¤ÕâÃ´´óÁ¬Ò»µã½­ºş¹æ¾Ø¶¼²»¶®£¿\n");
+                return notify_fail("é•·é€™éº¼å¤§é€£ä¸€é»æ±Ÿæ¹–è¦çŸ©éƒ½ä¸æ‡‚ï¼Ÿ\n");
 
         if( !query_temp("navigate/dir") )
-                return notify_fail("´¬ÒÑ¾­Í£ÁË¡£\n");
+                return notify_fail("èˆ¹å·²ç¶“åœäº†ã€‚\n");
 
-        message_vision("$N½Ğ´¬·òÃÇ°Ñ´¬Í£Ò»Í£¡£\n", me);
+        message_vision("$Nå«èˆ¹å¤«å€‘æŠŠèˆ¹åœä¸€åœã€‚\n", me);
         delete_temp("navigate/dir");
 
         return 1;
@@ -259,19 +259,19 @@ int do_lookout()
         int locx, locy;
 
         if( query("exits/out") ) {
-                tell_object(this_player(), "´¬»¹Ã»¿ªÄØ¡£\n");
+                tell_object(this_player(), "èˆ¹é‚„æ²’é–‹å‘¢ã€‚\n");
                 return 1;
         }
 
         locx = (int)query_temp("navigate/locx");
 
         if( locx < 0 ) {
-                tell_object(this_player(), "ÄãÒÑ¾­ÔÚ´óÂ½°¶±ßÁË¡£\n");
+                tell_object(this_player(), "ä½ å·²ç¶“åœ¨å¤§é™¸å²¸é‚Šäº†ã€‚\n");
                 return 1;
         }
 
         if( locx < 6 ) {
-                tell_object(this_player(), "Äã¼«Ä¿Ô¶Ì÷£¬·¢ÏÖÎ÷Ãæ²»Ô¶´¦¾ÍÊÇ´óÂ½¡£\n");
+                tell_object(this_player(), "ä½ æ¥µç›®é çœºï¼Œç™¼ç¾è¥¿é¢ä¸é è™•å°±æ˜¯å¤§é™¸ã€‚\n");
                 return 1;
         }
 
@@ -279,30 +279,30 @@ int do_lookout()
 
         if( locx >= 38 && locx <= 43
         && locy >=38 && locy >= 43 ) {
-                tell_object(this_player(), "ÄãÒÑ¾­ÔÚÌÒ»¨µº°¶±ßÁË¡£\n");
+                tell_object(this_player(), "ä½ å·²ç¶“åœ¨æ¡ƒèŠ±å³¶å²¸é‚Šäº†ã€‚\n");
                 return 1;
         }
 
         if( (locy > 20 && locy < 40) && (locx > 20 && locx < 40) )
-                dir = "¶«±±";
+                dir = "æ±åŒ—";
         else if( (locy > 20 && locy < 40) && locx == 40 )
-                dir = "±±";
+                dir = "åŒ—";
         else if( (locy > 20 && locy < 40) && (locx > 40 && locx < 60) )
-                dir = "Î÷±±";
+                dir = "è¥¿åŒ—";
         else if( locy == 40 && (locx > 20 && locx < 40) )
-                dir = "¶«";
+                dir = "æ±";
         else if( locy == 40 && (locx > 40 && locx < 60) )
-                dir = "Î÷";
+                dir = "è¥¿";
         else if( (locy > 40 && locy < 60) && (locx > 20 && locx < 40) )
-                dir = "¶«ÄÏ";
+                dir = "æ±å—";
         else if( (locy > 40 && locy < 60) && locx == 40 )
-                dir = "ÄÏ";
+                dir = "å—";
         else if( (locy > 40 && locy < 60) && (locx > 40 && locx < 60) )
-                dir = "Î÷ÄÏ";
+                dir = "è¥¿å—";
 
         if( dir )
-                tell_object(this_player(), "Äã¼«Ä¿Ô¶Ì÷£¬·¢ÏÖÌÒ»¨µº¾ÍÔÚ" +dir + "·½Ïò¡£\n");
-        else    tell_object(this_player(), "Äã¼«Ä¿Ô¶Ì÷£¬Ö»¾õ´óº£Ã£Ã£¡£\n");
+                tell_object(this_player(), "ä½ æ¥µç›®é çœºï¼Œç™¼ç¾æ¡ƒèŠ±å³¶å°±åœ¨" +dir + "æ–¹å‘ã€‚\n");
+        else    tell_object(this_player(), "ä½ æ¥µç›®é çœºï¼Œåªè¦ºå¤§æµ·èŒ«èŒ«ã€‚\n");
 
         return 1;
 }
@@ -313,14 +313,14 @@ int do_locate()
         int locx, locy;
 
         if( query("exits/out") ) {
-                tell_object(this_player(), "´¬»¹Ã»¿ªÄØ¡£\n");
+                tell_object(this_player(), "èˆ¹é‚„æ²’é–‹å‘¢ã€‚\n");
                 return 1;
         }
 
         locx = (int)query_temp("navigate/locx");
 
         if( locx < 0 ) {
-                tell_object(this_player(), "ÄãÒÑ¾­ÔÚ´óÂ½°¶±ßÁË¡£\n");
+                tell_object(this_player(), "ä½ å·²ç¶“åœ¨å¤§é™¸å²¸é‚Šäº†ã€‚\n");
                 return 1;
         }
 
@@ -328,7 +328,7 @@ int do_locate()
 
         if( locx >= 38 && locx <= 43 
         && locy >= 38 && locy <=43 ) {
-                tell_object(this_player(), "ÄãÒÑ¾­ÔÚÌÒ»¨µº°¶±ßÁË¡£\n");
+                tell_object(this_player(), "ä½ å·²ç¶“åœ¨æ¡ƒèŠ±å³¶å²¸é‚Šäº†ã€‚\n");
                 return 1;
         }
 
@@ -336,12 +336,12 @@ int do_locate()
         locy = (locy * 9 + random(locy * 2 ))/10;
 
         if( locy > 0 ) 
-                dir = "¶«" + chinese_number(locx) + "º£Á¨" + "±±Ô¼" + chinese_number(locy) + "º£Á¨";
+                dir = "æ±" + chinese_number(locx) + "æµ·å“©" + "åŒ—ç´„" + chinese_number(locy) + "æµ·å“©";
         else if( locy < 0 )
-                dir = "¶«Ô¼" + chinese_number(locx) + "º£Á¨" + "ÄÏÔ¼" + chinese_number(-locy) + "º£Á¨";
-        else    dir = "Õı¶«Ô¼" + chinese_number(locx) + "º£Á¨";
+                dir = "æ±ç´„" + chinese_number(locx) + "æµ·å“©" + "å—ç´„" + chinese_number(-locy) + "æµ·å“©";
+        else    dir = "æ­£æ±ç´„" + chinese_number(locx) + "æµ·å“©";
 
-        tell_object(this_player(), "ÄãÏÖÔÚÔÚÖÛÉ½" + dir + "´¦¡£\n");
+        tell_object(this_player(), "ä½ ç¾åœ¨åœ¨èˆŸå±±" + dir + "è™•ã€‚\n");
 
         return 1;
 }
@@ -401,7 +401,7 @@ void do_drop()
                                 inv[i]->move("/d/taohua/haitan");
                         else    inv[i]->move("/d/taohua/zhoushan");
                         message("vision",
-                        "Äã·¢ÏÖÒ»¸ö»ëÉíË®ÁÜÁÜµÄ¼Ò»ï±»º£Ë®³åÉÏ°¶À´£¬²»ÓÉµÃ×ß½üÒ»¿´£¬Ô­À´ÊÇ"+query("name", inv[i])+"¡£\n",environment(inv[i]),({inv[i]}));
+                        "ä½ ç™¼ç¾ä¸€å€‹æ¸¾èº«æ°´æ·‹æ·‹çš„å®¶ä¼™è¢«æµ·æ°´æ²–ä¸Šå²¸ä¾†ï¼Œä¸ç”±å¾—èµ°è¿‘ä¸€çœ‹ï¼ŒåŸä¾†æ˜¯"+query("name", inv[i])+"ã€‚\n",environment(inv[i]),({inv[i]}));
                 } else  destruct(inv[i]);
         }
 
@@ -420,26 +420,26 @@ void do_ready()
                 shipside = load_object(query("exits/out"));
 
         switch(query("short", shipside)){
-                case "ÖÛÉ½":
+                case "èˆŸå±±":
                         set_temp("navigate/locx", 0);
                         set_temp("navigate/locy", 0);
                         break;
-                case "¸ÛÍå":
+                case "æ¸¯ç£":
                         set_temp("navigate/locx", 35);
                         set_temp("navigate/locy", 35);
                         break;
-                case "º£Ì²":
+                case "æµ·ç˜":
                         set_temp("navigate/locx", 35);
                         set_temp("navigate/locy", 35);
                         break;
         }
 
-        message("vision", "Óæ´¬ÀëÁË°¶£¬Ê»ÏòÃ£Ã£µÄ´óº£¡£\n", shipside);
+        message("vision", "æ¼èˆ¹é›¢äº†å²¸ï¼Œé§›å‘èŒ«èŒ«çš„å¤§æµ·ã€‚\n", shipside);
         delete("exits/enter", shipside);
 
         delete_temp("trigger");
         delete("exits/out");
-        message("vision", "´¬·òÃÇÊÕÃªÑï·«£¬ÓÚÊÇ´¬±ãÀëÁË°¶¡£\n",this_object());
+        message("vision", "èˆ¹å¤«å€‘æ”¶éŒ¨æšå¸†ï¼Œäºæ˜¯èˆ¹ä¾¿é›¢äº†å²¸ã€‚\n",this_object());
 }
 
 void reset()

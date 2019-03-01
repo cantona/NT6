@@ -5,11 +5,11 @@ inherit NPC;
 
 void create()
 {
-        set_name(RED"��ھ���"NOR, ({ "ju man", "snake" }) );
-        set("race", "����");
+        set_name(RED"赤冠巨蟒"NOR, ({ "ju man", "snake" }) );
+        set("race", "爬蛇");
         set("age", 20);
-        set("long", "һֻ��Ȼ������������������ݣ��������������԰��
-����Ҫһ�ڰ������¡�\n");
+        set("long", "一只龐然大物，它眼中噴火，朱冠厲齒，忠心守衛這個果園，
+好象要一口把你吞下。\n");
         set("attitude", "aggressive");
         set("qi", 5000);
         set("max_qi", 5000);
@@ -32,6 +32,6 @@ int hit_ob(object me, object ob, int damage)
                 (int)ob->query_condition("snake_poison") < 10 )
         {
                 ob->apply_condition("snake_poison", 40);
-                tell_object(ob, HIG "����ñ�ҧ�еĵط�һ����ľ��\n" NOR );
+                tell_object(ob, HIG "你覺得被咬中的地方一陣麻木！\n" NOR );
         }
 }

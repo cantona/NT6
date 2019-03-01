@@ -5,12 +5,12 @@ inherit ROOM;
 #include <ansi.h>;
 void create()
 {
-        set("short","������");
+        set("short","谷林堂");
         set("long",@LONG
-�ն�����֪���ݣ�Ϊ�����ʦŷ���޶��������á�ȡ��ʫ�䡰���
-���񻣬���ֺϷ��衱�С����֡�����Ϊ�������������á��ң�Ϊ����
-���顣
-�ꡣ
+蘇東坡徙知揚州，為紀念恩師歐陽修而建谷林堂。取其詩句“深谷
+下窈窕，高林合扶疏”中“谷林”二字為堂名。“谷林堂”匾，為方頤
+題書。
+誼。
 LONG );
         set("exits", ([
                 "east"  : __DIR__"daxiongbaodian",

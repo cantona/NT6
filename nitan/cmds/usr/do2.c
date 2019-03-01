@@ -11,10 +11,10 @@ int main(object me, string arg)
         int total_cmds;
 
         if( !arg || arg == "" )
-                return notify_fail("«Î ‰»Î“™¡¨–¯œ¬¥Ôµƒ÷∏¡Ó°£\n");
+                return notify_fail("Ë´ãËº∏ÂÖ•Ë¶ÅÈÄ£Á∫å‰∏ãÈÅîÁöÑÊåá‰ª§„ÄÇ\n");
 
         if( query_temp("do_chain", me) )
-                return notify_fail("œµÕ≥‘⁄¥¶¿Ìƒ„µƒ¥Æ¡¨÷∏¡Ó£°\n");
+                return notify_fail("Á≥ªÁµ±Âú®ËôïÁêÜ‰Ω†ÁöÑ‰∏≤ÈÄ£Êåá‰ª§ÔºÅ\n");
 
         set_temp("do_chain", 1, me);
         foreach( string action in explode(arg, ",") )
@@ -27,7 +27,7 @@ int main(object me, string arg)
                 if( !strsrch(action, "do ") )
                 {
                         delete_temp("do_chain", me);
-                        tell_object(this_object(), "÷∏¡Ó do ÷–≤ªƒ‹‘Ÿ”– do µƒ÷∏¡Ó°£\n");
+                        tell_object(this_object(), "Êåá‰ª§ do ‰∏≠‰∏çËÉΩÂÜçÊúâ do ÁöÑÊåá‰ª§„ÄÇ\n");
                         return 1;
                 }
 
@@ -36,7 +36,7 @@ int main(object me, string arg)
                         if( total_cmds > MAX_DO_COMMANDS && !wizardp(this_object()) )
                         {
                                 delete_temp("do_chain", me);
-                                tell_object(this_object(), "ƒ„≤ªƒ‹“ª¥Œœ¬≥¨π˝ "+MAX_DO_COMMANDS+" ∏ˆ÷∏¡Ó°£\n");
+                                tell_object(this_object(), "‰Ω†‰∏çËÉΩ‰∏ÄÊ¨°‰∏ãË∂ÖÈÅé "+MAX_DO_COMMANDS+" ÂÄãÊåá‰ª§„ÄÇ\n");
                                 return 1;
                         }
                         me->command(me->process_input(action));
@@ -49,13 +49,13 @@ int main(object me, string arg)
 int help(object me)
 {
         write( @HELP
-÷∏¡Ó∏Ò Ω: do <¥Æ¡¨÷∏¡Ó>
+Êåá‰ª§Ê†ºÂºè: do <‰∏≤ÈÄ£Êåá‰ª§>
 
-’‚∏ˆ÷∏¡Óø…“‘»√ƒ„“ª¥Œ∞—“ª¥Æ÷∏¡ÓΩª∏¯À≈∑˛∆˜¥¶¿Ì£¨»Á¥ÀÕ¯¬∑
-∑‚∞¸Ω´¥”∂‡∑‚∞¸±ª—πÀı≥…µ•∑‚∞¸°£
-¥Æ¡¨÷∏¡Ó∑∂¿˝£∫
-(¡˘∑‚∞¸)‘≠ ZMUD ∂‡∑‚∞¸: e;s;s;enter door;kill liu mang;perform cuff.ji
-(“ª∑‚∞¸) π”√ do µ•∑‚∞¸: do e,s,s,enter door,kill liu mang,perform cuff.ji
+ÈÄôÂÄãÊåá‰ª§ÂèØ‰ª•ËÆì‰Ω†‰∏ÄÊ¨°Êää‰∏Ä‰∏≤Êåá‰ª§‰∫§Áµ¶‰º∫ÊúçÂô®ËôïÁêÜÔºåÂ¶ÇÊ≠§Á∂≤Ë∑Ø
+Â∞ÅÂåÖÂ∞áÂæûÂ§öÂ∞ÅÂåÖË¢´Â£ìÁ∏ÆÊàêÂñÆÂ∞ÅÂåÖ„ÄÇ
+‰∏≤ÈÄ£Êåá‰ª§ËåÉ‰æãÔºö
+(ÂÖ≠Â∞ÅÂåÖ)Âéü ZMUD Â§öÂ∞ÅÂåÖ: e;s;s;enter door;kill liu mang;perform cuff.ji
+(‰∏ÄÂ∞ÅÂåÖ)‰ΩøÁî® do ÂñÆÂ∞ÅÂåÖ: do e,s,s,enter door,kill liu mang,perform cuff.ji
 
 HELP );
         MYGIFT_D->check_mygift(me, "newbie_mygift/do");

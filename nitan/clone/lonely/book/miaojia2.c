@@ -4,16 +4,16 @@ inherit ITEM;
 
 void create()
 {
-        set_name(YEL "¡¸Ãç¼Ò½£Æ×¡¹ÏÂ²á" NOR, ({ "miaojia jianpu", "miaojia", "jianpu", "pu", "book" }));
+        set_name(YEL "ã€Œè‹—å®¶åŠè­œã€ä¸‹å†Š" NOR, ({ "miaojia jianpu", "miaojia", "jianpu", "pu", "book" }));
         set_weight(500);
         if (clonep())
                 destruct(this_object());
         else {
-                set("unit", "±¾");
-                set("long", YEL "ÕâÊÇÒ»±¾±¡±¡µÄÊé²á£¬ÊéÆ¤ÒÑÈ»·¢»Æ£¬·â"
-                            "ÃæÉÏĞ´×Å¡¸Ãç¼Ò½£Æ×¡¹ËÄ¸ö×Ö¡£\n" NOR);
+                set("unit", "æœ¬");
+                set("long", YEL "é€™æ˜¯ä¸€æœ¬è–„è–„çš„æ›¸å†Šï¼Œæ›¸çš®å·²ç„¶ç™¼é»ƒï¼Œå°"
+                            "é¢ä¸Šå¯«è‘—ã€Œè‹—å®¶åŠè­œã€å››å€‹å­—ã€‚\n" NOR);
                 set("value", 1);
-                set("no_sell", "¡­Ãç¡­Ãç¼Ò¡­½ğÃæ·ğËûÀÏÈË¼ÒÎÒ¿ÉµÃ×ï²»Æğ¡£");
+                set("no_sell", "â€¦è‹—â€¦è‹—å®¶â€¦é‡‘é¢ä½›ä»–è€äººå®¶æˆ‘å¯å¾—ç½ªä¸èµ·ã€‚");
                 set("material", "paper");
                 set("skill", ([
                         "name" : "sword",

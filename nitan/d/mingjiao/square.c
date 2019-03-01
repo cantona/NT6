@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "´óÔº");
+        set("short", "å¤§é™¢");
         set("long", @LONG
-Äã×ß½øÁËÃ÷½Ì×Ü¶æ¹ã³¡£¬È´·¢ÏÖÕâÀïÈËÉù¶¦·Ğ£¬ÎåÉ¢ÈËÈº¾ÛÓÚ´Ë£¬
-¿´À´ÓĞÒªÊÂ·¢ÉúÁË¡£À´Íù½ÌÖÚ´Ò´ÒÃ¦Ã¦¡£¹ã³¡×óÊ×ÊÇ½ÌÖÚ·¹ÌÃ£»ÓÒÊ×
-¾ÍÊÇ½ÌÖÚÎÅÖ®±äÉ«µÄĞÌÌÃ¡£ÏòÉÏ×ß¾ÍÊÇ¹âÃ÷¶¥Ã÷½Ì×Ü¶æÁË¡£
+ä½ èµ°é€²äº†æ˜æ•™ç¸½èˆµå»£å ´ï¼Œå»ç™¼ç¾é€™è£¡äººè²é¼æ²¸ï¼Œäº”æ•£äººç¾¤èšäºæ­¤ï¼Œ
+çœ‹ä¾†æœ‰è¦äº‹ç™¼ç”Ÿäº†ã€‚ä¾†å¾€æ•™çœ¾åŒ†åŒ†å¿™å¿™ã€‚å»£å ´å·¦é¦–æ˜¯æ•™çœ¾é£¯å ‚ï¼›å³é¦–
+å°±æ˜¯æ•™çœ¾èä¹‹è®Šè‰²çš„åˆ‘å ‚ã€‚å‘ä¸Šèµ°å°±æ˜¯å…‰æ˜é ‚æ˜æ•™ç¸½èˆµäº†ã€‚
 LONG );
         set("exits", ([
                 "west"    : __DIR__"fangtang",
@@ -34,13 +34,13 @@ int valid_leave(object me, string dir)
         mapping mypar;
         me = this_player();
         mypar = (mapping)query("family", me);
-        if ((!mypar || mypar["family_name"]!="Ã÷½Ì") &&
+        if ((!mypar || mypar["family_name"]!="æ˜æ•™") &&
             (dir!="south") &&
             ((objectp(present("peng yinyu", environment(me)))) ||
              (objectp(present("zhang zhong", environment(me)))) ||
              (objectp(present("shuo bude", environment(me)))) ||
              (objectp(present("zhou dian", environment(me))))))
-                 return notify_fail("Ã÷½ÌÎåÉ¢ÈËÀ¹×¡ÄãËµ£º´Ë´¦ÄËÃ÷½Ì"
-                                   "ÖØµØ£¬ÇëÖ¹²½¡£\n");
+                 return notify_fail("æ˜æ•™äº”æ•£äººæ””ä½ä½ èªªï¼šæ­¤è™•ä¹ƒæ˜æ•™"
+                                   "é‡åœ°ï¼Œè«‹æ­¢æ­¥ã€‚\n");
         return ::valid_leave(me, dir);
 }

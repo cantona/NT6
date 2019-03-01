@@ -1,24 +1,24 @@
 #include <ansi.h>
-// Å·ÑôÊÀ¼Ò ÇýÉß
+// æ­é™½ä¸–å®¶ é©…è›‡
 inherit SKILL; 
 string type() { return "knowledge"; } 
 
 int is_fmsk() { return 1; }
-string family_name() { return "Å·ÑôÊÀ¼Ò"; }
+string family_name() { return "æ­é™½ä¸–å®¶"; }
 
 int valid_learn(object me)
 {        
         if (me->query_skill("jiuyin-hamagong", 1) < 150)
-                return notify_fail("Äã¾ÅÒõ¸òó¡¹¦»ðºò²»×ã£¬ÎÞ·¨ÑÐÏ°ÇýÉß¡£\n");        
+                return notify_fail("ä½ ä¹é™°è›¤èŸ†åŠŸç«å€™ä¸è¶³ï¼Œç„¡æ³•ç ”ç¿’é©…è›‡ã€‚\n");        
         
         if( query("family/family_name", me) != family_name() )
-                return notify_fail("ÇýÉßÖ»ÄÜÅ·ÑôÊÀ¼ÒµÜ×Ó·½¿ÉÑÐÏ°¡£\n");
+                return notify_fail("é©…è›‡åªèƒ½æ­é™½ä¸–å®¶å¼Ÿå­æ–¹å¯ç ”ç¿’ã€‚\n");
 
         if (me->query_skill("baituo-michuan", 1) < 150)
-                return notify_fail("Äã°×ÍÕÃØ´«µÈ¼¶²»×ã£¬ÎÞ·¨¼ÌÐøÑÐÏ°ÇýÉß¡£\n");
+                return notify_fail("ä½ ç™½é§ç§˜å‚³ç­‰ç´šä¸è¶³ï¼Œç„¡æ³•ç¹¼çºŒç ”ç¿’é©…è›‡ã€‚\n");
 
         if (me->query_skill("training", 1) < 150)
-                return notify_fail("ÄãÔ¦ÊÞÊõµÈ¼¶²»×ã£¬ÎÞ·¨¼ÌÐøÑÐÏ°ÇýÉß¡£\n");
+                return notify_fail("ä½ é¦­ç¸è¡“ç­‰ç´šä¸è¶³ï¼Œç„¡æ³•ç¹¼çºŒç ”ç¿’é©…è›‡ã€‚\n");
         
         return 1;
 }

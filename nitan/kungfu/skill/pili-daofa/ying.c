@@ -1,4 +1,4 @@
-// ying.c Åùö¨µ¶·¨¡¸µ¶Ó°ÖØÖØ¡¹
+// ying.c éœ¹é‚åˆ€æ³•ã€Œåˆ€å½±é‡é‡ã€
 
 #include <ansi.h>
 #include <combat.h>
@@ -17,34 +17,34 @@ int perform(object me, object target)
 
 
         if (! target || ! me->is_fighting(target))
-                 return notify_fail("¡¸µ¶Ó°ÖØÖØ¡¹Ö»ÄÜÔÚÕ½¶·ÖÐ¶Ô¶ÔÊÖÊ¹ÓÃ¡£\n");
+                 return notify_fail("ã€Œåˆ€å½±é‡é‡ã€åªèƒ½åœ¨æˆ°é¬¥ä¸­å°å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me)) ||
               query("skill_type", weapon) != "blade" )
-                 return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                 return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ã€‚\n");
 
         if ((int)me->query_skill("pili-daofa", 1) < 120)
-                 return notify_fail("ÄãµÄÅùö¨µ¶·¨»ðºò²»¹»£¬ÎÞ·¨Ê©Õ¹¡¸µ¶Ó°ÖØÖØ¡¹¡£\n");
+                 return notify_fail("ä½ çš„éœ¹é‚åˆ€æ³•ç«å€™ä¸å¤ ï¼Œç„¡æ³•æ–½å±•ã€Œåˆ€å½±é‡é‡ã€ã€‚\n");
 
         if( query("neili", me)<120 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬²»ÄÜÊ¹ÓÃ¡¸µ¶Ó°ÖØÖØ¡¹¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼Œä¸èƒ½ä½¿ç”¨ã€Œåˆ€å½±é‡é‡ã€ã€‚\n");
 
-        msg = HIC "$N" HIC "Éí·¨ºö±ä£¬ÊÖÖÐ" + weapon->name() + "»®³öÆ¬Æ¬µ¶Ó°£¬Ïò$n" + HIC
-              "Ò»²ã²ã¾íÈ¥¡£\n" NOR;
+        msg = HIC "$N" HIC "èº«æ³•å¿½è®Šï¼Œæ‰‹ä¸­" + weapon->name() + "åŠƒå‡ºç‰‡ç‰‡åˆ€å½±ï¼Œå‘$n" + HIC
+              "ä¸€å±¤å±¤å·åŽ»ã€‚\n" NOR;
 
         ap = attack_power(me, "blade");
         dp = defense_power(target, "dodge");
 
         if ( ap / 2 + random(ap) > dp || !living(target))
         {
-                msg += HIR "Ö»Ìý$p" HIR "Ò»Éù²Ò½Ð£¬"
-                      "ÉíÉÏ¶ÙÊ±±»¿³µÃÑªÈâÄ£ºý£¬ÏÊÑª±ÀÁ÷£¡\n" NOR;
+                msg += HIR "åªè½$p" HIR "ä¸€è²æ…˜å«ï¼Œ"
+                      "èº«ä¸Šé “æ™‚è¢«ç å¾—è¡€è‚‰æ¨¡ç³Šï¼Œé®®è¡€å´©æµï¼\n" NOR;
                 zhao = 5;
                 count = ap / 15;
         } else
         {
-                msg += CYN "¿ÉÊÇ$p" CYN "·ÜÁ¦¸ñµ²£¬½«$P" CYN
-                       "µÄ¹¥»÷»¯½â¡£\n" NOR;
+                msg += CYN "å¯æ˜¯$p" CYN "å¥®åŠ›æ ¼æ“‹ï¼Œå°‡$P" CYN
+                       "çš„æ”»æ“ŠåŒ–è§£ã€‚\n" NOR;
                 zhao = 0;
                 count = 0;
         }

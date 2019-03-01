@@ -1,4 +1,4 @@
-// /d/shenlong/changlang.c ³¤ÀÈ
+// /d/shenlong/changlang.c é•·å»Š
 // Last Modified by winder on Jul. 12 2002
 
 #include <ansi.h>
@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "³¤ÀÈ");
+        set("short", "é•·å»Š");
         set("long", @LONG
-ÕâÊÇÒ»Ìõ³¤ÀÈ£¬Î÷ÃæÍ¨Ïò´óÌü£¬¶«ÃæÊÇ·å¶¥£¬ÖÜÎ§¹ÒÂúÁËÊ÷Ò¶¡¢Çà
-ÌÙ£¬±ßÉÏÓÐÐí¶àÐ¡Ê¯µÊ¿É¹©ÈËÐÝÏ¢¡£Ò»Ð©µÊ×ÓÉÏÃæÈýÈýÁ½Á½µØ×øÁËÐí¶à
-ÉñÁú½ÌµÄµÜ×Ó£¬ÕýÔÚÆß×ì°ËÉàµØÌ¸ÂÛ×ÅÊ²Ã´¡£
+é€™æ˜¯ä¸€æ¢é•·å»Šï¼Œè¥¿é¢é€šå‘å¤§å»³ï¼Œæ±é¢æ˜¯å³°é ‚ï¼Œå‘¨åœæŽ›æ»¿äº†æ¨¹è‘‰ã€é’
+ç±ï¼Œé‚Šä¸Šæœ‰è¨±å¤šå°çŸ³å‡³å¯ä¾›äººä¼‘æ¯ã€‚ä¸€äº›å‡³å­ä¸Šé¢ä¸‰ä¸‰å…©å…©åœ°åäº†è¨±å¤š
+ç¥žé¾æ•™çš„å¼Ÿå­ï¼Œæ­£åœ¨ä¸ƒå˜´å…«èˆŒåœ°è«‡è«–è‘—ä»€éº¼ã€‚
 LONG
         );
         set("outdoors", "shenlong");

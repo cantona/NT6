@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "������");
+        set("short", "獨尊廳");
         set("long", @LONG
-����ǡ����չ���������������ȫ���Ծ�ʯ���ɣ�ʯ��֮�侹��
-����϶�����˳��档���ڴ������ĸ�ʯ������Ϊ��Ӳ�Ļ���ʯ���ơ�
+這就是「靈鷲宮」獨尊廳。大廳全是以巨石砌成，石塊之間竟無
+半點縫隙，令人稱奇。廳內矗立著四根石柱，皆為堅硬的花崗石所制。
 LONG );
         set("exits", ([
                 "north" : __DIR__"changl15",

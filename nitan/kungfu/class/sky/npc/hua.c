@@ -6,14 +6,14 @@ inherit F_COAGENT;
 
 void create()
 {
-        set_name("»ªÓ¢ÐÛ", ({ "hua yingxiong", "hua", "yingxiong"}));
-        set("long", "Ò»¸ö¿¡ÇÎµÄÖÐÄêÄÐ×Ó£¬ÒÂ×Å³¤ÉÀ£¬Ëû¾ÍÊÇ»ªÓ¢ÐÛ¡£\n"
-                    "´«ËµËûÃü·¸ÌìÉ·¹ÂÐÇ£¬Ò»ÉúÆ¯²´£¬ÂäÓÚÒìµØ¡£¶ûºó\n"
-                    "Ï°µÃÒ»Éí¾ø¼¼£¬¼æÐÞÁ¶¡¸ÖÐ»ª°Á¾ö¡¹£¬´ó°Ü¡¸¶«Ñó\n"
-                    "Õ½Éñ¡¹ÎÞµÐ¡£\n"); 
-        set("nickname", HIW "ÖÐ»ªÓ¢ÐÛ" NOR);
-        set("title", HIY "´ó×ÚÊ¦" NOR);
-        set("gender", "ÄÐÐÔ");
+        set_name("è¯è‹±é›„", ({ "hua yingxiong", "hua", "yingxiong"}));
+        set("long", "ä¸€å€‹ä¿Šä¿çš„ä¸­å¹´ç”·å­ï¼Œè¡£è‘—é•·è¡«ï¼Œä»–å°±æ˜¯è¯è‹±é›„ã€‚\n"
+                    "å‚³èªªä»–å‘½çŠ¯å¤©ç…žå­¤æ˜Ÿï¼Œä¸€ç”Ÿæ¼‚æ³Šï¼Œè½äºŽç•°åœ°ã€‚çˆ¾å¾Œ\n"
+                    "ç¿’å¾—ä¸€èº«çµ•æŠ€ï¼Œå…¼ä¿®ç…‰ã€Œä¸­è¯å‚²æ±ºã€ï¼Œå¤§æ•—ã€Œæ±æ´‹\n"
+                    "æˆ°ç¥žã€ç„¡æ•µã€‚\n"); 
+        set("nickname", HIW "ä¸­è¯è‹±é›„" NOR);
+        set("title", HIY "å¤§å®—å¸«" NOR);
+        set("gender", "ç”·æ€§");
         set("age", 26);
         set("attitude", "friendly");
         set("shen_type", 1);
@@ -91,7 +91,7 @@ void die()
                          if (arrayp(ob->query_team()))
                          {
                                  command("heng");
-                                 command("say Ê¤Ö®²»Îä£¡");
+                                 command("say å‹ä¹‹ä¸æ­¦ï¼");
                                  set("qi", 280000);
                                  set("jing", 60000);
                                  set("neili", 35000);
@@ -109,7 +109,7 @@ void die()
              if (ob->query("sky12/floor") == 3)
              {
                       ob->set("sky12/floor", 4);
-                 command("say ¸óÏÂÇë±ã°É£¡");
+                 command("say é–£ä¸‹è«‹ä¾¿å§ï¼");
              }
         }
 
@@ -125,7 +125,7 @@ void die()
         return;
 }
 
-// ÆøÑªÐ¡ÓÚ1000ÔòËÀÍö£¬±ÜÃâËûÈËÐ­Öú°ïÃ¦×ªÊÀ
+// æ°£è¡€å°äºŽ1000å‰‡æ­»äº¡ï¼Œé¿å…ä»–äººå”åŠ©å¹«å¿™è½‰ä¸–
 void heart_beat()
 {
         if (this_object()->query("qi") < 1000 || this_object()->query("eff_qi") < 1000)

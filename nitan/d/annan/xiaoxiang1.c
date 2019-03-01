@@ -3,10 +3,10 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short","С��");
+  set ("short","小巷");
   set ("long", @LONG
-��������С�ƽʱ�кܶ��Ʀ��å�ۼ������ֻ������������
-�ӣ��Ĳ���������������ڶ���
+這裡是條小巷。平時有很多地痞流氓聚集在這裡。只見這裡人聲嘈
+雜，賭博叫罵的聲音不絕于耳。
 LONG);
 
   set("exits", ([ 

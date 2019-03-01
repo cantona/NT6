@@ -7,10 +7,10 @@ int give_duyao();
 
 void create()
 {
-        set_name("ÌÆ¶¾", ({ "tang du", "tang", "du"}));
+        set_name("å”æ¯’", ({ "tang du", "tang", "du"}));
         set("long", 
-"ÌÆ¶¾xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx¡£\n");
-        set("gender", "ÄĞĞÔ");
+"å”æ¯’xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 25);
         set("class", "tangmen");
         set("attitude", "peaceful");
@@ -54,13 +54,13 @@ void create()
         prepare_skill("hand", "boyun-suowu");
 
         
-        create_family("ÌÆÃÅÊÀ¼Ò", 3, "µÜ×Ó");
+        create_family("å”é–€ä¸–å®¶", 3, "å¼Ÿå­");
 
         set("inquiry", ([
                 "job" : ( : give_job  : ),
-                "¹¤×÷": ( : give_job  : ),
+                "å·¥ä½œ": ( : give_job  : ),
                 "duyao": ( : give_duyao : ),
-                "¶¾Ò©": ( : give_duyao : ),
+                "æ¯’è—¥": ( : give_duyao : ),
         ]));
 
         set("chat_chance_combat", 20);
@@ -90,8 +90,8 @@ int give_job()
         int coun;
 
         string *tar = ({
-                "","òÚò¼","¶¾Ğ«×Ó","ÖñÒ¶Çà","½ğ»·Éß","òóÉß","Ç§Äê¶¾Íõ",
-//                "Ğ«¶¾","Ğ«×Ó¿Ç","Ğ«×ÓÎ²","òóÉß¶¾","òóÉßµ¨","òóÉßÆ¤","ÇàÉß¶¾","ÇàÉßµ¨","ÇàÉßÆ¤","½ğÉß¶¾","½ğÉßµ¨","½ğÉßÆ¤",
+                "","èœˆèš£","æ¯’è å­","ç«¹è‘‰é’","é‡‘ç’°è›‡","è®è›‡","åƒå¹´æ¯’ç‹",
+//                "è æ¯’","è å­æ®¼","è å­å°¾","è®è›‡æ¯’","è®è›‡è†½","è®è›‡çš®","é’è›‡æ¯’","é’è›‡è†½","é’è›‡çš®","é‡‘è›‡æ¯’","é‡‘è›‡è†½","é‡‘è›‡çš®",
         });
 
         me = this_player();
@@ -99,17 +99,17 @@ int give_job()
 
         if( !environment() || base_name(environment()) != query("startroom") )
         {
-                say("ÌÆ¶¾ËµµÀ:¡°ÎÒÏÖÔÚÃ»ĞÄÇé¸øÄãÅÉ»î£¬µÈÎÒ»ØÖÆ¶¾·¿ÔÙËµ°É£¡¡±\n");
+                say("å”æ¯’èªªé“:â€œæˆ‘ç¾åœ¨æ²’å¿ƒæƒ…çµ¦ä½ æ´¾æ´»ï¼Œç­‰æˆ‘å›åˆ¶æ¯’æˆ¿å†èªªå§ï¼â€\n");
                 return 0;
         }
 
         if( !query_temp("tangmen/du", me) )
-                command("say ¡°ÕâÀïÃ»ÓĞ»îÄÜ¸øÄã¸É£¬ÄãÌıË­ËµµÄ£¿¡±");
+                command("say â€œé€™è£¡æ²’æœ‰æ´»èƒ½çµ¦ä½ å¹¹ï¼Œä½ è½èª°èªªçš„ï¼Ÿâ€");
         else
         {
                 if( query_temp("duyao", me) )
                 {
-                        command("say ¡°Äã»¹Ã»ÓĞÍê³É¸Õ²Å¸øÄãµÄÈÎÎñÄØ£¡¡±");
+                        command("say â€œä½ é‚„æ²’æœ‰å®Œæˆå‰›æ‰çµ¦ä½ çš„ä»»å‹™å‘¢ï¼â€");
                         return 1;
                 }
                 coun = 1 + random(sizeof(tar));
@@ -117,7 +117,7 @@ int give_job()
                         coun = ( sizeof(tar) - 1 );
                 targ = tar[coun];
                 printf("%d/%d\n",coun,sizeof(tar));
-                say("ÌÆ¶¾ËµµÀ:¡°ÎÒÕâÀïÕıÈ±Ò»Î¶¶¾Îï£¬¿ìÈ¥¸øÎÒÕÒÒ»Ö»" + targ + "À´°É£¡¡±\n");
+                say("å”æ¯’èªªé“:â€œæˆ‘é€™è£¡æ­£ç¼ºä¸€å‘³æ¯’ç‰©ï¼Œå¿«å»çµ¦æˆ‘æ‰¾ä¸€åª" + targ + "ä¾†å§ï¼â€\n");
                 set_temp("duyao", coun, me);
         }
         return 1;
@@ -130,27 +130,27 @@ int give_duyao()
         
         if ( me->is_busy() )
         {
-                command("say ÄãÕıÃ¦×ÅÄØ£¡\n");
+                command("say ä½ æ­£å¿™è‘—å‘¢ï¼\n");
                 return 1;
         }
 
-        if( query("family/family_name", me) != "ÌÆÃÅÊÀ¼Ò" )
+        if( query("family/family_name", me) != "å”é–€ä¸–å®¶" )
         {
-                command("say Äã²»ÊÇÎÒÌÆÃÅÖĞÈË£¬ÎÒÎŞ·¨¸øÄã¶¾Ò©£¡\n");
+                command("say ä½ ä¸æ˜¯æˆ‘å”é–€ä¸­äººï¼Œæˆ‘ç„¡æ³•çµ¦ä½ æ¯’è—¥ï¼\n");
                 return 1;
         } else
         if ( query("duyao") < 1 )
         {
-                command("say ÎÒÕâÀïµÄ¶¾Ò©ÒÑ¾­¸øÍêÁË£¡\n");
+                command("say æˆ‘é€™è£¡çš„æ¯’è—¥å·²ç¶“çµ¦å®Œäº†ï¼\n");
                 return 1;
         } else
         {
-                command("say ´Ë¶¾Ò©º¬ÓĞ¾Ş¶¾£¬ÆÕÌìÖ®ÏÂÖ»ÓĞÈıÈËÄÜ½â£¬Ç§ÍòÒª×¢Òâ²»Òª×Ô¼ºÖĞ¶¾ÁË£¡\n");
+                command("say æ­¤æ¯’è—¥å«æœ‰å·¨æ¯’ï¼Œæ™®å¤©ä¹‹ä¸‹åªæœ‰ä¸‰äººèƒ½è§£ï¼Œåƒè¬è¦æ³¨æ„ä¸è¦è‡ªå·±ä¸­æ¯’äº†ï¼\n");
                 ob = new("/d/tangmen/obj/duyao");
 //                ob->move(this_object(), 1);
 //                command("givetangmenqiduto"+query("id", me));
                 ob->move(me, 1);
-                message_vision("$N¶Ô$nµãÁËµãÍ·£¬µÀ£º´Ë¶¾Ò©º¬ÓĞ¾ç¶¾£¬¿ÉÒªĞ¡ĞÄÊ¹ÓÃ¡£\n", this_object(), me); 
+                message_vision("$Nå°$né»äº†é»é ­ï¼Œé“ï¼šæ­¤æ¯’è—¥å«æœ‰åŠ‡æ¯’ï¼Œå¯è¦å°å¿ƒä½¿ç”¨ã€‚\n", this_object(), me); 
                 addn("duyao", -1);
                 me->start_busy(1);
                 return 1;
@@ -161,7 +161,7 @@ int give_duyao()
 
 int accept_object(object who, object ob)
 {
-        command("say ÒªÊÇÕÒµ½ÁË£¬¾Í·Åµ½´¢²ØÊÒÈ¥°É£¡¸øÎÒ¸ÉÊ²Ã´?");
-        write("ÌÆ¶¾³å×ÅÄãÑïÁËÑïÊÖÖĞÒ»Ö»Ä«ÂÌÉ«µÄ³æ×Ó£¬ºÙºÙ¼éĞ¦ÁË¼¸Éù¡£\n");
+        command("say è¦æ˜¯æ‰¾åˆ°äº†ï¼Œå°±æ”¾åˆ°å„²è—å®¤å»å§ï¼çµ¦æˆ‘å¹¹ä»€éº¼?");
+        write("å”æ¯’æ²–è‘—ä½ æšäº†æšæ‰‹ä¸­ä¸€åªå¢¨ç¶ è‰²çš„èŸ²å­ï¼Œå˜¿å˜¿å§¦ç¬‘äº†å¹¾è²ã€‚\n");
         return 0;
 }

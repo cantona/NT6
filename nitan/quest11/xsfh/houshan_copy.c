@@ -3,15 +3,15 @@
 
 #include <ansi.h>
 inherit ROOM;
-#define QUESTDIR2 "quest/Ñ©É½·Éºü/¸´³ðÆª/"
+#define QUESTDIR2 "quest/é›ªå±±é£›ç‹/å¾©ä»‡ç¯‡/"
 
 void create()
 {
-        set("short","ºóÉ½");
+        set("short","å¾Œå±±");
         set("long", @LONG
-¹ÅÊ÷²ÎÌì£¬¾£¼¬ÃÜ²¼£¬Ò»²»Ð¡ÐÄ¾Í»á±»¹Òµ½ÁËÊÖ½Å¡£Å¨ÃÜ¿íºñµÄÊ÷Ò¶ÕÚ±Î
-ÁËÈÕÔÂÐÇ³½£¬µØÉÏÁãÐÇÉ¢Âä×Å²¶ÉßÈË²È¹ýµÄ½ÅÓ¡£¬ËÄÖÜËÀÒ»°ãµÄ¼Å¾²£¬Ö»ÓÐ·ç
-´µ¹ýÊ÷ÉÒµÄÉ³É³Ö®Éù¡£±éµØÅÀÂúÁË¸÷ÖÖ¶¾³æ£¬Äã²»½û²úÉúÁËÍËËõÖ®ÐÄ¡£
+å¤æ¨¹åƒå¤©ï¼ŒèŠæ£˜å¯†å¸ƒï¼Œä¸€ä¸å°å¿ƒå°±æœƒè¢«æŽ›åˆ°äº†æ‰‹è…³ã€‚æ¿ƒå¯†å¯¬åŽšçš„æ¨¹è‘‰é®è”½
+äº†æ—¥æœˆæ˜Ÿè¾°ï¼Œåœ°ä¸Šé›¶æ˜Ÿæ•£è½è‘—æ•è›‡äººè¸©éŽçš„è…³å°ï¼Œå››å‘¨æ­»ä¸€èˆ¬çš„å¯‚éœï¼Œåªæœ‰é¢¨
+å¹éŽæ¨¹æ¢¢çš„æ²™æ²™ä¹‹è²ã€‚éåœ°çˆ¬æ»¿äº†å„ç¨®æ¯’èŸ²ï¼Œä½ ä¸ç¦ç”¢ç”Ÿäº†é€€ç¸®ä¹‹å¿ƒã€‚
 LONG
         );
 
@@ -19,7 +19,7 @@ LONG
         set("exits", ([
                 "southeast" : __DIR__"shanlu",
         ]));
-        set("outdoors", "Ãç½®");
+        set("outdoors", "è‹—ç–†");
         setup();
 }
 void init()
@@ -36,12 +36,12 @@ void greeting(object me)
 	object obj;
 	if(!me) return;
 	if(!present(me,this_object())) return;
-	tell_object(me,HIG"Äã¿´ÁË¿´ËÄÖÜ£¬·¢ÏÖÕâÀï¸ù±¾Ã»ÓÐÈËÐÐµÄºÛ¼££¬»òÐíÊÇÂ·×ß´íÁË¡£\n"NOR);
+	tell_object(me,HIG"ä½ çœ‹äº†çœ‹å››å‘¨ï¼Œç™¼ç¾é€™è£¡æ ¹æœ¬æ²’æœ‰äººè¡Œçš„ç—•è·¡ï¼Œæˆ–è¨±æ˜¯è·¯èµ°éŒ¯äº†ã€‚\n"NOR);
 	if(random(2))
 	{
 		      j=me->query_skill("force");
           obj=new("/d/sld/npc/dushe");
-          message_vision(HIC"Í»È»£¬²Ý´ÔÖÐ×ê³öÒ»Ö»"+obj->name()+"¡£\n"NOR,me);
+          message_vision(HIC"çªç„¶ï¼Œè‰å¢ä¸­é‘½å‡ºä¸€åª"+obj->name()+"ã€‚\n"NOR,me);
 		      obj->set("combat_exp", me->query("combat_exp"));
 		      obj->set("max_qi", me->query("max_qi")*3);
 		      obj->set("eff_qi", me->query("max_qi")*3);
@@ -65,7 +65,7 @@ void greeting(object me)
 		      obj->set_skill("parry",j + random(50));
 		      obj->move(environment(me));
 		      obj->set_leader(me);
-		      message_vision(RED"$N¾ö¶¨ºÍ$nÒ»ÆðÐÐ¶¯¡£\n"NOR,obj,me);
+		      message_vision(RED"$Næ±ºå®šå’Œ$nä¸€èµ·è¡Œå‹•ã€‚\n"NOR,obj,me);
 		      obj->kill_ob(me);
 	}
 }

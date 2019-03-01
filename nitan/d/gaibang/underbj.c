@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�ֱ߹���");
+        set("short", "街邊狗洞");
         set("long", @LONG
-���Ǳ�����һ��ƫƧ�ֱߵĹ�������ܶ����˸������
-����ؤ������ռ�����ͭ�����ȡ�������ͨ��ؤ�������ͨ����
+這是北京城一條偏僻街邊的狗洞裡。四周丟滿了各種雜物，
+還有丐幫弟子收集的破銅爛鐵等。從這裡通往丐幫的秘密通道。
 LONG );
         set("exits", ([
                 "out"   : "/d/beijing/caroad_e1",

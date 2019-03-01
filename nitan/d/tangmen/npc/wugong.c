@@ -5,13 +5,13 @@ inherit NPC;
 
 void create()
 {
-        set_name("òÚò¼", ({ "wugong", "gong", "wu" }) );
-        set("race", "Ò°ÊÞ");
+        set_name("èœˆèš£", ({ "wugong", "gong", "wu" }) );
+        set("race", "é‡Žç¸");
         set("age", 2);
-        set("long", "Ò»Ö»³àºìÉ«µÄ¶¾òÚò¼£¬¾¹ÓÐÒ»³ßÀ´³¤¡£\n");
+        set("long", "ä¸€åªèµ¤ç´…è‰²çš„æ¯’èœˆèš£ï¼Œç«Ÿæœ‰ä¸€å°ºä¾†é•·ã€‚\n");
         set("attitude", "peaceful");
 
-        set("limbs", ({ "Í·²¿", "±³¿Ç", "Î²Ç¯" }) );
+        set("limbs", ({ "é ­éƒ¨", "èƒŒæ®¼", "å°¾é‰—" }) );
         set("verbs", ({ "bite", "claw" }) );
 
         set("combat_exp", 25000);
@@ -29,14 +29,14 @@ int hit_ob(object me, object ob, int damage)
         if( random(damage)>query_temp("apply/armor", ob) && ob->query_condition("xie_poison")<20 )
         {
                 ob->apply_condition("xie_poison", 40);
-                tell_object(ob, HIG "Äã¾õµÃ±»´ÌÖÐµÄµØ·½Ò»ÕóÂéÄ¾£¡\n" NOR );
+                tell_object(ob, HIG "ä½ è¦ºå¾—è¢«åˆºä¸­çš„åœ°æ–¹ä¸€é™£éº»æœ¨ï¼\n" NOR );
         }
 }
 
 void die()
 {
         object ob;
-        message_vision("$N±³¿Ç¡°Å¾¡±µÄÒ»ÉùÆÆÁÑÁË£¬ÉíÌå³é¶¯ÁË¼¸ÏÂ£¬ËÀÁË¡£\n", this_object());
+        message_vision("$NèƒŒæ®¼â€œå•ªâ€çš„ä¸€è²ç ´è£‚äº†ï¼Œèº«é«”æŠ½å‹•äº†å¹¾ä¸‹ï¼Œæ­»äº†ã€‚\n", this_object());
 //        ob = new(__DIR__"xiezike");
 //        ob->move(environment(this_object()));
         destruct(this_object());

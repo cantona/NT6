@@ -1,17 +1,17 @@
-// bt_book2.c ²İÒ©¾­
+// bt_book2.c è‰è—¥ç¶“
 // Last Modified by Winder on May. 15 2001
 
 inherit ITEM;
 
 void create()
 {
-        set_name("²İÒ©¾­", ({ "caoyao jing", "jing", "caoyao" }));
+        set_name("è‰è—¥ç¶“", ({ "caoyao jing", "jing", "caoyao" }));
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
-                set("long", "ÕâÊÇÒ»±¾½²Êö¸÷Àà²İÒ©µÄÊé¡£\n");
+                set("unit", "æœ¬");
+                set("long", "é€™æ˜¯ä¸€æœ¬è¬›è¿°å„é¡è‰è—¥çš„æ›¸ã€‚\n");
                 set("value", 2500);
                 set("material", "paper");
                 set("skill", ([

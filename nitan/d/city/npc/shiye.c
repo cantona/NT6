@@ -1,4 +1,4 @@
-// shiye.c Öª¸®Ê¦Ò¯
+// shiye.c çŸ¥åºœå¸«çˆº
 
 inherit NPC;
 
@@ -6,9 +6,9 @@ string ask_me();
 
 void create()
 {
-        set_name("Ì·ÓÑ¼Í", ({ "tan youji", "tan" }));
-        set("title", "Öª¸®Ê¦Ò¯");
-        set("gender", "ÄĞĞÔ");
+        set_name("è­šå‹ç´€", ({ "tan youji", "tan" }));
+        set("title", "çŸ¥åºœå¸«çˆº");
+        set("gender", "ç”·æ€§");
         set("age", 57);
 
         set("combat_exp", 30000);
@@ -20,7 +20,7 @@ void create()
         set("shen_type", 0);
 
         set("inquiry", ([
-                "½Ğ»¯¼¦" : (: ask_me :)
+                "å«åŒ–é›" : (: ask_me :)
         ]) );
 
         setup();
@@ -29,21 +29,21 @@ void create()
 
 string ask_me()
 {
-        if( query_temp("marks/¼¦", this_player()) )
+        if( query_temp("marks/é›", this_player()) )
         {
-                say("ºÃĞ¡×Ó£¬ÄãÔõÃ´ÖªµÀÎÒÏ²»¶³Ô½Ğ»¯¼¦£¿\n");
+                say("å¥½å°å­ï¼Œä½ æ€éº¼çŸ¥é“æˆ‘å–œæ­¡åƒå«åŒ–é›ï¼Ÿ\n");
                 command("lick");
-                say("¼ÈÈ»ÄãÎÒ³ÉÁËÊ³ÓÑ£¬ÎÒ¾Í¸æËßÄã°É¡£¸¶¶ú¹ıÀ´£¡\n");
-                command("whisper"+query("id", this_player())+"ÄãÈ¥±±¾©ÕÒÈ«¾ÛµÂµÄÀÏ°å£¬Ö»Òª¸æËßËûÊÇÎÒ½ĞÄãÈ¥µÄ£¬Ëû¾Í»á...");
-                delete_temp("marks/¼¦", this_player());
-                set_temp("marks/¼¦2", 1, this_player());
-                return "½ñÌìàÅ....°¡....ÄÇ¸öÌìÆøºÜºÃ....\n";
+                say("æ—¢ç„¶ä½ æˆ‘æˆäº†é£Ÿå‹ï¼Œæˆ‘å°±å‘Šè¨´ä½ å§ã€‚ä»˜è€³éä¾†ï¼\n");
+                command("whisper"+query("id", this_player())+"ä½ å»åŒ—äº¬æ‰¾å…¨èšå¾·çš„è€æ¿ï¼Œåªè¦å‘Šè¨´ä»–æ˜¯æˆ‘å«ä½ å»çš„ï¼Œä»–å°±æœƒ...");
+                delete_temp("marks/é›", this_player());
+                set_temp("marks/é›2", 1, this_player());
+                return "ä»Šå¤©å—¯....å•Š....é‚£å€‹å¤©æ°£å¾ˆå¥½....\n";
         }
-        else if( query_temp("marks/¼¦2", this_player()) )
-                return "ÎÒÊÇ¸öÕã½­ÈË£¬Ò²Ã»ÓĞÄãÄÇÃ´ÂŞàÂ£¡\n";
+        else if( query_temp("marks/é›2", this_player()) )
+                return "æˆ‘æ˜¯å€‹æµ™æ±Ÿäººï¼Œä¹Ÿæ²’æœ‰ä½ é‚£éº¼ç¾…å—¦ï¼\n";
         else
         {
-              set_temp("marks/¼¦", 1, this_player());
-                return "ÄàËõË¿Ã×Å¼¶¤²¼¶®\n";
+              set_temp("marks/é›", 1, this_player());
+                return "æ³¥ç¸®çµ²ç±³å¶é‡˜å¸ƒæ‡‚\n";
         }
 }

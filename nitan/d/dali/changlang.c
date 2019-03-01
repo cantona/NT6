@@ -4,10 +4,10 @@
 inherit ROOM;
 void create()
 {
-        set("short","����");
+        set("short","長廊");
         set("long", @LONG
-���������������ĳ��ȣ����߶��Ǵ�Բ�������ϼ�ɽС��Ӧ�о�
-�У��Ե�ʮ��������������һ���������ϱ���һ��СͥԺ��
+這裡是鎮南王府的長廊，兩邊都是大圓柱。邊上假山小湖應有盡
+有，顯得十分秀麗。北面是一座大建築，南邊是一個小庭院。
 LONG );
         set("objects",([
             "/d/dali/npc/duanwuwei" : 1,

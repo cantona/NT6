@@ -20,10 +20,10 @@ protected string list_desc_msg(mapping desc)
 	{
 		if(stringp(b))
 			out += sprintf("%s\n%s\n%s\n%s\n----------------------------------------------\n",
-				HBCYN HIG"ÌáÊ¾´Ê£º"NOR, a, HBCYN HIG"ÌáÊ¾ĞÅÏ¢£º"NOR, b);
+				HBCYN HIG"æç¤ºè©ï¼š"NOR, a, HBCYN HIG"æç¤ºä¿¡æ¯ï¼š"NOR, b);
 		else
 			out += sprintf("%s\n%s\n%s\n%O\n----------------------------------------------\n",
-				HBCYN HIG"ÌáÊ¾´Ê£º"NOR, a, HBCYN HIG"ÌáÊ¾ĞÅÏ¢£º"NOR, b);
+				HBCYN HIG"æç¤ºè©ï¼š"NOR, a, HBCYN HIG"æç¤ºä¿¡æ¯ï¼š"NOR, b);
 	}
 
 	return out;
@@ -48,10 +48,10 @@ int main(object me, string arg)
 	if(!mapp(desc) || !sizeof(desc))
 	{
 		out = "
-¡¸Ä¿Ç°ÕâÀïÃ»ÓĞÈÎºÎÌØÊâÌáÊ¾¡¹
-ÇëÑ¡ÔñÄãÒª½øĞĞµÄ²Ù×÷£º
-(1) ¼ÓÈëÒ»ÌõĞÂµÄÌØÊâÌáÊ¾¡£
-(q) ÍË³ö¡£
+ã€Œç›®å‰é€™è£¡æ²’æœ‰ä»»ä½•ç‰¹æ®Šæç¤ºã€
+è«‹é¸æ“‡ä½ è¦é€²è¡Œçš„æ“ä½œï¼š
+(1) åŠ å…¥ä¸€æ¢æ–°çš„ç‰¹æ®Šæç¤ºã€‚
+(q) é€€å‡ºã€‚
 ";
 		write(out);
 		input_to( (: decide_action_do :), me, env, desc );
@@ -59,15 +59,15 @@ int main(object me, string arg)
 	}
 
 	out = "
-            ¡¸Ä¿Ç°ÕâÀïÒÑÓĞµÄÌØÊâÌáÊ¾¡¹
+            ã€Œç›®å‰é€™è£¡å·²æœ‰çš„ç‰¹æ®Šæç¤ºã€
 -------------------------------------------------
 ";
 	out += list_desc_msg(desc);
 
-	out += "ÇëÑ¡ÔñÄãÒª½øĞĞµÄ²Ù×÷£º
-(1) ¼ÓÈëÒ»ÌõĞÂµÄÌØÊâÌáÊ¾¡£
-(2) É¾³ıÒ»ÌõÒÑ´æÔÚµÄÌáÊ¾¡£
-(q) ÍË³ö¡£
+	out += "è«‹é¸æ“‡ä½ è¦é€²è¡Œçš„æ“ä½œï¼š
+(1) åŠ å…¥ä¸€æ¢æ–°çš„ç‰¹æ®Šæç¤ºã€‚
+(2) åˆªé™¤ä¸€æ¢å·²å­˜åœ¨çš„æç¤ºã€‚
+(q) é€€å‡ºã€‚
 ";
 	write(out);
 	input_to( (: decide_action_do :), me, env, desc );
@@ -87,7 +87,7 @@ protected void decide_action_do(string str, object who, object env, mapping desc
 
 	if(sizeof(str) && (str[0] == '1'))
 	{
-		tell_object(who, HBCYN HIG"ÇëÊäÈëÉè¶¨µÄÌáÊ¾´Ê[1-6¸öºº×Ö](q ÍË³ö)£º\n"NOR);
+		tell_object(who, HBCYN HIG"è«‹è¼¸å…¥è¨­å®šçš„æç¤ºè©[1-6å€‹æ¼¢å­—](q é€€å‡º)ï¼š\n"NOR);
 		input_to( (: add_desc_short :), who, env, desc );
 		return;
 	}
@@ -96,26 +96,26 @@ protected void decide_action_do(string str, object who, object env, mapping desc
 	{
 		if(!desc || !sizeof(desc))
 		{
-			tell_object(who, "¹¦ÄÜÑ¡Ôñ´íÎó¡£\n");
+			tell_object(who, "åŠŸèƒ½é¸æ“‡éŒ¯èª¤ã€‚\n");
 			return;
 		}
-		tell_object(who, HBCYN HIG"ÇëÊäÈëÒªÉ¾³ıÌØÊâÌáÊ¾µÄÌáÊ¾´Ê£º\n"NOR);
+		tell_object(who, HBCYN HIG"è«‹è¼¸å…¥è¦åˆªé™¤ç‰¹æ®Šæç¤ºçš„æç¤ºè©ï¼š\n"NOR);
 		input_to( (: delete_desc :), who, env, desc );
 		return;
 	}
 
 	if(!desc || !sizeof(desc))
 		tell_object(who, "
-ÇëÑ¡ÔñÄãÒª½øĞĞµÄ²Ù×÷£º
-(1) ¼ÓÈëÒ»ÌõĞÂµÄÌØÊâÌáÊ¾¡£
-(q) ÍË³ö¡£
+è«‹é¸æ“‡ä½ è¦é€²è¡Œçš„æ“ä½œï¼š
+(1) åŠ å…¥ä¸€æ¢æ–°çš„ç‰¹æ®Šæç¤ºã€‚
+(q) é€€å‡ºã€‚
 ");
 	else
 		tell_object(who, "
-ÇëÑ¡ÔñÄãÒª½øĞĞµÄ²Ù×÷£º
-(1) ¼ÓÈëÒ»ÌõĞÂµÄÌØÊâÌáÊ¾¡£
-(2) É¾³ıÒ»ÌõÒÑ´æÔÚµÄÌáÊ¾¡£
-(q) ÍË³ö¡£
+è«‹é¸æ“‡ä½ è¦é€²è¡Œçš„æ“ä½œï¼š
+(1) åŠ å…¥ä¸€æ¢æ–°çš„ç‰¹æ®Šæç¤ºã€‚
+(2) åˆªé™¤ä¸€æ¢å·²å­˜åœ¨çš„æç¤ºã€‚
+(q) é€€å‡ºã€‚
 ");
 	input_to( (: decide_action_do :), who, env, desc );
 }
@@ -135,31 +135,31 @@ protected void delete_desc(string str, object who, object env, mapping desc)
 
 	if(!stringp(str) || (sizeof(str) < 2) || (sizeof(str) > 12))
 	{
-		tell_object(who, "ÌáÊ¾´ÊÊäÈë´íÎó¡£\n");
+		tell_object(who, "æç¤ºè©è¼¸å…¥éŒ¯èª¤ã€‚\n");
 		return;
 	}
 
 	if(undefinedp(desc[str]))
 	{
-		tell_object(who, "Ã»ÓĞÕâ¸öÌáÊ¾´Ê¡£\n");
+		tell_object(who, "æ²’æœ‰é€™å€‹æç¤ºè©ã€‚\n");
 		return;
 	}
 
 	if(environment(who) != env)
 	{
-		tell_object(who, "ÄãµÄÎ»ÖÃ·¢ÉúÁË±ä»¯£¬ĞŞ¸Ä±»Í£Ö¹¡£\n");
+		tell_object(who, "ä½ çš„ä½ç½®ç™¼ç”Ÿäº†è®ŠåŒ–ï¼Œä¿®æ”¹è¢«åœæ­¢ã€‚\n");
 		return;
 	}
 
 	if(!content = read_file(fname = base_name(env) + ".c"))
 	{
-		tell_object(who, "ÎŞ·¨¶ÁÈ¡ÎÄ¼şÄÚÈİ£¬ĞŞ¸ÄÊ§°Ü¡£\n");
+		tell_object(who, "ç„¡æ³•è®€å–æ–‡ä»¶å…§å®¹ï¼Œä¿®æ”¹å¤±æ•—ã€‚\n");
 		return;
 	}
 
 	if(!BUNCH_D->parse_set_value(ref content, "item_desc", ref f_sect, ref e_sect))
 	{
-		tell_object(who, "ÎŞ·¨ÆÊÎöÎÄ¼şÄÚÈİ£¬ĞŞ¸ÄÊ§°Ü¡£\n");
+		tell_object(who, "ç„¡æ³•å‰–ææ–‡ä»¶å…§å®¹ï¼Œä¿®æ”¹å¤±æ•—ã€‚\n");
 		return;
 	}
 
@@ -173,17 +173,17 @@ protected void delete_desc(string str, object who, object env, mapping desc)
 
 	if(!write_file(fname, result, 1))
 	{
-		tell_object(who, "ÎŞ·¨Ğ´ÈëÎÄ¼şÄÚÈİ£¬ĞŞ¸ÄÊ§°Ü¡£\n");
+		tell_object(who, "ç„¡æ³•å¯«å…¥æ–‡ä»¶å…§å®¹ï¼Œä¿®æ”¹å¤±æ•—ã€‚\n");
 		return;
 	}
 
 	if( !BUNCH_D->update_room(env) )
 	{
-		tell_object(who, "ÎŞ·¨ÔØÈë·¿¼ä£¬ĞŞ¸ÄÊ§°Ü¡£\n");
+		tell_object(who, "ç„¡æ³•è¼‰å…¥æˆ¿é–“ï¼Œä¿®æ”¹å¤±æ•—ã€‚\n");
 		return;
 	}
 
-	tell_object(who, "É¾³ı³É¹¦¡£\n");
+	tell_object(who, "åˆªé™¤æˆåŠŸã€‚\n");
 }
 
 protected void add_desc_short(string str, object who, object env, mapping desc)
@@ -199,20 +199,20 @@ protected void add_desc_short(string str, object who, object env, mapping desc)
 
 	if(!str || (sizeof(str) <= 2))
 	{
-		tell_object(who, HBCYN HIG"ÇëÊäÈëÉè¶¨µÄÌáÊ¾´Ê[1-6¸öºº×Ö](q ÍË³ö)£º\n"NOR);
+		tell_object(who, HBCYN HIG"è«‹è¼¸å…¥è¨­å®šçš„æç¤ºè©[1-6å€‹æ¼¢å­—](q é€€å‡º)ï¼š\n"NOR);
 		input_to( (: add_desc_short :), who, env, desc );
 		return;
 	}
 
 	if(sizeof(str) > 12)
 	{
-		tell_object(who, HBCYN HIG"ÌáÊ¾´ÊµÄ³¤¶È²»ÄÜ³¬¹ı6¸öºº×Ö£¬ÇëÊäÈë(q ÍË³ö)£º\n"NOR);
+		tell_object(who, HBCYN HIG"æç¤ºè©çš„é•·åº¦ä¸èƒ½è¶…é6å€‹æ¼¢å­—ï¼Œè«‹è¼¸å…¥(q é€€å‡º)ï¼š\n"NOR);
 		input_to( (: add_desc_short :), who, env, desc );
 		return;
 	}
 
-	tell_object(who, "ÇëÊäÈëÌáÊ¾ĞÅÏ¢£º\n¡¤ĞÅÏ¢ÄÚÈİ²»ÄÜ³¬¹ıÁùĞĞ\n¡¤Ã¿ĞĞ²»³¬¹ı25¸öºº×Ö
-ÇëÊäÈë('.'½áÊøÊäÈë£¬'q'ÍË³ö)£º\n------------------------------------------------------\n");
+	tell_object(who, "è«‹è¼¸å…¥æç¤ºä¿¡æ¯ï¼š\nï¹’ä¿¡æ¯å…§å®¹ä¸èƒ½è¶…éå…­è¡Œ\nï¹’æ¯è¡Œä¸è¶…é25å€‹æ¼¢å­—
+è«‹è¼¸å…¥('.'çµæŸè¼¸å…¥ï¼Œ'q'é€€å‡º)ï¼š\n------------------------------------------------------\n");
 	input_to((: add_desc_long :), who, env, desc, str, "");
 }
 
@@ -231,21 +231,21 @@ protected void add_desc_long(string str, object who, object env, mapping desc, s
 	if( (str[0] == 'q')
 	|| (str[0] == 'Q') )
 	{
-		tell_object(who, "ÖÕÖ¹·¿¼äĞŞ¸Ä¡£\n");
+		tell_object(who, "çµ‚æ­¢æˆ¿é–“ä¿®æ”¹ã€‚\n");
 		return;
 	}
 
-	if(str[0] == '.')	// ½áÊøÊäÈë
+	if(str[0] == '.')	// çµæŸè¼¸å…¥
 	{
 		if( !sizeof(ilong) )
 		{
-			tell_object(who, "ÄãÃ»ÓĞÌØÊâÌáÊ¾Éè¶¨×ã¹»µÄÌáÊ¾ĞÅÏ¢\nÔö¼ÓÌØÊâÌáÊ¾Ê§°Ü¡£\n");
+			tell_object(who, "ä½ æ²’æœ‰ç‰¹æ®Šæç¤ºè¨­å®šè¶³å¤ çš„æç¤ºä¿¡æ¯\nå¢åŠ ç‰¹æ®Šæç¤ºå¤±æ•—ã€‚\n");
 			return;
 		}
 
 		if( sizeof(explode(ilong, "\n")) > 6)
 		{
-			tell_object(who, HBCYN HIG"¡¤ÌáÊ¾ĞÅÏ¢ÄÚÈİ²»ÄÜ³¬¹ıÁùĞĞ\nÔö¼ÓÌØÊâÌáÊ¾Ê§°Ü¡£\n"NOR);
+			tell_object(who, HBCYN HIG"ï¹’æç¤ºä¿¡æ¯å…§å®¹ä¸èƒ½è¶…éå…­è¡Œ\nå¢åŠ ç‰¹æ®Šæç¤ºå¤±æ•—ã€‚\n"NOR);
 			return;
 		}
 
@@ -265,14 +265,14 @@ protected void add_desc_long(string str, object who, object env, mapping desc, s
 		for(int i=0; i<n; i++)
 			if(strlen(tmp[i]) > 50)
 			{
-				tell_object(who, HBCYN HIG"Ã¿Ò»ĞĞ²»ÄÜ³¬¹ı¶şÊ®Îå¸öÖĞÎÄ×Ö£¬ÇëÖØĞÂÊäÈë¸Õ²ÅÊäÈëµÄÄÚÈİ£º\n");
+				tell_object(who, HBCYN HIG"æ¯ä¸€è¡Œä¸èƒ½è¶…éäºŒåäº”å€‹ä¸­æ–‡å­—ï¼Œè«‹é‡æ–°è¼¸å…¥å‰›æ‰è¼¸å…¥çš„å…§å®¹ï¼š\n");
 				input_to((: add_desc_long :), who, env, desc, ishort, ilong);
 				return;
 			}
 
 		if((n + sizeof(explode(ilong, "\n"))) > 6)
 		{
-			tell_object(who, HBCYN HIG"¡¤ÌáÊ¾ĞÅÏ¢ÄÚÈİ²»ÄÜ³¬¹ıÁùĞĞ\nÔö¼ÓÌØÊâÌáÊ¾Ê§°Ü¡£\n"NOR);
+			tell_object(who, HBCYN HIG"ï¹’æç¤ºä¿¡æ¯å…§å®¹ä¸èƒ½è¶…éå…­è¡Œ\nå¢åŠ ç‰¹æ®Šæç¤ºå¤±æ•—ã€‚\n"NOR);
 			return;
 		}
 	}
@@ -281,14 +281,14 @@ protected void add_desc_long(string str, object who, object env, mapping desc, s
 	{
 		if(strlen(str) > 50)
 		{
-			tell_object(who, HBCYN HIG"Ã¿Ò»ĞĞ²»ÄÜ³¬¹ı¶şÊ®Îå¸öÖĞÎÄ×Ö£¬ÇëÖØĞÂÊäÈëÉÏÒ»´ÎÊäÈëµÄÄÚÈİ£º\n");
+			tell_object(who, HBCYN HIG"æ¯ä¸€è¡Œä¸èƒ½è¶…éäºŒåäº”å€‹ä¸­æ–‡å­—ï¼Œè«‹é‡æ–°è¼¸å…¥ä¸Šä¸€æ¬¡è¼¸å…¥çš„å…§å®¹ï¼š\n");
 			input_to((: add_desc_long :), who, env, desc, ishort, ilong);
 			return;
 		}
 
 		if( sizeof(explode(ilong, "\n")) > 5 )
 		{
-			tell_object(who, HBCYN HIG"¡¤ÌáÊ¾ĞÅÏ¢ÄÚÈİ²»ÄÜ³¬¹ıÁùĞĞ\nÔö¼ÓÌØÊâÌáÊ¾Ê§°Ü¡£\n"NOR);
+			tell_object(who, HBCYN HIG"ï¹’æç¤ºä¿¡æ¯å…§å®¹ä¸èƒ½è¶…éå…­è¡Œ\nå¢åŠ ç‰¹æ®Šæç¤ºå¤±æ•—ã€‚\n"NOR);
 			return;
 		}
 	}
@@ -306,19 +306,19 @@ protected void make_item_desc(object who, object env, mapping desc)
 
 	if(!mapp(desc) || !sizeof(desc))
 	{
-		tell_object(who, "ÎŞ¼ÓÈëÏîÄ¿¡£\n");
+		tell_object(who, "ç„¡åŠ å…¥é …ç›®ã€‚\n");
 		return;
 	}
 
 	if(environment(who) != env)
 	{
-		tell_object(who, "ÄãµÄÎ»ÖÃ·¢ÉúÁË±ä»¯£¬¼ÓÈë²Ù×÷±»Í£Ö¹¡£\n");
+		tell_object(who, "ä½ çš„ä½ç½®ç™¼ç”Ÿäº†è®ŠåŒ–ï¼ŒåŠ å…¥æ“ä½œè¢«åœæ­¢ã€‚\n");
 		return;
 	}
 
 	if(!content = read_file(fname = base_name(env) + ".c"))
 	{
-		tell_object(who, "ÎŞ·¨¶ÁÈ¡ÎÄ¼şÄÚÈİ£¬ĞŞ¸ÄÊ§°Ü¡£\n");
+		tell_object(who, "ç„¡æ³•è®€å–æ–‡ä»¶å…§å®¹ï¼Œä¿®æ”¹å¤±æ•—ã€‚\n");
 		return;
 	}
 
@@ -328,7 +328,7 @@ protected void make_item_desc(object who, object env, mapping desc)
 	{
 		if(!BUNCH_D->parse_function_body(ref content, "void", "create", ref f_sect, ref m_sect, ref e_sect, 0))
 		{
-			tell_object(who, "ÎŞ·¨ÆÊÎöÎÄ¼şÄÚÈİ£¬ĞŞ¸ÄÊ§°Ü¡£\n");
+			tell_object(who, "ç„¡æ³•å‰–ææ–‡ä»¶å…§å®¹ï¼Œä¿®æ”¹å¤±æ•—ã€‚\n");
 			return;
 		}
 
@@ -340,15 +340,15 @@ protected void make_item_desc(object who, object env, mapping desc)
 
 	if(!write_file(fname, result, 1))
 	{
-		tell_object(who, "ÎŞ·¨Ğ´ÈëÎÄ¼şÄÚÈİ£¬ĞŞ¸ÄÊ§°Ü¡£\n");
+		tell_object(who, "ç„¡æ³•å¯«å…¥æ–‡ä»¶å…§å®¹ï¼Œä¿®æ”¹å¤±æ•—ã€‚\n");
 		return;
 	}
 
 	if( !BUNCH_D->update_room(env) )
 	{
-		tell_object(who, "ÎŞ·¨ÔØÈë·¿¼ä£¬ĞŞ¸ÄÊ§°Ü¡£\n");
+		tell_object(who, "ç„¡æ³•è¼‰å…¥æˆ¿é–“ï¼Œä¿®æ”¹å¤±æ•—ã€‚\n");
 		return;
 	}
 
-	tell_object(who, "ÌØÊâÌáÊ¾¼ÓÈë³É¹¦¡£\n");
+	tell_object(who, "ç‰¹æ®Šæç¤ºåŠ å…¥æˆåŠŸã€‚\n");
 }

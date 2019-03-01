@@ -4,15 +4,15 @@ inherit SKILL;
 string type() { return "knowledge"; } 
 
 int is_fmsk() { return 1; }
-string family_name() { return "åÐÒ£ÅÉ"; }
+string family_name() { return "é€é™æ´¾"; }
 
 int valid_learn(object me)
 {       
         if (me->query_skill("lingbo-weibu", 1) < 150)
-                return notify_fail("ÄãÁè²¨Î¢²½¹¦»ðºò²»×ã£¬ÎÞ·¨ÑÐÏ°åÐÒ£ÓÎ¡£\n"); 
+                return notify_fail("ä½ å‡Œæ³¢å¾®æ­¥åŠŸç«å€™ä¸è¶³ï¼Œç„¡æ³•ç ”ç¿’é€é™éŠã€‚\n"); 
 
         if( query("family/family_name", me) != family_name() )
-                return notify_fail("åÐÒ£ÓÎÖ»ÄÜåÐÒ£ÅÉµÜ×Ó·½¿ÉÑÐÏ°¡£\n");
+                return notify_fail("é€é™éŠåªèƒ½é€é™æ´¾å¼Ÿå­æ–¹å¯ç ”ç¿’ã€‚\n");
 
         return 1;
 }

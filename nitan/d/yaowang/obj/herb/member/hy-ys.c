@@ -2,12 +2,12 @@
 
 void create()
 {
-        set_name(HIC "ÑÒÊ¯»¹Ñô" NOR, ({ "hy-ys", "Chlamydoboea sinensis", "herb_hy_ys" }));
+        set_name(HIC "å·–çŸ³é‚„é™½" NOR, ({ "hy-ys", "Chlamydoboea sinensis", "herb_hy_ys" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "¿àÜÄÌ¦¿ÆÖ²Îï¿íİàÜÄÌ¦(Chlamydoboea sinensis)µÄÈ«²İ¡£ÒòÆä¶àÉú³¤ÔÚÑÒÊ¯º»£¬¹ÊµÃ´ËÃû¡£\n" NOR);
-                set("base_unit", "¿Å");
+                set("long", HIW "è‹¦è‹£è‹”ç§‘æ¤ç‰©å¯¬è¼è‹£è‹”(Chlamydoboea sinensis)çš„å…¨è‰ã€‚å› å…¶å¤šç”Ÿé•·åœ¨å·–çŸ³å¤¯ï¼Œæ•…å¾—æ­¤åã€‚\n" NOR);
+                set("base_unit", "é¡†");
                 set("base_value", 20000);
                 set("base_weight", 100);
         }

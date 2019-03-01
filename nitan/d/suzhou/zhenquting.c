@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��Ȥͤ");
+        set("short", "真趣亭");
         set("long", @LONG
-��Ȥͤ�ڸ߸�����������д�ġ���Ȥ����һ�顣ͤ��װ�ξ��½��
-�Ի͡����ܡ�Χ����ȹ���ϵ�̵��������ͼ��Ω��ΩФ���ڴ˿���
-����ȫ԰��ɫ��
+真趣亭內高高懸掛御筆題寫的“真趣”匾一塊。亭內裝飾精致金碧
+輝煌。樑架、圍屏、裙板上雕刻的人物、花鳥圖案惟妙惟肖。在此可以
+環覽全園景色。
 LONG );
         set("outdoors", "suzhou");
         set("no_clean_up", 0);

@@ -1,15 +1,15 @@
-// banshanting.c ��ɽͤ
+// banshanting.c 半山亭
 // Winder Oct.10 1998
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "��ɽͤ");
+        set("short", "半山亭");
         set("long", @LONG
-�����ǰ�ɽ����һ��С��ͤ���ο�����ɽ�������ˣ���ת���䵽
-��������һ����ЪһЪ�š������￴��ȥ���պÿ��Կ���������ķ�
-����
+這裡是半山腰的一個小涼亭，遊客們爬山爬的累了，就轉個彎到
+這裡來坐一坐，歇一歇腳。從這裡看下去，剛好可以看見翠屏峰的峰
+頂。
 LONG
         );
         set("outdoors", "zhongnan");

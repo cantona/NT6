@@ -1,5 +1,5 @@
 // guoys_mis.c  by Sir 2003.11.13
-//郭靖保护义士任务
+//閮潠淇濊缇╁＋浠诲嫏
 
 #include <ansi.h>
 #include <login.h>
@@ -12,7 +12,7 @@ int update_condition(object me, int duration)
         
         if (duration < 1)
         {
-                tell_object(me, HIY "你的动作太慢，任务被取消了。\n" NOR);
+                tell_object(me, HIY "浣犵殑鍕曚綔澶參锛屼换鍕欒鍙栨秷浜嗐�俓n" NOR);
 
                 delete_temp("guoys_mis_target", me);
                 delete_temp("guoys_mis_given", me);

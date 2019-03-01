@@ -1,4 +1,4 @@
-// insect.c À¥³æ
+// insect.c æ˜†èŸ²
 
 #ifndef __INSECT__
 #define __INSECT__
@@ -11,37 +11,37 @@ inherit F_DBASE;
 
 mapping *combat_action_crawl = ({
 ([
-        "action":                "$NÅÀÉÏÀ´ÕÅ×ìÍù$nµÄ$lºİºİµØÒ»Ò§",
+        "action":                "$Nçˆ¬ä¸Šä¾†å¼µå˜´å¾€$nçš„$lç‹ ç‹ åœ°ä¸€å’¬",
         "damage":                30,
-        "damage_type":        "Ò§ÉË",
+        "damage_type":        "å’¬å‚·",
 ]),
 ([
-        "action":                "$NÔ¾ÉÏÀ´ÃÍµØÍù$nµÄ$l¶£ÁËÒ»ÏÂ",
+        "action":                "$Nèºä¸Šä¾†çŒ›åœ°å¾€$nçš„$lå®äº†ä¸€ä¸‹",
         "damage":                10,
-        "damage_type":        "´ÌÉË",
+        "damage_type":        "åˆºå‚·",
 ]),
 ([
-        "action":                "$N·´×ªÉíÓÃÎ²°Í¼â¶Ô×¼$nµÄ$lÒ»´Ì",
+        "action":                "$Nåè½‰èº«ç”¨å°¾å·´å°–å°æº–$nçš„$lä¸€åˆº",
         "damage":                20,
-        "damage_type":        "´ÌÉË",
+        "damage_type":        "åˆºå‚·",
 ]),  
 });
 
 mapping *combat_action_fly = ({
 ([
-        "action":                "$N·É¹ıÀ´ÕÅ×ìÍù$nµÄ$lºİºİµØÒ»Ò§",
+        "action":                "$Né£›éä¾†å¼µå˜´å¾€$nçš„$lç‹ ç‹ åœ°ä¸€å’¬",
         "damage":                30,
-        "damage_type":        "Ò§ÉË",
+        "damage_type":        "å’¬å‚·",
 ]),
 ([
-        "action":                "$N·ÉÉÏÀ´ÃÍµØÍù$nµÄ$l¶£ÁËÒ»ÏÂ",
+        "action":                "$Né£›ä¸Šä¾†çŒ›åœ°å¾€$nçš„$lå®äº†ä¸€ä¸‹",
         "damage":                10,
-        "damage_type":        "´ÌÉË",
+        "damage_type":        "åˆºå‚·",
 ]),
 ([
-        "action":                "$N·´×ªÉíÓÃÎ²°Í¼â¶Ô×¼$nµÄ$lÒ»´Ì",
+        "action":                "$Nåè½‰èº«ç”¨å°¾å·´å°–å°æº–$nçš„$lä¸€åˆº",
         "damage":                20,
-        "damage_type":        "´ÌÉË",
+        "damage_type":        "åˆºå‚·",
 ]),  
 });
 
@@ -60,9 +60,9 @@ void setup_insect(object ob)
         ob->set_default_action(__FILE__, "query_action");
 	set("default_actions", (: call_other, __FILE__, "query_action" :), ob);
         
-        my["unit"] = "Ö»";
+        my["unit"] = "åª";
         
-        if( undefinedp(my["gender"]) ) my["gender"] = (random(2))?"´ÆĞÔ":"ĞÛĞÔ";
+        if( undefinedp(my["gender"]) ) my["gender"] = (random(2))?"é›Œæ€§":"é›„æ€§";
         if( undefinedp(my["age"]) ) my["age"] = random( 5) + 5;
 
         if( undefinedp(my["str"]) ) my["str"] = random( 5) + 5;
@@ -87,33 +87,33 @@ void setup_insect(object ob)
         ob->set_default_object(__FILE__);
         if( !ob->query_weight() ) ob->set_weight(BASE_WEIGHT + (my["str"] - 5)* 100);
 
-        if( query("subrace", ob) == "ÅÀ³æ"){
-                set("dead_message",       "\n$NËÄ½Å³¯ÌìµØ·­ÁË¹ıÀ´£¬ËÀÁË¡£\n\n"        );
-                set("unconcious_message", "\n$NËÄ½Å³¯ÌìµØ·­ÁË¹ıÀ´£¬²»¶¯ÁË¡£\n\n"      );
-                set("revive_message",     "\n$NÒ»ÏÂ·­¹ıÉí£¬ÓÖÃô½İµØËÄ´¦ÅÀ¶¯ÆğÀ´¡£\n\n");
-                set("leave_msg",          "µÄ²İ´ÔÀï×êÁË³öÈ¥"            );
-                set("arrive_msg",         "ÅÀÁË¹ıÀ´"                              );
-                set("fleeout_message",    "µÄ²İ´ÔÀï×êÁË³öÈ¥"            );
-                set("fleein_message",     "»º»ºÅÀÁË¹ıÀ´£¬¶¯×÷ÓĞĞ©³ÙÖÍ"            );
+        if( query("subrace", ob) == "çˆ¬èŸ²"){
+                set("dead_message",       "\n$Nå››è…³æœå¤©åœ°ç¿»äº†éä¾†ï¼Œæ­»äº†ã€‚\n\n"        );
+                set("unconcious_message", "\n$Nå››è…³æœå¤©åœ°ç¿»äº†éä¾†ï¼Œä¸å‹•äº†ã€‚\n\n"      );
+                set("revive_message",     "\n$Nä¸€ä¸‹ç¿»éèº«ï¼Œåˆæ•æ·åœ°å››è™•çˆ¬å‹•èµ·ä¾†ã€‚\n\n");
+                set("leave_msg",          "çš„è‰å¢è£¡é‘½äº†å‡ºå»"            );
+                set("arrive_msg",         "çˆ¬äº†éä¾†"                              );
+                set("fleeout_message",    "çš„è‰å¢è£¡é‘½äº†å‡ºå»"            );
+                set("fleein_message",     "ç·©ç·©çˆ¬äº†éä¾†ï¼Œå‹•ä½œæœ‰äº›é²æ»¯"            );
 
-                set("limbs", ({"Í·²¿",        "±³²¿",        "¸¹²¿", "´¥½Ç", "Ç°ÍÈ",        "ºóÍÈ", "Î²°Í"}) );
+                set("limbs", ({"é ­éƒ¨",        "èƒŒéƒ¨",        "è…¹éƒ¨", "è§¸è§’", "å‰è…¿",        "å¾Œè…¿", "å°¾å·´"}) );
         }
 
-        if( query("subrace", ob) == "·É³æ"){
-                set("dead_message",       "\n$NµôÔÚµØÉÏ£¬ÕõÔúÁË¼¸ÏÂ¾ÍËÀÁË¡£\n\n"      );
-                set("unconcious_message", "\n$NÆËµÄµøÔÚµØÉÏ£¬»èÁË¹ıÈ¥¡£\n\n"          );
-                set("revive_message",     "\n$NÕÅ¿ª³á°òÆËÌÚÁËÒ»ÏÂ£¬ÓÖ·ÉÁËÆğÀ´¡£\n\n"  );
-                set("leave_msg",          "ÎËÎËÎËµØ½Ğ×Å·ÉÁË³öÈ¥"              );
-                set("arrive_msg",         "ÎËÎËµØ½Ğ×Å·ÉÁË¹ıÀ´"                    );
-                set("fleeout_message",    "ÎËÎËµØ½Ğ×Å·ÉÁË³öÈ¥"                );
-                set("fleein_message",     "»º»º·ÉÁË¹ıÀ´£¬¶¯×÷ÓĞĞ©³ÙÖÍ"            );
+        if( query("subrace", ob) == "é£›èŸ²"){
+                set("dead_message",       "\n$Næ‰åœ¨åœ°ä¸Šï¼Œæ™ç´®äº†å¹¾ä¸‹å°±æ­»äº†ã€‚\n\n"      );
+                set("unconcious_message", "\n$Næ’²çš„è·Œåœ¨åœ°ä¸Šï¼Œæ˜äº†éå»ã€‚\n\n"          );
+                set("revive_message",     "\n$Nå¼µé–‹ç¿…è†€æ’²é¨°äº†ä¸€ä¸‹ï¼Œåˆé£›äº†èµ·ä¾†ã€‚\n\n"  );
+                set("leave_msg",          "å—¡å—¡å—¡åœ°å«è‘—é£›äº†å‡ºå»"              );
+                set("arrive_msg",         "å—¡å—¡åœ°å«è‘—é£›äº†éä¾†"                    );
+                set("fleeout_message",    "å—¡å—¡åœ°å«è‘—é£›äº†å‡ºå»"                );
+                set("fleein_message",     "ç·©ç·©é£›äº†éä¾†ï¼Œå‹•ä½œæœ‰äº›é²æ»¯"            );
 
-                set("limbs", ({"Í·²¿",        "±³²¿",        "¸¹²¿",        "³á°ò", "Ç°ÍÈ",        "ºóÍÈ", "Î²°Í"}) );
+                set("limbs", ({"é ­éƒ¨",        "èƒŒéƒ¨",        "è…¹éƒ¨",        "ç¿…è†€", "å‰è…¿",        "å¾Œè…¿", "å°¾å·´"}) );
         }
 }
 
 mapping query_action(object me)
 {
-        if( query("subrace", me) == "ÅÀ³æ")return combat_action_crawl[random(sizeof(combat_action_crawl))];
-        if( query("subrace", me) == "·É³æ")return combat_action_fly[random(sizeof(combat_action_fly))];
+        if( query("subrace", me) == "çˆ¬èŸ²")return combat_action_crawl[random(sizeof(combat_action_crawl))];
+        if( query("subrace", me) == "é£›èŸ²")return combat_action_fly[random(sizeof(combat_action_fly))];
 }

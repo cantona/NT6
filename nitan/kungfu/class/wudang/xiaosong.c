@@ -1,12 +1,12 @@
-// xiaosong.c ËÎÇàÊé
+// xiaosong.c å®‹é’æ›¸
 
 inherit NPC;
 
 void create()
 {
-        set_name("ËÎÇàÊé", ({ "song qingshu", "song" }));
-        set("long","Ëû¾ÍÊÇËÎÔ¶ÇÅµÄ¶ù×ÓËÎÇàÊé¡£\nËû½ñÄê¶þÊ®Ëê£¬ÄËÊÇÎäµ±µÚÈý´úÖÐ³öÀà°ÎÝÍµÄÈËÎï¡£\n");
-        set("gender", "ÄÐÐÔ");
+        set_name("å®‹é’æ›¸", ({ "song qingshu", "song" }));
+        set("long","ä»–å°±æ˜¯å®‹é æ©‹çš„å…’å­å®‹é’æ›¸ã€‚\nä»–ä»Šå¹´äºŒåæ­²ï¼Œä¹ƒæ˜¯æ­¦ç•¶ç¬¬ä¸‰ä»£ä¸­å‡ºé¡žæ‹”èƒçš„äººç‰©ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 20);
         set("attitude", "peaceful");
         set("class", "swordsman");
@@ -56,7 +56,7 @@ void create()
                 (: exert_function, "recover" :),
         }) );
 
-        create_family("Îäµ±ÅÉ", 3, "µÜ×Ó");
+        create_family("æ­¦ç•¶æ´¾", 3, "å¼Ÿå­");
 
         setup();
         carry_object(WEAPON_DIR"changjian")->wield();

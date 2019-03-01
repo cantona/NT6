@@ -1,4 +1,4 @@
-// hun.c ÎŞÃû
+// hun.c ç„¡å
 
 #include <ansi.h>
 
@@ -17,23 +17,23 @@ int perform(object me, object target)
         skill = me->query_skill("nine-finger", 1);
 
         if (! me->is_fighting(target))
-                return notify_fail("ÎŞÃûÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ç„¡ååªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if(me->query_skill_mapped("finger") != "nine-finger") 
-                return notify_fail("ÄãÃ»ÓĞÓÃ¾Å×ÖÕæÑÔÊÖÓ¡£¬ÎŞ·¨Ê¹ÓÃ¡¸ÎŞÃû¡¹¾øÕĞ£¡\n");
+                return notify_fail("ä½ æ²’æœ‰ç”¨ä¹å­—çœŸè¨€æ‰‹å°ï¼Œç„¡æ³•ä½¿ç”¨ã€Œç„¡åã€çµ•æ‹›ï¼\n");
 
         if (me->query_skill_prepared("finger") != "nine-finger")
-                return notify_fail("ÄãÃ»ÓĞ×¼±¸Ê¹ÓÃ¾Å×ÖÕæÑÔÊÖÓ¡£¬ÎŞ·¨Ê©Õ¹¡¸ÎŞÃû¡¹¾øÕĞ¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æº–å‚™ä½¿ç”¨ä¹å­—çœŸè¨€æ‰‹å°ï¼Œç„¡æ³•æ–½å±•ã€Œç„¡åã€çµ•æ‹›ã€‚\n");
 
         if (skill < 100)
-                return notify_fail("ÄãµÄ¾Å×ÖÕæÑÔÊÖÓ¡µÈ¼¶²»¹»£¬Á·ºÃÁËÔÙÀ´£¡\n");
+                return notify_fail("ä½ çš„ä¹å­—çœŸè¨€æ‰‹å°ç­‰ç´šä¸å¤ ï¼Œç·´å¥½äº†å†ä¾†ï¼\n");
 
         if( objectp(weapon=query_temp("weapon", me)) || 
             objectp(weapon=query_temp("handing", me)) )
-                return notify_fail("Äã±ØĞë¿Õ×ÅË«ÊÖ²ÅÄÜÊ¹ÓÃÖ¸·¨¾øÕĞ¡£\n");
+                return notify_fail("ä½ å¿…é ˆç©ºè‘—é›™æ‰‹æ‰èƒ½ä½¿ç”¨æŒ‡æ³•çµ•æ‹›ã€‚\n");
 
         if( query("neili", me)<500 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ã€‚\n");
         
         ap = me->query_skill("finger") + me->query_skill("force");
         ap+=query("jiali", me);
@@ -49,11 +49,11 @@ int perform(object me, object target)
         if (me->query_skill_mapped("force"))
                 mapforce = to_chinese(me->query_skill_mapped("force"));
         else
-                mapforce = "ÄÚÁ¦";
+                mapforce = "å…§åŠ›";
                 
-        msg = MAG "\n$N" NOR MAG "¿ÚÖĞÄ¬ËĞ¾Å×ÖÕæÑÔ£¬Ë«ÊÖÌ¯¿ª£¬¾ÅÊ½ÊÖÓ¡²»×¡±ä»Ã¡£\n" +
-               "Ò»Ê±Ö®¼ä£¬ÂşÌìÊÖÓ¡»ìÔÓ×ÅÇ¿ÁÒµÄ" HIW + mapforce + NOR + 
-               MAG "£¬ÎŞ¼á²»´İµØÉ±Ïò$n" NOR MAG "£¡\n" NOR;
+        msg = MAG "\n$N" NOR MAG "å£ä¸­é»˜èª¦ä¹å­—çœŸè¨€ï¼Œé›™æ‰‹æ”¤é–‹ï¼Œä¹å¼æ‰‹å°ä¸ä½è®Šå¹»ã€‚\n" +
+               "ä¸€æ™‚ä¹‹é–“ï¼Œæ¼«å¤©æ‰‹å°æ··é›œè‘—å¼·çƒˆçš„" HIW + mapforce + NOR + 
+               MAG "ï¼Œç„¡å …ä¸æ‘§åœ°æ®ºå‘$n" NOR MAG "ï¼\n" NOR;
                 
         message_combatd(msg, me, target);
 
@@ -66,20 +66,20 @@ int perform(object me, object target)
                 COMBAT_D->do_attack(me, target, 0, 0);
         }
 
-        msg = "\nºöÎÅÒ»Éù´óºÈ" HIW " ÁÙ ±ø ¶· Õß ½Ô Õó ÁĞ ÔÚ Ç° !\n" NOR +  
-              "Ö»¼û$NÉíĞÎÁè¿Õ¶øÆğ£¬Ë«ÊÖºÏÊ²£¬±¦Æ¿Æø´ÓËÄÃæ°Ë·½Ó¿À´£¬³äÈûÌìµØ£¬¼´Ê¹Ğ­ÉúË«Òí£¬»¹ÊÇ±ÜÎŞ¿É±Ü£¡ \n" + 
-              "ÕıÊÇ" HIW "¾Å×ÖÕæÑÔÊÖÓ¡" NOR "ÖÕ¼«Ê½£º " HIY "¾ÅÓ¡ºÏÒ»" NOR "£¡\n" NOR; 
+        msg = "\nå¿½èä¸€è²å¤§å–" HIW " è‡¨ å…µ é¬¥ è€… çš† é™£ åˆ— åœ¨ å‰ !\n" NOR +  
+              "åªè¦‹$Nèº«å½¢å‡Œç©ºè€Œèµ·ï¼Œé›™æ‰‹åˆä»€ï¼Œå¯¶ç“¶æ°£å¾å››é¢å…«æ–¹æ¹§ä¾†ï¼Œå……å¡å¤©åœ°ï¼Œå³ä½¿å”ç”Ÿé›™ç¿¼ï¼Œé‚„æ˜¯é¿ç„¡å¯é¿ï¼ \n" + 
+              "æ­£æ˜¯" HIW "ä¹å­—çœŸè¨€æ‰‹å°" NOR "çµ‚æ¥µå¼ï¼š " HIY "ä¹å°åˆä¸€" NOR "ï¼\n" NOR; 
 
         if (ap / 2 + random(ap) > dp || !living(target))
         {
                 if (weapon2)
-                        msg += MAG "$n" NOR MAG "¼û$N" MAG "À´ÊÆĞ×ÃÍ£¬²»¸ÒÕıÃæµÖµ²£¬ÊÖÖĞ" + weapon2->name() + 
-                               NOR MAG "ÂúÌì»ÃÓ°£¬·ÀµÃË®Ğ¹²»Í¨\n" + 
-                               "$N" NOR MAG "¾¹ÊÇÖÃÈôØèÎÅ£¬" HIW "ÂİĞı¾¢Æø" NOR MAG "ÈÔ¾ÉÃàÃà²»¾ø£¬$n" NOR MAG "ÎŞ¿ÉÄÎºÎÖ®ÏÂ£¬±»»÷¸öÕı×Å£¡\n" NOR; 
+                        msg += MAG "$n" NOR MAG "è¦‹$N" MAG "ä¾†å‹¢å…‡çŒ›ï¼Œä¸æ•¢æ­£é¢æŠµæ“‹ï¼Œæ‰‹ä¸­" + weapon2->name() + 
+                               NOR MAG "æ»¿å¤©å¹»å½±ï¼Œé˜²å¾—æ°´æ³„ä¸é€š\n" + 
+                               "$N" NOR MAG "ç«Ÿæ˜¯ç½®è‹¥ç½”èï¼Œ" HIW "èºæ—‹å‹æ°£" NOR MAG "ä»èˆŠç¶¿ç¶¿ä¸çµ•ï¼Œ$n" NOR MAG "ç„¡å¯å¥ˆä½•ä¹‹ä¸‹ï¼Œè¢«æ“Šå€‹æ­£è‘—ï¼\n" NOR; 
                 else
-                        msg += MAG "$n" NOR MAG "¼û$N" MAG "À´ÊÆĞ×ÃÍ£¬²»¸ÒÕıÃæµÖµ²£¬²àÉí½ø²½Ë«ÕÆ·ÜÁ¦²à»÷$N\n" + 
-                               NOR MAG "$N" NOR MAG "¾¹ÊÇÖÃÈôØèÎÅ£¬" HIW "ÂİĞı¾¢Æø" NOR MAG "ÈÔ¾ÉÃàÃà²»¾ø£¬$n" + 
-                               NOR MAG "ÎŞ¿ÉÄÎºÎÖ®ÏÂ£¬±»»÷¸öÕı×Å£¡\n" NOR;
+                        msg += MAG "$n" NOR MAG "è¦‹$N" MAG "ä¾†å‹¢å…‡çŒ›ï¼Œä¸æ•¢æ­£é¢æŠµæ“‹ï¼Œå´èº«é€²æ­¥é›™æŒå¥®åŠ›å´æ“Š$N\n" + 
+                               NOR MAG "$N" NOR MAG "ç«Ÿæ˜¯ç½®è‹¥ç½”èï¼Œ" HIW "èºæ—‹å‹æ°£" NOR MAG "ä»èˆŠç¶¿ç¶¿ä¸çµ•ï¼Œ$n" + 
+                               NOR MAG "ç„¡å¯å¥ˆä½•ä¹‹ä¸‹ï¼Œè¢«æ“Šå€‹æ­£è‘—ï¼\n" NOR;
                
                 target->receive_damage("qi", damage, me);
                 target->receive_wound("qi", damage/2, me);
@@ -89,13 +89,13 @@ int perform(object me, object target)
         } else
         {
                 if (weapon)
-                        msg += MAG "$n" NOR MAG "¼û$N" NOR MAG "À´ÊÆĞ×ÃÍ£¬²»¸ÒÕıÃæµÖµ²£¬ÊÖÖĞ" + weapon2->name() +
-                               NOR MAG "ÂúÌì»ÃÓ°£¬·ÀµÃË®Ğ¹²»Í¨\n" +
-                               "$N" NOR MAG "±»»ºµÃÒ»»º£¬" HIW "ÂİĞı¾¢Æø" NOR MAG"ÒÑÈ»Âä¿Õ£¡\n" NOR;
+                        msg += MAG "$n" NOR MAG "è¦‹$N" NOR MAG "ä¾†å‹¢å…‡çŒ›ï¼Œä¸æ•¢æ­£é¢æŠµæ“‹ï¼Œæ‰‹ä¸­" + weapon2->name() +
+                               NOR MAG "æ»¿å¤©å¹»å½±ï¼Œé˜²å¾—æ°´æ³„ä¸é€š\n" +
+                               "$N" NOR MAG "è¢«ç·©å¾—ä¸€ç·©ï¼Œ" HIW "èºæ—‹å‹æ°£" NOR MAG"å·²ç„¶è½ç©ºï¼\n" NOR;
 
                 else
-                        msg += MAG "$n" NOR MAG "¼û$N" NOR MAG "À´ÊÆĞ×ÃÍ£¬²»¸ÒÕıÃæµÖµ²£¬²àÉí½ø²½Ë«ÕÆ·ÜÁ¦²à»÷$N\n" + 
-                               NOR MAG "$N" NOR MAG "±»»ºµÃÒ»»º£¬" HIW "ÂİĞı¾¢Æø" NOR MAG "ÒÑÈ»Âä¿Õ£¬µ«$n" NOR MAG "Ò²±»$N" NOR MAG "ÕğµÃÆøÑª·­Ó¿£¡\n" NOR;
+                        msg += MAG "$n" NOR MAG "è¦‹$N" NOR MAG "ä¾†å‹¢å…‡çŒ›ï¼Œä¸æ•¢æ­£é¢æŠµæ“‹ï¼Œå´èº«é€²æ­¥é›™æŒå¥®åŠ›å´æ“Š$N\n" + 
+                               NOR MAG "$N" NOR MAG "è¢«ç·©å¾—ä¸€ç·©ï¼Œ" HIW "èºæ—‹å‹æ°£" NOR MAG "å·²ç„¶è½ç©ºï¼Œä½†$n" NOR MAG "ä¹Ÿè¢«$N" NOR MAG "éœ‡å¾—æ°£è¡€ç¿»æ¹§ï¼\n" NOR;
         }
 
         me->start_busy(2 + random(2));

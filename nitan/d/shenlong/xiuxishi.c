@@ -6,10 +6,10 @@ void init();
 
 void create()
 {
-        set("short", "ÐÝÏ¢ÊÒ");
+        set("short", "ä¼‘æ¯å®¤");
         set("long", @LONG
-ÕâÊÇ¼äÕû½àµÄÐ¡·¿£¬·¿Àï±ðÎÞËûÎï£¬Ö»ÓÐÖÐ¼ä·Å×ÅÒ»ÕÅÊÕÊ°µÃ¸É
-¸É¾»¾»µÄ´²£¬ÕâÊÇÉñÁúµºµÜ×ÓµÄÐÝÏ¢³¡Ëù¡£
+é€™æ˜¯é–“æ•´æ½”çš„å°æˆ¿ï¼Œæˆ¿è£¡åˆ¥ç„¡ä»–ç‰©ï¼Œåªæœ‰ä¸­é–“æ”¾è‘—ä¸€å¼µæ”¶æ‹¾å¾—å¹¹
+å¹¹å‡ˆå‡ˆçš„åºŠï¼Œé€™æ˜¯ç¥žé¾å³¶å¼Ÿå­çš„ä¼‘æ¯å ´æ‰€ã€‚
 LONG );
 	set("exits", ([
 	    "south"  : __DIR__"zoulang",

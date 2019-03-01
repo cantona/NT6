@@ -14,7 +14,7 @@ nosave int amount;
 void setup()
 {
         if( !query("unit") )
-                set("unit", "§»");
+                set("unit", "â–¡");
 
         if( query("base_weight") < 1 )
                 set("base_weight", 1);

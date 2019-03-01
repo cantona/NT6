@@ -1,4 +1,4 @@
-// chuidutong.c ´µ¶¾Í²
+// chuidutong.c å¹æ¯’ç­’
 #include <ansi.h>
 inherit ITEM;
 
@@ -11,17 +11,17 @@ void init()
 
 void create()
 {
-        set_name(HIW"´µ¶¾Í²"NOR, ({ "chuidu tong", "ct" }) );
+        set_name(HIW"å¹æ¯’ç­’"NOR, ({ "chuidu tong", "ct" }) );
         set("taskobj", 1);
         set_weight(600);
         if( clonep() )
                 set_default_object(__FILE__);
         else
         {
-                set("unit", "Ö§");
+                set("unit", "æ”¯");
                 set("value", 0);
                 set("material", "steel");
-                set("long", "ÕâÊÇÒ»Ö§ºÚ÷î÷îµÄÌúÍ²£¬²»ÖªµÀ×öÊ²Ã´ÓÃµÄ¡£\n");
+                set("long", "é€™æ˜¯ä¸€æ”¯é»‘é»é»çš„éµç­’ï¼Œä¸çŸ¥é“åšä»€éº¼ç”¨çš„ã€‚\n");
         }
         setup();
 }

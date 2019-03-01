@@ -8,21 +8,21 @@ int exert(object me, object target)
 {
         int level = me->query_skill("suxin-jue", 1);
 
-        if (level < 120) return notify_fail("ÄãµÄÄÚ¹¦ĞŞÎª»¹²»¹»¡£\n");
+        if (level < 120) return notify_fail("ä½ çš„å…§åŠŸä¿®ç‚ºé‚„ä¸å¤ ã€‚\n");
 
         if( query("max_neili", me)<5*level )
-                return notify_fail("ÄãµÄÄÚÁ¦»¹²»¹»Ç¿¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›é‚„ä¸å¤ å¼·ã€‚\n");
 
         if( query("neili", me)<4*level )
-                return notify_fail("ÄãµÄÕæÆø²»¹»¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ã€‚\n");
 
         if( query_temp("ngsuxin", me) )
-                return notify_fail("Äã´ËÊ±ÕıÔÚ°´ËØĞÄ¾÷µÄĞÄ·¨ĞĞ¹¦¡£\n");
+                return notify_fail("ä½ æ­¤æ™‚æ­£åœ¨æŒ‰ç´ å¿ƒè¨£çš„å¿ƒæ³•è¡ŒåŠŸã€‚\n");
 
         set_temp("ngsuxin", 1, me);
-        write( HIW "Äã°µÔËÓñÅ®ËØĞÄĞÄ·¨£¬°Ñ¶àÄêĞŞÁ¶µÄ¡°Ê®¶şÉÙ¡¢Ê®¶ş¶à¡±µÄÕı·´Òª¾÷·¢»Óµ½¼«ÖÂ¡£\n" NOR);
+        write( HIW "ä½ æš—é‹ç‰å¥³ç´ å¿ƒå¿ƒæ³•ï¼ŒæŠŠå¤šå¹´ä¿®ç…‰çš„â€œåäºŒå°‘ã€åäºŒå¤šâ€çš„æ­£åè¦è¨£ç™¼æ®åˆ°æ¥µè‡´ã€‚\n" NOR);
         message("vision",
-                HIW + "Ö»¼û" + me->name() + "Î¢±ÕË«ÑÛ£¬ÎŞÏ²ÎŞÀÖ£¬ÎŞË¼ÎŞÂÇ,°Ñ¶àÄêĞŞÁ¶µÄ¡°Ê®¶şÉÙ¡¢Ê®¶ş¶à¡±µÄÕı·´Òª¾÷·¢»Óµ½¼«ÖÂ¡£\n" NOR,
+                HIW + "åªè¦‹" + me->name() + "å¾®é–‰é›™çœ¼ï¼Œç„¡å–œç„¡æ¨‚ï¼Œç„¡æ€ç„¡æ…®,æŠŠå¤šå¹´ä¿®ç…‰çš„â€œåäºŒå°‘ã€åäºŒå¤šâ€çš„æ­£åè¦è¨£ç™¼æ®åˆ°æ¥µè‡´ã€‚\n" NOR,
                 environment(me), me);
 
         addn("neili", -level, me);
@@ -40,5 +40,5 @@ void recover(object me, int level)
         addn_temp("apply/armor", -level, me);
         addn_temp("apply/defense", -level, me);
 
-        tell_object(me, HIG"ÄãĞĞ¹¦ÒÑ¾Ã£¬ÂıÂıÊÕ»ØÓñÅ®ËØĞÄµÄĞÄ·¨¡£\n"NOR);
+        tell_object(me, HIG"ä½ è¡ŒåŠŸå·²ä¹…ï¼Œæ…¢æ…¢æ”¶å›ç‰å¥³ç´ å¿ƒçš„å¿ƒæ³•ã€‚\n"NOR);
 }

@@ -4,14 +4,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIY "³¤Ã÷µÆ" NOR, ({ "changmingdeng for xueyi"}) );
+        set_name(HIY "é•·æ˜ç‡ˆ" NOR, ({ "changmingdeng for xueyi"}) );
         set_weight(10000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIY "\nÕâÊÇÒ»Õµ³¤Ã÷µÆ£¬ÎªÑ©Òä¶øÃ÷£¬ÎªÑ©ÒäÒıÂ·£¬Ô¸ÆäË³ÀûÍ¨ÍùÌì¹úÖ®Â·£¡\n NOR");
+                set("long", HIY "\né€™æ˜¯ä¸€ç›é•·æ˜ç‡ˆï¼Œç‚ºé›ªæ†¶è€Œæ˜ï¼Œç‚ºé›ªæ†¶å¼•è·¯ï¼Œé¡˜å…¶é †åˆ©é€šå¾€å¤©åœ‹ä¹‹è·¯ï¼\n NOR");
                 set("value", 1);
-                set("unit", "Õµ"); 
+                set("unit", "ç›"); 
                 set("no_get", 1);                
         }
 }

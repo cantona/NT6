@@ -7,11 +7,11 @@ void greeting(object);
 void init();
 void create()
 {
-        set_name("É£ÈıÄï", ({ "sang sanniang", "sang", "sanniang"}) );
-        set("gender", "Å®ĞÔ" );
+        set_name("æ¡‘ä¸‰å¨˜", ({ "sang sanniang", "sang", "sanniang"}) );
+        set("gender", "å¥³æ€§" );
         set("age", 45);
-        set("title", "ÈÕÔÂÉñ½ÌÌìÏãÌÃ³¤ÀÏ");
-        set("long", "ÉíÇé¹Å¹Ö£¬ÃæÎŞË¿ºÁÎ¢Ğ¦£¬ÃæÈİÈ´Ïàµ±ÇåĞã¡£ \n"
+        set("title", "æ—¥æœˆç¥æ•™å¤©é¦™å ‚é•·è€");
+        set("long", "èº«æƒ…å¤æ€ªï¼Œé¢ç„¡çµ²æ¯«å¾®ç¬‘ï¼Œé¢å®¹å»ç›¸ç•¶æ¸…ç§€ã€‚ \n"
                     );
         set("attitude", "friendly");
         set("shen_type", -1);
@@ -43,7 +43,7 @@ void create()
         
         map_skill("parry", "taiji-jian");
         map_skill("blade", "taiji-jian");
-        create_family("ÈÕÔÂÉñ½Ì",2,"µÜ×Ó ÌìÏãÌÃ³¤ÀÏ");
+        create_family("æ—¥æœˆç¥æ•™",2,"å¼Ÿå­ å¤©é¦™å ‚é•·è€");
 
         set("chat_chance", 3);
         setup();

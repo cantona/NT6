@@ -1,4 +1,4 @@
-// hong.c ºé°²Í¨
+// hong.c æ´ªå®‰é€š
 
 #include <ansi.h>
 inherit NPC;
@@ -9,10 +9,10 @@ int do_join(string arg);
 
 void create()
 {
-        set_name("ºé°²Í¨", ({ "hong-antong", "hong" }));
-        set("nickname", HIR "ÓÀÏíÏÉ¸£" NOR);
-        set("long", "Ëû¾ÍÊÇÎä¹¦¸ÇÊÀ¡¢Áî½­ºşÈËµÈÌ¸Ö®É«±äµÄÉñÁú½Ì½ÌÖ÷ºé°²Í¨¡£\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("æ´ªå®‰é€š", ({ "hong-antong", "hong" }));
+        set("nickname", HIR "æ°¸äº«ä»™ç¦" NOR);
+        set("long", "ä»–å°±æ˜¯æ­¦åŠŸè“‹ä¸–ã€ä»¤æ±Ÿæ¹–äººç­‰è«‡ä¹‹è‰²è®Šçš„ç¥é¾æ•™æ•™ä¸»æ´ªå®‰é€šã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 50);
         set("attitude", "friendly");
         set("shen_type", -1);
@@ -62,10 +62,10 @@ void create()
         map_skill("parry", "yingxiong-sanzhao");
         prepare_skill("finger", "yingxiong-sanzhao");
         prepare_skill("hand", "shenlong-bashi");
-        set("party/party_name", HIY"ÉñÁú½Ì"NOR);
-        set("party/rank", HIM"½ÌÖ÷"NOR);
+        set("party/party_name", HIY"ç¥é¾æ•™"NOR);
+        set("party/rank", HIM"æ•™ä¸»"NOR);
         set("party/level", 3);
-        create_family("ÉñÁú½Ì",1,"µÜ×Ó");
+        create_family("ç¥é¾æ•™",1,"å¼Ÿå­");
 
         setup();
         carry_object(CLOTH_DIR"cloth")->wear();
@@ -90,7 +90,7 @@ void greeting(object ob)
         int i;
 
         obj = all_inventory(environment(me));
-        command("say ·òÈËËùËµÉõÊÇÓĞÀí£¬µ«Õâ¾äËÆ¸üº¬ÉîÒâ¡£");
+        command("say å¤«äººæ‰€èªªç”šæ˜¯æœ‰ç†ï¼Œä½†é€™å¥ä¼¼æ›´å«æ·±æ„ã€‚");
         for(i=0; i<sizeof(obj); i++)
         {
                 if( query("id", obj[i]) == "su-quan" )
@@ -99,6 +99,6 @@ void greeting(object ob)
                     COMBAT_D->do_attack(me,obj[i],query_temp("weapon", me),0);
                 }
         }
-        command("say ºá½£ËÆÖ¸½£ĞĞÖ®ÊÆ¡£¡£¡£");
+        command("say æ©«åŠä¼¼æŒ‡åŠè¡Œä¹‹å‹¢ã€‚ã€‚ã€‚");
         return;
 }

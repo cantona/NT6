@@ -1,24 +1,24 @@
-// /d/xiakedao/shiroom16.c ÏÀ¿Íµº Ê¯ÊÒ16
+// /d/xiakedao/shiroom16.c ä¿ å®¢å³¶ çŸ³å®¤16
 
 inherit ROOM;
 
 int do_study(string arg);
 void create()
 {
-        set("short", "Ê¯ÊÒ");
+        set("short", "çŸ³å®¤");
         set("long", @LONG
-½øÃÅ±ãÌýµÃ¼±´ÙµÄºôÎüÖ®Éù¡£Ö»¼ûÒ»ÈËÃæÏòÊ¯±Ú(wall)¶ø×ø£¬¼ç
-Í·ËÊ¶¯£¬´­Ï¢Á¬Á¬£¬ËÆÊÇÁ·¹¦µ½ÁË½ôÒª¹ØÍ·¡£ÁíÒ»Ãû´óººË«ÕÆ°´ÔÚÇ°
-ÈËµÄºóÐÄ£¬Í·¶¥Ò²ÊÇ°×Æøë³ëµ¡£
+é€²é–€ä¾¿è½å¾—æ€¥ä¿ƒçš„å‘¼å¸ä¹‹è²ã€‚åªè¦‹ä¸€äººé¢å‘çŸ³å£(wall)è€Œåï¼Œè‚©
+é ­è³å‹•ï¼Œå–˜æ¯é€£é€£ï¼Œä¼¼æ˜¯ç·´åŠŸåˆ°äº†ç·Šè¦é—œé ­ã€‚å¦ä¸€åå¤§æ¼¢é›™æŽŒæŒ‰åœ¨å‰
+äººçš„å¾Œå¿ƒï¼Œé ­é ‚ä¹Ÿæ˜¯ç™½æ°£æ°¤æ°³ã€‚
 LONG );
         set("exits", ([
                 "east"  : __DIR__"shihole4",
         ]));
         set("item_desc", ([
                 "wall" : @WALL
-ÕâÃæÇ½È´ÁíÓÐÆæ´¦£¬¡¸ÒâÆøËØÄÞÉú¡¹¼¸¸ö´ó×ÖÔÚ×îÏÂÃæ¡£ÆäÉÏ¿ÌµÄÊÇ
-¼¸¸öÌÆ×°ÎèÅ®£¬×ËÌ¬ÈáË³ÇáÓ¯¡£²àÃæÐ±Ð±µÄÒ»ÐÐ×¢£º°×ÀÖÌìÊ«£ºÓæÑô
-Ü±¹Ä¶¯µØÀ´£¬¾ªÆÆÄÞÉÑÓðÒÂÇú¡£ÁíÒ»ÐÐ×¢×Ö¼£ÁÊ²Ý£ºÖÁÈá¶ø¶¯Ò²¸Õ¡£
+é€™é¢ç‰†å»å¦æœ‰å¥‡è™•ï¼Œã€Œæ„æ°£ç´ éœ“ç”Ÿã€å¹¾å€‹å¤§å­—åœ¨æœ€ä¸‹é¢ã€‚å…¶ä¸Šåˆ»çš„æ˜¯
+å¹¾å€‹å”è£èˆžå¥³ï¼Œå§¿æ…‹æŸ”é †è¼•ç›ˆã€‚å´é¢æ–œæ–œçš„ä¸€è¡Œæ³¨ï¼šç™½æ¨‚å¤©è©©ï¼šæ¼é™½
+é¼™é¼“å‹•åœ°ä¾†ï¼Œé©šç ´éœ“è£³ç¾½è¡£æ›²ã€‚å¦ä¸€è¡Œæ³¨å­—è·¡æ½¦è‰ï¼šè‡³æŸ”è€Œå‹•ä¹Ÿå‰›ã€‚
 WALL
         ]));
         set("no_clean_up", 0);

@@ -4,12 +4,12 @@ inherit NPC;
 
 void create()
 {
-        set_name(HIR "ÍûÌìÑÄ" NOR, ({ "wang tianya", "wang", "tianya", "rcwiz"}));
-        set("title", HIY "¶ş×ªÊØ»¤ÌìÉñ" NOR);
-        set("gender", "ÄĞĞÔ");
+        set_name(HIR "æœ›å¤©æ¶¯" NOR, ({ "wang tianya", "wang", "tianya", "rcwiz"}));
+        set("title", HIY "äºŒè½‰å®ˆè­·å¤©ç¥" NOR);
+        set("gender", "ç”·æ€§");
         set("age", 28);
         set("long", @LONG
-ÍûÌìÑÄÄË¶ş×ª¹Ø¿ÚÊØ»¤´óÉñ£¬»÷°ÜËû±ã¿ÉÒÔ´òÍ¨¶ş×ªÖ®ÃÅÁË£¬¼ÓÓÍ°É£¡
+æœ›å¤©æ¶¯ä¹ƒäºŒè½‰é—œå£å®ˆè­·å¤§ç¥ï¼Œæ“Šæ•—ä»–ä¾¿å¯ä»¥æ‰“é€šäºŒè½‰ä¹‹é–€äº†ï¼ŒåŠ æ²¹å§ï¼
 LONG);
         set("attitude", "friendly");
         set("str", 100);
@@ -19,7 +19,7 @@ LONG);
         set("per", 30);
         set("shen_type", 0);
 
-        set("no_nuoyi", 1); // ²»±»Å²ÒÆÓ°Ïì
+        set("no_nuoyi", 1); // ä¸è¢«æŒªç§»å½±éŸ¿
         
         set("qi", 200000000);
         set("max_qi", 200000000);
@@ -109,7 +109,7 @@ mixed hit_ob(object me, object ob, int damage_bouns)
 {
         ob->start_busy(5 + random(6));
         me->receive_wound("qi", 8500 + random(5600), ob);
-        return HIY "$N" HIY "Î¢Î¢Ò»Ğ¦£¬ÕĞËæÒâ×ª£¬¾¹±ÆµÃ$n" HIY "ÊÖÃ¦½ÅÂÒ¡£\n" NOR;
+        return HIY "$N" HIY "å¾®å¾®ä¸€ç¬‘ï¼Œæ‹›éš¨æ„è½‰ï¼Œç«Ÿé€¼å¾—$n" HIY "æ‰‹å¿™è…³äº‚ã€‚\n" NOR;
 }
 
 void heart_beat()
@@ -122,7 +122,7 @@ void heart_beat()
 
 void unconcious()
 {
-        // ·ÀÖ¹Ö±½Ócall_die()
+        // é˜²æ­¢ç›´æ¥call_die()
         if (query("qi") > 600000)
         {
                 revive();
@@ -135,7 +135,7 @@ void die(object killer)
 {
         object myroom;
         
-        // ·ÀÖ¹Ö±½Ócall_die()
+        // é˜²æ­¢ç›´æ¥call_die()
         if (query("qi") > 600000)
         {
                 revive();
@@ -145,7 +145,7 @@ void die(object killer)
         myroom = this_object()->query("myroom");
         myroom->set("exits", ([ "up" : "/kungfu/class/sky/sky2zhuan" ]));
         
-        message_vision(HIR "Ò»Õó¹âÃ¢ÉÁ¹ı£ºÍ¨ÍùÌìÍâÌÒÔ´Ö®ÃÅÒÑ¾­¿ªÆô£¡\n" NOR, this_object());
+        message_vision(HIR "ä¸€é™£å…‰èŠ’é–ƒéï¼šé€šå¾€å¤©å¤–æ¡ƒæºä¹‹é–€å·²ç¶“é–‹å•Ÿï¼\n" NOR, this_object());
         destruct(this_object());
 
         return;

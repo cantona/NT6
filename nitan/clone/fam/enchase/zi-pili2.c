@@ -3,18 +3,18 @@ inherit ITEM;
 
 void create()
 {
-        set_name(MAG "×ÏÅùö¨" NOR, ({"zi pili"}));
+        set_name(MAG "ç´«éœ¹é‚" NOR, ({"zi pili"}));
         set_weight(2000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Á£");
+                set("unit", "ç²’");
                 set("value", 500000);
-                set("enchase/name", "×ÏÅùö¨");
+                set("enchase/name", "ç´«éœ¹é‚");
                 set("enchase/point", 1);
                 set("enchase/type", "wrists");
                                 set("enchase/cur_firm", 100);
-                                set("nine_object", 1); // ¾Å¿×ÏâÇ¶ÎïÆ·±ê¼Ç
+                                set("nine_object", 1); // ä¹å­”é‘²åµŒç‰©å“æ¨™è¨˜
                                 set("enchase/spe_data", ([]) );  
         }
         setup();

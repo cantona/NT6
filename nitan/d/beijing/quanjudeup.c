@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "È«¾ÛµÂ¾ÆÂ¥¶þÂ¥");
+        set("short", "å…¨èšå¾·é…’æ¨“äºŒæ¨“");
         set("long", @LONG
-ÕâÀïÊÇÑÅ×ù£¬ÎÄÈËÑ§Ê¿¾­³£ÔÚÕâÀïÒ÷Ê«×÷»­£¬¸»ÉÌÍÁºÀÒ²ÔÚÕâÀï
-±ß³ÔºÈ±ß×÷½»Ò×¡£ÕâÀïÒ²ÊÇ³ÇÀï¾Ù°ìÏ²ÑçµÄ×î¼Ñ³¡Ëù¡£ÕâÀï³öÊÛÌìÏÂ
-ÎÅÃûµÄÈ«¾ÛµÂ¿¾Ñ¼¡£ÄãÕ¾ÔÚÂ¥ÉÏÌ÷Íû¾©³Ç£¬Ö»¾õµÃÐÄ¿õÉñâù¡£
+é€™è£¡æ˜¯é›…åº§ï¼Œæ–‡äººå­¸å£«ç¶“å¸¸åœ¨é€™è£¡åŸè©©ä½œç•«ï¼Œå¯Œå•†åœŸè±ªä¹Ÿåœ¨é€™è£¡
+é‚Šåƒå–é‚Šä½œäº¤æ˜“ã€‚é€™è£¡ä¹Ÿæ˜¯åŸŽè£¡èˆ‰è¾¦å–œå®´çš„æœ€ä½³å ´æ‰€ã€‚é€™è£¡å‡ºå”®å¤©ä¸‹
+èžåçš„å…¨èšå¾·çƒ¤é´¨ã€‚ä½ ç«™åœ¨æ¨“ä¸Šçœºæœ›äº¬åŸŽï¼Œåªè¦ºå¾—å¿ƒæ› ç¥žæ€¡ã€‚
 LONG );
         set("exits", ([
                 "down"   : "/d/beijing/quanjude",

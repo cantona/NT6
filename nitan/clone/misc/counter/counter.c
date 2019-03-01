@@ -1,29 +1,29 @@
 // counter.c
-//wswÓÚ2004Äê2ÔÂ20ÈÕ
-//Íæ¼Ò¹ñÌ¨
-//Íæ¼ÒÓĞ´Ë¹ñÌ¨ºó£¬¿É°ÑÎïÆ·°ÚÔÚ¹ñÌ¨ÉÏ³öÊÛ£¬ÖØÆôºó±£Áô¡£
-//Èç¹ûÊÇËæ»úÊôĞÔÎïÆ·£¬ÎïÆ·->set("changed",1)
+//wswäº2004å¹´2æœˆ20æ—¥
+//ç©å®¶æ«ƒå°
+//ç©å®¶æœ‰æ­¤æ«ƒå°å¾Œï¼Œå¯æŠŠç‰©å“æ“ºåœ¨æ«ƒå°ä¸Šå‡ºå”®ï¼Œé‡å•Ÿå¾Œä¿ç•™ã€‚
+//å¦‚æœæ˜¯éš¨æ©Ÿå±¬æ€§ç‰©å“ï¼Œç‰©å“->set("changed",1)
 
 #include "counter.h"   
 
 void create()
 {        
         seteuid(0);
-        set_name(HIC"¹ñÌ¨"NOR,({"counter" }) );   
+        set_name(HIC"æ«ƒå°"NOR,({"counter" }) );   
         set_weight(50000);   
         if( clonep() )   
                 set_default_object(__FILE__); 
         else {   
         set("value", 2000000);   
    
-                set("unit","¸ö");   
-                set("capacity",10);  //ÈİÁ¿ 
+                set("unit","å€‹");   
+                set("capacity",10);  //å®¹é‡ 
                 set("no_put",1);   
                 set("no_sell",1);   
                 set("no_get",1);   
                 set("no_give",1);   
                 set("no_drop",1);   
-                set("long",HIB"Íæ¼ÒÖ®³ÇµÄ¹ñÌ¨¡£\n"NOR);   
+                set("long",HIB"ç©å®¶ä¹‹åŸçš„æ«ƒå°ã€‚\n"NOR);   
         }   
         setup();     
 }   

@@ -8,12 +8,12 @@ inherit NPC;
 int do_fashi();
 void create()
 {
-        set_name("º¿ÏÎ¿Æ¬Ô", ({ "jisi lama", "jisi", "lama" }));
+        set_name("Á•≠Á•ÄÂñáÂòõ", ({ "jisi lama", "jisi", "lama" }));
         set_weight(3000000);
         set("long", 
-"À˚ «√‹◊⁄µƒΩ‰¬……Æ£¨≥§µ√∞Ú¥Û—¸£¨ ÷÷–Ã·◊≈∑®∆˜£¨…Ì◊≈ª∆≈€£¨Õ∑¥˜ª∆√±£¨\n"
-"¬˙√ÊÀ‡…±÷Æ∆¯°£\n");
-        set("gender", "ƒ––‘");
+"‰ªñÊòØÂØÜÂÆóÁöÑÊàíÂæãÂÉßÔºåÈï∑ÂæóËÜÄÂ§ßËÖ∞ÔºåÊâã‰∏≠ÊèêËëóÊ≥ïÂô®ÔºåË∫´ËëóÈªÉË¢çÔºåÈ†≠Êà¥ÈªÉÂ∏ΩÔºå\n"
+"ÊªøÈù¢ËÇÖÊÆ∫‰πãÊ∞£„ÄÇ\n");
+        set("gender", "Áî∑ÊÄß");
         set("age", 20);
         set("attitude", "heroism");
         set("class","bonze");
@@ -37,7 +37,7 @@ void create()
 
         
         set("inquiry", ([
-                "◊º±∏∑® ¬" : (: do_fashi :),
+                "Ê∫ñÂÇôÊ≥ï‰∫ã" : (: do_fashi :),
                 "preparation" : (: do_fashi :),
         ]) );
 
@@ -66,23 +66,23 @@ int do_fashi()
         
         
         if (! present("fa tan", (environment(this_object())))){
-        command("say Œ“’˝√¶◊≈ƒÿ£¨ƒ„»•Œ ÷µ»’µƒ∏¬◊≤º∞…°£");
+        command("say ÊàëÊ≠£ÂøôËëóÂë¢Ôºå‰Ω†ÂéªÂïèÂÄºÊó•ÁöÑËëõÂÄ´Â∏ÉÂêß„ÄÇ");
         return 1;
         }
 
         if( query("class", me) != "bonze"){
-        command("say ƒ„ «œÎ»√Œ“√«¥Û¿Æ¬Ô∞—ƒ„≥¨∂»¡À£¨ «∞…£ø");
+        command("say ‰Ω†ÊòØÊÉ≥ËÆìÊàëÂÄëÂ§ßÂñáÂòõÊää‰Ω†Ë∂ÖÂ∫¶‰∫ÜÔºåÊòØÂêßÔºü");
         return 1;
         }
 
-        if( query("family/family_name", me) != "—©…ΩÀ¬"
-         && query("family/family_name", me) != "—™µ∂√≈"){
-        command("say ƒ„ «œÎ»√Œ“√«¥Û¿Æ¬Ô∞—ƒ„≥¨∂»¡À£¨ «∞…£ø");
+        if( query("family/family_name", me) != "Èõ™Â±±ÂØ∫"
+         && query("family/family_name", me) != "Ë°ÄÂàÄÈñÄ"){
+        command("say ‰Ω†ÊòØÊÉ≥ËÆìÊàëÂÄëÂ§ßÂñáÂòõÊää‰Ω†Ë∂ÖÂ∫¶‰∫ÜÔºåÊòØÂêßÔºü");
         return 1;
         }
 
         if (me->query_skill("lamaism", 1) < 60){
-        command("say ∫‹∫√£°ƒ„»•≈™–©◊ˆ∑® ¬”√µƒÀ÷”Õ¿¥∞…°£");
+        command("say ÂæàÂ•ΩÔºÅ‰Ω†ÂéªÂºÑ‰∫õÂÅöÊ≥ï‰∫ãÁî®ÁöÑÈÖ•Ê≤π‰æÜÂêß„ÄÇ");
         return 1;
         }
 
@@ -90,17 +90,17 @@ int do_fashi()
         if(!( room1 = find_object("/d/xueshan/dumudian")) )
                 room1 = load_object("/d/xueshan/dumudian");
         if ( !objectp(gang = present("tong gang", room1)) ) {
-        command("say ◊ˆ∑® ¬”√µƒÀ÷”Õ≤ªº˚¡À£¨…œ»À∏œøÏ»•≤È“ªœ¬∞…£°");
+        command("say ÂÅöÊ≥ï‰∫ãÁî®ÁöÑÈÖ•Ê≤π‰∏çË¶ã‰∫ÜÔºå‰∏ä‰∫∫Ë∂ïÂø´ÂéªÊü•‰∏Ä‰∏ãÂêßÔºÅ");
                 return 1;
         }
 
         if (gang->query_current_liquid() < 40) {
-            command("say ◊ˆ∑® ¬”√µƒÀ÷”Õ≤ªπª”√¡À£¨«Î…œ»À≈™–©À÷”Õ¿¥∞…°£");
+            command("say ÂÅöÊ≥ï‰∫ãÁî®ÁöÑÈÖ•Ê≤π‰∏çÂ§†Áî®‰∫ÜÔºåË´ã‰∏ä‰∫∫ÂºÑ‰∫õÈÖ•Ê≤π‰æÜÂêß„ÄÇ");
                 return 1;
         }
         
         if( time()<query("burn/jobtime", me)+BUSY_TIME )
-        {       command("say ≥¨∂»ÕˆªÍø… «“ªº˛∫‹∫ƒ∑—æ´‘™µƒªÓ£¨…œ»Àªπ «œ»»•–™œ¢“ªœ¬∞…°£");
+        {       command("say Ë∂ÖÂ∫¶‰∫°È≠ÇÂèØÊòØ‰∏Ä‰ª∂ÂæàËÄóË≤ªÁ≤æÂÖÉÁöÑÊ¥ªÔºå‰∏ä‰∫∫ÈÇÑÊòØÂÖàÂéªÊ≠áÊÅØ‰∏Ä‰∏ãÂêß„ÄÇ");
                 return 1;
         }
              // add by Yujie
@@ -110,32 +110,32 @@ int do_fashi()
         for(i=0; i<sizeof(obj); i++){
         if( query("name", obj[i]) == query("pending", ob) )
         {
-        command("say"+query("pending", ob)+"…œ»À’˝‘⁄◊ˆ∑® ¬£¨’‚Œª"
-        + RANK_D->query_respect(me) + "«Î“ª≈‘…‘∫Ú°£\n");
+        command("say"+query("pending", ob)+"‰∏ä‰∫∫Ê≠£Âú®ÂÅöÊ≥ï‰∫ãÔºåÈÄô‰Ωç"
+        + RANK_D->query_respect(me) + "Ë´ã‰∏ÄÊóÅÁ®çÂÄô„ÄÇ\n");
         return 1;
         }
         }
-        command("say"+query("pending", ob)+"…œ»À∑® ¬◊ˆµΩ“ª∞Î··≤ª÷™≈‹ƒƒ¿Ô»•¡À£ø’Ê≤ªœÛª∞£°"
-        +query("name", me)+"…œ»ÀÃÊ"+query("pending", ob)+"…œ»À∞—”‡œ¬µƒ∑® ¬◊ˆÕÍ∞…°£\n");
+        command("say"+query("pending", ob)+"‰∏ä‰∫∫Ê≥ï‰∫ãÂÅöÂà∞‰∏ÄÂçäÂæå‰∏çÁü•Ë∑ëÂì™Ë£°Âéª‰∫ÜÔºüÁúü‰∏çË±°Ë©±ÔºÅ"
+        +query("name", me)+"‰∏ä‰∫∫Êõø"+query("pending", ob)+"‰∏ä‰∫∫Êää‰Ωô‰∏ãÁöÑÊ≥ï‰∫ãÂÅöÂÆåÂêß„ÄÇ\n");
         set("pending",query("name",  me), ob);
         return 1;
         }
 /*
         if( query("name", me) == query("last_burner", ob)){
-        command("say  …œ»À≤ª «∏’◊ˆÕÍ∑® ¬¬£øƒ„ªπ «œ»–™“ªª·∂˘∞…°£");
+        command("say  ‰∏ä‰∫∫‰∏çÊòØÂâõÂÅöÂÆåÊ≥ï‰∫ãÂóéÔºü‰Ω†ÈÇÑÊòØÂÖàÊ≠á‰∏ÄÊúÉÂÖíÂêß„ÄÇ");
         return 1;
         } 
 */
         if( query("pending", ob)){
-        command("say"+query("pending", ob)+"…œ»À∏’◊ˆÕÍ∑® ¬£¨º¿Ã≥ªπŒ¥œ®£¨¥˝Œ“µ»«Â¿ÌÕÍ··"
-         + RANK_D->query_respect(me) + "‘Ÿ¿¥◊ˆ∑® ¬∞…°£\n");
+        command("say"+query("pending", ob)+"‰∏ä‰∫∫ÂâõÂÅöÂÆåÊ≥ï‰∫ãÔºåÁ•≠Â£áÈÇÑÊú™ÁÜÑÔºåÂæÖÊàëÁ≠âÊ∏ÖÁêÜÂÆåÂæå"
+         + RANK_D->query_respect(me) + "ÂÜç‰æÜÂÅöÊ≥ï‰∫ãÂêß„ÄÇ\n");
         return 1;
         }
         
         else{
         command("say"+query("name", me)+RANK_D->query_respect(me)+
-        " «“™∏¯ƒƒŒª ©÷˜◊ˆ∑® ¬—Ω£ø\n");
-        set_temp("marks/∏", 1, me);
+        "ÊòØË¶ÅÁµ¶Âì™‰ΩçÊñΩ‰∏ªÂÅöÊ≥ï‰∫ãÂëÄÔºü\n");
+        set_temp("marks/Ëëõ", 1, me);
         return 1;
         }
 }
@@ -145,14 +145,14 @@ int accept_object(object me, object ob)
                 return 0;
 
         if( query("beheaded", ob)){
-        command("say ‘ı˜·√ª”–Õ∑£ø");
+        command("say ÊÄéÈ∫ºÊ≤íÊúâÈ†≠Ôºü");
         return 0;
         }
 
         if( query("id", ob) == "corpse" && present("fatan",(environment(this_object())) )
-         && query_temp("marks/∏", me) == 1){
-        write("º¿ÏÎ¿Æ¬Ôº±º±√¶√¶∑‘∏¿◊Û”“Õ˘º¿Ã≥¿ÔÃÓ≤Ò£¨µπÀ÷”Õ°£\n");
-        delete_temp("marks/∏", me);
+         && query_temp("marks/Ëëõ", me) == 1){
+        write("Á•≠Á•ÄÂñáÂòõÊÄ•ÊÄ•ÂøôÂøôÂê©ÂíêÂ∑¶Âè≥ÂæÄÁ•≠Â£áË£°Â°´Êü¥ÔºåÂÄíÈÖ•Ê≤π„ÄÇ\n");
+        delete_temp("marks/Ëëõ", me);
         if( query("combat_exp", ob)>query("combat_exp", me )
          && query("my_killer", ob) == query("id", me)){
         set_temp("award_pending",query("combat_exp",  ob), me);
@@ -169,12 +169,12 @@ int accept_object(object me, object ob)
         return 1;
         }
 
-        if (ob->name()=="À÷”Õπﬁ"
+        if (ob->name()=="ÈÖ•Ê≤πÁΩê"
          && query("class", me) == "bonze"){
         if (me->query_skill("lamaism", 1) < 30){
         set("lama_butter",query("mud_age",  me), me);
         command ("bow");
-        command ("say ∑÷˜±£”” ©÷˜£°");
+        command ("say ‰Ωõ‰∏ª‰øù‰ΩëÊñΩ‰∏ªÔºÅ");
 //        remove_call_out("destroy_it");
         call_out("destroy_it", 1, ob);
         return 1;
@@ -183,15 +183,15 @@ int accept_object(object me, object ob)
         && me->query_skill("lamaism", 1) < 60){
         set("lama_butter",query("mud_age",  me)+7600, me);
         command ("bow");
-        command ("say ∑÷˜±£”” ©÷˜£°");
+        command ("say ‰Ωõ‰∏ª‰øù‰ΩëÊñΩ‰∏ªÔºÅ");
         remove_call_out("destroy_it");
         call_out("destroy_it", 1, ob);
         return 1;
         }
    }
-//      else if (ob->name()!="À÷”Õ" && ob->query("id") != "corpse") {
+//      else if (ob->name()!="ÈÖ•Ê≤π" && ob->query("id") != "corpse") {
         else {
-        write("∏¬◊≤º¡≥…œ¬∂≥ˆ√‘ªÛµƒ±Ì«È°£\n");
+        write("ËëõÂÄ´Â∏ÉËáâ‰∏äÈú≤Âá∫Ëø∑ÊÉëÁöÑË°®ÊÉÖ„ÄÇ\n");
         command ("shake");
 //      remove_call_out("destroy_it");  // if player #10 give him some stuff,
                                         // 1 got dest but others 9 still on him   
@@ -212,26 +212,26 @@ void preparing(object me)
         ob=(present("fa tan", (environment(this_object()))));
         if (! objectp(ob)) 
         {
-                write("◊º±∏Œ¥≥…π¶£¨«Î÷ÿ–¬¿¥°£\n");
+                write("Ê∫ñÂÇôÊú™ÊàêÂäüÔºåË´ãÈáçÊñ∞‰æÜ„ÄÇ\n");
                 return;
         }
         obj=(present("corpse", this_object()));
         if (! objectp(obj)) 
         {
-                write("∆Êπ÷£¨‘ı√¥ ¨ÃÂ≤ªº˚¡À£ø\n");
+                write("Â•áÊÄ™ÔºåÊÄéÈ∫ºÂ±çÈ´î‰∏çË¶ã‰∫ÜÔºü\n");
                 return;
         }
         set("pending",query("name",  me), ob);
         set("burn/jobtime", time(), me);
         set("in_use", 1, ob);
 
-        say("º¿ÏÎ¿Æ¬ÔΩ´"+query("name", obj)+"»˚Ω¯¡À"+query("name", ob)+"¿Ô°£\n");
-        write("≤ª“ªª·∂˘£¨“ª«–◊º±∏Õ£µ±°£\n");
-        command("say"+query("name", me)+"…œ»À«ÎŒ™Õˆ¡È≥¨∂»∞…£°\n");
+        say("Á•≠Á•ÄÂñáÂòõÂ∞á"+query("name", obj)+"Â°ûÈÄ≤‰∫Ü"+query("name", ob)+"Ë£°„ÄÇ\n");
+        write("‰∏ç‰∏ÄÊúÉÂÖíÔºå‰∏ÄÂàáÊ∫ñÂÇôÂÅúÁï∂„ÄÇ\n");
+        command("say"+query("name", me)+"‰∏ä‰∫∫Ë´ãÁÇ∫‰∫°ÈùàË∂ÖÂ∫¶ÂêßÔºÅ\n");
 /*
         command("chat"+query("title", me)+query("name", me)+
-                "…œ»À£¨”⁄ΩÒ»’" + NATURE_D->game_time() + "≥¨∂»" 
-                +query("victim_name", obj)+"£°\n");
+                "‰∏ä‰∫∫Ôºå‰∫é‰ªäÊó•" + NATURE_D->game_time() + "Ë∂ÖÂ∫¶" 
+                +query("victim_name", obj)+"ÔºÅ\n");
 
 */
         destroy_it(obj);

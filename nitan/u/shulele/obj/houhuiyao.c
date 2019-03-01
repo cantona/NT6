@@ -1,4 +1,4 @@
-//ºó»ÚÒ©                                               
+//å¾Œæ‚”è—¥                                               
                                                                                             
 inherit ITEM; 
 #include <ansi.h>                                                                              
@@ -9,25 +9,25 @@ void init();
 void init()                                                                                 
 {                                                                                           
   if (!wizardp(this_player())) {                                                            
-    set("no_get","ÄãÊÖÀïÒ»ËÉ£¬ºó»ÚÒ©´ÓÖ¸¼ä»¬Âä£¡\n");                                       
-    set("no_give","ÕâÃ´Õä¹óµÄÒ©£¬ÄÄÄÜËæ±ã¸øÈË£¿\n");                                        
-    set("no_drop","ÕâÃ´±¦¹óµÄÒ©£¬ÈÓÁË¶à¿ÉÏ§Ñ½£¡\n");                                        
-    set("no_sell","·²ÈËÄÄÀïÖªµÀ"+this_object()->query("name")+"µÄ¼ÛÖµ£¿»¹ÊÇ×Ô¼ºÁô×Å°É¡£\n");
+    set("no_get","ä½ æ‰‹è£¡ä¸€é¬†ï¼Œå¾Œæ‚”è—¥å¾æŒ‡é–“æ»‘è½ï¼\n");                                       
+    set("no_give","é€™éº¼çè²´çš„è—¥ï¼Œå“ªèƒ½éš¨ä¾¿çµ¦äººï¼Ÿ\n");                                        
+    set("no_drop","é€™éº¼å¯¶è²´çš„è—¥ï¼Œæ‰”äº†å¤šå¯æƒœå‘€ï¼\n");                                        
+    set("no_sell","å‡¡äººå“ªè£¡çŸ¥é“"+this_object()->query("name")+"çš„åƒ¹å€¼ï¼Ÿé‚„æ˜¯è‡ªå·±ç•™è‘—å§ã€‚\n");
   }                                                                                         
   add_action("do_eat", "eat");                                                              
 }                                                                                           
                                                                                             
 void create()                                                                               
 {                                                                                           
-  set_name( HIM "ºó»ÚÒ©" NOR , ({"houhui yao", "yao"}));                                    
+  set_name( HIM "å¾Œæ‚”è—¥" NOR , ({"houhui yao", "yao"}));                                    
   set_weight(90);                                                                           
   if (clonep())                                                                             
     set_default_object(__FILE__);                                                           
   else {                                                                                    
-    set("unit", "°ü");                                                                      
-    set("long", "Ò»°üÑÕÉ«¹Ö¹ÖµÄÒ©£¬Î¶µÀÒ»¶¨²»ÔõÃ´Ñù¡£\n");                                  
+    set("unit", "åŒ…");                                                                      
+    set("long", "ä¸€åŒ…é¡è‰²æ€ªæ€ªçš„è—¥ï¼Œå‘³é“ä¸€å®šä¸æ€éº¼æ¨£ã€‚\n");                                  
     set("value", 0);                                                                        
-    set("drug_type", "²¹Æ·");                                                               
+    set("drug_type", "è£œå“");                                                               
   }                                                                                         
   set("is_monitored",1);                                                                    
   setup();                                                                                  
@@ -49,7 +49,7 @@ int do_eat(string arg)
   me->set("kee", (int)me->query("max_kee"));                                                
   me->set("mana", (int)me->query("max_mana"));                                              
   me->set("force", (int)me->query("max_force"));                                            
-   message_vision(HIM "$N°Ñºó»ÚÒ©Íù×ìÀïÒ»·Å£¬¿àµÄÑÛÀá±ÇÌéÒ»ÆğÁ÷ÁËÏÂÀ´¡£                     
+   message_vision(HIM "$NæŠŠå¾Œæ‚”è—¥å¾€å˜´è£¡ä¸€æ”¾ï¼Œè‹¦çš„çœ¼æ·šé¼»æ¶•ä¸€èµ·æµäº†ä¸‹ä¾†ã€‚                     
 \n" NOR, me);                                                                               
   destruct(this_object());                                                                  
   return 1;                                                                                 

@@ -11,16 +11,16 @@ string ask_job();
 
 void create()
 {
-        set_name("ĞÁÈ»", ({ "xin ran", "xin", "ran", }));
+        set_name("è¾›ç„¶", ({ "xin ran", "xin", "ran", }));
         set("long",
-        "ËûÊÇÒ»Î»¸ß´ó¿ıÎ°µÄÖĞÄêÄĞ×Ó£¬Éí´©Ò»¼ş°×²¼³¤ÅÛ¡£\n"
-        "ËûÌìÉúÉñÁ¦£¬ÊÖÖĞµÄÁ½Í·ÀÇÑÀ°ôÓĞÍò·ò²»µ±Ö®ÓÂ£¬ÕæÊÇÒ»ÌõÍş·çÁİÁİµÄºº×Ó¡£\n"
+        "ä»–æ˜¯ä¸€ä½é«˜å¤§é­å‰çš„ä¸­å¹´ç”·å­ï¼Œèº«ç©¿ä¸€ä»¶ç™½å¸ƒé•·è¢ã€‚\n"
+        "ä»–å¤©ç”Ÿç¥åŠ›ï¼Œæ‰‹ä¸­çš„å…©é ­ç‹¼ç‰™æ£’æœ‰è¬å¤«ä¸ç•¶ä¹‹å‹‡ï¼ŒçœŸæ˜¯ä¸€æ¢å¨é¢¨å‡œå‡œçš„æ¼¢å­ã€‚\n"
         );
 
-        set("title", HIG "Ã÷½Ì" HIR "ÁÒ»ğÆì" NOR "ÕÆÆìÊ¹");
+        set("title", HIG "æ˜æ•™" HIR "çƒˆç«æ——" NOR "æŒæ——ä½¿");
         set("level",7);
 
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("attitude", "friendly");
 
         set("age", 40);
@@ -64,14 +64,14 @@ void create()
         prepare_skill("cuff", "shenghuo-quan");
         prepare_skill("strike", "guangming-zhang");
 
-        create_family("Ã÷½Ì", 37, "ÁÒ»ğÆìÕÆÆìÊ¹");
-        set("inherit_title",HIG"Ã÷½Ì"NOR"ÁÒ»ğÆì½ÌÖÚ"NOR);
+        create_family("æ˜æ•™", 37, "çƒˆç«æ——æŒæ——ä½¿");
+        set("inherit_title",HIG"æ˜æ•™"NOR"çƒˆç«æ——æ•™çœ¾"NOR);
 
         set("inquiry", ([
-                "name" : "ÔÚÏÂ¾ÍÊÇÃ÷½ÌÁÒ»ğÆìÕÆÆìÊ¹ĞÁÈ»£¬²»Öª¸óÏÂÓĞºÎÖ¸½Ì¡£",
-                "ÈÎÎñ" : (: ask_job :),
+                "name" : "åœ¨ä¸‹å°±æ˜¯æ˜æ•™çƒˆç«æ——æŒæ——ä½¿è¾›ç„¶ï¼Œä¸çŸ¥é–£ä¸‹æœ‰ä½•æŒ‡æ•™ã€‚",
+                "ä»»å‹™" : (: ask_job :),
                 "job"  : (: ask_job :),
-                "·ÅÆú" : (: ask_abandon :),
+                "æ”¾æ£„" : (: ask_abandon :),
                 "abandon" : (: ask_abandon :),
         ]));
 
@@ -88,14 +88,14 @@ string ask_job()
      mapping fam ;
      object ling;
 
-    if( !(fam=query("family", this_player())) || fam["family_name"] != "Ã÷½Ì" )
-        return "ÕâÎ»"+RANK_D->query_respect(player)+"²¢·ÇÎÒ½ÌµÜĞÖ£¬ÄÇ¸ÒÔÚÏÂÄÇ¸Ò·ÖÅÉ¸óÏÂÊ²Ã´ÈÎÎñÄØ¡£\n";
+    if( !(fam=query("family", this_player())) || fam["family_name"] != "æ˜æ•™" )
+        return "é€™ä½"+RANK_D->query_respect(player)+"ä¸¦éæˆ‘æ•™å¼Ÿå…„ï¼Œé‚£æ•¢åœ¨ä¸‹é‚£æ•¢åˆ†æ´¾é–£ä¸‹ä»€éº¼ä»»å‹™å‘¢ã€‚\n";
 
         if( query("combat_exp", player)>400000 )
-                 return "ÕâÎ»"+RANK_D->query_respect(player)+"ÊµÕ½¾­ÑéÒÑ¾­ÆÄ¸ß£¬Æñ¸ÒÀÍ·³´ó¼Ü¡£\n";
+                 return "é€™ä½"+RANK_D->query_respect(player)+"å¯¦æˆ°ç¶“é©—å·²ç¶“é —é«˜ï¼Œè±ˆæ•¢å‹ç…©å¤§æ¶ã€‚\n";
 
         if (fam["generation"] <37)
-                 return "ÕâÎ»"+RANK_D->query_respect(player)+"ÔÚÎÒÃ÷½ÌÖĞµØÎ»ÆÄ¸ß£¬Æñ¸ÒÀÍ·³´ó¼Ü¡£\n";
+                 return "é€™ä½"+RANK_D->query_respect(player)+"åœ¨æˆ‘æ˜æ•™ä¸­åœ°ä½é —é«˜ï¼Œè±ˆæ•¢å‹ç…©å¤§æ¶ã€‚\n";
 
         if( query("mingjiao/job", player) )
                 return judge_jobmsg(player,0);
@@ -104,9 +104,9 @@ string ask_job()
 
         set("mingjiao/job", "huo_zaoqiang", player);
 
-        return "ÎÒÁÒ»ğÆìÔÚ½ÌÄÚ¸ºÔğ¸÷ÖÖÎäÆ÷µÄÖÆÔì£¬×î½üĞèÒª¼Ó½ôÖÆÔì»ğÇ¹£¬ÄãÈ¥\n"
-                "ºóÉ½ÉÏÕÒĞ©Ïõ»Ç£¬ÔÙÈ¥Èñ½ğÆìÒªĞ©¾«Ìú£¬È»ºóµ½»ğ·¿´òÔì»ğÇ¹¡£\n"
-                "»ğÇ¹ÍşÁ¦¾Ş´ó£¬ÄËÎÒ½ÌµÖÓùµĞÈËµÄÖØÒªÎäÆ÷£¬Äã¶¨ÒªĞ¡ĞÄÔÚÒâ¡£\n";
+        return "æˆ‘çƒˆç«æ——åœ¨æ•™å…§è² è²¬å„ç¨®æ­¦å™¨çš„åˆ¶é€ ï¼Œæœ€è¿‘éœ€è¦åŠ ç·Šåˆ¶é€ ç«æ§ï¼Œä½ å»\n"
+                "å¾Œå±±ä¸Šæ‰¾äº›ç¡ç£ºï¼Œå†å»éŠ³é‡‘æ——è¦äº›ç²¾éµï¼Œç„¶å¾Œåˆ°ç«æˆ¿æ‰“é€ ç«æ§ã€‚\n"
+                "ç«æ§å¨åŠ›å·¨å¤§ï¼Œä¹ƒæˆ‘æ•™æŠµå¾¡æ•µäººçš„é‡è¦æ­¦å™¨ï¼Œä½ å®šè¦å°å¿ƒåœ¨æ„ã€‚\n";
 
 
 

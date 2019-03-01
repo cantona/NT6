@@ -4,10 +4,10 @@
 inherit ROOM;
 void create()
 {
-        set("short", "¿ÍÕ»¶þÂ¥");
+        set("short", "å®¢æ£§äºŒæ¨“");
         set("long", @LONG
-ÕâÀïÊÇÒÁÀç³Ç×î´ó¿ÍÕ»µÄ¶þÂ¥£¬Â¥ÏÂÈËÉù·ÐÌÚ£¬²»Ê±Æ®ÉÏÀ´Ò»ÕóÕóÏãÅç
-ÅçµÄ¿¾ÑòÈâÎ¶¡£ÄãÈç¹ûÀÛÁË¿ÉÒÔÔÚ´²ÉÏÊæÊæ·þ·þµØË¯Ò»¾õ¡£
+é€™è£¡æ˜¯ä¼ŠçŠåŸŽæœ€å¤§å®¢æ£§çš„äºŒæ¨“ï¼Œæ¨“ä¸‹äººè²æ²¸é¨°ï¼Œä¸æ™‚é£„ä¸Šä¾†ä¸€é™£é™£é¦™å™´
+å™´çš„çƒ¤ç¾Šè‚‰å‘³ã€‚ä½ å¦‚æžœç´¯äº†å¯ä»¥åœ¨åºŠä¸Šèˆ’èˆ’æœæœåœ°ç¡ä¸€è¦ºã€‚
 LONG);
         set("sleep_room", 1);
         set("no_fight", 1);

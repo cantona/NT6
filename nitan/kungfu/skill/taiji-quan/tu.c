@@ -7,7 +7,7 @@
 
 inherit F_SSERVER;
 
-string name() { return HIW "Ì«¼«Í¼" NOR; }
+string name() { return HIW "å¤ªæ¥µåœ–" NOR; }
 
 int perform(object me, object target)
 {
@@ -26,34 +26,34 @@ int perform(object me, object target)
         }
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(name() + "Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(name() + "åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( query_temp("weapon", me) || query_temp("secondary_weapon", me) )
-                return notify_fail(name() + "Ö»ÄÜ¿ÕÊÖÊ©Õ¹¡£\n");
+                return notify_fail(name() + "åªèƒ½ç©ºæ‰‹æ–½å±•ã€‚\n");
 
         if ((int)me->query_skill("taiji-quan", 1) < 250)
-                return notify_fail("ÄãµÄÌ«¼«È­²»¹»æµÊì£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„å¤ªæ¥µæ‹³ä¸å¤ å«»ç†Ÿï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if ((int)me->query_skill("taiji-shengong", 1) < 300)
-                return notify_fail("ÄãµÄÌ«¼«Éñ¹¦ĞŞÎª»¹²»¹»¸ß£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„å¤ªæ¥µç¥åŠŸä¿®ç‚ºé‚„ä¸å¤ é«˜ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if ((int)me->query_skill("taoism", 1) < 300)
-                return notify_fail("ÄãµÄµÀÑ§ĞÄ·¨ĞŞÎª»¹²»¹»¸ß£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„é“å­¸å¿ƒæ³•ä¿®ç‚ºé‚„ä¸å¤ é«˜ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (me->query_skill_mapped("cuff") != "taiji-quan")
-                return notify_fail("ÄãÏÖÔÚÃ»ÓĞ¼¤·¢Ì«¼«È­£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ²’æœ‰æ¿€ç™¼å¤ªæ¥µæ‹³ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (me->query_skill_mapped("force") != "taiji-shengong")
-                return notify_fail("ÄãÏÖÔÚÃ»ÓĞ¼¤·¢Ì«¼«Éñ¹¦£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ²’æœ‰æ¿€ç™¼å¤ªæ¥µç¥åŠŸï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if( query("jing", me)<1000 )
-                return notify_fail("ÄãÏÖÔÚ¾«Á¦²»¹»£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨ç²¾åŠ›ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if( query("neili", me)<1000 )
-                return notify_fail("ÄãÏÖÔÚÕæÆø²»¹»£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çœŸæ°£ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
-        msg = HIM "$N" HIM "µ­È»Ò»Ğ¦£¬Ë«ÊÖÇáÇá»®ÁËÊı¸öÈ¦×Ó£¬¶ÙÊ±ËÄÖÜµÄÆø"
-              "Á÷²¨¶¯£¬Ô´Ô´²»¶ÏµÄ±»Ç£Òı½øÀ´¡£\n\n" NOR;
+        msg = HIM "$N" HIM "æ·¡ç„¶ä¸€ç¬‘ï¼Œé›™æ‰‹è¼•è¼•åŠƒäº†æ•¸å€‹åœˆå­ï¼Œé “æ™‚å››å‘¨çš„æ°£"
+              "æµæ³¢å‹•ï¼Œæºæºä¸æ–·çš„è¢«ç‰½å¼•é€²ä¾†ã€‚\n\n" NOR;
         message_combatd(msg, me, target);
 
         addn("neili", -1000, me);
@@ -69,20 +69,20 @@ int perform(object me, object target)
                         switch (random(3))
                         {
                         case 0:
-                                tell_object(obs[i], HIY "»Ğã±Ö®¼äÄãËÆºõ»Øµ½ÁË¹ıÈ¥µÄÊÀ½ç£¬¾¹"
-                                                    "È»ÔÙÎŞ·¨¿ØÖÆ×ÔÎÒ£¬ºöÈ»ÑÛÇ°µÄÒ»ÇĞ\n"
-                                                    "ÓÖÈ«È»²»¼û£¬ÄãĞÄÍ·Ò»ÂÒ£¬»ëÉíÒ»Õó¾ç"
-                                                    "Í´£¬ÄÚÁ¦ÎÉÂÒÄÑÒÔ¿ØÖÆ£¡\n" NOR);
+                                tell_object(obs[i], HIY "ææƒšä¹‹é–“ä½ ä¼¼ä¹å›åˆ°äº†éå»çš„ä¸–ç•Œï¼Œç«Ÿ"
+                                                    "ç„¶å†ç„¡æ³•æ§åˆ¶è‡ªæˆ‘ï¼Œå¿½ç„¶çœ¼å‰çš„ä¸€åˆ‡\n"
+                                                    "åˆå…¨ç„¶ä¸è¦‹ï¼Œä½ å¿ƒé ­ä¸€äº‚ï¼Œæ¸¾èº«ä¸€é™£åŠ‡"
+                                                    "ç—›ï¼Œå…§åŠ›ç´Šäº‚é›£ä»¥æ§åˆ¶ï¼\n" NOR);
                                 break;
                         case 1:
-                                tell_object(obs[i], HIW "ÄãÑÛÇ°Ò»ÇĞ½¥½¥µÄÄ£ºıÆğÀ´£¬ºÃÏñÊÇµ½"
-                                                    "ÁËÏÉ¾³£¬È»¶øÄãÈ´¾õµÃÄÚÏ¢Ô½À´Ô½ÂÒ£¬\n"
-                                                    "ËÄÖ«Ò»ÕóËáÍ´£¬¼¸ºõÒªÕ¾Á¢²»×¡¡£\n" NOR);
+                                tell_object(obs[i], HIW "ä½ çœ¼å‰ä¸€åˆ‡æ¼¸æ¼¸çš„æ¨¡ç³Šèµ·ä¾†ï¼Œå¥½åƒæ˜¯åˆ°"
+                                                    "äº†ä»™å¢ƒï¼Œç„¶è€Œä½ å»è¦ºå¾—å…§æ¯è¶Šä¾†è¶Šäº‚ï¼Œ\n"
+                                                    "å››è‚¢ä¸€é™£é…¸ç—›ï¼Œå¹¾ä¹è¦ç«™ç«‹ä¸ä½ã€‚\n" NOR);
                                 break;
                         default:
-                                tell_object(obs[i], HIR "Äã¶ú±ßºöÈ»ÏìÆğÒ»¸öÅùö¨£¬ÑÛ¼ûÀ×Éñ»Ó"
-                                                    "Îèµç´¸ÏòÄã´òÀ´£¬Äã²»½û´ó³ÔÒ»¾ª£¬\n"
-                                                    "»ëÉíÉÏÏÂ¶¼²»ÌıÊ¹»½£¬Ö»ÓĞ¸ßÉùºô¾È¡£\n" NOR);
+                                tell_object(obs[i], HIR "ä½ è€³é‚Šå¿½ç„¶éŸ¿èµ·ä¸€å€‹éœ¹é‚ï¼Œçœ¼è¦‹é›·ç¥æ®"
+                                                    "èˆé›»éŒ˜å‘ä½ æ‰“ä¾†ï¼Œä½ ä¸ç¦å¤§åƒä¸€é©šï¼Œ\n"
+                                                    "æ¸¾èº«ä¸Šä¸‹éƒ½ä¸è½ä½¿å–šï¼Œåªæœ‰é«˜è²å‘¼æ•‘ã€‚\n" NOR);
                                 break;
                         }
                         damage = damage_power(me, "cuff");
@@ -104,21 +104,21 @@ int perform(object me, object target)
                         switch (random(3))
                         {
                         case 0:
-                                msg = HIR "Ö»¼û" + obs[i]->name() +
-                                      HIR "ÊÖÎè×ãµ¸£¬ÍüºõËùÒÔ£¬ºö"
-                                      "È»´ó½ĞÒ»Éù£¬ÍÂÑª²»Ö¹£¡\n" NOR;
+                                msg = HIR "åªè¦‹" + obs[i]->name() +
+                                      HIR "æ‰‹èˆè¶³è¹ˆï¼Œå¿˜ä¹æ‰€ä»¥ï¼Œå¿½"
+                                      "ç„¶å¤§å«ä¸€è²ï¼Œåè¡€ä¸æ­¢ï¼\n" NOR;
                                 msg += "( " + obs[i]->name() + eff_status_msg(p) + " )\n\n";
                                 break;
                         case 1:
-                                msg = HIR "È´¼û" + obs[i]->name() +
-                                      HIR "ÈİÃ²°§Æİ£¬ËÆºõÏëÆğÁËÊ²"
-                                      "Ã´ÉËĞÄÖ®ÊÂ£¬Éí×ÓÒ»»Î£¬Å»³öÊı¿ÚÏÊÑª£¡\n" NOR;
+                                msg = HIR "å»è¦‹" + obs[i]->name() +
+                                      HIR "å®¹è²Œå“€æˆšï¼Œä¼¼ä¹æƒ³èµ·äº†ä»€"
+                                      "éº¼å‚·å¿ƒä¹‹äº‹ï¼Œèº«å­ä¸€æ™ƒï¼Œå˜”å‡ºæ•¸å£é®®è¡€ï¼\n" NOR;
                                 msg += "( " + obs[i]->name() + eff_status_msg(p) + " )\n\n";
                                 break;
                         default:
                                 msg = HIR + obs[i]->name() +
-                                      HIR "´ôÁ¢µ±³¡£¬Ò»¶¯²»¶¯£¬ÓĞÈçÖĞ"
-                                      "Ğ°£¬ÆßÇÏ¶¼±Å³öÏÊÑªÀ´¡£\n" NOR;
+                                      HIR "å‘†ç«‹ç•¶å ´ï¼Œä¸€å‹•ä¸å‹•ï¼Œæœ‰å¦‚ä¸­"
+                                      "é‚ªï¼Œä¸ƒç«…éƒ½è¿¸å‡ºé®®è¡€ä¾†ã€‚\n" NOR;
                                 msg += "( " + obs[i]->name() + eff_status_msg(p) + " )\n\n";
                                 break;
                         }
@@ -129,8 +129,8 @@ int perform(object me, object target)
                         flag = 1;
                 } else
                 {
-                        tell_object(obs[i], HIC "Äã·¢ÏÖÑÛÇ°µÄ¾°ÎïËÆ»ÃËÆÕæ£¬Á¬Ã¦"
-                                            "Ä¬ÔËÄÚ¹¦£¬²»ÊÜÀ§ÈÅ¡£\n" NOR);
+                        tell_object(obs[i], HIC "ä½ ç™¼ç¾çœ¼å‰çš„æ™¯ç‰©ä¼¼å¹»ä¼¼çœŸï¼Œé€£å¿™"
+                                            "é»˜é‹å…§åŠŸï¼Œä¸å—å›°æ“¾ã€‚\n" NOR);
                         addn("neili", -200, obs[i]);
                 }
                 if( query("neili", obs[i])<0 )
@@ -138,8 +138,8 @@ int perform(object me, object target)
         }
 
         if (! flag)
-                message_combatd(HIM "È»¶øÃ»ÓĞÈÎºÎÈËÊÜÁË$N"
-                               HIM "µÄÓ°Ïì¡£\n\n" NOR, me, 0, obs);
+                message_combatd(HIM "ç„¶è€Œæ²’æœ‰ä»»ä½•äººå—äº†$N"
+                               HIM "çš„å½±éŸ¿ã€‚\n\n" NOR, me, 0, obs);
 
         return 1;
 }

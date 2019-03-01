@@ -1,15 +1,15 @@
-// 武学修养
+// 姝﹀淇
 
 inherit SKILL;
 
 int valid_learn(object me)
 {
-        return notify_fail("武学修养是你武学方面的领悟，无法"
-                           "通过简单学习获得提升。\n");
+        return notify_fail("姝﹀淇鏄綘姝﹀鏂归潰鐨勯牁鎮燂紝鐒℃硶"
+                           "閫氶亷绨″柈瀛哥繏鐛插緱鎻愬崌銆俓n");
 }
 
 int valid_research(object me)
 {
-        return notify_fail("武学修养来自你对实战体会的汲取吸"
-                           "收，无法通过研究提升。\n");
+        return notify_fail("姝﹀淇渚嗚嚜浣犲皪瀵︽埌楂旀渻鐨勬辈鍙栧惛"
+                           "鏀讹紝鐒℃硶閫氶亷鐮旂┒鎻愬崌銆俓n");
 }

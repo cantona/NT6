@@ -6,14 +6,14 @@ inherit SNAKE;
 
 void create()
 {
-        set_name("¶¾Éß", ({ "snake", "she" }) );
+        set_name("æ¯’è›‡", ({ "snake", "she" }) );
         set("age", 4);
-        set("long", "Ò»Ö»ÓÐ×ÅÈý½ÇÐÎÄÔ´üµÄÉß£¬Î²°ÍÉ³É³×öÏì¡£\n");
+        set("long", "ä¸€åªæœ‰è‘—ä¸‰è§’å½¢è…¦è¢‹çš„è›‡ï¼Œå°¾å·´æ²™æ²™åšéŸ¿ã€‚\n");
         set("attitude", "peaceful");
 
-        set("msg_fail", "$n³å$NË»µØÒ»ÍÂÉàÍ·");
-        set("msg_succ", "$nË»Ë»×öÏì£¬ÉßÍ·Ëæ×Å$NµÄÊÖ¶¯ÁËÆðÀ´");
-        set("msg_trained","$nÇÄÎÞÉùÏ¢µØÓÎµ½$NµÄ½ÅÏÂ²»¶¯ÁË");
+        set("msg_fail", "$næ²–$Nå˜¶åœ°ä¸€åèˆŒé ­");
+        set("msg_succ", "$nå˜¶å˜¶åšéŸ¿ï¼Œè›‡é ­éš¨è‘—$Nçš„æ‰‹å‹•äº†èµ·ä¾†");
+        set("msg_trained","$næ‚„ç„¡è²æ¯åœ°éŠåˆ°$Nçš„è…³ä¸‹ä¸å‹•äº†");
         set("auto_follow",0);
         set("wildness", 9);
 
@@ -35,7 +35,7 @@ void init()
         ::init();
         add_action("convert","bian");
         if (interactive(ob = this_player()) &&
-            query("family/family_name", ob) != "Å·ÑôÊÀ¼Ò" && 
+            query("family/family_name", ob) != "æ­é™½ä¸–å®¶" && 
                 random(ob->query_kar() + ob->query_per()) < 30) {
                         remove_call_out("kill_ob");
                         call_out("kill_ob", 1, ob); 
@@ -60,7 +60,7 @@ mixed hit_ob(object me, object victim, int damage_bonus, int factor)
                               ([ "level" : poison/5 + random(poison/5),
                                  "id":query("id", me),
                                  "duration" :  poison/20 ]));
-       return HIR "Ö»Ìý$nÍ´ºôÁËÒ»Éù£¬¸ø¶¾ÉßºÝºÝµÄÒ§ÁËÒ»¿Ú£¡\n" NOR;
+       return HIR "åªè½$nç—›å‘¼äº†ä¸€è²ï¼Œçµ¦æ¯’è›‡ç‹ ç‹ çš„å’¬äº†ä¸€å£ï¼\n" NOR;
         if( query("bite_busy", me))victim->start_busy(2);
 }
 
@@ -70,13 +70,13 @@ int convert(string arg)
         object ob;
 
         if (arg!="snake" && arg!="she") return 0;
-        if( query("family/family_name", me) != "Å·ÑôÊÀ¼Ò" )
-                return notify_fail("Äã²»ÄÜ»¯ÉßÎªÕÈ¡£\n");
+        if( query("family/family_name", me) != "æ­é™½ä¸–å®¶" )
+                return notify_fail("ä½ ä¸èƒ½åŒ–è›‡ç‚ºæ–ã€‚\n");
         if (random(me->query_skill("training",1)) <20) {
                 kill_ob(me);
                 return 1;
         }
-        message_vision("$N×óÊÖ°´×¡ÉßÍ·£¬ÓÒÊÖÇá¸§ÆäÆß´ç£¬¿ÚÖÐÄîÄîÓÐ´Ê£¬Æ¬¿Ì¼ä½«Éß»¯ÎªÒ»¸ùÉßÕÈ¡£\n",
+        message_vision("$Nå·¦æ‰‹æŒ‰ä½è›‡é ­ï¼Œå³æ‰‹è¼•æ’«å…¶ä¸ƒå¯¸ï¼Œå£ä¸­å¿µå¿µæœ‰è©žï¼Œç‰‡åˆ»é–“å°‡è›‡åŒ–ç‚ºä¸€æ ¹è›‡æ–ã€‚\n",
                 me,);
                 ob = new("/d/baituo/npc/obj/shezhang");
         ob->move(environment(this_object()));

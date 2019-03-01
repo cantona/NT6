@@ -2,10 +2,10 @@ inherit BULLETIN_BOARD;
 
 void create()
 {
-        set_name("Òâ¼û·´À¡°å", ({ "board" }) );
+        set_name("æ„è¦‹åé¥‹æ¿", ({ "board" }) );
         set("location", "/d/city/advice/advice");
         set("board_id", "game_advice");
-        set("long", "ÓĞÓÃµÄ»°¾ÍÍùÕâÀïËµ£¬ÂÒ¹àË®É±ÎŞÉâ¡£\n" );
+        set("long", "æœ‰ç”¨çš„è©±å°±å¾€é€™è£¡èªªï¼Œäº‚çŒæ°´æ®ºç„¡èµ¦ã€‚\n" );
         setup();
         set("capacity", 100000);
         replace_program(BULLETIN_BOARD);

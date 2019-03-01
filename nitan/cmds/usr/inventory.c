@@ -21,7 +21,7 @@ int main(object me, string arg)
                 if( !ob ) ob = find_living(arg);
                 if( !ob ) ob = present(arg, environment(me));
                 if( !wizardp(me) && (!ob || query("couple/child_id", me) != query("id", ob)) )
-                        return notify_fail("��Ҫ�쿴˭��״̬��\n"); 
+                        return notify_fail("你要察看誰的狀態？\n"); 
         }
 
         if( !ob ) ob = me;
@@ -29,13 +29,13 @@ int main(object me, string arg)
         total_item = 0;
         inv = filter_array(all_inventory(ob), "visible", me);
         if( !sizeof(inv) ) {
-                write((ob==me)? "Ŀǰ������û���κζ�����\n"
-                        : ob->name() + "����û��Я���κζ�����\n");
+                write((ob==me)? "目前你身上沒有任何東西。\n"
+                        : ob->name() + "身上沒有攜帶任何東西。\n");
                 return 1;
         }
 
-        output = sprintf("%s���ϴ���������Щ����(���� %d%%)��\n",
-                (ob==me)? "��": ob->name(),
+        output = sprintf("%s身上帶著下列這些東西(負重 %d%%)：\n",
+                (ob==me)? "你": ob->name(),
                 (int)ob->query_encumbrance() * 100 / (int)ob->query_max_encumbrance());
 
         if( query_temp("tomud", me) && ob == me )
@@ -110,10 +110,10 @@ int main(object me, string arg)
         }
         
         if( !total_item )
-                output += "Ŀǰû��Я����Ʒ��\n";
+                output += "目前沒有攜帶物品。\n";
         else
-                output += "ĿǰЯ����" + chinese_number(total_item) +
-                          "����Ʒ��\n";
+                output += "目前攜帶了" + chinese_number(total_item) +
+                          "件物品。\n";
         write(output);
         return 1;
 }
@@ -123,11 +123,11 @@ string inventory_desc(object ob,object me)
         return sprintf("%s%s\n",
                 query("equipped", ob)?
                         ((ob == query_temp("secondary_weapon", me))?
-                        HIM "��" NOR:
-                        HIC "��" NOR):
+                        HIM "□" NOR:
+                        HIC "□" NOR):
                         ((ob == query_temp("handing", me))?
-                        HIC "��" NOR:
-                        HIR "��" NOR),
+                        HIC "○" NOR:
+                        HIR "☆" NOR),
                 ob->short()
         );
 }
@@ -135,15 +135,15 @@ string inventory_desc(object ob,object me)
 int help (object me)
 {
         write(@HELP
-ָ���ʽ: inventory
+指令格式: inventory
  
-���г���Ŀǰ������Я����������Ʒ��
+可列出你目前身上所攜帶的所有物品。
 
-"��" ���˵������ƷΪ���Ѿ�װ���ı��������Ѵ���
-     �Ļ��ף���ɫ��ʾ����Ʒװ����������֡�
-"��" ���˵������Ʒ����������С�
+"□" 標記說明此物品為你已經裝備的兵器或者已穿戴
+     的護甲，粉色表示此物品裝備于你的左手。
+"○" 標記說明此物品握在你的手中。
 
-ע : ��ָ����� " i " ���档
+注 : 此指令可以 " i " 代替。
  
 HELP
 );

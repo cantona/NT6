@@ -1,4 +1,4 @@
-// magrobe.c ×ÏÉ«µÀÅÛ
+// magrobe.c ç´«è‰²é“è¢
 
 #include <armor.h>
 #include <ansi.h>
@@ -7,14 +7,14 @@ inherit CLOTH;
 
 void create()
 {
-        set_name(MAG"×ÏÉ«µÀÅÛ"NOR, ({"pao", "cloth", "dao pao"}) );
+        set_name(MAG"ç´«è‰²é“è¢"NOR, ({"pao", "cloth", "dao pao"}) );
         set_weight(1500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
                 set("female_only", 1);
-                set("unit", "¼ş");
-                set("long", "ÕâÊÇ¼şÖÊµØÈáÈíµÄ×ÏÉ«µÀÅÛ¡£\n");
+                set("unit", "ä»¶");
+                set("long", "é€™æ˜¯ä»¶è³ªåœ°æŸ”è»Ÿçš„ç´«è‰²é“è¢ã€‚\n");
                 set("material", "silk");
                 set("armor_prop/armor", 3);
         }

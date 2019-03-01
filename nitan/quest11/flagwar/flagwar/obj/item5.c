@@ -4,10 +4,10 @@ inherit ITEM;
 
 void create()
 {
-	      set_name(HIG"ÇÀÆìÕ½ - "HIW"¾ªÀ×·û"NOR, ({"fwar count seal","seal"}) );
+	      set_name(HIG"æ¶æ——æˆ° - "HIW"é©šé›·ç¬¦"NOR, ({"fwar count seal","seal"}) );
         set_weight(300);
-        set("unit", "¸ö");
-        set("long", "ÇÀÆìÕ½×¨ÓÃÌØÊâÎïÆ·£¬·ÅÔÚÉíÉÏÔÚËÀÍöÊ±»á×Ô¶¯Ê¹ÓÃ¡£\n");
+        set("unit", "å€‹");
+        set("long", "æ¶æ——æˆ°å°ˆç”¨ç‰¹æ®Šç‰©å“ï¼Œæ”¾åœ¨èº«ä¸Šåœ¨æ­»äº¡æ™‚æœƒè‡ªå‹•ä½¿ç”¨ã€‚\n");
         set("value", 1);
         set("no_store",1);
         set("no_sell", 1);

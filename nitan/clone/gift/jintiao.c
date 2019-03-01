@@ -1,4 +1,4 @@
-// jintiao.c ½ğÌõ
+// jintiao.c é‡‘æ¢
 
 #include <ansi.h>
 
@@ -6,14 +6,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name(YEL "½ğÌõ" NOR, ({ "jin tiao", "jin", "tiao" }));
+        set_name(YEL "é‡‘æ¢" NOR, ({ "jin tiao", "jin", "tiao" }));
         set_weight(2000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¸ù»Æ³Î³ÎµÄ½ğÌõ¡£\n");
+                set("long", "ä¸€æ ¹é»ƒæ¾„æ¾„çš„é‡‘æ¢ã€‚\n");
                 set("value", 500000);
-                set("unit", "¸ù");
+                set("unit", "æ ¹");
         }
 }
 

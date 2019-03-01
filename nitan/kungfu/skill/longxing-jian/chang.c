@@ -1,4 +1,4 @@
-// ÉñÁúÔÙÏÖ
+// ç¥é¾å†ç¾
 
 #include <ansi.h>
 
@@ -8,21 +8,21 @@ int perform(object me)
         string msg;
 
         if (! me->is_fighting())
-                return notify_fail("ÁúĞÎ³ªÏÉÖ»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ¡£\n");
+                return notify_fail("é¾å½¢å”±ä»™åªèƒ½åœ¨æˆ°é¬¥ä¸­ä½¿ç”¨ã€‚\n");
 
         if ((int)me->query_skill("hunyuan-yiqi", 1) < 150)
-                return notify_fail("ÄãµÄĞÄÒâÆø»ìÔª¹¦²»¹»æµÊì£¬²»»áÊ¹ÓÃÁúĞÎ³ªÏÉ¡£\n");
+                return notify_fail("ä½ çš„å¿ƒæ„æ°£æ··å…ƒåŠŸä¸å¤ å«»ç†Ÿï¼Œä¸æœƒä½¿ç”¨é¾å½¢å”±ä»™ã€‚\n");
 
         if( query("neili", me)<300 )
-                return notify_fail("ÄãÒÑ¾­¾«Æ£Á¦½ß£¬ÄÚÁ¦²»¹»ÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“ç²¾ç–²åŠ›ç«­ï¼Œå…§åŠ›ä¸å¤ äº†ã€‚\n");
 
         if( query_temp("chang", me) >= 100 )
-                return notify_fail("ÄãÒÑ¾­½ĞµÃÌ«¾ÃÁË£¬ÉñÁúÒÑ¾­Ñá¾ëÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“å«å¾—å¤ªä¹…äº†ï¼Œç¥é¾å·²ç¶“å­å€¦äº†ã€‚\n");
 
         addn("neili", -100, me);
 
-        message_combatd(HIR "Ö»Ìı$N" HIR "¿ÚÖĞÄîÄîÓĞ´Ê£¬ÉñÁú´ÓÌì¶ø½«£¬"
-                        "×êÈë$NÌåÖĞ£¡\n" NOR, me);
+        message_combatd(HIR "åªè½$N" HIR "å£ä¸­å¿µå¿µæœ‰è©ï¼Œç¥é¾å¾å¤©è€Œå°‡ï¼Œ"
+                        "é‘½å…¥$Né«”ä¸­ï¼\n" NOR, me);
 
         addn_temp("apply/attack", 1, me);
         addn_temp("apply/dodge", 1, me);

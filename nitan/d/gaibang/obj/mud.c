@@ -1,17 +1,17 @@
 //Cracked by Kafei
-// ni.c Äà
+// ni.c æ³¥
 
 inherit ITEM;
 
 void create()
 {
-        set_name("ÊªÄà", ({"shi ni", "mud"}));
+        set_name("æ¿•æ³¥", ({"shi ni", "mud"}));
         set_weight(1000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»ÍÅ´ÓÎ÷ºşÍÚÀ´µÄÊªÄà¡£\n");
-                set("unit", "ÍÅ");
+                set("long", "ä¸€åœ˜å¾è¥¿æ¹–æŒ–ä¾†çš„æ¿•æ³¥ã€‚\n");
+                set("unit", "åœ˜");
                 set("value", 0);
         }
 

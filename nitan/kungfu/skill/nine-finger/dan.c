@@ -1,4 +1,4 @@
-// dan.c ¾Å×ÖÕæÑÔ
+// dan.c ä¹å­—çœŸè¨€
 
 #include <ansi.h>
 #include <combat.h>
@@ -19,34 +19,34 @@ int perform(object me, object target)
         }
         
         if (! target || ! me->is_fighting(target))
-                return notify_fail("¡¸¾Å×ÖÕæÑÔ¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œä¹å­—çœŸè¨€ã€åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
  
         if(me->query_skill_mapped("finger") != "nine-finger") 
-                return notify_fail("ÄãÃ»ÓĞÓÃ¾Å×ÖÕæÑÔÊÖÓ¡£¬ÎŞ·¨Ê¹ÓÃ¡¸¾Å×ÖÕæÑÔ¡¹¾øÕĞ£¡\n");
+                return notify_fail("ä½ æ²’æœ‰ç”¨ä¹å­—çœŸè¨€æ‰‹å°ï¼Œç„¡æ³•ä½¿ç”¨ã€Œä¹å­—çœŸè¨€ã€çµ•æ‹›ï¼\n");
 
         if (me->query_skill_prepared("finger") != "nine-finger")
-                return notify_fail("ÄãÃ»ÓĞ×¼±¸Ê¹ÓÃ¾Å×ÖÕæÑÔÊÖÓ¡£¬ÎŞ·¨Ê©Õ¹¡¸¾Å×ÖÕæÑÔ¡¹¾øÕĞ¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æº–å‚™ä½¿ç”¨ä¹å­—çœŸè¨€æ‰‹å°ï¼Œç„¡æ³•æ–½å±•ã€Œä¹å­—çœŸè¨€ã€çµ•æ‹›ã€‚\n");
 
         if( objectp(weapon=query_temp("weapon", me)) || 
             objectp(weapon=query_temp("handing", me)) )
-                return notify_fail("Äã±ØĞë¿Õ×ÅË«ÊÖ²ÅÄÜÊ¹ÓÃÖ¸·¨¾øÕĞ¡£\n");
+                return notify_fail("ä½ å¿…é ˆç©ºè‘—é›™æ‰‹æ‰èƒ½ä½¿ç”¨æŒ‡æ³•çµ•æ‹›ã€‚\n");
 
         if ((int)me->query_skill("nine-finger", 1) < 200)
-                return notify_fail("ÄãµÄ¾Å×ÖÕæÑÔÊÖÓ¡²»¹»æµÊì£¬²»»áÊ¹ÓÃ¡¸¾Å×ÖÕæÑÔ¡¹¡£\n");
+                return notify_fail("ä½ çš„ä¹å­—çœŸè¨€æ‰‹å°ä¸å¤ å«»ç†Ÿï¼Œä¸æœƒä½¿ç”¨ã€Œä¹å­—çœŸè¨€ã€ã€‚\n");
                                 
         if ((int)me->query_skill("force") < 300)
-                return notify_fail("ÄãµÄÄÚ¹¦ĞŞÎª²»¹»¸ß¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸä¿®ç‚ºä¸å¤ é«˜ã€‚\n");
                         
         if( query("neili", me)<800 )
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ£¬²»ÄÜÊ¹ÓÃ¡¸¾Å×ÖÕæÑÔ¡¹¡£\n");
+                return notify_fail("ä½ ç¾åœ¨å…§åŠ›å¤ªå¼±ï¼Œä¸èƒ½ä½¿ç”¨ã€Œä¹å­—çœŸè¨€ã€ã€‚\n");
                         
-        msg = HIM "\n$N" HIM "¿ÚÖĞÄ¬ËĞ¾Å×ÖÕæÑÔ£¬ºöÈ»ÕĞÊ½Ò»»º£¬ÉíĞÎ¼±ÍË£¬Ğëô§ÒÑÔÚÕÉĞíÖ®Íâ¡£\n"
-              "$n" HIM "¼û$N" HIM "Á¦ÓĞ²»¼Ì£¬ÕıÒªÇÀÉÏ·´»÷£¬È´¼û$N" HIM "Ë«ÊÖ½ô¿Û£¬Ä´Ö¸Î¢Éì£¬Ò£Ö¸$n" HIM "¡£ \n"
-              "$n" HIM "Ò»Ê±ÂÒÁËÕó½Å£¬²»Öª$N" HIM "Ëù³öºÎÕĞ£¬ĞÄÍ·Ò»ÕóÃÔã¯¡£\n"
-              "ºöÎÅ$N" HIM "Ò»ÉùÁúÒ÷:\n"
-              HIW " ÁÙ ±ø ¶· Õß ½Ô Õó ÁĞ ÔÚ Ç° !\n"
-              HIM "ºÈÉùÖĞ»ìÔÓ×ÅÇ¿¾¢µÄ" + HIW + to_chinese(me->query_skill_mapped("force")) + HIM "£¬$n" HIM "²»ÓÉĞÄÉñ´óÂÒ£¬\n"
-              "Ö»¸Ğµ½¶Ô·½´ËÈ­³äÌìÈûµØ£¬ÂİĞıÕæÆøÌÏÌÏ²»¾ø´ÓËÄÃæ°Ë·½Ó¿À´£¬¼´Ê¹Ğ­ÉúË«Òí£¬»¹ÊÇ±ÜÎŞ¿É±Ü£¡\n\n" NOR;
+        msg = HIM "\n$N" HIM "å£ä¸­é»˜èª¦ä¹å­—çœŸè¨€ï¼Œå¿½ç„¶æ‹›å¼ä¸€ç·©ï¼Œèº«å½¢æ€¥é€€ï¼Œé ˆè‡¾å·²åœ¨ä¸ˆè¨±ä¹‹å¤–ã€‚\n"
+              "$n" HIM "è¦‹$N" HIM "åŠ›æœ‰ä¸ç¹¼ï¼Œæ­£è¦æ¶ä¸Šåæ“Šï¼Œå»è¦‹$N" HIM "é›™æ‰‹ç·Šæ‰£ï¼Œæ‹‡æŒ‡å¾®ä¼¸ï¼Œé™æŒ‡$n" HIM "ã€‚ \n"
+              "$n" HIM "ä¸€æ™‚äº‚äº†é™£è…³ï¼Œä¸çŸ¥$N" HIM "æ‰€å‡ºä½•æ‹›ï¼Œå¿ƒé ­ä¸€é™£è¿·æƒ˜ã€‚\n"
+              "å¿½è$N" HIM "ä¸€è²é¾åŸ:\n"
+              HIW " è‡¨ å…µ é¬¥ è€… çš† é™£ åˆ— åœ¨ å‰ !\n"
+              HIM "å–è²ä¸­æ··é›œè‘—å¼·å‹çš„" + HIW + to_chinese(me->query_skill_mapped("force")) + HIM "ï¼Œ$n" HIM "ä¸ç”±å¿ƒç¥å¤§äº‚ï¼Œ\n"
+              "åªæ„Ÿåˆ°å°æ–¹æ­¤æ‹³å……å¤©å¡åœ°ï¼Œèºæ—‹çœŸæ°£æ»”æ»”ä¸çµ•å¾å››é¢å…«æ–¹æ¹§ä¾†ï¼Œå³ä½¿å”ç”Ÿé›™ç¿¼ï¼Œé‚„æ˜¯é¿ç„¡å¯é¿ï¼\n\n" NOR;
 
         ap = me->query_skill("finger") + me->query_skill("force");
         ap+=query("jiali", me);
@@ -69,18 +69,18 @@ int perform(object me, object target)
                 addn("neili", -damage/2, me);
                 if (weapon2)
                 {
-                        msg += HIM "\n$n" HIM "¼û$N" HIM "À´ÊÆĞ×ÃÍ£¬²»¸ÒÕıÃæµÖµ²£¬ÊÖÖĞ" + weapon2->name() + HIM "ÂúÌì»ÃÓ°£¬·ÀµÃË®Ğ¹²»Í¨\n"
-                               HIM "$N" HIM "¾¹ÊÇÖÃÈôØèÎÅ£¬" HIW "ÂİĞı¾¢Æø" HIM "ÈÔ¾ÉÃàÃà²»¾ø£¬$n" HIM "ÊÖÖĞ" + weapon2->name() + HIM "ÔÚÕæÆø¼¤µ´Ö®ÏÂ£¬\n"
-                               HIM "»¯Îª´çĞíµÄ¶şÈıÊ®½Ø£¬·ÉÉÏ°ë¿Õ£¬ÉÁ³öµãµã°×¹â£¡\n" NOR;
+                        msg += HIM "\n$n" HIM "è¦‹$N" HIM "ä¾†å‹¢å…‡çŒ›ï¼Œä¸æ•¢æ­£é¢æŠµæ“‹ï¼Œæ‰‹ä¸­" + weapon2->name() + HIM "æ»¿å¤©å¹»å½±ï¼Œé˜²å¾—æ°´æ³„ä¸é€š\n"
+                               HIM "$N" HIM "ç«Ÿæ˜¯ç½®è‹¥ç½”èï¼Œ" HIW "èºæ—‹å‹æ°£" HIM "ä»èˆŠç¶¿ç¶¿ä¸çµ•ï¼Œ$n" HIM "æ‰‹ä¸­" + weapon2->name() + HIM "åœ¨çœŸæ°£æ¿€ç›ªä¹‹ä¸‹ï¼Œ\n"
+                               HIM "åŒ–ç‚ºå¯¸è¨±çš„äºŒä¸‰åæˆªï¼Œé£›ä¸ŠåŠç©ºï¼Œé–ƒå‡ºé»é»ç™½å…‰ï¼\n" NOR;
                                 damage -= damage/3;
-                                weapon2->set_name("ËéÁÑµÄ"+query("name", weapon2));
+                                weapon2->set_name("ç¢è£‚çš„"+query("name", weapon2));
                                 weapon2->move(environment(target));
                                 set("value", 0, weapon2);
                                 set("weapon_prop", 0, weapon2);
                                 target->reset_action();
                 } else
-                        msg += HIM "\n$n" HIM "¼û$N" HIM "À´ÊÆĞ×ÃÍ£¬²»¸ÒÕıÃæµÖµ²£¬²àÉí½ø²½Ë«ÕÆ·ÜÁ¦²à»÷$N£¬\n"
-                               "$N" HIM "¾¹ÊÇÖÃÈôØèÎÅ£¬" HIW "ÂİĞı¾¢Æø" HIM "ÈÔ¾ÉÃàÃà²»¾ø£¬$n" HIM "ÎŞ¿ÉÄÎºÎÖ®ÏÂ£¬±»»÷¸öÕı×Å£¡\n" NOR;
+                        msg += HIM "\n$n" HIM "è¦‹$N" HIM "ä¾†å‹¢å…‡çŒ›ï¼Œä¸æ•¢æ­£é¢æŠµæ“‹ï¼Œå´èº«é€²æ­¥é›™æŒå¥®åŠ›å´æ“Š$Nï¼Œ\n"
+                               "$N" HIM "ç«Ÿæ˜¯ç½®è‹¥ç½”èï¼Œ" HIW "èºæ—‹å‹æ°£" HIM "ä»èˆŠç¶¿ç¶¿ä¸çµ•ï¼Œ$n" HIM "ç„¡å¯å¥ˆä½•ä¹‹ä¸‹ï¼Œè¢«æ“Šå€‹æ­£è‘—ï¼\n" NOR;
 
                 target->receive_damage("qi",damage,me);
                 target->receive_wound("qi",damage/2 + random(damage/2),me);
@@ -92,11 +92,11 @@ int perform(object me, object target)
         } else 
         {
                 if (weapon2)
-                        msg += HIM "\n$n" HIM "¼û$N" HIM "À´ÊÆĞ×ÃÍ£¬²»¸ÒÕıÃæµÖµ²£¬ÊÖÖĞ" + weapon2->name() + HIM "ÂúÌì»ÃÓ°£¬·ÀµÃË®Ğ¹²»Í¨\n"
-                               "$N" HIM "±»»ºµÃÒ»»º£¬" HIW "ÂİĞı¾¢Æø" HIM "ÒÑÈ»Âä¿Õ\n" NOR;
+                        msg += HIM "\n$n" HIM "è¦‹$N" HIM "ä¾†å‹¢å…‡çŒ›ï¼Œä¸æ•¢æ­£é¢æŠµæ“‹ï¼Œæ‰‹ä¸­" + weapon2->name() + HIM "æ»¿å¤©å¹»å½±ï¼Œé˜²å¾—æ°´æ³„ä¸é€š\n"
+                               "$N" HIM "è¢«ç·©å¾—ä¸€ç·©ï¼Œ" HIW "èºæ—‹å‹æ°£" HIM "å·²ç„¶è½ç©º\n" NOR;
                 else
-                        msg += HIM "\n$n" HIM "¼û$N" HIM "À´ÊÆĞ×ÃÍ£¬²»¸ÒÕıÃæµÖµ²£¬²àÉí½ø²½Ë«ÕÆ·ÜÁ¦²à»÷$N£¬\n"
-                               HIM "$N" HIM "±»»ºµÃÒ»»º£¬" HIW "ÂİĞı¾¢Æø" MAG "ÒÑÈ»Âä¿Õ£¬µ«$n" HIM "Ò²±»$N" HIM "ÕğµÃÆøÑª·­Ó¿£¡\n" NOR;
+                        msg += HIM "\n$n" HIM "è¦‹$N" HIM "ä¾†å‹¢å…‡çŒ›ï¼Œä¸æ•¢æ­£é¢æŠµæ“‹ï¼Œå´èº«é€²æ­¥é›™æŒå¥®åŠ›å´æ“Š$Nï¼Œ\n"
+                               HIM "$N" HIM "è¢«ç·©å¾—ä¸€ç·©ï¼Œ" HIW "èºæ—‹å‹æ°£" MAG "å·²ç„¶è½ç©ºï¼Œä½†$n" HIM "ä¹Ÿè¢«$N" HIM "éœ‡å¾—æ°£è¡€ç¿»æ¹§ï¼\n" NOR;
 
                 addn("neili", -100, me);
                 me->start_busy(3);

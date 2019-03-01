@@ -1,4 +1,4 @@
-// Npc: /d/kunlun/npc/guanjia.c ¹Ü¼Ò
+// Npc: /d/kunlun/npc/guanjia.c ç®¡å®¶
 // Last Modified by winder on Jun. 29 2001
 
 #include <ansi.h>
@@ -6,9 +6,9 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÇÇ¸£", ({ "qiao fu", "qiao","fu" }));
-        set("title",HIY"¹Ü¼Ò"NOR);
-        set("gender", "ÄĞĞÔ");
+        set_name("å–¬ç¦", ({ "qiao fu", "qiao","fu" }));
+        set("title",HIY"ç®¡å®¶"NOR);
+        set("gender", "ç”·æ€§");
         set("age", 65);
 
         set("combat_exp", 7500);

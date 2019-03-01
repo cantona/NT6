@@ -11,12 +11,12 @@ void goto_wpsd2(object me);
 
 void create()
 {
-        set_name("ÒóËØËØ", ({ "yin susu", "yin", "susu", }));
-        set("long","ËýÊÇ°×Ã¼Ó¥ÍõµÄ¶ÀÉúÅ®¡£ÊÖ°×Ê¤Ñ©£¬Óñ¼ÕÎ¢ÊÝ£¬Ã¼Íä±ÇÍ¦£¬Ò»Ð¦Ê±
-×ó¼ÕÉÏÇ³Ç³Ò»¸öÀæÎÐ¡£\n"
+        set_name("æ®·ç´ ç´ ", ({ "yin susu", "yin", "susu", }));
+        set("long","å¥¹æ˜¯ç™½çœ‰é·¹çŽ‹çš„ç¨ç”Ÿå¥³ã€‚æ‰‹ç™½å‹é›ªï¼ŒçŽ‰é °å¾®ç˜¦ï¼Œçœ‰å½Žé¼»æŒºï¼Œä¸€ç¬‘æ™‚
+å·¦é °ä¸Šæ·ºæ·ºä¸€å€‹æ¢¨æ¸¦ã€‚\n"
         );
 
-        set("gender", "Å®ÐÔ");
+        set("gender", "å¥³æ€§");
         set("attitude", "friendly");
         set("class", "fighert");
 
@@ -51,17 +51,17 @@ void create()
         map_skill("parry", "jingang-quan");
 
         set("inquiry", ([
-                "Ð»Ñ·"      : (: ask_me :),
-                "±ù»ðµº"    : (: ask_me :),
-                "ÍÀÁúµ¶"    : (: ask_me :),
-                "½ðÃ«Ê¨Íõ"  : (: ask_me :),
-                "°×Ã¼Ó¥Íõ"  : "ÄÇÊÇÎÒµù¡£",
+                "è¬éœ"      : (: ask_me :),
+                "å†°ç«å³¶"    : (: ask_me :),
+                "å± é¾åˆ€"    : (: ask_me :),
+                "é‡‘æ¯›ç…çŽ‹"  : (: ask_me :),
+                "ç™½çœ‰é·¹çŽ‹"  : "é‚£æ˜¯æˆ‘çˆ¹ã€‚",
         ]));
         prepare_skill("cuff", "jingang-quan");
 
-        set("party/party_name",HIG"Ã÷½Ì"NOR);
-        set("party/rank",HIM "×ÏÎ¢ÌÃ" NOR "ÌÃÖ÷");
-        create_family("Ã÷½Ì", 35, "µÜ×Ó");
+        set("party/party_name",HIG"æ˜Žæ•™"NOR);
+        set("party/rank",HIM "ç´«å¾®å ‚" NOR "å ‚ä¸»");
+        create_family("æ˜Žæ•™", 35, "å¼Ÿå­");
         setup();
 
         carry_object("/d/yanziwu/npc/obj/green_cloth")->wear();
@@ -77,7 +77,7 @@ int ask_me()
         object me;
         me = this_player ( ) ;
         message_vision(
-"ÒóËØËØÉÏÉÏÏÂÏÂ´òÁ¿ÁË$NÒ»ÏÂ£¬µÀ£ºÕâÎ»"+RANK_D->query_respect(me)+"£¬Äã²»¹ýÊÇÏëÍÀÁúµ¶°É¡£\nÕâÐ¡´¬Ò²¾­²»Æðº£ÀË£¬ÎÒÕýÒªÈ¥ÍõÅÌÉ½µº£¬Äã¿´¿´¿ìµã¾ö¶¨(decide)Òª²»ÒªÈ¥¡£\n",me);
+"æ®·ç´ ç´ ä¸Šä¸Šä¸‹ä¸‹æ‰“é‡äº†$Nä¸€ä¸‹ï¼Œé“ï¼šé€™ä½"+RANK_D->query_respect(me)+"ï¼Œä½ ä¸éŽæ˜¯æƒ³å± é¾åˆ€å§ã€‚\né€™å°èˆ¹ä¹Ÿç¶“ä¸èµ·æµ·æµªï¼Œæˆ‘æ­£è¦åŽ»çŽ‹ç›¤å±±å³¶ï¼Œä½ çœ‹çœ‹å¿«é»žæ±ºå®š(decide)è¦ä¸è¦åŽ»ã€‚\n",me);
 
         set_temp("yinsusu", 1, me);
         return 1;
@@ -88,10 +88,10 @@ int do_decide()
         object me;
         me = this_player ( ) ;
         if( query_temp("yinsusu", me) != 1 )
-                return notify_fail("ÒóËØËØÎÊ£ºÄã¾ö¶¨Ê²Ã´Ñ½£¿\n");
+                return notify_fail("æ®·ç´ ç´ å•ï¼šä½ æ±ºå®šä»€éº¼å‘€ï¼Ÿ\n");
 
-        message_vision("ÒóËØËØ¶Ô$NËµµÀ£º¡°ºÃ£¬Äã¿É±ðºó»Ú£¬×øÎÈÁË¡£¡±\n\n", me);
-        message_vision("ÒóËØËØÉýÆð·«£¬Ð¡ÖÛÇáÇáÆ¯Ïò½­¿Ú¡£\n\n", me);
+        message_vision("æ®·ç´ ç´ å°$Nèªªé“ï¼šâ€œå¥½ï¼Œä½ å¯åˆ¥å¾Œæ‚”ï¼Œåç©©äº†ã€‚â€\n\n", me);
+        message_vision("æ®·ç´ ç´ å‡èµ·å¸†ï¼Œå°èˆŸè¼•è¼•æ¼‚å‘æ±Ÿå£ã€‚\n\n", me);
         me->move ("/d/binghuo/jiangmian1");
         call_out("goto_wpsd1",10,me) ;
                return 1;
@@ -99,13 +99,13 @@ int do_decide()
 
 void goto_wpsd1(object me)
 {
-        message_vision("·ç·«´ø·ç£¬Ð¡ÖÛÔÚ¾çµßÖÐÆ¯³ö½­¿Ú¡£\n\n", me);
+        message_vision("é¢¨å¸†å¸¶é¢¨ï¼Œå°èˆŸåœ¨åŠ‡é¡›ä¸­æ¼‚å‡ºæ±Ÿå£ã€‚\n\n", me);
         me->move ("/d/binghuo/jiangmian2");
         call_out("goto_wpsd2",10,me) ;
 }
 
 void goto_wpsd2(object me)
 {
-        tell_object(me , "Æ¬¿Ì¼ä×ø´¬¿¿°¶£¬°×¹êÊÙÇ××ÔÆÌÉÏÌø°å¡£Äã×ßÏÂÖÛÀ´¡£\n" ) ;
+        tell_object(me , "ç‰‡åˆ»é–“åèˆ¹é å²¸ï¼Œç™½é¾œå£½è¦ªè‡ªèˆ–ä¸Šè·³æ¿ã€‚ä½ èµ°ä¸‹èˆŸä¾†ã€‚\n" ) ;
         me->move ("/d/binghuo/wangpanshan") ;
 }

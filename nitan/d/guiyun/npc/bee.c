@@ -5,11 +5,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÃÛ·ä", ({ "bee", "mifeng", "feng" }) );
-        set("race", "À¥³æ");
-        set("subrace", "·É³æ");
+        set_name("èœœèœ‚", ({ "bee", "mifeng", "feng" }) );
+        set("race", "æ˜†èŸ²");
+        set("subrace", "é£›èŸ²");
         set("age", 2);
-        set("long", "Ò»Ö»·ÉÀ´·ÉÈ¥µÄĞ¡ÃÛ·ä¡£\n");
+        set("long", "ä¸€åªé£›ä¾†é£›å»çš„å°èœœèœ‚ã€‚\n");
         set("attitude", "aggressive");
         set("combat_exp", 500);
 

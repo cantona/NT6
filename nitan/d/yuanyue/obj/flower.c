@@ -2,7 +2,7 @@ inherit ITEM;
 
 void create()
 {
-        set_name("Ò°»¨", ({ "flower" , "Ò°»¨"}) );
+        set_name("é‡èŠ±", ({ "flower" , "é‡èŠ±"}) );
         set_weight(500);
         set_max_encumbrance(8000);
         set("no_get", 1);
@@ -10,8 +10,8 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "´Ô");
-                set("long", "Ò»´Ô²»ÖªÃûµÄÒ°»¨£¬¾²¾²µØÕÀ·Å¡£\n");
+                set("unit", "å¢");
+                set("long", "ä¸€å¢ä¸çŸ¥åçš„é‡èŠ±ï¼Œéœéœåœ°ç¶»æ”¾ã€‚\n");
                 set("value", 1);
         }
         

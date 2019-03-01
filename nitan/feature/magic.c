@@ -1,8 +1,8 @@
-//Ä§·¨ÏµÍ³ by wenwu on 2005.9.23
+//é­”æ³•ç³»çµ± by wenwu on 2005.9.23
 
 #include <ansi.h>
 
-//Ä§·¨·ÀÓù(·ÀÓù·½me,¹¥»÷·½ob,Ôì³ÉÉËº¦damage)
+//é­”æ³•é˜²å¾¡(é˜²å¾¡æ–¹me,æ”»æ“Šæ–¹ob,é€ æˆå‚·å®³damage)
 int magic_parry(object me,object ob,int damage)
 {
         int damage_magic;
@@ -16,14 +16,14 @@ if (damage > 0)
                                 if (random(9) > 4)
                                 {
                                         damage_magic = damage*3/5;
-                                        message_vision(NOR"\n$NµÄ¹âÃ÷Á¦Á¿ºÍ$nµÄºÚ°µÁ¦Á¿ÒÔÒ»ÖÖ¼«²»ÎÈ¶¨µÄĞÎÌ¬Ïà»¥³å×²¼¤µ´.....\n"HIW"Í»È»$NÉíÉÏÇ¿¹âÒ»ÉÁ£¬$NµÄ¹âÃ÷Á¦Á¿ËÆºõ°ÚÍÑÁË$nµÄºÚ°µÁ¦Á¿µÄÊø¸¿ÔÚ$NÉíÇ°ĞÎ³ÉÒ»µÀ¹âÖ®ÆÁÕÏ¡£\n"NOR,me,ob );
-                                        tell_object(me, HIM"ÄãµÄ¹âÃ÷Á¦Á¿¶îÍâ·ÀÓùÁË"+damage*2/5+"µãÉËº¦¡£\n"NOR);
+                                        message_vision(NOR"\n$Nçš„å…‰æ˜åŠ›é‡å’Œ$nçš„é»‘æš—åŠ›é‡ä»¥ä¸€ç¨®æ¥µä¸ç©©å®šçš„å½¢æ…‹ç›¸äº’æ²–æ’æ¿€ç›ª.....\n"HIW"çªç„¶$Nèº«ä¸Šå¼·å…‰ä¸€é–ƒï¼Œ$Nçš„å…‰æ˜åŠ›é‡ä¼¼ä¹æ“ºè„«äº†$nçš„é»‘æš—åŠ›é‡çš„æŸç¸›åœ¨$Nèº«å‰å½¢æˆä¸€é“å…‰ä¹‹å±éšœã€‚\n"NOR,me,ob );
+                                        tell_object(me, HIM"ä½ çš„å…‰æ˜åŠ›é‡é¡å¤–é˜²å¾¡äº†"+damage*2/5+"é»å‚·å®³ã€‚\n"NOR);
                                 }
                                 else
                                 {
                                         damage_magic = damage*7/5;
-                                        message_vision(NOR"\n$NµÄ¹âÃ÷Á¦Á¿ºÍ$nµÄºÚ°µÁ¦Á¿ÒÔÒ»ÖÖ¼«²»ÎÈ¶¨µÄĞÎÌ¬Ïà»¥³å×²¼¤µ´.....\nÍ»È»$nÉíÉÏµÄºÚ°µÆøÏ¢±äµÃ¸ü¼ÓÉî³Á£¬Ò»Ë¿ºÚÆø¾Û³ÉÒ»ÌõÏ¸ÏßÖ±ÉäÏò$NµÄÇ°ĞØ¡£\n"NOR,me,ob );
-                                        tell_object(ob, HIM"ÄãµÄºÚ°µÁ¦Á¿Ôì³É"+damage*2/5+"µãµÄ¶îÍâÉËº¦¡£\n"NOR);
+                                        message_vision(NOR"\n$Nçš„å…‰æ˜åŠ›é‡å’Œ$nçš„é»‘æš—åŠ›é‡ä»¥ä¸€ç¨®æ¥µä¸ç©©å®šçš„å½¢æ…‹ç›¸äº’æ²–æ’æ¿€ç›ª.....\nçªç„¶$nèº«ä¸Šçš„é»‘æš—æ°£æ¯è®Šå¾—æ›´åŠ æ·±æ²‰ï¼Œä¸€çµ²é»‘æ°£èšæˆä¸€æ¢ç´°ç·šç›´å°„å‘$Nçš„å‰èƒ¸ã€‚\n"NOR,me,ob );
+                                        tell_object(ob, HIM"ä½ çš„é»‘æš—åŠ›é‡é€ æˆ"+damage*2/5+"é»çš„é¡å¤–å‚·å®³ã€‚\n"NOR);
                                 }
                         }
                         else
@@ -31,8 +31,8 @@ if (damage > 0)
                                 if (random(9) > 4)
                                 {
                                         damage_magic = damage*4/5;
-                                        message_vision(HIW"\n$NÉíÉÏÍ»È»Á÷¹âÒì²Ê£¬Ò»µÀµ­µ­µÄ¹âÖ®ÆÁÕÏµ²ÔÚ$NÉíÇ°¡£\n"NOR,me);
-                                        tell_object(me, HIM"ÄãµÄ¹âÃ÷Á¦Á¿¶îÍâ·ÀÓùÁË"+damage*1/5+"µãÉËº¦¡£\n"NOR);
+                                        message_vision(HIW"\n$Nèº«ä¸Šçªç„¶æµå…‰ç•°å½©ï¼Œä¸€é“æ·¡æ·¡çš„å…‰ä¹‹å±éšœæ“‹åœ¨$Nèº«å‰ã€‚\n"NOR,me);
+                                        tell_object(me, HIM"ä½ çš„å…‰æ˜åŠ›é‡é¡å¤–é˜²å¾¡äº†"+damage*1/5+"é»å‚·å®³ã€‚\n"NOR);
                                 }
                                 else
                                 {
@@ -47,20 +47,20 @@ if (damage > 0)
                                 if (ob->query("wuxing/mofa") == 2)
                                 {
                                         damage_magic = damage*3/5;
-                                        message_vision(HIY"\n$NÉíÉÏÍ»È»»Æ¹âÒ»ÉÁ£¬µØÖ®»¤¶Ü³öÏÖÔÚÔÚ$NÉíÇ°¡£\n"NOR,me);
-                                        tell_object(me, HIM"ÄãµÄµØÖ®Á¦Á¿¶îÍâ·ÀÓùÁË"+damage*2/5+"µãÉËº¦¡£\n"NOR);
+                                        message_vision(HIY"\n$Nèº«ä¸Šçªç„¶é»ƒå…‰ä¸€é–ƒï¼Œåœ°ä¹‹è­·ç›¾å‡ºç¾åœ¨åœ¨$Nèº«å‰ã€‚\n"NOR,me);
+                                        tell_object(me, HIM"ä½ çš„åœ°ä¹‹åŠ›é‡é¡å¤–é˜²å¾¡äº†"+damage*2/5+"é»å‚·å®³ã€‚\n"NOR);
                                 }
                                 else if (ob->query("wuxing/mofa") == 4)
                                 {
                                         damage_magic = damage*7/5;
-                                        message_vision(HIG"\n$nÉíÉÏÇà¹âÒ»ÉÁ£¬$N½ÅÏÂµØÃæÍ»È»ÁÑ¿ª£¬Ò»Ä¾×®Ö±Ö±×²Ïò$NÏÂÅÌ¡£\n"NOR,me,ob);
-                                        tell_object(ob, HIM"ÄãµÄÄ¾Ö®Á¦Á¿Ôì³É"+damage*2/5+"µãµÄ¶îÍâÉËº¦¡£\n"NOR);
+                                        message_vision(HIG"\n$nèº«ä¸Šé’å…‰ä¸€é–ƒï¼Œ$Nè…³ä¸‹åœ°é¢çªç„¶è£‚é–‹ï¼Œä¸€æœ¨æ¨ç›´ç›´æ’å‘$Nä¸‹ç›¤ã€‚\n"NOR,me,ob);
+                                        tell_object(ob, HIM"ä½ çš„æœ¨ä¹‹åŠ›é‡é€ æˆ"+damage*2/5+"é»çš„é¡å¤–å‚·å®³ã€‚\n"NOR);
                                 }
                                 else
                                 {
                                         damage_magic = damage*4/5;
-                                        message_vision(HIY"\n$NÉíÉÏÍ»È»»Æ¹âÒ»ÉÁ£¬µØÖ®¶Ü³öÏÖÔÚÔÚ$NÉíÇ°¡£\n"NOR,me);
-                                        tell_object(me, HIM"ÄãµÄµØÖ®Á¦Á¿¶îÍâ·ÀÓùÁË"+damage*1/5+"µãÉËº¦¡£\n"NOR);
+                                        message_vision(HIY"\n$Nèº«ä¸Šçªç„¶é»ƒå…‰ä¸€é–ƒï¼Œåœ°ä¹‹ç›¾å‡ºç¾åœ¨åœ¨$Nèº«å‰ã€‚\n"NOR,me);
+                                        tell_object(me, HIM"ä½ çš„åœ°ä¹‹åŠ›é‡é¡å¤–é˜²å¾¡äº†"+damage*1/5+"é»å‚·å®³ã€‚\n"NOR);
                                 }
                         }
                         else
@@ -73,20 +73,20 @@ if (damage > 0)
                                 if (ob->query("wuxing/mofa") == 4)
                                 {
                                         damage_magic = damage*3/5;
-                                        message_vision(HIR"\n$NÉíÉÏÍ»È»ºì¹âÒ»ÉÁ£¬$NÉíÇ°Æ¾¿Õ³öÏÖÒ»µÀ»ğÇ½¡£\n"NOR,me);
-                                        tell_object(me, HIM"ÄãµÄ»ğÖ®Á¦Á¿¶îÍâ·ÀÓùÁË"+damage*2/5+"µãÉËº¦¡£\n"NOR);
+                                        message_vision(HIR"\n$Nèº«ä¸Šçªç„¶ç´…å…‰ä¸€é–ƒï¼Œ$Nèº«å‰æ†‘ç©ºå‡ºç¾ä¸€é“ç«ç‰†ã€‚\n"NOR,me);
+                                        tell_object(me, HIM"ä½ çš„ç«ä¹‹åŠ›é‡é¡å¤–é˜²å¾¡äº†"+damage*2/5+"é»å‚·å®³ã€‚\n"NOR);
                                 }
                                 else if (ob->query("wuxing/mofa") == 3)
                                 {
                                         damage_magic = damage*7/5;
-                                        message_vision(HIW"\n$nÉíÉÏ°×¹âÒ»ÉÁ£¬Æ¾¿Õ³öÏÖÒ»ÅÅË®¼ı¾¶Ö±Ïò$NÉäÈ¥¡£\n"NOR,me,ob);
-                                        tell_object(ob, HIM"ÄãµÄË®Ö®Á¦Á¿Ôì³É"+damage*2/5+"µãµÄ¶îÍâÉËº¦¡£\n"NOR);
+                                        message_vision(HIW"\n$nèº«ä¸Šç™½å…‰ä¸€é–ƒï¼Œæ†‘ç©ºå‡ºç¾ä¸€æ’æ°´ç®­å¾‘ç›´å‘$Nå°„å»ã€‚\n"NOR,me,ob);
+                                        tell_object(ob, HIM"ä½ çš„æ°´ä¹‹åŠ›é‡é€ æˆ"+damage*2/5+"é»çš„é¡å¤–å‚·å®³ã€‚\n"NOR);
                                 }
                                 else
                                 {
                                         damage_magic = damage*4/5;
-                                        message_vision(HIR"\n$NÉíÉÏÍ»È»ºì¹âÒ»ÉÁ£¬Ò»µÀ»ğÖ®ÆÁÕÏ³öÏÖÔÚ$NÉíÇ°¡£\n"NOR,me);
-                                        tell_object(me, HIM"ÄãµÄ»ğÖ®Á¦Á¿¶îÍâ·ÀÓùÁË"+damage*1/5+"µãÉËº¦¡£\n"NOR);
+                                        message_vision(HIR"\n$Nèº«ä¸Šçªç„¶ç´…å…‰ä¸€é–ƒï¼Œä¸€é“ç«ä¹‹å±éšœå‡ºç¾åœ¨$Nèº«å‰ã€‚\n"NOR,me);
+                                        tell_object(me, HIM"ä½ çš„ç«ä¹‹åŠ›é‡é¡å¤–é˜²å¾¡äº†"+damage*1/5+"é»å‚·å®³ã€‚\n"NOR);
                                 }
                         }
                         else
@@ -99,20 +99,20 @@ if (damage > 0)
                                 if (ob->query("wuxing/mofa") == 10)
                                 {
                                         damage_magic = damage*3/5;
-                                        message_vision(HIW"\n$NÉíÉÏÍ»È»°×¹âÒ»ÉÁ£¬$NÉíÇ°Æ¾¿Õ³öÏÖÒ»µÀË®Ç½¡£\n"NOR,me);
-                                        tell_object(me, HIM"ÄãµÄË®Ö®Á¦Á¿¶îÍâ·ÀÓùÁË"+damage*2/5+"µãÉËº¦¡£\n"NOR);
+                                        message_vision(HIW"\n$Nèº«ä¸Šçªç„¶ç™½å…‰ä¸€é–ƒï¼Œ$Nèº«å‰æ†‘ç©ºå‡ºç¾ä¸€é“æ°´ç‰†ã€‚\n"NOR,me);
+                                        tell_object(me, HIM"ä½ çš„æ°´ä¹‹åŠ›é‡é¡å¤–é˜²å¾¡äº†"+damage*2/5+"é»å‚·å®³ã€‚\n"NOR);
                                 }
                                 else if (ob->query("wuxing/mofa") == 1)
                                 {
                                         damage_magic = damage*7/5;
-                                        message_vision(HIY"\n$nÉíÉÏ»Æ¹âÒ»ÉÁ£¬$N½ÅÏÂµØÃæÍ»È»Í»Æğ³É×¶×´¶¥Ïò$n¡£\n"NOR,me,ob);
-                                        tell_object(ob, HIM"ÄãµÄÍÁÖ®Á¦Á¿Ôì³É"+damage*2/5+"µãµÄ¶îÍâÉËº¦¡£\n"NOR);
+                                        message_vision(HIY"\n$nèº«ä¸Šé»ƒå…‰ä¸€é–ƒï¼Œ$Nè…³ä¸‹åœ°é¢çªç„¶çªèµ·æˆéŒç‹€é ‚å‘$nã€‚\n"NOR,me,ob);
+                                        tell_object(ob, HIM"ä½ çš„åœŸä¹‹åŠ›é‡é€ æˆ"+damage*2/5+"é»çš„é¡å¤–å‚·å®³ã€‚\n"NOR);
                                 }
                                 else
                                 {
                                         damage_magic = damage*4/5;
-                                        message_vision(HIW"\n$NÉíÉÏÍ»È»°×¹âÒ»ÉÁ£¬Ò»µÀË®Ö®ÆÁÕÏ³öÏÖÔÚ$NÉíÇ°¡£\n"NOR,me);
-                                        tell_object(me, HIM"ÄãµÄË®Ö®Á¦Á¿¶îÍâ·ÀÓùÁË"+damage*1/5+"µãÉËº¦¡£\n"NOR);
+                                        message_vision(HIW"\n$Nèº«ä¸Šçªç„¶ç™½å…‰ä¸€é–ƒï¼Œä¸€é“æ°´ä¹‹å±éšœå‡ºç¾åœ¨$Nèº«å‰ã€‚\n"NOR,me);
+                                        tell_object(me, HIM"ä½ çš„æ°´ä¹‹åŠ›é‡é¡å¤–é˜²å¾¡äº†"+damage*1/5+"é»å‚·å®³ã€‚\n"NOR);
                                 }
                         }
                         else
@@ -125,20 +125,20 @@ if (damage > 0)
                                 if (ob->query("wuxing/mofa") == 1)
                                 {
                                         damage_magic = damage*3/5;
-                                        message_vision(HIG"\n$NÉíÉÏÍ»È»Çà¹âÒ»ÉÁ£¬Ò»ÅÅ²ÎÌì¾ŞÊ÷µ²ÔÚÁË$NµÄÉíÇ°¡£\n"NOR,me);
-                                        tell_object(me, HIM"ÄãµÄÄ¾Ö®Á¦Á¿¶îÍâ·ÀÓùÁË"+damage*2/5+"µãÉËº¦¡£\n"NOR);
+                                        message_vision(HIG"\n$Nèº«ä¸Šçªç„¶é’å…‰ä¸€é–ƒï¼Œä¸€æ’åƒå¤©å·¨æ¨¹æ“‹åœ¨äº†$Nçš„èº«å‰ã€‚\n"NOR,me);
+                                        tell_object(me, HIM"ä½ çš„æœ¨ä¹‹åŠ›é‡é¡å¤–é˜²å¾¡äº†"+damage*2/5+"é»å‚·å®³ã€‚\n"NOR);
                                 }
                                 else if (ob->query("wuxing/mofa") == 10)
                                 {
                                         damage_magic = damage*7/5;
-                                        message_vision(HIY"\n$nÉíÉÏ½ğÃ¢Ò»ÉÁ£¬Ò»ÅÅ½ğ½£Æ¾¿Õ³öÏÖ¾¶Ö±ÉäÏò$N¡£\n"NOR,me,ob);
-                                        tell_object(ob, HIM"ÄãµÄ½ğÖ®Á¦Á¿Ôì³É"+damage*2/5+"µãµÄ¶îÍâÉËº¦¡£\n"NOR);
+                                        message_vision(HIY"\n$nèº«ä¸Šé‡‘èŠ’ä¸€é–ƒï¼Œä¸€æ’é‡‘åŠæ†‘ç©ºå‡ºç¾å¾‘ç›´å°„å‘$Nã€‚\n"NOR,me,ob);
+                                        tell_object(ob, HIM"ä½ çš„é‡‘ä¹‹åŠ›é‡é€ æˆ"+damage*2/5+"é»çš„é¡å¤–å‚·å®³ã€‚\n"NOR);
                                 }
                                 else
                                 {
                                         damage_magic = damage*4/5;
-                                        message_vision(HIG"\n$NÉíÉÏÍ»È»Çà¹âÒ»ÉÁ£¬Ò»ÅÅ¾ŞÄ¾³öÏÖÔÚ$NÉíÇ°¡£\n"NOR,me);
-                                        tell_object(me, HIM"ÄãµÄÄ¾Ö®Á¦Á¿¶îÍâ·ÀÓùÁË"+damage*1/5+"µãÉËº¦¡£\n"NOR);
+                                        message_vision(HIG"\n$Nèº«ä¸Šçªç„¶é’å…‰ä¸€é–ƒï¼Œä¸€æ’å·¨æœ¨å‡ºç¾åœ¨$Nèº«å‰ã€‚\n"NOR,me);
+                                        tell_object(me, HIM"ä½ çš„æœ¨ä¹‹åŠ›é‡é¡å¤–é˜²å¾¡äº†"+damage*1/5+"é»å‚·å®³ã€‚\n"NOR);
                                 }
                         }
                         else
@@ -149,8 +149,8 @@ if (damage > 0)
                         if (random(9) > 4)
                         {
                                 damage_magic = damage*4/5;
-                                message_vision(NOR"\n$NµÄÉíÓ°Í»È»±äµÃëüëÊ£¬Ò»µÀĞı·çÆ¾¿Õ¾íÆğ»¤ÔÚ$NÖÜÎ§¡£\n"NOR,me);
-                                tell_object(me, HIM"ÄãµÄÆøÖ®Á¦Á¿¶îÍâ·ÀÓùÁË"+damage*1/5+"µãÉËº¦¡£\n"NOR);
+                                message_vision(NOR"\n$Nçš„èº«å½±çªç„¶è®Šå¾—æœ¦æœ§ï¼Œä¸€é“æ—‹é¢¨æ†‘ç©ºå·èµ·è­·åœ¨$Nå‘¨åœã€‚\n"NOR,me);
+                                tell_object(me, HIM"ä½ çš„æ°£ä¹‹åŠ›é‡é¡å¤–é˜²å¾¡äº†"+damage*1/5+"é»å‚·å®³ã€‚\n"NOR);
                         }
                         else
                                 damage_magic = damage;
@@ -160,8 +160,8 @@ if (damage > 0)
                         if (random(9) > 4)
                         {
                                 damage_magic = damage*4/5;
-                                message_vision(HIB"\n$NÉíÉÏµç¹âÉÁË¸£¬Ç¿´óµÄµçÁ÷ÔÚ$NÖÜÎ§ĞÎ³ÉÒ»È¦±¡±¡µÄ´Å³¡½á½ç¡£\n"NOR,me);
-                                tell_object(me, HIM"ÄãµÄÀ×Ö®Á¦Á¿¶îÍâ·ÀÓùÁË"+damage*1/5+"µãÉËº¦¡£\n"NOR);
+                                message_vision(HIB"\n$Nèº«ä¸Šé›»å…‰é–ƒçˆï¼Œå¼·å¤§çš„é›»æµåœ¨$Nå‘¨åœå½¢æˆä¸€åœˆè–„è–„çš„ç£å ´çµç•Œã€‚\n"NOR,me);
+                                tell_object(me, HIM"ä½ çš„é›·ä¹‹åŠ›é‡é¡å¤–é˜²å¾¡äº†"+damage*1/5+"é»å‚·å®³ã€‚\n"NOR);
                         }
                         else
                                 damage_magic = damage;
@@ -171,8 +171,8 @@ if (damage > 0)
                         if (random(9) > 4)
                         {
                                 damage_magic = damage*4/5;
-                                message_vision(HIM"\n$NÖÜÉíÕÖÉÏÒ»²ãµ­µ­µÄ×ÏÉ«¹âÔÎ£¬Ò»Ãæ¾«ÉñÖ®»¤¶ÜÍ»È»³öÏÖÔÚ$NÉíÇ°¡£\n"NOR,me);
-                                tell_object(me, HIM"ÄãµÄĞÄÁéÁ¦Á¿¶îÍâ·ÀÓùÁË"+damage*1/5+"µãÉËº¦¡£\n"NOR);
+                                message_vision(HIM"\n$Nå‘¨èº«ç½©ä¸Šä¸€å±¤æ·¡æ·¡çš„ç´«è‰²å…‰æšˆï¼Œä¸€é¢ç²¾ç¥ä¹‹è­·ç›¾çªç„¶å‡ºç¾åœ¨$Nèº«å‰ã€‚\n"NOR,me);
+                                tell_object(me, HIM"ä½ çš„å¿ƒéˆåŠ›é‡é¡å¤–é˜²å¾¡äº†"+damage*1/5+"é»å‚·å®³ã€‚\n"NOR);
                         }
                         else
                                 damage_magic = damage;
@@ -184,14 +184,14 @@ if (damage > 0)
                                 if (random(9) > 4)
                                 {
                                         damage_magic = damage*3/5;
-                                        message_vision(NOR"\n$NµÄºÚ°µÁ¦Á¿ºÍ$nµÄ¹âÃ÷Á¦Á¿ÒÔÒ»ÖÖ¼«²»ÎÈ¶¨µÄĞÎÌ¬Ïà»¥³å×²¼¤µ´.....\nÍ»È»$NÉíÉÏºÚ°µÆøÏ¢´óÊ¢£¬$NµÄºÚ°µÁ¦Á¿³åÆÆÁË$n¹âÃ÷Á¦Á¿µÄÔ¼ÊøÔÚ$NÖÜÎ§ĞÎ³ÉÒ»µÀºÚ°µÌìÄ»¡£\n"NOR,me,ob );
-                                        tell_object(me, HIM"ÄãµÄºÚ°µÁ¦Á¿¶îÍâ·ÀÓùÁË"+damage*2/5+"µãÉËº¦¡£\n"NOR);
+                                        message_vision(NOR"\n$Nçš„é»‘æš—åŠ›é‡å’Œ$nçš„å…‰æ˜åŠ›é‡ä»¥ä¸€ç¨®æ¥µä¸ç©©å®šçš„å½¢æ…‹ç›¸äº’æ²–æ’æ¿€ç›ª.....\nçªç„¶$Nèº«ä¸Šé»‘æš—æ°£æ¯å¤§ç››ï¼Œ$Nçš„é»‘æš—åŠ›é‡æ²–ç ´äº†$nå…‰æ˜åŠ›é‡çš„ç´„æŸåœ¨$Nå‘¨åœå½¢æˆä¸€é“é»‘æš—å¤©å¹•ã€‚\n"NOR,me,ob );
+                                        tell_object(me, HIM"ä½ çš„é»‘æš—åŠ›é‡é¡å¤–é˜²å¾¡äº†"+damage*2/5+"é»å‚·å®³ã€‚\n"NOR);
                                 }
                                 else
                                 {
                                         damage_magic = damage*7/5;
-                                        message_vision(NOR"\n$NµÄºÚ°µÁ¦Á¿ºÍ$nµÄ¹âÃ÷Á¦Á¿ÒÔÒ»ÖÖ¼«²»ÎÈ¶¨µÄĞÎÌ¬Ïà»¥³å×²¼¤µ´.....\nÍ»È»$nÉíÉÏÇ¿¹â´óÊ¢£¬Ò»±ú¹âÖ®½£Ö»Ö¸$NÇ°ĞØ¡£\n"NOR,me,ob );
-                                        tell_object(ob, HIM"ÄãµÄ¹âÃ÷Á¦Á¿Ôì³É"+damage*2/5+"µãµÄ¶îÍâÉËº¦¡£\n"NOR);
+                                        message_vision(NOR"\n$Nçš„é»‘æš—åŠ›é‡å’Œ$nçš„å…‰æ˜åŠ›é‡ä»¥ä¸€ç¨®æ¥µä¸ç©©å®šçš„å½¢æ…‹ç›¸äº’æ²–æ’æ¿€ç›ª.....\nçªç„¶$nèº«ä¸Šå¼·å…‰å¤§ç››ï¼Œä¸€æŸ„å…‰ä¹‹åŠåªæŒ‡$Nå‰èƒ¸ã€‚\n"NOR,me,ob );
+                                        tell_object(ob, HIM"ä½ çš„å…‰æ˜åŠ›é‡é€ æˆ"+damage*2/5+"é»çš„é¡å¤–å‚·å®³ã€‚\n"NOR);
                                 }
                         }
                         else
@@ -199,8 +199,8 @@ if (damage > 0)
                                 if (random(9) > 4)
                                 {
                                         damage_magic = damage*4/5;
-                                        message_vision(NOR"\n$NµÄÉíÓ°Í»È»±äµÃÄ£ºıÄÑ¼û£¬Ò»²ãÆáºÚµÄÎíÆøÁıÕÖÔÚ$NÔÚÉíÖÜ¡£\n"NOR,me);
-                                        tell_object(me, HIM"ÄãµÄºÚ°µÁ¦Á¿¶îÍâ·ÀÓùÁË"+damage*1/5+"µãÉËº¦¡£\n"NOR);
+                                        message_vision(NOR"\n$Nçš„èº«å½±çªç„¶è®Šå¾—æ¨¡ç³Šé›£è¦‹ï¼Œä¸€å±¤æ¼†é»‘çš„éœ§æ°£ç± ç½©åœ¨$Nåœ¨èº«å‘¨ã€‚\n"NOR,me);
+                                        tell_object(me, HIM"ä½ çš„é»‘æš—åŠ›é‡é¡å¤–é˜²å¾¡äº†"+damage*1/5+"é»å‚·å®³ã€‚\n"NOR);
                                 }
                                 else
                                 {
@@ -213,8 +213,8 @@ if (damage > 0)
                         if (random(9) > 4)
                         {
                                 damage_magic = damage*4/5;
-                                message_vision(HIC"\n$NµÄÉíĞÎÍ»È»Æ¾¿ÕÏûÊ§£¬$NÔ­À´ËùÔÚµÄÎ»ÖÃ¼ÈÈ»ĞÎ³ÉÒ»ĞéÎŞµÄ¿Õ¼ä¶Ï²ã¡£\n"NOR,me);
-                                tell_object(me, HIM"ÄãµÄ¿Õ¼äÁ¦Á¿¶îÍâ·ÀÓùÁË"+damage*1/5+"µãÉËº¦¡£\n"NOR);
+                                message_vision(HIC"\n$Nçš„èº«å½¢çªç„¶æ†‘ç©ºæ¶ˆå¤±ï¼Œ$NåŸä¾†æ‰€åœ¨çš„ä½ç½®æ—¢ç„¶å½¢æˆä¸€è™›ç„¡çš„ç©ºé–“æ–·å±¤ã€‚\n"NOR,me);
+                                tell_object(me, HIM"ä½ çš„ç©ºé–“åŠ›é‡é¡å¤–é˜²å¾¡äº†"+damage*1/5+"é»å‚·å®³ã€‚\n"NOR);
                         }
                         else
                                 damage_magic = damage;
@@ -226,20 +226,20 @@ if (damage > 0)
                                 if (ob->query("wuxing/mofa") == 1)
                                 {
                                         damage_magic = damage*3/5;
-                                        message_vision(HIY"\n$NÉíÉÏÍ»È»½ğÃ¢Ò»ÉÁ£¬$NÖÜÉíÆ¤·ôÓÌÈç½ğÌúÖÊ»¯·º³öµ­µ­½ğ¹â¡£\n"NOR,me);
-                                        tell_object(me, HIM"ÄãµÄ½ğÖ®Á¦Á¿¶îÍâ·ÀÓùÁË"+damage*2/5+"µãÉËº¦¡£\n"NOR);
+                                        message_vision(HIY"\n$Nèº«ä¸Šçªç„¶é‡‘èŠ’ä¸€é–ƒï¼Œ$Nå‘¨èº«çš®è†šçŒ¶å¦‚é‡‘éµè³ªåŒ–æ³›å‡ºæ·¡æ·¡é‡‘å…‰ã€‚\n"NOR,me);
+                                        tell_object(me, HIM"ä½ çš„é‡‘ä¹‹åŠ›é‡é¡å¤–é˜²å¾¡äº†"+damage*2/5+"é»å‚·å®³ã€‚\n"NOR);
                                 }
                                 else if (ob->query("wuxing/mofa") == 2)
                                 {
                                         damage_magic = damage*7/5;
-                                        message_vision(HIR"\n$nÉíÉÏºì¹âÒ»ÉÁ£¬Ò»µÀ»ğÑæÆ¾¿Õ³öÏÖ¾¶Ö±¾íÏò$N¡£\n"NOR,me,ob);
-                                        tell_object(ob, HIM"ÄãµÄ»ğÖ®Á¦Á¿Ôì³É"+damage*2/5+"µãµÄ¶îÍâÉËº¦¡£\n"NOR);
+                                        message_vision(HIR"\n$nèº«ä¸Šç´…å…‰ä¸€é–ƒï¼Œä¸€é“ç«ç‡„æ†‘ç©ºå‡ºç¾å¾‘ç›´å·å‘$Nã€‚\n"NOR,me,ob);
+                                        tell_object(ob, HIM"ä½ çš„ç«ä¹‹åŠ›é‡é€ æˆ"+damage*2/5+"é»çš„é¡å¤–å‚·å®³ã€‚\n"NOR);
                                 }
                                 else
                                 {
                                         damage_magic = damage*4/5;
-                                        message_vision(HIY"\n$NÉíÉÏÍ»È»½ğ¹âÒ»ÉÁ£¬$NÖÜÉíÆ¤·ôÓÌÈçÒøÌúÖÊ»¯·º³öµ­µ­Òø¹â¡£\n"NOR,me);
-                                        tell_object(me, HIM"ÄãµÄ½ğÖ®Á¦Á¿¶îÍâ·ÀÓùÁË"+damage*1/5+"µãÉËº¦¡£\n"NOR);
+                                        message_vision(HIY"\n$Nèº«ä¸Šçªç„¶é‡‘å…‰ä¸€é–ƒï¼Œ$Nå‘¨èº«çš®è†šçŒ¶å¦‚éŠ€éµè³ªåŒ–æ³›å‡ºæ·¡æ·¡éŠ€å…‰ã€‚\n"NOR,me);
+                                        tell_object(me, HIM"ä½ çš„é‡‘ä¹‹åŠ›é‡é¡å¤–é˜²å¾¡äº†"+damage*1/5+"é»å‚·å®³ã€‚\n"NOR);
                                 }
                         }
                         else

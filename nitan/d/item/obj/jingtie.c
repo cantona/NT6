@@ -1,4 +1,4 @@
-// jingtie.c °ÙÁ¶¾«Ìú
+// jingtie.c ç™¾ç…‰ç²¾éµ
 
 #include <ansi.h>
 
@@ -6,19 +6,19 @@ inherit ITEM;
 
 void create()
 {
-        set_name(WHT "°ÙÁ¶¾«Ìú" NOR, ({"iron", "tie"}));
+        set_name(WHT "ç™¾ç…‰ç²¾éµ" NOR, ({"iron", "tie"}));
         set_weight(4500);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¿éºÚ÷î÷îµÄ¾­¹ı¾«ĞÄÒ±Á¶µÄ¾«Ìú¡£\n");
-                set("unit", "¿é");
+                set("long", "ä¸€å¡Šé»‘é»é»çš„ç¶“éç²¾å¿ƒå†¶ç…‰çš„ç²¾éµã€‚\n");
+                set("unit", "å¡Š");
                 set("value", 5000);
                 set("item_origin", 1);
                 set("material_attrib", "iron");
-                set("material_name", WHT "¾«Ìú" NOR);
+                set("material_name", WHT "ç²¾éµ" NOR);
                 set("can_make", "all");
-                set("not_make", ({ "Ñü´ø", "Õ½ÒÂ" }));
+                set("not_make", ({ "è…°å¸¶", "æˆ°è¡£" }));
                 set("power_point", 30);
         }
 }

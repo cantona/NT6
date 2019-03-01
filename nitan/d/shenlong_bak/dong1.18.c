@@ -2,10 +2,10 @@ inherit DEMONROOM;
 
 void create()
 {
-        set("short", "��������");
+        set("short", "寒冰洞外");
         set("long",@LONG
-������������һ�����صĶ�Ѩ���˴��Ծ����䣬��˵���ڲ��и��ֹ��ޣ�
-��˵һֻ�޴�ı�����ס���ⶴ�ڣ�����û�˼�������
+這裡是神龍島一處隱秘的洞穴，此處略覺寒冷，據說洞內藏有各種怪獸，
+傳說一只巨大的冰龍就住在這洞內，但是沒人見過。。
 LONG);
 
         set("exits", ([

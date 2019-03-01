@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�ú���");
+        set("short", "頤和軒");
         set("long", @LONG
-�����Ǭ¡�������鼮������ĵط�, Ҳ��һ���䱦��, ���ж���
-��ȫ�������ѹ������鱦����.
+這兒是乾隆帝閱覽書籍和遊玩的地方, 也是一座珍寶館, 其中多是
+從全國各地搜刮來的珠寶珍奇.
 LONG
         );
         set("exits", ([ /* sizeof() == 1 */

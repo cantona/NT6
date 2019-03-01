@@ -6,16 +6,16 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Ç®ÌÁ½­ÅÏ");
+        set("short", "éŒ¢å¡˜æ±Ÿç•”");
         set("long", @LONG
-Ç®ÌÁ½­µ½ÁËÁùºÍËşÏÂ×ªÒ»¸ö´óÍä£¬È»ºóÖ±Ïò¶«Á÷¡£¸Ã´¦ºÍ¸®³ÇÏà
-¾à²»½ü£¬Ëş¶«ÈıÖê´óÁøÊ÷ÏÂÏµ×ÅÒ»ËÒ±âÖÛ(zhou)¡£½­´¬ÕÅÓĞ·ç·«£¬´¬
-Í·¹Ò×ÅÁ½Õµ±ÌÉ´µÆÁı¡£±ÌÉ´µÆÏÂ£¬Ò»¸öÉÙÅ®¶À×ø´¬Í·£¬Éí´©µ­ÂÌÉÀ×Ó¡£
+éŒ¢å¡˜æ±Ÿåˆ°äº†å…­å’Œå¡”ä¸‹è½‰ä¸€å€‹å¤§å½ï¼Œç„¶å¾Œç›´å‘æ±æµã€‚è©²è™•å’ŒåºœåŸç›¸
+è·ä¸è¿‘ï¼Œå¡”æ±ä¸‰æ ªå¤§æŸ³æ¨¹ä¸‹ç³»è‘—ä¸€è‰˜æ‰èˆŸ(zhou)ã€‚æ±Ÿèˆ¹å¼µæœ‰é¢¨å¸†ï¼Œèˆ¹
+é ­æ›è‘—å…©ç›ç¢§ç´—ç‡ˆç± ã€‚ç¢§ç´—ç‡ˆä¸‹ï¼Œä¸€å€‹å°‘å¥³ç¨åèˆ¹é ­ï¼Œèº«ç©¿æ·¡ç¶ è¡«å­ã€‚
 LONG );
         set("outdoors", "wangpan");
         set("no_clean_up", 0);
         set("item_desc", ([
-                "zhou" : "Ò»ËÒĞ¡ÖÛ£¬²»·Á½øÈ¥(enter)¿´¿´¡£\n",
+                "zhou" : "ä¸€è‰˜å°èˆŸï¼Œä¸å¦¨é€²å»(enter)çœ‹çœ‹ã€‚\n",
         ]));
         set("exits", ([
                 "westup" : "/d/hangzhou/qiantang",
@@ -36,15 +36,15 @@ int do_enter(string arg)
         if( arg=="zhou" )
         {
                message("vision",
-                        me->name() + "ÔËÆğÇá¹¦£¬Ò»×İÉíÉÏÁËĞ¡ÖÛ¡£",
+                        me->name() + "é‹èµ·è¼•åŠŸï¼Œä¸€ç¸±èº«ä¸Šäº†å°èˆŸã€‚",
                         environment(me), ({me}) );
                me->move(__DIR__"zhou");
                message("vision",
-                        me->name() + "´Ó°¶ÉÏÔ¾ÉÏÖÛÀ´¡£\n",
+                        me->name() + "å¾å²¸ä¸Šèºä¸ŠèˆŸä¾†ã€‚\n",
                         environment(me), ({me}) );
                         return 1;
         }
-        else  return notify_fail("ÄãÏëµ½ÄÄÈ¥£¿\n");
+        else  return notify_fail("ä½ æƒ³åˆ°å“ªå»ï¼Ÿ\n");
 }
 
 void init()
@@ -69,16 +69,16 @@ void init()
         {
                 room = get_object("/d/binghuo/wangpanshan");
                 bai = present("bai guishou",room);
-                if (objectp(bai)) tell_object(me, HIC "\nÖ»¼û°¶±ßÉÏ²´ÂúÁËº£´¬£¬ËùÓĞµÄº£´¬È«²¿±ê¼Ç×ÅÌìÓ¥½ÌµÄ±êÖ¾¡£\n" NOR);
+                if (objectp(bai)) tell_object(me, HIC "\nåªè¦‹å²¸é‚Šä¸Šæ³Šæ»¿äº†æµ·èˆ¹ï¼Œæ‰€æœ‰çš„æµ·èˆ¹å…¨éƒ¨æ¨™è¨˜è‘—å¤©é·¹æ•™çš„æ¨™å¿—ã€‚\n" NOR);
 
                 if (objectp(bai)
                     && !query_temp("broadcast", bai )
                     && query("combat_exp", me)>1000000
                     && query("weiwang", me)>100000 )
                 {
-                        message("vision", HIR"\n¡¾ÒĞÌìÍÀÁú¡¿" NOR+WHT "°×¹êÊÙÑöÌìÒ»Éù³¤Ğ¦¡£\n" NOR, all_interactive());
-                        message("vision", HIR"\n¡¾ÒĞÌìÍÀÁú¡¿" NOR+WHT "°×¹êÊÙ£ºÎÒÌìÓ¥½ÌµÃµ½ÍÀÁú±¦µ¶£¬"
-                                          WHT"½ñÔÚÍõÅÌÉ½µº¾ÙĞĞÑïµ¶Á¢Íş´ó»á¡£\n" NOR, all_interactive());
+                        message("vision", HIR"\nã€å€šå¤©å± é¾ã€‘" NOR+WHT "ç™½é¾œå£½ä»°å¤©ä¸€è²é•·ç¬‘ã€‚\n" NOR, all_interactive());
+                        message("vision", HIR"\nã€å€šå¤©å± é¾ã€‘" NOR+WHT "ç™½é¾œå£½ï¼šæˆ‘å¤©é·¹æ•™å¾—åˆ°å± é¾å¯¶åˆ€ï¼Œ"
+                                          WHT"ä»Šåœ¨ç‹ç›¤å±±å³¶èˆ‰è¡Œæšåˆ€ç«‹å¨å¤§æœƒã€‚\n" NOR, all_interactive());
                         set_temp("broadcast", 1, bai);
                 }
         }

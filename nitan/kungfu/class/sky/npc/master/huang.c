@@ -5,13 +5,13 @@ inherit NPC;
 void create()
 {
         object ob;
-        set_name("»ÆÒ©Ê¦", ({"huang yaoshi", "huang", "yaoshi"}));
-        set("title", "¶«º£ÌÒ»¨µºµºÖ÷");
-        set("nickname", HIC "¶«Ð°" NOR );
-        set("gender", "ÄÐÐÔ");
+        set_name("é»ƒè—¥å¸«", ({"huang yaoshi", "huang", "yaoshi"}));
+        set("title", "æ±æµ·æ¡ƒèŠ±å³¶å³¶ä¸»");
+        set("nickname", HIC "æ±é‚ª" NOR );
+        set("gender", "ç”·æ€§");
         set("age", 42);
-        set("long", "Ëû¾ÍÊÇÌÒ»¨µºÖ÷¡£ÐÐÊÂºÃ¶ñÈ«ÓÉ¼ºÐÄ£¬Òò´Ë±»\n"
-                    "ÈË³Æ×÷¡¸¶«Ð°¡¹¡£\n");
+        set("long", "ä»–å°±æ˜¯æ¡ƒèŠ±å³¶ä¸»ã€‚è¡Œäº‹å¥½æƒ¡å…¨ç”±å·±å¿ƒï¼Œå› æ­¤è¢«\n"
+                    "äººç¨±ä½œã€Œæ±é‚ªã€ã€‚\n");
         set("attitude", "peaceful");
         set("class", "scholar");
         set("str", 40);
@@ -77,7 +77,7 @@ void create()
 
         prepare_skill("finger" , "tanzhi-shentong");
 
-        create_family("ÌÒ»¨µº", 1, "µºÖ÷");
+        create_family("æ¡ƒèŠ±å³¶", 1, "å³¶ä¸»");
 
                 set("chat_chance_combat", 120);
                 set("chat_msg_combat", ({
@@ -149,7 +149,7 @@ void die()
                          if (arrayp(ob->query_team()))
                          {
                                  command("heng");
-                                 command("say Ê¤Ö®²»Îä£¡");
+                                 command("say å‹ä¹‹ä¸æ­¦ï¼");
                                  set("qi", 500000);
                                  set("jing", 500000);
                                  set("neili", 35000);
@@ -167,7 +167,7 @@ void die()
              if (ob->query("sky12/floor") == 6)
              {
                       ob->set("sky12/floor", 7);
-                 command("say ¸óÏÂÇë±ã£¡");
+                 command("say é–£ä¸‹è«‹ä¾¿ï¼");
              }           
         }
 
@@ -182,7 +182,7 @@ void die()
 
         return;
 }
-// ÆøÑªÐ¡ÓÚ1000ÔòËÀÍö£¬±ÜÃâËûÈËÐ­Öú°ïÃ¦×ªÊÀ
+// æ°£è¡€å°äºŽ1000å‰‡æ­»äº¡ï¼Œé¿å…ä»–äººå”åŠ©å¹«å¿™è½‰ä¸–
 void heart_beat()
 {
         if (this_object()->query("qi") < 1000 || this_object()->query("eff_qi") < 1000)

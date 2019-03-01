@@ -1,29 +1,29 @@
 // This program is a part of NT MudLIB
 
 /*
-Ãû³Æ£º
-        valid_override - ¿ØÖÆ efun:: µÄÓÃÍ¾¡£
-Óï·¨£º
+åç¨±ï¼š
+        valid_override - æ§åˆ¶ efun:: çš„ç”¨é€”ã€‚
+èªæ³•ï¼š
         int valid_override( string file, string efun_name, string mainfile );
 
-        ÕûÊı valid_override( ×Ö´® µµ°¸, ×Ö´® Íâ²¿º¯Ê½Ãû, ×Ö´® Ö÷µµ°¸ );
-ÓÃ·¨£º
-        file ÊÇ¸Ãºô½ĞÊµ¼ÊÉÏËù´¦µÄµµ°¸£»mainfile ÊÇÓû±àÒëµÄµµ°¸¡´ÒòÎª
-        #include µÄ¹ØÏµ£¬Á½Õß¿ÉÄÜ»á²»Í¬¡µ¡£
+        æ•´æ•¸ valid_override( å­—ä¸² æª”æ¡ˆ, å­—ä¸² å¤–éƒ¨å‡½å¼å, å­—ä¸² ä¸»æª”æ¡ˆ );
+ç”¨æ³•ï¼š
+        file æ˜¯è©²å‘¼å«å¯¦éš›ä¸Šæ‰€è™•çš„æª”æ¡ˆï¼›mainfile æ˜¯æ¬²ç·¨è­¯çš„æª”æ¡ˆã€ˆå› ç‚º
+        #include çš„é—œç³»ï¼Œå…©è€…å¯èƒ½æœƒä¸åŒã€‰ã€‚
 
-        ÔÚÖ÷Ô×Îï¼ş (master.c) ÖĞ¼ÓÉÏ valid_override() ¿ÉÒÔ¿ØÖÆ efun:: ÕâÖÖ
-        Ç°ÖÃÓï·¨ (prefix) µÄÓÃÍ¾¡£Ã¿´Îµ±Çı¶¯³ÌÊ½³¢ÊÔ±àÒëÇ°Ãæ¼ÓÉÏ efun:: µÄ
-        º¯Ê½Ê±£¬»áºô½ĞÖ÷Ô×Îï¼şÖĞµÄ valid_override()¡£Èç¹û valid_override()
-        ´«»Ø 0£¬Ôò±àÒëÊ§°Ü¡£ËùÒÔÒ»Ğ©½ûÖ¹ÓÉ efun:: Ç°ÖÃÓï·¨¹æ±ÜÔ­×÷ÓÃµÄÍâ²¿
-        º¯Ê½£¬valid_override() ¿ÉÒÔÌá¹©Ò»¸ö·½·¨ĞŞ¸ÄËüÃÇµÄ×÷ÓÃ¡£
+        åœ¨ä¸»å®°ç‰©ä»¶ (master.c) ä¸­åŠ ä¸Š valid_override() å¯ä»¥æ§åˆ¶ efun:: é€™ç¨®
+        å‰ç½®èªæ³• (prefix) çš„ç”¨é€”ã€‚æ¯æ¬¡ç•¶é©…å‹•ç¨‹å¼å˜—è©¦ç·¨è­¯å‰é¢åŠ ä¸Š efun:: çš„
+        å‡½å¼æ™‚ï¼Œæœƒå‘¼å«ä¸»å®°ç‰©ä»¶ä¸­çš„ valid_override()ã€‚å¦‚æœ valid_override()
+        å‚³å› 0ï¼Œå‰‡ç·¨è­¯å¤±æ•—ã€‚æ‰€ä»¥ä¸€äº›ç¦æ­¢ç”± efun:: å‰ç½®èªæ³•è¦é¿åŸä½œç”¨çš„å¤–éƒ¨
+        å‡½å¼ï¼Œvalid_override() å¯ä»¥æä¾›ä¸€å€‹æ–¹æ³•ä¿®æ”¹å®ƒå€‘çš„ä½œç”¨ã€‚
 
-        Èç¹ûÄúÏ£ÍûÊ¹ÓÃÔ­À´ 3.1.2  °æ efun:: µÄ×÷ÓÃ£¬Ö»ĞèÒªÔÚÖ÷Ô×Îï¼ş
-        master.c ÖĞ¼ÓÉÏÏÂÃæÕâĞĞ£º
+        å¦‚æœæ‚¨å¸Œæœ›ä½¿ç”¨åŸä¾† 3.1.2  ç‰ˆ efun:: çš„ä½œç”¨ï¼Œåªéœ€è¦åœ¨ä¸»å®°ç‰©ä»¶
+        master.c ä¸­åŠ ä¸Šä¸‹é¢é€™è¡Œï¼š
 
         int valid_override(string file, string efun) { return 1; }
 
-        µ×ÏÂÊÇÒ»¸öÏŞÖÆ½Ï¶àµÄ valid_override() ·¶Àı£º
-        ¡´Òë°´£º±¾·¶ÀıÓë 21 °æ²¢ÎŞ²»Í¬£¬µ«ÊÇÄ¿Ç°ÒÑ¶àÁË mainfile ²ÎÊı¡µ
+        åº•ä¸‹æ˜¯ä¸€å€‹é™åˆ¶è¼ƒå¤šçš„ valid_override() èŒƒä¾‹ï¼š
+        ã€ˆè­¯æŒ‰ï¼šæœ¬èŒƒä¾‹èˆ‡ 21 ç‰ˆä¸¦ç„¡ä¸åŒï¼Œä½†æ˜¯ç›®å‰å·²å¤šäº† mainfile åƒæ•¸ã€‰
 
         int valid_override( string file, string name )
         {
@@ -42,12 +42,12 @@
 
                 return 1;
         }
-²Î¿¼£º
+åƒè€ƒï¼š
         valid_object, function_exists
-×÷Õß£º
+ä½œè€…ï¼š
         Tim Hollebeek  Beek@ZorkMUD, Lima Bean, IdeaExchange, and elsewhere
-·­Òë£º
-        spock@muds.net          2000.May.21.    v22 °æ
+ç¿»è­¯ï¼š
+        spock@muds.net          2000.May.21.    v22 ç‰ˆ
 
 */
 // valid_override: controls which simul_efuns may be overridden with

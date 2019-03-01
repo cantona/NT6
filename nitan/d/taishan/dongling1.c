@@ -5,7 +5,7 @@ inherit RESTROOM_IN;
 
 void create()
 {
-        set("short", "¶«Áéºóµî");
+        set("short", "æ±éˆå¾Œæ®¿");
         set("long", @LONG
 LONG );
 
@@ -16,9 +16,9 @@ LONG );
         set("coor/x", 390);
         set("coor/y", 780);
         set("coor/z", 190);
-  set("door_name","µîÃÅ");
+  set("door_name","æ®¿é–€");
         set("door_dir","south");
-        set("force_name","³Ù°Ù³Ç");
+        set("force_name","é²ç™¾åŸ");
   set("outroom",__DIR__"dongling");
         setup();
 }

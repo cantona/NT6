@@ -1,4 +1,4 @@
-// snake.c ÉßÀà
+// snake.c è›‡é¡
 
 #ifndef __SNAKE__
 #define __SNAKE__
@@ -11,14 +11,14 @@ inherit F_DBASE;
 
 mapping *combat_action = ({
 ([
-        "action":                "$NÅÀÉÏÀ´ÕÅ×ìÍù$nµÄ$lºİºİµØÒ»Ò§",
+        "action":                "$Nçˆ¬ä¸Šä¾†å¼µå˜´å¾€$nçš„$lç‹ ç‹ åœ°ä¸€å’¬",
         "damage":                30,
-        "damage_type":        "Ò§ÉË",
+        "damage_type":        "å’¬å‚·",
 ]),
 ([
-        "action":                "$NÖ§ÆğÉíÃÍµØÍù$nµÄ$l¾íÁËÉÏÀ´",
+        "action":                "$Næ”¯èµ·èº«çŒ›åœ°å¾€$nçš„$lå·äº†ä¸Šä¾†",
         "damage":                30,
-        "damage_type":        "ğöÉË",
+        "damage_type":        "ç˜€å‚·",
 ]),
 });
 
@@ -27,16 +27,16 @@ void create()
         seteuid(getuid());
         set("attitude", "agressive");
         set("limbs", ({
-                "Í·²¿", "ÉíÌå", "Æß´ç", "Î²°Í"
+                "é ­éƒ¨", "èº«é«”", "ä¸ƒå¯¸", "å°¾å·´"
         }) );
 
-        set("dead_message",       "\n$NÍ´¿àµØÅ¤¶¯ÁË¼¸ÏÂ£¬È«ÉíÈíÈíµØÉ¢ÁË¿ªÀ´¡£\n\n"  );
-        set("unconcious_message", "\n$NÍ´¿àµØÅ¤ÁË¼¸ÏÂ£¬²»¶¯ÁË¡£\n\n"                );
-        set("revive_message",     "\n$NÉíÇûÒ»µ¯Ò»¹ö£¬ÓÖÔÚµØÉÏµ½´¦ÓÎ×ß¿ªÀ´¡£\n\n"    );
-        set("leave_msg",          "à²µØÒ»Éù×êÁË³öÈ¥"                      );
-        set("arrive_msg",         "òêÑÑµØÓÎÁË¹ıÀ´"                              );
-        set("fleeout_message",    "à²µØÒ»Éù×êÁË³öÈ¥"                      );
-        set("fleein_message",     "»º»ºµØÓÎÁË¹ıÀ´£¬ÈíŞÇŞÇµØÔÚµØÉÏÅ¿×Å"          );
+        set("dead_message",       "\n$Nç—›è‹¦åœ°æ‰­å‹•äº†å¹¾ä¸‹ï¼Œå…¨èº«è»Ÿè»Ÿåœ°æ•£äº†é–‹ä¾†ã€‚\n\n"  );
+        set("unconcious_message", "\n$Nç—›è‹¦åœ°æ‰­äº†å¹¾ä¸‹ï¼Œä¸å‹•äº†ã€‚\n\n"                );
+        set("revive_message",     "\n$Nèº«è»€ä¸€å½ˆä¸€æ»¾ï¼Œåˆåœ¨åœ°ä¸Šåˆ°è™•éŠèµ°é–‹ä¾†ã€‚\n\n"    );
+        set("leave_msg",          "å—–åœ°ä¸€è²é‘½äº†å‡ºå»"                      );
+        set("arrive_msg",         "èœ¿èœ’åœ°éŠäº†éä¾†"                              );
+        set("fleeout_message",    "å—–åœ°ä¸€è²é‘½äº†å‡ºå»"                      );
+        set("fleein_message",     "ç·©ç·©åœ°éŠäº†éä¾†ï¼Œè»Ÿè€·è€·åœ°åœ¨åœ°ä¸Šè¶´è‘—"          );
 }
 
 void setup_snake(object ob)
@@ -48,9 +48,9 @@ void setup_snake(object ob)
         ob->set_default_action(__FILE__, "query_action");
 	set("default_actions", (: call_other, __FILE__, "query_action" :), ob);
 
-        my["unit"] = "Ö»";
+        my["unit"] = "åª";
         
-        if( undefinedp(my["gender"]) ) my["gender"] = "ĞÛĞÔ";
+        if( undefinedp(my["gender"]) ) my["gender"] = "é›„æ€§";
         if( undefinedp(my["age"]) ) my["age"] = random(10) + 5;
 
         if( undefinedp(my["str"]) ) my["str"] = random(20) + 5;

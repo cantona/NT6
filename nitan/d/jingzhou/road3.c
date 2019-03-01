@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "���");
+        set("short", "大道");
         set("long", @LONG
-����һ����ʯ�������ͨ��������������ȥ��ֻ��һ����ɽ��
-�ɹŰأ�һƬ��÷羰��
+這是一條青石大道。向東通往襄陽。向西而去，只見一座高山青
+鬆古柏，一片大好風景。
 LONG );
         set("exits", ([
                 "northeast" : __DIR__"road2",

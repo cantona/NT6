@@ -1,22 +1,22 @@
-// suanmei.c ËáÃ·ÌÀ
+// suanmei.c é…¸æ¢…æ¹¯
 inherit ITEM;
 inherit F_LIQUID;
 
 void create()
 {
-        set_name("ËáÃ·ÌÀ", ({ "suanmei tang","tang" }));
+        set_name("é…¸æ¢…æ¹¯", ({ "suanmei tang","tang" }));
         set_weight(1000);
         if( clonep() )
           set_default_object(__FILE__);
         else {
         set("long",
-            "ÕâÊÇÒ»Íë½â¿ÊÁ¼ÌÀ¡£!\n");
-        set("unit", "Íë");
+            "é€™æ˜¯ä¸€ç¢—è§£æ¸´è‰¯æ¹¯ã€‚!\n");
+        set("unit", "ç¢—");
         set("value", 20);
         set("max_liquid", 10);
         }
         set("liquid", ([
-            "name" : "ËáÃ·ÌÀ",
+            "name" : "é…¸æ¢…æ¹¯",
             "remaining" : 8,
                    "type" : "water"
         ]) );

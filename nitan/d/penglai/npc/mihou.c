@@ -7,8 +7,8 @@ void create()
 {
         object ob;
         
-        set_name(HIY "猕猴" NOR, ({ "mi hou", "mi", "hou" }));
-        set("long", HIY "这是一只猕猴，正盯着你看，似乎存有戒心。\n" NOR);
+        set_name(HIY "鐛肩尨" NOR, ({ "mi hou", "mi", "hou" }));
+        set("long", HIY "閫欐槸涓�鍙嵓鐚达紝姝ｇ洴钁椾綘鐪嬶紝浼间箮瀛樻湁鎴掑績銆俓n" NOR);
 
         set("age", 4);
         set("str", 20);

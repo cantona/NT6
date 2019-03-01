@@ -1,5 +1,5 @@
 // huoqian.c
-//modefied by sega 1/15/99 ¸Ä³É²»ÄÜÔÚno_fightµÄµØ·½catch
+//modefied by sega 1/15/99 æ”¹æˆä¸èƒ½åœ¨no_fightçš„åœ°æ–¹catch
 
 #include <ansi.h>;
 inherit ITEM;
@@ -20,15 +20,15 @@ int is_container() { return 1; }
 
 void create()
 {
-        set_name(HIR"»ğÇ©"NOR, ({"huo qian","hq" }));
+        set_name(HIR"ç«ç°½"NOR, ({"huo qian","hq" }));
         set_max_encumbrance(10);
-        set("unit", "¿é");
-        set("long", "ÕâÊÇÒ»¿éÖìºìµÄ»ğÇ©£¬¾«¸Ö´òÔì£¬ÓÃÀ´Ö¤Ã÷¹Ù¸®ÈËÊ¿µÄÉí·İ¡£\n´ø×ÅËüÄã¾ÍÓĞÈ¨ËÑÑ°×ï·¸(guancha/watch)£¬´ş²¶ÏÓÒÉ·¸(daibu/catch)¡£\n");
+        set("unit", "å¡Š");
+        set("long", "é€™æ˜¯ä¸€å¡Šæœ±ç´…çš„ç«ç°½ï¼Œç²¾é‹¼æ‰“é€ ï¼Œç”¨ä¾†è¨¼æ˜å®˜åºœäººå£«çš„èº«ä»½ã€‚\nå¸¶è‘—å®ƒä½ å°±æœ‰æ¬Šæœå°‹ç½ªçŠ¯(guancha/watch)ï¼Œé€®æ•å«Œç–‘çŠ¯(daibu/catch)ã€‚\n");
         set("value", 0);
-        set("no_drop", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
-        set("no_get", "ÕâÊÇ¹Ù¸®µÄ¶«Î÷£¬Æ½³£ÈËÄÃÁË»áÈÇÂé·³µÄ¡£\n");
-        set("no_get_from", "ÕâÊÇ¹Ù¸®µÄ¶«Î÷£¬Æ½³£ÈËÄÃÁË»áÈÇÂé·³µÄ¡£\n");
-        set("no_put", "ÕâÊÇ¹Ù¸®µÄ¶«Î÷£¬±ğµ½´¦ÂÒ·Å¡£\n");
+        set("no_drop", "é€™æ¨£æ±è¥¿ä¸èƒ½é›¢é–‹ä½ ã€‚\n");
+        set("no_get", "é€™æ˜¯å®˜åºœçš„æ±è¥¿ï¼Œå¹³å¸¸äººæ‹¿äº†æœƒæƒ¹éº»ç…©çš„ã€‚\n");
+        set("no_get_from", "é€™æ˜¯å®˜åºœçš„æ±è¥¿ï¼Œå¹³å¸¸äººæ‹¿äº†æœƒæƒ¹éº»ç…©çš„ã€‚\n");
+        set("no_put", "é€™æ˜¯å®˜åºœçš„æ±è¥¿ï¼Œåˆ¥åˆ°è™•äº‚æ”¾ã€‚\n");
         set_weight(200);
         set("place","on");
 
@@ -42,23 +42,23 @@ int do_watch(string arg)
         string targ;
 
         if( !query("officerlvl", me) )
-                return notify_fail("Äã²¢·Ç³¯Í¢¹ÙÔ±£¬ºÎ±Ø²ÙÕâ·İÏĞĞÄ£¿\n");
+                return notify_fail("ä½ ä¸¦éæœå»·å®˜å“¡ï¼Œä½•å¿…æ“é€™ä»½é–’å¿ƒï¼Ÿ\n");
 
         if (!ob=present("huo qian",me))
-                return notify_fail("Ê²Ã´£¿\n");
+                return notify_fail("ä»€éº¼ï¼Ÿ\n");
         if( query_temp("bt/finish", me) )
-                return notify_fail("³Ì´óÈËµÈ×Å»Ø»°ÄÄ£¬Äã»¹ÔÚÄ¥²äÊ²Ã´£¿\n");
+                return notify_fail("ç¨‹å¤§äººç­‰è‘—å›è©±å“ªï¼Œä½ é‚„åœ¨ç£¨è¹­ä»€éº¼ï¼Ÿ\n");
         if (!arg||!obj=present(arg,environment(me)))
-                return notify_fail("ÄãÒª¹Û²ìË­£¿\n");
+                return notify_fail("ä½ è¦è§€å¯Ÿèª°ï¼Ÿ\n");
         if (!obj->is_character() || obj->is_corpse() )
-                return notify_fail("ÄãÖ»ÄÜ¹Û²ìÒ»¸ö»îµÄÎïÌå¡£\n");
+                return notify_fail("ä½ åªèƒ½è§€å¯Ÿä¸€å€‹æ´»çš„ç‰©é«”ã€‚\n");
         if (!present("picture",ob))
-                return notify_fail("ÄãÔçÒÑ¾­·¢ÏÖÁËÏÓÒÉ·¸£¬»¹Ä¥²äÊ²Ã´£¿\n");
+                return notify_fail("ä½ æ—©å·²ç¶“ç™¼ç¾äº†å«Œç–‘çŠ¯ï¼Œé‚„ç£¨è¹­ä»€éº¼ï¼Ÿ\n");
         if (me->is_busy() )
-                return notify_fail("ÄãÕıÃ¦×Å¡£\n");
+                return notify_fail("ä½ æ­£å¿™è‘—ã€‚\n");
 
         targ=query("name", obj);
-        tell_object(me,"ÄãÓÃÈñÀûµÄÑÛÉñ¶¢×Å"+targ+"¡£\n\n");
+        tell_object(me,"ä½ ç”¨éŠ³åˆ©çš„çœ¼ç¥ç›¯è‘—"+targ+"ã€‚\n\n");
         me->start_busy(1);
         if( query("bt_tufei", obj) == query_temp("bt/npc", me) && 
                 random(query("kar", me)+15)>20 && 
@@ -67,19 +67,19 @@ int do_watch(string arg)
                 switch(random(5))
                 {
                         case 0:
-tell_object(me,WHT"Äã·¢ÏÖ"+targ+"ºöÈ»°ÑÍ·Ò»µÍ£¬ËÆºõÏë±Ü¿ªÄãµÄÄ¿¹â¡£\n\n"NOR);
+tell_object(me,WHT"ä½ ç™¼ç¾"+targ+"å¿½ç„¶æŠŠé ­ä¸€ä½ï¼Œä¼¼ä¹æƒ³é¿é–‹ä½ çš„ç›®å…‰ã€‚\n\n"NOR);
                                 break;
                         case 1:
-tell_object(me,WHT"Äã·¢ÏÖ"+targ+"ºöÈ»´òÁË¸ö¶ßàÂ£¬ÃæÈçÍÁÉ«¡£\n\n"NOR);
+tell_object(me,WHT"ä½ ç™¼ç¾"+targ+"å¿½ç„¶æ‰“äº†å€‹å“†å—¦ï¼Œé¢å¦‚åœŸè‰²ã€‚\n\n"NOR);
                                 break;
                         case 2:
-tell_object(me,WHT"Äã·¢ÏÖ"+targ+"Ì«ÑôÑ¨¸ß¸ß·ØÆğ£¬ËÆºõÊÇ¸öÁ·ÎäµÄÈË¡£\n\n"NOR);
+tell_object(me,WHT"ä½ ç™¼ç¾"+targ+"å¤ªé™½ç©´é«˜é«˜å¢³èµ·ï¼Œä¼¼ä¹æ˜¯å€‹ç·´æ­¦çš„äººã€‚\n\n"NOR);
                                 break;
                         case 3:
-tell_object(me,WHT"Äã·¢ÏÖ"+targ+"Ñü¼ä¹Ä¹ÄÄÒÄÒµÄ£¬Ñù×ÓÏóÊÇÒ»¼ş±øÈĞ¡£\n\n"NOR);
+tell_object(me,WHT"ä½ ç™¼ç¾"+targ+"è…°é–“é¼“é¼“å›Šå›Šçš„ï¼Œæ¨£å­è±¡æ˜¯ä¸€ä»¶å…µåˆƒã€‚\n\n"NOR);
                                 break;
                         case 4:
-tell_object(me,WHT"Äã·¢ÏÖ"+targ+"µÄÑÛÖĞ¾«¹âÒ»ÉÁ£¬ÂíÉÏÓÖ±äµÄÒ»Á³Ã£È»¡£\n\n"NOR);
+tell_object(me,WHT"ä½ ç™¼ç¾"+targ+"çš„çœ¼ä¸­ç²¾å…‰ä¸€é–ƒï¼Œé¦¬ä¸Šåˆè®Šçš„ä¸€è‡‰èŒ«ç„¶ã€‚\n\n"NOR);
                                 break;
                 }
                 set_temp("bt/faxian", 1, me);
@@ -90,37 +90,37 @@ tell_object(me,WHT"Äã·¢ÏÖ"+targ+"µÄÑÛÖĞ¾«¹âÒ»ÉÁ£¬ÂíÉÏÓÖ±äµÄÒ»Á³Ã£È»¡£\n\n"NOR);
                 switch(random(11))
                 {
                         case 0:
-tell_object(me,"Ö»¼û"+targ+"Õı¼·Ã¼ÅªÑÛ£¬É«ÃÔÃÔµÄ¶«ÕÅÎ÷Íû¡£\n\n");
+tell_object(me,"åªè¦‹"+targ+"æ­£æ“ çœ‰å¼„çœ¼ï¼Œè‰²è¿·è¿·çš„æ±å¼µè¥¿æœ›ã€‚\n\n");
                                 break;
                         case 1:
-tell_object(me,"Ö»¼û"+targ+"¶öµÃÃæ»Æ¼¡Êİ£¬¹ÇÊİÈç²ñ¡£\n\n");
+tell_object(me,"åªè¦‹"+targ+"é¤“å¾—é¢é»ƒè‚Œç˜¦ï¼Œéª¨ç˜¦å¦‚æŸ´ã€‚\n\n");
                                 break;
                         case 2:
-tell_object(me,"Ö»¼û"+targ+"Ãæ¼ÕÎ¢ºì£¬Ò»Á³½¿ĞßµÄÄ£Ñù¡£\n\n");
+tell_object(me,"åªè¦‹"+targ+"é¢é °å¾®ç´…ï¼Œä¸€è‡‰å¬Œç¾çš„æ¨¡æ¨£ã€‚\n\n");
                                 break;
                         case 3:
-tell_object(me,"Ö»¼û"+targ+"ÂúÁ³ºáÈâ£¬×ìÁ³Ğ×Íç¡£\n\n");
+tell_object(me,"åªè¦‹"+targ+"æ»¿è‡‰æ©«è‚‰ï¼Œå˜´è‡‰å…‡é ‘ã€‚\n\n");
                                 break;
                         case 4:
-tell_object(me,"Ö»¼û"+targ+"±¯Í´Óû¾ø£¬¿ŞµÄÏó¸öÀáÈËËÆµÄ¡£\n\n");
+tell_object(me,"åªè¦‹"+targ+"æ‚²ç—›æ¬²çµ•ï¼Œå“­çš„è±¡å€‹æ·šäººä¼¼çš„ã€‚\n\n");
                                 break;
                         case 5:
-tell_object(me,"Ö»¼û"+targ+"ÊÖ×ã½©Ó²£¬»ëÉíÉ¢·¢×Å½ğÊô¹âÔó¡£\n\n");
+tell_object(me,"åªè¦‹"+targ+"æ‰‹è¶³åƒµç¡¬ï¼Œæ¸¾èº«æ•£ç™¼è‘—é‡‘å±¬å…‰æ¾¤ã€‚\n\n");
                                 break;
                         case 6:
-tell_object(me,"Ö»¼û"+targ+"ÃæÎŞ±íÇé£¬´ôÈôÄ¾¼¦¡£\n\n");
+tell_object(me,"åªè¦‹"+targ+"é¢ç„¡è¡¨æƒ…ï¼Œå‘†è‹¥æœ¨é›ã€‚\n\n");
                                 break;
                         case 7:
-tell_object(me,"Ö»¼û"+targ+"³¤µÃ¼â×ìºïÈù£¬Ä¿¹â½ÆÕ©¡£\n\n");
+tell_object(me,"åªè¦‹"+targ+"é•·å¾—å°–å˜´çŒ´è…®ï¼Œç›®å…‰ç‹¡è©ã€‚\n\n");
                                 break;
                         case 8:
-tell_object(me,"Ö»¼û"+targ+"¸ÉĞ¦¼¸Éù£¬Á³ÉÏ¼·³öÒ»Ë¿ÃÄĞ¦¡£\n\n");
+tell_object(me,"åªè¦‹"+targ+"å¹¹ç¬‘å¹¾è²ï¼Œè‡‰ä¸Šæ“ å‡ºä¸€çµ²åªšç¬‘ã€‚\n\n");
                                 break;
                         case 9:
-tell_object(me,"Ö»¼û"+targ+"Í¦ĞØµş¶Ç£¬Ò»Á³°ÁÂıµÄÉñÉ«¡£\n\n");
+tell_object(me,"åªè¦‹"+targ+"æŒºèƒ¸ç–Šè‚šï¼Œä¸€è‡‰å‚²æ…¢çš„ç¥è‰²ã€‚\n\n");
                                 break;
                         case 10:
-tell_object(me,"Ö»¼û"+targ+"³¤µÃÃ÷íøğ©³İ£¬Ò»Á³ÌìÕæµÄÉñÉ«¡£\n\n");
+tell_object(me,"åªè¦‹"+targ+"é•·å¾—æ˜çœ¸çš“é½’ï¼Œä¸€è‡‰å¤©çœŸçš„ç¥è‰²ã€‚\n\n");
                                 break;
                 }
         }
@@ -132,23 +132,23 @@ int do_catch(string arg)
         object me = this_player();
         object ob = this_object();                        //100
         if( query("no_fight", environment(me)) )
-                return notify_fail("ÕâÀï½ûÖ¹Õ½¶·¡£\n");
+                return notify_fail("é€™è£¡ç¦æ­¢æˆ°é¬¥ã€‚\n");
 
         if (!ob=present("huo qian",me))
-                return notify_fail("Ê²Ã´£¿\n");
+                return notify_fail("ä»€éº¼ï¼Ÿ\n");
         if( !query("officerlvl", me) )
-                return notify_fail("Äã²¢·Ç³¯Í¢¹ÙÔ±£¬ºÎ±Ø²ÙÕâ·İÏĞĞÄ£¿\n");
+                return notify_fail("ä½ ä¸¦éæœå»·å®˜å“¡ï¼Œä½•å¿…æ“é€™ä»½é–’å¿ƒï¼Ÿ\n");
         if( query_temp("bt/finish", me) )
-                return notify_fail("³Ì´óÈËµÈ×Å»Ø»°ÄÄ£¬Äã»¹ÔÚÄ¥²äÊ²Ã´£¿\n");
+                return notify_fail("ç¨‹å¤§äººç­‰è‘—å›è©±å“ªï¼Œä½ é‚„åœ¨ç£¨è¹­ä»€éº¼ï¼Ÿ\n");
         if (!arg||!obj=present(arg,environment(me)))
-                return notify_fail("ÄãÒª´ş²¶Ë­£¿\n");
+                return notify_fail("ä½ è¦é€®æ•èª°ï¼Ÿ\n");
         if( !obj->is_character() || obj->is_corpse() )
-                return notify_fail("ÄãÖ»ÄÜ´ş²¶Ò»¸ö»îÈË¡£\n");
+                return notify_fail("ä½ åªèƒ½é€®æ•ä¸€å€‹æ´»äººã€‚\n");
         if( !query_temp("bt/faxian", me )
                  || query_temp("bt_faxianed", obj) != query("id", me) )
-                return notify_fail("ÑïÖİ¼ÍÂÉÑÏÃ÷£¬Ã»ÓĞÖ¤¾İÔõºÃÄÃÈË£¿\n");
-        message_vision ("$N¶Ô×Å$nÀäĞ¦Ò»ÉùµÀ£º¸óÏÂµÄ°¸×Ó·¢ÁË£¬ÀÏÀÏÊµÊµ¸ú±¾¹Ù×ßÒ»ÌË¡£\n\n",me,obj);
-        message_vision (RED"$n´ó½ĞÒ»Éù½Ò¿ªÎ±×°£¬Â¶³ö±¾À´ÃæÄ¿¡£\n$n´óºÈµÀ£ºÀÏ×ÓºÍÄãÆ´ÁË£¡\n\n"NOR,me,obj);
+                return notify_fail("æšå·ç´€å¾‹åš´æ˜ï¼Œæ²’æœ‰è¨¼æ“šæ€å¥½æ‹¿äººï¼Ÿ\n");
+        message_vision ("$Nå°è‘—$nå†·ç¬‘ä¸€è²é“ï¼šé–£ä¸‹çš„æ¡ˆå­ç™¼äº†ï¼Œè€è€å¯¦å¯¦è·Ÿæœ¬å®˜èµ°ä¸€è¶Ÿã€‚\n\n",me,obj);
+        message_vision (RED"$nå¤§å«ä¸€è²æ­é–‹å½è£ï¼Œéœ²å‡ºæœ¬ä¾†é¢ç›®ã€‚\n$nå¤§å–é“ï¼šè€å­å’Œä½ æ‹¼äº†ï¼\n\n"NOR,me,obj);
         delete_temp("bt_faxianed", obj);
         destruct(obj);
         new_obj = present("picture",ob);

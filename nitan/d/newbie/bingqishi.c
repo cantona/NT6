@@ -5,11 +5,11 @@ string show_jia();
 
 void create()
 {
-        set("short", "±øÆ÷ÊÒ");
+        set("short", "å…µå™¨å®¤");
         set("long", @LONG
-ÕâÊÇÄËÊÇ¹Å´åµÄ±øÆ÷ÊÒ£¬ËÄÖÜÊÇ¼¸¸ö±øÆ÷¼Ü£¬ÉÏÃæ°ÚÂúÁË¸÷ÖÖ¸÷
-ÑùµÄ±øÆ÷£¬£¨ÊäÈëÖ¸Áî look jia£© ¿ÉÒÔ¿´µ½ÓĞÊ²Ã´±øÆ÷£¬ĞèÒªµÄ»°
-¿ÉÒÔÄÃ£¨ÊäÈëÖ¸Áî qu ±øÆ÷ID from jia£©¡£
+é€™æ˜¯ä¹ƒæ˜¯å¤æ‘çš„å…µå™¨å®¤ï¼Œå››å‘¨æ˜¯å¹¾å€‹å…µå™¨æ¶ï¼Œä¸Šé¢æ“ºæ»¿äº†å„ç¨®å„
+æ¨£çš„å…µå™¨ï¼Œï¼ˆè¼¸å…¥æŒ‡ä»¤ look jiaï¼‰ å¯ä»¥çœ‹åˆ°æœ‰ä»€éº¼å…µå™¨ï¼Œéœ€è¦çš„è©±
+å¯ä»¥æ‹¿ï¼ˆè¼¸å…¥æŒ‡ä»¤ qu å…µå™¨ID from jiaï¼‰ã€‚
 LONG);
         set("exits", ([
                 "south" : __DIR__"lianwuchang",
@@ -28,14 +28,14 @@ string show_jia()
 {
         string msg;
 
-        msg =  HIC "±øÆ÷¼ÜÉÏ°ÚÓĞÒÔÏÂ±øÆ÷£º\n\n" NOR;
-        msg += HIY "³¤±Ş£¨chang bian£©\n" NOR;
-        msg += HIY "¸Öµ¶£¨gang dao£©\n" NOR;
-        msg += HIY "³¤½££¨chang jian£©\n" NOR;
-        msg += HIY "ÆëÃ¼¹÷£¨qimei gun£©\n" NOR;
-        msg += HIY "¸ÖÕÈ£¨gang zhang£©\n" NOR;
-        msg += HIY "Öñ°ô£¨zhu bang£©\n\n" NOR;
-        msg += HIR "ÊäÈëÖ¸Áî " HIY "qu <±øÆ÷µÄÓ¢ÎÄÃû> from jia" HIR " À´È¡±øÆ÷¡£\n\n" NOR;
+        msg =  HIC "å…µå™¨æ¶ä¸Šæ“ºæœ‰ä»¥ä¸‹å…µå™¨ï¼š\n\n" NOR;
+        msg += HIY "é•·é­ï¼ˆchang bianï¼‰\n" NOR;
+        msg += HIY "é‹¼åˆ€ï¼ˆgang daoï¼‰\n" NOR;
+        msg += HIY "é•·åŠï¼ˆchang jianï¼‰\n" NOR;
+        msg += HIY "é½Šçœ‰æ£ï¼ˆqimei gunï¼‰\n" NOR;
+        msg += HIY "é‹¼æ–ï¼ˆgang zhangï¼‰\n" NOR;
+        msg += HIY "ç«¹æ£’ï¼ˆzhu bangï¼‰\n\n" NOR;
+        msg += HIR "è¼¸å…¥æŒ‡ä»¤ " HIY "qu <å…µå™¨çš„è‹±æ–‡å> from jia" HIR " ä¾†å–å…µå™¨ã€‚\n\n" NOR;
 
         return msg;
 }
@@ -59,26 +59,26 @@ int do_get(string arg)
         string wid;
         object weapon;
 
-        if (! arg)return notify_fail("ÄãÒªÈ¡Ê²Ã´±øÆ÷£¿qu <±øÆ÷£É£Ä> from jia¡£\n");
+        if (! arg)return notify_fail("ä½ è¦å–ä»€éº¼å…µå™¨ï¼Ÿqu <å…µå™¨ï¼©ï¼¤> from jiaã€‚\n");
 
-        if (sscanf(arg, "%s from jia", wid) != 1)return notify_fail("ÄãÒªÈ¡Ê²Ã´±øÆ÷£¿qu <±øÆ÷£É£Ä> from jia¡£\n");
+        if (sscanf(arg, "%s from jia", wid) != 1)return notify_fail("ä½ è¦å–ä»€éº¼å…µå™¨ï¼Ÿqu <å…µå™¨ï¼©ï¼¤> from jiaã€‚\n");
 
         if (! ids[wid])
-                return notify_fail("ÄãÊäÈëµÄ±øÆ÷²»´æÔÚ£¬ÇëÊäÈëÖ¸Áî look jia À´²é¿´¿ÉÄÃÈ¡µÄ±øÆ÷¡£\n");
+                return notify_fail("ä½ è¼¸å…¥çš„å…µå™¨ä¸å­˜åœ¨ï¼Œè«‹è¼¸å…¥æŒ‡ä»¤ look jia ä¾†æŸ¥çœ‹å¯æ‹¿å–çš„å…µå™¨ã€‚\n");
 
         if( query_temp("qu_in_newbie", this_player()) )
-                return notify_fail("ÄãÒÑ¾­È¡¹ı±øÆ÷ÁË£¬Èç¹ûÏëÔÙ´ÎÈ¡±øÆ÷¿ÉÍË³öÓÎÏ·£¨ÊäÈëexit£©ºóÖØĞÂ½øÈë¡£\n");
+                return notify_fail("ä½ å·²ç¶“å–éå…µå™¨äº†ï¼Œå¦‚æœæƒ³å†æ¬¡å–å…µå™¨å¯é€€å‡ºéŠæˆ²ï¼ˆè¼¸å…¥exitï¼‰å¾Œé‡æ–°é€²å…¥ã€‚\n");
 
         weapon = new(__DIR__"obj/" + ids[wid]);
 
         if (! objectp(weapon))
                 return notify_fail("clone " + wid + " error!\n");
 
-        tell_object(this_player(),HIG"Äã´Ó±øÆ÷¼ÜÉÏÄÃÁËÒ»"+query("unit", weapon)+weapon->name()+"¡£\n"NOR);
+        tell_object(this_player(),HIG"ä½ å¾å…µå™¨æ¶ä¸Šæ‹¿äº†ä¸€"+query("unit", weapon)+weapon->name()+"ã€‚\n"NOR);
 
         weapon->move(this_player(), 1);
 
-        tell_object(this_player(),HIC"ÇëÊäÈëÖ¸Áîlook "+query("id", weapon)+"²é¿´¸Ã±øÆ÷µÄÊ¹ÓÃ·½·¨¡£\n"NOR);
+        tell_object(this_player(),HIC"è«‹è¼¸å…¥æŒ‡ä»¤look "+query("id", weapon)+"æŸ¥çœ‹è©²å…µå™¨çš„ä½¿ç”¨æ–¹æ³•ã€‚\n"NOR);
 
         set_temp("qu_in_newbie", 1, this_player());
 

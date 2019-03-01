@@ -1,10 +1,10 @@
-// zhong.c ÖÖÉúËÀ·û
+// zhong.c ç¨®ç”Ÿæ­»ç¬¦
 
 #include <ansi.h>
 
 inherit F_SSERVER;
 
-string name() { return "ÖÖÉúËÀ·û"; }
+string name() { return "ç¨®ç”Ÿæ­»ç¬¦"; }
 
 int perform(object me, object target)
 {
@@ -16,34 +16,34 @@ int perform(object me, object target)
 
         if (! objectp(target) || target == me
          || query("id", target) == "muren" )
-                return notify_fail("ÄãÒªÍùË­ÉíÉÏÖÖÉúËÀ·û£¿\n");
+                return notify_fail("ä½ è¦å¾€èª°èº«ä¸Šç¨®ç”Ÿæ­»ç¬¦ï¼Ÿ\n");
 
         lvl  = me->query_skill("liuyang-zhang", 1);
 
         if (! me->is_fighting() || ! target->is_fighting() || ! living(target))
-                return notify_fail("Äã±ØĞëÔÚÕ½¶·ÖĞ²ÅÄÜÖÖÉúËÀ·û£¡\n");
+                return notify_fail("ä½ å¿…é ˆåœ¨æˆ°é¬¥ä¸­æ‰èƒ½ç¨®ç”Ÿæ­»ç¬¦ï¼\n");
 
         if (! objectp(obj=present("jiudai", me)))
-                return notify_fail("ÄãÉíÉÏÃ»ÓĞ¾Æ´ü£¬²»ÄÜ»¯Ë®Îª±ù¡£\n");
+                return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é…’è¢‹ï¼Œä¸èƒ½åŒ–æ°´ç‚ºå†°ã€‚\n");
 
         if ((int)me->query_skill("bahuang-gong", 1) < 150
                 && (int)me->query_skill("beiming-shengong", 1) < 150)
-                return notify_fail("ÄãµÄåĞÒ£ÅÉÄÚ¹¦¹¦Á¦²»¹»£¬²»ÄÜÖÖÉúËÀ·û£¡\n");
+                return notify_fail("ä½ çš„é€é™æ´¾å…§åŠŸåŠŸåŠ›ä¸å¤ ï¼Œä¸èƒ½ç¨®ç”Ÿæ­»ç¬¦ï¼\n");
 
         if (me->query_skill_mapped("force") != "bahuang-gong"
         &&  me->query_skill_mapped("force") != "beiming-shengong")
-                return notify_fail("ÄãÃ»ÓĞÔËÓÃåĞÒ£ÅÉÄÚ¹¦£¡\n");
+                return notify_fail("ä½ æ²’æœ‰é‹ç”¨é€é™æ´¾å…§åŠŸï¼\n");
 
         if ((int)me->query_skill("liuyang-zhang", 1) < 150)
-                return notify_fail("ÄãµÄÌìÉ½ÁùÑôÕÆ¹¦Á¦²»¹»£¬²»ÄÜÖÖÉúËÀ·û£¡£\n");
+                return notify_fail("ä½ çš„å¤©å±±å…­é™½æŒåŠŸåŠ›ä¸å¤ ï¼Œä¸èƒ½ç¨®ç”Ÿæ­»ç¬¦ï¼â–¡n");
 
         if( query("neili", me)<1000 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬²»ÄÜÖÖÉúËÀ·û¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ï¼Œä¸èƒ½ç¨®ç”Ÿæ­»ç¬¦ã€‚\n");
 
         message_combatd(
-                WHT "$NÍ»È»´Ó±³ºóÌÍ³öÒ»¸ö¾Æ´ü£¬Íù×Ô¼ºÕÆĞÄµ¹ÁËĞ©¾ÆË®¡£"
-                "$N×óÕÆÕÆĞÄÖĞ°µÔËÄÚ¹¦£¬Äæ×ªÕæÆø£¬\n²»¶àÊ±ÒÑ½«ÕÆÖĞ¾ÆË®»¯³ÉÆß°ËÆ¬º®±ù£¬ÓÒÕÆ"
-                "ÔÌ³öÒ»ÂÆ°×Ïß£¬ÃÍµØÏò$nµÄĞØ¿ÚÉäÁË¹ıÈ¥£¡\n\n" NOR,
+                WHT "$Nçªç„¶å¾èƒŒå¾Œæå‡ºä¸€å€‹é…’è¢‹ï¼Œå¾€è‡ªå·±æŒå¿ƒå€’äº†äº›é…’æ°´ã€‚"
+                "$Nå·¦æŒæŒå¿ƒä¸­æš—é‹å…§åŠŸï¼Œé€†è½‰çœŸæ°£ï¼Œ\nä¸å¤šæ™‚å·²å°‡æŒä¸­é…’æ°´åŒ–æˆä¸ƒå…«ç‰‡å¯’å†°ï¼Œå³æŒ"
+                "è˜Šå‡ºä¸€ç¸·ç™½ç·šï¼ŒçŒ›åœ°å‘$nçš„èƒ¸å£å°„äº†éå»ï¼\n\n" NOR,
                 me, target );
 
         ap = attack_power(me, "strike") + me->query_str()*10;
@@ -51,7 +51,7 @@ int perform(object me, object target)
 
         if (ap / 2 + random(ap) > dp)
         {
-                msg = HIR "$n" HIR "Ö»¾õĞØ¿ÚÒ»ÃÆ£¬Ò»Ë¿Á¹ÒâÖ±Èë·Î¸­£¬ÄÔÖĞÒ»Æ¬¿Õ°×Ã£È»²»ÖªËù´ë£¡\n" NOR;
+                msg = HIR "$n" HIR "åªè¦ºèƒ¸å£ä¸€æ‚¶ï¼Œä¸€çµ²æ¶¼æ„ç›´å…¥è‚ºè…‘ï¼Œè…¦ä¸­ä¸€ç‰‡ç©ºç™½èŒ«ç„¶ä¸çŸ¥æ‰€æªï¼\n" NOR;
 
                 target->affect_by("ss_poison",
                                   ([ "level" : lvl * 2,
@@ -66,8 +66,8 @@ int perform(object me, object target)
         } else
         {
                 me->start_busy(2);
-                msg = CYN "¿ÉÊÇ$n" CYN "¼ûÊÆ²»Ãî£¬ÃÍÒ»ÔËÁ¦°Ñ°×Ïß±ÆÁË»ØÈ¥¡£\n" NOR;
-                tell_object(me, HIG "Äã¾õµÃÊÖÖ¸Ò»Õó±ùÁ¹£¬°µ½ĞÒ»Éù²»ºÃ£¬¸Ï¾­ÔË¹¦µÖ¿¹£¡\n" NOR);
+                msg = CYN "å¯æ˜¯$n" CYN "è¦‹å‹¢ä¸å¦™ï¼ŒçŒ›ä¸€é‹åŠ›æŠŠç™½ç·šé€¼äº†å›å»ã€‚\n" NOR;
+                tell_object(me, HIG "ä½ è¦ºå¾—æ‰‹æŒ‡ä¸€é™£å†°æ¶¼ï¼Œæš—å«ä¸€è²ä¸å¥½ï¼Œè¶•ç¶“é‹åŠŸæŠµæŠ—ï¼\n" NOR);
         }
         message_combatd(msg, me, target);
 

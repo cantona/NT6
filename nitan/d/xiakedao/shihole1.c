@@ -1,16 +1,16 @@
-// /d/xiakedao/shihole1.c ÏÀ¿Íµº Ê¯¶´1
+// /d/xiakedao/shihole1.c ä¿ å®¢å³¶ çŸ³æ´1
 
 inherit ROOM;
 
 int do_learn(string arg);
 void create()
 {
-        set("short", "Ê¯¶´");
+        set("short", "çŸ³æ´");
         set("long", @LONG
-ÕâÀïÒÀ´ÎÊÇÁù¸öÊ¯¶´£¬¸÷×ÔÍ¨ÏòËÄ¾äÊ«µÄÊ¯ÊÒ¡£ºóÈËÑĞÏ°¡¸ÏÀ¿Í
-ĞĞ¡¹Îä¹¦£¬Îò³öÁù¾ä×Ü¸Ù£¬Ò²·Ö±ğ¿ÌÔÚÕâÀï¡£´Ë¶´Ò»É«Çà²¼á¡á££¬ÊÌ
-Á¢µÄµÜ×Ó¾ùÊÇÇàÒÂ³¤½£¡£ÕıÃæ±ÚÉÏ£¬´ÖÁ¥¿Ì×ÅÇ°ËÄ¾äÊ«µÄ×Ü¸Ù¡¸Ò»½£
-·Éºè¡¹¡£
+é€™è£¡ä¾æ¬¡æ˜¯å…­å€‹çŸ³æ´ï¼Œå„è‡ªé€šå‘å››å¥è©©çš„çŸ³å®¤ã€‚å¾Œäººç ”ç¿’ã€Œä¿ å®¢
+è¡Œã€æ­¦åŠŸï¼Œæ‚Ÿå‡ºå…­å¥ç¸½ç¶±ï¼Œä¹Ÿåˆ†åˆ¥åˆ»åœ¨é€™è£¡ã€‚æ­¤æ´ä¸€è‰²é’å¸ƒå¸·å¹”ï¼Œä¾
+ç«‹çš„å¼Ÿå­å‡æ˜¯é’è¡£é•·åŠã€‚æ­£é¢å£ä¸Šï¼Œç²—éš¸åˆ»è‘—å‰å››å¥è©©çš„ç¸½ç¶±ã€Œä¸€åŠ
+é£›é´»ã€ã€‚
 LONG );
         set("exits", ([
                 "out"   : __DIR__"neiting",
@@ -37,7 +37,7 @@ int valid_leave(object me, string dir)
         if(dir!="out")
         {
            if( query("score", me)<30000 )
-           return notify_fail("Äã¾ÍÕâµã½­ºşÔÄÀú£¬»ØÈ¥ÀúÁ·¼¸ÄêÔÙÀ´°É£¡\n");
+           return notify_fail("ä½ å°±é€™é»æ±Ÿæ¹–é–±æ­·ï¼Œå›å»æ­·ç·´å¹¾å¹´å†ä¾†å§ï¼\n");
            if( query("weiwang", me) >= 20 )
            {
                 inv = all_inventory(me);
@@ -45,15 +45,15 @@ int valid_leave(object me, string dir)
                    if( query("weapon_prop", inv[i]) && (query("equipped", inv[i]) == "wielded") )
                        if(objectp(present("wang", environment(me))) &&
                            living(present("wang", environment(me))))
-                         return notify_fail("ÍõÎåÉÏÇ°µ²×¡Äã£¬ÀÊÉùËµµÀ£ºÕâÎ»" +
-                             RANK_D->query_respect(me) + "ÀïÃæÊÇ±¾µºÖØµØ£¬²»×¼±ÈÊÔÎä¹¦¡£Äã¿ÉÒÔ½øÈ¥£¬µ«²»µÃÊÖ³Ö±øÈĞ¡£\n");
+                         return notify_fail("ç‹äº”ä¸Šå‰æ“‹ä½ä½ ï¼Œæœ—è²èªªé“ï¼šé€™ä½" +
+                             RANK_D->query_respect(me) + "è£¡é¢æ˜¯æœ¬å³¶é‡åœ°ï¼Œä¸æº–æ¯”è©¦æ­¦åŠŸã€‚ä½ å¯ä»¥é€²å»ï¼Œä½†ä¸å¾—æ‰‹æŒå…µåˆƒã€‚\n");
                 return ::valid_leave(me, dir);
            }
            else
            {
                    if(objectp(present("wang wu", environment(me)))&&
                    living(present("wang", environment(me))))
-                     return notify_fail("ÍõÎåÀ¹×¡ÄãËµµÀ£ºÀïÃæÊÇ±¾µºÖØµØ£¬Ö»ÓĞ¸÷ÅÉÕÆÃÅ¼°ÖøÃûµÄÏÀ¿Í²ÅÄÜ½øÈ¥¡£\n" + RANK_D->query_rude(me) +"Äã»¹ÊÇ»ØÈ¥°É¡£\n");
+                     return notify_fail("ç‹äº”æ””ä½ä½ èªªé“ï¼šè£¡é¢æ˜¯æœ¬å³¶é‡åœ°ï¼Œåªæœ‰å„æ´¾æŒé–€åŠè‘—åçš„ä¿ å®¢æ‰èƒ½é€²å»ã€‚\n" + RANK_D->query_rude(me) +"ä½ é‚„æ˜¯å›å»å§ã€‚\n");
            }
         }
         return ::valid_leave(me, dir);

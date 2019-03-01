@@ -5,24 +5,24 @@ inherit CLOTH;
 
 void create()
 {
-        set_name(HIY "½õÒ[ôÂôÄ" NOR, ({ "jinlan jiasha", "jinlan", "jiasha" }));
+        set_name(HIY "éŒ¦â–¡è¢ˆè£Ÿ" NOR, ({ "jinlan jiasha", "jinlan", "jiasha" }));
         set_weight(1000);
         if (clonep())
                 destruct(this_object());
         else {
-                set("unit", "¼þ");
-                set("long", HIY "½õÒ[ôÂôÄÄËÉÙÁÖËÂÀú´úÏà´«µÄÊ¥Îï£¬ÊÇÓÉ±ù²Ï"
-                            "ÔìÁ·³éË¿£¬ÇÉ½³\n·­ÌÚÎªÏß£¬ÏÉ¶ðÖ¯¾Í£¬ÉñÅ®»ú³É"
-                            "¡£·½·½´Ø·ùÐå»¨·ì£¬Æ¬Æ¬Ïà°ï\n¶Ñ½õºp¡£´©ÉÏÂúÉí"
-                            "ºìÎíÈÆ£¬ÍÑÀ´Ò»¶Î²ÊÔÆ·É¡£\n" NOR);
-                set("wear_msg", HIY "Ö»Ìý¡¸»©¡¹µÄÒ»Éù£¬$NÕ¹¿ªÒ»¼þ½ð¹âÉÁÉÁ"
-                            "µÄôÂôÄÅûÔÚÉíÉÏ¡£Ë²\nÊ±ÈðÆøÇ§Ìõ£¬ÏéÔÆ¶ä¶ä¡£Ò£"
-                            "¼û$NÆøÏó×¯ÑÏ£¬Õæ¿ÉÎ½ÎåÔÀÉ½Ç°Éú\n±¦Æø£¬ÈýÌìÃÅ"
-                            "ÍâÍ¸Ðþ¹â¡£ÖØÖØÇ¶¾ÍÎ÷·¬Á«£¬×Æ×ÆÐüÖéÐÇ¶·Ïó¡£\n"
+                set("unit", "ä»¶");
+                set("long", HIY "éŒ¦â–¡è¢ˆè£Ÿä¹ƒå°‘æž—å¯ºæ­·ä»£ç›¸å‚³çš„è–ç‰©ï¼Œæ˜¯ç”±å†°è ¶"
+                            "é€ ç·´æŠ½çµ²ï¼Œå·§åŒ \nç¿»é¨°ç‚ºç·šï¼Œä»™å¨¥ç¹”å°±ï¼Œç¥žå¥³æ©Ÿæˆ"
+                            "ã€‚æ–¹æ–¹ç°‡å¹…ç¹¡èŠ±ç¸«ï¼Œç‰‡ç‰‡ç›¸å¹«\nå †éŒ¦â–¡ã€‚ç©¿ä¸Šæ»¿èº«"
+                            "ç´…éœ§ç¹žï¼Œè„«ä¾†ä¸€æ®µå½©é›²é£›ã€‚\n" NOR);
+                set("wear_msg", HIY "åªè½ã€Œå˜©ã€çš„ä¸€è²ï¼Œ$Nå±•é–‹ä¸€ä»¶é‡‘å…‰é–ƒé–ƒ"
+                            "çš„è¢ˆè£ŸæŠ«åœ¨èº«ä¸Šã€‚çž¬\næ™‚ç‘žæ°£åƒæ¢ï¼Œç¥¥é›²æœµæœµã€‚é™"
+                            "è¦‹$Næ°£è±¡èŽŠåš´ï¼ŒçœŸå¯è¬‚äº”å²³å±±å‰ç”Ÿ\nå¯¶æ°£ï¼Œä¸‰å¤©é–€"
+                            "å¤–é€çŽ„å…‰ã€‚é‡é‡åµŒå°±è¥¿ç•ªè“®ï¼Œç¼ç¼æ‡¸ç æ˜Ÿé¬¥è±¡ã€‚\n"
                             NOR);
-                set("remove_msg", HIY "$N½«½õÒ[ôÂôÄ´ÓÉíÉÏÍÑÏÂ£¬ÕÛµþ³ÉÐ¡Ð¡"
-                            "µÄÒ»ÍÅ¡£\n" NOR);
-                set("no_sell", "¶«Î÷ÊÇºÃ£¬¿ÉÏ§ÉÙÁÖËÂÔôÍºÀ÷º¦£¬°³Ã»µ¨×ÓÊÕ¡£");
+                set("remove_msg", HIY "$Nå°‡éŒ¦â–¡è¢ˆè£Ÿå¾žèº«ä¸Šè„«ä¸‹ï¼ŒæŠ˜ç–Šæˆå°å°"
+                            "çš„ä¸€åœ˜ã€‚\n" NOR);
+                set("no_sell", "æ±è¥¿æ˜¯å¥½ï¼Œå¯æƒœå°‘æž—å¯ºè³Šç¦¿åŽ²å®³ï¼Œä¿ºæ²’è†½å­æ”¶ã€‚");
                 set("value", 100000);
                 set("material", "silk");
                 set("armor_prop/armor", 200);

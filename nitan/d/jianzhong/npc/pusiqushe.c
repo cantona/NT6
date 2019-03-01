@@ -5,11 +5,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÆĞË¹ÇúÉß", ({ "pusi qushe", "she", "qushe" }) );
-        set("race", "ÅÀÉß");
+        set_name("è©æ–¯æ›²è›‡", ({ "pusi qushe", "she", "qushe" }) );
+        set("race", "çˆ¬è›‡");
         set("age", 2);
         set("long", @LONG
-Õâ¶¾ÉßÉíÉÏÒşÒşÉÁ×Å½ğ¹â£¬Í·¶¥ÉúÓĞÈâ½Ç£¬ĞÎ×´Ê®·Ö¹ÖÒì¡£
+é€™æ¯’è›‡èº«ä¸Šéš±éš±é–ƒè‘—é‡‘å…‰ï¼Œé ­é ‚ç”Ÿæœ‰è‚‰è§’ï¼Œå½¢ç‹€ååˆ†æ€ªç•°ã€‚
 LONG
 );
         set("attitude", "peaceful");
@@ -40,7 +40,7 @@ void init()
 void die()
 {
         object ob;
-        message_vision("$N¡¸Ë»Ë»¡¹µØ½ĞÁË¼¸Éù£¬¶Ï³ÉÁ½½Ø£¬ËÀÁË£¡\n", this_object());
+        message_vision("$Nã€Œå˜¶å˜¶ã€åœ°å«äº†å¹¾è²ï¼Œæ–·æˆå…©æˆªï¼Œæ­»äº†ï¼\n", this_object());
         if(uptime() > 300)
         {
                 ob = new("/clone/medicine/nostrum/guaishedan");
@@ -56,6 +56,6 @@ int hit_ob(object me, object ob, int damage)
                 && (int)ob->query_condition("snake_poison") < 10 )
         {
                 ob->apply_condition("snake_poison", 20);
-                tell_object(ob, HIG "Äã¾õµÃ±»Ò§ÖĞµÄµØ·½Ò»ÕóÂéÄ¾£¡\n" NOR );
+                tell_object(ob, HIG "ä½ è¦ºå¾—è¢«å’¬ä¸­çš„åœ°æ–¹ä¸€é™£éº»æœ¨ï¼\n" NOR );
         }
 }

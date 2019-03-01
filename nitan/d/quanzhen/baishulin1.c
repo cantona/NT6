@@ -1,16 +1,16 @@
-// baishulin1.c ������
+// baishulin1.c 柏樹林
 // Winder Oct.10 1998
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "������");
+        set("short", "柏樹林");
         set("long", @LONG
-�ƹ������ȵ�ɽ�ڣ���ǰ��һƬ������֣���������ɽ�ڵ�ס��
-���ߣ���ɽ�µ�ɽ·�ϸ����벻������İ�����������ô����ô�ߡ�
-��̤���������У�����ȫ��ͷ������Ҷ��ס�ˣ�Խ�������������
-Խ���İ���
+繞過翠屏谷的山壁，眼前是一片大柏樹林，想是由于山壁擋住了
+視線，在山下的山路上根本想不到這裡的柏樹竟會有這麼密這麼高。
+你踏進柏樹林中，陽光全被頭頂的樹葉遮住了，越往樹林深處，光線
+越是幽暗。
 LONG
         );
         set("outdoors", "zhongnan");

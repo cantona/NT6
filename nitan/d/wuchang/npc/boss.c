@@ -5,12 +5,12 @@ inherit F_DEALER;
 
 void create()
 {
-        set_name("ÕÆ¹ñ", ({ "zhang gui", "boss" }));
+        set_name("æŒæ«ƒ", ({ "zhang gui", "boss" }));
         set("shen_type", 1);
 
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("age", 35);
-        set("long", "ÕâÎ»ÕÆ¹ñÊÇÍÁÉúÍÁ³¤µÄÎäººÈË£¬×öÁË¼¸Ê®ÄêµÄĞ¡ÂòÂô¡£\n");
+        set("long", "é€™ä½æŒæ«ƒæ˜¯åœŸç”ŸåœŸé•·çš„æ­¦æ¼¢äººï¼Œåšäº†å¹¾åå¹´çš„å°è²·è³£ã€‚\n");
         set_skill("unarmed", 50);
         set_skill("dodge", 50);
         set_temp("apply/damage", 15);

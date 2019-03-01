@@ -2,12 +2,12 @@
 
 void create()
 {
-        set_name(HIY "·ÉÌìòÚò¼" NOR, ({ "wugong", "Aralia chinensis", "herb_wugong" }));
+        set_name(HIY "é£›å¤©èœˆèš£" NOR, ({ "wugong", "Aralia chinensis", "herb_wugong" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "Îå¼Ó¿ÆÖ²Îï˜BÄ¾(Aralia chinensis)µÄ¸ù¡¢¸ùÆ¤¼°¾¥Æ¤¡£ÒòÆäĞ¡Ö¦ÃÜ±»»Æ×ØÉ«Õë´Ì£¬ÓÌÈçòÚò¼·ÉÌì£¬¹ÊµÃ´ËÃû¡£\n" NOR);
-                set("base_unit", "¸ù");
+                set("long", HIW "äº”åŠ ç§‘æ¤ç‰©â–¡æœ¨(Aralia chinensis)çš„æ ¹ã€æ ¹çš®åŠè–çš®ã€‚å› å…¶å°æå¯†è¢«é»ƒæ£•è‰²é‡åˆºï¼ŒçŒ¶å¦‚èœˆèš£é£›å¤©ï¼Œæ•…å¾—æ­¤åã€‚\n" NOR);
+                set("base_unit", "æ ¹");
                 set("base_value", 30000);
                 set("base_weight", 100);
         }

@@ -19,9 +19,9 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : gmanage 
+æŒ‡ä»¤æ ¼å¼ : gmanage 
 
-ÕâÌõÖ¸ÁîÓÃÓÚ¹ÜÀí²©²ÊÏµÍ³¡£
+é€™æ¢æŒ‡ä»¤ç”¨äºç®¡ç†åšå½©ç³»çµ±ã€‚
 
 HELP );
     return 1;

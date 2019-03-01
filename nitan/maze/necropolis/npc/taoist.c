@@ -12,9 +12,9 @@ void set_players(object *ob) {
 void add_player(object ob) {
         if(member_array(ob,players)==-1) {
                 players += ({ob});
-                message_vision(BLU"$N¶Ô$nËµµÀ£ºĞ»Ğ»£¡\n"NOR,this_object(),ob);
+                message_vision(BLU"$Nå°$nèªªé“ï¼šè¬è¬ï¼\n"NOR,this_object(),ob);
         } else
-                message_vision(BLU"$N¶Ô$nËµµÀ£ºÄãÒÑ¾­´ğÓ¦°ïÃ¦£¬Äã²»»á·´»Ú°É£¡\n"NOR,this_object(),ob);
+                message_vision(BLU"$Nå°$nèªªé“ï¼šä½ å·²ç¶“ç­”æ‡‰å¹«å¿™ï¼Œä½ ä¸æœƒåæ‚”å§ï¼\n"NOR,this_object(),ob);
 }
 
 void del_player(object ob) {
@@ -30,9 +30,9 @@ void smart_fight();
 
 void create()
 {
-        set_name("¶¡Ò»", ({ "ding yi","ding"}) );
-        set("gender", "ÄĞĞÔ" );
-        //set("title", HIC "ÈıÇå¹¬"NOR);
+        set_name("ä¸ä¸€", ({ "ding yi","ding"}) );
+        set("gender", "ç”·æ€§" );
+        //set("title", HIC "ä¸‰æ¸…å®®"NOR);
         set("age", 80);
         set("str", 50);
         set("con", 120);
@@ -128,10 +128,10 @@ void init()
 void greeting(object ob)
 {
         if( !ob || environment(ob) != environment() ) return;
-        if( query_temp("¿ª³¡°×½áÊø") || query_temp("¿ªÊ¼Ëµ¿ª³¡°×") || query_temp("ÈÎÎñ") )
+        if( query_temp("é–‹å ´ç™½çµæŸ") || query_temp("é–‹å§‹èªªé–‹å ´ç™½") || query_temp("ä»»å‹™") )
                 return;
-        message_vision(CYN "$NÓĞÆøÎŞÁ¦µØËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob) +
-                "£¬ÄÜÌıÎÒÒ»ÑÔÂğ£¿(answer yes/no)\n" NOR, this_object(), ob);
+        message_vision(CYN "$Næœ‰æ°£ç„¡åŠ›åœ°èªªé“ï¼šé€™ä½" + RANK_D->query_respect(ob) +
+                "ï¼Œèƒ½è½æˆ‘ä¸€è¨€å—ï¼Ÿ(answer yes/no)\n" NOR, this_object(), ob);
 }
 
 int do_answer(string arg) {
@@ -141,27 +141,27 @@ int do_answer(string arg) {
                         return 0;
                 if(present("tape",environment()))
                         return 0;
-                set_temp("¿ªÊ¼Ëµ¿ª³¡°×",1);
+                set_temp("é–‹å§‹èªªé–‹å ´ç™½",1);
                 ob = new(__DIR__"obj/taoist_tape");
                 ob->move(environment());
                 ob->play_sound_0(this_object(),0);
         } else if(arg=="no") {
-                message_vision(BLU"$NËµµÀ£ºË­ÏëÌıÄãÕâ¸öÅ£±Ç×Ó·Ï»°£¡\n",this_player());
+                message_vision(BLU"$Nèªªé“ï¼šèª°æƒ³è½ä½ é€™å€‹ç‰›é¼»å­å»¢è©±ï¼\n",this_player());
         } else
-                return notify_fail("ÄãÒª»Ø´ğÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦å›ç­”ä»€éº¼ï¼Ÿ\n");
         return 1;
 }
 
 int do_accept(string arg) {
         object ob,env,*team;
-        if(!query_temp("¿ª³¡°×½áÊø"))
+        if(!query_temp("é–‹å ´ç™½çµæŸ"))
                 return 0;
-        if(query_temp("ÈÎÎñ"))
+        if(query_temp("ä»»å‹™"))
                 return 0;
         if(arg=="yes") {
                 if(present("tape",environment()))
                         return 1;
-                delete_temp("¿ª³¡°×½áÊø");
+                delete_temp("é–‹å ´ç™½çµæŸ");
                 team = this_player()->query_team();
                 if(!team || sizeof(team)==0)
                         team = ({this_player()});
@@ -179,9 +179,9 @@ int do_accept(string arg) {
                 ob->play_sound_1(this_object(),0);
         }
         else if(arg=="no") {
-                delete_temp("¿ª³¡°×½áÊø");
-                delete_temp("¿ªÊ¼Ëµ¿ª³¡°×");
-                message_vision(BLU"$NËµµÀ£ºÃ»ºÃ´¦µÄÊÂÇéÎÒ¿É²»¸É£¡\n",this_player());
+                delete_temp("é–‹å ´ç™½çµæŸ");
+                delete_temp("é–‹å§‹èªªé–‹å ´ç™½");
+                message_vision(BLU"$Nèªªé“ï¼šæ²’å¥½è™•çš„äº‹æƒ…æˆ‘å¯ä¸å¹¹ï¼\n",this_player());
         }
         else
                 return 0;
@@ -208,9 +208,9 @@ int do_report(string arg) {
         quest_index=query("quest/quest_index", mazeobj);
         switch(quest_index) {
                         case(1):
-                                if( query("quest/killed/÷¼÷Ã", mazeobj) >= query("quest/to_kill/÷¼÷Ã", mazeobj) && 
-                                         query("quest/killed/½©Ê¬", mazeobj) >= query("quest/to_kill/½©Ê¬", mazeobj) && 
-                                         query("quest/killed/ÓÄÁé", mazeobj) >= query("quest/to_kill/ÓÄÁé", mazeobj )
+                                if( query("quest/killed/éª·é«", mazeobj) >= query("quest/to_kill/éª·é«", mazeobj) && 
+                                         query("quest/killed/åƒµå±", mazeobj) >= query("quest/to_kill/åƒµå±", mazeobj) && 
+                                         query("quest/killed/å¹½éˆ", mazeobj) >= query("quest/to_kill/å¹½éˆ", mazeobj )
                                          ) {
                                                  //mazeobj->delete("quest/to_kill");
                                                  set_temp("in_speech",1);
@@ -218,15 +218,15 @@ int do_report(string arg) {
                                                 ob->move(environment());
                                                 ob->play_sound_2(this_object(),0);
                                 } else
-                                                return notify_fail("ÄãÉĞÎ´Íê³ÉÈÎÎñ£¡\n");
+                                                return notify_fail("ä½ å°šæœªå®Œæˆä»»å‹™ï¼\n");
                                 break;
                         case(2):
-                                if( query("quest/killed/÷¼÷ÃÎäÊ¿", mazeobj) >= query("quest/to_kill/÷¼÷ÃÎäÊ¿", mazeobj) && 
-                                         query("quest/killed/÷¼÷Ã·¨Ê¦", mazeobj) >= query("quest/to_kill/÷¼÷Ã·¨Ê¦", mazeobj) && 
-                                         query("quest/killed/Ñª½©Ê¬", mazeobj) >= query("quest/to_kill/Ñª½©Ê¬", mazeobj) && 
-                                         query("quest/killed/Ê¬É·", mazeobj) >= query("quest/to_kill/Ê¬É·", mazeobj) && 
-                                         query("quest/killed/ÓÄÚ¤Ö®»ğ", mazeobj) >= query("quest/to_kill/ÓÄÚ¤Ö®»ğ", mazeobj) && 
-                                         query("quest/killed/ÓÄÚ¤Ö®ÑÛ", mazeobj) >= query("quest/to_kill/ÓÄÚ¤Ö®ÑÛ", mazeobj )
+                                if( query("quest/killed/éª·é«æ­¦å£«", mazeobj) >= query("quest/to_kill/éª·é«æ­¦å£«", mazeobj) && 
+                                         query("quest/killed/éª·é«æ³•å¸«", mazeobj) >= query("quest/to_kill/éª·é«æ³•å¸«", mazeobj) && 
+                                         query("quest/killed/è¡€åƒµå±", mazeobj) >= query("quest/to_kill/è¡€åƒµå±", mazeobj) && 
+                                         query("quest/killed/å±ç…", mazeobj) >= query("quest/to_kill/å±ç…", mazeobj) && 
+                                         query("quest/killed/å¹½å†¥ä¹‹ç«", mazeobj) >= query("quest/to_kill/å¹½å†¥ä¹‹ç«", mazeobj) && 
+                                         query("quest/killed/å¹½å†¥ä¹‹çœ¼", mazeobj) >= query("quest/to_kill/å¹½å†¥ä¹‹çœ¼", mazeobj )
                                          ) {
                                                  //mazeobj->delete("quest/to_kill");
                                                  set_temp("in_speech",1);
@@ -234,11 +234,11 @@ int do_report(string arg) {
                                                 ob->move(environment());
                                                 ob->play_sound_3(this_object(),0);
                                 } else
-                                                return notify_fail("ÄãÉĞÎ´Íê³ÉÈÎÎñ£¡\n");
+                                                return notify_fail("ä½ å°šæœªå®Œæˆä»»å‹™ï¼\n");
                                 break;
                         case(3):
-                                if( query("quest/killed/ĞÄÎä", mazeobj) >= query("quest/to_kill/ĞÄÎä", mazeobj) && 
-                                         query("quest/finded/¾ÛÁéËş", mazeobj) >= query("quest/to_find/¾ÛÁéËş", mazeobj )
+                                if( query("quest/killed/å¿ƒæ­¦", mazeobj) >= query("quest/to_kill/å¿ƒæ­¦", mazeobj) && 
+                                         query("quest/finded/èšéˆå¡”", mazeobj) >= query("quest/to_find/èšéˆå¡”", mazeobj )
                                  ) {
                                                  //mazeobj->delete("quest/to_kill");
                                                  //mazeobj->delete("quest/to_find");
@@ -247,12 +247,12 @@ int do_report(string arg) {
                                                 ob->move(environment());
                                                 ob->play_sound_4(this_object(),0);
                                 } else
-                                                return notify_fail("ÄãÉĞÎ´Íê³ÉÈÎÎñ£¡\n");
+                                                return notify_fail("ä½ å°šæœªå®Œæˆä»»å‹™ï¼\n");
                                 break;
                  case(4):
-                                if( query("quest/finded/¹ÇÕÈ", mazeobj) >= query("quest/to_find/¹ÇÕÈ", mazeobj) && 
-                                         query("quest/finded/ÓÄÚ¤Ö®»ğ", mazeobj) >= query("quest/to_find/ÓÄÚ¤Ö®»ğ", mazeobj) && 
-                                         query("quest/finded/½©Ê¬Ñª", mazeobj) >= query("quest/to_find/½©Ê¬Ñª", mazeobj )
+                                if( query("quest/finded/éª¨æ–", mazeobj) >= query("quest/to_find/éª¨æ–", mazeobj) && 
+                                         query("quest/finded/å¹½å†¥ä¹‹ç«", mazeobj) >= query("quest/to_find/å¹½å†¥ä¹‹ç«", mazeobj) && 
+                                         query("quest/finded/åƒµå±è¡€", mazeobj) >= query("quest/to_find/åƒµå±è¡€", mazeobj )
                                  ) {
                                                  //mazeobj->delete("quest/to_find");
                                                  set_temp("in_speech",1);
@@ -260,16 +260,16 @@ int do_report(string arg) {
                                                 ob->move(environment());
                                                 ob->play_sound_5(this_object(),this_player(),0);
                                 } else
-                                                return notify_fail("ÄãÉĞÎ´Íê³ÉÈÎÎñ£¡\n");
+                                                return notify_fail("ä½ å°šæœªå®Œæˆä»»å‹™ï¼\n");
                                 break;
                 case(5):
                                 if(!query_leader()) {
-                                        message_vision(BLU"$N¶Ô$nËµ£ºÄã´øÂ·°É¡£\n"NOR,this_object(),this_player());
+                                        message_vision(BLU"$Nå°$nèªªï¼šä½ å¸¶è·¯å§ã€‚\n"NOR,this_object(),this_player());
                                         set_leader(this_player());
                                         return 1;
                                 }
                                 env = environment(this_object());
-                                if( query("short", env) == HIY"¾ÛÁé·¨Õó"NOR){
+                                if( query("short", env) == HIY"èšéˆæ³•é™£"NOR){
                                                 obs = all_inventory(env);
                                                 has_enemy = 0;
                                                 foreach(ob in obs) {
@@ -289,7 +289,7 @@ int do_report(string arg) {
                                                 return 0;
                                 break;
                 case(6):
-                                if( query("quest/killed/ÍöÁé", mazeobj) >= query("quest/to_kill/ÍöÁé", mazeobj )
+                                if( query("quest/killed/äº¡éˆ", mazeobj) >= query("quest/to_kill/äº¡éˆ", mazeobj )
                                  ) {
                                                  delete("quest/to_kill", mazeobj);
                                                  set("last_quester",this_player());
@@ -298,7 +298,7 @@ int do_report(string arg) {
                                                 ob->move(environment());
                                                 ob->play_sound_7(this_object(),0);
                                 } else
-                                                return notify_fail("ÄãÉĞÎ´Íê³ÉÈÎÎñ£¡\n");
+                                                return notify_fail("ä½ å°šæœªå®Œæˆä»»å‹™ï¼\n");
                                 break;
 
         }
@@ -321,8 +321,8 @@ void smart_action3()
                 target = enemies[random(sizeof(enemies))];
                 if(target)
                 {
-                        msg = HIG "$N¿ÚÖĞà«à«µØÄî×ÅÖäÎÄ£¬×óÊÖÒ»»Ó£¬ÊÖÖĞ¾ÛÆğÎåÉ«¹âÃ¢£¬ö®Ê±»¯ÎªÈş¹É£¡\n\n";
-                        msg += HIC "Ò»ÍÅÇà¹âÉäÏò$n£¡\n" NOR;
+                        msg = HIG "$Nå£ä¸­å–ƒå–ƒåœ°å¿µè‘—å’’æ–‡ï¼Œå·¦æ‰‹ä¸€æ®ï¼Œæ‰‹ä¸­èšèµ·äº”è‰²å…‰èŠ’ï¼Œéœæ™‚åŒ–ç‚ºä¸‰è‚¡ï¼\n\n";
+                        msg += HIC "ä¸€åœ˜é’å…‰å°„å‘$nï¼\n" NOR;
 
                         yourexp=query("combat_exp", target);
                         myexp=query("combat_exp", me);
@@ -331,17 +331,17 @@ void smart_action3()
                                 damage = 10000 + random(10000);
                                 damage = damage + random(damage);
 
-                                msg +=  HIR "½á¹û¡¸àÍ¡¹µØÒ»Éù£¬Çà¹â´Ó$pÉíÉÏÍ¸Ìå¶ø¹ı£¬ÍÏ³öÒ»Ìõ³¤³¤µÄºÚÆø×êÈëµØÏÂ£¡\n"NOR;
+                                msg +=  HIR "çµæœã€Œå—¤ã€åœ°ä¸€è²ï¼Œé’å…‰å¾$pèº«ä¸Šé€é«”è€Œéï¼Œæ‹–å‡ºä¸€æ¢é•·é•·çš„é»‘æ°£é‘½å…¥åœ°ä¸‹ï¼\n"NOR;
                                 target->receive_damage("qi", damage, me);
                                 target->receive_wound("qi", damage/3, me);
                         } else
-                                msg += "½á¹û¡¸àÍ¡¹µØÒ»Éù£¬Çà¹â´Ó$pÉíÉÏÍ¸Ìå¶ø¹ı£¬ÎŞÉùÎŞÏ¢µØ×êÈëµØÏÂ£¡\n";
+                                msg += "çµæœã€Œå—¤ã€åœ°ä¸€è²ï¼Œé’å…‰å¾$pèº«ä¸Šé€é«”è€Œéï¼Œç„¡è²ç„¡æ¯åœ°é‘½å…¥åœ°ä¸‹ï¼\n";
 
                         message_vision(msg, me, target);
                         if (damage > 0)
                                 COMBAT_D->report_status(target);
 
-                        msg = HIW "\nÒ»ÍÅ°×¹âÉäÏò$n£¡\n" NOR;
+                        msg = HIW "\nä¸€åœ˜ç™½å…‰å°„å‘$nï¼\n" NOR;
                         yourexp=query("max_neili", target);
                         myexp=query("max_neili", me);
                         if( random(myexp + yourexp) > yourexp )
@@ -349,16 +349,16 @@ void smart_action3()
                                 damage = 10000 + random(10000);
                                 damage = damage + random(damage);
 
-                                msg +=  HIR "½á¹û¡¸àÍ¡¹µØÒ»Éù£¬°×¹â´Ó$pÉíÉÏÍ¸Ìå¶ø¹ı£¬ÍÏ³öÒ»Ìõ³¤³¤µÄºÚÆø×êÈëµØÏÂ£¡\n"NOR;
+                                msg +=  HIR "çµæœã€Œå—¤ã€åœ°ä¸€è²ï¼Œç™½å…‰å¾$pèº«ä¸Šé€é«”è€Œéï¼Œæ‹–å‡ºä¸€æ¢é•·é•·çš„é»‘æ°£é‘½å…¥åœ°ä¸‹ï¼\n"NOR;
                                 target->receive_damage("qi", damage, me);
                                 target->receive_wound("qi", damage/3, me);
                         } else
-                                msg += "½á¹û¡¸àÍ¡¹µØÒ»Éù£¬°×¹â´Ó$pÉíÉÏÍ¸Ìå¶ø¹ı£¬ÎŞÉùÎŞÏ¢µØ×êÈëµØÏÂ£¡\n";
+                                msg += "çµæœã€Œå—¤ã€åœ°ä¸€è²ï¼Œç™½å…‰å¾$pèº«ä¸Šé€é«”è€Œéï¼Œç„¡è²ç„¡æ¯åœ°é‘½å…¥åœ°ä¸‹ï¼\n";
                         message_vision(msg, me, target);
                         if (damage > 0)
                                 COMBAT_D->report_status(target);
 
-                        msg = HIM "\nÒ»ÍÅ×Ï¹âÉäÏò$n£¡\n" NOR;
+                        msg = HIM "\nä¸€åœ˜ç´«å…‰å°„å‘$nï¼\n" NOR;
                         yourexp = target->query_skill("martial-cognize", 1);
                         myexp = me->query_skill("martial-cognize", 1);
                         if( random(myexp + yourexp) > yourexp )
@@ -366,12 +366,12 @@ void smart_action3()
                                 damage = 20000 + random(20000);
                                 damage = damage + random(damage);
 
-                                msg +=  HIR "½á¹û¡¸àÍ¡¹µØÒ»Éù£¬×Ï¹â´Ó$pÉíÉÏÍ¸Ìå¶ø¹ı£¬ÍÏ³öÒ»Ìõ³¤³¤µÄÆß²Ê¹âÆø£¬¹âÆøÈÆÁË\n"
-                                            "»Ø×ª¹ıÀ´ÓÖ´Ó$N¶¥ÃÅ×¢Èë$PµÄÌåÄÚ£¡\n" NOR;
+                                msg +=  HIR "çµæœã€Œå—¤ã€åœ°ä¸€è²ï¼Œç´«å…‰å¾$pèº«ä¸Šé€é«”è€Œéï¼Œæ‹–å‡ºä¸€æ¢é•·é•·çš„ä¸ƒå½©å…‰æ°£ï¼Œå…‰æ°£ç¹äº†\n"
+                                            "å›è½‰éä¾†åˆå¾$Né ‚é–€æ³¨å…¥$Pçš„é«”å…§ï¼\n" NOR;
                                 target->receive_damage("qi", damage, me);
                                 target->receive_wound("qi", damage/3, me);
                         } else
-                                msg += "½á¹û¡¸àÍ¡¹µØÒ»Éù£¬×Ï¹â´Ó$pÉíÉÏÍ¸Ìå¶ø¹ı£¬ÎŞÉùÎŞÏ¢µØ×êÈëµØÏÂ£¡\n";
+                                msg += "çµæœã€Œå—¤ã€åœ°ä¸€è²ï¼Œç´«å…‰å¾$pèº«ä¸Šé€é«”è€Œéï¼Œç„¡è²ç„¡æ¯åœ°é‘½å…¥åœ°ä¸‹ï¼\n";
                         message_vision(msg, me, target);
                         if (damage > 0)
                                 COMBAT_D->report_status(target);
@@ -418,8 +418,8 @@ void summon_undead(object env,object mazeobj) {
         }
 
         /*
-        if( query("quest/killed/ÍöÁé", mazeobj) >= query("quest/to_kill/ÍöÁé", mazeobj)){
-                        message_vision(BLINK HIC"\n¾ÛÁéËşÉıÉÏÌì¿Õ£¬¾ÛÁé·¨Õó·¢³öÒ«ÑÛµÄÎå²Ê¹âÃ¢¡£\n\n"NOR,this_object());
+        if( query("quest/killed/äº¡éˆ", mazeobj) >= query("quest/to_kill/äº¡éˆ", mazeobj)){
+                        message_vision(BLINK HIC"\nèšéˆå¡”å‡ä¸Šå¤©ç©ºï¼Œèšéˆæ³•é™£ç™¼å‡ºè€€çœ¼çš„äº”å½©å…‰èŠ’ã€‚\n\n"NOR,this_object());
                         obs = all_inventory(env);
                         foreach(ob in obs) {
                                 if(ob->is_undead())
@@ -427,8 +427,8 @@ void summon_undead(object env,object mazeobj) {
                         }
         }
         */
-        //message_vision(HIC"\n¾ÛÁéËşÉÏ¹â»ªÒ»ÉÁ£¬Ò»¸ö¹íÁé×êÁË³öÀ´¡£\n\n"NOR,this_object());
-        tell_room(env,HIC"\n¾ÛÁéËşÉÏ¹â»ªÒ»ÉÁ£¬Ò»¸ö¹íÁé±»ÎüÁË¹ıÀ´£¡\n\n"NOR);
+        //message_vision(HIC"\nèšéˆå¡”ä¸Šå…‰è¯ä¸€é–ƒï¼Œä¸€å€‹é¬¼éˆé‘½äº†å‡ºä¾†ã€‚\n\n"NOR,this_object());
+        tell_room(env,HIC"\nèšéˆå¡”ä¸Šå…‰è¯ä¸€é–ƒï¼Œä¸€å€‹é¬¼éˆè¢«å¸äº†éä¾†ï¼\n\n"NOR);
         i = random(100);
         if(i<5) {
                 j = random(2);
@@ -507,32 +507,32 @@ int accept_object(object me, object obj)
         quest_index=query("quest/quest_index", mazeobj);
         switch(quest_index) {
                 case(3):
-                                if(obj->name()=="¾ÛÁéËş" &&
+                                if(obj->name()=="èšéˆå¡”" &&
                                    query("id", obj) == "spirit tower"){
-                                                set("quest/finded/¾ÛÁéËş", 1, mazeobj);
+                                                set("quest/finded/èšéˆå¡”", 1, mazeobj);
                                                 command("pat "+query("id", me));
                                                 destruct(obj);
                                                 return 1;
                                 }
                                 break;
                  case(4):
-                                 if(obj->name()=="¹ÇÕÈ" &&
+                                 if(obj->name()=="éª¨æ–" &&
                                    query("id", obj) == "bone staff"){
-                                                set("quest/finded/¹ÇÕÈ", 1, mazeobj);
+                                                set("quest/finded/éª¨æ–", 1, mazeobj);
                                                 command("pat "+query("id", me));
                                                 destruct(obj);
                                                 return 1;
                                 }
-                                if(obj->name()=="ÓÄÚ¤Ö®»ğ" &&
+                                if(obj->name()=="å¹½å†¥ä¹‹ç«" &&
                                    query("id", obj) == "ghost fire"){
-                                                set("quest/finded/ÓÄÚ¤Ö®»ğ", 1, mazeobj);
+                                                set("quest/finded/å¹½å†¥ä¹‹ç«", 1, mazeobj);
                                                 command("pat "+query("id", me));
                                                 destruct(obj);
                                                 return 1;
                                 }
-                                if(obj->name()=="½©Ê¬Ñª" &&
+                                if(obj->name()=="åƒµå±è¡€" &&
                                    query("id", obj) == "zombie blood"){
-                                                set("quest/finded/½©Ê¬Ñª", 1, mazeobj);
+                                                set("quest/finded/åƒµå±è¡€", 1, mazeobj);
                                                 command("pat "+query("id", me));
                                                 destruct(obj);
                                                 return 1;
@@ -561,7 +561,7 @@ void give_reward_necropolis(object *ob,object reward_giver) {
                                 continue;
                         //if(!environment(member) || !environment(member)->query("virtual_room"))
                                 //continue;
-                        if(mazedir!=FUBEN_D->query_maze_dir(member))//²»ÔÚÍ¬Ò»¸ö¸±±¾Àï
+                        if(mazedir!=FUBEN_D->query_maze_dir(member))//ä¸åœ¨åŒä¸€å€‹å‰¯æœ¬è£¡
                                 continue;
                         ref_exp = 80000;
                         ref_pot = 3000;
@@ -585,12 +585,12 @@ void give_reward_necropolis(object *ob,object reward_giver) {
                         mar = ref_mar;
 
                         /*
-                        reward_msg =HIR"Ä¹Ô°µÄÎ£»ú½â³ı£¬Äã±»½±ÀøÁË£º\n\t\t" +
-                        chinese_number(exp) + "µãÊµÕ½¾­Ñé\n\t\t"+
-                        chinese_number(pot) + "µãÇ±ÄÜ\n\t\t" +
-                        chinese_number(mar) + "µãÌå»á\n\t\t" +
-                        chinese_number(score) + "µãÆÀ¼Û\n\t\t" +
-                        chinese_number(gold) + "Á½»Æ½ğ\n"NOR;
+                        reward_msg =HIR"å¢“åœ’çš„å±æ©Ÿè§£é™¤ï¼Œä½ è¢«çå‹µäº†ï¼š\n\t\t" +
+                        chinese_number(exp) + "é»å¯¦æˆ°ç¶“é©—\n\t\t"+
+                        chinese_number(pot) + "é»æ½›èƒ½\n\t\t" +
+                        chinese_number(mar) + "é»é«”æœƒ\n\t\t" +
+                        chinese_number(score) + "é»è©•åƒ¹\n\t\t" +
+                        chinese_number(gold) + "å…©é»ƒé‡‘\n"NOR;
                         tell_object(member,reward_msg);
                         addn("combat_exp", exp, member);
                         addn("potential", pot, member);
@@ -598,7 +598,7 @@ void give_reward_necropolis(object *ob,object reward_giver) {
                         addn("score", score, member);
                         addn("balance", gold*10000, member);
                         */
-                        GIFT_D->bonus(member, ([ "prompt" : HIR "Ä¹Ô°µÄÎ£»ú½â³ı" NOR,
+                        GIFT_D->bonus(member, ([ "prompt" : HIR "å¢“åœ’çš„å±æ©Ÿè§£é™¤" NOR,
                                                  "exp" : exp, "pot" : pot, "mar" : mar,
                                                  "score" : score, "gold" : gold ]));
 
@@ -628,7 +628,7 @@ void die() {
 
                         if (sscanf(dir,"/f/%s/%s/maze",quest,userid)==2) {
                                         /*
-                                        tell_room(environment(),HIY"¸±±¾½«ÔÚÈıÊ®ÃëºóÏûÊ§£¡\n"NOR);
+                                        tell_room(environment(),HIY"å‰¯æœ¬å°‡åœ¨ä¸‰åç§’å¾Œæ¶ˆå¤±ï¼\n"NOR);
                                         SCHEDULE_D->set_event(30, 0, mazeobj, "remove_maze");
                                         */
                                         FUBEN_D->delay_clear_fuben(quest, userid);

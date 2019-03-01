@@ -1,4 +1,4 @@
-// datang2.c ´óÌÃ¶þ½ø
+// datang2.c å¤§å ‚äºŒé€²
 // Winder Oct.10 1998
 
 #include <ansi.h>
@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "´óÌÃ¶þ½ø");
+        set("short", "å¤§å ‚äºŒé€²");
         set("long", @LONG
-ÕâÀïÊÇ´óÌÃµÄµÚ¶þÖØ£¬ÊÇÈ«Õæ½ÌµÜ×Ó×ö¹¦¿ÎµÄËùÔÚ¡£ÏÖÔÚ»¹²»µ½
-¹¦¿ÎÊ±¼ä£¬´óÌÃÀï¿Õµ´µ´µÄ£¬Ö»ÓÐÈ«Õæ½ÌÕÆ¹ÜÉÏÏÂÔÓÊÂµÄÕÆÀíµÀ³¤´ø
-Áì×Å¼¸¸öÐ¡µÀÍ¯ÔÚÕûÀí×ÀÒÎ£¬Ô¤±¸²Í·¹¡£
+é€™è£¡æ˜¯å¤§å ‚çš„ç¬¬äºŒé‡ï¼Œæ˜¯å…¨çœŸæ•™å¼Ÿå­åšåŠŸèª²çš„æ‰€åœ¨ã€‚ç¾åœ¨é‚„ä¸åˆ°
+åŠŸèª²æ™‚é–“ï¼Œå¤§å ‚è£¡ç©ºç›ªç›ªçš„ï¼Œåªæœ‰å…¨çœŸæ•™æŽŒç®¡ä¸Šä¸‹é›œäº‹çš„æŽŒç†é“é•·å¸¶
+é ˜è‘—å¹¾å€‹å°é“ç«¥åœ¨æ•´ç†æ¡Œæ¤…ï¼Œé å‚™é¤é£¯ã€‚
 LONG
         );
         set("exits", ([

@@ -1,5 +1,5 @@
 // Code of ShenZhou
-//huiyang-san.c »ØÑôÎåÁúÉ¢
+//huiyang-san.c å›é™½äº”é¾æ•£
 //kane 1998.6
 #include <ansi.h>
 inherit PILL;
@@ -10,16 +10,16 @@ void setup()
 int cure_ob(string);
 void create()
 {
-        set_name(HIY"»ØÑôÎåÁúÉ¢"NOR, ({"huiyang san","san"}));
+        set_name(HIY"å›é™½äº”é¾æ•£"NOR, ({"huiyang san","san"}));
         set_weight(50);
         if (clonep())
             set_default_object(__FILE__);
     else
     {
-                set("unit", "°ü");
+                set("unit", "åŒ…");
         set("long", 
-"áÇá¼ÅÉ³£ÓÃµÄÁÆÉËÁéÒ©¡£·ÛÄ©Î¢Ï¸£¬É«Ôóµ­»Æ£¬Î¢ÓĞĞÁÀ±´Ì±ÇµÄÎ¶µÀ\n
-£¬¶ÔË®³å·şĞ§¹ûÓÈ¼Ñ¡£\n");
+"å´†å³’æ´¾å¸¸ç”¨çš„ç™‚å‚·éˆè—¥ã€‚ç²‰æœ«å¾®ç´°ï¼Œè‰²æ¾¤æ·¡é»ƒï¼Œå¾®æœ‰è¾›è¾£åˆºé¼»çš„å‘³é“\n
+ï¼Œå°æ°´æ²–æœæ•ˆæœå°¤ä½³ã€‚\n");
                 set("value", 10000);
                 set("medicine", 1);
                 set("no_sell", 1);
@@ -36,12 +36,12 @@ int cure_ob(object me)
                 else
                         addn("jingli", -(query("jingli", me)), me);
 
-                message_vision(BLU"$N·şÏÂÒ»°ü"+query("name")+BLU"£¬¾õµÃĞØ¿ÚÓôÃÆ£¬ËÄÖ«·¦Á¦¡£Ô­À´·şÊ³Ì«¼±\nÌ«¶à£¬Ò©Ğ§ÊÊµÃÆä·´£¡\n" NOR, me);
+                message_vision(BLU"$Næœä¸‹ä¸€åŒ…"+query("name")+BLU"ï¼Œè¦ºå¾—èƒ¸å£é¬±æ‚¶ï¼Œå››è‚¢ä¹åŠ›ã€‚åŸä¾†æœé£Ÿå¤ªæ€¥\nå¤ªå¤šï¼Œè—¥æ•ˆé©å¾—å…¶åï¼\n" NOR, me);
                 destruct(this_object());
                 return 1;
         }
            
-        message_vision(HIY"$N·şÏÂÒ»°ü"+query("name")+HIY"£¬Ö»¾õÍ¨ÌåÊæÌ©£¬¾«Éñ»À·¢£¬ÉËÊÆ´óÓĞºÃ×ª¡£\n"NOR, me);
+        message_vision(HIY"$Næœä¸‹ä¸€åŒ…"+query("name")+HIY"ï¼Œåªè¦ºé€šé«”èˆ’æ³°ï¼Œç²¾ç¥ç…¥ç™¼ï¼Œå‚·å‹¢å¤§æœ‰å¥½è½‰ã€‚\n"NOR, me);
         me->receive_heal("qi", 100+random(200));
         addn("jingli", 100+random(200), me);
         me->apply_condition("hot_drug", 30);
@@ -60,7 +60,7 @@ void init()
 int effect_in_liquid(object ob)
 {
 
-        tell_object(this_player(),HIG"ÄãÖ»¾õµÃÌåÄÚÒ»¹ÉÅ¯ÆøÁ÷¶¯£¬´óÎªÊÜÓÃ¡£\n"NOR);
+        tell_object(this_player(),HIG"ä½ åªè¦ºå¾—é«”å…§ä¸€è‚¡æš–æ°£æµå‹•ï¼Œå¤§ç‚ºå—ç”¨ã€‚\n"NOR);
         this_player()->receive_heal("qi",10+random(20));
        return 0;
 }

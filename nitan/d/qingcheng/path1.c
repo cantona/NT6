@@ -4,10 +4,10 @@
 inherit ROOM;
 void create()
 {
-        set("short", "��ɽ���");
+        set("short", "盤山磴道");
         set("long", @LONG
-��������ɽ����ϡ�ɽľ���գ��ľ����ˡ����ˡ���ǡ�ľ��
-¥�����Ͼ�����Ȼͼ���ˡ����Ϸ����ǽ�������
+你走在盤山磴道上。山木蔽日，幽靜宜人。過了“青城”木牌
+樓，西上就是天然圖畫了。東南方向是建福宮。
 LONG );
         set("outdoors","qingcheng");
         set("exits", ([

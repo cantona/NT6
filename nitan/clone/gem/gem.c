@@ -33,7 +33,7 @@ void create()
         set_name(query_gem_name(gem, lev), ({query_gem_id(gem, lev)}));
         set_weight(100);
         set("long", query_all_effect(gem));
-        set("unit", "¿Å");
+        set("unit", "é¡†");
         set("no_put",1);
 //        set("no_get",1);
 set("no_sell",1);        
@@ -61,21 +61,21 @@ int do_insert(string arg)
         object ob, me = this_player();
 
         if (!arg || arg == "")
-                return notify_fail("Ö¸Áî¸ñÊ½£ºinsert ±¦Ê¯ into ÎïÆ· at socket ±àºÅ\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šinsert å¯¶çŸ³ into ç‰©å“ at socket ç·¨è™Ÿ\n");
         if (sscanf(arg, "%s into %s at socket %d", gem, item_name, index) != 3)
-                return notify_fail("Ö¸Áî¸ñÊ½£ºinsert ±¦Ê¯ into ÎïÆ· at socket ±àºÅ\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šinsert å¯¶çŸ³ into ç‰©å“ at socket ç·¨è™Ÿ\n");
         if (gem != query("id")) return 0;
         if (!objectp(ob = present(item_name, me)))
-                return notify_fail("ÄãÏë°ÑËüÏâÇ¶ÔÚÊ²Ã´¶«Î÷ÉÏ£¿\n");
+                return notify_fail("ä½ æƒ³æŠŠå®ƒé‘²åµŒåœ¨ä»€éº¼æ±è¥¿ä¸Šï¼Ÿ\n");
         if (index > ob->query("sockets/max"))
-                return notify_fail(ob->name() + "ÉÏºÃÏó²¢Ã»ÓĞÕâ¸ö½Ó¿×Ñ½£¡\n");
+                return notify_fail(ob->name() + "ä¸Šå¥½è±¡ä¸¦æ²’æœ‰é€™å€‹æ¥å­”å‘€ï¼\n");
         if (ob->query("equipped"))
-                return notify_fail(ob->name() + "Õı×°±¸×ÅÄØ£¡\n");
+                return notify_fail(ob->name() + "æ­£è£å‚™è‘—å‘¢ï¼\n");
         if (me->query("max_neili") < 1000 || me->query("neili") < 1500)
-                return notify_fail("ÒÔÄãÏÖÔÚµÄÄÚÁ¦ĞŞÎª£¬»¹ÎŞ·¨ÔË¹¦ÏâÇ¶±¦Ê¯£¡\n");
+                return notify_fail("ä»¥ä½ ç¾åœ¨çš„å…§åŠ›ä¿®ç‚ºï¼Œé‚„ç„¡æ³•é‹åŠŸé‘²åµŒå¯¶çŸ³ï¼\n");
 
-        message_vision(HIG"$N°µÔËÄÚÁ¦£¬Ò»Ê¹¾¢°Ñ" + name() + HIG"ÏâÈëÁË" + ob->name() + HIG"ÖĞ£¬
-É²ÄÇ¼ä£¬Ö»¾õ" + ob->name() + HIG"ÉÏ·º³öÒ»µÀÆæÒìµÄ¹âÃ¢£¬ËÆºõÓĞÒ»¹ÉÉñÆæµÄÁ¦Á¿¸½ÔÚÆäÖĞ£¡\n", me);
+        message_vision(HIG"$Næš—é‹å…§åŠ›ï¼Œä¸€ä½¿å‹æŠŠ" + name() + HIG"é‘²å…¥äº†" + ob->name() + HIG"ä¸­ï¼Œ
+å‰é‚£é–“ï¼Œåªè¦º" + ob->name() + HIG"ä¸Šæ³›å‡ºä¸€é“å¥‡ç•°çš„å…‰èŠ’ï¼Œä¼¼ä¹æœ‰ä¸€è‚¡ç¥å¥‡çš„åŠ›é‡é™„åœ¨å…¶ä¸­ï¼\n", me);
         me->add("max_neili", -100);
         me->add("neili", -1000);
         me->start_busy(2);
@@ -96,12 +96,12 @@ int do_combine(string arg)
         object *inv, gem, me = this_player();
 
         if (!arg || arg == "")
-                return notify_fail("ÄãÏëºÏ²¢Ê²Ã´±¦Ê¯£¿\n");
+                return notify_fail("ä½ æƒ³åˆä¸¦ä»€éº¼å¯¶çŸ³ï¼Ÿ\n");
         if (arg != query("id")) return 0;
         if (query("level") == 8)
-                return notify_fail("Õâ¸ö±¦Ê¯ÒÑ¾­ÊÇ×î¸ßµÈ¼¶ÁË£¡\n");
+                return notify_fail("é€™å€‹å¯¶çŸ³å·²ç¶“æ˜¯æœ€é«˜ç­‰ç´šäº†ï¼\n");
         if (me->query("max_neili") < 500 || me->query("neili") < 800)
-                return notify_fail("ÒÔÄãÏÖÔÚµÄÄÚÁ¦ĞŞÎª£¬»¹ÎŞ·¨ÔË¹¦ºÏ²¢±¦Ê¯£¡\n");
+                return notify_fail("ä»¥ä½ ç¾åœ¨çš„å…§åŠ›ä¿®ç‚ºï¼Œé‚„ç„¡æ³•é‹åŠŸåˆä¸¦å¯¶çŸ³ï¼\n");
 
         inv = all_inventory(me);
         for(i = 0; i < sizeof(inv); i++)
@@ -109,8 +109,8 @@ int do_combine(string arg)
                         if (!objectp(gem))
                                 gem = inv[i];
                         else {
-                                message_vision(HIG"$N°µÔËÄÚÁ¦¾¢Í¸±¦Ê¯£¬µ«¼û" + name() + HIG"±íÃæÒì²ÊÁ÷¶¯£¬
-½¥½¥µÄ$NÊÕ»ØÁËÄÚÁ¦£¬Ö»¾õ" + name() + HIG"ËÆºõ±äµÃ¸ü¼ÓÍêÃÀÁË£¡\n", me);
+                                message_vision(HIG"$Næš—é‹å…§åŠ›å‹é€å¯¶çŸ³ï¼Œä½†è¦‹" + name() + HIG"è¡¨é¢ç•°å½©æµå‹•ï¼Œ
+æ¼¸æ¼¸çš„$Næ”¶å›äº†å…§åŠ›ï¼Œåªè¦º" + name() + HIG"ä¼¼ä¹è®Šå¾—æ›´åŠ å®Œç¾äº†ï¼\n", me);
                                 me->add("max_neili", -10);
                                 me->add("neili", -500);
                                 me->start_busy(1);
@@ -121,5 +121,5 @@ int do_combine(string arg)
                                 return 1;
                         }
                 }
-        return notify_fail("Äã±ØĞëÓĞÈı¿éÍ¬ÑùµÄ±¦Ê¯²ÅÄÜ½øĞĞºÏ²¢£¡\n");
+        return notify_fail("ä½ å¿…é ˆæœ‰ä¸‰å¡ŠåŒæ¨£çš„å¯¶çŸ³æ‰èƒ½é€²è¡Œåˆä¸¦ï¼\n");
 }

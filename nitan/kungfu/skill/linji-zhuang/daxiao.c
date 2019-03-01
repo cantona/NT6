@@ -8,27 +8,27 @@ int exert(object me, object target)
         int level = me->query_skill("linji-zhuang", 1);
         int amount;
 
-        if (level < 150) return notify_fail("ÄãµÄÁÙ¼ÃÊ®¶þ×¯ÐÞÎª»¹²»¹»¡£\n");
+        if (level < 150) return notify_fail("ä½ çš„è‡¨æ¿ŸåäºŒèŽŠä¿®ç‚ºé‚„ä¸å¤ ã€‚\n");
 
         if( query("max_neili", me)<5*level )
-                return notify_fail("ÄãµÄÄÚÁ¦»¹²»¹»Ç¿¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›é‚„ä¸å¤ å¼·ã€‚\n");
 
         if( query("neili", me)<4*level )
-                return notify_fail("ÄãµÄÕæÆø²»¹»¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ã€‚\n");
 
         if( query("eff_qi", me)<query("max_qi", me) )
-                return notify_fail("ÄãÏÖÔÚÆøÑªÊÜÉË£¬Ö»ÅÂÎÞ·¨µ÷½Ú¾«ÆøÆ½ºâ£¡\n");
+                return notify_fail("ä½ ç¾åœ¨æ°£è¡€å—å‚·ï¼Œåªæ€•ç„¡æ³•èª¿ç¯€ç²¾æ°£å¹³è¡¡ï¼\n");
 
         if( query("eff_jing", me)<query("max_jing", me) )
-                return notify_fail("ÄãÏÖÔÚ¾«ÉñÊÜÉË£¬Ö»ÅÂÎÞ·¨µ÷½Ú¾«ÆøÆ½ºâ£¡\n");
+                return notify_fail("ä½ ç¾åœ¨ç²¾ç¥žå—å‚·ï¼Œåªæ€•ç„¡æ³•èª¿ç¯€ç²¾æ°£å¹³è¡¡ï¼\n");
 
         if( query_temp("linji/daxiao", me) )
-                return notify_fail("ÄãÒÑ¾­ÔË¹¦µ÷½Ú¾«Æø´óÐ¡ÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“é‹åŠŸèª¿ç¯€ç²¾æ°£å¤§å°äº†ã€‚\n");
 
         set_temp("linji/daxiao", 1, me);
-        write( HIY "ÄãÆÁÏ¢¾²Æø£¬½»´íÔËÐÐ´óÐ¡¶þ×¯£¬Ö»¾õÒ»¹ÉÅ¯Á÷³öÌìÃÅ£¬´©µØ»§£¬ÑØ×ÅÈ«Éí¾­ÂöÔËÐÐÒ»ÖÜ£¬»ãÈëµ¤ÌïÆøº£¡£\n" NOR);
+        write( HIY "ä½ å±æ¯éœæ°£ï¼Œäº¤éŒ¯é‹è¡Œå¤§å°äºŒèŽŠï¼Œåªè¦ºä¸€è‚¡æš–æµå‡ºå¤©é–€ï¼Œç©¿åœ°æˆ¶ï¼Œæ²¿è‘—å…¨èº«ç¶“è„ˆé‹è¡Œä¸€å‘¨ï¼ŒåŒ¯å…¥ä¸¹ç”°æ°£æµ·ã€‚\n" NOR);
         message_combatd(
-                HIY + "Ö»¼û" + me->name() + "ÆÁÏ¢¾²Æø£¬Í·¶¥Æ®ÆðÒ»ÂÆÂÆ°×Æø£¬ÉñÌ¬ÂÔÏÖÆ£·¦¡£\n" NOR,
+                HIY + "åªè¦‹" + me->name() + "å±æ¯éœæ°£ï¼Œé ­é ‚é£„èµ·ä¸€ç¸·ç¸·ç™½æ°£ï¼Œç¥žæ…‹ç•¥ç¾ç–²ä¹ã€‚\n" NOR,
                 me);
 
         amount=query("max_jing", me)-query("max_qi", me);
@@ -62,5 +62,5 @@ void remove_effect(object me, int level)
                 set("jing",query("max_jing",  me), me);
         delete_temp("linji/daxiao", me);
 
-        tell_object(me, HIG"ÄãÐÐ´óÐ¡¶þ×¯ÒÑ¾Ã£¬ÓÖ»Ö¸´ÁËÔ­ÓÐ¾«Æø¡£\n"NOR);
+        tell_object(me, HIG"ä½ è¡Œå¤§å°äºŒèŽŠå·²ä¹…ï¼Œåˆæ¢å¾©äº†åŽŸæœ‰ç²¾æ°£ã€‚\n"NOR);
 }

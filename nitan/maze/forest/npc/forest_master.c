@@ -23,18 +23,18 @@ mapping itemlist = ([
 
 void create()
 {
-        set_name(HIG "´ÔÁÖá÷ÁÔÕß" NOR, ({ "forest hunter","hunter" }) );
+        set_name(HIG "å¢æ—ç‹©çµè€…" NOR, ({ "forest hunter","hunter" }) );
 
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("age", 30);
         set("long",
-                GRN"\n    ÕâÊÇÒ»¸öÁÔÎïÊÕ¹ºÕß£¬¸øËûÒ»¶¨ÊıÁ¿µÄÁÔÎï£¬»ñÈ¡ÄãµÄ½±Àø£¡
-                \n      Ê®ÕÅÀÇÆ¤  Îå¿éÀÇÈâ  Ò»¶ÔÀÇÑÛ
-                \n      Ê®ÕÅĞÜÆ¤  ÎåÖ»ĞÜÕÆ  Ò»Ö»ĞÜµ¨    
-                \n      Ê®ÕÅ»¢Æ¤  Îå¾ß»¢¹Ç  Ò»¸ù»¢±Ş
-                \n      Ê®ÕÅÉßÆ¤  Îå¸öÉßµ¨  Ò»¸öÉßµ°
-                \n      Èı¿éÁúÁÛ  Ò»¸öÁúµ°
-                \n      Ò»Ö»Á÷Ã¥ÍÃ
+                GRN"\n    é€™æ˜¯ä¸€å€‹çµç‰©æ”¶è³¼è€…ï¼Œçµ¦ä»–ä¸€å®šæ•¸é‡çš„çµç‰©ï¼Œç²å–ä½ çš„çå‹µï¼
+                \n      åå¼µç‹¼çš®  äº”å¡Šç‹¼è‚‰  ä¸€å°ç‹¼çœ¼
+                \n      åå¼µç†Šçš®  äº”åªç†ŠæŒ  ä¸€åªç†Šè†½    
+                \n      åå¼µè™çš®  äº”å…·è™éª¨  ä¸€æ ¹è™é­
+                \n      åå¼µè›‡çš®  äº”å€‹è›‡è†½  ä¸€å€‹è›‡è›‹
+                \n      ä¸‰å¡Šé¾é±—  ä¸€å€‹é¾è›‹
+                \n      ä¸€åªæµæ°“å…”
                 \n"NOR);
         set("attitude", "peaceful");
         set("str", 26000);
@@ -47,8 +47,8 @@ void create()
 
         set("chat_chance", 10);
         set("chat_msg", ({
-                BLU"´ÔÁÖá÷ÁÔÕßËµµÀ£ºÊÕ¹º¸÷ÖÖÁÔÎï¡£\n"NOR ,
-                YEL"´ÔÁÖá÷ÁÔÕßËµµÀ£º°¦£¬ÎÒÄÇ×ß¶ªÁËµÄº¢×Ó°¡......\n"NOR ,
+                BLU"å¢æ—ç‹©çµè€…èªªé“ï¼šæ”¶è³¼å„ç¨®çµç‰©ã€‚\n"NOR ,
+                YEL"å¢æ—ç‹©çµè€…èªªé“ï¼šå”‰ï¼Œæˆ‘é‚£èµ°ä¸Ÿäº†çš„å­©å­å•Š......\n"NOR ,
 
         }) );
 
@@ -77,7 +77,7 @@ int accept_object(object me, object obj)
         if (undefinedp(itemlist[filename]))
         {
                 command("shake");
-                command("say ÕâÊÇÊ²Ã´¶«Î÷£¬ÎÒ²»ĞèÒª£¡");
+                command("say é€™æ˜¯ä»€éº¼æ±è¥¿ï¼Œæˆ‘ä¸éœ€è¦ï¼");
                 return 0;
         }
         
@@ -104,7 +104,7 @@ int accept_object(object me, object obj)
 
 void give_reward_forest(object ob, int ref_exp) 
 {
-        //ref_expÊÇ²Î¿¼¾­Ñé£¬exp²»Ó°Ïìgold£¬¸ß¼¶Íæ¼Ò¿ÉÒÔµ½forestÕõÇ®
+        //ref_expæ˜¯åƒè€ƒç¶“é©—ï¼Œexpä¸å½±éŸ¿goldï¼Œé«˜ç´šç©å®¶å¯ä»¥åˆ°forestæ™éŒ¢
         int user_exp;
         int exp,pot,mar,score,gold;
         string reward_msg;
@@ -128,12 +128,12 @@ void give_reward_forest(object ob, int ref_exp)
                 gold *= gold_times;
         if (gold < 1) gold = 1;
         /*
-        reward_msg =GRN"ÄãµÃµ½ÁË±¨³ê£º\n\t\t" +
-        chinese_number(exp) + "µãÊµÕ½¾­Ñé\n\t\t"+
-        chinese_number(pot) + "µãÇ±ÄÜ\n\t\t" +
-        chinese_number(mar) + "µãÌå»á\n\t\t" +
-        chinese_number(score) + "µãÆÀ¼Û\n\t\t" + 
-        chinese_number(gold) + "Á½»Æ½ğ\n"NOR;
+        reward_msg =GRN"ä½ å¾—åˆ°äº†å ±é…¬ï¼š\n\t\t" +
+        chinese_number(exp) + "é»å¯¦æˆ°ç¶“é©—\n\t\t"+
+        chinese_number(pot) + "é»æ½›èƒ½\n\t\t" +
+        chinese_number(mar) + "é»é«”æœƒ\n\t\t" +
+        chinese_number(score) + "é»è©•åƒ¹\n\t\t" + 
+        chinese_number(gold) + "å…©é»ƒé‡‘\n"NOR;
         tell_object(ob,reward_msg);
 
         addn("combat_exp", exp, ob);

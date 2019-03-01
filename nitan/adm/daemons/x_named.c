@@ -1,15 +1,15 @@
 // This program is a part of NITAN MudLIB
-// x_named.c 随机物品名称生成守护程序
+// x_named.c 闅ㄦ鐗╁搧鍚嶇ū鐢熸垚瀹堣绋嬪簭
 // from huaxia
 
 #include <ansi.h>
 #include <x_name.h>
 
-#define RATE        10      //机率判断基准
-#define RATE_A      30      //中缀出现机率
-#define RATE_B      50      //前缀出现机率[色彩出现机率]
-#define RATE_C      100     //单色出现机率（中、前缀齐全）
-#define RATE_X      1000    //多色出现机率（中、前缀齐全）
+#define RATE        10      //姗熺巼鍒ゆ柗鍩烘簴
+#define RATE_A      30      //涓洞鍑虹従姗熺巼
+#define RATE_B      50      //鍓嶇洞鍑虹従姗熺巼[鑹插僵鍑虹従姗熺巼]
+#define RATE_C      100     //鍠壊鍑虹従姗熺巼锛堜腑銆佸墠缍撮綂鍏級
+#define RATE_X      1000    //澶氳壊鍑虹従姗熺巼锛堜腑銆佸墠缍撮綂鍏級
 
 varargs int x_name(object obj, string arg)
 {
@@ -124,7 +124,7 @@ varargs int x_name(object obj, string arg)
                ]);
 
         obj->set_name(name["name"], name["id"]);
-        set("long", "这是一"+query("unit", obj)+obj->short()+"。\n", obj);
+        set("long", "閫欐槸涓�"+query("unit", obj)+obj->short()+"銆俓n", obj);
         /*}*/
         return 1;
 }

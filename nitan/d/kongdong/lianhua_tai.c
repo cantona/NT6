@@ -7,11 +7,11 @@ inherit DOOR_ROOM;
 
 void create()
 {
-        set("short","����̨");
+        set("short","蓮花台");
         set("long",@LONG
-���������ɽ�ľ������·����ţ�����ϼ�����ഫΪ�Ƶ��ڵ�̳���ұ߾���
-������Ԩ���ڴ˵Ǹ�һ������ɽ��Ӧ��������������������������ǰ���繰
-��Ҿ���Ʊ���������ƽԶ��㡣�������������ۿ��ճ�����Ϊ��ۡ�
+這裡是崆峒山的絕頂，孤峰聳峙，獨秀霞表，相傳為黃帝授道壇，右邊就是
+萬丈深淵，在此登高一呼，眾山皆應，放眼四望，崆峒數百裡，羅列眼前，如拱
+如揖，似碧浪起伏，勢皆東傾。當晴霽黎明，觀看日出，最為奇觀。
 LONG);
         set("exits",
         ([
@@ -19,10 +19,10 @@ LONG);
           "west" : __DIR__"xianren_qiao",
                 ]));
         create_door("south",([
-                                "name" : "Сľ��",
+                                "name" : "小木門",
                                 "lock" : "lock001",
                                 "status" : 3,
-                                "id"  : ({ "south","Сľ��","door",}),
+                                "id"  : ({ "south","小木門","door",}),
                                 "other_side_dir" : "north",
                                 ]),
                         "north");

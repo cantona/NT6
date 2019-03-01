@@ -4,19 +4,19 @@ inherit ROOM;
 
 void create()
 {
-        set("short","ÐüÑÂµ×");
+        set("short","æ‡¸å´–åº•");
         
         set("long", @LONG
-ÕâÀïÊÇºâÉ½ÐüÑÂµ×£¬ËÄÖÜ¶¼±»ÐüÑÂ¾ø±Ú°üÎ§×Å£¬¾ÙÄ¿Ò»Íû£¬Ö»¼û
-ÔÆÎíÉîËø£¬ÑÂ±Ú¶¸ÇÍ£¬Ö±Ã»Ìì¼Ê£¬¼¸Ö»ÀÏÓ¥ÔÚÉÏ¿Õ²»¶ÏµÄÅÌÐý¡£¾ø±Ú
-ÉÏ´¹ÏÂ¼¸¸ùÊ÷ÌÙ(teng)£¬¿´À´¿ÉÒÔË³×ÅÕâÀïÅÀÉÏÑÂ¶¥¡£ËÊÁ¢ÔÚÄãÃæÇ°
-ÊÇÒ»¿Ã¾Þ´óµÄ¹ÅÊ÷(tree)£¬¸Õ²ÅÄãÐÒºÃ×¥×¡ÁËÕâ¿ÃÊ÷µÄÊ÷Ö¦£¬²»È»Ôç
-¾Í·ÛÉíËé¹ÇÁË¡£Äãµ½´¦¿´ÁË¿´£¬ÕâÀïËÆºõÃ»ÓÐÆäËûÂ·¿É×ß¡£
+é€™è£¡æ˜¯è¡¡å±±æ‡¸å´–åº•ï¼Œå››å‘¨éƒ½è¢«æ‡¸å´–çµ•å£åŒ…åœè‘—ï¼Œèˆ‰ç›®ä¸€æœ›ï¼Œåªè¦‹
+é›²éœ§æ·±éŽ–ï¼Œå´–å£é™¡å³­ï¼Œç›´æ²’å¤©éš›ï¼Œå¹¾åªè€é·¹åœ¨ä¸Šç©ºä¸æ–·çš„ç›¤æ—‹ã€‚çµ•å£
+ä¸Šåž‚ä¸‹å¹¾æ ¹æ¨¹ç±(teng)ï¼Œçœ‹ä¾†å¯ä»¥é †è‘—é€™è£¡çˆ¬ä¸Šå´–é ‚ã€‚è³ç«‹åœ¨ä½ é¢å‰
+æ˜¯ä¸€æ£µå·¨å¤§çš„å¤æ¨¹(tree)ï¼Œå‰›æ‰ä½ å¹¸å¥½æŠ“ä½äº†é€™æ£µæ¨¹çš„æ¨¹æžï¼Œä¸ç„¶æ—©
+å°±ç²‰èº«ç¢Žéª¨äº†ã€‚ä½ åˆ°è™•çœ‹äº†çœ‹ï¼Œé€™è£¡ä¼¼ä¹Žæ²’æœ‰å…¶ä»–è·¯å¯èµ°ã€‚
 LONG );
 
         set("item_desc",([
-              "teng": HIG "\nÕâ¸ùÊ÷ÌÙ¿´ÆðÀ´ºÜ½áÊµ£¬¿ÉÒÔÓÃËüÅÀ(climb)ÉÏÐüÑÂ¡£\n" NOR,
-              "tree": YEL "\n²ÎÌì¹ÅÊ÷£¬Ê÷¸É´Ö´ó½áÊµ£¬µ«ÊÇÓÐ¸ùÊ÷Ö¦ÒÑ¾­±»ÕÛ¶ÏÁË¡£\n" NOR,
+              "teng": HIG "\né€™æ ¹æ¨¹ç±çœ‹èµ·ä¾†å¾ˆçµå¯¦ï¼Œå¯ä»¥ç”¨å®ƒçˆ¬(climb)ä¸Šæ‡¸å´–ã€‚\n" NOR,
+              "tree": YEL "\nåƒå¤©å¤æ¨¹ï¼Œæ¨¹å¹¹ç²—å¤§çµå¯¦ï¼Œä½†æ˜¯æœ‰æ ¹æ¨¹æžå·²ç¶“è¢«æŠ˜æ–·äº†ã€‚\n" NOR,
         ]));        
            
         set("objects",([
@@ -45,7 +45,7 @@ int do_climb(string arg)
         qi=query("qi", me);
         
         if (! arg || (arg != "teng" && arg != "tree"))
-                return notify_fail("ÄãÏëÍùÄÄ¶ùÅÀ£¿\n");
+                return notify_fail("ä½ æƒ³å¾€å“ªå…’çˆ¬ï¼Ÿ\n");
         
         if ( !here = find_object(__DIR__"xuanyandi"))
                 here = load_object(__DIR__"xuanyadi");
@@ -54,18 +54,18 @@ int do_climb(string arg)
 
         if ( arg == "teng")
         {
-                 msg = HIG "\n$N" HIG "À­×ÅÊ÷ÌÙÍùÇÍ±ÚÉÏÅÀÈ¥¡£\n"NOR;
+                 msg = HIG "\n$N" HIG "æ‹‰è‘—æ¨¹ç±å¾€å³­å£ä¸Šçˆ¬åŽ»ã€‚\n"NOR;
         
                 if(qi < 100)
                 {
-                        msg += HIM "\n$N " HIM "ÌåÁ¦²»Öª£¬´ÓÇÍ±ÚÉÏË¤ÁËÏÂÀ´¡£\n" NOR;
+                        msg += HIM "\n$N " HIM "é«”åŠ›ä¸çŸ¥ï¼Œå¾žå³­å£ä¸Šæ‘”äº†ä¸‹ä¾†ã€‚\n" NOR;
                         message_vision(msg, me);
                         me->unconcious();
                         return 1;
                 }
 
                 message_vision(msg, me);
-                message("vision",HIG "\n"+me->name()+"´ÓÇÍ±ÚÏÂÃæÅÀÁËÉÏÀ´¡£\n", zigai, me);
+                message("vision",HIG "\n"+me->name()+"å¾žå³­å£ä¸‹é¢çˆ¬äº†ä¸Šä¾†ã€‚\n", zigai, me);
                 me->move(zigai);
 
                 return 1;

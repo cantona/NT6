@@ -1,38 +1,38 @@
         sort_array()
 
-        Ãû³Æ£º
-                sort_array() ÅÅÐòÒ»¸öÕóÁÐ
+        åç¨±ï¼š
+                sort_array() æŽ’åºä¸€å€‹é™£åˆ—
 
-        Óï·¨£º
+        èªžæ³•ï¼š
                 mixed *sort_array( mixed *arr, string fun, object ob );
-                »ìºÏÕóÁÐ sort_array(»ìºÏÕóÁÐ arr, ×Ö·û´® fun, Îï¼þ ob);
+                æ··åˆé™£åˆ— sort_array(æ··åˆé™£åˆ— arr, å­—ç¬¦ä¸² fun, ç‰©ä»¶ ob);
 
                 mixed *sort_array( mixed *arr, function f );
-                »ìºÏÕóÁÐ sort_array(»ìºÏÕóÁÐ arr, º¯ÊýÖ¸±ê f);
+                æ··åˆé™£åˆ— sort_array(æ··åˆé™£åˆ— arr, å‡½æ•¸æŒ‡æ¨™ f);
 
                 mixed *sort_array( mixed *arr, int direction );
-                »ìºÏÕóÁÐ sort_array(»ìºÏÕóÁÐ arr, ÕûÊý direction)£»
+                æ··åˆé™£åˆ— sort_array(æ··åˆé™£åˆ— arr, æ•´æ•¸ direction)ï¼›
 
-        ÓÃ·¨£º
-                µÚÒ»ÖÖ¸ñÊ½·µ»ØÒ»¸öºÍ²ÎÊý "arr" ÄÚÔªËØÏàÍ¬µÄÕóÁÐ£¬
-                ÔªËØµÄË³Ðò°´ÅÊÉýµÄË³ÐòÅÅÁÐ£¬Õâ¸öË³ÐòÒÀ¾ÝÕóÁÐÄÚÃ¿
-                Á½¸öÔªËØ·Ö±ð×÷Îª²ÎÊýºô½ÐÎï¼þ ob ÄÚµÄº¯Êý fun µÄ
-                ·µ»ØÖµÀ´¾ö¶¨£¬·µ»ØÖµ -1, 0, »òÕß 1£¬À´ËµÃ÷ÕâÁ½¸ö
-                ÔªËØµÄ¹ØÏµÊÇ Ð¡ÓÚ£¬µÈÓÚ£¬»òÕß ´óÓÚ¡£
+        ç”¨æ³•ï¼š
+                ç¬¬ä¸€ç¨®æ ¼å¼è¿”å›žä¸€å€‹å’Œåƒæ•¸ "arr" å…§å…ƒç´ ç›¸åŒçš„é™£åˆ—ï¼Œ
+                å…ƒç´ çš„é †åºæŒ‰æ”€å‡çš„é †åºæŽ’åˆ—ï¼Œé€™å€‹é †åºä¾æ“šé™£åˆ—å…§æ¯
+                å…©å€‹å…ƒç´ åˆ†åˆ¥ä½œç‚ºåƒæ•¸å‘¼å«ç‰©ä»¶ ob å…§çš„å‡½æ•¸ fun çš„
+                è¿”å›žå€¼ä¾†æ±ºå®šï¼Œè¿”å›žå€¼ -1, 0, æˆ–è€… 1ï¼Œä¾†èªªæ˜Žé€™å…©å€‹
+                å…ƒç´ çš„é—œç³»æ˜¯ å°äºŽï¼Œç­‰äºŽï¼Œæˆ–è€… å¤§äºŽã€‚
 
-                µÚ¶þÖÖ¸ñÊ½Í¬µÚÒ»ÖÖ¹¦ÄÜÏàÍ¬£¬Ö»ÊÇÓÃº¯ÊýÖ¸±ê´úÌæ¡£
+                ç¬¬äºŒç¨®æ ¼å¼åŒç¬¬ä¸€ç¨®åŠŸèƒ½ç›¸åŒï¼Œåªæ˜¯ç”¨å‡½æ•¸æŒ‡æ¨™ä»£æ›¿ã€‚
 
-                µÚÈýÖÖ¸ñÊ½·µ»ØÒ»¸öºÍ²ÎÊý "arr" ÄÚÔªËØÏàÍ¬µÄÕóÁÐ£¬
-                ÕóÁÐÄÚÔªËØµÄË³ÐòÓÉµÚ¶þ¸ö²ÎÊý "direction" À´¾ö¶¨£¬
-                0 »òÕß 1 »á°´ÕÕÉýÐòÅÅÁÐ£¬Èç¹ûÊÇ -1 »á°´ÕÕ½µÐòÅÅ
-                ÁÐ¡£¶øÔªËØÖ®¼äµÄ´óÐ¡¹ØÏµÊÇÓÉÄÚ½¨µÄ³ÌÐòÀ´±È½Ï£¬µ«
-                ÊÇÄÚ½¨µÄ±È½Ï³ÌÐòÓÐÒ»¸ö¾ÖÏÞ£¬ËüÒªÇóÕóÁÐ±ØÐëÊÇÍ¬Àà
-                µÄ£¬Ò²¾ÍÊÇÕóÁÐÄÚµÄÔªËØÀàÐÍ±ØÐëÏàÍ¬£¬ÀàÐÍÖ»ÄÜÊÇ
-                ×Ö·û´®£¬ÕûÊý£¬¸¡µãÊýÖÐµÄÒ»ÖÖ¡£Èç¹ûÕóÁÐÄÚ°üº¬ÕóÁÐ£¬
-                ËüÖ»»á±È½Ï×ÓÕóÁÐµÄµÚÒ»¸öÔªËØ¡£
+                ç¬¬ä¸‰ç¨®æ ¼å¼è¿”å›žä¸€å€‹å’Œåƒæ•¸ "arr" å…§å…ƒç´ ç›¸åŒçš„é™£åˆ—ï¼Œ
+                é™£åˆ—å…§å…ƒç´ çš„é †åºç”±ç¬¬äºŒå€‹åƒæ•¸ "direction" ä¾†æ±ºå®šï¼Œ
+                0 æˆ–è€… 1 æœƒæŒ‰ç…§å‡åºæŽ’åˆ—ï¼Œå¦‚æžœæ˜¯ -1 æœƒæŒ‰ç…§é™åºæŽ’
+                åˆ—ã€‚è€Œå…ƒç´ ä¹‹é–“çš„å¤§å°é—œç³»æ˜¯ç”±å…§å»ºçš„ç¨‹åºä¾†æ¯”è¼ƒï¼Œä½†
+                æ˜¯å…§å»ºçš„æ¯”è¼ƒç¨‹åºæœ‰ä¸€å€‹å±€é™ï¼Œå®ƒè¦æ±‚é™£åˆ—å¿…é ˆæ˜¯åŒé¡ž
+                çš„ï¼Œä¹Ÿå°±æ˜¯é™£åˆ—å…§çš„å…ƒç´ é¡žåž‹å¿…é ˆç›¸åŒï¼Œé¡žåž‹åªèƒ½æ˜¯
+                å­—ç¬¦ä¸²ï¼Œæ•´æ•¸ï¼Œæµ®é»žæ•¸ä¸­çš„ä¸€ç¨®ã€‚å¦‚æžœé™£åˆ—å…§åŒ…å«é™£åˆ—ï¼Œ
+                å®ƒåªæœƒæ¯”è¼ƒå­é™£åˆ—çš„ç¬¬ä¸€å€‹å…ƒç´ ã€‚
 
-        ²Î¿¼£º
+        åƒè€ƒï¼š
                 filter_array(3), map_array(3), strcmp(3)
 
-        by ·¢ÏÖºÅ(Find@tx)
+        by ç™¼ç¾è™Ÿ(Find@tx)
 

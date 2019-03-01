@@ -4,13 +4,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name("»Æ½ğ", ({"gold", "ingot", "gold_money"}));
+        set_name("é»ƒé‡‘", ({"gold", "ingot", "gold_money"}));
         set_weight(150000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "»Æ³Î³ÎµÄ½ğ×Ó£¬ÈË¼ûÈË°®µÄ½ğ×Ó£¬²»¹ı ...ÑÕÉ«ÓĞµã²»¶Ô¡£\n");
-                set("unit", "¿é");
+                set("long", "é»ƒæ¾„æ¾„çš„é‡‘å­ï¼Œäººè¦‹äººæ„›çš„é‡‘å­ï¼Œä¸é ...é¡è‰²æœ‰é»ä¸å°ã€‚\n");
+                set("unit", "å¡Š");
                 set("material", "lead");
         }
         setup();

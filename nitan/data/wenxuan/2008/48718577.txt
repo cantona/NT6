@@ -1,16 +1,16 @@
-subject : ¶À¹Â½£Ú£
-author_name : Ş±´ó´ô
+subject : ç¨å­¤åŠå¡š
+author_name : è–‡å¤§å‘†
 author_id : vivi
 time : 1206624626
-board : Ş±´ó´ôµÄÁôÑÔ°å
+board : è–‡å¤§å‘†çš„ç•™è¨€æ¿
 file : /data/analecta/2008/48718577.txt
 add_time : 1211022923
 content :
-µÚÒ»¶Î£º
+ç¬¬ä¸€æ®µï¼š
 rideto xiangyang;#2 e;#3 n;#2 w;#3 n;w;#3 s;#6 wu;#4 {ed;wu}
 
-ÓĞÊ±ºò×îºóµÄed,wu¿ÉÄÜÒª¶àÖØ¸´¼¸´Î£¬ËùÒÔÔÚ´Ë·Ö¶Î¡£
+æœ‰æ™‚å€™æœ€å¾Œçš„ed,wuå¯èƒ½è¦å¤šé‡å¾©å¹¾æ¬¡ï¼Œæ‰€ä»¥åœ¨æ­¤åˆ†æ®µã€‚
 
-µÚ¶ş¶Î£º
-l xiaowu;enter muwu;zhao ¿İÊ÷Ö¦;out;l shanlu;climb shanlu;sw;nw;e;sw;#2 se;ne;#wa 2000;n;sw;w;s;n;sw;se;w;#2 nw;enter;use huoshi;l tai;ca qingtai;l bi;l mu;#wa 2000;kneel mu;move stone;zuan shifeng;n;#10 l shitai;#4 climb shitai;move stone;get all
+ç¬¬äºŒæ®µï¼š
+l xiaowu;enter muwu;zhao æ¯æ¨¹æ;out;l shanlu;climb shanlu;sw;nw;e;sw;#2 se;ne;#wa 2000;n;sw;w;s;n;sw;se;w;#2 nw;enter;use huoshi;l tai;ca qingtai;l bi;l mu;#wa 2000;kneel mu;move stone;zuan shifeng;n;#10 l shitai;#4 climb shitai;move stone;get all
 [2;37;0m

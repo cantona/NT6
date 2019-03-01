@@ -8,16 +8,16 @@ string do_unwield();
 
 void create()
 {
-        set_name(HIY "ÕæÎä½£" NOR,({ "zhenwu jian", "jian", "sword", "zhenwu" }) );
+        set_name(HIY "çœŸæ­¦åŠ" NOR,({ "zhenwu jian", "jian", "sword", "zhenwu" }) );
         set_weight(1500);
         if (clonep())
                 destruct(this_object());
         else {
                 set("long", @LONG
-ÕâÊÇÒ»±úº®¹âÉÁÉÁµÄ±¦½££¬ÎôÄêÎäµ±ÕÅÕæÈË³Ö´Ë½£µ´Ñý³ýÄ§£¬É¨¾¡Èº³ó¡£
-½­ºþÏüÐ¡£¬¼û´Ë½£ÎÞ²»ÐÄµ´ÉñÒ¡¡£
+é€™æ˜¯ä¸€æŸ„å¯’å…‰é–ƒé–ƒçš„å¯¶åŠï¼Œæ˜”å¹´æ­¦ç•¶å¼µçœŸäººæŒæ­¤åŠç›ªå¦–é™¤é­”ï¼ŒæŽƒç›¡ç¾¤é†œã€‚
+æ±Ÿæ¹–å®µå°ï¼Œè¦‹æ­¤åŠç„¡ä¸å¿ƒç›ªç¥žæ–ã€‚
 LONG );
-                set("unit", "°Ñ");
+                set("unit", "æŠŠ");
                 set("value", 800000);
                 set("no_sell", 1);
                 set("unique", 1);
@@ -39,18 +39,18 @@ string do_wield()
         call_out("check_npc", 0, me, environment(me));
         if( query("shen", me)>10000 )
         {
-                return HIC "$NÒ»Éù³¤Ð¥£¬½«$n" HIC "µ´³ö½£ÇÊ£¬ö®Ê±ÌìµØ¼äºÆÆøÁÝÈ»¡£\n" NOR;
+                return HIC "$Nä¸€è²é•·å˜¯ï¼Œå°‡$n" HIC "ç›ªå‡ºåŠéž˜ï¼ŒéœŽæ™‚å¤©åœ°é–“æµ©æ°£å‡œç„¶ã€‚\n" NOR;
         } else
         if( query("shen", me) >= 0 )
         {
-                return HIC "$NÒ»ÉìÊÖ£¬ÒÑÈ»°Ñ$n" HIC "ÁÁÔÚÊÖÖÐ¡£\n" NOR;
+                return HIC "$Nä¸€ä¼¸æ‰‹ï¼Œå·²ç„¶æŠŠ$n" HIC "äº®åœ¨æ‰‹ä¸­ã€‚\n" NOR;
         } else
         if( query("shen", me)>-10000 )
         {
-                return HIG "$NÕ½Õ½¾¤¾¤µÄÃþ³öÒ»°Ñ$n" HIG "¡£\n" NOR;
+                return HIG "$Næˆ°æˆ°å…¢å…¢çš„æ‘¸å‡ºä¸€æŠŠ$n" HIG "ã€‚\n" NOR;
         } else
         {
-                return HIG "$NÒ»ÉùÀäÐ¦£¬¡°à§¡±µÄÒ»ÉùÁÁ³öÁË$n" HIG "¡£\n" NOR;
+                return HIG "$Nä¸€è²å†·ç¬‘ï¼Œâ€œå”°â€çš„ä¸€è²äº®å‡ºäº†$n" HIG "ã€‚\n" NOR;
         }
 }
 
@@ -61,12 +61,12 @@ string do_unwield()
         me = this_player();
         remove_call_out("check_npc");
         if( query("shen", me) >= 0 )
-                return HIC "$NÒ»»ÓÊÖ£¬»¹½£ÈëÇÊ¡£\n" NOR;
+                return HIC "$Nä¸€æ®æ‰‹ï¼Œé‚„åŠå…¥éž˜ã€‚\n" NOR;
         else
         if( query("shen", me)>-10000 )
-                return HIG "$N°Ñ$n" HIG "²å»Ø½£ÇÊ£¬Ä¨ÁËÄ¨Í·ÉÏµÄº¹¡£\n" NOR;
+                return HIG "$NæŠŠ$n" HIG "æ’å›žåŠéž˜ï¼ŒæŠ¹äº†æŠ¹é ­ä¸Šçš„æ±—ã€‚\n" NOR;
         else
-                return HIG "$NÒ»É¹£¬°Ñ$n" HIG "²å»Ø½£ÇÊ¡£\n" NOR;
+                return HIG "$Nä¸€æ›¬ï¼ŒæŠŠ$n" HIG "æ’å›žåŠéž˜ã€‚\n" NOR;
 }
 
 void check_npc(object me, object env)
@@ -95,15 +95,15 @@ void check_npc(object me, object env)
 
                         if( query("shen", ob[i])>10000 )
                         {
-                                message_vision("$N´óÅ­ºÈµÀ£ººÃÄã¸ö" + RANK_D->query_rude(me) +
-                                               "£¬¾ÓÈ»¸ÒµÁÓÃÕæÎä½££¿\n", ob[i]);
+                                message_vision("$Nå¤§æ€’å–é“ï¼šå¥½ä½ å€‹" + RANK_D->query_rude(me) +
+                                               "ï¼Œå±…ç„¶æ•¢ç›œç”¨çœŸæ­¦åŠï¼Ÿ\n", ob[i]);
                                 if( !query("on_fight", env) )
                                         ob[i]->kill_ob(me);
                         } else
                         if (ob[i]->is_bad())
                         {
-                                message_vision(random(2) ? "$N¹þ¹þ´óÐ¦£¬¶Ô$nµÀ£º¸ÉµÃºÃ£¬¸ÉµÃºÃ¡£\n" :
-                                                           "$NÆ´Ãü¹ÄÕÆ£¬¶Ô$nµÀ£ºÐÖµÜ¼ÓÓÍ¸É°¡£¡",
+                                message_vision(random(2) ? "$Nå“ˆå“ˆå¤§ç¬‘ï¼Œå°$né“ï¼šå¹¹å¾—å¥½ï¼Œå¹¹å¾—å¥½ã€‚\n" :
+                                                           "$Næ‹¼å‘½é¼“æŽŒï¼Œå°$né“ï¼šå…„å¼ŸåŠ æ²¹å¹¹å•Šï¼",
                                                ob[i], me);
                         }
                         continue;
@@ -114,8 +114,8 @@ void check_npc(object me, object env)
 
                 if( query("shen", ob[i])>10000 && !userp(ob[i]) )
                 {
-                        message_vision(random(2) ? "$NÔÞµÀ£ººÃ½££¬ºÃ½££¡\n" :
-                                                   "$NÌ¾µÀ£º¼û´Ë½£ÕæÊÇÈç¼ûÕÅÕæÈË°¡£¡\n",
+                        message_vision(random(2) ? "$Nè®šé“ï¼šå¥½åŠï¼Œå¥½åŠï¼\n" :
+                                                   "$Nå˜†é“ï¼šè¦‹æ­¤åŠçœŸæ˜¯å¦‚è¦‹å¼µçœŸäººå•Šï¼\n",
                                        ob[i]);
                 } else
                 if( query("shen", ob[i])<-10 && !userp(ob[i]) )
@@ -125,25 +125,25 @@ void check_npc(object me, object env)
                         my_exp=query("combat_exp", me);
                         if (ob_exp > my_exp * 2 || ob_exp > 1500000)
                         {
-                                message_vision(random(2) ? "$N¶Ô$nÀäÀäµÀ£º¹ö¿ª£¡ÉÙÔÚÎÒÃæÇ°ÂôÅª¡£\n" :
-                                                           "$NÒ»ÉùÀäÐ¦£¬¶Ô$nµÀ£ºÄãÒÔÎªÄãÊÇË­£¿ÕÅÈý·á£¿¹þ¹þ¹þ¹þ£¡\n",
+                                message_vision(random(2) ? "$Nå°$nå†·å†·é“ï¼šæ»¾é–‹ï¼å°‘åœ¨æˆ‘é¢å‰è³£å¼„ã€‚\n" :
+                                                           "$Nä¸€è²å†·ç¬‘ï¼Œå°$né“ï¼šä½ ä»¥ç‚ºä½ æ˜¯èª°ï¼Ÿå¼µä¸‰è±ï¼Ÿå“ˆå“ˆå“ˆå“ˆï¼\n",
                                                ob[i], me);
                         } else
                         if (ob_exp > 20000)
                         {
-                                message_vision(random(2) ? "$NÁ³É«ÓÐÐ©²»¶Ô¾¢¡£\n" :
-                                                           "$NÂ¶³öº¦ÅÂµÄÉñÉ«¡£\n",
+                                message_vision(random(2) ? "$Nè‡‰è‰²æœ‰äº›ä¸å°å‹ã€‚\n" :
+                                                           "$Néœ²å‡ºå®³æ€•çš„ç¥žè‰²ã€‚\n",
                                                ob[i]);
                                 if( query("no_fight", env) )
                                         continue;
-                                message_vision(random(2) ? "$NÅ­ºÈÒ»Éù£¬¡°´ó¼Ò¶¼²»Òª»îÁË£¡¡±\n" :
-                                                           "$NÒ»ÑÔ²»·¢£¬ºöµÄÆËÏò$n£¬ÉíÐÎ¼«¿ì¡£\n",
+                                message_vision(random(2) ? "$Næ€’å–ä¸€è²ï¼Œâ€œå¤§å®¶éƒ½ä¸è¦æ´»äº†ï¼â€\n" :
+                                                           "$Nä¸€è¨€ä¸ç™¼ï¼Œå¿½çš„æ’²å‘$nï¼Œèº«å½¢æ¥µå¿«ã€‚\n",
                                                ob[i], me);
                                 ob[i]->kill_ob(me);
                         } else
                         {
-                                message_vision(random(2) ? "$NÆËÍ¨Ò»Éù£¬Ì±µ¹ÔÚµØ£¬Ë«ÊÖ¼±Ò¡µÀ£º¡°²»ÊÇÎÒ£¡ÕæµÄ²»ÊÇÎÒ£¡¡±\n" :
-                                                           "$NÒ»¸ö¶ßàÂ£¬½á½á°Í°ÍµÄÊ²Ã´Ò²Ëµ²»ÉÏÀ´¡£\n",
+                                message_vision(random(2) ? "$Næ’²é€šä¸€è²ï¼Œç™±å€’åœ¨åœ°ï¼Œé›™æ‰‹æ€¥æ–é“ï¼šâ€œä¸æ˜¯æˆ‘ï¼çœŸçš„ä¸æ˜¯æˆ‘ï¼â€\n" :
+                                                           "$Nä¸€å€‹å“†å—¦ï¼Œçµçµå·´å·´çš„ä»€éº¼ä¹Ÿèªªä¸ä¸Šä¾†ã€‚\n",
                                                ob[i], me);
                                 if( !query("no_fight", env) )
                                         ob[i]->unconcious();
@@ -173,9 +173,9 @@ mixed hit_ob(object me, object victim, int damage_bonus)
         case 0:
                 if (! victim->is_busy())
                         victim->start_busy(me->query_skill("sword") / 10 + 2);
-                return HIC "$N¿çÇ°Ò»²½£¬ÊÖÖÐµÄ" NOR+HIY "ÕæÎä½£" NOR+HIC "»Ã»¯³ÉÎÞÊýÔ²È¦£¬"
-                       "Ïò$n±ÆÈ¥£¬½£·¨Ï¸ÃÜÖ®¼«¡£$n´ó³ÔÒ»\n"
-                       "¾ª£¬²»ÖªÈçºÎµÖµ²£¬Ö»ÓÐÁ¬Á¬ºóÍË¡£\n" NOR;
+                return HIC "$Nè·¨å‰ä¸€æ­¥ï¼Œæ‰‹ä¸­çš„" NOR+HIY "çœŸæ­¦åŠ" NOR+HIC "å¹»åŒ–æˆç„¡æ•¸åœ“åœˆï¼Œ"
+                       "å‘$né€¼åŽ»ï¼ŒåŠæ³•ç´°å¯†ä¹‹æ¥µã€‚$nå¤§åƒä¸€\n"
+                       "é©šï¼Œä¸çŸ¥å¦‚ä½•æŠµæ“‹ï¼Œåªæœ‰é€£é€£å¾Œé€€ã€‚\n" NOR;
 
         case 1:
                 n = me->query_skill("sowrd");
@@ -185,9 +185,9 @@ mixed hit_ob(object me, object victim, int damage_bonus)
                 n /= 2;
                 victim->receive_damage("jing", n, me);
                 victim->receive_wound("jing", n / 2, me);
-                return random(2) ? HIY "$NÒ»Éù³¤Ò÷£¬ÊÖÖÐµÄÕæÎä½£»¯×÷Ò»µ½³¤ºç£¬¡°à§¡±µÄÉ¨¹ý$n¡£\n" NOR:
-                                   HIY "$NÍ»È»´óÉùºÈµÀ£º¡°Ð°Ä§ÍâµÀ£¬»¹²»ÊÜËÀ£¿¡±ÊÖÖÐÕæÎä½£"
-                                   HIY "ºöµÄÒ»¶¶£¬$nµÇÊ±¾õµÃÑÛÇ°Ò»»¨¡£\n" NOR;
+                return random(2) ? HIY "$Nä¸€è²é•·åŸï¼Œæ‰‹ä¸­çš„çœŸæ­¦åŠåŒ–ä½œä¸€åˆ°é•·è™¹ï¼Œâ€œå”°â€çš„æŽƒéŽ$nã€‚\n" NOR:
+                                   HIY "$Nçªç„¶å¤§è²å–é“ï¼šâ€œé‚ªé­”å¤–é“ï¼Œé‚„ä¸å—æ­»ï¼Ÿâ€æ‰‹ä¸­çœŸæ­¦åŠ"
+                                   HIY "å¿½çš„ä¸€æŠ–ï¼Œ$nç™»æ™‚è¦ºå¾—çœ¼å‰ä¸€èŠ±ã€‚\n" NOR;
         }
 
         // double effect
@@ -219,13 +219,13 @@ void return_to_zhang()
                         return;
                 }
 
-                message_vision("ºöÈ»Ò»¸öÎäµ±µÜ×Ó×ßÁË¹ýÀ´£¬¿´µ½$N£¬Ã¦ÕÐºôµÀ£º¡°ÕÅÕæÈËÈÃÎÒÀ´ÕÒÄãÄÃ»Ø"
-                               "ÕæÎä½££¬ÄãÏÖÔÚ²»ÓÃÁËÃ´£¿¡±\n"
-                               "$NµÀ£º¡°ºÃÁË£¬ºÃÁË£¬Äã¾ÍÄÃ»ØÈ¥°É¡£¡±\n"
-                               "$N½«½£½»¸øÎäµ±µÜ×Ó´ø×ß¡£\n", me);
+                message_vision("å¿½ç„¶ä¸€å€‹æ­¦ç•¶å¼Ÿå­èµ°äº†éŽä¾†ï¼Œçœ‹åˆ°$Nï¼Œå¿™æ‹›å‘¼é“ï¼šâ€œå¼µçœŸäººè®“æˆ‘ä¾†æ‰¾ä½ æ‹¿å›ž"
+                               "çœŸæ­¦åŠï¼Œä½ ç¾åœ¨ä¸ç”¨äº†éº¼ï¼Ÿâ€\n"
+                               "$Né“ï¼šâ€œå¥½äº†ï¼Œå¥½äº†ï¼Œä½ å°±æ‹¿å›žåŽ»å§ã€‚â€\n"
+                               "$Nå°‡åŠäº¤çµ¦æ­¦ç•¶å¼Ÿå­å¸¶èµ°ã€‚\n", me);
         } else
         {
-                message("visoin", "ºöÈ»Ò»¸öÎäµ±µÜ×Ó×ßÁË¹ýÀ´£¬¼ñÆðÕæÎä½££¬Ì¾ÁË¿ÚÆø£¬Ò¡Ò¡Í·×ßÁË¡£\n",
+                message("visoin", "å¿½ç„¶ä¸€å€‹æ­¦ç•¶å¼Ÿå­èµ°äº†éŽä¾†ï¼Œæ’¿èµ·çœŸæ­¦åŠï¼Œå˜†äº†å£æ°£ï¼Œæ–æ–é ­èµ°äº†ã€‚\n",
                         me);
         }
 

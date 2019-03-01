@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-        set("short","����ɽ����");
+        set("short","高黎山東坡");
         set("long",@LONG
-�����Ǹ���ɽ�Ķ��£��򶫸��ӱ��ʶ����Ķ���ˮ��ԶԶ������
-����Եı���ѩɽ����ȥ������ȫ�ǳ�ɽ���룬����ϡ�١�ɽ������
-�޶࣬����������˾�����ɽ���ԡ�
+這裡是高黎山的東坡，向東俯視奔淌而過的東瀘水，遠遠眺望跨
+谷相對的碧羅雪山。此去再向西全是崇山峻嶺，人煙稀少。山間林深
+獸多，烏夷族的獵人經常進山打獵。
 LONG);
         set("objects", ([
            __DIR__"npc/shanyang": 1,

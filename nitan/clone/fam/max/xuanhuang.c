@@ -1,4 +1,4 @@
-// xuanhuang.c Ğş»Æ×Ïóäµ¤
+// xuanhuang.c ç„é»ƒç´«ç®ä¸¹
 
 #include <ansi.h>
 
@@ -6,17 +6,17 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIM "Ğş»Æ×Ïóäµ¤" NOR, ({ "xuanhuang dan", "xuanhuang", "dan" }) );
+        set_name(HIM "ç„é»ƒç´«ç®ä¸¹" NOR, ({ "xuanhuang dan", "xuanhuang", "dan" }) );
         set_weight(300);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", HIM "Ò»¿Å×ÏÖĞ·º»ÆµÄ¾«ÖÂÆæµ¤£¬¾ßÓĞ×ÅÉñ»°°ãµÄ¹¦Ğ§£¬´«\n"
-                                "Ëµ³ÔÁËÖ®ºóÄÜÆ½ÔöÊıÊ®ÄêµÄ¹¦Á¦£¬ÄËÊÇÁ·ÎäÖ®ÈËÃÎÃÂ\n"
-                                "ÒÔÇóµÄÉñµ¤ÃîÒ©¡£±¾ÎïÆ·µÚÒ»´Î³ÔĞ§¹û×î¼Ñ£¡\n" NOR);
+                set("long", HIM "ä¸€é¡†ç´«ä¸­æ³›é»ƒçš„ç²¾è‡´å¥‡ä¸¹ï¼Œå…·æœ‰è‘—ç¥è©±èˆ¬çš„åŠŸæ•ˆï¼Œå‚³\n"
+                                "èªªåƒäº†ä¹‹å¾Œèƒ½å¹³å¢æ•¸åå¹´çš„åŠŸåŠ›ï¼Œä¹ƒæ˜¯ç·´æ­¦ä¹‹äººå¤¢å¯\n"
+                                "ä»¥æ±‚çš„ç¥ä¸¹å¦™è—¥ã€‚æœ¬ç‰©å“ç¬¬ä¸€æ¬¡åƒæ•ˆæœæœ€ä½³ï¼\n" NOR);
                 set("value", 100000);
                 set("no_sell", 1);
-                set("unit", "¿Å");
+                set("unit", "é¡†");
                 set("only_do_effect", 1);
         }
 }
@@ -27,7 +27,7 @@ int do_effect(object me)
         int effect;
         int neili;
 
-        log_file("static/using", sprintf("%s(%s) eat Ğş»Æ×Ïóäµ¤ at %s.\n",
+        log_file("static/using", sprintf("%s(%s) eat ç„é»ƒç´«ç®ä¸¹ at %s.\n",
                  me->name(1),query("id", me),ctime(time())));
 
         effect = 0;
@@ -35,21 +35,21 @@ int do_effect(object me)
         if( query("skybook/item/xuanhuang", me) )
         {
                 /*
-                message_vision(HIR "$N" HIR "Ò»Ñö²±£¬ÍÌÏÂÁËÒ»¿ÅĞş»Æ×Ïóäµ¤£¬È´Ìı$P"
-                               HIR "Ò»Éù¼âÏø£¬Åç³öÒ»¿ÚÏÊÑª¡£\n" NOR, me);
+                message_vision(HIR "$N" HIR "ä¸€ä»°è„–ï¼Œåä¸‹äº†ä¸€é¡†ç„é»ƒç´«ç®ä¸¹ï¼Œå»è½$P"
+                               HIR "ä¸€è²å°–å“®ï¼Œå™´å‡ºä¸€å£é®®è¡€ã€‚\n" NOR, me);
 
-                me->set_temp("die_reason","Ì°³ÔĞş»Æ×Ïóäµ¤£¬½á¹ûÅªµÃÈ«Éí½îÂö¾¡¶Ï"
-                                           "¶øÍö");
+                me->set_temp("die_reason","è²ªåƒç„é»ƒç´«ç®ä¸¹ï¼Œçµæœå¼„å¾—å…¨èº«ç­‹è„ˆç›¡æ–·"
+                                           "è€Œäº¡");
                 me->die();
                 */ 
                 me->improve_neili(500);
                 addn("skybook/item/xuanhuang", 1, me);
-                message_vision(HIW "$N" HIW "Ò»Ñö²±£¬ÍÌÏÂÁËÒ»¿ÅĞş»Æ×Ïóäµ¤£¬Ö»¼û$P"
-                               HIW "»ëÉíÒ»²ü£¬ÆßÇÏ¶¼Ã°³ö°×ÑÌÀ´¡£\n" NOR, me);
+                message_vision(HIW "$N" HIW "ä¸€ä»°è„–ï¼Œåä¸‹äº†ä¸€é¡†ç„é»ƒç´«ç®ä¸¹ï¼Œåªè¦‹$P"
+                               HIW "æ¸¾èº«ä¸€é¡«ï¼Œä¸ƒç«…éƒ½å†’å‡ºç™½ç…™ä¾†ã€‚\n" NOR, me);
         } else
         {
-                message_vision(HIW "$N" HIW "Ò»Ñö²±£¬ÍÌÏÂÁËÒ»¿ÅĞş»Æ×Ïóäµ¤£¬Ö»¼û$P"
-                               HIW "»ëÉíÒ»²ü£¬ÆßÇÏ¶¼Ã°³ö°×ÑÌÀ´¡£\n" NOR, me);
+                message_vision(HIW "$N" HIW "ä¸€ä»°è„–ï¼Œåä¸‹äº†ä¸€é¡†ç„é»ƒç´«ç®ä¸¹ï¼Œåªè¦‹$P"
+                               HIW "æ¸¾èº«ä¸€é¡«ï¼Œä¸ƒç«…éƒ½å†’å‡ºç™½ç…™ä¾†ã€‚\n" NOR, me);
 
                 //addn("combat_exp", 100000+random(50000), me);
                 addn("potential", 10000, me);

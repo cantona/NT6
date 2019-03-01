@@ -1,7 +1,7 @@
 backend.c
 
-ÈÃ efun query_load_av() ¿ÉÌá¹©ÖĞÎÄ×ÊÁÏÏÔÊ¾
-¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D
+ï  efun query_load_av() è¤«æ‘é¼ç¬¢æ…è¨§è¹‹ç†å°¨
+æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚
 static double load_av = 0.0;
 static int load_now = 0;
 
@@ -59,10 +59,10 @@ char *query_load_av()
 {
     static char buff[100];
 
-    sprintf(buff, "%.2f(%d)Ö¸ÁîÏÂ´ï/Ãë£¬%.2f(%d)±àÒëĞĞÊı/Ãë", load_av, load_now, compile_av, compile_now);
+    sprintf(buff, "%.2f(%d)ç¡Œé”ç‹Ÿæ¹›/éƒã„›%.2f(%d)æ™¤ç¥’ä¿´æ…/éƒ", load_av, load_now, compile_av, compile_now);
     return (buff);
 }                               /* query_load_av() */
-¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D¨D
+æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚æ±‚
 
-By Clode@RW on 2002/6/3 04:01ÏÂÎç
+By Clode@RW on 2002/6/3 04:01ç‹Ÿæ•
 

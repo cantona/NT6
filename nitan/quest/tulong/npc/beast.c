@@ -2,10 +2,10 @@ inherit NPC;
 
 void create()
 {
-  set_name("¹ÛÏëÊŞ", ({"beast"}));
-  set("gender", "ĞÛĞÔ");
+  set_name("è§€æƒ³ç¸", ({"beast"}));
+  set("gender", "é›„æ€§");
   set("age", 10);
-  set("long","ÓÉÈËµÄÔÓÄîç²Ë¼ËùĞÎ³ÉµÄ¹ÛÏëÊŞ£¬»á²ø×¡ÈËµÄ»êÆÇ¡£\n");
+  set("long","ç”±äººçš„é›œå¿µç¶ºæ€æ‰€å½¢æˆçš„è§€æƒ³ç¸ï¼Œæœƒçºä½äººçš„é­‚é­„ã€‚\n");
   set("attitude", "aggressive");
   set("combat_exp", 51100000);
   set("max_qi",9000);
@@ -22,13 +22,13 @@ void die ()
   object me = this_object();
   object where = environment (me);
 
-  message_vision ("\n$Nµ¹ÁËÏÂÈ¥£¬»¯ÎªÒ»ÂÆÇáÑÌ¡£\n",me);  
+  message_vision ("\n$Nå€’äº†ä¸‹å»ï¼ŒåŒ–ç‚ºä¸€ç¸·è¼•ç…™ã€‚\n",me);  
   if (! present("beast 4",where) &&
-      query("short", where) == "ÃÔÎí" )
+      query("short", where) == "è¿·éœ§" )
   {
     object ob = new ("/quest/tulong/npc/beast");
     ob->move(where);
-    message_vision ("\nÍ»È»£¬ÃÔÎíÖĞÓÖ³öÏÖÒ»Ö»¹ÛÏëÊŞ£¡\n",me);   
+    message_vision ("\nçªç„¶ï¼Œè¿·éœ§ä¸­åˆå‡ºç¾ä¸€åªè§€æƒ³ç¸ï¼\n",me);   
   }
   destruct (me);  
 }

@@ -1,11 +1,11 @@
-// heiyiren.c ÈÕÔÂÉñ½Ì½ÌÍ½
+// heiyiren.c æ—¥æœˆç¥æ•™æ•™å¾’
 inherit NPC;
 void create()
 {
-        set_name("ºÚÒÂÈË", ({ "heiyi ren", "ren" }));
-        set("gender", "ÄĞĞÔ");
+        set_name("é»‘è¡£äºº", ({ "heiyi ren", "ren" }));
+        set("gender", "ç”·æ€§");
         set("age", 25);
-        set("title", "ÈÕÔÂÉñ½Ì·çÀ×ÌÃµÜ×Ó");
+        set("title", "æ—¥æœˆç¥æ•™é¢¨é›·å ‚å¼Ÿå­");
         set_skill("unarmed", 50);
         set_skill("dodge", 50);        
         set("apply/attack", 50);

@@ -2,12 +2,12 @@
 
 void create()
 {
-        set_name(HIW "´ó¾È¼İ" NOR, ({ "dajiujia", "Chamaenerion angustifloium", "herb_jiujia" }));
+        set_name(HIW "å¤§æ•‘é§•" NOR, ({ "dajiujia", "Chamaenerion angustifloium", "herb_jiujia" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "ÁøÒ¶²Ë¿ÆÖ²ÎïÁøÀ¼(Chamaenerion angustifloium)µÄ¸ÉÔï¸ù¾¥£¬ÒòÆä¾ßÓĞ»îÑªÉ¢ğö¡¢Ö¹Í´µÄ¹¦Ğ§£¬¿ÉÖÎÁÆµø´òËğÉË¡¢¹ÇÕÛµÈÖ¢£¬ÇÒÒ©Ğ§×÷ÓÃ¿ì£¬¹ÊµÃ´ËÃû¡£\n" NOR);
-                set("base_unit", "¸ù");
+                set("long", HIW "æŸ³è‘‰èœç§‘æ¤ç‰©æŸ³è˜­(Chamaenerion angustifloium)çš„å¹¹ç‡¥æ ¹è–ï¼Œå› å…¶å…·æœ‰æ´»è¡€æ•£ç˜€ã€æ­¢ç—›çš„åŠŸæ•ˆï¼Œå¯æ²»ç™‚è·Œæ‰“æå‚·ã€éª¨æŠ˜ç­‰ç—‡ï¼Œä¸”è—¥æ•ˆä½œç”¨å¿«ï¼Œæ•…å¾—æ­¤åã€‚\n" NOR);
+                set("base_unit", "æ ¹");
                 set("base_value", 30000);
                 set("base_weight", 100);
         }

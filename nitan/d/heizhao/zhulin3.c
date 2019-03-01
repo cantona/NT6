@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����");
+        set("short", "竹林");
         set("long",@LONG
-��βɭɭ������ϸϸ���͸������ݺύ�����ڱ����ա�������
-��������΢��������֣�����ɳɳ֮������ֻ������ɭɭ���ľ���
-�ȣ����˷��׾���������һ����ʯ���̳ɵ���С����ǰ���졣
+鳳尾森森，龍吟細細，竿竿青竹縱橫交錯，遮蔽天日。這裡人
+跡罕至，微風拂過竹林，發出沙沙之聲，你只覺綠蔭森森，幽靜無
+比，令人煩俗盡消。林中一道道石子舖成的羊腸小道向前延伸。
 LONG );
         set("outdoors", "taoyuan");
         set("exits", ([

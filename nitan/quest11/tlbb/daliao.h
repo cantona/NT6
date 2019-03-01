@@ -2,7 +2,7 @@
 
 int valid_leave(object me, string dir)
 {
-  if(present("liao bing",environment(me)))  return notify_fail("ÁÉ±øÒ»°Ñ½«ÄãÀ¹×¡£ºÄÄÀïÅÜ£¡\n" );
+  if(present("liao bing",environment(me)))  return notify_fail("é¼å…µä¸€æŠŠå°‡ä½ æ””ä½ï¼šå“ªè£¡è·‘ï¼\n" );
   return ::valid_leave(me, dir);
 }
 void init()
@@ -11,17 +11,17 @@ void init()
   me = this_player();
    if(me->query_condition("killer"))
   {
-   message_vision(HIC"\nÍ»È»$NËÆºõÆøÑªÓĞĞ©²»Ë³£¬¸ú×ÅÒ»¸öôóôòµ¹ÁËÏÂÈ¥¡£\n"NOR,me); 
-   tell_object(me,HIR"ÄãÍ»È»¸Ğµ½Ò»¹ÉÁ¦Á¿ÎüÒı×ÅÄã£¬Ë²¼äÄãÊ§È¥Öª¾õ¡£\n"NOR);
-   tell_room(environment(me),HIR"\nÖ»¼û£¬µØÉÏÍ»È»³öÏÖÒ»¸öÁÑ¶´£¬"+ me->name()+ "Ò»Í·ÔúÁËÏÂÈ¥£¬Ë²¼äÏûÊ§¡£\n"NOR, ({ }));
+   message_vision(HIC"\nçªç„¶$Nä¼¼ä¹æ°£è¡€æœ‰äº›ä¸é †ï¼Œè·Ÿè‘—ä¸€å€‹è¶”è¶„å€’äº†ä¸‹å»ã€‚\n"NOR,me); 
+   tell_object(me,HIR"ä½ çªç„¶æ„Ÿåˆ°ä¸€è‚¡åŠ›é‡å¸å¼•è‘—ä½ ï¼Œç¬é–“ä½ å¤±å»çŸ¥è¦ºã€‚\n"NOR);
+   tell_room(environment(me),HIR"\nåªè¦‹ï¼Œåœ°ä¸Šçªç„¶å‡ºç¾ä¸€å€‹è£‚æ´ï¼Œ"+ me->name()+ "ä¸€é ­ç´®äº†ä¸‹å»ï¼Œç¬é–“æ¶ˆå¤±ã€‚\n"NOR, ({ }));
    me->move(__DIR__"shanlu1"); 
-   tell_room(environment(me), HIR"\n°ë¿ÕÖĞ£¬ËÆºõÒ»¸öÈËµôÁËÏÂÀ´£¬Äã¶¨ÑÛÒ»¿´¾¹È»ÊÇ"+ me->name()+ "¡£\n"NOR, ({}));
+   tell_room(environment(me), HIR"\nåŠç©ºä¸­ï¼Œä¼¼ä¹ä¸€å€‹äººæ‰äº†ä¸‹ä¾†ï¼Œä½ å®šçœ¼ä¸€çœ‹ç«Ÿç„¶æ˜¯"+ me->name()+ "ã€‚\n"NOR, ({}));
    me->unconcious();
    return;
   }
-  if(!me->query("quest/ÌìÁú°Ë²¿/´óÁÉ¾ÈÔ®Æª/start")) return;
-   if(me->query("quest/ÌìÁú°Ë²¿/´óÁÉ¾ÈÔ®Æª/over")) return; 
-  if(!me->query_temp("quest/ÌìÁú°Ë²¿/´óÁÉ¾ÈÔ®Æª/godaliao")) return; 
+  if(!me->query("quest/å¤©é¾å…«éƒ¨/å¤§é¼æ•‘æ´ç¯‡/start")) return;
+   if(me->query("quest/å¤©é¾å…«éƒ¨/å¤§é¼æ•‘æ´ç¯‡/over")) return; 
+  if(!me->query_temp("quest/å¤©é¾å…«éƒ¨/å¤§é¼æ•‘æ´ç¯‡/godaliao")) return; 
  
   obj=new(__DIR__"npc/liaobing");
   obj->set("teamleader",1);

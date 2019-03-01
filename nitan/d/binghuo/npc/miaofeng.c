@@ -5,10 +5,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("Ãî·çÊ¹", ({ "miaofeng shi", "miaofeng", "shi" }));
-        set("long", "´ËÈË»ÆĞëÓ¥±Ç£¬Ò»¿´¾ÍÖªµÀÊÇ¸öºúÈË¡£\n");
-        set("title",HIG "Ã÷½Ì×Ü½Ì"HIM"Ê¹Õß"NOR);
-        set("gender", "ÄĞĞÔ");
+        set_name("å¦™é¢¨ä½¿", ({ "miaofeng shi", "miaofeng", "shi" }));
+        set("long", "æ­¤äººé»ƒé ˆé·¹é¼»ï¼Œä¸€çœ‹å°±çŸ¥é“æ˜¯å€‹èƒ¡äººã€‚\n");
+        set("title",HIG "æ˜æ•™ç¸½æ•™"HIM"ä½¿è€…"NOR);
+        set("gender", "ç”·æ€§");
         set("age", 30);
         set("shen_type",1);
         set("attitude", "friendly");

@@ -6,10 +6,10 @@ int do_giveto(object me, object obj);
 
 void create()
 {
-        set_name("¼Ò¶¡", ({ "jia ding", "ding"}));
+        set_name("å®¶ä¸", ({ "jia ding", "ding"}));
         set("long", 
-"¼Ò¶¡xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx¡£\n");
-        set("gender", "ÄĞĞÔ");
+"å®¶ä¸xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 35);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -27,7 +27,7 @@ void create()
         set_skill("blade", 40);
         set_skill("strike", 50);
 
-        create_family("ÌÆÃÅÊÀ¼Ò", 4, "¼Ò¶¡");
+        create_family("å”é–€ä¸–å®¶", 4, "å®¶ä¸");
 
         setup();
         carry_object("/clone/misc/cloth")->wear();

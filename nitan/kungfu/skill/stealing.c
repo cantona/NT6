@@ -1,4 +1,4 @@
-// stealing.c ÃîÊÖ¿Õ¿Õ
+// stealing.c å¦™æ‰‹ç©ºç©º
 // Last Modified by winder on Mar. 10 2000
 
 #include <ansi.h>;
@@ -12,14 +12,14 @@ int power_point(object me) { return 1; }
 
 int help(object me)
 {
-        write(HIC"\nÃîÊÖ¿Õ¿Õ£º"NOR"\n");
+        write(HIC"\nå¦™æ‰‹ç©ºç©ºï¼š"NOR"\n");
         write(@HELP
 
-    ÃîÊÖ¿Õ¿ÕÊÇØ¤°ïÄ±Éú¼¿Á©¡£
-    Çëhelp steal¡£
+    å¦™æ‰‹ç©ºç©ºæ˜¯ä¸å¹«è¬€ç”Ÿä¼å€†ã€‚
+    è«‹help stealã€‚
 
-        Ñ§Ï°ÒªÇó£º
-                ÎŞ
+        å­¸ç¿’è¦æ±‚ï¼š
+                ç„¡
 HELP
         );
         return 1;

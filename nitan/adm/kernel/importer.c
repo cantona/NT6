@@ -1,5 +1,5 @@
 // importer.c
-// ÓÃ»§µµ°¸µ¼ÈëÆ÷
+// ç”¨æˆ¶æª”æ¡ˆå°å…¥å™¨
 
 #include <ansi.h>
 
@@ -10,17 +10,17 @@ inherit F_SAVE;
 #define SUFFIX_NAME     "fr"
 #define SUFFIX_SIZE     26
 
-// ÈÕÖ¾µÈ¼¶·ÖÎª 3 ¼¶£¬ÈçºÎ½ç¶¨Ò»¶ÎÏûÏ¢Ó¦¸Ã¼ÇÂ¼ÔÚ
-// ÄÄÒ»¼¶µÄÈÕÖ¾ÖĞ£¿
+// æ—¥å¿—ç­‰ç´šåˆ†ç‚º 3 ç´šï¼Œå¦‚ä½•ç•Œå®šä¸€æ®µæ¶ˆæ¯æ‡‰è©²è¨˜éŒ„åœ¨
+// å“ªä¸€ç´šçš„æ—¥å¿—ä¸­ï¼Ÿ
 
-// LV 1: ÎŞ·¨¸´ÖÆÎÄ¼ş¡¢ÔØÈëÓÃ»§µÈ´íÎóĞÅÏ¢
-// LV 2: ¶ÔÓÃ»§ÓĞËğµÄÉ¾³ıÒ»ÀàµÄ²Ù×÷ĞÅÏ¢
-// LV 3: ¸´ÖÆ»òÕßĞŞ¸ÄÕâÑùµÄÎŞËğ²Ù×÷ĞÅÏ¢
+// LV 1: ç„¡æ³•å¾©åˆ¶æ–‡ä»¶ã€è¼‰å…¥ç”¨æˆ¶ç­‰éŒ¯èª¤ä¿¡æ¯
+// LV 2: å°ç”¨æˆ¶æœ‰æçš„åˆªé™¤ä¸€é¡çš„æ“ä½œä¿¡æ¯
+// LV 3: å¾©åˆ¶æˆ–è€…ä¿®æ”¹é€™æ¨£çš„ç„¡ææ“ä½œä¿¡æ¯
 
 #define LOG_LEVEL       3
 #define LOG(lv, msg)    log_file(sprintf("transfer/LV%d", lv), msg);
 
-// Ææ¹ÖµÄÊÇ 'nosave' ¹Ø¼ü×Ö²»ĞíÓÃ£¿
+// å¥‡æ€ªçš„æ˜¯ 'nosave' é—œéµå­—ä¸è¨±ç”¨ï¼Ÿ
 static string suffix = "abcdefghijklmnopqrstuvwxyz";
 static string save_dir = SAVE_DIR;
 
@@ -35,7 +35,7 @@ mapping assure_user_file(string user, int flag);
 
 void create()
 {
-        // ÔØÈëÔ­À´µÄ dbased Êı¾İ
+        // è¼‰å…¥åŸä¾†çš„ dbased æ•¸æ“š
         if (clonep() || ! this_player(1))
         {
                 destruct(this_object());
@@ -45,16 +45,16 @@ void create()
         seteuid(getuid());
         restore();
 
-        set_name("ÓÃ»§µµ°¸µ¼ÈëÆ÷", ({ "data importer", "importer", }));
+        set_name("ç”¨æˆ¶æª”æ¡ˆå°å…¥å™¨", ({ "data importer", "importer", }));
         set_weight(1);
 
         if (clonep())
                 set_default_object(__FILE__);
         else
         {
-                set("unit", "Ì¨");
-                set("long", "ÕâÊÇÒ»Ì¨ÓÃ»§µµ°¸µ¼ÈëÆ÷£¬ÇëÊäÈë help "
-                            "importer ²é¿´ÏêÏ¸Ê¹ÓÃËµÃ÷¡£\n");
+                set("unit", "å°");
+                set("long", "é€™æ˜¯ä¸€å°ç”¨æˆ¶æª”æ¡ˆå°å…¥å™¨ï¼Œè«‹è¼¸å…¥ help "
+                            "importer æŸ¥çœ‹è©³ç´°ä½¿ç”¨èªªæ˜ã€‚\n");
         }
         setup();
 
@@ -84,39 +84,39 @@ int do_help(string arg)
         {
         case "importer":
                 write(@HELP
-ÔÚÕâÀïÄã¿ÉÒÔÊ¹ÓÃÒÔÏÂÕâĞ©ºÍÓÃ»§µµ°¸µ¼ÈëÆ÷Ïà¹ØµÄÃüÁî£º
-    batch        ÅúÁ¿µ¼ÈëÓÃ»§Êı¾İ¡£
+åœ¨é€™è£¡ä½ å¯ä»¥ä½¿ç”¨ä»¥ä¸‹é€™äº›å’Œç”¨æˆ¶æª”æ¡ˆå°å…¥å™¨ç›¸é—œçš„å‘½ä»¤ï¼š
+    batch        æ‰¹é‡å°å…¥ç”¨æˆ¶æ•¸æ“šã€‚
 HELP );
                 break;
 
         case "batch":
                 write(@HELP_BATCH
-Ö¸Áî¸ñÊ½ : batch
+æŒ‡ä»¤æ ¼å¼ : batch
 
-ÅúÁ¿µ¼ÈëÓÃ»§Êı¾İ¡£
+æ‰¹é‡å°å…¥ç”¨æˆ¶æ•¸æ“šã€‚
 
-Ïà¹ØÖ¸Áî£ºimport, merge
+ç›¸é—œæŒ‡ä»¤ï¼šimport, merge
 HELP_BATCH );
                 break;
 
         case "merge":
                 write(@HELP_BATCH
-Ö¸Áî¸ñÊ½ : merge dbase
+æŒ‡ä»¤æ ¼å¼ : merge dbase
 
-½«ÁíÍâÕ¾µãµÄÊı¾İ¿â²¢ÈëÄ¿Ç°Õ¾µãµÄÊı¾İ¿â¡£
+å°‡å¦å¤–ç«™é»çš„æ•¸æ“šåº«ä¸¦å…¥ç›®å‰ç«™é»çš„æ•¸æ“šåº«ã€‚
 
-Ïà¹ØÖ¸Áî£ºbatch
+ç›¸é—œæŒ‡ä»¤ï¼šbatch
 HELP_BATCH );
                 break;
 
         default:
-                return notify_fail("ÄãÒª²é¿´Ê²Ã´°ïÖú£¿\n");
+                return notify_fail("ä½ è¦æŸ¥çœ‹ä»€éº¼å¹«åŠ©ï¼Ÿ\n");
         }
 
         return 1;
 }
 
-// »ñµÃÒ»¸ö²»ÖØ¸´µÄÓÃ»§Ãû
+// ç²å¾—ä¸€å€‹ä¸é‡å¾©çš„ç”¨æˆ¶å
 mapping assure_user_file(string user, int flag)
 {
 #if 0
@@ -161,7 +161,7 @@ mapping assure_user_file(string user, int flag)
         return 0;
 }
 
-// »ñµÃÖ¸¶¨Ä¿Â¼ÏÂËùÓĞµÄÓÃ»§ÁĞ±í
+// ç²å¾—æŒ‡å®šç›®éŒ„ä¸‹æ‰€æœ‰çš„ç”¨æˆ¶åˆ—è¡¨
 string *get_user_list(string dir)
 {
         string *sub_dir_list;
@@ -194,14 +194,14 @@ string *get_user_list(string dir)
         return user_list;
 }
 
-// Ñ°ÕÒ»òµ÷ÈëÄ³Ò»¸öÍæ¼Ò£¬±¾À´¿ÉÒÔÊ¹ÓÃ UPDATE_D ÖĞµÄÍ¬Ãûº¯Êı£¬
-// µ«ÒòÎªÕâÀïÖ±½ÓÎö¹¹ÁË login_ob£¬ÎŞ·¨¶Ô login_ob  ×ö¸ÄÃû²Ù
-// ×÷¡£ËùÒÔĞèÒªÓÃµ½Õâ¸öº¯Êı¡£
+// å°‹æ‰¾æˆ–èª¿å…¥æŸä¸€å€‹ç©å®¶ï¼Œæœ¬ä¾†å¯ä»¥ä½¿ç”¨ UPDATE_D ä¸­çš„åŒåå‡½æ•¸ï¼Œ
+// ä½†å› ç‚ºé€™è£¡ç›´æ¥ææ§‹äº† login_obï¼Œç„¡æ³•å° login_ob  åšæ”¹åæ“
+// ä½œã€‚æ‰€ä»¥éœ€è¦ç”¨åˆ°é€™å€‹å‡½æ•¸ã€‚
 
-// Èç¹û³ÌĞò´¦ÀíÖĞĞèÒª¸üĞÂÄÇĞ©²»ÔÚÏßµÄÍæ¼Ò£¬Ôò¿ÉÒÔÊ¹ÓÃ¸Ãº¯Êı
-// ½«Õâ¸öÍæ¼Òµ÷Èë²¢ÇÒ½øĞĞĞŞ¸Ä£¬Çë×¢Òâ£ºĞŞ¸ÄÍê±ÏÒÔºó³ÌĞò±ØĞë
-// ±£´æÍæ¼Ò£¬²¢ÇÒÊ¹ÓÃ global_destruct_player ½«Íæ¼ÒÎö¹¹£¬Èç
-// ¹ûÃ»ÓĞµ÷ÓÃÕâ¸öº¯Êı£¬Ôò¸³ÓèÍæ¼ÒµÄ¶¨Ê±Æ÷»á×Ô¶¯Îö¹¹Íæ¼Ò¡£
+// å¦‚æœç¨‹åºè™•ç†ä¸­éœ€è¦æ›´æ–°é‚£äº›ä¸åœ¨ç·šçš„ç©å®¶ï¼Œå‰‡å¯ä»¥ä½¿ç”¨è©²å‡½æ•¸
+// å°‡é€™å€‹ç©å®¶èª¿å…¥ä¸¦ä¸”é€²è¡Œä¿®æ”¹ï¼Œè«‹æ³¨æ„ï¼šä¿®æ”¹å®Œç•¢ä»¥å¾Œç¨‹åºå¿…é ˆ
+// ä¿å­˜ç©å®¶ï¼Œä¸¦ä¸”ä½¿ç”¨ global_destruct_player å°‡ç©å®¶ææ§‹ï¼Œå¦‚
+// æœæ²’æœ‰èª¿ç”¨é€™å€‹å‡½æ•¸ï¼Œå‰‡è³¦äºˆç©å®¶çš„å®šæ™‚å™¨æœƒè‡ªå‹•ææ§‹ç©å®¶ã€‚
 object global_find_player(string user)
 {
         object ob;
@@ -242,14 +242,14 @@ object global_find_player(string user)
         return ob;
 }
 
-// Îö¹¹Ò»¸ö±» UPDATE_D µ÷ÈëµÄÍæ¼Ò
+// ææ§‹ä¸€å€‹è¢« UPDATE_D èª¿å…¥çš„ç©å®¶
 void global_destruct_player(object ob, int raw)
 {
         object login_ob;
 
         if (objectp(ob) && ob->query_temp("temp_loaded"))
         {
-                // Ôö¼Ó¶Ô login_ob µÄÎö¹¹
+                // å¢åŠ å° login_ob çš„ææ§‹
                 if (objectp(login_ob = ob->query_temp("link_ob")))
                 {
                         if (raw) login_ob->save();
@@ -261,15 +261,15 @@ void global_destruct_player(object ob, int raw)
         }
 }
 
-// ÓĞÄÄĞ©¶«Î÷²»¿ÉÒÔ¼ÌĞøÔÊĞí autoload ÔØÈë£¿
+// æœ‰å“ªäº›æ±è¥¿ä¸å¯ä»¥ç¹¼çºŒå…è¨± autoload è¼‰å…¥ï¼Ÿ
 
-// Íæ¼Ò×ÔÔìµÄÎïÆ·£¬¿¼ÂÇµ½Íæ¼ÒµÄ ID ¿ÉÄÜ¸Ä±äÁË£¬
-// Èç¹û¼ÌĞøÔØÈëÊÆ±ØÓ°ÏìÆäËûµÄÍæ¼Ò£¬ËùÒÔ±ØĞëÉ¾
-// ³ı autoload¡£ ÏÖÔÚ¿´À´£¬ËÆºõÖ»ÓĞÕâÒ»ÖÖ£¬¿¼
-// ÂÇµ½ÕâÒ»ÖÖ²¢²»ĞèÒª°ÑÎÄ¼şÔØÈë¾Í¿ÉÒÔ²é³ö£¬Ëù
-// ÒÔÕâÀï¿ÉÒÔ¼òµ¥µÄÍ¨¹ı sscanf & filter_array
-// À´´¦ÀíÓÃ»§µÄ autoload ÁĞ±í£¬ ¹ıÂËµô /data/
-// Ä¿Â¼ÏÂµÄÎÄ¼ş¡£
+// ç©å®¶è‡ªé€ çš„ç‰©å“ï¼Œè€ƒæ…®åˆ°ç©å®¶çš„ ID å¯èƒ½æ”¹è®Šäº†ï¼Œ
+// å¦‚æœç¹¼çºŒè¼‰å…¥å‹¢å¿…å½±éŸ¿å…¶ä»–çš„ç©å®¶ï¼Œæ‰€ä»¥å¿…é ˆåˆª
+// é™¤ autoloadã€‚ ç¾åœ¨çœ‹ä¾†ï¼Œä¼¼ä¹åªæœ‰é€™ä¸€ç¨®ï¼Œè€ƒ
+// æ…®åˆ°é€™ä¸€ç¨®ä¸¦ä¸éœ€è¦æŠŠæ–‡ä»¶è¼‰å…¥å°±å¯ä»¥æŸ¥å‡ºï¼Œæ‰€
+// ä»¥é€™è£¡å¯ä»¥ç°¡å–®çš„é€šé sscanf & filter_array
+// ä¾†è™•ç†ç”¨æˆ¶çš„ autoload åˆ—è¡¨ï¼Œ éæ¿¾æ‰ /data/
+// ç›®éŒ„ä¸‹çš„æ–‡ä»¶ã€‚
 void transfer_autoload(object user, string card_file)
 {
         string *autoload;
@@ -297,7 +297,7 @@ int do_merge(string arg)
         int     ok;
 
         if (arg != "dbase")
-                return notify_fail("ÄãÒª²¢ÈëÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦ä¸¦å…¥ä»€éº¼ï¼Ÿ\n");
 
         foreach (key in keys(save_dbase))
         {
@@ -352,12 +352,12 @@ int do_batch()
 
         user_list = get_user_list(save_dir);
 
-        write(WHT "¿ªÊ¼Ç¨ÒÆÓÃ»§Êı¾İ...\n\n" NOR);
+        write(WHT "é–‹å§‹é·ç§»ç”¨æˆ¶æ•¸æ“š...\n\n" NOR);
         
         i = 0;
         foreach (user in user_list)
         {
-                /* ¿ªÊ¼×ª»»µÄÈÕÖ¾
+                /* é–‹å§‹è½‰æ›çš„æ—¥å¿—
                 for (i = 1; i < LOG_LEVEL + 1; i++)
                         LOG(i, "Start transfering (" + user + ")'s data...\n");
                  */
@@ -372,16 +372,16 @@ int do_batch()
                 else write(sprintf("%-15s: " WHT "Failed" NOR "\n", user));
         }
         
-        write(WHT "\nÇ¨ÒÆÓÃ»§Êı¾İÍê³É£¬¹² " + sizeof(user_list) + 
-              " ÃûÓÃ»§£¬³É¹¦Ç¨ÒÆ " + i + " ÃûÓÃ»§¡£\n" NOR);
+        write(WHT "\né·ç§»ç”¨æˆ¶æ•¸æ“šå®Œæˆï¼Œå…± " + sizeof(user_list) + 
+              " åç”¨æˆ¶ï¼ŒæˆåŠŸé·ç§» " + i + " åç”¨æˆ¶ã€‚\n" NOR);
         return 1;
 }
 
-// ÕâÁ½¸ö¶¨ÒåÊÇÎªÁË¼ò»¯´úÂë
+// é€™å…©å€‹å®šç¾©æ˜¯ç‚ºäº†ç°¡åŒ–ä»£ç¢¼
 #define user_file(x)    sprintf("%suser/%c/%s.o", save_dir, x[0], x)
 #define login_file(x)   sprintf("%slogin/%c/%s.o", save_dir, x[0], x)
 
-// ×ª»»Ö¸¶¨µÄÓÃ»§
+// è½‰æ›æŒ‡å®šçš„ç”¨æˆ¶
 int transfer_user(string arg)
 {
         object  user;
@@ -407,7 +407,7 @@ int transfer_user(string arg)
 
         int     is_ok;
 
-        // ÕÒµ½¾ÉµÄÓÃ»§ÎÄ¼ş
+        // æ‰¾åˆ°èˆŠçš„ç”¨æˆ¶æ–‡ä»¶
 
         login_from = login_file(arg);
         user_from = user_file(arg);
@@ -419,7 +419,7 @@ int transfer_user(string arg)
                 return 0;
         }
 
-        // ¸´ÖÆÓÃ»§ÎÄ¼şµ½ DATA_DIR
+        // å¾©åˆ¶ç”¨æˆ¶æ–‡ä»¶åˆ° DATA_DIR
 
         file = assure_user_file(arg, 0);
         if (! file)
@@ -446,7 +446,7 @@ int transfer_user(string arg)
 
         if (uid != arg)
         {
-                // ĞŞ¸Ä LOGIN_OB ºÍ USER_OB µÄ ID
+                // ä¿®æ”¹ LOGIN_OB å’Œ USER_OB çš„ ID
                 if (objectp(link = user->query_temp("link_ob")))
                         link->set("id", uid);
         
@@ -455,20 +455,20 @@ int transfer_user(string arg)
                         uid + ").\n");
         }
 
-        // Ìí¼ÓĞÕÃû¶ÔÓ¦£¬ÖĞÎÄĞÕÃûµÄÀ×Í¬¾ÍËãÁË°É¡£
+        // æ·»åŠ å§“åå°æ‡‰ï¼Œä¸­æ–‡å§“åçš„é›·åŒå°±ç®—äº†å§ã€‚
         NAME_D->map_name(user->name(), uid);
 
-        // ×ª»»·¿ÎİÎª½¨·¿¿¨
+        // è½‰æ›æˆ¿å±‹ç‚ºå»ºæˆ¿å¡
 
-        // ×¢ÒâÍæ¼ÒÊÖÀïµÄÔ¿³×ÒªÊÕ×ß£¬µ«ÊÇ¿¼ÂÇµ½ËùÓĞµÄ
-        // autoload ÎïÆ·£¬ ³ıÁËÒ»Ğ©ÌØÊâÇé¿öÍâ¶¼ÒªÇå³ı£¬
-        // ËùÒÔÕâÀïÔİ²»¿¼ÂÇ¡£
+        // æ³¨æ„ç©å®¶æ‰‹è£¡çš„é‘°åŒ™è¦æ”¶èµ°ï¼Œä½†æ˜¯è€ƒæ…®åˆ°æ‰€æœ‰çš„
+        // autoload ç‰©å“ï¼Œ é™¤äº†ä¸€äº›ç‰¹æ®Šæƒ…æ³å¤–éƒ½è¦æ¸…é™¤ï¼Œ
+        // æ‰€ä»¥é€™è£¡æš«ä¸è€ƒæ…®ã€‚
 
         switch (user->query("private_room/type"))
         {
-        case "ÅÌÁú¾Ó" : card_file = "/d/room/obj/ultracard"; break;
-        case "²Êºç¾Ó" : card_file = "/d/room/obj/super"; break;
-        case "¶ÀÀÖ¾Ó" : card_file = "/d/room/obj/card"; break;
+        case "ç›¤é¾å±…" : card_file = "/d/room/obj/ultracard"; break;
+        case "å½©è™¹å±…" : card_file = "/d/room/obj/super"; break;
+        case "ç¨æ¨‚å±…" : card_file = "/d/room/obj/card"; break;
         default : card_file = 0;
         }
 
@@ -480,7 +480,7 @@ int transfer_user(string arg)
                 LOG(3, "User (" + arg + ") get a free card.\n");
         }
 
-        // É¾³ı½áÒå¡¢Í¬ÃË¹ØÏµ
+        // åˆªé™¤çµç¾©ã€åŒç›Ÿé—œç³»
         if (user->query("brothers"))
         {
                 user->delete("brothers");
@@ -493,23 +493,23 @@ int transfer_user(string arg)
                 LOG(2, "Deleted (" + arg + ")'s league relation.\n");
         }
 
-        // É¾³ı°ïÅÉ
+        // åˆªé™¤å¹«æ´¾
         user->delete("party");
 
         // ...on 08/01 21:35.
 
-        // È·ÈÏ»éÒö¹ØÏµ£¬¿¼ÂÇµ½ÅäÅ¼µÄ ID ÓĞ¿ÉÄÜ±ä»¯£¬
-        // ËùÒÔÕâÀïÒªÈ¡µÃÒ»¸öÅäÅ¼Î¨Ò»¿ÉÄÜµÄ ID£¬ È·
-        // ±£´ËÓÃ»§µÄ»éÒö¹ØÏµ²»³öÏÖÎÊÌâ£¬µ«ÎÊÌâÔÚÓÚ£¬
-        // ÌÈÈôÔÚÑ°ÕÒÕâ¸öÅäÅ¼Î¨Ò»¿ÉÄÜµÄ ID Ê±£¬¸ÃÅä
-        // Å¼µÄÎÄ¼şÒÑ¾­×ªÒÆµ½ÁË /data/ ÏÂÄØ£¿¾Í»áÅª
-        // ºıÍ¿ÁË£¬Òò´Ë£¬¶ÔÓÚÒÑ¾­×ªÒÆ¹ıµÄ£¬ÒªĞŞ¸ÄÔ´
-        // Ä¿Â¼ÄÚµÄÎÄ¼şÃû¡£
+        // ç¢ºèªå©šå§»é—œç³»ï¼Œè€ƒæ…®åˆ°é…å¶çš„ ID æœ‰å¯èƒ½è®ŠåŒ–ï¼Œ
+        // æ‰€ä»¥é€™è£¡è¦å–å¾—ä¸€å€‹é…å¶å”¯ä¸€å¯èƒ½çš„ IDï¼Œ ç¢º
+        // ä¿æ­¤ç”¨æˆ¶çš„å©šå§»é—œç³»ä¸å‡ºç¾å•é¡Œï¼Œä½†å•é¡Œåœ¨äºï¼Œ
+        // å€˜è‹¥åœ¨å°‹æ‰¾é€™å€‹é…å¶å”¯ä¸€å¯èƒ½çš„ ID æ™‚ï¼Œè©²é…
+        // å¶çš„æ–‡ä»¶å·²ç¶“è½‰ç§»åˆ°äº† /data/ ä¸‹å‘¢ï¼Ÿå°±æœƒå¼„
+        // ç³Šå¡—äº†ï¼Œå› æ­¤ï¼Œå°äºå·²ç¶“è½‰ç§»éçš„ï¼Œè¦ä¿®æ”¹æº
+        // ç›®éŒ„å…§çš„æ–‡ä»¶åã€‚
         couple_id = user->query("couple/id");
         
         if (stringp(couple_id))
         {
-                // ¸Ä±äÅäÅ¼Ãû×Ö
+                // æ”¹è®Šé…å¶åå­—
                 couple_file = assure_user_file(couple_id, 1);
                 couple_id = couple_file["uid"];
 
@@ -518,7 +518,7 @@ int transfer_user(string arg)
                 LOG(3, "User (" + arg + ")'s couple/id set to " + 
                        couple_id + ".\n");
                 
-                // àÅ£¬Òª×Ô¼º±£¹ÜºÃ×Ô¼ºµÄ½á»é½äÖ¸
+                // å—¯ï¼Œè¦è‡ªå·±ä¿ç®¡å¥½è‡ªå·±çš„çµå©šæˆ’æŒ‡
                 if (user->query("can_summon/wedding ring"))
                 {
                         ring_file = sprintf("%sitem/ring/%s.c", DATA_DIR, uid);
@@ -533,8 +533,8 @@ int transfer_user(string arg)
                                ring_file + ".\n");
                 }
 
-                // ´ÓÔ­À´µÄÊı¾İÖĞ»ñµÃ½äÖ¸µÄ´æÅÌĞÅ
-                // Ï¢£¬µ¼Èëµ½ DBASE_D ÖĞ¡£
+                // å¾åŸä¾†çš„æ•¸æ“šä¸­ç²å¾—æˆ’æŒ‡çš„å­˜ç›¤ä¿¡
+                // æ¯ï¼Œå°å…¥åˆ° DBASE_D ä¸­ã€‚
                 ring_file = sprintf("%sitem/ring/%s", DATA_DIR, arg);
                 item_data = query_object_data(ring_file);
 
@@ -550,25 +550,25 @@ int transfer_user(string arg)
                 }
         }
 
-        // µ¼Èë×ÔÔìÎïÆ·
+        // å°å…¥è‡ªé€ ç‰©å“
 
-        // »ñµÃÔ­À´µÄ×ÔÔìÎïÆ·ÁĞ±í
+        // ç²å¾—åŸä¾†çš„è‡ªé€ ç‰©å“åˆ—è¡¨
         item_list = get_dir(sprintf("%sitem/%c/%s-*.c", save_dir, arg[0], arg));
 
         if (arrayp(item_list) && sizeof(item_list))
         {
                 foreach (item_name in item_list)
                 {
-                        // ÒªÈ¥µôºóÃæµÄ .c ×ÖÑù
+                        // è¦å»æ‰å¾Œé¢çš„ .c å­—æ¨£
                         item_file = sprintf("%sitem/%c/%s", DATA_DIR, arg[0], item_name[0..<3]);
                         item_data = query_object_data(item_file);
 
-                        // »ñµÃÎïÆ·µÄ¾ßÌåÃû³Æ
+                        // ç²å¾—ç‰©å“çš„å…·é«”åç¨±
                         sscanf(item_name, arg + "-%s.c", item_name);
-                        // Éú³ÉĞÂµÄÎïÆ·ÎÄ¼şÃû
+                        // ç”Ÿæˆæ–°çš„ç‰©å“æ–‡ä»¶å
                         item_file = sprintf("%sitem/%c/%s-%s.c", DATA_DIR, uid[0], uid,
                                             item_name);
-                        // ¸´ÖÆÎÄ¼ş
+                        // å¾©åˆ¶æ–‡ä»¶
                         is_ok = cp(sprintf("%sitem/%c/%s-%s.c", save_dir, arg[0], arg, item_name), 
                                    item_file);
 
@@ -578,8 +578,8 @@ int transfer_user(string arg)
                                        ").\n");
                         } else
                         {
-                                // ½«ÎÄ¼şÖĞÈ«²¿µÄÔ­À´µÄÓÃ»§ ID
-                                // ×ÖÑùÈ«²¿Ìæ»»ÎªĞÂµÄ
+                                // å°‡æ–‡ä»¶ä¸­å…¨éƒ¨çš„åŸä¾†çš„ç”¨æˆ¶ ID
+                                // å­—æ¨£å…¨éƒ¨æ›¿æ›ç‚ºæ–°çš„
                                 if (arg != uid)
                                 {
                                         file_content = read_file(item_file);
@@ -590,14 +590,14 @@ int transfer_user(string arg)
         
                                 if (item_data)
                                 {
-                                        // ĞŞ¸Ä "user" ÊôĞÔÒÔÊÊÓ¦ĞÂµÄ ID
+                                        // ä¿®æ”¹ "user" å±¬æ€§ä»¥é©æ‡‰æ–°çš„ ID
                                         item_data["user"] = sprintf("%s(%s)", user->name(), uid);
         
-                                        // ½«Ô­À´µÄÎïÆ·´æÅÌĞÅÏ¢µ¼Èë DBASE_D
+                                        // å°‡åŸä¾†çš„ç‰©å“å­˜ç›¤ä¿¡æ¯å°å…¥ DBASE_D
                                         is_ok = DBASE_D->set_object_data(item_file, item_data);
                                 }
         
-                                // ¸üĞÂÓÃ»§ÉíÉÏµÄÎïÆ·ÁĞ±í
+                                // æ›´æ–°ç”¨æˆ¶èº«ä¸Šçš„ç‰©å“åˆ—è¡¨
                                 user->set("can_summon/" + item_name, item_file);
 
                                 LOG(3, "Item " + item_name + " of (" + arg + ") successfully "
@@ -605,15 +605,15 @@ int transfer_user(string arg)
                         }
                 }
         }
-        // ×ª»»ÓÃ»§µÄ autoload ĞÅÏ¢£¬È¥µôÎŞ·¨¼ÌĞø
-        // Ê¹ÓÃµÄ£¬Èç¹û»ñµÃÁË¿¨Æ¬£¬ÔòÔö¼Ó¿¨Æ¬µÄÔØ
-        // ÈëĞÅÏ¢
+        // è½‰æ›ç”¨æˆ¶çš„ autoload ä¿¡æ¯ï¼Œå»æ‰ç„¡æ³•ç¹¼çºŒ
+        // ä½¿ç”¨çš„ï¼Œå¦‚æœç²å¾—äº†å¡ç‰‡ï¼Œå‰‡å¢åŠ å¡ç‰‡çš„è¼‰
+        // å…¥ä¿¡æ¯
         transfer_autoload(user, card_file);
 
-        // raw : 1£¬¸ø user ´æÒ»ÏÂÅÌ
+        // raw : 1ï¼Œçµ¦ user å­˜ä¸€ä¸‹ç›¤
         global_destruct_player(user, 1);
 
-        // ĞŞ¸ÄÎÄ¼şÃû£¬±íÊ¾´ËÓÃ»§ÒÑ¾­×ª»»
+        // ä¿®æ”¹æ–‡ä»¶åï¼Œè¡¨ç¤ºæ­¤ç”¨æˆ¶å·²ç¶“è½‰æ›
         rename(login_file(arg), login_file(arg) + ".bak");
         rename(user_file(arg), user_file(arg) + ".bak");
 

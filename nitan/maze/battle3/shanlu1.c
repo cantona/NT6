@@ -3,10 +3,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "É½µÀ");
+        set("short", "å±±é“");
         set("long", @LONG
-ÕâÀïÒÑ¾­¿´²»µ½ÏåÑôÁË£¬ÂúÑÛÍûÈ¥£¬¾¡ÊÇÇúÇúÕÛÕÛµÄÉ½µÀ£¬´ó¾ü
-ĞĞµ½´Ë´¦£¬ÈËĞó¶¼¿ªÊ¼ÓĞĞ©³ÔÁ¦ÆğÀ´¡£
+é€™è£¡å·²ç¶“çœ‹ä¸åˆ°è¥„é™½äº†ï¼Œæ»¿çœ¼æœ›å»ï¼Œç›¡æ˜¯æ›²æ›²æŠ˜æŠ˜çš„å±±é“ï¼Œå¤§è»
+è¡Œåˆ°æ­¤è™•ï¼Œäººç•œéƒ½é–‹å§‹æœ‰äº›åƒåŠ›èµ·ä¾†ã€‚
 LONG );
         set("outdoors", "xiangyang");
         set("no_magic",1);
@@ -30,7 +30,7 @@ void init()
         {
             me->move(__DIR__"wsling");
             delete_temp("yidao", me);
-            tell_object(me,YEL"Ò»Â··ç³¾ÆÍÆÍÖ®ºó£¬ÎÚÊ¯ÁëÒÑ¾­½üÔÚÑÛÇ°ÁË......\n"NOR);
+            tell_object(me,YEL"ä¸€è·¯é¢¨å¡µåƒ•åƒ•ä¹‹å¾Œï¼ŒçƒçŸ³å¶ºå·²ç¶“è¿‘åœ¨çœ¼å‰äº†......\n"NOR);
             return;
         }
 
@@ -38,11 +38,11 @@ void init()
         {
             me->move(__DIR__"shanlu");
             delete_temp("yidao", me);
-            tell_object(me,YEL"Ò»Â··ç³¾ÆÍÆÍÖ®ºó£¬´óËÎ¾üÓªÒÑ¾­½üÔÚÑÛÇ°ÁË......\n"NOR);
+            tell_object(me,YEL"ä¸€è·¯é¢¨å¡µåƒ•åƒ•ä¹‹å¾Œï¼Œå¤§å®‹è»ç‡Ÿå·²ç¶“è¿‘åœ¨çœ¼å‰äº†......\n"NOR);
             return;
         }
 
-        tell_object(me,YEL"ÄãÖ¸»Ó×Å´ó¾ü£¬ĞĞ½øÔÚÇúÕÛµÄÉ½µÀÉÏ......\n"NOR);
+        tell_object(me,YEL"ä½ æŒ‡æ®è‘—å¤§è»ï¼Œè¡Œé€²åœ¨æ›²æŠ˜çš„å±±é“ä¸Š......\n"NOR);
 }
 
 int valid_leave(object me,string dir)

@@ -12,14 +12,14 @@ int query_mine_value();
 
 void create(int arg)
 {
-        set_name("¸Ö¶§", ({ "steel ingot" }) );
+        set_name("é‹¼éŒ ", ({ "steel ingot" }) );
         set_weight(0);
 
         if(intp(arg) && (arg >= 100))
                 set_weight(arg);
 
         set("value", evaluate((: query_mine_value :),this_object()) );
-        set("unit", "¿é");
+        set("unit", "å¡Š");
         set("long", evaluate((: query_long :), this_object()));
 }
 
@@ -38,20 +38,20 @@ string query_selling_msg()
         int w = query_weight();
 
         if(w < 100)
-                return "Ò»Ç®²»Öµ";
+                return "ä¸€éŒ¢ä¸å€¼";
         else
-                return sprintf("%d Á½ÖØ", w/100);
+                return sprintf("%d å…©é‡", w/100);
 }
 
 string query_long()
 {
         int w = query_weight();
-        string l = "ÕâÊÇÒ»¿é¸Ö¶§£¬";
+        string l = "é€™æ˜¯ä¸€å¡Šé‹¼éŒ ï¼Œ";
 
         if(w < 100)
-                l += "¿´ÆðÀ´\nÒ»Ç®²»Öµ¡£\n";
+                l += "çœ‹èµ·ä¾†\nä¸€éŒ¢ä¸å€¼ã€‚\n";
         else
-                l += sprintf("´óÔ¼\nÓÐ %d Á½ÖØ¡£\n", w/100);
+                l += sprintf("å¤§ç´„\næœ‰ %d å…©é‡ã€‚\n", w/100);
 
         return l;
 }

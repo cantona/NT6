@@ -12,7 +12,7 @@ int exert(object me, object target)
 
         if( query("neili", me)<300 )
         {
-                write("ÄãµÄÄÚÁ¦²»×ã£¬ÎÞ·¨ÔËÂúÒ»¸öÖÜÌì¡£\n");
+                write("ä½ çš„å…§åŠ›ä¸è¶³ï¼Œç„¡æ³•é‹æ»¿ä¸€å€‹å‘¨å¤©ã€‚\n");
                 return 1;
         }
 
@@ -20,19 +20,19 @@ int exert(object me, object target)
 
         if (me == target)
         {
-                message_vision(HIW "$N" HIW "ÉîÎüÒ»¿ÚÆø£¬ÓÖ»º»ºµÄÍÂÁË³öÀ´¡£\n" NOR, me);
-                tell_object(me, YEL "ÄãÄ¬ÔË" + force_name +
-                            "£¬¿ªÊ¼ÅÅ³ýÉíÌåÖÐµÄÒì³£Ö¢×´¡£\n" NOR);
+                message_vision(HIW "$N" HIW "æ·±å¸ä¸€å£æ°£ï¼Œåˆç·©ç·©çš„åäº†å‡ºä¾†ã€‚\n" NOR, me);
+                tell_object(me, YEL "ä½ é»˜é‹" + force_name +
+                            "ï¼Œé–‹å§‹æŽ’é™¤èº«é«”ä¸­çš„ç•°å¸¸ç—‡ç‹€ã€‚\n" NOR);
                  addn("neili", -100, me);
         } else
         {
-                message_vision(HIW "$N" HIW "ÉîÎüÒ»¿ÚÆø£¬½«ÊÖÕÆÕ³µ½$n"
-                               HIW "µÄ±³ºó¡£\n" NOR,
+                message_vision(HIW "$N" HIW "æ·±å¸ä¸€å£æ°£ï¼Œå°‡æ‰‹æŽŒç²˜åˆ°$n"
+                               HIW "çš„èƒŒå¾Œã€‚\n" NOR,
                                me, target);
-                tell_object(me, YEL "ÄãÄ¬ÔË" + force_name + "£¬¿ªÊ¼°ïÖú" +
-                            target->name() + "ÅÅ³ýÉíÌåÖÐµÄÒì³£Ö¢×´¡£\n" NOR);
+                tell_object(me, YEL "ä½ é»˜é‹" + force_name + "ï¼Œé–‹å§‹å¹«åŠ©" +
+                            target->name() + "æŽ’é™¤èº«é«”ä¸­çš„ç•°å¸¸ç—‡ç‹€ã€‚\n" NOR);
                 tell_object(target, YEL + me->name() +
-                            "ÕýÔÚÔË¹¦°ïÖúÄãÅÅ³ýÉíÌåÖÐµÄÒì³£Ö¢×´¡£\n" NOR);
+                            "æ­£åœ¨é‹åŠŸå¹«åŠ©ä½ æŽ’é™¤èº«é«”ä¸­çš„ç•°å¸¸ç—‡ç‹€ã€‚\n" NOR);
                 addn("neili", -250, me);
         }
 
@@ -54,20 +54,20 @@ int exert(object me, object target)
         
                         if (me == target)
                         {
-                                tell_object(me, WHT "Äãµ÷Ï¢Íê±Ï£¬½«ÄÚÁ¦ÊÕ»Øµ¤"
-                                            "Ìï¡£\n" NOR);
+                                tell_object(me, WHT "ä½ èª¿æ¯å®Œç•¢ï¼Œå°‡å…§åŠ›æ”¶å›žä¸¹"
+                                            "ç”°ã€‚\n" NOR);
                                 me->start_busy(1 + random(2));
                         } else
                         {
-                                tell_object(me, WHT "Äãµ÷Ï¢Íê±Ï£¬½«ÄÚÁ¦ÊÕ»Ø"
-                                            "µ¤Ìï¡£\n" NOR);
-                                tell_object(target, WHT "Äã¾õµÃÄÚÏ¢Ò»³©£¬¿´À´ÊÇ" +
-                                            me->name() + "ÊÕ¹¦ÁË¡£\n");
+                                tell_object(me, WHT "ä½ èª¿æ¯å®Œç•¢ï¼Œå°‡å…§åŠ›æ”¶å›ž"
+                                            "ä¸¹ç”°ã€‚\n" NOR);
+                                tell_object(target, WHT "ä½ è¦ºå¾—å…§æ¯ä¸€æš¢ï¼Œçœ‹ä¾†æ˜¯" +
+                                            me->name() + "æ”¶åŠŸäº†ã€‚\n");
                                 me->start_busy(2 + random(3));
                                 if (! target->is_busy())
                                         target->start_busy(1 + random(2));
-                                message_vision(WHT "$N½«ÊÖÕÆ´Ó$n±³ºóÊÕÁË»Ø"
-                                               "À´¡£\n" NOR, me, target);
+                                message_vision(WHT "$Nå°‡æ‰‹æŽŒå¾ž$nèƒŒå¾Œæ”¶äº†å›ž"
+                                               "ä¾†ã€‚\n" NOR, me, target);
                         }
                         return 1;
                 }
@@ -77,18 +77,18 @@ int exert(object me, object target)
         {
                 if (me == target)
                 {
-                        tell_object(me, MAG "Äãµ÷Ï¢Á¼¾Ã£¬Ã»ÓÐÒ»µãÐ§¹û¡£\n" NOR);
-                        message_vision(HIG "$N" HIG "Á³É«±äÁË±ä£¬ÓÐÐ©²»"
-                                       "Ì«×ÔÈ»¡£\n" NOR, me);
+                        tell_object(me, MAG "ä½ èª¿æ¯è‰¯ä¹…ï¼Œæ²’æœ‰ä¸€é»žæ•ˆæžœã€‚\n" NOR);
+                        message_vision(HIG "$N" HIG "è‡‰è‰²è®Šäº†è®Šï¼Œæœ‰äº›ä¸"
+                                       "å¤ªè‡ªç„¶ã€‚\n" NOR, me);
                         me->start_busy(3 + random(3));
                 } else
                 {
-                        tell_object(me, MAG "ÄãÔË¹¦Á¼¾Ã£¬Ã»ÄÜ·¢»Ó°ëµã×÷ÓÃ¡£\n" NOR);
-                        tell_object(target, MAG "Äã¾õµÃÄÚÏ¢Ò»ÕóÎÉÂÒ£¬Ëµ²»³ö"
-                                            "µÄÄÑÊÜ¡£\n¿´À´" + me->name() +
-                                            "ÊÇ²»ÄÜ¸øÓèÄã°ïÖúÁË¡£\n" NOR);
-                        message_vision(HIG "$N½«ÊÖÕÆ´Ó$n±³ºóÊÕÁË»ØÀ´£¬Á³É«"
-                                           "Ëµ²»³öµÄÄÑ¿´¡£\n" NOR,
+                        tell_object(me, MAG "ä½ é‹åŠŸè‰¯ä¹…ï¼Œæ²’èƒ½ç™¼æ®åŠé»žä½œç”¨ã€‚\n" NOR);
+                        tell_object(target, MAG "ä½ è¦ºå¾—å…§æ¯ä¸€é™£ç´Šäº‚ï¼Œèªªä¸å‡º"
+                                            "çš„é›£å—ã€‚\nçœ‹ä¾†" + me->name() +
+                                            "æ˜¯ä¸èƒ½çµ¦äºˆä½ å¹«åŠ©äº†ã€‚\n" NOR);
+                        message_vision(HIG "$Nå°‡æ‰‹æŽŒå¾ž$nèƒŒå¾Œæ”¶äº†å›žä¾†ï¼Œè‡‰è‰²"
+                                           "èªªä¸å‡ºçš„é›£çœ‹ã€‚\n" NOR,
                                            me, target);
                         me->start_busy(6 + random(6));
                         if (! target->is_busy())
@@ -98,19 +98,19 @@ int exert(object me, object target)
         {
                 if (me == target)
                 {
-                        tell_object(me, "½á¹ûÄãÃ»·¢ÏÖ×Ô¼ºÓÐÈÎºÎÒì³£¡£\n");
-                        message_vision(WHT "$N" WHT "Ã¼½ÇÎ¢Î¢Ò»¶¯£¬Ëæ¼´»Ö"
-                                       "¸´Õý³£¡£\n" NOR, me);
+                        tell_object(me, "çµæžœä½ æ²’ç™¼ç¾è‡ªå·±æœ‰ä»»ä½•ç•°å¸¸ã€‚\n");
+                        message_vision(WHT "$N" WHT "çœ‰è§’å¾®å¾®ä¸€å‹•ï¼Œéš¨å³æ¢"
+                                       "å¾©æ­£å¸¸ã€‚\n" NOR, me);
                         me->start_busy(1);
                 } else
                 {
-                        tell_object(me, "½á¹ûÄãÃ»·¢ÏÖ" + target->name() +
-                                   "ÓÐÈÎºÎÒì³£¡£\n");
-                        tell_object(target, "Äã¾õµÃÄÚÏ¢Ò»³©£¬¿´À´ÊÇ" +
-                                    me->name() + "ÊÕ¹¦ÁË£¬´ó¸ÅÄã±¾À´Ã»ÓÐÊ²"
-                                    "Ã´Òì³£°É¡£\n");
-                        message_vision(WHT "$N" WHT "½«ÊÖÕÆ´Ó$n±³ºóÊÕÁË"
-                                       "»ØÀ´¡£\n" NOR, me, target);
+                        tell_object(me, "çµæžœä½ æ²’ç™¼ç¾" + target->name() +
+                                   "æœ‰ä»»ä½•ç•°å¸¸ã€‚\n");
+                        tell_object(target, "ä½ è¦ºå¾—å…§æ¯ä¸€æš¢ï¼Œçœ‹ä¾†æ˜¯" +
+                                    me->name() + "æ”¶åŠŸäº†ï¼Œå¤§æ¦‚ä½ æœ¬ä¾†æ²’æœ‰ä»€"
+                                    "éº¼ç•°å¸¸å§ã€‚\n");
+                        message_vision(WHT "$N" WHT "å°‡æ‰‹æŽŒå¾ž$nèƒŒå¾Œæ”¶äº†"
+                                       "å›žä¾†ã€‚\n" NOR, me, target);
                         me->start_busy(2);
                         if (! target->is_busy())
                                 target->start_busy(1);

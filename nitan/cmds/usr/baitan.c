@@ -13,37 +13,37 @@ int main(object me, string arg)
         where = environment(me);
 
         if( !query("is_vendor", me) )
-                return notify_fail("Ö»ÓĞ´ÓÊÂÉÌÒµµÄÈË²ÅÄÜ°ÚÌ¯¡£\n");
+                return notify_fail("åªæœ‰å¾äº‹å•†æ¥­çš„äººæ‰èƒ½æ“ºæ”¤ã€‚\n");
 
         if (! present("shang ling", me))
-                return notify_fail("ÄãµÄÉÌÁî²»ÔÚÉíÉÏ£¬Èç½ñÊÀµÀÂÒ£¬Ğ¡ĞÄÎªÃî¡£\n");
+                return notify_fail("ä½ çš„å•†ä»¤ä¸åœ¨èº«ä¸Šï¼Œå¦‚ä»Šä¸–é“äº‚ï¼Œå°å¿ƒç‚ºå¦™ã€‚\n");
 
         if (me->is_fighting())
-                return notify_fail("Äã»¹ÊÇºÃºÃ´òÄãµÄ¼Ü°É¡£\n");
+                return notify_fail("ä½ é‚„æ˜¯å¥½å¥½æ‰“ä½ çš„æ¶å§ã€‚\n");
 
         if( query_temp("on_baitan", me) )
-                return notify_fail("ÄãÏÖÔÚÒÑ¾­Õ¼ÁËÒ»¸öÌ¯Î»£¬»¹ÊÇÊÊ¿É¶øÖ¹°É¡£\n");
+                return notify_fail("ä½ ç¾åœ¨å·²ç¶“ä½”äº†ä¸€å€‹æ”¤ä½ï¼Œé‚„æ˜¯é©å¯è€Œæ­¢å§ã€‚\n");
 
         if( me->is_busy() || query_temp("pending/deriving", me) )
-                return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ£¬Ã»¹¦·ò°ÚÌ¯Éèµã¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£å¿™è‘—å‘¢ï¼Œæ²’åŠŸå¤«æ“ºæ”¤è¨­é»ã€‚\n");
 
         if (me->query_condition("killer"))
-                return notify_fail("ÏÖÔÚ¹Ù¸®Õıµ½´¦²éÄãÄØ£¬ÄÑµÃ»¹ÓĞĞÄÇé°ÚÌ¯£¿\n");
+                return notify_fail("ç¾åœ¨å®˜åºœæ­£åˆ°è™•æŸ¥ä½ å‘¢ï¼Œé›£å¾—é‚„æœ‰å¿ƒæƒ…æ“ºæ”¤ï¼Ÿ\n");
 
         if( query("no_trade", where) )
-                return notify_fail("ÕâÀï³£ÓĞ¹Ù±øÀ´Ñ²Âß£¬×îºÃ»»¸öµØ·½×öÉúÒâ¡£\n");
+                return notify_fail("é€™è£¡å¸¸æœ‰å®˜å…µä¾†å·¡é‚ï¼Œæœ€å¥½æ›å€‹åœ°æ–¹åšç”Ÿæ„ã€‚\n");
 
         if( query("no_fight", where) && !query("can_trade", where) )
-                return notify_fail("Õâ¸öµØ·½¹ıÓÚàĞÔÓ£¬»¹ÊÇ»»¸öµØ·½×öÉúÒâ°É¡£\n");
+                return notify_fail("é€™å€‹åœ°æ–¹éäºå˜ˆé›œï¼Œé‚„æ˜¯æ›å€‹åœ°æ–¹åšç”Ÿæ„å§ã€‚\n");
 
-        message_vision(WHT "$N" WHT "Ñ°ÁË¿é¿ÕµØ£¬Ò»Æ¨¹É×øÁËÏÂÀ´£¬ËæºóÌÍ"
-                       "³öÒ»¿é²¼Ì¯¿ªÔÚµØ¡£\n" NOR, me);
-        tell_object(me, HIC "ÏÖÔÚÄã¿ÉÒÔ°ÚÉÏ(" HIW "stock" HIC ")»õÎï»òÊÇ"
-                        "ÊÕÆğ(" HIW "unstock" HIC ")Ä³ÖÖ»õÎï¡£\n" NOR);
+        message_vision(WHT "$N" WHT "å°‹äº†å¡Šç©ºåœ°ï¼Œä¸€å±è‚¡åäº†ä¸‹ä¾†ï¼Œéš¨å¾Œæ"
+                       "å‡ºä¸€å¡Šå¸ƒæ”¤é–‹åœ¨åœ°ã€‚\n" NOR, me);
+        tell_object(me, HIC "ç¾åœ¨ä½ å¯ä»¥æ“ºä¸Š(" HIW "stock" HIC ")è²¨ç‰©æˆ–æ˜¯"
+                        "æ”¶èµ·(" HIW "unstock" HIC ")æŸç¨®è²¨ç‰©ã€‚\n" NOR);
 
         set_temp("on_baitan", 1, me);
         delete("vendor_goods", me);
-        me->set_short_desc("ÕıÔÚµØÉÏ°ÚÌ¯¡£");
+        me->set_short_desc("æ­£åœ¨åœ°ä¸Šæ“ºæ”¤ã€‚");
 
         me->start_busy(bind((: call_other, __FILE__, "baitan" :), me),
                        bind((: call_other, __FILE__, "halt_baitan" :), me));
@@ -56,22 +56,22 @@ int baitan(object me)
         {
         case 0:
 
-                message_vision(CYN "$N" CYN "»·¹ËÁËÒ»ÏÂËÄÖÜ£¬Ğ¦ÃĞÃĞ"
-                               "µØÕĞºô×ÅÖÚÈË¡£\n" NOR, me);
+                message_vision(CYN "$N" CYN "ç’°é¡§äº†ä¸€ä¸‹å››å‘¨ï¼Œç¬‘çœ¯çœ¯"
+                               "åœ°æ‹›å‘¼è‘—çœ¾äººã€‚\n" NOR, me);
                 break;
 
         case 1:
-                message_vision(CYN "$N" CYN "ßººÈµÀ£º×ß¹ıÂ·¹ı²»Òª´í"
-                               "¹ı£¬´ó¼Ò¿ìÀ´¿´¿´»õ¡£\n" NOR, me);
+                message_vision(CYN "$N" CYN "å†å–é“ï¼šèµ°éè·¯éä¸è¦éŒ¯"
+                               "éï¼Œå¤§å®¶å¿«ä¾†çœ‹çœ‹è²¨ã€‚\n" NOR, me);
                 break;
 
         case 2:
-                message_vision(CYN "$N" CYN "ßººÈµÀ£º´ó¼ÒÀ´¿´¿´£¬ÎÒ"
-                               "ÕâÀï»õÎïÆëÈ«£¬°üÄúÂúÒâ¡£\n" NOR, me);
+                message_vision(CYN "$N" CYN "å†å–é“ï¼šå¤§å®¶ä¾†çœ‹çœ‹ï¼Œæˆ‘"
+                               "é€™è£¡è²¨ç‰©é½Šå…¨ï¼ŒåŒ…æ‚¨æ»¿æ„ã€‚\n" NOR, me);
                 break;
         case 3:
-                message_vision(CYN "$N" CYN "ßººÈµÀ£ºÀ´À´À´£¬ÏÖÔÚËù"
-                               "ÓĞÎïÆ·¼ú¼Û³öÊÛ£¬±ğ´í¹ı¡£\n" NOR, me);
+                message_vision(CYN "$N" CYN "å†å–é“ï¼šä¾†ä¾†ä¾†ï¼Œç¾åœ¨æ‰€"
+                               "æœ‰ç‰©å“è³¤åƒ¹å‡ºå”®ï¼Œåˆ¥éŒ¯éã€‚\n" NOR, me);
                 break;
         }
 
@@ -80,8 +80,8 @@ int baitan(object me)
 
 int halt_baitan(object me)
 {
-        message_vision(WHT "$N" WHT "ÌáÆğÌ¯²¼µÄËÄ¸ö½Ç£¬°Ñ»õÎïÒ»¹ÉÄÔµÄÊÕÁË"
-                       "ÆğÀ´£¬Õ¾ÆğÉíÀ´¡£\n" NOR, me);
+        message_vision(WHT "$N" WHT "æèµ·æ”¤å¸ƒçš„å››å€‹è§’ï¼ŒæŠŠè²¨ç‰©ä¸€è‚¡è…¦çš„æ”¶äº†"
+                       "èµ·ä¾†ï¼Œç«™èµ·èº«ä¾†ã€‚\n" NOR, me);
 
         delete_temp("on_baitan", me);
         delete("vendor_goods", me);
@@ -92,9 +92,9 @@ int halt_baitan(object me)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : baitan
+æŒ‡ä»¤æ ¼å¼ : baitan
 
-°ÚÌ¯Éèµã£¬¶µÊÛ»õÎï¡£
+æ“ºæ”¤è¨­é»ï¼Œå…œå”®è²¨ç‰©ã€‚
 
 HELP);
         return 1;

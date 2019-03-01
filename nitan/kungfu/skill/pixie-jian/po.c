@@ -1,14 +1,14 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define PO "¡¸" HIW "ÆÆÔª½£ÉÁ" NOR "¡¹"
+#define PO "ã€Œ" HIW "ç ´å…ƒåŠé–ƒ" NOR "ã€"
 
 inherit F_SSERVER;
 
 string final(object me, object target, int damage);
 
-string *finger_name = ({ "×óÊÖÖĞÖ¸", "×óÊÖÎŞÃûÖ¸", "×óÊÖÊ³Ö¸",
-                         "ÓÒÊÖÖĞÖ¸", "ÓÒÊÖÎŞÃûÖ¸", "ÓÒÊÖÊ³Ö¸", }); 
+string *finger_name = ({ "å·¦æ‰‹ä¸­æŒ‡", "å·¦æ‰‹ç„¡åæŒ‡", "å·¦æ‰‹é£ŸæŒ‡",
+                         "å³æ‰‹ä¸­æŒ‡", "å³æ‰‹ç„¡åæŒ‡", "å³æ‰‹é£ŸæŒ‡", }); 
 
 int perform(object me, object target)
 {
@@ -18,47 +18,47 @@ int perform(object me, object target)
         int lvl, ap, dp;
 
         if( userp(me) && !query("can_perform/pixie-jian/po", me) )
-                return notify_fail("ÄãËùÊ¹ÓÃµÄÍâ¹¦ÖĞÃ»ÓĞÕâÖÖ¹¦ÄÜ¡£\n");
+                return notify_fail("ä½ æ‰€ä½¿ç”¨çš„å¤–åŠŸä¸­æ²’æœ‰é€™ç¨®åŠŸèƒ½ã€‚\n");
 
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(PO "Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(PO "åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         weapon=query_temp("weapon", me);
 
         if( weapon && query("skill_type", weapon) != "sword"
             && query("skill_type", weapon) != "pin" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô£¬ÄÑÒÔÊ©Õ¹" PO "¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ï¼Œé›£ä»¥æ–½å±•" PO "ã€‚\n");
 
         if ((int)me->query_skill("pixie-jian", 1) < 180)
-                return notify_fail("ÄãµÄ±ÙĞ°½£·¨²»¹»æµÊì£¬ÄÑÒÔÊ©Õ¹" PO "¡£\n");
+                return notify_fail("ä½ çš„è¾Ÿé‚ªåŠæ³•ä¸å¤ å«»ç†Ÿï¼Œé›£ä»¥æ–½å±•" PO "ã€‚\n");
 
         if( query("max_neili", me)<2600 )
-                return notify_fail("ÄãµÄÄÚÁ¦ĞŞÎª²»×ã£¬ÄÑÒÔÊ©Õ¹" PO "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¿®ç‚ºä¸è¶³ï¼Œé›£ä»¥æ–½å±•" PO "ã€‚\n");
 
         if( query("neili", me)<300 )
-                return notify_fail("ÄãÏÖÔÚµÄÕæÆø²»×ã£¬ÄÑÒÔÊ©Õ¹" PO "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çš„çœŸæ°£ä¸è¶³ï¼Œé›£ä»¥æ–½å±•" PO "ã€‚\n");
 
         if (weapon && me->query_skill_mapped("sword") != "pixie-jian")
-                return notify_fail("ÄãÃ»ÓĞ×¼±¸Ê¹ÓÃ±ÙĞ°½£·¨£¬ÄÑÒÔÊ©Õ¹" PO "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æº–å‚™ä½¿ç”¨è¾Ÿé‚ªåŠæ³•ï¼Œé›£ä»¥æ–½å±•" PO "ã€‚\n");
 
         if (! weapon && me->query_skill_prepared("unarmed") != "pixie-jian")
-                return notify_fail("ÄãÃ»ÓĞ×¼±¸Ê¹ÓÃ±ÙĞ°½£·¨£¬ÄÑÒÔÊ©Õ¹" PO "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æº–å‚™ä½¿ç”¨è¾Ÿé‚ªåŠæ³•ï¼Œé›£ä»¥æ–½å±•" PO "ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
         if( query_temp("no_perform", target) )
-                return notify_fail("¶Ô·½ÏÖÔÚÒÑ¾­ÎŞ·¨¿ØÖÆÕæÆø£¬·Åµ¨¹¥»÷°É¡£\n");
+                return notify_fail("å°æ–¹ç¾åœ¨å·²ç¶“ç„¡æ³•æ§åˆ¶çœŸæ°£ï¼Œæ”¾è†½æ”»æ“Šå§ã€‚\n");
 
         if( query_temp("weapon", me) )
-                name = "ÊÖÖĞ" + weapon->name();
+                name = "æ‰‹ä¸­" + weapon->name();
         else
                 name = finger_name[random(sizeof(finger_name))];
 
-        msg = HIW "$N" HIW "Ò»ÉùÀäºß£¬Ë«íø¼äÍ¸³öÒ»Ë¿º®Æø£¬" + name +
-              HIW "»¯×÷Ç§°Ù¸ùÏàËÆ£¬»Ã³öËÀÍöµÄÉ«²Ê£¡\n" NOR;
+        msg = HIW "$N" HIW "ä¸€è²å†·å“¼ï¼Œé›™çœ¸é–“é€å‡ºä¸€çµ²å¯’æ°£ï¼Œ" + name +
+              HIW "åŒ–ä½œåƒç™¾æ ¹ç›¸ä¼¼ï¼Œå¹»å‡ºæ­»äº¡çš„è‰²å½©ï¼\n" NOR;
 
         ap = me->query_skill("sword") +
              me->query_skill("dodge");
@@ -75,8 +75,8 @@ int perform(object me, object target)
                 addn("neili", -200, me);
         } else
         {
-                msg += CYN "$n" CYN "´ó¾ªÖ®ÏÂÈ«È»ÎŞ·¨ÕĞ¼Ü£¬¼±Ã¦"
-                       "³éÉí¼±ÍËÊı³ß£¬¶ã¿ªÁËÕâÒ»ÕĞ¡£\n" NOR;
+                msg += CYN "$n" CYN "å¤§é©šä¹‹ä¸‹å…¨ç„¶ç„¡æ³•æ‹›æ¶ï¼Œæ€¥å¿™"
+                       "æŠ½èº«æ€¥é€€æ•¸å°ºï¼Œèº²é–‹äº†é€™ä¸€æ‹›ã€‚\n" NOR;
                 me->start_busy(3);
                 addn("neili", -150, me);
         }
@@ -88,9 +88,9 @@ string final(object me, object target, int ap)
 {
         set_temp("no_perform", 1, target);
         call_out("poyuan_end", 10 + random(ap / 30), me, target);
-        return HIR "$n" HIR "Ö»¾õÑÛÇ°º®Ã¢Ò»ÉÁ¶ø¹ı£¬Ëæ¼´È«ÉíÒ»Õó"
-               "´ÌÍ´£¬¼¸¹ÉÑªÖù×ÔÉíÉÏÉä³ö¡£\n$p¶¸È»¼äÒ»ÌáÕæÆø£¬"
-               "¾¹·¢ÏÖÖÜÉíÁ¦µÀ¾¹ËÆ»ÁÉ¢Ò»°ã£¬È«È»ÎŞ·¨¿ØÖÆ¡£\n" NOR;
+        return HIR "$n" HIR "åªè¦ºçœ¼å‰å¯’èŠ’ä¸€é–ƒè€Œéï¼Œéš¨å³å…¨èº«ä¸€é™£"
+               "åˆºç—›ï¼Œå¹¾è‚¡è¡€æŸ±è‡ªèº«ä¸Šå°„å‡ºã€‚\n$pé™¡ç„¶é–“ä¸€æçœŸæ°£ï¼Œ"
+               "ç«Ÿç™¼ç¾å‘¨èº«åŠ›é“ç«Ÿä¼¼æ¸™æ•£ä¸€èˆ¬ï¼Œå…¨ç„¶ç„¡æ³•æ§åˆ¶ã€‚\n" NOR;
 }
 
 void poyuan_end(object me, object target)
@@ -99,12 +99,12 @@ void poyuan_end(object me, object target)
         {
                 if (living(target))
                 {
-                        message_combatd(HIC "$N" HIC "ÉîÉîÎüÈëÒ»¿Ú"
-                                        "Æø£¬Á³É«ÓÉ°××ªºì£¬¿´ÆğÀ´ºÃ"
-                                        "¶àÁË¡£\n" NOR, target);
+                        message_combatd(HIC "$N" HIC "æ·±æ·±å¸å…¥ä¸€å£"
+                                        "æ°£ï¼Œè‡‰è‰²ç”±ç™½è½‰ç´…ï¼Œçœ‹èµ·ä¾†å¥½"
+                                        "å¤šäº†ã€‚\n" NOR, target);
 
-                        tell_object(target, HIY "Äã¸Ğµ½±»ÈÅÂÒµÄÕæÆø"
-                                            "ÂıÂıÆ½¾²ÁËÏÂÀ´¡£\n" NOR);
+                        tell_object(target, HIY "ä½ æ„Ÿåˆ°è¢«æ“¾äº‚çš„çœŸæ°£"
+                                            "æ…¢æ…¢å¹³éœäº†ä¸‹ä¾†ã€‚\n" NOR);
                 }
                 delete_temp("no_perform", target);
         }

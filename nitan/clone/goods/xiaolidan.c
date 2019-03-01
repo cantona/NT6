@@ -4,27 +4,27 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIM "Ïûìåµ¤" NOR, ({ "xiaoli dan", "xiaoli", "dan" }) );
+        set_name(HIM "æ¶ˆæˆ¾ä¸¹" NOR, ({ "xiaoli dan", "xiaoli", "dan" }) );
         set_weight(300);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIM "Ò»¿Å×ÏÉ«µÄ¾«ÖÂÆæµ¤£¬¾ßÓĞ×ÅÉñ»°°ãµÄ¹¦Ğ§£¬´«Ëµ\n"
-                                "³ÔÁËºó¿ÉÒÔÏû³ıÈËÎïµÄìåÆø¡£\n" NOR);
+                set("long", HIM "ä¸€é¡†ç´«è‰²çš„ç²¾è‡´å¥‡ä¸¹ï¼Œå…·æœ‰è‘—ç¥è©±èˆ¬çš„åŠŸæ•ˆï¼Œå‚³èªª\n"
+                                "åƒäº†å¾Œå¯ä»¥æ¶ˆé™¤äººç‰©çš„æˆ¾æ°£ã€‚\n" NOR);
                 set("value", 500000);
-                set("unit", "Á£");
+                set("unit", "ç²’");
                 set("only_do_effect", 1);
         }
 }
 
 int do_effect(object me)
 {
-        message_vision("$NÒ»Ñö²±£¬ÍÌÏÂÁËÒ»Á£" + this_object()->name() +
-                       "¡£\n", me);
+        message_vision("$Nä¸€ä»°è„–ï¼Œåä¸‹äº†ä¸€ç²’" + this_object()->name() +
+                       "ã€‚\n", me);
                        
         set("total_hatred", 0, me);
         
-        write(HIM "ÄãÖ»¾õµÃÁéÌ¨Ò»Æ¬¿ÕÃ÷£¬´¿¾»ÎŞ±È£¬ÄãµÄìåÆøÏû³ıÁË¡£\n" NOR);
+        write(HIM "ä½ åªè¦ºå¾—éˆå°ä¸€ç‰‡ç©ºæ˜ï¼Œç´”å‡ˆç„¡æ¯”ï¼Œä½ çš„æˆ¾æ°£æ¶ˆé™¤äº†ã€‚\n" NOR);
         destruct(this_object());
         return 1;
 }

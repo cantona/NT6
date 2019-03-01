@@ -6,11 +6,11 @@
 inherit ROOM;
 void create()
 {
-        set("short", "ÓÀµÇ");
+        set("short", "æ°¸ç™»");
         set("long", @LONG
-ÕâÀï¾ÍÊÇÎ÷±±µÄ¾üÊÂÖØÕòÓÀµÇ¡£Ò»×ù¹Â³ÇËÊÁ¢ÔÚÃ£Ã£»ÄÒ°Ö®ÉÏ¡£´Ë
-³Ç½¨ÓÚºº¹âÎäÄê¼ä£¬¾ÝÎÅ´ó½«¾ü»ôÈ¥²¡ÔøÔÚ´ËÁ·±øÈýÄê£¬ºóÒ»¾ÙÆ½¶¨´ó
-Î÷±±¡£Àú´ú¶øÀ´£¬ÕâÀï¶¼ÓÐ¾ü¶Ó³¤×¤¡£
+é€™è£¡å°±æ˜¯è¥¿åŒ—çš„è»äº‹é‡éŽ®æ°¸ç™»ã€‚ä¸€åº§å­¤åŸŽè³ç«‹åœ¨èŒ«èŒ«è’é‡Žä¹‹ä¸Šã€‚æ­¤
+åŸŽå»ºäºŽæ¼¢å…‰æ­¦å¹´é–“ï¼Œæ“šèžå¤§å°‡è»éœåŽ»ç—…æ›¾åœ¨æ­¤ç·´å…µä¸‰å¹´ï¼Œå¾Œä¸€èˆ‰å¹³å®šå¤§
+è¥¿åŒ—ã€‚æ­·ä»£è€Œä¾†ï¼Œé€™è£¡éƒ½æœ‰è»éšŠé•·é§ã€‚
 LONG );
         set("exits", ([
                 "southup" : "/d/xingxiu/xxroad3",

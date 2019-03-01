@@ -1,22 +1,22 @@
 // Copyright (C) 2003, by Lonely. All rights reserved.
 // This software can not be used, copied, or modified 
 // in any form without the written permission from authors.
-// lingshe Î÷ÓòÁéÉß
+// lingshe è¥¿åŸŸéˆè›‡
 
 #include <ansi.h>
 inherit SNAKE;
 
 void create()
 {
-        set_name("ÁéÉß", ({ "ling she", "she", "snake" }) );
-        set("race", "Ò°ÊŞ");
+        set_name("éˆè›‡", ({ "ling she", "she", "snake" }) );
+        set("race", "é‡ç¸");
         set("age", 4);
-        set("long", "Ò»ÌõÒø¹âÉÁÉÁµÄĞ¡Éß£¬²úÓÚÎ÷Óò£¬¼«Îªº±¼û¡£\n");
+        set("long", "ä¸€æ¢éŠ€å…‰é–ƒé–ƒçš„å°è›‡ï¼Œç”¢äºè¥¿åŸŸï¼Œæ¥µç‚ºç½•è¦‹ã€‚\n");
         set("attitude", "peaceful");
 
-        set("msg_fail", "$n³å$NË»µØÒ»ÍÂÉàÍ·");
-        set("msg_succ", "$nË»Ë»×öÏì£¬ÉßÍ·Ëæ×Å$NµÄÊÖ¶¯ÁËÆğÀ´");
-        set("msg_trained","$nÇÄÎŞÉùÏ¢µØÓÎµ½$NµÄ½ÅÏÂ²»¶¯ÁË");
+        set("msg_fail", "$næ²–$Nå˜¶åœ°ä¸€åèˆŒé ­");
+        set("msg_succ", "$nå˜¶å˜¶åšéŸ¿ï¼Œè›‡é ­éš¨è‘—$Nçš„æ‰‹å‹•äº†èµ·ä¾†");
+        set("msg_trained","$næ‚„ç„¡è²æ¯åœ°éŠåˆ°$Nçš„è…³ä¸‹ä¸å‹•äº†");
         set("auto_follow",0);
         set("wildness", 90);
 
@@ -40,7 +40,7 @@ void init()
         ::init();
         add_action("convert","bian");
         if (interactive(ob = this_player()) &&
-            query("family/family_name", ob) != "Å·ÑôÊÀ¼Ò" && 
+            query("family/family_name", ob) != "æ­é™½ä¸–å®¶" && 
                 ! present("xiong huang", environment(ob))) {
                         remove_call_out("kill_ob");
                         call_out("kill_ob", 1, ob); 
@@ -49,7 +49,7 @@ void init()
 
 void unconcious()
 {        
-        write("ÁéÉßàÂµØÒ»ÏÂÌÓµôÁË¡£\n");
+        write("éˆè›‡å—¦åœ°ä¸€ä¸‹é€ƒæ‰äº†ã€‚\n");
         destruct(this_object());
 }
 void die()
@@ -74,13 +74,13 @@ int convert(string arg)
         object ob;
 
         if (arg != "ling she") return 0;
-        if( query("family/family_name", me) != "Å·ÑôÊÀ¼Ò" )
-                return notify_fail("Äã²»ÄÜ»¯ÉßÎªÕÈ¡£\n");
+        if( query("family/family_name", me) != "æ­é™½ä¸–å®¶" )
+                return notify_fail("ä½ ä¸èƒ½åŒ–è›‡ç‚ºæ–ã€‚\n");
         if (me->query_skill("training",1) < 70 + random(70)) {
                 kill_ob(me);
                 return 1;
         }
-        message_vision("$N×óÊÖ°´×¡ÁéÉßµÄÍ·£¬ÓÒÊÖÇá¸§ÆäÆß´ç£¬¿ÚÖĞÄîÄîÓĞ´Ê£¬Æ¬¿Ì¼ä½«Éß»¯ÎªÒ»¸ùÉßÕÈ¡£\n",
+        message_vision("$Nå·¦æ‰‹æŒ‰ä½éˆè›‡çš„é ­ï¼Œå³æ‰‹è¼•æ’«å…¶ä¸ƒå¯¸ï¼Œå£ä¸­å¿µå¿µæœ‰è©ï¼Œç‰‡åˆ»é–“å°‡è›‡åŒ–ç‚ºä¸€æ ¹è›‡æ–ã€‚\n",
                 me,);
                 ob = new("/d/baituo/obj/lingshezhang");
         ob->move(environment(this_object()));

@@ -7,12 +7,12 @@ string ask_job(string arg);
 string ask_gonglao(string arg);
 void create()
 {
-        set_name("»ôÔª¼×", ({ "huo yuanjia", "huo", "yuanjia" }));
+        set_name("éœå…ƒç”²", ({ "huo yuanjia", "huo", "yuanjia" }));
         set("long", @LONG
-    ¾«ÎäÃÅÕÆÃÅ£¬¡¸ÃÔ×ÙÈ­¡¹µÄ´´Ê¼ÈË¡£Ò»ĞÄÌôÆğ¿¹»÷¶«å­Á÷¿Ü£¬¿°³Æµ±ÊÀÃñ
-×åÓ¢ĞÛ¡£
+    ç²¾æ­¦é–€æŒé–€ï¼Œã€Œè¿·è¹¤æ‹³ã€çš„å‰µå§‹äººã€‚ä¸€å¿ƒæŒ‘èµ·æŠ—æ“Šæ±ç€›æµå¯‡ï¼Œå ªç¨±ç•¶ä¸–æ°‘
+æ—è‹±é›„ã€‚
 LONG);
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("age", 40);
         set("attitude", "friendly");
         set("shen", 100000);
@@ -29,7 +29,7 @@ LONG);
         set("combat_exp", 1200000);
         set("no_quest_npc", 1);
         set("no_bark", 1);
-        create_family("¾«ÎäÃÅ", 1, "ÕÆÃÅ");
+        create_family("ç²¾æ­¦é–€", 1, "æŒé–€");
         /*
         set_skill("force", 150);
         set_skill("yijin-jing", 150);
@@ -49,8 +49,8 @@ LONG);
         prepare_skill("cuff", "wenjia-quan");
         */
         set("inquiry", ([
-                "¿¹ÈÕ": (: ask_job :),
-                "´ÎÊı"  : (: ask_gonglao :),
+                "æŠ—æ—¥": (: ask_job :),
+                "æ¬¡æ•¸"  : (: ask_gonglao :),
         ]));
         setup();
         //carry_object(MISC_D("cloth"))->wear();
@@ -64,10 +64,10 @@ string ask_gonglao(object who)
 
         i=query("job/japan_job", me);
 
-        if( !query("job/japan_job", me))return "¡¸¿¹»÷Á÷¿ÜÎªÎÒ±²ÖĞÈËµÄÖ°Ôğ£¬"+RANK_D->query_respect(this_player())+"Ò²ÒªÒ»ÆğÏìÓ¦²ÅÊÇ¡£¡¹";
+        if( !query("job/japan_job", me))return "ã€ŒæŠ—æ“Šæµå¯‡ç‚ºæˆ‘è¼©ä¸­äººçš„è·è²¬ï¼Œ"+RANK_D->query_respect(this_player())+"ä¹Ÿè¦ä¸€èµ·éŸ¿æ‡‰æ‰æ˜¯ã€‚ã€";
 
         command("massage"+query("id", me));
-        return "¡¸ÄãÒÑ¾­¿¹»÷ÁË" + chinese_number(i) + "´Î¶«å­ÈËµÄÇÖ·¸¡£¡¹";
+        return "ã€Œä½ å·²ç¶“æŠ—æ“Šäº†" + chinese_number(i) + "æ¬¡æ±ç€›äººçš„ä¾µçŠ¯ã€‚ã€";
 }
 
 int filldata(object obj)
@@ -88,34 +88,34 @@ string ask_job(string arg)
         ob_list = users();
         ob_list = filter_array(ob_list, (: filldata :));
 
-        if( count_lt(query("combat_exp", me),200000))return "¡¸¶«å­ÈËºÜÇ¿º·£¬Äã»¹ÊÇ²»ÒªÈ¥Ã°ÏÕÁË¡£¡¹";
+        if( count_lt(query("combat_exp", me),200000))return "ã€Œæ±ç€›äººå¾ˆå¼·æ‚ï¼Œä½ é‚„æ˜¯ä¸è¦å»å†’éšªäº†ã€‚ã€";
 
-        if( query("job_done", me) == "japan")return "¡¸¶«å­ÈË¸Õ±»»÷ÍË£¬Ò»Ê±»¹²»»áÀ´¡£¡¹";
+        if( query("job_done", me) == "japan")return "ã€Œæ±ç€›äººå‰›è¢«æ“Šé€€ï¼Œä¸€æ™‚é‚„ä¸æœƒä¾†ã€‚ã€";
 
         if ( me->query_condition("killer") ) {
                 command("fule"+query("id", me));
-                return "¡¸ÏÈ¹ÜºÃ×Ô¼º°É£¬ÄãÕâ¸öÉ±ÈË·¸!";
+                return "ã€Œå…ˆç®¡å¥½è‡ªå·±å§ï¼Œä½ é€™å€‹æ®ºäººçŠ¯!";
         }
-        if( query("job_done", me) == "japan_job")return "¡¸Äã²»ÊÇ¸Õ¸Õ°ïÎÒÍµ¹ıÒ»´ÎÂğ£¿¡¹";
+        if( query("job_done", me) == "japan_job")return "ã€Œä½ ä¸æ˜¯å‰›å‰›å¹«æˆ‘å·éä¸€æ¬¡å—ï¼Ÿã€";
 
-        if ( me->query_condition("job_busy" ) ) return "¡¸ÍÛ£¬Äã±ÈÎÒ»¹Ã¦×Å£¬ÏÈ×öÍêÄã×Ô¼ºµÄÈÎÎñ°É¡£¡¹";
+        if ( me->query_condition("job_busy" ) ) return "ã€Œå“‡ï¼Œä½ æ¯”æˆ‘é‚„å¿™è‘—ï¼Œå…ˆåšå®Œä½ è‡ªå·±çš„ä»»å‹™å§ã€‚ã€";
 
-        if ( me->query_condition("gb_busy" ) ) return "¡¸Äã²»ÊÇÔÚ°ïØ¤°ï×öÈÎÎñÂğ£¿¡¹";
+        if ( me->query_condition("gb_busy" ) ) return "ã€Œä½ ä¸æ˜¯åœ¨å¹«ä¸å¹«åšä»»å‹™å—ï¼Ÿã€";
 
-        if ( me->query_condition("xx_task" ) ) return "¡¸Äã²»ÊÇÔÚ°ïĞÇËŞ¶¡ÀÏÔô×öÈÎÎñÂğ£¿¡¹";
+        if ( me->query_condition("xx_task" ) ) return "ã€Œä½ ä¸æ˜¯åœ¨å¹«æ˜Ÿå®¿ä¸è€è³Šåšä»»å‹™å—ï¼Ÿã€";
 
-        if ( me->query_condition("guanfu_task" ) ) return "¡¸ÄãÒÑ¾­Í¶¿¿¹Ù¸®Õâ¿Ã´óÊ÷£¬»¹À´ÎÒÔÚ°ïÖúÎÒÍµ¹Ù¸®µÄ¶«Î÷£¿¡¹";
+        if ( me->query_condition("guanfu_task" ) ) return "ã€Œä½ å·²ç¶“æŠ•é å®˜åºœé€™æ£µå¤§æ¨¹ï¼Œé‚„ä¾†æˆ‘åœ¨å¹«åŠ©æˆ‘å·å®˜åºœçš„æ±è¥¿ï¼Ÿã€";
 
-        if ( me->query_condition("niao_job" ) ) return "¡¸ÄãÕıÔÚ°ïÇàÄñËÍÇëÌû¡£¡¹";
+        if ( me->query_condition("niao_job" ) ) return "ã€Œä½ æ­£åœ¨å¹«é’é³¥é€è«‹å¸–ã€‚ã€";
 
         if( query_temp("japan/job", me)){
                 command("knock"+query("id", me));
-                return "¡¸²»½ĞÄãÈ¥×öÁËÂğ£¿ÔõÃ´»¹ÔÚÕâÀï£¿Îª¹ú¿¹µĞÊÇÒª×÷³öÊµ¼ÊĞĞ¶¯À´µÄ¡£¡¹";
+                return "ã€Œä¸å«ä½ å»åšäº†å—ï¼Ÿæ€éº¼é‚„åœ¨é€™è£¡ï¼Ÿç‚ºåœ‹æŠ—æ•µæ˜¯è¦ä½œå‡ºå¯¦éš›è¡Œå‹•ä¾†çš„ã€‚ã€";
         }
         for ( i = 0; i < sizeof(ob_list); i++ ) {
-                if( query_temp("japan/job", ob_list[i]))return "¡¸ÏÖÔÚ¶«å­ÈËÒÑ¾­½ø³Ç£¬ÎŞ·¨ÔÚÇ±ÈëÄÇÀïÁË¡£¡¹";
+                if( query_temp("japan/job", ob_list[i]))return "ã€Œç¾åœ¨æ±ç€›äººå·²ç¶“é€²åŸï¼Œç„¡æ³•åœ¨æ½›å…¥é‚£è£¡äº†ã€‚ã€";
 
-                if ( (int)ob_list[i]->query_condition("japan_job") >= 1 ) return "¡¸ÏÖÔÚ¶«å­ÈËÒÑ¾­½ø³Ç£¬ÎŞ·¨ÔÚÇ±ÈëÄÇÀïÁË¡£¡¹";
+                if ( (int)ob_list[i]->query_condition("japan_job") >= 1 ) return "ã€Œç¾åœ¨æ±ç€›äººå·²ç¶“é€²åŸï¼Œç„¡æ³•åœ¨æ½›å…¥é‚£è£¡äº†ã€‚ã€";
         }
         team = me->query_team();
         count = sizeof(team);
@@ -125,17 +125,17 @@ string ask_job(string arg)
                 team = ({ me });
         }
         for ( i = 0; i < count; i++ ) {
-                if ( team[i] == 0 ) return "¡¸ÄãµÄ¶ÓÎéÖĞÏÖÔÚÓĞÈË²»ÔÚ¡£¡¹";
+                if ( team[i] == 0 ) return "ã€Œä½ çš„éšŠä¼ä¸­ç¾åœ¨æœ‰äººä¸åœ¨ã€‚ã€";
 
-                if( query_temp("japan/job", team[i]))return "¡¸"+query("name", team[i])+"²»ÊÇÒÑ¾­È¥ÁËÂğ£¿Äã»¹Õ¾ÕâÀï¸ÉÂğ£¿¡¹";
+                if( query_temp("japan/job", team[i]))return "ã€Œ"+query("name", team[i])+"ä¸æ˜¯å·²ç¶“å»äº†å—ï¼Ÿä½ é‚„ç«™é€™è£¡å¹¹å—ï¼Ÿã€";
 
-                if( (uptime()-query("time", ob))<300)return "¡¸¸Õ¸ÕÓĞÈË½ø³ÇÉ±µĞÈ¥ÁË¡£¡¹";
+                if( (uptime()-query("time", ob))<300)return "ã€Œå‰›å‰›æœ‰äººé€²åŸæ®ºæ•µå»äº†ã€‚ã€";
 
-                if( query("combat_exp", team[i])<200000)return "¡¸¶«å­ÈËºÜÇ¿º·£¬ÎÒ²»ÄÜÈÃ»¹"+query("name", team[i])+"È¥Ã°ÏÕÁË¡£¡¹";
+                if( query("combat_exp", team[i])<200000)return "ã€Œæ±ç€›äººå¾ˆå¼·æ‚ï¼Œæˆ‘ä¸èƒ½è®“é‚„"+query("name", team[i])+"å»å†’éšªäº†ã€‚ã€";
 
-                if( query("job_done", team[i]) == "japan")return "¡¸¶«å­ÈË¸Õ±»»÷ÍË£¬Ò»Ê±»¹²»»áÀ´¡£¡¹";
+                if( query("job_done", team[i]) == "japan")return "ã€Œæ±ç€›äººå‰›è¢«æ“Šé€€ï¼Œä¸€æ™‚é‚„ä¸æœƒä¾†ã€‚ã€";
         }
-        if ( count > 3 ) return "¡¸ÈËÌ«¶àÁË¾Í»á±»µĞÈË·¢ÏÖ¡£¡¹";
+        if ( count > 3 ) return "ã€Œäººå¤ªå¤šäº†å°±æœƒè¢«æ•µäººç™¼ç¾ã€‚ã€";
 
         delete("player", ob);
         minexp=query("combat_exp", me);
@@ -155,7 +155,7 @@ string ask_job(string arg)
                         }
                 }
         }
-        if( (maxexp-minexp)>800000)return "¡¸"+query("player/minname", me)+"ºÍ"+query("player/maxname", me)+"µÄÎä¹¦²îÌ«Ô¶ÁË¡£¡¹";
+        if( (maxexp-minexp)>800000)return "ã€Œ"+query("player/minname", me)+"å’Œ"+query("player/maxname", me)+"çš„æ­¦åŠŸå·®å¤ªé äº†ã€‚ã€";
 
         ob=query("player/max", me);
         maxexp=query("combat_exp", ob);
@@ -228,5 +228,5 @@ string ask_job(string arg)
                 target->move("/d/tianjin/town" + random(4) + random(10));
         }
         set("time", uptime(), ob);
-        return "¡¸¾İÏ¢¶«å­ÈËÓÖÒªÀ´Ìì½ò³ÇÉÕÉ±£¬¾ÍÈ¥ºÃºÃµØÎª¹úÉ±µĞ°É¡£¡¹";
+        return "ã€Œæ“šæ¯æ±ç€›äººåˆè¦ä¾†å¤©æ´¥åŸç‡’æ®ºï¼Œå°±å»å¥½å¥½åœ°ç‚ºåœ‹æ®ºæ•µå§ã€‚ã€";
 }

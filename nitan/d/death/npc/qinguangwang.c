@@ -4,14 +4,14 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÇØ¹ãÍõ", ({ "qin guangwang", "qin", "guangwang" }));
-        set("title", HIR "Ú¤¸®µØ²ØÍõµîÇ°" NOR);
-        set("nickname", WHT "»êÍõ" NOR);
+        set_name("ç§¦å»£ç‹", ({ "qin guangwang", "qin", "guangwang" }));
+        set("title", HIR "å†¥åºœåœ°è—ç‹æ®¿å‰" NOR);
+        set("nickname", WHT "é­‚ç‹" NOR);
         set("shen_type", 1);
 
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("age", 475);
-        set("long", "ÇØ¹ãÍõÄËÊÇÒõ¼äÊ®ÍõÖ®Ò»¡£\n");
+        set("long", "ç§¦å»£ç‹ä¹ƒæ˜¯é™°é–“åç‹ä¹‹ä¸€ã€‚\n");
 
         set("str", 50);
         set("int", 50);
@@ -71,7 +71,7 @@ void create()
                 (: exert_function, "shield" :),
         }) );
         
-        create_family("ÒõË¾", 0, "×Ü¹Ü");
+        create_family("é™°å¸", 0, "ç¸½ç®¡");
 
         setup();
         carry_object(__DIR__"obj/cloth4")->wear();

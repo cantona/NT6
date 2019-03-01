@@ -2,13 +2,13 @@
 inherit ITEM;
 void create()
 {
-      	set_name(HIR"ÓñÇåÉ¢"NOR, ({ "yuqing san","san"}));
+      	set_name(HIR"ç‰æ¸…æ•£"NOR, ({ "yuqing san","san"}));
       	set_weight(100);
       	if( clonep() )
           	set_default_object(__FILE__);
       	else 
 	{       
-           	set("unit", "°ü"); 
+           	set("unit", "åŒ…"); 
              	set("no_get",1);
              	set("no_give",1);
       	}
@@ -27,12 +27,12 @@ int do_eat(string arg)
     	maxneili=query("max_neili", me);
     
   	if(!id(arg)) return 0;
-  	if(me->is_busy()) return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É¡£\n");
+  	if(me->is_busy()) return notify_fail("ä½ ä¸Šä¸€å€‹å‹•ä½œé‚„æ²’æœ‰å®Œæˆã€‚\n");
 
         if( time()-query("eat_drug/yuqingsan", me)<2400 )
-                return notify_fail("Äã¸Õ·şÓÃ¹ıÒ©Ê±¼ä²»¾Ã£¬ĞèÒ©ĞÔ·¢»ÓÍêĞ§ÓÃÒÔºó²ÅÄÜ¼ÌĞø·şÓÃ¡£\n"); 
+                return notify_fail("ä½ å‰›æœç”¨éè—¥æ™‚é–“ä¸ä¹…ï¼Œéœ€è—¥æ€§ç™¼æ®å®Œæ•ˆç”¨ä»¥å¾Œæ‰èƒ½ç¹¼çºŒæœç”¨ã€‚\n"); 
     
-        addn("max_jingli", 10+random(5), me);message_vision(HIB"$NÄÃÆğÓñÇåÉ¢³ÔÁËÏÂÈ¥,¸Ğ¾õ×Ô¼ºµÄ¾«Á¦ÓĞËùÔö¼Ó¡£\n"NOR,me);
+        addn("max_jingli", 10+random(5), me);message_vision(HIB"$Næ‹¿èµ·ç‰æ¸…æ•£åƒäº†ä¸‹å»,æ„Ÿè¦ºè‡ªå·±çš„ç²¾åŠ›æœ‰æ‰€å¢åŠ ã€‚\n"NOR,me);
       set("eat_drug/yuqingsan", time(), me);
      	destruct(this_object());
       	return 1;

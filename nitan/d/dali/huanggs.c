@@ -1,4 +1,4 @@
-// Room : /d/dali/huanggs.c �ƹ����ٲ�
+// Room : /d/dali/huanggs.c 黃果樹瀑布
 
 #include <room.h>
 
@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�ƹ����ٲ�");
+        set("short", "黃果樹瀑布");
         set("long", @LONG
-����Ǵ������������µĻƹ����ٲ��������ݺύ�����ٲ���Ⱥ��
-��Ѩ�ɴ������͵��䣬ֲ�����أ����ֳ���ηḻ�Ŀ�˹��ɽˮ��
-��⡣
+這兒是大理聞名于天下的黃果樹瀑布，河流縱橫交錯，瀑布成群，
+洞穴成串，峰巒疊翠，植被奇特，呈現出層次豐富的喀斯特山水旖旎
+風光。
 LONG );
         set("outdoors", "dali");
 

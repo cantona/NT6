@@ -1,23 +1,23 @@
-// aninit.h ¶¨ÒåÉ±ÊÖ¼ì²é£¬×Ô¼ºÏûÊ§µÄÊ±¼ä
+// aninit.h å®šç¾©æ®ºæ‰‹æª¢æŸ¥ï¼Œè‡ªå·±æ¶ˆå¤±çš„æ™‚é–“
 #include <ansi.h>
 #define A_TIME 20
 
 string *shot_msg = ({
-        "ÝëµØ£¬½Ö±ßÉÏÒ»¸ö¿´À´ºÁ²»ÆðÑÛµÄ$NÍ»È»³åÁË³öÀ´£¡\n",
-        "ÕâÊÇ¸öÈÈÄÖËùÔÚ£¬Ò»¸ö$NÐ¦ÎûÎû³å×Å$nÓ­ÁËÉÏÀ´£¬ËÆºõÒª½»¸ø$nÊ²Ã´¶«Î÷¡£\n",
-        "½Ö½ÇÉÏÒ»¸ö$N±¾À´ÔÚÄÇÀïÀÁÑóÑóµØÉ¹×ÅÌ«Ñô£¬Í»È»ÏóÀëÏÒÖ®¼ý°ãÔ¾½øÉíÀ´¡£\n",
-        "Ò»¸ö$NÕ¾ÔÚ½ÖÐÄÕýÔÚßººÈ×ÅÊ²Ã´£¬ºöÈ»×ªÑÛ¿´¼ûÁË$n£¬×ªÉí³åÁË¹ýÀ´£¡\n",
-        "Ò»¸öºÜÆ½³£µÄ$NÕ¾ÔÚÄÇÀï£¬Á³ÉÏÄ¾È»µØÃ»Ê²Ã´±íÇé¡£\n",
-        "½ÖÃæÉÏÕ¾×ÅÒ»¸ö$N£¬×ìÀïà½àì×ÅÊ²Ã´»°£¬½á¹û¿´¼û$n¾Í´ó½ÐÒ»ÉùÆËÁË¹ýÀ´¡£\n",
+        "é©€åœ°ï¼Œè¡—é‚Šä¸Šä¸€å€‹çœ‹ä¾†æ¯«ä¸èµ·çœ¼çš„$Nçªç„¶æ²–äº†å‡ºä¾†ï¼\n",
+        "é€™æ˜¯å€‹ç†±é¬§æ‰€åœ¨ï¼Œä¸€å€‹$Nç¬‘å˜»å˜»æ²–è‘—$nè¿Žäº†ä¸Šä¾†ï¼Œä¼¼ä¹Žè¦äº¤çµ¦$nä»€éº¼æ±è¥¿ã€‚\n",
+        "è¡—è§’ä¸Šä¸€å€‹$Næœ¬ä¾†åœ¨é‚£è£¡æ‡¶æ´‹æ´‹åœ°æ›¬è‘—å¤ªé™½ï¼Œçªç„¶è±¡é›¢å¼¦ä¹‹ç®­èˆ¬èºé€²èº«ä¾†ã€‚\n",
+        "ä¸€å€‹$Nç«™åœ¨è¡—å¿ƒæ­£åœ¨å†å–è‘—ä»€éº¼ï¼Œå¿½ç„¶è½‰çœ¼çœ‹è¦‹äº†$nï¼Œè½‰èº«æ²–äº†éŽä¾†ï¼\n",
+        "ä¸€å€‹å¾ˆå¹³å¸¸çš„$Nç«™åœ¨é‚£è£¡ï¼Œè‡‰ä¸Šæœ¨ç„¶åœ°æ²’ä»€éº¼è¡¨æƒ…ã€‚\n",
+        "è¡—é¢ä¸Šç«™è‘—ä¸€å€‹$Nï¼Œå˜´è£¡å˜Ÿå›”è‘—ä»€éº¼è©±ï¼Œçµæžœçœ‹è¦‹$nå°±å¤§å«ä¸€è²æ’²äº†éŽä¾†ã€‚\n",
 });
 
-string *name_msg = ({ "Á÷Ã¥", "½øÏã¿Í", "µÀÊ¿", "ÐÐÕß", "Ìô·ò", "¼Ò¶¡", "¹Ù±ø", "ÐÐÈË", "ÆòØ¤", "°ÙÐÕ", "Âô»¨¹ÃÄï", "ÀÏ´¬·ò", "ÌË×ÓÊÖ", "Ìú½³", "Ð¡··", "µ¶¿Í", "½£¿Í", "ÓÎ·½ºÍÉÐ", "½­ºþºÀ¿Í", });
+string *name_msg = ({ "æµæ°“", "é€²é¦™å®¢", "é“å£«", "è¡Œè€…", "æŒ‘å¤«", "å®¶ä¸", "å®˜å…µ", "è¡Œäºº", "ä¹žä¸", "ç™¾å§“", "è³£èŠ±å§‘å¨˜", "è€èˆ¹å¤«", "è¶Ÿå­æ‰‹", "éµåŒ ", "å°è²©", "åˆ€å®¢", "åŠå®¢", "éŠæ–¹å’Œå°š", "æ±Ÿæ¹–è±ªå®¢", });
 
 string *long_id = ({ "liu mang", "jinxiang ke", "dao shi", "xing zhe", "tiao fu", "jia ding", "guan bing", "xing ren", "qi gai", "bai xing", "flower girl", "lao chuanfu", "tangzi shou", "tie jiang", "xiao fan", "dao ke", "jian ke", "seng ren", "jianghu haoke", });
 
 string *short_id = ({ "lm", "jk", "ds", "xz", "tf", "jd", "gb", "xr", "qg", "bx", "fg", "lc", "ts", "tj", "xf", "dk", "jk", "sr", "jh", });
 
-string *sex_msg = ({ "ÄÐ", "ÄÐ", "ÄÐ", "ÄÐ", "ÄÐ", "ÄÐ", "ÄÐ", "ÄÐ", "ÄÐ", "ÄÐ", "Å®", "ÄÐ", "ÄÐ", "ÄÐ", "ÄÐ", "ÄÐ", "ÄÐ", "ÄÐ", "ÄÐ", });
+string *sex_msg = ({ "ç”·", "ç”·", "ç”·", "ç”·", "ç”·", "ç”·", "ç”·", "ç”·", "ç”·", "ç”·", "å¥³", "ç”·", "ç”·", "ç”·", "ç”·", "ç”·", "ç”·", "ç”·", "ç”·", });
 
 string *weapon_msg = ({
         __DIR__"obj/anqi",
@@ -60,7 +60,7 @@ void do_check()
                         message_vision(HIG+shot_msg[random(sizeof(shot_msg))]+NOR,me,ob);
                         command("shot"+query("id", ob));
                         addn("combat_num", 1, ob);
-                        message_vision(HIW"\nµ±Äã¶¨¹ýÉñÀ´ÔÙÕÒÄÇ¸ö$N£¬È´ÒÑ¾­ÏûÊ§µÃÎÞÓ°ÎÞ×ÙÁË¡£\n"NOR,me);
+                        message_vision(HIW"\nç•¶ä½ å®šéŽç¥žä¾†å†æ‰¾é‚£å€‹$Nï¼Œå»å·²ç¶“æ¶ˆå¤±å¾—ç„¡å½±ç„¡è¹¤äº†ã€‚\n"NOR,me);
                         destruct(me);
                 }
         }
@@ -78,7 +78,7 @@ void do_wait()
         }
         else
         {
-                message_vision("$N×ÔÑÔ×ÔÓïµØËµµÀ£º¿´À´ÄÇ¸öÈË²»»áÀ´ÁË£¬ÎÒ»¹ÊÇ»ØÈ¥°É¡£\n$NÇÄÃ»ÉùÏ¢µØÏòÔ¶´¦×ßÁË¿ªÈ¥¡£\n",this_object());
+                message_vision("$Nè‡ªè¨€è‡ªèªžåœ°èªªé“ï¼šçœ‹ä¾†é‚£å€‹äººä¸æœƒä¾†äº†ï¼Œæˆ‘é‚„æ˜¯å›žåŽ»å§ã€‚\n$Næ‚„æ²’è²æ¯åœ°å‘é è™•èµ°äº†é–‹åŽ»ã€‚\n",this_object());
                 destruct(me);
         }
 }

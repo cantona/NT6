@@ -6,12 +6,12 @@ int valid_leave(object me, string dir)
         object ob;
         if( query_temp("wait_target", me) && 
                 objectp(present("anran zi", environment(me))))
-                return notify_fail("黯然子闪身拦在你面前，喝道：临阵想溜？给我滚回来！\n");
+                return notify_fail("榛劧瀛愰杻韬敂鍦ㄤ綘闈㈠墠锛屽枬閬擄細鑷ㄩ櫍鎯虫簻锛熺郸鎴戞痪鍥炰締锛乗n");
         if( query_temp("xx_rob", me) && 
                 objectp(ob = present("hubiao biaoshi", environment(me))) &&
                 query("target", ob) == me )
-                return notify_fail("护镖镖师闪身拦住你的去路，看来是想把你给废了！\n");  
+                return notify_fail("璀烽彚閺㈠斧闁冭韩鏀斾綇浣犵殑鍘昏矾锛岀湅渚嗘槸鎯虫妸浣犵郸寤簡锛乗n");  
         if( query_temp("xx_rob", me) && objectp(present("shangdui",environment(me))) )
-                return notify_fail("商队在这里呢，快抢(qiang)啊！\n");  
+                return notify_fail("鍟嗛殜鍦ㄩ�欒！鍛紝蹇惗(qiang)鍟婏紒\n");  
         return ::valid_leave(me, dir);
 } 

@@ -6,13 +6,13 @@ int auto_perform();
 void you_out();
 void create()
 {
-        set_name("Ïô·å", ({"xiao feng", "xiao", "feng"}));
-        set("nickname", "´óÏÀ");
-        set("gender", "ÄĞĞÔ");
+        set_name("è•­å³°", ({"xiao feng", "xiao", "feng"}));
+        set("nickname", "å¤§ä¿ ");
+        set("gender", "ç”·æ€§");
         set("age", 35);
         set("long",
-"Éí²ÄÉõÊÇ¿ıÎ°£¬ÈıÊ®À´ËêÄê¼Í£¬Éí´©»ÒÉ«¾É²¼ÅÛ£¬ÒÑÎ¢ÓĞÆÆÀÃ£¬Å¨Ã¼´óÑÛ£¬
-¸ß±ÇÀ«¿Ú£¬Ò»ÕÅËÄ·½µÄ¹ú×ÖÁ³£¬ÆÄÓĞ·çËªÖ®É«£¬¹ËÅÎÖ®¼Ê£¬¼«ÓĞÍşÊÆ¡£\n");
+"èº«æç”šæ˜¯é­å‰ï¼Œä¸‰åä¾†æ­²å¹´ç´€ï¼Œèº«ç©¿ç°è‰²èˆŠå¸ƒè¢ï¼Œå·²å¾®æœ‰ç ´çˆ›ï¼Œæ¿ƒçœ‰å¤§çœ¼ï¼Œ
+é«˜é¼»é—Šå£ï¼Œä¸€å¼µå››æ–¹çš„åœ‹å­—è‡‰ï¼Œé —æœ‰é¢¨éœœä¹‹è‰²ï¼Œé¡§ç›¼ä¹‹éš›ï¼Œæ¥µæœ‰å¨å‹¢ã€‚\n");
         set("attitude", "peaceful");
 
         set("str", 30);
@@ -35,20 +35,20 @@ void create()
         set("score", 200000);
         set("death_times",200);
 
-        set_skill("force", 200);             // »ù±¾ÄÚ¹¦
-        set_skill("huntian-qigong", 200);    // »ìÌìÆø¹¦
-        set_skill("strike", 200);            // »ù±¾ÕÆ·¨
-        set_skill("dragon-strike", 200);   // ½µÁúÊ®°ËÕÆ
-        set_skill("dodge", 200);             // »ù±¾¶ãÉÁ
-        set_skill("xiaoyaoyou", 200);        // åĞÒ£ÓÎ
-        set_skill("parry", 200);             // »ù±¾ÕĞ¼Ü
+        set_skill("force", 200);             // åŸºæœ¬å…§åŠŸ
+        set_skill("huntian-qigong", 200);    // æ··å¤©æ°£åŠŸ
+        set_skill("strike", 200);            // åŸºæœ¬æŒæ³•
+        set_skill("dragon-strike", 200);   // é™é¾åå…«æŒ
+        set_skill("dodge", 200);             // åŸºæœ¬èº²é–ƒ
+        set_skill("xiaoyaoyou", 200);        // é€é™éŠ
+        set_skill("parry", 200);             // åŸºæœ¬æ‹›æ¶
 
         map_skill("force", "huntian-qigong");
         map_skill("strike","dragon-strike");
         map_skill("dodge", "xiaoyaoyou");
         map_skill("parry", "dragon-strike");
         prepare_skill("strike", "dragon-strike");
-        create_family("Ø¤°ï", 13, "°ïÖ÷");
+        create_family("ä¸å¹«", 13, "å¹«ä¸»");
         setup();
 
         carry_object("/clone/cloth/cloth")->wear();
@@ -62,17 +62,17 @@ int accept_kill(object victim)
         if (!living(me)) return 1;
         if( query_temp("azi/killer", victim) != 1 && query_temp("azi/killer2", victim) != 1 )
         {
-                command("say ³ôÔôÓĞ°ïÊÖ£¬µ«ÎÒÏôÄ³ºÎÊ±ÅÂ¹ıÈË¶à£¡\n");
-                message_vision(HIY "Ïô·å¼ûÀ´ÁË°ïÊÖ£¬ºÀÆø¶ÙÔö,°Ñ½µÁúÊ®°ËÕÆ·¢»Óµ½¼«ÖÂ,Ö»¼ûÏô·åË«±Û»®È¦ÍÆ³ö£¬ÕıÊÇÒ»ÕĞ¡¸¿ºÁúÓĞ»Ú¡¹!\n" NOR,me);
+                command("say è‡­è³Šæœ‰å¹«æ‰‹ï¼Œä½†æˆ‘è•­æŸä½•æ™‚æ€•éäººå¤šï¼\n");
+                message_vision(HIY "è•­å³°è¦‹ä¾†äº†å¹«æ‰‹ï¼Œè±ªæ°£é “å¢,æŠŠé™é¾åå…«æŒç™¼æ®åˆ°æ¥µè‡´,åªè¦‹è•­å³°é›™è‡‚åŠƒåœˆæ¨å‡ºï¼Œæ­£æ˜¯ä¸€æ‹›ã€Œäº¢é¾æœ‰æ‚”ã€!\n" NOR,me);
                 command("halt");
                 ob = all_inventory(environment(me));
                 for(i=0; i<sizeof(ob); i++) {
                         if( living(ob[i]) && query_temp("azi/killer2", ob[i]) == 1){
-                                tell_object(ob[i], "Äã¸Ğµ½Ò»ÕóÇ¿ÁÒµÄÆøÁ÷Ó¿ÏòĞØ¿Ú£¬ĞØ¿ÚÒ»ÃÆ¡£\n");
+                                tell_object(ob[i], "ä½ æ„Ÿåˆ°ä¸€é™£å¼·çƒˆçš„æ°£æµæ¹§å‘èƒ¸å£ï¼Œèƒ¸å£ä¸€æ‚¶ã€‚\n");
                                             ob[i]->unconcious();
                         }
                 }
-                tell_object(victim, "Äã¸Ğµ½Ò»ÕóÇ¿ÁÒµÄÆøÁ÷Ó¿ÏòĞØ¿Ú£¬ĞØ¿ÚµÇÊ±Ò»ÃÆ¡£\n");
+                tell_object(victim, "ä½ æ„Ÿåˆ°ä¸€é™£å¼·çƒˆçš„æ°£æµæ¹§å‘èƒ¸å£ï¼Œèƒ¸å£ç™»æ™‚ä¸€æ‚¶ã€‚\n");
                 if (victim) victim->unconcious();
                 call_out("destruct_me",1,me);
                 me->start_busy(5);
@@ -86,7 +86,7 @@ void die()
         object  ob;
         ob = me->query_last_damage_from();
         if( ob)set_temp("xiaofeng/done", 1, ob);
-        message_vision(HIR"Ïô·åµÀ:°¢×Ï,½ã·òÎŞÄÜ,±£»¤²»ÁËÄãÁË£¡\n" NOR,this_object());
+        message_vision(HIR"è•­å³°é“:é˜¿ç´«,å§å¤«ç„¡èƒ½,ä¿è­·ä¸äº†ä½ äº†ï¼\n" NOR,this_object());
         you_out();
         ::die();
 }
@@ -100,7 +100,7 @@ void destruct_me(object me)
         if (obj)
         {
                destruct(obj);
-               message_vision(HIY"Ïô·å¹ş¹ş´óĞ¦£¬µÀ:½ñÌìÈÄ¶ûµÈ²»ËÀ¡£±§×¡°¢×Ï£¬¼¸¸öÆğÂä£¬±ãÒÑ²»¼û£¡\n" NOR,this_object());
+               message_vision(HIY"è•­å³°å“ˆå“ˆå¤§ç¬‘ï¼Œé“:ä»Šå¤©é¥’çˆ¾ç­‰ä¸æ­»ã€‚æŠ±ä½é˜¿ç´«ï¼Œå¹¾å€‹èµ·è½ï¼Œä¾¿å·²ä¸è¦‹ï¼\n" NOR,this_object());
                destruct(me);
         }
 }

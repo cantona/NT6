@@ -1,4 +1,4 @@
-//shandao1.c                �Ĵ����š���ɽɽ��
+//shandao1.c                四川唐門─後山山道
 
 #include <ansi.h>
 #include <room.h>
@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ɽ��");
+        set("short", "山道");
         set("long",
-"������ͨ��ɽ����С�����涸�ޱȣ�һ��С�ľͻ�ˤ��ȥ�������Ǹ�\n"
-"�����ƵĲ�����������д���Ұ�޵�˺ҧ��������ë���Ȼ������������\n"
-"��ȫ���ע������Ұ��������\n"
+"這裡是通向山頂的小道。奇陡無比，一不小心就會摔下去，兩邊是高\n"
+"聳入雲的參天大樹，林中傳來野獸的撕咬聲，令人毛骨悚然、不寒而立，\n"
+"你全神貫注生怕有野獸撲來。\n"
 );
         set("exits", ([
                         "westdown" : __DIR__"houshan",

@@ -6,13 +6,13 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÌúÑà·òÈË", ({"tie wife", "tie", "wife"}));
-        set("title", "Ä§½Ì³¤ÀÏ");
-        set("gender", "Å®ÐÔ");
+        set_name("éµç‡•å¤«äºº", ({"tie wife", "tie", "wife"}));
+        set("title", "é­”æ•™é•·è€");
+        set("gender", "å¥³æ€§");
         set("age", 50);
         set("shen_type", -1);
-        set("long", "Ò»¸öÓÖºÚÓÖÊÝÓÖÐ¡µÄÀÏÈËÆÅ£¬ÉíÇà»ÒÉ«µÄ´Ö²¼ÒÂ·þ£¬Õ¾ÔÚÄÇÀï£¬±È±ðÈË×ø×ÅÒ²¸ß²»ÁË¶àÉÙ¡£\n"
-                    "ºÍÌúÑàÕ¾ÔÚÒ»Æð¿´ÆðÀ´¾ÍÏñÊÇÒ»¶Ô¸Õ´ÓÏçÏÂÀ´µÄÀÏ·òÆÞ£¬ÍêÈ«Ã»ÓÐÒ»µãÌØ±ðµÄµØ·½¡£\n");
+        set("long", "ä¸€å€‹åˆé»‘åˆç˜¦åˆå°çš„è€äººå©†ï¼Œèº«é’ç°è‰²çš„ç²—å¸ƒè¡£æœï¼Œç«™åœ¨é‚£è£¡ï¼Œæ¯”åˆ¥äººåè‘—ä¹Ÿé«˜ä¸äº†å¤šå°‘ã€‚\n"
+                    "å’Œéµç‡•ç«™åœ¨ä¸€èµ·çœ‹èµ·ä¾†å°±åƒæ˜¯ä¸€å°å‰›å¾žé„‰ä¸‹ä¾†çš„è€å¤«å¦»ï¼Œå®Œå…¨æ²’æœ‰ä¸€é»žç‰¹åˆ¥çš„åœ°æ–¹ã€‚\n");
         set("attitude", "peaceful");
 
         set("per", 21);
@@ -63,7 +63,7 @@ void create()
 
         prepare_skill("strike", "moshen-zhangfa");
         
-        create_family("Ä§½Ì", 40, "³¤ÀÏ");
+        create_family("é­”æ•™", 40, "é•·è€");
   
         set("chat_chance_combat", 120); 
         set("chat_msg_combat", ({
@@ -85,7 +85,7 @@ void create()
 
 void attempt_apprentice(object ob)
 {
-        command("say Äã»¹ÊÇÕÒÎÒÀÏ¹«È¥°É£¡");
+        command("say ä½ é‚„æ˜¯æ‰¾æˆ‘è€å…¬åŽ»å§ï¼");
 }
 
 void kill_ob (object ob)
@@ -98,8 +98,8 @@ void kill_ob (object ob)
 
         if (guard && ! guard->is_fighting())
         {
-                message_vision(HIW "\n$N" HIW "´óÅ­µÀ£º¾ÓÈ»ÆÛ¸ºµ½ÎÒÃÇÌúÑà"
-                               "Í·ÉÏÀ´ÁË£¬ËÀ°É£¡\n\n" NOR, guard);
+                message_vision(HIW "\n$N" HIW "å¤§æ€’é“ï¼šå±…ç„¶æ¬ºè² åˆ°æˆ‘å€‘éµç‡•"
+                               "é ­ä¸Šä¾†äº†ï¼Œæ­»å§ï¼\n\n" NOR, guard);
                 guard->kill_ob(ob);
         }
 }

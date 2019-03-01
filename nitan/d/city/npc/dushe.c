@@ -6,10 +6,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("毒蛇", ({ "dushe" }) );
-        set("long",        "一支昂首吐信的毒蛇正虎视眈眈地盯著你。\n");
+        set_name("姣掕泧", ({ "dushe" }) );
+        set("long",        "涓�鏀槀棣栧悙淇＄殑姣掕泧姝ｈ檸瑕栫湀鐪堝湴鐩憲浣犮�俓n");
 
-        set("race", "爬蛇");
+        set("race", "鐖泧");
         set("age", 3);
         set("attitude", "peaceful");
 
@@ -47,6 +47,6 @@ int hit_ob(object me, object ob, int damage)
         if( random(damage)>query_temp("apply/armor", ob )
         &&        (int)ob->query_condition("snake_poison") < 10 ) {
                 ob->apply_condition("snake_poison", 20);
-        tell_object(ob, HIG "你觉得被咬中的地方一阵麻木！\n" NOR );
+        tell_object(ob, HIG "浣犺寰楄鍜腑鐨勫湴鏂逛竴闄ｉ夯鏈紒\n" NOR );
         }
 }

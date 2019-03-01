@@ -2,14 +2,14 @@
 inherit ITEM;
 void create()
 {
-    set_name( HIR "ºì°ü" NOR, ({ "hongbao" }) );
+    set_name( HIR "ç´…åŒ…" NOR, ({ "hongbao" }) );
     set_weight(1);
     if( clonep() )
             set_default_object(__FILE__);
     else {
-            set("unit", "¸ö");
+            set("unit", "å€‹");
             set("material", "cloth");
-            set("long", "Ò»¸öĞ¡Ğ¡µÄºì°ü£¬ÉÏÃæĞå×Å£ºĞÂwizÉÏÈÎ¡£Ğ¡Ğ¡ÀñÎï¡£\n");
+            set("long", "ä¸€å€‹å°å°çš„ç´…åŒ…ï¼Œä¸Šé¢ç¹¡è‘—ï¼šæ–°wizä¸Šä»»ã€‚å°å°ç¦®ç‰©ã€‚\n");
           }
     setup();
 }
@@ -22,15 +22,15 @@ void init()
 int do_open(string arg)
 {
         object gold;
-        if(arg != "hongbao" && arg != "ºì°ü") 
+        if(arg != "hongbao" && arg != "ç´…åŒ…") 
                 return 0;
         if(query("opened"))
-                return notify_fail("Äã´ò¿ªĞ¡ºì°ü£¬µ«ÀïÃæÊÇ¿ÕµÄ£¡\n");
+                return notify_fail("ä½ æ‰“é–‹å°ç´…åŒ…ï¼Œä½†è£¡é¢æ˜¯ç©ºçš„ï¼\n");
         gold = new("/clone/money/gold");
         gold->set_amount(10+random(10));
-        set("name", "´¿½ğÒ¶×Ó", gold);
-        set("base_unit", "ÕÅ", gold);
+        set("name", "ç´”é‡‘è‘‰å­", gold);
+        set("base_unit", "å¼µ", gold);
         gold->move(this_player());
         set("opened",1);
-        return notify_fail("Äã´ò¿ªĞ¡ºì°ü£¬´ÓÀïÃæÄÃ³ö¼¸ÕÅ´¿½ğÒ¶×Ó£¡\n");
+        return notify_fail("ä½ æ‰“é–‹å°ç´…åŒ…ï¼Œå¾è£¡é¢æ‹¿å‡ºå¹¾å¼µç´”é‡‘è‘‰å­ï¼\n");
 }

@@ -7,10 +7,10 @@ inherit BOSS;
 void create()
 {
         object ob;
-        set_name("¶«·½²»°Ü", ({"dongfang bubai", "dongfang", "bubai", "dong"}));
-        set("long", "Ëû¾ÍÊÇÈÕÔÂÉñ½Ì½ÌÖ÷¡£¾İ´«Îä¹¦ÌìÏÂµÚÒ»£¬Òò´Ë´óºÅ¾ÍÊÇ¡¸¶«·½²»°Ü¡¹¡£\n");
-        set("nickname", HIY "Îä¹¦ÌìÏÂµÚÒ»" NOR );
-        set("gender", "ÎŞĞÔ");
+        set_name("æ±æ–¹ä¸æ•—", ({"dongfang bubai", "dongfang", "bubai", "dong"}));
+        set("long", "ä»–å°±æ˜¯æ—¥æœˆç¥æ•™æ•™ä¸»ã€‚æ“šå‚³æ­¦åŠŸå¤©ä¸‹ç¬¬ä¸€ï¼Œå› æ­¤å¤§è™Ÿå°±æ˜¯ã€Œæ±æ–¹ä¸æ•—ã€ã€‚\n");
+        set("nickname", HIY "æ­¦åŠŸå¤©ä¸‹ç¬¬ä¸€" NOR );
+        set("gender", "ç„¡æ€§");
         set("class", "eunach");
         set("attitude", "peaceful");
         set("age", 40);
@@ -90,13 +90,13 @@ void create()
         ]));
 
         set("drops", ([
-                "RA&RANDOM40"    :       100,   // µÍ¼¶ÆÕÍ¨×°±¸
-                "RA&RANDOM40"    :       100,   // µÍ¼¶ÆÕÍ¨×°±¸
-                "RA&RANDOM40"    :       100,   // µÍ¼¶ÆÕÍ¨×°±¸
-                "RA&RANDOM40"    :       100,   // µÍ¼¶ÆÕÍ¨×°±¸
-                "RA&RANDOM40"    :       100,   // µÍ¼¶ÆÕÍ¨×°±¸
-                "RA&RANDOM50"    :       100,   // µÍ¼¶ÆÕÍ¨×°±¸
-                "RA&RANDOM50"    :       40,    // µÍ¼¶ÆÕÍ¨×°±¸
+                "RA&RANDOM40"    :       100,   // ä½ç´šæ™®é€šè£å‚™
+                "RA&RANDOM40"    :       100,   // ä½ç´šæ™®é€šè£å‚™
+                "RA&RANDOM40"    :       100,   // ä½ç´šæ™®é€šè£å‚™
+                "RA&RANDOM40"    :       100,   // ä½ç´šæ™®é€šè£å‚™
+                "RA&RANDOM40"    :       100,   // ä½ç´šæ™®é€šè£å‚™
+                "RA&RANDOM50"    :       100,   // ä½ç´šæ™®é€šè£å‚™
+                "RA&RANDOM50"    :       40,    // ä½ç´šæ™®é€šè£å‚™
                 "FI&/clone/tessera/rune21" :   30,
                 "FI&/clone/tessera/rune22" :   30,
                 "FI&/clone/goods/sun"   :   50,
@@ -146,7 +146,7 @@ mixed hit_ob(object me, object ob, int damage_bouns)
         wound=20000+random(20000)-query_temp("apply/armor", me);
         if (wound < 1)wound = 1;
         me->receive_wound("qi", wound, ob);
-        return HIY "$N" HIY "Å­ºÈÒ»Éù£¬·ÜÁ¦·´¿¹£¬¾¹±ÆµÃ$n" HIY "ÊÖÃ¦½ÅÂÒ¡£\n" NOR;
+        return HIY "$N" HIY "æ€’å–ä¸€è²ï¼Œå¥®åŠ›åæŠ—ï¼Œç«Ÿé€¼å¾—$n" HIY "æ‰‹å¿™è…³äº‚ã€‚\n" NOR;
 }
 
 void heart_beat()

@@ -7,9 +7,9 @@ int do_zuan(string arg);
 
 void create()
 {
-        set("short", "¾®ÖÐ");
+        set("short", "äº•ä¸­");
         set("long", @LONG
-ÕâÊÇÔÚÒ»¿Ú¿Ý¾®ÖÐ¡£¹âÏß¼«°µ£¬Ê²Ã´Ò²¿´²»Çå¡£
+é€™æ˜¯åœ¨ä¸€å£æž¯äº•ä¸­ã€‚å…‰ç·šæ¥µæš—ï¼Œä»€éº¼ä¹Ÿçœ‹ä¸æ¸…ã€‚
 LONG );
         set("exits", ([
                 "up" : __DIR__"houyuan",
@@ -37,9 +37,9 @@ int do_use(string arg)
         if (!present("fire", me))  return 0;
         if( arg=="fire" ) {
              write(
-             "ÄãµãÈ¼ÁË»ðÕÛ£¬·¢ÏÖ¾®±ÚÉÏÓÐÒ»µÀÁÑ·ì£¬ËÆºõ¿ÉÒÔ×ê(zuan)³öÈ¥¡£\n"
+             "ä½ é»žç‡ƒäº†ç«æŠ˜ï¼Œç™¼ç¾äº•å£ä¸Šæœ‰ä¸€é“è£‚ç¸«ï¼Œä¼¼ä¹Žå¯ä»¥é‘½(zuan)å‡ºåŽ»ã€‚\n"
              );
-             set_temp("marks/×ê1", 1, this_player());
+             set_temp("marks/é‘½1", 1, this_player());
              return 1;
        }
 }
@@ -49,18 +49,18 @@ int do_zuan(string arg)
         object me;
         me = this_player();
 
-        if( query_temp("marks/×ê1", me)){
-            message("vision", me->name() + "×ÌÁïÒ»ÏÂ²»¼ûÁË¡£\n",
+        if( query_temp("marks/é‘½1", me)){
+            message("vision", me->name() + "æ»‹æºœä¸€ä¸‹ä¸è¦‹äº†ã€‚\n",
                     environment(me), ({me}) );
             me->move(__DIR__"midao");
-            message("vision", me->name() + "´Ó¾®Àï×êÁË³öÀ´¡£\n",
+            message("vision", me->name() + "å¾žäº•è£¡é‘½äº†å‡ºä¾†ã€‚\n",
                     environment(me), ({me}) );
-            delete_temp("marks/×ê1", this_player());
+            delete_temp("marks/é‘½1", this_player());
 
             return 1;
         }
         else {
-            write("ÄãÏëÍùÄÄ¶ù×ê?!\n");
+            write("ä½ æƒ³å¾€å“ªå…’é‘½?!\n");
             return 1;
         }
 }

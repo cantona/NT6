@@ -1,4 +1,4 @@
-// tiancs.c ±ù²ÏË¿
+// tiancs.c å†°è ¶çµ²
 
 #include <ansi.h>
 
@@ -6,18 +6,18 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIW "±ù²ÏË¿" NOR, ({ "white silk", "bingcan si", "si"}));
+        set_name(HIW "å†°è ¶çµ²" NOR, ({ "white silk", "bingcan si", "si"}));
         set_weight(700);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»Êø¾§Ó¨ÌŞÍ¸µÄÏ¸Ë¿£¬ÒşÈ»·º³ö°×¹â¡£\n");
-                set("unit", "Êø");
+                set("long", "ä¸€æŸæ™¶ç‘©å‰”é€çš„ç´°çµ²ï¼Œéš±ç„¶æ³›å‡ºç™½å…‰ã€‚\n");
+                set("unit", "æŸ");
                 set("value", 100000);
                 set("item_origin", 1);
                 set("material_attrib", "silk");
-                set("material_name", HIW "±ù²ÏË¿" NOR);
-                set("can_make", ({ "±Ş", "»¤¼×", "Õ½ÒÂ", "Ñ¥×Ó", "Ñü´ø" }));
+                set("material_name", HIW "å†°è ¶çµ²" NOR);
+                set("can_make", ({ "é­", "è­·ç”²", "æˆ°è¡£", "é´å­", "è…°å¸¶" }));
                 set("power_point", 100);
         }
 }

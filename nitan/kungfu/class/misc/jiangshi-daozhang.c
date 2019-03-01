@@ -9,16 +9,16 @@ void random_move();
 
 void create()
 {
-        set_name(HIY "½©Ê¬µÀ³¤" NOR, ({ "jiangshi daozhang", "jiangshi", "daozhang" }));
+        set_name(HIY "åƒµå±é“é•·" NOR, ({ "jiangshi daozhang", "jiangshi", "daozhang" }));
         set("title", HIR "" NOR);
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("age", 32);
         set("long", @LONG
-¾İËµÖĞÔ­½©Ê¬ºáĞĞ£¬ÊÕ·ş½©Ê¬Ò²±ã³ÉÁËÒ»ÖÖÖ°Òµ£¬ÓÉÓÚ³¤ÆÚ
-¸ú½©Ê¬´ò½»µÀ£¬²¿·ÖµÀÊ¿ÔÚ±»½©Ê¬Ò§ÉËºóÒ²Ê§È¥ÁËÀíÖÇ£¬±ä
-Îª°ëÈË°ëÊ¬£¬¾ßÓĞ·Ç³£´óµÄÉ±ÉËĞÔ¡£ÕâĞ©µÀÊ¿Ò²¾Í±»ÈËÃÇ³Æ
-Ö®Îª½©Ê¬µÀ³¤¡£ÖĞÔ­½©Ê¬ÔÚÈô¸ÉÄêºóÒÑ¾­»ù±¾±»É±¾¡£¬ÆäÓà
-±»¸ÏÖÁ¸ß²ıÃÔ¹¬ÄÚ¡£
+æ“šèªªä¸­åŸåƒµå±æ©«è¡Œï¼Œæ”¶æœåƒµå±ä¹Ÿä¾¿æˆäº†ä¸€ç¨®è·æ¥­ï¼Œç”±äºé•·æœŸ
+è·Ÿåƒµå±æ‰“äº¤é“ï¼Œéƒ¨åˆ†é“å£«åœ¨è¢«åƒµå±å’¬å‚·å¾Œä¹Ÿå¤±å»äº†ç†æ™ºï¼Œè®Š
+ç‚ºåŠäººåŠå±ï¼Œå…·æœ‰éå¸¸å¤§çš„æ®ºå‚·æ€§ã€‚é€™äº›é“å£«ä¹Ÿå°±è¢«äººå€‘ç¨±
+ä¹‹ç‚ºåƒµå±é“é•·ã€‚ä¸­åŸåƒµå±åœ¨è‹¥å¹¹å¹´å¾Œå·²ç¶“åŸºæœ¬è¢«æ®ºç›¡ï¼Œå…¶ä½™
+è¢«è¶•è‡³é«˜æ˜Œè¿·å®®å…§ã€‚
 LONG);
         set("attitude", "friendly");
         set("str", 80);
@@ -93,7 +93,7 @@ LONG);
         }) );
 
         set("end_time", 300);
-        set("death_msg", RED"\n$N»¯×÷ÁËÒ»Ì²ÑªË®¡£\n\n"NOR);
+        set("death_msg", RED"\n$NåŒ–ä½œäº†ä¸€ç˜è¡€æ°´ã€‚\n\n"NOR);
 
         set("rewards", ([
                 "exp"   : 10000,
@@ -104,8 +104,8 @@ LONG);
         ]));
 
         set("drops", ([
-                "RA&RANDOM50"    :       100,   // µÍ¼¶ÆÕÍ¨×°±¸
-                "RA&RANDOM60"    :       40,    // µÍ¼¶ÆÕÍ¨×°±¸
+                "RA&RANDOM50"    :       100,   // ä½ç´šæ™®é€šè£å‚™
+                "RA&RANDOM60"    :       40,    // ä½ç´šæ™®é€šè£å‚™
                 "FI&/clone/misc/boss_item/tianshi-guifu":         20,
                 "FI&/clone/armor/tianshi-xiang"         :         20,
                 "FI&/clone/tessera/rune11"  :   1,
@@ -145,7 +145,7 @@ mixed hit_ob(object me, object ob, int damage_bouns)
         wound = 20000 + random(20000) - me->query_temp("apply/armor");
         if (wound < 1)wound = 1;
         me->receive_wound("qi", wound, ob);
-        return HIY "$N" HIY "Å­ºÈÒ»Éù£¬·ÜÁ¦·´¿¹£¬¾¹±ÆµÃ$n" HIY "ÊÖÃ¦½ÅÂÒ¡£\n" NOR;
+        return HIY "$N" HIY "æ€’å–ä¸€è²ï¼Œå¥®åŠ›åæŠ—ï¼Œç«Ÿé€¼å¾—$n" HIY "æ‰‹å¿™è…³äº‚ã€‚\n" NOR;
 }
 
 void heart_beat()
@@ -163,10 +163,10 @@ void random_move()
         if (time() - query_temp("born_time") > 1800)
         {
                 env = environment(this_object());
-                message_vision("$N¼±¼±Ã¦Ã¦µÄ×ßÁË¡£\n", this_object());
+                message_vision("$Næ€¥æ€¥å¿™å¿™çš„èµ°äº†ã€‚\n", this_object());
 
-                CHANNEL_D->channel_broadcast("mess", env->short() + HIW "(" + LOOK_CMD->locate(base_name(env)) + ")Ò»´ø³öÏÖµÄ" +
-                        HIR + this_object()->short() + HIG "ÏûÊ§ÁË¡£\n" NOR);
+                CHANNEL_D->channel_broadcast("mess", env->short() + HIW "(" + LOOK_CMD->locate(base_name(env)) + ")ä¸€å¸¶å‡ºç¾çš„" +
+                        HIR + this_object()->short() + HIG "æ¶ˆå¤±äº†ã€‚\n" NOR);
 
                 destruct(this_object());
                 return;
@@ -184,7 +184,7 @@ varargs void die(object killer)
                 return;
         }
 
-        if( time() < query_temp("end_time") ) // Ê±¼äÃ»ÓĞµ½£¬ËÀÍö²»ÁË
+        if( time() < query_temp("end_time") ) // æ™‚é–“æ²’æœ‰åˆ°ï¼Œæ­»äº¡ä¸äº†
         {
                 addn("jing", query("max_jing") / 10);
                 if( query("jing") > query("max_jing") ) set("jing", query("max_jing"));
@@ -194,14 +194,14 @@ varargs void die(object killer)
                 if( query("qi") > query("max_qi") ) set("qi", query("max_qi"));
                 addn("eff_qi", query("max_qi") / 10);
                 if( query("eff_qi") > query("max_qi") ) set("eff_qi", query("max_qi"));
-                message_vision(HIR "\n$N" HIR "´óºÈÒ»Éù£¬ÔËÓÃÃØ·¨£¬ÆøÑªÓĞËù»ØÉı£¡\n\n" NOR, this_object());
+                message_vision(HIR "\n$N" HIR "å¤§å–ä¸€è²ï¼Œé‹ç”¨ç§˜æ³•ï¼Œæ°£è¡€æœ‰æ‰€å›å‡ï¼\n\n" NOR, this_object());
                 return;
         }
 
         if (! objectp(killer))
                 killer = query_last_damage_from();
 
-        if( objectp(killer) && query("family/family_name", killer) == "Îäµ±ÅÉ")
+        if( objectp(killer) && query("family/family_name", killer) == "æ­¦ç•¶æ´¾")
                 set("rewards/gongxian", 300);
 
         return ::die(killer);

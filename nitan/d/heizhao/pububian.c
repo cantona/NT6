@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�ٲ�����");
+        set("short", "瀑布岸邊");
         set("long", @LONG
-�ٲ���ҹ�����������¾ã�����ʯ������һ�����Լ�ж���
-���ߡ�վ�ڰ��ϣ�ֻ�����ٲ����ڶ�ȥ��ˮĭ�Ľ������ɵ�Ŀѣ��
-�����ٲ�һк��ע��ֱ����������Ԩȥ������ϵ��һֻ���ۡ�
+瀑布日夜奔流，年深月久，在巖石間切了一道深溝，約有二丈
+來高。站在岸上，只見那瀑布奔騰而去，水沫四濺，不由得目眩心
+驚，瀑布一瀉如注，直沖入下面深淵去。岸邊系著一只鐵舟。
 LONG );
         set("outdoors", "taoyuan");
         set("resource/water", 1);

@@ -1,4 +1,4 @@
-//ÍçÊ¯¾÷¡£
+//é ‘çŸ³è¨£ã€‚
 
 
 inherit SKILL;
@@ -13,8 +13,8 @@ int valid_learn(object me)
 {
   
   if(!me->query("execute_quest/wanshijue",1)&&
-     me->query("vocation")!="É±ÊÖ")
-   return notify_fail("ÄãÏÖÔÚÎŞ·¨Áì»áÍçÊ¯¾÷µÄ°ÂÃØ£¡\n");
+     me->query("vocation")!="æ®ºæ‰‹")
+   return notify_fail("ä½ ç¾åœ¨ç„¡æ³•é ˜æœƒé ‘çŸ³è¨£çš„å¥§ç§˜ï¼\n");
   
   return 1;
   

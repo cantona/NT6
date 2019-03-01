@@ -5,17 +5,17 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIY "ÖĞÇïÔÂ±ıËÄºĞ×°" NOR, ({ "moongift" }) );
+        set_name(HIY "ä¸­ç§‹æœˆé¤…å››ç›’è£" NOR, ({ "moongift" }) );
         set_weight(1);
 
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIY "¶şÁãÁãÎåÄêÑ×»ÆÖĞÇïÌØ±ğÀñÆ·£¬ÇëÊ¹ÓÃopen moongiftÖ¸Áî´ò¿ª¡£\n"
-                                                "Í¬Ê±£¬ÉîÇĞµ¿ÄîÔÚ9.18ÊÂ±äÖĞÎşÉüµÄÁÒÊ¿£¬ÎğÍü¹ú³Ü£¡\n"NOR);
+                set("long", HIY "äºŒé›¶é›¶äº”å¹´ç‚é»ƒä¸­ç§‹ç‰¹åˆ¥ç¦®å“ï¼Œè«‹ä½¿ç”¨open moongiftæŒ‡ä»¤æ‰“é–‹ã€‚\n"
+                                                "åŒæ™‚ï¼Œæ·±åˆ‡æ‚¼å¿µåœ¨9.18äº‹è®Šä¸­çŠ§ç‰²çš„çƒˆå£«ï¼Œå‹¿å¿˜åœ‹æ¥ï¼\n"NOR);
                 set("value", 1);
                 set("no_sell", 1);
-                        set("unit", "ºĞ");
+                        set("unit", "ç›’");
         }
 
         setup();
@@ -38,7 +38,7 @@ int do_open(string arg)
                 me = this_player();
 
 
-                if (! arg)return notify_fail("Ö¸Áî¸ñÊ½: open moongift\n");
+                if (! arg)return notify_fail("æŒ‡ä»¤æ ¼å¼: open moongift\n");
 
                 ob = new("/clone/fam/max/yuebinggift");
                 ob->move(me, 1);
@@ -49,7 +49,7 @@ int do_open(string arg)
                 ob = new("/clone/fam/max/yuebinggift");
                 ob->move(me, 1);
 
-                tell_object(me, HIG "Äã´ò¿ªÖĞÇïÔÂ±ıËÄºĞ×°¡£\n" NOR);
+                tell_object(me, HIG "ä½ æ‰“é–‹ä¸­ç§‹æœˆé¤…å››ç›’è£ã€‚\n" NOR);
                 
                 destruct(this_object());
                 

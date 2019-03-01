@@ -3,11 +3,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "������Ժ");
+        set("short", "康府大院");
         set("long", @LONG
-���ǿ����������Ŷ��ߵ�һ�������Ĵ�Ժ��Ժ�ڴ�ɨ�÷ǳ��ɾ���
-��Χ�������˸��໨�ݣ�����������˴������У�������һ��ľ����
-�ȣ�ͨ�������Ĵ�����
+這是康親王府大門東邊的一個寬闊的大院，院內打掃得非常幹凈，
+周圍還種滿了各類花草，康府裡的下人穿梭其中，北邊是一條木制走
+廊，通往康府的大廳。
 LONG );
        set("exits", ([
                 "west" : "/d/beijing/kangfu_men",

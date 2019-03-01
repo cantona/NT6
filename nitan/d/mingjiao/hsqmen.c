@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ºéË®Æì´óÃÅ");
+        set("short", "æ´ªæ°´æ——å¤§é–€");
         set("long", @LONG
-ÕâÀïÊÇÃ÷½ÌºéË®ÆìµÄ´óÃÅ£¬ ×¯ÑÏ¹ÅÆÓ£¬ ÃÅÇ°¶Ô²åËÄÃæÏâÀ¶ó´Áú
-ÆìÃÅÇ°Ë®Éùäýäý£¬ È´ÊÇÒ»ÌõË®Á÷´ÓÃÅÏÂÁ÷³ö£¬ ÕýÊÇÆÙ²¼µÄÉÏÔ´£¬Ô­
-À´£¬ Õû¸öºéË®Æì¾Í½¨ÖþÔÚÕâÌõÐ¡ºÓÖ®ÉÏ¡£
+é€™è£¡æ˜¯æ˜Žæ•™æ´ªæ°´æ——çš„å¤§é–€ï¼Œ èŽŠåš´å¤æ¨¸ï¼Œ é–€å‰å°æ’å››é¢é‘²è—èŸ é¾
+æ——é–€å‰æ°´è²æ½ºæ½ºï¼Œ å»æ˜¯ä¸€æ¢æ°´æµå¾žé–€ä¸‹æµå‡ºï¼Œ æ­£æ˜¯ç€‘å¸ƒçš„ä¸Šæºï¼ŒåŽŸ
+ä¾†ï¼Œ æ•´å€‹æ´ªæ°´æ——å°±å»ºç¯‰åœ¨é€™æ¢å°æ²³ä¹‹ä¸Šã€‚
 LONG );
         set("exits", ([
                 "enter" : __DIR__"hsqchanglang",

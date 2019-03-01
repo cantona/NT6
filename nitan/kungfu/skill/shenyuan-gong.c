@@ -1,4 +1,4 @@
-// shenyuan-gong.c ÉñÔª¹¦
+// shenyuan-gong.c ç¥žå…ƒåŠŸ
 // Last Modified by winder on Mar. 10 2000
 
 #include <ansi.h>;
@@ -25,16 +25,16 @@ int valid_enable(string usage) { return usage == "force"; }
 int valid_learn(object me)
 {
         int lvl = (int)me->query_skill("shenyuan-gong", 1);
-        if( query("gender", me) == "ÎÞÐÔ" && lvl>49 )
-                return notify_fail("ÄãÎÞ¸ùÎÞÐÔ£¬ÒõÑô²»µ÷£¬ÄÑÒÔÁì»á¸ßÉîµÄÉñÔª¹¦¡£\n");
+        if( query("gender", me) == "ç„¡æ€§" && lvl>49 )
+                return notify_fail("ä½ ç„¡æ ¹ç„¡æ€§ï¼Œé™°é™½ä¸èª¿ï¼Œé›£ä»¥é ˜æœƒé«˜æ·±çš„ç¥žå…ƒåŠŸã€‚\n");
         if ((int)me->query_skill("force", 1) < 10)
-                return notify_fail("ÄãµÄ»ù±¾ÄÚ¹¦»ðºò»¹²»¹»£¬ÎÞ·¨Áì»áÉñÔª¹¦¡£\n");
+                return notify_fail("ä½ çš„åŸºæœ¬å…§åŠŸç«å€™é‚„ä¸å¤ ï¼Œç„¡æ³•é ˜æœƒç¥žå…ƒåŠŸã€‚\n");
         return ::valid_learn(me);
 }
 
 int practice_skill(object me)
 {
-        return notify_fail("ÉñÔª¹¦Ö»ÄÜÓÃÑ§(learn)µÄÀ´Ôö¼ÓÊìÁ·¶È¡£\n");
+        return notify_fail("ç¥žå…ƒåŠŸåªèƒ½ç”¨å­¸(learn)çš„ä¾†å¢žåŠ ç†Ÿç·´åº¦ã€‚\n");
 }
 
 string exert_function_file(string func)
@@ -43,13 +43,13 @@ string exert_function_file(string func)
 }
 int help(object me)
 {
-        write(HIC"\nÉñÔª¹¦£º"NOR"\n");
+        write(HIC"\nç¥žå…ƒåŠŸï¼š"NOR"\n");
         write(@HELP
 
-    ÉñÔª¹¦ÊÇ½­ÄÏ¹ÃËÕÄ½ÈÝÊÀ¼ÒµÄ±¾ÃÅÄÚ¹¦¡£
+    ç¥žå…ƒåŠŸæ˜¯æ±Ÿå—å§‘è˜‡æ…•å®¹ä¸–å®¶çš„æœ¬é–€å…§åŠŸã€‚
 
-        Ñ§Ï°ÒªÇó£º
-                »ù±¾ÄÚ¹¦10¼¶
+        å­¸ç¿’è¦æ±‚ï¼š
+                åŸºæœ¬å…§åŠŸ10ç´š
 HELP
         );
         return 1;

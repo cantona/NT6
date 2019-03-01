@@ -53,86 +53,86 @@ mapping levels = ([
 ]);
 
 mapping family = ([
-        "ÉÙÁÖÅÉ"   : ({ "/d/shaolin/zoulang1","/d/shaolin/hsyuan1",
+        "å°‘æ—æ´¾"   : ({ "/d/shaolin/zoulang1","/d/shaolin/hsyuan1",
                        "/d/shaolin/luohan1","/d/shaolin/luohan5",
                        "/d/shaolin/guangchang4","/d/shaolin/zoulang8",
                        "/d/shaolin/wuchang2","/d/shaolin/banruo2",
                        "/d/shaolin/bagua2","/d/shaolin/zhulin4", }),
-        "Îäµ±ÅÉ"   : ({ "/d/wudang/wdroad1","/d/wudang/gyroad1",
+        "æ­¦ç•¶æ´¾"   : ({ "/d/wudang/wdroad1","/d/wudang/gyroad1",
                        "/d/wudang/jindian","/d/wudang/shanlu4",
                        "/d/wudang/wuyaling","/d/wudang/zixiaogate",
                        "/d/wudang/taizipo", }),
-        "Ø¤°ï"     : ({ "/d/city/ml1", "/d/city/ml2",
+        "ä¸å¹«"     : ({ "/d/city/ml1", "/d/city/ml2",
                        "/d/city/ml3", "/d/gaibang/pomiao",
                        "/d/gaibang/shoushe", "/d/gaibang/inhole",
                        "/d/city/ml4", "/d/gaibang/slandao1",
                        "/d/gaibang/slandao2", }),
-        "È«Õæ½Ì"   : ({ "/d/quanzhen/shanlu4","/d/quanzhen/shijie7",
+        "å…¨çœŸæ•™"   : ({ "/d/quanzhen/shanlu4","/d/quanzhen/shijie7",
                        "/d/quanzhen/houshan","/d/quanzhen/datang3", }),
-        "»ªÉ½ÅÉ"   : ({ "/d/huashan/buwei1","/d/huashan/qunxianguan",
+        "è¯å±±æ´¾"   : ({ "/d/huashan/buwei1","/d/huashan/qunxianguan",
                        "/d/huashan/songlin1", }),
-        "Ñ©É½ËÂ"   : ({ "/d/xueshan/hubian1","/d/xueshan/chang",}),
-        "ÁéğÕ¹¬"   : ({ "/d/lingjiu/changl1","/d/lingjiu/liangong",
+        "é›ªå±±å¯º"   : ({ "/d/xueshan/hubian1","/d/xueshan/chang",}),
+        "éˆé·²å®®"   : ({ "/d/lingjiu/changl1","/d/lingjiu/liangong",
                        "/d/lingjiu/huayuan","/d/lingjiu/changl6",}),
-        "¶ëáÒÅÉ"   : ({ "/d/emei/jinding","/d/emei/woyunan",
+        "å³¨åµ‹æ´¾"   : ({ "/d/emei/jinding","/d/emei/woyunan",
                        "/d/emei/hcazhengdian","/d/emei/xiaolu1", }),
-        "ÌÒ»¨µº"   : ({ "/d/taohua/taolin","/d/taohua/zhulin3", }),
-        "Ã÷½Ì"     : ({ "/d/mingjiao/shanmen","/d/mingjiao/shanlu2", 
+        "æ¡ƒèŠ±å³¶"   : ({ "/d/taohua/taolin","/d/taohua/zhulin3", }),
+        "æ˜æ•™"     : ({ "/d/mingjiao/shanmen","/d/mingjiao/shanlu2", 
                        "/d/mingjiao/lhqpaifang","/d/mingjiao/lhqhoumen", }),
-        "Ä§½Ì"     : ({ "/d/yuanyue/shibanlu4","/d/yuanyue/senling1", }),
-        "ÉñÁú½Ì"   : ({ "/d/shenlong/fengding","/d/shenlong/wuchang", }),
-        "¹ÅÄ¹ÅÉ"   : ({ "/d/gumu/zhengting","/d/gumu/qianting", }),
-        "ĞÇËŞÅÉ"   : ({ "/d/xingxiu/xxh1","/d/xingxiu/xxh2", }),
-        "åĞÒ£ÅÉ"   : ({ "/d/xiaoyao/qingcaop","/d/xiaoyao/xiaodao4", }),
-        "Ñªµ¶ÃÅ"   : ({ "/d/xuedao/shandong2", "/d/xuedao/sroad9", }),
-        "Îå¶¾½Ì"   : ({ "/d/wudu/dating", "/d/wudu/wdsl7", }),
-        "ÈÕÔÂÉñ½Ì" : ({ "/d/heimuya/linjxd1","/d/heimuya/guang",
+        "é­”æ•™"     : ({ "/d/yuanyue/shibanlu4","/d/yuanyue/senling1", }),
+        "ç¥é¾æ•™"   : ({ "/d/shenlong/fengding","/d/shenlong/wuchang", }),
+        "å¤å¢“æ´¾"   : ({ "/d/gumu/zhengting","/d/gumu/qianting", }),
+        "æ˜Ÿå®¿æ´¾"   : ({ "/d/xingxiu/xxh1","/d/xingxiu/xxh2", }),
+        "é€é™æ´¾"   : ({ "/d/xiaoyao/qingcaop","/d/xiaoyao/xiaodao4", }),
+        "è¡€åˆ€é–€"   : ({ "/d/xuedao/shandong2", "/d/xuedao/sroad9", }),
+        "äº”æ¯’æ•™"   : ({ "/d/wudu/dating", "/d/wudu/wdsl7", }),
+        "æ—¥æœˆç¥æ•™" : ({ "/d/heimuya/linjxd1","/d/heimuya/guang",
                        "/d/heimuya/linjxd2","/d/heimuya/shidao1",
                        "/d/heimuya/shidao2","/d/heimuya/xingxingtan",   
                        "/d/heimuya/changtan", }),
         // add by wuji
     
-        "ÌúÕÆ°ï" : ({ "/d/tiezhang/wztang","/d/tiezhang/hxfang",
+        "éµæŒå¹«" : ({ "/d/tiezhang/wztang","/d/tiezhang/hxfang",
                        "/d/tiezhang/pingtai","/d/tiezhang/xxs",
                        "/d/tiezhang/sslu-1","/d/tiezhang/dong3",  }),
-        "ÁèÏö³Ç" : ({ "/d/lingxiao/cheng","/d/lingxiao/didi",
+        "å‡Œéœ„åŸ" : ({ "/d/lingxiao/cheng","/d/lingxiao/didi",
                        "/d/lingxiao/stone","/d/lingxiao/wave2",
                        "/d/lingxiao/fenghuo","/d/lingxiao/houyuan1",  }),
-        "À¥ÂØÅÉ" : ({ "/d/kunlun/shanbi","/d/kunlun/nanwoshi",
+        "æ˜†ä¾–æ´¾" : ({ "/d/kunlun/shanbi","/d/kunlun/nanwoshi",
                        "/d/kunlun/lianwu","/d/kunlun/xianjing",
                        "/d/kunlun/xuedi","/d/kunlun/kunlun3",  }),
-        "Çà³ÇÅÉ" : ({ "/d/qingcheng/maguchi","/d/qingcheng/qiandian",
+        "é’åŸæ´¾" : ({ "/d/qingcheng/maguchi","/d/qingcheng/qiandian",
                        "/d/qingcheng/zoulang3","/d/qingcheng/woshi",
                        "/d/qingcheng/sandaoshi","/d/qingcheng/tianran",  }),
-        "áÔÉ½ÅÉ" : ({ "/d/songshan/duzuntan","/d/songshan/eastting",
+        "åµ©å±±æ´¾" : ({ "/d/songshan/duzuntan","/d/songshan/eastting",
                        "/d/songshan/yunutai","/d/songshan/shuzhai",
                        "/d/songshan/taishique","/d/songshan/shandao2",  }),
-        "Ì©É½ÅÉ" : ({ "/d/taishan/duzunju","/d/taishan/fengyue",
+        "æ³°å±±æ´¾" : ({ "/d/taishan/duzunju","/d/taishan/fengyue",
                        "/d/taishan/wudafu","/d/taishan/yitian",
                        "/d/taishan/muliyuan","/d/taishan/yaocan",  }),
-        "ºãÉ½ÅÉ" : ({ "/d/hengshan/beiyuemiao","/d/hengshan/baiyuan",
+        "æ†å±±æ´¾" : ({ "/d/hengshan/beiyuemiao","/d/hengshan/baiyuan",
                        "/d/hengshan/jijiaooshi","/d/hengshan/hufengkou",
                        "/d/hengshan/shaodao2","/d/hengshan/zhaitang",  }),
-        "ºâÉ½ÅÉ" : ({ "/d/henshan/kefang","/d/henshan/inhole3",
+        "è¡¡å±±æ´¾" : ({ "/d/henshan/kefang","/d/henshan/inhole3",
                        "/d/henshan/houdian","/d/henshan/furong",
                        "/d/henshan/ontree2","/d/henshan/nantian",  }),
 
-        "ºì»¨»á" : ({ "/d/huijiang/damen","/d/huijiang/zongduo",
+        "ç´…èŠ±æœƒ" : ({ "/d/huijiang/damen","/d/huijiang/zongduo",
                        "/d/huijiang/xiagu","/d/huijiang/xiepo",
                        "/d/huijiang/goldroom","/d/huijiang/wuchang",  }),
         // end add
-        "Ä½ÈİÊÀ¼Ò" : ({ "/d/yanziwu/shuwu","/d/yanziwu/yimen", }),
-        "¹ØÍâºú¼Ò" : ({ "/d/guanwai/xiaowu","/d/guanwai/xiaoyuan",}),
-        "¶ÎÊÏ»Ê×å" : ({ "/d/dali/neitang","/d/dali/chahua7",
+        "æ…•å®¹ä¸–å®¶" : ({ "/d/yanziwu/shuwu","/d/yanziwu/yimen", }),
+        "é—œå¤–èƒ¡å®¶" : ({ "/d/guanwai/xiaowu","/d/guanwai/xiaoyuan",}),
+        "æ®µæ°çš‡æ—" : ({ "/d/dali/neitang","/d/dali/chahua7",
                        "/d/dali/chahua3","/d/dali/wfdating", }),
-        "Å·ÑôÊÀ¼Ò" : ({ "/d/baituo/dating","/d/baituo/huayuan",
+        "æ­é™½ä¸–å®¶" : ({ "/d/baituo/dating","/d/baituo/huayuan",
                        "/d/baituo/houyuan", }),
-        "ÌÆÃÅÊÀ¼Ò" : ({ "/d/tangmen/tmdamen","/d/tangmen/gudao2",
+        "å”é–€ä¸–å®¶" : ({ "/d/tangmen/tmdamen","/d/tangmen/gudao2",
                        "/d/tangmen/lianyunge","/d/tangmen/qianyuan", }),
 ]);
 
 nosave mapping place = ([
-        "±±¾©¶«³Ç": ({
+        "åŒ—äº¬æ±åŸ": ({
                         "/d/beijing/cagc_e","/d/beijing/caroad_e1",
                         "/d/beijing/caroad_e2","/d/beijing/zahuo",
                         "/d/beijing/yancao","/d/beijing/xingchang",
@@ -153,7 +153,7 @@ nosave mapping place = ([
                         "/d/beijing/dong_2","/d/beijing/guozijian",
                         "/d/beijing/wang_2",
                      }),
-        "±±¾©Î÷³Ç" : ({
+        "åŒ—äº¬è¥¿åŸ" : ({
                         "/d/beijing/niaoshi","/d/beijing/xi_1",
                         "/d/beijing/caroad_w1","/d/beijing/yangliu1",
                         "/d/beijing/yangliu2","/d/beijing/yangliu3",
@@ -196,7 +196,7 @@ nosave mapping place = ([
                         "/d/beijing/di_dajie2","/d/beijing/di_anmen",
                         "/d/beijing/qingmu_dating",
                      }),
-        "ÑïÖİ³Ç"   : ({
+        "æšå·åŸ"   : ({
                         "/d/city/zuixianlou2","/d/city/zuixianlou3",
                         "/d/city/zuixianlou","/d/city/beidajie2",
                         "/d/city/beimen","/d/city/beidajie1",
@@ -208,7 +208,7 @@ nosave mapping place = ([
                         "/d/city/yaopu","/d/city/datiepu",
                         "/d/city/dongmen",
                      }),
-         "³¤°²³Ç"   : ({
+         "é•·å®‰åŸ"   : ({
                         "/d/changan/huanggong","/d/changan/bridge1",
                         "/d/changan/baihu2","/d/changan/beian-dadao",
                         "/d/changan/beian-daokou","/d/changan/bingying1",
@@ -256,7 +256,7 @@ nosave mapping place = ([
                         "/d/changan/dongan-dadao","/d/changan/fengxu1",
                         "/d/changan/baihu3","/d/changan/guozijian",
                      }),
-        "³É¶¼³Ç"   : ({
+        "æˆéƒ½åŸ"   : ({
                         "/d/chengdu/guangchang","/d/chengdu/tidugate",
                         "/d/chengdu/shuduroad2","/d/chengdu/shuduroad1",
                         "/d/chengdu/eastroad2","/d/chengdu/eastroad1",
@@ -274,7 +274,7 @@ nosave mapping place = ([
                         "/d/chengdu/eastroad1","/d/chengdu/jiudian",
                         "/d/chengdu/wuguan",
                      }),
-        "ËÕÖİ³Ç"   : ({
+        "è˜‡å·åŸ"   : ({
                         "/d/suzhou/beimen","/d/suzhou/beidajie2",
                         "/d/suzhou/zijinan","/d/suzhou/jiudian",
                         "/d/suzhou/beidajie1","/d/suzhou/xiyuan",
@@ -297,7 +297,7 @@ nosave mapping place = ([
                         "/d/suzhou/xuanmiao","/d/suzhou/shuchang",
                         "/d/suzhou/ximen",
                      }),
-        "º¼Öİ³Ç"   : ({
+        "æ­å·åŸ"   : ({
                         "/d/hangzhou/suti2", "/d/hangzhou/jujingyuan",
                         "/d/hangzhou/liuzhuang", "/d/hangzhou/road19",
                         "/d/hangzhou/huangniling", "/d/hangzhou/qinglindong",
@@ -345,7 +345,7 @@ nosave mapping place = ([
                         "/d/hangzhou/maojiabu","/d/hangzhou/huangniling",
                         "/d/hangzhou/shuiledong","/d/hangzhou/manjuelong",
                      }),
-        "ÏåÑô³Ç"   : ({
+        "è¥„é™½åŸ"   : ({
                         "/d/xiangyang/westjie2", "/d/xiangyang/southjie2",
                         "/d/xiangyang/xiaorong1", "/d/xiangyang/zhonglie",
                         "/d/xiangyang/guangchang", "/d/xiangyang/dingzi",
@@ -399,7 +399,7 @@ nosave mapping place = ([
                         "/d/xiangyang/walln8",
                      }),
 
-        "´óÀíÒ»´ø" : ({
+        "å¤§ç†ä¸€å¸¶" : ({
                         "/d/dali/northgate", "/d/dali/southgate",
                         "/d/dali/shanlu2", "/d/dali/buxiongbu",
                         "/d/dali/jinzhihe", "/d/dali/xiaodao1",
@@ -428,14 +428,14 @@ nosave mapping place = ([
                      }),
 ]);
 
-string *nations = ({ "ÈÕ±¾", "ºÉÀ¼", "ÌìóÃ", "ÈÕ±¾", "ÈÕ±¾",
-                     "ÈÕ±¾", "Ó¢¼ªÀû", "·¨À¼Î÷", "Î÷°àÑÀ", "ÆÏÌÑÑÀ",
-                     "±ÈÀûÊ±"});
+string *nations = ({ "æ—¥æœ¬", "è·è˜­", "å¤©ç«º", "æ—¥æœ¬", "æ—¥æœ¬",
+                     "æ—¥æœ¬", "è‹±å‰åˆ©", "æ³•è˜­è¥¿", "è¥¿ç­ç‰™", "è‘¡è„ç‰™",
+                     "æ¯”åˆ©æ™‚"});
 
-string *foreigner = ({ "Ó¶±øÍÅ", "Ì½ÏÕ¶Ó", "ÇÖÂÔ¾ü", "ÍöÃüÍÅ»ï", "Á÷´Ü·¸" });
+string *foreigner = ({ "å‚­å…µåœ˜", "æ¢éšªéšŠ", "ä¾µç•¥è»", "äº¡å‘½åœ˜ä¼™", "æµç«„çŠ¯" });
 
-string *chinese = ({ "ºÚ·çÕ¯", "¸«Í·°ï", "É½Î÷ÍÁ·Ë", "É½¶«ÏìÂí", "ÏæÎ÷ÍÁ·Ë",
-                     "ÎÚÁú¸ÚÇ¿µÁ", "Ì«ĞĞÉ½ÍÁ·Ë", "ÂäÈÕ·åÃ«Ôô", "»ÄÄ®´óµÁ" });
+string *chinese = ({ "é»‘é¢¨å¯¨", "æ–§é ­å¹«", "å±±è¥¿åœŸåŒª", "å±±æ±éŸ¿é¦¬", "æ¹˜è¥¿åœŸåŒª",
+                     "çƒé¾å´—å¼·ç›œ", "å¤ªè¡Œå±±åœŸåŒª", "è½æ—¥å³°æ¯›è³Š", "è’æ¼ å¤§ç›œ" });
 
 void add_killer(object killer);
 void be_killed(int num);
@@ -472,9 +472,9 @@ void be_killed(int num)
         all_enemy -= num;
         listeners = filter_array(users(), (: filter_listener :));
         if (all_enemy <= 0)
-                message("group_quest",HIR "¡¾Çé±¨¡¿" NOR + HIY + "Ì«°ôÁË£¡ËùÓĞµÄµĞÈËÈ«²¿¶¼¸øÏûÃğÁË£¡\n" + NOR,listeners);
+                message("group_quest",HIR "ã€æƒ…å ±ã€‘" NOR + HIY + "å¤ªæ£’äº†ï¼æ‰€æœ‰çš„æ•µäººå…¨éƒ¨éƒ½çµ¦æ¶ˆæ»…äº†ï¼\n" + NOR,listeners);
         else if (all_enemy < 6)
-                message("group_quest",HIR "¡¾Çé±¨¡¿" NOR + HIY + "¼ÓÓÍ°¡£¡¸ù¾İ×îĞÂÇé±¨£¬»¹Ê£ÏÂ" + chinese_number(all_enemy) + "¸öµĞÈË£¡\n" + NOR,listeners);
+                message("group_quest",HIR "ã€æƒ…å ±ã€‘" NOR + HIY + "åŠ æ²¹å•Šï¼æ ¹æ“šæœ€æ–°æƒ…å ±ï¼Œé‚„å‰©ä¸‹" + chinese_number(all_enemy) + "å€‹æ•µäººï¼\n" + NOR,listeners);
         return;
 }
 
@@ -511,8 +511,8 @@ void go_on_process(object ob)
 void create()
 {
         seteuid(ROOT_UID);
-        set("channel_id", "ÈÎÎñ¾«Áé");
-        CHANNEL_D->do_channel( this_object(), "sys", "Èº×éÈÎÎñÏµÍ³ÒÑ¾­Æô¶¯¡£");
+        set("channel_id", "ä»»å‹™ç²¾éˆ");
+        CHANNEL_D->do_channel( this_object(), "sys", "ç¾¤çµ„ä»»å‹™ç³»çµ±å·²ç¶“å•Ÿå‹•ã€‚");
         ready_to_start();
 }
 
@@ -532,24 +532,24 @@ object create_npc(string nation, int lvl)
 
         switch (nation)
         {
-        case "ÖĞ¹ú":
+        case "ä¸­åœ‹":
                 ob = new(CLASS_D("generate") + "/quest_chinese");
                 NPC_D->generate_cn_name(ob);
                 break;
-        case "ÈÕ±¾":
+        case "æ—¥æœ¬":
                 ob = new(CLASS_D("generate") + "/quest_japanese");
                 NPC_D->generate_jp_name(ob);
                 break;
-        case "Ó¢¼ªÀû":
-        case "·¨À¼Î÷":
-        case "Î÷°àÑÀ":
-        case "ÆÏÌÑÑÀ":
-        case "±ÈÀûÊ±":
-        case "ºÉÀ¼":
+        case "è‹±å‰åˆ©":
+        case "æ³•è˜­è¥¿":
+        case "è¥¿ç­ç‰™":
+        case "è‘¡è„ç‰™":
+        case "æ¯”åˆ©æ™‚":
+        case "è·è˜­":
                 ob = new(CLASS_D("generate") + "/quest_european");
                 generate_e_name(ob);
                 break;
-        case "ÌìóÃ":
+        case "å¤©ç«º":
                 ob = new(CLASS_D("generate") + "/quest_indian");
                 generate_in_name(ob);
                 break;
@@ -604,7 +604,7 @@ void start_quest()
 
         ready_to_start();
         if( nowtime[1] < 9 ) return;
-        CHANNEL_D->do_channel(this_object(), "sys", "Èº×éÈÎÎñÏµÍ³¿ªÊ¼Ñ¡ÔñÈÎÎñ¡£");
+        CHANNEL_D->do_channel(this_object(), "sys", "ç¾¤çµ„ä»»å‹™ç³»çµ±é–‹å§‹é¸æ“‡ä»»å‹™ã€‚");
 
         all_quest = quest_name;
 
@@ -613,7 +613,7 @@ void start_quest()
                 name = all_quest[random(sizeof(all_quest))];
 
                 CHANNEL_D->do_channel(this_object(), "sys",
-                                      "Èº×éÈÎÎñÏµÍ³Ñ¡ÔñÁËÈÎÎñ(" + name + ")¡£");
+                                      "ç¾¤çµ„ä»»å‹™ç³»çµ±é¸æ“‡äº†ä»»å‹™(" + name + ")ã€‚");
 
                 all_quest -= ({ name });
                 name = GROUP_QUEST_DIR + name;
@@ -653,8 +653,8 @@ void process_quest(object ob)
         step++;
 
         prompt = ob->prompt();
-        //if (! prompt) prompt = HIR "¡¾Èº×éÈÎÎñ¡¿" NOR;
-        if (! prompt) prompt = HIR "¡¾Èº×é¡¿" NOR;
+        //if (! prompt) prompt = HIR "ã€ç¾¤çµ„ä»»å‹™ã€‘" NOR;
+        if (! prompt) prompt = HIR "ã€ç¾¤çµ„ã€‘" NOR;
         if (functionp(line)) catch(line = evaluate(line));
         if (stringp(line))
         {
@@ -678,7 +678,7 @@ varargs void place_npc(object ob,string arg,string the_type,int lvl,string pp)
 
         switch (arg)
         {
-                case "ÍâµĞ":
+                case "å¤–æ•µ":
                         set("my_type", arg, ob);
                         startroom = place[the_type][random(sizeof(place[the_type]))];
                         if (! objectp(pos = get_object(startroom)))
@@ -686,18 +686,18 @@ varargs void place_npc(object ob,string arg,string the_type,int lvl,string pp)
                                                         the_type, startroom));
                         set("place", the_type, ob);
                         break;
-                case "ÃÅÅÉ":
+                case "é–€æ´¾":
                         set("my_type", arg, ob);
-                        set("ÃÅÅÉ", the_type, ob);
+                        set("é–€æ´¾", the_type, ob);
                         startroom = family[the_type][random(sizeof(family[the_type]))];
                         if (! objectp(pos = get_object(startroom)))
                                 log_file("log", sprintf("error to place npc to %s:%s\n",
                                                         the_type, startroom));
                         set("place", the_type, ob);
                         break;
-                case "°ïÅÉ":
+                case "å¹«æ´¾":
                         set("my_type", arg, ob);
-                        set("°ïÅÉ", the_type, ob);
+                        set("å¹«æ´¾", the_type, ob);
                         startroom = place[pp][random(sizeof(place[pp]))];
                         if (! objectp(pos = get_object(startroom)))
                                 log_file("log", sprintf("error to place npc to %s:%s\n",
@@ -712,39 +712,39 @@ varargs void place_npc(object ob,string arg,string the_type,int lvl,string pp)
                 case 1:
                 case 2:
                 case 3:
-                        set("nickname", "Ğ¡à¶ÂŞ", ob);
+                        set("nickname", "å°å˜ç¾…", ob);
                         set("bonus", 600, ob);
                         break;
                 case 4:
                 case 5:
                 case 6:
-                        set("nickname", "ÆÕÍ¨³ÉÔ±", ob);
+                        set("nickname", "æ™®é€šæˆå“¡", ob);
                         set("bonus", 800, ob);
                         break;
                 case 7:
                 case 8:
                 case 9:
-                        set("nickname", "Ğ¡Í·Ä¿", ob);
+                        set("nickname", "å°é ­ç›®", ob);
                         set("bonus", 1000, ob);
                         break;
                 case 10:
                 case 11:
                 case 12:
-                        set("nickname", "´óÍ·Ä¿", ob);
+                        set("nickname", "å¤§é ­ç›®", ob);
                         set("bonus", 1500, ob);
                         break;
                 case 13:
                 case 14:
-                        set("nickname", "Ê×Áì", ob);
+                        set("nickname", "é¦–é ˜", ob);
                         set("bonus", 2000, ob);
                         break;
                 case 15:
                 case 16:
-                        set("nickname", "´óÊ×Áì", ob);
+                        set("nickname", "å¤§é¦–é ˜", ob);
                         set("bonus", 3000, ob);
                         break;
                 default:
-                        set("nickname", "×ÜÊ×Áì", ob);
+                        set("nickname", "ç¸½é¦–é ˜", ob);
                         set("bonus", 5000, ob);
                         break;
         }
@@ -752,7 +752,7 @@ varargs void place_npc(object ob,string arg,string the_type,int lvl,string pp)
         ob->move(pos);
         set("startroom", startroom, ob);
         set_temp("moved", ({}), ob);
-        message_vision("$N×ßÁË¹ıÀ´¡£\n", ob);
+        message_vision("$Nèµ°äº†éä¾†ã€‚\n", ob);
 }
 
 // random move
@@ -835,7 +835,7 @@ void set_enemy(int num)
 {
         all_enemy = num;
 }
-//±¾º¯ÊıÓÃÓÚ²éÕÒµØµãÁĞ±íµÄ´íÎó
+//æœ¬å‡½æ•¸ç”¨äºæŸ¥æ‰¾åœ°é»åˆ—è¡¨çš„éŒ¯èª¤
 void check_all_place()
 {
         int i,j;
@@ -850,7 +850,7 @@ void check_all_place()
                 {
                         write(the_place[j] + "\n");
                         if (!objectp(env = get_object(the_place[j])))
-                                log_file("static/party_quest",sprintf("ÃÅÅÉÈÎÎñ´íÎó¼ÇÂ¼£º%s\n",the_place[j]));
+                                log_file("static/party_quest",sprintf("é–€æ´¾ä»»å‹™éŒ¯èª¤è¨˜éŒ„ï¼š%s\n",the_place[j]));
                 }
         }
 }

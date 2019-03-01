@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-        set("short","�͵ĵ�");
+        set("short","巴的甸");
         set("long",@LONG
-������Ǵ�������Ҫ��͵ĵ飬�����ĵ���Ҫ�θ���������Ĳ�
-��ֲ��ڸ��������ڶ���ˮ�ȵ����У��͵ĵ����ܶ�ũ��Դ�Ϊ��
-�ģ���·��ͨ�˴����Ӹ����Ĳ��䡣
+這裡就是大理西部要鎮巴的甸，是烏夷的重要治府，多個烏夷部
+落分布在附近。坐于東瀘水谷地正中，巴的甸四周多農田，以此為中
+心，道路四通八達連接各方的部落。
 LONG);
         set("outdoors", "daliw");
         set("exits",([ /* sizeof() == 1 */

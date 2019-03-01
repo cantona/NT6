@@ -1,4 +1,4 @@
-// shenliwan.c ÉñÁ¦Íè
+// shenliwan.c ç¥åŠ›ä¸¸
 
 #include <ansi.h>
 
@@ -6,35 +6,35 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIG "ÉñÁ¦Íè" NOR, ({ "shenli wan", "wan"}) );
+        set_name(HIG "ç¥åŠ›ä¸¸" NOR, ({ "shenli wan", "wan"}) );
         set_weight(200);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¿ÅÔ²Ô²µÄÉñÁ¦Íè£¬¾İËµ³ÔÁË¿ÉÒÔÔöÇ¿±ÛÁ¦¡£Ôö¼ÓÏÈÌìÊôĞÔÖÁÎåµã\n");
+                set("long", "ä¸€é¡†åœ“åœ“çš„ç¥åŠ›ä¸¸ï¼Œæ“šèªªåƒäº†å¯ä»¥å¢å¼·è‡‚åŠ›ã€‚å¢åŠ å…ˆå¤©å±¬æ€§è‡³äº”é»\n");
                 set("value", 10000);
-                set("unit", "¿Å");
+                set("unit", "é¡†");
                 set("only_do_effect", 1);
         }
 }
 
 int do_effect(object me)
 {
-        message_vision("$NÒ»Ñö²±£¬ÍÌÏÂÁËÒ»¿Å" + this_object()->name() +
-                       "¡£\n", me);
+        message_vision("$Nä¸€ä»°è„–ï¼Œåä¸‹äº†ä¸€é¡†" + this_object()->name() +
+                       "ã€‚\n", me);
         if( query("gift/shenliwan", me) >= 5 || 
             query("gift/str/succeed", me) >= 5 )
         {
-                message_vision("$NÕ£Õ£ÑÛ¡£\n", me);
-                tell_object(me, "Äã¾õµÃÕâÒ©Ã»É¶Î¶µÀ£¬»¹²»Èç»¨ÉúºÃ³Ô¡£\n");
+                message_vision("$Nçœ¨çœ¨çœ¼ã€‚\n", me);
+                tell_object(me, "ä½ è¦ºå¾—é€™è—¥æ²’å•¥å‘³é“ï¼Œé‚„ä¸å¦‚èŠ±ç”Ÿå¥½åƒã€‚\n");
         } else
         if (random(5) == 0)
         {
                 addn("gift/str/fail", 1, me);
-                tell_object(me, "²»¹ıÄã¾õµÃºÃÏñÃ»Ê²Ã´×÷ÓÃ¡£\n");
+                tell_object(me, "ä¸éä½ è¦ºå¾—å¥½åƒæ²’ä»€éº¼ä½œç”¨ã€‚\n");
         } else
         {
-                tell_object(me, HIR "Äã¾õµÃË«±Û¼¸ºõ±¬ÁÑ£¬³äÂúÁËÁ¦Á¿¡£\n" NOR);
+                tell_object(me, HIR "ä½ è¦ºå¾—é›™è‡‚å¹¾ä¹çˆ†è£‚ï¼Œå……æ»¿äº†åŠ›é‡ã€‚\n" NOR);
                 addn("str", 1, me);
                 addn("gift/str/succeed", 1, me);
         }

@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����㳡");
+        set("short", "中央廣場");
         set("long", @LONG
-����������������㳡���ˣ�������ǻʹ������ˣ�һ���Ѱ��
-���ն����ҵ�����ȥ�����������ﻹ���൱�����֣���ͷ���յģ���
-Ϸ�Ķ��Ƽ��ڴˣ��γ�һ�󾰹⡣
+這裡是汴樑城中央廣場了了，北面就是皇宮正門了，一般的尋常
+百姓都不敢到那裡去，不過在這裡還是相當的熱鬧，街頭賣藝的，唱
+戲的都雲集于此，形成一大景光。
 LONG );
         set("outdoors", "city2");
         set("no_fly",1);

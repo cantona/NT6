@@ -1,21 +1,21 @@
-// É¨°Ñ »Ø´ºÌÃ×öÈÎÎñµÄµÀ¾ß¡£
+// æƒæŠŠ å›æ˜¥å ‚åšä»»å‹™çš„é“å…·ã€‚
 
 #include <weapon.h>
 inherit HAMMER;
 
 void create()
 {
-        set_name("É¨°Ñ", ({ "saoba" }));
+        set_name("æƒæŠŠ", ({ "saoba" }));
         set_weight(5000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ù");
-                set("long", "ÕâÊÇÒ»¸ùÖñÖÆµÄÉ¨°Ñ¡£\n");
+                set("unit", "æ ¹");
+                set("long", "é€™æ˜¯ä¸€æ ¹ç«¹åˆ¶çš„æƒæŠŠã€‚\n");
                 set("value", 1);
                 set("material", "iron");
-                set("wield_msg", "$NÄÃ³öÒ»°Ñ$n£¬ÄÃÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+                set("wield_msg", "$Næ‹¿å‡ºä¸€æŠŠ$nï¼Œæ‹¿åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
         }
         init_hammer(5);
         setup();
@@ -37,38 +37,38 @@ int do_job(string arg)
                 j = 5;
 
         if( query("jing", me) <= j){
-                message_vision ("$NÌ«ÀÛÁË£¬µÃÏÈĞİÏ¢Ò»ÏÂ£¬²ÅÄÜ¼ÌĞøÍê³ÉÈÎÎñ£¡\n", me );
+                message_vision ("$Nå¤ªç´¯äº†ï¼Œå¾—å…ˆä¼‘æ¯ä¸€ä¸‹ï¼Œæ‰èƒ½ç¹¼çºŒå®Œæˆä»»å‹™ï¼\n", me );
                 return 1;
         }
 
         if( !query_temp("renwu_name", me)){
-                message_vision ("$NÄÃÆğÉ¨°Ñ£¬¿ñÎèÁËÒ»Õó±ã¾õÎŞÈ¤£¡\n", me);
+                message_vision ("$Næ‹¿èµ·æƒæŠŠï¼Œç‹‚èˆäº†ä¸€é™£ä¾¿è¦ºç„¡è¶£ï¼\n", me);
                 return 1;
         }
 
         if( query_temp("renwu_wancheng", me) >= 100 )
         {
-                set_temp("renwu_wancheng", 100, me);//±íÊ¾Íê³ÉÈÎÎñ
-                return notify_fail ("ÄãÍê³ÉÁËÈÎÎñ£¬»ØÈ¥¸´Ãü°É£¡\n");
+                set_temp("renwu_wancheng", 100, me);//è¡¨ç¤ºå®Œæˆä»»å‹™
+                return notify_fail ("ä½ å®Œæˆäº†ä»»å‹™ï¼Œå›å»å¾©å‘½å§ï¼\n");
         }
 
               if (me->is_busy()) 
-                      return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ£¡\n"); 
+                      return notify_fail("ä½ ç¾åœ¨æ­£å¿™è‘—å‘¢ï¼\n"); 
         if( query("short", environment(me)) != query_temp("renwu_name", me) )
-                return notify_fail ("²»ÊÇÈÃÄãÔÚÕâÀï´òÉ¨°¡£¡\n");
+                return notify_fail ("ä¸æ˜¯è®“ä½ åœ¨é€™è£¡æ‰“æƒå•Šï¼\n");
 
-        //ÅĞ¶ÏÊÇ·ñwieldÁË¹¤¾ß
+        //åˆ¤æ–·æ˜¯å¦wieldäº†å·¥å…·
         if( !objectp(weapon=query_temp("weapon", me) )
             || query("id", weapon) != "saoba" )
         {
-                return notify_fail ("Äã¿ÕÊÖÔõÃ´É¨µØ£¿ÄÃÊÖ×¥Âğ£¡\n");
+                return notify_fail ("ä½ ç©ºæ‰‹æ€éº¼æƒåœ°ï¼Ÿæ‹¿æ‰‹æŠ“å—ï¼\n");
         }
         else 
         {               
                 addn_temp("renwu_wancheng", j, me);
                 addn("jing", -j, me);
                 me->improve_skill("medical", (j/3));
-                message_vision ("$NÄÃÆğÉ¨°Ñ£¬Ò»±ßÉ¨×ÅµØ°å£¬Ò»±ßÁôÒâÒ½Ê¦ÔÚ¸øÈË°ÑÂö£¡\n", me);
+                message_vision ("$Næ‹¿èµ·æƒæŠŠï¼Œä¸€é‚Šæƒè‘—åœ°æ¿ï¼Œä¸€é‚Šç•™æ„é†«å¸«åœ¨çµ¦äººæŠŠè„ˆï¼\n", me);
                    me->start_busy(1+random(3));
         }
         return 1;

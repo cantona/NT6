@@ -4,12 +4,12 @@ inherit ITEM;
 
 void create()
 {
-        set_name("ÁúÏÑÏã", ({"long xianxiang" }));
+        set_name("é¾æ¶é¦™", ({"long xianxiang" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿é");
-                set("long", "ÕâÊÇÒ»¿éÁúÏÑÏã,ÓÃÀ´²¶ÉßĞ§¹ûºÜºÃ¡£\n");
+                set("unit", "å¡Š");
+                set("long", "é€™æ˜¯ä¸€å¡Šé¾æ¶é¦™,ç”¨ä¾†æ•è›‡æ•ˆæœå¾ˆå¥½ã€‚\n");
                 set("value", 1000);
         }
         setup();
@@ -17,5 +17,5 @@ void create()
 
 int do_effect(object me)
 {
-        return notify_fail("ÏëËÀ°¡£¿ÁúÏÑÏã²»ÄÜ³Ô¡£\n");
+        return notify_fail("æƒ³æ­»å•Šï¼Ÿé¾æ¶é¦™ä¸èƒ½åƒã€‚\n");
 }

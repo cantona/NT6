@@ -1,5 +1,5 @@
 // This program is a part of NT MudLIB
-// sun.c ÈÕ»ê
+// sun.c æ—¥é­‚
 
 #include <ansi.h>
 
@@ -7,14 +7,14 @@ inherit TESSERA;
 
 void create()
 {
-        set_name(RED "ÈÕ»ê" NOR, ({ "sun soul", "sun" }) );
+        set_name(RED "æ—¥é­‚" NOR, ({ "sun soul", "sun" }) );
         set_weight(1);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", RED "Ì«ÑôÕæ»ğÄı¾Û¶ø³É£¬ÎÚ½ğÉ«£¬ÄÜÆÆĞ°ÇÓÄ§£¬Ç§¾ü±ÙÒ×¡£¡£\n" NOR);
+                set("long", RED "å¤ªé™½çœŸç«å‡èšè€Œæˆï¼Œçƒé‡‘è‰²ï¼Œèƒ½ç ´é‚ªæ€¯é­”ï¼Œåƒè»è¾Ÿæ˜“ã€‚ã€‚\n" NOR);
                 set("value", 50000);
-                set("unit", "¿é");
+                set("unit", "å¡Š");
                 set("can_enchant", "weapon");
                 set("auto_load", 1);
         }
@@ -34,22 +34,22 @@ int do_extract(object obj)
 
         ob = this_object();
 
-        if( !obj ) return notify_fail("Ã»ÓĞÕâ¸öÎïÆ·¡£\n");
+        if( !obj ) return notify_fail("æ²’æœ‰é€™å€‹ç‰©å“ã€‚\n");
 
         if( query("enchase", ob) )
-                return notify_fail("ÈÕ»êÒÑ¾­¸½Ä§¹ıÊôĞÔÁË¡£\n");
+                return notify_fail("æ—¥é­‚å·²ç¶“é™„é­”éå±¬æ€§äº†ã€‚\n");
 
         if( !query("enchase", obj) || !(applied_prop=query("enchase/apply_prop", obj)) )
-                return notify_fail("Õâ¸öÎïÆ·ÉÏÃæÃ»ÓĞ¿ÉÓÃÀ´¸½Ä§µÄÊôĞÔ¡£\n");
+                return notify_fail("é€™å€‹ç‰©å“ä¸Šé¢æ²’æœ‰å¯ç”¨ä¾†é™„é­”çš„å±¬æ€§ã€‚\n");
 
         if( obj->is_item_make() || !(ins=copy(query("insert", obj))) )
-                return notify_fail("Õâ¸öÎïÆ·ÎŞ·¨ÓÃÀ´¸½Ä§µÄÊôĞÔ¡£\n");
+                return notify_fail("é€™å€‹ç‰©å“ç„¡æ³•ç”¨ä¾†é™„é­”çš„å±¬æ€§ã€‚\n");
 
         if( !query("skill_type", obj) && query("armor_type", obj) != "hands" && query("armor_type", obj) != "finger" )
-                return notify_fail("ÈÕ»êÖ»ÄÜÓÃÀ´¸½Ä§±øÆ÷ÀàÎïÆ·µÄÊôĞÔ¡£\n");
+                return notify_fail("æ—¥é­‚åªèƒ½ç”¨ä¾†é™„é­”å…µå™¨é¡ç‰©å“çš„å±¬æ€§ã€‚\n");
 
         if( random(100) < 20 )
-                return notify_fail("¸½Ä§Ê§°Ü¡£\n");
+                return notify_fail("é™„é­”å¤±æ•—ã€‚\n");
         
         key = keys(ins);
         enc = key[random(sizeof(key))];
@@ -58,7 +58,7 @@ int do_extract(object obj)
 
         enchase_prop = res["apply_prop"];
         if( !mapp(enchase_prop) )
-                return notify_fail("¸½Ä§Ê§°Ü¡£\n");
+                return notify_fail("é™„é­”å¤±æ•—ã€‚\n");
 
         set("insert", ins, obj);
         apply = keys(enchase_prop);

@@ -16,10 +16,10 @@ int main(object me, string arg)
         int damage;
 
         if( query("no_fight", environment(me)) )
-                return notify_fail("���ﲻ��ս����\n");
+                return notify_fail("這裡不能戰鬥。\n");
 
         if (me->is_busy())
-                return notify_fail("( ����һ��������û����ɣ�����ʩ�÷�ŭһ����)\n");
+                return notify_fail("( 你上一個動作還沒有完成，不能施用憤怒一擊。)\n");
 
         if (! arg)
         {
@@ -29,23 +29,23 @@ int main(object me, string arg)
                 target = present(arg, environment(me));
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail("��ŭһ��ֻ�ܶ�ս���еĶ���ʹ�á�\n");
+                return notify_fail("憤怒一擊只能對戰鬥中的對手使用。\n");
 
         if (! living(target))
-                return notify_fail("�˼Ҷ��Ѿ���������ˣ���"
-                                   "���õ�����ô������ô��\n");
+                return notify_fail("人家都已經這個樣子了，你"
+                                   "還用得著這麼費力氣麼？\n");
 
         if ((craze = me->query_craze()) < 500)
-                return notify_fail("��������ƽ���ͣ�̸����ʲô��ŭ��\n");
+                return notify_fail("你現在心平氣和，談不上什麼憤怒。\n");
 
         if (craze < 1000)
-                return notify_fail("�����ڻ�������ŭ���޷�ʩչ��ŭ��ɱ������\n");
+                return notify_fail("你現在還不夠憤怒，無法施展憤怒必殺絕技。\n");
 
         if( query("qi", me)*100/query("max_qi", me)<50 )
-                return notify_fail("����������̫�������޷�ʩչ��ŭ��ɱ������\n");
+                return notify_fail("你現在體力太虛弱，無法施展憤怒必殺絕技。\n");
 
         if( query("qi", me)<200 )
-                return notify_fail("��������Ϣ����ǿ������ʩչ���ҵķ�ŭ��ɱ������\n");
+                return notify_fail("你現在氣息不夠強，難以施展爆烈的憤怒必殺絕技。\n");
 
         me->receive_damage("qi",random(query("max_qi", me)/4));
 
@@ -59,15 +59,15 @@ int main(object me, string arg)
                         return 1;
                 }
 
-                if( query("gender", me) == "Ů��" )
-                        msg = HIR "$N" HIR "�����������У������ɨ��$n"
-                              HIR "�������������˸���ս��ֻ��$P������"
-                              "������" + RANK_D->query_rude(target) +
-                              "����ȥ���ɣ���\n" NOR;
+                if( query("gender", me) == "女性" )
+                        msg = HIR "$N" HIR "眼神猶如利刃，冷冷的掃過$n"
+                              HIR "，讓他不禁打了個寒戰。只見$P低聲喝"
+                              "道：“" + RANK_D->query_rude(target) +
+                              "，你去死吧！”\n" NOR;
                 else
-                        msg = HIR "$N" HIR "�������ף������񣬶�$n"
-                              HIR "��ȵ�����" + RANK_D->query_rude(target) +
-                              "���㻹���������������\n" NOR;
+                        msg = HIR "$N" HIR "咆哮如雷，有如瘋狂，對$n"
+                              HIR "狂喝道：“" + RANK_D->query_rude(target) +
+                              "，你還不快快納命來？”\n" NOR;
                 message_combatd(msg, me, target);
 
                 // first attack
@@ -81,12 +81,12 @@ int main(object me, string arg)
                 addn_temp("apply/damage", damage, me);
                 addn_temp("apply/unarmed_damage", damage, me);
                 COMBAT_D->do_attack(me,target,query_temp("weapon", me),0);
-                msg = HIR "\n$N" HIR "һ�й������������ݣ��漴������������һ�У�\n" NOR;
+                msg = HIR "\n$N" HIR "一招攻出，竟不罷休，隨即舍身撲上又是一招！\n" NOR;
                 if (! me->is_fighting(target) && living(target))
                 {
-                        msg += HIY "$n" HIY "��$N" HIY "����������ȫȻ"
-                               "�����Լ��Ѿ��������գ����ɴ��һ������"
-                               "æ�ֵ���\n" NOR;
+                        msg += HIY "$n" HIY "見$N" HIY "舍生忘死，全然"
+                               "不顧自己已經認輸做罷，不由大吃一驚，慌"
+                               "忙抵擋。\n" NOR;
                 }
                 message_combatd(msg, me, target);
 
@@ -106,13 +106,13 @@ int main(object me, string arg)
                 return 1;
         }
 
-        if( query("gender", me) == "Ů��" )
-                msg = HIR "$N" HIR "һ��������ңָ$n" HIR "�ȵ�����" +
-                      RANK_D->query_rude(target) + "�����У���\n" NOR;
+        if( query("gender", me) == "女性" )
+                msg = HIR "$N" HIR "一聲嬌嗔，遙指$n" HIR "喝道：“" +
+                      RANK_D->query_rude(target) + "，看招！”\n" NOR;
         else
-                msg = HIR "$N" HIR "һ�������ͬ�����������$n" HIR
-                      HIR "���ȵ�����" + RANK_D->query_rude(target) +
-                      "���㻹�������������\n" NOR;
+                msg = HIR "$N" HIR "一聲大吼，如同晴空霹靂，對$n" HIR
+                      HIR "暴喝道：“" + RANK_D->query_rude(target) +
+                      "，你還不快快受死？”\n" NOR;
 
         message_combatd(msg, me, target);
         attack = craze / 60;
@@ -149,13 +149,13 @@ void hate_attack(object me, object target)
                 damage = me->query_str() * 8;
 
         if (random(2))
-                shout_message(me->name(1) + "��" + target->name() + HIR "�����ȵ���" +
-                              RANK_D->query_rude(target) + "������" +
-                              RANK_D->query_self(me) + "Ҫ��ѪծѪ�������У�");
+                shout_message(me->name(1) + "對" + target->name() + HIR "厲聲喝道：" +
+                              RANK_D->query_rude(target) + "，今日" +
+                              RANK_D->query_self(me) + "要你血債血償！接招！");
         else
-                shout_message(me->name(1) + "��" + target->name() + HIR "ŭ�ȵ���" +
-                              RANK_D->query_rude(target) + "���Թ�ɱ�˳�����" +
-                              "�����Ҿ�Ҫ��Ĺ��������ɣ�");
+                shout_message(me->name(1) + "對" + target->name() + HIR "怒喝道：" +
+                              RANK_D->query_rude(target) + "，自古殺人償命！" +
+                              "今天我就要你的狗命！來吧！");
 
         me->want_kill(target);
         me->kill_ob(target);
@@ -164,21 +164,21 @@ void hate_attack(object me, object target)
         addn_temp("apply/unarmed_damage", damage, me);
         COMBAT_D->do_attack(me,target,query_temp("weapon", me),0);
 
-        message_combatd(HIR "\n$N" HIR "�е���" + target->name() +
-                       "�����ٿ�����һ�У�\n" NOR, me);
+        message_combatd(HIR "\n$N" HIR "叫道：" + target->name() +
+                       "，你再看我上一招！\n" NOR, me);
         COMBAT_D->do_attack(me,target,query_temp("weapon", me),0);
 
-        message_combatd(HIR "\n$N" HIR "�е���" + RANK_D->query_rude(target) +
-                      "�����ٿ�����һ�У�\n" NOR, me);
+        message_combatd(HIR "\n$N" HIR "叫道：" + RANK_D->query_rude(target) +
+                      "，你再看我下一招！\n" NOR, me);
         COMBAT_D->do_attack(me,target,query_temp("weapon", me),0);
 
-        message_combatd(HIR "\n$N" HIR "�е����ã����ٽ�����һ�У�\n" NOR, me);
+        message_combatd(HIR "\n$N" HIR "叫道：好！你再接我左一招！\n" NOR, me);
         COMBAT_D->do_attack(me,target,query_temp("weapon", me),0);
 
-        message_combatd(HIR "\n$N" HIR "�е������ߣ����ٽ�����һ�У�\n" NOR, me);
+        message_combatd(HIR "\n$N" HIR "叫道：休走！你再接我右一招！\n" NOR, me);
         COMBAT_D->do_attack(me,target,query_temp("weapon", me),0);
 
-        message_combatd(HIR "\n$N" HIR "�е�����������⵱�д���һ�У�\n" NOR, me);
+        message_combatd(HIR "\n$N" HIR "叫道：看清楚我這當中穿心一招！\n" NOR, me);
         damage+=query("str", me);
         attack+=query("str", me);
         addn_temp("apply/attack",query("str",  me), me);
@@ -186,7 +186,7 @@ void hate_attack(object me, object target)
         addn_temp("apply/unarmed_damage",query("str",  me), me);
         COMBAT_D->do_attack(me,target,query_temp("weapon", me),0);
 
-        message_combatd(HIR "\n$N" HIR "�е�����û�꣬�������һ�У�����\n" NOR, me);
+        message_combatd(HIR "\n$N" HIR "叫道：還沒完，看我最後一招！！！\n" NOR, me);
         COMBAT_D->do_attack(me,target,query_temp("weapon", me),0);
         addn_temp("apply/attack", -attack, me);
         addn_temp("apply/damage", -damage, me);
@@ -196,31 +196,31 @@ void hate_attack(object me, object target)
             query("jing", target) >= 0 )
         {
                 if (random(2))
-                        shout_message(target->name(1) + "�ǺǴ�Ц������λ" +
-                                      RANK_D->query_respect(me) + "�����"
-                                      "���������������������ҺΣ�");
+                        shout_message(target->name(1) + "呵呵大笑道：這位" +
+                                      RANK_D->query_respect(me) + "，你好"
+                                      "厲害啊！不過又豈能奈我何？");
                 else
-                        shout_message(target->name(1) + "������Ц�������" +
-                                      "���ƺ��װ�����ϧ����̫�Ҳ�գ�Ҳ�գ�������");
+                        shout_message(target->name(1) + "哈哈大笑道：你的" +
+                                      "來勢好兇啊，可惜本事太差，也罷，也罷，哈哈！");
 
-                tell_object(me, HIR "��Ŀ�����ѣ�����ȼ�������ŭ��˿��û�м�����\n" NOR);
+                tell_object(me, HIR "你目眥俱裂，心中燃起的重重怒火，絲毫沒有減弱。\n" NOR);
         } else
         {
                 if (random(2))
-                        shout_message(target->name(1) + "�ҽе����ҵ��죡");
+                        shout_message(target->name(1) + "慘叫道：我的天！");
                 else
-                        shout_message(target->name(1) + "�������ţ��찡����Ӧ���úÿ죡");
+                        shout_message(target->name(1) + "慘聲呼號：天啊，報應來得好快！");
 
                 me->cost_craze(craze);
                 me->craze_defeated(query("id", target));
-                tell_object(me, HIC "�㳤��һ����������ƽ�������ࡣ\n" NOR);
+                tell_object(me, HIC "你長舒一口氣，心情平靜了許多。\n" NOR);
         }
         me->start_busy(2);
 }
 
 void shout_message(string msg)
 {
-        message("channel:chat", HIR "������" HIW "ѩ" HIR "�ޡ�" +
+        message("channel:chat", HIR "【報仇" HIW "雪" HIR "恨】" +
                                 msg + "\n" NOR,
                                 all_interactive());
 }
@@ -228,16 +228,16 @@ void shout_message(string msg)
 int help (object me)
 {
         write(@HELP
-ָ���ʽ��crattack <����>
+指令格式：crattack <對象>
 
-����㴦�ڷ�ŭ״̬���Ϳ��������Լ��ķ�ŭ��ַ����Լ���������
-�������ڽ��ֵĶ��ֳ��صĴ������Ȼ�㻹��ʹ�ø��ͻ���ɱ������
-���书�����յ����õ�Ч�������ŭ���ﵽ�˶����ʱ����������
-��ͬ���졣
+如果你處于憤怒狀態，就可以利用自己的憤怒充分發揮自己的能力，
+予以正在交手的對手沉重的打擊。當然你還得使用剛猛或是殺傷力高
+的武功才能收到良好的效果。你的怒氣達到了頂峰的時候，威力更是
+不同凡響。
 
-����㱻�˴��λ���ɱ������������ɱ������˽���Ϊ�����޵Ķ�
-�󣬵����ŭ�ﵽ������ʱ�򣬾Ϳ��Զ������޵Ķ���ʩչ��������
-ɱ������ֻ�ܶ�һ�����޵Ķ�������һ�Ρ�
+如果你被人打暈或是殺死，則打暈你和殺死你的人將成為你憎恨的對
+象，當你憤怒達到頂級的時候，就可以對你憎恨的對象施展出索命必
+殺絕技，只能對一個憎恨的對象運用一次。
 
 HELP );
         return 1;

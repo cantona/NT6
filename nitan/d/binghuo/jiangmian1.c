@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Ç®ÌÁ½­Ãæ");
+        set("short", "éŒ¢å¡˜æ±Ÿé¢");
         set("long", @LONG
-Ö»ÌýµÃÀ×ÉùÒþÒþ£¬Ç®ÌÁ½­ÉÏÒ¹³±ÒÑÖÁ¡£³±ÉùÈçÀ×£¬Õð¶úÓûÁû£¬½­
-´¬ÃÍµØ±»Å×ÁËÆðÀ´¡£Ëµ»°Éù¾¡½ÔÑÚÃ»¡£Ïò´°Íâ¿´Ê±£¬Ö»¼û¾ÞÀËÓÌÈçÒ»
-¶ÂÍ¸Ã÷µÄ¸ßÇ½£¬Á½°¶·çÎï±»ÑÚÃ»ÔÚ¾ªÌÎÖ®ÖÐÁË¡£
+åªè½å¾—é›·è²éš±éš±ï¼ŒéŒ¢å¡˜æ±Ÿä¸Šå¤œæ½®å·²è‡³ã€‚æ½®è²å¦‚é›·ï¼Œéœ‡è€³æ¬²è¾ï¼Œæ±Ÿ
+èˆ¹çŒ›åœ°è¢«æ‹‹äº†èµ·ä¾†ã€‚èªªè©±è²ç›¡çš†æŽ©æ²’ã€‚å‘çª—å¤–çœ‹æ™‚ï¼Œåªè¦‹å·¨æµªçŒ¶å¦‚ä¸€
+å µé€æ˜Žçš„é«˜ç‰†ï¼Œå…©å²¸é¢¨ç‰©è¢«æŽ©æ²’åœ¨é©šæ¿¤ä¹‹ä¸­äº†ã€‚
 LONG );
         set("no_sleep_room",1);
         set("outdoors", "wangpan");

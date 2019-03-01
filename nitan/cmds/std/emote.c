@@ -22,27 +22,27 @@ int main(object me, string str)
                         return 1;
                 }
 
-                write("Õâ¸öµØ·½²»ÄÜÂÒ×ö¶¯×÷¡£\n");
+                write("é€™å€‹åœ°æ–¹ä¸èƒ½äº‚åšå‹•ä½œã€‚\n");
                 return 1;
         }
 
         if( query("doing", me) == "scheme" )
         {
                 if( query("jing", me)<100 )
-                        return notify_fail("ÄãÏÖÔÚµÄ¾«Éñ²»¼Ã£¬µÈÒ»»á¶ù°É¡£\n");
+                        return notify_fail("ä½ ç¾åœ¨çš„ç²¾ç¥žä¸æ¿Ÿï¼Œç­‰ä¸€æœƒå…’å§ã€‚\n");
                 addn("jing", -50, me);
         }
 
         if (! str)
         {
-                write(CYN"Äã¿´ÆðÀ´±íÇé·á¸»¡£\n"NOR);
+                write(CYN"ä½ çœ‹èµ·ä¾†è¡¨æƒ…è±å¯Œã€‚\n"NOR);
                 tell_room(env, CYN + (string)me->name()+
-                          "¿´ÆðÀ´±íÇé·á¸»¡£\n" + NOR, me);
+                          "çœ‹èµ·ä¾†è¡¨æƒ…è±å¯Œã€‚\n" + NOR, me);
                 return 1;
         }
 
         prefix=query("env/no_prefix", me)?"":"~";
-        write(CYN "Äã" + str + "\n" NOR);
+        write(CYN "ä½ " + str + "\n" NOR);
         tell_room(env, CYN + prefix + (string)me->name() +
                   str + "\n" NOR, me);
         return 1;
@@ -51,19 +51,19 @@ int main(object me, string str)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½: emote <¶¯×÷´Ê>
+æŒ‡ä»¤æ ¼å¼: emote <å‹•ä½œè©ž>
 
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄã±í´ïÒ»¸öÏµÍ³Ã»ÓÐÔ¤ÉèµÄ¶¯×÷´Ê, ÏµÍ³»á½«ÄãËùÊäÈë
-µÄÎÄ×Ö¼ÓÉÏÄãµÄÐÕÃûááÏÔÊ¾¸øËùÓÐÔÚÍ¬Ò»¸öµØ·½µÄÉúÎï¿´¡£ÎªÁË±ÜÃâÔì
-³ÉÀ§ÈÅ, Íæ¼ÒËùÊäÈëµÄ´Ê¾äÇ°Ãæ»á¼ÓÉÏ ~ ÒÔ¹©Çø±ð¡£
+é€™å€‹æŒ‡ä»¤å¯ä»¥è®“ä½ è¡¨é”ä¸€å€‹ç³»çµ±æ²’æœ‰é è¨­çš„å‹•ä½œè©ž, ç³»çµ±æœƒå°‡ä½ æ‰€è¼¸å…¥
+çš„æ–‡å­—åŠ ä¸Šä½ çš„å§“åå¾Œé¡¯ç¤ºçµ¦æ‰€æœ‰åœ¨åŒä¸€å€‹åœ°æ–¹çš„ç”Ÿç‰©çœ‹ã€‚ç‚ºäº†é¿å…é€ 
+æˆå›°æ“¾, çŽ©å®¶æ‰€è¼¸å…¥çš„è©žå¥å‰é¢æœƒåŠ ä¸Š ~ ä»¥ä¾›å€åˆ¥ã€‚
 
-·¶Àý: emote ×øÁËÏÂÀ´¡£
-Äã»á¿´¼û: Äã×øÁËÏÂÀ´¡£
-ÆäËûÈË»á¿´µ½: ~°ü×Ó×øÁËÏÂÀ´¡£
+èŒƒä¾‹: emote åäº†ä¸‹ä¾†ã€‚
+ä½ æœƒçœ‹è¦‹: ä½ åäº†ä¸‹ä¾†ã€‚
+å…¶ä»–äººæœƒçœ‹åˆ°: ~åŒ…å­åäº†ä¸‹ä¾†ã€‚
 
-ÆäÖÐ, °ü×Ó¾ÍÊÇÄãµÄÃû×Ö.
+å…¶ä¸­, åŒ…å­å°±æ˜¯ä½ çš„åå­—.
 
-Ïà¹ØÖ¸Áî: semote
+ç›¸é—œæŒ‡ä»¤: semote
 HELP );
         return 1;
 }

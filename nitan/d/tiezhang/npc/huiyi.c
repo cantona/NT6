@@ -4,9 +4,9 @@ inherit NPC;
 
 void create()
 {
-        set_name("»ÒÒÂ°ïÖÚ", ({ "huiyi bangzhong", "huiyi", "bangzhong"}));
-        set("long", "ËûÊÇÒ»¸öÉíĞĞ½¡×³µÄºº×Ó£¬Á½±Û´Ö×³£¬°òÀ«ÑüÔ²¡£ÂúÁ³µÄĞ×Ïà¡£\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("ç°è¡£å¹«çœ¾", ({ "huiyi bangzhong", "huiyi", "bangzhong"}));
+        set("long", "ä»–æ˜¯ä¸€å€‹èº«è¡Œå¥å£¯çš„æ¼¢å­ï¼Œå…©è‡‚ç²—å£¯ï¼Œè†€é—Šè…°åœ“ã€‚æ»¿è‡‰çš„å…‡ç›¸ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("attitude", "peaceful");
         set("age", 30);
         set("shen_type", -1);

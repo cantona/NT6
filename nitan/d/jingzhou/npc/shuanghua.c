@@ -4,15 +4,15 @@ int ask_me();
 
 void create()
 {
-        set_name("ÁèËª»ª", ({ "ling shuanghua", "ling", "shuanghua" }));
-        set("long", "Ëı³¤µÃÇåĞãÍÑË×£¬ÕæÊÇÈËµ­Èç¾Õ¡£\n");
-        set("gender", "Å®ĞÔ");
+        set_name("å‡Œéœœè¯", ({ "ling shuanghua", "ling", "shuanghua" }));
+        set("long", "å¥¹é•·å¾—æ¸…ç§€è„«ä¿—ï¼ŒçœŸæ˜¯äººæ·¡å¦‚èŠã€‚\n");
+        set("gender", "å¥³æ€§");
         set("age", 18);
 
         set("attitude", "friendly");
         set("inquiry", ([
-            "¶¡µä" : (: ask_me :),
-            "¶¡´ó¸ç" : (: ask_me :),
+            "ä¸å…¸" : (: ask_me :),
+            "ä¸å¤§å“¥" : (: ask_me :),
        ]) );
 
         set_skill("unarmed", 40);
@@ -43,16 +43,16 @@ void init()
 void greeting(object me)
 {
         command("fu"+query("id", me));
-        command("say ÕâÎ»"+RANK_D->query_respect(me)+"ÊÇÀ´"+
-                "¿´¾Õ»¨µÄ°É£¿");
-        command("say ²»ÖªµÀµùµùÔÚ»¨Ô°ÀïÖÖÁËÊ²Ã´£¬ÈËÒ»½øÈ¥¾Í»á±»Ñ¬ËÀµÄ£¬"+
-                "Äã»¹ÊÇÇë»Ø°É¡£");
+        command("say é€™ä½"+RANK_D->query_respect(me)+"æ˜¯ä¾†"+
+                "çœ‹èŠèŠ±çš„å§ï¼Ÿ");
+        command("say ä¸çŸ¥é“çˆ¹çˆ¹åœ¨èŠ±åœ’è£¡ç¨®äº†ä»€éº¼ï¼Œäººä¸€é€²å»å°±æœƒè¢«ç†æ­»çš„ï¼Œ"+
+                "ä½ é‚„æ˜¯è«‹å›å§ã€‚");
 }
 
         
 int accept_kill(object me)
 {
-        command("say ¶¡´ó¸ç¾ÈÃü°¡£¡" + me->name() + "Õâ¸ö" + RANK_D->query_rude(me) + "ÒªÇ¿±©ÎÒ£¡\n");
+        command("say ä¸å¤§å“¥æ•‘å‘½å•Šï¼" + me->name() + "é€™å€‹" + RANK_D->query_rude(me) + "è¦å¼·æš´æˆ‘ï¼\n");
         kill_ob(me);
         return 1;
 }
@@ -61,11 +61,11 @@ int ask_me()
 {
         object who=this_player();
         if( query_temp("jinboxunhua", who)){
-                command("say ÎÒ²»ÊÇ¸æËßÄãÁËÂğ£¿Äã¼ÇĞÔÒ²Ì«ÄÇ¸öÁË¡£");
+                command("say æˆ‘ä¸æ˜¯å‘Šè¨´ä½ äº†å—ï¼Ÿä½ è¨˜æ€§ä¹Ÿå¤ªé‚£å€‹äº†ã€‚");
                 return 1;
         }
-        command("say °¡£¡ÄãÊÇ¶¡´ó¸çµÄÅóÓÑ°¡£¡¼Ò¸¸ÔÚ»¨Ô°ÀïÖĞÁË¾ç¶¾µÄ½ğ²¨Ñ®»¨£¬"
-                + "Äã½øÈ¥ºóÆÁ×¡ºôÎü¾Í¿ÉÒÔÁË¡£");
+        command("say å•Šï¼ä½ æ˜¯ä¸å¤§å“¥çš„æœ‹å‹å•Šï¼å®¶çˆ¶åœ¨èŠ±åœ’è£¡ä¸­äº†åŠ‡æ¯’çš„é‡‘æ³¢æ—¬èŠ±ï¼Œ"
+                + "ä½ é€²å»å¾Œå±ä½å‘¼å¸å°±å¯ä»¥äº†ã€‚");
         set_temp("jinboxunhua", 1, who);
         return 1;
 }

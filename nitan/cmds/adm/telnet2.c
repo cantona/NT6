@@ -18,7 +18,7 @@ int main(object me, string arg)
         seteuid(getuid());
 
         if (! arg)
-                return notify_fail("ÄãÒªÁ¬½ÓÄÄÀï£¿\n");
+                return notify_fail("ä½ è¦é€£æ¥å“ªè£¡ï¼Ÿ\n");
 
         m = fetch_variable("mudlist", get_object(INTERMUD2_D));
         if( sizeof(msg = INTERMUD2_D->fetch_mudname(arg,1)) ) 
@@ -26,7 +26,7 @@ int main(object me, string arg)
                 foreach(string a in msg) 
                         minfo = copy(m[a]);
                 arg = minfo["HOSTADDRESS"] + " " + minfo["PORT"];
-                write("Á¬½Ó" + minfo["NAME"] + "(" + arg + ")\n");
+                write("é€£æ¥" + minfo["NAME"] + "(" + arg + ")\n");
         } else
         if (sscanf(arg, "%*s %*s") != 2)
                 arg += " 23";
@@ -34,7 +34,7 @@ int main(object me, string arg)
         tob = new("/shadow/telnet3");
         if (tob->do_shadow(me, 1) != me)
         {
-                write("ÏµÍ³´íÎó£¬Ó³ÉäÊ§°Ü¡£\n");
+                write("ç³»çµ±éŒ¯èª¤ï¼Œæ˜ å°„å¤±æ•—ã€‚\n");
                 return 1;
         }
 
@@ -45,11 +45,11 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½: telnet <MUD> | <Ö÷»úµØÖ·> [<Ä¿µÄ¶Ë¿Ú>]
+æŒ‡ä»¤æ ¼å¼: telnet <MUD> | <ä¸»æ©Ÿåœ°å€> [<ç›®çš„ç«¯å£>]
 
-Õâ¸öÖ¸ÁîÈÃÄã¿ÉÒÔÁ¬½ÓÁíÍâÒ»¸ö·şÎñÆ÷¡£
+é€™å€‹æŒ‡ä»¤è®“ä½ å¯ä»¥é€£æ¥å¦å¤–ä¸€å€‹æœå‹™å™¨ã€‚
 
-Á¬½ÓÊ±ÊäÈë CLOSE ÃüÁî¿ÉÒÔÖÕÖ¹Á¬½Ó¡£
+é€£æ¥æ™‚è¼¸å…¥ CLOSE å‘½ä»¤å¯ä»¥çµ‚æ­¢é€£æ¥ã€‚
 
 HELP );
         return 1;

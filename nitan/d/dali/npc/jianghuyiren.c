@@ -3,9 +3,9 @@
 inherit NPC;
 void create()
 {
-        set_name("½­ºşÒÕÈË", ({ "jianghu yiren", "yiren" }));
-        set("long", "ËûÊÇÒ»¸öÍâµØÀ´µÄ½­ºşÒÕÈË£¬ÊÖÀïÇ£×ÅÒ»Ö»½ğË¿ºï¶ù£¬ÂúÁ³·ç³¾Ö®É«¡£\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("æ±Ÿæ¹–è—äºº", ({ "jianghu yiren", "yiren" }));
+        set("long", "ä»–æ˜¯ä¸€å€‹å¤–åœ°ä¾†çš„æ±Ÿæ¹–è—äººï¼Œæ‰‹è£¡ç‰½è‘—ä¸€åªé‡‘çµ²çŒ´å…’ï¼Œæ»¿è‡‰é¢¨å¡µä¹‹è‰²ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 53);
         set("attitude", "friendly");
         set("str", 25);

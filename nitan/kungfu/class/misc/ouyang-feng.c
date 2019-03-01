@@ -12,14 +12,14 @@ int hurting();
 
 void create()
 {
-        set_name("Å·Ñô·æ", ({ "ouyang feng", "ouyang", "feng" }));
-        set("long", "ËûÊÇ°×ÍÕÉ½×¯Ö÷£¬ºÅ³Æ¡°Î÷¶¾¡±µÄÅ·Ñô·æ¡£\n"
-                    "ÓÉÓÚÏ°Á·¡¸¾ÅÒõÕæ¾­¡¹×ß»ğÈëÄ§£¬ÒÑ±äµÃ¾«\n"
-                    "Éñ´íÂÒ£¬ÕûÈÕÅûÍ·É¢·¢¡£\n");
-        set("title", "ÀÏ¶¾Îï");
-        set("gender", "ÄĞĞÔ");
+        set_name("æ­é™½é‹’", ({ "ouyang feng", "ouyang", "feng" }));
+        set("long", "ä»–æ˜¯ç™½é§å±±èŠä¸»ï¼Œè™Ÿç¨±â€œè¥¿æ¯’â€çš„æ­é™½é‹’ã€‚\n"
+                    "ç”±äºç¿’ç·´ã€Œä¹é™°çœŸç¶“ã€èµ°ç«å…¥é­”ï¼Œå·²è®Šå¾—ç²¾\n"
+                    "ç¥éŒ¯äº‚ï¼Œæ•´æ—¥æŠ«é ­æ•£ç™¼ã€‚\n");
+        set("title", "è€æ¯’ç‰©");
+        set("gender", "ç”·æ€§");
         set("age", 53);
-        set("nickname", HIR "Î÷¶¾" NOR);
+        set("nickname", HIR "è¥¿æ¯’" NOR);
         set("shen_type",-1);
         set("attitude", "peaceful");
         set("str", 100);
@@ -79,7 +79,7 @@ void create()
         prepare_skill("finger", "shedu-qiqiao");
         prepare_skill("cuff", "lingshe-quan");
 
-        create_family("Å·ÑôÊÀ¼Ò", 5, "ÕÆÃÅ");
+        create_family("æ­é™½ä¸–å®¶", 5, "æŒé–€");
 
         set("chat_chance", 30);
         set("chat_msg", ({ (: random_move :) }));
@@ -119,8 +119,8 @@ void create()
         ]));
 
         set("drops", ([
-                "RA&RANDOM60"    :       50,   // µÍ¼¶ÆÕÍ¨×°±¸
-                "RA&RANDOM70"    :       30,   // µÍ¼¶ÆÕÍ¨×°±¸
+                "RA&RANDOM60"    :       50,   // ä½ç´šæ™®é€šè£å‚™
+                "RA&RANDOM70"    :       30,   // ä½ç´šæ™®é€šè£å‚™
                 "FI&/clone/tessera/rune21" :   30,
                 "FI&/clone/goods/enchant-scroll" :   40,
                 "FI&/clone/goods/sun"   :   50,
@@ -163,9 +163,9 @@ int accept_fight(object ob)
 
 int accept_hit(object ob)
 {
-        message_vision(HIW "$N" HIW "Á³É«Ò»±ä£¬ÉÁ¹ıÒ»µÀÉ±Æø¡£Å­"
-                       "ºÈµÀ£ººÃÒ»¸ö" + RANK_D->query_rude(ob) +
-                       "£¬À´°É£¡\n" NOR, this_object());
+        message_vision(HIW "$N" HIW "è‡‰è‰²ä¸€è®Šï¼Œé–ƒéä¸€é“æ®ºæ°£ã€‚æ€’"
+                       "å–é“ï¼šå¥½ä¸€å€‹" + RANK_D->query_rude(ob) +
+                       "ï¼Œä¾†å§ï¼\n" NOR, this_object());
         kill_ob(ob);
         return 1;
 }
@@ -180,12 +180,12 @@ int accept_kill(object ob)
 
 int accept_ansuan(object ob)
 {
-        return notify_fail("ÄÇÈË¾¯ÌèĞÔºÃ¸ß£¬ÄãÄÑÒÔÏÂÊÖ¡£\n");
+        return notify_fail("é‚£äººè­¦æƒ•æ€§å¥½é«˜ï¼Œä½ é›£ä»¥ä¸‹æ‰‹ã€‚\n");
 }
 
 int accept_touxi(object ob)
 {
-        return notify_fail("ÄÇÈË¾¯ÌèĞÔºÃ¸ß£¬ÄãÄÑÒÔÏÂÊÖ¡£\n");
+        return notify_fail("é‚£äººè­¦æƒ•æ€§å¥½é«˜ï¼Œä½ é›£ä»¥ä¸‹æ‰‹ã€‚\n");
 }
 
 void kill_ob(object me)
@@ -222,7 +222,7 @@ int hurting()
         object *inv;
 
         remove_call_out("hurting");
-        message_vision( HIR "\n\n$NÊÖÖĞÁéÉßÕÈÍÂ³öÒ»¹É³ã¿É·Ù½ğµÄ»ğÑæ£®£®Õû¸öÌìµØËÆºõ¶¼±»È¼ÉÕ×Å£¡£¡£¡\n\n",this_object());
+        message_vision( HIR "\n\n$Næ‰‹ä¸­éˆè›‡æ–åå‡ºä¸€è‚¡ç†¾å¯ç„šé‡‘çš„ç«ç‡„ï¼ï¼æ•´å€‹å¤©åœ°ä¼¼ä¹éƒ½è¢«ç‡ƒç‡’è‘—ï¼ï¼ï¼\n\n",this_object());
         inv = all_inventory(environment(this_object()));
         for(i=sizeof(inv)-1; i>=0; i--)
         if( living(inv[i]))
@@ -235,9 +235,9 @@ int hurting()
                 inv[i]->affect_by("poison",
                                   ([ "level" : 1000,
                                      "id":query("id", this_object()),
-                                     "name" : "»ğ¶¾",
+                                     "name" : "ç«æ¯’",
                                      "duration" : 200 ]));
-                tell_object(inv[i], HIG "ÄãÖĞÁËÁéÉßÕÈµÄ»ğ¶¾¡£\n");
+                tell_object(inv[i], HIG "ä½ ä¸­äº†éˆè›‡æ–çš„ç«æ¯’ã€‚\n");
                 COMBAT_D->report_status(inv[i],1);
         }
         call_out("hurting", random(5)+5);
@@ -253,8 +253,8 @@ mixed hit_ob(object me, object ob, int damage_bouns)
         ob->receive_damage("qi", damage, me);
         ob->receive_wound("qi", damage, me);
         set("neili",query("max_neili",  me), me);
-        return HIB "$N" HIB "´óºğÒ»Éù£¬ÊÖÖĞ"HIR"ÁéÉßÕÈ"HIB"ÔÒÏò$n"
-               HIB "£¬$n¶ÙÊ±¸Ğµ½ÎåÀ×ºä¶¥£¬ÉË¼°ÎåÔàÄÚ¸¹¡£\n" NOR;
+        return HIB "$N" HIB "å¤§å¼ä¸€è²ï¼Œæ‰‹ä¸­"HIR"éˆè›‡æ–"HIB"ç ¸å‘$n"
+               HIB "ï¼Œ$né “æ™‚æ„Ÿåˆ°äº”é›·è½Ÿé ‚ï¼Œå‚·åŠäº”è‡Ÿå…§è…¹ã€‚\n" NOR;
 }
 
 void random_move()
@@ -264,11 +264,11 @@ void random_move()
         if (time() - query_temp("born_time") > 1800)
         {
                 env = environment(this_object());
-                message_vision("$N¼±¼±Ã¦Ã¦µÄ×ßÁË¡£\n", this_object());
+                message_vision("$Næ€¥æ€¥å¿™å¿™çš„èµ°äº†ã€‚\n", this_object());
                 
-                CHANNEL_D->channel_broadcast("mess", "ÌıËµ"+
-                        env->short() + HIW "(" + LOOK_CMD->locate(base_name(env)) + ")Ò»´ø³öÏÖµÄ" +
-                        HIR + this_object()->short() + HIG "ÏûÊ§ÁË¡£\n" NOR);
+                CHANNEL_D->channel_broadcast("mess", "è½èªª"+
+                        env->short() + HIW "(" + LOOK_CMD->locate(base_name(env)) + ")ä¸€å¸¶å‡ºç¾çš„" +
+                        HIR + this_object()->short() + HIG "æ¶ˆå¤±äº†ã€‚\n" NOR);
 
                 destruct(this_object());
                 return;
@@ -279,5 +279,5 @@ void random_move()
 void death_msg()
 {
         command("chat* yi");
-        command("chat ¾ÅÒõÕæ¾­²»ÊÇÌìÏÂÎŞµĞÃ´...£¿");
+        command("chat ä¹é™°çœŸç¶“ä¸æ˜¯å¤©ä¸‹ç„¡æ•µéº¼...ï¼Ÿ");
 }

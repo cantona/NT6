@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��Դʯ��");
+        set("short", "桃源石屋");
         set("long", @LONG
-������һ��Сʯ�ݣ���������ʲô�ر���������һλ������Ȼ��
-�󺺣��������㿴��
+這裡是一間小石屋，看不出有什麼特別，屋中立著一位正氣凜然的
+大漢，正盯著你看。
 LONG );
         set("no_fight", 1);
         set("objects", ([

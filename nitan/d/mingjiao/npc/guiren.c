@@ -1,8 +1,8 @@
 inherit NPC;
 void create()
 {
-        set_name("´ï¹Ù¹óÈË", ({ "gui ren", "gui", "ren" }));
-        set("gender", "ÄĞĞÔ");
+        set_name("é”å®˜è²´äºº", ({ "gui ren", "gui", "ren" }));
+        set("gender", "ç”·æ€§");
         set("age", 20+random(40));
         set_skill("unarmed", 20);
         set_skill("dodge", 20);

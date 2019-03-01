@@ -21,10 +21,10 @@ int main(object me,string arg)
 int help (object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : checkshop
+æŒ‡ä»¤æ ¼å¼ : checkshop
 
-²éÑ¯ËùÓĞºÚµê±¾½ì¾­Óª×´¿ö¡£
-Ïà¹ØÖ¸Áî£ºopenshop¡¢closeshop¡¢cshshop¡¢setowner
+æŸ¥è©¢æ‰€æœ‰é»‘åº—æœ¬å±†ç¶“ç‡Ÿç‹€æ³ã€‚
+ç›¸é—œæŒ‡ä»¤ï¼šopenshopã€closeshopã€cshshopã€setowner
 HELP );
         return 1;
 }

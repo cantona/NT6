@@ -1,5 +1,5 @@
 // quanzhen_drug.c
-// ÓÃÒÔ¿ØÖÆÈ«ÕæÁ¶µ¤ºÍ³ÔÒ©¡£
+// ç”¨ä»¥æŽ§åˆ¶å…¨çœŸç…‰ä¸¹å’Œåƒè—¥ã€‚
 
 #include <login.h>
 

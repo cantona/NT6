@@ -46,9 +46,9 @@ void message_zhong(object *spys)
 
         ob = leaver[random(sizeof(leaver))];
 
-        message("vision", zhong_ob->name() + "¼±¼±Ã¦Ã¦µØÀë¿ªÁË¡£\n", environment(zhong_ob), ({zhong_ob}));
+        message("vision", zhong_ob->name() + "æ€¥æ€¥å¿™å¿™åœ°é›¢é–‹äº†ã€‚\n", environment(zhong_ob), ({zhong_ob}));
         zhong_ob->move(environment(ob));
-        message_vision("\n$N×ßÁË¹ýÀ´¡£\n", zhong_ob);
+        message_vision("\n$Nèµ°äº†éŽä¾†ã€‚\n", zhong_ob);
         zhong_ob->set_leader(ob);
         set("sgwork/persuaded", 1, zhong_ob);
 
@@ -78,10 +78,10 @@ void persuade_leave(object zhong_ob, object ob)
         if( !query_temp("yield", zhong_ob) )
                 set_temp("yield", 1, zhong_ob);
 
-        message_vision("\n$N¶Ô$n¿à¿à¹æÈ°µÀ£º¼ÈÈ»½ÌÖ÷²»ÔÙÐÅÈÎÄã£¬Äã»¹ÊÇ¾¡¿ìÀë¿ªÉñÁú½Ì°É¡£\n", zhong_ob, ob);
+        message_vision("\n$Nå°$nè‹¦è‹¦è¦å‹¸é“ï¼šæ—¢ç„¶æ•™ä¸»ä¸å†ä¿¡ä»»ä½ ï¼Œä½ é‚„æ˜¯ç›¡å¿«é›¢é–‹ç¥žé¾æ•™å§ã€‚\n", zhong_ob, ob);
         if( !query_temp("zhong/nod", ob) )
                 set_temp("zhong/nod", 1, ob);
-        tell_object(ob, "ÄãÖ»Òª´òÒ»¸öÖ¸Áî£ºleave shenlong£¬¾ÍËãÀë¿ªÉñÁúÁË¡£\n");
+        tell_object(ob, "ä½ åªè¦æ‰“ä¸€å€‹æŒ‡ä»¤ï¼šleave shenlongï¼Œå°±ç®—é›¢é–‹ç¥žé¾äº†ã€‚\n");
         addn_temp("sg/zhong_persuade", 1, ob);
 
         if( query_temp("sg/zhong_persuade", ob)>3 )
@@ -121,9 +121,9 @@ void message_hong(object *spys)
                 strsrch(file, "/d/taohua/") == 0 ||
                 strsrch(file, "/d/xiakedao/") == 0 )  return;
 
-        message("vision", hong_ob->name() + "¼±¼±Ã¦Ã¦µØÀë¿ªÁË¡£\n", environment(hong_ob), ({hong_ob}));
+        message("vision", hong_ob->name() + "æ€¥æ€¥å¿™å¿™åœ°é›¢é–‹äº†ã€‚\n", environment(hong_ob), ({hong_ob}));
         hong_ob->move(dest);
-        message_vision("\n$N×ßÁË¹ýÀ´¡£\n", hong_ob);
+        message_vision("\n$Nèµ°äº†éŽä¾†ã€‚\n", hong_ob);
         hong_ob->set_leader(ob);
         "/cmds/std/look"->main(hong_ob,query("id", ob));
         set("sgwork/chased", 1, hong_ob);
@@ -161,7 +161,7 @@ void do_killing(object hong_ob, object ob)
                 call_out("destroy_ob", 1, hong_ob);
                 return;
         }
-        message_vision(RED"\n$N¶Ô$n´óÉùºÈµÀ£º"+ RANK_D->query_rude(ob) + "£¡ÔÚ½ÌÖÐÕâÃ´¶àÄê¾ÓÈ»ºÁÎÞ½¨Ê÷£¬ÎÒ·ÏÁËÄã°É£¡£¡£¡\n\n"NOR, hong_ob, ob);
+        message_vision(RED"\n$Nå°$nå¤§è²å–é“ï¼š"+ RANK_D->query_rude(ob) + "ï¼åœ¨æ•™ä¸­é€™éº¼å¤šå¹´å±…ç„¶æ¯«ç„¡å»ºæ¨¹ï¼Œæˆ‘å»¢äº†ä½ å§ï¼ï¼ï¼\n\n"NOR, hong_ob, ob);
         hong_ob->kill_ob(ob);
         call_out("check_killing", 1, hong_ob, ob);
 }

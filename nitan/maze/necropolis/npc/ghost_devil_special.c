@@ -4,12 +4,12 @@ inherit "/maze/necropolis/necropolis_npc";
 void do_transfer();
 void create()
 {
-        string *names = ({"ÓÄÚ¤Ä§"}); 
+        string *names = ({"å¹½å†¥é­”"}); 
         // set_name( names[random(sizeof(names))], ({ "ghost devil","ghost"}));
         set_name( names[random(sizeof(names))], ({ "ghost devil"}));
         set("vendetta_mark","ghost");
-        set("long", "ÕâÊÇ¸öÈôÒşÈôÏÖµÄÓÄÁé¡£\n");
-        set("title", HIB "(¹íÆø)" NOR); 
+        set("long", "é€™æ˜¯å€‹è‹¥éš±è‹¥ç¾çš„å¹½éˆã€‚\n");
+        set("title", HIB "(é¬¼æ°£)" NOR); 
 
         set("str", 50);
         set("con", 120);
@@ -24,9 +24,9 @@ void create()
         //set("shen_type", -1);        
         //set("chat_chance", 2);
         //set("chat_msg", ({
-        //               "÷¼÷Ã¿Õ¶´µÄÑÛ¿ôÀïÉÁË¸×Å¿ÉÅÂµÄÓ«¹â¡£\n"
+        //               "éª·é«ç©ºæ´çš„çœ¼çœ¶è£¡é–ƒçˆè‘—å¯æ€•çš„ç†’å…‰ã€‚\n"
         //}) ); 
-        set("death_msg",BLU"\n$NÏûÊ§²»¼ûÁË¡£\n\n"NOR);
+        set("death_msg",BLU"\n$Næ¶ˆå¤±ä¸è¦‹äº†ã€‚\n\n"NOR);
         set("chat_chance_combat", 100);
         set("chat_msg_combat", ({
                 (: do_transfer() :),
@@ -70,7 +70,7 @@ void do_transfer() {
         if(!enemies || sizeof(enemies)==0)
                 return;
         
-        message_vision(HIM"\n$N·Â·ğÔÚÄãµÄĞÄµ×Àïºô»½£¬À´°É...À´°É...Ú¤½çÔÚÕÙ»½Äã... \n"NOR, this_object(),enemy); 
+        message_vision(HIM"\n$Nä»¿ä½›åœ¨ä½ çš„å¿ƒåº•è£¡å‘¼å–šï¼Œä¾†å§...ä¾†å§...å†¥ç•Œåœ¨å¬å–šä½ ... \n"NOR, this_object(),enemy); 
         myexp = query("combat_exp");
         foreach(enemy in enemies)  {
                 if(!enemy)
@@ -79,14 +79,14 @@ void do_transfer() {
                         continue;
                 yourexp=query("combat_exp", enemy);
                 if( random(myexp*2 + yourexp)>yourexp ) {
-                        message_vision(HIM"\n$nÏñ±»Ç¿´óµÄÁ¦Á¿¿ØÖÆ£¬Éí²»ÓÉ¼ºµÄÏò$N×ßÈ¥...... \n"NOR, this_object(),enemy); 
+                        message_vision(HIM"\n$nåƒè¢«å¼·å¤§çš„åŠ›é‡æ§åˆ¶ï¼Œèº«ä¸ç”±å·±çš„å‘$Nèµ°å»...... \n"NOR, this_object(),enemy); 
                         enemy->receive_damage("jing",query("max_jing", enemy)/4,this_object());
                         if(!enemy->is_busy())
                                 enemy->start_busy(random(4));
                         COMBAT_D->report_status(enemy);
                 } else {
-                        message_vision(HIG"\n$n¿Ö¾åµÄº°µ½£ºÕâ²»ÊÇÕæµÄ£¡ \n"NOR, this_object(),enemy); 
-                        message_vision(HIG"\n$nÏÅµÃÅ¤Í·¾ÍÅÜ! \n\n"NOR, this_object(),enemy); 
+                        message_vision(HIG"\n$nææ‡¼çš„å–Šåˆ°ï¼šé€™ä¸æ˜¯çœŸçš„ï¼ \n"NOR, this_object(),enemy); 
+                        message_vision(HIG"\n$nåš‡å¾—æ‰­é ­å°±è·‘! \n\n"NOR, this_object(),enemy); 
                         env = environment(enemy);
                         if(env) {
                                 exits=query("exits", env);

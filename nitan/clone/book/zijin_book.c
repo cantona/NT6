@@ -5,13 +5,13 @@ inherit BOOK;
 
 void create()
 {
-        set_name(HIY"¡¶×Ï½ð´¸·¨¡·"NOR, ({ "zijin_book", "book" }));
+        set_name(HIY"ã€Šç´«é‡‘éŒ˜æ³•ã€‹"NOR, ({ "zijin_book", "book" }));
         set_weight(600);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
-                set("long", "ÕâÊÇÒ»±¾¼ÇÊö×Ï½ð´¸·¨µÄÊé¡£\n");
+                set("unit", "æœ¬");
+                set("long", "é€™æ˜¯ä¸€æœ¬è¨˜è¿°ç´«é‡‘éŒ˜æ³•çš„æ›¸ã€‚\n");
                 set("value", 1000);
                 set("material", "paper");
                 set("skill", ([ 

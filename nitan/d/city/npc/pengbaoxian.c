@@ -8,29 +8,29 @@ inherit F_DEALER;
 
 void create()
 {
-        set_name( YEL "������" NOR, ({ "peng baoxian","peng","baoxian" }) );
-        set("gender", "����" );
-        set("title", "�����ʹ����ϰ�");
+        set_name( YEL "彭寶現" NOR, ({ "peng baoxian","peng","baoxian" }) );
+        set("gender", "男性" );
+        set("title", "彭記鮮果店老板");
         set("age", 49);
         set("attitude", "friendly");
-        set("rank_info/respect", "�ϸ�");
-        set("rank_info/rude","�����˵�");
+        set("rank_info/respect", "老哥");
+        set("rank_info/rude","老王八蛋");
         set("long", @LONG
-���ϰ����������ʹ��������ݳ�Ҳ�������������������Ʒ�Ĺ˿ͺ�
-�࣬�������������Ǻܽ��ţ��ⲻ�����ϰ嶼���������ˡ�����һ�߸�
-һ���˿����ʣ�һ�߻ش�����һ���˿͵���Ѷ������ʱ��ͷ�Ի�ƷԸ�
-Щʲô��
+彭老板的這家彭記鮮果店在揚州城也是頗有名氣，來採買果品的顧客很
+多，以致于人手總是很緊張，這不，連老板都親自上陣了。老彭一邊給
+一個顧客算帳，一邊回答另外一個顧客的問訊，還不時回頭對伙計吩咐
+些什麼。
 LONG);
         set("chat_chance", 30);
         set("chat_msg", ({
-                "���ϰ������ô�����͹٣������������ӳ���ô��\n",
-                "���ϰ���������͹٣������ϲ���ҪǮ��\n",
-                "���ϰ�������ȵȣ������æ���˾͹�����\n",
-                "���ϰ壺��һ�ưգ��͹٣���֪����ү�ҵĹ�Ʒ����С�깩Ӧ�ġ�\n",
+                "彭老板道：怎麼樣？客官，不來二斤桃子嘗嘗麼？\n",
+                "彭老板道：來啊客官，這西瓜不甜不要錢！\n",
+                "彭老板道：您等等，我這兒忙完了就過來。\n",
+                "彭老板：瞧一瞧罷，客官，連知府老爺家的果品都是小店供應的。\n",
         }));
         set("inquiry", ([
-                "�ʹ�" : "�����ǰ��ǰ���С������ʹ�Ӧ�о��У������ɣ�",
-                "here" : "�ף����ҿ��ˣ��������ʹ��̡�������Ʋ��������ŵ�ô��",
+                "鮮果" : "啊，是啊是啊，小店各種鮮果應有盡有，看看吧！",
+                "here" : "咦！您家看了，「彭記鮮果舖」這大招牌不是明擺著的麼？",
         ]) );
         set("vendor_goods", ({
                 FRUIT_DIR+"banana",
@@ -83,6 +83,6 @@ void init()
 void greeting(object ob)
 {
         if( !ob || environment(ob) != environment() ) return;
-        message_vision("���ϰ����ߺ�ȵ�����ʱ���ʹ����������У���Ǯ������ͯ�����ۣ���\n",ob);
+        message_vision("彭老板大聲吆喝道：“時新鮮果，樣樣都有，價錢公道，童叟無欺！”\n",ob);
         return;
 }

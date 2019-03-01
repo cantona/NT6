@@ -2,20 +2,20 @@
 inherit TASK;
 void create()
 {
-    set_name(YEL"ÆåÅÌ"NOR, ({ "qipan" }) );
+    set_name(YEL"æ£‹ç›¤"NOR, ({ "qipan" }) );
     set_weight(1);
     if( clonep() )
                 destruct(this_object());
     else {
-            set("unit", "¸ö");
+            set("unit", "å€‹");
             set("material", "stone");
                         set("long", @LONG
-ÞÄÕß¶ÔÀÝ£¬¡°Èý³ßÖ®¾ÖÙâ×÷Õ½³¡¡±£¬Í¶×ÓÓÚèÒ£¬²¼ÕóÁÐÊÆ£¬ÍðÈô½«Ë§ÔÚ
-µ÷¶¯±øÂí£¬²¼ÖÃ¹¥·À¡£È»¶øÆå×Ó±Ï¾¹ÊÇÃ»ÓÐÉúÃüÁ¦µÄ¾²Îï£¬ÕóÁÐÓÚ×Ýºá
-Ê®¾ÅµÄÆåÅÌÉÏ£¬¾¹È»ÄÜÉú³öÎÞÇîÐþ°ÂµÄ±ä»¯À´£¬ËùÒÔ¾¹ÓÐ³ÆÆå¾ÖÎª¡°¹í
-Õó¡±Õß¡£
+å¼ˆè€…å°å£˜ï¼Œâ€œä¸‰å°ºä¹‹å±€å…®ä½œæˆ°å ´â€ï¼ŒæŠ•å­äºŽæž°ï¼Œå¸ƒé™£åˆ—å‹¢ï¼Œå®›è‹¥å°‡å¸¥åœ¨
+èª¿å‹•å…µé¦¬ï¼Œå¸ƒç½®æ”»é˜²ã€‚ç„¶è€Œæ£‹å­ç•¢ç«Ÿæ˜¯æ²’æœ‰ç”Ÿå‘½åŠ›çš„éœç‰©ï¼Œé™£åˆ—äºŽç¸±æ©«
+åä¹çš„æ£‹ç›¤ä¸Šï¼Œç«Ÿç„¶èƒ½ç”Ÿå‡ºç„¡çª®çŽ„å¥§çš„è®ŠåŒ–ä¾†ï¼Œæ‰€ä»¥ç«Ÿæœ‰ç¨±æ£‹å±€ç‚ºâ€œé¬¼
+é™£â€è€…ã€‚
 LONG);
           } 
-    set("owner", "ËÕÐÇºÓ");
+    set("owner", "è˜‡æ˜Ÿæ²³");
         setup();
 }      

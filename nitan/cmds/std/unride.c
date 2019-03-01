@@ -11,19 +11,19 @@ int main(object me)
         object ob, follower;
 
         if( !objectp(ob=query_temp("is_riding", me)) )
-                return notify_fail("ÄãÏÂÊ²Ã´ÏÂ£¡¸ù±¾¾ÍÃ»×ùÆï£¡\n");
+                return notify_fail("ä½ ä¸‹ä»€éº¼ä¸‹ï¼æ ¹æœ¬å°±æ²’åº§é¨ï¼\n");
 
-        message_vision("$N´Ó$nÉÏ·ÉÉíÌøÏÂ¡£\n", me, ob);
+        message_vision("$Nå¾$nä¸Šé£›èº«è·³ä¸‹ã€‚\n", me, ob);
         ob->move( environment(me) );
         ob->delele_temp("is_rided_by");
         delete_temp("is_riding", me);
-        // ÈÃËùÓĞµÄÈËÒ²ÏÂÂí
+        // è®“æ‰€æœ‰çš„äººä¹Ÿä¸‹é¦¬
         if (objectp(follower = query_temp("is_rided_follow", ob)))
         {
                 delete_temp("is_riding_follow", follower);
                 delete_temp("is_rided_follow", ob);
-                //message_vision("$NÇ¿ĞĞÒªÇóËùÓĞÈËÏÂÂí¡£\n", me);
-                message_vision("$N´Ó$nÉÏ·ÉÉíÌøÏÂ¡£\n", follower, ob);
+                //message_vision("$Nå¼·è¡Œè¦æ±‚æ‰€æœ‰äººä¸‹é¦¬ã€‚\n", me);
+                message_vision("$Nå¾$nä¸Šé£›èº«è·³ä¸‹ã€‚\n", follower, ob);
         }
         return 1;
 }
@@ -31,9 +31,9 @@ int main(object me)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : unride | xia
+æŒ‡ä»¤æ ¼å¼ : unride | xia
  
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄã´ÓÆï×ÅµÄÒÑÑ±ÑøµÄ¶¯ÎïÉÏÌøÏÂÀ´¡£
+é€™å€‹æŒ‡ä»¤å¯ä»¥è®“ä½ å¾é¨è‘—çš„å·²é¦´é¤Šçš„å‹•ç‰©ä¸Šè·³ä¸‹ä¾†ã€‚
  
 HELP );
     return 1;

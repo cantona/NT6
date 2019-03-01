@@ -1,5 +1,5 @@
-// ·ÅÖÃÓÚ  /adm/daemons/ ÏÂ£¬ÓÃÓÚ»ñµÃĞ´È¨ÏŞÀ´½¨Á¢ hj µÄ·¿¼äÎÄ¼ş¡£
-// Ê¹ÓÃ call_out() ·½Ê½£¬ÂıÂı½¨Á¢¡­¡­
+// æ”¾ç½®äº  /adm/daemons/ ä¸‹ï¼Œç”¨äºç²å¾—å¯«æ¬Šé™ä¾†å»ºç«‹ hj çš„æˆ¿é–“æ–‡ä»¶ã€‚
+// ä½¿ç”¨ call_out() æ–¹å¼ï¼Œæ…¢æ…¢å»ºç«‹â€¦â€¦
 // naihe 13:27 03-10-19
 
 
@@ -16,17 +16,17 @@ void create()
 string create_room( object me, string hj_dir, int last_num )
 {
     if( !me || !wizardp(me) || getuid(me) != "naihe" )
-        return "Ö»ÄÜÓÉÎ×Ê¦ ÄÎºÎ ÆôÓÃ±¾³ÌĞò¡£\n";
+        return "åªèƒ½ç”±å·«å¸« å¥ˆä½• å•Ÿç”¨æœ¬ç¨‹åºã€‚\n";
 
     if( !last_num || last_num < 30 || last_num > 200 || last_num % 10 != 0 )
-        return "·¿¼äÊıÁ¿·¶Î§ 30 - 200 £¬²¢ÇÒ±ØĞëÊÇÕûÊ®Êı¡£\n";
+        return "æˆ¿é–“æ•¸é‡èŒƒåœ 30 - 200 ï¼Œä¸¦ä¸”å¿…é ˆæ˜¯æ•´åæ•¸ã€‚\n";
 
     HJ_DIR = hj_dir;
 
     remove_call_out( "create_room_now" );
     call_out( "create_room_now", 1, me, 1, last_num, 0 );
-    message_vision( HIR"\n$N"HIR"Æô¶¯ÁË »Ã¾³Ò» ½¨Á¢·¿¼äÎÄ¼ş³ÌĞò£¡\n\n"NOR, me);
-    return "ÕıÔÚÆô¶¯·¿¼ä½¨Á¢³ÌĞò¡­¡­\n";
+    message_vision( HIR"\n$N"HIR"å•Ÿå‹•äº† å¹»å¢ƒä¸€ å»ºç«‹æˆ¿é–“æ–‡ä»¶ç¨‹åºï¼\n\n"NOR, me);
+    return "æ­£åœ¨å•Ÿå‹•æˆ¿é–“å»ºç«‹ç¨‹åºâ€¦â€¦\n";
 }
 
 void create_room_now( object me, int now_num, int last_num, int create_amount )
@@ -41,18 +41,18 @@ void create_room_now( object me, int now_num, int last_num, int create_amount )
 
     filename = HJ_DIR + "hj_room" + now_num + ".c";
 
-    msg = WHT"ÕıÔÚĞ´Èë£º "+filename+ "  >>>>>>>>>>>>>  "NOR;
+    msg = WHT"æ­£åœ¨å¯«å…¥ï¼š "+filename+ "  >>>>>>>>>>>>>  "NOR;
 
 
 
     if( file_size( filename ) == -1 )
     {
-        // 1ºÅ·¿¼äÒªÌØ±ğĞ´
+        // 1è™Ÿæˆ¿é–“è¦ç‰¹åˆ¥å¯«
         if( now_num == 1 )
             content = "
 
-// ¡°»Ã¾³Ò»¡¤Ò£Ô¶´«ËµÖ®ÆğÔµ¡¤ÓÄÁéÏÔÏÖ¡± µØÍ¼·¿¼äÎÄ¼ş
-// ×îÎªÌØÊâµÄÒ»ºÅ·¿¼ä£¬ĞèÒªÇ¶ÈëÒ»¸öÌØ±ğµÄÎÄ¼ş¡£
+// â€œå¹»å¢ƒä¸€ï¹’é™é å‚³èªªä¹‹èµ·ç·£ï¹’å¹½éˆé¡¯ç¾â€ åœ°åœ–æˆ¿é–“æ–‡ä»¶
+// æœ€ç‚ºç‰¹æ®Šçš„ä¸€è™Ÿæˆ¿é–“ï¼Œéœ€è¦åµŒå…¥ä¸€å€‹ç‰¹åˆ¥çš„æ–‡ä»¶ã€‚
 // by "+base_name(this_object())+" , " +ctime_format() +"
 
 #include <ansi.h>
@@ -65,7 +65,7 @@ int mark=1;
 ";
         else content = "
 
-// ¡°»Ã¾³Ò»¡¤Ò£Ô¶´«ËµÖ®ÆğÔµ¡¤ÓÄÁéÏÔÏÖ¡± µØÍ¼·¿¼äÎÄ¼ş
+// â€œå¹»å¢ƒä¸€ï¹’é™é å‚³èªªä¹‹èµ·ç·£ï¹’å¹½éˆé¡¯ç¾â€ åœ°åœ–æˆ¿é–“æ–‡ä»¶
 // by "+base_name(this_object())+" , " +ctime_format() +"
 
 #include <ansi.h>
@@ -77,22 +77,22 @@ int mark="+now_num+";
 
 ";
 
-// ¿ªÊ¼Ğ´
+// é–‹å§‹å¯«
         if( write_file( filename, content, 1 ) )
         {
-            msg += HIG"³É¹¦£¡\n"NOR;
+            msg += HIG"æˆåŠŸï¼\n"NOR;
             create_amount ++;
         }
-        else msg += HIR"Ğ´ÈëÊ§°Ü¡£\n"NOR;
+        else msg += HIR"å¯«å…¥å¤±æ•—ã€‚\n"NOR;
     }
-    else msg += HIY"ÒÑÓĞ¸ÃÎÄ¼ş´æÔÚ¡£\n"NOR;
+    else msg += HIY"å·²æœ‰è©²æ–‡ä»¶å­˜åœ¨ã€‚\n"NOR;
 
     message_vision( msg, me );
 
     now_num ++;
     if( now_num > last_num )
     {
-        message_vision( HIR"\nËùÓĞÎÄ¼ş½¨Á¢Íê±Ï£¬¹²³É¹¦½¨Á¢ "+create_amount+" ¸öÎÄ¼ş£¡\n\n"NOR, me);
+        message_vision( HIR"\næ‰€æœ‰æ–‡ä»¶å»ºç«‹å®Œç•¢ï¼Œå…±æˆåŠŸå»ºç«‹ "+create_amount+" å€‹æ–‡ä»¶ï¼\n\n"NOR, me);
         return;
     }
 

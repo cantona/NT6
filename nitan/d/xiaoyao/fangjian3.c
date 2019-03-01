@@ -6,13 +6,13 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "·¿¼ä");
+        set("short", "æˆ¿é–“");
         set("long", @LONG
-ÄãÖ»¾õµÃÑÛÇ°¶¸È»Ò»ÁÁ£¬Ò»¸ö¹¬×°µÄÃÀÅ®£¬ÕıÄÃ×ÅÒ»°Ñ³¤½££¬¶Ô×¼
-ÁËÄãµÄĞØÌÅ£¡¡£¡£¡£¡£Ò»³¡Ğé¾ªÖ®ºó£¬Äã²Å·¢ÏÖÔ­À´Ö»ÊÇ¸ö°×Óñµñ³ÉµÄ
-ÓñÏñ£¬µ«ÊÇ¿´ÉÏÈ¥È´ÓëÕæÈËÒ»°ãÎŞÒì¡£ÓñÏñµÄÒ»Ë«íø×ÓÓ¨È»ÓĞ¹â£¬Éñ²É
-·ÉÑï¡£Äã´ËÊ±Ö»¾õµÃÉñ³ÛÄ¿Ñ££¬¾¹Èç×ÅÄ§ÖĞĞ°£¬ÑÛ¹âÔÙÒ²Àë²»¿ªÓñÏñ¡£
-¡£¡£¡£
+ä½ åªè¦ºå¾—çœ¼å‰é™¡ç„¶ä¸€äº®ï¼Œä¸€å€‹å®®è£çš„ç¾å¥³ï¼Œæ­£æ‹¿è‘—ä¸€æŠŠé•·åŠï¼Œå°æº–
+äº†ä½ çš„èƒ¸è†›ï¼ã€‚ã€‚ã€‚ã€‚ä¸€å ´è™›é©šä¹‹å¾Œï¼Œä½ æ‰ç™¼ç¾åŸä¾†åªæ˜¯å€‹ç™½ç‰é›•æˆçš„
+ç‰åƒï¼Œä½†æ˜¯çœ‹ä¸Šå»å»èˆ‡çœŸäººä¸€èˆ¬ç„¡ç•°ã€‚ç‰åƒçš„ä¸€é›™çœ¸å­ç‘©ç„¶æœ‰å…‰ï¼Œç¥æ¡
+é£›æšã€‚ä½ æ­¤æ™‚åªè¦ºå¾—ç¥é¦³ç›®çœ©ï¼Œç«Ÿå¦‚è‘—é­”ä¸­é‚ªï¼Œçœ¼å…‰å†ä¹Ÿé›¢ä¸é–‹ç‰åƒã€‚
+ã€‚ã€‚ã€‚
 LONG );
         set("exits", ([
                 "east"    : __DIR__"tongmen",
@@ -44,8 +44,8 @@ int do_kneel(string arg)
         if ( arg != "putuan") return 0;
         if (!present("putuan",environment(me))) return 0;
         if( query_temp("marks/kneel", me) == 1 )
-                return notify_fail("ÄãÒÑ¾­¹òÏÂÀ´ÁË¡£\n");
-        message_vision("$NË«Ï¥Ò»Çü£¬¹òÁËÏÂÀ´¡£\n", me);
+                return notify_fail("ä½ å·²ç¶“è·ªä¸‹ä¾†äº†ã€‚\n");
+        message_vision("$Né›™è†ä¸€å±ˆï¼Œè·ªäº†ä¸‹ä¾†ã€‚\n", me);
         addn_temp("marks/kneel", 1, me);
         return 1;
 }
@@ -59,7 +59,7 @@ int do_ketou()
         if (!present("putuan",environment(me))) return 0;
         if( query_temp("ketou_times", me) == 0 )
         {
-                message_vision("$N¿ÄÍ·Ì«Æ´ÃüÁË¡£\n", me);
+                message_vision("$Nç£•é ­å¤ªæ‹¼å‘½äº†ã€‚\n", me);
                 set_temp("ketou_times", random(50), me);
                 me->unconcious();
                 return 1;
@@ -67,7 +67,7 @@ int do_ketou()
 
         addn_temp("ketou_times", -1, me);
 
-        message_vision("$N¹§¹§¾´¾´µØ¸øÓñÏñ¿ÄÍ·¡£ßË¡¢ßË¡¢ßË¡£¡£¡£¡£\n", me);
+        message_vision("$Næ­æ­æ•¬æ•¬åœ°çµ¦ç‰åƒç£•é ­ã€‚å’šã€å’šã€å’šã€‚ã€‚ã€‚ã€‚\n", me);
 
         if ( random(100) == 37 
         && !present("bojuan", me)
@@ -77,9 +77,9 @@ int do_ketou()
                 ob=new("/clone/book/bojuan");
                 if (ob->violate_unique()) {destruct(ob);return 1;}
                 ob->move(me);
-message("channel:rumor",MAG"¡¾Ò¥ÑÔ¡¿Ä³ÈË£º"+query("name", this_player())+"È¡µ½ÁË±±Ú¤Éñ¹¦²¯¾íÀ²¡£\n"NOR,users());
-                tell_object(me, "Í»È»£¬Äã·¢ÏÖĞ¡ÆÑÍÅÃæÉÏµÄÒ»²ã±¡±¡µÄÆÑ²İÒÑÈ»ÆÆÁÑ£¬Â¶³öÏÂÃæÓĞÎï£¡\n");
-                tell_object(me, "Äã¼±Ã¦°ÑËüÄÃÁË³öÀ´¡£\n");
+message("channel:rumor",MAG"ã€è¬ è¨€ã€‘æŸäººï¼š"+query("name", this_player())+"å–åˆ°äº†åŒ—å†¥ç¥åŠŸå¸›å·å•¦ã€‚\n"NOR,users());
+                tell_object(me, "çªç„¶ï¼Œä½ ç™¼ç¾å°è’²åœ˜é¢ä¸Šçš„ä¸€å±¤è–„è–„çš„è’²è‰å·²ç„¶ç ´è£‚ï¼Œéœ²å‡ºä¸‹é¢æœ‰ç‰©ï¼\n");
+                tell_object(me, "ä½ æ€¥å¿™æŠŠå®ƒæ‹¿äº†å‡ºä¾†ã€‚\n");
         }
 
         return 1;

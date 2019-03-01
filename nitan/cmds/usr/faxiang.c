@@ -13,16 +13,16 @@ int main(object me, string arg)
          
         if( !stringp(banghui=query("bunch/bunch_name", me) )
          || query("bunch/level", me)<9 )
-                return notify_fail("ÄãÎŞÈ¨ÔÚ°ï»áÄÚ½øĞĞ·¢âÃ¡£\n");
+                return notify_fail("ä½ ç„¡æ¬Šåœ¨å¹«æœƒå…§é€²è¡Œç™¼é¤‰ã€‚\n");
 
         if (! arg || ! sscanf(arg, "%d", rest_money) || rest_money < 1 
             || rest_money > 10000)
-                return notify_fail("Äã×¼±¸ÓÃ¶àÉÙÇ®(gold)À´½øĞĞ´Ë´Î·¢âÃ£¿\n");
+                return notify_fail("ä½ æº–å‚™ç”¨å¤šå°‘éŒ¢(gold)ä¾†é€²è¡Œæ­¤æ¬¡ç™¼é¤‰ï¼Ÿ\n");
 
         rest_money = rest_money * 10000;
 
         if (query(banghui + "/money", get_object(BUNCH_D)) < rest_money + 100000000)
-                return notify_fail("°ïÖĞÏÖÔÚÃ»ÓĞÕâÃ´¶àÇ®¿É¹©µ÷ÓÃ¡£\n");
+                return notify_fail("å¹«ä¸­ç¾åœ¨æ²’æœ‰é€™éº¼å¤šéŒ¢å¯ä¾›èª¿ç”¨ã€‚\n");
         
         addn(banghui+"/money", -rest_money, get_object(BUNCH_D));
         BUNCH_D->save();
@@ -45,9 +45,9 @@ int main(object me, string arg)
                 for (k = 0; k < count; k++)
                 {
                         reward_money=rest_money*(query("bunch/level", bh[k])+1);
-                        tell_object(bh[k], "°ïÅÉ¡¸" + banghui
-                                    +"¡¹" + "·¢âÃ£¬ÄãµÄÕÊÉÏÔö¼ÓÁË"
-                                    + MONEY_D->money_str(reward_money) + "£¡\n");
+                        tell_object(bh[k], "å¹«æ´¾ã€Œ" + banghui
+                                    +"ã€" + "ç™¼é¤‰ï¼Œä½ çš„å¸³ä¸Šå¢åŠ äº†"
+                                    + MONEY_D->money_str(reward_money) + "ï¼\n");
 
                         if( query("bunch/quest", bh[k]) >= 4 )
                         {
@@ -56,11 +56,11 @@ int main(object me, string arg)
                                 addn("combat_exp", reward, bh[k]);
                                 addn("potential", reward/3, bh[k]);
                                 addn("score", reward/50, bh[k]);
-                                tell_object(bh[k], HIG"ÓÉÓÚÄã»ı¼«Îª°ï»áÕñĞË"
-                                            + "×ö¹±Ï×£¬¡¸" + banghui + "¡¹" + "½±ÀøÄã\n"
-                                            + chinese_number(reward) + "µã¾­Ñé¡¢"
-                                            + chinese_number(reward / 3) + "µãÇ±ÄÜºÍ"
-                                            + chinese_number(reward / 50) + "µã×ÛºÏÆÀ¼Û£¡\n"NOR);
+                                tell_object(bh[k], HIG"ç”±äºä½ ç©æ¥µç‚ºå¹«æœƒæŒ¯èˆˆ"
+                                            + "åšè²¢ç»ï¼Œã€Œ" + banghui + "ã€" + "çå‹µä½ \n"
+                                            + chinese_number(reward) + "é»ç¶“é©—ã€"
+                                            + chinese_number(reward / 3) + "é»æ½›èƒ½å’Œ"
+                                            + chinese_number(reward / 50) + "é»ç¶œåˆè©•åƒ¹ï¼\n"NOR);
                                 set("bunch/quest", 0, bh[k]);
                         }    
                         reward_money=query("balance", bh[k])+reward_money;
@@ -78,7 +78,7 @@ int main(object me, string arg)
                 if( query("balance", ulist[k])>2000000000 )
                 {
                         set("balance", 2000000000, ulist[k]);
-                        tell_object(ulist[k], RED "ÄãÔÚÇ®×¯µÄÇ®ÒÑ´ïµ½¶şÊ®ÍòÁ½»Æ½ğ£¬¿ìµã»¨°É£¡\n" NOR);
+                        tell_object(ulist[k], RED "ä½ åœ¨éŒ¢èŠçš„éŒ¢å·²é”åˆ°äºŒåè¬å…©é»ƒé‡‘ï¼Œå¿«é»èŠ±å§ï¼\n" NOR);
                 }
         }
 
@@ -89,9 +89,9 @@ int help(object me)
 {
         write(@HELP
 
-Ö¸Áî¸ñÊ½£ºfaxiang [»Æ½ğÊıÁ¿] 
+æŒ‡ä»¤æ ¼å¼ï¼šfaxiang [é»ƒé‡‘æ•¸é‡] 
 
-ÓÃÓÚÔÚ±¾°ïÄÚ·¢âÃ£¬ËùÓĞÔÚÏß°ï»á³ÉÔ±½«»ñµÃÒ»¶¨µÄ°ï»áÊÕÈë¡£
+ç”¨äºåœ¨æœ¬å¹«å…§ç™¼é¤‰ï¼Œæ‰€æœ‰åœ¨ç·šå¹«æœƒæˆå“¡å°‡ç²å¾—ä¸€å®šçš„å¹«æœƒæ”¶å…¥ã€‚
 
 HELP
         );

@@ -7,14 +7,14 @@ inherit HEAD;
  
 void create()
 {
-        set_name("Í·½í", ({ "tou jin" }) );
+        set_name("é ­å·¾", ({ "tou jin" }) );
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
                 set("material", "steel");
-                set("unit", "Ìõ");
-                set("long", "ÕâÊÇÒ»ÌõÍ·½í£¬ÓÃÒÔ²øÈÆÍ·²¿¡£\n");
+                set("unit", "æ¢");
+                set("long", "é€™æ˜¯ä¸€æ¢é ­å·¾ï¼Œç”¨ä»¥çºç¹é ­éƒ¨ã€‚\n");
                 set("value", 1500);
                 set("armor_prop/dodge", -5);
         }

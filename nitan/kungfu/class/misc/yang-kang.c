@@ -1,5 +1,5 @@
 // This program is a part of NT MudLIB
-// yangkang.c Ñî¿µ
+// yangkang.c æ¥Šåº·
 
 #include <ansi.h>
 #include <command.h>
@@ -11,14 +11,14 @@ void death_msg();
 
 void create()
 {
-        set_name("Ñî¿µ", ({"yang kang", "yang"}));
-        set("gender", "ÄĞĞÔ");
-        set("title", HIY "Ğ¡ÍõÒ¯" NOR);
+        set_name("æ¥Šåº·", ({"yang kang", "yang"}));
+        set("gender", "ç”·æ€§");
+        set("title", HIY "å°ç‹çˆº" NOR);
         set("age", 26);
         set("class", "taoist");
         set("long",
-                "Ëû¾ÍÊÇ´óÁÉµÄĞ¡ÍõÒ¯Ñî¿µ£¬ÊµÄËÑî¼Ò½«ºóÈËÑîÌúĞÄÖ®×Ó¡£\n"
-                "ËûÏàÃ²¶ËÕı£¬µ«Ã¼Óî¼äËÆºõÒş²Ø×ÅÒ»Ë¿½Æ»«µÄÉñÉ«¡£\n");
+                "ä»–å°±æ˜¯å¤§é¼çš„å°ç‹çˆºæ¥Šåº·ï¼Œå¯¦ä¹ƒæ¥Šå®¶å°‡å¾Œäººæ¥Šéµå¿ƒä¹‹å­ã€‚\n"
+                "ä»–ç›¸è²Œç«¯æ­£ï¼Œä½†çœ‰å®‡é–“ä¼¼ä¹éš±è—è‘—ä¸€çµ²ç‹¡çŒ¾çš„ç¥è‰²ã€‚\n");
         set("attitude", "friendly");
         set("shen", 0);
         set("str", 25);
@@ -65,7 +65,7 @@ void create()
         map_skill("finger", "zhongnan-zhi");
         prepare_skill("finger", "zhongnan-zhi");
 
-        create_family("È«Õæ½Ì", 3, "µÜ×Ó");
+        create_family("å…¨çœŸæ•™", 3, "å¼Ÿå­");
 
         set_temp("apply/attack", 400);
         set_temp("apply/defense", 400);
@@ -90,8 +90,8 @@ void create()
                 "gold"  : 50,
         ]));
         set("drops", ([
-                "RA&RANDOM30"    :       100,   // µÍ¼¶ÆÕÍ¨×°±¸
-                "RA&RANDOM40"    :       40,    // µÍ¼¶ÆÕÍ¨×°±¸
+                "RA&RANDOM30"    :       100,   // ä½ç´šæ™®é€šè£å‚™
+                "RA&RANDOM40"    :       40,    // ä½ç´šæ™®é€šè£å‚™
                 "FI&/clone/goods/enchant-scroll" :   20,
                 "FI&/clone/goods/sun"   :   20,
                 "FI&/clone/goods/moon"  :   20,
@@ -107,15 +107,15 @@ void create()
 
 int accept_fight(object ob)
 {
-        command("say ÎÒ¿ÉÃ»ĞËÈ¤ÅãÄãÍæ£¬¿ì¸øÎÒ¹ö¿ª¡£");
+        command("say æˆ‘å¯æ²’èˆˆè¶£é™ªä½ ç©ï¼Œå¿«çµ¦æˆ‘æ»¾é–‹ã€‚");
         return 0;
 }
 
 int accept_hit(object ob)
 {
-        message_vision(HIW "$N" HIW "Á³É«Ò»±ä£¬ÉÁ¹ıÒ»µÀÉ±Æø¡£Å­"
-                       "ºÈµÀ£ººÃÒ»¸ö" + RANK_D->query_rude(ob) +
-                       "£¬À´°É£¡\n" NOR, this_object());
+        message_vision(HIW "$N" HIW "è‡‰è‰²ä¸€è®Šï¼Œé–ƒéä¸€é“æ®ºæ°£ã€‚æ€’"
+                       "å–é“ï¼šå¥½ä¸€å€‹" + RANK_D->query_rude(ob) +
+                       "ï¼Œä¾†å§ï¼\n" NOR, this_object());
         kill_ob(ob);
         return 1;
 }
@@ -130,19 +130,19 @@ int accept_kill(object ob)
 
 int accept_ansuan(object ob)
 {
-        return notify_fail("ÄÇÈË¾¯ÌèĞÔºÃ¸ß£¬ÄãÄÑÒÔÏÂÊÖ¡£\n");
+        return notify_fail("é‚£äººè­¦æƒ•æ€§å¥½é«˜ï¼Œä½ é›£ä»¥ä¸‹æ‰‹ã€‚\n");
 }
 
 int accept_touxi(object ob)
 {
-        return notify_fail("ÄÇÈË¾¯ÌèĞÔºÃ¸ß£¬ÄãÄÑÒÔÏÂÊÖ¡£\n");
+        return notify_fail("é‚£äººè­¦æƒ•æ€§å¥½é«˜ï¼Œä½ é›£ä»¥ä¸‹æ‰‹ã€‚\n");
 }
 
 mixed hit_ob(object me, object ob, int damage_bouns)
 {
 	ob->start_busy(3 + random(6));
 	me->receive_wound("qi", 100 + random(100), ob);
-        return HIY "$N" HIY "´óºÈÒ»Éù£¬Æ´Ãü·´¿¹£¬¾¹±ÆµÃ$n" HIY "ÊÖÃ¦½ÅÂÒ¡£\n" NOR;
+        return HIY "$N" HIY "å¤§å–ä¸€è²ï¼Œæ‹¼å‘½åæŠ—ï¼Œç«Ÿé€¼å¾—$n" HIY "æ‰‹å¿™è…³äº‚ã€‚\n" NOR;
 }
 
 void heart_beat()
@@ -160,11 +160,11 @@ void random_move()
         if (time() - query_temp("born_time") > 1800)
         {
                 env = environment(this_object());
-                message_vision("$N¼±¼±Ã¦Ã¦µÄ×ßÁË¡£\n", this_object());
+                message_vision("$Næ€¥æ€¥å¿™å¿™çš„èµ°äº†ã€‚\n", this_object());
 
-                message("vision", HIG"¡¾" HIR"½­ºş" HIG"¡¿" HIW +
-                        env->short() + HIW "(" + LOOK_CMD->locate(base_name(env)) + ")Ò»´ø³öÏÖµÄ" +
-                        HIR + this_object()->short() + HIR "ÏûÊ§ÁË¡£\n" NOR, users());
+                message("vision", HIG"ã€" HIR"æ±Ÿæ¹–" HIG"ã€‘" HIW +
+                        env->short() + HIW "(" + LOOK_CMD->locate(base_name(env)) + ")ä¸€å¸¶å‡ºç¾çš„" +
+                        HIR + this_object()->short() + HIR "æ¶ˆå¤±äº†ã€‚\n" NOR, users());
 
                 destruct(this_object());
                 return;
@@ -174,6 +174,6 @@ void random_move()
 
 void death_msg()
 {
-        command("chat ÎÒÄËÊÇ½ğ¹úĞ¡ÍõÒ¯£¬ÏëÉ±ÎÒ£¬³ÕÈËËµÃÎ ...");
-        CHANNEL_D->do_channel(this_object(), "rumor", "ÌıËµ" + name() + HIM "±»½ğ±ø¸ø¾È×ßÁË¡£" NOR);
+        command("chat æˆ‘ä¹ƒæ˜¯é‡‘åœ‹å°ç‹çˆºï¼Œæƒ³æ®ºæˆ‘ï¼Œç—´äººèªªå¤¢ ...");
+        CHANNEL_D->do_channel(this_object(), "rumor", "è½èªª" + name() + HIM "è¢«é‡‘å…µçµ¦æ•‘èµ°äº†ã€‚" NOR);
 }

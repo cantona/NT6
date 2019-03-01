@@ -6,16 +6,16 @@ int do_enter(object me);
 
 void create()
 { 
-      set("short", "°×É°Ì¨");
+      set("short", "ç™½ç ‚å°");
       set("long",
-"[1;32m°×É°Ì¨Ô¼ÓÐÒ»ÕÉ¼û·½£¬ÉÏÃæÓÐÏ¸É³ÆÌ¾Í£¬Õû¸öÌ¨Ãæ·Ç³£µÄÆ½\n"
-"Õû¡£Ì¨ÖÐÑëÓÐÒ»¿é´óÊ¯Í·(stone)£¬¶Â×¡ÁËÈªÑÛ¡£\n"
+"[1;32mç™½ç ‚å°ç´„æœ‰ä¸€ä¸ˆè¦‹æ–¹ï¼Œä¸Šé¢æœ‰ç´°æ²™èˆ–å°±ï¼Œæ•´å€‹å°é¢éžå¸¸çš„å¹³\n"
+"æ•´ã€‚å°ä¸­å¤®æœ‰ä¸€å¡Šå¤§çŸ³é ­(stone)ï¼Œå µä½äº†æ³‰çœ¼ã€‚\n"
 );
   set("exits",([
       "east" : __DIR__"spirit4",
   ]));
   set("item_desc", ([
-      "stone" : "Õâ¿éÊ¯Í·¿´ÆðÀ´²»ËãÌ«´ó£¬ÄãÓ¦¸Ã¿ÉÒÔ°á¶¯(move)Ëü¡£\n",
+      "stone" : "é€™å¡ŠçŸ³é ­çœ‹èµ·ä¾†ä¸ç®—å¤ªå¤§ï¼Œä½ æ‡‰è©²å¯ä»¥æ¬å‹•(move)å®ƒã€‚\n",
   ]));
 //  set("no_clean_up", 0);
   set("no_magic", 1);
@@ -33,22 +33,22 @@ int do_move(string arg)
         object room; 
         object me=this_player();
         if(!arg || arg!="stone")
-          return notify_fail("ÄãÒªÒÆ¶¯Ê²Ã´£¿\n");
+          return notify_fail("ä½ è¦ç§»å‹•ä»€éº¼ï¼Ÿ\n");
         if((int)me->query_str()>25)
                 {
-message_vision(HIC"$NÓÃÁ¦ÍÆ¿ª´óÊ¯Í·£¬ÈªË®ÓÖ¿ªÊ¼Á÷ÁË³öÀ´£¡ËÆºõ¿ÉÒÔÇ±ÏÂÈ¥(enter)¡£\n"NOR,this_player() ); 
-message_vision(HIC"Ò»Ö»Ð¡¾«Áé³öÏÖÔÚ$NÃæÇ°£¬Ëµ£ºÐ»Ð»Äã½â¿ªµÚ¶þ¸ö·âÓ¡£¬ÇëÄã¼ÌÐøÇ°½ø°É¡£\n"NOR,this_player() ); 
-                set_temp("m_success/³õ¼¶", 1, this_player());
+message_vision(HIC"$Nç”¨åŠ›æŽ¨é–‹å¤§çŸ³é ­ï¼Œæ³‰æ°´åˆé–‹å§‹æµäº†å‡ºä¾†ï¼ä¼¼ä¹Žå¯ä»¥æ½›ä¸‹åŽ»(enter)ã€‚\n"NOR,this_player() ); 
+message_vision(HIC"ä¸€åªå°ç²¾éˆå‡ºç¾åœ¨$Né¢å‰ï¼Œèªªï¼šè¬è¬ä½ è§£é–‹ç¬¬äºŒå€‹å°å°ï¼Œè«‹ä½ ç¹¼çºŒå‰é€²å§ã€‚\n"NOR,this_player() ); 
+                set_temp("m_success/åˆç´š", 1, this_player());
                 set("move_stone",1);
         if(!( room = find_object(__DIR__"entrance")) )
                 room = load_object(__DIR__"entrance");
         if(objectp(room)) 
             {
                 set("exits/down", __DIR__"spirit3", room);
-                message("vision","ÈªÑÛÖÐÓÖÓ¿³öÁËÈªË®¡£\n",room);
+                message("vision","æ³‰çœ¼ä¸­åˆæ¹§å‡ºäº†æ³‰æ°´ã€‚\n",room);
             }                }
         else
-                message_vision("$NÊ¹³ö³ÔÄÌµÄÁ¦ÆøÒ²Å²²»¶¯Ê¯Í·£¬Ö»ºÃã¬ã¬µØ·ÅÆúÁË¡£\n", this_player());    
+                message_vision("$Nä½¿å‡ºåƒå¥¶çš„åŠ›æ°£ä¹ŸæŒªä¸å‹•çŸ³é ­ï¼Œåªå¥½æ‚»æ‚»åœ°æ”¾æ£„äº†ã€‚\n", this_player());    
         return 1;       
 }
 
@@ -59,9 +59,9 @@ int do_enter(object me)
         me=this_player();
         where=environment(me); 
        if( !query("move_stone", where) )
-          return notify_fail("ÄãÒª½øÄÄÈ¥£¿\n");        if(!( room = find_object(__DIR__"spirit5")) )
+          return notify_fail("ä½ è¦é€²å“ªåŽ»ï¼Ÿ\n");        if(!( room = find_object(__DIR__"spirit5")) )
           room = load_object(__DIR__"spirit5");
-        message_vision("$N¡°¹¾ßË¡±Ò»Éù£¬Ìø½øÈªË®ÖÐ¡£\n",me); 
+        message_vision("$Nâ€œå’•å’šâ€ä¸€è²ï¼Œè·³é€²æ³‰æ°´ä¸­ã€‚\n",me); 
         set("move_stone",0);        me->move(room);
         return 1;
 }

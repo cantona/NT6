@@ -7,16 +7,16 @@ inherit BLADE;
 void create()
 {
 
-        set_name(HIM"ÍÀÁúµ¶"NOR, ({ "tulong dao","tulong","dao", "blade" }));
+        set_name(HIM"å± é¾åˆ€"NOR, ({ "tulong dao","tulong","dao", "blade" }));
         set_weight(35000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
+                set("unit", "æŸ„");
                 set("rigidity", 9);
                 set("sharpness", 9);
-                set("long", "ÕâÊÇÒ»°Ñ»ëÉí·¢ºÚµÄÍÀÁúµ¶£¬µ¶ÈĞ¼äÒşÒşÓĞÑª¹âÁ÷¶¯£¬·æÀûÎŞÆ¥£¬
-µ±Äê½­ºşÖĞÈËÎª´Ëµ¶£¬Æ´µÃÄãËÀÎÒ»î£¬ÊÇµ¶ÖĞÖ®±¦¡£\n");
+                set("long", "é€™æ˜¯ä¸€æŠŠæ¸¾èº«ç™¼é»‘çš„å± é¾åˆ€ï¼Œåˆ€åˆƒé–“éš±éš±æœ‰è¡€å…‰æµå‹•ï¼Œé‹’åˆ©ç„¡åŒ¹ï¼Œ
+ç•¶å¹´æ±Ÿæ¹–ä¸­äººç‚ºæ­¤åˆ€ï¼Œæ‹¼å¾—ä½ æ­»æˆ‘æ´»ï¼Œæ˜¯åˆ€ä¸­ä¹‹å¯¶ã€‚\n");
                 set("value", 1);
                 set("weapon_prop/dodge", -10);
                 set("weapon_prop/parry", 5);
@@ -24,8 +24,8 @@ void create()
                 set("wield_neili", 500);
                 set("wield_maxneili", 1000);;
                 set("wield_str", 25);;
-                set("wield_msg", HIM"Ö»¼ûºÚ¹âÒ»ÉÁ£¬$NÊÖÖĞÒÑÌá×ÅÒ»°ÑºÚ³Á³ÁµÄ´óµ¶£¬ÕıÊÇºÅ³Æ¡°ÎäÁÖÖÁ×ğ¡±µÄ±¦µ¶ÍÀÁú£¡\n"NOR);            
-                set("unwield_msg", HIM"ºÚ¹âºöÃğ£¬$nÔ¾Èë$N»³ÖĞ¡£\n"NOR);
+                set("wield_msg", HIM"åªè¦‹é»‘å…‰ä¸€é–ƒï¼Œ$Næ‰‹ä¸­å·²æè‘—ä¸€æŠŠé»‘æ²‰æ²‰çš„å¤§åˆ€ï¼Œæ­£æ˜¯è™Ÿç¨±â€œæ­¦æ—è‡³å°Šâ€çš„å¯¶åˆ€å± é¾ï¼\n"NOR);            
+                set("unwield_msg", HIM"é»‘å…‰å¿½æ»…ï¼Œ$nèºå…¥$Næ‡·ä¸­ã€‚\n"NOR);
                 set("treasure",1);
         }
         init_blade(160);

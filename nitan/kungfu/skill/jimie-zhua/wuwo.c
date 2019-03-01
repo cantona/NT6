@@ -1,4 +1,4 @@
-// jue.c ¾øÃü×¥ 
+// jue.c çµ•å‘½æŠ“ 
 
 #include <ansi.h> 
 #include <combat.h> 
@@ -18,26 +18,26 @@ int perform(object me)
         }
 
         if (! target || ! me->is_fighting(target)) 
-                return notify_fail("¡¸ÖÚÉúÎŞÎÒ¡¹Ö»ÄÜÔÚÕ½¶·ÖĞ¶Ô¶ÔÊÖÊ¹ÓÃ¡£\n"); 
+                return notify_fail("ã€Œçœ¾ç”Ÿç„¡æˆ‘ã€åªèƒ½åœ¨æˆ°é¬¥ä¸­å°å°æ‰‹ä½¿ç”¨ã€‚\n"); 
 
          skill = me->query_skill("jimie-zhua", 1); 
 
         if( userp(me) && me->query_skill("jimie-zhua",1)<120 && !query("can_perform/jimie-zhua/wuwo", me) )
-                return notify_fail("ÄãËùÊ¹ÓÃµÄÍâ¹¦ÖĞÃ»ÓĞÕâÖÖ¹¦ÄÜ¡£\n");  
+                return notify_fail("ä½ æ‰€ä½¿ç”¨çš„å¤–åŠŸä¸­æ²’æœ‰é€™ç¨®åŠŸèƒ½ã€‚\n");  
 
          if (skill < 100) 
-                return notify_fail("ÄãµÄ¼ÅÃğ×¥µÈ¼¶²»¹»£¬²»»áÊ¹ÓÃ¡¸ÖÚÉúÎŞÎÒ¡¹£¡\n"); 
+                return notify_fail("ä½ çš„å¯‚æ»…æŠ“ç­‰ç´šä¸å¤ ï¼Œä¸æœƒä½¿ç”¨ã€Œçœ¾ç”Ÿç„¡æˆ‘ã€ï¼\n"); 
 
          if( query("neili", me)<250 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¡\n"); 
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼\n"); 
 
          if (me->query_skill_mapped("claw") != "jimie-zhua")  
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢¼ÅÃğ×¥£¬ÎŞ·¨Ê¹ÓÃ¡¸ÖÚÉúÎŞÎÒ¡¹£¡\n"); 
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼å¯‚æ»…æŠ“ï¼Œç„¡æ³•ä½¿ç”¨ã€Œçœ¾ç”Ÿç„¡æˆ‘ã€ï¼\n"); 
 
          if (! living(target)) 
-                 return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n"); 
-         msg = HIY "$N" HIY "ÃÍµØÆËÉÏÇ°À´£¬Ë«×¥·ÖÁ½Â·$n" HIY "×¥³ö£¬Æ½µ­" 
-               "µÄÒ»»÷£¬È´ÏÔÊ¾³öÔúÊµµÄ»ù±¾¹¦£¡\n" NOR; 
+                 return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n"); 
+         msg = HIY "$N" HIY "çŒ›åœ°æ’²ä¸Šå‰ä¾†ï¼Œé›™æŠ“åˆ†å…©è·¯$n" HIY "æŠ“å‡ºï¼Œå¹³æ·¡" 
+               "çš„ä¸€æ“Šï¼Œå»é¡¯ç¤ºå‡ºç´®å¯¦çš„åŸºæœ¬åŠŸï¼\n" NOR; 
 
          ap = me->query_skill("force") + me->query_skill("claw"); 
          dp = target->query_skill("parry") + target->query_skill("dodge"); 
@@ -46,15 +46,15 @@ int perform(object me)
                  addn("neili", -200, me);
                  damage = ap / 3 + random(ap / 4); 
                  msg += COMBAT_D->do_damage(me, target, UNARMED_ATTACK, damage, 55, 
-                                            HIR "»ÅÂÒÖĞ£¬$p" HIR "²»¼°ÕĞ¼Ü$PÕâ¿´ËÆ" 
-                                            HIR "¼òµ¥ÕâÒ»×¥£¬½á¹û±»×¥ÁË¸öÕıÖĞ£¬" 
-                                            "¿¦µÄÒ»Éù£¬$pÉíÉÏ¶àÁËÒ»ÌõÉËºÛ¡£\n" NOR); 
+                                            HIR "æ…Œäº‚ä¸­ï¼Œ$p" HIR "ä¸åŠæ‹›æ¶$Pé€™çœ‹ä¼¼" 
+                                            HIR "ç°¡å–®é€™ä¸€æŠ“ï¼Œçµæœè¢«æŠ“äº†å€‹æ­£ä¸­ï¼Œ" 
+                                            "å–€çš„ä¸€è²ï¼Œ$pèº«ä¸Šå¤šäº†ä¸€æ¢å‚·ç—•ã€‚\n" NOR); 
                  me->start_busy(2); 
          } else 
          { 
-                 msg += CYN "¿ÉÊÇ$p" CYN "$P¼ûÀ´ÊÆĞ×ÃÍ" CYN 
-                        "Á¬Ã¦ÕĞ¼Ü£¬Ë³ÊÆÔ¾¿ª£¬Ã»ÓĞ±»$P" 
-                        CYN "µÃÊÖ¡£\n" NOR; 
+                 msg += CYN "å¯æ˜¯$p" CYN "$Pè¦‹ä¾†å‹¢å…‡çŒ›" CYN 
+                        "é€£å¿™æ‹›æ¶ï¼Œé †å‹¢èºé–‹ï¼Œæ²’æœ‰è¢«$P" 
+                        CYN "å¾—æ‰‹ã€‚\n" NOR; 
                   addn("neili", -20, me);
                   me->start_busy(3); 
           } 

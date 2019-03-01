@@ -1,4 +1,4 @@
-// xianxing.c ÏÖĞÎÕ¨µ¯
+// xianxing.c ç¾å½¢ç‚¸å½ˆ
 
 #include <ansi.h>
 
@@ -8,15 +8,15 @@ int filter_user(object ob);
 
 void create()
 {
-        set_name(HIR "ÏÖĞÎÕ¨µ¯" NOR, ({ "visible bomb", "bomb" }));
+        set_name(HIR "ç¾å½¢ç‚¸å½ˆ" NOR, ({ "visible bomb", "bomb" }));
         set_weight(100);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "ÌıËµÕâÊÇ¿ÉÒÔÈÃÈËÔ­ĞÎ±ÏÂ¶µÄÕ¨µ¯¡£\n");
+                set("long", "è½èªªé€™æ˜¯å¯ä»¥è®“äººåŸå½¢ç•¢éœ²çš„ç‚¸å½ˆã€‚\n");
                 set("value", 1);
                 set("no_sell", 1);
-                set("unit", "¿Å");
+                set("unit", "é¡†");
         }
 }
 
@@ -32,26 +32,26 @@ int do_bomb()
         string msg;
 
         me = this_player();
-        message_vision(HIM "$N´óºÈµÀ£º¡°Í³Í³¸øÎÒÏÖĞÎ£¡¡±Ëµ°Õ°ÑÊÖÖĞµÄÕ¨µ¯"
-                       "Ò»ÈÓ£¬¾ÍÌı¡°ºä¡±µÄÒ»Éù£¡\n" NOR, me);
+        message_vision(HIM "$Nå¤§å–é“ï¼šâ€œçµ±çµ±çµ¦æˆ‘ç¾å½¢ï¼â€èªªç½·æŠŠæ‰‹ä¸­çš„ç‚¸å½ˆ"
+                       "ä¸€æ‰”ï¼Œå°±è½â€œè½Ÿâ€çš„ä¸€è²ï¼\n" NOR, me);
 
         ob = filter_array(all_inventory(environment(me)), (: filter_user :));
         switch (sizeof(ob))
         {
         case 0:
-                msg = HIG "Ò»ÕóÑÌÎí¹ıºó£¬Ê²Ã´±ä»¯Ò²Ã»ÓĞ£¬Ö»¼û$NºÇºÇµÄ²»×¡ÉµĞ¦¡£\n" NOR;
+                msg = HIG "ä¸€é™£ç…™éœ§éå¾Œï¼Œä»€éº¼è®ŠåŒ–ä¹Ÿæ²’æœ‰ï¼Œåªè¦‹$Nå‘µå‘µçš„ä¸ä½å‚»ç¬‘ã€‚\n" NOR;
                 break;
         case 1:
                 if (ob[0] == me)
-                        msg = HIC "Ò»ÕóÑÌÎí¹ıºó£¬Ö»ÓĞ$N" HIC "×Ô¼º±»Õ¨µÃ»ë"
-                               "ÉíÊÇÑÌ£¬Ô­ĞÎ±ÏÂ¶¡£\n" NOR;
+                        msg = HIC "ä¸€é™£ç…™éœ§éå¾Œï¼Œåªæœ‰$N" HIC "è‡ªå·±è¢«ç‚¸å¾—æ¸¾"
+                               "èº«æ˜¯ç…™ï¼ŒåŸå½¢ç•¢éœ²ã€‚\n" NOR;
                 else
-                        msg = HIC "Ò»ÕóÑÌÎí¹ıºó£¬" HIG + ob[0]->name() +
-                               HIC "±»Õ¨µÃ»ëÉíÊÇÑÌ£¬ÌÉÔÚµØÉÏ¡°à»à»¡±Ö±½Ğ¡£\n" NOR;
+                        msg = HIC "ä¸€é™£ç…™éœ§éå¾Œï¼Œ" HIG + ob[0]->name() +
+                               HIC "è¢«ç‚¸å¾—æ¸¾èº«æ˜¯ç…™ï¼Œèººåœ¨åœ°ä¸Šâ€œå—·å—·â€ç›´å«ã€‚\n" NOR;
                 break;
         default:
-                msg = HIC "Ò»ÕóÑÌÎí¹ıºó£¬Ò»¶ÑÈË±»Õ¨µÃ»ëÉíÊÇÑÌ£¬Ô­ĞÎ±Ï"
-                       "Â¶¡£\n" NOR;
+                msg = HIC "ä¸€é™£ç…™éœ§éå¾Œï¼Œä¸€å †äººè¢«ç‚¸å¾—æ¸¾èº«æ˜¯ç…™ï¼ŒåŸå½¢ç•¢"
+                       "éœ²ã€‚\n" NOR;
                 break;
         }
 
@@ -68,8 +68,8 @@ int filter_user(object ob)
         if( query("env/invisible", ob) )
         {
                 delete("env/invisible", ob);
-                CHANNEL_D->do_channel(this_object(), "rumor", "ÌıËµ" + ob->name(1) +
-                                      HIM "±»Õ¨µÃÏÖÁËĞÎ¡£");
+                CHANNEL_D->do_channel(this_object(), "rumor", "è½èªª" + ob->name(1) +
+                                      HIM "è¢«ç‚¸å¾—ç¾äº†å½¢ã€‚");
                 return 1;
         }
 
@@ -78,18 +78,18 @@ int filter_user(object ob)
                 object mask;
                 string msg;
 
-                msg = "ÌıËµ" + ob->name(1) + HIM "¼Ù°ç" + ob->name() +
-                      HIM "±»Õ¨³öÁËÔ­ĞÎ£¬»ëÉíÉÏÏÂ¶¼ÊÇĞ¡ÑÌ";
+                msg = "è½èªª" + ob->name(1) + HIM "å‡æ‰®" + ob->name() +
+                      HIM "è¢«ç‚¸å‡ºäº†åŸå½¢ï¼Œæ¸¾èº«ä¸Šä¸‹éƒ½æ˜¯å°ç…™";
                 delete_temp("apply/name", ob);
                 delete_temp("apply/id", ob);
                 delete_temp("apply/short", ob);
                 delete_temp("apply/long", ob);
                 if (objectp(mask = present("mian ju", ob)))
                 {
-                        msg += "£¬Á¬" + mask->name() + HIM "¶¼±»ÉÕ»µÁË¡£";
+                        msg += "ï¼Œé€£" + mask->name() + HIM "éƒ½è¢«ç‡’å£äº†ã€‚";
                         destruct(mask);
                 } else
-                        msg += "¡£";
+                        msg += "ã€‚";
                 CHANNEL_D->do_channel(this_object(), "rumor", msg);
                 return 1;
         }

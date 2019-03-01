@@ -3,13 +3,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIR "±ù»ğÖé" NOR, ({"binghuo zhu", "binghuo", "zhu"}));
+        set_name(HIR "å†°ç«ç " NOR, ({"binghuo zhu", "binghuo", "zhu"}));
         set_weight(300);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIR "È­Í·´óĞ¡µÄÔ²ĞÎ±¦Öé£¬ÅõÔÚÊÖĞÄÖ»¾õºöÀäºöÈÈ¡£\n" NOR);
-                set("unit", "¿Å");
+                set("long", HIR "æ‹³é ­å¤§å°çš„åœ“å½¢å¯¶ç ï¼Œæ§åœ¨æ‰‹å¿ƒåªè¦ºå¿½å†·å¿½ç†±ã€‚\n" NOR);
+                set("unit", "é¡†");
                 set("value", 9000);
                 set("can_be_enchased", 1);
                 set("magic/type", "fire");

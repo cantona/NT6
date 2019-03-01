@@ -3,11 +3,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����");
+        set("short", "北廳");
         set("long", @LONG
-�����ǻش��õ��ʷ����ʷ������������űߵ�һ�����Ӻ��档����
-�ش���������¡��ҩ���ȵĵ����Ѿ�æ�����������Դ�����Ӷ�㹤��ƣ�
-��Ǯ���͵ġ������ͷȱǮ������ѧϰҽҩѧ�������������򹤡�
+這裡是回春堂的帳房，帳房先生正坐在門邊的一張桌子後面。由于
+回春堂生意興隆，藥王谷的弟子已經忙不過來，所以大量雇傭零工伙計，
+工錢不低的。如果手頭缺錢或是想學習醫藥學，不妨在這裡打打工。
 LONG );
         set("no_fight", 1);
         set("exits", ([
@@ -17,6 +17,6 @@ LONG );
         set("objects", ([
                 __DIR__"npc/zhangfang" : 1,
         ]));
-        create_door("west", "ľ��", "east", DOOR_CLOSED);
+        create_door("west", "木門", "east", DOOR_CLOSED);
         setup();
 }

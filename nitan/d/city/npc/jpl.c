@@ -4,14 +4,14 @@ inherit NPC;
 
 void create()
 {
-        set_name("¼ñÆÆÀÃµÄ", ({ "jian polan" }));
+        set_name("æ’¿ç ´çˆ›çš„", ({ "jian polan" }));
 
         set("long", @LONG
-Õâ¸öÈË²»µ«×Ô¼º¼ñÆÆÀÃ£¬ÉíÉÏÒ²´©µÃÆÆÀÃ²»¿°¡£
+é€™å€‹äººä¸ä½†è‡ªå·±æ’¿ç ´çˆ›ï¼Œèº«ä¸Šä¹Ÿç©¿å¾—ç ´çˆ›ä¸å ªã€‚
 LONG
         );
 
-        set("gender", "ÄĞĞÔ" );
+        set("gender", "ç”·æ€§" );
         set("age", 30);
 
         set("combat_exp", 1000);
@@ -29,9 +29,9 @@ LONG
         set("chat_chance", 10);
         set("chat_msg", ({
                 (: command, "get all" :),
-                "¼ñÆÆÀÃµÄà«à«µÀ£ºÔõÃ´ÕâĞ©ÈËÄÇÃ´Ã»¹«µÂĞÄ£¬Ëæ±ãÂÒÈÓ¶«Î÷¡£\n",
-                "¼ñÆÆÀÃµÄ×ìÀïà½ßæÖø£¬²»ÖªµÀËµĞ©Ê²÷á¡£\n",
-                "¼ñÆÆÀÃµÄÉìÊÖ×½×¡ÁËÉíÉÏµÄÊ­×Ó£¬Ò»½Å²ÈµÃ±â±âµÄ¡£ \n",
+                "æ’¿ç ´çˆ›çš„å–ƒå–ƒé“ï¼šæ€éº¼é€™äº›äººé‚£éº¼æ²’å…¬å¾·å¿ƒï¼Œéš¨ä¾¿äº‚æ‰”æ±è¥¿ã€‚\n",
+                "æ’¿ç ´çˆ›çš„å˜´è£¡å˜Ÿå™¥è‘—ï¼Œä¸çŸ¥é“èªªäº›ä»€éº¼ã€‚\n",
+                "æ’¿ç ´çˆ›çš„ä¼¸æ‰‹æ‰ä½äº†èº«ä¸Šçš„è¨å­ï¼Œä¸€è…³è¸©å¾—æ‰æ‰çš„ã€‚ \n",
                 (: command, "get all" :),
                 (: command, "get all" :),
                 (: command, "get all" :),
@@ -57,12 +57,12 @@ LONG
 int accept_object(object me, object obj)
 {
         command("smile");
-        command("say ¶àĞ»ÕâÎ»" + RANK_D->query_respect(me) + "£¡");
+        command("say å¤šè¬é€™ä½" + RANK_D->query_respect(me) + "ï¼");
         return 1;
 }
 
 int accept_fight(object me)
 {
-        command("say " + RANK_D->query_respect(me) + "ÈÄÃü£¡Ğ¡µÄÕâ¾ÍÀë¿ª£¡\n");
+        command("say " + RANK_D->query_respect(me) + "é¥’å‘½ï¼å°çš„é€™å°±é›¢é–‹ï¼\n");
         return 0;
 }

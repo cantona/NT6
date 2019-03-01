@@ -9,10 +9,10 @@ void init()
 
 void create()
 {
-        set("short", "Ê¯¿ó");
+        set("short", "çŸ³ç¤¦");
         set("long", @LONG
-ÕâÀï½¼ÍâÒ»×ù»ÄÉ½£¬¹ÖÊ¯á×á¾£¬ÔÚÉ½µÄÁíÒ»±ß²»¶Ï´«À´Ò»ÕóÕóµÄ
-±¬Õ¨Éù£¬Ô­À´ÒÑ¾­ÓĞºÜ¶àÈËÔÚÄÇ±ßÕ¨(zha)É½¿ª²É¿óÊ¯¡£
+é€™è£¡éƒŠå¤–ä¸€åº§è’å±±ï¼Œæ€ªçŸ³å¶™å³‹ï¼Œåœ¨å±±çš„å¦ä¸€é‚Šä¸æ–·å‚³ä¾†ä¸€é™£é™£çš„
+çˆ†ç‚¸è²ï¼ŒåŸä¾†å·²ç¶“æœ‰å¾ˆå¤šäººåœ¨é‚£é‚Šç‚¸(zha)å±±é–‹æ¡ç¤¦çŸ³ã€‚
 LONG );
         set("outdoors","city");
         set("exits", ([
@@ -31,39 +31,39 @@ int do_zha(string arg)
         me = this_player();
 
         if( !present("lei guan", me))
-                return notify_fail(HIY"ÄãÒª×öÊ²Ã´£¿\n"NOR);
+                return notify_fail(HIY"ä½ è¦åšä»€éº¼ï¼Ÿ\n"NOR);
 
-        if( (!arg) || !((arg == "É½") ))
-                return notify_fail(CYN"ÄãÄÃ×ÅÀ×¹ÜÃ»ÊÂ¸ÉÑ½£¡\n"NOR);
+        if( (!arg) || !((arg == "å±±") ))
+                return notify_fail(CYN"ä½ æ‹¿è‘—é›·ç®¡æ²’äº‹å¹¹å‘€ï¼\n"NOR);
 
         if( query_temp("caiend", me) == 1 )
-                return notify_fail(HIR"ÕâÀïÒÑ¾­±»ÄãÕ¨Æ½ÁË£¬»¹ÏëÀ´ÆÆ»µ»·¾³Ñ½£¿\n"NOR);
+                return notify_fail(HIR"é€™è£¡å·²ç¶“è¢«ä½ ç‚¸å¹³äº†ï¼Œé‚„æƒ³ä¾†ç ´å£ç’°å¢ƒå‘€ï¼Ÿ\n"NOR);
 
-        if( query("zha/É½", me) == 1 )
-                return notify_fail(HIM"À×¹ÜÒÑ¾­µãÈ¼ÁË£¬Äã»¹Òª¸ÉÊ²Ã´£¿\n"NOR);
+        if( query("zha/å±±", me) == 1 )
+                return notify_fail(HIM"é›·ç®¡å·²ç¶“é»ç‡ƒäº†ï¼Œä½ é‚„è¦å¹¹ä»€éº¼ï¼Ÿ\n"NOR);
 
         if( me->is_busy()) 
-                return notify_fail("ÄãÕıÃ¦×ÅÄØ£¡£¡\n");
+                return notify_fail("ä½ æ­£å¿™è‘—å‘¢ï¼ï¼\n");
 
         if( (query("qi", me)<25) || (query("jing", me)<25) )
-                return notify_fail(MAG"ÄãÌ«ÀÛÁË£¬×¬Ç®Ò²²»¼±ÔÚÒ»Ê±¡£\n"NOR);
+                return notify_fail(MAG"ä½ å¤ªç´¯äº†ï¼Œè³ºéŒ¢ä¹Ÿä¸æ€¥åœ¨ä¸€æ™‚ã€‚\n"NOR);
         
         if( query_temp("caistone", me) == 1){
-        message_vision(HIW"$N±¿ÊÖ±¿½ÅµØÕÒÁË¸ö·ìÏ¶°ÑÀ×¹Ü²å½øÈ¥£¬ÊÖÃ¦½ÅÂÒµØµãÈ¼ÁË¾ÍÁï£¡\n"NOR, me);
-        remove_call_out("zha/É½");
-        set("zha/É½", 1, me);
+        message_vision(HIW"$Nç¬¨æ‰‹ç¬¨è…³åœ°æ‰¾äº†å€‹ç¸«éš™æŠŠé›·ç®¡æ’é€²å»ï¼Œæ‰‹å¿™è…³äº‚åœ°é»ç‡ƒäº†å°±æºœï¼\n"NOR, me);
+        remove_call_out("zha/å±±");
+        set("zha/å±±", 1, me);
         call_out("bao", random(5) +5, me );
         return 1;
         }
         else {
-                return notify_fail(HIY"Ã»ÊÂÀ´µ·ÂÒÑ½£¡¿ì¹ö£¡\n"NOR);
+                return notify_fail(HIY"æ²’äº‹ä¾†æ—äº‚å‘€ï¼å¿«æ»¾ï¼\n"NOR);
         }
 }
 
 int valid_leave(object me, string dir)
 {
-        if( (dir == "southdown" || dir == "northeast") && query("zha/É½", me) == 1 )
-                return notify_fail(HIW"ÄãµÄÀ×¹Ü»¹²åÔÚÄÇÀï£¬ÏëÁôÏÂÀ´º¦ÈËÂğ£¿\n"NOR);
+        if( (dir == "southdown" || dir == "northeast") && query("zha/å±±", me) == 1 )
+                return notify_fail(HIW"ä½ çš„é›·ç®¡é‚„æ’åœ¨é‚£è£¡ï¼Œæƒ³ç•™ä¸‹ä¾†å®³äººå—ï¼Ÿ\n"NOR);
         return 1;
 }
 
@@ -76,24 +76,24 @@ void bao()
         cps=query("cps", me);
         dex=query("dex", me);
         
-        delete("zha/É½", me);
+        delete("zha/å±±", me);
         
         if( query("dex", me)<random(25)+5){
-        message_vision(HIR"Ö»Ìıµ½¡°ºä¡±µÄÒ»Éù¾ŞÏì£¬$NÕû¸öÈË·ÉÁË³öÈ¥£¬Ô­À´±¬Õ¨Á¦Ì«Ç¿ÁË£¬°Ñ×Ô¼º¶¼Õ¨ÉËÁË¡£\n"NOR,me);
+        message_vision(HIR"åªè½åˆ°â€œè½Ÿâ€çš„ä¸€è²å·¨éŸ¿ï¼Œ$Næ•´å€‹äººé£›äº†å‡ºå»ï¼ŒåŸä¾†çˆ†ç‚¸åŠ›å¤ªå¼·äº†ï¼ŒæŠŠè‡ªå·±éƒ½ç‚¸å‚·äº†ã€‚\n"NOR,me);
         me->receive_damage("qi", random(40)); 
         me->receive_damage("jing", random(40)); 
         me->start_busy(random(10) +5);
         return;
 }       
         if( query("cor", me)<random(25)+5){
-        message_vision(HIY"Ö»Ìıµ½¡°ºä¡±µÄÒ»Éù¾ŞÏì£¬È´Ö»ÓĞÒ»Ğ©ËéÊ¯¹öÏÂÀ´£¬Ô­À´±¬Õ¨Á¦Ì«Ğ¡ÁË¡£\n"NOR,me);
+        message_vision(HIY"åªè½åˆ°â€œè½Ÿâ€çš„ä¸€è²å·¨éŸ¿ï¼Œå»åªæœ‰ä¸€äº›ç¢çŸ³æ»¾ä¸‹ä¾†ï¼ŒåŸä¾†çˆ†ç‚¸åŠ›å¤ªå°äº†ã€‚\n"NOR,me);
         me->receive_damage("qi", random(10)); 
         me->receive_damage("jing", random(20)); 
         me->start_busy(random(5) +3);
         return;
 }       
         if( query("cps", me)<random(25)+5){
-        message_vision(BLU"$N±Õ×ÅÑÛ¾¦¡¢Îæ×Å¶ú¶äµÈÁËÀÏ°ëÌì£¬È´Ê²Ã´¶¼Ã»·¢Éú£¬Ô­À´À×¹ÜÊÜ³±ËÀ»ğÁË¡£\n"NOR,me);
+        message_vision(BLU"$Né–‰è‘—çœ¼ç›ã€æ‚è‘—è€³æœµç­‰äº†è€åŠå¤©ï¼Œå»ä»€éº¼éƒ½æ²’ç™¼ç”Ÿï¼ŒåŸä¾†é›·ç®¡å—æ½®æ­»ç«äº†ã€‚\n"NOR,me);
         me->receive_damage("qi", random(10)); 
         me->receive_damage("jing", random(10)); 
         me->start_busy(random(8) +3);
@@ -101,13 +101,13 @@ void bao()
 }
 
 else {
-        message_vision(HIC"Ö»Ìıµ½¡°ºä¡±µÄÒ»Éù¾ŞÏì£¬Ò»¿é´óÊ¯´ÓÉ½ÉÏ¹öÁËÏÂÀ´¡£\n"NOR,me);
+        message_vision(HIC"åªè½åˆ°â€œè½Ÿâ€çš„ä¸€è²å·¨éŸ¿ï¼Œä¸€å¡Šå¤§çŸ³å¾å±±ä¸Šæ»¾äº†ä¸‹ä¾†ã€‚\n"NOR,me);
         delete_temp("caistone", me);
         set_temp("caiend", 1, me);
         destruct(guan);
         obj = new("/clone/misc/bigstone");
         obj->move(this_player());
-        message_vision(MAG"$NÁ¬Ã¦Ì§ÆğÄÇ¿é´óÊ¯£¬ÉúÅÂ±ğÈËÇÀÁËËûµÄÀÍ¶¯³É¹û£¡£¡£¡\n"NOR, me);
+        message_vision(MAG"$Né€£å¿™æŠ¬èµ·é‚£å¡Šå¤§çŸ³ï¼Œç”Ÿæ€•åˆ¥äººæ¶äº†ä»–çš„å‹å‹•æˆæœï¼ï¼ï¼\n"NOR, me);
         me->receive_damage("qi", random(10)); 
         me->receive_damage("jing", random(10));
         me->start_busy(random(3) +3);

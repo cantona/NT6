@@ -6,11 +6,11 @@ inherit F_COAGENT;
 
 void create()
 {
-        set_name("Ðì×ÓÁê", ({ "xu ziling", "xu", "ziling"}));
-        set("long", "Ò»¸ö¿¡ÇÎµÄ°×ÒÂÉÙÄê£¬Ëû¾ÍÊÇÃûÕðÌìÏÂµÄÐì×ÓÁê¡£\n"); 
-        set("nickname", HIR "´óÌÆË«Áú" NOR);
-        set("title", HIY "´ó×ÚÊ¦" NOR);
-        set("gender", "ÄÐÐÔ");
+        set_name("å¾å­é™µ", ({ "xu ziling", "xu", "ziling"}));
+        set("long", "ä¸€å€‹ä¿Šä¿çš„ç™½è¡£å°‘å¹´ï¼Œä»–å°±æ˜¯åéœ‡å¤©ä¸‹çš„å¾å­é™µã€‚\n"); 
+        set("nickname", HIR "å¤§å”é›™é¾" NOR);
+        set("title", HIY "å¤§å®—å¸«" NOR);
+        set("gender", "ç”·æ€§");
         set("age", 26);
         set("attitude", "friendly");
         set("shen_type", 1);
@@ -84,7 +84,7 @@ void kill_ob (object ob)
         ::kill_ob(ob);
         if (guard && !guard->is_fighting())
          {
-                 message_vision (CYN "$NÐ¦µÀ£ºÎÒÃÇÁ½ÐÖµÜ´ÓÀ´¶¼ÊÇÒ»Æð³öÊÖµÄ£¬ÐÝ¹ÖÎÒÃÇÎÞÇé£¡\n" NOR, guard);
+                 message_vision (CYN "$Nç¬‘é“ï¼šæˆ‘å€‘å…©å…„å¼Ÿå¾žä¾†éƒ½æ˜¯ä¸€èµ·å‡ºæ‰‹çš„ï¼Œä¼‘æ€ªæˆ‘å€‘ç„¡æƒ…ï¼\n" NOR, guard);
                  guard->kill_ob(ob);
          }
 }
@@ -105,7 +105,7 @@ void die()
                          if (arrayp(ob->query_team()))
                          {
                                  command("heng");
-                                 command("say Ê¤Ö®²»Îä£¡");
+                                 command("say å‹ä¹‹ä¸æ­¦ï¼");
                                  set("qi", 270000);
                                  set("jing", 150000);
                                  set("neili", 35000);
@@ -123,7 +123,7 @@ void die()
              if (ob->query("sky12/floor") == 4)
              {
                       ob->set("sky12/floor", 5);
-                 command("say ¸óÏÂÇë±ã°É£¡");
+                 command("say é–£ä¸‹è«‹ä¾¿å§ï¼");
              }
         }
 
@@ -138,7 +138,7 @@ void die()
 
         return;
 }
-// ÆøÑªÐ¡ÓÚ1000ÔòËÀÍö£¬±ÜÃâËûÈËÐ­Öú°ïÃ¦×ªÊÀ
+// æ°£è¡€å°äºŽ1000å‰‡æ­»äº¡ï¼Œé¿å…ä»–äººå”åŠ©å¹«å¿™è½‰ä¸–
 void heart_beat()
 {
         if (this_object()->query("qi") < 1000 || this_object()->query("eff_qi") < 1000)

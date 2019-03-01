@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", HIR "ɥ����" NOR);
+        set("short", HIR "喪命場" NOR);
         set("long", @LONG
-������ɭ�ֲ������ϵ����ǲ�֫��ʬ���޴����ǰ���ɫ��Ѫ�Ρ�������
-������������־��裬��֪��������ͻ�ܳ�һ����Ӱ��
+這裡陰森恐怖，地上到處是殘肢碎屍，無處不是暗紅色的血滴。你心中
+忐忑不安，萬分警惕，不知道從哪裡就會竄出一個黑影。
 LONG
         );
         set("exits", ([

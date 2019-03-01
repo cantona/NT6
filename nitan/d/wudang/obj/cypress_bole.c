@@ -1,4 +1,4 @@
-// cypress_bole.c Çà°ØÊ÷¸É 
+// cypress_bole.c é’æŸæ¨¹å¹¹ 
 // Last Modified by winder on Aug. 18 2002
 
 #include <ansi.h>
@@ -7,13 +7,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIG"Çà°ØÊ÷¸É"NOR,({ "bole", "cypress bole" }));
+        set_name(HIG"é’æŸæ¨¹å¹¹"NOR,({ "bole", "cypress bole" }));
         set_weight(3000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»¸ùÇà°ØÊ÷¸É£¬ÊÇÖÆÔìÏã»ğµÄºÃ²ÄÁÏ¡£\n");
-                set("unit", "¸ù");
+                set("long", "é€™æ˜¯ä¸€æ ¹é’æŸæ¨¹å¹¹ï¼Œæ˜¯åˆ¶é€ é¦™ç«çš„å¥½ææ–™ã€‚\n");
+                set("unit", "æ ¹");
                 set("value", 100);
                 set("material", "wood");
                 set("self_destruct", 1);

@@ -12,56 +12,56 @@ int main(object me, string arg)
         string *skname;
 
         if (me->is_busy())
-                return notify_fail("��������æ���ء�\n");
+                return notify_fail("你現在正忙著呢。\n");
 
         if (! arg)
-                return notify_fail("ָ���ʽ��apprentice | bai [cancel]|<����>\n");
+                return notify_fail("指令格式：apprentice | bai [cancel]|<對象>\n");
 
         if (query("reborn_offer", me))
-                return notify_fail("ת���������޷���ʦ��\n");
+                return notify_fail("轉世過程中無法拜師。\n");
 
         if (arg == "cancel")
         {
                 old_app=query_temp("pending/apprentice", me);
                 if( !objectp(old_app) )
-                        return notify_fail("�����ڲ�û�а��κ���Ϊʦ����˼��\n");
-                write("��ı����ⲻ���" + old_app->name() + "Ϊʦ�ˡ�\n");
-                tell_object(old_app, me->name() + "�ı����ⲻ�����Ϊʦ�ˡ�\n");
+                        return notify_fail("你現在並沒有拜任何人為師的意思。\n");
+                write("你改變主意不想拜" + old_app->name() + "為師了。\n");
+                tell_object(old_app, me->name() + "改變主意不想拜你為師了。\n");
                 delete_temp("pending/apprentice", me);
                 return 1;
         }
 
         if (! (ob = present(arg, environment(me))) ||
             ! ob->is_character())
-                return notify_fail("�����˭Ϊʦ��\n");
+                return notify_fail("你想拜誰為師？\n");
 
         if (! living(ob))
-                return notify_fail("������Ȱ�" + ob->name() + "Ū�ѡ�\n");
+                return notify_fail("你必須先把" + ob->name() + "弄醒。\n");
 
         if (ob == me)
-                return notify_fail("���Լ�Ϊʦ��������....����û���á�\n");
+                return notify_fail("拜自己為師？好主意....不過沒有用。\n");
 
         if (ob->is_baby())
-                return notify_fail("�ݺ���Ϊʦ��������....����û���á�\n");
+                return notify_fail("拜孩子為師？好主意....不過沒有用。\n");
 
         if (me->is_apprentice_of(ob))
         {
-                message_vision("$N������������$n��ͷ�밲���е�����ʦ������\n", me, ob);
+                message_vision("$N恭恭敬敬地向$n磕頭請安，叫道：「師父！」\n", me, ob);
                 return 1;
         }
 
         if( !mapp(ob_family=query("family", ob)) )
-                return notify_fail(ob->name() + "�Ȳ�����κ�"
-                                   "���ɣ�Ҳû�п�ɽ���ɣ����ܰ�ʦ��\n");
+                return notify_fail(ob->name() + "既不屬於任何"
+                                   "門派，也沒有開山立派，不能拜師。\n");
 
         if (playerp(ob))
-                return notify_fail("... ���ڲ��ܰ����Ϊʦ :)\n");
+                return notify_fail("... 現在不能拜玩家為師 :)\n");
 
         family=query("family", me);
         if (mapp(family) && stringp(family["master_name"]) &&
             ob_family["family_name"] == family["family_name"] &&
             ob_family["generation"] >= family["generation"])
-                return notify_fail(ob->name() + "����һ����æ��������ɲ��ҵ������ҵ�����\n");
+                return notify_fail(ob->name() + "嚇了一跳，忙道：“這可不敢當，不敢當。”\n");
 
         // betrayer ?
         if (mapp(family) && stringp(family["family_name"]) &&
@@ -69,9 +69,9 @@ int main(object me, string arg)
             query_temp("pending/betrayer", me) != ob )
         {
                 if( query("reborn_offer", me) )
-                        return notify_fail("ת�������в�������ʦ��\n");
-                write(HIR "���Ǵ�����ʦ���ܿ����⵽�����ͷ���Ŷ��\n" NOR
-                      "��������˾��ģ���������һ���������\n");
+                        return notify_fail("轉世進程中不可以判師。\n");
+                write(HIR "你是打算判師嘛？這很可能遭到嚴厲懲罰的哦。\n" NOR
+                      "如果你下了決心，就再輸入一次這條命令。\n");
                 set_temp("pending/betrayer", ob, me);
                 return 1;
         }
@@ -83,8 +83,8 @@ int main(object me, string arg)
                     family["family_name"] != ob_family["family_name"])
                 {
                         message_vision(
-                                "$N��������ʦ�ţ���Ͷ��$n���£���\n\n"
-                                "$N����������$n���������ؿ����ĸ���ͷ���е�����ʦ������\n\n",
+                                "$N決定背叛師門，改投入$n門下！！\n\n"
+                                "$N跪了下來向$n恭恭敬敬地磕了四個響頭，叫道：「師父！」\n\n",
                                 me, ob);
                         set("weiwang", 0, me);
                         addn("betrayer/times", 1, me);
@@ -94,14 +94,14 @@ int main(object me, string arg)
                                 addn("betrayer/"+family["family_name"], 1, me);
                 } else
                         message_vision(
-                                "$N������$nΪʦ��\n\n"
-                                "$N����������$n���������ؿ����ĸ���ͷ���е�����ʦ������\n\n",
+                                "$N決定拜$n為師。\n\n"
+                                "$N跪了下來向$n恭恭敬敬地磕了四個響頭，叫道：「師父！」\n\n",
                                 me, ob);
                 ob->recruit_apprentice(me);
                 delete_temp("pending/recruit", ob);
 
-                tell_object(ob, "��ϲ��������һ�����ӣ�\n");
-                printf("��ϲ����Ϊ%s�ĵ�%s�����ӡ�\n",
+                tell_object(ob, "恭喜你新收了一名弟子！\n");
+                printf("恭喜您成為%s的第%s代弟子。\n",
                         query("family/family_name", me),
                         chinese_number(query("family/generation", me)));
                 return 1;
@@ -110,21 +110,21 @@ int main(object me, string arg)
         {
                 old_app=query_temp("pending/apprentice", me);
                 if (ob == old_app)
-                        return notify_fail("�����" + ob->name() +
-                                           "Ϊʦ�����ǶԷ���û�д�Ӧ��\n");
+                        return notify_fail("你想拜" + ob->name() +
+                                           "為師，但是對方還沒有答應。\n");
                 else
                 if (objectp(old_app))
                 {
-                        write("��ı����ⲻ���" + old_app->name() + "Ϊʦ�ˡ�\n");
-                        tell_object(old_app, me->name() + "�ı����ⲻ�����Ϊʦ�ˡ�\n");
+                        write("你改變主意不想拜" + old_app->name() + "為師了。\n");
+                        tell_object(old_app, me->name() + "改變主意不想拜你為師了。\n");
                 }
 
-                message_vision("$N��Ҫ��$nΪʦ��\n", me, ob);
+                message_vision("$N想要拜$n為師。\n", me, ob);
                 set_temp("pending/apprentice", ob, me);
                 if (userp(ob))
                 {
-                        tell_object(ob, YEL "�����Ը����" + me->name() +
-                                    "Ϊ���ӣ��� recruit ָ�\n" NOR);
+                        tell_object(ob, YEL "如果你願意收" + me->name() +
+                                    "為弟子，用 recruit 指令。\n" NOR);
                 } else
                         ob->attempt_apprentice(me);
                 return 1;
@@ -135,21 +135,21 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-ָ���ʽ : apprentice|bai [cancel]|<����>
+指令格式 : apprentice|bai [cancel]|<對象>
 
-���ָ���������ĳ��Ϊʦ������Է�Ҳ��ӦҪ����Ϊͽ�Ļ����ͻ�
-�����а�ʦ֮�� ����Ҫ�ȵ��Է��� recruit ָ������Ϊ���Ӳ���
-��ʽ��ʦ��
+這個指令能讓你拜某人為師，如果對方也答應要收你為徒的話，就會
+立即行拜師之禮， 否則要等到對方用 recruit 指令收你為弟子才能
+正式拜師。
 
-��ע�����Ѿ�����ʦ�����ֱ���ʦ��Ͷ��������£�����п��ܵ���
-ԭ�����ɵ��˵�׷ɱ��һ��ʧ�֣������е������书���������˷ϵ���
-�����书���롣
+請注意你已經有了師父，又背叛師門投入別人門下，則很有可能導致
+原有門派的人的追殺，一旦失手，則所有的特殊武功都將被別人廢掉，
+基本武功減半。
 
-��������ʦ��ʹ�����ָ�������ʦ���밲��
+如果對你的師父使用這個指令，會變成向師父請安。
 
-��ͬ�ŵ�ʦ�����ܰݱ��Լ����ֵ͵Ļ��Ǻ��Լ�������ͬ���ˡ�
+拜同門的師父不能拜比自己輩分低的或是和自己輩分相同的人。
 
-��ο����ָ�� expell��recruit
+請參考相關指令 expell、recruit
 HELP );
         return 1;
 }

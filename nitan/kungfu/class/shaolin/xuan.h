@@ -17,14 +17,14 @@ int accept_object(object ob, object obj)
             query_temp("have_letter", ob) )
         {
                 set_temp("apprentice_ok", 1, ob);
-                command("say �ã�"+query("name", ob)+
-                        "����Ը�����Ϊʦ��");
+                command("say 好，"+query("name", ob)+
+                        "，你願意拜我為師嗎？");
                 destruct(obj);
                 return 1;
         }
 
         command("smile");
-        command("say �ⶫ�����ҿ�û��ʲ���á�");
+        command("say 這東西給我可沒有什麼用。");
         command("give "+query("id", obj)+" to "+query("id", me));
         return 0;
 }
@@ -41,32 +41,32 @@ void attempt_apprentice(object ob)
                 return;
 
         if( !(ob_fam=query("family", ob)) || 
-            ob_fam["family_name"] != "������")
+            ob_fam["family_name"] != "少林派")
         {
                 command("say " + RANK_D->query_respect(ob) +
-                        "�뱾��������������֪�˻��Ӻ�̸��");
+                        "與本派素無來往，不知此話從何談起？");
                 return;
         }
 
         if( query("class", ob) != "bonze" && 
-            ob_fam["family_name"] == "������") 
+            ob_fam["family_name"] == "少林派") 
         {
                 command("say " + RANK_D->query_respect(ob) +
-                        "���׼ҵ��ӣ�����������ѧ�ա�");
+                        "是俗家弟子，不能在寺內學藝。");
                 return;
         }
 
         if (ob_fam["generation"] <= my_fam["generation"])
         {
                 command("say " + RANK_D->query_respect(ob) +
-                        "��ƶɮ����ҵ� !");
+                        "，貧僧哪裡敢當 !");
                 return;
         }
 
         if (ob_fam["generation"] == (my_fam["generation"] + 1))
         {
                 command("say " + ob_fam["master_name"] +
-                        "��ͽ�������ܵ���������ˣ������� !");
+                        "的徒弟怎麼跑到我這兒來了，哈哈哈 !");
                 command("recruit "+query("id", ob));
         }
 
@@ -78,22 +78,22 @@ void attempt_apprentice(object ob)
                         delete_temp("have_letter", ob);
                         delete_temp("apprentice_ok", ob);
         
-                        command("say ��" + ob_fam["master_name"] +
-                                "���������ҵİɣ���������");
-                        command("say ƶɮ�ֵ�һ����֮�ţ����ǿ�ϲ�ɺأ�");
+                        command("say 是" + ob_fam["master_name"] +
+                                "叫你來找我的吧，哈哈哈！");
+                        command("say 貧僧又得一可塑之才，真是可喜可賀！");
 
                         name=query("name", ob);
-                        new_name = "��" + name[2..3];
+                        new_name = "澄" + name[2..3];
                         set("name", new_name, ob);
 
-                        command("say �ӽ��Ժ���ķ�������" + new_name +
-                                "����ϲ������Ϊ�����ɳ��ֱ����ӣ�");
+                        command("say 從今以後你的法名叫做" + new_name +
+                                "，恭喜你榮升為少林派澄字輩弟子！");
                         command("recruit "+query("id", ob));
                 } else
                 {
                         command("say " + RANK_D->query_respect(ob) +
-                                "���㼴û���Ƽ��ţ�Ҳû�й��޺���"
-                                "����Խ����ʦ��");
+                                "，你即沒有推薦信，也沒有過羅漢陣，"
+                                "不能越級拜師。");
                         return;
                 }
         }

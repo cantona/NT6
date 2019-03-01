@@ -1,14 +1,14 @@
 // /d/gaoli/xuanwumen
-// Room in ����
+// Room in 高麗
 // rich 99/03/28
 inherit ROOM;
 void create()        
 {
-        set("short", "���");
+        set("short", "大堤");
         set("long", @LONG
-������һ����̡��Ա߾�����ӿ�Ĵ󺣣������紵���������Ĵ�
-�ŵ̰������������϶��Ǻ�ˮ��������ȥ����һ���޼ʣ������Ǳ߾�
-��ս�ҵ���ԭ�ˡ�
+這裡是一個大堤。旁邊就是洶湧的大海，陣陣大風吹來，海浪拍打
+著堤岸，濺得你身上都是海水。放眼望去，大海一望無際，海的那邊就
+是戰亂的中原了。
 LONG
         );
 set("outdoors", "gaoli");

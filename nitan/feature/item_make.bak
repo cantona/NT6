@@ -1,4 +1,4 @@
-// ¶¯Ì¬×°±¸µÄÒ»Ğ©Ëæ»ú²ÎÊı By Wenwu
+// å‹•æ…‹è£å‚™çš„ä¸€äº›éš¨æ©Ÿåƒæ•¸ By Wenwu
 
 #define OUT_SET_SX 50
 #include <ansi.h>
@@ -7,120 +7,120 @@ inherit F_COLOR;
 
 #include <item_sx.h>
 
-// ÑÕÉ«
+// é¡è‰²
 nosave string *ansi_arg = ({
         RED, GRN, YEL, BLU, MAG, CYN, WHT, HIR, HIG, HIY, HIB, HIM, HIC, HIW
         });
 
-// Ãû³Æ
+// åç¨±
 nosave mapping name_id_arg = ([
-        "Ê§Éñ" : "shishen",
-        "³ãÈÕ" : "zhiri",
-        "ß±Éñ" : "shishen",
-        "Á¯ĞÇ" : "lianxing",
-        "ÎŞÉñ" : "wushen",
-        "ÑûÔÂ" : "yaoyue",
-        "ÊÉÄ§" : "shimo",
-        "ÔÂÏ¼" : "yuexia",
-        "³ıÄ§" : "chumo",
-        "Éñ·ç" : "shenfeng",
-        "¿Õ¾ø" : "kongjue",
-        "ÔÂ½à" : "yuejie",
-        "·çĞĞ" : "fengxing",
-        "Áè·ç" : "lingfeng",
-        "·É»¨" : "feihua",
-        "ÖğÔÂ" : "zhuyue",
-        "Æ®ĞÇ" : "piaoxing",
-        "ìÅĞÇ" : "xuanxing",
-        "µûÎè" : "diewu",
-        "¿Õ¼Å" : "kongji",
-        "Æ®ÔÂ" : "piaoyue",
-        "Áé·ç" : "lingfeng",
-        "ÃÎÉñ" : "mengshen",
-        "¶ÏÇé" : "duanqing",
-        "×·ĞÇ" : "zhuixing",
-        "Áé»Û" : "linghui",
-        "°ÁÑ©" : "aoxue",
-        "Ò÷Áú" : "yinlong",
-        "²ĞÔÂ" : "canyue",
-        "¶¨·ç" : "dingfeng",
-        "ºÆ¹â" : "haoguang",
-        "ÇéÒå" : "qingyi",
-        "ºÁ¹â" : "haoguang",
-        "ÁéĞÇ" : "lingxing",
-        "ÆßĞÇ" : "qixing",
-        "¶ÏÔÂ" : "duanyue",
-        "×·ÔÆ" : "zhuiyun",
-        "ºÀÇé" : "haoqing",
-        "½£ĞÄ" : "jianxin",
-        "ÁèÔÆ" : "lingyun",
-        "ÁúĞÎ" : "longxing",
-        "ËéĞÄ" : "suixin",
-        "¶ÏÂö" : "duanmai",
-        "¾øÇé" : "jueqing",
-        "ÆÆ¿Õ" : "pokong",
-        "Õ¶Ä§" : "zhanmo",
-        "Ç¬À¤" : "qiankun",
-        "ºèĞÇ" : "hongxing",
-        "¶Ï¿Õ" : "duankong",
-        "ÂÓÓ°" : "lueying",
-        "»ÃÓ°" : "huanying",
-        "À¾ĞÇ" : "lanxing",
-        "¹öÁú" : "gunlong",
-        "³¤¿Õ" : "changkong",
-        "Æ®Ñ©" : "piaoxue",
-        "¸²Óê" : "fuyu",
-        "·­ÔÆ" : "fanyun",
-        "½µÄ§" : "xiangmo",
-        "·üÄ§" : "fumo",
-        "Çïº®" : "qiuhan",
-        "µç¹â" : "dianguang",
-        "À×Ãù" : "leiming",
-        "·çÀ×" : "fenglei",
-        "±ÎÈÕ" : "biri",
-        "»ÃÄ§" : "huanmo",
-        "ĞéÚ¤" : "xumi",
-        "ÓÄÃ÷" : "youming",
-        "äéÉñ" : "mingshen",
-        "Ñ×Óü" : "yanyu",
-        "ÑæĞÄ" : "yanxin",
-        "ÇàÁú" : "qinglong",
-        "·çÓ°" : "fengying",
-        "ÙÈÔÂ" : "yanyue",
-        "ÑãĞĞ" : "yanxing",
-        "ÁúÉß" : "longshe",
-        "ÁéÉß" : "lingshe",
-        "Ãì¿Õ" : "miaokong",
-        "ê×ĞÇ" : "yaoxing",
-        "Íû¿Õ" : "wangkong",
-        "³¾ĞÄ" : "chenxin",
-        "»ÃÔÂ" : "huanyue",
-        "¾ø³¾" : "juechen",
-        "³¤ºŞ" : "changhen",
-        "³Û·ç" : "chifeng",
-        "ÌìĞĞ" : "tianxing",
-        "Ììî¸" : "tiangang",
-        "µØÉ·" : "disha",
-        "òÔÁú" : "jiaolong",
-        "ÁúÉñ" : "longshen",
-        "³¤¿Õ" : "changkong",
-        "±ùĞÄ" : "bingxin",
-        "ÊÉ¹È" : "shigu",
-        "·çÈĞ" : "fengren",
-        "º®¹â" : "hanguang",
-        "¶¨ĞÄ" : "dingxin",
-        "»ÃÎè" : "huanwu",
-        "ÒîÈÕ" : "yiri",
-        "ĞşÎä" : "xuanwu",
-        "¹Å¶§" : "guding",
-        "ÌìĞş" : "tianxuan",
-        "Ì«¼«" : "taiji",
-        "»ìÔª" : "hunyuan",
-        "Ìì·ç" : "tianfeng",
-        "ÎŞ¼«" : "wuji",
+        "å¤±ç¥" : "shishen",
+        "ç†¾æ—¥" : "zhiri",
+        "å¼’ç¥" : "shishen",
+        "æ†æ˜Ÿ" : "lianxing",
+        "ç„¡ç¥" : "wushen",
+        "é‚€æœˆ" : "yaoyue",
+        "å™¬é­”" : "shimo",
+        "æœˆéœ" : "yuexia",
+        "é™¤é­”" : "chumo",
+        "ç¥é¢¨" : "shenfeng",
+        "ç©ºçµ•" : "kongjue",
+        "æœˆæ½”" : "yuejie",
+        "é¢¨è¡Œ" : "fengxing",
+        "å‡Œé¢¨" : "lingfeng",
+        "é£›èŠ±" : "feihua",
+        "é€æœˆ" : "zhuyue",
+        "é£„æ˜Ÿ" : "piaoxing",
+        "ç‚«æ˜Ÿ" : "xuanxing",
+        "è¶èˆ" : "diewu",
+        "ç©ºå¯‚" : "kongji",
+        "é£„æœˆ" : "piaoyue",
+        "éˆé¢¨" : "lingfeng",
+        "å¤¢ç¥" : "mengshen",
+        "æ–·æƒ…" : "duanqing",
+        "è¿½æ˜Ÿ" : "zhuixing",
+        "éˆæ…§" : "linghui",
+        "å‚²é›ª" : "aoxue",
+        "åŸé¾" : "yinlong",
+        "æ®˜æœˆ" : "canyue",
+        "å®šé¢¨" : "dingfeng",
+        "æµ©å…‰" : "haoguang",
+        "æƒ…ç¾©" : "qingyi",
+        "æ¯«å…‰" : "haoguang",
+        "éˆæ˜Ÿ" : "lingxing",
+        "ä¸ƒæ˜Ÿ" : "qixing",
+        "æ–·æœˆ" : "duanyue",
+        "è¿½é›²" : "zhuiyun",
+        "è±ªæƒ…" : "haoqing",
+        "åŠå¿ƒ" : "jianxin",
+        "å‡Œé›²" : "lingyun",
+        "é¾å½¢" : "longxing",
+        "ç¢å¿ƒ" : "suixin",
+        "æ–·è„ˆ" : "duanmai",
+        "çµ•æƒ…" : "jueqing",
+        "ç ´ç©º" : "pokong",
+        "æ–¬é­”" : "zhanmo",
+        "ä¹¾å¤" : "qiankun",
+        "é´»æ˜Ÿ" : "hongxing",
+        "æ–·ç©º" : "duankong",
+        "æ å½±" : "lueying",
+        "å¹»å½±" : "huanying",
+        "è®•æ˜Ÿ" : "lanxing",
+        "æ»¾é¾" : "gunlong",
+        "é•·ç©º" : "changkong",
+        "é£„é›ª" : "piaoxue",
+        "è¦†é›¨" : "fuyu",
+        "ç¿»é›²" : "fanyun",
+        "é™é­”" : "xiangmo",
+        "ä¼é­”" : "fumo",
+        "ç§‹å¯’" : "qiuhan",
+        "é›»å…‰" : "dianguang",
+        "é›·é³´" : "leiming",
+        "é¢¨é›·" : "fenglei",
+        "è”½æ—¥" : "biri",
+        "å¹»é­”" : "huanmo",
+        "è™›å†¥" : "xumi",
+        "å¹½æ˜" : "youming",
+        "æºŸç¥" : "mingshen",
+        "ç‚ç„" : "yanyu",
+        "ç‡„å¿ƒ" : "yanxin",
+        "é’é¾" : "qinglong",
+        "é¢¨å½±" : "fengying",
+        "åƒæœˆ" : "yanyue",
+        "é›è¡Œ" : "yanxing",
+        "é¾è›‡" : "longshe",
+        "éˆè›‡" : "lingshe",
+        "æ¸ºç©º" : "miaokong",
+        "æ›œæ˜Ÿ" : "yaoxing",
+        "æœ›ç©º" : "wangkong",
+        "å¡µå¿ƒ" : "chenxin",
+        "å¹»æœˆ" : "huanyue",
+        "çµ•å¡µ" : "juechen",
+        "é•·æ¨" : "changhen",
+        "é¦³é¢¨" : "chifeng",
+        "å¤©è¡Œ" : "tianxing",
+        "å¤©ç½¡" : "tiangang",
+        "åœ°ç…" : "disha",
+        "è›Ÿé¾" : "jiaolong",
+        "é¾ç¥" : "longshen",
+        "é•·ç©º" : "changkong",
+        "å†°å¿ƒ" : "bingxin",
+        "å™¬è°·" : "shigu",
+        "é¢¨åˆƒ" : "fengren",
+        "å¯’å…‰" : "hanguang",
+        "å®šå¿ƒ" : "dingxin",
+        "å¹»èˆ" : "huanwu",
+        "ç¿Œæ—¥" : "yiri",
+        "ç„æ­¦" : "xuanwu",
+        "å¤éŒ " : "guding",
+        "å¤©ç„" : "tianxuan",
+        "å¤ªæ¥µ" : "taiji",
+        "æ··å…ƒ" : "hunyuan",
+        "å¤©é¢¨" : "tianfeng",
+        "ç„¡æ¥µ" : "wuji",
 ]);
 
-// È¡µÃÒ»¸öËæ»úµÄÃû³Æ
+// å–å¾—ä¸€å€‹éš¨æ©Ÿçš„åç¨±
 string get_item_name(int pj, int lvl)
 {
         string name, *name_arry;
@@ -144,7 +144,7 @@ string get_item_name(int pj, int lvl)
         return name;
 }
 
-// È¡µÃ¶¯Ì¬ÎïÆ·ID
+// å–å¾—å‹•æ…‹ç‰©å“ID
 string get_item_id(string name, string item_type)
 {
         string id, no_ansi_name, get_id;
@@ -164,7 +164,7 @@ string get_item_id(string name, string item_type)
         return id;
 }
 
-// ÊôĞÔ
+// å±¬æ€§
 varargs void get_item_shuxing(string item_type, int pj, int lvl, int flag)
 {
         object ob;
@@ -222,31 +222,31 @@ varargs void get_item_shuxing(string item_type, int pj, int lvl, int flag)
                         }
                         break;
 
-                default:log_file( "/SET_item", sprintf("%s×°±¸ÀàĞÍÉèÖÃ´íÎó¡£\n", base_name(ob)));
+                default:log_file( "/SET_item", sprintf("%sè£å‚™é¡å‹è¨­ç½®éŒ¯èª¤ã€‚\n", base_name(ob)));
         }
 
-        // Ğ§¹ûÔöÇ¿
+        // æ•ˆæœå¢å¼·
         tx = random(1000);
         name = ob->query("name");
         
         if ( tx < 3 && 4 <= flag )
         {
                 ob->set("xyzx_item/pinji", 4);
-                ob->set("name", HBYEL"¡ï" + name);
+                ob->set("name", HBYEL"â˜…" + name);
         }
         else if ( tx < 10 && 3 <= flag )
         {
                 ob->set("xyzx_item/pinji", 3);
-                ob->set("name", HBMAG"¡î¡î¡î" + name);
+                ob->set("name", HBMAG"â˜†â˜†â˜†" + name);
         }
         else if ( tx < 50 && 2 <= flag )
         {
                 ob->set("xyzx_item/pinji", 2);
-                ob->set("name", HBBLU"¡î¡î" + name);
+                ob->set("name", HBBLU"â˜†â˜†" + name);
         }
         else if ( tx < 100 && 1 <= flag )
         {
                 ob->set("xyzx_item/pinji", 1);
-                ob->set("name", HBGRN"¡î" + name);
+                ob->set("name", HBGRN"â˜†" + name);
         }
 }

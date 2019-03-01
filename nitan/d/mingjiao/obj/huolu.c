@@ -1,5 +1,5 @@
 // Code of LXTX
-// huolu.c »ğÂ¯
+// huolu.c ç«çˆ
 
 #include <ansi.h>
 inherit ITEM;
@@ -10,13 +10,13 @@ int check_busy(object me);
 
 void create()
 {
-        set_name(HIR"»ğÂ¯"NOR, ({ "huo lu", "lu" }) );
+        set_name(HIR"ç«çˆ"NOR, ({ "huo lu", "lu" }) );
         set_weight(9000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇ×ù´ó»ğÂ¯£¬ÀïÃæĞÛ»ğÈ¼ÉÕ£¬¿ÉÒÔÓÃÀ´Á¶Ìú¡£\n");
-                set("unit", "×ù");
+                set("long", "é€™æ˜¯åº§å¤§ç«çˆï¼Œè£¡é¢é›„ç«ç‡ƒç‡’ï¼Œå¯ä»¥ç”¨ä¾†ç…‰éµã€‚\n");
+                set("unit", "åº§");
                 set("no_get", 1);
         }
 }
@@ -36,23 +36,23 @@ int do_tou(string arg)
         ob = this_object();
         
         if( me->is_busy() || query_temp("pending/job_busy", me) )
-                return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ æ­£å¿™è‘—å‘¢ã€‚\n");
 
         if (!arg || sscanf(arg, "%s in %s", item, target) != 2 )
-            return notify_fail("ÄãÒª½«Ê²Ã´¶«Î÷·Å½øÄÄÀï£¿\n");
+            return notify_fail("ä½ è¦å°‡ä»€éº¼æ±è¥¿æ”¾é€²å“ªè£¡ï¼Ÿ\n");
 
-        if (item != "¿óÊ¯" || target != "»ğÂ¯")
-                return notify_fail("ÄãÒª½«Ê²Ã´¶«Î÷·Å½øÄÄÀï£¿\n");
+        if (item != "ç¤¦çŸ³" || target != "ç«çˆ")
+                return notify_fail("ä½ è¦å°‡ä»€éº¼æ±è¥¿æ”¾é€²å“ªè£¡ï¼Ÿ\n");
 
         if ( !kuangshi=present("wujin kuangshi",me) )
-                return notify_fail("ÄãÉíÉÏ²¢Ã»ÓĞ¿óÊ¯¡£\n");
+                return notify_fail("ä½ èº«ä¸Šä¸¦æ²’æœ‰ç¤¦çŸ³ã€‚\n");
 
         if (query_temp("in_use"))
-                return notify_fail("Õâ¸ö»ğÂ¯ÒÑ¾­ÓĞÈËÔÚÓÃÁË£¡\n");
+                return notify_fail("é€™å€‹ç«çˆå·²ç¶“æœ‰äººåœ¨ç”¨äº†ï¼\n");
 
-        message_vision("$N°ÑÒ»"+query("unit", kuangshi)+query("name", kuangshi)+"Í¶½ø»ğÂ¯¡£\n",me);
+        message_vision("$NæŠŠä¸€"+query("unit", kuangshi)+query("name", kuangshi)+"æŠ•é€²ç«çˆã€‚\n",me);
         destruct(kuangshi);
-        message_vision(HIC"$NÀ­¶¯·çÏä£¬»ğÑæÓÉºìÂıÂı±äÇà£¬³åÆğÒ»ÕÉ¶à¸ß£¡\n"NOR,me);
+        message_vision(HIC"$Næ‹‰å‹•é¢¨ç®±ï¼Œç«ç‡„ç”±ç´…æ…¢æ…¢è®Šé’ï¼Œæ²–èµ·ä¸€ä¸ˆå¤šé«˜ï¼\n"NOR,me);
         
         set_temp("in_use",1);
         set_temp("pending/job_busy", 1, me);
@@ -67,7 +67,7 @@ int do_tou(string arg)
 
 void burning(object me)
 {
-        write(HIW"¿óÊ¯ÒÑ¾­±»ÉÕµÄÍ¨ºì£¬¿´À´¿ÉÒÔ¿ªÊ¼´¸´òÁË\n"NOR);
+        write(HIW"ç¤¦çŸ³å·²ç¶“è¢«ç‡’çš„é€šç´…ï¼Œçœ‹ä¾†å¯ä»¥é–‹å§‹éŒ˜æ‰“äº†\n"NOR);
         add_action("do_datie","da");
         add_action("do_datie","refine");
         delete_temp("pending/job_busy", me);
@@ -78,18 +78,18 @@ int do_datie(string arg)
         object me=this_player();
 
         if( me->is_busy() || query_temp("pending/job_busy", me) )
-                return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ æ­£å¿™è‘—å‘¢ã€‚\n");
 
-        if (arg != "tie" && arg != "Ìú")
-                return notify_fail("ÄãÒª´òÊ²Ã´£¿\n");
+        if (arg != "tie" && arg != "éµ")
+                return notify_fail("ä½ è¦æ‰“ä»€éº¼ï¼Ÿ\n");
 
         if (!present("tie chui",me))
-                return notify_fail("ÄãÃ»ÓĞÌú´¸£¬ÓÃÊ²Ã´´ò£¿\n");
+                return notify_fail("ä½ æ²’æœ‰éµéŒ˜ï¼Œç”¨ä»€éº¼æ‰“ï¼Ÿ\n");
 
         if( query("neili", me)<50 || query("jingli", me)<50 )
-                return notify_fail(RED"ÄãÒÑ¾­¾«Æ£Á¦½ßÁË£¡\n"NOR);
+                return notify_fail(RED"ä½ å·²ç¶“ç²¾ç–²åŠ›ç«­äº†ï¼\n"NOR);
 
-        message_vision("$N»Ó¶¯´óÌú´¸£¬³¯×ÅÉÕºìµÄÌú¿óÊ¯ºİºİµØ´òÁËÏÂÈ¥£¡\n",me);
+        message_vision("$Næ®å‹•å¤§éµéŒ˜ï¼Œæœè‘—ç‡’ç´…çš„éµç¤¦çŸ³ç‹ ç‹ åœ°æ‰“äº†ä¸‹å»ï¼\n",me);
         addn("qi", -30, me);
         set_temp("pending/job_busy", 1, me);
 
@@ -106,7 +106,7 @@ void job_done(object me)
 
         if (random(me->query_str()) > 20 || random(10) > 5 )
         {
-                message_vision(HIC"¾­¹ıÇ§´¸°ÙÁ¶£¬¾«ÌúÖÕÓÚÁ¶³öÀ´ÁË£¡$N»ëÉíº¹ÈçÓêÏÂ£¬¼¸ºõÀÛµÃ´­²»¹ıÆøÀ´¡£\n"NOR,me);
+                message_vision(HIC"ç¶“éåƒéŒ˜ç™¾ç…‰ï¼Œç²¾éµçµ‚äºç…‰å‡ºä¾†äº†ï¼$Næ¸¾èº«æ±—å¦‚é›¨ä¸‹ï¼Œå¹¾ä¹ç´¯å¾—å–˜ä¸éæ°£ä¾†ã€‚\n"NOR,me);
                 jingtie=new(OBJ_PATH"/jingtie");
                 jingtie->move(me);
                 remove_action("do_datie","da");
@@ -116,7 +116,7 @@ void job_done(object me)
         }
         else
         {
-                tell_object(me,HIR"Äã²ÁÁË²ÁÁ³ÉÏµÄº¹£¬¿´ÁË¿´¿óÊ¯£¬¿´À´»¹µÃÔÙ´ò£¡\n"NOR);
+                tell_object(me,HIR"ä½ æ“¦äº†æ“¦è‡‰ä¸Šçš„æ±—ï¼Œçœ‹äº†çœ‹ç¤¦çŸ³ï¼Œçœ‹ä¾†é‚„å¾—å†æ‰“ï¼\n"NOR);
         }
         delete_temp("pending/job_busy", me);
 }

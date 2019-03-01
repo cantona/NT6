@@ -1,4 +1,4 @@
-// teagirl.c ²èÅ®
+// teagirl.c èŒ¶å¥³
 
 #include "roomnpc.h"
 
@@ -10,10 +10,10 @@ int  accept_object(object who, object ob);
 
 void create()
 {
-        set_name("ËÅ²èÑ¾÷ß", ({"girl", "ya huan"}) );
-        set("gender", "Å®ĞÔ" );
+        set_name("ä¼ºèŒ¶ä¸«é¬Ÿ", ({"girl", "ya huan"}) );
+        set("gender", "å¥³æ€§" );
         set("age", 12 + random(6));
-        set("long", "ÕâÊÇ¸öÄêÁä²»´óµÄĞ¡¹ÃÄï£¬Ò»Á³´ÏÃ÷¹ÔÇÉ£¬ÕıÔÚ×¼±¸Îª¿ÍÈËÉÏ²è¡£");
+        set("long", "é€™æ˜¯å€‹å¹´é½¡ä¸å¤§çš„å°å§‘å¨˜ï¼Œä¸€è‡‰è°æ˜ä¹–å·§ï¼Œæ­£åœ¨æº–å‚™ç‚ºå®¢äººä¸ŠèŒ¶ã€‚");
         set("attitude", "friendly");
 
         setup();
@@ -40,11 +40,11 @@ int do_tea(string arg)
         object ob;
 
         if (is_busy())
-                return notify_fail("ÄãÃ»¿´¼ûÈË¼ÒÕıÃ¦ÄØÂğ£¿\n");
+                return notify_fail("ä½ æ²’çœ‹è¦‹äººå®¶æ­£å¿™å‘¢å—ï¼Ÿ\n");
 
         ob = new("/d/wudang/obj/xiangcha");
         ob->move(this_object());
-        command("say ÕâÊÇÄúµÄ²è¡£");
+        command("say é€™æ˜¯æ‚¨çš„èŒ¶ã€‚");
         command("give"+query("id", ob)+"to"+query("id", this_player()));
         if (environment(ob) == this_object())
                 destruct(ob);
@@ -58,12 +58,12 @@ void greeting(object ob)
 
         if (is_owner(ob))
         {
-                message_vision(name() + "¶Ô$NÓ¯Ó¯µÀÁËÒ»¸öÍò¸£¡£\n", ob);
-                command("say ÓĞÊ²Ã´·Ô¸ÀÂğ£¿");
+                message_vision(name() + "å°$Nç›ˆç›ˆé“äº†ä¸€å€‹è¬ç¦ã€‚\n", ob);
+                command("say æœ‰ä»€éº¼å©å’å—ï¼Ÿ");
                 return;
         }
-        message_vision(name() + "¶Ô$NµÀ£º¡°ÕâÎ»" + RANK_D->query_respect(ob) +
-                "ºÃ¡£¡±\n", ob);
+        message_vision(name() + "å°$Né“ï¼šâ€œé€™ä½" + RANK_D->query_respect(ob) +
+                "å¥½ã€‚â€\n", ob);
 }
 
 int accept_object(object who, object ob)
@@ -75,7 +75,7 @@ int accept_object(object who, object ob)
 
         if (is_owner(who))
         {
-                message_vision(name() + "¶Ô$NÊ©ÁËÒ»Àñ¡£\n", who);
+                message_vision(name() + "å°$Næ–½äº†ä¸€ç¦®ã€‚\n", who);
                 destruct(ob);
                 return 1;
         }
@@ -84,17 +84,17 @@ int accept_object(object who, object ob)
         {
                 if (owner_is_present())
                 {
-                        say(name() + "²»ÇéÔ¸µÄ½ÓÏÂÁË" + ob->name() + "¡£\n");
+                        say(name() + "ä¸æƒ…é¡˜çš„æ¥ä¸‹äº†" + ob->name() + "ã€‚\n");
                         destruct(ob);
                         return 1;
                 }
-                message_vision(name() + "ĞÓÄ¿Ô°Õö£¬ºÈµÀ£º¡°ÄãÒÔÎªÊÇ´ò"
-                               "·¢½Ğ»¨×Ó°¡£¿¡±\n", who);
+                message_vision(name() + "æç›®åœ’çœï¼Œå–é“ï¼šâ€œä½ ä»¥ç‚ºæ˜¯æ‰“"
+                               "ç™¼å«èŠ±å­å•Šï¼Ÿâ€\n", who);
                 return 0;
         }
 
         destruct(ob);
-        message_vision(name() + "¶Ô$NÎ¢Î¢Ò»Ğ¦£¬µÀ£º¡°¶àĞ»ÕâÎ»" +
-                       RANK_D->query_respect(who) + "À²£¡¡±\n", who);
+        message_vision(name() + "å°$Nå¾®å¾®ä¸€ç¬‘ï¼Œé“ï¼šâ€œå¤šè¬é€™ä½" +
+                       RANK_D->query_respect(who) + "å•¦ï¼â€\n", who);
         return 1;
 }

@@ -30,7 +30,7 @@ int main(object me, string arg)
         switch (args[0])
         {
         case "info":
-                // ÏÔÊ¾Í¬ÃËµÄĞÅÏ¢
+                // é¡¯ç¤ºåŒç›Ÿçš„ä¿¡æ¯
                 return show_league_info(me, arg);
 
         case "member":
@@ -43,38 +43,38 @@ int main(object me, string arg)
                 return "/cmds/usr/top"->main(me, "league");
 
         case "hatred":
-                // ÏÔÊ¾Í¬ÃËµÄ³ğÈË
+                // é¡¯ç¤ºåŒç›Ÿçš„ä»‡äºº
                 return show_league_hatred(me, arg);
 
         case "out":
                 if( !stringp(fname=query("league/league_name", me)) )
-                        return notify_fail("ÄãÏÖÔÚ»¹Ã»ÓĞºÍÈÎºÎÈË½áÒå³ÉÃËÄØ¡£\n");
+                        return notify_fail("ä½ ç¾åœ¨é‚„æ²’æœ‰å’Œä»»ä½•äººçµç¾©æˆç›Ÿå‘¢ã€‚\n");
 
                 if( query_temp("pending/out_league", me) )
                 {
-                        // Í¬ÃËµÄÉùÍûÏÂ½µ
+                        // åŒç›Ÿçš„è²æœ›ä¸‹é™
                         LEAGUE_D->add_league_fame(fname, -LEAGUE_D->query_league_fame(fname) / 10);
                         CHANNEL_D->do_channel(this_object(), "rumor",
-                                "ÌıËµ"+me->name(1)+"("+query("id", me)+
-                                ")ÒåÎŞ·´¹Ë£¬ÒÑ¾­±³Àë" + fname + "¶øÈ¥¡£");
+                                "è½èªª"+me->name(1)+"("+query("id", me)+
+                                ")ç¾©ç„¡åé¡§ï¼Œå·²ç¶“èƒŒé›¢" + fname + "è€Œå»ã€‚");
                         delete_temp("pending/out_league", me);
 
-                        // Çå³ı¸ÃÓÃ»§ÔÚÍ¬ÃËÖĞµÄĞÅÏ¢
+                        // æ¸…é™¤è©²ç”¨æˆ¶åœ¨åŒç›Ÿä¸­çš„ä¿¡æ¯
                         UPDATE_D->clear_user_data(query("id", me),"league");
                         return 1;
                 }
 
-                write("ÄãÕæµÄÏëÒª±³Æúµ±³õµÄ½áÒåºÃÓÑÂğ£¿ÕâÑù×ö»á½µµÍ" + fname + "µÄÉùÍû¡£\n"
-                      YEL "Èç¹ûÄãÈ·¶¨ÁË£¬¾ÍÔÙÊäÈëÒ»´Î league out ÃüÁî¡£\n" NOR);
+                write("ä½ çœŸçš„æƒ³è¦èƒŒæ£„ç•¶åˆçš„çµç¾©å¥½å‹å—ï¼Ÿé€™æ¨£åšæœƒé™ä½" + fname + "çš„è²æœ›ã€‚\n"
+                      YEL "å¦‚æœä½ ç¢ºå®šäº†ï¼Œå°±å†è¼¸å…¥ä¸€æ¬¡ league out å‘½ä»¤ã€‚\n" NOR);
                 set_temp("pending/out_league", 1, me);
                 return 1;
         }
 
-        write("ÎŞĞ§µÄ²ÎÊı¡£\n");
+        write("ç„¡æ•ˆçš„åƒæ•¸ã€‚\n");
         return 1;
 }
 
-// ¸ù¾İÍæ¼ÒºÍ²ÎÊıÑ¡ÔñÍ¬ÃËµÄÃû×Ö
+// æ ¹æ“šç©å®¶å’Œåƒæ•¸é¸æ“‡åŒç›Ÿçš„åå­—
 mixed select_league(object me, string arg)
 {
         string fam;
@@ -93,28 +93,28 @@ mixed select_league(object me, string arg)
 
                 if (! stringp(fam) && objectp(ob = UPDATE_D->global_find_player(arg)))
                 {
-                        // Ã»ÓĞ arg Õâ¸öÍ¬ÃË£¬²é¿´ÊÇ·ñÓĞ¸ÃÍæ¼Ò
+                        // æ²’æœ‰ arg é€™å€‹åŒç›Ÿï¼ŒæŸ¥çœ‹æ˜¯å¦æœ‰è©²ç©å®¶
                         fam=query("league/league_name", ob);
                         UPDATE_D->global_destruct_player(ob);
                         if (! stringp(fam))
-                                return notify_fail("ÕâÈËÏÖÔÚÃ»ÓĞºÍ±ğÈË½á³ÉÍ¬ÃË¡£\n");
+                                return notify_fail("é€™äººç¾åœ¨æ²’æœ‰å’Œåˆ¥äººçµæˆåŒç›Ÿã€‚\n");
                 }
 
                 if (! stringp(fam))
-                        return notify_fail("Ã»ÓĞÕâ¸öÍæ¼Ò£¬²»ÄÜ²éÔÄÏà¹ØµÄÍ¬ÃË¡£\n");
+                        return notify_fail("æ²’æœ‰é€™å€‹ç©å®¶ï¼Œä¸èƒ½æŸ¥é–±ç›¸é—œçš„åŒç›Ÿã€‚\n");
         }
 
         if (! fam)
         {
                 // select my league
                 if( !stringp(fam=query("league/league_name", me)) )
-                        return notify_fail("ÄãÏÖÔÚ»¹Ã»ÓĞºÍ±ğÈË½áÒå³ÉÃËÄØ¡£\n");
+                        return notify_fail("ä½ ç¾åœ¨é‚„æ²’æœ‰å’Œåˆ¥äººçµç¾©æˆç›Ÿå‘¢ã€‚\n");
         }
 
         return fam;
 }
 
-// ÏÔÊ¾Í¬ÃËµÄ³ğÈË
+// é¡¯ç¤ºåŒç›Ÿçš„ä»‡äºº
 int show_league_hatred(object me, string arg)
 {
         mapping hatred;
@@ -132,7 +132,7 @@ int show_league_hatred(object me, string arg)
         hatred = LEAGUE_D->query_league_hatred(fam);
         if (! mapp(hatred) || ! sizeof(hatred))
         {
-                write(fam + "ÏÖÔÚÃ»ÓĞÊ²Ã´³ğÈË¡£\n");
+                write(fam + "ç¾åœ¨æ²’æœ‰ä»€éº¼ä»‡äººã€‚\n");
                 return 1;
         }
 
@@ -140,8 +140,8 @@ int show_league_hatred(object me, string arg)
         ids = sort_array(ids, (: sort_hatred :), hatred);
 
         count = 0;
-        msg = WHT "Ä¿Ç°" + fam + "ÔÚ½­ºşÉÏµÄ³ğµĞ¶¼ÓĞ\n" NOR
-              HIY "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n" NOR;
+        msg = WHT "ç›®å‰" + fam + "åœ¨æ±Ÿæ¹–ä¸Šçš„ä»‡æ•µéƒ½æœ‰\n" NOR
+              HIY "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n" NOR;
         for (i = 0; i < sizeof(ids) && count < 30; i++)
         {
                 data = hatred[ids[i]];
@@ -154,17 +154,17 @@ int show_league_hatred(object me, string arg)
                                ++count, st, HIR, data[1], NOR);
         }
 
-        msg += HIY "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n" NOR;
+        msg += HIY "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n" NOR;
         if (i < sizeof(ids))
-                msg += WHT "½­ºşÉÏµÄµĞÈËÌ«¶à£¬ÄÑÒÔ¾¡Êı¡£\n" NOR;
+                msg += WHT "æ±Ÿæ¹–ä¸Šçš„æ•µäººå¤ªå¤šï¼Œé›£ä»¥ç›¡æ•¸ã€‚\n" NOR;
         else
-                msg += WHT "Ä¿Ç°Ò»¹²ÊÇ" + chinese_number(i) +
-                       "ÈË¡£\n" NOR;
+                msg += WHT "ç›®å‰ä¸€å…±æ˜¯" + chinese_number(i) +
+                       "äººã€‚\n" NOR;
         write(msg);
         return 1;
 }
 
-// ÏÔÊ¾Ä³Ò»¸öÍ¬ÃËÖĞµÄÈËÔ±
+// é¡¯ç¤ºæŸä¸€å€‹åŒç›Ÿä¸­çš„äººå“¡
 int show_league_member(object me, string arg)
 {
         array member;
@@ -176,25 +176,25 @@ int show_league_member(object me, string arg)
         if (! arg)
         {
                 if( !stringp(arg=query("league/league_name", me)) )
-                        return notify_fail("ÄãÏÖÔÚ»¹Ã»ÓĞ¼ÓÈëÈÎºÎÒ»¸öÍ¬ÃËÄØ¡£\n");
+                        return notify_fail("ä½ ç¾åœ¨é‚„æ²’æœ‰åŠ å…¥ä»»ä½•ä¸€å€‹åŒç›Ÿå‘¢ã€‚\n");
         }
 
         if (! arrayp(member = LEAGUE_D->query_members(arg)))
         {
-                write("ÏÖÔÚ½­ºşÉÏÃ»ÓĞ(" + arg + ")Õâ¸ö×ÖºÅ¡£\n");
+                write("ç¾åœ¨æ±Ÿæ¹–ä¸Šæ²’æœ‰(" + arg + ")é€™å€‹å­—è™Ÿã€‚\n");
                 return 1;
         }
 
         if (sizeof(member) < 1)
-                return notify_fail(arg + "ÏÖÔÚÈË¶¡Ï¡Âä¡£\n");
+                return notify_fail(arg + "ç¾åœ¨äººä¸ç¨€è½ã€‚\n");
 
         if (! wizardp(me))
         {
                 if( query("jing", me)<50 )
-                        return notify_fail("ÄãÏÖÔÚ¾«Éñ²»¼Ã£¬ÎŞ·¨´òÌıÕâĞ©ÏûÏ¢¡£\n");
+                        return notify_fail("ä½ ç¾åœ¨ç²¾ç¥ä¸æ¿Ÿï¼Œç„¡æ³•æ‰“è½é€™äº›æ¶ˆæ¯ã€‚\n");
 
                 if (me->is_busy())
-                        return notify_fail("ÄãÏÖÔÚÕıÃ¦£¬Ã»ÓĞÊ±¼ä´òÌıÕâĞ©ÏûÏ¢¡£\n");
+                        return notify_fail("ä½ ç¾åœ¨æ­£å¿™ï¼Œæ²’æœ‰æ™‚é–“æ‰“è½é€™äº›æ¶ˆæ¯ã€‚\n");
 
                 me->receive_damage("jing", 50);
                 me->start_busy(3);
@@ -214,13 +214,13 @@ int show_league_member(object me, string arg)
         }
 
         if (msg == "")
-                return notify_fail(arg + "ÏÖÔÚÈË¶¡Ï¡Âä¡£\n");
+                return notify_fail(arg + "ç¾åœ¨äººä¸ç¨€è½ã€‚\n");
 
-        write(arg + "Ä¿Ç°ÓĞÒÔÏÂ" + chinese_number(n) + "ÈË£º\n" + msg);
+        write(arg + "ç›®å‰æœ‰ä»¥ä¸‹" + chinese_number(n) + "äººï¼š\n" + msg);
         return 1;
 }
 
-// ÏÔÊ¾Í¬ÃËÖĞµÄĞÅÏ¢
+// é¡¯ç¤ºåŒç›Ÿä¸­çš„ä¿¡æ¯
 int show_league_info(object me, string arg)
 {
         string fam;
@@ -234,37 +234,37 @@ int show_league_info(object me, string arg)
                 return 0;
 
         if( fam == query("league/league_name", me) )
-                pro = "Äã";
+                pro = "ä½ ";
         else
                 pro = fam;
 
         if (! arrayp(member = LEAGUE_D->query_members(fam)))
         {
-                write("ÏÖÔÚ½­ºşÉÏÃ»ÓĞ(" + fam + ")Õâ¸ö×ÖºÅ¡£\n");
+                write("ç¾åœ¨æ±Ÿæ¹–ä¸Šæ²’æœ‰(" + fam + ")é€™å€‹å­—è™Ÿã€‚\n");
                 return 1;
         }
 
         if (sizeof(member) < 1)
-                return notify_fail(pro + "ÏÖÔÚÃ»ÓĞÒ»¸öĞÖµÜ¡£\n");
+                return notify_fail(pro + "ç¾åœ¨æ²’æœ‰ä¸€å€‹å…„å¼Ÿã€‚\n");
 
-        msg = pro + "ÏÖÔÚ" + LOCAL_MUD_NAME() + "µÄ½áÒåĞÖµÜ¶¼ÓĞ£º\n\n";
+        msg = pro + "ç¾åœ¨" + LOCAL_MUD_NAME() + "çš„çµç¾©å…„å¼Ÿéƒ½æœ‰ï¼š\n\n";
         member = sort_array(member, (: sort_member :));
         foreach (id in member)
         {
                 msg += sprintf(WHT "%-10s  ", id);
                 if (objectp(ob = find_player(id)))
-                        msg += sprintf(HIY "ÔÚÏß   "
-                                        NOR WHT "¾­Ñé£º" HIC "%-9d "
-                                       NOR WHT "ÔÄÀú£º" HIW "%-8d "
-                                       NOR WHT "ÍşÍû£º" HIY "%-8d\n" NOR,
+                        msg += sprintf(HIY "åœ¨ç·š   "
+                                        NOR WHT "ç¶“é©—ï¼š" HIC "%-9d "
+                                       NOR WHT "é–±æ­·ï¼š" HIW "%-8d "
+                                       NOR WHT "å¨æœ›ï¼š" HIY "%-8d\n" NOR,
                                        query("combat_exp", ob),
                                        query("score", ob),
                                        query("weiwang", ob));
                 else
-                        msg += HIR "²»ÔÚÏß\n" NOR;
+                        msg += HIR "ä¸åœ¨ç·š\n" NOR;
         }
 
-        msg += sprintf("\nÏÖÔÚ%sÖĞÒ»¹²ÓĞ%sÎ»ºÃÓÑ£¬ÔÚ½­ºşÉÏ¾ßÓĞ %s%d%s µãÉùÍû¡£\n",
+        msg += sprintf("\nç¾åœ¨%sä¸­ä¸€å…±æœ‰%sä½å¥½å‹ï¼Œåœ¨æ±Ÿæ¹–ä¸Šå…·æœ‰ %s%d%s é»è²æœ›ã€‚\n",
                        fam, chinese_number(sizeof(member)),
                        HIY, LEAGUE_D->query_league_fame(fam), NOR);
         write(msg);
@@ -272,7 +272,7 @@ int show_league_info(object me, string arg)
         return 1;
 }
 
-// ÏÔÊ¾Ä³Ò»¸öÍ¬ÃËÖĞµÄÈËÔ±
+// é¡¯ç¤ºæŸä¸€å€‹åŒç›Ÿä¸­çš„äººå“¡
 int dismiss_league(object me, string arg)
 {
         array member;
@@ -282,24 +282,24 @@ int dismiss_league(object me, string arg)
         int n;
 
         if (wiz_level(me) < wiz_level("(arch)"))
-                return notify_fail("ÄãµÄÈ¨ÏŞ²»¹»£¬²»ÄÜÇ¿ĞĞ½âÉ¢Í¬ÃË¡£\n");
+                return notify_fail("ä½ çš„æ¬Šé™ä¸å¤ ï¼Œä¸èƒ½å¼·è¡Œè§£æ•£åŒç›Ÿã€‚\n");
 
         if (! arg)
-                return notify_fail("ÄãÒª½âÉ¢ÄÄ¸öÍ¬ÃË£¿\n");
+                return notify_fail("ä½ è¦è§£æ•£å“ªå€‹åŒç›Ÿï¼Ÿ\n");
 
         if (! arrayp(member = LEAGUE_D->query_members(arg)))
         {
-                write("ÏÖÔÚ½­ºşÉÏÃ»ÓĞ(" + arg + ")Õâ¸ö×ÖºÅ¡£\n");
+                write("ç¾åœ¨æ±Ÿæ¹–ä¸Šæ²’æœ‰(" + arg + ")é€™å€‹å­—è™Ÿã€‚\n");
                 return 1;
         }
 
-        write("ÄãÇ¿ĞĞ½âÉ¢ÁË" + arg + "¡£\n");
+        write("ä½ å¼·è¡Œè§£æ•£äº†" + arg + "ã€‚\n");
         LEAGUE_D->dismiss_league(arg);
         return 1;
 }
 
 
-// ¸øËùÓĞµÄ³ğºŞ¶ÔÏóÅÅĞò
+// çµ¦æ‰€æœ‰çš„ä»‡æ¨å°è±¡æ’åº
 int sort_hatred(string id1, string id2, mapping hatred)
 {
         mixed *d1, *d2;
@@ -313,7 +313,7 @@ int sort_hatred(string id1, string id2, mapping hatred)
         return d2[1] - d1[1];
 }
 
-// ¸øÍ¬ÃËÖĞµÄËùÓĞ½áÒå³ÉÔ±ÅÅĞò
+// çµ¦åŒç›Ÿä¸­çš„æ‰€æœ‰çµç¾©æˆå“¡æ’åº
 int sort_member(string id1, string id2)
 {
         object ob1, ob2;
@@ -335,20 +335,20 @@ int sort_member(string id1, string id2)
 int help(object me)
 {
            write(@HELP
-Ö¸Áî¸ñÊ½: league info [Íæ¼Ò] | hatred [Íæ¼Ò] | member [Í¬ÃËÃû×Ö] | top
+æŒ‡ä»¤æ ¼å¼: league info [ç©å®¶] | hatred [ç©å®¶] | member [åŒç›Ÿåå­—] | top
 
-²é¿´Ä¿Ç°Äã½áÒåµÄÍ¬ÃËµÄ¸÷ÖÖĞÅÏ¢£¬ÆäÖĞ£º
+æŸ¥çœ‹ç›®å‰ä½ çµç¾©çš„åŒç›Ÿçš„å„ç¨®ä¿¡æ¯ï¼Œå…¶ä¸­ï¼š
 
-info   £º²é¿´Í¬ÃËÖĞµÄÈËÎï£¬³ÉÔ±×´Ì¬£¬ÉùÍû¡£
-hatred £º²é¿´Í¬ÃËµÄ³ğºŞ¶ÔÏó¡£
-member £º²é¿´Ä³¸öÍ¬ÃËµÄ³ÉÔ±¡£
-top    £º²é¿´½áÒåÍ¬ÃËµÄÉùÍûÅÅÃû¡£
+info   ï¼šæŸ¥çœ‹åŒç›Ÿä¸­çš„äººç‰©ï¼Œæˆå“¡ç‹€æ…‹ï¼Œè²æœ›ã€‚
+hatred ï¼šæŸ¥çœ‹åŒç›Ÿçš„ä»‡æ¨å°è±¡ã€‚
+member ï¼šæŸ¥çœ‹æŸå€‹åŒç›Ÿçš„æˆå“¡ã€‚
+top    ï¼šæŸ¥çœ‹çµç¾©åŒç›Ÿçš„è²æœ›æ’åã€‚
 
-Î×Ê¦¿ÉÒÔ²é¿´¸÷¸öÍ¬ÃËµÄĞÅÏ¢£¬Ö»ĞèÒªÔÚÃüÁîºóÃæ¼ÓÉÏÍ¬ÃËµÄÃû×Ö»ò
-ÊÇÍ¬ÃËÖĞµÄÍæ¼Ò¡£ÁíÍâÎ×Ê¦¿ÉÒÔÊ¹ÓÃ league dismiss ÃüÁîÇ¿ĞĞ½âÉ¢
-Ò»¸öÍ¬ÃË¡£
+å·«å¸«å¯ä»¥æŸ¥çœ‹å„å€‹åŒç›Ÿçš„ä¿¡æ¯ï¼Œåªéœ€è¦åœ¨å‘½ä»¤å¾Œé¢åŠ ä¸ŠåŒç›Ÿçš„åå­—æˆ–
+æ˜¯åŒç›Ÿä¸­çš„ç©å®¶ã€‚å¦å¤–å·«å¸«å¯ä»¥ä½¿ç”¨ league dismiss å‘½ä»¤å¼·è¡Œè§£æ•£
+ä¸€å€‹åŒç›Ÿã€‚
 
-see also: team (ÍÅÌåÍ¬ÃË)
+see also: team (åœ˜é«”åŒç›Ÿ)
 HELP );
            return 1;
 }

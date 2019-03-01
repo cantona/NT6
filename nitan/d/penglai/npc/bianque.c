@@ -8,13 +8,13 @@ inherit NPC;
 void create()
 {
         if (random(2))
-                set_name(HIC "±âÈµ" NOR, ({ "bian que", "bian", "que" }));
+                set_name(HIC "æ‰éµ²" NOR, ({ "bian que", "bian", "que" }));
         else
-                set_name(HIC "ÇØÔ½ÈË" NOR, ({ "qin yueren", "qin", "yueren" }));                
+                set_name(HIC "ç§¦è¶Šäºº" NOR, ({ "qin yueren", "qin", "yueren" }));                
                 
-        set("long", HIC "Éú»îÔÚ´ºÇïÕ½¹úÊ±ÆÚµÄ±âÈµ£¬¾İËµºóÀ´µÃÏÉÈËÖ¸Òı£¬ĞŞ³ÉÕı¹û¡£\n" NOR);
+        set("long", HIC "ç”Ÿæ´»åœ¨æ˜¥ç§‹æˆ°åœ‹æ™‚æœŸçš„æ‰éµ²ï¼Œæ“šèªªå¾Œä¾†å¾—ä»™äººæŒ‡å¼•ï¼Œä¿®æˆæ­£æœã€‚\n" NOR);
 
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("age", 9999);
         set("attitude", "friendly");
         set("shen_type", 1);
@@ -45,7 +45,7 @@ void create()
         map_skill("unarmed", "yinyang-shiertian");
         
         set("inquiry", ([
-                "ÅîÀ³ÏÉµº"               :   "Õâ²»ÊÇÄã¸ÃÀ´µÄµØ·½£¬ÎÒ¿´Äã»¹ÊÇ¿ì×ß°É¡£\n",
+                "è“¬èŠä»™å³¶"               :   "é€™ä¸æ˜¯ä½ è©²ä¾†çš„åœ°æ–¹ï¼Œæˆ‘çœ‹ä½ é‚„æ˜¯å¿«èµ°å§ã€‚\n",
         ]));
         
         set("chat_chance_combat", 120);

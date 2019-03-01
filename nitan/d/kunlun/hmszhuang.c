@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", HIR"��÷ׯ��"NOR);
+        set("short", HIR"紅梅莊門"NOR);
         set("long", @LONG
-����һ���Ĵ��ׯ�ӡ�һ�ۿ�ȥ��֪���˼������ǵ��صĸ�������
-����ɽ������ô���һ��ɽׯȷʵ�ǳ��ټ����ഫ���˼�����Ҳ������
-���ˣ�����·��֮��Ҳ��������Ľ��룬���Խ���֮�������
+這是一座頗大的莊子。一眼看去就知道此間主人是當地的富豪，在
+昆侖山中有這麼大的一座山莊確實非常少見。相傳，此間主人也是武林
+中人，所以路過之人也不敢隨意的進入，當以江湖之禮求見。
 LONG        );
         set("exits", ([ /* sizeof() == 2 */
                 "north"    : __DIR__"hmszdating",

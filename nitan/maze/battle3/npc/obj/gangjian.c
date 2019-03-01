@@ -1,4 +1,4 @@
-// longsword.c ³¤½£
+// longsword.c é•·åŠ
 
 #include <weapon.h>
 #include <ansi.h>
@@ -6,18 +6,18 @@ inherit SWORD;
 
 void create()
 {
-        set_name(HIW"¸Ö½£"NOR, ({ "gang jian", "jian" }));  
+        set_name(HIW"é‹¼åŠ"NOR, ({ "gang jian", "jian" }));  
         set_weight(20000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
-                set("long", "ÕâÊÇÒ»±úÆÕÍ¨µÄ¾«¸Ö½££¬Ò»°ãµÄ½£¿Í¶¼Åä´ø´Ë½£¡£\n");
+                set("unit", "æŸ„");
+                set("long", "é€™æ˜¯ä¸€æŸ„æ™®é€šçš„ç²¾é‹¼åŠï¼Œä¸€èˆ¬çš„åŠå®¢éƒ½é…å¸¶æ­¤åŠã€‚\n");
                 set("value", 100);
                 set("rigidity", 100); 
                 set("material", "steel");
-                set("wield_msg", "$N¡¸à§¡¹µÄÒ»Éù³é³öÒ»±ú$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²å»Ø½£ÇÊ¡£\n");
+                set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€è²æŠ½å‡ºä¸€æŸ„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°‡æ‰‹ä¸­çš„$næ’å›åŠé˜ã€‚\n");
         }
         init_sword(200);
         setup();

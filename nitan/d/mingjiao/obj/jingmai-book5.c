@@ -3,11 +3,11 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIW"ËïË¼åãÇ§½ï·½"NOR, ({ "jingmai book", "book", "shu" }) );
+        set_name(HIW"å­«æ€é‚ˆåƒæ–¤æ–¹"NOR, ({ "jingmai book", "book", "shu" }) );
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
+                set("unit", "æœ¬");
                 set_weight(10);
                 set("no_give", 1);
                 set("no_get", 1);

@@ -20,53 +20,53 @@ int main(object me, string arg)
                 return help(me);
                                
         if (me->is_busy())
-                return notify_fail("ÄãÕıÃ¦ÖøÄØ¡£\n");
+                return notify_fail("ä½ æ­£å¿™è‘—å‘¢ã€‚\n");
 
         if (me->is_fighting())
-                return notify_fail("ÄãÏÖÔÚÕıÔÚÕ½¶·£¡\n"); 
+                return notify_fail("ä½ ç¾åœ¨æ­£åœ¨æˆ°é¬¥ï¼\n"); 
 
         if (me->is_ghost()) 
-                return notify_fail("µÈÄã»¹ÁËÑôÔÙËµ°É¡£\n"); 
+                return notify_fail("ç­‰ä½ é‚„äº†é™½å†èªªå§ã€‚\n"); 
                 
         if (me->is_in_prison())   
-                return notify_fail("ÄãÕıÔÚ×öÀÎÄØ¡£\n");
+                return notify_fail("ä½ æ­£åœ¨åšç‰¢å‘¢ã€‚\n");
 
         if( query("doing", me) )
-                return notify_fail("Äã»¹Ïë¸ÉÊ²Ã´£¿£¡\n");
+                return notify_fail("ä½ é‚„æƒ³å¹¹ä»€éº¼ï¼Ÿï¼\n");
                 
         if( query("no_magic", environment(me)) )
-                return notify_fail("Äã·¢ÏÖÕâÀïÓĞµã¹Å¹Ö£¡\n");                
+                return notify_fail("ä½ ç™¼ç¾é€™è£¡æœ‰é»å¤æ€ªï¼\n");                
         
         if (arg == "back")
         {
                 if( query_temp("warquest/party", me) )
-                        return notify_fail("Äã»¹ÏëÔÚÕ½ÕùÖĞÊ¹ÓÃ£¿£¡\n");
+                        return notify_fail("ä½ é‚„æƒ³åœ¨æˆ°çˆ­ä¸­ä½¿ç”¨ï¼Ÿï¼\n");
 
                 if (present("biao huo", me))
-                        return notify_fail("ÄãÉíÉÏ´øÖøïÚÒø£¬²»ÄÜÊ©Õ¹£¡\n");
+                        return notify_fail("ä½ èº«ä¸Šå¸¶è‘—é¢éŠ€ï¼Œä¸èƒ½æ–½å±•ï¼\n");
 
                 if( sscanf(base_name(environment(me)), "/d/register/%*s") )
-                        return notify_fail("Äã»¹Ã»ÓĞ³öÉúÄØ£¬²»ÄÜÊ©Õ¹£¡\n");
+                        return notify_fail("ä½ é‚„æ²’æœ‰å‡ºç”Ÿå‘¢ï¼Œä¸èƒ½æ–½å±•ï¼\n");
 
                 if( sscanf(base_name(environment(me)), "/d/newbie/%*s") )
-                        return notify_fail("ÄãÔÚ¹Å´åÖĞ£¬²»ÄÜÊ©Õ¹£¡\n");
+                        return notify_fail("ä½ åœ¨å¤æ‘ä¸­ï¼Œä¸èƒ½æ–½å±•ï¼\n");
                 
                 file = "/d/city/kedian";
                 
                 if (base_name(environment(me)) == file)
-                        return notify_fail("ÄãÒÑ¾­ÔÚÑïÖİ¿ÍµêÁË¡£\n");
+                        return notify_fail("ä½ å·²ç¶“åœ¨æšå·å®¢åº—äº†ã€‚\n");
                         
                 if (! get_object(file))
-                        return notify_fail("Äã¸Ğ¾õµ½ËÆºõÓĞÊ²Ã´²»¶Ô¾¢£¡\n");
+                        return notify_fail("ä½ æ„Ÿè¦ºåˆ°ä¼¼ä¹æœ‰ä»€éº¼ä¸å°å‹ï¼\n");
 
-                message("vision", me->name() + "¾ÙÆğÓÒÊÖÔÚÃæÇ°¼«ËÙ»­ÁËÒ»¸öÔ²£¬¾¹»®ÆÆÁËÃæÇ°µÄ"
-                        "¿Õ¼ä£¬\nÖ»¼ûÔ²ÄÚµÄ¿Õ¼äÕæ¿Õ½«" + me->name() + "¸øÎüÁË½øÈ¥¡£\n",
+                message("vision", me->name() + "èˆ‰èµ·å³æ‰‹åœ¨é¢å‰æ¥µé€Ÿç•«äº†ä¸€å€‹åœ“ï¼Œç«ŸåŠƒç ´äº†é¢å‰çš„"
+                        "ç©ºé–“ï¼Œ\nåªè¦‹åœ“å…§çš„ç©ºé–“çœŸç©ºå°‡" + me->name() + "çµ¦å¸äº†é€²å»ã€‚\n",
                         environment(me), ({me}));
                 
-                tell_object(me, "Äã´Ó¿ÍµêµÄÄ³¸ö½ÇÂä¿Õ¼äÁÑ·ìÖĞ×ê³ö¡£\n");
+                tell_object(me, "ä½ å¾å®¢åº—çš„æŸå€‹è§’è½ç©ºé–“è£‚ç¸«ä¸­é‘½å‡ºã€‚\n");
 
                 me->move(file);
-                message("vision", me->name() + "´Ó¿ÍµêµÄÄ³¸ö½ÇÂä¿Õ¼äÁÑ·ìÖĞ×ê³ö¡£\n",
+                message("vision", me->name() + "å¾å®¢åº—çš„æŸå€‹è§’è½ç©ºé–“è£‚ç¸«ä¸­é‘½å‡ºã€‚\n",
                         environment(me), ({me}));
 
                 MYGIFT_D->check_mygift(me, "newbie_mygift/recall");
@@ -76,35 +76,35 @@ int main(object me, string arg)
         if (arg == "back" || arg == "home")
         {
                 if( query_temp("warquest/party", me) )
-                        return notify_fail("Äã»¹ÏëÔÚÕ½ÕùÖĞÊ¹ÓÃ£¿£¡\n");
+                        return notify_fail("ä½ é‚„æƒ³åœ¨æˆ°çˆ­ä¸­ä½¿ç”¨ï¼Ÿï¼\n");
 
                 if (present("biao huo", me))
-                        return notify_fail("ÄãÉíÉÏ´øÖøïÚÒø£¬²»ÄÜÊ©Õ¹£¡\n");
+                        return notify_fail("ä½ èº«ä¸Šå¸¶è‘—é¢éŠ€ï¼Œä¸èƒ½æ–½å±•ï¼\n");
 
                 if( sscanf(base_name(environment(me)), "/d/newbie/%*s") )
-                        return notify_fail("ÄãÔÚ¹Å´åÖĞ£¬²»ÄÜÊ©Õ¹£¡\n");
+                        return notify_fail("ä½ åœ¨å¤æ‘ä¸­ï¼Œä¸èƒ½æ–½å±•ï¼\n");
                 
                 if( arg == "back" )
                         file = "/d/city/kedian";
                 else
                         file = query("private_room/position", me);
                 
-                if( !file ) return notify_fail("Äã»¹Ã»ÓĞ×¡·¿ÄØ£¡\n");
+                if( !file ) return notify_fail("ä½ é‚„æ²’æœ‰ä½æˆ¿å‘¢ï¼\n");
                 
                 if (base_name(environment(me)) == file)
-                        return notify_fail("ÄãÒÑ¾­ÔÚÕâÀïÁË¡£\n");
+                        return notify_fail("ä½ å·²ç¶“åœ¨é€™è£¡äº†ã€‚\n");
                         
                 if (! get_object(file))
-                        return notify_fail("Äã¸Ğ¾õµ½ËÆºõÓĞÊ²Ã´²»¶Ô¾¢£¡\n");
+                        return notify_fail("ä½ æ„Ÿè¦ºåˆ°ä¼¼ä¹æœ‰ä»€éº¼ä¸å°å‹ï¼\n");
 
-                message("vision", me->name() + "¾ÙÆğÓÒÊÖÔÚÃæÇ°¼«ËÙ»­ÁËÒ»¸öÔ²£¬¾¹»®ÆÆÁËÃæÇ°µÄ"
-                        "¿Õ¼ä£¬\nÖ»¼ûÔ²ÄÚµÄ¿Õ¼äÕæ¿Õ½«" + me->name() + "¸øÎüÁË½øÈ¥¡£\n",
+                message("vision", me->name() + "èˆ‰èµ·å³æ‰‹åœ¨é¢å‰æ¥µé€Ÿç•«äº†ä¸€å€‹åœ“ï¼Œç«ŸåŠƒç ´äº†é¢å‰çš„"
+                        "ç©ºé–“ï¼Œ\nåªè¦‹åœ“å…§çš„ç©ºé–“çœŸç©ºå°‡" + me->name() + "çµ¦å¸äº†é€²å»ã€‚\n",
                         environment(me), ({me}));
                 
-                tell_object(me, "Äã´ÓÄ³¸ö½ÇÂä¿Õ¼äÁÑ·ìÖĞ×ê³ö¡£\n");
+                tell_object(me, "ä½ å¾æŸå€‹è§’è½ç©ºé–“è£‚ç¸«ä¸­é‘½å‡ºã€‚\n");
 
                 me->move(file);
-                message("vision", me->name() + "´ÓÄ³¸ö½ÇÂä¿Õ¼äÁÑ·ìÖĞ×ê³ö¡£\n",
+                message("vision", me->name() + "å¾æŸå€‹è§’è½ç©ºé–“è£‚ç¸«ä¸­é‘½å‡ºã€‚\n",
                         environment(me), ({me}));
 
                 MYGIFT_D->check_mygift(me, "newbie_mygift/recall");
@@ -112,37 +112,37 @@ int main(object me, string arg)
         }
                                        
         if( !stringp(file=query("can_whistle/"+str, me)) )
-                return notify_fail("Äã²¢Ã»ÓĞÕâ¸öÄ§»ÃÊŞ¡£\n");
+                return notify_fail("ä½ ä¸¦æ²’æœ‰é€™å€‹é­”å¹»ç¸ã€‚\n");
 
         if (file_size(file + ".c") < 0)
-                return notify_fail("Äã²¢Ã»ÓĞÕâ¸öÄ§»ÃÊŞ¡£\n");
+                return notify_fail("ä½ ä¸¦æ²’æœ‰é€™å€‹é­”å¹»ç¸ã€‚\n");
                                 
         if( arg == "reborn" && query("warcraft/status", me) == "died" )
         {
                 if (me->query_skill("huisheng-jue", 1) < 100)
-                        return notify_fail("ÄãµÄ»ØÉú¾ö¹¦Á¦²»¹»£¬ÎŞ·¨ÈÃÄ§»ÃÊŞÖØÉú¡£\n"); 
+                        return notify_fail("ä½ çš„å›ç”Ÿæ±ºåŠŸåŠ›ä¸å¤ ï¼Œç„¡æ³•è®“é­”å¹»ç¸é‡ç”Ÿã€‚\n"); 
 
                 if( query("neili", me)<query("max_neili", me)*9/10 )
-                        return notify_fail("ÄãÏÖÔÚÄÚÁ¦²¢²»³äÅæ£¬Ôõ¸ÒÃ³È»ÔËÓÃ£¿\n");
+                        return notify_fail("ä½ ç¾åœ¨å…§åŠ›ä¸¦ä¸å……æ²›ï¼Œæ€æ•¢è²¿ç„¶é‹ç”¨ï¼Ÿ\n");
 
                 if( query("jingli", me)<query("max_jingli", me)*9/10 )
-                        return notify_fail("ÄãÏÖÔÚ¾«Á¦²»¼Ã£¬Ôõ¸ÒÃ³È»ÔËÓÃ£¿\n");
+                        return notify_fail("ä½ ç¾åœ¨ç²¾åŠ›ä¸æ¿Ÿï¼Œæ€æ•¢è²¿ç„¶é‹ç”¨ï¼Ÿ\n");
 
                 if (me->query_skill("force") < 200)
-                        return notify_fail("ÄãµÄÄÚ¹¦¸ù»ù²»¹»ÔúÊµ£¬²»ÄÜÃ³È»ÔËÓÃ¡£\n");
+                        return notify_fail("ä½ çš„å…§åŠŸæ ¹åŸºä¸å¤ ç´®å¯¦ï¼Œä¸èƒ½è²¿ç„¶é‹ç”¨ã€‚\n");
 
                 if( query("max_neili", me)<3000 )
-                        return notify_fail("Äã³¢ÊÔÔËÁËÒ»ÏÂÄÚÁ¦£¬ÎŞ·¨Ë³"
-                                   "ÀûÔË×ãÒ»¸öÖÜÌì£¬ÄÑÒÔÊ©Õ¹ÄãµÄÄÜÁ¦¡£\n");
+                        return notify_fail("ä½ å˜—è©¦é‹äº†ä¸€ä¸‹å…§åŠ›ï¼Œç„¡æ³•é †"
+                                   "åˆ©é‹è¶³ä¸€å€‹å‘¨å¤©ï¼Œé›£ä»¥æ–½å±•ä½ çš„èƒ½åŠ›ã€‚\n");
 
                 if( query("max_jingli", me)<1000 )
-                        return notify_fail("ÄãÊÔÍ¼ÄıÉñÔËÓÃ¾«Á¦£¬µ«ÊÇ¸Ğ¾õÉĞÓĞÇ·È±¡£\n");                                
+                        return notify_fail("ä½ è©¦åœ–å‡ç¥é‹ç”¨ç²¾åŠ›ï¼Œä½†æ˜¯æ„Ÿè¦ºå°šæœ‰æ¬ ç¼ºã€‚\n");                                
                 
                 if( query("experience", me)<query("learned_experience", me)+1000 )
-                        return notify_fail("ÄãÏÖÔÚ»ıÀÛµÄÊµÕ½Ìå»á»¹Ì«ÉÙ£¬ÎŞ·¨Ã³È»ÔËÓÃ¡£\n");
+                        return notify_fail("ä½ ç¾åœ¨ç©ç´¯çš„å¯¦æˆ°é«”æœƒé‚„å¤ªå°‘ï¼Œç„¡æ³•è²¿ç„¶é‹ç”¨ã€‚\n");
 
-                message_sort(HIR "$N¼¯ÖĞ¾«Éñ£¬ÊÖÖ¸´óµØ£¬Í¬Ê±ÔË×ªµ¤ÌïÄÚÁ¦£¬¾­"
-                        "ÓÉÆæ¾­°ËÂöÔ´Ô´ÓÉÌåÄÚÁ÷³ö£¬×¢Èë´óµØ¡£\n" NOR, me); 
+                message_sort(HIR "$Né›†ä¸­ç²¾ç¥ï¼Œæ‰‹æŒ‡å¤§åœ°ï¼ŒåŒæ™‚é‹è½‰ä¸¹ç”°å…§åŠ›ï¼Œç¶“"
+                        "ç”±å¥‡ç¶“å…«è„ˆæºæºç”±é«”å…§æµå‡ºï¼Œæ³¨å…¥å¤§åœ°ã€‚\n" NOR, me); 
 
                 me->start_busy(1);
         
@@ -152,8 +152,8 @@ int main(object me, string arg)
                 set("jingli",query("max_jingli",  me), me);
                 addn("learned_experience", 1000, me);
                 set("warcraft/status", "living", me);
-                tell_object(me, HIW "ÄãÄıÉñÆ¬¿Ì£¬¾õµÃÄ§»ÃÊŞ"
-                        HIW "ËÆºõ¸´»î¹ıÀ´£¬¾ÍÔÚ²»Ô¶´¦£¬²»½ûÎ¢Î¢Ò»Ğ¦¡£\n" NOR);                                                                             
+                tell_object(me, HIW "ä½ å‡ç¥ç‰‡åˆ»ï¼Œè¦ºå¾—é­”å¹»ç¸"
+                        HIW "ä¼¼ä¹å¾©æ´»éä¾†ï¼Œå°±åœ¨ä¸é è™•ï¼Œä¸ç¦å¾®å¾®ä¸€ç¬‘ã€‚\n" NOR);                                                                             
                 
         } 
         else return help(me);
@@ -163,9 +163,9 @@ int main(object me, string arg)
 int help(object me)
 {
  write(@HELP
-Ö¸Áî¸ñÊ½ : recall back | home
-»Øµ½ÑïÖİ¿ÍµêµÄÖ¸ÁîÎª < recall back >¡£
-»Øµ½×¡·¿µÄÖ¸ÁîÎª < recall home >¡£
+æŒ‡ä»¤æ ¼å¼ : recall back | home
+å›åˆ°æšå·å®¢åº—çš„æŒ‡ä»¤ç‚º < recall back >ã€‚
+å›åˆ°ä½æˆ¿çš„æŒ‡ä»¤ç‚º < recall home >ã€‚
 HELP
     );
     return 1;

@@ -6,26 +6,26 @@ int main(object me, string str)
         string output;
 
         if( me->is_busy() )
-                return notify_fail("ÄãÏÖÔÚÕıÃ¦¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£å¿™ã€‚\n");
 
         if( !wizardp(me) && (time()-query_temp("last_tasks", me)<5) )
-                return notify_fail("ÏµÍ³Æø´­ĞêµØÌ¾µÀ£ºÂıÂıÀ´ ....\n");  
+                return notify_fail("ç³»çµ±æ°£å–˜å™“åœ°å˜†é“ï¼šæ…¢æ…¢ä¾† ....\n");  
 
         if( query("jing", me)<2 )
-                return notify_fail("ÄãÏÖÔÚ¾«Éñ×´Ì¬²»¼Ñ£¬»¹ÊÇµÈ»áÔÙ²é°É¡£\n");
+                return notify_fail("ä½ ç¾åœ¨ç²¾ç¥ç‹€æ…‹ä¸ä½³ï¼Œé‚„æ˜¯ç­‰æœƒå†æŸ¥å§ã€‚\n");
 
         addn("jing", -2, me);
 
         if (str && str == "count")
         {
-                tell_object(me,"ÄãÄ¿Ç°ÒÑ¾­Íê³ÉÓĞĞ§TASKÊ¹Ãü"+query("task/count", me)+"¸ö¡£\n");
+                tell_object(me,"ä½ ç›®å‰å·²ç¶“å®Œæˆæœ‰æ•ˆTASKä½¿å‘½"+query("task/count", me)+"å€‹ã€‚\n");
                 return 1;
         }
 
-    output = HIR"¡ï "HIW"ÄàÌ¶"HIR" ¡ï"HIG" TASKÈÎÎñ Ê¹Ãü°ñ\n" NOR; 
-    output += ""HIW"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n"NOR"";   
+    output = HIR"â˜… "HIW"æ³¥æ½­"HIR" â˜…"HIG" TASKä»»å‹™ ä½¿å‘½æ¦œ\n" NOR; 
+    output += ""HIW"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n"NOR"";   
         output += TASK_D->task_list();   
-    output += ""HIW"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n\n"NOR"";   
+    output += ""HIW"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n\n"NOR"";   
 
         me->start_more(output);
         set_temp("last_tasks", time(), me);
@@ -35,11 +35,11 @@ int main(object me, string str)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½: task
-Ö¸Áî¸ñÊ½: task count ²é¿´×Ô¼ºÒÑ¾­Íê³ÉTASKÊ¹ÃüµÄ¸öÊı¡£
-Ïà¹ØÎÄ¼ş: help tasks
+æŒ‡ä»¤æ ¼å¼: task
+æŒ‡ä»¤æ ¼å¼: task count æŸ¥çœ‹è‡ªå·±å·²ç¶“å®ŒæˆTASKä½¿å‘½çš„å€‹æ•¸ã€‚
+ç›¸é—œæ–‡ä»¶: help tasks
 
-Õâ¸öÖ¸ÁîÊÇÓÃÀ´µÃÖªÄ¿Ç°µÄËùÓĞÊ¹Ãü.
+é€™å€‹æŒ‡ä»¤æ˜¯ç”¨ä¾†å¾—çŸ¥ç›®å‰çš„æ‰€æœ‰ä½¿å‘½.
 
 HELP
         );

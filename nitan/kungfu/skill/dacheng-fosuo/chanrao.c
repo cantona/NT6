@@ -7,40 +7,40 @@ int perform(object me, object target)
         object weapon=query_temp("weapon", me);
 
         if( !wizardp(me) && !query("can_perform/dacheng-fosuo/canrao", me) )
-                return notify_fail("ÄãËùÊ¹ÓÃµÄÍâ¹¦ÖĞÃ»ÓĞÕâ¸ö¹¦ÄÜ£¡\n");
+                return notify_fail("ä½ æ‰€ä½¿ç”¨çš„å¤–åŠŸä¸­æ²’æœ‰é€™å€‹åŠŸèƒ½ï¼\n");
         
         if( !target ) target = offensive_target(me);
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("²øÈÆ¾÷Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("çºç¹è¨£åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if(me->query_skill("dacheng-fosuo",1) < 150)
-                return notify_fail("ÄãµÄ´ó³Ë·ğË÷»¹²»¹»æµÊì£¬²»»áÊ¹ÓÃ²øÈÆ¾÷¡£\n");
+                return notify_fail("ä½ çš„å¤§ä¹˜ä½›ç´¢é‚„ä¸å¤ å«»ç†Ÿï¼Œä¸æœƒä½¿ç”¨çºç¹è¨£ã€‚\n");
 
         if( !weapon 
          || query("skill_type", weapon) != "whip"
         ||      me->query_skill_mapped("whip") != "dacheng-fosuo" ) 
-                return notify_fail("ÄãÏÖÔÚÎŞ·¨Ê¹ÓÃ²øÈÆ¾÷¡£\n");
+                return notify_fail("ä½ ç¾åœ¨ç„¡æ³•ä½¿ç”¨çºç¹è¨£ã€‚\n");
 
         if( query("neili", me)<500 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ã€‚\n");
 
         if( target->is_busy() )
-        return notify_fail(target->name() + "Ä¿Ç°Õı×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É¡£\n");
+        return notify_fail(target->name() + "ç›®å‰æ­£è‡ªé¡§ä¸æš‡ï¼Œæ”¾è†½æ”»æ“Šå§ã€‚\n");
 
-          me->start_perform( 5, "²øÈÆ¾÷");
-    msg = HIG "$NÊ¹³ö²øÈÆ¾÷£¬±Ş×ÓÒ»»ÓÏò$nµÄË«ÍÈ¾íÈ¥£¡\n";
+          me->start_perform( 5, "çºç¹è¨£");
+    msg = HIG "$Nä½¿å‡ºçºç¹è¨£ï¼Œé­å­ä¸€æ®å‘$nçš„é›™è…¿å·å»ï¼\n";
 
         me->start_busy(random(2));
         if( (random(query("combat_exp", me))>query("combat_exp", target)/2 )
                 ||      (random(me->query_dex()) > target->query_dex()/2))
         {
-        msg += HIY "½á¹û$p±»$PÒ»¾í£¬Á½ÌõÍÈ±»½á½áÊµÊµµÄÀ¦ÆğÀ´£¬ÔÚµØÉÏÎŞ·¨ÅÀÆğ¡£\n" NOR;
+        msg += HIY "çµæœ$pè¢«$Pä¸€å·ï¼Œå…©æ¢è…¿è¢«çµçµå¯¦å¯¦çš„æ†èµ·ä¾†ï¼Œåœ¨åœ°ä¸Šç„¡æ³•çˆ¬èµ·ã€‚\n" NOR;
                 target->start_busy((int)me->query_skill("dacheng-fosuo",1)/20);
         } 
         else {
-                msg += HIW "¿ÉÊÇ$p¿´ÆÆÁË$PµÄ²øÈÆ¾÷£¬Éí×ÓÒ»Ô¾±ã¶ã¿ªÁË¡£\n" NOR;
+                msg += HIW "å¯æ˜¯$pçœ‹ç ´äº†$Pçš„çºç¹è¨£ï¼Œèº«å­ä¸€èºä¾¿èº²é–‹äº†ã€‚\n" NOR;
                 me->start_busy(2);
         }
         message_vision(msg, me, target);

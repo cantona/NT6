@@ -5,9 +5,9 @@ inherit F_DEALER;
 
 void create()
 {
-        set_name("Âô»¨¹ÃÄï", ({"maihua guniang", "girl", "guniang"}));
-        set("shop_title", "»¨µêÀÏ°å");
-        set("gender", "Å®ĞÔ");
+        set_name("è³£èŠ±å§‘å¨˜", ({"maihua guniang", "girl", "guniang"}));
+        set("shop_title", "èŠ±åº—è€æ¿");
+        set("gender", "å¥³æ€§");
         set("combat_exp", 4000);
         set("age", 17);
         set("per", 40);
@@ -49,14 +49,14 @@ void greeting(object ob)
         switch( random(2) ) 
         {
         case 0:
-                message_vision("$NĞ¦×ÅËµµÀ£º¸÷ÖÖĞÂ"
-                               "ÏÊ»¨¶ä£¬ÂòĞ©»ØÈ¥¸øÄãµÄĞÄÉÏÈË°É¡£\n",
+                message_vision("$Nç¬‘è‘—èªªé“ï¼šå„ç¨®æ–°"
+                               "é®®èŠ±æœµï¼Œè²·äº›å›å»çµ¦ä½ çš„å¿ƒä¸Šäººå§ã€‚\n",
                                this_object(), ob);
                 break;
         case 1:
-                message_vision("$NĞ¦ßäßäµØËµµÀ£ºÕâÎ»" +
+                message_vision("$Nç¬‘å’ªå’ªåœ°èªªé“ï¼šé€™ä½" +
                                RANK_D->query_respect(ob) +
-                               "ÒªÂòÊ²Ã´»¨¶ù£¿\n",
+                               "è¦è²·ä»€éº¼èŠ±å…’ï¼Ÿ\n",
                                this_object(), ob);
 
                 break;

@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Ä¾ÎÝ");
+        set("short", "æœ¨å±‹");
         set("long", @LONG
-ÕâÊÇÁèÏö³ÇµÜ×ÓÔÚ³ÇÍâÑ²Âß»¤É½µÄÉÚËù£¬Ã¿Ìì¶¼ÓÐÑ©É½µÜ×Ó
-ÊØÎÀ£¬ÒÔ±£»¤ÁèÏö³Ç°²È«Çå¾»¡£²»¹ý£¬Æ¾ÁèÏö³ÇÔÚÎäÁÖÖÐµÄÃûÍ·,
-Ò»°ãÏüÐ¡Ö®±²Ò²²»¸ÒÀ´´Ëµ·ÂÒ
+é€™æ˜¯å‡Œéœ„åŸŽå¼Ÿå­åœ¨åŸŽå¤–å·¡é‚è­·å±±çš„å“¨æ‰€ï¼Œæ¯å¤©éƒ½æœ‰é›ªå±±å¼Ÿå­
+å®ˆè¡›ï¼Œä»¥ä¿è­·å‡Œéœ„åŸŽå®‰å…¨æ¸…å‡ˆã€‚ä¸éŽï¼Œæ†‘å‡Œéœ„åŸŽåœ¨æ­¦æž—ä¸­çš„åé ­,
+ä¸€èˆ¬å®µå°ä¹‹è¼©ä¹Ÿä¸æ•¢ä¾†æ­¤æ—äº‚
 LONG );
         set("exits", ([
                 "west" : __DIR__"sroad6",
@@ -18,7 +18,7 @@ LONG );
                 CLASS_D("lingxiao") + "/wangwanren" : 1,
         ]));
 
-        create_door("west", "Ä¾ÃÅ", "east", DOOR_CLOSED);
+        create_door("west", "æœ¨é–€", "east", DOOR_CLOSED);
         set("no_clean_up", 0);
         setup();
 } 

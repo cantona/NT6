@@ -1,22 +1,22 @@
 
         upper_case()
 
-        ���ƣ�
-                upper_case() ���ؽ��ַ���ת��Ϊ��д
+        名稱：
+                upper_case() 返回將字符串轉換為大寫
 
-        �﷨��
+        語法：
                 string upper_case(string);
-                �ַ��� upper_case(�ַ���)
+                字符串 upper_case(字符串)
 
-        �÷���
-                ���ؽ������ַ���ת��Ϊ��д����ַ�����
-                ��ԭ�ַ���û�иı䣩
+        用法：
+                返回將參數字符串轉換為大寫後的字符串。
+                （原字符串沒有改變）
 
-        ���������Ҫ�� options �ļ��ﶨ���� PACKAGE_CONTRIB .
+        這個函數需要在 options 文件裡定義了 PACKAGE_CONTRIB .
 
-        �ο���
+        參考：
                 capitalize,
                 lower_case
 
-        by ���ֺ�(Find@tx)
+        by 發現號(Find@tx)
 

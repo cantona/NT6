@@ -1,4 +1,4 @@
-// xiongdan.c ĞÜµ¨
+// xiongdan.c ç†Šè†½
 
 inherit ITEM;
 #include <ansi.h>
@@ -11,13 +11,13 @@ void init()
 
 void create()
 {
-        set_name(GRN"ĞÜµ¨"NOR, ({"xiong dan", "dan"}));
+        set_name(GRN"ç†Šè†½"NOR, ({"xiong dan", "dan"}));
         set_weight(1000);
         set("vegetable", 16);
         set("value", 2400);
         set("nostrum", 64);
-        set("unit", "¿Å");
-        set("long", "ÕâÊÇÒ»¿Å°µÂÌÉ«µÄĞÜµ¨£¬¿´À´¿ÉÒÔÈëÒ©¡£\n");
+        set("unit", "é¡†");
+        set("long", "é€™æ˜¯ä¸€é¡†æš—ç¶ è‰²çš„ç†Šè†½ï¼Œçœ‹ä¾†å¯ä»¥å…¥è—¥ã€‚\n");
         set("pour_type", "1");
         setup();
 }
@@ -26,14 +26,14 @@ int do_eat(string arg)
 {
         object me = this_player();
 
-        if(!id(arg)) return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+        if(!id(arg)) return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if(!present(this_object(), me))
-                return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if( me->is_busy() )
-                return notify_fail("±ğ¼±£¬ÂıÂı³Ô£¬Ğ¡ĞÄ±ğÒ­×ÅÁË¡£\n");
+                return notify_fail("åˆ¥æ€¥ï¼Œæ…¢æ…¢åƒï¼Œå°å¿ƒåˆ¥å™è‘—äº†ã€‚\n");
 
         set("eff_qi",query("max_qi",  me), me);
-        message_vision("$N³ÔÏÂÒ»¸±ĞÜµ¨£¬¾õµÃ¾«ÉñºÃ¶àÁË¡£\n", me);
+        message_vision("$Nåƒä¸‹ä¸€å‰¯ç†Šè†½ï¼Œè¦ºå¾—ç²¾ç¥å¥½å¤šäº†ã€‚\n", me);
         destruct(this_object());
         return 1;
 }

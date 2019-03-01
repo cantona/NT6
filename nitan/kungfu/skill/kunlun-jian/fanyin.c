@@ -16,25 +16,25 @@ int perform(object me)
         }
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail("¡¸ÓòÍâèóÒô¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€ŒåŸŸå¤–æ¢µéŸ³ã€åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me)) || 
             query("skill_type", weapon) != "sword" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ã€‚\n");
 
         if (me->query_skill("tanqin-jifa", 1) < 120)
-                return notify_fail("ÄãµÄµ¯ÇÙ¼¼·¨ÉĞÇÒ²»¹»ÊìÁ·, ·¢²»³ö¡¸ÓòÍâèóÒô¡¹£¡\n");
+                return notify_fail("ä½ çš„å½ˆç´æŠ€æ³•å°šä¸”ä¸å¤ ç†Ÿç·´, ç™¼ä¸å‡ºã€ŒåŸŸå¤–æ¢µéŸ³ã€ï¼\n");
 
         if (me->query_skill("kunlun-jian", 1) < 120)
-                return notify_fail("ÄãµÄÀ¥ÂØ½£·¨µÈ¼¶²»¹», ·¢²»³ö¡¸ÓòÍâèóÒô¡¹£¡\n");
+                return notify_fail("ä½ çš„æ˜†ä¾–åŠæ³•ç­‰ç´šä¸å¤ , ç™¼ä¸å‡ºã€ŒåŸŸå¤–æ¢µéŸ³ã€ï¼\n");
 
         if( query("max_neili", me)<800 )
-                return notify_fail("ÄãµÄÄÚÁ¦ĞŞÎªÉĞÇÒÎŞ·¨´ïµ½Ê¹ÓÃ¡¸ÓòÍâèóÒô¡¹ËùĞèµÄ¾³½ç£¡\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¿®ç‚ºå°šä¸”ç„¡æ³•é”åˆ°ä½¿ç”¨ã€ŒåŸŸå¤–æ¢µéŸ³ã€æ‰€éœ€çš„å¢ƒç•Œï¼\n");
 
         if( query("neili", me)<300 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬ÔË×ã¡¸ÓòÍâèóÒô¡¹ËùĞèµÄÄÚÁ¦£¡\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼Œé‹è¶³ã€ŒåŸŸå¤–æ¢µéŸ³ã€æ‰€éœ€çš„å…§åŠ›ï¼\n");
 
-        msg = MAG "$NÎ¢Î¢Ò»Ğ¦£¬×óÊÖºáÎÕ½£±ú£¬ÓÒÊÖÎåÖ¸¶Ô×¼" + weapon->name() + NOR + MAG"½£¼¹ÇáÇáµ¯²¦£¬½£ÉíÎ¢²ü£¬ÉùÈôÁúÒ÷¡£\n¶ÙÊ±·¢³öÒ»ÕóÇå´àµÄÇÙÒô......\n" NOR;
+        msg = MAG "$Nå¾®å¾®ä¸€ç¬‘ï¼Œå·¦æ‰‹æ©«æ¡åŠæŸ„ï¼Œå³æ‰‹äº”æŒ‡å°æº–" + weapon->name() + NOR + MAG"åŠè„Šè¼•è¼•å½ˆæ’¥ï¼ŒåŠèº«å¾®é¡«ï¼Œè²è‹¥é¾åŸã€‚\né “æ™‚ç™¼å‡ºä¸€é™£æ¸…è„†çš„ç´éŸ³......\n" NOR;
 
         skill = me->query_skill("kunlun-jian",1);
         ap = attack_power(me, "sword");
@@ -47,12 +47,12 @@ int perform(object me)
                            (int)me->query_skill("tanqin-jifa", 1) * 2;
 
                 msg += COMBAT_D->do_damage(me, target, WEAPON_ATTACK, jing_wound, 96,
-                                           MAG "$n¶ÙÊ±Ö»¾õÇÙÒôÓÌÈçÁ½±úÀû½£Ò»°ã´Ì½øË«¶ú£¬É²ÄÇ¼äÍ·ÔÎÄ¿Ñ££¬È«Éí´ÌÍ´£¡\n" NOR);
+                                           MAG "$né “æ™‚åªè¦ºç´éŸ³çŒ¶å¦‚å…©æŸ„åˆ©åŠä¸€èˆ¬åˆºé€²é›™è€³ï¼Œå‰é‚£é–“é ­æšˆç›®çœ©ï¼Œå…¨èº«åˆºç—›ï¼\n" NOR);
                 me->start_busy(2 + random(2));
         } else
         {
                 addn("neili", -50, me);
-                msg += HIG "¿ÉÊÇ$n¸ÏÃ¦ÄşĞÄ¾²Æø£¬ÊÕÁ²ĞÄÉñ£¬Ë¿ºÁ²»ÊÜ$NÇÙÒôµÄ¸ÉÈÅ¡£\n"NOR;
+                msg += HIG "å¯æ˜¯$nè¶•å¿™å¯§å¿ƒéœæ°£ï¼Œæ”¶æ–‚å¿ƒç¥ï¼Œçµ²æ¯«ä¸å—$Nç´éŸ³çš„å¹¹æ“¾ã€‚\n"NOR;
                 me->start_busy(3);
         }
         message_combatd(msg, me, target);

@@ -1,17 +1,17 @@
 // This program is a part of NITAN MudLIB
-// tianmo.c ÌìÄ§Ê¥Ñª¸à
+// tianmo.c å¤©é­”è–è¡€è†
 
 #include <ansi.h>
 #include "medicine.h"
 
 void create()
 {
-        set_name(HIC "ÌìÄ§Ê¥Ñª¸à" NOR, ({"tianmo shengxuegao", "tianmo", "shengxuegao"}));
+        set_name(HIC "å¤©é­”è–è¡€è†" NOR, ({"tianmo shengxuegao", "tianmo", "shengxuegao"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»°üÌìÄ§Ê¥Ñª¸à£¬ÌìÄ§Ê¥Ñª¸àÊÇÌìÏÂÎŞË«µÄ¾ÈÉËÁéÒ©¡£\n");
-                set("base_unit", "°ü");
+                set("long", "é€™æ˜¯ä¸€åŒ…å¤©é­”è–è¡€è†ï¼Œå¤©é­”è–è¡€è†æ˜¯å¤©ä¸‹ç„¡é›™çš„æ•‘å‚·éˆè—¥ã€‚\n");
+                set("base_unit", "åŒ…");
                 set("base_value", 26000);
                 set("base_weight", 80);
                 set("only_do_effect", 1);
@@ -44,14 +44,14 @@ int do_effect(object me)
 
         if( time()-query_temp("last_eat/tianmo", me) < 1800 )
         {
-                write("Äã¸Õ·şÓÃ¹ıÒ©£¬ĞèÒ©ĞÔ·¢»ÓÍêĞ§ÓÃÒÔºó²ÅÄÜ¼ÌĞø·şÓÃ¡£\n");
+                write("ä½ å‰›æœç”¨éè—¥ï¼Œéœ€è—¥æ€§ç™¼æ®å®Œæ•ˆç”¨ä»¥å¾Œæ‰èƒ½ç¹¼çºŒæœç”¨ã€‚\n");
                 return 1;
         }
 
         set_temp("last_eat/tianmo", time(), me);
 
-        message_vision(YEL "$N" YEL "³ÔÏÂÒ»°ü" + name() +
-                       YEL "£¬ÄÚÏ¢ÔËĞĞÒ»Ğ¡ÖÜÌì£¬¸Ğ¾õÉíÌå·¢ÉúÁËÒ»Ğ©±ä»¯¡£\n", me);
+        message_vision(YEL "$N" YEL "åƒä¸‹ä¸€åŒ…" + name() +
+                       YEL "ï¼Œå…§æ¯é‹è¡Œä¸€å°å‘¨å¤©ï¼Œæ„Ÿè¦ºèº«é«”ç™¼ç”Ÿäº†ä¸€äº›è®ŠåŒ–ã€‚\n", me);
 
         my["jing"]     = my["max_jing"];
         my["qi"]       = my["max_qi"];

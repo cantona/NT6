@@ -1,4 +1,4 @@
-// incense.c Ïã»ğ
+// incense.c é¦™ç«
 // Last Modified by winder on Aug. 18 2002
 
 inherit ITEM;
@@ -8,13 +8,13 @@ int worn;
 
 void create()
 {
-        set_name("Ïã»ğ",({"incense"}));
+        set_name("é¦™ç«",({"incense"}));
         set_weight(50);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»Ö¦¸ÕÔì³öÀ´µÄÏã»ğ£¬»¹´ø×ÅËÉÖ¦µÄÏãÆø¡£\n");
-                set("unit", "Ö¦");
+                set("long", "é€™æ˜¯ä¸€æå‰›é€ å‡ºä¾†çš„é¦™ç«ï¼Œé‚„å¸¶è‘—é¬†æçš„é¦™æ°£ã€‚\n");
+                set("unit", "æ");
                 set("value", 100);
                 set("no_drop", 1);
                 set("no_get", 1);
@@ -32,11 +32,11 @@ void wear(int phase)
         worn = phase;
         switch(phase) {
         case 1:
-                set("long", "ÕâÊÇÒ»Ö¦¹±·îÓÃµÄÏã»ğ£¬µ«ÒÑ¾­¿ªÊ¼Ê§È¥ÏãÎ¶ÁË¡£\n");
+                set("long", "é€™æ˜¯ä¸€æè²¢å¥‰ç”¨çš„é¦™ç«ï¼Œä½†å·²ç¶“é–‹å§‹å¤±å»é¦™å‘³äº†ã€‚\n");
                 call_out("wear", 120, phase+1); 
                 break;
         case 2:
-                set("long", "ÕâÊÇÒ»Ö¦·ÅÁËºÜ¾ÃµÄÏã»ğ£¬¼¸ºõÍêÈ«Ê§È¥ÏãÆøÁË¡£\n");
+                set("long", "é€™æ˜¯ä¸€ææ”¾äº†å¾ˆä¹…çš„é¦™ç«ï¼Œå¹¾ä¹å®Œå…¨å¤±å»é¦™æ°£äº†ã€‚\n");
                 call_out("wear", 120, phase+1); 
                 break;
         case 3:

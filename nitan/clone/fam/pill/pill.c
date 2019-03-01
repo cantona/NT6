@@ -8,39 +8,39 @@ string query_autoload()
 
 void create()
 {
-        set_name(HIY "²¹Ò©" NOR, ({ "pill" }));
+        set_name(HIY "è£œè—¥" NOR, ({ "pill" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIY "ÕâÊÇÒ»¿ÅÔö¼ÓÄÚ¹¦µÄ²¹Ò©¡£\n" NOR);
-                set("base_unit", "¿Å");
+                set("long", HIY "é€™æ˜¯ä¸€é¡†å¢åŠ å…§åŠŸçš„è£œè—¥ã€‚\n" NOR);
+                set("base_unit", "é¡†");
                 set("base_value", 10000);
                 set("base_weight", 50);
                 set("only_do_effect", 1);
 
-                // Ôö¼Ó¼¼ÄÜµÄÖÖÀà
+                // å¢åŠ æŠ€èƒ½çš„ç¨®é¡
                 set("pill_skill", "force");
 
-                // ÊÇ·ñÎªÌØÊâÎä¹¦
+                // æ˜¯å¦ç‚ºç‰¹æ®Šæ­¦åŠŸ
                 set("skill_mapped", 1);
 
-                // ¼¼ÄÜµÄÔö¼ÓĞ§¹û
+                // æŠ€èƒ½çš„å¢åŠ æ•ˆæœ
                 set("pill_point", 20000);
 
-                // ¹¦Á¦µÄÔö¼ÓĞ§¹û
+                // åŠŸåŠ›çš„å¢åŠ æ•ˆæœ
                 set("force_point", 3);
 
-                // ·şÓÃ³É¹¦µÄÃèÊö
-                set("pill_msg1", HIR "ÄãÖ»¾õÒ»¹ÉÅ¯ÆøÉ¢²¼È«Éí£¬Ëµ²»³ö"
-                                 "µÄÊæ·şÊÜÓÃ¡£\n" NOR);
+                // æœç”¨æˆåŠŸçš„æè¿°
+                set("pill_msg1", HIR "ä½ åªè¦ºä¸€è‚¡æš–æ°£æ•£å¸ƒå…¨èº«ï¼Œèªªä¸å‡º"
+                                 "çš„èˆ’æœå—ç”¨ã€‚\n" NOR);
 
-                // ·şÓÃÊ§°ÜµÄÃèÊö
-                set("pill_msg2", HIY "ÄãÖ»¾õÒ»¹ÉÈÈÁ÷Ó¿ÉÏ£¬ÄÚÏ¢µÃµ½ÁË"
-                                 "ÍêÈ«µÄ²¹³ä¡£\n" NOR);
+                // æœç”¨å¤±æ•—çš„æè¿°
+                set("pill_msg2", HIY "ä½ åªè¦ºä¸€è‚¡ç†±æµæ¹§ä¸Šï¼Œå…§æ¯å¾—åˆ°äº†"
+                                 "å®Œå…¨çš„è£œå……ã€‚\n" NOR);
 
-                // Ôö¼Ó¹¦Á¦µÄÃèÊö£¬Èç¹ûÓĞÇ°ÃæÁ½ÌõĞÅÏ¢£¬ÔòÓ¦×÷È±Ê¡
-                set("pill_msg3", HIM "Äã¸Ğµ½ÄÚÁ¦ÓÖĞÛºñÁËÒ»Ğ©¡£\n" NOR);
-                set("pill_msg4", HIR "Äã¸Ğµ½ÄÚÏ¢ÅìÅÈ£¬ÄÑÒÔÎüÊÕÒ©Á¦¡£\n" NOR);
+                // å¢åŠ åŠŸåŠ›çš„æè¿°ï¼Œå¦‚æœæœ‰å‰é¢å…©æ¢ä¿¡æ¯ï¼Œå‰‡æ‡‰ä½œç¼ºçœ
+                set("pill_msg3", HIM "ä½ æ„Ÿåˆ°å…§åŠ›åˆé›„åšäº†ä¸€äº›ã€‚\n" NOR);
+                set("pill_msg4", HIR "ä½ æ„Ÿåˆ°å…§æ¯æ¾æ¹ƒï¼Œé›£ä»¥å¸æ”¶è—¥åŠ›ã€‚\n" NOR);
         }
         setup();
 }
@@ -55,11 +55,11 @@ int do_effect(object me)
         pot2 = query("force_point");
         time = query("pill_point") / 100;
 
-        // ·Ç¼¼ÄÜĞÍµÄÒ©ÎïÖØĞÂ¼ÆËãĞ§ÓÃÊ±¼ä
+        // éæŠ€èƒ½å‹çš„è—¥ç‰©é‡æ–°è¨ˆç®—æ•ˆç”¨æ™‚é–“
         if (! query("pill_point"))
                 time = 40 + query("force_point");
 
-        // ±¾²İÖªÊ¶Ôö¼ÓÒ©ÎïĞ§¹û
+        // æœ¬è‰çŸ¥è­˜å¢åŠ è—¥ç‰©æ•ˆæœ
         if( query("special_skill/herb", me) )
         {
                 pot1 += pot1 / 2;
@@ -69,28 +69,28 @@ int do_effect(object me)
 
         if ((int)me->query_condition("pill_drug") > 0)
         {
-                write("Äã¾õµÃÏÖÔÚÄÚÏ¢Î´¶¨£¬¾­ÂöÒşÒş»¹ÄÜ¸Ğµ½ÕæÆø"
-                      "³åµ´£¬²»¸ÒÃ³È»·şÊ³¡£\n");
+                write("ä½ è¦ºå¾—ç¾åœ¨å…§æ¯æœªå®šï¼Œç¶“è„ˆéš±éš±é‚„èƒ½æ„Ÿåˆ°çœŸæ°£"
+                      "æ²–ç›ªï¼Œä¸æ•¢è²¿ç„¶æœé£Ÿã€‚\n");
                 return 1;
         }
 
-        // Ôö¼ÓÒ©ÎïĞ§ÓÃÊ±¼ä£¬¸ÃÊ±¶ÎÀï²»ÄÜÔÙ´Î·şÓÃ
+        // å¢åŠ è—¥ç‰©æ•ˆç”¨æ™‚é–“ï¼Œè©²æ™‚æ®µè£¡ä¸èƒ½å†æ¬¡æœç”¨
         me->apply_condition("pill_drug", time);
 
-        message_vision(HIY "$N" HIY "·şÏÂÒ»" + query("base_unit") +
-                       name() + HIY "£¬¼±Ã¦¿ªÊ¼ÔË¹¦ÎüÊÕÒ©Á¦¡£\n"
+        message_vision(HIY "$N" HIY "æœä¸‹ä¸€" + query("base_unit") +
+                       name() + HIY "ï¼Œæ€¥å¿™é–‹å§‹é‹åŠŸå¸æ”¶è—¥åŠ›ã€‚\n"
                        NOR, me);
 
-        // Èç¹û¸ÃÒ©ÎïÓĞÔö¼Ó¼¼ÄÜµÄ¹¦ÄÜ£¬Ôò¼ÓÖ®
+        // å¦‚æœè©²è—¥ç‰©æœ‰å¢åŠ æŠ€èƒ½çš„åŠŸèƒ½ï¼Œå‰‡åŠ ä¹‹
         if (query("pill_skill") && query("pill_point"))
         {
-                // ÅĞ¶ÏÔö¼ÓµÄ¼¼ÄÜÊÇ·ñÎªÌØÊâ¼¼ÄÜ
+                // åˆ¤æ–·å¢åŠ çš„æŠ€èƒ½æ˜¯å¦ç‚ºç‰¹æ®ŠæŠ€èƒ½
                 if (query("skill_mapped") >= 1)
                         skill = me->query_skill_mapped(query("pill_skill"));
                 else
                         skill = query("pill_skill");
 
-                // ¿ÉÒÔÔö¼Ó¸Ã¼¼ÄÜ
+                // å¯ä»¥å¢åŠ è©²æŠ€èƒ½
                 if (stringp(skill) && me->can_improve_skill(skill))
                 {
                         tell_object(me, query("pill_msg1"));
@@ -100,13 +100,13 @@ int do_effect(object me)
         }
 
 
-        // Èç¹û¸ÃÒ©ÎïÓĞÔö¼Ó¹¦Á¦µÄ¹¦ÄÜ£¬Ôò¼ÓÖ®
+        // å¦‚æœè©²è—¥ç‰©æœ‰å¢åŠ åŠŸåŠ›çš„åŠŸèƒ½ï¼Œå‰‡åŠ ä¹‹
         if (query("pill_skill") && query("force_point"))
         {
-                // ÄÚ¹¦ĞÍÒ©ÎïÔö¼ÓÄÚÁ¦£¬·ñÔòÔòÔö¼Ó¾«Á¦
+                // å…§åŠŸå‹è—¥ç‰©å¢åŠ å…§åŠ›ï¼Œå¦å‰‡å‰‡å¢åŠ ç²¾åŠ›
                 if (query("pill_skill") == "force")
                 {
-                        // Ìá¹©³öĞÅÏ¢
+                        // æä¾›å‡ºä¿¡æ¯
                         if( query("max_neili", me)<me->query_neili_limit( )
                            && query("pill_msg3"))
                                 tell_object(me, query("pill_msg3"));
@@ -121,7 +121,7 @@ int do_effect(object me)
                                 my["neili"]  = my["max_neili"];
                 } else
                 {
-                        // Ìá¹©³öĞÅÏ¢
+                        // æä¾›å‡ºä¿¡æ¯
                         if( query("max_jingli", me)<me->query_jingli_limit( )
                            && query("pill_msg3"))
                                 tell_object(me, query("pill_msg3"));

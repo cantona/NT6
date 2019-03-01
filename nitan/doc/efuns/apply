@@ -1,12 +1,12 @@
      apply(3)               MudOS (5 Sep 1994)                apply(3)
-        º¯ÊıÃû³Æ:
-                apply() - ´¦Àíº¯ÊıÖ¸±ê (function pointer).
-        º¯ÊıÓï·¨:
+        å‡½æ•¸åç¨±:
+                apply() - è™•ç†å‡½æ•¸æŒ‡æ¨™ (function pointer).
+        å‡½æ•¸èªæ³•:
                 mixed apply( mixed f, mixed *args )
-                »ìºÏ apply( »ìºÏ f, »ìºÏ *args )
-        º¯ÊıÓÃ·¨:
-                Èç¹û f ÊÇÒ»¸öº¯Ê½, ¾Í»áºô½Ğ f ²¢ÓÃÕóÁĞ args µ±×÷ f
-                µÄ²ÎÊı (argument).
-                ¡õÀı:
-                        apply( f, ({ 1, 2, 3 }) ); Óë
-                        evaluate( f, 1, 2, 3 ); ÊÇÏàÍ¬µÄ.
+                æ··åˆ apply( æ··åˆ f, æ··åˆ *args )
+        å‡½æ•¸ç”¨æ³•:
+                å¦‚æœ f æ˜¯ä¸€å€‹å‡½å¼, å°±æœƒå‘¼å« f ä¸¦ç”¨é™£åˆ— args ç•¶ä½œ f
+                çš„åƒæ•¸ (argument).
+                â–¡ä¾‹:
+                        apply( f, ({ 1, 2, 3 }) ); èˆ‡
+                        evaluate( f, 1, 2, 3 ); æ˜¯ç›¸åŒçš„.

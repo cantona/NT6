@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-        set("short","��Ϫ��");
+        set("short","易溪部");
         set("long",@LONG
-��Ϫ��Ҳ���������������Ĳ��䡣���ﴦ���µأ������в���ũ
-���ũҵ�����Ҫ�����ָ���������񾭳�Ǩ�㣬��������˼�
-������⣬�������ݶ��ܼ�ª��
+易溪部也是烏夷族烏雜蠻的部落。這裡處半坡地，附近有不少農
+田，但農業落後，需要換季輪耕，因而村民經常遷徙，鎮子裡除了祭
+祀大屋外，其它房屋都很簡陋。
 LONG);
         set("objects", ([
            __DIR__"npc/shaonu": 1,

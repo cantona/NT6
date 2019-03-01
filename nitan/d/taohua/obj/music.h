@@ -1,5 +1,5 @@
 //Cracked by Kafei
-//music.h ÀÖÆ÷
+//music.h æ¨‚å™¨
 #include <ansi.h>
 
 int do_lianxi(string arg)
@@ -9,52 +9,52 @@ int do_lianxi(string arg)
         int cost;
 
         string* zither_msg = ({
-        "ÂÖÖ¸","Ëö","¹ö·÷","²¦´Ì","½øÍË","Ò÷â®","´Â×¢",
-        "Á½ÒıÉÏ","î»","´øÆğ","´éÖ¸","´òÔ²","Ä¨Ìô","¹´ÌŞ",
+        "è¼ªæŒ‡","ç‘£","æ»¾æ‹‚","æ’¥åˆº","é€²é€€","åŸçŒ±","ç¶½æ³¨",
+        "å…©å¼•ä¸Š","ç½¨","å¸¶èµ·","æ’®æŒ‡","æ‰“åœ“","æŠ¹æŒ‘","å‹¾å‰”",
         });
 
         string* flute_msg = ({
-        "²üÖ¸", "ÍÂÒô", "ÀúÒô","»¨ÉàÒô", "·ÉÖ¸²üÒô",
+        "é¡«æŒ‡", "åéŸ³", "æ­·éŸ³","èŠ±èˆŒéŸ³", "é£›æŒ‡é¡«éŸ³",
         });
 
         me = this_player();
         where = environment(me);
         weapon=query_temp("weapon", me);
         if( query("pigging", where) )
-                return notify_fail("Äã»¹ÊÇ×¨ĞÄ¹°Öí°É£¡\n");
+                return notify_fail("ä½ é‚„æ˜¯å°ˆå¿ƒæ‹±è±¬å§ï¼\n");
 
         if( query("sleep_room", where) )
-                return notify_fail("ÔÚË¯·¿Àï²»ÄÜÁ·Ï°Ñİ×àÀÖÆ÷£¬Õâ»áÓ°ÏìËûÈË¡£\n");
+                return notify_fail("åœ¨ç¡æˆ¿è£¡ä¸èƒ½ç·´ç¿’æ¼”å¥æ¨‚å™¨ï¼Œé€™æœƒå½±éŸ¿ä»–äººã€‚\n");
 
         if( query("no_fight", where) )
-                return notify_fail("ÕâÀï²»ÊÊºÏÁ·Ï°Ñİ×àÀÖÆ÷¡£\n");
+                return notify_fail("é€™è£¡ä¸é©åˆç·´ç¿’æ¼”å¥æ¨‚å™¨ã€‚\n");
 
         if (me->is_busy())
-                return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£å¿™è‘—å‘¢ã€‚\n");
 
         if( me->is_fighting() )
-                return notify_fail("ÄãÎŞ·¨ÔÚÕ½¶·ÖĞ×¨ĞÄÏÂÀ´Á·Ï°Ñİ×à£¡\n");
+                return notify_fail("ä½ ç„¡æ³•åœ¨æˆ°é¬¥ä¸­å°ˆå¿ƒä¸‹ä¾†ç·´ç¿’æ¼”å¥ï¼\n");
 
         if(!arg || !objectp(ob = present(arg, me)) )
-                return notify_fail("ÄãÒªÁ·Ï°Ñİ×àÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦ç·´ç¿’æ¼”å¥ä»€éº¼ï¼Ÿ\n");
 
         if( !query("shape", ob) || 
         (query("shape", ob) != "flute" && query("shape", ob) != "zither") )
-                return notify_fail("Äã²»ÄÜÁ·Ï°Ñİ×à"+ob->name()+"¡£\n");
+                return notify_fail("ä½ ä¸èƒ½ç·´ç¿’æ¼”å¥"+ob->name()+"ã€‚\n");
 
         if( ob != weapon )
-                return notify_fail("Äã±ØĞèÏÈ×°±¸"+ob->name()+"¡£\n");
+                return notify_fail("ä½ å¿…éœ€å…ˆè£å‚™"+ob->name()+"ã€‚\n");
 
         if( (int)me->query_skill("music", 1) < 10 ) {
                 if( query("shape", ob) == "zither" )
-                message_vision("$NÊÖ¸§$n£¬µ¯ÁË¼¸ÏÂ£¬Ëù³Éµ÷×ÓÑÏÖØ×ßÒô¡£\n"NOR, me, ob);
+                message_vision("$Næ‰‹æ’«$nï¼Œå½ˆäº†å¹¾ä¸‹ï¼Œæ‰€æˆèª¿å­åš´é‡èµ°éŸ³ã€‚\n"NOR, me, ob);
                 if( query("shape", ob) == "flute" )
-                message_vision("$N½«$n·ÅÔÚ´½±ßÒ»´µ£¬½á¹û·¢³öÒ»ÕóÎåÒô²»È«µÄÉùÏì¡£\n"NOR, me, ob);
+                message_vision("$Nå°‡$næ”¾åœ¨å”‡é‚Šä¸€å¹ï¼Œçµæœç™¼å‡ºä¸€é™£äº”éŸ³ä¸å…¨çš„è²éŸ¿ã€‚\n"NOR, me, ob);
                 return 1;
         }
 
         if( query("potential", me)<1 )
-                return notify_fail("ÄãµÄÇ±ÄÜÒÑ´ï¼«ÏŞ£¬Ã»ÓĞ°ì·¨ÁìÎò¸ü¾«ÃîµÄÀÖÀí¡£\n");
+                return notify_fail("ä½ çš„æ½›èƒ½å·²é”æ¥µé™ï¼Œæ²’æœ‰è¾¦æ³•é ˜æ‚Ÿæ›´ç²¾å¦™çš„æ¨‚ç†ã€‚\n");
 
 
         cost=50+random(40)*(40-query("int", me))/20;
@@ -63,27 +63,27 @@ int do_lianxi(string arg)
         if( query("jing", me)>cost){
                 if( query("shape", ob) == "zither"){
                 msg = zither_msg[random(sizeof(zither_msg))] ;
-                message_vision("$NÊÖ¸§$n£¬·´¸²Á·Ï°Öø¡¸"+msg+"¡¹µÄ¼¼ÇÉ¡£\n"NOR, me, ob);
-                if( query("family/family_name", me) == "ÌÒ»¨µº" && me->query_skill("music",1)<333 )
+                message_vision("$Næ‰‹æ’«$nï¼Œåè¦†ç·´ç¿’è‘—ã€Œ"+msg+"ã€çš„æŠ€å·§ã€‚\n"NOR, me, ob);
+                if( query("family/family_name", me) == "æ¡ƒèŠ±å³¶" && me->query_skill("music",1)<333 )
                 me->improve_skill("music", me->query_int()*2 + 1);
                 }
                 else if( query("shape", ob) == "flute"){
                 msg = flute_msg[random(sizeof(flute_msg))] ;
-                message_vision("$NÊÖ°´$n£¬ĞìĞì´µ×à£¬×¨ĞÄÁ·Ï°Öø¡¸"+msg+"¡¹µÄ¼¼ÇÉ¡£\n"NOR, me, ob);
-                if( query("family/family_name", me) == "ÌÒ»¨µº" && me->query_skill("music",1)<333 )
+                message_vision("$Næ‰‹æŒ‰$nï¼Œå¾å¾å¹å¥ï¼Œå°ˆå¿ƒç·´ç¿’è‘—ã€Œ"+msg+"ã€çš„æŠ€å·§ã€‚\n"NOR, me, ob);
+                if( query("family/family_name", me) == "æ¡ƒèŠ±å³¶" && me->query_skill("music",1)<333 )
                 me->improve_skill("music", me->query_int()*2 + 1);
 
                 }
-                else return notify_fail("Äã×ó¿´¿´£¬ÓÒ¿´¿´£¬ÊµÔÚ²»ÖªµÀ¸ÃÔõ÷áÑİ×à"+ob->name()+"¡£\n");
+                else return notify_fail("ä½ å·¦çœ‹çœ‹ï¼Œå³çœ‹çœ‹ï¼Œå¯¦åœ¨ä¸çŸ¥é“è©²æ€éº¼æ¼”å¥"+ob->name()+"ã€‚\n");
                 }
         else {
                 cost=query("jing", me);
                 if (cost < 0) cost = 0;
-                write("ÄãÏÖÔÚ¹ıÓÚÆ£¾ë£¬ÎŞ·¨×¨ĞÄÏÂÀ´Á·Ï°Ñİ×àÀÖÆ÷¡£\n");
+                write("ä½ ç¾åœ¨éäºç–²å€¦ï¼Œç„¡æ³•å°ˆå¿ƒä¸‹ä¾†ç·´ç¿’æ¼”å¥æ¨‚å™¨ã€‚\n");
                 return 1;
         }
 
-        me->receive_damage("jing", cost/2, "ĞÄÁ¦½Ê´áËÀÁË");
+        me->receive_damage("jing", cost/2, "å¿ƒåŠ›çµç˜æ­»äº†");
         addn("jingli", -cost/4, me);
         if( random(3) == 0)addn("potential", -random(2), me);
         return 1;

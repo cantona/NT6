@@ -7,16 +7,16 @@ int redeem(string arg);
 
 void create()
 {
-        set_name("ÆîÀÏ¶ş", ({ "qi laoer", "qi", "laoer" }));
-        set("title", "µ±ÆÌÀÏ°å");
+        set_name("ç¥è€äºŒ", ({ "qi laoer", "qi", "laoer" }));
+        set("title", "ç•¶èˆ–è€æ¿");
         set("shen_type", 0);
 
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set_max_encumbrance(100000000);
         set("age", 35);
         set("str", 100);
-        set("long", "¾İËµÆîÀÏ¶ş±¾ÊÇÆîÁ¬É½µÄ¶şÕ¯Ö÷£¬ºóÀ´²»Öª\n"
-                    "ÔõÃ´µÄ¸ÄĞĞ×öÁËÕâ¸ö¡£\n");
+        set("long", "æ“šèªªç¥è€äºŒæœ¬æ˜¯ç¥é€£å±±çš„äºŒå¯¨ä¸»ï¼Œå¾Œä¾†ä¸çŸ¥\n"
+                    "æ€éº¼çš„æ”¹è¡Œåšäº†é€™å€‹ã€‚\n");
         set("no_get_from", 1);
 
         set_skill("unarmed", 60);
@@ -47,6 +47,6 @@ void unconcious()
 
 void die()
 {
-        message_vision("\n$NËÀÁË¡£\n", this_object());
+        message_vision("\n$Næ­»äº†ã€‚\n", this_object());
         destruct(this_object());
 }

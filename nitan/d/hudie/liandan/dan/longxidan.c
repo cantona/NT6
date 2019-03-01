@@ -3,13 +3,13 @@ inherit ITEM;
 #include <ansi.h>
 void create()
 {
-     	set_name(HIY"ÁúÏ¬°Ù²İµ¤"NOR, ({ "longxi dan","dan"}));
+     	set_name(HIY"é¾çŠ€ç™¾è‰ä¸¹"NOR, ({ "longxi dan","dan"}));
       	set_weight(100);
       	if( clonep() )
             	set_default_object(__FILE__);
        else 
 	{       
-         	set("unit", "¿Å"); 
+         	set("unit", "é¡†"); 
              	set("no_get",1);
             	set("no_give",1);
       	}
@@ -25,10 +25,10 @@ void init()
 
 int do_eat(string arg)
 {
-    	if (!id(arg))  return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+    	if (!id(arg))  return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
 	this_player()->clear_condition();
  
-   	message_vision(HIC "$NÍÌÏÂÁúÏ¬°Ù²İµ¤£¬Ò»¹ÉÈÈÁ¦´Óµ¤ÌïÉıÆğ£¬½¥½¥µÄÉøÈëÈ«ÉíÑªÂö£¬¶¾ËØµÄ×÷ÓÃÖğ½¥ÏûÊ§ÁË¡£\n" NOR,this_player() );
+   	message_vision(HIC "$Nåä¸‹é¾çŠ€ç™¾è‰ä¸¹ï¼Œä¸€è‚¡ç†±åŠ›å¾ä¸¹ç”°å‡èµ·ï¼Œæ¼¸æ¼¸çš„æ»²å…¥å…¨èº«è¡€è„ˆï¼Œæ¯’ç´ çš„ä½œç”¨é€æ¼¸æ¶ˆå¤±äº†ã€‚\n" NOR,this_player() );
     	destruct(this_object());
     	return 1;
 }

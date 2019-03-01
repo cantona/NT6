@@ -1,4 +1,4 @@
-#define QUESTDIR "quest/Á¬³Ç¾÷/"
-#define QUESTDIR1 "quest/Á¬³Ç¾÷/Ñ©¹È¼¤¶·Æª/"
-#define QUESTDIR2 "quest/Á¬³Ç¾÷/Îä¹ÝÌ½ÃÜÆª/"
-#define QUESTDIR4 "quest/Á¬³Ç¾÷/Îä¹¦/"
+#define QUESTDIR "quest/èŸ€å‚‘æ©Ÿ/"
+#define QUESTDIR1 "quest/èŸ€å‚‘æ©Ÿ/æ‚•å—·æ…¾é ˆïšº/"
+#define QUESTDIR2 "quest/èŸ€å‚‘æ©Ÿ/æŒ•å¥©æŠ»èº‡ïšº/"
+#define QUESTDIR4 "quest/èŸ€å‚‘æ©Ÿ/æŒ•é«¡/"

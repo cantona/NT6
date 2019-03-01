@@ -1,4 +1,4 @@
-// jinchuang-yao.c ½ð´´Ò©
+// jinchuang-yao.c é‡‘å‰µè—¥
 
 #include <ansi.h>
 
@@ -15,12 +15,12 @@ void init()
 void create()
 {
 
-        set_name("½ð´´Ò©", ({"jin chuangyao", "jin"}));
+        set_name("é‡‘å‰µè—¥", ({"jin chuangyao", "jin"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°ü");
-                set("long", "ÕâÊÇÒ»°ü±ð¾ßÁéÐ§µÄ½ð´´Ò©£¬×¨ÖÎÄÚÍâÉËµÈ¡£\n");
+                set("unit", "åŒ…");
+                set("long", "é€™æ˜¯ä¸€åŒ…åˆ¥å…·éˆæ•ˆçš„é‡‘å‰µè—¥ï¼Œå°ˆæ²»å…§å¤–å‚·ç­‰ã€‚\n");
                 set("value", 2000);
         }
 
@@ -32,20 +32,20 @@ int do_eat(string arg)
 {
         object me = this_player();
 
-        if (!id(arg)) return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+        if (!id(arg)) return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
 
         if( query("eff_qi", me) == query("max_qi", me) )
-                return notify_fail("ÄãÏÖÔÚ²»ÐèÒªÓÃ½ð´´Ò©¡£\n");
+                return notify_fail("ä½ ç¾åœ¨ä¸éœ€è¦ç”¨é‡‘å‰µè—¥ã€‚\n");
         
         if ( (int)me->query_condition("bonze_drug" ) > 0 )
         {
                 addn("eff_qi", -50, this_player());
-                message_vision(HIR "$N³ÔÏÂÒ»°ü½ð´´Ò©£¬Ö»¾õÐØ¿Ú·³¶ñÓûÅ»£¬ËÄÖ«·¦Á¦£¬Ô­À´·þÊ³Ì«¼±Ì«¶à£¬Ò©Ð§ÊÊµÃÆä·´£¡\n" NOR, me);
+                message_vision(HIR "$Nåƒä¸‹ä¸€åŒ…é‡‘å‰µè—¥ï¼Œåªè¦ºèƒ¸å£ç…©æƒ¡æ¬²å˜”ï¼Œå››è‚¢ä¹åŠ›ï¼ŒåŽŸä¾†æœé£Ÿå¤ªæ€¥å¤ªå¤šï¼Œè—¥æ•ˆé©å¾—å…¶åï¼\n" NOR, me);
         }
         else
         {
                 this_player()->receive_curing("qi", 50);
-                message_vision(HIC "$N³ÔÏÂÒ»°ü½ð´´Ò©£¬Ö»¾õ¾«ÉñÕñ×÷£¬ÆøÉ«¿´ÆðÀ´ºÃ¶àÁË¡£\n" NOR, me);
+                message_vision(HIC "$Nåƒä¸‹ä¸€åŒ…é‡‘å‰µè—¥ï¼Œåªè¦ºç²¾ç¥žæŒ¯ä½œï¼Œæ°£è‰²çœ‹èµ·ä¾†å¥½å¤šäº†ã€‚\n" NOR, me);
         }
 
         me->apply_condition("bonze_drug", 15);

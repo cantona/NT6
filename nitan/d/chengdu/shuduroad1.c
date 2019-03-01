@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-        set("short", "�񶼴��");
+        set("short", "蜀都大道");
         set("long", @LONG
-�������񶼴���������Ϳ��Ե��ᶽ���ˡ������ĳ�����������
-��������ȥ�Ĺٲ�����ɣ���һЩ�ٱ���·��Ѳ�ڡ���е�һ���
-���£����ڹս���������
+這裡是蜀都大道，向西就可以到提督府了。過往的車馬卷起陣陣
+塵土，來去的官差陣步如飛，有一些官兵在路上巡哨。你感到一點點
+害怕，真後悔拐進這裡來。
 LONG );
         set("outdoors", "chengdu");
         set("exits", ([

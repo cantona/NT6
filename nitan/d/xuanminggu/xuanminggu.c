@@ -3,12 +3,12 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÐþÚ¤¹È");
+        set("short", "çŽ„å†¥è°·");
         set("long", @LONG
-ÕâÊÇÐþÚ¤¹ÈÁË£¬µ«¼ûËÄÖÜÈº·åÎ§ÈÆ£¬É½Ê¯ÑÚÓ³£¬Ç°·½²»Ô¶
-´¦ÓÐ¼¸¼äÐ¡ÎÝ(room)£¬Å¼ÓÐÉ½Â¹×·ÖðæÒÏ·£¬·ÉÄñÆëÃù£¬ÓÌÈçÖÃ
-ÉíÓÚÊÀÍâÌÒÔ´Ò»°ã¡£Ô¶Ô¶Íû¼ûÐþÚ¤·åÉÏ°×Ñ©Ò»Æ¬£¬ÔÆÎíçÔÈÆÓÚ
-ËÄÖÜ£¬ÁîÈËÐÄ¿õÉñâù¡£
+é€™æ˜¯çŽ„å†¥è°·äº†ï¼Œä½†è¦‹å››å‘¨ç¾¤å³°åœç¹žï¼Œå±±çŸ³æŽ©æ˜ ï¼Œå‰æ–¹ä¸é 
+è™•æœ‰å¹¾é–“å°å±‹(room)ï¼Œå¶æœ‰å±±é¹¿è¿½é€å¬‰æˆ²ï¼Œé£›é³¥é½Šé³´ï¼ŒçŒ¶å¦‚ç½®
+èº«äºŽä¸–å¤–æ¡ƒæºä¸€èˆ¬ã€‚é é æœ›è¦‹çŽ„å†¥å³°ä¸Šç™½é›ªä¸€ç‰‡ï¼Œé›²éœ§ç¹šç¹žäºŽ
+å››å‘¨ï¼Œä»¤äººå¿ƒæ› ç¥žæ€¡ã€‚
 LONG );
         set("exits", ([
                 "southup"    : __DIR__"shanlu3",
@@ -21,7 +21,7 @@ LONG );
         ]));
 
         set("item_desc", ([
-                "room"  : NOR + YEL "Ò»¼ä¼òÂªµÄÃ©²ÝÎÝ£¬¿ÉÒÔÔÚÀïÃæÐÝÏ¢Á·¹¦¡£\n" NOR,
+                "room"  : NOR + YEL "ä¸€é–“ç°¡é™‹çš„èŒ…è‰å±‹ï¼Œå¯ä»¥åœ¨è£¡é¢ä¼‘æ¯ç·´åŠŸã€‚\n" NOR,
         ]));
 
         set("outdoors", "xuanming");

@@ -4,12 +4,12 @@ inherit  ROOM;
 
 void  create  ()
 {
-        set("short",  "½ð³Ç");
+        set("short",  "é‡‘åŸŽ");
         set("long",  @LONG
-½ð³Ç¿¤ÉèÓÚÎ÷ººÊ±£¬ÕâÀïÊÇ½ð³Ç¿¤ÖÎËù¡£½ð³Ç¶É¿ÚÒòÆäÕ½ÂÔÎ»ÖÃµÄ
-ÖØÒªÐÔ¶øÎÅÃûÓÚÊÀ£¬ÀúÊ·ÉÏÐí¶àÖøÃûµÄÕ½ÒÛ¾Í·¢ÉúÔÚÕâ¶ù¡£
-    ºÓÀïÓÐ¼¸Ö»ÑòÆ¤·¤×Ó(boat)£¬ÊÇÓÃÀ´°Ú¶ÉµÄ£¬º°Ò»º°(yell)»òÐí»á
-ÓÐÈË¹ýÀ´¡£
+é‡‘åŸŽéƒ¡è¨­äºŽè¥¿æ¼¢æ™‚ï¼Œé€™è£¡æ˜¯é‡‘åŸŽéƒ¡æ²»æ‰€ã€‚é‡‘åŸŽæ¸¡å£å› å…¶æˆ°ç•¥ä½ç½®çš„
+é‡è¦æ€§è€ŒèžåäºŽä¸–ï¼Œæ­·å²ä¸Šè¨±å¤šè‘—åçš„æˆ°å½¹å°±ç™¼ç”Ÿåœ¨é€™å…’ã€‚
+    æ²³è£¡æœ‰å¹¾åªç¾Šçš®ç­å­(boat)ï¼Œæ˜¯ç”¨ä¾†æ“ºæ¸¡çš„ï¼Œå–Šä¸€å–Š(yell)æˆ–è¨±æœƒ
+æœ‰äººéŽä¾†ã€‚
 LONG);
         set("exits",  ([  /*  sizeof()  ==  2  */
                 "south" : __DIR__"road4",
@@ -29,5 +29,5 @@ void init()
 
 int do_yell()
 {
-        return notify_fail("º°Ê²Ã´º°£¬ÄÇ±ß»¹Ã»×öºÃÄØ£¡\n");
+        return notify_fail("å–Šä»€éº¼å–Šï¼Œé‚£é‚Šé‚„æ²’åšå¥½å‘¢ï¼\n");
 }

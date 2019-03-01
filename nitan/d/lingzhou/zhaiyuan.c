@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��լԺ");
+        set("short", "內宅院");
         set("long", @LONG
-���Ǹ������Ժ�ӣ�һɫ��ש�̵أ������Ƕ����᷿��ס��Ѿ�ߺ�
-���ӣ����������������С¥��Ѿ���ǽ�����������æµ��
+這是個極大的院子，一色青磚舖地，兩邊是東西廂房，住著丫鬟和
+婆子，西南面有座三層的小樓，丫鬟們進進出出很是忙碌。
 LONG
         );
         set("objects", ([ /* sizeof() == 1 */

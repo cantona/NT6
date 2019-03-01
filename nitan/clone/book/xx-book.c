@@ -4,14 +4,14 @@ inherit BOOK;
 
 void create()
 {
-        set_name("ÍØ±¾", ({ "tuo ben" , "book"}));
+        set_name("æ‹“æœ¬", ({ "tuo ben" , "book"}));
         set_weight(300);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "ÕÅ");
-                set("long", "ÕâÊÇÒ»ÕÅºÜÆÕÍ¨µÄÖ½£¬ÉÏÃæ³­Â¼ÁËÒ»Ğ©¿Ú¾÷£¬ËÆºõÊÇÒ»"
-                            "ÖÖ½Ğ×öÎüĞÇ´ó·¨\nµÄÄÚ¹¦¾÷ÇÏ¡£\n");
+                set("unit", "å¼µ");
+                set("long", "é€™æ˜¯ä¸€å¼µå¾ˆæ™®é€šçš„ç´™ï¼Œä¸Šé¢æŠ„éŒ„äº†ä¸€äº›å£è¨£ï¼Œä¼¼ä¹æ˜¯ä¸€"
+                            "ç¨®å«åšå¸æ˜Ÿå¤§æ³•\nçš„å…§åŠŸè¨£ç«…ã€‚\n");
                 set("material", "paper");
                 set("skill", ([
                         "name"        :  "xixing-dafa",

@@ -1,12 +1,12 @@
 // This program is a part of NT MudLIB
-// liu.c ������Ӱ
+// liu.c 流花掠影
 
 #include <ansi.h>
 #include <combat.h>
 
 inherit F_SSERVER;
 
-string name() { return "������Ӱ"; }
+string name() { return "流花掠影"; }
 
 int perform(object me, object target)
 {
@@ -14,25 +14,25 @@ int perform(object me, object target)
         object weapon;
 
         if((skill = me->query_skill("wuzhan-mei",1)) < 100)
-                return notify_fail("�����չ÷�����������죬�޷�ʹ�á�������Ӱ����\n");
+                return notify_fail("你的五展梅劍法不夠純熟，無法使用『流花掠影』。\n");
 
         if( !target ) target = offensive_target(me);
 
         if( !target
         || !target->is_character()
         || !me->is_fighting(target) )
-                return notify_fail("��������Ӱ��ֻ�ܶ�ս���еĶ���ʹ�á�\n");
+                return notify_fail("『流花掠影』只能對戰鬥中的對手使用。\n");
 
         if( query("neili", me)<400 )
-                return notify_fail("��Ŀǰ���������㣬�޷�ʩչ��������Ӱ����\n");
+                return notify_fail("你目前的內力不足，無法施展『流花掠影』。\n");
 
         if( !(weapon=query_temp("weapon", me)) || query("skill_type", weapon) != "sword"
         || me->query_skill_mapped("sword") != "wuzhan-mei")
-                return notify_fail("�������ʹ�ý�ʱ����ʹ����������Ӱ����\n");
+                return notify_fail("你必須在使用劍時才能使出『流花掠影』。\n");
 
         addn("neili", -300, me);
 
-        message_combatd(HIR"$N�����Ҷ����ó�һƬ��⣬ʩչ�����ž�ѧ��������Ӱ����\n\n"NOR,me);
+        message_combatd(HIR"$N手中亂抖，幻出一片青光，施展出唐門絕學『流花掠影』。\n\n"NOR,me);
 
         addn_temp("apply/attack", skill/2, me);
         for(int i=0;i<5;i++)

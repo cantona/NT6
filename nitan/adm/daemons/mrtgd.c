@@ -6,7 +6,7 @@
 #define LIBRARY_PATH    "/home/mud/nitan"
 #define DATA_PATH      	"/data/daemon/mrtg.o"
 
-//MRTG Éè¶¨µµ(ÓÉÖ÷»ú¶¨ÆÚÖ´ĞĞ´ËÉè¶¨µµ)
+//MRTG è¨­å®šæª”(ç”±ä¸»æ©Ÿå®šæœŸåŸ·è¡Œæ­¤è¨­å®šæª”)
 #define MRTGCONF 	"/data/daemon/mrtg/mrtg.conf"
 
 mapping mrtglist = allocate_mapping(0);
@@ -37,14 +37,14 @@ ShortLegend[memory]: &nbsp;&nbsp;
 Unscaled[memory]: ymwd
 LegendI[memory]: &nbsp; Memory Actv: &nbsp;
 LegendO[memory]: &nbsp; Memory Free: &nbsp;
-Legend1[memory]: Memory  ×´Ì¬&nbsp&nbsp---&nbsp&nbsp³ÌÊ½Ê¹ÓÃÖĞ
-Legend2[memory]: Memory  ×´Ì¬&nbsp&nbsp---&nbsp&nbspÉĞÎ´Ê¹ÓÃ
+Legend1[memory]: Memory  ç‹€æ…‹&nbsp&nbsp---&nbsp&nbspç¨‹å¼ä½¿ç”¨ä¸­
+Legend2[memory]: Memory  ç‹€æ…‹&nbsp&nbsp---&nbsp&nbspå°šæœªä½¿ç”¨
 Title[memory]: Lonely' server Memory USAGE Monitor
-PageTop[memory]: <H1>Ö÷»ú Memory Ê¹ÓÃÂÊ¼à²â</H1>
+PageTop[memory]: <H1>ä¸»æ©Ÿ Memory ä½¿ç”¨ç‡ç›£æ¸¬</H1>
  */
  
 //
-// ½¨Á¢ MRTG Éè¶¨µµ(ÓÉÖ÷»ú¶¨ÆÚÖ´ĞĞ´ËÉè¶¨µµ)
+// å»ºç«‹ MRTG è¨­å®šæª”(ç”±ä¸»æ©Ÿå®šæœŸåŸ·è¡Œæ­¤è¨­å®šæª”)
 //
 int generate_mrtg_conf()
 {
@@ -64,7 +64,7 @@ int generate_mrtg_conf()
 		
 		name=replace_string(name," ","_");
 		
-		// ±ê×¼¸ñÊ½
+		// æ¨™æº–æ ¼å¼
 		output+= "Directory[" + name +"]: "+ data["Directory"] + "\n";
 		
 		if( undefinedp(data["Options"]) )
@@ -117,7 +117,7 @@ int save()
         return save_object(DATA_PATH);  
 }
 
-// Ôö¼Ó MRTG ×ÊÁÏ
+// å¢åŠ  MRTG è³‡æ–™
 int addmrtg(string name, mapping info)
 {
 	if( !undefinedp(info) )
@@ -152,7 +152,7 @@ int addmrtg(string name, mapping info)
 	return 1;
 }
 
-// ÒÆ³ı MRTG
+// ç§»é™¤ MRTG
 int removemrtg(string name)
 {
         if( !mapp(mrtglist[name]) ) 
@@ -168,7 +168,7 @@ int removemrtg(string name)
 } 
 
 //
-// ÒÆ³ıÔ¤ÉèµÄ MRTG
+// ç§»é™¤é è¨­çš„ MRTG
 //
 void remove_default_mrtg()
 {
@@ -180,7 +180,7 @@ void remove_default_mrtg()
 }
 
 //
-// ¼ÓÈëÔ¤ÉèµÄ MRTG
+// åŠ å…¥é è¨­çš„ MRTG
 //
 void add_default_mrtg()
 {
@@ -193,10 +193,10 @@ void add_default_mrtg()
 		"AbsMax":	"1250000",
 		"LegendI": 	"&nbsp; netflow in &nbsp;",
 		"LegendO":	"&nbsp; netflow out &nbsp;",
-		"Legend1":	"Á÷ÈëÁ÷Á¿&nbsp&nbsp---&nbsp&nbsp",
-		"Legend2":	"Á÷³öÁ÷Á¿&nbsp&nbsp---&nbsp&nbsp",
-                "Title":        "NT Á÷Á¿¼à¿Ø",
-		"PageTop":	"<H1>NT Á÷Á¿¼à¿Ø</H1>",
+		"Legend1":	"æµå…¥æµé‡&nbsp&nbsp---&nbsp&nbsp",
+		"Legend2":	"æµå‡ºæµé‡&nbsp&nbsp---&nbsp&nbsp",
+                "Title":        "NT æµé‡ç›£æ§",
+		"PageTop":	"<H1>NT æµé‡ç›£æ§</H1>",
                 "YLegend":      "NT netflow monitor",
 		"SetEnv":	"MRTG_INT_IP=\""MUD_IP"\" MRTG_INT_DESCR=\"xl0\"",
 		//"ShortLegend": 	" %",
@@ -211,10 +211,10 @@ void add_default_mrtg()
 		"AbsMax":	"5000",
 		"LegendI": 	"&nbsp; CPU load &nbsp;",
 		"LegendO":	"&nbsp; MEM load &nbsp;",
-		"Legend1":	"CPU ×´Ì¬&nbsp&nbsp---&nbsp&nbsp",
-		"Legend2":	"MEM ×´Ì¬&nbsp&nbsp---&nbsp&nbsp",
-                "Title":        "NT MUD ¸ºÔØ",
-		"PageTop":	"<H1>NT MUD ¸ºÔØ %</H1>",
+		"Legend1":	"CPU ç‹€æ…‹&nbsp&nbsp---&nbsp&nbsp",
+		"Legend2":	"MEM ç‹€æ…‹&nbsp&nbsp---&nbsp&nbsp",
+                "Title":        "NT MUD è² è¼‰",
+		"PageTop":	"<H1>NT MUD è² è¼‰ %</H1>",
 		"YLegend":	"MudOS CPU/MEM load percentage graph",
 		"ShortLegend": 	" %",
 	]));
@@ -227,8 +227,8 @@ void add_default_mrtg()
 		"AbsMax":	"1073676288",
 		"LegendI": 	"&nbsp; Data Usage: &nbsp;",
 		"LegendO":	"&nbsp; Total Usage:  &nbsp;",
-		"Legend1":	"Memory ×´Ì¬&nbsp&nbsp---&nbsp&nbspÒ»·ÖÖÓÆ½¾ùÖµ",
-		"Legend2":	"Memory ×´Ì¬&nbsp&nbsp---&nbsp&nbspÎå·ÖÖÓÆ½¾ùÖµ",
+		"Legend1":	"Memory ç‹€æ…‹&nbsp&nbsp---&nbsp&nbspä¸€åˆ†é˜å¹³å‡å€¼",
+		"Legend2":	"Memory ç‹€æ…‹&nbsp&nbsp---&nbsp&nbspäº”åˆ†é˜å¹³å‡å€¼",
                 "Title":        "NT Mud Memory USAGE Monitor",
 		"PageTop":	"<H1>Memory Monitor For Mudos (NT) </H1>",
 		"YLegend":	"MudOS MEM(kb)",
@@ -246,8 +246,8 @@ void add_default_mrtg()
                 "AbsMax":       "2073676288",
 		"LegendI": 	"&nbsp; Memory Actv: &nbsp;",
 		"LegendO":	"&nbsp; Memory Free: &nbsp;",
-		"Legend1":	"Memory ×´Ì¬&nbsp&nbsp---&nbsp&nbspÒ»·ÖÖÓÆ½¾ùÖµ",
-		"Legend2":	"Memory ×´Ì¬&nbsp&nbsp---&nbsp&nbspÎå·ÖÖÓÆ½¾ùÖµ",
+		"Legend1":	"Memory ç‹€æ…‹&nbsp&nbsp---&nbsp&nbspä¸€åˆ†é˜å¹³å‡å€¼",
+		"Legend2":	"Memory ç‹€æ…‹&nbsp&nbsp---&nbsp&nbspäº”åˆ†é˜å¹³å‡å€¼",
 		"Title":	"NT server Memory USAGE Monitor",
 		"PageTop":	"<H1>.. Memory .....</H1>",
 		"YLegend":	"memory usage(kb)",
@@ -262,10 +262,10 @@ void add_default_mrtg()
 		"AbsMax":	"5000",
 		"LegendI": 	"&nbsp; CPU load &nbsp;",
 		"LegendO":	"&nbsp; CPU load &nbsp;",
-		"Legend1":	"CPU ×´Ì¬&nbsp&nbsp---&nbsp&nbspÒ»·ÖÖÓÆ½¾ùÖµ",
-		"Legend2":	"CPU ×´Ì¬&nbsp&nbsp---&nbsp&nbspÎå·ÖÖÓÆ½¾ùÖµ",
-		"Title":	"Ö÷»ú CPU ¸ºÔØ",
-		"PageTop":	"<H1>Ö÷»ú CPU ¸ºÔØ (%)</H1>",
+		"Legend1":	"CPU ç‹€æ…‹&nbsp&nbsp---&nbsp&nbspä¸€åˆ†é˜å¹³å‡å€¼",
+		"Legend2":	"CPU ç‹€æ…‹&nbsp&nbsp---&nbsp&nbspäº”åˆ†é˜å¹³å‡å€¼",
+		"Title":	"ä¸»æ©Ÿ CPU è² è¼‰",
+		"PageTop":	"<H1>ä¸»æ©Ÿ CPU è² è¼‰ (%)</H1>",
 		"YLegend":	"CPU Utilization",
 		"ShortLegend": 	" %",
 		
@@ -273,7 +273,7 @@ void add_default_mrtg()
 }
 
 //
-// ÒÆ³ı
+// ç§»é™¤
 //
 int remove()
 {       
@@ -284,13 +284,13 @@ void create()
 {
         if( !restore_object(DATA_PATH) )
 	{
-		// ¼ÓÈëÔ¤ÉèÏîÄ¿
+		// åŠ å…¥é è¨­é …ç›®
 		add_default_mrtg();
 		
-		// È¡µÃ MNLMUDLIST_D Ä¿Ç°×ÊÁÏ 
+		// å–å¾— MNLMUDLIST_D ç›®å‰è³‡æ–™ 
                 MUDLIST_D->update_mrtg_data();
 		
-		// ½¨Á¢Éè¶¨µµ
+		// å»ºç«‹è¨­å®šæª”
 		generate_mrtg_conf();
 
                 save();       
@@ -298,5 +298,5 @@ void create()
 }
 string query_name()
 {
-	return "MRTG ÏµÍ³(MRTG_D)";
+	return "MRTG ç³»çµ±(MRTG_D)";
 }

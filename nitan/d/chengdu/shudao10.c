@@ -3,11 +3,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ʯ��");
+        set("short", "石階");
         set("long", @LONG
-һ��Сʯ�ף��е��������ã���ݴ�ʯͷ�ķ�϶�г��˳�������
-Щ�ط���ʯ�����������Զ���Ѿ�ĥ�Ĺ⻬�羵�����Ͽ�ȥ��ֻ����
-�����м������ӡ�
+一條小石階，有點破破爛爛，青草從石頭的縫隙中長了出來，有
+些地方的石階由于年代久遠，已經磨的光滑如鏡。向上看去，只見雲
+霧中有幾座房子。
 LONG );
         set("exits", ([
                 "east" :  __DIR__"shudao9",

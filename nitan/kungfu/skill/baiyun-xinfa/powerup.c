@@ -12,21 +12,21 @@ int exert(object me, object target)
   !query("perform/powerup", me) && 
   !query("can_perform/baiyun-xinfa/powerup", me) && 
   !query_temp("murong/xingyi", me) )
-   return notify_fail("ÄãËùÊ¹ÓÃµÄÄÚ¹¦ÖĞÃ»ÓĞÕâÖÖ¹¦ÄÜ¡£");
+   return notify_fail("ä½ æ‰€ä½¿ç”¨çš„å…§åŠŸä¸­æ²’æœ‰é€™ç¨®åŠŸèƒ½ã€‚");
 
         if( target != me )
-        return notify_fail("ÄãÖ»ÄÜÓÃ°×ÔÆĞÄ·¨À´ÌáÉı×Ô¼ºµÄÕ½¶·Á¦¡£\n");
+        return notify_fail("ä½ åªèƒ½ç”¨ç™½é›²å¿ƒæ³•ä¾†æå‡è‡ªå·±çš„æˆ°é¬¥åŠ›ã€‚\n");
         if( query("neili", me)<150 )
-        return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+        return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ã€‚\n");
         if( query_temp("powerup", me) )
-        return notify_fail("ÄãÒÑ¾­ÔÚÔË¹¦ÖĞÁË¡£\n");
+        return notify_fail("ä½ å·²ç¶“åœ¨é‹åŠŸä¸­äº†ã€‚\n");
 
         skill = me->query_skill("force");
         if( query("sex/number", me))skill=1;
         addn("neili", -100, me);
         me->receive_damage("qi", 0);
         message_combatd(
-        HIW"$NÎ¢Ò»ÄıÉñ£¬ÔËÆğ°×ÔÆĞÄ·¨£¬ÕæÆø¹à×¢È«Éí£¬Í·¶¥°×ÎíçÔÈÆ¡£\n" NOR,me);
+        HIW"$Nå¾®ä¸€å‡ç¥ï¼Œé‹èµ·ç™½é›²å¿ƒæ³•ï¼ŒçœŸæ°£çŒæ³¨å…¨èº«ï¼Œé ­é ‚ç™½éœ§ç¹šç¹ã€‚\n" NOR,me);
         addn_temp("apply/attack", skill/3, me);
         addn_temp("apply/dodge", skill/3, me);
         set_temp("powerup", 1, me);
@@ -41,5 +41,5 @@ void remove_effect(object me, int amount)
         addn_temp("apply/attack", -amount, me);
         addn_temp("apply/dodge", -amount, me);
         delete_temp("powerup", me);
-        tell_object(me, "ÄãµÄ°×ÔÆĞÄ·¨ÔËĞĞÍê±Ï£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï¡£\n");
+        tell_object(me, "ä½ çš„ç™½é›²å¿ƒæ³•é‹è¡Œå®Œç•¢ï¼Œå°‡å…§åŠ›æ”¶å›ä¸¹ç”°ã€‚\n");
 }

@@ -1,4 +1,4 @@
- //liwenxiu.c ÀîÎÄĞã
+ //liwenxiu.c ææ–‡ç§€
 
 #include <ansi.h>
 
@@ -10,10 +10,10 @@ void dest(object ob);
 
 void create()
 {
-        set_name("ÀîÎÄĞã", ({ "li wenxiu", "li", "wenxiu" }));
-        set("gender", "Å®ĞÔ");
+        set_name("ææ–‡ç§€", ({ "li wenxiu", "li", "wenxiu" }));
+        set("gender", "å¥³æ€§");
         set("age", 18);
-        set("long", "Ëı³¤µÃÇå´¿ÍÑĞã£¬æÌÈ»Ò»Ğ¦£¬²»½ûÈÃÈËâñÈ»ĞÄ¶¯¡£\n");
+        set("long", "å¥¹é•·å¾—æ¸…ç´”è„«ç§€ï¼Œå«£ç„¶ä¸€ç¬‘ï¼Œä¸ç¦è®“äººæ€¦ç„¶å¿ƒå‹•ã€‚\n");
 
         set("combat_exp", 100000);
         set("shen_type", 1);
@@ -30,12 +30,12 @@ void create()
         set_skill("parry", 100);
 
         set("inquiry", ([
-                "ËÕÆÕ" : (: ask_supu :),
+                "è˜‡æ™®" : (: ask_supu :),
                 "supu" : (: ask_supu :),
-                "¸¸Ä¸" : (: ask_parent :),
+                "çˆ¶æ¯" : (: ask_parent :),
                 "parent" : (: ask_parent :),
-                "¸ß²ıµØÍ¼" : (: ask_gaochang:),
-                "¸ß²ıÃÔ¹¬" : (: ask_gaochang :),
+                "é«˜æ˜Œåœ°åœ–" : (: ask_gaochang:),
+                "é«˜æ˜Œè¿·å®®" : (: ask_gaochang :),
                 "map" : (: ask_gaochang:),
         ]) );
 
@@ -49,8 +49,8 @@ void create()
 
 int ask_supu()
 {
-        say("ÀîÎÄĞã÷öÈ»µÄËµ£ºËûÊÇÎÒ¶ùÊ±µÄ»ï°é£¬ËûÏÖÔÚºÍ°¢ÂüÔÚÒ»ÆğÁË£¬\n");
-        set_temp("marks/Àî1", 1, this_player());
+        say("ææ–‡ç§€é»¯ç„¶çš„èªªï¼šä»–æ˜¯æˆ‘å…’æ™‚çš„ä¼™ä¼´ï¼Œä»–ç¾åœ¨å’Œé˜¿æ›¼åœ¨ä¸€èµ·äº†ï¼Œ\n");
+        set_temp("marks/æ1", 1, this_player());
         return 1;
 }
 
@@ -58,15 +58,15 @@ int ask_parent()
 {
         object map;
         object me = this_player(); 
-        if( query_temp("marks/Àî1", this_player()) )
+        if( query_temp("marks/æ1", this_player()) )
         {
-                say("ÀîÎÄĞãßìÑÊµÄËµµÀ£ºÎÒµÄ¸¸Ä¸ÊÇ±»¼éÈËº¦ËÀµÄ£¬¼éÈËêéêìÎÒÃÇ¼ÒµÄ¸ß²ıµØÍ¼¡£\nÎÒÒ»¶¨ÒªÊÖÈĞ³ğÈË£¬ÎªÎÒ¸¸Ä¸±¨³ğ¡£\n");
-                set_temp("marks/Àî2", 1, me);
+                say("ææ–‡ç§€å“½åš¥çš„èªªé“ï¼šæˆ‘çš„çˆ¶æ¯æ˜¯è¢«å§¦äººå®³æ­»çš„ï¼Œå§¦äººè¦¬è¦¦æˆ‘å€‘å®¶çš„é«˜æ˜Œåœ°åœ–ã€‚\næˆ‘ä¸€å®šè¦æ‰‹åˆƒä»‡äººï¼Œç‚ºæˆ‘çˆ¶æ¯å ±ä»‡ã€‚\n");
+                set_temp("marks/æ2", 1, me);
                 return 1;
         }
         else
         {
-                say("ÀîÎÄĞãËµµÀ£º¸¸Ä¸Ö®³ğ£¬²»¹²´÷Ìì¡£\n");
+                say("ææ–‡ç§€èªªé“ï¼šçˆ¶æ¯ä¹‹ä»‡ï¼Œä¸å…±æˆ´å¤©ã€‚\n");
                 return 1;
         }
 }
@@ -77,24 +77,24 @@ int ask_gaochang()
         int exp,pot,score;
         if (query("map_count") < 1)
         {
-                say("ÀîÎÄĞãÒ»ã¶£¬Ã¦µÀ£ºµØÍ¼£¿ÎÒÃ»Ëµ¹ıÊ²Ã´µØÍ¼°¡¡£\n");        
+                say("ææ–‡ç§€ä¸€æ„£ï¼Œå¿™é“ï¼šåœ°åœ–ï¼Ÿæˆ‘æ²’èªªéä»€éº¼åœ°åœ–å•Šã€‚\n");        
                 return 1;
         }
-        if( query_temp("marks/Àî2", me) )
+        if( query_temp("marks/æ2", me) )
         {
-//                say( "ÀîÎÄĞãÒ»¾ª£¬ËµµÀ£ºÄãÔõÃ´ÖªµÀµÄ£¿àŞ£¬ÎÒ¸Õ²ÅËµÂ¶×ìÁË¡£\nÄÇÎÒ¾Í°ÑµØÍ¼ËÍ¸øÄã°É¡£Äã¿´¿´¸ß²ıÃÔ¹¬µ½µ×ÓĞÊ²Ã´£¿\n");
+//                say( "ææ–‡ç§€ä¸€é©šï¼Œèªªé“ï¼šä½ æ€éº¼çŸ¥é“çš„ï¼Ÿå™¢ï¼Œæˆ‘å‰›æ‰èªªéœ²å˜´äº†ã€‚\né‚£æˆ‘å°±æŠŠåœ°åœ–é€çµ¦ä½ å§ã€‚ä½ çœ‹çœ‹é«˜æ˜Œè¿·å®®åˆ°åº•æœ‰ä»€éº¼ï¼Ÿ\n");
 //          map=new("/d/gaochang/obj/map");
 //                map->move(me);
 //                addn("map_count", -1);
-                say( "ÀîÎÄĞãÒ»¾ª£¬ËµµÀ£ºÄãÔõÃ´ÖªµÀµÄ£¿àŞ£¬ÎÒ¸Õ²ÅËµÂ¶×ìÁË¡£\nÎÒ°Ñ¸ß²ıµØÍ¼¸øËÕÆÕÁË£¬ÄãÈ¥ÕÒËû°É¡£\n");
-    set_temp("marks/Àî3", 1, me);
+                say( "ææ–‡ç§€ä¸€é©šï¼Œèªªé“ï¼šä½ æ€éº¼çŸ¥é“çš„ï¼Ÿå™¢ï¼Œæˆ‘å‰›æ‰èªªéœ²å˜´äº†ã€‚\næˆ‘æŠŠé«˜æ˜Œåœ°åœ–çµ¦è˜‡æ™®äº†ï¼Œä½ å»æ‰¾ä»–å§ã€‚\n");
+    set_temp("marks/æ3", 1, me);
         }
         else
         {
-                message("vision", HIY"ÀîÎÄĞã²ªÈ»´óÅ­£¬ºÈµÀ£ºÄãÒ²¿úÊÓÎÒ¸¸Ä¸µÄ¸ß²ıµØÍ¼£¿£¡ÎÒ¸úÄãÆ´ÁË£¡\n"NOR, environment(), this_object() );
+                message("vision", HIY"ææ–‡ç§€å‹ƒç„¶å¤§æ€’ï¼Œå–é“ï¼šä½ ä¹Ÿçªºè¦–æˆ‘çˆ¶æ¯çš„é«˜æ˜Œåœ°åœ–ï¼Ÿï¼æˆ‘è·Ÿä½ æ‹¼äº†ï¼\n"NOR, environment(), this_object() );
                 ob->kill_ob(me);
-                delete_temp("marks/Àî1", me);
-                delete_temp("marks/Àî2", me);
+                delete_temp("marks/æ1", me);
+                delete_temp("marks/æ2", me);
         }
         return 1;
 }
@@ -103,10 +103,10 @@ int accept_object(object me,object ob)
         object li=this_object();
         object map;
         int exp,pot,score;
-        if( !query_temp("marks/Àî3", me) )
+        if( !query_temp("marks/æ3", me) )
         {
                 command("shake");
-                command("say ¼ÆÒ¯Ò¯Ëµ²»ÄÜ±ğÈËµÄÌ°Í¼²ÆÎï¡£");
+                command("say è¨ˆçˆºçˆºèªªä¸èƒ½åˆ¥äººçš„è²ªåœ–è²¡ç‰©ã€‚");
     return 0;
         }
   if( query("id", ob) == "shoujuan" && query("blood_soaked", ob) >= 2 )
@@ -114,12 +114,12 @@ int accept_object(object me,object ob)
           call_out("dest",0,ob);
           if( !query("owner", ob) || query("owner", ob) != query("id", me) )
           {
-                  message_vision("$N²ªÈ»´óÅ­£ºÄãÄÄÀïÍµÀ´µÄÕâ¿éÊÖ¾î£¡\n",li);
+                  message_vision("$Nå‹ƒç„¶å¤§æ€’ï¼šä½ å“ªè£¡å·ä¾†çš„é€™å¡Šæ‰‹çµ¹ï¼\n",li);
                   me->fight_ob(li);
                   li->kill_ob(me);
                   return 1;
           }
-    message_vision("$N¾ª½Ğ£ºÕâ²»ÕıÊÇ¸ß²ıµØÍ¼Âğ£¿\n",li);
+    message_vision("$Né©šå«ï¼šé€™ä¸æ­£æ˜¯é«˜æ˜Œåœ°åœ–å—ï¼Ÿ\n",li);
     map=new(__DIR__"obj/map");
                 map->move(me);
                 ob=new(__DIR__"obj/shoujuan2");
@@ -134,10 +134,10 @@ int accept_object(object me,object ob)
      addn("combat_exp", exp, me);
      addn("potential", pot, me);
      addn("score", score, me);
-             tell_object(me,HIC"Äã³É¹¦µÃµ½ÁË¸ß²ıµØÍ¼£¡\nÔÚÕâ´ÎÀúÁ·ÖĞÄã»ñµÃÁË"+
-                      chinese_number(exp)+"µã¾­Ñé¡¢"+
-               chinese_number(pot)+"µãÇ±ÄÜÒÔ¼°"+
-               chinese_number(score)+"µã½­ºşÔÄÀú¡£\n\n"NOR);
+             tell_object(me,HIC"ä½ æˆåŠŸå¾—åˆ°äº†é«˜æ˜Œåœ°åœ–ï¼\nåœ¨é€™æ¬¡æ­·ç·´ä¸­ä½ ç²å¾—äº†"+
+                      chinese_number(exp)+"é»ç¶“é©—ã€"+
+               chinese_number(pot)+"é»æ½›èƒ½ä»¥åŠ"+
+               chinese_number(score)+"é»æ±Ÿæ¹–é–±æ­·ã€‚\n\n"NOR);
           }        
           return 1;
   }

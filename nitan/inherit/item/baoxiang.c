@@ -11,7 +11,7 @@ string extra_long()
         mixed key,list;
         object ob;
         int i;
-        str = this_object()->name()+"ÖĞ¿ÉÄÜ¿ª³öµÄ½±Àø°üÀ¨£º\n";
+        str = this_object()->name()+"ä¸­å¯èƒ½é–‹å‡ºçš„çå‹µåŒ…æ‹¬ï¼š\n";
         list = query("BAOXIANG_LIST", this_object());
         if(!list || !mapp(list) ) {
                 return str;
@@ -35,7 +35,7 @@ int do_test(string arg)
 
         this = this_object();
 
-        if( !arg ) return notify_fail("ÄãÒª²âÊÔÊ²Ã´£¿\n"); 
+        if( !arg ) return notify_fail("ä½ è¦æ¸¬è©¦ä»€éº¼ï¼Ÿ\n"); 
         if(present(arg,environment()) != this) {
                 return 0;
         }
@@ -58,27 +58,27 @@ string test(object me,object this)
         list = query("BAOXIANG_LIST", this);
 
         if(!list || !mapp(list)) {
-                str += "ÉÏÃ»ÓĞBAOXIANG_LISTÊôĞÔ£¬»òÕß¸ÃÊôĞÔ²»ÊÇmapping£¡";
+                str += "ä¸Šæ²’æœ‰BAOXIANG_LISTå±¬æ€§ï¼Œæˆ–è€…è©²å±¬æ€§ä¸æ˜¯mappingï¼";
         } else {
                 keys = keys(list);
                 if(!sizeof(keys)) {
-                        str += "BAOXIANG_LISTÁĞ±íÎª¿Õ£¡";
+                        str += "BAOXIANG_LISTåˆ—è¡¨ç‚ºç©ºï¼";
                 } else {
                         totalRate = 0;
                         for(i=0;i<sizeof(keys);i++) {
                                 totalRate += list[keys[i]];
                                 ob = load_object(keys[i]);      
                                 if(!ob) {
-                                        str += keys[i]+"£¨¸ÅÂÊ£º"+list[keys[i]]+"£©¼ÓÔØÊ§°Ü£¬¿ÉÄÜÎŞÎÄ¼ş»òÎÄ¼ş±àÒë´íÎó\n";
+                                        str += keys[i]+"ï¼ˆæ¦‚ç‡ï¼š"+list[keys[i]]+"ï¼‰åŠ è¼‰å¤±æ•—ï¼Œå¯èƒ½ç„¡æ–‡ä»¶æˆ–æ–‡ä»¶ç·¨è­¯éŒ¯èª¤\n";
                                 } else {
-                                        str += keys[i]+"["+ob->name()+"]"+"£¨¸ÅÂÊ£º"+list[keys[i]]+"£©Õı³£¡£\n";
+                                        str += keys[i]+"["+ob->name()+"]"+"ï¼ˆæ¦‚ç‡ï¼š"+list[keys[i]]+"ï¼‰æ­£å¸¸ã€‚\n";
                                 }
                         }
 
                         if(totalRate == TOTALRATE) {
-                                str += "×Ü¸ÅÂÊ£º"+totalRate+"Õı³£¡£";
+                                str += "ç¸½æ¦‚ç‡ï¼š"+totalRate+"æ­£å¸¸ã€‚";
                         } else {
-                                str += "×Ü¸ÅÂÊ£º"+totalRate+"²»Õı³££¡£¡£¡£¡";
+                                str += "ç¸½æ¦‚ç‡ï¼š"+totalRate+"ä¸æ­£å¸¸ï¼ï¼ï¼ï¼";
                         }
                 }
 
@@ -92,7 +92,7 @@ int do_open(string arg)
         object me,this;
         me = this_player();
         this = this_object();
-        if( !arg ) return notify_fail("ÄãÒª´ò¿ªÊ²Ã´£¿\n");
+        if( !arg ) return notify_fail("ä½ è¦æ‰“é–‹ä»€éº¼ï¼Ÿ\n");
         if(present(arg,environment()) != this) {
                 return 0;
         }
@@ -133,13 +133,13 @@ int open_baoxiang(object me,object this)
                 if(rand >= totalRate && rand < totalRate+list[keys[i]]) {
                         ob = new(keys[i]);
                         if(ob && ob->move(me)) {
-                                str = "´ò¿ªÁËÒ»¸ö"+this->name()+"£¬´ÓÀï±ßµÃµ½ÁË"+ob->name()+"("+query("id",ob)+")¡£\n";
+                                str = "æ‰“é–‹äº†ä¸€å€‹"+this->name()+"ï¼Œå¾è£¡é‚Šå¾—åˆ°äº†"+ob->name()+"("+query("id",ob)+")ã€‚\n";
                                 tell_room(environment(me),me->name()+str,({me}));
-                                tell_object(me,"Äã"+str);
+                                tell_object(me,"ä½ "+str);
                                 return 1;
                         } else {
                                 if(ob) {
-                                        tell_object(me,"´ò¿ª"+this->name()+"Ê§°ÜÁË¡£\n");
+                                        tell_object(me,"æ‰“é–‹"+this->name()+"å¤±æ•—äº†ã€‚\n");
                                         destruct(ob);
                                 }
                                 return 0;

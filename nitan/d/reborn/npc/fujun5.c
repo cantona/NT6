@@ -14,10 +14,10 @@ int  do_answer(string arg);
 
 void create()
 {
-        set_name(BLU "áÔÉ½¸®¾ı" NOR, ({ "songshan fujun", "songshan", "fujun" }));
-        set("long", "Ëû¾ÍÊÇáÔÉ½¸®¾ı¡£\n");
-        set("title", HIW "ÖĞÔÀ" NOR);
-        set("gender", "ÄĞĞÔ");
+        set_name(BLU "åµ©å±±åºœå›" NOR, ({ "songshan fujun", "songshan", "fujun" }));
+        set("long", "ä»–å°±æ˜¯åµ©å±±åºœå›ã€‚\n");
+        set("title", HIW "ä¸­å²³" NOR);
+        set("gender", "ç”·æ€§");
         set("age", 50);
         set("str", 91);
         set("int", 39);
@@ -53,7 +53,7 @@ void create()
         prepare_skill("unarmed", "kuihua-mogong");
 
         set("inquiry", ([
-                "Ï×¼À"  : (: ask_offer : ),
+                "ç»ç¥­"  : (: ask_offer : ),
                 "offer" : (: ask_offer : ),
         ])); 
         
@@ -104,15 +104,15 @@ int ask_offer()
                 
         if( !objectp( ob = present("contract", me) ) ||
             query("owner", ob) != query("id", me)){
-                tell_object(me, BLU "áÔÉ½¸®¾ıËµµÀ£º¡¸Äã»¹Ã»ÓĞÈ¥ÁìÈ¡ÑÖÍõÆõ(contract)£¬ÎÒ²»»á½ÓÊÜÄãµÄÏ×¼ÀÇëÇó¡£¡¹\n" NOR);
+                tell_object(me, BLU "åµ©å±±åºœå›èªªé“ï¼šã€Œä½ é‚„æ²’æœ‰å»é ˜å–é–»ç‹å¥‘(contract)ï¼Œæˆ‘ä¸æœƒæ¥å—ä½ çš„ç»ç¥­è«‹æ±‚ã€‚ã€\n" NOR);
                 return 1;
         }
         
-        message_vision(CYN "$N" CYN "ÑÈµÀ£º¡¸¼ÈÊÇÉí»³ÑÖÍõÆõ£¬±¾¸®¾ıÕâ±ã¸øÄãÒ»¸ö»ú»á°É¡£¡¹\n"
-                       CYN "$N" CYN "ÉòÒ÷Æ¬¿ÌÓÖµÀ£º¡¸±¾¸®¾ıÎÅµÃ½üÈÕÔÚÁøÂÌÉ½×¯³öÁËÒ»¼şÃÜ±¦ÆæÕä£¬ÄãÔÚÆßÈÕÖ®ÄÚÄÃÀ´¸ø±¾¸®¾ıÇÆÇÆ¡£¡¹\n" NOR, 
+        message_vision(CYN "$N" CYN "è¨é“ï¼šã€Œæ—¢æ˜¯èº«æ‡·é–»ç‹å¥‘ï¼Œæœ¬åºœå›é€™ä¾¿çµ¦ä½ ä¸€å€‹æ©Ÿæœƒå§ã€‚ã€\n"
+                       CYN "$N" CYN "æ²ˆåŸç‰‡åˆ»åˆé“ï¼šã€Œæœ¬åºœå›èå¾—è¿‘æ—¥åœ¨æŸ³ç¶ å±±èŠå‡ºäº†ä¸€ä»¶å¯†å¯¶å¥‡çï¼Œä½ åœ¨ä¸ƒæ—¥ä¹‹å…§æ‹¿ä¾†çµ¦æœ¬åºœå›ç§ç§ã€‚ã€\n" NOR, 
                        this_object(), me); 
                        
-        tell_object(me, BLU "áÔÉ½¸®¾ıÏëÒªÓëÄãÇ°ÍùÁøÂÌÉ½×¯ËÑÑ°ÃÜ±¦ÆæÕä£¬ÄãÊÇ·ñÍ¬Òâ(answer yes/no)£¿\n" NOR);
+        tell_object(me, BLU "åµ©å±±åºœå›æƒ³è¦èˆ‡ä½ å‰å¾€æŸ³ç¶ å±±èŠæœå°‹å¯†å¯¶å¥‡çï¼Œä½ æ˜¯å¦åŒæ„(answer yes/no)ï¼Ÿ\n" NOR);
         add_action("do_answer", "answer"); 
                        
         return 1; 
@@ -127,17 +127,17 @@ int do_answer(string arg)
                 
         if( arg == "yes" ) { 
                 set_temp("mibao/to_find", 1, me);
-                message_vision( BLU "$N" BLU "´óĞ¦µÀ£º¡¸ºÃ£¬ºÜºÃ£¡" + RANK_D->query_respect(me) + "»¹ÊÇ¿ìÈ¥°É£¡¡¹\n" NOR, 
+                message_vision( BLU "$N" BLU "å¤§ç¬‘é“ï¼šã€Œå¥½ï¼Œå¾ˆå¥½ï¼" + RANK_D->query_respect(me) + "é‚„æ˜¯å¿«å»å§ï¼ã€\n" NOR, 
                                 this_object(), me );            
                 remove_call_out("destroy");
                 call_out("destroy", 1800);
         } else if( arg == "no" ) { 
-                message_vision( BLU "$N" BLU "´óÅ­µÀ£º¡¸Ã»ÓÃµÄ¶«Î÷£¡¡¹\n" NOR,
+                message_vision( BLU "$N" BLU "å¤§æ€’é“ï¼šã€Œæ²’ç”¨çš„æ±è¥¿ï¼ã€\n" NOR,
                                 this_object(), me ); 
                 remove_call_out("destroy");
                 call_out("destroy", 1);
         } else 
-                return notify_fail("ÄãÒª»Ø´ğÊ²Ã´£¿\n"); 
+                return notify_fail("ä½ è¦å›ç­”ä»€éº¼ï¼Ÿ\n"); 
                 
         return 1; 
 }
@@ -154,12 +154,12 @@ int accept_object(object me, object ob)
                 return 0;
                 
         if (base_name(ob) != MIBAO_QIZHEN) { 
-                command("say Äã¸øÎÒÕâÖÖ¶«Î÷¸ÉÊ²Ã´£¿"); 
+                command("say ä½ çµ¦æˆ‘é€™ç¨®æ±è¥¿å¹¹ä»€éº¼ï¼Ÿ"); 
                 return 0; 
         } 
         
-        message_vision( BLU "$N" BLU "Ğ¦µÀ£º¡¸½­É½´úÓĞ²ÅÈË³ö£¬¹ûÕæÊÇÑÖÍõÆõµÄÓĞÔµÈË£¡¡¹\n"
-                        BLU "$N" BLU "ÓÖµÀ£º¡¸±¾¸®¾ı×îÖØÈÍÁ¦£¬Äã±ØĞëÏ×¼À(offer)Ğ©ĞíÄÚÁ¦¡£¡¹\n" NOR,
+        message_vision( BLU "$N" BLU "ç¬‘é“ï¼šã€Œæ±Ÿå±±ä»£æœ‰æ‰äººå‡ºï¼ŒæœçœŸæ˜¯é–»ç‹å¥‘çš„æœ‰ç·£äººï¼ã€\n"
+                        BLU "$N" BLU "åˆé“ï¼šã€Œæœ¬åºœå›æœ€é‡éŸŒåŠ›ï¼Œä½ å¿…é ˆç»ç¥­(offer)äº›è¨±å…§åŠ›ã€‚ã€\n" NOR,
                                this_object(), me );
         
         set_temp("can_offer",query("id",  this_object()), me);
@@ -178,23 +178,23 @@ void do_broadcast(int index)
         {
         case(0):
                 tell_room(environment(),
-                        BLU "áÔÉ½¸®¾ıµãÍ·µÀ£º¡¸Èç´ËÉõºÃ£¬ÎÒÕâ±ã¼ÇÔØµ½ÑÖÍõÆõÉÏ¡£¡¹\n" NOR);
+                        BLU "åµ©å±±åºœå›é»é ­é“ï¼šã€Œå¦‚æ­¤ç”šå¥½ï¼Œæˆ‘é€™ä¾¿è¨˜è¼‰åˆ°é–»ç‹å¥‘ä¸Šã€‚ã€\n" NOR);
                 break;
         case(1):
                 tell_room(environment(),
-                        BLU "Ö»¼ûáÔÉ½¸®¾ıà«à«ÓĞ´Ê£¬Õ§Ê±É½á°ÂÒ¶¯¡¢ÔÆ¼äÒç³ö¹âÃ¢£¬Ö»¼ûÒ»ÊÚ°¸Æ®È»¶øÏÂ£¬ÆäÉÏÎÄ·¿ËÄ±¦Ò»Ó¦¾ãÈ«¡£\n" NOR);
+                        BLU "åªè¦‹åµ©å±±åºœå›å–ƒå–ƒæœ‰è©ï¼Œä¹æ™‚å±±åµäº‚å‹•ã€é›²é–“æº¢å‡ºå…‰èŠ’ï¼Œåªè¦‹ä¸€æˆæ¡ˆé£„ç„¶è€Œä¸‹ï¼Œå…¶ä¸Šæ–‡æˆ¿å››å¯¶ä¸€æ‡‰ä¿±å…¨ã€‚\n" NOR);
                 break;
         case(2):
                 tell_room(environment(),
-                        BLU "áÔÉ½¸®¾ıÌá±Ê»ÓÈ÷£¬Ö»¼ûË¿Ë¿×Ï¹âÉøÈëÑÖÍõÆõÉÏ£¬Æ¬¿Ì¼´³É¡£\n" NOR);
+                        BLU "åµ©å±±åºœå›æç­†æ®æ´’ï¼Œåªè¦‹çµ²çµ²ç´«å…‰æ»²å…¥é–»ç‹å¥‘ä¸Šï¼Œç‰‡åˆ»å³æˆã€‚\n" NOR);
                 break;
         case(3):
                 tell_room(environment(),
-                        BLU "áÔÉ½¸®¾ıÂúÒâµÀ£º¡¸Õâ±ã³ÉÁË¡£±¾¸®¾ı¹¦³ÉÉíÍË£¬Ğ¡ÓÑ¶à¶à±£ÖØ¡£¡¹\n" NOR);
+                        BLU "åµ©å±±åºœå›æ»¿æ„é“ï¼šã€Œé€™ä¾¿æˆäº†ã€‚æœ¬åºœå›åŠŸæˆèº«é€€ï¼Œå°å‹å¤šå¤šä¿é‡ã€‚ã€\n" NOR);
                 break;
         default:
                 tell_room(environment(),
-                        BLU "áÔÉ½¸®¾ı»¯×öÒ»ÕóÇåÑÌÏûÊ§£¬×ªË²±ãÒÑÆ®ÃìÎŞ×Ù¡£\nÊÚ°¸»¯×öÒ»ÕóÇåÑÌÏûÊ§£¬×ªË²±ãÒÑÆ®ÃìÎŞ×Ù¡£\n" NOR);
+                        BLU "åµ©å±±åºœå›åŒ–åšä¸€é™£æ¸…ç…™æ¶ˆå¤±ï¼Œè½‰ç¬ä¾¿å·²é£„æ¸ºç„¡è¹¤ã€‚\næˆæ¡ˆåŒ–åšä¸€é™£æ¸…ç…™æ¶ˆå¤±ï¼Œè½‰ç¬ä¾¿å·²é£„æ¸ºç„¡è¹¤ã€‚\n" NOR);
 
                 remove_call_out("destroy");
                 destruct(this_object());
@@ -216,32 +216,32 @@ int do_offer(string arg)
                 return 0;
                 
         if( !arg || sscanf(arg, "%d", amount) != 1)
-                return notify_fail("¸ñÊ½£ºoffer Êı×Ö\n");
+                return notify_fail("æ ¼å¼ï¼šoffer æ•¸å­—\n");
 
         if( !objectp( ob = present("contract", me) ) ||
                 query("owner", ob) != query("id", me) )
-                return notify_fail(BLU "áÔÉ½¸®¾ıËµµÀ£º¡¸Äã»¹Ã»ÓĞÈ¥ÁìÈ¡ÑÖÍõÆõ(contract)£¬ÎÒ²»»á½ÓÊÜÄãµÄÏ×¼ÀÇëÇó¡£¡¹\n" NOR);
+                return notify_fail(BLU "åµ©å±±åºœå›èªªé“ï¼šã€Œä½ é‚„æ²’æœ‰å»é ˜å–é–»ç‹å¥‘(contract)ï¼Œæˆ‘ä¸æœƒæ¥å—ä½ çš„ç»ç¥­è«‹æ±‚ã€‚ã€\n" NOR);
         
         if( query("offer_songshan", ob) )
-                return notify_fail(BLU "áÔÉ½¸®¾ıËµµÀ£º¡¸ÄãÒÑ¾­ÔÚáÔÉ½Ï×¼À¹ıÁË£¬¾Í²»ÓÃÔÙÀ´Ï×¼À°É¡£¡¹\n" NOR);
+                return notify_fail(BLU "åµ©å±±åºœå›èªªé“ï¼šã€Œä½ å·²ç¶“åœ¨åµ©å±±ç»ç¥­éäº†ï¼Œå°±ä¸ç”¨å†ä¾†ç»ç¥­å§ã€‚ã€\n" NOR);
                 
         if( !query_temp("can_offer", me) || 
                 query_temp("can_offer", me) != query("id", this_object()) )
-                return notify_fail(BLU "áÔÉ½¸®¾ıÖåÃ¼µÀ£º¡¸Äã»¹ÊÇÏÈÈ¥Íê³ÉÎÒµÄÌõ¼şÔÙÀ´Ï×¼À°É¡£¡¹\n" NOR);
+                return notify_fail(BLU "åµ©å±±åºœå›çšºçœ‰é“ï¼šã€Œä½ é‚„æ˜¯å…ˆå»å®Œæˆæˆ‘çš„æ¢ä»¶å†ä¾†ç»ç¥­å§ã€‚ã€\n" NOR);
 
         if( query("max_neili", me)<1000000 || amount<1000000 )
-                return notify_fail(BLU "áÔÉ½¸®¾ıÖåÃ¼µÀ£º¡¸ÕâµãĞ¡ÍæÒâÄã»¹ÊÇÄÃ»Ø¼Ò×Ô¼ºÍæ°É¡£¡¹\n" NOR);
+                return notify_fail(BLU "åµ©å±±åºœå›çšºçœ‰é“ï¼šã€Œé€™é»å°ç©æ„ä½ é‚„æ˜¯æ‹¿å›å®¶è‡ªå·±ç©å§ã€‚ã€\n" NOR);
 
         if( query("max_neili", me)<amount )
-                return notify_fail(BLU "áÔÉ½¸®¾ıÖåÃ¼µÀ£º¡¸ÄãÃ»ÓĞÄÇÃ´ÉîºñµÄÄÚÁ¦¡£¡¹\n" NOR);
+                return notify_fail(BLU "åµ©å±±åºœå›çšºçœ‰é“ï¼šã€Œä½ æ²’æœ‰é‚£éº¼æ·±åšçš„å…§åŠ›ã€‚ã€\n" NOR);
                 
         addn("max_neili", -amount, me);
         delete_temp("can_offer", me);
         set("offer/neili", amount, me);
         
-        message_vision( HIR "$N" HIR "ÂÔÒ»³ÁË¼µÀ£º¡¸¼ÈÈ»Èç´Ë£¬ÎªÏÔ³ÏÒâ£¬ÎÒ¾ö¶¨Ï×¼À" + amount + "µã×î´óÄÚÁ¦¡£¡¹\n" NOR, me );
-        tell_object(me, BLU "áÔÉ½¸®¾ıÁè¿ÕÒ»ÌÍ£¬ÄãºöÈ»¾õµÃ×Ô¼ºÉíÉÏÉÙÁËÊ²Ã´¡£\n" NOR);                  
-        msg = HIW + NATURE_D->game_time() + "£¬" + me->query_idname() + HIW "ÓÚáÔÉ½Ï×¼À" + amount + "µã×î´óÄÚÁ¦¡£\n";
+        message_vision( HIR "$N" HIR "ç•¥ä¸€æ²‰æ€é“ï¼šã€Œæ—¢ç„¶å¦‚æ­¤ï¼Œç‚ºé¡¯èª æ„ï¼Œæˆ‘æ±ºå®šç»ç¥­" + amount + "é»æœ€å¤§å…§åŠ›ã€‚ã€\n" NOR, me );
+        tell_object(me, BLU "åµ©å±±åºœå›å‡Œç©ºä¸€æï¼Œä½ å¿½ç„¶è¦ºå¾—è‡ªå·±èº«ä¸Šå°‘äº†ä»€éº¼ã€‚\n" NOR);                  
+        msg = HIW + NATURE_D->game_time() + "ï¼Œ" + me->query_idname() + HIW "äºåµ©å±±ç»ç¥­" + amount + "é»æœ€å¤§å…§åŠ›ã€‚\n";
         
         rec=query("offer", ob);
         if( ! rec ) rec = ({});
@@ -255,7 +255,7 @@ int do_offer(string arg)
 
 void destroy()
 {
-        message_vision( BLU "$N»¯×öÒ»ÕóÇåÑÌÏûÊ§£¬×ªË²±ãÒÑÆ®ÃìÎŞ×Ù¡£\n" NOR,
+        message_vision( BLU "$NåŒ–åšä¸€é™£æ¸…ç…™æ¶ˆå¤±ï¼Œè½‰ç¬ä¾¿å·²é£„æ¸ºç„¡è¹¤ã€‚\n" NOR,
                         this_object() );
         destruct(this_object());
         return;

@@ -1,6 +1,6 @@
-// ±¾ÎÄ¼ş±» all_room_info_hj.h
-// ¼° 1_room_info_special.h 
-// ¹²Í¬µ÷ÓÃ¡£
+// æœ¬æ–‡ä»¶è¢« all_room_info_hj.h
+// åŠ 1_room_info_special.h 
+// å…±åŒèª¿ç”¨ã€‚
 
 // naihe 0:33 03-10-21
 
@@ -14,7 +14,7 @@ void reset()
 
 int block_cmds()
 {
-    write("»Ã¾³Àï²»ÔÊĞíÊ¹ÓÃÕâ¸öÖ¸Áî¡£¹ØÓÚ hj ÀïÊ¹ÓÃµÄÒ»Ğ©»ù±¾Ö¸Áî£¬ÇëÊäÈë help hj2003 ²éÑ¯¡£\n");
+    write("å¹»å¢ƒè£¡ä¸å…è¨±ä½¿ç”¨é€™å€‹æŒ‡ä»¤ã€‚é—œäº hj è£¡ä½¿ç”¨çš„ä¸€äº›åŸºæœ¬æŒ‡ä»¤ï¼Œè«‹è¼¸å…¥ help hj2003 æŸ¥è©¢ã€‚\n");
     return 1;
 }
 
@@ -29,7 +29,7 @@ int do_look(string arg)
     });
     if( member_array( arg , orention ) != -1 )
     {
-        write("µ½´¦¶¼ÊÇÒ»Æ¬ÃÜÁÖ£¬Äã¿´²»µ½Ô¶´¦µÄÇé¿ö¡£\n");
+        write("åˆ°è™•éƒ½æ˜¯ä¸€ç‰‡å¯†æ—ï¼Œä½ çœ‹ä¸åˆ°é è™•çš„æƒ…æ³ã€‚\n");
         return 1;
     }
     return 0;
@@ -39,7 +39,7 @@ int do_get(string arg)
 {
     if( !arg || arg != "all")
         return 0;
-    write("»¹ÊÇÒ»ÑùÒ»ÑùµØ¼ğ°Õ¡£\n");
+    write("é‚„æ˜¯ä¸€æ¨£ä¸€æ¨£åœ°æ€ç½·ã€‚\n");
     return 1;
 }
 
@@ -47,9 +47,9 @@ void get_out_here( object me )
 {
     if( !me ) return;
 
-    message_vision( HIR"$N"HIR"²»ÖªÔõÃ´µÄ´³½øÁË»Ã¾³ÃÜÁÖÀï£¬Ò»ÕóÆæÒìµÄÕğµ´°Ñ$N"HIR"Å×ÁË³öÈ¥¡£\n"NOR,me);
+    message_vision( HIR"$N"HIR"ä¸çŸ¥æ€éº¼çš„é—–é€²äº†å¹»å¢ƒå¯†æ—è£¡ï¼Œä¸€é™£å¥‡ç•°çš„éœ‡ç›ªæŠŠ$N"HIR"æ‹‹äº†å‡ºå»ã€‚\n"NOR,me);
     me->move( __DIR__"room_door_hj" );
-    message_vision("Ò»ÕóÄªÃûµÄÕğµ´ºöÀ´ºöÊÅ£¬$N²»ÖªÔõÃ´µÄ¾ÍºöµØ³öÏÖÔÚÕâÀïÁË¡£\n",me);
+    message_vision("ä¸€é™£è«åçš„éœ‡ç›ªå¿½ä¾†å¿½é€ï¼Œ$Nä¸çŸ¥æ€éº¼çš„å°±å¿½åœ°å‡ºç¾åœ¨é€™è£¡äº†ã€‚\n",me);
 }
 
 
@@ -57,7 +57,7 @@ void full_all( object me )
 {
     if( !me )
         return;
-    set("jingli",query("max_jingli",  me), me);//Ö»Òª¼ÓĞ©¾«Á¦¸ø×ßÂ·Ê±ÏûºÄ£¬ÒÔ¼°±£³Ö¶ö²»ËÀ¾ÍĞĞÁË¡£
+    set("jingli",query("max_jingli",  me), me);//åªè¦åŠ äº›ç²¾åŠ›çµ¦èµ°è·¯æ™‚æ¶ˆè€—ï¼Œä»¥åŠä¿æŒé¤“ä¸æ­»å°±è¡Œäº†ã€‚
     set("food", 50, me);
     set("water", 50, me);
 }
@@ -67,16 +67,16 @@ int valid_leave(object me, string dir)
     string temp;
 
     if( query_temp("hj_move_busy", me)>1000 )
-        return notify_fail("ÃÜÁÖÀï¾À½áÖØÖØ£¬ÄãÎŞ·¨ĞĞ×ßÌ«¿ì¡£\n");
+        return notify_fail("å¯†æ—è£¡ç³¾çµé‡é‡ï¼Œä½ ç„¡æ³•è¡Œèµ°å¤ªå¿«ã€‚\n");
 
     temp=query_temp("hj_need_waiting", me);
     if( temp && me->is_busy() )
     {
         switch(temp)
         {
-            case "healing":return notify_fail("ÄãÕıÔÚÁÆÉËÄØ£¬×ß²»¿ª¡£\n");
-            case "fighting":return notify_fail("Äã»¹ÔÚÕ½¶·ÖĞ£¬±»²ø×¡ÁË×ß²»¿ª¡£\n");
-            default:return notify_fail("ÄãÕıÃ¦×ÅÄØ£¬ÎŞ·¨Àë¿ª¡£\n");
+            case "healing":return notify_fail("ä½ æ­£åœ¨ç™‚å‚·å‘¢ï¼Œèµ°ä¸é–‹ã€‚\n");
+            case "fighting":return notify_fail("ä½ é‚„åœ¨æˆ°é¬¥ä¸­ï¼Œè¢«çºä½äº†èµ°ä¸é–‹ã€‚\n");
+            default:return notify_fail("ä½ æ­£å¿™è‘—å‘¢ï¼Œç„¡æ³•é›¢é–‹ã€‚\n");
         }
     }
 
@@ -84,22 +84,22 @@ int valid_leave(object me, string dir)
         !query("hj_game/npc", me) )
     {
         call_out("games_random_move",1, me);
-        message_vision( HIR"\nÒ»ÕóÆæÒìµÄÕğµ´ºöÈ»´«À´¡­¡­\n"NOR, me );
+        message_vision( HIR"\nä¸€é™£å¥‡ç•°çš„éœ‡ç›ªå¿½ç„¶å‚³ä¾†â€¦â€¦\n"NOR, me );
         me->start_busy(2);
         return notify_fail("\n");
     }
 
-    // ×ßÂ· busy ·½Ê½¸ü¸Ä£¬ÅäºÏ ÆßĞÇµÆ À´ÊµÏÖĞÂµÄĞ§¹û¡£
-    // ÆßĞÇµÆÓĞ½«´ËÊıÖµÖğÃëµİ¼õµÄº¯Êı¡£
-    // ·çÖ®¹ú¶ÈÖ÷¶¯¼¼ÄÜĞ§¹û  ×ßÂ·Ê±Ã¦Ê±½ÏµÍ
+    // èµ°è·¯ busy æ–¹å¼æ›´æ”¹ï¼Œé…åˆ ä¸ƒæ˜Ÿç‡ˆ ä¾†å¯¦ç¾æ–°çš„æ•ˆæœã€‚
+    // ä¸ƒæ˜Ÿç‡ˆæœ‰å°‡æ­¤æ•¸å€¼é€ç§’éæ¸›çš„å‡½æ•¸ã€‚
+    // é¢¨ä¹‹åœ‹åº¦ä¸»å‹•æŠ€èƒ½æ•ˆæœ  èµ°è·¯æ™‚å¿™æ™‚è¼ƒä½
     if( !query("hj_game/npc", me) )
     {
         if( query_temp("hj_game_find", me) == "feng" )
-            addn_temp("hj_move_busy", (150+random(100)), me);//ÔÙÔöÇ¿
+            addn_temp("hj_move_busy", (150+random(100)), me);//å†å¢å¼·
         else addn_temp("hj_move_busy", (300+random(200)), me);
     }
 
-    set_temp("hj_the_orention", dir, me);//¼ÇÂ¼ÕâÒ»²½µÄ·½Ïò
+    set_temp("hj_the_orention", dir, me);//è¨˜éŒ„é€™ä¸€æ­¥çš„æ–¹å‘
 
     return ::valid_leave(me, dir);
 }
@@ -112,10 +112,10 @@ void games_random_move( object me )
     if( !me || !environment(me) || environment(me) != this_object() ) return;
     random_rooms=__DIR__"hj_room"+( 2 + random( HJ_ROOM_AMOUNT-1 ));
 
-    tell_room(environment(me),HIR+query("name", me)+HIR"Í»È»Æ¾¿ÕÏûÊ§²»¼û£¡\n"NOR,({me}));
+    tell_room(environment(me),HIR+query("name", me)+HIR"çªç„¶æ†‘ç©ºæ¶ˆå¤±ä¸è¦‹ï¼\n"NOR,({me}));
     rooms=find_object(random_rooms);
     if(!rooms) rooms = load_object(random_rooms);
     if( !rooms ) rooms = this_object();
     this_player()->move(rooms);
-    message_vision(HIG"$N"HIG"±»Ò»¹ÉÆæ¹ÖµÄÕğµ´ËÍµ½ÁËÕâÀïÀ´¡£\n"NOR,me);
+    message_vision(HIG"$N"HIG"è¢«ä¸€è‚¡å¥‡æ€ªçš„éœ‡ç›ªé€åˆ°äº†é€™è£¡ä¾†ã€‚\n"NOR,me);
 }

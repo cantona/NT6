@@ -1,4 +1,4 @@
-// Íæ¼ÒÈÎÎñ£ºshen.c
+// ç©å®¶ä»»å‹™ï¼šshen.c
 
 #include <ansi.h>
 #include <quest.h>
@@ -15,14 +15,14 @@ inherit QUEST_OB;
 
 void npc_destructed();
 
-// ÈÎÎñ¶ÔÏó´´½¨
+// ä»»å‹™å°è±¡å‰µå»º
 void create()
 {
         setup();
 }
 
-// Æô¶¯Ò»¸öÈÎÎñ
-// É±Ò»¸öÈË¼´¿É»ñµÃÉñµÄ½±Àø¡£
+// å•Ÿå‹•ä¸€å€‹ä»»å‹™
+// æ®ºä¸€å€‹äººå³å¯ç²å¾—ç¥çš„çå‹µã€‚
 void init_quest()
 {
         string name;
@@ -32,29 +32,29 @@ void init_quest()
         mapping my;
         int type;
 
-        // ²úÉúÁ½¸öËæ»úµØµã
-        place = NPC_D->random_place(({ "Î÷Óò" }));
+        // ç”¢ç”Ÿå…©å€‹éš¨æ©Ÿåœ°é»
+        place = NPC_D->random_place(({ "è¥¿åŸŸ" }));
 
-        // ²úÉúÁ½¸öËæ»úÈËÎï
+        // ç”¢ç”Ÿå…©å€‹éš¨æ©Ÿäººç‰©
         npc = new(CLASS_D("generate") + "/shennpc");
         set_temp("quest_ob", this_object(), npc);
 
-        // ÉèÖÃÎö¹¹ĞÅÏ¢£ºNPCÈËÎïÎö¹¹ÒÔºó½«×Ô¶¯½â³ıÈÎÎñ
+        // è¨­ç½®ææ§‹ä¿¡æ¯ï¼šNPCäººç‰©ææ§‹ä»¥å¾Œå°‡è‡ªå‹•è§£é™¤ä»»å‹™
         set_temp("override/destruct", (:npc_destructed:), npc);
 
-        // Éú³ÉÈÎÎñµÄÃû×Ö
+        // ç”Ÿæˆä»»å‹™çš„åå­—
         if (type = random(2))
         {
-                name = "·ÉÔô" + npc->name();
+                name = "é£›è³Š" + npc->name();
                 set("shen_type", -1, npc);
         } else
         {
-                name = "·´Ôô" + npc->name();
+                name = "åè³Š" + npc->name();
                 set("shen_type", 1, npc);
         }
         set_name(name);
 
-        // ¼ÇÂ¼ÕâĞ©ÈËÎï¡¢µØµãºÍÎïÆ·ĞÅÏ¢
+        // è¨˜éŒ„é€™äº›äººç‰©ã€åœ°é»å’Œç‰©å“ä¿¡æ¯
         my = query_entire_dbase();
 
         TYPE = type;
@@ -63,7 +63,7 @@ void init_quest()
         NPC_NAME = npc->name();
         NPC_ID=query("id", npc);
 
-        // ÈËÎï³öÏÖ
+        // äººç‰©å‡ºç¾
         NPC_D->place_npc(npc, 0, ({ place }));
 
         if (sscanf(file_name(environment(npc)), "/d/%s/%*s", ZONE) == 2)
@@ -71,17 +71,17 @@ void init_quest()
         else
             ZONE = "/";
 
-        // ÇĞ»»µ½Õı³£×´Ì¬
+        // åˆ‡æ›åˆ°æ­£å¸¸ç‹€æ…‹
         change_status(QUEST_READY);
 
-        // ÉèÖÃÈÎÎñ×î³¤´æ»îÊ±¼ä£º30·ÖÖÓ
+        // è¨­ç½®ä»»å‹™æœ€é•·å­˜æ´»æ™‚é–“ï¼š30åˆ†é˜
         set("live_time", 1200);
 
-        // µÇ¼ÇÒ¥ÑÔÏûÏ¢
+        // ç™»è¨˜è¬ è¨€æ¶ˆæ¯
         register_information();
 }
 
-// ÈÎÎñÖÕÖ¹
+// ä»»å‹™çµ‚æ­¢
 void cancel_quest()
 {
         mapping my = query_entire_dbase();
@@ -96,28 +96,28 @@ void cancel_quest()
                 destruct(NPC_OB);
         }
 
-        // ÈÎÎñÏûÍö
+        // ä»»å‹™æ¶ˆäº¡
         ::cancel_quest();
 }
 
-// ÈÎÎñNPCÏûÍö
+// ä»»å‹™NPCæ¶ˆäº¡
 void npc_destructed()
 {
         call_out("cancel_quest", 0);
 }
 
-// Ñ¯ÎÊNPC
+// è©¢å•NPC
 string ask_npc(object knower, object me)
 {
         mapping my = query_entire_dbase();
 
         if (! objectp(NPC_OB))
-                return CYN "°¥£¬ÕâÄêÍ·£¬³öÍ·¾ÍÃ»ÓĞºÃÊÂ£¬Ğ¡Ãü¶¼ÒªËÍµôÁË¡£" NOR;
+                return CYN "å“ï¼Œé€™å¹´é ­ï¼Œå‡ºé ­å°±æ²’æœ‰å¥½äº‹ï¼Œå°å‘½éƒ½è¦é€æ‰äº†ã€‚" NOR;
 
-        return CYN "°¥£¬¶¼ËµËûÔÚ" + PLACE + "£¬ÕÒËûµÄÈËºÃÏñ¿É¶àÁË¡£" NOR;
+        return CYN "å“ï¼Œéƒ½èªªä»–åœ¨" + PLACE + "ï¼Œæ‰¾ä»–çš„äººå¥½åƒå¯å¤šäº†ã€‚" NOR;
 }
 
-// ÈÎÎñ½éÉÜ
+// ä»»å‹™ä»‹ç´¹
 string query_introduce(object knower)
 {
         mapping my = query_entire_dbase();
@@ -125,11 +125,11 @@ string query_introduce(object knower)
         switch (TYPE)
         {
         case 0:
-                return "ÌıËµ³¯Í¢ÕıÔÚÍ¨¼©·´Ôô" + NPC_NAME +
-                       "£¬ßõßõ£¬µ¨×Ó´óÁË£¬¸ÒÔì·´¡£";
+                return "è½èªªæœå»·æ­£åœ¨é€šç·åè³Š" + NPC_NAME +
+                       "ï¼Œå˜–å˜–ï¼Œè†½å­å¤§äº†ï¼Œæ•¢é€ åã€‚";
         case 1:
-                return "¾İËµ¹Ù¸®ÕıÔÚ×½ÄÃ·ÉÔô" + NPC_NAME +
-                       "£¬Õâ¼Ò»ï£¬¿É²»ÊÇºÃÈË°¡¡£";
+                return "æ“šèªªå®˜åºœæ­£åœ¨æ‰æ‹¿é£›è³Š" + NPC_NAME +
+                       "ï¼Œé€™å®¶ä¼™ï¼Œå¯ä¸æ˜¯å¥½äººå•Šã€‚";
         }
 }
 
@@ -137,11 +137,11 @@ void do_say(object knower)
 {
         mapping my = query_entire_dbase();
 
-        message_vision("$NÓÖ×ÔÑÔ×ÔÓïµÀ£º·²ÊÇ±»¹Ù¸®×½ÄÃµÄ¶¼Ã»ºÃÏÂ³¡£¬Äã¿´£¬" +
-                       NPC_NAME + "ÕâÃ´ºİ£¬²»Ò²°ÑĞ¡ÃüËÍµôÁË£¿\n", knower);
+        message_vision("$Nåˆè‡ªè¨€è‡ªèªé“ï¼šå‡¡æ˜¯è¢«å®˜åºœæ‰æ‹¿çš„éƒ½æ²’å¥½ä¸‹å ´ï¼Œä½ çœ‹ï¼Œ" +
+                       NPC_NAME + "é€™éº¼ç‹ ï¼Œä¸ä¹ŸæŠŠå°å‘½é€æ‰äº†ï¼Ÿ\n", knower);
 }
 
-// Õâ¸öÏûÏ¢ÄÜ¹»±»É¢²¼Âğ£¿
+// é€™å€‹æ¶ˆæ¯èƒ½å¤ è¢«æ•£å¸ƒå—ï¼Ÿ
 int can_know_by(object knower)
 {
         mapping my = query_entire_dbase();
@@ -150,19 +150,19 @@ int can_know_by(object knower)
         fname = file_name(environment(knower));
         if (! stringp(ZONE) || strlen(ZONE) < 1 ||
             ZONE == fname[0..strlen(ZONE) - 1])
-                // ºÍĞ¡¶şÔÚÍ¬Ò»¸öÇøÓò
+                // å’Œå°äºŒåœ¨åŒä¸€å€‹å€åŸŸ
                 return 1;
 
         return 0;
 }
 
-// µÇ¼Ç¸ÃÈÎÎñµÄÏûÏ¢
+// ç™»è¨˜è©²ä»»å‹™çš„æ¶ˆæ¯
 void register_information()
 {
         mapping my = query_entire_dbase();
 
         if (! clonep() || ! mapp(my))
-                // ²»ÊÇÈÎÎñ£¬ËùÒÔ²»µÇ¼Ç
+                // ä¸æ˜¯ä»»å‹™ï¼Œæ‰€ä»¥ä¸ç™»è¨˜
                 return;
 
         set_information(NPC_NAME, (: ask_npc :));

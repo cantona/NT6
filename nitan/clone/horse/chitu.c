@@ -3,11 +3,11 @@ inherit "/clone/horse/horse.c";
 
 void create()
 {
-        set_name(NOR + RED "³àÍÃÂí" NOR, ({ "chitu ma"}));
-        set("long", NOR + RED "»ëÉíÉÏÏÂ£¬»ðÌ¿°ã³à£¬ÎÞ°ë¸ùÔÓÃ«£»´ÓÍ·ÖÁÎ²£¬³¤Ò»ÕÉ£»´ÓÌãÖÁÏî£¬¸ß"
-                              "°Ë³ß£»Ë»º°ÅØÏø£¬ÓÐÌÚ¿ÕÈëº£Ö®×´¡£\n"
-                              "½¨°²¶þÊ®ÁùÄê£¬¹ØÓð×ßÂó³Ç£¬±ø°ÜÔâÇÜ£¬¾Ü½µ£¬ÎªËïÈ¨Ëùº¦¡£Æä×øÆï³à\n"
-                              "ÍÃÂíÎªËïÈ¨´ÍÓèÂíÖÒ¡£³àÍÃÂí¾øÊ³ÊýÈÕ£¬²»¾Ã¼´Íö¡£\n" NOR);
+        set_name(NOR + RED "èµ¤å…”é¦¬" NOR, ({ "chitu ma"}));
+        set("long", NOR + RED "æ¸¾èº«ä¸Šä¸‹ï¼Œç«ç‚­èˆ¬èµ¤ï¼Œç„¡åŠæ ¹é›œæ¯›ï¼›å¾žé ­è‡³å°¾ï¼Œé•·ä¸€ä¸ˆï¼›å¾žè¹„è‡³é …ï¼Œé«˜"
+                              "å…«å°ºï¼›å˜¶å–Šå’†å“®ï¼Œæœ‰é¨°ç©ºå…¥æµ·ä¹‹ç‹€ã€‚\n"
+                              "å»ºå®‰äºŒåå…­å¹´ï¼Œé—œç¾½èµ°éº¥åŸŽï¼Œå…µæ•—é­æ“’ï¼Œæ‹’é™ï¼Œç‚ºå­«æ¬Šæ‰€å®³ã€‚å…¶åé¨Žèµ¤\n"
+                              "å…”é¦¬ç‚ºå­«æ¬Šè³œäºˆé¦¬å¿ ã€‚èµ¤å…”é¦¬çµ•é£Ÿæ•¸æ—¥ï¼Œä¸ä¹…å³äº¡ã€‚\n" NOR);
 
         set("tili", 5000);
         set("max_tili", 5000);

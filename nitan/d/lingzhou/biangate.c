@@ -6,10 +6,10 @@
 inherit ROOM;
 void create()
 {
-        set("short", "±ßÃÅ");
+        set("short", "é‚Šé–€");
         set("long", @LONG
-ÕâÀïÊÇ»Ê¹¬µÄ±ßÃÅ£¬¹©ÊÌÎÀºÍÄÚÊÌÃÇ³öÈëÖ®ÓÃ£¬¹¬ÀïËùĞèµÄ¶«Î÷Ò»
-°ã¶¼ÓÉ´ËÔËÈë£¬ÒòÎª±È½ÏÆ«Æ§£¬ÊØÎÀµÄÎÀÊ¿Ò²²»¶à¡£
+é€™è£¡æ˜¯çš‡å®®çš„é‚Šé–€ï¼Œä¾›ä¾è¡›å’Œå…§ä¾å€‘å‡ºå…¥ä¹‹ç”¨ï¼Œå®®è£¡æ‰€éœ€çš„æ±è¥¿ä¸€
+èˆ¬éƒ½ç”±æ­¤é‹å…¥ï¼Œå› ç‚ºæ¯”è¼ƒååƒ»ï¼Œå®ˆè¡›çš„è¡›å£«ä¹Ÿä¸å¤šã€‚
 LONG );
         set("exits", ([
                 "west" : __DIR__"chaifang",
@@ -23,13 +23,13 @@ LONG );
         set("coor/y", 2985);
         set("coor/z", 0);
         setup();
-        create_door("west" , "Ä¾ÃÅ", "east" , DOOR_CLOSED);
+        create_door("west" , "æœ¨é–€", "east" , DOOR_CLOSED);
 }
 
 int valid_leave(object me, string dir)
 {
         if (dir == "west" && objectp(present("wei shi", environment(me))))
-                return notify_fail("ÎÀÊ¿¶ÔÄã´óºğÒ»Éù£º·ÅËÁ£¡ÄÇ²»ÊÇÄãÄÜ½øÈ¥µÄµØ·½¡£\n");
+                return notify_fail("è¡›å£«å°ä½ å¤§å¼ä¸€è²ï¼šæ”¾è‚†ï¼é‚£ä¸æ˜¯ä½ èƒ½é€²å»çš„åœ°æ–¹ã€‚\n");
 
         return ::valid_leave(me, dir);
 }

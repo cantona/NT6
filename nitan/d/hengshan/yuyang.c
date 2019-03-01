@@ -5,11 +5,11 @@
 inherit ROOM;
 void create()
 {
-        set("short", "��������");
+        set("short", "玉羊遊雲");
         set("long", @LONG
-�ڶ����ͱ��¶��ϣ���ʯ���ۣ�ɢ�����£������������£����ж�
-�У������ڳԲݵ���ֻ������Ǻ͡��𼦱����������ĺ�ɽʤ��������
-���ơ���
+在東峰峭壁崖頂上，白石累累，散布有致，在雲霧拂動下，似有動
+感，象正在吃草的羊只。這就是和“金雞報曉”齊名的恆山勝景“玉羊
+遊雲”。
 LONG);
         set("exits", ([ /* sizeof() == 4 */
                 "westdown"    : __DIR__"beiyuedian",

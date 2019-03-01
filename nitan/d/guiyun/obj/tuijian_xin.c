@@ -5,14 +5,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name("ÍÆ¼öĞÅ", ({ "recommend letter", "letter", "xin" }) );
+        set_name("æ¨è–¦ä¿¡", ({ "recommend letter", "letter", "xin" }) );
         set("owner", "jpei");
-        set("long","ÕâÊÇÂ½³Ë·çĞ´¸ø»ÆÒ©Ê¦µÄÒ»·âĞÅ¡£\n");
+        set("long","é€™æ˜¯é™¸ä¹˜é¢¨å¯«çµ¦é»ƒè—¥å¸«çš„ä¸€å°ä¿¡ã€‚\n");
         set_weight(2);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "·â");
+                set("unit", "å°");
         }
         setup();
 }

@@ -6,10 +6,10 @@ int snake_attspeed(object);
 
 void create()
 {
-        set_name("¸¹Éß", ({ "snake", "fushe" }) );
-        set("race", "ÅÀÉß");
+        set_name("è…¹è›‡", ({ "snake", "fushe" }) );
+        set("race", "çˆ¬è›‡");
         set("age", 10);
-        set("long", "Ò»ÌõÉíÐÎ´Ö×³µÄ¸¹Éß£¬Ææ¶¾ÎÞ±È¡£\n");
+        set("long", "ä¸€æ¢èº«å½¢ç²—å£¯çš„è…¹è›‡ï¼Œå¥‡æ¯’ç„¡æ¯”ã€‚\n");
         set("attitude", "peaceful");
 
         set("str", 33);
@@ -33,7 +33,7 @@ mixed hit_ob(object me, object victim, int damage_bonus, int factor)
 void die()
 {
         object ob;
-        message_vision("$Nµ¹ÔÚµØÉÏ£¬ËÀÁË£¡\n", this_object());
+        message_vision("$Nå€’åœ¨åœ°ä¸Šï¼Œæ­»äº†ï¼\n", this_object());
         ob = new("/d/shenlong/obj/shedan");
         ob->move(environment(this_object()));
         ob = new("/d/baituo/obj/shepi");

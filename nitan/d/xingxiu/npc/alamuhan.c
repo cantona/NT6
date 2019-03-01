@@ -8,10 +8,10 @@ int do_qiecuo();
 
 void create()
 {
-        set_name("°¢À­Ä¾º±", ({ "alamuhan", "ala", "muhan" }));
-        set("long", "ËıÉí¶Î²»·ÊÒ²²»Êİ¡£ËıµÄÃ¼Ã«ÏñÍäÔÂ£¬ËıµÄÑÛ¾¦ºÜ¶àÇé¡£\n");
-        set("title", "ÄÁÑò¹ÃÄï");
-        set("gender", "Å®ĞÔ");
+        set_name("é˜¿æ‹‰æœ¨ç½•", ({ "alamuhan", "ala", "muhan" }));
+        set("long", "å¥¹èº«æ®µä¸è‚¥ä¹Ÿä¸ç˜¦ã€‚å¥¹çš„çœ‰æ¯›åƒå½æœˆï¼Œå¥¹çš„çœ¼ç›å¾ˆå¤šæƒ…ã€‚\n");
+        set("title", "ç‰§ç¾Šå§‘å¨˜");
+        set("gender", "å¥³æ€§");
         set("age", 17);
 
         set_skill("unarmed", 20);
@@ -26,9 +26,9 @@ void create()
         set("combat_exp", 5000);
         set("attitude","friendly");
         set("inquiry", ([
-                "¹ÃÄï×·" : (: ask_me :),
-                "ÈüÂí" : (: ask_me :),
-                "Âí" : (: ask_me :),
+                "å§‘å¨˜è¿½" : (: ask_me :),
+                "è³½é¦¬" : (: ask_me :),
+                "é¦¬" : (: ask_me :),
         ]) );
 
         set("shen_type", 1);
@@ -45,13 +45,13 @@ void create()
 */
 int ask_me()
 {
-        if( query_temp("marks/Âí", this_player())){
+        if( query_temp("marks/é¦¬", this_player())){
                 say(
-"°¢À­Ä¾º±¶Ô" + this_player()->name() + "Ëµ£ºÄãÕâº¢×ÓÔõÃ´ÀÏ²ø×Å±¾¹ÃÄï¡£\n");
+"é˜¿æ‹‰æœ¨ç½•å°" + this_player()->name() + "èªªï¼šä½ é€™å­©å­æ€éº¼è€çºè‘—æœ¬å§‘å¨˜ã€‚\n");
                 return 1;
         } else {
-        say("°¢À­Ä¾º±¿´ÁË" + this_player()->name() + "Ò»ÑÛ£¬ÓÃ²»Ì«±ê×¼µÄºº»°ËµµÀ£º\n±¾¹ÃÄïÔÚÕâÀïµÄ±Ş·¨Ò²Ğ¡ÓĞµã¶ùÃûÆø£¬ÕâÎ»ºº×å" + RANK_D->query_respect(this_player()) + "\nÏë²»ÏëºÍÎÒÇĞ´è¼¸ÏÂ£¿\n");
-        set_temp("marks/Âí1", 1, this_player());
+        say("é˜¿æ‹‰æœ¨ç½•çœ‹äº†" + this_player()->name() + "ä¸€çœ¼ï¼Œç”¨ä¸å¤ªæ¨™æº–çš„æ¼¢è©±èªªé“ï¼š\næœ¬å§‘å¨˜åœ¨é€™è£¡çš„é­æ³•ä¹Ÿå°æœ‰é»å…’åæ°£ï¼Œé€™ä½æ¼¢æ—" + RANK_D->query_respect(this_player()) + "\næƒ³ä¸æƒ³å’Œæˆ‘åˆ‡ç£‹å¹¾ä¸‹ï¼Ÿ\n");
+        set_temp("marks/é¦¬1", 1, this_player());
         return 1;
         }
 }
@@ -62,12 +62,12 @@ int accept_fight(object ob)
 
         me = this_object();
       
-        if( query_temp("marks/Âí1", ob)){
-           say(ob->name() + "¶Ô°¢À­Ä¾º±Ëµ£ººÃ°É£¬ÄÇ" 
-             "ÎÒ¾ÍÍ¬ÄãÇĞ´ê¼¸ÕĞ°É£¬µãµ½ÎªÖ¹¡£\n");
+        if( query_temp("marks/é¦¬1", ob)){
+           say(ob->name() + "å°é˜¿æ‹‰æœ¨ç½•èªªï¼šå¥½å§ï¼Œé‚£" 
+             "æˆ‘å°±åŒä½ åˆ‡æ“å¹¾æ‹›å§ï¼Œé»åˆ°ç‚ºæ­¢ã€‚\n");
           remove_call_out("checking");
           call_out("checking", 1, me, ob);
-          set_temp("marks/Âí1", 0, ob);
+          set_temp("marks/é¦¬1", 0, ob);
           return 1;
         }
         else
@@ -93,25 +93,25 @@ int checking(object me, object ob)
         if( (query("qi", me)*100/my_max_qi) <= 50 )
         {
                 say(
-                  "°¢À­Ä¾º±Ëµ£ºÖĞÔ­ÎäÑ§¹ûÈ»²»Ò»°ã£¬Ğ¡Å®×ÓÊ®·ÖÅå·ş¡£\n"
-                  "ËÍÄãÒ»Æ¥ÒÁÀçÂíÂÔ±í´çĞÄ¡£\n"
+                  "é˜¿æ‹‰æœ¨ç½•èªªï¼šä¸­åŸæ­¦å­¸æœç„¶ä¸ä¸€èˆ¬ï¼Œå°å¥³å­ååˆ†ä½©æœã€‚\n"
+                  "é€ä½ ä¸€åŒ¹ä¼ŠçŠé¦¬ç•¥è¡¨å¯¸å¿ƒã€‚\n"
                 );
                 horse = new(__DIR__"obj/horse"); 
                 horse->move(ob);
-                set_temp("marks/Âí", 1, ob);
-                message_vision("$N½»¸ø$nÒ»Æ¥Âí¡£\n", me, ob);
+                set_temp("marks/é¦¬", 1, ob);
+                message_vision("$Näº¤çµ¦$nä¸€åŒ¹é¦¬ã€‚\n", me, ob);
                 return 1;
         }
         if( (query("qi", ob)*100/his_max_qi)<50 )
         {
                 say(
-                   "°¢À­Ä¾º±³å×Å" + ob->name() + "Æ²ÁËÆ²×ì£¬ËµµÀ£ºÖĞÔ­ÎäÑ§²»¹ıÈç´Ë¡£\n"
+                   "é˜¿æ‹‰æœ¨ç½•æ²–è‘—" + ob->name() + "æ’‡äº†æ’‡å˜´ï¼Œèªªé“ï¼šä¸­åŸæ­¦å­¸ä¸éå¦‚æ­¤ã€‚\n"
                 );
                 message("vision",
-                   ob->name() + "¶Ô°¢À­Ä¾º±¹§¹§¾´¾´µØ¿ÄÁËÒ»¸öÍ·£¬Àë¿ªÈüÂí³¡¡£\n", environment(ob), ({ob}) );
+                   ob->name() + "å°é˜¿æ‹‰æœ¨ç½•æ­æ­æ•¬æ•¬åœ°ç£•äº†ä¸€å€‹é ­ï¼Œé›¢é–‹è³½é¦¬å ´ã€‚\n", environment(ob), ({ob}) );
                 ob->move("/d/xingxiu/beijiang");
                 message("vision",
-                   ob->name() + "´ÓÈüÂí³¡´¹Í·É¥ÆøµØ×ß»ØÀ´¡£\n", environment(ob), ({ob}) );
+                   ob->name() + "å¾è³½é¦¬å ´å‚é ­å–ªæ°£åœ°èµ°å›ä¾†ã€‚\n", environment(ob), ({ob}) );
                 return 1;
         }
         return 1;

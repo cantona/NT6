@@ -1,15 +1,15 @@
-// Room: /d/ruzhou/xiaozheng.c Ð¡Õò
+// Room: /d/ruzhou/xiaozheng.c å°éŽ®
 // llm 99/02
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "ÈêÖÝÐ¡Õò");
+        set("short", "æ±å·žå°éŽ®");
         set("long", @LONG
-ÕâÀïÒÑ¾­½øÈëÈêÖÝµØ½çÁË¡£Ð¡Õò²»´ó£¬µ«ÊÇÎ»ÓÚÖÐÔ­æäµÀÅÔ£¬ÄÏ
-çõ±±ÍùµÄ¿ÍÈË±ãÊ¹µÃÕâÀïÂýÂý·±ÈÙÆðÀ´ÁË¡£ÉõÖÁÊ¹µÃÕâÀïµÄ±¾µØÈË¿Ú
-ÉõÉÙ£¬µ½´¦¶¼ÊÇÐÐÉ«´Ò´ÒµÄ½­ºþ¿ÍÈË¡£
+é€™è£¡å·²ç¶“é€²å…¥æ±å·žåœ°ç•Œäº†ã€‚å°éŽ®ä¸å¤§ï¼Œä½†æ˜¯ä½äºŽä¸­åŽŸé©›é“æ—ï¼Œå—
+ç¿åŒ—å¾€çš„å®¢äººä¾¿ä½¿å¾—é€™è£¡æ…¢æ…¢ç¹æ¦®èµ·ä¾†äº†ã€‚ç”šè‡³ä½¿å¾—é€™è£¡çš„æœ¬åœ°äººå£
+ç”šå°‘ï¼Œåˆ°è™•éƒ½æ˜¯è¡Œè‰²åŒ†åŒ†çš„æ±Ÿæ¹–å®¢äººã€‚
 LONG
         );
 

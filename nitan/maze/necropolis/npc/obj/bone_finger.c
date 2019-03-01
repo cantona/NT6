@@ -2,10 +2,10 @@ inherit COMBINED_ITEM;
 
 void create()
 {
-        set_name("ÊÖÖ¸¹Ç", ({"bone finger"}) );
+        set_name("æ‰‹æŒ‡éª¨", ({"bone finger"}) );
         set("long", name()+"\n");
-        set("unit", "Ð©");
-        set("base_unit", "¸ö");
+        set("unit", "äº›");
+        set("base_unit", "å€‹");
         set("base_weight", 50);
         set("base_value", 0);
         set("maze_item",1);

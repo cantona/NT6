@@ -3,7 +3,7 @@
 inherit ITEM;
 
 string* titles = ({
-        "Á½ÒÇ½£ĞÄµÃ",
+        "å…©å„€åŠå¿ƒå¾—",
 });
 
 void create()
@@ -13,8 +13,8 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
-                set("long", "ÕâÊÇÀ¥ÂØÅÉÇ°ÈËËù×Ü½áµÄÕıÁ½ÒÇ½£·¨µÄÃØ¼®¡£\n");
+                set("unit", "æœ¬");
+                set("long", "é€™æ˜¯æ˜†ä¾–æ´¾å‰äººæ‰€ç¸½çµçš„æ­£å…©å„€åŠæ³•çš„ç§˜ç±ã€‚\n");
                 set("value", 500);
                 set("material", "paper");
                 set("skill", ([
@@ -40,18 +40,18 @@ int do_study(string arg)
         object me=this_player();
 
         if (arg != "shu" && arg!="book" && arg != "xinde" )
-                return notify_fail("ÄãÒªÑ§Ê²Ã´£¿\n");
+                return notify_fail("ä½ è¦å­¸ä»€éº¼ï¼Ÿ\n");
         if (!present(this_object(), this_player()))
                 return 0;
         if( query("jing", me)<30 )
-                return notify_fail("ÄãÌ«ÀÛÁË£¬»¹ÊÇĞª»áÔÙÑĞ¾¿°É£¡\n");
+                return notify_fail("ä½ å¤ªç´¯äº†ï¼Œé‚„æ˜¯æ­‡æœƒå†ç ”ç©¶å§ï¼\n");
 
         if ((int)me->query_skill("liangyi-sword", 1) > 100
                 && (int)me->query_skill("liangyi-sword", 1) <= 180)
         {
                 me->receive_damage("jing", 40);
                 me->improve_skill("liangyi-sword", (query("int", me))/2+(me->query_skill("literate", 1))/5,1 );
-                message_vision("$N¿àĞÄÑĞ¾¿¡¸Á½ÒÇ½£ĞÄµÃ¡¹£¬Ë¼Ë÷Á¼¾Ã£¬ËÆºõÓĞËùÁìÎò¡£\n",me);
+                message_vision("$Nè‹¦å¿ƒç ”ç©¶ã€Œå…©å„€åŠå¿ƒå¾—ã€ï¼Œæ€ç´¢è‰¯ä¹…ï¼Œä¼¼ä¹æœ‰æ‰€é ˜æ‚Ÿã€‚\n",me);
                 return 1;
         }
 

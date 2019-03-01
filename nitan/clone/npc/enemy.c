@@ -1,4 +1,4 @@
-// ÊØÎÀÈÎÎñ NPC¡£
+// å®ˆè¡›ä»»å‹™ NPCã€‚
 
 #include <ansi.h>
 
@@ -15,8 +15,8 @@ void move_enemy(object enemy, string family);
 void create()
 {
         NPC_D->generate_cn_name(this_object());
-        set("long", "ÕâÈËÊÇÇ°À´¹¥´ò" + query("is_attacking")?query("is_attacking") : "±ğµÄÃÅÅÉ"
-                + "µÄÒ»Ãû" + query("family/family_name")?query("family/family_name") : "Î´ÖªÃÅÅÉ" +"µÜ×Ó¡£\n");
+        set("long", "é€™äººæ˜¯å‰ä¾†æ”»æ‰“" + query("is_attacking")?query("is_attacking") : "åˆ¥çš„é–€æ´¾"
+                + "çš„ä¸€å" + query("family/family_name")?query("family/family_name") : "æœªçŸ¥é–€æ´¾" +"å¼Ÿå­ã€‚\n");
 
         set("combat_exp", 100000 + random(500000));
         set("attitude", "peaceful");
@@ -63,16 +63,16 @@ void greeting(object me)
             me->query_family() == query("is_attacking") &&
             !query_temp("defend_quest/finish", me) )
         {
-                // ÕâÀïµÄÃèĞ´ËÆºõĞèÒªµ÷Õû£¨ÕıÅÉËµÕâÖÖ»°²»ºÏÉí·İ£©
+                // é€™è£¡çš„æå¯«ä¼¼ä¹éœ€è¦èª¿æ•´ï¼ˆæ­£æ´¾èªªé€™ç¨®è©±ä¸åˆèº«ä»½ï¼‰
                 command("grin");
-                message_sort(HIW "Ö»¼û$N" HIW "ÄüĞ¦×Å¶Ô$n" HIW "µÀ£º¡°ºÙºÙ£¬²»ÖªËÀ»îµÄ" +
-                        RANK_D->query_rude(me) +"£¬¾¹È»¸ÒºÍÎÒÃÇ" + this_object()->query_family() +"×ö¶Ô£¿£¡"
-                        "¿´ÎÒÀ´½ÌÑµ½ÌÑµÄã£¡¡±\n", this_object(), me );
+                message_sort(HIW "åªè¦‹$N" HIW "ç°ç¬‘è‘—å°$n" HIW "é“ï¼šâ€œå˜¿å˜¿ï¼Œä¸çŸ¥æ­»æ´»çš„" +
+                        RANK_D->query_rude(me) +"ï¼Œç«Ÿç„¶æ•¢å’Œæˆ‘å€‘" + this_object()->query_family() +"åšå°ï¼Ÿï¼"
+                        "çœ‹æˆ‘ä¾†æ•™è¨“æ•™è¨“ä½ ï¼â€\n", this_object(), me );
                         
                 kill_ob(me);
                 return;
         }
-        message_vision(HIW "$N" HIW "ÀäÀäµØÉ¨ÁË$n" HIW "Ò»ÑÛ¡£\n", this_object(), me );
+        message_vision(HIW "$N" HIW "å†·å†·åœ°æƒäº†$n" HIW "ä¸€çœ¼ã€‚\n", this_object(), me );
 }
 
 void kill_ob(object me)
@@ -83,7 +83,7 @@ void kill_ob(object me)
                 return ::kill_ob(me);
         else
         {
-                // ¸´ÖÆ×´Ì¬£¬ĞèÒªµ÷Õû¡£
+                // å¾©åˆ¶ç‹€æ…‹ï¼Œéœ€è¦èª¿æ•´ã€‚
                 NPC_D->set_from_me(ob, me, 100 + random(20));
                 NPC_D->init_npc_skill(ob, NPC_D->check_level(me) + (1 + random(2)));
                 ::kill_ob(me);
@@ -91,7 +91,7 @@ void kill_ob(object me)
         }
 }
 
-// Èç¹û½ÓÊÜÁË»ßÂ¸
+// å¦‚æœæ¥å—äº†è³„è³‚
 int do_nod(string arg)
 {
         object me = this_player();
@@ -110,15 +110,15 @@ int do_nod(string arg)
                 {
                         amount=query_temp("defend_quest/waiting", me);
 
-                        message_sort(HIW "Ö»¼û$N" HIW "³¤Ğ¦ÈıÉù£º¡°¹ş¹ş¹ş£¬Ê¶Ê±ÎñÕßÎª¿¡½Ü£¬" +
-                                     RANK_D->query_respect(me) + "¹ûÈ»ÊÇÃ÷°×ÈË£¬ºÙºÙ£¬ÕâÇøÇø" +
-                                     chinese_number(amount) + "Á½°×Òø¾Í¹éÄãÁË£¬¹ş¹ş¡£¡±\n\n" NOR,
+                        message_sort(HIW "åªè¦‹$N" HIW "é•·ç¬‘ä¸‰è²ï¼šâ€œå“ˆå“ˆå“ˆï¼Œè­˜æ™‚å‹™è€…ç‚ºä¿Šå‚‘ï¼Œ" +
+                                     RANK_D->query_respect(me) + "æœç„¶æ˜¯æ˜ç™½äººï¼Œå˜¿å˜¿ï¼Œé€™å€å€" +
+                                     chinese_number(amount) + "å…©ç™½éŠ€å°±æ­¸ä½ äº†ï¼Œå“ˆå“ˆã€‚â€\n\n" NOR,
                                      ob, me);
 
                         MONEY_D->pay_player(me, amount * 100);
                         set_temp("defend_quest/accepted", 1, me);
-                        tell_object(me, HIR + ob->name() + "µİ¸øÁËÄã" + chinese_number(amount) + 
-                                        "Á½°×ÒøÒÔºó£¬ÍÂ³öÒ»¿ÚÏÊÑª£¬Ñï³¤¶øÈ¥¡£\n" NOR );
+                        tell_object(me, HIR + ob->name() + "éçµ¦äº†ä½ " + chinese_number(amount) + 
+                                        "å…©ç™½éŠ€ä»¥å¾Œï¼Œåå‡ºä¸€å£é®®è¡€ï¼Œæšé•·è€Œå»ã€‚\n" NOR );
                         return 1;
                 }
                 else return  0;
@@ -132,8 +132,8 @@ void die()
         string *pills, pill;
         int amount = 300 + random(300);
         string *condition = ({
-                "Æø´­ÓõÓõ£¬¾ÍÒª²»Ö§", "Í·ÖØ½ÅÇá£¬ÂíÉÏ¾Íµ¹", 
-                "Å»Ñª³ÉÉı£¬ÑÛÃ°½ğĞÇ", "ÉËºÛÀÛÀÛ£¬ÎŞÁ¦ÕĞ¼Ü", 
+                "æ°£å–˜ååï¼Œå°±è¦ä¸æ”¯", "é ­é‡è…³è¼•ï¼Œé¦¬ä¸Šå°±å€’", 
+                "å˜”è¡€æˆå‡ï¼Œçœ¼å†’é‡‘æ˜Ÿ", "å‚·ç—•ç´¯ç´¯ï¼Œç„¡åŠ›æ‹›æ¶", 
         });
 
         if (objectp(me = ob->query_last_damage_from()) 
@@ -145,13 +145,13 @@ void die()
                 switch (random(15)) 
                 {
                         case 1: {
-                                message_sort(HIR "ÑÛ¼û$N" HIR + condition[random(sizeof(condition))]
-                                                +"£¬Í»È»$N´óºÈÒ»Éù£¬¼±ÍË¼¸²½£¬\n¡°ÆËÍ¨¡±¸ø$n¹òÁËÏÂÀ´¡£"
+                                message_sort(HIR "çœ¼è¦‹$N" HIR + condition[random(sizeof(condition))]
+                                                +"ï¼Œçªç„¶$Nå¤§å–ä¸€è²ï¼Œæ€¥é€€å¹¾æ­¥ï¼Œ\nâ€œæ’²é€šâ€çµ¦$nè·ªäº†ä¸‹ä¾†ã€‚"
                                                 "\n" NOR, ob, me);
-                                tell_object(me, HIW + ob->name()+"Í»È»´Ó»³ÀïÌÍ³öÒ»¶Ñ°×»¨»¨µÄÒø×Ó£¬Ğ¡Éù"
-                                                "¶ÔÄãµÀ£º¡°ÕâÎ»" + RANK_D->query_respect(me) + "£¬\nÄã"
-                                                "¾ÍÍø¿ªÒ»Ãæ£¨nod£©ÈçºÎ£¬Õâ" + chinese_number(amount) +
-                                                "Á½°×Òø¾Í¹éÄãÁË£¡¡±\n" NOR);
+                                tell_object(me, HIW + ob->name()+"çªç„¶å¾æ‡·è£¡æå‡ºä¸€å †ç™½èŠ±èŠ±çš„éŠ€å­ï¼Œå°è²"
+                                                "å°ä½ é“ï¼šâ€œé€™ä½" + RANK_D->query_respect(me) + "ï¼Œ\nä½ "
+                                                "å°±ç¶²é–‹ä¸€é¢ï¼ˆnodï¼‰å¦‚ä½•ï¼Œé€™" + chinese_number(amount) +
+                                                "å…©ç™½éŠ€å°±æ­¸ä½ äº†ï¼â€\n" NOR);
                                 ob->clean_up_enemy();
                                 ob->remove_all_enemy(0);
                                 ob->clear_condition(0);
@@ -161,7 +161,7 @@ void die()
                                 return;
                         }
                         default: {
-                                // ½±Àø
+                                // çå‹µ
                                 if( query("family/family_name", me) == query("is_attacking", ob) )
                                         addn_temp("defend_quest/killed", 1, me);
                                 
@@ -199,7 +199,7 @@ void leave_here()
         return;
 }
 
-// ËÍ×ßµĞÈË£¨ÔÚ ENEMY µÄ chat_msg ÖĞÒ²ÓĞºô½Ğ£©
+// é€èµ°æ•µäººï¼ˆåœ¨ ENEMY çš„ chat_msg ä¸­ä¹Ÿæœ‰å‘¼å«ï¼‰
 void move_enemy(object enemy, string family)
 {
         string *places = familys[family]["place"];
@@ -208,14 +208,14 @@ void move_enemy(object enemy, string family)
 
         if (objectp(room = environment(enemy)))
         {
-                tell_room(room, enemy->name() + "Ò»ÉÁÉí¾Í²»¼ûÁË¡£\n");
+                tell_room(room, enemy->name() + "ä¸€é–ƒèº«å°±ä¸è¦‹äº†ã€‚\n");
         }
 #ifdef DEBUG        
         CHANNEL_D->do_channel(this_object(), "sys",
                 sprintf("%s : %O", enemy->short(), place)); 
 #endif
         enemy->move(place);
-        tell_room(place, "Ö»¼ûÒ»Ãû" + enemy->query_family() + "µÜ×Ó²»ÖªÊ²Ã´Ê±ºò×êÁË³öÀ´¡£\n");
+        tell_room(place, "åªè¦‹ä¸€å" + enemy->query_family() + "å¼Ÿå­ä¸çŸ¥ä»€éº¼æ™‚å€™é‘½äº†å‡ºä¾†ã€‚\n");
 
         return;
 }

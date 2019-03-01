@@ -4,10 +4,10 @@
 inherit ROOM;
 void create()
 {
-        set("short","�ּ�С��");
+        set("short","林間小道");
         set("long", @LONG
-����һ����ʯ�̳ɵ�С�����������۵�ͨ��ǰ�������������ܵ�
-���������˼�������Ω�����ߵ��·�棬΢�紵����Ҷ��ɳɳ���졣
+這是一條卵石舖成的小道，曲曲折折地通向前方。兩邊是密密的
+樹林這裡人跡罕至，惟聞足底叩擊路面，微風吹拂樹葉，沙沙作響。
 LONG );
         set("outdoors", "dalic");
         set("exits",([ /* sizeof() == 1 */

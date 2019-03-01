@@ -21,12 +21,12 @@ int check_count(object me, int count)
                 if( query_temp("taohua/count", me) == 2080 )
                 {
                         tell_object(me,HIW"\n\n
-ËÄÖÜ¾°ÎïÍ»È»±äµÃÄ£ºıÆğÀ´£¬Äã¾õµÃÍ·ÄÔÒ»ÕóÔÎÑ£......
-Äã¶¨ÁË¶¨Éñ£¬·¢ÏÖ×Ô¼º³É¹¦ÁË£¡
+å››å‘¨æ™¯ç‰©çªç„¶è®Šå¾—æ¨¡ç³Šèµ·ä¾†ï¼Œä½ è¦ºå¾—é ­è…¦ä¸€é™£æšˆçœ©......
+ä½ å®šäº†å®šç¥ï¼Œç™¼ç¾è‡ªå·±æˆåŠŸäº†ï¼
 \n\n"NOR);
                         /*
                         tell_object(me,
-                                HIR "ËÄÖÜ¾°ÎïÍ»È»±äµÃÄ£ºıÆğÀ´£¬Äã¾õµÃÍ·ÄÔÒ»ÕóÔÎÑ£......ÄãÔÚÒ»ÕóÑÌÎíÖĞÏûÊ§ÁË¡£\n\n" NOR);
+                                HIR "å››å‘¨æ™¯ç‰©çªç„¶è®Šå¾—æ¨¡ç³Šèµ·ä¾†ï¼Œä½ è¦ºå¾—é ­è…¦ä¸€é™£æšˆçœ©......ä½ åœ¨ä¸€é™£ç…™éœ§ä¸­æ¶ˆå¤±äº†ã€‚\n\n" NOR);
                         */
                         if( !query("taohua_maze", me) )
                         {
@@ -37,7 +37,7 @@ int check_count(object me, int count)
                                 addn("int", 1, me);
                                 set("taohua_maze", age, me);
                                 delete_temp("taohua/count", me);
-                                tell_object(me,sprintf(HIY"Äã»ñµÃÁË%dµã¾­Ñé¡¢%dµãÇ±ÄÜ£¬1µãÏÈÌìÎòĞÔ£¡\n"NOR,
+                                tell_object(me,sprintf(HIY"ä½ ç²å¾—äº†%dé»ç¶“é©—ã€%dé»æ½›èƒ½ï¼Œ1é»å…ˆå¤©æ‚Ÿæ€§ï¼\n"NOR,
                                                 bonus,
                                                 bonus*2));
                                 // me->move("/d/taohua/xiangzhong");
@@ -46,7 +46,7 @@ int check_count(object me, int count)
                 } else
                 {
                         tell_object(me,
-                                HIW "Äã½ÅÏÂÒ»Ğé£¬²»ÓÉ×ÔÖ÷µÄÏòÏÂ·É×¹......ÄãµÄÒâÊ¶½¥½¥Ä£ºıÆğÀ´......\n\n" NOR);
+                                HIW "ä½ è…³ä¸‹ä¸€è™›ï¼Œä¸ç”±è‡ªä¸»çš„å‘ä¸‹é£›å¢œ......ä½ çš„æ„è­˜æ¼¸æ¼¸æ¨¡ç³Šèµ·ä¾†......\n\n" NOR);
                         if (userp(me))
                         me->unconcious();
                         delete_temp("taohua/count", me);
@@ -56,7 +56,7 @@ int check_count(object me, int count)
         if( query_temp("/taohua/count", me)>2100 )
         {
                 tell_object(me,
-                        HIW "ºö¼ûµÃÒ»Õó¿ñ·ç¹ÒÀ´£¬Ìì¿ÕÖĞÎÚÔÆÃÜ²¼£¬Ò»ÕóÒõÀäµÄÅ¨ÎíË²¼ä°ÑÄã¹ü×¡......\n\n" NOR);
+                        HIW "å¿½è¦‹å¾—ä¸€é™£ç‹‚é¢¨æ›ä¾†ï¼Œå¤©ç©ºä¸­çƒé›²å¯†å¸ƒï¼Œä¸€é™£é™°å†·çš„æ¿ƒéœ§ç¬é–“æŠŠä½ è£¹ä½......\n\n" NOR);
                 if (userp(me))
                 me->unconcious();
                 delete_temp("taohua/count", me);
@@ -69,5 +69,5 @@ int check_count(object me, int count)
 void remove_effect(object me, int level)
 {
         addn_temp("apply/int", -level, me);
-        tell_object(me, HIB "ÄãĞÄÖĞÒ»¶¯£¬ÄÔº£ÖĞ¿Õ¿Õµ´µ´£¬ËÆºõÓĞÊ²÷á¶«Î÷ÕıÀëÄã¶øÈ¥¡£\n" NOR);
+        tell_object(me, HIB "ä½ å¿ƒä¸­ä¸€å‹•ï¼Œè…¦æµ·ä¸­ç©ºç©ºç›ªç›ªï¼Œä¼¼ä¹æœ‰ä»€éº¼æ±è¥¿æ­£é›¢ä½ è€Œå»ã€‚\n" NOR);
 }

@@ -1,4 +1,4 @@
-// wudu-shengong.c Îå¶¾Éñ¹¦
+// wudu-shengong.c äº”æ¯’ç¥žåŠŸ
 // Last Modified by winder on Mar. 10 2000
 
 #include <ansi.h>
@@ -27,14 +27,14 @@ int valid_learn(object me)
         nf = (int)me->query_skill("force", 1);
 
         if ( nf < 10)
-                return notify_fail("ÄãµÄ»ù±¾ÄÚ¹¦»ðºò»¹²»¹»£¬ÎÞ·¨Áì»áÎå¶¾Éñ¹¦¡£\n");
+                return notify_fail("ä½ çš„åŸºæœ¬å…§åŠŸç«å€™é‚„ä¸å¤ ï¼Œç„¡æ³•é ˜æœƒäº”æ¯’ç¥žåŠŸã€‚\n");
 
         return ::valid_learn(me);
 }
 
 int practice_skill(object me)
 {
-        return notify_fail("Îå¶¾Éñ¹¦Ö»ÄÜÓÃÑ§(learn)µÄÀ´Ôö¼ÓÊìÁ·¶È¡£\n");
+        return notify_fail("äº”æ¯’ç¥žåŠŸåªèƒ½ç”¨å­¸(learn)çš„ä¾†å¢žåŠ ç†Ÿç·´åº¦ã€‚\n");
 }
 
 string exert_function_file(string func)
@@ -43,14 +43,14 @@ string exert_function_file(string func)
 }
 int help(object me)
 {
-        write(HIC"\nÎå¶¾Éñ¹¦£º"NOR"\n");
+        write(HIC"\näº”æ¯’ç¥žåŠŸï¼š"NOR"\n");
         write(@HELP
 
-    Îå¶¾½Ì±ØÐÞµÄÒ»ÃÅ¹¦·ò£¬Îå¶¾µÜ×Ó¾ÍÊÇ¿¿Ëü²Å¿ÉÒÔÈÕÒ¹Óë¶¾³æ
-¶¾Ò©Îª°é¡£
+    äº”æ¯’æ•™å¿…ä¿®çš„ä¸€é–€åŠŸå¤«ï¼Œäº”æ¯’å¼Ÿå­å°±æ˜¯é å®ƒæ‰å¯ä»¥æ—¥å¤œèˆ‡æ¯’èŸ²
+æ¯’è—¥ç‚ºä¼´ã€‚
 
-        Ñ§Ï°ÒªÇó£º
-                »ù±¾ÄÚ¹¦10¼¶
+        å­¸ç¿’è¦æ±‚ï¼š
+                åŸºæœ¬å…§åŠŸ10ç´š
 HELP
         );
         return 1;

@@ -1,13 +1,13 @@
-subject : ÎÊµÀ
-author_name : ¸ß´¦²»Ê¤º®
+subject : å•é“
+author_name : é«˜è™•ä¸å‹å¯’
 author_id : lonely
 time : 1056456289
-board : ÄàÌ¶¡¸ÎÊµÀ¡¹
+board : æ³¥æ½­ã€Œå•é“ã€
 file : /data/analecta/2003/79301069.txt
 add_time : 1056456329
 content : 
-ÈÕÔÂ²»³ö£¬Ë­ÓëÕù·æ£¬ÏÀÒå²»Æğ£¬Ë­ÄÜÎÊµÀ!
+æ—¥æœˆä¸å‡ºï¼Œèª°èˆ‡çˆ­é‹’ï¼Œä¿ ç¾©ä¸èµ·ï¼Œèª°èƒ½å•é“!
 [1;33m
-ÂÛÌ³£ºhttp://bbs.vmud.com/
-Õ¾µã£ºslough.vmud.com 2001
+è«–å£‡ï¼šhttp://bbs.vmud.com/
+ç«™é»ï¼šslough.vmud.com 2001
 [2;37;0m[2;37;0m

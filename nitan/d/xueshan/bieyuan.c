@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ѩɽ��Ժ");
+        set("short", "雪山別院");
         set("long", @LONG
-������ѩɽ�µķֲ������깱�Ʋִ����ﲻԶ���������ʥ����
-��Ϊ��ʦ�����ڴ˴�����𷨡�
+這裡是雪山寺的分部，當年貢唐倉大喇嘛不遠萬裡進京面聖，被
+封為國師，就在此處宣揚佛法。
 LONG );
         set("exits", ([
                 "east" : "/d/beijing/road5",

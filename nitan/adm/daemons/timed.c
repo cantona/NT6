@@ -29,11 +29,11 @@ protected void init_crontab();
 
 class cron_item
 {
-        int flag;               // flag 0 ÏÖÊµÉú»î; flag 1 ÓÎÏ·ÖĞ
-        string time;            // Ê±¼ä
-        string file;            // ´¥·¢Îï¼şµÄÎÄ¼şÃû
-        string func;            // ´¥·¢º¯Êı
-        string *args;           // ´¥·¢º¯ÊıÖĞµÄ²ÎÊı
+        int flag;               // flag 0 ç¾å¯¦ç”Ÿæ´»; flag 1 éŠæˆ²ä¸­
+        string time;            // æ™‚é–“
+        string file;            // è§¸ç™¼ç‰©ä»¶çš„æ–‡ä»¶å
+        string func;            // è§¸ç™¼å‡½æ•¸
+        string *args;           // è§¸ç™¼å‡½æ•¸ä¸­çš„åƒæ•¸
 }
 
 class cron_item *all_items = ({});
@@ -48,9 +48,9 @@ void auto_relaim()
         int i;
         if (i = reclaim_objects())
                 CHANNEL_D->do_channel( this_object(), "sys",
-                        sprintf("ÏµÍ³×Ô¶¯Çå³ı %d ¸ö±äÁ¿¡£", i));
+                        sprintf("ç³»çµ±è‡ªå‹•æ¸…é™¤ %d å€‹è®Šé‡ã€‚", i));
 
-        // cpu¹ı¸ßÔò½µµÍmudosĞÄÌø
+        // cpuéé«˜å‰‡é™ä½mudoså¿ƒè·³
         if( CPU_D->get_current_cpu_cost() >= 85 && query_heartbeat_interval() == 1 )
         {
                 set_heartbeat_interval(2);
@@ -87,37 +87,37 @@ protected void init_crontab()
                 reset_eval_cost();
                 table = explode(items[i]," ");
                 if( sizeof(table) < 3 ) {
-                        out(sprintf("ÒÔÏÂÈÎÎñ¸ñÊ½´íÎó£º\n%s\n\n",items[i]));
+                        out(sprintf("ä»¥ä¸‹ä»»å‹™æ ¼å¼éŒ¯èª¤ï¼š\n%s\n\n",items[i]));
                         continue;
                 }
                 time_zone = explode(table[0],":");
                 if( sizeof(time_zone) < 7 ) {
-                        out(sprintf("ÒÔÏÂÈÎÎñÊ±¼ä²¿·Ö¸ñÊ½´íÎó£º\n%s\n\n",items[i]));
+                        out(sprintf("ä»¥ä¸‹ä»»å‹™æ™‚é–“éƒ¨åˆ†æ ¼å¼éŒ¯èª¤ï¼š\n%s\n\n",items[i]));
                         continue;
                 }
 
                 if( file_size(table[1]+".c") < 0 ) {
-                        out(sprintf("ÒÔÏÂÈÎÎñ´¥·¢Îï¼şµµ°¸²»´æÔÚ£º\n%s\n\n",items[i]));
+                        out(sprintf("ä»¥ä¸‹ä»»å‹™è§¸ç™¼ç‰©ä»¶æª”æ¡ˆä¸å­˜åœ¨ï¼š\n%s\n\n",items[i]));
                         continue;
                 }
                 if( !ob = find_object(table[1]) )
                         ob = load_object(table[1]);
                 if( !ob ) {
-                        out(sprintf("ÒÔÏÂÈÎÎñ´¥·¢Îï¼şÎŞ·¨ÔØÈë£º\n%s\n\n",items[i]));
+                        out(sprintf("ä»¥ä¸‹ä»»å‹™è§¸ç™¼ç‰©ä»¶ç„¡æ³•è¼‰å…¥ï¼š\n%s\n\n",items[i]));
                         continue;
                 }
                 if( !function_exists(table[2],ob) ) {
-                        out(sprintf("ÒÔÏÂÈÎÎñ´¥·¢Îï¼şÖĞ´¥·¢º¯Êı²»´æÔÚ£º\n%s\n\n",items[i]));
+                        out(sprintf("ä»¥ä¸‹ä»»å‹™è§¸ç™¼ç‰©ä»¶ä¸­è§¸ç™¼å‡½æ•¸ä¸å­˜åœ¨ï¼š\n%s\n\n",items[i]));
                         continue;
                 }
                 if( sscanf(time_zone[0],"%d",flag) ) {
                         if( (flag != 0) && (flag != 1) ) {
-                                out(sprintf("ÒÔÏÂÈÎÎñ flag ¸ñÊ½´íÎó£º\n%s\n\n",items[i]));
+                                out(sprintf("ä»¥ä¸‹ä»»å‹™ flag æ ¼å¼éŒ¯èª¤ï¼š\n%s\n\n",items[i]));
                                 continue;
                         }
 
                 } else {
-                        out(sprintf("ÒÔÏÂÈÎÎñ flag ¸ñÊ½´íÎó£º\n%s\n\n",items[i]));
+                        out(sprintf("ä»¥ä¸‹ä»»å‹™ flag æ ¼å¼éŒ¯èª¤ï¼š\n%s\n\n",items[i]));
                         continue;
                 }
 
@@ -135,7 +135,7 @@ protected void init_crontab()
                 ready = 1;
 }
 
-// ¿ÉÈ¡´ú call_out Ö®¹¦ÄÜ
+// å¯å–ä»£ call_out ä¹‹åŠŸèƒ½
 void add_event(function fevent, int delay_time)
 {
         if( !sizeof(event) || !event[fevent] )
@@ -144,7 +144,7 @@ void add_event(function fevent, int delay_time)
                 event[fevent] = delay_time;
 }
 
-// Ö´ĞĞÊÂ¼ş
+// åŸ·è¡Œäº‹ä»¶
 void exec_event(function fevent)
 {
         if( objectp(function_owner(fevent)) )
@@ -180,11 +180,11 @@ string season_period(int m)
 {
         switch(m)
         {
-                case 2..4:      return "´º";
-                case 5..7:      return "ÏÄ";
-                case 8..10:     return "Çï";
-                case 11:        return "¶¬";
-                case 0..1:      return "¶¬";
+                case 2..4:      return "æ˜¥";
+                case 5..7:      return "å¤";
+                case 8..10:     return "ç§‹";
+                case 11:        return "å†¬";
+                case 0..1:      return "å†¬";
                 default:        return 0;
         }
 }
@@ -193,13 +193,13 @@ string week_period(int w)
 {
         switch(w)
         {
-                case 0:         return "ÈÕ";
-                case 1:         return "Ò»";
-                case 2:         return "¶ş";
-                case 3:         return "Èı";
-                case 4:         return "ËÄ";
-                case 5:         return "Îå";
-                case 6:         return "Áù";
+                case 0:         return "æ—¥";
+                case 1:         return "ä¸€";
+                case 2:         return "äºŒ";
+                case 3:         return "ä¸‰";
+                case 4:         return "å››";
+                case 5:         return "äº”";
+                case 6:         return "å…­";
                 default:        return 0;
         }
 }
@@ -208,16 +208,16 @@ string hour_period(int h)
 {
         switch(h)
         {
-                case 0..5:      return "Áè³¿";
-                case 6..11:     return "ÉÏÎç";
-                case 12:        return "ÖĞÎç";
-                case 13..18:    return "ÏÂÎç";
-                case 19..23:    return "ÍíÉÏ";
+                case 0..5:      return "å‡Œæ™¨";
+                case 6..11:     return "ä¸Šåˆ";
+                case 12:        return "ä¸­åˆ";
+                case 13..18:    return "ä¸‹åˆ";
+                case 19..23:    return "æ™šä¸Š";
                 default:        return 0;
         }
 }
 
-/* »Ø´«Ê±¼äÕóÁĞ ({ ·Ö Ê± Àñ ÈÕ ÔÂ Äê }) */
+/* å›å‚³æ™‚é–“é™£åˆ— ({ åˆ† æ™‚ ç¦® æ—¥ æœˆ å¹´ }) */
 int *query_gametime_array()
 {
         return game_time;
@@ -228,7 +228,7 @@ int *query_realtime_array()
         return real_time;
 }
 
-/* »Ø´«ÊıÎ»Ê±¼ä±íÊ¾ ÏÂÎç 3:39 */
+/* å›å‚³æ•¸ä½æ™‚é–“è¡¨ç¤º ä¸‹åˆ 3:39 */
 string gametime_digital_clock()
 {
         int h = game_time[HOUR];
@@ -246,10 +246,10 @@ string realtime_digital_clock()
 
 string time_description(string title, int *t)
 {
-        return sprintf( NOR WHT+title+NOR"%sÄê£¬%s£¬%sÔÂ%sÈÕĞÇÆÚ%s£¬%s%sµã%s·Ö"NOR
-            ,t[YEAR]==1?"Ôª":CHINESE_D->chinese_number(t[YEAR])
+        return sprintf( NOR WHT+title+NOR"%så¹´ï¼Œ%sï¼Œ%sæœˆ%sæ—¥æ˜ŸæœŸ%sï¼Œ%s%sé»%såˆ†"NOR
+            ,t[YEAR]==1?"å…ƒ":CHINESE_D->chinese_number(t[YEAR])
             ,season_period(t[MON])
-            ,!t[MON]?"Ôª":CHINESE_D->chinese_number(t[MON]+1)
+            ,!t[MON]?"å…ƒ":CHINESE_D->chinese_number(t[MON]+1)
             ,CHINESE_D->chinese_number(t[MDAY]+1)
             ,week_period(t[WDAY])
             ,hour_period(t[HOUR])
@@ -265,7 +265,7 @@ string game_time_description()
 
 string real_time_description()
 {
-        return time_description("¹«Ôª", real_time);
+        return time_description("å…¬å…ƒ", real_time);
 }
 
 int query_game_time()
@@ -340,7 +340,7 @@ void process_crontab(int *timearray, int flag)
                 script = all_items[row]->time;
                 timescript = allocate(6);
 
-                // %s%*(( |\t)+) µÄÒâË¼ÊÇ %s(¿Õ¸ñ or \t Ìø¹ı)½ÓÖø + ¿ÉÒÔÏàÅäÒ»´®Ò»¸öÒÔÉÏ·ûºÏµÄµ¥Ôª
+                // %s%*(( |\t)+) çš„æ„æ€æ˜¯ %s(ç©ºæ ¼ or \t è·³é)æ¥è‘— + å¯ä»¥ç›¸é…ä¸€ä¸²ä¸€å€‹ä»¥ä¸Šç¬¦åˆçš„å–®å…ƒ
                 if( sscanf(script, "%s%*(( |\t)+)%s%*(( |\t)+)%s%*(( |\t)+)%s%*(( |\t)+)%s%*(( |\t)+)%s",
                         timescript[0],
                         timescript[1],
@@ -355,7 +355,7 @@ void process_crontab(int *timearray, int flag)
                         foreach( str in explode(timescript[i], ",") ) {
                                 t = to_int(str);
 
-                                // ²»Í¬µÄmudosµÄundefinedpº¯Êı·µ»ØµÄÖµÓĞÇø±ğ
+                                // ä¸åŒçš„mudosçš„undefinedpå‡½æ•¸è¿”å›çš„å€¼æœ‰å€åˆ¥
                                 if( str == "*" || (sscanf(str, "*/%d", divider) && !(timearray[i]%divider)) ) {
                                         fit = 1;
                                         break;
@@ -390,7 +390,7 @@ void process_crontab(int *timearray, int flag)
         }
 }
 
-// ¶ÀÁ¢³öÀ´Ã¿ÃëÖ´ĞĞº¯Ê½
+// ç¨ç«‹å‡ºä¾†æ¯ç§’åŸ·è¡Œå‡½å¼
 void process_per_second()
 {
 
@@ -402,7 +402,7 @@ int reset_gametime(int time)
         gametime = time;
 }
 
-/* ÓÎÏ·Ê±¼äÃ¿Ò»·ÖÖÓ(¼´Êµ¼ÊÊ±¼äÃ¿2Ãë)Ö´ĞĞÒ»´Î process_gametime */
+/* éŠæˆ²æ™‚é–“æ¯ä¸€åˆ†é˜(å³å¯¦éš›æ™‚é–“æ¯2ç§’)åŸ·è¡Œä¸€æ¬¡ process_gametime */
 void process_gametime()
 {
         game_time = analyse_time(++gametime * 60);
@@ -411,7 +411,7 @@ void process_gametime()
         process_crontab(game_time, 1);
 }
 
-/* ÕæÊµÊ±¼äÃ¿Ò»ÃëÖÓÖ´ĞĞÒ»´Î process_realtime */
+/* çœŸå¯¦æ™‚é–“æ¯ä¸€ç§’é˜åŸ·è¡Œä¸€æ¬¡ process_realtime */
 void process_realtime()
 {
         mixed *local_time = localtime(realtime);
@@ -430,8 +430,8 @@ void process_realtime()
                 process_crontab(real_time, 0);
 }
 
-// Ã¿ 1 ÃëÔËËãÒ»´Î
-// Êµ¼ÊÒ»ÌìµÈÓÚÓÎÏ·Ò»ÔÂ
+// æ¯ 1 ç§’é‹ç®—ä¸€æ¬¡
+// å¯¦éš›ä¸€å¤©ç­‰äºéŠæˆ²ä¸€æœˆ
 
 void heart_beat()
 {
@@ -441,13 +441,13 @@ void heart_beat()
                 process_realtime();
         }
 
-        // Ö´ĞĞ event ´¦Àí
+        // åŸ·è¡Œ event è™•ç†
         if( sizeof(event) )
         foreach( function fevent, int delay_time in event )
                 if( !--event[fevent] )
                         exec_event(fevent);
 
-        // Ã¿ 2 ÃëÏàµ±ÓÚÓÎÏ·Ò»·ÖÖÓ, time Ã¿Ôö¼Ó 1 ´ú±íÓÎÏ·Ò»·ÖÖÓ
+        // æ¯ 2 ç§’ç›¸ç•¶äºéŠæˆ²ä¸€åˆ†é˜, time æ¯å¢åŠ  1 ä»£è¡¨éŠæˆ²ä¸€åˆ†é˜
         //if( !(++tick % 2) )
                 process_gametime();
 }
@@ -455,8 +455,8 @@ void heart_beat()
 void create()
 {
         seteuid(ROOT_UID);
-        set("channel_id", "Ê±¼ä¾«Áé");
-        //write("Ê±¼ä¾«ÁéÒÑ¾­Æô¶¯¡£\n");
+        set("channel_id", "æ™‚é–“ç²¾éˆ");
+        //write("æ™‚é–“ç²¾éˆå·²ç¶“å•Ÿå‹•ã€‚\n");
 
         init_crontab();
         
@@ -614,13 +614,13 @@ void place_boss(string arg)
         }
 
         /*
-        message("vision", HIG "¡¾" HIR "½­ºş" HIG "¡¿" HIR "ÓĞÈË·¢ÏÖ" HIR + ob->short() + HIR "³öÏÖÔÚ" +
+        message("vision", HIG "ã€" HIR "æ±Ÿæ¹–" HIG "ã€‘" HIR "æœ‰äººç™¼ç¾" HIR + ob->short() + HIR "å‡ºç¾åœ¨" +
                 HIW + startroom->short() + HIY "(" + LOOK_CMD->locate(filename) +
-                ")" HIR "Ò»´ø»î¶¯¡£\n" NOR, users());
+                ")" HIR "ä¸€å¸¶æ´»å‹•ã€‚\n" NOR, users());
         */
-        CHANNEL_D->channel_broadcast("mess", "ÓĞÈË·¢ÏÖ" HIR + ob->short() + HIG "³öÏÖÔÚ" +
+        CHANNEL_D->channel_broadcast("mess", "æœ‰äººç™¼ç¾" HIR + ob->short() + HIG "å‡ºç¾åœ¨" +
                 HIW + startroom->short() + HIY "(" + LOOK_CMD->locate(filename) +
-                ")" HIG "Ò»´ø»î¶¯¡£\n" NOR);
+                ")" HIG "ä¸€å¸¶æ´»å‹•ã€‚\n" NOR);
 }
 
 void remove_maze(string name, object room, object maze_door)
@@ -630,12 +630,12 @@ void remove_maze(string name, object room, object maze_door)
         destruct(maze_door);
 
         /*
-        message("vision", HIG"¡¾" HIR"½­ºş" HIG"¡¿" HIW +
-                room->short() + HIW "(" + LOOK_CMD->locate(base_name(room)) + ")Ò»´ø³öÏÖµÄ" +
-                HIR + name + HIR "ÏûÊ§ÁË¡£\n" NOR, users());
+        message("vision", HIG"ã€" HIR"æ±Ÿæ¹–" HIG"ã€‘" HIW +
+                room->short() + HIW "(" + LOOK_CMD->locate(base_name(room)) + ")ä¸€å¸¶å‡ºç¾çš„" +
+                HIR + name + HIR "æ¶ˆå¤±äº†ã€‚\n" NOR, users());
         */
-        CHANNEL_D->channel_broadcast("mess", "ÌıËµ" + room->short() + HIW "(" + LOOK_CMD->locate(base_name(room)) + ")Ò»´ø³öÏÖµÄ" +
-                HIR + name + HIG "ÏûÊ§ÁË¡£\n" NOR);
+        CHANNEL_D->channel_broadcast("mess", "è½èªª" + room->short() + HIW "(" + LOOK_CMD->locate(base_name(room)) + ")ä¸€å¸¶å‡ºç¾çš„" +
+                HIR + name + HIG "æ¶ˆå¤±äº†ã€‚\n" NOR);
 }
 
 int give_money(int count)
@@ -646,7 +646,7 @@ int give_money(int count)
         string *ks;
 
         CHANNEL_D->channel_broadcast("news",  
-                HIG + "ÏµÍ³¿ªÊ¼¸øÃ¿¸öÍæ¼ÒÀ¡ÔùNT£¬±¾´ÎÀ¡ÔùÊıÁ¿Îª"+count+"NT¡­\n" + NOR); 
+                HIG + "ç³»çµ±é–‹å§‹çµ¦æ¯å€‹ç©å®¶é¥‹è´ˆNTï¼Œæœ¬æ¬¡é¥‹è´ˆæ•¸é‡ç‚º"+count+"NTâ€¦\n" + NOR); 
 
         count = to_int(count);
         ips = ([ ]);
@@ -676,6 +676,6 @@ int give_money(int count)
 }
 string query_name()
 {
-        return "Ê±¼äÏµÍ³(TIME_D)";
+        return "æ™‚é–“ç³»çµ±(TIME_D)";
 }
 

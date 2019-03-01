@@ -9,8 +9,8 @@ int main(object me, string arg)
 
         if( query("doing", me) == "scheme" )
         {
-                // Ö´ÐÐ¼Æ»®ÖÐ£¬ÖÕÖ¹
-                write("Äã¾ö¶¨ÖÐÖ¹¼Æ»®¡£\n");
+                // åŸ·è¡Œè¨ˆåŠƒä¸­ï¼Œçµ‚æ­¢
+                write("ä½ æ±ºå®šä¸­æ­¢è¨ˆåŠƒã€‚\n");
                 SCHEME_CMD->cancel_schedule(me);
                 if (! me->is_busy())
                         return 1;
@@ -18,7 +18,7 @@ int main(object me, string arg)
 
         if( query("doing", me) == "trigger" )
         {
-                write("Äã¾ö¶¨ÖÐÖ¹´¥·¢Á·¹¦¡£\n");
+                write("ä½ æ±ºå®šä¸­æ­¢è§¸ç™¼ç·´åŠŸã€‚\n");
                 TRIGGER_CMD->cancel_trigger(me);
                 if (! me->is_busy())
                         return 1;
@@ -32,7 +32,7 @@ int main(object me, string arg)
         if (me->is_fighting())
         {
                 me->remove_all_enemy(0);
-                message_vision("$NÉíÐÐÏòºóÒ»Ô¾£¬Ìø³öÕ½È¦²»´òÁË¡£\n", me); 
+                message_vision("$Nèº«è¡Œå‘å¾Œä¸€èºï¼Œè·³å‡ºæˆ°åœˆä¸æ‰“äº†ã€‚\n", me); 
                 if (objectp(ob = me->query_competitor()) &&
                     ! ob->is_fighting(me))
                 {
@@ -43,9 +43,9 @@ int main(object me, string arg)
         }
         else
         if (me->is_busy())
-                return notify_fail("ÄãÏÖÔÚÍ£²»ÏÂÀ´¡£\n");
+                return notify_fail("ä½ ç¾åœ¨åœä¸ä¸‹ä¾†ã€‚\n");
         else
-                return notify_fail("ÄãÏÖÔÚ²»Ã¦¡£\n");
+                return notify_fail("ä½ ç¾åœ¨ä¸å¿™ã€‚\n");
 
         return 1;
 }
@@ -53,16 +53,16 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : halt
+æŒ‡ä»¤æ ¼å¼ : halt
 
-ÖÐÖ¹ÄãÄ¿Ç°ÕýÔÚ×öµÄÊÂÇé£¬±ÈÈç´ò×ø¡¢ÍÂÄÉ»òÕßÊÇÄ³Ð©¹¤×÷¡£Èç¹û
-ÄãºÍ±ðÈËÕýÔÚ¶¯ÊÖ£¬ÔòÕâÌõÃüÁî»áÈÃÄãÍ£ÊÖ£¬µ±È»Ç°ÌáÊÇ¶Ô·½²¢²»
-ÏëÉ±ËÀÄã£¬·ñÔòÊ¹ÓÃÕâÌõÃüÁîÃ»ÓÐÐ§¹û¡£
+ä¸­æ­¢ä½ ç›®å‰æ­£åœ¨åšçš„äº‹æƒ…ï¼Œæ¯”å¦‚æ‰“åã€åç´æˆ–è€…æ˜¯æŸäº›å·¥ä½œã€‚å¦‚æžœ
+ä½ å’Œåˆ¥äººæ­£åœ¨å‹•æ‰‹ï¼Œå‰‡é€™æ¢å‘½ä»¤æœƒè®“ä½ åœæ‰‹ï¼Œç•¶ç„¶å‰ææ˜¯å°æ–¹ä¸¦ä¸
+æƒ³æ®ºæ­»ä½ ï¼Œå¦å‰‡ä½¿ç”¨é€™æ¢å‘½ä»¤æ²’æœ‰æ•ˆæžœã€‚
 
-Èç¹ûÄãÕýÔÚºÍÈË±ÈÎä»òÊÇ½ÓÊÜÌôÕ½¶øÇÒ²¢²»ÊÇ¼ûÉúËÀ·½Ê½£¬Ôò¸ÃÃü
-Áî¼´×÷ÎªÈÏÊä´¦Àí¡£
+å¦‚æžœä½ æ­£åœ¨å’Œäººæ¯”æ­¦æˆ–æ˜¯æŽ¥å—æŒ‘æˆ°è€Œä¸”ä¸¦ä¸æ˜¯è¦‹ç”Ÿæ­»æ–¹å¼ï¼Œå‰‡è©²å‘½
+ä»¤å³ä½œç‚ºèªè¼¸è™•ç†ã€‚
 
-ÆäËûÏà¹ØÖ¸Áî: accept, fight, hit, scheme
+å…¶ä»–ç›¸é—œæŒ‡ä»¤: accept, fight, hit, scheme
 
 HELP );
         return 1;

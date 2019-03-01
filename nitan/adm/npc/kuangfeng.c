@@ -17,38 +17,38 @@ int check_legal_name(string name, int max_len);
 int check_legal_id(string arg);
 
 string* warcraft_type = ({
-        "ÇàÁú",
-        "°×»¢",
-        "ÖìÈ¸",
-        "ĞşÎä",
-        "÷è÷ë",
+        "é’é¾",
+        "ç™½è™",
+        "æœ±é›€",
+        "ç„æ­¦",
+        "éº’éºŸ",
 });
 
 mapping magic_type = ([ 
-        "ÇàÁú" : "wood",
-        "°×»¢" : "metal",
-        "ÖìÈ¸" : "fire",
-        "ĞşÎä" : "water",
-        "÷è÷ë" : "earth",
+        "é’é¾" : "wood",
+        "ç™½è™" : "metal",
+        "æœ±é›€" : "fire",
+        "ç„æ­¦" : "water",
+        "éº’éºŸ" : "earth",
 ]);
 
 void create()
 {
-        set_name("¿ñ·ç", ({ "kuang feng", "kuang", "feng" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("ç‹‚é¢¨", ({ "kuang feng", "kuang", "feng" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 21);
         set("long",@LONG
-¿ñ·çÀ´×ÔÉñÃØµÄ¾«ÒâÉ½×¯£¬×î½üÍ»È»³öÏÖÔÚÑïÖİ³Ç£¬²¢³öÊÛ
-ÈËÃÇ´ÓÃ»ÓĞ¼û¹ıµÄÄ§»ÃÊŞ£¬´«ËµÕâ¸öÄ§»ÃÊŞ¾ßÓĞÉñÆæµÄ¹¦ÄÜ£¬
-ÄãÈç¹ûÏ²»¶µÄ»°£¬²»·ÁÒ²Ñ¡(choose)Ò»Ö»¡£
+ç‹‚é¢¨ä¾†è‡ªç¥ç§˜çš„ç²¾æ„å±±èŠï¼Œæœ€è¿‘çªç„¶å‡ºç¾åœ¨æšå·åŸï¼Œä¸¦å‡ºå”®
+äººå€‘å¾æ²’æœ‰è¦‹éçš„é­”å¹»ç¸ï¼Œå‚³èªªé€™å€‹é­”å¹»ç¸å…·æœ‰ç¥å¥‡çš„åŠŸèƒ½ï¼Œ
+ä½ å¦‚æœå–œæ­¡çš„è©±ï¼Œä¸å¦¨ä¹Ÿé¸(choose)ä¸€åªã€‚
 LONG );
-        set("title",HIW"Á¶Æ÷Ê¦"NOR);
+        set("title",HIW"ç…‰å™¨å¸«"NOR);
         set("combat_exp", 5000000);
 
         set("inquiry", ([
-                "Ä§»ÃÊŞ"     : "Ö»Òª¸øÎÒÒ»Á½»Æ½ğ£¬Äã¾ÍÄÜÓµÓĞÄ§»ÃÊŞÁË£¡",
-                "ÈçÒâÇ¬À¤´ü" : "¸øÎÒ²ÄÁÏµØ²ØÖ®Ê¯£¬Äã¾Í¿ÉÒÔÓµÓĞÈçÒâÇ¬À¤´üÁË¡£",
-                "Ç¬À¤´ü" : "¸øÎÒ²ÄÁÏµØ²ØÖ®Ê¯£¬Äã¾Í¿ÉÒÔÓµÓĞÈçÒâÇ¬À¤´üÁË¡£",
+                "é­”å¹»ç¸"     : "åªè¦çµ¦æˆ‘ä¸€å…©é»ƒé‡‘ï¼Œä½ å°±èƒ½æ“æœ‰é­”å¹»ç¸äº†ï¼",
+                "å¦‚æ„ä¹¾å¤è¢‹" : "çµ¦æˆ‘ææ–™åœ°è—ä¹‹çŸ³ï¼Œä½ å°±å¯ä»¥æ“æœ‰å¦‚æ„ä¹¾å¤è¢‹äº†ã€‚",
+                "ä¹¾å¤è¢‹" : "çµ¦æˆ‘ææ–™åœ°è—ä¹‹çŸ³ï¼Œä½ å°±å¯ä»¥æ“æœ‰å¦‚æ„ä¹¾å¤è¢‹äº†ã€‚",
         ]));
 
         set_skill("training", 600);
@@ -58,7 +58,7 @@ LONG );
 
         setup();
         carry_object("/clone/cloth/cloth")->wear();
-        create_family("¾«ÒâÉ½×¯", 2, "µÜ×Ó");
+        create_family("ç²¾æ„å±±èŠ", 2, "å¼Ÿå­");
 }
 
 void init()
@@ -77,12 +77,12 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
         switch( random(5) ) {
                 case 0:
-                        say( "¿ñ·çËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-                                + "£¬ÒªÄ§»ÃÊŞÃ´£¿\n");
+                        say( "ç‹‚é¢¨èªªé“ï¼šé€™ä½" + RANK_D->query_respect(ob)
+                                + "ï¼Œè¦é­”å¹»ç¸éº¼ï¼Ÿ\n");
                         break;
                 case 1:
-                        say( "¿ñ·çËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-                                + "£¬Ä§»ÃÊŞ¿ÉÒÔ±£»¤Ö÷ÈËµÄÅ¶¡£\n");
+                        say( "ç‹‚é¢¨èªªé“ï¼šé€™ä½" + RANK_D->query_respect(ob)
+                                + "ï¼Œé­”å¹»ç¸å¯ä»¥ä¿è­·ä¸»äººçš„å“¦ã€‚\n");
                         break;
         }
 }
@@ -94,7 +94,7 @@ int do_choose()
         object me = this_player();
 
         if (me->is_busy())
-                return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É¡£\n");
+                return notify_fail("ä½ ä¸Šä¸€å€‹å‹•ä½œé‚„æ²’æœ‰å®Œæˆã€‚\n");
 
         filename = WARCRAFT_DIR+query("id", me);
         if (file_size(WARCRAFT_DIR+query("id", me)+FILE_EXTENSION) > 0)
@@ -106,21 +106,21 @@ int do_choose()
                 set("warcraft/file", filename, me);
                 set("warcraft/status", "living", me);
                 MYGIFT_D->check_mygift(me, "newbie_mygift/warcraft"); 
-                return notify_fail("ÄãËŞÃüÖĞÒÑ¾­ÓµÓĞ¹ıÄ§»ÃÊŞ£¬ÎÒÒÑ¾­°ïÄã¹µÍ¨ÑªÆõÁË¡£\n");
+                return notify_fail("ä½ å®¿å‘½ä¸­å·²ç¶“æ“æœ‰éé­”å¹»ç¸ï¼Œæˆ‘å·²ç¶“å¹«ä½ æºé€šè¡€å¥‘äº†ã€‚\n");
         }
 
         if (me->query_skill("training", 1) <30)
-                return notify_fail("ÄãµÄÔ¦ÊŞÊõÌ«µÍÁË£¬¼´Ê¹ÑøÁËÄ§»ÃÊŞ£¬Ò²»á±³ÆúÄã¶øÈ¥¡£\n");
+                return notify_fail("ä½ çš„é¦­ç¸è¡“å¤ªä½äº†ï¼Œå³ä½¿é¤Šäº†é­”å¹»ç¸ï¼Œä¹ŸæœƒèƒŒæ£„ä½ è€Œå»ã€‚\n");
 
         if( !query_temp("warcraft/money", me) )
         {
-                command("say ÕâÎ»" + RANK_D->query_respect(me) + "£¬Ã¿Ö»Ä§»ÃÊŞÒ»°ÙÁ½»Æ½ğ£¬Äã±ØĞëÏÈ¸øÇ®£¡");
+                command("say é€™ä½" + RANK_D->query_respect(me) + "ï¼Œæ¯åªé­”å¹»ç¸ä¸€ç™¾å…©é»ƒé‡‘ï¼Œä½ å¿…é ˆå…ˆçµ¦éŒ¢ï¼");
                 return 1;
         }
 
-        write("ÄúÒªÑøÄÄÀàÄ§»ÃÊŞ£º\n");
-        write(" 1. ÇàÁú   2. °×»¢   3. ÖìÈ¸   4. ĞşÎä  5. ÷è÷ë\n");
-        write("ÇëÑ¡ÔñÊı×Ö´úºÅ£º(q ¼üÈ¡Ïû)");
+        write("æ‚¨è¦é¤Šå“ªé¡é­”å¹»ç¸ï¼š\n");
+        write(" 1. é’é¾   2. ç™½è™   3. æœ±é›€   4. ç„æ­¦  5. éº’éºŸ\n");
+        write("è«‹é¸æ“‡æ•¸å­—ä»£è™Ÿï¼š(q éµå–æ¶ˆ)");
 
         input_to( (: get_subtype :), me);
         return 1;
@@ -137,16 +137,16 @@ void get_subtype(string arg, object ob)
 
         if (n <= 0 || n > 5)
         {
-                write("ÄúÒªÑøÄÄÀàÄ§»ÃÊŞ£º\n");
-                write(" 1. ÇàÁú   2. °×»¢   3. ÖìÈ¸   4. ĞşÎä  5. ÷è÷ë\n");
-                write("ÇëÑ¡ÔñÊı×Ö´úºÅ£º(q ¼üÈ¡Ïû)");
+                write("æ‚¨è¦é¤Šå“ªé¡é­”å¹»ç¸ï¼š\n");
+                write(" 1. é’é¾   2. ç™½è™   3. æœ±é›€   4. ç„æ­¦  5. éº’éºŸ\n");
+                write("è«‹é¸æ“‡æ•¸å­—ä»£è™Ÿï¼š(q éµå–æ¶ˆ)");
                 input_to( (: get_subtype :), ob);
                 return;
         }
         set_temp("warcraft/race_type", warcraft_type[n-1], ob);
 
         write("\n");
-        write("ÇëÉè¶¨Ä§»ÃÊŞµÄĞÔ±ğ(ĞÛĞÔ£º1  ´ÆĞÔ£º0)£º");
+        write("è«‹è¨­å®šé­”å¹»ç¸çš„æ€§åˆ¥(é›„æ€§ï¼š1  é›Œæ€§ï¼š0)ï¼š");
         input_to( (: get_gender :), ob );
 }
 
@@ -160,21 +160,21 @@ void get_gender(string arg, object ob)
         if (n != 0 && n != 1)
         {
                 write("\n");
-                write("ÇëÉè¶¨Ä§»ÃÊŞµÄĞÔ±ğ(ĞÛĞÔ£º1  ´ÆĞÔ£º0)£º");
+                write("è«‹è¨­å®šé­”å¹»ç¸çš„æ€§åˆ¥(é›„æ€§ï¼š1  é›Œæ€§ï¼š0)ï¼š");
                 input_to( (: get_gender :), ob );
                 return;
         }
-        set_temp("warcraft/gender", n?"ÄĞĞÔ":"Å®ĞÔ", ob);
+        set_temp("warcraft/gender", n?"ç”·æ€§":"å¥³æ€§", ob);
 
         write("\n");
 
-        write(sort_string(CYN "Äã°´ÕÕ¿ñ·çµÄÖ¸µã¿ªÊ¼·É¿ìµÄÄîµÀ£º¡°ÔÚÌìµÄ¼û"
-                "Ö¤Ö®ÏÂ£¬¼¯ÓÂÆø¡¢ÖÇ»Û¡¢ÓëÃÀÀöÓÚÒ»ÉíµÄÇ¿´óÉúÎï£¬»ÃÊŞÑ½£¡Çë"
-                "ÄãÒÔ×îÉîµÄÁéĞÔ£¬ñöÌıÎÒµÄÇãËß£¬ÎÒ£­"+query("name", ob)+
-                "£­½«ÓëÄãµŞ½áÓÀÉúµÄÑªÖ®ÃËÔ¼£¬ÖÕ´ËÉúÎ©ÓĞÄãÓëÎÒÎªÖÕÉúÖ®ÃËÓÑ"
-                "£¬Æõ¡£¡±\n" NOR, 64));
-        write("ÄãÓëÄ§»ÃÊŞµÄÑªÖ®ÃËÔ¼Ç©¶©Íê±Ï¡£\n");
-        write("ÇëÉè¶¨Ä§»ÃÊŞµÄÓ¢ÎÄ id £º");
+        write(sort_string(CYN "ä½ æŒ‰ç…§ç‹‚é¢¨çš„æŒ‡é»é–‹å§‹é£›å¿«çš„å¿µé“ï¼šâ€œåœ¨å¤©çš„è¦‹"
+                "è¨¼ä¹‹ä¸‹ï¼Œé›†å‹‡æ°£ã€æ™ºæ…§ã€èˆ‡ç¾éº—äºä¸€èº«çš„å¼·å¤§ç”Ÿç‰©ï¼Œå¹»ç¸å‘€ï¼è«‹"
+                "ä½ ä»¥æœ€æ·±çš„éˆæ€§ï¼Œè†è½æˆ‘çš„å‚¾è¨´ï¼Œæˆ‘ï¼"+query("name", ob)+
+                "ï¼å°‡èˆ‡ä½ ç· çµæ°¸ç”Ÿçš„è¡€ä¹‹ç›Ÿç´„ï¼Œçµ‚æ­¤ç”ŸæƒŸæœ‰ä½ èˆ‡æˆ‘ç‚ºçµ‚ç”Ÿä¹‹ç›Ÿå‹"
+                "ï¼Œå¥‘ã€‚â€\n" NOR, 64));
+        write("ä½ èˆ‡é­”å¹»ç¸çš„è¡€ä¹‹ç›Ÿç´„ç°½è¨‚å®Œç•¢ã€‚\n");
+        write("è«‹è¨­å®šé­”å¹»ç¸çš„è‹±æ–‡ id ï¼š");
         input_to( (: get_id :), ob );
 }
 
@@ -186,7 +186,7 @@ void get_id(string arg, object ob)
         {
                 write("\n");
 
-                write("ÇëÉè¶¨Ä§»ÃÊŞµÄÓ¢ÎÄ id £º");
+                write("è«‹è¨­å®šé­”å¹»ç¸çš„è‹±æ–‡ id ï¼š");
                 input_to( (: get_id :), ob );
                 return;
         }
@@ -196,7 +196,7 @@ void get_id(string arg, object ob)
         set_temp("warcraft/id", arg, ob);
 
         write("\n");
-        write("ÇëÉè¶¨Ä§»ÃÊŞµÄÖĞÎÄÃû£º(¿É¼ÓÑÕÉ«help nick)");
+        write("è«‹è¨­å®šé­”å¹»ç¸çš„ä¸­æ–‡åï¼š(å¯åŠ é¡è‰²help nick)");
         input_to( (: get_name :), ob);
 }
 
@@ -215,15 +215,15 @@ void get_name(string arg, object ob)
 
         if (! check_legal_name(arg, 12))
         {
-                write("ÇëÉè¶¨Ä§»ÃÊŞµÄÖĞÎÄÃû£º(¿É¼ÓÑÕÉ«)");
+                write("è«‹è¨­å®šé­”å¹»ç¸çš„ä¸­æ–‡åï¼š(å¯åŠ é¡è‰²)");
                 input_to( (: get_name :), ob);
                 return;
         }
 
         if (stringp(result = NAME_D->invalid_new_name(arg)))
         {
-                write("¶Ô²»Æğ£¬" + result);
-                write(HIR "½ûÖ¹Ê¹ÓÃÓëËûÈËĞÕÃûÏàÍ¬»ò½Ó½üµÄÄ§»ÃÊŞÃû¡£²¢ÒòÑ­RULESÖĞ¶ÔÃû×ÖµÄÏà¹Ø¹æ¶¨¡£"NOR+"\n");
+                write("å°ä¸èµ·ï¼Œ" + result);
+                write(HIR "ç¦æ­¢ä½¿ç”¨èˆ‡ä»–äººå§“åç›¸åŒæˆ–æ¥è¿‘çš„é­”å¹»ç¸åã€‚ä¸¦å› å¾ªRULESä¸­å°åå­—çš„ç›¸é—œè¦å®šã€‚"NOR+"\n");
                 input_to( (: get_name :), ob);
                 return;
         }
@@ -234,7 +234,7 @@ void get_name(string arg, object ob)
         set_temp("warcraft/name", arg, ob);
 
         write("\n");
-        write("ÇëÃèÊöÄ§»ÃÊŞ£º(²»¿É¼ÓÑÕÉ«)");
+        write("è«‹æè¿°é­”å¹»ç¸ï¼š(ä¸å¯åŠ é¡è‰²)");
         input_to( (: get_desc :), ob);
 }
 
@@ -247,7 +247,7 @@ void get_desc(string arg, object ob)
         arg = replace_string(arg, "\\", "");
         if (! check_legal_name(arg, 60))
         {
-                write("ÇëÃèÊöÄ§»ÃÊŞ£º");
+                write("è«‹æè¿°é­”å¹»ç¸ï¼š");
                 input_to( (: get_desc :), ob);
                 return;
         }
@@ -284,8 +284,8 @@ void build_warcraft(object ob)
         file = replace_string(file, "RACE_TYPE", warcraft_type);
         file = replace_string(file, "MAGIC_TYPE", magic_type[warcraft_type]);
         file = replace_string(file, "LONG_DESCRIPTION",
-                            warcraft_desc + "\n" + "ËüÊÇ" +
-                            query("name", ob)+"µÄÄ§»ÃÊŞ¡£\n");
+                            warcraft_desc + "\n" + "å®ƒæ˜¯" +
+                            query("name", ob)+"çš„é­”å¹»ç¸ã€‚\n");
 
         file=replace_string(file,"OWNER_ID",query("id", ob));
         file=replace_string(file,"OWNER_NAME",query("name", ob));
@@ -300,8 +300,8 @@ void build_warcraft(object ob)
         }
 
         assure_file(filename);
-        write_file(filename + ".c", file); // Ğ´ÈëÎÄ¼ş
-        VERSION_D->append_sn(filename + ".c"); // ¸øÎïÆ·Ôö¼ÓÊ¶±ğÂë
+        write_file(filename + ".c", file); // å¯«å…¥æ–‡ä»¶
+        VERSION_D->append_sn(filename + ".c"); // çµ¦ç‰©å“å¢åŠ è­˜åˆ¥ç¢¼
 
         catch(call_other(filename, "???"));
         warcraft = find_object(filename);
@@ -311,7 +311,7 @@ void build_warcraft(object ob)
                 money = new("/clone/money/gold");
                 money->set_amount(100);
                 money->move(ob, 1);
-                message_vision("$NÒ»´ô£¬¶Ô$nµÀ£º±§Ç¸±§Ç¸£¡³öÁËÒ»Ğ©ÎÊÌâ£¡Ç®ÎÒ»¹ÊÇ»¹Äã°É¡£\n",
+                message_vision("$Nä¸€å‘†ï¼Œå°$né“ï¼šæŠ±æ­‰æŠ±æ­‰ï¼å‡ºäº†ä¸€äº›å•é¡Œï¼éŒ¢æˆ‘é‚„æ˜¯é‚„ä½ å§ã€‚\n",
                                this_object(), ob);
                 return;
         }
@@ -332,7 +332,7 @@ void build_warcraft(object ob)
         set("warcraft/status", "living", ob);
         delete_temp("warcraft", ob);
 
-        command("say Äã¿ÉÒÔ´µÉù¿ÚÉÚÕÙ»½ÄãµÄÄ§»ÃÊŞ£¡<whistle " + warcraft_id +">\n");
+        command("say ä½ å¯ä»¥å¹è²å£å“¨å¬å–šä½ çš„é­”å¹»ç¸ï¼<whistle " + warcraft_id +">\n");
 
         MYGIFT_D->check_mygift(ob, "newbie_mygift/warcraft");   
         return;
@@ -349,18 +349,18 @@ int accept_object(object me, object ob)
                 filename=ITEM_DIR+"cruise/"+query("id", me);
                 if (file_size(filename + ".c") > 0)
                 {
-                        message_vision("$NÒ»´ô£¬¶Ô$nµÀ£ºÄãµÄËŞÃüÖĞÒÑ¾­ÓµÓĞ¹ıÈçÒâÇ¬À¤´ü£¡ÎÒ°ïÄã»Ö¸´ÁË¡£\n",
+                        message_vision("$Nä¸€å‘†ï¼Œå°$né“ï¼šä½ çš„å®¿å‘½ä¸­å·²ç¶“æ“æœ‰éå¦‚æ„ä¹¾å¤è¢‹ï¼æˆ‘å¹«ä½ æ¢å¾©äº†ã€‚\n",
                                        this_object(), me);
                         set("can_summon/qiankun", filename, me);
                         return 0;
                 }
 
-                command("say Õâ¿ÉÊÇÖÆ×÷ÈçÒâÇ¬À¤´üµÄÌØÊâ²ÄÁÏ£¬¼ÈÈ»ÄãÎÒÓĞÔµ£¬ÎÒ¾ÍÃâ·Ñ°ïÄãÖÆ×÷Ò»¸ö°É£¡");
+                command("say é€™å¯æ˜¯åˆ¶ä½œå¦‚æ„ä¹¾å¤è¢‹çš„ç‰¹æ®Šææ–™ï¼Œæ—¢ç„¶ä½ æˆ‘æœ‰ç·£ï¼Œæˆ‘å°±å…è²»å¹«ä½ åˆ¶ä½œä¸€å€‹å§ï¼");
                 if (1)
                 {
                         file = read_file(CRUISE_OB);
                         file = replace_string(file, "LONG_DESCRIPTION",
-                                                "ÕâÊÇ" + me->query_idname(1) + "µÄÈçÒâÇ¬À¤´ü¡£\n");
+                                                "é€™æ˜¯" + me->query_idname(1) + "çš„å¦‚æ„ä¹¾å¤è¢‹ã€‚\n");
 
                         // give cruise ob to me
                         filename=ITEM_DIR+"cruise/"+query("id", me);
@@ -386,7 +386,7 @@ int accept_object(object me, object ob)
                                 xob = new("/clone/item/dizangshi");
                                 xob->move(me, 1);
 */
-                                message_vision("$NÒ»´ô£¬¶Ô$nµÀ£º±§Ç¸±§Ç¸£¡³öÁËÒ»Ğ©ÎÊÌâ£¡²ÄÁÏÎÒ»¹ÊÇ»¹Äã°É¡£\n",
+                                message_vision("$Nä¸€å‘†ï¼Œå°$né“ï¼šæŠ±æ­‰æŠ±æ­‰ï¼å‡ºäº†ä¸€äº›å•é¡Œï¼ææ–™æˆ‘é‚„æ˜¯é‚„ä½ å§ã€‚\n",
                                                this_object(), me);
                                 return 0;
                         }
@@ -401,7 +401,7 @@ int accept_object(object me, object ob)
                         cruise_ob->save();
                         set("can_summon/qiankun", filename, me);
                         delete_temp("make_cruise_ob", me);
-                        tell_object(me, HIY "Äã»ñµÃÁËÒ»¸öÈçÒâÇ¬À¤´ü¡£\n" NOR);
+                        tell_object(me, HIY "ä½ ç²å¾—äº†ä¸€å€‹å¦‚æ„ä¹¾å¤è¢‹ã€‚\n" NOR);
                         destruct(ob);
                         return 1;
                 }
@@ -411,22 +411,22 @@ int accept_object(object me, object ob)
         {
                 if (ob->value() < 10000)
                 {
-                        command("say ÕâÎ»¸øµÄÎ´ÃâÉÙÁËµã£¡Ã¿Ö»Ä§»ÃÊŞÒªÒ»Á½»Æ½ğ£¡");
+                        command("say é€™ä½çµ¦çš„æœªå…å°‘äº†é»ï¼æ¯åªé­”å¹»ç¸è¦ä¸€å…©é»ƒé‡‘ï¼");
                         return 0;
                 }
 
                 if (me->query_skill("training", 1) < 30)
                 {
-                        command("say ÄãµÄÔ¦ÊŞÊõ²»¹»£¬¼´Ê¹ÑøÁËÄ§»ÃÊŞ£¬Ò²»áÀëÄã¶øÈ¥£¡");
+                        command("say ä½ çš„é¦­ç¸è¡“ä¸å¤ ï¼Œå³ä½¿é¤Šäº†é­”å¹»ç¸ï¼Œä¹Ÿæœƒé›¢ä½ è€Œå»ï¼");
                         return 0;
                 }
                 else
                 {
                         set_temp("warcraft/money", 1, me);
-                        command("say ºÃÎÒÊÕÏÂÁË£¡");
+                        command("say å¥½æˆ‘æ”¶ä¸‹äº†ï¼");
                         command("say " + me->name() +
-                                     "£¬ÏÖÔÚÎÒÕâÀïÓĞ¸÷ÖÖÄ§»ÃÊŞ£¡");
-                        command("say ÇëÑ¡ÔñÄãÒªµÄÄ§»ÃÊŞ < choose >");
+                                     "ï¼Œç¾åœ¨æˆ‘é€™è£¡æœ‰å„ç¨®é­”å¹»ç¸ï¼");
+                        command("say è«‹é¸æ“‡ä½ è¦çš„é­”å¹»ç¸ < choose >");
                         destruct(ob);
                         return 1;
                 }
@@ -444,7 +444,7 @@ int check_legal_id(string id)
 
         if ((strlen(id) < 3) || (strlen(id) > 20))
         {
-                write("¶Ô²»Æğ£¬Ó¢ÎÄ id ±ØĞëÊÇ 3 µ½ 20 ¸öÓ¢ÎÄ×ÖÄ¸¡£\n");
+                write("å°ä¸èµ·ï¼Œè‹±æ–‡ id å¿…é ˆæ˜¯ 3 åˆ° 20 å€‹è‹±æ–‡å­—æ¯ã€‚\n");
                 return 0;
         }
 
@@ -452,7 +452,7 @@ int check_legal_id(string id)
 
         if (id[i] != ' ' && (id[i] < 'a' || id[i] > 'z'))
         {
-                write("¶Ô²»Æğ£¬Ó¢ÎÄ id Ö»ÄÜÓÃÓ¢ÎÄ×ÖÄ¸¡£\n");
+                write("å°ä¸èµ·ï¼Œè‹±æ–‡ id åªèƒ½ç”¨è‹±æ–‡å­—æ¯ã€‚\n");
                 return 0;
         }
 
@@ -460,14 +460,14 @@ int check_legal_id(string id)
 
         if (ppl || id == "guest" || id == "new")
         {
-                write("Õâ¸öÃû×ÖÓë±ğµÄÍæ¼ÒIDÏàÍ¬ÁË£®£®£®");
+                write("é€™å€‹åå­—èˆ‡åˆ¥çš„ç©å®¶IDç›¸åŒäº†ï¼ï¼ï¼");
                 return 0;
         }
 
         if (file_size(sprintf("/data/user/%c/%s", id[0], id)
                     + __SAVE_EXTENSION__) >= 0)
         {
-                write("Õâ¸öÃû×ÖÒÑ¾­±»±ğµÄÍæ¼ÒÊ¹ÓÃÁË£®£®£®");
+                write("é€™å€‹åå­—å·²ç¶“è¢«åˆ¥çš„ç©å®¶ä½¿ç”¨äº†ï¼ï¼ï¼");
                 return 0;
         }
 
@@ -482,14 +482,14 @@ int check_legal_name(string name, int max_len)
         i = strlen(name);
         if ((strlen(name) < 2) || (strlen(name) > max_len ))
         {
-                write(sprintf("¶Ô²»Æğ£¬Ä§»ÃÊŞÖĞÎÄ×Ö±ØĞëÊÇ 1 µ½ %d ¸öÖĞÎÄ×Ö¡£\n",
+                write(sprintf("å°ä¸èµ·ï¼Œé­”å¹»ç¸ä¸­æ–‡å­—å¿…é ˆæ˜¯ 1 åˆ° %d å€‹ä¸­æ–‡å­—ã€‚\n",
                       max_len / 2));
                 return 0;
         }
 
         if (max_len < 13 && ! is_chinese(name))
         {
-                write("¶Ô²»Æğ£¬ÇëÄúÓÃ¡¸ÖĞÎÄ¡¹Îª³èÎïÈ¡Ãû×Ö»òÃèÊö¡£\n");
+                write("å°ä¸èµ·ï¼Œè«‹æ‚¨ç”¨ã€Œä¸­æ–‡ã€ç‚ºå¯µç‰©å–åå­—æˆ–æè¿°ã€‚\n");
                 return 0;
         }
         return 1;
@@ -497,7 +497,7 @@ int check_legal_name(string name, int max_len)
 
 int attempt_apprentice(object ob)
 {
-        command("say ¹ö£¡¸øÎÒÒ»±ß¶ùÈ¥£¡");
+        command("say æ»¾ï¼çµ¦æˆ‘ä¸€é‚Šå…’å»ï¼");
 }
 
 int recognize_apprentice(object me, string skill)

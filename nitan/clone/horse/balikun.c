@@ -3,8 +3,8 @@ inherit "/clone/horse/horse.c";
 
 void create()
 {
-        set_name(HIC "巴里坤马" NOR, ({ "balikun ma"}));
-        set("long", HIC "巴里坤马是“神马“（胭脂马）的后代，体型矮小，但速度极快。\n" NOR);
+        set_name(HIC "宸磋！鍧らΜ" NOR, ({ "balikun ma"}));
+        set("long", HIC "宸磋！鍧らΜ鏄�滅棣�滐紙鑳剛棣級鐨勫緦浠ｏ紝楂斿瀷鐭皬锛屼絾閫熷害妤靛揩銆俓n" NOR);
 
         set("tili", 2000);
         set("max_tili", 2000);

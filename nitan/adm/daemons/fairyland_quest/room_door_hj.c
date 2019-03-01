@@ -1,9 +1,9 @@
-//                ±ê×¼ÃèÊö³¤¶ÈÊ¾Àı                                   |
-// Íæ¼ÒÓë»Ã¾³Ö®Æô¶¯·¿¼ä Ö®½øÈë¼ä
-// ËùÓĞÊÛÆ±¡¢¼ìÆ±µÈÏà¹Ø¹¤×÷ÔÚ´Ë½øĞĞ£¬·ûºÏÌõ¼şµÄÍæ¼Ò£¬½«¿ÉÒÔ×ªÒÆÖÁÏÂÒ»¸öÍ¨µÀ·¿¼äÄÚ¡£
-// by naihe  2002-11-03  ÓÚÃ¯Ãû
+//                æ¨™æº–æè¿°é•·åº¦ç¤ºä¾‹                                   |
+// ç©å®¶èˆ‡å¹»å¢ƒä¹‹å•Ÿå‹•æˆ¿é–“ ä¹‹é€²å…¥é–“
+// æ‰€æœ‰å”®ç¥¨ã€æª¢ç¥¨ç­‰ç›¸é—œå·¥ä½œåœ¨æ­¤é€²è¡Œï¼Œç¬¦åˆæ¢ä»¶çš„ç©å®¶ï¼Œå°‡å¯ä»¥è½‰ç§»è‡³ä¸‹ä¸€å€‹é€šé“æˆ¿é–“å…§ã€‚
+// by naihe  2002-11-03  äºèŒ‚å
 
-// ÒÑ¾­¸Ä±äÁËĞí¶àĞí¶àĞí¶àÁË¡­¡­
+// å·²ç¶“æ”¹è®Šäº†è¨±å¤šè¨±å¤šè¨±å¤šäº†â€¦â€¦
 // naihe 17:07 03-11-1 
 
 #include <ansi.h>
@@ -11,18 +11,18 @@ inherit ROOM;
 inherit F_SAVE;
 #include "temp/ctime_format_func.h"
 
-// ¸ÃÎÄ¼ş¶¨ÒåÓÎÏ·µØÍ¼´óĞ¡
+// è©²æ–‡ä»¶å®šç¾©éŠæˆ²åœ°åœ–å¤§å°
 #include "npc_obj/hj_settings/room_amount_hj.h"
-// ¸ÃÎÄ¼ş¶¨ÒåÓÎÏ·°æ±¾ºÅ  HJ2003_VERSION
+// è©²æ–‡ä»¶å®šç¾©éŠæˆ²ç‰ˆæœ¬è™Ÿ  HJ2003_VERSION
 #include "npc_obj/hj_settings/game_version.h"
 
 // ##################################
-// ##########  Ò»Ğ©ºê¶¨Òå ###########
+// ##########  ä¸€äº›å®å®šç¾© ###########
 // ##################################
 #define        HJ_DOOR_DATA    "/data/fairyland/door_data"
-// ´¢´æ×ÊÁÏµÄÎÄ¼şÃû
+// å„²å­˜è³‡æ–™çš„æ–‡ä»¶å
 #define        HJ_ROOM_CREATE_D    "/adm/daemons/hj_room_created"
-// ¸ÃÎÄ¼şÓµÓĞ×ã¹»È¨ÏŞ½øĞĞĞ´ÎÄ¼şµÄ²Ù×÷¡£
+// è©²æ–‡ä»¶æ“æœ‰è¶³å¤ æ¬Šé™é€²è¡Œå¯«æ–‡ä»¶çš„æ“ä½œã€‚
 
 #ifndef        HJ_DIR
 #define        HJ_DIR        __DIR__
@@ -30,37 +30,37 @@ inherit F_SAVE;
 
 
 ////////////////////////////////////////////////////
-//// ÒÔÏÂÊıÖµ¿ÉÒÔÖ¸Áî (mewiz) ¸ü¸Ä£¬²¢×Ô¶¯´¢´æ /////
+//// ä»¥ä¸‹æ•¸å€¼å¯ä»¥æŒ‡ä»¤ (mewiz) æ›´æ”¹ï¼Œä¸¦è‡ªå‹•å„²å­˜ /////
 ////////////////////////////////////////////////////
 
 int GAME_OPEN = 1;
-// ±¾ÓÎÏ·ÊÇ·ñ¿ª·Å¡£ 1¿ª·Å£¬0¹Ø±Õ
-// ¹Ø±ÕÊ±£¬ÈÎºÎÈË²»µÃ½øÈë£¨Î×Ê¦½øÈëÁËÒ²ÎŞ·¨ÓÎÏ·£©
-// ¿ÉÒÔÓÃ mewiz Ö¸Áî¸ü¸ÄÖµ£¬ÖØÆô¶¯ºóÒà²»»á»Ö¸´£¡
+// æœ¬éŠæˆ²æ˜¯å¦é–‹æ”¾ã€‚ 1é–‹æ”¾ï¼Œ0é—œé–‰
+// é—œé–‰æ™‚ï¼Œä»»ä½•äººä¸å¾—é€²å…¥ï¼ˆå·«å¸«é€²å…¥äº†ä¹Ÿç„¡æ³•éŠæˆ²ï¼‰
+// å¯ä»¥ç”¨ mewiz æŒ‡ä»¤æ›´æ”¹å€¼ï¼Œé‡å•Ÿå‹•å¾Œäº¦ä¸æœƒæ¢å¾©ï¼
 
 int FREE_GAME = 0;
-// Ãâ·ÑÓÎÏ·£¬ 1 ¿ª·Å£¬0¹Ø±Õ
-// ±¾ÉèÖÃ±ØĞëÔÚ GAME_OPEN Îª¿ª·Å×´Ì¬Ê±²ÅÓĞĞ§¡£
-// ËµÃ÷Í¬ÉÏ
+// å…è²»éŠæˆ²ï¼Œ 1 é–‹æ”¾ï¼Œ0é—œé–‰
+// æœ¬è¨­ç½®å¿…é ˆåœ¨ GAME_OPEN ç‚ºé–‹æ”¾ç‹€æ…‹æ™‚æ‰æœ‰æ•ˆã€‚
+// èªªæ˜åŒä¸Š
 
 int MAX_HJ_ENTER = 10;
-// ×î´ó³¡ÄÚÈËÊı¡£³¬¹ı´ËÈËÊıÊ±£¬Íæ¼Ò²»µÃ¼ÌĞø½øÈëÓÎÏ·¡£
+// æœ€å¤§å ´å…§äººæ•¸ã€‚è¶…éæ­¤äººæ•¸æ™‚ï¼Œç©å®¶ä¸å¾—ç¹¼çºŒé€²å…¥éŠæˆ²ã€‚
 
 int MP_GOLD = 20;
-// ÃÅÆ±¼Û¸ñ£¨»Æ½ğ£©£¬Ê¹ÓÃÇ®×¯×ªÕÊ
+// é–€ç¥¨åƒ¹æ ¼ï¼ˆé»ƒé‡‘ï¼‰ï¼Œä½¿ç”¨éŒ¢èŠè½‰å¸³
 
 int MSG_GOLD = 5;
-// ĞÅÏ¢¼Û¸ñ£¬Ê¹ÓÃÇ®×¯×ªÕÊ
+// ä¿¡æ¯åƒ¹æ ¼ï¼Œä½¿ç”¨éŒ¢èŠè½‰å¸³
 
 ////////////////////////////////////////////////////
 ////////////////////////////////////////////////////
 ////////////////////////////////////////////////////
 
 // ##################################
-// ##########  ¸÷ÀàÍ³¼Æ  ############
+// ##########  å„é¡çµ±è¨ˆ  ############
 // ##################################
 
-// ½øÈëÈË´Î£¬ÊÕÈëÇé¿ö
+// é€²å…¥äººæ¬¡ï¼Œæ”¶å…¥æƒ…æ³
 int in_times, max_in_hj, in_money, buy_piao_times, buy_sm_times, buy_msg_times;
 
 mapping player_level_info = ([ ]);
@@ -79,14 +79,14 @@ string query_save_file()
     return HJ_DOOR_DATA;
 }
 
-// Õâ¸ö·½·¨Ê¹±»·¿¼ä¼ÇÂ¼µÄÊı¾İ²»±»Çå³ı¡£ÖÁÓÚ·Ç±¾·¿¼äËùÊôNPC¡¢ÎïÆ·£¬ÈôÏë²»±»¸üĞÂ£¬ÔòĞèÒªÔÙÆäÉÏÉèÖÃ no_refresh ±ê¼Ç
+// é€™å€‹æ–¹æ³•ä½¿è¢«æˆ¿é–“è¨˜éŒ„çš„æ•¸æ“šä¸è¢«æ¸…é™¤ã€‚è‡³äºéæœ¬æˆ¿é–“æ‰€å±¬NPCã€ç‰©å“ï¼Œè‹¥æƒ³ä¸è¢«æ›´æ–°ï¼Œå‰‡éœ€è¦å†å…¶ä¸Šè¨­ç½® no_refresh æ¨™è¨˜
 void reset()
 {
     ::reset();
     set("no_clean_up", 1);
 }
 
-// ÉèÖÃÕâÀïµÄËæ»úÑÕÉ«µØµãÃû
+// è¨­ç½®é€™è£¡çš„éš¨æ©Ÿé¡è‰²åœ°é»å
 void hjset_short()
 {
     string *color;
@@ -95,7 +95,7 @@ void hjset_short()
 
     color = ({ HIY, HIR, HIB, HIG, HIC, HIW, HIM });
 
-    // Ëæ»úÈ¥µô4¸öÑÕÉ«£¬ÄÇÃ´7¸ö×ÖÏàÍ¬ÑÕÉ«µÄ¸ÅÂÊ¾Í´óÁËºÜ¶àºÜ¶à
+    // éš¨æ©Ÿå»æ‰4å€‹é¡è‰²ï¼Œé‚£éº¼7å€‹å­—ç›¸åŒé¡è‰²çš„æ¦‚ç‡å°±å¤§äº†å¾ˆå¤šå¾ˆå¤š
     if( !random(5) )
     {
         size = 4;
@@ -111,8 +111,8 @@ void hjset_short()
     cl6 = color[ random(size) ];
     cl7 = color[ random(size) ];
 
-    set("color_short_hj",cl1+"Ò£"+cl2+"Ô¶"+cl3+"´«"+cl4+"Ëµ"+cl5+"Ö®"+cl6+"Æğ"+cl7+"Ôµ"NOR);
-    set("short", MAG"»Ã¾³2003 "+HJ2003_VERSION+NOR );
+    set("color_short_hj",cl1+"é™"+cl2+"é "+cl3+"å‚³"+cl4+"èªª"+cl5+"ä¹‹"+cl6+"èµ·"+cl7+"ç·£"NOR);
+    set("short", MAG"å¹»å¢ƒ2003 "+HJ2003_VERSION+NOR );
 
     if( cl1 == cl2 && cl1 == cl3 && cl1 == cl4 && cl1 == cl5 && cl1 == cl6 && cl1 == cl7 )
         set("same_color", 1);
@@ -126,7 +126,7 @@ mapping who_in_hj()
     string msg, *all_ip=({});
 
     msg = "";
-    // °üÀ¨Õı´ı½øÈëµÄÁ½¸öµØµã
+    // åŒ…æ‹¬æ­£å¾…é€²å…¥çš„å…©å€‹åœ°é»
     rooms = find_object( __DIR__"room_master_hj");
     if( rooms )
     {
@@ -165,7 +165,7 @@ mapping who_in_hj()
         }
     }
 
-    // ÃÜÁÖÄÚÍæ¼Ò
+    // å¯†æ—å…§ç©å®¶
     for( i=1;i<=HJ_ROOM_AMOUNT;i++ )
     {
         rooms = find_object( __DIR__"hj_room"+i );
@@ -184,8 +184,8 @@ mapping who_in_hj()
         }
     }
 
-    if( !amount ) msg = "»Ã¾³ÄÚÏÖÔÚÃ»ÓĞÈÎºÎÍæ¼Ò¡£\n";
-    else  msg = "°üÀ¨Õı´ı½øÈëµÄÒÔ¼°»Ã¾³ÃÜÁÖÄÚ£¬ÏÖÔÚ¹²ÓĞ"+chinese_number( amount )+"Î»Íæ¼Ò£º\n" + msg;
+    if( !amount ) msg = "å¹»å¢ƒå…§ç¾åœ¨æ²’æœ‰ä»»ä½•ç©å®¶ã€‚\n";
+    else  msg = "åŒ…æ‹¬æ­£å¾…é€²å…¥çš„ä»¥åŠå¹»å¢ƒå¯†æ—å…§ï¼Œç¾åœ¨å…±æœ‰"+chinese_number( amount )+"ä½ç©å®¶ï¼š\n" + msg;
 
     if( amount > max_in_hj )
     {
@@ -198,56 +198,56 @@ mapping who_in_hj()
 }
 
 
-// ÄÎºÎ°´£ºÃÅ¿ÚµÄĞ§¹ûĞ´ÁË2¸öĞ¡Ê±£¡µ¥µ¥ÊÇÃèÊöµÄ¼¸¾äÎÄ×Ö£¬´óĞ¡µØ·½
-//         ¸ÄÁË8´Î£¬ºÙ¡£
+// å¥ˆä½•æŒ‰ï¼šé–€å£çš„æ•ˆæœå¯«äº†2å€‹å°æ™‚ï¼å–®å–®æ˜¯æè¿°çš„å¹¾å¥æ–‡å­—ï¼Œå¤§å°åœ°æ–¹
+//         æ”¹äº†8æ¬¡ï¼Œå˜¿ã€‚
 void hjset_long()
 {
     mapping temp;
     string temp_str, longs;
 
-    if( !GAME_OPEN ) temp_str = HIR"     (ÓÎÏ·¹Ø±Õ)"NOR;
+    if( !GAME_OPEN ) temp_str = HIR"     (éŠæˆ²é—œé–‰)"NOR;
     else if( FREE_GAME )
-        temp_str = sprintf( HIC"(Ãâ·Ñ¿ª·Å¡¤³¡ÄÚ%2dÈË)"NOR,
+        temp_str = sprintf( HIC"(å…è²»é–‹æ”¾ï¹’å ´å…§%2däºº)"NOR,
                 who_in_hj()["amount"] );
-    else temp_str = sprintf( HIG"(Õı³£¿ª·Å¡¤³¡ÄÚ%2dÈË)"NOR,
+    else temp_str = sprintf( HIG"(æ­£å¸¸é–‹æ”¾ï¹’å ´å…§%2däºº)"NOR,
                 who_in_hj()["amount"] );
 
-    longs= "\n        ¡¡ "HIW"¨q©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤¨r     
-           "NOR+WHT"¨t¨r   "NOR+WHT"»Ã¾³ ¡¤ "+query("color_short_hj")+NOR+WHT" ¡¤ ÓÄÁéÏÔÏÖ"NOR+WHT"   ¨q¨s     
-           "NOR+HIW"¨q¨s            "NOR+WHT"BY naihe 2003.10"NOR+HIW"            ¨t¨r     
-           "NOR+WHT"¨t©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤¨s     "NOR"
+    longs= "\n        ã€€ "HIW"â–¡â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â–¡     
+           "NOR+WHT"â–¡â–¡   "NOR+WHT"å¹»å¢ƒ ï¹’ "+query("color_short_hj")+NOR+WHT" ï¹’ å¹½éˆé¡¯ç¾"NOR+WHT"   â–¡â–¡     
+           "NOR+HIW"â–¡â–¡            "NOR+WHT"BY naihe 2003.10"NOR+HIW"            â–¡â–¡     
+           "NOR+WHT"â–¡â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â–¡     "NOR"
                          "+temp_str+"
 
-    ÄãÌ¤½øÁËÒ»´¦ÓÄ°µµÄËùÔÚ£¬ËÄÖÜËÆÓĞÒşÔ¼¹âÁÁ£¬È´ÓÖÎŞ·¨ÃÙÆäÔ´Í·¡£Ò»¿é
-  ¾Ş´óµÄÄ¾°å(ban)Æ®ºöµØÓÚÄãÉíÇ°²»Ô¶Ö®´¦ÒşÏÖ£¬¾Ş°åÏÂ´ø×ÅÒ»¿éĞ¡Ä¾ÅÆ(pai)¡£
-ÕâÀï±ãÊÇ´«ËµÖĞµÄ¡°»Ã¾³¡±ÓëÏÖÊµÖ®¼äµÄ½Ó¿Ú£¬ÓÉ´Ë¶ø½ø£¬Äã½«ËæÖ®²½ÈëÄÇÉñÃØµÄ
-                          »Ã¾³Ö®µØ£¬²»¸´´æÔÚ¡­¡­
+    ä½ è¸é€²äº†ä¸€è™•å¹½æš—çš„æ‰€åœ¨ï¼Œå››å‘¨ä¼¼æœ‰éš±ç´„å…‰äº®ï¼Œå»åˆç„¡æ³•è¦“å…¶æºé ­ã€‚ä¸€å¡Š
+  å·¨å¤§çš„æœ¨æ¿(ban)é£„å¿½åœ°äºä½ èº«å‰ä¸é ä¹‹è™•éš±ç¾ï¼Œå·¨æ¿ä¸‹å¸¶è‘—ä¸€å¡Šå°æœ¨ç‰Œ(pai)ã€‚
+é€™è£¡ä¾¿æ˜¯å‚³èªªä¸­çš„â€œå¹»å¢ƒâ€èˆ‡ç¾å¯¦ä¹‹é–“çš„æ¥å£ï¼Œç”±æ­¤è€Œé€²ï¼Œä½ å°‡éš¨ä¹‹æ­¥å…¥é‚£ç¥ç§˜çš„
+                          å¹»å¢ƒä¹‹åœ°ï¼Œä¸å¾©å­˜åœ¨â€¦â€¦
 
     ----------------------------------------------------------------\n";
 
-    // ¸ñÊ½
-    //    set("player_msg3", ([ "id": "12345678", "time":"03.10.24", "msg":"À²À²" ]) );
+    // æ ¼å¼
+    //    set("player_msg3", ([ "id": "12345678", "time":"03.10.24", "msg":"å•¦å•¦" ]) );
     if( query("player_msg1") )
     {
         temp = query("player_msg1");
-        longs += sprintf("    ¡¾ %-8s ·¢²¼ÏûÏ¢(%8s):%-32s¡¿\n", 
+        longs += sprintf("    ã€ %-8s ç™¼å¸ƒæ¶ˆæ¯(%8s):%-32sã€‘\n", 
             temp[ "id" ], temp[ "time" ], temp["msg"] );
     }
     if( query("player_msg2") )
     {
         temp = query("player_msg2");
-        longs += sprintf("    ¡¾ %-8s ·¢²¼ÏûÏ¢(%8s):%-32s¡¿\n", 
+        longs += sprintf("    ã€ %-8s ç™¼å¸ƒæ¶ˆæ¯(%8s):%-32sã€‘\n", 
             temp[ "id" ], temp[ "time" ], temp[ "msg" ] );
     }
     if( query("player_msg3") )
     {
         temp = query("player_msg3");
-        longs += sprintf("    ¡¾ %-8s ·¢²¼ÏûÏ¢(%8s):%-32s¡¿\n", 
+        longs += sprintf("    ã€ %-8s ç™¼å¸ƒæ¶ˆæ¯(%8s):%-32sã€‘\n", 
             temp[ "id" ], temp[ "time" ], temp[ "msg" ] );
     }
 
     if( !query("player_msg1") && !query("player_msg2") && !query("player_msg3") )
-        longs += sprintf("             ¡¾ %s ¡¿\n", "ÏÖÔÚÃ»ÓĞÍæ¼Ò·¢²¼ĞÅÏ¢ (Ö¸Áî£ºhjmsg ÄÚÈİ)");
+        longs += sprintf("             ã€ %s ã€‘\n", "ç¾åœ¨æ²’æœ‰ç©å®¶ç™¼å¸ƒä¿¡æ¯ (æŒ‡ä»¤ï¼šhjmsg å…§å®¹)");
 
     set( "long", longs + 
 "    ----------------------------------------------------------------\n" );
@@ -256,17 +256,17 @@ void hjset_long()
 void create()
 {
     restore();
-    // ÔØÈëÀúÊ·Í³¼Æ
+    // è¼‰å…¥æ­·å²çµ±è¨ˆ
     if( !query("begin_time") )
         set("begin_time", time() );
 
     hjset_short();
     hjset_long();
 
-    // ÕâÊÇ¸ö³¤ÆÚ¹«²¼µÄĞÅÏ¢
+    // é€™æ˜¯å€‹é•·æœŸå…¬å¸ƒçš„ä¿¡æ¯
     if( random(3) )
         set("player_msg1", ([ "id": "naihe", "time":"03.10.24",
-            "msg":"×î¼Ñ×ÖÌå£ºËÎÌåĞ¡ËÄ(12)»òĞ¡Îå(10)" ]) );
+            "msg":"æœ€ä½³å­—é«”ï¼šå®‹é«”å°å››(12)æˆ–å°äº”(10)" ]) );
 
     set("no_fight", "1");
     set("no_steal", "1");
@@ -279,12 +279,12 @@ void create()
     ]));
 
     set("exits", ([
-        "down":"/d/city/guangchang",  // ÑïÖİÖĞÑë¹ã³¡Ê¹ÓÃ jump Ö¸Áî½øÈë¡£
+        "down":"/d/city/guangchang",  // æšå·ä¸­å¤®å»£å ´ä½¿ç”¨ jump æŒ‡ä»¤é€²å…¥ã€‚
         "enter":__DIR__"room_master_hj",
         "up":__DIR__"room_cession_hj",
         ]));
 
-// ¸½£º cs ´úÂë£º
+// é™„ï¼š cs ä»£ç¢¼ï¼š
 /*
 void init()
 {
@@ -300,10 +300,10 @@ int do_enter_hj(string arg)
     if( !rooms ) rooms = load_object( "/adm/daemons/huanjing2003/room_door_hj" );
     if( !rooms ) return 0;
 
-    tell_room(environment(me),query("name", me)+"Ê¹¾¢µØÍùÉÏÒ»Ìø£¬Í»È»¾íÀ´Ò»ÕóĞı·ç£¬"+query("name", me)+"¶ÙÊ±±»·ç¹ÎµÃ²»ÖªËù×Ù¡£\n",me);
+    tell_room(environment(me),query("name", me)+"ä½¿å‹åœ°å¾€ä¸Šä¸€è·³ï¼Œçªç„¶å·ä¾†ä¸€é™£æ—‹é¢¨ï¼Œ"+query("name", me)+"é “æ™‚è¢«é¢¨åˆ®å¾—ä¸çŸ¥æ‰€è¹¤ã€‚\n",me);
     me->move(rooms);
-    write("ÄãÊ¹¾¢µØÍùÉÏÒ»Ìø£¬ºöµØÆ½µØ¾íÆğÒ»ÕóĞı·ç£¬»Ğã±ÖĞÄãÒÑÀ´µ½ÁË¡¸»Ã¾³¡¹¡£\n");
-    tell_room(rooms,"ºöÈ»Ò»ÕóĞı·çÏ®¹ı£¬"+query("name", me)+"ÒÑ³öÏÖÔÚÕâÀï¡£\n",me);
+    write("ä½ ä½¿å‹åœ°å¾€ä¸Šä¸€è·³ï¼Œå¿½åœ°å¹³åœ°å·èµ·ä¸€é™£æ—‹é¢¨ï¼Œææƒšä¸­ä½ å·²ä¾†åˆ°äº†ã€Œå¹»å¢ƒã€ã€‚\n");
+    tell_room(rooms,"å¿½ç„¶ä¸€é™£æ—‹é¢¨è¥²éï¼Œ"+query("name", me)+"å·²å‡ºç¾åœ¨é€™è£¡ã€‚\n",me);
     return 1;
 }
 */
@@ -344,11 +344,11 @@ void init()
         set("huanjing2003/welcome_to_hj_time", ctime_format(), me);
     }
 
-    // ÕâÁ½¾äÊÇÉ¾³ıÒÔÇ°µÄ°æ±¾Ê±£¬¸øÍæ¼ÒÌí¼ÓµÄĞÅÏ¢µÄ¡£
+    // é€™å…©å¥æ˜¯åˆªé™¤ä»¥å‰çš„ç‰ˆæœ¬æ™‚ï¼Œçµ¦ç©å®¶æ·»åŠ çš„ä¿¡æ¯çš„ã€‚
     delete("aaaaa_hj_award", me);
     delete("aaaaa_hj_gift", me);
 
-    // É¾³ı·Ç·¨µÄ level ¡£
+    // åˆªé™¤éæ³•çš„ level ã€‚
     if( query("huanjing2003/lv", me) && undefinedp(player_level_info[getuid(me)]) )
     {
         delete("huanjing2003/lv", me);
@@ -367,7 +367,7 @@ void init()
 void xxxxx( object me )
 {
     if( !me ) return;
-    message_vision( "$NÖ»¾õµÃÉíÌå·¢ÉúÁËÒ»Ğ©±ä»¯£¬$NµÄ¡°»Ã¾³¡±µÈ¼¶±»É¾³ıÁË¡­¡­ÇëÁªÏµ»Ã¾³Î×Ê¦¡£\n", me);
+    message_vision( "$Nåªè¦ºå¾—èº«é«”ç™¼ç”Ÿäº†ä¸€äº›è®ŠåŒ–ï¼Œ$Nçš„â€œå¹»å¢ƒâ€ç­‰ç´šè¢«åˆªé™¤äº†â€¦â€¦è«‹è¯ç³»å¹»å¢ƒå·«å¸«ã€‚\n", me);
 }
 
 
@@ -376,12 +376,12 @@ void lucky( object me )
     if(!me || !environment(me) || environment(me) != this_object() ) return;
 
     message_vision("
-$N¸Õ×ß¹ıÀ´£¬Í»È»Ò»Õóºä¶¯Ö®Éù´ó×÷£¬Ö»¼ûÅÔ±ß³å³öÀ´¼¸¸ö¹ÖÄ£¹ÖÑùµÄÈË£¡
-ÆäÖĞÒ»¸öÑùÃ²¹Å¹ÖµÄÅ®×ÓËµ¶Ô×Å$NËµµÀ£º¡°¹§Ï²¹§Ï²£¡»Ã¾³ÕıÔÚ·¢·ÅÌØ±ğ½±Àø£¬ÄãÊÇÕâ´ÎµÄĞÒÔËÕß£¡¡±
-ÁíÍâÒ»¸ö±È½ÏÏñÕı³£ÈËµÄÄĞ×Ó½Ó×ÅËµµÀ£º¡°ÄãÈôÒª½øÈë»Ã¾³µÄ»°£¬½«»ñµÃÌØ±ğµÄ½±Àø£¡¡±
-Ö»¼ûËûÊÖÒ»»ÓËÆµÄ¶¯×÷£¬$N¾õµÃÎ¢Î¢Ò»Õğ£¬¾ÍÏñ±»Ê²Ã´¶«Î÷ÇáÇáÅö×²ÁËÒ»ÏÂÒ»°ã£¡
-Õâ¼¸¸öÈËºöÀ´ºöÈ¥£¬Ëµ»°¼ä¾¹È»¾Í´ËÍËÏÂ£¬ÍùÀïÃæ½øÈ¥ÁË¡£\n\n",me);
-    set("huanjing2003/gift", "ĞÒÔË", me);
+$Nå‰›èµ°éä¾†ï¼Œçªç„¶ä¸€é™£è½Ÿå‹•ä¹‹è²å¤§ä½œï¼Œåªè¦‹æ—é‚Šæ²–å‡ºä¾†å¹¾å€‹æ€ªæ¨¡æ€ªæ¨£çš„äººï¼
+å…¶ä¸­ä¸€å€‹æ¨£è²Œå¤æ€ªçš„å¥³å­èªªå°è‘—$Nèªªé“ï¼šâ€œæ­å–œæ­å–œï¼å¹»å¢ƒæ­£åœ¨ç™¼æ”¾ç‰¹åˆ¥çå‹µï¼Œä½ æ˜¯é€™æ¬¡çš„å¹¸é‹è€…ï¼â€
+å¦å¤–ä¸€å€‹æ¯”è¼ƒåƒæ­£å¸¸äººçš„ç”·å­æ¥è‘—èªªé“ï¼šâ€œä½ è‹¥è¦é€²å…¥å¹»å¢ƒçš„è©±ï¼Œå°‡ç²å¾—ç‰¹åˆ¥çš„çå‹µï¼â€
+åªè¦‹ä»–æ‰‹ä¸€æ®ä¼¼çš„å‹•ä½œï¼Œ$Nè¦ºå¾—å¾®å¾®ä¸€éœ‡ï¼Œå°±åƒè¢«ä»€éº¼æ±è¥¿è¼•è¼•ç¢°æ’äº†ä¸€ä¸‹ä¸€èˆ¬ï¼
+é€™å¹¾å€‹äººå¿½ä¾†å¿½å»ï¼Œèªªè©±é–“ç«Ÿç„¶å°±æ­¤é€€ä¸‹ï¼Œå¾€è£¡é¢é€²å»äº†ã€‚\n\n",me);
+    set("huanjing2003/gift", "å¹¸é‹", me);
     me->save();
 }
 
@@ -394,11 +394,11 @@ int do_look(string arg)
 string look_pai()
 {
     return "#################################################################################
-±¾ÓÎÏ·ĞèÒªÂòÆ±½øÈë£¬³ı·ÇÓÎÏ·Ãâ·Ñ¿ª·Å¡£¼Û¸ñ "+HIR+MP_GOLD+NOR" GOLD£¬Ö¸Áî£º"HIY"(maipiao)"NOR"
-³£Äê·¢ÊÛÓÎÏ·ËµÃ÷ÊÖ²á£¬¼Û¸ñ "HIR"1"NOR" GOLD¡£Ö¸Áî£º "HIY"(goumai shuoming)"NOR"
-Íæ¼Ò¿ÉÒÔ·¢²¼ĞÅÏ¢£¬¼Û¸ñ "+HIR+MSG_GOLD+NOR" GOLD¡£Ö¸Áî£º"HIY"(hjmsg)"NOR"
-Íæ¼Ò¿ÉÒÔ²éÑ¯Ë­ÔÚ»Ã¾³ÓÎÏ·Àï£¬Ö¸Áî£º"HIY"(gwho)"NOR"
-»Ã¾³ÓÎÏ·Ïà¹Ø¹«¸æ¼°×ÊÑ¶£¬Ö¸Áî£º"HIY"(huanjing list)"NOR"
+æœ¬éŠæˆ²éœ€è¦è²·ç¥¨é€²å…¥ï¼Œé™¤ééŠæˆ²å…è²»é–‹æ”¾ã€‚åƒ¹æ ¼ "+HIR+MP_GOLD+NOR" GOLDï¼ŒæŒ‡ä»¤ï¼š"HIY"(maipiao)"NOR"
+å¸¸å¹´ç™¼å”®éŠæˆ²èªªæ˜æ‰‹å†Šï¼Œåƒ¹æ ¼ "HIR"1"NOR" GOLDã€‚æŒ‡ä»¤ï¼š "HIY"(goumai shuoming)"NOR"
+ç©å®¶å¯ä»¥ç™¼å¸ƒä¿¡æ¯ï¼Œåƒ¹æ ¼ "+HIR+MSG_GOLD+NOR" GOLDã€‚æŒ‡ä»¤ï¼š"HIY"(hjmsg)"NOR"
+ç©å®¶å¯ä»¥æŸ¥è©¢èª°åœ¨å¹»å¢ƒéŠæˆ²è£¡ï¼ŒæŒ‡ä»¤ï¼š"HIY"(gwho)"NOR"
+å¹»å¢ƒéŠæˆ²ç›¸é—œå…¬å‘ŠåŠè³‡è¨Šï¼ŒæŒ‡ä»¤ï¼š"HIY"(huanjing list)"NOR"
 #################################################################################\n";
 }
 
@@ -414,33 +414,33 @@ int do_huanjing( string arg )
     string msg;
     int i;
 
-    if( !arg ) return notify_fail("Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄã²é¿´»Ã¾³ÓÎÏ·µÄÒ»Ğ©¹«¸æºÍÆäËûĞÅÏ¢¡£\nÇëÊäÈë (huanjing list) Ö¸Áî²é¿´ÁĞ±í¡£\n");
+    if( !arg ) return notify_fail("é€™å€‹æŒ‡ä»¤å¯ä»¥è®“ä½ æŸ¥çœ‹å¹»å¢ƒéŠæˆ²çš„ä¸€äº›å…¬å‘Šå’Œå…¶ä»–ä¿¡æ¯ã€‚\nè«‹è¼¸å…¥ (huanjing list) æŒ‡ä»¤æŸ¥çœ‹åˆ—è¡¨ã€‚\n");
 
     if( arg == "list" )
     {
         dirs = get_dir( __DIR__"other_info/" );
         if( !dirs || sizeof( dirs ) < 1 )
-            return notify_fail("ÏÖÔÚÃ»ÓĞÈÎºÎ¼ÇÂ¼¡£\n");
-        msg = "============= ÏÂÃæÊÇ»Ã¾³ÓÎÏ·µÄ¹«¸æ¼°ĞÅÏ¢¼ÇÂ¼£º=============\n\n";
+            return notify_fail("ç¾åœ¨æ²’æœ‰ä»»ä½•è¨˜éŒ„ã€‚\n");
+        msg = "============= ä¸‹é¢æ˜¯å¹»å¢ƒéŠæˆ²çš„å…¬å‘ŠåŠä¿¡æ¯è¨˜éŒ„ï¼š=============\n\n";
 
         for( i=0; i<sizeof( dirs ); i++ )
         {
-            msg += sprintf( "¡º»Ã¾³ÓÎÏ·»î¶¯¼ÇÂ¼¡»  --  %s\n",
+            msg += sprintf( "ã€å¹»å¢ƒéŠæˆ²æ´»å‹•è¨˜éŒ„ã€  --  %s\n",
                 replace_string( dirs[i], ".txt", "" ) );
         }
 
-        msg += "\n========== ÇëÒÔÖ¸Áî (huanjing ¼ÇÂ¼Ãû) ²é¿´ÄÚÈİ ===========\n";
+        msg += "\n========== è«‹ä»¥æŒ‡ä»¤ (huanjing è¨˜éŒ„å) æŸ¥çœ‹å…§å®¹ ===========\n";
         this_player()->start_more( msg );
         return 1;
     }
 
     if( file_size( __DIR__"other_info/"+ arg +".txt" ) < 1 )
-        return notify_fail("ÎŞ¸Ã¼ÇÂ¼»ò¸Ã¼ÇÂ¼ÎŞÄÚÈİ¡£\n");
+        return notify_fail("ç„¡è©²è¨˜éŒ„æˆ–è©²è¨˜éŒ„ç„¡å…§å®¹ã€‚\n");
 
     msg = read_file( __DIR__"other_info/"+ arg + ".txt" );
-    if( !msg ) return notify_fail("ÎŞ·¨¶ÁÈ¡¸Ã¼ÇÂ¼ÄÚÈİ¡£\n");
+    if( !msg ) return notify_fail("ç„¡æ³•è®€å–è©²è¨˜éŒ„å…§å®¹ã€‚\n");
 
-    msg = "============== "+arg+ " ÄÚÈİÈ«ÎÄ ==============\n\n"+ msg + "\n\n===================================================\n";
+    msg = "============== "+arg+ " å…§å®¹å…¨æ–‡ ==============\n\n"+ msg + "\n\n===================================================\n";
     this_player()->start_more( msg );
     return 1;
 }
@@ -450,17 +450,17 @@ int do_goumai(string arg)
 {
     object me=this_player(),gold;
 
-    // ÒÑÉ¾³ı´ËÎï¼ş
-    return notify_fail("ÇëÖ±½ÓÊäÈë help hj2003 ²éÑ¯ÓÎÏ·ËµÃ÷¡£\n");
+    // å·²åˆªé™¤æ­¤ç‰©ä»¶
+    return notify_fail("è«‹ç›´æ¥è¼¸å…¥ help hj2003 æŸ¥è©¢éŠæˆ²èªªæ˜ã€‚\n");
 
     if(!arg || arg!="shuoming")
-        return notify_fail("¹ºÂòÓÎÏ·ËµÃ÷ÊÖ²á£¬¼Û¸ñ1 GOLD£¬Ö¸Áî <goumai shuoming> ¡£\n");
+        return notify_fail("è³¼è²·éŠæˆ²èªªæ˜æ‰‹å†Šï¼Œåƒ¹æ ¼1 GOLDï¼ŒæŒ‡ä»¤ <goumai shuoming> ã€‚\n");
 
     gold = present("gold_money",me);
-    if(!gold) return notify_fail("ÄãÉíÉÏÃ»ÓĞ»Æ½ğ¡£\n");
+    if(!gold) return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é»ƒé‡‘ã€‚\n");
     gold->add_amount(-1);
     new(__DIR__"other_obj/obj_shows")->move(me);
-    message_vision("$NÌÍ³öÒ»Á½»Æ½ğ£¬ÂòÏÂÁËÒ»±¾ÓÎÏ·ËµÃ÷ÊÖ²á¡£\n",me);
+    message_vision("$Næå‡ºä¸€å…©é»ƒé‡‘ï¼Œè²·ä¸‹äº†ä¸€æœ¬éŠæˆ²èªªæ˜æ‰‹å†Šã€‚\n",me);
     in_money ++;
     buy_sm_times ++;
     save();
@@ -472,9 +472,9 @@ string look_ban()
     object out_room;
 
     write("
-       ©³©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©·
-       ©§ "WHT"»Ã¾³¡¤"+query("color_short_hj")+NOR+WHT"¡¤ÓÄÁéÏÔÏÖ"NOR" ©§
-       ©»©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¿
+       â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡
+       â–¡ "WHT"å¹»å¢ƒï¹’"+query("color_short_hj")+NOR+WHT"ï¹’å¹½éˆé¡¯ç¾"NOR" â–¡
+       â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡
 ");
 
     out_room = find_object( __DIR__"room_gameover_hj" );
@@ -482,7 +482,7 @@ string look_ban()
     if( out_room ) write( out_room->get_TOP_pic()+"\n"NOR);
 
     if(wizardp(this_player()))
-        write("\nÄãÊÇÎ×Ê¦£¬¿ÉÊ¹ÓÃ <mewiz> Ö¸Áî¡£¾ßÌåÇë²éÑ¯ <mewiz> ¡£");
+        write("\nä½ æ˜¯å·«å¸«ï¼Œå¯ä½¿ç”¨ <mewiz> æŒ‡ä»¤ã€‚å…·é«”è«‹æŸ¥è©¢ <mewiz> ã€‚");
 
     return "\n";
 }
@@ -492,7 +492,7 @@ int do_top(string arg)
     if( !arg || (arg != "hj" && arg != "huanjing") )
         return 0;
 
-    write("´óÄ¾°åÉÏÕıĞ´×Å×î¸ß³É¼¨¼ÇÂ¼ÄØ¡£\n");
+    write("å¤§æœ¨æ¿ä¸Šæ­£å¯«è‘—æœ€é«˜æˆç¸¾è¨˜éŒ„å‘¢ã€‚\n");
     return 1;
 }
 
@@ -501,18 +501,18 @@ int do_msg( string arg )
     object me = this_player();
     string time;
 
-    if( !arg ) return notify_fail("<hjmsg> Ö¸Áî¿ÉÒÔÈÃÄãÔÚ»Ã¾³Èë¿Ú´¦·¢²¼ĞÅÏ¢¡£
-Ã¿´Î·¢²¼ĞÅÏ¢ĞèÒª "HIR+MSG_GOLD+" Á½»Æ½ğ "NOR"£¬ÔÚÇ®×¯×Ô¶¯×ªÕÊ¡£
-ÄãÖ»ÄÜ·¢²¼³¤¶È²»³¬¹ı16¸öºº×ÖµÄĞÅÏ¢¡£
-Äã·¢²¼µÄĞÅÏ¢¿ÉÄÜ»á±»ÏµÍ³ÔÚÈÎºÎÊ±ºòÇåÀí£¬»òÕß±»ÆäËûÈËĞÂ·¢²¼µÄĞÅÏ¢ËùÇåÀí¡£
-Ö¸Áî¸ñÊ½£º msg ÄÚÈİ\n");
+    if( !arg ) return notify_fail("<hjmsg> æŒ‡ä»¤å¯ä»¥è®“ä½ åœ¨å¹»å¢ƒå…¥å£è™•ç™¼å¸ƒä¿¡æ¯ã€‚
+æ¯æ¬¡ç™¼å¸ƒä¿¡æ¯éœ€è¦ "HIR+MSG_GOLD+" å…©é»ƒé‡‘ "NOR"ï¼Œåœ¨éŒ¢èŠè‡ªå‹•è½‰å¸³ã€‚
+ä½ åªèƒ½ç™¼å¸ƒé•·åº¦ä¸è¶…é16å€‹æ¼¢å­—çš„ä¿¡æ¯ã€‚
+ä½ ç™¼å¸ƒçš„ä¿¡æ¯å¯èƒ½æœƒè¢«ç³»çµ±åœ¨ä»»ä½•æ™‚å€™æ¸…ç†ï¼Œæˆ–è€…è¢«å…¶ä»–äººæ–°ç™¼å¸ƒçš„ä¿¡æ¯æ‰€æ¸…ç†ã€‚
+æŒ‡ä»¤æ ¼å¼ï¼š msg å…§å®¹\n");
 
     if( strlen( arg ) > 32 )
-        return notify_fail("ÄãÖ»ÄÜ·¢²¼³¤¶È×î¶àÎª16¸öºº×ÖµÄĞÅÏ¢¡£\n");
+        return notify_fail("ä½ åªèƒ½ç™¼å¸ƒé•·åº¦æœ€å¤šç‚º16å€‹æ¼¢å­—çš„ä¿¡æ¯ã€‚\n");
 
     if( arg == "clean" && wizardp(me) )
     {
-        message_vision("$N°ÑÕıÔÚ·¢²¼µÄĞÅÏ¢¶¼Çå³ıÁË¡£\n",me);
+        message_vision("$NæŠŠæ­£åœ¨ç™¼å¸ƒçš„ä¿¡æ¯éƒ½æ¸…é™¤äº†ã€‚\n",me);
         delete("player_msg1");
         delete("player_msg2");
         delete("player_msg3");
@@ -522,9 +522,9 @@ int do_msg( string arg )
     }
 
     if( query("balance", me)<MSG_GOLD*10000 )
-        return notify_fail("ÄãµÄÇ®×¯´æ¿î²»¹»£¬ÎŞ·¨·¢²¼ĞÅÏ¢¡£\n");
+        return notify_fail("ä½ çš„éŒ¢èŠå­˜æ¬¾ä¸å¤ ï¼Œç„¡æ³•ç™¼å¸ƒä¿¡æ¯ã€‚\n");
 
-    // OK,·¢±í¡£
+    // OK,ç™¼è¡¨ã€‚
 
     addn("balance", -MSG_GOLD*10000, me);
 
@@ -536,7 +536,7 @@ int do_msg( string arg )
     time = ctime_format( "Y.M.D" );
     set("player_msg3",(["id":query("id", me),"time":time,"msg":arg]));
     hjset_long();
-    message_vision("$NÖ§¸¶ÁË"+chinese_number(MSG_GOLD)+"Á½»Æ½ğ£¬·¢²¼ÁËÒ»Ôò¶ÌÏûÏ¢¡£\n",me);
+    message_vision("$Næ”¯ä»˜äº†"+chinese_number(MSG_GOLD)+"å…©é»ƒé‡‘ï¼Œç™¼å¸ƒäº†ä¸€å‰‡çŸ­æ¶ˆæ¯ã€‚\n",me);
 
     in_money += MSG_GOLD;
     buy_msg_times ++;
@@ -555,34 +555,34 @@ int do_mewiz(string arg)
     if(!wizardp(this_player())) return 0;
 
     if(!arg) return notify_fail(
-"¿É²Ù×÷²ÎÊıÈçÏÂ(ÀıÈç <mewiz open 1>£º
-open 1          --> ÓÎÏ·Æô¶¯
-open 0          --> ÓÎÏ·¹Ø±Õ
-free 1          --> ÔÊĞíÃâ·ÑÓÎÏ·
-free 0          --> ¹Ø±ÕÃâ·ÑÓÎÏ·
-mpgold ÊıÁ¿     --> ÃÅÆ±¼Û¸ñ(»Æ½ğ)
-msggold ÊıÁ¿    --> ¹«²¼ĞÅÏ¢¼Û¸ñ(»Æ½ğ)
-maxenter ÊıÁ¿   --> ×î´ó½ø³¡ÈËÊı£¬³¡ÄÚÍæ¼Òµ½´ï´ËÊıÁ¿Ê±£¬²»ÔÙ·ÅÈË½ø³¡
-ts              --> ÁìÈ¡Î×Ê¦×¨ÓÃµÄ »Ã¾³¹¤¾ß
-ck              --> ²éÑ¯µ±Ç°ÓÎÏ·µÄËùÓĞÉèÖÃ×´Ì¬
-cklevel         --> ²éÑ¯ËùÓĞ»Ã¾³Íæ¼ÒµÄ level ×´Ì¬
-dellv ID        --> Çå³ıÄ³Íæ¼ÒÔÚÕâÀïµÄ level ¼ÇÂ¼(²¢²»Çå³ıÆäÊµ¼ÊÓĞĞ§ level)\n");
+"å¯æ“ä½œåƒæ•¸å¦‚ä¸‹(ä¾‹å¦‚ <mewiz open 1>ï¼š
+open 1          --> éŠæˆ²å•Ÿå‹•
+open 0          --> éŠæˆ²é—œé–‰
+free 1          --> å…è¨±å…è²»éŠæˆ²
+free 0          --> é—œé–‰å…è²»éŠæˆ²
+mpgold æ•¸é‡     --> é–€ç¥¨åƒ¹æ ¼(é»ƒé‡‘)
+msggold æ•¸é‡    --> å…¬å¸ƒä¿¡æ¯åƒ¹æ ¼(é»ƒé‡‘)
+maxenter æ•¸é‡   --> æœ€å¤§é€²å ´äººæ•¸ï¼Œå ´å…§ç©å®¶åˆ°é”æ­¤æ•¸é‡æ™‚ï¼Œä¸å†æ”¾äººé€²å ´
+ts              --> é ˜å–å·«å¸«å°ˆç”¨çš„ å¹»å¢ƒå·¥å…·
+ck              --> æŸ¥è©¢ç•¶å‰éŠæˆ²çš„æ‰€æœ‰è¨­ç½®ç‹€æ…‹
+cklevel         --> æŸ¥è©¢æ‰€æœ‰å¹»å¢ƒç©å®¶çš„ level ç‹€æ…‹
+dellv ID        --> æ¸…é™¤æŸç©å®¶åœ¨é€™è£¡çš„ level è¨˜éŒ„(ä¸¦ä¸æ¸…é™¤å…¶å¯¦éš›æœ‰æ•ˆ level)\n");
 
     if( arg == "ts" )
     {
         ts = new( __DIR__"npc_obj/hj_wiztools" );
         ts->move(this_player());
-        write("OK£¬ÒÑÈ¡µÃÒ»¸ö »Ã¾³Î×Ê¦¹¤¾ß¡£\n");
+        write("OKï¼Œå·²å–å¾—ä¸€å€‹ å¹»å¢ƒå·«å¸«å·¥å…·ã€‚\n");
         return 1;
     }
 
     if( arg == "cklevel" )
     {
         if( !player_level_info || !sizeof(player_level_info) )
-            return notify_fail("ÏÖÔÚ»¹Ã»ÓĞÈÎºÎÍæ¼ÒµÄ level ¼ÇÂ¼¡£\n");
+            return notify_fail("ç¾åœ¨é‚„æ²’æœ‰ä»»ä½•ç©å®¶çš„ level è¨˜éŒ„ã€‚\n");
 
         key = keys( player_level_info );
-        msg = "¹²ÓĞ "+sizeof(key)+" ¸ö¼ÇÂ¼¡£ÏêÏ¸×ÊÁÏÈçÏÂ£º\n\n";
+        msg = "å…±æœ‰ "+sizeof(key)+" å€‹è¨˜éŒ„ã€‚è©³ç´°è³‡æ–™å¦‚ä¸‹ï¼š\n\n";
         for( i=0;i<sizeof(key);i++ )
         {
             ppp = player_level_info[ key[i] ];
@@ -591,7 +591,7 @@ dellv ID        --> Çå³ıÄ³Íæ¼ÒÔÚÕâÀïµÄ level ¼ÇÂ¼(²¢²»Çå³ıÆäÊµ¼ÊÓĞĞ§ level)\n");
             msg += sprintf( "%s(%s)  LV %d    (%s)\n",
                 ppp["name"], key[i], ppp["lv"], ctime_format( ppp["time"] ) );
         }
-        msg += "\nÓĞĞ§¼ÇÂ¼¹² "+time+" ¸ö¡£\n";
+        msg += "\næœ‰æ•ˆè¨˜éŒ„å…± "+time+" å€‹ã€‚\n";
         this_player()->start_more( msg );
         return 1;
     }
@@ -599,7 +599,7 @@ dellv ID        --> Çå³ıÄ³Íæ¼ÒÔÚÕâÀïµÄ level ¼ÇÂ¼(²¢²»Çå³ıÆäÊµ¼ÊÓĞĞ§ level)\n");
     if( sscanf( arg, "dellv %s", msg ) )
     {
         if( getuid( this_player() ) != "naihe" )
-            return notify_fail("±¾Ö¸ÁîÖ»ÄÜÓÉÄÎºÎÖ´ĞĞ¡£\n");
+            return notify_fail("æœ¬æŒ‡ä»¤åªèƒ½ç”±å¥ˆä½•åŸ·è¡Œã€‚\n");
         write( del_player_level( msg ) );
         return 1;
     }
@@ -611,21 +611,21 @@ dellv ID        --> Çå³ıÄ³Íæ¼ÒÔÚÕâÀïµÄ level ¼ÇÂ¼(²¢²»Çå³ıÆäÊµ¼ÊÓĞĞ§ level)\n");
 
         msg = sprintf("
 ************************************************************
-%s         ×î´óÈë³¡ÈËÊıÏŞÖÆ£º%d
+%s         æœ€å¤§å…¥å ´äººæ•¸é™åˆ¶ï¼š%d
 %s
-ÏµÍ³Æô¶¯ÓÚ£º%s ¡£
-ÏÖÔÚÊÇ£º    %s ¡£
+ç³»çµ±å•Ÿå‹•äºï¼š%s ã€‚
+ç¾åœ¨æ˜¯ï¼š    %s ã€‚
 
-    "HIY"ÖÁ½ñÒÑ¹ıÁË %d Ìì %d Ğ¡Ê± %d ·ÖÖÓ %d Ãë"NOR"
+    "HIY"è‡³ä»Šå·²éäº† %d å¤© %d å°æ™‚ %d åˆ†é˜ %d ç§’"NOR"
 
-×ÜÈë³¡ÈË´Î(°üÀ¨Î×Ê¦)£º"HIG"%-10d"NOR" ×î´óÍ¬Ê±ÔÚ³¡£º"HIC"%d"NOR"
-    (Æ½¾ùÃ¿ %d Ìì %d Ğ¡Ê± %d ·Ö %d Ãë½ø³¡Ò»ÈË´Î)
-×ÜÊÕÈë£º"HIY"%d"NOR" »Æ½ğ (ÊÛÆ± %d ÕÅ£¬·¢²¼ĞÅÏ¢ %d ´Î£¬ÊÛ³öËµÃ÷ %d ±¾)
-(ÃÅÆ± %d GOLD / ÕÅ£¬ËµÃ÷ 1 GOLD / ±¾£¬·¢²¼ĞÅÏ¢ %d GOLD / ´Î)
+ç¸½å…¥å ´äººæ¬¡(åŒ…æ‹¬å·«å¸«)ï¼š"HIG"%-10d"NOR" æœ€å¤§åŒæ™‚åœ¨å ´ï¼š"HIC"%d"NOR"
+    (å¹³å‡æ¯ %d å¤© %d å°æ™‚ %d åˆ† %d ç§’é€²å ´ä¸€äººæ¬¡)
+ç¸½æ”¶å…¥ï¼š"HIY"%d"NOR" é»ƒé‡‘ (å”®ç¥¨ %d å¼µï¼Œç™¼å¸ƒä¿¡æ¯ %d æ¬¡ï¼Œå”®å‡ºèªªæ˜ %d æœ¬)
+(é–€ç¥¨ %d GOLD / å¼µï¼Œèªªæ˜ 1 GOLD / æœ¬ï¼Œç™¼å¸ƒä¿¡æ¯ %d GOLD / æ¬¡)
 ************************************************************\n",
-            GAME_OPEN ? HIG"Ö÷ÓÎÏ·  -->Æô¶¯ÖĞ"NOR : HIR"Ö÷ÓÎÏ·  -->¹Ø±ÕÖĞ"NOR,
+            GAME_OPEN ? HIG"ä¸»éŠæˆ²  -->å•Ÿå‹•ä¸­"NOR : HIR"ä¸»éŠæˆ²  -->é—œé–‰ä¸­"NOR,
             MAX_HJ_ENTER,
-            FREE_GAME ? HIY"ÏÖÔÚÊÇÃâ·ÑÓÎÏ·¡£"NOR : HIG"ÏÖÔÚÊÇÕı³£ÓÎÏ·£¬·ÇÃâ·Ñ¡£"NOR, 
+            FREE_GAME ? HIY"ç¾åœ¨æ˜¯å…è²»éŠæˆ²ã€‚"NOR : HIG"ç¾åœ¨æ˜¯æ­£å¸¸éŠæˆ²ï¼Œéå…è²»ã€‚"NOR, 
             ctime_format( time ), ctime_format(), 
             temp / 86400, (temp % 86400) / 3600,
             (temp % 86400 % 3600) / 60, temp % 86400 % 3600 % 60,
@@ -642,10 +642,10 @@ dellv ID        --> Çå³ıÄ³Íæ¼ÒÔÚÕâÀïµÄ level ¼ÇÂ¼(²¢²»Çå³ıÆäÊµ¼ÊÓĞĞ§ level)\n");
 
     if( sscanf(arg, "open %d", temp) )
     {
-        if(temp!= 1 && temp!=0) return notify_fail("Ö»ÄÜÉèÖÃ 1 »ò 0 À´¿ªÆô/¹Ø±ÕÓÎÏ·¡£\n");
+        if(temp!= 1 && temp!=0) return notify_fail("åªèƒ½è¨­ç½® 1 æˆ– 0 ä¾†é–‹å•Ÿ/é—œé–‰éŠæˆ²ã€‚\n");
 
         GAME_OPEN = temp;
-        write("ÉèÖÃ³É¹¦¡£ÇëÓÃ <mewiz ck> Ö¸Áî²éÑ¯µ±Ç°×´Ì¬¡£\n");
+        write("è¨­ç½®æˆåŠŸã€‚è«‹ç”¨ <mewiz ck> æŒ‡ä»¤æŸ¥è©¢ç•¶å‰ç‹€æ…‹ã€‚\n");
         hjset_long();
         save();
         return 1;
@@ -653,10 +653,10 @@ dellv ID        --> Çå³ıÄ³Íæ¼ÒÔÚÕâÀïµÄ level ¼ÇÂ¼(²¢²»Çå³ıÆäÊµ¼ÊÓĞĞ§ level)\n");
 
     if( sscanf(arg, "free %d", temp) )
     {
-        if(temp!= 1 && temp!=0) return notify_fail("Ö»ÄÜÉèÖÃ 1 »ò 0 À´¿ªÆô/¹Ø±ÕÃâ·ÑÓÎÏ·¡£\n");
+        if(temp!= 1 && temp!=0) return notify_fail("åªèƒ½è¨­ç½® 1 æˆ– 0 ä¾†é–‹å•Ÿ/é—œé–‰å…è²»éŠæˆ²ã€‚\n");
 
         FREE_GAME = temp;
-        write("ÉèÖÃ³É¹¦¡£ÇëÓÃ <mewiz ck> Ö¸Áî²éÑ¯µ±Ç°×´Ì¬¡£\n");
+        write("è¨­ç½®æˆåŠŸã€‚è«‹ç”¨ <mewiz ck> æŒ‡ä»¤æŸ¥è©¢ç•¶å‰ç‹€æ…‹ã€‚\n");
         hjset_long();
         save();
         return 1;
@@ -664,10 +664,10 @@ dellv ID        --> Çå³ıÄ³Íæ¼ÒÔÚÕâÀïµÄ level ¼ÇÂ¼(²¢²»Çå³ıÆäÊµ¼ÊÓĞĞ§ level)\n");
 
     if( sscanf( arg, "mpgold %d", temp ) )
     {
-        if( temp< 1 || temp > 1000 ) return notify_fail("ÉèÖÃÃÅÆ±¼Û¸ñ£¬·¶Î§ 1-1000 »Æ½ğ¡£\n");
+        if( temp< 1 || temp > 1000 ) return notify_fail("è¨­ç½®é–€ç¥¨åƒ¹æ ¼ï¼ŒèŒƒåœ 1-1000 é»ƒé‡‘ã€‚\n");
 
         MP_GOLD = temp;
-        write("ÉèÖÃ³É¹¦¡£ÇëÓÃ <mewiz ck> Ö¸Áî²éÑ¯µ±Ç°×´Ì¬¡£\n");
+        write("è¨­ç½®æˆåŠŸã€‚è«‹ç”¨ <mewiz ck> æŒ‡ä»¤æŸ¥è©¢ç•¶å‰ç‹€æ…‹ã€‚\n");
         hjset_long();
         save();
         return 1;
@@ -675,10 +675,10 @@ dellv ID        --> Çå³ıÄ³Íæ¼ÒÔÚÕâÀïµÄ level ¼ÇÂ¼(²¢²»Çå³ıÆäÊµ¼ÊÓĞĞ§ level)\n");
 
     if( sscanf( arg, "msggold %d", temp ) )
     {
-        if( temp< 1 || temp > 1000 ) return notify_fail("ÉèÖÃ·¢²¼ĞÅÏ¢¼Û¸ñ£¬·¶Î§ 1-1000 »Æ½ğ¡£\n");
+        if( temp< 1 || temp > 1000 ) return notify_fail("è¨­ç½®ç™¼å¸ƒä¿¡æ¯åƒ¹æ ¼ï¼ŒèŒƒåœ 1-1000 é»ƒé‡‘ã€‚\n");
 
         MSG_GOLD = temp;
-        write("ÉèÖÃ³É¹¦¡£ÇëÓÃ <mewiz ck> Ö¸Áî²éÑ¯µ±Ç°×´Ì¬¡£\n");
+        write("è¨­ç½®æˆåŠŸã€‚è«‹ç”¨ <mewiz ck> æŒ‡ä»¤æŸ¥è©¢ç•¶å‰ç‹€æ…‹ã€‚\n");
         hjset_long();
         save();
         return 1;
@@ -686,16 +686,16 @@ dellv ID        --> Çå³ıÄ³Íæ¼ÒÔÚÕâÀïµÄ level ¼ÇÂ¼(²¢²»Çå³ıÆäÊµ¼ÊÓĞĞ§ level)\n");
 
     if( sscanf( arg, "maxenter %d", temp ) )
     {
-        if( temp< 1 || temp > 100 ) return notify_fail("ÉèÖÃ×î´ó½ø³¡ÈËÊı£¬·¶Î§ 1-100 ¡£\n");
+        if( temp< 1 || temp > 100 ) return notify_fail("è¨­ç½®æœ€å¤§é€²å ´äººæ•¸ï¼ŒèŒƒåœ 1-100 ã€‚\n");
 
         MAX_HJ_ENTER = temp;
-        write("ÉèÖÃ³É¹¦¡£ÇëÓÃ <mewiz ck> Ö¸Áî²éÑ¯µ±Ç°×´Ì¬¡£\n");
+        write("è¨­ç½®æˆåŠŸã€‚è«‹ç”¨ <mewiz ck> æŒ‡ä»¤æŸ¥è©¢ç•¶å‰ç‹€æ…‹ã€‚\n");
         hjset_long();
         save();
         return 1;
     }
 
-    write("¸ñÊ½ÓĞÎó¡£ÇëÖ±½ÓÊäÈë <mewiz> Ö¸Áî²éÑ¯ÕıÈ·ÓÃ·¨¡£\n");
+    write("æ ¼å¼æœ‰èª¤ã€‚è«‹ç›´æ¥è¼¸å…¥ <mewiz> æŒ‡ä»¤æŸ¥è©¢æ­£ç¢ºç”¨æ³•ã€‚\n");
     return 1;
 }
 
@@ -705,12 +705,12 @@ int do_maipiao( )
     object me=this_player(),piao,gold;
 
     if( query("balance", me)<MP_GOLD*10000 )
-        return notify_fail("ÄãµÄÇ®×¯´æ¿î²»×ãÒÔ¹ºÂòÒ»ÕÅÃÅÆ±¡£ÃÅÆ±¼Û¸ñÊÇ "+MP_GOLD+" Á½»Æ½ğ¡£\n");
+        return notify_fail("ä½ çš„éŒ¢èŠå­˜æ¬¾ä¸è¶³ä»¥è³¼è²·ä¸€å¼µé–€ç¥¨ã€‚é–€ç¥¨åƒ¹æ ¼æ˜¯ "+MP_GOLD+" å…©é»ƒé‡‘ã€‚\n");
 
     piao = new(__DIR__"other_obj/obj_menpiao");
     addn("balance", -MP_GOLD*10000, me);
     piao->move(me);
-    message_vision("$NÖ§¸¶ÁË"+chinese_number(MP_GOLD)+"Á½»Æ½ğ£¬ÂòÏÂÁËÒ»ÕÅÃÅÆ±¡£\n",me);
+    message_vision("$Næ”¯ä»˜äº†"+chinese_number(MP_GOLD)+"å…©é»ƒé‡‘ï¼Œè²·ä¸‹äº†ä¸€å¼µé–€ç¥¨ã€‚\n",me);
 
     in_money += MP_GOLD;
     buy_piao_times ++;
@@ -725,20 +725,20 @@ int do_create_room_file()
     int last_num;
 
     if( !wizardp(me) || getuid(me) != "naihe" )
-        return notify_fail("±¾Ö¸ÁîÖ»ÄÜÓÉ ÄÎºÎ Ö´ĞĞ¡£\n");
+        return notify_fail("æœ¬æŒ‡ä»¤åªèƒ½ç”± å¥ˆä½• åŸ·è¡Œã€‚\n");
 
     if( query_temp("hj_create_room", me) != 1 )
     {
         set_temp("hj_create_room", 1, me);
-        return notify_fail("±¾Ö¸Áî½«Ö±½Ó½¨Á¢ .c ÎÄ¼ş£¡Ëü½«½¨Á¢ÎÄ¼şÃûÎª£º\n "+
-__DIR__ + "hj_room1.c  ÖÁ "+ __DIR__ + "hj_room"+ HJ_ROOM_AMOUNT+ ".c 
-¹² "+HJ_ROOM_AMOUNT +" ¸öÎÄ¼ş£¡ÄãÈç¹ûÈ·¶¨£¬ÇëÔÙ´ÎÊäÈë±¾Ö¸Áî¡£\n");
+        return notify_fail("æœ¬æŒ‡ä»¤å°‡ç›´æ¥å»ºç«‹ .c æ–‡ä»¶ï¼å®ƒå°‡å»ºç«‹æ–‡ä»¶åç‚ºï¼š\n "+
+__DIR__ + "hj_room1.c  è‡³ "+ __DIR__ + "hj_room"+ HJ_ROOM_AMOUNT+ ".c 
+å…± "+HJ_ROOM_AMOUNT +" å€‹æ–‡ä»¶ï¼ä½ å¦‚æœç¢ºå®šï¼Œè«‹å†æ¬¡è¼¸å…¥æœ¬æŒ‡ä»¤ã€‚\n");
     }
 
     delete_temp("hj_create_room", me);
 
     if( file_size( HJ_ROOM_CREATE_D +".c" ) < 0 )
-        return notify_fail("ÎŞ·¨ÕÒµ½ "+ HJ_ROOM_CREATE_D+" ÎÄ¼ş¡£\n");
+        return notify_fail("ç„¡æ³•æ‰¾åˆ° "+ HJ_ROOM_CREATE_D+" æ–‡ä»¶ã€‚\n");
 
     last_num = HJ_ROOM_AMOUNT;
     write( HJ_ROOM_CREATE_D->create_room( me, __DIR__, last_num ) );
@@ -754,39 +754,39 @@ int valid_leave(object me, string dir)
     if( dir != "enter" )
         return ::valid_leave(me,dir);
     if( !userp(me) )
-        return notify_fail("ÖíÍ·²»µÃ½øÈë£¡£¡£¡\n");
-    // ÆøËÀÎÒÁË£¬¾ÓÈ»ÓĞÒ»¶ÑNPC×ßÁË½øÈ¥
+        return notify_fail("è±¬é ­ä¸å¾—é€²å…¥ï¼ï¼ï¼\n");
+    // æ°£æ­»æˆ‘äº†ï¼Œå±…ç„¶æœ‰ä¸€å †NPCèµ°äº†é€²å»
     //     if( wizardp(me) ) return ::valid_leave(me,dir);
-    // Î×Ê¦Òà²»ÄÜÃâ·Ñ¡£
-    if(GAME_OPEN != 1) return notify_fail("ÓÎÏ·²¢Î´¿ª·Å¡£\n");
+    // å·«å¸«äº¦ä¸èƒ½å…è²»ã€‚
+    if(GAME_OPEN != 1) return notify_fail("éŠæˆ²ä¸¦æœªé–‹æ”¾ã€‚\n");
     if( query("scheming", me) )
-        return notify_fail("ÕıÔÚÖ´ĞĞÀëÏß¼Æ»®Õß²»µÃÈëÄÚ¡£\n");
+        return notify_fail("æ­£åœ¨åŸ·è¡Œé›¢ç·šè¨ˆåŠƒè€…ä¸å¾—å…¥å…§ã€‚\n");
     if( !interactive(me) )
-        return notify_fail("¶ÏÏßÕß²»µÃÈëÄÚ¡£\n");
-    // ¼ì²âÍæ¼Ò×´Ì¬
+        return notify_fail("æ–·ç·šè€…ä¸å¾—å…¥å…§ã€‚\n");
+    // æª¢æ¸¬ç©å®¶ç‹€æ…‹
     conditions = me->query_all_condition();
     if( conditions && sizeof( conditions ) > 0 )
-        return notify_fail("ÄãÏÖÔÚÉíÌå×´¿ö²»Õı³£»òÄãÉèÖÃ¿ªÆôÁËÃÅÅÉÈÎÎñ£¬Çë¹Ø±ÕÃÅÅÉÈÎÎñ(family_job)»òÉÔºóÔÙÊÔ¡£\n");
-    // ²é¿´³¡ÄÚÇé¿ö
+        return notify_fail("ä½ ç¾åœ¨èº«é«”ç‹€æ³ä¸æ­£å¸¸æˆ–ä½ è¨­ç½®é–‹å•Ÿäº†é–€æ´¾ä»»å‹™ï¼Œè«‹é—œé–‰é–€æ´¾ä»»å‹™(family_job)æˆ–ç¨å¾Œå†è©¦ã€‚\n");
+    // æŸ¥çœ‹å ´å…§æƒ…æ³
     if( who_in_hj()[ "amount" ] >= MAX_HJ_ENTER )
-        return notify_fail("ÏÖÔÚÒÑ¾­ÓĞÌ«¶àÈËÔÚ»Ã¾³ÀïÁË£¬ÇëÉÔºòÔÙ³¢ÊÔ½øÈë¡£\n");
+        return notify_fail("ç¾åœ¨å·²ç¶“æœ‰å¤ªå¤šäººåœ¨å¹»å¢ƒè£¡äº†ï¼Œè«‹ç¨å€™å†å˜—è©¦é€²å…¥ã€‚\n");
     if( query("all_ip_in_hj") && sizeof( query("all_ip_in_hj") )
       && member_array( query_ip_name(me), query("all_ip_in_hj") ) != -1
     )
-        return notify_fail("»Ã¾³ÀïÒÑ¾­ÓĞÓëÄãÍ¬IPµÄÍæ¼ÒÁË£¬Í¬Ò»IPÖ»ÄÜ½øÈëÒ»¸öÍæ¼Ò¡£\n");
+        return notify_fail("å¹»å¢ƒè£¡å·²ç¶“æœ‰èˆ‡ä½ åŒIPçš„ç©å®¶äº†ï¼ŒåŒä¸€IPåªèƒ½é€²å…¥ä¸€å€‹ç©å®¶ã€‚\n");
     if( FREE_GAME == 1 )
     {
         in_times++;
         save();
-        write("ÏÖÔÚÕı½øĞĞÃâ·ÑÓÎÏ·»î¶¯£¬Ğ»Ğ»²ÎÓëÓÎÏ·¡£\n");
+        write("ç¾åœ¨æ­£é€²è¡Œå…è²»éŠæˆ²æ´»å‹•ï¼Œè¬è¬åƒèˆ‡éŠæˆ²ã€‚\n");
     }
     else
     {
         menpiao = present("men piao",me);
         if( !menpiao || !query("hjmenpiao", menpiao) )
-            return notify_fail("ÇëÏÈ¹ºÆ±£¬·½¿ÉÈëÄÚ¡£Çë²é¿´ÅÆ×ÓÉÏµÄËµÃ÷¡£\n");
+            return notify_fail("è«‹å…ˆè³¼ç¥¨ï¼Œæ–¹å¯å…¥å…§ã€‚è«‹æŸ¥çœ‹ç‰Œå­ä¸Šçš„èªªæ˜ã€‚\n");
         destruct(menpiao);
-        message_vision("$NÌÍ³öÒ»ÕÅÃÅÆ±Èû½øÃÅ±ßµÄĞ¡ºĞ×ÓÀï£¬Ëæ¼´ÍùÀï±ß×ßÁË½øÈ¥¡£\n",me);
+        message_vision("$Næå‡ºä¸€å¼µé–€ç¥¨å¡é€²é–€é‚Šçš„å°ç›’å­è£¡ï¼Œéš¨å³å¾€è£¡é‚Šèµ°äº†é€²å»ã€‚\n",me);
         in_times++;
         save();
     }
@@ -805,13 +805,13 @@ void player_timeout(object me)
     if( !query_temp("hj2003-enter_timeout", me) )
     {
         set_temp("hj2003-enter_timeout", 1, me);
-        tell_object( me, HIR"\nÓÎÏ·ÌáÊ¾£ºÇë¾¡¿ì½øÈëÓÎÏ·(xuanze ¹ú¶ÈÃû£¬ÀıÈç xuanze feng)£¬·ñÔò½«±»Ìß³öÓÎÏ·£¡\n\n"NOR );
+        tell_object( me, HIR"\néŠæˆ²æç¤ºï¼šè«‹ç›¡å¿«é€²å…¥éŠæˆ²(xuanze åœ‹åº¦åï¼Œä¾‹å¦‚ xuanze feng)ï¼Œå¦å‰‡å°‡è¢«è¸¢å‡ºéŠæˆ²ï¼\n\n"NOR );
         call_out( "player_timeout", 180, me);
         return;
     }
-    message_vision( "$N´ôÔÚÕâÀïÌ«¾ÃÁË£¬ºöÈ»¸Ğµ½Ò»ÕóÕğµ´£¡\n",me);
+    message_vision( "$Nå‘†åœ¨é€™è£¡å¤ªä¹…äº†ï¼Œå¿½ç„¶æ„Ÿåˆ°ä¸€é™£éœ‡ç›ªï¼\n",me);
     me->move( this_object() );
-    message_vision( "$N±»Ò»ÕóÄªÃûµÄÕğµ´ËÍµ½ÁËÕâÀï¡£\n",me);
+    message_vision( "$Nè¢«ä¸€é™£è«åçš„éœ‡ç›ªé€åˆ°äº†é€™è£¡ã€‚\n",me);
 }
 
 void save_player_level( string name, string id, int lv, int time )
@@ -822,11 +822,11 @@ void save_player_level( string name, string id, int lv, int time )
 
 string del_player_level( string id )
 {
-    if( !id ) return "ÒªÇå³ıÄÄÒ»Î»Íæ¼ÒµÄ level ¼ÇÂ¼£¿\n";
+    if( !id ) return "è¦æ¸…é™¤å“ªä¸€ä½ç©å®¶çš„ level è¨˜éŒ„ï¼Ÿ\n";
     if( undefinedp( player_level_info[id] ) )
-        return "Ã»ÓĞÕâ¸öÍæ¼ÒµÄ level ¼ÇÂ¼¡£\n";
+        return "æ²’æœ‰é€™å€‹ç©å®¶çš„ level è¨˜éŒ„ã€‚\n";
 
     map_delete( player_level_info, id );
     save();
-    return "¸ÃÍæ¼ÒµÄ level ¼ÇÂ¼ÒÑÇå³ı£¬Æä level ¼ÇÂ¼½«ÓÚÏÂ´Î½øÈë±¾µØÊ±±»Çå³ı¡£\n";
+    return "è©²ç©å®¶çš„ level è¨˜éŒ„å·²æ¸…é™¤ï¼Œå…¶ level è¨˜éŒ„å°‡äºä¸‹æ¬¡é€²å…¥æœ¬åœ°æ™‚è¢«æ¸…é™¤ã€‚\n";
 }

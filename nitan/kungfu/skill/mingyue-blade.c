@@ -1,49 +1,49 @@
 // This program is a part of NITAN MudLIB
-// mingyue-blade.c (ÌìÑÄÃ÷ÔÂµ¶)
+// mingyue-blade.c (å¤©æ¶¯æ˜æœˆåˆ€)
 
 #include <ansi.h>;
 inherit SKILL;
 
 mapping *action = ({
-([      "action" : "$NÉíĞÎ³ÁÎÈ£¬ÊÖÖĞ$wÃÍµÄÒ»×ª£¬Ê©Õ¹³öµ¥µ¶µÄµ¶·¨£¬Ò»ÕĞ¡¸¾Ù±­ÑûÃ÷ÔÂ¡¹³¯$nµÄ$l´¦¿³È¥£¡",
+([      "action" : "$Nèº«å½¢æ²‰ç©©ï¼Œæ‰‹ä¸­$wçŒ›çš„ä¸€è½‰ï¼Œæ–½å±•å‡ºå–®åˆ€çš„åˆ€æ³•ï¼Œä¸€æ‹›ã€Œèˆ‰æ¯é‚€æ˜æœˆã€æœ$nçš„$lè™•ç å»ï¼",
         "force"  : 120,
         "attack" : 35,
         "dodge"  : -30,
         "parry"  : -12,
         "lvl"    : 0,
         "damage" : 240,
-        "damage_type" : "¸îÉË",
-        "skill_name"  : "¾Ù±­ÑûÃ÷ÔÂ",
+        "damage_type" : "å‰²å‚·",
+        "skill_name"  : "èˆ‰æ¯é‚€æ˜æœˆ",
 ]),
-([      "action" : "$Nµ¶·æÒ»×ª£¬»®¹ıÒ»µÀÔ²»¡£¬Í»È»ÓÖÓÚÆäÉÏÊ©Õ¹³öÌô¡¢´ÌµÄÕĞÊı£¬ÕıÊÇÒ»ÕĞ¡¸¶ÔÓ°³ÉÈıÈË¡¹£¡",
+([      "action" : "$Nåˆ€é‹’ä¸€è½‰ï¼ŒåŠƒéä¸€é“åœ“å¼§ï¼Œçªç„¶åˆäºå…¶ä¸Šæ–½å±•å‡ºæŒ‘ã€åˆºçš„æ‹›æ•¸ï¼Œæ­£æ˜¯ä¸€æ‹›ã€Œå°å½±æˆä¸‰äººã€ï¼",
         "force"  : 160,
         "attack" : 42,
         "dodge"  : -40,
         "parry"  : -15,
         "lvl"    : 40,
         "damage" : 250,
-        "damage_type" : "¸îÉË",
-        "skill_name"  : "¶ÔÓ°³ÉÈıÈË",
+        "damage_type" : "å‰²å‚·",
+        "skill_name"  : "å°å½±æˆä¸‰äºº",
 ]),
-([      "action" : "$Nµ¶·¨Í»È»ÁèÀ÷£¬×¨×ßÏÕÂ·£¬ºÕÈ»¾¹ÊÇÂíµ¶µÄÂ·Êı£¬Ö»¼ûÒ»ÕĞ¡¸ÌìÑÄ¹²´ËÊ±¡¹³¯$nµÄ$l¿³È¥£¡",
+([      "action" : "$Nåˆ€æ³•çªç„¶å‡Œå²ï¼Œå°ˆèµ°éšªè·¯ï¼Œèµ«ç„¶ç«Ÿæ˜¯é¦¬åˆ€çš„è·¯æ•¸ï¼Œåªè¦‹ä¸€æ‹›ã€Œå¤©æ¶¯å…±æ­¤æ™‚ã€æœ$nçš„$lç å»ï¼",
         "force"  : 185,
         "attack" : 51,
         "dodge"  : -45,
         "parry"  : -17,
         "lvl"    : 60,
         "damage" : 260,
-        "damage_type" : "¸îÉË",
-        "skill_name"  : "ÌìÑÄ¹²´ËÊ±",
+        "damage_type" : "å‰²å‚·",
+        "skill_name"  : "å¤©æ¶¯å…±æ­¤æ™‚",
 ]),
-([      "action" : "$NÌåÄÚµÄÕæÆøÔÚ²»¶Ï±ä»¯£¬²»¶ÏÓÎÒÆ£¬Í»È»Ò»ÕĞ¡¸º£½ÇÈô±ÈÁÚ¡¹Õ¶Ïò$nµÄ$l!",
+([      "action" : "$Né«”å…§çš„çœŸæ°£åœ¨ä¸æ–·è®ŠåŒ–ï¼Œä¸æ–·éŠç§»ï¼Œçªç„¶ä¸€æ‹›ã€Œæµ·è§’è‹¥æ¯”é„°ã€æ–¬å‘$nçš„$l!",
         "force"  : 220,
         "attack" : 55,
         "dodge"  : -55,
         "parry"  : -21,
         "lvl"    : 80,
         "damage" : 270,
-        "damage_type" : "¸îÉË",
-        "skill_name"  : "º£½ÇÈô±ÈÁÚ",
+        "damage_type" : "å‰²å‚·",
+        "skill_name"  : "æµ·è§’è‹¥æ¯”é„°",
 ]),
 });
 
@@ -52,16 +52,16 @@ int valid_enable(string usage){ return usage == "blade" || usage == "parry";}
 int valid_learn(object me)
 {
         if( query("max_neili", me)<2000 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ã€‚\n");
 
         if ((int)me->query_skill("force") < 180)
-                return notify_fail("ÄãµÄÄÚ¹¦»ğºòÌ«Ç³¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸç«å€™å¤ªæ·ºã€‚\n");
 
         if ((int)me->query_skill("blade", 1) < 140)
-                return notify_fail("ÄãµÄ»ù±¾µ¶·¨²»¹»£¬ÄÑÒÔĞŞÁ¶ÌìÑÄÃ÷ÔÂµ¶¡£\n");
+                return notify_fail("ä½ çš„åŸºæœ¬åˆ€æ³•ä¸å¤ ï¼Œé›£ä»¥ä¿®ç…‰å¤©æ¶¯æ˜æœˆåˆ€ã€‚\n");
 
         if ((int)me->query_skill("blade", 1) < (int)me->query_skill("mingyue-blade", 1))
-                return notify_fail("ÄãµÄ»ù±¾µ¶·¨Ë®Æ½ÓĞÏŞ£¬ÎŞ·¨Áì»á¸ü¸ßÉîµÄÌìÑÄÃ÷ÔÂµ¶¡£\n");
+                return notify_fail("ä½ çš„åŸºæœ¬åˆ€æ³•æ°´å¹³æœ‰é™ï¼Œç„¡æ³•é ˜æœƒæ›´é«˜æ·±çš„å¤©æ¶¯æ˜æœˆåˆ€ã€‚\n");
 
         return 1;
 }
@@ -85,12 +85,12 @@ mapping query_action(object me, object weapon)
         {
                 addn("neili", -300, me);
                 return ([
-                        "action": "$NÊ¹³öÒ»ÕĞ" HIM "¡¸ÌìÑÄÃ÷ÔÂÏàË¼Àá¡¹" NOR "£¬$w»ôµØÉä³öº®¹âµãµã£¬ÓÌÈç¶¬Ò¹º®Óê°ãÆÌÌì¸ÇµØÉ¨Ïò$n",
+                        "action": "$Nä½¿å‡ºä¸€æ‹›" HIM "ã€Œå¤©æ¶¯æ˜æœˆç›¸æ€æ·šã€" NOR "ï¼Œ$wéœåœ°å°„å‡ºå¯’å…‰é»é»ï¼ŒçŒ¶å¦‚å†¬å¤œå¯’é›¨èˆ¬èˆ–å¤©è“‹åœ°æƒå‘$n",
                         "damage": 500,
                         "dodge" : -100,
                         "parry" : -150,
                         "attack": 150,
-                        "damage_type": "¸îÉË"
+                        "damage_type": "å‰²å‚·"
                 ]);
         }
         for(i = sizeof(action); i > 0; i--)
@@ -103,13 +103,13 @@ int practice_skill(object me)
         object weapon;
 
         if( !objectp(weapon=query_temp("weapon", me)) || query("skill_type", weapon) != "blade" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ã€‚\n");
 
         if( query("qi", me)<80 )
-                return notify_fail("ÄãµÄÌåÁ¦²»¹»£¬Á·²»ÁËÌìÑÄÃ÷ÔÂµ¶¡£\n");
+                return notify_fail("ä½ çš„é«”åŠ›ä¸å¤ ï¼Œç·´ä¸äº†å¤©æ¶¯æ˜æœˆåˆ€ã€‚\n");
 
         if( query("neili", me)<120 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬Á·²»ÁËÌìÑÄÃ÷ÔÂµ¶¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ï¼Œç·´ä¸äº†å¤©æ¶¯æ˜æœˆåˆ€ã€‚\n");
 
         me->receive_damage("qi", 64);
         addn("neili", -84, me);
@@ -129,8 +129,8 @@ mixed hit_ob(object me, object victim, int damage_bonus)
             victim->is_busy() )
                  return 0;
 
-        message_vision(HIW "\n$N" HIW "ÓÒÊÖ" + weapon->name() + HIW "ÃÍÈ»Ğı×ª£¬µ¶¹âÍ»"
-                       "ÏÖ£¬É²ÄÇ¼äÒÑ½«$n" HIW "±ÆµÄÍËÎŞ¿ÉÍË¡£\n" NOR, me, victim);
+        message_vision(HIW "\n$N" HIW "å³æ‰‹" + weapon->name() + HIW "çŒ›ç„¶æ—‹è½‰ï¼Œåˆ€å…‰çª"
+                       "ç¾ï¼Œå‰é‚£é–“å·²å°‡$n" HIW "é€¼çš„é€€ç„¡å¯é€€ã€‚\n" NOR, me, victim);
         addn("neili", -80, me);
         victim->start_busy(2 + random(lvl / 60));
         return 1;

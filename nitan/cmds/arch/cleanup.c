@@ -10,7 +10,7 @@ int main(object me, string str)
         if (! SECURITY_D->valid_grant(me, "(arch)"))
                 return 0;
 
-        if (! str) return notify_fail("Ö¸Áî¸ñÊ½£ºcleanup <µµÃû>\n"); 
+        if (! str) return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šcleanup <æª”å>\n"); 
 
         str=resolve_path(query("cwd", me),str);
         ob_list = children(str);
@@ -20,17 +20,17 @@ int main(object me, string str)
                 if (ob_list[i] && clonep(ob_list[i]) && ! environment(ob_list[i]))
                         destruct(ob_list[i]);
         ob_list -= ({ 0 });
-        write(sprintf("Çå³ı %d ¸öÎï¼ş¡£\n", old_size - sizeof(ob_list)));
+        write(sprintf("æ¸…é™¤ %d å€‹ç‰©ä»¶ã€‚\n", old_size - sizeof(ob_list)));
         return 1;
 }
 
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½£ºcleanup <µµÃû>
+æŒ‡ä»¤æ ¼å¼ï¼šcleanup <æª”å>
 
-¶ÔËùÓĞÖ¸¶¨µµÃûµÄÎï¼şºô½Ğ clean_up£¬²¢ÇÒÇå³ıËùÓĞ±»¸´ÖÆ³öÀ´µÄ£¬µ«ÊÇÓÖÃ»ÓĞ
-±»·ÅÔÚÁíÒ»¸öÎï¼şÖĞµÄÉ¢Ê§Îï¼ş¡£
+å°æ‰€æœ‰æŒ‡å®šæª”åçš„ç‰©ä»¶å‘¼å« clean_upï¼Œä¸¦ä¸”æ¸…é™¤æ‰€æœ‰è¢«å¾©åˆ¶å‡ºä¾†çš„ï¼Œä½†æ˜¯åˆæ²’æœ‰
+è¢«æ”¾åœ¨å¦ä¸€å€‹ç‰©ä»¶ä¸­çš„æ•£å¤±ç‰©ä»¶ã€‚
 HELP );
         return 1;
 }

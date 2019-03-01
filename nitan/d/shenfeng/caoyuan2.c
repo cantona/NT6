@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��ԭ");
+        set("short", "草原");
         set("long", @LONG
-����һƬ�ޱ��޼ʵĲ�ԭ�����˸ߵ����������������
-�����е��㣬��������֮����ӿ�Ĳ��Σ��Ĵ�Ʈҡ�����뵽��
-���е����Σ�������Ȼ���¡� 
+這是一片無邊無際的草原，半人高的青草隨風而動，正如
+江湖中的你，隨著江湖之中洶湧的波濤，四處飄搖。你想到江
+湖中的無奈，不禁滄然淚下。 
 LONG);
         set("outdoors", "gaochang");
         set("exits", ([

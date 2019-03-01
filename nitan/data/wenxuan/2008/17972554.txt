@@ -1,22 +1,22 @@
-subject : �һ����ӣ������Ҫ�ݻ�ҩʦ
-author_name : �ߴ���ʤ��
+subject : 桃花弟子３０歲後要拜黃藥師
+author_name : 高處不勝寒
 author_id : lonely
 time : 1225815136
-board : ���Բ�
+board : 留言簿
 file : /data/analecta/2008/17972554.txt
 add_time : 1225815159
 content :
-�һ����ӣ������Ҫ�ݻ�ҩʦ����������������⣺
-����ɱ�ڷ�˫ɷ�� �ڷ�˫ɷ�����n��e��s��enter���ڷ�˫ɷautokill���ڷ�˫ɷԼ800K��
-����������磺��Ҫ��������������д�֡����Ŷݼ״��ڣ��������ڻ�ҩʦ�Ƕ�ask huang about ɵ�ã�
-    �õ�һ���ţ��ٳ�ȥ��ɵ��fight�����õ���������Ҫ���ͣͣ����ɵ�ò��ϵ�˵����ø��ˣ�
-    ������ţ����������õ�����Ȼ���������������ȥ���ݾƹ����������Ѷ���������ɱ���ڳ�����
-    ���ˣ�ask qu about ѧ�գ������������ң��Ϳ��԰����ˡ�
-��������½�з����ˣ���ҩʦ�Ƕ�ask huang about ½�з磬�ƻ����һ������ɨҶ���ķ������ķ�
-    ���Զ��������������ķ���½�з磬����������ask lu about ����ɨҶ���ķ��������Զ����㣬
-    ���¾Ϳ��Զ������������ˡ�
-�����ҷ�Ĭ�磺��½�з��Ƕ�ask lu about ��Ĭ�磬Ȼ�����������ȥ��ɽ����������kill feng��
-    �����Ҫɱ������ʱ�򣬷�ͻ����һ����ӣ��������Ծ�����
+桃花弟子３０歲後要拜黃藥師，必須完成下述問題：
+１、殺黑風雙煞： 黑風雙煞在青城n，e，s，enter，黑風雙煞autokill，黑風雙煞約800K。
+２、找曲靈風：需要碧濤玄功、讀書寫字、奇門遁甲大于６０級。在黃藥師那兒ask huang about 傻姑，
+    拿到一封信，再出去和傻姑fight，能拿到長命鎖（要打打停停，讓傻姑不斷的說今天好高興，
+    這樣大概１０分鐘能拿到）。然後帶著著兩樣東西去杭州酒館找曲三，把東西給他，殺掉在場的其
+    他人，ask qu about 學藝，曲會帶你進秘室，就可以拜曲了。
+３、治療陸承風腿傷：黃藥師那兒ask huang about 陸承風，黃會給你一張旋風掃葉腿心法。該心法
+    可以讀到３１級。把心法給陸承風，過幾分鐘再ask lu about 旋風掃葉腿心法，他會自動給你，
+    這下就可以讀到１０１級了。
+４、找馮默風：再陸承風那兒ask lu about 馮默風，然後帶著鐵八卦去華山村馮鐵匠那裡，kill feng，
+    當你快要殺死他的時候，馮就會變成桃花弟子，給他八卦就行了
 
 
 [2;37;0m

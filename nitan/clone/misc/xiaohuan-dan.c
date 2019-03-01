@@ -1,4 +1,4 @@
-// xiaohuan-dan.c Ğ¡»¹µ¤
+// xiaohuan-dan.c å°é‚„ä¸¹
 
 #include <ansi.h>
 
@@ -6,13 +6,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name("Ğ¡»¹µ¤", ({"xiaohuan dan", "xiaohuan", "dan"}));
+        set_name("å°é‚„ä¸¹", ({"xiaohuan dan", "xiaohuan", "dan"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
-                set("long", "ÕâÊÇÒ»¿ÅÓ¨°×ÁïÔ²µÄĞ¡»¹µ¤¡£´Ëµ¤ÄËÉÙÁÖÆæ"
-                            "Ò©£¬Öú³¤ÄÚÁ¦£¬ÁéĞ§ÎŞ±È¡£\n");
+                set("unit", "é¡†");
+                set("long", "é€™æ˜¯ä¸€é¡†ç‘©ç™½æºœåœ“çš„å°é‚„ä¸¹ã€‚æ­¤ä¸¹ä¹ƒå°‘æ—å¥‡"
+                            "è—¥ï¼ŒåŠ©é•·å…§åŠ›ï¼Œéˆæ•ˆç„¡æ¯”ã€‚\n");
                 set("value", 10000);
                 set("only_do_effect", 1);
         }
@@ -23,13 +23,13 @@ void create()
 int do_effect(object me)
 {
         if( query("neili", me) >= query("max_neili", me)*2-200 )
-                return notify_fail("ÄãÏÖÔÚÃ»±ØÒª³ÔĞ¡»¹µ¤¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ²’å¿…è¦åƒå°é‚„ä¸¹ã€‚\n");
 
         me->start_busy(2);
 
         addn("neili", 200, me);
-        message_vision(HIY "$N" HIY "³ÔÏÂÒ»¿ÅĞ¡»¹µ¤£¬Ö»¾õµÃÉíÇáÈçÑà£¬"
-                       "ËÄÖ«°Ùº¡ÕæÆø³äÓ¯ÎŞ±È£¬¼¸Óû±¼ÌÚ¶ø³ö£¡\n" NOR, me);
+        message_vision(HIY "$N" HIY "åƒä¸‹ä¸€é¡†å°é‚„ä¸¹ï¼Œåªè¦ºå¾—èº«è¼•å¦‚ç‡•ï¼Œ"
+                       "å››è‚¢ç™¾éª¸çœŸæ°£å……ç›ˆç„¡æ¯”ï¼Œå¹¾æ¬²å¥”é¨°è€Œå‡ºï¼\n" NOR, me);
 
         destruct(this_object());
         return 1;

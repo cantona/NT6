@@ -3,12 +3,12 @@
 inherit CLOTH;
 void create()
 {
-        set_name(HIW"ÒøÉ«Åû·ç"NOR, ({ "pi feng","cloth" }) );
+        set_name(HIW"éŠ€è‰²æŠ«é¢¨"NOR, ({ "pi feng","cloth" }) );
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼þ");
+                set("unit", "ä»¶");
                 set("material", "cloth");
                 set("value", 1000000);
                 set("armor_prop/armor", 20);

@@ -6,14 +6,14 @@ string ask_me2();
 
 void create()
 {
-        set_name("³ÌÀÏ°å", ({ "cheng laoban", "cheng" }));
-        set("title", "È«¾ÛµÂÀÏ°å");
+        set_name("ç¨‹è€æ¿", ({ "cheng laoban", "cheng" }));
+        set("title", "å…¨èšå¾·è€æ¿");
         set("shen_type", 1);
 
         set("str", 20);
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("age", 65);
-        set("long", "³ÌÀÏ°å¾­Óª×æ´«ÏÂÀ´µÄÈ«¾ÛµÂ¾ÆÂ¥ÒÑÓĞ¶àÄê¡£\n");
+        set("long", "ç¨‹è€æ¿ç¶“ç‡Ÿç¥–å‚³ä¸‹ä¾†çš„å…¨èšå¾·é…’æ¨“å·²æœ‰å¤šå¹´ã€‚\n");
 
         set("combat_exp", 50000);
 

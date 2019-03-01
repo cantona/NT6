@@ -4,13 +4,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(RED "µØ¹¬Í¨ĞĞÁî" NOR, ({ "tongxing ling", "ling" }));
+        set_name(RED "åœ°å®®é€šè¡Œä»¤" NOR, ({ "tongxing ling", "ling" }));
         set_weight(200);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "´ËÎïÆ·ÄËÌ«¼à×Ü¹Ü½»¸ø´óÏÀÑà·ÇµÄ³öÈëÁîÅÆ¡£\n");
+                set("unit", "æŠŠ");
+                set("long", "æ­¤ç‰©å“ä¹ƒå¤ªç›£ç¸½ç®¡äº¤çµ¦å¤§ä¿ ç‡•éçš„å‡ºå…¥ä»¤ç‰Œã€‚\n");
                 set("value", 200);
                 set("maze_item", 1);
         }

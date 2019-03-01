@@ -5,14 +5,14 @@ inherit WAIST;
 
 void create()
 {
-        set_name(HIW "Æ®Ñ©" NOR, ({ "piao xue2", "piao", "xue2" }));
+        set_name(HIW "é£„é›ª" NOR, ({ "piao xue2", "piao", "xue2" }));
         set_weight(10);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ù");
+                set("unit", "æ ¹");
                 set("value", 400000);
-                                set("special/desc", HIW "¶îÍâÌá¸ßÓĞĞ§Çá¹¦30¼¶¡£" NOR);
+                                set("special/desc", HIW "é¡å¤–æé«˜æœ‰æ•ˆè¼•åŠŸ30ç´šã€‚" NOR);
                                 set("armor_prop/dex", 30);
                                 set("armor_prop/str", -7);
                 set("armor_prop/dodge", 30);

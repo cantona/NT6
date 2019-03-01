@@ -1,4 +1,4 @@
-// suquan.c ËÕÜõ
+// suquan.c è˜‡èƒ
 
 #include <ansi.h>
 inherit NPC;
@@ -9,9 +9,9 @@ int do_join(string arg);
 
 void create()
 {
-        set_name("ËÕÜõ", ({ "su-quan", "su" }));
-        set("long", "Ò»¸öÇ§½¿°ÙÃÄ¡¢Ã÷ÑŞ²»¿É·½ÎïµÄÉÙ¸¾¡£\n");
-        set("gender", "Å®ĞÔ");
+        set_name("è˜‡èƒ", ({ "su-quan", "su" }));
+        set("long", "ä¸€å€‹åƒå¬Œç™¾åªšã€æ˜è‰·ä¸å¯æ–¹ç‰©çš„å°‘å©¦ã€‚\n");
+        set("gender", "å¥³æ€§");
         set("age", 25);
         set("attitude", "friendly");
         set("shen_type", -1);
@@ -49,10 +49,10 @@ void create()
         map_skill("sword", "meiren-sanzhao");
         prepare_skill("strike", "huagu-mianzhang");
         prepare_skill("leg", "jueming-leg");
-        set("party/party_name", HIY"ÉñÁú½Ì"NOR);
-        set("party/rank", HIR"½ÌÖ÷·òÈË"NOR );
+        set("party/party_name", HIY"ç¥é¾æ•™"NOR);
+        set("party/rank", HIR"æ•™ä¸»å¤«äºº"NOR );
         set("party/level", 3);
-        create_family("ÉñÁú½Ì", 2, "µÜ×Ó");
+        create_family("ç¥é¾æ•™", 2, "å¼Ÿå­");
 
         setup();
         carry_object(WEAPON_DIR"sword/duanjian")->wield();
@@ -78,7 +78,7 @@ void greeting(object ob)
         int i;
 
         obj = all_inventory(environment(me));
-        command("say ºá½£´¿ÎªÊØÊÆ£¬Ï¥Ç°Ï¥Ç°¸ü²»¿É½â¡£");
+        command("say æ©«åŠç´”ç‚ºå®ˆå‹¢ï¼Œè†å‰è†å‰æ›´ä¸å¯è§£ã€‚");
         for(i=0; i<sizeof(obj); i++)
         {
                 if( query("id", obj[i]) == "hong-antong" )

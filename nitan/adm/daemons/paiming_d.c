@@ -2,18 +2,18 @@
 // by Find.
 
 /*********************************************
- * Ã¿ÈÕÁè³¿Èıµã×Ô¶¯Ë¢ĞÂ,´ËÊ±»úÆ÷¸ºµ£Ó¦¸ÃºÜÇá.
- * ´Ë³ÌĞòÔËĞĞµÄ¸ºµ£Ó¦¸ÃºÜÇá,ÈçÒªÔÙ¼õµÍ¸ºµ£¿É½«
- * USER_PER_CALL µÄÊı×Ö¼õĞ¡,µ«»áÔö¼Ó´Ë³ÌĞòµÄÔË
- * ĞĞÊ±¼ä.Èç¸Ğ¾õÃ»Ê²Ã´¸ºµ£ÏëÌáÉıÖ´ĞĞËÙ¶È,¿ÉÊÊµ±
- * ½«Õâ¸öÊı×ÖÔö¼Ó.
+ * æ¯æ—¥å‡Œæ™¨ä¸‰é»è‡ªå‹•åˆ·æ–°,æ­¤æ™‚æ©Ÿå™¨è² æ“”æ‡‰è©²å¾ˆè¼•.
+ * æ­¤ç¨‹åºé‹è¡Œçš„è² æ“”æ‡‰è©²å¾ˆè¼•,å¦‚è¦å†æ¸›ä½è² æ“”å¯å°‡
+ * USER_PER_CALL çš„æ•¸å­—æ¸›å°,ä½†æœƒå¢åŠ æ­¤ç¨‹åºçš„é‹
+ * è¡Œæ™‚é–“.å¦‚æ„Ÿè¦ºæ²’ä»€éº¼è² æ“”æƒ³æå‡åŸ·è¡Œé€Ÿåº¦,å¯é©ç•¶
+ * å°‡é€™å€‹æ•¸å­—å¢åŠ .
  *********************************************/
 
 #pragma optimize
 
 #define MIN_FORCE	1000
 #define MIN_GOLD	100
-#define MIN_EXP		100000	// ²Î¼ÓÅÅÃûµÄ×îµÍÒªÇó¾­ÑéÖµ.
+#define MIN_EXP		100000	// åƒåŠ æ’åçš„æœ€ä½è¦æ±‚ç¶“é©—å€¼.
 #define USER_PER_CALL	10
 #define YIJIA_ROOM	"/d/changan/ly-ge3"
 #define ERJIA_ROOM	"/d/changan/ly-ge2"
@@ -237,7 +237,7 @@ protected void update_top_room()
 	refresh_room(YIJIA_ROOM);
 	refresh_room(ERJIA_ROOM);
 
-	log_file("paiming",sprintf("½­ºşÅÅÃû½á¹û:\n%O\n", top_exp));
+	log_file("paiming",sprintf("æ±Ÿæ¹–æ’åçµæœ:\n%O\n", top_exp));
 
 	news = make_news();
 	NEWS_D->add_news_item( news , "p", 1);
@@ -311,20 +311,20 @@ protected string make_msg(class player_data *big_players, string name)
 	if(len%2)
 		len++;
 
-	head = sprintf(HIY"\n%|"+(string)len+"s\n%|"+(string)len+"s\n¨X",sprintf("¡¼ ÌìÏÂ%s°ñ ¡½",name),"¨‘¨‘¨‘¨‘¨‘¨‘¨‘¨‘¨‘¨‘¨‘¨‘¨‘");
+	head = sprintf(HIY"\n%|"+(string)len+"s\n%|"+(string)len+"s\nâ–¡",sprintf("â–¡ å¤©ä¸‹%sæ¦œ â–¡",name),"â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡");
 
-	bk = repeat_string("¨T", len/2);
-	head += sprintf("%s¨[\n",bk);
-	end =  sprintf("¨^%s¨a%s\n",bk,NOR);
+	bk = repeat_string("â–¡", len/2);
+	head += sprintf("%sâ–¡\n",bk);
+	end =  sprintf("â–¡%sâ–¡%s\n",bk,NOR);
 
 	for(i=0;i<n;i++)
 	{
-		content += sprintf("¨U%|"+(string)len+"s¨U\n",sprintf("%s %s(%s)",
+		content += sprintf("â–¡%|"+(string)len+"sâ–¡\n",sprintf("%s %s(%s)",
 			big_players[i]->title, big_players[i]->name, capitalize(big_players[i]->id) ));
 		if(i == (n-1))
 			content += end;
 		else
-			content += sprintf("¨d%s¨g\n",bk);
+			content += sprintf("â–¡%sâ–¡\n",bk);
 	}
 
 	return (head + content);
@@ -334,7 +334,7 @@ protected void make_renyi_bang()
 {
 	mixed *bang;
 	string bang_file, out = HIY"
-                ¡¶ÈÊÒåÉ½×¯¡·ĞüÉÍ°ñ\n\n";
+                ã€Šä»ç¾©å±±èŠã€‹æ‡¸è³æ¦œ\n\n";
 
 	bang = DATABASE_D->db_query_bang_top_ten();
 
@@ -342,9 +342,9 @@ protected void make_renyi_bang()
 
 	if(sizeof(bang))
 		foreach(mixed *tmp in bang)
-			out += sprintf("ĞüÉÍ×·É±£º%s(%s)
-    %-22s  µ±Ç°ÉÍ½ğ£º%d Á½»Æ½ğ\n\n", tmp[1], tmp[0],
-		sizeof(tmp[2])?sprintf("ÔøÔÚ%sÑ§ÒÕ",tmp[2]):"Ê¦³ĞÃÅÅÉÎ´ÄÜ²éÇå",tmp[3]);
+			out += sprintf("æ‡¸è³è¿½æ®ºï¼š%s(%s)
+    %-22s  ç•¶å‰è³é‡‘ï¼š%d å…©é»ƒé‡‘\n\n", tmp[1], tmp[0],
+		sizeof(tmp[2])?sprintf("æ›¾åœ¨%så­¸è—",tmp[2]):"å¸«æ‰¿é–€æ´¾æœªèƒ½æŸ¥æ¸…",tmp[3]);
 
 	out += (string)NOR;
 
@@ -355,13 +355,13 @@ protected string make_news()
 {
 	string out;
 
-	out = make_msg(top_rich, "²Æ¸»");
+	out = make_msg(top_rich, "è²¡å¯Œ");
 	write_file(MISC_DIR"top_rich",out,1);
 
-	out = make_msg(top_force, "ÄÚ¹¦");
+	out = make_msg(top_force, "å…§åŠŸ");
 	write_file(MISC_DIR"top_force",out,1);
 
-	out = make_msg(top_exp, "½ğ");
+	out = make_msg(top_exp, "é‡‘");
 	write_file(MISC_DIR"top_exp",out,1);
 
 	write_file("/paiming", implode(explode(clr_ansi(out),"\n")-({""}),"<br>"), 1);
@@ -387,7 +387,7 @@ int query_player_data(int num, string ref name, string ref id, string ref title
 	return 1;
 }
 
-// ÏÈÕâÑù´ÕºÏ×Å
+// å…ˆé€™æ¨£æ¹Šåˆè‘—
 protected int sort_top_rich(class player_data t1, class player_data t2)
 {
 	if(t1->gold > t2->gold)

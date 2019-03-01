@@ -1,4 +1,4 @@
-// group_quest:party1 Èº×éÈÎÎñ¡ª¡ª°ïÅÉÌôĞÆ
+// group_quest:party1 ç¾¤çµ„ä»»å‹™â”€â”€å¹«æ´¾æŒ‘èˆ‹
 
 #include <ansi.h>
 #include "party.h"
@@ -14,8 +14,8 @@ void create()
         }
 }
 
-//string prompt() { return HIR "¡¾°ïÅÉÌôĞÆ¡¿" NOR; }
-string prompt() { return HIR "¡¾°ïÅÉ¡¿" NOR; }
+//string prompt() { return HIR "ã€å¹«æ´¾æŒ‘èˆ‹ã€‘" NOR; }
+string prompt() { return HIR "ã€å¹«æ´¾ã€‘" NOR; }
 
 int select_quest()
 {
@@ -64,7 +64,7 @@ int select_quest()
         if (!(place = GROUP_QUEST_D->query_place()))
                 return 0;
 
-        the_nation = "ÖĞ¹ú";
+        the_nation = "ä¸­åœ‹";
 
         story = all_story[random(sizeof(all_story))];
 
@@ -78,14 +78,14 @@ string create_tiaoxin()
         string title;
 
         the_enemy = GROUP_QUEST_D->get_enemy();
-        title = HIY + the_party + NOR + HIW + "³ğ¼Ò" + NOR + " " + HIY + 
+        title = HIY + the_party + NOR + HIW + "ä»‡å®¶" + NOR + " " + HIY + 
                         the_enemy + NOR;
 
         for (i = 0;i < all;i ++)
         {
                 lvl = random(15) + 1;
                 ob = GROUP_QUEST_D->create_npc(the_nation,lvl);
-                GROUP_QUEST_D->place_npc(ob,"°ïÅÉ",the_party,lvl,place);
+                GROUP_QUEST_D->place_npc(ob,"å¹«æ´¾",the_party,lvl,place);
                 set("title", title, ob);
                 ob->random_move();
                 ob->random_move();
@@ -93,7 +93,7 @@ string create_tiaoxin()
                 ob->random_move();
         }
         GROUP_QUEST_D->set_enemy(all);
-        return "´óĞ¡à¶ÂŞ¸ßºô£º¡º" + HIY + "¡¾" + the_party + "¡¿" + NOR + WHT + "µÄÈË¿ì¸øÎÒ¹ö³öÀ´£¬´óÒ¯ÃÇ½ñÌìÒªÄãÃÇµÄºÃ¿´£¡£¡¡»";
+        return "å¤§å°å˜ç¾…é«˜å‘¼ï¼šã€" + HIY + "ã€" + the_party + "ã€‘" + NOR + WHT + "çš„äººå¿«çµ¦æˆ‘æ»¾å‡ºä¾†ï¼Œå¤§çˆºå€‘ä»Šå¤©è¦ä½ å€‘çš„å¥½çœ‹ï¼ï¼ã€";
 }
 
 mixed query_quest_message(int step)
@@ -111,7 +111,7 @@ mixed query_quest_message(int step)
                 msg = replace_string(msg,"name3",name3);
                 msg = replace_string(msg,"place",HIY + place + NOR + WHT);
                 msg = replace_string(msg,"the_enemy",HIY + the_enemy + NOR + WHT);
-                msg = replace_string(msg,"the_party",HIY + "¡¾" + the_party + "¡¿" + NOR + WHT);
+                msg = replace_string(msg,"the_party",HIY + "ã€" + the_party + "ã€‘" + NOR + WHT);
         }
         return msg;
 }

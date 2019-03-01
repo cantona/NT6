@@ -11,7 +11,7 @@ int update_condition(object me, int duration)
 
         if( duration == 1 && query_temp("guo_shoucheng/failed", me) )
         {
-                message_vision(CYN "\nÒ»ÃûËÎ±øÅÜ¹ýÀ´¶Ô$NËµµÀ£ºÃÉ¹Å÷°×ÓÓÖ¿ªÊ¼½ø¹¥ÁË£¬ÔªË§½ÐÄãÁ¢¿ÌÇ°È¥´ýÃü£¡\n" NOR, me);
+                message_vision(CYN "\nä¸€åå®‹å…µè·‘éŽä¾†å°$Nèªªé“ï¼šè’™å¤é¼å­åˆé–‹å§‹é€²æ”»äº†ï¼Œå…ƒå¸¥å«ä½ ç«‹åˆ»å‰åŽ»å¾…å‘½ï¼\n" NOR, me);
                 delete_temp("guo_shoucheng/failed", me);
                 me->apply_condition("jobshadi_failed", 0);
                 return 0;

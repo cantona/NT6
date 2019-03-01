@@ -2,9 +2,9 @@ inherit ROOM;
 
 void create() 
 { 
-        set("short", "´óµî"); 
+        set("short", "å¤§æ®¿"); 
         set("long", @LONG 
-ÕâÀïÊÇBOSSÌôÕ½Çø¡£
+é€™è£¡æ˜¯BOSSæŒ‘æˆ°å€ã€‚
 
 LONG
 ); 

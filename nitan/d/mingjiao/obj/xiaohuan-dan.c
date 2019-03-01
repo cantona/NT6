@@ -1,4 +1,4 @@
-// xiaohuan-dan.c –°ªπµ§
+// xiaohuan-dan.c Â∞èÈÇÑ‰∏π
 
 #include <ansi.h>
 
@@ -14,12 +14,12 @@ void init()
 
 void create()
 {
-        set_name("–°ªπµ§", ({"xiaohuan dan", "xiaohuan", "dan"}));
+        set_name("Â∞èÈÇÑ‰∏π", ({"xiaohuan dan", "xiaohuan", "dan"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "ø≈");
-                set("long", "’‚ «“ªø≈”®∞◊¡Ô‘≤µƒ–°ªπµ§°£¥Àµ§ƒÀ…Ÿ¡÷∆Ê“©£¨÷˙≥§ƒ⁄¡¶£¨¡È–ßŒﬁ±»°£\n");
+                set("unit", "È°Ü");
+                set("long", "ÈÄôÊòØ‰∏ÄÈ°ÜÁë©ÁôΩÊ∫úÂúìÁöÑÂ∞èÈÇÑ‰∏π„ÄÇÊ≠§‰∏π‰πÉÂ∞ëÊûóÂ•áËó•ÔºåÂä©Èï∑ÂÖßÂäõÔºåÈùàÊïàÁÑ°ÊØî„ÄÇ\n");
                 set("value", 10000);
         }
 
@@ -32,15 +32,15 @@ int do_eat(string arg)
         object me = this_player();
 
         if (!id(arg))
-        return notify_fail("ƒ„“™≥‘ ≤√¥£ø\n");
+        return notify_fail("‰Ω†Ë¶ÅÂêÉ‰ªÄÈ∫ºÔºü\n");
 
         if( query("neili", me) >= query("max_neili", me)*2 )
-        return notify_fail("ƒ„œ÷‘⁄√ª±ÿ“™≥‘–°ªπµ§°£\n");
+        return notify_fail("‰Ω†ÁèæÂú®Ê≤íÂøÖË¶ÅÂêÉÂ∞èÈÇÑ‰∏π„ÄÇ\n");
 
         if ( me->query_skill_mapped("force") != "hunyuan-yiqi" )
         {
                 set("neili", 0, me);
-                message_vision(HIR "$N≥‘œ¬“ªø≈–°ªπµ§£¨÷ªæıµ√ŒÂ‘‡”˚¡—£¨‘≠¿¥À˘¡∑ƒ⁄π¶≤ª∑˚£¨∑¥∂¯¥ÛÀ–ﬁŒ™£°\n" NOR, me);
+                message_vision(HIR "$NÂêÉ‰∏ã‰∏ÄÈ°ÜÂ∞èÈÇÑ‰∏πÔºåÂè™Ë¶∫Âæó‰∫îËáüÊ¨≤Ë£ÇÔºåÂéü‰æÜÊâÄÁ∑¥ÂÖßÂäü‰∏çÁ¨¶ÔºåÂèçËÄåÂ§ßÊêç‰øÆÁÇ∫ÔºÅ\n" NOR, me);
                 me->unconcious();
                 destruct(this_object());
                 return 1;
@@ -49,12 +49,12 @@ int do_eat(string arg)
         if ( (int)me->query_condition("bonze_drug" ) > 0 )
         {
                 addn("neili", -200, me);
-                message_vision(HIR "$N≥‘œ¬“ªø≈–°ªπµ§£¨÷ªæıµ√Õ∑÷ÿΩ≈«·£¨“°“°”˚µπ£¨‘≠¿¥∑˛ ≥Ã´º±Ã´∂‡£¨“©–ß  µ√∆‰∑¥£°\n" NOR, me);
+                message_vision(HIR "$NÂêÉ‰∏ã‰∏ÄÈ°ÜÂ∞èÈÇÑ‰∏πÔºåÂè™Ë¶∫ÂæóÈ†≠ÈáçËÖ≥ËºïÔºåÊêñÊêñÊ¨≤ÂÄíÔºåÂéü‰æÜÊúçÈ£üÂ§™ÊÄ•Â§™Â§öÔºåËó•ÊïàÈÅ©ÂæóÂÖ∂ÂèçÔºÅ\n" NOR, me);
         }
         else
         {
                 addn("neili", 200, me);
-                message_vision(HIY "$N≥‘œ¬“ªø≈–°ªπµ§£¨÷ªæıµ√…Ì«·»Á—‡£¨Àƒ÷´∞Ÿ∫°’Ê∆¯≥‰”ØŒﬁ±»£¨º∏”˚±ºÃ⁄∂¯≥ˆ£°\n" NOR, me);
+                message_vision(HIY "$NÂêÉ‰∏ã‰∏ÄÈ°ÜÂ∞èÈÇÑ‰∏πÔºåÂè™Ë¶∫ÂæóË∫´ËºïÂ¶ÇÁáïÔºåÂõõËÇ¢ÁôæÈ™∏ÁúüÊ∞£ÂÖÖÁõàÁÑ°ÊØîÔºåÂπæÊ¨≤Â•îÈ®∞ËÄåÂá∫ÔºÅ\n" NOR, me);
         }
 
         me->apply_condition("bonze_drug", 30);

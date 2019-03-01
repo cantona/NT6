@@ -13,11 +13,11 @@ int main(object me, string arg)
         int i;
 
         if (! SECURITY_D->valid_grant(me, "(arch)"))
-                return notify_fail("Ö»ÓĞ (arch) ÒÔÉÏµÄÎ×Ê¦²ÅÄÜ»Ö¸´±»·â×¡µÄÊ±¿Õ\n");
+                return notify_fail("åªæœ‰ (arch) ä»¥ä¸Šçš„å·«å¸«æ‰èƒ½æ¢å¾©è¢«å°ä½çš„æ™‚ç©º\n");
         
         seteuid(getuid());
-        message("system", "\n*** " + RANK_D->query_rank(me) + me->short(1) + "ÕıÔÚ½«±»ËøÊ±¿Õ½â·â ***\n*** ÊÀ½çºÃÏóÕıÔÚÂıÂı»Ö¸´³ÉÒÔÇ°µÄÑù×Ó... ***\n", users());
-        write("´¦ÀíÖĞ£º");
+        message("system", "\n*** " + RANK_D->query_rank(me) + me->short(1) + "æ­£åœ¨å°‡è¢«é–æ™‚ç©ºè§£å° ***\n*** ä¸–ç•Œå¥½è±¡æ­£åœ¨æ…¢æ…¢æ¢å¾©æˆä»¥å‰çš„æ¨£å­... ***\n", users());
+        write("è™•ç†ä¸­ï¼š");
 
         ob = users();
         for(i=0; i<sizeof(ob); i++) {
@@ -31,11 +31,11 @@ int main(object me, string arg)
                         ob[i]->restore();
                 }
 //                else {
-//                        return notify_fail("Ê±¿Õ½â·âÊ§°ÜÁË£¡£¡£\n?);
+//                        return notify_fail("æ™‚ç©ºè§£å°å¤±æ•—äº†ï¼ï¼â–¡n?);
 //                }
         }
         
-        write("Ê±¿Õ½â·âÍê±Ï¡£\n");
+        write("æ™‚ç©ºè§£å°å®Œç•¢ã€‚\n");
         LOGIN_D->set_madlock(0);
         //wind try
         log_file("/static/RECOVER",sprintf("%scallrecoverON%s.\n",query("name", this_player()),ctime(time())));
@@ -45,9 +45,9 @@ int main(object me, string arg)
 int help (object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½: recover
+æŒ‡ä»¤æ ¼å¼: recover
  
-½â·â±»·â×¡µÄÊ±¿Õ¡£
+è§£å°è¢«å°ä½çš„æ™‚ç©ºã€‚
  
 HELP
 );

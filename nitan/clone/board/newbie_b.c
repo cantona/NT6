@@ -5,10 +5,10 @@ inherit BULLETIN_BOARD;
 
 void create()
 {
-    set_name(HIC "¹Å´åÁôÑÔ°æ" NOR, ({ "board" }) );
+    set_name(HIC "å¤æ‘ç•™è¨€ç‰ˆ" NOR, ({ "board" }) );
     set("location", "/d/newbie/shijiezhishu");
         set("board_id", "newbie_b");
-        set("long", "ÕâÊÇĞÂÊÖ´åµÄÁôÑÔ°æ£¬¿ÉÒÔÊäÈë post <±êÌâ> ÁôÑÔ¡£\n" );
+        set("long", "é€™æ˜¯æ–°æ‰‹æ‘çš„ç•™è¨€ç‰ˆï¼Œå¯ä»¥è¼¸å…¥ post <æ¨™é¡Œ> ç•™è¨€ã€‚\n" );
         setup();
         set("capacity", 500);
         replace_program(BULLETIN_BOARD);

@@ -1,4 +1,4 @@
-// shiweishi.c ÊÂÎªÊÒ
+// shiweishi.c äº‹ç‚ºå®¤
 // Winder Oct.10 1998
 
 #include <ansi.h>
@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÊÂÎªÊÒ");
+        set("short", "äº‹ç‚ºå®¤");
         set("long", @LONG
-ÕâÀïÊÇÈ«ÕæÆß×ÓÖ®Ê×ÂíîÚµÄ¾ÓÊÒ¡£·¿¼äºÜÐ¡£¬Ö»°Ú·ÅÁËÒ»ÕÅ´²¡¢
-Ò»ÕÅÊé×ÀºÍÒ»°ÑÒÎ×Ó¡£Êé×ÀÉÏ·Å×ÅÒ»±¾¡®ÀÏ×Ó¡¯£¬Ö»¿´ÁËÒ»°ë£¬´²ÉÏ
-±»ÈìÕÛµþµÃÕûÕûÆëÆë¡£
+é€™è£¡æ˜¯å…¨çœŸä¸ƒå­ä¹‹é¦–é¦¬éˆºçš„å±…å®¤ã€‚æˆ¿é–“å¾ˆå°ï¼Œåªæ“ºæ”¾äº†ä¸€å¼µåºŠã€
+ä¸€å¼µæ›¸æ¡Œå’Œä¸€æŠŠæ¤…å­ã€‚æ›¸æ¡Œä¸Šæ”¾è‘—ä¸€æœ¬â€˜è€å­â€™ï¼Œåªçœ‹äº†ä¸€åŠï¼ŒåºŠä¸Š
+è¢«è¤¥æŠ˜ç–Šå¾—æ•´æ•´é½Šé½Šã€‚
 LONG
         );
         set("exits", ([

@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set ("short", "СϪ��");
+        set ("short", "小溪流");
         set ("long", @LONG
-�ڲ�̽�������ʯ֮�����ʵ�һ��СϪ�����峺�ĺӵ��ǹ⻬�Ķ�
-��ʯ�����ʵ�Ϫˮ΢΢����������Ϫˮ������С���������ײ��������
-����������������ˣ��������֡�
+在差刺交錯的巖石之間流淌的一條小溪流。清澈的河底是光滑的鵝
+卵石。流淌的溪水微微帶著香氣，溪水中無數小塊碎冰互相撞擊，發出
+清脆聲音，叮叮咚咚，宛如仙樂。
 LONG);
         set("exits", ([ /* sizeof() == 2 */
                 "northup" : __DIR__"xiaoxi1",

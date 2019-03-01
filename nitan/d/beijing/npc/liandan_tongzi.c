@@ -8,12 +8,12 @@ mixed ask_caiyao();
 
 void create()
 {
-        set_name("Ğ¡Í¯", ({"xiao tong", "xiao", "tong"}));
-        set("gender", "ÄĞĞÔ");
+        set_name("å°ç«¥", ({"xiao tong", "xiao", "tong"}));
+        set("gender", "ç”·æ€§");
         set("age", 12);
         set("long",
-                "ÕâÊÇÁ¶µ¤·¿ÖĞµÄÕÆ¹ÜÒ©²ÄµÄÍ¯×Ó¡£ËûÄê¼Í²»´ó£¬µ«¿´ÆğÀ´\n"
-                "ÏÔµÃÉÙÄêÀÏ³É¡£\n");
+                "é€™æ˜¯ç…‰ä¸¹æˆ¿ä¸­çš„æŒç®¡è—¥æçš„ç«¥å­ã€‚ä»–å¹´ç´€ä¸å¤§ï¼Œä½†çœ‹èµ·ä¾†\n"
+                "é¡¯å¾—å°‘å¹´è€æˆã€‚\n");
         set("attitude", "friendly");
         set("shen_type",1);
         set("str", 21);
@@ -30,10 +30,10 @@ void create()
         set("combat_exp", 300000);
 
         set("inquiry", ([
-                "Ò©²Ä" : (: ask_caiyao :),
-                "Ò©"   : (: ask_caiyao :),
-                "²ÉÒ©" : (: ask_caiyao :),
-                "²İÒ©" : (: ask_caiyao :),
+                "è—¥æ" : (: ask_caiyao :),
+                "è—¥"   : (: ask_caiyao :),
+                "æ¡è—¥" : (: ask_caiyao :),
+                "è‰è—¥" : (: ask_caiyao :),
                 "yaocai" : (: ask_caiyao :),
         ]) );
         set("caiyao", 12);
@@ -48,33 +48,33 @@ mixed ask_caiyao()
         switch(query_temp("caiyao", me) )
         {
         case 1:
-                return "½ĞÄãÈ¥²ÉÒ©£¬»¹´ôÔÚÕâ¸ÉÂï£¡";
+                return "å«ä½ å»æ¡è—¥ï¼Œé‚„å‘†åœ¨é€™å¹¹å˜›ï¼";
 
         case 2:
-                return "Ò©²ÉÀ´ÁË£¿»¹²»¿ì¸øÎÒ£¡";
+                return "è—¥æ¡ä¾†äº†ï¼Ÿé‚„ä¸å¿«çµ¦æˆ‘ï¼";
         }
 
         switch(query_temp("liandan", me) )
         {
         case 1:
-                // ÒÑ¾­´òÌı¹ıÁËÁ·µ¤µÄÏûÏ¢ÁË
+                // å·²ç¶“æ‰“è½éäº†ç·´ä¸¹çš„æ¶ˆæ¯äº†
                 break;
 
         case 2:
-                return "Ò©²ÄÒÑ¾­×¼±¸ºÃ£¬¿ÉÒÔÈ¥ÁË¡£";
+                return "è—¥æå·²ç¶“æº–å‚™å¥½ï¼Œå¯ä»¥å»äº†ã€‚";
 
         case 3:
-                return "Äã²»ÊÇÔÚÀïÃæÁ¶Ò©Âğ£¿ÔõÃ´³öÀ´ÁË¡£";
+                return "ä½ ä¸æ˜¯åœ¨è£¡é¢ç…‰è—¥å—ï¼Ÿæ€éº¼å‡ºä¾†äº†ã€‚";
 
         case 4:
-                return "»¹ÊÇÏÈÈ¥¸´Ãü°É¡£";
+                return "é‚„æ˜¯å…ˆå»å¾©å‘½å§ã€‚";
 
         default:
-                return "ÄãÓÖ²»Á¶Ò©£¬ÒªÒ©²Ä¸ÉÊ²Ã´£¿";
+                return "ä½ åˆä¸ç…‰è—¥ï¼Œè¦è—¥æå¹¹ä»€éº¼ï¼Ÿ";
         }
 
-        message_vision(CYN "Ğ¡Í¯¶Ô$N" CYN "ËµµÀ£ººÃ°É£¬ÄÇÄã"
-                       "È¥³ÇÎ÷µÄÁÖ×ÓÀïÍÚ¼¸ÑùĞÂÏÊµÄ²İÒ©À´¡£\n" NOR, me);
+        message_vision(CYN "å°ç«¥å°$N" CYN "èªªé“ï¼šå¥½å§ï¼Œé‚£ä½ "
+                       "å»åŸè¥¿çš„æ—å­è£¡æŒ–å¹¾æ¨£æ–°é®®çš„è‰è—¥ä¾†ã€‚\n" NOR, me);
         set_temp("caiyao", 1, me);
         addn("caiyao", -1);
         return 1;
@@ -89,19 +89,19 @@ int accept_object(object me, object ob)
 
         if( query_temp("caiyao", me)<1 )
         {
-                command("say ÎÒÊ²Ã´Ê±ºò½ĞÄãÄÃÕâ¸ö¸øÎÒµÄ£¿");
+                command("say æˆ‘ä»€éº¼æ™‚å€™å«ä½ æ‹¿é€™å€‹çµ¦æˆ‘çš„ï¼Ÿ");
         } else
         if( query_temp("caiyao", me) == 1 )
         {
-                command("say ÊÇË­°ïÄãÕÒµÄ¶«Î÷À´·óÑÜÎÒ£¬±ğÒÔÎªÎÒĞ¡¾ÍºÃÆ­¡£");
+                command("say æ˜¯èª°å¹«ä½ æ‰¾çš„æ±è¥¿ä¾†æ•·è¡æˆ‘ï¼Œåˆ¥ä»¥ç‚ºæˆ‘å°å°±å¥½é¨™ã€‚");
         } else
-        if( strsrch(query("name", ob),"²»ÖªÃû²İÒ©")<0 )
+        if( strsrch(query("name", ob),"ä¸çŸ¥åè‰è—¥")<0 )
         {
-                command("say ÄãÆÛÎÒĞ¡°¡£¿ÄÃÕâÖÖ¶«Î÷Æ­ÎÒ¡£\n");
+                command("say ä½ æ¬ºæˆ‘å°å•Šï¼Ÿæ‹¿é€™ç¨®æ±è¥¿é¨™æˆ‘ã€‚\n");
         } else
         {
-                command("say ºÃ°É£¬ÈÃÎÒÀ´¸øÄã¼Ó¹¤¡£");
-                command("say ¼Ó¹¤ºÃÁË£¬ÄãÏÖÔÚÖ±½ÓÈ¥µ¤·¿Á¶µ¤£¨liandan£©¾ÍĞĞÁË¡£");
+                command("say å¥½å§ï¼Œè®“æˆ‘ä¾†çµ¦ä½ åŠ å·¥ã€‚");
+                command("say åŠ å·¥å¥½äº†ï¼Œä½ ç¾åœ¨ç›´æ¥å»ä¸¹æˆ¿ç…‰ä¸¹ï¼ˆliandanï¼‰å°±è¡Œäº†ã€‚");
                 delete_temp("caiyao", me);
                 set_temp("liandan", 2, me);
 

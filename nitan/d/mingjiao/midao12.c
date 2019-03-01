@@ -5,11 +5,11 @@ inherit ROOM;
 #include <room.h>;
 void create()
 {
-        set("short", "Ê¯ÊÒ");
+        set("short", "çŸ³å®¤");
         set("long", @LONG
-ÕâÊÇÒ»ÌõĞ¡Ğ¡µÄğ®µÀ£¬ÖÜÎ§¶¼ÊÇÊ¯±Ú£¬¼«Îª¼áÓ²£¬¿´À´²»ÊÇÊ²Ã´
-Îä¹¦ÄÜ´òÆÆµÄ¡£Ê¯ÊÒÀïÉìÊÖ²»¼ûÎŞÖ¸£¬Ë³×ÅÊ¯±ÚÄãÃşË÷×ÅºÃÏóÖÜÎ§ÓĞ
-Ê¯ÃÅ¡£
+é€™æ˜¯ä¸€æ¢å°å°çš„ç”¬é“ï¼Œå‘¨åœéƒ½æ˜¯çŸ³å£ï¼Œæ¥µç‚ºå …ç¡¬ï¼Œçœ‹ä¾†ä¸æ˜¯ä»€éº¼
+æ­¦åŠŸèƒ½æ‰“ç ´çš„ã€‚çŸ³å®¤è£¡ä¼¸æ‰‹ä¸è¦‹ç„¡æŒ‡ï¼Œé †è‘—çŸ³å£ä½ æ‘¸ç´¢è‘—å¥½è±¡å‘¨åœæœ‰
+çŸ³é–€ã€‚
 LONG );
         set("exits", ([
                 "south" : __DIR__"midao8",
@@ -21,8 +21,8 @@ LONG );
         set("no_clean_up", 0);
         set("no_drop", 1);
         setup();
-        create_door("south", "Ê¯ÃÅ", "north", DOOR_CLOSED);
-        create_door("north", "Ê¯ÃÅ", "south", DOOR_CLOSED);
-        create_door("east",  "Ê¯ÃÅ", "west",  DOOR_CLOSED);
-        create_door("west",  "Ê¯ÃÅ", "east",  DOOR_CLOSED);
+        create_door("south", "çŸ³é–€", "north", DOOR_CLOSED);
+        create_door("north", "çŸ³é–€", "south", DOOR_CLOSED);
+        create_door("east",  "çŸ³é–€", "west",  DOOR_CLOSED);
+        create_door("west",  "çŸ³é–€", "east",  DOOR_CLOSED);
 }

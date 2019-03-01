@@ -2,13 +2,13 @@ inherit NPC;
 
 void create()
 {
-    set_name("Å£", ({ "niu" }) );
-        set("race", "Ò°ÊŞ");
+    set_name("ç‰›", ({ "niu" }) );
+        set("race", "é‡ç¸");
         set("age", 5);
-    set("long", "Ò»Í·½¡×³µÄÅ£¡£\n");
+    set("long", "ä¸€é ­å¥å£¯çš„ç‰›ã€‚\n");
         set("attitude", "peaceful");
         
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "Ç°½Å", "ºó½Å", "Î²°Í" }) );
+        set("limbs", ({ "é ­éƒ¨", "èº«é«”", "å‰è…³", "å¾Œè…³", "å°¾å·´" }) );
     set("verbs", ({ "kick", "bite" }) );
 
     set("max_qi", 300);

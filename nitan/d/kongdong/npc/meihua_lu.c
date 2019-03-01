@@ -1,4 +1,4 @@
-// meihua_lu.c Ã·»¨Â¹
+// meihua_lu.c æ¢…èŠ±é¹¿
 
 inherit NPC;
 
@@ -6,13 +6,13 @@ inherit NPC;
 
 void create()
 {
-	set_name("Ã·»¨Â¹", ({ "meihua lu", "lu" }) );
-	set("race", "Ò°ÊŞ");
+	set_name("æ¢…èŠ±é¹¿", ({ "meihua lu", "lu" }) );
+	set("race", "é‡ç¸");
 	set("age", 5);
-	set("long", "Ò»Ö»ÃÀÀö¿É°®£¬ËÄ´¦±Ä±ÄÌøÌøµÄÃ·»¨Â¹¡£\n");
+	set("long", "ä¸€åªç¾éº—å¯æ„›ï¼Œå››è™•è¹¦è¹¦è·³è·³çš„æ¢…èŠ±é¹¿ã€‚\n");
 	set("attitude", "peaceful");
 	
-	set("limbs", ({ "ê÷½Ç", "ÉíÌå", "Ç°Ìã", "ºóÌã" }) );
+	set("limbs", ({ "çŠ„è§’", "èº«é«”", "å‰è¹„", "å¾Œè¹„" }) );
 	set("verbs", ({ "hoof", "ding" }) );
 
 	set("combat_exp", 500);
@@ -46,13 +46,13 @@ void greeting(object ob)
 {
         if(!ob||!present(ob,environment(this_object()) )||
         is_fighting() ||random(4)<2)return;
-        say("Ã·»¨Â¹·Â·ğÊÜÁËÊ²Ã´¾ªÏÅ£¬Èö¿ªÌã×ÓÅÜ¿ªÁË¡£\n");
+        say("æ¢…èŠ±é¹¿ä»¿ä½›å—äº†ä»€éº¼é©šåš‡ï¼Œæ’’é–‹è¹„å­è·‘é–‹äº†ã€‚\n");
         this_object()->random_move();
 }
 */
 void die()
 {
-        message_vision("$N·¢³ö¼¸ÉùÆà²ÒµÄ½ĞÉù£¬ÌÉµ½µØÉÏ²»¶¯ÁË¡£\n",
+        message_vision("$Nç™¼å‡ºå¹¾è²å‡„æ…˜çš„å«è²ï¼Œèººåˆ°åœ°ä¸Šä¸å‹•äº†ã€‚\n",
         this_object() );
 	::die();
 }

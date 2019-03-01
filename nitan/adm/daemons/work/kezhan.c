@@ -1,20 +1,20 @@
-// ¿ÍÕ»Àà¹¤×÷ÊØ»¤£ºkezhan.c
+// å®¢æ£§é¡žå·¥ä½œå®ˆè­·ï¼škezhan.c
 
 // Updated by Lonely
 
 
 
-// »ñ×¼¹¤×÷(ÀÏ°å)
+// ç²æº–å·¥ä½œ(è€æ¿)
 
 //     |
 
-// ·ÖÅä¹¤×÷(Ð¡¶þ) -+- É¨µØ ----+
+// åˆ†é…å·¥ä½œ(å°äºŒ) -+- æŽƒåœ° ----+
 
-//                 |           +-- ¹¤×÷¹ý³Ì -- Íê³É +
+//                 |           +-- å·¥ä½œéŽç¨‹ -- å®Œæˆ +
 
-//                 +- Ï´ÅÌ×Ó --+                    |
+//                 +- æ´—ç›¤å­ --+                    |
 
-//                                 ÁìÈ¡½±Àø(Ð¡¶þ) --+
+//                                 é ˜å–çŽå‹µ(å°äºŒ) --+
 
 
 
@@ -22,19 +22,19 @@
 
 
 
-#define NAME            "kezhan"        // ¹¤×÷Ãû³Æ
+#define NAME            "kezhan"        // å·¥ä½œåç¨±
 
-#define BONUS           10 + random(30) // ½±Àø»ùÊý
+#define BONUS           10 + random(30) // çŽå‹µåŸºæ•¸
 
-#define MAX_NUM         20              // ×î¶àÈËÊý£¬Îª 0 Ê±²»¼ì²é
+#define MAX_NUM         20              // æœ€å¤šäººæ•¸ï¼Œç‚º 0 æ™‚ä¸æª¢æŸ¥
 
-#define MIN_EXP         0               // ×îÉÙ¾­Ñé
+#define MIN_EXP         0               // æœ€å°‘ç¶“é©—
 
-#define MAX_EXP         100000          // ×î¶à¾­Ñé£¬Îª 0 Ê±²»¼ì²é
+#define MAX_EXP         100000          // æœ€å¤šç¶“é©—ï¼Œç‚º 0 æ™‚ä¸æª¢æŸ¥
 
 
 
-// Ìá¹©µÄÍâ²¿º¯Êý
+// æä¾›çš„å¤–éƒ¨å‡½æ•¸
 
 public int    query_work(object me);
 
@@ -48,7 +48,7 @@ public string assign_work(object me);
 
 
 
-// ¹¤×÷¶ÔÏó´´½¨
+// å·¥ä½œå°è±¡å‰µå»º
 
 void create() { seteuid(getuid()); }
 
@@ -84,49 +84,49 @@ private string query_zone(object arg)
 
 
 
-// ²éÑ¯ me µÄÈÎÎñ×´Ì¬
+// æŸ¥è©¢ me çš„ä»»å‹™ç‹€æ…‹
 
 public int query_work(object me) { return me->query_temp("work/" + NAME + "/state"); }
 
 
 
-// ÇëÇóÈÎÎñ£¬me ÎªÇëÇóÕß£¬ob Îª±»ÇëÇóÕß
+// è«‹æ±‚ä»»å‹™ï¼Œme ç‚ºè«‹æ±‚è€…ï¼Œob ç‚ºè¢«è«‹æ±‚è€…
 
 public int request_work(object me, object ob)
 
 {
 
-        // ·ÖÅÉ¹¤×÷ÕßµÄ¼ì²é
+        // åˆ†æ´¾å·¥ä½œè€…çš„æª¢æŸ¥
 
         if (playerp(ob) || ob->query("work/name") != NAME)
 
-                return fail_msg(ob->name() + "Íû×ÅÄãºÇºÇÉµÐ¦¡£\n");
+                return fail_msg(ob->name() + "æœ›è‘—ä½ å‘µå‘µå‚»ç¬‘ã€‚\n");
 
 
 
         if (MAX_NUM > 0 && ob->query("work/working") >= MAX_NUM)
 
-                return fail_msg(ob->name() + "Ò»ÖåÃ¼µÀ£º¡°ÏÖÔÚÎÒÃÇ"
+                return fail_msg(ob->name() + "ä¸€çšºçœ‰é“ï¼šâ€œç¾åœ¨æˆ‘å€‘"
 
-                                "ÕâÀï²»È±ÈËÊÖ£¬ÄãµÈÈËÉÙµÄÊ±ºòÔÙÀ´°É"
+                                "é€™è£¡ä¸ç¼ºäººæ‰‹ï¼Œä½ ç­‰äººå°‘çš„æ™‚å€™å†ä¾†å§"
 
-                                "¡£¡±\n");
+                                "ã€‚â€\n");
 
-        // ½ÓÊÜ¹¤×÷ÕßµÄ¼ì²é
+        // æŽ¥å—å·¥ä½œè€…çš„æª¢æŸ¥
 
         if (ob->query("combat_exp") < MIN_EXP)
 
-                return fail_msg(ob->name() + "Æ³ÁË" + me->name() +
+                return fail_msg(ob->name() + "çž¥äº†" + me->name() +
 
-                                "Ò»ÑÛµÀ£º¡°¾ÍÆ¾ÄãÒ²¸ÉµÃÁËÔÛÕâ¹¤×÷£¿"
+                                "ä¸€çœ¼é“ï¼šâ€œå°±æ†‘ä½ ä¹Ÿå¹¹å¾—äº†å’±é€™å·¥ä½œï¼Ÿ"
 
-                                "¡±\n");
+                                "â€\n");
 
         if (MAX_EXP > 0 && me->query("combat_exp") > MAX_EXP && ! wizardp(me))
 
-                return fail_msg(ob->name() + "ÂúÁ³¶ÑÐ¦µÀ£º¡°ÕâµãÐ¡"
+                return fail_msg(ob->name() + "æ»¿è‡‰å †ç¬‘é“ï¼šâ€œé€™é»žå°"
 
-                                "ÊÂ¾Í²»¸ÒÂé·³´óÏÀÄúÁË¡£¡±\n");
+                                "äº‹å°±ä¸æ•¢éº»ç…©å¤§ä¿ æ‚¨äº†ã€‚â€\n");
 
 
 
@@ -134,17 +134,17 @@ public int request_work(object me, object ob)
 
         {
 
-        // 0 Îª²»ÔÚ×ö´Ë¹¤×÷
+        // 0 ç‚ºä¸åœ¨åšæ­¤å·¥ä½œ
 
         case 0:
 
-                message_vision(CYN "$N" NOR CYN "Ò»µãÍ·¶Ô$n" NOR CYN 
+                message_vision(CYN "$N" NOR CYN "ä¸€é»žé ­å°$n" NOR CYN 
 
-                               "µÀ£º¡°àÅ£¬ºÃ°É£¬ÄãÈ¥³ø·¿¿´¿´ÓÐÊ²Ã´¹¤×÷"
+                               "é“ï¼šâ€œå—¯ï¼Œå¥½å§ï¼Œä½ åŽ»å»šæˆ¿çœ‹çœ‹æœ‰ä»€éº¼å·¥ä½œ"
 
-                               "¿É×öµÄ¡£¡±\n", ob, me);
+                               "å¯åšçš„ã€‚â€\n", ob, me);
 
-                // Éè¶¨Íæ¼Ò×ö´Ë¹¤×÷µÄ×´Ì¬
+                // è¨­å®šçŽ©å®¶åšæ­¤å·¥ä½œçš„ç‹€æ…‹
 
                 me->set_temp("work/" + NAME + "/state", 1);
 
@@ -154,39 +154,39 @@ public int request_work(object me, object ob)
 
                 break;
 
-        // 1 ÎªÐí¿ÉÁË£¬ÉÐÎ´ÕýÊ½¿ªÊ¼¹¤×÷
+        // 1 ç‚ºè¨±å¯äº†ï¼Œå°šæœªæ­£å¼é–‹å§‹å·¥ä½œ
 
         case 1:
 
-                message_vision(CYN "$N" NOR CYN "ÒÉ»óµÄ¶Ô$n" NOR CYN
+                message_vision(CYN "$N" NOR CYN "ç–‘æƒ‘çš„å°$n" NOR CYN
 
-                               "µÀ£º¡°ß×£¬Äã²»ÊÇÒÑ¾­ÁìÁË¹¤×÷Ã´£¿»¹²»¿ì"
+                               "é“ï¼šâ€œå’¦ï¼Œä½ ä¸æ˜¯å·²ç¶“é ˜äº†å·¥ä½œéº¼ï¼Ÿé‚„ä¸å¿«"
 
-                               "È¥£¿¡±\n", ob, me);
+                               "åŽ»ï¼Ÿâ€\n", ob, me);
 
                 break;
 
-        // 2 ÎªÕýÔÚ½øÐÐ¹¤×÷
+        // 2 ç‚ºæ­£åœ¨é€²è¡Œå·¥ä½œ
 
         case 2:
 
-                message_vision(CYN "$N" NOR CYN "Öå×ÅÃ¼Í·¶Ô$n" NOR CYN
+                message_vision(CYN "$N" NOR CYN "çšºè‘—çœ‰é ­å°$n" NOR CYN
 
-                               "µÀ£º¡°Äã²»ÊÇÕýÔÚ×öÊÂÂï£¿¿ì»ØÈ¥£¬×öÍêÔÙ"
+                               "é“ï¼šâ€œä½ ä¸æ˜¯æ­£åœ¨åšäº‹å˜›ï¼Ÿå¿«å›žåŽ»ï¼Œåšå®Œå†"
 
-                               "À´ÎÒÕâÁì½±Àø¡£¡±\n", ob, me);
+                               "ä¾†æˆ‘é€™é ˜çŽå‹µã€‚â€\n", ob, me);
 
                 break;
 
-        // 3 Îª¹¤×÷¹ý³ÌÒÑ¾­Íê³É£¬Õý»ñÈ¡½±Àø
+        // 3 ç‚ºå·¥ä½œéŽç¨‹å·²ç¶“å®Œæˆï¼Œæ­£ç²å–çŽå‹µ
 
         case 3:
 
-                message_vision(CYN "$N" NOR CYN "ÓÃÃ«½íÄ¨ÁËÄ¨ÊÖ£¬¶Ô$n"
+                message_vision(CYN "$N" NOR CYN "ç”¨æ¯›å·¾æŠ¹äº†æŠ¹æ‰‹ï¼Œå°$n"
 
-                               NOR CYN "µÀ£º¡°ÕÆ¹ñµÄ£¬ÎÒµÄÊÂ¶ù×öÍêÁË£¬"
+                               NOR CYN "é“ï¼šâ€œæŽŒæ«ƒçš„ï¼Œæˆ‘çš„äº‹å…’åšå®Œäº†ï¼Œ"
 
-                               "Äú......¡±\n", me, ob);
+                               "æ‚¨......â€\n", me, ob);
 
                 finish_work(me, ob, 0);
 
@@ -204,7 +204,7 @@ public int request_work(object me, object ob)
 
 
 
-// °´ÕÕ×´Ì¬·ÖÅäÒ»¸ö¾ßÌåµÄ¹¤×÷·ÖÖ§£¬²¢·µ»ØÕâ¸ö¹¤×÷·ÖÖ§µÄÃèÊöÐÅÏ¢
+// æŒ‰ç…§ç‹€æ…‹åˆ†é…ä¸€å€‹å…·é«”çš„å·¥ä½œåˆ†æ”¯ï¼Œä¸¦è¿”å›žé€™å€‹å·¥ä½œåˆ†æ”¯çš„æè¿°ä¿¡æ¯
 
 public string assign_work(object me)
 
@@ -222,7 +222,7 @@ public string assign_work(object me)
 
         {
 
-        // Ï´ÅÌ×Ó
+        // æ´—ç›¤å­
 
         case 0:
 
@@ -234,9 +234,9 @@ public string assign_work(object me)
 
                 dish->move(me);
 
-                msg = "ßö£¬ÕâÀïÓÐ" + chinese_number(i) + "¸öÅÌ×Ó(dish)£¬"
+                msg = "å–ï¼Œé€™è£¡æœ‰" + chinese_number(i) + "å€‹ç›¤å­(dish)ï¼Œ"
 
-                      "¿ì°ïÎÒÏ´Ï´(wash)£¬¼±×ÅÓÃÄØ¡£";
+                      "å¿«å¹«æˆ‘æ´—æ´—(wash)ï¼Œæ€¥è‘—ç”¨å‘¢ã€‚";
 
                 me->set_temp("work/" + NAME + "/type", "wash");
 
@@ -244,7 +244,7 @@ public string assign_work(object me)
 
                 break;
 
-        // É¨µØ
+        // æŽƒåœ°
 
         case 1:
 
@@ -252,9 +252,9 @@ public string assign_work(object me)
 
                 besom->move(me);
 
-                msg = "ßí£¬ÕâÀïµÄµØ(floor)Ò²¹»ÔàµÄÁË£¬Äã°ÑÕâÀïËÄÖÜ¸øÉ¨É¨"
+                msg = "å””ï¼Œé€™è£¡çš„åœ°(floor)ä¹Ÿå¤ è‡Ÿçš„äº†ï¼Œä½ æŠŠé€™è£¡å››å‘¨çµ¦æŽƒæŽƒ"
 
-                      "(sweep)£¬ÊÖ½ÅÂéÀûÐ©¡£";
+                      "(sweep)ï¼Œæ‰‹è…³éº»åˆ©äº›ã€‚";
 
                 me->set_temp("work/" + NAME + "/type", "sweep");
 
@@ -270,7 +270,7 @@ public string assign_work(object me)
 
 
 
-// ¿ªÊ¼¹¤×÷£¬¸ù¾ÝÍæ¼ÒÉíÉÏµÄÉè¶¨¾ö¶¨¹¤×÷ÀàÐÍ
+// é–‹å§‹å·¥ä½œï¼Œæ ¹æ“šçŽ©å®¶èº«ä¸Šçš„è¨­å®šæ±ºå®šå·¥ä½œé¡žåž‹
 
 public int start_work(object me)
 
@@ -286,9 +286,9 @@ public int start_work(object me)
 
         if (! mapp(me->query_temp("work/" + NAME)))
 
-                return fail_msg("ÄãÏÖÔÚ²¢Ã»ÓÐÁìµ½¹¤×÷Ñ½£¬Ï¹ÕÛÌÚ¸öÉ¶ÄØ"
+                return fail_msg("ä½ ç¾åœ¨ä¸¦æ²’æœ‰é ˜åˆ°å·¥ä½œå‘€ï¼ŒçžŽæŠ˜é¨°å€‹å•¥å‘¢"
 
-                                "¡£\n");
+                                "ã€‚\n");
 
         
 
@@ -296,15 +296,15 @@ public int start_work(object me)
 
             type != "wash" && type != "sweep")
 
-                return fail_msg("ËÆºõÊ²Ã´µØ·½³öÁËÒ»µãÎÊÌâ£¬Äã²¢Ã»ÓÐ±»"
+                return fail_msg("ä¼¼ä¹Žä»€éº¼åœ°æ–¹å‡ºäº†ä¸€é»žå•é¡Œï¼Œä½ ä¸¦æ²’æœ‰è¢«"
 
-                                "·ÖÅäµ½¾ßÌåµÄ¹¤×÷ÀàÐÍ¡£\n");
+                                "åˆ†é…åˆ°å…·é«”çš„å·¥ä½œé¡žåž‹ã€‚\n");
 
 
 
         if (me->is_busy())
 
-                return fail_msg("ÄãÃ¦ÍêÊÖÀïµÄÊÂÇéÔÙ¹¤×÷°É¡£\n");
+                return fail_msg("ä½ å¿™å®Œæ‰‹è£¡çš„äº‹æƒ…å†å·¥ä½œå§ã€‚\n");
 
 
 
@@ -316,13 +316,13 @@ public int start_work(object me)
 
                 if (! objectp(ob = present("dirty dish", me)))
 
-                        return fail_msg("ÄãµÄÉíÉÏÒÑ¾­Ã»ÓÐÔàÅÌ×ÓÁË¡£\n");
+                        return fail_msg("ä½ çš„èº«ä¸Šå·²ç¶“æ²’æœ‰è‡Ÿç›¤å­äº†ã€‚\n");
 
 
 
                 if (! environment(me)->query("resource/water"))
 
-                        return fail_msg("ÕâÀïÃ»ÓÐË®£¬ÔõÃ´Ï´ÄØ£¿\n");
+                        return fail_msg("é€™è£¡æ²’æœ‰æ°´ï¼Œæ€Žéº¼æ´—å‘¢ï¼Ÿ\n");
 
 
 
@@ -330,9 +330,9 @@ public int start_work(object me)
 
                     me->query("jing") < 20 || me->query("eff_jing") < 50)
 
-                        return fail_msg("ÄãÏÈÐªÐªÔÙÏ´°É£¬¿É±ðÏ´ÅÌ×ÓÏ´³ö"
+                        return fail_msg("ä½ å…ˆæ­‡æ­‡å†æ´—å§ï¼Œå¯åˆ¥æ´—ç›¤å­æ´—å‡º"
 
-                                        "ÈËÃüÀ´¡£\n");
+                                        "äººå‘½ä¾†ã€‚\n");
 
 
 
@@ -344,7 +344,7 @@ public int start_work(object me)
 
 
 
-                tell_object(me, "Äã¿ªÊ¼¹¤×÷¡£\n");
+                tell_object(me, "ä½ é–‹å§‹å·¥ä½œã€‚\n");
 
                 return 1;
 
@@ -354,17 +354,17 @@ public int start_work(object me)
 
                 if (! objectp(ob = present("besom", me)))
 
-                        return fail_msg("ÄãµÄÉíÉÏ¶¼Ã»ÓÐÉ¨°Ñ£¬ÔõÃ´É¨£¿\n");
+                        return fail_msg("ä½ çš„èº«ä¸Šéƒ½æ²’æœ‰æŽƒæŠŠï¼Œæ€Žéº¼æŽƒï¼Ÿ\n");
 
 
 
-                // Ö»ÄÜÔÚ¿ÍÕ»É¨µØ
+                // åªèƒ½åœ¨å®¢æ£§æŽƒåœ°
 
                 if (! environment(me)->query("hotel") ||
 
                     me->query_temp("work/" + NAME + "/zone") != query_zone(environment(me)))
 
-                        return fail_msg("ÕâÀï¿É²»ÊÇµêÐ¡¶þ½ÐÄãÉ¨µÄµØ·½Ñ½¡£\n");
+                        return fail_msg("é€™è£¡å¯ä¸æ˜¯åº—å°äºŒå«ä½ æŽƒçš„åœ°æ–¹å‘€ã€‚\n");
 
 
 
@@ -372,7 +372,7 @@ public int start_work(object me)
 
                     member_array(file_name(environment(me)), place) != -1)
 
-                        return fail_msg("Õâ¸öµØ·½ÄãÒÑ¾­É¨¹ýÁË£¬²»±ØÔÙÖØ¸´Ò»´Î¡£\n");
+                        return fail_msg("é€™å€‹åœ°æ–¹ä½ å·²ç¶“æŽƒéŽäº†ï¼Œä¸å¿…å†é‡å¾©ä¸€æ¬¡ã€‚\n");
 
 
 
@@ -380,7 +380,7 @@ public int start_work(object me)
 
                     me->query("jing") < 20 || me->query("eff_jing") < 30)
 
-                        return fail_msg("ÄãÏÈÐªÐªÔÙÉ¨°É£¬¿É±ðÉ¨µØÏ´³öÈËÃüÀ´¡£\n");
+                        return fail_msg("ä½ å…ˆæ­‡æ­‡å†æŽƒå§ï¼Œå¯åˆ¥æŽƒåœ°æ´—å‡ºäººå‘½ä¾†ã€‚\n");
 
 
 
@@ -392,7 +392,7 @@ public int start_work(object me)
 
 
 
-                tell_object(me, "Äã¿ªÊ¼¹¤×÷¡£\n");
+                tell_object(me, "ä½ é–‹å§‹å·¥ä½œã€‚\n");
 
                 return 1;
 
@@ -404,7 +404,7 @@ public int start_work(object me)
 
 
 
-// ÕýÔÚ¹¤×÷
+// æ­£åœ¨å·¥ä½œ
 
 int continue_working(object me)
 
@@ -456,19 +456,19 @@ int continue_working(object me)
 
                 case 1:
 
-                        msg = "$N×¥ÆðÒ»¸öÔàÅÌ×Ó£¬½þÈëË®Åè¡£";
+                        msg = "$NæŠ“èµ·ä¸€å€‹è‡Ÿç›¤å­ï¼Œæµ¸å…¥æ°´ç›†ã€‚";
 
                         break;
 
                 case 2:
 
-                        msg = "$NÍùÅè×ÓÀïµ¹ÁËÒ»Ð©Ôí½ÇÒº¡£";
+                        msg = "$Nå¾€ç›†å­è£¡å€’äº†ä¸€äº›çš‚è§’æ¶²ã€‚";
 
                         break;
 
                 case 3:
 
-                        msg = "$N×óÊÖÄó×ÅÅÌ×Ó£¬ÓÒÊÖÄÃ×ÅÄ¨²¼£¬¿ªÊ¼²ÁÄ¨¡£";
+                        msg = "$Nå·¦æ‰‹æè‘—ç›¤å­ï¼Œå³æ‰‹æ‹¿è‘—æŠ¹å¸ƒï¼Œé–‹å§‹æ“¦æŠ¹ã€‚";
 
                         break;
 
@@ -476,25 +476,25 @@ int continue_working(object me)
 
                 case 6:
 
-                        msg = "$NÐ¡ÐÄÒíÒíµÄ²ÁÄ¨ÅÌ×Ó¡£";
+                        msg = "$Nå°å¿ƒç¿¼ç¿¼çš„æ“¦æŠ¹ç›¤å­ã€‚";
 
                         break;
 
                 case 5:
 
-                        msg = "$N¸øÄ¨²¼ÕºÁËµãË®£¬¼ÌÐø×ÐÏ¸µØÏ´ÅÌ×Ó¡£";
+                        msg = "$Nçµ¦æŠ¹å¸ƒè˜¸äº†é»žæ°´ï¼Œç¹¼çºŒä»”ç´°åœ°æ´—ç›¤å­ã€‚";
 
                         break;
 
                 case 7:
 
-                        msg = "$N²»¶Ï²ÁÄ¨×ÅÅÌ×Ó£¬ÅÌ×ÓÉÏµÄÎÛ¹¸½¥½¥³ýÈ¥¡£";
+                        msg = "$Nä¸æ–·æ“¦æŠ¹è‘—ç›¤å­ï¼Œç›¤å­ä¸Šçš„æ±¡åž¢æ¼¸æ¼¸é™¤åŽ»ã€‚";
 
                         break;
 
                 default:
 
-                        msg = "$NÏ´ºÃÒÔºó£¬½«ÅÌ×ÓÍ¸¸É£¬ÓÃÄ¨²¼Ò»Ä¨£¬·ÅÔÚÅÔ±ßÁÀ¸É¡£";
+                        msg = "$Næ´—å¥½ä»¥å¾Œï¼Œå°‡ç›¤å­é€å¹¹ï¼Œç”¨æŠ¹å¸ƒä¸€æŠ¹ï¼Œæ”¾åœ¨æ—é‚Šæ™¾å¹¹ã€‚";
 
                         finish = 1;
 
@@ -512,19 +512,19 @@ int continue_working(object me)
 
                 case 1:
 
-                        msg = "$N×¥ÆðÊÖ±ßµÄÉ¨°Ñ£¬´÷ÉÏÐäÌ×¡£";
+                        msg = "$NæŠ“èµ·æ‰‹é‚Šçš„æŽƒæŠŠï¼Œæˆ´ä¸Šè¢–å¥—ã€‚";
 
                         break;
 
                 case 2:
 
-                        msg = "$NÍùµØÉÏÈ÷ÁËµãË®¡£";
+                        msg = "$Nå¾€åœ°ä¸Šæ´’äº†é»žæ°´ã€‚";
 
                         break;
 
                 case 3:
 
-                        msg = "$N·ÑÁ¦µÄ»Ó¶¯É¨°Ñ£¬¿ªÊ¼´òÉ¨µØÉÏµÄÀ¬»ø¡£";
+                        msg = "$Nè²»åŠ›çš„æ®å‹•æŽƒæŠŠï¼Œé–‹å§‹æ‰“æŽƒåœ°ä¸Šçš„åžƒåœ¾ã€‚";
 
                         break;
 
@@ -532,25 +532,25 @@ int continue_working(object me)
 
                 case 6:
 
-                        msg = "$NÂñÍ·ÇåÉ¨µØÉÏµÄ»Ò³¾¡£";
+                        msg = "$NåŸ‹é ­æ¸…æŽƒåœ°ä¸Šçš„ç°å¡µã€‚";
 
                         break;
 
                 case 5:
 
-                        msg = "$N²ùÆð½Å±ßµÄÀ¬»ø£¬¼ÌÐø×ÐÏ¸µØÉ¨µØ¡£";
+                        msg = "$NéŸèµ·è…³é‚Šçš„åžƒåœ¾ï¼Œç¹¼çºŒä»”ç´°åœ°æŽƒåœ°ã€‚";
 
                         break;
 
                 case 7:
 
-                        msg = "$N²»¶ÏÉ¨ÊÃ×ÅµØÃæ£¬µØÃæ½¥½¥±äµÃ¹â¿É¼øÈË¡£";
+                        msg = "$Nä¸æ–·æŽƒæ‹­è‘—åœ°é¢ï¼Œåœ°é¢æ¼¸æ¼¸è®Šå¾—å…‰å¯é‘’äººã€‚";
 
                         break;
 
                 default:
 
-                        msg = "$NÉ¨ºÃÒÔºó£¬½«ËùÓÐµÄÀ¬»ø²ù½øÂá¿ð£¬·ÅÏÂÉ¨°Ñ¡£";
+                        msg = "$NæŽƒå¥½ä»¥å¾Œï¼Œå°‡æ‰€æœ‰çš„åžƒåœ¾éŸé€²ç±®ç­ï¼Œæ”¾ä¸‹æŽƒæŠŠã€‚";
 
                         finish = 1;
 
@@ -580,13 +580,13 @@ int continue_working(object me)
 
                 b = BONUS;
 
-                // ½±ÀøÐÞÕý
+                // çŽå‹µä¿®æ­£
 
                 if (me->query("combat_exp") > 200000)
 
                 {
 
-                        // ¾­ÑéÌ«¸ß£¬Ï÷Èõ½±Àø
+                        // ç¶“é©—å¤ªé«˜ï¼Œå‰Šå¼±çŽå‹µ
 
                         b = b / 2 + 1;
 
@@ -594,7 +594,7 @@ int continue_working(object me)
 
                         {
 
-                                // ÔÙ´ÎÏ÷Èõ½±Àø
+                                // å†æ¬¡å‰Šå¼±çŽå‹µ
 
                                 b = b / 2 + 1;
 
@@ -636,7 +636,7 @@ int continue_working(object me)
 
                         }
 
-                        // Ï´ÍêÁËËùÓÐµÄÅÌ×Ó
+                        // æ´—å®Œäº†æ‰€æœ‰çš„ç›¤å­
 
                         if (me->query_temp("work/" + NAME + "/washed") ==
 
@@ -644,7 +644,7 @@ int continue_working(object me)
 
                                 me->set_temp("work/" + NAME + "/state", 3);
 
-                        msg += "ÄãÏ´ºÃÁËÒ»¸ö¸É¾»µÄÅÌ×Ó¡£\n";
+                        msg += "ä½ æ´—å¥½äº†ä¸€å€‹å¹¹å‡ˆçš„ç›¤å­ã€‚\n";
 
                 }
 
@@ -658,7 +658,7 @@ int continue_working(object me)
 
                         me->set_temp("work/" + NAME + "/state", 3);
 
-                        msg += "Äã°ÑÕâ¸öµØ·½É¨¸É¾»ÁË¡£\n";
+                        msg += "ä½ æŠŠé€™å€‹åœ°æ–¹æŽƒå¹¹å‡ˆäº†ã€‚\n";
 
                 }
 
@@ -666,7 +666,7 @@ int continue_working(object me)
 
 
 
-        msg = replace_string(msg, "$N", "Äã");
+        msg = replace_string(msg, "$N", "ä½ ");
 
         tell_object(me, msg);
 
@@ -680,15 +680,15 @@ int continue_working(object me)
 
                 {
 
-                        tell_object(me, HIC "\nÄã»ñµÃÁË" +
+                        tell_object(me, HIC "\nä½ ç²å¾—äº†" +
 
                                     chinese_number(b) +
 
-                                    "µã¾­ÑéºÍ" +
+                                    "é»žç¶“é©—å’Œ" +
 
                                     chinese_number((b + 2) / 3) +
 
-                                    "µãÇ±ÄÜ¡£\n\n" NOR);
+                                    "é»žæ½›èƒ½ã€‚\n\n" NOR);
 
                 }
 
@@ -706,7 +706,7 @@ int continue_working(object me)
 
 
 
-// ÖÐÍ¾Í£Ö¹¹¤×÷
+// ä¸­é€”åœæ­¢å·¥ä½œ
 
 int halt_working(object me)
 
@@ -714,15 +714,15 @@ int halt_working(object me)
 
         if (me->query_temp("work/" + NAME + "/type") == "wash")
 
-                message_vision("$N°ÑÊÖÖÐµÄÄ¨²¼ÅÌ×Ó¶ªµ½Ò»ÅÔ£¬Ä¨ÁËÄ¨º¹µÀ£º"
+                message_vision("$NæŠŠæ‰‹ä¸­çš„æŠ¹å¸ƒç›¤å­ä¸Ÿåˆ°ä¸€æ—ï¼ŒæŠ¹äº†æŠ¹æ±—é“ï¼š"
 
-                               "Ì«ÀÛÁËÌ«ÀÛÁË£¬ÐªÐªÔÙ¸É¡£\n", me);
+                               "å¤ªç´¯äº†å¤ªç´¯äº†ï¼Œæ­‡æ­‡å†å¹¹ã€‚\n", me);
 
         else
 
-                message_vision("$NÍ£ÏÂÊÖ£¬¿¿ÔÚÉí±ßµÄÉ¨°ÑÉÏ£¬Ä¨ÁËÄ¨º¹µÀ£º"
+                message_vision("$Nåœä¸‹æ‰‹ï¼Œé åœ¨èº«é‚Šçš„æŽƒæŠŠä¸Šï¼ŒæŠ¹äº†æŠ¹æ±—é“ï¼š"
 
-                               "Ì«ÀÛÁËÌ«ÀÛÁË£¬ÐªÐªÔÙ¸É¡£\n", me);
+                               "å¤ªç´¯äº†å¤ªç´¯äº†ï¼Œæ­‡æ­‡å†å¹¹ã€‚\n", me);
 
 
 
@@ -734,7 +734,7 @@ int halt_working(object me)
 
 
 
-// ½áÊø¹¤×÷£¬ÁìÈ¡½±Àø
+// çµæŸå·¥ä½œï¼Œé ˜å–çŽå‹µ
 
 public int finish_work(object me, object ob, object obj)
 
@@ -748,9 +748,9 @@ public int finish_work(object me, object ob, object obj)
 
         if (! objectp(obj) || environment(obj) != me)
 
-                return fail_msg(ob->name() + "µãµãÍ·µÀ£º¡°¸ÉÍêÁË£¿ÄÇ¾Í"
+                return fail_msg(ob->name() + "é»žé»žé ­é“ï¼šâ€œå¹¹å®Œäº†ï¼Ÿé‚£å°±"
 
-                                "¿ì°Ñ¹¤¾ß»¹¸øµêÐ¡¶þÈ¥Ñ½¡£¡±\n");
+                                "å¿«æŠŠå·¥å…·é‚„çµ¦åº—å°äºŒåŽ»å‘€ã€‚â€\n");
 
 
 
@@ -764,9 +764,9 @@ public int finish_work(object me, object ob, object obj)
 
         {
 
-                write(CYN + ob->name() + "ÒÉ»óµÀ£º¡°Äã»¹Ã»¸ÉÍêÄØ£¬¾ÍÀ´"
+                write(CYN + ob->name() + "ç–‘æƒ‘é“ï¼šâ€œä½ é‚„æ²’å¹¹å®Œå‘¢ï¼Œå°±ä¾†"
 
-                      "Òª½±Àø£¿¡±\n" NOR);
+                      "è¦çŽå‹µï¼Ÿâ€\n" NOR);
 
                 return 0;
 
@@ -784,9 +784,9 @@ public int finish_work(object me, object ob, object obj)
 
                 {
 
-                        write(CYN + ob->name() + "É¨ÁËÒ»ÑÛ" + obj->name() +
+                        write(CYN + ob->name() + "æŽƒäº†ä¸€çœ¼" + obj->name() +
 
-                              "µÀ£º¡°ÕâÊÇÎÒ½ÐÄãÏ´µÄÅÌ×Ó£¿¡±\n" NOR);
+                              "é“ï¼šâ€œé€™æ˜¯æˆ‘å«ä½ æ´—çš„ç›¤å­ï¼Ÿâ€\n" NOR);
 
                         return 0;
 
@@ -796,21 +796,21 @@ public int finish_work(object me, object ob, object obj)
 
                 {
 
-                        write(CYN + ob->name() + "ÊýÁËÊý" + obj->name() +
+                        write(CYN + ob->name() + "æ•¸äº†æ•¸" + obj->name() +
 
-                              "µÀ£º¡°ÕâÅÌ×ÓµÄÊýÄ¿²»¶ÔÑ½£¬¸øÄã´òËéÁË£¿¡±\n" NOR);
+                              "é“ï¼šâ€œé€™ç›¤å­çš„æ•¸ç›®ä¸å°å‘€ï¼Œçµ¦ä½ æ‰“ç¢Žäº†ï¼Ÿâ€\n" NOR);
 
                         return 0;
 
                 }
 
-                // ½ðÇ®±¨³ê
+                // é‡‘éŒ¢å ±é…¬
 
-                write(sort_msg(CYN + ob->name() + "¿´ÁË¿´" + obj->name() +
+                write(sort_msg(CYN + ob->name() + "çœ‹äº†çœ‹" + obj->name() +
 
-                               "£¬µãµãÍ·µÀ£º¡°àÅ£¬»¹²»´í£¬ÕâÀïÊÇÄãµÄ¹¤Ç®£¬"
+                               "ï¼Œé»žé»žé ­é“ï¼šâ€œå—¯ï¼Œé‚„ä¸éŒ¯ï¼Œé€™è£¡æ˜¯ä½ çš„å·¥éŒ¢ï¼Œ"
 
-                               "ÊÕºÃÁË¡£¡±\n" NOR));
+                               "æ”¶å¥½äº†ã€‚â€\n" NOR));
 
                 coin = new("/clone/money/coin");
 
@@ -828,9 +828,9 @@ public int finish_work(object me, object ob, object obj)
 
                 {
 
-                        write(CYN + ob->name() + "É¨ÁËÒ»ÑÛ" + obj->name() +
+                        write(CYN + ob->name() + "æŽƒäº†ä¸€çœ¼" + obj->name() +
 
-                              "µÀ£º¡°ÕâÊÇÎÒ¸øÄãµÄÉ¨°Ñ£¿¡±\n" NOR);
+                              "é“ï¼šâ€œé€™æ˜¯æˆ‘çµ¦ä½ çš„æŽƒæŠŠï¼Ÿâ€\n" NOR);
 
                         return 0;
 
@@ -840,21 +840,21 @@ public int finish_work(object me, object ob, object obj)
 
                 {
 
-                        write(CYN + ob->name() + "µÉ´óÑÛ¾¦Íû×ÅÄãµÀ£º¡°ÄãÄÄ"
+                        write(CYN + ob->name() + "çžªå¤§çœ¼ç›æœ›è‘—ä½ é“ï¼šâ€œä½ å“ª"
 
-                              "ÀïÒ²Ã»É¨Ñ½£¿¡±\n" NOR);
+                              "è£¡ä¹Ÿæ²’æŽƒå‘€ï¼Ÿâ€\n" NOR);
 
                         return 0;
 
                 }
 
-                // ½ðÇ®±¨³ê
+                // é‡‘éŒ¢å ±é…¬
 
-                write(sort_msg(CYN + ob->name() + "ÊÕÆð" + obj->name() +
+                write(sort_msg(CYN + ob->name() + "æ”¶èµ·" + obj->name() +
 
-                               "£¬µãµãÍ·µÀ£º¡°àÅ£¬»¹²»´í£¬ÕâÀïÊÇÄãµÄ¹¤Ç®£¬"
+                               "ï¼Œé»žé»žé ­é“ï¼šâ€œå—¯ï¼Œé‚„ä¸éŒ¯ï¼Œé€™è£¡æ˜¯ä½ çš„å·¥éŒ¢ï¼Œ"
 
-                               "ÊÕºÃÁË¡£¡±\n" NOR));
+                               "æ”¶å¥½äº†ã€‚â€\n" NOR));
 
                 coin = new("/clone/money/coin");
 
@@ -868,15 +868,15 @@ public int finish_work(object me, object ob, object obj)
 
         default:
 
-                write(CYN + ob->name() + "×¥ÁË×¥ÄÔ´üµÀ£º¡°Äã¸ÉµÄÕâÊÇÊ²"
+                write(CYN + ob->name() + "æŠ“äº†æŠ“è…¦è¢‹é“ï¼šâ€œä½ å¹¹çš„é€™æ˜¯ä»€"
 
-                      "Ã´ÄØ£¿ÎÒÔõÃ´²»ÖªµÀÑ½¡£¡±\n" NOR);
+                      "éº¼å‘¢ï¼Ÿæˆ‘æ€Žéº¼ä¸çŸ¥é“å‘€ã€‚â€\n" NOR);
 
                 return 0;
 
         }
 
-        // Çå³ý¹¤×÷µÄÐÅÏ¢
+        // æ¸…é™¤å·¥ä½œçš„ä¿¡æ¯
 
         me->delete_temp("work");
 

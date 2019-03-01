@@ -7,7 +7,7 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIW "±¼ÅÜÖĞ¡­¡­" NOR, ({ "running" }));
+        set_name(HIW "å¥”è·‘ä¸­â€¦â€¦" NOR, ({ "running" }));
         set_weight(200000);
         set_max_encumbrance(1000000);
         set("running", 1);
@@ -18,8 +18,8 @@ void create()
         else
         {
                 set("value", 1);
-                set("long", "ÄãÕıÔÚ¿ìÂíÉÏ±¼ÅÜ ¡­¡­\n");
-                set("unit", "´Î");
+                set("long", "ä½ æ­£åœ¨å¿«é¦¬ä¸Šå¥”è·‘ â€¦â€¦\n");
+                set("unit", "æ¬¡");
                 set("material", "air");
                 set("no_get", "!@#$!@#%%^@!^\n");
         }

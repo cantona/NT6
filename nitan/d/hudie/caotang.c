@@ -1,4 +1,4 @@
-// ²ÝÌÃ caotang.c
+// è‰å ‚ caotang.c
  
 #include <ansi.h>
 #include <room.h>
@@ -7,13 +7,13 @@ inherit ROOM;
 
 void create() 
 { 
-        set("short", "²ÝÌÃ");
+        set("short", "è‰å ‚");
         set("long", @LONG
-ÕâÊÇÒ»¸ö²ÝÌÃ£¬ÓÉÓÚ¹âÏß³ä×ã£¬ÏÔµÃºÜÃ÷ÁÁ£¬²ÝÌÃÕýÖÐÓÐÒ»¸öÌ´
-Ä¾×À£¬×ÀÏÂÃæÕûÆëµØ°Ú·Å×ÅËÄ¸öµÊ×Ó¡£ÕýÃÅÕý¶ÔµÄÇ½ÉÏ¹Ò×ÅÒ»·ù»­£¬
-»­ÖÐÊÇÒ»¸öÉñÇå¹ÇÐãµÄÖÐÄêÈË£¬×óÓÒÓÐÒ»¸±¶ÔÁª£¬»­µÄÕýÏÂ·½ÓÐ¸öÏã
-°¸£¬ÉÏÃæµÄÏãÂ¯ÖÐ²å×Å¼¸¸ùÌ´Ïã£¬ÕýÈ½È½µØÈ¼×Å¡£Õý¶Ô²àÃæÓÐÒ»ÉÈÖñ
-ÃÅ(door)ÐéÑÚ×Å¡£
+é€™æ˜¯ä¸€å€‹è‰å ‚ï¼Œç”±äºŽå…‰ç·šå……è¶³ï¼Œé¡¯å¾—å¾ˆæ˜Žäº®ï¼Œè‰å ‚æ­£ä¸­æœ‰ä¸€å€‹æª€
+æœ¨æ¡Œï¼Œæ¡Œä¸‹é¢æ•´é½Šåœ°æ“ºæ”¾è‘—å››å€‹å‡³å­ã€‚æ­£é–€æ­£å°çš„ç‰†ä¸ŠæŽ›è‘—ä¸€å¹…ç•«ï¼Œ
+ç•«ä¸­æ˜¯ä¸€å€‹ç¥žæ¸…éª¨ç§€çš„ä¸­å¹´äººï¼Œå·¦å³æœ‰ä¸€å‰¯å°è¯ï¼Œç•«çš„æ­£ä¸‹æ–¹æœ‰å€‹é¦™
+æ¡ˆï¼Œä¸Šé¢çš„é¦™çˆä¸­æ’è‘—å¹¾æ ¹æª€é¦™ï¼Œæ­£å†‰å†‰åœ°ç‡ƒè‘—ã€‚æ­£å°å´é¢æœ‰ä¸€æ‰‡ç«¹
+é–€(door)è™›æŽ©è‘—ã€‚
 LONG );
 
         set("no_clean_up", 0);
@@ -29,6 +29,6 @@ LONG );
             __DIR__"npc/xtong1" : 1,
         ]));
 
-        create_door("enter", "ÖñÃÅ", "out", DOOR_CLOSED);
+        create_door("enter", "ç«¹é–€", "out", DOOR_CLOSED);
         setup();
 }

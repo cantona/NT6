@@ -1,4 +1,4 @@
-// qingci-ping.c Çà´ÉÆ¿£¬ÓÃÀ´×°Óñ·äÃÛ
+// qingci-ping.c é’ç“·ç“¶ï¼Œç”¨ä¾†è£ç‰èœ‚èœœ
 
 #include <ansi.h>
 
@@ -6,25 +6,25 @@ inherit ITEM;
 
 inherit F_LIQUID;
 
-#define RAN 60        // ½¬ÓĞĞ§¹ûµÄ¸ÅÂÊ
+#define RAN 60        // æ¼¿æœ‰æ•ˆæœçš„æ¦‚ç‡
 
 void create()
 {
-        set_name(CYN "Çà´ÉÆ¿" NOR, ({"qingci ping", "ping", "bottle" }));
+        set_name(CYN "é’ç“·ç“¶" NOR, ({"qingci ping", "ping", "bottle" }));
         set_weight(100);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "¹ÅÄ¹ÅÉÓÃÀ´×°Óñ·äÃÛµÄÇà´ÉĞ¡Æ¿¡£\n");
-                set("unit", "¸ö");
-                set("base_unit", "¸ö");
+                set("long", "å¤å¢“æ´¾ç”¨ä¾†è£ç‰èœ‚èœœçš„é’ç“·å°ç“¶ã€‚\n");
+                set("unit", "å€‹");
+                set("base_unit", "å€‹");
                 set("max_liquid", 10);
                 set("no_give",0);
         }
 
         set("liquid", ([
                 "type": "mi",
-                "name": "Óñ·äÃÛ",
+                "name": "ç‰èœ‚èœœ",
                 "remaining": 10,
                 "drunk_apply": 1,
         ]));
@@ -52,9 +52,9 @@ int do_drink(string arg)
         if(!arg) return 0;
         if( !living(pl) ) return 0;
         if( pl->is_busy() )
-                return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É¡£\n");
+                return notify_fail("ä½ ä¸Šä¸€å€‹å‹•ä½œé‚„æ²’æœ‰å®Œæˆã€‚\n");
         if( query("water", pl) >= pl->max_water_capacity() )
-                return notify_fail("ÄãÒÑ¾­ºÈÌ«¶àÁË£¬ÔÙÒ²¹à²»ÏÂÒ»µÎË®ÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“å–å¤ªå¤šäº†ï¼Œå†ä¹ŸçŒä¸ä¸‹ä¸€æ»´æ°´äº†ã€‚\n");
 
         if (sscanf(arg, "%s %d", item, num)==2){
                 if( !id(item) ) return 0;
@@ -62,7 +62,7 @@ int do_drink(string arg)
                         inv = all_inventory(pl);
                         j = 0;
                         for(i=0; i<sizeof(inv); i++){
-                                if( query("name", inv[i]) == CYN"Çà´ÉÆ¿"NOR){
+                                if( query("name", inv[i]) == CYN"é’ç“·ç“¶"NOR){
                                         j += 1;
                                         if( j == num ) ping = inv[i];
                                 }
@@ -72,32 +72,32 @@ int do_drink(string arg)
         else if( !id(arg) ) return 0;
         
         if( !query("liquid/remaining", ping) )
-                return notify_fail(name()+(query("liquid/name", ping)?"ÒÑ¾­±»ºÈµÃÒ»µÎÒ²²»Ê£ÁË¡£\n":"ÊÇ¿ÕµÄ¡£\n"));
+                return notify_fail(name()+(query("liquid/name", ping)?"å·²ç¶“è¢«å–å¾—ä¸€æ»´ä¹Ÿä¸å‰©äº†ã€‚\n":"æ˜¯ç©ºçš„ã€‚\n"));
 
         addn("liquid/remaining", -1, ping);
-        message_vision("$NÄÃÆğ"+name()+"ßÈÁËÒ»Ğ¡¿Ú"+query("liquid/name", ping)+"¡£\n",pl);
+        message_vision("$Næ‹¿èµ·"+name()+"å‘·äº†ä¸€å°å£"+query("liquid/name", ping)+"ã€‚\n",pl);
         addn("water", 5, pl);
         addn("jingli", 5, pl);
 
-        if( query("liquid/name", ping) == "Óñ·äÃÛ"){
+        if( query("liquid/name", ping) == "ç‰èœ‚èœœ"){
                 addn("jing", 30, pl);
                 if ((int)pl->query_condition("yufengdu")) {
                     pl->apply_condition("yufengdu", (int)pl->query_condition("yufengdu") - 5);
-                        tell_object(pl, HIW "Óñ·ä¶¾µÄÆæÑ÷¼õÇáÁËÒ»Ğ©£¡\n" NOR );
+                        tell_object(pl, HIW "ç‰èœ‚æ¯’çš„å¥‡ç™¢æ¸›è¼•äº†ä¸€äº›ï¼\n" NOR );
                 }
         }
-        if( query("liquid/name", ping) == "Óñ·äÃÛË®"){
+        if( query("liquid/name", ping) == "ç‰èœ‚èœœæ°´"){
                 addn("jingli", 25, pl);
                 if ((int)pl->query_condition("yufengdu")) {
                     pl->apply_condition("yufengdu", (int)pl->query_condition("yufengdu") - 2);
-                        tell_object(pl, HIW "Óñ·ä¶¾µÄÆæÑ÷Ö»¼õÇáÁËÒ»µãµã£¡\n" NOR );
+                        tell_object(pl, HIW "ç‰èœ‚æ¯’çš„å¥‡ç™¢åªæ¸›è¼•äº†ä¸€é»é»ï¼\n" NOR );
                 }
         }
-        if( query("liquid/name", ping) == "Óñ·äÍõ½¬"){
+        if( query("liquid/name", ping) == "ç‰èœ‚ç‹æ¼¿"){
                 if (pl->query_skill("qufeng",1) > 60
                         && pl->query_skill("yunv-xinfa",1) > 30
-                         && query("family/family_name", pl) == "¹ÅÄ¹ÅÉ"){
-                        tell_object(pl, HIW "ÄãÇ±ÔË¹¦Á¦£¬ÈÎÍõ½¬ÒõÈáÖ®Æø³©ĞĞÓÚ¾­Âö¡£\n" NOR );
+                         && query("family/family_name", pl) == "å¤å¢“æ´¾"){
+                        tell_object(pl, HIW "ä½ æ½›é‹åŠŸåŠ›ï¼Œä»»ç‹æ¼¿é™°æŸ”ä¹‹æ°£æš¢è¡Œäºç¶“è„ˆã€‚\n" NOR );
                         if ( random(100) < RAN ){
                                 if( query("max_jingli", pl)<pl->query_current_jingli_limit() )
                                 {
@@ -116,11 +116,11 @@ int do_drink(string arg)
                 else pl->apply_condition("yufengdu", 
                         (int)pl->query_condition("yufengdu") + 20);
         }
-        if( query("liquid/name", ping) == "¹ÅÄ¹Óñ½¬"){
+        if( query("liquid/name", ping) == "å¤å¢“ç‰æ¼¿"){
                 if (pl->query_skill("qufeng",1) > 120
                         && pl->query_skill("yunu-xinjing",1) > 90
-                         && query("family/family_name", pl) == "¹ÅÄ¹ÅÉ"){
-                        tell_object(pl, HIW "ÄãÇ±ÔËÓñÅ®ĞÄ¾­£¬½èÓñ½¬ÒõÈáÖ®Æø³å»÷¾­Âö£¬ËÆºõÓĞĞ©×÷ÓÃ¡£\n" NOR );
+                         && query("family/family_name", pl) == "å¤å¢“æ´¾"){
+                        tell_object(pl, HIW "ä½ æ½›é‹ç‰å¥³å¿ƒç¶“ï¼Œå€Ÿç‰æ¼¿é™°æŸ”ä¹‹æ°£æ²–æ“Šç¶“è„ˆï¼Œä¼¼ä¹æœ‰äº›ä½œç”¨ã€‚\n" NOR );
                         if ( random(100) < RAN ){
                                 if( query("max_neili", pl)<pl->query_current_neili_limit() )
                                         addn("max_neili", 1, pl);
@@ -136,11 +136,11 @@ int do_drink(string arg)
                 else pl->apply_condition("yufengdu", 
                         (int)pl->query_condition("yufengdu") + 30);
         }
-        if( query("liquid/name", ping) == "¹ÅÄ¹Ê¥½¬"){
+        if( query("liquid/name", ping) == "å¤å¢“è–æ¼¿"){
                 if ( pl->query_skill("qufeng",1) > 150
                         && pl->query_skill("yunu-xinjing",1) > 120
-                         && query("family/family_name", pl) == "¹ÅÄ¹ÅÉ"){
-                        tell_object(pl, HIW "ÄãÇ±ÔËÓñÅ®ĞÄ¾­£¬½èÊ¥½¬ÒõÈáÖ®Æø³©ĞĞ¾­Âö£¬Í¨ÌåÊæÌ©£¡\n" NOR );
+                         && query("family/family_name", pl) == "å¤å¢“æ´¾"){
+                        tell_object(pl, HIW "ä½ æ½›é‹ç‰å¥³å¿ƒç¶“ï¼Œå€Ÿè–æ¼¿é™°æŸ”ä¹‹æ°£æš¢è¡Œç¶“è„ˆï¼Œé€šé«”èˆ’æ³°ï¼\n" NOR );
                         if ( random(100) < RAN ){
                                 if( query("max_neili", pl)<pl->query_current_neili_limit() )
                                         addn("max_neili", 1, pl);
@@ -165,8 +165,8 @@ int do_drink(string arg)
 
         if( pl->is_fighting() ) pl->start_busy(2);
         if( !query("liquid/remaining", ping)){
-                write("ÄãÒÑ¾­½«"+name()+"ÀïµÄ"+query("liquid/name", ping )
-                        + "ºÈµÃÒ»µÎÒ²²»Ê£ÁË¡£\n");
+                write("ä½ å·²ç¶“å°‡"+name()+"è£¡çš„"+query("liquid/name", ping )
+                        + "å–å¾—ä¸€æ»´ä¹Ÿä¸å‰©äº†ã€‚\n");
                 if( query("worthless", ping))set("value",0);
         }
 
@@ -195,9 +195,9 @@ int do_fill(string arg)
         if(!arg) return 0;
         if( !living(pl) ) return 0;
         if( pl->is_busy() )
-                return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É¡£\n");
+                return notify_fail("ä½ ä¸Šä¸€å€‹å‹•ä½œé‚„æ²’æœ‰å®Œæˆã€‚\n");
         if( !query("resource/water", environment(pl)) )
-                return notify_fail("ÕâÀïÃ»ÓĞµØ·½¿ÉÒÔ×°Ë®¡£\n");
+                return notify_fail("é€™è£¡æ²’æœ‰åœ°æ–¹å¯ä»¥è£æ°´ã€‚\n");
 
         if (sscanf(arg, "%s %d", item, num)==2){
                 if( !id(item) ) return 0;
@@ -205,7 +205,7 @@ int do_fill(string arg)
                         inv = all_inventory(pl);
                         j = 0;
                         for(i=0; i<sizeof(inv); i++){
-                                if( query("name", inv[i]) == CYN"Çà´ÉÆ¿"NOR){
+                                if( query("name", inv[i]) == CYN"é’ç“·ç“¶"NOR){
                                         j += 1;
                                         if( j == num ) ping = inv[i];
                                 }
@@ -215,20 +215,20 @@ int do_fill(string arg)
         else if( !id(arg) ) return 0;
 
         if( query("liquid/remaining", ping) == query("max_liquid", ping )
-                 && query("liquid/name", ping) == "Óñ·äÃÛ"){
-                message_vision("$N½«Ë®»º»º×¢Èë" + ping->name() + "Àï£¬ÂıÂıÒ¡ÔÈ¡£\n", pl);
+                 && query("liquid/name", ping) == "ç‰èœ‚èœœ"){
+                message_vision("$Nå°‡æ°´ç·©ç·©æ³¨å…¥" + ping->name() + "è£¡ï¼Œæ…¢æ…¢æ–å‹»ã€‚\n", pl);
                 set("liquid/type", "mi-water", ping);
-                set("liquid/name", "Óñ·äÃÛË®", ping);
+                set("liquid/name", "ç‰èœ‚èœœæ°´", ping);
                 set("liquid/remaining", query("max_liquid"), ping);
                 set("liquid/drink_func", 0, ping);
         }
         else {
                 if( query("liquid/remaining", ping) )
-                        message_vision("$N½«" + name() + "ÀïÊ£ÏÂµÄ" + query("liquid/name") + "µ¹µô¡£\n", pl);
-                message_vision("$N½«" + name() + "×°ÂúÇåË®¡£\n", pl);
+                        message_vision("$Nå°‡" + name() + "è£¡å‰©ä¸‹çš„" + query("liquid/name") + "å€’æ‰ã€‚\n", pl);
+                message_vision("$Nå°‡" + name() + "è£æ»¿æ¸…æ°´ã€‚\n", pl);
 
                 set("liquid/type", "water", ping);
-                set("liquid/name", "ÇåË®", ping);
+                set("liquid/name", "æ¸…æ°´", ping);
                 set("liquid/remaining", query("max_liquid"), ping);//*query_amount());
                 set("liquid/drink_func", 0, ping);
         }
@@ -250,7 +250,7 @@ int do_addn(string arg)
         addn("liquid/remaining", i);
         remaining = query("liquid/remaining");
         max = query("max_liquid");        //*query_amount();
-        tell_object(me, "ÂúÆ¿"+chinese_number(max)+"£¬ÏÖÔÚ"        + chinese_number(remaining)+"¡£\n");
+        tell_object(me, "æ»¿ç“¶"+chinese_number(max)+"ï¼Œç¾åœ¨"        + chinese_number(remaining)+"ã€‚\n");
         
         return 1;
 }

@@ -4,13 +4,13 @@ inherit NPC;
 void do_attack();
 void create()
 {
-        string *names = ({"ÑªÀÇ"});
+        string *names = ({"è¡€ç‹¼"});
         set_name( names[random(sizeof(names))], ({ "blood wolf","wolf"}));
         set("vendetta_mark","wolf");
-        set("race", "Ò°ÊÞ");
-        set("gender", "ÐÛÐÔ");
+        set("race", "é‡Žç¸");
+        set("gender", "é›„æ€§");
         set("age", 20);
-        set("long", "ÕâÊÇÒ»Ö»¿ÉÅÂµÄÑªÀÇ¡£\n");
+        set("long", "é€™æ˜¯ä¸€åªå¯æ€•çš„è¡€ç‹¼ã€‚\n");
 
         set("str", 50);
         set("con", 120);
@@ -26,7 +26,7 @@ void create()
                 (: do_attack() :),
         }) );
 
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "Ç°½Å", "áá½Å", "Î²°Í" }) );
+        set("limbs", ({ "é ­éƒ¨", "èº«é«”", "å‰è…³", "å¾Œè…³", "å°¾å·´" }) );
         set("verbs", ({ "bite", "claw" }) );
         set("combat_exp", 300000);
         set("bellicosity", 5 );
@@ -43,7 +43,7 @@ mixed hit_ob(object me, object victim, int damage_bonus)
 {
         victim->receive_damage("qi",40+random(40), me);
         victim->receive_wound("qi",20+random(20), me);
-        message_combatd(HIW"\n$N"+HIW"·æÀûµÄ×¦×ÓÔÚ$n"+HIW"ÉíÉÏÁôÏÂÒ»µÀÑªÁÜÁÜµÄÉË¿Ú£¡"NOR,me,victim);
+        message_combatd(HIW"\n$N"+HIW"é‹’åˆ©çš„çˆªå­åœ¨$n"+HIW"èº«ä¸Šç•™ä¸‹ä¸€é“è¡€æ·‹æ·‹çš„å‚·å£ï¼"NOR,me,victim);
         return;
 }
 
@@ -55,15 +55,15 @@ void do_attack() {
         if (!enemies || sizeof(enemies)==0)
                         return;
         enemy = enemies[random(sizeof(enemies))];
-        msg = HIR"\n$NÍ»È»¼±´Ü£¬Ïò$nµÄÑÊºíÒ§È¥£¡\n"NOR;
+        msg = HIR"\n$Nçªç„¶æ€¥ç«„ï¼Œå‘$nçš„åš¥å–‰å’¬åŽ»ï¼\n"NOR;
         message_combatd(msg,this_object(),enemy);
         if( random(query("combat_exp"))*6>query("combat_exp", enemy)){
-                        msg = HIR"$n¶ãÉÁ²»¼°£¬±»Ò§¸öÕý×Å£¡\n"NOR;
+                        msg = HIR"$nèº²é–ƒä¸åŠï¼Œè¢«å’¬å€‹æ­£è‘—ï¼\n"NOR;
                         message_combatd(msg,this_object(),enemy);
                         enemy->receive_damage("qi",50+random(50));
                         COMBAT_D->report_status(enemy);
         } else {
-                        msg = HIY"µ«ÊÇ±»$n¶ã¿ªÁË¡£\n"NOR;
+                        msg = HIY"ä½†æ˜¯è¢«$nèº²é–‹äº†ã€‚\n"NOR;
                         message_combatd(msg,this_object(),enemy);
         }
 

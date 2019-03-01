@@ -9,17 +9,17 @@ inherit F_UNIQUE;
 
 void create()
 {
-        set_name("ÍØ°Ï", ({ "tuoba", }));
+        set_name("æ‹“è·‹", ({ "tuoba", }));
         set("long",
-        "ËûÊÇÒ»Î»´ø·¢ĞŞĞĞµÄÍ·ÍÓ£¬Éí´©Ò»¼ş°×²¼³¤ÅÛ¡£\n"
-        "Ëû¸ö×Ó²»¸ß£¬µ«ºÜ½áÊµ£¬¿´ÉÏÈ¥ÆÄÎª´¿ÆÓ¡£¿ÉÊÇÁ³ÉÏ¾­³£¸¡ÏÖ³öÆæ¹ÖµÄĞ¦Èİ£¬ÈÃ\n"
-        "ÈËÓĞĞ©Ãş²»×ÅÍ·ÄÔ¡£\n"
+        "ä»–æ˜¯ä¸€ä½å¸¶ç™¼ä¿®è¡Œçš„é ­é™€ï¼Œèº«ç©¿ä¸€ä»¶ç™½å¸ƒé•·è¢ã€‚\n"
+        "ä»–å€‹å­ä¸é«˜ï¼Œä½†å¾ˆçµå¯¦ï¼Œçœ‹ä¸Šå»é —ç‚ºç´”æ¨¸ã€‚å¯æ˜¯è‡‰ä¸Šç¶“å¸¸æµ®ç¾å‡ºå¥‡æ€ªçš„ç¬‘å®¹ï¼Œè®“\n"
+        "äººæœ‰äº›æ‘¸ä¸è‘—é ­è…¦ã€‚\n"
         );
 
-        set("title",HIG "Ã÷½Ì" NOR "·ç×ÖÃÅÃÅÖ÷");
+        set("title",HIG "æ˜æ•™" NOR "é¢¨å­—é–€é–€ä¸»");
         set("level",5);
 
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("attitude", "friendly");
         set("class", "bonze");
 
@@ -61,9 +61,9 @@ void create()
         prepare_skill("cuff", "shenghuo-quan");
         prepare_skill("strike", "guangming-zhang");
 
-        set("mingjiao_party","·ç×ÖÃÅ");
-        set("inherit_title",HIG"Ã÷½Ì"NOR"·ç×ÖÃÅ½ÌÖÚ"NOR);
-        create_family("Ã÷½Ì", 38, "·ç×ÖÃÅÃÅÖ÷");
+        set("mingjiao_party","é¢¨å­—é–€");
+        set("inherit_title",HIG"æ˜æ•™"NOR"é¢¨å­—é–€æ•™çœ¾"NOR);
+        create_family("æ˜æ•™", 38, "é¢¨å­—é–€é–€ä¸»");
         setup();
 
         carry_object("/d/mingjiao/obj/baipao")->wear();

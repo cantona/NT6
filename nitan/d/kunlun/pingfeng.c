@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ʯ����");
+        set("short", "石屏風");
         set("long",@long
-����һ���޴�����磬������ɽ�ز��ĺ������ɣ������ϵ�ͼ��
-�������ɵ�ʦ��������ʥ�������ս���ֵķ��ˣ�Ӣ��ͦ�Σ�����һ��
-��ʦ֮�����������������ɵ�ǰ���ˡ�
+這是一個巨大的屏風，用昆侖山特產的汗白玉雕成，屏風上的圖案
+是昆侖派的師祖昆侖三聖何足道挑戰少林的風姿，英姿挺拔，頗有一派
+宗師之象。屏風後面就是昆侖派的前廳了。
 long);
         set("exits",([
                 "south" : __DIR__"guangchang",

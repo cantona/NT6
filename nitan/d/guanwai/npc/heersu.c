@@ -5,9 +5,9 @@ string ask_me();
 
 void create()
 {
-        set_name("ºÕ¶ûËÕ", ({ "he ersu", "he", "ersu", "heersu" }));
-        set("long", "ËûÊÇÒ»¸öÀÏ²Î¿Í£¬¿ÉÊÇÒ»Æ¶ÈçÏ´¡£\n");
-        set("title", WHT "²Î¿Í" NOR);
+        set_name("èµ«çˆ¾è˜‡", ({ "he ersu", "he", "ersu", "heersu" }));
+        set("long", "ä»–æ˜¯ä¸€å€‹è€åƒå®¢ï¼Œå¯æ˜¯ä¸€è²§å¦‚æ´—ã€‚\n");
+        set("title", WHT "åƒå®¢" NOR);
         set("age", 65);
         set("combat_exp", 300);
         set("str", 30);
@@ -16,8 +16,8 @@ void create()
         set("int", 30);
         set("attitude", "friendly");
         set("inquiry", ([
-                "ÈË²Î" : (: ask_me :),
-                "É½²Î" : (: ask_me :),
+                "äººåƒ" : (: ask_me :),
+                "å±±åƒ" : (: ask_me :),
         ]));
 
         if (random(10) > 5)
@@ -34,15 +34,15 @@ string ask_me()
 
         if (query("count") < 1)
         {
-                return "ºÙºÙ£¬ÄãÏÂ´ÎÔÙÀ´°É£¬ÏÖÔÚÎÒÊÖÀïÒ²Ã»»õ¡£\n";
+                return "å˜¿å˜¿ï¼Œä½ ä¸‹æ¬¡å†ä¾†å§ï¼Œç¾åœ¨æˆ‘æ‰‹è£¡ä¹Ÿæ²’è²¨ã€‚\n";
         } else
-        if( query_temp("tmark/²Î", me) )
+        if( query_temp("tmark/åƒ", me) )
         {
-                return "Äãµ½µ×´òËãÂÞàÂÐ©Ê²Ã´£¿\n";
+                return "ä½ åˆ°åº•æ‰“ç®—ç¾…å—¦äº›ä»€éº¼ï¼Ÿ\n";
         } else
         {
-                set_temp("tmark/²Î", 1, me);
-                return "ÎÒÕâ¶ùµ¹ÊÇÁôÁË¿ÃÀÏÉ½²Î£¬²»¹ýµÃÏÈ½»Ç®¡£\n";
+                set_temp("tmark/åƒ", 1, me);
+                return "æˆ‘é€™å…’å€’æ˜¯ç•™äº†æ£µè€å±±åƒï¼Œä¸éŽå¾—å…ˆäº¤éŒ¢ã€‚\n";
         }
 }
 
@@ -52,25 +52,25 @@ int accept_object(object who, object ob)
 
         if( !query("money_id", ob) )
         {
-                write(CYN "ºÕ¶ûËÕ²ïÒìµØËµµÀ£ºÄã¸øÎÒÕâ¸ö¸ÉÊ²Ã´£¿\n" NOR);
+                write(CYN "èµ«çˆ¾è˜‡è©«ç•°åœ°èªªé“ï¼šä½ çµ¦æˆ‘é€™å€‹å¹¹ä»€éº¼ï¼Ÿ\n" NOR);
                 return 0;
         }
 
         if (query("count") < 1)
         {
-                write(CYN "ºÕ¶ûËÕÒ¡Í·µÀ£ºÄãµÈÏÂ´Î°É£¬ÏÖÔÚÎÒÊÖÀïÒ²Ã»»õ¡£\n" NOR);
+                write(CYN "èµ«çˆ¾è˜‡æ–é ­é“ï¼šä½ ç­‰ä¸‹æ¬¡å§ï¼Œç¾åœ¨æˆ‘æ‰‹è£¡ä¹Ÿæ²’è²¨ã€‚\n" NOR);
                 return 0;
         }
 
-        if( !query_temp("tmark/²Î", who) )
+        if( !query_temp("tmark/åƒ", who) )
         {
-                write(CYN "ºÕ¶ûËÕÒÉ»óµÀ£ºÎÒÓÖ²»ÊÇÆòØ¤£¬Ã»ÊÂ¸øÎÒÇ®×÷Éõ£¿\n" NOR);
+                write(CYN "èµ«çˆ¾è˜‡ç–‘æƒ‘é“ï¼šæˆ‘åˆä¸æ˜¯ä¹žä¸ï¼Œæ²’äº‹çµ¦æˆ‘éŒ¢ä½œç”šï¼Ÿ\n" NOR);
                 return 0;
         }
 
         if (ob->value() < 100000)
         {
-                write(CYN "ºÕ¶ûËÕÀäÐ¦µÀ£ººÙºÙ£¬¸øÎÒÕâÃ´¶àÇ®ÄÄ£¿\n" NOR);
+                write(CYN "èµ«çˆ¾è˜‡å†·ç¬‘é“ï¼šå˜¿å˜¿ï¼Œçµ¦æˆ‘é€™éº¼å¤šéŒ¢å“ªï¼Ÿ\n" NOR);
                 return 0;
         }
 
@@ -79,6 +79,6 @@ int accept_object(object who, object ob)
 
         addn("count", -1);
         command("givebainianrenshento"+query("id", who));
-        write(CYN "ºÕ¶ûËÕËµµÀ£º¼ÈÈ»Äú³öµÃÆð¼Û£¬ÕâÖê°ÙÄêÈË²Î¾Í¸øÄú°É¡£\n" NOR);
+        write(CYN "èµ«çˆ¾è˜‡èªªé“ï¼šæ—¢ç„¶æ‚¨å‡ºå¾—èµ·åƒ¹ï¼Œé€™æ ªç™¾å¹´äººåƒå°±çµ¦æ‚¨å§ã€‚\n" NOR);
         return 1;
 }

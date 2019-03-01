@@ -2,14 +2,14 @@
 
 #include <ansi.h>
 inherit ROOM;
-#define QUESTDIR3 "quest/ÌìÁú°Ë²¿/Ïô·åÉíÊÀÆª/"
+#define QUESTDIR3 "quest/å¤©é¾å…«éƒ¨/è•­å³°èº«ä¸–ç¯‡/"
 
 void create()
 {
-	set("short", HIC"ÇÍ±Ú"NOR);
+	set("short", HIC"å³­å£"NOR);
 	set("long", @LONG
-ÕâÀïÊÇËÌÄ¦ÑÂÖ®ÇÍ±Ú£¬´ÓÕâÀïÍûÈ¥£¬±±ÃæÕıÊÇĞÇËŞÒ»´ø£¬ÄÏÃæÊÇÑãÃÅ¹Ø¡£
-Õ¾ÔÚ¸ß´¦£¬Äã²»ÓÉ¸Ğµ½·ç¹âÎŞÏŞºÃ¡£
+é€™è£¡æ˜¯é Œæ‘©å´–ä¹‹å³­å£ï¼Œå¾é€™è£¡æœ›å»ï¼ŒåŒ—é¢æ­£æ˜¯æ˜Ÿå®¿ä¸€å¸¶ï¼Œå—é¢æ˜¯é›é–€é—œã€‚
+ç«™åœ¨é«˜è™•ï¼Œä½ ä¸ç”±æ„Ÿåˆ°é¢¨å…‰ç„¡é™å¥½ã€‚
 LONG
 	);
  set("no_get_from", 1); 
@@ -23,12 +23,12 @@ void init()
 	object me = this_player();
   if(me->query_condition("killer")||me->query_condition("job_busy"))
   {
-     message_vision(HIC"\nÍ»È»£¬²»ÖªµÀ´ÓÄÄÀï´«À´Ò»¸öÉùÒôµÀ£ºÕâÀï²»»¶Ó­$N¡£\n"NOR,me); 
-     tell_object(me,HIR"¸ú×Å£¬²»ÖªµÀÄÄÀïÀ´µÄÒ»Ö»Éñ½Å·ÉÆğÒ»½Å£¬½«ÄãÒ»½ÅÌß·É³öÈ¥£¡\n"NOR);
-     tell_room(environment(me),HIR"\n²»ÖªµÀÄÄÀïÀ´µÄÒ»Ö»Éñ½Å·ÉÆğÒ»½Å£¬½«"+ me->name()+ "Ìß·É³öÈ¥£¡\n"NOR, ({ me }));
+     message_vision(HIC"\nçªç„¶ï¼Œä¸çŸ¥é“å¾å“ªè£¡å‚³ä¾†ä¸€å€‹è²éŸ³é“ï¼šé€™è£¡ä¸æ­¡è¿$Nã€‚\n"NOR,me); 
+     tell_object(me,HIR"è·Ÿè‘—ï¼Œä¸çŸ¥é“å“ªè£¡ä¾†çš„ä¸€åªç¥è…³é£›èµ·ä¸€è…³ï¼Œå°‡ä½ ä¸€è…³è¸¢é£›å‡ºå»ï¼\n"NOR);
+     tell_room(environment(me),HIR"\nä¸çŸ¥é“å“ªè£¡ä¾†çš„ä¸€åªç¥è…³é£›èµ·ä¸€è…³ï¼Œå°‡"+ me->name()+ "è¸¢é£›å‡ºå»ï¼\n"NOR, ({ me }));
      if(random(2)) me->move("/d/xingxiu/silk3");
      else me->move("/d/xingxiu/jyg");
-     tell_room(environment(me), HIR"\nÖ»¼û"+ me->name()+ "´ó½ĞÒ»Éù·É¹ıÀ´£¬Ë¤ÁË¸ö¹·³ÔÊº£¡ºÃË§Å¶~~~~~~~~\n"NOR, ({ me }));
+     tell_room(environment(me), HIR"\nåªè¦‹"+ me->name()+ "å¤§å«ä¸€è²é£›éä¾†ï¼Œæ‘”äº†å€‹ç‹—åƒå±ï¼å¥½å¸¥å“¦~~~~~~~~\n"NOR, ({ me }));
      me->start_busy(1);
      return;
   }
@@ -44,17 +44,17 @@ int do_look(string arg)
 	if (me->query(QUESTDIR3+"start")&&me->query_temp(QUESTDIR3+"askxiao") && !me->query_temp(QUESTDIR3+"lookcliff")&& !me->query(QUESTDIR3+"over")) {
 	 if (!arg) {
 		set("long", @LONG
-ÕâÀïÊÇËÌÄ¦ÑÂÖ®ÇÍ±Ú£¬´ÓÕâÀïÍûÈ¥£¬±±ÃæÕıÊÇĞÇËŞÒ»´ø£¬ÄÏÃæÊÇÑãÃÅ¹Ø¡£
-Õ¾ÔÚ¸ß´¦£¬Äã²»ÓÉ¸Ğµ½·ç¹âÎŞÏŞºÃ¡£Ö»ÊÇ²àÃæÒ»´óÆ¬¹â»¬Ö®´¦·Ç³£Ææ¹Ö¡£
+é€™è£¡æ˜¯é Œæ‘©å´–ä¹‹å³­å£ï¼Œå¾é€™è£¡æœ›å»ï¼ŒåŒ—é¢æ­£æ˜¯æ˜Ÿå®¿ä¸€å¸¶ï¼Œå—é¢æ˜¯é›é–€é—œã€‚
+ç«™åœ¨é«˜è™•ï¼Œä½ ä¸ç”±æ„Ÿåˆ°é¢¨å…‰ç„¡é™å¥½ã€‚åªæ˜¯å´é¢ä¸€å¤§ç‰‡å…‰æ»‘ä¹‹è™•éå¸¸å¥‡æ€ªã€‚
 LONG
 );
 		me->look(arg);
 	 }
-         else if (arg == "¹â»¬Ö®´¦"||arg == "²àÃæ"||arg == "cliff" ||arg == "stone") {
-		tell_object(me,HIR"Äã×ĞÏ¸µØ¹Û²ì×ÅÇÍ±Ú£¬Ö»¼ûÄÇÒ»Æ¬É½±ÚÌìÉúµÄÆ½¾»¹â»¬£¬µ«ÕıÖĞÒ»´óÆ¬É½Ê¯ÉÏÈ´¾¡ÊÇ¸«ÔäµÄÓ¡ºÛ£¬\n"
-		                  "ÏÔ¶øÒ×¼û£¬ÊÇÓĞÈË¹ÊÒâ½«ÁôÏÂµÄ×Ö¼£Ï÷È¥ÁË¡£\n"NOR);
-    tell_room(environment(me),HIC"\n"+me->name()+"´Õ½üÇÍ±Ú£¬ËÆºõÔÚÑ°ÕÒÊ²Ã´¡£\n"NOR, ({ me }));                       
-		tell_object(me,HIC"Äã°µ°µÏëµÀ£ºÖ»ÅÂÕâÏô·åÕæµÄÊÇÆõµ¤ÈËÁË¡£\n"NOR);
+         else if (arg == "å…‰æ»‘ä¹‹è™•"||arg == "å´é¢"||arg == "cliff" ||arg == "stone") {
+		tell_object(me,HIR"ä½ ä»”ç´°åœ°è§€å¯Ÿè‘—å³­å£ï¼Œåªè¦‹é‚£ä¸€ç‰‡å±±å£å¤©ç”Ÿçš„å¹³å‡ˆå…‰æ»‘ï¼Œä½†æ­£ä¸­ä¸€å¤§ç‰‡å±±çŸ³ä¸Šå»ç›¡æ˜¯æ–§é‘¿çš„å°ç—•ï¼Œ\n"
+		                  "é¡¯è€Œæ˜“è¦‹ï¼Œæ˜¯æœ‰äººæ•…æ„å°‡ç•™ä¸‹çš„å­—è·¡å‰Šå»äº†ã€‚\n"NOR);
+    tell_room(environment(me),HIC"\n"+me->name()+"æ¹Šè¿‘å³­å£ï¼Œä¼¼ä¹åœ¨å°‹æ‰¾ä»€éº¼ã€‚\n"NOR, ({ me }));                       
+		tell_object(me,HIC"ä½ æš—æš—æƒ³é“ï¼šåªæ€•é€™è•­å³°çœŸçš„æ˜¯å¥‘ä¸¹äººäº†ã€‚\n"NOR);
 		me->set_temp(QUESTDIR3+"lookcliff",1);
 		me->start_busy(5);
 		remove_call_out("xiaofeng");
@@ -65,8 +65,8 @@ LONG
 	else
 	{
 		set("long", @LONG
-ÕâÀïÊÇËÌÄ¦ÑÂÖ®ÇÍ±Ú£¬´ÓÕâÀïÍûÈ¥£¬±±ÃæÕıÊÇĞÇËŞÒ»´ø£¬ÄÏÃæÊÇÑãÃÅ¹Ø¡£
-Õ¾ÔÚ¸ß´¦£¬Äã²»ÓÉ¸Ğµ½·ç¹âÎŞÏŞºÃ¡£
+é€™è£¡æ˜¯é Œæ‘©å´–ä¹‹å³­å£ï¼Œå¾é€™è£¡æœ›å»ï¼ŒåŒ—é¢æ­£æ˜¯æ˜Ÿå®¿ä¸€å¸¶ï¼Œå—é¢æ˜¯é›é–€é—œã€‚
+ç«™åœ¨é«˜è™•ï¼Œä½ ä¸ç”±æ„Ÿåˆ°é¢¨å…‰ç„¡é™å¥½ã€‚
 LONG
 );
 		me->look(arg);
@@ -86,25 +86,25 @@ int do_jump(string arg)
 {
 		object room,me = this_player();
 
-    if( arg == "down" || arg == "cliff" || arg == "ÇÍ±Ú")
+    if( arg == "down" || arg == "cliff" || arg == "å³­å£")
     {
 		    if(me->query_skill("dodge")<200) 
 	 	    {
-           message_vision(HIC"\n$NÎüÁËÒ»¿ÚÆø£¬³¢ÊÔÌøÏÂÇÍ±Ú£¬È´Í»È»·¢ÏÖ·ç´óÉ½¸ß£¬È´ÍËÁË»ØÀ´¡£\n"NOR,me);
+           message_vision(HIC"\n$Nå¸äº†ä¸€å£æ°£ï¼Œå˜—è©¦è·³ä¸‹å³­å£ï¼Œå»çªç„¶ç™¼ç¾é¢¨å¤§å±±é«˜ï¼Œå»é€€äº†å›ä¾†ã€‚\n"NOR,me);
            return 1;
 	      }
-        message_vision(HIC"\n$NÎüÁËÒ»¿ÚÆø£¬Ò»¸ö×İÉíÒÑ¾­ÌøÏÂÇÍ±Ú¡£\n"NOR, this_player());
+        message_vision(HIC"\n$Nå¸äº†ä¸€å£æ°£ï¼Œä¸€å€‹ç¸±èº«å·²ç¶“è·³ä¸‹å³­å£ã€‚\n"NOR, this_player());
         if (!(room = find_object(__DIR__"silk3")))
           room = load_object(__DIR__"silk3");
         if(!room)
         { 
-      	  tell_object(me,HIR"\nÄãÎŞÂÛÔõÃ´Ìø£¬·¢ÏÖ¶¼»¹ÔÚÔ­µØ!\n");
-      	  log_file("quest/TLBB", sprintf("%s(%s)È±ÉÙsilk.cÎÄ¼ş¡£\n", me->name(1),me->query("id")) );	
+      	  tell_object(me,HIR"\nä½ ç„¡è«–æ€éº¼è·³ï¼Œç™¼ç¾éƒ½é‚„åœ¨åŸåœ°!\n");
+      	  log_file("quest/TLBB", sprintf("%s(%s)ç¼ºå°‘silk.cæ–‡ä»¶ã€‚\n", me->name(1),me->query("id")) );	
         }
         else
         {
         	me->move(room);
-          tell_room(environment(me),HIC"\nÖ»¼ûÒ»¸öÉíÓ°·ÉÉí¶øÏÂ£¬Ô­À´ÊÇ"+me->name()+"´ÓÇÍ±ÚÉÏÌøÏÂ¡£\n"NOR, ({ me }));                       
+          tell_room(environment(me),HIC"\nåªè¦‹ä¸€å€‹èº«å½±é£›èº«è€Œä¸‹ï¼ŒåŸä¾†æ˜¯"+me->name()+"å¾å³­å£ä¸Šè·³ä¸‹ã€‚\n"NOR, ({ me }));                       
         }
         return 1;
     }

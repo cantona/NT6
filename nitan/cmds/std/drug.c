@@ -16,40 +16,40 @@ int main(object me, string arg)
         function f;
 
         if (! arg)
-                return notify_fail("ÄãÒªÏÂÊ²Ã´¶¾£¿\n");
+                return notify_fail("ä½ è¦ä¸‹ä»€éº¼æ¯’ï¼Ÿ\n");
 
         if (me->is_busy())
-                return notify_fail("ÏÈÃ¦ÍêÁËÄãÊÖÖĞµÄÊÂÇéÔÙÏëÔõÃ´º¦ÈË°É£¡\n");
+                return notify_fail("å…ˆå¿™å®Œäº†ä½ æ‰‹ä¸­çš„äº‹æƒ…å†æƒ³æ€éº¼å®³äººå§ï¼\n");
 
         if (me->is_fighting())
-                return notify_fail("ÄãÏÖÔÚÕıÔÚ´ò¼Ü£¬Ã»Ê±¼äÏÂ¶¾¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£åœ¨æ‰“æ¶ï¼Œæ²’æ™‚é–“ä¸‹æ¯’ã€‚\n");
 
         if (sscanf(arg, "%s in %s", item, target) != 2)
-                return notify_fail("ÄãÒªÍùÄÄÀïÏÂ¶¾£¿\n");
+                return notify_fail("ä½ è¦å¾€å“ªè£¡ä¸‹æ¯’ï¼Ÿ\n");
 
         dest = present(target, me);
         if (! dest)
-                return notify_fail("ÕâÀïÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+                return notify_fail("é€™è£¡æ²’æœ‰é€™æ¨£æ±è¥¿ã€‚\n");
 
         if (! objectp(obj = present(item, me)))
-                return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+                return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™æ¨£æ±è¥¿ã€‚\n");
 
         if( !stringp(query("poison_type", obj)) )
-                return notify_fail("Õâ²»ÊÇ¶¾Ò©°¡¡£\n");
+                return notify_fail("é€™ä¸æ˜¯æ¯’è—¥å•Šã€‚\n");
 
         if( !query("can_drug", obj) )
-                return notify_fail("ÕâÖÖ¶¾Ò©²»ÄÜÏÂÔÚÊ³ÎïÖĞ¡£\n");
+                return notify_fail("é€™ç¨®æ¯’è—¥ä¸èƒ½ä¸‹åœ¨é£Ÿç‰©ä¸­ã€‚\n");
 
         if( query("food_remaining", dest)<1 )
         {
-                tell_object(me, "Õâ¶«Î÷¿´ÉÏÈ¥Ã»ÓĞÈË»áÈ¥³Ô¡£\n");
+                tell_object(me, "é€™æ±è¥¿çœ‹ä¸Šå»æ²’æœ‰äººæœƒå»åƒã€‚\n");
                 return 1;
         }
 
-        message("vision", sprintf("%s½«Ò»¶«Î÷ÍµÍµÈ÷µ½ÁË%sÉÏÃæ¡£\n",
+        message("vision", sprintf("%så°‡ä¸€æ±è¥¿å·å·æ´’åˆ°äº†%sä¸Šé¢ã€‚\n",
                 me->name(), dest->name()), environment(me), ({ me }));
 
-        message("vision", sprintf("Äã½«Ò»%s%sÍµÍµÈ÷µ½ÁË%sÉÏÃæ¡£\n",
+        message("vision", sprintf("ä½ å°‡ä¸€%s%så·å·æ´’åˆ°äº†%sä¸Šé¢ã€‚\n",
                 query("unit", obj),obj->name(),dest->name()),me);
 
         f = bind((: call_other, __FILE__, "do_effect",
@@ -95,9 +95,9 @@ int do_effect(string type, mixed para)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : drug <¶¾Ò©> in <Ê³Îï>
+æŒ‡ä»¤æ ¼å¼ : drug <æ¯’è—¥> in <é£Ÿç‰©>
  
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄã½«Ä³Ñù¶¾Ò©ÏÂÔÚÊ³ÎïÖĞ¡£
+é€™å€‹æŒ‡ä»¤å¯ä»¥è®“ä½ å°‡æŸæ¨£æ¯’è—¥ä¸‹åœ¨é£Ÿç‰©ä¸­ã€‚
 HELP
     );
     return 1;

@@ -4,7 +4,7 @@ inherit ITEM;
 
 void create()
 {
-        set_name("´óÄ¾×À", ({ "wood table" }) );
+        set_name("å¤§æœ¨æ¡Œ", ({ "wood table" }) );
         set_weight(500);
         set_max_encumbrance(8000);
         set("no_get", 1);
@@ -13,8 +13,8 @@ void create()
         else {
                 set("position", "on");
                 set("prep", "on");
-                set("unit", "ÕÅ");
-                set("long", "Ò»ÕÅ´óÄ¾×À£¬×ã¹»¼¸Ê®¸öÈËÍ¬Ê±³Ô·¹¡£\n");
+                set("unit", "å¼µ");
+                set("long", "ä¸€å¼µå¤§æœ¨æ¡Œï¼Œè¶³å¤ å¹¾åå€‹äººåŒæ™‚åƒé£¯ã€‚\n");
                 set("value", 1);
         }
 }

@@ -1,4 +1,4 @@
-// zhushang.c 诸伤之术
+// zhushang.c 璜稿偡涔嬭
 // Created by rcwiz for yhonline
 
 #include <ansi.h>
@@ -7,9 +7,9 @@ inherit F_CLEAN_UP;
 
 int is_scborn() { return 1; }
 
-string name() { return HIM "侠骨丹心" NOR; }
+string name() { return HIM "淇犻涓瑰績" NOR; }
 
 int perform(object me, string skill)
 {
-        return notify_fail("被动技能，不需要施展，能大幅度提高精力上限、提高精力及气血恢复速度。\n");
+        return notify_fail("琚嫊鎶�鑳斤紝涓嶉渶瑕佹柦灞曪紝鑳藉ぇ骞呭害鎻愰珮绮惧姏涓婇檺銆佹彁楂樼簿鍔涘強姘ｈ鎭㈠京閫熷害銆俓n");
 }

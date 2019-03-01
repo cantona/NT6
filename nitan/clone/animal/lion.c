@@ -1,4 +1,4 @@
-// laohu.c Ê¨×Ó
+// laohu.c ç…å­
 // Last Modified by winder on Aug. 1 2002
 
 // inherit NPC_TRAINEE;
@@ -6,13 +6,13 @@ inherit "/inherit/char/trainee";
 
 void create()
 {
-        set_name("Ê¨×Ó", ({ "lion", "shi zi", "shi" }) );
-        set("race", "×ßÊŞ");
+        set_name("ç…å­", ({ "lion", "shi zi", "shi" }) );
+        set("race", "èµ°ç¸");
         set("age", 25);
-        set("long", "Ò»Ö»»ÆÃ«³¤××µÄĞÛÊ¨£¬×¦ÑÀÈñÀû£¬ÉñÇéÍşÎä¡£\n");
-        set("msg_fail", "$n³å$NßÚÑÀºğÁËÒ»Éù");
-        set("msg_succ", "$nÒ»Ãæ¿ÚÖĞÏò$NºÉºÉ·¢Íş£¬Ò»ÃæÏòºóÍËÁË°ë²½£¬ËÆºõÓĞĞ©ÇÓÁË");
-        set("msg_trained","$nµÍºğ×ÅÔÚ$NµÄÃæÇ°·üÁËÏÂÀ´");
+        set("long", "ä¸€åªé»ƒæ¯›é•·é¬ƒçš„é›„ç…ï¼Œçˆªç‰™éŠ³åˆ©ï¼Œç¥æƒ…å¨æ­¦ã€‚\n");
+        set("msg_fail", "$næ²–$Nå‘²ç‰™å¼äº†ä¸€è²");
+        set("msg_succ", "$nä¸€é¢å£ä¸­å‘$Nè·è·ç™¼å¨ï¼Œä¸€é¢å‘å¾Œé€€äº†åŠæ­¥ï¼Œä¼¼ä¹æœ‰äº›æ€¯äº†");
+        set("msg_trained","$nä½å¼è‘—åœ¨$Nçš„é¢å‰ä¼äº†ä¸‹ä¾†");
         set("auto_follow",1);
         set("attitude", "aggressive");
 
@@ -36,9 +36,9 @@ void create()
         set("chat_chance", 10);
         set("chat_msg", ({
                 (: this_object(), "random_move" :),
-                "Ê¨×ÓÀ´»Ø×ß¶¯£¬³¯×ÅÄã¶ËÏàÁË°ëÉÎ£¬¿ÚÖĞºÉºÉµÄ·¢Íş¡£\n",
-                "Ê¨×Ó³¤³¤ºğÁËÒ»Éù¡£\n",
-                "Ê¨×ÓÅ¿ÔÚµØÉÏ£¬°ÚÍ·¶¶ÁË¶¶××Ã«£¬Ò»Ë«ÑÛ¾¦½ô½ô¶¢×ÅÄã¡£\n",
+                "ç…å­ä¾†å›èµ°å‹•ï¼Œæœè‘—ä½ ç«¯ç›¸äº†åŠæ™Œï¼Œå£ä¸­è·è·çš„ç™¼å¨ã€‚\n",
+                "ç…å­é•·é•·å¼äº†ä¸€è²ã€‚\n",
+                "ç…å­è¶´åœ¨åœ°ä¸Šï¼Œæ“ºé ­æŠ–äº†æŠ–é¬ƒæ¯›ï¼Œä¸€é›™çœ¼ç›ç·Šç·Šç›¯è‘—ä½ ã€‚\n",
         }) );
 
         setup();
@@ -46,7 +46,7 @@ void create()
 
 void die()
 {
-        message_vision("\n$NÑöÌì²Òº¿ÁËÒ»Éù£¬Å¿ÔÚµØÉÏ²»¶¯ÁË¡£\n", this_object());
+        message_vision("\n$Nä»°å¤©æ…˜åšäº†ä¸€è²ï¼Œè¶´åœ¨åœ°ä¸Šä¸å‹•äº†ã€‚\n", this_object());
         ::die();
 }
 
@@ -80,7 +80,7 @@ int do_look(string arg)
 
         printf(query("long", this_object())+
         COMBAT_D->eff_status_msg(query("eff_qi")* 100 / query("max_qi")) + "\n" 
-        + "ËüÉíÉÏÍÔ×Å£º\n");
+        + "å®ƒèº«ä¸Šé¦±è‘—ï¼š\n");
         for (i = 0; i < sizeof(inv); i++)
                 printf("%s \n", inv[i]->short());
         return 1;

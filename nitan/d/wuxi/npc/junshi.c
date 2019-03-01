@@ -5,12 +5,12 @@ inherit NPC;
 
 void create()
 {
-        set_name(HIC"¾üÊ¿"NOR, ({"jun shi", "jun"}));
-        set("gender", "ÄĞĞÔ");
+        set_name(HIC"è»å£«"NOR, ({"jun shi", "jun"}));
+        set("gender", "ç”·æ€§");
         set("age", random(10) + 30);
         set("str", 25);
         set("dex", 16);
-        set("long", "ËûÕ¾ÔÚÄÇÀï£¬µÄÈ·ÓĞËµ²»³öµÄÍş·ç¡£\n");
+        set("long", "ä»–ç«™åœ¨é‚£è£¡ï¼Œçš„ç¢ºæœ‰èªªä¸å‡ºçš„å¨é¢¨ã€‚\n");
         set("combat_exp", 100000);
         set("shen_type", 1);
         set("attitude", "peaceful");

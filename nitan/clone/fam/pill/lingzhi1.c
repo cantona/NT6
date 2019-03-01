@@ -3,13 +3,13 @@ inherit __DIR__"pill";
 
 void create()
 {
-        set_name(NOR + CYN "°ÙÄêÁéÖ¥" NOR, ({ "bainian lingzhi", "bainian",
+        set_name(NOR + CYN "ç™¾å¹´éˆèŠ" NOR, ({ "bainian lingzhi", "bainian",
                                               "lingzhi", "ling", "zhi" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", CYN "²úÓÚ¸ßÉ½ÉÏµÄÕä¹óÒ©²Ä£¬·şÓÃºó¿ÉÌáÉıÄÚ¹¦µÈ¼¶¡£\n" NOR);
-                set("base_unit", "Öê");
+                set("long", CYN "ç”¢äºé«˜å±±ä¸Šçš„çè²´è—¥æï¼Œæœç”¨å¾Œå¯æå‡å…§åŠŸç­‰ç´šã€‚\n" NOR);
+                set("base_unit", "æ ª");
                 set("base_value", 10000);
                 set("base_weight", 300);
                 set("only_do_effect", 1);
@@ -17,8 +17,8 @@ void create()
                 set("skill_mapped", 1);
                 set("pill_point", 20000);
                 set("force_point", 3);
-                set("pill_msg1", HIR "ÄãÖ»¾õÒ»¹ÉÅ¯ÆøÉ¢²¼È«Éí£¬Ëµ²»³öµÄÊæ·şÊÜÓÃ¡£\n" NOR);
-                set("pill_msg2", HIY "ÄãÖ»¾õÒ»¹ÉÈÈÁ÷Ó¿ÉÏ£¬ÄÚÏ¢µÃµ½ÁËÍêÈ«µÄ²¹³ä¡£\n" NOR);
+                set("pill_msg1", HIR "ä½ åªè¦ºä¸€è‚¡æš–æ°£æ•£å¸ƒå…¨èº«ï¼Œèªªä¸å‡ºçš„èˆ’æœå—ç”¨ã€‚\n" NOR);
+                set("pill_msg2", HIY "ä½ åªè¦ºä¸€è‚¡ç†±æµæ¹§ä¸Šï¼Œå…§æ¯å¾—åˆ°äº†å®Œå…¨çš„è£œå……ã€‚\n" NOR);
         }
         setup();
 }

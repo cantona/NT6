@@ -6,14 +6,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name(YEL + GRN "ÖñÒ¶" NOR, ({ "penglai zhuye" }) );
+        set_name(YEL + GRN "ç«¹è‘‰" NOR, ({ "penglai zhuye" }) );
         set_weight(100);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Æ¬");
+                set("unit", "ç‰‡");
                 set("value", 1);
-                set("long", YEL + GRN "ÕâÊÇÒ»Æ¬ÖñÒ¶£¬»¹´ø×ÅÏÉÆø¡£\n" NOR);
+                set("long", YEL + GRN "é€™æ˜¯ä¸€ç‰‡ç«¹è‘‰ï¼Œé‚„å¸¶è‘—ä»™æ°£ã€‚\n" NOR);
         }
 
         setup();

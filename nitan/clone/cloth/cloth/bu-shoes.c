@@ -6,18 +6,18 @@ inherit EQUIP;
 
 void create()
 {
-        set_name( GRN "²¼Ð¬" NOR, ({ "bu xie", "bu-shoes" }) );
+        set_name( GRN "å¸ƒéž‹" NOR, ({ "bu xie", "bu-shoes" }) );
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ë«");
+                set("unit", "é›™");
                 set("value", 50);
                 set("material", "cloth");
                 set("armor_type", "feet");
                 set("armor_prop/armor", 2);
                 set("armor_prop/dodge", 2);
-                set("wear_msg","$N´©ÉÏÒ»Ë«$n¡£\n");
-                set("remove_msg","$N½«$nÍÑÁËÏÂÀ´¡£\n");
+                set("wear_msg","$Nç©¿ä¸Šä¸€é›™$nã€‚\n");
+                set("remove_msg","$Nå°‡$nè„«äº†ä¸‹ä¾†ã€‚\n");
         }
 }

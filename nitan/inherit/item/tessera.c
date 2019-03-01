@@ -6,41 +6,41 @@ int is_tessera() { return 1; }
 
 string chinese_s(mixed arg)
 {
-      if( !stringp(arg) )  return HIW "ÎŞ";
-      if( arg == "metal" ) return HIY "½ğ";
-      if( arg == "wood" )  return HIM "Ä¾";
-      if( arg == "water" ) return HIB "Ë®";
-      if( arg == "fire" )  return HIR "»ğ";
-      if( arg == "earth" ) return HIG "ÍÁ";
+      if( !stringp(arg) )  return HIW "ç„¡";
+      if( arg == "metal" ) return HIY "é‡‘";
+      if( arg == "wood" )  return HIM "æœ¨";
+      if( arg == "water" ) return HIB "æ°´";
+      if( arg == "fire" )  return HIR "ç«";
+      if( arg == "earth" ) return HIG "åœŸ";
 }
 
 mapping dict = ([
-        "axe"           :"¸«",
-        "bow"           :"¹­",
-        "sword"         :"½£",
-        "blade"         :"µ¶",
-        "club"          :"¹÷",
-        "dagger"        :"Ø°Ê×",
-        "fork"          :"²æ",
-        "hammer"        :"´¸",
-        "staff"         :"ÕÈ",
-        "throwing"      :"°µÆ÷",
-        "whip"          :"±Ş",
-        "xsword"        :"óï",
-        "head"          :"Í·¿ø",
-        "neck"          :"ÏîÁ´",
-        "cloth"         :"ÒÂ·ş",
-        "charm"         :"·ûÎÄ",
-        "rings"         :"½äÖ¸",
-        "armor"         :"»¤¼×",
-        "surcoat"       :"Åû·ç",
-        "waist"         :"Ñü´ø",
-        "wrists"        :"»¤Íó",
-        "shield"        :"¶Ü¼×",
-        "hands"         :"ÌúÕÆ",
-        "boots"         :"Ñ¥×Ó",
-        "finger"        :"Ö¸Ì×",
-        "all"           :"ËùÓĞÀàĞÍ",
+        "axe"           :"æ–§",
+        "bow"           :"å¼“",
+        "sword"         :"åŠ",
+        "blade"         :"åˆ€",
+        "club"          :"æ£",
+        "dagger"        :"åŒ•é¦–",
+        "fork"          :"å‰",
+        "hammer"        :"éŒ˜",
+        "staff"         :"æ–",
+        "throwing"      :"æš—å™¨",
+        "whip"          :"é­",
+        "xsword"        :"ç°«",
+        "head"          :"é ­ç›”",
+        "neck"          :"é …éˆ",
+        "cloth"         :"è¡£æœ",
+        "charm"         :"ç¬¦æ–‡",
+        "rings"         :"æˆ’æŒ‡",
+        "armor"         :"è­·ç”²",
+        "surcoat"       :"æŠ«é¢¨",
+        "waist"         :"è…°å¸¶",
+        "wrists"        :"è­·è…•",
+        "shield"        :"ç›¾ç”²",
+        "hands"         :"éµæŒ",
+        "boots"         :"é´å­",
+        "finger"        :"æŒ‡å¥—",
+        "all"           :"æ‰€æœ‰é¡å‹",
 ]);
 
 string to_chinese(string str)
@@ -59,29 +59,29 @@ string extra_long()
         mapping data;
         int value;
 
-        str =  sprintf( WHT "\nÎïÆ·ÊôĞÔ : ÏâÇ¶Îï<%s" NOR+WHT">£¬ÖØÁ¿%d¿Ë£¬ÏÂÏß%s¶ªÊ§\n" NOR,
+        str =  sprintf( WHT "\nç‰©å“å±¬æ€§ : é‘²åµŒç‰©<%s" NOR+WHT">ï¼Œé‡é‡%då…‹ï¼Œä¸‹ç·š%sä¸Ÿå¤±\n" NOR,
                         this_object()->name(), this_object()->query_weight(),
-                        (this_object()->query_autoload() || query("auto_load")) ? "²»" : "" );
+                        (this_object()->query_autoload() || query("auto_load")) ? "ä¸" : "" );
 
         if( mapp(query("magic")) )
         {
-                str += sprintf(WHT "Ä§Á¦ÊôĞÔ : %s\n" NOR, chinese_s(query("magic/type")));
-                str += sprintf(WHT "Ä§ Á¦ Öµ : %d\n" NOR, (int)query("magic/power"));
+                str += sprintf(WHT "é­”åŠ›å±¬æ€§ : %s\n" NOR, chinese_s(query("magic/type")));
+                str += sprintf(WHT "é­” åŠ› å€¼ : %d\n" NOR, (int)query("magic/power"));
         }
 
         type = query("enchase/type");
         if( type )
-                str += sprintf(WHT "¿ÉÏâ×°±¸ : %s(%s)\n" NOR, to_chinese(type), type);
+                str += sprintf(WHT "å¯é‘²è£å‚™ : %s(%s)\n" NOR, to_chinese(type), type);
         level = query("enchase/level");
         if( level )
-                str += sprintf(WHT "¿ÉÏâµÈ¼¶ : %d\n" NOR, level);
+                str += sprintf(WHT "å¯é‘²ç­‰ç´š : %d\n" NOR, level);
 
         if( mapp(data = copy(query("enchase/weapon_prop"))) )
         {
                 apply = keys(data);
                 for (i = 0; i<sizeof(apply); i++) {
                         value = data[apply[i]];
-                        str += HBCYN "ÏâÇ¶±øÆ÷" NOR " : ";
+                        str += HBCYN "é‘²åµŒå…µå™¨" NOR " : ";
                         str += EQUIPMENT_D->chinese(apply[i], value) + "\n";
                 }
         }
@@ -90,7 +90,7 @@ string extra_long()
                 apply = keys(data);
                 for (i = 0; i<sizeof(apply); i++) {
                         value = data[apply[i]];
-                        str += HBYEL "ÏâÇ¶·À¾ß" NOR " : ";
+                        str += HBYEL "é‘²åµŒé˜²å…·" NOR " : ";
                         str += EQUIPMENT_D->chinese(apply[i], value) + "\n";
                 }
         }
@@ -99,7 +99,7 @@ string extra_long()
                 apply = keys(data);
                 for (i = 0; i<sizeof(apply); i++) {
                         value = data[apply[i]];
-                        str += HBGRN "ÏâÇ¶ÊÎÆ·" NOR " : ";
+                        str += HBGRN "é‘²åµŒé£¾å“" NOR " : ";
                         str += EQUIPMENT_D->chinese(apply[i], value) + "\n";
                 }
         }
@@ -108,7 +108,7 @@ string extra_long()
                 apply = keys(data);
                 for (i = 0; i<sizeof(apply); i++) {
                         value = data[apply[i]];
-                        str += HBCYN "ÓµÓĞÊôĞÔ" NOR " : ";
+                        str += HBCYN "æ“æœ‰å±¬æ€§" NOR " : ";
                         str += EQUIPMENT_D->chinese(apply[i], value) + "\n";
                 }
         }

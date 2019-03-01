@@ -3,13 +3,13 @@
 inherit ROOM;
 void create()
 {
-        set("short", "Ë¼¹ýÑÂ");
+        set("short", "æ€éŽå´–");
         set("long", @LONG
-ÕâÊÇ»ªÉ½µÄË¼¹ýÑÂ¡£Î£ÑÂÉÏÓÐ¸öÉ½¶´£¬ÊÇ»ªÉ½ÅÉÀú´úµÜ×Ó·¸¹æºó
-Çô½ûÊÜ·£Ö®Ëù¡£ÑÂÉÏ¹âÍºÍºµÄ´ç²Ý²»Éú£¬¸üÎÞÒ»ÖêÊ÷Ä¾¡£ÕâÎ£ÑÂ×ÔÀ´
-×ÔÀ´Ïà´«ÊÇÓñÅ®·¢îÎÉÏµÄÒ»¿ÅÕäÖé£¬µ±Äê»ªÉ½ÅÉµÄ×æÊ¦ÒÔ´ËÎ£ÑÂÎª³Í
-·£µÜ×ÓÖ®Ëù£¬Ö÷ÒªÊÇ´Ë´¦ÎÞ²ÝÎÞÄ¾£¬ÎÞ³æÎÞÄñ£¬ÊÜ·£µÄµÜ×ÓÔÚÃæ±ÚË¼
-¹ýÖ®Ê±£¬²»ÖÂÎªÍâÎïËùÈÅ£¬ÐÄÓÐÅÔðÍ¡£
+é€™æ˜¯è¯å±±çš„æ€éŽå´–ã€‚å±å´–ä¸Šæœ‰å€‹å±±æ´žï¼Œæ˜¯è¯å±±æ´¾æ­·ä»£å¼Ÿå­çŠ¯è¦å¾Œ
+å›šç¦å—ç½°ä¹‹æ‰€ã€‚å´–ä¸Šå…‰ç¦¿ç¦¿çš„å¯¸è‰ä¸ç”Ÿï¼Œæ›´ç„¡ä¸€æ ªæ¨¹æœ¨ã€‚é€™å±å´–è‡ªä¾†
+è‡ªä¾†ç›¸å‚³æ˜¯çŽ‰å¥³ç™¼é‡µä¸Šçš„ä¸€é¡†çç ï¼Œç•¶å¹´è¯å±±æ´¾çš„ç¥–å¸«ä»¥æ­¤å±å´–ç‚ºæ‡²
+ç½°å¼Ÿå­ä¹‹æ‰€ï¼Œä¸»è¦æ˜¯æ­¤è™•ç„¡è‰ç„¡æœ¨ï¼Œç„¡èŸ²ç„¡é³¥ï¼Œå—ç½°çš„å¼Ÿå­åœ¨é¢å£æ€
+éŽä¹‹æ™‚ï¼Œä¸è‡´ç‚ºå¤–ç‰©æ‰€æ“¾ï¼Œå¿ƒæœ‰æ—é¶©ã€‚
 LONG );
         set("exits", ([ /* sizeof() == 2 */
                 "northdown" : __DIR__"yunupath2",
@@ -40,32 +40,32 @@ void do_say(string arg)
         
         if (! arg || arg == "") return;
         
-        if( arg == "·çÇåÑï" && !query_temp("marks/·ç", me) && random(30) == 5 )
+        if( arg == "é¢¨æ¸…æš" && !query_temp("marks/é¢¨", me) && random(30) == 5 )
         {
-                message_vision("Í»È»$N±³ºó´«À´Ò»Éù³¤Ì¾£º¡°ÄÑµÃÕâÊÀÉÏ¾ÓÈ»»¹ÓÐÈËÖªµÀ·çÄ³µÄÃû×Ö¡£¡±\n", me);
-                message_vision("$N»Ø¹ýÍ·À´£¬¼ûÉ½¶´¿ÚÕ¾×ÅÒ»¸ö°×ÐëÇàÅÛÀÏÕß£¬ÉñÆøÒÖÓô£¬Á³Èç½ðÖ½¡£\n", me);
-                set_temp("marks/·ç", 1, me);
+                message_vision("çªç„¶$NèƒŒå¾Œå‚³ä¾†ä¸€è²é•·å˜†ï¼šâ€œé›£å¾—é€™ä¸–ä¸Šå±…ç„¶é‚„æœ‰äººçŸ¥é“é¢¨æŸçš„åå­—ã€‚â€\n", me);
+                message_vision("$Nå›žéŽé ­ä¾†ï¼Œè¦‹å±±æ´žå£ç«™è‘—ä¸€å€‹ç™½é ˆé’è¢è€è€…ï¼Œç¥žæ°£æŠ‘é¬±ï¼Œè‡‰å¦‚é‡‘ç´™ã€‚\n", me);
+                set_temp("marks/é¢¨", 1, me);
                 if( query("shen", me) >= 10000 )
                 {      
-                        message("vision","·çÇåÑï¶Ô" + me->name() + "µÍÉùµØËµÁË¼¸¾ä»°¡£Ëµ°Õ±ãÆ®È»ÏÂÉ½¡£\n", 
+                        message("vision","é¢¨æ¸…æšå°" + me->name() + "ä½Žè²åœ°èªªäº†å¹¾å¥è©±ã€‚èªªç½·ä¾¿é£„ç„¶ä¸‹å±±ã€‚\n", 
                                 environment(me), ({me}));         
-                        write( "·çÇåÑïµÍÉùµØËµµÀ£º¡°µ±Äê¶À¹ÂÇó°ÜÇ°±²ÒÔÒ»±úÐþÌúÖØ½£³ÆÐÛ½­ºþ£¬\n");
-                        write( "ºÅ³Æ¡¸½£Ä§¡¹£¬×ß±éÌìÏÂÓûÃÙÒ»¶ÔÊÖ¶ø²»»ñ£¬ÎªÇóÒ»°Ü¶ø²»µÃ£¬Ò»Éú\n");
-                        write( "¼Å¼Å¡£×îÖÕÓëÒ»Éñµñ¹éÒþ£¬Âñ½£¡¸½£Ú£¡¹¡£ÎØºô£¡ÈºÐÛÊøÊÖ£¬³¤½£¿Õ\n");
-                        write( "Àû£¬²»Òà±¯·ò£¡¾ÝÎÅ¡¸½£Ú£¡¹µÄËùÔÚµØÊÇÎ»ÓÚÏåÑô³ÇÍâ¸½½ü£¬ÐÄ´æ³Ï\n");
-                        write( "Òâ£¬Èë¿Ú×ÔÏÖ¡£ÖÁÓÚµ½µ×ÈçºÎÐÄ´æ³ÏÒâ£¬Ôò·ÇÎÒËùÖª¡£Ï£ÍûÄãÄÜÑ°µÃ\n");
-                        write( "±¦½££¬Ôì¸£ÎäÁÖ¡£\n");
-                        write( "·çÇåÑïËµ°Õ£¬±ãÆ®È»ÏÂÉ½¡£\n");
+                        write( "é¢¨æ¸…æšä½Žè²åœ°èªªé“ï¼šâ€œç•¶å¹´ç¨å­¤æ±‚æ•—å‰è¼©ä»¥ä¸€æŸ„çŽ„éµé‡åŠç¨±é›„æ±Ÿæ¹–ï¼Œ\n");
+                        write( "è™Ÿç¨±ã€ŒåŠé­”ã€ï¼Œèµ°éå¤©ä¸‹æ¬²è¦“ä¸€å°æ‰‹è€Œä¸ç²ï¼Œç‚ºæ±‚ä¸€æ•—è€Œä¸å¾—ï¼Œä¸€ç”Ÿ\n");
+                        write( "å¯‚å¯‚ã€‚æœ€çµ‚èˆ‡ä¸€ç¥žé›•æ­¸éš±ï¼ŒåŸ‹åŠã€ŒåŠå¡šã€ã€‚å—šå‘¼ï¼ç¾¤é›„æŸæ‰‹ï¼Œé•·åŠç©º\n");
+                        write( "åˆ©ï¼Œä¸äº¦æ‚²å¤«ï¼æ“šèžã€ŒåŠå¡šã€çš„æ‰€åœ¨åœ°æ˜¯ä½äºŽè¥„é™½åŸŽå¤–é™„è¿‘ï¼Œå¿ƒå­˜èª \n");
+                        write( "æ„ï¼Œå…¥å£è‡ªç¾ã€‚è‡³äºŽåˆ°åº•å¦‚ä½•å¿ƒå­˜èª æ„ï¼Œå‰‡éžæˆ‘æ‰€çŸ¥ã€‚å¸Œæœ›ä½ èƒ½å°‹å¾—\n");
+                        write( "å¯¶åŠï¼Œé€ ç¦æ­¦æž—ã€‚\n");
+                        write( "é¢¨æ¸…æšèªªç½·ï¼Œä¾¿é£„ç„¶ä¸‹å±±ã€‚\n");
                 }
                 else 
                 {        
-                          message_vision( "·çÇåÑïËµ°Õ£¬ÓÖ¶Ô$NÒ»Éù³¤Ì¾£¬±ãÆ®È»ÏÂÉ½ÀëÈ¥¡£\n", me );
+                          message_vision( "é¢¨æ¸…æšèªªç½·ï¼Œåˆå°$Nä¸€è²é•·å˜†ï¼Œä¾¿é£„ç„¶ä¸‹å±±é›¢åŽ»ã€‚\n", me );
                 }        
         }
         
-        if( arg == "·çÇåÑï" && query_temp("marks/·ç", me) )
+        if( arg == "é¢¨æ¸…æš" && query_temp("marks/é¢¨", me) )
         {
-                write( "Çå·ãÍ»È»ÌøÁË³öÀ´ËµµÀ£º¡°²»ÊÇ¼û¹ý·çÇåÑïÁËÂð£¿»¹²»¿ìÈ¥ÕÒÐþÌú½££¿¡±\n");
+                write( "æ¸…æ¥“çªç„¶è·³äº†å‡ºä¾†èªªé“ï¼šâ€œä¸æ˜¯è¦‹éŽé¢¨æ¸…æšäº†å—Žï¼Ÿé‚„ä¸å¿«åŽ»æ‰¾çŽ„éµåŠï¼Ÿâ€\n");
         }  
         
         return;

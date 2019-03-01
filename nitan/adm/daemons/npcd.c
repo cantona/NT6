@@ -41,75 +41,75 @@ mapping levels = ([
 ]);
 
 mapping place = ([
-        "±±¾©³Ç"   : ({ "/d/beijing/tiananmen", "/d/beijing/dianmen",
+        "åŒ—äº¬åŸ"   : ({ "/d/beijing/tiananmen", "/d/beijing/dianmen",
                         "/d/beijing/huangling", 
                         "/d/beijing/xingchang", "/d/beijing/minju_y",
                         "/d/beijing/mianguan", "/d/beijing/yong_3",
                         "/d/beijing/tiantan", "/d/beijing/caishi", }),
-        "³¤°²³Ç"   : ({ "/d/changan/dong-chengmen", "/d/changan/nan-chengmen",
+        "é•·å®‰åŸ"   : ({ "/d/changan/dong-chengmen", "/d/changan/nan-chengmen",
                         "/d/changan/xi-chengmen", "/d/changan/bei-chengmen",
                         "/d/changan/qinglong2", "/d/changan/baihu2", }),
-        "ÂåÑô³Ç"   : ({ "/d/luoyang/xidoor", "/d/luoyang/beidoor",
+        "æ´›é™½åŸ"   : ({ "/d/luoyang/xidoor", "/d/luoyang/beidoor",
                         "/d/luoyang/dongdoor", "/d/luoyang/nandoor",
                         "/d/luoyang/juyi", "/d/luoyang/nantou",
                         "/d/luoyang/suanming", "/d/luoyang/laofang",
                         "/d/luoyang/center", "/d/luoyang/nantou2", }),
-        "ÖĞÖİ³Ç"   : ({ "/d/zhongzhou/shizhongxin", "/d/zhongzhou/nanmeng",
+        "ä¸­å·åŸ"   : ({ "/d/zhongzhou/shizhongxin", "/d/zhongzhou/nanmeng",
                         "/d/zhongzhou/beimen", "/d/zhongzhou/chenglou",
                         "/d/zhongzhou/yanlingdong1", "/d/zhongzhou/inpomiao", }),
-        "¿ª·â³Ç"   : ({ "/d/kaifeng/road4", "/d/kaifeng/zhuque",
+        "é–‹å°åŸ"   : ({ "/d/kaifeng/road4", "/d/kaifeng/zhuque",
                         "/d/kaifeng/yanqing", "/d/kaifeng/huiguan",
                         "/d/kaifeng/nanying", "/d/kaifeng/fangsheng", }),
-        "ÑïÖİ³Ç"   : ({ "/d/city/beimen", "/d/city/nanmen",
+        "æšå·åŸ"   : ({ "/d/city/beimen", "/d/city/nanmen",
                         "/d/city/ximen", "/d/city/dongmen", }),
-        "ËÕÖİ³Ç"   : ({ "/d/suzhou/xidajie2", "/d/suzhou/dongdajie2",
+        "è˜‡å·åŸ"   : ({ "/d/suzhou/xidajie2", "/d/suzhou/dongdajie2",
                         "/d/suzhou/road5", "/d/suzhou/road1",
                         "/d/suzhou/gumujiaohe", "/d/suzhou/zhenquting", }),
-        "º¼Öİ³Ç"   : ({ "/d/hangzhou/suti2", "/d/hangzhou/jujingyuan",
+        "æ­å·åŸ"   : ({ "/d/hangzhou/suti2", "/d/hangzhou/jujingyuan",
                         "/d/hangzhou/liuzhuang", "/d/hangzhou/road19",
                         "/d/hangzhou/huangniling", "/d/hangzhou/qinglindong", }),
-        "ÏåÑô³Ç"   : ({ "/d/xiangyang/westjie2", "/d/xiangyang/southjie2",
+        "è¥„é™½åŸ"   : ({ "/d/xiangyang/westjie2", "/d/xiangyang/southjie2",
                         "/d/xiangyang/xiaorong1", "/d/xiangyang/zhonglie",
                         "/d/xiangyang/guangchang", "/d/xiangyang/dingzi", }),
-        "³É¶¼³Ç"   : ({ "/d/chengdu/southroad1", "/d/chengdu/qingyanggong",
+        "æˆéƒ½åŸ"   : ({ "/d/chengdu/southroad1", "/d/chengdu/qingyanggong",
                         "/d/chengdu/northroad2", "/d/chengdu/fuheqiaoe", }),
-        "À¥Ã÷³Ç"   : ({ "/d/kunming/nandajie2", "/d/kunming/yunnan2",
+        "æ˜†æ˜åŸ"   : ({ "/d/kunming/nandajie2", "/d/kunming/yunnan2",
                         "/d/kunming/xiaoximen", "/d/kunming/xiaolu", }),
-        "¾£Öİ³Ç"   : ({ "/d/jingzhou/guangchang", "/d/jingzhou/jznanmen",
+        "èŠå·åŸ"   : ({ "/d/jingzhou/guangchang", "/d/jingzhou/jznanmen",
                         "/d/jingzhou/wenquan", "/d/jingzhou/zizhulin", }),
-        "À¼Öİ³Ç"   : ({ "/d/lanzhou/square", "/d/lanzhou/road3",
+        "è˜­å·åŸ"   : ({ "/d/lanzhou/square", "/d/lanzhou/road3",
                         "/d/lanzhou/southgate", "/d/lanzhou/westgate", }),
-        "ÈªÖİ³Ç"   : ({ "/d/quanzhou/guangchang", }),
-        "¸£Öİ³Ç"   : ({ "/d/fuzhou/xixiaojie", "/d/fuzhou/dongxiaojie",
+        "æ³‰å·åŸ"   : ({ "/d/quanzhou/guangchang", }),
+        "ç¦å·åŸ"   : ({ "/d/fuzhou/xixiaojie", "/d/fuzhou/dongxiaojie",
                         "/d/fuzhou/nanhoujie2", "/d/fuzhou/nanmen", }),
-        "ÁéÖİ"     : ({ "/d/lingzhou/xidajie", "/d/lingzhou/nanmen",
+        "éˆå·"     : ({ "/d/lingzhou/xidajie", "/d/lingzhou/nanmen",
                         "/d/lingzhou/dongdajie", }),
-        "ººÖĞÕò"   : ({ "/d/hanzhong/dongjie", "/d/hanzhong/xijie", }),
-        "»ªÉ½¸½½ü" : ({ "/d/huashan/pingxinshi", "/d/village/square",
+        "æ¼¢ä¸­é®"   : ({ "/d/hanzhong/dongjie", "/d/hanzhong/xijie", }),
+        "è¯å±±é™„è¿‘" : ({ "/d/huashan/pingxinshi", "/d/village/square",
                         "/d/village/wexit", }),
-        "ÁèÏö³Ç¸½½ü" : ({ "/d/lingxiao/sroad5", "/d/lingxiao/bar", }),
-        "Îå¶¾½Ì¸½½ü" : ({ "/d/wudu/cun3", "/d/wudu/jiang2",
+        "å‡Œéœ„åŸé™„è¿‘" : ({ "/d/lingxiao/sroad5", "/d/lingxiao/bar", }),
+        "äº”æ¯’æ•™é™„è¿‘" : ({ "/d/wudu/cun3", "/d/wudu/jiang2",
                           "/d/wudu/bianzhai1", "/d/wudu/milin4", }),
-        "·ğÉ½Ò»´ø" : ({ "/d/foshan/street1", "/d/foshan/southgate", }),
-        "ÄÏº£Ò»´ø" : ({ "/d/xiakedao/xkroad4" }),
-        "ÈêÖİÒ»´ø" : ({ "/d/ruzhou/ruzhou" }),
-        "áÔÉ½Ò»´ø" : ({ "/d/songshan/tianzhongge", "/d/shaolin/shijie1",
+        "ä½›å±±ä¸€å¸¶" : ({ "/d/foshan/street1", "/d/foshan/southgate", }),
+        "å—æµ·ä¸€å¸¶" : ({ "/d/xiakedao/xkroad4" }),
+        "æ±å·ä¸€å¸¶" : ({ "/d/ruzhou/ruzhou" }),
+        "åµ©å±±ä¸€å¸¶" : ({ "/d/songshan/tianzhongge", "/d/shaolin/shijie1",
                         "/d/shaolin/shijie8", }),
-        "ÖÕÄÏÉ½"   : ({ "/d/quanzhen/shanlu1", "/d/quanzhen/shijie1",
+        "çµ‚å—å±±"   : ({ "/d/quanzhen/shanlu1", "/d/quanzhen/shijie1",
                         "/d/quanzhen/shijie9", "/d/quanzhen/cuipinggu",
                         "/d/quanzhen/baishulin3", "/d/quanzhen/taiyi1",
                         "/d/quanzhen/banshanting", }),
-        "ĞÇËŞº£"   : ({ "/d/xingxiu/tianroad2", }),
-        "ÌìÉ½"     : ({ "/d/lingjiu/yan", }),
-        "¹ØÍâ"     : ({ "/d/guanwai/baihe", "/d/guanwai/road8",
+        "æ˜Ÿå®¿æµ·"   : ({ "/d/xingxiu/tianroad2", }),
+        "å¤©å±±"     : ({ "/d/lingjiu/yan", }),
+        "é—œå¤–"     : ({ "/d/guanwai/baihe", "/d/guanwai/road8",
                         "/d/guanwai/xuedi1", "/d/guanwai/beicheng",
                         "/d/guanwai/shanshenmiao" }),
-        "Î÷Óò"     : ({ "/d/xingxiu/shamo4", "/d/baituo/gebi",
+        "è¥¿åŸŸ"     : ({ "/d/xingxiu/shamo4", "/d/baituo/gebi",
                         "/d/xueshan/shenghu", "/d/xueshan/hubian4",
                         "/d/xuedao/sroad3", "/d/xuedao/nroad6",
                         "/d/mingjiao/gebitan5",
                         "/d/xingxiu/nanjiang2" }),
-        "´óÀíÒ»´ø" : ({ "/d/dali/northgate", "/d/dali/southgate",
+        "å¤§ç†ä¸€å¸¶" : ({ "/d/dali/northgate", "/d/dali/southgate",
                         "/d/dali/shanlu2", "/d/dali/buxiongbu",
                         "/d/dali/jinzhihe", "/d/dali/xiaodao1",
                         "/d/dali/tianweijing", "/d/dali/wuding",
@@ -152,9 +152,9 @@ void init_npc_skill(object ob, int lvl)
                 ob->set_skill(ks[i], sk_lvl);
 }
 
-string *nations = ({ "ÖĞ¹ú", "ÈÕ±¾", "¹ê´È", "ºÉÀ¼", "ÌìóÃ", "ÃÉ¹Å",
-                     "¶íÂŞË¹", "Ó¢¼ªÀû", "·¨À¼Î÷", "Î÷°àÑÀ", "ÆÏÌÑÑÀ",
-                     "±ÈÀûÊ±", "Ëş¼ª¿ËË¹Ì¹", "¹şÉ³¿ËË¹Ì¹", "ÎÚ×È±ğ¿ËË¹Ì¹" });
+string *nations = ({ "ä¸­åœ‹", "æ—¥æœ¬", "é¾œæ…ˆ", "è·è˜­", "å¤©ç«º", "è’™å¤",
+                     "ä¿„ç¾…æ–¯", "è‹±å‰åˆ©", "æ³•è˜­è¥¿", "è¥¿ç­ç‰™", "è‘¡è„ç‰™",
+                     "æ¯”åˆ©æ™‚", "å¡”å‰å…‹æ–¯å¦", "å“ˆæ²™å…‹æ–¯å¦", "çƒèŒ²åˆ¥å…‹æ–¯å¦" });
 
 // generate a npc with nation & skill level
 object create_npc(string nation, int lvl)
@@ -163,34 +163,34 @@ object create_npc(string nation, int lvl)
 
         switch (nation)
         {
-        case "ÖĞ¹ú":
+        case "ä¸­åœ‹":
                 ob = new(CLASS_D("generate") + "/chinese");
                 NPC_D->generate_cn_name(ob);
                 break;
-        case "ÈÕ±¾":
+        case "æ—¥æœ¬":
                 ob = new(CLASS_D("generate") + "/japanese");
                 NPC_D->generate_jp_name(ob);
                 break;
-        case "Ó¢¼ªÀû":
-        case "·¨À¼Î÷":
-        case "Î÷°àÑÀ":
-        case "ÆÏÌÑÑÀ":
-        case "±ÈÀûÊ±":
-        case "ºÉÀ¼":
+        case "è‹±å‰åˆ©":
+        case "æ³•è˜­è¥¿":
+        case "è¥¿ç­ç‰™":
+        case "è‘¡è„ç‰™":
+        case "æ¯”åˆ©æ™‚":
+        case "è·è˜­":
                 ob = new(CLASS_D("generate") + "/european");
                 NPC_D->generate_e_name(ob);
                 break;
-        case "ÌìóÃ":
+        case "å¤©ç«º":
                 ob = new(CLASS_D("generate") + "/indian");
                 NPC_D->generate_in_name(ob);
                 break;
-        case "»¨Øİ×ÓÄ£":
-        case "¹ê´È":
-        case "¶íÂŞË¹":
-        case "Ëş¼ª¿ËË¹Ì¹":
-        case "¹şÉ³¿ËË¹Ì¹":
-        case "ÎÚ×È±ğ¿ËË¹Ì¹":
-        case "ÃÉ¹Å":
+        case "èŠ±å‰Œå­æ¨¡":
+        case "é¾œæ…ˆ":
+        case "ä¿„ç¾…æ–¯":
+        case "å¡”å‰å…‹æ–¯å¦":
+        case "å“ˆæ²™å…‹æ–¯å¦":
+        case "çƒèŒ²åˆ¥å…‹æ–¯å¦":
+        case "è’™å¤":
                 return 0;
         }
 
@@ -219,9 +219,9 @@ object create_challenger()
         lvl = 1 + random(max_level);
         if (lvl < 3) lvl = max_level;
 
-        n = ({ "ÈÕ±¾", "ÈÕ±¾", "ÈÕ±¾",
-               "ÌìóÃ",
-               "Ó¢¼ªÀû", "·¨À¼Î÷", "Î÷°àÑÀ", "ÆÏÌÑÑÀ", "±ÈÀûÊ±", "ºÉÀ¼", });
+        n = ({ "æ—¥æœ¬", "æ—¥æœ¬", "æ—¥æœ¬",
+               "å¤©ç«º",
+               "è‹±å‰åˆ©", "æ³•è˜­è¥¿", "è¥¿ç­ç‰™", "è‘¡è„ç‰™", "æ¯”åˆ©æ™‚", "è·è˜­", });
         return create_npc(n[random(sizeof(n))], lvl);
 }
 
@@ -246,7 +246,7 @@ void set_from_me(object tob, object fob, int scale)
         my["con"] = hp_status["con"] * scale / 100;
         my["dex"] = hp_status["dex"] * scale / 100;
 
-        // ¼ÆËã×î´óÆøÑª
+        // è¨ˆç®—æœ€å¤§æ°£è¡€
         s = fob->query_con() + fob->query_str();
         max_qi = 100;
 
@@ -342,7 +342,7 @@ void place_npc(object ob, string *not_place, string *in_place)
         set("place", p, ob);
         set("startroom", startroom, ob);
         set_temp("moved", ({}), ob);
-        message_vision("$N×ßÁË¹ıÀ´¡£\n", ob);
+        message_vision("$Nèµ°äº†éä¾†ã€‚\n", ob);
 }
 
 #define MAX_MOVED       5
@@ -376,7 +376,7 @@ void random_move(object ob)
                         dir = dirs[random(sizeof(dirs))];
                         if (!get_object(exits[dir]))
                         {
-                                log_file("log", sprintf("%s µÄ %s ·½Ïò·¿¼ä²»´æÔÚ¡£\n", base_name(environment(ob)), dir));
+                                log_file("log", sprintf("%s çš„ %s æ–¹å‘æˆ¿é–“ä¸å­˜åœ¨ã€‚\n", base_name(environment(ob)), dir));
                                 break;
                         }
                         if (stringp(GO_CMD->query_reverse(dir)) &&

@@ -3,19 +3,19 @@ inherit F_LIQUID;
 #include <ansi.h> 
 void create()
 {
-        set_name(HIG"¾ÆÌ³"NOR, ({"jiutan"}));
+        set_name(HIG"é…’å£‡"NOR, ({"jiutan"}));
         set_weight(700);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¸öÇà´É¾ÆÌ¯£¬»¨ÎÆ¾«Ï¸£¬ÀïÃæÏëÀ´×°µÄÒ²ÊÇÃÀ¾Æ¡£\n");
-                set("unit", "¸ö");
+                set("long", "ä¸€å€‹é’ç“·é…’æ”¤ï¼ŒèŠ±ç´‹ç²¾ç´°ï¼Œè£¡é¢æƒ³ä¾†è£çš„ä¹Ÿæ˜¯ç¾é…’ã€‚\n");
+                set("unit", "å€‹");
                 set("value", 100);
                 set("max_liquid", 10);
         } 
         set("liquid", ([
                 "type": "alcohol",
-                "name": "ÖñÒ¶Çà",
+                "name": "ç«¹è‘‰é’",
                 "remaining": 1500,
                 "drunk_apply": 6,
         ]) );

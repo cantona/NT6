@@ -1,5 +1,5 @@
 // /feature/control.c
-// ÓÎÏ·ÖĞÓĞÊıÁ¿ÏŞÖÆµÄÎï¼ş¡£
+// éŠæˆ²ä¸­æœ‰æ•¸é‡é™åˆ¶çš„ç‰©ä»¶ã€‚
 // by Find.
 
 nomask int is_ctl_ob() { return 1; }

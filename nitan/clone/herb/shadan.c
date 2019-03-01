@@ -2,12 +2,12 @@
 
 void create()
 {
-        set_name(NOR + HIB "öèµ¨" NOR, ({ "sha dan", "sha", "dan", "herb_shadan" }));
+        set_name(NOR + HIB "é¯Šè†½" NOR, ({ "sha dan", "sha", "dan", "herb_shadan" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", NOR + HIB "º£ÖĞöèÓãµÄµ¨Ôà£¬ÊÇ·Ç³£Ãû¹óµÄÖĞÒ©Ò©²Ä¡£\n" NOR);
-                set("base_unit", "¿é");
+                set("long", NOR + HIB "æµ·ä¸­é¯Šé­šçš„è†½è‡Ÿï¼Œæ˜¯éå¸¸åè²´çš„ä¸­è—¥è—¥æã€‚\n" NOR);
+                set("base_unit", "å¡Š");
                 set("base_value", 10000);
                 set("base_weight", 35);
         }

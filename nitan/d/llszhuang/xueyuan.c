@@ -4,10 +4,10 @@ inherit ROOM;
 string *all_dirs = ({"north","south","east","west","southwest","northeast","southeast","northwest"});
 void create()
 {
-        set("short", "Ñ©Ô­");
+        set("short", "é›ªåŸ");
         set("long",
-"ÕâÀïÊÇÒ»Æ¬ÎŞÛóµÄÑ©µØ£¬ÌìµØÖ®¼äÒ»Æ¬²ÔÃ££¬Á½ĞĞ×ã¼£Ô¶Ô¶µØÑÓÉì³ö\n"
-"È¥£¬ËÆºõÓÀÎŞ¾¡Í·¡£´ËÊ±¿ñ·ç´ó×÷£¬·çÖĞÒşÒş´«À´À÷Ğ¥ºÍ¡°¿©¿©¡±µÄĞ¦Éù¡£\n"
+"é€™è£¡æ˜¯ä¸€ç‰‡ç„¡å çš„é›ªåœ°ï¼Œå¤©åœ°ä¹‹é–“ä¸€ç‰‡è’¼èŒ«ï¼Œå…©è¡Œè¶³è·¡é é åœ°å»¶ä¼¸å‡º\n"
+"å»ï¼Œä¼¼ä¹æ°¸ç„¡ç›¡é ­ã€‚æ­¤æ™‚ç‹‚é¢¨å¤§ä½œï¼Œé¢¨ä¸­éš±éš±å‚³ä¾†å²å˜¯å’Œâ€œå’¯å’¯â€çš„ç¬‘è²ã€‚\n"
 );
         set("no_magic", "1");
 
@@ -38,11 +38,11 @@ int valid_leave(object ob,string dir)
                 case 1:
                 case 2:
                 case 3:
-                        message_vision(RED"\n¿ñ·ç·ÉÑ©Ö®ÖĞ£¬ËÆºõÓĞÊ²Ã´¶«Î÷×ÔÄãÉÏÒ»ÂÓ¶ø¹ı£¡"NOR,ob);
+                        message_vision(RED"\nç‹‚é¢¨é£›é›ªä¹‹ä¸­ï¼Œä¼¼ä¹æœ‰ä»€éº¼æ±è¥¿è‡ªä½ ä¸Šä¸€æ è€Œéï¼"NOR,ob);
                         roc = new("/d/llszhuang/npc/roc");
                         roc->move(environment(ob));
                         COMBAT_D->do_attack(roc,ob,query_temp("weapon", roc),TYPE_QUICK);
-                      message_vision(YEL"ÓÄÚ¤´óÅôÕñÓğ³¤Ğ¥£¬ÉíĞÎ×ªÑÛÏûÊ§ÔÚÔÆ²ãÖĞ¡£\n\n"NOR,ob);
+                      message_vision(YEL"å¹½å†¥å¤§éµ¬æŒ¯ç¾½é•·å˜¯ï¼Œèº«å½¢è½‰çœ¼æ¶ˆå¤±åœ¨é›²å±¤ä¸­ã€‚\n\n"NOR,ob);
                         destruct(roc);
                         return 1;
                 default:
@@ -53,19 +53,19 @@ int valid_leave(object ob,string dir)
 
                         if( query_temp("doom_trigger", ob) == 3 )
                         {
-                     message("channel:chat", YEL"¡¾½­ºş¹ÊÊÂ¡¿½­ºş´«ÑÔ£º"+ob->name()+"ÔÚÄ³Ò»ÌìÍ»È»´³ÈëÁËÁøÂÌÉ½×¯¡£\n"NOR,users());
+                     message("channel:chat", YEL"ã€æ±Ÿæ¹–æ•…äº‹ã€‘æ±Ÿæ¹–å‚³è¨€ï¼š"+ob->name()+"åœ¨æŸä¸€å¤©çªç„¶é—–å…¥äº†æŸ³ç¶ å±±èŠã€‚\n"NOR,users());
                                 ob->move(__DIR__"gate");
                                 delete_temp("doom_trigger", ob);
-                                return notify_fail("ÄãÖÕÓÚÕÒµ½ÁË³ö¿Ú£¬À´µ½ÁËÂÌÁøÉ½×¯µÄÕıÃÅ¡£\n");
+                                return notify_fail("ä½ çµ‚äºæ‰¾åˆ°äº†å‡ºå£ï¼Œä¾†åˆ°äº†ç¶ æŸ³å±±èŠçš„æ­£é–€ã€‚\n");
                         }
 
 
                         if( query_temp("doom_trigger", ob) == -3 )
                         {
-                                write("ÄãÖÕÓÚÕÒµ½ÁËÀ´Ê±µÄÂ·£¬¶É¹ıÁËĞ¡ºÓ£¬Ñ­Ô­Â·»Ø¡£\n");
+                                write("ä½ çµ‚äºæ‰¾åˆ°äº†ä¾†æ™‚çš„è·¯ï¼Œæ¸¡éäº†å°æ²³ï¼Œå¾ªåŸè·¯å›ã€‚\n");
                                 ob->move(__DIR__"dukou");
                                 delete_temp("doom_trigger", ob);
-                              return notify_fail("ÄãÖÕÓÚÕÒµ½ÁËÀ´Ê±µÄÂ·£¬¶É¹ıÁËĞ¡ºÓ£¬Ñ­Ô­Â·»Øµ½ÁË¶É¿Ú¡£\n");
+                              return notify_fail("ä½ çµ‚äºæ‰¾åˆ°äº†ä¾†æ™‚çš„è·¯ï¼Œæ¸¡éäº†å°æ²³ï¼Œå¾ªåŸè·¯å›åˆ°äº†æ¸¡å£ã€‚\n");
                         }
 
                         return 1;

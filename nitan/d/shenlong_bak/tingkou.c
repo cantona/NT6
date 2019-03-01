@@ -1,4 +1,4 @@
-// /d/shenlong/datingkou ´óÌü¿Ú
+// /d/shenlong/datingkou å¤§å»³å£
 // Last Modified by winder on Jul. 12 2002
 
 #include <ansi.h>
@@ -13,11 +13,11 @@ string* npcs = ({
 
 void create()
 {
-        set("short", "´óÌü¿Ú");
+        set("short", "å¤§å»³å£");
         set("long", @LONG
-ÕâÊÇ´óÌüµÄÃÅ¿Ú£¬ÏòÄÚ¿É½øÈëÉñÁú½ÌµÄ´óÌü£¬ÃÅ¿ÚÕ¾×ÅĞí¶àÉñÁú½Ì
-µÄ½ÌÍ½£¬È«¸±Îä×°£¬¾¯ÌèµØ×¢ÊÓËÄÖÜ£¬´ÓÌüÄÚÒÀÏ¡´«À´Ò»¸ö»ëºñµÄÉùÒô£¬
-ËÆºõÀïÃæÕıÔÚÕÙ¿ªÊ²Ã´ÖØÒª»áÒé¡£
+é€™æ˜¯å¤§å»³çš„é–€å£ï¼Œå‘å…§å¯é€²å…¥ç¥é¾æ•™çš„å¤§å»³ï¼Œé–€å£ç«™è‘—è¨±å¤šç¥é¾æ•™
+çš„æ•™å¾’ï¼Œå…¨å‰¯æ­¦è£ï¼Œè­¦æƒ•åœ°æ³¨è¦–å››å‘¨ï¼Œå¾å»³å…§ä¾ç¨€å‚³ä¾†ä¸€å€‹æ¸¾åšçš„è²éŸ³ï¼Œ
+ä¼¼ä¹è£¡é¢æ­£åœ¨å¬é–‹ä»€éº¼é‡è¦æœƒè­°ã€‚
 LONG
         );
         set("valid_startroom",1);
@@ -45,19 +45,19 @@ int valid_leave(object me, string dir)
         int haveguarder;
 
         if( !(query("sg/spy", me) || 
-                query("family/family_name", me) == "ÉñÁú½Ì") && 
+                query("family/family_name", me) == "ç¥é¾æ•™") && 
                 dir == "enter" )
         {
                 inv = all_inventory(this_object());
                 for(int i = 0; i < sizeof(inv); i++ )
-                        if( query("family/family_name", inv[i]) == "ÉñÁú½Ì" || 
+                        if( query("family/family_name", inv[i]) == "ç¥é¾æ•™" || 
                                 query("sg/spy", inv[i]) )
                         {
                                  haveguarder++;
                                  if( living(inv[i]) ) inv[i]->kill_ob(me);
                         }
                 if( haveguarder > 0 )
-                        return notify_fail("ÄãÒ²Ì«Ä¿ÖĞÎŞÈËÁË°É£¬Õâ¶ù»¹ÓĞÈËÊØ×ÅÄØ¡£\n");
+                        return notify_fail("ä½ ä¹Ÿå¤ªç›®ä¸­ç„¡äººäº†å§ï¼Œé€™å…’é‚„æœ‰äººå®ˆè‘—å‘¢ã€‚\n");
          }
 
          return ::valid_leave(me, dir);

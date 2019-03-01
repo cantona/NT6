@@ -1,6 +1,6 @@
 
 // Written by Lonely@nitan.org
-// xiaofeng.c Ïô·å(ÇÇ·å)
+// xiaofeng.c è•­å³°(å–¬å³°)
 
 #include <ansi.h>
 inherit NPC;
@@ -9,16 +9,16 @@ int check_out(object ob, object me);
 
 void create()
 {
-        set_name("ÇÇ·å", ({"qiao feng", "qiao", "feng"}));
-        set("gender", "ÄÐÐÔ");
-        set("nickname",HIB"ÌúÕÆ½µÁú"NOR);
+        set_name("å–¬å³°", ({"qiao feng", "qiao", "feng"}));
+        set("gender", "ç”·æ€§");
+        set("nickname",HIB"éµæŽŒé™é¾"NOR);
         set("age", 28);
         set("long",
-                "Ëû¾ÍÊÇØ¤°ïÇ°ÈÎ°ïÖ÷£¬Òò±»·¢ÏÖÊÇÆõµ¤ÈË¶øÖÚÅÑÇ×Àë¡£\n"
-                "ÔÚ½­ºþÉÏÓëÑà×ÓÎëµÄÄ½ÈÙ¸´²¢³ÆÎª¡¸±±ÇÇ·å£¬ÄÏÄ½ÈÙ¡¹¡£\n"
-                "ËûÉí´©Ò»¼þÆÕÍ¨µÄ´Ö²¼¹Ó×Ó£¬Ñü¼äÓÃÒ»ÌõÂéÉþËæ±ãÒ»Ïµ¡£\n"
-                "ËûÉí¸ßÁù³ßÓÐÓà£¬Ìå¸ñÊ®·Ö¿ýÎà£¬³¤ÓÐÒ»ÕÅÏßÌõ´Ö¿õ¡¢Ê®\n"
-                "·ÖÄÐÐÔ»¯µÄÁ³ÅÓ£¬Ë«Ä¿Èçµç£¬¾¼¾¼ÓÐÉñ¡£\n");
+                "ä»–å°±æ˜¯ä¸å¹«å‰ä»»å¹«ä¸»ï¼Œå› è¢«ç™¼ç¾æ˜¯å¥‘ä¸¹äººè€Œçœ¾å›è¦ªé›¢ã€‚\n"
+                "åœ¨æ±Ÿæ¹–ä¸Šèˆ‡ç‡•å­å¡¢çš„æ…•æ¦®å¾©ä¸¦ç¨±ç‚ºã€ŒåŒ—å–¬å³°ï¼Œå—æ…•æ¦®ã€ã€‚\n"
+                "ä»–èº«ç©¿ä¸€ä»¶æ™®é€šçš„ç²—å¸ƒè¤‚å­ï¼Œè…°é–“ç”¨ä¸€æ¢éº»ç¹©éš¨ä¾¿ä¸€ç³»ã€‚\n"
+                "ä»–èº«é«˜å…­å°ºæœ‰ä½™ï¼Œé«”æ ¼ååˆ†é­æ¢§ï¼Œé•·æœ‰ä¸€å¼µç·šæ¢ç²—æ› ã€å\n"
+                "åˆ†ç”·æ€§åŒ–çš„è‡‰é¾ï¼Œé›™ç›®å¦‚é›»ï¼Œç‚¯ç‚¯æœ‰ç¥žã€‚\n");
         set("attitude", "peaceful");
 
         set("str", 45);
@@ -28,7 +28,7 @@ void create()
         set("dex", 30);
         set("chat_chance", 1);
         set("chat_msg", ({
-                "Ïô·åÌ¾ÁË¿ÚÆøµÀ£º¡°°¦¡­¡­Ïë²»µ½ÎÒÏô·å´óºÃÄÐ¶ù£¬¾ÓÈ»±£»¤²»ÁËÒ»¸ö°¢Öì£¡\n",
+                "è•­å³°å˜†äº†å£æ°£é“ï¼šâ€œå”‰â€¦â€¦æƒ³ä¸åˆ°æˆ‘è•­å³°å¤§å¥½ç”·å…’ï¼Œå±…ç„¶ä¿è­·ä¸äº†ä¸€å€‹é˜¿æœ±ï¼\n",
         }));
 
         set("qi", 4000000);
@@ -42,15 +42,15 @@ void create()
         set("combat_exp", 1800000000);
         set("shen", 200000);
 
-        set_skill("force", 1200);             // »ù±¾ÄÚ¹¦
-        set_skill("huntian-qigong", 1200);    // »ìÌìÆø¹¦
-        set_skill("strike", 1200);           // »ù±¾È­½Å
-        set_skill("dragon-strike", 1200);   // ½µÁúÊ®°ËÕÆ
-        set_skill("dodge", 1200);             // »ù±¾¶ãÉÁ
-        set_skill("xiaoyaoyou", 1200);        // åÐÒ£ÓÎ
-        set_skill("parry", 1200);             // »ù±¾ÕÐ¼Ü
-        set_skill("begging", 500);            // ½Ð»¯¾ø»î
-        set_skill("checking", 500);           // µÀÌýÍ¾Ëµ
+        set_skill("force", 1200);             // åŸºæœ¬å…§åŠŸ
+        set_skill("huntian-qigong", 1200);    // æ··å¤©æ°£åŠŸ
+        set_skill("strike", 1200);           // åŸºæœ¬æ‹³è…³
+        set_skill("dragon-strike", 1200);   // é™é¾åå…«æŽŒ
+        set_skill("dodge", 1200);             // åŸºæœ¬èº²é–ƒ
+        set_skill("xiaoyaoyou", 1200);        // é€é™éŠ
+        set_skill("parry", 1200);             // åŸºæœ¬æ‹›æž¶
+        set_skill("begging", 500);            // å«åŒ–çµ•æ´»
+        set_skill("checking", 500);           // é“è½é€”èªª
 
         map_skill("force", "huntian-qigong");
         map_skill("strike", "dragon-strike");
@@ -76,7 +76,7 @@ int check_move(object ob, object me)
 {
         remove_call_out("check_move");
 
-        if( environment(ob)->query("short") == "ÓÎ¸®ºóÔº" )
+        if( environment(ob)->query("short") == "éŠåºœå¾Œé™¢" )
         {
                 call_out("check_out", 180, ob, me);
                 return 1;
@@ -100,7 +100,7 @@ int check_out(object ob, object me)
 
         me->remove_all_enemy(1);
         ob->remove_all_enemy(1);
-        message_vision(HIY "$NÖÕÒò¹Ñ²»µÐÖÚ£¬ÉíÊÜÖØÉË¡£ÕâÊ±ºòÒ»Î»ºÚÒÂÀÏÉ®Í»È»³öÏÖ£¬½«$N¾È×ß¡£\n" NOR,
+        message_vision(HIY "$Nçµ‚å› å¯¡ä¸æ•µçœ¾ï¼Œèº«å—é‡å‚·ã€‚é€™æ™‚å€™ä¸€ä½é»‘è¡£è€åƒ§çªç„¶å‡ºç¾ï¼Œå°‡$Næ•‘èµ°ã€‚\n" NOR,
                 ob, me);
         me->set_temp("juxianzhuang_step", 14);
         return 1;

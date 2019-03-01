@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define HUAN "¡¸" HIM "ÔÆÏ¼»ÃÉú" NOR "¡¹"
+#define HUAN "ã€Œ" HIM "é›²éœå¹»ç”Ÿ" NOR "ã€"
 
 inherit F_SSERVER;
 
@@ -14,7 +14,7 @@ int perform(object me, object target)
         string wn, msg;
 
         if( userp(me) && !query("can_perform/caiyan-gong/huan", me) )
-                return notify_fail("ÄãËùÊ¹ÓÃµÄÍâ¹¦ÖĞÃ»ÓĞÕâÖÖ¹¦ÄÜ¡£\n");
+                return notify_fail("ä½ æ‰€ä½¿ç”¨çš„å¤–åŠŸä¸­æ²’æœ‰é€™ç¨®åŠŸèƒ½ã€‚\n");
 
         if (! target)
         {
@@ -23,36 +23,36 @@ int perform(object me, object target)
         }
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(HUAN "Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(HUAN "åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me)) || 
             query("skill_type", weapon) != "club" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô£¬ÄÑÒÔÊ©Õ¹" HUAN "¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ï¼Œé›£ä»¥æ–½å±•" HUAN "ã€‚\n");
 
         skill = me->query_skill("caiyan-gong", 1);
 
         if (skill < 120)
-                return notify_fail("Äã²ÉÑà¹¦µÈ¼¶²»¹»£¬ÄÑÒÔÊ©Õ¹" HUAN "¡£\n");
+                return notify_fail("ä½ æ¡ç‡•åŠŸç­‰ç´šä¸å¤ ï¼Œé›£ä»¥æ–½å±•" HUAN "ã€‚\n");
 
         if (me->query_skill("dodge") < 180)
-                return notify_fail("ÄãµÄÇá¹¦»ğºò²»¹»£¬ÄÑÒÔÊ©Õ¹" HUAN "¡£\n");
+                return notify_fail("ä½ çš„è¼•åŠŸç«å€™ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" HUAN "ã€‚\n");
  
         if (me->query_skill_mapped("club") != "caiyan-gong")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢²ÉÑà¹¦£¬ÄÑÒÔÊ©Õ¹" HUAN "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼æ¡ç‡•åŠŸï¼Œé›£ä»¥æ–½å±•" HUAN "ã€‚\n");
 
         if( query("neili", me)<200 )
-                return notify_fail("ÄãÏÖÔÚµÄÕæÆø²»¹»£¬ÄÑÒÔÊ©Õ¹" HUAN "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çš„çœŸæ°£ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" HUAN "ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
         wn = weapon->name();
 
-        message_sort(HIM "\n$N" HIM "İëµØÊ©³ö¡¸" HIW "ÔÆÏ¼»ÃÉú"
-                     HIM "¡¹¾ø¼¼£¬ÊÖÖĞ" + wn + HIM "ÓÉÒ»±ä¶ş£¬"
-                     "ÓÉ¶ş±äËÄ£¬ÓÉËÄ±ä°Ë£¬ÓÉ°Ë±äÊ®Áù¡­¡­¾¹»Ã³ö"
-                     "ÎŞÊı¸ù" + wn + HIM "¡£¹÷Ó°²ã²ãµşµş³¯ËÄÖÜ"
-                     "¼²´Ì¶ø³ö£¬ÆóÍ¼·âËø$n" HIM "µÄÍËÂ·¡£\n" NOR,
+        message_sort(HIM "\n$N" HIM "é©€åœ°æ–½å‡ºã€Œ" HIW "é›²éœå¹»ç”Ÿ"
+                     HIM "ã€çµ•æŠ€ï¼Œæ‰‹ä¸­" + wn + HIM "ç”±ä¸€è®ŠäºŒï¼Œ"
+                     "ç”±äºŒè®Šå››ï¼Œç”±å››è®Šå…«ï¼Œç”±å…«è®Šåå…­â€¦â€¦ç«Ÿå¹»å‡º"
+                     "ç„¡æ•¸æ ¹" + wn + HIM "ã€‚æ£å½±å±¤å±¤ç–Šç–Šæœå››å‘¨"
+                     "ç–¾åˆºè€Œå‡ºï¼Œä¼åœ–å°é–$n" HIM "çš„é€€è·¯ã€‚\n" NOR,
                      me, target);
 
         ap = me->query_skill("club");
@@ -68,8 +68,8 @@ int perform(object me, object target)
                 me->start_busy(2);
         } else
         {
-                msg = CYN "$n" CYN "´ó¾ªÖ®ÏÂ¼±Ã¦Ô¾¿ªÊı²½£¬·½²Å°ÚÍÑ$N"
-                      CYN "¹÷Ó°µÄ·¶Î§¡£\n" NOR;
+                msg = CYN "$n" CYN "å¤§é©šä¹‹ä¸‹æ€¥å¿™èºé–‹æ•¸æ­¥ï¼Œæ–¹æ‰æ“ºè„«$N"
+                      CYN "æ£å½±çš„èŒƒåœã€‚\n" NOR;
                 addn("neili", -50, me);
                 me->start_busy(3);
         }
@@ -82,15 +82,15 @@ string final(object me, object target, int damage)
 {
         string msg;
 
-        msg = HIR "$p´ó¾ªÊ§É«Ö®ÏÂ½ÓÁ¬±»$P»÷ÖĞÊı¹÷"
-              "£¬µ±¼´ÌÛÍ´ÄÑµ±£¬";
+        msg = HIR "$på¤§é©šå¤±è‰²ä¹‹ä¸‹æ¥é€£è¢«$Pæ“Šä¸­æ•¸æ£"
+              "ï¼Œç•¶å³ç–¼ç—›é›£ç•¶ï¼Œ";
 
         if (random(3) >= 1 && ! target->is_busy())
         {
                 target->start_busy(damage / 15);
-                msg += "ÎŞÏ¾·´»÷¡£\n" NOR;
+                msg += "ç„¡æš‡åæ“Šã€‚\n" NOR;
         } else
-                msg += "¼±Éù³¤ºô¡£\n" NOR;
+                msg += "æ€¥è²é•·å‘¼ã€‚\n" NOR;
 
         return  msg;
 }

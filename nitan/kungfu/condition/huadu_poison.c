@@ -8,7 +8,7 @@ inherit POISON;
 
 string name() { return "huadu_poison"; }
 
-string chinese_name() { return "星宿虫毒"; }
+string chinese_name() { return "鏄熷锜叉瘨"; }
 string *query_valid_force() 
 { 
         return ({
@@ -22,10 +22,10 @@ string *query_valid_force()
 
 string update_msg_others()
 {
-        return HIM "$N" HIB "的目光散乱，神色异常，脸上泛出一层黑气。\n" NOR;
+        return HIM "$N" HIB "鐨勭洰鍏夋暎浜傦紝绁炶壊鐣板父锛岃噳涓婃硾鍑轰竴灞ら粦姘ｃ�俓n" NOR;
 }
 
 string update_msg_self()
 {
-        return HIR "你忽然肺腑一阵剧痛，你体内的星宿虫毒发作了，你觉的这次毒力来的更凶猛！\n" NOR;
+        return HIR "浣犲拷鐒惰偤鑵戜竴闄ｅ妵鐥涳紝浣犻珨鍏х殑鏄熷锜叉瘨鐧间綔浜嗭紝浣犺鐨勯�欐姣掑姏渚嗙殑鏇村厙鐚涳紒\n" NOR;
 }

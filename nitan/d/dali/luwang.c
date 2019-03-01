@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-        set("short","³����");
+        set("short","魯望鎮");
         set("long",@LONG
-���������Ჿ��³�������Ჿ��̨�ģ��������и�����Խ�ݡ�
-����һ������ɽ���ϵ�С�򣬶���ͱ����Ǹ��ʵ�Ⱥɽ������������
-�����ɼ���ׯ�ͳ���
+這裡是普麼部的魯望鎮，普麼部屬台夷，領屬還有附近的越州。
+這是一座建在山坡上的小鎮，東面和北面是高聳的群山，向西和南眺
+望均可見村莊和城鎮。
 LONG);
         set("objects", ([
            __DIR__"npc/tshangfan": 1,

@@ -3,11 +3,11 @@
 inherit NPC;
 void create()
 {
-        set_name("ÊÉÈËÓã", ({ "fish", "yu" }) );
-        set("race", "ÓÎÓã");
+        set_name("å™¬äººé­š", ({ "fish", "yu" }) );
+        set("race", "éŠé­š");
         set("age", 3);
-        set("long", "ÕâÊÇÒ»Ö»ÉíÐÎ²¢²»ºÜ´óµÄÓã£¬»ëÉí¸²ÂúÑ¤ÀöµÄÁÛÆ¬£¬\n"
-            "Ò»¿Ú·æÀûµÄÑÀ³Ý£¬Õý»¢ÊÓµ¢µ¢µÄ¿´×ÅÄã\n");
+        set("long", "é€™æ˜¯ä¸€åªèº«å½¢ä¸¦ä¸å¾ˆå¤§çš„é­šï¼Œæ¸¾èº«è¦†æ»¿çµ¢éº—çš„é±—ç‰‡ï¼Œ\n"
+            "ä¸€å£é‹’åˆ©çš„ç‰™é½’ï¼Œæ­£è™Žè¦–è€½è€½çš„çœ‹è‘—ä½ \n");
         set("attitude", "aggressive");
         set("max_qi",1000);
         set("str", 26);
@@ -23,7 +23,7 @@ void create()
 void die()
 {
         object ob;
-        message_vision("$N¿ÚÖÐÍÂ³öÒ»¿ÅÒ¹Ã÷Öé£¬¶ÇÆ¤ÍùÉÏÒ»·­£¬$NËÀÁË¡£\n", this_object());
+        message_vision("$Nå£ä¸­åå‡ºä¸€é¡†å¤œæ˜Žç ï¼Œè‚šçš®å¾€ä¸Šä¸€ç¿»ï¼Œ$Næ­»äº†ã€‚\n", this_object());
         ob = new("/d/npc/m_weapon/tan/item/zhenzhu");
         ob->move(environment(this_object()));
         destruct(this_object());

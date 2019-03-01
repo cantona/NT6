@@ -1,4 +1,4 @@
-// yunlong-xinfa.c ÔÆÁúĞÄ·¨
+// yunlong-xinfa.c é›²é¾å¿ƒæ³•
 // Last Modified by winder on Mar. 10 2000
 
 #include <ansi.h>;
@@ -14,17 +14,17 @@ int power_point(object me) { return 1; }
 
 int practice_skill(object me)
 {        
-        return notify_fail("ÔÆÁúĞÄ·¨Ö»ÄÜ¿¿Ñ§(learn)À´Ìá¸ß¡£\n");
+        return notify_fail("é›²é¾å¿ƒæ³•åªèƒ½é å­¸(learn)ä¾†æé«˜ã€‚\n");
 }
 int help(object me)
 {
-        write(HIC"\nÔÆÁúĞÄ·¨£º"NOR"\n");
+        write(HIC"\né›²é¾å¿ƒæ³•ï¼š"NOR"\n");
         write(@HELP
 
-    ÔÆÁúĞÄ·¨ÊÇÔÆÁúÃÅµÄ¾«ÉñÖ§Öù¡£ÓÃÒÔ¼¤ÀøÌìµØ»áÖÚ·´Çå¸´Ã÷¡£
+    é›²é¾å¿ƒæ³•æ˜¯é›²é¾é–€çš„ç²¾ç¥æ”¯æŸ±ã€‚ç”¨ä»¥æ¿€å‹µå¤©åœ°æœƒçœ¾åæ¸…å¾©æ˜ã€‚
 
-        Ñ§Ï°ÒªÇó£º
-                ÎŞ
+        å­¸ç¿’è¦æ±‚ï¼š
+                ç„¡
 HELP
         );
         return 1;

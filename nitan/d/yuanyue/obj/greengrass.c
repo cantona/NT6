@@ -1,7 +1,7 @@
 inherit ITEM;
 void create()
 {
-        set_name("ÂÌ²İ", ({ "grass" , "ÂÌ²İ"}) );
+        set_name("ç¶ è‰", ({ "grass" , "ç¶ è‰"}) );
         set_weight(500);
         set_max_encumbrance(8000);
         set("no_get", 1);
@@ -9,8 +9,8 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ğ©");
-                set("long", "ÏÊÄÛÓûµÎµÄÂÌ²İ£¬ËÆºõ»¹ÓĞ¼¸µÎÂ¶ÖéÔÚÒ¶×ÓÉÏÉÁ×ÅÎ¢¹â¡£\n");
+                set("unit", "äº›");
+                set("long", "é®®å«©æ¬²æ»´çš„ç¶ è‰ï¼Œä¼¼ä¹é‚„æœ‰å¹¾æ»´éœ²ç åœ¨è‘‰å­ä¸Šé–ƒè‘—å¾®å…‰ã€‚\n");
                 set("value", 1);
         }
         setup();

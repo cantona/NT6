@@ -3,19 +3,19 @@ inherit BAOXIANG_ITEM;
 
 void create()
 {
-        set_name(HIC"±¦Ïä"NOR, ({"box"}) );
+        set_name(HIC"å¯¶ç®±"NOR, ({"box"}) );
         set_weight(300);
         set_max_encumbrance(80000000);
-        set("unit", "Ğ©");
-        set("long", "Ò»¸öÉ¢·¢×ÅÉñÃØ¹âÃ¢µÄ±¦Ïä£¬»òĞí¿ÉÒÔ´ò¿ª(open)Ëü¡£\n");
+        set("unit", "äº›");
+        set("long", "ä¸€å€‹æ•£ç™¼è‘—ç¥ç§˜å…‰èŠ’çš„å¯¶ç®±ï¼Œæˆ–è¨±å¯ä»¥æ‰“é–‹(open)å®ƒã€‚\n");
         set("closed", 1);
         set("no_get", 1);
         set("base_value", 200);
-        set("base_unit", "¸ö");
+        set("base_unit", "å€‹");
         set("BAOXIANG_LIST",([ 
-                "/clone/money/gold":200,   //ÎïÆ·ÎÄ¼şÃû:¸ÅÂÊ 
-                "/clone/money/silver":300,   //ÎïÆ·ÎÄ¼şÃû:¸ÅÂÊ
-                "/clone/money/coin":500,   //ÎïÆ·ÎÄ¼şÃû:¸ÅÂÊ
+                "/clone/money/gold":200,   //ç‰©å“æ–‡ä»¶å:æ¦‚ç‡ 
+                "/clone/money/silver":300,   //ç‰©å“æ–‡ä»¶å:æ¦‚ç‡
+                "/clone/money/coin":500,   //ç‰©å“æ–‡ä»¶å:æ¦‚ç‡
         ]));
  
         set_amount(1);

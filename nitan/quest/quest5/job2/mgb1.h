@@ -14,7 +14,7 @@ int do_kill(string arg)
         if( !(query("ygjg", me)) )
             return 1;
         if( query("ygjg", me) != who )
-                return notify_fail(CYN"Äã»¹ÊÇ¸÷Ë¾ÆäÖ°£¬×¨ĞÄ¶Ô¸¶ÄãµÄ"HIR"ÃÉ¹Å±ø"CYN"°É¡£\n"NOR);
-                message_vision(CYN"$N¼ÓÓÍ£¡$N¼ÓÓÍ£¡\n"NOR,who);
+                return notify_fail(CYN"ä½ é‚„æ˜¯å„å¸å…¶è·ï¼Œå°ˆå¿ƒå°ä»˜ä½ çš„"HIR"è’™å¤å…µ"CYN"å§ã€‚\n"NOR);
+                message_vision(CYN"$NåŠ æ²¹ï¼$NåŠ æ²¹ï¼\n"NOR,who);
         return 1;
 } 

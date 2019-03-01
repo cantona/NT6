@@ -4,9 +4,9 @@ inherit NPC;
 
 void create()
 {
-        set_name("»ï¼Æ", ({ "huo ji", "huo", "ji" }) );
-        set("title", HIB"Ò©Íõ¹È"NOR+YEL"ÅÜÌÃ"NOR);
-        set("gender", "ÄĞĞÔ" );
+        set_name("ä¼™è¨ˆ", ({ "huo ji", "huo", "ji" }) );
+        set("title", HIB"è—¥ç‹è°·"NOR+YEL"è·‘å ‚"NOR);
+        set("gender", "ç”·æ€§" );
         set("age", 22);
         set("combat_exp", 100);
         set("attitude", "friendly");
@@ -32,26 +32,26 @@ int greeting(object ob)
 {
         int i=(query("eff_qi", ob)*100)/query("max_qi", ob);
 
-        if( query("family/family_name", ob) == "Ò©Íõ¹È"){
-                command("say ÕâÎ»ĞÖµÜĞÁ¿àÁË£¬¿ìÇë½ø£¡\n");
+        if( query("family/family_name", ob) == "è—¥ç‹è°·"){
+                command("say é€™ä½å…„å¼Ÿè¾›è‹¦äº†ï¼Œå¿«è«‹é€²ï¼\n");
                 return 1;}
 
         if (i<=30) {
                 command("wa"+query("id", ob));
                 command("say "+RANK_D->query_respect(ob)
-                        +"£¬ÄãÊÜÁËÖØÉË°¡£¡¿ìÇëµ½ÀïÃæÈÃÒ©Íõ¹ÈÒ½Ê¦¸øÄã¿´¿´°É£¡\n");
+                        +"ï¼Œä½ å—äº†é‡å‚·å•Šï¼å¿«è«‹åˆ°è£¡é¢è®“è—¥ç‹è°·é†«å¸«çµ¦ä½ çœ‹çœ‹å§ï¼\n");
                 return 1;}
 
         if (i<=60) {
                 command("look"+query("id", ob));
                 command("say "+RANK_D->query_respect(ob)
-                        +"£¬ÄãÉËµÃ²»Çá°¡£¡¿ìÇëµ½ÀïÃæÁÆÉË°É£¡\n");
+                        +"ï¼Œä½ å‚·å¾—ä¸è¼•å•Šï¼å¿«è«‹åˆ°è£¡é¢ç™‚å‚·å§ï¼\n");
                 return 1;}
 
         if (i<=90) {
                 command("pat"+query("id", ob));
                 command("say "+RANK_D->query_respect(ob)
-                        +"£¬ÄãÊÜÁËµãÉË£¡µ½ÀïÃæÂò°üÒ©·şÏÂ¾ÍÃ»ÊÂÁË£¡\n");
+                        +"ï¼Œä½ å—äº†é»å‚·ï¼åˆ°è£¡é¢è²·åŒ…è—¥æœä¸‹å°±æ²’äº‹äº†ï¼\n");
                 return 1;}
 
         else {

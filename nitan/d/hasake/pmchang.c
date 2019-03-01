@@ -1,14 +1,14 @@
-// pmchang.c ������
+// pmchang.c 跑馬場
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "������");
+        set("short", "跑馬場");
         set("long", @LONG
-��һ���ݵؾ��ǹ��������˵��������ˡ������Ŀռ���������ڶ�
-����ʹ����Ϊ��һ���æ�ļ���غ��г���һ��һ�ȵ�ˤ�ӱ���������
-��Ҳ��������С�
+這一大遍草地就是哈薩克族人的跑馬場了。廣闊的空間和來往的眾多
+商人使它成為這一帶最繁忙的集會地和市場。一年一度的摔跤比賽和跑馬
+節也在這裡舉行。
 LONG
         );
         set("objects", ([

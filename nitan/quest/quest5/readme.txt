@@ -1,48 +1,48 @@
-ËµÃ÷ÎÄ¼þ£º
-°Ñguo.cÕâ¸önpc·Åµ½xiangyangËæ±ãÊ²Ã´µØ·½
-ËùÓÐÄ¿Â¼¿ÉÒÔ·Åµ½quest/guojobÏÂ
-job2/ÏÂµÄpi1.c,pi2.c,pi3.c,pi4.c·Åµ½d/xiangyang/npcÏÂ
-job2/ÏÂjobshadi_failed.c jobshadi_limit ·Åµ½kungfu/condition/ÏÂ
-zzzjob.c zzz_busy.c·Åµ½kungfu/conditionÏÂ.
-Õâ¸öÈÎÎñËµÃ÷ÈçÏÂ£º
+èªªæ˜Žæ–‡ä»¶ï¼š
+æŠŠguo.cé€™å€‹npcæ”¾åˆ°xiangyangéš¨ä¾¿ä»€éº¼åœ°æ–¹
+æ‰€æœ‰ç›®éŒ„å¯ä»¥æ”¾åˆ°quest/guojobä¸‹
+job2/ä¸‹çš„pi1.c,pi2.c,pi3.c,pi4.cæ”¾åˆ°d/xiangyang/npcä¸‹
+job2/ä¸‹jobshadi_failed.c jobshadi_limit æ”¾åˆ°kungfu/condition/ä¸‹
+zzzjob.c zzz_busy.cæ”¾åˆ°kungfu/conditionä¸‹.
+é€™å€‹ä»»å‹™èªªæ˜Žå¦‚ä¸‹ï¼š
 
  ------------------------------------------------------------------------
- [1]±£»¤ÈÎÎñ(µ¥ÈË)
- ÒªÇó£º¾­ÑéÖµ´óÓÚ100k
- ¹ý³Ì£ºµ½ÏåÑôÕÒµ½¹ù¾¸£¬ask guo about job£¬È»ºóËû»áÈÃÄãÈ¥±£»¤Ò»¸önpc£¬
-      ÕÒµ½Õâ¸önpc,µÈ´ýÒ»»á,»á³öÏÖÒ»¸ökiller£¬ É±ËÀkiller²¢°ÑÊ¬Ìå½»¸ø
-      ¹ù¾¸£¬¾ÍËãÍê³ÉÒ»´ÎÈÎÎñ£¬guo job ´ÎÊý¼ÓÒ»´Î ¡£
- ±¸×¢: ½±Àø°´guo job ´ÎÊýÀÛ¼Ó,·ÅÆúÈÎÎñask guo about fangqi£¬ ¼õÒ»¶¨
-      µÄ¾­Ñé¡£ask guo about ¹¦ÀÍ£¬¿ÉÒÔÖªµÀ×Ô¼ºÍê³ÉÈÎÎñµÄ´ÎÊý¡£
+ [1]ä¿è­·ä»»å‹™(å–®äºº)
+ è¦æ±‚ï¼šç¶“é©—å€¼å¤§äºŽ100k
+ éŽç¨‹ï¼šåˆ°è¥„é™½æ‰¾åˆ°éƒ­é–ï¼Œask guo about jobï¼Œç„¶å¾Œä»–æœƒè®“ä½ åŽ»ä¿è­·ä¸€å€‹npcï¼Œ
+      æ‰¾åˆ°é€™å€‹npc,ç­‰å¾…ä¸€æœƒ,æœƒå‡ºç¾ä¸€å€‹killerï¼Œ æ®ºæ­»killerä¸¦æŠŠå±é«”äº¤çµ¦
+      éƒ­é–ï¼Œå°±ç®—å®Œæˆä¸€æ¬¡ä»»å‹™ï¼Œguo job æ¬¡æ•¸åŠ ä¸€æ¬¡ ã€‚
+ å‚™æ³¨: çŽå‹µæŒ‰guo job æ¬¡æ•¸ç´¯åŠ ,æ”¾æ£„ä»»å‹™ask guo about fangqiï¼Œ æ¸›ä¸€å®š
+      çš„ç¶“é©—ã€‚ask guo about åŠŸå‹žï¼Œå¯ä»¥çŸ¥é“è‡ªå·±å®Œæˆä»»å‹™çš„æ¬¡æ•¸ã€‚
 
- [2]×è»÷ÈÎÎñ(¶àÈË)
- ÒªÇó£º2-4ÈË,¾­ÑéÖµÏà²î²»³¬¹ý300k£¬ÁìÈ¡ÈÎÎñµÄÍæ¼Ò¾­ÑéÖµ´óÓÚ500k
- ¹ý³Ì£º×é¶ÓºóÈ¥¹ù¾¸´¦£¬ask guo about ¼éÏ¸£¬ ¹ù¾¸»á¸æËßÄã×è»÷µØµã£¬È»ºó
-      È«¶ÓÈËÈ¥Õâ¸öµØµãÊØºò£¬É±µô¼¸ÅúÃÉ¹Å±øºó¼éÏ¸»á³öÏÖ£¬ É±ËÀ¼éÏ¸²¢´ÓËû
-      ÉíÉÏÄÃµ½ÃÜ¼þ,×îºóÏú»ÙÃÜ¼þ(xiaohui mi jian)ÈÎÎñÍê³É¡£ guo job ´Î
-      Êý¼ÓÒ»´Î¡£
- ±¸×¢£ºÒ»´ÎÖ»ÄÜÒ»×éÈË×öÕâ¸öÈÎÎñ£¬¶øÇÒ²»ÄÜ·ÅÆú¡£
-      ÁìÈ¡ÈÎÎñµÄÍæ¼ÒÈç¹ûËÀÍö£¬ÈÎÎñ×Ô¶¯Ê§°Ü¡£
-      Èç¹û¼éÏ¸³öÏÖÊ±Íæ¼Ò»¹Ã»°ÑÃÉ¹Å±øÉ±Íê£¬¼éÏ¸»áÌÓÅÜ£¬ÈÎÎñ×Ô¶¯Ê§°Ü¡£
-      ÈÎÎñÄÑ¶È½Ï´ó£¬ÇëÍæ¼ÒÐ¡ÐÄ¡£
+ [2]é˜»æ“Šä»»å‹™(å¤šäºº)
+ è¦æ±‚ï¼š2-4äºº,ç¶“é©—å€¼ç›¸å·®ä¸è¶…éŽ300kï¼Œé ˜å–ä»»å‹™çš„çŽ©å®¶ç¶“é©—å€¼å¤§äºŽ500k
+ éŽç¨‹ï¼šçµ„éšŠå¾ŒåŽ»éƒ­é–è™•ï¼Œask guo about å§¦ç´°ï¼Œ éƒ­é–æœƒå‘Šè¨´ä½ é˜»æ“Šåœ°é»žï¼Œç„¶å¾Œ
+      å…¨éšŠäººåŽ»é€™å€‹åœ°é»žå®ˆå€™ï¼Œæ®ºæŽ‰å¹¾æ‰¹è’™å¤å…µå¾Œå§¦ç´°æœƒå‡ºç¾ï¼Œ æ®ºæ­»å§¦ç´°ä¸¦å¾žä»–
+      èº«ä¸Šæ‹¿åˆ°å¯†ä»¶,æœ€å¾ŒéŠ·æ¯€å¯†ä»¶(xiaohui mi jian)ä»»å‹™å®Œæˆã€‚ guo job æ¬¡
+      æ•¸åŠ ä¸€æ¬¡ã€‚
+ å‚™æ³¨ï¼šä¸€æ¬¡åªèƒ½ä¸€çµ„äººåšé€™å€‹ä»»å‹™ï¼Œè€Œä¸”ä¸èƒ½æ”¾æ£„ã€‚
+      é ˜å–ä»»å‹™çš„çŽ©å®¶å¦‚æžœæ­»äº¡ï¼Œä»»å‹™è‡ªå‹•å¤±æ•—ã€‚
+      å¦‚æžœå§¦ç´°å‡ºç¾æ™‚çŽ©å®¶é‚„æ²’æŠŠè’™å¤å…µæ®ºå®Œï¼Œå§¦ç´°æœƒé€ƒè·‘ï¼Œä»»å‹™è‡ªå‹•å¤±æ•—ã€‚
+      ä»»å‹™é›£åº¦è¼ƒå¤§ï¼Œè«‹çŽ©å®¶å°å¿ƒã€‚
 
- [3]°®¹úÈÎÎñ(¶àÈË)
- µØµã:ÏåÑô ask guo about °®¹ú,È»ºó¹ù¾¸»áÖ¸¶¨Äãµ½
-Ö¸¶¨ÊØ³ÇÉ±ÃÉ¹Å±øºÍ½«Áì.Í¬Ê±ÆäËûÍæ¼Ò»áÊÕµ½ÄãµÄ¸æ¼±ÐÅÏ¢,É±ÍêÁË
-Ö®ºó»Øµ½¹ù¾¸ÄÇÀï task over.Äã»á»ñµÃÈô¸ÉexpºÍpot,Î£ÏÕÐÔ½Ï´ó.
-ÊÊºÏ(exp:>100000)¡£ÆÕÍ¨°ÙÐÕ,ÎÞÃÅÅÉÕß²»ÄÜ×ö
-×¢Òâ£º1¡£±¾ÈÎÎñ£¬ÆÕÍ¨°ÙÐÕ²»ÄÜ×ö£¬ 
-     2¡£±¾ÈÎÎñ£¬×öÈÎÎñÖ»ÄÜÒ»¸öÈËÈ¥£¬²»ÄÜÓÐÈËteam,follow£¬ 
-     3.±¾ÈÎÎñ¿ÉÒÔask guo about ³·ÍËÀ´È¡Ïû
+ [3]æ„›åœ‹ä»»å‹™(å¤šäºº)
+ åœ°é»ž:è¥„é™½ ask guo about æ„›åœ‹,ç„¶å¾Œéƒ­é–æœƒæŒ‡å®šä½ åˆ°
+æŒ‡å®šå®ˆåŸŽæ®ºè’™å¤å…µå’Œå°‡é ˜.åŒæ™‚å…¶ä»–çŽ©å®¶æœƒæ”¶åˆ°ä½ çš„å‘Šæ€¥ä¿¡æ¯,æ®ºå®Œäº†
+ä¹‹å¾Œå›žåˆ°éƒ­é–é‚£è£¡ task over.ä½ æœƒç²å¾—è‹¥å¹¹expå’Œpot,å±éšªæ€§è¼ƒå¤§.
+é©åˆ(exp:>100000)ã€‚æ™®é€šç™¾å§“,ç„¡é–€æ´¾è€…ä¸èƒ½åš
+æ³¨æ„ï¼š1ã€‚æœ¬ä»»å‹™ï¼Œæ™®é€šç™¾å§“ä¸èƒ½åšï¼Œ 
+     2ã€‚æœ¬ä»»å‹™ï¼Œåšä»»å‹™åªèƒ½ä¸€å€‹äººåŽ»ï¼Œä¸èƒ½æœ‰äººteam,followï¼Œ 
+     3.æœ¬ä»»å‹™å¯ä»¥ask guo about æ’¤é€€ä¾†å–æ¶ˆ
  ------------------------------------------------------------------------
 
 
-×¢£º1.Õâ¸öjob,°üÀ¨ÁËµ¥ÈËjob,team job,¶øÇÒÈýÖÖjobÊµÏÖµÄ·½·¨¶¼²»Ò»Ñù
-¿ÉÒÔÍ¨¹ýÕâÈýÖÖjob,´´Ôì³ö¸ü¶àµÄjob.
-       2. [3]°®¹úÈÎÎñ(¶àÈË)²Î¿¼LDJ2µÄjob,²¢ÐÞÕýÆäBUG,¼ÓÇ¿ÆäÏµÍ³¡£
+æ³¨ï¼š1.é€™å€‹job,åŒ…æ‹¬äº†å–®äººjob,team job,è€Œä¸”ä¸‰ç¨®jobå¯¦ç¾çš„æ–¹æ³•éƒ½ä¸ä¸€æ¨£
+å¯ä»¥é€šéŽé€™ä¸‰ç¨®job,å‰µé€ å‡ºæ›´å¤šçš„job.
+       2. [3]æ„›åœ‹ä»»å‹™(å¤šäºº)åƒè€ƒLDJ2çš„job,ä¸¦ä¿®æ­£å…¶BUG,åŠ å¼·å…¶ç³»çµ±ã€‚
 
-×îºó£¬Èç¹ûÎÒÓÐ¿Õ£¬»¹»á¹«²¼Ò»Ð©JOB.Èç¹ûÓÐË­ÄÜÓÐ¿Õ¸øjob¼ÓÉÏ×¢½â¾Í¸üºÃÁË.
-ÎÒÃ»Õâ¸öÐËÈ¤£¬ÒòÎªÎÒ¾õµÄÕâÐ©¶«¶«Ì«¼òµ¥ÁË£¬´ó¼ÒÓ¦¸ÃÄÜ¿´Ã÷°×.......
+æœ€å¾Œï¼Œå¦‚æžœæˆ‘æœ‰ç©ºï¼Œé‚„æœƒå…¬å¸ƒä¸€äº›JOB.å¦‚æžœæœ‰èª°èƒ½æœ‰ç©ºçµ¦jobåŠ ä¸Šæ³¨è§£å°±æ›´å¥½äº†.
+æˆ‘æ²’é€™å€‹èˆˆè¶£ï¼Œå› ç‚ºæˆ‘è¦ºçš„é€™äº›æ±æ±å¤ªç°¡å–®äº†ï¼Œå¤§å®¶æ‡‰è©²èƒ½çœ‹æ˜Žç™½.......
 
 
 

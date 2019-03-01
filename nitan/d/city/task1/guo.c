@@ -1,15 +1,15 @@
-// guo.c ¹ıÈıÈ­
+// guo.c éä¸‰æ‹³
 
 #include <ansi.h>
 inherit NPC;
 
 void create()
 {
-        set_name("¹ıÈıÈ­", ({ "guo  sanquan"}));
-        set("nickname", "ÉñÈ­ÃÅÖ÷");
+        set_name("éä¸‰æ‹³", ({ "guo  sanquan"}));
+        set("nickname", "ç¥æ‹³é–€ä¸»");
         set("long",
-        "ÉñÈ­ÃÅµÄÃÅÖ÷£¬Ò»ÉíÈ­·¨Ğ¡ÓĞÃûÉù¡£\n");
-        set("gender", "ÄĞĞÔ");
+        "ç¥æ‹³é–€çš„é–€ä¸»ï¼Œä¸€èº«æ‹³æ³•å°æœ‰åè²ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 28);
         set("attitude", "peaceful");
         set("str", 25);

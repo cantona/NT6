@@ -1,11 +1,11 @@
 // This program is a part of NITAN MudLIB
-// dian.c µã×Ö¾÷
+// dian.c é»žå­—è¨£
 
 #include <ansi.h>
 
 inherit F_SSERVER;
 
-string name() { return "µã×Ö¾÷"; }
+string name() { return "é»žå­—è¨£"; }
 
 int perform(object me, object target)
 {
@@ -20,34 +20,34 @@ int perform(object me, object target)
         }
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail("¡¸µã×Ö¾÷¡¹Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œé»žå­—è¨£ã€åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me)) ||
             query("skill_type", weapon) != "staff" )
-                return notify_fail("ÔËÓÃ¡¸µã×Ö¾÷¡¹ÊÖÖÐ±ØÐë³ÖÕÈ£¡\n");
+                return notify_fail("é‹ç”¨ã€Œé»žå­—è¨£ã€æ‰‹ä¸­å¿…é ˆæŒæ–ï¼\n");
 
         if ((int)me->query_skill("force") < 100)
-                return notify_fail("ÄãµÄÄÚ¹¦»ðºò²»¹»£¡\n");
+                return notify_fail("ä½ çš„å…§åŠŸç«å€™ä¸å¤ ï¼\n");
 
         if ((int)me->query_skill("staff") < 150)
-                return notify_fail("ÄãµÄÕÈ·¨»¹²»µ½¼Ò£¬ÎÞ·¨Ê¹ÓÃ¡¸µã×Ö¾÷¡¹£¡\n");
+                return notify_fail("ä½ çš„æ–æ³•é‚„ä¸åˆ°å®¶ï¼Œç„¡æ³•ä½¿ç”¨ã€Œé»žå­—è¨£ã€ï¼\n");
 
         if (! living(target))
-              return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+              return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIG "$N" HIG "ÊÖÖÐµÄ" + weapon->name() +
-              HIG "ºöÈ»±äµÃ¹îÃØÒì³££¬ºöÉìºöËõ£¬ÁýÕÖÁË$n" HIG "¶à´¦´óÑ¨£¡\n" NOR;
+        msg = HIG "$N" HIG "æ‰‹ä¸­çš„" + weapon->name() +
+              HIG "å¿½ç„¶è®Šå¾—è©­ç§˜ç•°å¸¸ï¼Œå¿½ä¼¸å¿½ç¸®ï¼Œç± ç½©äº†$n" HIG "å¤šè™•å¤§ç©´ï¼\n" NOR;
 
         ap = attack_power(me, "staff");
         dp = defense_power(target, "dodge");
 
         if (ap / 2 + random(ap) > dp)
         {
-                msg += HIY "$n" HIY "´ó¾ªÖ®ÏÂ£¬»ÅÃ¦µÖµ²£¬Ò»Ê±¼äÎÞÏ¾·´»÷£¡\n" NOR;
+                msg += HIY "$n" HIY "å¤§é©šä¹‹ä¸‹ï¼Œæ…Œå¿™æŠµæ“‹ï¼Œä¸€æ™‚é–“ç„¡æš‡åæ“Šï¼\n" NOR;
                 target->start_busy(ap / 90 + 2);
         } else
         {
-                msg += HIC "¿ÉÊÇ$p" HIC "Éí·¨Áé¶¯£¬¶ã¿ªÁË$n" HIC "µÄ²øÉí½ø»÷£¡" NOR;
+                msg += HIC "å¯æ˜¯$p" HIC "èº«æ³•éˆå‹•ï¼Œèº²é–‹äº†$n" HIC "çš„çºèº«é€²æ“Šï¼" NOR;
                 me->start_busy(2);
         }
         message_combatd(msg, me, target);

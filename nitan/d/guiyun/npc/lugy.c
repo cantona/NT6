@@ -9,10 +9,10 @@ string ask_yao2();
 object ob = this_object();
 void create()
 {
-        set_name("½��Ӣ", ({"lu guanying", "lu", "guanying"}) );
-        set("long", "���������޳��ۣ�������������׳����\n");
-        set("gender", "����" );
-        set("nickname", "����ׯ��ׯ��" );
+        set_name("陸冠英", ({"lu guanying", "lu", "guanying"}) );
+        set("long", "他身穿熟羅長袍，背厚膀寬，軀體壯健。\n");
+        set("gender", "男性" );
+        set("nickname", "歸雲莊少莊主" );
         set("age", 27);
         set("attitude", "peaceful");
 //        set("apprentice",1);
@@ -50,28 +50,28 @@ void create()
         map_skill("sword", "yuxiao-jianfa");
         prepare_skill("strike", "luoying-shenzhang");
 
-        set("rank_info/respect", "��ׯ��");
+        set("rank_info/respect", "少莊主");
         set("shen_type", 1);
         set("shen", 200);
-        create_family("�һ���", 3, "����");
+        create_family("桃花島", 3, "弟子");
         set("class", "fighter");
         set("yao", 10);   
 
         set("inquiry", ([
-                "name": "����½��Ӣ�����������ׯ����",
-                "rumors": "��˵�ɹű���Ҫ�����ˣ�����",
-                "here": "�����ǹ���ׯ�������תת�ɣ������뵽�ͷ���Ϣ��",
-                "��а": "����ʦ��ѽ�����������˼Ҷ�׼���Ҳ��ܸ�����ѧ�ա�",
-                "��ҩʦ": "����ʦ��ѽ�����������˼Ҷ�׼���Ҳ��ܸ�����ѧ�ա�",
-                "�һ���": "��˵��ʦ��ס�ĵط�����ϧû��ȥ������",
-                "½�˷�": "���ҵĸ��ף��������˼���ʲô����",
-                "½��Ӣ": "���ң��������¡�",
-                "����ׯ": "�����ǻ����Ҹ���������Ѫ�Ž������ģ�����ׯԺ�����Σ�",
-                "̫��": "����ׯǰ��Զ����һ���̲������Ĵ����",
-                "ҩ" : "�������ұ�����ҩ���һ������ӿ��Ե���������ȡ��",
-//                "���ž۾���": (: ask_yao1 :),
-                "���ɼ�����": (: ask_yao2 :),
-                "�Ż���¶��":         "�Ż���¶�����������ޱȣ��������û��! ",
+                "name": "在下陸冠英，是這裡的少莊主。",
+                "rumors": "聽說蒙古兵又要南侵了，唉！",
+                "here": "這裡是歸雲莊，你隨便轉轉吧，累了請到客房休息。",
+                "東邪": "那是師祖呀，，蒙他老人家恩準，我才能跟父親學藝。",
+                "黃藥師": "那是師祖呀，，蒙他老人家恩準，我才能跟父親學藝。",
+                "桃花島": "聽說是師祖住的地方，可惜沒有去看過。",
+                "陸乘風": "是我的父親，找他老人家有什麼事嗎？",
+                "陸冠英": "不敢，就是在下。",
+                "歸雲莊": "這裡是花了我父親無數心血才建起來的，與別的莊院相比如何？",
+                "太湖": "就在莊前不遠，是一個煙波浩淼的大湖。",
+                "藥" : "爹爹讓我保管靈藥，桃花島弟子可以到我這裡領取。",
+//                "三才聚精丹": (: ask_yao1 :),
+                "六壬集氣丸": (: ask_yao2 :),
+                "九花玉露丸":         "九花玉露丸煉制奇難無比，我這裡可沒有! ",
         ]) );
 
         setup();
@@ -83,53 +83,53 @@ string ask_yao1()
 {
         object ob = this_player();
 
-        if( query("family/family_name", ob) != "�һ���" )
-                return RANK_D->query_respect(ob) + "�뱾��������������֪�˻��Ӻ�̸��";
+        if( query("family/family_name", ob) != "桃花島" )
+                return RANK_D->query_respect(ob) + "與本派素無來往，不知此話從何談起？";
 
         if (ob->query_condition("jingli_drug") > 0 )
-                return RANK_D->query_respect(ob) + "�㲻�ǸճԹ�ҩ����ô����Ҫ�ˣ���ҩ����к����ˣ�����ʱ�������ɡ�";
+                return RANK_D->query_respect(ob) + "你不是剛吃過藥嗎，怎麼又來要了？靈藥多吃有害無宜，過段時間再來吧。";
 
         if( query("max_jingli", ob)<200 )
-                return RANK_D->query_respect(ob) + "������������ҩ����к����ˣ�����ʱ�������ɡ�";
+                return RANK_D->query_respect(ob) + "功力不夠，靈藥多吃有害無宜，過段時間再來吧。";
 
         if (present("sancai dan", ob))
-                return RANK_D->query_respect(ob) + "���������ϲ����п�ҩ������ô����Ҫ�ˣ�����̰�����ᣡ";
+                return RANK_D->query_respect(ob) + "你現在身上不是有顆藥丸嗎，怎麼又來要了？真是貪得無厭！";
 
-        if (query("yao") < 1) return "�Բ���ҩ�Ѿ������ˣ��µĻ�δ������";
+        if (query("yao") < 1) return "對不起，藥已經發完了，新的還未煉出。";
    
         new("/d/taohua/obj/sancai-dan")->move(ob);
 
         addn("yao", -1);
 
-        message_vision("$N���һ�����ž۾�����\n", ob);
-        return "�ðɣ���ҩ��֮���ף�������֮�˴��кô�����ҪС���ղغ��ˡ�";
+        message_vision("$N獲得一顆三才聚精丹。\n", ob);
+        return "好吧，此藥練之不易，對練武之人大有好處，你要小心收藏好了。";
 }
 
 string ask_yao2()
 {
         object ob = this_player();
 
-        if( query("family/family_name", ob) != "�һ���" )
-                return RANK_D->query_respect(ob) + "�뱾��������������֪�˻��Ӻ�̸��";
+        if( query("family/family_name", ob) != "桃花島" )
+                return RANK_D->query_respect(ob) + "與本派素無來往，不知此話從何談起？";
 
         if (ob->query_condition("medicine") > 0 )
-                return RANK_D->query_respect(ob) + "�㲻�ǸճԹ�ҩ����ô����Ҫ�ˣ���ҩ����к����ˣ�����ʱ�������ɡ�";
+                return RANK_D->query_respect(ob) + "你不是剛吃過藥嗎，怎麼又來要了？靈藥多吃有害無宜，過段時間再來吧。";
 
         if( query("max_neili", this_player())<400 )
-                return RANK_D->query_respect(ob) + "������������ҩ����к����ˣ�����ʱ�������ɡ�";
+                return RANK_D->query_respect(ob) + "功力不夠，靈藥多吃有害無宜，過段時間再來吧。";
 
         if (present("liuren wan", ob))
-                return RANK_D->query_respect(ob) + "���������ϲ����п�ҩ������ô����Ҫ�ˣ�����̰�����ᣡ";
+                return RANK_D->query_respect(ob) + "你現在身上不是有顆藥丸嗎，怎麼又來要了？真是貪得無厭！";
 
-        if (query("yao") < 1) return "�Բ���ҩ�Ѿ������ˣ��µĻ�δ������";
+        if (query("yao") < 1) return "對不起，藥已經發完了，新的還未煉出。";
 
          if( query("max_neili", ob) >= (ob->query_skill("force")*8+query("combat_exp", ob)/1000) )
-                     return RANK_D->query_respect(ob) + "��ҩ�Ѿ������ڰ��������������Ϊ�ˣ�";
+                     return RANK_D->query_respect(ob) + "此藥已經難以在幫助你提高內力修為了！";
         new("/clone/medicine/liuren-wan")->move(ob);
 
         addn("yao", -1);
 
-        message_vision("$N���һ�����ɼ����衣\n", ob);
-        return "�ðɣ���ҩ��֮���ף�������֮�˴��кô�����ҪС���ղغ��ˡ�";
+        message_vision("$N獲得一顆六壬集氣丸。\n", ob);
+        return "好吧，此藥練之不易，對練武之人大有好處，你要小心收藏好了。";
 }
 

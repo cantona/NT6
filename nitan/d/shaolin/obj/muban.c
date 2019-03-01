@@ -9,13 +9,13 @@ void init()
 
 void create()
 {
-        set_name("Ä¾°å", ({"mu ban", "ban"}));
+        set_name("æœ¨æ¿", ({"mu ban", "ban"}));
         set_weight(200000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¿é¾ÉÄ¾°å£¬¸éÔÚ·¿ÁºÉÏ¡£\n");
-                set("unit", "¿é");
+                set("long", "ä¸€å¡ŠèˆŠæœ¨æ¿ï¼Œæ“±åœ¨æˆ¿æ¨‘ä¸Šã€‚\n");
+                set("unit", "å¡Š");
                 set("material", "wood");
         }
         setup();
@@ -26,18 +26,18 @@ int do_climb(string arg)
         object me = this_player();
         
         if (!id(arg))
-                return notify_fail("ÄãÒª×ßµ½ÄÄ¶ùÈ¥£¿\n");
-        if( query_temp("marks/Ìø1", this_player()) )
+                return notify_fail("ä½ è¦èµ°åˆ°å“ªå…’å»ï¼Ÿ\n");
+        if( query_temp("marks/è·³1", this_player()) )
         {
-                write("ÄãÔõÃ´Ã»ÍêÃ»ÁËµØ×ß£¿\n");
+                write("ä½ æ€éº¼æ²’å®Œæ²’äº†åœ°èµ°ï¼Ÿ\n");
                 return 1;
         }
         else 
         {
-                message("vision",this_player()->name() + "Ğ¡ĞÄÒíÒíµØ×ßµ½Ä¾°åÉÏ,¿´ÉÏÈ¥½ÅÓĞµã·¢Èí¡£\n",
+                message("vision",this_player()->name() + "å°å¿ƒç¿¼ç¿¼åœ°èµ°åˆ°æœ¨æ¿ä¸Š,çœ‹ä¸Šå»è…³æœ‰é»ç™¼è»Ÿã€‚\n",
                         environment(me), ({me}) );
-                write("ÄãĞ¡ĞÄÒíÒíµØ×ßµ½ÁËÄ¾°åÉÏ,ĞÄÏë:»¹ºÃÎÒÃ»ÓĞ¿Ö¸ßÖ¢!¡£\n");
-                set_temp("marks/Ìø1", 1, this_player());
+                write("ä½ å°å¿ƒç¿¼ç¿¼åœ°èµ°åˆ°äº†æœ¨æ¿ä¸Š,å¿ƒæƒ³:é‚„å¥½æˆ‘æ²’æœ‰æé«˜ç—‡!ã€‚\n");
+                set_temp("marks/è·³1", 1, this_player());
                 return 1;
         }
 }

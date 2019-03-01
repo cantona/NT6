@@ -3,12 +3,12 @@ inherit ROOM;
 
 void create()
 {
-        set("short","±ù¶´");
+        set("short","å†°æ´");
         set("long",@LONG
-Éß£¡Ò»Ìõ×ãÓĞË®Í°´ÖµÄ°×Éß£¬ÕıºáÎÔÔÚ±ù¶´ÕıÖĞ£¬Íû¼ûÓĞÈË
-½øÀ´£¬ºôµØÒ»ÉùÖ±Á¢ÆğÀ´£¬ÍÂ³öÑªºìµÄĞÅ×Ó£¬¾¶Ö±ÆËÁË¹ıÀ´¡£´ø
-¹ıÀ´Ò»¹ÉĞÈ³ôµÄÎ¶µÀ¡£ÅÔ±ßÒ»Ãæ±ù±ÚºÜ±¡£¬ÒşÔ¼¿É¼ûÀïÃæÓĞÊ²Ã´
-¶«Î÷¡£
+è›‡ï¼ä¸€æ¢è¶³æœ‰æ°´æ¡¶ç²—çš„ç™½è›‡ï¼Œæ­£æ©«è‡¥åœ¨å†°æ´æ­£ä¸­ï¼Œæœ›è¦‹æœ‰äºº
+é€²ä¾†ï¼Œå‘¼åœ°ä¸€è²ç›´ç«‹èµ·ä¾†ï¼Œåå‡ºè¡€ç´…çš„ä¿¡å­ï¼Œå¾‘ç›´æ’²äº†éä¾†ã€‚å¸¶
+éä¾†ä¸€è‚¡è…¥è‡­çš„å‘³é“ã€‚æ—é‚Šä¸€é¢å†°å£å¾ˆè–„ï¼Œéš±ç´„å¯è¦‹è£¡é¢æœ‰ä»€éº¼
+æ±è¥¿ã€‚
 LONG);
         set("exits",([
                     "out"  : __DIR__"wave2", 
@@ -29,18 +29,18 @@ int do_break(string arg)
             object me;
             me = this_player();
 
-            message_vision(HIW "$N" HIW "×ßµ½±ù±ÚÇ°£¬ÔË¾¢Ïò±ù±ÚºäÈ¥£¡\n" NOR, me);
+            message_vision(HIW "$N" HIW "èµ°åˆ°å†°å£å‰ï¼Œé‹å‹å‘å†°å£è½Ÿå»ï¼\n" NOR, me);
 
             if( query("neili", me)<2000 )
             {
-                       message_vision(HIR "½á¹ûÖ»ÌıÒ»ÉùÃÆºß£¬$N" HIR "±»±ù±ÚµÄ"
-                               "º®Æø»ØÇÖ¾­Âö£¬ÑÛÇ°Ò»ºÚ¡­¡­\n" NOR, me);
+                       message_vision(HIR "çµæœåªè½ä¸€è²æ‚¶å“¼ï¼Œ$N" HIR "è¢«å†°å£çš„"
+                               "å¯’æ°£å›ä¾µç¶“è„ˆï¼Œçœ¼å‰ä¸€é»‘â€¦â€¦\n" NOR, me);
                        set("neili", 0, me);
                        me->unconcious();
                        return 1;
             }
-            message_vision(HIY "$N" HIY "Ö»ÌıÒ»ÉùºäÏì£¬±ù±Ú±»ºä´©ÁË£¬Â¶³öÒ»"
-                       "¸öĞ¡¶´À´¡£\n" NOR, me);
+            message_vision(HIY "$N" HIY "åªè½ä¸€è²è½ŸéŸ¿ï¼Œå†°å£è¢«è½Ÿç©¿äº†ï¼Œéœ²å‡ºä¸€"
+                       "å€‹å°æ´ä¾†ã€‚\n" NOR, me);
             set("exits/enter", __DIR__"yudong");
             set("neili", 0, me);
             remove_call_out("close");
@@ -55,7 +55,7 @@ void close_out()
 
 void close(object room)
 {
-            message("vision", HIW "Ò»¹Éº®Æø×Ô¶´ÖĞÃ°³ö£¬½«¶´¿ÚÓÖ¶³ÁË¸öÑÏÑÏÊµÊµ¡£\n"
+            message("vision", HIW "ä¸€è‚¡å¯’æ°£è‡ªæ´ä¸­å†’å‡ºï¼Œå°‡æ´å£åˆå‡äº†å€‹åš´åš´å¯¦å¯¦ã€‚\n"
                           NOR, room);
             delete("exits/enter", room);
 }
@@ -63,8 +63,8 @@ void close(object room)
 int valid_leave(object me)
 {
         if (objectp(present("xuanbing chimang", environment(me))))
-                   return notify_fail(HIY "ÄãÕıÓûÀë¿ª´ËµØ£¬È´Ö»¼û" NOR + HIW "Ğş±ù" NOR +
-                                   HIR "³à" NOR + HIW "òş" NOR + HIY "Ò»¸öÅÌĞı£¬¶ÙÊ±½«"
-                                   "È¥Â·ÍêÈ«·âËø¡£\n" NOR);
+                   return notify_fail(HIY "ä½ æ­£æ¬²é›¢é–‹æ­¤åœ°ï¼Œå»åªè¦‹" NOR + HIW "ç„å†°" NOR +
+                                   HIR "èµ¤" NOR + HIW "èŸ’" NOR + HIY "ä¸€å€‹ç›¤æ—‹ï¼Œé “æ™‚å°‡"
+                                   "å»è·¯å®Œå…¨å°é–ã€‚\n" NOR);
         return ::valid_leave(me);
 }

@@ -9,7 +9,7 @@ inherit F_SAVE;
 void create()
 {
         dbase = allocate_mapping(0);
-        // 复制对象必须调用 LOGON 函数或者是设置连接身体
+        // 寰╁埗灏嶈薄蹇呴爤瑾跨敤 LOGON 鍑芥暩鎴栬�呮槸瑷疆閫ｆ帴韬珨
         // if (clonep()) call_out("time_out", 0);
 }
 
@@ -45,7 +45,7 @@ void time_out()
                 return;
         }
         if( interactive(this_object()) )
-                write("\n您花在连线进入手续的时间太久了，下次想好再来吧。\n");
+                write("\n鎮ㄨ姳鍦ㄩ�ｇ窔閫插叆鎵嬬簩鐨勬檪闁撳お涔呬簡锛屼笅娆℃兂濂藉啀渚嗗惂銆俓n");
         destruct(this_object());
 }
 

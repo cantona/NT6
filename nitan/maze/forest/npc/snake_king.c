@@ -4,13 +4,13 @@ void do_chan();
 void do_dot();
 void create()
 {
-        string *names = ({"×Ï°ßÍõÉß","ÂÌ»·ÍõÉß","ºÚ¹ÚÍõÉß"});
+        string *names = ({"ç´«æ–‘ç‹è›‡","ç¶ ç’°ç‹è›‡","é»‘å† ç‹è›‡"});
         set_name( names[random(sizeof(names))], ({ "snake king","snake"}));
         set("vendetta_mark","snake");
-        set("race", "Ò°ÊŞ");
-        set("gender", "ĞÛĞÔ");
+        set("race", "é‡ç¸");
+        set("gender", "é›„æ€§");
         set("age", 60);
-        set("long", "ÕâÊÇÒ»ÌõÍõÉß¡£\n");
+        set("long", "é€™æ˜¯ä¸€æ¢ç‹è›‡ã€‚\n");
 
         set("str", 80);
         set("cor", 100);
@@ -27,7 +27,7 @@ void create()
         set("chat_msg_combat", ({
                 (: do_dot() :),
         }) );
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "Î²°Í", "Æß´ç" }) );
+        set("limbs", ({ "é ­éƒ¨", "èº«é«”", "å°¾å·´", "ä¸ƒå¯¸" }) );
         set("verbs", ({ "bite" }) );
         set("combat_exp", 400000);
         set("bellicosity", 5 );
@@ -49,7 +49,7 @@ void do_chan() {
                 enemy = enemies[random(sizeof(enemies))];
         if (!this_object()->is_fighting(enemy) )
                 return;
-                msg = HIG"\n$N¼ıÉäÒ»°ãÆËÉÏÀ´£¬²ø×¡ÁË$n£¡\n"NOR;
+                msg = HIG"\n$Nç®­å°„ä¸€èˆ¬æ’²ä¸Šä¾†ï¼Œçºä½äº†$nï¼\n"NOR;
                 message_combatd(msg,this_object(),enemy);
                 enemy->start_busy(3);
                 start_busy(1);
@@ -65,8 +65,8 @@ void do_dot() {
                 enemy = enemies[random(sizeof(enemies))];
         if (!this_object()->is_fighting(enemy) )
                 return;
-                msg = HIG"\n$NÅç³öÒ»¿Ú¶¾Îí£¬½«$nÕÖ×¡£¡\n"NOR;
-                //msg+= HIR"$nÖĞÁË¾ç¶¾£¡\n"NOR;
+                msg = HIG"\n$Nå™´å‡ºä¸€å£æ¯’éœ§ï¼Œå°‡$nç½©ä½ï¼\n"NOR;
+                //msg+= HIR"$nä¸­äº†åŠ‡æ¯’ï¼\n"NOR;
                 message_combatd(msg,this_object(),enemy);
                 call_out("take_eff",1, enemy);
                 //enemy->add_dot(500,4,"qi",this_object());
@@ -79,7 +79,7 @@ void take_eff(object enemy,object me) {
                 enemy->receive_damage("qi",50+random(50),me);
                 enemy->receive_damage("jing",20+random(20),me);
 
-                message_combatd(RED"\n$NÉíÉÏµÄ¾ç¶¾·¢×÷ÁË£¡\n"NOR,enemy);
+                message_combatd(RED"\n$Nèº«ä¸Šçš„åŠ‡æ¯’ç™¼ä½œäº†ï¼\n"NOR,enemy);
                 COMBAT_D->report_status(enemy);
 
 }

@@ -9,9 +9,9 @@ inherit NPC;
 
 void create()
 { 
-        set_name("ÃÉ¹Å½«Áì",({"menggu jiangling","jiangling"}));
-        set("long","ÕâÊÇÒ»Î»ÇÖ·¸ÖĞÔ­µÄÃÉ¹Å½«Áì¡£\n");
-        set("gender", "ÄĞĞÔ" );
+        set_name("è’™å¤å°‡é ˜",({"menggu jiangling","jiangling"}));
+        set("long","é€™æ˜¯ä¸€ä½ä¾µçŠ¯ä¸­åŸçš„è’™å¤å°‡é ˜ã€‚\n");
+        set("gender", "ç”·æ€§" );
         set("age", random(30)+14);
         
         set("vendetta/authority", 1);
@@ -115,10 +115,10 @@ void die()
                 
         room = environment();  
 
-        if( query("short", room) != "°×»¢ÄÚÃÅ"
-                 && query("short", room) != "ÇàÁúÄÚÃÅ"
-                 && query("short", room) != "ÖìÈ¸ÄÚÃÅ"
-                 && query("short", room) != "ĞşÎäÄÚÃÅ" )
+        if( query("short", room) != "ç™½è™å…§é–€"
+                 && query("short", room) != "é’é¾å…§é–€"
+                 && query("short", room) != "æœ±é›€å…§é–€"
+                 && query("short", room) != "ç„æ­¦å…§é–€" )
                 return ::die(); 
                         
         if( query_temp("guo_shoucheng/start_job", ob) == 1
@@ -136,7 +136,7 @@ void die()
         switch (random(3)) 
         {
         case 0:
-                message_vision(HIR "³ÇÏÂÓÖÅÀÉÏÀ´Ò»¸öÃÉ¹Å±øÊ¿¡£\n" NOR, ob); 
+                message_vision(HIR "åŸä¸‹åˆçˆ¬ä¸Šä¾†ä¸€å€‹è’™å¤å…µå£«ã€‚\n" NOR, ob); 
                 robber = new(__DIR__"robber1");
                 robber->do_change(ob);
                 set("want_kill", ob, robber);
@@ -145,7 +145,7 @@ void die()
                 ob->kill_ob(robber);
                 break;
         case 1:
-                message_vision(HIR"³ÇÏÂÓÖÅÀÉÏÀ´Ò»¸öÃÉ¹Å½«Áì¡£\n" NOR,ob); 
+                message_vision(HIR"åŸä¸‹åˆçˆ¬ä¸Šä¾†ä¸€å€‹è’™å¤å°‡é ˜ã€‚\n" NOR,ob); 
                 robber = new(__DIR__"robber2");
                 robber->do_change(ob);
                 set("want_kill", ob, robber);
@@ -154,7 +154,7 @@ void die()
                 ob->kill_ob(robber);
                 break;
         case 2:
-                message_vision(HIR"³ÇÏÂÓÖÅÀÉÏÀ´Ò»¸öÃÉ¹Å¸ßÊÖ¡£\n" NOR,ob); 
+                message_vision(HIR"åŸä¸‹åˆçˆ¬ä¸Šä¾†ä¸€å€‹è’™å¤é«˜æ‰‹ã€‚\n" NOR,ob); 
                 robber = new(__DIR__"robber3");
                 robber->do_change(ob);
                 set("want_kill", ob, robber);
@@ -167,7 +167,7 @@ void die()
         if( query_temp("guo_shoucheng/start_job", ob) == 1 )
                 set("ygjg", ob, robber);
                 
-        message_vision("$NÆËÔÚµØÉÏÕõÔúÁË¼¸ÏÂ£¬¿ÚÖĞÅç³ö¼¸¿Ú" HIR "ÏÊÑª" NOR "£¬ËÀÁË£¡\n",this_object());
+        message_vision("$Næ’²åœ¨åœ°ä¸Šæ™ç´®äº†å¹¾ä¸‹ï¼Œå£ä¸­å™´å‡ºå¹¾å£" HIR "é®®è¡€" NOR "ï¼Œæ­»äº†ï¼\n",this_object());
         destruct(this_object());
         return;
 }

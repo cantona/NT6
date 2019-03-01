@@ -4,14 +4,14 @@ inherit WAIST;
 
 void create()
 {
-        set_name("ºÉ°ü", ({ "he bao", "hebao", "bao"}) );
+        set_name("è·åŒ…", ({ "he bao", "hebao", "bao"}) );
         set_weight(500);
         set_max_encumbrance(2000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ö»");
-                set("long", "ÕâÊÇÒ»Ö»Ğ¡Ğ¡µÄºÉ°ü£¬ÀïÃæ¿ÉÒÔ×°Ò»Ğ©Ğ¡¶«Î÷¡£\n");
+                set("unit", "åª");
+                set("long", "é€™æ˜¯ä¸€åªå°å°çš„è·åŒ…ï¼Œè£¡é¢å¯ä»¥è£ä¸€äº›å°æ±è¥¿ã€‚\n");
                 set("material", "silk");
                 set("no_get",1);
                 set("armor_prop/parry", 1);

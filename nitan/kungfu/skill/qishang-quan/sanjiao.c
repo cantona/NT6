@@ -1,11 +1,11 @@
 // This program is a part of NT MudLIB
-// sanjiao.c Èý½¹ÆëÄæ¾÷
+// sanjiao.c ä¸‰ç„¦é½Šé€†è¨£
 
 #include <ansi.h>
 
 inherit F_SSERVER;
 
-string name() { return HIR "Èý½¹ÆëÄæ¾÷"; }
+string name() { return HIR "ä¸‰ç„¦é½Šé€†è¨£"; }
 
 int perform(object me,object target)
 {
@@ -26,30 +26,30 @@ int perform(object me,object target)
         if( !target || !target->is_character() || target == me ||
             !me->is_fighting(target) ||
             !living(target) )
-                return notify_fail(name()+"Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(name()+"åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if (objectp(weapon = query_temp("weapon", me)))
-                return notify_fail("Äã±ØÐë¿ÕÊÖ²ÅÄÜÊ¹ÓÃ¡¸Èý½¹ÆëÄæ¾÷¡¹¡£\n");
+                return notify_fail("ä½ å¿…é ˆç©ºæ‰‹æ‰èƒ½ä½¿ç”¨ã€Œä¸‰ç„¦é½Šé€†è¨£ã€ã€‚\n");
 
         fskill = "jiuyang-shengong";
         sskill = "qishang-quan";
         bskill = "cuff";
 
         if( (int)me->query_skill(fskill, 1) < 200 )
-                return notify_fail("ÄãµÄ"+to_chinese(fskill)+"ÐÞÎª²»×ã£¬²»ÄÜËæ±ãÊ¹ÓÃ"+name()+"¡£\n");
+                return notify_fail("ä½ çš„"+to_chinese(fskill)+"ä¿®ç‚ºä¸è¶³ï¼Œä¸èƒ½éš¨ä¾¿ä½¿ç”¨"+name()+"ã€‚\n");
 
         if( (int)me->query_skill(sskill, 1) < 200 )
-                return notify_fail("ÄãµÄ"+to_chinese(sskill)+"µÄÐÞÎª²»¹»£¬²»ÄÜ¹»Ìå»á"+name()+"¡£\n");
+                return notify_fail("ä½ çš„"+to_chinese(sskill)+"çš„ä¿®ç‚ºä¸å¤ ï¼Œä¸èƒ½å¤ é«”æœƒ"+name()+"ã€‚\n");
 
         if( (int)me->query_skill(bskill, 1) < 200 )
-                return notify_fail("ÄãµÄ"+to_chinese(bskill)+"»¹²»µ½¼Ò£¬ÎÞ·¨ÌåÏÖÆßÉËÈ­µÄ"+name()+"¡£\n");
+                return notify_fail("ä½ çš„"+to_chinese(bskill)+"é‚„ä¸åˆ°å®¶ï¼Œç„¡æ³•é«”ç¾ä¸ƒå‚·æ‹³çš„"+name()+"ã€‚\n");
 
         if( (int)query("neili", me) < 2000 )
-                return notify_fail("ÄãµÄÄÚÁ¦»¹²»¹»¸ß£¡\n");
+                return notify_fail("ä½ çš„å…§åŠ›é‚„ä¸å¤ é«˜ï¼\n");
 
         skill = me->query_skill(bskill,1) + me->query_skill("force",1);
 
-        msg = HIY"$NÄýÉñ¶¨Æø£¬ÆóÍ¼Ê¹³öÆßÉËÈ­×Ü¾÷ÖÐµÄ¡¸" HIR "Èý½¹ÆëÄæ¾÷" HIY "¡¹£¬½«µÐ·½ÕÐÊý·´µ¯£¡\n"NOR;
+        msg = HIY"$Nå‡ç¥žå®šæ°£ï¼Œä¼åœ–ä½¿å‡ºä¸ƒå‚·æ‹³ç¸½è¨£ä¸­çš„ã€Œ" HIR "ä¸‰ç„¦é½Šé€†è¨£" HIY "ã€ï¼Œå°‡æ•µæ–¹æ‹›æ•¸åå½ˆï¼\n"NOR;
 
         ap = attack_power(me, "cuff");
         dp = defense_power(target, "force");
@@ -58,7 +58,7 @@ int perform(object me,object target)
         {
                 addn("neili", -500, me);
 
-                msg += HIG "$nÖ»¾õµÃÐØÇ°Ò»Õó¾çÍ´£¬¡°ÍÛ¡±µÄÒ»ÉùÅç³öÒ»¿ÚÏÊÑª£¡\n"NOR;
+                msg += HIG "$nåªè¦ºå¾—èƒ¸å‰ä¸€é™£åŠ‡ç—›ï¼Œâ€œå“‡â€çš„ä¸€è²å™´å‡ºä¸€å£é®®è¡€ï¼\n"NOR;
                 neili_wound = damage_power(me, "cuff");
                 damage+= query("jiali", me);
                 qi_wound = neili_wound ;
@@ -75,7 +75,7 @@ int perform(object me,object target)
         }
         else
         {
-                msg+=HIG "Ö»¼û$n²»»Å²»Ã¦£¬ÇáÇáÒ»ÉÁ£¬¶ã¹ýÁË$NµÄ±ØÉ±Ò»»÷£¡\n"NOR;
+                msg+=HIG "åªè¦‹$nä¸æ…Œä¸å¿™ï¼Œè¼•è¼•ä¸€é–ƒï¼Œèº²éŽäº†$Nçš„å¿…æ®ºä¸€æ“Šï¼\n"NOR;
                 addn("neili", -200, me);
                 me->start_busy(3);
         }

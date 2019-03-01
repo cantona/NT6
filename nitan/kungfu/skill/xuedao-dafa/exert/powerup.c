@@ -10,13 +10,13 @@ int exert(object me, object target)
         int skill, lv;
 
         if (target != me)
-                return notify_fail("ÄãÖ»ÄÜÓÃÑªµ¶´ó·¨À´ÌáÉı×Ô¼ºµÄÕ½¶·Á¦¡£\n");
+                return notify_fail("ä½ åªèƒ½ç”¨è¡€åˆ€å¤§æ³•ä¾†æå‡è‡ªå·±çš„æˆ°é¬¥åŠ›ã€‚\n");
 
         if( query("neili", me)<150 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ã€‚\n");
 
         if( query_temp("powerup", me) )
-                return notify_fail("ÄãÒÑ¾­ÔÚÔË¹¦ÖĞÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“åœ¨é‹åŠŸä¸­äº†ã€‚\n");
 
         skill = me->query_skill("force");
         lv = me->query_skill("xuedao-dafa", 1) / 3;
@@ -24,15 +24,15 @@ int exert(object me, object target)
         addn("neili", -100, me);
         me->receive_damage("qi", 0);
 
-        message_combatd(HIR "$N" HIR "ÑöÌìÒ»Éù¿ñÏø£¬È«Éí¹Ç÷À±¬Ïì£¬ÕæÆøµ´Ñú£¬É±"
-                        "ÆøÃÖÂş£¬ÆøÊÆÆÈÈË¡£\n" NOR, me);
+        message_combatd(HIR "$N" HIR "ä»°å¤©ä¸€è²ç‹‚å“®ï¼Œå…¨èº«éª¨éª¼çˆ†éŸ¿ï¼ŒçœŸæ°£ç›ªæ¼¾ï¼Œæ®º"
+                        "æ°£å½Œæ¼«ï¼Œæ°£å‹¢è¿«äººã€‚\n" NOR, me);
 
         if( objectp(weapon=query_temp("weapon", me)) && 
            query("skill_type", weapon) == "blade" && 
            me->query_skill_mapped("blade") == "xuedao-dafa")
         {
-                message_combatd(HIR "$N" HIR "àÁÄ¿ÄüĞ¦£¬ÊÖÖĞ" + weapon->name() +
-                                HIR "¶ÙÊ±ÑúÆğÒ»µÀÑª¹â£¬ÂşÆğÎŞ±ßÉ±Òâ¡£\n" NOR, me);
+                message_combatd(HIR "$N" HIR "å—”ç›®ç°ç¬‘ï¼Œæ‰‹ä¸­" + weapon->name() +
+                                HIR "é “æ™‚æ¼¾èµ·ä¸€é“è¡€å…‰ï¼Œæ¼«èµ·ç„¡é‚Šæ®ºæ„ã€‚\n" NOR, me);
         }
 
         addn_temp("apply/attack", skill/3, me);
@@ -56,6 +56,6 @@ void remove_effect(object me, int amount, int lv)
                 addn_temp("apply/defense", -amount, me);
                 addn_temp("apply/damage", -lv, me);
                 delete_temp("powerup", me);
-                tell_object(me, "ÄãµÄÑªµ¶´ó·¨ÔËĞĞÍê±Ï£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï¡£\n");
+                tell_object(me, "ä½ çš„è¡€åˆ€å¤§æ³•é‹è¡Œå®Œç•¢ï¼Œå°‡å…§åŠ›æ”¶å›ä¸¹ç”°ã€‚\n");
         }
 }

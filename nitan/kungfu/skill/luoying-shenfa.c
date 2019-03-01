@@ -1,5 +1,5 @@
 // This program is a part of NT MudLIB
-// luoying-shenfa ��Ӣ����
+// luoying-shenfa 落英身法
 
 #include <combat.h>
 #include <ansi.h>
@@ -7,37 +7,37 @@
 inherit SKILL;
 
 mapping *action = ({
-([      "action" : "$n��ͷһ�ͣ�˫�����䣬������ǰ���Ƽ�����$N������ȥ������һ�С�����������$N��֮�£���������ͳͳ����$n���󣬾�����ա�\n",
+([      "action" : "$n將頭一低，雙臂內彎，手肘向前，似箭般向$N懷中撲去，正是一招“靈鰲步”，$N大驚之下，所發招數統統打在$n身後，盡數落空。\n",
         "dodge"  : 10,
-        "skill_name" : "������"
+        "skill_name" : "靈鰲步"
 ]),
-([      "action" : "$n���μ�����ʹ��һ�С������ڿա���������ͬΪ�������������Ʈ��һ�����࣬�ܹ�$N������\n",
+([      "action" : "$n身形疾閃，使出一招“海燕騰空”，身體如同為海風所激，向後飄開一丈有余，避過$N攻擊。\n",
         "dodge"  : 20,
-        "skill_name" : "�����ڿ�"
+        "skill_name" : "海燕騰空"
 ]),
-([      "action" : "$n����һ�ݣ�Ծ�ڰ�գ��ո����أ�һ�С��������㡱���ڿ�����������һ��������������Ϣ������$N����\n",
+([      "action" : "$n將身一縱，躍在半空，收腹含胸，一招“長空落雁”，在空中輕輕巧巧一個翻身，悄無聲息地落在$N身後。\n",
         "dodge"  : 30,
-        "skill_name" : "��������"
+        "skill_name" : "長空落雁"
 ]),
-([      "action" : "$n�ۼ����й�����ίʵ���޿ɱܣ���Ȼһ�С���Ͽ�ƶϡ������һ�������ţ�ȫ����ϥ�����ϣ�ƽƽ�۶ϣ�$N������ʱʧ��׼ͷ��ȫ�����ڿմ���\n",
+([      "action" : "$n眼見敵招攻來，委實避無可避，忽然一招“巫峽雲斷”，凌空一個鐵板橋，全身自膝蓋以上，平平折斷，$N招數頓時失了準頭，全部打在空處。\n",
         "dodge"  : 40,
-        "skill_name" : "��Ͽ�ƶ�"
+        "skill_name" : "巫峽雲斷"
 ]),
-([      "action" : "$n����������ʹ��һ�С�������������˫��չ���������������裬��̬Ʈ�ݣ�����$N������\n",
+([      "action" : "$n身形閃動，使出一招“青鳥振翼”，雙臂展開，宛若翩翩起舞，姿態飄逸，閃過$N攻擊。\n",
         "dodge"  : 50,
-        "skill_name" : "��������"
+        "skill_name" : "青鳥振翼"
 ]),
-([      "action" : "$n����һ�䣬һʽ��������衱������$N���ƣ��������󣬵������ң�$N�俴�ƴ�ռ�Ϸ磬ȴ��һ���ܹ����С�\n",
+([      "action" : "$n身法一變，一式“湘靈空舞”，隨著$N攻勢，敵左則左，敵右則右，$N雖看似大佔上風，卻無一招能夠擊中。\n",
         "dodge"  : 60,
-        "skill_name" : "�������"
+        "skill_name" : "湘靈空舞"
 ]),
-([      "action" : "$nһ����Х�����ΰεض�������һ�С��������������ڿ���һ������ת�ۣ���ҡֱ�ϣ�Ѹ���������������������$N������\n",
+([      "action" : "$n一聲清嘯，身形拔地而起，正是一招“鵬搏九霄”，在空中一連幾個轉折，扶搖直上，迅若鯤鵬，舉重若輕的閃過$N攻擊。\n",
         "dodge"  : 70,
-        "skill_name" : "��������"
+        "skill_name" : "鵬搏九霄"
 ]),
-([      "action" : "$n����������¼��Ⱥ�����Է�λ��һʽ����ȥ���⡱����������֮��ǰ�������ں�$N��æ���ң����ֵ����������ܣ������ỹ�ַ����ˡ�\n",
+([      "action" : "$n氣凝丹田，腳下疾踩後天八卦方位，一式“歸去來兮”，當真是望之在前，忽焉在後，$N手忙腳亂，連抵擋都有所不能，更別提還手反擊了。\n",
         "dodge"  : 80,
-        "skill_name" : "��ȥ����"
+        "skill_name" : "歸去來兮"
 ])
 });
 
@@ -78,7 +78,7 @@ string query_dodge_msg(string limb)
 int practice_skill(object me)
 {
         if( query("qi", me)<40 )
-                return notify_fail("�����Ѫ̫���ˣ���������Ӣ������\n");
+                return notify_fail("你的氣血太差了，不能練落英身法。\n");
         me->receive_damage("qi", 30);
         return 1;
 }
@@ -130,10 +130,10 @@ mixed valid_damage(object me, object victim, int damage, object weapon)
 
         if( query_temp("wuzhuan_hit", victim)<0)return ;
         if(attack_skill=="tanzhi-shentong")
-                result = HIG"$n��ָһ�����͵�һ�����죬һ��ϸϸ�ľ��������ȥ�����ɡ���ָ��ͨ��ָ����������ʱ��������Ρ�\n" NOR;
+                result = HIG"$n伸指一彈，嗤的一聲輕響，一股細細的勁力激射出去，兩股「彈指神通」指力互擊，登時消弭於無形。\n" NOR;
         else if( objectp(w2) )
-                result = HIG"$n��ָһ�����͵�һ�����죬һ��ϸϸ�ľ��������ȥ����ʱ��$N��"+w2->name()+HIG"�������ھ���������������������"+to_chinese(attack_skill)+"��\n" NOR;
-        else result = HIG"$n��ָһ�����͵�һ�����죬һ��ϸϸ�ľ��������ȥ���⡸��ָ��ͨ����$N�ġ�"+to_chinese(attack_skill)+"�����˸�����൱��˭Ҳû����˭��\n" NOR;
+                result = HIG"$n伸指一彈，嗤的一聲輕響，一股細細的勁力激射出去，登時將$N的"+w2->name()+HIG"上所附內勁盡數抵銷，化解了這招"+to_chinese(attack_skill)+"。\n" NOR;
+        else result = HIG"$n伸指一彈，嗤的一聲輕響，一股細細的勁力激射出去，這「彈指神通」與$N的「"+to_chinese(attack_skill)+"」鬥了個旗鼓相當，誰也沒能傷誰。\n" NOR;
 
 
         addn("neili", -(30+query("jiali", me)/2), victim);

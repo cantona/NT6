@@ -1,4 +1,4 @@
-//²éÑ¯ÓÎÏ·½»·ÑÊ±¼äµÄÃüÁî£¬Ö±½Ó´ÓÊı¾İ¿âÈ¡Êı¾İ£¬Ó¦¸Ã½ûÖ¹Æµ·±¶ÁÈ¡
+//æŸ¥è©¢éŠæˆ²äº¤è²»æ™‚é–“çš„å‘½ä»¤ï¼Œç›´æ¥å¾æ•¸æ“šåº«å–æ•¸æ“šï¼Œæ‡‰è©²ç¦æ­¢é »ç¹è®€å–
 //Write By JackyBoy@XAJH 2001/5/15
 #include <ansi.h>
 
@@ -13,13 +13,13 @@ class channel_class
 mapping channels;
 string *chann;
 string cmdhelp=
-"Ñ¡µ¥ÃüÁî¸ñÊ½£º<"HIR"ÆµµÀ"HIG">   <"HIR"ÃüÁî"HIG">\n"+
-"ÆäÖĞÆµµÀÎªÄã¿ÉÒÔÉèÖÃºÍÊ¹ÓÃµÄÆµµÀµÄÓ¢ÎÄÃû£¬±ÈÈç"HIC"chat"HIG","HIM"rumor"HIG"µÈ\n"+
-"¶øÃüÁîÎª"HIR"public"HIG","HIR"main"HIG"»òÕß"HIR"none"HIG"£¬ÆäÖĞ£º\n"+
-HIR"public"HIG"±íÊ¾¿ªÆôÆµµÀ²¢½«ĞÅÏ¢ÏÔÊ¾µ½¹«¹²ĞÅÏ¢´°¿Ú\n"+
-HIR"main  "HIG"±íÊ¾¿ªÆôÆµµÀ²¢½«ĞÅÏ¢ÏÔÊ¾µ½Ö÷ĞÅÏ¢´°¿ÚÖĞ\n"+
-HIR"none  "HIG"±íÊ¾½«ÆµµÀ¹Ø±Õ£¬²»ÔÙ½ÓÊÕÆµµÀĞÅÏ¢\n"+
-"ÄãÒ²¿ÉÒÔÊäÈë"HIR"exit"HIG"ÍË³öÃüÁîÑ¡µ¥£¬»òÊäÈë"HIR"help/?"HIG"»ñÈ¡±¾ĞÅÏ¢£¡\n";
+"é¸å–®å‘½ä»¤æ ¼å¼ï¼š<"HIR"é »é“"HIG">   <"HIR"å‘½ä»¤"HIG">\n"+
+"å…¶ä¸­é »é“ç‚ºä½ å¯ä»¥è¨­ç½®å’Œä½¿ç”¨çš„é »é“çš„è‹±æ–‡åï¼Œæ¯”å¦‚"HIC"chat"HIG","HIM"rumor"HIG"ç­‰\n"+
+"è€Œå‘½ä»¤ç‚º"HIR"public"HIG","HIR"main"HIG"æˆ–è€…"HIR"none"HIG"ï¼Œå…¶ä¸­ï¼š\n"+
+HIR"public"HIG"è¡¨ç¤ºé–‹å•Ÿé »é“ä¸¦å°‡ä¿¡æ¯é¡¯ç¤ºåˆ°å…¬å…±ä¿¡æ¯çª—å£\n"+
+HIR"main  "HIG"è¡¨ç¤ºé–‹å•Ÿé »é“ä¸¦å°‡ä¿¡æ¯é¡¯ç¤ºåˆ°ä¸»ä¿¡æ¯çª—å£ä¸­\n"+
+HIR"none  "HIG"è¡¨ç¤ºå°‡é »é“é—œé–‰ï¼Œä¸å†æ¥æ”¶é »é“ä¿¡æ¯\n"+
+"ä½ ä¹Ÿå¯ä»¥è¼¸å…¥"HIR"exit"HIG"é€€å‡ºå‘½ä»¤é¸å–®ï¼Œæˆ–è¼¸å…¥"HIR"help/?"HIG"ç²å–æœ¬ä¿¡æ¯ï¼\n";
 
 int do_chan(string,object,int);
 int show_main(object);
@@ -28,7 +28,7 @@ int main(object me,string arg)
 {
         channels=CHANNEL_D->query_chann();
         chann=keys(channels);
-        //·ÇÎ×Ê¦¾Í¹ıÂËµôÕâĞ©Î×Ê¦ÆµµÀÉèÖÃ
+        //éå·«å¸«å°±éæ¿¾æ‰é€™äº›å·«å¸«é »é“è¨­ç½®
         if(!wizardp(me)) chann -= ({"wiz","sys","debug","nch"});
         chann -= ({"shout"});
         
@@ -48,19 +48,19 @@ int show_main(object me)
         //tuned_ch=query("channels", me);
         tuned_ch = CHANNEL_D->query_using_channel(me, 1);
 
-        str=me->name()+"µÄÆµµÀÉèÖÃÎª£º\n"HIC"¡Ô"HIY"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"HIC"¡Ô\n"NOR;
-        str+=sprintf(HIC" %-10s        %-8s         %-8s\n\n","ÆµµÀÃüÁî","ÆµµÀÃû³Æ","ÆµµÀ×´Ì¬");
+        str=me->name()+"çš„é »é“è¨­ç½®ç‚ºï¼š\n"HIC"â‰¡"HIY"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"HIC"â‰¡\n"NOR;
+        str+=sprintf(HIC" %-10s        %-8s         %-8s\n\n","é »é“å‘½ä»¤","é »é“åç¨±","é »é“ç‹€æ…‹");
         foreach(s in chann)
         {
                 ch = copy(channels[s]);
-                if( !pointerp(tuned_ch) || !sizeof(tuned_ch) ) state=HIG"¹Ø±Õ";
-                else if(member_array(s,tuned_ch)==-1) state=GRN"¹Ø±Õ";
-                else if( query("chann/"+s, me))state=HIC"Ö÷´°¿Ú";
-                else state=HIY"¹«¹²´°¿Ú";
+                if( !pointerp(tuned_ch) || !sizeof(tuned_ch) ) state=HIG"é—œé–‰";
+                else if(member_array(s,tuned_ch)==-1) state=GRN"é—œé–‰";
+                else if( query("chann/"+s, me))state=HIC"ä¸»çª—å£";
+                else state=HIY"å…¬å…±çª—å£";
                 str+=sprintf(WHT"[%-10s]       [%-8s]        %-8s\n",s,ch->msg,state);
         }
-        str+="\n"HIC"¡Ô"HIY"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"HIC"¡Ô\n"NOR;
-        str+="ÇëÊäÈëÃüÁî("HIY"help"NOR"¿´°ïÖú£¬"HIY"exit"NOR"ÍË³ö)£º";
+        str+="\n"HIC"â‰¡"HIY"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"HIC"â‰¡\n"NOR;
+        str+="è«‹è¼¸å…¥å‘½ä»¤("HIY"help"NOR"çœ‹å¹«åŠ©ï¼Œ"HIY"exit"NOR"é€€å‡º)ï¼š";
         write(str);
         input_to( (: do_chan :) ,me);
         return 1;
@@ -87,7 +87,7 @@ int do_chan(string arg,object me,int once)
         
         if(!arg)
         {
-                write("\nÇëÊäÈëÃüÁî("HIY"help"NOR"¿´°ïÖú£¬"HIY"exit"NOR"ÍË³ö)£º");
+                write("\nè«‹è¼¸å…¥å‘½ä»¤("HIY"help"NOR"çœ‹å¹«åŠ©ï¼Œ"HIY"exit"NOR"é€€å‡º)ï¼š");
                 input_to( (: do_chan :) ,me);
                 return 1;
         }               
@@ -98,16 +98,16 @@ int do_chan(string arg,object me,int once)
         {
                 case "?":
                 case "help":
-                        //ÏÔÊ¾°ïÖúĞÅÏ¢
+                        //é¡¯ç¤ºå¹«åŠ©ä¿¡æ¯
                         write(HIG+cmdhelp+NOR);
                         break;
                 case "q":
                 case "quit":
                 case "exit":
-                        write(HIG"ÍË³öÆµµÀÉèÖÃ³ÌĞò¡£¡£¡£\n"NOR);
+                        write(HIG"é€€å‡ºé »é“è¨­ç½®ç¨‹åºã€‚ã€‚ã€‚\n"NOR);
                         once=1;break;
                 default:
-                        //½øĞĞ³ÌĞò´¦Àí
+                        //é€²è¡Œç¨‹åºè™•ç†
                         tmp=0;
                         if(sscanf(arg,"%s %s",ch,cmd)==2)
                         {
@@ -118,26 +118,26 @@ int do_chan(string arg,object me,int once)
                                                 {
                                                         open_ch(me,ch);
                                                         delete("chann/"+ch, me);
-                                                        write(HIG"Äã´ò¿ªÁË" + channels[ch]["name"] + "ÆµµÀ¡£\n"NOR);
+                                                        write(HIG"ä½ æ‰“é–‹äº†" + channels[ch]["name"] + "é »é“ã€‚\n"NOR);
                                                 }
-                                                else write(HIG"ÆµµÀ´íÎó£¡Ã»ÓĞ"+HIY+"ch"+HIG+"Õâ¸öÆµµÀ£¡\n"NOR);
+                                                else write(HIG"é »é“éŒ¯èª¤ï¼æ²’æœ‰"+HIY+"ch"+HIG+"é€™å€‹é »é“ï¼\n"NOR);
                                                 break;
                                         case "main":
                                                 if(member_array(ch,chann)!=-1)
                                                 {
                                                         open_ch(me,ch);
                                                         set("chann/"+ch, 1, me);
-                                                        write(HIG"Äã´ò¿ªÁË" + channels[ch]["name"] + "ÆµµÀ¡£\n"NOR);
+                                                        write(HIG"ä½ æ‰“é–‹äº†" + channels[ch]["name"] + "é »é“ã€‚\n"NOR);
                                                 }
-                                                else write(HIG"ÆµµÀ´íÎó£¡Ã»ÓĞ"+HIY+"ch"+HIG+"Õâ¸öÆµµÀ£¡\n"NOR);
+                                                else write(HIG"é »é“éŒ¯èª¤ï¼æ²’æœ‰"+HIY+"ch"+HIG+"é€™å€‹é »é“ï¼\n"NOR);
                                                 break;
                                         case "none":
                                                 if(member_array(ch,chann)!=-1)
                                                 {
                                                         set("channels",query("channels",  me)-({ch}), me);
-                                                        write(HIG"Äã¹Ø±ÕÁË" + channels[ch]["name"] + "ÆµµÀ¡£\n"NOR);
+                                                        write(HIG"ä½ é—œé–‰äº†" + channels[ch]["name"] + "é »é“ã€‚\n"NOR);
                                                 }
-                                                else write(HIG"ÆµµÀ´íÎó£¡Ã»ÓĞ"+HIY+"ch"+HIG+"Õâ¸öÆµµÀ£¡\n"NOR);
+                                                else write(HIG"é »é“éŒ¯èª¤ï¼æ²’æœ‰"+HIY+"ch"+HIG+"é€™å€‹é »é“ï¼\n"NOR);
                                                 break;
                                         default:
                                                 tmp=1;
@@ -154,22 +154,22 @@ int do_chan(string arg,object me,int once)
 int help()
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : chann                         (²Ëµ¥Ä£Ê½)
-           chann    <ÃüÁî´®>             (Ö±½ÓÖ¸¶¨)
+æŒ‡ä»¤æ ¼å¼ : chann                         (èœå–®æ¨¡å¼)
+           chann    <å‘½ä»¤ä¸²>             (ç›´æ¥æŒ‡å®š)
 
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄã×ÔÓÉÉèÖÃÆµµÀĞÅÏ¢µÄÏÔÊ¾£¬¹Ø±Õ»òÕßÏÔÊ¾Î»ÖÃ¡£
-ÏÔÊ¾Î»ÖÃÓĞmain£¨Ö÷´°¿Ú£©ºÍpublic£¨¹«¹²ĞÅÏ¢´°¿Ú£©Á½¸öÑ¡Ôñ¡£
-Èç¹ûÎ»ÖÃÉèÖÃÎªÃ»ÓĞ£¨none£©£¬Ôò±íÊ¾Òª¹Ø±Õ¸ÃÆµµÀ¡£
+é€™å€‹æŒ‡ä»¤å¯ä»¥è®“ä½ è‡ªç”±è¨­ç½®é »é“ä¿¡æ¯çš„é¡¯ç¤ºï¼Œé—œé–‰æˆ–è€…é¡¯ç¤ºä½ç½®ã€‚
+é¡¯ç¤ºä½ç½®æœ‰mainï¼ˆä¸»çª—å£ï¼‰å’Œpublicï¼ˆå…¬å…±ä¿¡æ¯çª—å£ï¼‰å…©å€‹é¸æ“‡ã€‚
+å¦‚æœä½ç½®è¨­ç½®ç‚ºæ²’æœ‰ï¼ˆnoneï¼‰ï¼Œå‰‡è¡¨ç¤ºè¦é—œé–‰è©²é »é“ã€‚
 
-ÃüÁî´®¸ñÊ½Îª£º<ÆµµÀ> < main | public | none>
-ÆµµÀÎªÄãÒª½øĞĞ²Ù×÷µÄÆµµÀÃû³Æ£¬ºóÃæ¸ú×ÅµÄÊÇnone±íÊ¾Òª¹Ø±Õ¸Ã
-ÆµµÀ£¬¸ú×Åmain±íÊ¾Òª´ò¿ªÆµµÀ²¢½«ĞÅÏ¢ÏÔÊ¾ÔÚÖ÷ÇøÓò´°¿Ú£¬Èç¹û
-ÊÇpublicÔòÏÔÊ¾µ½¹«¹²ĞÅÏ¢ÇøÓò´°¿Ú¡£
+å‘½ä»¤ä¸²æ ¼å¼ç‚ºï¼š<é »é“> < main | public | none>
+é »é“ç‚ºä½ è¦é€²è¡Œæ“ä½œçš„é »é“åç¨±ï¼Œå¾Œé¢è·Ÿè‘—çš„æ˜¯noneè¡¨ç¤ºè¦é—œé–‰è©²
+é »é“ï¼Œè·Ÿè‘—mainè¡¨ç¤ºè¦æ‰“é–‹é »é“ä¸¦å°‡ä¿¡æ¯é¡¯ç¤ºåœ¨ä¸»å€åŸŸçª—å£ï¼Œå¦‚æœ
+æ˜¯publicå‰‡é¡¯ç¤ºåˆ°å…¬å…±ä¿¡æ¯å€åŸŸçª—å£ã€‚
 
-Ö±½ÓÖ¸¶¨µÄÃüÁîÄ£Ê½Àı×Ó£º
-chann chat none    ¡ª¡ª ´Ë²Ù×÷Îª½«chatÆµµÀ¹Ø±Õ
-chann chat main    ¡ª¡ª ´Ë²Ù×÷½«´ò¿ªchatÆµµÀ²¢ÏÔÊ¾µ½Ö÷´°¿Ú
-chann rumor public ¡ª¡ª ´Ë²Ù×÷½«ÔÚ¹«¹²´°¿Ú´ò¿ªrumorÆµµÀ
+ç›´æ¥æŒ‡å®šçš„å‘½ä»¤æ¨¡å¼ä¾‹å­ï¼š
+chann chat none    â”€â”€ æ­¤æ“ä½œç‚ºå°‡chaté »é“é—œé–‰
+chann chat main    â”€â”€ æ­¤æ“ä½œå°‡æ‰“é–‹chaté »é“ä¸¦é¡¯ç¤ºåˆ°ä¸»çª—å£
+chann rumor public â”€â”€ æ­¤æ“ä½œå°‡åœ¨å…¬å…±çª—å£æ‰“é–‹rumoré »é“
 HELP );
     return 1;
 }

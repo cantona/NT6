@@ -3,10 +3,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "³¤½­±±°¶");
+        set("short", "é•·æ±ŸåŒ—å²¸");
         set("long", @LONG
-Äã¿ì²½À´µ½ÁË³¤½­±±°¶£¬Ö»¼ûÕâÀï²¨ÌÎ¹ö¹ö£¬ÌÏÌÏ½­Ë®Ïò
-¶«Á÷È¥¡£°¶±ßÁ¢ÓÐÒ»¿é±®(bei)£¬Ç°Ãæ²»Ô¶´¦ÓÐ×ù¶ÀÄ¾ÇÅ¡£
+ä½ å¿«æ­¥ä¾†åˆ°äº†é•·æ±ŸåŒ—å²¸ï¼Œåªè¦‹é€™è£¡æ³¢æ¿¤æ»¾æ»¾ï¼Œæ»”æ»”æ±Ÿæ°´å‘
+æ±æµåŽ»ã€‚å²¸é‚Šç«‹æœ‰ä¸€å¡Šç¢‘(bei)ï¼Œå‰é¢ä¸é è™•æœ‰åº§ç¨æœ¨æ©‹ã€‚
 LONG);
         set("outdoors", "kunming");
         set("exits", ([
@@ -14,12 +14,12 @@ LONG);
                 "north" :__DIR__"road4",                
         ]));
         set("item_desc", ([
-                "bei" : WHT "\n\n\n            ¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n"
-                        "            ¡ù                            ¡ù\n"
-                        "            ¡ù" NOR + HIW "     Í¨      Ìì      ºÓ" NOR +
-                        WHT "     ¡ù\n"
-                        "            ¡ù                            ¡ù\n"
-                        "            ¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n\n\n" NOR,
+                "bei" : WHT "\n\n\n            â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»\n"
+                        "            â€»                            â€»\n"
+                        "            â€»" NOR + HIW "     é€š      å¤©      æ²³" NOR +
+                        WHT "     â€»\n"
+                        "            â€»                            â€»\n"
+                        "            â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»\n\n\n" NOR,
         ]));
         set("objects", ([
                 "/d/beijing/npc/tiaofu" : 2,

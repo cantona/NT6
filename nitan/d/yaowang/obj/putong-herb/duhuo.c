@@ -2,15 +2,15 @@
 
 void create()
 {
-        set_name(NOR + HIB "¶À»î" NOR, ({ "du huo", "du", "huo", "herb_duhuo" }));
+        set_name(NOR + HIB "ç¨æ´»" NOR, ({ "du huo", "du", "huo", "herb_duhuo" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", NOR + HIB "¶À»îÊÇ³£¼ûµÄÖĞÒ©Ò©²Ä¡£\n" NOR);
-                set("base_unit", "¸ù");
+                set("long", NOR + HIB "ç¨æ´»æ˜¯å¸¸è¦‹çš„ä¸­è—¥è—¥æã€‚\n" NOR);
+                set("base_unit", "æ ¹");
                 set("base_value", 4000);
                 set("base_weight", 50);
-                set("no_sell", "Ò©Íõ¹ÈµÄµ¤Ò©·Ç³£ÓĞÃû£¬µ«ÆÕÍ¨²İÒ©ËæµØ¶¼ÓĞ°¡¡£"); 
+                set("no_sell", "è—¥ç‹è°·çš„ä¸¹è—¥éå¸¸æœ‰åï¼Œä½†æ™®é€šè‰è—¥éš¨åœ°éƒ½æœ‰å•Šã€‚"); 
                 set("yaowang", 1); 
         }
         setup();

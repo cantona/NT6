@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "������");
+        set("short", "禹王廟");
         set("long", @LONG
-������Ϊ׷�������ˮ���£��ڴ�̨�Ͻ��죬���ڵĴ��������
-��ƽ����һ�����Ű����£�ĿעԶ�������˶�������Ī����ˮ�ģ���
-�¹�ȥ����Ƭ���֡�
+禹王廟為追念大禹治水功德，在吹台上建造，廟內的大禹神像端
+身平坐，一手握著把鐵鍬，目注遠方，來人多是祈求莫發大水的，西
+下過去就是片樹林。
 LONG );
         set("objects", ([
                   __DIR__"npc/obj/dayu" : 1,

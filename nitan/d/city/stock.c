@@ -4,8 +4,8 @@
 
 inherit ROOM;
 
-#define PROCEDURE_FUND  0.01            // 1/100 µÄÊÖĞø·Ñ
-#define STOCK_VALUE     10000           // Ò»ÕÅ¹ÉÆ±¼ÛÖµ
+#define PROCEDURE_FUND  0.01            // 1/100 çš„æ‰‹çºŒè²»
+#define STOCK_VALUE     10000           // ä¸€å¼µè‚¡ç¥¨åƒ¹å€¼
 
 varargs string stockvalue_change_description(float change, string type)
 {
@@ -28,9 +28,9 @@ varargs string stockvalue_change_description(float change, string type)
         change = to_float(change);
 
         if( change > 0 )
-                return bgcolor+sprintf(HIR"¡ø%5.2f", change);
+                return bgcolor+sprintf(HIR"â–²%5.2f", change);
         else if( change < 0 )
-                return bgcolor+sprintf(HIG"¡õ%5.2f", -change);
+                return bgcolor+sprintf(HIG"â–¡%5.2f", -change);
         else
                 return bgcolor+sprintf(HIW"  %5.2f", change);
 }
@@ -54,8 +54,8 @@ int do_liststock(string arg)
                         sscanf(arg, "%d", min);
         }
 
-        msg = ({"´úºÅ    ¹ÉÆ±Ãû³Æ     ÏÖ¼Û    ÕÇµø  ÕÇµø·ù¶È ¿ªÅÌ¼Û ×î¸ß¼Û ×îµÍ¼Û ³É½»ÕÅÊı \n"});
-        msg += ({"¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª\n"});
+        msg = ({"ä»£è™Ÿ    è‚¡ç¥¨åç¨±     ç¾åƒ¹    æ¼²è·Œ  æ¼²è·Œå¹…åº¦ é–‹ç›¤åƒ¹ æœ€é«˜åƒ¹ æœ€ä½åƒ¹ æˆäº¤å¼µæ•¸ \n"});
+        msg += ({"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n"});
 
         foreach(string stock in stock_sort)
         {
@@ -72,23 +72,23 @@ int do_liststock(string arg)
 
                 data = stocks[stock];
 
-                if( !data["¹ÉÆ±Ãû³Æ"] ) continue;
+                if( !data["è‚¡ç¥¨åç¨±"] ) continue;
 
                 msg += ({sprintf(HIM"%-6s"HIW"  %-8s "HIY"%8.2f"NOR" %-8s %7.2f%% "NOR WHT"%6.2f "HIB"%6.2f %6.2f  "NOR BYEL HIY"%d\n"NOR,
                         stock,
-                        data["¹ÉÆ±Ãû³Æ"],
-                        data["ÏÖ¼Û"],
-                        stockvalue_change_description(data["ÕÇµø"], data["×´Ì¬"]),
-                        data["ÕÇµø·ù"],
-                        data["¿ªÅÌ"],
-                        data["×î¸ß"],
-                        data["×îµÍ"],
-                        data["³É½»ÕÅÊı"],
+                        data["è‚¡ç¥¨åç¨±"],
+                        data["ç¾åƒ¹"],
+                        stockvalue_change_description(data["æ¼²è·Œ"], data["ç‹€æ…‹"]),
+                        data["æ¼²è·Œå¹…"],
+                        data["é–‹ç›¤"],
+                        data["æœ€é«˜"],
+                        data["æœ€ä½"],
+                        data["æˆäº¤å¼µæ•¸"],
                 )});
         }
-        msg += ({"¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª\n"});
-        msg += ({MAG"¹² "HIM+count+NOR MAG" Ö»ÉÏÊĞ¹ÉÆ±£¬"YEL"¹ÉÆ±µ¥Î»Îª "HIY"1"NOR YEL" Á½»Æ½ğ/ÕÅ£¬"NOR RED"½»Ò×ÊÖĞø·ÑÎª "HIR+sprintf("%.2f%%", percent*100.)+NOR RED"¡£\n"NOR});
-        msg += ({HIK"¹ÉÆ±Êı¾İ×ÊÁÏÀ´×Ô»¦ÉîA¹É£¬10·ÖÖÓ¸üĞÂÒ»´Î£¬±¾´Î¸üĞÂÊ±¼ä£º"+sprintf("%s\n", TIME_D->replace_ctime(STOCK_D->query_last_update_time()))+NOR});
+        msg += ({"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n"});
+        msg += ({MAG"å…± "HIM+count+NOR MAG" åªä¸Šå¸‚è‚¡ç¥¨ï¼Œ"YEL"è‚¡ç¥¨å–®ä½ç‚º "HIY"1"NOR YEL" å…©é»ƒé‡‘/å¼µï¼Œ"NOR RED"äº¤æ˜“æ‰‹çºŒè²»ç‚º "HIR+sprintf("%.2f%%", percent*100.)+NOR RED"ã€‚\n"NOR});
+        msg += ({HIK"è‚¡ç¥¨æ•¸æ“šè³‡æ–™ä¾†è‡ªæ»¬æ·±Aè‚¡ï¼Œ10åˆ†é˜æ›´æ–°ä¸€æ¬¡ï¼Œæœ¬æ¬¡æ›´æ–°æ™‚é–“ï¼š"+sprintf("%s\n", TIME_D->replace_ctime(STOCK_D->query_last_update_time()))+NOR});
         me->start_more(implode(msg, ""));
         return 1;
 }
@@ -104,19 +104,19 @@ void confirm_buystock(object me, string num, int totalcost, int new_amount, floa
 
         if( arg != "y" && arg != "yes" )
         {
-                tell_object(me, "È¡Ïû¹ºÈë¹ÉÆ±¡£\n");
+                tell_object(me, "å–æ¶ˆè³¼å…¥è‚¡ç¥¨ã€‚\n");
                 return me->finish_input();
         }
 
         if( query("balance", me)<totalcost )
         {
-                tell_object(me, "ÄãÔÚÒøĞĞµÄÇ®²»×ã¡£\n");
+                tell_object(me, "ä½ åœ¨éŠ€è¡Œçš„éŒ¢ä¸è¶³ã€‚\n");
                 return me->finish_input();
         }
 
         if( STOCK_D->query_get_stock_flag() )
         {
-                tell_object(me, "¹ÉÆ±×ÊÁÏ¸üĞÂÖĞ£¬ÇëÉÔºóÔÙ½øĞĞ½»Ò×¡£\n");
+                tell_object(me, "è‚¡ç¥¨è³‡æ–™æ›´æ–°ä¸­ï¼Œè«‹ç¨å¾Œå†é€²è¡Œäº¤æ˜“ã€‚\n");
                 return me->finish_input();
         }
 
@@ -135,8 +135,8 @@ void confirm_buystock(object me, string num, int totalcost, int new_amount, floa
                 addn("stock/"+num+"/limit/amount", amount, me);
         }
 
-        CHANNEL_D->channel_broadcast("stock", me->query_idname()+RED"ÒÔ "HIY+sprintf("%.2f", cur_value)+NOR RED" ¹É¼Û¹ºÈë¡¸"HIW+stock_name+NOR RED"¡¹¹ÉÆ± "+amount+" ÕÅ¡£"NOR);
-        tell_object(me, "½»Ò×Íê³É¡£\n");
+        CHANNEL_D->channel_broadcast("stock", me->query_idname()+RED"ä»¥ "HIY+sprintf("%.2f", cur_value)+NOR RED" è‚¡åƒ¹è³¼å…¥ã€Œ"HIW+stock_name+NOR RED"ã€è‚¡ç¥¨ "+amount+" å¼µã€‚"NOR);
+        tell_object(me, "äº¤æ˜“å®Œæˆã€‚\n");
         me->finish_input();
 
         addn("balance", -totalcost, me);
@@ -161,47 +161,47 @@ int do_buystock(string arg)
         float percent;
         object me = this_player();
 
-        //tell_object(me, "¹ÉÆ±ÏµÍ³Ä¿Ç°ÎŞ·¨´¦ÀíÖØĞÂ¹ÒÅÆ¡¢³ıÈ¨¡¢³ıÏ¢µÈÎÊÌâ£¬·çÏÕ×Ô¸º¡£\n");
+        //tell_object(me, "è‚¡ç¥¨ç³»çµ±ç›®å‰ç„¡æ³•è™•ç†é‡æ–°æ›ç‰Œã€é™¤æ¬Šã€é™¤æ¯ç­‰å•é¡Œï¼Œé¢¨éšªè‡ªè² ã€‚\n");
 
         if( !wizardp(me) && (/*nowtime[2] < 1 || nowtime[2] > 6 ||*/ nowtime[1] < 9 || nowtime[1] >= 22) )
         {
-                tell_object(me, "ÖÜÒ»ÖÁÖÜÈÕµÄÔçÉÏ¾ÅµãÖÁÍíÉÏÊ®µãÔÊĞí½»Ò×¡£\n");
+                tell_object(me, "å‘¨ä¸€è‡³å‘¨æ—¥çš„æ—©ä¸Šä¹é»è‡³æ™šä¸Šåé»å…è¨±äº¤æ˜“ã€‚\n");
                 return 1;
         }
 
         if( STOCK_D->query_last_update_time() < time() - 48*60*60 )
         {
-                tell_object(me, "¹ÉÆ±×ÊÁÏÉĞÎ´¸üĞÂ£¬ÎŞ·¨½øĞĞ½»Ò×¡£\n");
+                tell_object(me, "è‚¡ç¥¨è³‡æ–™å°šæœªæ›´æ–°ï¼Œç„¡æ³•é€²è¡Œäº¤æ˜“ã€‚\n");
                 return 1;
         }
 
         if( STOCK_D->query_get_stock_flag() )
         {
-                tell_object(me, "¹ÉÆ±×ÊÁÏ¸üĞÂÖĞ£¬ÇëÉÔºóÔÙ½øĞĞ½»Ò×¡£\n");
+                tell_object(me, "è‚¡ç¥¨è³‡æ–™æ›´æ–°ä¸­ï¼Œè«‹ç¨å¾Œå†é€²è¡Œäº¤æ˜“ã€‚\n");
                 return 1;
         }
 
         if( !arg || sscanf(arg, "%s %d", num, amount) != 2 )
         {
-                tell_object(me, "ÇëÊäÈëÕıÈ·µÄ¸ñÊ½£¬Àı£ºbuy 000002 100¡£\n");
+                tell_object(me, "è«‹è¼¸å…¥æ­£ç¢ºçš„æ ¼å¼ï¼Œä¾‹ï¼šbuy 000002 100ã€‚\n");
                 return 1;
         }
 
         if( amount < 1 )
         {
-                tell_object(me, "ÄãÖÁÉÙ±ØĞë¹ºÂòÒ»ÕÅ¹ÉÆ±¡£\n");
+                tell_object(me, "ä½ è‡³å°‘å¿…é ˆè³¼è²·ä¸€å¼µè‚¡ç¥¨ã€‚\n");
                 return 1;
         }
 
-        if( !mapp(stocks[num]) || !stocks[num]["¹ÉÆ±Ãû³Æ"] )
+        if( !mapp(stocks[num]) || !stocks[num]["è‚¡ç¥¨åç¨±"] )
         {
-                tell_object(me, "Ã»ÓĞ "+num+" ÕâÒ»Ö»¹ÉÆ±¡£\n");
+                tell_object(me, "æ²’æœ‰ "+num+" é€™ä¸€åªè‚¡ç¥¨ã€‚\n");
                 return 1;
         }
 
-        if( stocks[num]["×´Ì¬"] == "t3r2" )
+        if( stocks[num]["ç‹€æ…‹"] == "t3r2" )
         {
-                tell_object(me, "Õâµµ¹ÉÆ±ÒÑ¾­ÕÇÍ££¬ÎŞ·¨ÔÙÂòÁË¡£\n");
+                tell_object(me, "é€™æª”è‚¡ç¥¨å·²ç¶“æ¼²åœï¼Œç„¡æ³•å†è²·äº†ã€‚\n");
                 return 1;
         }
 
@@ -211,12 +211,12 @@ int do_buystock(string arg)
 
         if( new_amount > 10000000 )
         {
-                tell_object(me, "Ã¿Ö»¹ÉÆ±×î¶àÖ»ÄÜ¹ºÂò 10,000,000 ÕÅ¡£\n");
+                tell_object(me, "æ¯åªè‚¡ç¥¨æœ€å¤šåªèƒ½è³¼è²· 10,000,000 å¼µã€‚\n");
                 return 1;
         }
 
         old_value=to_float(query("stock/"+num+"/value", me));
-        cur_value = stocks[num]["ÏÖ¼Û"];
+        cur_value = stocks[num]["ç¾åƒ¹"];
         new_value = (old_value * old_amount + cur_value * amount) / (amount + old_amount);
 
         //percent = PROCEDURE_FUND - me->query_skill("stock", 1)/10000.;
@@ -227,26 +227,26 @@ int do_buystock(string arg)
 
         if( cost + cost_extra < 1 )
         {
-                tell_object(me, "×ÊÁÏ¼ÆËã´íÎó£¬ÇëÍ¨ÖªÎ×Ê¦´¦Àí¡£\n");
+                tell_object(me, "è³‡æ–™è¨ˆç®—éŒ¯èª¤ï¼Œè«‹é€šçŸ¥å·«å¸«è™•ç†ã€‚\n");
                 return 1;
         }
 
         tell_object(me,
-                WHT"¹ÉÆ±Ãû³Æ      "NOR HIW+num+" "+stocks[num]["¹ÉÆ±Ãû³Æ"]+NOR"\n"
-                "¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª\n"
-                YEL"¹ÉÆ±ÏÖÔÚ¼Û¸ñ  "HIY+sprintf("%.2f", cur_value)+"\n"NOR
-                GRN"Óû¹º¹ÉÆ±ÕÅÊı  "HIG+amount+"\n"NOR
-                GRN"Ä¿Ç°³Ö¹É¼Û¸ñ  "HIG+sprintf("%.2f", old_value)+"\n"NOR
-                GRN"Ä¿Ç°³Ö¹ÉÕÅÊı  "HIG+old_amount+"\n"NOR
-                CYN"Æ½¾ùÖ®ºó¼Û¸ñ  "HIC+sprintf("%.2f", new_value)+"\n"NOR
-                CYN"Óû¹º¹ÉÆ±×ÜÖµ  "HIC+cost+"\n"NOR
-                CYN"½»Ò×ÊÖĞø·ÑÓÃ  "HIC+cost_extra+HIR"("+sprintf("%.2f", percent*100.)+"%)\n"NOR
-                CYN"¹ºÈë×Ü¹²»¨·Ñ  "HIC+(cost + cost_extra)+"\n"NOR
-                "¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª\n"
-                HIY"ÊÇ·ñÈ·¶¨¹ºÈë¹ÉÆ±?"NOR YEL"(Yes/No)"NOR
+                WHT"è‚¡ç¥¨åç¨±      "NOR HIW+num+" "+stocks[num]["è‚¡ç¥¨åç¨±"]+NOR"\n"
+                "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n"
+                YEL"è‚¡ç¥¨ç¾åœ¨åƒ¹æ ¼  "HIY+sprintf("%.2f", cur_value)+"\n"NOR
+                GRN"æ¬²è³¼è‚¡ç¥¨å¼µæ•¸  "HIG+amount+"\n"NOR
+                GRN"ç›®å‰æŒè‚¡åƒ¹æ ¼  "HIG+sprintf("%.2f", old_value)+"\n"NOR
+                GRN"ç›®å‰æŒè‚¡å¼µæ•¸  "HIG+old_amount+"\n"NOR
+                CYN"å¹³å‡ä¹‹å¾Œåƒ¹æ ¼  "HIC+sprintf("%.2f", new_value)+"\n"NOR
+                CYN"æ¬²è³¼è‚¡ç¥¨ç¸½å€¼  "HIC+cost+"\n"NOR
+                CYN"äº¤æ˜“æ‰‹çºŒè²»ç”¨  "HIC+cost_extra+HIR"("+sprintf("%.2f", percent*100.)+"%)\n"NOR
+                CYN"è³¼å…¥ç¸½å…±èŠ±è²»  "HIC+(cost + cost_extra)+"\n"NOR
+                "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n"
+                HIY"æ˜¯å¦ç¢ºå®šè³¼å…¥è‚¡ç¥¨?"NOR YEL"(Yes/No)"NOR
         );
 
-        input_to((: confirm_buystock, me, num, cost + cost_extra, new_amount, new_value, cur_value, amount, num+" "+stocks[num]["¹ÉÆ±Ãû³Æ"] :));
+        input_to((: confirm_buystock, me, num, cost + cost_extra, new_amount, new_value, cur_value, amount, num+" "+stocks[num]["è‚¡ç¥¨åç¨±"] :));
         return 1;
 }
 
@@ -260,13 +260,13 @@ void confirm_sellstock(object me, string num, int totalearn, int new_amount, flo
 
         if( arg != "y" && arg != "yes" )
         {
-                tell_object(me, "È¡Ïû··Âô¹ÉÆ±¡£\n");
+                tell_object(me, "å–æ¶ˆè²©è³£è‚¡ç¥¨ã€‚\n");
                 return me->finish_input();
         }
 
         if( STOCK_D->query_get_stock_flag() )
         {
-                tell_object(me, "¹ÉÆ±×ÊÁÏ¸üĞÂÖĞ£¬ÇëÉÔºóÔÙ½øĞĞ½»Ò×¡£\n");
+                tell_object(me, "è‚¡ç¥¨è³‡æ–™æ›´æ–°ä¸­ï¼Œè«‹ç¨å¾Œå†é€²è¡Œäº¤æ˜“ã€‚\n");
                 return me->finish_input();
         }
 
@@ -277,16 +277,16 @@ void confirm_sellstock(object me, string num, int totalearn, int new_amount, flo
 
         if( cur_value == old_value )
                 CHANNEL_D->channel_broadcast("stock",
-                        me->query_idname()+RED"ÒÔ "HIY+sprintf("%.2f", cur_value)+NOR RED" ¹É¼ÛÊÛ³ö¡¸"HIW+stock_name+NOR RED"¡¹¹ÉÆ± "+amount+" ÕÅ¡£"NOR);
+                        me->query_idname()+RED"ä»¥ "HIY+sprintf("%.2f", cur_value)+NOR RED" è‚¡åƒ¹å”®å‡ºã€Œ"HIW+stock_name+NOR RED"ã€è‚¡ç¥¨ "+amount+" å¼µã€‚"NOR);
         else if( cur_value > old_value )
                 CHANNEL_D->channel_broadcast("stock",
-                        me->query_idname()+RED"ÒÔ "HIY+sprintf("%.2f", cur_value)+NOR RED" ¹É¼ÛÊÛ³ö¡¸"HIW+stock_name+NOR RED"¡¹¹ÉÆ± "+amount+" ÕÅ£¬»ñÀû "
-                        HIY+to_int(to_int((cur_value-old_value)*100)*STOCK_VALUE/100*amount)+NOR RED"¡£" NOR);
+                        me->query_idname()+RED"ä»¥ "HIY+sprintf("%.2f", cur_value)+NOR RED" è‚¡åƒ¹å”®å‡ºã€Œ"HIW+stock_name+NOR RED"ã€è‚¡ç¥¨ "+amount+" å¼µï¼Œç²åˆ© "
+                        HIY+to_int(to_int((cur_value-old_value)*100)*STOCK_VALUE/100*amount)+NOR RED"ã€‚" NOR);
         else
                 CHANNEL_D->channel_broadcast("stock",
-                        me->query_idname()+RED"ÒÔ "HIY+sprintf("%.2f", cur_value)+NOR RED" ¹É¼ÛÊÛ³ö¡¸"HIW+stock_name+NOR RED"¡¹¹ÉÆ± "+amount+" ÕÅ£¬ÈÏÅâ "
-                        HIY+to_int(to_int((old_value-cur_value)*100)*STOCK_VALUE/100*amount)+NOR RED"¡£" NOR);
-        tell_object(me, "½»Ò×Íê³É¡£\n");
+                        me->query_idname()+RED"ä»¥ "HIY+sprintf("%.2f", cur_value)+NOR RED" è‚¡åƒ¹å”®å‡ºã€Œ"HIW+stock_name+NOR RED"ã€è‚¡ç¥¨ "+amount+" å¼µï¼Œèªè³  "
+                        HIY+to_int(to_int((old_value-cur_value)*100)*STOCK_VALUE/100*amount)+NOR RED"ã€‚" NOR);
+        tell_object(me, "äº¤æ˜“å®Œæˆã€‚\n");
 
         me->finish_input();
 
@@ -310,43 +310,43 @@ int do_sellstock(string arg)
 
         if( !wizardp(me) && (/*nowtime[2] < 1 || nowtime[2] > 6 ||*/ nowtime[1] < 9 || nowtime[1] >= 22) )
         {
-                tell_object(me, "ÖÜÒ»ÖÁÖÜÈÕµÄÔçÉÏ¾ÅµãÖÁÍíÉÏÊ®µãÔÊĞí½»Ò×¡£\n");
+                tell_object(me, "å‘¨ä¸€è‡³å‘¨æ—¥çš„æ—©ä¸Šä¹é»è‡³æ™šä¸Šåé»å…è¨±äº¤æ˜“ã€‚\n");
                 return 1;
         }
 
         if( STOCK_D->query_last_update_time() < time() - 48*60*60 )
         {
-                tell_object(me, "¹ÉÆ±×ÊÁÏÉĞÎ´¸üĞÂ£¬ÎŞ·¨½øĞĞ½»Ò×¡£\n");
+                tell_object(me, "è‚¡ç¥¨è³‡æ–™å°šæœªæ›´æ–°ï¼Œç„¡æ³•é€²è¡Œäº¤æ˜“ã€‚\n");
                 return 1;
         }
 
         if( STOCK_D->query_get_stock_flag() )
         {
-                tell_object(me, "¹ÉÆ±×ÊÁÏ¸üĞÂÖĞ£¬ÇëÉÔºóÔÙ½øĞĞ½»Ò×¡£\n");
+                tell_object(me, "è‚¡ç¥¨è³‡æ–™æ›´æ–°ä¸­ï¼Œè«‹ç¨å¾Œå†é€²è¡Œäº¤æ˜“ã€‚\n");
                 return 1;
         }
 
         if( !arg || sscanf(arg, "%s %d", num, amount) != 2 )
         {
-                tell_object(me, "ÇëÊäÈëÕıÈ·µÄ¸ñÊ½£¬Àı£ºsell 000002 100¡£\n");
+                tell_object(me, "è«‹è¼¸å…¥æ­£ç¢ºçš„æ ¼å¼ï¼Œä¾‹ï¼šsell 000002 100ã€‚\n");
                 return 1;
         }
 
         if( amount < 1 )
         {
-                tell_object(me, "ÄãÖÁÉÙ±ØĞë³öÊÛÒ»ÕÅ¹ÉÆ±¡£\n");
+                tell_object(me, "ä½ è‡³å°‘å¿…é ˆå‡ºå”®ä¸€å¼µè‚¡ç¥¨ã€‚\n");
                 return 1;
         }
 
-        if( !mapp(stocks[num]) || !stocks[num]["¹ÉÆ±Ãû³Æ"] )
+        if( !mapp(stocks[num]) || !stocks[num]["è‚¡ç¥¨åç¨±"] )
         {
-                tell_object(me, "Ã»ÓĞ "+num+" ÕâÒ»Ö»¹ÉÆ±¡£\n");
+                tell_object(me, "æ²’æœ‰ "+num+" é€™ä¸€åªè‚¡ç¥¨ã€‚\n");
                 return 1;
         }
 
-        if( stocks[num]["×´Ì¬"] == "t3g2" )
+        if( stocks[num]["ç‹€æ…‹"] == "t3g2" )
         {
-                tell_object(me, "Õâµµ¹ÉÆ±ÒÑ¾­µøÍ££¬ÎŞ·¨ÔÙÂôÁË¡£\n");
+                tell_object(me, "é€™æª”è‚¡ç¥¨å·²ç¶“è·Œåœï¼Œç„¡æ³•å†è³£äº†ã€‚\n");
                 return 1;
         }
 
@@ -354,24 +354,24 @@ int do_sellstock(string arg)
 
         old_amount=query("stock/"+num+"/amount", me);
 
-        // µ±Ìì¹ºÂòµÄ¹ÉÆ±²»¿ÉÒÔÂô³ö
+        // ç•¶å¤©è³¼è²·çš„è‚¡ç¥¨ä¸å¯ä»¥è³£å‡º
         if( query("stock/"+num+"/limit/which_day", me) == td )
                 limit=query("stock/"+num+"/limit/amount", me);
 
         new_amount = old_amount - amount;
 
         old_value=to_float(query("stock/"+num+"/value", me));
-        cur_value = stocks[num]["ÏÖ¼Û"];
+        cur_value = stocks[num]["ç¾åƒ¹"];
 
         if( old_amount < 1 )
         {
-                tell_object(me, "ÄãÊÖÉÏ²¢Ã»ÓĞ "+num+" ÕâÖ»¹ÉÆ±¡£\n");
+                tell_object(me, "ä½ æ‰‹ä¸Šä¸¦æ²’æœ‰ "+num+" é€™åªè‚¡ç¥¨ã€‚\n");
                 return 1;
         }
 
         if( new_amount < limit )
         {
-                tell_object(me, "ÕâÖ»¹ÉÆ±ÄãÊÖÉÏÖ»ÓĞ "+old_amount+" ÕÅ£¬¿É½»Ò× "+(old_amount-limit)+" ÕÅ¡£\n");
+                tell_object(me, "é€™åªè‚¡ç¥¨ä½ æ‰‹ä¸Šåªæœ‰ "+old_amount+" å¼µï¼Œå¯äº¤æ˜“ "+(old_amount-limit)+" å¼µã€‚\n");
                 return 1;
         }
 
@@ -379,41 +379,41 @@ int do_sellstock(string arg)
 
         if( earn < 1 )
         {
-                tell_object(me, "×ÊÁÏ¼ÆËã´íÎó£¬ÇëÍ¨ÖªÎ×Ê¦´¦Àí¡£\n");
+                tell_object(me, "è³‡æ–™è¨ˆç®—éŒ¯èª¤ï¼Œè«‹é€šçŸ¥å·«å¸«è™•ç†ã€‚\n");
                 return 1;
         }
 
         tell_object(me,
-                WHT"¹ÉÆ±Ãû³Æ      "NOR HIW+num+" "+stocks[num]["¹ÉÆ±Ãû³Æ"]+NOR"\n"
-                "¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª\n"
-                YEL"¹ÉÆ±ÏÖÔÚ¼Û¸ñ  "HIY+sprintf("%.2f", cur_value)+"\n"NOR
-                GRN"Ä¿Ç°³Ö¹É¼Û¸ñ  "HIG+sprintf("%.2f", old_value)+"\n"NOR
-                GRN"Ä¿Ç°³Ö¹ÉÀûÈó  "HIG+sprintf("%.2f%%", (cur_value - old_value) * 100. / old_value)+"\n"NOR
-                GRN"ÓûÊÛ¹ÉÆ±ÕÅÊı  "HIG+amount+"\n"NOR
-                CYN"ÊÛ³ö×Ü¹²»ñµÃ  "HIC+earn+"\n"NOR
-                "¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª\n"
-                HIY"ÊÇ·ñÈ·¶¨ÊÛ³ö¹ÉÆ±?"NOR YEL"(Yes/No)"NOR
+                WHT"è‚¡ç¥¨åç¨±      "NOR HIW+num+" "+stocks[num]["è‚¡ç¥¨åç¨±"]+NOR"\n"
+                "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n"
+                YEL"è‚¡ç¥¨ç¾åœ¨åƒ¹æ ¼  "HIY+sprintf("%.2f", cur_value)+"\n"NOR
+                GRN"ç›®å‰æŒè‚¡åƒ¹æ ¼  "HIG+sprintf("%.2f", old_value)+"\n"NOR
+                GRN"ç›®å‰æŒè‚¡åˆ©æ½¤  "HIG+sprintf("%.2f%%", (cur_value - old_value) * 100. / old_value)+"\n"NOR
+                GRN"æ¬²å”®è‚¡ç¥¨å¼µæ•¸  "HIG+amount+"\n"NOR
+                CYN"å”®å‡ºç¸½å…±ç²å¾—  "HIC+earn+"\n"NOR
+                "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n"
+                HIY"æ˜¯å¦ç¢ºå®šå”®å‡ºè‚¡ç¥¨?"NOR YEL"(Yes/No)"NOR
         );
 
-        input_to((: confirm_sellstock, me, num, earn, new_amount, old_value, cur_value, amount, num+" "+stocks[num]["¹ÉÆ±Ãû³Æ"] :));
+        input_to((: confirm_sellstock, me, num, earn, new_amount, old_value, cur_value, amount, num+" "+stocks[num]["è‚¡ç¥¨åç¨±"] :));
         return 1;
 }
 
 void create()
 {
-        set("short", "Ö¤È¯½»Ò×Ëù");
+        set("short", "è¨¼åˆ¸äº¤æ˜“æ‰€");
         set("long", @LONG
-ÕâÊÇÒ»¼ÒÖ¤È¯½»Ò×Ëù£¬Ç½ÉÏ¹Ò×ÅÒ»¸öÅÆ×Ó(paizi)¡£
+é€™æ˜¯ä¸€å®¶è¨¼åˆ¸äº¤æ˜“æ‰€ï¼Œç‰†ä¸Šæ›è‘—ä¸€å€‹ç‰Œå­(paizi)ã€‚
 LONG );
 
         set("item_desc", ([
                 "paizi" : @HELP
-ÏÔÊ¾¹ÉÊĞ×ÊÑ¶
-liststock              ÁĞ³öËùÓĞ»¦ÉîA¹ÉÊĞ³¡×ÊÁÏ
-liststock 000002       ÁĞ³ö´úºÅ000002¹ÉÆ±µÄ×ÊÁÏ
-buystock 000002 300    ÂòÈë000002¹ÉÆ±300ÕÅ
-sellstock 000002 100   Âô³ö000002¹ÉÆ±100ÕÅ
-istock                 ÁĞ³ö×Ô¼º¹ºÂòµÄ¹ÉÆ±×ÊÁÏ
+é¡¯ç¤ºè‚¡å¸‚è³‡è¨Š
+liststock              åˆ—å‡ºæ‰€æœ‰æ»¬æ·±Aè‚¡å¸‚å ´è³‡æ–™
+liststock 000002       åˆ—å‡ºä»£è™Ÿ000002è‚¡ç¥¨çš„è³‡æ–™
+buystock 000002 300    è²·å…¥000002è‚¡ç¥¨300å¼µ
+sellstock 000002 100   è³£å‡º000002è‚¡ç¥¨100å¼µ
+istock                 åˆ—å‡ºè‡ªå·±è³¼è²·çš„è‚¡ç¥¨è³‡æ–™
 
 HELP,
         ]));

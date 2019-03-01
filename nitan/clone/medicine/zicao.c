@@ -1,4 +1,4 @@
-// zicao.c ×Ï²İ
+// zicao.c ç´«è‰
 // By Alf, Last Update 2001.11
 
 #include <ansi.h>
@@ -6,14 +6,14 @@ inherit ITEM;
 
 void create()
 {
-    set_name(HIM"×Ï²İ"NOR, ({"zi cao", "zicao"}));
+    set_name(HIM"ç´«è‰"NOR, ({"zi cao", "zicao"}));
     set_weight(40);
     if (clonep())
         set_default_object(__FILE__);
     else
     {
-        set("long", "ÕâÊÇÀ¥ÂØÉ½ÖĞ³ö²úµÄ×Ï²İ£¬Ê³Ö®¾İËµÄÜÑÓÄêÒæÊÙ¡£\n");
-        set("unit", "Öê");
+        set("long", "é€™æ˜¯æ˜†ä¾–å±±ä¸­å‡ºç”¢çš„ç´«è‰ï¼Œé£Ÿä¹‹æ“šèªªèƒ½å»¶å¹´ç›Šå£½ã€‚\n");
+        set("unit", "æ ª");
         set("value", 80);
     }
 }
@@ -27,9 +27,9 @@ int do_eat(string arg)
 {
     object me = this_player();
     if (me->is_busy())
-        return notify_fail("±ğ¼±£¬ÂıÂı³Ô£¬Ğ¡ĞÄ±ğÒ­×ÅÁË¡£\n");
+        return notify_fail("åˆ¥æ€¥ï¼Œæ…¢æ…¢åƒï¼Œå°å¿ƒåˆ¥å™è‘—äº†ã€‚\n");
     if (!id(arg))
-        return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+        return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
     if(arg=="zi cao" || "zicao") 
     {
         set_temp("nopoison", 1, this_player());
@@ -39,7 +39,7 @@ int do_eat(string arg)
         set("qi",query("max_qi",  this_player()), this_player());
         set("food", this_player()->max_food_capacity(), this_player());
         set("water", this_player()->max_water_capacity(), this_player());
-        message_vision(HIM"$N·şÏÂÒ»Öê×Ï²İ£¬Ö»¾õµÃÈ«ÉíÅ¯ÑóÑóµÄ£¬¾«Á¦´ó¼ûÍúÊ¢¡£\n"NOR,me);
+        message_vision(HIM"$Næœä¸‹ä¸€æ ªç´«è‰ï¼Œåªè¦ºå¾—å…¨èº«æš–æ´‹æ´‹çš„ï¼Œç²¾åŠ›å¤§è¦‹æ—ºç››ã€‚\n"NOR,me);
         me->start_busy(1);
         destruct(this_object());
     }

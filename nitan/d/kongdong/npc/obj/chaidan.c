@@ -8,13 +8,13 @@ inherit STAFF;
 
 void create()
 {
-        set_name("²ñµ£", ({ "chai dan" }) );
+        set_name("æŸ´æ“”", ({ "chai dan" }) );
         set_weight(2000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ù");
-                set("long", "ÕâÊÇÒ»°ÑÓÃÀ´Ìô²ñµÄ²ñµ£¡£\n");
+                set("unit", "æ ¹");
+                set("long", "é€™æ˜¯ä¸€æŠŠç”¨ä¾†æŒ‘æŸ´çš„æŸ´æ“”ã€‚\n");
                 set("value", 300);
                 set("material", "wood");
         }
@@ -23,8 +23,8 @@ void create()
 // These properties are optional, if you don't set them, it will use the
 // default values.
 
-        set("wield_msg", "$N³é³öÒ»¸ùÌô²ñÓÃµÄ$nÎÕÔÚÊÖÖĞµ±ÎäÆ÷¡£\n");
-        set("unwield_msg", "$N·ÅÏÂÁËÊÖÖĞµÄ$n¡£\n");
+        set("wield_msg", "$NæŠ½å‡ºä¸€æ ¹æŒ‘æŸ´ç”¨çš„$næ¡åœ¨æ‰‹ä¸­ç•¶æ­¦å™¨ã€‚\n");
+        set("unwield_msg", "$Næ”¾ä¸‹äº†æ‰‹ä¸­çš„$nã€‚\n");
 
 // The setup() is required.
 

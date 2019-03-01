@@ -2,14 +2,14 @@
 inherit ITEM;
 void create()
 {
-     	set_name(HIW"ÎŞÃûµ¤"NOR, ({ "wuming dan","dan"}));
+     	set_name(HIW"ç„¡åä¸¹"NOR, ({ "wuming dan","dan"}));
      	set_weight(100);
       	if( clonep() )
             	set_default_object(__FILE__);
      	else 
 	{
-            	set("long", "Ò»¿ÅÎŞÃûµ¤Ò©,²»ÖªµÀÓĞÊ²Ã´ÓÃ!\n");
-            	set("unit", "¿Å"); 
+            	set("long", "ä¸€é¡†ç„¡åä¸¹è—¥,ä¸çŸ¥é“æœ‰ä»€éº¼ç”¨!\n");
+            	set("unit", "é¡†"); 
             	set("no_get",1);
              	set("no_give",1);   
 		set("value",100000);
@@ -33,12 +33,12 @@ int do_eat(string arg)
     	maxneili=query("max_neili", me);
     
   	if(!id(arg)) return 0;
-  	if(me->is_busy()) return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É¡£\n");
+  	if(me->is_busy()) return notify_fail("ä½ ä¸Šä¸€å€‹å‹•ä½œé‚„æ²’æœ‰å®Œæˆã€‚\n");
 
 addn("combat_exp", 1000+random(2000), 	me);
 addn("potential", 300+random(1000), 	me);
     
-  	message_vision(HIG"$NÄÃÆğÎŞÃûµ¤³ÔÁËÏÂÈ¥£¬¸Ğ¾õÓÃ´¦²»ËãÌ«´ó¡£\n"NOR,me);
+  	message_vision(HIG"$Næ‹¿èµ·ç„¡åä¸¹åƒäº†ä¸‹å»ï¼Œæ„Ÿè¦ºç”¨è™•ä¸ç®—å¤ªå¤§ã€‚\n"NOR,me);
       	destruct(this_object());
       	return 1;
 }

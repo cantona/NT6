@@ -4,12 +4,12 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÊéÉú", ({ "shu sheng", "sheng" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("æ›¸ç”Ÿ", ({ "shu sheng", "sheng" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 22);
         set("int", 28);
         set("long",
-                "ÕâÊÇ¸ö±¥¶ÁÊ«Êé£¬È´ÊÖÎŞ¸¿¼¦Ö®Á¦µÄÄêÇáÊéÉú¡£\n");
+                "é€™æ˜¯å€‹é£½è®€è©©æ›¸ï¼Œå»æ‰‹ç„¡ç¸›é›ä¹‹åŠ›çš„å¹´è¼•æ›¸ç”Ÿã€‚\n");
 
         set("attitude", "peaceful");
         set_skill("literate", 40);

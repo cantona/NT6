@@ -37,27 +37,27 @@ int do_search(string arg) {
         if( arg=="bug" || arg=="chong"){
 
                 if (!present("wa guan", me))
-                        return notify_fail("ÄãÕÒµ½³æ×ÓÓÃÊ²Ã´À´Ê¢ÄØ£¿\n\n");
+                        return notify_fail("ä½ æ‰¾åˆ°èŸ²å­ç”¨ä»€éº¼ä¾†ç››å‘¢ï¼Ÿ\n\n");
                         
                if( query("max_jingli", me)<100 )
-                       return notify_fail("ÄãµÄ×î´ó¾«Á¦Ì«ÉÙÁË¡£\n\n");
+                       return notify_fail("ä½ çš„æœ€å¤§ç²¾åŠ›å¤ªå°‘äº†ã€‚\n\n");
                 if( query("jingli", me)<query("max_jingli", me)/5 )
-                        return notify_fail("ÄãÏÈĞİÏ¢Ò»ÏÂ°É¡£\n\n");
+                        return notify_fail("ä½ å…ˆä¼‘æ¯ä¸€ä¸‹å§ã€‚\n\n");
                         
                 if (me->is_busy()) return
-                        notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É¡£\n"); 
+                        notify_fail("ä½ ä¸Šä¸€å€‹å‹•ä½œé‚„æ²’æœ‰å®Œæˆã€‚\n"); 
                         
                 if (me->is_fighting()) return
-                        notify_fail("ÄúÏÈ°ÉµĞÈËÁÏÀíÁËÔÚËµ°É¡£:)\n");
+                        notify_fail("æ‚¨å…ˆå§æ•µäººæ–™ç†äº†åœ¨èªªå§ã€‚:)\n");
                         
                 if( query_temp("found", me) == 1)return 
-                        notify_fail("Äã×îºÃÏÈ»ØÈ¥¸´Ãü£¬±ğÈÃÀÏÏÉµÈ¼±ÁË¡£\n");
+                        notify_fail("ä½ æœ€å¥½å…ˆå›å»å¾©å‘½ï¼Œåˆ¥è®“è€ä»™ç­‰æ€¥äº†ã€‚\n");
                                        
                 //if (me->query_temp("bug_out")==1)
-                //        return notify_fail("¶¾³æÒÑ¾­³öÀ´ÁË£¬¸Ï¿ì×¥°É£¡\n");
+                //        return notify_fail("æ¯’èŸ²å·²ç¶“å‡ºä¾†äº†ï¼Œè¶•å¿«æŠ“å§ï¼\n");
                 
                 if( query_temp("xx_job", me) != 1 )
-                        return notify_fail("ÕÒÀ´ÓĞÊ²Ã´ÓÃ£¿\n");
+                        return notify_fail("æ‰¾ä¾†æœ‰ä»€éº¼ç”¨ï¼Ÿ\n");
                 
                 addn("jingli", -10, me);
                 addn("jing", -10, me);
@@ -66,7 +66,7 @@ int do_search(string arg) {
                 addn("find_bug", 1, me);
                 addn_temp("xx/find", 1, me);
 
-                message_vision("$NÍäÏÂÁËÑü£¬ÉìÊÖ½«²ĞÖ¦°ÜÒ¶²¦¿ª£¬×ĞÏ¸Ñ°ÕÒ¶¾³æµÄ×Ù¼£¡£\n",me);
+                message_vision("$Nå½ä¸‹äº†è…°ï¼Œä¼¸æ‰‹å°‡æ®˜ææ•—è‘‰æ’¥é–‹ï¼Œä»”ç´°å°‹æ‰¾æ¯’èŸ²çš„è¹¤è·¡ã€‚\n",me);
                 
                 kar2=(query("int", me)+query("con", me)+query("str", me))*(random(2)+1);
                 kar1=query("kar", me);
@@ -76,10 +76,10 @@ int do_search(string arg) {
                                 
                         room = load_object(n[random(sizeof(n))]);
                         
-                        message_vision("$NÓÖÕÒÁËÕÒ£¬·¢ÏÖÃ»ÓĞË¿ºÁ¶¾³æµÄ×Ù¼££¬Ö»ºÃÀë¿ªÕâÀï£¬µ½±ğµÄµØ·½Ñ°ÕÒ¡£\n",me);
-                        message_vision("$N¼±¼±Ã¦Ã¦µØÀë¿ªÁË¡£\n",me);
+                        message_vision("$Nåˆæ‰¾äº†æ‰¾ï¼Œç™¼ç¾æ²’æœ‰çµ²æ¯«æ¯’èŸ²çš„è¹¤è·¡ï¼Œåªå¥½é›¢é–‹é€™è£¡ï¼Œåˆ°åˆ¥çš„åœ°æ–¹å°‹æ‰¾ã€‚\n",me);
+                        message_vision("$Næ€¥æ€¥å¿™å¿™åœ°é›¢é–‹äº†ã€‚\n",me);
                         me->move(room);
-                        message_vision("$N×ßÁË¹ıÀ´¡£\n",me);                        
+                        message_vision("$Nèµ°äº†éä¾†ã€‚\n",me);                        
                         return 1;
                 }
                 
@@ -92,7 +92,7 @@ int do_search(string arg) {
                 
                 if ((kar3>kar2 && find>10) || (find>=30)) {
 
-                        message_vision(HIG"Í»È»¼äÒ»Ö»Ğ¡³æ×Ó×êÁË³öÀ´£¬Ñ¸ËÙµØÅÀ¶¯×Å¡£\n"NOR, me);
+                        message_vision(HIG"çªç„¶é–“ä¸€åªå°èŸ²å­é‘½äº†å‡ºä¾†ï¼Œè¿…é€Ÿåœ°çˆ¬å‹•è‘—ã€‚\n"NOR, me);
                         bug=new("/d/xingxiu/npc/duchong");
                         bug->move(environment(me));
                         set("playerid",query("id",  me), bug);
@@ -109,7 +109,7 @@ int do_search(string arg) {
                 
                    if( query("combat_exp", random(50) <= 3 && count_ge(me),150000) && query_temp("xx_job", me)){
 
-                        message_vision(HIR"Í»È»¼ä´ÓÊ÷ºóÔ½³öÒ»¸öÈË£¬¸ßº°Ò»Éù£º¡°ĞÇËŞ¼éÈË£¬ÄÃÃüÀ´£¡¡±\n"NOR,me);
+                        message_vision(HIR"çªç„¶é–“å¾æ¨¹å¾Œè¶Šå‡ºä¸€å€‹äººï¼Œé«˜å–Šä¸€è²ï¼šâ€œæ˜Ÿå®¿å§¦äººï¼Œæ‹¿å‘½ä¾†ï¼â€\n"NOR,me);
                      fighter = new(CLASS_D("generate") + "/xxnpc.c");
                      NPC_D->set_from_me(fighter, me, 110 + random(20));
                      fighter->addn_temp("apply/attack",fighter->query_skill("force")*
@@ -130,22 +130,22 @@ int do_search(string arg) {
                 
                 
                 if (random(kar1*3)<1){
-                        message_vision(HIW"$NÑÛÇ°Òø¹âÒ»ÉÁ£¬ÍÛ£¬Òø×Ó£¡\n"NOR,me);
+                        message_vision(HIW"$Nçœ¼å‰éŠ€å…‰ä¸€é–ƒï¼Œå“‡ï¼ŒéŠ€å­ï¼\n"NOR,me);
                         gold=new("/clone/money/silver");
                         gold->move(environment(me));
                         return 1;
                 }
                 
                 if (random(kar1*2)<1){
-                        message_vision(YEL"$NÑÛÇ°Í­¹âÒ»ÉÁ£¬ÍÛ£¬Í­Ç® :(\n"NOR,me);
+                        message_vision(YEL"$Nçœ¼å‰éŠ…å…‰ä¸€é–ƒï¼Œå“‡ï¼ŒéŠ…éŒ¢ :(\n"NOR,me);
                         gold=new("/clone/money/coin");
                         gold->move(environment(me));
                         return 1;
                 }
                 
                 if (random(kar1*4)<1){
-                        message_vision(HIY"$NÑÛÇ°½ğ¹âÒ»ÉÁ£¬ÍÛ£¬½ğ×Ó£¡\n"NOR,me);
-                        message_vision(HIR"$N¿´¼û½ğ×Ó£¬ĞÄÖĞÒ»µÃÒâ£¬ÊÖÖĞÍß¹Şµôµ½µØÉÏ´òµÄ·ÛËé¡£\n"NOR,me);
+                        message_vision(HIY"$Nçœ¼å‰é‡‘å…‰ä¸€é–ƒï¼Œå“‡ï¼Œé‡‘å­ï¼\n"NOR,me);
+                        message_vision(HIR"$Nçœ‹è¦‹é‡‘å­ï¼Œå¿ƒä¸­ä¸€å¾—æ„ï¼Œæ‰‹ä¸­ç“¦ç½æ‰åˆ°åœ°ä¸Šæ‰“çš„ç²‰ç¢ã€‚\n"NOR,me);
                         gold=new("/clone/money/gold");
                         gold->move(environment(me));
                         ob = present("wa guan", me);
@@ -155,7 +155,7 @@ int do_search(string arg) {
                 }
                 
                 if (random(20)<1){
-                        message_vision(MAG"\n$N°¥Ñ½Ò»Éù£¬±»µØÉÏµÄÊ¯Í·°íÁËÒ»½»¡£\n"NOR,me);
+                        message_vision(MAG"\n$Nå“å‘€ä¸€è²ï¼Œè¢«åœ°ä¸Šçš„çŸ³é ­çµ†äº†ä¸€äº¤ã€‚\n"NOR,me);
                         me->start_busy(random(3)+2);
                         damage=me->query_skill("force",1);
                         me->receive_wound("qi", random(damage/10));
@@ -167,17 +167,17 @@ int do_search(string arg) {
         } else if(arg=="dochong"){
                 
                 set_temp("fresh", 1, me);
-                message_vision("$NÍäÏÂÁËÑü£¬ÉìÊÖ½«²ĞÖ¦°ÜÒ¶²¦¿ª£¬×ĞÏ¸Ñ°ÕÒ¶¾³æµÄ×Ù¼£¡£\n",me);
+                message_vision("$Nå½ä¸‹äº†è…°ï¼Œä¼¸æ‰‹å°‡æ®˜ææ•—è‘‰æ’¥é–‹ï¼Œä»”ç´°å°‹æ‰¾æ¯’èŸ²çš„è¹¤è·¡ã€‚\n",me);
                 
                 if( query("find_bug", me)>random(20)){
                         set("find_bug", 0, me);
                                 
                         room = load_object(n[random(sizeof(n))]);
                         
-                        message_vision("$NÓÖÕÒÁËÕÒ£¬·¢ÏÖÃ»ÓĞË¿ºÁ¶¾³æµÄ×Ù¼££¬Ö»ºÃÀë¿ªÕâÀï£¬µ½±ğµÄµØ·½Ñ°ÕÒ¡£\n",me);
-                        message_vision("$N¼±¼±Ã¦Ã¦µØÀë¿ªÁË¡£\n",me);
+                        message_vision("$Nåˆæ‰¾äº†æ‰¾ï¼Œç™¼ç¾æ²’æœ‰çµ²æ¯«æ¯’èŸ²çš„è¹¤è·¡ï¼Œåªå¥½é›¢é–‹é€™è£¡ï¼Œåˆ°åˆ¥çš„åœ°æ–¹å°‹æ‰¾ã€‚\n",me);
+                        message_vision("$Næ€¥æ€¥å¿™å¿™åœ°é›¢é–‹äº†ã€‚\n",me);
                         me->move(room);
-                        message_vision("$N×ßÁË¹ıÀ´¡£\n",me);                        
+                        message_vision("$Nèµ°äº†éä¾†ã€‚\n",me);                        
                         return 1;
                 }
                 

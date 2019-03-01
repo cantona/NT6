@@ -5,9 +5,9 @@
 // what I need ?
 
 // mapping <parts> such as:
-// ([ "head" : ({ 0, "Í·", "Í·Â­", 0, ([ "eye" : "eye", "nose" : "nose" ...]),
-//                "¿³ÏÂ", "/clone/misc/head", }),
-//    "left middle finger" : ({ 0, "ÓÒÊÖÖĞÖ¸", "ÖĞÖ¸", "finger", 0, 0, 0 }), ])
+// ([ "head" : ({ 0, "é ­", "é ­é¡±", 0, ([ "eye" : "eye", "nose" : "nose" ...]),
+//                "ç ä¸‹", "/clone/misc/head", }),
+//    "left middle finger" : ({ 0, "å³æ‰‹ä¸­æŒ‡", "ä¸­æŒ‡", "finger", 0, 0, 0 }), ])
 // the mixed string *of part item is:
 // 0. level of the body
 // 1. unit of the part
@@ -56,10 +56,10 @@ int do_cut(object me, string arg)
         object ob;
 
         if( !arg )
-                return notify_fail("ÄãÒª¸îÏÂÊ²Ã´²¿Î»£¿\n");
+                return notify_fail("ä½ è¦å‰²ä¸‹ä»€éº¼éƒ¨ä½ï¼Ÿ\n");
 
         if( !mapp(parts = query("parts")) )
-                return notify_fail("¿´À´ÄãÊÇ¸î²»ÏÂÀ´Ê²Ã´¶«Î÷ÁË¡£\n");
+                return notify_fail("çœ‹ä¾†ä½ æ˜¯å‰²ä¸ä¸‹ä¾†ä»€éº¼æ±è¥¿äº†ã€‚\n");
 
         exist = keys(parts);
         exist -= query_exclude_part();
@@ -70,7 +70,7 @@ int do_cut(object me, string arg)
                 int i;
                 int count;
                 count = 0;
-                msg = this_object()->name() + "ÓĞÒÔÏÂ²¿Î»¿ÉÒÔ¸îÏÂÀ´¡£\n";
+                msg = this_object()->name() + "æœ‰ä»¥ä¸‹éƒ¨ä½å¯ä»¥å‰²ä¸‹ä¾†ã€‚\n";
                 for( i = 0; i < sizeof(exist); i++ ) {
                         if( member_array(exist[i], cut) != -1 ||
                             query("no_cut/" + exist[i]) )
@@ -80,46 +80,46 @@ int do_cut(object me, string arg)
                                        parts[exist[i]][NAME], exist[i]);
                 }
                 if( !count )
-                        msg = this_object()->name() + "ÒÑ¾­Ã»Ê²Ã´¿ÉÒÔÏÂµ¶µÄµØ·½ÁË¡£\n";
+                        msg = this_object()->name() + "å·²ç¶“æ²’ä»€éº¼å¯ä»¥ä¸‹åˆ€çš„åœ°æ–¹äº†ã€‚\n";
                 write(msg);
                 return 1;
         }
 
         part = parts[arg];
         if( !arrayp(part) )
-                return notify_fail("ÄãÔõÃ´Ò²ÕÒ²»µ½ÄãÏë¸îµÄ²¿Î»¡£\n");
+                return notify_fail("ä½ æ€éº¼ä¹Ÿæ‰¾ä¸åˆ°ä½ æƒ³å‰²çš„éƒ¨ä½ã€‚\n");
 
         if( member_array(arg, cut) != -1 )
-                return notify_fail(part[NAME] + "ÒÑ¾­±»¸î×ßÁË¡£\n");
+                return notify_fail(part[NAME] + "å·²ç¶“è¢«å‰²èµ°äº†ã€‚\n");
 
         if( msg = query("no_cut/" + arg) )
-                return notify_fail(msg ? msg : "ÕâÑù¶«Î÷Äã¸î²»ÏÂÀ´¡£\n");
+                return notify_fail(msg ? msg : "é€™æ¨£æ±è¥¿ä½ å‰²ä¸ä¸‹ä¾†ã€‚\n");
 
         if( time() < (int)query("who_get/time") && 
             query("id", me) != query("who_get/id") )
-                return notify_fail("Äã»¹ÊÇÉÔµÈÆ¬¿ÌÔÙ¸î°É¡£\n");
+                return notify_fail("ä½ é‚„æ˜¯ç¨ç­‰ç‰‡åˆ»å†å‰²å§ã€‚\n");
 
         default_clone = query("default_clone");
         if( weapon=query_temp("weapon", me)){
-                msg = "$N¾ÙÆğÊÖÖĞµÄ" + weapon->name() + "£¬¡°¿¦àê¡±Ò»ÏÂ×Ó°Ñ$nµÄ" +
-                      part[NAME] + "¸ø" + (stringp(part[VERB]) ? part[VERB] : "¸îÁËÏÂ") +
-                      "À´¡£\n";
+                msg = "$Nèˆ‰èµ·æ‰‹ä¸­çš„" + weapon->name() + "ï¼Œâ€œå–€åš“â€ä¸€ä¸‹å­æŠŠ$nçš„" +
+                      part[NAME] + "çµ¦" + (stringp(part[VERB]) ? part[VERB] : "å‰²äº†ä¸‹") +
+                      "ä¾†ã€‚\n";
         } else if( me->query_skill("force") < 90 ) {
-                message_vision("$N¾ÙÆğÊÖÀ´£¬¶Ô×Å$nµÄ" + part[NAME] + "Ò»ÕÆ"
-                               "¿³ÁËÏÂÈ¥£¬½á¹û±»ÕğµÄ¡°ÍÛÍÛ¡±¹Ö½ĞÁËÁ½Éù¡£\n",
+                message_vision("$Nèˆ‰èµ·æ‰‹ä¾†ï¼Œå°è‘—$nçš„" + part[NAME] + "ä¸€æŒ"
+                               "ç äº†ä¸‹å»ï¼Œçµæœè¢«éœ‡çš„â€œå“‡å“‡â€æ€ªå«äº†å…©è²ã€‚\n",
                                me, this_object());
-                write("ºÃºÃÁ·Á·ÄÚ¹¦ÔÙÀ´°É£¡\n");
+                write("å¥½å¥½ç·´ç·´å…§åŠŸå†ä¾†å§ï¼\n");
                 return 1;
         } else
-                msg = "$N¾ÙÆğÊÖÀ´£¬Ò»ÏÂ×Ó¾Í°Ñ$nµÄ" + part[NAME] + "¸ø" +
-                      (stringp(part[VERB]) ? part[VERB] : "ÇĞÁËÏÂ") + "À´¡£\n";
+                msg = "$Nèˆ‰èµ·æ‰‹ä¾†ï¼Œä¸€ä¸‹å­å°±æŠŠ$nçš„" + part[NAME] + "çµ¦" +
+                      (stringp(part[VERB]) ? part[VERB] : "åˆ‡äº†ä¸‹") + "ä¾†ã€‚\n";
 
         message_vision(msg, me, this_object());
         ob = new(stringp(part[CLONE]) ? part[CLONE] : default_clone);
         ob->set_name(stringp(part[NAME_LEFT]) ? part[NAME_LEFT] : part[NAME],
                      ({ stringp(part[ID_LEFT]) ? part[ID_LEFT] : arg }));
         set("unit", part[UNIT], ob);
-        set("long", "Ò»"+part[UNIT]+"±»ÈË¸îÏÂÀ´µÄ"+ob->name()+"¡£\n", ob);
+        set("long", "ä¸€"+part[UNIT]+"è¢«äººå‰²ä¸‹ä¾†çš„"+ob->name()+"ã€‚\n", ob);
         set("default_clone", default_clone, ob);
         set("main_part_level", part[LEVEL]+1, ob);
         if( ob->is_cutable() )
@@ -155,12 +155,12 @@ string extra_desc()
                 if( part[LEVEL] > query("main_part_level") )
                         continue;
                 if( !flag ) {
-                        msg += "²»¹ıËüµÄ" + part[NAME];
+                        msg += "ä¸éå®ƒçš„" + part[NAME];
                         flag++;
                 } else
-                        msg += "¡¢" + part[NAME];
+                        msg += "ã€" + part[NAME];
         }
-        if( flag ) msg += "ÒÑ¾­²»¼ûÁË¡£\n";
+        if( flag ) msg += "å·²ç¶“ä¸è¦‹äº†ã€‚\n";
         return msg;
 }
 

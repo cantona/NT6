@@ -4,10 +4,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("¼ªÈËÍ¨", ({ "ji rentong", "ji", "rentong" }));
-        set("gender", "ÄĞĞÔ");
+        set_name("å‰äººé€š", ({ "ji rentong", "ji", "rentong" }));
+        set("gender", "ç”·æ€§");
         set("age", 25);
-        set("long", "Ëû¾ÍÊÇºÍÉêÈË¿¡½¹ÃÏ²»ÀëµÄ¼ªÈËÍ¨¡£\n");
+        set("long", "ä»–å°±æ˜¯å’Œç”³äººä¿Šç„¦å­Ÿä¸é›¢çš„å‰äººé€šã€‚\n");
 
         set("combat_exp", 60000);
         set("shen_type", -1);
@@ -32,7 +32,7 @@ void create()
         map_skill("sword", "songfeng-jian");
         prepare_skill("unarmed", "wuying-leg");
         prepare_skill("strike", "cuixin-zhang");
-        create_family("Çà³ÇÅÉ", 6, "µÜ×Ó");
+        create_family("é’åŸæ´¾", 6, "å¼Ÿå­");
         setup();
         carry_object("/clone/weapon/changjian")->wield();
         carry_object("/d/wudang/obj/bluecloth")->wear();

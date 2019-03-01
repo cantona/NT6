@@ -4,12 +4,12 @@ inherit "/maze/necropolis/necropolis_npc";
 void do_bone_spear();
 void create()
 {
-        string *names = ({"÷¼÷Ã·¨Ê¦"}); 
+        string *names = ({"éª·é«æ³•å¸«"}); 
         // set_name( names[random(sizeof(names))], ({ "skeleton mage","skeleton"}));
         set_name( names[random(sizeof(names))], ({ "skeleton mage" }));
         set("vendetta_mark","skeleton");
-        set("long", "ÕâÊÇÒ»Ö»¹ÇÍ·¼Ü×Ó¡£\n");
-        set("title", HIB "(¹íÆø)" NOR); 
+        set("long", "é€™æ˜¯ä¸€åªéª¨é ­æž¶å­ã€‚\n");
+        set("title", HIB "(é¬¼æ°£)" NOR); 
 
         set("str", 50);
         set("con", 120);
@@ -24,10 +24,10 @@ void create()
 /*
         set("chat_chance", 1);
         set("chat_msg", ({
-                "÷¼÷Ã¿Õ¶´µÄÑÛ¿ôÀïÉÁË¸×Å¿ÉÅÂµÄÓ«¹â¡£\n"
+                "éª·é«ç©ºæ´žçš„çœ¼çœ¶è£¡é–ƒçˆè‘—å¯æ€•çš„ç†’å…‰ã€‚\n"
         }) ); 
 */
-        set("death_msg",BLU"\n$NÉ¢³ÉÁËÒ»¶ÑËé¹ÇÍ·¡£\n\n"NOR);
+        set("death_msg",BLU"\n$Næ•£æˆäº†ä¸€å †ç¢Žéª¨é ­ã€‚\n\n"NOR);
         set("chat_chance_combat", 100);
         set("chat_msg_combat", ({
                 (: do_bone_spear() :),
@@ -66,7 +66,7 @@ void do_bone_spear() {
         enemy = enemies[random(sizeof(enemies))];
                 if(!present(enemy, environment(this_object())))
                 return; 
-        message_vision(HIW"\n$NÉ³ÑÆµÄÉùÒôÄîËÐ×ÅÖäÓï£¬Ò»¸ù¹ÇÍ·Í»È»»¯×÷Ò»Ö»³¤Ã¬ÉäÏò$n£¡\n"NOR,this_object(),enemy);
+        message_vision(HIW"\n$Næ²™å•žçš„è²éŸ³å¿µèª¦è‘—å’’èªžï¼Œä¸€æ ¹éª¨é ­çªç„¶åŒ–ä½œä¸€åªé•·çŸ›å°„å‘$nï¼\n"NOR,this_object(),enemy);
         enemy->receive_damage("qi",3000+random(3000),this_object());
         COMBAT_D->report_status(enemy);
         if (! this_object()->is_busy())

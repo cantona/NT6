@@ -6,19 +6,19 @@ inherit SURCOAT;
 
 void create()
 {
-        set_name(HIR "Ê¥ÎäÊ¿Åû·ç" NOR, ({ "wushi pifeng3", "wushi", "pifeng3" }) );
+        set_name(HIR "è–æ­¦å£«æŠ«é¢¨" NOR, ({ "wushi pifeng3", "wushi", "pifeng3" }) );
         set_weight(200);
-        set("long", HIR "´«ËµÖĞÊ¥½àµÄÎäÊ¿²ÅÄÜ´©´÷´ËÅû·ç£¬ÄËÉñÊ¥µÄÏóÕ÷¡£\n" NOR);
+        set("long", HIR "å‚³èªªä¸­è–æ½”çš„æ­¦å£«æ‰èƒ½ç©¿æˆ´æ­¤æŠ«é¢¨ï¼Œä¹ƒç¥è–çš„è±¡å¾ã€‚\n" NOR);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼ş");
-                set("long", HIR "Ê¥ÎäÊ¿Ëù´©´÷µÄÅû·ç£¬ÔÌ²Ø×ÅÉñÆæµÄÁ¦Á¿£¡\n" NOR);
+                set("unit", "ä»¶");
+                set("long", HIR "è–æ­¦å£«æ‰€ç©¿æˆ´çš„æŠ«é¢¨ï¼Œè˜Šè—è‘—ç¥å¥‡çš„åŠ›é‡ï¼\n" NOR);
                 set("material", "steel");
                 set("value", 3000000);
                 set("armor_prop/armor", 400);
-                set("armor_prop/con", 4); // ºóÌì¸ù¹Ç+1
-                set("armor_prop/str", 4); // ºóÌì±ÛÁ¦+1
+                set("armor_prop/con", 4); // å¾Œå¤©æ ¹éª¨+1
+                set("armor_prop/str", 4); // å¾Œå¤©è‡‚åŠ›+1
         }
         setup();
 }

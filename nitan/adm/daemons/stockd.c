@@ -1,5 +1,5 @@
 
-// stockd.c ¹ÉÆ±
+// stockd.c è‚¡ç¥¨
 
 #include <ansi.h>
 #include <net/socket.h>
@@ -128,7 +128,7 @@ void get_addressurl()
         return;
 }
 
-// ½âÎö×ÊÁÏ
+// è§£æè³‡æ–™
 void parse_data(string data)
 {
         int pos_s;
@@ -145,7 +145,7 @@ void parse_data(string data)
 
                 if( pos_s == -1 )
                 {
-                        CHANNEL_D->channel_broadcast("sys", "ÎŞ·¨½âÎö»¦ÉîA¹É¸ö¹É×ÊÁÏ");
+                        CHANNEL_D->channel_broadcast("sys", "ç„¡æ³•è§£ææ»¬æ·±Aè‚¡å€‹è‚¡è³‡æ–™");
                         return;
                 }
 
@@ -170,22 +170,22 @@ void parse_data(string data)
                         else if( to_float(stock_data[3]) < to_float(stock_data[2]) && (to_float(stock_data[3])-to_float(stock_data[2])) * 100 / to_float(stock_data[2]) <= -9.9 ) status = "t3g2";
 
                         stocks[code] = allocate_mapping(0);
-                        stocks[code]["¹ÉÆ±Ãû³Æ"] = stock_data[0];
-                        stocks[code]["×òÊÕÅÌ"] = to_float(stock_data[2]);
-                        stocks[code]["ÏÖ¼Û"] = to_float(stock_data[3]);
-                        stocks[code]["¿ªÅÌ"] = to_float(stock_data[1]);
-                        stocks[code]["×´Ì¬"] = status;
+                        stocks[code]["è‚¡ç¥¨åç¨±"] = stock_data[0];
+                        stocks[code]["æ˜¨æ”¶ç›¤"] = to_float(stock_data[2]);
+                        stocks[code]["ç¾åƒ¹"] = to_float(stock_data[3]);
+                        stocks[code]["é–‹ç›¤"] = to_float(stock_data[1]);
+                        stocks[code]["ç‹€æ…‹"] = status;
 
-                        stocks[code]["ÕÇµø"] = to_float(stock_data[3])-to_float(stock_data[2]);
-                        stocks[code]["ÕÇµø·ù"] = (to_float(stock_data[3])-to_float(stock_data[2]))*100/to_float(stock_data[2]);
-                        stocks[code]["×î¸ß"] = to_float(stock_data[4]);
-                        stocks[code]["×îµÍ"] = to_float(stock_data[5]);
-                        stocks[code]["³É½»ÕÅÊı"] = to_int(stock_data[8]);
-                        stocks[code]["ÈÕÆÚ"] = stock_data[30];
-                        stocks[code]["Ê±¼ä"] = stock_data[31];
+                        stocks[code]["æ¼²è·Œ"] = to_float(stock_data[3])-to_float(stock_data[2]);
+                        stocks[code]["æ¼²è·Œå¹…"] = (to_float(stock_data[3])-to_float(stock_data[2]))*100/to_float(stock_data[2]);
+                        stocks[code]["æœ€é«˜"] = to_float(stock_data[4]);
+                        stocks[code]["æœ€ä½"] = to_float(stock_data[5]);
+                        stocks[code]["æˆäº¤å¼µæ•¸"] = to_int(stock_data[8]);
+                        stocks[code]["æ—¥æœŸ"] = stock_data[30];
+                        stocks[code]["æ™‚é–“"] = stock_data[31];
 
 #ifdef DEBUG
-                        CHANNEL_D->channel_broadcast("nch", "³É¹¦½âÎö "+code+stocks[code]["¹ÉÆ±Ãû³Æ"]+" ¸ö¹É×ÊÁÏ(ÏÖ¼Û "+stocks[code]["ÏÖ¼Û"]+")");
+                        CHANNEL_D->channel_broadcast("nch", "æˆåŠŸè§£æ "+code+stocks[code]["è‚¡ç¥¨åç¨±"]+" å€‹è‚¡è³‡æ–™(ç¾åƒ¹ "+stocks[code]["ç¾åƒ¹"]+")");
 #endif
                 }
         }
@@ -221,17 +221,17 @@ void get_stock_data()
 
         if( fd < 0 )
         {
-                CHANNEL_D->channel_broadcast("nch", "ÎŞ·¨ÓëĞÂÀË¹ÉÆ±·şÎñÆ÷½¨Á¢Á¬½Ó¡£\n");
+                CHANNEL_D->channel_broadcast("nch", "ç„¡æ³•èˆ‡æ–°æµªè‚¡ç¥¨æœå‹™å™¨å»ºç«‹é€£æ¥ã€‚\n");
                 return;
         }
 
         err = socket_connect(fd, IP_ADDRESS, "read_callback", "write_callback");
 
         if( err != EESUCCESS )
-                CHANNEL_D->channel_broadcast("nch", "ÎŞ·¨Á¬Ïß¹ÉÆ±ÍøÒ³¡£");
+                CHANNEL_D->channel_broadcast("nch", "ç„¡æ³•é€£ç·šè‚¡ç¥¨ç¶²é ã€‚");
 
 #ifdef DEBUG               
-        CHANNEL_D->channel_broadcast("nch", "ÓëĞÂÀË¹ÉÆ±·şÎñÆ÷½¨Á¢Á¬½Ó³É¹¦£¡");
+        CHANNEL_D->channel_broadcast("nch", "èˆ‡æ–°æµªè‚¡ç¥¨æœå‹™å™¨å»ºç«‹é€£æ¥æˆåŠŸï¼");
 #endif
         return;
 }
@@ -242,19 +242,19 @@ void refresh_stock_data()
         int *nowtime = TIME_D->query_realtime_array();
 
 #ifndef DEBUG
-        if( nowtime[2] < 1 || nowtime[2] > 5 ) // ÖÜÄ©ĞİÅÌ
+        if( nowtime[2] < 1 || nowtime[2] > 5 ) // å‘¨æœ«ä¼‘ç›¤
                 return;
 
         if( nowtime[1] < 9
-        ||  (nowtime[1] == 9 && nowtime[0] < 15) ) // ÔçÉÏÎ´¿ª
+        ||  (nowtime[1] == 9 && nowtime[0] < 15) ) // æ—©ä¸Šæœªé–‹
                 return;
 
         if( nowtime[1] == 11 && nowtime[0] > 45
-        ||  (nowtime[1] == 12 && nowtime[0] < 45) ) // ÖĞÎçĞİÅÌ
+        ||  (nowtime[1] == 12 && nowtime[0] < 45) ) // ä¸­åˆä¼‘ç›¤
                 return;
 
         if( nowtime[1] > 15
-        ||  (nowtime[1] == 15 && nowtime[0] > 15) ) // ÏÂÎçĞİÅÌ
+        ||  (nowtime[1] == 15 && nowtime[0] > 15) ) // ä¸‹åˆä¼‘ç›¤
                 return;
 #endif
 
@@ -263,7 +263,7 @@ void refresh_stock_data()
         connection["data"] = "";
         get_stock_flag = 1;
 
-        CHANNEL_D->channel_broadcast("sys", "¿ªÊ¼¸üĞÂ¹ÉÊĞ×ÊÁÏ¡£");
+        CHANNEL_D->channel_broadcast("sys", "é–‹å§‹æ›´æ–°è‚¡å¸‚è³‡æ–™ã€‚");
         get_stock_data();
 }
 
@@ -291,7 +291,7 @@ void write_callback(int fd)
         //string stockurl = sprintf("GET /list=%s HTTP/1.1\nPragma: No-Cache\nHost: hq.sinajs.cn\n\n",
         //                        connection["array"][0]);
 
-        CHANNEL_D->channel_broadcast("nch", "¿ªÊ¼×¥È¡¹ÉÆ±×ÊÁÏ¡£");
+        CHANNEL_D->channel_broadcast("nch", "é–‹å§‹æŠ“å–è‚¡ç¥¨è³‡æ–™ã€‚");
         //socket_write(fd, stockurl);
         //connection["array"] = connection["array"][1..];
         socket_write( fd, stockurl());
@@ -340,6 +340,6 @@ void del_stock(string arg)
 
 string query_name()
 {
-        return "¹ÉÆ±ÏµÍ³(STOCK_D)";
+        return "è‚¡ç¥¨ç³»çµ±(STOCK_D)";
 }
 

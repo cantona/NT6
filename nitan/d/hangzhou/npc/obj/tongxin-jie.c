@@ -7,15 +7,15 @@ inherit NECK;
 
 void create()
 {
-        set_name(HIR"Í¬ĞÄ½á" NOR, ({ "tongxin jie", "jie" }));
-               set("long", "Ò»¸öÏÊºìÉ«µÄÖĞ¹ú½á£¬ÏóÕ÷×ÅÓĞÇéÈËÓÀ½áÍ¬ĞÄ¡£\n");
+        set_name(HIR"åŒå¿ƒçµ" NOR, ({ "tongxin jie", "jie" }));
+               set("long", "ä¸€å€‹é®®ç´…è‰²çš„ä¸­åœ‹çµï¼Œè±¡å¾è‘—æœ‰æƒ…äººæ°¸çµåŒå¿ƒã€‚\n");
         set("weight", 100);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
+                set("unit", "å€‹");
                 set("value", 5000);
-                set("material", "Ë¿");
+                set("material", "çµ²");
                 set("armor_prop/armor", 2);
                 }
         setup();

@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��Ժ��Ժ");
+        set("short", "書院後院");
         set("long", @LONG
-������������Ժ�ĺ�Ժ����ɨ�÷ǳ��ɾ��������ǹ��˸ߵ�Χǽ��
-ż����������������˾��ð�����г���ϱ���һ��С�ţ�ͨ��һƬ
-���֡�
+這裡是蕭湘書院的後院，打掃得非常幹凈，四周是過人高的圍牆，
+偶爾傳來幾聲鳥語，讓人覺得安靜和諧，南邊有一道小門，通往一片
+竹林。
 LONG );
         set("exits", ([
                   "north" : __DIR__"shuyuan",

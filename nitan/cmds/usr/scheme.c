@@ -24,32 +24,32 @@ int main(object me, string arg)
         {
                 if( !stringp(schedule=query("schedule", me)) )
                 {
-                        write("ÄãÄ¿Ç°²¢Ã»ÓĞÖÆ¶©ÈÎºÎ¼Æ»®¡£\n");
+                        write("ä½ ç›®å‰ä¸¦æ²’æœ‰åˆ¶è¨‚ä»»ä½•è¨ˆåŠƒã€‚\n");
                         return 1;
                 }
 
-                write("ÄãÄ¿Ç°ÖÆ¶©µÄ¼Æ»®ÈçÏÂ£º\n" + schedule);
+                write("ä½ ç›®å‰åˆ¶è¨‚çš„è¨ˆåŠƒå¦‚ä¸‹ï¼š\n" + schedule);
                 return 1;
         }
 
         if (sscanf(arg, "show %s", arg) == 1)
         {
                 if (! wizardp(me))
-                        return notify_fail("ÄãÎŞÈ¨²é¿´ËûÈËÖÆ¶©µÄ¼Æ»®¡£\n");
+                        return notify_fail("ä½ ç„¡æ¬ŠæŸ¥çœ‹ä»–äººåˆ¶è¨‚çš„è¨ˆåŠƒã€‚\n");
 
                 if (! objectp(ob = find_player(arg)))
-                        return notify_fail("Ã»ÓĞÕâ¸öÍæ¼Ò¡£\n");
+                        return notify_fail("æ²’æœ‰é€™å€‹ç©å®¶ã€‚\n");
 
                 if( !stringp(schedule=query("schedule", ob)) )
                 {
-                        write("Õâ¸öÍæ¼ÒÃ»ÓĞÖÆ¶¨¼Æ»®¡£\n");
+                        write("é€™å€‹ç©å®¶æ²’æœ‰åˆ¶å®šè¨ˆåŠƒã€‚\n");
                         return 1;
                 }
 
-                write((ob == me?"Äã":(ob->name(1)+"("+query("id", ob)+")"))+
-                      "ÏÖÔÚÖÆ¶©µÄ¼Æ»®ÈçÏÂ£º\n" + schedule);
+                write((ob == me?"ä½ ":(ob->name(1)+"("+query("id", ob)+")"))+
+                      "ç¾åœ¨åˆ¶è¨‚çš„è¨ˆåŠƒå¦‚ä¸‹ï¼š\n" + schedule);
                 if( query("doing", ob) == "scheme" )
-                        write("¸Ã¼Æ»®Ä¿Ç°ÕıÔÚÖ´ĞĞÖĞ¡£\n");
+                        write("è©²è¨ˆåŠƒç›®å‰æ­£åœ¨åŸ·è¡Œä¸­ã€‚\n");
 
                 return 1;
         }
@@ -57,7 +57,7 @@ int main(object me, string arg)
         if (arg == "clear")
         {
                 if( query("doing", me) == "scheme" )
-                        return notify_fail("ÄãÏÖÔÚÕıÔÚÖ´ĞĞ¼Æ»®£¬ÇëÏÈÍ£ÏÂÀ´ÔÙÇå³ıËü¡£\n");
+                        return notify_fail("ä½ ç¾åœ¨æ­£åœ¨åŸ·è¡Œè¨ˆåŠƒï¼Œè«‹å…ˆåœä¸‹ä¾†å†æ¸…é™¤å®ƒã€‚\n");
 
                 delete("schedule", me);
                 write("Ok.\n");
@@ -67,9 +67,9 @@ int main(object me, string arg)
         if (arg == "edit")
         {
                 if( query("doing", me) == "scheme" )
-                        return notify_fail("ÄãÏÖÔÚÕıÔÚÖ´ĞĞ¼Æ»®£¬ÇëÏÈÍ£ÏÂÀ´ÔÙĞŞ¸Ä¡£\n");
+                        return notify_fail("ä½ ç¾åœ¨æ­£åœ¨åŸ·è¡Œè¨ˆåŠƒï¼Œè«‹å…ˆåœä¸‹ä¾†å†ä¿®æ”¹ã€‚\n");
 
-                write("ÇëÊäÈëÄã½«ÒªÖ´ĞĞµÄ¼Æ»®£º\n");
+                write("è«‹è¼¸å…¥ä½ å°‡è¦åŸ·è¡Œçš„è¨ˆåŠƒï¼š\n");
                 me->edit((: done_input, me :));
                 return 1;
         }
@@ -77,37 +77,37 @@ int main(object me, string arg)
         if (arg == "start")
         {
                 if( !stringp(schedule=query("schedule", me)) )
-                        return notify_fail("ÄãÄ¿Ç°»¹Ã»ÓĞÖÆ¶©¼Æ»®¡£\n");
+                        return notify_fail("ä½ ç›®å‰é‚„æ²’æœ‰åˆ¶è¨‚è¨ˆåŠƒã€‚\n");
 
                 if( query("doing", me) )
-                        return notify_fail("ÄãÏÖÔÚÕıÔÚÃ¦ÓÚ¶ÍÁ¶£¬²»ÄÜ¿ªÕ¹ĞÂ¼Æ»®¡£\n");
+                        return notify_fail("ä½ ç¾åœ¨æ­£åœ¨å¿™äºé›ç…‰ï¼Œä¸èƒ½é–‹å±•æ–°è¨ˆåŠƒã€‚\n");
 
                 env = environment(me);
                 if (! env)
-                        return notify_fail("ÄãÏÖÔÚÊ²Ã´¶¼×ö²»ÁË¡£\n");
+                        return notify_fail("ä½ ç¾åœ¨ä»€éº¼éƒ½åšä¸äº†ã€‚\n");
 
                 if (env->is_chat_room())
-                        return notify_fail("Äã²»ÄÜÔÚÁÄÌìÊÒÀïÃæÖ´ĞĞ¼Æ»®¡£\n");
+                        return notify_fail("ä½ ä¸èƒ½åœ¨èŠå¤©å®¤è£¡é¢åŸ·è¡Œè¨ˆåŠƒã€‚\n");
 
                 if( !query("sleep_room", env) )
-                        return notify_fail("Äã±ØĞëÔÚÄÜ¹»ĞİÏ¢µÄµØ·½²ÅÄÜÖ´ĞĞ¼Æ»®¡£\n");
+                        return notify_fail("ä½ å¿…é ˆåœ¨èƒ½å¤ ä¼‘æ¯çš„åœ°æ–¹æ‰èƒ½åŸ·è¡Œè¨ˆåŠƒã€‚\n");
 
                 if( !query("no_fight", env) )
-                        return notify_fail("Äã±ØĞëÔÚ°²È«µÄµØ·½²ÅÄÜÖ´ĞĞ¼Æ»®¡£\n");
+                        return notify_fail("ä½ å¿…é ˆåœ¨å®‰å…¨çš„åœ°æ–¹æ‰èƒ½åŸ·è¡Œè¨ˆåŠƒã€‚\n");
 
                 if( query("combat_exp", me)<50000 )
-                        return notify_fail("ÄãµÄÊµÕ½¾­ÑéÌ«Ç³±¡£¬»¹ÊÇÏÈºÃºÃ¶ÍÁ¶¶ÍÁ¶ÔÙËµ°É¡£\n");
+                        return notify_fail("ä½ çš„å¯¦æˆ°ç¶“é©—å¤ªæ·ºè–„ï¼Œé‚„æ˜¯å…ˆå¥½å¥½é›ç…‰é›ç…‰å†èªªå§ã€‚\n");
 
                 if( query("potential", me)-query("learned_points", me)<100 )
-                        return notify_fail("ÄãµÄÇ±ÄÜÌ«ÉÙ£¬ÄÑÒÔ¿ªÕ¹¼Æ»®¡£\n");
+                        return notify_fail("ä½ çš„æ½›èƒ½å¤ªå°‘ï¼Œé›£ä»¥é–‹å±•è¨ˆåŠƒã€‚\n");
 
                 if (sizeof(filter_array(all_inventory(env), (: playerp :))) > 12)
-                        return notify_fail("ÕâÀïµÄÈËÊµÔÚÌ«¶àÁË£¬ÄãÄÑÒÔ¾²ĞÄ¿ªÕ¹¼Æ»®¡£\n");
+                        return notify_fail("é€™è£¡çš„äººå¯¦åœ¨å¤ªå¤šäº†ï¼Œä½ é›£ä»¥éœå¿ƒé–‹å±•è¨ˆåŠƒã€‚\n");
 
                 addn("learned_points", 100, me);
 
-                // Ö´ĞĞ¼Æ»®
-                write("Äã¿ªÊ¼Ö´ĞĞ¼Æ»®¡£\n");
+                // åŸ·è¡Œè¨ˆåŠƒ
+                write("ä½ é–‹å§‹åŸ·è¡Œè¨ˆåŠƒã€‚\n");
                 set("startroom", base_name(env), me);
                 CLOSE_D->user_closed(me);
                 me->set_short_desc(0);
@@ -115,10 +115,10 @@ int main(object me, string arg)
                 return 1;
         }
 
-        return notify_fail("·Ç·¨µÄÃüÁî²ÎÊı¡£\n");
+        return notify_fail("éæ³•çš„å‘½ä»¤åƒæ•¸ã€‚\n");
 }
 
-// ¿ªÊ¼Ö´ĞĞ¼Æ»®
+// é–‹å§‹åŸ·è¡Œè¨ˆåŠƒ
 int continue_scheme(object me)
 {
         string schedule;
@@ -131,7 +131,7 @@ int continue_scheme(object me)
         scs = filter_array(scs, (: replace_string($1, " ", "\n") != "" :));
         if (sizeof(scs) < 1)
         {
-                write("ÕâÊÇÒ»·İ¿Õ¼Æ»®£¬ÄãÃ»Ê²Ã´ºÃ×öµÄ¡£\n");
+                write("é€™æ˜¯ä¸€ä»½ç©ºè¨ˆåŠƒï¼Œä½ æ²’ä»€éº¼å¥½åšçš„ã€‚\n");
                 return 0;
         }
 
@@ -144,7 +144,7 @@ int continue_scheme(object me)
         return 1;
 }
 
-// ÖĞÖ¹¼Æ»®
+// ä¸­æ­¢è¨ˆåŠƒ
 int cancel_schedule(object me)
 {
         me->delete_override("unconcious");
@@ -161,7 +161,7 @@ int cancel_schedule(object me)
         return 0;
 }
 
-// Ö´ĞĞ¼Æ»®ÖĞ
+// åŸ·è¡Œè¨ˆåŠƒä¸­
 void execute_schedule(object me)
 {
         mapping my, my_temp;
@@ -196,22 +196,22 @@ void execute_schedule(object me)
 
         if (my["food"] < 100 || my["water"] < 100)
         {
-                write("Äã¾õµÃ¶Ç×ÓÓĞµã¶öÁË£¬¿´À´ÒªÕÒµã³ÔµÄ¶«Î÷ÁË¡£\n");
+                write("ä½ è¦ºå¾—è‚šå­æœ‰é»é¤“äº†ï¼Œçœ‹ä¾†è¦æ‰¾é»åƒçš„æ±è¥¿äº†ã€‚\n");
                 pay = 2000;
-                if( query("family/family_name", me) == "¶ÎÊÏ»Ê×å" )
+                if( query("family/family_name", me) == "æ®µæ°çš‡æ—" )
                         pay = 100;
                 else
                         pay = pay * 100 / (me->query_skill("higgling", 1) + 100);
                 
                 if (MONEY_D->player_pay(me, pay) != 1)
                 {
-                        write("Äã·¢ÏÖ×Ô¼º´øµÄÇ®²»¹»ÁË£¬¿´À´Ö»ºÃÏÈÈ¥ÅªĞ©Ç®ÁË¡£\n");
+                        write("ä½ ç™¼ç¾è‡ªå·±å¸¶çš„éŒ¢ä¸å¤ äº†ï¼Œçœ‹ä¾†åªå¥½å…ˆå»å¼„äº›éŒ¢äº†ã€‚\n");
                         cancel_schedule(me);
                         return;
                 }
-                write("ÄãÌÍ³öÒ»Ğ©Ç®£¬ÕÒÁËÒ»Î»ÏĞÈËÈÃËû°ïÄã×¼±¸ÁËÒ»Ğ©Ê³Îï¡£\n");
+                write("ä½ æå‡ºä¸€äº›éŒ¢ï¼Œæ‰¾äº†ä¸€ä½é–’äººè®“ä»–å¹«ä½ æº–å‚™äº†ä¸€äº›é£Ÿç‰©ã€‚\n");
 
-                // ²¹³äÊ³ÎïºÍË®
+                // è£œå……é£Ÿç‰©å’Œæ°´
                 my["food"]  = me->max_food_capacity();
                 my["water"] = me->max_water_capacity();
                 me->start_busy(10 + random(10));
@@ -229,19 +229,19 @@ void execute_schedule(object me)
         if (scs_step < 0 || scs_step >= sizeof(scs))
                 scs_step = 0;
 
-        // È¡µÚ n ²½Öè
+        // å–ç¬¬ n æ­¥é©Ÿ
         cmd = scs[scs_step];
         cmd = me->process_input(cmd);
         if (sscanf(cmd, "%s:%s", cmd, cmd_case) != 2)
                 cmd_case = "IGNORE";
 
-        // ÏÔÊ¾×¼±¸Ö´ĞĞµÄÃüÁî
+        // é¡¯ç¤ºæº–å‚™åŸ·è¡Œçš„å‘½ä»¤
         tell_object(me, me->prompt() + HIY + cmd + NOR "\n");
 
         switch (cmd)
         {
         case "REPEAT":
-                // ¿ªÊ¼Ñ­»·
+                // é–‹å§‹å¾ªç’°
                 count = 1;
                 for (i = scs_step + 1; i < sizeof(scs); i++)
                 {
@@ -256,7 +256,7 @@ void execute_schedule(object me)
 
                 if (count > 0)
                 {
-                        write("¼Æ»®ÖĞ repeat Ã»ÓĞÕÒµ½ÓëÖ®Æ¥ÅäµÄ loop ÃüÁî£¬ÎŞ·¨¼ÌĞøÖ´ĞĞ¡£\n");
+                        write("è¨ˆåŠƒä¸­ repeat æ²’æœ‰æ‰¾åˆ°èˆ‡ä¹‹åŒ¹é…çš„ loop å‘½ä»¤ï¼Œç„¡æ³•ç¹¼çºŒåŸ·è¡Œã€‚\n");
                         cancel_schedule(me);
                         break;
                 }
@@ -268,20 +268,20 @@ void execute_schedule(object me)
                         my_temp["scs_repeat"] += ({ ({ scs_step, i }) });
                 else
                 {
-                        write("Ñ­»·Ç¶Ì×µÄ²ã´ÎÌ«¶à£¬ÄãµÄ¼Æ»®ÊéºÃ¸´ÔÓ£¬Ö´ĞĞ²»ÁË¡£\n");
+                        write("å¾ªç’°åµŒå¥—çš„å±¤æ¬¡å¤ªå¤šï¼Œä½ çš„è¨ˆåŠƒæ›¸å¥½å¾©é›œï¼ŒåŸ·è¡Œä¸äº†ã€‚\n");
                         cancel_schedule(me);
                         break;
                 }
 
-                write("¿ªÊ¼Ñ­»·.\n");
+                write("é–‹å§‹å¾ªç’°.\n");
                 break;
 
         case "LOOP":
-                // Ñ­»·Ö´ĞĞ
+                // å¾ªç’°åŸ·è¡Œ
                 if (! arrayp(scs_repeat = my_temp["scs_repeat"]) ||
                     sizeof(scs_repeat) < 1)
                 {
-                        write("Ã»ÓĞÕÒµ½¼Æ»®ÖĞÓëÖ®Æ¥ÅäµÄ repeat ÃüÁî¡£\n");
+                        write("æ²’æœ‰æ‰¾åˆ°è¨ˆåŠƒä¸­èˆ‡ä¹‹åŒ¹é…çš„ repeat å‘½ä»¤ã€‚\n");
                         cancel_schedule(me);
                         return;
                 }
@@ -291,11 +291,11 @@ void execute_schedule(object me)
                 break;
 
         case "BREAK":
-                // Ìø³ö¸ÃÑ­»·
+                // è·³å‡ºè©²å¾ªç’°
                 if (! arrayp(scs_repeat = my_temp["scs_repeat"]) ||
                     sizeof(scs_repeat) < 1)
                 {
-                        write("Ã»ÓĞÕÒµ½¼Æ»®ÖĞÓëÖ®Æ¥ÅäµÄ repeat-loop ÃüÁî¡£\n");
+                        write("æ²’æœ‰æ‰¾åˆ°è¨ˆåŠƒä¸­èˆ‡ä¹‹åŒ¹é…çš„ repeat-loop å‘½ä»¤ã€‚\n");
                         cancel_schedule(me);
                         return;
                 }
@@ -306,10 +306,10 @@ void execute_schedule(object me)
                 break;
 
         default:
-                // Ö´ĞĞµÚ n ²½£¬²¢ÊÓÇé¿ö¿´ÏÂÒ»²½ÊÇ·ñÖ´ĞĞµÚ¶ş²Ù×÷
+                // åŸ·è¡Œç¬¬ n æ­¥ï¼Œä¸¦è¦–æƒ…æ³çœ‹ä¸‹ä¸€æ­¥æ˜¯å¦åŸ·è¡Œç¬¬äºŒæ“ä½œ
                 if (! me->force_me(cmd))
                 {
-                        // Ö´ĞĞÊ§°ÜÊ±µÄÃüÁî
+                        // åŸ·è¡Œå¤±æ•—æ™‚çš„å‘½ä»¤
                         if (cmd_case != "IGNORE")
                                 tell_object(me, me->prompt() + HIY + cmd_case + NOR "\n");
 
@@ -320,11 +320,11 @@ void execute_schedule(object me)
                                 return;
 
                         case "CONTINUE":
-                                // Ñ­»·Ö´ĞĞ
+                                // å¾ªç’°åŸ·è¡Œ
                                 if (! arrayp(scs_repeat = my_temp["scs_repeat"]) ||
                                     sizeof(scs_repeat) < 1)
                                 {
-                                        write("Ã»ÓĞÕÒµ½¼Æ»®ÖĞÓëÖ®Æ¥ÅäµÄ repeat ÃüÁî¡£\n");
+                                        write("æ²’æœ‰æ‰¾åˆ°è¨ˆåŠƒä¸­èˆ‡ä¹‹åŒ¹é…çš„ repeat å‘½ä»¤ã€‚\n");
                                         cancel_schedule(me);
                                         break;
                                 }
@@ -334,11 +334,11 @@ void execute_schedule(object me)
                                 break;
 
                         case "BREAK":
-                                // Ìø³ö¸ÃÑ­»·
+                                // è·³å‡ºè©²å¾ªç’°
                                 if (! arrayp(scs_repeat = my_temp["scs_repeat"]) ||
                                     sizeof(scs_repeat) < 1)
                                 {
-                                        write("Ã»ÓĞÕÒµ½¼Æ»®ÖĞÓëÖ®Æ¥ÅäµÄ repeat-loop ÃüÁî¡£\n");
+                                        write("æ²’æœ‰æ‰¾åˆ°è¨ˆåŠƒä¸­èˆ‡ä¹‹åŒ¹é…çš„ repeat-loop å‘½ä»¤ã€‚\n");
                                         cancel_schedule(me);
                                         break;
                                 }
@@ -349,21 +349,21 @@ void execute_schedule(object me)
                                 break;
 
                         case "IGNORE":
-                                // Ö´ĞĞÃüÁîºöÂÔÊ§°ÜÇé¿ö
+                                // åŸ·è¡Œå‘½ä»¤å¿½ç•¥å¤±æ•—æƒ…æ³
                                 break;
 
                         default:
                                 me->force_me(cmd_case);
                                 break;
                         }
-                        // ÃüÁîÊ§°ÜÊ±Ö´ĞĞ cmd_case Íê±Ï¡£
+                        // å‘½ä»¤å¤±æ•—æ™‚åŸ·è¡Œ cmd_case å®Œç•¢ã€‚
                 }
-                // Ö´ĞĞÍæ¼ÒÃüÁîÍê±Ï
+                // åŸ·è¡Œç©å®¶å‘½ä»¤å®Œç•¢
         }
 
         if (++scs_step >= sizeof(scs))
         {
-                write("¼Æ»®Ö´ĞĞÍê±Ï¡£\n");
+                write("è¨ˆåŠƒåŸ·è¡Œå®Œç•¢ã€‚\n");
                 cancel_schedule(me);
                 return;
         }
@@ -377,13 +377,13 @@ private void done_input(object me, string text)
 
         if (! stringp(text))
         {
-                tell_object(me, "ÄãÃ»ÓĞÊäÈëÈÎºÎĞÂµÄ¼Æ»®¡£\n");
+                tell_object(me, "ä½ æ²’æœ‰è¼¸å…¥ä»»ä½•æ–°çš„è¨ˆåŠƒã€‚\n");
                 return;
         }
 
         if (strlen(text) > 400)
         {
-                tell_object(me, "ÄãÕâ·İ¼Æ»®Ì«³¤ÁË£¬ÇëÖØĞÂÉèÖÃÒ»¸ö¶ÌÒ»Ğ©µÄ¡£\n");
+                tell_object(me, "ä½ é€™ä»½è¨ˆåŠƒå¤ªé•·äº†ï¼Œè«‹é‡æ–°è¨­ç½®ä¸€å€‹çŸ­ä¸€äº›çš„ã€‚\n");
                 return;
         }
 
@@ -392,7 +392,7 @@ private void done_input(object me, string text)
         text = implode(strs, "\n") + "\n";
 
         set("schedule", text, me);
-        tell_object(me, "ÄãÉèÖÃÁËÒ»·İĞÂµÄ¼Æ»®¡£\n");
+        tell_object(me, "ä½ è¨­ç½®äº†ä¸€ä»½æ–°çš„è¨ˆåŠƒã€‚\n");
 }
 
 void user_quit(object me)
@@ -413,17 +413,17 @@ void user_quit(object me)
 int help (object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : scheme [<edit> | <start> | <clear> | <show> <Íæ¼Ò>]
+æŒ‡ä»¤æ ¼å¼ : scheme [<edit> | <start> | <clear> | <show> <ç©å®¶>]
  
-Éè¶¨»ò¿ªÊ¼ÄãµÄ¼Æ»®¡£Èç¹ûÄãĞèÒª³¤Ê±¼äµÄ¶ÁÊé»òÊÇÁ·Ï°¼¼ÄÜ£¬¿ÉÒÔ
-Ê¹ÓÃ¼Æ»®À´Íê³É£¬¾ßÌåÇë²Î¼û help schedule¡£
+è¨­å®šæˆ–é–‹å§‹ä½ çš„è¨ˆåŠƒã€‚å¦‚æœä½ éœ€è¦é•·æ™‚é–“çš„è®€æ›¸æˆ–æ˜¯ç·´ç¿’æŠ€èƒ½ï¼Œå¯ä»¥
+ä½¿ç”¨è¨ˆåŠƒä¾†å®Œæˆï¼Œå…·é«”è«‹åƒè¦‹ help scheduleã€‚
 
-edit  : Éè¶¨¼Æ»®
-start : ¿ªÊ¼Ö´ĞĞ¼Æ»®
-clear : Çå³ıÄ¿Ç°µÄ¼Æ»®
-show  : ÏÔÊ¾Ä³¸öÍæ¼ÒµÄ¼Æ»®£¬Ö»ÓĞÎ×Ê¦²ÅÄÜÊ¹ÓÃÕâ¸öÃüÁî¡£
+edit  : è¨­å®šè¨ˆåŠƒ
+start : é–‹å§‹åŸ·è¡Œè¨ˆåŠƒ
+clear : æ¸…é™¤ç›®å‰çš„è¨ˆåŠƒ
+show  : é¡¯ç¤ºæŸå€‹ç©å®¶çš„è¨ˆåŠƒï¼Œåªæœ‰å·«å¸«æ‰èƒ½ä½¿ç”¨é€™å€‹å‘½ä»¤ã€‚
 
-Ö´ĞĞ¼Æ»®ÆÚ¼ä¿ÉÒÔÊ¹ÓÃ halt ÃüÁîÖĞÖ¹ÄãÕıÔÚ½øĞĞµÄ¼Æ»®¡£
+åŸ·è¡Œè¨ˆåŠƒæœŸé–“å¯ä»¥ä½¿ç”¨ halt å‘½ä»¤ä¸­æ­¢ä½ æ­£åœ¨é€²è¡Œçš„è¨ˆåŠƒã€‚
 
 see also: halt, breakup, purchase
 HELP );

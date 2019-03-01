@@ -4,10 +4,10 @@ inherit  ROOM;
 
 void  create  ()
 {
-        set("short",  "�ٵ�");
+        set("short",  "官道");
         set("long",  @LONG
-һ����ʯ�̾͵Ĺٵ���������ͨ�����ݣ������򵽴ﳤ������·��
-����һƬï�ܵ����֡�������һ�����棬�������Ѿ���Щ����ˡ�
+一條青石舖就的官道，向西北通往蘭州，往東則到達長安。道路兩
+旁是一片茂密的樹林。西邊是一座廢墟，看起來已經有些年代了。
 LONG);
         set("exits",  ([  /*  sizeof()  ==  2  */
                 "west"      :  __DIR__"apanggong",

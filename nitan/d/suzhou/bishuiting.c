@@ -9,12 +9,12 @@ int valid_leave();
 
 void create()
 {
-        set("short","±ÌË®Í¤");
-        set("short", HIC"±ÌË®Í¤"NOR);
+        set("short","ç¢§æ°´äº­");
+        set("short", HIC"ç¢§æ°´äº­"NOR);
         set("long", @LONG
-ÕâÊÇºşÖĞµÄÒ»¸öĞ¡Í¤×Ó£¬´ÓÕâÍûÈ¥£¬¿ÉÒÔ¿´µ½Õû¸öºşÃæµÄ¾°É«£¬Áî
-ÈËĞÄ¿õÉñâù¡£Í¤×Ó±ÚÉÏ¿Ì»­×Å½­ÄÏË®ÏçµÄÒËÈË·ç¾°£¬ÁîÈËÎŞÏŞåÚÏë¡£Í¤
-ÉÏÓĞÒ»¸ùÁº(liang)¡£
+é€™æ˜¯æ¹–ä¸­çš„ä¸€å€‹å°äº­å­ï¼Œå¾é€™æœ›å»ï¼Œå¯ä»¥çœ‹åˆ°æ•´å€‹æ¹–é¢çš„æ™¯è‰²ï¼Œä»¤
+äººå¿ƒæ› ç¥æ€¡ã€‚äº­å­å£ä¸Šåˆ»ç•«è‘—æ±Ÿå—æ°´é„‰çš„å®œäººé¢¨æ™¯ï¼Œä»¤äººç„¡é™éæƒ³ã€‚äº­
+ä¸Šæœ‰ä¸€æ ¹æ¨‘(liang)ã€‚
 LONG );
         set("exits",([
                 "south" : __DIR__"huzhongdao",
@@ -22,7 +22,7 @@ LONG );
         set("outdoors", "suzhou");
         set("no_clean_up", 0);
         set("item_desc", ([
-                "liang" : "·¿ÁºÊÇÉÏºÃµÄéªÄ¾×öµÄ£¬ÉÏÃæ»¹ÓĞÊ®·Ö¹Å¹ÖµÄ×Ö»­¡£\n",
+                "liang" : "æˆ¿æ¨‘æ˜¯ä¸Šå¥½çš„æ¥ æœ¨åšçš„ï¼Œä¸Šé¢é‚„æœ‰ååˆ†å¤æ€ªçš„å­—ç•«ã€‚\n",
         ]));
         set("coor/x", 800);
         set("coor/y", -1200);
@@ -39,15 +39,15 @@ int do_jump(string arg)
 {
         object me;
         me = this_player();
-        if (arg !="liang") return notify_fail("ÄãÒªµ½ÄÇÈ¥£¿\n");
+        if (arg !="liang") return notify_fail("ä½ è¦åˆ°é‚£å»ï¼Ÿ\n");
         if (me->query_dex()<20) 
-                write("ÄãÊÔÍ¼ÌøÉÏ·¿Áº£¬ÎŞÄÎÉí·¨²»¹»Ãô½İ£¬Ö»ºÃ×ö°Õ¡£\n");
+                write("ä½ è©¦åœ–è·³ä¸Šæˆ¿æ¨‘ï¼Œç„¡å¥ˆèº«æ³•ä¸å¤ æ•æ·ï¼Œåªå¥½åšç½·ã€‚\n");
         else
         {
-                write("Äã×İÉíÔ¾ÉÏÁË·¿Áº¡£\n");
-                message("vision", me->name() + "Ò»×İÉíÔ¾ÉÏÁË·¿Áº¡£\n", environment(me), ({me}) );
+                write("ä½ ç¸±èº«èºä¸Šäº†æˆ¿æ¨‘ã€‚\n");
+                message("vision", me->name() + "ä¸€ç¸±èº«èºä¸Šäº†æˆ¿æ¨‘ã€‚\n", environment(me), ({me}) );
                 me->move(__DIR__"liang");
-                message("vision", me->name() + "´ÓÏÂÃæÔ¾ÁËÉÏÀ´¡£\n", environment(me), ({me}) );
+                message("vision", me->name() + "å¾ä¸‹é¢èºäº†ä¸Šä¾†ã€‚\n", environment(me), ({me}) );
                 return 1;
         }
 }

@@ -1,4 +1,4 @@
-//nzlangw3.c                ËÄ´¨ÌÆÃÅ¡ªÇàÊ¯Ğ¡Â·
+//nzlangw3.c                å››å·å”é–€â”€é’çŸ³å°è·¯
 
 #include <ansi.h>
 #include <room.h>
@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÇàÊ¯Ğ¡Â·");
+        set("short", "é’çŸ³å°è·¯");
         set("long",
-"ÕâÊÇÒ»ÌõÇàÊ¯ÆÌ¾ÍµÄĞ¡Â·¡£ÓÉÓÚÀ´À´ÍùÍùµÄÈËÊıÌ«¶à£¬´Ö²ÚµÄÇàÊ¯ÒÑ\n"
-"¾­±»Ä¥µÄ¹â»¬Èç¾µ¡£Ò»Ğ©ÌÆÃÅµÄµÜ×ÓÍùÀ´´©Ëó£¬ÕâÀï»¹ÕæÊÇºÜÈÈÄÖ¡£ÕâÀïÏò\n"
+"é€™æ˜¯ä¸€æ¢é’çŸ³èˆ–å°±çš„å°è·¯ã€‚ç”±äºä¾†ä¾†å¾€å¾€çš„äººæ•¸å¤ªå¤šï¼Œç²—ç³™çš„é’çŸ³å·²\n"
+"ç¶“è¢«ç£¨çš„å…‰æ»‘å¦‚é¡ã€‚ä¸€äº›å”é–€çš„å¼Ÿå­å¾€ä¾†ç©¿æ¢­ï¼Œé€™è£¡é‚„çœŸæ˜¯å¾ˆç†±é¬§ã€‚é€™è£¡å‘\n"
 );
         set("exits", ([
                         "east" : __DIR__"nzlangw2",
@@ -25,11 +25,11 @@ void create()
 
 int valid_leave(object me, string dir)
 {
-        if( (dir == "north") && (query("gender", me) != "ÄĞĞÔ") )
-                return notify_fail("Î¹£¡ÄÇÀï¶¼ÊÇÄĞÈËÑ½£¡\n");
+        if( (dir == "north") && (query("gender", me) != "ç”·æ€§") )
+                return notify_fail("å–‚ï¼é‚£è£¡éƒ½æ˜¯ç”·äººå‘€ï¼\n");
 
-        if( (dir == "south") && (query("gender", me) != "Å®ĞÔ") )
-                return notify_fail("Î¹£¡ÉÃ´³Å®µÜ×ÓĞİÏ¢ÊÒ£¬·¸ÃÅ¹æµÄ£¡\n");
+        if( (dir == "south") && (query("gender", me) != "å¥³æ€§") )
+                return notify_fail("å–‚ï¼æ“…é—–å¥³å¼Ÿå­ä¼‘æ¯å®¤ï¼ŒçŠ¯é–€è¦çš„ï¼\n");
 
         return ::valid_leave(me, dir);
 }

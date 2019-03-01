@@ -1,4 +1,4 @@
-// bailong shi °×ÁúÊ¹
+// bailong shi ç™½é¾ä½¿
 // Last Modified by winder on Jul. 12 2002
 
 #include <ansi.h>;
@@ -11,9 +11,9 @@ void apply_gift(object, int);
 
 void create()
 {
-        set_name("ÖÓÖ¾Áé", ({ "zhong zhiling","bailong shi", "shi","zhong" }));
-        set("long", "¿ıÎà´óºº£¬Ò»¿´¾ÍÖªÊÇ¹Ø¶«ÈË¡£\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("é˜å¿—éˆ", ({ "zhong zhiling","bailong shi", "shi","zhong" }));
+        set("long", "é­æ¢§å¤§æ¼¢ï¼Œä¸€çœ‹å°±çŸ¥æ˜¯é—œæ±äººã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 45);
         set("attitude", "peaceful");
         set("shen_type", -1);
@@ -48,19 +48,19 @@ void create()
 
         prepare_skill("strike", "huagu-mianzhang");
         set("inquiry", ([
-                "ºé°²Í¨" : "ÕâÈı¸ö×ÖÊÇÄãËµµÄÂğ£¿",
-                "ºé½ÌÖ÷" : "ºé½ÌÖ÷ÏÉ¸£ÓÀÏí£¬ÊÙÓëÌìÆë£¬ºé½ÌÖ÷ÉñÄ¿Èçµç£¬ÖòÕÕËÄ·½¡£",
-                "ËÕÜõ"   : "Ã»¹æÃ»¾ØµÄ¡£",
-                "ÉñÁúµº" : "ÉñÁúµºÔÚÈêÖİµÄ¶«±±·½Ïò£¬´ÓÌÁ¹Á¿Ú³öº£±ãµ½¡£",
-                "ÉñÁú½Ì" : "Ò»°ãÈËÊÇÈë²»ÁËÎÒÉñÁú½ÌµÄ(join shenlongjiao).\n",
-                "Èë½Ì"   : "Ò»°ãÈËÊÇÈë²»ÁËÎÒÉñÁú½ÌµÄ(join shenlongjiao).\n",
-                "½ÌÖ÷"   : "½ÌÖ÷Æ¢Æø²»ºÃ£¬ÒªÌÖËû»¶ĞÄ²ÅºÃ¡£\n",
-                "¿ÚºÅ"   : "ÍòÄê²»ÀÏ£¡ÓÀÏíÏÉ¸££¡ÊÙÓëÌìÆë£¡ÎÄÎäÈÊÊ¥£¡\n",
+                "æ´ªå®‰é€š" : "é€™ä¸‰å€‹å­—æ˜¯ä½ èªªçš„å—ï¼Ÿ",
+                "æ´ªæ•™ä¸»" : "æ´ªæ•™ä¸»ä»™ç¦æ°¸äº«ï¼Œå£½èˆ‡å¤©é½Šï¼Œæ´ªæ•™ä¸»ç¥ç›®å¦‚é›»ï¼Œç‡­ç…§å››æ–¹ã€‚",
+                "è˜‡èƒ"   : "æ²’è¦æ²’çŸ©çš„ã€‚",
+                "ç¥é¾å³¶" : "ç¥é¾å³¶åœ¨æ±å·çš„æ±åŒ—æ–¹å‘ï¼Œå¾å¡˜æ²½å£å‡ºæµ·ä¾¿åˆ°ã€‚",
+                "ç¥é¾æ•™" : "ä¸€èˆ¬äººæ˜¯å…¥ä¸äº†æˆ‘ç¥é¾æ•™çš„(join shenlongjiao).\n",
+                "å…¥æ•™"   : "ä¸€èˆ¬äººæ˜¯å…¥ä¸äº†æˆ‘ç¥é¾æ•™çš„(join shenlongjiao).\n",
+                "æ•™ä¸»"   : "æ•™ä¸»è„¾æ°£ä¸å¥½ï¼Œè¦è¨ä»–æ­¡å¿ƒæ‰å¥½ã€‚\n",
+                "å£è™Ÿ"   : "è¬å¹´ä¸è€ï¼æ°¸äº«ä»™ç¦ï¼å£½èˆ‡å¤©é½Šï¼æ–‡æ­¦ä»è–ï¼\n",
         ]));
-        set("party/party_name", HIY"ÉñÁú½Ì"NOR);
-        set("party/rank", HIW"°×ÁúÃÅ"NOR"ÕÆÃÅÊ¹");
+        set("party/party_name", HIY"ç¥é¾æ•™"NOR);
+        set("party/rank", HIW"ç™½é¾é–€"NOR"æŒé–€ä½¿");
         set("party/level", 2);
-        create_family("ÉñÁú½Ì", 2, "µÜ×Ó");
+        create_family("ç¥é¾æ•™", 2, "å¼Ÿå­");
 
         setup();
         carry_object(WEAPON_DIR"hook")->wield();
@@ -97,6 +97,6 @@ void greeting(object ob)
 
 void attempt_apprentice(object ob)
 {
-        command("say Äã×ß¿ª£¡±ğ·³ÎÒ£¡");
+        command("say ä½ èµ°é–‹ï¼åˆ¥ç…©æˆ‘ï¼");
         return;
 }

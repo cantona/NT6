@@ -1,15 +1,15 @@
-// minju3.c ���
+// minju3.c 民居
 // Winder Oct.10 1998
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "���");
+        set("short", "民居");
         set("long", @LONG
-����һ�������ӣ����ζ��ܾ��ˣ����ҿ��ó������Լ����ô��
-��ƴ�������ģ��������õúܸɾ���ǽ����б����һ֧�Բ棬Ҳ�����
-�����˻��Ǹ����Ը��֡�
+這是一所鄉間民居，桌椅都很舊了，而且看得出來是自己敲敲打打
+給拼補下來的，不過擦拭得很幹凈。牆壁上斜倚著一支獵叉，也許這家
+的主人還是個捕獵高手。
 LONG
         );
         set("exits", ([

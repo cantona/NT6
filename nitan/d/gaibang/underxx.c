@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "É³ÇðÐ¡¶´");
+        set("short", "æ²™ä¸˜å°æ´ž");
         set("long", @LONG
-ÕâÀïÊÇÉ³ÇðÊ¯±®ÏÂµÄÒ»¸öÃÜ¶´¡£ÀïÃæÆÆÆÆÀÃÀÃµÄ£¬¶ªÂúÁË¸÷ÖÖ
-ÔÓÎï£¬»¹ÓÐØ¤°ïµÜ×ÓÊÕ¼¯µÄÆÆÍ­ÀÃÌúµÈ¡£´ÓÕâÀïÍ¨ÍùØ¤°ïµÄÃØÃÜÍ¨
-µÀ¡£
+é€™è£¡æ˜¯æ²™ä¸˜çŸ³ç¢‘ä¸‹çš„ä¸€å€‹å¯†æ´žã€‚è£¡é¢ç ´ç ´çˆ›çˆ›çš„ï¼Œä¸Ÿæ»¿äº†å„ç¨®
+é›œç‰©ï¼Œé‚„æœ‰ä¸å¹«å¼Ÿå­æ”¶é›†çš„ç ´éŠ…çˆ›éµç­‰ã€‚å¾žé€™è£¡é€šå¾€ä¸å¹«çš„ç§˜å¯†é€š
+é“ã€‚
 LONG );
         set("exits", ([
                 "west" : "d/xingxiu/silk5",

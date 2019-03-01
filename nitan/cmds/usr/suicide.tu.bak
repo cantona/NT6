@@ -11,9 +11,9 @@ int help(object me);
 void create() 
 {
         seteuid(getuid());
-        set("name", "��ɱָ��");
+        set("name", "自殺指令");
         set("id", "suicide");
-        set("channel_id", "Ͷ̥����");
+        set("channel_id", "投胎精靈");
 }
 
 int main(object me, string arg)
@@ -25,18 +25,18 @@ int main(object me, string arg)
         int is_member=0;
         
         if (me->is_busy())
-                return notify_fail("����һ��������û��ɡ�\n");
+                return notify_fail("你上一個動作還沒完成。\n");
         real_suicide=0;
         inv = deep_inventory(me);
         for (i = 0; i < sizeof(inv); i++)
         {
                 if (! userp(inv[i]) && ! playerp(inv[i])) continue;
-                return notify_fail("�����ϻ��и�������أ��벻��Ҳ��ѽ��\n");
+                return notify_fail("你身上還有個大活人呢，想不開也別急呀？\n");
         }
 
         if (! arg)
         {
-                write(HIR"�����Ӳ������С�\n"NOR);
+                write(HIR"你必須加參數運行。\n"NOR);
                 help(me);
                 return 1;
         }
@@ -50,26 +50,26 @@ int main(object me, string arg)
                         break;
                 case "-x":
                         if(!is_member)
-                                return notify_fail("�Բ����㲻�ǽ��ѻ�Ա����Ȩʹ�� -x ѡ�\n");
+                                return notify_fail("對不起，你不是交費會員，無權使用 -x 選項。\n");
                         real_suicide=1;
                         break;
                 default:
                         return help(me);
         }
         if(!real_suicide&&!is_member)
-                return notify_fail("�Բ���ֻ�н��ѻ�Ա�ſ���ʹ��Ͷ̥���ܡ�\n");
-        if(real_suicide)//��ɱģʽ
-                write(ALERT("��ע�⣬������Ѿ�Ϊ����ʺŹ�������Ϸʱ�䣬$$��ɱ����ѹ����ʱ��һ�������$$")+
-                        HIR+"��ע�⣬������Ѿ�Ϊ����ʺŹ�������Ϸʱ�䣬��Զ��ɱ����ѹ�\n"+
-                        "���ʱ��һ�������\n"+NOR+
-                        "��ѡ����"+HIG+"��Զ����"+NOR+"����ɱ��ʽ�������������Ͻ���Զɾ���������\n"+
-                        "���������ȷ���Ļ���������ȷ�����룬�����������������˳���\n���������Ĺ������룺");
-        else//Ͷ̥ģʽ
-                write("��ע�⣬��ѡ����"+HIG+"����Ͷ̥"+NOR+"������Ͷ̥�����³�ʼ��������\n"+
-                        "���Ǳ��������Ӣ�������Ա�����͹���������ʱ���\n"+
-                        "���ϡ�"+HIR+"�����ؾ�����ʦ����Ϊ������ѡ������ֲ��ġ�\n"+NOR+
-                        "�����ȷ������������ȷ�Ĺ������룬����������������\n"+
-                        "���˳������������Ĺ������룺");
+                return notify_fail("對不起，只有交費會員才可以使用投胎功能。\n");
+        if(real_suicide)//自殺模式
+                write(ALERT("請注意，如果你已經為這個帳號購買了遊戲時間，$$自殺將會把購買的時間一並清除！$$")+
+                        HIR+"請注意，如果你已經為這個帳號購買了遊戲時間，永遠自殺將會把購\n"+
+                        "買的時間一並清除！\n"+NOR+
+                        "您選擇了"+HIG+"永遠死掉"+NOR+"的自殺方式，這個人物的資料將永遠刪除，請務必\n"+
+                        "考慮清楚，確定的話請輸入正確的密碼，否則輸入錯誤的密碼退出。\n請輸入您的管理密碼：");
+        else//投胎模式
+                write("請注意，你選擇了"+HIG+"重新投胎"+NOR+"，重新投胎將重新初始化你的人物，\n"+
+                        "但是保留你的中英文名，性別，年齡和購買、已消費時間等\n"+
+                        "資料。"+HIR+"請慎重抉擇，巫師不會為你錯誤的選擇進行彌補的。\n"+NOR+
+                        "如果你確定，請輸入正確的管理密碼，否則請輸入錯誤的密\n"+
+                        "碼退出。請輸入您的管理密碼：");
         input_to("check_password", 1, me, real_suicide);
         return 1;
 }
@@ -83,12 +83,12 @@ private void check_password(string passwd, object me, int forever)
         old_pass=query("ad_password", link_ob);
         if (! stringp(old_pass) || crypt(passwd, old_pass) != old_pass)
         {
-                write(HIR "���������ע�⣬���������������롣\n");
+                write(HIR "密碼錯誤！請注意，你必須輸入管理密碼。\n");
                 return;
         }
 
-        tell_object(me, HIR "\n�����Ҫ"+((forever)?"��ɱ":"����Ͷ̥")+"�ˣ������ʮ��"
-                    "���ڲ���ڣ�����Ĳ�������ˡ�\n\n" NOR);
+        tell_object(me, HIR "\n你決定要"+((forever)?"自殺":"重新投胎")+"了，如果三十秒"
+                    "鐘內不後悔，就真的不可挽回了。\n\n" NOR);
         set_temp("suicide/time", time(), me);
         set_temp("suicide/last", 0, me);
         set_temp("suicide/forever", forever, me);
@@ -117,8 +117,8 @@ private int slow_suicide(object me)
                 if( t-query_temp("suicide/last", me)<5 )
                         return 1;
 
-                tell_object(me, HIR "\n�㻹��" + chinese_number(30 - t) +
-                            "������ϸ����(" HIC "haltֹͣ" HIR ")��\n" NOR);
+                tell_object(me, HIR "\n你還有" + chinese_number(30 - t) +
+                            "秒鐘仔細考慮(" HIC "halt停止" HIR ")。\n" NOR);
                 set_temp("suicide/last", t/5*5, me);
                 return 1;
         }
@@ -138,33 +138,33 @@ private int slow_suicide(object me)
         for (i = 0; i < sizeof(inv); i++)
         {
                 if (! userp(inv[i]) && ! playerp(inv[i])) continue;
-                tell_object(me, HIR"�����ϻ��и�������أ��벻��Ҳ��ѽ��\n"NOR);
+                tell_object(me, HIR"你身上還有個大活人呢，想不開也別急呀？\n"NOR);
                 return 0;
         }
                 
         if( query_temp("suicide/forever", me) )
         {
-                //������ɱ
-                write("\n�ðɣ�������:)��\n\n");
+                //永久自殺
+                write("\n好吧，永別了:)。\n\n");
                 CHANNEL_D->do_channel(this_object(), "rumor",
-                        sprintf("%s��ɱ�ˣ��Ժ�����Ҳ������������ˡ�",
+                        sprintf("%s自殺了，以後你再也看不到這個人了。",
                         me->name()));
                 tell_room(environment(me), me->name() +
-                        "�������ǰ�������̣�������ʧ��...\n"+REM0(me), ({me}));
+                        "在你的面前化作輕煙，漸漸消失了...\n"+REM0(me), ({me}));
                 message("system",REM2(me),users());
                 UPDATE_D->remove_user(query("id", me));
         }
         else
         {
-                //����Ͷ̥
+                //重新投胎
                 object ob,user;
                 string *res;
                 mapping my=me->query_entire_dbase();
-                ob=query_temp("link_ob", me);//�϶��ܷ�����ȷOB
+                ob=query_temp("link_ob", me);//肯定能返回正確OB
                 user=LOGIN_D->make_body(ob);
                 res=DATABASE_D->do_sql("selectfee_timefromuserswhereid='"+query("id", me)+"'");
                 
-                //Ӧ�ñ��������
+                //應該保存的屬性
                 set("name", my["name"], user);
                 set("id", my["id"], user);
                 user->set_name(my["name"],({my["id"]}) );
@@ -175,8 +175,8 @@ private int slow_suicide(object me)
                 set("per", 20, user);
                 set("type", my["type"], user);
                 set("gender", my["gender"], user);
-                set("onl_time", my["onl_time"], user);//��¼�Ѿ�ʹ�õķ���
-                set_temp("fee_time", res[0], user);//��¼�ܷ���
+                set("onl_time", my["onl_time"], user);//記錄已經使用的費用
+                set_temp("fee_time", res[0], user);//記錄總費用
                 set("age", my["age"], user);
                 set("monfee", my["monfee"], if( my["monfee"]>0)user);
 
@@ -184,24 +184,24 @@ private int slow_suicide(object me)
                 set("purename", my["purename"], user);
                 set_temp("link_ob", ob, user);
                 set_temp("body_ob", user, ob);
-                //��ʾ��Ϣ
-                tell_room(environment(me),query("name", me)+"ͻȻ�����ڵأ�����Խ��ԽС��ʹ����֡�һ���ۣ���Ȼƾ����ʧ��......\n");
-                CHANNEL_D->do_channel(this_object(),"rumor","��˵"+query("name", me)+"("+query("id", me)+")���ȥ�ˡ���ɱ����Ͷ̥ȥ�ˡ�\n");
-                if(exec(user,me)) //������Ȩת�Ƶ�user�ϡ�
+                //顯示信息
+                tell_room(environment(me),query("name", me)+"突然跌倒在地，身形越縮越小，痛苦萬分。一晃眼，竟然憑空消失了......\n");
+                CHANNEL_D->do_channel(this_object(),"rumor","聽說"+query("name", me)+"("+query("id", me)+")活不下去了。自殺重新投胎去了。\n");
+                if(exec(user,me)) //將控制權轉移到user上。
                 {
-                        write("����Ͷ̥�ɹ���\n");
-                        log_file("static/suicide_f",ctime(time())+""+me->name()+"("+query("id", me)+")����Ͷ̥�ɹ���\n");
+                        write("重新投胎成功！\n");
+                        log_file("static/suicide_f",ctime(time())+""+me->name()+"("+query("id", me)+")重新投胎成功！\n");
                 }        
                 else
-                        log_file("static/suicide_f",ctime(time())+""+me->name()+"("+query("id", me)+")����Ͷ̥ʧ�ܣ�\n");
+                        log_file("static/suicide_f",ctime(time())+""+me->name()+"("+query("id", me)+")重新投胎失敗！\n");
                 user->setup();
-                UPDATE_D->clear_user_data(query("id", me),"all");//����������
-                destruct(me); //�ݻپ����
-                //�����¼�¼
+                UPDATE_D->clear_user_data(query("id", me),"all");//清除玩家數據
+                destruct(me); //摧毀舊物件
+                //創建新記錄
                 LOGIN_D->init_new_player(user);
                 UPDATE_D->check_user(user);
                 //DATABASE_D->db_new_player(ob,user);
-                user->move(REGISTER_ROOM);//�ƶ���ע�ᴦ����Ͷ̥
+                user->move(REGISTER_ROOM);//移動到注冊處重新投胎
                 set("startroom", REGISTER_ROOM, user);
                 user->save();
 
@@ -211,7 +211,7 @@ private int slow_suicide(object me)
 
 private int halt_suicide(object me)
 {
-        tell_object(me,HIG"�������"+(query_temp("suicide/forever", me)?"Ѱ��":"����Ͷ̥")+"����ͷ��\n"NOR);
+        tell_object(me,HIG"你打消了"+(query_temp("suicide/forever", me)?"尋死":"重新投胎")+"的念頭。\n"NOR);
         delete_temp("suicide", me);
         return 1;
 }
@@ -219,26 +219,26 @@ private int halt_suicide(object me)
 int help (object me)
 {
         write(@HELP
-ָ���ʽ: suicide [-f]
+指令格式: suicide [-f]
 
-��ע�⣬������Ѿ�Ϊ����ʺŹ�������Ϸʱ�䣬
-��ɱ����ѹ����ʱ��һ�������
-�����Ϊĳ��ԭ���㲻�����, �����ѡ����ɱ.
-��ɱ������:
+請注意，如果你已經為這個帳號購買了遊戲時間，
+自殺將會把購買的時間一並清除！
+如果因為某種原因你不想活了, 你可以選擇自殺.
+自殺分兩種:
  
-suicide    : ��ʾ����
-suicide -f : �ǻ�Ա�����ô�ѡ����ȫ��Ĩȥ
-             �Լ������ϡ�����Ա�ô����
-             ���ǽ���һ������������Ͷ̥��
-             ��Ա����Ӣ�����ƣ��Ա���Ϸ
-             ʱ�䣬����Ƚ��õ����档
-suicide -x : ��Աר��ѡ������������Ľ�
-             ��Ա������Ĩ�����������Ϸʱ
-             ��Ҳ��Ĩȥ��������ʹ�á�����
-             �����Դ���Ϊ����������κβ�
-             �ȴ�ʩ����ұ����Լ��е��ɴ�
-             �������κ���ʧ�� 
-������ѡ�� :)
+suicide    : 顯示幫助
+suicide -f : 非會員可以用此選項完全地抹去
+             自己的資料。而會員用此項功能
+             將是進行一次真正的重新投胎，
+             會員的中英文名稱，性別，遊戲
+             時間，年齡等將得到保存。
+suicide -x : 會員專用選項，用來無條件的將
+             會員的資料抹除。購買的遊戲時
+             間也將抹去。請慎重使用。我們
+             將不對此行為負責或者做任何補
+             救措施，玩家必須自己承擔由此
+             帶來的任何損失。 
+請慎重選擇 :)
  
 HELP );
         return 1;

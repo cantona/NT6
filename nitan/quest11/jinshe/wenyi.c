@@ -11,11 +11,11 @@ void create()
 {
         object ob;
         object sb;
-        set_name("ÎÂÒÇ", ({ "wen yi", "wen" }));
+        set_name("æº«å„€", ({ "wen yi", "wen" }));
         set("long", 
-        "Ëı¾ÍÊÇ½ğÉßÀÉ¾ıµÄÆŞ×ÓÎÂÒÇ¡£\n"
-        "Ò»Î»ÈıÊ®À´ËêµÄÅ®×Ó£¬ÈİÃ²ÇåĞã£¬ÓĞ×ÅÒ»ÖÖ³ÉÊìµÄÔÏÎ¶¡£\n");
-        set("gender", "Å®ĞÔ");
+        "å¥¹å°±æ˜¯é‡‘è›‡éƒå›çš„å¦»å­æº«å„€ã€‚\n"
+        "ä¸€ä½ä¸‰åä¾†æ­²çš„å¥³å­ï¼Œå®¹è²Œæ¸…ç§€ï¼Œæœ‰è‘—ä¸€ç¨®æˆç†Ÿçš„éŸ»å‘³ã€‚\n");
+        set("gender", "å¥³æ€§");
         set("age", 36);
         set("attitude", "friendly");
         set("shen", 1000);
@@ -52,15 +52,15 @@ void create()
     prepare_skill("cuff", "wenjia-quan");
     
     set("inquiry", ([
-                "ÎÂÇàÇà" : "ÇàÇàÊÇÎÒÅ®¶ù,ËıĞÕÏÄ,½ĞÏÄÇàÇà.\n",
-                "ÏÄÇàÇà" : "ÇàÇàÊÇÎÒÅ®¶ù.\n",
-                "ÎÂ·½É½" : "ÎÂ·½É½ÊÇÎÒµùµù.\n",
-                "½ğÉßÀÉ¾ı" : "ÃûÕğÌìÏÂµÄ½ğÉßÀÉ¾ı¾ÍÊÇÎÒµÄ·ò¾ı¡£\n",
-                "ÎÂ¼ÒÎåÀÏ" : "ºß......\n",
-                "ÏÄÑ©ÒË" : (: ask_xia1 :),
-                "±¦Îï" : (: ask_gift :),
-                "ÕÆ·¨ÃØ¼®" : (: ask_gift :),
-                "½ğÉßÕÆ·¨" : (: ask_gift :),
+                "æº«é’é’" : "é’é’æ˜¯æˆ‘å¥³å…’,å¥¹å§“å¤,å«å¤é’é’.\n",
+                "å¤é’é’" : "é’é’æ˜¯æˆ‘å¥³å…’.\n",
+                "æº«æ–¹å±±" : "æº«æ–¹å±±æ˜¯æˆ‘çˆ¹çˆ¹.\n",
+                "é‡‘è›‡éƒå›" : "åéœ‡å¤©ä¸‹çš„é‡‘è›‡éƒå›å°±æ˜¯æˆ‘çš„å¤«å›ã€‚\n",
+                "æº«å®¶äº”è€" : "å“¼......\n",
+                "å¤é›ªå®œ" : (: ask_xia1 :),
+                "å¯¶ç‰©" : (: ask_gift :),
+                "æŒæ³•ç§˜ç±" : (: ask_gift :),
+                "é‡‘è›‡æŒæ³•" : (: ask_gift :),
         ]));
  
         setup(); 
@@ -90,23 +90,23 @@ void kill_ob(object ob)
 {
         ob->remove_killer(this_object());
         remove_killer(ob);
-        message_vision("ÎÂÒÇ¶Ô$Nµ­µ­Ò»Ğ¦£¬ÓÖ×ª¹ıÉíÈ¥£¬Ã¼Óî¼äÃ»ÓĞË¿ºÁ¿Ö¾å¡£¡±\n", ob);
-        message_vision("$NĞÄÖĞºöÈ»¾õµÃ£º¡°×Ô¼ºÔõ÷áÕâ÷áÎŞ³Ü£¬¶ÔÒ»¸öÊÖÎŞ´çÌúµÄÈËÒ²ÒªÏÂ´Ë¶¾ÊÖ£¿¡±\n", ob);
+        message_vision("æº«å„€å°$Næ·¡æ·¡ä¸€ç¬‘ï¼Œåˆè½‰éèº«å»ï¼Œçœ‰å®‡é–“æ²’æœ‰çµ²æ¯«ææ‡¼ã€‚â€\n", ob);
+        message_vision("$Nå¿ƒä¸­å¿½ç„¶è¦ºå¾—ï¼šâ€œè‡ªå·±æ€éº¼é€™éº¼ç„¡æ¥ï¼Œå°ä¸€å€‹æ‰‹ç„¡å¯¸éµçš„äººä¹Ÿè¦ä¸‹æ­¤æ¯’æ‰‹ï¼Ÿâ€\n", ob);
 }
 
 int ask_xia1()
 {
         object me = this_player();
         string msg;
-        msg = CYN"ÎÂÒÇÌıµ½$NµÄÑ¯ÎÊ,Éí×ÓÒ»Õğ,Á³É«´ó±ä¡£\n"NOR;
+        msg = CYN"æº«å„€è½åˆ°$Nçš„è©¢å•,èº«å­ä¸€éœ‡,è‡‰è‰²å¤§è®Šã€‚\n"NOR;
         message_vision(msg, me);
                 
-    if( query_temp("quest/½ğÉßÕÆ·¨/start",1, me)){
+    if( query_temp("quest/é‡‘è›‡æŒæ³•/start",1, me)){
         remove_call_out("do_happen1");
         call_out("do_happen1",3,me);
                 return 1;
         }
-        msg = CYN"ÎÂÒÇÁ³É«±äÁË¼¸±ä,½¥½¥Æ½¾²ÏÂÀ´,¶Ô$NËµ:ÄãÎÊËû×÷Ê²Ã´?\n"NOR;
+        msg = CYN"æº«å„€è‡‰è‰²è®Šäº†å¹¾è®Š,æ¼¸æ¼¸å¹³éœä¸‹ä¾†,å°$Nèªª:ä½ å•ä»–ä½œä»€éº¼?\n"NOR;
         message_vision(msg,me);
         set_temp("quest/jinshe2/fail", 1, me);
         return 1;
@@ -116,11 +116,11 @@ int do_happen1(object me)
 {
         string msg;
         //if (base_name(environment(me)) != HERE)               return 1;
-        msg = CYN"ÎÂÒÇÌ¾ÁË¿ÚÆø,µÀ:¼ÈÈ»ÄãÊÇÇàÇàµÄÅóÓÑ,ÎÒ¾Í¸æËßÄã°É¡£\n"NOR;
-        msg+= CYN"ÎÂÒÇ¶ÙÁË¶ÙµÀ:ÄÇÊÇÒ»¶Î³ÂÄê¾ÉÊÂ,Ê®°ËÄêÇ°ÎÒÓöµ½ÁËÇàÇàµÄ¸¸Ç×ÏÄÑ©ÒË,Ò²¾ÍÊÇ½ğÉßÀÉ¾ı¡£\n"NOR;
-        msg+= CYN"ÎÂÒÇµÀ:ÎÒÃÇÏàÇ×Ïà°®,±¾ÒÔÎª,±¾ÒÔÎªÕæµÄ¿ÉÒÔ»¯½â¸¸±²µÄ³ğºŞ,¿ÉÊÇµùµù......¡£\n"NOR;
-        msg+= CYN"ÎÂÒÇÍ»È»ÑÛÈ¦·¢ºì,ßìÑÊ×ÅËµ²»³ö»°À´......\n"NOR;
-        msg+= HIG"ÎÂÒÇ¿ŞµÃÀæ»¨´øÓê,³ş³ş¿ÉÁ¯,ÄãÈÌ²»×¡Ïë"HIC"°²Î¿(comfort)"HIG"ËıÒ»ÏÂ.\n"NOR;
+        msg = CYN"æº«å„€å˜†äº†å£æ°£,é“:æ—¢ç„¶ä½ æ˜¯é’é’çš„æœ‹å‹,æˆ‘å°±å‘Šè¨´ä½ å§ã€‚\n"NOR;
+        msg+= CYN"æº«å„€é “äº†é “é“:é‚£æ˜¯ä¸€æ®µé™³å¹´èˆŠäº‹,åå…«å¹´å‰æˆ‘é‡åˆ°äº†é’é’çš„çˆ¶è¦ªå¤é›ªå®œ,ä¹Ÿå°±æ˜¯é‡‘è›‡éƒå›ã€‚\n"NOR;
+        msg+= CYN"æº«å„€é“:æˆ‘å€‘ç›¸è¦ªç›¸æ„›,æœ¬ä»¥ç‚º,æœ¬ä»¥ç‚ºçœŸçš„å¯ä»¥åŒ–è§£çˆ¶è¼©çš„ä»‡æ¨,å¯æ˜¯çˆ¹çˆ¹......ã€‚\n"NOR;
+        msg+= CYN"æº«å„€çªç„¶çœ¼åœˆç™¼ç´…,å“½åš¥è‘—èªªä¸å‡ºè©±ä¾†......\n"NOR;
+        msg+= HIG"æº«å„€å“­å¾—æ¢¨èŠ±å¸¶é›¨,æ¥šæ¥šå¯æ†,ä½ å¿ä¸ä½æƒ³"HIC"å®‰æ…°(comfort)"HIG"å¥¹ä¸€ä¸‹.\n"NOR;
         message_vision(msg, me);
          set("quest/jinshe2/step1", 1, me);
         return 1;       
@@ -131,20 +131,20 @@ int do_comfort(string arg)
        object me=this_player();
        if( !query("quest/jinshe2/step1", this_player()))return 0;
         
-        if( !arg ) return notify_fail("ÄãËµÊ²Ã´£¿\n");
+        if( !arg ) return notify_fail("ä½ èªªä»€éº¼ï¼Ÿ\n");
         
-        message_vision("$NÇáÉù°²Î¿µÀ£º" + arg + "\n", this_player());
-        if( strsrch(arg, "ÏÄ·òÈË") >=0 && (strsrch(arg, "Äã±ğÄÑ¹ı") >=0
-         || strsrch(arg, "ÊÇ½ğÉßÀÉ¾ı") >=0 || strsrch(arg, "ÌØÒâ½ĞÎÒÀ´ÕÒÄãµÄ") >=0 )) {
+        message_vision("$Nè¼•è²å®‰æ…°é“ï¼š" + arg + "\n", this_player());
+        if( strsrch(arg, "å¤å¤«äºº") >=0 && (strsrch(arg, "ä½ åˆ¥é›£é") >=0
+         || strsrch(arg, "æ˜¯é‡‘è›‡éƒå›") >=0 || strsrch(arg, "ç‰¹æ„å«æˆ‘ä¾†æ‰¾ä½ çš„") >=0 )) {
                 command("ah");
-                command("say ÄãËµµÄ¶¼ÊÇÕæµÄ?!!!\n");
+                command("say ä½ èªªçš„éƒ½æ˜¯çœŸçš„?!!!\n");
                 command("touch"+query("id", this_player()));
                 set_temp("quest/jinshe2/step2", 1, this_player());
                 delete_temp("quest/jinshe2/step1",1, this_player());
                 return 0;
         } else {
-                command("say ËûÕâ¸ö¸ºĞÄÈË,¶ªÏÂÎÒÃÇÄï¶ùÁ©,Ò»×ß¾ÍÊÇÊ®°ËÄê.");
-                msg = HIC"°²Î¿ÈË×ÜµÃÓĞ¸ö³Æºô,Ëµ·¨,ÏûÏ¢ºÍÀíÓÉ°É£¿\n"NOR;
+                command("say ä»–é€™å€‹è² å¿ƒäºº,ä¸Ÿä¸‹æˆ‘å€‘å¨˜å…’å€†,ä¸€èµ°å°±æ˜¯åå…«å¹´.");
+                msg = HIC"å®‰æ…°äººç¸½å¾—æœ‰å€‹ç¨±å‘¼,èªªæ³•,æ¶ˆæ¯å’Œç†ç”±å§ï¼Ÿ\n"NOR;
                 message_vision(msg, me);
         }
         
@@ -156,56 +156,56 @@ int accept_object(object who, object ob)
     object me = this_player();
         if( !who || environment(who) != environment() ) {return 0;}
         if ( !objectp(ob) ) {return 0; }
-        if ( !present(ob, who) ) return notify_fail("ÄãÃ»ÓĞÕâ¼ş¶«Î÷¡£\n");
+        if ( !present(ob, who) ) return notify_fail("ä½ æ²’æœ‰é€™ä»¶æ±è¥¿ã€‚\n");
         if( !query_temp("quest/jinshe2/step2", this_player()) && !query("quest/jinshe2/xin", this_player()))return 0;
         if (userp(ob)) {
                command("?"+query("id", who));
-               command("say Äã°ÑÈË´òÔÎÏë¸ÉÊ²Ã´£¿");
+               command("say ä½ æŠŠäººæ‰“æšˆæƒ³å¹¹ä»€éº¼ï¼Ÿ");
                this_object()->kill_ob(who);
-               return notify_fail("Ôã¸â£¬´©°ïÁË£¡\n");
+               return notify_fail("ç³Ÿç³•ï¼Œç©¿å¹«äº†ï¼\n");
         }
-        if( query("id", ob) == "xinjian" && query("name", ob) == "¼ÒĞÅ"){
+        if( query("id", ob) == "xinjian" && query("name", ob) == "å®¶ä¿¡"){
                 if( query("quest/jinshe2/xin", this_player())){
                         command("wuwu");
-                        command("say Õâ...ÕâÊÇÑ©ÒËµÄ×ÖÌå¡£");
+                        command("say é€™...é€™æ˜¯é›ªå®œçš„å­—é«”ã€‚");
                         command("touch"+query("id", who));
-                        command("say Ñ©ÒË´ÓÇ°ÁôÏÂÁËÒ»Åú±¦Îï,ËÍÄãµ±×÷¸ĞĞ»°É!"); 
+                        command("say é›ªå®œå¾å‰ç•™ä¸‹äº†ä¸€æ‰¹å¯¶ç‰©,é€ä½ ç•¶ä½œæ„Ÿè¬å§!"); 
                         set("quest/jinshe2/gift", 1, this_player());
                         call_out("destroying", 1, ob);
                         return 1; 
             }
             command("hmm");
-            command("say ÄãÊÇ´ÓÄÄÀïµÃµ½µÄÕâ·âĞÅ?µ±ĞÄÎÒÈ¥ÕÒÔÂÓ°¾Ù±¨Äã!");
-            msg = HIG"ÎÂÒÇÁøÃ¼Ò»Öå:À´ÈË°¡,°ÑÕâ¸öÆ­×Óºä³öÈ¥!!!¡£\n"NOR;
+            command("say ä½ æ˜¯å¾å“ªè£¡å¾—åˆ°çš„é€™å°ä¿¡?ç•¶å¿ƒæˆ‘å»æ‰¾æœˆå½±èˆ‰å ±ä½ !");
+            msg = HIG"æº«å„€æŸ³çœ‰ä¸€çšº:ä¾†äººå•Š,æŠŠé€™å€‹é¨™å­è½Ÿå‡ºå»!!!ã€‚\n"NOR;
             message_vision(msg, me);
-            message_vision(HIR"\nÒ»Èº¼Ò¶¡Ó¦Éù¶ø³ö,½«$NÂÒ°ô´òÔÎ,¶ªÁË³öÈ¥¡£\n"NOR,me);
+            message_vision(HIR"\nä¸€ç¾¤å®¶ä¸æ‡‰è²è€Œå‡º,å°‡$Näº‚æ£’æ‰“æšˆ,ä¸Ÿäº†å‡ºå»ã€‚\n"NOR,me);
             me->unconcious();
             me->move("/d/city/chmiao");
-            tell_room(environment(me),HIR"Í»È»Ó¿³öÒ»ÈºÎÂ¸®¼Ò¶¡,½«" + me->name(1) +"ÂÒ¹÷´òÔÎ,¶ªÁË³öÈ¥"NOR);
+            tell_room(environment(me),HIR"çªç„¶æ¹§å‡ºä¸€ç¾¤æº«åºœå®¶ä¸,å°‡" + me->name(1) +"äº‚æ£æ‰“æšˆ,ä¸Ÿäº†å‡ºå»"NOR);
             return 1;
           }
-        if( query("name", ob) != HIY"½ğÉß×¶"NOR || query("id", ob) != "jinshezhui"){
+        if( query("name", ob) != HIY"é‡‘è›‡éŒ"NOR || query("id", ob) != "jinshezhui"){
                command("shake"+query("id", who));
-               command("say Ğ»Ğ»ÄãÀ²¡£");
+               command("say è¬è¬ä½ å•¦ã€‚");
                return 0;
         }
-        if( !query_temp("quest/½ğÉß½£·¨/½ğÉß×¶", this_player()) )
+        if( !query_temp("quest/é‡‘è›‡åŠæ³•/é‡‘è›‡éŒ", this_player()) )
         {
              command("hmm");
-              command("say ÄãÊÇ´ÓÄÄÀïµÃµ½µÄ?µ±ĞÄÎÒÈ¥ÕÒÔÂÓ°ºÍ´÷÷ì¾Ù±¨Äã!");
-             msg = HIG"ÎÂÒÇÁøÃ¼Ò»Öå:À´ÈË°¡,°ÑÕâ¸öÆ­×Óºä³öÈ¥!!!¡£\n"NOR;
+              command("say ä½ æ˜¯å¾å“ªè£¡å¾—åˆ°çš„?ç•¶å¿ƒæˆ‘å»æ‰¾æœˆå½±å’Œæˆ´é»›èˆ‰å ±ä½ !");
+             msg = HIG"æº«å„€æŸ³çœ‰ä¸€çšº:ä¾†äººå•Š,æŠŠé€™å€‹é¨™å­è½Ÿå‡ºå»!!!ã€‚\n"NOR;
              message_vision(msg, me);
-             message_vision(HIR"\nÒ»Èº¼Ò¶¡Ó¦Éù¶ø³ö,½«$NÂÒ°ô´òÔÎ,¶ªÁË³öÈ¥¡£\n"NOR,me);
+             message_vision(HIR"\nä¸€ç¾¤å®¶ä¸æ‡‰è²è€Œå‡º,å°‡$Näº‚æ£’æ‰“æšˆ,ä¸Ÿäº†å‡ºå»ã€‚\n"NOR,me);
              me->unconcious();
              me->move("/d/city/chmiao");
-             tell_room(environment(me),HIR"Í»È»Ó¿³öÒ»ÈºÎÂ¸®¼Ò¶¡,½«" + me->name(1) +"ÂÒ¹÷´òÔÎ,¶ªÁË³öÈ¥"NOR);
+             tell_room(environment(me),HIR"çªç„¶æ¹§å‡ºä¸€ç¾¤æº«åºœå®¶ä¸,å°‡" + me->name(1) +"äº‚æ£æ‰“æšˆ,ä¸Ÿäº†å‡ºå»"NOR);
          call_out("destroying", 1, ob);
              return 1;
 }
         command("ah"+query("id", who));
-        command("say ÕâÊÇÑ©ÒËµÄËæÉíÖ®Îï,¿´À´ÄãÊÇËûÍĞ¸¶µÄÈË,Èç¹ûÓĞËûµÄ"HIY"ÏûÏ¢"CYN"µÄ»°,Âé·³ÇëÄú¸æËßÎÒÒ»Éù.\n"NOR);
+        command("say é€™æ˜¯é›ªå®œçš„éš¨èº«ä¹‹ç‰©,çœ‹ä¾†ä½ æ˜¯ä»–æ‰˜ä»˜çš„äºº,å¦‚æœæœ‰ä»–çš„"HIY"æ¶ˆæ¯"CYN"çš„è©±,éº»ç…©è«‹æ‚¨å‘Šè¨´æˆ‘ä¸€è².\n"NOR);
         command("thank"+query("id", who));
-        msg = HIG"ÎÂÒÇÏòÄã´òÌıÓĞ¹ØÏÄÑ©ÒËµÄ"HIW"ÏûÏ¢"HIG",È¥¿´¿´ÏÄÑ©ÒËµÄ"HIR"ÒÅÎï"HIG"ÀïÓĞÊ²Ã´ÏßË÷°É¡£\n"NOR;
+        msg = HIG"æº«å„€å‘ä½ æ‰“è½æœ‰é—œå¤é›ªå®œçš„"HIW"æ¶ˆæ¯"HIG",å»çœ‹çœ‹å¤é›ªå®œçš„"HIR"éºç‰©"HIG"è£¡æœ‰ä»€éº¼ç·šç´¢å§ã€‚\n"NOR;
         message_vision(msg, me);
         set("quest/jinshe2/xin", 1, who);
         delete_temp("quest/jinshe2/step2",1, who);
@@ -226,19 +226,19 @@ string ask_gift()
         int time;
   
   if( !query("quest/jinshe2/pass", me) && !query("quest/jinshe2/gift", me) )
-        return "Ò®?ÄãÔõÃ´Í»È»ËµÕâÃ´Ææ¹ÖµÄÊÂÇé?\n";
+        return "è€¶?ä½ æ€éº¼çªç„¶èªªé€™éº¼å¥‡æ€ªçš„äº‹æƒ…?\n";
         
         if ( is_busy() || is_fighting())
-                return "ÄãÃ»¿´µ½ÎÒÕıÃ¦×ÅÃ´£¿\n";
+                return "ä½ æ²’çœ‹åˆ°æˆ‘æ­£å¿™è‘—éº¼ï¼Ÿ\n";
   
         sb = present("box", this_object());
   ob = present("zhangfa miji", this_object());
         if ( !ob && !sb)
-                return "Ò®£¿¶«Î÷¸øÎÒ·Åµ½ÄÇÀïÈ¥ÁË£¿\n";
+                return "è€¶ï¼Ÿæ±è¥¿çµ¦æˆ‘æ”¾åˆ°é‚£è£¡å»äº†ï¼Ÿ\n";
 
         time=time()-query("quest/jinshe2/zf_time", me);
         if( query("quest/jinshe2/zf_time", me) && time<86400 && !wizardp(me) && !query("env/debug", me) )
-                return "Äã²»ÊÇÒÑ¾­ÎÊ¹ıÁË?ÕæÊÇÌ°µÃÎŞÑá!!!\n";
+                return "ä½ ä¸æ˜¯å·²ç¶“å•éäº†?çœŸæ˜¯è²ªå¾—ç„¡å­!!!\n";
 
         quest=query("quest/jinshe2", me);
 
@@ -247,23 +247,23 @@ string ask_gift()
                         set("owner", me, ob);
                         ob->move(me);
                         set("quest/jinshe2/zf_time", time(), me);
-                        return "ºÃ°É£¬Õâ±¾¡¸ÕÆ·¨Í¼½â¡¹ÄãÄÃ»ØÈ¥ºÃºÃÑĞ¾¿ÑĞ¾¿¡£\n";
+                        return "å¥½å§ï¼Œé€™æœ¬ã€ŒæŒæ³•åœ–è§£ã€ä½ æ‹¿å›å»å¥½å¥½ç ”ç©¶ç ”ç©¶ã€‚\n";
                 }
                 else
-                        return "ÄãÒªµÄ¡¸ÕÆ·¨Í¼½â¡¹ÒÑ¾­¸ø±ğÈËÄÃ×ßÁË\n";
+                        return "ä½ è¦çš„ã€ŒæŒæ³•åœ–è§£ã€å·²ç¶“çµ¦åˆ¥äººæ‹¿èµ°äº†\n";
         }
         if ( quest["gift"] ) {
                 if ( sb ) {
                         set("owner", me, sb);
                         sb->move(me);
                         set("quest/jinshe2/zf_time", time(), me);
-                        return "Ğ»Ğ»Äã,¼Ò·òÁôÏÂµÄÕâ¸ö¡¸°ü¹ü¡¹¾ÍËÍ¸øÄã°É.\n";
+                        return "è¬è¬ä½ ,å®¶å¤«ç•™ä¸‹çš„é€™å€‹ã€ŒåŒ…è£¹ã€å°±é€çµ¦ä½ å§.\n";
                 }
                 else
-                        return "Õæ²»ÇÉ,ÎÒÕâÀïÏÖÔÚÃ»ÓĞ,Äã¹ıÕó×ÓÔÙÀ´°É.\n";
+                        return "çœŸä¸å·§,æˆ‘é€™è£¡ç¾åœ¨æ²’æœ‰,ä½ éé™£å­å†ä¾†å§.\n";
         }
 
         if( query("registered", me)<3 )
-                return "ÎÒÏÖÔÚºÜÃ¦£¬Ã»ĞËÈ¤ºÍÄã¶àÂŞàÂ£¡\n";
+                return "æˆ‘ç¾åœ¨å¾ˆå¿™ï¼Œæ²’èˆˆè¶£å’Œä½ å¤šç¾…å—¦ï¼\n";
 
 }

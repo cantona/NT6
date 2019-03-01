@@ -1,4 +1,4 @@
-// zhangjing.c ÕÆ¾­µÀ³¤
+// zhangjing.c æŒç¶“é“é•·
 
 inherit NPC;
 string ask_me();
@@ -6,15 +6,15 @@ string ask_zhipu();
 
 void create()
 {
-        set_name("ÕÆ¾­µÀ³¤", ({"zhangjing"}));
-        set("gender", "ÄĞĞÔ");
+        set_name("æŒç¶“é“é•·", ({"zhangjing"}));
+        set("gender", "ç”·æ€§");
         set("age", 36);
         set("class", "quanzhen");
         set("long",
-                "ÕâÎ»ÊÇÈ«Õæ½ÌÀïÕÆ¹Ü¾­ÊéµÄµÀ³¤¡£ËûÒÔÇ°ÊÇ³¤°²ÕòÉÏÒ»¸öË½ÛÓ\n"
-                "µÄ·ò×Ó£¬ÒòÎªÑöÄ½´óµÀ£¬²Å°İµ½ÁËÈ«ÕæÃÅÏÂ¡£²»¹ı±Ï¾¹ÒòÎªÄê\n"
-                "Ëê´óÁË£¬¹¦·òµÄ¸ù»ùÔúµÃ²»ÀÎ£¬ÕâÒ²ÕıºÏËûÒâ£¬¿ÉÒÔ°²°²ĞÄĞÄ\n"
-                "µØÑĞ¶Á¾­ÊéÁË¡£\n");
+                "é€™ä½æ˜¯å…¨çœŸæ•™è£¡æŒç®¡ç¶“æ›¸çš„é“é•·ã€‚ä»–ä»¥å‰æ˜¯é•·å®‰é®ä¸Šä¸€å€‹ç§å¡¾\n"
+                "çš„å¤«å­ï¼Œå› ç‚ºä»°æ…•å¤§é“ï¼Œæ‰æ‹œåˆ°äº†å…¨çœŸé–€ä¸‹ã€‚ä¸éç•¢ç«Ÿå› ç‚ºå¹´\n"
+                "æ­²å¤§äº†ï¼ŒåŠŸå¤«çš„æ ¹åŸºç´®å¾—ä¸ç‰¢ï¼Œé€™ä¹Ÿæ­£åˆä»–æ„ï¼Œå¯ä»¥å®‰å®‰å¿ƒå¿ƒ\n"
+                "åœ°ç ”è®€ç¶“æ›¸äº†ã€‚\n");
         set("attitude", "friendly");
         set("shen_type",1);
         set("str", 18);
@@ -35,17 +35,17 @@ void create()
 
         set_skill("array", 20);
         set_skill("force", 40);
-        set_skill("xiantian-gong", 40);    //ÏÈÌìÆø¹¦
+        set_skill("xiantian-gong", 40);    //å…ˆå¤©æ°£åŠŸ
         set_skill("sword", 40);
-        set_skill("quanzhen-jian",40);  //È«Õæ½£
+        set_skill("quanzhen-jian",40);  //å…¨çœŸåŠ
         set_skill("dodge", 50);
-        set_skill("jinyan-gong", 40);   //½ğÑã¹¦
+        set_skill("jinyan-gong", 40);   //é‡‘é›åŠŸ
         set_skill("parry", 50);
         set_skill("unarmed", 50);
         set_skill("strike", 50);
-        set_skill("haotian-zhang", 50);    //ê»ÌìÕÆ
+        set_skill("haotian-zhang", 50);    //æ˜Šå¤©æŒ
         set_skill("cuff", 50);
-        set_skill("chunyang-quan", 50);    //´¿ÑôÈ­
+        set_skill("chunyang-quan", 50);    //ç´”é™½æ‹³
         set_skill("literate", 100);
         set_skill("taoism", 80);
 
@@ -58,13 +58,13 @@ void create()
         prepare_skill("cuff", "chunyang-quan");
         prepare_skill("strike", "haotian-zhang");
 
-        create_family("È«Õæ½Ì", 4, "µÜ×Ó");
+        create_family("å…¨çœŸæ•™", 4, "å¼Ÿå­");
 
         set("book_count",1);
         set("inquiry", ([
-                "È«Õæ½Ì" :  "ÎÒÈ«Õæ½ÌÊÇÌìÏÂµÀ¼ÒĞşÃÅÕı×Ú¡£\n",
-                "µÀµÂ¾­" : (: ask_me :),
-                "Ò»ÑôÖ¸" : (: ask_zhipu :),
+                "å…¨çœŸæ•™" :  "æˆ‘å…¨çœŸæ•™æ˜¯å¤©ä¸‹é“å®¶ç„é–€æ­£å®—ã€‚\n",
+                "é“å¾·ç¶“" : (: ask_me :),
+                "ä¸€é™½æŒ‡" : (: ask_zhipu :),
         ]) );
 
         setup();
@@ -78,33 +78,33 @@ string ask_me()
         mapping fam;
         object ob;
 
-        if( !(fam=query("family", this_player())) || fam["family_name"] != "È«Õæ½Ì" )
+        if( !(fam=query("family", this_player())) || fam["family_name"] != "å…¨çœŸæ•™" )
                 return RANK_D->query_respect(this_player()) +
-                "Óë±¾½ÌºÁÎŞ¹Ï¸ğ£¬ÄãÕâ»°¿É½ĞÎÒÅª²»Ã÷°×ÁË¡£";
+                "èˆ‡æœ¬æ•™æ¯«ç„¡ç“œè‘›ï¼Œä½ é€™è©±å¯å«æˆ‘å¼„ä¸æ˜ç™½äº†ã€‚";
         if (query("book_count") < 1)
-                return "ÄãÀ´ÍíÁË£¬µÀµÂ¾­ÒÑ¾­±»ÈËÈ¡×ßÁË¡£";
+                return "ä½ ä¾†æ™šäº†ï¼Œé“å¾·ç¶“å·²ç¶“è¢«äººå–èµ°äº†ã€‚";
         addn("book_count", -1);
         ob = new("/clone/book/daodejing-i");
         ob->move(this_player());
-        return "ºÃ°É£¬Õâ±¾¡¸µÀµÂ¾­¡¹ÄãÄÃ»ØÈ¥ºÃºÃÑĞ¶Á£¬ÓĞ¿´²»¶®µÄµØ·½À´ÎÊÎÒ¡£";
+        return "å¥½å§ï¼Œé€™æœ¬ã€Œé“å¾·ç¶“ã€ä½ æ‹¿å›å»å¥½å¥½ç ”è®€ï¼Œæœ‰çœ‹ä¸æ‡‚çš„åœ°æ–¹ä¾†å•æˆ‘ã€‚";
 
 }
 
 string ask_zhipu()
 {
         object me=this_player();
-        if( query_temp("tmark/Ö¸", me) == 2){
-                addn_temp("tmark/Ö¸", 1, me);
-                return("Ò»ÑôÖ¸µÄÖ¸·¨Æ×ÏòÀ´¾ÍÊÇÓÉ±¾½Ì×æÊ¦Ç××ÔÊÕ´æ£¬´Ó²»Íâ´«¡£\n")
+        if( query_temp("tmark/æŒ‡", me) == 2){
+                addn_temp("tmark/æŒ‡", 1, me);
+                return("ä¸€é™½æŒ‡çš„æŒ‡æ³•è­œå‘ä¾†å°±æ˜¯ç”±æœ¬æ•™ç¥–å¸«è¦ªè‡ªæ”¶å­˜ï¼Œå¾ä¸å¤–å‚³ã€‚\n")
 ;
         }
         else {
-                set_temp("tmark/Ö¸", 0, me);
-                return("ÌıËµÒ»ÑôÖ¸ÊÇÌìÏÂ×îÍõµÀµÄÖ¸·¨£¬ÎÒÒ²Ã»ÓĞ¼û¹ı¡£\n");
+                set_temp("tmark/æŒ‡", 0, me);
+                return("è½èªªä¸€é™½æŒ‡æ˜¯å¤©ä¸‹æœ€ç‹é“çš„æŒ‡æ³•ï¼Œæˆ‘ä¹Ÿæ²’æœ‰è¦‹éã€‚\n");
         }
 }
 
 void attempt_apprentice(object ob)
 {
-        command("say ÎÒ²»ÊÕµÜ×Ó£¬ÄãÈ¥ÕÒ±ğµÄµÀ³¤°É¡£");
+        command("say æˆ‘ä¸æ”¶å¼Ÿå­ï¼Œä½ å»æ‰¾åˆ¥çš„é“é•·å§ã€‚");
 }

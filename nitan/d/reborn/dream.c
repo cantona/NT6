@@ -3,10 +3,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", HIG "¡¾ÃÎ¾³¡¿" NOR);
+        set("short", HIG "ã€å¤¢å¢ƒã€‘" NOR);
         set("long", CYN @LONG
-ÕâÀïÊÇÃÎ¾³¡£Äã¸Ğ¾õµ½ÃÔÃÔºıºıµÄ£¬ÒâÊ¶ºÜ²»ÇåÎú¡£
-ËÄ´¦¶¼ÊÇ°×Ã£Ã£Ò»Æ¬£¬¿´Ê²Ã´¶¼²»ÕæÇĞ¡£
+é€™è£¡æ˜¯å¤¢å¢ƒã€‚ä½ æ„Ÿè¦ºåˆ°è¿·è¿·ç³Šç³Šçš„ï¼Œæ„è­˜å¾ˆä¸æ¸…æ™°ã€‚
+å››è™•éƒ½æ˜¯ç™½èŒ«èŒ«ä¸€ç‰‡ï¼Œçœ‹ä»€éº¼éƒ½ä¸çœŸåˆ‡ã€‚
 LONG NOR );
  /*       set("exits", ([
                 "enter" : __DIR__"sky1",
@@ -27,16 +27,16 @@ void init()
     if ( !userp(me) ) return;
 
     add_action("do_wake", "wake");
-    set_temp("apply/name", ({"ÃÎÓÎÕß"}), me);
-    set_temp("apply/short", ({"ÃÎÓÎÕß(dreamwalker)"}), me);
-    set_temp("apply/long", ({"ÃÎÓÎÕß(dreamwalker)\n"}), me);
+    set_temp("apply/name", ({"å¤¢éŠè€…"}), me);
+    set_temp("apply/short", ({"å¤¢éŠè€…(dreamwalker)"}), me);
+    set_temp("apply/long", ({"å¤¢éŠè€…(dreamwalker)\n"}), me);
 }
 
 int do_wake()
 {
    object room, me = this_player();
 
-   message_vision("$NºöÈ»ÇáÆ®Æ®µØ·ÉÁËÆğÀ´£¬Ò»ÏÂ¾Í·É×ßÁË¡£\n", me);
+   message_vision("$Nå¿½ç„¶è¼•é£„é£„åœ°é£›äº†èµ·ä¾†ï¼Œä¸€ä¸‹å°±é£›èµ°äº†ã€‚\n", me);
   
    delete_temp("apply/name", me);
    delete_temp("apply/short", me);
@@ -47,6 +47,6 @@ int do_wake()
       delete_temp("dream_place", me);
    } else
    me->move("/d/city/kedian");
-   message_vision("$NÈàÈàĞÊâìµÄË¯ÑÛ£¬ÇåĞÑÁË¹ıÀ´¡£\n", me); 
+   message_vision("$Næ‰æ‰æƒºå¿ªçš„ç¡çœ¼ï¼Œæ¸…é†’äº†éä¾†ã€‚\n", me); 
   return 1;
 }

@@ -1,37 +1,37 @@
-// indian.c ӡ�ȸ���
+// indian.c 印度高手
 
 #include <ansi.h>
 
 inherit NPC;
 
 string *all_jiuming = ({
-        "$n�ݺݵظ���$Nһ������ͣ��ɺ����۾���һ��Ҫƴ�������ӡ�\n",
-        "$Nһ�Ѿ�ס$n�����죬�����ű��������ĺ�У�$n�ŵû���˵��������\n",
-        "$n͵͵��$N�Ժ��������һľ����$N����Ż�ת����ҡҡ�λεĳ�$n��ȥ��\n",
-        "$Nһ���߿����ţ����$n������䵹�񵽴����ѡ�\n",
-        "$n��$Nһ�����и첲����ŭ���ӣ���ʹ֮�¸��ǲ��ɵĴ����Һ���\n",
-        "$nһ·���ܣ���ͼ˦������׷ɱ�Լ���$N��һ�߳���ɤ�Ӵ󺰡���������\n",
-        "$Nɱ�����ڵ����ŵ�Ѫ�ı�����һ���粽�ͳ嵽$n��ǰ����ͷ�����ؿ�����ȥ��\n",
-        "$n��$N����һ�ţ�������֧�����·磬���ݽ�ҧ��ŭĿԲ����\n",
-        "$N�մ��ſ���ʧ��$n�ʹ����ӵ������������嵽���ھʹ󺰣�������������\n",
-        "$N�߾ٱ�������$n��У����������е�Ǯ��ͨͨ���ҽ������������Ҿ�һ�������㣡��\n",
-        "$N�����ű���������������������ľͰ�Ǯ�ƶ��������������ҵȷ��ˣ���\n",
-        "$n���ſ�ǻ�������У�����������˭���Ⱦ��Ұ�����\n",
-        "$N��Ц��һ���ƽ�$n��ɳ�ȥ�������˰����Ȳ������ķ�����Ѱ�Ҳ��\n",
-        "$Nһ���߿�$n������̰���ĳ�Ǯ�����˹�ȥ��\n",
-        "$Nһ����$n�����ڵأ�����һ���ֽ�һֻ���ǹ����������롣\n",
-        "$nһ�߶�����$N�Ĺ�����һ�ߺ��ˣ������������ۿ���֧�Ų�ס�ˡ�\n",
+        "$n狠狠地給了$N一個大嘴巴，瞪紅了眼睛，一副要拼命的樣子。\n",
+        "$N一把揪住$n的衣領，揮舞著兵器大聲的吼叫，$n嚇得話都說不出來。\n",
+        "$n偷偷從$N腦後狠命敲了一木棍，$N吼叫著回轉身，搖搖晃晃的朝$n撲去。\n",
+        "$N一腳踹開大門，沖進$n家裡，翻箱倒櫃到處亂搜。\n",
+        "$n被$N一刀砍中胳膊，驚怒交加，疼痛之下更是不由的大聲慘呼！\n",
+        "$n一路奔跑，企圖甩開身後追殺自己的$N，一邊扯著嗓子大喊『救命！』\n",
+        "$N殺氣騰騰地提著滴血的兵器，一個跨步就沖到$n面前，劈頭蓋臉地砍將上去。\n",
+        "$n和$N打作一團，體力不支漸落下風，牙齒緊咬，怒目圓睜。\n",
+        "$N剛從門口消失，$n就從桌子底下爬起來，沖到窗口就大喊：『救命啊！』\n",
+        "$N高舉兵器沖著$n吼叫：『把你所有的錢財通通給我交出來，否則我就一刀砍死你！』\n",
+        "$N揮舞著兵器高聲叫囂：『想活命的就把錢財都交出來！別讓我等煩了！』\n",
+        "$n帶著哭腔大聲喊叫：『救命啊，誰來救救我啊！』\n",
+        "$N姦笑著一巴掌將$n打飛出去，搶過了包裹迫不及待的翻過來尋找財物。\n",
+        "$N一腳踹開$n，滿臉貪婪的朝錢箱撲了過去。\n",
+        "$N一刀將$n砍傷在地，回手一刀又將一只大狼狗給劈成兩半。\n",
+        "$n一邊躲閃著$N的攻擊，一邊後退，氣喘吁吁，眼看快支撐不住了。\n",
 });
 
 string *woman_jiuming = ({
-        "$N��Ц�ų�$n˵������а�����а������ƺ���Ҳû�˾ȵ����㣡��\n",
-        "$Nһ��§ס$n��ɫ���Ե����µ���������$n�޽е���˻���ߡ�\n",
-        "$N������Ц���ƽ�$n��$n�ŵü�������...\n",
-        "$N����˫�����´���$n��һ��һ���رƽ���ǰ...\n",
-        "$n˫ȭ���裬ƴ������ס$N������һ����ˤ���ڵأ���������������\n",
-        "$n��˻���ߵغ��У����������������Ⱦ��Ұ�����\n",
-        "$Nһ�����ƽ�$n�鵹�ڵأ���Ц��������ȥ��\n",
-        "$N�����������$n������ȥ��$n�ŵô������У��Ĵ�������\n",
+        "$N姦笑著沖$n說：『你叫啊，你叫啊，叫破喉嚨也沒人救得了你！』\n",
+        "$N一把摟住$n，色迷迷的上下到處亂摸，$n哭叫得聲嘶力竭。\n",
+        "$N滿臉淫笑，逼近$n，$n嚇得尖聲驚叫...\n",
+        "$N眯著雙眼上下打量$n，一步一步地逼近上前...\n",
+        "$n雙拳亂舞，拼命想阻住$N，腳下一滑，摔倒在地，尖聲驚叫起來。\n",
+        "$n聲嘶力竭地喊叫：『救命啊，快來救救我啊！』\n",
+        "$N一個巴掌將$n抽倒在地，淫笑著撲了上去。\n",
+        "$N收起兵器，朝$n飛身撲去，$n嚇得大聲喊叫，四處躲閃。\n",
 });
 
 void random_move();
@@ -41,9 +41,9 @@ void jiuming(object npc,object enemy);
 
 void create()
 {
-       set_name("������", ({ "indian" }));
-        set("long", "һ�������ˣ����÷ǳ���С��\n");
-        set("gender", "����");
+       set_name("天竺人", ({ "indian" }));
+        set("long", "一個天竺人，長得非常瘦小。\n");
+        set("gender", "男性");
         set("age", 20);
         set("str", 20);
         set("int", 20);
@@ -103,14 +103,14 @@ void create()
 
 int accept_fight(object ob)
 {
-        command("say �ܺã����ҾͲ������ˡ�");
+        command("say 很好！那我就不客氣了。");
         kill_ob(ob);
         return 1;
 }
 
 int accept_hit(object ob)
 {
-        command("say �ߣ�ʲô�ˣ�");
+        command("say 哼！什麼人？");
         kill_ob(ob);
         return 1;
 }
@@ -137,7 +137,7 @@ void random_move()
                 inv -= ({ this_object() });
                 inv = filter_array(inv, (: living($1) :));
                 if (inv)
-                        inv=filter_array(inv,(:!userp($1) && query("race", $1) == "����":));
+                        inv=filter_array(inv,(:!userp($1) && query("race", $1) == "人類":));
                 if (inv)
                         inv = filter_array(inv, (: strsrch(base_name($1),"/kungfu/class/generate/") == -1 :));
                 if (inv)
@@ -156,7 +156,7 @@ void random_move()
 
 void destruct_me()
 {
-        message_vision("$N����ææ�����ˡ�\n", this_object());
+        message_vision("$N急急忙忙的走了。\n", this_object());
         destruct(this_object());
 }
 
@@ -176,7 +176,7 @@ void jiuming(object npc,object enemy)
         if (!npc || !enemy)
                 return;
 
-        if( query("gender", npc) == "Ů��" && random(2) )
+        if( query("gender", npc) == "女性" && random(2) )
                 msg = woman_jiuming[random(sizeof(woman_jiuming))];
         else
                 msg = all_jiuming[random(sizeof(all_jiuming))];
@@ -186,5 +186,5 @@ void jiuming(object npc,object enemy)
 
         listeners = filter_array(users(), (: filter_listener :));
 
-        message("group_quest",HIR "����С�" NOR + WHT + msg + NOR,listeners);
+        message("group_quest",HIR "【外敵】" NOR + WHT + msg + NOR,listeners);
 }

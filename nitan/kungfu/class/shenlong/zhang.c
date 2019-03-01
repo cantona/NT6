@@ -9,10 +9,10 @@ inherit F_GUARDER;
 
 void create()
 {
-        set_name("ÕÅµ­ÔÂ", ({ "zhang danyue", "zhang"}));
-        set("title", HIY"ÉñÁú½Ì"BLU"ºÚÁúÊ¹"NOR);
-        set("long", "ÕâÊÇÒ»¸öºÚÒÂ´óºº£¬ÉíÇû±ÊÍ¦£¬ÈİÃ²ÍşÑÏ¡£\n" );
-        set("gender", "ÄĞĞÔ");
+        set_name("å¼µæ·¡æœˆ", ({ "zhang danyue", "zhang"}));
+        set("title", HIY"ç¥é¾æ•™"BLU"é»‘é¾ä½¿"NOR);
+        set("long", "é€™æ˜¯ä¸€å€‹é»‘è¡£å¤§æ¼¢ï¼Œèº«è»€ç­†æŒºï¼Œå®¹è²Œå¨åš´ã€‚\n" );
+        set("gender", "ç”·æ€§");
 
         set("age", 44);
         set("str", 28);
@@ -48,7 +48,7 @@ void create()
         map_skill("unarmed", "xianglong-zhang");
         map_skill("parry", "xianglong-zhang");
 
-        create_family("ÉñÁú½Ì", 0, "³¤ÀÏ");
+        create_family("ç¥é¾æ•™", 0, "é•·è€");
 
         set("coagents", ({
                 ([ "startroom" : "/d/shenlong/dating",
@@ -56,11 +56,11 @@ void create()
         }));
 
         set("inquiry", ([
-                "ÉñÁú½Ì" : "Ò»°ãÈËÊÇÈë²»ÁËÎÒÉñÁú½ÌµÄ(join shenlongjiao).\n",
-                "ºé°²Í¨" : "½ÌÖ÷Æ¢Æø²»ºÃ,ÒªÌÖËû»¶ĞÄ²ÅºÃ¡£\n",
-                "½ÌÖ÷"   : "½ÌÖ÷Æ¢Æø²»ºÃ,ÒªÌÖËû»¶ĞÄ²ÅºÃ¡£\n",
-                "Èë½Ì"   : "Ò»°ãÈËÊÇÈë²»ÁËÎÒÉñÁú½ÌµÄ(join shenlongjiao).\n",
-                "¿ÚºÅ"   : "ÍòÄê²»ÀÏ£¡ÓÀÏíÏÉ¸££¡ÊÙÓëÌìÆë£¡ÎÄÎäÈÊÊ¥£¡\n",
+                "ç¥é¾æ•™" : "ä¸€èˆ¬äººæ˜¯å…¥ä¸äº†æˆ‘ç¥é¾æ•™çš„(join shenlongjiao).\n",
+                "æ´ªå®‰é€š" : "æ•™ä¸»è„¾æ°£ä¸å¥½,è¦è¨ä»–æ­¡å¿ƒæ‰å¥½ã€‚\n",
+                "æ•™ä¸»"   : "æ•™ä¸»è„¾æ°£ä¸å¥½,è¦è¨ä»–æ­¡å¿ƒæ‰å¥½ã€‚\n",
+                "å…¥æ•™"   : "ä¸€èˆ¬äººæ˜¯å…¥ä¸äº†æˆ‘ç¥é¾æ•™çš„(join shenlongjiao).\n",
+                "å£è™Ÿ"   : "è¬å¹´ä¸è€ï¼æ°¸äº«ä»™ç¦ï¼å£½èˆ‡å¤©é½Šï¼æ–‡æ­¦ä»è–ï¼\n",
         ]));
 
         set("master_ob", 4);
@@ -96,6 +96,6 @@ void greeting(object ob)
 
 void attempt_apprentice(object ob)
 {
-        command("say Äã×ß¿ª£¡±ğ·³ÎÒ£¡");
+        command("say ä½ èµ°é–‹ï¼åˆ¥ç…©æˆ‘ï¼");
         return;
 }

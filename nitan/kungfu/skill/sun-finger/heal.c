@@ -2,57 +2,57 @@
 
 #include <ansi.h>
 
-string name() { return HIR "ÆğËÀ»ØÉú" NOR; }
+string name() { return HIR "èµ·æ­»å›ç”Ÿ" NOR; }
 
 int perform(object me, object target)
 {
         string force;
 
         if (! target)
-                return notify_fail("ÄãÒªÓÃÕæÆøÎªË­ÁÆÉË£¿\n");
+                return notify_fail("ä½ è¦ç”¨çœŸæ°£ç‚ºèª°ç™‚å‚·ï¼Ÿ\n");
 
         if (target == me)
-                return notify_fail(name() + "Ö»ÄÜ¶Ô±ğÈËÊ©Õ¹¡£\n");
+                return notify_fail(name() + "åªèƒ½å°åˆ¥äººæ–½å±•ã€‚\n");
 
         if (me->is_fighting() || target->is_fighting())
-                return notify_fail("Õ½¶·ÖĞÎŞ·¨ÔË¹¦ÁÆÉË¡£\n");
+                return notify_fail("æˆ°é¬¥ä¸­ç„¡æ³•é‹åŠŸç™‚å‚·ã€‚\n");
 
         if( query("not_living", target) )
-                return notify_fail("ÄãÎŞ·¨¸ø" + target->name() + "ÁÆÉË¡£\n");
+                return notify_fail("ä½ ç„¡æ³•çµ¦" + target->name() + "ç™‚å‚·ã€‚\n");
 
         if ((int)me->query_skill("sun-finger", 1) < 100)
-                return notify_fail("ÄãµÄÒ»ÑôÖ¸¾÷²»¹»æµÊì£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„ä¸€é™½æŒ‡è¨£ä¸å¤ å«»ç†Ÿï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if ((int)me->query_skill("jingluo-xue", 1) < 100)
-                return notify_fail("Äã¶Ô¾­ÂçÑ§µÄÁË½â²»¹»£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ å°ç¶“çµ¡å­¸çš„äº†è§£ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (me->query_skill_mapped("finger") != "sun-finger")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢Ò»ÑôÖ¸£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼ä¸€é™½æŒ‡ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (me->query_skill_prepared("finger") != "sun-finger")
-                return notify_fail("ÄãÃ»ÓĞ×¼±¸Ò»ÑôÖ¸£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æº–å‚™ä¸€é™½æŒ‡ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (! (force = me->query_skill_mapped("force")))
-                return notify_fail("Äã±ØĞë¼¤·¢Ò»ÖÖÄÚ¹¦²ÅÄÜÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ å¿…é ˆæ¿€ç™¼ä¸€ç¨®å…§åŠŸæ‰èƒ½æ–½å±•" + name() + "ã€‚\n");
 
         if( query("max_neili", me)<1500 )
-                return notify_fail("ÄãµÄÄÚÁ¦ĞŞÎªÌ«Ç³£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¿®ç‚ºå¤ªæ·ºï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if( query("neili", me)<1000 )
-                return notify_fail("ÄãÏÖÔÚµÄÕæÆø²»×ã£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çš„çœŸæ°£ä¸è¶³ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if( query("jing", me)<100 )
-                return notify_fail("ÄãÏÖÔÚµÄ×´Ì¬²»¼Ñ£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çš„ç‹€æ…‹ä¸ä½³ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if( query("eff_qi", target) >= query("max_qi", target) &&
             query("eff_jing", target) >= query("max_jing", target) )
-                return notify_fail("¶Ô·½Ã»ÓĞÊÜÉË£¬²»ĞèÒª½ÓÊÜÖÎÁÆ¡£\n");
+                return notify_fail("å°æ–¹æ²’æœ‰å—å‚·ï¼Œä¸éœ€è¦æ¥å—æ²»ç™‚ã€‚\n");
 
-        message_sort(HIY "\nÖ»¼û$N" HIY "Ä¬Ä¬ÔË×ª" + to_chinese(force) +
-                     HIY "£¬ÉîÉîÎü½øÒ»¿ÚÆø£¬Í·ÉÏÒşÒşÃ°³ö°×Îí£¬¶¸È»Ê©Õ¹¿ª"
-                     "Ò»ÑôÖ¸¾÷£¬ÒÔ´¿ÑôÖ¸Á¦Ë²Ê±µã±éÁË$n" HIY "È«ÉíÆßÊ®¶ş"
-                     "´¦´óÑ¨¡£¹ıµÃÒ»»á£¬±ã¼ûµÃ$n" HIY "¡°ÍÛ¡±µÄÒ»ÏÂÍÂ³ö"
-                     "¼¸¿ÚğöÑª£¬Á³É«µÇÊ±¿´ÆğÀ´ºìÈó¶àÁË¡£\n" NOR, me, target);
+        message_sort(HIY "\nåªè¦‹$N" HIY "é»˜é»˜é‹è½‰" + to_chinese(force) +
+                     HIY "ï¼Œæ·±æ·±å¸é€²ä¸€å£æ°£ï¼Œé ­ä¸Šéš±éš±å†’å‡ºç™½éœ§ï¼Œé™¡ç„¶æ–½å±•é–‹"
+                     "ä¸€é™½æŒ‡è¨£ï¼Œä»¥ç´”é™½æŒ‡åŠ›ç¬æ™‚é»éäº†$n" HIY "å…¨èº«ä¸ƒåäºŒ"
+                     "è™•å¤§ç©´ã€‚éå¾—ä¸€æœƒï¼Œä¾¿è¦‹å¾—$n" HIY "â€œå“‡â€çš„ä¸€ä¸‹åå‡º"
+                     "å¹¾å£ç˜€è¡€ï¼Œè‡‰è‰²ç™»æ™‚çœ‹èµ·ä¾†ç´…æ½¤å¤šäº†ã€‚\n" NOR, me, target);
 
         addn("neili", -800, me);
         me->receive_damage("qi", 100);
@@ -75,14 +75,14 @@ int perform(object me, object target)
         {
                 target->clear_condition("tiezhang_yin");
                 target->clear_condition("tiezhang_yang");
-                tell_object(target, HIC "\nÄãÖ»¾õÌåÄÚ²Ğ´æµÄÌúÕÆÕÆ¾¢ÂıÂı"
-                                    "ÏûÍË£¬¸Ğ¾õºÃ¶àÁË¡£\n" NOR);
+                tell_object(target, HIC "\nä½ åªè¦ºé«”å…§æ®˜å­˜çš„éµæŒæŒå‹æ…¢æ…¢"
+                                    "æ¶ˆé€€ï¼Œæ„Ÿè¦ºå¥½å¤šäº†ã€‚\n" NOR);
         }
 
         if ((int)target->query_condition("freezing"))
         {
                 target->clear_condition("freezing");
-                tell_object(target, HIC "\nÄãÖ»¾õ»ëÉí½¥½¥×ªÅ¯£¬º®±ùÕæÆøÖ®¶¾ÒÑÏûÊ§µÃÎŞÓ°ÎŞ×Ù¡£\n" NOR);
+                tell_object(target, HIC "\nä½ åªè¦ºæ¸¾èº«æ¼¸æ¼¸è½‰æš–ï¼Œå¯’å†°çœŸæ°£ä¹‹æ¯’å·²æ¶ˆå¤±å¾—ç„¡å½±ç„¡è¹¤ã€‚\n" NOR);
         }
 
         if (! living(target))
@@ -91,7 +91,7 @@ int perform(object me, object target)
         if (! target->is_busy())
                 target->stary_busy(2);
 
-        message_vision("\n$N±ÕÄ¿Ú¤×ø£¬¿ªÊ¼ÔË¹¦µ÷Ï¢¡£\n", me);
+        message_vision("\n$Né–‰ç›®å†¥åï¼Œé–‹å§‹é‹åŠŸèª¿æ¯ã€‚\n", me);
         me->start_busy(10);
         return 1;
 }

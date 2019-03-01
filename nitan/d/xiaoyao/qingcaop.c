@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "���ƺ");
+        set("short", "青草坪");
         set("long", @LONG
-�����������е�һƬ�Ƚϴ�Ŀյأ���Ի�����ƺ����Ϊ������
-��֮����������ƽʱ���������������ǲ�֪��Ϊʲô��������ȴ�в�
-���ˡ��㿴����һ�����ˡ�
+這裡是樹林中的一片比較大的空地，名曰：青草坪。因為處于密
+林之中所以這裡平時很少有人來，但是不知道為什麼今天這裡卻有不
+少人。你看，又一個來了。
 LONG );
         set("exits", ([
                 "north" : __DIR__"xiaodao3",
@@ -51,25 +51,25 @@ string long()
 
         if (query("zhenlong"))
         {
-                msg = "    �յ��м����һ�����̣�������˲��ٵ��ӡ�һ"
-                      "��Χ�Ų��ٵ����ڹۿ����е�ڤ��˼�����еĿ�����"
-                      "�����ġ�";
+                msg = "    空地中間擺了一副棋盤，上面放了不少的子。一"
+                      "旁圍著不少的人在觀看，有的冥神思索，有的看似漫"
+                      "不經心。";
         } else
                 msg = "    ";
         if (present("duan yanqing", this_object()))
         {
-                msg += "�Ա�һ�ֿ�һϮ��������ò��ª������쳣������"
-                       "�Ŀ���" + (query("zhenlong") ? "���̡�" : "���ˡ�");
+                msg += "旁邊一怪客一襲青衫、容貌醜陋，冷酷異常，冷冷"
+                       "的看著" + (query("zhenlong") ? "棋盤。" : "眾人。");
         }
         if (present("duan yu", this_object()))
         {
                 if (present("wang yuyan", this_object()))
-                        msg += "��һ���������أ����÷�����棬�ľ�"
-                               "�������࣬ȴ���ǳ�������һŮ�ӣ�ɫ��"
-                               "�Ե�������������������Ц��";
+                        msg += "有一人最是奇特，長得風度翩翩，頗具"
+                               "富貴氣相，卻總是瞅著身旁一女子，色迷"
+                               "迷的樣子真是讓人心中竊笑。";
                 else
-                        msg += "��һ��ȴ��ʧ�����ǣ������������·�"
-                               "������ʲô��Ҫ�����Ƶġ�";
+                        msg += "有一人卻是失魂落魄，六神無主，仿佛"
+                               "不見了什麼重要東西似的。";
         }
 
         return query("long") + sort_string(msg, 54);

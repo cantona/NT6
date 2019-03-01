@@ -1,4 +1,4 @@
-// wanwutang.c ������
+// wanwutang.c 萬物堂
 // Winder Oct.10 1998
 
 #include <ansi.h>
@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "������");
+        set("short", "萬物堂");
         set("long", @LONG
-������ȫ������֮������һ�ľ��������䲻����ʰ��������
-�࣬ǽ�Ϲ���һ��һ�ٺ�һЩ�ֻ���С���ϰڷ�����ֽ�ͻ�ī�Ǻ���
-��֪��������Ҫ���ֻ��ǻ滭��
+這裡是全真七子之五王處一的居所。房間不大，收拾的素雅整
+潔，牆上掛著一蕭一琴和一些字畫，小幾上擺放著宣紙和徽墨狼毫，
+不知道主人是要練字還是繪畫。
 LONG
         );
         set("exits", ([

@@ -1,8 +1,8 @@
-// ³ªÏÉ·¨
+// å”±ä»™æ³•
 
 #include <ansi.h>
 
-string name() { return "³ª×Ö¾ö"; }
+string name() { return "å”±å­—æ±º"; }
 
 int perform(object me)
 {
@@ -10,23 +10,23 @@ int perform(object me)
         string msg;
 
         if (! me->is_fighting())
-                return notify_fail("³ªÏÉ·¨Ö»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ¡£\n");
+                return notify_fail("å”±ä»™æ³•åªèƒ½åœ¨æˆ°é¬¥ä¸­ä½¿ç”¨ã€‚\n");
 
         if ((int)me->query_skill("shedao-qigong", 1) < 60)
-                return notify_fail("ÄãµÄÉßµºÆæ¹¦²»¹»æµÊì£¬²»»áÊ¹ÓÃ³ªÏÉ·¨¡£\n");
+                return notify_fail("ä½ çš„è›‡å³¶å¥‡åŠŸä¸å¤ å«»ç†Ÿï¼Œä¸æœƒä½¿ç”¨å”±ä»™æ³•ã€‚\n");
 
         if( query("neili", me)<300 )
-                return notify_fail("ÄãÒÑ¾­³ªµÃ¾«Æ£Á¦½ß£¬ÄÚÁ¦²»¹»ÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“å”±å¾—ç²¾ç–²åŠ›ç«­ï¼Œå…§åŠ›ä¸å¤ äº†ã€‚\n");
 
         if( query_temp("chang", me) >= 30 )
-                return notify_fail("ÄãÒÑ¾­³ªµÃÌ«¾ÃÁË£¬²»ÄÜÔÙ³ªÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“å”±å¾—å¤ªä¹…äº†ï¼Œä¸èƒ½å†å”±äº†ã€‚\n");
 
         skill = me->query_skill("force");
 
         addn("neili", -200, me);
 
-        message_combatd(HIR "Ö»Ìı$N" HIR "¿ÚÖĞÄîÄîÓĞ´Ê£¬Çê¿Ì"
-                        "Ö®¼äÎä¹¦´ó½ø£¡\n" NOR, me);
+        message_combatd(HIR "åªè½$N" HIR "å£ä¸­å¿µå¿µæœ‰è©ï¼Œé ƒåˆ»"
+                        "ä¹‹é–“æ­¦åŠŸå¤§é€²ï¼\n" NOR, me);
 
         addn_temp("apply/attack", 10, me);
         addn_temp("apply/dodge", 10, me);

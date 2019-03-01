@@ -4,12 +4,12 @@
 inherit ROOM;
 void create()
 {
-        set("short", "±±´ó½Ö");
+        set("short", "åŒ—å¤§è¡—");
         set("long", @LONG
-ÕâÀïÒ»Ìõ±±´ó½Öºá¹á¶«Î÷¡£ÍûÏò±±±ß£¬ÊÇ³ö³ÇµÄ±±ÃÅ¡£ºÅ³Æ "Ìì
-ÏÂÓÄ" µÄÇà³ÇÉ½£¬¾ÍÊÇ´ÓÕâÀï³öÈ¥¡£ÕâÀïµØµ±µ±µÀ£¬ÐÐÈËÈ´¶¼¹ýÍù´Ò
-´Ò£¬Ð¡ÐÄÒíÒí£¬ºÞ²»µÃÏúÉùÄä¼£¡£ÒòÎªÄÏ±ßÒ»´±¹ÅÉ«¹ÅÏãµÄ½¨Öþ£¬¾Í
-ÊÇÈÃÌìÏÂÎäÁÖÎÅ·çÉ«±äµÄ´¨ÖÐÌÆÃÅ¡£
+é€™è£¡ä¸€æ¢åŒ—å¤§è¡—æ©«è²«æ±è¥¿ã€‚æœ›å‘åŒ—é‚Šï¼Œæ˜¯å‡ºåŸŽçš„åŒ—é–€ã€‚è™Ÿç¨± "å¤©
+ä¸‹å¹½" çš„é’åŸŽå±±ï¼Œå°±æ˜¯å¾žé€™è£¡å‡ºåŽ»ã€‚é€™è£¡åœ°ç•¶ç•¶é“ï¼Œè¡Œäººå»éƒ½éŽå¾€åŒ†
+åŒ†ï¼Œå°å¿ƒç¿¼ç¿¼ï¼Œæ¨ä¸å¾—éŠ·è²åŒ¿è·¡ã€‚å› ç‚ºå—é‚Šä¸€å¹¢å¤è‰²å¤é¦™çš„å»ºç¯‰ï¼Œå°±
+æ˜¯è®“å¤©ä¸‹æ­¦æž—èžé¢¨è‰²è®Šçš„å·ä¸­å”é–€ã€‚
 LONG );
         set("outdoors", "chengdu");
         set("exits", ([
@@ -31,6 +31,6 @@ int valid_leave(object me, string dir)
 {
         me = this_player();
         if (dir == "south")
-        return notify_fail("ÄãÒ»Ì§×ã£¬·¢ÏÖµØÉÏÓÐ¶¾£¬Ã¦³éÍÈÍË»Ø¡£\n");
+        return notify_fail("ä½ ä¸€æŠ¬è¶³ï¼Œç™¼ç¾åœ°ä¸Šæœ‰æ¯’ï¼Œå¿™æŠ½è…¿é€€å›žã€‚\n");
         else  return 1;
 }

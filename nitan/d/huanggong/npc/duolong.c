@@ -6,12 +6,12 @@ inherit NPC;
 
 void create()
 {
-        set_name("¶àÂ¡", ({"duo long", "duo", "long"}));
+        set_name("å¤šéš†", ({"duo long", "duo", "long"}));
         set("long",
-        "ËûÊÇÒ»Î»Éí²Ä¿ıÎàµÄºÀË¬ºº×Ó¡£\n");
+        "ä»–æ˜¯ä¸€ä½èº«æé­æ¢§çš„è±ªçˆ½æ¼¢å­ã€‚\n");
                                                           
-        set("title",HIY "ÓùÇ°ÊÌÎÀ×Ü¹Ü" NOR);
-        set("gender", "ÄĞĞÔ");
+        set("title",HIY "å¾¡å‰ä¾è¡›ç¸½ç®¡" NOR);
+        set("gender", "ç”·æ€§");
         set("attitude", "peaceful");
 
         set("age", 42);

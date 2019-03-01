@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "²İµØ");
+        set("short", "è‰åœ°");
         set("long", @LONG
-ÕâÊÇÒ»´óÆ¬²İµØ£¬Ç°ÃæÒ»ÅÅËÉÊ÷µ²×¡ÁËÈ¥Â·¡£Ö»¼ûÒ»Öê´óËÉÉÏÏ÷
-ÏÂÁËÕÉĞí³¤¡¢³ßĞí¿íµÄÒ»Æ¬£¬Æá×Å°×Æá£¬Ğ´×Å¾Å¸ö´ó×Ö£¬¡ºĞÕ¶ÎÕßÈë
-´Ë¹ÈÉ±ÎŞÉâ¡»¡£Ê÷ÉÏ¹Ò×ÅÒ»¸öÌú´¸¡£
+é€™æ˜¯ä¸€å¤§ç‰‡è‰åœ°ï¼Œå‰é¢ä¸€æ’é¬†æ¨¹æ“‹ä½äº†å»è·¯ã€‚åªè¦‹ä¸€æ ªå¤§é¬†ä¸Šå‰Š
+ä¸‹äº†ä¸ˆè¨±é•·ã€å°ºè¨±å¯¬çš„ä¸€ç‰‡ï¼Œæ¼†è‘—ç™½æ¼†ï¼Œå¯«è‘—ä¹å€‹å¤§å­—ï¼Œã€å§“æ®µè€…å…¥
+æ­¤è°·æ®ºç„¡èµ¦ã€ã€‚æ¨¹ä¸Šæ›è‘—ä¸€å€‹éµéŒ˜ã€‚
 LONG );
         set("outdoors", "wanjiegu");
         set("exits", ([ /* sizeof() == 1 */
@@ -17,8 +17,8 @@ LONG );
         set("no_clean_up", 0);
 
         set("item_desc", ([ /* sizeof() == 2 */
-            "Ìú´¸" : "Ò»¸öÌú´¸£¬¿ÉÒÔÓÃÀ´ÇÃ(knock)¶«Î÷¡£\n",
-            "hammer" : "Ò»¸öÌú´¸£¬¿ÉÒÔÓÃÀ´ÇÃ(knock)¶«Î÷¡£\n",
+            "éµéŒ˜" : "ä¸€å€‹éµéŒ˜ï¼Œå¯ä»¥ç”¨ä¾†æ•²(knock)æ±è¥¿ã€‚\n",
+            "hammer" : "ä¸€å€‹éµéŒ˜ï¼Œå¯ä»¥ç”¨ä¾†æ•²(knock)æ±è¥¿ã€‚\n",
         ]));
 
         setup();
@@ -32,11 +32,11 @@ void init()
 int do_knock(string arg)
 {
         if( !arg ) return 0;
-        if( arg != "¶Î" && arg != "duan" ) return 0;
-        if( arg == "¶Î" || arg == "duan" ) {
-        message_vision("$NÄÃÆğÌú´¸ÔÚµÚ¶ş¸ö×Ö¡°¶Î¡±ÉÏÇÃÁËÒ»ÏÂ¡£\n", this_player());
-        message_vision("Ö»ÌıÀïÃæÓĞÈËÓ¦ÁËÒ»Éù£¬¡°À´ÁË£¡¡±\n", this_player() );
-        message_vision("ÓĞÈË´ÓÀïÃæ½«ÃÅ´ò¿ªÁË¡£\n", this_player() );
+        if( arg != "æ®µ" && arg != "duan" ) return 0;
+        if( arg == "æ®µ" || arg == "duan" ) {
+        message_vision("$Næ‹¿èµ·éµéŒ˜åœ¨ç¬¬äºŒå€‹å­—â€œæ®µâ€ä¸Šæ•²äº†ä¸€ä¸‹ã€‚\n", this_player());
+        message_vision("åªè½è£¡é¢æœ‰äººæ‡‰äº†ä¸€è²ï¼Œâ€œä¾†äº†ï¼â€\n", this_player() );
+        message_vision("æœ‰äººå¾è£¡é¢å°‡é–€æ‰“é–‹äº†ã€‚\n", this_player() );
         set("exits/north", __DIR__"xiaoting");
         call_out("close_passage", 10);
         return 1;
@@ -49,5 +49,5 @@ void close_passage()
 
         if( !query("exits/north") ) return;
         delete("exits/north");
-        message("vision","ÃÅ±»ÈË¹ØÉÏÁË¡£\n", this_object() );
+        message("vision","é–€è¢«äººé—œä¸Šäº†ã€‚\n", this_object() );
 }

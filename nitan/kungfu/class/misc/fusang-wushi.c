@@ -10,12 +10,12 @@ void death_msg();
 
 void create()
 {
-        set_name(HIW "·öÉ£ÎäÊ¿" NOR, ({ "fusang wushi", "fusang", "wushi",}));
-        set("title", HIR "À´×Ô·öÉ£½£ÆøµÀ¼ÒµÄ" NOR);
-        set("gender", "ÄĞĞÔ");
+        set_name(HIW "æ‰¶æ¡‘æ­¦å£«" NOR, ({ "fusang wushi", "fusang", "wushi",}));
+        set("title", HIR "ä¾†è‡ªæ‰¶æ¡‘åŠæ°£é“å®¶çš„" NOR);
+        set("gender", "ç”·æ€§");
         set("age", 22);
         set("long", @LONG
-ÕâÊÇÒ»Î»À´×Ô·öÉ£µÄÎäÊ¿£¬¿´ÉÏÈ¥Òì³£ÀäÄ®¡£
+é€™æ˜¯ä¸€ä½ä¾†è‡ªæ‰¶æ¡‘çš„æ­¦å£«ï¼Œçœ‹ä¸Šå»ç•°å¸¸å†·æ¼ ã€‚
 LONG);
         set("attitude", "friendly");
         set("str", 31);
@@ -98,8 +98,8 @@ LONG);
         ]));
 
         set("drops", ([
-                "RA&RANDOM60"    :       100,   // µÍ¼¶ÆÕÍ¨×°±¸
-                "RA&RANDOM70"    :       40,    // µÍ¼¶ÆÕÍ¨×°±¸
+                "RA&RANDOM60"    :       100,   // ä½ç´šæ™®é€šè£å‚™
+                "RA&RANDOM70"    :       40,    // ä½ç´šæ™®é€šè£å‚™
                 "FI&/clone/armor/fusang/heima-yi"       : 20,
                 "FI&/clone/armor/qianshou-guanyin"      : 5,
                 "FI&/clone/armor/mingwang-xiang"        : 10,
@@ -142,7 +142,7 @@ mixed hit_ob(object me, object ob, int damage_bouns)
 {
         ob->start_busy(5 + random(6));
         me->receive_wound("qi", 1500 + random(1600), ob);
-        return HIY "$N" HIY "Å­ºÈÒ»Éù£¬·ÜÁ¦·´¿¹£¬¾¹±ÆµÃ$n" HIY "ÊÖÃ¦½ÅÂÒ¡£\n" NOR;
+        return HIY "$N" HIY "æ€’å–ä¸€è²ï¼Œå¥®åŠ›åæŠ—ï¼Œç«Ÿé€¼å¾—$n" HIY "æ‰‹å¿™è…³äº‚ã€‚\n" NOR;
 }
 
 void heart_beat()
@@ -160,10 +160,10 @@ void random_move()
         if (time() - query_temp("born_time") > 1800)
         {
                 env = environment(this_object());
-                message_vision("$N¼±¼±Ã¦Ã¦µÄ×ßÁË¡£\n", this_object());
+                message_vision("$Næ€¥æ€¥å¿™å¿™çš„èµ°äº†ã€‚\n", this_object());
 
-                CHANNEL_D->channel_broadcast("mess", env->short() + HIW "(" + LOOK_CMD->locate(base_name(env)) + ")Ò»´ø³öÏÖµÄ" +
-                        HIR + this_object()->short() + HIG "ÏûÊ§ÁË¡£\n" NOR);
+                CHANNEL_D->channel_broadcast("mess", env->short() + HIW "(" + LOOK_CMD->locate(base_name(env)) + ")ä¸€å¸¶å‡ºç¾çš„" +
+                        HIR + this_object()->short() + HIG "æ¶ˆå¤±äº†ã€‚\n" NOR);
 
                 destruct(this_object());
                 return;
@@ -173,8 +173,8 @@ void random_move()
 
 void death_msg()
 {
-        command("chat ÖĞÔ­ÎäÑ§¹ûÈ»Ãû²»Ğé´« ¡­¡­");
-        CHANNEL_D->channel_broadcast("rumor", "ÌıËµ" + name() + HIM "±»½­ºşÈËÊ¿ËùÉ±¡£" NOR);
+        command("chat ä¸­åŸæ­¦å­¸æœç„¶åä¸è™›å‚³ â€¦â€¦");
+        CHANNEL_D->channel_broadcast("rumor", "è½èªª" + name() + HIM "è¢«æ±Ÿæ¹–äººå£«æ‰€æ®ºã€‚" NOR);
 }
 
 

@@ -3,7 +3,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define PO "¡¸" HIR "×ÜÆÆÊ½" NOR "¡¹"
+#define PO "ã€Œ" HIR "ç¸½ç ´å¼" NOR "ã€"
 
 inherit F_SSERVER;
 
@@ -18,7 +18,7 @@ int perform(object me, object target)
         int skill, ap, dp, damage, ss;
 
         if( userp(me) && query("can_perform/dugu/po", me)<100 )
-                return notify_fail("Äã»¹Ã»ÓĞÊÜ¹ı¸ßÈËÖ¸µã£¬ÎŞ·¨Ê©Õ¹" PO "¡£\n"); 
+                return notify_fail("ä½ é‚„æ²’æœ‰å—éé«˜äººæŒ‡é»ï¼Œç„¡æ³•æ–½å±•" PO "ã€‚\n"); 
 
         me->clean_up_enemy();
         if (! target) target = me->select_opponent();
@@ -26,20 +26,20 @@ int perform(object me, object target)
         skill = me->query_skill("dugu-jiujian", 1);
 
         if (! me->is_fighting(target))
-                return notify_fail(PO "Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(PO "åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if (skill < 150)
-                return notify_fail("ÄãµÄ¶À¹Â¾Å½£µÈ¼¶²»¹»£¬ÎŞ·¨Ê©Õ¹" PO "¡£\n");
+                return notify_fail("ä½ çš„ç¨å­¤ä¹åŠç­‰ç´šä¸å¤ ï¼Œç„¡æ³•æ–½å±•" PO "ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me) )
             || query("skill_type", weapon) != "sword" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô£¬ÎŞ·¨Ê©Õ¹" PO "¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ï¼Œç„¡æ³•æ–½å±•" PO "ã€‚\n");
 
         if (me->query_skill_mapped("sword") != "dugu-jiujian") 
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢¶À¹Â¾Å½££¬ÎŞ·¨Ê©Õ¹" PO "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼ç¨å­¤ä¹åŠï¼Œç„¡æ³•æ–½å±•" PO "ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
         weapon2=query_temp("weapon", target);
         prepare = target->query_skill_prepare();
@@ -68,17 +68,17 @@ int perform(object me, object target)
 
         if (ap * 2 / 3 + random(ap) > dp)
         {
-                msg = HIC "$N" HIC "ËæÒâ»ÓÈ÷ÊÖÖĞµÄ" + weapon->name() +
-                      HIC "£¬ÕĞÕĞ´Ó³öÆä²»ÒâµÄ·½Î»Ö±Ö¸$n" 
-                      HIC + to_chinese(type)[4..<1] + "ÖĞµÄÆÆÕÀ¡£\n" NOR;
+                msg = HIC "$N" HIC "éš¨æ„æ®æ´’æ‰‹ä¸­çš„" + weapon->name() +
+                      HIC "ï¼Œæ‹›æ‹›å¾å‡ºå…¶ä¸æ„çš„æ–¹ä½ç›´æŒ‡$n" 
+                      HIC + to_chinese(type)[4..<1] + "ä¸­çš„ç ´ç¶»ã€‚\n" NOR;
 
                 n = 4 + random(4);
                 if ((target->is_busy() && ap * 2 / 3 + random(ap) > dp)
                    || ap / 2 + random(ap) > dp)
                 {
-                        msg += HIY "$n" HIY "´ó³ÔÒ»¾ª£¬»ÅÂÒÖ®ÏÂÆÆÕÀµü³ö£¬"
-                               "$N" HIY "à§à§à§à§Á¬¹¥" + chinese_number(n)
-                               + "½££¡\n" NOR;
+                        msg += HIY "$n" HIY "å¤§åƒä¸€é©šï¼Œæ…Œäº‚ä¹‹ä¸‹ç ´ç¶»è¿­å‡ºï¼Œ"
+                               "$N" HIY "å”°å”°å”°å”°é€£æ”»" + chinese_number(n)
+                               + "åŠï¼\n" NOR;
                         message_combatd(msg, me, target);
 
                         me->start_busy(1 + random(n));
@@ -91,28 +91,28 @@ int perform(object me, object target)
 
                         if (weapon2 && random(ap) > dp && type != "pin")
                         {
-                                msg = HIW "$n" HIW "¾õµÃÑÛÇ°ÑÛ»¨çÔÂÒ£¬ÊÖÖĞ"
-                                      "µÄ" + weapon2->name() + HIW "Ò»Ê±¾¹"
-                                      "È»ÄÃÄó²»×¡£¬ÍÑÊÖ¶ø³ö£¡\n" NOR;
+                                msg = HIW "$n" HIW "è¦ºå¾—çœ¼å‰çœ¼èŠ±ç¹šäº‚ï¼Œæ‰‹ä¸­"
+                                      "çš„" + weapon2->name() + HIW "ä¸€æ™‚ç«Ÿ"
+                                      "ç„¶æ‹¿æä¸ä½ï¼Œè„«æ‰‹è€Œå‡ºï¼\n" NOR;
                                 weapon2->move(environment(me));
                         } else
                         {
-                                msg = HIY "$n" HIY "ÂÔµÃ¿ÕÏ¶´­Ï¢£¬Ò»Ê±¼äÈ´"
-                                      "Ò²ÎŞÁ¦·´»÷¡£\n" NOR;
+                                msg = HIY "$n" HIY "ç•¥å¾—ç©ºéš™å–˜æ¯ï¼Œä¸€æ™‚é–“å»"
+                                      "ä¹Ÿç„¡åŠ›åæ“Šã€‚\n" NOR;
                         }
                 } else
                 {
-                        msg += HIY "$n" HIY "Á¬Ã¦µÖµ²£¬Ò»Ê±¼ä²»½ûÊÖÃ¦½ÅÂÒ£¬"
-                               "ÎŞÏ¾·´»÷¡£\n" NOR;
+                        msg += HIY "$n" HIY "é€£å¿™æŠµæ“‹ï¼Œä¸€æ™‚é–“ä¸ç¦æ‰‹å¿™è…³äº‚ï¼Œ"
+                               "ç„¡æš‡åæ“Šã€‚\n" NOR;
                         me->start_busy(1);
                         if (! target->is_busy())
                         target->start_busy(1 + random(skill / 30));
                 }
         } else
         {
-                msg = HIC "$N" HIC "ÄÃ×ÅÊÖÖĞµÄ" + weapon->name() +
-                      HIC "£¬¶«´ÁÎ÷Ö¸£¬²»¹ı$n" HIC "·ÀÊØµÄÒì³£ÑÏÃÜ£¬$N"
-                      HIC "Ò»Ê±¾¹È»ÎŞ·¨ÕÒµ½ÆÆÕÀ¡£\n" NOR;
+                msg = HIC "$N" HIC "æ‹¿è‘—æ‰‹ä¸­çš„" + weapon->name() +
+                      HIC "ï¼Œæ±æˆ³è¥¿æŒ‡ï¼Œä¸é$n" HIC "é˜²å®ˆçš„ç•°å¸¸åš´å¯†ï¼Œ$N"
+                      HIC "ä¸€æ™‚ç«Ÿç„¶ç„¡æ³•æ‰¾åˆ°ç ´ç¶»ã€‚\n" NOR;
                 me->start_busy(3 + random(2));
                 target->start_busy(1);
         }

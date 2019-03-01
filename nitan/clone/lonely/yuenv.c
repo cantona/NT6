@@ -5,7 +5,7 @@ inherit SWORD;
 
 void create()
 {
-        set_name(HIR"Ô½Å®"+HIY"³¯Ñô"+HIC"½£"NOR, ({ "yuenv chaoyang jian", "yuenv jian","jian", "sword" }) );
+        set_name(HIR"è¶Šå¥³"+HIY"æœé™½"+HIC"åŠ"NOR, ({ "yuenv chaoyang jian", "yuenv jian","jian", "sword" }) );
         set_weight(8000);
         if( clonep() )
                 set_default_object(__FILE__);
@@ -14,14 +14,14 @@ void create()
                 set("weapon_prop/int", 3);
                 set("weapon_prop/str", 5);
                 set("weapon_prop/sword", 50);
-                set("unit", "°Ñ");
+                set("unit", "æŠŠ");
                 set("value", 10000000);
                 set("material", "steel");
-                set("long", "Ò»°Ñ³àºìÈí½££¬¾İËµÊÇÕ½¹úÊ±Ô½Å®µÄËæÉíÅå½££¬Æä·æÀû³Ì¶È²»ÏÂ¸É½« ÄªĞ°¡£\n");
-                set("wield_msg", HIR"Ò»Éù´àÏì,$NÊÖÀïÎŞÉùÎŞÏ¢µÄ¶àÁË°Ñ³àºìÈí½£.\n"NOR);
-                set("wield_msg", HIR"¿ÕÆøÍ»È»±äµÃ³ÁÃÆ..,µ«Ìı...\n"
-                                 HIB"ïÏ........ïê........Çº................\n"
-                                 HIY"ÕóÕóÇåÔ½ÁúÒ÷Éù²»¶ÏÏìÆğ...Á¬Ãà²»¾ø,$NÊÖÀïÒÑ¶àÁË°Ñ"HIR"³àºìÈí½£.\n"NOR);
+                set("long", "ä¸€æŠŠèµ¤ç´…è»ŸåŠï¼Œæ“šèªªæ˜¯æˆ°åœ‹æ™‚è¶Šå¥³çš„éš¨èº«ä½©åŠï¼Œå…¶é‹’åˆ©ç¨‹åº¦ä¸ä¸‹å¹¹å°‡ è«é‚ªã€‚\n");
+                set("wield_msg", HIR"ä¸€è²è„†éŸ¿,$Næ‰‹è£¡ç„¡è²ç„¡æ¯çš„å¤šäº†æŠŠèµ¤ç´…è»ŸåŠ.\n"NOR);
+                set("wield_msg", HIR"ç©ºæ°£çªç„¶è®Šå¾—æ²‰æ‚¶..,ä½†è½...\n"
+                                 HIB"é˜........é¹........å—†................\n"
+                                 HIY"é™£é™£æ¸…è¶Šé¾åŸè²ä¸æ–·éŸ¿èµ·...é€£ç¶¿ä¸çµ•,$Næ‰‹è£¡å·²å¤šäº†æŠŠ"HIR"èµ¤ç´…è»ŸåŠ.\n"NOR);
         }
 
         init_sword(500,2);

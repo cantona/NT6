@@ -5,14 +5,14 @@ inherit NPC;
 
 void create()
 {
-        set_name("ǧ�궾��", ({ "duwang", "wang" }) );
-        set("race", "Ұ��");
+        set_name("千年毒王", ({ "duwang", "wang" }) );
+        set("race", "野獸");
         set("age", random(10));
-        set("long", "��������������һֻ���󣬵��ǻ���ȴû��һ��ë���ֺ�����һ��⻬��\n");
+        set("long", "它看起來更象是一只老鼠，但是渾身卻沒有一根毛，又和青蛙一般光滑。\n");
         set("attitude", "peaceful");
         set("str", 20);
         set("cor", 20);
-        set("limbs", ({ "ͷ��", "����", "�ߴ�", "β��" }) );
+        set("limbs", ({ "頭部", "身體", "七寸", "尾巴" }) );
         set("verbs", ({ "bite" }) );
 
         set("combat_exp", 100000+random(100000));
@@ -41,14 +41,14 @@ int hit_ob(object me, object ob, int damage)
         if( random(damage)>query_temp("apply/armor", ob) && ob->query_condition("snake_poison")<20 )
         {
                 ob->apply_condition("snake_poison", 100);
-                tell_object(ob, HIG "�����һ����ľ�ĸо��Ա�ҧ�еĵط���������ȫ����\n" NOR );
+                tell_object(ob, HIG "你覺得一陣麻木的感覺自被咬中的地方慢慢傳遍全身！\n" NOR );
         }
 }
 
 void die()
 {
         object ob;
-        message_vision("$N���ڵ��ϣ����ˣ�\n", this_object());
+        message_vision("$N倒在地上，死了！\n", this_object());
 //        ob = new("/d/shenlong/obj/shedan");
 //        ob->move(environment(this_object()));
 //        ob = new("/d/baituo/obj/shepi");

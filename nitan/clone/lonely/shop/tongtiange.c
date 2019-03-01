@@ -2,22 +2,22 @@
 inherit ITEM;
 
 string shop_id(){return "yz_shop";}
-string shop_name(){return HIW "Í¨Ìì¸ó" NOR;}
+string shop_name(){return HIW "é€šå¤©é–£" NOR;}
 string shop_string(){return "tongtiange fangqi";}
 
 void create()
 {
-        set_name(HIW "¡¸" + shop_name() + HIW "·¿Æõ¡¹" NOR, ({ shop_string() }));        
+        set_name(HIW "ã€Œ" + shop_name() + HIW "æˆ¿å¥‘ã€" NOR, ({ shop_string() }));        
 
         set_weight(1);
         if (clonep())
                 destruct(this_object());
         else {
-                set("unit", "·İ");
-                set("long", HIY "ÕâÊÇÒ»·İ" + shop_name() + HIY "µÄ·¿Æõ£¬ÇëÍ×ÉÆ±£¹Ü¡£\n"
-                            HIM        "Ê¹ÓÃ deed register ¿É³ÉÎª" + shop_name() + HIM "µÄËùÓĞÕß¡£\n"
-                            HIM "Ê¹ÓÃ deed hide ¿É½«·¿ÆõÒş²Ø¡£\n" NOR);
-                set("no_sell", "Õâ¸ö¶«Î÷Èç´Ë¹óÖØ£¬ÎÒ¿´Äã»¹ÊÇÁíÕÒÂò¼Ò°É£¡\n");
+                set("unit", "ä»½");
+                set("long", HIY "é€™æ˜¯ä¸€ä»½" + shop_name() + HIY "çš„æˆ¿å¥‘ï¼Œè«‹å¦¥å–„ä¿ç®¡ã€‚\n"
+                            HIM        "ä½¿ç”¨ deed register å¯æˆç‚º" + shop_name() + HIM "çš„æ‰€æœ‰è€…ã€‚\n"
+                            HIM "ä½¿ç”¨ deed hide å¯å°‡æˆ¿å¥‘éš±è—ã€‚\n" NOR);
+                set("no_sell", "é€™å€‹æ±è¥¿å¦‚æ­¤è²´é‡ï¼Œæˆ‘çœ‹ä½ é‚„æ˜¯å¦æ‰¾è²·å®¶å§ï¼\n");
                 set("material", "paper");
                 set("can_paimai", 1);
         }
@@ -34,11 +34,11 @@ int do_deed(string arg)
 
         me = this_player();
 
-        if (! arg)return notify_fail("ÄãÒªÓÃ·¿Æõ×öÊ²Ã´£¿\n");
+        if (! arg)return notify_fail("ä½ è¦ç”¨æˆ¿å¥‘åšä»€éº¼ï¼Ÿ\n");
 
         if (arg == "hide")
         {
-                write("Äã°Ñ" + shop_name() + "·¿ÆõÒş²ØÁËÆğÀ´¡£\n");
+                write("ä½ æŠŠ" + shop_name() + "æˆ¿å¥‘éš±è—äº†èµ·ä¾†ã€‚\n");
                 destruct(this_object());
                 
                 return 1;
@@ -46,19 +46,19 @@ int do_deed(string arg)
         else if (arg == "register")
         {
                 if (SHOP_D->is_shop_owner(shop_id(), me->query("id")))
-                        return notify_fail("Äã²»ÒÑ¾­ÊÇ" + shop_name() + "µÄÖ÷ÈËÁËÂğ£¿\n");
+                        return notify_fail("ä½ ä¸å·²ç¶“æ˜¯" + shop_name() + "çš„ä¸»äººäº†å—ï¼Ÿ\n");
 
-                write(HIC "ÄãÔÚ" + shop_name() + HIC"µÄ·¿ÆõÉÏÇ©ÉÏÁËÄãµÄ´óÃû£º" + me->name() + "\n" NOR);
-                write(HIG "¹§Ï²Äã³ÉÎª" + shop_name() + HIG "µÄÖ÷ÈË¡£\n" NOR);
+                write(HIC "ä½ åœ¨" + shop_name() + HIC"çš„æˆ¿å¥‘ä¸Šç°½ä¸Šäº†ä½ çš„å¤§åï¼š" + me->name() + "\n" NOR);
+                write(HIG "æ­å–œä½ æˆç‚º" + shop_name() + HIG "çš„ä¸»äººã€‚\n" NOR);
 
                 SHOP_D->change_owner(me, shop_id(), me->query("id"));
-                log_file("shop", me->query("id") + " at " + ctime(time()) + " ³ÉÎª"+ shop_id() + "µÄÖ÷ÈË¡£\n");
+                log_file("shop", me->query("id") + " at " + ctime(time()) + " æˆç‚º"+ shop_id() + "çš„ä¸»äººã€‚\n");
 
                 return 1;
         }
         
         else
-                return notify_fail("ÄãÒªÓÃ·¿Æõ×öÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦ç”¨æˆ¿å¥‘åšä»€éº¼ï¼Ÿ\n");
 
 }
 

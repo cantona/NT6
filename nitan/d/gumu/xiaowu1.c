@@ -1,14 +1,14 @@
-// xiaowu1.c С��
+// xiaowu1.c 小屋
 // Java Oct.10 1998
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "С��");
+        set("short", "小屋");
         set("long", @LONG
-���߽���һ��С�ݣ������С������һ��С���Ų��±�Ķ����ˡ�
-���Ϻ����м���������������Ĵֲ�����ϴ�ĸɸɾ�����
+你走進了一間小屋，房間很小，除了一張小床放不下別的東西了。
+床上好象有幾件疊得整整齊齊的粗布衫，洗的幹幹凈凈。
 LONG        );
         set("exits", ([
                 "south" : __DIR__"mudao10",

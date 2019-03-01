@@ -5,7 +5,7 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIR"³à³Ø"NOR, ({ "chi chi", "chi" }) );
+        set_name(HIR"èµ¤æ± "NOR, ({ "chi chi", "chi" }) );
         set_weight(500);
         set_max_encumbrance(80000);
         set("no_get", 1);
@@ -13,8 +13,8 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
-                set("long", HIR"Ò»¸öË®É«Îª³àµÄ³ØÌ¶¡£\n"NOR);
+                set("unit", "å€‹");
+                set("long", HIR"ä¸€å€‹æ°´è‰²ç‚ºèµ¤çš„æ± æ½­ã€‚\n"NOR);
                 set("value", 1);
         }
 }

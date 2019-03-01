@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Ð¡Ê÷ÁÖ");
+        set("short", "å°æ¨¹æž—");
         set("long", @LONG
-Õâ¶ùÊÇÒ»Æ¬Ð¡Ê÷ÁÖ£¬Ê÷ÁÖÖÐ¼äÓÐÒ»Ð¡¿é¿ÕµØ¡£¿ÕµØÉÏ³ýÁË¿ÓÍÝ
-ÒÔÍâ»¹¶ÑÁËÒ»Ð©²»Í¬´óÐ¡µÄÊ¯¿é£¬ÕâÐ©Ê¯¿é±íÃæ¶¼±È½Ï¹â»¬ËÆºõÊÇ
-ÈËÁ¦ËùÎª¡£ÄãÒ»Ì§Í··¢ÏÖ¿ÕµØËÄÖÜµÄÊ÷¸ÉÉÏ¶¼Ã»ÁËÊ÷Æ¤¡£
+é€™å…’æ˜¯ä¸€ç‰‡å°æ¨¹æž—ï¼Œæ¨¹æž—ä¸­é–“æœ‰ä¸€å°å¡Šç©ºåœ°ã€‚ç©ºåœ°ä¸Šé™¤äº†å‘çªª
+ä»¥å¤–é‚„å †äº†ä¸€äº›ä¸åŒå¤§å°çš„çŸ³å¡Šï¼Œé€™äº›çŸ³å¡Šè¡¨é¢éƒ½æ¯”è¼ƒå…‰æ»‘ä¼¼ä¹Žæ˜¯
+äººåŠ›æ‰€ç‚ºã€‚ä½ ä¸€æŠ¬é ­ç™¼ç¾ç©ºåœ°å››å‘¨çš„æ¨¹å¹¹ä¸Šéƒ½æ²’äº†æ¨¹çš®ã€‚
 LONG );
 
         set("exits", ([
@@ -34,29 +34,29 @@ int do_pick(string arg)
         object me = this_player();
 
         if( !arg || !(arg == "shikuai" || arg == "shitou") )
-                return notify_fail("Ê²Ã´£¿\n");
+                return notify_fail("ä»€éº¼ï¼Ÿ\n");
 
         if( query_temp("sg/leg", me)>1 )
-                return notify_fail("ÄãÍÈÉÏ°ó²»ÏÂÄÇÃ´¶àÊ¯¿é¡£\n");
+                return notify_fail("ä½ è…¿ä¸Šç¶ä¸ä¸‹é‚£éº¼å¤šçŸ³å¡Šã€‚\n");
 
         addn("qi", 200/(1+me->query_str()), me);
         if( random(query_temp("sg/shikuai", me))<3 )
         {
-                message_vision("$N¼ñÆðÒ»¿éÊ¯Í·£¬µàÁËµà·ÝÁ¿£¬Ò¡ÁËÒ¡Í·£¬±ãÈÓÔÚµØÉÏ¡£\n", me);
+                message_vision("$Næ’¿èµ·ä¸€å¡ŠçŸ³é ­ï¼ŒæŽ‚äº†æŽ‚ä»½é‡ï¼Œæ–äº†æ–é ­ï¼Œä¾¿æ‰”åœ¨åœ°ä¸Šã€‚\n", me);
                 addn_temp("sg/shikuai", 1, me);
                 return 1;
         }
         delete_temp("sg/shikuai", me);
         if( !query_temp("sg/leg", me) )
         {
-                message_vision("$N¼ñÆðÒ»¿éÊ¯Í·£¬µàÁËµà·ÝÁ¿£¬±ã°ÑËü°óÔÚÓÒÍÈÉÏ¡£\n", me);
+                message_vision("$Næ’¿èµ·ä¸€å¡ŠçŸ³é ­ï¼ŒæŽ‚äº†æŽ‚ä»½é‡ï¼Œä¾¿æŠŠå®ƒç¶åœ¨å³è…¿ä¸Šã€‚\n", me);
                 addn_temp("sg/leg", 1, me);
                 addn_temp("apply/dodge", -10, me);
                 return 1;
         }
         if( query_temp("sg/leg", me)>0 )
         {
-                message_vision("$N¼ñÆðÒ»¿éÊ¯Í·£¬µàÁËµà·ÝÁ¿£¬±ã°ÑËü°óÔÚ×óÍÈÉÏ¡£\n", me);
+                message_vision("$Næ’¿èµ·ä¸€å¡ŠçŸ³é ­ï¼ŒæŽ‚äº†æŽ‚ä»½é‡ï¼Œä¾¿æŠŠå®ƒç¶åœ¨å·¦è…¿ä¸Šã€‚\n", me);
                 addn_temp("apply/dodge", -10, me);
                 addn_temp("sg/leg", 1, me);
         }
@@ -68,25 +68,25 @@ int do_kick(string arg)
         object me = this_player();
 
         if( !arg || !(arg == "tree" || arg == "shu") )
-                return notify_fail("Ê²Ã´£¿\n");
+                return notify_fail("ä»€éº¼ï¼Ÿ\n");
 
-        message_vision("$NÌÚ¿Õ¶øÆðË«ÍÈÌßÏòÖÜÎ§Ê÷¸É¡£\n", me);
+        message_vision("$Né¨°ç©ºè€Œèµ·é›™è…¿è¸¢å‘å‘¨åœæ¨¹å¹¹ã€‚\n", me);
 
-        me->receive_damage("jing", 15, "ÐÄÁ¦½Ê´áËÀÁË");
-        me->receive_damage("qi", 25, "Á¦¾¡¶øËÀ");
+        me->receive_damage("jing", 15, "å¿ƒåŠ›çµžç˜æ­»äº†");
+        me->receive_damage("qi", 25, "åŠ›ç›¡è€Œæ­»");
 //        me->improve_skill("kick", random(me->query_int()));
 
         if( query_temp("sg/leg", me) == 2 )
         {
-                me->receive_damage("jing", 10, "ÐÄÁ¦½Ê´áËÀÁË");
-                me->receive_damage("qi", 20, "Á¦¾¡¶øËÀ");
+                me->receive_damage("jing", 10, "å¿ƒåŠ›çµžç˜æ­»äº†");
+                me->receive_damage("qi", 20, "åŠ›ç›¡è€Œæ­»");
                 me->improve_skill("dodge", random(me->query_int()));
                 return 1;
         }
         if( query_temp("sg/leg", me) == 1 )
         {
-                me->receive_damage("jing", 8, "ÐÄÁ¦½Ê´áËÀÁË");
-                me->receive_damage("qi", 16, "Á¦¾¡¶øËÀ");
+                me->receive_damage("jing", 8, "å¿ƒåŠ›çµžç˜æ­»äº†");
+                me->receive_damage("qi", 16, "åŠ›ç›¡è€Œæ­»");
                 me->improve_skill("dodge", random(me->query_int() / 2));
                 return 1;
         }
@@ -99,7 +99,7 @@ int valid_leave(object me, string dir)
         if( query_temp("sg/leg", me) )
         {
                 addn_temp("apply/dodge",query_temp("sg/leg",  me)*10, me);
-                message_vision("$NËÉÁË°ó£¬½«ÍÈÉÏµÄÊ¯¿éÈÓÔÚÒ»±ß¡£\n", me);
+                message_vision("$Né¬†äº†ç¶ï¼Œå°‡è…¿ä¸Šçš„çŸ³å¡Šæ‰”åœ¨ä¸€é‚Šã€‚\n", me);
                 delete_temp("sg/leg", me);
                 me->start_busy(1);
         }

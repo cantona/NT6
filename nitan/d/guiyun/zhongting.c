@@ -9,13 +9,13 @@ string look_zishi();
 
 void create()
 {
-        set("short","����");
+        set("short","中廳");
         set("long",@LONG
-���ǹ���ׯ��������ׯ�еĴ����Լ��ټ�����ѵ���������������
-�ġ������޽������Զ������������Ϊ�¾ɣ�����ɨ��ʮ�ָɾ�������
-Ҳ��Ϊ���㣬��ȫû�г����լ������֮�����ıڹ���һЩ�����黭��
-Ʒ����Ϊ�ϳ�֮�����Ե������۹ⲻ�������д������֡�
-    ��������һ��̫ʦ�Σ��κ��ǽ�Ϲ���һ����(hua)��
+這是歸雲莊的中廳。莊中的大事以及召集弟子訓話都是在這裡進行
+的。由于修建年代久遠，看起來已頗為陳舊，但打掃得十分幹凈，光線
+也較為充足，完全沒有陳年舊宅的陰晦之氣。四壁掛著一些古人書畫精
+品，皆為上乘之作，顯得主人眼光不凡，胸中大有丘壑。
+    靠裡面是一張太師椅，椅後的牆上掛著一幅畫(hua)。
 LONG );
         set("objects",([
                 __DIR__"npc/kezhene" : 1,
@@ -34,7 +34,7 @@ LONG );
                 "south" : __DIR__"zoulang4",
         ]) );
         set("item_desc", ([
-                "hua" :  "������һλ��ò���ǵ��������ߣ����ڴ���(xiao)��������������(zishi)ȴ�е���֡�\n",
+                "hua" :  "畫中是一位形貌清矍的青衫老者，正在吹簫(xiao)，但是他的姿勢(zishi)卻有點奇怪。\n",
                 "xiao" : (: look_xiao :),
                 "zishi" : (: look_zishi :),
         ]) );
@@ -50,9 +50,9 @@ string look_xiao()
 {
         object me = this_player();
 
-        if( !query_temp("guiyun_hua", me))return "��������������������ǹ��죡\n";
+        if( !query_temp("guiyun_hua", me))return "畫中老人拿簫的姿勢甚是怪異！\n";
         set_temp("guiyun_hua", 2, me);
-        return "ԭ���������˾��ǰ��������ŵ��ﵱ���˽����衣\n";
+        return "原來畫中老人竟是把手中握著的簫當作了劍來舞。\n";
 }
 
 string look_zishi()
@@ -65,35 +65,35 @@ string look_zishi()
         if( query_temp("guiyun_hua", me)<2 )
         {
                 set_temp("guiyun_hua", 1, me);
-                return "����ϸ�ض����Ż������˵����ˣ���㱼�·𿴼��������ڻ����趯��ʲô��\n";
+                return "你仔細地端詳著畫中老人的身姿，恍惚間仿佛看見老人正在緩緩舞動著什麼。\n";
         }
         else
         {
-                write("ԭ��������������������ﾹȻ�����Ÿ���Ľ�����\n");
+                write("原來畫中老人舞簫的姿勢裡竟然暗藏著高深的劍法！\n");
                 if (me->is_busy())
                 {
-                        write("��ϧ��������æ��������£��޷�ר���о��������\n");
+                        write("可惜你現在正忙著做別的事，無法專心研究這幅畫。\n");
                         return "";
                 }
                 if( me->is_fighting() ) {
-                        write("��ϧ����������ս���У��޷�ר���о��������\n");
+                        write("可惜你現在正在戰鬥中，無法專心研究這幅畫。\n");
                         return "";
                 }
                 if( query("jing", me)<30 )
-                        return "��ϧ��̫���ˣ��޷����о������о��������\n";
+                        return "可惜你太累了，無法集中精神來研究這幅畫。\n";
                 if (me->query_skill("sword", 1) > 100)
-                        return "�������ǰ���㿴���ܼ���Ļ������ڵ�������Ѿ�û��ʲô��ֵ���о����ˡ�\n";
+                        return "這幅在以前的你看來很艱深的畫對現在的你而言已經沒有什麼可值得研究的了。\n";
                 if ((int)me->query_skill("sword", 1) < 30 )
-                        return "��Ŭ����ͼ�ӻ������˵������￴��Щʲô��ȴ����һ�ж���ͽ�͵ġ�\n";
+                        return "你努力試圖從畫中老人的身姿裡看出些什麼，卻發現一切都是徒勞的。\n";
 
                 me->receive_damage("jing", 25);
                 if( level * level * level /10 < exp)
                         me->improve_skill("sword",query("int", me));
 
-                write("����ϸ�����Ż���������������ˡ�\n");
+                write("你仔細端詳著畫中老人舞簫的身姿。\n");
                 if (!random(8))
-                        tell_room(this_object(), me->name() + "��ϸ�����Ż���������������ˡ�\n", ({me}));
-                return "��Խ������õ�΢��֮�����˽�һ������ʶ��\n";
+                        tell_room(this_object(), me->name() + "仔細端詳著畫中老人舞簫的身姿。\n", ({me}));
+                return "你對劍法運用的微妙之處有了進一步的認識。\n";
         }
 }
 
@@ -122,7 +122,7 @@ void init()
         remove_call_out("recruit_ob");
         call_out("recruit_ob", 1, me);
 
-        tell_object(me, CYN "����������е�Ź֣��ƺ����˸��棿\n" NOR);
+        tell_object(me, CYN "你覺得身後有點古怪，似乎有人跟隨？\n" NOR);
 }
 
 void recruit_ob(object me)
@@ -147,18 +147,18 @@ void recruit_ob(object me)
                 me->start_busy(1);
         ob->move(environment(me));
 
-        message_sort("$Nǰ��ͻȻ������һ�ˣ����ĸ��ݣ�������ɫ���ۣ���ɫ�Ź�֮�������������ƺ�����"
-                       "΢΢ת��������֮�⣬����ڱǣ����Խ�Ӳ��ľʯ��ֱ��һ������ͷװ�ڻ��˵������ϡ�\n\n", me);
+        message_sort("$N前面突然出現了一人，身材高瘦，身穿青色布袍，臉色古怪之極，兩顆眼珠似乎尚能"
+                       "微微轉動，除此之外，肌肉口鼻，盡皆僵硬如木石，直是一個死人頭裝在活人的軀體上。\n\n", me);
 
-        message_sort("$Nһ��֮�£���ʱһ�������ӱ�����ֱ��������Ŀ�������������ഥ���㶼�����ٿ�����ʱ��"
-                       "ͷת����������Ȼ������Ī���������ʦүү�������д��ŵ��һ������� æ��ǰ����������"
-                       "�����ĸ�ͷ��˵���������ߵ��ʦ�档����ҩʦ���������ˣ����������������ȴ������ץס$N��"
-                       "��һ�ᣬ���Ʊ���$N��ͷ���¡�����\n", me);
-        message_sort("$Nһ�����������ϸ�룬�Ͻ����μ�����ʹ��һ�С������ڿա���������ͬΪ�������������Ʈ��һ�����ࡣ\n\n", me);
-        message_sort("��ҩʦ΢һ㶣�����һ������" + RANK_D->query_rude(me) + "ȴ�м������ʣ��Ҿͳ�ȫ��ɡ�\n\n", me);
+        message_sort("$N一見之下，登時一陣涼氣從背脊上直冷下來，目光與這張臉孔相觸，便都不敢再看，立時將"
+                       "頭轉開，心中怦然而動：莫非這就是祖師爺爺，江湖中傳聞的桃花島主？ 忙上前恭恭敬敬的"
+                       "磕了四個頭，說道：“孫兒叩見師祖。”黃藥師道：“罷了！”並不俯身相扶，卻伸左手抓住$N後"
+                       "心一提，右掌便向$N肩頭拍下。。。\n", me);
+        message_sort("$N一見不妙，來不及細想，趕緊身形疾閃，使出一招“海燕騰空”，身體如同為海風所激，向後飄開一丈有余。\n\n", me);
+        message_sort("黃藥師微一愣，哼了一聲道：" + RANK_D->query_rude(me) + "卻有幾分資質，我就成全你吧。\n\n", me);
 
-        message_sort("$N��Ҫ��$nΪ���ӡ�\n", ob, me);
-        tell_object(me, YEL "�����Ը���" + ob->name() + "Ϊʦ������ apprentice ָ�\n" NOR);
+        message_sort("$N想要收$n為弟子。\n", ob, me);
+        tell_object(me, YEL "如果你願意拜" + ob->name() + "為師父，用 apprentice 指令。\n" NOR);
         set_temp("huang_recr", 1, me);
 
         //remove_call_out("finish_recr");
@@ -172,7 +172,7 @@ void finish_recr(object me, object ob)
 
         if( query("family/master_id", me) != "huang yaoshi" )
         {
-                message_vision("$N��Цһ����" + RANK_D->query_rude(me) + "��Ȼ�м��ֳ����ӡ�˵��ƮȻ��ȥ��\n", ob);
+                message_vision("$N冷笑一聲：" + RANK_D->query_rude(me) + "居然有幾分臭架子。說完飄然而去。\n", ob);
                 delete_temp("huang_recr", me);
                 destruct(ob);
         }

@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "���");
+        set("short", "戈壁");
         set("long", @LONG
-�������ٽ�ɳĮ�ĸ��̲���������̡�������һ���޼ʵĴ�ɳĮ��
-���������Կ���һ��С��
+這裡是臨近沙漠的戈壁灘，荒無人煙。東邊是一望無際的大沙漠，
+西北方可以看見一座小鎮。
 LONG );
         set("outdoors", "baituo");
         set("no_clean_up", 0);

@@ -6,11 +6,11 @@
 inherit ROOM;
 void create()
 {
-        set("short", "Ӫ��");
+        set("short", "營房");
         set("long", @LONG
-����������Ӫ��Ӫ����һ����ľ��ɷ������, �ſڿյ������ʿ
-��Χ�ɸ�Ȧ�����֣����ľ��г����������������Ӣ�ۣ�ʿ��������
-�Ǳ��δ󺺡�
+這裡是驃騎營的營房，一排排木屋煞是齊整, 門口空地許多軍士
+們圍成個圈在喧鬧，西夏軍中崇尚勇力，佩服的是英雄，士兵個個都
+是彪形大漢。
 LONG );
         set("exits", ([
                 "south" : __DIR__"biaoqiyin",

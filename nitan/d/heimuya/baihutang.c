@@ -2,10 +2,10 @@ inherit ROOM;
  
 void create()
 {
-        set("short", "�׻���");
+        set("short", "白虎堂");
         set("long", @LONG
-�����Ǻ�ľ�µĵڶ����á��׻��á���������ש�̵أ����ں�ʬ
-���ء�
+這裡是黑木崖的第二大堂『白虎堂』。堂內青磚舖地，堂內橫屍
+滿地。
 LONG );
         set("exits", ([
             "north"   : __DIR__"baistep2",

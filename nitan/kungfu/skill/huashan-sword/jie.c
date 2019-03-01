@@ -1,12 +1,12 @@
 // This program is a part of NITAN MudLIB
-// jie.c »ªÉ½½£·¨¡¸½ØÊÖÊ½¡¹
+// jie.c è¯å±±åŠæ³•ã€Œæˆªæ‰‹å¼ã€
 
 #include <ansi.h>
 #include <combat.h>
 
 inherit F_SSERVER;
 
-string name() { return HIG "½ØÊÖÊ½" NOR; }
+string name() { return HIG "æˆªæ‰‹å¼" NOR; }
 
 int perform(object me, object target)
 {
@@ -17,31 +17,31 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(name() + "Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(name() + "åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me)) ||
             query("skill_type", weapon) != "sword" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ã€‚\n");
 
         if (target->is_busy())
-                return notify_fail(target->name() + "Ä¿Ç°Õı×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É£¡\n");
+                return notify_fail(target->name() + "ç›®å‰æ­£è‡ªé¡§ä¸æš‡ï¼Œæ”¾è†½æ”»æ“Šå§ï¼\n");
 
         if ((level = me->query_skill("huashan-sword", 1)) < 30)
-                return notify_fail("ÄãµÄ»ªÉ½½£·¨²»¹»æµÊì£¬ÎŞ·¨Ê©Õ¹" + name() + " ¡£\n");
+                return notify_fail("ä½ çš„è¯å±±åŠæ³•ä¸å¤ å«»ç†Ÿï¼Œç„¡æ³•æ–½å±•" + name() + " ã€‚\n");
 
         if (me->query_skill_mapped("sword") != "huashan-sword")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢»ªÉ½½£·¨£¬ÎŞ·¨Ê©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼è¯å±±åŠæ³•ï¼Œç„¡æ³•æ–½å±•" + name() + "ã€‚\n");
 
         if( query("neili", me)<60 )
-                return notify_fail("ÄãÏÖÔÚÕæÆø²»¹»£¬ÎŞ·¨Ê¹ÓÃ¡¸½ØÊÖÊ½¡¹¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çœŸæ°£ä¸å¤ ï¼Œç„¡æ³•ä½¿ç”¨ã€Œæˆªæ‰‹å¼ã€ã€‚\n");
 
         if (! living(target))
-               return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+               return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIW "\nµ«¼û$N" HIW "³¤½£Ò»ÀÕ£¬Ê¹³ö»ªÉ½½£·¨¾ø¼¼Ö®"
-              "¡¸" HIG "½ØÊÖÊ½" HIW "¡¹£¬×ªÕÛÖ®¼ÊÌìÒÂÎŞ·ì£¬Ò»\n"
-              "½£¼È³ö£¬ºó×ÅÔ´Ô´ÇãĞº£¬Èç´óÀËÔ¾Ì²£¬²ã²ãµşµş£¬Ñ¸"
-              "È»ÆËÏò$n" HIW "£¡\n" NOR;
+        msg = HIW "\nä½†è¦‹$N" HIW "é•·åŠä¸€å‹’ï¼Œä½¿å‡ºè¯å±±åŠæ³•çµ•æŠ€ä¹‹"
+              "ã€Œ" HIG "æˆªæ‰‹å¼" HIW "ã€ï¼Œè½‰æŠ˜ä¹‹éš›å¤©è¡£ç„¡ç¸«ï¼Œä¸€\n"
+              "åŠæ—¢å‡ºï¼Œå¾Œè‘—æºæºå‚¾ç€‰ï¼Œå¦‚å¤§æµªèºç˜ï¼Œå±¤å±¤ç–Šç–Šï¼Œè¿…"
+              "ç„¶æ’²å‘$n" HIW "ï¼\n" NOR;
 
         addn("neili", -50, me);
         ap = attack_power(me, "sword");
@@ -49,19 +49,19 @@ int perform(object me, object target)
 
         if (ap / 2 + random(ap) > dp)
         {
-                msg += HIR "½á¹û$p" HIR "´á²»¼°·À£¬Á¬Á¬µ¹ÍË"
-                       "¼¸²½£¬Ò»Ê±¼äÎŞ·¨»ØÊÖ£¡\n" NOR;
+                msg += HIR "çµæœ$p" HIR "ç˜ä¸åŠé˜²ï¼Œé€£é€£å€’é€€"
+                       "å¹¾æ­¥ï¼Œä¸€æ™‚é–“ç„¡æ³•å›æ‰‹ï¼\n" NOR;
                 target->start_busy(level / 80 + 3);
         } else
         {
                 if( objectp(weapon=query_temp("weapon", target)) )
-                        msg += CYN "µ«ÊÇ$p" CYN "Ê¶ÆÆÁË$P" CYN "µÄÓÃÒâ£¬"
-                               "×Ô¹Ë½«ÊÖÖĞµÄ" + weapon->name() +
-                               CYN "Îè³ÉÒ»ÍÅ¹â»¨£¬$P"
-                               CYN "Ò»ÕúÖ®ÏÂÔÙÒ²¹¥²»½øÈ¥¡£\n" NOR;
+                        msg += CYN "ä½†æ˜¯$p" CYN "è­˜ç ´äº†$P" CYN "çš„ç”¨æ„ï¼Œ"
+                               "è‡ªé¡§å°‡æ‰‹ä¸­çš„" + weapon->name() +
+                               CYN "èˆæˆä¸€åœ˜å…‰èŠ±ï¼Œ$P"
+                               CYN "ä¸€æ€”ä¹‹ä¸‹å†ä¹Ÿæ”»ä¸é€²å»ã€‚\n" NOR;
                 else
-                        msg += CYN "µ«ÊÇ$p" CYN "Ë«ÊÖ´Áµã´ÌÅÄ£¬½«$P"
-                               CYN "µÄÀ´ÕĞÒ»Ò»¼Ü¿ª¡£\n" NOR;
+                        msg += CYN "ä½†æ˜¯$p" CYN "é›™æ‰‹æˆ³é»åˆºæ‹ï¼Œå°‡$P"
+                               CYN "çš„ä¾†æ‹›ä¸€ä¸€æ¶é–‹ã€‚\n" NOR;
 
                 me->start_busy(1);
         }

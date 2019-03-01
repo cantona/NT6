@@ -4,12 +4,12 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÌìÉ½½ÅÏÂ");
+        set("short", "å¤©å±±è…³ä¸‹");
         set("long", @LONG
-ÕâÀïÊÇÌìÉ½½ÅÏÂ£¬Î÷ÃæÊÇ¸ßËÊÈëÔÆµÄÌìÉ½¡£ÌìÇçµÄÊ±ºò¿ÉÒÔ¿´µ½É½
-¶¥ÉÏµÄ±ù´¨¡£Ò»µÀÌìÉ½½«Î÷Óò·ÖÎªÁ½°ë¡£±±½®ÊÇÎ÷Óò¸÷×åµÄ¾Û¾ÓÇø£¬ÄÏ
-½®ÊÇÎŞ±ßµÄËş¿ËÀ­Âí¸É´óÉ³Ä®¡£Î÷ÄÏÊÇÍ¨ÏòÌìÉ½ÄÏÂ·»Ø½®´ó²İÔ­µÄ¸ê±Ú
-É³Ä®¡£
+é€™è£¡æ˜¯å¤©å±±è…³ä¸‹ï¼Œè¥¿é¢æ˜¯é«˜è³å…¥é›²çš„å¤©å±±ã€‚å¤©æ™´çš„æ™‚å€™å¯ä»¥çœ‹åˆ°å±±
+é ‚ä¸Šçš„å†°å·ã€‚ä¸€é“å¤©å±±å°‡è¥¿åŸŸåˆ†ç‚ºå…©åŠã€‚åŒ—ç–†æ˜¯è¥¿åŸŸå„æ—çš„èšå±…å€ï¼Œå—
+ç–†æ˜¯ç„¡é‚Šçš„å¡”å…‹æ‹‰é¦¬å¹¹å¤§æ²™æ¼ ã€‚è¥¿å—æ˜¯é€šå‘å¤©å±±å—è·¯å›ç–†å¤§è‰åŸçš„æˆˆå£
+æ²™æ¼ ã€‚
 LONG );
         set("outdoors", "xiyu"); 
         set("region", "xiyu"); 
@@ -59,12 +59,12 @@ int valid_leave(object me, string dir)
         }
         if( query_temp("wait_target", me) && 
                 objectp(present("anran zi", environment(me))))
-                return notify_fail("÷öÈ»×ÓÉÁÉíÀ¹ÔÚÄãÃæÇ°£¬ºÈµÀ£ºÁÙÕóÏëÁï£¿¸øÎÒ¹ö»ØÀ´£¡\n");
+                return notify_fail("é»¯ç„¶å­é–ƒèº«æ””åœ¨ä½ é¢å‰ï¼Œå–é“ï¼šè‡¨é™£æƒ³æºœï¼Ÿçµ¦æˆ‘æ»¾å›ä¾†ï¼\n");
         if( query_temp("xx_rob", me) && 
                 objectp(ob = present("hubiao biaoshi", environment(me))) &&
                 query("target", ob) == me )
-                return notify_fail("»¤ïÚïÚÊ¦ÉÁÉíÀ¹×¡ÄãµÄÈ¥Â·£¬¿´À´ÊÇÏë°ÑÄã¸ø·ÏÁË£¡\n");  
+                return notify_fail("è­·é¢é¢å¸«é–ƒèº«æ””ä½ä½ çš„å»è·¯ï¼Œçœ‹ä¾†æ˜¯æƒ³æŠŠä½ çµ¦å»¢äº†ï¼\n");  
         if( query_temp("xx_rob", me) && objectp(present("shangdui",environment(me))) )
-                return notify_fail("ÉÌ¶ÓÔÚÕâÀïÄØ£¬¿ìÇÀ(qiang)°¡£¡\n");  
+                return notify_fail("å•†éšŠåœ¨é€™è£¡å‘¢ï¼Œå¿«æ¶(qiang)å•Šï¼\n");  
         return ::valid_leave(me, dir);
 } 

@@ -11,15 +11,15 @@ int main(object me, string arg)
                 return 0;
 
         if(!function_exists("cmd_dig_function", env))
-                return notify_fail("你四处看了看，发现这里没什么可以挖掘的地方。\n");
+                return notify_fail("浣犲洓铏曠湅浜嗙湅锛岀櫦鐝鹃�欒！娌掍粈楹煎彲浠ユ寲鎺樼殑鍦版柟銆俓n");
 
         if(!sizeof( inv = filter_array(all_inventory(me),
                 (: $1->is_mine_tool() && $1->tool_can_use() :)) ) )
-                return notify_fail("你身上没有用于挖掘的工具。\n");
+                return notify_fail("浣犺韩涓婃矑鏈夌敤浜庢寲鎺樼殑宸ュ叿銆俓n");
 
         inv[0]->use_this_tool();
 
-        notify_fail("你四处挖了挖，什么也没有挖出来。\n");
+        notify_fail("浣犲洓铏曟寲浜嗘寲锛屼粈楹间篃娌掓湁鎸栧嚭渚嗐�俓n");
         return env->cmd_dig_function(me, arg);
 }
 

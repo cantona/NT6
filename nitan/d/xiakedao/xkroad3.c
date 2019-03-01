@@ -4,10 +4,10 @@ inherit BUILD_ROOM;
 
 void create()
 {
-        set("short", "ƽԭС·");
+        set("short", "平原小路");
         set("long", @LONG
-�������齭�����޵�ƽԭС·�ϡ��˴��������֮�磬�л���֮
-��������������ģ���紾�ӡ�
+你走在珠江三角洲的平原小路上。此處向稱魚米之鄉，有花果之
+都美譽，物產豐饒，民風淳樸。
 LONG );
         set("outdoors", "nanhai");
         set("exits", ([

@@ -6,16 +6,16 @@ inherit POISON;
 
 string name() { return "bishuihan_poison"; }
 
-string chinese_name() { return "��ˮ����"; }
+string chinese_name() { return "碧水寒毒"; }
 
 string update_msg_others()
 {
-       return HIW "$N" HIW "��ɫ�԰ף�ͻȻ�ɰ�תΪ��ɫ������������ɫתΪ��ɫ��ȫ����ס�Ĳ������ƺ��ǳ�ʹ�ࡣ\n" NOR;
+       return HIW "$N" HIW "臉色蒼白，突然由白轉為綠色，接著又由綠色轉為紫色，全身不住的顫抖，似乎非常痛苦。\n" NOR;
 }
 
 string update_msg_self()
 {
-        return HIW "��ֻ�е�һ�ɴ�δ�й����溮֮����������Ȼ����������ȫ��������Ѩ�������Ǳ�ˮ���������ˣ�\n" NOR;
+        return HIW "你只感到一股從未有過的奇寒之氣從體內猶然而升，沁入全身各處大穴，看來是碧水寒毒發作了！\n" NOR;
 }
 
 int jing_damage(object me, mapping cnd)

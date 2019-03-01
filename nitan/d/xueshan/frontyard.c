@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Ç°Ôº");
+        set("short", "å‰é™¢");
         set("long", @LONG
-Ç°ÔºÃæÀ«Æß¼ä£¬ÕıÖĞ¹©·ê×ÅËÉÔŞ¸É²»Ïñ¡£ÕâÀïÊÇ¹Û¿´´ó»î·ğÖ÷³Ö
-·¨»áºÍ¹Û¿´·¨ÎèÖ®µØ¡£Ç°ÔºËÄÖÜÁ¢ÓĞ´óĞÍÃ÷ÖùÒ»°ÙËÄÊ®¸ù£¬ÉÏÃæ¾¡ÊÇ
-²Ê»æ·ğ´«¹ÊÊÂÍ¼¡£
+å‰é™¢é¢é—Šä¸ƒé–“ï¼Œæ­£ä¸­ä¾›é€¢è‘—é¬†è®šå¹¹ä¸åƒã€‚é€™è£¡æ˜¯è§€çœ‹å¤§æ´»ä½›ä¸»æŒ
+æ³•æœƒå’Œè§€çœ‹æ³•èˆä¹‹åœ°ã€‚å‰é™¢å››å‘¨ç«‹æœ‰å¤§å‹æ˜æŸ±ä¸€ç™¾å››åæ ¹ï¼Œä¸Šé¢ç›¡æ˜¯
+å½©ç¹ªä½›å‚³æ•…äº‹åœ–ã€‚
 LONG );
         set("exits", ([
               "south" : "/d/xueshan/shanmen",
@@ -33,7 +33,7 @@ int valid_leave(object me, string dir)
         ob=(present("fa tan", (environment(me))));
         if( objectp(ob) && query("name", me) == query("pending", ob )
          && query("burning", ob) )
-                return notify_fail("Äã·¨ÊÂÃ»×öÍê¾ÍÏë×ß£¿\n");
+                return notify_fail("ä½ æ³•äº‹æ²’åšå®Œå°±æƒ³èµ°ï¼Ÿ\n");
         return ::valid_leave(me, dir);
 }
 */

@@ -6,20 +6,20 @@ inherit ROOM;
 
 void create()
 {
-        set("short", HIM"ĞüÑÂ"NOR);
+        set("short", HIM"æ‡¸å´–"NOR);
         set("long", @LONG
-´Ë´¦ÒÑÊÇÖÕÄÏÉ½¾øÂ·£¬¹âÍºÍºµÄÊ¯±Ú£¬ÏÂÃæÔòÊÇÔÆÎíÃÖÂşµÄÍòÕÉÉî
-ÑÂ(xuanya)£¬´«ÎÅÖĞÓĞ¸ö¹ÅÄ¹µÜ×ÓÒòÊÜ²»ÁË¹ÅÄ¹Ö®Çå¿à¹ÑÓû£¬´Ó´Ë´¦Ò»
-Ô¾¶øÏÂ£¬ÁËÈ´Ò»Éú¡£½üĞüÑÂ±ßÓĞ¿ÃÄ¦Ìì´óÊ÷(tree)£¬Ö¦Ò¶¼«Ê¢£¬Èç´óÉ¡
-Ò»ÕÅÕÚÑÚ×¡·½Ô²Ö®µØ¡£
+æ­¤è™•å·²æ˜¯çµ‚å—å±±çµ•è·¯ï¼Œå…‰ç¦¿ç¦¿çš„çŸ³å£ï¼Œä¸‹é¢å‰‡æ˜¯é›²éœ§å½Œæ¼«çš„è¬ä¸ˆæ·±
+å´–(xuanya)ï¼Œå‚³èä¸­æœ‰å€‹å¤å¢“å¼Ÿå­å› å—ä¸äº†å¤å¢“ä¹‹æ¸…è‹¦å¯¡æ¬²ï¼Œå¾æ­¤è™•ä¸€
+èºè€Œä¸‹ï¼Œäº†å»ä¸€ç”Ÿã€‚è¿‘æ‡¸å´–é‚Šæœ‰æ£µæ‘©å¤©å¤§æ¨¹(tree)ï¼Œæè‘‰æ¥µç››ï¼Œå¦‚å¤§å‚˜
+ä¸€å¼µé®æ©ä½æ–¹åœ“ä¹‹åœ°ã€‚
 LONG        );
         set("outdoors","gumu");
         set("exits", ([
                 "west" : __DIR__"mumen",
         ]));
         set("item_desc", ([
-                "xuanya" : "ĞüÑÂÏÂÒ»Æ¬ÔÆÎíçÔÈÆ¡£Ìø(tiao)ÏÂÈ¥¿ÖÊÇÓĞÈ¥ÎŞ»Ø¡£\n",
-                "tree"   : "Ò»¿Ã¸ß´óµÄ¾ŞÊ÷£¬ÉÏÃæÁôÏÂÔø¾­±»ÈËÒ¡»ÎµÄºÛ¼£¡£\n", 
+                "xuanya" : "æ‡¸å´–ä¸‹ä¸€ç‰‡é›²éœ§ç¹šç¹ã€‚è·³(tiao)ä¸‹å»ææ˜¯æœ‰å»ç„¡å›ã€‚\n",
+                "tree"   : "ä¸€æ£µé«˜å¤§çš„å·¨æ¨¹ï¼Œä¸Šé¢ç•™ä¸‹æ›¾ç¶“è¢«äººæ–æ™ƒçš„ç—•è·¡ã€‚\n", 
         ]));
         set("no_clean_up", 0);
         set("coor/x", -3220);
@@ -37,7 +37,7 @@ void init()
                 if(!( room = find_object(__DIR__"tree")))
                         room = load_object(__DIR__"tree");
                 if(!(present("du mang", room))) return;
-                message_vision(HIR "Í»È»ÎÅµ½Ò»¹ÉĞÈ³ôÖ®Æø£¬´óÊ÷ÉÏµ¹ĞüÏÂÒ»ÌõÍë¿Ú´ÖÏ¸µÄÈı½ÇÍ·¾Şòş£¬°Ñ$N¾í×ßÁË¡£\n\n"NOR, me);
+                message_vision(HIR "çªç„¶èåˆ°ä¸€è‚¡è…¥è‡­ä¹‹æ°£ï¼Œå¤§æ¨¹ä¸Šå€’æ‡¸ä¸‹ä¸€æ¢ç¢—å£ç²—ç´°çš„ä¸‰è§’é ­å·¨èŸ’ï¼ŒæŠŠ$Nå·èµ°äº†ã€‚\n\n"NOR, me);
                 me->move(__DIR__"tree");
                 me->start_busy(3);
         }
@@ -58,18 +58,18 @@ int do_tiao(string arg)
         {
                 if( query_temp("mark/jump", me)<2 )
                 {
-                        write("ÈËÉú¿à¶Ì£¬ÇÒ¹ÅÄ¹Éñ¹¦¾øÊÀ£¬ÄãÔÙ¿¼ÂÇÒ»ÏÂ°É¡£\n");
+                        write("äººç”Ÿè‹¦çŸ­ï¼Œä¸”å¤å¢“ç¥åŠŸçµ•ä¸–ï¼Œä½ å†è€ƒæ…®ä¸€ä¸‹å§ã€‚\n");
                         addn_temp("mark/jump", 1, me);
                         return 1;
                 }
-                message_vision(HIR "$N×İÉíÌøÏÂĞüÑÂ£¬±¯ºôÒ»Éù£¬ĞÖµÜ½ãÃÃÃÇ£¬À´ÉúÔÙ¼û£¬»ØÉù²»¾øÓÚ¶ú¡£\n"NOR, me);
+                message_vision(HIR "$Nç¸±èº«è·³ä¸‹æ‡¸å´–ï¼Œæ‚²å‘¼ä¸€è²ï¼Œå…„å¼Ÿå§å¦¹å€‘ï¼Œä¾†ç”Ÿå†è¦‹ï¼Œå›è²ä¸çµ•äºè€³ã€‚\n"NOR, me);
                 delete_temp("mark/jump", me);
-                set_temp("last_damage_from", "ÌøÑÂ×ÔÉ±¶ø", me);
+                set_temp("last_damage_from", "è·³å´–è‡ªæ®ºè€Œ", me);
                 me->unconcious();
                 me->die();
                 return 1;
         }
-        return notify_fail("ÄãÒªÌøµ½ÄÄÀï£¿\n");
+        return notify_fail("ä½ è¦è·³åˆ°å“ªè£¡ï¼Ÿ\n");
 }
 
 int do_yao(string arg)
@@ -81,25 +81,25 @@ int do_yao(string arg)
         c_skill=(int)me->query_skill("parry", 1);
         c_exp=query("combat_exp", me);
 
-        if( !(fam=query("family", me)) || fam["family_name"] != "¹ÅÄ¹ÅÉ" )
-                return notify_fail("Ò¡Ê²Ã´Ò¡£¬Ã»¼û¹ıÊ÷°¡£¿\n");
+        if( !(fam=query("family", me)) || fam["family_name"] != "å¤å¢“æ´¾" )
+                return notify_fail("æ–ä»€éº¼æ–ï¼Œæ²’è¦‹éæ¨¹å•Šï¼Ÿ\n");
         if (me->is_busy() || me->is_fighting())
-                return notify_fail("ÄãÕıÃ¦×ÅÄÄ£¡\n");
+                return notify_fail("ä½ æ­£å¿™è‘—å“ªï¼\n");
         if( query("qi", me)<30 )
-                return notify_fail("ÄãÀÛµÃ¹»Çº£¬È¥ÉÔ×÷ĞªÏ¢°É¡£\n");
+                return notify_fail("ä½ ç´¯å¾—å¤ å—†ï¼Œå»ç¨ä½œæ­‡æ¯å§ã€‚\n");
         if (arg == "tree")
         {
                 if (c_skill < 50)
-                        return notify_fail("ÄãÊ¹³ö»ëÉíµÄ¾¢Á¦£¬µ«ÊÇ´óÊ÷È´ÎÆË¿²»¶¯¡£\n");
+                        return notify_fail("ä½ ä½¿å‡ºæ¸¾èº«çš„å‹åŠ›ï¼Œä½†æ˜¯å¤§æ¨¹å»ç´‹çµ²ä¸å‹•ã€‚\n");
                 if (c_skill > 100)
-                        return notify_fail("ÄãÊ¹¾¢µØÒ¡»Î´óÊ÷£¬·¢ÏÖ´óÊ÷¿ì±»ÄãÒ¡¶ÏÁË¡£\n");
-                write("ÄãÊ¹¾¢µØÒ¡»Î×Å´óÊ÷£¬ÕğµÄ´óÊ÷Î¢Î¢»Î¶¯¡£\n");
+                        return notify_fail("ä½ ä½¿å‹åœ°æ–æ™ƒå¤§æ¨¹ï¼Œç™¼ç¾å¤§æ¨¹å¿«è¢«ä½ æ–æ–·äº†ã€‚\n");
+                write("ä½ ä½¿å‹åœ°æ–æ™ƒè‘—å¤§æ¨¹ï¼Œéœ‡çš„å¤§æ¨¹å¾®å¾®æ™ƒå‹•ã€‚\n");
                 me->receive_damage("qi", 10 + random(20));
                 if (c_skill*c_skill*c_skill/10 < c_exp )
                         me->improve_skill("parry",random(query("int", me)));
                 return 1;
         }
-        return notify_fail("ÄãÒªÒ¡Ê²Ã´£¿\n");
+        return notify_fail("ä½ è¦æ–ä»€éº¼ï¼Ÿ\n");
 }
 
 int do_climb(string arg)
@@ -108,16 +108,16 @@ int do_climb(string arg)
 
         if (arg == "tree")
         {
-                message_vision(YEL"$NÌÚÉíÍù´óÊ÷ÉÏÅÀÈ¥¡£\n"NOR, me);
+                message_vision(YEL"$Né¨°èº«å¾€å¤§æ¨¹ä¸Šçˆ¬å»ã€‚\n"NOR, me);
                 if (me->query_skill("dodge", 1) < 30)
                 {
-                        message_vision(HIR"½á¹û$N´ÓÊ÷ÉÏÒ»¸ö½î¶·µôÏÂÀ´¡£\n"NOR, me);
+                        message_vision(HIR"çµæœ$Nå¾æ¨¹ä¸Šä¸€å€‹ç­‹é¬¥æ‰ä¸‹ä¾†ã€‚\n"NOR, me);
                         me->receive_wound("qi", random(5) + 5);
                         return 1;
                 }
-                message_vision(HIY"$NºÜ¿ìÏûÊ§ÔÚÅ¨ÒñÃÜÒ¶ÖĞ¡£\n"NOR, me);
+                message_vision(HIY"$Nå¾ˆå¿«æ¶ˆå¤±åœ¨æ¿ƒè”­å¯†è‘‰ä¸­ã€‚\n"NOR, me);
                 me->move(__DIR__"tree");
                 return 1;
         }
-        write("ÄãÏëÍùÄÄÅÀ£¿\n");
+        write("ä½ æƒ³å¾€å“ªçˆ¬ï¼Ÿ\n");
 }

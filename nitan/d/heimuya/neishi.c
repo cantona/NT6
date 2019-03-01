@@ -2,11 +2,11 @@
 inherit ROOM;
 void create()
 {
-        set("short", "С������");
+        set("short", "小舍內室");
         set("long", @LONG
-������С�����ҡ���ʰ�þ�ϸ�쳣����һ��ȥ���ͷ��ִ�������
-һ��������޵��ˡ�����Ҳ�����̧ͷ���㷢������Ȼ�Ǹ����ˣ���
-��ִ��һö�廨�룡
+這裡是小舍內室。收拾得精細異常。你一進去，就發現床沿坐著
+一個打扮妖艷的人。那人也詫異地抬頭，你發現他居然是個男人，手
+裡執著一枚繡花針！
 LONG );
         set("exits", ([
              "west" : __DIR__"xiaoshe",

@@ -1,4 +1,4 @@
-// chuanbei.c ´¨±´
+// chuanbei.c å·è²
 
 inherit ITEM;
 #include <ansi.h>
@@ -11,13 +11,13 @@ void init()
 
 void create()
 {
-        set_name(RED"´¨±´"NOR, ({"chuanbei"}));
+        set_name(RED"å·è²"NOR, ({"chuanbei"}));
         set_weight(500);
         set("vegetable", 1);
         set("value", 500);
         set("nostrum", 64);
-        set("unit", "Á£");
-        set("long", "ÕâÊÇÒ»Á£²»ÆğÑÛµÄ´¨±´£¬¿´À´¿ÉÒÔÈëÒ©¡£\n");
+        set("unit", "ç²’");
+        set("long", "é€™æ˜¯ä¸€ç²’ä¸èµ·çœ¼çš„å·è²ï¼Œçœ‹ä¾†å¯ä»¥å…¥è—¥ã€‚\n");
         set("pour_type", "1");
         setup();
 }
@@ -26,13 +26,13 @@ int do_eat(string arg)
 {
         object me = this_player();
 
-        if(!id(arg)) return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+        if(!id(arg)) return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if(!present(this_object(), me))
-                return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if( me->is_busy() )
-                return notify_fail("±ğ¼±£¬ÂıÂı³Ô£¬Ğ¡ĞÄ±ğÒ­×ÅÁË¡£\n");
+                return notify_fail("åˆ¥æ€¥ï¼Œæ…¢æ…¢åƒï¼Œå°å¿ƒåˆ¥å™è‘—äº†ã€‚\n");
 
-        write("ÄãÈı¿ÚÁ½¿Ú¾Í°Ñ´¨±´³ÔÁËÏÂÈ¥¡£\n");
+        write("ä½ ä¸‰å£å…©å£å°±æŠŠå·è²åƒäº†ä¸‹å»ã€‚\n");
         destruct(this_object());
         return 1;
 }

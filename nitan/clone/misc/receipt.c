@@ -1,4 +1,4 @@
-// receipt.c »ØÖ´
+// receipt.c å›åŸ·
 
 inherit ITEM;
 
@@ -6,12 +6,12 @@ int is_receipt() { return 1; }
 
 void create()
 {
-        set_name("»ØÖ´", ({ "receipt" }));
+        set_name("å›åŸ·", ({ "receipt" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "ÕÅ");
-                set("long", "ÕâÊÇÒ»ÕÅ»ØÖ´£¡\n");
+                set("unit", "å¼µ");
+                set("long", "é€™æ˜¯ä¸€å¼µå›åŸ·ï¼\n");
                 set("value", 1);
                 set("no_sell", 1);
         }

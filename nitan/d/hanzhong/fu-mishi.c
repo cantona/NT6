@@ -1,15 +1,15 @@
-// fu-mishi.c ÃÜÊÒ
+// fu-mishi.c å¯†å®¤
 // Winder Oct.10 1998
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "ÃÜÊÒ");
+        set("short", "å¯†å®¤");
         set("long", @LONG
-ÕâÀïÊÇÒ»¼äÃÜÊÒ£¬ËÄÖÜÉ¢²¼×Å¼¸Ìõ´øÑªµÄ±Þ×Ó£¬»¹ÓÐÒ»Ð©¸÷
-ÖÖ¸÷ÑùµÄÐÌ¾ß¡£¿´À´´«Ëµ¹ûÈ»²»Ðé£¬ÕâºîÔ±Íâ¹ûÕæÊÇ¸öÓãÈâÏçÀï
-µÄ¶ñ°Ô¡£
+é€™è£¡æ˜¯ä¸€é–“å¯†å®¤ï¼Œå››å‘¨æ•£å¸ƒè‘—å¹¾æ¢å¸¶è¡€çš„éž­å­ï¼Œé‚„æœ‰ä¸€äº›å„
+ç¨®å„æ¨£çš„åˆ‘å…·ã€‚çœ‹ä¾†å‚³èªªæžœç„¶ä¸è™›ï¼Œé€™ä¾¯å“¡å¤–æžœçœŸæ˜¯å€‹é­šè‚‰é„‰è£¡
+çš„æƒ¡éœ¸ã€‚
 LONG
         );
         set("exits", ([

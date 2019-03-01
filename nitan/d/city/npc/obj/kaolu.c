@@ -5,16 +5,16 @@ inherit ITEM;
 
 void create()
 {
-        set_name("Ğ¡¿¾Â¯", ({ "kaolu" }) );
+        set_name("å°çƒ¤çˆ", ({ "kaolu" }) );
         set_weight(10000);
         if( clonep() )
                 set_default_object(__FILE__);
         else 
         {
-                set("unit", "¸ö");
+                set("unit", "å€‹");
                 set("value", 100000);
                 set("material", "stone");
-                set("long", "Ò»¸öºìÄàÖÆ³ÉµÄĞ¡¿¾Â¯£¬ÄãËÆºõ¿ÉÒÔÓÃËü¿¾£¨£æ£ò£ù£©Ğ©Ê²Ã´\n");
+                set("long", "ä¸€å€‹ç´…æ³¥åˆ¶æˆçš„å°çƒ¤çˆï¼Œä½ ä¼¼ä¹å¯ä»¥ç”¨å®ƒçƒ¤ï¼ˆï½†ï½’ï½™ï¼‰äº›ä»€éº¼\n");
         }
         
         setup();
@@ -35,27 +35,27 @@ int do_kao(string arg)
         me = this_player();
 
         if( !arg || arg == "")
-                return notify_fail("Äã¿¾Ê²Ã´£¿\n");
+                return notify_fail("ä½ çƒ¤ä»€éº¼ï¼Ÿ\n");
         if(!objectp(tar = present(arg, me)) )
-                return notify_fail("Äã¿¾Ê²Ã´£¿\n");
+                return notify_fail("ä½ çƒ¤ä»€éº¼ï¼Ÿ\n");
         if(tar->is_character() && !tar->is_corpse())
-                return notify_fail("Ìì...°¡£¡ÉÏÌìÓĞºÃÉúÖ®µÂ£¬Äã»¹ÊÇÈÃËü°²ÀÖËÀ°É£¡\n");
+                return notify_fail("å¤©...å•Šï¼ä¸Šå¤©æœ‰å¥½ç”Ÿä¹‹å¾·ï¼Œä½ é‚„æ˜¯è®“å®ƒå®‰æ¨‚æ­»å§ï¼\n");
         if( !tar->is_character() && !tar->is_corpse())
-                return notify_fail("ÕâÊÇÄã²»¿ÉÒÔ¿¾µÄ¶«Î÷£®\n");
+                return notify_fail("é€™æ˜¯ä½ ä¸å¯ä»¥çƒ¤çš„æ±è¥¿ï¼\n");
 
         supply = me->query_skill("cooking");
         if ( supply < 30) 
-                return notify_fail("ÄãµÄ³´²ËÊÖÒÕÌ«²î£¬»¹ÊÇÏÈÑ§µã³øÒÕ°É£¿\n"); 
+                return notify_fail("ä½ çš„ç‚’èœæ‰‹è—å¤ªå·®ï¼Œé‚„æ˜¯å…ˆå­¸é»å»šè—å§ï¼Ÿ\n"); 
                 
         if( tar->is_corpse())
         {
                 name=query("name", tar);
-                name=replace_string(name,"Ò»¾ß","");
-                name=replace_string(name,"µÄÊ¬Ìå","");
-                if (name=="¸¯ÀÃ")         
-                        return notify_fail("¶¼³ô³ÉÕâÑùÁË£¬»¹¿¾Ê²Ã´¿¾£¿\n");
+                name=replace_string(name,"ä¸€å…·","");
+                name=replace_string(name,"çš„å±é«”","");
+                if (name=="è…çˆ›")         
+                        return notify_fail("éƒ½è‡­æˆé€™æ¨£äº†ï¼Œé‚„çƒ¤ä»€éº¼çƒ¤ï¼Ÿ\n");
                 else
-                        name="¿¾"+name+"Èâ";
+                        name="çƒ¤"+name+"è‚‰";
 
                 supply = supply/20;
                 if(supply<=0) supply = 1;
@@ -66,7 +66,7 @@ int do_kao(string arg)
                 meat->move(me);
         }
 
-        message_vision("$N½«$nÇĞ³ÉÆ¬·Åµ½Ğ¡¿¾Â¯Àï£¬$nÒ»»á¶ù¾Í±ä³ÉÁËÒ»´®ÏãÅçÅçµÄ¿¾Èâ´®¡£\n", me, tar);
+        message_vision("$Nå°‡$nåˆ‡æˆç‰‡æ”¾åˆ°å°çƒ¤çˆè£¡ï¼Œ$nä¸€æœƒå…’å°±è®Šæˆäº†ä¸€ä¸²é¦™å™´å™´çš„çƒ¤è‚‰ä¸²ã€‚\n", me, tar);
         tar->move(environment(me));
         destruct(tar);
         return 1;

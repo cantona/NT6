@@ -3,10 +3,10 @@
 inherit ROOM;
 void create ()
 {
-        set ("short", "֪������");
+        set ("short", "知府衙門");
         set ("long", @LONG
-һ�����ã����Ĵ��ţ����϶�����ڴ��ͭ����������յ�������
-һյд�š����ݸ����á�����һյд�š��踮������ǰ����ʯʨ�ӡ�
+一座大廈，朱紅的大門，門上釘著碗口大的銅釘，門外兩盞大燈籠，
+一盞寫著“荊州府正堂”，另一盞寫著“凌府”。門前兩座石獅子。
 LONG);
         set("exits", ([ 
                 "east" : __DIR__"datang",

@@ -1,14 +1,14 @@
-// xtong3.c Ğ¡Í¯
+// xtong3.c å°ç«¥
 
 inherit NPC;
 #include <ansi.h>
 
 void create()
 {
-        set_name("Ğ¡Í¯", ({ "xiao tong","xiao","tong" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("å°ç«¥", ({ "xiao tong","xiao","tong" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 13);
-        set("long", "ÕâÊÇÒ»¸öÇåĞãµÄĞ¡Í¯£¬Éí×ÅÒ»ÉíÇàÒÂ£¬Ò»¸¶¿É°®µÄÑù×Ó¡£\n");
+        set("long", "é€™æ˜¯ä¸€å€‹æ¸…ç§€çš„å°ç«¥ï¼Œèº«è‘—ä¸€èº«é’è¡£ï¼Œä¸€ä»˜å¯æ„›çš„æ¨£å­ã€‚\n");
         set("shen_type", 1);
         set("combat_exp", 50000);
         set("str", 20);

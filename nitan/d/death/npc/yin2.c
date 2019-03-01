@@ -10,14 +10,14 @@ void create()
         object ob;
         
         
-        set_name("Òõ³¤Éú", ({ "yin changsheng", "yin", "changsheng" }));
-        set("title", HIR "Ú¤¸®µØ²ØÍõµîÇ°" NOR);
-        set("nickname", HIB "ÒõÍõ" NOR);
+        set_name("é™°é•·ç”Ÿ", ({ "yin changsheng", "yin", "changsheng" }));
+        set("title", HIR "å†¥åºœåœ°è—ç‹æ®¿å‰" NOR);
+        set("nickname", HIB "é™°ç‹" NOR);
         set("shen_type", 1);
 
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("age", 475);
-        set("long","Òõ³¤Éú±¾ÊÇ¸öÂäµÜĞã²Å£¬ºóÔÚ·á¶¼É½ĞŞÁ·³ÉÏÉ£¬Óù·â¡¸ÒõÍõ¡¹¡£\n");
+        set("long","é™°é•·ç”Ÿæœ¬æ˜¯å€‹è½å¼Ÿç§€æ‰ï¼Œå¾Œåœ¨è±éƒ½å±±ä¿®ç·´æˆä»™ï¼Œå¾¡å°ã€Œé™°ç‹ã€ã€‚\n");
 
         set("str", 60);
         set("int", 80);
@@ -71,7 +71,7 @@ void create()
         // yun perform
         set("chat_chance_combat", 120); 
         set("chat_msg_combat", ({                                
-              // ¾ÅÒõÉñ¹¦
+              // ä¹é™°ç¥åŠŸ
               (: command("perform claw.zhua twice") :), 
               (: command("perform claw.xin") :), 
               (: command("perform shou twice") :), 
@@ -97,7 +97,7 @@ void init()
         
         if (! wizardp(me) && userp(me))
         {
-                command("say ºß£¬ÉÃ´³½ûµØÕßËÀ£¡");
+                command("say å“¼ï¼Œæ“…é—–ç¦åœ°è€…æ­»ï¼");
                 this_object()->kill_ob(me);
         }
 }
@@ -134,11 +134,11 @@ void die()
         if (! ob) ob = load_object(BADAO);
         
         command("heng");
-        command("say ¿´À´ÈË¼äÒ²ÓĞÈç´ËÀ÷º¦µÄ½ÇÉ«£¬±¾ÍõÏÈĞĞ¸æ´Ç£¬¸ÄÈÕÔÙÀ´ÌÖ½Ì£¡");
+        command("say çœ‹ä¾†äººé–“ä¹Ÿæœ‰å¦‚æ­¤å²å®³çš„è§’è‰²ï¼Œæœ¬ç‹å…ˆè¡Œå‘Šè¾­ï¼Œæ”¹æ—¥å†ä¾†è¨æ•™ï¼");
         
         if (! environment(ob) && random(10) == 1)
         {
-                message_vision(HIW "¶£~~µÄÒ»Éù£¬´ÓÒõ³¤ÉúÉíÉÏµô³öÒ»±¾Êé£¬ÂäÔÚµØÉÏ¡£\n" NOR, this_object());
+                message_vision(HIW "å®~~çš„ä¸€è²ï¼Œå¾é™°é•·ç”Ÿèº«ä¸Šæ‰å‡ºä¸€æœ¬æ›¸ï¼Œè½åœ¨åœ°ä¸Šã€‚\n" NOR, this_object());
                 ob->move(environment(this_object()));
         }
         destruct(this_object());
@@ -160,23 +160,23 @@ int accept_object(object me, object ob)
 
         if( !query("can_perform/badao/san-1", me) )
         {
-                command("say Õâ²»ÊÇÌìÒÒÉñ¾ÆÂğ£¡Ì«¸ĞĞ»ÁË£¬ºÇºÇ£¡");
+                command("say é€™ä¸æ˜¯å¤©ä¹™ç¥é…’å—ï¼å¤ªæ„Ÿè¬äº†ï¼Œå‘µå‘µï¼");
                 command("tan");
-                command("say ¿ÉÏ§ÎÒÎŞÒÔÎª±¨£¬²»ÄÜÒªÄãµÄÃÀ¾Æ£¬µÈÄãÑ§»á°¢±ÇµÀµÚÒ»µ¶ÔÙÀ´°É£¡");
+                command("say å¯æƒœæˆ‘ç„¡ä»¥ç‚ºå ±ï¼Œä¸èƒ½è¦ä½ çš„ç¾é…’ï¼Œç­‰ä½ å­¸æœƒé˜¿é¼»é“ç¬¬ä¸€åˆ€å†ä¾†å§ï¼");
                 return 0;
         }
         
         if( query("can_perform/badao/san-2", me) )
         {
-                command("say Ğ»Ğ»ÄãÉÏ´ÎµÄÃÀ¾Æ¡£");
-                tell_object(me, HIR "ÌıËµÉñÁúµº¹ÛÁúÍ¤Òş²Ø×ÅÒ»Î»¸ßÈË£¬ÒªÑ§°¢±ÇµÀµÚÈıµ¶¿ÉÒÔÕÒËûÊÔÊÔ¡£\n" NOR);
+                command("say è¬è¬ä½ ä¸Šæ¬¡çš„ç¾é…’ã€‚");
+                tell_object(me, HIR "è½èªªç¥é¾å³¶è§€é¾äº­éš±è—è‘—ä¸€ä½é«˜äººï¼Œè¦å­¸é˜¿é¼»é“ç¬¬ä¸‰åˆ€å¯ä»¥æ‰¾ä»–è©¦è©¦ã€‚\n" NOR);
                 return 0;
         }
 
-        command("say Õâ²»ÊÇÌìÒÒÉñ¾ÆÂğ£¡¼ÈÈ»ÄãÄÜÕÒµ½ÕâÊ§´«ÒÑ¾ÃµÄÃÀ¾Æ£¬ÎÒ±ã´«Äã°¢±ÇµÀµÚ¶şµ¶£¬Äã¿ÉÌıºÃÁË ...");
+        command("say é€™ä¸æ˜¯å¤©ä¹™ç¥é…’å—ï¼æ—¢ç„¶ä½ èƒ½æ‰¾åˆ°é€™å¤±å‚³å·²ä¹…çš„ç¾é…’ï¼Œæˆ‘ä¾¿å‚³ä½ é˜¿é¼»é“ç¬¬äºŒåˆ€ï¼Œä½ å¯è½å¥½äº† ...");
 
-        tell_object(me, HIG "¹§Ï²Äã£¬ÁìÎòÁË°¢±ÇµÀµÚ¶şµ¶£¡\n" NOR);
-        tell_object(me, HIR "ÌıËµÉñÁúµº¹ÛÁúÍ¤Òş²Ø×ÅÒ»Î»¸ßÈË£¬ÒªÑ§°¢±ÇµÀµÚÈıµ¶¿ÉÒÔÕÒËûÊÔÊÔ¡£\n" NOR);
+        tell_object(me, HIG "æ­å–œä½ ï¼Œé ˜æ‚Ÿäº†é˜¿é¼»é“ç¬¬äºŒåˆ€ï¼\n" NOR);
+        tell_object(me, HIR "è½èªªç¥é¾å³¶è§€é¾äº­éš±è—è‘—ä¸€ä½é«˜äººï¼Œè¦å­¸é˜¿é¼»é“ç¬¬ä¸‰åˆ€å¯ä»¥æ‰¾ä»–è©¦è©¦ã€‚\n" NOR);
         set("can_perform/badao/san-2", 1, me);
 
         me->save();

@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create ()
 {
-        set ("short", "�����");
+        set ("short", "扶風道");
         set("long", @LONG
-������ǳ��������Ĵ�֣���ʯ��·��ֱ����չ��ȥ��һ·����
-�˱ȼ磬�ϸ账��������֮����ֱ�����ɾ��ء������������֡�
+扶風道是長安城中心大街，青石板路筆直的伸展出去，一路上行
+人比肩，笙歌處處。景物之美，直如神仙境地。東面是青龍街。
 LONG );
         set("exits", 
         ([ //sizeof() == 2

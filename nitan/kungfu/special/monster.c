@@ -1,16 +1,16 @@
 // This program is a part of NITAN MudLIB
-// monster.c 天妖临世
+// monster.c 澶╁鑷ㄤ笘
 // Created by Lonely 04/05/2009
 
 #include <ansi.h>
 
 inherit F_CLEAN_UP;
 
-string name() { return HIM "天妖临世" NOR; }
+string name() { return HIM "澶╁鑷ㄤ笘" NOR; }
 
 int perform(object me, string skill)
 {
-        return notify_fail("此天性者在转世过程中参悟出世间万物生\n"
-                           "存之理，能在受伤时驱使万物之灵使对手\n"
-                           "也同样受到伤害。\n");
+        return notify_fail("姝ゅぉ鎬ц�呭湪杞変笘閬庣▼涓弮鎮熷嚭涓栭枔钀墿鐢焅n"
+                           "瀛樹箣鐞嗭紝鑳藉湪鍙楀偡鏅傞﹨浣胯惉鐗╀箣闈堜娇灏嶆墜\n"
+                           "涔熷悓妯ｅ彈鍒板偡瀹炽�俓n");
 }

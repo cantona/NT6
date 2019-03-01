@@ -6,10 +6,10 @@ inherit ROOM;
 int do_jump(string arg);
 void create()
 {
-        set("short", "É½¹µ"); 
+        set("short", "å±±æº"); 
         set("long", @LONG
-ÕâÀïÊÇÔ²ÔÂÉ½×¯ºóÔ°µÄÒ»¸öÉ½¹µ£¬ÅÔ±ßÊÇÒ»Æ¬ÃÜÃÜµÄËÉÄ¾ÁÖ£¬ËÄ
-ÖÜÒ»Æ¬¼Å¾²¡£
+é€™è£¡æ˜¯åœ“æœˆå±±èŽŠå¾Œåœ’çš„ä¸€å€‹å±±æºï¼Œæ—é‚Šæ˜¯ä¸€ç‰‡å¯†å¯†çš„é¬†æœ¨æž—ï¼Œå››
+å‘¨ä¸€ç‰‡å¯‚éœã€‚
 LONG);
         set("outdoors", "wansong");
         set("type","forest");
@@ -40,7 +40,7 @@ string long()
  
         if (NATURE_D->query_month() == 7 &&
             NATURE_D->query_day() == 15)
-                msg += HIW "É½¹µÖÐµÄºéË®¹ö¹ö¶ø¹ý£¬ÆøÊÆ·Ç·²£¬Äã¼û´ËÇéÐÎ¶ÙÊ±ÓÐÏëÒªÌøÈëºéË®ÖÐ(jump hongshui)µÄ³å¶¯¡£" NOR;
+                msg += HIW "å±±æºä¸­çš„æ´ªæ°´æ»¾æ»¾è€ŒéŽï¼Œæ°£å‹¢éžå‡¡ï¼Œä½ è¦‹æ­¤æƒ…å½¢é “æ™‚æœ‰æƒ³è¦è·³å…¥æ´ªæ°´ä¸­(jump hongshui)çš„æ²–å‹•ã€‚" NOR;
         
         return sort_string(msg, 60, 4); 
 }
@@ -50,11 +50,11 @@ int do_jump(string arg)
         object me = this_player();
 
         if (! arg || (arg != "hongshui" && arg != "shangou"))
-                return notify_fail("ÄãÏëÌøÈëÊ²Ã´£¿\n");
+                return notify_fail("ä½ æƒ³è·³å…¥ä»€éº¼ï¼Ÿ\n");
 
-        message_vision(HIW "$N" HIW "×ÝÉíÌøÈëÉ½¹µÖÐµÄ¹ö¹öºéË®Ö®ÖÐ£¬¶ÙÊ±Ã»ÓÐÁËÉíÓ°¡£\n" NOR, me);        
+        message_vision(HIW "$N" HIW "ç¸±èº«è·³å…¥å±±æºä¸­çš„æ»¾æ»¾æ´ªæ°´ä¹‹ä¸­ï¼Œé “æ™‚æ²’æœ‰äº†èº«å½±ã€‚\n" NOR, me);        
 
-        tell_object(me, HIW "É½¹µÖÐµÄºéË®Ì«¼±£¬Ò»¹É¾¢ÀË´òÀ´£¬Äã¶ÙÊ±ÔÎÁË¹ýÈ¥¡£\n" NOR);        
+        tell_object(me, HIW "å±±æºä¸­çš„æ´ªæ°´å¤ªæ€¥ï¼Œä¸€è‚¡å‹æµªæ‰“ä¾†ï¼Œä½ é “æ™‚æšˆäº†éŽåŽ»ã€‚\n" NOR);        
         
         me->unconcious(); 
         me->move(__DIR__"hole");

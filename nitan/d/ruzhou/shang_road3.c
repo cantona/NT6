@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "С·");
+        set("short", "小路");
         set("long", @LONG
-С���Ե�һ��С·����Ϊƽʱ����֮�˲����Ե�ʣ���Χ��
-�ѳ������Ӳݡ�ԶԶ��������ȥ���ƺ���һ����լ��
+小鎮旁的一條小路，因為平時過往之人不多的緣故，周圍都
+已長滿了雜草。遠遠的向西望去，似乎有一座大宅。
 LONG);
         set("exits", ([
                 //"west"  : __DIR__"shang_road2",

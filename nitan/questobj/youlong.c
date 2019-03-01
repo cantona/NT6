@@ -6,18 +6,18 @@ inherit SWORD;
 
 void create()
 {
-        set_name(HIC"ÓÎÁú½£"NOR, ({ "youlong sword", "youlong", "sword" }) );
+        set_name(HIC"éŠé¾åŠ"NOR, ({ "youlong sword", "youlong", "sword" }) );
         set_weight(8000);
         set("taskobj", 1);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "ÕâÊÇ°Ñ¿´ÆğÀ´ºÜÆÕÍ¨µÄ³¤½££¬µ«×ĞÏ¸Ò»¿´£¬½£ÉíÉÏÓĞ¼¸ÌõÏ¸ÎÆÉÁË¸²»¶¨¡£\n");
+                set("unit", "æŠŠ");
+                set("long", "é€™æ˜¯æŠŠçœ‹èµ·ä¾†å¾ˆæ™®é€šçš„é•·åŠï¼Œä½†ä»”ç´°ä¸€çœ‹ï¼ŒåŠèº«ä¸Šæœ‰å¹¾æ¢ç´°ç´‹é–ƒçˆä¸å®šã€‚\n");
                 set("value", 0);
                 set("material", "blacksteel");
-                set("wield_msg", "Ö»Ìı¼û¡¸ì¬¡¹µØÒ»Éù£¬$NµÄÊÖÖĞÒÑ¾­¶àÁËÒ»°Ñº®¹âËÄÉäµÄ±¦½£¡ª¡ª$n¡£\n");
-                set("unequip_msg", "$N½«ÊÖÖĞµÄ$n²åÈëÑü¼äµÄ½£ÇÊ¡£\n");
+                set("wield_msg", "åªè½è¦‹ã€Œé¢¼ã€åœ°ä¸€è²ï¼Œ$Nçš„æ‰‹ä¸­å·²ç¶“å¤šäº†ä¸€æŠŠå¯’å…‰å››å°„çš„å¯¶åŠâ”€â”€$nã€‚\n");
+                set("unequip_msg", "$Nå°‡æ‰‹ä¸­çš„$næ’å…¥è…°é–“çš„åŠé˜ã€‚\n");
         }
         setup();
 }

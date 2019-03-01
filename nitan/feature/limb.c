@@ -3,14 +3,14 @@
 // by Find.
 
 nosave string *human_limbs = ({
-        "Í·²¿",        "¾±²¿",        "ĞØ¿Ú",        "ºóĞÄ",        "×ó¼ç",        "ÓÒ¼ç",        "×ó±Û",
-        "ÓÒ±Û",        "×óÊÖ",        "ÓÒÊÖ",        "Ñü¼ä",        "Ğ¡¸¹",        "×óÍÈ",        "ÓÒÍÈ",
-        "×ó½Å",        "ÓÒ½Å",
+        "é ­éƒ¨",        "é ¸éƒ¨",        "èƒ¸å£",        "å¾Œå¿ƒ",        "å·¦è‚©",        "å³è‚©",        "å·¦è‡‚",
+        "å³è‡‚",        "å·¦æ‰‹",        "å³æ‰‹",        "è…°é–“",        "å°è…¹",        "å·¦è…¿",        "å³è…¿",
+        "å·¦è…³",        "å³è…³",
 });
 
 nosave mapping current_damage = ([]);
 
-// ²¿Î»ÊÜÉË
+// éƒ¨ä½å—å‚·
 int receive_limbs_wound(string limb, int damage)
 {
         if(!stringp(limb)
@@ -44,7 +44,7 @@ int receive_limb_curing(string limb, int heal)
         if(current_damage[limb] <= heal)
         {
                 map_delete(current_damage, limb);
-                tell_object(this_object(),sprintf("\nÄã%sÉÏµÄÉË¿ÚÂıÂıµÄÓúºÏÁË¡£\n\n",limb));
+                tell_object(this_object(),sprintf("\nä½ %sä¸Šçš„å‚·å£æ…¢æ…¢çš„ç™’åˆäº†ã€‚\n\n",limb));
         }
         else
                 current_damage[limb] -= heal;
@@ -63,7 +63,7 @@ int query_limb_wound(string limb)
         return current_damage[limb];
 }
 
-// ĞÄÌøºô½Ğ
+// å¿ƒè·³å‘¼å«
 void update_all_limb_damage()
 {
         string *ls;
@@ -78,7 +78,7 @@ void update_all_limb_damage()
                 if((--current_damage[l]) <= 0)
                 {
                         map_delete(current_damage, l);
-                        tell_object(this_object(),sprintf("\nÄã%sÉÏµÄÉË¿ÚÂıÂıµÄÓúºÏÁË¡£\n\n",l));
+                        tell_object(this_object(),sprintf("\nä½ %sä¸Šçš„å‚·å£æ…¢æ…¢çš„ç™’åˆäº†ã€‚\n\n",l));
                 }
         }
 }

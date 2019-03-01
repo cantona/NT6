@@ -7,14 +7,14 @@ inherit F_QUESTER;
 
 void create()
 {
-        set_name("��ǧ��", ({ "qiu qianchi", "qiu", "qianchi" }));
-        set("nickname", HIG "��������" NOR);
+        set_name("裘千尺", ({ "qiu qianchi", "qiu", "qianchi" }));
+        set("nickname", HIG "鐵掌蓮花" NOR);
         set("long", @LONG
-���������ư�İ�������ˮ��Ư��ǧ������ã�
-ֻ����ͷ��ɢ�ң���ɫ���ϣ��������á�
+她就是鐵掌幫的幫主鐵掌水上漂裘千仞的妹妹，
+只見她頭發散亂，面色蒼老，衣衫破爛。
 LONG);
 
-        set("gender", "Ů��");
+        set("gender", "女性");
         set("age", 40);
         set("attitude", "friendly");
         set("shen_type", 1);
@@ -66,7 +66,7 @@ LONG);
 
         prepare_skill("strike", "tie-zhang");
 
-        create_family("�����", 4, "��������");
+        create_family("絕情谷", 4, "谷主夫人");
 
         set("chat_chance_combat", 120);
         set("chat_msg_combat", ({
@@ -89,58 +89,58 @@ void attempt_apprentice(object me)
         if (! permit_recruit(me))
                 return;
 
-        if( query("family/master_name", me) == "����ֹ" )
+        if( query("family/master_name", me) == "公孫止" )
         {
                 command("sneer");
-                command("say ����ǧ�߿ɲ��չ���ֹ�Ƕ�����ͽ�ܡ�");
+                command("say 我裘千尺可不收公孫止那惡賊的徒弟。");
                 return;
         }
 
         if( query("shen", me)>-60000 )
         {
                 command("heng");
-                command("say ����ǧ�߿ɲ����Ĵ�����������ͽ�ܡ�");
+                command("say 我裘千尺可不收心慈手軟的人做徒弟。");
                 return;
         }
 
         if( query("combat_exp", me)<400000 )
         {
                 command("heng");
-                command("say ������������ܼ̳��ҵ��²���");
+                command("say 你這點能力怎能繼承我的衣砵？");
                 return;
         }
 
         if ((int)me->query_skill("force") < 140)
         {
-                command("say Ҫѧ�ҵ����ƾ������ڹ��Ǿ������ɣ��㻹���ȶ������ɡ�");
+                command("say 要學我的鐵掌絕技，內功非精純不可，你還是先多練練吧。");
                 return;
         }
 
         if ((int)me->query_skill("strike", 1) < 80)
         {
-                command("say Ҫѧ�ҵ����ƾ�������Ҫ��տ���Ʒ����������ҿ�������"
-                        "�����µĹ��򻹲�������");
+                command("say 要學我的鐵掌絕技，需要精湛的掌法作基礎，我看你在那"
+                        "上面下的工夫還不夠啊。");
                 return;
         }
 
-        command("say ������������");
-        command("say �Ҿ��������ˣ�ϣ������������񹦣���֮������");
+        command("say 不錯，不錯！");
+        command("say 我就收下你了，希望你苦練鐵掌神功，將之發揚光大。");
         command("recruit "+query("id", me));
 
-        if( query("move_party/����ȡ����ư�", me) && 
-             query("surname", me) == "����" )
+        if( query("move_party/絕情谷─鐵掌幫", me) && 
+             query("surname", me) == "公孫" )
         {
                 name=query("name", me);
                 purename=query("purename", me);
 
-                new_name = "��" + purename;
+                new_name = "裘" + purename;
 
-                set("surname", "��", me);
+                set("surname", "裘", me);
                 set("name", new_name, me);
-                delete("move_party/����ȡ����ư�", me);
+                delete("move_party/絕情谷─鐵掌幫", me);
 
-                command("say ����ֹ���ϼһﲻ�Ǹ����������Ժ��Ǹ���������Ϊ�á�");
-                command("say �ӽ��Ժ���ͽ���" + new_name + "�ɡ�");
+                command("say 公孫止那老家伙不是個東西，你以後還是跟你娘親姓為好。");
+                command("say 從今以後你就叫作" + new_name + "吧。");
         }
 }
 
@@ -149,16 +149,16 @@ int accept_ask(object me, string topic)
 {
         switch (topic)
         {
-        case "����" :
-        case "����" :
-        case "����" :
+        case "歷練" :
+        case "歷煉" :
+        case "鍛煉" :
                 return QUEST_D->accept_ask(this_object(), me, topic);
                 break;
 
-        case "�Ƽ���ɽ" :
+        case "破甲推山" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/tiexian-quan/jia",
-                           "name"    : "�Ƽ���ɽ",
+                           "name"    : "破甲推山",
                            "sk1"     : "tiexian-quan",
                            "lv1"     : 60,
                            "force"   : 80,
@@ -166,10 +166,10 @@ int accept_ask(object me, string topic)
                            "shen"    : -60000, ]));
                 break;
 
-        case "������" :
+        case "龍飛勢" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/feilong-zhang/fei",
-                           "name"    : "������",
+                           "name"    : "龍飛勢",
                            "sk1"     : "feilong-zhang",
                            "lv1"     : 150,
                            "force"   : 120,
@@ -177,10 +177,10 @@ int accept_ask(object me, string topic)
                            "shen"    : -60000, ]));
                 break;
 
-        case "����׶" :
+        case "穿心錐" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/chuanxin-zhang/zhui",
-                           "name"    : "����׶",
+                           "name"    : "穿心錐",
                            "sk1"     : "chuanxin-zhang",
                            "lv1"     : 80,
                            "force"   : 140,
@@ -188,32 +188,32 @@ int accept_ask(object me, string topic)
                            "shen"    : -70000 ]));
                 break;
 
-        case "��Ӱ��" :
+        case "無影掌" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/tie-zhang/ying",
-                           "name"    : "��Ӱ��",
+                           "name"    : "無影掌",
                            "sk1"     : "tie-zhang",
-                           "msg1"    : "$N���˵�ͷ����$n����������"
-                                       "���˼��䣬��Ȼ���������ƣ�"
-                                       "˫�Ƽ�����ת����Ӱ����ʵʵ"
-                                       "��һ�ƺ����������ĳ�����ʽ"
-                                       "���棬ֱ����$nĿ�ɿڴ���",
+                           "msg1"    : "$N點了點頭，在$n耳邊輕聲嘀"
+                                       "咕了幾句，忽然又拉開架勢，"
+                                       "雙掌急速運轉，掌影虛虛實實"
+                                       "，一掌毫無章理的拍出。招式"
+                                       "精奇，直看得$n目瞪口呆。",
                            "lv1"     : 100,
                            "force"   : 160,
                            "gongxian": 400,
                            "shen"    : -85000, ]));
                 break;
 
-        case "������" :
+        case "掌心雷" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/tie-zhang/lei",
-                           "name"    : "������",
-                           "msg1"    : "$NͶ��$n������һЦ��˵������"
-                                       "�����ˣ����漴ֻ��$N�ʹ�����"
-                                       "��˫�Ƶ�ʱ��û�죬��$n����"
-                                       "֮��˫�ƻ�Ϊһ���Ƶ������ն"
-                                       "������ֻ�������꡹һ����һ��"
-                                       "��ʯӦ�����飡",
+                           "name"    : "掌心雷",
+                           "msg1"    : "$N投以$n讚許的一笑，說道：“"
+                                       "看好了！”隨即只見$N猛催內力"
+                                       "，雙掌登時變得火紅，趁$n驚詫"
+                                       "之際雙掌幻為一對掌刀凌空劈斬"
+                                       "而出，只聽「喀嚓」一聲，一塊"
+                                       "大石應聲而碎！",
                            "sk1"     : "tie-zhang",
                            "lv1"     : 120,
                            "gongxian": 600,

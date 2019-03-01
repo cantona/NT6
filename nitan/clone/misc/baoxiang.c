@@ -70,7 +70,7 @@ string *obj_list = ({
 
 void create()
 {
-    set_name(HIY "±¦Ïä" NOR, ({ "bao xiang", "xiang" }) );
+    set_name(HIY "å¯¶ç®±" NOR, ({ "bao xiang", "xiang" }) );
     set_weight(150000);
     set_max_encumbrance(800000);
     set("no_get", 1);
@@ -80,8 +80,8 @@ void create()
     }
     else 
     {
-        set("unit", "¿Ú");
-        set("long", HIY "ÕâÊÇÒ»Ö»½ğÉ«µÄ±¦Ïä£¬×°ÊÎµÄÖé¹â±¦Æø£¬Äã»òĞí¿ÉÒÔ´ò¿ª£¨open£©Ëü¡£\n" NOR);
+        set("unit", "å£");
+        set("long", HIY "é€™æ˜¯ä¸€åªé‡‘è‰²çš„å¯¶ç®±ï¼Œè£é£¾çš„ç å…‰å¯¶æ°£ï¼Œä½ æˆ–è¨±å¯ä»¥æ‰“é–‹ï¼ˆopenï¼‰å®ƒã€‚\n" NOR);
         set("value", 1);
     }
 }
@@ -107,8 +107,8 @@ int do_open(string arg)
     if (!arg || 
         (arg != "bao xiang" 
          && arg != "xiang"
-         && arg != "±¦Ïä"
-         && arg != "Ïä") )
+         && arg != "å¯¶ç®±"
+         && arg != "ç®±") )
     {
         return 0;
     }
@@ -118,12 +118,12 @@ int do_open(string arg)
     
     if (is_opened)
     {
-        return notify_fail("±¦ÏäÒÑ¾­ÊÇ¿ª×ÅµÄ£¬Äú¾Í²»ÓÃ·Ñ¾¢ÕÛÌÚÀ²£¡\n");
+        return notify_fail("å¯¶ç®±å·²ç¶“æ˜¯é–‹è‘—çš„ï¼Œæ‚¨å°±ä¸ç”¨è²»å‹æŠ˜é¨°å•¦ï¼\n");
     }
         
-    message_vision("$N°Ñ±¦Ïä´ò¿ªÁË¡£\n", me);
-    ob->set_name(HIY "´ò¿ªµÄ±¦Ïä" NOR, ({ "bao xiang", "xiang" }) );
-    set("long", HIY"ÕâÊÇÒ»Ö»±»´ò¿ªµÄ½ğÉ«±¦Ïä£¬×°ÊÎµÄÖé¹â±¦Æø£¬Ò»¿´¾Í²»ÊÇÑ°³£µØÌ¯»õ¡£\n"NOR, ob);
+    message_vision("$NæŠŠå¯¶ç®±æ‰“é–‹äº†ã€‚\n", me);
+    ob->set_name(HIY "æ‰“é–‹çš„å¯¶ç®±" NOR, ({ "bao xiang", "xiang" }) );
+    set("long", HIY"é€™æ˜¯ä¸€åªè¢«æ‰“é–‹çš„é‡‘è‰²å¯¶ç®±ï¼Œè£é£¾çš„ç å…‰å¯¶æ°£ï¼Œä¸€çœ‹å°±ä¸æ˜¯å°‹å¸¸åœ°æ”¤è²¨ã€‚\n"NOR, ob);
     is_opened = 1;
 
         if( random(2))set("maze/box", GOLD, ob);
@@ -161,7 +161,7 @@ int do_open(string arg)
     {
         case SPECIAL_MAP:
             environment(query("mazeobj", ob))->set_display_map(2);
-            message_vision("Ö»¼û$NÖĞ³å³öÒ»µÀ°×¹â£¬Ñ¸ËÙÍ¶Èë·¿¼äÖĞÑëµÄ°×É«Ê¯°åÖĞ£¬°×É«Ê¯°åÔ½·¢µÄÁÁÌÃÆğÀ´¡£\n", ob);
+            message_vision("åªè¦‹$Nä¸­æ²–å‡ºä¸€é“ç™½å…‰ï¼Œè¿…é€ŸæŠ•å…¥æˆ¿é–“ä¸­å¤®çš„ç™½è‰²çŸ³æ¿ä¸­ï¼Œç™½è‰²çŸ³æ¿è¶Šç™¼çš„äº®å ‚èµ·ä¾†ã€‚\n", ob);
             break;
         case SPECIAL_DAN:
             bonus = new(dan_list[random(sizeof(dan_list))]);
@@ -192,7 +192,7 @@ int do_open(string arg)
         case NPC_SKILL:
             //FUBEN_D->query_maze_mainobj()->set_npcs_weakly();
             environment(query("mazeobj", ob))->set_boss_weakly();
-            set("long", HIY "±¦Ïäµ×²¿ÒşÔ¼¿Ì×ÅÒ»ĞĞ×Ö£º¾İËµÃÔ¹¬Ö÷ÈËÏÖÔÚ×´Ì¬ºÜĞéÈõ¡£\n" NOR);
+            set("long", HIY "å¯¶ç®±åº•éƒ¨éš±ç´„åˆ»è‘—ä¸€è¡Œå­—ï¼šæ“šèªªè¿·å®®ä¸»äººç¾åœ¨ç‹€æ…‹å¾ˆè™›å¼±ã€‚\n" NOR);
             break;
         default:
             break;        

@@ -7,10 +7,10 @@ int is_snake(){return 1;}
 
 void create()
 {
-        set_name("ºÚ¹Ú¾Şòş", ({ "snake", "she" }) );
-        //set("race", "ÉßÀà");
+        set_name("é»‘å† å·¨èŸ’", ({ "snake", "she" }) );
+        //set("race", "è›‡é¡");
         set("age", 20);
-        set("long", "Ò»Ö»ÅÓÈ»´óÎï£¬ËüÑÛÖĞÅç»ğ,ºÃÏóÒªÒ»¿Ú°ÑÄãÍÌÏÂ¡£\n");
+        set("long", "ä¸€åªé¾ç„¶å¤§ç‰©ï¼Œå®ƒçœ¼ä¸­å™´ç«,å¥½è±¡è¦ä¸€å£æŠŠä½ åä¸‹ã€‚\n");
         set("attitude", "aggressive");
         set("qi", 4000);
         set("max_qi", 4000);
@@ -18,7 +18,7 @@ void create()
         set("max_jing", 500);
         set("str", 86);
         set("con", 80);
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "Æß´ç", "Î²°Í" }) );
+        set("limbs", ({ "é ­éƒ¨", "èº«é«”", "ä¸ƒå¯¸", "å°¾å·´" }) );
         set("verbs", ({ "bite" }) );
                 set("max_neili", 25000);
                 set("neili", 25000);
@@ -58,10 +58,10 @@ int convert(string arg)
         object ob;
 
         if (arg!="snake" && arg!="she") return 0;
-        if( query("family/family_name", me) != "Å·ÑôÊÀ¼Ò" )
-                return notify_fail("Äã²»ÄÜ»¯ÉßÎªÕÈ¡£\n");
+        if( query("family/family_name", me) != "æ­é™½ä¸–å®¶" )
+                return notify_fail("ä½ ä¸èƒ½åŒ–è›‡ç‚ºæ–ã€‚\n");
 
-        return notify_fail("ºÚ¹Ú¾ŞòşÉí×ÓÌ«¹ı´Ö´ó£¬ÎŞ·¨»¯ÎªÉßÕÈ¡£\n");
+        return notify_fail("é»‘å† å·¨èŸ’èº«å­å¤ªéç²—å¤§ï¼Œç„¡æ³•åŒ–ç‚ºè›‡æ–ã€‚\n");
 }
 
 mixed hit_ob(object me, object ob, int damage)
@@ -94,34 +94,34 @@ mixed hit_ob(object me, object ob, int damage)
         {
                 if( query("qi", ob)<150 )
                 {
-                        msg = HIR "Äã¾õµÃÉË¿ÚÓĞĞ©·¢Âé£¬Á¬Ã¦ÔË¹¦»¯½â£¬µ«"
-                              "ÊÇÒ»Ê±ÌåÁ¦²»Ö§£¬ÄÑÒÔÊ©Îª¡£\n" NOR;
+                        msg = HIR "ä½ è¦ºå¾—å‚·å£æœ‰äº›ç™¼éº»ï¼Œé€£å¿™é‹åŠŸåŒ–è§£ï¼Œä½†"
+                              "æ˜¯ä¸€æ™‚é«”åŠ›ä¸æ”¯ï¼Œé›£ä»¥æ–½ç‚ºã€‚\n" NOR;
                 } else
                 if( query("jing", ob)<60 )
                 {
-                        msg = HIR "Äã¾õµÃÉË¿ÚÓĞĞ©·¢Âé£¬Á¬Ã¦ÔË¹¦»¯½â£¬µ«"
-                              "ÊÇÒ»Ê±¾«Éñ²»¼Ã£¬ÄÑÒÔÊ©Îª¡£\n" NOR;
+                        msg = HIR "ä½ è¦ºå¾—å‚·å£æœ‰äº›ç™¼éº»ï¼Œé€£å¿™é‹åŠŸåŒ–è§£ï¼Œä½†"
+                              "æ˜¯ä¸€æ™‚ç²¾ç¥ä¸æ¿Ÿï¼Œé›£ä»¥æ–½ç‚ºã€‚\n" NOR;
                 } else
                 if( query("neili", ob)<damage/5+50 )
                 {
-                        msg = HIR "Äã¾õµÃÉË¿ÚÓĞĞ©·¢Âé£¬Á¬Ã¦ÔË¹¦»¯½â£¬µ«"
-                              "ÊÇÒ»Ê±ÄÚÁ¦²»×ã£¬ÄÑÒÔÊ©Îª¡£\n" NOR;
+                        msg = HIR "ä½ è¦ºå¾—å‚·å£æœ‰äº›ç™¼éº»ï¼Œé€£å¿™é‹åŠŸåŒ–è§£ï¼Œä½†"
+                              "æ˜¯ä¸€æ™‚å…§åŠ›ä¸è¶³ï¼Œé›£ä»¥æ–½ç‚ºã€‚\n" NOR;
                 } else
                 {
                         addn("neili", -damage/5, ob);
                         ob->receive_damage("qi", 20);
                         ob->receive_damage("jing", 10);
-                        return HIM "Äã¾õµÃ±»Ò§ÖĞµÄµØ·½ÓĞĞ©·¢Âé£¬Á¬Ã¦ÔË¹¦"
-                               "»¯½â¶¾ĞÔ¡£\n" NOR;
+                        return HIM "ä½ è¦ºå¾—è¢«å’¬ä¸­çš„åœ°æ–¹æœ‰äº›ç™¼éº»ï¼Œé€£å¿™é‹åŠŸ"
+                               "åŒ–è§£æ¯’æ€§ã€‚\n" NOR;
                 }
         }
 
         if (ob->affect_by("poison", ([ "level" : (int)p["level"] / 2,
-                                       "name"  : "Éß¶¾",
+                                       "name"  : "è›‡æ¯’",
                                        "id"    : "nature poison",
                                        "duration" : dur / 2, ])))
         {
-                msg += HIR "$n" HIR "Á³É«Ò»±ä£¬Ö»¾õ±»Ò§ÖĞµÄµØ·½Ò»ÕóÂéÄ¾¡£\n" NOR;
+                msg += HIR "$n" HIR "è‡‰è‰²ä¸€è®Šï¼Œåªè¦ºè¢«å’¬ä¸­çš„åœ°æ–¹ä¸€é™£éº»æœ¨ã€‚\n" NOR;
         }
         return msg;
 }

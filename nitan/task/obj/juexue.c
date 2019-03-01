@@ -2,16 +2,16 @@
 inherit TASK; 
 void create()  
 {
-    set_name(MAG"ÎäÁÖ¾øÑ§"NOR, ({ "wulin juexue" }) );  
+    set_name(MAG"æ­¦æž—çµ•å­¸"NOR, ({ "wulin juexue" }) );  
     set_weight(10);  
         set_weight(10);  
          if( clonep() )  
                  destruct(this_object());  
    else {  
-             set("unit", "±¾");  
+             set("unit", "æœ¬");  
              set("material", "book");
-             set("long", "Ò»±¾ÎäÁÖ¾øÑ§¡£\n");  
+             set("long", "ä¸€æœ¬æ­¦æž—çµ•å­¸ã€‚\n");  
       } 
-      set("owner", "±±³ó");  
+      set("owner", "åŒ—é†œ");  
       setup(); 
 }

@@ -8,7 +8,7 @@ int main(object me, string arg)
         object ob;
 
         if( this_player(1) != me )
-                return notify_fail("ÄãÃ»ÓĞÕâ¸öÈ¨Á¦¡£\n");
+                return notify_fail("ä½ æ²’æœ‰é€™å€‹æ¬ŠåŠ›ã€‚\n");
 
         if( !SECURITY_D->valid_grant(me, "(admin)") )
                 return 0;
@@ -16,7 +16,7 @@ int main(object me, string arg)
         seteuid(geteuid(me));
 
         if( !arg || sscanf(arg, "%s %s", target, file) != 2 )
-                return notify_fail("Ö¸Áî¸ñÊ½£ºdisassemble <Îï¼ş> <Êä³öµµÃû>\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šdisassemble <ç‰©ä»¶> <è¼¸å‡ºæª”å>\n");
 
         if( !ob ) ob = present(target, me);
         if( !ob ) ob = present(target, environment(me));
@@ -28,10 +28,10 @@ int main(object me, string arg)
                 }
         }
 
-        if( !ob ) return notify_fail("ÄãÒª·´×éÒëÄÄÒ»¸öÎï¼ş£¿\n");
+        if( !ob ) return notify_fail("ä½ è¦åçµ„è­¯å“ªä¸€å€‹ç‰©ä»¶ï¼Ÿ\n");
 
         f=resolve_path(query("cwd", me),file);
-        write("·´×éÒëÊä³öÖÁ " + f + "¡¡\n");
+        write("åçµ„è­¯è¼¸å‡ºè‡³ " + f + "ã€€\n");
         dump_prog(ob, 3, f);
         write("Ok.\n");
 
@@ -41,10 +41,10 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : Ö¸Áî¸ñÊ½£ºdisassemble <Îï¼ş> <Êä³öµµÃû>
+æŒ‡ä»¤æ ¼å¼ : æŒ‡ä»¤æ ¼å¼ï¼šdisassemble <ç‰©ä»¶> <è¼¸å‡ºæª”å>
 
-½«Ò»¸öÎï¼şµÄ·´±àÒëÂëÊä³öÖÁÖ¸¶¨µÄµµ°¸¡£ÄãÓ¦µ±ÓĞÕâ¸ö
-µµ°¸µÄĞ´È¨ÏŞ¡£
+å°‡ä¸€å€‹ç‰©ä»¶çš„åç·¨è­¯ç¢¼è¼¸å‡ºè‡³æŒ‡å®šçš„æª”æ¡ˆã€‚ä½ æ‡‰ç•¶æœ‰é€™å€‹
+æª”æ¡ˆçš„å¯«æ¬Šé™ã€‚
 
 HELP
     );

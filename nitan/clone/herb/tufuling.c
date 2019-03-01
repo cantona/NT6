@@ -2,12 +2,12 @@
 
 void create()
 {
-        set_name(YEL "ÍÁÜòÜß" NOR, ({ "tu fuling" }));
+        set_name(YEL "åœŸèŒ¯è‹“" NOR, ({ "tu fuling" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("base_unit", "¸ù");
-                set("long", "²İ±¾Ö²Îï£¬²¹ÆøÑª£¬ÈóÎåÔà£¬ÊÇ²»¿É¶àµÃµÄÉÏ¼ÑÒ©²Ä¡£\n");
+                set("base_unit", "æ ¹");
+                set("long", "è‰æœ¬æ¤ç‰©ï¼Œè£œæ°£è¡€ï¼Œæ½¤äº”è‡Ÿï¼Œæ˜¯ä¸å¯å¤šå¾—çš„ä¸Šä½³è—¥æã€‚\n");
                 set("base_value", 4000);
                 set("base_weight", 60);
                 set("cure_s", 30);

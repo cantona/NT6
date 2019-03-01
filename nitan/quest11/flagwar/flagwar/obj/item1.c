@@ -3,10 +3,10 @@ inherit ITEM;
 
 void create()
 {
-	      set_name(HIG"ÇÀÆìÕ½ - "HIW"Îå¹íÓ¡"NOR, ({"fwar five ghost seal","seal"}) );
+	      set_name(HIG"æ¶æ——æˆ° - "HIW"äº”é¬¼å°"NOR, ({"fwar five ghost seal","seal"}) );
         set_weight(300);
-        set("unit", "¸ö");
-        set("long", "ÇÀÆìÕ½×¨ÓÃÌØÊâÎïÆ·£¬Ê¹ÓÃ(apply)ºó¿É½â³ý°áÔËÆì×ÓÊ±µÄÃ¦Âµ×´¿ö¡£\n");
+        set("unit", "å€‹");
+        set("long", "æ¶æ——æˆ°å°ˆç”¨ç‰¹æ®Šç‰©å“ï¼Œä½¿ç”¨(apply)å¾Œå¯è§£é™¤æ¬é‹æ——å­æ™‚çš„å¿™ç¢Œç‹€æ³ã€‚\n");
         set("value", 1);
         set("can_be_applied", 1);
         set("no_store",1);
@@ -21,11 +21,11 @@ int do_apply(object me) {
 	object ob;
 	if(!me) return 0;
 	ob = this_object();
-  if(environment() != me) return notify_fail(name()+"²»ÔÚÄãÉíÉÏ¡£\n");
-  if(!sizeof(me->query_temp("flag_war"))) return notify_fail(name()+"Ö»ÄÜÔÚÇÀÆìÕ½µÄÊ±ºòÊ¹ÓÃ¡£\n");
-  if(!sscanf(base_name(environment(me)), "/d/flagwar/%*s")) return notify_fail(name()+"Ö»ÄÜÔÚÇÀÆìÕ½³¡Ê¹ÓÃ¡£\n");
-	if(!me->query_temp("flag_war/move_busy")) return notify_fail("ÄãÏÖÔÚÃ»ÓÐÒòÎª°áÔËÆì×Ó¶ø²úÉúµÄÃ¦Âµ×´¿ö¡£\n");
-  message_vision("$NÄÃÆð$n£¬¿ÚÖÐà«à«†ˆ×ÅÌý²»¶®µÄÒô½Ú£¬ÊÖÖ¸×Å$nºúÂÒ»ÓÎè×Å¡£\nÍ»È»´Ó$nÃ°³öÎ¢Î¢µÄ¹âÃ¢£¬$N¿´ÆðÀ´²»ÖªµÀÄÇÀï±äµÄÓÐÐ©²»Í¬ÁË¡£\n", me, ob);
+  if(environment() != me) return notify_fail(name()+"ä¸åœ¨ä½ èº«ä¸Šã€‚\n");
+  if(!sizeof(me->query_temp("flag_war"))) return notify_fail(name()+"åªèƒ½åœ¨æ¶æ——æˆ°çš„æ™‚å€™ä½¿ç”¨ã€‚\n");
+  if(!sscanf(base_name(environment(me)), "/d/flagwar/%*s")) return notify_fail(name()+"åªèƒ½åœ¨æ¶æ——æˆ°å ´ä½¿ç”¨ã€‚\n");
+	if(!me->query_temp("flag_war/move_busy")) return notify_fail("ä½ ç¾åœ¨æ²’æœ‰å› ç‚ºæ¬é‹æ——å­è€Œç”¢ç”Ÿçš„å¿™ç¢Œç‹€æ³ã€‚\n");
+  message_vision("$Næ‹¿èµ·$nï¼Œå£ä¸­å–ƒå–ƒâ–¡è‘—è½ä¸æ‡‚çš„éŸ³ç¯€ï¼Œæ‰‹æŒ‡è‘—$nèƒ¡äº‚æ®èˆžè‘—ã€‚\nçªç„¶å¾ž$nå†’å‡ºå¾®å¾®çš„å…‰èŠ’ï¼Œ$Nçœ‹èµ·ä¾†ä¸çŸ¥é“é‚£è£¡è®Šçš„æœ‰äº›ä¸åŒäº†ã€‚\n", me, ob);
 	me->delete_temp("flag_war/move_busy");
   destruct(ob);
   return 1;

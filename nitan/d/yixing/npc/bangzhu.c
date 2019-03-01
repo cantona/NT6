@@ -45,16 +45,16 @@ void create()
                 fam = names[random(sizeof(names))];
                 name = info_bang[fam];
         } else {
-                fam = "ÎŞÃû°ï";
-                name = "²İÉÏ·É";
+                fam = "ç„¡åå¹«";
+                name = "è‰ä¸Šé£›";
         }
 
         set_name(name, ({ "bangzhu" }));
-        set("title", fam + "°ïÖ÷");
+        set("title", fam + "å¹«ä¸»");
         set("party/party_name", fam);
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("age", 30 + random(20));
-        set("long", "Ò»¸ö¿ıÎàÖ®¼«µÄ´óºº£¬Á³ÅÓ¼«¾¡²ÔÉ££¬¾«ÉñÈ´ÉõÛÇîå¡£\n");
+        set("long", "ä¸€å€‹é­æ¢§ä¹‹æ¥µçš„å¤§æ¼¢ï¼Œè‡‰é¾æ¥µç›¡è’¼æ¡‘ï¼Œç²¾ç¥å»ç”šçŸé‘ ã€‚\n");
         set("attitude", "friendly");
         set("shen_type", -1);
 
@@ -124,11 +124,11 @@ void create()
         }) );
 */
         set("inquiry", ([
-                "Èë°ï" : (: ask_join :),
+                "å…¥å¹«" : (: ask_join :),
                 "join" : (: ask_join :),
-                "°ïÎñ" : (: ask_job :),
+                "å¹«å‹™" : (: ask_job :),
                 "job" : (: ask_job :),
-                            "Îä¹¦" : (: ask_skills :),
+                            "æ­¦åŠŸ" : (: ask_skills :),
                 "skills" : (: ask_skills :),
         ]));
 
@@ -168,14 +168,14 @@ void checking(object ob)
         if( !living(me) || is_fighting() ) return;
         if( environment() != environment(ob) ) return;
         if( !random(2) )
-                message_vision("$NË«ÊÖ±§È­£¬Å£ÀïÅ£ÆøµØËµµÀ£º¼ûµ½±¾°ïÖ÷£¬ÄÑµÀÃ»ÓĞÈÎºÎ±íÊ¾Âğ£¿\n", me);
-        else    message_vision("$NËµµÀ£º»¹²»¸Ï¿ì¼ÓÈë" + query("party/party_name") + "£¡£¡£¡\n", me);
+                message_vision("$Né›™æ‰‹æŠ±æ‹³ï¼Œç‰›è£¡ç‰›æ°£åœ°èªªé“ï¼šè¦‹åˆ°æœ¬å¹«ä¸»ï¼Œé›£é“æ²’æœ‰ä»»ä½•è¡¨ç¤ºå—ï¼Ÿ\n", me);
+        else    message_vision("$Nèªªé“ï¼šé‚„ä¸è¶•å¿«åŠ å…¥" + query("party/party_name") + "ï¼ï¼ï¼\n", me);
 }
 
 int ask_me(string arg)
 {
-        message_vision("$N¡¸¹ş¹ş¹ş¡¹´óĞ¦¼¸Éù¡£\n", this_object());
-        message_vision("$NËµµÀ£º" + arg + "ÍşÕğ½­ºş£¬Ö¸ÈÕ¿É´ı£¡¹ş£¡¹ş£¡¹ş£¡\n", this_object());
+        message_vision("$Nã€Œå“ˆå“ˆå“ˆã€å¤§ç¬‘å¹¾è²ã€‚\n", this_object());
+        message_vision("$Nèªªé“ï¼š" + arg + "å¨éœ‡æ±Ÿæ¹–ï¼ŒæŒ‡æ—¥å¯å¾…ï¼å“ˆï¼å“ˆï¼å“ˆï¼\n", this_object());
         return 1;
 }
 
@@ -202,7 +202,7 @@ int accept_kill(object me)
         object *follower, *obj = ({}), room;
         int i, temp;
 
-        say(name() + "ËµµÀ£ºÄãÏëÄ±º¦±¾°ïÖ÷£¬µ±ÕæÊÇ³ÔÁËĞÜĞÄ±ª×Óµ¨ÁË£¡£¡\n");
+        say(name() + "èªªé“ï¼šä½ æƒ³è¬€å®³æœ¬å¹«ä¸»ï¼Œç•¶çœŸæ˜¯åƒäº†ç†Šå¿ƒè±¹å­è†½äº†ï¼ï¼\n");
 
         follower = query("follower");
         room = environment();
@@ -215,10 +215,10 @@ int accept_kill(object me)
 
         if( !(temp = sizeof(obj)) ) return 1;
 
-        say(name() + "ËµµÀ£º¸÷Î»°ïÖÚºÎÔÚ£¡\n");
+        say(name() + "èªªé“ï¼šå„ä½å¹«çœ¾ä½•åœ¨ï¼\n");
 
         for(i = 0; i < temp; i++) {
-                say(obj[i]->name() + "ËµµÀ£ºÔÚ£¡\n");
+                say(obj[i]->name() + "èªªé“ï¼šåœ¨ï¼\n");
                 obj[i]->kill_ob(me);
         }
 
@@ -255,8 +255,8 @@ int check_bang()
         if( !userp(ob) ) return 1;
         for(i = 0; i < temp; i++) {
                 if( obj[i]->is_fighting(ob) ) continue;
-                message_vision("$N¶Ô×Å$nºğµÀ£º»¹Àã×Å¸ÉÂğ£¿\n", this_object(), obj[i]);
-                message_vision("$N³Ï»Ì³Ï¿ÖµØËµµÀ£ºÍû°ïÖ÷Ë¡×ï£¡\n", obj[i]);
+                message_vision("$Nå°è‘—$nå¼é“ï¼šé‚„æ¥è‘—å¹¹å—ï¼Ÿ\n", this_object(), obj[i]);
+                message_vision("$Nèª æƒ¶èª æåœ°èªªé“ï¼šæœ›å¹«ä¸»æ•ç½ªï¼\n", obj[i]);
                 obj[i]->kill_ob(ob);
         }
         return 1;
@@ -277,9 +277,9 @@ void die()
 
         if( objectp(killer = query_temp("last_damage_from")) ) {
                 ob = new(BANGYIN);
-                set("long", query("title")+query("name", ob)+"¡£\n", ob);
+                set("long", query("title")+query("name", ob)+"ã€‚\n", ob);
                 ob->move(environment());
-                message_vision(HIR"\nÍ»È»´Ó$NÒÂ´üÖĞµôÏÂÒ»"+query("unit", ob)+ob->name()+"¡£\n"NOR,this_object());
+                message_vision(HIR"\nçªç„¶å¾$Nè¡£è¢‹ä¸­æ‰ä¸‹ä¸€"+query("unit", ob)+ob->name()+"ã€‚\n"NOR,this_object());
                 set_temp("my_killer",query("id", killer));
                 set("my_killer",query("id",  killer), ob);
                 set("combat_exp", query("combat_exp"), ob);

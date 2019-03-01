@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "���и�");
+        set("short", "天中閣");
         set("long", @LONG
-���и����������Ĵ��ţ�ԭ�ƻ��и������йŰ��������꣬��ʯ
-���ٰ���������ǰʯ���٣����ƹ��ӡ���������ɽ�ĳ���̫���ڡ�
+天中閣是中岳廟的大門，原稱黃中閣。廟內有古柏三百余株，金石
+碑碣百余座。廟前石翁仲，雕制古樸。南面是嵩山的出口太室闕。
 LONG );
         set("outdoors","songshan");
         set("exits", ([

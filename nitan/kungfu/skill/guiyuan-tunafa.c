@@ -1,4 +1,4 @@
-// guiyuan-tunafa.c ÌúÕÆ°ï ¹éÔªÍÂÄÉ·¨
+// guiyuan-tunafa.c éµæŒå¹« æ­¸å…ƒåç´æ³•
 // Last Modified by winder on Nov. 15 2000
 
 #include <ansi.h>;
@@ -19,14 +19,14 @@ int valid_learn(object me)
         
         nf = (int)me->query_skill("force", 1);
         if ( nf < 10)
-                return notify_fail("ÄãµÄ»ù±¾ÄÚ¹¦»ğºò»¹²»¹»£¬ÎŞ·¨Áì»á¹éÔªÍÂÄÅ·¨¡£\n");
+                return notify_fail("ä½ çš„åŸºæœ¬å…§åŠŸç«å€™é‚„ä¸å¤ ï¼Œç„¡æ³•é ˜æœƒæ­¸å…ƒåå¶æ³•ã€‚\n");
 
         return valid_public(me);
 }
 
 int practice_skill(object me)
 {
-        return notify_fail("¹éÔªÍÂÄÅ·¨Ö»ÄÜÓÃÑ§(learn)µÄÀ´Ôö¼ÓÊìÁ·¶È¡£\n");
+        return notify_fail("æ­¸å…ƒåå¶æ³•åªèƒ½ç”¨å­¸(learn)çš„ä¾†å¢åŠ ç†Ÿç·´åº¦ã€‚\n");
 }
 
 string exert_function_file(string func)
@@ -35,13 +35,13 @@ string exert_function_file(string func)
 }
 int help(object me)
 {
-        write(HIM"\n¹éÔªÍÂÄÉ·¨£º"NOR"\n");
+        write(HIM"\næ­¸å…ƒåç´æ³•ï¼š"NOR"\n");
         write(@HELP
 
-    ÌúÕÆ°ïµÄÄÚ¹¦£¬¾ß×ÔÁÆ¡¢ËûÁÆ¼°ÔË¹¦Ö®ÓÃ¡£
+    éµæŒå¹«çš„å…§åŠŸï¼Œå…·è‡ªç™‚ã€ä»–ç™‚åŠé‹åŠŸä¹‹ç”¨ã€‚
 
-        Ñ§Ï°ÒªÇó£º
-                »ù±¾ÄÚ¹¦10¼¶
+        å­¸ç¿’è¦æ±‚ï¼š
+                åŸºæœ¬å…§åŠŸ10ç´š
 HELP
         );
         return 1;

@@ -1,20 +1,20 @@
 #include <ansi.h>
 inherit ITEM;
-#define QUESTDIR5 "quest/Ñ©É½·Éºü/±¦²Ø/"
+#define QUESTDIR5 "quest/é›ªå±±é£›ç‹/å¯¶è—/"
 string* map_where = ({"/d/hj/caoyuan1","/d/fairyland/shanxi","/d/lanzhou/qingcheng",
                       "/d/lanzhou/tumenzi","/d/lanzhou/gccheng","/d/lanzhou/wufosi",});
-string* map_name = ({"²İº£","À¥ÂØĞ¡Ïª","Çà³Ç","À¼ÖİÍÁÃÅ×Ó","¹Å³¤³Ç","Îå·ğËÂ",});
+string* map_name = ({"è‰æµ·","æ˜†ä¾–å°æºª","é’åŸ","è˜­å·åœŸé–€å­","å¤é•·åŸ","äº”ä½›å¯º",});
 
 void create()
 {
-        set_name(HIB"±¦²ØÍ¼"NOR, ({ "baozang tu","tu"}));
+        set_name(HIB"å¯¶è—åœ–"NOR, ({ "baozang tu","tu"}));
         set_weight(1000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "ÕÅ");
-                set("long","Ò»¸öÑòÆ¤Ö½ÉÏËÆºõÊÇËæÒâ¼ÇÂ¼Ò»Ğ©É½Âö¡¢ºÓÁ÷ºÍ³ÇÕòµÄµØÍ¼¡£\n"+
-                           "Äã¿ÉÒÔ°´µØÍ¼ÉÏµÄÑù×Ó¶ÔÕÕ£¨duizhao£©ÄãµÄ·½Î»¡£\n");
+                set("unit", "å¼µ");
+                set("long","ä¸€å€‹ç¾Šçš®ç´™ä¸Šä¼¼ä¹æ˜¯éš¨æ„è¨˜éŒ„ä¸€äº›å±±è„ˆã€æ²³æµå’ŒåŸé®çš„åœ°åœ–ã€‚\n"+
+                           "ä½ å¯ä»¥æŒ‰åœ°åœ–ä¸Šçš„æ¨£å­å°ç…§ï¼ˆduizhaoï¼‰ä½ çš„æ–¹ä½ã€‚\n");
                 set("value",1);
                  set("unique", 1);
                 set("no_get",1);
@@ -43,30 +43,30 @@ int do_duizhao(string arg)
      	if(me->is_fighting()) return 0;
      	if(!me->query(QUESTDIR5+"start")) return 0;
      	if(!present("lengyue dao",me))
-     	    return notify_fail(HIY"µ¥´¿µÄµØÍ¼ÎŞ·¨Ìá¹©×ã¹»µÄĞÅÏ¢£¬ÄãĞèÒªÆäËûÏßË÷£¡\n"NOR);
+     	    return notify_fail(HIY"å–®ç´”çš„åœ°åœ–ç„¡æ³•æä¾›è¶³å¤ çš„ä¿¡æ¯ï¼Œä½ éœ€è¦å…¶ä»–ç·šç´¢ï¼\n"NOR);
         if( ! arg || (arg != "lengyue baodao"&& arg != "baodao"&& arg != "lengyue"))
-                 return notify_fail("Äã¶ÔÕÕµÄ¶«Î÷ÎŞ·¨±È½Ï³öÊ²Ã´½á¹û¡£\n");
+                 return notify_fail("ä½ å°ç…§çš„æ±è¥¿ç„¡æ³•æ¯”è¼ƒå‡ºä»€éº¼çµæœã€‚\n");
       if(!me->query_temp(QUESTDIR5+"yanjiu_ok"))
-     		  return notify_fail(HIY"µ¥´¿µÄµØÍ¼ÎŞ·¨Ìá¹©×ã¹»µÄĞÅÏ¢£¬ÄãĞèÒªÆäËûÏßË÷£¡\n"NOR);
+     		  return notify_fail(HIY"å–®ç´”çš„åœ°åœ–ç„¡æ³•æä¾›è¶³å¤ çš„ä¿¡æ¯ï¼Œä½ éœ€è¦å…¶ä»–ç·šç´¢ï¼\n"NOR);
       if(!me->query_temp(QUESTDIR5+"guanzhu_ok"))
       {
-           message_vision(HIC"$N½«"+obj->name()+HIC"¶Ô±È×ÅÀäÔÂ±¦µ¶£¬·­À´¸²È¥µØÑĞ¾¿×Å£¡\n"NOR, me);
+           message_vision(HIC"$Nå°‡"+obj->name()+HIC"å°æ¯”è‘—å†·æœˆå¯¶åˆ€ï¼Œç¿»ä¾†è¦†å»åœ°ç ”ç©¶è‘—ï¼\n"NOR, me);
      	   me->add("neili", -150);
-     	   return notify_fail(HIY"ºÜÒÅº¶µÄÊÇ£¬±¦µ¶ÉÏµÄÌáÊ¾ËÆºõ»¹²»¹»ÇåÎú£¡\n"NOR);
+     	   return notify_fail(HIY"å¾ˆéºæ†¾çš„æ˜¯ï¼Œå¯¶åˆ€ä¸Šçš„æç¤ºä¼¼ä¹é‚„ä¸å¤ æ¸…æ™°ï¼\n"NOR);
      	}
       if(me->query_temp(QUESTDIR5+"search_ok"))
-     	   return notify_fail(HIY"µØÍ¼ÒÑ¾­Ê²Ã´¶¼¿´²»³öÀ´ÁË£¡\n"NOR);
+     	   return notify_fail(HIY"åœ°åœ–å·²ç¶“ä»€éº¼éƒ½çœ‹ä¸å‡ºä¾†äº†ï¼\n"NOR);
       if(me->query_temp(QUESTDIR5+"map_where"))
-     	   return notify_fail(HIY"µØÍ¼½¥½¥±äµÃÄ£ºı£¬Ê²Ã´Ò²¿´²»Çå³şÁË£¡\n"NOR);
+     	   return notify_fail(HIY"åœ°åœ–æ¼¸æ¼¸è®Šå¾—æ¨¡ç³Šï¼Œä»€éº¼ä¹Ÿçœ‹ä¸æ¸…æ¥šäº†ï¼\n"NOR);
       i=random(sizeof(map_where));
       where=map_where[i];
       name=map_name[i];
       if(!room=find_object(where))
         room=load_object(where);
-      if(!room)  return notify_fail(HIY"µØÍ¼½¥½¥±äµÃÄ£ºı£¬¿ÉÄÜÊÇÎ×Ê¦×öµÄÊÖ½Å£¡\n"NOR);
-     	message_vision(HIC"$N½«"+obj->name()+"¶Ô±È×ÅÀäÔÂ±¦µ¶£¬·­À´¸²È¥µØÑĞ¾¿×Å£¡\n"NOR, me);
-     	tell_object(me,YEL"Äã·¢ÏÖµ¶ÉíÉÏµÄÊıÌõÂöÂ·£¬ËÆºõºÍ²Ø±¦Í¼¿ÉÒÔ¶ÔÕÕ¡£\n"NOR);
-     	tell_object(me,YEL"ÄãÍ»È»·¢ÏÖÁ½Õß½áºÏ×îÖÕµÄ±êÖ¾¾¹È»ÂäÔÚÒ»¸öÄãÔø¾­ÊìÏ¤µÄµØ·½¡ª¡ª"+name+"¡£\n"NOR);
+      if(!room)  return notify_fail(HIY"åœ°åœ–æ¼¸æ¼¸è®Šå¾—æ¨¡ç³Šï¼Œå¯èƒ½æ˜¯å·«å¸«åšçš„æ‰‹è…³ï¼\n"NOR);
+     	message_vision(HIC"$Nå°‡"+obj->name()+"å°æ¯”è‘—å†·æœˆå¯¶åˆ€ï¼Œç¿»ä¾†è¦†å»åœ°ç ”ç©¶è‘—ï¼\n"NOR, me);
+     	tell_object(me,YEL"ä½ ç™¼ç¾åˆ€èº«ä¸Šçš„æ•¸æ¢è„ˆè·¯ï¼Œä¼¼ä¹å’Œè—å¯¶åœ–å¯ä»¥å°ç…§ã€‚\n"NOR);
+     	tell_object(me,YEL"ä½ çªç„¶ç™¼ç¾å…©è€…çµåˆæœ€çµ‚çš„æ¨™å¿—ç«Ÿç„¶è½åœ¨ä¸€å€‹ä½ æ›¾ç¶“ç†Ÿæ‚‰çš„åœ°æ–¹â”€â”€"+name+"ã€‚\n"NOR);
       me->set_temp(QUESTDIR5+"map_where",where);
       me->start_busy(1);
      	return 1;

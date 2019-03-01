@@ -1,37 +1,37 @@
 // This program is a part of NT MudLIB
-// ab_crystal.c ÄÜÁ¦Ë®¾§
+// ab_crystal.c èƒ½åŠ›æ°´æ™¶
 
 #include <ansi.h>
 
 inherit ITEM;
 
 mapping dict = ([
-        "axe"           :"¸«",
-        "bow"           :"¹­",
-        "sword"         :"½£",
-        "blade"         :"µ¶",
-        "club"          :"¹÷",
-        "dagger"        :"Ø°Ê×",
-        "fork"          :"²æ",
-        "hammer"        :"´¸",
-        "staff"         :"ÕÈ",
-        "throwing"      :"°µÆ÷",
-        "whip"          :"±Ş",
-        "xsword"        :"óï",
-        "head"          :"Í·¿ø",
-        "neck"          :"ÏîÁ´",
-        "cloth"         :"ÒÂ·ş",
-        "charm"         :"·ûÎÄ",
-        "rings"         :"½äÖ¸",
-        "armor"         :"»¤¼×",
-        "surcoat"       :"Åû·ç",
-        "waist"         :"Ñü´ø",
-        "wrists"        :"»¤Íó",
-        "shield"        :"¶Ü¼×",
-        "hands"         :"ÌúÕÆ",
-        "boots"         :"Ñ¥×Ó",
-        "finger"        :"Ö¸Ì×",
-        "all"           :"ËùÓĞÀàĞÍ",
+        "axe"           :"æ–§",
+        "bow"           :"å¼“",
+        "sword"         :"åŠ",
+        "blade"         :"åˆ€",
+        "club"          :"æ£",
+        "dagger"        :"åŒ•é¦–",
+        "fork"          :"å‰",
+        "hammer"        :"éŒ˜",
+        "staff"         :"æ–",
+        "throwing"      :"æš—å™¨",
+        "whip"          :"é­",
+        "xsword"        :"ç°«",
+        "head"          :"é ­ç›”",
+        "neck"          :"é …éˆ",
+        "cloth"         :"è¡£æœ",
+        "charm"         :"ç¬¦æ–‡",
+        "rings"         :"æˆ’æŒ‡",
+        "armor"         :"è­·ç”²",
+        "surcoat"       :"æŠ«é¢¨",
+        "waist"         :"è…°å¸¶",
+        "wrists"        :"è­·è…•",
+        "shield"        :"ç›¾ç”²",
+        "hands"         :"éµæŒ",
+        "boots"         :"é´å­",
+        "finger"        :"æŒ‡å¥—",
+        "all"           :"æ‰€æœ‰é¡å‹",
 ]);
 
 string to_chinese(string str)
@@ -44,15 +44,15 @@ string to_chinese(string str)
 
 void create()
 {
-        set_name(HIM"ÄÜÁ¦Ë®¾§"NOR, ({ "ability crystal", "ability", "crystal" }) );
+        set_name(HIM"èƒ½åŠ›æ°´æ™¶"NOR, ({ "ability crystal", "ability", "crystal" }) );
         set_weight(1);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", HIM "±íÃæ·º×Å·ÛÉ«¹âÃ¢µÄÄÜÁ¦Ë®¾§£¬¿ÉÒÔ½«Ç©ÃûºóµÄ×°±¸µÄÏâÇ¶±¦Ê¯ÊôĞÔ¡¢Ç¿»¯Ğ§¹û\n"
-                            HIM "¸ÄÔì¼°Ì××°Ğ§¹û´¢´æ(store)ÆğÀ´£¬È»ºó¿ÉÒÔÎŞËğÊ§×¢Èë(infuse)µ½ĞÂµÄÇ©Ãû×°±¸ÉÏ¡£\n" NOR);
+                set("long", HIM "è¡¨é¢æ³›è‘—ç²‰è‰²å…‰èŠ’çš„èƒ½åŠ›æ°´æ™¶ï¼Œå¯ä»¥å°‡ç°½åå¾Œçš„è£å‚™çš„é‘²åµŒå¯¶çŸ³å±¬æ€§ã€å¼·åŒ–æ•ˆæœ\n"
+                            HIM "æ”¹é€ åŠå¥—è£æ•ˆæœå„²å­˜(store)èµ·ä¾†ï¼Œç„¶å¾Œå¯ä»¥ç„¡æå¤±æ³¨å…¥(infuse)åˆ°æ–°çš„ç°½åè£å‚™ä¸Šã€‚\n" NOR);
                 set("value", 50000);
-                set("unit", "¿é");
+                set("unit", "å¡Š");
         }
         //set("set_data", 1);
         set("autoload", 1);
@@ -76,26 +76,26 @@ int do_store(string arg)
         me = this_player();
         
         if( !arg || arg == "" )  
-                return notify_fail("ÄãÒª´¢´æÊ²Ã´×°±¸ÉÏµÄÄÜÁ¦£¿\n");
+                return notify_fail("ä½ è¦å„²å­˜ä»€éº¼è£å‚™ä¸Šçš„èƒ½åŠ›ï¼Ÿ\n");
 
         if( !objectp(ob = present(arg, me)) && 
             !objectp(ob = present(arg, environment(me)))) 
-                return notify_fail("ÄãÉíÉÏºÍ¸½½üÃ»ÓĞÕâÑù×°±¸°¡¡£\n"); 
+                return notify_fail("ä½ èº«ä¸Šå’Œé™„è¿‘æ²’æœ‰é€™æ¨£è£å‚™å•Šã€‚\n"); 
 
         if( !ob->is_item_make() )
-                return notify_fail("ÄÜÁ¦Ë®¾§Ö»¿É´æ´¢ÒÑÇ©Ãû×°±¸µÄÄÜÁ¦¡£\n");
+                return notify_fail("èƒ½åŠ›æ°´æ™¶åªå¯å­˜å„²å·²ç°½åè£å‚™çš„èƒ½åŠ›ã€‚\n");
 
         if( !wizardp(me) && ob->item_owner() != query("id", me) )
-                return notify_fail("Õâ¸ö£¬ºÃÏó²»ÊôÓÚÄã°É£¬ÕâÑù²»´óºÏÊÊ¡£\n");
+                return notify_fail("é€™å€‹ï¼Œå¥½è±¡ä¸å±¬äºä½ å§ï¼Œé€™æ¨£ä¸å¤§åˆé©ã€‚\n");
 
         if( query("equipped", ob) ) 
-                return notify_fail("ÄãÏÈ½â³ı" + ob->name() + "µÄ×°±¸ÔÙËµ£¡\n"); 
+                return notify_fail("ä½ å…ˆè§£é™¤" + ob->name() + "çš„è£å‚™å†èªªï¼\n"); 
                 
         if( !mapp(enchase = query("enchase", ob)) || !mapp(insert=query("insert", ob)) )
-                return notify_fail("ÄÜÁ¦Ë®¾§Ö»ÄÜ´æ´¢ÏâÇ¶¹ı±¦Ê¯µÄ×°±¸ÊôĞÔ¡£\n");
+                return notify_fail("èƒ½åŠ›æ°´æ™¶åªèƒ½å­˜å„²é‘²åµŒéå¯¶çŸ³çš„è£å‚™å±¬æ€§ã€‚\n");
         
         if( query("can_infuse") )
-                return notify_fail("ÄÜÁ¦Ë®¾§ÒÑ¾­´¢´æ¹ıÄÜÁ¦£¬ÎŞ·¨ÔÙ´æ´¢¡£\n");
+                return notify_fail("èƒ½åŠ›æ°´æ™¶å·²ç¶“å„²å­˜éèƒ½åŠ›ï¼Œç„¡æ³•å†å­˜å„²ã€‚\n");
                 
         if( ob->is_weapon() )
                 type = query("skill_type", ob);
@@ -104,12 +104,12 @@ int do_store(string arg)
         
         set("can_infuse", type);
                 
-        status = query("status", ob); // ¸ÄÔì
+        status = query("status", ob); // æ”¹é€ 
         set("status", status);
         set("status", 1, ob); 
         delete("reform", ob);
         
-        if( !undefinedp(enchase["mod_prop"]) ) // Ì××°
+        if( !undefinedp(enchase["mod_prop"]) ) // å¥—è£
         {
                 mod_name = query("mod_name", ob);
                 mod_level = query("mod_level", ob);
@@ -120,19 +120,19 @@ int do_store(string arg)
                 delete("mod_mark", ob);
         }
         
-        set("enchase", enchase);      // ÏâÇ¶
+        set("enchase", enchase);      // é‘²åµŒ
         set("insert", insert);
         delete("enchase", ob);
         delete("insert", ob);
         
-        qianghua = query("qianghua", ob); // Ç¿»¯
+        qianghua = query("qianghua", ob); // å¼·åŒ–
         if( mapp(qianghua) && sizeof(qianghua) > 0 )
         {
                 set("qianghua", qianghua);
                 delete("qianghua", ob);
         }
 
-        magic = query("magic", ob); // ½ğÄ¾Ë®»ğÍÁÊôĞÔ
+        magic = query("magic", ob); // é‡‘æœ¨æ°´ç«åœŸå±¬æ€§
         if( mapp(magic) && sizeof(magic) > 0 )
         {
                 set("magic", magic);
@@ -143,7 +143,7 @@ int do_store(string arg)
         
         ob->save(); 
         
-        tell_object(me, HIC "Äã½«" +ob->name()+ HIC "µÄÄÜÁ¦´æ´¢µ½ÄÜÁ¦Ë®¾§³É¹¦¡£\n" NOR);
+        tell_object(me, HIC "ä½ å°‡" +ob->name()+ HIC "çš„èƒ½åŠ›å­˜å„²åˆ°èƒ½åŠ›æ°´æ™¶æˆåŠŸã€‚\n" NOR);
         return 1;
 }
 
@@ -159,42 +159,42 @@ int do_infuse(string arg)
         me = this_player();
         
         if( !arg || arg == "" )  
-                return notify_fail("ÄãÒª¸øÊ²Ã´×°±¸×¢ÈëÄÜÁ¦£¿\n");
+                return notify_fail("ä½ è¦çµ¦ä»€éº¼è£å‚™æ³¨å…¥èƒ½åŠ›ï¼Ÿ\n");
 
         if( !objectp(ob = present(arg, me)) && 
             !objectp(ob = present(arg, environment(me)))) 
-                return notify_fail("ÄãÉíÉÏºÍ¸½½üÃ»ÓĞÕâÑù×°±¸°¡¡£\n"); 
+                return notify_fail("ä½ èº«ä¸Šå’Œé™„è¿‘æ²’æœ‰é€™æ¨£è£å‚™å•Šã€‚\n"); 
 
         if( !ob->is_item_make() )
-                return notify_fail("ÄÜÁ¦Ë®¾§Ö»¿É¸øÒÑÇ©Ãû×°±¸×¢ÈëÄÜÁ¦¡£\n");
+                return notify_fail("èƒ½åŠ›æ°´æ™¶åªå¯çµ¦å·²ç°½åè£å‚™æ³¨å…¥èƒ½åŠ›ã€‚\n");
 
         if( !wizardp(me) && ob->item_owner() != query("id", me) ) 
-                return notify_fail("Õâ¸ö£¬ºÃÏó²»ÊôÓÚÄã°É£¬ÕâÑù²»´óºÏÊÊ¡£\n");
+                return notify_fail("é€™å€‹ï¼Œå¥½è±¡ä¸å±¬äºä½ å§ï¼Œé€™æ¨£ä¸å¤§åˆé©ã€‚\n");
 
         if( query("equipped", ob) ) 
-                return notify_fail("ÄãÏÈ½â³ı" + ob->name() + "µÄ×°±¸ÔÙËµ£¡\n"); 
+                return notify_fail("ä½ å…ˆè§£é™¤" + ob->name() + "çš„è£å‚™å†èªªï¼\n"); 
                         
         enchase = query("enchase");
         if( !mapp(enchase) || sizeof(enchase) < 1 )
-                return notify_fail("ÄÜÁ¦Ë®¾§Ã»ÓĞ´¢´æ¹ıÈÎºÎÄÜÁ¦£¡\n");
+                return notify_fail("èƒ½åŠ›æ°´æ™¶æ²’æœ‰å„²å­˜éä»»ä½•èƒ½åŠ›ï¼\n");
         
         type = query("can_infuse");
         if(  type != query("skill_type", ob) && type != query("armor_type", ob) )
-                return notify_fail("ÄÜÁ¦Ë®¾§Ö»ÄÜ¸ø"+to_chinese(type)+"×¢ÈëÄÜÁ¦¡£\n");
+                return notify_fail("èƒ½åŠ›æ°´æ™¶åªèƒ½çµ¦"+to_chinese(type)+"æ³¨å…¥èƒ½åŠ›ã€‚\n");
         
         /*        
         flute = enchase["flute"];
         if( query("enchase/flute", ob) < flute )
-                return notify_fail(ob->name()+"µÄÒÑ¿ª¿×Êı±ØĞë²»Ğ¡ÓÚÄÜÁ¦Ë®¾§ÖĞ´æ´¢ÄÜÁ¦µÄ¿×Êı("+flute+")£¡\n");
+                return notify_fail(ob->name()+"çš„å·²é–‹å­”æ•¸å¿…é ˆä¸å°äºèƒ½åŠ›æ°´æ™¶ä¸­å­˜å„²èƒ½åŠ›çš„å­”æ•¸("+flute+")ï¼\n");
         */
         
-        if( (status = query("status")) > 1 ) // ¸ÄÔì
+        if( (status = query("status")) > 1 ) // æ”¹é€ 
         {
                 set("status", status, ob);
                 for( i=2;i<=status;i++ )
                 {
-                        addn("reform/apply_prop/max_jing", 1000*i, ob);     // Ôö¼Ó¾«
-                        addn("reform/apply_prop/max_qi", 2000*i, ob);       // Ôö¼ÓÆø
+                        addn("reform/apply_prop/max_jing", 1000*i, ob);     // å¢åŠ ç²¾
+                        addn("reform/apply_prop/max_qi", 2000*i, ob);       // å¢åŠ æ°£
                 }
                 
                 if( type == "rings" || type == "neck" || type == "charm" )
@@ -228,7 +228,7 @@ int do_infuse(string arg)
                                 key = keys(props);
                                 for( i=0;i<sizeof(key);i++ )
                                 {
-                                        value = EQUIPMENT_D->query_prop_value(key[i], 3, 1); // Ç¿»¯Öµ
+                                        value = EQUIPMENT_D->query_prop_value(key[i], 3, 1); // å¼·åŒ–å€¼
                                         if( query("quality_level", ob) == 4 )
                                         {
                                                 if( sizeof(key) == 1 )
@@ -258,18 +258,18 @@ int do_infuse(string arg)
                 }
         }
                  
-        set("enchase", enchase, ob);  // ÏâÇ¶
+        set("enchase", enchase, ob);  // é‘²åµŒ
         insert = query("insert");
         set("insert", insert, ob);
-        qianghua = query("qianghua");   // Ç¿»¯
+        qianghua = query("qianghua");   // å¼·åŒ–
         if( mapp(qianghua) && sizeof(qianghua) > 1 )
                 set("qianghua", qianghua, ob);
 
-        magic = query("magic");   // ½ğÄ¾Ë®»ğÍÁÊôĞÔ
+        magic = query("magic");   // é‡‘æœ¨æ°´ç«åœŸå±¬æ€§
         if( mapp(magic) && sizeof(magic) > 1 )
                 set("magic", magic, ob);
         
-        if( query("mod_name") )    // Ì××°
+        if( query("mod_name") )    // å¥—è£
         {
                 set("mod_name", query("mod_name"), ob);
                 set("mod_mark", base_name(ob), ob);
@@ -280,7 +280,7 @@ int do_infuse(string arg)
                                 
         ob->save();
         
-        tell_object(me, HIC "Äã½«ÄÜÁ¦Ë®¾§ÖĞµÄÄÜÁ¦×¢Èë" +ob->name()+ HIC "³É¹¦¡£\n" NOR);
+        tell_object(me, HIC "ä½ å°‡èƒ½åŠ›æ°´æ™¶ä¸­çš„èƒ½åŠ›æ³¨å…¥" +ob->name()+ HIC "æˆåŠŸã€‚\n" NOR);
         destruct(this_object());
         return 1;
 }
@@ -292,19 +292,19 @@ string extra_long()
         int value;
         int i;
 
-        str =  sprintf( YEL "\nÎïÆ·ÊôĞÔ : ÌØÊâÎï<ÄÜÁ¦Ë®¾§>£¬ÖØÁ¿%d¿Ë£¬ÏÂÏß%s¶ªÊ§\n" NOR,
+        str =  sprintf( YEL "\nç‰©å“å±¬æ€§ : ç‰¹æ®Šç‰©<èƒ½åŠ›æ°´æ™¶>ï¼Œé‡é‡%då…‹ï¼Œä¸‹ç·š%sä¸Ÿå¤±\n" NOR,
                         this_object()->query_weight(),
-                        (this_object()->query_autoload() || query("autoload")) ? "²»" : "" );
+                        (this_object()->query_autoload() || query("autoload")) ? "ä¸" : "" );
 
         if( mapp(enchase=copy(query("enchase/apply_prop"))) ) 
         {
                 type = query("can_infuse");
-                str += sprintf(HIK "¸½Ä§×°±¸ : %s(%s)\n" NOR, to_chinese(type), type);
+                str += sprintf(HIK "é™„é­”è£å‚™ : %s(%s)\n" NOR, to_chinese(type), type);
                 apply = keys(enchase);
                 for (i = 0; i<sizeof(apply); i++) 
                 {
                         value = enchase[apply[i]];
-                        str += HIK "ÓµÓĞÊôĞÔ" NOR " : ";
+                        str += HIK "æ“æœ‰å±¬æ€§" NOR " : ";
                         str += HIB + EQUIPMENT_D->chinese(apply[i], value) + NOR + "\n";
                 }    
         }
@@ -315,7 +315,7 @@ string extra_long()
                 for (i = 0; i<sizeof(apply); i++) 
                 {
                         value = enchase[apply[i]];
-                        str += HIK "ÓµÓĞÊôĞÔ" NOR " : ";
+                        str += HIK "æ“æœ‰å±¬æ€§" NOR " : ";
                         str += HIB + EQUIPMENT_D->chinese(apply[i], value) + NOR + "\n";
                 }
         }
@@ -326,7 +326,7 @@ string extra_long()
                 for (i = 0; i<sizeof(apply); i++) 
                 {
                         value = qianghua[apply[i]];
-                        str += HIK "ÓµÓĞÊôĞÔ" NOR " : ";
+                        str += HIK "æ“æœ‰å±¬æ€§" NOR " : ";
                         str += HIB + EQUIPMENT_D->chinese(apply[i], value) + NOR + "\n";
                 }
         }
@@ -334,4 +334,4 @@ string extra_long()
         return str;
 }
 
-string query_name() { return HIM"ÄÜÁ¦Ë®¾§"NOR; }
+string query_name() { return HIM"èƒ½åŠ›æ°´æ™¶"NOR; }

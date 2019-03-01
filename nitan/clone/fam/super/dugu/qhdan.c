@@ -2,16 +2,16 @@
 inherit ITEM;
 void create()
 {
-        set_name(HIG "Ç§»Øµ¤" NOR, ({"qianhuidan"}));
+        set_name(HIG "åƒå›ä¸¹" NOR, ({"qianhuidan"}));
         set_weight(1);
         if (clonep())
                 set_default_object(__FILE__);
         else {  
-        	set("long", HIC "´«ËµÉñÅ©ÊÏÔøÁ¶µ¤Ç§´Î£¬ÖÕ³É´Ëµ¤£¡\n" + 
-        	                "·şÊ³(fushi qianhuidan)ºó£¬30·ÖÖÓÄÚ¿É¶îÍâÌáÉıÑĞ¾¿´ÎÊı50´Î¡£\n" HIR
-        	                /*"ÓµÓĞÕß£ºÓµÓĞÕßID*/"\n" NOR);
-                set("unit", "¿Å");
-                set("owner", "ÓµÓĞÕßID"); // °ó¶¨ÓµÓĞÕß
+        	set("long", HIC "å‚³èªªç¥è¾²æ°æ›¾ç…‰ä¸¹åƒæ¬¡ï¼Œçµ‚æˆæ­¤ä¸¹ï¼\n" + 
+        	                "æœé£Ÿ(fushi qianhuidan)å¾Œï¼Œ30åˆ†é˜å…§å¯é¡å¤–æå‡ç ”ç©¶æ¬¡æ•¸50æ¬¡ã€‚\n" HIR
+        	                /*"æ“æœ‰è€…ï¼šæ“æœ‰è€…ID*/"\n" NOR);
+                set("unit", "é¡†");
+                set("owner", "æ“æœ‰è€…ID"); // ç¶å®šæ“æœ‰è€…
 	        set("no_drop", 1);set("no_store", 1);set("no_sell", 1);
         }
         setup();
@@ -31,13 +31,13 @@ int do_use(string arg)
 	me = this_player();
 
 	if (! arg || arg != query("id"))
-		return notify_fail("ÄãÒª·şÊ³Ê²Ã´£¿\n");
+		return notify_fail("ä½ è¦æœé£Ÿä»€éº¼ï¼Ÿ\n");
 
 	if (! objectp(ob = present(arg, me)))
-		return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâ¸ö¶«Î÷£¡\n");
+		return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™å€‹æ±è¥¿ï¼\n");
 /*
 	if( query("owner", ob) != query("id", me) )
-		return notify_fail(ob->name() + NOR "ÒÑ¾­ÓÚÆäËûÍæ¼Ò°ó¶¨£¡\n");
+		return notify_fail(ob->name() + NOR "å·²ç¶“äºå…¶ä»–ç©å®¶ç¶å®šï¼\n");
 */
 
 	if( !query("add_yanjiu_times50", me) || 
@@ -49,8 +49,8 @@ addn("add_yanjiu_times50", 1800, 		me);
 	}
 
 
-	tell_object(me, HIG "¹§Ï²£¡Äã·şÏÂ" + ob->name() + HIG "ºó£¬30·ÖÖÓÄÚÑĞ¾¿´ÎÊı¶îÍâÌá¸ß50´Î£¡\n");
-	tell_object(me,HIG"Ä¿Ç°¸ÃĞ§¹û»¹Ê£ÓàÊ±¼ä£º"+sprintf("%d",query("add_yanjiu_times50", me))+"Ãë¡£\n");
+	tell_object(me, HIG "æ­å–œï¼ä½ æœä¸‹" + ob->name() + HIG "å¾Œï¼Œ30åˆ†é˜å…§ç ”ç©¶æ¬¡æ•¸é¡å¤–æé«˜50æ¬¡ï¼\n");
+	tell_object(me,HIG"ç›®å‰è©²æ•ˆæœé‚„å‰©ä½™æ™‚é–“ï¼š"+sprintf("%d",query("add_yanjiu_times50", me))+"ç§’ã€‚\n");
 	
 	me->save();
 	

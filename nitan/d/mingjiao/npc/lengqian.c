@@ -9,15 +9,15 @@ inherit F_UNIQUE;
 
 void create()
 {
-        set_name("ÀäÇ«", ({ "leng qian", "leng", "qian", }));
+        set_name("å†·è¬™", ({ "leng qian", "leng", "qian", }));
         set("long",
-        "ËûÊÇÒ»Î»ÀäÀäµÄÀÏÕß£¬Éí´©Ò»¼ş°×²¼³¤ÅÛ¡£\n"
-        "ËûËµ»°¼«Îª¼ò½İ£¬±ãÊÇÉ±ÁËËûµÄÍ·Ò²²»¿Ï¶àËµ°ë¾ä·Ï»°¡£\n"
+        "ä»–æ˜¯ä¸€ä½å†·å†·çš„è€è€…ï¼Œèº«ç©¿ä¸€ä»¶ç™½å¸ƒé•·è¢ã€‚\n"
+        "ä»–èªªè©±æ¥µç‚ºç°¡æ·ï¼Œä¾¿æ˜¯æ®ºäº†ä»–çš„é ­ä¹Ÿä¸è‚¯å¤šèªªåŠå¥å»¢è©±ã€‚\n"
         );
 
-        set("title", HIG "Ã÷½Ì" NOR "ÎåÉ¢ÈË");
-        set("nickname", "ÀäÃæÏÈÉú");
-        set("gender", "ÄĞĞÔ");
+        set("title", HIG "æ˜æ•™" NOR "äº”æ•£äºº");
+        set("nickname", "å†·é¢å…ˆç”Ÿ");
+        set("gender", "ç”·æ€§");
         set("attitude", "friendly");
         set("class", "fighter");
 
@@ -65,8 +65,8 @@ void create()
                 (: command("perform cuff.jin") :),
         }) );
 
-        create_family("Ã÷½Ì", 36, "ÎåÉ¢ÈË");
-        set("inherit_title",HIG"Ã÷½Ì"NOR"¹âÃ÷ÕÆÆìÊ¹"NOR);
+        create_family("æ˜æ•™", 36, "äº”æ•£äºº");
+        set("inherit_title",HIG"æ˜æ•™"NOR"å…‰æ˜æŒæ——ä½¿"NOR);
 
         /*
         set_temp("apply/attack", 120);
@@ -95,10 +95,10 @@ int accept_ask(object me, string topic)
         switch (topic)
         {
 
-        case "×ÏÀ×¾¢" :
+        case "ç´«é›·å‹" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/pili-quan/jin",
-                           "name"    : "×ÏÀ×¾¢",
+                           "name"    : "ç´«é›·å‹",
                            "sk1"     : "pili-quan",
                            "lv1"     : 40,
                            "gongxian": 80,

@@ -3,15 +3,15 @@
 #include <ansi.h>
 #include <room.h>
 inherit ROOM;
-#define QUESTDIR5 "quest/Ñ©É½·Éºü/±¦²Ø/"
-#define QUESTDIR4 "quest/Ñ©É½·Éºü/Îä¹¦/"
+#define QUESTDIR5 "quest/é›ªå±±é£›ç‹/å¯¶è—/"
+#define QUESTDIR4 "quest/é›ªå±±é£›ç‹/æ­¦åŠŸ/"
 
 void create()
 {
-        set("short",BLU"Êé·¿"NOR);
+        set("short",BLU"æ›¸æˆ¿"NOR);
         set("long", @long
-Äã´òÁ¿ËÄÖÜ£¬¿´À´ËÆºõÊÇ¸öÊé·¿£¬µ«ÊÇ¼Ü×ÓÉÏÒ»±¾ÊéÒ²Ã»ÓĞ£¬ºÃÏñÁ¬¸¯ÀÃ
-µÄºÛ¼£¶¼Ã»ÓĞ¡£¼Ü×ÓÅÔ±ßÊÇ¸ö×À×Ó£¬ÖĞ¼äÔçÒÑÁÑ¿ª£»ÅÔ±ßÓ¦¸ÃÊÇ¼¸¸ö»¨Åè¡£
+ä½ æ‰“é‡å››å‘¨ï¼Œçœ‹ä¾†ä¼¼ä¹æ˜¯å€‹æ›¸æˆ¿ï¼Œä½†æ˜¯æ¶å­ä¸Šä¸€æœ¬æ›¸ä¹Ÿæ²’æœ‰ï¼Œå¥½åƒé€£è…çˆ›
+çš„ç—•è·¡éƒ½æ²’æœ‰ã€‚æ¶å­æ—é‚Šæ˜¯å€‹æ¡Œå­ï¼Œä¸­é–“æ—©å·²è£‚é–‹ï¼›æ—é‚Šæ‡‰è©²æ˜¯å¹¾å€‹èŠ±ç›†ã€‚
 long);
         set("exits", ([
                 "west" : __DIR__"tiantan",
@@ -39,22 +39,22 @@ int do_search(string arg)
      object me,obj;
      me = this_player();
      if (me->is_busy() || me->is_fighting())
-                   return notify_fail("ÄãÕıÃ¦×ÅÄÄ£¡\n");
-      message_vision(HIY"$N¶×ÔÚµØÉÏ£¬ËÄ´¦Ñ°ÕÒ¡£\n"NOR, me);
+                   return notify_fail("ä½ æ­£å¿™è‘—å“ªï¼\n");
+      message_vision(HIY"$Nè¹²åœ¨åœ°ä¸Šï¼Œå››è™•å°‹æ‰¾ã€‚\n"NOR, me);
       if(!wizardp(me)) me->start_busy(1);
       if(me->query(QUESTDIR5+"yupei")||!me->query(QUESTDIR4+"lengquanshengong")||me->query(QUESTDIR4+"lengquanshengong_teach"))
       {
-         tell_room(environment(me), me->name() + "ÕÒÁË°ëÌì£¬Ö»ÅªÁËÒ»ÊÖÄà¡£\n", ({ me }));
-         return notify_fail("ÄãÕÒÁË°ëÌì£¬Ê²Ã´Ò²Ã»ÕÒµ½¡£\n");
+         tell_room(environment(me), me->name() + "æ‰¾äº†åŠå¤©ï¼Œåªå¼„äº†ä¸€æ‰‹æ³¥ã€‚\n", ({ me }));
+         return notify_fail("ä½ æ‰¾äº†åŠå¤©ï¼Œä»€éº¼ä¹Ÿæ²’æ‰¾åˆ°ã€‚\n");
       }
       obj = new("/d/xingxiu/baozang/obj/yuqi");
       obj->set("owner",me->query("id"));
       obj->set("quest",1);
-      obj->set("long", HIC"ÕâÊÇ¶«ººÓñÊ¯ÊÎÆ·ÖĞµÄÒ»¸ö£¬³ö×ÔÉÂÎ÷£¬É½¶«£¬ºÓÄÏÒ»´ø¡£\n"
-                      +"ÏÂÃæ¿Ì×ÅÒ»¸ö¡°Ãç¡±×Ö¡£\n"NOR);
+      obj->set("long", HIC"é€™æ˜¯æ±æ¼¢ç‰çŸ³é£¾å“ä¸­çš„ä¸€å€‹ï¼Œå‡ºè‡ªé™è¥¿ï¼Œå±±æ±ï¼Œæ²³å—ä¸€å¸¶ã€‚\n"
+                      +"ä¸‹é¢åˆ»è‘—ä¸€å€‹â€œè‹—â€å­—ã€‚\n"NOR);
       obj->move(me);
-      message_vision(WHT"$N°´ÕÕÖ½ÍÅÌáÊ¾µÄ·½Î»£¬²¢Ã»ÓĞ·¢ÏÖÃØ¼®£¬µ«È´·¢ÏÖÒ»¿é"+obj->name()+WHT"¡£\n"NOR, me);
-      log_file("quest/FEIHU", sprintf("%s(%s)ÕÒµ½Ãç¼ÒÓñÅå£¬½â¿ªÀäÈªÉñ¹¦¡£¾­Ñé%d¡£\n", me->name(1),me->query("id"),me->query("combat_exp")) );
+      message_vision(WHT"$NæŒ‰ç…§ç´™åœ˜æç¤ºçš„æ–¹ä½ï¼Œä¸¦æ²’æœ‰ç™¼ç¾ç§˜ç±ï¼Œä½†å»ç™¼ç¾ä¸€å¡Š"+obj->name()+WHT"ã€‚\n"NOR, me);
+      log_file("quest/FEIHU", sprintf("%s(%s)æ‰¾åˆ°è‹—å®¶ç‰ä½©ï¼Œè§£é–‹å†·æ³‰ç¥åŠŸã€‚ç¶“é©—%dã€‚\n", me->name(1),me->query("id"),me->query("combat_exp")) );
       me->set(QUESTDIR5+"yupei",1);
       me->start_busy(2);
       return 1;
@@ -66,42 +66,42 @@ int do_push(string arg)
   int i;
   me = this_player();
 	if (me->is_busy() || me->is_fighting())
-		      return notify_fail("ÄãÕıÃ¦×ÅÄÄ£¡\n");
+		      return notify_fail("ä½ æ­£å¿™è‘—å“ªï¼\n");
 	if ( !arg || (arg != "zhuo zi" &&arg != "zhuozi" &&arg != "anmen" && arg != "wall"))
-       		return notify_fail("ÄãÒªÍÆ¶¯Ê²Ã´£¿\n");
+       		return notify_fail("ä½ è¦æ¨å‹•ä»€éº¼ï¼Ÿ\n");
   ob = deep_inventory(me);
   i = sizeof(ob);
   while (i--)
   if (ob[i]->is_character())
-       		return notify_fail("Äã±³¸ºÒ»ÈË£¬ÎŞ·¨ÍÆ¶¯¡£\n");
+       		return notify_fail("ä½ èƒŒè² ä¸€äººï¼Œç„¡æ³•æ¨å‹•ã€‚\n");
   if(arg=="zhuo zi"||arg=="zhuozi")
   {
     if(!me->query_temp(QUESTDIR5+"bang_zhuozi"))
-       		return notify_fail("×À×ÓÌ«ÁãÉ¢£¬ÎŞ·¨ÍÆ¿ª¡£\n");
+       		return notify_fail("æ¡Œå­å¤ªé›¶æ•£ï¼Œç„¡æ³•æ¨é–‹ã€‚\n");
     if(me->query_temp(QUESTDIR5+"move_zhuozi"))
     {
-    		message_vision(HIY"$N°Ñ×À×ÓÓÖÍÆ»ØÔ­À´µÄÎ»ÖÃ¡£\n"NOR, me);
+    		message_vision(HIY"$NæŠŠæ¡Œå­åˆæ¨å›åŸä¾†çš„ä½ç½®ã€‚\n"NOR, me);
 	      me->delete_temp(QUESTDIR5+"move_zhuozi");
         me->start_busy(1);
   	    return 1;
     }
-	  message_vision(HIG"$NÓÃÁ¦½«°óºÃµÄ×À×ÓÈ«²¿ÍÆµ½½ÇÂäµÄÒ»±ß¡£\n"NOR, me);
+	  message_vision(HIG"$Nç”¨åŠ›å°‡ç¶å¥½çš„æ¡Œå­å…¨éƒ¨æ¨åˆ°è§’è½çš„ä¸€é‚Šã€‚\n"NOR, me);
 	  me->set_temp(QUESTDIR5+"move_zhuozi",1);
     me->start_busy(1);
   	return 1;
   }
   if(!me->query_temp(QUESTDIR5+"move_huapen"))
-       		return notify_fail("°µÃÅµÄ»ú¹ØÃ»ÓĞ´ò¿ª£¬ÎŞ·¨ÍÆ¿ª¡£\n");
+       		return notify_fail("æš—é–€çš„æ©Ÿé—œæ²’æœ‰æ‰“é–‹ï¼Œç„¡æ³•æ¨é–‹ã€‚\n");
   if(!me->query_temp(QUESTDIR5+"move_zhuozi"))
-       		return notify_fail("ÓĞ×À×Ó×èµ²£¬ÎŞ·¨ÍÆ¿ª¡£\n");
+       		return notify_fail("æœ‰æ¡Œå­é˜»æ“‹ï¼Œç„¡æ³•æ¨é–‹ã€‚\n");
 
-	message_vision(HIG"$NÓÃÁ¦ÍÆ¿ª»î¶¯µÄ°µÃÅ£¬·ÜÁ¦´ÓÃÅ·ì¼·ÁË½øÈ¥¡£\n"NOR, me);
+	message_vision(HIG"$Nç”¨åŠ›æ¨é–‹æ´»å‹•çš„æš—é–€ï¼Œå¥®åŠ›å¾é–€ç¸«æ“ äº†é€²å»ã€‚\n"NOR, me);
 	me->move(__DIR__"mishi");
 	me->delete_temp(QUESTDIR5+"move_zhuozi");
 	me->delete_temp(QUESTDIR5+"move_huapen");
 	me->delete_temp(QUESTDIR5+"bang_zhuozi");
   me->start_busy(1);
-	tell_room(environment(me), me->name() + "´ÓÍâÃæ¼·ÁË½øÀ´¡£\n", ({ me }));
+	tell_room(environment(me), me->name() + "å¾å¤–é¢æ“ äº†é€²ä¾†ã€‚\n", ({ me }));
 	return 1;
 }
 int do_move(string arg)
@@ -109,20 +109,20 @@ int do_move(string arg)
 	object me;
   me = this_player();
 	if (me->is_busy() || me->is_fighting())
-		return notify_fail("ÄãÕıÃ¦×ÅÄÄ£¡\n");
+		return notify_fail("ä½ æ­£å¿™è‘—å“ªï¼\n");
 	if ( !arg || (arg != "huapen" && arg != "hua pen"))
-       		return notify_fail("ÄãÒª×ª¶¯Ê²Ã´£¿\n");
+       		return notify_fail("ä½ è¦è½‰å‹•ä»€éº¼ï¼Ÿ\n");
   if(me->query_temp(QUESTDIR5+"move_huapen"))
   {
-  	message_vision(HIG"$N°ÑµØÉÏµÄ»¨Åè×ª»ØÔ­Î»¡£\n"NOR, me);
+  	message_vision(HIG"$NæŠŠåœ°ä¸Šçš„èŠ±ç›†è½‰å›åŸä½ã€‚\n"NOR, me);
 	  me->delete_temp(QUESTDIR5+"move_huapen");
     me->start_busy(1);
     return 1;
   }
-	message_vision(HIG"$N×ªÁË×ªµØÉÏµÄ»¨Åè¡£\n"NOR, me);
+	message_vision(HIG"$Nè½‰äº†è½‰åœ°ä¸Šçš„èŠ±ç›†ã€‚\n"NOR, me);
 	me->set_temp(QUESTDIR5+"move_huapen",1);
   me->start_busy(1);
-	tell_room(me,"ÄãÍ»È»·¢ÏÖ×À×Óºó±ßËÆºõÓĞµÀ°µÃÅ¡£\n");
+	tell_room(me,"ä½ çªç„¶ç™¼ç¾æ¡Œå­å¾Œé‚Šä¼¼ä¹æœ‰é“æš—é–€ã€‚\n");
 	return 1;
 }
 int do_bang(string arg)
@@ -130,15 +130,15 @@ int do_bang(string arg)
 	object me,ob;
   me = this_player();
 	if (me->is_busy() || me->is_fighting())
-		return notify_fail("ÄãÕıÃ¦×ÅÄÄ£¡\n");
+		return notify_fail("ä½ æ­£å¿™è‘—å“ªï¼\n");
 	if ( !arg || (arg != "zhuo zi" && arg != "zhuozi"))
-       		return notify_fail("ÄãÒª°óÊ²Ã´£¿\n");
+       		return notify_fail("ä½ è¦ç¶ä»€éº¼ï¼Ÿ\n");
   if(me->query_temp(QUESTDIR5+"bang_zhuozi"))
-       		return notify_fail("ÄãÒÑ¾­°óºÃÁË¡£\n");
+       		return notify_fail("ä½ å·²ç¶“ç¶å¥½äº†ã€‚\n");
   if(!(ob=present("sheng zi",me))) 
-       		return notify_fail("ÄãÃ»ÓĞÉş×Ó£¬ÄÃÊ²Ã´°ó£¿\n");
+       		return notify_fail("ä½ æ²’æœ‰ç¹©å­ï¼Œæ‹¿ä»€éº¼ç¶ï¼Ÿ\n");
        		
-	message_vision(HIG"$N½«¿ìÒªÁãÉ¢µÄ×À×Ó£¬ÓÃÉş×Ó°óÔÚÒ»Æğ¡£\n"NOR, me);
+	message_vision(HIG"$Nå°‡å¿«è¦é›¶æ•£çš„æ¡Œå­ï¼Œç”¨ç¹©å­ç¶åœ¨ä¸€èµ·ã€‚\n"NOR, me);
 	me->set_temp(QUESTDIR5+"bang_zhuozi",1);
   me->start_busy(1);
 	return 1;

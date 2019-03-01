@@ -4,10 +4,10 @@ inherit NPC;
 #include <ansi.h>
 void create()
 {
-        set_name("Áõºççø", ({ "liu hongying", "liu" }));
-        set("title","½ğÅ£Îä¹İ½ÌÏ°");
-        set("long", "Áõ½ÌÍ·ÊÇÎä¹İµÄĞÂÀ´½ÌÏ°£¬Äã¿É±ğĞ¡¿´ËıÅ¶¡£\n");
-        set("gender", "Å®ĞÔ");
+        set_name("åŠ‰è™¹ç‘›", ({ "liu hongying", "liu" }));
+        set("title","é‡‘ç‰›æ­¦é¤¨æ•™ç¿’");
+        set("long", "åŠ‰æ•™é ­æ˜¯æ­¦é¤¨çš„æ–°ä¾†æ•™ç¿’ï¼Œä½ å¯åˆ¥å°çœ‹å¥¹å“¦ã€‚\n");
+        set("gender", "å¥³æ€§");
         set("age", 32);
 
         set_skill("dodge", 80);

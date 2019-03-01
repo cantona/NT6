@@ -5,18 +5,18 @@
 inherit FIGHTER;
 #include <ansi.h>
 
-#define QUESTDIR3 "quest/ÌìÁú°Ë²¿/Ïô·åÉíÊÀÆª/"
-#define QUESTDIR4 "quest/ÌìÁú°Ë²¿/´óÁÉ¾ÈÔ®Æª/"
-#define QUESTDIR5 "quest/ÌìÁú°Ë²¿/¸´ĞËÌìÏÂÆª/"
+#define QUESTDIR3 "quest/å¤©é¾å…«éƒ¨/è•­å³°èº«ä¸–ç¯‡/"
+#define QUESTDIR4 "quest/å¤©é¾å…«éƒ¨/å¤§é¼æ•‘æ´ç¯‡/"
+#define QUESTDIR5 "quest/å¤©é¾å…«éƒ¨/å¾©èˆˆå¤©ä¸‹ç¯‡/"
 
 //string *str_menpai = ({ "wd","hs","ss","gm","tz","dls","sld","xx","mj","thd","kl"});	
 //#include "/d/city/npc/skills_pfm.h";
 
 void create()
 {
-	set_name("µÜ×Ó", ({ "di zi", "dizi"}));
-	set("long", "Ò»Î»Ä³ÃÅÅÉµÜ×Ó¡£\n");
-	set("gender", "ÄĞĞÔ");
+	set_name("å¼Ÿå­", ({ "di zi", "dizi"}));
+	set("long", "ä¸€ä½æŸé–€æ´¾å¼Ÿå­ã€‚\n");
+	set("gender", "ç”·æ€§");
 	set("age", 33);
 	set("attitude", "peaceful");
 	set("shen", -100);
@@ -51,13 +51,13 @@ void init()
     ob = this_object();
     if(ob->query("setok")) return;
 	  if(!ob->query("party"))	ob->set("party",str_menpai[random(sizeof(str_menpai))]);  	 
-    ob->copy_menpai(({ob->query("party")}),1,random(2),100);  //¸´ÖÆnpcµÄÃÅÅÉÎä¹¦                                              
-	  ob->copy_state();				//¸ù¾İÃÅÅÉ¸üĞÂnpc µÄÒ»Ğ©×´Ì¬
+    ob->copy_menpai(({ob->query("party")}),1,random(2),100);  //å¾©åˆ¶npcçš„é–€æ´¾æ­¦åŠŸ                                              
+	  ob->copy_state();				//æ ¹æ“šé–€æ´¾æ›´æ–°npc çš„ä¸€äº›ç‹€æ…‹
 		if (ob->query("f_skill2")) 
-				good_skills=to_chinese(ob->query("f_skill"))+"ºÍ"+to_chinese(ob->query("f_skill2"));
+				good_skills=to_chinese(ob->query("f_skill"))+"å’Œ"+to_chinese(ob->query("f_skill2"));
 		else	
 				good_skills=to_chinese(ob->query("f_skill"));
-   	ob->set("long",HIW+ob->query("family/family_name")+"¸ßÊÖ£¬³ÉÃû¾ø¼¼£º"+good_skills+"¡£"NOR);
+   	ob->set("long",HIW+ob->query("family/family_name")+"é«˜æ‰‹ï¼Œæˆåçµ•æŠ€ï¼š"+good_skills+"ã€‚"NOR);
     if(!ob->query("fight_id"))
     {
 		  ob->set_skills_level(350+random(200));
@@ -74,16 +74,16 @@ void init()
 	  if(i<350) i=350;
 	  i=i-100;	
 	  
-    //ÎŞÃûÉ®
+    //ç„¡ååƒ§
 	  if(ob->query("party")=="sl")
 	  {
-	  	set_name("ÎŞÃûÀÏÉ®", ({"wuming laoseng","wuming","laoseng",}));
+	  	set_name("ç„¡åè€åƒ§", ({"wuming laoseng","wuming","laoseng",}));
       set("long",
-                "ËûÊÇÒ»Î»Éí´©ÇàÅÛµÄ¿İÊİÉ®ÈË£¬Éí²Ä²»¸ß¡£\n"
-                "Äê¼ÍÒÑÔÚÆßÑ®¿ªÍâ£¬Ï¡Ï¡ÊèÊèµÄ¼¸¸ù³¤ĞëÒÑÈ»È«°×¡£\n"
+                "ä»–æ˜¯ä¸€ä½èº«ç©¿é’è¢çš„æ¯ç˜¦åƒ§äººï¼Œèº«æä¸é«˜ã€‚\n"
+                "å¹´ç´€å·²åœ¨ä¸ƒæ—¬é–‹å¤–ï¼Œç¨€ç¨€ç–ç–çš„å¹¾æ ¹é•·é ˆå·²ç„¶å…¨ç™½ã€‚\n"
       );
-      set("nickname", "ÎŞÃûÉñÉ®");
-      set("gender", "ÄĞĞÔ");
+      set("nickname", "ç„¡åç¥åƒ§");
+      set("gender", "ç”·æ€§");
       set("attitude", "friendly");
       set("class", "bonze");
       set("no_bark",1);
@@ -96,15 +96,15 @@ void init()
     }
 	  else if(ob->query("party")=="gb")
 	  {
-	    set_name("Ïô·å", ({"xiao feng", "xiao", "feng"}));
-	    set("gender", "ÄĞĞÔ");
-	    set("nickname",HIB"ÆæÏÀ"NOR);
-	    set("title",HIY"Ç°Ø¤°ï°ïÖ÷"NOR);
+	    set_name("è•­å³°", ({"xiao feng", "xiao", "feng"}));
+	    set("gender", "ç”·æ€§");
+	    set("nickname",HIB"å¥‡ä¿ "NOR);
+	    set("title",HIY"å‰ä¸å¹«å¹«ä¸»"NOR);
 	    set("age", 58);
 	    set("long", 
-	    	"Ëû¾ÍÊÇØ¤°ïÇ°ÈÎ°ïÖ÷Ïô·å¡£\n"
-	    	"ËûÉí¸ßÁù³ßÓĞÓà£¬Ìå¸ñÊ®·Ö¿ıÎà£¬³¤ÓĞÒ»ÕÅÏßÌõ´Ö¿õ¡¢Ê®\n"
-		    "·ÖÄĞĞÔ»¯µÄÁ³ÅÓ£¬Ë«Ä¿Èçµç£¬¾¼¾¼ÓĞÉñ¡£\n");
+	    	"ä»–å°±æ˜¯ä¸å¹«å‰ä»»å¹«ä¸»è•­å³°ã€‚\n"
+	    	"ä»–èº«é«˜å…­å°ºæœ‰ä½™ï¼Œé«”æ ¼ååˆ†é­æ¢§ï¼Œé•·æœ‰ä¸€å¼µç·šæ¢ç²—æ› ã€å\n"
+		    "åˆ†ç”·æ€§åŒ–çš„è‡‰é¾ï¼Œé›™ç›®å¦‚é›»ï¼Œç‚¯ç‚¯æœ‰ç¥ã€‚\n");
     	set("attitude", "peaceful");
 	    set("str", 30);
     	set("int", 30);
@@ -127,10 +127,10 @@ void init()
     ob->set("combat_exp",me->query("combat_exp")*5/4);
  		ob->set_skill("literate",ob->query("int")*10); 	 											//full literate
 
-       set_temp("double_attack",1);//ºÙºÙ
-       set("double_attack",1);//ºÙºÙ
- 		if(ob->query("party")=="gb") message_vision(HIC"$N¶Ô$n¹ş¹şĞ¦µÀ£º¡°$nÉÏ´Î³ÃÎÒÉËÊÆÎ´ºÃÍµÏ®£¬Õâ´Î¾ÍÔÙ¾öÒ»Ê¤¸º¡£¡±\n" NOR, ob,me);
- 		if(ob->query("party")=="sl") message_vision(HIC"$N¶Ô$nºÏÊÖÊ©ÀñµÀ£º¡°$n·ÅÏÂÍÀµ¶£¬Á¢µØ³É·ğ¡£ÎÒÃÖÍÓ·ğ¡£¡±\n" NOR, ob,me);
+       set_temp("double_attack",1);//å˜¿å˜¿
+       set("double_attack",1);//å˜¿å˜¿
+ 		if(ob->query("party")=="gb") message_vision(HIC"$Nå°$nå“ˆå“ˆç¬‘é“ï¼šâ€œ$nä¸Šæ¬¡è¶æˆ‘å‚·å‹¢æœªå¥½å·è¥²ï¼Œé€™æ¬¡å°±å†æ±ºä¸€å‹è² ã€‚â€\n" NOR, ob,me);
+ 		if(ob->query("party")=="sl") message_vision(HIC"$Nå°$nåˆæ‰‹æ–½ç¦®é“ï¼šâ€œ$næ”¾ä¸‹å± åˆ€ï¼Œç«‹åœ°æˆä½›ã€‚æˆ‘å½Œé™€ä½›ã€‚â€\n" NOR, ob,me);
     ob->set_skill("wuxing-zhen",200);
     ob->remove_all_killer();
 }
@@ -140,8 +140,8 @@ void die()
 	object ob=this_object();
   if(random(2))command("why");
   else command("disapp "+ob->query("id"));
-  if(random(2)) message_vision(HIG"$NµãÁËµãÍ·£¬»º»ºÏûÊ§ÔÚ½ÇÂäÀï¡£\n\n" NOR, ob);
-  else message_vision(HIG"$NÂıÂıµØÍËÁË³öÈ¥¡£\n\n" NOR, ob);
+  if(random(2)) message_vision(HIG"$Né»äº†é»é ­ï¼Œç·©ç·©æ¶ˆå¤±åœ¨è§’è½è£¡ã€‚\n\n" NOR, ob);
+  else message_vision(HIG"$Næ…¢æ…¢åœ°é€€äº†å‡ºå»ã€‚\n\n" NOR, ob);
 	destruct(ob);
 }
 void unconcious()

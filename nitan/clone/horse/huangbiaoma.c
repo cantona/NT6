@@ -4,11 +4,11 @@ inherit NPC;
 
 void create()
 {
-        set_name(HIY "»ÆæôÂí" NOR, ({ "huangbiaoma"}));
-        set("race", "Ò°ÊŞ");
-        set("gender", "ĞÛĞÔ");
+        set_name(HIY "é»ƒé©ƒé¦¬" NOR, ({ "huangbiaoma"}));
+        set("race", "é‡ç¸");
+        set("gender", "é›„æ€§");
         set("age", random(3));
-        set("long", "ÕâÊÇÒ»Æ¥»Ææô¿¥Âí£¬È«Éí½ğ»Æ£¬Ã»ÓĞÒ»Ë¿ÔÓÃ«¡£\n");
+        set("long", "é€™æ˜¯ä¸€åŒ¹é»ƒé©ƒé§¿é¦¬ï¼Œå…¨èº«é‡‘é»ƒï¼Œæ²’æœ‰ä¸€çµ²é›œæ¯›ã€‚\n");
         set("ridable", 1);
         set("int", 30);
         set("qi", 300);
@@ -19,7 +19,7 @@ void create()
         set("combat_exp",50000);
         set("attitude", "peaceful");
 
-        set("limbs", ({ "Í·²¿", "¸¹²¿", "Î²°Í","ºóÍÈ","Ç°ÍÈ" }) );
+        set("limbs", ({ "é ­éƒ¨", "è…¹éƒ¨", "å°¾å·´","å¾Œè…¿","å‰è…¿" }) );
         set("verbs", ({ "bite", "hoof" }) );
         set_temp("apply/attack", 50);
         set_temp("apply/armor", 15);

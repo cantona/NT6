@@ -34,7 +34,7 @@ int wield()
         || (me->query_str() - 10 )/5 < query_amount()
         || query_amount() > 5
         || me->query_skill("longxiang", 1) < 101)
-                return notify_fail("ÄãÊ¹²»ÁËÄÇÃ´¶à·¨ÂÖ¡£\n");
+                return notify_fail("ä½ ä½¿ä¸äº†é‚£éº¼å¤šæ³•è¼ªã€‚\n");
         }
         
         return ::wield();
@@ -42,24 +42,24 @@ int wield()
 
 void create()
 {
-        set_name("·¨ÂÖ", ({ "fa lun", "fa", "lun" }) );
+        set_name("æ³•è¼ª", ({ "fa lun", "fa", "lun" }) );
 //      set_weight(5000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸±");
-                set("base_unit", "Ö»");
+                set("unit", "å‰¯");
+                set("base_unit", "åª");
                 set("base_weight", 6000);
                 set("base_speed", -2);
                 set("base_dodge", -2);
-                set("long", "ÕâÊÇÖ±¾¶³ß°ëµÄÒ»¸öÌú»·£¬ÉÏÃæ¿ÌÂúÁËÃÜ×Ú·üÄ§ÕæÑÔ£¬»·ÄÚÖÐ¿Õ¡£\n");
+                set("long", "é€™æ˜¯ç›´å¾‘å°ºåŠçš„ä¸€å€‹éµç’°ï¼Œä¸Šé¢åˆ»æ»¿äº†å¯†å®—ä¼é­”çœŸè¨€ï¼Œç’°å…§ä¸­ç©ºã€‚\n");
                 set("value", 1000);
                 set("material", "iron");
                 set("no_sell",1);
                 set("base_rigidity", 80);
                 set("base_weapon", 25);
-                set("wield_msg", "$NÄÃ³öÒ»¸±$n£¬ÊÔÁËÊÔÖØÁ¿£¬È»ááÎÕÔÚÊÖÖÐ¡£\n");
-                set("unwield_msg", "$N·ÅÏÂÊÖÖÐµÄ$n¡£\n");
+                set("wield_msg", "$Næ‹¿å‡ºä¸€å‰¯$nï¼Œè©¦äº†è©¦é‡é‡ï¼Œç„¶å¾Œæ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
         }
 
         init_hammer(25);

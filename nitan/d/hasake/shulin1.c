@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-       set("short","ɽ��");
+       set("short","山谷");
        set("long", @LONG
-���߽�ɽ�ȣ�������ľï�ܣ������ɾ���ֻ����ɽ֮������һ��СϪ����
-�峺��Ϫˮ����ű߾������ʹ����ڿʵ������ÿ�����(drink)������
+你走進山谷，這裡林木茂密，有如仙境。只見兩山之間流出一條小溪來，
+清澈的溪水從你腳邊靜靜地淌過。口渴的你正好可以飲(drink)個飽。
 LONG);
         set("resource/water", 1);
         set("exits", ([
@@ -31,10 +31,10 @@ int do_drink(string arg)
         max_water=query("str", me)*10+100;
         if (current_water<max_water) {
             set("water", current_water+30, me);
-            message("vision", me->name()+"����������ˮ���˼��ڡ�\n", environment(me), ({me}));
-            write("��ֻ��Ϫˮ΢����ζ�����������ɿڡ�\n");
+            message("vision", me->name()+"用手捧起清水喝了幾口。\n", environment(me), ({me}));
+            write("你只覺溪水微帶甜味，甚是清涼可口。\n");
             }
-        else write("��Ȳ����ˡ�\n");
+        else write("你喝不下了。\n");
         return 1;
 }
 void init()
@@ -44,8 +44,8 @@ void init()
              addn_temp("li_meet", 1, ob);
              new(__DIR__"obj/shoujuan2")->move(ob);
              write("
-�㷢����֦����һ�����������µİ��־ԭ�������ε������������������
-�����ҿ��˿�����������������뿪�ˣ��������������Ī�Ǿ��ǡ�������\n");
+你發現樹枝上有一方李文秀留下的白手絹，原來在你暈倒後是她救了你出來。
+你左右看了看，發現李文秀早就離開了，那這裡。。。這裡莫非就是。。。？\n");
         }        
 */        add_action("do_drink", "drink");
 }

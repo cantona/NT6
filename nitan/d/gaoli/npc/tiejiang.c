@@ -2,11 +2,11 @@ inherit NPC;
 void create()
 {  
 //   reload("gaoli_tiejiang");
-   set_name("Ìú½³",({ "tie jiang","tie","jiang","tiejiang" }) );
-   set("gender", "ÄĞĞÔ" );
+   set_name("éµåŒ ",({ "tie jiang","tie","jiang","tiejiang" }) );
+   set("gender", "ç”·æ€§" );
    set("shop_id",({ "tie jiang","tie","jiang","tiejiang" }) );
    set("age", 40);
-   set("long", "ÕâÊÇ¸ßÀöµÄÌú½³£¬Ëû´òÔìµÄ±øÆ÷¶¼ÊÇºÜºÃ¡£\n");
+   set("long", "é€™æ˜¯é«˜éº—çš„éµåŒ ï¼Œä»–æ‰“é€ çš„å…µå™¨éƒ½æ˜¯å¾ˆå¥½ã€‚\n");
    set("combat_exp",300000);
    set("str",26);
    set("neili",500);

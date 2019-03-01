@@ -5,10 +5,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("Á÷ÔÆÊ¹", ({ "liuyun shi", "liuyun", "shi" }));
-        set("long", "´ËÈËò°÷×±ÌÑÛ£¬Ò»¿´¾ÍÖªµÀÊÇ¸öºúÈË¡£\n");
-        set("title",HIG "Ã÷½Ì×Ü½Ì"HIM"Ê¹Õß"NOR);
-        set("gender", "ÄĞĞÔ");
+        set_name("æµé›²ä½¿", ({ "liuyun shi", "liuyun", "shi" }));
+        set("long", "æ­¤äººè™¯é«¯ç¢§çœ¼ï¼Œä¸€çœ‹å°±çŸ¥é“æ˜¯å€‹èƒ¡äººã€‚\n");
+        set("title",HIG "æ˜æ•™ç¸½æ•™"HIM"ä½¿è€…"NOR);
+        set("gender", "ç”·æ€§");
         set("age", 30);
         set("shen_type",1);
         set("attitude", "friendly");

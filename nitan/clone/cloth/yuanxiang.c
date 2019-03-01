@@ -1,4 +1,4 @@
-// yuanxiang.c ÈíÏãĞ¬
+// yuanxiang.c è»Ÿé¦™é‹
 // Last Modified by winder on May. 25 2001
 
 #include <armor.h>
@@ -7,14 +7,14 @@ inherit BOOTS;
 
 void create()
 {
-        set_name(RED"ÈíÏãĞ¬"NOR, ({"ruanxiang xie", "shoes", "xie"}) );
+        set_name(RED"è»Ÿé¦™é‹"NOR, ({"ruanxiang xie", "shoes", "xie"}) );
         set_weight(900);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»Ë«Ğ¡ÇÉÎÂÈíµÄĞå»¨Ğ¬¡£\n");
+                set("long", "ä¸€é›™å°å·§æº«è»Ÿçš„ç¹¡èŠ±é‹ã€‚\n");
                 set("material", "cloth");
-                set("unit", "Ë«");
+                set("unit", "é›™");
                 set("value", 2000);
                 set("armor_prop/armor", 1 );
                 set("armor_prop/per", 3);

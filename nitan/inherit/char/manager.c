@@ -1,12 +1,12 @@
 // /inherit/char/manager.c
 
 // last modified by sega 4/13/2000
-// ĞŞ¸ÄÅÑÍ½µÄÊôĞÔÎªÊ¦¸µµÄ¹¦·ò,quest µÄµÈ¼¶,ºÇºÇ
+// ä¿®æ”¹å›å¾’çš„å±¬æ€§ç‚ºå¸«å‚…çš„åŠŸå¤«,quest çš„ç­‰ç´š,å‘µå‘µ
 // Modified by Constant Jan 11 2001
 // Modified by sir 4/12/2001
-// ĞŞ¸Ä±ğÅÉ¼éÏ¸,13¸öÒ»ÂÖ,Íê³Éºó¸½¼Ópot,score½±Àø
+// ä¿®æ”¹åˆ¥æ´¾å§¦ç´°,13å€‹ä¸€è¼ª,å®Œæˆå¾Œé™„åŠ pot,scoreçå‹µ
 // Modified by Zeratul May 3 2001
-// ĞŞ¸ÄÅÑÍ½ÈÎÎñ£¬10¸öÒ»ÂÖ£¬Íê³Éºó¿ÉÒÔÏòÊ¦¸¸ÇĞ´èÉıÌØÊâskill 1¼¶,¸½¼Óscore½±Àø
+// ä¿®æ”¹å›å¾’ä»»å‹™ï¼Œ10å€‹ä¸€è¼ªï¼Œå®Œæˆå¾Œå¯ä»¥å‘å¸«çˆ¶åˆ‡ç£‹å‡ç‰¹æ®Šskill 1ç´š,é™„åŠ scoreçå‹µ
 // Modified by sir 5.1.2002
 
 #include <dbase.h>
@@ -15,7 +15,7 @@
 #include <quest1.h>
 #define ONE_DAY                 (86400 / 365)
 int is_manager() {return 1;}
-///////¿ªÊ¼ÃØ¼®ÈÎÎñ
+///////é–‹å§‹ç§˜ç±ä»»å‹™
 int party_quest_book(object me)
 {
         object book, room, master = this_object();
@@ -25,20 +25,20 @@ int party_quest_book(object me)
         me = this_player();
   if (!me->query("family/family_name"))
    {
-                message_vision("$N¶Ô×Å$nËµ£ºÕâÎ»"+RANK_D->query_respect(me)+"ºÎ²»¼ÓÈëÎÒ"+master->query("family/family_name")+"£¿\n", master, me);
+                message_vision("$Nå°è‘—$nèªªï¼šé€™ä½"+RANK_D->query_respect(me)+"ä½•ä¸åŠ å…¥æˆ‘"+master->query("family/family_name")+"ï¼Ÿ\n", master, me);
                 return 1;
            }
         if (me->query("family/family_name") !=
                 master->query("family/family_name"))
         {
-                message_vision("$N¶Ô×Å$nËµ£ºÎÒ²»ÊÇÄãµÄÕÆÃÅÈË£¬Äã»ØÄãÃÇ" + me->query("family/family_name") + "È¥°É¡£\n", master, me);
+                message_vision("$Nå°è‘—$nèªªï¼šæˆ‘ä¸æ˜¯ä½ çš„æŒé–€äººï¼Œä½ å›ä½ å€‘" + me->query("family/family_name") + "å»å§ã€‚\n", master, me);
                 return 1;
         }
 
         // Modified by zeratul 2000-12-24
         if (me->query("combat_exp") <= 1000)
         {
-                message_vision(WHT"$N¶Ô×Å$nËµ£ºÄãÑ§ÒÕÎ´¾«£¬²»ÒËÏÂÉ½¡£\n"NOR, master, me);
+                message_vision(WHT"$Nå°è‘—$nèªªï¼šä½ å­¸è—æœªç²¾ï¼Œä¸å®œä¸‹å±±ã€‚\n"NOR, master, me);
                 return 1;
         }
 
@@ -46,12 +46,12 @@ int party_quest_book(object me)
         {
                 if (time() < (int)me->query("quest/book/time") )
                 {
-                        message_vision("$N¶Ô×Å$nËµ£ºÎÒ²»ÊÇ½ĞÄãÈ¥È¡" + me->query("quest/book/book") + "£¬ÔõÃ´¿ÕÊÖ»ØÀ´ÁË£¡£¿\n", master, me);
+                        message_vision("$Nå°è‘—$nèªªï¼šæˆ‘ä¸æ˜¯å«ä½ å»å–" + me->query("quest/book/book") + "ï¼Œæ€éº¼ç©ºæ‰‹å›ä¾†äº†ï¼ï¼Ÿ\n", master, me);
                         return 1;
                 }
                 else
                 {
-                        message_vision( CYN"$N¶Ô×Å$nËµ£ºÄãÅÜµ½ÄÄÀïÏĞ¹äÈ¥ÁË£¿Õâ´Î¿ÉÒªĞ¡ĞÄÔÚÒâĞ©£¡\n"CYN, master, me );
+                        message_vision( CYN"$Nå°è‘—$nèªªï¼šä½ è·‘åˆ°å“ªè£¡é–’é€›å»äº†ï¼Ÿé€™æ¬¡å¯è¦å°å¿ƒåœ¨æ„äº›ï¼\n"CYN, master, me );
                         quest_failed( me, "book" );
                 }
         }
@@ -78,7 +78,7 @@ int party_quest_book(object me)
                 dir[i]=="xiakedao" ||
                 dir[i]=="npc")
         {
-                message_vision("$N¶Ô×Å$nËµ£º±¾ÃÅÃØ¼®£¿²»ÊÇºÃºÃµÄÃ´£¿\n", master, me);
+                message_vision("$Nå°è‘—$nèªªï¼šæœ¬é–€ç§˜ç±ï¼Ÿä¸æ˜¯å¥½å¥½çš„éº¼ï¼Ÿ\n", master, me);
                 return 1;
         }
         if(!( room = find_object("/d/"+dir[i]+"/"+file[j]) ))
@@ -88,16 +88,16 @@ int party_quest_book(object me)
         || room->query("no_quest")                //add by qingyun
 )
         {
-                message_vision("$N¶Ô×Å$nËµ£ºµÈµÈ°É£¬µÈÎÒ»ØÍ·ÇåµãÒ»ÏÂ¿´¿´¡£\n", master, me);
+                message_vision("$Nå°è‘—$nèªªï¼šç­‰ç­‰å§ï¼Œç­‰æˆ‘å›é ­æ¸…é»ä¸€ä¸‹çœ‹çœ‹ã€‚\n", master, me);
                 return 1;
         }
         book = new("/clone/quest/questbook");
-        book ->set("name", me->query("family/family_name")+"ÃØ¼®");
+        book ->set("name", me->query("family/family_name")+"ç§˜ç±");
         book ->set("owner", me->query("id"));
         book->move(room);
-        command("qst "+book->query("name")+"ÔÚ"+room->query("short")+"(/d/"+dir[i]+"/"+file[j]+")¡£\n");
+        command("qst "+book->query("name")+"åœ¨"+room->query("short")+"(/d/"+dir[i]+"/"+file[j]+")ã€‚\n");
 
-        message_vision("$N¶Ô×Å$nËµ£º±¾ÃÅÃØ¼®Á÷Âä½­ºş£¬ÌıËµ×î½üÔÚ" + to_chinese(dir[i]) + "Ò»´ø³öÏÖ¡£ÄãÈ¥°ÑËüÈ¡»ØÀ´°É£¿\n", master, me);
+        message_vision("$Nå°è‘—$nèªªï¼šæœ¬é–€ç§˜ç±æµè½æ±Ÿæ¹–ï¼Œè½èªªæœ€è¿‘åœ¨" + to_chinese(dir[i]) + "ä¸€å¸¶å‡ºç¾ã€‚ä½ å»æŠŠå®ƒå–å›ä¾†å§ï¼Ÿ\n", master, me);
         me->set("quest/book/book", book->query("name"));
         me->set("quest/book/family", me->query("family/family_name"));
         me->set("quest/book/time", time() + 500 );
@@ -115,23 +115,23 @@ int accept_quest_book(object me, object obj)
         if (me->query("family/family_name") !=
                 master->query("family/family_name"))
         {
-                message_vision("$N¶Ô×Å$nËµ£ºÎÒ²»ÊÇÄãµÄÕÆÃÅÈË£¬Äã»ØÄãÃÇ" + me->query("family/family_name") + "È¥°É¡£\n", master, me);
+                message_vision("$Nå°è‘—$nèªªï¼šæˆ‘ä¸æ˜¯ä½ çš„æŒé–€äººï¼Œä½ å›ä½ å€‘" + me->query("family/family_name") + "å»å§ã€‚\n", master, me);
                 return 1;
         }
         if (obj->query("owner") != me->query("id"))
         {
-                message_vision("$N¶Ô×Å$nËµ£ºÕâ²»ÊÇÎÒÒªÄãÕÒµÄÊé¡£\n",master,me);
+                message_vision("$Nå°è‘—$nèªªï¼šé€™ä¸æ˜¯æˆ‘è¦ä½ æ‰¾çš„æ›¸ã€‚\n",master,me);
                 return 1;
         }
         if ( !me->query("quest/book") || me->query( "quest/book/finished" ) )
         {
-                message_vision("$N¶Ô×Å$nËµ£ºÎÒÃ»ÒªÕâÊé£¬ÄãÈ¥ÄÄÀïÄÃÀ´µÄ£¡\n", master, me);
+                message_vision("$Nå°è‘—$nèªªï¼šæˆ‘æ²’è¦é€™æ›¸ï¼Œä½ å»å“ªè£¡æ‹¿ä¾†çš„ï¼\n", master, me);
                 destruct(obj);
                 return 1;
         }
         if (time() - (int)me->query("quest/book/time") > 1500 )
         {
-                message_vision("$N¶Ô×Å$nËµ£ºÄãÆ½Ê±Á·¹¦ÇÚ·Üµã£¬¾Í²»±ØÈ¥ÕâÃ´¾ÃÁË£¡ÏÂ´ÎÅ¬Á¦µã£¡\n", master, me);
+                message_vision("$Nå°è‘—$nèªªï¼šä½ å¹³æ™‚ç·´åŠŸå‹¤å¥®é»ï¼Œå°±ä¸å¿…å»é€™éº¼ä¹…äº†ï¼ä¸‹æ¬¡åŠªåŠ›é»ï¼\n", master, me);
                 destruct(obj);
                 quest_failed( me, "book" );
                 return 1;
@@ -143,30 +143,30 @@ int accept_quest_book(object me, object obj)
         else times=4;
 
         e_bonus = 100 + random( 50 );
-        cost = time() - ((int)me->query("quest/book/time")-500); //»¨ÁË¶àÉÙÊ±¼äÍê³É
+        cost = time() - ((int)me->query("quest/book/time")-500); //èŠ±äº†å¤šå°‘æ™‚é–“å®Œæˆ
 
-        e_bonus += e_bonus * cost /250; // cost ×î¸ß1500  Ò²¾ÍÊÇËÄ±¶
+        e_bonus += e_bonus * cost /250; // cost æœ€é«˜1500  ä¹Ÿå°±æ˜¯å››å€
         p_bonus = 12 + random( e_bonus / 8 );
         s_bonus = random(10)+ 10 * times;
 
         me->add("combat_exp",e_bonus);
         me->add("potential",p_bonus);
         me->add("family/fealty",s_bonus);
-        me->set_temp("prize_reason","ÃØ¼®");
+        me->set_temp("prize_reason","ç§˜ç±");
         me->set_temp("can_give_prize",1);
         me->set_temp("prize_exp",e_bonus);
         me->set_temp("prize_pot",p_bonus);
         me->add("family/gongxian",1);
 
 
-        message_vision("$N¶Ô×Å$nËµ£º±¾ÃÅÃØ¼®£¿²»´í£¬ÄãÎª±¾ÃÅÁ¢ÁËÒ»´ó¹¦£¡\n", master, me);
-        tell_object(me,HIW + "ÄãÕâ´ÎĞĞ×ß½­ºş£¬»ñµÃÁË" + chinese_number(e_bonus) + "µãÊµÕ½¾­Ñé£¬" + chinese_number(p_bonus) + "µãÇ±ÄÜ£¬Ôö³¤ÁË" + chinese_number(s_bonus) + "µãÊ¦ÃÅÖÒ³Ï¡£\n"NOR);
+        message_vision("$Nå°è‘—$nèªªï¼šæœ¬é–€ç§˜ç±ï¼Ÿä¸éŒ¯ï¼Œä½ ç‚ºæœ¬é–€ç«‹äº†ä¸€å¤§åŠŸï¼\n", master, me);
+        tell_object(me,HIW + "ä½ é€™æ¬¡è¡Œèµ°æ±Ÿæ¹–ï¼Œç²å¾—äº†" + chinese_number(e_bonus) + "é»å¯¦æˆ°ç¶“é©—ï¼Œ" + chinese_number(p_bonus) + "é»æ½›èƒ½ï¼Œå¢é•·äº†" + chinese_number(s_bonus) + "é»å¸«é–€å¿ èª ã€‚\n"NOR);
 
         quest_finished( me, "book" );
         return 1;
 }
-//////////ÃØ¼®½áÊø//////////
-//////////¿ªÊ¼ÅÑÍ½ÈÎÎñ ////////////
+//////////ç§˜ç±çµæŸ//////////
+//////////é–‹å§‹å›å¾’ä»»å‹™ ////////////
 object create_betrayer(object me)
 {
         mapping name, hp_status, skill_status, map_status, prepare_status;
@@ -186,12 +186,12 @@ object create_betrayer(object me)
         if (random(2) == 0)
         {
                 name = NAME_D->woman_name();
-                obj->set("gender", "Å®ĞÔ");
+                obj->set("gender", "å¥³æ€§");
         }
         else
         {
                 name = NAME_D->man_name();
-                obj->set("gender", "ÄĞĞÔ");
+                obj->set("gender", "ç”·æ€§");
         }
 
 //        obj->set("name", name["name"],({name["id"]}));
@@ -213,7 +213,7 @@ object create_betrayer(object me)
         obj->set("neili",     hp_status["max_neili"]);
         obj->set("jiali",     hp_status["max_neili"]/20);
         obj->set("combat_exp",hp_status["combat_exp"]*5/4+100);
-/* 1000ÍòÒÔÉÏÍæ¼Ò£¬ÔÚ´Ë³¤ÕıÆø»òìåÆø */
+/* 1000è¬ä»¥ä¸Šç©å®¶ï¼Œåœ¨æ­¤é•·æ­£æ°£æˆ–æˆ¾æ°£ */
         if(me->query("combat_exp") > 100000000)
                         obj->set("shen", -1 * master->query("shen_type") * obj->query("combat_exp") / 2000);
 /* skill */
@@ -276,10 +276,10 @@ object create_betrayer(object me)
         obj->set("family/title",master->query("family/title"));
         obj->set("family/master_id",master->query("id"));
         obj->set("family/enter_time",time());
-        obj->set("title",master->query("family/family_name") + "µÚ" + chinese_number((int)master->query("family/generation") + 1) + "´úÅÑÍ½");
+        obj->set("title",master->query("family/family_name") + "ç¬¬" + chinese_number((int)master->query("family/generation") + 1) + "ä»£å›å¾’");
   return obj;
 }
-////////Ñ¯ÎÊ»ñµÃÅÑÍ½ÈÎÎñ//////////
+////////è©¢å•ç²å¾—å›å¾’ä»»å‹™//////////
 int party_quest_betrayer(object me)
 {
         string *dir, *file, place;
@@ -291,18 +291,18 @@ int party_quest_betrayer(object me)
 
   if (!me->query("family/family_name"))
    {
-                message_vision("$N¶Ô×Å$nËµ£ºÕâÎ»"+RANK_D->query_respect(me)+"ºÎ²»¼ÓÈëÎÒ"+master->query("family/family_name")+"£¿\n", master, me);
+                message_vision("$Nå°è‘—$nèªªï¼šé€™ä½"+RANK_D->query_respect(me)+"ä½•ä¸åŠ å…¥æˆ‘"+master->query("family/family_name")+"ï¼Ÿ\n", master, me);
                 return 1;
            }
         if (me->query("family/family_name") !=
                 master->query("family/family_name"))
         {
-                message_vision("$N¶Ô×Å$nËµ£ºÎÒ²»ÊÇÄãµÄÕÆÃÅÈË£¬Äã»ØÄãÃÇ"+me->query("family/family_name")+"È¥°É¡£\n", master, me);
+                message_vision("$Nå°è‘—$nèªªï¼šæˆ‘ä¸æ˜¯ä½ çš„æŒé–€äººï¼Œä½ å›ä½ å€‘"+me->query("family/family_name")+"å»å§ã€‚\n", master, me);
                 return 1;
         }
         if (me->query("combat_exp") <= 10000)
         {
-                message_vision(WHT"$N¶Ô×Å$nËµ£ºÄãÑ§ÒÕÎ´¾«£¬²»ÒËÏÂÉ½¡£\n"NOR, master, me);
+                message_vision(WHT"$Nå°è‘—$nèªªï¼šä½ å­¸è—æœªç²¾ï¼Œä¸å®œä¸‹å±±ã€‚\n"NOR, master, me);
                 return 1;
         }
         if ( islocked( me, "betrayer" ) ) return 1;
@@ -311,12 +311,12 @@ int party_quest_betrayer(object me)
         {
                 if (time() < (int)me->query("quest/betrayer/time") )
                 {
-                        message_vision("$N¶Ô×Å$nËµ£ºÎÒ²»ÊÇ½ĞÄãÈ¥É±" + me->query("quest/betrayer/name") + "£¬ÔõÃ´¿ÕÊÖ»ØÀ´ÁË£¡£¿\n", master, me);
+                        message_vision("$Nå°è‘—$nèªªï¼šæˆ‘ä¸æ˜¯å«ä½ å»æ®º" + me->query("quest/betrayer/name") + "ï¼Œæ€éº¼ç©ºæ‰‹å›ä¾†äº†ï¼ï¼Ÿ\n", master, me);
                         return 1;
                 }
                 else
                 {
-                        message_vision( WHT"$N¶Ô×Å$nËµ£ºÄãÅÜµ½ÄÇÀïÏĞ¹äÈ¥ÁË£¿\n"NOR, master, me );
+                        message_vision( WHT"$Nå°è‘—$nèªªï¼šä½ è·‘åˆ°é‚£è£¡é–’é€›å»äº†ï¼Ÿ\n"NOR, master, me );
                         quest_failed( me, "betrayer" );
                         me->add("qi",-(int)(me->query("qi")/10));
                 }
@@ -324,7 +324,7 @@ int party_quest_betrayer(object me)
 
 
 /* Move to dest place */
-//ÏÈÑ¡µØ·½ ¼õÉÙÏµÍ³¿ªÖ§
+//å…ˆé¸åœ°æ–¹ æ¸›å°‘ç³»çµ±é–‹æ”¯
         dir = get_dir("/d/");
         i = random(sizeof(dir));
         file = get_dir("/d/"+dir[i]+"/");
@@ -349,7 +349,7 @@ int party_quest_betrayer(object me)
                 dir[i]=="gaibang"||
                 dir[i]=="npc")
         {
-                message_vision("$N¶Ô×Å$nËµ£ºµÈµÈ°É£¬µÈÏÂÉ½µÜ×Ó»ØÉ½ºóÄãÔÙÀ´¿´¿´¡£\n", master, me);
+                message_vision("$Nå°è‘—$nèªªï¼šç­‰ç­‰å§ï¼Œç­‰ä¸‹å±±å¼Ÿå­å›å±±å¾Œä½ å†ä¾†çœ‹çœ‹ã€‚\n", master, me);
                 return 1;
         }
         if(!( room = find_object("/d/"+dir[i]+"/"+file[j]) ))
@@ -359,7 +359,7 @@ int party_quest_betrayer(object me)
         || room->query("no_quest")                //add by qingyun
                 || room->query("no_fight"))
         {
-                message_vision("$N¶Ô×Å$nËµ£ºµÈµÈ°É£¬µÈÏÂÉ½µÜ×Ó»ØÉ½ÔÙ¿´¿´¡£\n", master, me);
+                message_vision("$Nå°è‘—$nèªªï¼šç­‰ç­‰å§ï¼Œç­‰ä¸‹å±±å¼Ÿå­å›å±±å†çœ‹çœ‹ã€‚\n", master, me);
                 return 1;
         }
 
@@ -371,11 +371,11 @@ int party_quest_betrayer(object me)
         if (!objectp(obj) || !obj->move(room))
         {
                 if (objectp(obj))        destruct(obj);
-                message_vision("$N¶Ô×Å$nËµ£ºµÈµÈ°É£¬µÈÏÂÉ½µÜ×Ó»ØÉ½ÔÙ¿´¿´¡£\n", master, me);
+                message_vision("$Nå°è‘—$nèªªï¼šç­‰ç­‰å§ï¼Œç­‰ä¸‹å±±å¼Ÿå­å›å±±å†çœ‹çœ‹ã€‚\n", master, me);
            return 1;
         }
-        command("qst "+obj->query("name")+"("+obj->query("id")+")"+"ÔÚ"+room->query("short")+"(/d/"+dir[i]+"/"+file[j]+")¡£\n");
-        message_vision("$N¶Ô×Å$nËµ£º±¾ÃÅ¹éÉ½µÜ×Ó»Ø±¨£¬±¾ÃÅÅÑÍ½" + obj->query("name") + "ÔÚ" + to_chinese(dir[i]) + "Ò»´ø³öÃ»¡£Äã¸ÒÈ¥°ÑÕâÅÑÍ½µÄÈËÍ·¸øÎÒÈ¡»ØÀ´Ã´£¿\n", master, me);
+        command("qst "+obj->query("name")+"("+obj->query("id")+")"+"åœ¨"+room->query("short")+"(/d/"+dir[i]+"/"+file[j]+")ã€‚\n");
+        message_vision("$Nå°è‘—$nèªªï¼šæœ¬é–€æ­¸å±±å¼Ÿå­å›å ±ï¼Œæœ¬é–€å›å¾’" + obj->query("name") + "åœ¨" + to_chinese(dir[i]) + "ä¸€å¸¶å‡ºæ²’ã€‚ä½ æ•¢å»æŠŠé€™å›å¾’çš„äººé ­çµ¦æˆ‘å–å›ä¾†éº¼ï¼Ÿ\n", master, me);
         me->set("quest/betrayer/name", obj->query("name"));
         me->set("quest/betrayer/family", obj->query("family/family_name"));
         me->set("quest/betrayer/time", time() + 500);
@@ -384,7 +384,7 @@ int party_quest_betrayer(object me)
         me->delete("quest/betrayer/finished");
         return 1;
 }
-///////Íê³ÉÅÑÍ½ÈÎÎñ¡¢½±Àø///////
+///////å®Œæˆå›å¾’ä»»å‹™ã€çå‹µ///////
 int accept_quest_betrayer(object me, object obj)
 {
         object master = this_object();
@@ -396,7 +396,7 @@ int accept_quest_betrayer(object me, object obj)
         if (me->query("family/family_name") !=
                 master->query("family/family_name"))
         {
-                message_vision("$N¶Ô×Å$nËµ£ºÎÒ²»ÊÇÄãµÄÕÆÃÅÈË£¬Äã»ØÄãÃÇ" + me->query("family/family_name") + "È¥°É¡£\n", master, me);
+                message_vision("$Nå°è‘—$nèªªï¼šæˆ‘ä¸æ˜¯ä½ çš„æŒé–€äººï¼Œä½ å›ä½ å€‘" + me->query("family/family_name") + "å»å§ã€‚\n", master, me);
                 return 1;
         }
         if ( islocked( me, "betrayer" ) ) return 1;
@@ -405,7 +405,7 @@ int accept_quest_betrayer(object me, object obj)
                 return 0;
         if (obj->query("userp") == 1)
         {
-                message_vision(HIR "$N¶Ô×Å$nËµ£ºÎÒ½ĞÄãÉ±ÅÑÍ½£¬ÄãÈ´È¥É±Íæ¼Ò£¡È¥ËÀ°ÉÄã£¡\n"NOR, master, me);
+                message_vision(HIR "$Nå°è‘—$nèªªï¼šæˆ‘å«ä½ æ®ºå›å¾’ï¼Œä½ å»å»æ®ºç©å®¶ï¼å»æ­»å§ä½ ï¼\n"NOR, master, me);
                 destruct(obj);
                 quest_failed( me, "betrayer" );
                 me->delete_temp("mebetrayernum");
@@ -414,7 +414,7 @@ int accept_quest_betrayer(object me, object obj)
         }
         if (obj->query("quest") != "betrayer" )
         {
-                message_vision( HIR"$N¶Ô×Å$nËµ£ºÎÒ½ĞÄãÉ±ÅÑÍ½£¬ÄãÈ´ÀÄÉ±ÎŞ¹¼£¬ÃÉ±ÎÊ¦³¤£¡È¥ËÀ°ÉÄã£¡\n"NOR, master, me);
+                message_vision( HIR"$Nå°è‘—$nèªªï¼šæˆ‘å«ä½ æ®ºå›å¾’ï¼Œä½ å»æ¿«æ®ºç„¡è¾œï¼Œè’™è”½å¸«é•·ï¼å»æ­»å§ä½ ï¼\n"NOR, master, me);
                 destruct(obj);
                 quest_failed( me, "thief" );
                 me->delete_temp("methiefnum");
@@ -429,12 +429,12 @@ int accept_quest_betrayer(object me, object obj)
         if (num<4) times=num;
         else times=4;
 
-        cost = time() - ((int)me->query("quest/betrayer/time")-500); //»¨ÁË¶àÉÙÊ±¼äÍê³É
+        cost = time() - ((int)me->query("quest/betrayer/time")-500); //èŠ±äº†å¤šå°‘æ™‚é–“å®Œæˆ
 
 //  e_bonus = 200 + random( 200 );
                 e_bonus = 200 + random( 100 );
     e_bonus += 50*me->query_temp("mebetrayernum");
-    e_bonus += e_bonus * cost / 1200; // ÅÑÍ½1200Ãë¾Í»á×Ô¶¯ÅÜ×ß
+    e_bonus += e_bonus * cost / 1200; // å›å¾’1200ç§’å°±æœƒè‡ªå‹•è·‘èµ°
 //        p_bonus = (int)random(e_bonus/4)+35;
     p_bonus = (int)random(e_bonus/2)+35;
           s_bonus = random(10)+ 15* times;
@@ -442,13 +442,13 @@ int accept_quest_betrayer(object me, object obj)
     me->add("potential",p_bonus);
     me->add("family/fealty",s_bonus);
     me->add("family/gongxian",1);
-        me->set_temp("prize_reason","ÅÑÍ½");
+        me->set_temp("prize_reason","å›å¾’");
         me->set_temp("can_give_prize",1);
         me->set_temp("prize_exp",e_bonus);
         me->set_temp("prize_pot",p_bonus);
 
-        message_vision("$N¶Ô×Å$nËµ£ºÅÑÍ½µÄÈËÍ·£¿²»´í£¬ÄãÎª±¾ÃÅÇåÀíÁËÃÅ»§£¡\n", master, me);
-        tell_object(me,HIW + "Äã¾­¹ıÕâ´ÎÆ´É±£¬»ñµÃÁË" + chinese_number(e_bonus) + "µãÊµÕ½¾­Ñé£¬" + chinese_number(p_bonus) + "µãÇ±ÄÜ£¬Ôö³¤ÁË" + chinese_number(s_bonus) + "µãÊ¦ÃÅÖÒ³Ï¡£\n"NOR);
+        message_vision("$Nå°è‘—$nèªªï¼šå›å¾’çš„äººé ­ï¼Ÿä¸éŒ¯ï¼Œä½ ç‚ºæœ¬é–€æ¸…ç†äº†é–€æˆ¶ï¼\n", master, me);
+        tell_object(me,HIW + "ä½ ç¶“éé€™æ¬¡æ‹¼æ®ºï¼Œç²å¾—äº†" + chinese_number(e_bonus) + "é»å¯¦æˆ°ç¶“é©—ï¼Œ" + chinese_number(p_bonus) + "é»æ½›èƒ½ï¼Œå¢é•·äº†" + chinese_number(s_bonus) + "é»å¸«é–€å¿ èª ã€‚\n"NOR);
 
         me->add_temp("mebetrayernum",1);
 
@@ -458,8 +458,8 @@ int accept_quest_betrayer(object me, object obj)
                 me->delete_temp("mebetrayernum");
                 me->set_temp("family_can_qiecuo",1);
 
-                message_vision(HIW "$N¶Ô×Å$nĞ¦µÀ£ºÄãÔÚÍâÓÎÀúÆÚ¼ä£¬ÎªÊ¦±Õ¹Ø²ÎÎò£¬½üÈÕ³ö¹Ø£¬ÎäÑ§ĞŞÎªÓÖÓĞËùÍ»ÆÆ£¡\n", master, me);
-                tell_object(me,HIM +"ÄãÏÖÔÚÓĞ»ú»áÓë"+ master->query("name")+"ÇĞ´è ( qiecuo )ÎäÑ§¡£\n"NOR);
+                message_vision(HIW "$Nå°è‘—$nç¬‘é“ï¼šä½ åœ¨å¤–éŠæ­·æœŸé–“ï¼Œç‚ºå¸«é–‰é—œåƒæ‚Ÿï¼Œè¿‘æ—¥å‡ºé—œï¼Œæ­¦å­¸ä¿®ç‚ºåˆæœ‰æ‰€çªç ´ï¼\n", master, me);
+                tell_object(me,HIM +"ä½ ç¾åœ¨æœ‰æ©Ÿæœƒèˆ‡"+ master->query("name")+"åˆ‡ç£‹ ( qiecuo )æ­¦å­¸ã€‚\n"NOR);
         }
 
         quest_finished( me, "betrayer" );
@@ -468,7 +468,7 @@ int accept_quest_betrayer(object me, object obj)
 }
 
 
-//È¡ÏûÈÎÎñ
+//å–æ¶ˆä»»å‹™
 int cancle_quest_betrayer( object me )
 {
         object master = this_object();
@@ -477,16 +477,16 @@ int cancle_quest_betrayer( object me )
                 return 0;
         if ( me->query( "quest/betrayer/lock" ) )
         {
-                tell_object( me, "ÄãÒÑ¾­È¡ÏûÈÎÎñÁË£¡\n" );
+                tell_object( me, "ä½ å·²ç¶“å–æ¶ˆä»»å‹™äº†ï¼\n" );
                 return 1;
         }
         lock_quest( me, "betrayer", "book" );
-        message_vision( "$N¶Ô$nËµµÀ£ºÄÇÄã¾Í°ïÎÒÕÒÕÒÃØ¼®°É¡£\n", master, me );
+        message_vision( "$Nå°$nèªªé“ï¼šé‚£ä½ å°±å¹«æˆ‘æ‰¾æ‰¾ç§˜ç±å§ã€‚\n", master, me );
         return 1;
 }
-/////ÅÑÍ½½áÊø//////////////
+/////å›å¾’çµæŸ//////////////
 
-/////////¿ªÊ¼¼éÏ¸ÈÎÎñ////////
+/////////é–‹å§‹å§¦ç´°ä»»å‹™////////
 object create_thief( object me )
 {
         mapping name, hp_status, skill_status, map_status, prepare_status;
@@ -565,12 +565,12 @@ object create_thief( object me )
         if (random(2) == 0)
         {
                 name = NAME_D->woman_name();
-                obj->set("gender", "Å®ĞÔ");
+                obj->set("gender", "å¥³æ€§");
         }
         else
         {
                 name = NAME_D->man_name();
-                obj->set("gender", "ÄĞĞÔ");
+                obj->set("gender", "ç”·æ€§");
         }
 
         hp_status = me->query_entire_dbase();
@@ -686,7 +686,7 @@ object create_thief( object me )
                         weapon->wield();
                 }
         obj->set( "family_name", thief_master->query("family/family_name") );
-/* 1000ÍòÒÔÉÏÍæ¼Ò£¬ÔÚ´Ë³¤ÕıÆø»òìåÆø */
+/* 1000è¬ä»¥ä¸Šç©å®¶ï¼Œåœ¨æ­¤é•·æ­£æ°£æˆ–æˆ¾æ°£ */
         if(me->query("combat_exp") > 100000000)
                         obj->set("shen", -1 * thief_master->query("shen_type") * obj->query("combat_exp") / 2000);
          destruct( thief_master );
@@ -703,19 +703,19 @@ int party_quest_thief(object me)
         me = this_player();
   if (!me->query("family/family_name"))
    {
-                message_vision("$N¶Ô×Å$nËµ£ºÕâÎ»"+RANK_D->query_respect(me)+"ºÎ²»¼ÓÈëÎÒ"+master->query("family/family_name")+"£¿\n", master, me);
+                message_vision("$Nå°è‘—$nèªªï¼šé€™ä½"+RANK_D->query_respect(me)+"ä½•ä¸åŠ å…¥æˆ‘"+master->query("family/family_name")+"ï¼Ÿ\n", master, me);
                 return 1;
            }
         if (me->query("family/family_name") !=
                 master->query("family/family_name"))
         {
-                message_vision("$N¶Ô×Å$nËµ£ºÎÒ²»ÊÇÄãµÄÕÆÃÅÈË£¬Äã»ØÄãÃÇ"+me->query("family/family_name")+"È¥°É¡£\n", master, me);
+                message_vision("$Nå°è‘—$nèªªï¼šæˆ‘ä¸æ˜¯ä½ çš„æŒé–€äººï¼Œä½ å›ä½ å€‘"+me->query("family/family_name")+"å»å§ã€‚\n", master, me);
                 return 1;
         }
 
         if (me->query("combat_exp") <= 100000)
         {
-                message_vision(WHT"$N¶Ô×Å$nËµ£ºÄãÑ§ÒÕÎ´¾«£¬ÎŞÄÜ³ú¼é¡£\n"NOR, master, me);
+                message_vision(WHT"$Nå°è‘—$nèªªï¼šä½ å­¸è—æœªç²¾ï¼Œç„¡èƒ½é‹¤å§¦ã€‚\n"NOR, master, me);
                 return 1;
         }
 
@@ -728,12 +728,12 @@ int party_quest_thief(object me)
         {
                 if (time() < (int)me->query("quest/thief/time") )
                 {
-                        message_vision("$N¶Ô×Å$nËµ£ºÔõÃ´Ñù£¬¼éÏ¸"+ me->query("quest/thief/name")+"µÄÈËÍ·ÄØ£¡£¿\n", master, me);
+                        message_vision("$Nå°è‘—$nèªªï¼šæ€éº¼æ¨£ï¼Œå§¦ç´°"+ me->query("quest/thief/name")+"çš„äººé ­å‘¢ï¼ï¼Ÿ\n", master, me);
                         return 1;
                 }
                 else
                 {
-                        message_vision( CYN"$N¶Ô×Å$nËµ£ºÄãÅÜµ½ÄÄÀïÏĞ¹äÈ¥ÁË£¿Õâ´Î¿ÉÒªĞ¡ĞÄÔÚÒâĞ©£¡\n"NOR, master, me );
+                        message_vision( CYN"$Nå°è‘—$nèªªï¼šä½ è·‘åˆ°å“ªè£¡é–’é€›å»äº†ï¼Ÿé€™æ¬¡å¯è¦å°å¿ƒåœ¨æ„äº›ï¼\n"NOR, master, me );
                         quest_failed( me, "thief" );
                         if ((int)me->query_temp("methiefnum")>1)
                                 me->add_temp("methiefnum",-1);
@@ -746,7 +746,7 @@ int party_quest_thief(object me)
 /* Move to dest place */
         dir = get_dir("/d/");
 //        for (i = 0; i < sizeof(dir); i++)
-// ÎªÁËÕÕ¹ËÄÏÉÙÁÖ(shaolinÊÇnanshaolin×Ö·û´®µÄ×Ó¼¯)£¬ËùÒÔ´Óºó¶ÁÆğ
+// ç‚ºäº†ç…§é¡§å—å°‘æ—(shaolinæ˜¯nanshaolinå­—ç¬¦ä¸²çš„å­é›†)ï¼Œæ‰€ä»¥å¾å¾Œè®€èµ·
         for (i = sizeof(dir)-1; i >= 0; i--)
         {
                 if (strsrch(master->query("startroom"), dir[i]) >= 0)
@@ -758,7 +758,7 @@ int party_quest_thief(object me)
         if (sizeof(file[j]) < 2 ||
                 file[j][sizeof(file[j])-2..sizeof(file[j])-1] != ".c" )
         {
-                message_vision("$N¶Ô×Å$nËµ£ºµÈµÈ°É£¬µÈÏÂÉ½µÜ×Ó»ØÉ½ºóÄãÔÙÀ´¿´¿´¡£\n", master, me);
+                message_vision("$Nå°è‘—$nèªªï¼šç­‰ç­‰å§ï¼Œç­‰ä¸‹å±±å¼Ÿå­å›å±±å¾Œä½ å†ä¾†çœ‹çœ‹ã€‚\n", master, me);
                 return 1;
         }
         if(!( room = find_object("/d/"+dir[k]+"/"+file[j]) ))
@@ -769,13 +769,13 @@ int party_quest_thief(object me)
         || room->query("no_quest")                //add by qingyun
 )
         {
-                message_vision("$N¶Ô×Å$nËµ£ºµÈµÈ°É£¬µÈÏÂÉ½µÜ×Ó»ØÉ½ÔÙ¿´¿´¡£\n", master, me);
+                message_vision("$Nå°è‘—$nèªªï¼šç­‰ç­‰å§ï¼Œç­‰ä¸‹å±±å¼Ÿå­å›å±±å†çœ‹çœ‹ã€‚\n", master, me);
                 return 1;
         }
         err = catch(obj = create_thief( me ));
         if (stringp(err))
         {
-                tell_object(find_player("qingyun"),"³ö´í¡£\nerr="+err);
+                tell_object(find_player("qingyun"),"å‡ºéŒ¯ã€‚\nerr="+err);
                 return 1;
         }
   if (!obj ||
@@ -783,7 +783,7 @@ int party_quest_thief(object me)
   !obj->move(room))
    {
            if (objectp(obj)) destruct(obj);
-           message_vision("$N¶Ô×Å$nËµ£ºÎÒÕâÀïÓĞµãÊÂÒªÃ¦£¬µÈ»á¶ùÎÒÔÙ¿´¿´°É¡£\n", master, me);
+           message_vision("$Nå°è‘—$nèªªï¼šæˆ‘é€™è£¡æœ‰é»äº‹è¦å¿™ï¼Œç­‰æœƒå…’æˆ‘å†çœ‹çœ‹å§ã€‚\n", master, me);
     return 1;
    }
         if (!master->query_temp("thiefs")) master->set_temp("thiefs", 1);
@@ -795,10 +795,10 @@ int party_quest_thief(object me)
         me->set("quest/thief/name", obj->query("fname"));
         me->set("quest/thief/family", obj->query("family/family_name"));
         me->set("quest/thief/time", time() + 300 );
-        message_vision("$N¶Ô×Å$nËµ£º±¾ÃÅµÜ×Ó»Ø±¨£¬ÎÒÅÉÖÜÎ§ÓĞÄ°ÉúÈË³öÏÖ¡£ÄãÈ¥²é¿´Ò»ÏÂÊÇ²»ÊÇ±ğÅÉµÄ¼éÏ¸£¿\n", master, me);
+        message_vision("$Nå°è‘—$nèªªï¼šæœ¬é–€å¼Ÿå­å›å ±ï¼Œæˆ‘æ´¾å‘¨åœæœ‰é™Œç”Ÿäººå‡ºç¾ã€‚ä½ å»æŸ¥çœ‹ä¸€ä¸‹æ˜¯ä¸æ˜¯åˆ¥æ´¾çš„å§¦ç´°ï¼Ÿ\n", master, me);
         me->set( "quest/thief/obj", obj );
         me->delete( "quest/thief/finished" );
-        command("qst "+obj->query("name")+"ÔÚ"+room->query("short")+"(/d/"+dir[k]+"/"+file[j]+")¡£\n");
+        command("qst "+obj->query("name")+"åœ¨"+room->query("short")+"(/d/"+dir[k]+"/"+file[j]+")ã€‚\n");
 //        obj->move(room);
         return 1;
 }
@@ -813,7 +813,7 @@ int accept_quest_thief(object me, object obj)
         if (me->query("family/family_name") !=
                 master->query("family/family_name"))
         {
-                message_vision("$N¶Ô×Å$nËµ£ºÎÒ²»ÊÇÄãµÄÕÆÃÅÈË£¬Äã»ØÄãÃÇ"+me->query("family/family_name")+"È¥°É¡£\n", master, me);
+                message_vision("$Nå°è‘—$nèªªï¼šæˆ‘ä¸æ˜¯ä½ çš„æŒé–€äººï¼Œä½ å›ä½ å€‘"+me->query("family/family_name")+"å»å§ã€‚\n", master, me);
                 return 1;
         }
         if ( islocked( me, "thief" ) )
@@ -824,7 +824,7 @@ int accept_quest_thief(object me, object obj)
 
         if (obj->query("userp") == 1)
         {
-                message_vision( HIR"$N¶Ô×Å$nËµ£ºÎÒ½ĞÄãÉ±¼éÏ¸£¬ÄãÈ´È¥É±Íæ¼Ò£¡È¥ËÀ°ÉÄã£¡\n"NOR, master, me);
+                message_vision( HIR"$Nå°è‘—$nèªªï¼šæˆ‘å«ä½ æ®ºå§¦ç´°ï¼Œä½ å»å»æ®ºç©å®¶ï¼å»æ­»å§ä½ ï¼\n"NOR, master, me);
                 destruct(obj);
                 quest_failed( me, "thief" );
                 me->delete_temp("methiefnum");
@@ -834,7 +834,7 @@ int accept_quest_thief(object me, object obj)
 
         if (obj->query("quest") != "thief" )
         {
-                message_vision( HIR"$N¶Ô×Å$nËµ£ºÎÒ½ĞÄãÉ±¼éÏ¸£¬ÄãÈ´ÀÄÉ±ÎŞ¹¼£¬ÃÉ±ÎÊ¦³¤£¡È¥ËÀ°ÉÄã£¡\n"NOR, master, me);
+                message_vision( HIR"$Nå°è‘—$nèªªï¼šæˆ‘å«ä½ æ®ºå§¦ç´°ï¼Œä½ å»æ¿«æ®ºç„¡è¾œï¼Œè’™è”½å¸«é•·ï¼å»æ­»å§ä½ ï¼\n"NOR, master, me);
                 destruct(obj);
                 quest_failed( me, "thief" );
                 me->delete_temp("methiefnum");
@@ -849,7 +849,7 @@ int accept_quest_thief(object me, object obj)
         if (num<4) times = num;
         else times = 4;
 
-        cost = time() - ((int)me->query("quest/thief/time")-300); //»¨ÁË¶àÉÙÊ±¼äÍê³É
+        cost = time() - ((int)me->query("quest/thief/time")-300); //èŠ±äº†å¤šå°‘æ™‚é–“å®Œæˆ
 
         e_bonus = (int)me->query_temp("methiefnum");
         e_bonus = e_bonus*100 + 200 + random(50);
@@ -865,13 +865,13 @@ int accept_quest_thief(object me, object obj)
         me->add("potential", p_bonus);
         me->add("family/fealty", s_bonus);
         me->add("family/gongxian",1);
-        me->set_temp("prize_reason","¼éÏ¸");
+        me->set_temp("prize_reason","å§¦ç´°");
         me->set_temp("can_give_prize",1);
         me->set_temp("prize_exp",e_bonus);
         me->set_temp("prize_pot",p_bonus);
 
-        message_vision("$N¶Ô×Å$nËµ£º¼éÏ¸µÄÈËÍ·£¿²»´í£¬ÄãÎª±¾ÃÅÁ¢Ò»´ó¹¦£¡\n", master, me);
-        tell_object(me, HIW + "¾­¹ıÕâ·¬ÀúÁ·£¬Äã»ñµÃÁË" + chinese_number(e_bonus) + "µãÊµÕ½¾­Ñé£¬" + chinese_number(p_bonus) + "µãÇ±ÄÜ£¬Ôö³¤" + chinese_number(s_bonus) + "µãÊ¦ÃÅÖÒ³Ï¡£\n"NOR);
+        message_vision("$Nå°è‘—$nèªªï¼šå§¦ç´°çš„äººé ­ï¼Ÿä¸éŒ¯ï¼Œä½ ç‚ºæœ¬é–€ç«‹ä¸€å¤§åŠŸï¼\n", master, me);
+        tell_object(me, HIW + "ç¶“éé€™ç•ªæ­·ç·´ï¼Œä½ ç²å¾—äº†" + chinese_number(e_bonus) + "é»å¯¦æˆ°ç¶“é©—ï¼Œ" + chinese_number(p_bonus) + "é»æ½›èƒ½ï¼Œå¢é•·" + chinese_number(s_bonus) + "é»å¸«é–€å¿ èª ã€‚\n"NOR);
 
         me->add_temp("methiefnum",1);
 
@@ -882,8 +882,8 @@ int accept_quest_thief(object me, object obj)
 
                 me->add("potential",p_bonus);
                 me->add("score", 4000);
-                message_vision(HIW "$N¶Ô×Å$nĞ¦µÀ£º¹ş¹ş¹ş£¡ÕæÄË¿ÉËÜÖ®²ÅÒ²£¬Îª±¾ÃÅÂÅÁ¢Ææ¹¦Ñ½£¡\n"NOR, master, me);
-                tell_object(me,HIM + master->query("name")+"¼Î½±ÁËÄã£º"        + chinese_number(p_bonus) + "µãÇ±ÄÜ£¬\n"NOR);
+                message_vision(HIW "$Nå°è‘—$nç¬‘é“ï¼šå“ˆå“ˆå“ˆï¼çœŸä¹ƒå¯å¡‘ä¹‹æ‰ä¹Ÿï¼Œç‚ºæœ¬é–€å±¢ç«‹å¥‡åŠŸå‘€ï¼\n"NOR, master, me);
+                tell_object(me,HIM + master->query("name")+"å˜‰çäº†ä½ ï¼š"        + chinese_number(p_bonus) + "é»æ½›èƒ½ï¼Œ\n"NOR);
         }
 
         quest_finished( me, "thief" );
@@ -899,16 +899,16 @@ int cancle_quest_thief( object me )
                 return 0;
         if( me->query( "quest/thief/lock" ) )
         {
-                tell_object( me, "ÄãÒÑ¾­È¡ÏûÈÎÎñÁË£¡\n" );
+                tell_object( me, "ä½ å·²ç¶“å–æ¶ˆä»»å‹™äº†ï¼\n" );
                 return 1;
         }
         lock_quest( me, "thief", "betrayer" );
-        message_vision( "$N¶Ô×Å$nËµ£º»¹ÊÇÏÈ°Ñ±¾ÃÅÅÑÍ½²ù³ı¸É¾»ÔÙ¹Ü±ğµÄÊÂ°É¡£\n", master, me );
+        message_vision( "$Nå°è‘—$nèªªï¼šé‚„æ˜¯å…ˆæŠŠæœ¬é–€å›å¾’éŸé™¤å¹¹å‡ˆå†ç®¡åˆ¥çš„äº‹å§ã€‚\n", master, me );
         me->delete_temp("methiefnum");
 
         return 1;
 }
-/////////¼éÏ¸ÈÎÎñ½áÊø////////////
+/////////å§¦ç´°ä»»å‹™çµæŸ////////////
 int party_quest_kill(object me)
 {
         object killer, room, master = this_object();
@@ -922,48 +922,48 @@ int party_quest_kill(object me)
         if (master->query("eff_qi") * 2 < master->query("max_qi") ||
                 master->query("qi") * 2 < master->query("max_qi"))
         {
-                message_vision(HIC "$N" HIC "Îæ×ÅĞØ¿Ú£¬Ò»¸±·Ç³£Í´¿àµÄÑù×Ó£¬¶ÔÄãµÄ"
-                               "»°ÏÔÈ»Ã»ÓĞÌı½øÈ¥¡£\n" NOR, me);
+                message_vision(HIC "$N" HIC "æ‚è‘—èƒ¸å£ï¼Œä¸€å‰¯éå¸¸ç—›è‹¦çš„æ¨£å­ï¼Œå°ä½ çš„"
+                               "è©±é¡¯ç„¶æ²’æœ‰è½é€²å»ã€‚\n" NOR, me);
                 return 1;
         }
 
   if (!me->query("family/family_name"))
   {
-                message_vision("$N¶Ô×Å$nËµ£ºÕâÎ»"+RANK_D->query_respect(me)+"ºÎ²»¼ÓÈëÎÒ"+master->query("family/family_name")+"£¿\n", master, me);
+                message_vision("$Nå°è‘—$nèªªï¼šé€™ä½"+RANK_D->query_respect(me)+"ä½•ä¸åŠ å…¥æˆ‘"+master->query("family/family_name")+"ï¼Ÿ\n", master, me);
                 return 1;
          }
 
         if (me->query("family/family_name") !=
                 master->query("family/family_name"))
         {
-                message_vision("$N¶Ô×Å$nËµ£ºÎÒ²»ÊÇÄãµÄÕÆÃÅÈË£¬Äã»ØÄãÃÇ" + me->query("family/family_name") + "È¥°É¡£\n", master, me);
+                message_vision("$Nå°è‘—$nèªªï¼šæˆ‘ä¸æ˜¯ä½ çš„æŒé–€äººï¼Œä½ å›ä½ å€‘" + me->query("family/family_name") + "å»å§ã€‚\n", master, me);
                 return 1;
         }
 
         if (me->query("combat_exp") <= 1000)
         {
-                message_vision(WHT"$N¶Ô×Å$nËµ£ºÄãÑ§ÒÕÎ´¾«£¬²»ÒËÏÂÉ½¡£\n"NOR, master, me);
+                message_vision(WHT"$Nå°è‘—$nèªªï¼šä½ å­¸è—æœªç²¾ï¼Œä¸å®œä¸‹å±±ã€‚\n"NOR, master, me);
                 return 1;
         }
 
         if ( me->query("quest/kill") && !me->query( "quest/kill/finished" ) )
         {
-                        message_vision("$N¶Ô×Å$nËµ£ºÎÒ²»ÊÇ½ĞÄãÔÚ"HIY+CHINESE_D->chinese_monthday(((me->query("quest/kill/time")-1270000000)*365))+NOR"Ö®Ç°É±ÁË" + me->query("quest/kill/name") + "£¬ÏÖÔÚÊÇ"HIY+CHINESE_D->chinese_monthday(((time()-1270000000)*365))+NOR"£¬ÎÒÒªµÄÈËÍ·ÄØ£¡£¿\n", master, me);
+                        message_vision("$Nå°è‘—$nèªªï¼šæˆ‘ä¸æ˜¯å«ä½ åœ¨"HIY+CHINESE_D->chinese_monthday(((me->query("quest/kill/time")-1270000000)*365))+NOR"ä¹‹å‰æ®ºäº†" + me->query("quest/kill/name") + "ï¼Œç¾åœ¨æ˜¯"HIY+CHINESE_D->chinese_monthday(((time()-1270000000)*365))+NOR"ï¼Œæˆ‘è¦çš„äººé ­å‘¢ï¼ï¼Ÿ\n", master, me);
                         return 1;
         }
 
         if (me->query("shen")>0 && master->query("shen")<0)
         {
-                message_vision(CYN "$N" CYN "´óÅ­µÀ£ºÆñÓĞ´ËÀí£¡²Å¼¸Ìì²»¼û£¬"
-                  "Äã¾ÓÈ»Ò²Ñ§Æğ¼ÙÈÊ¼ÙÒåÀ´ÁË£¬¿ì¸øÎÒ¹ö£¡\n"
+                message_vision(CYN "$N" CYN "å¤§æ€’é“ï¼šè±ˆæœ‰æ­¤ç†ï¼æ‰å¹¾å¤©ä¸è¦‹ï¼Œ"
+                  "ä½ å±…ç„¶ä¹Ÿå­¸èµ·å‡ä»å‡ç¾©ä¾†äº†ï¼Œå¿«çµ¦æˆ‘æ»¾ï¼\n"
                    NOR, master, me);
     return 1;
         }
 
         if (me->query("shen")<0 && master->query("shen")>0)
         {
-                message_vision(CYN "$N" CYN "´óÅ­µÀ£ºÆñÓĞ´ËÀí£¡Äã¾ÓÈ»ÒÑ¾­Îó"
-                  "ÈëÆçÍ¾£¬»¹¸ÒÀ´¼ûÎÒ£¡\n" NOR, master, me);
+                message_vision(CYN "$N" CYN "å¤§æ€’é“ï¼šè±ˆæœ‰æ­¤ç†ï¼ä½ å±…ç„¶å·²ç¶“èª¤"
+                  "å…¥æ­§é€”ï¼Œé‚„æ•¢ä¾†è¦‹æˆ‘ï¼\n" NOR, master, me);
     return 1;
         }
 
@@ -973,9 +973,9 @@ int party_quest_kill(object me)
         killer = new("/clone/quest/killer");
         killer ->set("owner", me->query("id"));
         killer ->set("level", level);
-        NPC_D->copy_skill(killer); //ÎŞ²ÎÊıÔòËæ»úÈ¡ÃÅÅÉ
-        NPC_D->init_npc_skill(killer,NPC_D->check_level(me));//°´¾­Ñé¿½±´µÈ¼¶
-        NPC_D->copy_status(killer,me,100); //¿½±´×´Ì¬°Ù·ÖÂÊ
+        NPC_D->copy_skill(killer); //ç„¡åƒæ•¸å‰‡éš¨æ©Ÿå–é–€æ´¾
+        NPC_D->init_npc_skill(killer,NPC_D->check_level(me));//æŒ‰ç¶“é©—æ‹·è²ç­‰ç´š
+        NPC_D->copy_status(killer,me,100); //æ‹·è²ç‹€æ…‹ç™¾åˆ†ç‡
 
         if (killer->query("combat_exp")<1000000)
                 killer->set("neili",killer->query("max_neili"));
@@ -1000,60 +1000,60 @@ int party_quest_kill(object me)
 
         room = environment(killer);
         place = to_chinese(killer->query("place"));
-        command("qst "+killer->query("name")+"("+killer->query("id") +")"+"ÔÚ"+room->query("short")+"("+file_name(room)+")¡£\n");
+        command("qst "+killer->query("name")+"("+killer->query("id") +")"+"åœ¨"+room->query("short")+"("+file_name(room)+")ã€‚\n");
 
-                message("vision", WHT + master->name() + WHT "Ğ¡ÉùµÄ¶Ô" + me->name() +
-                                  WHT "·Ô¸À×ÅÊ²Ã´£¬" + me->name() +
-                                  WHT "Ò»±ßÌı£¬Ò»±ß²»×¡µÄµãÍ·¡£\n" NOR,
+                message("vision", WHT + master->name() + WHT "å°è²çš„å°" + me->name() +
+                                  WHT "å©å’è‘—ä»€éº¼ï¼Œ" + me->name() +
+                                  WHT "ä¸€é‚Šè½ï¼Œä¸€é‚Šä¸ä½çš„é»é ­ã€‚\n" NOR,
                                           environment(me), ({ me }));
                 if (master->query("shen")>0)
                 {
                         killer->set("shen", -killer->query("combat_exp") / 2000);
-                        if (master->query("family/family_name") == "ÉÙÁÖÅÉ")
-                                tell_object(me, CYN + master->name() + CYN "¶ÔÄãµÀ£ºËä"
-                                                 "È»ÎÒÃÇ³ö¼ÒÈËÒÔ´È±¯Îª»³£¬µ«ÊÇ¶ÔÓÚ´ó"
-                                                 "Ğ×´ó¶ñÖ®Í½Ò²²»ÄÜ·Å¹ı¡£\n×î½ü" NOR +
-                                                 HIR + killer->name() +"("+killer->query("id") +")"+NOR + CYN "ÔÚ" +
-                                                 place + "×÷¶ñ¶à¶Ë£¬ÄãÈ¥°ÑËû³ıÁË£¬ÌáÍ·À´¼û¡£\n" NOR);
+                        if (master->query("family/family_name") == "å°‘æ—æ´¾")
+                                tell_object(me, CYN + master->name() + CYN "å°ä½ é“ï¼šé›–"
+                                                 "ç„¶æˆ‘å€‘å‡ºå®¶äººä»¥æ…ˆæ‚²ç‚ºæ‡·ï¼Œä½†æ˜¯å°äºå¤§"
+                                                 "å…‡å¤§æƒ¡ä¹‹å¾’ä¹Ÿä¸èƒ½æ”¾éã€‚\næœ€è¿‘" NOR +
+                                                 HIR + killer->name() +"("+killer->query("id") +")"+NOR + CYN "åœ¨" +
+                                                 place + "ä½œæƒ¡å¤šç«¯ï¼Œä½ å»æŠŠä»–é™¤äº†ï¼Œæé ­ä¾†è¦‹ã€‚\n" NOR);
                         else
-                                tell_object(me, CYN + master->name() + CYN"¶ÔÄãµÀ£º" NOR
-                                                 + HIR + killer->name() +"("+killer->query("id") +")"+ NOR + CYN "Õâ¸ö"
-                                                 "°ÜÀà´ò¼Ò½ÙÉá£¬ÎŞ¶ñ²»×÷£¬\nÌıËµËû×î½ü"
-                                                 "ÔÚ" + place +        "£¬ÄãÈ¥³ıµôËû£¬ÌáÍ·À´¼ûÎÒ¡£\n" NOR);
+                                tell_object(me, CYN + master->name() + CYN"å°ä½ é“ï¼š" NOR
+                                                 + HIR + killer->name() +"("+killer->query("id") +")"+ NOR + CYN "é€™å€‹"
+                                                 "æ•—é¡æ‰“å®¶åŠ«èˆï¼Œç„¡æƒ¡ä¸ä½œï¼Œ\nè½èªªä»–æœ€è¿‘"
+                                                 "åœ¨" + place +        "ï¼Œä½ å»é™¤æ‰ä»–ï¼Œæé ­ä¾†è¦‹æˆ‘ã€‚\n" NOR);
                 } else
                 if (master->query("shen")<0)
                 {
                         killer->set("shen", killer->query("combat_exp") / 2000);
-                        tell_object(me, CYN + master->name() + CYN "¶ÔÄãµÀ£º" NOR + HIR
-                                         + killer->name() +"("+killer->query("id") +")"+ NOR + CYN "Õâ¸öËùÎ½´óÏÀÂÅ´Î"
-                                         "ºÍÎÒÅÉ×÷¶Ô£¬\nÌıËµËû×î½üÔÚ" + place + "£¬Äã"
-                                         "È¥Ô×ÁËËû£¬ÌáÍ·À´¼û£¡\n" NOR);
+                        tell_object(me, CYN + master->name() + CYN "å°ä½ é“ï¼š" NOR + HIR
+                                         + killer->name() +"("+killer->query("id") +")"+ NOR + CYN "é€™å€‹æ‰€è¬‚å¤§ä¿ å±¢æ¬¡"
+                                         "å’Œæˆ‘æ´¾ä½œå°ï¼Œ\nè½èªªä»–æœ€è¿‘åœ¨" + place + "ï¼Œä½ "
+                                         "å»å®°äº†ä»–ï¼Œæé ­ä¾†è¦‹ï¼\n" NOR);
                 } else
                 {
                         killer->set("shen_type", 0);
                         killer->set("shen", 0);
-                        tell_object(me, CYN + master->name() + CYN "¶ÔÄãËµµÀ£ºÎÒÔç¾Í¿´"
-                                         NOR + HIR + killer->name() +"("+killer->query("id") +")"+ NOR + CYN "²»Ë³ÑÛ"
-                                         "£¬\nÌıËµËû×î½üÔÚ" + place + "£¬ÄãÈ¥×öÁËËû£¬´øËûµÄÈËÍ·À´½»²î£¡\n" NOR);
+                        tell_object(me, CYN + master->name() + CYN "å°ä½ èªªé“ï¼šæˆ‘æ—©å°±çœ‹"
+                                         NOR + HIR + killer->name() +"("+killer->query("id") +")"+ NOR + CYN "ä¸é †çœ¼"
+                                         "ï¼Œ\nè½èªªä»–æœ€è¿‘åœ¨" + place + "ï¼Œä½ å»åšäº†ä»–ï¼Œå¸¶ä»–çš„äººé ­ä¾†äº¤å·®ï¼\n" NOR);
                 }
                 switch (level)
                 {
                 case 0:
-                        message_vision(CYN "$N" CYN "¶ÙÁË¶Ù£¬ÓÖ¶Ô$n" CYN "µÀ£ºÕâ¸ö"
-                                       "ÊÂÇéÈİÒ×°ìµÃºÜ£¬ÄãÒªÊÇ»¹°ì²»³ÉÄÇ¿É²»Ïó»°¡£"
+                        message_vision(CYN "$N" CYN "é “äº†é “ï¼Œåˆå°$n" CYN "é“ï¼šé€™å€‹"
+                                       "äº‹æƒ…å®¹æ˜“è¾¦å¾—å¾ˆï¼Œä½ è¦æ˜¯é‚„è¾¦ä¸æˆé‚£å¯ä¸è±¡è©±ã€‚"
                                        "\n" NOR, master, me);
                         break;
                 case 1:
                         break;
                 case 2:
-                        message_vision(CYN "$N" CYN "¿´ÁË¿´$n" CYN "ÓÖµÀ£ºÕâ¸öÊÂÇé"
-                                       "ºÜÊÇÓĞĞ©ÄÑ°ì£¬ÄãÒªÊÇ²»ĞĞÎÒ¾ÍÁíÕÒÈË°É¡£\n"
+                        message_vision(CYN "$N" CYN "çœ‹äº†çœ‹$n" CYN "åˆé“ï¼šé€™å€‹äº‹æƒ…"
+                                       "å¾ˆæ˜¯æœ‰äº›é›£è¾¦ï¼Œä½ è¦æ˜¯ä¸è¡Œæˆ‘å°±å¦æ‰¾äººå§ã€‚\n"
                                        NOR, master, me);
                         break;
                 case 3:
-                        message_vision(CYN "$N" CYN "Ì¾ÁË¿ÚÆø£¬Ö£ÖØµÄ¶Ô$n" CYN "µÀ"
-                                       "£ºÕâ´ÎÈÎÎñĞ×ÏÕµÃ½ô£¬Äã²»ÒªÃãÇ¿×Ô¼º£¬²»ĞĞ¾Í"
-                                       "ËãÁË¡£\n" NOR, master, me);
+                        message_vision(CYN "$N" CYN "å˜†äº†å£æ°£ï¼Œé„­é‡çš„å°$n" CYN "é“"
+                                       "ï¼šé€™æ¬¡ä»»å‹™å…‡éšªå¾—ç·Šï¼Œä½ ä¸è¦å‹‰å¼·è‡ªå·±ï¼Œä¸è¡Œå°±"
+                                       "ç®—äº†ã€‚\n" NOR, master, me);
                         break;
                 }
         me->set("quest/kill/level", level);
@@ -1062,11 +1062,11 @@ int party_quest_kill(object me)
         me->set("quest/kill/id", killer->query("id"));
         me->set("quest/kill/name", killer->name());
         me->set("quest/kill/place", place);
-        t = time() +4 * ONE_DAY - 1; // Èı·ÖÖÓÒ»¸ö one day
+        t = time() +4 * ONE_DAY - 1; // ä¸‰åˆ†é˜ä¸€å€‹ one day
         me->set("quest/kill/time", t );
-        message("vision", WHT + master->name() + WHT "ÔÚÄã¶ú±ßÇÄÉùËµµÀ£ºÄãÎñ±ØÒªÔÚ"
+        message("vision", WHT + master->name() + WHT "åœ¨ä½ è€³é‚Šæ‚„è²èªªé“ï¼šä½ å‹™å¿…è¦åœ¨"
                           NOR + HIY + CHINESE_D->chinese_monthday(((t-1270000000)*365)) + NOR + WHT
-                                  "Ö®Ç°Íê³É£¡\n" NOR, me);
+                                  "ä¹‹å‰å®Œæˆï¼\n" NOR, me);
         me->delete( "quest/kill/finished" );
         return 1;
 }
@@ -1085,18 +1085,18 @@ int cancle_quest_kill(object who)
         if (! mapp(q = dbase["quest"]["kill"]) ||
             q["master_name"] != me->name())
                 {
-                        message_vision("$NËµµÀ£ºÎÒÃ»¸øÄãÊ²Ã´ÈÎÎñ°¡£¿mapp(q)="+mapp(q)+"\n",me,who);
+                        message_vision("$Nèªªé“ï¼šæˆ‘æ²’çµ¦ä½ ä»€éº¼ä»»å‹™å•Šï¼Ÿmapp(q)="+mapp(q)+"\n",me,who);
                         return 1;
                 }
 
                 if (q["notice"] == "die")
                 {
-                        message_vision(CYN "$N" CYN "µãµãÍ·£¬¶Ô$n" CYN "µÀ£ºËãÁË£¬ÌıËµÕâÈË"
-                                       "ÒÑ¾­±»É±ÁË£¬Äã²»ÓÃÔÙĞÁ¿àÁË¡£\n" NOR, me, who);
+                        message_vision(CYN "$N" CYN "é»é»é ­ï¼Œå°$n" CYN "é“ï¼šç®—äº†ï¼Œè½èªªé€™äºº"
+                                       "å·²ç¶“è¢«æ®ºäº†ï¼Œä½ ä¸ç”¨å†è¾›è‹¦äº†ã€‚\n" NOR, me, who);
                 } else
                 {
-                        message_vision(CYN "$N" CYN "°Ú°ÚÊÖ£¬¶Ô$n" CYN "µÀ£ºÄã¸É²»ÁË¾ÍËãÁË"
-                                       "£¬ÈÃ±ğÈË×ö°É£¡\n" NOR, me, who);
+                        message_vision(CYN "$N" CYN "æ“ºæ“ºæ‰‹ï¼Œå°$n" CYN "é“ï¼šä½ å¹¹ä¸äº†å°±ç®—äº†"
+                                       "ï¼Œè®“åˆ¥äººåšå§ï¼\n" NOR, me, who);
                         who->delete("quest_num/kill");
                 }
 
@@ -1127,16 +1127,16 @@ int cancle_quest_kill(object who)
                 dbase["weiwang"] -= n;
                 if (dbase["weiwang"] < 0)
                         dbase["weiwang"] = 0;
-                msg = HIR "ÄãµÄ½­ºşÍşÍûÊÜµ½ÁËËğÊ§";
+                msg = HIR "ä½ çš„æ±Ÿæ¹–å¨æœ›å—åˆ°äº†æå¤±";
 
                 // adjust gongxian
                 dbase["family/gongxian"] -= g;
                 if (dbase["family/gongxian"] < 0)
                         dbase["family/gongxian"] = 0;
-                msg += HIR "£¬Ê¦ÃÅ¶ÔÄãµÄĞÅÈÎ½µµÍÁË";
+                msg += HIR "ï¼Œå¸«é–€å°ä½ çš„ä¿¡ä»»é™ä½äº†";
 
                 // notice place
-                message("vision", msg + "¡£\n" NOR, who);
+                message("vision", msg + "ã€‚\n" NOR, who);
 
         who->start_busy(2);
 
@@ -1146,7 +1146,7 @@ int cancle_quest_kill(object who)
                 return 1;
 
         if (environment(ob))
-                message_vision(HIC "$N" HIC "¿´ÁË¿´ËÄÖÜ£¬¼±¼±Ã¦Ã¦µÄ×ßµôÁË¡£\n" NOR, ob);
+                message_vision(HIC "$N" HIC "çœ‹äº†çœ‹å››å‘¨ï¼Œæ€¥æ€¥å¿™å¿™çš„èµ°æ‰äº†ã€‚\n" NOR, ob);
 
         destruct(ob);
         return 1;
@@ -1169,7 +1169,7 @@ int accept_quest_kill(object me, object obj)
         if (me->query("family/family_name") !=
                 master->query("family/family_name"))
         {
-                message_vision("$N¶Ô×Å$nËµ£ºÎÒ²»ÊÇÄãµÄÕÆÃÅÈË£¬Äã»ØÄãÃÇ"+me->query("family/family_name")+"È¥°É¡£\n", master, me);
+                message_vision("$Nå°è‘—$nèªªï¼šæˆ‘ä¸æ˜¯ä½ çš„æŒé–€äººï¼Œä½ å›ä½ å€‘"+me->query("family/family_name")+"å»å§ã€‚\n", master, me);
                 return 1;
         }
 
@@ -1178,7 +1178,7 @@ int accept_quest_kill(object me, object obj)
 
         if (obj->query("userp") == 1)
         {
-                message_vision( HIR"$N¶Ô×Å$nËµ£ºÎÒ½ĞÄãÉ±ÈË£¬ÄãÈ´È¥É±Íæ¼Ò£¡È¥ËÀ°ÉÄã£¡\n"NOR, master, me);
+                message_vision( HIR"$Nå°è‘—$nèªªï¼šæˆ‘å«ä½ æ®ºäººï¼Œä½ å»å»æ®ºç©å®¶ï¼å»æ­»å§ä½ ï¼\n"NOR, master, me);
                 destruct(obj);
 //                quest_failed( me, "thief" );
                 me->delete_temp("quest_num/kill");
@@ -1188,7 +1188,7 @@ int accept_quest_kill(object me, object obj)
 
         if (obj->query("quest") != "kill" )
         {
-                message_vision( HIR"$N¶Ô×Å$nËµ£ºÎÒ½ĞÄãÉ±ÈË£¬ÄãÈ´ÀÄÉ±ÎŞ¹¼£¬ÃÉ±ÎÊ¦³¤£¡È¥ËÀ°ÉÄã£¡\n"NOR, master, me);
+                message_vision( HIR"$Nå°è‘—$nèªªï¼šæˆ‘å«ä½ æ®ºäººï¼Œä½ å»æ¿«æ®ºç„¡è¾œï¼Œè’™è”½å¸«é•·ï¼å»æ­»å§ä½ ï¼\n"NOR, master, me);
                 destruct(obj);
                 quest_failed( me, "kill" );
 //                me->delete_temp("quest_num/kill");
@@ -1204,48 +1204,48 @@ int accept_quest_kill(object me, object obj)
 
                 if (! stringp(obj->query("owner")))
                 {
-                        message_vision(CYN "$N" CYN "Îæ×Å±Ç×Ó¿´ÁË¿´" + obj->name()
-                                       + NOR + CYN "£¬µÀ£ºÊ²Ã´³ôºæºæµÄ£¿¿ì¸øÎÒ"
-                                       "ÄÃ×ß¡£\n" NOR, master);
+                        message_vision(CYN "$N" CYN "æ‚è‘—é¼»å­çœ‹äº†çœ‹" + obj->name()
+                                       + NOR + CYN "ï¼Œé“ï¼šä»€éº¼è‡­çƒ˜çƒ˜çš„ï¼Ÿå¿«çµ¦æˆ‘"
+                                       "æ‹¿èµ°ã€‚\n" NOR, master);
                         return 0;
                 }
 
                 if (obj->query("owner") != me->query("id"))
                         return 0;
 
-                msg = CYN "$N" CYN "½Ó¹ı" + obj->name() + NOR + CYN "£¬ºÇºÇ´óĞ¦"
-                      "£¬¶Ô$n" CYN "µÀ£º";
+                msg = CYN "$N" CYN "æ¥é" + obj->name() + NOR + CYN "ï¼Œå‘µå‘µå¤§ç¬‘"
+                      "ï¼Œå°$n" CYN "é“ï¼š";
 
                 if (me->query("shen")>0)
-                        msg += CYN "ÓÖ³ıÁËÒ»º¦£¬ºÜºÃ£¡";
+                        msg += CYN "åˆé™¤äº†ä¸€å®³ï¼Œå¾ˆå¥½ï¼";
                 else
                 if (me->query("shen")<0)
-                        msg += CYN "ºÃ¼«ÁË£¡Ê²Ã´´óÏÀ£¬²»¿°Ò»»÷£¡";
+                        msg += CYN "å¥½æ¥µäº†ï¼ä»€éº¼å¤§ä¿ ï¼Œä¸å ªä¸€æ“Šï¼";
                 else
-                        msg += CYN "¸ÉµÃºÃ£¬Æ¯ÁÁ£¡";
+                        msg += CYN "å¹¹å¾—å¥½ï¼Œæ¼‚äº®ï¼";
                 msg += "\n" NOR;
                 t = time();
                 if (me->query_temp("quest/escape_times"))
                 {
-                        msg += CYN "$N" CYN "ÔŞĞíµÀ£ºÕâ´ÎÃ»Ïëµ½µĞÈËÕâÃ´Ç¿º·£¬Êµ"
-                               "ÔÚÎ´ÔøÁÏµ½£¬ĞÁ¿à£¬ĞÁ¿à£¡\n" NOR;
+                        msg += CYN "$N" CYN "è®šè¨±é“ï¼šé€™æ¬¡æ²’æƒ³åˆ°æ•µäººé€™éº¼å¼·æ‚ï¼Œå¯¦"
+                               "åœ¨æœªæ›¾æ–™åˆ°ï¼Œè¾›è‹¦ï¼Œè¾›è‹¦ï¼\n" NOR;
                         timeover = 0;
                 } else
                 if (t > q["time"])
                 {
-                        msg += CYN "$N" CYN "Ò¡Ò¡Í·£¬ÓÖµÀ£º¿ÉÏ§£¬²»ÊÇÈÃÄã" +
-                               CHINESE_D->chinese_monthday(t*60) + "Ç°×öÍêÂğ£¿Ëã"
-                               "ÁË£¬½«¹¦²¹¹ı£¬ÄãÏÈÍËÏÂ°É¡£\n" NOR;
+                        msg += CYN "$N" CYN "æ–æ–é ­ï¼Œåˆé“ï¼šå¯æƒœï¼Œä¸æ˜¯è®“ä½ " +
+                               CHINESE_D->chinese_monthday(t*60) + "å‰åšå®Œå—ï¼Ÿç®—"
+                               "äº†ï¼Œå°‡åŠŸè£œéï¼Œä½ å…ˆé€€ä¸‹å§ã€‚\n" NOR;
                         timeover = 1;
                 } else
                 {
                         if (t - q["time"] < ONE_DAY)
                         {
-                                msg += CYN "$N" CYN "µãµãÍ·µÀ£º¸ÉµÃ²»´í£¬ÕâÃ´"
-                                       "¿ì¾ÍÍê³ÉÁË£¬ºÃºÃ¸É£¡\n" NOR ;
+                                msg += CYN "$N" CYN "é»é»é ­é“ï¼šå¹¹å¾—ä¸éŒ¯ï¼Œé€™éº¼"
+                                       "å¿«å°±å®Œæˆäº†ï¼Œå¥½å¥½å¹¹ï¼\n" NOR ;
                         } else
-                                msg += CYN "$N" CYN "µãµãÍ·µÀ£ºÕâ´Î²»´í£¬ĞÁ¿à"
-                                       "ÁË¡£\n" NOR;
+                                msg += CYN "$N" CYN "é»é»é ­é“ï¼šé€™æ¬¡ä¸éŒ¯ï¼Œè¾›è‹¦"
+                                       "äº†ã€‚\n" NOR;
 
                         timeover = 0;
                 }
@@ -1254,8 +1254,8 @@ int accept_quest_kill(object me, object obj)
 
                       if (!arrayp(helper) || member_array(me,helper) < 0)
                        {
-                        msg += CYN "$N" CYN "ÓÖ¶Ô$n" CYN "µÀ£º¿ÉÏ§Õâ´Î"
-                                "¶Ô·½±»ÈËÏÈÏÂÊÖÉ±ËÀ£¬Å¬Á¦Ò»µã£¬¾ÍÄÜ×Ô¼ºÍê³ÉÁË£¡\n" NOR;
+                        msg += CYN "$N" CYN "åˆå°$n" CYN "é“ï¼šå¯æƒœé€™æ¬¡"
+                                "å°æ–¹è¢«äººå…ˆä¸‹æ‰‹æ®ºæ­»ï¼ŒåŠªåŠ›ä¸€é»ï¼Œå°±èƒ½è‡ªå·±å®Œæˆäº†ï¼\n" NOR;
                                                 type = 1;
                                                }
                                                else
@@ -1264,10 +1264,10 @@ int accept_quest_kill(object me, object obj)
                         helper -= ({ 0 });
                         if (sizeof(helper)>0)
                         {
-                        msg += CYN "$N" CYN "ĞÀÎ¿µÄ¶Ô$n" CYN "µÀ£ºÕâ´ÎÄãÄÜ¹»"
-                               "µÃµ½" + helper[0]->name() +
-                               NOR + CYN "µÄ°ïÃ¦£¬Ò²Êô²»Ò×£¡ÒÔºó±Ë´ËÒª¶à¼ÓÕÕ"
-                               "Ó¦£¡\n" NOR;
+                        msg += CYN "$N" CYN "æ¬£æ…°çš„å°$n" CYN "é“ï¼šé€™æ¬¡ä½ èƒ½å¤ "
+                               "å¾—åˆ°" + helper[0]->name() +
+                               NOR + CYN "çš„å¹«å¿™ï¼Œä¹Ÿå±¬ä¸æ˜“ï¼ä»¥å¾Œå½¼æ­¤è¦å¤šåŠ ç…§"
+                               "æ‡‰ï¼\n" NOR;
                                 bonus = 2;
                         }
                 }
@@ -1285,70 +1285,70 @@ int accept_quest_kill(object me, object obj)
                                                quest_count = me->query("quest_num/kill");
                                                if (type!=1 && (!exp || !pot || !score))
                                                {
-                                                        msg += CYN "$N" CYN "ÓÖ¶Ô$n" CYN "µÀ£ºÖ»¿ÉÏ§¹Ø¼üÊ±¿Ì£¬Äã"
-                                                               "ĞÄ´æµ¨ÇÓ£¬Ã»ÓĞÊÖÈĞ¶Ô·½£¬ÉõÊÇ¿ÉÏ§¡£\n"NOR;
+                                                        msg += CYN "$N" CYN "åˆå°$n" CYN "é“ï¼šåªå¯æƒœé—œéµæ™‚åˆ»ï¼Œä½ "
+                                                               "å¿ƒå­˜è†½æ€¯ï¼Œæ²’æœ‰æ‰‹åˆƒå°æ–¹ï¼Œç”šæ˜¯å¯æƒœã€‚\n"NOR;
                    bonus = 2;
                                                }
                 if (quest_count == 100)
                 {
-                        msg += CYN "$N" CYN "¹ş¹ş´óĞ¦Á½ÉùµÀ£ºÕæÓĞÄãµÄ£¬Á¬×ÅÉÏ"
-                               "°Ù´ÎÈÎÎñ¶¼Íê³ÉµÄÆ¯Æ¯ÁÁÁÁ£¬ºÜºÃ£¬ºÜºÃ¡£\n" NOR;
+                        msg += CYN "$N" CYN "å“ˆå“ˆå¤§ç¬‘å…©è²é“ï¼šçœŸæœ‰ä½ çš„ï¼Œé€£è‘—ä¸Š"
+                               "ç™¾æ¬¡ä»»å‹™éƒ½å®Œæˆçš„æ¼‚æ¼‚äº®äº®ï¼Œå¾ˆå¥½ï¼Œå¾ˆå¥½ã€‚\n" NOR;
                         special = 1;
                 } else
                 if (quest_count == 200)
                 {
-                        msg += CYN "$N" CYN "´óÏ²µÀ£º²»´í²»´í£¬ÕæÊÇ²»´í£¬Á½°Ù"
-                               "´ÎÈÎÎñ¸ÉµÃºÜºÃ¡£\n" NOR;
+                        msg += CYN "$N" CYN "å¤§å–œé“ï¼šä¸éŒ¯ä¸éŒ¯ï¼ŒçœŸæ˜¯ä¸éŒ¯ï¼Œå…©ç™¾"
+                               "æ¬¡ä»»å‹™å¹¹å¾—å¾ˆå¥½ã€‚\n" NOR;
                         special = 1;
                 } else
                 if (quest_count == 300)
                 {
-                        msg += CYN "$N" CYN "´óÏ²µÀ£º²»´í²»´í£¬Á¬ĞøÈı°Ù¸öÈÎÎñ"
-                               "¶¼Ë¿ºÁ²»³ö²î´í£¬ÕæÊÇÆ¯ÁÁ¡£\n" NOR;
+                        msg += CYN "$N" CYN "å¤§å–œé“ï¼šä¸éŒ¯ä¸éŒ¯ï¼Œé€£çºŒä¸‰ç™¾å€‹ä»»å‹™"
+                               "éƒ½çµ²æ¯«ä¸å‡ºå·®éŒ¯ï¼ŒçœŸæ˜¯æ¼‚äº®ã€‚\n" NOR;
                         special = 1;
                 } else
                 if (quest_count == 400)
                 {
-                        msg += CYN "$N" CYN "´óÏ²µÀ£ºÕæÊÇ²»´í£¬¾¹È»Á¬ĞøËÄ°Ù¸ö"
-                               "ÈÎÎñË¿ºÁ²»³ö²î´í£¬¸ÉµÃºÃ¡£\n" NOR;
+                        msg += CYN "$N" CYN "å¤§å–œé“ï¼šçœŸæ˜¯ä¸éŒ¯ï¼Œç«Ÿç„¶é€£çºŒå››ç™¾å€‹"
+                               "ä»»å‹™çµ²æ¯«ä¸å‡ºå·®éŒ¯ï¼Œå¹¹å¾—å¥½ã€‚\n" NOR;
                         special = 1;
                 } else
                 if (quest_count == 500)
                 {
-                        msg += CYN "$N" CYN "Ì¾µÀ£ºÕæÊÇ³¤½­ºóÀËÍÆÇ°ÀË£¬Ïë²»µ½"
-                               "Äã½ÓÁ¬Îå°Ù´ÎÈÎÎñ¶¼ÎŞÒ»ÊèÂ©£¬ÕæÊÇ²»´í£¡\n" NOR;
+                        msg += CYN "$N" CYN "å˜†é“ï¼šçœŸæ˜¯é•·æ±Ÿå¾Œæµªæ¨å‰æµªï¼Œæƒ³ä¸åˆ°"
+                               "ä½ æ¥é€£äº”ç™¾æ¬¡ä»»å‹™éƒ½ç„¡ä¸€ç–æ¼ï¼ŒçœŸæ˜¯ä¸éŒ¯ï¼\n" NOR;
                         special = 1;
                 } else
                 if (quest_count == 600)
                 {
-                        msg += CYN "$N" CYN "Ì¾µÀ£ºÕæÊÇ³¤½­ºóÀËÍÆÇ°ÀË£¬Ïë²»µ½"
-                               "Äã½ÓÁ¬Áù°Ù´ÎÈÎÎñ¶¼ÎŞÒ»ÊèÂ©£¬Æ¯ÁÁÖ®¼«£¡\n" NOR;
+                        msg += CYN "$N" CYN "å˜†é“ï¼šçœŸæ˜¯é•·æ±Ÿå¾Œæµªæ¨å‰æµªï¼Œæƒ³ä¸åˆ°"
+                               "ä½ æ¥é€£å…­ç™¾æ¬¡ä»»å‹™éƒ½ç„¡ä¸€ç–æ¼ï¼Œæ¼‚äº®ä¹‹æ¥µï¼\n" NOR;
                         special = 1;
                 } else
                 if (quest_count == 700)
                 {
-                        msg += CYN "$N" CYN "Ì¾µÀ£ºÕæÊÇ³¤½­ºóÀËÍÆÇ°ÀË£¬Ïë²»µ½"
-                               "ÄãÆß°Ù´ÎÈÎÎñ¾¹ÎŞÒ»ÊèÂ©£¬²»Ò×£¬²»Ò×£¡\n" NOR;
+                        msg += CYN "$N" CYN "å˜†é“ï¼šçœŸæ˜¯é•·æ±Ÿå¾Œæµªæ¨å‰æµªï¼Œæƒ³ä¸åˆ°"
+                               "ä½ ä¸ƒç™¾æ¬¡ä»»å‹™ç«Ÿç„¡ä¸€ç–æ¼ï¼Œä¸æ˜“ï¼Œä¸æ˜“ï¼\n" NOR;
                         special = 1;
                 } else
                 if (quest_count == 800)
                 {
-                        msg += CYN "$N" CYN "Ì¾µÀ£ºÕæÊÇ³¤½­ºóÀËÍÆÇ°ÀË£¬Ïë²»µ½"
-                               "Äã½ÓÁ¬°Ë°Ù´ÎÈÎÎñ¶¼ÎŞÒ»ÊèÂ©£¬²»Ò×Ö®¼«£¡\n" NOR;
+                        msg += CYN "$N" CYN "å˜†é“ï¼šçœŸæ˜¯é•·æ±Ÿå¾Œæµªæ¨å‰æµªï¼Œæƒ³ä¸åˆ°"
+                               "ä½ æ¥é€£å…«ç™¾æ¬¡ä»»å‹™éƒ½ç„¡ä¸€ç–æ¼ï¼Œä¸æ˜“ä¹‹æ¥µï¼\n" NOR;
                         special = 1;
                 } else
                 if (quest_count == 900)
                 {
-                        msg += CYN "$N" CYN "ÉîÉîµØÌ¾µÀ£ºÏë²»µ½Äã½ÓÁ¬¾Å°Ù´ÎÈÎ"
-                               "Îñ¶¼ÎŞÒ»ÊèÂ©£¬²»Ò×Ö®¼«£¡²»Ò×Ö®¼«£¡\n" NOR;
+                        msg += CYN "$N" CYN "æ·±æ·±åœ°å˜†é“ï¼šæƒ³ä¸åˆ°ä½ æ¥é€£ä¹ç™¾æ¬¡ä»»"
+                               "å‹™éƒ½ç„¡ä¸€ç–æ¼ï¼Œä¸æ˜“ä¹‹æ¥µï¼ä¸æ˜“ä¹‹æ¥µï¼\n" NOR;
                         special = 1;
                 } else
                 if (quest_count == 1000)
                 {
-                        msg += CYN "$N" CYN "ÉîÉîÌ¾ÁË¿ÚÆø£¬µÀ£ºÏë²»µ½ÄãÁ¬×ÅÒ»"
-                               "Ç§´ÎÈÎÎñÎŞÒ»Ê§ÊÖ£¬¿´À´ÎÒÃÇ" +
+                        msg += CYN "$N" CYN "æ·±æ·±å˜†äº†å£æ°£ï¼Œé“ï¼šæƒ³ä¸åˆ°ä½ é€£è‘—ä¸€"
+                               "åƒæ¬¡ä»»å‹™ç„¡ä¸€å¤±æ‰‹ï¼Œçœ‹ä¾†æˆ‘å€‘" +
                                me->query("family/family_name") +
-                               "ÕæÊÇºó¼ÌÓĞÈË°¡£¡\n" NOR;
+                               "çœŸæ˜¯å¾Œç¹¼æœ‰äººå•Šï¼\n" NOR;
                         special = 1;
                 } else
                 if (quest_count > 1000)
@@ -1357,9 +1357,9 @@ int accept_quest_kill(object me, object obj)
                 } else
                 if ((quest_count % 10) == 0)
                 {
-                        msg += CYN "$N" CYN "Ï²µÀ£ºÕæÊÇ²»Àµ£¬¾ÓÈ»Á¬×Å" +
+                        msg += CYN "$N" CYN "å–œé“ï¼šçœŸæ˜¯ä¸è³´ï¼Œå±…ç„¶é€£è‘—" +
                                chinese_number(quest_count) +
-                               "´Î¶¼Ã»ÓĞÊ§ÊÖ£¬¸ÉµÄºÃ£¡\n" NOR;
+                               "æ¬¡éƒ½æ²’æœ‰å¤±æ‰‹ï¼Œå¹¹çš„å¥½ï¼\n" NOR;
                 }
                 message_vision(msg, master, me);
                 me->delete_temp("quest/escape_times");
@@ -1375,7 +1375,7 @@ int accept_quest_kill(object me, object obj)
                 gongxian /= 2;
         } else
         {
-                // °Ù·ÖÖ®Ò»µÄ¼¸ÂÊÖ±½ÓÔùËÍÎïÆ·½±Àø
+                // ç™¾åˆ†ä¹‹ä¸€çš„å¹¾ç‡ç›´æ¥è´ˆé€ç‰©å“çå‹µ
 //                if ((quest_count >= 100 && random(200) == 1) || special)
                 if ( special)
                 {
@@ -1384,10 +1384,10 @@ int accept_quest_kill(object me, object obj)
         }
         if (type==1 || (exp==0 &&pot==0 && score==0))
           return 1;
-        message("vision", sprintf(HIC "Í¨¹ıÕâ´Î¶ÍÁ¶Äã»ñµÃÁË%sµã¾­Ñé£¬"
-                                  "%sµãÇ±ÄÜ¡£\nÍ¬Ê±»¹Ôö"
-                                  "³¤ÁË%sµã½­ºşÔÄÀú£¬¼°%sµãÃÅ"
-                                  "ÅÉÖÒ³Ï¶È¡£\n" NOR,
+        message("vision", sprintf(HIC "é€šéé€™æ¬¡é›ç…‰ä½ ç²å¾—äº†%sé»ç¶“é©—ï¼Œ"
+                                  "%sé»æ½›èƒ½ã€‚\nåŒæ™‚é‚„å¢"
+                                  "é•·äº†%sé»æ±Ÿæ¹–é–±æ­·ï¼ŒåŠ%sé»é–€"
+                                  "æ´¾å¿ èª åº¦ã€‚\n" NOR,
                                   chinese_number(exp),
                                   chinese_number(pot),
                                   chinese_number(score),
@@ -1403,8 +1403,8 @@ int accept_reply(object me,object ob,string arg)
 {
         return "/quest/weixiaobao"->accept_reply(me,ob,arg);
 }
-/////ÆäËü²¿·Ö£º ÅÑÊ¦¡¢ÏÀ¿Íµº¡¢qiecuo///////
-////ÏÂÃæÕâ¶Î¸ÉÂïµÄ £¿£¿  ²»ÖªµÀ//
+/////å…¶å®ƒéƒ¨åˆ†ï¼š å›å¸«ã€ä¿ å®¢å³¶ã€qiecuo///////
+////ä¸‹é¢é€™æ®µå¹¹å˜›çš„ ï¼Ÿï¼Ÿ  ä¸çŸ¥é“//
 int accept_betrayer(object ob)
 {
         if (ob->query("shen") > 0)
@@ -1416,7 +1416,7 @@ int accept_betrayer(object ob)
                         return 1;
         }
 }
-// ÏòÕÆÃÅÒªÇóÅÑÊ¦
+// å‘æŒé–€è¦æ±‚å›å¸«
 // Added by Constant Jan 12 2001
 int betray(object ob, int depth)
 {
@@ -1440,25 +1440,25 @@ int betray(object ob, int depth)
         if (ob->query("family/family_name") !=
                 master->query("family/family_name"))
         {
-                message_vision("$NËµµÀ£º¡°¹óÅÉÖ®ÊÂ×ÔÓĞ¹óÅÉÕÆÃÅ´¦ÖÃ£¬ÓëÎÒÎŞ¹Ø¡£¡±\n", master, ob);
+                message_vision("$Nèªªé“ï¼šâ€œè²´æ´¾ä¹‹äº‹è‡ªæœ‰è²´æ´¾æŒé–€è™•ç½®ï¼Œèˆ‡æˆ‘ç„¡é—œã€‚â€\n", master, ob);
                 return 1;
         }
         if (ob->query("combat_exp") < 1000000)
         {
-                message_vision("$NÀäĞ¦µÀ£º¡°¾ÍÆ¾ÄãÕâµãÎ¢Ä©µÀĞĞ£¬Ò²Ïëµ½½­ºşÉÏÈ¥´³µ´£¬»¹²»½ĞÈËĞ¦µô´óÑÀ£¿¡±\n", master, ob);
+                message_vision("$Nå†·ç¬‘é“ï¼šâ€œå°±æ†‘ä½ é€™é»å¾®æœ«é“è¡Œï¼Œä¹Ÿæƒ³åˆ°æ±Ÿæ¹–ä¸Šå»é—–ç›ªï¼Œé‚„ä¸å«äººç¬‘æ‰å¤§ç‰™ï¼Ÿâ€\n", master, ob);
                 return 1;
         }
 
         if (depth == 0)
         {
-                message_vision(HIR "\n$NÃ¼Í·Ò»Öå£¬½ô½ô¶¢×Å$n£¬Ä¿¹âÈç¼ı£¬$n²»½û´òÁË¸öº®Õ½¡£\n"NOR, master, ob);
+                message_vision(HIR "\n$Nçœ‰é ­ä¸€çšºï¼Œç·Šç·Šç›¯è‘—$nï¼Œç›®å…‰å¦‚ç®­ï¼Œ$nä¸ç¦æ‰“äº†å€‹å¯’æˆ°ã€‚\n"NOR, master, ob);
                 ob->start_busy(10);
                 call_out("betray", 5, ob, depth + 1);
         }
         else
         {
-                message_vision(HIR "\n°ëÉÎ£¬$NÌ¾µÀ£º¡°¼ÈÈ»ÄãÖ´ÒâÀëÈ¥£¬ÎÒÒ²²»±ãÇ¿Áô¡£Ö»ÊÇÄãµÄÒ»ÉíÎä¹¦£¬ÄÄÀïÀ´¾Í»¹ÄÄÀïÈ¥°É¡£¡±\n"NOR, master, ob);
-                message_vision(HIR "Ëµ°Õ£¬»ÓÕÆÔÚ$n¶îÍ·ÇáÇáÒ»»÷£¬$nÖ»¾õÈ«Éí¾¢Á¦±»ÃàÃà²»¾ø³éÈ¥£¬´óº§Ö®ÏÂ£¬ÔÎÁË¹ıÈ¥¡£\n"NOR, master, ob);
+                message_vision(HIR "\nåŠæ™Œï¼Œ$Nå˜†é“ï¼šâ€œæ—¢ç„¶ä½ åŸ·æ„é›¢å»ï¼Œæˆ‘ä¹Ÿä¸ä¾¿å¼·ç•™ã€‚åªæ˜¯ä½ çš„ä¸€èº«æ­¦åŠŸï¼Œå“ªè£¡ä¾†å°±é‚„å“ªè£¡å»å§ã€‚â€\n"NOR, master, ob);
+                message_vision(HIR "èªªç½·ï¼Œæ®æŒåœ¨$né¡é ­è¼•è¼•ä¸€æ“Šï¼Œ$nåªè¦ºå…¨èº«å‹åŠ›è¢«ç¶¿ç¶¿ä¸çµ•æŠ½å»ï¼Œå¤§é§­ä¹‹ä¸‹ï¼Œæšˆäº†éå»ã€‚\n"NOR, master, ob);
                 for (i = 0; i < sizeof(ob_skills); )
                 {
                         skill_name = keys(ob_skills)[i];
@@ -1482,7 +1482,7 @@ int betray(object ob, int depth)
 //                ob->set("betrayer", ob->query("betrayer") + 1);
                 ob->add("expell",1);
                 ob->set("detach/"+ob->query("family/family_name"),1);
-                ob->set("title", "ÆÕÍ¨°ÙĞÕ");
+                ob->set("title", "æ™®é€šç™¾å§“");
                 ob->set("class", "0");
                 ob->delete("family");
                 ob->save();
@@ -1490,7 +1490,7 @@ int betray(object ob, int depth)
         }
         return 1;
 }
-// ÕÆÃÅµÜ×Ó¿ÉÒÔÏòÕÆÃÅÈËÒªÅÆÉÏÏÀ¿Íµº
+// æŒé–€å¼Ÿå­å¯ä»¥å‘æŒé–€äººè¦ç‰Œä¸Šä¿ å®¢å³¶
 
 int xkd(object me)
 {
@@ -1505,19 +1505,19 @@ int xkd(object me)
 
   if (!me->query("family/family_name"))
    {
-                message_vision("$N¶Ô×Å$nËµ£ºÕâÎ»"+RANK_D->query_respect(me)+"ºÎ²»¼ÓÈëÎÒ"+master->query("family/family_name")+"£¿\n", master, me);
+                message_vision("$Nå°è‘—$nèªªï¼šé€™ä½"+RANK_D->query_respect(me)+"ä½•ä¸åŠ å…¥æˆ‘"+master->query("family/family_name")+"ï¼Ÿ\n", master, me);
                 return 1;
            }
         if (ob->query("family/family_name") !=
                 master->query("family/family_name"))
         {
-                message_vision("$N¶Ô×Å$nËµ£ºÎÒ²»ÊÇÄãµÄÕÆÃÅÈË£¬Äã»ØÄãÃÇ"+me->query("family/family_name")+"È¥°É¡£\n", master, me);
+                message_vision("$Nå°è‘—$nèªªï¼šæˆ‘ä¸æ˜¯ä½ çš„æŒé–€äººï¼Œä½ å›ä½ å€‘"+me->query("family/family_name")+"å»å§ã€‚\n", master, me);
                 return 1;
         }
 
         if (!ob->query("xkd/ling"))
         {
-                message_vision("$N¶Ô×Å$nËµ£ºÄã»¹²»ÊÇÕÆÃÅ´óµÜ×Ó£¬µ£²»ÆğÈç´ËÖØÈÎ¡£\n", master, me);
+                message_vision("$Nå°è‘—$nèªªï¼šä½ é‚„ä¸æ˜¯æŒé–€å¤§å¼Ÿå­ï¼Œæ“”ä¸èµ·å¦‚æ­¤é‡ä»»ã€‚\n", master, me);
                 return 1;
         }
         dir = explode(base_name(master),"/");
@@ -1528,7 +1528,7 @@ int xkd(object me)
                 destruct(first);
                 if (ob->query("id")!= c_player)
                 {
-                        message_vision("$N¶Ô×Å$nËµ£ºÄã²»ÊÇÕÆÃÅ´óµÜ×Ó£¬µ£²»ÆğÈç´ËÖØÈÎ¡£\n", master, me);
+                        message_vision("$Nå°è‘—$nèªªï¼šä½ ä¸æ˜¯æŒé–€å¤§å¼Ÿå­ï¼Œæ“”ä¸èµ·å¦‚æ­¤é‡ä»»ã€‚\n", master, me);
                         return 1;
                 }
         }
@@ -1540,19 +1540,19 @@ int xkd(object me)
                 ling = new( "/d/xiakedao/obj/tongpai2" );
                 ling->set( "own", ob->query("id") );
                 ling->move( ob );
-                message_vision( HIY"$N¶Ô$nËµµÀ£ºÏÀ¿Íµº×òÈÕËÍÀ´ÉÍÉÆ·£¶ñÁî£¬ÑûÇëÎªÊ¦ÉÏµº¡£\nÄãÊÇ±¾ÃÅÕÆÃÅµÜ×Ó£¬¾Í´úÎªÊ¦×ßÒ»ÌË°É¡£\n"NOR, master, ob );
-                message_vision( HIC"ËµÍê£¬$N°ÑÁ½¿éÁîÅÆ½»µ½$nÊÖÀï¡£\n"NOR, master, ob );
+                message_vision( HIY"$Nå°$nèªªé“ï¼šä¿ å®¢å³¶æ˜¨æ—¥é€ä¾†è³å–„ç½°æƒ¡ä»¤ï¼Œé‚€è«‹ç‚ºå¸«ä¸Šå³¶ã€‚\nä½ æ˜¯æœ¬é–€æŒé–€å¼Ÿå­ï¼Œå°±ä»£ç‚ºå¸«èµ°ä¸€è¶Ÿå§ã€‚\n"NOR, master, ob );
+                message_vision( HIC"èªªå®Œï¼Œ$NæŠŠå…©å¡Šä»¤ç‰Œäº¤åˆ°$næ‰‹è£¡ã€‚\n"NOR, master, ob );
                 ob->set_temp("xkd/ask",1);
         }
         else
         {
-                message_vision("$N¶Ô×Å$nËµ£ºÄã²»ÊÇÒÑ¾­ÄÃÁËÁîÅÆÁËÂğ£¬»¹²»ËÙËÙÆğ³Ì¡£\n", master, me);
+                message_vision("$Nå°è‘—$nèªªï¼šä½ ä¸æ˜¯å·²ç¶“æ‹¿äº†ä»¤ç‰Œäº†å—ï¼Œé‚„ä¸é€Ÿé€Ÿèµ·ç¨‹ã€‚\n", master, me);
                 return 1;
         }
         return 1;
 }
 
-//ÇĞ´èÎäÑ§°üÀ¨Ê¦¸¸½±ÀøºÍÌØÊâperform
+//åˆ‡ç£‹æ­¦å­¸åŒ…æ‹¬å¸«çˆ¶çå‹µå’Œç‰¹æ®Šperform
 int do_qiecuo(string arg)
 {
         object master = this_object();
@@ -1573,35 +1573,35 @@ int do_qiecuo(string arg)
         if (!living(me)||!living(master)) return 0;
         if (me->query("family/family_name") !=master->query("family/family_name"))
         {
-                message_vision("$N¶Ô×Å$nËµ£ºÎÒ²»ÊÇÄãµÄÕÆÃÅÈË£¬Äã»ØÄãÃÇ"+me->query("family/family_name")+"È¥°É¡£\n", master, me);
+                message_vision("$Nå°è‘—$nèªªï¼šæˆ‘ä¸æ˜¯ä½ çš„æŒé–€äººï¼Œä½ å›ä½ å€‘"+me->query("family/family_name")+"å»å§ã€‚\n", master, me);
                 return 1;
         }
         if (me->is_busy() || me->is_fighting())
         {
-                message_vision("$N¶Ô×Å$nËµ£ºÄãÃ¦ÍêÁËÔÙÀ´°É£¡\n", master, me);
+                message_vision("$Nå°è‘—$nèªªï¼šä½ å¿™å®Œäº†å†ä¾†å§ï¼\n", master, me);
                 return 1;
         }
         if (master->is_fighting())
         {
-                message_vision("$N¶Ô×Å$nËµ£ºÎÒÏÖÔÚÕıÃ¦×ÅÄØ£¡\n", master, me);
+                message_vision("$Nå°è‘—$nèªªï¼šæˆ‘ç¾åœ¨æ­£å¿™è‘—å‘¢ï¼\n", master, me);
                 return 1;
         }
-      //family_can_qiecuo×÷ÎªÊ¦¸¸½±ÀøºÍÌØÊâperformÇĞ´èµÄÇø±ğ
+      //family_can_qiecuoä½œç‚ºå¸«çˆ¶çå‹µå’Œç‰¹æ®Šperformåˆ‡ç£‹çš„å€åˆ¥
               if( !me->query_temp("family_can_qiecuo"))
               {
                 if (!arg)
                 {
-                             message_vision("$N¶Ô×Å$nËµ£ºÄãÒªÇĞ´èÊ²Ã´£¿\n", master, me);
+                             message_vision("$Nå°è‘—$nèªªï¼šä½ è¦åˆ‡ç£‹ä»€éº¼ï¼Ÿ\n", master, me);
                              return 1;
                 }
                 if( sscanf(arg, "%s.%s", pfmartial, pfarg)!=2 )
                 {
-                        message_vision("$N¶Ô×Å$nËµ£ºÄãÒªÇĞ´èÊ²Ã´£¿\n", master, me);
+                        message_vision("$Nå°è‘—$nèªªï¼šä½ è¦åˆ‡ç£‹ä»€éº¼ï¼Ÿ\n", master, me);
                              return 1;
                 }
                 if (fealty_b<learn_b)
                 {
-                        message_vision("$N¶Ô×Å$nËµ£ºÄã»¹ÊÇ¶àÎª±¾ÃÅ×öµã¹±Ï×ÔÙÀ´°É£¡\n",master,me);
+                        message_vision("$Nå°è‘—$nèªªï¼šä½ é‚„æ˜¯å¤šç‚ºæœ¬é–€åšé»è²¢ç»å†ä¾†å§ï¼\n",master,me);
                         return 1;
                 }
 
@@ -1609,7 +1609,7 @@ int do_qiecuo(string arg)
                 {
                         if (!master->query_skill(pfskill,1))
                         {
-                                message_vision("$N¶Ô×Å$nËµ£ºÕâ¸öÎä¹¦ÎÒÃ»Á·¹ı£¬ÄãÈ¥ÕÒÆäËûÈË°É¡£\n", master, me);
+                                message_vision("$Nå°è‘—$nèªªï¼šé€™å€‹æ­¦åŠŸæˆ‘æ²’ç·´éï¼Œä½ å»æ‰¾å…¶ä»–äººå§ã€‚\n", master, me);
                                 return 1;
                         }
                         perform_actions = get_dir( SKILL_D(pfskill) + "/" );
@@ -1623,18 +1623,18 @@ int do_qiecuo(string arg)
                                         pfmsg="perform/"+pfarg;
                                         if(sl<10 || bl<10)
                                         {
-                                                message_vision("$N¶Ô×Å$nËµ£ºÄãÏÈ´òºÃ»ù´¡£¬ÔÙÀ´ÇĞ´è°É£¡\n", master, me);
+                                                message_vision("$Nå°è‘—$nèªªï¼šä½ å…ˆæ‰“å¥½åŸºç¤ï¼Œå†ä¾†åˆ‡ç£‹å§ï¼\n", master, me);
                                                 return 1;
                                         }
                                         else if(me->query(pfmsg,1)==1)
                                         {
-                                                message_vision("$N¶Ô×Å$nËµ£ºÄãÒÑ¾­Áì»áÁËÕâÕĞ£¬»¹ÒªÇĞ´èÃ´£¿\n", master, me);
+                                                message_vision("$Nå°è‘—$nèªªï¼šä½ å·²ç¶“é ˜æœƒäº†é€™æ‹›ï¼Œé‚„è¦åˆ‡ç£‹éº¼ï¼Ÿ\n", master, me);
                                                 return 1;
                                         }
                                         else
                                         {
-                                                message_vision(HIW"$N¹ş¹şĞ¦µÀ£º¡°ºÃ°É£¬ÎªÊ¦¾Í´«ÊÚÄãĞ©ĞÄµÃ£¡¡±¡£\n"NOR, master, me);
-                                                write(HIC"ÄãÌıÁËÖ¸µ¼£¬î¨Ë¼¿àÏë£¬¶Ô"+to_chinese(pfskill)+"µÄÌå»áÓÖÉîÁËÒ»²ã¡£\n"NOR);
+                                                message_vision(HIW"$Nå“ˆå“ˆç¬‘é“ï¼šâ€œå¥½å§ï¼Œç‚ºå¸«å°±å‚³æˆä½ äº›å¿ƒå¾—ï¼â€ã€‚\n"NOR, master, me);
+                                                write(HIC"ä½ è½äº†æŒ‡å°ï¼Œç‘æ€è‹¦æƒ³ï¼Œå°"+to_chinese(pfskill)+"çš„é«”æœƒåˆæ·±äº†ä¸€å±¤ã€‚\n"NOR);
                                                 me->set(pfmsg,1);
                                                 me->add("perform/number",1);
                                                 fealty_b=fealty_b - learn_b;
@@ -1645,13 +1645,13 @@ int do_qiecuo(string arg)
                                 }
                          }
                         me->start_busy(1);
-                        message_vision("$N¶Ô×Å$nËµ£ºÄãÒªÇĞ´èÊ²Ã´£¿\n", master, me);
+                        message_vision("$Nå°è‘—$nèªªï¼šä½ è¦åˆ‡ç£‹ä»€éº¼ï¼Ÿ\n", master, me);
                              return 1;
                 }
                 else
                 {
                         me->start_busy(1);
-                        message_vision("$N¶Ô×Å$nËµ£ºÄãÒªÇĞ´èÊ²Ã´£¿\n", master, me);
+                        message_vision("$Nå°è‘—$nèªªï¼šä½ è¦åˆ‡ç£‹ä»€éº¼ï¼Ÿ\n", master, me);
                              return 1;
                 }
         }
@@ -1659,17 +1659,17 @@ int do_qiecuo(string arg)
         {
                       if (!arg)
                 {
-                        message_vision("$N¶Ô×Å$nËµ£ºÄãÒªÇĞ´èÊ²Ã´£¿\n", master, me);
+                        message_vision("$Nå°è‘—$nèªªï¼šä½ è¦åˆ‡ç£‹ä»€éº¼ï¼Ÿ\n", master, me);
                              return 1;
                 }
                       if (!(special=me->query_skill_mapped(arg)))
                 {
-                        message_vision("$N¶Ô×Å$nËµ£ºÄãÖ»ÄÜ´Ó»ù±¾¼¼ÄÜÖĞÇë½ÌÌØÊâ¼¼ÄÜ¡£\n", master, me);
+                        message_vision("$Nå°è‘—$nèªªï¼šä½ åªèƒ½å¾åŸºæœ¬æŠ€èƒ½ä¸­è«‹æ•™ç‰¹æ®ŠæŠ€èƒ½ã€‚\n", master, me);
                              return 1;
                 }
                   if(arg=="force")
                 {
-                        message_vision("$N¶Ô×Å$nËµ£ºÄÚ¹¦ĞŞÎª£¬²»ÊÇ¿¿ÇĞ´èÄÜÌá¸ßµÄ¡£\n", master, me);
+                        message_vision("$Nå°è‘—$nèªªï¼šå…§åŠŸä¿®ç‚ºï¼Œä¸æ˜¯é åˆ‡ç£‹èƒ½æé«˜çš„ã€‚\n", master, me);
                              return 1;
                 }
                   else if(special=="bixie-jian"
@@ -1684,7 +1684,7 @@ int do_qiecuo(string arg)
         ||(special=="hamagong" && arg=="strike")
                           )
                 {
-                        message_vision("$N¶Ô×Å$nËµ£º´ËÏî¼¼ÄÜÎŞ·¨Í¨¹ıÇĞ´èÀ´Ìá¸ß£¡\n", master, me);
+                        message_vision("$Nå°è‘—$nèªªï¼šæ­¤é …æŠ€èƒ½ç„¡æ³•é€šéåˆ‡ç£‹ä¾†æé«˜ï¼\n", master, me);
                              return 1;
                 }
                   else
@@ -1693,14 +1693,14 @@ int do_qiecuo(string arg)
                            sl=me->query_skill(special,1);
                            if(sl>=bl*3/2)
                            {
-                                message_vision("$N¶Ô×Å$nËµ£ºÄãÏÈ´òºÃ»ù´¡£¬ÔÙÀ´ÇĞ´è°É£¡\n", master, me);
+                                message_vision("$Nå°è‘—$nèªªï¼šä½ å…ˆæ‰“å¥½åŸºç¤ï¼Œå†ä¾†åˆ‡ç£‹å§ï¼\n", master, me);
                                 return 1;
                         }
                            else
                         {       //chinese_number(p_bonus)
-//                                tell_object(me,HIM + master->query("name")+"È¡×ßÁËÄã£º"        + chinese_number(learn_b) + "µãÖÒ³Ï¶È¡£\n"NOR);
-                                message_vision(HIW"$N¹ş¹şĞ¦µÀ£º¡°ºÃ°É£¬ÎªÊ¦¾Í´«ÊÚÄãĞ©ĞÄµÃ£¡¡±¡£\n"NOR, master, me);
-                                   write(HIC"ÄãÌıÁËÖ¸µ¼£¬î¨Ë¼¿àÏë£¬¶Ô"+to_chinese(special)+"µÄÌå»áÓÖÉîÁËÒ»²ã¡£\n"NOR);
+//                                tell_object(me,HIM + master->query("name")+"å–èµ°äº†ä½ ï¼š"        + chinese_number(learn_b) + "é»å¿ èª åº¦ã€‚\n"NOR);
+                                message_vision(HIW"$Nå“ˆå“ˆç¬‘é“ï¼šâ€œå¥½å§ï¼Œç‚ºå¸«å°±å‚³æˆä½ äº›å¿ƒå¾—ï¼â€ã€‚\n"NOR, master, me);
+                                   write(HIC"ä½ è½äº†æŒ‡å°ï¼Œç‘æ€è‹¦æƒ³ï¼Œå°"+to_chinese(special)+"çš„é«”æœƒåˆæ·±äº†ä¸€å±¤ã€‚\n"NOR);
                                    me->set_skill(special,sl+1);
                                    me->delete_temp("family_can_qiecuo");
                                    me->start_busy(3);

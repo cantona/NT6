@@ -6,17 +6,17 @@ inherit STAFF;
 
 void create()
 {
-        set_name("ÆëÃ¼¹÷", ({ "qimeigun","gun", "bang" }) );
+        set_name("é½Šçœ‰æ£", ({ "qimeigun","gun", "bang" }) );
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ìõ");
+                set("unit", "æ¢");
                 set("value", 5);
                 set("material", "wood");
-                set("long", "Ò»¸ù·Ç³£½áÊµµÄÆëÃ¼¹÷¡£\n");
-                set("wield_msg", "$NÄÃÆğÒ»¸ù$n£¬Ë³ÊÖÎèÁË¸ö¹÷»¨¡£\n");
-                set("unwield_msg", "$NºßÁËÒ»Éù£¬½«$n²å»ØºóÑü¡£\n");
+                set("long", "ä¸€æ ¹éå¸¸çµå¯¦çš„é½Šçœ‰æ£ã€‚\n");
+                set("wield_msg", "$Næ‹¿èµ·ä¸€æ ¹$nï¼Œé †æ‰‹èˆäº†å€‹æ£èŠ±ã€‚\n");
+                set("unwield_msg", "$Nå“¼äº†ä¸€è²ï¼Œå°‡$næ’å›å¾Œè…°ã€‚\n");
         }
         init_staff(18);
         setup();

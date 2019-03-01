@@ -4,12 +4,12 @@
 inherit ROOM;
 void create()
 {
-        set("short", "Î¶ÖÐÎ¶");
+        set("short", "å‘³ä¸­å‘³");
         set("long", @LONG
-ÌáÆð¡°Â¥ÍâÂ¥¡±·½Ô²°ÙÀïÎÞÈË²»Öª¡£ÕâÀïµÄ¸÷Ê½Ãö²Ë¾ùÊÇ¸£ÖÝÒ»¾ø¡£
-À´ÓÎºþµÄÈËÃÇ¶¼Ò»¶¨»áÀ´ÕâÀï³¢³¢¡£Õû¸ö´óÌÃÀïÄÖºåºåµÄ¼·ÂúÁË¸÷Ê½ÈË
-µÈ¡£µêÐ¡¶ùÅÜÀ´ÅÜÈ¥£¬Ã¦×ÅÕÐºô¿ÍÈË¡£
-    Ç½ÉÏ¹Ò×Å¼Û¸ñÅÆ×Ó(paizi)¡£
+æèµ·â€œæ¨“å¤–æ¨“â€æ–¹åœ“ç™¾è£¡ç„¡äººä¸çŸ¥ã€‚é€™è£¡çš„å„å¼é–©èœå‡æ˜¯ç¦å·žä¸€çµ•ã€‚
+ä¾†éŠæ¹–çš„äººå€‘éƒ½ä¸€å®šæœƒä¾†é€™è£¡å˜—å˜—ã€‚æ•´å€‹å¤§å ‚è£¡é¬§å“„å“„çš„æ“ æ»¿äº†å„å¼äºº
+ç­‰ã€‚åº—å°å…’è·‘ä¾†è·‘åŽ»ï¼Œå¿™è‘—æ‹›å‘¼å®¢äººã€‚
+    ç‰†ä¸ŠæŽ›è‘—åƒ¹æ ¼ç‰Œå­(paizi)ã€‚
 LONG);
         set("exits", ([
                 "west"  : __DIR__"nandajie",
@@ -19,8 +19,8 @@ LONG);
         ]));
         set("item_desc", ([
                 "paizi" : "
-·ðÌøÇ½(Fotiaoqiang)   £ºÎåÁ½°×Òø
-¸£½¨ÀÏ¾Æ(Jiuping)     £º¶þÁ½°×Òø\n",
+ä½›è·³ç‰†(Fotiaoqiang)   ï¼šäº”å…©ç™½éŠ€
+ç¦å»ºè€é…’(Jiuping)     ï¼šäºŒå…©ç™½éŠ€\n",
         ]));
 	set("coor/x", -70);
 	set("coor/y", -6190);

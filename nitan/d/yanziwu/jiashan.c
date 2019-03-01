@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��ɽ");
+        set("short", "假山");
         set("long", @LONG
-��ʯ�ѵ�����ʯ�β����Щͷ��Ŀѣ����ô��ɽ���㲻֪����
-��һ��������ɽ�����谵���ۣ�ʵ�ڲ�֪ͨ��ʲô�ط���
+怪石堆疊，巨石參差，你有些頭暈目眩，那麼多山洞你不知該鑽
+哪一個。個個山洞都昏暗曲折，實在不知通向什麼地方。
 LONG );
         set("outdoors", "yanziwu");
         set("exits", ([

@@ -3,13 +3,13 @@ inherit SKILL;
 string type() { return "knowledge"; } 
 
 int is_fmsk() { return 1; }
-string family_name() { return "´óÂÖËÂ"; }
+string family_name() { return "å¤§è¼ªå¯º"; }
 
 int valid_learn(object me)
 {        
 
         if( query("family/family_name", me) != family_name() )
-                return notify_fail("ÃÜ×ÚÕæÑÔÖ»ÄÜ´óÂÖËÂµÜ×Ó·½¿ÉÑĞÏ°¡£\n");
+                return notify_fail("å¯†å®—çœŸè¨€åªèƒ½å¤§è¼ªå¯ºå¼Ÿå­æ–¹å¯ç ”ç¿’ã€‚\n");
 
         return 1;
 }

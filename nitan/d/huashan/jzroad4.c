@@ -3,10 +3,10 @@
 inherit ROOM;
 void create()
 {
-        set("short", "����ɽɭ��");
+        set("short", "中條山森林");
         set("long", @LONG
-����������ɽ·�ϡ�·����С����Χï��ɭ�����������Ұ��
-ҹ�ݵ�˻������������ë���Ȼ��
+你走在中條山路上。路徑狹小，周圍茂密森林裡，傳來陣陣野獸
+夜禽的嘶鳴，聽來讓人毛骨悚然。
 LONG );
         set("exits", ([
                 "westdown" : __DIR__"jzroad3",

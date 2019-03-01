@@ -9,16 +9,16 @@ void init()
 
 void create()
 {
-        set_name(HIY"ËÄÊ®¶şÕÂ¾­¶ş"NOR, ({"book2"}));
+        set_name(HIY"å››åäºŒç« ç¶“äºŒ"NOR, ({"book2"}));
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
                 set("long", 
-"\nÒ»±¾Õı»ÆÆìµÄ¾­Êé£¬·âÆ¤(binding)ºÜ¾«ÖÂ¡£
-·­ÁË¿ªÀ´£¬µÚÒ»Ò³Ğ´Öø¡¸ÓÀ²»¼Ó¸³¡¹ËÄ¸ö´ó×Ö£¬
-±ÊÖÂÔ²Èá£¬ÊÇË³ÖÎµÛµÄÊÖ±Ê¡£\n");
-                set("unit", "±¾");
+"\nä¸€æœ¬æ­£é»ƒæ——çš„ç¶“æ›¸ï¼Œå°çš®(binding)å¾ˆç²¾è‡´ã€‚
+ç¿»äº†é–‹ä¾†ï¼Œç¬¬ä¸€é å¯«è‘—ã€Œæ°¸ä¸åŠ è³¦ã€å››å€‹å¤§å­—ï¼Œ
+ç­†è‡´åœ“æŸ”ï¼Œæ˜¯é †æ²»å¸çš„æ‰‹ç­†ã€‚\n");
+                set("unit", "æœ¬");
                 set("material", "paper");
         }
         setup();
@@ -33,11 +33,11 @@ int do_tear(string arg)
 
         if( !arg || arg=="" ) return 0;
         if(!present(this_object(), me))
-                return notify_fail("ÄãÒªËºÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦æ’•ä»€éº¼ï¼Ÿ\n");
 
         if(arg=="book2")
         {
-                message_vision("$NÒ»ÏÂ°Ñ¾­ÊéËºµÃ·ÛËé¡£\n", me);
+                message_vision("$Nä¸€ä¸‹æŠŠç¶“æ›¸æ’•å¾—ç²‰ç¢ã€‚\n", me);
                 destruct(this_object());
                 return 1;
         }
@@ -47,18 +47,18 @@ int do_tear(string arg)
                 if( dir=="binding" )
                 {
                         if( query("hasgot", this_object()) )
-                                message_vision("$N½«·âÆ¤Ëº¿ª£¬·¢ÏÖÑòÆ¤ÒÑ¾­±»È¡×ßÁË¡£\n", me);
+                                message_vision("$Nå°‡å°çš®æ’•é–‹ï¼Œç™¼ç¾ç¾Šçš®å·²ç¶“è¢«å–èµ°äº†ã€‚\n", me);
                         else
                         {
-                                message_vision("$N½«·âÆ¤Ëº¿ª£¬¼¸¿éÑòÆ¤µôÁËÏÂÀ´¡£\n", me);
-                                message_vision("$NÏÈ½«ÑòÆ¤ÉÏµÄµØÍ¼¼ÇÁËÏÂÀ´£¬È»ºó°ÑËüÃÇÉÕµôÁË¡£\n", me);
+                                message_vision("$Nå°‡å°çš®æ’•é–‹ï¼Œå¹¾å¡Šç¾Šçš®æ‰äº†ä¸‹ä¾†ã€‚\n", me);
+                                message_vision("$Nå…ˆå°‡ç¾Šçš®ä¸Šçš„åœ°åœ–è¨˜äº†ä¸‹ä¾†ï¼Œç„¶å¾ŒæŠŠå®ƒå€‘ç‡’æ‰äº†ã€‚\n", me);
                 set("huanggong\haspi2", 1, me);
                 set("hasgot", 1, this_object());
                 }
         }
         else
         {
-                message_vision("$NÒ»ÏÂ°Ñ¾­ÊéËºµÃ·ÛËé¡£\n", me);
+                message_vision("$Nä¸€ä¸‹æŠŠç¶“æ›¸æ’•å¾—ç²‰ç¢ã€‚\n", me);
                 destruct(this_object());
         }
         return 1;

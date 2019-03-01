@@ -1,8 +1,8 @@
 // counter.h
-//wswÓÚ2004Äê2ÔÂ20ÈÕ
-//Íæ¼Ò¹ñÌ¨
-//Íæ¼ÒÓĞ´Ë¹ñÌ¨ºó£¬¿É°ÑÎïÆ·°ÚÔÚ¹ñÌ¨ÉÏ³öÊÛ£¬ÖØÆôºó±£Áô¡£
-//Èç¹ûÊÇËæ»úÊôĞÔÎïÆ·£¬ÎïÆ·->set("changed",1)
+//wswäº2004å¹´2æœˆ20æ—¥
+//ç©å®¶æ«ƒå°
+//ç©å®¶æœ‰æ­¤æ«ƒå°å¾Œï¼Œå¯æŠŠç‰©å“æ“ºåœ¨æ«ƒå°ä¸Šå‡ºå”®ï¼Œé‡å•Ÿå¾Œä¿ç•™ã€‚
+//å¦‚æœæ˜¯éš¨æ©Ÿå±¬æ€§ç‰©å“ï¼Œç‰©å“->set("changed",1)
 
 #include <ansi.h>   
 inherit F_SAVE;   
@@ -56,36 +56,36 @@ int do_sell(string arg)
         int place,price,j;  
 
         if(!arg)  
-                return notify_fail("Äã×¼±¸ÂôÊ²Ã´¶«Î÷£¿<Ö¸Áî>:sell <ÎïÆ·ID> at <Î»ÖÃºÅ> for <µ¥¼Û>\n");  
+                return notify_fail("ä½ æº–å‚™è³£ä»€éº¼æ±è¥¿ï¼Ÿ<æŒ‡ä»¤>:sell <ç‰©å“ID> at <ä½ç½®è™Ÿ> for <å–®åƒ¹>\n");  
 
         if(ob->query("owner_id")!=me->query("id")) 
-                return notify_fail("Õâ²»ÊÇÄãµÄ¹ñÌ¨¡£\n");
+                return notify_fail("é€™ä¸æ˜¯ä½ çš„æ«ƒå°ã€‚\n");
 
         if(me->is_busy()) 
-                return notify_fail("ÄãÕıÃ¦×ÅÄØ£¡\n");  
+                return notify_fail("ä½ æ­£å¿™è‘—å‘¢ï¼\n");  
 
         if (sscanf(arg,"%s at %d for %d",thing,place,price)!=3)     
-                return notify_fail("ÄãÒª°ÑÊ²Ã´ÎïÆ··ÅÔÚ¹ñÌ¨µÄÄÄ¸öÎ»ÖÃ£¿<Ö¸Áî>:sell <ÎïÆ·ID> at <Î»ÖÃºÅ> for <µ¥¼Û>\n");    
+                return notify_fail("ä½ è¦æŠŠä»€éº¼ç‰©å“æ”¾åœ¨æ«ƒå°çš„å“ªå€‹ä½ç½®ï¼Ÿ<æŒ‡ä»¤>:sell <ç‰©å“ID> at <ä½ç½®è™Ÿ> for <å–®åƒ¹>\n");    
               
-        if (price<=0) return notify_fail("ÏóÄãÕâÑùµÄºÃĞÄÈË£¬ÏÖÔÚ²»¶àÁË£¡\n");
+        if (price<=0) return notify_fail("è±¡ä½ é€™æ¨£çš„å¥½å¿ƒäººï¼Œç¾åœ¨ä¸å¤šäº†ï¼\n");
 
         if (!( obj=present (thing,me)))   
-                return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâ¸öÎïÆ·¡£\n");   
+                return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™å€‹ç‰©å“ã€‚\n");   
 
         if (obj->is_character()
              || obj->query_max_encumbrance()  
             || obj->query("liquid")  
                 || obj->query_unique())  
-                return notify_fail("ÕâÑù¶«Î÷¿É²»ÄÜÂô¡£\n");  
+                return notify_fail("é€™æ¨£æ±è¥¿å¯ä¸èƒ½è³£ã€‚\n");  
                 
         if (obj->query("equipped")) 
-                return notify_fail("ÄãÏÈÍÑÏÂÀ´°É¡£\n");  
+                return notify_fail("ä½ å…ˆè„«ä¸‹ä¾†å§ã€‚\n");  
 
         if (place <1 || place >ob->query("capacity"))  
-                return notify_fail("Õâ¸ö¹ñÌ¨Ö»ÄÜ°Ú"+ob->query("capacity")+"¼şÎïÆ·¡£\n");  
+                return notify_fail("é€™å€‹æ«ƒå°åªèƒ½æ“º"+ob->query("capacity")+"ä»¶ç‰©å“ã€‚\n");  
 
         if (ob->query("place_"+place+"/have")=="have")  
-                return notify_fail("¹ñÌ¨µÚ"+place+"¸öÎ»ÖÃÒÑ¾­ÓĞÎïÆ·ÁË¡£\n");  
+                return notify_fail("æ«ƒå°ç¬¬"+place+"å€‹ä½ç½®å·²ç¶“æœ‰ç‰©å“äº†ã€‚\n");  
 
         ob->set("place_"+place+"/have","have");
         ob->set("place_"+place+"/file_name",base_name(obj));
@@ -95,7 +95,7 @@ int do_sell(string arg)
         ob->set("place_"+place+"/attribute",obj->query_entire_dbase());
 
         ob->save();  
-        message_vision("$N°ÑÒ»"+obj->query("unit")+obj->name()+NOR+"°Ú½ø¹ñÌ¨¡£\n",me);
+        message_vision("$NæŠŠä¸€"+obj->query("unit")+obj->name()+NOR+"æ“ºé€²æ«ƒå°ã€‚\n",me);
         obj->move(VOID_OB);  
         destruct(obj);  
         me->start_busy(2); 
@@ -110,23 +110,23 @@ int do_buy(string arg)
         mapping attribute;  
         int place,afford,price;  
         if(!arg)  
-                return notify_fail("ÄãÒªÂòÊ²Ã´£¿<Ö¸Áî>:buy <ĞòºÅ> from counter\n");  
+                return notify_fail("ä½ è¦è²·ä»€éº¼ï¼Ÿ<æŒ‡ä»¤>:buy <åºè™Ÿ> from counter\n");  
 
         if(me->is_busy()) 
-                return notify_fail("ÄãÕıÃ¦×ÅÄØ£¡n");    
+                return notify_fail("ä½ æ­£å¿™è‘—å‘¢ï¼n");    
 
         if (sscanf(arg,"%d from counter",place)!=1)     
-                return notify_fail("ÄãÒªÂòÊ²Ã´Î»ÖÃµÄÎïÆ·£¿<Ö¸Áî>:na xxx from bag\n"); 
+                return notify_fail("ä½ è¦è²·ä»€éº¼ä½ç½®çš„ç‰©å“ï¼Ÿ<æŒ‡ä»¤>:na xxx from bag\n"); 
 
         if (place <1 || place >ob->query("capacity"))  
-                return notify_fail("¹ñÌ¨Ö»ÓĞ"+ob->query("capacity")+"¸ö¿Õ¼ä¡£\n");  
+                return notify_fail("æ«ƒå°åªæœ‰"+ob->query("capacity")+"å€‹ç©ºé–“ã€‚\n");  
 
         if (ob->query("place_"+place+"/have")!="have")  
-                return notify_fail("¹ñÌ¨µÚ"+place+"¸ö¿Õ¼äÊÇ¿ÕµÄ¡£\n");  
+                return notify_fail("æ«ƒå°ç¬¬"+place+"å€‹ç©ºé–“æ˜¯ç©ºçš„ã€‚\n");  
          
        price=ob->query("place_"+place+"/price");
        if (me->query("stocks/balance") < price && ob->query("owner_id") != me->query("id")) 
-                return notify_fail("ÄãµÄYSG²»¹»¡£\n");
+                return notify_fail("ä½ çš„YSGä¸å¤ ã€‚\n");
        newobj=get_item(ob,place);
        if(newobj && newobj->move(me)) 
        {             
@@ -138,15 +138,15 @@ int do_buy(string arg)
           if (ob->query("place_"+place+"/amount")<=0)
               ob->delete("place_"+place);
                   if(ob->query("owner_id") != me->query("id"))
-                  message_vision("$NÂòÏÂÁËÒ»"+newobj->query("unit")+newobj->name()+NOR+"¡£\n",me); 
-          else message_vision("$N´Ó¹ñÌ¨ÉÏ³·ÏÂÁËÒ»"+newobj->query("unit")+newobj->name()+NOR+"¡£\n",me); 
+                  message_vision("$Nè²·ä¸‹äº†ä¸€"+newobj->query("unit")+newobj->name()+NOR+"ã€‚\n",me); 
+          else message_vision("$Nå¾æ«ƒå°ä¸Šæ’¤ä¸‹äº†ä¸€"+newobj->query("unit")+newobj->name()+NOR+"ã€‚\n",me); 
           ob->save();
           me->save();
           me->start_busy(2);
                  return 1;
         }else{
                 destruct(newobj);
-                return notify_fail("ÂòÎïÆ·Ê§°Ü¡£\n");
+                return notify_fail("è²·ç‰©å“å¤±æ•—ã€‚\n");
         }
 }
 
@@ -160,23 +160,23 @@ int do_look(string arg)
     
     if (!arg) return 0;
     if (arg == "counter") {
-            str=HIB"Íæ¼ÒÖ®³ÇµÄ¹ñÌ¨¡£\n"NOR;
-            str+="²é¿´ÎïÆ·ÏêÏ¸×ÊÁÏ£ºlook <ĞòºÅ> in counter ¡£\n";
-            str+="°ÚÉÏÎïÆ·×¼±¸³öÊÛ£ºsell <ÎïÆ·ID> at <ĞòºÅ> for <µ¥¼Û>\n";
-            str+="ÂôÏÂ¹ñÌ¨ÀïµÄÎïÆ·£ºbuy <ĞòºÅ> from counter\n";
-            str+="È¡³ö¹ñÌ¨ÀïµÄ»õ¿î£ºqu <ÊıÁ¿> from counter\n";
-            str+="©°¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª©´\n";
-            str+=   "©¦ĞòºÅ   ÎïÆ·Ãû³Æ     ID                 ÊıÁ¿        µ¥¼Û\n";  
-            str+="©À¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª©È\n";
+            str=HIB"ç©å®¶ä¹‹åŸçš„æ«ƒå°ã€‚\n"NOR;
+            str+="æŸ¥çœ‹ç‰©å“è©³ç´°è³‡æ–™ï¼šlook <åºè™Ÿ> in counter ã€‚\n";
+            str+="æ“ºä¸Šç‰©å“æº–å‚™å‡ºå”®ï¼šsell <ç‰©å“ID> at <åºè™Ÿ> for <å–®åƒ¹>\n";
+            str+="è³£ä¸‹æ«ƒå°è£¡çš„ç‰©å“ï¼šbuy <åºè™Ÿ> from counter\n";
+            str+="å–å‡ºæ«ƒå°è£¡çš„è²¨æ¬¾ï¼šqu <æ•¸é‡> from counter\n";
+            str+="â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”\n";
+            str+=   "â”‚åºè™Ÿ   ç‰©å“åç¨±     ID                 æ•¸é‡        å–®åƒ¹\n";  
+            str+="â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤\n";
             for (j = 1; j<ob->query("capacity")+1; j++) { 
             if (ob->query("place_"+j+"/have")=="have")
-                    str+=sprintf("©¦%2d£º%16' 's\t%16' 's\t%d\t%d\t\t\t©¦\n",j,ob->query("place_"+j+"/attribute/name"),
+                    str+=sprintf("â”‚%2dï¼š%16' 's\t%16' 's\t%d\t%d\t\t\tâ”‚\n",j,ob->query("place_"+j+"/attribute/name"),
                     ob->query("place_"+j+"/attribute/id"),ob->query("place_"+j+"/amount"),
                     ob->query("place_"+j+"/price"));
-            else  str+=sprintf("©¦%2d£º <¿Õ>\t\t\t\t\t\t\t\t©¦\n",j);
+            else  str+=sprintf("â”‚%2dï¼š <ç©º>\t\t\t\t\t\t\t\tâ”‚\n",j);
        }
-        str+="©¸¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª©¼\n";  
-        str+="µ±Ç°»õ¿î£º"+ob->query("payment")+"¡£\n"; 
+        str+="â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜\n";  
+        str+="ç•¶å‰è²¨æ¬¾ï¼š"+ob->query("payment")+"ã€‚\n"; 
         write(str);
         return 1;
     }
@@ -192,7 +192,7 @@ int do_look(string arg)
                             destruct(obj);
                             return 1;
                     }
-            }else write("Õâ¸öÎ»ÖÃÊÇ¿ÕµÄ¡£\n");
+            }else write("é€™å€‹ä½ç½®æ˜¯ç©ºçš„ã€‚\n");
             return 1;        
     } 
     return 0;
@@ -207,22 +207,22 @@ int do_qu(string arg)
         int place,price,j; 
          
         if(ob->query("owner_id")!=me->query("id")) 
-                return notify_fail("ÄãÏëµ±Ğ¡Íµ£¿£¿\n");        
+                return notify_fail("ä½ æƒ³ç•¶å°å·ï¼Ÿï¼Ÿ\n");        
         if(!arg)  
-                return notify_fail("ÄãÒªÈ¡¶àÉÙÇ®£¿<Ö¸Áî>:qu <ÊıÁ¿> from counter\n");  
+                return notify_fail("ä½ è¦å–å¤šå°‘éŒ¢ï¼Ÿ<æŒ‡ä»¤>:qu <æ•¸é‡> from counter\n");  
         if(me->is_busy()) 
-                return notify_fail("ÄãÕıÃ¦×ÅÄØ£¡\n");  
+                return notify_fail("ä½ æ­£å¿™è‘—å‘¢ï¼\n");  
         if (sscanf(arg,"%d from counter",price)!=1)     
-                return notify_fail("ÄãÒªÈ¡¶àÉÙÇ®£¿<Ö¸Áî>:qu <ÊıÁ¿> from counter\n");
+                return notify_fail("ä½ è¦å–å¤šå°‘éŒ¢ï¼Ÿ<æŒ‡ä»¤>:qu <æ•¸é‡> from counter\n");
                   
-        if (price <= 0) return notify_fail("ÄãÏë¸ÉÂïÄØ£¿\n");
+        if (price <= 0) return notify_fail("ä½ æƒ³å¹¹å˜›å‘¢ï¼Ÿ\n");
 
-        if (ob->query("payment") < price) return notify_fail("¹ñÌ¨ÀïÃ»ÓĞÕâÃ´¶à»õ¿î¡£\n");
+        if (ob->query("payment") < price) return notify_fail("æ«ƒå°è£¡æ²’æœ‰é€™éº¼å¤šè²¨æ¬¾ã€‚\n");
 
         ob->add("payment",-1 * price);
         me->add("stocks/balance", price);
         me->start_busy(2);
-        message_vision("$N´Ó¹ñÌ¨ÉÏÈ¡³ö"+ price +" YSGµÄ»õ¿î²¢´æÈëÁË¹ÉÊĞ¡£\n",me); 
+        message_vision("$Nå¾æ«ƒå°ä¸Šå–å‡º"+ price +" YSGçš„è²¨æ¬¾ä¸¦å­˜å…¥äº†è‚¡å¸‚ã€‚\n",me); 
         
         ob->save();
         me->save();

@@ -5,11 +5,11 @@ inherit F_DEALER;
 
 void create()
 {
-        set_name("Ä½ÈİºÀ", ({"murong hao", "murong", "hao"}));
-        set("title", "ÀÏ°å");
-        set("gender", "ÄĞĞÔ");
+        set_name("æ…•å®¹è±ª", ({"murong hao", "murong", "hao"}));
+        set("title", "è€æ¿");
+        set("gender", "ç”·æ€§");
         set("age", 25);
-        set("long", "Ä½ÈİºÀÊÇÄ½ÈİÊÀ¼ÒµÄµÜ×Ó¡£\n");
+        set("long", "æ…•å®¹è±ªæ˜¯æ…•å®¹ä¸–å®¶çš„å¼Ÿå­ã€‚\n");
         set("combat_exp", 90000);
         set("attitude", "heroic"); 
         set_skill("sword", 50);
@@ -47,16 +47,16 @@ void greeting(object ob)
 {
         if (! ob || ! visible(ob) || environment(ob) != environment())
                 return;
-        say(name() + "Âş²»¾­ĞÄµÄ¿´ÁËÄãÒ»ÑÛ£¬Ë³ÊÖÄÃÆğÁËÉíÅÔ"
-            "µÄÒ»°Ñ³¤½£ÓÃÒÂĞäÊÃÁËÊÃ¡£\n");
+        say(name() + "æ¼«ä¸ç¶“å¿ƒçš„çœ‹äº†ä½ ä¸€çœ¼ï¼Œé †æ‰‹æ‹¿èµ·äº†èº«æ—"
+            "çš„ä¸€æŠŠé•·åŠç”¨è¡£è¢–æ‹­äº†æ‹­ã€‚\n");
 }
 
 int accept_fight(object me)
 {
-        command("say ËûÂèµÄ£¡ÄãÒ»½øÀ´ÀÏ×Ó¾ÍÖªµÀÄãÊÇ³å×ÅÎÒÀ´µÄ£¡\n");   
+        command("say ä»–åª½çš„ï¼ä½ ä¸€é€²ä¾†è€å­å°±çŸ¥é“ä½ æ˜¯æ²–è‘—æˆ‘ä¾†çš„ï¼\n");   
         command("hate");
         command("grin");
-        command("say ÎÒ²»ÊÇºÃÆÛ¸ºµÄ£¡"+RANK_D->query_rude(me)+"ÄãÄÃÃüÀ´°É£¡");
+        command("say æˆ‘ä¸æ˜¯å¥½æ¬ºè² çš„ï¼"+RANK_D->query_rude(me)+"ä½ æ‹¿å‘½ä¾†å§ï¼");
         command("kill"+query("id", me));
 
         return 1;

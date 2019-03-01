@@ -1,13 +1,13 @@
-// bing.c ¹Ù±ø
+// bing.c å®˜å…µ
 
 inherit NPC;
 
 void create()
 {
-        set_name("»Ø×å±ø", ({ "guan bing", "bing" }));
+        set_name("å›æ—å…µ", ({ "guan bing", "bing" }));
         set("age", 32);
-        set("gender", "ÄĞĞÔ");
-        set("long", "ËûÊÇ¸öÊù±ß¶àÄêµÄÀÏ±ø¡£Äê¼Í²»Ğ¡ÁË£¬µ«ÉĞÎ´³É¼Ò¡£\n");
+        set("gender", "ç”·æ€§");
+        set("long", "ä»–æ˜¯å€‹æˆé‚Šå¤šå¹´çš„è€å…µã€‚å¹´ç´€ä¸å°äº†ï¼Œä½†å°šæœªæˆå®¶ã€‚\n");
         set("attitude", "peaceful");
         set("str", 24);
         set("dex", 16);
@@ -27,8 +27,8 @@ void create()
 
         set("chat_chance_combat", 10);
         set("chat_msg_combat", ({
-                "»Ø×å¹Ù±øºÈµÀ£º´óµ¨µóÃñ£¬¾¹¸ÒÔì·´²»³É£¿\n",
-                "»Ø×å¹Ù±øºÈµÀ£ºÅÜµÃÁËºÍÉĞÅÜ²»ÁËÃí£¬Äã»¹ÊÇ¿ì¿ìÊøÊÖ¾ÍÇÜ£¡\n",
+                "å›æ—å®˜å…µå–é“ï¼šå¤§è†½åˆæ°‘ï¼Œç«Ÿæ•¢é€ åä¸æˆï¼Ÿ\n",
+                "å›æ—å®˜å…µå–é“ï¼šè·‘å¾—äº†å’Œå°šè·‘ä¸äº†å»Ÿï¼Œä½ é‚„æ˜¯å¿«å¿«æŸæ‰‹å°±æ“’ï¼\n",
         }));
         setup();
         carry_object(__DIR__"obj/gangdao")->wield();
@@ -37,7 +37,7 @@ void create()
 
 int accept_fight(object me)
 {
-        command("say ´óÒ¯ÎÒÊØ±ß¹ØÀÛµÃÒªËÀ£¬Ã»¿ÕºÍ" + RANK_D->query_respect(me)
-                + "¹ıÕĞÍæ¡£\n");
+        command("say å¤§çˆºæˆ‘å®ˆé‚Šé—œç´¯å¾—è¦æ­»ï¼Œæ²’ç©ºå’Œ" + RANK_D->query_respect(me)
+                + "éæ‹›ç©ã€‚\n");
         return 0;
 }

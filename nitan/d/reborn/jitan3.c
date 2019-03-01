@@ -8,10 +8,10 @@ void start_worship(object who, int n);
 
 void create()
 {
-        set("short", "ºâÉ½¼ÀÌ³");
+        set("short", "è¡¡å±±ç¥­å£‡");
         set("long", @LONG
-ÎåÔÀÖ®ÄÏÔÀºâÉ½¼ÀÌ³´¦£¬¼ÀÌ³ÉÏÓÐÇàÍ­¶¦ÏãÂ¯Ò»×ù£¬ÖÕÄêÏã»ð²»Ãð£¬
-ÈôÉíÓÐÑÖÍõÆõ£¬µãÉÏÕÙÉñÏã£¬Ôò¿ÉÕÙ»½¡¸ºâÉ½¸®¾ý¡¹³öÏÖ¡£¡£
+äº”å²³ä¹‹å—å²³è¡¡å±±ç¥­å£‡è™•ï¼Œç¥­å£‡ä¸Šæœ‰é’éŠ…é¼Žé¦™çˆä¸€åº§ï¼Œçµ‚å¹´é¦™ç«ä¸æ»…ï¼Œ
+è‹¥èº«æœ‰é–»çŽ‹å¥‘ï¼Œé»žä¸Šå¬ç¥žé¦™ï¼Œå‰‡å¯å¬å–šã€Œè¡¡å±±åºœå›ã€å‡ºç¾ã€‚ã€‚
 LONG );
         set("exits", ([
                 "down" : "/d/henshan/wangyuetai",
@@ -45,22 +45,22 @@ int do_put(string arg)
                 
         if( where == "xiang lu" ) {
                 if( what != "magic xiang" ) {
-                        tell_object(me, "ÇàÍ­¶¦ÏãÂ¯Àï¿É²»ÄÜÂÒÈÓ¶«Î÷£¡\n");
+                        tell_object(me, "é’éŠ…é¼Žé¦™çˆè£¡å¯ä¸èƒ½äº‚æ‰”æ±è¥¿ï¼\n");
                         return 1;
                 }  
                              
                 if( !objectp(obj = present(what, me)) &&
                     !objectp(obj = present(what, env)) ) {
-                        tell_object(me, "ÄãÉíÉÏºÍ¸½½üÃ»ÓÐÕâÑù¶«Î÷°¡¡£\n");
+                        tell_object(me, "ä½ èº«ä¸Šå’Œé™„è¿‘æ²’æœ‰é€™æ¨£æ±è¥¿å•Šã€‚\n");
                         return 1;
                 }
 
                 if( present("henshan fujun", this_object()) ) {
-                        tell_object(me, "ºâÉ½¸®¾ýÒÑ¾­ÔÚÄãÃæÇ°ÁË£¬Äã¾ÍÃ»ÓÐÕâ¸ö±ØÒªÁË°É¡£\n");
+                        tell_object(me, "è¡¡å±±åºœå›å·²ç¶“åœ¨ä½ é¢å‰äº†ï¼Œä½ å°±æ²’æœ‰é€™å€‹å¿…è¦äº†å§ã€‚\n");
                         return 1;
                 }
                                         
-                message_vision( MAG "$N" MAG "½«ÕÙÉñÏã²å½øÍ­¶¦ÏãÂ¯Àï£¬µ­µ­µÄÏãÎ¶ÃÖÂþ×ÅËÄÖÜ¡£\n" NOR, me);
+                message_vision( MAG "$N" MAG "å°‡å¬ç¥žé¦™æ’é€²éŠ…é¼Žé¦™çˆè£¡ï¼Œæ·¡æ·¡çš„é¦™å‘³å½Œæ¼«è‘—å››å‘¨ã€‚\n" NOR, me);
                 obj->move(ob);
                 set("no_get", 1, obj);
                 obj->start_borrowing();  
@@ -83,5 +83,5 @@ void start_worship(object who, int n)
         set("worship",query("id",  who), ob);
         ob->move(this_object());
         ob->start_borrowing(); 
-        ob->command("say ¡¸ºÎ·½À´ÈË£¬¶·µ¨ºô»½±¾¾ýÏÖÉí£¿¡¹");
+        ob->command("say ã€Œä½•æ–¹ä¾†äººï¼Œé¬¥è†½å‘¼å–šæœ¬å›ç¾èº«ï¼Ÿã€");
 }

@@ -1,38 +1,38 @@
 
         replaceable()
 
-        Ãû³Æ£º
-                replaceable() ÅÐ¶ÏÊÇ·ñÓÐÔÚµ±Ç°µÄ¼Ì³ÐµÈ¼¶ÉÏ
-                        ¶¨ÒåµÄº¯Êý¡£
+        åç¨±ï¼š
+                replaceable() åˆ¤æ–·æ˜¯å¦æœ‰åœ¨ç•¶å‰çš„ç¹¼æ‰¿ç­‰ç´šä¸Š
+                        å®šç¾©çš„å‡½æ•¸ã€‚
 
-        Óï·¨£º
+        èªžæ³•ï¼š
                 int replaceable(object ob);
-                ÕûÊý replaceable(Îï¼þ ob);
+                æ•´æ•¸ replaceable(ç‰©ä»¶ ob);
 
                 int replaceable(object ob, string *fnames);
-                ÕûÊý replaceable(Îï¼þ ob, ×Ö·û´®ÕóÁÐ fnames);
+                æ•´æ•¸ replaceable(ç‰©ä»¶ ob, å­—ç¬¦ä¸²é™£åˆ— fnames);
 
-        ÓÃ·¨£º
-                ÔÚµÚ¶þÖÖ¸ñÊ½ÖÐ£¬ÔÚÎï¼þ ob ÖÐµÄËùÓÐº¯Êý£¬³ýÁË×Ö
-                ·û´®ÕóÁÐ fnames ÖÐÖ¸¶¨º¯ÊýÃûµÄº¯ÊýÒÔÍâ£¬Èç¹ûÓÐ
-                ÈÎºÎº¯ÊýÊÇÔÚÎï¼þ ob ÖÐÃ÷È·¶¨ÒåµÄ¶ø²»ÊÇ¼Ì³ÐÀ´µÄ£¬
-                Ôò·µ»Ø 0¡£Èç¹ûÃ»ÓÐÕâÑùµÄº¯Êý£¬Ôò·µ»Ø 1¡£
+        ç”¨æ³•ï¼š
+                åœ¨ç¬¬äºŒç¨®æ ¼å¼ä¸­ï¼Œåœ¨ç‰©ä»¶ ob ä¸­çš„æ‰€æœ‰å‡½æ•¸ï¼Œé™¤äº†å­—
+                ç¬¦ä¸²é™£åˆ— fnames ä¸­æŒ‡å®šå‡½æ•¸åçš„å‡½æ•¸ä»¥å¤–ï¼Œå¦‚æžœæœ‰
+                ä»»ä½•å‡½æ•¸æ˜¯åœ¨ç‰©ä»¶ ob ä¸­æ˜Žç¢ºå®šç¾©çš„è€Œä¸æ˜¯ç¹¼æ‰¿ä¾†çš„ï¼Œ
+                å‰‡è¿”å›ž 0ã€‚å¦‚æžœæ²’æœ‰é€™æ¨£çš„å‡½æ•¸ï¼Œå‰‡è¿”å›ž 1ã€‚
 
-                Èç¹ûÊÇµÚÒ»ÖÖ¸ñÊ½(Ò²¾ÍÊÇÊ¡ÂÔµÚ¶þ¸ö²ÎÊý)£¬Ä¬ÈÏµÄ
-                µÚ¶þ¸ö²ÎÊýÎª ({ "create" })£¬Ò²¾ÍÊÇÄ¬ÈÏ²»¼ì²é
-                create() º¯Êý¡£
+                å¦‚æžœæ˜¯ç¬¬ä¸€ç¨®æ ¼å¼(ä¹Ÿå°±æ˜¯çœç•¥ç¬¬äºŒå€‹åƒæ•¸)ï¼Œé»˜èªçš„
+                ç¬¬äºŒå€‹åƒæ•¸ç‚º ({ "create" })ï¼Œä¹Ÿå°±æ˜¯é»˜èªä¸æª¢æŸ¥
+                create() å‡½æ•¸ã€‚
 
-                Õâ¸öº¯ÊýµÄÄ¿µÄÊÇÄÜ¹»×Ô¶¯ÅÐ¶ÏÊÇ·ñ¿ÉÒÔ replace_program().
+                é€™å€‹å‡½æ•¸çš„ç›®çš„æ˜¯èƒ½å¤ è‡ªå‹•åˆ¤æ–·æ˜¯å¦å¯ä»¥ replace_program().
 
-                ×¢Òâ£ºÓÉÓÚÄ¬ÈÏÊÇºöÂÔ create() ²»¼ì²é£¬Ö»ÓÐµ±Äã
-                ²»´òËã clone Õâ¸öÎï¼þÊ±£¬replaceable() º¯Êý·µ»Ø
-                TRUE ²Å¿ÉÒÔ°²È«µØºô½Ð replace_program() º¯Êý¡£
+                æ³¨æ„ï¼šç”±äºŽé»˜èªæ˜¯å¿½ç•¥ create() ä¸æª¢æŸ¥ï¼Œåªæœ‰ç•¶ä½ 
+                ä¸æ‰“ç®— clone é€™å€‹ç‰©ä»¶æ™‚ï¼Œreplaceable() å‡½æ•¸è¿”å›ž
+                TRUE æ‰å¯ä»¥å®‰å…¨åœ°å‘¼å« replace_program() å‡½æ•¸ã€‚
 
-        ²Î¿¼£º
+        åƒè€ƒï¼š
                 replace_program,
                 functions,
                 function_exists,
                 inherit_list
 
-        by ·¢ÏÖºÅ(Find@tx)
+        by ç™¼ç¾è™Ÿ(Find@tx)
 

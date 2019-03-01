@@ -1,23 +1,22 @@
-// heisuo.c  ºÚË÷º
-
+// heisuo.c  é»‘ç´¢â–¡
 #include <ansi.h>
 #include <weapon.h>
 inherit WHIP;
 
 void create()
 {
-        set_name(BLK"ºÚË÷"NOR, ({ "heisuo", "bian" }));
+        set_name(BLK"é»‘ç´¢"NOR, ({ "heisuo", "bian" }));
         set_weight(500);
         set("taskobj", 1);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ù");
-                set("long", "ÕâÊÇÒ»¸ù³¤Ë÷£¬Í¨Ìå÷îºÚÎŞ¹â£¬Îè¶¯Ö®Ê±ÇÆ²»¼û°ëµãÓ°×Ó¡£\n");
+                set("unit", "æ ¹");
+                set("long", "é€™æ˜¯ä¸€æ ¹é•·ç´¢ï¼Œé€šé«”é»é»‘ç„¡å…‰ï¼Œèˆå‹•ä¹‹æ™‚ç§ä¸è¦‹åŠé»å½±å­ã€‚\n");
                 set("value", 0);
                 set("material", "leather");
-                set("wield_msg", "$N¡¸à§¡¹µÄÒ»Éù¶¶³öÒ»Ìõ$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n¾í»ØÑü¼ä¡£\n");
+                set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€è²æŠ–å‡ºä¸€æ¢$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°‡æ‰‹ä¸­çš„$nå·å›è…°é–“ã€‚\n");
         }
         setup();
 }

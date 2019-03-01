@@ -11,13 +11,13 @@ void init()
 
 void create()
 {
-        set_name(HIG"¶¬²»À­"NOR, ({"dongbula"}));
+        set_name(HIG"å†¬ä¸æ‹‰"NOR, ({"dongbula"}));
         set("taskobj", 1);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "ÕâÊÇÒ»°ÑÎ¬Îá¶û×åµÄÏÒÀÖÆ÷¶¬²»À­¡£Äã¿ÉÒÔÑİ×à(play)Ëü¡£\n");
+                set("unit", "æŠŠ");
+                set("long", "é€™æ˜¯ä¸€æŠŠç¶­å¾çˆ¾æ—çš„å¼¦æ¨‚å™¨å†¬ä¸æ‹‰ã€‚ä½ å¯ä»¥æ¼”å¥(play)å®ƒã€‚\n");
                 set("value", 0);
         }
 //        setup();

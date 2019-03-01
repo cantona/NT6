@@ -1,4 +1,4 @@
-// zhao.c °ËØÔÕÆ¡¸ÕÖ¡¹×Ö¾÷
+// zhao.c å…«å¦æŒã€Œç½©ã€å­—è¨£
 // Create by Haiyan 2002
 
 #include <ansi.h>
@@ -14,30 +14,30 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail("°ËØÔÕÆ¡¸ÕÖ¡¹×Ö¾÷Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("å…«å¦æŒã€Œç½©ã€å­—è¨£åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if (target->is_busy())
-                return notify_fail(target->name() + "Ä¿Ç°Õı×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É£¡\n");
+                return notify_fail(target->name() + "ç›®å‰æ­£è‡ªé¡§ä¸æš‡ï¼Œæ”¾è†½æ”»æ“Šå§ï¼\n");
                 
         if ((level = me->query_skill("bagua-zhang", 1)) < 100)
-                return notify_fail("ÄãµÄ°ËØÔÕÆ²»¹»æµÊì£¬²»»áÊ¹ÓÃ¡¸ÕÖ¡¹×Ö¾÷¡£\n");
+                return notify_fail("ä½ çš„å…«å¦æŒä¸å¤ å«»ç†Ÿï¼Œä¸æœƒä½¿ç”¨ã€Œç½©ã€å­—è¨£ã€‚\n");
 
         if( query("neili", me)<60 )
-                return notify_fail("ÄãÏÖÔÚÕæÆø²»¹»£¬ÎŞ·¨Ê¹ÓÃ¡¸ÕÖ¡¹×Ö¾÷¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çœŸæ°£ä¸å¤ ï¼Œç„¡æ³•ä½¿ç”¨ã€Œç½©ã€å­—è¨£ã€‚\n");
 
-        msg = HIG "$N" HIG "½ÅÏÂ²½·¥¼Ó¿ì£¬Ê¹³ö°ËØÔÕÆ¡¸ÕÖ¡¹×Ö¾÷£¬Ë«ÕÆ"
-              "Îè³öÂşÌìÕÆÓ°£¬½«$n" HIG "ÁıÕÖÔÚµ±ÖĞ¡£\n" NOR;
+        msg = HIG "$N" HIG "è…³ä¸‹æ­¥ä¼åŠ å¿«ï¼Œä½¿å‡ºå…«å¦æŒã€Œç½©ã€å­—è¨£ï¼Œé›™æŒ"
+              "èˆå‡ºæ¼«å¤©æŒå½±ï¼Œå°‡$n" HIG "ç± ç½©åœ¨ç•¶ä¸­ã€‚\n" NOR;
 
         addn("neili", -30, me);
         if (random(level) > (int)target->query_skill("parry", 1) / 2)
         {
-                msg += HIR "$p" HIR "Ö»¾õÎŞÊıÕÆÓ°Ïò×Ô¼ºÏ®À´£¬ÊÖÃ¦½ÅÂÒ£¬"
-                       "´ôÔÚµ±µØ£¬²»Öª¸ÃÈçºÎÓ¦¶Ô£¡\n" NOR;
+                msg += HIR "$p" HIR "åªè¦ºç„¡æ•¸æŒå½±å‘è‡ªå·±è¥²ä¾†ï¼Œæ‰‹å¿™è…³äº‚ï¼Œ"
+                       "å‘†åœ¨ç•¶åœ°ï¼Œä¸çŸ¥è©²å¦‚ä½•æ‡‰å°ï¼\n" NOR;
                 target->start_busy(level / 30);
         } else
         {
-                msg += CYN "È»¶ø$p" CYN "¿´ÆÆÁË$P" CYN "µÄÆóÍ¼£¬×İÉíÒ»Ô¾£¬"
-                       "ÒÑÌø³öÁË$P" CYN "µÄÕÆÊÆ¡£\n" NOR;
+                msg += CYN "ç„¶è€Œ$p" CYN "çœ‹ç ´äº†$P" CYN "çš„ä¼åœ–ï¼Œç¸±èº«ä¸€èºï¼Œ"
+                       "å·²è·³å‡ºäº†$P" CYN "çš„æŒå‹¢ã€‚\n" NOR;
                 me->start_busy(1);
         }
         message_combatd(msg, me, target);

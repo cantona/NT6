@@ -7,10 +7,10 @@ string *names=({
 } );
 void create()
 {
-        set("short", "¶´Ñ¨");
+        set("short", "æ´žç©´");
         set("long",
-"É½ÑÒÏÂÃØ¶´£¬ÇúÕÛÉîåä£¬ÓÐÈçÖî¸ðÎäºîÖ®°ËØÔÃÔÕóÒ»°ã£¬ÓÄÃÕ·±¸´´¦\n"
-"ÓÈÓÐ¹ýÖ®¡£Ô½ÊÇÉîÈëÔ½ÊÇÒõÊª÷î°µ£¬µ½ºóÀ´¾¹ÒÑÄÑ¼ûÎåÖ¸¡£\n"
+"å±±å·–ä¸‹ç§˜æ´žï¼Œæ›²æŠ˜æ·±é‚ƒï¼Œæœ‰å¦‚è«¸è‘›æ­¦ä¾¯ä¹‹å…«å¦è¿·é™£ä¸€èˆ¬ï¼Œå¹½è¬Žç¹å¾©è™•\n"
+"å°¤æœ‰éŽä¹‹ã€‚è¶Šæ˜¯æ·±å…¥è¶Šæ˜¯é™°æ¿•é»æš—ï¼Œåˆ°å¾Œä¾†ç«Ÿå·²é›£è¦‹äº”æŒ‡ã€‚\n"
 );
         set("no_magic", "1");
         setup();
@@ -45,10 +45,10 @@ string *names=({
 } );
 void create()
 {
-        set("short", "¶´Ñ¨");
+        set("short", "æ´žç©´");
         set("long", @LONG
-É½ÑÒÏÂÃØ¶´£¬ÇúÕÛÉîåä£¬ÓÐÈçÖî¸ðÎäºîÖ®°ËØÔÃÔÕóÒ»°ã£¬ÓÄÃÕ·±¸´´¦ÓÈÓÐ¹ýÖ®¡£
-Ô½ÊÇÉîÈëÔ½ÊÇÒõÊª÷î°µ£¬µ½ºóÀ´¾¹ÒÑÄÑ¼ûÎåÖ¸¡£
+å±±å·–ä¸‹ç§˜æ´žï¼Œæ›²æŠ˜æ·±é‚ƒï¼Œæœ‰å¦‚è«¸è‘›æ­¦ä¾¯ä¹‹å…«å¦è¿·é™£ä¸€èˆ¬ï¼Œå¹½è¬Žç¹å¾©è™•å°¤æœ‰éŽä¹‹ã€‚
+è¶Šæ˜¯æ·±å…¥è¶Šæ˜¯é™°æ¿•é»æš—ï¼Œåˆ°å¾Œä¾†ç«Ÿå·²é›£è¦‹äº”æŒ‡ã€‚
 LONG
         );
         set("no_magic", "1");

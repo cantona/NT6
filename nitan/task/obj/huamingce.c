@@ -2,15 +2,15 @@
 inherit TASK;
 void create()
 {
-    set_name( MAG "»¨Ãû²á" NOR, ({ "hua mingce", "mingce" }) );
+    set_name( MAG "èŠ±åå†Š" NOR, ({ "hua mingce", "mingce" }) );
     set_weight(1);
     if( clonep() )
             destruct(this_object());
     else {
-            set("unit", "±¾");
+            set("unit", "æœ¬");
             set("material", "paper");
-            set("long", "Ò»±¾ºì»¨»áµÄ»¨Ãû²á£¬ÉÏÃæ¼ÇÂ¼ÁËËùÓĞºì»¨»áºÃººµÄÃûµ¥¡£\nÕâ¸ö¶«Î÷ÒªÊÇ±»¹Ù¸®µÃµ½ÁË¿É²»µÃÁË¡£\n");
+            set("long", "ä¸€æœ¬ç´…èŠ±æœƒçš„èŠ±åå†Šï¼Œä¸Šé¢è¨˜éŒ„äº†æ‰€æœ‰ç´…èŠ±æœƒå¥½æ¼¢çš„åå–®ã€‚\né€™å€‹æ±è¥¿è¦æ˜¯è¢«å®˜åºœå¾—åˆ°äº†å¯ä¸å¾—äº†ã€‚\n");
           }
-    set("owner", "³Â¼ÒÂå");
+    set("owner", "é™³å®¶æ´›");
     setup();
 }

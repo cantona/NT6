@@ -5,14 +5,14 @@ inherit F_UNIQUE;
  
 void create()
 {
-        set_name("¡¸Ã÷ÓñÉñ¹¦¡¹", ({ "mingyu shengong", "mingyu", "shengong" }));
+        set_name("ã€Œæ˜ç‰ç¥åŠŸã€", ({ "mingyu shengong", "mingyu", "shengong" }));
         set_weight(500);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
+                set("unit", "æœ¬");
                 set("long",
-"ÕâÊÇÒ»±¾±¡±¡µÄÃÜ¼¯£¬¼ÇÔØ×ÅÎŞµĞÓÚÌìÏÂµÄÃ÷Óñ¹¦ÃØ¾÷¡£\n",
+"é€™æ˜¯ä¸€æœ¬è–„è–„çš„å¯†é›†ï¼Œè¨˜è¼‰è‘—ç„¡æ•µäºå¤©ä¸‹çš„æ˜ç‰åŠŸç§˜è¨£ã€‚\n",
         );
                 set("value", 1);
                 set("no_sell", 1);

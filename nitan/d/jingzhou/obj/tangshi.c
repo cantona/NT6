@@ -3,13 +3,13 @@
 inherit ITEM;
 void create()
 {
-        set_name(YEL"ÌÆÊ«Ñ¡¼­"NOR, ({"tangshi book","book","tangshi"}));
+        set_name(YEL"å”è©©é¸è¼¯"NOR, ({"tangshi book","book","tangshi"}));
         set_weight(1500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»±¾Ö½Ò³·¢»ÆµÄ¹ÅÊé£¬ÀïÃæ»¹¼Ğ×Å¼¸ÕÅ×öĞ¬ºÍĞå»¨µÄÖ½Ñù¡£\n");
-                set("unit", "±¾");
+                set("long", "ä¸€æœ¬ç´™é ç™¼é»ƒçš„å¤æ›¸ï¼Œè£¡é¢é‚„å¤¾è‘—å¹¾å¼µåšé‹å’Œç¹¡èŠ±çš„ç´™æ¨£ã€‚\n");
+                set("unit", "æœ¬");
                 set("material", "paper");
         }
         setup();

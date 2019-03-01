@@ -1,4 +1,4 @@
-// tea.c Ïã²è
+// tea.c é¦™èŒ¶
 
 inherit ITEM;
 
@@ -8,13 +8,13 @@ void do_eat();
 int decayed = 0;
 void create()
 {
-        set_name("Ïã²è",({"tea", "cha"}));
+        set_name("é¦™èŒ¶",({"tea", "cha"}));
         set_weight(50);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»±­Ïã²è£¬ÓÆÓÆµØÃ°×ÅÈÈÆø¡«¡«¡«\n");
-                set("unit", "±­");
+                set("long", "ä¸€æ¯é¦™èŒ¶ï¼Œæ‚ æ‚ åœ°å†’è‘—ç†±æ°£ï½ï½ï½\n");
+                set("unit", "æ¯");
                 set("value", 1000);
         set("remaining", 2);
         set("drink_supply", 35);
@@ -39,10 +39,10 @@ int do_drink(string arg)
         
     if( !this_object()->id(arg) ) return 0;
     if( this_player()->is_busy() )
-        return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É¡£\n");
+        return notify_fail("ä½ ä¸Šä¸€å€‹å‹•ä½œé‚„æ²’æœ‰å®Œæˆã€‚\n");
     if( query("water", this_player() )
        >= (int)this_player()->max_water_capacity() )
-     return notify_fail("ÄãÒÑ¾­ºÈÌ«¶àÁË£¬ÔÙÒ²¹à²»ÏÂÒ»µÎË®ÁË¡£\n");
+     return notify_fail("ä½ å·²ç¶“å–å¤ªå¤šäº†ï¼Œå†ä¹ŸçŒä¸ä¸‹ä¸€æ»´æ°´äº†ã€‚\n");
 
         set("value", 0);
     addn("water", query("drink_supply"), this_player());
@@ -50,7 +50,7 @@ int do_drink(string arg)
     e_jing=query("eff_jing", this_player());
     m_jing=query("max_jing", this_player());
 
-// No heal effect for Ïã²è
+// No heal effect for é¦™èŒ¶
 /***
 
     if ( e_jing < m_jing )
@@ -81,12 +81,12 @@ int do_drink(string arg)
     addn("remaining", -1);
         if ( query("remaining") )
         {
-                    message_vision("$N¶ËÆğ±­Ïã²è£¬ÓĞ×ÌÓĞÎ¶µØÆ·ÁË¼¸¿Ú¡£\n"+
-                      "Ò»¹ÉÏãÆøÖ±ÈëĞÄÆ¢£¬$N¾õµÃ¾«ÉñºÃ¶àÁË¡£\n", this_player());
+                    message_vision("$Nç«¯èµ·æ¯é¦™èŒ¶ï¼Œæœ‰æ»‹æœ‰å‘³åœ°å“äº†å¹¾å£ã€‚\n"+
+                      "ä¸€è‚¡é¦™æ°£ç›´å…¥å¿ƒè„¾ï¼Œ$Nè¦ºå¾—ç²¾ç¥å¥½å¤šäº†ã€‚\n", this_player());
         } else 
         { 
-                    message_vision("$N¶ËÆğµñ»¨Ğ¡±­£¬°ÑÊ£ÏÂµÄÏã²èÒ»Òû¶ø¾¡¡£\n"+
-                      "Ò»¹ÉÏãÆøÖ±ÈëĞÄÆ¢£¬$N¾õµÃ¾«ÉñºÃ¶àÁË¡£\n", this_player());
+                    message_vision("$Nç«¯èµ·é›•èŠ±å°æ¯ï¼ŒæŠŠå‰©ä¸‹çš„é¦™èŒ¶ä¸€é£²è€Œç›¡ã€‚\n"+
+                      "ä¸€è‚¡é¦™æ°£ç›´å…¥å¿ƒè„¾ï¼Œ$Nè¦ºå¾—ç²¾ç¥å¥½å¤šäº†ã€‚\n", this_player());
                 
                 destruct(this_object());
         }
@@ -105,18 +105,18 @@ void decay(int phase)
         switch(phase)
         {
                 case 1:
-                        msg =  name(1) + "¿ªÊ¼±äÖÊÁË£¬·¢³öÒ»¹ÉÄÑÎÅµÄâÈÎ¶¡£\n";
+                        msg =  name(1) + "é–‹å§‹è®Šè³ªäº†ï¼Œç™¼å‡ºä¸€è‚¡é›£èçš„é¤¿å‘³ã€‚\n";
                         set("old_name",name(1));
-                        set_name("±äÖÊµÄ" + query("old_name"),({ query("id") }));
+                        set_name("è®Šè³ªçš„" + query("old_name"),({ query("id") }));
                         call_out("decay", 120, phase + 1);
                         break;
                 case 2:
-                        msg = name(1) + "¿ªÊ¼¸¯ÀÃÁË£¬ÉÏÃæ³¤³öĞí¶àÂÌÃ«£¬·¢³öÄÑÎÅµÄ³ôÎ¶¡£\n";
-                        set_name("¸¯ÀÃµÄ" + query("old_name"),({ query("id") }));
+                        msg = name(1) + "é–‹å§‹è…çˆ›äº†ï¼Œä¸Šé¢é•·å‡ºè¨±å¤šç¶ æ¯›ï¼Œç™¼å‡ºé›£èçš„è‡­å‘³ã€‚\n";
+                        set_name("è…çˆ›çš„" + query("old_name"),({ query("id") }));
                         call_out("decay", 60, phase + 1);
                         break;
                 case 3:
-                        msg = "Ò»Õó·ç´µ¹ı£¬°Ñ" + name(1) + "»¯³É»Ò´µÉ¢ÁË¡£\n";
+                        msg = "ä¸€é™£é¢¨å¹éï¼ŒæŠŠ" + name(1) + "åŒ–æˆç°å¹æ•£äº†ã€‚\n";
                         if( env )
                                 all_inventory(this_object())->move(env);
                         tell_room(env, msg);

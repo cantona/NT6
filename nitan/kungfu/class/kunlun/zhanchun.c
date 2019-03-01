@@ -6,9 +6,9 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("ղ��", ({"zhan chun", "zhan", "chun"}));
-        set("long", "���Ǻ�̫����ϲ���ĵ��ӣ����õ�Ҳ��Ϊ������\n");
-        set("gender", "Ů��");
+        set_name("詹春", ({"zhan chun", "zhan", "chun"}));
+        set("long", "她是何太沖最喜歡的弟子，長得倒也頗為俏麗。\n");
+        set("gender", "女性");
         set("age", 24);
         set("attitude", "friendly");
         set("str", 25);
@@ -49,7 +49,7 @@ void create()
         prepare_skill("strike", "kunlun-zhang");
         prepare_skill("cuff", "zhentian-quan");
 
-        create_family("������", 5, "����");
+        create_family("昆侖派", 5, "弟子");
 
         set("chat_chance_combat", 100);
         set("chat_msg_combat", ({
@@ -71,13 +71,13 @@ void attempt_apprentice(object me)
         if (! permit_recruit(me))
                 return;
 
-        if( query("gender", me) != "Ů��" )
+        if( query("gender", me) != "女性" )
         {
-                command("say ʦ����׼�����е��ӣ���ȥ����ʦ��ȥ�ɡ�");
+                command("say 師傅不準我收男弟子，你去找我師兄去吧。");
                 return;
         }
 
-        command("say ��Ȼ" + RANK_D->query_respect(me) + "Ľ������֮����ǧ"
-                "����������������Ե���������Ӣ�ţ��Ҿ�������ɡ�");
+        command("say 既然" + RANK_D->query_respect(me) + "慕昆侖派之名，千"
+                "裡而來，我昆侖派自當廣納天下英才，我就收下你吧。");
         command("recruit "+query("id", me));
 }

@@ -2,17 +2,17 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÕÓÔó±ßÔµ");
+        set("short", "æ²¼æ¾¤é‚Šç·£");
         set("long", @LONG
-ÕâÀïÎÚÔÆÃÜ²¼£¬ÌìÉ«¼«°µ¡£ÔÙÍùÇ°×ß¾ÍÊÇÎäÁÖÖÐÓÐÃûµÄËÀÓò 
-£­£­»ðÕÓÔó¡£ÄÇÀï²»µ«¾£¼¬ÃÜ²¼£¬ÃÍÊÞ³öÃ»£¬»¹ÓÐÄÜÖÁÈËÓÚËÀµØ 
-ÔÚÒ»Ë²¼äËæÊ±ÅçÉäµÄ¶¾»ðÈª¡£ÕâÓÐÔ­Ê¼É­ÁÖÈë¿Ú(Forest door)¡£
+é€™è£¡çƒé›²å¯†å¸ƒï¼Œå¤©è‰²æ¥µæš—ã€‚å†å¾€å‰èµ°å°±æ˜¯æ­¦æž—ä¸­æœ‰åçš„æ­»åŸŸ 
+ï¼ï¼ç«æ²¼æ¾¤ã€‚é‚£è£¡ä¸ä½†èŠæ£˜å¯†å¸ƒï¼ŒçŒ›ç¸å‡ºæ²’ï¼Œé‚„æœ‰èƒ½è‡³äººäºŽæ­»åœ° 
+åœ¨ä¸€çž¬é–“éš¨æ™‚å™´å°„çš„æ¯’ç«æ³‰ã€‚é€™æœ‰åŽŸå§‹æ£®æž—å…¥å£(Forest door)ã€‚
 LONG
         );
         set("item_desc", ([
-                "door" : "´ÓÕâ¸öÈë¿Ú¿ÉÒÔ½øÈëÔ­Ê¼É­ÁÖÃÔ¹¬¸±±¾¡£(enter door)\n",
-                "Forest door" : "´ÓÕâ¸öÈë¿Ú¿ÉÒÔ½øÈëÔ­Ê¼É­ÁÖÃÔ¹¬¸±±¾¡£(enter door)\n",
-                "forest door" : "´ÓÕâ¸öÈë¿Ú¿ÉÒÔ½øÈëÔ­Ê¼É­ÁÖÃÔ¹¬¸±±¾¡£(enter door)\n",
+                "door" : "å¾žé€™å€‹å…¥å£å¯ä»¥é€²å…¥åŽŸå§‹æ£®æž—è¿·å®®å‰¯æœ¬ã€‚(enter door)\n",
+                "Forest door" : "å¾žé€™å€‹å…¥å£å¯ä»¥é€²å…¥åŽŸå§‹æ£®æž—è¿·å®®å‰¯æœ¬ã€‚(enter door)\n",
+                "forest door" : "å¾žé€™å€‹å…¥å£å¯ä»¥é€²å…¥åŽŸå§‹æ£®æž—è¿·å®®å‰¯æœ¬ã€‚(enter door)\n",
         ]));
 
         set("exits",([

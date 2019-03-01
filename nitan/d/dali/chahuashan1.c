@@ -4,10 +4,10 @@
 inherit ROOM;
 void create()
 {
-        set("short","�軨ɽ");
+        set("short","茶花山");
         set("long", @LONG
-��վ��һ��Сɽ������£�����ʢ���軨����Ʒ�ֵĲ軨�����
-�����������ƬСɽ��Ҳ�����˺ò衣���߲�Զ���Ǵ����ǵı����ˡ�
+你站在一座小山西面腳下，大理盛產茶花，好品種的茶花遍地生
+長，東面的這片小山林也長滿了好茶。西邊不遠就是大理城的北門了。
 LONG );
         set("outdoors", "dalic");
         set("exits",([ /* sizeof() == 1 */

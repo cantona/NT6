@@ -4,13 +4,13 @@ inherit BOOK;
 
 void create()
 {
-        set_name("Ñªµ¶¾­", ({ "xuedao jing", "jing" }));
+        set_name("è¡€åˆ€ç¶“", ({ "xuedao jing", "jing" }));
         set_weight(200);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
-                set("long","ÕâÊÇÒ»±¾±¡±¡µÄË¿Ö¯Ğ¡²á×Ó£¬ÉÏÃæĞ´×ÅÑªµ¶¾­Èı¸öĞ¡×Ö¡£\n");
+                set("unit", "æœ¬");
+                set("long","é€™æ˜¯ä¸€æœ¬è–„è–„çš„çµ²ç¹”å°å†Šå­ï¼Œä¸Šé¢å¯«è‘—è¡€åˆ€ç¶“ä¸‰å€‹å°å­—ã€‚\n");
                 set("no_sell", 1);
                 set("material", "silk");
                 set("skill", ([

@@ -1,5 +1,5 @@
 // Written by Lonely@chinamud.cn
-// crystal.c Ë®¾§
+// crystal.c æ°´æ™¶
 
 #include <ansi.h>
 
@@ -7,15 +7,15 @@ inherit ITEM;
 
 void create()
 {
-        set_name("ºÚË®¾§", ({ "black crystal", "crystal" }) );
+        set_name("é»‘æ°´æ™¶", ({ "black crystal", "crystal" }) );
         set_weight(1);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", HIC "Ò»¿éºÚÉ«µÄË®¾§£¬¿ÉÒÔ³éÈ¡(extract)¶¯Ì¬×°±¸µÄÊôĞÔ£¬ÓÃÀ´ÏâÇ¶»òÇ¿»¯×ÔÔì×°±¸¡£\n" NOR);
+                set("long", HIC "ä¸€å¡Šé»‘è‰²çš„æ°´æ™¶ï¼Œå¯ä»¥æŠ½å–(extract)å‹•æ…‹è£å‚™çš„å±¬æ€§ï¼Œç”¨ä¾†é‘²åµŒæˆ–å¼·åŒ–è‡ªé€ è£å‚™ã€‚\n" NOR);
                 set("value", 50000);
                 set("can_extract", 1);
-                set("unit", "¿é");
+                set("unit", "å¡Š");
                 set("autoload", 1);
         }
         setup();
@@ -30,23 +30,23 @@ int do_extract(object obj)
 
         ob = this_object();
 
-        if( !obj ) return notify_fail("Ã»ÓĞÕâ¸öÎïÆ·¡£\n");
+        if( !obj ) return notify_fail("æ²’æœ‰é€™å€‹ç‰©å“ã€‚\n");
 
         if( query("enchase", ob) )
-                return notify_fail("ºÚÉ«Ë®¾§ÒÑ¾­³éÈ¡¹ıÒ»¸öÊôĞÔÁË¡£\n");
+                return notify_fail("é»‘è‰²æ°´æ™¶å·²ç¶“æŠ½å–éä¸€å€‹å±¬æ€§äº†ã€‚\n");
 
         if( !query("enchase", obj) || !(prop=query("enchase/apply_prop", obj)) )
-                return notify_fail("Õâ¸öÎïÆ·ÉÏÃæÃ»ÓĞ¿ÉÓÃÀ´³éÈ¡µÄÊôĞÔ¡£\n");
+                return notify_fail("é€™å€‹ç‰©å“ä¸Šé¢æ²’æœ‰å¯ç”¨ä¾†æŠ½å–çš„å±¬æ€§ã€‚\n");
 
         if( obj->is_item_make() )
-                return notify_fail("ºÚÉ«Ë®¾§Ö»¿É³éÈ¡¶¯Ì¬×°±¸µÄÊôĞÔ¡£\n");
+                return notify_fail("é»‘è‰²æ°´æ™¶åªå¯æŠ½å–å‹•æ…‹è£å‚™çš„å±¬æ€§ã€‚\n");
 
         if( this_player()->query_skill("enchanting", 1) < 200 &&
             !present("enchant scroll", this_player()) )
-                return notify_fail("ÄãµÄ¸½Ä§¼¼ÒÕ²»¹»£¬Ò²Ã»ÓĞ¸½Ä§¾íÖá£¬²»¸ÒÃ³È»ÏÂÊÖ¡£\n");
+                return notify_fail("ä½ çš„é™„é­”æŠ€è—ä¸å¤ ï¼Œä¹Ÿæ²’æœ‰é™„é­”å·è»¸ï¼Œä¸æ•¢è²¿ç„¶ä¸‹æ‰‹ã€‚\n");
 
         if( random(100) < 50 )
-                return notify_fail("³éÈ¡Ê§°Ü¡£\n");
+                return notify_fail("æŠ½å–å¤±æ•—ã€‚\n");
 
         ks = keys(prop);
         key = ks[random(sizeof(ks))];
@@ -75,36 +75,36 @@ string extra_long()
         string *apply, str, msg, type;
         int value;
 
-        str =  sprintf( YEL "\nÎïÆ·ÊôĞÔ : ÏâÇ¶Îï<Ë®¾§>£¬ÖØÁ¿%d¿Ë£¬ÏÂÏß%s¶ªÊ§\n" NOR,
+        str =  sprintf( YEL "\nç‰©å“å±¬æ€§ : é‘²åµŒç‰©<æ°´æ™¶>ï¼Œé‡é‡%då…‹ï¼Œä¸‹ç·š%sä¸Ÿå¤±\n" NOR,
                         this_object()->query_weight(),
-                        (this_object()->query_autoload() || query("autoload")) ? "²»" : "" );
+                        (this_object()->query_autoload() || query("autoload")) ? "ä¸" : "" );
 
         if( query("bindowner") )
-                msg = sprintf( "ÒÑ¾­°ó¶¨Ê¹ÓÃÕß(%s)", query("bindowner") );
+                msg = sprintf( "å·²ç¶“ç¶å®šä½¿ç”¨è€…(%s)", query("bindowner") );
         else
-                msg = "ÔİÎ´°ó¶¨Ê¹ÓÃÕß";
+                msg = "æš«æœªç¶å®šä½¿ç”¨è€…";
 
         if( intp(t = query("bindable")) && t > 0 ) {
-                if( t == 1 )      msg += "<×°±¸°ó¶¨>";
-                else if( t == 2 ) msg += "<Ê°È¡°ï¶¨>";
-                else if( t == 3 ) msg += "<Ö±½Ó°ó¶¨>";
+                if( t == 1 )      msg += "<è£å‚™ç¶å®š>";
+                else if( t == 2 ) msg += "<æ‹¾å–å¹«å®š>";
+                else if( t == 3 ) msg += "<ç›´æ¥ç¶å®š>";
         }
 
-        str += sprintf( YEL "°ó¶¨×´Ì¬ : %s\n\n" NOR, msg);
+        str += sprintf( YEL "ç¶å®šç‹€æ…‹ : %s\n\n" NOR, msg);
 
         if( query("enchase/apply_prop") ) {
                 apply = keys(query("enchase/apply_prop"));
                 for (i = 0; i<sizeof(apply); i++) {
                         value = query("enchase/apply_prop")[apply[i]];
-                        str += HIK "ÓµÓĞÊôĞÔ" NOR " : ";
+                        str += HIK "æ“æœ‰å±¬æ€§" NOR " : ";
                         str += EQUIPMENT_D->chinese(apply[i], value) + "\n";
                 }
                 type = query("enchase/type");
-                str += sprintf(HIK "¿ÉÏâ×°±¸ : %s(%s)\n" NOR, to_chinese(type), type);
-                str += sprintf(HIK "¿ÉÏâµÈ¼¶ : %d\n" NOR, query("enchase/level"));
+                str += sprintf(HIK "å¯é‘²è£å‚™ : %s(%s)\n" NOR, to_chinese(type), type);
+                str += sprintf(HIK "å¯é‘²ç­‰ç´š : %d\n" NOR, query("enchase/level"));
         }
 
         return str;
 }
 
-string query_name() { return "ºÚË®"; }
+string query_name() { return "é»‘æ°´"; }

@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-        set("short","°¢Í·²¿");
+        set("short","é˜¿é ­éƒ¨");
         set("long",@LONG
-°¢Í·²¿ÊÇÎÚÔÓÂùµÄ²¿Âä£¬ºÍ¸½½üµÄÎÚÂùÒ»Ñù£¬Ò²ÊôÓÚÎÚÒÄ¡£ÕâÀï
-É½¸ßÁÖÃÜ£¬²»ÊìµÄÈËÇáÂÊ½øÉ½£¬ºÜÈÝÒ×ÃÔÂ·É¥Ãü¡£ÉîÉ½¶ÔÎÚÒÄÁÔÈËÀ´
-ËµÈ´ÊÇ¾Û±¦Åè£¬É½ÖÐÒ°Îï½ÔÊÇÃÀÎ¶¡£
+é˜¿é ­éƒ¨æ˜¯çƒé›œè »çš„éƒ¨è½ï¼Œå’Œé™„è¿‘çš„çƒè »ä¸€æ¨£ï¼Œä¹Ÿå±¬äºŽçƒå¤·ã€‚é€™è£¡
+å±±é«˜æž—å¯†ï¼Œä¸ç†Ÿçš„äººè¼•çŽ‡é€²å±±ï¼Œå¾ˆå®¹æ˜“è¿·è·¯å–ªå‘½ã€‚æ·±å±±å°çƒå¤·çµäººä¾†
+èªªå»æ˜¯èšå¯¶ç›†ï¼Œå±±ä¸­é‡Žç‰©çš†æ˜¯ç¾Žå‘³ã€‚
 LONG);
         set("objects", ([
            __DIR__"npc/lieren": 1,

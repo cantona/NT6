@@ -1,4 +1,4 @@
-// yaofen.c Ò©·Û
+// yaofen.c è—¥ç²‰
 
 inherit ITEM;
 
@@ -12,12 +12,12 @@ void init()
 
 void create()
 {
-        set_name("Ò©·Û", ({ "yao fen" , "yao", "fen" }));
+        set_name("è—¥ç²‰", ({ "yao fen" , "yao", "fen" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°ü");
-                set("long", "ÕâÊÇÒ»°ü×¨ÖÎÄÚÉËµÄÒ©·Û¡£\n");
+                set("unit", "åŒ…");
+                set("long", "é€™æ˜¯ä¸€åŒ…å°ˆæ²»å…§å‚·çš„è—¥ç²‰ã€‚\n");
                 set("value", 1000);
         }
         setup();
@@ -26,7 +26,7 @@ void create()
 int do_eat(string arg)
 {
         if (!id(arg))
-                return notify_fail("ÄãÒª³ÔÊ²Ã´Ò©£¿\n");
-        return notify_fail("Ö»ÓĞ×¨Á·¿É¶Ô¸¶¡®»¯¹ÇÃàÕÆ¡¯µÄÎä¹¦µÄÈË²ÅĞèÒª·şÕâÖÖÒ©¡£\n");
+                return notify_fail("ä½ è¦åƒä»€éº¼è—¥ï¼Ÿ\n");
+        return notify_fail("åªæœ‰å°ˆç·´å¯å°ä»˜â€˜åŒ–éª¨ç¶¿æŒâ€™çš„æ­¦åŠŸçš„äººæ‰éœ€è¦æœé€™ç¨®è—¥ã€‚\n");
 
 }

@@ -6,16 +6,16 @@ inherit __DIR__"bow";
 
 void create()
 {
-        set_name(HIY "ÌìÉñ¹­" NOR, ({ "tianshen gong", "bow", "tianshen", "gong" }));
+        set_name(HIY "å¤©ç¥å¼“" NOR, ({ "tianshen gong", "bow", "tianshen", "gong" }));
         set_weight(5000);
         if (clonep())
                 set_default_object(__FILE__);
         else
         {
-                set("unit", "ÕÅ");
-                set("long", "ÕâÊÇÒ»ÕÅ¾Ş´óµÄ¹­£¬ÃüÔ»£ºÌìÉñ£¬´«ËµÄËÉÏÌì´ÍÓè³É¼ªË¼º¹µÄ±¦Îï£¬¾İËµ´Ë¹­°Ù·¢°ÙÖĞ£¬ÀıÎŞĞé·¢¡£¡£\n");
+                set("unit", "å¼µ");
+                set("long", "é€™æ˜¯ä¸€å¼µå·¨å¤§çš„å¼“ï¼Œå‘½æ›°ï¼šå¤©ç¥ï¼Œå‚³èªªä¹ƒä¸Šå¤©è³œäºˆæˆå‰æ€æ±—çš„å¯¶ç‰©ï¼Œæ“šèªªæ­¤å¼“ç™¾ç™¼ç™¾ä¸­ï¼Œä¾‹ç„¡è™›ç™¼ã€‚ã€‚\n");
                                 set("value", 80000);
-                set("accuracy", 2000);   // ×¼È·¶È150%
+                set("accuracy", 2000);   // æº–ç¢ºåº¦150%
         }
         setup();
 }

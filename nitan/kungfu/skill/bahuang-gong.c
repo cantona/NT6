@@ -1,4 +1,4 @@
-// bahuang-gong.c �˻�����Ψ�Ҷ���
+// bahuang-gong.c 八荒六合唯我獨尊功
 // Last Modified by winder on Mar. 10 2000
 
 #include <ansi.h>;
@@ -33,18 +33,18 @@ int query_neili_improve(object me)
 int valid_learn(object me)
 {
         if ((int)me->query_skill("force", 1) < 80)
-                return notify_fail("��Ļ����ڹ���򻹲�����\n");
+                return notify_fail("你的基本內功火候還不夠。\n");
 
-        if( query("gender", me) == "����" && 
+        if( query("gender", me) == "無性" && 
         (int)me->query_skill("bahuang-gong", 1) > 49)
-                return notify_fail("���޸����ԣ���������������������İ˻�����Ψ�Ҷ��𹦡�\n");
+                return notify_fail("你無根無性，陰陽不調，難以領會高深的八荒六合唯我獨尊功。\n");
 
         return ::valid_learn(me);
 }
 
 int practice_skill(object me)
 {
-        return notify_fail("�˻�����Ψ�Ҷ���ֻ����ѧ(learn)������ߡ�\n");
+        return notify_fail("八荒六合唯我獨尊功只能用學(learn)的來提高。\n");
 }
 string exert_function_file(string func)
 {
@@ -53,16 +53,16 @@ string exert_function_file(string func)
 
 int help(object me)
 {
-        write(HIC"\n�˻�����Ψ�Ҷ��𹦣�"NOR"\n");
+        write(HIC"\n八荒六合唯我獨尊功："NOR"\n");
         write(@HELP
 
-    �˻�����Ψ�Ҷ��������չ��������ϵ��ڹ����������ϳ���
-��Ϊ�������⹦���������ȴ��һ�����Ĳ���֮����ÿ��ʮ�꣬
-��Ҫ���ϻ�ͯһ�Ρ�
+    八荒六合唯我獨尊功是靈鷲宮至高無上的內功，須以最上乘內
+功為根基。這功夫威力奇大，卻有一個大大的不利之處，每三十年，
+便要返老還童一次。
 
-        ѧϰҪ��
-                ���չ�����
-                �����ڹ�10��
+        學習要求：
+                靈鷲宮弟子
+                基本內功10級
 HELP
         );
         return 1;

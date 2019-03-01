@@ -6,9 +6,9 @@ inherit NPC;
 
 void create()
 {
-        set_name("Ò¦ÇåÈª", ({ "yao qingquan", "yao" }));
-        set("nickname",HIC"Ç§Àï×··ç"NOR);
-        set("gender", "ÄĞĞÔ");
+        set_name("å§šæ¸…æ³‰", ({ "yao qingquan", "yao" }));
+        set("nickname",HIC"åƒè£¡è¿½é¢¨"NOR);
+        set("gender", "ç”·æ€§");
         set("age", 45);
 
         set_skill("finger", 90);

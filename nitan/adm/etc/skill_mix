@@ -1,7 +1,7 @@
-// ¼¼ÄÜ×éºÏÌØĞ§
+// æŠ€èƒ½çµ„åˆç‰¹æ•ˆ
 ////////////////////////////////////////
 <S0000>
-<name>$CYNGRN$¼¼ÄÜ×éºÏ-»ªÉ½A$NOR$</name>
+<name>$CYNGRN$æŠ€èƒ½çµ„åˆ-è¯å±±A$NOR$</name>
 <dodge>feiyan-huixiang</dodge>
 <parry>lonely-sword</parry>
 <force>zixia-shengong</force>
@@ -20,7 +20,7 @@ reduce_damage:10
 </stats>
 </S0000>
 <S0001>
-<name>$CYNGRN$¼¼ÄÜ×éºÏ-»ªÉ½B$NOR$</name>
+<name>$CYNGRN$æŠ€èƒ½çµ„åˆ-è¯å±±B$NOR$</name>
 <dodge>huashan-shenfa</dodge>
 <parry>huashan-sword</parry>
 <force>zixia-shengong</force>
@@ -39,7 +39,7 @@ reduce_damage:10
 </S0001>
 ////////////////////////////////////////
 <S0002>
-<name>$CYNGRN$¼¼ÄÜ×éºÏ-¶ëáÒA$NOR$</name>
+<name>$CYNGRN$æŠ€èƒ½çµ„åˆ-å³¨åµ‹A$NOR$</name>
 <dodge>zhutian-bu</dodge>
 <parry>yitian-jian</parry>
 <force>linji-zhuang</force>
@@ -58,7 +58,7 @@ add_busy:10
 </stats>
 </S0002>
 <S0003>
-<name>$CYNGRN$¼¼ÄÜ×éºÏ-¶ëáÒB$NOR$</name>
+<name>$CYNGRN$æŠ€èƒ½çµ„åˆ-å³¨åµ‹B$NOR$</name>
 <dodge>zhutian-bu</dodge>
 <parry>piaoxue-zhang</parry>
 <force>linji-zhuang</force>
@@ -77,7 +77,7 @@ add_busy:5
 </S0003>
 ////////////////////////////////////////
 <S0004>
-<name>$CYNGRN$¼¼ÄÜ×éºÏ-Ø¤°ïA$NOR$</name>
+<name>$CYNGRN$æŠ€èƒ½çµ„åˆ-ä¸å¹«A$NOR$</name>
 <dodge>xiaoyaoyou</dodge>
 <parry>dragon-strike</parry>
 <force>huntian-qigong</force>
@@ -97,7 +97,7 @@ add_busy:5
 </stats>
 </S0004>
 <S0005>
-<name>$CYNGRN$¼¼ÄÜ×éºÏ-Ø¤°ïB$NOR$</name>
+<name>$CYNGRN$æŠ€èƒ½çµ„åˆ-ä¸å¹«B$NOR$</name>
 <dodge>feiyan-zoubi</dodge>
 <parry>dagou-bang</parry>
 <force>huntian-qigong</force>
@@ -117,7 +117,7 @@ add_forget:10
 </S0005>
 ////////////////////////////////////////
 <S0006>
-<name>$CYNGRN$¼¼ÄÜ×éºÏ-ÌÒ»¨A$NOR$</name>
+<name>$CYNGRN$æŠ€èƒ½çµ„åˆ-æ¡ƒèŠ±A$NOR$</name>
 <dodge>luoying-shenfa</dodge>
 <parry>tanzhi-shentong</parry>
 <force>bibo-shengong</force>
@@ -138,7 +138,7 @@ add_weak:10
 </stats>
 </S0006>
 <S0007>
-<name>$CYNGRN$¼¼ÄÜ×éºÏ-ÌÒ»¨B$NOR$</name>
+<name>$CYNGRN$æŠ€èƒ½çµ„åˆ-æ¡ƒèŠ±B$NOR$</name>
 <dodge>luoying-shenfa</dodge>
 <parry>luoying-shenzhang</parry>
 <force>bibo-shengong</force>
@@ -159,7 +159,7 @@ reduce_damage:10
 </S0007>
 ////////////////////////////////////////
 <S0008>
-<name>$CYNGRN$¼¼ÄÜ×éºÏ-åĞÒ£A$NOR$</name>
+<name>$CYNGRN$æŠ€èƒ½çµ„åˆ-é€é™A$NOR$</name>
 <dodge>lingbo-weibu</dodge>
 <parry>zhemei-shou</parry>
 <force>beiming-shengong</force>
@@ -181,7 +181,7 @@ reduce_damage:10
 </S0008>
 ////////////////////////////////////////
 <S0009>
-<name>$CYNGRN$¼¼ÄÜ×éºÏ-ĞÇËŞA$NOR$</name>
+<name>$CYNGRN$æŠ€èƒ½çµ„åˆ-æ˜Ÿå®¿A$NOR$</name>
 <dodge>feixing-shu</dodge>
 <parry>chousui-zhang</parry>
 <force>huagong-dafa</force>
@@ -199,7 +199,7 @@ reduce_damage:10
 </stats>
 </S0009>
 <S00010>
-<name>$CYNGRN$¼¼ÄÜ×éºÏ-ĞÇËŞB$NOR$</name>
+<name>$CYNGRN$æŠ€èƒ½çµ„åˆ-æ˜Ÿå®¿B$NOR$</name>
 <dodge>feixing-shu</dodge>
 <parry>chousui-zhang</parry>
 <force>freezing-force</force>
@@ -219,7 +219,7 @@ reduce_damage:10
 </S0010>
 ////////////////////////////////////////
 <S0011>
-<name>$CYNGRN$¼¼ÄÜ×éºÏ-Îäµ±A$NOR$</name>
+<name>$CYNGRN$æŠ€èƒ½çµ„åˆ-æ­¦ç•¶A$NOR$</name>
 <dodge>tiyunzong</dodge>
 <parry>taiji-quan</parry>
 <force>taiji-shengong</force>
@@ -237,7 +237,7 @@ reduce_damage:10
 </stats>
 </S0011>
 <S0012>
-<name>$CYNGRN$¼¼ÄÜ×éºÏ-Îäµ±B$NOR$</name>
+<name>$CYNGRN$æŠ€èƒ½çµ„åˆ-æ­¦ç•¶B$NOR$</name>
 <dodge>tiyunzong</dodge>
 <parry>taiji-jian</parry>
 <force>taiji-shengong</force>
@@ -257,7 +257,7 @@ add_damage:20
 </S0012>
 ////////////////////////////////////////
 <S0013>
-<name>$CYNGRN$¼¼ÄÜ×éºÏ-ÉÙÁÖA$NOR$</name>
+<name>$CYNGRN$æŠ€èƒ½çµ„åˆ-å°‘æ—A$NOR$</name>
 <dodge>shaolin-shenfa</dodge>
 <parry>jingang-buhuaiti</parry>
 <force>hunyuan-yiqi</force>
@@ -277,7 +277,7 @@ reduce_damage:15
 </S0013>
 ////////////////////////////////////////
 <S0014>
-<name>$CYNGRN$¼¼ÄÜ×éºÏ-Ã÷½ÌA$NOR$</name>
+<name>$CYNGRN$æŠ€èƒ½çµ„åˆ-æ˜æ•™A$NOR$</name>
 <dodge>lingxu-bu</dodge>
 <parry>qishang-quan</parry>
 <force>shenghuo-shengong</force>
@@ -297,7 +297,7 @@ add_damage:15
 </stats>
 </S0014>
 <S0015>
-<name>$CYNGRN$¼¼ÄÜ×éºÏ-Ã÷½ÌB$NOR$</name>
+<name>$CYNGRN$æŠ€èƒ½çµ„åˆ-æ˜æ•™B$NOR$</name>
 <dodge>qingfu-shenfa</dodge>
 <parry>qiankun-danuoyi</parry>
 <force>jiuyang-shengong</force>
@@ -319,7 +319,7 @@ reduce_damage:10
 </S0015>
 ////////////////////////////////////////
 <S0016>
-<name>$CYNGRN$¼¼ÄÜ×éºÏ-¹ØÍâºú¼ÒA$NOR$</name>
+<name>$CYNGRN$æŠ€èƒ½çµ„åˆ-é—œå¤–èƒ¡å®¶A$NOR$</name>
 <dodge>sixiang-bufa</dodge>
 <parry>hujia-daofa</parry>
 <force>lengyue-shengong</force>
@@ -336,7 +336,7 @@ reduce_damage:10
 </stats>
 </S0016>
 <S0017>
-<name>$CYNGRN$¼¼ÄÜ×éºÏ-¹ØÍâºú¼ÒB$NOR$</name>
+<name>$CYNGRN$æŠ€èƒ½çµ„åˆ-é—œå¤–èƒ¡å®¶B$NOR$</name>
 <dodge>sixiang-bufa</dodge>
 <parry>daojian-guizhen</parry>
 <force>lengyue-shengong</force>
@@ -356,7 +356,7 @@ add_damage:20
 </S0017>
 ////////////////////////////////////////
 <S0018>
-<name>$CYNGRN$¼¼ÄÜ×éºÏ-Ñªµ¶A$NOR$</name>
+<name>$CYNGRN$æŠ€èƒ½çµ„åˆ-è¡€åˆ€A$NOR$</name>
 <dodge>shenkong-xing</dodge>
 <parry>xuedao-daofa</parry>
 <force>xuehai-mogong</force>
@@ -375,7 +375,7 @@ add_damage:20
 </stats>
 </S0018>
 <S0019>
-<name>$CYNGRN$¼¼ÄÜ×éºÏ-Ñªµ¶B$NOR$</name>
+<name>$CYNGRN$æŠ€èƒ½çµ„åˆ-è¡€åˆ€B$NOR$</name>
 <dodge>shenkong-xing</dodge>
 <parry>liancheng-jianfa</parry>
 <force>shenzhaojing</force>
@@ -396,7 +396,7 @@ add_damage:15
 </S0019>
 ////////////////////////////////////////
 <S0020>
-<name>$CYNGRN$¼¼ÄÜ×éºÏ-Ñ©É½ËÂA$NOR$</name>
+<name>$CYNGRN$æŠ€èƒ½çµ„åˆ-é›ªå±±å¯ºA$NOR$</name>
 <dodge>shenkong-xing</dodge>
 <parry>huoyan-dao</parry>
 <force>xiaowuxiang</force>
@@ -415,7 +415,7 @@ add_damage:15
 </stats>
 </S0020>
 <S0021>
-<name>$CYNGRN$¼¼ÄÜ×éºÏ-Ñ©É½ËÂB$NOR$</name>
+<name>$CYNGRN$æŠ€èƒ½çµ„åˆ-é›ªå±±å¯ºB$NOR$</name>
 <dodge>shenkong-xing</dodge>
 <parry>longxiang-gong</parry>
 <force>longxiang-gong</force>
@@ -436,7 +436,7 @@ add_damage:20
 </S0021>
 ////////////////////////////////////////
 <S0022>
-<name>$CYNGRN$¼¼ÄÜ×éºÏ-ÁéğÕ¹¬A$NOR$</name>
+<name>$CYNGRN$æŠ€èƒ½çµ„åˆ-éˆé·²å®®A$NOR$</name>
 <dodge>yueying-wubu</dodge>
 <parry>liuyang-zhang</parry>
 <force>bahuang-gong</force>
@@ -457,7 +457,7 @@ add_damage:15
 </S0022>
 ////////////////////////////////////////
 <S0023>
-<name>$CYNGRN$¼¼ÄÜ×éºÏ-ÉñÁú½ÌA$NOR$</name>
+<name>$CYNGRN$æŠ€èƒ½çµ„åˆ-ç¥é¾æ•™A$NOR$</name>
 <dodge>yixing-bufa</dodge>
 <parry>shedao-qigong</parry>
 <force>shenlong-xinfa</force>
@@ -478,7 +478,7 @@ add_damage:15
 </S0023>
 ////////////////////////////////////////
 <S0024>
-<name>$CYNGRN$¼¼ÄÜ×éºÏ-È«Õæ½ÌA$NOR$</name>
+<name>$CYNGRN$æŠ€èƒ½çµ„åˆ-å…¨çœŸæ•™A$NOR$</name>
 <dodge>jinyan-gong</dodge>
 <parry>xiantian-gong</parry>
 <force>xiantian-gong</force>
@@ -499,7 +499,7 @@ reduce_damage:10
 </stats>
 </S0024>
 <S0025>
-<name>$CYNGRN$¼¼ÄÜ×éºÏ-È«Õæ½ÌA$NOR$</name>
+<name>$CYNGRN$æŠ€èƒ½çµ„åˆ-å…¨çœŸæ•™A$NOR$</name>
 <dodge>jinyan-gong</dodge>
 <parry>kongming-quan</parry>
 <force>quanzhen-xinfa</force>
@@ -520,7 +520,7 @@ add_damage:15
 </S0025>
 ////////////////////////////////////////
 <S0026>
-<name>$CYNGRN$¼¼ÄÜ×éºÏ-¹ÅÄ¹ÅÉA$NOR$</name>
+<name>$CYNGRN$æŠ€èƒ½çµ„åˆ-å¤å¢“æ´¾A$NOR$</name>
 <dodge>yunv-shenfa</dodge>
 <parry>meinv-quan</parry>
 <force>yunv-xinfa</force>
@@ -540,7 +540,7 @@ add_damage:10
 </stats>
 </S0026>
 <S0027>
-<name>$CYNGRN$¼¼ÄÜ×éºÏ-¹ÅÄ¹ÅÉB$NOR$</name>
+<name>$CYNGRN$æŠ€èƒ½çµ„åˆ-å¤å¢“æ´¾B$NOR$</name>
 <dodge>yunv-shenfa</dodge>
 <parry>sad-strike</parry>
 <force>surge-force</force>
@@ -562,7 +562,7 @@ add_damage:20
 </S0027>
 ////////////////////////////////////////
 <S0028>
-<name>$CYNGRN$¼¼ÄÜ×éºÏ-ÈÕÔÂÉñ½ÌA$NOR$</name>
+<name>$CYNGRN$æŠ€èƒ½çµ„åˆ-æ—¥æœˆç¥æ•™A$NOR$</name>
 <dodge>piaomiao-shenfa</dodge>
 <parry>huanmo-longtianwu</parry>
 <force>xixing-dafa</force>
@@ -579,7 +579,7 @@ add_damage:15
 </stats>
 </S0028>
 <S0029>
-<name>$CYNGRN$¼¼ÄÜ×éºÏ-ÈÕÔÂÉñ½ÌB$NOR$</name>
+<name>$CYNGRN$æŠ€èƒ½çµ„åˆ-æ—¥æœˆç¥æ•™B$NOR$</name>
 <dodge>pixie-jian</dodge>
 <parry>pixie-jian</parry>
 <force>kuihua-xinfa</force>
@@ -599,7 +599,7 @@ add_damage:15
 </S0029>
 ////////////////////////////////////////
 <S0030>
-<name>$CYNGRN$¼¼ÄÜ×éºÏ-Ä½ÈİÊÀ¼ÒA$NOR$</name>
+<name>$CYNGRN$æŠ€èƒ½çµ„åˆ-æ…•å®¹ä¸–å®¶A$NOR$</name>
 <dodge>beidou-xianzong</dodge>
 <parry>canhe-zhi</parry>
 <force>shenyuan-gong</force>
@@ -617,7 +617,7 @@ add_damage:15
 </stats>
 </S0030>
 <S0031>
-<name>$CYNGRN$¼¼ÄÜ×éºÏ-Ä½ÈİÊÀ¼ÒB$NOR$</name>
+<name>$CYNGRN$æŠ€èƒ½çµ„åˆ-æ…•å®¹ä¸–å®¶B$NOR$</name>
 <dodge>beidou-xianzong</dodge>
 <parry>douzhuan-xingyi</parry>
 <force>zihui-xinfa</force>
@@ -638,7 +638,7 @@ reduce_damage:10
 </S0031>
 ////////////////////////////////////////
 <S0032>
-<name>$CYNGRN$¼¼ÄÜ×éºÏ-Å·ÑôÊÀ¼ÒA$NOR$</name>
+<name>$CYNGRN$æŠ€èƒ½çµ„åˆ-æ­é™½ä¸–å®¶A$NOR$</name>
 <dodge>chanchu-bufa</dodge>
 <parry>hamagong</parry>
 <force>hamagong</force>
@@ -658,7 +658,7 @@ add_damage:15
 </S0032>
 ////////////////////////////////////////
 <S0033>
-<name>$CYNGRN$¼¼ÄÜ×éºÏ-ÌÆÃÅA$NOR$</name>
+<name>$CYNGRN$æŠ€èƒ½çµ„åˆ-å”é–€A$NOR$</name>
 <dodge>qiulin-shiye</dodge>
 <parry>boyun-suowu</parry>
 <force>sanku-shengong</force>
@@ -679,7 +679,7 @@ add_damage:20
 </S0033>
 ////////////////////////////////////////
 <S0034>
-<name>$CYNGRN$¼¼ÄÜ×éºÏ-¶ÎÊÏ»Ê×åA$NOR$</name>
+<name>$CYNGRN$æŠ€èƒ½çµ„åˆ-æ®µæ°çš‡æ—A$NOR$</name>
 <dodge>tiannan-bu</dodge>
 <parry>sun-finger</parry>
 <force>duanshi-xinfa</force>
@@ -698,7 +698,7 @@ add_damage:15
 </stats>
 </S0034>
 <S0035>
-<name>$CYNGRN$¼¼ÄÜ×éºÏ-¶ÎÊÏ»Ê×åB$NOR$</name>
+<name>$CYNGRN$æŠ€èƒ½çµ„åˆ-æ®µæ°çš‡æ—B$NOR$</name>
 <dodge>tiannan-bu</dodge>
 <parry>six-finger</parry>
 <force>kurong-changong</force>
@@ -720,7 +720,7 @@ add_damage:20
 </S0035>
 ////////////////////////////////////////
 <S0036>
-<name>$CYNGRN$¼¼ÄÜ×éºÏ-¹«¹²Îä¹¦A$NOR$</name>
+<name>$CYNGRN$æŠ€èƒ½çµ„åˆ-å…¬å…±æ­¦åŠŸA$NOR$</name>
 <dodge>zhuangzi-wu</dodge>
 <parry>baihua-cuoquan</parry>
 <force>zhanshen-xinjing</force>
@@ -738,7 +738,7 @@ add_damage:15
 </stats>
 </S0036>
 <S0037>
-<name>$CYNGRN$¼¼ÄÜ×éºÏ-¹«¹²Îä¹¦B$NOR$</name>
+<name>$CYNGRN$æŠ€èƒ½çµ„åˆ-å…¬å…±æ­¦åŠŸB$NOR$</name>
 <dodge>shexing-lifan</dodge>
 <parry>cuixin-zhang</parry>
 <force>yijin-duangu</force>
@@ -756,7 +756,7 @@ add_damage:15
 </stats>
 </S0037>
 <S0038>
-<name>$CYNGRN$¼¼ÄÜ×éºÏ-¹«¹²Îä¹¦C$NOR$</name>
+<name>$CYNGRN$æŠ€èƒ½çµ„åˆ-å…¬å…±æ­¦åŠŸC$NOR$</name>
 <dodge>shenxing-baibian</dodge>
 <parry>houquan</parry>
 <force>luohan-fumogong</force>
@@ -774,7 +774,7 @@ add_damage:10
 </stats>
 </S0038>
 <S0039>
-<name>$CYNGRN$¼¼ÄÜ×éºÏ-¹«¹²Îä¹¦D$NOR$</name>
+<name>$CYNGRN$æŠ€èƒ½çµ„åˆ-å…¬å…±æ­¦åŠŸD$NOR$</name>
 <dodge>shenxing-baibian</dodge>
 <parry>xuanming-zhang</parry>
 <force>xuanming-shengong</force>
@@ -793,7 +793,7 @@ add_damage:15
 </S0039>
 ////////////////////////////////////////
 <S0040>
-<name>$CYNGRN$¼¼ÄÜ×éºÏ-åĞÒ£B$NOR$</name>
+<name>$CYNGRN$æŠ€èƒ½çµ„åˆ-é€é™B$NOR$</name>
 <dodge>lingbo-weibu</dodge>
 <parry>liuyang-zhang</parry>
 <force>xiaowuxiang</force>
@@ -814,7 +814,7 @@ reduce_damage:10
 </S0040>
 ////////////////////////////////////////
 <S0041>
-<name>$CYNGRN$¼¼ÄÜ×éºÏ-ÉÙÁÖB$NOR$</name>
+<name>$CYNGRN$æŠ€èƒ½çµ„åˆ-å°‘æ—B$NOR$</name>
 <dodge>shaolin-shenfa</dodge>
 <parry>fumo-jian</parry>
 <force>hunyuan-yiqi</force>
@@ -832,7 +832,7 @@ reduce_damage:10
 </stats>
 </S0041>
 <S0042>
-<name>$CYNGRN$¼¼ÄÜ×éºÏ-ÉÙÁÖC$NOR$</name>
+<name>$CYNGRN$æŠ€èƒ½çµ„åˆ-å°‘æ—C$NOR$</name>
 <dodge>shaolin-shenfa</dodge>
 <parry>riyue-bian</parry>
 <force>yijinjing</force>
@@ -851,7 +851,7 @@ reduce_damage:10
 </S0042>
 ////////////////////////////////////////
 <S0043>
-<name>$CYNGRN$¼¼ÄÜ×éºÏ-ÌÆÃÅB$NOR$</name>
+<name>$CYNGRN$æŠ€èƒ½çµ„åˆ-å”é–€B$NOR$</name>
 <dodge>qiulin-shiye</dodge>
 <parry>wuzhan-mei</parry>
 <force>biyun-xinfa</force>
@@ -872,7 +872,7 @@ add_damage:10
 </S0043>
 ////////////////////////////////////////
 <S0044>
-<name>$CYNGRN$¼¼ÄÜ×éºÏ-Å·ÑôÊÀ¼ÒB$NOR$</name>
+<name>$CYNGRN$æŠ€èƒ½çµ„åˆ-æ­é™½ä¸–å®¶B$NOR$</name>
 <dodge>chanchu-bufa</dodge>
 <parry>lingshe-zhangfa</parry>
 <force>hamagong</force>
@@ -893,7 +893,7 @@ add_damage:15
 </S0044>
 ////////////////////////////////////////
 <S0045>
-<name>$CYNGRN$¼¼ÄÜ×éºÏ-ÉñÁú½ÌB$NOR$</name>
+<name>$CYNGRN$æŠ€èƒ½çµ„åˆ-ç¥é¾æ•™B$NOR$</name>
 <dodge>yixing-bufa</dodge>
 <parry>shenlong-bashi</parry>
 <force>busi-shenlong</force>
@@ -914,7 +914,7 @@ reduce_damage:10
 </S0045>
 ////////////////////////////////////////
 <S0046>
-<name>$CYNGRN$¼¼ÄÜ×éºÏ-ÁéğÕ¹¬B$NOR$</name>
+<name>$CYNGRN$æŠ€èƒ½çµ„åˆ-éˆé·²å®®B$NOR$</name>
 <dodge>yueying-wubu</dodge>
 <parry>tianyu-qijian</parry>
 <force>xiawuxiang</force>
@@ -934,7 +934,7 @@ add_damage:15
 </stats>
 </S0046>
 <S0047>
-<name>$CYNGRN$¼¼ÄÜ×éºÏ-ÉÙÁÖD$NOR$</name>
+<name>$CYNGRN$æŠ€èƒ½çµ„åˆ-å°‘æ—D$NOR$</name>
 <dodge>shaolin-shenfa</dodge>
 <parry>jingang-buhuaiti</parry>
 <force>yijinjing</force>
@@ -952,7 +952,7 @@ reduce_damage:10
 </stats>
 </S0047>
 <S0048>
-<name>$CYNGRN$¼¼ÄÜ×éºÏ-Ä§½ÌA$NOR$</name>
+<name>$CYNGRN$æŠ€èƒ½çµ„åˆ-é­”æ•™A$NOR$</name>
 <dodge>jiutian-xiaoyaobu</dodge>
 <parry>moshen-zhenshen</parry>
 <force>chiyou-kuangzhanjue</force>
@@ -971,7 +971,7 @@ reduce_damage:10
 </stats>
 </S0048>
 <S0049>
-<name>$CYNGRN$¼¼ÄÜ×éºÏ-Ä§½ÌB$NOR$</name>
+<name>$CYNGRN$æŠ€èƒ½çµ„åˆ-é­”æ•™B$NOR$</name>
 <dodge>jiutian-xiaoyaobu</dodge>
 <parry>moon-blade</parry>
 <force>chiyou-kuangzhanjue</force>
@@ -990,7 +990,7 @@ reduce_damage:5
 </stats>
 </S0049>
 <S0050>
-<name>$CYNGRN$¼¼ÄÜ×éºÏ-Ä§½ÌC$NOR$</name>
+<name>$CYNGRN$æŠ€èƒ½çµ„åˆ-é­”æ•™C$NOR$</name>
 <dodge>jiutian-xiaoyaobu</dodge>
 <parry>mingyue-blade</parry>
 <force>chiyou-kuangzhanjue</force>
@@ -1009,7 +1009,7 @@ reduce_damage:10
 </stats>
 </S0050>
 <S0051>
-<name>$CYNGRN$¼¼ÄÜ×éºÏ-À¥ÂØA$NOR$</name>
+<name>$CYNGRN$æŠ€èƒ½çµ„åˆ-æ˜†ä¾–A$NOR$</name>
 <dodge>chuanyun-bu</dodge>
 <parry>zhengliangyi-jian</parry>
 <force>liangyi-shengong</force>

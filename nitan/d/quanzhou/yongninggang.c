@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "������");
+        set("short", "永寧港");
         set("long", @LONG
-��������Ȫ������ۿ�֮һ���������ˮ���ƽ�˾�����ĿԶ����
-����һɫ��ε����Ͼ������ͣ������������ĸ��ִ�ֻ���ϱߵĹ�ɩ��
-������һ�����˵Ĺ��¡�
+永寧港是泉州三大港口之一。這裡港闊水深，風平浪靜。極目遠眺，
+海天一色，蔚藍無暇。岸邊停靠著密密麻麻的各種船只。南邊的姑嫂塔
+流傳著一個感人的故事。
 LONG );
         set("outdoors", "quanzhou");
         set("no_clean_up", 0);

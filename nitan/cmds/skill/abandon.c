@@ -22,45 +22,45 @@ int main(object me, string arg)
                 return help();
 
         if (me->is_fighting())
-                return notify_fail("ÄãÕıÃ¦×Å´ò¼ÜÄØ£¬ÄÄÓĞÊ±¼ä×öÕâÖÖÊÂ£¿\n");
+                return notify_fail("ä½ æ­£å¿™è‘—æ‰“æ¶å‘¢ï¼Œå“ªæœ‰æ™‚é–“åšé€™ç¨®äº‹ï¼Ÿ\n");
 
         if (me->is_busy())
-                return notify_fail("ÄãÕıÃ¦£¬Ã»·¨¾²ÏÂĞÄÀ´¡£\n");
+                return notify_fail("ä½ æ­£å¿™ï¼Œæ²’æ³•éœä¸‹å¿ƒä¾†ã€‚\n");
 
         jingcost=query("int", me)+random(query("int", me));
         if( jingcost>query("jing", me) )
-                return notify_fail("ÄãÎŞ·¨¼¯ÖĞ¾«Á¦¡£\n");
+                return notify_fail("ä½ ç„¡æ³•é›†ä¸­ç²¾åŠ›ã€‚\n");
 
         if (skill == "exp")
         {
                 lost=query("combat_exp", me);
                 if (lost < 100)
-                        return notify_fail("Äã·¢ÏÖ×Ô¼ºÏÖÔÚ¶ÔÎäÑ§¼òÖ±¾ÍÊÇÒ»ÎŞËùÖª¡£\n");
+                        return notify_fail("ä½ ç™¼ç¾è‡ªå·±ç¾åœ¨å°æ­¦å­¸ç°¡ç›´å°±æ˜¯ä¸€ç„¡æ‰€çŸ¥ã€‚\n");
 
                 if (lvl > lost || lvl < 0)
-                        return notify_fail("Äã·¢ÏÖ×Ô¼ºÏÖÔÚ¶ÔÎäÑ§Àí½â»¹Ã»ÓĞÄÇÃ´¸ß¡£\n");
+                        return notify_fail("ä½ ç™¼ç¾è‡ªå·±ç¾åœ¨å°æ­¦å­¸ç†è§£é‚„æ²’æœ‰é‚£éº¼é«˜ã€‚\n");
 
                 if (lvl == lost)
-                        return notify_fail("ÄãÊÇ²»ÊÇÍ·ÄÔ½øË®ÁË£¬ÏÖÔÚ»¹ÓÃ·ÅÆúÂğ£¿\n");
+                        return notify_fail("ä½ æ˜¯ä¸æ˜¯é ­è…¦é€²æ°´äº†ï¼Œç¾åœ¨é‚„ç”¨æ”¾æ£„å—ï¼Ÿ\n");
 
                 level = sqrt3(lvl/100) * 10 + 1;
                 while ((level + 1)*(level + 1)*(level + 1) <= lvl*10 )
                         level++;
 
-                tell_object(me, HIR "Äã½«·ÅÆúEXPµ½ " + lvl + " µã£¬½ö¿ÉÖ§³Ö " +
-                                chinese_number(level) + " ¼¶ÎäÑ§¼¼ÄÜ¡£\n\n" NOR);
+                tell_object(me, HIR "ä½ å°‡æ”¾æ£„EXPåˆ° " + lvl + " é»ï¼Œåƒ…å¯æ”¯æŒ " +
+                                chinese_number(level) + " ç´šæ­¦å­¸æŠ€èƒ½ã€‚\n\n" NOR);
 
-                tell_object(me, "ÇëÎñ±Ø¿¼ÂÇÇå³ş£¬È·¶¨µÄ»°ÇëÊäÈëÄúµÄ¹ÜÀíÃÜÂë»òÆÕÍ¨ÃÜÂë£º");
+                tell_object(me, "è«‹å‹™å¿…è€ƒæ…®æ¸…æ¥šï¼Œç¢ºå®šçš„è©±è«‹è¼¸å…¥æ‚¨çš„ç®¡ç†å¯†ç¢¼æˆ–æ™®é€šå¯†ç¢¼ï¼š");
                 input_to("check_password", 1, me, skill, lvl);
                 return 1;
 
-                message("vision", me->name() + "×øÏÂÔÚÄıÉñË¼Ë÷Ê²Ã´¡£\n",
+                message("vision", me->name() + "åä¸‹åœ¨å‡ç¥æ€ç´¢ä»€éº¼ã€‚\n",
                         environment(me), me);
-                tell_object(me, "Äã²»ÔÙÏëÈ­½Å±øÆ÷Çá¹¦ÄÚ¹¦£¬Ö»ÊÇÒ»ÃÅĞÄË¼Íü¼ÇÎä¹¦¡£\n");
+                tell_object(me, "ä½ ä¸å†æƒ³æ‹³è…³å…µå™¨è¼•åŠŸå…§åŠŸï¼Œåªæ˜¯ä¸€é–€å¿ƒæ€å¿˜è¨˜æ­¦åŠŸã€‚\n");
                 me->start_busy(3 + random(5));
                 if( random(query("int", me))>15 )
                 {
-                        tell_object(me, "¿ÉÊÇÄã·¢ÏÖ×Ô¼ºËÆºõ¼ÇĞÔÌ«ºÃ£¬Ã»ÓĞ°ëµãĞ§¹û¡£\n");
+                        tell_object(me, "å¯æ˜¯ä½ ç™¼ç¾è‡ªå·±ä¼¼ä¹è¨˜æ€§å¤ªå¥½ï¼Œæ²’æœ‰åŠé»æ•ˆæœã€‚\n");
                         return 1;
                 }
 
@@ -70,28 +70,28 @@ int main(object me, string arg)
                 switch (random(6))
                 {
                 case 0:
-                        tell_object(me, HIR "ÄãÓÖÏëÆğÁËºÜ¶àÎÂÜ°"
-                                    "µÄÍùÊÂ£¬²»ÓÉµÃ³Á½şÆäÖĞ¡£\n" NOR);
+                        tell_object(me, HIR "ä½ åˆæƒ³èµ·äº†å¾ˆå¤šæº«é¦¨"
+                                    "çš„å¾€äº‹ï¼Œä¸ç”±å¾—æ²‰æµ¸å…¶ä¸­ã€‚\n" NOR);
                         break;
                 case 1:
-                        tell_object(me, HIR "ÄãËÆºõÓÖ¿´µ½ÁËÒ£Ô¶"
-                                    "µÄÍ¯Äê£¬Ò»Ê±ÍüÈ´ÁË³¾ÊÀ¼äµÄ·³ÄÕ¡£\n" NOR);
+                        tell_object(me, HIR "ä½ ä¼¼ä¹åˆçœ‹åˆ°äº†é™é "
+                                    "çš„ç«¥å¹´ï¼Œä¸€æ™‚å¿˜å»äº†å¡µä¸–é–“çš„ç…©æƒ±ã€‚\n" NOR);
                         break;
                 case 2:
-                        tell_object(me, HIR "Äã÷öÈ»Ò»Éù³¤Ì¾£¬Ö»¾õ"
-                                    "µÃ×Ô¼ºÎªÁËÎäÑ§»Ä·ÏÒ»Éú£¬ÊµÔÚÎŞÎ½¡£\n" NOR);
+                        tell_object(me, HIR "ä½ é»¯ç„¶ä¸€è²é•·å˜†ï¼Œåªè¦º"
+                                    "å¾—è‡ªå·±ç‚ºäº†æ­¦å­¸è’å»¢ä¸€ç”Ÿï¼Œå¯¦åœ¨ç„¡è¬‚ã€‚\n" NOR);
                         break;
                 case 3:
-                        tell_object(me, HIR "ÄãĞÄÈçÖ¹Ë®£¬ËùÓĞµÄ"
-                                    "Îä¹¦¶¼·Â·ğÀë×Ô¼ºÔ¶È¥ÁË¡£\n" NOR);
+                        tell_object(me, HIR "ä½ å¿ƒå¦‚æ­¢æ°´ï¼Œæ‰€æœ‰çš„"
+                                    "æ­¦åŠŸéƒ½ä»¿ä½›é›¢è‡ªå·±é å»äº†ã€‚\n" NOR);
                         break;
                 case 4:
-                        tell_object(me, HIR "ÄãÌ§Í·ÑöÍûÌì¿Õ£¬·¢"
-                                    "ÏÖËüÃ÷ÁÁÍ¸Îö£¬Ëµ²»³öµÄ½¿ÃÄ£¬ÁîÄãÉíĞÄ¾ã»¯¡£\n" NOR);
+                        tell_object(me, HIR "ä½ æŠ¬é ­ä»°æœ›å¤©ç©ºï¼Œç™¼"
+                                    "ç¾å®ƒæ˜äº®é€æï¼Œèªªä¸å‡ºçš„å¬Œåªšï¼Œä»¤ä½ èº«å¿ƒä¿±åŒ–ã€‚\n" NOR);
                         break;
                 default:
-                        tell_object(me, HIR "ÄãÄÔº£ÖĞ»Î¹ıµ±ÄêÎŞ"
-                                    "Êı¿Ì¿àĞŞÁ¶µÄÈÕ×Ó£¬²»ÓÉµÃ°µ×Ô¿àĞ¦¡£\n" NOR);
+                        tell_object(me, HIR "ä½ è…¦æµ·ä¸­æ™ƒéç•¶å¹´ç„¡"
+                                    "æ•¸åˆ»è‹¦ä¿®ç…‰çš„æ—¥å­ï¼Œä¸ç”±å¾—æš—è‡ªè‹¦ç¬‘ã€‚\n" NOR);
                         break;
                 }
 
@@ -103,31 +103,31 @@ int main(object me, string arg)
         pmap = me->query_skill_prepare();
 
         name = to_chinese(skill);
-        if (name[0] < 160) name = "ÕâÏî¼¼ÄÜ";
+        if (name[0] < 160) name = "é€™é …æŠ€èƒ½";
         skill_lvl = (int)me->query_skill(skill, 1);
 
         if (! skill_lvl)
         {
                 me->delete_skill(skill);
-                write("ºÃÁË¡£\n");
+                write("å¥½äº†ã€‚\n");
                 return 1;
         }
 
         if (lvl > skill_lvl || lvl < 0)
-                return notify_fail("Äã·¢ÏÖ×Ô¼ºÏÖÔÚ¶Ô¸ÃÏîÎä¹¦Àí½â»¹Ã»ÓĞÄÇÃ´¸ß¡£\n");
+                return notify_fail("ä½ ç™¼ç¾è‡ªå·±ç¾åœ¨å°è©²é …æ­¦åŠŸç†è§£é‚„æ²’æœ‰é‚£éº¼é«˜ã€‚\n");
 
         if (lvl == skill_lvl)
-                return notify_fail("ÄãÊÇ²»ÊÇÍ·ÄÔ½øË®ÁË£¬ÏÖÔÚ»¹ÓÃ·ÅÆúÂğ£¿\n");
+                return notify_fail("ä½ æ˜¯ä¸æ˜¯é ­è…¦é€²æ°´äº†ï¼Œç¾åœ¨é‚„ç”¨æ”¾æ£„å—ï¼Ÿ\n");
 
-        tell_object(me, HIR "Äã½«·ÅÆú¼¼ÄÜ " + name + " ÖÁ " + chinese_number(lvl) + " ¼¶¡£\n\n" NOR);
+        tell_object(me, HIR "ä½ å°‡æ”¾æ£„æŠ€èƒ½ " + name + " è‡³ " + chinese_number(lvl) + " ç´šã€‚\n\n" NOR);
 
-        tell_object(me, "ÇëÎñ±Ø¿¼ÂÇÇå³ş£¬È·¶¨µÄ»°ÇëÊäÈëÄúµÄ¹ÜÀíÃÜÂë»òÆÕÍ¨ÃÜÂë£º");
+        tell_object(me, "è«‹å‹™å¿…è€ƒæ…®æ¸…æ¥šï¼Œç¢ºå®šçš„è©±è«‹è¼¸å…¥æ‚¨çš„ç®¡ç†å¯†ç¢¼æˆ–æ™®é€šå¯†ç¢¼ï¼š");
         input_to("check_password", 1, me, skill, lvl, name, smap, pmap);
         return 1;
 
         me->start_busy(1+random(query("int", me)/7));
         if( random(query("int", me))>24 )
-                return notify_fail("Äã¼¯ÖĞ¾«Á¦²»ÔÙÏë" + name + "£¬½á¹û·¢ÏÖºÁÎŞ½á¹û¡£\n");
+                return notify_fail("ä½ é›†ä¸­ç²¾åŠ›ä¸å†æƒ³" + name + "ï¼Œçµæœç™¼ç¾æ¯«ç„¡çµæœã€‚\n");
 
         // skill_lvl = random(skill_lvl);
         if (lvl < 1)
@@ -143,11 +143,11 @@ int main(object me, string arg)
                 SKILLS_D->remove_id_from_abandon(me, skill);
                 me->delete_skill(skill);
                 me->reset_action();
-                write("Äã¼¯ÖĞ¾«Á¦²»ÔÙÏë" + name + "£¬½á¹ûÖÕÓÚ½«Ëü³¹µ×Íü¼ÇÁË¡£\n");
+                write("ä½ é›†ä¸­ç²¾åŠ›ä¸å†æƒ³" + name + "ï¼Œçµæœçµ‚äºå°‡å®ƒå¾¹åº•å¿˜è¨˜äº†ã€‚\n");
         } else
         {
                 me->set_skill(skill, lvl);
-                write("Äã¼¯ÖĞ¾«Á¦²»ÔÙÏë" + name + "£¬½á¹ûÓĞËùĞ§¹û¡£\n");
+                write("ä½ é›†ä¸­ç²¾åŠ›ä¸å†æƒ³" + name + "ï¼Œçµæœæœ‰æ‰€æ•ˆæœã€‚\n");
         }
         return 1;
 }
@@ -165,21 +165,21 @@ varargs void check_password(string passwd, object me, string skill, int lvl, str
                 old_pass=query("password", link_ob);
                 if (! stringp(old_pass) || crypt(passwd, old_pass) != old_pass)
                 {
-                        write(HIR "ÃÜÂë´íÎó£¡Çë×¢Òâ£¬·ÅÆúÎäÑ§±ØĞëÊäÈë¹ÜÀíÃÜÂë»òÆÕÍ¨ÃÜÂë¡£\n");
+                        write(HIR "å¯†ç¢¼éŒ¯èª¤ï¼è«‹æ³¨æ„ï¼Œæ”¾æ£„æ­¦å­¸å¿…é ˆè¼¸å…¥ç®¡ç†å¯†ç¢¼æˆ–æ™®é€šå¯†ç¢¼ã€‚\n");
                         return;
                 }
         }
 
         if (skill == "exp")
         {
-                message("vision", me->name() + "×øÏÂÔÚÄıÉñË¼Ë÷Ê²Ã´¡£\n",
+                message("vision", me->name() + "åä¸‹åœ¨å‡ç¥æ€ç´¢ä»€éº¼ã€‚\n",
                         environment(me), me);
-                tell_object(me, "Äã²»ÔÙÏëÈ­½Å±øÆ÷Çá¹¦ÄÚ¹¦£¬Ö»ÊÇÒ»ÃÅĞÄË¼Íü¼ÇÎä¹¦¡£\n");
+                tell_object(me, "ä½ ä¸å†æƒ³æ‹³è…³å…µå™¨è¼•åŠŸå…§åŠŸï¼Œåªæ˜¯ä¸€é–€å¿ƒæ€å¿˜è¨˜æ­¦åŠŸã€‚\n");
                 me->start_busy(3 + random(5));
                 /*
                 if( random(query("int", me))>15 )
                 {
-                        tell_object(me, "¿ÉÊÇÄã·¢ÏÖ×Ô¼ºËÆºõ¼ÇĞÔÌ«ºÃ£¬Ã»ÓĞ°ëµãĞ§¹û¡£\n");
+                        tell_object(me, "å¯æ˜¯ä½ ç™¼ç¾è‡ªå·±ä¼¼ä¹è¨˜æ€§å¤ªå¥½ï¼Œæ²’æœ‰åŠé»æ•ˆæœã€‚\n");
                         return;
                 }
                 */
@@ -188,28 +188,28 @@ varargs void check_password(string passwd, object me, string skill, int lvl, str
                 switch (random(6))
                 {
                 case 0:
-                        tell_object(me, HIR "ÄãÓÖÏëÆğÁËºÜ¶àÎÂÜ°"
-                                    "µÄÍùÊÂ£¬²»ÓÉµÃ³Á½şÆäÖĞ¡£\n" NOR);
+                        tell_object(me, HIR "ä½ åˆæƒ³èµ·äº†å¾ˆå¤šæº«é¦¨"
+                                    "çš„å¾€äº‹ï¼Œä¸ç”±å¾—æ²‰æµ¸å…¶ä¸­ã€‚\n" NOR);
                         break;
                 case 1:
-                        tell_object(me, HIR "ÄãËÆºõÓÖ¿´µ½ÁËÒ£Ô¶"
-                                    "µÄÍ¯Äê£¬Ò»Ê±ÍüÈ´ÁË³¾ÊÀ¼äµÄ·³ÄÕ¡£\n" NOR);
+                        tell_object(me, HIR "ä½ ä¼¼ä¹åˆçœ‹åˆ°äº†é™é "
+                                    "çš„ç«¥å¹´ï¼Œä¸€æ™‚å¿˜å»äº†å¡µä¸–é–“çš„ç…©æƒ±ã€‚\n" NOR);
                         break;
                 case 2:
-                        tell_object(me, HIR "Äã÷öÈ»Ò»Éù³¤Ì¾£¬Ö»¾õ"
-                                    "µÃ×Ô¼ºÎªÁËÎäÑ§»Ä·ÏÒ»Éú£¬ÊµÔÚÎŞÎ½¡£\n" NOR);
+                        tell_object(me, HIR "ä½ é»¯ç„¶ä¸€è²é•·å˜†ï¼Œåªè¦º"
+                                    "å¾—è‡ªå·±ç‚ºäº†æ­¦å­¸è’å»¢ä¸€ç”Ÿï¼Œå¯¦åœ¨ç„¡è¬‚ã€‚\n" NOR);
                         break;
                 case 3:
-                        tell_object(me, HIR "ÄãĞÄÈçÖ¹Ë®£¬ËùÓĞµÄ"
-                                    "Îä¹¦¶¼·Â·ğÀë×Ô¼ºÔ¶È¥ÁË¡£\n" NOR);
+                        tell_object(me, HIR "ä½ å¿ƒå¦‚æ­¢æ°´ï¼Œæ‰€æœ‰çš„"
+                                    "æ­¦åŠŸéƒ½ä»¿ä½›é›¢è‡ªå·±é å»äº†ã€‚\n" NOR);
                         break;
                 case 4:
-                        tell_object(me, HIR "ÄãÌ§Í·ÑöÍûÌì¿Õ£¬·¢"
-                                    "ÏÖËüÃ÷ÁÁÍ¸Îö£¬Ëµ²»³öµÄ½¿ÃÄ£¬ÁîÄãÉíĞÄ¾ã»¯¡£\n" NOR);
+                        tell_object(me, HIR "ä½ æŠ¬é ­ä»°æœ›å¤©ç©ºï¼Œç™¼"
+                                    "ç¾å®ƒæ˜äº®é€æï¼Œèªªä¸å‡ºçš„å¬Œåªšï¼Œä»¤ä½ èº«å¿ƒä¿±åŒ–ã€‚\n" NOR);
                         break;
                 default:
-                        tell_object(me, HIR "ÄãÄÔº£ÖĞ»Î¹ıµ±ÄêÎŞ"
-                                    "Êı¿Ì¿àĞŞÁ¶µÄÈÕ×Ó£¬²»ÓÉµÃ°µ×Ô¿àĞ¦¡£\n" NOR);
+                        tell_object(me, HIR "ä½ è…¦æµ·ä¸­æ™ƒéç•¶å¹´ç„¡"
+                                    "æ•¸åˆ»è‹¦ä¿®ç…‰çš„æ—¥å­ï¼Œä¸ç”±å¾—æš—è‡ªè‹¦ç¬‘ã€‚\n" NOR);
                         break;
                 }
 
@@ -221,7 +221,7 @@ varargs void check_password(string passwd, object me, string skill, int lvl, str
         /*
         if( random(query("int", me))>24 )
         {
-                tell_object(me, "Äã¼¯ÖĞ¾«Á¦²»ÔÙÏë" + name + "£¬½á¹û·¢ÏÖºÁÎŞ½á¹û¡£\n");
+                tell_object(me, "ä½ é›†ä¸­ç²¾åŠ›ä¸å†æƒ³" + name + "ï¼Œçµæœç™¼ç¾æ¯«ç„¡çµæœã€‚\n");
                 return;
         }
         */
@@ -239,7 +239,7 @@ varargs void check_password(string passwd, object me, string skill, int lvl, str
                 SKILLS_D->remove_id_from_abandon(me, skill);
                 me->delete_skill(skill);
                 me->reset_action();
-                write("Äã¼¯ÖĞ¾«Á¦²»ÔÙÏë" + name + "£¬½á¹ûÖÕÓÚ½«Ëü³¹µ×Íü¼ÇÁË¡£\n");
+                write("ä½ é›†ä¸­ç²¾åŠ›ä¸å†æƒ³" + name + "ï¼Œçµæœçµ‚äºå°‡å®ƒå¾¹åº•å¿˜è¨˜äº†ã€‚\n");
         } else
         {
                 int add;
@@ -248,11 +248,11 @@ varargs void check_password(string passwd, object me, string skill, int lvl, str
                 lvl -= add;
                 if (lvl < 1)
                 {
-                        tell_object(me, "ÄãÈç¹ûÕæµÄÏëÈ«²¿·ÅÆú" + name + "ÇëÖØĞÂÖ¸¶¨Êı×ÖÎªÁã¡£\n");
+                        tell_object(me, "ä½ å¦‚æœçœŸçš„æƒ³å…¨éƒ¨æ”¾æ£„" + name + "è«‹é‡æ–°æŒ‡å®šæ•¸å­—ç‚ºé›¶ã€‚\n");
                         return;
                 }
                 me->set_skill(skill, lvl);
-                write("Äã¼¯ÖĞ¾«Á¦²»ÔÙÏë" + name + "£¬½á¹ûÓĞËùĞ§¹û¡£\n");
+                write("ä½ é›†ä¸­ç²¾åŠ›ä¸å†æƒ³" + name + "ï¼Œçµæœæœ‰æ‰€æ•ˆæœã€‚\n");
         }
         return;
 }
@@ -260,13 +260,13 @@ varargs void check_password(string passwd, object me, string skill, int lvl, str
 int help()
 {
         write(@TEXT
-Ö¸Áî¸ñÊ½£ºabandon|fangqi <¼¼ÄÜÃû³Æ> | exp to <ÊıÖµ>
+æŒ‡ä»¤æ ¼å¼ï¼šabandon|fangqi <æŠ€èƒ½åç¨±> | exp to <æ•¸å€¼>
 
-·ÅÆúÄãµÄÊµÕ½¾­Ñé»òÊÇÄ³Ò»ÏîÄãËùÑ§¹ıµÄ¼¼ÄÜµ½Ö¸¶¨µÄÊıÖµ£¬³É¹¦ÂÊ
-ºÍÄãµÄÌì¸³ÓĞ¹Ø£¬Ö»ÓĞÄÜ¹»ĞİÏ¢µÄµØ·½²ÅÄÜ¹»¾²ÏÂĞÄÀ´Íü¼ÇÎä¹¦¡£
+æ”¾æ£„ä½ çš„å¯¦æˆ°ç¶“é©—æˆ–æ˜¯æŸä¸€é …ä½ æ‰€å­¸éçš„æŠ€èƒ½åˆ°æŒ‡å®šçš„æ•¸å€¼ï¼ŒæˆåŠŸç‡
+å’Œä½ çš„å¤©è³¦æœ‰é—œï¼Œåªæœ‰èƒ½å¤ ä¼‘æ¯çš„åœ°æ–¹æ‰èƒ½å¤ éœä¸‹å¿ƒä¾†å¿˜è¨˜æ­¦åŠŸã€‚
 
-ÓĞÊ±ºòÒòÎªÎä¹¦Ïà¿Ë»òÕßÄã²»ÔÙ´òËãÔÚÄ³Ïî¼¼ÄÜÉÏÔÙÏÂ¹¦·ò£¬¾Í¿ÉÒÔ
-Ê¹ÓÃÕâÌõÖ¸Áî·ÅÆúËü¡£
+æœ‰æ™‚å€™å› ç‚ºæ­¦åŠŸç›¸å…‹æˆ–è€…ä½ ä¸å†æ‰“ç®—åœ¨æŸé …æŠ€èƒ½ä¸Šå†ä¸‹åŠŸå¤«ï¼Œå°±å¯ä»¥
+ä½¿ç”¨é€™æ¢æŒ‡ä»¤æ”¾æ£„å®ƒã€‚
 TEXT );
         return 1;
 }

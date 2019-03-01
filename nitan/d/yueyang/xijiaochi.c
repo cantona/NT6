@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ϴ�ų�");
+        set("short", "洗腳池");
         set("long", @LONG
-����ϴ�ų������ڶ������£�Ϊ����ʯͷ���¶��ɣ���˵����֮һ
-�����������ڴ�ϴ�š������ˮ���ص���̦���¿��ˡ�
+仙人洗腳池在龍口東邊巖下，為整塊石頭凹下而成，傳說八仙之一
+的呂洞賓曾在此洗腳。雨天積水，池底綠苔清新可人。
 LONG );
         set("outdoors", "dongting");
         set("no_clean_up", 0);

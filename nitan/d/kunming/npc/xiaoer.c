@@ -5,15 +5,15 @@ inherit F_DEALER;
 
 void create()
 {
-        set_name("µêÐ¡¶þ", ({ "xiao er", "xiao", "waiter" }) );
-        set("gender", "ÄÐÐÔ" );
+        set_name("åº—å°äºŒ", ({ "xiao er", "xiao", "waiter" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 22);
         set("long",
-                "ÕâÎ»µêÐ¡¶þÕýÐ¦ßäßäµØÃ¦Öø£¬»¹²»Ê±ÄÃÆð¹ÒÔÚ²±×ÓÉÏµÄÄ¨²¼²ÁÁ³¡£\n");
+                "é€™ä½åº—å°äºŒæ­£ç¬‘å’ªå’ªåœ°å¿™è‘—ï¼Œé‚„ä¸æ™‚æ‹¿èµ·æŽ›åœ¨è„–å­ä¸Šçš„æŠ¹å¸ƒæ“¦è‡‰ã€‚\n");
         set("combat_exp", 100);
         set("attitude", "friendly");
 
-        set("rank_info/respect", "Ð¡¶þ¸ç");
+        set("rank_info/respect", "å°äºŒå“¥");
         set("vendor_goods", ({
                 "/d/city/npc/obj/jitui",
                 "/d/city/npc/obj/jiudai",
@@ -46,12 +46,12 @@ void greeting(object ob)
         switch( random(2) )
         {
         case 0:
-                say( CYN "µêÐ¡¶þÐ¦ßäßäµØËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-                   + CYN + "£¬½øÀ´ºÈ±­²è£¬ÐªÐªÍÈ°É¡£\n" NOR);
+                say( CYN "åº—å°äºŒç¬‘å’ªå’ªåœ°èªªé“ï¼šé€™ä½" + RANK_D->query_respect(ob)
+                   + CYN + "ï¼Œé€²ä¾†å–æ¯èŒ¶ï¼Œæ­‡æ­‡è…¿å§ã€‚\n" NOR);
                 break;
         case 1:
-                say( CYN "µêÐ¡¶þÓÃ²±×ÓÉÏµÄÃ«½íÄ¨ÁËÄ¨ÊÖ£¬ËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-                   + CYN + "£¬Çë½øÇë½ø¡£\n" NOR);
+                say( CYN "åº—å°äºŒç”¨è„–å­ä¸Šçš„æ¯›å·¾æŠ¹äº†æŠ¹æ‰‹ï¼Œèªªé“ï¼šé€™ä½" + RANK_D->query_respect(ob)
+                   + CYN + "ï¼Œè«‹é€²è«‹é€²ã€‚\n" NOR);
                 break;
         }
 }

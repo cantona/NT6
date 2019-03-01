@@ -4,11 +4,11 @@ inherit "/maze/necropolis/necropolis_npc";
 
 void create()
 {
-        string *names = ({ "ÓÄÁé" }); 
+        string *names = ({ "å¹½éˆ" }); 
         set_name( names[random(sizeof(names))], ({ "ghost"}));
         set("vendetta_mark", "ghost");
-        set("long", "ÕâÊÇ¸öÈôÒşÈôÏÖµÄÓÄÁé¡£\n");
-        set("title", HIB "(¹íÆø)" NOR); 
+        set("long", "é€™æ˜¯å€‹è‹¥éš±è‹¥ç¾çš„å¹½éˆã€‚\n");
+        set("title", HIB "(é¬¼æ°£)" NOR); 
 
         set("str", 50);
         set("con", 120);
@@ -23,7 +23,7 @@ void create()
         //set("shen_type", -1);        
         //set("chat_chance", 2);
         //set("chat_msg", ({
-        //      "÷¼÷Ã¿Õ¶´µÄÑÛ¿ôÀïÉÁË¸×Å¿ÉÅÂµÄÓ«¹â¡£\n"
+        //      "éª·é«ç©ºæ´çš„çœ¼çœ¶è£¡é–ƒçˆè‘—å¯æ€•çš„ç†’å…‰ã€‚\n"
         //}) ); 
 
         //set("chat_chance_combat", 50);
@@ -31,15 +31,15 @@ void create()
         //      (: do_stun() :),
         //}) ); 
         set("self_go_msg",1);
-        set("arrive_msg","ÓÄÁéÆ®ÁË¹ıÀ´¡£");
-        set("leave_msg","ÓÄÁéÆ®×ßÁË¡£");
+        set("arrive_msg","å¹½éˆé£„äº†éä¾†ã€‚");
+        set("leave_msg","å¹½éˆé£„èµ°äº†ã€‚");
         set("chat_chance", 1);
         set("chat_msg", ({
                 (: random_move :)
         }) );  
         set("combat_exp", 100000000);
         set("bellicosity", 5 );
-        set("death_msg",BLU"\n$NÏûÊ§²»¼ûÁË¡£\n\n"NOR);
+        set("death_msg",BLU"\n$Næ¶ˆå¤±ä¸è¦‹äº†ã€‚\n\n"NOR);
         set_skill("force", 30);
         set_skill("dodge", 30);
         set_skill("unarmed", 30);

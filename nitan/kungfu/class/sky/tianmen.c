@@ -3,10 +3,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", HIW "¡¾Í¨ÌìÃÅ¡¿" NOR);
+        set("short", HIW "ã€é€šå¤©é–€ã€‘" NOR);
         set("long", HIW @LONG
-ÄãÀ´µ½ÕâÀï£¬·¢ÏÖÕâÀïÃ£Ã£Ò»Æ¬ÔÆº£¡£ÑÛÇ°Ò»×ùºêÎ°µÄ³¨¿ªµÄ´ó
-ÃÅ£¬´óÃÅµÄÖù×ÓÅÔÒÀÙË×ÅÒ»Î»ÄÐ×Ó£¬ËÆºõ¶ÔÄãµÄµ½À´ºÁ²»ÔÚÒâ¡£
+ä½ ä¾†åˆ°é€™è£¡ï¼Œç™¼ç¾é€™è£¡èŒ«èŒ«ä¸€ç‰‡é›²æµ·ã€‚çœ¼å‰ä¸€åº§å®å‰çš„æ•žé–‹çš„å¤§
+é–€ï¼Œå¤§é–€çš„æŸ±å­æ—ä¾åŽè‘—ä¸€ä½ç”·å­ï¼Œä¼¼ä¹Žå°ä½ çš„åˆ°ä¾†æ¯«ä¸åœ¨æ„ã€‚
 LONG NOR );
         set("exits", ([
                 "enter" : __DIR__"sky1",
@@ -26,13 +26,13 @@ int valid_leave(object me, string dir)
         if ( dir == "enter" && objectp(present("li xunhuan", environment(me)))
              && me->query("sky12/floor") < 1)
         {
-                write(HIG "ÀîÑ°»¶ËµµÀ£ºÒª½øÈëÌì½çµÃÏÈ¹ýÎÒÕâ¹Ø£¡\n" NOR);
-                return notify_fail("ÀîÑ°»¶µ²×¡ÁËÄãµÄÈ¥Â·¡£\n");
+                write(HIG "æŽå°‹æ­¡èªªé“ï¼šè¦é€²å…¥å¤©ç•Œå¾—å…ˆéŽæˆ‘é€™é—œï¼\n" NOR);
+                return notify_fail("æŽå°‹æ­¡æ“‹ä½äº†ä½ çš„åŽ»è·¯ã€‚\n");
         }
 
-        tell_object(me,  HIW "\nÄã½øÈëÁËÊ®¶þÖØÌìÖ®µÚÒ»ÖØÌì¡­¡­\n" NOR);
+        tell_object(me,  HIW "\nä½ é€²å…¥äº†åäºŒé‡å¤©ä¹‹ç¬¬ä¸€é‡å¤©â€¦â€¦\n" NOR);
 
-        CHANNEL_D->do_channel(this_object(), "rumor", HIM "ÌýËµ" + me->name() + HIM + "´³ÈëÌì½çµÚÒ»ÖØÌì¡£\n\n" NOR);
+        CHANNEL_D->do_channel(this_object(), "rumor", HIM "è½èªª" + me->name() + HIM + "é—–å…¥å¤©ç•Œç¬¬ä¸€é‡å¤©ã€‚\n\n" NOR);
 
         return ::valid_leave(me, dir);
 }
@@ -42,7 +42,7 @@ void init()
         
         if (! me->query("sky12/tianmen") && userp(me))
         {
-                tell_object(me, HIG "ÀîÑ°»¶¶ÔÄãËµµÀ£ºÄãÃ»ÓÐÊ¹ÓÃ¹ý¶«»ÊÖÓ£¬ÊÇÔõÃ´µ½Ìì½çÀ´µÄ£¬ºß£¡\n" NOR);
+                tell_object(me, HIG "æŽå°‹æ­¡å°ä½ èªªé“ï¼šä½ æ²’æœ‰ä½¿ç”¨éŽæ±çš‡é˜ï¼Œæ˜¯æ€Žéº¼åˆ°å¤©ç•Œä¾†çš„ï¼Œå“¼ï¼\n" NOR);
 
                 me->delete("sky12");
                 me->save();

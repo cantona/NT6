@@ -1,4 +1,4 @@
-// pet.c ³èÎï
+// pet.c å¯µç‰©
 
 #include <ansi.h>
 #include <command.h>
@@ -17,11 +17,11 @@ int is_stay_in_room() { return 1; }
 
 void create()
 {
-        set_name("³èÎï", ({ "pet" }) );
-        set("race", "Ò°ÊŞ");
-        set("gender", "ĞÛĞÔ");
+        set_name("å¯µç‰©", ({ "pet" }) );
+        set("race", "é‡ç¸");
+        set("gender", "é›„æ€§");
         set("age", 2 + random(3));
-        set("long", "Íæ¼Ò¿ÉÒÔÆïÉÏËüÈ¥Ö¸¶¨µÄµØ·½(rideto)¡£\n");        
+        set("long", "ç©å®¶å¯ä»¥é¨ä¸Šå®ƒå»æŒ‡å®šçš„åœ°æ–¹(rideto)ã€‚\n");        
         set("ridable", 1);
         set("no_sell", 1);
         set("no_put", 1);
@@ -34,7 +34,7 @@ void create()
         set("shen_type", 0);
         set("combat_exp",50000);
         set("attitude", "peaceful");        
-        set("limbs", ({ "Í·²¿", "¸¹²¿", "Î²°Í","ºóÍÈ","Ç°ÍÈ" }) );
+        set("limbs", ({ "é ­éƒ¨", "è…¹éƒ¨", "å°¾å·´","å¾Œè…¿","å‰è…¿" }) );
         set("verbs", ({ "bite", "hoof" }) );
 
         set_temp("apply/attack", 100);
@@ -57,7 +57,7 @@ int receive_whistle(object me)
 
         if ((env = environment()) && env == me)
         {
-                write(name() + "Äã²»ÊÇÕıÆï×ÅÂğ£¿ÄãÕÙ»½¸öÊ²Ã´¾¢£¿\n");
+                write(name() + "ä½ ä¸æ˜¯æ­£é¨è‘—å—ï¼Ÿä½ å¬å–šå€‹ä»€éº¼å‹ï¼Ÿ\n");
                 return 1;
         }
 
@@ -70,19 +70,19 @@ int receive_whistle(object me)
                         if (env->is_character() && environment(env))
                                         env = environment(env);
 
-                        message("vision", HIG "Í»È»" + name() + HIG "¿ñ±¼"
-                                HIG "¶øÈ¥£¬Ë²¼äÏûÊ§ÁË£¡\n\n" NOR, env);
+                        message("vision", HIG "çªç„¶" + name() + HIG "ç‹‚å¥”"
+                                HIG "è€Œå»ï¼Œç¬é–“æ¶ˆå¤±äº†ï¼\n\n" NOR, env);
 
                         if (interactive(env = environment()))
                         {
                                 delete_temp("is_riding", env);
                                 this_object()->delele_temp("is_rided_by");
                                 tell_object(env, HIM + name() +
-                                                 HIM "ºöÈ»ÀëÄã¶øÈ¥ÁË£¡\n" NOR);
+                                                 HIM "å¿½ç„¶é›¢ä½ è€Œå»äº†ï¼\n" NOR);
                         }
                 }
 
-                message_vision(HIG "$n" HIG "²»Öª´ÓÄÄÀï´Üµ½$N" HIG "ÃæÇ°£¡\n\n" NOR,
+                message_vision(HIG "$n" HIG "ä¸çŸ¥å¾å“ªè£¡ç«„åˆ°$N" HIG "é¢å‰ï¼\n\n" NOR,
                                me, this_object());
         }
 
@@ -98,7 +98,7 @@ int receive_whistle(object me)
         return 1;
 }
 
-// ½ÓÊÜ´æÅÌÊı¾İµÄ½Ó¿Úº¯Êı
+// æ¥å—å­˜ç›¤æ•¸æ“šçš„æ¥å£å‡½æ•¸
 int receive_dbase_data(mixed data)
 {
         if (! mapp(data))
@@ -110,7 +110,7 @@ int receive_dbase_data(mixed data)
         return 1;
 }
 
-// ½øĞĞ±£´æÊı¾İµÄ½Ó¿Úº¯Êı
+// é€²è¡Œä¿å­˜æ•¸æ“šçš„æ¥å£å‡½æ•¸
 mixed save_dbase_data()
 {
         mapping data;

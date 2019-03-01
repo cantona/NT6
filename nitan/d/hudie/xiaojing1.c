@@ -1,17 +1,17 @@
-// Ğ¡¾¶ xiaojing1.c
+// å°å¾‘ xiaojing1.c
  
 #include <ansi.h>
 inherit ROOM;
 
 void create() 
 { 
-        set("short", "Ğ¡¾¶");
+        set("short", "å°å¾‘");
         set("long", @LONG
-ÄãÑØ×ÅĞ¡Â·ĞĞÁËÒ»³Ì£¬ºûµûÖğ½¥¶àÁËÆğÀ´£¬Äã¸ü¼Ó¼Ó¿ì½Å²½ÏòÇ°
-×ßÈ¥¡£
+ä½ æ²¿è‘—å°è·¯è¡Œäº†ä¸€ç¨‹ï¼Œè´è¶é€æ¼¸å¤šäº†èµ·ä¾†ï¼Œä½ æ›´åŠ åŠ å¿«è…³æ­¥å‘å‰
+èµ°å»ã€‚
 LONG );
 
-        set("outdoors", "ºûµû¹È");
+        set("outdoors", "è´è¶è°·");
 
         set("exits", ([ 
             "north" : __DIR__"xiaojing2",

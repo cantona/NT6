@@ -1,16 +1,16 @@
-// fu-ceting ����
+// fu-ceting 側廳
 // Winder Oct.10 1998
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "����");
+        set("short", "側廳");
         set("long", @LONG
-���������Աߵ�һ��С���������������鷿�ģ�ֻ�Ǻ�Ա��
-��ʵ���Ҳ�����������װ�����棬���Ծ����γ����д���͵ĵ�
-�������аڷ���һ�Ű������ͼ������ӣ����ϸ���õĲ軹��ð
-��������
+這是正堂旁邊的一間小廳，本來是用作書房的，只是侯員外
+家實在找不出多少書來裝點門面，所以就整治成了招待熟客的地
+方。廳中擺放著一張八仙桌和幾把椅子，桌上剛沏好的茶還在冒
+著熱氣。
 LONG
         );
         set("exits", ([

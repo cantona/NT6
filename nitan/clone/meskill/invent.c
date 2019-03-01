@@ -1,5 +1,5 @@
 // Written by Lonely@nitan.org
-// invent.c ×Ô´´Îä¹¦
+// invent.c è‡ªå‰µæ­¦åŠŸ
 
 #include <ansi.h>;
 
@@ -43,7 +43,7 @@ int create_skill(string skill)
         }
 }
 
-// ¼ì²é×Ô´´Îä¹¦µÄÊôĞÔ
+// æª¢æŸ¥è‡ªå‰µæ­¦åŠŸçš„å±¬æ€§
 int check_skill()
 {
         if (! pointerp(query("usages")) || sizeof(query("usages")) < 1)
@@ -75,7 +75,7 @@ int valid_learn(object me)
 int practice_skill(object me)
 {
         if( query("qi", me)<30 )
-                return notify_fail("ÄãµÄ×´Ì¬Ì«²îÁË£¬²»ÄÜÁ·" + query("chinese_name") + "¡£\n");
+                return notify_fail("ä½ çš„ç‹€æ…‹å¤ªå·®äº†ï¼Œä¸èƒ½ç·´" + query("chinese_name") + "ã€‚\n");
         me->receive_damage("qi", 30);
         return 1;
 }

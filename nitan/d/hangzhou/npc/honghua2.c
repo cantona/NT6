@@ -6,12 +6,12 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÂÌÓª»áÖÚ", ({ "hong hua","hong","hua" }) );
-        set("gender", "ÄĞĞÔ");
+        set_name("ç¶ ç‡Ÿæœƒçœ¾", ({ "hong hua","hong","hua" }) );
+        set("gender", "ç”·æ€§");
         set("age", 25);
         set("long",
-                "ÕâÊÇÎ»ÊÖÖ´³¤Ç¹µÄÂÌÓªÇå±ø£¬ºì»¨»áÔÚ½­ÄÏÉùÊÆ´óÊ¢£¬ÂÌÓªÒ²
-¶àÓĞ»áÖÚ¡£\n");
+                "é€™æ˜¯ä½æ‰‹åŸ·é•·æ§çš„ç¶ ç‡Ÿæ¸…å…µï¼Œç´…èŠ±æœƒåœ¨æ±Ÿå—è²å‹¢å¤§ç››ï¼Œç¶ ç‡Ÿä¹Ÿ
+å¤šæœ‰æœƒçœ¾ã€‚\n");
         set("combat_exp", 20000);
         set("shen_type", 1);
         set("attitude", "heroism");
@@ -34,9 +34,9 @@ void init()
 {
         object ob;
         if (random(2) == 1)
-        message_vision(HIY "ÂÌÓª»áÖÚÇÄÇÄ¸æËß$N£ºÉíÔÚÂÌÓªĞÄÔÚºº£¡\n" NOR, 
+        message_vision(HIY "ç¶ ç‡Ÿæœƒçœ¾æ‚„æ‚„å‘Šè¨´$Nï¼šèº«åœ¨ç¶ ç‡Ÿå¿ƒåœ¨æ¼¢ï¼\n" NOR, 
                 this_player());
         else
-        message_vision(HIY "ÂÌÓª»áÖÚ³å×Å$N¼·ÁË¼·ÑÛËµ£º¹·»ÊµÛÊÇ´ÓÇàÂ¥µØµÀ±»µ±¼ÒµÄ´ş×ÅµÄ£¡\n" NOR, 
+        message_vision(HIY "ç¶ ç‡Ÿæœƒçœ¾æ²–è‘—$Næ“ äº†æ“ çœ¼èªªï¼šç‹—çš‡å¸æ˜¯å¾é’æ¨“åœ°é“è¢«ç•¶å®¶çš„é€®è‘—çš„ï¼\n" NOR, 
                 this_player());
 }

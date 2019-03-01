@@ -1,6 +1,6 @@
 // This is player's own skill (Write by Lonely@nt2)
-//CreatebyÒ×Ë®º®(Rain)atWed Aug 20 00:18:13 2014
-// ¿ñµ¶(mad-blade.c)
+//Createbyæ˜“æ°´å¯’(Rain)atWed Aug 20 00:18:13 2014
+// ç‹‚åˆ€(mad-blade.c)
 
 #include <ansi.h>
 inherit SKILL;        
@@ -16,8 +16,8 @@ mapping *action = ({
 	"dodge" : 260,
 	"parry" : 260,
 	"lvl" : 100,
-	"damage_type" : "¸îÉË",
-	"skill_name" : "¿ñ·ç"
+	"damage_type" : "å‰²å‚·",
+	"skill_name" : "ç‹‚é¢¨"
  ]),
 // ZHAOSHI : 1
 });
@@ -28,10 +28,10 @@ int valid_learn(object me)
         
         if( !objectp(weapon=query_temp("weapon", me) )
                  || query("skill_type", weapon) != "blade" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ã€‚\n");
                 
         if( query("max_neili", me)<50 )
-                return notify_fail("ÄãµÄÄÚÁ¦Ì«Èõ£¬ÎŞ·¨Á·" + "¿ñµ¶" + "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›å¤ªå¼±ï¼Œç„¡æ³•ç·´" + "ç‹‚åˆ€" + "ã€‚\n");
                 
         return 1;
 }
@@ -80,13 +80,13 @@ int practice_skill(object me)
         object weapon; 
         if( !objectp(weapon=query_temp("weapon", me)) || 
                 query("skill_type", weapon) != "blade" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");        
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ã€‚\n");        
         
         if( query("qi", me)<25 )
-                return notify_fail("ÄãµÄÌåÁ¦²»¹»ÁË£¬ĞİÏ¢Ò»ÏÂÔÙÁ·°É¡£\n");
+                return notify_fail("ä½ çš„é«”åŠ›ä¸å¤ äº†ï¼Œä¼‘æ¯ä¸€ä¸‹å†ç·´å§ã€‚\n");
                 
         if( query("neili", me)<3 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»ÁË£¬ĞİÏ¢Ò»ÏÂÔÙÁ·°É¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ äº†ï¼Œä¼‘æ¯ä¸€ä¸‹å†ç·´å§ã€‚\n");
                 
         me->receive_damage("qi", 25);
         addn("neili", -3, me);
@@ -101,7 +101,7 @@ mixed hit_ob(object me, object victim, int damage)
         if (random(damage) > victim->query_str()) 
         {
                 result = ([ "damage" : damage ]);
-                result += ([ "msg" : HIW "ÄãÌıµ½¡¸¿¦àê¡¹Ò»ÉùÇáÏì£¬ÒÑ±»$NµÄ±øÆ÷Ëù·¢É±Æø´ìÉË£¬$n¶ÙÊ±ÑªÃ°ÈıÕÉ£¡£¡£¡\n" NOR ]);
+                result += ([ "msg" : HIW "ä½ è½åˆ°ã€Œå–€åš“ã€ä¸€è²è¼•éŸ¿ï¼Œå·²è¢«$Nçš„å…µå™¨æ‰€ç™¼æ®ºæ°£æŒ«å‚·ï¼Œ$né “æ™‚è¡€å†’ä¸‰ä¸ˆï¼ï¼ï¼\n" NOR ]);
 
                 return result;
         }
@@ -114,7 +114,7 @@ string perform_action_file(string action)
 string query_description()
 {
 	return
- "¿ñµ¶ÊÇ´´×ÔÒ×Ë®º®µÄ¾øÊÀµ¶·¨£¬ÕĞÊ½ÓÂÍùÖ±Ç°£¬´ó¿ª´óãØ£¬ÒÔÓÂÃÍ°Ô;µÀ¶ø
-Öø³Æ£¬µ±³õ½­ºşÊ®´óÕÆÃÅÎ§¹¥Ò×Ë®º®µÄÊ±ºò£¬ÇéÊÆÍò·ÖÎ£»ú£¬Ò×Ë®º®;ÔÚÇ§
-¾ûÒ»·¢Ö®¼ÊÊ¹³öÕâÌ×Îä¹¦£¬¶ÙÊ±·çÔÆ±äÉ«£¬»¯ÏÕÎªÒÄ¡­¡­" ; 
+ "ç‹‚åˆ€æ˜¯å‰µè‡ªæ˜“æ°´å¯’çš„çµ•ä¸–åˆ€æ³•ï¼Œæ‹›å¼å‹‡å¾€ç›´å‰ï¼Œå¤§é–‹å¤§é—”ï¼Œä»¥å‹‡çŒ›éœ¸;é“è€Œ
+è‘—ç¨±ï¼Œç•¶åˆæ±Ÿæ¹–åå¤§æŒé–€åœæ”»æ˜“æ°´å¯’çš„æ™‚å€™ï¼Œæƒ…å‹¢è¬åˆ†å±æ©Ÿï¼Œæ˜“æ°´å¯’;åœ¨åƒ
+éˆä¸€ç™¼ä¹‹éš›ä½¿å‡ºé€™å¥—æ­¦åŠŸï¼Œé “æ™‚é¢¨é›²è®Šè‰²ï¼ŒåŒ–éšªç‚ºå¤·â€¦â€¦" ; 
 }

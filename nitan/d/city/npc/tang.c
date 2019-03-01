@@ -22,13 +22,13 @@ string  *query_all_trade() { return all_trade; }
 
 void create()
 {
-        set_name("ÌÆéª", ({ "tang nan", "tang", "nan" }));
-        set("title", "µ±ÆÌÀÏ°å");
+        set_name("å”æ¥ ", ({ "tang nan", "tang", "nan" }));
+        set("title", "ç•¶èˆ–è€æ¿");
         set("shen_type", 0);
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("age", 35);
         set("str", 1000);
-        set("long", "¾İËµÌÆéªÊÇËÄ´¨ÌÆ¼ÒµÄºó´ú¡£\n");
+        set("long", "æ“šèªªå”æ¥ æ˜¯å››å·å”å®¶çš„å¾Œä»£ã€‚\n");
         set("no_get_from", 1);
 
         set_skill("unarmed", 60);
@@ -41,7 +41,7 @@ void create()
         set("attitude", "friendly");
 
         set("inquiry", ([
-                "½ğÂÖ¾Å×ª" : (: ask_back :),
+                "é‡‘è¼ªä¹è½‰" : (: ask_back :),
         ]));
 
         set_max_encumbrance(800000000000);
@@ -66,20 +66,20 @@ mixed ask_back()
         object me;
 
         me = this_player();
-        if( query("family/family_name", me) != "Ñ©É½ËÂ" )
+        if( query("family/family_name", me) != "é›ªå±±å¯º" )
         {
-                message_vision(CYN "$N" CYN "Ò»Á³Ã£È»µÀ£ºÉ¶£¿¸Õ²ÅÄãËµÉ¶£¿\n" NOR,
+                message_vision(CYN "$N" CYN "ä¸€è‡‰èŒ«ç„¶é“ï¼šå•¥ï¼Ÿå‰›æ‰ä½ èªªå•¥ï¼Ÿ\n" NOR,
                                this_object(), me);
                 return -1;
         }
 
-        message_sort(HIY "\n$N" HIY "¿´ÁË¿´$n" HIY "£¬ÒõĞ¦Á½Éù£¬Ëæ¼´ÔÚ$n"
-                     HIY "¶ú±ßµÍÉùËµµÀ£º¡°Ğ¡µÄÔç¾ÍÎªÄúÀÏÈË¼Ò×¼±¸ºÃÁË£¬¾Í"
-                     "ÔÚ¹ñÌ¨ºóÃæ£¬Äú¿ì¸úÎÒÀ´°É¡£¡±Ëµ°Õ$N" HIY "±ãÁì×Å$n"
-                     HIY "¿ì²½³¯ºóÌü×ßÈ¥¡£\n\n" NOR, this_object(), me);
+        message_sort(HIY "\n$N" HIY "çœ‹äº†çœ‹$n" HIY "ï¼Œé™°ç¬‘å…©è²ï¼Œéš¨å³åœ¨$n"
+                     HIY "è€³é‚Šä½è²èªªé“ï¼šâ€œå°çš„æ—©å°±ç‚ºæ‚¨è€äººå®¶æº–å‚™å¥½äº†ï¼Œå°±"
+                     "åœ¨æ«ƒå°å¾Œé¢ï¼Œæ‚¨å¿«è·Ÿæˆ‘ä¾†å§ã€‚â€èªªç½·$N" HIY "ä¾¿é ˜è‘—$n"
+                     HIY "å¿«æ­¥æœå¾Œå»³èµ°å»ã€‚\n\n" NOR, this_object(), me);
         me->move("/d/xueshan/midao");
-        tell_object(me, CYN + name() + "ËµµÀ£º¾ÍÊÇÕâÀï£¬ÄãÒ»Ö±×ßÄÏ¾ÍĞĞÁË¡£\n"
-                        HIC + name() + "ËµÍê±ã¼±¼±Ã¦Ã¦¸ÏÁË»ØÈ¥¡£\n" NOR);
+        tell_object(me, CYN + name() + "èªªé“ï¼šå°±æ˜¯é€™è£¡ï¼Œä½ ä¸€ç›´èµ°å—å°±è¡Œäº†ã€‚\n"
+                        HIC + name() + "èªªå®Œä¾¿æ€¥æ€¥å¿™å¿™è¶•äº†å›å»ã€‚\n" NOR);
         return -1;
 }
 
@@ -90,18 +90,18 @@ void unconcious()
 
 void die()
 {
-        message_vision("\n$NËÀÁË¡£\n", this_object());
+        message_vision("\n$Næ­»äº†ã€‚\n", this_object());
         destruct(this_object());
 }
 
 string ask_task(int index, string name)
 {
         string* trades = keys(big_task[index]["trade"]);
-        string msg = "Èç¹ûÄãÄÜ¹»¸øÎÒ";
+        string msg = "å¦‚æœä½ èƒ½å¤ çµ¦æˆ‘";
         for(int i = 0; i < sizeof(trades); i++)
                 msg += trades[i] + ((i < (sizeof(trades) - 2)) ?
-                        "¡¢" : ((i < (sizeof(trades) - 1)) ?
-                        HIC "ºÍ" NOR : HIC "µÄ»°£¬ÎÒ¾Í°Ñ" + name + HIC + "¸øÄã¡£" NOR));
+                        "ã€" : ((i < (sizeof(trades) - 1)) ?
+                        HIC "å’Œ" NOR : HIC "çš„è©±ï¼Œæˆ‘å°±æŠŠ" + name + HIC + "çµ¦ä½ ã€‚" NOR));
         return msg;
 }
 
@@ -117,11 +117,11 @@ mixed trade_task(int index)
                    ob = present(big_task[index]["trade"][trades[i]], who);
                    //if( !objectp(ob) || !query("task_ob", ob) )
                    if( !objectp(ob) || !ob->is_task() )
-                        return "µÈÄãÄÃµ½ÁË" + trades[i] + "ÔÙËµ°É¡£";
+                        return "ç­‰ä½ æ‹¿åˆ°äº†" + trades[i] + "å†èªªå§ã€‚";
         }
 
         for(int i = 0; i < sizeof(trades); i++) {
-                message_vision("$NÄÃ³ö" + trades[i] + "¸ø$n¡£\n", who, me);
+                message_vision("$Næ‹¿å‡º" + trades[i] + "çµ¦$nã€‚\n", who, me);
                 TASK_D->finish(present(big_task[index]["trade"][trades[i]], who), who);
                 destruct(present(big_task[index]["trade"][trades[i]], who));
         }
@@ -131,7 +131,7 @@ mixed trade_task(int index)
         ob->move(who);
         set("big_task", 1, ob);
         set("task_ob", 1, ob);
-        message_vision("$NÄÃ³ö" + ob->name() + "¸ø$n¡£\n", me, who);
+        message_vision("$Næ‹¿å‡º" + ob->name() + "çµ¦$nã€‚\n", me, who);
 
         return -1;
 }
@@ -151,14 +151,14 @@ void add_big(string arg, int i)
                 ]);
 
         set("inquiry/" + filter_color(name), (: ask_task, i, name :));
-        set("inquiry/¶Ò»»" + filter_color(name), (: trade_task, i :));
+        set("inquiry/å…Œæ›" + filter_color(name), (: trade_task, i :));
         all_trade[sizeof(all_trade)-i-1]=query("id", task_ob);
         destruct(task_ob);
 }
 
 void task_announce()
 {
-        string msg = "½üÈÕµÃµ½£º";
+        string msg = "è¿‘æ—¥å¾—åˆ°ï¼š";
         mapping *task = TASK_D->query_task();
         int k, task_s = sizeof(task);
 
@@ -174,17 +174,17 @@ void task_announce()
                         all_trade[i * RATE + j] = task[k]["id"];
                 }
                 msg += big_task[i]["name"] + ((i < (sizeof(big_task) - 2)) ?
-                        "¡¢" : ((i < (sizeof(big_task) - 1)) ?
-                        HIC "ºÍ" NOR : HIC "£¬²»ÖªÄÄÎ»½­ºşÅóÓÑĞèÒª¡£" NOR));
+                        "ã€" : ((i < (sizeof(big_task) - 1)) ?
+                        HIC "å’Œ" NOR : HIC "ï¼Œä¸çŸ¥å“ªä½æ±Ÿæ¹–æœ‹å‹éœ€è¦ã€‚" NOR));
         }
-        set("inquiry/¶Ò»»", "ÎÒÕâÀïÓĞ" + msg[10..<34] + "¿ÉÒÔºÍÄã½»»»¡£");
+        set("inquiry/å…Œæ›", "æˆ‘é€™è£¡æœ‰" + msg[10..<34] + "å¯ä»¥å’Œä½ äº¤æ›ã€‚");
         command("chat " + msg);
 }
 
 void clean_big_task(int n)
 {
         delete("inquiry");
-        set("inquiry/½ğÂÖ¾Å×ª", (: ask_back :));
+        set("inquiry/é‡‘è¼ªä¹è½‰", (: ask_back :));
         big_task = allocate(n);
         all_trade = allocate(n*RATE + n);
 }

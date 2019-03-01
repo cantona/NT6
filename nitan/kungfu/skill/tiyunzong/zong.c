@@ -3,7 +3,7 @@
 
 #include <ansi.h>
 
-string name() { return "×Ý×Ö¾÷"; }
+string name() { return "ç¸±å­—è¨£"; }
 
 void remove_effect(object me,int count);
 
@@ -12,31 +12,31 @@ int perform(object me, object target)
         int improve;
 
         if( (int)me->query_skill("tiyunzong",1) < 120 )
-                return notify_fail("ÄãµÄÌÝÔÆ×Ý²»¹»æµÊì£¬²»»áÊ¹ÓÃ¡¸×Ý×Ö¾÷¡¹£¡\n");
+                return notify_fail("ä½ çš„æ¢¯é›²ç¸±ä¸å¤ å«»ç†Ÿï¼Œä¸æœƒä½¿ç”¨ã€Œç¸±å­—è¨£ã€ï¼\n");
 
         if( (int)me->query_skill("taiji-shengong", 1) < 120 )
-                return notify_fail("ÄãµÄÌ«¼«Éñ¹¦µÈ¼¶²»¹»£¬²»ÄÜÊ¹ÓÃ¡¸×Ý×Ö¾÷¡¹£¡\n");
+                return notify_fail("ä½ çš„å¤ªæ¥µç¥žåŠŸç­‰ç´šä¸å¤ ï¼Œä¸èƒ½ä½¿ç”¨ã€Œç¸±å­—è¨£ã€ï¼\n");
 
         if (me->query_skill_mapped("force") != "taiji-shengong")
-                return notify_fail("ÄãµÄÄÚ¹¦²»¶Ô£¬²»ÄÜÊ¹ÓÃ¡¸×Ý×Ö¾÷¡¹¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸä¸å°ï¼Œä¸èƒ½ä½¿ç”¨ã€Œç¸±å­—è¨£ã€ã€‚\n");
 
         if( (int)me->query_dex() < 28 )
-                return notify_fail("ÄãµÄÉí·¨Ì«µÍ£¬²»ÄÜÊ¹ÓÃ¡¸×Ý×Ö¾÷¡¹£¡\n");
+                return notify_fail("ä½ çš„èº«æ³•å¤ªä½Žï¼Œä¸èƒ½ä½¿ç”¨ã€Œç¸±å­—è¨£ã€ï¼\n");
 
         if( (int)me->query_skill("dodge",1) < 120 )
-                return notify_fail("ÄãµÄ»ù±¾Çá¹¦Ì«²î£¬ÉíÌå±¿×¾£¬²»ÄÜÊ¹ÓÃ¡¸×Ý×Ö¾÷¡¹£¡\n");
+                return notify_fail("ä½ çš„åŸºæœ¬è¼•åŠŸå¤ªå·®ï¼Œèº«é«”ç¬¨æ‹™ï¼Œä¸èƒ½ä½¿ç”¨ã€Œç¸±å­—è¨£ã€ï¼\n");
 
         if( query("neili", me)<600 )
-                return notify_fail("ÄãµÄÄÚÁ¦Ì«ÉÙÁË£¬ÎÞ·¨Ê¹ÓÃ³ö¡¸×Ý×Ö¾÷¡¹£¡\n");
+                return notify_fail("ä½ çš„å…§åŠ›å¤ªå°‘äº†ï¼Œç„¡æ³•ä½¿ç”¨å‡ºã€Œç¸±å­—è¨£ã€ï¼\n");
 
         if (me->query_skill_mapped("dodge") != "tiyunzong")
-                return notify_fail("ÄãÏÖÔÚ¼¤·¢µÄÇáÉíÊýÊ¹ÓÃ¡¸×Ý×Ö¾÷¡¹¾ø¼¼¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ¿€ç™¼çš„è¼•èº«æ•¸ä½¿ç”¨ã€Œç¸±å­—è¨£ã€çµ•æŠ€ã€‚\n");
 
         if( query_temp("zong", me) )
-                return notify_fail("ÄãÕýÔÚÊ¹ÓÃÌÝÔÆ×ÝµÄÌØÊâ·ÀÓù¡¸×Ý×Ö¾÷¡¹£¡\n");
+                return notify_fail("ä½ æ­£åœ¨ä½¿ç”¨æ¢¯é›²ç¸±çš„ç‰¹æ®Šé˜²å¾¡ã€Œç¸±å­—è¨£ã€ï¼\n");
 
-        message_combatd(HIY"$NÍ»È»ÉîÎüÒ»¿ÚÆø£¬Ò»Ì§ÍÈÃÍµÄ°Î¸ßÊýÕÉ£¬ÉýÊÆ¸Õ¾¡£¬Ë«ÍÈÁ¬ÐøÌß³ö£¬" +
-                        "ÉíÌåÓÖÉÏÉýÕÉÐí£¬²ÅÓÐÈç´óÄñ°ãÅÌÐýÂäÏÂ£¡\n" NOR, me);
+        message_combatd(HIY"$Nçªç„¶æ·±å¸ä¸€å£æ°£ï¼Œä¸€æŠ¬è…¿çŒ›çš„æ‹”é«˜æ•¸ä¸ˆï¼Œå‡å‹¢å‰›ç›¡ï¼Œé›™è…¿é€£çºŒè¸¢å‡ºï¼Œ" +
+                        "èº«é«”åˆä¸Šå‡ä¸ˆè¨±ï¼Œæ‰æœ‰å¦‚å¤§é³¥èˆ¬ç›¤æ—‹è½ä¸‹ï¼\n" NOR, me);
 
         improve = (int)me->query_skill("tiyunzong", 1);
         addn_temp("apply/defense", improve, me);
@@ -56,8 +56,8 @@ void remove_effect(object me, int count)
         {
                 addn_temp("apply/defense", -improve, me);
                 delete_temp("zong", me);
-                tell_object(me, HIY"ÄãÉ¢È¥µ¤ÌïÄý¾ÛµÄÄÚÁ¦£¬»ìÉí¾­ÂöÕæÆøÁ÷¶¯£¬Æø¶¨ÉñÏÐ£¬¾«ÉñÞÄÞÄ¡£\n"NOR);
-                tell_room(environment(me), HIY + me->name()+"È«Éí¹ÇÍ·Ò»ÕóÇáÏì£¬É¢È¥ÁË»ìÉíµÄ¹¦Á¦¡£\n"NOR,  ({ me }));
+                tell_object(me, HIY"ä½ æ•£åŽ»ä¸¹ç”°å‡èšçš„å…§åŠ›ï¼Œæ··èº«ç¶“è„ˆçœŸæ°£æµå‹•ï¼Œæ°£å®šç¥žé–’ï¼Œç²¾ç¥žå¼ˆå¼ˆã€‚\n"NOR);
+                tell_room(environment(me), HIY + me->name()+"å…¨èº«éª¨é ­ä¸€é™£è¼•éŸ¿ï¼Œæ•£åŽ»äº†æ··èº«çš„åŠŸåŠ›ã€‚\n"NOR,  ({ me }));
                 return;
         }
         call_out("remove_effect", 1 , me ,count -1);
@@ -65,16 +65,16 @@ void remove_effect(object me, int count)
 
 int help(object me)
 {
-        write(WHT"\nÌÝÔÆ×Ý¡¸×Ý¡¹×Ö¾÷£º"NOR"\n");
+        write(WHT"\næ¢¯é›²ç¸±ã€Œç¸±ã€å­—è¨£ï¼š"NOR"\n");
         write(@HELP
-        Îäµ±Çá¹¦£¬µ±ÊÀ¿ÉÎ½¶À²½ÎäÁÖ£¬ÌìÏÂÇá¹¦ÎÞ³öÆäÓÒ£¬ÁÙµÐÖ®Ê±Ê¹³ö¡¸×Ý¡¹×Ö
-        ¾÷£¬¿ÉÒÔÓÃÀ´´ó·ù¶ÈÌáÉý×Ô¼ºµÄÇá¹¦ÓÐÐ§µÈ¼¶£¬Ôö¼ÓÊ¤Ëã»òÌÓÍÑ»úÂÊ¡£
+        æ­¦ç•¶è¼•åŠŸï¼Œç•¶ä¸–å¯è¬‚ç¨æ­¥æ­¦æž—ï¼Œå¤©ä¸‹è¼•åŠŸç„¡å‡ºå…¶å³ï¼Œè‡¨æ•µä¹‹æ™‚ä½¿å‡ºã€Œç¸±ã€å­—
+        è¨£ï¼Œå¯ä»¥ç”¨ä¾†å¤§å¹…åº¦æå‡è‡ªå·±çš„è¼•åŠŸæœ‰æ•ˆç­‰ç´šï¼Œå¢žåŠ å‹ç®—æˆ–é€ƒè„«æ©ŸçŽ‡ã€‚
 
-        ÒªÇó£º  ÌÝÔÆ×ÝµÈ¼¶ 120 ÒÔÉÏ£»
-                Ì«¼«Éñ¹¦µÈ¼¶ 120 ÒÔÉÏ£»
-                »ù±¾Çá¹¦µÈ¼¶ 120 ÒÔÉÏ£»
-                ÄÚÁ¦ 600 ÒÔÉÏ£»
-                ºóÌìÉí·¨ 28 ÒÔÉÏ¡£
+        è¦æ±‚ï¼š  æ¢¯é›²ç¸±ç­‰ç´š 120 ä»¥ä¸Šï¼›
+                å¤ªæ¥µç¥žåŠŸç­‰ç´š 120 ä»¥ä¸Šï¼›
+                åŸºæœ¬è¼•åŠŸç­‰ç´š 120 ä»¥ä¸Šï¼›
+                å…§åŠ› 600 ä»¥ä¸Šï¼›
+                å¾Œå¤©èº«æ³• 28 ä»¥ä¸Šã€‚
 HELP
         );
         return 1;

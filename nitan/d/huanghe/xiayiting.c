@@ -6,11 +6,11 @@
 inherit ROOM;
 void create()
 {
-        set("short", "������");
+        set("short", "俠義廳");
         set("long", @LONG
-���ǻƺӰ����µĴ��������Ϲ��š��������������Ҷ���￿
-�����Ϸ���һ�Ż�Ƥ���Σ����߰����ż�����ľ���Σ��ǳ������ɡ�
-ǽ�ϸ�ӹ���ŵع��˼��������鷨��
+這是黃河幫議事的大廳，廳上掛著「俠義廳」三字匾額。廳裡靠
+北朝南放著一張虎皮交椅，兩邊擺設著幾副紅木桌椅，非常有氣派。
+牆上附庸風雅地掛了幾幅丹青書法。
 LONG );
         set("exits", ([
                 "east"  : __DIR__"guangchang",

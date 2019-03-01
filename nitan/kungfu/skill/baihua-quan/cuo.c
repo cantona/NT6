@@ -16,40 +16,40 @@ int perform(object me, object target)
         }
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail("°Ù»¨´íÂÒÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ç™¾èŠ±éŒ¯äº‚åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if (me->query_skill_prepared("unarmed") != "baihua-quan" &&
             me->query_skill_prepared("cuff") != "baihua-quan" &&
             me->query_skill_prepared("strike") != "baihua-quan" &&
             me->query_skill_prepared("claw") != "baihua-quan" &&
             me->query_skill_prepared("hand") != "baihua-quan")
-                return notify_fail("ÄãÏÖÔÚÃ»ÓĞ×¼±¸Ê¹ÓÃ°Ù»¨´íÈ­£¬ÎŞ·¨Ê©Õ¹°Ù»¨´íÂÒ£¡\n");
+                return notify_fail("ä½ ç¾åœ¨æ²’æœ‰æº–å‚™ä½¿ç”¨ç™¾èŠ±éŒ¯æ‹³ï¼Œç„¡æ³•æ–½å±•ç™¾èŠ±éŒ¯äº‚ï¼\n");
  
         if( query_temp("weapon", me) )
-                return notify_fail("°Ù»¨´íÂÒĞëÊÇ¿ÕÊÖ²ÅÄÜÊ©Õ¹¡£\n");
+                return notify_fail("ç™¾èŠ±éŒ¯äº‚é ˆæ˜¯ç©ºæ‰‹æ‰èƒ½æ–½å±•ã€‚\n");
 
         if( query("neili", me)<300 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬ÎŞ·¨Ê©Õ¹°Ù»¨´íÂÒ¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼Œç„¡æ³•æ–½å±•ç™¾èŠ±éŒ¯äº‚ã€‚\n");
 
         if ((lvl = me->query_skill("baihua-quan", 1)) < 160)
-                return notify_fail("ÄãµÄ°Ù»¨´íÈ­»¹²»¹»´¿Êì£¡\n");
+                return notify_fail("ä½ çš„ç™¾èŠ±éŒ¯æ‹³é‚„ä¸å¤ ç´”ç†Ÿï¼\n");
 
        if (! living(target))
-              return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+              return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIW "Ö»¼û$NÊ¹³ö°Ù»¨´íÈ­µÄ¾«Ãî°Ù»¨´íÂÒ£¬ÇÜÄÃÊÖÖĞ¼Ğ×ÅÓ¥×¦¹¦£¬×óÊÖ²éÈ­£¬ÓÒÊÖÃàÕÆ¡£¹¥\n"
-                  "³öÈ¥ÊÇ°ËØÔÕÆ£¬ÊÕ»ØÊ±ÒÑÊÇÌ«¼«È­£¬Öî¼ÒÔÓ³Â£¬ºÁÎŞ¹æÂÉ£¬Ö»Áî$nÑÛ»¨çÔÂÒ¡£\n\n" NOR;
+        msg = HIW "åªè¦‹$Nä½¿å‡ºç™¾èŠ±éŒ¯æ‹³çš„ç²¾å¦™ç™¾èŠ±éŒ¯äº‚ï¼Œæ“’æ‹¿æ‰‹ä¸­å¤¾è‘—é·¹çˆªåŠŸï¼Œå·¦æ‰‹æŸ¥æ‹³ï¼Œå³æ‰‹ç¶¿æŒã€‚æ”»\n"
+                  "å‡ºå»æ˜¯å…«å¦æŒï¼Œæ”¶å›æ™‚å·²æ˜¯å¤ªæ¥µæ‹³ï¼Œè«¸å®¶é›œé™³ï¼Œæ¯«ç„¡è¦å¾‹ï¼Œåªä»¤$nçœ¼èŠ±ç¹šäº‚ã€‚\n\n" NOR;
         i = 10;
         if (lvl * 2 / 3 - random(lvl) > (int)target->query_skill("parry") / 2)
         {
-                msg += HIW "$nÖ»¸Ğµ½Í·ÔÎÄ¿Ñ££¬Ö»¼û$N»òÕÆ¡¢»ò×¦¡¢»òÈ­¡¢»òÖ¸ÆÌÌì¸ÇµØµÄÏò×Ô¼º¸÷¸ö²¿Î»Ï®À´£¡\n"
-                           "Ö»Ò»Ë²¼ä£¬È«Éí¾¹ÒÑ¶àÁËÊıÊ®³öÉËºÛ£¬"NOR+HIR"ÏÊÑª"NOR+HIW"¿ñĞº²»Ö¹£¡\n"NOR;
+                msg += HIW "$nåªæ„Ÿåˆ°é ­æšˆç›®çœ©ï¼Œåªè¦‹$Næˆ–æŒã€æˆ–çˆªã€æˆ–æ‹³ã€æˆ–æŒ‡èˆ–å¤©è“‹åœ°çš„å‘è‡ªå·±å„å€‹éƒ¨ä½è¥²ä¾†ï¼\n"
+                           "åªä¸€ç¬é–“ï¼Œå…¨èº«ç«Ÿå·²å¤šäº†æ•¸åå‡ºå‚·ç—•ï¼Œ"NOR+HIR"é®®è¡€"NOR+HIW"ç‹‚ç€‰ä¸æ­¢ï¼\n"NOR;
                 count = me->query_skill("baihua-quan", 1) / 6;
                 addn_temp("apply/attack", count, me);
                 i += random(5);
         } else
         {
-                msg += HIY "$nÖ»¼û$NÔËÈ­Èç±¼£¬¿ìÈ­çÍ·×µİ³ö£¬Á¬Ã¦Õñ×÷¾«ÉñÃãÇ¿µÖµ²¡£\n" NOR;
+                msg += HIY "$nåªè¦‹$Né‹æ‹³å¦‚å¥”ï¼Œå¿«æ‹³ç¹½ç´›éå‡ºï¼Œé€£å¿™æŒ¯ä½œç²¾ç¥å‹‰å¼·æŠµæ“‹ã€‚\n" NOR;
                 count = 0;
         }
 

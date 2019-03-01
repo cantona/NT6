@@ -6,14 +6,14 @@ inherit MYHEART2;
 
 void create()
 {
-        set_name(HIG "ÈıÒ¶²İ" NOR, ({ "sanye cao", "sanye", "cao" }) );
+        set_name(HIG "ä¸‰è‘‰è‰" NOR, ({ "sanye cao", "sanye", "cao" }) );
         set_weight(1);
         if( clonep())
                 set_default_object(__FILE__);
         else {
                 set("material", "paper");
-                set("unit", "Æ¬");
-                set("long", HIG "ÕâÊÇÒ»Æ¬ÓĞÈıÆ¬Ò¶×ÓµÄÇà²İ£¬ÄË·öÉ£¹úĞÒÔË²İ¡£\n" NOR);
+                set("unit", "ç‰‡");
+                set("long", HIG "é€™æ˜¯ä¸€ç‰‡æœ‰ä¸‰ç‰‡è‘‰å­çš„é’è‰ï¼Œä¹ƒæ‰¶æ¡‘åœ‹å¹¸é‹è‰ã€‚\n" NOR);
                 set("value", 1000000);
                 set("limit", ([
                         "exp"    :   2000000,

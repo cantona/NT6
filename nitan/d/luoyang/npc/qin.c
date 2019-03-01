@@ -3,11 +3,11 @@ inherit F_DEALER;
 
 void create()
 {
-        set_name("ÇØÕÆ¹ñ", ({ "qin zhanggui", "qin", "zhanggui" }) );
-        set("gender", "ÄĞĞÔ" );
-        set("title", "ÂåÑôÌÆÈı²Ê" );
+        set_name("ç§¦æŒæ«ƒ", ({ "qin zhanggui", "qin", "zhanggui" }) );
+        set("gender", "ç”·æ€§" );
+        set("title", "æ´›é™½å”ä¸‰å½©" );
         set("age", 32);
-        set("long", "ÂåÑôÌÆÈı²ÊµÄÀÏ°å£¬ËûÕâÀïËù³öµÄ´ÉÆ÷ÎÅÃûÈ«¹ú¡£\n");
+        set("long", "æ´›é™½å”ä¸‰å½©çš„è€æ¿ï¼Œä»–é€™è£¡æ‰€å‡ºçš„ç“·å™¨èåå…¨åœ‹ã€‚\n");
         set("shen_type", 1);
         set("combat_exp", 10000);
         set("str", 17);

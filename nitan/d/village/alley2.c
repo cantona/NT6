@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "С�ﾡͷ");
+        set("short", "小巷盡頭");
         set("long", @LONG
-������С��ľ�ͷ��һֻ��ľ���ϰ��ż������ƵĶľߣ�������
-����Щ����ͷ����������һ�ɼ��㡢����ͺ���������һ���ζ����
-���������Ǵ��ڵ�Ʀ����å�ۼ��ĵط���
+這裡是小巷的盡頭，一只破木箱上擺著幾樣粗制的賭具，地上亂
+扔著些雞骨頭，空氣中有一股雞香、酒香和汗臭混雜在一起的味道。
+看來這裡是村內地痞、流氓聚集的地方。
 LONG );
         set("exits", ([ /* sizeof() == 1 */
             "southeast" : __DIR__"alley1",

@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", HIY"ů��"NOR);
+        set("short", HIY"暖閣"NOR);
         set("long", @LONG
-����ɽ��һ��Ϊ���䣬���ڴ�ů��֮��ȴ��ů�紺�����ֲ�����
-������̿�𣬴˼�ȡů�������������ޱȡ����г���ԻͲ��ã������
-�϶����Ž������棬���Ǹ����������ϱ��Ǵ�����
+昆侖山中一向極為寒冷，但在此暖閣之中卻溫暖如春，可又不見何
+處生著炭火，此間取暖方法當真巧妙無比。閣中陳設輝煌燦爛，榻上椅
+上都舖著錦緞軟墊，極是富麗豪華。南邊是大廳。
 LONG        );
         set("exits", ([ /* sizeof() == 1 */
                 "south" : __DIR__"hmszdating",

@@ -8,12 +8,12 @@ int ask_me();
 
 void create()
 {
-        set_name("Ñ¦Ä½»ª", ({ "xue muhua", "xue", "muhua" }));
-        set("long", "Ëû¾ÍÊÇºÅ³ÆÑÖÍõµÐµÄÉñÒ½Ñ¦Ä½»ª£¬¾ÝËµËû\n"
-                    "¾«Í¨Ò½Àí£¬¿ÉÒÔÆðËÀ»ØÉú¡£\n");
-        set("gender", "ÄÐÐÔ");
-        set("title", "åÐÒ£ÅÉº¯¹È°ËÓÑ");
-        set("nickname", HIM "ÑÖÍõµÐ" NOR);
+        set_name("è–›æ…•è¯", ({ "xue muhua", "xue", "muhua" }));
+        set("long", "ä»–å°±æ˜¯è™Ÿç¨±é–»çŽ‹æ•µçš„ç¥žé†«è–›æ…•è¯ï¼Œæ“šèªªä»–\n"
+                    "ç²¾é€šé†«ç†ï¼Œå¯ä»¥èµ·æ­»å›žç”Ÿã€‚\n");
+        set("gender", "ç”·æ€§");
+        set("title", "é€é™æ´¾å‡½è°·å…«å‹");
+        set("nickname", HIM "é–»çŽ‹æ•µ" NOR);
         set("age", 50);
         set("class", "shaman");
         set("attitude", "peaceful");
@@ -23,7 +23,7 @@ void create()
         set("dex", 25);
 
         set("inquiry", ([
-                "ÁÆÉË" : (:ask_me:),
+                "ç™‚å‚·" : (:ask_me:),
         ]) );
 
         set("max_qi", 3000);
@@ -61,7 +61,7 @@ void create()
         prepare_skill("hand", "qingyun-shou");
         prepare_skill("strike", "liuyang-zhang");
 
-        create_family("åÐÒ£ÅÉ", 3, "µÜ×Ó");
+        create_family("é€é™æ´¾", 3, "å¼Ÿå­");
 
         set("chat_chance_combat", 120);
         set("chat_msg_combat", ({
@@ -85,30 +85,30 @@ int ask_me()
 
         dir = base_name(environment(me));
         if (sscanf(dir,"/f/%s/%s/maze",quest,userid)!=2) {
-                command("say ÎÒÏÖÔÚÃ»¿Õ£¡");
+                command("say æˆ‘ç¾åœ¨æ²’ç©ºï¼");
                 return 1;
         }
 
         azhu = present("a zhu", environment(me));
         if(me->is_fighting() || me->query_temp("busy"))
         {
-                command("say ÎÒÏÖÔÚÃ»¿Õ£¡");
+                command("say æˆ‘ç¾åœ¨æ²’ç©ºï¼");
                 return 1;
         }
 
         if((int)ob->query_temp("juxianzhuang_step") != 14)
         {
-                command("say ÎÒÎªºÎÒªÎªÄãÃÇÁÆÉË£¡");
+                command("say æˆ‘ç‚ºä½•è¦ç‚ºä½ å€‘ç™‚å‚·ï¼");
                 return 1;
         }
         if(!objectp(azhu))
         {
-                command("say ÄãÃ»ÓÐÊÜÈÎºÎÉË°¡£¿");
+                command("say ä½ æ²’æœ‰å—ä»»ä½•å‚·å•Šï¼Ÿ");
                 return 1;
         }
         else
         {
-                message_vision("Ñ¦Ä½»ªÎ¹$N·þÏÂÒ»¿ÅÒ©Íè£¬È»ºóÅÌÏ¥×øÏÂ£¬Ë«ÕÆÌù×Å$NµÄ±³ÐÄ¡£\n", azhu);
+                message_vision("è–›æ…•è¯å–‚$Næœä¸‹ä¸€é¡†è—¥ä¸¸ï¼Œç„¶å¾Œç›¤è†åä¸‹ï¼Œé›™æŽŒè²¼è‘—$Nçš„èƒŒå¿ƒã€‚\n", azhu);
 
                 ob->delete_temp("juxianzhuang_step");
                 FUBEN_D->delay_clear_fuben(quest, userid);

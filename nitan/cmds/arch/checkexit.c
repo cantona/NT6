@@ -1,8 +1,8 @@
 // checkexit.c
 // Created by jjgod
 // Updated by Lonely (06/17/2002)
-// ÓÃÓÚ¼ì²éÒ»¸öÄ¿Â¼ÏÂµÄËùÓĞ·¿¼äÎÄ¼şµÄ³ö¿ÚÁ¬½ÓÊÇ·ñÕıÈ·
-// ²»°üÀ¨¸ÃÄ¿Â¼µÄ×ÓÄ¿Â¼
+// ç”¨äºæª¢æŸ¥ä¸€å€‹ç›®éŒ„ä¸‹çš„æ‰€æœ‰æˆ¿é–“æ–‡ä»¶çš„å‡ºå£é€£æ¥æ˜¯å¦æ­£ç¢º
+// ä¸åŒ…æ‹¬è©²ç›®éŒ„çš„å­ç›®éŒ„
 
 #include <ansi.h>
 
@@ -32,16 +32,16 @@ int main(object me, string arg)
         seteuid(getuid(me));
         
         if (file_size(arg) != -2)
-                return notify_fail("Ã»ÓĞÕâ¸öÄ¿Â¼¡£\n");
+                return notify_fail("æ²’æœ‰é€™å€‹ç›®éŒ„ã€‚\n");
 
-        info = HIR "ÕıÔÚ¼ì²é " + arg + " Ä¿Â¼ÏÂµÄ·¿¼äÎÄ¼ş£º\n\n" NOR;
+        info = HIR "æ­£åœ¨æª¢æŸ¥ " + arg + " ç›®éŒ„ä¸‹çš„æˆ¿é–“æ–‡ä»¶ï¼š\n\n" NOR;
         
-        message_system("ÕûÀíÅúÁ¿µµ°¸ÖĞ£¬ÇëÉÔºò...");  
+        message_system("æ•´ç†æ‰¹é‡æª”æ¡ˆä¸­ï¼Œè«‹ç¨å€™...");  
         if (! arrayp(flist = get_dir(arg + "/")) || ! sizeof(flist))
         {
-                info += HIR "Ã»ÓĞÈÎºÎ¿É¼ì²éµÄÎÄ¼ş¡£\n" NOR;
+                info += HIR "æ²’æœ‰ä»»ä½•å¯æª¢æŸ¥çš„æ–‡ä»¶ã€‚\n" NOR;
                 me->start_more(info);
-                message_system("ÏµÍ³ÕûÀíÅúÁ¿µµ°¸´¦ÀíÍê±Ï£¬Çë¼ÌĞøÓÎÏ·¡£\n" ESC + "[K"); 
+                message_system("ç³»çµ±æ•´ç†æ‰¹é‡æª”æ¡ˆè™•ç†å®Œç•¢ï¼Œè«‹ç¹¼çºŒéŠæˆ²ã€‚\n" ESC + "[K"); 
                 return 1;
         }
         
@@ -84,31 +84,31 @@ int main(object me, string arg)
         
         if (! sizeof(errors))
         {
-                info += HIR "¼ì²éÍê±Ï£¬Ã»ÓĞÈÎºÎ´íÎó¡£" NOR;
+                info += HIR "æª¢æŸ¥å®Œç•¢ï¼Œæ²’æœ‰ä»»ä½•éŒ¯èª¤ã€‚" NOR;
                 me->start_more(info);
-                message_system("ÏµÍ³ÕûÀíÅúÁ¿µµ°¸´¦ÀíÍê±Ï£¬Çë¼ÌĞøÓÎÏ·¡£\n" ESC + "[K"); 
+                message_system("ç³»çµ±æ•´ç†æ‰¹é‡æª”æ¡ˆè™•ç†å®Œç•¢ï¼Œè«‹ç¹¼çºŒéŠæˆ²ã€‚\n" ESC + "[K"); 
                 return 1;
         }
         
         key = keys(errors);
         for (i = 0; i < sizeof(key); i++)
         {
-                info += sprintf(CYN "ÎÄ¼ş " WHT "%-30s" CYN " µÄ³ö¿Ú " WHT "%-8s" CYN " ´íÎó¡£\n" NOR,
+                info += sprintf(CYN "æ–‡ä»¶ " WHT "%-30s" CYN " çš„å‡ºå£ " WHT "%-8s" CYN " éŒ¯èª¤ã€‚\n" NOR,
                                 key[i], errors[key[i]]);
         }
         
-        info += HIR "\n¼ì²éÍê±Ï¡£" NOR;
+        info += HIR "\næª¢æŸ¥å®Œç•¢ã€‚" NOR;
         me->start_more(info);
-        message_system("ÏµÍ³ÕûÀíÅúÁ¿µµ°¸´¦ÀíÍê±Ï£¬Çë¼ÌĞøÓÎÏ·¡£\n" ESC + "[K"); 
+        message_system("ç³»çµ±æ•´ç†æ‰¹é‡æª”æ¡ˆè™•ç†å®Œç•¢ï¼Œè«‹ç¹¼çºŒéŠæˆ²ã€‚\n" ESC + "[K"); 
         return 1;
 }
 
 int help()
 {
         write(@HELP
-Ö¸Áî¸ñÊ½£ºcheckexit <Ä¿Â¼Ãû>
+æŒ‡ä»¤æ ¼å¼ï¼šcheckexit <ç›®éŒ„å>
 
-¼ì²éÖ¸¶¨Ä¿Â¼ÏÂµÄ·¿¼äÎÄ¼şµÄ³ö¿ÚÁ¬½ÓÊÇ·ñÕıÈ·¡£
+æª¢æŸ¥æŒ‡å®šç›®éŒ„ä¸‹çš„æˆ¿é–“æ–‡ä»¶çš„å‡ºå£é€£æ¥æ˜¯å¦æ­£ç¢ºã€‚
 HELP
         );
         return 1;

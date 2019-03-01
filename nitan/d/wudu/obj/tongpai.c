@@ -12,11 +12,11 @@ void init()
 
 void create()
 {
-        set_name( YEL "ͭ��" NOR, ({"tong pai"}));
+        set_name( YEL "銅牌" NOR, ({"tong pai"}));
 
-        set("unit", "��");
-        set("long", YEL "����һ�����ķ�����ͭ��,�������:��ǧ���򶾡��ĸ����֡�\n" NOR
-                    "ͭ�Ʊ���������һЩϸϸ�Ļ��ƣ���Ҫ��ϸ��(see)������ǿ�������\n" );
+        set("unit", "面");
+        set("long", YEL "這是一面四四方方的銅牌,上面刻著:“千蛛萬毒”四個大字。\n" NOR
+                    "銅牌背面好象雕著一些細細的花紋，需要仔細看(see)才能勉強看清楚。\n" );
         set("value", 50);
         set_weight(200);
         

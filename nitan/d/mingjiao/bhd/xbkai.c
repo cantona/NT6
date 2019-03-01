@@ -1,18 +1,18 @@
-// xbkai.c ±ùÉ½
+// xbkai.c å†°å±±
 // Modify By River@SJ 99.06
 #include <ansi.h>
 inherit ROOM;
 void create()
 {
-	set("short", HIW"Ğ¡±ù¿é"NOR);
+	set("short", HIW"å°å†°å¡Š"NOR);
         set("long", @LONG
-ÕâÊÇÒ»¿éĞ¡¸¡»ù£¬ÄÜÓÃÊÖ»®(hua)¶¯Ëü£¬²»Ô¶Ö®´¦¾ÍÊÇÒ»¿éÑÒÊ¯(
-yanshi)£¬´ÓÄÇÀï¿ÉÒÔµÇÉÏÂ½µØ¡£
+é€™æ˜¯ä¸€å¡Šå°æµ®åŸºï¼Œèƒ½ç”¨æ‰‹åŠƒ(hua)å‹•å®ƒï¼Œä¸é ä¹‹è™•å°±æ˜¯ä¸€å¡Šå·–çŸ³(
+yanshi)ï¼Œå¾é‚£è£¡å¯ä»¥ç™»ä¸Šé™¸åœ°ã€‚
 LONG );
         set("no_fight", 1);
         set("no_get_from", 1); 
         set("no_sleep_room", 1); 
-	set("outdoors","¼«±±");
+	set("outdoors","æ¥µåŒ—");
 	setup();
 }
 
@@ -28,12 +28,12 @@ void init()
         for(i= 0;i< sizeof(obj);i++){
              if(obj[i]==me ) continue;
              if(obj[i]->is_character()){
-                 message_vision(HIR"Ö»¼ûĞ¡±ù¿éÃÍµÃÒ»Õğ£¬³ÁÏÂº£È¥£¡\n"NOR, ob);
+                 message_vision(HIR"åªè¦‹å°å†°å¡ŠçŒ›å¾—ä¸€éœ‡ï¼Œæ²‰ä¸‹æµ·å»ï¼\n"NOR, ob);
                  obj[i]->unconcious();
                  obj[i]->move(__DIR__"dbshan");
                  me->unconcious();
                  me->move(__DIR__"dbshan");
-                 message("vision", "Ò»¸ö»èÃÔ²»ĞÑµÄÈË±»º£Ë®³åÁËÉÏÀ´¡£\n",environment(me), ({me}) );
+                 message("vision", "ä¸€å€‹æ˜è¿·ä¸é†’çš„äººè¢«æµ·æ°´æ²–äº†ä¸Šä¾†ã€‚\n",environment(me), ({me}) );
              }
         }
         delete("hua_trigger");
@@ -44,14 +44,14 @@ void init()
 int do_hua()
 {
       object ob=this_player();
-      if(ob->is_busy()) return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
-      if(ob->query_temp("marks/»®1")) return notify_fail("ÄãÒÑ¾­»®µ½ÑÒÊ¯±ßÁË¡£\n");
-      message_vision("$NÊÖ½Å»®¶¯£¬³ÔÁ¦µÄÏò±±±ßµÄÑÒÊ¯»®È¥¡£\n",ob);
+      if(ob->is_busy()) return notify_fail("ä½ æ­£å¿™è‘—å‘¢ã€‚\n");
+      if(ob->query_temp("marks/åŠƒ1")) return notify_fail("ä½ å·²ç¶“åŠƒåˆ°å·–çŸ³é‚Šäº†ã€‚\n");
+      message_vision("$Næ‰‹è…³åŠƒå‹•ï¼ŒåƒåŠ›çš„å‘åŒ—é‚Šçš„å·–çŸ³åŠƒå»ã€‚\n",ob);
       ob->start_busy(1);      
       if((int)query("hua_trigger")>=7){
-            message_vision("¸¡±ùÖÕÓÚ±»$N»®µ½´ïÑÒÊ¯µÄÅÔ±ß¡£\n", ob);
+            message_vision("æµ®å†°çµ‚äºè¢«$NåŠƒåˆ°é”å·–çŸ³çš„æ—é‚Šã€‚\n", ob);
 	    delete("hua_trigger");
-	    ob->set_temp("marks/»®1",1);
+	    ob->set_temp("marks/åŠƒ1",1);
             }
       else add("hua_trigger", 1);
       return 1;
@@ -61,16 +61,16 @@ int do_pa(string arg)
 {
 	object ob;
 	ob=this_player();	
-	if (!ob->query_temp("marks/»®1"))
-		return notify_fail("ÄãÏÖÔÚÀëÑÒÊ¯»¹ºÜÔ¶ÄØ¡£\n");
+	if (!ob->query_temp("marks/åŠƒ1"))
+		return notify_fail("ä½ ç¾åœ¨é›¢å·–çŸ³é‚„å¾ˆé å‘¢ã€‚\n");
         if (!arg  || arg !="yanshi")
-		return notify_fail("ÄãÒªÅÀµ½ÄÇÀï£¿\n");
-	message("vision", ob->name() + "¼áÄÑµÄÅÀÉÏÁËÑÒÊ¯¡£\n", environment(ob), ({ob}));
+		return notify_fail("ä½ è¦çˆ¬åˆ°é‚£è£¡ï¼Ÿ\n");
+	message("vision", ob->name() + "å …é›£çš„çˆ¬ä¸Šäº†å·–çŸ³ã€‚\n", environment(ob), ({ob}));
         ob->move(__DIR__"yanshi");
-        message("vision", ob->name() + "´Ó¸¡±ùÉÏÅÀÁËÉÏÀ´£¬»ëÉíÉÏË®¡£\n",environment(ob), ({ob}) );
+        message("vision", ob->name() + "å¾æµ®å†°ä¸Šçˆ¬äº†ä¸Šä¾†ï¼Œæ¸¾èº«ä¸Šæ°´ã€‚\n",environment(ob), ({ob}) );
         EMOTE_D->do_emote(ob,"cold", ob->query("id"));
         EMOTE_D->do_emote(ob,"cold");
-        ob->delete_temp("marks/»®1");
+        ob->delete_temp("marks/åŠƒ1");
         ob->start_busy(2);
         return 1;
 }

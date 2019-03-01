@@ -1,10 +1,10 @@
 // inherit: producing.c
 
-// ¼Ì³Ğ·¿Îİ±ØĞëÌîĞ´µÄÊı¾İ¸ñÊ½£º
-// product -+ mineral1 +-- name : Ä³²úÆ·
-//          |          +-- rate : Éú²úÂÊ
-//          |          +-- max  : ×î´ó
-//          |          +-- cost : Éú²úÊ±ÏûºÄµÄ×ÊÔ´ÖÖÀà
+// ç¹¼æ‰¿æˆ¿å±‹å¿…é ˆå¡«å¯«çš„æ•¸æ“šæ ¼å¼ï¼š
+// product -+ mineral1 +-- name : æŸç”¢å“
+//          |          +-- rate : ç”Ÿç”¢ç‡
+//          |          +-- max  : æœ€å¤§
+//          |          +-- cost : ç”Ÿç”¢æ™‚æ¶ˆè€—çš„è³‡æºç¨®é¡
 //          |
 //          + mineral2 +-- ...
 //          ..
@@ -15,7 +15,7 @@ inherit ROOM;
 
 void start_heart_beat()
 {
-        // Ã¿Ìì(MUDµ¥Î»)ĞÄÌøÒ»´Î
+        // æ¯å¤©(MUDå–®ä½)å¿ƒè·³ä¸€æ¬¡
         set_heart_beat(120);
 }
 
@@ -25,7 +25,7 @@ void setup()
         string mine;
         int count;
 
-        // ÕâÀïµÄ·¿¼ä²»ÄÜÕ½¶·£¬¶øÇÒÓÀ²»Í£Ï¢ÔË×ª
+        // é€™è£¡çš„æˆ¿é–“ä¸èƒ½æˆ°é¬¥ï¼Œè€Œä¸”æ°¸ä¸åœæ¯é‹è½‰
         set("no_fight", 1);
         set("no_clean_up", 1);
 
@@ -37,7 +37,7 @@ void setup()
 
         foreach (mine in keys(product))
         {
-                // ÉèÖÃ×î³õµÄ²úÆ·
+                // è¨­ç½®æœ€åˆçš„ç”¢å“
                 count = product[mine]["max"] / 10;
                 count = count / 2 + random(count);
                 set_temp("stored/" + mine, count);
@@ -56,13 +56,13 @@ int query_product_amount(string name, int amount)
         return query_temp("stored/" + name);
 }
 
-// Èç¹ûamount < 0Ôò±íÊ¾ÏûºÄ×ÊÔ´
+// å¦‚æœamount < 0å‰‡è¡¨ç¤ºæ¶ˆè€—è³‡æº
 void improve_product_amount(string name, int amount)
 {
         mapping m;
 
         if (! mapp(m = query("product/" + name)))
-                // ²»Ìá¹©ÕâÖÖ×ÊÔ´
+                // ä¸æä¾›é€™ç¨®è³‡æº
                 return;
 
         amount += query_temp("stored/" + name);
@@ -88,17 +88,17 @@ void heart_beat()
                 return;
         }
 
-        // Éú²ú²úÆ·
+        // ç”Ÿç”¢ç”¢å“
         foreach (mine in keys(product))
         {
-                // Ã¿´ÎĞÄÌøÏûºÄÒ»Ğ©Ô­ÁÏ£¬Éú²úÒ»Ğ©²úÆ·
+                // æ¯æ¬¡å¿ƒè·³æ¶ˆè€—ä¸€äº›åŸæ–™ï¼Œç”Ÿç”¢ä¸€äº›ç”¢å“
                 if (! mapp(m = product[mine]))
                 {
                         map_delete(product, mine);
                         continue;
                 }
 
-                // ¼ÆËãÄÜ¹»Éú²úµÄÊıÁ¿
+                // è¨ˆç®—èƒ½å¤ ç”Ÿç”¢çš„æ•¸é‡
                 if (! intp(rate = m["rate"]) || rate < 1)
                         continue;
 
@@ -110,15 +110,15 @@ void heart_beat()
                                         count = cost_total;
 
                         if (count < 1)
-                                // Ô­ÁÏ²»×ã£¬ÎŞ·¨Éú²ú
+                                // åŸæ–™ä¸è¶³ï¼Œç„¡æ³•ç”Ÿç”¢
                                 continue;
 
-                        // ÏûºÄÔ­ÁÏ
+                        // æ¶ˆè€—åŸæ–™
                         foreach (cost in m["cost"])
                                 addn_temp("stored/" + cost, -count);
                 }
 
-                // Éú²úÍê±Ï
+                // ç”Ÿç”¢å®Œç•¢
                 improve_product_amount(mine, count);
         }
 }
@@ -133,12 +133,12 @@ int do_info(string arg)
 
         if (arg && arg != "") return 0;
 
-        msg = "µ±Ç°¸÷ÖÖ×ÊÔ´µÄĞÅÏ¢£º\n";
+        msg = "ç•¶å‰å„ç¨®è³‡æºçš„ä¿¡æ¯ï¼š\n";
 
         if (! mapp(stored = query_temp("stored")) ||
             ! mapp(product = query("product")))
         {
-                write("Ä¿Ç°Ã»ÓĞÈÎºÎ¿â´æ×ÊÔ´¡£\n");
+                write("ç›®å‰æ²’æœ‰ä»»ä½•åº«å­˜è³‡æºã€‚\n");
                 return 1;
         }
 
@@ -147,10 +147,10 @@ int do_info(string arg)
                 if (! mapp(m = product[mine]))
                         continue;
 
-                msg += sprintf("%-8s  ¿â´æÁ¿£º" HIY "%-6d" NOR,
+                msg += sprintf("%-8s  åº«å­˜é‡ï¼š" HIY "%-6d" NOR,
                                m["name"], stored[mine]);
                 if (m["rate"])
-                        msg += sprintf("  Éú²úÂÊ£º" HIC "%3d" NOR,
+                        msg += sprintf("  ç”Ÿç”¢ç‡ï¼š" HIC "%3d" NOR,
                                        m["rate"]);
                 msg += "\n";
         }

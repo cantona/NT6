@@ -10,11 +10,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��ɽ");
+        set("short", "舟山");
         set("long", @LONG
-������ɽ��һ����ۣ��������Ҵ�(chuan)���������ż�������
-����ˣ��˴��ɶɹ��󺣵��ﴫ˵�е��һ����������Ǽ��˳ǣ�������һ
-���޼ʵĴ󺣡�
+這是舟山的一個漁港，邊上有艘大船(chuan)，船上坐著幾個漁夫打
+扮的人，乘船可渡過大海到達傳說中的桃花島。西面是嘉興城，東面是一
+望無際的大海。
 LONG );
         set("outdoors", "taohua");
         set("exits", ([
@@ -22,7 +22,7 @@ LONG );
         ]));
 
         set("item_desc", ([
-                "chuan" : "����һ�Һ����������˶ɺ������Ǵ�����ƽʱҲ���������㡣\n",
+                "chuan" : "這是一艘海船，可載人渡海，但是船家在平時也用它來打魚。\n",
         ]));
 
         set("navigate/locx", 0);

@@ -44,25 +44,25 @@ int main(object me, string arg)
         seteuid(getuid());
 
         if (! arg)
-                return notify_fail("Ö¸Áî¸ñÊ½£ºskill  <¼¼ÄÜÃû³Æ> | <¼¼ÄÜÖĞÎÄÃû>\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šskill  <æŠ€èƒ½åç¨±> | <æŠ€èƒ½ä¸­æ–‡å>\n");
 
         MYGIFT_D->check_mygift(me, "newbie_mygift/skill"); 
         if (! stringp(file = SKILL_D(arg)) || file_size(file + ".c") <= 0)
         {
-                // Ó¢ÎÄµÄÕÒ²»µ½£¿ÄÇ¾ÍÕÒÖĞÎÄÃû
+                // è‹±æ–‡çš„æ‰¾ä¸åˆ°ï¼Ÿé‚£å°±æ‰¾ä¸­æ–‡å
                 if (! stringp(arg = CHINESE_D->find_skill(arg)))
-                        return notify_fail("Ã»ÓĞÕâÖÖ¼¼ÄÜ´æÔÚ¡£\n");
+                        return notify_fail("æ²’æœ‰é€™ç¨®æŠ€èƒ½å­˜åœ¨ã€‚\n");
 
-                // ¸ù¾İÖĞÎÄÃûÕÒµ½ÁËÓ¢ÎÄÃû£¬¿´¿´ÊÇ·ñÕæµÄÓĞ´Ë¼¼ÄÜ
+                // æ ¹æ“šä¸­æ–‡åæ‰¾åˆ°äº†è‹±æ–‡åï¼Œçœ‹çœ‹æ˜¯å¦çœŸçš„æœ‰æ­¤æŠ€èƒ½
                 if (! stringp(file = SKILL_D(arg)) || file_size(file + ".c") <= 0)
-                        return notify_fail("Ã»ÓĞÕâÖÖ¼¼ÄÜ´æÔÚ¡£\n");
+                        return notify_fail("æ²’æœ‰é€™ç¨®æŠ€èƒ½å­˜åœ¨ã€‚\n");
         }
 
-        msg = "¹ØÓÚ" + to_chinese(arg) + "µÄÏêÏ¸ÊôĞÔÈçÏÂ£º\n";
-        msg += HIC "¡Ô" HIY "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"
-               "©¤©¤©¤©¤" HIC "¡Ô\n" NOR;
-        msg += WHT + "  Îä¹¦Ãû³Æ£º  " HIG + arg + "\n" + NOR;
-        msg += WHT + "  ÖĞÎÄÃû³Æ£º  " HIG + to_chinese(arg) + "\n" + NOR;
+        msg = "é—œäº" + to_chinese(arg) + "çš„è©³ç´°å±¬æ€§å¦‚ä¸‹ï¼š\n";
+        msg += HIC "â‰¡" HIY "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"
+               "â”€â”€â”€â”€" HIC "â‰¡\n" NOR;
+        msg += WHT + "  æ­¦åŠŸåç¨±ï¼š  " HIG + arg + "\n" + NOR;
+        msg += WHT + "  ä¸­æ–‡åç¨±ï¼š  " HIG + to_chinese(arg) + "\n" + NOR;
 
         is_force = 0;
 
@@ -71,22 +71,22 @@ int main(object me, string arg)
 
         if (member_array(arg, valid_types) != -1)
         {
-                msg += WHT "  Îä¹¦ËùÊô£º  " HIG "»ù±¾Îä¹¦\n" NOR;
-                msg += HIC "¡Ô" HIY "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"
-                       "©¤©¤©¤©¤©¤©¤©¤©¤" HIC "¡Ô\n" NOR;
+                msg += WHT "  æ­¦åŠŸæ‰€å±¬ï¼š  " HIG "åŸºæœ¬æ­¦åŠŸ\n" NOR;
+                msg += HIC "â‰¡" HIY "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"
+                       "â”€â”€â”€â”€â”€â”€â”€â”€" HIC "â‰¡\n" NOR;
                 write(msg);
                 return 1;
         }
 
         if (! wizardp(me) && me->query_skill(arg) <= 0)
         {
-                msg += HIC "¡Ô" HIY "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"
-                       "©¤©¤©¤©¤©¤©¤©¤©¤" HIC "¡Ô\n" NOR;
+                msg += HIC "â‰¡" HIY "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"
+                       "â”€â”€â”€â”€â”€â”€â”€â”€" HIC "â‰¡\n" NOR;
                 write(msg);
                 return 1;
         }
 
-        // ²éÑ¯Îä¹¦µÄ pfm Çé¿ö
+        // æŸ¥è©¢æ­¦åŠŸçš„ pfm æƒ…æ³
         msg1 = "";
         j = 0;
         dir = file;
@@ -119,18 +119,18 @@ int main(object me, string arg)
 
                         if (msg1 != "")
                         {
-                                msg += WHT "  Îä¹¦¾øÕĞ£º  " NOR;
+                                msg += WHT "  æ­¦åŠŸçµ•æ‹›ï¼š  " NOR;
                                 msg += msg1;
                                 msg += "\n";
                         }
                 }
         }
 
-        // ²éÑ¯ÄÚ¹¦µÄ exert Çé¿ö
+        // æŸ¥è©¢å…§åŠŸçš„ exert æƒ…æ³
         if (! is_force)
         {
-                msg += HIC "¡Ô" HIY "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"
-                       "©¤©¤©¤©¤©¤©¤©¤©¤" HIC "¡Ô\n" NOR;
+                msg += HIC "â‰¡" HIY "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"
+                       "â”€â”€â”€â”€â”€â”€â”€â”€" HIC "â‰¡\n" NOR;
                 write(msg);
                 return 1;
         }
@@ -150,8 +150,8 @@ int main(object me, string arg)
                 all_file = get_dir(dir);
         else
         {
-                msg += HIC "¡Ô" HIY "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"
-                       "©¤©¤©¤©¤©¤©¤©¤©¤" HIC "¡Ô\n" NOR;
+                msg += HIC "â‰¡" HIY "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"
+                       "â”€â”€â”€â”€â”€â”€â”€â”€" HIC "â‰¡\n" NOR;
                 write(msg);
                 return 1;
         }
@@ -175,13 +175,13 @@ int main(object me, string arg)
 
         if (msg1 != "")
         {
-                msg += WHT "  ÄÚ¹¦¹¦ÄÜ£º  " NOR;
+                msg += WHT "  å…§åŠŸåŠŸèƒ½ï¼š  " NOR;
                 msg += msg1;
                 msg += "\n";
         }
 
-        msg += HIC "¡Ô" HIY "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"
-               "©¤©¤©¤©¤" HIC "¡Ô\n" NOR;
+        msg += HIC "â‰¡" HIY "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"
+               "â”€â”€â”€â”€" HIC "â‰¡\n" NOR;
         write(msg);
         return 1;
 }
@@ -189,13 +189,13 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½£ºskill  <¼¼ÄÜÃû³Æ> | <¼¼ÄÜÖĞÎÄÃû>
+æŒ‡ä»¤æ ¼å¼ï¼šskill  <æŠ€èƒ½åç¨±> | <æŠ€èƒ½ä¸­æ–‡å>
 
-Õâ¸öÖ¸ÁîÈÃÄã¼ì²éÖ¸¶¨µÄÄ³ÖÖÎä¹¦»ò¼¼ÄÜ£¨¼¼ÄÜÃû³Æ¿ÉÊäÈëÖĞ
-ÎÄÃû£©Èç¹ûÄã±¾Éí¾ß±¸ÕâÏî¼¼ÄÜ£¬Ôò»áÏÔÊ¾³ö¸Ã¼¼ÄÜµÄ¾øÕĞ¼°
-ÌØÊâ¹¦ÄÜ¡£
+é€™å€‹æŒ‡ä»¤è®“ä½ æª¢æŸ¥æŒ‡å®šçš„æŸç¨®æ­¦åŠŸæˆ–æŠ€èƒ½ï¼ˆæŠ€èƒ½åç¨±å¯è¼¸å…¥ä¸­
+æ–‡åï¼‰å¦‚æœä½ æœ¬èº«å…·å‚™é€™é …æŠ€èƒ½ï¼Œå‰‡æœƒé¡¯ç¤ºå‡ºè©²æŠ€èƒ½çš„çµ•æ‹›åŠ
+ç‰¹æ®ŠåŠŸèƒ½ã€‚
 
-Ïà¹ØÖ¸Áî£ºskills
+ç›¸é—œæŒ‡ä»¤ï¼šskills
 
 HELP);
         return 1;

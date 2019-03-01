@@ -10,14 +10,14 @@
 #define I2D_MUD_SERVER          ({"113.31.21.157", 5004})
 #define MUDLIST_UPDATE_INTERVAL 600
 #define REFRESH_INCOMING_TIME   3*60*60
-//----------------------Î»ÔªÔËËãÓÃ-------------------------
-#define GB_CODE                 1       // gbÕ¾µã
-#define ANTI_AD                 2       // ÓĞÀ¬»ø¹ã¸æµÄÕ¾µã
-#define IGNORED                 4       // ±»±¾Õ¾ÆÁ±ÎĞÅÏ¢Õ¾µã
-#define SHUTDOWN                8       // ¹Ø±ÕµÄÕ¾µã
-#define ONLINE                  16      // ¿ÉÁ¬½ÓÕ¾µã
-#define DISCONNECT              32      // Ê§È¥ÁªÏµµÄÕ¾µã
-#define ENCODE_CONFIRM          64      // ÏµÍ³×Ô¶¯ÅĞ¶¨gb/big5ÂëµÄÕ¾µã
+//----------------------ä½å…ƒé‹ç®—ç”¨-------------------------
+#define GB_CODE                 1       // gbç«™é»
+#define ANTI_AD                 2       // æœ‰åƒåœ¾å»£å‘Šçš„ç«™é»
+#define IGNORED                 4       // è¢«æœ¬ç«™å±è”½ä¿¡æ¯ç«™é»
+#define SHUTDOWN                8       // é—œé–‰çš„ç«™é»
+#define ONLINE                  16      // å¯é€£æ¥ç«™é»
+#define DISCONNECT              32      // å¤±å»è¯ç³»çš„ç«™é»
+#define ENCODE_CONFIRM          64      // ç³»çµ±è‡ªå‹•åˆ¤å®šgb/big5ç¢¼çš„ç«™é»
 ***********************************************************/
 
 #include <ansi.h>
@@ -30,11 +30,11 @@
 
 inherit F_DBASE;
 
-#define NCH_CHANNEL(x) CHANNEL_D->channel_broadcast("nch", "I2D ¾«Áé£º"+(string)x)
+#define NCH_CHANNEL(x) CHANNEL_D->channel_broadcast("nch", "I2D ç²¾éˆï¼š"+(string)x)
 
 nosave string my_address;
-nosave string localhost = "127.0.0.1";      // mudµÄipµØÖ·
-nosave int udp_port = 5004;       // mudµÄudp¶Ë¿Ú
+nosave string localhost = "127.0.0.1";      // mudçš„ipåœ°å€
+nosave int udp_port = 5004;       // mudçš„udpç«¯å£
 
 nosave mapping this_host;
 mapping mudlist=([]);
@@ -138,7 +138,7 @@ mapping current_mud_info()
         return this_mud;
 }
 
-// ½«Ã» status  µÄÈ«²¿Éè³É 0
+// å°‡æ²’ status  çš„å…¨éƒ¨è¨­æˆ 0
 void make_status()
 {
         foreach(string t , mapping ref d in mudlist)
@@ -153,7 +153,7 @@ int check_dns_fake(string name)
         return sizeof(fetch_mudname(name))-1;
 }
 
-// ×Ô¶¯¸üĞÂ incoming_mudlist µ½ mudlist
+// è‡ªå‹•æ›´æ–° incoming_mudlist åˆ° mudlist
 void refresh_incoming()
 {
         string name;
@@ -190,7 +190,7 @@ void send_all_shutdown()
 {
         string mud;
         mapping info;
-        // È¡µÃ mudlist Ëùº¬µÄ×ÊÑ¶
+        // å–å¾— mudlist æ‰€å«çš„è³‡è¨Š
         if( mapp(mudlist) )
                 foreach(mud, info in mudlist)
                 send_shutdown(
@@ -198,7 +198,7 @@ void send_all_shutdown()
                     info["PORTUDP"]
                 );
 
-        // È¡µÃ incoming_mudlist Ëùº¬×ÊÑ¶
+        // å–å¾— incoming_mudlist æ‰€å«è³‡è¨Š
         if( mapp(incoming_mudlist) )
                 foreach(mud, info in incoming_mudlist)
                 send_shutdown(
@@ -207,20 +207,20 @@ void send_all_shutdown()
                 );
 }
 
-// ¶¨Ê±¸üĞÂ mud ×ÊÑ¶
+// å®šæ™‚æ›´æ–° mud è³‡è¨Š
 //protected void update_info()
 void update_info()
 {
         string mud;
         mapping info;
-        // È¡µÃ mudlist Ëùº¬µÄ×ÊÑ¶
+        // å–å¾— mudlist æ‰€å«çš„è³‡è¨Š
         if( mapp(mudlist) )
                 foreach(mud, info in mudlist)
                 send_ping_request(
                     info["HOSTADDRESS"],
                     info["PORTUDP"]
                 );
-        // È¡µÃ incoming_mudlist Ëùº¬×ÊÑ¶
+        // å–å¾— incoming_mudlist æ‰€å«è³‡è¨Š
         if( mapp(incoming_mudlist) )
                 foreach(mud, info in incoming_mudlist)
                 send_ping_request(
@@ -228,29 +228,29 @@ void update_info()
                     info["PORTUDP"]
                 );
         refresh_buffers();
-        // ÔÚ REFRESH_INCOMING_TIME ËùÉèµÄÊ±¼äµ½×Ô¶¯¼ÓÈë·ûºÏÌõ¼şµÄ mud
+        // åœ¨ REFRESH_INCOMING_TIME æ‰€è¨­çš„æ™‚é–“åˆ°è‡ªå‹•åŠ å…¥ç¬¦åˆæ¢ä»¶çš„ mud
         if( time()- refresh_limit > REFRESH_INCOMING_TIME )
         {
                 refresh_incoming();
 
-                // ÔÙ´ÎÈ¡µÃ incoming_mudlist
+                // å†æ¬¡å–å¾— incoming_mudlist
                 foreach(string t, mapping d in mudlist)
                 send_mudlist_request(d["HOSTADDRESS"],d["PORTUDP"]);
         }
 
-        // ¶¨Ê± MUDLIST_UPDATE_INTERVAL Ãë¸üĞÂÒ»´Î×ÊÑ¶
+        // å®šæ™‚ MUDLIST_UPDATE_INTERVAL ç§’æ›´æ–°ä¸€æ¬¡è³‡è¨Š
         //call_out((: update_info :),MUDLIST_UPDATE_INTERVAL);
         SCHEDULE_D->set_event(MUDLIST_UPDATE_INTERVAL, 1, this_object(), "update_info"); 
 }
 
-// Ò»¿ªÊ¼´ÓÕâ±»ºô½Ğ , ÕâÃ»ÎÊÌâ°É :Q
+// ä¸€é–‹å§‹å¾é€™è¢«å‘¼å« , é€™æ²’å•é¡Œå§ :Q
 void create()
 {
         seteuid(getuid());
-        // È¡»Ø save ÏÂÀ´µÄ×ÊÁÏ
+        // å–å› save ä¸‹ä¾†çš„è³‡æ–™
         restore();
         resolve( query_host_name(), (: resolve_callback :) );
-        // ³õÊ¼»¯ UDP port
+        // åˆå§‹åŒ– UDP port
         if( (udp_socket = socket_create(DATAGRAM, (: read_callback :) )) < 0 )
         {
                 NCH_CHANNEL("UDP socket created fail.\n");
@@ -259,7 +259,7 @@ void create()
         while( EEADDRINUSE==socket_bind(udp_socket, udp_port) )
                 udp_port++;
 
-        NCH_CHANNEL("³õÊ¼»¯Íê³É , Ê¹ÓÃ UDP port: "+udp_port);
+        NCH_CHANNEL("åˆå§‹åŒ–å®Œæˆ , ä½¿ç”¨ UDP port: "+udp_port);
 
         this_host = ([
                 "NAME":         INTERMUD_MUD_NAME,      
@@ -279,28 +279,28 @@ void create()
         ]);
                 
         refresh_buffers();
-        // ºô½Ğ¶¨Ê±¸üĞÂµÄº¯Ê½
+        // å‘¼å«å®šæ™‚æ›´æ–°çš„å‡½å¼
         refresh_ping_buffer();
         
-        // ËÍ³ö startup
+        // é€å‡º startup
         foreach(string mud,mapping info in mudlist)
         {
                 mudlist[mud]["STATUS"]&=~ENCODE_CONFIRM;
                 send_startup(info["HOSTADDRESS"],info["PORTUDP"]);
         }
 
-        // ËÍ³ö ping ÒªÇó¸ø server
+        // é€å‡º ping è¦æ±‚çµ¦ server
         //send_ping_request(I2D_MUD_SERVER[0],I2D_MUD_SERVER[1]);
-        // ÏòÔ¤Éè server È¡µÃ mudlist
+        // å‘é è¨­ server å–å¾— mudlist
         //send_mudlist_request(I2D_MUD_SERVER[0],I2D_MUD_SERVER[1]);
-        // ÏÈ×¥Ò»´Î incoming_mudlist
+        // å…ˆæŠ“ä¸€æ¬¡ incoming_mudlist
         foreach(string t, mapping d in mudlist)
         send_mudlist_request(d["HOSTADDRESS"],d["PORTUDP"]);
-        // ¿ªÊ¼¶¨ÆÚ¸üĞÂ×ÊÑ¶
+        // é–‹å§‹å®šæœŸæ›´æ–°è³‡è¨Š
         evaluate((: update_info :));
 }
 
-// destruct µÄ simul_efun »áÏÈ call Õâ¸ö
+// destruct çš„ simul_efun æœƒå…ˆ call é€™å€‹
 int remove()
 {
         send_all_shutdown();
@@ -320,7 +320,7 @@ protected void resolve_callback(string addr, string resolved, int key)
         my_address = resolved;
 }
 
-// UDP port ÊÕ½øÀ´µÄ¶«Î÷»áÏÈ¾­¹ıÕâ
+// UDP port æ”¶é€²ä¾†çš„æ±è¥¿æœƒå…ˆç¶“éé€™
 protected void read_callback(int socket,string info,string address)
 {
         string *infoclip,title,datas;
@@ -331,45 +331,45 @@ protected void read_callback(int socket,string info,string address)
         info=ansi(info);
 #endif
         if( debug) NCH_CHANNEL( sprintf( "socket %d\ninfo %s\naddress %s", socket, info, address ));
-        // ¼ì²é·â°ü¸ñÊ½ÊÇ·ñÕıÈ·
+        // æª¢æŸ¥å°åŒ…æ ¼å¼æ˜¯å¦æ­£ç¢º
         if(!sscanf(info,"@@@%s@@@%*s",info)) return;
-        // ½üÒ»²½µ½×¨ÊôµÄ service ·ÖÎö
+        // è¿‘ä¸€æ­¥åˆ°å°ˆå±¬çš„ service åˆ†æ
         infoclip = explode(info,"||");
-        // ±¾Õ¾ÎŞ·¨´¦ÀíµÄ·şÎñÔÚÕâ¹ıÂË
+        // æœ¬ç«™ç„¡æ³•è™•ç†çš„æœå‹™åœ¨é€™éæ¿¾
         if(!infoclip || undefinedp(handler = service_handler[infoclip[0]]) )
         {
                 NCH_CHANNEL(sprintf("Unknow I2 service %s from %s ",infoclip[0],address));
                 return;
         }
-        // ½« string -> mapping ÒÔ±ãÍùÏÂ´«µİ
+        // å°‡ string -> mapping ä»¥ä¾¿å¾€ä¸‹å‚³é
         foreach(string data in infoclip)
         if( sscanf(data, "%s:%s", title, datas)==2 ) infomap[title] = datas;
-        // ½«·¢ËÍ´Ë package µÄ IP ¼ÍÂ¼µ½ mapping info ÖĞ
+        // å°‡ç™¼é€æ­¤ package çš„ IP ç´€éŒ„åˆ° mapping info ä¸­
         sscanf(address, "%s %*s", address);
         if( (address+"" == my_address || address+"" == localhost)&& infomap["PORTUDP"]==udp_port+"" )
                 return;
         infomap["HOSTADDRESS"] = address;
-        if(debug) NCH_CHANNEL(sprintf("ÊÕµ½%s\n%O\n",address,info));
-        // ½»¸¶¸ø service ×¨ÓÃµÄ function
+        if(debug) NCH_CHANNEL(sprintf("æ”¶åˆ°%s\n%O\n",address,info));
+        // äº¤ä»˜çµ¦ service å°ˆç”¨çš„ function
         evaluate(handler,infomap);
 
 }
 
-// ËÍ³öÑ¶Ï¢ÓÃµÄº¯Ê½
+// é€å‡ºè¨Šæ¯ç”¨çš„å‡½å¼
 void send_udp(string targ, mixed port, string service, mapping info)
 {
         int socket;
         string title,data,msg;
         string mudname;
 
-        // ²»´«ËÍÎÒÃÇÃ»ÓĞµÄ·şÎñ
+        // ä¸å‚³é€æˆ‘å€‘æ²’æœ‰çš„æœå‹™
         if( undefinedp(service_handler[service]) )
         {
                 NCH_CHANNEL("Unknow Service.");
                 error("Invalid intermud Services.\n");
         }
 
-        // ²»´«ËÍ×ÊÁÏ¸ø×Ô¼º.
+        // ä¸å‚³é€è³‡æ–™çµ¦è‡ªå·±.
         //NCH_CHANNEL(sprintf("ip:%s port:%s services:%s",targ,port,service));
         //NCH_CHANNEL(sprintf("%O",typeof(port)));
         if( (targ == my_address || targ == localhost) && port == udp_port )
@@ -377,11 +377,11 @@ void send_udp(string targ, mixed port, string service, mapping info)
                 return;
 
 
-        // ½¨Á¢ socket ÒÔ¿ªÊ¼´«ËÍ
+        // å»ºç«‹ socket ä»¥é–‹å§‹å‚³é€
         socket = socket_create(DATAGRAM, "read_callback");
         if( !socket ) return;
 
-        // ½« mapping -> string
+        // å°‡ mapping -> string
         msg = service;
         if( mapp(info) ) {
                 foreach(title, data in info) {
@@ -396,24 +396,24 @@ void send_udp(string targ, mixed port, string service, mapping info)
                 msg = (string)LANGUAGE_D->toGB(msg); 
         */
         if( !undefinedp(mudlist[mudname]) && ( /*!(mudlist[mudname]["STATUS"]& GB_CODE) ||*/ ( !undefinedp(mudlist[mudname]["ENCODING"]) && lower_case(mudlist[mudname]["ENCODING"])=="big5") ))
-                msg = (string)LANGUAGE_D->toBig5(msg);  // ×ª»»³Ébig5Âë·¢³öĞÅÏ¢
+                msg = (string)LANGUAGE_D->toBig5(msg);  // è½‰æ›æˆbig5ç¢¼ç™¼å‡ºä¿¡æ¯
                 
-        // ËÍ³öÑ¶Ï¢.
+        // é€å‡ºè¨Šæ¯.
         socket_write(socket, "@@@" + msg + "@@@", targ + " " + port);
         // debug msg
-        if(debug) NCH_CHANNEL(sprintf("ËÍ³öµ½%s:\n%s\n"+HIY+"%O\n"+NOR,targ,port+"",msg));
-        // ¹Ø±Õ´«ËÍÍê±ÏµÄ socket
+        if(debug) NCH_CHANNEL(sprintf("é€å‡ºåˆ°%s:\n%s\n"+HIY+"%O\n"+NOR,targ,port+"",msg));
+        // é—œé–‰å‚³é€å®Œç•¢çš„ socket
         socket_close(socket);
 
 
 }
-// ÓÉ mapping package ÖĞÈ¡µÃ mud name
+// ç”± mapping package ä¸­å–å¾— mud name
 string get_mud_name(mapping info)
 {
         return info["HOSTADDRESS"]+":"+info["PORTUDP"];
 }
 
-// ÓÉ mud name ±æÈÏÎªµÚ¼¸¼¶×ÊÁÏ
+// ç”± mud name è¾¨èªç‚ºç¬¬å¹¾ç´šè³‡æ–™
 int get_info_level(string mudname)
 {
         if( member_array(mudname,keys(mudlist))==-1)
@@ -435,7 +435,7 @@ void analyze_mud_info(mapping info)
         case  1: set_mudlist(get_mud_name(info),info);break;
         }
 }
-// ÓÃÓÚ´ó²¿·Öº¯Ê½, ·ÖÎö Mud ÊÇ·ñÎªÒÑÍ¨¹ıÈÏÖ¤, ÉĞÎ´ÈÏÖ¤ËÍ pin_q
+// ç”¨äºå¤§éƒ¨åˆ†å‡½å¼, åˆ†æ Mud æ˜¯å¦ç‚ºå·²é€šéèªè¨¼, å°šæœªèªè¨¼é€ pin_q
 int compare_mud_info(mapping info)
 {
         string mudname=get_mud_name(info);
@@ -451,29 +451,29 @@ int compare_mud_info(mapping info)
         return level;
 }
 
-// Éè¶¨ or ¸üĞÂ mudlist ×ÊÑ¶
+// è¨­å®š or æ›´æ–° mudlist è³‡è¨Š
 protected void set_mudlist(string name,mapping info)
 {
         mapping map;
         string t,d;
 
-        // ÓÃ IPADDRESS:PORT ×ö index , ·ÀÖ¹ fake , Èô×ÊÁÏ²»ºÏÔòµ²µô
+        // ç”¨ IPADDRESS:PORT åš index , é˜²æ­¢ fake , è‹¥è³‡æ–™ä¸åˆå‰‡æ“‹æ‰
         if( sscanf(name, "%*d.%*d.%*d.%*d:%*d") != 5 ) return;
-        // »¹Ã»ÓĞ´Ë¼ä mud ×ÊÁÏ? Ìí¼Ó½ømudlist
+        // é‚„æ²’æœ‰æ­¤é–“ mud è³‡æ–™? æ·»åŠ é€²mudlist
         if( undefinedp(map = mudlist[name]) )
         {
-                // ¸ø¶¨ mudname
+                // çµ¦å®š mudname
                 mudlist[name] = info;
-                // ³õÊ¼»¯ mud STATUS
+                // åˆå§‹åŒ– mud STATUS
                 mudlist[name]["STATUS"]=0;
                 return;
         }
 
-        // ÒÑ´æÔÚ×ÊÁÏ,¸üĞÂ×ÊÑ¶ ...
+        // å·²å­˜åœ¨è³‡æ–™,æ›´æ–°è³‡è¨Š ...
         foreach(t, d in info) mudlist[name][t]=d;
 
 }
-// Éè¶¨ or ¸üĞÂ incoming mudlist ×ÊÑ¶
+// è¨­å®š or æ›´æ–° incoming mudlist è³‡è¨Š
 protected void set_incoming_mudlist(string name,mapping info)
 {
         mapping map;
@@ -487,13 +487,13 @@ protected void set_incoming_mudlist(string name,mapping info)
                 return;
         }
 
-        // ¸üĞÂ×ÊÑ¶
+        // æ›´æ–°è³‡è¨Š
         foreach(t, d in info) incoming_mudlist[name][t]=d;
-        // Ã¿´Î¸üĞÂ×ÊÑ¶Á¬Ïß»ØÓ¦¼ÆËã + 1
+        // æ¯æ¬¡æ›´æ–°è³‡è¨Šé€£ç·šå›æ‡‰è¨ˆç®— + 1
         incoming_mudlist[name]["CONNECTION"]+=1;
 }
 
-// Çå³ıÔİ´æÇø
+// æ¸…é™¤æš«å­˜å€
 void refresh_buffers()
 {
         rwho_buffer=([]);
@@ -504,10 +504,10 @@ void refresh_buffers()
 }
 
 /********************************************************************************************
- * ÓÉÍâ½çÄÜÉè¶¨ÄÚ²¿×´¿öµÄ¹µÍ¨º¯Ê½..                                                         *
+ * ç”±å¤–ç•Œèƒ½è¨­å®šå…§éƒ¨ç‹€æ³çš„æºé€šå‡½å¼..                                                         *
  ********************************************************************************************/
 
-// SAVE_PATH Èô´«Èë flag , ¼´ÓÃÒÔ¸üĞÂ SAVE_PATH
+// SAVE_PATH è‹¥å‚³å…¥ flag , å³ç”¨ä»¥æ›´æ–° SAVE_PATH
 varargs string SAVE_PATH(string name,int flag)
 {
         if(!flag) return save_path+name;
@@ -526,10 +526,10 @@ void debug()
 }
 
 //--------------------------------------------------------------------------------------------
-// Status ÏµÁĞ
+// Status ç³»åˆ—
 //--------------------------------------------------------------------------------------------
 
-// ÓÃ"ip:port"À´Ñ°ÕÒ mud data
+// ç”¨"ip:port"ä¾†å°‹æ‰¾ mud data
 mixed fetch_data(string name)
 {
         int level;
@@ -542,7 +542,7 @@ mixed fetch_data(string name)
         return 0;
 }
 
-// ÓÃÓ¢ÎÄÃûÑ°ÕÒµÇ¼ÇÃû , ´«»Ø·ûºÏµÄÕóÁĞ
+// ç”¨è‹±æ–‡åå°‹æ‰¾ç™»è¨˜å , å‚³å›ç¬¦åˆçš„é™£åˆ—
 varargs string *fetch_mudname(string arg,int flag)
 {
         mapping info;
@@ -558,7 +558,7 @@ varargs string *fetch_mudname(string arg,int flag)
                 result+=({name});
         return result;
 }
-// ÓÃ mud ip À´Ñ°ÕÒµÇ¼ÇÃû , ´«»Ø·ûºÏÕóÁĞ
+// ç”¨ mud ip ä¾†å°‹æ‰¾ç™»è¨˜å , å‚³å›ç¬¦åˆé™£åˆ—
 varargs string *fetch_mudip(string arg)
 {
         mapping info;
@@ -573,7 +573,7 @@ varargs string *fetch_mudip(string arg)
         return result;
 }
 
-// Éè¶¨ mudlist ÀïµÄ mud Éè¶¨
+// è¨­å®š mudlist è£¡çš„ mud è¨­å®š
 int set_status(string mud,int num)
 {
         int level;
@@ -582,18 +582,18 @@ int set_status(string mud,int num)
 
         if( num > 0)
         {
-                // ÒÑ¾­ÓĞ´ËÏîÉè¶¨
+                // å·²ç¶“æœ‰æ­¤é …è¨­å®š
                 if(mudlist[mud]["STATUS"] & num)
                         return 0;
                 else mudlist[mud]["STATUS"]+=num;
         }
         else
-        {       // ÒÑ¾­ÓĞ´ËÏîÉè¶¨
+        {       // å·²ç¶“æœ‰æ­¤é …è¨­å®š
                 if(!mudlist[mud]["STATUS"]&num)
                         return 0;
                 else mudlist[mud]["STATUS"]-=(-num);
         }
-        NCH_CHANNEL(sprintf("%s (%s) ¼ÓÈëÊôĞÔ [%d]",mudlist[mud]["NAME"],mud,num));
+        NCH_CHANNEL(sprintf("%s (%s) åŠ å…¥å±¬æ€§ [%d]",mudlist[mud]["NAME"],mud,num));
         save();
         return 1;
 }
@@ -701,40 +701,40 @@ int test_buffer(string mudname,int kind)
         return 0;
 }
 /********************************************************************************************
- * ÓÉ´Ë´¦¿ªÊ¼ , ÒÔÏÂ¾ùÎª¸÷ÖÖ·şÎñÀà±ğ                                                        *
+ * ç”±æ­¤è™•é–‹å§‹ , ä»¥ä¸‹å‡ç‚ºå„ç¨®æœå‹™é¡åˆ¥                                                        *
  ********************************************************************************************/
 
 //--------------------------------------------------------------------------------------------
-// Ping ÏµÁĞ
+// Ping ç³»åˆ—
 //--------------------------------------------------------------------------------------------
-/* Intermud2 ping_q ·â°ü¸ñÊ½
+/* Intermud2 ping_q å°åŒ…æ ¼å¼
         ([
-                "NAME":         (string)Õâ Mud µÄÍøÂ·Ãû³Æ[É÷Ñ¡]
-                                ¾ÉµÄ DNS_MASTER Èç¹ûÓöµ½ÏàÍ¬»á DNS_FAKE.
-                "PORTUDP":      (int)(µ½×îºó¶¼»á±»°ü³Éstring)
-                                Õâ¸ömudµÄintermud2 daemon ¼àÌıµÄ udp port.
+                "NAME":         (string)é€™ Mud çš„ç¶²è·¯åç¨±[æ…é¸]
+                                èˆŠçš„ DNS_MASTER å¦‚æœé‡åˆ°ç›¸åŒæœƒ DNS_FAKE.
+                "PORTUDP":      (int)(åˆ°æœ€å¾Œéƒ½æœƒè¢«åŒ…æˆstring)
+                                é€™å€‹mudçš„intermud2 daemon ç›£è½çš„ udp port.
         ])
 
-    Intermud2 ping_a ·â°ü¸ñÊ½
+    Intermud2 ping_a å°åŒ…æ ¼å¼
         ([
-                "NAME":         (string)Õâ Mud µÄÍøÂ·Ãû³Æ
-                "MUDGROUP":     (string)ÍøÂ·Èº×é?
-                "HOST":         (string)Mud Ö÷»úÃû³Æ?(ºÃÏñÃ»ÓÃ, »¨Æ¿Ò»¸ö)
-                "LOCATION":     (string)ËùÔÚµØ?
-                "MUDLIB":       (string)mudlib, Èç¹û²»ÊÇEastern Stories»áÊÕ²»µ½ es channel.
-                "VERSION":      (string)mudlib °æ±¾?
-                "ENCODING":     (string)±àÂë·½Ê½ÓĞ BIG5/GB,
+                "NAME":         (string)é€™ Mud çš„ç¶²è·¯åç¨±
+                "MUDGROUP":     (string)ç¶²è·¯ç¾¤çµ„?
+                "HOST":         (string)Mud ä¸»æ©Ÿåç¨±?(å¥½åƒæ²’ç”¨, èŠ±ç“¶ä¸€å€‹)
+                "LOCATION":     (string)æ‰€åœ¨åœ°?
+                "MUDLIB":       (string)mudlib, å¦‚æœä¸æ˜¯Eastern Storiesæœƒæ”¶ä¸åˆ° es channel.
+                "VERSION":      (string)mudlib ç‰ˆæœ¬?
+                "ENCODING":     (string)ç·¨ç¢¼æ–¹å¼æœ‰ BIG5/GB,
                 "USERS":        (int) users
                 "PORTUDP":      (int) UDP port,
         ])
 */
 
 
-// ping_buffer ÓÃÀ´µ²µô²»±ØÒªµÄ ping request
-// ±ÜÃâ±» save ÀË·Ñ×ÊÔ´Ğû³É nosave
+// ping_buffer ç”¨ä¾†æ“‹æ‰ä¸å¿…è¦çš„ ping request
+// é¿å…è¢« save æµªè²»è³‡æºå®£æˆ nosave
 
 
-// ·¢³ö Ping ÒªÇó
+// ç™¼å‡º Ping è¦æ±‚
 void send_ping_request(string target, int port)
 {
         send_udp(target, port, "ping_q", ([
@@ -743,14 +743,14 @@ void send_ping_request(string target, int port)
             ]));
         //if(get_info_level(target+":"+port)>0)
         add_buffer(target+":"+port,PING_B);
-        if(debug) NCH_CHANNEL("ËÍ³ö PING ÒªÇóµ½ " + target + ":" + port + "¡£");
+        if(debug) NCH_CHANNEL("é€å‡º PING è¦æ±‚åˆ° " + target + ":" + port + "ã€‚");
 }
 
 void refresh_ping_buffer()
 {
         string t;
         int *d;
-        // ÔÙ´ÎÖ´ĞĞ´Ëº¯Ê½Ê±²»ÒªÓĞ callout »¹ÔÚÅÜ
+        // å†æ¬¡åŸ·è¡Œæ­¤å‡½å¼æ™‚ä¸è¦æœ‰ callout é‚„åœ¨è·‘
         remove_call_out("refresh_ping_buffer");
 
         foreach(t,d in ping_buffer)
@@ -764,7 +764,7 @@ void refresh_ping_buffer()
                         mudlist[t]["STATUS"]&=(~ONLINE);
                         mudlist[t]["STATUS"]|=DISCONNECT;
 
-                        // 2 hrÄÚ²»¼ûµÄÕ¾Ò»Ö± ping -.-
+                        // 2 hrå…§ä¸è¦‹çš„ç«™ä¸€ç›´ ping -.-
                         if( time() - mudlist[t]["LASTESTCONTACT"] < 60*60*2 )
                                 flag=1;
                 }
@@ -778,24 +778,24 @@ void refresh_ping_buffer()
         call_out("refresh_ping_buffer",60);
 }
 
-// ÊÕµ½ ping request
+// æ”¶åˆ° ping request
 void receive_ping_request(mapping info)
 {
         int port;
 
-        if(debug) NCH_CHANNEL(sprintf("ÊÕµ½ PING ÒªÇó , ËÍ³ö»ØÓ¦µ½ %O", info));
-        // UDP_PORT ¸ñÊ½´íÎó
+        if(debug) NCH_CHANNEL(sprintf("æ”¶åˆ° PING è¦æ±‚ , é€å‡ºå›æ‡‰åˆ° %O", info));
+        // UDP_PORT æ ¼å¼éŒ¯èª¤
         if( undefinedp(info["PORTUDP"]) || !sscanf(info["PORTUDP"],"%d",port) ) return;
         
         if( (info["HOSTADDRESS"]==localhost || info["HOSTADDRESS"]==my_address) && port == udp_port )
                 return;
-        // Èç¹ûÎÒÃÇ mudlist Àï»¹Ã»ÓĞ´Ë mud , ÎÒÃÇÒ²ÒªÇóËû»Ø ping.
+        // å¦‚æœæˆ‘å€‘ mudlist è£¡é‚„æ²’æœ‰æ­¤ mud , æˆ‘å€‘ä¹Ÿè¦æ±‚ä»–å› ping.
         if(get_info_level(get_mud_name(info))<0)
-                compare_mud_info(info); // ·¢ËÍpingÒªÇó
-        // ËÍ³ö PING Answer
+                compare_mud_info(info); // ç™¼é€pingè¦æ±‚
+        // é€å‡º PING Answer
         send_udp(info["HOSTADDRESS"], port, "ping_a",
             ([
-                "NAME":         INTERMUD_MUD_NAME,      // mudlib.h ÖĞ¶¨Òå
+                "NAME":         INTERMUD_MUD_NAME,      // mudlib.h ä¸­å®šç¾©
                 "MUDNAME":      CHINESE_MUD_NAME,
                 "MUDGROUP":     MUD_GROUP,
                 "HOST":         MUD_HOST_NAME,
@@ -809,23 +809,23 @@ void receive_ping_request(mapping info)
                 "PORT":         ""+__PORT__,
             ]));
 
-        if(debug) NCH_CHANNEL("ÊÕµ½ PING ÒªÇó , ËÍ³ö»ØÓ¦µ½ "+info["HOSTADDRESS"]+":"+port+" .");
+        if(debug) NCH_CHANNEL("æ”¶åˆ° PING è¦æ±‚ , é€å‡ºå›æ‡‰åˆ° "+info["HOSTADDRESS"]+":"+port+" .");
 }
 
-// ÊÕµ½ PING »ØÓ¦
+// æ”¶åˆ° PING å›æ‡‰
 void receive_ping_answer(mapping info)
 {
         int status;
         
         string mudname=get_mud_name(info);
-        // ÓĞÒªÇó¶Ô·½»Ø ping Âğ?
+        // æœ‰è¦æ±‚å°æ–¹å› ping å—?
         if( !test_buffer(mudname,PING_B) )
         {
                 //if( !sscanf(info["PORTUDP"],"%*d") ) return;
-                NCH_CHANNEL("ÊÕµ½²»Ã÷ Ping Answer From: "+info["HOSTADDRESS"]+":"+info["PORTUDP"]+" [ "+info["NAME"]+" ] ");
+                NCH_CHANNEL("æ”¶åˆ°ä¸æ˜ Ping Answer From: "+info["HOSTADDRESS"]+":"+info["PORTUDP"]+" [ "+info["NAME"]+" ] ");
                                 
                 if(get_info_level(mudname)<1)
-                        receive_ping_request(info); // ·¢ËÍping
+                        receive_ping_request(info); // ç™¼é€ping
 
                 send_warning(info["HOSTADDRESS"],info["PORTUDP"],"\aWe didn't ask for this ping request.","Sorry,");
                 //compare_mud_info(info);
@@ -841,33 +841,33 @@ void receive_ping_answer(mapping info)
                         mudlist[mudname]["STATUS"]&=(~(SHUTDOWN | DISCONNECT));
                 mudlist[mudname]["STATUS"]|=ONLINE;
         }
-        if(debug) NCH_CHANNEL("ÊÕµ½ "+info["HOSTADDRESS"]+" ËÍ»ØµÄ PING ANSWER .");
+        if(debug) NCH_CHANNEL("æ”¶åˆ° "+info["HOSTADDRESS"]+" é€å›çš„ PING ANSWER .");
 }
 
 //--------------------------------------------------------------------------------------------
-// Mudlist ÏµÁĞ
+// Mudlist ç³»åˆ—
 //--------------------------------------------------------------------------------------------
 
 
-// ËÍ³ö Mudlist Ñ¶Ï¢×¨ÓÃµÄº¯Ê½ -.-
+// é€å‡º Mudlist è¨Šæ¯å°ˆç”¨çš„å‡½å¼ -.-
 void send_mudlist_udp(string targ, int port,string info)
 {
         int socket;
 
-        // ²»´«ËÍ×ÊÁÏ¸ø×Ô¼º.
+        // ä¸å‚³é€è³‡æ–™çµ¦è‡ªå·±.
         if( (targ == my_address || targ == localhost) && port == udp_port ) return;
 
-        // ½¨Á¢ socket ÒÔ¿ªÊ¼´«ËÍ
+        // å»ºç«‹ socket ä»¥é–‹å§‹å‚³é€
         socket = socket_create(DATAGRAM, "read_callback");
         if( !socket ) return;
 
-        // ËÍ³öÑ¶Ï¢.
+        // é€å‡ºè¨Šæ¯.
         socket_write(socket, "@@@mudlist_a||" + info + "@@@\n", targ + " " + port);
-        // ¹Ø±Õ´«ËÍÍê±ÏµÄ socket
+        // é—œé–‰å‚³é€å®Œç•¢çš„ socket
         socket_close(socket);
 }
 
-// ÊÕµ½¶Ô·½»ØÓ¦µÄ mudlist ÁĞ±í
+// æ”¶åˆ°å°æ–¹å›æ‡‰çš„ mudlist åˆ—è¡¨
 void receive_mudlist_answer(mapping info)
 {
         string name,clip;
@@ -883,16 +883,16 @@ void receive_mudlist_answer(mapping info)
                         string t, d;
                         if( sscanf(prop, "%s:%s", t, d)==2 ) mudinfo[t] = d;
                 }
-                // ÊÕµ½Ã»ÔÚÇåµ¥ÉÏµÄ mud ¾ÍËÍ ping ÒªÇó
+                // æ”¶åˆ°æ²’åœ¨æ¸…å–®ä¸Šçš„ mud å°±é€ ping è¦æ±‚
                 //if(mudinfo["HOSTADDRESS"]!=my_address && mudinfo["HOSTADDRESS"]!=localhost && mudinfo["HOSTADDRESS"]!=fetch_variable("udp_port") )
                 if( get_info_level(get_mud_name(mudinfo))<1 )
-                        compare_mud_info(mudinfo); // ·¢ËÍping
+                        compare_mud_info(mudinfo); // ç™¼é€ping
         }
 
-        if(debug) NCH_CHANNEL("ÊÕµ½ "+info["HOSTADDRESS"]+" ËÍ»ØµÄ Mudlist Answer.");
+        if(debug) NCH_CHANNEL("æ”¶åˆ° "+info["HOSTADDRESS"]+" é€å›çš„ Mudlist Answer.");
 }
 
-// ÒªÇó¶Ô·½·¢ËÍ mudlist ÁĞ±í
+// è¦æ±‚å°æ–¹ç™¼é€ mudlist åˆ—è¡¨
 void send_mudlist_request(string targ, int port)
 {
         send_udp(targ, port, "mudlist_q", ([
@@ -902,7 +902,7 @@ void send_mudlist_request(string targ, int port)
             ]));
 }
 
-// ÊÕµ½ÒªÇó²¢ËÍ³ö mudlist ÁĞ±í
+// æ”¶åˆ°è¦æ±‚ä¸¦é€å‡º mudlist åˆ—è¡¨
 void receive_mudlist_request(mapping info)
 {
         string name;
@@ -913,7 +913,7 @@ void receive_mudlist_request(mapping info)
 
         foreach(name,mudinfo in mudlist)
         {
-                // Ã»ÓĞ¼´Ê±»ØÓ¦µÄ¾ÍÓĞ¿ÉÄÜ²»ÔÚ, ²»ËÍ³öÒÔÃâÖÆÔìÍøÂ·À¬»ø
+                // æ²’æœ‰å³æ™‚å›æ‡‰çš„å°±æœ‰å¯èƒ½ä¸åœ¨, ä¸é€å‡ºä»¥å…åˆ¶é€ ç¶²è·¯åƒåœ¾
                 if(!(mudinfo["STATUS"]&ONLINE)) continue;
                 i++;
                 send_mudlist_udp(info["HOSTADDRESS"],info["PORTUDP"],
@@ -922,11 +922,11 @@ void receive_mudlist_request(mapping info)
 
                 );
         }
-        if(debug) NCH_CHANNEL("ÊÕµ½ "+info["HOSTADDRESS"]+":"+info["PORTUDP"]+" µÄ Mudlist Request ²¢»ØÓ¦Ö®.");
+        if(debug) NCH_CHANNEL("æ”¶åˆ° "+info["HOSTADDRESS"]+":"+info["PORTUDP"]+" çš„ Mudlist Request ä¸¦å›æ‡‰ä¹‹.");
 }
 
 //--------------------------------------------------------------------------------------------
-// Shutdown ÏµÁĞ
+// Shutdown ç³»åˆ—
 //--------------------------------------------------------------------------------------------
 
 void send_shutdown(string target, int port)
@@ -937,7 +937,7 @@ void send_shutdown(string target, int port)
                 "PORTUDP":""+udp_port,
             ]));
 
-        NCH_CHANNEL("ËÍ³ö Shutdown Ñ¶Ï¢µ½ " + target + ":" + port + "¡£");
+        NCH_CHANNEL("é€å‡º Shutdown è¨Šæ¯åˆ° " + target + ":" + port + "ã€‚");
 }
 
 void receive_shutdown(mapping info)
@@ -949,11 +949,11 @@ void receive_shutdown(mapping info)
                 mudlist[name]["STATUS"]&=(~(ONLINE|DISCONNECT));
                 mudlist[name]["STATUS"]|=SHUTDOWN;
         }
-        NCH_CHANNEL("ÊÕµ½×Ô "+info["HOSTADDRESS"]+":"+info["PORTUDP"]+" À´µÄ Shutdown Ñ¶Ï¢.");
+        NCH_CHANNEL("æ”¶åˆ°è‡ª "+info["HOSTADDRESS"]+":"+info["PORTUDP"]+" ä¾†çš„ Shutdown è¨Šæ¯.");
 }
 
 //--------------------------------------------------------------------------------------------
-// Gchannel ÏµÁĞ
+// Gchannel ç³»åˆ—
 //--------------------------------------------------------------------------------------------
 
 
@@ -974,7 +974,7 @@ void compare_last_msg(string mudname,string last_msg,string sender)
         if( msg_buffer[mudname][1] > 100 )
         {
                 set_status(mudname,ANTI_AD);
-                NCH_CHANNEL("½«[ " + fetch_data(mudname)["MUDNAME"] +"] ¼ÓÈë ANTI_AD Ãûµ¥¡£");
+                NCH_CHANNEL("å°‡[ " + fetch_data(mudname)["MUDNAME"] +"] åŠ å…¥ ANTI_AD åå–®ã€‚");
         }
 }
 
@@ -995,38 +995,38 @@ int accept_channel(string channel)
                 return 1;
 }
 
-// ÊÕµ½ gchannel Ñ¶Ï¢
+// æ”¶åˆ° gchannel è¨Šæ¯
 void receive_gchannel_msg(mapping info)
 {
         string msg,id,mudname,str;
         int status;
 
-        // Ò»¶¨±ØĞëÒªÓĞµÄÀ¸Î»
+        // ä¸€å®šå¿…é ˆè¦æœ‰çš„æ¬„ä½
         if( undefinedp(info["NAME"])
             ||  undefinedp(info["PORTUDP"])
             ||  undefinedp(info["USRNAME"])
             ||  undefinedp(info["CHANNEL"])
             ||  undefinedp(msg = info["MSG"])
         )   return;
-        // È¥³ı×îºóÒ»¸ö \n
+        // å»é™¤æœ€å¾Œä¸€å€‹ \n
         if(msg[<1..<0] == "\n") msg[<1..<0] = "";
-        // ĞÂÀ´µÄÕ¾¸øÎÒ¹Ô¹ÔÅÅ¶Ó»Ø ping :Q
+        // æ–°ä¾†çš„ç«™çµ¦æˆ‘ä¹–ä¹–æ’éšŠå› ping :Q
         if( compare_mud_info(info)<1 ) return;
 
         mudname = get_mud_name(info);
-        // Éè¶¨ id
+        // è¨­å®š id
         //id = info["USRNAME"] + "@"+ ((mudlist[mudname=get_mud_name(info)]["MUDNAME"])||"")+HBGRN"-"+mudlist[mudname]["NAME"]+"-"NOR;
         id = info["USRNAME"];
-        // ÓĞÎŞÖĞÎÄ name ?
+        // æœ‰ç„¡ä¸­æ–‡ name ?
         if( info["CNAME"] ) id = info["CNAME"] + "(" + id + ")";
-        // ÊÇ·ñÎª Emote ?
+        // æ˜¯å¦ç‚º Emote ?
         if( !undefinedp(info["EMOTE"]) )
                 set("channel_id", id);
 
         mudname = get_mud_name(info);
         status = fetch_data(get_mud_name(info))["STATUS"];
         
-        // ÏµÍ³×Ô¶¯Ê¶±ğgb/big5ÂëÕ¾µã
+        // ç³»çµ±è‡ªå‹•è­˜åˆ¥gb/big5ç¢¼ç«™é»
         if( !(status & ENCODE_CONFIRM) && strlen(msg) > 20 )
         {
                 string mud_ip_port = info["HOSTADDRESS"]+":"+info["PORTUDP"];
@@ -1038,7 +1038,7 @@ void receive_gchannel_msg(mapping info)
                 if( con != -1 ) mudlist[mud_ip_port]["STATUS"]|=ENCODE_CONFIRM;
         }
 
-        if( status & IGNORED )  // Èç¹û±»ÁĞÈë¸ô¾øĞÅÏ¢Õ¾µã£¬ÔòÆÁ±ÎÍø¼ÊÁÄÌìÆµµÀ
+        if( status & IGNORED )  // å¦‚æœè¢«åˆ—å…¥éš”çµ•ä¿¡æ¯ç«™é»ï¼Œå‰‡å±è”½ç¶²éš›èŠå¤©é »é“
         {
                 if( info["EMOTE"] ) delete("channel_id");
                 return;
@@ -1055,23 +1055,23 @@ void receive_gchannel_msg(mapping info)
         if( info["CHANNEL"]!="ad" )
         compare_last_msg(mudname,info["MSG"],id);
                                
-        // ½»¸¶¸ø CHANNEL_D ´¦Àí
-        // ×÷ÎªÆäËû·ÇNTlibµÄmud£¬¿ÉÖ±½ÓÓÃCHANNEL_D->do_channel(this_object(), info["CHANNEL"], msg, info["EMOTE"]);Ìæ»»ÒÔÏÂµÄÄÚÈİ
+        // äº¤ä»˜çµ¦ CHANNEL_D è™•ç†
+        // ä½œç‚ºå…¶ä»–éNTlibçš„mudï¼Œå¯ç›´æ¥ç”¨CHANNEL_D->do_channel(this_object(), info["CHANNEL"], msg, info["EMOTE"]);æ›¿æ›ä»¥ä¸‹çš„å…§å®¹
         //if( !(status & ANTI_AD) && accept_channel(info["CHANNEL"]) )
-        if( accept_channel(info["CHANNEL"]) || info["CHANNEL"] == "ad") // ±¾Õ¾CHANNEL_DÓµÓĞÕâ¸öÆµµÀ»ò¹ã¸æÆµµÀ
+        if( accept_channel(info["CHANNEL"]) || info["CHANNEL"] == "ad") // æœ¬ç«™CHANNEL_Dæ“æœ‰é€™å€‹é »é“æˆ–å»£å‘Šé »é“
         {
-                str = (info["EMOTE"]?("{"+HBGRN+mudlist[mudname]["NAME"]+NOR+"} "+ msg): ("{"+HBGRN+mudlist[mudname]["NAME"]+NOR+"} "+ id+"£º"+msg));
+                str = (info["EMOTE"]?("{"+HBGRN+mudlist[mudname]["NAME"]+NOR+"} "+ msg): ("{"+HBGRN+mudlist[mudname]["NAME"]+NOR+"} "+ id+"ï¼š"+msg));
                 CHANNEL_D->channel_broadcast(info["CHANNEL"], str);
         }
-        else // ·Åµ½ÆäËûotherÆµµÀÏÔÊ¾
+        else // æ”¾åˆ°å…¶ä»–otheré »é“é¡¯ç¤º
         {
-                str = (info["EMOTE"]?("["+info["CHANNEL"]+"] "+"{"+HBGRN+mudlist[mudname]["NAME"]+NOR+"} "+msg):("["+info["CHANNEL"]+"] {"+HBGRN+mudlist[mudname]["NAME"]+NOR+"} "+id+"£º"+msg));
+                str = (info["EMOTE"]?("["+info["CHANNEL"]+"] "+"{"+HBGRN+mudlist[mudname]["NAME"]+NOR+"} "+msg):("["+info["CHANNEL"]+"] {"+HBGRN+mudlist[mudname]["NAME"]+NOR+"} "+id+"ï¼š"+msg));
                 CHANNEL_D->channel_broadcast("other", str);
         }
         if( info["EMOTE"] ) delete("channel_id");
 }
 
-// ·¢³ö gchannel Ñ¶Ï¢
+// ç™¼å‡º gchannel è¨Šæ¯
 void send_gchannel_msg(string channel, string id, string name, string msg, int emoted)
 {
         mapping info,mudinfo;
@@ -1100,7 +1100,7 @@ void send_gchannel_msg(string channel, string id, string name, string msg, int e
 
 
 //--------------------------------------------------------------------------------------------
-// Gwizmsg ÏµÁĞ
+// Gwizmsg ç³»åˆ—
 //--------------------------------------------------------------------------------------------
 
 /*
@@ -1120,28 +1120,28 @@ void receive_gwiz_msg(mapping info)
         string msg,id,mudname;
         int status;
 
-        // Ò»¶¨±ØĞëÒªÓĞµÄÀ¸Î»
+        // ä¸€å®šå¿…é ˆè¦æœ‰çš„æ¬„ä½
         if( undefinedp(info["NAME"])
             ||  undefinedp(info["PORTUDP"])
             ||  undefinedp(info["WIZNAME"])
             ||  undefinedp(info["CHANNEL"])
             ||  undefinedp(msg = info["GWIZ"])
         )   return;
-        // È¥³ı×îºóÒ»¸ö \n
+        // å»é™¤æœ€å¾Œä¸€å€‹ \n
         if(msg[<1..<0] == "\n") msg[<1..<0] = "";
-        // ĞÂÀ´µÄÕ¾¸øÎÒ¹Ô¹ÔÅÅ¶Ó»Ø ping :Q
+        // æ–°ä¾†çš„ç«™çµ¦æˆ‘ä¹–ä¹–æ’éšŠå› ping :Q
         if( compare_mud_info(info)<1 ) return;
 
-        // Éè¶¨ id
+        // è¨­å®š id
         id = info["WIZNAME"];
         //id = info["WIZNAME"] + "@" + info["NAME"];
-        // ÓĞÎŞÖĞÎÄ name ?
+        // æœ‰ç„¡ä¸­æ–‡ name ?
         if( info["CNAME"] ) id = info["CNAME"] + "(" + id + ")";
         
-        // ÊÇ·ñÎª Emote ?
+        // æ˜¯å¦ç‚º Emote ?
         if( !undefinedp(info["EMOTE"]) )
                 set("channel_id", id);
-        // GB ×ªÂë ?
+        // GB è½‰ç¢¼ ?
         mudname=get_mud_name(info);
 
         status = fetch_data(mudname)["STATUS"];
@@ -1158,7 +1158,7 @@ void receive_gwiz_msg(mapping info)
         }
 
         /*
-        if( status & IGNORED ) // Èç¹û±»ÁĞÈë¸ô¾øĞÅÏ¢Õ¾µã£¬ÔòÆÁ±ÎÍø¼ÊÁÄÌìÆµµÀ
+        if( status & IGNORED ) // å¦‚æœè¢«åˆ—å…¥éš”çµ•ä¿¡æ¯ç«™é»ï¼Œå‰‡å±è”½ç¶²éš›èŠå¤©é »é“
         {
                 if( info["EMOTE"] ) delete("channel_id");
                 return;
@@ -1171,21 +1171,21 @@ void receive_gwiz_msg(mapping info)
                 msg = (string)LANGUAGE_D->toGB(msg);
         }
         
-        // ×÷ÎªÆäËû·ÇNTlibµÄmud£¬¿ÉÖ±½ÓÓÃCHANNEL_D->do_channel(this_object(), info["CHANNEL"], msg, info["EMOTE"]);Ìæ»»ÒÔÏÂµÄÄÚÈİ
-        if( status & ANTI_AD ) // À¬»ø¹ã¸æÕ¾µã
+        // ä½œç‚ºå…¶ä»–éNTlibçš„mudï¼Œå¯ç›´æ¥ç”¨CHANNEL_D->do_channel(this_object(), info["CHANNEL"], msg, info["EMOTE"]);æ›¿æ›ä»¥ä¸‹çš„å…§å®¹
+        if( status & ANTI_AD ) // åƒåœ¾å»£å‘Šç«™é»
         {
-                info["CHANNEL"]="ad"; // °Ñ¶Ô·½ÍøÂçÆµµÀ¸Ä³É¹ã¸æÆµµÀ
-                CHANNEL_D->channel_broadcast(info["CHANNEL"], info["EMOTE"]?("{"+HBGRN+mudlist[mudname]["NAME"]+NOR+"} "+ msg):("{"+HBGRN+mudlist[mudname]["NAME"]+NOR+"} "+ id+"£º"+msg));
+                info["CHANNEL"]="ad"; // æŠŠå°æ–¹ç¶²çµ¡é »é“æ”¹æˆå»£å‘Šé »é“
+                CHANNEL_D->channel_broadcast(info["CHANNEL"], info["EMOTE"]?("{"+HBGRN+mudlist[mudname]["NAME"]+NOR+"} "+ msg):("{"+HBGRN+mudlist[mudname]["NAME"]+NOR+"} "+ id+"ï¼š"+msg));
 
                 if( info["EMOTE"] ) delete("channel_id");
                 return;
         }
 
-        // ½»¸¶¸ø CHANNEL_D ´¦Àí
-        CHANNEL_D->channel_broadcast("gwiz","["+info["CHANNEL"]+"] "+(info["EMOTE"]?("{"+HBGRN+mudlist[mudname]["NAME"]+NOR+"} "+msg):("{"+HBGRN+mudlist[mudname]["NAME"]+NOR+"} "+ id+"£º"+msg)));
+        // äº¤ä»˜çµ¦ CHANNEL_D è™•ç†
+        CHANNEL_D->channel_broadcast("gwiz","["+info["CHANNEL"]+"] "+(info["EMOTE"]?("{"+HBGRN+mudlist[mudname]["NAME"]+NOR+"} "+msg):("{"+HBGRN+mudlist[mudname]["NAME"]+NOR+"} "+ id+"ï¼š"+msg)));
         if( info["EMOTE"] ) delete("channel_id");
 
-        //NCH_CHANNEL("ÊÕµ½ gwizmsg "+info["CHANNEL"]+" Ñ¶Ï¢");
+        //NCH_CHANNEL("æ”¶åˆ° gwizmsg "+info["CHANNEL"]+" è¨Šæ¯");
 }
 void send_gwiz_msg(string channel, string id, string name, string msg, int emoted)
 {
@@ -1211,7 +1211,7 @@ void send_gwiz_msg(string channel, string id, string name, string msg, int emote
 }
 
 //--------------------------------------------------------------------------------------------
-// Warning ÏµÁĞ
+// Warning ç³»åˆ—
 //--------------------------------------------------------------------------------------------
 
 void receive_warning(mapping info)
@@ -1221,7 +1221,7 @@ void receive_warning(mapping info)
         if(compare_mud_info(info)<1)
                 return;
 
-        msg=sprintf("×Ô %s(%s) ¸æÖªµÄ¾¯¸æ: %s ÓÚ %s",info["NAME"],info["HOSTADDRESS"],info["MSG"],info["FAKEHOST"]);
+        msg=sprintf("è‡ª %s(%s) å‘ŠçŸ¥çš„è­¦å‘Š: %s äº %s",info["NAME"],info["HOSTADDRESS"],info["MSG"],info["FAKEHOST"]);
 
         send_warning(info["HOSTADDRESS"],info["PORTUDP"],
             sprintf("Thank For Your Warning [%s], we have loged it , and will try to solve it soon :).",msg));
@@ -1243,10 +1243,10 @@ varargs void send_warning(string targ,int port,string msg,string fakehost)
 }
 
 //--------------------------------------------------------------------------------------------
-// Startup ÏµÁĞ
+// Startup ç³»åˆ—
 //--------------------------------------------------------------------------------------------
 
-// ËÍ³ö startup ,  ·´ÕıÂíÉÏ¾ÍËÍ ping ÁË, ËÍ»ù±¾µÄ¾ÍºÃ.
+// é€å‡º startup ,  åæ­£é¦¬ä¸Šå°±é€ ping äº†, é€åŸºæœ¬çš„å°±å¥½.
 void send_startup(string targ,int port)
 {
         send_udp(targ, port, "startup",
@@ -1254,19 +1254,19 @@ void send_startup(string targ,int port)
                 "NAME":INTERMUD_MUD_NAME,
                 "PORTUDP":""+udp_port,
             ]));
-        // ¶Ô·½ÊÕµ½ startup »á»Ø ping_a
+        // å°æ–¹æ”¶åˆ° startup æœƒå› ping_a
         add_buffer(targ+":"+port,PING_B);
-        //NCH_CHANNEL("ËÍ³ö startup Ñ¶Ï¢µ½ " + targ + ":" + port + "¡£");
+        //NCH_CHANNEL("é€å‡º startup è¨Šæ¯åˆ° " + targ + ":" + port + "ã€‚");
 }
 
 void receive_startup(mapping info)
 {
         receive_ping_request(info);
-        NCH_CHANNEL("ÊÕµ½×Ô "+info["HOSTADDRESS"]+":"+info["PORTUDP"]+" À´µÄ startup Ñ¶Ï¢.");
+        NCH_CHANNEL("æ”¶åˆ°è‡ª "+info["HOSTADDRESS"]+":"+info["PORTUDP"]+" ä¾†çš„ startup è¨Šæ¯.");
 }
 
 //--------------------------------------------------------------------------------------------
-// affirmation_a ÏµÁĞ
+// affirmation_a ç³»åˆ—
 //--------------------------------------------------------------------------------------------
 
 
@@ -1313,7 +1313,7 @@ void receive_affirmation(mapping info)
         }
         if( info["MSG"][<1..<0] != '\n' ) info["MSG"] += "\n";
 
-        tell(ob, sprintf(GRN "[ %s ] %s[%s] ¸æËßÄã £º%s\n"NOR,undefinedp(info["TYPE"])?" ":info["TYPE"],capitalize(info["WIZFROM"]),name,info["MSG"] ), TELLMSG);
+        tell(ob, sprintf(GRN "[ %s ] %s[%s] å‘Šè¨´ä½  ï¼š%s\n"NOR,undefinedp(info["TYPE"])?" ":info["TYPE"],capitalize(info["WIZFROM"]),name,info["MSG"] ), TELLMSG);
 
 }
 
@@ -1333,7 +1333,7 @@ void send_affirmation(string targ,int port, string to,string msg, string type)
 }
 
 //--------------------------------------------------------------------------------------------
-// Gtell ÏµÁĞ
+// Gtell ç³»åˆ—
 //--------------------------------------------------------------------------------------------
 
 
@@ -1357,7 +1357,7 @@ void receive_gtell(mapping info)
                 {
                         send_affirmation(info["HOSTADDRESS"],info["PORTUDP"],info["WIZFROM"],
                             "Gtell warning : Your mud send too many GTELL request in the same time , Please try again later.","gtell");
-                        NCH_CHANNEL(sprintf("%s[%s:%s] gtell Ì«Æµ·± , ignore",info["NAME"],info["HOSTADDRESS"],info["PORTUDP"]));
+                        NCH_CHANNEL(sprintf("%s[%s:%s] gtell å¤ªé »ç¹ , ignore",info["NAME"],info["HOSTADDRESS"],info["PORTUDP"]));
                         return ;
                 }
         }
@@ -1371,8 +1371,8 @@ void receive_gtell(mapping info)
         }
         if( info["MSG"][<1..<0] != '\n' ) info["MSG"] += "\n";
         if( undefinedp(info["CNAME"]) )
-                tell(ob, sprintf(GRN "%s@%s(%s) ¸æËßÄã£º%s"NOR,capitalize(info["WIZFROM"]),info["NAME"],name,info["MSG"] ), TELLMSG);
-        else    tell(ob, sprintf(GRN "%s(%s@%s[%s]) ¸æËßÄã£º%s"NOR,info["CNAME"],capitalize(info["WIZFROM"]),info["NAME"],name,info["MSG"] ), TELLMSG);
+                tell(ob, sprintf(GRN "%s@%s(%s) å‘Šè¨´ä½ ï¼š%s"NOR,capitalize(info["WIZFROM"]),info["NAME"],name,info["MSG"] ), TELLMSG);
+        else    tell(ob, sprintf(GRN "%s(%s@%s[%s]) å‘Šè¨´ä½ ï¼š%s"NOR,info["CNAME"],capitalize(info["WIZFROM"]),info["NAME"],name,info["MSG"] ), TELLMSG);
 
         send_affirmation(info["HOSTADDRESS"],info["PORTUDP"],info["WIZFROM"],
             "GTELL Respond : "+info["WIZTO"]+" has received your message.","gtell");
@@ -1398,7 +1398,7 @@ int send_gtell(string targ,int port,string my_id,string my_cname,string targ_id,
 }
 
 //--------------------------------------------------------------------------------------------
-// Support ÏµÁĞ
+// Support ç³»åˆ—
 //--------------------------------------------------------------------------------------------
 
 //void send_support_answer(string targ,int port,)
@@ -1449,7 +1449,7 @@ void receive_support_request(mapping info)
 
 
 //--------------------------------------------------------------------------------------------
-// Locate ÏµÁĞ
+// Locate ç³»åˆ—
 //--------------------------------------------------------------------------------------------
 
 void receive_locate_request(mapping info)
@@ -1513,13 +1513,13 @@ void receive_locate_answer(mapping info)
                         tell(ob,sprintf("%s was located on %s [%s:%s] now.\n",info["TARGET"],info["NAME"],info["HOSTADDRESS"],info["PORTUDP"]), ETCMSG);
                 else return;
         }
-        NCH_CHANNEL("ÊÕµ½ locate_answer");
+        NCH_CHANNEL("æ”¶åˆ° locate_answer");
 }
 
 
 
 //--------------------------------------------------------------------------------------------
-// RWho ÏµÁĞ
+// RWho ç³»åˆ—
 //--------------------------------------------------------------------------------------------
 
 
@@ -1587,6 +1587,6 @@ varargs void send_rwho_request(string ip,int port,string player,string arg)
 
 string query_name()
 {
-        return "INTERMUD2 ÏµÍ³(INTERMUD2_D)";
+        return "INTERMUD2 ç³»çµ±(INTERMUD2_D)";
 }
 

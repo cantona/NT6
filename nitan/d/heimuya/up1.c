@@ -13,14 +13,14 @@ void goto_heimuya(object ob);
 
 void create()
 {
-    set("short", "ÈÕÔÂÆº");
+    set("short", "æ—¥æœˆåª");
         set("long", @LONG
-ÕâÀïÊÇ°ëÉ½µÄÒ»Æ¬Ğ¡ÍÁÆº£¬ÀëÑÂ¶¥»¹ÓĞÒ»¶ÎÂ·Í¾£¬¿Éµ½ÕâÒÑ¾­Ã»
-ÓĞÂ·ÉÏÈ¥£¬ÃæÇ°ÊÇÈç¾³°ãµÄÇÍ±Ú£¬ÑöÍ·¶øÍû£¬µ«¼ûÑÂ¶¥ÒÀÏ¡ËÊÁ¢×ÅÂ¥
-¸ó£¬ÍğÈçÏÉ¾³¡£¿ÉÔÆÑÌçÔÈÆ£¬¿´²»ÇåÎú¡£´ÓĞüÑÂÉÏ´¹ÏÂÒ»ÌõÉşË÷(rop
-e)£¬¿´ÉÏÈ¥ÏóÊÇĞüÑÂÉÏÏÂ»¥Í¨ÏûÏ¢µÄ¹¤¾ß£¬ÉşË÷µÄÉÏÃæËÆºõÒşÔ¼ÓĞÒ»
-¸öµõÀº(basket)¡£ĞüÑÂµÄÇ½ÉÏËÆºõÓĞÒ»¸öÏ»×Ó(xiazi) £¬ÄãËÆºõ×ßÈë
-Ò»¸öÎíÕ¬£¬Õæ²»ÖªÈçºÎÊÇºÃ¡£
+é€™è£¡æ˜¯åŠå±±çš„ä¸€ç‰‡å°åœŸåªï¼Œé›¢å´–é ‚é‚„æœ‰ä¸€æ®µè·¯é€”ï¼Œå¯åˆ°é€™å·²ç¶“æ²’
+æœ‰è·¯ä¸Šå»ï¼Œé¢å‰æ˜¯å¦‚å¢ƒèˆ¬çš„å³­å£ï¼Œä»°é ­è€Œæœ›ï¼Œä½†è¦‹å´–é ‚ä¾ç¨€è³ç«‹è‘—æ¨“
+é–£ï¼Œå®›å¦‚ä»™å¢ƒã€‚å¯é›²ç…™ç¹šç¹ï¼Œçœ‹ä¸æ¸…æ™°ã€‚å¾æ‡¸å´–ä¸Šå‚ä¸‹ä¸€æ¢ç¹©ç´¢(rop
+e)ï¼Œçœ‹ä¸Šå»è±¡æ˜¯æ‡¸å´–ä¸Šä¸‹äº’é€šæ¶ˆæ¯çš„å·¥å…·ï¼Œç¹©ç´¢çš„ä¸Šé¢ä¼¼ä¹éš±ç´„æœ‰ä¸€
+å€‹åŠç±ƒ(basket)ã€‚æ‡¸å´–çš„ç‰†ä¸Šä¼¼ä¹æœ‰ä¸€å€‹åŒ£å­(xiazi) ï¼Œä½ ä¼¼ä¹èµ°å…¥
+ä¸€å€‹éœ§å®…ï¼ŒçœŸä¸çŸ¥å¦‚ä½•æ˜¯å¥½ã€‚
 LONG );
 
     set("exits", ([
@@ -32,9 +32,9 @@ LONG );
 
     set("outdoors", "heimuya");
     set("item_desc", ([
-        "basket": "ÄÇÊÇÒ»¸öµôÀº£¬¿´Ñù×ÓÓĞĞ©¹Å¹Ö¡£\n",
-        "rope"  : "Éş×Ó¾ÍÊÇÉş×Ó£¬¿ÉÄÜÊÇÏòÉÏµÄ¹¤¾ß¡£\n",
-        "xiazi" : "ÕâÊÇÒ»¸öÏ»×Ó£¬ºÃÏñ¿ÉÒÔ°´(push)ÏÂÈ¥¡£Ï»×ÓµÄ²àÃæÓĞÒ»¸ö²å¿×¡£\n",
+        "basket": "é‚£æ˜¯ä¸€å€‹æ‰ç±ƒï¼Œçœ‹æ¨£å­æœ‰äº›å¤æ€ªã€‚\n",
+        "rope"  : "ç¹©å­å°±æ˜¯ç¹©å­ï¼Œå¯èƒ½æ˜¯å‘ä¸Šçš„å·¥å…·ã€‚\n",
+        "xiazi" : "é€™æ˜¯ä¸€å€‹åŒ£å­ï¼Œå¥½åƒå¯ä»¥æŒ‰(push)ä¸‹å»ã€‚åŒ£å­çš„å´é¢æœ‰ä¸€å€‹æ’å­”ã€‚\n",
     ]));
 
     setup();
@@ -60,17 +60,17 @@ void check_trigger()
                 set("insert_trigger", 1, room);
                 set("exits/enter", __DIR__"basket");
                 set("exits/out", __FILE__, room);
-                message("vision", "¡°°È¡±µÄÒ»Éù£¬ÄãÊÖÖĞµÄÁîÅÆÒÑ±»ÕÛ¶Ï£¬Ö»¼ûÒ»¸ö"
-                        "µôÀº(basket)´ÓÌì¶ø½µ£¬Äã²»½ûÒ»Õú£¡\n", this_object());
+                message("vision", "â€œå­â€çš„ä¸€è²ï¼Œä½ æ‰‹ä¸­çš„ä»¤ç‰Œå·²è¢«æŠ˜æ–·ï¼Œåªè¦‹ä¸€å€‹"
+                        "æ‰ç±ƒ(basket)å¾å¤©è€Œé™ï¼Œä½ ä¸ç¦ä¸€æ€”ï¼\n", this_object());
                 set("item_desc", ([
-                    "basket" : "ÕâÊÇÒ»¸öµôÀº£¬ÊÇ´«ËµÖĞµÄ½»Í¨¹¤¾ß¡£\n",
+                    "basket" : "é€™æ˜¯ä¸€å€‹æ‰ç±ƒï¼Œæ˜¯å‚³èªªä¸­çš„äº¤é€šå·¥å…·ã€‚\n",
                 ]));
 
                 remove_call_out("on_board");
                 call_out("on_board", 15);
             }
             else
-                message("vision", "¿´Ñù×ÓÄãµÃµÈÏÂ²¦¶ù¡£\n",this_object() );
+                message("vision", "çœ‹æ¨£å­ä½ å¾—ç­‰ä¸‹æ’¥å…’ã€‚\n",this_object() );
         }
         else
             message("vision", "ERROR: basket not found\n", this_object() );
@@ -81,8 +81,8 @@ void on_board()
 {
     object room, me = this_player();
     if( !query("exits/enter") ) return;
-    tell_object(me, HIG"Ö»¼ûµôÀº»º»ºÏòÉÏ£¬ËÄÖÜÎŞÏŞÃÀºÃ£¬"
-                "ÄãËÆºõÖÃÉíÓÚÒ»´¦ÈË¼äÏÉ¾³ÎŞÒì¡£\n"NOR);
+    tell_object(me, HIG"åªè¦‹æ‰ç±ƒç·©ç·©å‘ä¸Šï¼Œå››å‘¨ç„¡é™ç¾å¥½ï¼Œ"
+                "ä½ ä¼¼ä¹ç½®èº«äºä¸€è™•äººé–“ä»™å¢ƒç„¡ç•°ã€‚\n"NOR);
 
     if( room = find_object(__DIR__"basket") )
     {
@@ -99,7 +99,7 @@ void arrive()
     if( room = find_object(__DIR__"basket") )
     {
         set("exits/out", __DIR__"up2", room);
-        message("vision", "àâµÄÒ»Éù£¬ÄãËÆºõÒ»ÏÂ´ÓÌìÉÏµ½ÁËµØÉÏ¡£\n",room );
+        message("vision", "â–¡çš„ä¸€è²ï¼Œä½ ä¼¼ä¹ä¸€ä¸‹å¾å¤©ä¸Šåˆ°äº†åœ°ä¸Šã€‚\n",room );
     }
     remove_call_out("close_passage");
     call_out("close_passage", 20);
@@ -125,12 +125,12 @@ int do_insert(string arg)
 
     if( !arg || arg=="" )   return 0;
 
-    if( arg=="¿¨" )   arg = "card1";
+    if( arg=="å¡" )   arg = "card1";
 
     if( arg=="card1")
     {
         if( !objectp(ob = present(arg, me)) )
-                return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+                return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™æ¨£æ±è¥¿ã€‚\n");
         if( !query_temp("mark/cards", me) )
                 set_temp("mark/cards", 1, me);
         if( query_temp("mark/cards", me) == 4 )
@@ -141,14 +141,14 @@ int do_insert(string arg)
         }
         else    {
                 addn_temp("mark/cards", 1, me);
-                message("vision", "àâµÄÒ»Éù£¬Äã¿´µ½µôÀºÏòÏÂÒ»½Ú¡£\n",me );
+                message("vision", "â–¡çš„ä¸€è²ï¼Œä½ çœ‹åˆ°æ‰ç±ƒå‘ä¸‹ä¸€ç¯€ã€‚\n",me );
         }
     }
     else
     {
         if( !objectp(ob = present(arg, me)) )
-                return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷¡£\n");
-        else    return notify_fail(ob->name() + "ºÃÏñ¸ú²å¿×²»ºÏ£¬ÔõÃ´Ò²²å²»½øÈ¥¡£\n");
+                return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™æ¨£æ±è¥¿ã€‚\n");
+        else    return notify_fail(ob->name() + "å¥½åƒè·Ÿæ’å­”ä¸åˆï¼Œæ€éº¼ä¹Ÿæ’ä¸é€²å»ã€‚\n");
     }
     return 1;
 }
@@ -159,25 +159,25 @@ int do_push(string arg)
     ob = this_player();
 
     if( !arg || arg != "xiazi" )
-         return notify_fail("ÄãÒª push Ê²Ã´£¿\n");
+         return notify_fail("ä½ è¦ push ä»€éº¼ï¼Ÿ\n");
 
-    if( query("family/family_name", ob) == "ÈÕÔÂÉñ½Ì" )
+    if( query("family/family_name", ob) == "æ—¥æœˆç¥æ•™" )
     {
-         message_vision("$N°ÑÏ»×Ó°´ÁË¼¸ÏÂ£¬Ö»Ìı¡°Ö¨Å¤Ö¨Å¤¡±¼¸Éù£¬´ÓÑÂÉÏÂäÏÂÒ»¸ö´óµõÀº¡£\n", ob);
-         message_vision("$NÒ»ÍäÑü½øÁËµõÀº£¬µõÀº»º»ºµØ½ÊÉÏÑÂÈ¥......\n", ob);
+         message_vision("$NæŠŠåŒ£å­æŒ‰äº†å¹¾ä¸‹ï¼Œåªè½â€œå±æ‰­å±æ‰­â€å¹¾è²ï¼Œå¾å´–ä¸Šè½ä¸‹ä¸€å€‹å¤§åŠç±ƒã€‚\n", ob);
+         message_vision("$Nä¸€å½è…°é€²äº†åŠç±ƒï¼ŒåŠç±ƒç·©ç·©åœ°çµä¸Šå´–å»......\n", ob);
          myenv = environment(ob);
          ob->move (__DIR__"basket");
          call_out("goto_heimuya", 10, ob);
          return 1;
     }
     else
-         message_vision("$N°ÑÏ»×Ó°´ÁË¼¸ÏÂ£¬µ«ºÃÏñÃ»Ê²Ã´×÷ÓÃ¡£\n",ob);
+         message_vision("$NæŠŠåŒ£å­æŒ‰äº†å¹¾ä¸‹ï¼Œä½†å¥½åƒæ²’ä»€éº¼ä½œç”¨ã€‚\n",ob);
     return 1;
 }
 
 void goto_heimuya(object ob)
 {
-    tell_object(ob , "ÄãÑÛÇ°Ò»ÁÁ£¬Ò»´±´±°×É«½¨ÖşÒÙÁ¢ÑÛÇ°£¬ö®ÊÇ»Ô»Í¡£\n");
+    tell_object(ob , "ä½ çœ¼å‰ä¸€äº®ï¼Œä¸€å¹¢å¹¢ç™½è‰²å»ºç¯‰å±¹ç«‹çœ¼å‰ï¼Œéœæ˜¯è¼ç…Œã€‚\n");
     ob->move(__DIR__"chengdedian");
 }
 
@@ -189,25 +189,25 @@ int do_float()
 
         if (me->query_skill("juechen-shenfa", 1) < 180)
         {
-                message_vision("$NÒ£ÍûÉ½ÑÂ£¬³ÁË¼Á¼¾Ã£¬Ì¾ÁË¿ÚÆø¡£\n", me);
+                message_vision("$Né™æœ›å±±å´–ï¼Œæ²‰æ€è‰¯ä¹…ï¼Œå˜†äº†å£æ°£ã€‚\n", me);
                 return 1;
         }
 
         if( query("neili", me)<100 )
         {
-                tell_object(me, "ÄãµÄÄÚÁ¦²»¹»£¬»¹ÊÇĞİÏ¢Ò»ÏÂÔÙËµ°É¡£\n");
+                tell_object(me, "ä½ çš„å…§åŠ›ä¸å¤ ï¼Œé‚„æ˜¯ä¼‘æ¯ä¸€ä¸‹å†èªªå§ã€‚\n");
                 return 1;
         }
 
         addn("neili", -80, me);
 
-        message_sort(HIC "\n$N" HIC "ÉîÉîÄÉÈëÒ»¿ÚÆø£¬İëµØÒ»·É¶øÆğ£¬³¯"
-                     "É½ÑÂÉÏÆ®È¥¡£\n\n" NOR, me);
+        message_sort(HIC "\n$N" HIC "æ·±æ·±ç´å…¥ä¸€å£æ°£ï¼Œé©€åœ°ä¸€é£›è€Œèµ·ï¼Œæœ"
+                     "å±±å´–ä¸Šé£„å»ã€‚\n\n" NOR, me);
 
         me->move(__DIR__"shanya3");
-        tell_object(me, "ÄãË³×ÅÑÂ±ÚÆ®ÉÏÁËºÚÄ¾ÑÂ¡£\n");
-        message("vision", HIC "\nºöÌıÒ»ÉùÇåĞ¥ÓÉÔ¶¼°½ü£¬" + me->name() +
-                          HIC "Ë³×ÅÑÂ±ÚÆ®È»¶øÉÏ£¬Âä¶¨ÉíĞÎ¡£\n" NOR,
+        tell_object(me, "ä½ é †è‘—å´–å£é£„ä¸Šäº†é»‘æœ¨å´–ã€‚\n");
+        message("vision", HIC "\nå¿½è½ä¸€è²æ¸…å˜¯ç”±é åŠè¿‘ï¼Œ" + me->name() +
+                          HIC "é †è‘—å´–å£é£„ç„¶è€Œä¸Šï¼Œè½å®šèº«å½¢ã€‚\n" NOR,
                           environment(me), ({ me }));
         return 1;
 }

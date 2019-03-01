@@ -1,21 +1,21 @@
 #include <ansi.h>
-// 明教 guangming-jing
+// 鏄庢暀 guangming-jing
 inherit SKILL; 
 string type() { return "knowledge"; } 
 
 int is_fmsk() { return 1; }
-string family_name() { return "明教"; }
+string family_name() { return "鏄庢暀"; }
 
 int valid_learn(object me)
 {        
         if (me->query_skill("jiuyang-shengong", 1) < 120)
-                return notify_fail("你九阳神功火候不足，无法研习大云光明经。\n");
+                return notify_fail("浣犱節闄界鍔熺伀鍊欎笉瓒筹紝鐒℃硶鐮旂繏澶ч洸鍏夋槑缍撱�俓n");
         
         if( query("family/family_name", me) != family_name() )
-                return notify_fail("大云光明经只能明教弟子方可研习。\n");
+                return notify_fail("澶ч洸鍏夋槑缍撳彧鑳芥槑鏁欏紵瀛愭柟鍙爺缈掋�俓n");
 
         if (me->query_skill("qiankun-danuoyi", 1) < 150)
-                return notify_fail("你乾坤大挪移修为不足，无法继续研习大云光明经。\n");
+                return notify_fail("浣犱咕鍧ゅぇ鎸Щ淇偤涓嶈冻锛岀劇娉曠辜绾岀爺缈掑ぇ闆插厜鏄庣稉銆俓n");
 
         return 1;
 }

@@ -21,7 +21,7 @@ void init(object me)
                 return;
 
         if( query_temp("used") )
-                return tell_object(me, name(1)+"µÄÇ¿´óÄÜÁ¦ÒÑ¾­±»Ê¹ÓÃ¡£\n");
+                return tell_object(me, name(1)+"çš„å¼·å¤§èƒ½åŠ›å·²ç¶“è¢«ä½¿ç”¨ã€‚\n");
 
         players = BATTLEFIELD2_D->get_sorted_players();
 
@@ -39,11 +39,11 @@ void init(object me)
         }
 
         BATTLEFIELD2_D->add_bonus_score(me, 100);
-        tell_object(me, "ÄãÒòÎªÅö´¥"+name(1)+"¶ø»ñµÃ "HIY"100"NOR" µãÕ½¼¨ºìÀû¡£\n");
+        tell_object(me, "ä½ å› ç‚ºç¢°è§¸"+name(1)+"è€Œç²å¾— "HIY"100"NOR" é»æˆ°ç¸¾ç´…åˆ©ã€‚\n");
         if( target )
-        tell_object(me, "Äã´¥¶¯ÁËÕ½Õù¿Ö¾åÊ¯±®µÄÁ¦Á¿ÈÃ"+target->query_idname()+NOR"±äµÃĞéÈõÆğÀ´¡£\n");
+        tell_object(me, "ä½ è§¸å‹•äº†æˆ°çˆ­ææ‡¼çŸ³ç¢‘çš„åŠ›é‡è®“"+target->query_idname()+NOR"è®Šå¾—è™›å¼±èµ·ä¾†ã€‚\n");
 
-        tell_object(target, HIR+me->query_idname()+HIR"Ê¹ÓÃÁËÕ½Õù¿Ö¾åÊ¯±®µÄÁ¦Á¿ÈÃÄã±äµÃĞéÈõÆğÀ´¡£\n" NOR);
+        tell_object(target, HIR+me->query_idname()+HIR"ä½¿ç”¨äº†æˆ°çˆ­ææ‡¼çŸ³ç¢‘çš„åŠ›é‡è®“ä½ è®Šå¾—è™›å¼±èµ·ä¾†ã€‚\n" NOR);
         target->set_weak(10);
 
         call_out((: delay_destruct :), 0);
@@ -53,14 +53,14 @@ void init(object me)
 
 void create()
 {
-        set_name(RED"Õ½Õù¿Ö¾åÊ¯±®"NOR, ({ "battlefield fear statue", "statue" }) );
+        set_name(RED"æˆ°çˆ­ææ‡¼çŸ³ç¢‘"NOR, ({ "battlefield fear statue", "statue" }) );
         set_weight(200);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ê¹ÓÃÕâ¸öÊ¯±®µÄÈË¿ÉÒÔ´ó·ù½µµÍÁíÒ»Î»Õ½³¡ÖĞÍæ¼ÒµÄÄÜÁ¦¡£");
+                set("long", "ä½¿ç”¨é€™å€‹çŸ³ç¢‘çš„äººå¯ä»¥å¤§å¹…é™ä½å¦ä¸€ä½æˆ°å ´ä¸­ç©å®¶çš„èƒ½åŠ›ã€‚");
                 set("value", 1000000);
-                set("unit", "¸ö");
+                set("unit", "å€‹");
                 set("no_get", 1);
         }
 }

@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÏÉÈË¶´");
+        set("short", "ä»™äººæ´");
         set("long", @LONG
-Õâ¸ö¶´¸ßÆß³ß£¬ÀïÃæ¹âÏß°µµ­£¬Äã¿´²»ÇåÊÇ·ñ¶´ÀïÓĞÈÎºÎÆ÷Îï£¬
-Ö»ÓĞ¶´¿Ú¶Ñ×Å°ë³ßÀ´¸ßµÄÉ½Ñò·à¡£
+é€™å€‹æ´é«˜ä¸ƒå°ºï¼Œè£¡é¢å…‰ç·šæš—æ·¡ï¼Œä½ çœ‹ä¸æ¸…æ˜¯å¦æ´è£¡æœ‰ä»»ä½•å™¨ç‰©ï¼Œ
+åªæœ‰æ´å£å †è‘—åŠå°ºä¾†é«˜çš„å±±ç¾Šç³ã€‚
 LONG );
         set("exits", ([
                 "down" : "/d/xingxiu/xrdong",
@@ -33,8 +33,8 @@ int do_use(string arg)
         if( arg=="fire" ) {
              write(
 
-"ÄãµãÈ¼ÁË»ğÕÛ£¬·¢ÏÖÎ÷ÃæÊ¯±ÚÉÏÓĞÒ»µÀÁÑ·ì£¬ËÆºõ¿ÉÒÔ×ê(zuan)³öÈ¥¡£\n");
-        set_temp("marks/×ê", 1, this_player());
+"ä½ é»ç‡ƒäº†ç«æŠ˜ï¼Œç™¼ç¾è¥¿é¢çŸ³å£ä¸Šæœ‰ä¸€é“è£‚ç¸«ï¼Œä¼¼ä¹å¯ä»¥é‘½(zuan)å‡ºå»ã€‚\n");
+        set_temp("marks/é‘½", 1, this_player());
              return 1;
        }
 }
@@ -43,19 +43,19 @@ int do_zuan(string arg)
 {
         object me = this_player();
         
-        if( query_temp("marks/×ê", me)){
+        if( query_temp("marks/é‘½", me)){
 
         message("vision", me->name() +
-"×ÌÁïÒ»ÏÂ²»Öª´ÓÊ²Ã´µØ·½×ê³öÈ¥ÁË¡£\n",
+"æ»‹æºœä¸€ä¸‹ä¸çŸ¥å¾ä»€éº¼åœ°æ–¹é‘½å‡ºå»äº†ã€‚\n",
                     environment(me), ({me}) );
             me->move("/d/xingxiu/icecave1");
-            message("vision", me->name() + "´ÓÊ¯·ìÀï×êÁË³öÀ´¡£\n",
+            message("vision", me->name() + "å¾çŸ³ç¸«è£¡é‘½äº†å‡ºä¾†ã€‚\n",
                     environment(me), ({me}) );
-            delete_temp("marks/×ê", this_player());
+            delete_temp("marks/é‘½", this_player());
         return 1;
         }
         else {
-            write("ÄãÏëÍùÄÄ¶ù×ê?!\n");
+            write("ä½ æƒ³å¾€å“ªå…’é‘½?!\n");
             return 1;
         }
 }

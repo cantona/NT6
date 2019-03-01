@@ -34,7 +34,7 @@ int update_condition(object me, int duration)
                 {
                         set_temp("jun_quest/last_jiang", time(), me);
                         tell_object(me,
-                                    HIR "ÐÂÕ÷Ò»ÅúµÄËÎ¾üµ½ÁË£¬¸Ï¿ì¼Ó½ôÑµÁ·°É£¡£¡£¡\n" NOR); 
+                                    HIR "æ–°å¾ä¸€æ‰¹çš„å®‹è»åˆ°äº†ï¼Œè¶•å¿«åŠ ç·Šè¨“ç·´å§ï¼ï¼ï¼\n" NOR); 
                         liangcao = liangcao - 50;
                         temp = sprintf("%d", liangcao);
                         write_file("/d/city2/song/liangcao", temp, 1);
@@ -47,8 +47,8 @@ int update_condition(object me, int duration)
         if (duration == 1)  
         {
                 WAR_D->remove_enemy();     
-                tell_object(me, HIR "ÃÉ¹Å´ó¾ü¾Ã¹¥²»ÏÂ£¬ÖÕÓÚ³·¾üÁË£¡£¡£¡\n" NOR);
-                tell_object(me, HIR "¹§Ï²ÄãÊ¤ÀûÍê³É´Ë´Î³öÕ÷ÈÎÎñ£¬»÷°ÜÀ´·¸ÃÉ¾üÊµÄËÎÒ³¯Ö®¶°Áº°¡£¡£¡£¡\n" NOR);    
+                tell_object(me, HIR "è’™å¤å¤§è»ä¹…æ”»ä¸ä¸‹ï¼Œçµ‚äºŽæ’¤è»äº†ï¼ï¼ï¼\n" NOR);
+                tell_object(me, HIR "æ­å–œä½ å‹åˆ©å®Œæˆæ­¤æ¬¡å‡ºå¾ä»»å‹™ï¼Œæ“Šæ•—ä¾†çŠ¯è’™è»å¯¦ä¹ƒæˆ‘æœä¹‹æ£Ÿæ¨‘å•Šï¼ï¼ï¼\n" NOR);    
                 WAR_D->give_bouns();
         }
         me->apply_condition("junquest_song", duration - 1); 

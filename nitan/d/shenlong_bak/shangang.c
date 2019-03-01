@@ -1,14 +1,14 @@
-// É½¸Ú /d/shenlong/shangang
+// å±±å´— /d/shenlong/shangang
 // Last Modified by winder on Jul. 12 2002
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "É½¸Ú");
+        set("short", "å±±å´—");
         set("long", @LONG
-ÕâÊÇÒ»¸öÂÒÊ¯¸Ú£¬Ò°²İ´ÔÉú£¬ÂÒÊ¯³É¶Ñ£¬ÏÔµÃºÜ»ÄÁ¹£¬Ê¯·ìÖĞÓĞĞí
-¶àĞ¡¶´£¬ËÄÖÜÊÇĞí¶àÂÒÊ¯¡£
+é€™æ˜¯ä¸€å€‹äº‚çŸ³å´—ï¼Œé‡è‰å¢ç”Ÿï¼Œäº‚çŸ³æˆå †ï¼Œé¡¯å¾—å¾ˆè’æ¶¼ï¼ŒçŸ³ç¸«ä¸­æœ‰è¨±
+å¤šå°æ´ï¼Œå››å‘¨æ˜¯è¨±å¤šäº‚çŸ³ã€‚
 LONG
         );
         set("outdoors", "shenlong");

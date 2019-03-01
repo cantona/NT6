@@ -1,6 +1,6 @@
 // drive.c
 //
-// ���Լ�ʻ����Ʒ
+// 可以駕駛的物品
 
 #include <dbase.h>
 
@@ -16,7 +16,7 @@ object query_owner()
         return query_temp("owner");
 }
 
-// ���Ƿ���Լ�ʻ��
+// 我是否可以駕駛？
 int can_drive_by(object me)
 {
         object owner;
@@ -27,5 +27,5 @@ int can_drive_by(object me)
         if (owner == me || environment(owner) != environment())
                 return 1;
 
-        return notify_fail("����" + owner->name() + "�ĳ������Ҷ�ʲô��\n");
+        return notify_fail("這是" + owner->name() + "的車，你亂動什麼？\n");
 }

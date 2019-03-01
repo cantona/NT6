@@ -53,9 +53,9 @@ void close_men()
                 if (  is_open() ) 
                 {
                         close_door();
-                        message("vision", query("door_name")+"֨֨ѽѽ���Լ������ˡ�\n", this_object());
+                        message("vision", query("door_name")+"吱吱呀呀地自己合上了。\n", this_object());
                         room->close_door();
-                        message("vision", query("door_name")+"֨֨ѽѽ���Լ������ˡ�\n", room);
+                        message("vision", query("door_name")+"吱吱呀呀地自己合上了。\n", room);
                 }
         }
 }
@@ -63,12 +63,12 @@ void close_men()
 int do_close(string arg)
 {
         if ( !is_open() )
-                return notify_fail("���Ѿ��ǹ��ŵ��ˡ�\n");
+                return notify_fail("門已經是關著的了。\n");
 
         if (!arg || (arg != "men" && arg != "door"))
-                return notify_fail("��Ҫ��ʲô��\n");
+                return notify_fail("你要關什麼？\n");
 
-        message_vision("$N����Ź��ϡ�\n", this_player());
+        message_vision("$N想把門關上。\n", this_player());
 
         remove_call_out("close_men");
         call_out("close_men", 0);
@@ -82,23 +82,23 @@ int do_open(string arg)
         object me = this_player();
 
         if (is_open())
-                return notify_fail("�����Ѿ��ǿ����ˡ�\n");
+                return notify_fail("大門已經是開著了。\n");
 
         if (!arg || (arg != "men" && arg != "door" && arg != query("door_dir")))
-                return notify_fail("��Ҫ��ʲô��\n");
+                return notify_fail("你要開什麼？\n");
 
         if(!objectp( room = find_object(query("outroom"))) )
                 room = load_object(query("outroom"));
         if(objectp(room))
         {
                 open_door();
-                message_vision("$N������ŵذ��Ŵ򿪡�\n", this_player());
+                message_vision("$N輕手輕腳地把門打開。\n", this_player());
                 room->open_door(__FILE__);
                 
                 if( query_temp("sleeped", me) )
-                message("vision","֨��һ����"+query("name", me)+"��������ش�������Ŵ��ˡ�\n",room);
+                message("vision","吱地一聲，"+query("name", me)+"精神煥發地從裡面把門打開了。\n",room);
                 else
-                message("vision","���һ����"+query("name", me)+"��������Ŵ򿪣�һ���Ĳ��ͷ���\n",room);
+                message("vision","梆地一聲，"+query("name", me)+"從裡面把門打開，一臉的不耐煩。\n",room);
                 
                 remove_call_out("close_men");
                 call_out("close_men", 10);
@@ -117,7 +117,7 @@ int force_open()
         
         open_door();
         room->open_door(__FILE__);
-        message("vision","����ͻȻ������صĽŲ�������Զ����������ǰͣ������������\n"+query("force_name")+"ž�ذ��Ŵ򿪣����ͷ������һ�����ɣ���������˻�����ȥ����ʲô����\n", room);
+        message("vision","外面突然響起粗重的腳步聲，由遠而近，到門前停了下來．．．\n"+query("force_name")+"啪地把門打開，伸個頭進來，一臉狐疑：呆大半天了還不出去，搞什麼鬼？\n", room);
         remove_call_out("close_men");
         call_out("close_men", 10);
 }

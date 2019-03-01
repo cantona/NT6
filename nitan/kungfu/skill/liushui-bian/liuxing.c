@@ -1,10 +1,10 @@
-// liuxing.c Á÷ĞÇÉÁË¸
+// liuxing.c æµæ˜Ÿé–ƒçˆ
 
 #include <ansi.h>
 
 inherit F_SSERVER;
 
-string name() { return "Á÷ĞÇÉÁË¸"; }
+string name() { return "æµæ˜Ÿé–ƒçˆ"; }
 
 int perform(object me, object target)
 {
@@ -21,23 +21,23 @@ int perform(object me, object target)
         }
 
         if (! me->is_fighting(target))
-                return notify_fail("¡¸Á÷ĞÇÉÁË¸¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œæµæ˜Ÿé–ƒçˆã€åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         skill = me->query_skill("liushui-bian", 1);
 
         if (skill < 150)
-                return notify_fail("ÄãµÄÁ÷Ë®±Ş·¨ĞŞÎª²»¹»£¬ÏÖÔÚ²»ÄÜÊ¹ÓÃ¡¸Á÷ĞÇÉÁË¸¡¹£¡\n");
+                return notify_fail("ä½ çš„æµæ°´é­æ³•ä¿®ç‚ºä¸å¤ ï¼Œç¾åœ¨ä¸èƒ½ä½¿ç”¨ã€Œæµæ˜Ÿé–ƒçˆã€ï¼\n");
 
         if( query("neili", me)<100 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬ÎŞ·¨ÔËÓÃ¡¸Á÷ĞÇÉÁË¸¡¹£¡\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼Œç„¡æ³•é‹ç”¨ã€Œæµæ˜Ÿé–ƒçˆã€ï¼\n");
 
         if( !objectp(weapon=query_temp("weapon", me)) ||
             query("skill_type", weapon) != "whip" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô£¡\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ï¼\n");
 
-        msg = HIW "$N" HIW "ÕĞÊ½Í»È»¼Ó¿ì£¬¼±»ÓÊÖÖĞµÄ" + weapon->name() +
-              HIW "£¬¶ÙÊ±ÈçÑÌ»¨ÕÀ·Å°ã¾í³öÎŞÊı±Ş»¨£¬Á÷ĞÇÖèÓê°ãÏò$n"
-              HIW "¾í³ö¡£\n" NOR;
+        msg = HIW "$N" HIW "æ‹›å¼çªç„¶åŠ å¿«ï¼Œæ€¥æ®æ‰‹ä¸­çš„" + weapon->name() +
+              HIW "ï¼Œé “æ™‚å¦‚ç…™èŠ±ç¶»æ”¾èˆ¬å·å‡ºç„¡æ•¸é­èŠ±ï¼Œæµæ˜Ÿé©Ÿé›¨èˆ¬å‘$n"
+              HIW "å·å‡ºã€‚\n" NOR;
 
         message_combatd(msg, me, target);
         count = skill / 3;

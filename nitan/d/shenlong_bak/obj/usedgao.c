@@ -13,12 +13,12 @@ void init()
 
 void create()
 {
-        set_name("ÓÃ¹ıµÄ°Ù»¨¸¹Éß¸à", ({"usedgao", "used gao"}));
+        set_name("ç”¨éçš„ç™¾èŠ±è…¹è›‡è†", ({"usedgao", "used gao"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "ÕÅ");
-                set("long", "ÕâÊÇÒ»ÕÅÓÃ¹ıµÄ°Ù»¨¸¹Éß¸à¡£\n");
+                set("unit", "å¼µ");
+                set("long", "é€™æ˜¯ä¸€å¼µç”¨éçš„ç™¾èŠ±è…¹è›‡è†ã€‚\n");
                 set("value", 1000);
         }
         setup();

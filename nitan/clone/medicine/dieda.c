@@ -5,12 +5,12 @@
 
 void create()
 {
-        set_name(CYN "µø´òÉËÓú¸à" NOR, ({"dieda gao", "gao"}));
+        set_name(CYN "è·Œæ‰“å‚·ç™’è†" NOR, ({"dieda gao", "gao"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", CYN "ÕâÊÇÒ»¿é½º×´µÄ¶«Î÷£¬ÁÆÉËĞ§¹û±È½ğ´´Ò©ÒªºÃÒ»Ğ©¡£\n" NOR);
-                set("base_unit", "°ü");
+                set("long", CYN "é€™æ˜¯ä¸€å¡Šè† ç‹€çš„æ±è¥¿ï¼Œç™‚å‚·æ•ˆæœæ¯”é‡‘å‰µè—¥è¦å¥½ä¸€äº›ã€‚\n" NOR);
+                set("base_unit", "åŒ…");
                 set("base_value", 1500);
                 set("base_weight", 50);
                 set("only_do_effect", 1);
@@ -37,21 +37,21 @@ int do_effect(object me)
 
         if( time()-query_temp("last_eat/dieda", me)<10 )
         {
-                write("Äã¸Õ·şÓÃ¹ıÒ©£¬ĞèÒ©ĞÔ·¢»ÓÍêĞ§ÓÃÒÔºó²ÅÄÜ¼ÌĞø·şÓÃ¡£\n");
+                write("ä½ å‰›æœç”¨éè—¥ï¼Œéœ€è—¥æ€§ç™¼æ®å®Œæ•ˆç”¨ä»¥å¾Œæ‰èƒ½ç¹¼çºŒæœç”¨ã€‚\n");
                 return 1;
         }
 
         my = me->query_entire_dbase();
         if (my["eff_qi"] == my["max_qi"])
         {
-                write("ÄãÏÖÔÚ²¢Ã»ÓĞÊÜÉË£¬²»±Ø·şÓÃ" + name() + "¡£\n");
+                write("ä½ ç¾åœ¨ä¸¦æ²’æœ‰å—å‚·ï¼Œä¸å¿…æœç”¨" + name() + "ã€‚\n");
                 return 1;
         }
 
         set_temp("last_eat/dieda", time(), me);
 
-        message_vision(CYN "$N" CYN "ÕÅ¿ª×ì£¬ÃÍµØÍÌÏÂÁË" + name() +
-                       CYN "£¬ÇáÇáµÄºßÁËÒ»Éù¡£\n" NOR, me);
+        message_vision(CYN "$N" CYN "å¼µé–‹å˜´ï¼ŒçŒ›åœ°åä¸‹äº†" + name() +
+                       CYN "ï¼Œè¼•è¼•çš„å“¼äº†ä¸€è²ã€‚\n" NOR, me);
 
         me->receive_curing("qi", 100);
         me->receive_heal("qi", 100);

@@ -1,4 +1,4 @@
-// xionghuang.c ĞÛ»Æ
+// xionghuang.c é›„é»ƒ
 
 inherit ITEM;
 #include <ansi.h>
@@ -14,14 +14,14 @@ void init()
 
 void create()
 {
-        set_name(HIY"ĞÛ»Æ"NOR, ({"xiong huang" }));
+        set_name(HIY"é›„é»ƒ"NOR, ({"xiong huang" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°ü");
+                set("unit", "åŒ…");
                 set("vegetable", 32);
                 set("nostrum", 1);
-                set("long", "ÕâÊÇÒ»°üĞÛ»Æ£¬¾İËµ¿ÉÇı°Ù¶¾¡£\n");
+                set("long", "é€™æ˜¯ä¸€åŒ…é›„é»ƒï¼Œæ“šèªªå¯é©…ç™¾æ¯’ã€‚\n");
                 set("value", 1000);
         }
         set("pour_type", "1");
@@ -32,11 +32,11 @@ int do_eat(string arg)
 {
         object me = this_player();
 
-        if(!id(arg)) return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+        if(!id(arg)) return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if(!present(this_object(), me))
-                return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if( me->is_busy() )
-                return notify_fail("±ğ¼±£¬ÂıÂı³Ô£¬Ğ¡ĞÄ±ğÒ­×ÅÁË¡£\n");
+                return notify_fail("åˆ¥æ€¥ï¼Œæ…¢æ…¢åƒï¼Œå°å¿ƒåˆ¥å™è‘—äº†ã€‚\n");
 
-        return notify_fail("ÏëËÀ°¡£¿ĞÛ»Æ²»ÄÜ³Ô¡£\n");
+        return notify_fail("æƒ³æ­»å•Šï¼Ÿé›„é»ƒä¸èƒ½åƒã€‚\n");
 }

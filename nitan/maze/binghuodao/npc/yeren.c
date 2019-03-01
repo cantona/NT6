@@ -3,8 +3,8 @@ inherit __DIR__"bhd_npc.c";
 
 void create()
 {
-        set_name(HIG "野人" NOR, ({ "ye ren", "ye", "ren" }));
-        set("long", HIG "终年生活在冰火岛上的野人，似乎与常人颇有不同。\n" NOR);
+        set_name(HIG "閲庝汉" NOR, ({ "ye ren", "ye", "ren" }));
+        set("long", HIG "绲傚勾鐢熸椿鍦ㄥ啺鐏扯涓婄殑閲庝汉锛屼技涔庤垏甯镐汉闋楁湁涓嶅悓銆俓n" NOR);
 
         set("age", 500);
         set("str",121);
@@ -42,7 +42,7 @@ void create()
 
 void init()
 {
-        // 随机攻击玩家
+        // 闅ㄦ鏀绘搳鐜╁
         if (userp(this_player()) && random(2) == 1)
         {
                 kill_ob(this_player());

@@ -1,4 +1,4 @@
-// Ïá·¿ xfang4.c
+// å»‚æˆ¿ xfang4.c
  
 #include <ansi.h>
 #include <room.h>
@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create() 
 { 
-        set("short", "Ïá·¿");
+        set("short", "å»‚æˆ¿");
         set("long", @LONG
-ÕâÊÇÒ»¼ä±ðÖÂµÄÏá·¿£¬ÍÆ¿ª·¿ÃÅ£¬½Ò¿ªÃÅÁ±£¬µ«¼û·¿ÄÚºÚ³Á³ÁµÄ
-ÍðËÆÒ¹Íí£¬·¿¼äÄÚËùÓÐµÄ´°»§¶¼ÓÃÕ±×ÓÕÚ×¡ÁË£¬´²ÉÏµÄÕÊÁ±Ò²¹ØµÃÑÏ
-ÑÏÊµÊµ¡£¿´À´ÕâÀï¾ÍÊÇ¡¸¼ûËÀ²»¾È¡¹ºúÇàÅ£ÐÝÏ¢µÄµØ·½ÁË¡£
+é€™æ˜¯ä¸€é–“åˆ¥è‡´çš„å»‚æˆ¿ï¼ŒæŽ¨é–‹æˆ¿é–€ï¼Œæ­é–‹é–€ç°¾ï¼Œä½†è¦‹æˆ¿å…§é»‘æ²‰æ²‰çš„
+å®›ä¼¼å¤œæ™šï¼Œæˆ¿é–“å…§æ‰€æœ‰çš„çª—æˆ¶éƒ½ç”¨æ°ˆå­é®ä½äº†ï¼ŒåºŠä¸Šçš„å¸³ç°¾ä¹Ÿé—œå¾—åš´
+åš´å¯¦å¯¦ã€‚çœ‹ä¾†é€™è£¡å°±æ˜¯ã€Œè¦‹æ­»ä¸æ•‘ã€èƒ¡é’ç‰›ä¼‘æ¯çš„åœ°æ–¹äº†ã€‚
 LONG );
 
         set("exits", ([
@@ -23,6 +23,6 @@ LONG );
         ]));
         set("no_fight",1);
 
-        create_door("out", "ÖñÃÅ", "enter", DOOR_CLOSED);
+        create_door("out", "ç«¹é–€", "enter", DOOR_CLOSED);
         setup();
 }

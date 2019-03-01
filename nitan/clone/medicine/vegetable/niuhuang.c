@@ -1,4 +1,4 @@
-// niuhuang.c Å£»Æ
+// niuhuang.c ç‰›é»ƒ
 
 inherit ITEM;
 #include <ansi.h>
@@ -11,27 +11,27 @@ void init()
 
 void create()
 {
-        set_name(HIY"Å£»Æ"NOR, ({"niuhuang"}));
+        set_name(HIY"ç‰›é»ƒ"NOR, ({"niuhuang"}));
         set_weight(500);
         set("vegetable", 8);
         set("value", 1000);
         set("nostrum", 16);
-        set("unit", "¿é");
-        set("long", "ÕâÊÇÒ»¿éÅ£µ¨ÀïÈ¡³öÀ´µÄÅ£»Æ£¬¿´À´¿ÉÒÔÈëÒ©¡£\n");
+        set("unit", "å¡Š");
+        set("long", "é€™æ˜¯ä¸€å¡Šç‰›è†½è£¡å–å‡ºä¾†çš„ç‰›é»ƒï¼Œçœ‹ä¾†å¯ä»¥å…¥è—¥ã€‚\n");
         set("pour_type", "1");
         setup();
 }
 
 int do_eat(string arg)
 {
-        if (!id(arg)) return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+        if (!id(arg)) return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
 
         if (!present(this_object(), this_player()))
-                return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
 
         if(arg=="niuhuang")
         {
-                write("Å£»Æ²»ÄÜÕâÃ´³Ô¡£\n");
+                write("ç‰›é»ƒä¸èƒ½é€™éº¼åƒã€‚\n");
         }
         return 1;
 }

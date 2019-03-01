@@ -5,7 +5,7 @@ int is_quarry(){return 1;}
 
 void create()
 {
-        set_name(HIG "Ğ¡ÄêÊŞ" NOR, ({ "xiao nianshou"}));
+        set_name(HIG "å°å¹´ç¸" NOR, ({ "xiao nianshou"}));
 
         set("age", 10);
         set("str", 5);

@@ -1,4 +1,4 @@
-//hongtianza.c ¶áÃüÈı¸«Ö®¡¸ºäÌìÔÒ¡¹
+//hongtianza.c å¥ªå‘½ä¸‰æ–§ä¹‹ã€Œè½Ÿå¤©ç ¸ã€
 // Modified by Venus Oct.1997
 #include <ansi.h>
 #include <combat.h>
@@ -15,19 +15,19 @@ int perform(object me, object target)
     if( !target ) target = offensive_target(me);
 
               if( !target || !me->is_fighting(target) )
-                      return notify_fail("¡¸"HIM"¡¸ºäÌìÔÒ¡¹"NOR"¡¹Ö»ÄÜÔÚÕ½¶·ÖĞ¶Ô¶ÔÊÖÊ¹ÓÃ¡£\n");
+                      return notify_fail("ã€Œ"HIM"ã€Œè½Ÿå¤©ç ¸ã€"NOR"ã€åªèƒ½åœ¨æˆ°é¬¥ä¸­å°å°æ‰‹ä½¿ç”¨ã€‚\n");
 
               if( !objectp(weapon=query_temp("weapon", target)) )
-                      return notify_fail("¶Ô·½Ã»ÓĞÊ¹ÓÃ±øÆ÷£¬ÄÑÒÔÊ©Õ¹¡¸ºäÌìÔÒ¡¹¡£\n");
+                      return notify_fail("å°æ–¹æ²’æœ‰ä½¿ç”¨å…µå™¨ï¼Œé›£ä»¥æ–½å±•ã€Œè½Ÿå¤©ç ¸ã€ã€‚\n");
 
     if( target->is_busy() )
-    return notify_fail(target->name() + "Ä¿Ç°ÕıÃ£È»²»ÖªËù´ë£¬¼Ó½ô¹¥»÷°É¡£\n");
+    return notify_fail(target->name() + "ç›®å‰æ­£èŒ«ç„¶ä¸çŸ¥æ‰€æªï¼ŒåŠ ç·Šæ”»æ“Šå§ã€‚\n");
     if( (int)me->query_skill("duanyun-fu",1) < 50)
-    return notify_fail("ÄãÄ¿Ç°¹¦Á¦»¹Ê¹²»³ö¡¸ºäÌìÔÒ¡¹¡£\n");
+    return notify_fail("ä½ ç›®å‰åŠŸåŠ›é‚„ä½¿ä¸å‡ºã€Œè½Ÿå¤©ç ¸ã€ã€‚\n");
     if( query("neili", me)<100 )
-    return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+    return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ã€‚\n");
     addn("neili", -60, me);
-msg = CYN"$NÍ»È»±©ºğÒ»Éù£º¡°ÎÒÔÒ£¡ÎÒÔÒ£¡ÎÒÔÒÔÒÔÒ£¡¡±£¬ÊÖÖĞ¾Ş¸«¾¹È»ÔÒÏò$pÊÖÖĞ±øÈĞ£¡\n"NOR;
+msg = CYN"$Nçªç„¶æš´å¼ä¸€è²ï¼šâ€œæˆ‘ç ¸ï¼æˆ‘ç ¸ï¼æˆ‘ç ¸ç ¸ç ¸ï¼â€ï¼Œæ‰‹ä¸­å·¨æ–§ç«Ÿç„¶ç ¸å‘$pæ‰‹ä¸­å…µåˆƒï¼\n"NOR;
     target_w=query_temp("weapon", target);
     me->start_busy(1);
 
@@ -37,42 +37,41 @@ msg = CYN"$NÍ»È»±©ºğÒ»Éù£º¡°ÎÒÔÒ£¡ÎÒÔÒ£¡ÎÒÔÒÔÒÔÒ£¡¡±£¬ÊÖÖĞ¾Ş¸«¾¹È»ÔÒÏò$pÊÖÖĞ±øÈĞ
     if( random(query("combat_exp", me)/100)>
       query("combat_exp", target)/300){
     if( target_w->weight() > 2 * random(my_w->weight()) ) {
-msg+="½á¹û$pÊÖÖĞµÄ"+query("name", target_w)+"±»$PµÄºäÌìÔÒÔÒ¸öÕı×Å£¬ÔÙÒ²°ÑÎÕ²»×
-×¡£¬Á¢¼´ÍÑÊÖ·É³ö£¡\n" NOR;
+msg+="çµæœ$pæ‰‹ä¸­çš„"+query("name", target_w)+"è¢«$Pçš„è½Ÿå¤©ç ¸ç ¸å€‹æ­£è‘—ï¼Œå†ä¹ŸæŠŠæ¡ä¸â–¡ä½ï¼Œç«‹å³è„«æ‰‹é£›å‡ºï¼\n" NOR;
     target_w->unequip();
     target_w->move(environment(target));
     target->reset_action();
     target->start_busy( (int)me->query_skill("duanyun-fu") / 20 );
 }
    msg += HIC
-"Ö»¼û$nÊÖÖĞµÄ"+query("name", target_w)+"¾¹È»±»ÔÒ¶Ï×÷Êı¶Î£¬²¢ÇÒ
-ÊÜµ½$NµÄ¾¢ÆøµÄ¼¤µ´¶øÏò$nÑ¸ËÙÉäÈ¥£¡\n"NOR;
+"åªè¦‹$næ‰‹ä¸­çš„"+query("name", target_w)+"ç«Ÿç„¶è¢«ç ¸æ–·ä½œæ•¸æ®µï¼Œä¸¦ä¸”
+å—åˆ°$Nçš„å‹æ°£çš„æ¿€ç›ªè€Œå‘$nè¿…é€Ÿå°„å»ï¼\n"NOR;
     message_combatd(msg,me,target);
     target_w->unequip();
     target_w->move(environment(target));
-    set("name",query("name",  target_w)+"µÄËéÆ¬", target_w);
+    set("name",query("name",  target_w)+"çš„ç¢ç‰‡", target_w);
     set("value",query("value",  target_w)/10, target_w);
     set("weapon_prop", 0, target_w);
     target->reset_action();
     target->start_busy( (int)me->query_skill("duanyun-fu") / 20 );
     limbs=query("limbs", target);
     me->start_busy(1);
-    msg += "½á¹û$p´ôÁ¢µ±³¡£¬±»¹¥ÁË¸ö´ëÊÖ²»¼°£¡\n" NOR;
+    msg += "çµæœ$på‘†ç«‹ç•¶å ´ï¼Œè¢«æ”»äº†å€‹æªæ‰‹ä¸åŠï¼\n" NOR;
     size=(int)(me->query_skill("duanyun-fu")/10);
     damage=random(size)+size;
                                  damage=damage+me->query_str()/3+random(query_temp("apply/damage",me)); 
     for(i=0;i<=random(size);i++)
    {
-   msg =HIB"¡°àÍ¡±£¬ËéÆ¬ÉäÈë$p"+limbs[random(sizeof(limbs))]+"£¡\n"NOR;
+   msg =HIB"â€œå—¤â€ï¼Œç¢ç‰‡å°„å…¥$p"+limbs[random(sizeof(limbs))]+"ï¼\n"NOR;
    message_combatd(msg,me,target);
    target->receive_damage("qi",damage,me);
    target->receive_wound("qi",damage/3,me);
    }
     COMBAT_D->report_status(target);
     } else {
-    msg += "¿ÉÊÇ$p¼±Ã¦½«×Ô¼ºµÄ±øÈĞÉÁ¿ª£¬²¢Ã»ÓĞÈÃ$PµÄ¼ÆÄ±µÃ³Ñ¡£\n" NOR;
+    msg += "å¯æ˜¯$pæ€¥å¿™å°‡è‡ªå·±çš„å…µåˆƒé–ƒé–‹ï¼Œä¸¦æ²’æœ‰è®“$Pçš„è¨ˆè¬€å¾—é€ã€‚\n" NOR;
     }
     return 1;
     }
-    return notify_fail(target->name() + "Ä¿Ç°ÊÇ¿ÕÊÖ£¬ÄãÏëÔÒÊ²Ã´£¿\n");
+    return notify_fail(target->name() + "ç›®å‰æ˜¯ç©ºæ‰‹ï¼Œä½ æƒ³ç ¸ä»€éº¼ï¼Ÿ\n");
 }

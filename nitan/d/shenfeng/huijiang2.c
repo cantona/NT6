@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "���׶���ԭ");
+        set("short", "帕米爾草原");
         set("long", @LONG
-���������Ͻ������صĵ��ƺ����򣬾��γ��Ͻ��ѵ�һ��
-��СƬ��ԭ������ɽ��ס�˱������磬�������ḻ���۾���
-���ٹ��������ˡ���˹����Ҳ�����˵ط���������
+這裡已是南疆。獨特的地勢和氣候，竟形成南疆難得一見
+的小片草原。因天山擋住了北方寒風，這兒物產豐富，聚居了
+不少哈薩克族人。波斯商人也常來此地販賣土產。
 LONG);
         set("outdoors", "gaochang");
 

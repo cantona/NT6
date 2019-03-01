@@ -6,13 +6,13 @@ inherit NPC;
 
 void create()
 {
-        set_name(YEL "¼à¹¤" NOR, ({"jian gong", "jian"}));
-        set("title", "äîÔËÂëÍ·");
+        set_name(YEL "ç›£å·¥" NOR, ({"jian gong", "jian"}));
+        set("title", "æ¼•é‹ç¢¼é ­");
         set("age", 33);
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("str", 26);
         set("dex", 25);
-        set("long", "¼à¹¤ÃæÎŞ±íÇéµÄÕ¾ÔÚÂëÍ·±ßÉÏ£¬ÊÖÀïÎÕ×ÅÒ»¸ù±Ş×Ó¡£\n");
+        set("long", "ç›£å·¥é¢ç„¡è¡¨æƒ…çš„ç«™åœ¨ç¢¼é ­é‚Šä¸Šï¼Œæ‰‹è£¡æ¡è‘—ä¸€æ ¹é­å­ã€‚\n");
         set("max_jing", 500);
         set("max_qi", 500);
         set("attitude", "heroism");

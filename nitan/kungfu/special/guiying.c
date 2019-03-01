@@ -3,18 +3,18 @@
 
 inherit F_CLEAN_UP;
 
-string name() { return HIY "¹íÓ°Á÷ĞÇ" NOR; }
+string name() { return HIY "é¬¼å½±æµæ˜Ÿ" NOR; }
 
 int perform(object me, string skill, string arg)
 {
         int add_dam;
 
         if (me->query_temp("special/guiying"))
-                return notify_fail("¹íÓ°Á÷ĞÇ¼¼ÄÜÒÑ¾­ÔÚÊ©Õ¹ÖĞÁË¡£\n");
+                return notify_fail("é¬¼å½±æµæ˜ŸæŠ€èƒ½å·²ç¶“åœ¨æ–½å±•ä¸­äº†ã€‚\n");
 
-        if (me->is_busy())return notify_fail("µÈÄãÃ¦ÍêÔÙËµ°É£¡\n");
+        if (me->is_busy())return notify_fail("ç­‰ä½ å¿™å®Œå†èªªå§ï¼\n");
 
-        message_vision(HIY "$N" HIY "ÄıÉñ±ÕÆø£¬½«Êı¹ÉÕæÆøÍ¬Ê±´ß¶¯£¬ÑØ¸÷´¦¾­ÂöÔË×ªÒ»¸öÖÜÌì£¬É²Ê±Éí·¨±äµÃÆ®ÒİÎŞ±È ¡­¡­\n" NOR, me);
+        message_vision(HIY "$N" HIY "å‡ç¥é–‰æ°£ï¼Œå°‡æ•¸è‚¡çœŸæ°£åŒæ™‚å‚¬å‹•ï¼Œæ²¿å„è™•ç¶“è„ˆé‹è½‰ä¸€å€‹å‘¨å¤©ï¼Œå‰æ™‚èº«æ³•è®Šå¾—é£„é€¸ç„¡æ¯” â€¦â€¦\n" NOR, me);
  
         me->start_busy(1);
 
@@ -33,7 +33,7 @@ void remove_effect(object me, int add_dam)
         {
                 me->add_temp("apply/dodge", -1 * add_dam);
                 me->delete_temp("special/guiying");
-                tell_object(me, "Äã¹íÓ°Á÷ĞÇ¼¼Ê©Õ¹Íê±Ï¡£\n");
+                tell_object(me, "ä½ é¬¼å½±æµæ˜ŸæŠ€æ–½å±•å®Œç•¢ã€‚\n");
         }
 }
 

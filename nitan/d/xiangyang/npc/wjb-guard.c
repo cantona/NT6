@@ -5,10 +5,10 @@ inherit NPC;
 int ask_wjb(object me, object ob); 
 void create() 
 { 
-     set_name("ÊØÎÀ",({"shou wei","guard"}) ); 
-     set("long","ÕâÊÇÒ»Î»µÄÎŞ¼«°ïµÄÊØÎÀ¡£\n"); 
-     set("title","ÎŞ¼«°ï°ïÖÚ"); 
-     set("gender","ÄĞĞÔ"); 
+     set_name("å®ˆè¡›",({"shou wei","guard"}) ); 
+     set("long","é€™æ˜¯ä¸€ä½çš„ç„¡æ¥µå¹«çš„å®ˆè¡›ã€‚\n"); 
+     set("title","ç„¡æ¥µå¹«å¹«çœ¾"); 
+     set("gender","ç”·æ€§"); 
      set("age",20); 
      set("combat_exp",100000); 
      set_skill("dodge",150); 
@@ -16,7 +16,7 @@ void create()
      set_skill("literate",150); 
      set_skill("unarmed",150); 
      set("inquiry",([ 
-          "ÎŞ¼«°ï" : (: ask_wjb :), 
+          "ç„¡æ¥µå¹«" : (: ask_wjb :), 
      ]) ); 
      setup(); 
 } 
@@ -25,19 +25,19 @@ int ask_wjb(object me, object ob)
 { 
      me=this_player(); 
      ob=this_object(); 
-     if( query("bunch/bunch_name", me) != "ÎŞ¼«°ï" && query("shen", me) >= 0 )
+     if( query("bunch/bunch_name", me) != "ç„¡æ¥µå¹«" && query("shen", me) >= 0 )
      { 
            command("famours"+query("id", me));
-           tell_object(me,"ÊØÎÀĞ¦ÃĞÃĞµØ¶ÔÄãËµ£º¡°ÊÇÏë¼ÓÈëÔÛÃÇÎŞ¼«°ï°É£¿Çë½øÇë½ø¡£¡±\n"); 
+           tell_object(me,"å®ˆè¡›ç¬‘çœ¯çœ¯åœ°å°ä½ èªªï¼šâ€œæ˜¯æƒ³åŠ å…¥å’±å€‘ç„¡æ¥µå¹«å§ï¼Ÿè«‹é€²è«‹é€²ã€‚â€\n"); 
            set_temp("good_wjb", 1, me);
            return 1; 
      } 
      if( bad_bunch(me) || query("shen", me)<0 )
      { 
-           ob->command("say ÄÄÀïÀ´µÄĞ°Ä§ÍáµÀ£¬ÕÒ´òÃ´£¿\n"); 
+           ob->command("say å“ªè£¡ä¾†çš„é‚ªé­”æ­ªé“ï¼Œæ‰¾æ‰“éº¼ï¼Ÿ\n"); 
            return 1; 
      } 
 
-     tell_object(me,"ÊØÎÀÆæ¹ÖµÀ£º¡°Í¬Îª±¾°ïĞÖµÜ£¬ÄãºÎ³ö´ËÑÔ°¡£¿¡±\n"); 
+     tell_object(me,"å®ˆè¡›å¥‡æ€ªé“ï¼šâ€œåŒç‚ºæœ¬å¹«å…„å¼Ÿï¼Œä½ ä½•å‡ºæ­¤è¨€å•Šï¼Ÿâ€\n"); 
      return 1; 
 } 

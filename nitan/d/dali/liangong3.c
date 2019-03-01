@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "���䳡");
+        set("short", "練武場");
         set("long", @LONG
-�������һЩͭ�ˣ����Ǳ�ľ�˸��ӽ�ʵ��Ҳ�Ͳ����׻������
-Ҳ�Ǹ��������ϳ˾��յĵط�������һֱ�ߴ�������������������Ժ��
+這裡擺著一些銅人，他們比木人更加結實，也就不容易壞，因此
+也是高手修煉上乘絕藝的地方。向南一直走穿過練功場就是王府內院。
 LONG );
         set("exits", ([
                 "south" : "/d/dali/liangong2",

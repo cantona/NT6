@@ -1,13 +1,13 @@
 // /d/gaoli/maji
-// Room in ¸ßÀö
+// Room in é«˜éº—
 // rich 99/03/28
 inherit ROOM;
 void create()        
 {
-        set("short", "Âí·¿");
+        set("short", "é¦¬æˆ¿");
         set("long", @LONG
-¸ßÀöÂíËäÈ»²»ÈçÍ»ØÊÂíÄÇÃ´¸ß´ó£¬µ«È´ÉÆ×ß³¤Í¾£¬Õâ¸öÂí·¿£¬¸÷Ê½
-¸÷ÑùµÄÂíÓ¦ÓÐ¾¡ÓÐ£¬Í»ØÊÂí£¬¸ßÀöÂí£¬ÉõÖÁÁ¬ÁëÄÏÂí¶¼ÓÐ¡£
+é«˜éº—é¦¬é›–ç„¶ä¸å¦‚çªåŽ¥é¦¬é‚£éº¼é«˜å¤§ï¼Œä½†å»å–„èµ°é•·é€”ï¼Œé€™å€‹é¦¬æˆ¿ï¼Œå„å¼
+å„æ¨£çš„é¦¬æ‡‰æœ‰ç›¡æœ‰ï¼ŒçªåŽ¥é¦¬ï¼Œé«˜éº—é¦¬ï¼Œç”šè‡³é€£å¶ºå—é¦¬éƒ½æœ‰ã€‚
 LONG
         );
 set("outdoors", "gaoli");

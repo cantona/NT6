@@ -3,13 +3,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(MAG "×Ï½ğ¼³È¡Ñ«ÕÂ" NOR, ({ "derive emblem", "emblem" }));
+        set_name(MAG "ç´«é‡‘æ±²å–å‹›ç« " NOR, ({ "derive emblem", "emblem" }));
         set_weight(3000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", MAG "´øÔÚÉíÉÏ¿ÉÒÔÌáÉı¼³È¡Ò»±¶ËÙ¶ÈµÄĞ§¹û¡£\n" NOR);
-                set("unit", "¿é");
+                set("long", MAG "å¸¶åœ¨èº«ä¸Šå¯ä»¥æå‡æ±²å–ä¸€å€é€Ÿåº¦çš„æ•ˆæœã€‚\n" NOR);
+                set("unit", "å¡Š");
                 set("can_summon", 1);
                 set("value", 500000);
         }

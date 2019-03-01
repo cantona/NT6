@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��������" );
+        set("short", "荊州中心" );
         set("long", @LONG
-�����Ǿ��ݵ�����Ҫʮ��·�ڣ������������������֣��ϱ�ס��
-һЩ���ǵĸ��ˣ������ǹٸ�������һ���õط�����������Ĵ�����
-�˶��ڴ���ţ���Ϣ�Ժ��ٸ�·��
+這裡是荊州的中心要十字路口，人來人往，很是熱鬧，南邊住著
+一些本城的富人，北邊是官府，真是一個好地方啊。許多從四川來的
+人都在此落腳，休息以後再趕路。
 LONG );
         set("outdoors", "jingzhou");
         set("exits", ([

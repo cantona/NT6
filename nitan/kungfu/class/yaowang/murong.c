@@ -7,13 +7,13 @@ inherit F_MASTER;
 int ask_shi();
 void create()
 {
-        set_name("Ä½ÈÝ¾°ÔÀ", ({ "murong jingyue", "murong", "jingyue" }));
-        set("nickname", HIC "´óµÜ×Ó" NOR);
+        set_name("æ…•å®¹æ™¯å²³", ({ "murong jingyue", "murong", "jingyue" }));
+        set("nickname", HIC "å¤§å¼Ÿå­" NOR);
         set("long",@LONG
-Ò©Íõ¹ÈµÚ¶þ´úµÜ×Ó´óÊ¦ÐÖÄ½ÈÝ¾°ÔÀ¡£
+è—¥çŽ‹è°·ç¬¬äºŒä»£å¼Ÿå­å¤§å¸«å…„æ…•å®¹æ™¯å²³ã€‚
 LONG );
 
-        set("gender", "ÄÐÐÔ");
+        set("gender", "ç”·æ€§");
         set("age", 33);
         set("attitude", "friendly");
         set("shen_type", 1);
@@ -68,7 +68,7 @@ LONG );
 
         prepare_skill("hand", "jiuqu-zhegufa");
 
-        create_family("Ò©Íõ¹È", 2, "µÜ×Ó");
+        create_family("è—¥çŽ‹è°·", 2, "å¼Ÿå­");
         set("class", "bonze");
 
         set("chat_chance_combat", 80);
@@ -88,8 +88,8 @@ LONG );
         setup();
 
         set("inquiry", ([
-                "ÆßÐÇº£ÌÄ" : "ÆßÐÇº£ÌÄÄËÌìÏÂµÚÒ»¶¾£¬ÎÞÒ©¿ÉÖÎ£¡",
-                "Ê¯ÍòàÁ"   : (: ask_shi :),
+                "ä¸ƒæ˜Ÿæµ·æ£ " : "ä¸ƒæ˜Ÿæµ·æ£ ä¹ƒå¤©ä¸‹ç¬¬ä¸€æ¯’ï¼Œç„¡è—¥å¯æ²»ï¼",
+                "çŸ³è¬å—”"   : (: ask_shi :),
          ]) );
 
         carry_object("/clone/cloth/cloth")->wear();
@@ -102,31 +102,31 @@ void attempt_apprentice(object ob)
 
         if( query("combat_exp", ob)<50000 )
         {
-                command("say ÄãÏÖÔÚ¾­ÑéÉÐÇ³£¬Áì»á²»ÁËÊ²Ã´£¬»¹ÊÇÏÈÈ¥Ôö³¤µã¾­Ñé°É¡£");
+                command("say ä½ ç¾åœ¨ç¶“é©—å°šæ·ºï¼Œé ˜æœƒä¸äº†ä»€éº¼ï¼Œé‚„æ˜¯å…ˆåŽ»å¢žé•·é»žç¶“é©—å§ã€‚");
                 return;
         }
 
         if ((int)ob->query_skill("yaogu-xinfa", 1) < 50)
         {
-                command("say Äã±¾ÃÅµÄÐÄ·¨»¹Ñ§µÄ²»¹»°¡¡£");
+                command("say ä½ æœ¬é–€çš„å¿ƒæ³•é‚„å­¸çš„ä¸å¤ å•Šã€‚");
                 return;
         }
 
         if ((int)ob->query_skill("literate", 1) < 100)
         {
-                command("say ÄãÁ¬×î»ù±¾µÄÑ§ÎÊ¶¼Ã»Ñ§ºÃ£¬ÎÒÈçºÎ´«ÊÚÄã¸ßÉîµÄ¶¾¼¼Ò½Êõ¡£");
+                command("say ä½ é€£æœ€åŸºæœ¬çš„å­¸å•éƒ½æ²’å­¸å¥½ï¼Œæˆ‘å¦‚ä½•å‚³æŽˆä½ é«˜æ·±çš„æ¯’æŠ€é†«è¡“ã€‚");
                 return;
         }
 
         if ((int)ob->query_skill("medical", 1) < 100)
         {
-                command("say ÄãÏÈ°ÑÒ½Êõ×êÑÐÍ¸³¹ÁËÔÙÀ´ÕÒÎÒ°É¡£");
+                command("say ä½ å…ˆæŠŠé†«è¡“é‘½ç ”é€å¾¹äº†å†ä¾†æ‰¾æˆ‘å§ã€‚");
                 return;
         }
 
 
         command("pat"+query("id", ob));
-        command("say ²»´í£¬²»´í£¡¼ÈÈ»ÄãÈç´ËÓÐÐÄ£¬ÎÒ¾ÍÊÕÏÂÄãÕâ¸öÍ½µÜ¡£");
+        command("say ä¸éŒ¯ï¼Œä¸éŒ¯ï¼æ—¢ç„¶ä½ å¦‚æ­¤æœ‰å¿ƒï¼Œæˆ‘å°±æ”¶ä¸‹ä½ é€™å€‹å¾’å¼Ÿã€‚");
         command("recruit "+query("id", ob));
         if( query("class", ob) != "bonze" )
                 set("class", "bonze", ob);
@@ -140,17 +140,17 @@ int ask_shi()
 
         me = this_player();
         
-        if( query("family/family_name", me) != "Ò©Íõ¹È" )
-                return notify_fail( "Äã²»ÊÇÎÒÃÇÒ©Íõ¹ÈµÄ£¬´òÌýËü¸ÉÊ²Ã´£¿");
+        if( query("family/family_name", me) != "è—¥çŽ‹è°·" )
+                return notify_fail( "ä½ ä¸æ˜¯æˆ‘å€‘è—¥çŽ‹è°·çš„ï¼Œæ‰“è½å®ƒå¹¹ä»€éº¼ï¼Ÿ");
 
         
 
         if( query("shen", me)<-100000 )
-                return notify_fail("ÄãÏÀÒåÕýÊÂ×öµÃÌ«¶à£¬È¥ÁËËûÒ²²»¼ûÄã¡£");
+                return notify_fail("ä½ ä¿ ç¾©æ­£äº‹åšå¾—å¤ªå¤šï¼ŒåŽ»äº†ä»–ä¹Ÿä¸è¦‹ä½ ã€‚");
 
 
-        message_vision(HIC "$N" HIC "Î¢Î¢Ò»Ð¦£¬µÀ£º¡°ÎÒÊ¦Êå¾ÍÔÚºóÉ½"
-                       "ÄÄ¶ùµÄÂ·¾¶ÊÇ×óÓÒÓÒÓÒÓÒÓÒ£¡¡±\n" NOR,
+        message_vision(HIC "$N" HIC "å¾®å¾®ä¸€ç¬‘ï¼Œé“ï¼šâ€œæˆ‘å¸«å”å°±åœ¨å¾Œå±±"
+                       "å“ªå…’çš„è·¯å¾‘æ˜¯å·¦å³å³å³å³å³ï¼â€\n" NOR,
                        this_object(), me);
         set_temp("murong_ask", 1, me);
         return 1;

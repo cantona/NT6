@@ -2,12 +2,12 @@
 
 void create()
 {
-        set_name(HIW "Ì«°×ÈË²Î" NOR, ({ "taibai renshen", "Pedicularis decora", "herb_tbrenshen" }));
+        set_name(HIW "å¤ªç™½äººåƒ" NOR, ({ "taibai renshen", "Pedicularis decora", "herb_tbrenshen" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "Ğş²Î¿ÆÖ²ÎïÃÀ¹ÛÂíÏÈİï(Pedicularis decora)µÄ¸ù¾¥¡£ÒòÆä¸ùĞÎÂÔËÆÈË²Î£¬ÇÒÓĞÀàËÆÈË²ÎµÄ¹¦Ğ§£¬Ì«°×É½ÓĞ²ú£¬¹ÊµÃ´ËÃû¡£\n" NOR);
-                set("base_unit", "Öê");
+                set("long", HIW "ç„åƒç§‘æ¤ç‰©ç¾è§€é¦¬å…ˆè’¿(Pedicularis decora)çš„æ ¹è–ã€‚å› å…¶æ ¹å½¢ç•¥ä¼¼äººåƒï¼Œä¸”æœ‰é¡ä¼¼äººåƒçš„åŠŸæ•ˆï¼Œå¤ªç™½å±±æœ‰ç”¢ï¼Œæ•…å¾—æ­¤åã€‚\n" NOR);
+                set("base_unit", "æ ª");
                 set("base_value", 60000);
                 set("base_weight", 100);
         }

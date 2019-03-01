@@ -4,15 +4,15 @@ inherit ITEM;
 #include <ansi.h>;
 void create()
 {
-        set_name(HIR"ºì²¼"NOR, ({"hong bu", "bu"}));
+        set_name(HIR"ç´…å¸ƒ"NOR, ({"hong bu", "bu"}));
         set_weight(80);
         if (clonep())
                 set_default_object(__FILE__);
         else {
                 set("long", 
-"ÕâÊÇÒ»¿éºì²¼£¬ÉÏÃæĞ´×ÅÒ»ĞĞ×ÖµÀ£º¡°°Ñ´Ë²¼½»¸øÓæÎÌ¡£
-ÉÏÉ½Ö®ºó½«»ÆÉ«²¼ÄÒ½»¸øĞ¡É³ÃÖ¡£¡±\n");
-                set("unit", "¿é");
+"é€™æ˜¯ä¸€å¡Šç´…å¸ƒï¼Œä¸Šé¢å¯«è‘—ä¸€è¡Œå­—é“ï¼šâ€œæŠŠæ­¤å¸ƒäº¤çµ¦æ¼ç¿ã€‚
+ä¸Šå±±ä¹‹å¾Œå°‡é»ƒè‰²å¸ƒå›Šäº¤çµ¦å°æ²™å½Œã€‚â€\n");
+                set("unit", "å¡Š");
                 set("value", 1);
         }
 }

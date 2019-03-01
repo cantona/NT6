@@ -1,18 +1,18 @@
-// jiaohuaji.c ½Ğ»¯¼¦
+// jiaohuaji.c å«åŒ–é›
 
 inherit ITEM;
 inherit F_FOOD;
 
 void create()
 {
-        set_name("½Ğ»¯¼¦", ({"jiaohuaji", "ji", "chicken"}));
+        set_name("å«åŒ–é›", ({"jiaohuaji", "ji", "chicken"}));
         set_weight(300);
         set("taskobj", 1);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»Ö»¿¾µÃÏãÅçÅçµÄ½Ğ»¯¼¦\n");
-                set("unit", "Ö»");
+                set("long", "ä¸€åªçƒ¤å¾—é¦™å™´å™´çš„å«åŒ–é›\n");
+                set("unit", "åª");
                 set("value", 0);
         }
 }

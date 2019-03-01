@@ -2,11 +2,11 @@ inherit __DIR__"binghuodao";
 
 void create()
 {
-        set("short", "Éñ±ùÌ³");
+        set("short", "ç¥žå†°å£‡");
         set("long",
-"ÕâÀïÊÇÒ»´¦¿íÀ«µÄ¼ÀÌ¨£¬¼ÀÌ¨ÖÐ¼äÓÐÒ»¸ùÊ¯Öù£¬ÉÏÃæÐ´×ÅÀ¶É«\n"
-"µÄÈý¸ö´ó×Ö¡°Éñ±ùÌ¨¡±£¬¼ÀÌ¨ËÄÖÜ´£Á¢×ÅËÄ¸ùÊ¯Öù£¬ÉÏÃæµñ¿Ì×Å¸÷ÖÖ\n"
-"±ùÊÞµÄÄ£Ñù¡£¾ÝËµÔÚÕâÀïÑÐ¾¿¼¼ÄÜ£¨yanjiu£©ÄÜ»ñµÃ¸ü¶àÊÕ»ñ¡£\n"
+"é€™è£¡æ˜¯ä¸€è™•å¯¬é—Šçš„ç¥­å°ï¼Œç¥­å°ä¸­é–“æœ‰ä¸€æ ¹çŸ³æŸ±ï¼Œä¸Šé¢å¯«è‘—è—è‰²\n"
+"çš„ä¸‰å€‹å¤§å­—â€œç¥žå†°å°â€ï¼Œç¥­å°å››å‘¨çŸ—ç«‹è‘—å››æ ¹çŸ³æŸ±ï¼Œä¸Šé¢é›•åˆ»è‘—å„ç¨®\n"
+"å†°ç¸çš„æ¨¡æ¨£ã€‚æ“šèªªåœ¨é€™è£¡ç ”ç©¶æŠ€èƒ½ï¼ˆyanjiuï¼‰èƒ½ç²å¾—æ›´å¤šæ”¶ç²ã€‚\n"
 );
         set("exits", ([ 
                 "east"   : __DIR__"guanmulin1", 

@@ -1,23 +1,23 @@
 //Cracked by Kafei
-//yellowbang.c »ÆÖñ°ô
+//yellowbang.c é»ƒç«¹æ£’
 #include <ansi.h>
 #include <weapon.h>
 inherit STAFF;
 
 void create()
 {
-        set_name("»ÆÖñ°ô", ({ "huang zhubang", "bang", "zhu bang", "zhubang", "staff", "yellow staff" }));
+        set_name("é»ƒç«¹æ£’", ({ "huang zhubang", "bang", "zhu bang", "zhubang", "staff", "yellow staff" }));
         set_weight(5000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ù");
-                set("long", "Õâ¸ùÖñ°ôËä²»Èç´ò¹·°ô¼áÈÍ£¬³¤¶ÌÇáÖØÈ´ÊÇÒ»°ãÎŞÒì£¬Ö»ÊÇÉ«×÷µ­»Æ£¬ÒÔÊ¾Óë´ò¹·°ôÓĞ±ğ¡£\n");
+                set("unit", "æ ¹");
+                set("long", "é€™æ ¹ç«¹æ£’é›–ä¸å¦‚æ‰“ç‹—æ£’å …éŸŒï¼Œé•·çŸ­è¼•é‡å»æ˜¯ä¸€èˆ¬ç„¡ç•°ï¼Œåªæ˜¯è‰²ä½œæ·¡é»ƒï¼Œä»¥ç¤ºèˆ‡æ‰“ç‹—æ£’æœ‰åˆ¥ã€‚\n");
                 set("rigidity", 2000);
                 set("value", 1000);
                 set("material", "bamboo");
-                set("wield_msg", "$N³é³öÒ»¸ù$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²å»ØÑü¼ä¡£\n");
+                set("wield_msg", "$NæŠ½å‡ºä¸€æ ¹$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°‡æ‰‹ä¸­çš„$næ’å›è…°é–“ã€‚\n");
         }
         init_staff(50);
         setup();

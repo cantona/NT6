@@ -4,13 +4,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(NOR + MAG "²âÊÔÎïÆ·" NOR, ({"test object"}));
+        set_name(NOR + MAG "æ¸¬è©¦ç‰©å“" NOR, ({"test object"}));
         set_weight(1);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", MAG "ÕâÊÇÒ»¼ş²âÊÔÎïÆ·£¬»¹Ã»ÓĞ±»Î×Ê¦´´Ôì³ÉĞÎ£¬È´·¢³öµ­µ­×Ï¹â¡£\n" NOR);
-                set("unit", "¸ö");
+                set("long", MAG "é€™æ˜¯ä¸€ä»¶æ¸¬è©¦ç‰©å“ï¼Œé‚„æ²’æœ‰è¢«å·«å¸«å‰µé€ æˆå½¢ï¼Œå»ç™¼å‡ºæ·¡æ·¡ç´«å…‰ã€‚\n" NOR);
+                set("unit", "å€‹");
                 set("value", 1);
                                 set("no_drop", 1);
                                 set("no_sell", 1);

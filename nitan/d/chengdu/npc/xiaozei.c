@@ -4,10 +4,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("Ğ¡Ôô", ({ "xiao zei","xiao","zei" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("å°è³Š", ({ "xiao zei","xiao","zei" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 15);
-        set("long", "Ò»¸öĞ¦ÎûÎû¿´×ÅÄãµÄĞ¡º¢¡£\n");
+        set("long", "ä¸€å€‹ç¬‘å˜»å˜»çœ‹è‘—ä½ çš„å°å­©ã€‚\n");
 
         set("str", 25);
         set("con", 25);
@@ -42,9 +42,9 @@ void create()
         setup();
         set("chat_chance", 15);
         set("chat_msg", ({
-                "Ğ¡ÔôËµµÀ: ºÃĞÄµÄ´óÒ¯ÄÄ¡« ÉÍÎÒÒª·¹µÄ¼¸¸öÍ­°å°É¡«\n",
-                "Ğ¡ÔôÀÁÑóÑóµØ´òÁË¸ö¹şÇ·¡£\n",
-                "Ğ¡ÔôÉìÊÖ×½×¡ÁËÉíÉÏµÄÊ­×Ó£¬ÂîµÀ: Ğ¡Ò¯ÉíÉÏÃ»¼¸Á½Èâ£¬½ĞÄãÃÇ»¹Ò§! \n",
+                "å°è³Šèªªé“: å¥½å¿ƒçš„å¤§çˆºå“ªï½ è³æˆ‘è¦é£¯çš„å¹¾å€‹éŠ…æ¿å§ï½\n",
+                "å°è³Šæ‡¶æ´‹æ´‹åœ°æ‰“äº†å€‹å“ˆæ¬ ã€‚\n",
+                "å°è³Šä¼¸æ‰‹æ‰ä½äº†èº«ä¸Šçš„è¨å­ï¼Œç½µé“: å°çˆºèº«ä¸Šæ²’å¹¾å…©è‚‰ï¼Œå«ä½ å€‘é‚„å’¬! \n",
                 (: random_move :)
         }) );
         carry_object("/clone/food/jitui");
@@ -103,12 +103,12 @@ int accept_object(object me, object obj)
 {
         if( query("money_id", obj) && obj->value() >= 1){
                 command("smile");
-                command("say ¶àĞ»À² ! ÆäÊµÎÒ»¹ÊÇÓĞµãÇ®µÄ£¬Õâ´ÎÖ»²»¹ıÊÔÊÔÄã°ÕÁË !");
+                command("say å¤šè¬å•¦ ! å…¶å¯¦æˆ‘é‚„æ˜¯æœ‰é»éŒ¢çš„ï¼Œé€™æ¬¡åªä¸éè©¦è©¦ä½ ç½·äº† !");
                 command("give10silverto"+query("id", me));
         }
         else {
                 command("shake");
-                command("say ÕâÖÖ¶«Î÷¹í²ÅÒª ! ¹öÒ»±ßÈ¥ !");
+                command("say é€™ç¨®æ±è¥¿é¬¼æ‰è¦ ! æ»¾ä¸€é‚Šå» !");
                 command("give"+query("id", obj)+"to"+query("id", me));
 //                obj->move(this_player());
         }
@@ -117,6 +117,6 @@ int accept_object(object me, object obj)
 
 int accept_fight(object me)
 {
-        command("say " + RANK_D->query_respect(me) + "ÈÄÃü¢¦Ğ¡µÄÕâ¾ÍÀë¿ª¢¦\n");
+        command("say " + RANK_D->query_respect(me) + "é¥’å‘½â–¡å°çš„é€™å°±é›¢é–‹â–¡\n");
         return 0;
 }

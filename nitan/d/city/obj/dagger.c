@@ -5,17 +5,17 @@ inherit DAGGER;
 
 void create()
 {
-        set_name("ÆÕÍ¨Ø°Ê×", ({ "dagger", "bishou" }));
+        set_name("æ™®é€šåŒ•é¦–", ({ "dagger", "bishou" }));
         set_weight(6000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "ÕâÊÇÒ»°ÑÆÕÍ¨µÄĞ¡Ø°Ê×¡£ÓÃÀ´°µËã±ğÈË±È½ÏºÏÊÊ¡£\n");
+                set("unit", "æŠŠ");
+                set("long", "é€™æ˜¯ä¸€æŠŠæ™®é€šçš„å°åŒ•é¦–ã€‚ç”¨ä¾†æš—ç®—åˆ¥äººæ¯”è¼ƒåˆé©ã€‚\n");
                 set("value", 2000);
                 set("material", "steel");
-                set("wield_msg", "$N´Ó¶µÀïÌÍ³öÒ»°Ñ$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n·Å»Ø¶µÀï¡£\n");
+                set("wield_msg", "$Nå¾å…œè£¡æå‡ºä¸€æŠŠ$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°‡æ‰‹ä¸­çš„$næ”¾å›å…œè£¡ã€‚\n");
         }
         init_dagger(13, 0);
         setup();

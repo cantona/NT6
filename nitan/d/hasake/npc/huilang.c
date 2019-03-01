@@ -1,12 +1,12 @@
 inherit NPC;
 void create()
 {
-    set_name("´ó»ÒÀÇ", ({ "huilang", "lang" }) );
-    set("race", "Ò°ÊÞ");
+    set_name("å¤§ç°ç‹¼", ({ "huilang", "lang" }) );
+    set("race", "é‡Žç¸");
     set("age", 10);
-    set("long", "Ò»Í·¸ß´óµÄ¶ñÀÇ, À´ÊÆÈçµç, Â¶³ö°×É­É­µÄâ²ÑÀ¡£\n");
+    set("long", "ä¸€é ­é«˜å¤§çš„æƒ¡ç‹¼, ä¾†å‹¢å¦‚é›», éœ²å‡ºç™½æ£®æ£®çš„ç ç‰™ã€‚\n");
     set("attitude", "aggressive");
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "Ç°½Å", "ºó½Å", "Î²°Í" }) );
+        set("limbs", ({ "é ­éƒ¨", "èº«é«”", "å‰è…³", "å¾Œè…³", "å°¾å·´" }) );
         set("verbs", ({ "bite", "claw" }) );
         set("max_qi", 300);
         set("max_jing", 200);
@@ -14,8 +14,8 @@ void create()
         set("combat_exp", 3000);
         set("chat_chance", 5);
         set("chat_msg", ({
-                "¡¸àÆ~~~~¡¹´ó»ÒÀÇ·¢³öÒ»ÉùàÆ½Ð¡£\n",
-                "´ó»ÒÀÇ·¢³öÒ»ÉùàÆ½Ð£¬ºÃÏóËæÊ±¶¼ÒªÆËÉÏÀ´£¡\n",
+                "ã€Œå—¥~~~~ã€å¤§ç°ç‹¼ç™¼å‡ºä¸€è²å—¥å«ã€‚\n",
+                "å¤§ç°ç‹¼ç™¼å‡ºä¸€è²å—¥å«ï¼Œå¥½è±¡éš¨æ™‚éƒ½è¦æ’²ä¸Šä¾†ï¼\n",
         }) );
         set_temp("apply/attack", 10);
         set_temp("apply/defense", 8);
@@ -29,7 +29,7 @@ void die()
 {
         object ob;
         seteuid(getuid());
-        message_vision("$N³¤Ð¥Ò»Éù£¬µ¹ÔÚµØÉÏ£¬ËÀÁË£¡\n", this_object());
+        message_vision("$Né•·å˜¯ä¸€è²ï¼Œå€’åœ¨åœ°ä¸Šï¼Œæ­»äº†ï¼\n", this_object());
         ob = new(__DIR__"obj/langpi");
         ob->move(environment(this_object()));
         destruct(this_object());

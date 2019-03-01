@@ -1,14 +1,14 @@
-// mtroad6.c  ɽ��ƽ��
+// mtroad6.c  山間平地
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "ɽ��ƽ��");
+        set("short", "山間平地");
         set("long", @LONG
-������ɭ���е�һ��Сƽ�ء�����û�֣�Ұ�����������ܶ���
-���ܵ�ɭ�֡�ʱ��ʱ��������Ұ��˻�У�����������������һ����
-ͻأ���𣬼����վ���
+這裡是森林中的一塊小平地。長草沒脛，野花浪漫，四周都是
+密密的森林。時不時傳來陣陣野獸嘶叫，飛鳥啼鳴。西南有一高崖
+突兀而起，極是險峻。
 LONG );
         set("outdoors", "motianya");
         set("exits", ([

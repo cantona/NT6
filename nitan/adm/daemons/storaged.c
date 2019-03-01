@@ -1,12 +1,12 @@
 // leagued.c
 /*
-Ã¿¸öÈËÒ»¸ömapping
-Ã¿¸öÈËÒ»¸ö¼ÆÊıÆ÷£¬¼ÆËãËûÔø¾­´æ·Å¹ı¶àÉÙ¸öÎïÆ·
-´æ·ÅÎïÆ·¶¼»áÓĞÒ»¸öĞòÁĞºÅ
-¸ù¾İ´ËĞòÁĞºÅÈ¡³öÎïÆ·
-Ô­ÉúÎï¼ş²»ÄÜ´æ·Å
-°´ÔÂ×âÓÃ
-×âÓÃ´ú¼ÛÒªÒ×ÓÚĞŞ¸Ä
+æ¯å€‹äººä¸€å€‹mapping
+æ¯å€‹äººä¸€å€‹è¨ˆæ•¸å™¨ï¼Œè¨ˆç®—ä»–æ›¾ç¶“å­˜æ”¾éå¤šå°‘å€‹ç‰©å“
+å­˜æ”¾ç‰©å“éƒ½æœƒæœ‰ä¸€å€‹åºåˆ—è™Ÿ
+æ ¹æ“šæ­¤åºåˆ—è™Ÿå–å‡ºç‰©å“
+åŸç”Ÿç‰©ä»¶ä¸èƒ½å­˜æ”¾
+æŒ‰æœˆç§Ÿç”¨
+ç§Ÿç”¨ä»£åƒ¹è¦æ˜“äºä¿®æ”¹
 
 */
 #include <ansi.h>
@@ -42,7 +42,7 @@ public void mud_shutdown()
 
 public string query_save_file() { return DATA_DIR "storage"; }
 
-//=================¾ßÌåÊµÏÖ²¿·Ö=======================
+//=================å…·é«”å¯¦ç¾éƒ¨åˆ†=======================
 
 int DoMonFee(object me,int mon)
 {
@@ -53,7 +53,7 @@ int DoMonFee(object me,int mon)
         res=DATABASE_D->do_sql("select on_time,fee_time from users where id="+DB_STR(arg));
         if(!res)
         {
-                write("²éÑ¯³ö´í£¬ÇëÑ¯ÎÊÓÎÏ·¹ÜÀíÔ±¡£\n");
+                write("æŸ¥è©¢å‡ºéŒ¯ï¼Œè«‹è©¢å•éŠæˆ²ç®¡ç†å“¡ã€‚\n");
                 return 0;
         }
         else
@@ -62,32 +62,32 @@ int DoMonFee(object me,int mon)
                 sscanf(res[1]+"0","%d",fee);
                 onl/=10;fee/=10;
 
-                if(wizardp(this_player())) write("ÄãÄ¿Ç°µÄÓÎÏ·µã¿ÉÓÃÊı"+(fee-onl/3600)+"\n");
+                if(wizardp(this_player())) write("ä½ ç›®å‰çš„éŠæˆ²é»å¯ç”¨æ•¸"+(fee-onl/3600)+"\n");
                 
                 if(fee - onl/3600 > (mon*150)+50  )
                 {
                         sql="update users set fee_time=fee_time-"+150*mon+",endrgt=now() where id="+DB_STR(arg);
                         if ((DATABASE_D->do_sqlexec(sql))<1)
                         {
-                                write("¿Û³ıµãÊıÊ§°Ü£¬Çë¾¡¿ìÁªÏµÓÎÏ·¹ÜÀíÔ±²éÃ÷Ô­Òò¡£\n");
+                                write("æ‰£é™¤é»æ•¸å¤±æ•—ï¼Œè«‹ç›¡å¿«è¯ç³»éŠæˆ²ç®¡ç†å“¡æŸ¥æ˜åŸå› ã€‚\n");
                                 return 0;
                         }
                         else
                         {
-                                //¿Û³ıµãÊı³É¹¦                                
+                                //æ‰£é™¤é»æ•¸æˆåŠŸ                                
                                 me->save();
-                                //ÖØĞÂ´ÓÊı¾İ¿âÈ¡£¬ÒÔÑéÖ¤ÊÇ·ñÕæµÄÒÑ¾­¸Ä±ä
+                                //é‡æ–°å¾æ•¸æ“šåº«å–ï¼Œä»¥é©—è¨¼æ˜¯å¦çœŸçš„å·²ç¶“æ”¹è®Š
                                        res=DATABASE_D->do_sql("select fee_time from users where id="+DB_STR(arg));
                                        sscanf(res[0]+"0","%d",j);
                                 sql=sprintf("insert into reg_log (id,add_hours,new_fee_time,time) values (%s,%d,%d,now())",DB_STR(arg),-150*mon,j/10);
                                 if(DATABASE_D->do_sqlexec(sql) < 1)
                                         log_file("mysql.log",ctime(time())+":"+sql);
-                                write("ÄãµÄÓÎÏ·µãÒÑ¾­¿Û³ıÁË"+mon*150+"µã£¡\n");
+                                write("ä½ çš„éŠæˆ²é»å·²ç¶“æ‰£é™¤äº†"+mon*150+"é»ï¼\n");
                         }
                 }
                 else
                 {
-                        write("ÄãµÄÓÎÏ·µãÒÑ¾­²»¹»ÓÃÓÚ¿ªÍ¨£¨»òĞø·Ñ£©´¢Îï¹ñÁË£¨ÄãµÃÓĞÖÁÉÙ"+(mon*150+50)+"µã²Å¿ÉÒÔ£©£¬Çë¸Ï¿ì»ã¿î¹º¿¨°É¡£\n");
+                        write("ä½ çš„éŠæˆ²é»å·²ç¶“ä¸å¤ ç”¨äºé–‹é€šï¼ˆæˆ–çºŒè²»ï¼‰å„²ç‰©æ«ƒäº†ï¼ˆä½ å¾—æœ‰è‡³å°‘"+(mon*150+50)+"é»æ‰å¯ä»¥ï¼‰ï¼Œè«‹è¶•å¿«åŒ¯æ¬¾è³¼å¡å§ã€‚\n");
                         return 0;
                 }
         }
@@ -121,13 +121,13 @@ int CancelAccount(object me)
         m=query("data/"+query("id", me));
         if(!mapp(m))
         {
-                write("Äã»¹Ã»ÓĞ¿ª¹ı»§Ñ½£¡\n");
+                write("ä½ é‚„æ²’æœ‰é–‹éæˆ¶å‘€ï¼\n");
         }
         else 
         {
                 if( query_temp("sure_cancel", me) != 1 )
                 {
-                    write("ÕÊ»§È¡ÏûÎÒÃÇÒ²²»»áÍË»Ø×â·ÑµÄÓ´£¡\nÈç¹ûÄã»¹Ã»ÏëºÃ£¬¿ÉÒÔÏÈ°Ñ¶«Î÷¶¼È¡×ß¡£\n(Çë×¢Òâ£¬ÔÙ´ÎÊäÈëÈ¡ÏûÃüÁî½«²»ÔÙÌáÊ¾±¾ĞÅÏ¢)\n");
+                    write("å¸³æˆ¶å–æ¶ˆæˆ‘å€‘ä¹Ÿä¸æœƒé€€å›ç§Ÿè²»çš„å–²ï¼\nå¦‚æœä½ é‚„æ²’æƒ³å¥½ï¼Œå¯ä»¥å…ˆæŠŠæ±è¥¿éƒ½å–èµ°ã€‚\n(è«‹æ³¨æ„ï¼Œå†æ¬¡è¼¸å…¥å–æ¶ˆå‘½ä»¤å°‡ä¸å†æç¤ºæœ¬ä¿¡æ¯)\n");
                     set_temp("sure_cancel", 1, me);
                     return 1;
                 }
@@ -137,16 +137,16 @@ int CancelAccount(object me)
                         m=query("data/"+query("id", me));
                         if(!mapp(m))
                         {
-                            write("ÄãµÄÕÊ»§Î´ÄÜ³É¹¦È¡Ïû£¬ÇëÁªÏµ¹ÜÀíÔ±¡£\n");
+                            write("ä½ çš„å¸³æˆ¶æœªèƒ½æˆåŠŸå–æ¶ˆï¼Œè«‹è¯ç³»ç®¡ç†å“¡ã€‚\n");
                             return 1;
                         }
-                        log_file("storage.log","cancel:"+query("name", me)+"("+query("id", me)+")È¡ÏûÁËÕÊ»§£¡ÀàĞÍ£º"+m["typ"]+"\n");
+                        log_file("storage.log","cancel:"+query("name", me)+"("+query("id", me)+")å–æ¶ˆäº†å¸³æˆ¶ï¼é¡å‹ï¼š"+m["typ"]+"\n");
                         delete("data/"+query("id", me));
-                        write("ÄãµÄÕÊ»§ÒÑ¾­³É¹¦È¡Ïû£¡\n");
+                        write("ä½ çš„å¸³æˆ¶å·²ç¶“æˆåŠŸå–æ¶ˆï¼\n");
                 }
                 else
                 {
-                        write("È¡ÏûÕÊ»§Ç°£¬ÇëÏÈ½«ÄãµÄÎïÆ·È«²¿È¡³öÀ´£¡\n");
+                        write("å–æ¶ˆå¸³æˆ¶å‰ï¼Œè«‹å…ˆå°‡ä½ çš„ç‰©å“å…¨éƒ¨å–å‡ºä¾†ï¼\n");
                 }
         }
         return 1;
@@ -160,7 +160,7 @@ int OpenAccount(object me,string arg)
         id=query("id", me);
         if(ExistAccount(id))
         {
-            write("ÄãÒÑ¾­¿ª¹ı»§ÁË£¡ÇëÊ¹ÓÃcw fee <¼¸¸öÔÂ> Ğø×â£¡\n");
+            write("ä½ å·²ç¶“é–‹éæˆ¶äº†ï¼è«‹ä½¿ç”¨cw fee <å¹¾å€‹æœˆ> çºŒç§Ÿï¼\n");
             return 1;
         }
         if(sscanf(arg,"%d",i)!=1)
@@ -168,8 +168,8 @@ int OpenAccount(object me,string arg)
         if( query_temp("yes_i_know", me) != 1 )
         {
             set_temp("yes_i_know", 1, me);
-            write("´¢Îï¹ñÃ¿ÔÂ×â·ÑÎª£º\nÀàĞÍ0\tĞèÒª100Á½»Æ½ğ\nÀàĞÍ1\tĞèÒª200Á½»Æ½ğ\nÀàĞÍ2\tĞèÒª»¨150¸öÓÎÏ·µã\n"
-                "ÇëÈ·ÈÏÄãÒÑ¾­ÖªµÀÒÔÉÏ×Ê·ÑÇé¿ö£¬ÔÙ´ÎÊäÈë¿ª»§ÃüÁî½«²»ÔÙÌáÊ¾Ö±½Ó¿ª»§£¡\n");
+            write("å„²ç‰©æ«ƒæ¯æœˆç§Ÿè²»ç‚ºï¼š\né¡å‹0\téœ€è¦100å…©é»ƒé‡‘\né¡å‹1\téœ€è¦200å…©é»ƒé‡‘\né¡å‹2\téœ€è¦èŠ±150å€‹éŠæˆ²é»\n"
+                "è«‹ç¢ºèªä½ å·²ç¶“çŸ¥é“ä»¥ä¸Šè³‡è²»æƒ…æ³ï¼Œå†æ¬¡è¼¸å…¥é–‹æˆ¶å‘½ä»¤å°‡ä¸å†æç¤ºç›´æ¥é–‹æˆ¶ï¼\n");
             return 1;
         }
         switch(i)
@@ -183,7 +183,7 @@ int OpenAccount(object me,string arg)
                         obcount=80;
                         break;
                 case 2:
-                        //¾ßÌåµÄ¿Ûµã
+                        //å…·é«”çš„æ‰£é»
                         if(k=DoMonFee(me,1))
                                 obcount=500;
                         break;
@@ -194,7 +194,7 @@ int OpenAccount(object me,string arg)
         if(k)
         {
                 j=time()+86400*30;
-                //³õÊ¼»¯Ò»Ğ©²ÎÊı
+                //åˆå§‹åŒ–ä¸€äº›åƒæ•¸
                 m=([
                         "cnt":0,
                         "typ":i,
@@ -202,43 +202,43 @@ int OpenAccount(object me,string arg)
                         "max_obs":obcount,
                         ]);
                 set("data/"+query("id", me),m);
-                log_file("storage.log","open:"+query("name", me)+"("+query("id", me)+")¿ªÉèÁËµÚ"+i+"ÀàÕÊ»§£¡\n");
-                write("¹§Ï²Äã£¬ÄãµÄ¿ª»§ÒÑ¾­³É¹¦¡£ÄãµÄ´¢Îï¹ñ¿ÉÒÔ´¢²Ø"+obcount+"¼şÎïÆ·£¬Äã¿ÉÒÔÓÃµ½"+CHINESE_D->cctime(j)+"ÎªÖ¹¡£\n");
+                log_file("storage.log","open:"+query("name", me)+"("+query("id", me)+")é–‹è¨­äº†ç¬¬"+i+"é¡å¸³æˆ¶ï¼\n");
+                write("æ­å–œä½ ï¼Œä½ çš„é–‹æˆ¶å·²ç¶“æˆåŠŸã€‚ä½ çš„å„²ç‰©æ«ƒå¯ä»¥å„²è—"+obcount+"ä»¶ç‰©å“ï¼Œä½ å¯ä»¥ç”¨åˆ°"+CHINESE_D->cctime(j)+"ç‚ºæ­¢ã€‚\n");
                 save();
                 return 1;
         }
         else
         {
                 if(i!=2)
-                        write("¶Ô²»Æğ£¬ÄãµÄÇ®Î´´ø¹»£¡Çë´øÉÏ×ã¹»µÄÇ®È»ºóÊ¹ÓÃcw open 0 »òcw open 1À´¿ª»§£¡\n"+i+" "+k);
+                        write("å°ä¸èµ·ï¼Œä½ çš„éŒ¢æœªå¸¶å¤ ï¼è«‹å¸¶ä¸Šè¶³å¤ çš„éŒ¢ç„¶å¾Œä½¿ç”¨cw open 0 æˆ–cw open 1ä¾†é–‹æˆ¶ï¼\n"+i+" "+k);
                 else
-                        write("¶Ô²»Æğ£¬ÄãµÄÓÎÏ·µã²»¹»£¬ÇëÏÈĞøÉÏ×ã¹»µÄÓÎÏ·µãÈ»ºóÊ¹ÓÃcw open 2À´¿ª»§£¡\n");
+                        write("å°ä¸èµ·ï¼Œä½ çš„éŠæˆ²é»ä¸å¤ ï¼Œè«‹å…ˆçºŒä¸Šè¶³å¤ çš„éŠæˆ²é»ç„¶å¾Œä½¿ç”¨cw open 2ä¾†é–‹æˆ¶ï¼\n");
         }
         return 1;
 }
 
 void ListObject(object me)
 {
-        string k,res="ÄãµÄ´¢Îï¹ñÀïÓĞ£º\n";
+        string k,res="ä½ çš„å„²ç‰©æ«ƒè£¡æœ‰ï¼š\n";
         mapping m,om;
         int i,j;
         string id;
         id=query("id", me);
         if(!ExistAccount(id))
         {
-                write("ÇëÏÈ¿ª»§£¡\n");
+                write("è«‹å…ˆé–‹æˆ¶ï¼\n");
                 return ;
         }
         if(!AccountOk(id))
         {
-                write("ÇëÏÈĞø·Ñ£¡\n");
+                write("è«‹å…ˆçºŒè²»ï¼\n");
                 return ;
         }
         i=wizardp(me);
         m=query("data/"+id+"/objects");
         if(!mapp(m)||sizeof(m)<1)
         {
-                write("Äã»¹Ã»ÓĞ´¢´æ¹ıÊ²Ã´ÎïÆ·¡£\n");
+                write("ä½ é‚„æ²’æœ‰å„²å­˜éä»€éº¼ç‰©å“ã€‚\n");
                 return ;
         }
         j=0;
@@ -246,7 +246,7 @@ void ListObject(object me)
         {
                 om=m[k];
                 j++;
-                res+=sprintf("µÚ%d¸öÎïÆ· ±àºÅ%5s £º %20s(%10s) ÊıÁ¿£º%d %s\n",j,k,om["name"],om["id"],om["num"],(i?om["file"]:""));
+                res+=sprintf("ç¬¬%då€‹ç‰©å“ ç·¨è™Ÿ%5s ï¼š %20s(%10s) æ•¸é‡ï¼š%d %s\n",j,k,om["name"],om["id"],om["num"],(i?om["file"]:""));
         }
         me->start_more(res);
 }
@@ -260,45 +260,45 @@ void PutObject(object me,string arg)
         id=query("id", me);
         if(!ExistAccount(id))
         {
-                write("ÇëÏÈ¿ª»§£¡\n");
+                write("è«‹å…ˆé–‹æˆ¶ï¼\n");
                 return ;
         }
         if(!AccountOk(id))
         {
-                write("ÇëÏÈĞø·Ñ£¡\n");
+                write("è«‹å…ˆçºŒè²»ï¼\n");
                 return ;
         }
          ob=present(arg,me);
         if(!objectp(ob))
         {
-                write("Ã»ÓĞ·¢ÏÖÎïÆ·"+arg+"£¡\n");
+                write("æ²’æœ‰ç™¼ç¾ç‰©å“"+arg+"ï¼\n");
                 return ;
         }
         file=file_name(ob);
-        //Ê²Ã´ÑùµÄÎïÆ·²»ÄÜ´æÄØ£¿
+        //ä»€éº¼æ¨£çš„ç‰©å“ä¸èƒ½å­˜å‘¢ï¼Ÿ
         if(strsrch(file,"#")==-1 || ob->is_character() || living(ob))
         {
-                write("¶Ô²»Æğ£¬¸ÃÎïÆ·²»¿ÉÒÔ´¢´æ£¡\n");
+                write("å°ä¸èµ·ï¼Œè©²ç‰©å“ä¸å¯ä»¥å„²å­˜ï¼\n");
                 return ;
         }
         if( query("task_ob", ob) || query("unique", ob) || 
             query("no_store", ob) || query("maze_item", ob) || 
             query("bindable", ob) || query("set_data", ob) )
         {
-                write("¶Ô²»Æğ£¬¸ÃÎïÆ·²»¿ÉÒÔ´¢´æ£¡\n");
+                write("å°ä¸èµ·ï¼Œè©²ç‰©å“ä¸å¯ä»¥å„²å­˜ï¼\n");
                 return ;
         }
         if( query("money_id", ob) )
         {
-                write("¶Ô²»Æğ£¬½ğÇ®²»¿ÉÒÔ±»´¢´æ£¡\n");
+                write("å°ä¸èµ·ï¼Œé‡‘éŒ¢ä¸å¯ä»¥è¢«å„²å­˜ï¼\n");
                 return ;
         }
-        //ÈçºÎÅĞ¶¨Ê³ÎïÄØ£¿
+        //å¦‚ä½•åˆ¤å®šé£Ÿç‰©å‘¢ï¼Ÿ
         if(mapp(m=ob->query_entire_dbase()))
         {
                 if(!undefinedp(m["food_remaining"])||!undefinedp(m["food_supply"]))
                 {
-                        write("¶Ô²»Æğ£¬Ê³Îï²»¿ÉÒÔ´¢´æ£¡\n");
+                        write("å°ä¸èµ·ï¼Œé£Ÿç‰©ä¸å¯ä»¥å„²å­˜ï¼\n");
                         return ;
                 }
         }
@@ -306,12 +306,12 @@ void PutObject(object me,string arg)
         key="data/"+id+"/";
         if(sizeof(query(key+"objects"))>=query(key+"max_obs"))
         {
-            write("¶Ô²»Æğ¡£ÄãÒÑ¾­´æ´¢ÁË"+query(key+"cnt")+"¼şÎïÆ·ÁË¡£²»ÄÜÔÙ´æ´¢¸ü¶àµÄ¶«Î÷ÁË¡£\n");
+            write("å°ä¸èµ·ã€‚ä½ å·²ç¶“å­˜å„²äº†"+query(key+"cnt")+"ä»¶ç‰©å“äº†ã€‚ä¸èƒ½å†å­˜å„²æ›´å¤šçš„æ±è¥¿äº†ã€‚\n");
             return ;
         }
         
         str=query("unit", ob);
-        if(!str) str="¸ö";
+        if(!str) str="å€‹";
         j=ob->query_amount();
         if(j<1) j=1;
         m=([
@@ -328,13 +328,13 @@ void PutObject(object me,string arg)
         destruct(ob);
         if(objectp(ob))
         {
-                write("´íÎó£¡´¢´æÊ§°Ü£¬ÇëÁªÏµ¹ÜÀíÔ±¡£\n");
+                write("éŒ¯èª¤ï¼å„²å­˜å¤±æ•—ï¼Œè«‹è¯ç³»ç®¡ç†å“¡ã€‚\n");
                 set(key+"cnt",i-1);
                 delete(key+"objects/"+i);
         }
         else
-                write(m["name"]+"ÒÑ¾­´¢´æºÃÁË£¡±àºÅ£º"+i+" ¡£\n");
-        //Ò²ĞíÓ¦¸ÃÓÃĞÄÌøÀ´¿ØÖÆ
+                write(m["name"]+"å·²ç¶“å„²å­˜å¥½äº†ï¼ç·¨è™Ÿï¼š"+i+" ã€‚\n");
+        //ä¹Ÿè¨±æ‡‰è©²ç”¨å¿ƒè·³ä¾†æ§åˆ¶
         save();
         return ;
 }
@@ -349,17 +349,17 @@ void GetObject(object me,string arg)
         id=query("id", me);
         if(!ExistAccount(id))
         {
-                write("ÇëÏÈ¿ª»§£¡\n");
+                write("è«‹å…ˆé–‹æˆ¶ï¼\n");
                 return ;
         }
         if(!AccountOk(id))
         {
-                write("ÇëÏÈĞø·Ñ£¡\n");
+                write("è«‹å…ˆçºŒè²»ï¼\n");
                 return ;
         }
          if(!arg||arg=="")
         {
-                write("ÄãÒªÈ¡×ßÊ²Ã´ÎïÆ·£¿\n");
+                write("ä½ è¦å–èµ°ä»€éº¼ç‰©å“ï¼Ÿ\n");
                 return ;
         }
         arg=lower_case(arg);
@@ -367,7 +367,7 @@ void GetObject(object me,string arg)
         m=query(kid);
         if(sizeof(m)<1)
         {
-                write("ÄãÊ²Ã´ÎïÆ·¶¼Ã»ÓĞ´¢´æ×Å£¬»¹ÏëÄÃ×ßÊ²Ã´£¿\n");
+                write("ä½ ä»€éº¼ç‰©å“éƒ½æ²’æœ‰å„²å­˜è‘—ï¼Œé‚„æƒ³æ‹¿èµ°ä»€éº¼ï¼Ÿ\n");
                 return ;
         }
         ks=keys(m);
@@ -390,21 +390,21 @@ void GetObject(object me,string arg)
                         ob->set_amount(m["num"]); 
                         if(ob->move(me))
                         {
-                                write("Äã´Ó´¢Îï¹ñÈ¡³öÁË"+m["name"]+"("+m["id"]+") ¡£\n");
-                                //write("Äã´Ó´¢Îï¹ñÈ¡³öÁË"+ob->query("name")+"("+ob->query("id")+")¡£\n");
+                                write("ä½ å¾å„²ç‰©æ«ƒå–å‡ºäº†"+m["name"]+"("+m["id"]+") ã€‚\n");
+                                //write("ä½ å¾å„²ç‰©æ«ƒå–å‡ºäº†"+ob->query("name")+"("+ob->query("id")+")ã€‚\n");
                                 delete(kid+"/"+ks[i]);
-                                //Ò²ĞíÓ¦¸ÃÓÃĞÄÌøÀ´¿ØÖÆ
+                                //ä¹Ÿè¨±æ‡‰è©²ç”¨å¿ƒè·³ä¾†æ§åˆ¶
                                 save();
                                 return;
                         }
                         else
                         {
-                                write("ÄãÉíÉÏÒÑÓĞÎïÆ·¸ººÉ¹ıÖØ£¬ÎŞ·¨È¡³ö¸ÃÎïÆ·¡£\n");
+                                write("ä½ èº«ä¸Šå·²æœ‰ç‰©å“è² è·éé‡ï¼Œç„¡æ³•å–å‡ºè©²ç‰©å“ã€‚\n");
                                 return;
                         }
                 }
         }
-        write("È¡³öÎïÆ·£¬ÇëÊäÈëcw get <ÎïÆ·±àºÅ>£¬±àºÅ¿ÉÓÃcw listÖ¸Áî²é¿´¡£\n");
+        write("å–å‡ºç‰©å“ï¼Œè«‹è¼¸å…¥cw get <ç‰©å“ç·¨è™Ÿ>ï¼Œç·¨è™Ÿå¯ç”¨cw listæŒ‡ä»¤æŸ¥çœ‹ã€‚\n");
         return ;
 }
 
@@ -415,12 +415,12 @@ int DoFee(object me,string arg)
     mon=1;
     if(!ExistAccount(id))
     {
-            write("ÇëÏÈ¿ª»§£¡\n");
+            write("è«‹å…ˆé–‹æˆ¶ï¼\n");
             return 1;
     }
     if(AccountOk(id))
     {
-            write("Äã»¹Ã»±ØÒªĞø·Ñ£¡ÄãµÄµ½ÆÚÊ±¼äÊÇ"+CHINESE_D->cctime(query("data/"+id+"/expiredate"))+"\n");
+            write("ä½ é‚„æ²’å¿…è¦çºŒè²»ï¼ä½ çš„åˆ°æœŸæ™‚é–“æ˜¯"+CHINESE_D->cctime(query("data/"+id+"/expiredate"))+"\n");
             return 1;
     }
     if(arg)
@@ -428,7 +428,7 @@ int DoFee(object me,string arg)
     if(mon<1) mon=1;
     if(mon>3)
     {
-        write("¶Ô²»Æğ£¬Ò»´Î×î¶àĞøÈı¸öÔÂ£¡\n");
+        write("å°ä¸èµ·ï¼Œä¸€æ¬¡æœ€å¤šçºŒä¸‰å€‹æœˆï¼\n");
         return 1;
     }
     switch(i=query("data/"+id+"/typ"))
@@ -440,7 +440,7 @@ int DoFee(object me,string arg)
                     k=me->pay_money(2000000*mon);
                     break;
             case 2:
-                    //¾ßÌåµÄ¿Ûµã
+                    //å…·é«”çš„æ‰£é»
                     k=DoMonFee(me,mon);
                     break;
             default:
@@ -451,17 +451,17 @@ int DoFee(object me,string arg)
             int expiredate=query("data/"+id+"/expiredate");
             expiredate+=86400*30*mon;
             set("data/"+id+"/expiredate",expiredate);
-            log_file("storage.log","open:"+query("name", me)+"("+query("id", me)+")ÎªµÚ"+i+"ÀàÕÊ»§ĞøÁË"+mon+"¸öÔÂ£¡\n");
-            write("¹§Ï²Äã£¬ÄãµÄĞø·ÑÒÑ¾­³É¹¦¡£Äã¿ÉÒÔÓÃµ½"+CHINESE_D->cctime(expiredate)+"ÎªÖ¹¡£\n");
+            log_file("storage.log","open:"+query("name", me)+"("+query("id", me)+")ç‚ºç¬¬"+i+"é¡å¸³æˆ¶çºŒäº†"+mon+"å€‹æœˆï¼\n");
+            write("æ­å–œä½ ï¼Œä½ çš„çºŒè²»å·²ç¶“æˆåŠŸã€‚ä½ å¯ä»¥ç”¨åˆ°"+CHINESE_D->cctime(expiredate)+"ç‚ºæ­¢ã€‚\n");
             save();
             return 1;
     }
     else
     {
             if(i!=2)
-                    write("¶Ô²»Æğ£¬ÄãµÄÇ®Î´´ø¹»£¡Çë´øÉÏ×ã¹»µÄÇ®È»ºóÊ¹ÓÃcw fee <¼¸¸öÔÂ> ÃüÁîÀ´Ğø·Ñ£¡\n"+i+" "+k);
+                    write("å°ä¸èµ·ï¼Œä½ çš„éŒ¢æœªå¸¶å¤ ï¼è«‹å¸¶ä¸Šè¶³å¤ çš„éŒ¢ç„¶å¾Œä½¿ç”¨cw fee <å¹¾å€‹æœˆ> å‘½ä»¤ä¾†çºŒè²»ï¼\n"+i+" "+k);
             else
-                    write("¶Ô²»Æğ£¬ÄãµÄÓÎÏ·µã²»¹»£¬ÇëÏÈĞøÉÏ×ã¹»µÄÓÎÏ·µãÈ»ºóÊ¹ÓÃcw fee <¼¸¸öÔÂ> À´Ğø·Ñ£¡\n");
+                    write("å°ä¸èµ·ï¼Œä½ çš„éŠæˆ²é»ä¸å¤ ï¼Œè«‹å…ˆçºŒä¸Šè¶³å¤ çš„éŠæˆ²é»ç„¶å¾Œä½¿ç”¨cw fee <å¹¾å€‹æœˆ> ä¾†çºŒè²»ï¼\n");
     }
     return 1;
 }
@@ -469,13 +469,13 @@ int DoFee(object me,string arg)
 int ShowHelp(object me)
 {
         string helpstr=
-        "help              »ñÈ¡±¾°ïÖúĞÅÏ¢\n"
-        "fee <×âÆÚ>        Îª´¢Îï¹ñĞø·Ñ£¬Èç¹ûÇ··ÑÔò»áÏÈ²¹Ç··Ñ¡£×âÆÚÎªÔÂÊı¡£\n"
-        "open <0-2>        ¿ªÉè´¢Îï¹ñÕÊ»§£¬ÔÚ¸ÃÃüÁîºóµÄ²ÎÊı0-2·Ö±ğ´ú±íÈıÖÖ²»Í¬µÄ×âÓÃ·½Ê½\n"
-        "cancel            È¡Ïû×Ô¼ºµÄ´¢Îï¹ñÕÊ»§¡£Äã±ØĞëÏÈ½«ÀïÃæµÄÎïÆ·È«²¿È¡³öÀ´ºó²Å¿ÉÈ¡Ïû\n"
-        "list              ÁĞ³ö×Ô¼ºµÄ´¢Îï¹ñÀï¶¼ÓĞĞ©Ê²Ã´ÎïÆ·\n"
-        "put <ÎïÆ·ID>      ½«ÉíÉÏµÄÄ³¸öÎïÆ··Åµ½´¢Îï¹ñÀï£¨²»ÊÇÊ²Ã´¶¼¿ÉÒÔ´æ·ÅµÄ£©\n"
-        "get <±àºÅ|ÎïÆ·ID> ½«´¢Îï¹ñÀïÄ³¸ö±àºÅµÄÎïÆ·È¡³öÀ´\n"
+        "help              ç²å–æœ¬å¹«åŠ©ä¿¡æ¯\n"
+        "fee <ç§ŸæœŸ>        ç‚ºå„²ç‰©æ«ƒçºŒè²»ï¼Œå¦‚æœæ¬ è²»å‰‡æœƒå…ˆè£œæ¬ è²»ã€‚ç§ŸæœŸç‚ºæœˆæ•¸ã€‚\n"
+        "open <0-2>        é–‹è¨­å„²ç‰©æ«ƒå¸³æˆ¶ï¼Œåœ¨è©²å‘½ä»¤å¾Œçš„åƒæ•¸0-2åˆ†åˆ¥ä»£è¡¨ä¸‰ç¨®ä¸åŒçš„ç§Ÿç”¨æ–¹å¼\n"
+        "cancel            å–æ¶ˆè‡ªå·±çš„å„²ç‰©æ«ƒå¸³æˆ¶ã€‚ä½ å¿…é ˆå…ˆå°‡è£¡é¢çš„ç‰©å“å…¨éƒ¨å–å‡ºä¾†å¾Œæ‰å¯å–æ¶ˆ\n"
+        "list              åˆ—å‡ºè‡ªå·±çš„å„²ç‰©æ«ƒè£¡éƒ½æœ‰äº›ä»€éº¼ç‰©å“\n"
+        "put <ç‰©å“ID>      å°‡èº«ä¸Šçš„æŸå€‹ç‰©å“æ”¾åˆ°å„²ç‰©æ«ƒè£¡ï¼ˆä¸æ˜¯ä»€éº¼éƒ½å¯ä»¥å­˜æ”¾çš„ï¼‰\n"
+        "get <ç·¨è™Ÿ|ç‰©å“ID> å°‡å„²ç‰©æ«ƒè£¡æŸå€‹ç·¨è™Ÿçš„ç‰©å“å–å‡ºä¾†\n"
         ;
         write(helpstr);
         MYGIFT_D->check_mygift(this_player(1), "newbie_mygift/cangku"); 

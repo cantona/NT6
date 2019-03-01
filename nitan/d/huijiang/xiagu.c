@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short","Ͽ��");
+        set("short","峽谷");
         set("long",@LONG
-������һ��Ͽ�ȣ�����ʯ�ڶ�Ȼ�����������õ����ɣ�̧ͷ���죬
-ֻ����ɫ��������������Ǳ�ں�������һ�㡣Ͽ����ʯȫϵ��ڣ��ڹ�
-��������·������ȥ���쳣���ۡ�
+這裡是一道峽谷，兩旁石壁峨然筆立，有如用刀削成，抬頭望天，
+只覺天色又藍又亮，宛如潛在海底仰望一般。峽內巖石全系深黑，烏光
+發亮。道路彎來彎去，異常曲折。
 LONG );
         set("outdoors", "huijiang");
         set("exits", ([

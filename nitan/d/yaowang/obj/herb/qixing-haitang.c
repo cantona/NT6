@@ -1,12 +1,12 @@
 #include "herb.h" 
 void create() 
   {
-      set_name(NOR + HIY "ÆßĞÇº£ÌÄ" NOR, ({ "qixing haitang", "qixing", "haitang","herb_qixing-haitang" })); 
+      set_name(NOR + HIY "ä¸ƒæ˜Ÿæµ·æ£ " NOR, ({ "qixing haitang", "qixing", "haitang","herb_qixing-haitang" })); 
           if (clonep())      
                  set_default_object(__FILE__); 
           else { 
-                  set("long", NOR + HIG "ÕâÖê»¨µÄÒ¶×ÓÒ²ºÍÑ°³£º£ÌÄÎŞÒì£¬»¨°ê½ôÌùÖ¦¸É¶øÉú£¬»¨Ö¦ÈçÌú£¬»¨°êÉÏÓĞÆß¸öĞ¡Ğ¡µÄ»Æµã¡£\n" NOR); 
-                  set("base_unit", "Öê");
+                  set("long", NOR + HIG "é€™æ ªèŠ±çš„è‘‰å­ä¹Ÿå’Œå°‹å¸¸æµ·æ£ ç„¡ç•°ï¼ŒèŠ±ç“£ç·Šè²¼æå¹¹è€Œç”Ÿï¼ŒèŠ±æå¦‚éµï¼ŒèŠ±ç“£ä¸Šæœ‰ä¸ƒå€‹å°å°çš„é»ƒé»ã€‚\n" NOR); 
+                  set("base_unit", "æ ª");
                   set("base_value", 5000); 
                   set("base_weight", 20);
                }

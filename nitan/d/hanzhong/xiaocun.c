@@ -1,15 +1,15 @@
-// xiaocun.c С��ׯ
+// xiaocun.c 小村莊
 // Winder Oct.10 1998
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "С��ׯ");
+        set("short", "小村莊");
         set("long", @LONG
-����һƬС��ׯ��������һ��Сɽ�������ľ����Ƕ����ٵ�
-����ȥ����Ȼ���书�򲻹����塢�����ɽ·��������Ը�������и�
-Ů��֯���ճ����������Ъ���ϴ�ͳ��������Ȼ��ƶ��ȴ������ң��
+這是一片小村莊，隱藏在一個小山坳裡。這裡的居民們都很少到
+城裡去，雖然離武功鎮不過是五、六裡的山路，他們寧願秉承著男耕
+女紡織、日出而作日落而歇的老傳統。日子雖然清貧，卻還算逍遙。
 LONG
         );
         set("outdoors", "hanzhong");

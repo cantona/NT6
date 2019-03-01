@@ -1,15 +1,15 @@
-// fu-xiaoyuan ����СԺ
+// fu-xiaoyuan 富家小院
 // Winder Oct.10 1998
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "����СԺ");
+        set("short", "富家小院");
         set("long", @LONG
-���ǽ��ź��һ��СԺ�䡣������һ�����ţ�������һ����
-���ź���ͨ�������������Ǵ��ţ�������Ǵ����ˡ��������
-��ͷɥ����վ��СԺ�У���������Ϊ�ɲ����ⱻץ���ˡ�
+這是進門後的一個小院落。西面是一道側門，東面是一扇月
+形門好象通往花廳，北面是大門，南面就是大堂了。幾個窮漢正
+垂頭喪氣地站在小院中，可能是因為繳不起租被抓來了。
 LONG
         );
         set("outdoors", "hanzhong");

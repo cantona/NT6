@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�����");
+        set("short", "東大街");
         set("long", @LONG
-������ǿ��⸮�ڶ���������Ҫͨ������·�����˵��̸��ڲ��ϡ�
-�������ƣ��۹�ģ�������ģ��ʽ���ģ��������׷��ѵģ�������
-�ȡ����߲�Զ����ɽ�¸ʻ�ݡ�
+東大街是開封府內東街區的主要通道。道路的兩端店舖府第不斷。
+行人如縷，觀光的，作生意的，攀交情的，以至走親訪友的，喧鬧無
+比。北邊不遠就是山陝甘會館。
 LONG );
         set("objects", ([
                   __DIR__"npc/hanzi" : 1,

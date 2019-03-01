@@ -5,13 +5,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name("´ó°×Óã", ({ "fish" }) );
+        set_name("å¤§ç™½é­š", ({ "fish" }) );
         set_weight(350);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»Î²´ó°×Óã£¬³¤´ïÒ»³ß¡£\n");
-                set("unit", "Î²");
+                set("long", "é€™æ˜¯ä¸€å°¾å¤§ç™½é­šï¼Œé•·é”ä¸€å°ºã€‚\n");
+                set("unit", "å°¾");
                 set("value", 30);
                 set("food_remaining", 4);
                 set("food_supply", 40);
@@ -22,8 +22,8 @@ void create()
 
 int finish_eat()
 {
-        set_name("Óã¹Ç", ({ "fish bone" }) );
+        set_name("é­šéª¨", ({ "fish bone" }) );
         set_weight(150);
-        set("long", "Ò»¸ù¿ĞµÃ¾«¹âµÄÓã¹ÇÍ·£¬¿´Ñù×Ó¿ÉÒÔ×÷Õë¡£\n");
+        set("long", "ä¸€æ ¹å•ƒå¾—ç²¾å…‰çš„é­šéª¨é ­ï¼Œçœ‹æ¨£å­å¯ä»¥ä½œé‡ã€‚\n");
         return 1;
 }

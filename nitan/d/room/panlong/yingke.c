@@ -1,4 +1,4 @@
-// yingke.c ÅÌÁú¾ÓÓ­¿ÍÌü
+// yingke.c ç›¤é¾å±…è¿Žå®¢å»³
 
 #include <room.h>
 
@@ -7,19 +7,19 @@ inherit ROOM;                                   /* EXAMPLE */
 
 void create()
 {
-        set("short", "Ó­¿ÍÌü");             /* EXAMPLE */
-//**    set("short", "ROOM_NAMEÓ­¿ÍÌü");
+        set("short", "è¿Žå®¢å»³");             /* EXAMPLE */
+//**    set("short", "ROOM_NAMEè¿Žå®¢å»³");
         set("long", @LONG
-ÕâÀïÊÇÅÌÁú¾ÓµÄÖ÷ÈËÓ­½Ó°Ë·½À´¿ÍµÄµØ·½¡£´ó·²¿ÍÈËÀ´°Ý¼ûÖ÷ÈË£¬ÉÙ
-²»µÃÔÚÕâÀïº®êÑÐð»°£¬ÁË¾¡ÑöÄ½Ö®Çé¡£¶«ÃæÍ¨ÍùÒ»¸ö²èÊÒ£¬ÊÇÖ÷ÈËÅãÍ¬¿Í
-ÈËÆ·³¢ÌìÏÂÃû²èÖ®´¦¡£
+é€™è£¡æ˜¯ç›¤é¾å±…çš„ä¸»äººè¿ŽæŽ¥å…«æ–¹ä¾†å®¢çš„åœ°æ–¹ã€‚å¤§å‡¡å®¢äººä¾†æ‹œè¦‹ä¸»äººï¼Œå°‘
+ä¸å¾—åœ¨é€™è£¡å¯’æš„æ•˜è©±ï¼Œäº†ç›¡ä»°æ…•ä¹‹æƒ…ã€‚æ±é¢é€šå¾€ä¸€å€‹èŒ¶å®¤ï¼Œæ˜¯ä¸»äººé™ªåŒå®¢
+äººå“å˜—å¤©ä¸‹åèŒ¶ä¹‹è™•ã€‚
 LONG );
 
-        set("default_long", "ÕâÀïÊÇROOM_NAMEµÄÖ÷ÈËROOM_OWNERÓ­½Ó°Ë·½À´" /* EXAMPLE */
-                            "¿ÍµÄµØ·½¡£´ó·²¿ÍÈËÀ´°Ý¼ûROOM_OWNER£¬ÉÙ²»"  /* EXAMPLE */
-                            "µÃÔÚÕâÀïº®êÑÐð»°£¬ÁË¾¡ÑöÄ½Ö®Çé¡£¶«ÃæÍ¨Íù"  /* EXAMPLE */
-                            "Ò»¸ö²èÊÒ£¬ÊÇÖ÷ÈËÅãÍ¬¿ÍÈËÆ·³¢ÌìÏÂÃû²èÖ®´¦"  /* EXAMPLE */
-                            "¡£" );                                     /* EXAMPLE */
+        set("default_long", "é€™è£¡æ˜¯ROOM_NAMEçš„ä¸»äººROOM_OWNERè¿ŽæŽ¥å…«æ–¹ä¾†" /* EXAMPLE */
+                            "å®¢çš„åœ°æ–¹ã€‚å¤§å‡¡å®¢äººä¾†æ‹œè¦‹ROOM_OWNERï¼Œå°‘ä¸"  /* EXAMPLE */
+                            "å¾—åœ¨é€™è£¡å¯’æš„æ•˜è©±ï¼Œäº†ç›¡ä»°æ…•ä¹‹æƒ…ã€‚æ±é¢é€šå¾€"  /* EXAMPLE */
+                            "ä¸€å€‹èŒ¶å®¤ï¼Œæ˜¯ä¸»äººé™ªåŒå®¢äººå“å˜—å¤©ä¸‹åèŒ¶ä¹‹è™•"  /* EXAMPLE */
+                            "ã€‚" );                                     /* EXAMPLE */
                                                                         /* EXAMPLE */
 
         set("exits", ([
@@ -28,7 +28,7 @@ LONG );
                 "east"   : __DIR__"chashi",
         ]));
 
-        create_door("east", "Ä¾ÃÅ", "west", DOOR_CLOSED);
+        create_door("east", "æœ¨é–€", "west", DOOR_CLOSED);
 
 //**    set("objects", ([
 //**            "/d/room/roomnpc/yahuan" : 2,

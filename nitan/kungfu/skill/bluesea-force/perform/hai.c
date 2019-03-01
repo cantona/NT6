@@ -1,14 +1,14 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define HAI "¡¸" HIG "¿àº£ÎÞ±ß" NOR "¡¹"
+#define HAI "ã€Œ" HIG "è‹¦æµ·ç„¡é‚Š" NOR "ã€"
 
 inherit F_SSERVER;
 
 string final(object me, object target, int damage);
 
-string *finger_name = ({ "×óÊÖÖÐÖ¸", "×óÊÖÎÞÃûÖ¸", "×óÊÖÊ³Ö¸",
-                         "ÓÒÊÖÖÐÖ¸", "ÓÒÊÖÎÞÃûÖ¸", "ÓÒÊÖÊ³Ö¸", }); 
+string *finger_name = ({ "å·¦æ‰‹ä¸­æŒ‡", "å·¦æ‰‹ç„¡åæŒ‡", "å·¦æ‰‹é£ŸæŒ‡",
+                         "å³æ‰‹ä¸­æŒ‡", "å³æ‰‹ç„¡åæŒ‡", "å³æ‰‹é£ŸæŒ‡", }); 
 
 int perform(object me, object target)
 {
@@ -20,49 +20,49 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(HAI "Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(HAI "åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( weapon=query_temp("weapon", me) )
         {
                 if( query("skill_type", weapon) != "staff" )
-                        return notify_fail("ÄãÊÖÀïÄÃµÄ²»ÊÇÕÈ£¬ÔõÃ´Ê©Õ¹" HAI "£¿\n");
+                        return notify_fail("ä½ æ‰‹è£¡æ‹¿çš„ä¸æ˜¯æ–ï¼Œæ€Žéº¼æ–½å±•" HAI "ï¼Ÿ\n");
         } else
         {
                 if (me->query_skill_prepared("finger") != "bluesea-force")
-                        return notify_fail("Äã²¢Ã»ÓÐ×¼±¸Ê¹ÓÃÄÏ"
-                                           "º£Ðþ¹¦£¬ÈçºÎÊ©Õ¹" HAI "£¿\n");
+                        return notify_fail("ä½ ä¸¦æ²’æœ‰æº–å‚™ä½¿ç”¨å—"
+                                           "æµ·çŽ„åŠŸï¼Œå¦‚ä½•æ–½å±•" HAI "ï¼Ÿ\n");
         }
 
         if ((int)me->query_skill("bluesea-force", 1) < 260)
-                return notify_fail("ÄãµÄÄÏº£Ðþ¹¦²»¹»æµÊì£¬ÄÑÒÔÊ©Õ¹" HAI "¡£\n");
+                return notify_fail("ä½ çš„å—æµ·çŽ„åŠŸä¸å¤ å«»ç†Ÿï¼Œé›£ä»¥æ–½å±•" HAI "ã€‚\n");
 
         if( query("max_neili", me)<3700 )
-                return notify_fail("ÄãµÄÄÚÁ¦ÐÞÎª²»×ã£¬ÄÑÒÔÊ©Õ¹" HAI "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¿®ç‚ºä¸è¶³ï¼Œé›£ä»¥æ–½å±•" HAI "ã€‚\n");
 
         if( query("neili", me)<300 )
-                return notify_fail("ÄãÏÖÔÚµÄÕæÆø²»×ã£¬ÄÑÒÔÊ©Õ¹" HAI "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çš„çœŸæ°£ä¸è¶³ï¼Œé›£ä»¥æ–½å±•" HAI "ã€‚\n");
                 
         if (weapon && me->query_skill_mapped("staff") != "bluesea-force")
-                return notify_fail("ÄãÃ»ÓÐ×¼±¸Ê¹ÓÃÄÏº£Ðþ¹¦£¬ÄÑÒÔÊ©Õ¹" HAI "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æº–å‚™ä½¿ç”¨å—æµ·çŽ„åŠŸï¼Œé›£ä»¥æ–½å±•" HAI "ã€‚\n");
 
         if (! weapon && me->query_skill_prepared("finger") != "bluesea-force")
-                return notify_fail("ÄãÃ»ÓÐ×¼±¸Ê¹ÓÃÄÏº£Ðþ¹¦£¬ÄÑÒÔÊ©Õ¹" HAI "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æº–å‚™ä½¿ç”¨å—æµ·çŽ„åŠŸï¼Œé›£ä»¥æ–½å±•" HAI "ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
         /*
         if (target->query_condition("no_exert"))
-                return notify_fail("¶Ô·½ÏÖÔÚÒÑ¾­ÎÞ·¨¿ØÖÆÕæÆø£¬·Åµ¨¹¥»÷°É¡£\n");
+                return notify_fail("å°æ–¹ç¾åœ¨å·²ç¶“ç„¡æ³•æŽ§åˆ¶çœŸæ°£ï¼Œæ”¾è†½æ”»æ“Šå§ã€‚\n");
         */
 
         if( query_temp("weapon", me) )
-                name = "ÊÖÖÐ" + weapon->name();
+                name = "æ‰‹ä¸­" + weapon->name();
         else
                 name = finger_name[random(sizeof(finger_name))];
 
-        msg = HIB "$N" HIB "Æø¹áË«±Û£¬ÏòµØÒ»»÷£¬Ò»¹ÉÆøÀË¾í×Å·ÉÊ¯Èç¿ñÌÎ°ãÏ®Ïò$n" HIB "£¬¶Ô·½¾ª»êÎ´¶¨Ö®¼Ê£¬ºöÎÅÈýÉùÇáÏì¡£\n"
-              HIB "×Ô$N" HIB "µÄ" + name + HIB "ÖÐÉä³öÈýµÀÐþ¾¢£¬·ÖÏ®$n" HIB "Èý´¦ËÀÑ¨¡°ÔÆÃÅÑ¨¡¢ÕÂÃÅÑ¨¡¢ÑÆÃÅÑ¨¡±¡£\n\n" NOR;
+        msg = HIB "$N" HIB "æ°£è²«é›™è‡‚ï¼Œå‘åœ°ä¸€æ“Šï¼Œä¸€è‚¡æ°£æµªå·è‘—é£›çŸ³å¦‚ç‹‚æ¿¤èˆ¬è¥²å‘$n" HIB "ï¼Œå°æ–¹é©šé­‚æœªå®šä¹‹éš›ï¼Œå¿½èžä¸‰è²è¼•éŸ¿ã€‚\n"
+              HIB "è‡ª$N" HIB "çš„" + name + HIB "ä¸­å°„å‡ºä¸‰é“çŽ„å‹ï¼Œåˆ†è¥²$n" HIB "ä¸‰è™•æ­»ç©´â€œé›²é–€ç©´ã€ç« é–€ç©´ã€å•žé–€ç©´â€ã€‚\n\n" NOR;
 
         ap = attack_power(me, "force");
         dp = defense_power(target, "dodge");
@@ -77,8 +77,8 @@ int perform(object me, object target)
                 addn("neili", -500, me);
         } else
         {
-                msg += CYN "$n" CYN "»ÅÂÒÖÐÒ»¸ö¸ë×Ó·­Éí£¬Ô¾³öÊýÕÉ£¬"
-                       "½ÄÐÒ¶ã¿ªÁËÕâÒ»ÕÐ¡£\n" NOR;
+                msg += CYN "$n" CYN "æ…Œäº‚ä¸­ä¸€å€‹é´¿å­ç¿»èº«ï¼Œèºå‡ºæ•¸ä¸ˆï¼Œ"
+                       "åƒ¥å¹¸èº²é–‹äº†é€™ä¸€æ‹›ã€‚\n" NOR;
                 me->start_busy(3);
                 addn("neili", -350, me);
         }
@@ -91,9 +91,9 @@ string final(object me, object target, int ap)
         if (target->query_condition("no_exert")) return "";
         target->apply_condition("no_exert", 30);
         call_out("hai_end", 15 + random(ap / 20), me, target);
-        return HIY "$n" HIY "Ö»¾õÑÛÇ°·ÉÉ³×ßÊ¯£¬Ä¿²»ÄÜÊÓ£¬ºö¾õÉíÉÏÒªÑ¨"
-               "´ÌÍ´£¬ÈýµÀÑªÖù×ÔÉíÉÏÉä³ö¡£\n$p¶¸È»¼äÒ»ÌáÕæÆø£¬"
-               "¾¹¾õµÃµ¤ÌïÖ®ÄÚ¿ÕÐéÈô¹È£¬È«È»ÎÞ·¨ÔËÆø¡£\n" NOR;
+        return HIY "$n" HIY "åªè¦ºçœ¼å‰é£›æ²™èµ°çŸ³ï¼Œç›®ä¸èƒ½è¦–ï¼Œå¿½è¦ºèº«ä¸Šè¦ç©´"
+               "åˆºç—›ï¼Œä¸‰é“è¡€æŸ±è‡ªèº«ä¸Šå°„å‡ºã€‚\n$pé™¡ç„¶é–“ä¸€æçœŸæ°£ï¼Œ"
+               "ç«Ÿè¦ºå¾—ä¸¹ç”°ä¹‹å…§ç©ºè™›è‹¥è°·ï¼Œå…¨ç„¶ç„¡æ³•é‹æ°£ã€‚\n" NOR;
 }
 
 void bian_end(object me, object target)
@@ -102,12 +102,12 @@ void bian_end(object me, object target)
         {
                 if (living(target))
                 {
-                        message_combatd(HIC "$N" HIC "ÉîÉîÎüÈëÒ»¿Ú"
-                                        "Æø£¬Á³É«ÓÉ°××ªºì£¬¿´ÆðÀ´ºÃ"
-                                        "¶àÁË¡£\n" NOR, target);
+                        message_combatd(HIC "$N" HIC "æ·±æ·±å¸å…¥ä¸€å£"
+                                        "æ°£ï¼Œè‡‰è‰²ç”±ç™½è½‰ç´…ï¼Œçœ‹èµ·ä¾†å¥½"
+                                        "å¤šäº†ã€‚\n" NOR, target);
 
-                        tell_object(target, HIY "Äã¸Ðµ½±»ÈÅÂÒµÄÕæÆø"
-                                            "ÂýÂýÆ½¾²ÁËÏÂÀ´¡£\n" NOR);
+                        tell_object(target, HIY "ä½ æ„Ÿåˆ°è¢«æ“¾äº‚çš„çœŸæ°£"
+                                            "æ…¢æ…¢å¹³éœäº†ä¸‹ä¾†ã€‚\n" NOR);
                 }
                 target->clear_condition("no_exert");
         }

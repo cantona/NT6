@@ -3,16 +3,16 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIM "¸É½«Ê¥·û" NOR, ({ "ganjiang charm", "charm" }));
+        set_name(HIM "å¹¹å°‡è–ç¬¦" NOR, ({ "ganjiang charm", "charm" }));
         set_weight(3000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIM "¸É½«Ê¥·û¿ÉÒÔ½«ÆÕÍ¨µÀ¾ßÉı¼¶Îª¿ÉSUMMONµÀ¾ß£¬ÒÔºó¿ÉÒÔËæÊ±\n"
-                            "ÕÙ»½(SUMMON)Éı¼¶ºóµÄµÀ¾ß¡£\n"
-                            "Ö¸Áî¸ñÊ½£º upd <ÓûÉı¼¶µÀ¾ßID> to <SUMMONµÄ´úºÅ> \n" NOR);
+                set("long", HIM "å¹¹å°‡è–ç¬¦å¯ä»¥å°‡æ™®é€šé“å…·å‡ç´šç‚ºå¯SUMMONé“å…·ï¼Œä»¥å¾Œå¯ä»¥éš¨æ™‚\n"
+                            "å¬å–š(SUMMON)å‡ç´šå¾Œçš„é“å…·ã€‚\n"
+                            "æŒ‡ä»¤æ ¼å¼ï¼š upd <æ¬²å‡ç´šé“å…·ID> to <SUMMONçš„ä»£è™Ÿ> \n" NOR);
                         
-                set("unit", "¿é");
+                set("unit", "å¡Š");
                 set("value", 500000);
         }
         setup();
@@ -37,55 +37,55 @@ int do_integrate(string arg)
         mapping data;
 
         if (! arg)
-                return notify_fail("ÄãÒªÍùÊ²Ã´µÀ¾ßÉÏÊ¹ÓÃ¸ÃÊ¥·û£¿\n");
+                return notify_fail("ä½ è¦å¾€ä»€éº¼é“å…·ä¸Šä½¿ç”¨è©²è–ç¬¦ï¼Ÿ\n");
         
         if (sscanf(arg, "%s to %s", item, str) != 2)
-                return notify_fail("Ö¸Áî¸ñÊ½£º upd <ÓûÉı¼¶µÀ¾ßID> to <SUMMONµÄID> \n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼š upd <æ¬²å‡ç´šé“å…·ID> to <SUMMONçš„ID> \n");
                 
         me = this_player();
         if (! objectp(ob = present(item, me)) &&
             ! objectp(ob = present(item, environment(me))))
-                return notify_fail("ÄãÉíÉÏºÍ¸½½üÃ»ÓĞÕâÑùµÀ¾ß°¡¡£\n");
+                return notify_fail("ä½ èº«ä¸Šå’Œé™„è¿‘æ²’æœ‰é€™æ¨£é“å…·å•Šã€‚\n");
 
         if (member_array(F_EQUIP, deep_inherit_list(ob)) == -1 &&
             !query("can_summon", ob) )
-                return notify_fail("ÕâÀàÎïÆ·ÎŞ·¨Éı¼¶¡£\n");        
+                return notify_fail("é€™é¡ç‰©å“ç„¡æ³•å‡ç´šã€‚\n");        
         
         if( query("unique", ob) || ob->is_item_make() || 
             ob->is_character() || ! clonep(ob) || ob->is_no_clone() ||
             query("task_ob", ob) || query("no_store", ob) || 
             query("maze_item", ob) )
-                return notify_fail("Õâ¸öÎïÆ·ÎŞ·¨Éı¼¶¡£\n");
+                return notify_fail("é€™å€‹ç‰©å“ç„¡æ³•å‡ç´šã€‚\n");
         
         if( query("money_id", ob) )
-                return notify_fail("ÄãÃ»ÓÃ¹ıÇ®°¡£¿\n"); 
+                return notify_fail("ä½ æ²’ç”¨ééŒ¢å•Šï¼Ÿ\n"); 
                 
         if( query("only_do_effect", ob) || 
             query("food_supply", ob) )
-                return notify_fail("Õâ¸öÎïÆ·ÎŞ·¨Éı¼¶¡£\n");
+                return notify_fail("é€™å€‹ç‰©å“ç„¡æ³•å‡ç´šã€‚\n");
                 
         if (sscanf(base_name(ob), "/data/%*s"))      
-                return notify_fail("ÕâÀàÎïÆ·ÎŞ·¨ÔÙÉı¼¶¡£\n");
+                return notify_fail("é€™é¡ç‰©å“ç„¡æ³•å†å‡ç´šã€‚\n");
 
         if( query("equipped", ob) )
-                return notify_fail("ÄãÏÈĞ¶³ıËûÏÈ¡£\n");
+                return notify_fail("ä½ å…ˆå¸é™¤ä»–å…ˆã€‚\n");
 
         if( mapp(query("can_summon", me)) && sizeof(query("can_summon", me)) )
         {
                 if( member_array(str,keys(query("can_summon", me))) != -1 )
-                        return notify_fail("ÄãÒÑ¾­ÓĞÍ¬ÑùµÄSUMMON IDÁË,ÇëÖØĞÂ»»¸ö!\n");
+                        return notify_fail("ä½ å·²ç¶“æœ‰åŒæ¨£çš„SUMMON IDäº†,è«‹é‡æ–°æ›å€‹!\n");
                         
                 if( member_array(base_name(ob),values(query("can_summon", me))) != -1 )
-                        return notify_fail("Õâ¸öÎïÆ·ÒÑ¾­Éı¼¶¹ıÁË¡£\n");
+                        return notify_fail("é€™å€‹ç‰©å“å·²ç¶“å‡ç´šéäº†ã€‚\n");
         }
                 
-        message_sort(HIR "\n$N" HIR "ÓÃÀûÈĞ½«Ë«ÊÖÊÖĞÄ»®ÆÆ£¬Ë«ÕÆÌùÔÚ" + ob->name() + HIR "ÉÏ£¬"
-                     "½¥½¥µØ£¬" + ob->name() + HIR "½«$N" HIR "µÄÏÊÑªÎüÊÕ¡­¡­\n\n" NOR, me);
+        message_sort(HIR "\n$N" HIR "ç”¨åˆ©åˆƒå°‡é›™æ‰‹æ‰‹å¿ƒåŠƒç ´ï¼Œé›™æŒè²¼åœ¨" + ob->name() + HIR "ä¸Šï¼Œ"
+                     "æ¼¸æ¼¸åœ°ï¼Œ" + ob->name() + HIR "å°‡$N" HIR "çš„é®®è¡€å¸æ”¶â€¦â€¦\n\n" NOR, me);
 
-        tell_object(me, "Äã°Ñ" + name() + "¸ÇÔÚ" + ob->name() + "ÉÏ£¬È»ºó¿ÚÖĞÄîÄîÓĞ´Ê£¬\n"
-                        "Ö»¼ûÊ¥·û»¯×÷Ò»µÀºì¹â·ÉÈë" + ob->name() + "ÌåÄÚ£¡\n");
+        tell_object(me, "ä½ æŠŠ" + name() + "è“‹åœ¨" + ob->name() + "ä¸Šï¼Œç„¶å¾Œå£ä¸­å¿µå¿µæœ‰è©ï¼Œ\n"
+                        "åªè¦‹è–ç¬¦åŒ–ä½œä¸€é“ç´…å…‰é£›å…¥" + ob->name() + "é«”å…§ï¼\n");
 
-        tell_object(me, HIC "Äã¸ĞÊÜ" + ob->name() + HIC"·¢ÉúÁË²»¿ÉÑÔÓ÷µÄ±ä»¯¡£\n" NOR);
+        tell_object(me, HIC "ä½ æ„Ÿå—" + ob->name() + HIC"ç™¼ç”Ÿäº†ä¸å¯è¨€å–»çš„è®ŠåŒ–ã€‚\n" NOR);
         
         data = copy(ob->query_entire_dbase());
         data["item_owner"] = query("id", me);
@@ -106,7 +106,7 @@ TEXT;
                 ob = find_object(filename);      
                 if (! ob)
                 {
-                        write("ÎÄ¼ş³ö´í£¬ÇëÓëÎ×Ê¦ÁªÏµ£¡\n");
+                        write("æ–‡ä»¶å‡ºéŒ¯ï¼Œè«‹èˆ‡å·«å¸«è¯ç³»ï¼\n");
                         log_file("static/template", sprintf("%s %s creating  %s(%s) had errors.\n",
                                  log_time(),log_id(me),filter_color(ob->name(1)),query("id", ob)));
                         return 1;
@@ -114,8 +114,8 @@ TEXT;
                 {
                         ob->move(me, 1);
                         //str = replace_string(str, " ", "-");
-                        tell_object(me, HIG "¿ª¹â³É¹¦£¡ÒÔºóÇëÓÃ summon " + 
-                                    str + " À´ÕÙ»½¸ÃÎïÆ·¡£\n" NOR);
+                        tell_object(me, HIG "é–‹å…‰æˆåŠŸï¼ä»¥å¾Œè«‹ç”¨ summon " + 
+                                    str + " ä¾†å¬å–šè©²ç‰©å“ã€‚\n" NOR);
                         log_file("static/template", sprintf("%s %s created  %s(%s)\n",
                                  log_time(), log_id(me),
                                  filter_color(ob->name(1)),query("id", ob)));

@@ -5,11 +5,11 @@ inherit CLOTH;
 void check_color(); 
 void create()
 {
-   set_name(YEL "ÆßÉ«ÄŞÉÑ" NOR, ({ "color skirt","skirt" }) );
+   set_name(YEL "ä¸ƒè‰²éœ“è£³" NOR, ({ "color skirt","skirt" }) );
    set_weight(20);
-                set("long", "È¡²ÊºçÆßÉ«£¬¼¯ÌìµØÁéÆø£¬Ò¹³½ÃîÊÖÖ¯³É¡£ \n");
+                set("long", "å–å½©è™¹ä¸ƒè‰²ï¼Œé›†å¤©åœ°éˆæ°£ï¼Œå¤œè¾°å¦™æ‰‹ç¹”æˆã€‚ \n");
      set("material", "silk");
-     set("unit", "¼ş");
+     set("unit", "ä»¶");
      set("armor_prop/armor",50 ); 
      set("armor_prop/per", 20);
      set("female_only", 100);  
@@ -29,7 +29,7 @@ void init()
                     }
        me = this_player();
        if (!geteuid(me)||geteuid(me)!="night")  {
-       tell_object(me,"ÆßÉ«ÄŞÉÑ»¯ÎªÒ»µÀÑ£Ä¿µÄ¹â»ª£¬ÏûÊ§ÔÚÁË¿ÕÆøÖĞ¡£\n");  
+       tell_object(me,"ä¸ƒè‰²éœ“è£³åŒ–ç‚ºä¸€é“çœ©ç›®çš„å…‰è¯ï¼Œæ¶ˆå¤±åœ¨äº†ç©ºæ°£ä¸­ã€‚\n");  
                  destruct(ob);
                     } 
       return;
@@ -41,25 +41,25 @@ void check_color()
   remove_call_out("check_color");
        switch ((int)random(7)) {
            case 0 : 
-              set("name", HIG"ÆßÉ«ÄŞÉÑ"NOR, ob);
+              set("name", HIG"ä¸ƒè‰²éœ“è£³"NOR, ob);
                break; 
            case 1 : 
-              set("name", HIW"ÆßÉ«ÄŞÉÑ"NOR, ob);
+              set("name", HIW"ä¸ƒè‰²éœ“è£³"NOR, ob);
                break;
            case 2 :
-              set("name", HIR"ÆßÉ«ÄŞÉÑ"NOR, ob);
+              set("name", HIR"ä¸ƒè‰²éœ“è£³"NOR, ob);
                break;
            case 3 :
-              set("name", HIY"ÆßÉ«ÄŞÉÑ"NOR, ob);
+              set("name", HIY"ä¸ƒè‰²éœ“è£³"NOR, ob);
                break;
            case 4 :
-              set("name", HIM"ÆßÉ«ÄŞÉÑ"NOR, ob);
+              set("name", HIM"ä¸ƒè‰²éœ“è£³"NOR, ob);
                break;
            case 5 :
-              set("name", HIC"ÆßÉ«ÄŞÉÑ"NOR, ob);
+              set("name", HIC"ä¸ƒè‰²éœ“è£³"NOR, ob);
                break; 
            case 6 :
-              set("name", YEL"ÆßÉ«ÄŞÉÑ"NOR, ob);
+              set("name", YEL"ä¸ƒè‰²éœ“è£³"NOR, ob);
                break;
            default:
                 break;

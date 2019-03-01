@@ -1,4 +1,4 @@
-// ½âÃÔ¿ªËø·¿¼ä¶¼¼Ì³Ð¸ÃÎÄ¼þ
+// è§£è¿·é–‹éŽ–æˆ¿é–“éƒ½ç¹¼æ‰¿è©²æ–‡ä»¶
 // by Rcwiz for yhonline
 
 #include <ansi.h>
@@ -11,17 +11,17 @@ void init()
        
        if (! objectp(ob = find_object(TSROB)))
        {
-             write(HIR "TSR Îï¼þÔØÈë³ö´í£¬ÇëÓë±¾Õ¾ (admin) ÁªÏµ¡£\n" NOR);
+             write(HIR "TSR ç‰©ä»¶è¼‰å…¥å‡ºéŒ¯ï¼Œè«‹èˆ‡æœ¬ç«™ (admin) è¯ç³»ã€‚\n" NOR);
              return;
        }
 
        if (wizardp(me))
        {
                 
-                write(HIG"\n·¿¼äID£º"+query("room_id", this_object())+"\n");
-                write(HIG "¹ÜÀíÎï¼þ·ÖÅä¸Ã·¿¼äµÄÐòÁÐºÅ£º" + query(query("room_id"), ob) + 
+                write(HIG"\næˆ¿é–“IDï¼š"+query("room_id", this_object())+"\n");
+                write(HIG "ç®¡ç†ç‰©ä»¶åˆ†é…è©²æˆ¿é–“çš„åºåˆ—è™Ÿï¼š" + query(query("room_id"), ob) + 
                           "\n"NOR);
-                write(HIG "ÕýÈ·¿ªËøË³Ðò£ºF¡¢A¡¢B¡¢C¡¢D¡¢E\n" NOR);
+                write(HIG "æ­£ç¢ºé–‹éŽ–é †åºï¼šFã€Aã€Bã€Cã€Dã€E\n" NOR);
                 
        }
        
@@ -35,29 +35,29 @@ int do_move(string arg)
        string room_id;
        
        if (! arg || arg != "desk")
-             return notify_fail("ÄãÏëÒÆ¶¯Ê²Ã´£¿\n");
+             return notify_fail("ä½ æƒ³ç§»å‹•ä»€éº¼ï¼Ÿ\n");
 
        if (me->is_busy() || me->is_fighting())
-             return notify_fail("µÈÄãÃ¦ÍêÁËÔÙËµ°É£¡\n");
+             return notify_fail("ç­‰ä½ å¿™å®Œäº†å†èªªå§ï¼\n");
 
        ob = find_object(TSROB);
        
        if ( ! objectp(ob))
-             return notify_fail("TSR Îï¼þÔØÈë³ö´í£¬ÇëÓëÎ×Ê¦ÁªÏµ£¡\n");
+             return notify_fail("TSR ç‰©ä»¶è¼‰å…¥å‡ºéŒ¯ï¼Œè«‹èˆ‡å·«å¸«è¯ç³»ï¼\n");
 
        if( query("lock/unlocked", ob) )
-             return notify_fail("»ú¹ØÒÑ¾­±»´ò¿ªÁË£¬ÕâÑùÊÇ¶à´ËÒ»¾Ù¡£\n");
+             return notify_fail("æ©Ÿé—œå·²ç¶“è¢«æ‰“é–‹äº†ï¼Œé€™æ¨£æ˜¯å¤šæ­¤ä¸€èˆ‰ã€‚\n");
 
        room_id=query("room_id", this_object());
        room_id=query(room_id, ob);
 
        if (! stringp(ob->openlock(room_id)))
-             return notify_fail("TSR Êý¾Ý³ö´í£¬ÇëÓëÎ×Ê¦ÁªÏµ£¡\n");
+             return notify_fail("TSR æ•¸æ“šå‡ºéŒ¯ï¼Œè«‹èˆ‡å·«å¸«è¯ç³»ï¼\n");
 
        me->start_busy(1 + random(2));
 
-       message_vision(HIC "$N" HIC "½«Ê¯×ÀÓÃÁ¦µÄÐý×ª£¬Ö»ÌýµÃ²»Ô¶´¦´«À´"
-                      "Ò»ÕóºäÂ¡Â¡µÄÏñÊÇ´¥¶¯»ú¹ØµÄÉùÒô¡£\n" NOR, me);
+       message_vision(HIC "$N" HIC "å°‡çŸ³æ¡Œç”¨åŠ›çš„æ—‹è½‰ï¼Œåªè½å¾—ä¸é è™•å‚³ä¾†"
+                      "ä¸€é™£è½Ÿéš†éš†çš„åƒæ˜¯è§¸å‹•æ©Ÿé—œçš„è²éŸ³ã€‚\n" NOR, me);
 
        return 1;
 }

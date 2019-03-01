@@ -1,14 +1,14 @@
-// ´óÌÆË«Áú´«
+// å¤§å”é›™é¾å‚³
 //guanjia.c 
  
 inherit NPC;
 
 void create()
 {
-        set_name("¹Ü¼Ò", ({ "guan jia", "guanjia" }));
+        set_name("ç®¡å®¶", ({ "guan jia", "guanjia" }));
         set("age", 48);
-        set("gender", "ÄĞĞÔ");
-        set("long","ÕâÊÇ½ğ¸®µÄ´ó¹Ü¼Ò,ÀïÀïÍâÍâµÄÊÂ´ó²¿·ÖÓÉËû×öÖ÷.£\/n");
+        set("gender", "ç”·æ€§");
+        set("long","é€™æ˜¯é‡‘åºœçš„å¤§ç®¡å®¶,è£¡è£¡å¤–å¤–çš„äº‹å¤§éƒ¨åˆ†ç”±ä»–åšä¸».â–¡/n");
         set("attitude", "peaceful");
    set("str", 20);
         set("combat_exp", 200000);

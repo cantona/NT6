@@ -5,26 +5,26 @@
 inherit HAMMER;
 
 mapping exits_name=([
-        "east":            "¶«·½",
-        "south":           "ÄÏ·½",
-        "west":            "Î÷·½",
-        "north":           "±±·½",
-        "eastup":          "¶«ÉÏ·½",
-        "southup":         "ÄÏÉÏ·½",
-        "westup":          "Î÷ÉÏ·½",
-        "northup":         "±±ÉÏ·½",
-        "eastdown":        "¶«ÏÂ·½",
-        "southdown":       "ÄÏÏÂ·½",
-        "westdown":        "Î÷ÏÂ·½",
-        "northdown":       "±±ÏÂ·½",
-        "northeast":       "¶«±±·½",
-        "northwest":       "Î÷±±·½",
-        "southeast":       "¶«ÄÏ·½",
-        "southwest":       "Î÷ÄÏ·½",
-        "up":              "ÉÏ·½",
-        "down":            "ÏÂ·½",
-        "enter":           "Àï±ß",
-        "out":             "Íâ±ß",
+        "east":            "æ±æ–¹",
+        "south":           "å—æ–¹",
+        "west":            "è¥¿æ–¹",
+        "north":           "åŒ—æ–¹",
+        "eastup":          "æ±ä¸Šæ–¹",
+        "southup":         "å—ä¸Šæ–¹",
+        "westup":          "è¥¿ä¸Šæ–¹",
+        "northup":         "åŒ—ä¸Šæ–¹",
+        "eastdown":        "æ±ä¸‹æ–¹",
+        "southdown":       "å—ä¸‹æ–¹",
+        "westdown":        "è¥¿ä¸‹æ–¹",
+        "northdown":       "åŒ—ä¸‹æ–¹",
+        "northeast":       "æ±åŒ—æ–¹",
+        "northwest":       "è¥¿åŒ—æ–¹",
+        "southeast":       "æ±å—æ–¹",
+        "southwest":       "è¥¿å—æ–¹",
+        "up":              "ä¸Šæ–¹",
+        "down":            "ä¸‹æ–¹",
+        "enter":           "è£¡é‚Š",
+        "out":             "å¤–é‚Š",
 ]);
 
 int do_shoot(string id, object me, object bow, object room, string what, int m);
@@ -58,20 +58,20 @@ string exits_reverse(string dir)
 
 void create()
 {
-        set_name(BLINK+HIM"ÉäÔÂ¹­"NOR,({ "moon bow","bow","gong" }) );
+        set_name(BLINK+HIM"å°„æœˆå¼“"NOR,({ "moon bow","bow","gong" }) );
         set_weight(20000);
         if(clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIM"Ò»°ÑÇ§Äêº®Ìú´òÖÆµÄ³¤¹­£¬ÈëÊÖÒì³£³ÁÖØ£¬ÍşÁ¦·Ç·²¡£\n");
-                set("unit", "°Ñ");
+                set("long", HIM"ä¸€æŠŠåƒå¹´å¯’éµæ‰“åˆ¶çš„é•·å¼“ï¼Œå…¥æ‰‹ç•°å¸¸æ²‰é‡ï¼Œå¨åŠ›éå‡¡ã€‚\n");
+                set("unit", "æŠŠ");
                 set("value", 100000);
                 set("consistence", 80);
                 set("dam", 1600);        
                 set("no_put", 1);
                 set("is_bow", 1);
-                set("wield_msg", HIY"$N½«$n"HIY"´Ó¼çÉÏÈ¡ÏÂ£¬ÎÕÔÚÊÖÖĞ¡£\n"NOR);
-                set("unwield_msg", HIY"$N½«$n"HIY"ºá¿ç£¬±³ÔÚ¼çÉÏ¡£\n"NOR);
+                set("wield_msg", HIY"$Nå°‡$n"HIY"å¾è‚©ä¸Šå–ä¸‹ï¼Œæ¡åœ¨æ‰‹ä¸­ã€‚\n"NOR);
+                set("unwield_msg", HIY"$Nå°‡$n"HIY"æ©«è·¨ï¼ŒèƒŒåœ¨è‚©ä¸Šã€‚\n"NOR);
                 set("material", "iron");
         }
         init_hammer(10);
@@ -94,30 +94,30 @@ int do_she(string arg)
            bow=query_temp("weapon", me);
 
     if( query("no_fight", room) )
-                   return notify_fail("ÕâÀï²»ĞíÕ½¶·£¡\n");
+                   return notify_fail("é€™è£¡ä¸è¨±æˆ°é¬¥ï¼\n");
 
            if( !bow || !query("is_bow", bow) )
-                   return notify_fail("¹­»¹ÔÚ±³ÉÏÄØ£¬ÔõÃ´ÉäÑ½£¡\n");
+                   return notify_fail("å¼“é‚„åœ¨èƒŒä¸Šå‘¢ï¼Œæ€éº¼å°„å‘€ï¼\n");
 
            if( me->query_str()<query("dam", bow)/20 )
-                   return notify_fail("ÄãÊ¹¾¡³ÔÄÌµÄÁ¦ÆøÒ²À­²»¿ª¹­À´£¬¿´À´Á¦Æø²»¹»£¡\n");  
+                   return notify_fail("ä½ ä½¿ç›¡åƒå¥¶çš„åŠ›æ°£ä¹Ÿæ‹‰ä¸é–‹å¼“ä¾†ï¼Œçœ‹ä¾†åŠ›æ°£ä¸å¤ ï¼\n");  
 
            if( query("consistence", bow)<0 )
            {
-                    message_vision(HIW"$NÊÖÖĞµÄ"+query("name", bow)+HIW"¡°àÔ¡±µØÒ»Éù¶ÏÁË£¡\n",me);
+                    message_vision(HIW"$Næ‰‹ä¸­çš„"+query("name", bow)+HIW"â€œâ–¡â€åœ°ä¸€è²æ–·äº†ï¼\n",me);
                     bow->unequip();
                     destruct(bow);
                     return 1;
            }
 
            if (me->is_busy())
-                   return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ£¡\n");
+                   return notify_fail("ä½ ç¾åœ¨æ­£å¿™è‘—å‘¢ï¼\n");
 
            if( query("qi", me)<200 || query("jing", me)<100 )
-                   return notify_fail("ÄãÏÖÔÚ¾«Æø²»¹»³äÓ¯£¬Ó²À­¹¦ÅÂÓĞÎ£ÏÕ°¡£¡\n"); 
+                   return notify_fail("ä½ ç¾åœ¨ç²¾æ°£ä¸å¤ å……ç›ˆï¼Œç¡¬æ‹‰åŠŸæ€•æœ‰å±éšªå•Šï¼\n"); 
 
            if (! arg || sscanf(arg, "%s %d", what, n) != 2)
-                   return notify_fail("²»»áÉä¼ı£¿ÕÒÈË¼Ò½Ì½ÌÄã°É£¡\n");
+                   return notify_fail("ä¸æœƒå°„ç®­ï¼Ÿæ‰¾äººå®¶æ•™æ•™ä½ å§ï¼\n");
                    
             if( n>query("dam", bow)/200)n=query("dam", bow)/200;
             
@@ -132,27 +132,27 @@ int do_she(string arg)
         }
 
         if (room == environment(me))
-                      return notify_fail("¿´Çå³şµã£¬³¯ÄÄÀïÉäÑ½Äã£¿\n");
+                      return notify_fail("çœ‹æ¸…æ¥šé»ï¼Œæœå“ªè£¡å°„å‘€ä½ ï¼Ÿ\n");
                       
         if (objectp(room))
              {
             if( query("have_quest", room) || query("no_fight", room) )
-                              return notify_fail("ÄÇÀïÓĞÉñÃ÷×ôÓÓ£¬²»ÈİÄãºúÀ´Ò²£¡\n"); 
+                              return notify_fail("é‚£è£¡æœ‰ç¥æ˜ä½ä½‘ï¼Œä¸å®¹ä½ èƒ¡ä¾†ä¹Ÿï¼\n"); 
                               
             "/cmds/std/look.c"->look_room(me, room);  
                       
-                      message_vision(HIY"$N´Ó¼ıÄÒÄÚ³é³öÒ»Ö§"HIW"Óğ¼ı"HIY"£¬´îÔÚ"
-                                       +query("name", bow)+HIY"ÉÏ£¬ËæºóÁ¢ÁËÒ»¸ö°ÔÍõÉÏ¹­Ê½£¬\n³¯"HIR
-                                       + exits_name[what] + HIY"°Ñ¹­À­Âú.......\n"NOR, me);
+                      message_vision(HIY"$Nå¾ç®­å›Šå…§æŠ½å‡ºä¸€æ”¯"HIW"ç¾½ç®­"HIY"ï¼Œæ­åœ¨"
+                                       +query("name", bow)+HIY"ä¸Šï¼Œéš¨å¾Œç«‹äº†ä¸€å€‹éœ¸ç‹ä¸Šå¼“å¼ï¼Œ\næœ"HIR
+                                       + exits_name[what] + HIY"æŠŠå¼“æ‹‰æ»¿.......\n"NOR, me);
                                        
-            tell_object(all_inventory(room), HIB"Äã¾õµÃÒ»¹ÉÃÍÁÒµÄÉ±»ú´Ó"HIR
-                                       + exits_name[exits_reverse(what)] + HIB"´«À´£¡£¡\n"NOR);
+            tell_object(all_inventory(room), HIB"ä½ è¦ºå¾—ä¸€è‚¡çŒ›çƒˆçš„æ®ºæ©Ÿå¾"HIR
+                                       + exits_name[exits_reverse(what)] + HIB"å‚³ä¾†ï¼ï¼\n"NOR);
 
-                      tell_object(me, HIR + exits_name[what] + HIW"µÄÇé¾°ÄãÒ»Ä¿ÁËÈ»£¬"
-                                + "Äã°ÑÀû¼ı½¥½¥Ãé×¼ÁË¡ª¡ª>\n"NOR);   
+                      tell_object(me, HIR + exits_name[what] + HIW"çš„æƒ…æ™¯ä½ ä¸€ç›®äº†ç„¶ï¼Œ"
+                                + "ä½ æŠŠåˆ©ç®­æ¼¸æ¼¸ç„æº–äº†â”€â”€>\n"NOR);   
                       me->start_busy(2 + random(3));  
             input_to("do_shoot", me, bow, room, what, m);
-             } else return notify_fail("¿´Çå³şµã£¬³¯ÄÄÀïÉäÑ½Äã£¿\n");  
+             } else return notify_fail("çœ‹æ¸…æ¥šé»ï¼Œæœå“ªè£¡å°„å‘€ä½ ï¼Ÿ\n");  
 
             return 1;
 }
@@ -164,7 +164,7 @@ int do_shoot(string id, object me, object bow, object room, string what, int m)
 
             if (! id || id == "") 
             {
-                     message_vision("$NÌ¾ÁË¿ÚÆø£¬½«¼ı´Ó"+query("name", bow)+"ÉÏÓÖÈ¡ÁËÏÂÀ´¡£\n",me);
+                     message_vision("$Nå˜†äº†å£æ°£ï¼Œå°‡ç®­å¾"+query("name", bow)+"ä¸Šåˆå–äº†ä¸‹ä¾†ã€‚\n",me);
                      return 1;
             }
 
@@ -172,19 +172,19 @@ int do_shoot(string id, object me, object bow, object room, string what, int m)
             {
                      if( query("is_quest", ob) && query("killer", ob) != query("id", me) )
                      {
-                              tell_object(me,"¡°Åé¡±µØÒ»Éù£¬Äã±»"+query("name", bow )
-                                          + "ÕğÁËÒ»ÏÂ£¬¿´À´Ä¿±ê²»ºÃÈÇÑ½£¡\n");
+                              tell_object(me,"â€œç °â€åœ°ä¸€è²ï¼Œä½ è¢«"+query("name", bow )
+                                          + "éœ‡äº†ä¸€ä¸‹ï¼Œçœ‹ä¾†ç›®æ¨™ä¸å¥½æƒ¹å‘€ï¼\n");
                               return 1;
                      }
 
                      if( playerp(ob) && query("age", ob)<18 )
                      {
-                              tell_object(me,"¡°Åé¡±µØÒ»Éù£¬Äã±»"+query("name", bow )
-                                          + "ÕğÁËÒ»ÏÂ£¬Ô­À´ÄãµÄÄ¿±êÊÇĞ¡ÅóÓÑÑ½£¡\n");
+                              tell_object(me,"â€œç °â€åœ°ä¸€è²ï¼Œä½ è¢«"+query("name", bow )
+                                          + "éœ‡äº†ä¸€ä¸‹ï¼ŒåŸä¾†ä½ çš„ç›®æ¨™æ˜¯å°æœ‹å‹å‘€ï¼\n");
                               return 1;
                      }
 
-                      message_vision(HIY"$N¡°à²¡±µØÒ»¼ı³¯"HIR + exits_name[what] + HIY"ÉäÁË³öÈ¥£¡\n", me);
+                      message_vision(HIY"$Nâ€œå—–â€åœ°ä¸€ç®­æœ"HIR + exits_name[what] + HIY"å°„äº†å‡ºå»ï¼\n", me);
 
                       damage=query("dam", bow)*(5+me->query_str())/(m*5+ob->query_dex());
                       if (damage < 100) damage = 100;
@@ -197,29 +197,29 @@ int do_shoot(string id, object me, object bow, object room, string what, int m)
                   || random(query("combat_exp", me))>query("combat_exp", ob)*2 )
                      {
                               if (damage > 2000)
-                                message_vision(HIY"¡°à²¡±µØÒ»Éù£¬Ò»Ã¶"HIW"Óğ¼ı´Ó"HIR
+                                message_vision(HIY"â€œå—–â€åœ°ä¸€è²ï¼Œä¸€æš"HIW"ç¾½ç®­å¾"HIR
                                                    + exits_name[exits_reverse(what)]
-                                                   + HIY"·ÉÀ´£¬"HIR"¡°àÛàÍ¡±"HIY"Ò»ÉùÔúÔÚ$N"HIR"¶îÍ·"HIY"ÉÏ£¡\n"NOR,
+                                                   + HIY"é£›ä¾†ï¼Œ"HIR"â€œå™—å—¤â€"HIY"ä¸€è²ç´®åœ¨$N"HIR"é¡é ­"HIY"ä¸Šï¼\n"NOR,
                                                    ob);
                               else if (damage > 1500)
-                                message_vision(HIY"¡°à²¡±µØÒ»Éù£¬Ò»Ã¶"HIW"Óğ¼ı´Ó"HIR
+                                message_vision(HIY"â€œå—–â€åœ°ä¸€è²ï¼Œä¸€æš"HIW"ç¾½ç®­å¾"HIR
                                                    + exits_name[exits_reverse(what)]
-                                                   + HIY"·ÉÀ´£¬"HIR"¡°àÛàÍ¡±"HIY"Ò»ÉùÔúÔÚ$N"HIR"ĞØ¿Ú"HIY"ÉÏ£¡\n"NOR,
+                                                   + HIY"é£›ä¾†ï¼Œ"HIR"â€œå™—å—¤â€"HIY"ä¸€è²ç´®åœ¨$N"HIR"èƒ¸å£"HIY"ä¸Šï¼\n"NOR,
                                                    ob);
                               else if (damage > 1000)
-                                message_vision(HIY"¡°à²¡±µØÒ»Éù£¬Ò»Ã¶"HIW"Óğ¼ı´Ó"HIR
+                                message_vision(HIY"â€œå—–â€åœ°ä¸€è²ï¼Œä¸€æš"HIW"ç¾½ç®­å¾"HIR
                                                    + exits_name[exits_reverse(what)]
-                                                   + HIY"·ÉÀ´£¬"HIR"¡°àÛàÍ¡±"HIY"Ò»ÉùÔúÔÚ$N"HIR"¼ç°ò"HIY"ÉÏ£¡\n"NOR,
+                                                   + HIY"é£›ä¾†ï¼Œ"HIR"â€œå™—å—¤â€"HIY"ä¸€è²ç´®åœ¨$N"HIR"è‚©è†€"HIY"ä¸Šï¼\n"NOR,
                                                    ob);
                               else if (damage > 500)
-                                message_vision(HIY"¡°à²¡±µØÒ»Éù£¬Ò»Ã¶"HIW"Óğ¼ı´Ó"HIR
+                                message_vision(HIY"â€œå—–â€åœ°ä¸€è²ï¼Œä¸€æš"HIW"ç¾½ç®­å¾"HIR
                                                    + exits_name[exits_reverse(what)]
-                                                   + HIY"·ÉÀ´£¬"HIR"¡°àÛàÍ¡±"HIY"Ò»ÉùÔúÔÚ$N"HIR"Ğ¡ÍÈ"HIY"ÉÏ£¡\n"NOR,
+                                                   + HIY"é£›ä¾†ï¼Œ"HIR"â€œå™—å—¤â€"HIY"ä¸€è²ç´®åœ¨$N"HIR"å°è…¿"HIY"ä¸Šï¼\n"NOR,
                                                    ob);
                               else
-                                message_vision(HIY"¡°à²¡±µØÒ»Éù£¬Ò»Ã¶"HIW"Óğ¼ı´Ó"HIR
+                                message_vision(HIY"â€œå—–â€åœ°ä¸€è²ï¼Œä¸€æš"HIW"ç¾½ç®­å¾"HIR
                                                    + exits_name[exits_reverse(what)]
-                                                   + HIY"·ÉÀ´£¬"HIR"¡°àÛàÍ¡±"HIY"Ò»ÉùÔúÔÚ$N"HIR"ÊÖ±Û"HIY"ÉÏ£¡\n"NOR,
+                                                   + HIY"é£›ä¾†ï¼Œ"HIR"â€œå™—å—¤â€"HIY"ä¸€è²ç´®åœ¨$N"HIR"æ‰‹è‡‚"HIY"ä¸Šï¼\n"NOR,
                                                    ob);
                               damage = damage / 4 + random(damage / 2);                                  
                               ob->receive_damage("qi", damage, me);
@@ -228,7 +228,7 @@ int do_shoot(string id, object me, object bow, object room, string what, int m)
                                       ob->receive_wound("qi",damage-query_temp("apply/armor", ob),me);
                               
                               COMBAT_D->report_status(ob, random(2));  
-                                      tell_object(me, HIR"ºÙºÙ£¬Ä¿±êÓ¦Éù¶øµ¹£¬ÕæÊÇºÃ¼ı·¨£¡\n"NOR);
+                                      tell_object(me, HIR"å˜¿å˜¿ï¼Œç›®æ¨™æ‡‰è²è€Œå€’ï¼ŒçœŸæ˜¯å¥½ç®­æ³•ï¼\n"NOR);
 
                               ratio=query("combat_exp", me)/100;
                               ratio=query("combat_exp", ob)/ratio;
@@ -251,29 +251,29 @@ int do_shoot(string id, object me, object bow, object room, string what, int m)
                                        damage = damage / 2 + random(damage / 2); 
 
                                        if (damage > 2000)
-                                        message_vision(HIY"¡°à²¡±µØÒ»Éù£¬Ò»Ã¶"HIW"Óğ¼ı´Ó"HIR
+                                        message_vision(HIY"â€œå—–â€åœ°ä¸€è²ï¼Œä¸€æš"HIW"ç¾½ç®­å¾"HIR
                                                            + exits_name[exits_reverse(what)]
-                                                           + HIY"·ÉÀ´£¬"HIR"¡°àÛàÍ¡±"HIY"Ò»ÉùÔúÔÚ$N"HIR"¶îÍ·"HIY"ÉÏ£¡\n"NOR,
+                                                           + HIY"é£›ä¾†ï¼Œ"HIR"â€œå™—å—¤â€"HIY"ä¸€è²ç´®åœ¨$N"HIR"é¡é ­"HIY"ä¸Šï¼\n"NOR,
                                                            obj);
                                        else if (damage > 1500)
-                                        message_vision(HIY"¡°à²¡±µØÒ»Éù£¬Ò»Ã¶"HIW"Óğ¼ı´Ó"HIR
+                                        message_vision(HIY"â€œå—–â€åœ°ä¸€è²ï¼Œä¸€æš"HIW"ç¾½ç®­å¾"HIR
                                                            + exits_name[exits_reverse(what)]
-                                                           + HIY"·ÉÀ´£¬"HIR"¡°àÛàÍ¡±"HIY"Ò»ÉùÔúÔÚ$N"HIR"ĞØ¿Ú"HIY"ÉÏ£¡\n"NOR,
+                                                           + HIY"é£›ä¾†ï¼Œ"HIR"â€œå™—å—¤â€"HIY"ä¸€è²ç´®åœ¨$N"HIR"èƒ¸å£"HIY"ä¸Šï¼\n"NOR,
                                                            obj);
                                        else if (damage > 1000)
-                                        message_vision(HIY"¡°à²¡±µØÒ»Éù£¬Ò»Ã¶"HIW"Óğ¼ı´Ó"HIR
+                                        message_vision(HIY"â€œå—–â€åœ°ä¸€è²ï¼Œä¸€æš"HIW"ç¾½ç®­å¾"HIR
                                                            + exits_name[exits_reverse(what)]
-                                                           + HIY"·ÉÀ´£¬"HIR"¡°àÛàÍ¡±"HIY"Ò»ÉùÔúÔÚ$N"HIR"¼ç°ò"HIY"ÉÏ£¡\n"NOR,
+                                                           + HIY"é£›ä¾†ï¼Œ"HIR"â€œå™—å—¤â€"HIY"ä¸€è²ç´®åœ¨$N"HIR"è‚©è†€"HIY"ä¸Šï¼\n"NOR,
                                                            obj);
                                        else if (damage > 500)
-                                        message_vision(HIY"¡°à²¡±µØÒ»Éù£¬Ò»Ã¶"HIW"Óğ¼ı´Ó"HIR
+                                        message_vision(HIY"â€œå—–â€åœ°ä¸€è²ï¼Œä¸€æš"HIW"ç¾½ç®­å¾"HIR
                                                            + exits_name[exits_reverse(what)]
-                                                           + HIY"·ÉÀ´£¬"HIR"¡°àÛàÍ¡±"HIY"Ò»ÉùÔúÔÚ$N"HIR"Ğ¡ÍÈ"HIY"ÉÏ£¡\n"NOR,
+                                                           + HIY"é£›ä¾†ï¼Œ"HIR"â€œå™—å—¤â€"HIY"ä¸€è²ç´®åœ¨$N"HIR"å°è…¿"HIY"ä¸Šï¼\n"NOR,
                                                            obj);
                                        else
-                                        message_vision(HIY"¡°à²¡±µØÒ»Éù£¬Ò»Ã¶"HIW"Óğ¼ı´Ó"HIR
+                                        message_vision(HIY"â€œå—–â€åœ°ä¸€è²ï¼Œä¸€æš"HIW"ç¾½ç®­å¾"HIR
                                                            + exits_name[exits_reverse(what)]
-                                                           + HIY"·ÉÀ´£¬"HIR"¡°àÛàÍ¡±"HIY"Ò»ÉùÔúÔÚ$N"HIR"ÊÖ±Û"HIY"ÉÏ£¡\n"NOR,
+                                                           + HIY"é£›ä¾†ï¼Œ"HIR"â€œå™—å—¤â€"HIY"ä¸€è²ç´®åœ¨$N"HIR"æ‰‹è‡‚"HIY"ä¸Šï¼\n"NOR,
                                                            obj);
                                 damage = damage / 4 + random(damage / 2);
                                 obj->receive_damage("qi", damage, me);
@@ -281,23 +281,23 @@ int do_shoot(string id, object me, object bow, object room, string what, int m)
                                         obj->receive_wound("qi",damage-query_temp("apply/armor", obj),me);
                                 COMBAT_D->report_status(obj, random(2));  
 
-                                tell_object(me,HIB"Ôã¸â£¬¼ıºÃÏóÉäµ½±ğÈËÁË£¬ºÃºÃÁ·¼ı·¨°É£¡\n"NOR);
+                                tell_object(me,HIB"ç³Ÿç³•ï¼Œç®­å¥½è±¡å°„åˆ°åˆ¥äººäº†ï¼Œå¥½å¥½ç·´ç®­æ³•å§ï¼\n"NOR);
                                } else
                                {
-                                message_vision(HIY"Ò»Ã¶"HIW"Óğ¼ı´Ó"HIR + exits_name[exits_reverse(what)]
-                                                   + HIY"·ÉÀ´£¬"HIR"¡°à²¡±"HIY"µØÒ»Éù´Ó$N"HIR"¶ú±ß"NOR"·É¹ı£¡\n"NOR,
+                                message_vision(HIY"ä¸€æš"HIW"ç¾½ç®­å¾"HIR + exits_name[exits_reverse(what)]
+                                                   + HIY"é£›ä¾†ï¼Œ"HIR"â€œå—–â€"HIY"åœ°ä¸€è²å¾$N"HIR"è€³é‚Š"NOR"é£›éï¼\n"NOR,
                                                    ob);
-                                tell_object(me, HIW"°¥Ñ½£¬¼ıÉä·ÉÁË£¬ºÃºÃÁ·¼ı·¨°É£¡\n"NOR);
+                                tell_object(me, HIW"å“å‘€ï¼Œç®­å°„é£›äº†ï¼Œå¥½å¥½ç·´ç®­æ³•å§ï¼\n"NOR);
                                }
                       } else
                       {
-                        message_vision(HIY"Ò»Ã¶"HIW"Óğ¼ı´Ó"HIR + exits_name[exits_reverse(what)]
-                                           + HIY"·ÉÀ´£¬"HIR"¡°à²¡±"HIY"µØÒ»Éù´Ó$N"HIR"¶ú±ß"NOR"·É¹ı£¡\n"NOR,
+                        message_vision(HIY"ä¸€æš"HIW"ç¾½ç®­å¾"HIR + exits_name[exits_reverse(what)]
+                                           + HIY"é£›ä¾†ï¼Œ"HIR"â€œå—–â€"HIY"åœ°ä¸€è²å¾$N"HIR"è€³é‚Š"NOR"é£›éï¼\n"NOR,
                                            ob);
-                        tell_object(me,HIW"°¥Ñ½£¬¼ıÉä·ÉÁË£¬ºÃºÃÁ·¼ı·¨°É£¡\n"NOR);
+                        tell_object(me,HIW"å“å‘€ï¼Œç®­å°„é£›äº†ï¼Œå¥½å¥½ç·´ç®­æ³•å§ï¼\n"NOR);
                       }
             } else
-                     tell_object(me, "¿ÉÏ§£¬Ä¿±êÏÖÔÚ²»ÔÚÄÇÀïÁË£¬ÄãµÄ¼ı·ÉÁËÒ®£¡\n");
+                     tell_object(me, "å¯æƒœï¼Œç›®æ¨™ç¾åœ¨ä¸åœ¨é‚£è£¡äº†ï¼Œä½ çš„ç®­é£›äº†è€¶ï¼\n");
 
              addn("consistence", -1, bow);
              me->receive_damage("jing", 50, me);

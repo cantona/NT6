@@ -1,189 +1,189 @@
-$HIR$ע���ܶ�������ж�����ʶ�Ӧ�ģ����Ҫ�˽�ĳ���������ϸ��
-    ����������$HIY$(help xxxx) $HIR$�Բ�ѯ$HIC$xxxx$HIR$��������飬���������Ϳ�
-    ���õ�ͬ��ʡ�$NOR$
+$HIR$注：很多命令都是有多個單詞對應的，如果要了解某個命令的詳細情
+    況，就輸入$HIY$(help xxxx) $HIR$以查詢$HIC$xxxx$HIR$命令的詳情，包括參數和可
+    以用的同義詞。$NOR$
 
-$HIY$���û����$NOR$
+$HIY$【用戶命令】$NOR$
 
-alias           �����������д��
-assist          ����ͬ�ŵ����������
-bjtime          ���ڵı���ʱ�䡣
-boss            �ϰ屣����Ļ��
-bossgone        ȡ���ϰ屣����Ļ��
-brothers        �鿴�ֵܵ���Ϣ��������
-cls             ����Ļ��
-describe        ���Լ�������˵����
-exit            ��������ʱ�뿪��Ϸʱ, �����ô�һָ�
-femote          ���ݹؼ��ֲ��ұ��鶯�ʡ�
-finger          ��ʾ����������ϡ�
-hatred          ��ʾ�Լ����ڵ����ɵĳ�޶���ͳ̶ȡ�
-help            ��ʾĳһ���ĳ������İ�����
-hide            �����Լ�����Ʒ��
-hp              ��ʾ��ľ�, ��, ����ֵ��
-id              ����֪����Ʒ��Ӣ�����Ƽ����֡�
-idle            ʹһ���˷�����
-inventory       �г���Ŀǰ������Я����������Ʒ��
-league          �鿴����ͬ�˵���Ϣ��
-miss            ׷Ѱ�Լ�����Ʒ��
-news            �Ķ�Ŀǰ�����š�
-nick            Ϊ�Լ�ȡһ�����������Ż�ͷ�λ�ȡ���ºš�
-passwd          ���ָ������޸�����������롣
-pkd             ���ָ���������鿴Ŀǰ�����˳������
-save            ��������ܶ��Ľ����������
-score           ��ʾ��Ļ������ϡ�
-semote          �г�Ŀǰ����ʹ�õ�$HIY$emote$NOR$��
-set             �趨һЩ������������� $HIY$help settings$NOR$��
-skip            ������ǰ�յ�����Ϣ���鿴��һ����
-suicide         ��ɱ�����˾�һ�˰����ˡ��Ǻǡ�
-summon          �����Լ�����Ʒ��
-swear           �����ѽ�ݣ���Ϊ���չ��⡣
-system          ��ʾĿǰ��Ϸʹ����Դ�������
-time            ���ڵ�ʱ����
-title           ��ʾ��Ŀǰ�Ľ׼���ͷ�Ρ�
-top             ��ʾĿǰ�������������ɵ�������
-unset           ɾ�������������趨����μ�$HIY$set$NOR$��
-uptime          �������������Ϸ�Ѿ�����ִ���˶�á�
-version         ��ʾ��ϷĿǰ���õ� MudOS driver �汾��
-who             �����г����������ϵ���Ҽ���ȼ���
-wizlist         �г�Ŀǰ���е���ʦ������
+alias           定義命令的縮寫。
+assist          幫助同門的人完成任務。
+bjtime          現在的北京時間。
+boss            老板保護屏幕。
+bossgone        取消老板保護屏幕。
+brothers        查看兄弟的信息、絕交。
+cls             清屏幕。
+describe        對自己的描述說明。
+exit            當你想暫時離開遊戲時, 可利用此一指令。
+femote          根據關鍵字查找表情動詞。
+finger          顯示線上玩家資料。
+hatred          顯示自己所在的門派的仇恨對象和程度。
+help            顯示某一類別、某條命令的幫助。
+hide            隱藏自己的物品。
+hp              顯示你的精, 氣, 神數值。
+id              讓你知道物品的英文名稱及名字。
+idle            使一個人發呆。
+inventory       列出你目前身上所攜帶的所有物品。
+league          查看結義同盟的信息。
+miss            追尋自己的物品。
+news            閱讀目前的新聞。
+nick            為自己取一個響亮的名號或頭銜或取消綽號。
+passwd          這個指令可以修改你的人物密碼。
+pkd             這個指令可以讓你查看目前在屠人場中人物。
+save            把你辛苦奮鬥的結果存起來。
+score           顯示你的基本資料。
+semote          列出目前所能使用的$HIY$emote$NOR$。
+set             設定一些環境變數，請見 $HIY$help settings$NOR$。
+skip            跳過當前收到的信息，查看下一條。
+suicide         自殺。死了就一了百了了。呵呵。
+summon          呼喚自己的物品。
+swear           和朋友結拜，成為異姓骨肉。
+system          顯示目前遊戲使用資源的情況。
+time            現在的時辰。
+title           顯示你目前的階級和頭銜。
+top             顯示目前江湖上所有門派的聲望。
+unset           刪除環境變數的設定。請參見$HIY$set$NOR$。
+uptime          告訴您該泥巴遊戲已經連續執行了多久。
+version         顯示遊戲目前所用的 MudOS driver 版本。
+who             可以列出所有在線上的玩家及其等級。
+wizlist         列出目前所有的巫師名單。
 
-$HIY$������̽�����$NOR$
+$HIY$【交流探險命令】$NOR$
 
-ansuan          ����λ��<����>��<����>��
-apply           ʹ��һ����Ʒ��
-ask             ���������ա�
-attack          �ö��﹥�����ˡ�
-beg             ���֡�
-check           ����������ѧ���ļ��ܡ�
-close           ���ָ�������������š�
-cook            ��������ʲô����Ȼ�ǿ��Գ��ˡ�
-come            �ö�����������ж���
-daub            �����ϡ���������������ͿĨ������
-drive           �ϳ���
-drop            ���㶪������Я������Ʒ��
-drug            ��ʳ�������¶���
-emote           ���鶯�ʡ�����$HIY$semote$NOR$��
-fight           ������һ������ֽ̡������ǡ��д����ա���
-fill            Ϊĳ��������ˮ��
-follow          ����ĳ�˻����$HIY$follow none$NOR$ ��ֹͣ���档
-get             ���������ϻ������ڵ�ĳ����Ʒ��
-give            ���㽫ĳ����Ʒ�����ˡ�
-go              ��ָ���ķ����ƶ���������$HIY$e,w,s,n,u,d,enter,out$NOR$�ȴ��档
-guard           �ػ����
-halt            ֹͣս�������������ɵȡ�
-hand            ��ĳ����Ʒ�������ϣ��Ա����á�
-hit             ֱ����һ��������С���
-kill            ��������ʼ����һ�����������ͼɱ���Է���
-look            �鿴�����ڵĻ�����ĳ����Ʒ��������Ƿ���
-makelove        ��ĳ��������
-map             ���Ƶ�ͼ��
-open            ����������š�
-pour            ��ĳ����Ʒ�µ�һ�������е���ʳ�С�
-push            �������ƿ���
-put             ��ĳ����Ʒ�Ž�һ��������
-refuse          �ܾ�ĳ�������Ҫ��
-release         ������ū״̬����������롣
-remove          �ѵ�����ĳ�����ߡ�
-reply           �͸ղ��� $HIY$tell$NOR$ ����˵����ʹ����˵����
-ride            �����ϴ�������ѱ���Ķ��
-right           ͬ��ĳ�������Ҫ��
-say             ���и�����ͬһ��������˶���������˵�Ļ���
-secularize      ���ף������������С�����ˡ�
-sleep           ˯�����ڿ���˯���ĵط�˯�����ָ�������
-stab            ���㽫һ�����߲��ڵ��ϡ�
-stay            ֹͣ����ĸ���״̬�� 
-steal           ͵�������ϵĶ�����
-stop            �ö���ֹͣ���˵Ĺ����� 
-surrender       Ͷ����ֹս����
-team            ����ָ�
-tell            �������ط���ʹ����˵����
-to              ����һ������������ϵ�����, <ָ��>ͨ�������
-                ѶϢ��ָ����$HIY$say, tell, describe, chat, reply$NOR$��
-touch           ����һ�����ߣ������ᷢ��ʲô��������顣
-touxi           �����͵Ϯ��͵Ϯ����ʱ���������������
-                �ر��ʺ��ھ���͵��������ߵ����������
-train           ѱ��ĳ���
-tune            ����ѡ���Ƿ�Ҫ����ĳһƵ����ѶϢ��
-unride          ��������ŵ���ѱ���Ķ�������������
-unwield         ���ָ������������е�������
-vote            �����������ĳ�˲�ȡ�ж����ɴ��ͶƱ������
-wash            ϴ�֣���Ʒ�����ߡ�
-wear            װ��ĳ�����ߡ�
-whisper         ������ͬһ�����е��˶��
-wield           װ��ĳ����Ʒ��������
+ansuan          暗算位于<方向>的<人物>。
+apply           使用一個物品。
+ask             打聽，解謎。
+attack          讓動物攻擊敵人。
+beg             乞討。
+check           打聽別人所學過的技能。
+close           這個指令可以讓你關上門。
+cook            做飯，幹什麼？當然是可以吃了。
+come            讓動物跟隨主人行動。
+daub            在身上、武器、防具上面塗抹東西。
+drive           趕車。
+drop            讓你丟下你所攜帶的物品。
+drug            在食物裡面下毒。
+emote           表情動詞。參照$HIY$semote$NOR$。
+fight           讓你向一個人物「討教」或者是「切磋武藝」。
+fill            為某個容器續水。
+follow          跟隨某人或生物。$HIY$follow none$NOR$ 則停止跟隨。
+get             讓你撿起地上或容器內的某樣物品。
+give            讓你將某樣物品給別人。
+go              往指定的方向移動。可以用$HIY$e,w,s,n,u,d,enter,out$NOR$等代替。
+guard           守護命令。
+halt            停止戰鬥、打坐、吐納等。
+hand            將某件物品拿在手上，以被他用。
+hit             直接向一個人物「進招」。
+kill            你主動開始攻擊一個人物，並且試圖殺死對方。
+look            查看你所在的環境、某件物品、生物、或是方向。
+makelove        和某人做愛。
+map             繪制地圖。
+open            可以讓你打開門。
+pour            將某樣毒品下到一個容器中的飲食中。
+push            將他人推開。
+put             將某樣物品放進一個容器。
+refuse          拒絕某人提出的要求。
+release         結束主奴狀態，將動物放離。
+remove          脫掉身上某件防具。
+reply           和剛才用 $HIY$tell$NOR$ 和你說話的使用者說話。
+ride            你騎上代步的已馴養的動物。
+right           同意某人提出的要求。
+say             所有跟你在同一個房間的人都會聽到你說的話。
+secularize      還俗，不做和尚尼姑小喇嘛了。
+sleep           睡覺。在可以睡覺的地方睡覺，恢復體力。
+stab            讓你將一件道具插在地上。
+stay            停止動物的跟隨狀態。 
+steal           偷他人身上的東西。
+stop            讓動物停止對人的攻擊。 
+surrender       投降終止戰鬥。
+team            隊伍指令。
+tell            和其他地方的使用者說話。
+to              可以一次輸出多行以上的文字, <指令>通常是輸出
+                訊息的指令如$HIY$say, tell, describe, chat, reply$NOR$。
+touch           觸摸一件道具，看看會發生什麼特殊的事情。
+touxi           向敵人偷襲。偷襲不成時，則會招至反擊。
+                特別適合于經驗低的玩家向經驗高的玩家拚命。
+train           馴化某動物。
+tune            讓你選擇是否要收聽某一頻道的訊息。
+unride          讓你從騎著的已馴養的動物上跳下來。
+unwield         這個指令讓你放下手中的武器。
+vote            此命令提議對某人採取行動，由大家投票決定。
+wash            洗手，物品、防具。
+wear            裝備某件防具。
+whisper         用來和同一房間中的人耳語。
+wield           裝備某件物品作武器。
 
-$HIY$�����ּ������$NOR$
+$HIY$【各種技能命令】$NOR$
 
-abandon         ����һ������ѧ���ļ��ܵ�ĳ������
-apprentice      �����ĳ��Ϊʦ��
-berserk         ���������Լ���ŭ��
-burning         ��й��ŭ������ս������
-closed          ����ʦ����������ָ����бչ�������
-combine         �ϲ���Ʒ�������µ���Ʒ��
-derive          ��ȡʵս��ᣬ�������Լ�����ѧ������
-detach          ����ʦ�����㿪����
-enable          ָ����Ҫ�õļ��ܣ���ָ����������ͼ������ơ�
-enchase         ��һ����Ʒ��Ƕ������һ����Ʒ��ȥ��
-enforce         ָ��ÿ�λ��е���ʱ��Ҫ�������������˵С�
-exercise        ��������������������תΪ������
-exert           ����������һЩ���칦�ܡ�
-expell          ���㿪�����ɲŵĵ��ӡ�
-imbue           ��һ����Ʒ���뵽��һ����Ʒ�С�
-jingzuo         �����������Լ���������
-learn           �����������й�ĳһ�ּ��ܵ��������⡣
-perform         ʹ������ѧ���⹦(ȭ�š�����������....)
-                ��һЩ����Ĺ�����ʽ����ʽ�����У���
-persuade        Ȱ�ܡ����ҵ���ר�á�
-pique           ��ս��ʱ������ŭ������
-practice        ��ϰĳ������ļ��ܣ�������ܱ����Ǿ���
-prepare         ָ����Ҫ�õ�ȭ�����ܡ�
-recruit         ������ĳ��Ϊ���ӡ�
-research        ���ĳһ�ּ��ܽ����о���
-respirate       �������У�����ľ�ת��ɾ�����
-san             ʹһ����Ʒʥ���Լ�������Ǳ�ܡ�
-skills          �����ѯ��ѧ���ļ��ܡ�
-study           ͨ���Ķ����Ż�������Ʒ��ѧĳЩ���ɡ�
-teach           ����ĵ��ӽ����й�ĳһ�ּ��ܵ��������⡣
+abandon         放棄一項你所學過的技能到某個級別。
+apprentice      讓你拜某人為師。
+berserk         發作，另自己發怒。
+burning         發泄憤怒，提升戰鬥力。
+closed          大宗師可以用這條指令進行閉關修煉。
+combine         合並物品，生成新的物品。
+derive          汲取實戰體會，以提升自己的武學修養。
+detach          請求師傅把你開除。
+enable          指定所要用的技能，需指明技能種類和技能名稱。
+enchase         把一個物品鑲嵌到另外一個物品中去。
+enforce         指定每次擊中敵人時，要發出幾點內力傷敵。
+exercise        打坐，運氣練功，將氣轉為內力。
+exert           用內力進行一些特異功能。
+expell          讓你開除不成才的弟子。
+imbue           將一個物品浸入到另一個物品中。
+jingzuo         靜坐，修煉自己的能力。
+learn           你向別人請教有關某一種技能的疑難問題。
+perform         使用你所學的外功(拳腳、劍法、刀法....)
+                的一些特殊的攻擊方式或招式（絕招）。
+persuade        勸架。峨嵋弟子專用。
+pique           在戰鬥時激發憤怒攻擊。
+practice        練習某個種類的技能，這個技能必須是經過
+prepare         指定所要用的拳術技能。
+recruit         讓你收某人為弟子。
+research        你對某一種技能進行研究。
+respirate       打坐修行，將你的精轉變成精力。
+san             使一個物品聖化以激發它的潛能。
+skills          讓你查詢所學過的技能。
+study           通過閱讀秘笈或其他物品自學某些技巧。
+teach           向你的弟子解釋有關某一種技能的疑難問題。
 
-$HIY$����ʦ���������顿$NOR$
+$HIY$【巫師常用命令簡介】$NOR$
 
-$HIM$����(immortal)$NOR$
+$HIM$精靈(immortal)$NOR$
 
-cpemote         ���Ʊ��鶯�ʡ�
-edemote         ��д��ɾ�����鶯�ʡ�
-flyto           �ɵ�ĳ��������ĳ��������ڵĵط���
-rnemote         �������鶯�ʵ����֡�
+cpemote         復制表情動詞。
+edemote         編寫、刪除表情動詞。
+flyto           飛到某個場景或某個玩家所在的地方。
+rnemote         更換表情動詞的名字。
 
-$HIG$��ʦѧͽ(apprentice)$NOR$
+$HIG$巫師學徒(apprentice)$NOR$
 
-finger          �鿴Ŀǰʹ���ߵ�IP��ַ��
+finger          查看目前使用者的IP地址。
 
-$HIC$��ʦ(apprentice)$NOR$
+$HIC$巫師(apprentice)$NOR$
 
-cd              ������ǰ���ڵ�·����
-cp              �����ļ���
-mv              �ƶ�������
-rm              ɾ���ļ���·����
-edit            ���߱༭������
-more            ���Ĵ󵵰���
-who1            ���������ҵļ���״̬��
-who2            ���������������ĵص㡣
-copyskill       ����һ��NPC����������ҵ����Ժ��书���ܡ�
+cd              更換當前所在的路徑。
+cp              復制文件。
+mv              移動檔案。
+rm              刪除文件或路徑。
+edit            在線編輯檔案。
+more            查閱大檔案。
+who1            瀏覽在線玩家的簡略狀態。
+who2            瀏覽在線玩家所出的地點。
+copyskill       復制一個NPC或是其他玩家的屬性和武功技能。
 
-$HIY$����ʦ(arch)$NOR$
+$HIY$大巫師(arch)$NOR$
 
-promote         �޸�ʹ���ߵ�Ȩ�ޡ�
-examine         ����������/ĳ����ҵ������Ƿ��쳣��
-kickout         ��ʹ�����߳�ϵͳ��
-purge           ɾ��ʹ���ߵ�����
-throw           ����ĳ��ʹ���ߡ�
-free            �ͷ�ĳ��ʹ���ߡ�
-dest            ������Ʒ����ʹ���ߡ�
-restore         �ָ�һ����ҵı������ݡ�
+promote         修改使用者的權限。
+examine         檢查所有玩家/某個玩家的數據是否異常。
+kickout         將使用者踢出系統。
+purge           刪除使用者檔案。
+throw           禁閉某個使用者。
+free            釋放某個使用者。
+dest            析構物品或是使用者。
+restore         恢復一個玩家的備份數據。
 
-$HIW$����(admin)$NOR$
+$HIW$天神(admin)$NOR$
 
-auth            �ļ���Ȩ���޸�ĳ����ʦ�Ե����Ķ�дȨ�ޡ�
-qinfo           �鿴��ǰ���е�������Ϣ��
-grant           ��Ȩ������ʦʹ��ĳЩ���
-version         �汾ͬ�����
-query           ��ѯ��Ϸ������ݿ��е���Ϣ��
+auth            文件授權，修改某個巫師對檔案的讀寫權限。
+qinfo           查看當前所有的任務信息。
+grant           授權其他巫師使用某些命令。
+version         版本同步命令。
+query           查詢遊戲層次數據庫中的信息。

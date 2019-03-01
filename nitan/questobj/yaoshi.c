@@ -4,10 +4,10 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIR"ºìÓñÔ¿³×"NOR, ({"hongyu yaoshi", "yaoshi"}));
-        set("long", "ÕâÊÇÒ»°Ñ¿´ÆğÀ´ºÜ¹Å¹ÖµÄÔ¿³×¡£\n");
+        set_name(HIR"ç´…ç‰é‘°åŒ™"NOR, ({"hongyu yaoshi", "yaoshi"}));
+        set("long", "é€™æ˜¯ä¸€æŠŠçœ‹èµ·ä¾†å¾ˆå¤æ€ªçš„é‘°åŒ™ã€‚\n");
         set("taskobj", 1);
-        set("unit", "°Ñ");
+        set("unit", "æŠŠ");
         set("value", 100);
         set("weight", 10);
 }

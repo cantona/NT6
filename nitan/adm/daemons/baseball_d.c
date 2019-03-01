@@ -4,7 +4,7 @@
  * File   : baseball_d.c
  * Author : Clode@RevivalWorld
  * Date   : 2010-08-14
- * Note   : °ôÇòÏµÍ³
+ * Note   : æ£’çƒç³»çµ±
  * Update :
  *  o 2000-00-00  
  *
@@ -41,29 +41,29 @@ private varargs string *game_finish(int gameindex, string stopid);
 
 private nosave mapping positionname = 
 ([
-	"P" : HIC"Í¶"NOR CYN"ÊÖ"NOR,
-	"C" : HIG"²¶"NOR GRN"ÊÖ"NOR,
-	"1B" : HIG"Ò»"NOR GRN"ÀİÊÖ"NOR,
-	"2B" : HIG"¶ş"NOR GRN"ÀİÊÖ"NOR,
-	"3B" : HIG"Èı"NOR GRN"ÀİÊÖ"NOR,
-	"SS" : HIG"ÓÎ"NOR GRN"»÷ÊÖ"NOR,
-	"RF" : HIY"ÓÒ"NOR YEL"ÍâÒ°ÊÖ"NOR,
-	"CF" : HIY"ÖĞ"NOR YEL"ÍâÒ°ÊÖ"NOR,
-	"LF" : HIY"×ó"NOR YEL"ÍâÒ°ÊÖ"NOR,
-	"DH" : HIR"Ö¸"NOR RED"¶¨´ò»÷"NOR,
+	"P" : HIC"æŠ•"NOR CYN"æ‰‹"NOR,
+	"C" : HIG"æ•"NOR GRN"æ‰‹"NOR,
+	"1B" : HIG"ä¸€"NOR GRN"å£˜æ‰‹"NOR,
+	"2B" : HIG"äºŒ"NOR GRN"å£˜æ‰‹"NOR,
+	"3B" : HIG"ä¸‰"NOR GRN"å£˜æ‰‹"NOR,
+	"SS" : HIG"éŠ"NOR GRN"æ“Šæ‰‹"NOR,
+	"RF" : HIY"å³"NOR YEL"å¤–é‡æ‰‹"NOR,
+	"CF" : HIY"ä¸­"NOR YEL"å¤–é‡æ‰‹"NOR,
+	"LF" : HIY"å·¦"NOR YEL"å¤–é‡æ‰‹"NOR,
+	"DH" : HIR"æŒ‡"NOR RED"å®šæ‰“æ“Š"NOR,
 ]);
 private nosave string *pitch_ball_types = ({ "fourseam", "twoseam", "curveball", "slider", "forkball", "sinker" });
 private nosave mapping pitch_ball_types_name = 
 ([
-	"fourseam":"ËÄ·ìÏß¿ìËÙÇò",
-	"twoseam":"¶ş·ìÏß¿ìËÙÇò",
-	"curveball":"ÇúÇò",
-	"slider":"»¬Çò",
-	"forkball":"Ö¸²æÇò",
-	"sinker":"Éì¿¨Çò",
+	"fourseam":"å››ç¸«ç·šå¿«é€Ÿçƒ",
+	"twoseam":"äºŒç¸«ç·šå¿«é€Ÿçƒ",
+	"curveball":"æ›²çƒ",
+	"slider":"æ»‘çƒ",
+	"forkball":"æŒ‡å‰çƒ",
+	"sinker":"ä¼¸å¡çƒ",
 ]);
 
-// µ÷ÕûÄÜÁ¦ÊıÖµ£¬¿É¿ØÖÆ±ä»¯ÂÊ²¢ÏŞÖÆÔÚÒ»¶¨·¶Î§ÄÚ
+// èª¿æ•´èƒ½åŠ›æ•¸å€¼ï¼Œå¯æ§åˆ¶è®ŠåŒ–ç‡ä¸¦é™åˆ¶åœ¨ä¸€å®šèŒƒåœå…§
 int calculate(int value, float decay, int value_max, int to_min, int to_max)
 {
 	float ratio = (to_max - to_min) / pow(to_float(value_max), decay);
@@ -163,11 +163,11 @@ varargs void broadcast(string msg, mapping game)
 		
 		foreach(string listener in setup[game[TEAM1]]["listener"] | setup[game[TEAM2]]["listener"] )
 			if( objectp(user = find_player(listener)) )
-				tell(user, HIG"¡¾°ôÈü¡¿"NOR+msg+"\n");
+				tell(user, HIG"ã€æ£’è³½ã€‘"NOR+msg+"\n");
 	}
 }
 
-// ÇòÔ±»òÇò¶Ó¼ÍÂ¼
+// çƒå“¡æˆ–çƒéšŠç´€éŒ„
 mixed add_record(int recordtype, string id, string key, mixed value)
 {
 	int year = season_year;
@@ -201,7 +201,7 @@ varargs mixed get_record(int recordtype, string id, string key, int year)
 	return record[year][recordtype][id][key];
 }
 
-// Ôö¼ÓÇòÔ±¼ÍÂ¼
+// å¢åŠ çƒå“¡ç´€éŒ„
 void add_player_record(string id, int number, string key, int value)
 {
 	string player = setup[id]["roster"][number]["file"];
@@ -209,13 +209,13 @@ void add_player_record(string id, int number, string key, int value)
 	add_record(RECORD_PLAYER, player, key, value);
 }
 
-// Ôö¼ÓÇò¶Ó¼ÍÂ¼
+// å¢åŠ çƒéšŠç´€éŒ„
 void add_team_record(string id, string key, int value)
 {
 	add_record(RECORD_TEAM, id, key, value);
 }
 
-// È·ÈÏÇò¶ÓÉè¶¨ºÏ·¨
+// ç¢ºèªçƒéšŠè¨­å®šåˆæ³•
 varargs int valid_setup(string id, int all)
 {
 	object labor;
@@ -311,7 +311,7 @@ varargs int valid_setup(string id, int all)
 	return 1;
 }
 
-// ¼ÆËãÇò¶ÓÃ¿³¡±ÈÈüÓ¦ÓĞÊÕÈë
+// è¨ˆç®—çƒéšŠæ¯å ´æ¯”è³½æ‡‰æœ‰æ”¶å…¥
 int query_income(string id)
 {
 	int year = season_year;
@@ -342,14 +342,14 @@ string query_player_status(object player)
 			if( !mapp(data) ) continue;
 
 			if( data["file"] == base_name(player) )
-				return positionname[data["position"]]+" "+(i > 0 ? GRN"µÚ "HIG+i+NOR GRN" °ô "NOR:"");
+				return positionname[data["position"]]+" "+(i > 0 ? GRN"ç¬¬ "HIG+i+NOR GRN" æ£’ "NOR:"");
 		}	
 	}
 	
 	return "";
 }
 
-// Çò¶ÓÉè¶¨
+// çƒéšŠè¨­å®š
 void set_setup(string id, mapping newsetup)
 {
 	setup[id] += newsetup;
@@ -357,7 +357,7 @@ void set_setup(string id, mapping newsetup)
 	save();
 }
 
-// É¾³ıÇò¶ÓÉè¶¨
+// åˆªé™¤çƒéšŠè¨­å®š
 void delete_setup(string id)
 {
 	map_delete(setup, id);
@@ -365,12 +365,12 @@ void delete_setup(string id)
 	save();
 }
 
-// ¼ÓÈë¼¾Èü
+// åŠ å…¥å­£è³½
 void join_season(string id)
 {
 	int index;
 	
-	// ÒÑ¾­¼ÓÈë¼¾Èü
+	// å·²ç¶“åŠ å…¥å­£è³½
 	if( member_array(id, season) != -1 ) return;
 		
 	season = sort_array(season, (: random(2) ? 1 : -1 :));
@@ -391,7 +391,7 @@ void join_season(string id)
 	season |= ({ id });		
 }
 
-// È¡Ïû±ÈÈü
+// å–æ¶ˆæ¯”è³½
 varargs void cancel_game(string id, int force)
 {
 	int gamessize = sizeof(games);
@@ -422,7 +422,7 @@ varargs void cancel_game(string id, int force)
 	games -= ({ 0 });
 }
 
-// ÍË³ö¼¾Èü
+// é€€å‡ºå­£è³½
 void leave_season(string id)
 {
 	if( member_array(id, season) == -1 ) return;
@@ -435,13 +435,13 @@ void leave_season(string id)
 	season -= ({ id });
 }
 
-// ÊÇ·ñ¼ÓÈë¼¾Èü
+// æ˜¯å¦åŠ å…¥å­£è³½
 int in_season(string id)
 {
 	return member_array(id, season) != -1;
 }
 
-// ÊÇ·ñÕıÔÚ±ÈÈüÖĞ
+// æ˜¯å¦æ­£åœ¨æ¯”è³½ä¸­
 int query_status(string id)
 {
 	if( !in_season(id) ) return 0;
@@ -449,7 +449,7 @@ int query_status(string id)
 	return setup[id]["status"];
 }
 
-// ±ÈÈü½áÊø
+// æ¯”è³½çµæŸ
 private varargs string *game_finish(int gameindex, string stopid)
 {
 	int year = season_year;
@@ -457,7 +457,7 @@ private varargs string *game_finish(int gameindex, string stopid)
 	mapping game = games[gameindex];
 	string team1name = setup[game[TEAM1]]["name"];
 	string team2name = setup[game[TEAM2]]["name"];
-	string income_msg = HIG"ÊÕÈë"NOR GRN"·ÖÅä"NOR;
+	string income_msg = HIG"æ”¶å…¥"NOR GRN"åˆ†é…"NOR;
 	string finalscore;
 	string winteam, loseteam;
 	
@@ -479,20 +479,20 @@ private varargs string *game_finish(int gameindex, string stopid)
 		winteam = game[TEAM2];
 		loseteam = game[TEAM1];
 	}
-	finalscore = HIG"±ÈÈü"NOR GRN"½á¹û"NOR" Ë«·½"+(game[INNING]>18?"Ò»¹²²ø¶·ÁË "+(game[INNING]/2+game[INNING]%2)+" ¾Ö£¬":"")+"±È·ÖÎª"+setup[game[TEAM2]]["username"]+"¡°"+team2name+" "+game[TEAM2SCORE]+" : "+game[TEAM1SCORE]+" "+team1name+"¡±"+setup[game[TEAM1]]["username"];
+	finalscore = HIG"æ¯”è³½"NOR GRN"çµæœ"NOR" é›™æ–¹"+(game[INNING]>18?"ä¸€å…±çºé¬¥äº† "+(game[INNING]/2+game[INNING]%2)+" å±€ï¼Œ":"")+"æ¯”åˆ†ç‚º"+setup[game[TEAM2]]["username"]+"â€œ"+team2name+" "+game[TEAM2SCORE]+" : "+game[TEAM1SCORE]+" "+team1name+"â€"+setup[game[TEAM1]]["username"];
 	
 	switch(game[TEAM1SCORE] - game[TEAM2SCORE])
 	{
-		case -999..-16:		msg += ({ finalscore+"£¬¿ÉÁ¯µÄ¡°"+team1name+"¡±Ôâµ½ÁË¿Ö²ÀµÄÑªĞÈÍÀÉ±" });	break;
-		case -15..-11:		msg += ({ finalscore+"£¬¡°"+team2name+"¡±³¹µ×µÄĞßÈèÁË¶ÔÊÖ" });			break;
-		case -10..-6:		msg += ({ finalscore+"£¬¡°"+team2name+"¡±²»ÁôÑÕÃæµØÍ´Ô×ÁË¶ÔÊÖ" });		break;
-		case -5..-3:		msg += ({ finalscore+"£¬¡°"+team2name+"¡±ÔÚÕâ³¡±ÈÈüÖĞÇáËÉ»ñÊ¤" });		break;
-		case -2..-1:		msg += ({ finalscore+"£¬¡°"+team2name+"¡±ÔÚ¾ªÏÕÖĞ»ñÊ¤" });			break;
-		case 1..2:		msg += ({ finalscore+"£¬¡°"+team1name+"¡±ÔÚ¾ªÏÕÖĞ»ñÊ¤" });			break;
-		case 3..5:		msg += ({ finalscore+"£¬¡°"+team1name+"¡±ÔÚÕâ³¡±ÈÈüÖĞÇáËÉ»ñÊ¤" });		break;
-		case 6..10:		msg += ({ finalscore+"£¬¡°"+team1name+"¡±²»ÁôÑÕÃæµØÍ´Ô×ÁË¶ÔÊÖ" });		break;
-		case 11..15:		msg += ({ finalscore+"£¬¡°"+team1name+"¡±³¹µ×µÄĞßÈèÁË¶ÔÊÖ" });			break;
-		case 16..999:		msg += ({ finalscore+"£¬¿ÉÁ¯µÄ¡°"+team2name+"¡±Ôâµ½ÁË¿Ö²ÀµÄÑªĞÈÍÀÉ±" });	break;
+		case -999..-16:		msg += ({ finalscore+"ï¼Œå¯æ†çš„â€œ"+team1name+"â€é­åˆ°äº†ææ€–çš„è¡€è…¥å± æ®º" });	break;
+		case -15..-11:		msg += ({ finalscore+"ï¼Œâ€œ"+team2name+"â€å¾¹åº•çš„ç¾è¾±äº†å°æ‰‹" });			break;
+		case -10..-6:		msg += ({ finalscore+"ï¼Œâ€œ"+team2name+"â€ä¸ç•™é¡é¢åœ°ç—›å®°äº†å°æ‰‹" });		break;
+		case -5..-3:		msg += ({ finalscore+"ï¼Œâ€œ"+team2name+"â€åœ¨é€™å ´æ¯”è³½ä¸­è¼•é¬†ç²å‹" });		break;
+		case -2..-1:		msg += ({ finalscore+"ï¼Œâ€œ"+team2name+"â€åœ¨é©šéšªä¸­ç²å‹" });			break;
+		case 1..2:		msg += ({ finalscore+"ï¼Œâ€œ"+team1name+"â€åœ¨é©šéšªä¸­ç²å‹" });			break;
+		case 3..5:		msg += ({ finalscore+"ï¼Œâ€œ"+team1name+"â€åœ¨é€™å ´æ¯”è³½ä¸­è¼•é¬†ç²å‹" });		break;
+		case 6..10:		msg += ({ finalscore+"ï¼Œâ€œ"+team1name+"â€ä¸ç•™é¡é¢åœ°ç—›å®°äº†å°æ‰‹" });		break;
+		case 11..15:		msg += ({ finalscore+"ï¼Œâ€œ"+team1name+"â€å¾¹åº•çš„ç¾è¾±äº†å°æ‰‹" });			break;
+		case 16..999:		msg += ({ finalscore+"ï¼Œå¯æ†çš„â€œ"+team2name+"â€é­åˆ°äº†ææ€–çš„è¡€è…¥å± æ®º" });	break;
 		//default: error("error score");
 	}
 	
@@ -503,11 +503,11 @@ private varargs string *game_finish(int gameindex, string stopid)
 
 		if( setup[winteam]["keeploses"] >= 5 )
 		{
-			msg += ({ "¡°"+setup[winteam]["name"]+"¡±ÖĞÖ¹ÁË×î½üµÄ "HIG+setup[winteam]["keeploses"]+NOR" Á¬°Ü¡£" });
+			msg += ({ "â€œ"+setup[winteam]["name"]+"â€ä¸­æ­¢äº†æœ€è¿‘çš„ "HIG+setup[winteam]["keeploses"]+NOR" é€£æ•—ã€‚" });
 		}
 		if( setup[loseteam]["keepwins"] >= 5 )
 		{
-			msg += ({ "¡°"+setup[loseteam]["name"]+"¡±ÖĞÖ¹ÁË×î½üµÄ "HIR+setup[loseteam]["keepwins"]+NOR" Á¬Ê¤¡£" });
+			msg += ({ "â€œ"+setup[loseteam]["name"]+"â€ä¸­æ­¢äº†æœ€è¿‘çš„ "HIR+setup[loseteam]["keepwins"]+NOR" é€£å‹ã€‚" });
 		}
 			
 		setup[winteam]["keepwins"]++;
@@ -521,11 +521,11 @@ private varargs string *game_finish(int gameindex, string stopid)
 			record[year][RECORD_SPECIAL]["keepwins"] = setup[winteam]["keepwins"];
 			record[year][RECORD_SPECIAL]["keepwinsteam"] = winteam;
 			
-			msg += ({ HIY"¼ÍÂ¼"NOR YEL"¸üĞÂ "NOR"Ê¿Æø¸ß°ºµÄ¡°"+setup[winteam]["name"]+"¡±Í»ÆÆ±¾¼¾×î³¤Á¬Ê¤¼ÍÂ¼£¬"HIR"Á¬Ê¤"NOR RED"¼ÍÂ¼"NOR"À´µ½µÚ "HIR+setup[winteam]["keepwins"]+NOR" ³¡" });
+			msg += ({ HIY"ç´€éŒ„"NOR YEL"æ›´æ–° "NOR"å£«æ°£é«˜æ˜‚çš„â€œ"+setup[winteam]["name"]+"â€çªç ´æœ¬å­£æœ€é•·é€£å‹ç´€éŒ„ï¼Œ"HIR"é€£å‹"NOR RED"ç´€éŒ„"NOR"ä¾†åˆ°ç¬¬ "HIR+setup[winteam]["keepwins"]+NOR" å ´" });
 		}
 		else if( setup[winteam]["keepwins"] >= 5 )
 		{
-			msg += ({ "¡°"+setup[winteam]["name"]+"¡±´ò³öÒ»²¨ "HIR+setup[winteam]["keepwins"]+NOR" Á¬Ê¤£¬Õ½¼¨´ó·ùÔ¾½ø" });
+			msg += ({ "â€œ"+setup[winteam]["name"]+"â€æ‰“å‡ºä¸€æ³¢ "HIR+setup[winteam]["keepwins"]+NOR" é€£å‹ï¼Œæˆ°ç¸¾å¤§å¹…èºé€²" });
 		}
 		
 		if( setup[loseteam]["keeploses"] > record[year][RECORD_SPECIAL]["keeploses"] )
@@ -533,80 +533,80 @@ private varargs string *game_finish(int gameindex, string stopid)
 			record[year][RECORD_SPECIAL]["keeploses"] = setup[loseteam]["keeploses"];
 			record[year][RECORD_SPECIAL]["keeplosesteam"] = loseteam;
 			
-			msg += ({ HIY"¼ÍÂ¼"NOR YEL"¸üĞÂ "NOR"Ê¿ÆøµÍÂäµÄ¡°"+setup[loseteam]["name"]+"¡±¿àÍÌ±¾¼¾×î³¤Á¬°Ü¼ÍÂ¼£¬"HIG"Á¬°Ü"NOR GRN"¼ÍÂ¼"NOR"À´µ½µÚ "HIG+setup[loseteam]["keeploses"]+NOR" ³¡" });
+			msg += ({ HIY"ç´€éŒ„"NOR YEL"æ›´æ–° "NOR"å£«æ°£ä½è½çš„â€œ"+setup[loseteam]["name"]+"â€è‹¦åæœ¬å­£æœ€é•·é€£æ•—ç´€éŒ„ï¼Œ"HIG"é€£æ•—"NOR GRN"ç´€éŒ„"NOR"ä¾†åˆ°ç¬¬ "HIG+setup[loseteam]["keeploses"]+NOR" å ´" });
 		}
 		else if( setup[loseteam]["keeploses"] >= 5 )
 		{
-			msg += ({ "¡°"+setup[loseteam]["name"]+"¡±Á¬ĞøÍÌÏÂ "HIG+setup[loseteam]["keeploses"]+NOR" Á¬°Ü£¬Õ½¼¨´ó·ùÍËºó" });
+			msg += ({ "â€œ"+setup[loseteam]["name"]+"â€é€£çºŒåä¸‹ "HIG+setup[loseteam]["keeploses"]+NOR" é€£æ•—ï¼Œæˆ°ç¸¾å¤§å¹…é€€å¾Œ" });
 		}
 	}
 	
-	// µ¥³¡×î¶àÈıÕñ¼ÍÂ¼
+	// å–®å ´æœ€å¤šä¸‰æŒ¯ç´€éŒ„
 	if( game[TEAM1K] > game[TEAM2K] && game[TEAM1K] > record[year][RECORD_SPECIAL]["maxstrikeouts"] )
 	{
 		record[year][RECORD_SPECIAL]["maxstrikeouts"] = game[TEAM1K];
 		record[year][RECORD_SPECIAL]["maxstrikeoutsplayer"] = setup[game[TEAM1]]["roster"][0]["file"];
 		
-		msg += ({ HIY"¼ÍÂ¼"NOR YEL"¸üĞÂ "NOR"¡°"+team1name+"¡±µÄ"+setup[game[TEAM1]]["roster"][0]["object"]->query_idname()+"Í»ÆÆ±¾¼¾Í¶ÊÖµ¥³¡×î¶àÈıÕñ¼ÍÂ¼£¬¼ÍÂ¼À´µ½ "HIY+game[TEAM1K]+NOR YEL"K"NOR" £¡£¡" });
+		msg += ({ HIY"ç´€éŒ„"NOR YEL"æ›´æ–° "NOR"â€œ"+team1name+"â€çš„"+setup[game[TEAM1]]["roster"][0]["object"]->query_idname()+"çªç ´æœ¬å­£æŠ•æ‰‹å–®å ´æœ€å¤šä¸‰æŒ¯ç´€éŒ„ï¼Œç´€éŒ„ä¾†åˆ° "HIY+game[TEAM1K]+NOR YEL"K"NOR" ï¼ï¼" });
 	}
 	else if( game[TEAM2K] > game[TEAM1K] && game[TEAM2K] > record[year][RECORD_SPECIAL]["maxstrikeouts"] )
 	{
 		record[year][RECORD_SPECIAL]["maxstrikeouts"] = game[TEAM2K];
 		record[year][RECORD_SPECIAL]["maxstrikeoutsplayer"] = setup[game[TEAM2]]["roster"][0]["file"];
 		
-		msg += ({ HIY"¼ÍÂ¼"NOR YEL"¸üĞÂ "NOR"¡°"+team2name+"¡±µÄ"+setup[game[TEAM2]]["roster"][0]["object"]->query_idname()+"Í»ÆÆ±¾¼¾Í¶ÊÖµ¥³¡×î¶àÈıÕñ¼ÍÂ¼£¬¼ÍÂ¼À´µ½ "HIY+game[TEAM2K]+NOR YEL"K"NOR" £¡£¡" });
+		msg += ({ HIY"ç´€éŒ„"NOR YEL"æ›´æ–° "NOR"â€œ"+team2name+"â€çš„"+setup[game[TEAM2]]["roster"][0]["object"]->query_idname()+"çªç ´æœ¬å­£æŠ•æ‰‹å–®å ´æœ€å¤šä¸‰æŒ¯ç´€éŒ„ï¼Œç´€éŒ„ä¾†åˆ° "HIY+game[TEAM2K]+NOR YEL"K"NOR" ï¼ï¼" });
 	}
 	
-	// µ¥³¡×î¶à°²´ò¼ÍÂ¼
+	// å–®å ´æœ€å¤šå®‰æ‰“ç´€éŒ„
 	if( game[TEAM1HIT] > game[TEAM2HIT] && game[TEAM1HIT] > record[year][RECORD_SPECIAL]["maxhits"] )
 	{
 		record[year][RECORD_SPECIAL]["maxhits"] = game[TEAM1HIT];
 		record[year][RECORD_SPECIAL]["maxhitsteam"] = game[TEAM1];
 		
-		msg += ({ HIY"¼ÍÂ¼"NOR YEL"¸üĞÂ "NOR"¡°"+team1name+"¡±Í»ÆÆ±¾¼¾µ¥³¡×î¶à°²´ò¼ÍÂ¼£¬¼ÍÂ¼À´µ½ "HIY+game[TEAM1HIT]+NOR YEL" Ö»°²´ò"NOR" £¡£¡" });
+		msg += ({ HIY"ç´€éŒ„"NOR YEL"æ›´æ–° "NOR"â€œ"+team1name+"â€çªç ´æœ¬å­£å–®å ´æœ€å¤šå®‰æ‰“ç´€éŒ„ï¼Œç´€éŒ„ä¾†åˆ° "HIY+game[TEAM1HIT]+NOR YEL" åªå®‰æ‰“"NOR" ï¼ï¼" });
 	}
 	else if( game[TEAM2HIT] > game[TEAM1HIT] && game[TEAM2HIT] > record[year][RECORD_SPECIAL]["maxhits"] )
 	{
 		record[year][RECORD_SPECIAL]["maxhits"] = game[TEAM2HIT];
 		record[year][RECORD_SPECIAL]["maxhitsteam"] = game[TEAM2];
 		
-		msg += ({ HIY"¼ÍÂ¼"NOR YEL"¸üĞÂ "NOR"¡°"+team2name+"¡±Í»ÆÆ±¾¼¾µ¥³¡×î¶à°²´ò¼ÍÂ¼£¬¼ÍÂ¼À´µ½ "HIY+game[TEAM2HIT]+NOR YEL" Ö»°²´ò"NOR" £¡£¡" });
+		msg += ({ HIY"ç´€éŒ„"NOR YEL"æ›´æ–° "NOR"â€œ"+team2name+"â€çªç ´æœ¬å­£å–®å ´æœ€å¤šå®‰æ‰“ç´€éŒ„ï¼Œç´€éŒ„ä¾†åˆ° "HIY+game[TEAM2HIT]+NOR YEL" åªå®‰æ‰“"NOR" ï¼ï¼" });
 	}
 		
-	// µ¥³¡×î¶àµÃ·Ö¼ÍÂ¼
+	// å–®å ´æœ€å¤šå¾—åˆ†ç´€éŒ„
 	if( game[TEAM1SCORE] > game[TEAM2SCORE] && game[TEAM1SCORE] > record[year][RECORD_SPECIAL]["maxscores"] )
 	{
 		record[year][RECORD_SPECIAL]["maxscores"] = game[TEAM1SCORE];
 		record[year][RECORD_SPECIAL]["maxscoresteam"] = game[TEAM1];
 		
-		msg += ({ HIY"¼ÍÂ¼"NOR YEL"¸üĞÂ "NOR"¡°"+team1name+"¡±Í»ÆÆ±¾¼¾µ¥³¡×î¶àµÃ·Ö¼ÍÂ¼£¬¼ÍÂ¼À´µ½ "HIY+game[TEAM1SCORE]+NOR YEL" ·Ö"NOR" £¡£¡" });
+		msg += ({ HIY"ç´€éŒ„"NOR YEL"æ›´æ–° "NOR"â€œ"+team1name+"â€çªç ´æœ¬å­£å–®å ´æœ€å¤šå¾—åˆ†ç´€éŒ„ï¼Œç´€éŒ„ä¾†åˆ° "HIY+game[TEAM1SCORE]+NOR YEL" åˆ†"NOR" ï¼ï¼" });
 	}
 	else if( game[TEAM2SCORE] > game[TEAM1SCORE] && game[TEAM2SCORE] > record[year][RECORD_SPECIAL]["maxscores"] )
 	{
 		record[year][RECORD_SPECIAL]["maxscores"] = game[TEAM2SCORE];
 		record[year][RECORD_SPECIAL]["maxscoresteam"] = game[TEAM2];
 		
-		msg += ({ HIY"¼ÍÂ¼"NOR YEL"¸üĞÂ "NOR"¡°"+team2name+"¡±Í»ÆÆ±¾¼¾µ¥³¡×î¶àµÃ·Ö¼ÍÂ¼£¬¼ÍÂ¼À´µ½ "HIY+game[TEAM2SCORE]+NOR YEL" ·Ö"NOR" £¡£¡" });
+		msg += ({ HIY"ç´€éŒ„"NOR YEL"æ›´æ–° "NOR"â€œ"+team2name+"â€çªç ´æœ¬å­£å–®å ´æœ€å¤šå¾—åˆ†ç´€éŒ„ï¼Œç´€éŒ„ä¾†åˆ° "HIY+game[TEAM2SCORE]+NOR YEL" åˆ†"NOR" ï¼ï¼" });
 	}
 	
-	// µ¥³¡×î¶à¾ÖÊı¼ÍÂ¼
+	// å–®å ´æœ€å¤šå±€æ•¸ç´€éŒ„
 	if( game[INNING] > record[year][RECORD_SPECIAL]["maxinnings"] )
 	{
 		record[year][RECORD_SPECIAL]["maxinnings"] = game[INNING];
 		record[year][RECORD_SPECIAL]["maxinningsteam1"] = game[TEAM1];
 		record[year][RECORD_SPECIAL]["maxinningsteam2"] = game[TEAM2];
 		
-		msg += ({ HIY"¼ÍÂ¼"NOR YEL"¸üĞÂ "NOR"¡°"+team1name+"¡±Óë¡°"+team2name+"¡±¹²Í¬´´Ôì±¾¼¾µ¥³¡ÑÓ³¤Èü×î¶à¾ÖÊı¼ÍÂ¼£¬¼ÍÂ¼À´µ½ "HIY+(game[INNING]/2 + game[INNING]%2)+NOR YEL" ¾Ö"NOR" £¡£¡" });
+		msg += ({ HIY"ç´€éŒ„"NOR YEL"æ›´æ–° "NOR"â€œ"+team1name+"â€èˆ‡â€œ"+team2name+"â€å…±åŒå‰µé€ æœ¬å­£å–®å ´å»¶é•·è³½æœ€å¤šå±€æ•¸ç´€éŒ„ï¼Œç´€éŒ„ä¾†åˆ° "HIY+(game[INNING]/2 + game[INNING]%2)+NOR YEL" å±€"NOR" ï¼ï¼" });
 	}
 	
-	// µ¥³¡·ÖÊı²î×î¶à¼ÍÂ¼
+	// å–®å ´åˆ†æ•¸å·®æœ€å¤šç´€éŒ„
 	if( abs(game[TEAM1SCORE] - game[TEAM2SCORE]) > record[year][RECORD_SPECIAL]["maxscorediff"] )
 	{
 		record[year][RECORD_SPECIAL]["maxscorediff"] = abs(game[TEAM1SCORE] - game[TEAM2SCORE]);
 		record[year][RECORD_SPECIAL]["maxscorediffwin"] = game[TEAM1SCORE] > game[TEAM2SCORE] ? game[TEAM1] : game[TEAM2];
 		record[year][RECORD_SPECIAL]["maxscoredifflose"] = game[TEAM1SCORE] < game[TEAM2SCORE] ? game[TEAM1] : game[TEAM2];
 		
-		msg += ({ HIY"¼ÍÂ¼"NOR YEL"¸üĞÂ "NOR"¡°"+team1name+"¡±Óë¡°"+team2name+"¡±¹²Í¬´´Ôì±¾¼¾µ¥³¡·ÖÊı²î¾à×î´ó¼ÍÂ¼£¬¼ÍÂ¼À´µ½ "HIY+abs(game[TEAM1SCORE] - game[TEAM2SCORE])+NOR YEL" ·Ö"NOR" £¡£¡" });
+		msg += ({ HIY"ç´€éŒ„"NOR YEL"æ›´æ–° "NOR"â€œ"+team1name+"â€èˆ‡â€œ"+team2name+"â€å…±åŒå‰µé€ æœ¬å­£å–®å ´åˆ†æ•¸å·®è·æœ€å¤§ç´€éŒ„ï¼Œç´€éŒ„ä¾†åˆ° "HIY+abs(game[TEAM1SCORE] - game[TEAM2SCORE])+NOR YEL" åˆ†"NOR" ï¼ï¼" });
 	}
 	
 	setup[game[TEAM1]]["status"] = STATUS_IDLE;
@@ -634,7 +634,7 @@ private varargs string *game_finish(int gameindex, string stopid)
 			if( query("owner", master) == game[TEAM2] && objectp(find_player(game[TEAM2])) )
 			{
 				addn("money", income, master);
-				income_msg += "¡°"+setup[game[TEAM2]]["name"]+"¡±»ñµÃÆ±·¿ÊÕÈë "HIY+money(MONEY_D->query_default_money_unit(), income)+NOR;
+				income_msg += "â€œ"+setup[game[TEAM2]]["name"]+"â€ç²å¾—ç¥¨æˆ¿æ”¶å…¥ "HIY+money(MONEY_D->query_default_money_unit(), income)+NOR;
 							
 				master->save();
 			}
@@ -653,13 +653,13 @@ private varargs string *game_finish(int gameindex, string stopid)
 			if( query("owner", master) == game[TEAM1] && objectp(find_player(game[TEAM1])) )
 			{
 				addn("money", income, master);
-				income_msg += "¡°"+setup[game[TEAM1]]["name"]+"¡±»ñµÃÆ±·¿ÊÕÈë "HIY+money(MONEY_D->query_default_money_unit(), income)+" "NOR;
+				income_msg += "â€œ"+setup[game[TEAM1]]["name"]+"â€ç²å¾—ç¥¨æˆ¿æ”¶å…¥ "HIY+money(MONEY_D->query_default_money_unit(), income)+" "NOR;
 				
 				master->save();
 			}
 		}
 		
-		if( income_msg != HIG"ÊÕÈë"NOR GRN"·ÖÅä"NOR )
+		if( income_msg != HIG"æ”¶å…¥"NOR GRN"åˆ†é…"NOR )
 			msg += ({ income_msg });
 	}
 
@@ -672,13 +672,13 @@ private varargs string *game_finish(int gameindex, string stopid)
 				if( game[TEAM1SCORE] > game[TEAM2SCORE] )
 				{
 					post_season_team_4 |= ({ game[TEAM1] });
-					msg += ({ HIR"¼¾ºó"NOR RED"Èü"NOR" "+setup[game[TEAM1]]["username"]+"Áì¾üµÄ¡°"+setup[game[TEAM1]]["name"]+"¡±»ñµÃËÄÇ¿½ú¼¶£¡£¡" });
+					msg += ({ HIR"å­£å¾Œ"NOR RED"è³½"NOR" "+setup[game[TEAM1]]["username"]+"é ˜è»çš„â€œ"+setup[game[TEAM1]]["name"]+"â€ç²å¾—å››å¼·æ™‰ç´šï¼ï¼" });
 					post_season_eliminate_teams |= ({ game[TEAM2] });
 				}
 				else
 				{
 					post_season_team_4 |= ({ game[TEAM2] });
-					msg += ({ HIR"¼¾ºó"NOR RED"Èü"NOR" "+setup[game[TEAM2]]["username"]+"Áì¾üµÄ¡°"+setup[game[TEAM2]]["name"]+"¡±»ñµÃËÄÇ¿½ú¼¶£¡£¡" });
+					msg += ({ HIR"å­£å¾Œ"NOR RED"è³½"NOR" "+setup[game[TEAM2]]["username"]+"é ˜è»çš„â€œ"+setup[game[TEAM2]]["name"]+"â€ç²å¾—å››å¼·æ™‰ç´šï¼ï¼" });
 					post_season_eliminate_teams |= ({ game[TEAM1] });
 				}
 				save();
@@ -689,13 +689,13 @@ private varargs string *game_finish(int gameindex, string stopid)
 				if( game[TEAM1SCORE] > game[TEAM2SCORE] )
 				{
 					post_season_team_2 |= ({ game[TEAM1] });
-					msg += ({ HIR"¼¾ºó"NOR RED"Èü"NOR" "+setup[game[TEAM1]]["username"]+"Áì¾üµÄ¡°"+setup[game[TEAM1]]["name"]+"¡±»ñµÃ½ú¼¶×Ü¹Ú¾üÈü£¡£¡" });
+					msg += ({ HIR"å­£å¾Œ"NOR RED"è³½"NOR" "+setup[game[TEAM1]]["username"]+"é ˜è»çš„â€œ"+setup[game[TEAM1]]["name"]+"â€ç²å¾—æ™‰ç´šç¸½å† è»è³½ï¼ï¼" });
 					post_season_eliminate_teams |= ({ game[TEAM2] });
 				}
 				else
 				{
 					post_season_team_2 |= ({ game[TEAM2] });
-					msg += ({ HIR"¼¾ºó"NOR RED"Èü"NOR" "+setup[game[TEAM2]]["username"]+"Áì¾üµÄ¡°"+setup[game[TEAM2]]["name"]+"¡±»ñµÃ½ú¼¶×Ü¹Ú¾üÈü£¡£¡" });
+					msg += ({ HIR"å­£å¾Œ"NOR RED"è³½"NOR" "+setup[game[TEAM2]]["username"]+"é ˜è»çš„â€œ"+setup[game[TEAM2]]["name"]+"â€ç²å¾—æ™‰ç´šç¸½å† è»è³½ï¼ï¼" });
 					post_season_eliminate_teams |= ({ game[TEAM1] });
 				}
 				save();
@@ -707,7 +707,7 @@ private varargs string *game_finish(int gameindex, string stopid)
 				
 				if( game[TEAM1SCORE] > game[TEAM2SCORE] )
 				{
-					msg += ({ HIR"¼¾ºó"NOR RED"Èü"NOR" ¹§Ï²"+setup[game[TEAM1]]["username"]+"Áì¾üµÄ¡°"+setup[game[TEAM1]]["name"]+"¡±»ñµÃ"NOR CYN"µÚ "HIC+year+NOR CYN" Çò¼¾"HIY"°ôÇò"NOR YEL"ÊÀ½ç¹Ú¾ü"NOR"£¡£¡" });
+					msg += ({ HIR"å­£å¾Œ"NOR RED"è³½"NOR" æ­å–œ"+setup[game[TEAM1]]["username"]+"é ˜è»çš„â€œ"+setup[game[TEAM1]]["name"]+"â€ç²å¾—"NOR CYN"ç¬¬ "HIC+year+NOR CYN" çƒå­£"HIY"æ£’çƒ"NOR YEL"ä¸–ç•Œå† è»"NOR"ï¼ï¼" });
 					record[year][RECORD_SPECIAL]["champion"] = game[TEAM1];
 					record[year][RECORD_SPECIAL]["2rd"] = game[TEAM2];
 					post_season_eliminate_teams |= ({ game[TEAM2] });
@@ -715,7 +715,7 @@ private varargs string *game_finish(int gameindex, string stopid)
 				}
 				else
 				{
-					msg += ({ HIR"¼¾ºó"NOR RED"Èü"NOR" ¹§Ï²"+setup[game[TEAM2]]["username"]+"Áì¾üµÄ¡°"+setup[game[TEAM2]]["name"]+"¡±»ñµÃ"NOR CYN"µÚ "HIC+year+NOR CYN" Çò¼¾"HIY"°ôÇò"NOR YEL"ÊÀ½ç¹Ú¾ü"NOR"£¡£¡" });
+					msg += ({ HIR"å­£å¾Œ"NOR RED"è³½"NOR" æ­å–œ"+setup[game[TEAM2]]["username"]+"é ˜è»çš„â€œ"+setup[game[TEAM2]]["name"]+"â€ç²å¾—"NOR CYN"ç¬¬ "HIC+year+NOR CYN" çƒå­£"HIY"æ£’çƒ"NOR YEL"ä¸–ç•Œå† è»"NOR"ï¼ï¼" });
 					record[year][RECORD_SPECIAL]["champion"] = game[TEAM2];
 					record[year][RECORD_SPECIAL]["2rd"] = game[TEAM1];
 					post_season_eliminate_teams |= ({ game[TEAM1] });
@@ -727,11 +727,11 @@ private varargs string *game_finish(int gameindex, string stopid)
 				{
 					object ring = new("/obj/baseball/champion_ring_"+year);
 					
-					user->add_title(sprintf(HIC+"%-4d"+HIY"×Ü"NOR YEL"¹Ú"NOR YEL"¾ü"NOR, year));
+					user->add_title(sprintf(HIC+"%-4d"+HIY"ç¸½"NOR YEL"å† "NOR YEL"è»"NOR, year));
 					user->save();				
 					
-					tell(user, pnoun(2, user)+"»ñµÃÒ»Ö»¡°"+ring->query_idname()+"¡±¡£\n");
-					CHANNEL_D->channel_broadcast("sport", user->query_idname()+"»ñµÃÒ»Ö»¡°"+ring->query_idname()+"¡±¡£");
+					tell(user, pnoun(2, user)+"ç²å¾—ä¸€åªâ€œ"+ring->query_idname()+"â€ã€‚\n");
+					CHANNEL_D->channel_broadcast("sport", user->query_idname()+"ç²å¾—ä¸€åªâ€œ"+ring->query_idname()+"â€ã€‚");
 					
 					ring->set_keep();
 					ring->move(user);
@@ -765,7 +765,7 @@ private varargs string *game_finish(int gameindex, string stopid)
 				
 			if( !random(25) )
 			{
-				msg += ({ roster_data["object"]->query_idname()+"ËùÊ¹ÓÃµÄ"+equipments[0]->query_idname()+"ÔÚÕâ³¡±ÈÈüÖĞ»µµôÁË£¡£¡\n" });
+				msg += ({ roster_data["object"]->query_idname()+"æ‰€ä½¿ç”¨çš„"+equipments[0]->query_idname()+"åœ¨é€™å ´æ¯”è³½ä¸­å£æ‰äº†ï¼ï¼\n" });
 				
 				roster_data["object"]->unequip(equipments[0], ref status);
 				
@@ -780,14 +780,14 @@ private varargs string *game_finish(int gameindex, string stopid)
 	return msg;
 }
 
-// ¼ÆËã·ÖÊı
+// è¨ˆç®—åˆ†æ•¸
 private string *new_score(int gameindex, string attacker, string defender, int score, int scoretype)
 {
 	string *msg = allocate(0);
 	mapping game = games[gameindex];
 	int attacknumber;
 	
-	// ¼ÆËãµÃ·Ö
+	// è¨ˆç®—å¾—åˆ†
 	if( attacker == game[TEAM1] )
 	{
 		game[TEAM1SCORE] += score;
@@ -802,17 +802,17 @@ private string *new_score(int gameindex, string attacker, string defender, int s
 	add_player_record(defender, 0, "run", score);
 	add_player_record(attacker, attacknumber, "rbi", score);
 	
-	msg += ({ "¡°"+setup[game[TEAM2]]["name"]+" "+game[TEAM2SCORE]+" : "+game[TEAM1SCORE]+" "+setup[game[TEAM1]]["name"] +"¡±" });
+	msg += ({ "â€œ"+setup[game[TEAM2]]["name"]+" "+game[TEAM2SCORE]+" : "+game[TEAM1SCORE]+" "+setup[game[TEAM1]]["name"] +"â€" });
 	
-	// ÏÂ°ë¾Ö£¬ÔÙ¼ûµÃ·Ö
+	// ä¸‹åŠå±€ï¼Œå†è¦‹å¾—åˆ†
 	if( game[INNING] >= 18 && (game[INNING] % 2) == 0 && game[TEAM1SCORE] > game[TEAM2SCORE] )
 	{
 		switch(scoretype)
 		{
-			case SCORETYPE_HOMERUN:		msg += ({ "ÕâÊÇÒ»Ö»ÔÙ¼ûÈ«Àİ´ò£¡£¡" }); 	break;
-			case SCORETYPE_FOURBALL:	msg += ({ "ÕâÊÇÒ»¸öÔÙ¼ûËÄ»µ£¡£¡" }); 	break;
-			case SCORETYPE_SACRIFICE:	msg += ({ "ÕâÊÇÒ»Ö»ÔÙ¼ûÎşÉü´ò£¡£¡" });	break;
-			case SCORETYPE_HIT:		msg += ({ "ÕâÊÇÒ»Ö»ÔÙ¼û°²´ò£¡£¡" }); 	break;
+			case SCORETYPE_HOMERUN:		msg += ({ "é€™æ˜¯ä¸€åªå†è¦‹å…¨å£˜æ‰“ï¼ï¼" }); 	break;
+			case SCORETYPE_FOURBALL:	msg += ({ "é€™æ˜¯ä¸€å€‹å†è¦‹å››å£ï¼ï¼" }); 	break;
+			case SCORETYPE_SACRIFICE:	msg += ({ "é€™æ˜¯ä¸€åªå†è¦‹çŠ§ç‰²æ‰“ï¼ï¼" });	break;
+			case SCORETYPE_HIT:		msg += ({ "é€™æ˜¯ä¸€åªå†è¦‹å®‰æ‰“ï¼ï¼" }); 	break;
 			default: error("error scoretype");
 		}
 
@@ -822,7 +822,7 @@ private string *new_score(int gameindex, string attacker, string defender, int s
 	return msg;
 }
 
-// ¼ÆËãĞÂµÄ³ö¾ÖÊı
+// è¨ˆç®—æ–°çš„å‡ºå±€æ•¸
 private string *new_out(int gameindex, string attacker, string defender, int outcount, int outtype)
 {
 	string *msg = allocate(0);
@@ -832,13 +832,13 @@ private string *new_out(int gameindex, string attacker, string defender, int out
 	game[STRIKE] = 0;
 	game[BALL] = 0;
 
-	// ´òÏ¯´ÎÊı¼ÍÂ¼
+	// æ‰“å¸­æ¬¡æ•¸ç´€éŒ„
 	add_player_record(attacker, attackernumber, "ab", 1);
 	
-	// Í¶ÊÖ¶Ô¾öÈË´Î¼ÍÂ¼
+	// æŠ•æ‰‹å°æ±ºäººæ¬¡ç´€éŒ„
 	add_player_record(defender, 0, "bf", 1);
 	
-	// Í¶ÊÖ¶Ô¾ö³ö¾ÖÊı
+	// æŠ•æ‰‹å°æ±ºå‡ºå±€æ•¸
 	add_player_record(defender, 0, "out", outcount);
 	
 	if( outtype == BASETYPE_STRIKEOUT )
@@ -853,7 +853,7 @@ private string *new_out(int gameindex, string attacker, string defender, int out
 		
 		game[INNING]++;
 		
-		msg += ({ "¡°"+setup[game[TEAM2]]["name"]+" "+game[TEAM2SCORE]+" : "+game[TEAM1SCORE]+" "+setup[game[TEAM1]]["name"] +"¡±¹¥ÊØ½»Ìæ£¬±ÈÈü½øÈëµ½"+(game[INNING]>=19?"ÑÓ³¤Èü":"")+"µÚ "+( game[INNING]%2 ? ((game[INNING]+1)/2)+" ¾ÖÉÏ°ë" : ((game[INNING]+1)/2)+" ¾ÖÏÂ°ë" ) });
+		msg += ({ "â€œ"+setup[game[TEAM2]]["name"]+" "+game[TEAM2SCORE]+" : "+game[TEAM1SCORE]+" "+setup[game[TEAM1]]["name"] +"â€æ”»å®ˆäº¤æ›¿ï¼Œæ¯”è³½é€²å…¥åˆ°"+(game[INNING]>=19?"å»¶é•·è³½":"")+"ç¬¬ "+( game[INNING]%2 ? ((game[INNING]+1)/2)+" å±€ä¸ŠåŠ" : ((game[INNING]+1)/2)+" å±€ä¸‹åŠ" ) });
 			
 		game[RUNNER1ST] = 0;
 		game[RUNNER2ND] = 0;
@@ -861,10 +861,10 @@ private string *new_out(int gameindex, string attacker, string defender, int out
 	}
 	else
 	{	
-		// ´ÌÉ±, ÓĞ»ú»á½øÀİ
+		// åˆºæ®º, æœ‰æ©Ÿæœƒé€²å£˜
 		if( outtype == BASETYPE_BUNT || outtype == BASETYPE_TOUCHKILL )
 		{
-			// ÂúÀİÔò·âÉ±ÈıÀİÅÜÕß
+			// æ»¿å£˜å‰‡å°æ®ºä¸‰å£˜è·‘è€…
 			if( game[RUNNER3RD] > 0 && game[RUNNER2ND] > 0 && game[RUNNER1ST] > 0 )
 			{
 				game[RUNNER3RD] = game[RUNNER2ND];
@@ -873,14 +873,14 @@ private string *new_out(int gameindex, string attacker, string defender, int out
 			}
 			else
 			{
-				// ÈıÀİÎŞÈË ¶şÀİÓĞÈË, ½øÀİ
+				// ä¸‰å£˜ç„¡äºº äºŒå£˜æœ‰äºº, é€²å£˜
 				if( game[RUNNER3RD] == 0 && game[RUNNER2ND] > 0 )
 				{
 					game[RUNNER3RD] = game[RUNNER2ND];
 					game[RUNNER2ND] = 0;
 				}
 				
-				// ¶şÀİÎŞÈË Ò»ÀİÓĞÈË, ½øÀİ
+				// äºŒå£˜ç„¡äºº ä¸€å£˜æœ‰äºº, é€²å£˜
 				if( game[RUNNER2ND] == 0 && game[RUNNER1ST] > 0 )
 				{
 					game[RUNNER2ND] = game[RUNNER1ST];
@@ -888,12 +888,12 @@ private string *new_out(int gameindex, string attacker, string defender, int out
 				}
 			}	
 		}
-		// ½ÓÉ±, ÓĞ»ú»á½øÀİ
+		// æ¥æ®º, æœ‰æ©Ÿæœƒé€²å£˜
 		else if( outtype == BASETYPE_CATCHKILL )
 		{
 			if( game[RUNNER3RD] > 0 )
 			{
-				msg += ({ "¡°"+setup[attacker]["name"]+"¡±ÈıÀİÅÜÕß³å»Ø±¾ÀİµÃ·Ö£¡" });
+				msg += ({ "â€œ"+setup[attacker]["name"]+"â€ä¸‰å£˜è·‘è€…æ²–å›æœ¬å£˜å¾—åˆ†ï¼" });
 				msg += new_score(gameindex, attacker, defender, 1, SCORETYPE_SACRIFICE);
 				
 				if( !games[gameindex] )
@@ -902,10 +902,10 @@ private string *new_out(int gameindex, string attacker, string defender, int out
 				game[RUNNER3RD] = 0;
 			}
 		}
-		// Ë«É±, ÓĞ»ú»á½øÀİ
+		// é›™æ®º, æœ‰æ©Ÿæœƒé€²å£˜
 		else if( outtype == BASETYPE_DOUBLEPLAY )
 		{
-			// ÈıÀİÎŞÈË ¶şÀİÓĞÈË, ½øÀİ
+			// ä¸‰å£˜ç„¡äºº äºŒå£˜æœ‰äºº, é€²å£˜
 			if( game[RUNNER2ND] > 0 )
 			{
 				game[RUNNER3RD] = game[RUNNER2ND];
@@ -914,14 +914,14 @@ private string *new_out(int gameindex, string attacker, string defender, int out
 			
 			game[RUNNER1ST] = 0;
 		}
-		// ÈıÉ± , ÀíÂÛÉÏ²»»áÖ´ĞĞµ½´Ë(Ö±½Ó»»¾Ö)
+		// ä¸‰æ®º , ç†è«–ä¸Šä¸æœƒåŸ·è¡Œåˆ°æ­¤(ç›´æ¥æ›å±€)
 		//else if( outtype == BASETYPE_TRIPLEPLAY ) { }
 		
 		if( game[RUNNER3RD] > 0 || game[RUNNER2ND] > 0 || game[RUNNER1ST] > 0 )
-			msg += ({ "¡°"+setup[attacker]["name"]+"¡±Ä¿Ç°ÀİÉÏµÄÅÜÕßÇéĞÎÎª [ "+(game[RUNNER3RD] > 0?HIW"¡ğ"NOR:WHT"¨w"NOR)+" "+(game[RUNNER2ND] > 0?HIW"¡ğ"NOR:WHT"¨w"NOR)+" "+(game[RUNNER1ST] > 0?HIW"¡ğ"NOR:WHT"¨w"NOR)+" ] "HIW+game[OUT]+NOR WHT"out"NOR });
+			msg += ({ "â€œ"+setup[attacker]["name"]+"â€ç›®å‰å£˜ä¸Šçš„è·‘è€…æƒ…å½¢ç‚º [ "+(game[RUNNER3RD] > 0?HIW"â—‹"NOR:WHT"â–¡"NOR)+" "+(game[RUNNER2ND] > 0?HIW"â—‹"NOR:WHT"â–¡"NOR)+" "+(game[RUNNER1ST] > 0?HIW"â—‹"NOR:WHT"â–¡"NOR)+" ] "HIW+game[OUT]+NOR WHT"out"NOR });
 	}
 
-	// ÂÖÏÂÒ»°ô
+	// è¼ªä¸‹ä¸€æ£’
 	if( attacker == game[TEAM1] )
 		game[TEAM1NUMBER] = 1 + (game[TEAM1NUMBER] % 9);
 	else
@@ -935,7 +935,7 @@ private string *new_out(int gameindex, string attacker, string defender, int out
 	return msg;
 }
 
-// ¼ÆËãĞÂµÄ½øÀİ
+// è¨ˆç®—æ–°çš„é€²å£˜
 private string *new_base(int gameindex, string attacker, string defender, int basecount, int basetype)
 {
 	string *msg = allocate(0);
@@ -949,14 +949,14 @@ private string *new_base(int gameindex, string attacker, string defender, int ba
 	game[STRIKE] = 0;
 	game[BALL] = 0;
 
-	// Í¶ÊÖ¶Ô¾öÈË´Î
+	// æŠ•æ‰‹å°æ±ºäººæ¬¡
 	add_player_record(defender, 0, "bf", 1);
 
-	if( basetype == BASETYPE_HIT ) // °²´ò½øÀİ
+	if( basetype == BASETYPE_HIT ) // å®‰æ‰“é€²å£˜
 	{
 		int scoretype;
 		
-		// ´òÕß´ò»÷´ÎÊı¼ÍÂ¼
+		// æ‰“è€…æ‰“æ“Šæ¬¡æ•¸ç´€éŒ„
 		add_player_record(attacker, attacknumber, "ab", 1);
 
 		if( attacker == game[TEAM1] )
@@ -971,13 +971,13 @@ private string *new_base(int gameindex, string attacker, string defender, int ba
 				add_player_record(attacker, attacknumber, "hit1", 1);
 				add_player_record(attacker, attacknumber, "hit", 1);
 				
-				if( game[RUNNER3RD] > 0 ) {	score++; msg += ({ "¡°"+setup[attacker]["name"]+"¡±ÈıÀİÅÜÕß±¼»Ø±¾ÀİµÃ·Ö£¡" }); game[RUNNER3RD] = 0; }	
+				if( game[RUNNER3RD] > 0 ) {	score++; msg += ({ "â€œ"+setup[attacker]["name"]+"â€ä¸‰å£˜è·‘è€…å¥”å›æœ¬å£˜å¾—åˆ†ï¼" }); game[RUNNER3RD] = 0; }	
 				if( game[RUNNER2ND] > 0 )
 				{
 					if( random(setup[attacker]["roster"][game[RUNNER2ND]]["object"]->query_int()) > random(400) )
 					{
 						score++; 
-						msg += ({ "¡°"+setup[attacker]["name"]+"¡±¶şÀİÅÜÕß±¼»Ø±¾ÀİµÃ·Ö£¡" });	
+						msg += ({ "â€œ"+setup[attacker]["name"]+"â€äºŒå£˜è·‘è€…å¥”å›æœ¬å£˜å¾—åˆ†ï¼" });	
 					
 						game[RUNNER2ND] = 0; 
 					}
@@ -988,7 +988,7 @@ private string *new_base(int gameindex, string attacker, string defender, int ba
 					}
 				}
 						
-				// Ò»ÀİÓĞÈË£¬½øÀİ
+				// ä¸€å£˜æœ‰äººï¼Œé€²å£˜
 				if( game[RUNNER1ST] > 0 )
 				{
 					if( game[RUNNER3RD] > 0 )
@@ -999,7 +999,7 @@ private string *new_base(int gameindex, string attacker, string defender, int ba
 					game[RUNNER1ST] = 0;
 				}
 				
-				// ´òÕßÉÏµ½Ò»Àİ
+				// æ‰“è€…ä¸Šåˆ°ä¸€å£˜
 				game[RUNNER1ST] = (attacker == game[TEAM1] ? game[TEAM1NUMBER] : game[TEAM2NUMBER]);
 				
 				scoretype = SCORETYPE_HIT;
@@ -1011,11 +1011,11 @@ private string *new_base(int gameindex, string attacker, string defender, int ba
 				add_player_record(attacker, attacknumber, "hit2", 1);
 				add_player_record(attacker, attacknumber, "hit", 1);
 				
-				if( game[RUNNER3RD] > 0 ) {	score++; msg += ({ "¡°"+setup[attacker]["name"]+"¡±ÈıÀİÅÜÕß±¼»Ø±¾ÀİµÃ·Ö£¡" }); game[RUNNER3RD] = 0; }	
-				if( game[RUNNER2ND] > 0 ) {	score++; msg += ({ "¡°"+setup[attacker]["name"]+"¡±¶şÀİÅÜÕß±¼»Ø±¾ÀİµÃ·Ö£¡" }); game[RUNNER2ND] = 0; }
-				if( game[RUNNER1ST] > 0 ) {	score++; msg += ({ "¡°"+setup[attacker]["name"]+"¡±Ò»ÀİÅÜÕß±¼»Ø±¾ÀİµÃ·Ö£¡" }); game[RUNNER1ST] = 0; }
+				if( game[RUNNER3RD] > 0 ) {	score++; msg += ({ "â€œ"+setup[attacker]["name"]+"â€ä¸‰å£˜è·‘è€…å¥”å›æœ¬å£˜å¾—åˆ†ï¼" }); game[RUNNER3RD] = 0; }	
+				if( game[RUNNER2ND] > 0 ) {	score++; msg += ({ "â€œ"+setup[attacker]["name"]+"â€äºŒå£˜è·‘è€…å¥”å›æœ¬å£˜å¾—åˆ†ï¼" }); game[RUNNER2ND] = 0; }
+				if( game[RUNNER1ST] > 0 ) {	score++; msg += ({ "â€œ"+setup[attacker]["name"]+"â€ä¸€å£˜è·‘è€…å¥”å›æœ¬å£˜å¾—åˆ†ï¼" }); game[RUNNER1ST] = 0; }
 				
-				// ´òÕßÉÏµ½¶şÀİ
+				// æ‰“è€…ä¸Šåˆ°äºŒå£˜
 				game[RUNNER2ND] = (attacker == game[TEAM1] ? game[TEAM1NUMBER] : game[TEAM2NUMBER]);
 	
 				scoretype = SCORETYPE_HIT;
@@ -1027,11 +1027,11 @@ private string *new_base(int gameindex, string attacker, string defender, int ba
 				add_player_record(attacker, attacknumber, "hit3", 1);
 				add_player_record(attacker, attacknumber, "hit", 1);
 				
-				if( game[RUNNER3RD] > 0 ) {	score++; msg += ({ "¡°"+setup[attacker]["name"]+"¡±ÈıÀİÅÜÕß±¼»Ø±¾ÀİµÃ·Ö£¡" }); game[RUNNER3RD] = 0; }	
-				if( game[RUNNER2ND] > 0 ) {	score++; msg += ({ "¡°"+setup[attacker]["name"]+"¡±¶şÀİÅÜÕß±¼»Ø±¾ÀİµÃ·Ö£¡" }); game[RUNNER2ND] = 0; }
-				if( game[RUNNER1ST] > 0 ) {	score++; msg += ({ "¡°"+setup[attacker]["name"]+"¡±Ò»ÀİÅÜÕß±¼»Ø±¾ÀİµÃ·Ö£¡" }); game[RUNNER1ST] = 0; }
+				if( game[RUNNER3RD] > 0 ) {	score++; msg += ({ "â€œ"+setup[attacker]["name"]+"â€ä¸‰å£˜è·‘è€…å¥”å›æœ¬å£˜å¾—åˆ†ï¼" }); game[RUNNER3RD] = 0; }	
+				if( game[RUNNER2ND] > 0 ) {	score++; msg += ({ "â€œ"+setup[attacker]["name"]+"â€äºŒå£˜è·‘è€…å¥”å›æœ¬å£˜å¾—åˆ†ï¼" }); game[RUNNER2ND] = 0; }
+				if( game[RUNNER1ST] > 0 ) {	score++; msg += ({ "â€œ"+setup[attacker]["name"]+"â€ä¸€å£˜è·‘è€…å¥”å›æœ¬å£˜å¾—åˆ†ï¼" }); game[RUNNER1ST] = 0; }
 							
-				// ´òÕßÉÏµ½ÈıÀİ
+				// æ‰“è€…ä¸Šåˆ°ä¸‰å£˜
 				game[RUNNER3RD] = (attacker == game[TEAM1] ? game[TEAM1NUMBER] : game[TEAM2NUMBER]);
 				
 				scoretype = SCORETYPE_HIT;
@@ -1043,11 +1043,11 @@ private string *new_base(int gameindex, string attacker, string defender, int ba
 				add_player_record(attacker, attacknumber, "hit4", 1);
 				add_player_record(attacker, attacknumber, "hit", 1);
 				
-				if( game[RUNNER3RD] > 0 ) {	score++; msg += ({ "¡°"+setup[attacker]["name"]+"¡±ÈıÀİÅÜÕß±¼»Ø±¾ÀİµÃ·Ö£¡" }); game[RUNNER3RD] = 0; }	
-				if( game[RUNNER2ND] > 0 ) {	score++; msg += ({ "¡°"+setup[attacker]["name"]+"¡±¶şÀİÅÜÕß±¼»Ø±¾ÀİµÃ·Ö£¡" }); game[RUNNER2ND] = 0; }
-				if( game[RUNNER1ST] > 0 ) {	score++; msg += ({ "¡°"+setup[attacker]["name"]+"¡±Ò»ÀİÅÜÕß±¼»Ø±¾ÀİµÃ·Ö£¡" }); game[RUNNER1ST] = 0; }
+				if( game[RUNNER3RD] > 0 ) {	score++; msg += ({ "â€œ"+setup[attacker]["name"]+"â€ä¸‰å£˜è·‘è€…å¥”å›æœ¬å£˜å¾—åˆ†ï¼" }); game[RUNNER3RD] = 0; }	
+				if( game[RUNNER2ND] > 0 ) {	score++; msg += ({ "â€œ"+setup[attacker]["name"]+"â€äºŒå£˜è·‘è€…å¥”å›æœ¬å£˜å¾—åˆ†ï¼" }); game[RUNNER2ND] = 0; }
+				if( game[RUNNER1ST] > 0 ) {	score++; msg += ({ "â€œ"+setup[attacker]["name"]+"â€ä¸€å£˜è·‘è€…å¥”å›æœ¬å£˜å¾—åˆ†ï¼" }); game[RUNNER1ST] = 0; }
 					
-				msg += ({ "¡°"+setup[attacker]["name"]+"¡±´òÕß±¼»Ø±¾ÀİµÃ·Ö£¡" });
+				msg += ({ "â€œ"+setup[attacker]["name"]+"â€æ‰“è€…å¥”å›æœ¬å£˜å¾—åˆ†ï¼" });
 				score++;
 	
 				scoretype = SCORETYPE_HOMERUN;
@@ -1061,21 +1061,21 @@ private string *new_base(int gameindex, string attacker, string defender, int ba
 		if( !games[gameindex] )
 			return msg;
 	}
-	else if( basetype == BASETYPE_BALL ) // ±£ËÍ½øÀİ
+	else if( basetype == BASETYPE_BALL ) // ä¿é€é€²å£˜
 	{
 		add_player_record(defender, 0, "fourball", 1);
 		add_player_record(attacker, attacknumber, "walk", 1);
 
-		// ÈôÒ»ÀİÓĞÈË
+		// è‹¥ä¸€å£˜æœ‰äºº
 		if( game[RUNNER1ST] > 0 )
 		{
-			// Èô¶şÀİÒ²ÓĞÈË
+			// è‹¥äºŒå£˜ä¹Ÿæœ‰äºº
 			if( game[RUNNER2ND] > 0 )
 			{
-				// ÈôÈıÀİÒ²ÓĞÈË
+				// è‹¥ä¸‰å£˜ä¹Ÿæœ‰äºº
 				if( game[RUNNER3RD] > 0 )
 				{
-					msg += ({ "¡°"+setup[attacker]["name"]+"¡±ÈıÀİÅÜÕßºÁ²»·ÑÁ¦µØ×ß»Ø±¾ÀİµÃ·Ö£¡" });
+					msg += ({ "â€œ"+setup[attacker]["name"]+"â€ä¸‰å£˜è·‘è€…æ¯«ä¸è²»åŠ›åœ°èµ°å›æœ¬å£˜å¾—åˆ†ï¼" });
 					msg += new_score(gameindex, attacker, defender, 1, SCORETYPE_FOURBALL);
 					
 					if( !games[gameindex] )
@@ -1091,7 +1091,7 @@ private string *new_base(int gameindex, string attacker, string defender, int ba
 		game[RUNNER1ST] = attacknumber;	
 	}
 
-	// ÂÖÏÂÒ»°ô
+	// è¼ªä¸‹ä¸€æ£’
 	if( attacker == game[TEAM1] )
 		game[TEAM1NUMBER] = 1 + (game[TEAM1NUMBER] % 9);
 	else
@@ -1101,7 +1101,7 @@ private string *new_base(int gameindex, string attacker, string defender, int ba
 	setup[defender]["hint"] = 0;
 	
 	if( game[RUNNER3RD] > 0 || game[RUNNER2ND] > 0 || game[RUNNER1ST] > 0 )
-		msg += ({ "¡°"+setup[attacker]["name"]+"¡±Ä¿Ç°ÀİÉÏµÄÅÜÕßÇéĞÎÎª [ "+(game[RUNNER3RD] > 0?HIW"¡ğ"NOR:WHT"¨w"NOR)+" "+(game[RUNNER2ND] > 0?HIW"¡ğ"NOR:WHT"¨w"NOR)+" "+(game[RUNNER1ST] > 0?HIW"¡ğ"NOR:WHT"¨w"NOR)+" ] "HIW+game[OUT]+NOR WHT"out"NOR });
+		msg += ({ "â€œ"+setup[attacker]["name"]+"â€ç›®å‰å£˜ä¸Šçš„è·‘è€…æƒ…å½¢ç‚º [ "+(game[RUNNER3RD] > 0?HIW"â—‹"NOR:WHT"â–¡"NOR)+" "+(game[RUNNER2ND] > 0?HIW"â—‹"NOR:WHT"â–¡"NOR)+" "+(game[RUNNER1ST] > 0?HIW"â—‹"NOR:WHT"â–¡"NOR)+" ] "HIW+game[OUT]+NOR WHT"out"NOR });
 		
 	games[gameindex] = game;
 
@@ -1140,7 +1140,7 @@ int get_handside_level(object player)
 	return query_temp("baseballcache/handside/level", player);
 }
 
-// ´òÕßÓëÍ¶ÊÖ×óÓÒ·½µÄ²îÒì (-60~70) Ö®¼ä
+// æ‰“è€…èˆ‡æŠ•æ‰‹å·¦å³æ–¹çš„å·®ç•° (-60~70) ä¹‹é–“
 int get_handside_diff(object pitcher, object batter)
 {
 	int base_level_diff = (get_handside_level(batter) - get_handside_level(pitcher))/20;
@@ -1157,7 +1157,7 @@ int get_handside_diff(object pitcher, object batter)
 		return -10 + base_level_diff;
 }
 
-// È¡µÃ´ò»÷ÂÊ
+// å–å¾—æ‰“æ“Šç‡
 varargs float get_hit_rate(string teamid, int num, int year)
 {
 	int hit, ab;
@@ -1176,7 +1176,7 @@ varargs float get_hit_rate(string teamid, int num, int year)
 	return 10. * hit / ab;
 }
 
-// ½øĞĞÇòÈü
+// é€²è¡Œçƒè³½
 void play_game()
 {
 	string *msg;
@@ -1210,14 +1210,14 @@ void play_game()
 
 		if( !valid_setup(team1) )
 		{
-			broadcast(HIG"¡¾°ôÈü¡¿"NOR"¡°"+setup[team1]["name"]+"¡±µÄÇò¶Ó×ÊÁÏ²»ÍêÕû£¬ÖĞÖ¹±ÈÈü¡£\n", game);
+			broadcast(HIG"ã€æ£’è³½ã€‘"NOR"â€œ"+setup[team1]["name"]+"â€çš„çƒéšŠè³‡æ–™ä¸å®Œæ•´ï¼Œä¸­æ­¢æ¯”è³½ã€‚\n", game);
 			cancel_game(team1, 1);
 			continue;
 		}
 			
 		if( !valid_setup(team2) )
 		{
-			broadcast(HIG"¡¾°ôÈü¡¿"NOR"¡°"+setup[team2]["name"]+"¡±µÄÇò¶Ó×ÊÁÏ²»ÍêÕû£¬ÖĞÖ¹±ÈÈü¡£\n", game);
+			broadcast(HIG"ã€æ£’è³½ã€‘"NOR"â€œ"+setup[team2]["name"]+"â€çš„çƒéšŠè³‡æ–™ä¸å®Œæ•´ï¼Œä¸­æ­¢æ¯”è³½ã€‚\n", game);
 			cancel_game(team2, 1);
 			continue;
 		}
@@ -1251,8 +1251,8 @@ void play_game()
 			defender = team2;
 		}
 
-		attackteamname = "¡°"+attacksetup["name"]+"¡±";
-		defendteamname = "¡°"+defendsetup["name"]+"¡±";
+		attackteamname = "â€œ"+attacksetup["name"]+"â€";
+		defendteamname = "â€œ"+defendsetup["name"]+"â€";
 		
 		if( game[INNING] == 0 )
 		{
@@ -1261,20 +1261,20 @@ void play_game()
 			switch(get_handside_type(defendsetup["roster"][0]["object"]))
 			{
 				case HANDSIDE_NONE: defendhandside = ""; break;
-				case HANDSIDE_LEFTHAND: defendhandside = HIC"×ó"NOR CYN"Í¶"NOR; break;
-				case HANDSIDE_RIGHTHAND: defendhandside = HIG"ÓÒ"NOR GRN"Í¶"NOR; break;
-				default: defendhandside = HIR"´íÎó"NOR; break;
+				case HANDSIDE_LEFTHAND: defendhandside = HIC"å·¦"NOR CYN"æŠ•"NOR; break;
+				case HANDSIDE_RIGHTHAND: defendhandside = HIG"å³"NOR GRN"æŠ•"NOR; break;
+				default: defendhandside = HIR"éŒ¯èª¤"NOR; break;
 			}
 			switch(get_handside_type(attacksetup["roster"][0]["object"]))
 			{
 				case HANDSIDE_NONE: attackhandside = ""; break;
-				case HANDSIDE_LEFTHAND: attackhandside = HIC"×ó"NOR CYN"Í¶"NOR; break;
-				case HANDSIDE_RIGHTHAND: attackhandside = HIG"ÓÒ"NOR GRN"Í¶"NOR; break;
-				default: attackhandside = HIR"´íÎó"NOR; break;
+				case HANDSIDE_LEFTHAND: attackhandside = HIC"å·¦"NOR CYN"æŠ•"NOR; break;
+				case HANDSIDE_RIGHTHAND: attackhandside = HIG"å³"NOR GRN"æŠ•"NOR; break;
+				default: attackhandside = HIR"éŒ¯èª¤"NOR; break;
 			}
 			
-			msg += ({ attacksetup["username"]+"µÄ"+attackteamname+"Óë"+defendsetup["username"]+"µÄ"+defendteamname+"±ÈÈüÕıÊ½¿ªÊ¼¡£" });
-			msg += ({ "Ë«·½ÅÉ³öµÄÏÈ·¢Í¶ÊÖ·Ö±ğÎª"+attackteamname+attackhandside+attacksetup["roster"][0]["object"]->query_idname()+"Óë"+defendteamname+defendhandside+defendsetup["roster"][0]["object"]->query_idname()+"¡£" });
+			msg += ({ attacksetup["username"]+"çš„"+attackteamname+"èˆ‡"+defendsetup["username"]+"çš„"+defendteamname+"æ¯”è³½æ­£å¼é–‹å§‹ã€‚" });
+			msg += ({ "é›™æ–¹æ´¾å‡ºçš„å…ˆç™¼æŠ•æ‰‹åˆ†åˆ¥ç‚º"+attackteamname+attackhandside+attacksetup["roster"][0]["object"]->query_idname()+"èˆ‡"+defendteamname+defendhandside+defendsetup["roster"][0]["object"]->query_idname()+"ã€‚" });
 			
 			game[INNING]++;
 		}
@@ -1286,8 +1286,8 @@ void play_game()
 			string defend_msg="", attack_msg="", info_msg="", *special_msg = allocate(0);
 			string pitcherballtype;
 			
-			int pitcherbase = get_handside_level(pitcher) + pitcher->query_str() * 2;		// Í¶ÊÖ»ù±¾ÄÜÁ¦(Ô¤¹À·¶Î§ 10~1500 Ö®¼ä)
-			int batterbase = get_handside_level(batter) + batter->query_str() * 2;			// ´òÕß»ù±¾ÄÜÁ¦(Ô¤¹À·¶Î§ 10~1500 Ö®¼ä)
+			int pitcherbase = get_handside_level(pitcher) + pitcher->query_str() * 2;		// æŠ•æ‰‹åŸºæœ¬èƒ½åŠ›(é ä¼°èŒƒåœ 10~1500 ä¹‹é–“)
+			int batterbase = get_handside_level(batter) + batter->query_str() * 2;			// æ‰“è€…åŸºæœ¬èƒ½åŠ›(é ä¼°èŒƒåœ 10~1500 ä¹‹é–“)
 			
 			string *availableballtypes;
 			int pitchballpower;
@@ -1347,7 +1347,7 @@ void play_game()
 						break;
 				}
 				
-				// ÇòÖÖÓú¶à£¬ÍşÁ¦ÓúÇ¿
+				// çƒç¨®ç™’å¤šï¼Œå¨åŠ›ç™’å¼·
 				if( sizeof(availableballtypes) == 1 )
 					pitchballpower -= 200;
 				else
@@ -1356,7 +1356,7 @@ void play_game()
 			else
 			{
 				pitchballpower = 0;
-				pitcherballtype = "ÈíÈõÖ±Çò";
+				pitcherballtype = "è»Ÿå¼±ç›´çƒ";
 				
 				pitchballspeed = 100+random(15);
 			}
@@ -1388,48 +1388,48 @@ void play_game()
 				pitchballpower += 70;
 				pitchballspeed += range_random(2, 5);
 				
-				defend_msg = defendteamname+pitcher->query_idname()+HIY"È«Éñ"NOR YEL"¹á×¢"NOR+(pitchballspeed>=155?"ì­":"Í¶")+"³ö"+(pitchballspeed>=160?"¾ªÈËµÄ":"")+" "+pitchballspeed+"km "+ pitcherballtype;
+				defend_msg = defendteamname+pitcher->query_idname()+HIY"å…¨ç¥"NOR YEL"è²«æ³¨"NOR+(pitchballspeed>=155?"é£†":"æŠ•")+"å‡º"+(pitchballspeed>=160?"é©šäººçš„":"")+" "+pitchballspeed+"km "+ pitcherballtype;
 			}
 			else
 			{
-				defend_msg = defendteamname+pitcher->query_idname()+(pitchballspeed>=155?"ì­":"Í¶")+"³ö"+(pitchballspeed>=160?"¾ªÈËµÄ":"")+" "+pitchballspeed+"km "+ pitcherballtype;
+				defend_msg = defendteamname+pitcher->query_idname()+(pitchballspeed>=155?"é£†":"æŠ•")+"å‡º"+(pitchballspeed>=160?"é©šäººçš„":"")+" "+pitchballspeed+"km "+ pitcherballtype;
 			}
 
 			
-			attack_msg = attackteamname+attacknumber+" °ô"+batter->query_idname();
+			attack_msg = attackteamname+attacknumber+" æ£’"+batter->query_idname();
 			
-			// ¾´Ô¶ËÄ»µ
+			// æ•¬é å››å£
 			if( defendsetup["hint"] == HINTTYPE_WALK )
 			{
 				if( ++game[BALL] == 4 )
 				{
-					defend_msg = defendteamname+pitcher->query_idname()+"ÍùÒ»ÅÔÇáÇáÅ×Çò¸ø²¶ÊÖ£¬"HIG"»µÇò"NOR"£¡ÒıÀ´¹ÛÖÚÒ»ÕóĞêÉù";
-					attack_msg += "»ñµÃ¾´Ô¶ËÄ»µ±£ËÍÉÏÀİ¡£";
+					defend_msg = defendteamname+pitcher->query_idname()+"å¾€ä¸€æ—è¼•è¼•æ‹‹çƒçµ¦æ•æ‰‹ï¼Œ"HIG"å£çƒ"NOR"ï¼å¼•ä¾†è§€çœ¾ä¸€é™£å™“è²";
+					attack_msg += "ç²å¾—æ•¬é å››å£ä¿é€ä¸Šå£˜ã€‚";
 	
-					// ½øÒ»Àİ
+					// é€²ä¸€å£˜
 					special_msg += new_base(gameindex, attacker, defender, 1, BASETYPE_BALL);
 				}
 				else
 				{
-					defend_msg = defendteamname+pitcher->query_idname()+"ÍùÒ»ÅÔÇáÇáÅ×Çò¸ø²¶ÊÖ£¬"HIG"»µÇò"NOR"£¡ÒıÀ´¹ÛÖÚÒ»ÕóĞêÉù";
-					attack_msg += "ÄÍĞÄµØµÈ´ıËÄ»µ±£ËÍ";
+					defend_msg = defendteamname+pitcher->query_idname()+"å¾€ä¸€æ—è¼•è¼•æ‹‹çƒçµ¦æ•æ‰‹ï¼Œ"HIG"å£çƒ"NOR"ï¼å¼•ä¾†è§€çœ¾ä¸€é™£å™“è²";
+					attack_msg += "è€å¿ƒåœ°ç­‰å¾…å››å£ä¿é€";
 	
 					info_msg = " "HIR+game[STRIKE]+NOR" "HIG+game[BALL]+" "HIW+game[OUT]+NOR;
 				}				
 			}
-			// ½øĞĞ´¥»÷¶Ì´ò
+			// é€²è¡Œè§¸æ“ŠçŸ­æ‰“
 			else if( attacksetup["hint"] == HINTTYPE_BUNT )
 			{
-				// ÄÚÒ°°²´ò!
+				// å…§é‡å®‰æ‰“!
 				if( random(batter->query_int()) > random(600) )
 				{
-					attack_msg += "°Ú³öÆæÏ®¶Ì°ô½«Çò»÷³ö£¡ÕâÊÇÒ»Ö§ÄÚÒ°°²´ò£¡£¡";
+					attack_msg += "æ“ºå‡ºå¥‡è¥²çŸ­æ£’å°‡çƒæ“Šå‡ºï¼é€™æ˜¯ä¸€æ”¯å…§é‡å®‰æ‰“ï¼ï¼";
 					
 					special_msg += new_base(gameindex, attacker, defender, 1, BASETYPE_HIT);
 				}
 				else if( !random(5) )
 				{
-					attack_msg += "°Ú³ö¶Ì°ô½«Çò»÷³ö£¡µ«È´Åö³öÒ»¿ÅÈíÈõ·ÉÇò±»½ÓÉ±£¡";
+					attack_msg += "æ“ºå‡ºçŸ­æ£’å°‡çƒæ“Šå‡ºï¼ä½†å»ç¢°å‡ºä¸€é¡†è»Ÿå¼±é£›çƒè¢«æ¥æ®ºï¼";
 					
 					info_msg = " "HIW+(game[OUT]+1)+NOR WHT"out"NOR;
 					
@@ -1437,35 +1437,35 @@ void play_game()
 				}
 				else
 				{
-					// ÂúÀİ
+					// æ»¿å£˜
 					if( game[RUNNER1ST] > 0 && game[RUNNER2ND] > 0 && game[RUNNER3RD] > 0 )
 					{
 						if( game[OUT] < 2 )								
-							attack_msg += "°Ú³ö¶Ì°ô½«Çò»÷³ö£¡ÈıÀİÅÜÕß±»·âÉ±ÔÚ±¾Àİ£¡";
+							attack_msg += "æ“ºå‡ºçŸ­æ£’å°‡çƒæ“Šå‡ºï¼ä¸‰å£˜è·‘è€…è¢«å°æ®ºåœ¨æœ¬å£˜ï¼";
 						else
-							attack_msg += "°Ú³ö¶Ì°ô½«Çò»÷³ö£¡µ«±»ÄÚÒ°ÊÖÀ¹×¡²¢´ÌÉ±ÔÚÒ»Àİ£¡";
+							attack_msg += "æ“ºå‡ºçŸ­æ£’å°‡çƒæ“Šå‡ºï¼ä½†è¢«å…§é‡æ‰‹æ””ä½ä¸¦åˆºæ®ºåœ¨ä¸€å£˜ï¼";
 					}
 					else
-						attack_msg += "°Ú³ö¶Ì°ô½«Çò»÷³ö£¡µ«±»ÄÚÒ°ÊÖÀ¹×¡²¢´ÌÉ±ÔÚÒ»Àİ£¡";
+						attack_msg += "æ“ºå‡ºçŸ­æ£’å°‡çƒæ“Šå‡ºï¼ä½†è¢«å…§é‡æ‰‹æ””ä½ä¸¦åˆºæ®ºåœ¨ä¸€å£˜ï¼";
 													
 					info_msg = " "HIW+(game[OUT]+1)+NOR WHT"out"NOR;
 					
 					special_msg += new_out(gameindex, attacker, defender, 1, BASETYPE_BUNT);
 				}
 			}
-			// Í¶³öºÃÇò
+			// æŠ•å‡ºå¥½çƒ
 			else if( calculate(pitcherbase, 0.8, 1500, 400, 700) > random(1000) )
 			{
-				// ´òÕß¾«×¼Ñ¡ÇòÇÒ³ö°ôµÄ»úÂÊ 550 + (0~100) + (-60~70) - (0~100) + (-20~5)
+				// æ‰“è€…ç²¾æº–é¸çƒä¸”å‡ºæ£’çš„æ©Ÿç‡ 550 + (0~100) + (-60~70) - (0~100) + (-20~5)
 				int swingchance = 550 + calculate(batter->query_skill_level("hitaccuracy"), 0.8, 999, 0, 100) + get_handside_diff(pitcher, batter) - pitchballpower + pitchswingeffect;
 								
 				if( attacksetup["hint"] == HINTTYPE_BATTER )
 				{
-					attack_msg += HIY"È«Éñ"NOR YEL"¹á×¢"NOR;
+					attack_msg += HIY"å…¨ç¥"NOR YEL"è²«æ³¨"NOR;
 					swingchance += 40;
 				}
 
-				defend_msg += HIR"ºÃÇò"NOR"£¡";
+				defend_msg += HIR"å¥½çƒ"NOR"ï¼";
 
 				if( game[TEAM1SCORE] > game[TEAM2SCORE] && game[TEAM2] == attacker )
 					swingchance += 3 * (game[TEAM1SCORE] - game[TEAM2SCORE]);
@@ -1473,10 +1473,10 @@ void play_game()
 				if( game[TEAM2SCORE] > game[TEAM1SCORE] && game[TEAM1] == attacker )
 					swingchance += 3 * (game[TEAM2SCORE] - game[TEAM1SCORE]);
 						
-				// ºÃÇòÇÒ³ö°ô
+				// å¥½çƒä¸”å‡ºæ£’
 				if( swingchance > random(1000) )
 				{
-					// »÷³öÇòµÄ»úÂÊ 700 + (0~100) - (0~100)
+					// æ“Šå‡ºçƒçš„æ©Ÿç‡ 700 + (0~100) - (0~100)
 					int hitchance = 700 + calculate(batter->query_skill_level("hitrange"), 0.7, 999, 0, 100) - pitchballpower;
 						
 					if( attacksetup["hint"] == HINTTYPE_BATTER )
@@ -1500,26 +1500,26 @@ void play_game()
 						case 9: hitchance -= 10; break;
 					}
 							
-					// ´ò»÷³öÈ¥
+					// æ‰“æ“Šå‡ºå»
 					if( hitchance + pitchhiteffect > random(1000) )
 					{
 						//tell(find_player("clode"), attacker+(hitchance + pitchgoodhiteffect)+"/"+defender+(defendsetup["outfield"]+defendsetup["infield"])+"\n");
 						
-						// °²´ò
+						// å®‰æ‰“
 						if( hitchance + pitchgoodhiteffect + 100 > random(800 + defendsetup["outfield"] + defendsetup["infield"] ) )
 						{												
-							// »÷³öÇòµÄËÙ¶È(500~3300)
+							// æ“Šå‡ºçƒçš„é€Ÿåº¦(500~3300)
 							int hitpower = batter->query_skill_level("hitpower");
 							int ballspeed = 500 + hitpower + batterbase;
 							
 							ballspeed = calculate(ballspeed, 0.7, 3000, 0, 1000);
 
-							// È«Àİ´ò
+							// å…¨å£˜æ‰“
 							if( ballspeed > random(8000) )
 							{
 								int distance;
 								
-								// ½øÀİ
+								// é€²å£˜
 								special_msg += new_base(gameindex, attacker, defender, 4, BASETYPE_HIT);
 								
 								if( hitpower > random(5000) )
@@ -1534,12 +1534,12 @@ void play_game()
 									else
 										distance = range_random(160, 170);
 										
-									attack_msg += "ºä³öÁËÒ»Ö»³¬´óºÅ"+( game[RUNNER1ST] > 0 && game[RUNNER2ND] > 0 && game[RUNNER3RD] > 0 ? "Âú¹á" : "" )+"È«Àİ´ò("+distance+"m)£¡£¡";
+									attack_msg += "è½Ÿå‡ºäº†ä¸€åªè¶…å¤§è™Ÿ"+( game[RUNNER1ST] > 0 && game[RUNNER2ND] > 0 && game[RUNNER3RD] > 0 ? "æ»¿è²«" : "" )+"å…¨å£˜æ‰“("+distance+"m)ï¼ï¼";
 								}
 								else
 								{
 									distance = range_random(140, 160);
-									attack_msg += "»÷³ö"+( game[RUNNER1ST] > 0 && game[RUNNER2ND] > 0 && game[RUNNER3RD] > 0 ? "Âú¹á" : "" )+"È«Àİ´ò("+distance+"m)£¡£¡";
+									attack_msg += "æ“Šå‡º"+( game[RUNNER1ST] > 0 && game[RUNNER2ND] > 0 && game[RUNNER3RD] > 0 ? "æ»¿è²«" : "" )+"å…¨å£˜æ‰“("+distance+"m)ï¼ï¼";
 								}
 								
 								if( distance > record[season_year][RECORD_SPECIAL]["maxhomerundistance"] )
@@ -1547,51 +1547,51 @@ void play_game()
 									record[season_year][RECORD_SPECIAL]["maxhomerundistance"] = distance;
 									record[season_year][RECORD_SPECIAL]["maxhomerundistanceplayer"] = attacksetup["roster"][attacknumber]["file"];
 									
-									CHANNEL_D->channel_broadcast("sport", HIY"¼ÍÂ¼"NOR YEL"¸üĞÂ "NOR+attackteamname+"µÄ"+batter->query_idname()+"»÷³ö±¾¼¾×î´óºÅÈ«Àİ´ò£¬¾àÀëÀ´µ½ "HIY+distance+NOR YEL"m"NOR" £¡£¡" );
+									CHANNEL_D->channel_broadcast("sport", HIY"ç´€éŒ„"NOR YEL"æ›´æ–° "NOR+attackteamname+"çš„"+batter->query_idname()+"æ“Šå‡ºæœ¬å­£æœ€å¤§è™Ÿå…¨å£˜æ‰“ï¼Œè·é›¢ä¾†åˆ° "HIY+distance+NOR YEL"m"NOR" ï¼ï¼" );
 								}
 								
 								attack_msg += "("HIY+get_record(RECORD_PLAYER, attacksetup["roster"][attacknumber]["file"], "hit4", season_year)+NOR")";
 							}
-							// ÈıÀİ´ò
+							// ä¸‰å£˜æ‰“
 							else if( ballspeed > random(10000) )
 							{
-								// ½øÀİ
+								// é€²å£˜
 								special_msg += new_base(gameindex, attacker, defender, 3, BASETYPE_HIT);
 								
 								if( random(defendsetup["outfield"]) < 100 )
-									attack_msg += "»÷³ö¸ßÔ¶·ÉÇò£¬ÍâÒ°ÊÖ·ÜÁ¦ÆËÇòÈÔÈ»ÂıÁËÒ»²½£¬ĞÎ³ÉÈıÀİ°²´ò£¡("HIG+sprintf("%.2f", get_hit_rate(attacker, attacknumber))+NOR")";
+									attack_msg += "æ“Šå‡ºé«˜é é£›çƒï¼Œå¤–é‡æ‰‹å¥®åŠ›æ’²çƒä»ç„¶æ…¢äº†ä¸€æ­¥ï¼Œå½¢æˆä¸‰å£˜å®‰æ‰“ï¼("HIG+sprintf("%.2f", get_hit_rate(attacker, attacknumber))+NOR")";
 								else
-									attack_msg += "»÷³öÈıÀİ°²´ò£¡("HIG+sprintf("%.2f", get_hit_rate(attacker, attacknumber))+NOR")";
+									attack_msg += "æ“Šå‡ºä¸‰å£˜å®‰æ‰“ï¼("HIG+sprintf("%.2f", get_hit_rate(attacker, attacknumber))+NOR")";
 							}
-							// ¶şÀİ´ò
+							// äºŒå£˜æ‰“
 							else if( ballspeed > random(3000) )
 							{
-								// ½øÀİ
+								// é€²å£˜
 								special_msg += new_base(gameindex, attacker, defender, 2, BASETYPE_HIT);
 								
 								if( random(defendsetup["outfield"]) < 100 )
-									attack_msg += "»÷³ö²»ÓªÑø·ÉÇòµ«ÍâÒ°ÊÖõÇõÇÀ´³Ù£¬ĞÎ³É¶şÀİ°²´ò£¡("HIG+sprintf("%.2f", get_hit_rate(attacker, attacknumber))+NOR")";
+									attack_msg += "æ“Šå‡ºä¸ç‡Ÿé¤Šé£›çƒä½†å¤–é‡æ‰‹è·šè·šä¾†é²ï¼Œå½¢æˆäºŒå£˜å®‰æ‰“ï¼("HIG+sprintf("%.2f", get_hit_rate(attacker, attacknumber))+NOR")";
 								else
-									attack_msg += "»÷³ö¶şÀİ°²´ò£¡("HIG+sprintf("%.2f", get_hit_rate(attacker, attacknumber))+NOR")";
+									attack_msg += "æ“Šå‡ºäºŒå£˜å®‰æ‰“ï¼("HIG+sprintf("%.2f", get_hit_rate(attacker, attacknumber))+NOR")";
 							}
-							// Ò»Àİ´ò
+							// ä¸€å£˜æ‰“
 							else
 							{
-								// ½øÀİ
+								// é€²å£˜
 								special_msg += new_base(gameindex, attacker, defender, 1, BASETYPE_HIT);
 								
 								if( random(defendsetup["infield"]) < 100 )
-									attack_msg += "»÷³öµÄ¹öµØÇòÓ²ÊÇ´ÓÄÚÒ°·ÀÏßÖĞ´©Ô½³öÈ¥£¬ĞÎ³ÉÒ»Àİ°²´ò£¡("HIG+sprintf("%.2f", get_hit_rate(attacker, attacknumber))+NOR")";
+									attack_msg += "æ“Šå‡ºçš„æ»¾åœ°çƒç¡¬æ˜¯å¾å…§é‡é˜²ç·šä¸­ç©¿è¶Šå‡ºå»ï¼Œå½¢æˆä¸€å£˜å®‰æ‰“ï¼("HIG+sprintf("%.2f", get_hit_rate(attacker, attacknumber))+NOR")";
 								else
-									attack_msg += "»÷³öÒ»Àİ°²´ò£¡("HIG+sprintf("%.2f", get_hit_rate(attacker, attacknumber))+NOR")";
+									attack_msg += "æ“Šå‡ºä¸€å£˜å®‰æ‰“ï¼("HIG+sprintf("%.2f", get_hit_rate(attacker, attacknumber))+NOR")";
 							}								
 						}
-						// ½çÍâÇò
+						// ç•Œå¤–çƒ
 						else if( hitchance > random(5000) )
 						{
 							if( game[STRIKE] < 2 )
 							{
-								attack_msg += "»÷³É½çÍâÇò";
+								attack_msg += "æ“Šæˆç•Œå¤–çƒ";
 
 								game[STRIKE]++;
 
@@ -1599,29 +1599,29 @@ void play_game()
 							}
 							else
 							{
-								attack_msg += "»÷³É½çÍâÇò";
+								attack_msg += "æ“Šæˆç•Œå¤–çƒ";
 
 								info_msg = " "HIR+game[STRIKE]+NOR" "HIG+game[BALL]+" "HIW+game[OUT]+NOR;
 							}
 						}
-						// ´ò»÷³öÈ¥Ôâ½ÓÉ±»ò´ÌÉ±
+						// æ‰“æ“Šå‡ºå»é­æ¥æ®ºæˆ–åˆºæ®º
 						else
 						{						
-							// ·ÉÇò
+							// é£›çƒ
 							if( random(2) )
 							{
-								attack_msg += "½«ÇòÔ¶Ô¶´ò»÷³öÈ¥£¡µ«±»½ÓÉ±";
+								attack_msg += "å°‡çƒé é æ‰“æ“Šå‡ºå»ï¼ä½†è¢«æ¥æ®º";
 								
 								info_msg = " "HIW+(game[OUT]+1)+NOR WHT"out"NOR;
 									
 								special_msg += new_out(gameindex, attacker, defender, 1, BASETYPE_CATCHKILL);
 							}
-							// ¹öµØ
+							// æ»¾åœ°
 							else
 							{
 								if( !random(15) && game[RUNNER2ND] > 0 && game[RUNNER1ST] > 0 && game[OUT] == 0 )
 								{
-									attack_msg += "½«Çò´ò»÷³öÈ¥£¡ÕâÊÇÒ»Ö§º±¼ûµÄÈıÉ±´ò£¡£¡";
+									attack_msg += "å°‡çƒæ‰“æ“Šå‡ºå»ï¼é€™æ˜¯ä¸€æ”¯ç½•è¦‹çš„ä¸‰æ®ºæ‰“ï¼ï¼";
 									
 									info_msg = " "HIW+(game[OUT]+3)+NOR WHT"out"NOR;
 									
@@ -1629,7 +1629,7 @@ void play_game()
 								}
 								else if( random(2) && game[RUNNER3RD] == 0 && game[RUNNER1ST] > 0 && game[OUT] < 2 )
 								{
-									attack_msg += "½«Çò´ò»÷³öÈ¥£¡ÕâÊÇÒ»Ö§Ë«É±´ò£¡£¡";
+									attack_msg += "å°‡çƒæ‰“æ“Šå‡ºå»ï¼é€™æ˜¯ä¸€æ”¯é›™æ®ºæ‰“ï¼ï¼";
 									
 									info_msg = " "HIW+(game[OUT]+2)+NOR WHT"out"NOR;
 									
@@ -1637,16 +1637,16 @@ void play_game()
 								}
 								else
 								{								
-									// ÂúÀİ
+									// æ»¿å£˜
 									if( game[RUNNER1ST] > 0 && game[RUNNER2ND] > 0 && game[RUNNER3RD] > 0 )
 									{
 										if( game[OUT] < 2 )								
-											attack_msg += "½«Çò´ò»÷³öÈ¥£¡ÈıÀİÅÜÕß±»·âÉ±ÔÚ±¾Àİ£¡";
+											attack_msg += "å°‡çƒæ‰“æ“Šå‡ºå»ï¼ä¸‰å£˜è·‘è€…è¢«å°æ®ºåœ¨æœ¬å£˜ï¼";
 										else
-											attack_msg += "½«Çò´ò»÷³öÈ¥£¡µ«±»ÄÚÒ°ÊÖÀ¹×¡²¢´ÌÉ±ÔÚÒ»Àİ£¡";
+											attack_msg += "å°‡çƒæ‰“æ“Šå‡ºå»ï¼ä½†è¢«å…§é‡æ‰‹æ””ä½ä¸¦åˆºæ®ºåœ¨ä¸€å£˜ï¼";
 									}
 									else
-										attack_msg += "½«Çò´ò»÷³öÈ¥£¡µ«±»ÄÚÒ°ÊÖÀ¹×¡²¢´ÌÉ±ÔÚÒ»Àİ£¡";
+										attack_msg += "å°‡çƒæ‰“æ“Šå‡ºå»ï¼ä½†è¢«å…§é‡æ‰‹æ””ä½ä¸¦åˆºæ®ºåœ¨ä¸€å£˜ï¼";
 									
 									info_msg = " "HIW+(game[OUT]+1)+NOR WHT"out"NOR;
 									
@@ -1656,14 +1656,14 @@ void play_game()
 						}
 
 					}
-					// »Ó°ôÂä¿Õ
+					// æ®æ£’è½ç©º
 					else
 					{
 						if( ++game[STRIKE] == 3 )
 						{							
 							defender == game[TEAM1] ? game[TEAM1K]++ : game[TEAM2K]++;
 
-							attack_msg += "»Ó°ôÂä¿ÕÔâµ½ÈıÕñ³ö¾Ö";
+							attack_msg += "æ®æ£’è½ç©ºé­åˆ°ä¸‰æŒ¯å‡ºå±€";
 
 							info_msg = " "HIW+(game[OUT]+1)+NOR WHT"out "HIY + (defender == game[TEAM1] ? game[TEAM1K] : game[TEAM2K]) +NOR YEL"K!"NOR;
 
@@ -1671,20 +1671,20 @@ void play_game()
 						}
 						else
 						{
-							attack_msg += "»Ó°ôÂä¿Õ";	
+							attack_msg += "æ®æ£’è½ç©º";	
 
 							info_msg = " "HIR+game[STRIKE]+NOR" "HIG+game[BALL]+" "HIW+game[OUT]+NOR;
 						}
 					}	
 				}
-				// ºÃÇòÎ´³ö°ô
+				// å¥½çƒæœªå‡ºæ£’
 				else
 				{
 					if( ++game[STRIKE] == 3 )
 					{					
 						defender == game[TEAM1] ? game[TEAM1K]++ : game[TEAM2K]++;
 
-						attack_msg += "Õ¾×Å·¢´ôÔâµ½ÈıÕñ³ö¾Ö";
+						attack_msg += "ç«™è‘—ç™¼å‘†é­åˆ°ä¸‰æŒ¯å‡ºå±€";
 
 						info_msg = " "HIW+(game[OUT]+1)+NOR WHT"out "HIY + (defender == game[TEAM1] ? game[TEAM1K] : game[TEAM2K]) +NOR YEL"K!"NOR;
 
@@ -1692,21 +1692,21 @@ void play_game()
 					}
 					else
 					{
-						attack_msg += "Õ¾×Å·¢´ô";
+						attack_msg += "ç«™è‘—ç™¼å‘†";
 
 						info_msg = " "HIR+game[STRIKE]+NOR" "HIG+game[BALL]+" "HIW+game[OUT]+NOR;
 					}
 				}
 			}
-			// Í¶³ö»µÇò
+			// æŠ•å‡ºå£çƒ
 			else
 			{
-				// ´òÕß¿´×¼»µÇòÇÒ²»³ö°ôµÄ»úÂÊ 750 + (0~100) + (-60~70)
+				// æ‰“è€…çœ‹æº–å£çƒä¸”ä¸å‡ºæ£’çš„æ©Ÿç‡ 750 + (0~100) + (-60~70)
 				int swingchance = 750 + calculate(batter->query_skill_level("hitaccuracy"), 0.8, 999, 0, 100) + get_handside_diff(pitcher, batter) + pitchswingeffect;
 
 				if( setup[attacker]["hint"] == HINTTYPE_BATTER )
 				{
-					attack_msg += HIY"È«Éñ"NOR YEL"¹á×¢"NOR;
+					attack_msg += HIY"å…¨ç¥"NOR YEL"è²«æ³¨"NOR;
 					swingchance += 50;
 				}
 
@@ -1716,36 +1716,36 @@ void play_game()
 				if( game[TEAM2SCORE] > game[TEAM1SCORE] && game[TEAM1] == attacker )
 					swingchance += 3 * (game[TEAM2SCORE] - game[TEAM1SCORE]);
 
-				defend_msg += HIG"»µÇò"NOR"£¬";
+				defend_msg += HIG"å£çƒ"NOR"ï¼Œ";
 
-				// »µÇòÇÒÃ»³ö°ô
+				// å£çƒä¸”æ²’å‡ºæ£’
 				if( swingchance > random(1000) )
 				{
 					if( random(200 + pitcherbase) < 5 )
 					{
-							attack_msg += "±»±©Í¶Çò»÷ÖĞ£¡»ñµÃ´¥Éí±£ËÍÉÏÀİ";
+							attack_msg += "è¢«æš´æŠ•çƒæ“Šä¸­ï¼ç²å¾—è§¸èº«ä¿é€ä¸Šå£˜";
 
-							// ½øÒ»Àİ
+							// é€²ä¸€å£˜
 							special_msg += new_base(gameindex, attacker, defender, 1, BASETYPE_BALL);
 					}
 					else
 					{
 						if( ++game[BALL] == 4 )
 						{
-							attack_msg += "ÈÌ×¡Ã»ÓĞ»Ó°ô£¬»ñµÃ±£ËÍÉÏÀİ";
+							attack_msg += "å¿ä½æ²’æœ‰æ®æ£’ï¼Œç²å¾—ä¿é€ä¸Šå£˜";
 
-							// ½øÒ»Àİ
+							// é€²ä¸€å£˜
 							special_msg += new_base(gameindex, attacker, defender, 1, BASETYPE_BALL);
 						}
 						else
 						{
-							attack_msg += "ÈÌ×¡Ã»ÓĞ»Ó°ô";
+							attack_msg += "å¿ä½æ²’æœ‰æ®æ£’";
 
 							info_msg = " "HIR+game[STRIKE]+NOR" "HIG+game[BALL]+" "HIW+game[OUT]+NOR;
 						}
 					}
 				}
-				// »µÇòµ«ÓĞ³ö°ô
+				// å£çƒä½†æœ‰å‡ºæ£’
 				else
 				{
 					if( 200 + pitchballpower > random(800) )
@@ -1754,7 +1754,7 @@ void play_game()
 						{						
 							defender == game[TEAM1] ? game[TEAM1K]++ : game[TEAM2K]++;
 
-							attack_msg += "»Ó°ôÂä¿ÕÔâµ½ÈıÕñ³ö¾Ö";
+							attack_msg += "æ®æ£’è½ç©ºé­åˆ°ä¸‰æŒ¯å‡ºå±€";
 
 							info_msg = " "HIW+(game[OUT]+1)+NOR WHT"out "HIY + (defender == game[TEAM1] ? game[TEAM1K] : game[TEAM2K]) +NOR YEL"K!"NOR;
 
@@ -1762,28 +1762,28 @@ void play_game()
 						}
 						else
 						{
-							attack_msg += "´óÁ¦Ò»»Ó£¬»Ó°ôÂä¿Õ";
+							attack_msg += "å¤§åŠ›ä¸€æ®ï¼Œæ®æ£’è½ç©º";
 
 							info_msg = " "HIR+game[STRIKE]+NOR" "HIG+game[BALL]+" "HIW+game[OUT]+NOR;
 						}
 					}
 					else
 					{
-						// ·ÉÇò
+						// é£›çƒ
 						if( random(2) )
 						{						
-							attack_msg += "½«ÇòÔ¶Ô¶´ò»÷³öÈ¥£¡µ«±»½ÓÉ±";
+							attack_msg += "å°‡çƒé é æ‰“æ“Šå‡ºå»ï¼ä½†è¢«æ¥æ®º";
 
 							info_msg = " "HIW+(game[OUT]+1)+NOR WHT"out"NOR;
 
 							special_msg += new_out(gameindex, attacker, defender, 1, BASETYPE_CATCHKILL);
 						}
-						// ¹öµØ
+						// æ»¾åœ°
 						else
 						{
 							if( !random(15) && game[RUNNER2ND] > 0 && game[RUNNER1ST] > 0 && game[OUT] == 0 )
 							{
-								attack_msg += "½«Çò´ò»÷³öÈ¥£¡ÕâÊÇÒ»Ö§º±¼ûµÄÈıÉ±´ò£¡£¡";
+								attack_msg += "å°‡çƒæ‰“æ“Šå‡ºå»ï¼é€™æ˜¯ä¸€æ”¯ç½•è¦‹çš„ä¸‰æ®ºæ‰“ï¼ï¼";
 
 								info_msg = " "HIW+(game[OUT]+3)+NOR WHT"out"NOR;
 
@@ -1791,7 +1791,7 @@ void play_game()
 							}
 							else if( random(2) && game[RUNNER3RD] == 0 && game[RUNNER1ST] > 0 && game[OUT] <= 1 )
 							{
-								attack_msg += "½«Çò´ò»÷³öÈ¥£¡ÕâÊÇÒ»Ö§Ë«É±´ò£¡£¡";
+								attack_msg += "å°‡çƒæ‰“æ“Šå‡ºå»ï¼é€™æ˜¯ä¸€æ”¯é›™æ®ºæ‰“ï¼ï¼";
 
 								info_msg = " "HIW+(game[OUT]+2)+NOR WHT"out"NOR;
 
@@ -1799,16 +1799,16 @@ void play_game()
 							}
 							else
 							{
-								// ÂúÀİ
+								// æ»¿å£˜
 								if( game[RUNNER1ST] > 0 && game[RUNNER2ND] > 0 && game[RUNNER3RD] > 0 )
 								{
 									if( game[OUT] < 2 )								
-										attack_msg += "½«Çò´ò»÷³öÈ¥£¡ÈıÀİÅÜÕß±»·âÉ±ÔÚ±¾Àİ£¡";
+										attack_msg += "å°‡çƒæ‰“æ“Šå‡ºå»ï¼ä¸‰å£˜è·‘è€…è¢«å°æ®ºåœ¨æœ¬å£˜ï¼";
 									else
-										attack_msg += "½«Çò´ò»÷³öÈ¥£¡µ«±»ÄÚÒ°ÊÖÀ¹×¡²¢´ÌÉ±ÔÚÒ»Àİ£¡";
+										attack_msg += "å°‡çƒæ‰“æ“Šå‡ºå»ï¼ä½†è¢«å…§é‡æ‰‹æ””ä½ä¸¦åˆºæ®ºåœ¨ä¸€å£˜ï¼";
 								}
 								else
-									attack_msg += "½«Çò´ò»÷³öÈ¥£¡µ«±»ÄÚÒ°ÊÖÀ¹×¡²¢´ÌÉ±ÔÚÒ»Àİ£¡";
+									attack_msg += "å°‡çƒæ‰“æ“Šå‡ºå»ï¼ä½†è¢«å…§é‡æ‰‹æ””ä½ä¸¦åˆºæ®ºåœ¨ä¸€å£˜ï¼";
 
 								info_msg = " "HIW+(game[OUT]+1)+NOR WHT"out"NOR;
 
@@ -1849,7 +1849,7 @@ void play_game()
 	}
 }
 
-// ĞÂÇòÈü×¼±¸¿ªÊ¼, Ç°ÕßÎªÖ÷³¡, ºóÕßÎª¿Í³¡
+// æ–°çƒè³½æº–å‚™é–‹å§‹, å‰è€…ç‚ºä¸»å ´, å¾Œè€…ç‚ºå®¢å ´
 void new_game(string id1, string id2)
 {
 	mapping game = allocate_mapping(0);
@@ -1894,10 +1894,10 @@ void new_game(string id1, string id2)
 	setup[id2]["opponents"] -= ({ id1 });
 	
 	if( objectp(user = find_player(id1)) )
-		tell(user, pnoun(2, user)+"µÄ°ôÇò¶ÓÎé¼´½«Óë"+setup[id2]["username"]+"µÄ¡°"+setup[id2]["name"]+"¡±½øĞĞ±ÈÈü¡£\n");
+		tell(user, pnoun(2, user)+"çš„æ£’çƒéšŠä¼å³å°‡èˆ‡"+setup[id2]["username"]+"çš„â€œ"+setup[id2]["name"]+"â€é€²è¡Œæ¯”è³½ã€‚\n");
 	
 	if( objectp(user = find_player(id2)) )
-		tell(user, pnoun(2, user)+"µÄ°ôÇò¶ÓÎé¼´½«Óë"+setup[id1]["username"]+"µÄ¡°"+setup[id1]["name"]+"¡±½øĞĞ±ÈÈü¡£\n");
+		tell(user, pnoun(2, user)+"çš„æ£’çƒéšŠä¼å³å°‡èˆ‡"+setup[id1]["username"]+"çš„â€œ"+setup[id1]["name"]+"â€é€²è¡Œæ¯”è³½ã€‚\n");
 }
 
 void start_game(string id)
@@ -1954,7 +1954,7 @@ varargs mapping query_setup(string id)
 		return setup;
 	else
 	{
-		// ³õÊ¼»¯Éè¶¨
+		// åˆå§‹åŒ–è¨­å®š
 		if( undefinedp(setup[id]) )
 		{
 			setup[id] = allocate_mapping(0);
@@ -1971,7 +1971,7 @@ int exists(string id)
 	return !undefinedp(setup[id]);
 }
 
-// ÖØĞÂÉè¶¨ËùÓĞÇò¶ÓµÄ¶ÔÊÖ
+// é‡æ–°è¨­å®šæ‰€æœ‰çƒéšŠçš„å°æ‰‹
 void reset_all_opponents()
 {
 	foreach(string id, mapping data in setup)
@@ -1999,7 +1999,7 @@ mapping query_record()
 	return record;
 }
 
-// ĞÄÌøº¯Ê½
+// å¿ƒè·³å‡½å¼
 void heart_beat()
 {
 	int *realtime = TIME_D->query_realtime_array();
@@ -2008,7 +2008,7 @@ void heart_beat()
 
 	if( !post_season_start && realtime[WDAY] == 0 && realtime[HOUR] == 14 )
 	{
-		CHANNEL_D->channel_broadcast("sport", HIR"¼¾ºó"NOR RED"Èü"NOR" Í£Ö¹¼¾ÈüÅä¶Ô£¬Ä¿Ç°ÕıÔÚ½øĞĞµÄ±ÈÈüÈ«²¿½áÊøºóµÚ "HIC+season_year+NOR" Çò¼¾¼¾ºóÈü¼´½«¿ªÊ¼¡£");
+		CHANNEL_D->channel_broadcast("sport", HIR"å­£å¾Œ"NOR RED"è³½"NOR" åœæ­¢å­£è³½é…å°ï¼Œç›®å‰æ­£åœ¨é€²è¡Œçš„æ¯”è³½å…¨éƒ¨çµæŸå¾Œç¬¬ "HIC+season_year+NOR" çƒå­£å­£å¾Œè³½å³å°‡é–‹å§‹ã€‚");
 		post_season_start = 1;	
 	}
 	
@@ -2016,12 +2016,12 @@ void heart_beat()
 	{
 		if( post_season_start )
 		{		
-			// ÉĞÓĞ±ÈÈü½øĞĞÖĞ
+			// å°šæœ‰æ¯”è³½é€²è¡Œä¸­
 			if( sizeof(games) ) return;
 			
 			switch(post_season_level)
 			{
-				// ¿ªÊ¼¼¾ºóÈü
+				// é–‹å§‹å­£å¾Œè³½
 				case 0:
 				{
 					post_season_team_8 = sort_array(filter_array(season, (: valid_setup($1, 1) :)), (: sort_team($1, $2) :))[0..7];
@@ -2029,31 +2029,31 @@ void heart_beat()
 					post_season_team_2 = allocate(0);
 					post_season_eliminate_teams = allocate(0);
 
-					// ¼¾ºóÈü¶ÓÎé²»×ã 8 ¶Ó
+					// å­£å¾Œè³½éšŠä¼ä¸è¶³ 8 éšŠ
 					if( sizeof(post_season_team_8) != 8 )
 					{
 						if( realtime[WDAY] == 0 && realtime[HOUR] == 20 )
 						{
-							CHANNEL_D->channel_broadcast("sport", HIR"¼¾ºó"NOR RED"Èü"NOR" ¼¾ºóÈü¶ÓÎé²»×ã°ËÖ§Çò¶Ó£¬Ğû¸æ´Ë´Î¼¾ºóÈüÈ¡Ïû¡£");
+							CHANNEL_D->channel_broadcast("sport", HIR"å­£å¾Œ"NOR RED"è³½"NOR" å­£å¾Œè³½éšŠä¼ä¸è¶³å…«æ”¯çƒéšŠï¼Œå®£å‘Šæ­¤æ¬¡å­£å¾Œè³½å–æ¶ˆã€‚");
 							post_season_level = 8;
 						}
 						return;
 					}
 					
-					CHANNEL_D->channel_broadcast("sport", HIR"¼¾ºó"NOR RED"Èü"NOR" ËùÓĞÕı¹æ¼¾ÈüÒÑ¾­½áÊø£¬ÒÔÏÂÑ¡³ö±¾Çò¼¾Ê¤ÂÊ×î¸ßµÄÇ°°ËÇ¿¶ÓÎé½øĞĞ¼¾ºóÈü¡£");
+					CHANNEL_D->channel_broadcast("sport", HIR"å­£å¾Œ"NOR RED"è³½"NOR" æ‰€æœ‰æ­£è¦å­£è³½å·²ç¶“çµæŸï¼Œä»¥ä¸‹é¸å‡ºæœ¬çƒå­£å‹ç‡æœ€é«˜çš„å‰å…«å¼·éšŠä¼é€²è¡Œå­£å¾Œè³½ã€‚");
 					
 					for(int i=0;i<sizeof(post_season_team_8);++i)
 					{
 						if( objectp(find_player(post_season_team_8[i])) )
 							tell(find_player(post_season_team_8[i]), "\a");
 
-						CHANNEL_D->channel_broadcast("sport", HIR"¼¾ºó"NOR RED"Èü"NOR" "NOR YEL"µÚ"HIY+(i+1)+NOR YEL"Ãû"NOR"£º¡°"+setup[post_season_team_8[i]]["name"]+"¡±£¬ÓÉ"+setup[post_season_team_8[i]]["username"]+"Áì¾ü¡£");
+						CHANNEL_D->channel_broadcast("sport", HIR"å­£å¾Œ"NOR RED"è³½"NOR" "NOR YEL"ç¬¬"HIY+(i+1)+NOR YEL"å"NOR"ï¼šâ€œ"+setup[post_season_team_8[i]]["name"]+"â€ï¼Œç”±"+setup[post_season_team_8[i]]["username"]+"é ˜è»ã€‚");
 					}
 		
-					CHANNEL_D->channel_broadcast("sport", HIR"¼¾ºó"NOR RED"Èü"NOR" ÒÔÉÏ°Ë¶Ó¾¢ÂÃ½«²Î¼Ó±¾Çò¼¾µÄ×îÖÕ¾öÈü£¬ÕùÈ¡°ôÇò½ç×î¸ßÈÙÒ«¡°"HIY"ÊÀ"NOR YEL"½ç"HIY"¹Ú"NOR YEL"¾ü"NOR"¡±¡£");
-					CHANNEL_D->channel_broadcast("sport", HIR"¼¾ºó"NOR RED"Èü"NOR" ¼¾ºóÈüËùÓĞÈüÊÂ½ÔÒ»Õ½¶¨Ê¤¸º£¬×Ü¹² 7 ³¡±ÈÈü½«ÓÚÔË¶¯ÆµµÀÈ«ÊÀ½çÍ¬²½Êµ¿ö×ª²¥¡£");
-					CHANNEL_D->channel_broadcast("sport", HIR"¼¾ºó"NOR RED"Èü"NOR" ¼¾ºóÈüµÄ±ÈÈü¹ı³ÌÖĞ½«¿ÉÓµÓĞ 2 ±¶µÄ°µºÅÊ¹ÓÃ´ÎÊı£¬Í¬Ê±½«ÓµÓĞ 20 ±¶µÄÆ±·¿ÊÕÈë¡£");
-					CHANNEL_D->channel_broadcast("sport", HIR"¼¾ºó"NOR RED"Èü"NOR" Ê×ÏÈ½øĞĞ "HIC"A ×é°ËÇ¿Èü"NOR"µÄÊÇÅÅÃûµÚ 1 µÄ¡°"+setup[post_season_team_8[0]]["name"]+"¡±¶ÔÉÏÅÅÃûµÚ 8 µÄ¡°"+setup[post_season_team_8[7]]["name"]+"¡±£¬±ÈÈü½«ÔÚ 2 ·ÖÖÓºó¿ªÊ¼¡£");
+					CHANNEL_D->channel_broadcast("sport", HIR"å­£å¾Œ"NOR RED"è³½"NOR" ä»¥ä¸Šå…«éšŠå‹æ—…å°‡åƒåŠ æœ¬çƒå­£çš„æœ€çµ‚æ±ºè³½ï¼Œçˆ­å–æ£’çƒç•Œæœ€é«˜æ¦®è€€â€œ"HIY"ä¸–"NOR YEL"ç•Œ"HIY"å† "NOR YEL"è»"NOR"â€ã€‚");
+					CHANNEL_D->channel_broadcast("sport", HIR"å­£å¾Œ"NOR RED"è³½"NOR" å­£å¾Œè³½æ‰€æœ‰è³½äº‹çš†ä¸€æˆ°å®šå‹è² ï¼Œç¸½å…± 7 å ´æ¯”è³½å°‡äºé‹å‹•é »é“å…¨ä¸–ç•ŒåŒæ­¥å¯¦æ³è½‰æ’­ã€‚");
+					CHANNEL_D->channel_broadcast("sport", HIR"å­£å¾Œ"NOR RED"è³½"NOR" å­£å¾Œè³½çš„æ¯”è³½éç¨‹ä¸­å°‡å¯æ“æœ‰ 2 å€çš„æš—è™Ÿä½¿ç”¨æ¬¡æ•¸ï¼ŒåŒæ™‚å°‡æ“æœ‰ 20 å€çš„ç¥¨æˆ¿æ”¶å…¥ã€‚");
+					CHANNEL_D->channel_broadcast("sport", HIR"å­£å¾Œ"NOR RED"è³½"NOR" é¦–å…ˆé€²è¡Œ "HIC"A çµ„å…«å¼·è³½"NOR"çš„æ˜¯æ’åç¬¬ 1 çš„â€œ"+setup[post_season_team_8[0]]["name"]+"â€å°ä¸Šæ’åç¬¬ 8 çš„â€œ"+setup[post_season_team_8[7]]["name"]+"â€ï¼Œæ¯”è³½å°‡åœ¨ 2 åˆ†é˜å¾Œé–‹å§‹ã€‚");
 				
 					post_season_level++;
 					new_game(post_season_team_8[0], post_season_team_8[7]);
@@ -2062,7 +2062,7 @@ void heart_beat()
 				}
 				case 1:
 				{
-					CHANNEL_D->channel_broadcast("sport", HIR"¼¾ºó"NOR RED"Èü"NOR" ½Ó×Å½øĞĞ "HIC"B ×é°ËÇ¿Èü"NOR"µÄÊÇÅÅÃûµÚ 2 µÄ¡°"+setup[post_season_team_8[1]]["name"]+"¡±¶ÔÉÏÅÅÃûµÚ 7 µÄ¡°"+setup[post_season_team_8[6]]["name"]+"¡±£¬±ÈÈü½«ÔÚ 2 ·ÖÖÓºó¿ªÊ¼¡£");
+					CHANNEL_D->channel_broadcast("sport", HIR"å­£å¾Œ"NOR RED"è³½"NOR" æ¥è‘—é€²è¡Œ "HIC"B çµ„å…«å¼·è³½"NOR"çš„æ˜¯æ’åç¬¬ 2 çš„â€œ"+setup[post_season_team_8[1]]["name"]+"â€å°ä¸Šæ’åç¬¬ 7 çš„â€œ"+setup[post_season_team_8[6]]["name"]+"â€ï¼Œæ¯”è³½å°‡åœ¨ 2 åˆ†é˜å¾Œé–‹å§‹ã€‚");
 					
 					post_season_level++;
 					new_game(post_season_team_8[1], post_season_team_8[6]);
@@ -2071,7 +2071,7 @@ void heart_beat()
 				}
 				case 2:
 				{
-					CHANNEL_D->channel_broadcast("sport", HIR"¼¾ºó"NOR RED"Èü"NOR" ½Ó×Å½øĞĞ "HIC"C ×é°ËÇ¿Èü"NOR"µÄÊÇÅÅÃûµÚ 3 µÄ¡°"+setup[post_season_team_8[2]]["name"]+"¡±¶ÔÉÏÅÅÃûµÚ 6 µÄ¡°"+setup[post_season_team_8[5]]["name"]+"¡±£¬±ÈÈü½«ÔÚ 2 ·ÖÖÓºó¿ªÊ¼¡£");
+					CHANNEL_D->channel_broadcast("sport", HIR"å­£å¾Œ"NOR RED"è³½"NOR" æ¥è‘—é€²è¡Œ "HIC"C çµ„å…«å¼·è³½"NOR"çš„æ˜¯æ’åç¬¬ 3 çš„â€œ"+setup[post_season_team_8[2]]["name"]+"â€å°ä¸Šæ’åç¬¬ 6 çš„â€œ"+setup[post_season_team_8[5]]["name"]+"â€ï¼Œæ¯”è³½å°‡åœ¨ 2 åˆ†é˜å¾Œé–‹å§‹ã€‚");
 					
 					post_season_level++;
 					new_game(post_season_team_8[2], post_season_team_8[5]);
@@ -2080,7 +2080,7 @@ void heart_beat()
 				}
 				case 3:
 				{
-					CHANNEL_D->channel_broadcast("sport", HIR"¼¾ºó"NOR RED"Èü"NOR" ½Ó×Å½øĞĞ "HIC"D ×é°ËÇ¿Èü"NOR"µÄÊÇÅÅÃûµÚ 4 µÄ¡°"+setup[post_season_team_8[3]]["name"]+"¡±¶ÔÉÏÅÅÃûµÚ 5 µÄ¡°"+setup[post_season_team_8[4]]["name"]+"¡±£¬±ÈÈü½«ÔÚ 2 ·ÖÖÓºó¿ªÊ¼¡£");
+					CHANNEL_D->channel_broadcast("sport", HIR"å­£å¾Œ"NOR RED"è³½"NOR" æ¥è‘—é€²è¡Œ "HIC"D çµ„å…«å¼·è³½"NOR"çš„æ˜¯æ’åç¬¬ 4 çš„â€œ"+setup[post_season_team_8[3]]["name"]+"â€å°ä¸Šæ’åç¬¬ 5 çš„â€œ"+setup[post_season_team_8[4]]["name"]+"â€ï¼Œæ¯”è³½å°‡åœ¨ 2 åˆ†é˜å¾Œé–‹å§‹ã€‚");
 					
 					post_season_level++;
 					new_game(post_season_team_8[3], post_season_team_8[4]);
@@ -2089,7 +2089,7 @@ void heart_beat()
 				}
 				case 4:
 				{
-					CHANNEL_D->channel_broadcast("sport", HIR"¼¾ºó"NOR RED"Èü"NOR" ½Ó×Å½øĞĞ"HIY"ËÄÇ¿×¼¾öÈü"NOR"µÄÊÇ A ×é½ú¼¶¶ÓÎé¡°"+setup[post_season_team_4[0]]["name"]+"¡±¶ÔÉÏ D ×é½ú¼¶¶ÓÎé¡°"+setup[post_season_team_4[3]]["name"]+"¡±£¬±ÈÈü½«ÔÚ 2 ·ÖÖÓºó¿ªÊ¼¡£");
+					CHANNEL_D->channel_broadcast("sport", HIR"å­£å¾Œ"NOR RED"è³½"NOR" æ¥è‘—é€²è¡Œ"HIY"å››å¼·æº–æ±ºè³½"NOR"çš„æ˜¯ A çµ„æ™‰ç´šéšŠä¼â€œ"+setup[post_season_team_4[0]]["name"]+"â€å°ä¸Š D çµ„æ™‰ç´šéšŠä¼â€œ"+setup[post_season_team_4[3]]["name"]+"â€ï¼Œæ¯”è³½å°‡åœ¨ 2 åˆ†é˜å¾Œé–‹å§‹ã€‚");
 					
 					post_season_level++;
 					new_game(post_season_team_4[0], post_season_team_4[3]);
@@ -2098,7 +2098,7 @@ void heart_beat()
 				}
 				case 5:
 				{
-					CHANNEL_D->channel_broadcast("sport", HIR"¼¾ºó"NOR RED"Èü"NOR" ½Ó×Å½øĞĞ"HIY"ËÄÇ¿×¼¾öÈü"NOR"µÄÊÇ B ×é½ú¼¶¶ÓÎé¡°"+setup[post_season_team_4[1]]["name"]+"¡±¶ÔÉÏ C ×é½ú¼¶¶ÓÎé¡°"+setup[post_season_team_4[2]]["name"]+"¡±£¬±ÈÈü½«ÔÚ 2 ·ÖÖÓºó¿ªÊ¼¡£");
+					CHANNEL_D->channel_broadcast("sport", HIR"å­£å¾Œ"NOR RED"è³½"NOR" æ¥è‘—é€²è¡Œ"HIY"å››å¼·æº–æ±ºè³½"NOR"çš„æ˜¯ B çµ„æ™‰ç´šéšŠä¼â€œ"+setup[post_season_team_4[1]]["name"]+"â€å°ä¸Š C çµ„æ™‰ç´šéšŠä¼â€œ"+setup[post_season_team_4[2]]["name"]+"â€ï¼Œæ¯”è³½å°‡åœ¨ 2 åˆ†é˜å¾Œé–‹å§‹ã€‚");
 					
 					post_season_level++;
 					new_game(post_season_team_4[1], post_season_team_4[2]);
@@ -2107,7 +2107,7 @@ void heart_beat()
 				}
 				case 6:
 				{
-				CHANNEL_D->channel_broadcast("sport", HIR"¼¾ºó"NOR RED"Èü"NOR" ½Ó×Å½øĞĞµÚ "HIC+season_year+NOR" Çò¼¾"HIY"×Ü"NOR YEL"¹Ú¾üÈü"NOR"µÄÊÇ¡°"+setup[post_season_team_2[0]]["name"]+"¡±¶ÔÉÏ¡°"+setup[post_season_team_2[1]]["name"]+"¡±£¬±ÈÈü½«ÔÚ 2 ·ÖÖÓºó¿ªÊ¼¡£");
+				CHANNEL_D->channel_broadcast("sport", HIR"å­£å¾Œ"NOR RED"è³½"NOR" æ¥è‘—é€²è¡Œç¬¬ "HIC+season_year+NOR" çƒå­£"HIY"ç¸½"NOR YEL"å† è»è³½"NOR"çš„æ˜¯â€œ"+setup[post_season_team_2[0]]["name"]+"â€å°ä¸Šâ€œ"+setup[post_season_team_2[1]]["name"]+"â€ï¼Œæ¯”è³½å°‡åœ¨ 2 åˆ†é˜å¾Œé–‹å§‹ã€‚");
 					
 					post_season_level++;
 					new_game(post_season_team_2[0], post_season_team_2[1]);
@@ -2117,7 +2117,7 @@ void heart_beat()
 				case 7:
 				{
 					post_season_level++;
-					CHANNEL_D->channel_broadcast("sport", HIR"¼¾ºó"NOR RED"Èü"NOR" ±¾Çò¼¾ËùÓĞ¼¾ÈüÓë¼¾ºóÈüÒÑ¾­È«²¿½áÊø£¬ÎÒÃÇÏÂÒ»¸öÇò¼¾ÔÙ¼û£¡£¡");
+					CHANNEL_D->channel_broadcast("sport", HIR"å­£å¾Œ"NOR RED"è³½"NOR" æœ¬çƒå­£æ‰€æœ‰å­£è³½èˆ‡å­£å¾Œè³½å·²ç¶“å…¨éƒ¨çµæŸï¼Œæˆ‘å€‘ä¸‹ä¸€å€‹çƒå­£å†è¦‹ï¼ï¼");
 					break;
 				}
 				case 8:
@@ -2126,7 +2126,7 @@ void heart_beat()
 					post_season_start = 0;
 					season_year++;
 					
-					CHANNEL_D->channel_broadcast("sport", HIG"È«ĞÂ"NOR GRN"Çò¼¾"NOR" ĞÂµÄµÚ "HIC+season_year+NOR" Çò¼¾¿ªÊ¼£¬ËùÓĞ²ÎÈüÇò¶Ó¿ªÊ¼½øĞĞ±ÈÈüÅä¶Ô¡£");
+					CHANNEL_D->channel_broadcast("sport", HIG"å…¨æ–°"NOR GRN"çƒå­£"NOR" æ–°çš„ç¬¬ "HIC+season_year+NOR" çƒå­£é–‹å§‹ï¼Œæ‰€æœ‰åƒè³½çƒéšŠé–‹å§‹é€²è¡Œæ¯”è³½é…å°ã€‚");
 					
 					post_season_team_8 = allocate(0);
 					post_season_team_4 = allocate(0);
@@ -2153,28 +2153,28 @@ void heart_beat()
 		}
 		else
 		{
-			// ´¦Àí±ÈÈüÅä¶Ô
+			// è™•ç†æ¯”è³½é…å°
 			foreach(string id in season)
 			{
 				if( undefinedp(setup[id]) ) continue;
 		
-				// Ñ°ÕÒ¶ÔÊÖ£¬ĞÂµÄ±ÈÈü×¼±¸¿ªÊ¼
+				// å°‹æ‰¾å°æ‰‹ï¼Œæ–°çš„æ¯”è³½æº–å‚™é–‹å§‹
 				if(setup[id]["status"] == STATUS_IDLE )
 				{
 					string opponent_id = 0;
 		
-					// Çò¶ÓÉè¶¨ÓĞÎó£¬È¡ÏûÅä¶Ô
+					// çƒéšŠè¨­å®šæœ‰èª¤ï¼Œå–æ¶ˆé…å°
 					if( !valid_setup(id, 1) )
 					{
 						leave_season(id);
 						continue;
 					}
 		
-					// ÈôÒÑÎŞ¶ÔÊÖ£¬ÖØĞÂÁĞ±í
+					// è‹¥å·²ç„¡å°æ‰‹ï¼Œé‡æ–°åˆ—è¡¨
 					if( !sizeof(setup[id]["opponents"]) )
 						setup[id]["opponents"] = copy(sort_array(season, (: random(2) ? 1 : -1 :))) - ({ id });
 		
-					// ËÑÑ°Ä¿Ç°Ã»ÓĞ±ÈÈüµÄ¶ÔÊÖ
+					// æœå°‹ç›®å‰æ²’æœ‰æ¯”è³½çš„å°æ‰‹
 					foreach(string teamid in setup[id]["opponents"])
 					{
 						if( setup[teamid]["status"] == STATUS_IDLE )
@@ -2190,10 +2190,10 @@ void heart_beat()
 						}
 					}
 		
-					// ÕÒ²»µ½¶ÔÊÖ£¬µÈ´ıÏÂ´Î heartbeat ÔÙÖØĞÂËÑÑ°
+					// æ‰¾ä¸åˆ°å°æ‰‹ï¼Œç­‰å¾…ä¸‹æ¬¡ heartbeat å†é‡æ–°æœå°‹
 					if( !stringp(opponent_id) )
 					{
-						// Á¬Ğø 180 ´Î(40min)ÕÒ²»µ½¶ÔÊÖ£¬ÖØĞÂÁĞ±í
+						// é€£çºŒ 180 æ¬¡(40min)æ‰¾ä¸åˆ°å°æ‰‹ï¼Œé‡æ–°åˆ—è¡¨
 						if( ++setup[id]["no_opponent"] > 240 )
 						{
 							setup[id]["no_opponent"] = 0;
@@ -2205,15 +2205,15 @@ void heart_beat()
 					setup[id]["no_opponent"] = 0;
 					setup[opponent_id]["no_opponent"] = 0;
 					
-					// Ëæ»ú¾ö¶¨Ö÷¿Í³¡
+					// éš¨æ©Ÿæ±ºå®šä¸»å®¢å ´
 					if( !random(2) )
 					{
-						//CHANNEL_D->channel_broadcast("sport", HIC+"¼¾Èü"NOR CYN"Åä¶Ô "NOR+setup[id]["username"]+"µÄ¡°"+setup[id]["name"]+"¡±Óë"+setup[opponent_id]["username"]+"µÄ¡°"+setup[opponent_id]["name"]+"¡±½«ÓÚ "+(PREPARETIME/60)+" ·ÖÖÓºó½øĞĞÇòÈü¡£");
+						//CHANNEL_D->channel_broadcast("sport", HIC+"å­£è³½"NOR CYN"é…å° "NOR+setup[id]["username"]+"çš„â€œ"+setup[id]["name"]+"â€èˆ‡"+setup[opponent_id]["username"]+"çš„â€œ"+setup[opponent_id]["name"]+"â€å°‡äº "+(PREPARETIME/60)+" åˆ†é˜å¾Œé€²è¡Œçƒè³½ã€‚");
 						new_game(id, opponent_id);
 					}
 					else
 					{
-						//CHANNEL_D->channel_broadcast("sport", HIC+"¼¾Èü"NOR CYN"Åä¶Ô "NOR+setup[opponent_id]["username"]+"µÄ¡°"+setup[opponent_id]["name"]+"¡±Óë"+setup[id]["username"]+"µÄ¡°"+setup[id]["name"]+"¡±½«ÓÚ "+(PREPARETIME/60)+" ·ÖÖÓºó½øĞĞÇòÈü¡£");
+						//CHANNEL_D->channel_broadcast("sport", HIC+"å­£è³½"NOR CYN"é…å° "NOR+setup[opponent_id]["username"]+"çš„â€œ"+setup[opponent_id]["name"]+"â€èˆ‡"+setup[id]["username"]+"çš„â€œ"+setup[id]["name"]+"â€å°‡äº "+(PREPARETIME/60)+" åˆ†é˜å¾Œé€²è¡Œçƒè³½ã€‚");
 						new_game(opponent_id, id);
 					}
 				}
@@ -2223,7 +2223,7 @@ void heart_beat()
 	play_game();
 }
 
-// ÇĞ»»¼´Ê±Õ½¿ö
+// åˆ‡æ›å³æ™‚æˆ°æ³
 void set_listener(string listener_id, string target_team)
 {	
 	if( !stringp(target_team) )
@@ -2318,5 +2318,5 @@ void create()
 
 string query_name()
 {
-	return "°ôÇòÏµÍ³(BASEBALL_D)";
+	return "æ£’çƒç³»çµ±(BASEBALL_D)";
 }

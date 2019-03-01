@@ -10,10 +10,10 @@ int main(object me, string arg)
         user = filter_array(users(), (: interactive($1) :));
         mccp = filter_array(user, (: compressedp($1) :));
         
-        write(sprintf("ÄãµÄ MCCP ×´Ì¬Îª£º" HIR "%s\n" NOR, compressedp(me) ? "ON" : "OFF"));
-        write(sprintf("ÏÖÔÚ¹² " HIC "%d" NOR "/%d ¸öÊ¹ÓÃÕß¿ªÆô MCCP¡£\n", sizeof(mccp), sizeof(user)));
+        write(sprintf("ä½ çš„ MCCP ç‹€æ…‹ç‚ºï¼š" HIR "%s\n" NOR, compressedp(me) ? "ON" : "OFF"));
+        write(sprintf("ç¾åœ¨å…± " HIC "%d" NOR "/%d å€‹ä½¿ç”¨è€…é–‹å•Ÿ MCCPã€‚\n", sizeof(mccp), sizeof(user)));
 #else
-        write("Çı¶¯³ÌĞòÄ¿Ç°²»Ö§³ÖÍøÂ·´«ÊäÑ¹Ëõ¹¦ÄÜ¡£\n");
+        write("é©…å‹•ç¨‹åºç›®å‰ä¸æ”¯æŒç¶²è·¯å‚³è¼¸å£“ç¸®åŠŸèƒ½ã€‚\n");
 #endif
         return 1;
 }
@@ -21,9 +21,9 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸ÁîËµÃ÷:
-    ¼ì²éÍæ¼ÒµÄ³ÌÊ½ÊÇ·ñÓĞÆô¶¯ MCCP(Mud Client Compression Protocol)¹¦ÄÜ
-´Ë¹¦ÄÜ¿ÉÒÔ¼ÓËÙÍøÂ·´«ÊäËÙ¶È
+æŒ‡ä»¤èªªæ˜:
+    æª¢æŸ¥ç©å®¶çš„ç¨‹å¼æ˜¯å¦æœ‰å•Ÿå‹• MCCP(Mud Client Compression Protocol)åŠŸèƒ½
+æ­¤åŠŸèƒ½å¯ä»¥åŠ é€Ÿç¶²è·¯å‚³è¼¸é€Ÿåº¦
 
 HELP );
     return 1;

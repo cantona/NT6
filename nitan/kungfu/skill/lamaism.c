@@ -1,4 +1,4 @@
-// lamaism.c ÃÜ×ÚĞÄ·¨
+// lamaism.c å¯†å®—å¿ƒæ³•
 // Last Modified by winder on Mar. 10 2000
 
 #include <ansi.h>;
@@ -18,26 +18,26 @@ int valid_learn(object me)
 
         lvl = (int)me->query_skill("lamaism", 1);
 
-        if( query("class", me) != "bonze" && query("family/family_name", me) != "¶ÎÊÏ»Ê×å" && lvl>39 )
-                return notify_fail("ÄãÎ´Èë·ğÃÅ£¬³¾Ôµ²»¶Ï£¬ÎŞ·¨¼ÌĞøĞŞ³ÖÃÜ×ÚÉñ·¨¡£\n");
+        if( query("class", me) != "bonze" && query("family/family_name", me) != "æ®µæ°çš‡æ—" && lvl>39 )
+                return notify_fail("ä½ æœªå…¥ä½›é–€ï¼Œå¡µç·£ä¸æ–·ï¼Œç„¡æ³•ç¹¼çºŒä¿®æŒå¯†å®—ç¥æ³•ã€‚\n");
 
         return 1;
 }
 
 int practice_skill(object me)
 {
-        return notify_fail("ÃÜ×ÚĞÄ·¨Ö»ÄÜ¿¿Ñ§(learn)À´Ìá¸ß¡£\n");
+        return notify_fail("å¯†å®—å¿ƒæ³•åªèƒ½é å­¸(learn)ä¾†æé«˜ã€‚\n");
 }
 
 int help(object me)
 {
-        write(HIC"\nÃÜ×ÚĞÄ·¨£º"NOR"\n");
+        write(HIC"\nå¯†å®—å¿ƒæ³•ï¼š"NOR"\n");
         write(@HELP
 
-    ÃÜ×ÚĞÄ·¨ÊÇÑ©ÓòÃÜ×ÚĞÄ·¨£¬ÓÃÒÔ³¬¶ÉÉúÁé¡£
+    å¯†å®—å¿ƒæ³•æ˜¯é›ªåŸŸå¯†å®—å¿ƒæ³•ï¼Œç”¨ä»¥è¶…æ¸¡ç”Ÿéˆã€‚
 
-        Ñ§Ï°ÒªÇó£º
-                ²»¿ÉÑ§ìø×Ú¡¢µÀ¼ÒºÍ»ªÉ½µÄĞÄ·¨ÒÔ¼°ĞÇËŞ¶¾¼¼
+        å­¸ç¿’è¦æ±‚ï¼š
+                ä¸å¯å­¸ç¦ªå®—ã€é“å®¶å’Œè¯å±±çš„å¿ƒæ³•ä»¥åŠæ˜Ÿå®¿æ¯’æŠ€
 HELP
         );
         return 1;

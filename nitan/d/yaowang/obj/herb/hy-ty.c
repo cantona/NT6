@@ -2,12 +2,12 @@
 
 void create()
 {
-        set_name(HIC "Ì«Ñô»¹Ñô" NOR, ({ "hy-ty", "Polygonatum hookeri", "herb_hy_ty" }));
+        set_name(HIC "å¤ªé™½é‚„é™½" NOR, ({ "hy-ty", "Polygonatum hookeri", "herb_hy_ty" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "°ÙºÏ¿ÆÖ²Îï¶À»¨»Æ¾«(Polygonatum hookeri)µÄ¸ù¾¥¡£ÒòÆäÏ²Éú³¤ÔÚÏòÑôÆÂÉÏ.¹ÊµÃ´ËÃû¡£\n" NOR);
-                set("base_unit", "¿Å");
+                set("long", HIW "ç™¾åˆç§‘æ¤ç‰©ç¨èŠ±é»ƒç²¾(Polygonatum hookeri)çš„æ ¹è–ã€‚å› å…¶å–œç”Ÿé•·åœ¨å‘é™½å¡ä¸Š.æ•…å¾—æ­¤åã€‚\n" NOR);
+                set("base_unit", "é¡†");
                 set("base_value", 20000);
                 set("base_weight", 100);
         }

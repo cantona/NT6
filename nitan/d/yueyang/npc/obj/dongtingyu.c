@@ -1,4 +1,4 @@
-// dongtingyu.c ¶´Í¥Óã
+// dongtingyu.c æ´åº­é­š
 
 #include <ansi.h>;
 inherit ITEM;
@@ -6,13 +6,13 @@ inherit F_FOOD;
 
 void create()
 {
-        set_name(RED"¶´Í¥Óã"NOR, ({"dongting yu", "fish"}));
+        set_name(RED"æ´åº­é­š"NOR, ({"dongting yu", "fish"}));
         set_weight(500);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»ÅèÅëµ÷µÃÊ®·ÖÃÀÎ¶µÄ¶´Í¥Óã¡£\n");
-                set("unit", "Åè");
+                set("long", "é€™æ˜¯ä¸€ç›†çƒ¹èª¿å¾—ååˆ†ç¾å‘³çš„æ´åº­é­šã€‚\n");
+                set("unit", "ç›†");
                 set("value", 500);
                 set("food_remaining", 10);
                 set("food_supply", 20);

@@ -2,12 +2,12 @@
 
 void create()
 {
-          set_name(NOR + CYN "ÎÄÍõÒ»Ö§±Ê" NOR, ({ "wenwang yizhibi", "herb" }));
+          set_name(NOR + CYN "æ–‡ç‹ä¸€æ”¯ç­†" NOR, ({ "wenwang yizhibi", "herb" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", NOR + HIR "Í²ÇÊÉßİÔ(Balanophora involucrata)»òÉßİÔ(BalanophoraJWjaponica)µÄ¸ÉÔïÈ«Öê¡£ÒòËüµÄ»¨ĞòĞÎÈç´Ö´ÖµÄÃ«±Ê£¬Ãñ¼ä´«ËµÖÜÎÄÍõÂ·¾­ÉñÅ©¼Ü ......\n" NOR);
-                set("base_unit", "¿Å");
+                set("long", NOR + HIR "ç­’é˜è›‡è°(Balanophora involucrata)æˆ–è›‡è°(BalanophoraJWjaponica)çš„å¹¹ç‡¥å…¨æ ªã€‚å› å®ƒçš„èŠ±åºå½¢å¦‚ç²—ç²—çš„æ¯›ç­†ï¼Œæ°‘é–“å‚³èªªå‘¨æ–‡ç‹è·¯ç¶“ç¥è¾²æ¶ ......\n" NOR);
+                set("base_unit", "é¡†");
                 set("base_value", 300000);
                 set("base_weight", 20);
         }

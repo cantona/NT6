@@ -6,17 +6,17 @@ inherit STAFF;
 
 void create()
 {
-        set_name(GRN"±âµ£"NOR, ({ "bian dan", "dan" }) );
+        set_name(GRN"æ‰æ“”"NOR, ({ "bian dan", "dan" }) );
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ù");
-                set("long", "ÕâÊÇÒ»ÌõÌôµ£µÄ±âµ£¡£\n");
+                set("unit", "æ ¹");
+                set("long", "é€™æ˜¯ä¸€æ¢æŒ‘æ“”çš„æ‰æ“”ã€‚\n");
                 set("value", 100);
                 set("material", "wood");
-                set("wield_msg", "$NÄÃ³öÒ»Ìõ$n£¬ÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+                set("wield_msg", "$Næ‹¿å‡ºä¸€æ¢$nï¼Œæ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
         }
 
         init_staff(1);

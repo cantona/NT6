@@ -1,4 +1,4 @@
-// hanbing-zhenqi.c º®±ùÕæÆø
+// hanbing-zhenqi.c å¯’å†°çœŸæ°£
 // Last Modified by winder on Jul. 20 2001
 
 #include <ansi.h>;
@@ -28,32 +28,32 @@ int valid_enable(string usage) { return usage == "force"; }
 
 int valid_learn(object me)
 {
-        if( query("character", me) == "¹âÃ÷ÀÚÂä" )
-                return notify_fail("ÄãĞÄÖĞ°µÏë£ºÎÒĞĞÊÂ¹âÃ÷ÀÚÂä£¬Ñ§ÕâÒõ¶¾µÄ"
-                                   "Îä¹¦×öÉõ¡£\n");
+        if( query("character", me) == "å…‰æ˜ç£Šè½" )
+                return notify_fail("ä½ å¿ƒä¸­æš—æƒ³ï¼šæˆ‘è¡Œäº‹å…‰æ˜ç£Šè½ï¼Œå­¸é€™é™°æ¯’çš„"
+                                   "æ­¦åŠŸåšç”šã€‚\n");
 
-        if( query("gender", me) == "ÎŞĞÔ"
+        if( query("gender", me) == "ç„¡æ€§"
            && (int)me->query_skill("hanbing-zhenqi", 1) > 19)
-                return notify_fail("ÄãÎŞ¸ùÎŞĞÔ£¬ÒõÑô²»µ÷£¬ÄÑÒÔ¶ÍÁ¶º®±ùÕæÆø¡£\n");
+                return notify_fail("ä½ ç„¡æ ¹ç„¡æ€§ï¼Œé™°é™½ä¸èª¿ï¼Œé›£ä»¥é›ç…‰å¯’å†°çœŸæ°£ã€‚\n");
 
         if( query("con", me)<34 )
-                return notify_fail("ÄãÏÈÌì¸ù¹Ç²»¹»£¬ÎŞ·¨ĞŞÁ¶º®±ùÕæÆø£¡\n");
+                return notify_fail("ä½ å…ˆå¤©æ ¹éª¨ä¸å¤ ï¼Œç„¡æ³•ä¿®ç…‰å¯’å†°çœŸæ°£ï¼\n");
 
         if (me->query_skill("force", 1) < 100)
-                return notify_fail("ÄãµÄ»ù±¾ÄÚ¹¦»ğºò²»¹»£¬ÄÑÒÔ¶ÍÁ¶º®±ùÕæÆø¡£\n");
+                return notify_fail("ä½ çš„åŸºæœ¬å…§åŠŸç«å€™ä¸å¤ ï¼Œé›£ä»¥é›ç…‰å¯’å†°çœŸæ°£ã€‚\n");
 
         if( query("max_neili", me)<1000 )
-                return notify_fail("ÄãÄ¿Ç°µÄÄÚÁ¦ĞŞÎª²»¹»£¬ÄÑÒÔ¶ÍÁ¶º®±ùÕæÆø¡£\n");
+                return notify_fail("ä½ ç›®å‰çš„å…§åŠ›ä¿®ç‚ºä¸å¤ ï¼Œé›£ä»¥é›ç…‰å¯’å†°çœŸæ°£ã€‚\n");
 
         if (me->query_skill("force", 1) < me->query_skill("hanbing-zhenqi", 1))
-                return notify_fail("ÄãµÄ»ù±¾ÄÚ¹¦Ë®Æ½²»¹»£¬ÄÑÒÔ¶ÍÁ¶¸üÉîºñµÄº®±ùÕæÆø¡£\n");
+                return notify_fail("ä½ çš„åŸºæœ¬å…§åŠŸæ°´å¹³ä¸å¤ ï¼Œé›£ä»¥é›ç…‰æ›´æ·±åšçš„å¯’å†°çœŸæ°£ã€‚\n");
 
         return ::valid_learn(me);
 }
 
 int practice_skill(object me)
 {
-        return notify_fail("º®±ùÕæÆøÖ»ÄÜÓÃÑ§(learn)µÄÀ´Ôö¼ÓÊìÁ·¶È¡£\n");
+        return notify_fail("å¯’å†°çœŸæ°£åªèƒ½ç”¨å­¸(learn)çš„ä¾†å¢åŠ ç†Ÿç·´åº¦ã€‚\n");
 }
 
 mixed hit_ob(object me, object victim, int damage_bonus, int factor)
@@ -87,14 +87,14 @@ mixed hit_ob(object me, object victim, int damage_bonus, int factor)
                         addn("neili", -80, me);
 
                         return random(2) ? ([ "damage" : result,
-                                              "msg"    : HIW "$n" HIW "½ÓÏÂ$N" HIW "Ò»ÕĞ£¬ö®"
-                                                         "Ê±Ö»¸Ğµ½º®·çÏ®Ìå£¬Ëµ²»³öµÄ¶ñĞÄÄÑÊÜ"
-                                                         "¡£\n" NOR ]):
+                                              "msg"    : HIW "$n" HIW "æ¥ä¸‹$N" HIW "ä¸€æ‹›ï¼Œéœ"
+                                                         "æ™‚åªæ„Ÿåˆ°å¯’é¢¨è¥²é«”ï¼Œèªªä¸å‡ºçš„æƒ¡å¿ƒé›£å—"
+                                                         "ã€‚\n" NOR ]):
 
                                            ([ "damage" : result,
-                                              "msg"    : HIW "Ö»¼û$n" HIW "È«ÉíÒ»²ü£¬×ìÆ¤ÎÚ"
-                                                         "×Ï£¬¾¹ËÆÊÜÁË$N" HIW "º®±ùÄÚ¾¢µÄ¸É"
-                                                         "ÈÅ¡£\n" NOR ]);
+                                              "msg"    : HIW "åªè¦‹$n" HIW "å…¨èº«ä¸€é¡«ï¼Œå˜´çš®çƒ"
+                                                         "ç´«ï¼Œç«Ÿä¼¼å—äº†$N" HIW "å¯’å†°å…§å‹çš„å¹¹"
+                                                         "æ“¾ã€‚\n" NOR ]);
                 }
         }
         return result;
@@ -106,14 +106,14 @@ string exert_function_file(string func)
 }
 int help(object me)
 {
-        write(HIM"\nº®±ùÕæÆø£º"NOR"\n");
+        write(HIM"\nå¯’å†°çœŸæ°£ï¼š"NOR"\n");
         write(@HELP
 
-    áÔÉ½ÅÉ±¾ÃÅÄÚ¹¦¡£
+    åµ©å±±æ´¾æœ¬é–€å…§åŠŸã€‚
 
-        Ñ§Ï°ÒªÇó£º
-                »ù±¾ÄÚ¹¦10¼¶
-                ÏàÓ¦µÄÕıÆø
+        å­¸ç¿’è¦æ±‚ï¼š
+                åŸºæœ¬å…§åŠŸ10ç´š
+                ç›¸æ‡‰çš„æ­£æ°£
 HELP
         );
         return 1;

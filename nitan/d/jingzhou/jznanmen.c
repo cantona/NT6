@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��������" );
+        set("short", "荊州南門" );
         set("long", @LONG
-���������ݵ����ţ������������Ǿ���Ҫ�أ���˳�ǽ��ʵ�ޱȣ�
-��¥�߸��������ɴ����ϣ���ȥ���ϵ�·�������Ǳ�ɽ��·Զ���ܲ�
-���ߣ���ɵö��ע��һЩ��
+你來到荊州的南門，荊州歷來都是軍事要地，因此城牆堅實無比，
+城樓高高聳立，由此向南，是去雲南的路，不過那邊山高路遠，很不
+好走，你可得多多注意一些。
 LONG );
         set("objects", ([
                 "/d/city/npc/bing" : 4,

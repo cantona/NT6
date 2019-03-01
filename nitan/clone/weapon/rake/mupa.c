@@ -6,16 +6,16 @@ inherit RAKE;
 
 void create()
 {
-        set_name("Ä¾°Ò", ({"mu pa", "pa", "rake"}));
+        set_name("æœ¨è€™", ({"mu pa", "pa", "rake"}));
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
+                set("unit", "æŸ„");
                 set("value", 100);
                 set("material", "wood");
-                set("long", "ÕâÊÇÒ»±ú³¤³¤µÄÄ¾°Ò£¬ÊÇÁ·ÎäÊ±ÓÃµÄ£®\n");
-                set("wield_msg", "$N³é³öÒ»±ú$nÎÕÔÚÊÖÖĞ¡£\n");
+                set("long", "é€™æ˜¯ä¸€æŸ„é•·é•·çš„æœ¨è€™ï¼Œæ˜¯ç·´æ­¦æ™‚ç”¨çš„ï¼\n");
+                set("wield_msg", "$NæŠ½å‡ºä¸€æŸ„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
         }
         init_rake(15);
         setup();

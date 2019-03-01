@@ -42,9 +42,9 @@ int main(object me, string arg)
         {
                 ob1 = present(id, environment(me));
                 if (! ob1) ob1 = present(id, me);
-                if (! ob1) return notify_fail("±¾µØÎŞ´ËÉúÎï: " + id + "\n");
+                if (! ob1) return notify_fail("æœ¬åœ°ç„¡æ­¤ç”Ÿç‰©: " + id + "\n");
                 if (! ob = present(arg, ob1))
-                        return notify_fail("¸ÃÉúÎïÉíÉÏÎŞ´ËÎï¼ş: " + arg + "\n");
+                        return notify_fail("è©²ç”Ÿç‰©èº«ä¸Šç„¡æ­¤ç‰©ä»¶: " + arg + "\n");
         } else
         if (arg == "here")
                 ob = environment(me);
@@ -56,13 +56,13 @@ int main(object me, string arg)
                 if (! ob) ob = find_player(arg);
                 if (! ob) ob = find_living(arg);
                 if (! ob) ob = present(arg, me);
-                if (! ob) return notify_fail("Data: ÎŞ·¨ÕÒµ½´ËÎï¼ş: " + arg + "¡£\n");
+                if (! ob) return notify_fail("Data: ç„¡æ³•æ‰¾åˆ°æ­¤ç‰©ä»¶: " + arg + "ã€‚\n");
         }
   
         list = ob->query_entire_dbase();
         tlist = ob->query_entire_temp_dbase();
         if (! mapp(list) && ! mapp(tlist))
-                      return  notify_fail("Data:  ´ËÎï¼ş²¢Ã»ÓĞÈÎºÎµÄ×ÊÁÏ¡£\n");
+                      return  notify_fail("Data:  æ­¤ç‰©ä»¶ä¸¦æ²’æœ‰ä»»ä½•çš„è³‡æ–™ã€‚\n");
   
         if (mapp(list) && sizeof(list))
         {
@@ -77,7 +77,7 @@ int main(object me, string arg)
         }
   
         if (! klist || ! sizeof(klist))
-                return  notify_fail("Data: ´ËÎï¼ş²¢Ã»ÓĞ´¢´æÈÎºÎ×ÊÁÏ¡£\n");
+                return  notify_fail("Data: æ­¤ç‰©ä»¶ä¸¦æ²’æœ‰å„²å­˜ä»»ä½•è³‡æ–™ã€‚\n");
   
         if (! spec || spec == "-d")
         {
@@ -91,7 +91,7 @@ int main(object me, string arg)
   
                         text += sprintf("%O \n", list[klist[loop]]);
                 }
-                text += "\n×Ü¹²ÓĞ " + sizeof(klist) + " ¸ö´¢´æµÄ×ÊÁÏ¡£\n\n";
+                text += "\nç¸½å…±æœ‰ " + sizeof(klist) + " å€‹å„²å­˜çš„è³‡æ–™ã€‚\n\n";
         }
         else text = "";
   
@@ -107,7 +107,7 @@ int main(object me, string arg)
                         text += sprintf("%O \n", tlist[tlist2[loop]]);
                 }
   
-                text += "\n×Ü¹²ÓĞ " + sizeof(tlist2) + " ¸öÔİ´æµÄ×ÊÁÏ¡£\n\n";
+                text += "\nç¸½å…±æœ‰ " + sizeof(tlist2) + " å€‹æš«å­˜çš„è³‡æ–™ã€‚\n\n";
         }
   
         me->start_more(text);
@@ -130,19 +130,19 @@ protected int filter_props(string prop, object target)
 int help(object  me)
 {
         write(@LONG
-Ö¸Áî¸ñÊ½: data <-t|-d> <Íæ¼Ò|Îï¼ş|here> <in Íæ¼Ò»òÉúÎï>
-Ö¸Áî·¶Àı: data                  <--  ¿´×Ô¼ºµÄËùÓĞ  data  base
-          data -t               <--  ¿´×Ô¼ºµÄÔİ´æ×ÊÁÏ
-          data -d               <--  ¿´×Ô¼ºµÄÓÀ¾Ã×ÊÁÏ
-          data -t here          <--  ¿´ËùÔÚ·¿¼äµÄÔİÊ±×ÊÁÏ
-          data wade             <--  ¿´  wade  Õâ¸öÍæ¼Ò(»òÎï¼ş)µÄËùÓĞ×ÊÁÏ
-          data board            <--  ¿´°æ×ÓµÄ×ÊÁÏ
-          data cloth in wade    <--  ¿´  wade  ÉíÉÏµÄ  cloth  µÄ×ÊÁÏ
-Ö¸ÁîËµÃ÷:
-        ´ËÃüÁîÈÃÄã¿ÉÒÔ¹Û¿´ËùÖ¸¶¨Îï¼şµÄ×ÊÁÏ£¬ÇÒ½«»áÒÔ more µÄ
-·½Ê½Êä³ö£¬Èç¹ûÃ»ÓĞÖ¸¶¨Êı£¬Ôò×Ô¶¯ÒÔÊ¹ÓÃÕßÎª²ÎÊı¡£ÆäÖĞµÄ -t Ñ¡
-Ïî¿ÉÒÔÏÔÊ¾ÔİÊ±±äÊı, -d Ñ¡Ïî¿ÉÒÔÖ»ÏÔÊ¾ÓÀ¾Ã±äÊı£¬ ËùÒª¿´µÄ¶ÔÏó
-¿ÉÒÔÊÇÍæ¼Ò»òÈÎºÎÎï¼ş¡£
+æŒ‡ä»¤æ ¼å¼: data <-t|-d> <ç©å®¶|ç‰©ä»¶|here> <in ç©å®¶æˆ–ç”Ÿç‰©>
+æŒ‡ä»¤èŒƒä¾‹: data                  <--  çœ‹è‡ªå·±çš„æ‰€æœ‰  data  base
+          data -t               <--  çœ‹è‡ªå·±çš„æš«å­˜è³‡æ–™
+          data -d               <--  çœ‹è‡ªå·±çš„æ°¸ä¹…è³‡æ–™
+          data -t here          <--  çœ‹æ‰€åœ¨æˆ¿é–“çš„æš«æ™‚è³‡æ–™
+          data wade             <--  çœ‹  wade  é€™å€‹ç©å®¶(æˆ–ç‰©ä»¶)çš„æ‰€æœ‰è³‡æ–™
+          data board            <--  çœ‹ç‰ˆå­çš„è³‡æ–™
+          data cloth in wade    <--  çœ‹  wade  èº«ä¸Šçš„  cloth  çš„è³‡æ–™
+æŒ‡ä»¤èªªæ˜:
+        æ­¤å‘½ä»¤è®“ä½ å¯ä»¥è§€çœ‹æ‰€æŒ‡å®šç‰©ä»¶çš„è³‡æ–™ï¼Œä¸”å°‡æœƒä»¥ more çš„
+æ–¹å¼è¼¸å‡ºï¼Œå¦‚æœæ²’æœ‰æŒ‡å®šæ•¸ï¼Œå‰‡è‡ªå‹•ä»¥ä½¿ç”¨è€…ç‚ºåƒæ•¸ã€‚å…¶ä¸­çš„ -t é¸
+é …å¯ä»¥é¡¯ç¤ºæš«æ™‚è®Šæ•¸, -d é¸é …å¯ä»¥åªé¡¯ç¤ºæ°¸ä¹…è®Šæ•¸ï¼Œ æ‰€è¦çœ‹çš„å°è±¡
+å¯ä»¥æ˜¯ç©å®¶æˆ–ä»»ä½•ç‰©ä»¶ã€‚
 LONG);
         return  1;
 }

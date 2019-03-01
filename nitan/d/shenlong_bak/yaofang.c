@@ -1,15 +1,15 @@
-// /d/shenlong/yaofang Ò©·¿
+// /d/shenlong/yaofang è—¥æˆ¿
 // Last Modified by winder on Jul. 12 2002
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "Ò©·¿");
+        set("short", "è—¥æˆ¿");
         set("long", @LONG
-ÕâÊÇÉñÁúµºµÄÒ©·¿£¬¿¿Ç½·ÅÁËÐí¶à¹ñ×Ó£¬³éÌëÖÐ·ÅÂúÁËÐí¶àÖÐ²ÝÒ©£¬
-Â½´ó·ò³£ÔÚÕâ¶ù¸øµºÉÏµÄÖÚÈË×¥Ò©¡¢ÕïÖÎ¡£²»¹ýÂ½´ó·òÏÖÔÚÓöµ½µãÍ·ÌÛ
-µÄÊÂ£¬Èç¹ûÄãÏëÒªÒ»Ð©ÐÛ»ÆÒÔ±ÜÃâµºÉÏµÄ¶¾ÉßÇÖÈÅ£¬Ö»ºÃÈ¥ËûµÄÐ¡ÎÝÁË¡£
+é€™æ˜¯ç¥žé¾å³¶çš„è—¥æˆ¿ï¼Œé ç‰†æ”¾äº†è¨±å¤šæ«ƒå­ï¼ŒæŠ½å±œä¸­æ”¾æ»¿äº†è¨±å¤šä¸­è‰è—¥ï¼Œ
+é™¸å¤§å¤«å¸¸åœ¨é€™å…’çµ¦å³¶ä¸Šçš„çœ¾äººæŠ“è—¥ã€è¨ºæ²»ã€‚ä¸éŽé™¸å¤§å¤«ç¾åœ¨é‡åˆ°é»žé ­ç–¼
+çš„äº‹ï¼Œå¦‚æžœä½ æƒ³è¦ä¸€äº›é›„é»ƒä»¥é¿å…å³¶ä¸Šçš„æ¯’è›‡ä¾µæ“¾ï¼Œåªå¥½åŽ»ä»–çš„å°å±‹äº†ã€‚
 LONG
         );
         set("exits", ([

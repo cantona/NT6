@@ -1,17 +1,17 @@
-// wang.c Íõ¼á
+// wang.c ç‹å …
 #include <ansi.h>;
 inherit NPC;
 
 
 void create()
 {
-        set_name("Íõ¼á", ({ "wang jian", "wang", "jian" }));
-        set("gender", "ÄĞĞÔ");
-        set("title", HIY"ÏåÑôÊØ±¸´ó½«"NOR);
+        set_name("ç‹å …", ({ "wang jian", "wang", "jian" }));
+        set("gender", "ç”·æ€§");
+        set("title", HIY"è¥„é™½å®ˆå‚™å¤§å°‡"NOR);
         set("age", 40);
         set("str", 35);
         set("dex", 36);
-        set("long", "ÕâÊÇÒ»¸ö´óËÎÏåÑôÊØ±¸Ö÷½«£¬ÂúÁ³Õ÷³¾¡£\n");
+        set("long", "é€™æ˜¯ä¸€å€‹å¤§å®‹è¥„é™½å®ˆå‚™ä¸»å°‡ï¼Œæ»¿è‡‰å¾å¡µã€‚\n");
         set("combat_exp", 150000);
         set("shen_type", 1);
         set("attitude", "peaceful");

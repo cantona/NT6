@@ -3,11 +3,11 @@ inherit ROOM;
 
 void create() 
 { 
-        set("short", HIR "Ѫ�ص���" NOR);
+        set("short", HIR "血池地獄" NOR);
         set("long", HIR @LONG
-Ѫ�ص�������������ô��ۺ���ߵ��������˵ġ��Ĵ�������Ũ���
-Ѫ������ʲôҲ������������и������������ֵĹ���Ѫ���ﵽ����
-������ͷ��ڵ���Ѫ��ʮ�ֲֿ���ֻ�������������ڳ��������⡣
+血池地獄，你疑心怎麼從酆都走到這裡來了的。四處彌漫著濃厚的
+血霧，你什麼也看不清楚，空中浮動著若隱若現的鬼火，血池裡到處是
+死人肉和沸騰的鮮血，十分恐怖，只見神獸玄武正在吃著死人肉。
 
 LONG NOR);
         set("no_clean_up", 0);

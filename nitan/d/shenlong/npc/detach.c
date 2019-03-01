@@ -11,21 +11,21 @@ int main(object me, string arg)
         int i;
         string *skname;
 
-	return  notify_fail("����ʦ����ʹ��ָ�� tuoli �� tuoli2 ���ɣ�\n");
+	return  notify_fail("脫離師門請使用指令 tuoli 或 tuoli2 即可！\n");
 	
         if (me->is_busy())
-                return notify_fail("��������æ���ء�\n");
+                return notify_fail("你現在正忙著呢。\n");
 
         if (! arg)
-                return notify_fail("ָ���ʽ��detach|tuoli [cancel]|<����>\n");
+                return notify_fail("指令格式：detach|tuoli [cancel]|<對象>\n");
 
         if (arg == "cancel")
 	{
                 old_app=query_temp("pending/deatch", me);
                 if( !objectp(old_app) )
-                        return notify_fail("�����ڲ�û���������ʦ�����뷨��\n");
-                write("��ı����ⲻ������ʦ���ˡ�\n");
-                tell_object(old_app, me->name() + "�ı����ⲻ������ʦ���ˡ�\n");
+                        return notify_fail("你現在並沒有脫離你的師傅的想法。\n");
+                write("你改變主意不想脫離師門了。\n");
+                tell_object(old_app, me->name() + "改變主意不想脫離師門了。\n");
                 delete_temp("pending/detach", me);
                 delete_temp("pending/want", me);
                 return 1;
@@ -33,9 +33,9 @@ int main(object me, string arg)
 
         if( !query_temp("pending/want", me) )
         {
-                tell_object(me, HIR "\n��ע�⣬һ��������ʦ�ţ����ᱻ�ϳ�������"
-                                "�������书��\n" NOR + HIC "��������˾��ģ���"
-                                "������һ���������\n" NOR);
+                tell_object(me, HIR "\n請注意，一但你脫離師門，將會被廢除掉所有"
+                                "的特殊武功。\n" NOR + HIC "如果你下了決心，就"
+                                "再輸入一次這條命令。\n" NOR);
                 set_temp("pending/want", 1, me);
                 return 1;
         }
@@ -44,48 +44,48 @@ int main(object me, string arg)
             ! ob->is_character())
         {
                 delete_temp("pending/want", me);
-                write("�����˭�Ͼ�ʦͽ��ϵ��\n");
+                write("你想和誰斷絕師徒關系？\n");
                 return 1;
         }
 
         if (ob == me)
         {
                 delete_temp("pending/want", me);
-                write("������Լ��Ͼ�ʦͽ��ϵ��\n");
+                write("你想和自己斷絕師徒關系？\n");
                 return 1;
         }
 
         if (! living(ob))
         {
                 delete_temp("pending/want", me);
-                write("������Ȱ�" + ob->name() + "Ū�ѡ�\n");
+                write("你必須先把" + ob->name() + "弄醒。\n");
                 return 1;
         }
 
-        message_vision(CYN "\n$N" CYN "��$n" CYN "����һ��ͷ��˵����ʦ"
-                       "�����ҡ���������ʦ�š�\n" NOR, me, ob);
+        message_vision(CYN "\n$N" CYN "向$n" CYN "磕了一個頭，說道：師"
+                       "父！我…我想脫離師門。\n" NOR, me, ob);
 
         if (! me->is_apprentice_of(ob))
 	{
                 if( query("family/family_name", ob) == query("family/family_name", me) )
                 {
                         delete_temp("pending/want", me);
-                        message_vision(CYN "$N" CYN "���һ������$n" CYN "����ʲ"
-                                       "��ʲô����Ҫ����ʦ�ţ����¿ɵ�����ʦ��ȥ"
-                                       "��\n" NOR, ob, me);
+                        message_vision(CYN "$N" CYN "大吃一驚，對$n" CYN "道：什"
+                                       "…什麼？你要脫離師門？這事可得找你師傅去"
+                                       "。\n" NOR, ob, me);
                         return 1;
                 } else
 		{
                         delete_temp("pending/want", me);
-                        message_vision(CYN "$N" CYN "���˿����ڵ��ϵ�$n" CYN "��"
-                                       "��Цһ�����������ֲ�����ʦ��������������"
+                        message_vision(CYN "$N" CYN "看了看跪在地上的$n" CYN "，"
+                                       "冷笑一聲，道：我又不是你師傅，找我做甚？"
                                        "\n" NOR, ob, me);
                         return 1;
 		}
         }
 
         set_temp("pending/detach", 1, me);
-        tell_object(ob, me->name() + "������ʦ�š�\n");
+        tell_object(ob, me->name() + "想脫離師門。\n");
         ob->attempt_detach(me);
         return 1;
 }
@@ -93,14 +93,14 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-ָ���ʽ : detach|tuoli [cancel]|<����>
+指令格式 : detach|tuoli [cancel]|<對象>
  
-���ָ�������������ʦ����������ʦ�ţ���Ϊһ��Ĵ����ɲ�Ը���
-����ʦ���ˣ�������������Ͷ�������ɣ���ð��չ������ʦ�ţ�Ȼ
-��һ������ʦ�ţ�ʦ����׷��������ѧ���ı�����ѧ����׷�ز�������
-�书��֪ʶ�����ܵ��κ�Ӱ�졣
+這個指令能讓你向你的師傅請求脫離師門，因為一般的大門派不願意接
+收判師的人，所以如果你想改投其他門派，最好按照規矩脫離師門，然
+而一旦脫離師門，師傅將追回你所有學到的本門秘學，並追回部分其他
+武功，知識不會受到任何影響。
 
-��ο����ָ�� expell
+請參考相關指令 expell
 HELP );
         return 1;
 }

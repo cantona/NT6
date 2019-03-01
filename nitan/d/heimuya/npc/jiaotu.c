@@ -1,4 +1,4 @@
-// jiaotu.c ÈÕÔÂÉñ½Ì½ÌÍ½
+// jiaotu.c æ—¥æœˆç¥æ•™æ•™å¾’
 
 inherit NPC;
 
@@ -6,8 +6,8 @@ void create()
 {
         int age;
         age = 20 + random(10);
-        set_name("ÈÕÔÂÉñ½Ì½ÌÍ½", ({ "jiao tu", "tu" }));
-        set("gender", "ÄĞĞÔ");
+        set_name("æ—¥æœˆç¥æ•™æ•™å¾’", ({ "jiao tu", "tu" }));
+        set("gender", "ç”·æ€§");
         set("age", age);
         set_skill("unarmed", 20);
         set_skill("dodge", 20);        
@@ -39,7 +39,7 @@ void greeting(object ob)
         switch (random(1))
         {
         case 0:
-                command("say ÈÕÔÂÉñ½Ì£¬ÈÕ³ö¶«·½£¬Î¨ÎÒ²»°Ü¡£\n");
+                command("say æ—¥æœˆç¥æ•™ï¼Œæ—¥å‡ºæ±æ–¹ï¼Œå”¯æˆ‘ä¸æ•—ã€‚\n");
                 break;
         }
 }

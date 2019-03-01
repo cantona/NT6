@@ -8,23 +8,23 @@ int update_condition(object me, int duration)
 
   if (me->is_ghost()) return 1;
         if( !living(me) ) {
-                message("vision", me->name() + "ÉíÉÏµÄÉË¿ÚÉĞÎ´È¬Óú, µ«ÊÇ¾õµÃËÆºõÓÍ¾¡µÆ¿İÁË!!\n",
+                message("vision", me->name() + "èº«ä¸Šçš„å‚·å£å°šæœªç—Šç™’, ä½†æ˜¯è¦ºå¾—ä¼¼ä¹æ²¹ç›¡ç‡ˆæ¯äº†!!\n",
                         environment(me), me);
         } else if( duration > 20 ) {
-                tell_object(me, "ÄãµÄÉË¿ÚËÆºõºÜÑÏÖØ, ÑªÁ÷²»Ö¹.\n");
-                message("vision", me->name() + "ÉíÉÏµÄÉË¿ÚÑªÁ÷Èç×¢, ÏÔÈ»ÊÜÉËÊ®·ÖÑÏÖØ. \n",
+                tell_object(me, "ä½ çš„å‚·å£ä¼¼ä¹å¾ˆåš´é‡, è¡€æµä¸æ­¢.\n");
+                message("vision", me->name() + "èº«ä¸Šçš„å‚·å£è¡€æµå¦‚æ³¨, é¡¯ç„¶å—å‚·ååˆ†åš´é‡. \n",
                         environment(me), me);
-                me->receive_wound("qi", 20,"ÉËÊÆ¹ıÖØ");
+                me->receive_wound("qi", 20,"å‚·å‹¢éé‡");
         } else if( duration > 10 ) {
-                tell_object(me, "Äã¾õµÃÉíÉÏµÄÉË¿Ú¿ªÊ¼ÃÜºÏÁË, ÑªÁ÷Á¿Ò²±äÉÙÁË. \n");
-                message("vision", me->name() + "ËÆºõÊÜÉË²»Çá, ÉíÉÏÑª¼£°à°à. \n",
+                tell_object(me, "ä½ è¦ºå¾—èº«ä¸Šçš„å‚·å£é–‹å§‹å¯†åˆäº†, è¡€æµé‡ä¹Ÿè®Šå°‘äº†. \n");
+                message("vision", me->name() + "ä¼¼ä¹å—å‚·ä¸è¼•, èº«ä¸Šè¡€è·¡ç­ç­. \n",
                         environment(me), me);
-                me->receive_wound("qi", 10,"ÉËÊÆ¹ıÖØ");
+                me->receive_wound("qi", 10,"å‚·å‹¢éé‡");
         } else if( duration > 5 ) {
-                tell_object(me, "ÄãÉíÉÏµÄÉË¿Ú¿ªÊ¼½á°ÌÁË, Ò²¸Ğ¾õ²»µ½Í´¿àÁË. \n");
-                message("vision", me->name() + "µÄÉíÉÏÓĞÒ»µÀĞÂ°Ì, ºÃÏñÊÜµ½²»ÇáµÄÉËº¦. \n",
+                tell_object(me, "ä½ èº«ä¸Šçš„å‚·å£é–‹å§‹çµç–¤äº†, ä¹Ÿæ„Ÿè¦ºä¸åˆ°ç—›è‹¦äº†. \n");
+                message("vision", me->name() + "çš„èº«ä¸Šæœ‰ä¸€é“æ–°ç–¤, å¥½åƒå—åˆ°ä¸è¼•çš„å‚·å®³. \n",
                         environment(me), me);
-                me->receive_wound("qi", 5,"ÉËÊÆ¹ıÖØ");
+                me->receive_wound("qi", 5,"å‚·å‹¢éé‡");
         }
         if( query("eff_jing", me)<0 || query("eff_qi", me)<0)return 0;
         me->apply_condition("bleeding", duration - 1);

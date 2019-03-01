@@ -2,12 +2,12 @@ inherit NPC;
 
 void create()
 {
-        set_name("½­ºþºÀ½Ü", ({ "jianghu haojie","haojie" }) );
-        set("nickname", "ÊÐ¾®ºÀ½Ü");
-        set("gender", "ÄÐÐÔ");
+        set_name("æ±Ÿæ¹–è±ªå‚‘", ({ "jianghu haojie","haojie" }) );
+        set("nickname", "å¸‚äº•è±ªå‚‘");
+        set("gender", "ç”·æ€§");
         set("age", 24);
         set("long",
-                "½­ºþºÀ½Ü¡£\n");
+                "æ±Ÿæ¹–è±ªå‚‘ã€‚\n");
         set("attitude", "peaceful");
 
         set("str", 26);

@@ -1,4 +1,4 @@
-// powerup.c Î÷ÑóÄÚ¹¦
+// powerup.c è¥¿æ´‹å…§åŠŸ
 
 #include <ansi.h>
 
@@ -11,20 +11,20 @@ int exert(object me, object target)
         int skill;
 
         if (target != me)
-                return notify_fail("ÄãÖ»ÄÜÓÃÎ÷ÑóÄÚ¹¦À´ÌáÉı×Ô¼ºµÄÕ½¶·Á¦¡£\n");
+                return notify_fail("ä½ åªèƒ½ç”¨è¥¿æ´‹å…§åŠŸä¾†æå‡è‡ªå·±çš„æˆ°é¬¥åŠ›ã€‚\n");
 
         if( query("neili", me)<100 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ã€‚\n");
 
         if( query_temp("powerup", me) )
-                return notify_fail("ÄãÒÑ¾­ÔÚÔË¹¦ÖĞÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“åœ¨é‹åŠŸä¸­äº†ã€‚\n");
 
         skill = me->query_skill("force");
         addn("neili", -90, me);
         me->receive_damage("qi", 0);
 
-        message_combatd(HIG "$N" HIG "¿ÚÖĞ¡°ºÉºÉ¡±´ó½Ğ£¬»ëÉíµÄ¼¡ÈâÈçÍ¬"
-                        "³äÁËÆøÒ»°ãºöÈ»ÅòÕÍÆğÀ´£¬ÍşÊÆÉãÈË£¡\n" NOR, me);
+        message_combatd(HIG "$N" HIG "å£ä¸­â€œè·è·â€å¤§å«ï¼Œæ¸¾èº«çš„è‚Œè‚‰å¦‚åŒ"
+                        "å……äº†æ°£ä¸€èˆ¬å¿½ç„¶è†¨è„¹èµ·ä¾†ï¼Œå¨å‹¢æ”äººï¼\n" NOR, me);
 
         addn_temp("apply/attack", skill/3, me);
         addn_temp("apply/defense", skill/3, me);
@@ -44,6 +44,6 @@ void remove_effect(object me, int amount)
                 addn_temp("apply/attack", -amount, me);
                 addn_temp("apply/defense", -amount, me);
                 delete_temp("powerup", me);
-                tell_object(me, "ÄãµÄÎ÷ÑóÄÚ¹¦ÔËĞĞÍê±Ï£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï¡£\n");
+                tell_object(me, "ä½ çš„è¥¿æ´‹å…§åŠŸé‹è¡Œå®Œç•¢ï¼Œå°‡å…§åŠ›æ”¶å›ä¸¹ç”°ã€‚\n");
         }
 }

@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create ()
 {
-  set ("short",GRN"���϶���"NOR);
+  set ("short",GRN"安南東門"NOR);
   set ("long", @LONG
-�����ǰ��ϵĶ��š���������˲��١������м����ٱ����ڼ����
-���İ��ա��Ա߻��м����ٱ�����������ǵİ��գ���һ���ٱ�������
-��ָ�ֻ��ţ�һ�����������ӡ�
+這裡是安南的東門。這裡的行人不少。這裡有幾個官兵正在檢查來
+往的百姓。旁邊還有幾個官兵在勒索想進城的百姓，有一個官兵還在旁
+邊指手畫腳，一副神氣的樣子。
 LONG);
 
   set("exits", ([ 

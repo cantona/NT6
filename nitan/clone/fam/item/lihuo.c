@@ -4,20 +4,20 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIC "Àë" HIR "»ğ" HIC "Ğş" HIW "±ù" HIC "Óñ" NOR,
+        set_name(HIC "é›¢" HIR "ç«" HIC "ç„" HIW "å†°" HIC "ç‰" NOR,
                 ({"lihuo yu", "lihuo", "yu"}));
         set_weight(3400);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIC "´ËÄË²»ÊÀ±¦Óñ£¬ÓñÉíÒ»°ëÆæÈÈ£¬ÁíÒ»°ëÈ´Ææº®£¬ÇÒÄÜ×Ô¶¯·ÖË®Àë»ğ¡£\n" NOR);
-                set("unit", "¿é");
+                set("long", HIC "æ­¤ä¹ƒä¸ä¸–å¯¶ç‰ï¼Œç‰èº«ä¸€åŠå¥‡ç†±ï¼Œå¦ä¸€åŠå»å¥‡å¯’ï¼Œä¸”èƒ½è‡ªå‹•åˆ†æ°´é›¢ç«ã€‚\n" NOR);
+                set("unit", "å¡Š");
                 set("value", 30000);
                 set("item_origin", 1);
                 set("material_attrib", "stone");
-                set("material_name", HIC "Àë" HIR "»ğ" HIC "Ğş" HIW "±ù" HIC "Óñ" NOR);
+                set("material_name", HIC "é›¢" HIR "ç«" HIC "ç„" HIW "å†°" HIC "ç‰" NOR);
                 set("can_make", "all");
-                set("not_make", ({ "»¤¼×", "Õ½ÒÂ", "Ñü´ø", "»¤Íó", "Ñ¥×Ó", "±Ş" }));
+                set("not_make", ({ "è­·ç”²", "æˆ°è¡£", "è…°å¸¶", "è­·è…•", "é´å­", "é­" }));
                 set("power_point", 90);
         }
 }

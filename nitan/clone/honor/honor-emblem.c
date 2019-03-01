@@ -3,13 +3,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIY "ÈÙÓþÑ«ÕÂ" NOR, ({ "honor emblem", "emblem" }));
+        set_name(HIY "æ¦®è­½å‹›ç« " NOR, ({ "honor emblem", "emblem" }));
         set_weight(3000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIY "Ò»Ã¶ÈÙÓþÑ«ÕÂ£¬´ú±íÖÁ¸ßµÄÈÙÓþ¡£\n" NOR);
-                set("unit", "Ã¶");
+                set("long", HIY "ä¸€æžšæ¦®è­½å‹›ç« ï¼Œä»£è¡¨è‡³é«˜çš„æ¦®è­½ã€‚\n" NOR);
+                set("unit", "æžš");
                 set("value", 500000);
         }
         setup();

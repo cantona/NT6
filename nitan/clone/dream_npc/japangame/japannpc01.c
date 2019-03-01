@@ -8,7 +8,7 @@ inherit NPC;
 
 void create()
 {
-        set_name(HIR "ÙÁ¿Ü" NOR, ({ "wo kou", "wo", "kou" }));
+        set_name(HIR "å€­å¯‡" NOR, ({ "wo kou", "wo", "kou" }));
 
         set("age", 20);
         set("str", 30);
@@ -66,7 +66,7 @@ int accept_hit(object ob)
 void unconcious()
 {
 /*
-            // ·ÀÖ¹Ö±½Ócall_die()
+            // é˜²æ­¢ç›´æŽ¥call_die()
                 if (query("qi") > 100000 && query("no_call_die"))
                 {
                         revive();
@@ -78,7 +78,7 @@ void unconcious()
 
 void init()
 {
-        // Ëæ»ú¹¥»÷Íæ¼Ò
+        // éš¨æ©Ÿæ”»æ“ŠçŽ©å®¶
         if( userp(this_player()) && random(4) == 1 && !query_temp("apply/invisible", this_player()) )
         {
                 kill_ob(this_player());
@@ -87,11 +87,11 @@ void init()
 
 void die(object killer)
 {
-        object dob;             // ´òÔÎÕâ¸öNPCµÄÈË
-        int n;                  // ¿ÉÒÔ½±ÀøµÄÈËµÄÊýÄ¿
-        int exp;                // ÐèÒª¹Ï·ÖµÄ¾­Ñé
-        int pot;                // ÐèÒª¹Ï·ÖµÄÇ±ÄÜ
-        object *t;              // É±ËÀÎÒµÄÈËµÄ¶ÓÎéÁÐ±í
+        object dob;             // æ‰“æšˆé€™å€‹NPCçš„äºº
+        int n;                  // å¯ä»¥çŽå‹µçš„äººçš„æ•¸ç›®
+        int exp;                // éœ€è¦ç“œåˆ†çš„ç¶“é©—
+        int pot;                // éœ€è¦ç“œåˆ†çš„æ½›èƒ½
+        object *t;              // æ®ºæ­»æˆ‘çš„äººçš„éšŠä¼åˆ—è¡¨
         object tob;
         int i;
                 object *inv;
@@ -100,7 +100,7 @@ void die(object killer)
                 string s_gift, *key_s_gift;
                 int gift_point;
 
-        // ¶¨Òå½±ÀøÎïÆ·ÁÐ±í
+        // å®šç¾©çŽå‹µç‰©å“åˆ—è¡¨
                 mixed oblist;
                 
                 object env;
@@ -108,7 +108,7 @@ void die(object killer)
                 oblist = query("oblist");
 
 /*
-            // ·ÀÖ¹Ö±½Ócall_die()
+            // é˜²æ­¢ç›´æŽ¥call_die()
                 if (query("qi") > 100000)
                 {
                         revive();
@@ -116,10 +116,10 @@ void die(object killer)
                 }
 */
 
-                // Í¨Öªµ±Ç°·¿¼ä£¬ÒÔ±ã¼ÆËãË¢ÐÂ
+                // é€šçŸ¥ç•¶å‰æˆ¿é–“ï¼Œä»¥ä¾¿è¨ˆç®—åˆ·æ–°
                 env = environment(this_object());
                 env->npc_die(this_object());
-        // ÕÒµ½É±ÁËÎÒ(NPC)»òÊÇ´òÔÎÎÒµÄÈË
+        // æ‰¾åˆ°æ®ºäº†æˆ‘(NPC)æˆ–æ˜¯æ‰“æšˆæˆ‘çš„äºº
         if (! objectp(dob = killer))
                 dob = query_last_damage_from();
 
@@ -154,7 +154,7 @@ void die(object killer)
                                                                    GIFT_D->event_bonus(tob,
                                                                           ([ "exp"      : exp + ((tob == dob) ? exp / 10 : 0),
                                                                                  "pot"      : pot + ((tob == dob) ? pot / 10 : 0),
-                                                                                 "prompt"   : "ÄãµÄ¶ÓÎéÉ±ËÀ" + name() + "Ö®ºó"]));
+                                                                                 "prompt"   : "ä½ çš„éšŠä¼æ®ºæ­»" + name() + "ä¹‹å¾Œ"]));
 
                                                  }
                                         }
@@ -164,38 +164,38 @@ void die(object killer)
                                                                    GIFT_D->event_bonus(dob,
                                                                           ([ "exp"      : exp,
                                                                                  "pot"      : pot,
-                                                                                 "prompt"   : "ÄãÔÚÉ±ËÀ" + name() + "Ö®ºó"]));
+                                                                                 "prompt"   : "ä½ åœ¨æ®ºæ­»" + name() + "ä¹‹å¾Œ"]));
                                 }
 
         }
 
-        // Ò»¶¨¼¸ÂÊµôÎïÆ·ÔÚÉ±ÎÒµÄÈËÉíÉÏdob
+        // ä¸€å®šå¹¾çŽ‡æŽ‰ç‰©å“åœ¨æ®ºæˆ‘çš„äººèº«ä¸Šdob
                 if (objectp(dob) && environment(dob) == environment(this_object()))
                 {
                         key_s_gift = keys(oblist);
                         s_gift = key_s_gift[random(sizeof(key_s_gift))];
                         gift_point = oblist[s_gift];
 
-                        // ÅÐ¶Ï¼¸ÂÊ
+                        // åˆ¤æ–·å¹¾çŽ‡
                         if( (MEMBER_D->is_valid_member(query("id", dob)) || random(4) == 1 )
                                 && random(MAX_POINT / ITEM_D->gift_point()) < gift_point)
                         {
-                                // »ñµÃÎïÆ·--±¬³öÎïÆ·
+                                // ç²å¾—ç‰©å“--çˆ†å‡ºç‰©å“
                                 gift_ob = new(s_gift);
                                 if (objectp(gift_ob))
                                 {
-                                        message_vision(HIR "¶£~~Ò»Éù£¬´Ó$N" HIR "ÉíÉÏµô³öÒ»Ñù¶«Î÷¡£\n" NOR, this_object(), dob);
+                                        message_vision(HIR "å®~~ä¸€è²ï¼Œå¾ž$N" HIR "èº«ä¸ŠæŽ‰å‡ºä¸€æ¨£æ±è¥¿ã€‚\n" NOR, this_object(), dob);
                                         set("who_get/id",query("id",  dob), gift_ob);
-                                        set("who_get/time", time()+60, gift_ob);//Ò»·ÖÖÓÄÚÖ»ÄÜ×Ô¼º¼ñÈ¡
+                                        set("who_get/time", time()+60, gift_ob);//ä¸€åˆ†é˜å…§åªèƒ½è‡ªå·±æ’¿å–
                                         gift_ob->move(environment(this_object()));
                                 }
-                                else // ¼ÍÂ¼Ö® 
+                                else // ç´€éŒ„ä¹‹ 
                                 {
                                 }
                         }
                 }
 
-                // µô³ö½ðÇ®¼°ÆäËûÎïÆ·
+                // æŽ‰å‡ºé‡‘éŒ¢åŠå…¶ä»–ç‰©å“
                 if (random(5) == 1)
                 {
                         inv = all_inventory(this_object());
@@ -212,14 +212,14 @@ void die(object killer)
                         }
                 }
 
-                // ¼ÇÂ¼
+                // è¨˜éŒ„
                 if (objectp(dob))
                 {
                         DB_D->set_data("japangame/"+query("id", dob),
                                            DB_D->query_data("japangame/"+query("id", dob))+1);
 
-                        tell_object(dob, HIG "¹§Ï²Äú£¬ÄúÀÛ»ýÉ±ËÀÙÁ¿ÜÊýÁ¿Îª " + 
-                                        DB_D->query_data("japangame/"+query("id", dob))+"¡£\n"NOR);
+                        tell_object(dob, HIG "æ­å–œæ‚¨ï¼Œæ‚¨ç´¯ç©æ®ºæ­»å€­å¯‡æ•¸é‡ç‚º " + 
+                                        DB_D->query_data("japangame/"+query("id", dob))+"ã€‚\n"NOR);
                         
                 }
                 destruct(this_object());

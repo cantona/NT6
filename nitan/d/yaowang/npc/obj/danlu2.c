@@ -3,14 +3,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name(CYN"Á¶µ¤Â¯"NOR, ({ "liandan lu", "liandan", "lu" }) );
+        set_name(CYN"ç…‰ä¸¹çˆ"NOR, ({ "liandan lu", "liandan", "lu" }) );
         set_weight(300000);
         set_max_encumbrance(50000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
-                set("long", "ÕâÊÇÒ»¸öÇàÍ­Öı³ÉµÄÁ¶µ¤Â¯¡£\n");
+                set("unit", "å€‹");
+                set("long", "é€™æ˜¯ä¸€å€‹é’éŠ…é‘„æˆçš„ç…‰ä¸¹çˆã€‚\n");
                 set("value", 1000);
                 set("no_get",1);
                 set("amount",10);
@@ -31,23 +31,23 @@ int do_fang(string arg)
         object me, ob;
         me = this_player();
 
-        if( query("family/family_name", me) != "Ò©Íõ¹È"
+        if( query("family/family_name", me) != "è—¥ç‹è°·"
                 || (int)me->query_skill("medical",1)<80 ) {
-                return notify_fail("Äã»¹²»ÄÜÔÚÕâÀïÁ¶µ¤£¡\n");
+                return notify_fail("ä½ é‚„ä¸èƒ½åœ¨é€™è£¡ç…‰ä¸¹ï¼\n");
         }
 
         if( query("shen", me)>0){
-                return notify_fail("ÄãÓ¦µ±µ½±ğµÄÁ¶µ¤·¿È¥Á¶µ¤£¡\n");
+                return notify_fail("ä½ æ‡‰ç•¶åˆ°åˆ¥çš„ç…‰ä¸¹æˆ¿å»ç…‰ä¸¹ï¼\n");
         }
 
         if(!arg || !ob=present(arg, me))
-                return notify_fail("ÄãÒª°ÑÊ²Ã´·Å½øÁ¶µ¤Â¯ÖĞ\n");
+                return notify_fail("ä½ è¦æŠŠä»€éº¼æ”¾é€²ç…‰ä¸¹çˆä¸­\n");
 
         if( me->is_fighting() || me->is_busy() )
-                return notify_fail("ÄãÕıÃ¦×ÅÄØ£¡\n");
+                return notify_fail("ä½ æ­£å¿™è‘—å‘¢ï¼\n");
 
-        message_vision(YEL"\n$N°ÑÒ»"+query("unit", ob)+query("name", ob )
-                +"·Å½øÁ¶µ¤Â¯ÖĞ\n\n"NOR, me);
+        message_vision(YEL"\n$NæŠŠä¸€"+query("unit", ob)+query("name", ob )
+                +"æ”¾é€²ç…‰ä¸¹çˆä¸­\n\n"NOR, me);
 
         destruct(ob);
         ob->move(this_object());
@@ -61,24 +61,24 @@ int do_lian(string arg)
         me=this_player();
         ob=this_object();
 
-        if( query("family/family_name", me) != "Ò©Íõ¹È"
+        if( query("family/family_name", me) != "è—¥ç‹è°·"
                 || (int)me->query_skill("medical",1)<80) {
-                return notify_fail("Äã»¹²»ÄÜÔÚÕâÀïÁ¶µ¤£¡\n");
+                return notify_fail("ä½ é‚„ä¸èƒ½åœ¨é€™è£¡ç…‰ä¸¹ï¼\n");
         }
 
         if( query("shen", me)>0){
-                return notify_fail("ÄãÓ¦µ±µ½±ğµÄÁ¶µ¤·¿È¥Á¶µ¤£¡\n");
+                return notify_fail("ä½ æ‡‰ç•¶åˆ°åˆ¥çš„ç…‰ä¸¹æˆ¿å»ç…‰ä¸¹ï¼\n");
         }
 
         if( !arg && (arg!="ruangu san")  )
-                return notify_fail("Ö¸Áî¸ñÊ½£ºliandan <µ¤Ò©ID> \n"
-                "        ¿ÉÒÔÁ·µÄµ¤Ò©ÓĞ£º Èí¹ÇÉ¢(ruangu san)\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šliandan <ä¸¹è—¥ID> \n"
+                "        å¯ä»¥ç·´çš„ä¸¹è—¥æœ‰ï¼š è»Ÿéª¨æ•£(ruangu san)\n");
 
         if( me->is_fighting() || me->is_busy() )
-                return notify_fail("ÄãÕıÃ¦×ÅÄØ£¡\n");
+                return notify_fail("ä½ æ­£å¿™è‘—å‘¢ï¼\n");
 
         if( !query_temp("liandan", me) )
-                return notify_fail("µ¤Â¯»¹Ã»ÓĞµãÈ¼£¬ÔõÃ´Á¶µ¤£¡\n");
+                return notify_fail("ä¸¹çˆé‚„æ²’æœ‰é»ç‡ƒï¼Œæ€éº¼ç…‰ä¸¹ï¼\n");
 
         if( objectp(ob1=present("she du",ob))
                 && objectp(ob2=present("xie du",ob))
@@ -90,12 +90,12 @@ int do_lian(string arg)
                         destruct(ob3);
                         destruct(ob4);
                         destruct(ob5);
-        message_vision(HIR"$N¹ØÉÏµ¤Â¯µÄÂ¯ÃÅ£¬´ß¶¯»ğÁ¦¿ªÊ¼Á¶µ¤¡£\n\n"NOR, me);
+        message_vision(HIR"$Né—œä¸Šä¸¹çˆçš„çˆé–€ï¼Œå‚¬å‹•ç«åŠ›é–‹å§‹ç…‰ä¸¹ã€‚\n\n"NOR, me);
         call_out("lian_over", 5, me);   
                 return 1;
                 }
         else
-        return notify_fail("¿ÉÊÇÒ©²Ä»¹Ã»×¼±¸ÆëÑ½£¡\n");
+        return notify_fail("å¯æ˜¯è—¥æé‚„æ²’æº–å‚™é½Šå‘€ï¼\n");
 }
 
 int lian_over(object me)
@@ -105,10 +105,10 @@ int lian_over(object me)
         lvl = me->query_skill("poison",1);
         if (random(lvl) > 80)
         {
-        message_vision(HIR"Ò»»á¶ùÂ¯ÌÅÄÚµÄ»ğÑæ½¥½¥Ï¨Ãğ¡£\n\n"NOR, me);
-        message_vision(HIR"$NµÄµ¤Ò©Á·³ÉÁË¡£\n"NOR, me);
-        message_vision(HIR"Â¯»ğ½¥½¥Ï¨ÃğÁË£¡\n"NOR, me);
-        message_vision(HIR"$NÄã´ÓÂ¯ÀïÄÃ³öÒ»°üÈí¹ÇÉ¢\n"NOR, me);
+        message_vision(HIR"ä¸€æœƒå…’çˆè†›å…§çš„ç«ç‡„æ¼¸æ¼¸ç†„æ»…ã€‚\n\n"NOR, me);
+        message_vision(HIR"$Nçš„ä¸¹è—¥ç·´æˆäº†ã€‚\n"NOR, me);
+        message_vision(HIR"çˆç«æ¼¸æ¼¸ç†„æ»…äº†ï¼\n"NOR, me);
+        message_vision(HIR"$Nä½ å¾çˆè£¡æ‹¿å‡ºä¸€åŒ…è»Ÿéª¨æ•£\n"NOR, me);
         me->improve_skill("poison", ((int)me->query_skill("poison",1)/10));
         obj=new(__DIR__"ruan");
         obj->move(me);
@@ -117,7 +117,7 @@ int lian_over(object me)
         }
         else
         {
-                message_vision(HIR"$NµÄµ¤Ò©Á·Ê§°ÜÁË¡£\n"NOR, me);
+                message_vision(HIR"$Nçš„ä¸¹è—¥ç·´å¤±æ•—äº†ã€‚\n"NOR, me);
                 return 1;
                 
         }
@@ -129,15 +129,15 @@ int do_ran(string arg)
         object me;
         me=this_player();
 
-        if( query("family/family_name", me) != "Ò©Íõ¹È"
+        if( query("family/family_name", me) != "è—¥ç‹è°·"
                 || (int)me->query_skill("medical",1)<80
-          || query("shen", me)>0){return notify_fail("²»ĞíÂÒÅöÕâÀïµÄ¶«Î÷£¡\n");
+          || query("shen", me)>0){return notify_fail("ä¸è¨±äº‚ç¢°é€™è£¡çš„æ±è¥¿ï¼\n");
         }
 
         if( query_temp("liandan", me) )
-                return notify_fail("µ¤Â¯µÄ»ğÒÑ¾­ºÜÍúÁË£¬¿ì¿ªÊ¼Á¶µ¤°É£¡\n");
+                return notify_fail("ä¸¹çˆçš„ç«å·²ç¶“å¾ˆæ—ºäº†ï¼Œå¿«é–‹å§‹ç…‰ä¸¹å§ï¼\n");
 
         set_temp("liandan", 1, me);
-        message_vision(HIR"$NÄÃÆğ»ğÕÛÈû½øÂ¯ÌÅ£¬°Ñµ¤Â¯µãÈ¼¡£\n"NOR, this_player());
+        message_vision(HIR"$Næ‹¿èµ·ç«æŠ˜å¡é€²çˆè†›ï¼ŒæŠŠä¸¹çˆé»ç‡ƒã€‚\n"NOR, this_player());
         return 1;
 }

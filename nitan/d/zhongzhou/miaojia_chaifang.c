@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��");
+        set("short", "柴房");
         set("long", @LONG
-����һ�䰫С���߷���ƽʱ��Ϊ�ѷ��������á������ﲼ
-�����������������ǻҳ����������Ѿ��ܾ�û���˴�ɨ�ˡ���
-����һ��б���ż����ɲ�
+這是一間矮小的瓦房，平時作為堆放雜物所用。房屋裡布
+滿了蛛網，地面滿是灰塵。看樣子已經很久沒有人打掃了。柴
+房的一角斜放著幾捆幹柴。
 LONG);
         set("exits", ([
                   "north" : __DIR__"miaojia_dayuan",

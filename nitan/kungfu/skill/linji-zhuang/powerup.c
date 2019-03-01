@@ -13,13 +13,13 @@ int exert(object me, object target)
         object weapon;
 
         if (target != me)
-                return notify_fail("ÄãÖ»ÄÜÓÃÁÙ¼Ã×¯ÌáÉı×Ô¼ºµÄÕ½¶·Á¦¡£\n");
+                return notify_fail("ä½ åªèƒ½ç”¨è‡¨æ¿ŸèŠæå‡è‡ªå·±çš„æˆ°é¬¥åŠ›ã€‚\n");
 
         if ((int)query("neili", me) < 100)
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ã€‚\n");
 
         if ((int)query_temp("powerup", me))
-                return notify_fail("ÄãÒÑ¾­ÔÚÔË¹¦ÖĞÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“åœ¨é‹åŠŸä¸­äº†ã€‚\n");
 
         skill = me->query_skill("force");
 
@@ -29,22 +29,22 @@ int exert(object me, object target)
         if (query("sex", me)) di = 0; else di = skill / 2;
         if (di > 1000) di = 1000;
 
-        message_combatd(MAG "$N" MAG "Î¢Ò»ÄıÉñ£¬ÔËÆğÁÙ¼Ã×¯£¬Ò»Éù½¿ºÈ£¬"
-                        "ËÄÖÜµÄ¿ÕÆø·Â·ğ¶¼Äı¹ÌÁË£¡\n" NOR, me);
+        message_combatd(MAG "$N" MAG "å¾®ä¸€å‡ç¥ï¼Œé‹èµ·è‡¨æ¿ŸèŠï¼Œä¸€è²å¬Œå–ï¼Œ"
+                        "å››å‘¨çš„ç©ºæ°£ä»¿ä½›éƒ½å‡å›ºäº†ï¼\n" NOR, me);
 
         if (objectp(weapon = query_temp("weapon", me)))
         {
                 if (di >= 95)
-                        message_combatd(HIR "$N" HIR "Á³É«Ò»³Á£¬ÔËÆğÁÙ¼Ã×¯ÉñÍ¨£¬ö®Ê±¼ä" +
-                                        weapon->name() + HIR "¹â»ªËÄÉä£¬ÂşÆğÎŞ±ßÉ±Òâ¡£\n" NOR, me);
+                        message_combatd(HIR "$N" HIR "è‡‰è‰²ä¸€æ²‰ï¼Œé‹èµ·è‡¨æ¿ŸèŠç¥é€šï¼Œéœæ™‚é–“" +
+                                        weapon->name() + HIR "å…‰è¯å››å°„ï¼Œæ¼«èµ·ç„¡é‚Šæ®ºæ„ã€‚\n" NOR, me);
                 else
                 if (di >= 80)
-                        message_combatd(HIR "$N" HIR "Ç±ÔËÄÚÁ¦£¬Ö»¼û" +
-                                        weapon->name() + HIR "ÉÁ¹ıÒ»µÀ¹â»ª£¬ÆøÊÆÉãÈË£¬ÁîÈËËàÄÂ¡£\n" NOR, me);
+                        message_combatd(HIR "$N" HIR "æ½›é‹å…§åŠ›ï¼Œåªè¦‹" +
+                                        weapon->name() + HIR "é–ƒéä¸€é“å…‰è¯ï¼Œæ°£å‹¢æ”äººï¼Œä»¤äººè‚…ç©†ã€‚\n" NOR, me);
                 else
                 if (di >= 30)
-                        message_combatd(HIR "$N" HIR "Ä¬ÔËÄÚÁ¦£¬¾Í¼ûÄÇ" +
-                                        weapon->name() + HIR "ÒşÒşÍ¸³öÒ»¹É¹âÃ¢£¬ÉÁË¸²»¶¨¡£\n" NOR, me);
+                        message_combatd(HIR "$N" HIR "é»˜é‹å…§åŠ›ï¼Œå°±è¦‹é‚£" +
+                                        weapon->name() + HIR "éš±éš±é€å‡ºä¸€è‚¡å…‰èŠ’ï¼Œé–ƒçˆä¸å®šã€‚\n" NOR, me);
         }
 
         addn_temp("apply/attack", skill / 3, me);
@@ -68,6 +68,6 @@ void remove_effect(object me, int amount, int di)
                 addn_temp("apply/damage", -di, me);
                 addn_temp("apply/unarmed_damage", -di, me);
                 delete_temp("powerup", me);
-                tell_object(me, "ÄãµÄÁÙ¼Ã×¯ÔËĞĞÍê±Ï£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï¡£\n");
+                tell_object(me, "ä½ çš„è‡¨æ¿ŸèŠé‹è¡Œå®Œç•¢ï¼Œå°‡å…§åŠ›æ”¶å›ä¸¹ç”°ã€‚\n");
         }
 }

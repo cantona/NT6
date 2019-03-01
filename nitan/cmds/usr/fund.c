@@ -17,18 +17,18 @@ int main(object me,string arg)
         }
 
         if( !arg ) {
-                write(HIG "Ä¿Ç°ÄàÌ¶»ù½ğÊıÁ¿Îª£º " HIY + MONEY_D->money_str(DB_D->query_data("fund/balance")) + "¡£\n" NOR);
+                write(HIG "ç›®å‰æ³¥æ½­åŸºé‡‘æ•¸é‡ç‚ºï¼š " HIY + MONEY_D->money_str(DB_D->query_data("fund/balance")) + "ã€‚\n" NOR);
                 return 1;
         }
 
         if( sscanf(arg, "juan %d", amount) == 1 ) {
                 if( amount <= 0 ) {
-                        write("ÊıÁ¿±ØĞëÎªÕı¡£\n");
+                        write("æ•¸é‡å¿…é ˆç‚ºæ­£ã€‚\n");
                         return 1;
                 }
 
                 if( query("balance", me) < amount ) {
-                        write("ÄãÒøĞĞµÄ´æ¿îÃ»ÓĞÕâÃ´¶à¡£\n");
+                        write("ä½ éŠ€è¡Œçš„å­˜æ¬¾æ²’æœ‰é€™éº¼å¤šã€‚\n");
                         return 1;
                 }
                 addn("balance", -amount, me);
@@ -36,40 +36,40 @@ int main(object me,string arg)
                 DB_D->add_data("fund/balance", amount);
                 if( amount >= 100000000 )
                 CHANNEL_D->channel_broadcast("chat", HIW + me->name(1) + "(" +
-                              me->query_id() + ")" HIC" ÎªÄàÌ¶»ù½ğ¾èÖú "  + HIY + MONEY_D->money_str(amount) + HIC "¡£\n" NOR);
-                write("·Ç³£¸ĞĞ»ÄãÎªÄàÌ¶Ëù×öµÄ¹±Ï×£¡\n");
+                              me->query_id() + ")" HIC" ç‚ºæ³¥æ½­åŸºé‡‘æåŠ© "  + HIY + MONEY_D->money_str(amount) + HIC "ã€‚\n" NOR);
+                write("éå¸¸æ„Ÿè¬ä½ ç‚ºæ³¥æ½­æ‰€åšçš„è²¢ç»ï¼\n");
 
                 me->start_busy(1);
                 return 1;
         } else
         if( sscanf(arg, "fenpei %s %d", who, amount) == 2 ) {
-                if( !wizardp(me) && query("viremploy/job", me) != "ĞÂÊÖµ¼Ê¦" )
+                if( !wizardp(me) && query("viremploy/job", me) != "æ–°æ‰‹å°å¸«" )
                         return 1;
 
                 if( who == me->query_id(1) ) {
-                        write("²»ÄÜ¸ø×Ô¼º·ÖÅä»ù½ğ¡£\n");
+                        write("ä¸èƒ½çµ¦è‡ªå·±åˆ†é…åŸºé‡‘ã€‚\n");
                         return 1;
                 }
 
                 if( amount <= 0 ) {
-                        write("ÊıÁ¿±ØĞëÎªÕı¡£\n");
+                        write("æ•¸é‡å¿…é ˆç‚ºæ­£ã€‚\n");
                         return 1;
                 }
 
                 if( amount > 1000000000 ) {
                         amount = 1000000000;
-                        write("×î¶à·ÖÅäÊ®ÍòÁ½»Æ½ğ¡£\n");
+                        write("æœ€å¤šåˆ†é…åè¬å…©é»ƒé‡‘ã€‚\n");
                 }
 
                 if( DB_D->query_data("fund/balance") < amount ) {
-                        write("ÄàÌ¶»ù½ğ²»×ã¡£\n");
+                        write("æ³¥æ½­åŸºé‡‘ä¸è¶³ã€‚\n");
                         return 1;
                 }
 
                 target = UPDATE_D->global_find_player(who);
 
                 if( !objectp(target) ) {
-                        write("ÎŞ´ËÍæ¼Ò¡£\n");
+                        write("ç„¡æ­¤ç©å®¶ã€‚\n");
                         UPDATE_D->global_destruct_player(target, 1);
                         return 1;
                 }
@@ -82,28 +82,28 @@ int main(object me,string arg)
 
                 UPDATE_D->global_destruct_player(target, 1);
 
-                // ¼ÇÂ¼
-                log_file("fund", me->query_id(1) + " ÓÚ " + ctime(time()) + " ´ÓÄàÌ¶»ù½ğ·ÖÅä " +
-                          amount + " ¸ø " + who + "¡£\n");
+                // è¨˜éŒ„
+                log_file("fund", me->query_id(1) + " äº " + ctime(time()) + " å¾æ³¥æ½­åŸºé‡‘åˆ†é… " +
+                          amount + " çµ¦ " + who + "ã€‚\n");
 
-                // ·¢²¼
+                // ç™¼å¸ƒ
                 CHANNEL_D->channel_broadcast("chat", HIW + me->name(1) + "(" +
-                              me->query_id(1) + ")" HIC "´ÓÄàÌ¶»ù½ğÖĞ·ÖÅä "  + HIY +
-                              MONEY_D->money_str(amount) + HIC " ¸ø " + tar_name + " ¡£\n" NOR);
+                              me->query_id(1) + ")" HIC "å¾æ³¥æ½­åŸºé‡‘ä¸­åˆ†é… "  + HIY +
+                              MONEY_D->money_str(amount) + HIC " çµ¦ " + tar_name + " ã€‚\n" NOR);
 
                 return 1;
         }
 
-        return notify_fail("¸ñÊ½´íÎó¡£\n");
+        return notify_fail("æ ¼å¼éŒ¯èª¤ã€‚\n");
 }
 
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : fund <²ÎÊı>
-fund                              ÏÔÊ¾ÄàÌ¶»ù½ğÊıÁ¿
-fund juan <ÊıÁ¿>                  ¾èÖúÄàÌ¶»ù½ğ
-fund fenpei <Íæ¼ÒID> <ÊıÁ¿>       ·ÖÅäÄàÌ¶»ù½ğ¸øÄ³Î»Íæ¼Ò
+æŒ‡ä»¤æ ¼å¼ : fund <åƒæ•¸>
+fund                              é¡¯ç¤ºæ³¥æ½­åŸºé‡‘æ•¸é‡
+fund juan <æ•¸é‡>                  æåŠ©æ³¥æ½­åŸºé‡‘
+fund fenpei <ç©å®¶ID> <æ•¸é‡>       åˆ†é…æ³¥æ½­åŸºé‡‘çµ¦æŸä½ç©å®¶
 HELP );
         return 1;
 }

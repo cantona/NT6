@@ -24,11 +24,11 @@ string record_time(int time)
         d = ltime[LT_MDAY];
         mo = ltime[LT_MON]+1;
         ctime = "";
-        ctime += chinese_number(mo) + "ÔÂ";
-        ctime += chinese_number(d) + "ÈÕ";
-        ctime += chinese_number(h) + "Ê±";
-        ctime += chinese_number(m) + "·Ö";
-        ctime += chinese_number(s) + "Ãë";
+        ctime += chinese_number(mo) + "æœˆ";
+        ctime += chinese_number(d) + "æ—¥";
+        ctime += chinese_number(h) + "æ™‚";
+        ctime += chinese_number(m) + "åˆ†";
+        ctime += chinese_number(s) + "ç§’";
         return ctime;
 }
 
@@ -82,7 +82,7 @@ void do_kaijiang(string type)
         if (type=="kaijiang")
         {
                 cpb->restore();
-                message("sendto_alluser",HIW"¡¼ÄàÌ¶¸£²Ê¡½£ºÏÂÃæ½«¿ª³ö±¾ÆÚ²ÊÆ±´ó½±£¡\n"NOR,users());
+                message("sendto_alluser",HIW"â–¡æ³¥æ½­ç¦å½©â–¡ï¼šä¸‹é¢å°‡é–‹å‡ºæœ¬æœŸå½©ç¥¨å¤§çï¼\n"NOR,users());
                 i=0;
                 z=0;
                 while(p!=7)
@@ -98,8 +98,8 @@ void do_kaijiang(string type)
                 for(i=0;i<sizeof(jieguo);i++)
                         str+=jieguo[i]+" ";
 
-                message("system",HIW"¡¼ÄàÌ¶¸£²Ê¡½£ºµÚ"+chinese_number(query("times", cpb))+"ÆÚ¶Ò½±ºÅÂëÎª"+BLINK+HIR+str+"£¡\n"NOR,users());
-                message("system",HIW"¡¼ÄàÌ¶¸£²Ê¡½£º¿ÉÒÔÈ¥ÑïÖİ¶Ä³¡²ÊÆ±Í¶×¢ÖĞĞÄread biaoÀ´²é¿´µÃ½±Ãûµ¥¡£\n"NOR,users());
+                message("system",HIW"â–¡æ³¥æ½­ç¦å½©â–¡ï¼šç¬¬"+chinese_number(query("times", cpb))+"æœŸå…Œçè™Ÿç¢¼ç‚º"+BLINK+HIR+str+"ï¼\n"NOR,users());
+                message("system",HIW"â–¡æ³¥æ½­ç¦å½©â–¡ï¼šå¯ä»¥å»æšå·è³­å ´å½©ç¥¨æŠ•æ³¨ä¸­å¿ƒread biaoä¾†æŸ¥çœ‹å¾—çåå–®ã€‚\n"NOR,users());
 
                 set("last_z_num", jieguo, cpb);
                 set("last_z_num_str", str, cpb);
@@ -118,17 +118,17 @@ void do_kaijiang(string type)
                 else set("all_gold",500000, cpb);
                 cpb->save();
 
-                message("system",HIW"¡¼ÄàÌ¶¸£²Ê¡½£ºÏÂÆÚ²ÊÆ±½«ÓÚ"+query("start_cdate", cpb)+"¿ªÊ¼·¢ĞĞ£¬»¶Ó­¹ºÂò¡£\n"NOR,users());
-                message("system",HIW"¡¼ÄàÌ¶¸£²Ê¡½£ºµÚ"+chinese_number(query("times", cpb))+"ÆÚÔ¤¼Æ½±½ğ"+chinese_number(query("all_gold", cpb))+"Á½»Æ½ğ¡£\n"NOR,users());
+                message("system",HIW"â–¡æ³¥æ½­ç¦å½©â–¡ï¼šä¸‹æœŸå½©ç¥¨å°‡äº"+query("start_cdate", cpb)+"é–‹å§‹ç™¼è¡Œï¼Œæ­¡è¿è³¼è²·ã€‚\n"NOR,users());
+                message("system",HIW"â–¡æ³¥æ½­ç¦å½©â–¡ï¼šç¬¬"+chinese_number(query("times", cpb))+"æœŸé è¨ˆçé‡‘"+chinese_number(query("all_gold", cpb))+"å…©é»ƒé‡‘ã€‚\n"NOR,users());
                 cpb->auto_post(
-                        sprintf(HIR"¡¼ÄàÌ¶¸£²Ê¡½£º±¾ÆÚ²ÊÆ±¿ª½±ºÅÂëÎª"+str+"£¡"NOR),
-                        sprintf("ÖĞ½±Ãûµ¥ÈçÏÂ£º%s",cpb->show_player()),
+                        sprintf(HIR"â–¡æ³¥æ½­ç¦å½©â–¡ï¼šæœ¬æœŸå½©ç¥¨é–‹çè™Ÿç¢¼ç‚º"+str+"ï¼"NOR),
+                        sprintf("ä¸­çåå–®å¦‚ä¸‹ï¼š%s",cpb->show_player()),
                 );
                 rm("/data/caipiao/call");
                 write_file("/data/caipiao/call",sprintf(
-                        "¡¼¶Ä³¡ÏûÏ¢¡½£º±¾ÆÚ²ÊÆ±´ó½±ÒÑ¿ª³ö£¬¶Ò½±ºÅÂëÎª"+str+"\n" +
-                        "¡¼¶Ä³¡ÏûÏ¢¡½£ºÏÂÆÚ²ÊÆ±½«ÓÚ"+query("start_cdate", cpb)+"¿ªÊ¼·¢ĞĞ£¬»¶Ó­¹ºÂò¡£\n"+
-                        "¡¼¶Ä³¡ÏûÏ¢¡½£ºÏÂÆÚ²ÊÆ±Ô¤¼Æ½±½ğ"+chinese_number(query("all_gold", cpb))+"Á½»Æ½ğ¡£\n"));
+                        "â–¡è³­å ´æ¶ˆæ¯â–¡ï¼šæœ¬æœŸå½©ç¥¨å¤§çå·²é–‹å‡ºï¼Œå…Œçè™Ÿç¢¼ç‚º"+str+"\n" +
+                        "â–¡è³­å ´æ¶ˆæ¯â–¡ï¼šä¸‹æœŸå½©ç¥¨å°‡äº"+query("start_cdate", cpb)+"é–‹å§‹ç™¼è¡Œï¼Œæ­¡è¿è³¼è²·ã€‚\n"+
+                        "â–¡è³­å ´æ¶ˆæ¯â–¡ï¼šä¸‹æœŸå½©ç¥¨é è¨ˆçé‡‘"+chinese_number(query("all_gold", cpb))+"å…©é»ƒé‡‘ã€‚\n"));
                 return;
         }
         else if(type=="end" )
@@ -140,12 +140,12 @@ void do_kaijiang(string type)
                 delete("end_date", cpb);
                 delete("end_cdate", cpb);
                 cpb->save();
-                message("system",HIW"¡¼ÄàÌ¶¸£²Ê¡½£º±¾ÆÚ²ÊÆ±Í£Ö¹¹ºÂò£¬Çë¹Ø×¢¿ª½±½á¹û£¡\n"NOR,users());
-                message("system",HIW"¡¼ÄàÌ¶¸£²Ê¡½£º±¾ÆÚ²ÊÆ±½«ÓÚ"+query("kaijiang_cdate", cpb)+"¿ª½±£¡\n"NOR,users());
+                message("system",HIW"â–¡æ³¥æ½­ç¦å½©â–¡ï¼šæœ¬æœŸå½©ç¥¨åœæ­¢è³¼è²·ï¼Œè«‹é—œæ³¨é–‹ççµæœï¼\n"NOR,users());
+                message("system",HIW"â–¡æ³¥æ½­ç¦å½©â–¡ï¼šæœ¬æœŸå½©ç¥¨å°‡äº"+query("kaijiang_cdate", cpb)+"é–‹çï¼\n"NOR,users());
                 rm("/data/caipiao/call");
                 write_file("/data/caipiao/call",sprintf(
-                        "¡¼¶Ä³¡ÏûÏ¢¡½£º±¾ÆÚ²ÊÆ±ÒÑÍ£Ö¹¹ºÂò£¬Çë¹Ø×¢¿ª½±½á¹û£¡\n" +
-                        "¡¼¶Ä³¡ÏûÏ¢¡½£º±¾ÆÚ²ÊÆ±½«ÓÚ"+query("kaijiang_cdate", cpb)+"¿ª½±£¡\n"));
+                        "â–¡è³­å ´æ¶ˆæ¯â–¡ï¼šæœ¬æœŸå½©ç¥¨å·²åœæ­¢è³¼è²·ï¼Œè«‹é—œæ³¨é–‹ççµæœï¼\n" +
+                        "â–¡è³­å ´æ¶ˆæ¯â–¡ï¼šæœ¬æœŸå½©ç¥¨å°‡äº"+query("kaijiang_cdate", cpb)+"é–‹çï¼\n"));
                 return;
         }
         else if(type=="start")
@@ -156,8 +156,8 @@ void do_kaijiang(string type)
                 if (!query("all_gold", cpb))
                         set("all_gold",500000,cpb);
 
-                message("system",HIW"¡¼ÄàÌ¶¸£²Ê¡½£ºµÚ"+chinese_number(query("times", cpb))+"ÆÚ²ÊÆ±¿ªÊ¼·¢ĞĞ£¬»¶Ó­´ó¼ÒÇ°À´¹ºÂò¡£\n"NOR,users());
-                message("system",HIW"¡¼ÄàÌ¶¸£²Ê¡½£ºµÚ"+chinese_number(query("times", cpb))+"ÆÚÔ¤¼Æ½±½ğ"+chinese_number(query("all_gold", cpb))+"Á½»Æ½ğ¡£\n"NOR,users());
+                message("system",HIW"â–¡æ³¥æ½­ç¦å½©â–¡ï¼šç¬¬"+chinese_number(query("times", cpb))+"æœŸå½©ç¥¨é–‹å§‹ç™¼è¡Œï¼Œæ­¡è¿å¤§å®¶å‰ä¾†è³¼è²·ã€‚\n"NOR,users());
+                message("system",HIW"â–¡æ³¥æ½­ç¦å½©â–¡ï¼šç¬¬"+chinese_number(query("times", cpb))+"æœŸé è¨ˆçé‡‘"+chinese_number(query("all_gold", cpb))+"å…©é»ƒé‡‘ã€‚\n"NOR,users());
 
                 delete("end_ya", cpb);
                 delete("duijiang", cpb);
@@ -172,12 +172,12 @@ void do_kaijiang(string type)
                 cpb->save();
                 cpb->restore();
 
-                message("system",HIW"¡¼ÄàÌ¶¸£²Ê¡½£ºµÚ"+chinese_number(query("times",cpb))+"ÆÚ²ÊÆ±½«ÓÚ"+query("end_cdate", cpb)+"Í£Ö¹·¢ĞĞ¡£\n"NOR,users());
+                message("system",HIW"â–¡æ³¥æ½­ç¦å½©â–¡ï¼šç¬¬"+chinese_number(query("times",cpb))+"æœŸå½©ç¥¨å°‡äº"+query("end_cdate", cpb)+"åœæ­¢ç™¼è¡Œã€‚\n"NOR,users());
                 rm("/data/caipiao/call");
                 write_file("/data/caipiao/call",sprintf(
-                        "¡¼¶Ä³¡ÏûÏ¢¡½£ºµÚ"+chinese_number(query("times", cpb))+"ÆÚ²ÊÆ±ÒÑ¾­·¢ĞĞ£¬»¶Ó­´ó¼ÒÇ°À´¹ºÂò¡£\n" +
-                        "¡¼¶Ä³¡ÏûÏ¢¡½£ºµÚ"+chinese_number(query("times", cpb))+"ÆÚÀÛ¼Æ½±½ğ"+chinese_number(query("all_gold", cpb))+"Á½»Æ½ğ¡£\n" +
-                        "¡¼¶Ä³¡ÏûÏ¢¡½£ºµÚ"+chinese_number(query("times", cpb))+"ÆÚ²ÊÆ±½«ÓÚ"+query("end_cdate", cpb)+"Í£Ö¹·¢ĞĞ¡£\n"));
+                        "â–¡è³­å ´æ¶ˆæ¯â–¡ï¼šç¬¬"+chinese_number(query("times", cpb))+"æœŸå½©ç¥¨å·²ç¶“ç™¼è¡Œï¼Œæ­¡è¿å¤§å®¶å‰ä¾†è³¼è²·ã€‚\n" +
+                        "â–¡è³­å ´æ¶ˆæ¯â–¡ï¼šç¬¬"+chinese_number(query("times", cpb))+"æœŸç´¯è¨ˆçé‡‘"+chinese_number(query("all_gold", cpb))+"å…©é»ƒé‡‘ã€‚\n" +
+                        "â–¡è³­å ´æ¶ˆæ¯â–¡ï¼šç¬¬"+chinese_number(query("times", cpb))+"æœŸå½©ç¥¨å°‡äº"+query("end_cdate", cpb)+"åœæ­¢ç™¼è¡Œã€‚\n"));
                 return;
         }
         return;

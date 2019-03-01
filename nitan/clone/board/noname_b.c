@@ -2,12 +2,12 @@ inherit BULLETIN_BOARD;
 
 void create()
 {
-        set_name("ÄäÃûÁôÑÔ°æ", ({ "board" }) );
+        set_name("åŒ¿åç•™è¨€ç‰ˆ", ({ "board" }) );
         set("location", "/d/wizard/noname_room");
         set("board_id", "noname_b");
         set("noname_board", 1);
         set("private_board", 1);
-        set("long", "Ëµ°É£¬³ıÁËÎ×Ê¦Ã»ÈËÖªµÀÊÇÄãËµµÄÄÚÈİ¡£\n" );
+        set("long", "èªªå§ï¼Œé™¤äº†å·«å¸«æ²’äººçŸ¥é“æ˜¯ä½ èªªçš„å…§å®¹ã€‚\n" );
         setup();
         set("capacity", 100);
         replace_program(BULLETIN_BOARD);

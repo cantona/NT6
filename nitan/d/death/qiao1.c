@@ -3,14 +3,14 @@ inherit ROOM;
 
 void create()
 {
-        set("short", NOR + WHT "¡¾ÄÎºÓÇÅ¡¿" NOR);
+        set("short", NOR + WHT "ã€å¥ˆæ²³æ©‹ã€‘" NOR);
         set("long", NOR + WHT @LONG
 
-                    ÄÎ         ºÓ         ÇÅ
+                    å¥ˆ         æ²³         æ©‹
 
-    ÕâÀï¾ÍÊÇÖøÃûµÄÒõ¼äÍ¨µÀ¡¸ÄÎºÓÇÅ¡¹£¬ÔÚÄãÃæÇ°´£Á¢ÖøÒ»×ù³¤³¤µÄ
-Ê¯ÖÆ¹°ÇÅ£¬Ğí¶àÍö»êÕı¿Ş¿ŞÌäÌäµØÁĞ¶ÓÉÏÇÅ£¬ÇÅÍ·Ò»Î»°×·¢²Ô²ÔµÄÀÏ¸¾
-ÈË£¬ÕıÎªÃ¿Ò»¸öÉÏÇÅµÄÍö»êÒ¨×ÅÌÀ¡£
+    é€™è£¡å°±æ˜¯è‘—åçš„é™°é–“é€šé“ã€Œå¥ˆæ²³æ©‹ã€ï¼Œåœ¨ä½ é¢å‰çŸ—ç«‹è‘—ä¸€åº§é•·é•·çš„
+çŸ³åˆ¶æ‹±æ©‹ï¼Œè¨±å¤šäº¡é­‚æ­£å“­å“­å•¼å•¼åœ°åˆ—éšŠä¸Šæ©‹ï¼Œæ©‹é ­ä¸€ä½ç™½ç™¼è’¼è’¼çš„è€å©¦
+äººï¼Œæ­£ç‚ºæ¯ä¸€å€‹ä¸Šæ©‹çš„äº¡é­‚èˆ€è‘—æ¹¯ã€‚
 
 
 LONG NOR );
@@ -41,13 +41,13 @@ int valid_leave(object me, string dir)
         {
                 /*
                 if( !query("reborn_offer", me) || query("reborn_offer", me) != "finish" )
-                        return notify_fail(BLU "ÄãÎŞ·¨Í¨¹ıÕâÀï£¡\n" NOR);
+                        return notify_fail(BLU "ä½ ç„¡æ³•é€šéé€™è£¡ï¼\n" NOR);
 
                 if( !query_temp("last_eat/mengpo_tang", me )
                    && objectp(present("meng po", environment(me))) )
-                        return notify_fail(CYN "ÃÏÆÅËµµÀ£ºÕâÎ»" +
+                        return notify_fail(CYN "å­Ÿå©†èªªé“ï¼šé€™ä½" +
                                            RANK_D->query_respect(me) +
-                                           CYN "£¬ºÈÍëÌÀÔÙ×ß°É¡£\n" NOR);
+                                           CYN "ï¼Œå–ç¢—æ¹¯å†èµ°å§ã€‚\n" NOR);
                 */
         }
         return ::valid_leave(me, dir);
@@ -67,25 +67,25 @@ int do_move(string arg)
         if (! arg || arg == "")
                 return 0;
 
-        if (arg == "qiao" || arg == "ÇÅ" || arg == "ÄÎºÓÇÅ")
+        if (arg == "qiao" || arg == "æ©‹" || arg == "å¥ˆæ²³æ©‹")
         {
                 /*
-                if( !query("hell_quest/ËøÑôµ¤", me )
+                if( !query("hell_quest/é–é™½ä¸¹", me )
                    && objectp(present("meng po", environment(me))))
                 {
-                        write(CYN "Ö»¼ûÃÏÆÅÒ»°ÑÀ¹×¡Äã£¬ËµµÀ£ºÕâÎ»"
+                        write(CYN "åªè¦‹å­Ÿå©†ä¸€æŠŠæ””ä½ä½ ï¼Œèªªé“ï¼šé€™ä½"
                               + RANK_D->query_respect(me) + CYN
-                              "£¬ÕâÇÅÏÂ²»µÃ£¬ÏÂ²»µÃ£¡ÏÂÁË¿É¾Í»Ø²»"
-                              "À´ÁË¡£\n" NOR);
+                              "ï¼Œé€™æ©‹ä¸‹ä¸å¾—ï¼Œä¸‹ä¸å¾—ï¼ä¸‹äº†å¯å°±å›ä¸"
+                              "ä¾†äº†ã€‚\n" NOR);
                         return 1;
                 }
                 */
-                message_vision(HIC "\nÖ»¼û$N" HIC "Ò§ÁËÒ§ÑÀ£¬Ò»×İ"
-                               "Éí´ÓÄÎºÓÇÅÉÏÌøÁËÏÂÈ¥¡­¡­\n" NOR,
+                message_vision(HIC "\nåªè¦‹$N" HIC "å’¬äº†å’¬ç‰™ï¼Œä¸€ç¸±"
+                               "èº«å¾å¥ˆæ²³æ©‹ä¸Šè·³äº†ä¸‹å»â€¦â€¦\n" NOR,
                                this_player());
                 me->move("/d/death/hantan1");
-                message_vision(HIC "\nÖ»Ìı¡°ÆËÍ¨¡±Ò»Éù£¬$N" HIC
-                               "´ÓÉÏÃæÄÎºÓÇÅÌøÁËÏÂÀ´¡£\n" NOR,
+                message_vision(HIC "\nåªè½â€œæ’²é€šâ€ä¸€è²ï¼Œ$N" HIC
+                               "å¾ä¸Šé¢å¥ˆæ²³æ©‹è·³äº†ä¸‹ä¾†ã€‚\n" NOR,
                                this_player());
                 return 1;
         }

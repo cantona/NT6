@@ -1,4 +1,4 @@
-// shanshen.c ÀÏÉ½²Î
+// shanshen.c è€å±±åƒ
 
 #include <ansi.h>
 inherit ITEM;
@@ -12,13 +12,13 @@ void init()
 
 void create()
 {
-        set_name(YEL"ÀÏÉ½²Î"NOR, ({"laoshan shen", "shen"}));
+        set_name(YEL"è€å±±åƒ"NOR, ({"laoshan shen", "shen"}));
         set("taskobj", 1);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Öê");
-                set("long", "ÕâÊÇÒ»ÖêÕ´ÂúÉ½ÄàµÄ³¤°×ÀÏÉ½²Î¡£\n");
+                set("unit", "æ ª");
+                set("long", "é€™æ˜¯ä¸€æ ªæ²¾æ»¿å±±æ³¥çš„é•·ç™½è€å±±åƒã€‚\n");
                 set("value", 0);
         }
         setup();

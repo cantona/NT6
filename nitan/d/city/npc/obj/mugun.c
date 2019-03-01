@@ -1,19 +1,19 @@
-// mugun.c Ä¾¹÷
+// mugun.c æœ¨æ£
 
 #include <weapon.h>
 inherit CLUB;
 
 void create()
 {
-        set_name("Ä¾¹÷", ({ "mugun", "gun" }) );
+        set_name("æœ¨æ£", ({ "mugun", "gun" }) );
         set_weight(350);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¸ùÏ÷µÃºÜ¾«ÖÂµÄ¶Ì¹÷¡£\n");
-                set("unit", "¸ù");
+                set("long", "ä¸€æ ¹å‰Šå¾—å¾ˆç²¾è‡´çš„çŸ­æ£ã€‚\n");
+                set("unit", "æ ¹");
                 set("value", 100);
-                set("wield_msg", "$N×¥ÆğÒ»¸ù$n£¬ÎÕÔÚÊÖÖĞµ±ÎäÆ÷¡£\n");
+                set("wield_msg", "$NæŠ“èµ·ä¸€æ ¹$nï¼Œæ¡åœ¨æ‰‹ä¸­ç•¶æ­¦å™¨ã€‚\n");
                 set("material", "wood");
         }
         init_club(1);

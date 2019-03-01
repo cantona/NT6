@@ -16,11 +16,11 @@ int trap_power(object);
 
 void create()
 {
-        set("short",HIR "ÏİÚå" NOR);
+        set("short",HIR "é™·é˜±" NOR);
         set("long", HIR @LONG
-ÕâÊÇÒ»¿Ú²»ÖªÊÇË­ÍÚ¾òµÄÏİÚå¡£ÏİÚåÉî´ïÊıÕÉ£¬ÓÉÏÂÍùÉÏÍûÈ¥£¬Ö»
-ÄÜ¼ûµ½×ÀÃæ°ã´óµÄÒ»Æ¬Ìì¿Õ¡£ÏİÚåÖÜÎ§ÊÇËÉÈíµÄÍÁ²ã£¬²»Í£µØÍùÍâÉøË®¡£
-ËÆºõ¸Õ¸ÕÍÚºÃÃ»¶à¾Ã¡£
+é€™æ˜¯ä¸€å£ä¸çŸ¥æ˜¯èª°æŒ–æ˜çš„é™·é˜±ã€‚é™·é˜±æ·±é”æ•¸ä¸ˆï¼Œç”±ä¸‹å¾€ä¸Šæœ›å»ï¼Œåª
+èƒ½è¦‹åˆ°æ¡Œé¢èˆ¬å¤§çš„ä¸€ç‰‡å¤©ç©ºã€‚é™·é˜±å‘¨åœæ˜¯é¬†è»Ÿçš„åœŸå±¤ï¼Œä¸åœåœ°å¾€å¤–æ»²æ°´ã€‚
+ä¼¼ä¹å‰›å‰›æŒ–å¥½æ²’å¤šä¹…ã€‚
 LONG NOR
 );      
         set("invalid_startroom",1);
@@ -87,10 +87,10 @@ void falldown(object me)
         if( !objectp(rum_ob = find_object("/d/city/npc/aqingsao")) )
                 rum_ob = load_object("/d/city/npc/aqingsao");
         CHANNEL_D->do_channel(rum_ob, "rumor",
-                sprintf("%sµô½øÏİÚåÀïÁË¡£", me->name(1)));
+                sprintf("%sæ‰é€²é™·é˜±è£¡äº†ã€‚", me->name(1)));
 //
-        message("vision", HIY "Ö»ÌıÍÛµØÒ»Éùº°£¬´ÓÉÏ±ßµôÏÂÒ»ÍÅºÚÓ°À´£¡\n" NOR, environment(me), me);
-        tell_object(me, HIR "ÄãÖ»¾õµÃ½ÅÏÂÒ»Ğé£¬´ó½ĞÒ»Éù£¬Ë¤ÁËÏÂÈ¥£¡\n" NOR);
+        message("vision", HIY "åªè½å“‡åœ°ä¸€è²å–Šï¼Œå¾ä¸Šé‚Šæ‰ä¸‹ä¸€åœ˜é»‘å½±ä¾†ï¼\n" NOR, environment(me), me);
+        tell_object(me, HIR "ä½ åªè¦ºå¾—è…³ä¸‹ä¸€è™›ï¼Œå¤§å«ä¸€è²ï¼Œæ‘”äº†ä¸‹å»ï¼\n" NOR);
         me->start_busy(3+random(5));
         if( present(owner, environment(me)))
         {
@@ -101,7 +101,7 @@ void falldown(object me)
 void flydown(object me)
 {       
         if( random(5) == 0 )
-        message("vision", "Ö»¼ûÈËÓ°Ò»ÉÁ£¬" + me->name() + "ÒÑ¾­Õ¾ÔÚÄãµÄÃæÇ°£¡\n", environment(me), me);
+        message("vision", "åªè¦‹äººå½±ä¸€é–ƒï¼Œ" + me->name() + "å·²ç¶“ç«™åœ¨ä½ çš„é¢å‰ï¼\n", environment(me), me);
 }
 
 int valid_leave(object me, string dir)
@@ -111,37 +111,37 @@ int valid_leave(object me, string dir)
         object roomtrap = this_object();
 
         if( query("owner", roomtrap) == me)return ::valid_leave(me,dir);
-        if( query("race", me) == "·ÉÇİ")return ::valid_leave(me,dir);
+        if( query("race", me) == "é£›ç¦½")return ::valid_leave(me,dir);
 //      if( !roomtrap->query("limit") )         return ::valid_leave(me, dir);
 
         depth=query("depth", roomtrap);
         power = trap_power(me);
         if(me->is_busy())
-                return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£å¿™è‘—å‘¢ã€‚\n");
 
         if( depth / 3 > power )
         {
-                return notify_fail("ÏİÚåÌ«ÉîÁË£¬ÄãÔõÃ´´³Ò²´³²»³öÈ¥£¬¿´À´µÃÇëÈËÀ´°ÑÄãÍÆ£¨£Ô£Õ£É£©³öÈ¥ÁË¡£\n");
+                return notify_fail("é™·é˜±å¤ªæ·±äº†ï¼Œä½ æ€éº¼é—–ä¹Ÿé—–ä¸å‡ºå»ï¼Œçœ‹ä¾†å¾—è«‹äººä¾†æŠŠä½ æ¨ï¼ˆï¼´ï¼µï¼©ï¼‰å‡ºå»äº†ã€‚\n");
         }
         else
                 if( depth / 2 > power)
                 {
-                        return notify_fail("ÏİÚåºÜÉî£¬ÄãµÃÊÔÊÔÄÜ²»ÄÜÅÀ£¨£Ğ£Á£©³öÈ¥¡£\n");
+                        return notify_fail("é™·é˜±å¾ˆæ·±ï¼Œä½ å¾—è©¦è©¦èƒ½ä¸èƒ½çˆ¬ï¼ˆï¼°ï¼¡ï¼‰å‡ºå»ã€‚\n");
                 }
                 else
                         if( depth > power )
                         {
-                                return notify_fail("ÏİÚå¿´À´Í¦ÉîµÄ£¬ÄãµÃÊÔÊÔÄÜ²»ÄÜÊ¹¾¢Ìø£¨£Ô£É£Á£Ï£©³öÈ¥¡£\n");
+                                return notify_fail("é™·é˜±çœ‹ä¾†æŒºæ·±çš„ï¼Œä½ å¾—è©¦è©¦èƒ½ä¸èƒ½ä½¿å‹è·³ï¼ˆï¼´ï¼©ï¼¡ï¼¯ï¼‰å‡ºå»ã€‚\n");
                         }
                         
                         else if( !mapp(exit=query("exits", roomtrap)) || !stringp(exit[dir]) )
        {
-         return notify_fail("Õâ¸ö·½ÏòÃ»ÓĞÂ·¡£\n");
+         return notify_fail("é€™å€‹æ–¹å‘æ²’æœ‰è·¯ã€‚\n");
        }
                         else
                         {
-                                me->receive_damage("qi", depth/20, "ÔÚÏİÚåÀïÀÛËÀÁË");
-                                message_vision("$N³¤ĞäÆ®Æ®£¬×ËÌ¬ÃÀÃîµØ´ÓÏİÚåÉÏ·½·ÉÔ¾¶ø¹ı¡£\n", me);
+                                me->receive_damage("qi", depth/20, "åœ¨é™·é˜±è£¡ç´¯æ­»äº†");
+                                message_vision("$Né•·è¢–é£„é£„ï¼Œå§¿æ…‹ç¾å¦™åœ°å¾é™·é˜±ä¸Šæ–¹é£›èºè€Œéã€‚\n", me);
                                 return ::valid_leave(me, dir);
                         }
 }
@@ -158,33 +158,33 @@ int do_jump(string arg)
         power = trap_power(me);
 
         if( !arg || !query("exits/"+arg, environment(me)) )
-                return notify_fail("ÄãÒªÍùÄÄ¸ö·½ÏòÌøÔ½£¿\n");
+                return notify_fail("ä½ è¦å¾€å“ªå€‹æ–¹å‘è·³è¶Šï¼Ÿ\n");
         if( !(roomto=find_object(query("exits/"+arg, roomtrap))) )
                 roomto=load_object(query("exits/"+arg, roomtrap));
         if( depth < power )
-                return notify_fail("ÒÔÄãµÄ±¾Áì£¬ÓÃµÃ×ÅÕâÃ´·ÑÊÂÂğ£¿\n");
+                return notify_fail("ä»¥ä½ çš„æœ¬é ˜ï¼Œç”¨å¾—è‘—é€™éº¼è²»äº‹å—ï¼Ÿ\n");
         if(me->is_busy())
-                return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£å¿™è‘—å‘¢ã€‚\n");
         if( depth>power && depth/2<power && query("qi", me) >= depth/10 )
         {
-                me->receive_damage("qi", depth/10, "ÔÚÏİÚåÀïÀÛËÀÁË");
+                me->receive_damage("qi", depth/10, "åœ¨é™·é˜±è£¡ç´¯æ­»äº†");
                 if( random(me->query_kar() + me->query_dex()) >= 15 )
                 {
                         me->move(roomto);
-                        message_vision("$NÕ¹¿ªÇá¹¦£¬ÃÍÒ»×İÉí£¬à²µØ´ÓÏİÚåÀïÔ¾ÁË³öÈ¥¡£\n", me);
+                        message_vision("$Nå±•é–‹è¼•åŠŸï¼ŒçŒ›ä¸€ç¸±èº«ï¼Œå—–åœ°å¾é™·é˜±è£¡èºäº†å‡ºå»ã€‚\n", me);
                         return 1;
                 }
                 else
                 {
-                        message_vision("$NÊ¹¾¢ÃÍµØÒ»Ìø£¬°ë¿ÕÖĞÒ»¿ÚÆø½Ó²»ÉÏÀ´£¬ÓÖÖØÖØµØË¤ÁËÏÂÀ´¡£\n", me);
+                        message_vision("$Nä½¿å‹çŒ›åœ°ä¸€è·³ï¼ŒåŠç©ºä¸­ä¸€å£æ°£æ¥ä¸ä¸Šä¾†ï¼Œåˆé‡é‡åœ°æ‘”äº†ä¸‹ä¾†ã€‚\n", me);
                         return 1;
                 }
         }
-        else return notify_fail("ÄãÓĞÕâ¸öÁ¦ÆøÂğ£¿\n");
+        else return notify_fail("ä½ æœ‰é€™å€‹åŠ›æ°£å—ï¼Ÿ\n");
 
         if( depth / 2 > power && depth / 3 < power )
-        return notify_fail("¿´À´ÌøÊÇ²»³ÉµÄÁË£¬ÊÔÊÔÄÜ²»ÄÜÅÀÉÏÈ¥£¿\n");
-        return notify_fail("ÏİÚåÌ«ÉîÁË£¬¿´À´Ò»¶¨µÃº°ÈËÀ´¾ÈÄã³öÈ¥ÁË¡£\n");
+        return notify_fail("çœ‹ä¾†è·³æ˜¯ä¸æˆçš„äº†ï¼Œè©¦è©¦èƒ½ä¸èƒ½çˆ¬ä¸Šå»ï¼Ÿ\n");
+        return notify_fail("é™·é˜±å¤ªæ·±äº†ï¼Œçœ‹ä¾†ä¸€å®šå¾—å–Šäººä¾†æ•‘ä½ å‡ºå»äº†ã€‚\n");
 }
 
 int do_climb(string arg)
@@ -199,31 +199,31 @@ int do_climb(string arg)
         power = trap_power(me);
 
         if( !arg || !query("exits/"+arg, environment(me)) )
-                return notify_fail("ÄãÒªÑØÄÄ¸ö·½ÏòÅÀÉÏÈ¥£¿\n");
+                return notify_fail("ä½ è¦æ²¿å“ªå€‹æ–¹å‘çˆ¬ä¸Šå»ï¼Ÿ\n");
         if( !(roomto=find_object(query("exits/"+arg, roomtrap))) )
                 roomto=load_object(query("exits/"+arg, roomtrap));
         if( depth < power )
-                return notify_fail("ÒÔÄãµÄ±¾Áì£¬ÓÃµÃ×ÅÕâÃ´·ÑÊÂÂğ£¿\n");
+                return notify_fail("ä»¥ä½ çš„æœ¬é ˜ï¼Œç”¨å¾—è‘—é€™éº¼è²»äº‹å—ï¼Ÿ\n");
         if( depth > power && depth / 2 < power )
-                return notify_fail("ÏİÚå²¢²»Éî£¬²»·ÁÊ©Õ¹Çá¹¦£¬ÊÔÊÔÄÜ²»ÄÜÌøÉÏÈ¥£¿\n");
-        if(me->is_busy()) return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+                return notify_fail("é™·é˜±ä¸¦ä¸æ·±ï¼Œä¸å¦¨æ–½å±•è¼•åŠŸï¼Œè©¦è©¦èƒ½ä¸èƒ½è·³ä¸Šå»ï¼Ÿ\n");
+        if(me->is_busy()) return notify_fail("ä½ ç¾åœ¨æ­£å¿™è‘—å‘¢ã€‚\n");
         if( depth/2>power && depth/3<power && query("qi", me) >= depth/5 )
         {
-                me->receive_damage("qi", depth/5, "ÅÀÏİÚåÀÛËÀÁË");
+                me->receive_damage("qi", depth/5, "çˆ¬é™·é˜±ç´¯æ­»äº†");
                 if( random(me->query_kar() + me->query_str()) >= 15 )
                 {
                         me->move(roomto);
-                        message_vision("$N×¥×¡ÏİÚå±ßÉÏµÄ²İ¸ùºÍÊ÷Ö¦£¬ÊÖ½Å²¢ÓÃµØÂıÂıÅÀÁË³öÈ¥¡£\n", me);
+                        message_vision("$NæŠ“ä½é™·é˜±é‚Šä¸Šçš„è‰æ ¹å’Œæ¨¹æï¼Œæ‰‹è…³ä¸¦ç”¨åœ°æ…¢æ…¢çˆ¬äº†å‡ºå»ã€‚\n", me);
                         return 1;
                 }
                 else
                 {
-                        message_vision("$NÂıÂıµØÍùÉÏÅÀ×ÅÅÀ×Å£¬ºöÈ»ÆºµÄÒ»Éù£¬ÀÇ±·²»¿°µØË¤ÁËÏÂÀ´¡£\n", me);
+                        message_vision("$Næ…¢æ…¢åœ°å¾€ä¸Šçˆ¬è‘—çˆ¬è‘—ï¼Œå¿½ç„¶åªçš„ä¸€è²ï¼Œç‹¼ç‹½ä¸å ªåœ°æ‘”äº†ä¸‹ä¾†ã€‚\n", me);
                         return 1;
                 }
         }
-        else return notify_fail("ÄãÓĞÕâ¸öÁ¦ÆøÂğ£¿\n");
-        return notify_fail("ÏİÚåÌ«ÉîÁË£¬¿´À´Ò»¶¨µÃº°ÈËÀ´¾ÈÄã³öÈ¥ÁË¡£\n");
+        else return notify_fail("ä½ æœ‰é€™å€‹åŠ›æ°£å—ï¼Ÿ\n");
+        return notify_fail("é™·é˜±å¤ªæ·±äº†ï¼Œçœ‹ä¾†ä¸€å®šå¾—å–Šäººä¾†æ•‘ä½ å‡ºå»äº†ã€‚\n");
 }
 
 int do_push(string arg)
@@ -236,38 +236,38 @@ int do_push(string arg)
         roomtrap = this_object();
 
         if( !arg || sscanf(arg, "%s %s", who, where)!=2 ) 
-                return notify_fail("Ö¸Áî¸ñÊ½£ºtui <ÈËÎï> <·½Ïò>\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼štui <äººç‰©> <æ–¹å‘>\n");
         if( !objectp(ob = present(who, environment(me))) || !living(ob))
-                return notify_fail("ÄãÒªÍÆË­ÉÏÈ¥£¿\n");
+                return notify_fail("ä½ è¦æ¨èª°ä¸Šå»ï¼Ÿ\n");
         if( query("id", me) == who )
-                return notify_fail("×Ô¼ºÍÆ×Ô¼ºÉÏÈ¥£¿ºÃÏó²»ĞĞ°É¡£\n");
+                return notify_fail("è‡ªå·±æ¨è‡ªå·±ä¸Šå»ï¼Ÿå¥½è±¡ä¸è¡Œå§ã€‚\n");
 
         depth=query("depth", roomtrap);
         power_me = trap_power(me);
         power_ob = trap_power(ob);
 
         if( !query("exits/"+where, environment(me)) )
-                return notify_fail("ÄãÒªÑØÄÄ¸ö·½ÏòÍÆ"+ob->name()+"ÉÏÈ¥£¿\n");
+                return notify_fail("ä½ è¦æ²¿å“ªå€‹æ–¹å‘æ¨"+ob->name()+"ä¸Šå»ï¼Ÿ\n");
         if( !(roomto=find_object(query("exits/"+where, roomtrap))) )
                 roomto=load_object(query("exits/"+where, roomtrap));
         if( depth>power_me || query("qi", me)<depth/5 )
-                return notify_fail("ÄãÃ»Õâ¸ö±¾ÊÂÍÆ"+ob->name()+"ÉÏÈ¥°É£¿\n");
+                return notify_fail("ä½ æ²’é€™å€‹æœ¬äº‹æ¨"+ob->name()+"ä¸Šå»å§ï¼Ÿ\n");
         if(me->is_busy())
-                return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
-        me->receive_damage("qi", depth/5, "¾ÈÈË³öÏİÚåÊ±ÀÛËÀÁË");
+                return notify_fail("ä½ ç¾åœ¨æ­£å¿™è‘—å‘¢ã€‚\n");
+        me->receive_damage("qi", depth/5, "æ•‘äººå‡ºé™·é˜±æ™‚ç´¯æ­»äº†");
         if( random(me->query_str() + ob->query_kar()) >= 15 )
         {
                 ob->move(roomto);
                 me->move(roomto);
-                message_vision("$NÇáÇáÍĞÆğ$n£¬¹Ä×ãÄÚÁ¦£¬Ò»ÏÂ¾Í°Ñ$nËÍ³öÁËÏİÚå¡£½Ó×ÅÒ»×İÉí£¬×Ô¼ºÒ²Ô¾ÁË³öÈ¥¡£\n", me, ob);
+                message_vision("$Nè¼•è¼•æ‰˜èµ·$nï¼Œé¼“è¶³å…§åŠ›ï¼Œä¸€ä¸‹å°±æŠŠ$né€å‡ºäº†é™·é˜±ã€‚æ¥è‘—ä¸€ç¸±èº«ï¼Œè‡ªå·±ä¹Ÿèºäº†å‡ºå»ã€‚\n", me, ob);
                 return 1;
         }
         else
         {
-                message_vision("$NÍĞ×¡$nÏë°Ñ$nËÍ³öÏİÚå£¬½á¹û$NÊÖÒ»Èí£¬Á½ÈË¶¼Ë¤µ¹ÔÚµØ¡£\n", me, ob);
+                message_vision("$Næ‰˜ä½$næƒ³æŠŠ$né€å‡ºé™·é˜±ï¼Œçµæœ$Næ‰‹ä¸€è»Ÿï¼Œå…©äººéƒ½æ‘”å€’åœ¨åœ°ã€‚\n", me, ob);
                 return 1;
         }
-        return notify_fail("ÏİÚåÌ«ÉîÁË£¬¿´À´µÃÁíÏë°ì·¨¡£\n");
+        return notify_fail("é™·é˜±å¤ªæ·±äº†ï¼Œçœ‹ä¾†å¾—å¦æƒ³è¾¦æ³•ã€‚\n");
 }
 
 int do_fill()
@@ -285,9 +285,9 @@ int do_fill()
 
         if( (depth*2>power_me || query("qi", me)<depth/3) && 
                 me != query("owner", roomtrap) )
-                return notify_fail("Õâ¸öÏİÚåÌ«ÉîÁË£¬ÏëÌî×¡Ëü£¬·ÇÀÛËÀ²»¿É¡£\n");
-        me->receive_damage("qi", depth/3, "ÌîÏİÚåÊ±ÀÛËÀÁË");
-        message_vision("$NÂúÍ·´óº¹µØÌôÄàµ£Ë®£¬°ÑÏİÚåÑÏÑÏÊµÊµµØÌîÁËÆğÀ´¡£\n\n", me);
+                return notify_fail("é€™å€‹é™·é˜±å¤ªæ·±äº†ï¼Œæƒ³å¡«ä½å®ƒï¼Œéç´¯æ­»ä¸å¯ã€‚\n");
+        me->receive_damage("qi", depth/3, "å¡«é™·é˜±æ™‚ç´¯æ­»äº†");
+        message_vision("$Næ»¿é ­å¤§æ±—åœ°æŒ‘æ³¥æ“”æ°´ï¼ŒæŠŠé™·é˜±åš´åš´å¯¦å¯¦åœ°å¡«äº†èµ·ä¾†ã€‚\n\n", me);
         set("exits/"+query("from", roomtrap), file_name(roomto), roomfrom);
         set("exits/"+query("to", roomtrap), file_name(roomfrom), roomto);
         delete("exits/jump"+query("from", roomtrap), roomfrom);
@@ -343,7 +343,7 @@ void maintaining(object roomtrap, int count)
                 delete("exits/jump"+query("from", roomtrap), roomfrom);
                 delete("exits/jump"+query("to", roomtrap), roomto);
                 inv=all_inventory(roomtrap);
-    tell_room(roomtrap,"ÕâÊ±ºò×ß¹ıÀ´Ò»¸öÖĞÄêºº×Ó£¬¼ûÄãµôÔÚÏİÚåÀïÃæ£¬¾ÍÕÒÁËÌõÉş×Ó°ÑÄãÀ­ÁËÉÏÀ´¡£\nËæºóÄãÃÇÒ»Æğ°ÑÕâ¸öº¦ÈËµÄÏİÚåÑÏÑÏÊµÊµµØÌîÁËÆğÀ´¡£\n");
+    tell_room(roomtrap,"é€™æ™‚å€™èµ°éä¾†ä¸€å€‹ä¸­å¹´æ¼¢å­ï¼Œè¦‹ä½ æ‰åœ¨é™·é˜±è£¡é¢ï¼Œå°±æ‰¾äº†æ¢ç¹©å­æŠŠä½ æ‹‰äº†ä¸Šä¾†ã€‚\néš¨å¾Œä½ å€‘ä¸€èµ·æŠŠé€™å€‹å®³äººçš„é™·é˜±åš´åš´å¯¦å¯¦åœ°å¡«äº†èµ·ä¾†ã€‚\n");
                 for (i=0;i<sizeof(inv);i++)
                         if (!living(inv[i])) continue;
                         else inv[i]->move(roomfrom);

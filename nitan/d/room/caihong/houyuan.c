@@ -1,24 +1,24 @@
-// houyuan.c ²Êºç¾ÓºóÔº
+// houyuan.c å½©è™¹å±…å¾Œé™¢
 
 //** inherit PRIVATE_ROOM;
 inherit ROOM;                                   /* EXAMPLE */
 
 void create()
 {
-        set("short", "ºóÔº");             /* EXAMPLE */
-//**    set("short", "ROOM_NAMEºóÔº");
+        set("short", "å¾Œé™¢");             /* EXAMPLE */
+//**    set("short", "ROOM_NAMEå¾Œé™¢");
         set("long", @LONG
-ÕâÊÇ²Êºç¾ÓµÄºóÔº£¬ÖÖ×ÅÒ»Ð©»¨²Ý£¬´ó²¿·ÖÊÇ¶¼²»ÖªÃûµÄÒ°Éú»¨²Ý¡£
-²»¹ý»¨¶ù¿ªÆðÀ´Ò²¿´ÉÏÈ¥Ò²·Ç³£Æ¯ÁÁ¡£Ö÷ÈËÈç¹û¶ÁÊéÁ·ÎäÆ£¾ëÁË£¬¾Í¿É
-ÒÔµ½ÕâÀïÉÔ×÷ÐÝÏ¢£¬Ôº½Ç·Å×ÅÒ»ÕÅÌÙÒÎ¡£
+é€™æ˜¯å½©è™¹å±…çš„å¾Œé™¢ï¼Œç¨®è‘—ä¸€äº›èŠ±è‰ï¼Œå¤§éƒ¨åˆ†æ˜¯éƒ½ä¸çŸ¥åçš„é‡Žç”ŸèŠ±è‰ã€‚
+ä¸éŽèŠ±å…’é–‹èµ·ä¾†ä¹Ÿçœ‹ä¸ŠåŽ»ä¹Ÿéžå¸¸æ¼‚äº®ã€‚ä¸»äººå¦‚æžœè®€æ›¸ç·´æ­¦ç–²å€¦äº†ï¼Œå°±å¯
+ä»¥åˆ°é€™è£¡ç¨ä½œä¼‘æ¯ï¼Œé™¢è§’æ”¾è‘—ä¸€å¼µç±æ¤…ã€‚
 LONG );
 
-        set("default_long", "ÕâÊÇROOM_NAMEµÄºóÔº£¬ÖÖ×ÅÒ»Ð©»¨²Ý£¬´ó"  /* EXAMPLE */
-                            "²¿·ÖÊÇ¶¼²»ÖªÃûµÄÒ°Éú»¨²Ý¡£²»¹ý»¨¶ù¿ªÆð" /* EXAMPLE */
-                            "À´Ò²¿´ÉÏÈ¥Ò²·Ç³£Æ¯ÁÁ¡£ÓÐÊ±ROOM_OWNER¶Á" /* EXAMPLE */
-                            "ÊéÁ·ÎäÆ£¾ëÁË£¬¾Íµ½ÕâÀïÉÔ×÷Æ¬¿ÌÒÔÐÝÏ¢£¬" /* EXAMPLE */
-                            "Ò²ÓÐÊ±ÓÑÈËÀ´µ½ÕâÀï£¬´ó¼ÒÔÚÕâÀïÇÐ´èÒ»ÏÂ" /* EXAMPLE */
-                            "ÎäÒÕ¡£");                               /* EXAMPLE */
+        set("default_long", "é€™æ˜¯ROOM_NAMEçš„å¾Œé™¢ï¼Œç¨®è‘—ä¸€äº›èŠ±è‰ï¼Œå¤§"  /* EXAMPLE */
+                            "éƒ¨åˆ†æ˜¯éƒ½ä¸çŸ¥åçš„é‡Žç”ŸèŠ±è‰ã€‚ä¸éŽèŠ±å…’é–‹èµ·" /* EXAMPLE */
+                            "ä¾†ä¹Ÿçœ‹ä¸ŠåŽ»ä¹Ÿéžå¸¸æ¼‚äº®ã€‚æœ‰æ™‚ROOM_OWNERè®€" /* EXAMPLE */
+                            "æ›¸ç·´æ­¦ç–²å€¦äº†ï¼Œå°±åˆ°é€™è£¡ç¨ä½œç‰‡åˆ»ä»¥ä¼‘æ¯ï¼Œ" /* EXAMPLE */
+                            "ä¹Ÿæœ‰æ™‚å‹äººä¾†åˆ°é€™è£¡ï¼Œå¤§å®¶åœ¨é€™è£¡åˆ‡ç£‹ä¸€ä¸‹" /* EXAMPLE */
+                            "æ­¦è—ã€‚");                               /* EXAMPLE */
                                                                      /* EXAMPLE */
         setup();
 
@@ -49,11 +49,11 @@ int do_sit(string arg)
         me = this_player();
         if( query_temp("has_sit", me) )
         {
-                message_vision("$N×øÔÚÄÇÀïÒ¡°¡Ò¡£¬ºÃ²»ã«Òâ¡£\n", me);
+                message_vision("$Nååœ¨é‚£è£¡æ–å•Šæ–ï¼Œå¥½ä¸æ„œæ„ã€‚\n", me);
                 return 1;
         }
 
-        message_vision("$NÕÒÁËµÄµØ·½×÷ÁËÏÂÀ´£¬¿´ÉÏÈ¥ÇáËÉ¶àÁË¡£\n", me);
+        message_vision("$Næ‰¾äº†çš„åœ°æ–¹ä½œäº†ä¸‹ä¾†ï¼Œçœ‹ä¸ŠåŽ»è¼•é¬†å¤šäº†ã€‚\n", me);
         set_temp("has_sit", 1, me);
         return 1;
 }
@@ -62,7 +62,7 @@ int valid_leave(object me, string dir)
 {
         if( query_temp("has_sit", me) )
         {
-                message_vision("$Nµ§µ§³¾ÍÁ£¬Õ¾ÁËÆðÀ´¡£\n", me);
+                message_vision("$Næ’£æ’£å¡µåœŸï¼Œç«™äº†èµ·ä¾†ã€‚\n", me);
                 delete_temp("has_sit", me);
         }
 

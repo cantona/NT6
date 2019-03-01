@@ -4,12 +4,12 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����");
+        set("short", "丹房");
         set("long", @LONG
-��������ٸг��ȸ�ʢ��ֻ�������Ǽ�����������ʯ�ҡ�
-ʯ���������һ��һ�˶�ߵĻ�¯(huo lu)�������ֹ����ڰ�
-�Ѳ�̿�������������ಲ������ֻ��һ��ţͷ�̿㣬ȫ����
-���졣
+行至這裡，頓感熾熱更盛，只見裡面是間丈許見方的石室。
+石室中央擺有一個一人多高的火爐(huo lu)。兩名粗工正在搬
+堆柴炭，這兩人上身赤膊，下身只穿一條牛頭短褲，全身大汗
+淋漓。
 LONG);
         set("exits", ([
                "south"   : __DIR__"shufang",

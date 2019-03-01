@@ -1,10 +1,10 @@
-// kuang.c ·çÉ¨ÂäÒ¶
+// kuang.c é¢¨æƒè½è‘‰
 
 #include <ansi.h>
 
 inherit F_SSERVER;
 
-string name() { return HIG "·çÉ¨ÂäÒ¶" NOR; }
+string name() { return HIG "é¢¨æƒè½è‘‰" NOR; }
 
 int perform(object me, object target)
 {
@@ -20,28 +20,28 @@ int perform(object me, object target)
         }
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(name() + "Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(name() + "åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me)) ||
             query("skill_type", weapon) != "sword" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô£¡\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ï¼\n");
 
         if( query("neili", me)<180 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬ÎŞ·¨Ê©Õ¹" + name() + "£¡\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼Œç„¡æ³•æ–½å±•" + name() + "ï¼\n");
 
         if ((int)me->query_skill("kuangfeng-jian", 1) < 100)
-                return notify_fail("ÄãµÄ¿ñ·ç½£·¨»¹²»µ½¼Ò£¬ÎŞ·¨Ê©Õ¹" + name() + "£¡\n");
+                return notify_fail("ä½ çš„ç‹‚é¢¨åŠæ³•é‚„ä¸åˆ°å®¶ï¼Œç„¡æ³•æ–½å±•" + name() + "ï¼\n");
 
         if ((int)me->query_skill("dodge", 1) < 100)
-                return notify_fail("ÄãµÄÇá¹¦ĞŞÎª²»×ã£¬ÎŞ·¨Ê©Õ¹" + name() + "£¡\n");
+                return notify_fail("ä½ çš„è¼•åŠŸä¿®ç‚ºä¸è¶³ï¼Œç„¡æ³•æ–½å±•" + name() + "ï¼\n");
 
         if (! living(target))
-               return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+               return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIC "$N" HIC "´óºÈÒ»Éù£¬ÊÖÖĞµÄ" + weapon->name() +
-              HIC "ÓÌÈç¿ñ·ç¼²µçÒ»°ãÅü´ÌÏò$n" HIC "£¡\n"
-              HIR "ö®Ê±¼äÖ»¼û½£Æø²ã²ãµşµşÈç²¨ÀË°ãĞÚÓ¿¶øÆğ£¬$n"
-              HIR "Ö»¾õµÃºôÎüµÇÊ±²»³©¡£\n" NOR;
+        msg = HIC "$N" HIC "å¤§å–ä¸€è²ï¼Œæ‰‹ä¸­çš„" + weapon->name() +
+              HIC "çŒ¶å¦‚ç‹‚é¢¨ç–¾é›»ä¸€èˆ¬åŠˆåˆºå‘$n" HIC "ï¼\n"
+              HIR "éœæ™‚é–“åªè¦‹åŠæ°£å±¤å±¤ç–Šç–Šå¦‚æ³¢æµªèˆ¬æ´¶æ¹§è€Œèµ·ï¼Œ$n"
+              HIR "åªè¦ºå¾—å‘¼å¸ç™»æ™‚ä¸æš¢ã€‚\n" NOR;
         message_combatd(msg, me, target);
         addn("neili", -150, me);
 

@@ -2,12 +2,12 @@
 
 void create()
 {
-        set_name(HIC "°Ë±¦" NOR, ({ "hy-bc", "Sedum erythrostictum", "herb_hy_bc" }));
+        set_name(HIC "å…«å¯¶" NOR, ({ "hy-bc", "Sedum erythrostictum", "herb_hy_bc" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "¾°Ìì¿ÆÖ²Îï°Ë±¦(ÓÖ³Æ¾°Ìì)(Sedum erythrostictum)µÄÈ«²İ¡£ÒòÆäÒ¶ĞÎÈç°ü²ËÒ¶£¬ÓÖ³Æ°ü²Ë»¹Ñô¡£\n" NOR);
-                set("base_unit", "¿Å");
+                set("long", HIW "æ™¯å¤©ç§‘æ¤ç‰©å…«å¯¶(åˆç¨±æ™¯å¤©)(Sedum erythrostictum)çš„å…¨è‰ã€‚å› å…¶è‘‰å½¢å¦‚åŒ…èœè‘‰ï¼Œåˆç¨±åŒ…èœé‚„é™½ã€‚\n" NOR);
+                set("base_unit", "é¡†");
                 set("base_value", 20000);
                 set("base_weight", 100);
         }

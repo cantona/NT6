@@ -28,36 +28,36 @@ int do_shou(string arg)
     me = this_player(); 
 
     if (me->is_busy())
-       return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É¡£\n");
+       return notify_fail("ä½ ä¸Šä¸€å€‹å‹•ä½œé‚„æ²’æœ‰å®Œæˆã€‚\n");
 
     if (!present("fu zhi", me))
-        return notify_fail("ÄãÃ»·ûÖ½¾ÍÏëÊÕ¹í£¬µ±ĞÄ¹í°ÑÄãÊÕÁË£¡\n");
+        return notify_fail("ä½ æ²’ç¬¦ç´™å°±æƒ³æ”¶é¬¼ï¼Œç•¶å¿ƒé¬¼æŠŠä½ æ”¶äº†ï¼\n");
 
     if (!present("taomu jian", me))
-        return notify_fail("ÄãÃ»ÓĞÌÒÄ¾½££¬»¹ÏëÊÕ¹í£¿µ±ĞÄ¹í°ÑÄãÊÕÁË£¡\n");
+        return notify_fail("ä½ æ²’æœ‰æ¡ƒæœ¨åŠï¼Œé‚„æƒ³æ”¶é¬¼ï¼Ÿç•¶å¿ƒé¬¼æŠŠä½ æ”¶äº†ï¼\n");
 
     weapon=query_temp("weapon", me);
     if (!objectp(weapon))
-         return notify_fail("ÄãÃ»ÓĞ×°±¸ÌÒÄ¾½££¬¹íÒ²²»ÅÂÄã£¡\n");
+         return notify_fail("ä½ æ²’æœ‰è£å‚™æ¡ƒæœ¨åŠï¼Œé¬¼ä¹Ÿä¸æ€•ä½ ï¼\n");
 
-    if (weapon->name() == "ÌÒÄ¾½£")
-         return notify_fail("ÕâÖÖÌÒÄ¾½£Ö»ÄÜÁ·ÁËÍæÍæ£¬²»ÄÜÇı¹í£¡\n");
+    if (weapon->name() == "æ¡ƒæœ¨åŠ")
+         return notify_fail("é€™ç¨®æ¡ƒæœ¨åŠåªèƒ½ç·´äº†ç©ç©ï¼Œä¸èƒ½é©…é¬¼ï¼\n");
 
-    if (weapon->name() != HIM"ÌÒÄ¾½£"NOR)
-         return notify_fail("ÄãÃ»ÓĞ×°±¸ÌÒÄ¾½££¬¹íÒ²²»ÅÂÄã£¡\n");
+    if (weapon->name() != HIM"æ¡ƒæœ¨åŠ"NOR)
+         return notify_fail("ä½ æ²’æœ‰è£å‚™æ¡ƒæœ¨åŠï¼Œé¬¼ä¹Ÿä¸æ€•ä½ ï¼\n");
 
     if( !objectp(ob=query_temp("handing", me)) || 
-         ob->name() != HIY"·ûÖ½"NOR)
-         return notify_fail("ÄãÊÖÀïÃ»ÓĞÄÃ·ûÖ½£¬ÎŞ·¨ÈÃ¹í»êÏÖÉí£¡\n");
+         ob->name() != HIY"ç¬¦ç´™"NOR)
+         return notify_fail("ä½ æ‰‹è£¡æ²’æœ‰æ‹¿ç¬¦ç´™ï¼Œç„¡æ³•è®“é¬¼é­‚ç¾èº«ï¼\n");
 
     me->start_busy(2);
     if (query("env/invisible"))
     {
-        message_vision(HIY"$N½«ÊÖÖĞ" + ob->name() + HIY"ÏòÉÏÒ»¾Ù£¬É²Ê±·¢³ö"
-                       "Ò«ÑÛµÄ½ğ¹â¡£$N´óºÈÒ»Éù¡°ÑıÄ§£¬»¹²»¿ì¿ìÏÖÉí£¿¡±\n"NOR, me);
+        message_vision(HIY"$Nå°‡æ‰‹ä¸­" + ob->name() + HIY"å‘ä¸Šä¸€èˆ‰ï¼Œå‰æ™‚ç™¼å‡º"
+                       "è€€çœ¼çš„é‡‘å…‰ã€‚$Nå¤§å–ä¸€è²â€œå¦–é­”ï¼Œé‚„ä¸å¿«å¿«ç¾èº«ï¼Ÿâ€\n"NOR, me);
         if (random(3) < 1)
         {
-            message_vision(HIR"$NºöÈ»¿´¼ûÒ»¸ö$nÕıÕÅÑÀÎè×¦Ïò$NÆËÀ´¡£\n"NOR, me, this_object());
+            message_vision(HIR"$Nå¿½ç„¶çœ‹è¦‹ä¸€å€‹$næ­£å¼µç‰™èˆçˆªå‘$Næ’²ä¾†ã€‚\n"NOR, me, this_object());
             delete("env/invisible"); 
         }
     }
@@ -97,20 +97,20 @@ void course(object me, object weapon)
     if (ap < 100)   dam = 80;
     if ( ap / 2 + random(ap) > dp )
     {
-       message_vision(HIR "$NÍ»È»·¢³öÒ»ÉùÆàÀ÷µÄ²Ò½Ğ£¬ÁîÈËÃ«¹Çã¤È»¡£\n"NOR, this_object());
+       message_vision(HIR "$Nçªç„¶ç™¼å‡ºä¸€è²å‡„å²çš„æ…˜å«ï¼Œä»¤äººæ¯›éª¨æ‚šç„¶ã€‚\n"NOR, this_object());
        if (random(10) < 3)
        {
           message_vision(HIY"\n" + weapon->name() +
-                         HIY "Í»È»ÍÑÊÖ¶ø³ö£¬»®³öÒ»µÀ½ğ¹â£¬´ÌÈëÁË$nµÄÑÊºí¡£\n\n"
-                         HIR "Ö»ÌıÒ»ÉùÆàÀ÷µÄ¼â½Ğ£¬$nµ¹ÔÚµØÏÂÅ¤¶¯ÁË¼¸ÏÂ£¬"
-                         HIR "ÂıÂı»¯³ÉÁËÒ»Ì²ºÚË®£¬ÏûÊ§ÁË¡£\n\n", me, this_object());
+                         HIY "çªç„¶è„«æ‰‹è€Œå‡ºï¼ŒåŠƒå‡ºä¸€é“é‡‘å…‰ï¼Œåˆºå…¥äº†$nçš„åš¥å–‰ã€‚\n\n"
+                         HIR "åªè½ä¸€è²å‡„å²çš„å°–å«ï¼Œ$nå€’åœ¨åœ°ä¸‹æ‰­å‹•äº†å¹¾ä¸‹ï¼Œ"
+                         HIR "æ…¢æ…¢åŒ–æˆäº†ä¸€ç˜é»‘æ°´ï¼Œæ¶ˆå¤±äº†ã€‚\n\n", me, this_object());
           weapon->move(environment(this_object()));
           set_temp("gui/finish", 1, me);
           dam += random(80);
           set_temp("gui/base", dam, me);
           if (random(5) == 0)
           {
-              message_vision(HIG "$NÍ»È»¿´µ½µØÉÏÓĞÒ»¿Å·¢×ÅÂÌ¹âµÄµ¤Íè£¬Ğ¡ĞÄµØ¼ñÁËÆğÀ´¡£\n"NOR, me);
+              message_vision(HIG "$Nçªç„¶çœ‹åˆ°åœ°ä¸Šæœ‰ä¸€é¡†ç™¼è‘—ç¶ å…‰çš„ä¸¹ä¸¸ï¼Œå°å¿ƒåœ°æ’¿äº†èµ·ä¾†ã€‚\n"NOR, me);
               dan = new("/d/wudang/quest/obj/rendan");
               dan->move(me);
           }
@@ -123,30 +123,30 @@ void check_time()
 {
      if (time() - query_temp("born_time") > 1200) 
      {
-         message_vision(HIB "Ò»ÕóÒõ·ç´µ¹ı£¬ËÄÖÜÓÖ»Ö¸´ÁËÆ½¾²¡£\n"NOR, this_object());
+         message_vision(HIB "ä¸€é™£é™°é¢¨å¹éï¼Œå››å‘¨åˆæ¢å¾©äº†å¹³éœã€‚\n"NOR, this_object());
          destruct(this_object());
      }
 }
 
 int accept_fight(object ob)  
 { 
-    return notify_fail("Äã²»ÄÜ¸ú¹í»ê½ÏÁ¿¡£\n");  
+    return notify_fail("ä½ ä¸èƒ½è·Ÿé¬¼é­‚è¼ƒé‡ã€‚\n");  
 } 
 int accept_hit(object ob)  
 { 
-    tell_object(ob,"Äã²»ÄÜ¸ú¹í»ê´ò¼Ü¡£\n");
+    tell_object(ob,"ä½ ä¸èƒ½è·Ÿé¬¼é­‚æ‰“æ¶ã€‚\n");
     return 0; 
 } 
 int accept_kill(object ob)  
 { 
-    return notify_fail("Äã²»ÄÜ¸ú¹í»ê´ò¼Ü¡£\n");  
+    return notify_fail("ä½ ä¸èƒ½è·Ÿé¬¼é­‚æ‰“æ¶ã€‚\n");  
 } 
 int accept_touxi(object ob)  
 {  
-    tell_object(ob,"Äã²»ÄÜÍµÏ®¹í»ê¡£\n");
+    tell_object(ob,"ä½ ä¸èƒ½å·è¥²é¬¼é­‚ã€‚\n");
     return 1;  
 }  
 int accept_ansuan(object ob)  
 {
-    return notify_fail("Äã²»ÄÜ°µËã¹í»ê¡£\n"); 
+    return notify_fail("ä½ ä¸èƒ½æš—ç®—é¬¼é­‚ã€‚\n"); 
 }

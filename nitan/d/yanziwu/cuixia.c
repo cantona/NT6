@@ -3,11 +3,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short","��ϼ��");
+        set("short","翠霞堂");
         set("long", @LONG
-����ׯ�ϣ����ȷǷ�����һ���žͲ��ɵľ�̾���ô�һ�����ã�
- ���߷·���һ��С������������һƬ���֣�������һ�����ã���֪ͨ
-��ʲô�ط���
+古樸莊嚴，氣度非凡，你一進門就不由的驚嘆。好大一座廳堂！
+ 西邊仿佛有一間小廳，東邊則是一片竹林，南面有一道穿堂，不知通
+向什麼地方。
 LONG );
         set("exits",([
                 "west" : __DIR__"xiaoting",

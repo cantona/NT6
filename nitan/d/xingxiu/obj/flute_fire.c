@@ -11,13 +11,13 @@ int worn;
 
 void create()
 {
-        set_name(HIR"Ò»¶Ñ»ğÑæ"NOR,({"huo yan"}));
+        set_name(HIR"ä¸€å †ç«ç‡„"NOR,({"huo yan"}));
         set_weight(50);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIR"»ğÑæ¸ßÔ¼³ß£¬"+GRN+"É«×÷´¿±Ì£¬"+BLU+"¹íÆøÉ­É­£¬"+HIR+"ºÍÑ°³£»ğÑæ´óÒì¡£\n"NOR);
-                set("unit", "¶Ñ");
+                set("long", HIR"ç«ç‡„é«˜ç´„å°ºï¼Œ"+GRN+"è‰²ä½œç´”ç¢§ï¼Œ"+BLU+"é¬¼æ°£æ£®æ£®ï¼Œ"+HIR+"å’Œå°‹å¸¸ç«ç‡„å¤§ç•°ã€‚\n"NOR);
+                set("unit", "å †");
                 set("value", 1);
                 set("no_get", 1);
                 set("no_drop", 1);
@@ -47,7 +47,7 @@ int do_kick(string arg){
         damage = me->query_skill("feixing-shu",1);
         if(!ob) 
         {
-               tell_object(me,"ÕâÀïÃ»ÓĞ" + arg + "Õâ¸öÉúÎï¡£\n");
+               tell_object(me,"é€™è£¡æ²’æœ‰" + arg + "é€™å€‹ç”Ÿç‰©ã€‚\n");
                return 1;
         }
 
@@ -56,19 +56,19 @@ int do_kick(string arg){
         
         if(!ob->is_character() || !me->is_fighting(ob) )
         {
-                tell_object(me,"Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                tell_object(me,"åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
                 return 1;
         }
         
         if (me->is_busy())
         {
-               tell_object(me,"ÄãÕıÃ¦×ÅÄØ¡£\n");
+               tell_object(me,"ä½ æ­£å¿™è‘—å‘¢ã€‚\n");
                 return 1;
         }
 
         if ((damage<150)){
-                message_vision(HIR"\n$NÎûÎûÒ»Ğ¦£¬ÌáÆğ½ÅÀ´£¬Ïò»ğÑæÌßÈ¥£¬½á¹ûÒ»Éù²Ò½Ğ£¬±»»ğÑæÉÕÉË¡£\n"NOR,me);
-                set_temp("die_reason", "¸øĞÇËŞ¶¾»ğÉÕËÀÁË", me);
+                message_vision(HIR"\n$Nå˜»å˜»ä¸€ç¬‘ï¼Œæèµ·è…³ä¾†ï¼Œå‘ç«ç‡„è¸¢å»ï¼Œçµæœä¸€è²æ…˜å«ï¼Œè¢«ç«ç‡„ç‡’å‚·ã€‚\n"NOR,me);
+                set_temp("die_reason", "çµ¦æ˜Ÿå®¿æ¯’ç«ç‡’æ­»äº†", me);
                 me->receive_wound("qi", random(500));
                 destruct(this_object());
                 me->start_busy(random(2)+2);
@@ -76,14 +76,14 @@ int do_kick(string arg){
         } else {
                 
                 addn("neili", -damage, me);
-                message_vision(HIR"\n$NÁ³É«Ò»±ä£¬ÉíĞÎÒ»»Î£¬ÒÑ¾­×ªµ½$nÉíºó¡£¾ÙÆğÓÒ½Å£¬Î¢Î¢Ò»Ìô£¬½«»ğÑæÏò$n²¦È¥¡£\n"NOR,me,ob);
+                message_vision(HIR"\n$Nè‡‰è‰²ä¸€è®Šï¼Œèº«å½¢ä¸€æ™ƒï¼Œå·²ç¶“è½‰åˆ°$nèº«å¾Œã€‚èˆ‰èµ·å³è…³ï¼Œå¾®å¾®ä¸€æŒ‘ï¼Œå°‡ç«ç‡„å‘$næ’¥å»ã€‚\n"NOR,me,ob);
                 me->start_busy(random(2)+2);
                 if (ob->query_skill_mapped("parry") == "dragon-strike" &&
                     !query_temp("weapon", ob) && 
                     ob->query_skill("dragon-strike",1) > damage/2 + random(damage/2))
                 {
-                        message_vision(HIW"\n$NÒ»ÉùÅ­ºğ£¬Ë«ÕÆÊÕÖÁĞØ¿ÚËæ¼´»º»ºÍÆ³ö£¬Ò»µÀÆøÇ½ĞÚÓ¿¶øÆğ£¬È´ÊÇÍş°Ô½­ºşµÄ¡¸½µÁúÊ®°ËÕÆ¡¹£¡\n"NOR,ob);
-                        message_vision(HIR"\n»ğÑæÔÚÅíÅÈµÄÆøÀË³å»÷ÏÂ£¬Çê¿Ì¼äÒÔ¸ü¿ìµÄËÙ¶ÈÏò$N·É¾í¶øÈ¥¡£\n"NOR,me);
+                        message_vision(HIW"\n$Nä¸€è²æ€’å¼ï¼Œé›™æŒæ”¶è‡³èƒ¸å£éš¨å³ç·©ç·©æ¨å‡ºï¼Œä¸€é“æ°£ç‰†æ´¶æ¹§è€Œèµ·ï¼Œå»æ˜¯å¨éœ¸æ±Ÿæ¹–çš„ã€Œé™é¾åå…«æŒã€ï¼\n"NOR,ob);
+                        message_vision(HIR"\nç«ç‡„åœ¨å½­æ¹ƒçš„æ°£æµªæ²–æ“Šä¸‹ï¼Œé ƒåˆ»é–“ä»¥æ›´å¿«çš„é€Ÿåº¦å‘$Né£›å·è€Œå»ã€‚\n"NOR,me);
                         temp_ob = ob;
                         ob = me;
                         me = temp_ob;
@@ -94,24 +94,24 @@ int do_kick(string arg){
                         if( query_temp("armor/cloth", ob)){
                                 armor=query_temp("armor/cloth", ob);
                                 if( query("id", armor) != "armor"){
-                                        message_vision(HIR"\nÖ»¼û$NÉíÉÏµÄ$n"+HIY+"±»»ğÑæÉÕµÃËÄÉ¢¶ø·É¡£\n"NOR, ob, armor);
+                                        message_vision(HIR"\nåªè¦‹$Nèº«ä¸Šçš„$n"+HIY+"è¢«ç«ç‡„ç‡’å¾—å››æ•£è€Œé£›ã€‚\n"NOR, ob, armor);
                                         armor->unequip();
                                         armor->move(environment(ob));
-                                        armor->set_name("ÉÕ½¹µÄ"+query("name", armor));
+                                        armor->set_name("ç‡’ç„¦çš„"+query("name", armor));
                                         set("value", 0, armor);
                                         set("armor_prop/armor", 0, armor);
                                         ob->reset_action();
                                 }
                         }
                         
-                        message_vision(HIR"\nÖ»Ìı¼ûÒ»Éù²Ò½Ğ£¬$n¶ãÉÁ²»¼°£¬±»»ğÑæÉÕÖĞ¡£\n"NOR,me,ob);
-                        set_temp("die_reason", "¸øĞÇËŞ¶¾»ğÉÕËÀÁË", ob);
+                        message_vision(HIR"\nåªè½è¦‹ä¸€è²æ…˜å«ï¼Œ$nèº²é–ƒä¸åŠï¼Œè¢«ç«ç‡„ç‡’ä¸­ã€‚\n"NOR,me,ob);
+                        set_temp("die_reason", "çµ¦æ˜Ÿå®¿æ¯’ç«ç‡’æ­»äº†", ob);
                         ob->receive_wound("qi", damage, me);
                         ob->start_busy(random(2)+1);
                         destruct(this_object());
                         return 1;
                 } else {
-                        message_vision(HIY"\n$n´ó¾ªÖ®ÏÂÉÁ¿ª£¬»ğ¹âÏÂÖ»¼û$NÎ¢Î¢ÀäĞ¦¡£\n"NOR,me,ob);
+                        message_vision(HIY"\n$nå¤§é©šä¹‹ä¸‹é–ƒé–‹ï¼Œç«å…‰ä¸‹åªè¦‹$Nå¾®å¾®å†·ç¬‘ã€‚\n"NOR,me,ob);
                         destruct(this_object());
                         return 1;
                 }
@@ -124,15 +124,15 @@ void wear(int phase)
         worn = phase;
         switch(phase) {
         case 1:
-                set("long", HIR"»ğÑæĞÜĞÜÈ¼ÉÕ×Å£¬"+GRN+"É«×÷´¿±Ì£¬"+BLU+"¹íÆøÉ­É­£¬"+HIR+"ºÍÑ°³£»ğÑæ´óÒì¡£\n"NOR);
+                set("long", HIR"ç«ç‡„ç†Šç†Šç‡ƒç‡’è‘—ï¼Œ"+GRN+"è‰²ä½œç´”ç¢§ï¼Œ"+BLU+"é¬¼æ°£æ£®æ£®ï¼Œ"+HIR+"å’Œå°‹å¸¸ç«ç‡„å¤§ç•°ã€‚\n"NOR);
                 call_out("wear", 100, phase+1); 
                 break;
         case 2:
-                set("long", RED"»ğÊÆÔ½À´Ô½Èõ£¬¼¸ºõ¿ìÉÕÍêÁË¡£\n"NOR);
+                set("long", RED"ç«å‹¢è¶Šä¾†è¶Šå¼±ï¼Œå¹¾ä¹å¿«ç‡’å®Œäº†ã€‚\n"NOR);
                 call_out("wear", 30, phase+1); 
                 break;
         case 3:
-                message("vision",RED"»ğÑæ½¥½¥µØÏ¨ÃğÁË¡£\n"NOR, environment(this_object()));
+                message("vision",RED"ç«ç‡„æ¼¸æ¼¸åœ°ç†„æ»…äº†ã€‚\n"NOR, environment(this_object()));
                 destruct(this_object());
                 break;
         }       

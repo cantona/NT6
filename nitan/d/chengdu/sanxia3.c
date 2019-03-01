@@ -3,11 +3,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����Ͽ");
+        set("short", "瞿塘峽");
         set("long", @LONG
-�����ǳ�����Ͽ�е�����Ͽ����ˮ�ɶ������������Ͽ�ȣ��ӵ�
-��խ��ˮ���伱�������ĸ�ɽ�м����һ���������ͺ���һ��˿��һ
-�㣬���Ѷ��С�
+這裡是長江三峽中的瞿塘峽，河水由東流來，進入此峽谷，河道
+變窄，水流變急，兩岸的高山中間夾著一條河流，就好象一條絲帶一
+般，蜿蜒而行。
 LONG );
         set("exits", ([
                 "east" :  __DIR__"sanxia2",

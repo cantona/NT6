@@ -21,7 +21,7 @@ int main(object me, string arg)
         
         if (query("viremploy/workroom", me))
         {
-                message_vision("$N»Ø¼ÒÈ¥ÁË¡£\n\n",me);
+                message_vision("$Nå›å®¶å»äº†ã€‚\n\n",me);
                 me->move("/u/viremploy/" + query("viremploy/workroom", me)); 
                 return 1;
         }
@@ -33,7 +33,7 @@ int main(object me, string arg)
         {
                 ob = UPDATE_D->global_find_player(arg);  
                 if (! objectp(ob)) 
-                        return notify_fail( "Ã»ÓĞÕâ¸öÍæ¼Ò¡£\n");
+                        return notify_fail( "æ²’æœ‰é€™å€‹ç©å®¶ã€‚\n");
                         
                 file2 = "/u/" + arg + "/workroom.c";
         }
@@ -41,14 +41,14 @@ int main(object me, string arg)
         if (file_size(file2) <= 0)
         {
                 if (arg) 
-                        return notify_fail(query("name", ob)+"Ã»ÓĞ×Ô¼ºµÄ¹¤×÷ÊÒ¡£\n");
+                        return notify_fail(query("name", ob)+"æ²’æœ‰è‡ªå·±çš„å·¥ä½œå®¤ã€‚\n");
                 else 
                 if (! get_dir("/u/" + geteuid(me) + "/"))
                 {
                         if (mkdir("/u/" + geteuid(me)))
-                                write(GRN "\nÄãµÄÄ¿Â¼½¨ÔÚ /u ÏÂ¡£\n\n" NOR);
+                                write(GRN "\nä½ çš„ç›®éŒ„å»ºåœ¨ /u ä¸‹ã€‚\n\n" NOR);
                         else 
-                                return notify_fail("½¨Á¢Ä¿Â¼Ê§°Ü£¡\n");
+                                return notify_fail("å»ºç«‹ç›®éŒ„å¤±æ•—ï¼\n");
                 }
                 str = read_file(file1);
                 str = replace_string(str, "NAME", this_player()->name());
@@ -56,13 +56,13 @@ int main(object me, string arg)
         }
         
         if( arg && !query("env/invisible", me) )
-                message_vision("$NÈ¥"+query("name", ob)+"¼Ò×ö¿ÍÁË¡£\n\n",me);
+                message_vision("$Nå»"+query("name", ob)+"å®¶åšå®¢äº†ã€‚\n\n",me);
         else 
         if( stringp(msg=query("env/msg_home", me)) && !query("env/invisible", me) )
                 message_vision(msg + "\n", me);
         else 
         if( !query("env/invisible", me) )
-                message_vision("$N»Ø¼ÒÈ¥ÁË¡£\n\n",me);
+                message_vision("$Nå›å®¶å»äº†ã€‚\n\n",me);
                 
         me->move(file2);
         
@@ -73,10 +73,10 @@ int main(object me, string arg)
 int help(object me)
 {
  write(@HELP
-Ö¸Áî¸ñÊ½ : home »ò home <sb>
+æŒ‡ä»¤æ ¼å¼ : home æˆ– home <sb>
 
-ÀûÓÃ´ËÒ»Ö¸Áî¿ÉÖ±½Ó»Øµ½×Ô¼ºµÄ¹¤×÷ÊÒ»òµ½ÓĞ¹¤×÷ÊÒµÄÎ×Ê¦¼Ò×ö¿Í¡£
-Èç¹ûÄãÓĞ 'msg_home' Õâ¸öÉè¶¨, ÔòÔÚ³¡µÄÈË¶¼»á¿´µ½ÄÇ¸öÑ¶Ï¢.
+åˆ©ç”¨æ­¤ä¸€æŒ‡ä»¤å¯ç›´æ¥å›åˆ°è‡ªå·±çš„å·¥ä½œå®¤æˆ–åˆ°æœ‰å·¥ä½œå®¤çš„å·«å¸«å®¶åšå®¢ã€‚
+å¦‚æœä½ æœ‰ 'msg_home' é€™å€‹è¨­å®š, å‰‡åœ¨å ´çš„äººéƒ½æœƒçœ‹åˆ°é‚£å€‹è¨Šæ¯.
 HELP
     );
     return 1;

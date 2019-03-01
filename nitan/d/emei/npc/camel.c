@@ -8,9 +8,9 @@ inherit NPC;
 
 void create()
 {
-        set_name("°×ÂæÍÕ", ({ "camel" }));
-        set("long","Ò»Æ¥°×ÂæÍÕ¡£\n");
-        set("race", "×ßĞó");
+        set_name("ç™½é§±é§", ({ "camel" }));
+        set("long","ä¸€åŒ¹ç™½é§±é§ã€‚\n");
+        set("race", "èµ°ç•œ");
         set("age", 5);
         set("attitude","heroism");
         set("str", 30);

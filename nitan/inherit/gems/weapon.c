@@ -39,16 +39,16 @@ void spec_prop(object me, string socket, int socket_level, int mode)
                 break;
         case "amethyst":
                 if (mode == 1)
-                        message_vision(MAG + query("name") + MAG"·¢³öÈáºÍµÄ¹âÃ¢Î§ÈÆ×Å$N£¬¼¤·¢ÁË$PµÄÕ½¶·Á¦£¡\n"NOR, me);
+                        message_vision(MAG + query("name") + MAG"ç™¼å‡ºæŸ”å’Œçš„å…‰èŠ’åœç¹žè‘—$Nï¼Œæ¿€ç™¼äº†$Pçš„æˆ°é¬¥åŠ›ï¼\n"NOR, me);
                 else
-                        message_vision(MAG"Ëæ×Å×ÏÉ«¹âÃ¢ÂýÂýµÄÉ¢È¥£¬$NµÄÕ½¶·Á¦ÓÖ¸´Ô­ÁË¡£\n"NOR, me);
+                        message_vision(MAG"éš¨è‘—ç´«è‰²å…‰èŠ’æ…¢æ…¢çš„æ•£åŽ»ï¼Œ$Nçš„æˆ°é¬¥åŠ›åˆå¾©åŽŸäº†ã€‚\n"NOR, me);
                 me->add_temp("apply/attack", 50 * socket_level * mode);
                 break;
         case "diamond":
                 if (mode == 1)
-                        message_vision(HIW"Ö»¼ûÒ»µÀ°×¹âÖ±Í¸" + query("name") + HIW"£¬ÍþÁ¦ÃÍÈ»´óÔö£¡\n"NOR, me);
+                        message_vision(HIW"åªè¦‹ä¸€é“ç™½å…‰ç›´é€" + query("name") + HIW"ï¼Œå¨åŠ›çŒ›ç„¶å¤§å¢žï¼\n"NOR, me);
                 else
-                        message_vision(HIW"°×¹â½¥½¥ÒþÈëÁË" + query("name") + HIW"¡£\n"NOR, me);
+                        message_vision(HIW"ç™½å…‰æ¼¸æ¼¸éš±å…¥äº†" + query("name") + HIW"ã€‚\n"NOR, me);
                 me->add_temp("apply/damage", query("weapon_prop/damage") * socket_level * mode / 10);
                 break;
         case "skull":
@@ -92,15 +92,15 @@ string spec_effect(object me, object victim, int damage_bonus, string socket, in
         if (me->query("diablo/weapon/id") != query("id")) return msg;
         switch (socket) {
         case "ruby":
-                msg = HIR"Ò»µÀºì¹âÃÍµÄ»÷ÖÐÁË$n£¬$pÖ»¾õµÃ»ëÉíÒ»Õó¾ÞÍ´£¡\n"NOR;
+                msg = HIR"ä¸€é“ç´…å…‰çŒ›çš„æ“Šä¸­äº†$nï¼Œ$påªè¦ºå¾—æ¸¾èº«ä¸€é™£å·¨ç—›ï¼\n"NOR;
                 damage = damage_bonus * socket_level / 5;
 if ((int)victim->query("qi")+100 > damage)
                 victim->receive_wound("qi", damage);
                 if (wizardp(me))
-                        tell_object(me, sprintf("ÆøÑªÊÜÉË£º%d\n", damage));
+                        tell_object(me, sprintf("æ°£è¡€å—å‚·ï¼š%d\n", damage));
                 break;
         case "topaz":
-                msg = HIY"Ò»µÀ»Æ¹âÃÍµÄ»÷ÖÐÁË$n£¬$pÖ»¾õµÃÒâË¼Ô½À´Ô½Ä£ºý£¡\n"NOR;
+                msg = HIY"ä¸€é“é»ƒå…‰çŒ›çš„æ“Šä¸­äº†$nï¼Œ$påªè¦ºå¾—æ„æ€è¶Šä¾†è¶Šæ¨¡ç³Šï¼\n"NOR;
                 damage = damage_bonus * socket_level / 15;
                 if (damage > 300 * socket_level / 5)
                         damage = 300 * socket_level / 5;
@@ -114,13 +114,13 @@ if ((int)victim->query("jing")+100 > damage)
                 break;
         case "sapphire":
                 if (!victim->is_busy()){
-                        msg = HIB"Ò»µÀÆæÒìµÄÀ¶¹â°üÎ§×Å$n£¬$pÖ»¾õÌìÐýµØ×ª£¬ÉíÌåÎÞ·¨¶¯µ¯£¡\n"NOR;
+                        msg = HIB"ä¸€é“å¥‡ç•°çš„è—å…‰åŒ…åœè‘—$nï¼Œ$påªè¦ºå¤©æ—‹åœ°è½‰ï¼Œèº«é«”ç„¡æ³•å‹•å½ˆï¼\n"NOR;
                         victim->start_busy(random(socket_level) + 1);
                 }
                 break;
         case "emerald":
                 if (!victim->query_condition("emerald_poison")) {
-                        msg = HIG"$nÖ»¼ûÒ»µÀÂÌÆøÑ¸ËÙµÄ´ÓÉË¿ÚÉøÈëÁË$pµÄ¾­Âö£¡\n"NOR;
+                        msg = HIG"$nåªè¦‹ä¸€é“ç¶ æ°£è¿…é€Ÿçš„å¾žå‚·å£æ»²å…¥äº†$pçš„ç¶“è„ˆï¼\n"NOR;
                         victim->apply_condition("emerald_poison", victim->query_condition("emerald_poison") + random(5) + 1);
                         victim->set("emerald_poison", socket_level);
                         if (!victim->is_killing(me->query("id")) && (victim->query("host_id") != me->query("id")))
@@ -134,25 +134,25 @@ if ((int)victim->query("jing")+100 > damage)
                         if (random(query("weapon_prop/damage")) > weapon->query("weapon_prop/damage") / 2
                         && random(me->query("str")) > victim->query("str") / 2) {
                                 if (query("skill_type") == "sword" || query("skill_type") == "blade" || query("skill_type") == "axe") {
-                                        message_vision(HIW"Ö»Ìý¼û¡¸ßÑ¡¹µØÒ»ÉùÇáÏì£¬$NÊÖÖÐµÄ" + weapon->query("name") + HIW"ÒÑ¾­±»" + query("name") + HIW"Ï÷ÎªÁ½½Ø£¡\n"NOR, victim);
+                                        message_vision(HIW"åªè½è¦‹ã€Œâ–¡ã€åœ°ä¸€è²è¼•éŸ¿ï¼Œ$Næ‰‹ä¸­çš„" + weapon->query("name") + HIW"å·²ç¶“è¢«" + query("name") + HIW"å‰Šç‚ºå…©æˆªï¼\n"NOR, victim);
                                         weapon->unequip();
                                         weapon->move(environment(victim));
-                                        weapon->set("name", "¶ÏµôµÄ" + weapon->query("name"));
+                                        weapon->set("name", "æ–·æŽ‰çš„" + weapon->query("name"));
                                         weapon->set("value", 0);
                                         weapon->set("weapon_prop", 0);
                                         victim->reset_action();
                                 };
                                 if (query("skill_type") == "staff" || query("skill_type") == "hammer" || query("skill_type") == "club") {
-                                        message_vision(HIW "$NÖ»¾õµÃÊÖÖÐ" + weapon->query("name") + HIW"°Ñ³Ö²»¶¨£¬ÍÑÊÖ·É³ö£¡\n" NOR, victim);
+                                        message_vision(HIW "$Nåªè¦ºå¾—æ‰‹ä¸­" + weapon->query("name") + HIW"æŠŠæŒä¸å®šï¼Œè„«æ‰‹é£›å‡ºï¼\n" NOR, victim);
                                         weapon->unequip();
                                         weapon->move(environment(victim));
                                         victim->reset_action();
                                 };
                                 if (query("skill_type") == "whip") {
-                                        message_vision(HIW"Ö»Ìý¼û¡¸à§¡¹µØÒ»ÉùÇáÏì£¬$NÊÖÖÐµÄ" + weapon->query("name") + HIW"ÒÑ¾­±»" + query("name") + HIW"¾íÎªÁ½½Ø£¡\n"NOR, victim );
+                                        message_vision(HIW"åªè½è¦‹ã€Œå”°ã€åœ°ä¸€è²è¼•éŸ¿ï¼Œ$Næ‰‹ä¸­çš„" + weapon->query("name") + HIW"å·²ç¶“è¢«" + query("name") + HIW"å·ç‚ºå…©æˆªï¼\n"NOR, victim );
                                         weapon->unequip();
                                         weapon->move(environment(victim));
-                                        weapon->set("name", "¶ÏµôµÄ" + weapon->query("name"));
+                                        weapon->set("name", "æ–·æŽ‰çš„" + weapon->query("name"));
                                         weapon->set("value", 0);
                                         weapon->set("weapon_prop", 0);
                                         victim->reset_action();
@@ -161,7 +161,7 @@ if ((int)victim->query("jing")+100 > damage)
                 }
                 break;
         case "skull":
-                msg = WHT"ºöÈ»¼ä£¬$nÖ»¾õ¹í¿ÞÀÇº¿Éù²»¾øÓÚ¶ú£¬Èý»êÁùÆÇ¶¼¸øÎüÁË³öÈ¥£¡\n"NOR;
+                msg = WHT"å¿½ç„¶é–“ï¼Œ$nåªè¦ºé¬¼å“­ç‹¼åšŽè²ä¸çµ•äºŽè€³ï¼Œä¸‰é­‚å…­é­„éƒ½çµ¦å¸äº†å‡ºåŽ»ï¼\n"NOR;
                 damage = damage_bonus * socket_level / 10;
                 if (victim->query("qi") < damage)
                         damage = victim->query("qi");

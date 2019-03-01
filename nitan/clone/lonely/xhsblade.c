@@ -1,4 +1,4 @@
-// xuehun.c Ѫ����
+// xuehun.c 血魂神刀
 
 #include <weapon.h>
 #include <ansi.h>
@@ -11,14 +11,14 @@ string do_unwield();
 
 void create()
 {
-        set_name(HIR "Ѫ����" NOR, ({ "xuehun shendao", "blade", "xuehun" }));
+        set_name(HIR "血魂神刀" NOR, ({ "xuehun shendao", "blade", "xuehun" }));
         set_weight(1500);
         if (clonep())
                 destruct(this_object());
         else {
-                set("long", HIR "�˵��˵���Ѫʬ����Я��֮���˵�ɱ��̫�أ�"
-                                "��������Ѫ�������Ŷ���������ʹ�á�\n" NOR );
-                set("unit", "��");
+                set("long", HIR "此刀乃當年血屍隨身攜帶之物，因此刀殺孽太重，"
+                                "所以歷代血刀門掌門都不敢輕易使用。\n" NOR );
+                set("unit", "把");
                 set("value", 800000);
                 set("no_sell", 1);
                 set("material", "steel");
@@ -42,24 +42,24 @@ string do_wield()
         {
                 addn_temp("apply/attack", me->query_skill("blade",1)/4, me);
                 addn_temp("apply/defense", me->query_skill("parry",1)/4, me);
-                return HIW "$N�����ͺ𣬻����γ�$n" HIW "��ֻ�е�һ��Ѫ��֮�����������\n" NOR;
+                return HIW "$N沉聲低吼，緩緩拔出$n" HIW "，只感到一陣血腥之氣撲面而來。\n" NOR;
         } else
         if( query("shen", me) <= 0 )
         {
                 addn_temp("apply/attack", me->query_skill("blade",1)/4, me);
                 addn_temp("apply/defense", me->query_skill("parry",1)/4, me);
-                return HIC "$N���ְ�$n" HIW "������ʡ�\n" NOR;
+                return HIC "$N伸手把$n" HIW "抽出刀鞘。\n" NOR;
         } else
         if( query("shen", me)>10000 )
         {
                 addn_temp("apply/attack", me->query_skill("blade",1)/4, me);
                 addn_temp("apply/defense", me->query_skill("parry",1)/4, me);
-                return HIB "$Nսս�����İγ�һ��$n" HIB "��\n" NOR;
+                return HIB "$N戰戰兢兢的拔出一把$n" HIB "。\n" NOR;
         } else
         {
                 addn_temp("apply/attack", me->query_skill("blade",1)/4, me);
                 addn_temp("apply/defense", me->query_skill("parry",1)/4, me);
-                return HIB "$N�����һ��ͺ𣬡�ৡ���һ��������$n" HIB "��\n" NOR;
+                return HIB "$N吼管內一陣低吼，“唰”的一聲亮出了$n" HIB "。\n" NOR;
         }
 }
 
@@ -72,12 +72,12 @@ string do_unwield()
         addn_temp("apply/attack", -me->query_skill("blade", 1) / 4, me);
         addn_temp("apply/defense", -me->query_skill("parry",1)/4, me);
         if( query("shen", me) <= 0 )
-                return HIC "$N���ֽ�Ѫ���񵶲�ص��ʡ�\n" NOR;
+                return HIC "$N隨手將血魂神刀插回刀鞘。\n" NOR;
         else
         if( query("shen", me)>10000 )
-                return HIG "$N��$n" HIG "�����������о���������ȫ�����ѡ�\n" NOR;
+                return HIG "$N把$n" HIG "收了起來，感覺心神不寧，全身虛脫。\n" NOR;
         else
-                return HIG "$Nһɹ����$n" HIG "��ص��ʡ�\n" NOR;
+                return HIG "$N一曬，把$n" HIG "插回刀鞘。\n" NOR;
 }
 
 void check_npc(object me, object env)
@@ -106,17 +106,17 @@ void check_npc(object me, object env)
 
                         if( query("shen", ob[i])<-10000 )
                         {
-                                message_vision("$N��ŭ�ȵ��������" + RANK_D->query_rude(me) +
-                                               "����Ȼ�ҵ���Ѫ���񵶣�\n", ob[i]);
+                                message_vision("$N大怒喝道：好你個" + RANK_D->query_rude(me) +
+                                               "，居然敢盜用血魂神刀？\n", ob[i]);
                                 if( !query("on_fight", env) )
                                         ob[i]->kill_ob(me);
                         } else
                         if (ob[i]->is_good())
                         {
-                                message_vision(random(2) ? "$N������Ц����$n�����ɵ�Ư������֮"
-                                                           "���ߣ�Ҳ������̨������\n" :
-                                                           "$Nƴ�����ƣ���$n�����벻��Ѫ������"
-                                                           "����̨�������֮��ѽ��",
+                                message_vision(random(2) ? "$N哈哈大笑，對$n道：幹得漂亮，俠之"
+                                                           "大者，也就是兄台這般人物。\n" :
+                                                           "$N拼命鼓掌，對$n道：想不到血刀門有"
+                                                           "象兄台如此厲害之人呀。",
                                                ob[i], me);
                         }
                         continue;
@@ -127,8 +127,8 @@ void check_npc(object me, object env)
 
                 if( query("shen", ob[i])<-10000 && !userp(ob[i]) )
                 {
-                        message_vision(random(2) ? "$N�޵����õ����õ���\n" :
-                                                   "$N̾����Ҳ��֪Ѫ���������ϼһ������ô���ˣ�\n",
+                        message_vision(random(2) ? "$N讚道：好刀，好刀！\n" :
+                                                   "$N嘆道：也不知血刀老祖那老家伙近來怎麼樣了？\n",
                                        ob[i]);
                 } else
                 if( query("shen", ob[i])>10 && !userp(ob[i]) )
@@ -138,28 +138,28 @@ void check_npc(object me, object env)
                         my_exp=query("combat_exp", me);
                         if (ob_exp > my_exp * 2 || ob_exp > 1500000)
                         {
-                                message_vision(random(2) ? "$N��$n���������������������ǰ��Ū��\n" :
-                                                           "$Nһ����Ц����$n��������Ϊ����˭��Ѫʬ"
-                                                           "�ǣ�����������\n",
+                                message_vision(random(2) ? "$N對$n冷冷道：滾開！少在我面前賣弄。\n" :
+                                                           "$N一聲冷笑，對$n道：你以為你是誰？血屍"
+                                                           "那？哈哈哈哈！\n",
                                                ob[i], me);
                         } else
                         if (ob_exp > 20000)
                         {
-                                message_vision(random(2) ? "$N��ɫ��Щ���Ծ���\n" :
-                                                           "$N¶�����µ���ɫ��\n",
+                                message_vision(random(2) ? "$N臉色有些不對勁。\n" :
+                                                           "$N露出害怕的神色。\n",
                                                ob[i]);
                                 if( query("no_fight", env) )
                                         continue;
-                                message_vision(random(2) ? "$Nŭ��һ��������Ҷ���Ҫ���ˣ���\n" :
-                                                           "$Nһ�Բ�������������$n�����μ��졣\n",
+                                message_vision(random(2) ? "$N怒喝一聲，“大家都不要活了！”\n" :
+                                                           "$N一言不發，忽的撲向$n，身形極快。\n",
                                                ob[i], me);
                                 ob[i]->kill_ob(me);
                         } else
                         {
-                                message_vision(random(2) ? "$N��ͨһ����̱���ڵأ�˫�ּ�ҡ"
-                                                           "�����������ң���Ĳ����ң���\n" :
-                                                           "$Nһ�����£����Ͱ͵�ʲôҲ˵"
-                                                           "��������\n",
+                                message_vision(random(2) ? "$N撲通一聲，癱倒在地，雙手急搖"
+                                                           "道：“不是我！真的不是我！”\n" :
+                                                           "$N一個哆嗦，結結巴巴的什麼也說"
+                                                           "不上來。\n",
                                                ob[i], me);
                                 if( !query("no_fight", env) )
                                         ob[i]->unconcious();
@@ -189,9 +189,9 @@ mixed hit_ob(object me, object victim, int damage_bonus)
         case 0:
                 if (! victim->is_busy())
                         victim->start_busy(me->query_skill("blade") / 10 + 2);
-                return HIB "$N��ǰһ�������е�" NOR+HIR "Ѫ����" NOR+HIB "�����벻����"
-                       "�Ƕ���$n��ȥ��$nֻ����������������������\n"
-                       "��֪��εֵ���ֻ���������ˡ�\n" NOR;
+                return HIB "$N跨前一步，手中的" NOR+HIR "血魂神刀" NOR+HIB "從意想不到的"
+                       "角度向$n攻去，$n只見四周有無數刀光閃動。\n"
+                       "不知如何抵擋，只有連連後退。\n" NOR;
 
         case 1:
                 n = me->query_skill("blade");
@@ -201,9 +201,9 @@ mixed hit_ob(object me, object victim, int damage_bonus)
                 n /= 2;
                 victim->receive_damage("jing", n, me);
                 victim->receive_wound("jing", n / 2, me);
-                return random(2) ? HIB "$N�����ͺ����е�Ѫ���񵶻��������⣬��ৡ���ɨ��$n��\n" NOR:
-                                   HIB "$NͻȻ�����ȵ�����ʲô�������ɣ�����������������Ѫ����"
-                                   HIB "����һ����$n��ʱ������ǰ����ǧ�򵶹ⲻͣ������\n" NOR;
+                return random(2) ? HIB "$N沉身低吼，手中的血魂神刀化作萬道紅光，“唰”的掃過$n。\n" NOR:
+                                   HIB "$N突然大聲喝道：“什麼名門正派，還不受死？”手中血魂神刀"
+                                   HIB "忽的一抖，$n登時覺得眼前有如千萬刀光不停閃動。\n" NOR;
         }
 
         // double effect
@@ -235,14 +235,14 @@ void return_to_laozu()
                         return;
                 }
 
-                message_vision("��Ȼһ��Ѫ���ŵĵ������˹���������$N��æ�к�����������˵"
-                               "��ѵ����ܶ��ˣ����������ϲ�����ģ������������û�Ѫ���񵶣������ڲ�����ô����\n"
-                               "$N���������ˣ����ˣ�����û�ȥ�ɡ���\n"
-                               "$N���񵶽���Ѫ���ŵ��Ӵ��ߡ�\n", me);
+                message_vision("忽然一個血刀門的弟子走了過來，看到$N，忙招呼道：“老祖說"
+                               "這把刀不能丟了，放在你手上不大放心，讓我來找你拿回血魂神刀，你現在不用了麼？”\n"
+                               "$N道：“好了，好了，你就拿回去吧。”\n"
+                               "$N將神刀交給血刀門弟子帶走。\n", me);
         } else
         {
-                message("vision", "��Ȼһ��Ѫ���ŵ������˹���������Ѫ���񵶣�̾�˿�����ҡҡ"
-                                  "ͷ���ˡ�\n", me);
+                message("vision", "忽然一個血刀門弟子走了過來，撿起血魂神刀，嘆了口氣，搖搖"
+                                  "頭走了。\n", me);
         }
 
         destruct(this_object());

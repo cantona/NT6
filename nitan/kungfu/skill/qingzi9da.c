@@ -1,4 +1,4 @@
-// qingzi9da.c Çà×Ö¾Å´ò
+// qingzi9da.c é’å­—ä¹æ‰“
 // Last Modified by winder on Mar. 10 2000
 
 #include <ansi.h>;
@@ -16,20 +16,20 @@ int valid_learn(object me)
 {
         if(me->query_skill("qingming-xuangong", 1)  <
                 me->query_skill("qingzi9da", 1))
-                return notify_fail("ÄãµÄ±¾ÃÅÄÚ¹¦Î´µ½»ğºò£¬ÎŞ·¨¼ÌĞøĞŞÏ°Çà×Ö¾Å´ò¡£\n");
+                return notify_fail("ä½ çš„æœ¬é–€å…§åŠŸæœªåˆ°ç«å€™ï¼Œç„¡æ³•ç¹¼çºŒä¿®ç¿’é’å­—ä¹æ‰“ã€‚\n");
         return 1;
 }
 
 int help(object me)
 {
-        write(HIC"\nÇà×Ö¾Å´ò£º"NOR"\n");
+        write(HIC"\né’å­—ä¹æ‰“ï¼š"NOR"\n");
         write(@HELP
 
-    ¡°Çà×Ö¾Å´ò¡±Óë¡°³Ç×ÖÊ®°ËÆÆ¡±²¢ÁĞÎªÇà³ÇÕòÉ½Îä¹¦£¬ÅäÌ×±ø
-Æ÷ÊÇÇà·ä¶¤¡£
+    â€œé’å­—ä¹æ‰“â€èˆ‡â€œåŸå­—åå…«ç ´â€ä¸¦åˆ—ç‚ºé’åŸé®å±±æ­¦åŠŸï¼Œé…å¥—å…µ
+å™¨æ˜¯é’èœ‚é‡˜ã€‚
 
-        Ñ§Ï°ÒªÇó£º
-                ÏàÓ¦¼¶±ğµÄÇàÚ¤Ğş¹¦
+        å­¸ç¿’è¦æ±‚ï¼š
+                ç›¸æ‡‰ç´šåˆ¥çš„é’å†¥ç„åŠŸ
 HELP
         );
         return 1;

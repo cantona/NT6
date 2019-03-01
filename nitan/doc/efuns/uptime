@@ -1,13 +1,13 @@
         uptime(3)                LP MudOSv21c7                (7 Jul 1996)
-        º¯ÊýÃû³Æ:
-                uptime() - ´«»ØÉÏÒ»´ÎÇý¶¯³ÌÊ½ (driver) Æô¶¯ÖÁ½ñµÄ
-                           ÃëÊý.
-        º¯ÊýÓï·¨:
+        å‡½æ•¸åç¨±:
+                uptime() - å‚³å›žä¸Šä¸€æ¬¡é©…å‹•ç¨‹å¼ (driver) å•Ÿå‹•è‡³ä»Šçš„
+                           ç§’æ•¸.
+        å‡½æ•¸èªžæ³•:
                 int uptime( void );
-                ÕûÊý uptime( ÎÞ²ÎÊý );
-        º¯ÊýÓÃ·¨:
-                uptime() ´«»ØÉÏÒ»´ÎÇý¶¯³ÌÊ½ÖØÐÂÆô¶¯ÖÁ½ñÓÐ¼¸Ãë.
-        ²Î¿¼º¯Êý:
+                æ•´æ•¸ uptime( ç„¡åƒæ•¸ );
+        å‡½æ•¸ç”¨æ³•:
+                uptime() å‚³å›žä¸Šä¸€æ¬¡é©…å‹•ç¨‹å¼é‡æ–°å•Ÿå‹•è‡³ä»Šæœ‰å¹¾ç§’.
+        åƒè€ƒå‡½æ•¸:
                 time(3), ctime(3), localtime(3), time_expression(3)
-        ÊÖ²á·­Òë:
+        æ‰‹å†Šç¿»è­¯:
                 Phoebus@ZH        97.jul.25.                (Writen 5/23/97)

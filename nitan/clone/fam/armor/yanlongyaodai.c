@@ -5,26 +5,26 @@ inherit WAIST;
 
 void create()
 {
-        set_name(HIY "Ñ×ÁúÑü´ø" NOR, ({ "yanlong belt", "belt", "yanlong" }));
+        set_name(HIY "ç‚é¾è…°å¸¶" NOR, ({ "yanlong belt", "belt", "yanlong" }));
         set_weight(4000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIY "Ò»¸ùÓÃ±±º£ÉñÁúÖ®½î×ö³ÉµÄÑü´ø£¬Í¸Éä×ÅÁîÈË¾´Î·µÄ¹âÃ¢¡£\n" NOR
-                            HIC "ÓĞĞ§ÕĞ¼ÜĞŞÕı£º+  5        ÓĞĞ§Çá¹¦ĞŞÕı£º+ 15\n" NOR
-                            HIC "¿¹¶¾Ğ§¹ûĞŞÕı£º+ 5%        ·ÀÓùĞ§¹ûµÈ¼¶£º  10\n" NOR
-                            HIC "¿¹¶¾»Ø±ÜĞŞÕı£º+ 5%\n" NOR);
-                set("unit", "¸ù");
+                set("long", HIY "ä¸€æ ¹ç”¨åŒ—æµ·ç¥é¾ä¹‹ç­‹åšæˆçš„è…°å¸¶ï¼Œé€å°„è‘—ä»¤äººæ•¬ç•çš„å…‰èŠ’ã€‚\n" NOR
+                            HIC "æœ‰æ•ˆæ‹›æ¶ä¿®æ­£ï¼š+  5        æœ‰æ•ˆè¼•åŠŸä¿®æ­£ï¼š+ 15\n" NOR
+                            HIC "æŠ—æ¯’æ•ˆæœä¿®æ­£ï¼š+ 5%        é˜²å¾¡æ•ˆæœç­‰ç´šï¼š  10\n" NOR
+                            HIC "æŠ—æ¯’å›é¿ä¿®æ­£ï¼š+ 5%\n" NOR);
+                set("unit", "æ ¹");
                 set("value", 500000);
                 set("armor_prop/armor", 10);
                 set("armor_prop/avoid_poison", 5);
                 set("armor_prop/reduce_poison", 5);
                 set("armor_prop/dodge", 15);
                 set("armor_prop/parry", 5);
-                set("wear_msg", HIY "$N" HIY "ÇáÇáµØ°Ñ$n"
-                    HIY "ÏµÔÚÑü¼ä¡£\n" NOR);
-                set("remove_msg", HIC "$N" HIC "ÇáÇáµØ°Ñ$n"
-                    HIC "´ÓÑü¼äÈ¡ÁËÏÂÀ´¡£\n" NOR);
+                set("wear_msg", HIY "$N" HIY "è¼•è¼•åœ°æŠŠ$n"
+                    HIY "ç³»åœ¨è…°é–“ã€‚\n" NOR);
+                set("remove_msg", HIC "$N" HIC "è¼•è¼•åœ°æŠŠ$n"
+                    HIC "å¾è…°é–“å–äº†ä¸‹ä¾†ã€‚\n" NOR);
         }
         setup();
 }

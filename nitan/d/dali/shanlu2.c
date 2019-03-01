@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-        set("short","ɽ·");
+        set("short","山路");
         set("long",@LONG
-һ��ɽ·���������ï�ܵ����ֺ����಻���Ĵ�ɽ����·���Լ�
-��ɼ�һЩ����Ĵ�������һƬ��ɽ�������ƣ�ɽ�߰�ѩ��������
-��������·������ɽ��һ����·���ϱ������š�
+一條山路，四面皆是茂密的樹林和延綿不絕的大山，道路兩旁間
+或可見一些夷族的村鎮，西面一片高山高聳入雲，山顛白雪皚皚終年
+不化。正路向西上山，一條岔路向南北蜿蜒著。
 LONG);
         set("outdoors", "daliw");
         set("exits",([ /* sizeof() == 1 */

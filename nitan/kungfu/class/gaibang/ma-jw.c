@@ -10,12 +10,12 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("Âí¾ãÎª", ({"ma juwei", "ma", "juwei"}));
-        set("title", "Ø¤°ïÆß´üµÜ×Ó");
-        set("gender", "ÄĞĞÔ");
+        set_name("é¦¬ä¿±ç‚º", ({"ma juwei", "ma", "juwei"}));
+        set("title", "ä¸å¹«ä¸ƒè¢‹å¼Ÿå­");
+        set("gender", "ç”·æ€§");
         set("age", 35);
         set("long",
-                "ÕâÊÇÎ»ÎäÒÕ¾«Ç¿£¬È´³ÁÄ¬¹ÑÑÔµÄØ¤°ï°Ë´üµÜ×Ó¡£\n");
+                "é€™æ˜¯ä½æ­¦è—ç²¾å¼·ï¼Œå»æ²‰é»˜å¯¡è¨€çš„ä¸å¹«å…«è¢‹å¼Ÿå­ã€‚\n");
         set("attitude", "peaceful");
         set("class", "beggar");
 
@@ -63,7 +63,7 @@ void create()
 
         prepare_skill("hand", "shexing-diaoshou");
 
-        create_family("Ø¤°ï", 19, "µÜ×Ó");
+        create_family("ä¸å¹«", 19, "å¼Ÿå­");
         set("master_ob",1);
         setup();
 
@@ -81,11 +81,11 @@ void attempt_apprentice(object ob)
 
         if( query("shen", ob)<0 )
         {
-                command("say ÄãÉíÎªØ¤°ïµÜ×Ó£¬¾¹È»²»×öºÃÊÂ£¿");
+                command("say ä½ èº«ç‚ºä¸å¹«å¼Ÿå­ï¼Œç«Ÿç„¶ä¸åšå¥½äº‹ï¼Ÿ");
                 return;
         }
         command("nod");
-        command("say Äã°İÎÒÎªÊ¦£¬¿ÉÒª×öºÃ³Ô¿àµÄ×¼±¸£¬ºÃºÃ×ö¸öØ¤°ïµÜ×Ó£¡");
+        command("say ä½ æ‹œæˆ‘ç‚ºå¸«ï¼Œå¯è¦åšå¥½åƒè‹¦çš„æº–å‚™ï¼Œå¥½å¥½åšå€‹ä¸å¹«å¼Ÿå­ï¼");
         command("recruit "+query("id", ob));
 
         if( query("class", ob) != "beggar" )

@@ -3,16 +3,16 @@ inherit NPC;
 
 void create()
 {
-        set_name(HIG"ÑÛ¾µÉß"NOR, ({ "yanjing she", "she" }) );
-        set("race", "Ò°ÊÞ");
+        set_name(HIG"çœ¼é¡è›‡"NOR, ({ "yanjing she", "she" }) );
+        set("race", "é‡Žç¸");
         set("age", 2);
-        set("long", "Ò»ÌõÑÛ¾µÉß£¬×ãÓÐÊÖ±Û´ÖÏ¸¡£\n");
+        set("long", "ä¸€æ¢çœ¼é¡è›‡ï¼Œè¶³æœ‰æ‰‹è‡‚ç²—ç´°ã€‚\n");
         set("attitude", "peaceful");
  
         set("str", 30);
         set("cor", 26);
 
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "Î²°Í" }) );
+        set("limbs", ({ "é ­éƒ¨", "èº«é«”", "å°¾å·´" }) );
         set("verbs", ({ "bite" }) );
  
         set("combat_exp", 3000);
@@ -29,7 +29,7 @@ void create()
 void die()
 {
         object ob1, ob2;
-        message_vision(HIR"$Nµ¹ÔÚµØÉÏ¾íÇúÁËÁ½ÏÂÉí×Ó£¬$NËÀÁË¡£\n"NOR, this_object());
+        message_vision(HIR"$Nå€’åœ¨åœ°ä¸Šå·æ›²äº†å…©ä¸‹èº«å­ï¼Œ$Næ­»äº†ã€‚\n"NOR, this_object());
         if(random(10)>8)
         {
         ob1 = new(__DIR__"obj/shedu");

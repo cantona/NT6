@@ -2,9 +2,9 @@ inherit NPC;
 
 void create()
 {
-        set_name("Ğ¡À®Âï", ({ "xiao lama", "xiao", "lama" }));
-        set("long", "ÕâÊÇ´óÂÖËÂµÄĞ¡À®Âï£¬Á³ÉÏ¹Ò×ÅÌìÕæµÄĞ¦Èİ¡£\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("å°å–‡å˜›", ({ "xiao lama", "xiao", "lama" }));
+        set("long", "é€™æ˜¯å¤§è¼ªå¯ºçš„å°å–‡å˜›ï¼Œè‡‰ä¸Šæ›è‘—å¤©çœŸçš„ç¬‘å®¹ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("attitude", "peaceful");
         set("class", "bonze");
 

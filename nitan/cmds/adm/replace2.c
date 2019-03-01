@@ -14,15 +14,15 @@ int main(object me, string arg)
         seteuid(geteuid(me));
 
         if (sscanf(arg, "%s of %s to %s", pattern, file, replace) != 3)
-                return notify_fail("Ö¸Áî¸ñÊ½ : replace <Ô­×Ö·û´®> of <µµÃû> to <Ìæ»»×Ö·û´®>\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ : replace <åŸå­—ç¬¦ä¸²> of <æª”å> to <æ›¿æ›å­—ç¬¦ä¸²>\n");
 
         file=resolve_path(query("cwd", me),file);
 
         if (file_size(file) < 0)
-                return notify_fail("Ã»ÓĞÕâ¸öµµ°¸¡£\n");
+                return notify_fail("æ²’æœ‰é€™å€‹æª”æ¡ˆã€‚\n");
 
         if (! SECURITY_D->valid_read(file, me, "read_file"))
-                return notify_fail("ÄãÃ»ÓĞÈ¨ÏŞ²é¿´Õâ¸öÎÄ¼ş¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¬Šé™æŸ¥çœ‹é€™å€‹æ–‡ä»¶ã€‚\n");
 
         replace = replace_string(replace, "\\t", "\t");
         replace = replace_string(replace, "\\n", "\n");
@@ -40,17 +40,17 @@ int main(object me, string arg)
 
         rm( file );
         if(  write_file(file, str,1) )
-                write(" Ìæ»»³É¹¦¡£\n");
-        else write("Ê§°Ü¡­¡­\n");
+                write(" æ›¿æ›æˆåŠŸã€‚\n");
+        else write("å¤±æ•—â€¦â€¦\n");
         return 1;
 }
 
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : replace <µµ°¸Ãû>
+æŒ‡ä»¤æ ¼å¼ : replace <æª”æ¡ˆå>
 
-Õâ¸öÖ¸ÁîÈÃÄãXXXXX¡£
+é€™å€‹æŒ‡ä»¤è®“ä½ XXXXXã€‚
 
 see also: cat
 HELP );

@@ -7,17 +7,17 @@ inherit F_FOOD;
 
 void create()
 {
-        set_name("ÖíÍ·", ({ "zhutou","tou" }) );
+        set_name("è±¬é ­", ({ "zhutou","tou" }) );
         set_weight(350);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¸ö´óÖíÍ·¡£\n");
+                set("long", "ä¸€å€‹å¤§è±¬é ­ã€‚\n");
                 set("value", 80);
-                set("unit", "¿Å");
+                set("unit", "é¡†");
                 set("food_remaining", 4);
                 set("food_supply", 15);
-                set("wield_msg", "$N×¥ÆğÒ»¿Å$n£¬ÎÕÔÚÊÖÖĞµ±ÎäÆ÷¡£\n");
+                set("wield_msg", "$NæŠ“èµ·ä¸€é¡†$nï¼Œæ¡åœ¨æ‰‹ä¸­ç•¶æ­¦å™¨ã€‚\n");
                 set("material", "bone");
         }
         init_hammer(1);
@@ -27,8 +27,8 @@ void create()
 int finish_eat()
 {
         if( !query("weapon_prop") ) return 0;
-        set_name("¿ĞµÃ¾«¹âµÄ¹ÇÍ·", ({ "bone" }) );
+        set_name("å•ƒå¾—ç²¾å…‰çš„éª¨é ­", ({ "bone" }) );
         set_weight(150);
-        set("long", "¿ĞµÃ¾«¹âµÄ¹ÇÍ·¡£\n");
+        set("long", "å•ƒå¾—ç²¾å…‰çš„éª¨é ­ã€‚\n");
         return 1;
 }

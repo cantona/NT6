@@ -35,10 +35,10 @@ void assign_apprentice(string title, int privs)
                         set("title", family["family_name"] + family["title"]);
                         break;
                 case 1:
-                        set("title", family["family_name"] + "¿ªÉ½×æÊ¦");
+                        set("title", family["family_name"] + "é–‹å±±ç¥–å¸«");
                         break;
                 default:
-                        set("title", sprintf("%sµÚ%s´ú%s", family["family_name"],
+                        set("title", sprintf("%sç¬¬%sä»£%s", family["family_name"],
                                 chinese_number(family["generation"]), family["title"]));
                         break;
                 }
@@ -69,7 +69,7 @@ int recruit_apprentice(object ob)
         if( !mapp(my_family = query("family")) )
                 return 0;
 
-        // ÕâÀï´¦ÀíÅÐÊ¦µÄbug
+        // é€™è£¡è™•ç†åˆ¤å¸«çš„bug
         family_name = query("family/family_name", ob);
         if( family_name && family_name != my_family["family_name"] )
         {
@@ -98,41 +98,41 @@ int recruit_apprentice(object ob)
         family["enter_time"]  = time();
 
         /*
-        if( family["family_name"] == "Å·ÑôÊÀ¼Ò" ) {
+        if( family["family_name"] == "æ­é™½ä¸–å®¶" ) {
                 if( query("can_not_change", ob) && !query("old_surname", ob) )
                         set("old_surname", query("surname", ob), ob);
-                set("surname", "Å·Ñô", ob);
-                set("born_family", "Å·ÑôÊÀ¼Ò", ob);
+                set("surname", "æ­é™½", ob);
+                set("born_family", "æ­é™½ä¸–å®¶", ob);
                 ob->set_name();
         }
 
-        if( family["family_name"] == "¹ØÍâºú¼Ò" ) {
+        if( family["family_name"] == "é—œå¤–èƒ¡å®¶" ) {
                  if( query("can_not_change", ob) && !query("old_surname", ob) )
                         set("old_surname", query("surname", ob), ob);
-                set("surname", "ºú", ob);
-                set("born_family", "¹ØÍâºú¼Ò", ob);
+                set("surname", "èƒ¡", ob);
+                set("born_family", "é—œå¤–èƒ¡å®¶", ob);
                 ob->set_name();
         }
 
-        if( family["family_name"] == "Ä½ÈÝÊÀ¼Ò" ) {
+        if( family["family_name"] == "æ…•å®¹ä¸–å®¶" ) {
                  if( query("can_not_change", ob) && !query("old_surname", ob) )
                         set("old_surname", query("surname", ob), ob);
-                set("surname", "Ä½ÈÝ", ob);
-                set("born_family", "Ä½ÈÝÊÀ¼Ò", ob);
+                set("surname", "æ…•å®¹", ob);
+                set("born_family", "æ…•å®¹ä¸–å®¶", ob);
                 ob->set_name();
         }
 
-        if( family["family_name"] == "¶ÎÊÏ»Ê×å" ) {
+        if( family["family_name"] == "æ®µæ°çš‡æ—" ) {
                  if( query("can_not_change", ob) && !query("old_surname", ob) )
                         set("old_surname", query("surname", ob), ob);
-                set("surname", "¶Î", ob);
-                set("born_family", "¶ÎÊÏ»Ê×å", ob);
+                set("surname", "æ®µ", ob);
+                set("born_family", "æ®µæ°çš‡æ—", ob);
                 ob->set_name();
         }
         */
 
-        // °ÝÊ¦ºó²»ÔÙ¿ÉÒÔÍ¨¹ý±±¾©ÎÄÃíÐÞ¸ÄÐÔ¸ñ
-        if( !query("can_not_change", ob) && family["family_name"] != "¹Å´å" )
+        // æ‹œå¸«å¾Œä¸å†å¯ä»¥é€šéŽåŒ—äº¬æ–‡å»Ÿä¿®æ”¹æ€§æ ¼
+        if( !query("can_not_change", ob) && family["family_name"] != "å¤æ‘" )
                 set("can_not_change", 1, ob);
 
         if( stringp(family_name) && family_name == family["family_name"] )
@@ -146,10 +146,10 @@ int recruit_apprentice(object ob)
                 set("family", family, ob);
                 return 1;
         } else
-        if( query("born_family") != "Ã»ÓÐ" )
-                family["title"] = "´«ÈË";
+        if( query("born_family") != "æ²’æœ‰" )
+                family["title"] = "å‚³äºº";
         else
-                family["title"] = "µÜ×Ó";
+                family["title"] = "å¼Ÿå­";
 
         set("family", family, ob);
         ob->assign_apprentice(family["title"], 0);

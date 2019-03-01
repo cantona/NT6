@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÖýÔì³¡");
+        set("short", "é‘„é€ å ´");
         set("long", @LONG
-ÔÚ³¡×ÓÄÏ²àÓÐÒ»×ù¸ßÂ¯£¬Â¯¿Ú»ð¿×¾¶²»µ½Ò»³ß¡£Ò»¸öÈñ½ðÆìÆìÏÂ
-µÜ×Ó£¬ÉíÅÔ·Å×ÅÊ®Óà¼þ±øÆ÷£¬Ä¿²»×ª¾¦µØÍû×ÅÂ¯»ð£¬Ã¿¼ûÂ¯»ð±äÉ«£¬
-±ã½«ÒÑÓÐÐ©³ÉÐÍµÄ±øÆ÷·ÅÈëÂ¯ÖÐÊÔÌ½»ðÁ¦¡£ÅÔÓÐÁ½¸öÁÒ»ðÆìÏÂµÜ×ÓÕý
-ÂôÁ¦µØÀ­³¶·çÏä£¬µ«¼ûÂ¯»ðÖ±´ÜÉÏÀ´£¬»ðÑæ¸ß´ïÕÉÐí£¬ÎµÎªÆæ¹Û¡£
+åœ¨å ´å­å—å´æœ‰ä¸€åº§é«˜çˆï¼Œçˆå£ç«å­”å¾‘ä¸åˆ°ä¸€å°ºã€‚ä¸€å€‹éŠ³é‡‘æ——æ——ä¸‹
+å¼Ÿå­ï¼Œèº«æ—æ”¾è‘—åä½™ä»¶å…µå™¨ï¼Œç›®ä¸è½‰ç›åœ°æœ›è‘—çˆç«ï¼Œæ¯è¦‹çˆç«è®Šè‰²ï¼Œ
+ä¾¿å°‡å·²æœ‰äº›æˆåž‹çš„å…µå™¨æ”¾å…¥çˆä¸­è©¦æŽ¢ç«åŠ›ã€‚æ—æœ‰å…©å€‹çƒˆç«æ——ä¸‹å¼Ÿå­æ­£
+è³£åŠ›åœ°æ‹‰æ‰¯é¢¨ç®±ï¼Œä½†è¦‹çˆç«ç›´ç«„ä¸Šä¾†ï¼Œç«ç‡„é«˜é”ä¸ˆè¨±ï¼Œè”šç‚ºå¥‡è§€ã€‚
 LONG );
         set("exits", ([ /* sizeof() == 2 */
                 "east" : __DIR__"lhqlwch",
@@ -30,6 +30,6 @@ LONG );
 int valid_leave(object me, string dir)
 {
         if( (dir == "north" || dir == "west") && query_temp("gun_making", this_player()) )
-               return notify_fail("ÄãÕýÔÚ´òÔì»ðÇ¹£¬²»ÄÜÀë¿ªÕâÀï£¡\n");
+               return notify_fail("ä½ æ­£åœ¨æ‰“é€ ç«æ§ï¼Œä¸èƒ½é›¢é–‹é€™è£¡ï¼\n");
         return ::valid_leave(this_player(), dir);
 }

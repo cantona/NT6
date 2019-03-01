@@ -1,24 +1,24 @@
-// yizhanxiaoer.c Ğ¡¶ş
+// yizhanxiaoer.c å°äºŒ
 
 inherit NPC;
 #include <ansi.h>;
 
 void create()
 {
-        set_name("æäÕ¾Ğ¡¶ş", ({"xiao er"}) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("é©›ç«™å°äºŒ", ({"xiao er"}) );
+        set("gender", "ç”·æ€§" );
         set("age", 22);
         set("long",
-                "ÕâÎ»Ğ¡¶şÕıĞ¦ßäßäµØÏĞÖø£¬»¹²»Ê±ÄÃÆğ²èºøºÈÉÏÁ½¿Ú¡£\n");
+                "é€™ä½å°äºŒæ­£ç¬‘å’ªå’ªåœ°é–’è‘—ï¼Œé‚„ä¸æ™‚æ‹¿èµ·èŒ¶å£ºå–ä¸Šå…©å£ã€‚\n");
         set("combat_exp", 100);
         set("attitude", "friendly");
         set("no_get", "1");
-        set("rank_info/respect", "Ğ¡¶ş¸ç");
+        set("rank_info/respect", "å°äºŒå“¥");
         set("chat_chance", 1 );
         set("chat_msg", ({
-                (:command("say "+"ÓĞÇ®µÄ×ø×ø³µ£¬Ã»Ç®µÄÅÜÅÜÍÈ¡£"):),
-                ( : command("say "+"ÓĞÇ®ÄãÊÇ´óÒ¯£¬Ã»Ç®ÎÒÊÇ´óÒ¯¡£") : ),
-                ( : command("say "+"¼Û¸ñ¹«Æ½ºÏÀí£¬ÂôÂò×ÔÓÉ¾ºÕù£¡") : ),
+                (:command("say "+"æœ‰éŒ¢çš„ååè»Šï¼Œæ²’éŒ¢çš„è·‘è·‘è…¿ã€‚"):),
+                ( : command("say "+"æœ‰éŒ¢ä½ æ˜¯å¤§çˆºï¼Œæ²’éŒ¢æˆ‘æ˜¯å¤§çˆºã€‚") : ),
+                ( : command("say "+"åƒ¹æ ¼å…¬å¹³åˆç†ï¼Œè³£è²·è‡ªç”±ç«¶çˆ­ï¼") : ),
         }) );       
         setup();
         carry_object("/clone/misc/cloth")->wear();
@@ -51,12 +51,12 @@ void greeting(object ob)
         switch( random(2) ) 
         {
                 case 0:
-                        say( "Ğ¡¶şĞ¦ßäßäµØËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-                                + "£¬µ½ÄÇ¶ùÈ¥°¡¡£\n");
+                        say( "å°äºŒç¬‘å’ªå’ªåœ°èªªé“ï¼šé€™ä½" + RANK_D->query_respect(ob)
+                                + "ï¼Œåˆ°é‚£å…’å»å•Šã€‚\n");
                         break;
                 case 1:
-                        say( "Ğ¡¶şºÈÁË¿Ú²è£¬ËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-                                + "£¬³¤Í¾ÂÃĞĞ£¬±¾µêÓÅ»İ¡£\n");
+                        say( "å°äºŒå–äº†å£èŒ¶ï¼Œèªªé“ï¼šé€™ä½" + RANK_D->query_respect(ob)
+                                + "ï¼Œé•·é€”æ—…è¡Œï¼Œæœ¬åº—å„ªæƒ ã€‚\n");
                         break;
         }
 }
@@ -75,7 +75,7 @@ int accept_object(object who, object ob)
         
         if( query("money_id", ob) && ob->value() >= 2000 )
         {
-                tell_object(who, "Ğ¡¶şÒ»¹şÑü£¬ËµµÀ£º¶àĞ»ÄúÀÏ£¬ÇëÄúÀÏ¹Í³µ¡£\n");
+                tell_object(who, "å°äºŒä¸€å“ˆè…°ï¼Œèªªé“ï¼šå¤šè¬æ‚¨è€ï¼Œè«‹æ‚¨è€é›‡è»Šã€‚\n");
 
                 set_temp("paid_for", 1, who);
 

@@ -1,5 +1,5 @@
 // This program is a part of NITAN MudLIB
-// jingtian.c  °×ºç¾ªÌì 
+// jingtian.c  ç™½è™¹é©šå¤© 
 
 #include <ansi.h>
 #include <combat.h>
@@ -12,28 +12,28 @@ int perform(object me, object target)
         string msg;
 
         if (! me->is_fighting())
-                return notify_fail("¡¸°×ºç¾ªÌì¡¹Ö»ÄÜÔÚÕ½¶·ÖÐÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œç™½è™¹é©šå¤©ã€åªèƒ½åœ¨æˆ°é¬¥ä¸­ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me) )
                  || query("skill_type", weapon) != "sword" )
-                        return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                        return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ã€‚\n");
 
         if ((int)me->query_skill("shenghuo-xuanming", 1) < 100)
-                return notify_fail("ÄãµÄÊ¥»ðÐþÚ¤¹¦»ðºò»¹²»µ½¼Ò, ²»ÄÜÊ¹ÓÃÕâÒ»¾ø¼¼ !\n");
+                return notify_fail("ä½ çš„è–ç«çŽ„å†¥åŠŸç«å€™é‚„ä¸åˆ°å®¶, ä¸èƒ½ä½¿ç”¨é€™ä¸€çµ•æŠ€ !\n");
 
         if ((int)me->query_skill("sword", 1) < 100)
-                return notify_fail("ÄãµÄ»ù±¾½£·¨»ðºò»¹²»µ½¼Ò, ²»ÄÜÊ¹ÓÃÕâÒ»¾ø¼¼ !\n");
+                return notify_fail("ä½ çš„åŸºæœ¬åŠæ³•ç«å€™é‚„ä¸åˆ°å®¶, ä¸èƒ½ä½¿ç”¨é€™ä¸€çµ•æŠ€ !\n");
 
         if ((int)me->query_skill("baihong-jianfa", 1) < 100)
-                return notify_fail("ÄãµÄåÐÒ£½£·¨»ðºò»¹²»µ½¼Ò, ²»ÄÜÊ¹ÓÃÕâÒ»¾ø¼¼ !\n");
+                return notify_fail("ä½ çš„é€é™åŠæ³•ç«å€™é‚„ä¸åˆ°å®¶, ä¸èƒ½ä½¿ç”¨é€™ä¸€çµ•æŠ€ !\n");
 
         if( query("neili", me)<500 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¡\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼\n");
 
         if( query("max_neili", me)<1000 )
-                return notify_fail("ÄãµÄÄÚÁ¦ÐÞÎª²»¹»£¡\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¿®ç‚ºä¸å¤ ï¼\n");
 
-        msg = HIC "\n$N³¤Ð¥Ò»Éù£¬ÊÖµ¯³¤½££¬ÉíÐÎÆ®ºö²»¶¨£¬Ê¹µÄÕýÊÇ°×ºç¾ª½£·¨µÄ¾ø¼¼¡¸°×ºç¾ªÌì¡¹£¡\n" NOR;
+        msg = HIC "\n$Né•·å˜¯ä¸€è²ï¼Œæ‰‹å½ˆé•·åŠï¼Œèº«å½¢é£„å¿½ä¸å®šï¼Œä½¿çš„æ­£æ˜¯ç™½è™¹é©šåŠæ³•çš„çµ•æŠ€ã€Œç™½è™¹é©šå¤©ã€ï¼\n" NOR;
         message_combatd(msg, me);
 
         me->clean_up_enemy();

@@ -31,7 +31,7 @@ int main(object me, string arg)
         if (file_size(dir) > 0)
         { 
                 if (! do_format(me, dir, len))
-                        write(HIY "ROOM " + dir + " µÄÃèÊöÕûÀíÊ§°Ü£¬ÏêÇéÇë²é¿´LOG¼ÇÂ¼¡£\n" NOR); 
+                        write(HIY "ROOM " + dir + " çš„æè¿°æ•´ç†å¤±æ•—ï¼Œè©³æƒ…è«‹æŸ¥çœ‹LOGè¨˜éŒ„ã€‚\n" NOR); 
                 else
                         write("ok.\n");     
                 return 1;
@@ -41,15 +41,15 @@ int main(object me, string arg)
                 dir += "/";
 
         if (file_size(dir) != -2) 
-                return notify_fail(dir + " ²¢²»ÊÇÒ»¸öÄ¿Â¼¡£\n");
+                return notify_fail(dir + " ä¸¦ä¸æ˜¯ä¸€å€‹ç›®éŒ„ã€‚\n");
                 
         if (dir[0..2] != "/d/" && dir[0..2] != "/u/")
-                return notify_fail("ÎªÈ·±£°²È«£¬Ö»ÔÊĞí¸ü¸Ä/d/ºÍ/u/Ä¿Â¼ÏÂÃæµÄ·¿¼äÃèÊö¡£\n");                
+                return notify_fail("ç‚ºç¢ºä¿å®‰å…¨ï¼Œåªå…è¨±æ›´æ”¹/d/å’Œ/u/ç›®éŒ„ä¸‹é¢çš„æˆ¿é–“æè¿°ã€‚\n");                
 
-        message_system("ÏµÍ³ÅúÁ¿µµ°¸´¦ÀíÖĞ£¬ÇëÄÍĞÄµÈºò...");                                                                    
+        message_system("ç³»çµ±æ‰¹é‡æª”æ¡ˆè™•ç†ä¸­ï¼Œè«‹è€å¿ƒç­‰å€™...");                                                                    
 
-        write(HIG "\nÏÖÔÚÏµÍ³ÕıÔÚÅú´¦Àí " + dir + " Ä¿Â¼·¿¼äÃèÊö£¬ÉÔºó»ã±¨¡£\n" 
-              HIG "½ø¶È£º" + process_bar(0) + "\n"); 
+        write(HIG "\nç¾åœ¨ç³»çµ±æ­£åœ¨æ‰¹è™•ç† " + dir + " ç›®éŒ„æˆ¿é–“æè¿°ï¼Œç¨å¾ŒåŒ¯å ±ã€‚\n" 
+              HIG "é€²åº¦ï¼š" + process_bar(0) + "\n"); 
                             
         if (me)
         {
@@ -71,12 +71,12 @@ int to_format(object me, string dir, int len)
                      
         if (! arrayp(flist) || ! sizeof(flist))
         {
-                message_system("ÏµÍ³ÅúÁ¿µµ°¸´¦ÀíÍê±Ï£¬Çë¼ÌĞøÓÎÏ·¡£\n" ESC + "[K");  
+                message_system("ç³»çµ±æ‰¹é‡æª”æ¡ˆè™•ç†å®Œç•¢ï¼Œè«‹ç¹¼çºŒéŠæˆ²ã€‚\n" ESC + "[K");  
                 
                 if (me)
                         me->detach_system();
 
-                write(HIG "Ä¿Â¼ " + dir + " ÏÂ²¢Ã»ÓĞ¿É¹©ĞŞ¸ÄµÄÎÄ¼ş\n" NOR); 
+                write(HIG "ç›®éŒ„ " + dir + " ä¸‹ä¸¦æ²’æœ‰å¯ä¾›ä¿®æ”¹çš„æ–‡ä»¶\n" NOR); 
                 return 1;
         }
         
@@ -85,13 +85,13 @@ int to_format(object me, string dir, int len)
         if (me)
                 me->detach_system();
                 
-        message_system("ÏµÍ³ÅúÁ¿µµ°¸´¦ÀíÍê±Ï£¬Çë¼ÌĞøÓÎÏ·¡£\n" ESC + "[K");  
+        message_system("ç³»çµ±æ‰¹é‡æª”æ¡ˆè™•ç†å®Œç•¢ï¼Œè«‹ç¹¼çºŒéŠæˆ²ã€‚\n" ESC + "[K");  
         
         if (! sizeof(result))
-                write(HIG "Ä¿Â¼ " + dir + " ÏÂËùÓĞ·¿¼äÃèÊöÕûÀí³É¹¦¡£\n" NOR); 
+                write(HIG "ç›®éŒ„ " + dir + " ä¸‹æ‰€æœ‰æˆ¿é–“æè¿°æ•´ç†æˆåŠŸã€‚\n" NOR); 
         else
         {       
-                write(HIG "ÉĞÓĞ " + sizeof(result) + " ¸öÎÄ¼şÕûÀíÊ§°Ü£¬ÎÄ¼şÁĞ±íÈçÏÂ\n" NOR);           
+                write(HIG "å°šæœ‰ " + sizeof(result) + " å€‹æ–‡ä»¶æ•´ç†å¤±æ•—ï¼Œæ–‡ä»¶åˆ—è¡¨å¦‚ä¸‹\n" NOR);           
                 for (i = 0; i < sizeof(result); i++)
                 {
                         if (eval_cost() < 100) set_eval_limit(0);
@@ -119,8 +119,8 @@ string *do_format(object me, mixed flist, int len)
         {
                 reset_eval_cost();
                 message("system", ESC + "[1A" + ESC + "[256D"
-                                  HIG "½ø¶È£º" + process_bar((i + 1) * 100 / sizeof(flist)) +
-                                   "\n" + (me ? HIR "Ö´ĞĞÖĞ" NOR "> " : ""),
+                                  HIG "é€²åº¦ï¼š" + process_bar((i + 1) * 100 / sizeof(flist)) +
+                                   "\n" + (me ? HIR "åŸ·è¡Œä¸­" NOR "> " : ""),
                                    me ? me : filter_array(all_interactive(), (: wizardp :))); 
                 
                 if (! is_c_file(flist[i])) 
@@ -149,16 +149,16 @@ string *do_format(object me, mixed flist, int len)
                 }
         
                 long=replace_string(query("long", ob),"\n","");
-                long = replace_string(long, "¡°", "¡º");
-                long = replace_string(long, "¡±", "¡»");
-                long = replace_string(long, "<", "¡º");
-                long = replace_string(long, ">", "¡»");
-                long = replace_string(long, ",", "£¬");
-                long = replace_string(long, ".", "¡£");
-                long = replace_string(long, "?", "£¿");
-                long = replace_string(long, ";", "£»");
-                long = replace_string(long, ":", "£º");
-                long = replace_string(long, "!", "£¡");         
+                long = replace_string(long, "â€œ", "ã€");
+                long = replace_string(long, "â€", "ã€");
+                long = replace_string(long, "<", "ã€");
+                long = replace_string(long, ">", "ã€");
+                long = replace_string(long, ",", "ï¼Œ");
+                long = replace_string(long, ".", "ã€‚");
+                long = replace_string(long, "?", "ï¼Ÿ");
+                long = replace_string(long, ";", "ï¼›");
+                long = replace_string(long, ":", "ï¼š");
+                long = replace_string(long, "!", "ï¼");         
                         
                 filetext = explode(read_file(flist[i]), "\n");
 
@@ -233,10 +233,10 @@ string *deep_file_list(string dir)
 int help(object me) 
 {
         write(@HELP 
-Ö¸Áî¸ñÊ½ : typeset | pb <Ä¿Â¼Ãû> <×ÖÊı>
+æŒ‡ä»¤æ ¼å¼ : typeset | pb <ç›®éŒ„å> <å­—æ•¸>
 
-Õâ¸öÖ¸Áî¿ÉÒÔ½«Ä³¸öÄ¿Â¼ÏÂËùÓĞµÄ·¿¼äµÄ³¤ÃèÊö×Ô¶¯ÅÅ°æ³ÉÃ¿ĞĞÎªÖ¸
-¶¨ÊıÄ¿µÄºº×Ö£¬µ±È»µÚÒ»ĞĞÊÇÉÙ¶ş¸öºº×ÖµÄ¡£
+é€™å€‹æŒ‡ä»¤å¯ä»¥å°‡æŸå€‹ç›®éŒ„ä¸‹æ‰€æœ‰çš„æˆ¿é–“çš„é•·æè¿°è‡ªå‹•æ’ç‰ˆæˆæ¯è¡Œç‚ºæŒ‡
+å®šæ•¸ç›®çš„æ¼¢å­—ï¼Œç•¶ç„¶ç¬¬ä¸€è¡Œæ˜¯å°‘äºŒå€‹æ¼¢å­—çš„ã€‚
 HELP ); 
         return 1; 
 }

@@ -1,7 +1,7 @@
 // Copyright (C) 2003, by Lonely. All rights reserved.
 // This software can not be used, copied, or modified 
 // in any form without the written permission from authors.
-// boguang.c Ìï²®¹â
+// boguang.c ç”°ä¼¯å…‰
 
 inherit NPC;
 
@@ -12,12 +12,12 @@ int climb_tree(object me);
 
 void create()
 {
-        set_name("Ìï²®¹â", ({ "tian boguang", "tian", "boguang" }));
-        set("nickname", "ÍòÀï¶ÀĞĞ");
+        set_name("ç”°ä¼¯å…‰", ({ "tian boguang", "tian", "boguang" }));
+        set("nickname", "è¬è£¡ç¨è¡Œ");
         set("long", 
-                "Ìï²®¹âÎôÄêÎª½­ºşÖĞ³ôÃûÕÑÕÃµÄ²É»¨Ôô£¬µ«½áÊ¶»ªÉ½Áîºü³åºóÒÑ\n"
-                "¸ÄĞ°¹éÕı¡£Ò»ÊÖ¿ìµ¶¾ø¼¼£¬ÌìÏÂÎŞË«¡£Çá¹¦ÔÚÎäÁÖÖĞÒ²ÊÇÒ»µÈµÄ¡£\n");
-        set("gender", "ÄĞĞÔ");
+                "ç”°ä¼¯å…‰æ˜”å¹´ç‚ºæ±Ÿæ¹–ä¸­è‡­åæ˜­å½°çš„æ¡èŠ±è³Šï¼Œä½†çµè­˜è¯å±±ä»¤ç‹æ²–å¾Œå·²\n"
+                "æ”¹é‚ªæ­¸æ­£ã€‚ä¸€æ‰‹å¿«åˆ€çµ•æŠ€ï¼Œå¤©ä¸‹ç„¡é›™ã€‚è¼•åŠŸåœ¨æ­¦æ—ä¸­ä¹Ÿæ˜¯ä¸€ç­‰çš„ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 35);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -51,10 +51,10 @@ void create()
         map_skill("parry", "luan-blade");
         map_skill("blade", "luan-blade");
         set("inquiry", ([
-                "Áîºü³å" : "ÁîºüĞÖÊÇÎÒÉúÆ½µÚÒ»Öª¼º¡£\n",
-                "·çÇåÑï" : "Äã´òµÃ¹ıÎÒ£¬ÎÒ×ÔÈ»»á´øÄãÈ¥¼ûËû¡£\n",
-                "·çÇ°±²" : "Äã´òµÃ¹ıÎÒ£¬ÎÒ×ÔÈ»»á´øÄãÈ¥¼ûËû¡£\n",
-                "·çÇåÑïÇ°±²" : "Äã´òµÃ¹ıÎÒ£¬ÎÒ×ÔÈ»»á´øÄãÈ¥¼ûËû¡£\n",
+                "ä»¤ç‹æ²–" : "ä»¤ç‹å…„æ˜¯æˆ‘ç”Ÿå¹³ç¬¬ä¸€çŸ¥å·±ã€‚\n",
+                "é¢¨æ¸…æš" : "ä½ æ‰“å¾—éæˆ‘ï¼Œæˆ‘è‡ªç„¶æœƒå¸¶ä½ å»è¦‹ä»–ã€‚\n",
+                "é¢¨å‰è¼©" : "ä½ æ‰“å¾—éæˆ‘ï¼Œæˆ‘è‡ªç„¶æœƒå¸¶ä½ å»è¦‹ä»–ã€‚\n",
+                "é¢¨æ¸…æšå‰è¼©" : "ä½ æ‰“å¾—éæˆ‘ï¼Œæˆ‘è‡ªç„¶æœƒå¸¶ä½ å»è¦‹ä»–ã€‚\n",
         ]));
 
         setup();
@@ -71,7 +71,7 @@ void init()
             !query_temp("said", me) )
         {
                 set_temp("said", 1, me);
-                command("say ÏëÕÒ·çÇ°±²£¿Äã¿ÉµÃÊ¤¹ıÎÒµÄ¿ìµ¶ÔÙËµ¡£");
+                command("say æƒ³æ‰¾é¢¨å‰è¼©ï¼Ÿä½ å¯å¾—å‹éæˆ‘çš„å¿«åˆ€å†èªªã€‚");
                 remove_call_out("climb_tree");
                 call_out("climb_tree", 50, me);         
         }
@@ -92,20 +92,20 @@ void lost()
         ob = this_object();
         me = query_competitor();
         
-        if( query("short", environment(ob)) == "³¯Ñô·å" )
+        if( query("short", environment(ob)) == "æœé™½å³°" )
         {          
                 addn("tian_count", 1, environment(ob));
-                command( "say " + RANK_D->query_respect(me) + "¹ûÈ»¸ßÃ÷£¬ÔÚÏÂ¶àÓĞµÃ×ï¡£ÔÚÏÂÕâ±ã´øÄãÈ¥¼û·çÇ°±²¡£");
-                message("vision", me->name() + "Ëæ×ÅÌï²®¹â×ß½ø»ÄÉ½Àï¡£\n", environment(ob), ({ob}));
+                command( "say " + RANK_D->query_respect(me) + "æœç„¶é«˜æ˜ï¼Œåœ¨ä¸‹å¤šæœ‰å¾—ç½ªã€‚åœ¨ä¸‹é€™ä¾¿å¸¶ä½ å»è¦‹é¢¨å‰è¼©ã€‚");
+                message("vision", me->name() + "éš¨è‘—ç”°ä¼¯å…‰èµ°é€²è’å±±è£¡ã€‚\n", environment(ob), ({ob}));
                 ob->move("/d/huashan/yelin1");
                 me->move("/d/huashan/yelin1");
-                tell_object(me, "Ìï²®¹âÁìÄã×ß¹ı»ªÉ½ºóÉ½µÄÒ»Æ¬»ÄÉ½Ò°ÁÖ£¬Äã×¢Òâµ½ÄÇ¶ùËÆºõÓĞ¸öÉ½¶´¡£\n");
+                tell_object(me, "ç”°ä¼¯å…‰é ˜ä½ èµ°éè¯å±±å¾Œå±±çš„ä¸€ç‰‡è’å±±é‡æ—ï¼Œä½ æ³¨æ„åˆ°é‚£å…’ä¼¼ä¹æœ‰å€‹å±±æ´ã€‚\n");
                 ob->move("/d/huashan/xiaojing1");
                 me->move("/d/huashan/xiaojing1");
-                tell_object(me,"Äã¸ú×ÅÌï²®¹â×ßÁËÁ¼¾Ã£¬À´µ½Ò»ÌõĞ¡Â·¡£\n");
+                tell_object(me,"ä½ è·Ÿè‘—ç”°ä¼¯å…‰èµ°äº†è‰¯ä¹…ï¼Œä¾†åˆ°ä¸€æ¢å°è·¯ã€‚\n");
                 command( "bow" );
-                command( "say ·çÇ°±²×¡´¦ÓÉ´ËÂ·¹ıÈ¥±ãÊÇ£¬ÔÚÏÂÊ§ÅãÁË¡£");
-                say("Ìï²®¹âËµÍê±ãÍ·Ò²²»»ØµØ×ßÁË¡£\n");        
+                command( "say é¢¨å‰è¼©ä½è™•ç”±æ­¤è·¯éå»ä¾¿æ˜¯ï¼Œåœ¨ä¸‹å¤±é™ªäº†ã€‚");
+                say("ç”°ä¼¯å…‰èªªå®Œä¾¿é ­ä¹Ÿä¸å›åœ°èµ°äº†ã€‚\n");        
                 remove_call_out("fast_attack");
                 remove_call_out("climb_tree");
                 remove_call_out("destob");
@@ -184,7 +184,7 @@ int fast_attack(object me, object ob)
         delete_temp("attack_pending", me);
         num = random(2) + 3;
 
-        message_vision("Ìï²®¹â´óº°Ò»Éù£¬Ê¹³öÆä¿ìµ¶¾ø¼¼·è¿ñ°ãÏò$NÁ¬ÅüÁË" + chinese_number(num) + "µ¶¡£\n", ob);
+        message_vision("ç”°ä¼¯å…‰å¤§å–Šä¸€è²ï¼Œä½¿å‡ºå…¶å¿«åˆ€çµ•æŠ€ç˜‹ç‹‚èˆ¬å‘$Né€£åŠˆäº†" + chinese_number(num) + "åˆ€ã€‚\n", ob);
 
         for (i = 1; i < num + 1; i++) {
                 COMBAT_D->do_attack(me,ob,query_temp("weapon", me));
@@ -204,25 +204,25 @@ int climb_tree(object me)
                 return 1;
         }
         
-        if( query("short", environment(me)) == "³¯Ñô·å" )
+        if( query("short", environment(me)) == "æœé™½å³°" )
         {
                 if( !query_temp("fought", me) )
                 {
                         addn("tian_count", 1, environment(me));
-                        message_vision("Ìï²®¹âÅ­»ğ´óÕÇ£¬ÆÃ¿Ú´óÂîµÀ£º¡°Äã¼ÈÈ»ÎŞÒâ°İ¼û·çÇ°±²£¬¸É°Í°ÍµØ½ĞÀÏ×ÓÏÂÀ´¸ÉÂï£¿¡±\n", me);
-                        message_vision("Ìï²®¹â½Ó×Å±ãÅÀ»ØÊ÷ÉÏ£¬°İ¼ûÖÜ¹«È¥ÁË¡£\n", me);                
+                        message_vision("ç”°ä¼¯å…‰æ€’ç«å¤§æ¼²ï¼Œæ½‘å£å¤§ç½µé“ï¼šâ€œä½ æ—¢ç„¶ç„¡æ„æ‹œè¦‹é¢¨å‰è¼©ï¼Œå¹¹å·´å·´åœ°å«è€å­ä¸‹ä¾†å¹¹å˜›ï¼Ÿâ€\n", me);
+                        message_vision("ç”°ä¼¯å…‰æ¥è‘—ä¾¿çˆ¬å›æ¨¹ä¸Šï¼Œæ‹œè¦‹å‘¨å…¬å»äº†ã€‚\n", me);                
                 }
                 else 
                 {
-                        message_vision("Ìï²®¹â´òÁË¸öºÇÇ·¡£\n", me);
-                        command("say Ë¡ÎÒ²»ÄÜ·îÅã¡£");
+                        message_vision("ç”°ä¼¯å…‰æ‰“äº†å€‹å‘µæ¬ ã€‚\n", me);
+                        command("say æ•æˆ‘ä¸èƒ½å¥‰é™ªã€‚");
                         addn("tian_count", 1, environment(me));
-                        message_vision("Ìï²®¹â½Ó×Å±ãÅÀ»ØÊ÷ÉÏ£¬°İ¼ûÖÜ¹«È¥ÁË¡£\n", me);
+                        message_vision("ç”°ä¼¯å…‰æ¥è‘—ä¾¿çˆ¬å›æ¨¹ä¸Šï¼Œæ‹œè¦‹å‘¨å…¬å»äº†ã€‚\n", me);
                 }
         }
         else
          {
-                message_vision("Ìï²®¹â´Ò´ÒÃ¦Ã¦µØÀë¿ªÁË¡£\n", me);
+                message_vision("ç”°ä¼¯å…‰åŒ†åŒ†å¿™å¿™åœ°é›¢é–‹äº†ã€‚\n", me);
         }
 
         destruct(me);

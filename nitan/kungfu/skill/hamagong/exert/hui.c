@@ -1,4 +1,4 @@
-// hui.c ¸òó¡¹¦»ØÏ¢
+// hui.c è›¤èŸ†åŠŸå›æ¯
 
 #include <ansi.h>
 
@@ -12,9 +12,9 @@ int exert(object me, object target)
         string msg;
 
         if( !(skill=query_temp("reverse", me)) )
-                return notify_fail("Äã²¢Ã»ÓĞµ¹×ª¾­Âö°¡¡£\n");
+                return notify_fail("ä½ ä¸¦æ²’æœ‰å€’è½‰ç¶“è„ˆå•Šã€‚\n");
 
-        msg = HIB "$N" HIB "»º»ºÍÂ³öÒ»¿ÚÆø£¬Á³É«±äÁË±ä£¬ÒõÑô²»¶¨¡£\n" NOR;
+        msg = HIB "$N" HIB "ç·©ç·©åå‡ºä¸€å£æ°£ï¼Œè‡‰è‰²è®Šäº†è®Šï¼Œé™°é™½ä¸å®šã€‚\n" NOR;
         message_combatd(msg, me);
 
         addn_temp("apply/defense", -skill/4, me);

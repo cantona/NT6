@@ -7,9 +7,9 @@ int update_condition(object me, int duration)
         if( query_temp("nopoison", me))return 0;
         if( duration < 1 ) return 0;
 
-        me->receive_wound("qi", 15+random(10), "Ö©Öë¶¾·¢×÷");
-        me->receive_damage("jing", 15+random(10), "Ö©Öë¶¾·¢×÷");
-        tell_object(me, HIG"Äã·¢ÏÖÉË¿ÚÒ»Ë¿Ë¿µÄºÚÏßÕıÔÚÀ©ÕÅÖĞ¡£ÄãÖĞµÄÖ©Öë¶¾·¢×÷ÁË£¡\n" NOR );
+        me->receive_wound("qi", 15+random(10), "èœ˜è››æ¯’ç™¼ä½œ");
+        me->receive_damage("jing", 15+random(10), "èœ˜è››æ¯’ç™¼ä½œ");
+        tell_object(me, HIG"ä½ ç™¼ç¾å‚·å£ä¸€çµ²çµ²çš„é»‘ç·šæ­£åœ¨æ“´å¼µä¸­ã€‚ä½ ä¸­çš„èœ˜è››æ¯’ç™¼ä½œäº†ï¼\n" NOR );
         if( query("eff_jing", me)<0 || query("eff_qi", me)<0)return 0;
         me->apply_condition("zhizhu_poison", duration - 1);
         return 1;

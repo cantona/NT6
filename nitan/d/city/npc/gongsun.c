@@ -9,12 +9,12 @@ void do_something();
 
 void create()
 {
-        set_name("¹«Ëï´óÄï", ({"gongsun daniang", "gongsun", "daniang"}));
+        set_name("å…¬å­«å¤§å¨˜", ({"gongsun daniang", "gongsun", "daniang"}));
         set("age", 32);
-        set("gender", "Å®ĞÔ");
+        set("gender", "å¥³æ€§");
         set("per", 20);
-        set("long","³ÇÄÚ²»ÖªµÀ¹«Ëï´óÄïµÄÈË¿ÖÅÂÃ»¼¸¸ö¡£\nÌØ±ğÊÇÄÇĞ©ÎÄÈËÉ§¿Í£¬¸ú¹«Ëï´óÄï²»Êì¼òÖ±¾ÍÊÇÃ»Ãæ×Ó¡£\n");
-        set("title", "ÀÏ°åÄï");
+        set("long","åŸå…§ä¸çŸ¥é“å…¬å­«å¤§å¨˜çš„äººææ€•æ²’å¹¾å€‹ã€‚\nç‰¹åˆ¥æ˜¯é‚£äº›æ–‡äººé¨·å®¢ï¼Œè·Ÿå…¬å­«å¤§å¨˜ä¸ç†Ÿç°¡ç›´å°±æ˜¯æ²’é¢å­ã€‚\n");
+        set("title", "è€æ¿å¨˜");
         set("attitude", "friendly");
 
         set("combat_exp", 40000);
@@ -30,14 +30,14 @@ void create()
         map_skill("dodge", "yunying-wubu");
 
         set("inquiry", ([
-                "name" : "ÎûÎû...Á¬ÀÏÄïÎÒ¹«Ëï´óÄïÄã¶¼²»ÖªµÀ...\n",
-                "here" : "ºÙºÙ...ÌìÏÂÃÀ¾°²»Ê¤Êı£¬³¤°²´Ë´¦×î·±»ª¡£\n",
-                "Îè¼Ë" : (: apply_dancer :),
-                "ÎèÅ®" : (: apply_dancer :),
-                "¸è¼Ë" : (: apply_dancer :),
-                "¸èÅ®" : (: apply_dancer :),
+                "name" : "å˜»å˜»...é€£è€å¨˜æˆ‘å…¬å­«å¤§å¨˜ä½ éƒ½ä¸çŸ¥é“...\n",
+                "here" : "å˜¿å˜¿...å¤©ä¸‹ç¾æ™¯ä¸å‹æ•¸ï¼Œé•·å®‰æ­¤è™•æœ€ç¹è¯ã€‚\n",
+                "èˆå¦“" : (: apply_dancer :),
+                "èˆå¥³" : (: apply_dancer :),
+                "æ­Œå¦“" : (: apply_dancer :),
+                "æ­Œå¥³" : (: apply_dancer :),
                 "leave" : (: answer_leaving :),
-                "Àë¿ª" : (: answer_leaving :),
+                "é›¢é–‹" : (: answer_leaving :),
         ]) );
 
         setup();
@@ -55,36 +55,36 @@ void do_something()
 string apply_dancer(object me)
 {
         me=this_player();
-        if( query("gender", me) == "ÄĞĞÔ" )
+        if( query("gender", me) == "ç”·æ€§" )
         {
-                return "Õâ¾ÍÒª¿´¸óÏÂµÄ±¾ÊÂÁË£¬ÎÒ¿É°ï²»ÉÏ¶àÉÙÃ¦¡£\n";
+                return "é€™å°±è¦çœ‹é–£ä¸‹çš„æœ¬äº‹äº†ï¼Œæˆ‘å¯å¹«ä¸ä¸Šå¤šå°‘å¿™ã€‚\n";
         }
         else
         {
                 if( query("class", me) == "dancer" )
-                        return "ºÃºÃ¸É°É£¬ÒÔºó²»³î¼Ş²»ÉÏºÃÈË¼Ò¡£\n";
+                        return "å¥½å¥½å¹¹å§ï¼Œä»¥å¾Œä¸æ„å«ä¸ä¸Šå¥½äººå®¶ã€‚\n";
 
                 if( query("age", me) >= 30 )
-                        return "ËêÔÂ²»ÈÄÈË£¬¹ÃÄï»¹ÊÇÁíÑ°ËüÂ·°É¡£\n";
+                        return "æ­²æœˆä¸é¥’äººï¼Œå§‘å¨˜é‚„æ˜¯å¦å°‹å®ƒè·¯å§ã€‚\n";
 
-                message_vision("¹«Ëï´óÄï¿´ÁË$NÒ»ÑÛÌ¾µÀ£ºÕâÍë·¹¿É²»ÊÇÈİÒ×³ÔµÄ¡£\n", me);        
+                message_vision("å…¬å­«å¤§å¨˜çœ‹äº†$Nä¸€çœ¼å˜†é“ï¼šé€™ç¢—é£¯å¯ä¸æ˜¯å®¹æ˜“åƒçš„ã€‚\n", me);        
                 set_temp("dancer_applied", 1, me);
-                return "¹ÃÄï¹ûÕæÊÇÏÂÁË¾öĞÄ£¿(yes)\n";
+                return "å§‘å¨˜æœçœŸæ˜¯ä¸‹äº†æ±ºå¿ƒï¼Ÿ(yes)\n";
         }
 }
 
 string answer_leaving(object me)
 {
         me=this_player();
-        if( query("gender", me) == "ÄĞĞÔ" )
+        if( query("gender", me) == "ç”·æ€§" )
         {
-                return "¿ì¹ö£¬¹öµÃÔ¶Ô¶µÄ£¡ÀÏÄïÕâµØ·½»¹ÅÂÃ»ÈËÀ´Âğ£¿\n";
+                return "å¿«æ»¾ï¼Œæ»¾å¾—é é çš„ï¼è€å¨˜é€™åœ°æ–¹é‚„æ€•æ²’äººä¾†å—ï¼Ÿ\n";
         }
         else
         {
                 if( query("class", me) == "dancer" )
-                        return "¼ÈÈë´ËÃÅ£¬´ó¼Ò¶¼ÖªµÀÁË£¬Àë²»Àë¿ªÓÖÓĞÊ²Ã´·Ö±ğÄØ£¿\n";
-                else return "¿ì×ß°É£¬ÕâÀï±¾À´¾Í²»ÊÇÅ®ÈËÍæµÄµØ·½¡£\n";
+                        return "æ—¢å…¥æ­¤é–€ï¼Œå¤§å®¶éƒ½çŸ¥é“äº†ï¼Œé›¢ä¸é›¢é–‹åˆæœ‰ä»€éº¼åˆ†åˆ¥å‘¢ï¼Ÿ\n";
+                else return "å¿«èµ°å§ï¼Œé€™è£¡æœ¬ä¾†å°±ä¸æ˜¯å¥³äººç©çš„åœ°æ–¹ã€‚\n";
         }
 }
 
@@ -106,8 +106,8 @@ int do_yes(string arg)
         
         if( query_temp("dancer_applied", me) )
         {
-                message_vision("$N´ğµÀ£ºÎÒ¶¼ÏëÇå³şÁË£¡\n\n", me);
-                message_vision("¹«Ëï´óÄïÅÄÁËÅÄ$NµÄÍ·µÀ£ººÃºÃ¸É£¡Ö»ÒªÄÜÅöÉÏºÃÔËÆø£¬ÈÙ»ª¸»¹ó´¹ÊÖ¿ÉµÃ£¡\n", me);
+                message_vision("$Nç­”é“ï¼šæˆ‘éƒ½æƒ³æ¸…æ¥šäº†ï¼\n\n", me);
+                message_vision("å…¬å­«å¤§å¨˜æ‹äº†æ‹$Nçš„é ­é“ï¼šå¥½å¥½å¹¹ï¼åªè¦èƒ½ç¢°ä¸Šå¥½é‹æ°£ï¼Œæ¦®è¯å¯Œè²´å‚æ‰‹å¯å¾—ï¼\n", me);
                 delete_temp("dancer_applied", me);
                 set("class", "dancer", me);
                 return 1;

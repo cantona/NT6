@@ -1,25 +1,25 @@
 // by rcwiz for yhonline
-// ÈëÃÎÉñ¹¦
+// å…¥å¤¢ç¥åŠŸ
 
 #include <ansi.h>
 
 inherit FORCE;
 
 string *dodge_msg = ({
-        HIW "$n" HIW "ÊÖ×ãºöµÄÒ»»Î£¬$N" HIW "¾¹È»ÎŞ·¨½ø»÷£¬Ö»ÄÜ×Ô±£¡£\n" NOR,
-        HIW "Ö»¼û$n" HIW "Éí×ÓÇáÇá»Î¶¯£¬$N" HIW "ÑÛÇ°¶ÙÊ±³öÏÖÁËÎŞÊı¸ö$n" HIW
-        "µÄ»ÃÓ°£¬Áî$N" HIW "ÍêÈ«ÎŞ·¨±æ³öĞéÊµ¡£\n" NOR,
-        HIW "$n" HIW "ÍùÅÔ±ßÍáÍáĞ±Ğ±µÄÂõ³öÒ»²½£¬È´Ç¡ºÃÁî$N" HIW "µÄ¹¥»÷Ê§Ö®"
-        "ºÁÀå¡£\n" NOR,
-        HIW "$N" HIW "ÕâÒ»ÕĞÀ´µÄºÃ¿ì£¬È»ºó$n" HIW "Ò»ÉÁ£¬ËÆºõ²»·Ñ°ëµãÁ¦Æø£¬"
-        "È´½«$N" HIW "ÕâÒ»ÕĞ¸ÕºÃ±Ü¿ª¡£\n" NOR,
-        HIW "µ«¼û$n" HIW "ÇáÇáÒ»Ô¾£¬ÒÑ²»¼ûÁË×ÙÓ°£¬$N" HIW "ĞÄÖĞ´óº§£¬È´ÓÖ¼û"
-        "$n" HIW "²Á¼ç±¼¹ı£¬²½·¨Ö®ÆæÇÉ£¬µ±ÕæÁîÈËË¼Ë÷·ÆÒÇ¡£\n" NOR,
+        HIW "$n" HIW "æ‰‹è¶³å¿½çš„ä¸€æ™ƒï¼Œ$N" HIW "ç«Ÿç„¶ç„¡æ³•é€²æ“Šï¼Œåªèƒ½è‡ªä¿ã€‚\n" NOR,
+        HIW "åªè¦‹$n" HIW "èº«å­è¼•è¼•æ™ƒå‹•ï¼Œ$N" HIW "çœ¼å‰é “æ™‚å‡ºç¾äº†ç„¡æ•¸å€‹$n" HIW
+        "çš„å¹»å½±ï¼Œä»¤$N" HIW "å®Œå…¨ç„¡æ³•è¾¨å‡ºè™›å¯¦ã€‚\n" NOR,
+        HIW "$n" HIW "å¾€æ—é‚Šæ­ªæ­ªæ–œæ–œçš„é‚å‡ºä¸€æ­¥ï¼Œå»æ°å¥½ä»¤$N" HIW "çš„æ”»æ“Šå¤±ä¹‹"
+        "æ¯«å˜ã€‚\n" NOR,
+        HIW "$N" HIW "é€™ä¸€æ‹›ä¾†çš„å¥½å¿«ï¼Œç„¶å¾Œ$n" HIW "ä¸€é–ƒï¼Œä¼¼ä¹ä¸è²»åŠé»åŠ›æ°£ï¼Œ"
+        "å»å°‡$N" HIW "é€™ä¸€æ‹›å‰›å¥½é¿é–‹ã€‚\n" NOR,
+        HIW "ä½†è¦‹$n" HIW "è¼•è¼•ä¸€èºï¼Œå·²ä¸è¦‹äº†è¹¤å½±ï¼Œ$N" HIW "å¿ƒä¸­å¤§é§­ï¼Œå»åˆè¦‹"
+        "$n" HIW "æ“¦è‚©å¥”éï¼Œæ­¥æ³•ä¹‹å¥‡å·§ï¼Œç•¶çœŸä»¤äººæ€ç´¢è²å„€ã€‚\n" NOR,
 });
 
 string *parry_msg = ({
-        HIW "$N" HIW "Ò»ÕĞ»÷ÔÚ$n" HIW "ÉíÉÏ£¬Á¦µÀ¾¹ÏûÊ§µÃÎŞÓ°ÎŞ×Ù£¡\n" NOR,
-        HIW "$nÇáÇáÒ»´ø£¬$N" HIW "·¢ÏÖ×Ô¼ºÕĞÊı»Ø»÷¹ıÀ´£¬ÏÅµÃÍùºóµ¹ÍË¼¸²½¡£\n" NOR,
+        HIW "$N" HIW "ä¸€æ‹›æ“Šåœ¨$n" HIW "èº«ä¸Šï¼ŒåŠ›é“ç«Ÿæ¶ˆå¤±å¾—ç„¡å½±ç„¡è¹¤ï¼\n" NOR,
+        HIW "$nè¼•è¼•ä¸€å¸¶ï¼Œ$N" HIW "ç™¼ç¾è‡ªå·±æ‹›æ•¸å›æ“Šéä¾†ï¼Œåš‡å¾—å¾€å¾Œå€’é€€å¹¾æ­¥ã€‚\n" NOR,
 });
 
 int query_neili_improve(object me)
@@ -32,22 +32,22 @@ int query_neili_improve(object me)
 
 mapping *action = ({
 ([
-        "action": HIW "$N" HIW "µ¥ÊÖÒ»»Ó£¬É²ÄÇ¼ä¿ñ·çÖèÆğ£¬ ÁîÈË²»º®¶øÀõ¡£" NOR,
+        "action": HIW "$N" HIW "å–®æ‰‹ä¸€æ®ï¼Œå‰é‚£é–“ç‹‚é¢¨é©Ÿèµ·ï¼Œ ä»¤äººä¸å¯’è€Œæ —ã€‚" NOR,
         "attack": 999,
         "dodge" : 999,
         "parry" : 999,
         "damage": 999,
         "force" : 999,
-        "damage_type":  "ÉñÉË"
+        "damage_type":  "ç¥å‚·"
 ]),
 ([
-        "action": HIG "$N" HIG "ÉñÇéÎ¢±ä£¬ÃÍÈ»¼ä¿ñ·ç±©Óê£¬ÌìÉ«´ó±ä¡£" NOR,
+        "action": HIG "$N" HIG "ç¥æƒ…å¾®è®Šï¼ŒçŒ›ç„¶é–“ç‹‚é¢¨æš´é›¨ï¼Œå¤©è‰²å¤§è®Šã€‚" NOR,
         "attack": 999,
         "dodge" : 999,
         "parry" : 999,
         "damage": 999,
         "force" : 999,
-        "damage_type":  "ÉñÉË"
+        "damage_type":  "ç¥å‚·"
 ]),
 });
 
@@ -103,8 +103,8 @@ mixed hit_ob(object me, object victim, int damage_bonus)
                       }
                       else 
                       {
-                           message_vision(HIR "$N" HIR "¶Ô×Å$n" HIR "Ğèµã¼¸ÏÂ£¬$n" HIR 
-                                          "¾¹ÎŞ·¨¶¯µ¯ÁË¡£\n" NOR, me, victim);
+                           message_vision(HIR "$N" HIR "å°è‘—$n" HIR "éœ€é»å¹¾ä¸‹ï¼Œ$n" HIR 
+                                          "ç«Ÿç„¡æ³•å‹•å½ˆäº†ã€‚\n" NOR, me, victim);
                                      
                            victim->start_busy(20 + random(20));                                            
                       }
@@ -114,8 +114,8 @@ mixed hit_ob(object me, object victim, int damage_bonus)
 
         if (random(20) == 1)
         {
-                message_vision(NOR + HIG "ÃÍÈ»¼äÒ»ÕóÇàÑÌÆ®¹ı£¬Öî¸ğÁÁÒÑ"
-                               "¾­²»¼ûÁËÓ°×Ù ¡­¡­\n", me, victim);               
+                message_vision(NOR + HIG "çŒ›ç„¶é–“ä¸€é™£é’ç…™é£„éï¼Œè«¸è‘›äº®å·²"
+                               "ç¶“ä¸è¦‹äº†å½±è¹¤ â€¦â€¦\n", me, victim);               
 
                 victim->move("/kungfu/class/sky/bagua");
 
@@ -136,7 +136,7 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
         {
                 result = ([ "damage": -damage ]);
 
-                result += (["msg" : HIW "$n" HIW "Áè¿ÕĞéµã¼¸ÏÂ£¬ÃÍÈ»¼ä²»¼ûÁË×ÙÓ°¡£\n" NOR]);
+                result += (["msg" : HIW "$n" HIW "å‡Œç©ºè™›é»å¹¾ä¸‹ï¼ŒçŒ›ç„¶é–“ä¸è¦‹äº†è¹¤å½±ã€‚\n" NOR]);
 
                 return result;
         }

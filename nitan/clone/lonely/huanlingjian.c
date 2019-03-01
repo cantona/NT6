@@ -5,19 +5,19 @@ inherit SWORD;
 
 void create()
 {
-        set_name(HIW "»ÃÁé½£" NOR, ({ "huanling jian", "huanling", "sword" }));
+        set_name(HIW "å¹»éˆåŠ" NOR, ({ "huanling jian", "huanling", "sword" }));
         set_weight(4000);
         if (clonep())
                 destruct(this_object());
         else {
-                set("long", HIW "½£ÉíÓÅÃÀÏ¸³¤£¬É¢·¢×Åµ­ÇàÒø¹â¡£\n" NOR);
-                set("unit", "±ú");
+                set("long", HIW "åŠèº«å„ªç¾Žç´°é•·ï¼Œæ•£ç™¼è‘—æ·¡é’éŠ€å…‰ã€‚\n" NOR);
+                set("unit", "æŸ„");
                 set("value", 40000);
                 set("no_sell", 1);
                 set("material", "steel");
-                set("wield_msg", HIW "Òø¹â»®¹ý£¬»ÃÁé½£ÒÑÂäÈë$N" HIW "ÊÖÖÐ¡£\n" NOR);
+                set("wield_msg", HIW "éŠ€å…‰åŠƒéŽï¼Œå¹»éˆåŠå·²è½å…¥$N" HIW "æ‰‹ä¸­ã€‚\n" NOR);
 
-                set("unwield_msg", HIW "ÌìµØºö°µ£¬$N" HIW "ÊÖÖÐµÄ»ÃÁé½£ÒÑÇÄÈ»ÒþÃ» ¡£\n" NOR);
+                set("unwield_msg", HIW "å¤©åœ°å¿½æš—ï¼Œ$N" HIW "æ‰‹ä¸­çš„å¹»éˆåŠå·²æ‚„ç„¶éš±æ²’ ã€‚\n" NOR);
                 set("stable", 100);
         }                                                                                                                    
         init_sword(100);
@@ -37,8 +37,8 @@ mixed hit_ob(object me, object victim, int damage_bonus)
                n = me->query_skill("sword");
                victim->receive_damage("qi", n * 3 / 5, me);
                victim->receive_wound("qi", n * 2 / 7, me);
-               return HIW "$N" HIW "Ò»ÉùÀäºß£¬ÊÖÖÐ»ÃÁé½£ÓÌÈçÁéÉßÒ»°ãÓÎ×ß²»¶¨£¬ö®Ê±Ò»µÀ½£ÆøÖÁ½£¼â¼¤"
-                      "Éä¶ø³ö£¬¹áÏò$n" HIW "£¡\n" NOR;
+               return HIW "$N" HIW "ä¸€è²å†·å“¼ï¼Œæ‰‹ä¸­å¹»éˆåŠçŒ¶å¦‚éˆè›‡ä¸€èˆ¬éŠèµ°ä¸å®šï¼ŒéœŽæ™‚ä¸€é“åŠæ°£è‡³åŠå°–æ¿€"
+                      "å°„è€Œå‡ºï¼Œè²«å‘$n" HIW "ï¼\n" NOR;
         }
         return damage_bonus;
 }

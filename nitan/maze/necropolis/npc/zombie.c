@@ -3,11 +3,11 @@
 inherit "/maze/necropolis/necropolis_npc";
 void create()
 {
-        string *names = ({"僵尸"}); 
+        string *names = ({"鍍靛睄"}); 
         set_name( names[random(sizeof(names))], ({ "zombie"}));
         set("vendetta_mark","zombie");
-        set("long", "这是一个腐烂的僵尸。\n");
-        set("title", HIB "(鬼气)" NOR); 
+        set("long", "閫欐槸涓�鍊嬭厫鐖涚殑鍍靛睄銆俓n");
+        set("title", HIB "(楝兼埃)" NOR); 
 
         set("str", 50);
         set("con", 120);
@@ -22,7 +22,7 @@ void create()
         //set("shen_type", -1);        
         //set("chat_chance", 2);
         //set("chat_msg", ({
-        //      "骷髅空洞的眼眶里闪烁着可怕的荧光。\n"
+        //      "楠烽珡绌烘礊鐨勭溂鐪惰！闁冪垗钁楀彲鎬曠殑鐔掑厜銆俓n"
         //}) ); 
 
         //set("chat_chance_combat", 50);
@@ -32,7 +32,7 @@ void create()
 
         set("combat_exp", 100000000);
         set("bellicosity", 5 );
-        set("death_msg",RED"\n$N化作了一滩血水。\n\n"NOR);
+        set("death_msg",RED"\n$N鍖栦綔浜嗕竴鐏樿姘淬�俓n\n"NOR);
         
         set_skill("force", 30);
         set_skill("dodge", 30);

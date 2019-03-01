@@ -5,10 +5,10 @@
 inherit SKILL;
 
 string *dodge_msg = ({
-        "$nÉíÐÎ×óÉÁÓÒ»Î£¬×ËÊÆäìÈ÷Ö®¼«£¬Ò»ÕÐ[·ÉÉý¾ÅÌì]ÇáÇÉµØ¶ã¿ª$NµÄ½ø¹¥¡£\n",
-        "$nÍðÈçÒ»ÂÅÇàÑÌ£¬Æ®ºö²»¶¨£¬ÁîÈË×ÁÄ¥²»¶¨£¬Ò»ÕÐ[Ä§ÉñÎÞÐÎ]ÉÁµ½ÁË$NµÄÉíºó¡£\n",
-        "$n×ËÌ¬ÓÄÑÅÖ®¼«£¬¶ãÉÁÖ®ÖÐË¿ºÁ²»ÏÔÀÇ±·Ö®Ì¬£¬Ò»ÕÐ[ÉÏÌìÈëµØ]±Ü¿ªÁË$NµÄ¹¥»÷¡£\n",
-        "$nÉíÐÎÍ»È»Á¬»ÎÊýÏÂ£¬ÍðÈçÔÆÎíÖÐµÄ»ÃÁé£¬Ò»ÕÐ[¶´³¹¾ÅÓÄ]¶ã¿ªÁË$NµÄ¹¥»÷¡£\n",
+        "$nèº«å½¢å·¦é–ƒå³æ™ƒï¼Œå§¿å‹¢ç€Ÿæ´’ä¹‹æ¥µï¼Œä¸€æ‹›[é£›å‡ä¹å¤©]è¼•å·§åœ°èº²é–‹$Nçš„é€²æ”»ã€‚\n",
+        "$nå®›å¦‚ä¸€å±¢é’ç…™ï¼Œé£„å¿½ä¸å®šï¼Œä»¤äººç¢ç£¨ä¸å®šï¼Œä¸€æ‹›[é­”ç¥žç„¡å½¢]é–ƒåˆ°äº†$Nçš„èº«å¾Œã€‚\n",
+        "$nå§¿æ…‹å¹½é›…ä¹‹æ¥µï¼Œèº²é–ƒä¹‹ä¸­çµ²æ¯«ä¸é¡¯ç‹¼ç‹½ä¹‹æ…‹ï¼Œä¸€æ‹›[ä¸Šå¤©å…¥åœ°]é¿é–‹äº†$Nçš„æ”»æ“Šã€‚\n",
+        "$nèº«å½¢çªç„¶é€£æ™ƒæ•¸ä¸‹ï¼Œå®›å¦‚é›²éœ§ä¸­çš„å¹»éˆï¼Œä¸€æ‹›[æ´žå¾¹ä¹å¹½]èº²é–‹äº†$Nçš„æ”»æ“Šã€‚\n",
 });
 
 int valid_enable(string usage)
@@ -24,8 +24,8 @@ int valid_learn(object me)
         if (lvl > 300) lvl = 300;
 
         if( query("max_neili", me)<3000+lvl*20 )
-                return notify_fail("ÄãÊÔ×Å×ßÁËÁ½²½£¬¶Ù¾õÐØ"
-                                   "¿Ú·³¶ñÖ®¼«£¬¿´À´ÊÇÄÚÁ¦²»¼Ã¡£\n");
+                return notify_fail("ä½ è©¦è‘—èµ°äº†å…©æ­¥ï¼Œé “è¦ºèƒ¸"
+                                   "å£ç…©æƒ¡ä¹‹æ¥µï¼Œçœ‹ä¾†æ˜¯å…§åŠ›ä¸æ¿Ÿã€‚\n");
         return 1;
 }
 
@@ -40,7 +40,7 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
         int ap, dp, mp;
 
         if ((int)me->query_skill("jiutian-xiaoyaobu", 1) < 100 ||
-            query("family/family_name", ob) == "ÉÙÁÖÅÉ" || 
+            query("family/family_name", ob) == "å°‘æž—æ´¾" || 
             ! living(me))
                 return;
 
@@ -53,15 +53,15 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
         {
                 result = ([ "damage": -damage ]);
 
-                result += (["msg" : HIW "$n" HIW "ÉíÐÎÈçÍ¬¹í÷È°ãµØ»Î¶¯ÁË¼¸ÏÂ£¬ÈçÁ÷ÐÇÒ»°ã¶ã¿ªÁË$N"
-                                    HIW "µÄ¹¥»÷¡£\n" NOR]);
+                result += (["msg" : HIW "$n" HIW "èº«å½¢å¦‚åŒé¬¼é­…èˆ¬åœ°æ™ƒå‹•äº†å¹¾ä¸‹ï¼Œå¦‚æµæ˜Ÿä¸€èˆ¬èº²é–‹äº†$N"
+                                    HIW "çš„æ”»æ“Šã€‚\n" NOR]);
 
                 return result;
         } else
         if (mp >= 100)
         {
-                result = HIY "$n" HIY "ÉíÐÎÈçÍ¬¹í÷È°ãµØ»Î¶¯ÁË¼¸ÏÂ£¬¿ÉÊÇ$N"
-                         HIY "·´Ó¦Ææ¿ì£¬ÉíÐÎÒ»ÉÁ£¬À¹×¡ÁË$n" HIY "µÄÈ¥Â·\n" NOR;
+                result = HIY "$n" HIY "èº«å½¢å¦‚åŒé¬¼é­…èˆ¬åœ°æ™ƒå‹•äº†å¹¾ä¸‹ï¼Œå¯æ˜¯$N"
+                         HIY "åæ‡‰å¥‡å¿«ï¼Œèº«å½¢ä¸€é–ƒï¼Œæ””ä½äº†$n" HIY "çš„åŽ»è·¯\n" NOR;
 
                 COMBAT_D->set_bhinfo(result);
         }
@@ -85,10 +85,10 @@ int query_effect_dodge(object attacker, object me)
 int practice_skill(object me)
 {
         if( query("qi", me)<70 )
-                return notify_fail("ÄãµÄÌåÁ¦Ì«²îÁË£¬ÄÑÒÔÁ·Ï°¾ÅÌìåÐÒ£²½¡£\n");
+                return notify_fail("ä½ çš„é«”åŠ›å¤ªå·®äº†ï¼Œé›£ä»¥ç·´ç¿’ä¹å¤©é€é™æ­¥ã€‚\n");
 
         if( query("neili", me)<70 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»ÁË£¬ÎÞ·¨Á·Ï°¾ÅÌìåÐÒ£²½¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ äº†ï¼Œç„¡æ³•ç·´ç¿’ä¹å¤©é€é™æ­¥ã€‚\n");
 
         me->receive_damage("qi", 65);
         addn("neili", -65, me);

@@ -1,5 +1,5 @@
 // Code of ShenZhou
-// wuchang-dan.c ÎÞ³£µ¤
+// wuchang-dan.c ç„¡å¸¸ä¸¹
 
 #include <ansi.h>
 
@@ -9,12 +9,12 @@ int cure_ob(string);
 
 void create()
 {
-        set_name(HIR "ÎÞ³£µ¤" NOR, ({"wuchang dan", "dan"}));
+        set_name(HIR "ç„¡å¸¸ä¸¹" NOR, ({"wuchang dan", "dan"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
-                set("long", "ÕâÊÇÌÒ»¨µºÁÆÉËÊ¥Ò©ÎÞ³£µ¤¡£\n");
+                set("unit", "é¡†");
+                set("long", "é€™æ˜¯æ¡ƒèŠ±å³¶ç™‚å‚·è–è—¥ç„¡å¸¸ä¸¹ã€‚\n");
                 set("value", 5000);
                 set("no_sell", 1);
                 set("medicine", 1);
@@ -27,8 +27,8 @@ int cure_ob(object me)
         if ( (int)this_player()->query_condition("bonze_drug" ) > 0 )
         {
                 addn("neili", -100, this_player());
-                message_vision(HIR "$N³ÔÏÂÒ»¿ÃÎÞ³£µ¤£¬Ö»¾õµÃÍ·ÖØ½ÅÇá£¬»ðÆø·­ÌÚ£¬
-Ô­À´·þÊ³Ì«¶à£¬Ò©Ð§ÊÊµÃÆä·´£¡\n" NOR, this_player());
+                message_vision(HIR "$Nåƒä¸‹ä¸€æ£µç„¡å¸¸ä¸¹ï¼Œåªè¦ºå¾—é ­é‡è…³è¼•ï¼Œç«æ°£ç¿»é¨°ï¼Œ
+åŽŸä¾†æœé£Ÿå¤ªå¤šï¼Œè—¥æ•ˆé©å¾—å…¶åï¼\n" NOR, this_player());
                 this_player()->apply_condition("bonze_drug",
                 this_player()->query_condition("bonze_drug")+10);
                 destruct(this_object());
@@ -36,7 +36,7 @@ int cure_ob(object me)
         set("eff_qi",query("max_qi",  me), me);
 
         message_vision(HIG 
-"$N³ÔÏÂÒ»Á£ÎÞ³£µ¤£¬¶ÙÊ±ÉñÍêÆø×ã£¬¾«Éñ»À·¢\n" NOR, me);
+"$Nåƒä¸‹ä¸€ç²’ç„¡å¸¸ä¸¹ï¼Œé “æ™‚ç¥žå®Œæ°£è¶³ï¼Œç²¾ç¥žç…¥ç™¼\n" NOR, me);
         this_player()->apply_condition("bonze_drug",
                 this_player()->query_condition("bonze_drug")+10);
 

@@ -1,4 +1,4 @@
-// kunlun-qifa.c À¥ÂØÆ÷·¨
+// kunlun-qifa.c æ˜†ä¾–å™¨æ³•
 // Edit By Vin On 13/4/2001
 
 #include <ansi.h>
@@ -10,10 +10,10 @@ int valid_learn(object me)
         object ob;
   
         if (me->query_skill("throwing", 1) < 50)
-                return notify_fail("ÄãµÄ°µÆ÷¼¼ÄÜ²»¹»æµÊì¡£\n");
+                return notify_fail("ä½ çš„æš—å™¨æŠ€èƒ½ä¸å¤ å«»ç†Ÿã€‚\n");
 
         if ((int)me->query_skill("throwing", 1) < (int)me->query_skill("kunlun-qifa", 1))
-                return notify_fail("ÄãµÄ»ù±¾°µÆ÷Ë®Æ½ÓÐÏÞ£¬ÄÑÒÔÁì»á¸ü¾«ÃîµÄÀ¥ÂØÆ÷·¨¡£\n");
+                return notify_fail("ä½ çš„åŸºæœ¬æš—å™¨æ°´å¹³æœ‰é™ï¼Œé›£ä»¥é ˜æœƒæ›´ç²¾å¦™çš„æ˜†ä¾–å™¨æ³•ã€‚\n");
 
         return 1;
 }
@@ -26,10 +26,10 @@ int valid_enable(string usage)
 int practice_skill(object me)
 {
         if( query("qi", me)<80 )
-                return notify_fail("ÄãµÄÆø²»¹»£¬Ã»ÓÐ°ì·¨Á·Ï°À¥ÂØÆ÷·¨¡£\n");
+                return notify_fail("ä½ çš„æ°£ä¸å¤ ï¼Œæ²’æœ‰è¾¦æ³•ç·´ç¿’æ˜†ä¾–å™¨æ³•ã€‚\n");
 
         if( query("neili", me)<60 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬Ã»ÓÐ°ì·¨Á·Ï°À¥ÂØÆ÷·¨¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ï¼Œæ²’æœ‰è¾¦æ³•ç·´ç¿’æ˜†ä¾–å™¨æ³•ã€‚\n");
 
         me->receive_damage("qi", 70);
         addn("neili", -50, me);

@@ -5,13 +5,13 @@ inherit HEAD;
  
 void create()
 {
-        set_name(HIG "½£ÁéÖ®Å­" NOR, ({ "jianling zhinu", "zhinu", }) );
+        set_name(HIG "åŠéˆä¹‹æ€’" NOR, ({ "jianling zhinu", "zhinu", }) );
         set_weight(1);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¶¥");
-                set("long", HIG "ÕâÊÇÓÉºÚê×Ê¯ºÍ½£ÁéµÄÅ­Æø½á¾§¶ø³ÉµÄÍ·¹¿£¬ÕóÕó¹âÃ¢ÁîÈËÉúÎ·¡£\n" NOR);
+                set("unit", "é ‚");
+                set("long", HIG "é€™æ˜¯ç”±é»‘æ›œçŸ³å’ŒåŠéˆçš„æ€’æ°£çµæ™¶è€Œæˆçš„é ­ç®ï¼Œé™£é™£å…‰èŠ’ä»¤äººç”Ÿç•ã€‚\n" NOR);
                 set("value", 1500000);
                 set("armor_prop/dex", 45);
                 set("armor_prop/str", 45);
@@ -19,13 +19,13 @@ void create()
                 set("armor_prop/damage", 4300);
                 set("armor_prop/sword", 200);
                 set("armor_prop/T_jianling", 1);
-                set("special/desc", "¡¾½£ÁéÌ××°¡¿²¿¼şÖ®Ò»£¨½£ÁéÖ®Å­¡¢½£ÁéÖ®ºÛ¡¢½£ÁéÖ®Á¦¡¢½£ÁéÖ®»ê£©¡£\n"
-                                    "                  ¹ØÓÚ½£ÁéÌ××°µÄ´«Ëµ²Î¼û help boss\n"
-                                    "                  ÓĞĞ§½£·¨Ìá¸ß300¼¶¡£\n");
+                set("special/desc", "ã€åŠéˆå¥—è£ã€‘éƒ¨ä»¶ä¹‹ä¸€ï¼ˆåŠéˆä¹‹æ€’ã€åŠéˆä¹‹ç—•ã€åŠéˆä¹‹åŠ›ã€åŠéˆä¹‹é­‚ï¼‰ã€‚\n"
+                                    "                  é—œäºåŠéˆå¥—è£çš„å‚³èªªåƒè¦‹ help boss\n"
+                                    "                  æœ‰æ•ˆåŠæ³•æé«˜300ç´šã€‚\n");
                 set("limit", ([
                          "exp" : 100000000,
                          "thborn" : 1,
-                         "jianling": 1, // equip.cÀïÏŞÖÆ£¬±ØĞëÒªµ÷Õû³É¹¦½£Áé1´Îºó²ÅÄÜ×°±¸
+                         "jianling": 1, // equip.cè£¡é™åˆ¶ï¼Œå¿…é ˆè¦èª¿æ•´æˆåŠŸåŠéˆ1æ¬¡å¾Œæ‰èƒ½è£å‚™
                 ]));
         }
         setup();

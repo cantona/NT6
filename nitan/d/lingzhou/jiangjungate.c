@@ -6,11 +6,11 @@
 inherit ROOM;
 void create()
 {
-        set("short", "´ó½«¾ü¸®");
+        set("short", "å¤§å°‡è»åºœ");
         set("long", @LONG
-ÕâÀïÊÇÕ÷¶«´ó½«¾üºÕÁ¬ÌúÊ÷µÄ¸®µÚ£¬ÔÚ¶«´ó½ÖµÄÕıÖĞ£¬¶ÔÃæ¾ÍÊÇÑÃ
-ÃÅ¡£Ò»É«¸ßéÜ´óÎİ£¬Á½¸öĞ£Î¾¿´ÉÏÈ¥±ëº·æçÓÂ£¬´Ë¿ÌÕıÉñÆø»îÏÖµÄ¿æ×Å
-Íäµ¶ÊØÔÚÃÅÇ°¡£
+é€™è£¡æ˜¯å¾æ±å¤§å°‡è»èµ«é€£éµæ¨¹çš„åºœç¬¬ï¼Œåœ¨æ±å¤§è¡—çš„æ­£ä¸­ï¼Œå°é¢å°±æ˜¯è¡™
+é–€ã€‚ä¸€è‰²é«˜æªå¤§å±‹ï¼Œå…©å€‹æ ¡å°‰çœ‹ä¸Šå»å½ªæ‚é©å‹‡ï¼Œæ­¤åˆ»æ­£ç¥æ°£æ´»ç¾çš„æŒè‘—
+å½åˆ€å®ˆåœ¨é–€å‰ã€‚
 LONG );
         set("exits", ([
                 "north" : __DIR__"dongdajie",
@@ -23,7 +23,7 @@ LONG );
         set("coor/y", 2915);
         set("coor/z", 0);
         setup();
-        create_door("south" , "ÓÍÄ¾´óÃÅ", "north" , DOOR_CLOSED);
+        create_door("south" , "æ²¹æœ¨å¤§é–€", "north" , DOOR_CLOSED);
 }
 
 int valid_leave(object me, string dir)
@@ -37,19 +37,19 @@ int valid_leave(object me, string dir)
 
         if( query("weiwang", me) >= 10000 )
         {
-                message_vision("$NĞ¦µÀ£º¡°" + RANK_D->query_respect(me) +
-                               "£¬Çë½ø£¬Çë½ø£¡Õâ¾ÍÈ¥ÈÃÈËÍ¨±¨¡£¡±\n", wei, me);
+                message_vision("$Nç¬‘é“ï¼šâ€œ" + RANK_D->query_respect(me) +
+                               "ï¼Œè«‹é€²ï¼Œè«‹é€²ï¼é€™å°±å»è®“äººé€šå ±ã€‚â€\n", wei, me);
                 return ::valid_leave(me, dir);
         }
 
         if( query("special_skill/trick", me) )
         {
-                message_vision("$N¿´¼û$n×ßÁË¹ıÀ´£¬¸ÕÏëÀ¹×¡£¬"
-                               "È´Ìı$nÒ»Éù¶ÏºÈ£º¡°É¢¿ª£¡¡±\n"
-                               "²»ÓÉµÃÏÅÁËÒ»Ìø£¬Ú¨Ú¨µÄ²»¸ÒËµ»°¡£\n", wei, me);
+                message_vision("$Nçœ‹è¦‹$nèµ°äº†éä¾†ï¼Œå‰›æƒ³æ””ä½ï¼Œ"
+                               "å»è½$nä¸€è²æ–·å–ï¼šâ€œæ•£é–‹ï¼â€\n"
+                               "ä¸ç”±å¾—åš‡äº†ä¸€è·³ï¼Œè¨•è¨•çš„ä¸æ•¢èªªè©±ã€‚\n", wei, me);
                 return ::valid_leave(me, dir);
         }
 
-        return notify_fail("Ğ£Î¾ÉÏÇ°µ²×¡Äã£¬ÀÊÉùËµµÀ£ºÕâÎ»"  +
-                           RANK_D->query_respect(me) + "Çë»Ø°É¡£ÀÏÒ¯²»¼û¿Í¡£\n");
+        return notify_fail("æ ¡å°‰ä¸Šå‰æ“‹ä½ä½ ï¼Œæœ—è²èªªé“ï¼šé€™ä½"  +
+                           RANK_D->query_respect(me) + "è«‹å›å§ã€‚è€çˆºä¸è¦‹å®¢ã€‚\n");
 }

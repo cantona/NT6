@@ -1,10 +1,10 @@
 inherit NPC;
 void create()
 {
-        set_name("ËÕÂ³¿Ë", ({ "suluke", "su"}));
-        set("gender", "ÄĞĞÔ");
+        set_name("è˜‡é­¯å…‹", ({ "suluke", "su"}));
+        set("gender", "ç”·æ€§");
         set("age", 45);
-        set("long", "Ëû¾ÍÊÇ¹şÈø¿ËµÚÒ»ÓÂÊ¿ËÕÂ³¿Ë¡£\n");
+        set("long", "ä»–å°±æ˜¯å“ˆè–©å…‹ç¬¬ä¸€å‹‡å£«è˜‡é­¯å…‹ã€‚\n");
         set("attitude", "heroism");
         set("combat_exp", 110000);
         set("shen", 1100);

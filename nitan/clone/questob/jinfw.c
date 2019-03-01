@@ -4,14 +4,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name("½ğ·¹Íë", ({ "jin fanwan", "fanwan" }));
+        set_name("é‡‘é£¯ç¢—", ({ "jin fanwan", "fanwan" }));
         set_weight(1600);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
-                set("no_sell", "Õâ...ÕâÊÇÊ²Ã´¶«Î÷£¿ÎÒ¿É²»¸ÒÒª¡£\n");
-                set("long", "»Æ½ğ´òÔìµÄ·¹Íë£¬³ÁÖØÖ®¼«£¬ÉÏÃæ»¹¿Ì×Å¼¸¸ö×Ö¡£\n");
+                set("unit", "å€‹");
+                set("no_sell", "é€™...é€™æ˜¯ä»€éº¼æ±è¥¿ï¼Ÿæˆ‘å¯ä¸æ•¢è¦ã€‚\n");
+                set("long", "é»ƒé‡‘æ‰“é€ çš„é£¯ç¢—ï¼Œæ²‰é‡ä¹‹æ¥µï¼Œä¸Šé¢é‚„åˆ»è‘—å¹¾å€‹å­—ã€‚\n");
                 set("value", 1);
                 set("material", "gold");
         }

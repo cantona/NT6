@@ -6,10 +6,10 @@ inherit F_AUTOLOAD;
 
 void create()
 {
-        set_name(HIC"Ä§·¨Ê¦ÅÛ"NOR, ({ "magic robe", "robe" }) );
-        set("long", HIC"ÕâÊÇÒ»¼ş¹Å¹ÖµÄ³¤ÅÛ£¬ÎŞÂÛË­ÅûÉÏËü¶¼»áÓĞÒ»ÖÖÉñÆæµÄÄ§Á¦¸½Éí¡£\n"NOR);
+        set_name(HIC"é­”æ³•å¸«è¢"NOR, ({ "magic robe", "robe" }) );
+        set("long", HIC"é€™æ˜¯ä¸€ä»¶å¤æ€ªçš„é•·è¢ï¼Œç„¡è«–èª°æŠ«ä¸Šå®ƒéƒ½æœƒæœ‰ä¸€ç¨®ç¥å¥‡çš„é­”åŠ›é™„èº«ã€‚\n"NOR);
         set_weight(3000);
-        set("unit", "¼ş");
+        set("unit", "ä»¶");
         set("value", 25000000);
         set("material", "cloth");
         set("armor_prop/armor", 600);

@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ľ��");
+        set("short", "木筏");
         set("long", @LONG
-��ľ���ǵ��ϲ����ľ���ͣ�������Φ��Φ����Щľ�������ں�
-��֮�أ�ľ�����ܣ�Ӳ����ʯ�������ͷ�������������Ƥ����֯����
-�ᡣ����ˮ���⣬������ˮ��Ƥ�����Ѿ߱���
+此木筏是島上參天古木紮就，豎立主桅副桅，這些木材因生于寒
+冰之地，木質致密，硬如鐵石。帆布和帆索都用樹筋獸皮來編織、搓
+結。筏上水腌肉，存貯清水的皮袋皆已具備。
 LONG );
         set("no_sleep_room",1);
         set("outdoors", "binghuo");

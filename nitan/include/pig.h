@@ -1,4 +1,4 @@
-// pig.h ¹°ÖíÖ§³Ö
+// pig.h æ‹±è±¬æ”¯æŒ
 // Written by Xiang Tu <tu@uwalpha.uwinnipeg.ca>
 
 #ifndef _PIG_H

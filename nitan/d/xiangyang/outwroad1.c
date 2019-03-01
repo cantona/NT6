@@ -4,13 +4,13 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÇàÊ¯´óµÀ");
+        set("short", "é’çŸ³å¤§é“");
         set("long", @LONG
-Äã×ßÔÚÒ»ÌõÇàÊ¯´óµÀÉÏ£¬ÈËÀ´ÈËÍù·Ç³£·±Ã¦£¬²»Ê±ÓÐÈËÆï×ÅÂí´Ò
-´Ò¶ø¹ý¡£´óµÀ¶«±ßÍ¨ÏòÏåÑô³Ç£¬ÄÏÃæÒ»ÌõÐ¡Â·Í¨ÏòÒ»¸öÉ½Çð£¬Î÷±ßÊÇ
-Ò»ÌõÐ¡ºÓ¡£
+ä½ èµ°åœ¨ä¸€æ¢é’çŸ³å¤§é“ä¸Šï¼Œäººä¾†äººå¾€éžå¸¸ç¹å¿™ï¼Œä¸æ™‚æœ‰äººé¨Žè‘—é¦¬åŒ†
+åŒ†è€ŒéŽã€‚å¤§é“æ±é‚Šé€šå‘è¥„é™½åŸŽï¼Œå—é¢ä¸€æ¢å°è·¯é€šå‘ä¸€å€‹å±±ä¸˜ï¼Œè¥¿é‚Šæ˜¯
+ä¸€æ¢å°æ²³ã€‚
 LONG );
-        set("outdoors", "ÏåÑô");
+        set("outdoors", "è¥„é™½");
 
         set("exits", ([
               "southeast" : __DIR__"westgate1",

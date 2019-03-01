@@ -1,21 +1,21 @@
-//help.c,¾ßÓĞ²¿·ÖbbsºÍ³¬Ç¿µÄÎÄ¼şÁ´½Ó¹¦ÄÜ
-//created by hyee£¬¿´µ½HostµÄhelpÏµÍ³ÊÜµ½Æô·¢
-//²»Í¬µÄmudlibÇë×¢ÒâĞŞÕıdefineµÄÄ¿Â¼ºÍvalid_write()
+//help.c,å…·æœ‰éƒ¨åˆ†bbså’Œè¶…å¼·çš„æ–‡ä»¶éˆæ¥åŠŸèƒ½
+//created by hyeeï¼Œçœ‹åˆ°Hostçš„helpç³»çµ±å—åˆ°å•Ÿç™¼
+//ä¸åŒçš„mudlibè«‹æ³¨æ„ä¿®æ­£defineçš„ç›®éŒ„å’Œvalid_write()
 //2001.1.30 change by xkiller@ldj.ciom
 #include <mudlib.h>
 #include <ansi.h>
 #include <login.h>
-/*¶¨ÒåÆäËûÎÄµµµÄËùÔÚÄ¿Â¼*/
+/*å®šç¾©å…¶ä»–æ–‡æª”çš„æ‰€åœ¨ç›®éŒ„*/
 #define DIR "/help/"
-/*¶¨Òå±¾ÎÄ¼şµÄ´æµµËùÔÚµÄÄ¿Â¼*/
+/*å®šç¾©æœ¬æ–‡ä»¶çš„å­˜æª”æ‰€åœ¨çš„ç›®éŒ„*/
 #define POST DIR"mudbbs.o"
-/*¶¨ÒåÍæ¼ÒregisterÎÄ¼şËùÔÚÄ¿Â¼*/
+/*å®šç¾©ç©å®¶registeræ–‡ä»¶æ‰€åœ¨ç›®éŒ„*/
 #define REGISTER DIR+"register/"
-/*¶¨Òå¸÷ÖÖÁôÑÔ°åËùÔÚÄ¿Â¼*/
+/*å®šç¾©å„ç¨®ç•™è¨€æ¿æ‰€åœ¨ç›®éŒ„*/
 #define BOARD "/clone/board/"
-/*boardµÄÖ÷´æÎÄ¼ş*/
+/*boardçš„ä¸»å­˜æ–‡ä»¶*/
 #define BOARDCENTER BOARD+"center.h"
-/*¶¨ÒåÄÜ¶Ô±¾ÏµÍ³½øĞĞĞŞ¸ÄµÄÎ×Ê¦µÈ¼¶*/
+/*å®šç¾©èƒ½å°æœ¬ç³»çµ±é€²è¡Œä¿®æ”¹çš„å·«å¸«ç­‰ç´š*/
 #define WIZLEVEL "(wizard)"
 inherit ITEM;
 inherit F_SAVE;
@@ -59,7 +59,7 @@ string query_save_file()
 void create()
 {
         seteuid(getuid());
-        set("name","ÄàÌ¶¡¤½­ºşÂÛÌ³");
+        set("name","æ³¥æ½­ï¹’æ±Ÿæ¹–è«–å£‡");
         mkdir(DIR);
         mkdir(REGISTER);
         restore();
@@ -81,7 +81,7 @@ int main(object me, string arg)
         seteuid(getuid());
         set_temp("help", 1, me);
         m_display();
-        write(YEL"Äã½«ÒªÑ¡Ôñ£º"NOR);
+        write(YEL"ä½ å°‡è¦é¸æ“‡ï¼š"NOR);
         input_to((:confirm_main_choice:),this_player());
         return 1;
 }
@@ -93,23 +93,23 @@ void view_main()
      me = this_player();
      select=query_temp("select", me);
      write(CLR"\n");
-     if(select== "main") name = "Ö÷Ñ¡µ¥";
-     else if( select== "intro") name = "ÓÎÏ·¸Å¿ö";
-     else if( select== "news") name = "ÄàÌ¶ĞÂÎÅ";
-     else if( select== "map") name = "ÄàÌ¶µØÍ¼";
-     else if( select== "family" ) name="ÃÅÅÉ½éÉÜ";
-     else if( select== "skills" ) name="Îä¹¦½éÉÜ";
-     else if( select== "user") name = "¸öÈËÉè¶¨";
-     else if( select== "board") name = "ÂÛÌ³¾«»ª";
-     else if( select== "post") name = "¹àË®ÌìµØ";
-     else if( select== "other" ) name="ÆäËûÄÚÈİ";
-     else if( select== "xyz" ) name="ºÃºÃÑ§Ï°";
-     write(HIY"·ÖÀàÑ¡µ¥"HIC"                     ¡¾"HIY+MUD_NAME+HIC"½­ºşÂÛÌ³¡¿            "HIY"Ñ¡µ¥["+select+"]\n"NOR);
-     write("Ä¿Ç°Ñ¡Ôñ£º[ "+HIG+name+NOR+" ]\n");
-     write(HIR"¡õ£­£­£­£­£­£­£­£­£­£­£­£­£­£­©È ¹«¸æ°æ ©À£­£­£­£­£­£­£­£­£­£­£­£­£­£­¡õ\n"NOR);
+     if(select== "main") name = "ä¸»é¸å–®";
+     else if( select== "intro") name = "éŠæˆ²æ¦‚æ³";
+     else if( select== "news") name = "æ³¥æ½­æ–°è";
+     else if( select== "map") name = "æ³¥æ½­åœ°åœ–";
+     else if( select== "family" ) name="é–€æ´¾ä»‹ç´¹";
+     else if( select== "skills" ) name="æ­¦åŠŸä»‹ç´¹";
+     else if( select== "user") name = "å€‹äººè¨­å®š";
+     else if( select== "board") name = "è«–å£‡ç²¾è¯";
+     else if( select== "post") name = "çŒæ°´å¤©åœ°";
+     else if( select== "other" ) name="å…¶ä»–å…§å®¹";
+     else if( select== "xyz" ) name="å¥½å¥½å­¸ç¿’";
+     write(HIY"åˆ†é¡é¸å–®"HIC"                     ã€"HIY+MUD_NAME+HIC"æ±Ÿæ¹–è«–å£‡ã€‘            "HIY"é¸å–®["+select+"]\n"NOR);
+     write("ç›®å‰é¸æ“‡ï¼š[ "+HIG+name+NOR+" ]\n");
+     write(HIR"â–¡ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼â”¤ å…¬å‘Šç‰ˆ â”œï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼â–¡\n"NOR);
      auto_load();
-     write(HIR"¡õ£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­¡õ\n"NOR);
-     write(CYN"                       ¡¾ÇëÄúÊ¹ÓÃÊ××ÖÄ¸Ñ¡Ôñ½øÈë¡¿\n"NOR);
+     write(HIR"â–¡ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼â–¡\n"NOR);
+     write(CYN"                       ã€è«‹æ‚¨ä½¿ç”¨é¦–å­—æ¯é¸æ“‡é€²å…¥ã€‘\n"NOR);
 }
 void view_main_1()
 {
@@ -124,7 +124,7 @@ void view_main_1()
        }
      if (!wizardp(this_player())) ppl_cnt = ppl_cnt - wiz_cnt;
      write(HIY"_.-*```*-.__.-*```*-.__.-*```*-.__.-*```*-.__.-*```*-.__.-*```*-.__.-*\n"NOR);
-     write(YEL"ÏÖÔÚÊ±¼ä:["CYN""+ctime(time())+""YEL"]    ÔÚÏßÍæ¼Ò£º["CYN""+ppl_cnt+""YEL"]  Ä¿Ç°È¨ÏŞ:["CYN""+wizhood(this_player())+""YEL"]\n"NOR,);
+     write(YEL"ç¾åœ¨æ™‚é–“:["CYN""+ctime(time())+""YEL"]    åœ¨ç·šç©å®¶ï¼š["CYN""+ppl_cnt+""YEL"]  ç›®å‰æ¬Šé™:["CYN""+wizhood(this_player())+""YEL"]\n"NOR,);
 }
 void view_main_k()
 {
@@ -133,36 +133,36 @@ void view_main_k()
      me = this_player();
      select=query_temp("select", me);
      write(CLR"\n");
-     if(select== "main") name = "Ö÷Ñ¡µ¥";
-     else if( select== "intro") name = "ÓÎÏ·¸Å¿ö";
-     else if( select== "news") name = "ÄàÌ¶ĞÂÎÅ";
-     else if( select== "map") name = "ÄàÌ¶µØÍ¼";
-     else if( select== "family" ) name="ÃÅÅÉ½éÉÜ";
-     else if( select== "skills" ) name="Îä¹¦½éÉÜ";
-     else if( select== "user") name = "¸öÈËÉè¶¨";
-     else if( select== "board") name = "ÂÛÌ³¾«»ª";
-     else if( select== "post") name = "¹àË®ÌìµØ";
-     else if( select== "other" ) name="ÆäËûÄÚÈİ";
-     else if( select== "xyz" ) name="ºÃºÃÑ§Ï°";
-     write(YEL"·ÖÀàÑ¡µ¥"WHT"                         ¡¾"+MUD_NAME+"¡¿                  "YEL"Ñ¡µ¥["+select+"]\n"NOR);
-     write("Ä¿Ç°Ñ¡Ôñ£º[ "+HIG+name+NOR+" ]\n");
-     write(RED"¡õ£­£­£­£­£­£­£­£­£­£­£­£­£­£­©È ¹«¸æ°æ ©À£­£­£­£­£­£­£­£­£­£­£­£­£­£­¡õ\n"NOR);
+     if(select== "main") name = "ä¸»é¸å–®";
+     else if( select== "intro") name = "éŠæˆ²æ¦‚æ³";
+     else if( select== "news") name = "æ³¥æ½­æ–°è";
+     else if( select== "map") name = "æ³¥æ½­åœ°åœ–";
+     else if( select== "family" ) name="é–€æ´¾ä»‹ç´¹";
+     else if( select== "skills" ) name="æ­¦åŠŸä»‹ç´¹";
+     else if( select== "user") name = "å€‹äººè¨­å®š";
+     else if( select== "board") name = "è«–å£‡ç²¾è¯";
+     else if( select== "post") name = "çŒæ°´å¤©åœ°";
+     else if( select== "other" ) name="å…¶ä»–å…§å®¹";
+     else if( select== "xyz" ) name="å¥½å¥½å­¸ç¿’";
+     write(YEL"åˆ†é¡é¸å–®"WHT"                         ã€"+MUD_NAME+"ã€‘                  "YEL"é¸å–®["+select+"]\n"NOR);
+     write("ç›®å‰é¸æ“‡ï¼š[ "+HIG+name+NOR+" ]\n");
+     write(RED"â–¡ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼â”¤ å…¬å‘Šç‰ˆ â”œï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼â–¡\n"NOR);
 }
 void m_display()
  {
      set_temp("select", "main", this_player());
      view_main();
-     write("                        "BRED+HIG"(I)"NOR"ntro   ¡¼  ÓÎÏ·¸Å¿ö  ¡½\n");
-     write("                        "BRED+HIG"(M)"NOR"ap     ¡¼  ÄàÌ¶µØÍ¼  ¡½\n");
-     write("                        "BRED+HIG"(F)"NOR"amily  ¡¼  ÃÅÅÉ½éÉÜ  ¡½\n");
-//     write("                        "BRED+HIG"(S)"NOR"kills  ¡¼  Îä¹¦½éÉÜ  ¡½\n");
-     write("                        "BRED+HIG"(N)"NOR"ews    ¡¼  ÄàÌ¶ĞÂÎÅ  ¡½\n");
-     write("                        "BRED+HIG"(O)"NOR"ther   ¡¼  ÆäËûÄÚÈİ  ¡½\n");
-     write("                        "BRED+HIG"(B)"NOR"oard   ¡¼  ÂÛÌ³¾«»ª  ¡½\n");
-     write("                        "BRED+HIG"(X)"NOR"yz     ¡¼  ºÃºÃÑ§Ï°  ¡½\n");
-     write("                        "BRED+HIG"(P)"NOR"ost    ¡¼  ¹àË®ÌìµØ  ¡½\n");
-     write("                        "BRED+HIG"(U)"NOR"ser    ¡¼  ¸öÈËÉè¶¨  ¡½\n");
-     write("                        "BRED+HIG"(G)"NOR"oodbye ¡¾  "HIM"»Øµ½½­ºş"NOR"  ¡¿\n");
+     write("                        "BRED+HIG"(I)"NOR"ntro   â–¡  éŠæˆ²æ¦‚æ³  â–¡\n");
+     write("                        "BRED+HIG"(M)"NOR"ap     â–¡  æ³¥æ½­åœ°åœ–  â–¡\n");
+     write("                        "BRED+HIG"(F)"NOR"amily  â–¡  é–€æ´¾ä»‹ç´¹  â–¡\n");
+//     write("                        "BRED+HIG"(S)"NOR"kills  â–¡  æ­¦åŠŸä»‹ç´¹  â–¡\n");
+     write("                        "BRED+HIG"(N)"NOR"ews    â–¡  æ³¥æ½­æ–°è  â–¡\n");
+     write("                        "BRED+HIG"(O)"NOR"ther   â–¡  å…¶ä»–å…§å®¹  â–¡\n");
+     write("                        "BRED+HIG"(B)"NOR"oard   â–¡  è«–å£‡ç²¾è¯  â–¡\n");
+     write("                        "BRED+HIG"(X)"NOR"yz     â–¡  å¥½å¥½å­¸ç¿’  â–¡\n");
+     write("                        "BRED+HIG"(P)"NOR"ost    â–¡  çŒæ°´å¤©åœ°  â–¡\n");
+     write("                        "BRED+HIG"(U)"NOR"ser    â–¡  å€‹äººè¨­å®š  â–¡\n");
+     write("                        "BRED+HIG"(G)"NOR"oodbye ã€  "HIM"å›åˆ°æ±Ÿæ¹–"NOR"  ã€‘\n");
      view_main_1();
 }
 
@@ -184,10 +184,10 @@ int message1()
       int i;
       me = this_player();
       i=query("combat/MKS", me)+query("combat/PKS", me);
-      write(HIM"      Ç×°®µÄ"HIR+me->name()+HIM"°¡, ÄúÔÚ¡¾ÄàÌ¶¡¿µÄ½­ºşÖĞÒÑ¾­ÃşÅÀ¹ö´òÁË"+age_string(query("mud_age",me))+"Ò®!!\n");
-      write(HIM"ÔÚÄúÔÚ±¾Äà°ÍµÄ·Ö·ÖÃëÃëÖĞ,ÄúÒÑ¾­ÀÛ»ıÁË"+chinese_number(query("combat_exp", me))+"µãµÄ½­ºş¾­Ñé\n");
-      write(HIM"      ¹²»÷µ¹"+chinese_number(i)+"¸ö¶ÔÊÖ\n");
-      write(CYN"                        ¼ÓÓÍà¸!!addoil!! \n");
+      write(HIM"      è¦ªæ„›çš„"HIR+me->name()+HIM"å•Š, æ‚¨åœ¨ã€æ³¥æ½­ã€‘çš„æ±Ÿæ¹–ä¸­å·²ç¶“æ‘¸çˆ¬æ»¾æ‰“äº†"+age_string(query("mud_age",me))+"è€¶!!\n");
+      write(HIM"åœ¨æ‚¨åœ¨æœ¬æ³¥å·´çš„åˆ†åˆ†ç§’ç§’ä¸­,æ‚¨å·²ç¶“ç´¯ç©äº†"+chinese_number(query("combat_exp", me))+"é»çš„æ±Ÿæ¹–ç¶“é©—\n");
+      write(HIM"      å…±æ“Šå€’"+chinese_number(i)+"å€‹å°æ‰‹\n");
+      write(CYN"                        åŠ æ²¹å–”!!addoil!! \n");
 }
 string age_string(int time)
 {
@@ -200,16 +200,16 @@ string age_string(int time)
         time /= 24;
         day = time % 30;
         month = time / 30;
-        return (month?month + "ÔÂ":"") + (day?day + "Ìì":"") +
-        (hour?hour + "Ğ¡Ê±":"") + min + "·Ö";
+        return (month?month + "æœˆ":"") + (day?day + "å¤©":"") +
+        (hour?hour + "å°æ™‚":"") + min + "åˆ†";
 }
 
 int message()
 {
- write(WHT"   ¡ñ    £¨ ¡ñ £©  £¨¡ñ£©      ¡ñ£©     ¡ñ     £¨¡ñ£©   ¡õ¡ñ¡õ   £¨¡ñ\n"NOR);
- write(WHT" £¼£ü£¾   ©¸£ü©¼    £¨£¨£¨   £¨£ü     £¨£ü£©   ¡¡£ü£©     £ü      £¨¡õ\n"NOR);
- write(WHT"  £¯£Ü    £¼  ¡õ   £¨         £¯ £©    £¨¡õ     £¨ £Ü   ¡õ  ¡õ    £¼£©£©\n"NOR);
- write(HIC""HIR+this_player()->name()+HIC",Ç§Íò±ğÍÚÄàÌ«¾Ãà¶£¬×¢ÒâÀÍÒİ½áºÏ¡£Âõ²½ÈçÓ¤Ö®¾¼È»£¬ĞîÊÆÈçÈÕÖ®³õÉı¡£\n"NOR);
+ write(WHT"   â—    ï¼ˆ â— ï¼‰  ï¼ˆâ—ï¼‰      â—ï¼‰     â—     ï¼ˆâ—ï¼‰   â–¡â—â–¡   ï¼ˆâ—\n"NOR);
+ write(WHT" ï¼œï½œï¼   â””ï½œâ”˜    ï¼ˆï¼ˆï¼ˆ   ï¼ˆï½œ     ï¼ˆï½œï¼‰   ã€€ï½œï¼‰     ï½œ      ï¼ˆâ–¡\n"NOR);
+ write(WHT"  ï¼ï¼¼    ï¼œ  â–¡   ï¼ˆ         ï¼ ï¼‰    ï¼ˆâ–¡     ï¼ˆ ï¼¼   â–¡  â–¡    ï¼œï¼‰ï¼‰\n"NOR);
+ write(HIC""HIR+this_player()->name()+HIC",åƒè¬åˆ¥æŒ–æ³¥å¤ªä¹…å˜ï¼Œæ³¨æ„å‹é€¸çµåˆã€‚é‚æ­¥å¦‚å¬°ä¹‹ç‚¯ç„¶ï¼Œè“„å‹¢å¦‚æ—¥ä¹‹åˆå‡ã€‚\n"NOR);
 }
 
 int wizlist()
@@ -255,11 +255,11 @@ int wizlist()
                         break;
             }
         }
-        write(HIG"           ¡¾ ÏÉ£ ÈË ¡¿: "NOR+str1+"\n");
-        write(HIB"           ¡¾ Ñ§£ Í½ ¡¿: "NOR+str2+"\n");
-        write(HIC"           ¡¾ Î×£ Ê¦ ¡¿: "NOR+str3+"\n");
-        write(HIY"           ¡¾ ´óÎ×Ê¦ ¡¿: "NOR+str4+"\n");
-        write(HIW"           ¡¾ Ìì£ Éñ ¡¿: "NOR+str5+"\n");
+        write(HIG"           ã€ ä»™â–¡äºº ã€‘: "NOR+str1+"\n");
+        write(HIB"           ã€ å­¸â–¡å¾’ ã€‘: "NOR+str2+"\n");
+        write(HIC"           ã€ å·«â–¡å¸« ã€‘: "NOR+str3+"\n");
+        write(HIY"           ã€ å¤§å·«å¸« ã€‘: "NOR+str4+"\n");
+        write(HIW"           ã€ å¤©â–¡ç¥ ã€‘: "NOR+str5+"\n");
 }
 
 protected void confirm_main_choice(string arg)
@@ -325,7 +325,7 @@ protected void confirm_main_choice(string arg)
                      case 'U':
                      set_temp("select", "user", this_player());
                      u_display();
-                     write(YEL"\rÇëÊäÈëÄúµÄÑ¡Ôñ:"NOR);
+                     write(YEL"\rè«‹è¼¸å…¥æ‚¨çš„é¸æ“‡:"NOR);
                      input_to((:confirm_u_choice:),this_player());
                      return;
                      break;
@@ -335,16 +335,16 @@ protected void confirm_main_choice(string arg)
                      return;
         }
         m_display();
-        write(YEL"ÇëÊäÈëÄúµÄÑ¡Ôñ:"NOR);
+        write(YEL"è«‹è¼¸å…¥æ‚¨çš„é¸æ“‡:"NOR);
         input_to((:confirm_main_choice:),this_player());
           return;
 }
-/*ÁôÑÔ°å³ÌĞò*/
+/*ç•™è¨€æ¿ç¨‹åº*/
 void view1()
 {
-        write(CYN"  (P)"NOR"·¢±í "CYN"(D)"NOR"É¾³ı "CYN"(U)"NOR"ÉÏ·­ "CYN"(O)"NOR"ÏÂ·­"
-        CYN" (B)"NOR"·µ»Ø "CYN"(E)"NOR"¶ÁÈ¡ "CYN"(K)"NOR"ÉÏÒÆ "CYN"(J)"NOR"ÏÂÒÆ\n");
-        write(RED"¡õ£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­¡õ\n"NOR);
+        write(CYN"  (P)"NOR"ç™¼è¡¨ "CYN"(D)"NOR"åˆªé™¤ "CYN"(U)"NOR"ä¸Šç¿» "CYN"(O)"NOR"ä¸‹ç¿»"
+        CYN" (B)"NOR"è¿”å› "CYN"(E)"NOR"è®€å– "CYN"(K)"NOR"ä¸Šç§» "CYN"(J)"NOR"ä¸‹ç§»\n");
+        write(RED"â–¡ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼â–¡\n"NOR);
         return;
 }
 string view_msg(int flag,object ob)
@@ -356,7 +356,7 @@ string view_msg(int flag,object ob)
         int i,k,b,f;
         file="";
         k=sizeof(notes)-1;
-        if(!sizeof(notes)) return "Ä¿Ç°Ã»ÓĞÈÎºÎÁôÑÔ¡£\n";
+        if(!sizeof(notes)) return "ç›®å‰æ²’æœ‰ä»»ä½•ç•™è¨€ã€‚\n";
         if(flag<0) flag=k;
         if(flag>k) flag=0;
         set(memer, flag, me);
@@ -393,7 +393,7 @@ protected void confirm_p_choice(string arg,object ob)
                         if( time()-query("postover", this_player())<900 && 
                             !wizardp(this_player(1)))
                         {
-                                write("ÄãÒÑ¾­ÔÚ²»¾ÃÇ°ÁôÑÔÁË£¬ÇëÉÔµÈÒ»»á²Å¼ÌĞøÁôÑÔ¡£\n");
+                                write("ä½ å·²ç¶“åœ¨ä¸ä¹…å‰ç•™è¨€äº†ï¼Œè«‹ç¨ç­‰ä¸€æœƒæ‰ç¹¼çºŒç•™è¨€ã€‚\n");
                                 display(ob);
                                 return;
                         }
@@ -445,13 +445,13 @@ protected void confirm_p_choice(string arg,object ob)
                         notes=query("notes", ob);
                         if( !pointerp(notes) || !sizeof(notes) )
                         {
-                                write("ÁôÑÔ°åÉÏÄ¿Ç°Ã»ÓĞÈÎºÎÁôÑÔ¡£\n");
+                                write("ç•™è¨€æ¿ä¸Šç›®å‰æ²’æœ‰ä»»ä½•ç•™è¨€ã€‚\n");
                                 display(ob);
                                 return;
                         }
                         if(  num+1 > sizeof(notes) )
                         {
-                                write("Ã»ÓĞÕâÕÅÁôÑÔ¡£\n");
+                                write("æ²’æœ‰é€™å¼µç•™è¨€ã€‚\n");
                                 display(ob);
                                 return;
                         }
@@ -467,8 +467,8 @@ protected void confirm_p_choice(string arg,object ob)
 }
 int edi(function callback)
 {
-        write(CYN"    ÊéĞ´½áÊøÓÃ'.'£¬È¡ÏûÊäÈëÓÃ '^q'£¬Ê¹ÓÃÄÚ½¨ÁĞ±à¼­Æ÷ÓÃ '^e'¡£\n"NOR);
-        write(GRN"©¤©¤©¤£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­©¤\n©¦"NOR);
+        write(CYN"    æ›¸å¯«çµæŸç”¨'.'ï¼Œå–æ¶ˆè¼¸å…¥ç”¨ '^q'ï¼Œä½¿ç”¨å…§å»ºåˆ—ç·¨è¼¯å™¨ç”¨ '^e'ã€‚\n"NOR);
+        write(GRN"â”€â”€â”€ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼â”€\nâ”‚"NOR);
         input_to("input_lines", "", callback);
         return 1;
 }
@@ -476,18 +476,18 @@ int edi(function callback)
 void input_lines(string line, string text, function callback)
 {
         if( line=="." ) {
-                write(GRN"©¤©¤©¤£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­©¤\n"NOR);
+                write(GRN"â”€â”€â”€ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼â”€\n"NOR);
                 (*callback)(text);
                 return;
         } else if( line=="^q" ) {
-                write("ÊäÈëÈ¡Ïû¡£\n");
+                write("è¼¸å…¥å–æ¶ˆã€‚\n");
                 main(this_player(),0);
         } else if( line=="^e" ) {
         } else  {
                 line=replace_string(line,";",";\n");
                 text += line + "\n";
         }
-        write(GRN"©¦"NOR);
+        write(GRN"â”‚"NOR);
         input_to("input_lines", text, callback);
 }
 void done_post(mapping note,object ob,string text)
@@ -495,7 +495,7 @@ void done_post(mapping note,object ob,string text)
         mapping *notes;
         if(strlen(text)<20)
         {
-                write(CYN"±¾ÎÄ±»ÈÏÎªÊÇ¹àË®ÎÄÕÂ£¬²»Óè·¢±í¡£\n"NOR);
+                write(CYN"æœ¬æ–‡è¢«èªç‚ºæ˜¯çŒæ°´æ–‡ç« ï¼Œä¸äºˆç™¼è¡¨ã€‚\n"NOR);
                 display(ob);
                 return;
         }
@@ -507,7 +507,7 @@ void done_post(mapping note,object ob,string text)
         else
                 notes += ({ note });
         set("notes", notes, ob);
-        write("ÁôÑÔÍê±Ï¡£\n");
+        write("ç•™è¨€å®Œç•¢ã€‚\n");
         ob->save();
         set("postover", time(), this_player());
         display(ob);
@@ -518,7 +518,7 @@ int do_post(string arg,object ob)
         mapping note;
         if(!arg||arg=="")
         {
-                write(YEL"\nÇëÖ¸¶¨Ò»¸ö±êÌâ:"NOR"(¡°Q¡±¼üÈ¡Ïû)");
+                write(YEL"\nè«‹æŒ‡å®šä¸€å€‹æ¨™é¡Œ:"NOR"(â€œQâ€éµå–æ¶ˆ)");
                 input_to((:do_post:),ob);
                 return 1;
         }
@@ -546,14 +546,14 @@ void do_discard(object ob)
 
         if( !arrayp(notes) ||!sizeof(notes)||num < 1 || num > sizeof(notes))
         {
-                write("Ã»ÓĞÕâÕÅÁôÑÔ¡£\n");
+                write("æ²’æœ‰é€™å¼µç•™è¨€ã€‚\n");
                 return;
         }
         num--;
         if( notes[num]["authorid"] != query("id", this_player(1) )
         &&      wiz_level(this_player(1)) < wiz_level(WIZLEVEL))
         {
-                write("Õâ¸öÁôÑÔ²»ÊÇÄãĞ´µÄ¡£\n");
+                write("é€™å€‹ç•™è¨€ä¸æ˜¯ä½ å¯«çš„ã€‚\n");
                 return;
         }
         if(num == 0)
@@ -562,18 +562,18 @@ void do_discard(object ob)
                 notes = notes[0..num-1] + notes[num+1..sizeof(notes)-1];
         set("notes", notes, ob);
         ob->save();
-        write("É¾³ıµÚ " + (num+1) + " ºÅÁôÑÔ....Ok¡£\n");
+        write("åˆªé™¤ç¬¬ " + (num+1) + " è™Ÿç•™è¨€....Okã€‚\n");
         return;
 }
 varargs void view2(int line,string *text,object ob,int i)
 {
         int w=line;
         if(i) w=w+17;
-        write( YEL"£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­\n"NOR);
-             printf("   ×ÜĞĞÊı:"HIR+"%5d "NOR+"ÒÑÔÄ¶ÁĞĞÊı:"HIC+"%5d "+NOR CYN"(T"NOR"x"CYN")"NOR"·­µ½xĞĞ "CYN"(U)"NOR"ÏòÉÏ "
-             CYN"(D)"NOR"ÏòÏÂ "CYN"(R)"NOR"ÍË³ö "CYN"(B)"NOR"·µ»Ø  \n",sizeof(text),w);
-             write( YEL"£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­\n"NOR);
-             write(YEL"ÄúµÄÑ¡Ôñ£º"NOR);
+        write( YEL"ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼\n"NOR);
+             printf("   ç¸½è¡Œæ•¸:"HIR+"%5d "NOR+"å·²é–±è®€è¡Œæ•¸:"HIC+"%5d "+NOR CYN"(T"NOR"x"CYN")"NOR"ç¿»åˆ°xè¡Œ "CYN"(U)"NOR"å‘ä¸Š "
+             CYN"(D)"NOR"å‘ä¸‹ "CYN"(R)"NOR"é€€å‡º "CYN"(B)"NOR"è¿”å›  \n",sizeof(text),w);
+             write( YEL"ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼\n"NOR);
+             write(YEL"æ‚¨çš„é¸æ“‡ï¼š"NOR);
              input_to((:do_more:),text,line,ob);
              return;
 }
@@ -604,7 +604,7 @@ void do_more(string cmd,string *text,int line,object ob)
         switch(cmd) {
         case "d":
              case "D":
-        //xkillerÔö¼Ó:±¾À´ÆÁÄ»¾ÍĞ¡»¹±»Õ¼ÓÃÄÇÃ´¶à,---ºÇºÇ(Ôö¼ÓµÄ¼¸¸öasciiÍ¼ĞÎ¸üÊÇÎŞ·¨ÏÔÊ¾)
+        //xkillerå¢åŠ :æœ¬ä¾†å±å¹•å°±å°é‚„è¢«ä½”ç”¨é‚£éº¼å¤š,---å‘µå‘µ(å¢åŠ çš„å¹¾å€‹asciiåœ–å½¢æ›´æ˜¯ç„¡æ³•é¡¯ç¤º)
                      write(ESC+"[1A"+ESC+"[200D"+ESC+"[K");
                 write(ESC+"[1A"+ESC+"[200D"+ESC+"[K");
                 write(ESC+"[1A"+ESC+"[200D"+ESC+"[K");
@@ -613,11 +613,11 @@ void do_more(string cmd,string *text,int line,object ob)
                 if(line<0) line=0;
                 if(line<sizeof(text))
                 {
- //                       write(YEL"©¤£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­©¤\n"NOR);
+ //                       write(YEL"â”€ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼â”€\n"NOR);
                                for(i=line + 17; line<sizeof(text) && line<i; line++)
                            write("  "+text[line] + "\n");
                                if( line>=sizeof(text) )
-                           write(HIW"¡õ¡õ¡õ£­£­£­£­£­£­£­£­£­£­£­¡õ È«  ÎÄ  Íê ¡õ£­£­£­£­£­£­£­£­£­£­£­£­£­£­¡õ¡õ¡õ\n"NOR);
+                           write(HIW"â–¡â–¡â–¡ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼â–¡ å…¨  æ–‡  å®Œ â–¡ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼â–¡â–¡â–¡\n"NOR);
                 }
                 view2(line,text,ob);
                 return;
@@ -627,11 +627,11 @@ void do_more(string cmd,string *text,int line,object ob)
                 if(line>=sizeof(text)) line=sizeof(text);
                        line = line - 23;
                        if(line<0) line=0;
-                       write(YEL"©¤£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­©¤\n"NOR);
+                       write(YEL"â”€ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼â”€\n"NOR);
                        for(i=line + 23;line<sizeof(text)&&line < i;line++)
                        write("  "+text[line]+"\n");
                        if( line>=sizeof(text) )
-                write(HIW"¡õ¡õ¡õ£­£­£­£­£­£­£­£­£­£­£­£­¡õ È«  ÎÄ  Íê ¡õ£­£­£­£­£­£­£­£­£­£­£­£­£­£­¡õ¡õ¡õ\n"NOR);
+                write(HIW"â–¡â–¡â–¡ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼â–¡ å…¨  æ–‡  å®Œ â–¡ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼â–¡â–¡â–¡\n"NOR);
                        view2(line-23,text,ob,1);
                        return;
                        break;
@@ -645,7 +645,7 @@ void do_more(string cmd,string *text,int line,object ob)
                 {
                         num=query(memer, this_player());
                         notes=query("notes", ob);
-                        do_post("[ÍË³ö]"+notes[num]["title"],ob);
+                        do_post("[é€€å‡º]"+notes[num]["title"],ob);
                 }
                 return;
         }
@@ -658,64 +658,64 @@ int register()
            me = this_player();
            if( !query("register", me)){
                 write(CLR"\n");
-                 write(WHT"¡¾Ê¹ÓÃÕßÉè¶¨¡¿        "YEL"¡¾"+MUD_NAME+"×¢²áµ¥¡¿\n"NOR);
+                 write(WHT"ã€ä½¿ç”¨è€…è¨­å®šã€‘        "YEL"ã€"+MUD_NAME+"æ³¨å†Šå–®ã€‘\n"NOR);
                  write("\n");
-                 write(YEL"Ä¿Ç°Ñ¡Ôñ£º\n\n"NOR);
-                 write(WHT"    ÄúµÄ´úºÅ     : "NOR);
+                 write(YEL"ç›®å‰é¸æ“‡ï¼š\n\n"NOR);
+                 write(WHT"    æ‚¨çš„ä»£è™Ÿ     : "NOR);
                  input_to((:a:),this_player());
                  return 1;
         }
-            write("ÄãÒÑ¾­ÌîĞ´¹ı×¢²áµ¥À²¡£\n");
+            write("ä½ å·²ç¶“å¡«å¯«éæ³¨å†Šå–®å•¦ã€‚\n");
              input_to("confirm_u_choice",this_player());
              return 1;
 }
 protected void a(string arg, string register)
 {
-           register = "´úºÅ     : "+arg+"\n";
+           register = "ä»£è™Ÿ     : "+arg+"\n";
            set_temp("register", register, this_player());
-           write(WHT"    ÄúµÄêÇ³Æ     : "NOR);
+           write(WHT"    æ‚¨çš„æš±ç¨±     : "NOR);
            input_to((:b:),this_player(),register);
 }
 protected void b(string arg, string register)
 {
-           register = "êÇ³Æ     : "+arg+"\n";
+           register = "æš±ç¨±     : "+arg+"\n";
            set_temp("register", register, this_player());
-           write(WHT"    ÕæÊµĞÕÃû     : "NOR);
+           write(WHT"    çœŸå¯¦å§“å     : "NOR);
            input_to((:c:),this_player());
 }
 protected void c(string arg, string register)
 {
-           register = "ĞÕÃû     : "+arg+"\n";
+           register = "å§“å     : "+arg+"\n";
            set_temp("register", register, this_player());
-           write(WHT"    ÁªÏµµØÖ·     : "NOR);
+           write(WHT"    è¯ç³»åœ°å€     : "NOR);
            input_to((:d:),this_player());
 }
 protected void d(string arg, string register)
 {
-           register = "ÁªÏµµØÖ·     : "+arg+"\n";
+           register = "è¯ç³»åœ°å€     : "+arg+"\n";
            set_temp("register", register, this_player());
-           write(WHT"    ¹¤×÷µ¥Î»/Ñ§Ğ£: "NOR);
+           write(WHT"    å·¥ä½œå–®ä½/å­¸æ ¡: "NOR);
            input_to((:e:),this_player());
 }
 protected void e(string arg, string register)
 {
-           register = "¹¤×÷µ¥Î»/Ñ§Ğ£: "+arg+"\n";
+           register = "å·¥ä½œå–®ä½/å­¸æ ¡: "+arg+"\n";
            set_temp("register", register, this_player());
-           write(WHT"    µç×ÓĞÅÏä: "NOR);
+           write(WHT"    é›»å­ä¿¡ç®±: "NOR);
            input_to((:f:),this_player());
 }
 protected void f(string arg, string register)
 {
-           register = "µç×ÓĞÅÏä: "+arg+"\n";
+           register = "é›»å­ä¿¡ç®±: "+arg+"\n";
            set_temp("register", register, this_player());
-           write(WHT"    ÁªÏµµç»°: "NOR);
+           write(WHT"    è¯ç³»é›»è©±: "NOR);
            input_to((:g:),this_player());
 }
 protected void g(string arg, string register)
 {
-           register = "ÁªÏµµç»°: "+arg+"\n";
+           register = "è¯ç³»é›»è©±: "+arg+"\n";
            set_temp("register", register, this_player());
-           write(WHT"\n\n\n\n\n\nÒÔÉÏ×ÊÁÏÊÇ·ñÕıÈ·(Y/N)£¿(Q)È¡Ïû×¢²á [N]:"NOR);
+           write(WHT"\n\n\n\n\n\nä»¥ä¸Šè³‡æ–™æ˜¯å¦æ­£ç¢º(Y/N)ï¼Ÿ(Q)å–æ¶ˆæ³¨å†Š [N]:"NOR);
            input_to((:y:),this_player());
 }
 protected void y(string arg, string register)
@@ -739,7 +739,7 @@ protected void y(string arg, string register)
                    table=query_temp("register", this_player());
                    delete_temp("register", this_player());
                    write_file(REGISTER+query("id", this_player()),table,1);
-                   write("¡óÉèÖÃÒ»ÇĞÕıÈ·¡£\n");
+                   write("â—‡è¨­ç½®ä¸€åˆ‡æ­£ç¢ºã€‚\n");
                    input_to("confirm_u_choice",this_player());
                    return;
                    break;
@@ -747,7 +747,7 @@ protected void y(string arg, string register)
              case 'Q':
                    delete_temp("register", this_player());
                    u_display();
-                   write(YEL"\rÇëÊäÈëÄúµÄÑ¡Ôñ:"NOR);
+                   write(YEL"\rè«‹è¼¸å…¥æ‚¨çš„é¸æ“‡:"NOR);
                    input_to((:confirm_u_choice:),this_player());
                    return ;
                    break;
@@ -764,10 +764,10 @@ int pager()
             object me;
             me = this_player();
             if( query_temp("call_on", me)){
-                    write("´ò¿ª Pager ÆµµÀ\n");
+                    write("æ‰“é–‹ Pager é »é“\n");
                     delete_temp("call_on", me);
             } else {
-                   write("¹Ø±Õ Pager ÆµµÀ\n");
+                   write("é—œé–‰ Pager é »é“\n");
                    set_temp("call_on", 1, me);
            }
            return 1;
@@ -779,16 +779,16 @@ int cloak()
            if(!wizardp(me))
             {
                    u_display();
-                   write(YEL"\rÇëÊäÈëÄúµÄÑ¡Ôñ:"NOR);
+                   write(YEL"\rè«‹è¼¸å…¥æ‚¨çš„é¸æ“‡:"NOR);
                    input_to((:confirm_u_choice:),this_player());
                    return 1;
            }
            if( query("env/invisibility", me) )
            {
-                    write("ÎÒÒªÖØÏÖ½­ºş...\n");
+                    write("æˆ‘è¦é‡ç¾æ±Ÿæ¹–...\n");
                     delete("env/invisibility", me);
             } else {
-                    write("¹ş¹ş£¡ÎÒÒşĞÎÆğÀ´ÁË¡£\n");
+                    write("å“ˆå“ˆï¼æˆ‘éš±å½¢èµ·ä¾†äº†ã€‚\n");
                     set("env/invisibility", 5, me);
            }
           return 1;
@@ -798,7 +798,7 @@ int lock()
             object me,ob;
             me = this_player();
             ob=query_temp("link_ob", me);
-            write(WHT"¡ø ÇëÊäÈë×¢²áÃÜÂë£¬ÒÔ½â³ıÓ©Ä»Ëø¶¨£º"NOR);
+            write(WHT"â–² è«‹è¼¸å…¥æ³¨å†Šå¯†ç¢¼ï¼Œä»¥è§£é™¤è¢å¹•é–å®šï¼š"NOR);
             input_to("get_old_pass", 1, ob);
             return 1;
 }
@@ -807,7 +807,7 @@ protected void confirm_u_choice(string arg)
          set_temp("help_u", 1, this_player());
          if(arg=="") {
                      u_display();
-                     write(YEL "\rÇëÖØĞÂÊäÈëÄúµÄÑ¡Ôñ:"NOR);
+                     write(YEL "\rè«‹é‡æ–°è¼¸å…¥æ‚¨çš„é¸æ“‡:"NOR);
                      input_to((:confirm_u_choice:),this_player());
                      return ;
              }
@@ -820,14 +820,14 @@ protected void confirm_u_choice(string arg)
             case 'p':
              case 'P':
                     pager();
-                    write(YEL "\rÇëÖØĞÂÊäÈëÄúµÄÑ¡Ôñ:"NOR);
+                    write(YEL "\rè«‹é‡æ–°è¼¸å…¥æ‚¨çš„é¸æ“‡:"NOR);
                     input_to((:confirm_u_choice:),this_player());
                      return ;
                      break;
             case 'c':
              case 'C':
                     cloak();
-                    write(YEL "\rÇëÖØĞÂÊäÈëÄúµÄÑ¡Ôñ:"NOR);
+                    write(YEL "\rè«‹é‡æ–°è¼¸å…¥æ‚¨çš„é¸æ“‡:"NOR);
                     input_to((:confirm_u_choice:),this_player());
                     return ;
                     break;
@@ -843,14 +843,14 @@ protected void confirm_u_choice(string arg)
             case 'g':
              case 'G':
                      m_display();
-                     write(YEL "\rÇëÊäÈëÄúµÄÑ¡Ôñ:"NOR);
+                     write(YEL "\rè«‹è¼¸å…¥æ‚¨çš„é¸æ“‡:"NOR);
                      delete_temp("help_u", this_player());
                      input_to((:confirm_main_choice:),this_player());
                      return ;
                      break;
             default:
                    u_display();
-                   write(YEL"\rÇëÊäÈëÄúµÄÑ¡Ôñ:"NOR);
+                   write(YEL"\rè«‹è¼¸å…¥æ‚¨çš„é¸æ“‡:"NOR);
                    input_to((:confirm_u_choice:),this_player());
                    return ;
         }
@@ -860,11 +860,11 @@ void u_display()
 {
               view_main();
               if (wizardp(this_player()))
-              write("                       "CYN"(£Ã)"NOR"loak       ÒşÉíÊõ\n");
-              write("                       "CYN"(£Ì)"NOR"ockScreen  Ëø¶¨Ó©Ä»\n");
-              write("                       "CYN"(£Ò)"NOR"egister    ½­ºş×¢²á\n");
-              write("                       "CYN"(£Ğ)"NOR"ager       ºô½ĞÆ÷¿ª¹Ø\n");
-              write("                       "CYN"(£Ç)"NOR"return     ·µ»ØÖ÷²Ëµ¥\n");
+              write("                       "CYN"(ï¼£)"NOR"loak       éš±èº«è¡“\n");
+              write("                       "CYN"(ï¼¬)"NOR"ockScreen  é–å®šè¢å¹•\n");
+              write("                       "CYN"(ï¼²)"NOR"egister    æ±Ÿæ¹–æ³¨å†Š\n");
+              write("                       "CYN"(ï¼°)"NOR"ager       å‘¼å«å™¨é–‹é—œ\n");
+              write("                       "CYN"(ï¼§)"NOR"return     è¿”å›ä¸»èœå–®\n");
               view_main_1();
 }
 void get_old_pass(string pass, object ob)
@@ -876,7 +876,7 @@ void get_old_pass(string pass, object ob)
                 return ;
         }
         u_display();
-        write(YEL"\rÇëÊäÈëÄúµÄÑ¡Ôñ:"NOR);
+        write(YEL"\rè«‹è¼¸å…¥æ‚¨çš„é¸æ“‡:"NOR);
         input_to((:confirm_u_choice:),this_player());
         return ;
 }
@@ -891,7 +891,7 @@ void getname1(string arg)
         int k;
         if(!arg||arg=="")
         {
-                write(CYN"ÇëÊäÈëÁ´½ÓÃû³Æ£º"NOR);
+                write(CYN"è«‹è¼¸å…¥éˆæ¥åç¨±ï¼š"NOR);
                 input_to("getname1");
                 return;
         }
@@ -903,12 +903,12 @@ void getname1(string arg)
         k=strlen(arg);
         if(k<2||k>16)
         {
-                write(GRN"Á´½ÓÃû³Æ×ÖÊı±ØĞëÔÚ2µ½16¸ö×ÖÔªÖ®¼ä£¡\n"NOR);
-                write(CYN"ÇëÊäÈëÁ´½ÓÃû³Æ£º"NOR);
+                write(GRN"éˆæ¥åç¨±å­—æ•¸å¿…é ˆåœ¨2åˆ°16å€‹å­—å…ƒä¹‹é–“ï¼\n"NOR);
+                write(CYN"è«‹è¼¸å…¥éˆæ¥åç¨±ï¼š"NOR);
                 input_to("getname1");
                 return;
         }
-        write(GRN"ÇëÊäÈëÁ´½Óµµ°¸( Q ·ÅÆú£©£º"NOR);
+        write(GRN"è«‹è¼¸å…¥éˆæ¥æª”æ¡ˆ( Q æ”¾æ£„ï¼‰ï¼š"NOR);
         input_to("getname2",arg);
         return;
 }
@@ -923,8 +923,8 @@ void getname2(string str,string arg)
         }
         if(file_size(str)<0)
         {
-                write(YEL"Ã»ÓĞÕâ¸öµµ°¸£¡\n"NOR);
-                write(GRN"ÇëÊäÈëÁ´½Óµµ°¸£º"NOR);
+                write(YEL"æ²’æœ‰é€™å€‹æª”æ¡ˆï¼\n"NOR);
+                write(GRN"è«‹è¼¸å…¥éˆæ¥æª”æ¡ˆï¼š"NOR);
                 input_to("getname2",arg);
                 return;
         }
@@ -954,7 +954,7 @@ void view7(string arg)
         string file=read_file(find_file()),*text;
         if(!arg)
         {
-                write(CYN"ÇëÑ¡ÔñÒªĞŞ¸ÄµÄÑ¡Ïî£º(Q¼üÈ¡Ïû)"NOR);
+                write(CYN"è«‹é¸æ“‡è¦ä¿®æ”¹çš„é¸é …ï¼š(Qéµå–æ¶ˆ)"NOR);
                 input_to("view7");
                 return;
         }
@@ -975,7 +975,7 @@ void view7(string arg)
                 return;
         }
         k--;
-        write(YEL"ÄúÒªĞŞ¸Ä(1)Ãû³Æ»òÕß(2)Á´½Ó£¿"NOR);
+        write(YEL"æ‚¨è¦ä¿®æ”¹(1)åç¨±æˆ–è€…(2)éˆæ¥ï¼Ÿ"NOR);
         input_to("view8",text[k],k);
         return;
 }
@@ -984,16 +984,16 @@ void view8(string arg,string str,int k)
         string *w = explode(str,"==@==");
         switch(arg) {
                 case "1":
-                write(CYN"ÇëÊäÈëÃû³Æ:"NOR);
+                write(CYN"è«‹è¼¸å…¥åç¨±:"NOR);
                 input_to("view9",str,k,1);
                 return;
                 case "2":
                 if(file_size(w[1])<0&&strsrch(w[1],"subdir")>-1)
                 {
-                        write(GRN"ÕâÊÇÒ»¸öÄ¿Â¼,²»ÊÇÁ´½ÓÎÄµµ!\n"NOR);                                 view7(0);
+                        write(GRN"é€™æ˜¯ä¸€å€‹ç›®éŒ„,ä¸æ˜¯éˆæ¥æ–‡æª”!\n"NOR);                                 view7(0);
                         return;
                 }
-                write(CYN"ÇëÊäÈëÁ´½ÓÎÄµµ:"NOR);
+                write(CYN"è«‹è¼¸å…¥éˆæ¥æ–‡æª”:"NOR);
                 input_to("view9",str,k,0);
                 return;
         }
@@ -1009,7 +1009,7 @@ void view9(string arg,string str,int i,int j)
         else {
                 if(file_size(arg)<0)
                 {
-                        write(RED"Ã»ÓĞÕâ¸öÎÄµµ!\n"NOR);
+                        write(RED"æ²’æœ‰é€™å€‹æ–‡æª”!\n"NOR);
                         view8("2",str,i);
                         return;
                 }
@@ -1029,13 +1029,13 @@ void view3()
         file=read_file(str);
         if(!file)
         {
-                write("×ÊÁÏ²É¼¯ÖĞ......\n");
+                write("è³‡æ–™æ¡é›†ä¸­......\n");
                 return;
         }
         text=explode(file,"\n");
         if(!j=sizeof(text))
         {
-                write("×ÊÁÏ²É¼¯ÖĞ......\n");
+                write("è³‡æ–™æ¡é›†ä¸­......\n");
                 return;
         }
         t=({});
@@ -1044,8 +1044,8 @@ void view3()
         while(sizeof(text))
         {
                 w=explode(text[0],"==@==");
-                file+=sprintf(HIC" ("BBLU +HIY"%2d"NOR +HIC")"WHT"¡¾%|16s¡¿"NOR,i+1,text[0]);
-                // file+=sprintf(HIC" ("BBLU +HIY"%2d"NOR +HIC")"WHT"¡¾%|16s¡¿"NOR,i+1,w[0]);
+                file+=sprintf(HIC" ("BBLU +HIY"%2d"NOR +HIC")"WHT"ã€%|16sã€‘"NOR,i+1,text[0]);
+                // file+=sprintf(HIC" ("BBLU +HIY"%2d"NOR +HIC")"WHT"ã€%|16sã€‘"NOR,i+1,w[0]);
                 if(i%3==2) file+="\n";
                 text-=({text[0]});
                 i++;
@@ -1062,19 +1062,19 @@ void view4()
         file=read_file(str);
         if(!file)
         {
-                write("×ÊÁÏ²É¼¯ÖĞ......\n");
+                write("è³‡æ–™æ¡é›†ä¸­......\n");
                 return;
         }
         text=explode(file,"\n");
         if(!j=sizeof(text))
         {
-                write("×ÊÁÏ²É¼¯ÖĞ......\n");
+                write("è³‡æ–™æ¡é›†ä¸­......\n");
                 return;
         }
         for(file="",i=0;i<j;i++)
         {
                 w=explode(text[i],"==@==");
-                file+=sprintf(CYN" (%2d)"WHT"¡¾%|16s¡¿%s"NOR,i+1,w[0],w[1]);
+                file+=sprintf(CYN" (%2d)"WHT"ã€%|16sã€‘%s"NOR,i+1,w[0],w[1]);
                 if(i%2==1) file+="\n";
         }
         file+="\n";
@@ -1089,27 +1089,27 @@ void view5(string arg)
         file=find_file();
         file=read_file(file);
         if(!file) {
-                write(RED"Ã»ÓĞÁ´½ÓÎÄ¼ş!\n"NOR);
+                write(RED"æ²’æœ‰éˆæ¥æ–‡ä»¶!\n"NOR);
                 display();
                 return;
         }
         if(arg=="q"||arg=="Q")
         {
-                write(CYN"·µ»Ø£¡\n"NOR);
+                write(CYN"è¿”å›ï¼\n"NOR);
                 display();
                 return;
         }
         if(!k)
         {
-                write(GRN"ÇëÊäÈëÄãÒª²é¿´µÄÄÚÈİ:"NOR);
+                write(GRN"è«‹è¼¸å…¥ä½ è¦æŸ¥çœ‹çš„å…§å®¹:"NOR);
                 input_to("view5");
                 return;
         }
         text=explode(file,"\n");
         if(j=sizeof(text)<k-1)
         {
-                write(GRN"Ã»ÓĞÕâ¸öÎÄ¼ş!\n"NOR);
-                write(GRN"ÇëÊäÈëÄãÒª²é¿´µÄÄÚÈİ:"NOR);
+                write(GRN"æ²’æœ‰é€™å€‹æ–‡ä»¶!\n"NOR);
+                write(GRN"è«‹è¼¸å…¥ä½ è¦æŸ¥çœ‹çš„å…§å®¹:"NOR);
                 input_to("view5");
                 return;
         }
@@ -1123,8 +1123,8 @@ void view5(string arg)
         t=t+"/"+w[1];
         if(file_size(DIR+t+".h")<0)
         {
-                write(GRN"Ã»ÓĞÕâ¸öÎÄ¼ş!\n"NOR);
-                write(GRN"ÇëÊäÈëÄãÒª²é¿´µÄÄÚÈİ:"NOR);
+                write(GRN"æ²’æœ‰é€™å€‹æ–‡ä»¶!\n"NOR);
+                write(GRN"è«‹è¼¸å…¥ä½ è¦æŸ¥çœ‹çš„å…§å®¹:"NOR);
                 input_to("view5");
                 return;
         }
@@ -1144,15 +1144,15 @@ void delfile(string arg)
         }
         if(k<1)
         {
-                write(CYN"ÄãÒªÉ¾³ıµÚ¼¸ºÅÁ´½Ó:"NOR);
+                write(CYN"ä½ è¦åˆªé™¤ç¬¬å¹¾è™Ÿéˆæ¥:"NOR);
                 input_to("delfile");
                 return;
         }
         text=explode(file,"\n");
         if(v=sizeof(text)<k)
         {
-                write(GRN"Ã»ÓĞÕâ¸öÁ´½Ó!\n");
-                write(CYN"ÄãÒªÉ¾³ıµÚ¼¸ºÅÁ´½Ó:"NOR);
+                write(GRN"æ²’æœ‰é€™å€‹éˆæ¥!\n");
+                write(CYN"ä½ è¦åˆªé™¤ç¬¬å¹¾è™Ÿéˆæ¥:"NOR);
                 input_to("delfile");
                 return;
         }
@@ -1183,7 +1183,7 @@ varargs void display(object ob)
                 view1();
                 write(view_msg(i,ob));
                 view_main_1();
-                write(YEL "\rÇëÊäÈëÄúµÄÑ¡Ôñ:"NOR);
+                write(YEL "\rè«‹è¼¸å…¥æ‚¨çš„é¸æ“‡:"NOR);
                      input_to((:confirm_p_choice:),ob);
                      return;
         }
@@ -1196,12 +1196,12 @@ varargs void display(object ob)
         view_main();
         view3();
         view_main_1();
-        write(BRED +CYN"(B)"NOR +BRED"·µ»Ø "NOR);
+        write(BRED +CYN"(B)"NOR +BRED"è¿”å› "NOR);
         if(wiz_level(WIZLEVEL)<=wiz_level(me))
-        write(BRED +CYN"  (A)"NOR+BRED"¼ÓÈë "CYN+BRED"(C)"NOR+BRED"ĞŞ¸Ä "CYN+BRED"(D)"NOR
-        +BRED"É¾³ı "CYN+BRED"(S)"NOR+BRED"²é¿´ "CYN+BRED"(M)"NOR+BRED"ĞÂ½¨"NOR);
+        write(BRED +CYN"  (A)"NOR+BRED"åŠ å…¥ "CYN+BRED"(C)"NOR+BRED"ä¿®æ”¹ "CYN+BRED"(D)"NOR
+        +BRED"åˆªé™¤ "CYN+BRED"(S)"NOR+BRED"æŸ¥çœ‹ "CYN+BRED"(M)"NOR+BRED"æ–°å»º"NOR);
         write("\n");
-        write(YEL "\rÇëÊäÈëÄúµÄÑ¡Ôñ:"NOR);
+        write(YEL "\rè«‹è¼¸å…¥æ‚¨çš„é¸æ“‡:"NOR);
         input_to((:confirm_choice:),this_player());
 }
 protected void confirm_choice(string arg)
@@ -1241,10 +1241,10 @@ protected void confirm_choice(string arg)
                      case "A":
                 if(wiz_level(me)<wiz_level(WIZLEVEL))
                 {
-                        write(RED"ÄãµÄÈ¨ÏŞ²»×ã£¬²»ÄÜĞŞ¸ÄÕâÀïµÄµµ°¸£¡\n");
+                        write(RED"ä½ çš„æ¬Šé™ä¸è¶³ï¼Œä¸èƒ½ä¿®æ”¹é€™è£¡çš„æª”æ¡ˆï¼\n");
                         return;
                 }
-                write(CYN"ÇëÊäÈëÁ´½ÓÃû³Æ£º"NOR);
+                write(CYN"è«‹è¼¸å…¥éˆæ¥åç¨±ï¼š"NOR);
                 input_to("getname1");
                 return;
                 break;
@@ -1252,10 +1252,10 @@ protected void confirm_choice(string arg)
                      case "D":
                 if(wiz_level(me)<wiz_level(WIZLEVEL))
                 {
-                        write(RED"ÄãµÄÈ¨ÏŞ²»×ã£¬²»ÄÜĞŞ¸ÄÕâÀïµÄµµ°¸£¡\n");
+                        write(RED"ä½ çš„æ¬Šé™ä¸è¶³ï¼Œä¸èƒ½ä¿®æ”¹é€™è£¡çš„æª”æ¡ˆï¼\n");
                         return;
                 }
-                write(CYN"ÄãÒªÉ¾³ıµÚ¼¸ºÅÁ´½Ó:"NOR"(¡°Q¡±È¡Ïû)");
+                write(CYN"ä½ è¦åˆªé™¤ç¬¬å¹¾è™Ÿéˆæ¥:"NOR"(â€œQâ€å–æ¶ˆ)");
                 input_to("delfile");
                 return;
                 break;
@@ -1264,12 +1264,12 @@ protected void confirm_choice(string arg)
                 view_main();
                 view4();
                 view_main_1();
-                write(BRED +CYN"(B)"NOR +BRED"·µ»Ø "NOR);
+                write(BRED +CYN"(B)"NOR +BRED"è¿”å› "NOR);
                 if(wiz_level(WIZLEVEL)<=wiz_level(me))
-                write(BRED +CYN"  (A)"NOR+BRED"¼ÓÈë "CYN+BRED"(C)"NOR+BRED"ĞŞ¸Ä "CYN+BRED"(D)"NOR
-                +BRED"É¾³ı "CYN+BRED"(S)"NOR+BRED"²é¿´ "CYN+BRED"(M)"NOR+BRED"ĞÂ½¨"NOR);
+                write(BRED +CYN"  (A)"NOR+BRED"åŠ å…¥ "CYN+BRED"(C)"NOR+BRED"ä¿®æ”¹ "CYN+BRED"(D)"NOR
+                +BRED"åˆªé™¤ "CYN+BRED"(S)"NOR+BRED"æŸ¥çœ‹ "CYN+BRED"(M)"NOR+BRED"æ–°å»º"NOR);
                 write("\n");
-                write(YEL "\rÇëÊäÈëÄúµÄÑ¡Ôñ:"NOR);
+                write(YEL "\rè«‹è¼¸å…¥æ‚¨çš„é¸æ“‡:"NOR);
                 input_to((:confirm_choice:),me);
                 return;
                 break;
@@ -1277,10 +1277,10 @@ protected void confirm_choice(string arg)
                      case "M":
                 if(wiz_level(me)<wiz_level(WIZLEVEL))
                 {
-                        write(RED"ÄãµÄÈ¨ÏŞ²»×ã£¬²»ÄÜĞŞ¸ÄÕâÀïµÄµµ°¸£¡\n");
+                        write(RED"ä½ çš„æ¬Šé™ä¸è¶³ï¼Œä¸èƒ½ä¿®æ”¹é€™è£¡çš„æª”æ¡ˆï¼\n");
                         return;
                 }
-                write(CYN"ÇëÊäÈëÄ¿Â¼Ãû³Æ£º"NOR);
+                write(CYN"è«‹è¼¸å…¥ç›®éŒ„åç¨±ï¼š"NOR);
                 input_to("getname3");
                 return;
         }
@@ -1311,19 +1311,19 @@ void view6()
                         if( (wizlvl=query("wizlvl", ob)) && wizlvl>wiz_level(this_player()) )
                                 continue;
                         name=query("name", ob);
-                        name=replace_string(name,"°å","");
-                        name=replace_string(name,"²¾","");
-                        name=replace_string(name,"²á","");
-                        name=replace_string(name,"µÜ×Ó","");
-                        name=replace_string(name,"±¨¸æ","");
-                        name=replace_string(name,"ÁôÑÔ","");
-                        name=replace_string(name,"¼ÇÊÂ","");
-                        name=replace_string(name,"½ÌÖÚ","");
-                        name=replace_string(name,"°æ","");
+                        name=replace_string(name,"æ¿","");
+                        name=replace_string(name,"ç°¿","");
+                        name=replace_string(name,"å†Š","");
+                        name=replace_string(name,"å¼Ÿå­","");
+                        name=replace_string(name,"å ±å‘Š","");
+                        name=replace_string(name,"ç•™è¨€","");
+                        name=replace_string(name,"è¨˜äº‹","");
+                        name=replace_string(name,"æ•™çœ¾","");
+                        name=replace_string(name,"ç‰ˆ","");
                         if(strlen(name)>16)
                         name=name[0..15];
 //                        destruct(ob);
-                        msg=sprintf(" ¡º"HIC +BBLU+"%2d"NOR+"¡»"+(wizlvl?YEL:WHT)+"¡¾%|16s¡¿"NOR,i+1,name);
+                        msg=sprintf(" ã€"HIC +BBLU+"%2d"NOR+"ã€"+(wizlvl?YEL:WHT)+"ã€%|16sã€‘"NOR,i+1,name);
                         str+=msg;
                         write(msg);
                         ++j;
@@ -1337,8 +1337,8 @@ void view6()
                         write("\n");
                         str+="\n";
                 }
-                str+=sprintf(" ¡º"HIC +BBLU+"%2s"NOR+"¡»"+WHT+"¡¾%|16s¡¿\n"NOR,"B","·µ»ØÖ÷²Ëµ¥");
-                printf(" ¡º"HIC +BBLU+"%2s"NOR+"¡»"+WHT+"¡¾%|16s¡¿\n"NOR,"B","·µ»ØÖ÷²Ëµ¥");
+                str+=sprintf(" ã€"HIC +BBLU+"%2s"NOR+"ã€"+WHT+"ã€%|16sã€‘\n"NOR,"B","è¿”å›ä¸»èœå–®");
+                printf(" ã€"HIC +BBLU+"%2s"NOR+"ã€"+WHT+"ã€%|16sã€‘\n"NOR,"B","è¿”å›ä¸»èœå–®");
                 write_file(BOARDCENTER,str,1);
         }
         view_main_1();
@@ -1358,7 +1358,7 @@ protected void confirm_k_choice(string arg)
              }
              else if(!k)
              {
-                     write(CYN"ÇëÊäÈëÄúµÄÑ¡Ôñ:"NOR);
+                     write(CYN"è«‹è¼¸å…¥æ‚¨çš„é¸æ“‡:"NOR);
                      input_to((:confirm_k_choice:),this_player());
                 return;
         }
@@ -1368,7 +1368,7 @@ protected void confirm_k_choice(string arg)
         ob=load_object(dir);
         if( !ob || !query("board_id", ob) || query("wizlvl", ob)>wiz_level(this_player()) )
         {
-                write(CYN"Ã»ÓĞÕâ¸öÁôÑÔ°å!\nÇëÊäÈëÄúµÄÑ¡Ôñ:"NOR);
+                write(CYN"æ²’æœ‰é€™å€‹ç•™è¨€æ¿!\nè«‹è¼¸å…¥æ‚¨çš„é¸æ“‡:"NOR);
                      input_to((:confirm_k_choice:),this_player());
                 return;
         }
@@ -1385,7 +1385,7 @@ void getname3(string arg)
         if(!file) file="";
         if(!arg||arg=="")
         {
-                write(CYN"ÇëÊäÈëÄ¿Â¼Ãû³Æ£º"NOR);
+                write(CYN"è«‹è¼¸å…¥ç›®éŒ„åç¨±ï¼š"NOR);
                 input_to("getname3");
                 return;
         }
@@ -1397,8 +1397,8 @@ void getname3(string arg)
         k=strlen(arg);
         if(k<2||k>16)
         {
-                write(GRN"Ä¿Â¼Ãû³Æ×ÖÊı±ØĞëÔÚ2µ½16¸ö×ÖÔªÖ®¼ä£¡\n"NOR);
-                write(CYN"ÇëÊäÈëÄ¿Â¼Ãû³Æ£º"NOR);
+                write(GRN"ç›®éŒ„åç¨±å­—æ•¸å¿…é ˆåœ¨2åˆ°16å€‹å­—å…ƒä¹‹é–“ï¼\n"NOR);
+                write(CYN"è«‹è¼¸å…¥ç›®éŒ„åç¨±ï¼š"NOR);
                 input_to("getname3");
                 return;
         }
@@ -1440,8 +1440,8 @@ int help(object me)
 {
   write(@HELP
 
-ÄàÌ¶ÓÎÏ·ÖĞµÄÔÚÏß£Â£Â£ÓÏµÍ³£¬´ÓÓÎÏ·µÄ°ïÖúµ½Íæ¼ÒµÄ½»Á÷
-ÄÚÈİ·á¸»£¬²Ù×÷¼ò±ã¡£
+æ³¥æ½­éŠæˆ²ä¸­çš„åœ¨ç·šï¼¢ï¼¢ï¼³ç³»çµ±ï¼Œå¾éŠæˆ²çš„å¹«åŠ©åˆ°ç©å®¶çš„äº¤æµ
+å…§å®¹è±å¯Œï¼Œæ“ä½œç°¡ä¾¿ã€‚
 HELP
     );
     return 1;

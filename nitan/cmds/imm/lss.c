@@ -39,7 +39,7 @@ int main(object me, string arg)
         dir=resolve_path(query("cwd", me),arg);
         
         if (me != this_player(1))
-                return notify_fail("²»ÊÇµ±Ç°Ê¹ÓÃÕß½øĞĞ²Ù×÷¡£\n");
+                return notify_fail("ä¸æ˜¯ç•¶å‰ä½¿ç”¨è€…é€²è¡Œæ“ä½œã€‚\n");
                 
         seteuid(getuid());
         if (file_size(dir) == -2 && dir[strlen(dir) - 1] != '/') dir += "/";
@@ -66,9 +66,9 @@ int main(object me, string arg)
         if (! sizeof(file))
         {
                 if (file_size(dir) == -2)
-                        return notify_fail(sprintf("Ä¿Â¼(%s)ÊÇ¿ÕµÄ¡£\n", dir));
+                        return notify_fail(sprintf("ç›®éŒ„(%s)æ˜¯ç©ºçš„ã€‚\n", dir));
                 else
-                        return notify_fail(sprintf("Ã»ÓĞÕâ¸öÄ¿Â¼(%s)¡£\n", dir));
+                        return notify_fail(sprintf("æ²’æœ‰é€™å€‹ç›®éŒ„(%s)ã€‚\n", dir));
         }
         
         file = filter_array(file, (: filter_list :), path, me);
@@ -88,12 +88,12 @@ int main(object me, string arg)
                 if (strlen(file[i][0]) > w) w = strlen(file[i][0]) + 1;
                 file[i] += ({ MASTER_OB->valid_write(path + file[i][0], me, "ls") });
         }
-        result = "Ä¿Â¼£º" + path + "\n";
+        result = "ç›®éŒ„ï¼š" + path + "\n";
         files = sizeof(file) - x;
         dirs = x;
         if (! sizeof(file))
         {
-                write(sprintf("%s    Ã»ÓĞÈÎºÎµµ°¸¡£\n\n", result));
+                write(sprintf("%s    æ²’æœ‰ä»»ä½•æª”æ¡ˆã€‚\n\n", result));
                 return 1;
         }
         
@@ -101,14 +101,14 @@ int main(object me, string arg)
         {
                 string syntax;
                 syntax = sprintf("%%s%%-%ds  %%-8s  %%-8s  %%s\n" NOR, w);
-                result += sprintf(syntax, HIR, "ÎÄ¼şÃû", "´óĞ¡", "ÊÇ·ñ×°ÔØ", "×îºó¸ü¸ÄÊ±¼ä");
+                result += sprintf(syntax, HIR, "æ–‡ä»¶å", "å¤§å°", "æ˜¯å¦è£è¼‰", "æœ€å¾Œæ›´æ”¹æ™‚é–“");
                 col = 82 / (w + 6);
                 for (i = 0, j = sizeof(file); i < j; i++)
                 result += sprintf(syntax,
                                   (file[i][3] ? NOR : HIR),
                                   file[i][0],
                                   (file[i][1] == -2 ? "<dir>" : sprintf("%d", file[i][1])),
-                                  ((file[i][1] != -2 && find_object(path + file[i][0])) ? HIC "±àÒë×°ÔØ" NOR : NOR "--------"),
+                                  ((file[i][1] != -2 && find_object(path + file[i][0])) ? HIC "ç·¨è­¯è£è¼‰" NOR : NOR "--------"),
                                   CHINESE_D->chinese_time(5, ctime(file[i][2])));
         } else
         {
@@ -124,7 +124,7 @@ int main(object me, string arg)
         }
         me->start_more(result);
 //        write(result);
-        printf("\n                    ÎÄ¼şÓĞ£º%d ¸ö£¬×Ü¹²£º%d K £¬Ä¿Â¼¹²ÓĞ£º%d ¡£\n", files, k, dirs);
+        printf("\n                    æ–‡ä»¶æœ‰ï¼š%d å€‹ï¼Œç¸½å…±ï¼š%d K ï¼Œç›®éŒ„å…±æœ‰ï¼š%d ã€‚\n", files, k, dirs);
         
         return 1;
 }
@@ -148,17 +148,17 @@ int sort_list(mixed ob1, mixed ob2)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½: ls [-l] [<Â·¾¶Ãû>]
+æŒ‡ä»¤æ ¼å¼: ls [-l] [<è·¯å¾‘å>]
  
-ÁĞ³öÄ¿Â¼ÏÂËùÓĞµÄ×ÓÄ¿Â¼¼°µµ°¸, Èç¹ûÃ»ÓĞÖ¸¶¨Ä¿Â¼, ÔòÁĞ³öËùÔÚÄ¿Â¼
-µÄÄÚÈİ£¬ËùÁĞ³öµÄµµ°¸ÖĞ£¬°×É«µÄ´ú±íÂ·¾¶»òÊÇÒÑ¾­ÔØÈëµÄÎï¼ş¶ÔÓ¦µÄ
-ÎÄ¼ş£¬Õı³£É«µÄ´ú±íÆÕÍ¨µÄÎÄ¼ş¡£ºìÉ«Ôò±íÊ¾Äã¶Ô¸ÃÄ¿Â¼»òÎÄ¼şÃ»ÓĞĞ´
-ÈëÈ¨ÏŞ¡£-l²ÎÊı¿ÉÒÔÁĞ³öÏêÏ¸×ÊÁÏ¡£
+åˆ—å‡ºç›®éŒ„ä¸‹æ‰€æœ‰çš„å­ç›®éŒ„åŠæª”æ¡ˆ, å¦‚æœæ²’æœ‰æŒ‡å®šç›®éŒ„, å‰‡åˆ—å‡ºæ‰€åœ¨ç›®éŒ„
+çš„å…§å®¹ï¼Œæ‰€åˆ—å‡ºçš„æª”æ¡ˆä¸­ï¼Œç™½è‰²çš„ä»£è¡¨è·¯å¾‘æˆ–æ˜¯å·²ç¶“è¼‰å…¥çš„ç‰©ä»¶å°æ‡‰çš„
+æ–‡ä»¶ï¼Œæ­£å¸¸è‰²çš„ä»£è¡¨æ™®é€šçš„æ–‡ä»¶ã€‚ç´…è‰²å‰‡è¡¨ç¤ºä½ å°è©²ç›®éŒ„æˆ–æ–‡ä»¶æ²’æœ‰å¯«
+å…¥æ¬Šé™ã€‚-låƒæ•¸å¯ä»¥åˆ—å‡ºè©³ç´°è³‡æ–™ã€‚
  
-·¶Àı:
-'ls /' »áÁĞ³öËùÓĞÎ»ì¶¸ùÄ¿Â¼ÏÂµÄµµ°¸¼°×ÓÄ¿Â¼¡£
-'ls /adm/*.c -l' Ôò»áÁĞ³ö/adm/Ä¿Â¼ÏÂÃæËùÓĞÒÔ.c½áÎ²µÄÎÄ¼şµÄÏêÏ¸
-×ÊÁÏÁĞ±í¡£
+èŒƒä¾‹:
+'ls /' æœƒåˆ—å‡ºæ‰€æœ‰ä½æ–¼æ ¹ç›®éŒ„ä¸‹çš„æª”æ¡ˆåŠå­ç›®éŒ„ã€‚
+'ls /adm/*.c -l' å‰‡æœƒåˆ—å‡º/adm/ç›®éŒ„ä¸‹é¢æ‰€æœ‰ä»¥.cçµå°¾çš„æ–‡ä»¶çš„è©³ç´°
+è³‡æ–™åˆ—è¡¨ã€‚
  
 HELP );
         return 1;

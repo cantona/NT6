@@ -4,15 +4,15 @@ inherit WHIP;
 
 void create()
 {
-        set_name(HIY "ÁúÎ²³¤±Ş", ({ "longwei bian", "bian","longwei" }));
+        set_name(HIY "é¾å°¾é•·é­", ({ "longwei bian", "bian","longwei" }));
         set_weight(300);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ù");
-                set("long", HIY "ÕâÊÇÒ»¸ù×ö¹¤ÆæÌØµÄ³¤±Ş£¬¾İËµÊÇÓÃÁúÎ²ËùÖı£¬ÍşÁ¦²»·Æ¡£\n" NOR);
-                set("wield_msg", "$N¡¸à§¡¹µÄÒ»Éù´ÓÑüºó³é³öÒ»¸ù$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n±ğ»ØÑüºó¡£\n");
+                set("unit", "æ ¹");
+                set("long", HIY "é€™æ˜¯ä¸€æ ¹åšå·¥å¥‡ç‰¹çš„é•·é­ï¼Œæ“šèªªæ˜¯ç”¨é¾å°¾æ‰€é‘„ï¼Œå¨åŠ›ä¸è²ã€‚\n" NOR);
+                set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€è²å¾è…°å¾ŒæŠ½å‡ºä¸€æ ¹$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°‡æ‰‹ä¸­çš„$nåˆ¥å›è…°å¾Œã€‚\n");
                 set("value", 100000);
         }
         init_whip(300);

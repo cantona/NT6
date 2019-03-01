@@ -5,19 +5,19 @@ inherit RINGS;
 
 void create()
 {
-        set_name(HIB "ºÚÓñÖ¸»·" NOR, ({ "heiyu zhihuan", "heiyu", "zhihuan" }));
+        set_name(HIB "é»‘ç‰æŒ‡ç’°" NOR, ({ "heiyu zhihuan", "heiyu", "zhihuan" }));
         set_weight(500);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ã¶");
-                set("long", HIB "´ËÄËÇ§ÄêºÚÓñ¶ÍÔì¶ø³ÉµÄÖ¸»·£¬Óöº®ÔòÈÈ£¬ÓöÈÈÔòº®£¬Åå´÷ºóÓĞÌØÊâ¹¦Ğ§¡£\n" NOR);
+                set("unit", "æš");
+                set("long", HIB "æ­¤ä¹ƒåƒå¹´é»‘ç‰é›é€ è€Œæˆçš„æŒ‡ç’°ï¼Œé‡å¯’å‰‡ç†±ï¼Œé‡ç†±å‰‡å¯’ï¼Œä½©æˆ´å¾Œæœ‰ç‰¹æ®ŠåŠŸæ•ˆã€‚\n" NOR);
                 set("value", 20000000);
                 set("material", "gold");
                 set("armor_prop/damage", 1000);
                 set("armor_prop/int", 10);
-                set("armor_prop/add_tihui_xiaolv", 5); // Ôö¼ÓÌå»á¼³È¡Ğ§ÂÊ5% jiqu.cÖĞ´¦Àí
-                set("special/desc", HIR "ÌáÉıÊµÕ½Ìå»á¼³È¡Ğ§ÂÊ5%¡£" NOR);
+                set("armor_prop/add_tihui_xiaolv", 5); // å¢åŠ é«”æœƒæ±²å–æ•ˆç‡5% jiqu.cä¸­è™•ç†
+                set("special/desc", HIR "æå‡å¯¦æˆ°é«”æœƒæ±²å–æ•ˆç‡5%ã€‚" NOR);
                 set("limit", ([ 
                          "exp" : 100000000,
                          "scborn" : 1,

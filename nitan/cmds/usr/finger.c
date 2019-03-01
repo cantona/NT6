@@ -12,14 +12,14 @@ int main(object me, string arg)
         object *ob;
 
         if( !wizardp(me) && time()-query_temp("last_finger", me)<10 )
-                return notify_fail("ÏµÍ³Æø´­ÐêµØÌ¾µÀ£ºÂýÂýÀ´ ....\n");  
+                return notify_fail("ç³»çµ±æ°£å–˜å™“åœ°å˜†é“ï¼šæ…¢æ…¢ä¾† ....\n");  
 
         set_temp("last_finger", time(), me);
 
         if (! arg)
         {
                 if( query("jing", me)<50 )
-                        return notify_fail("ÄãµÄ¾«ÉñÎÞ·¨¼¯ÖÐ¡£\n");
+                        return notify_fail("ä½ çš„ç²¾ç¥žç„¡æ³•é›†ä¸­ã€‚\n");
 
                 if (! wizardp(me))
                         me->receive_damage("jing", 50);
@@ -29,19 +29,19 @@ int main(object me, string arg)
         if (arg == "-m")
         {
                 if (! wizardp(this_player()))
-                        return notify_fail("ÄãÎÞÈ¨Ê¹ÓÃ -m ²ÎÊý¡£\n");
+                        return notify_fail("ä½ ç„¡æ¬Šä½¿ç”¨ -m åƒæ•¸ã€‚\n");
                 ob = filter_array(users(), (: $1->name() != $1->name(1) :));
                 me->start_more(FINGER_D->user_list(ob), 0);
         } else
         {
                 if( query("jing", me)<15 )
-                        return notify_fail("ÄãµÄ¾«ÉñÎÞ·¨¼¯ÖÐ¡£\n");
+                        return notify_fail("ä½ çš„ç²¾ç¥žç„¡æ³•é›†ä¸­ã€‚\n");
 
                 if (! wizardp(me))
                         me->receive_damage("jing", 15);
 
                 if ((arg == "lonely") && ! wizardp(me))
-                        return notify_fail("Ã»ÓÐÕâ¸öÍæ¼Ò¡£\n");
+                        return notify_fail("æ²’æœ‰é€™å€‹çŽ©å®¶ã€‚\n");
 
                 write(FINGER_D->finger_user(arg));
         }
@@ -51,11 +51,11 @@ int main(object me, string arg)
 int help(object me)
 {
   write(@HELP
-Ö¸Áî¸ñÊ½ : finger [-m] [Ê¹ÓÃÕßÐÕÃû]
+æŒ‡ä»¤æ ¼å¼ : finger [-m] [ä½¿ç”¨è€…å§“å]
  
-Õâ¸öÖ¸Áî£¬Èç¹ûÃ»ÓÐÖ¸¶¨Ê¹ÓÃÕßÐÕÃ÷£¬»áÏÔÊ¾³öËùÓÐÕýÔÚÏßÉÏÍæ¼Ò
-µÄÁ¬Ïß×ÊÁÏ¡£·´Ö®£¬Ôò¿ÉÏÔÊ¾ÓÐ¹ØÄ³¸öÍæ¼ÒµÄÁ¬Ïß£¬È¨ÏÞµÈ×ÊÁÏ¡£
-Èç¹ûÊ¹ÓÃÁË -m ²ÎÊý£¬¿ÉÒÔÁÐ³öÊ¹ÓÃÃæ¾ßµÄÍæ¼Ò¡£
+é€™å€‹æŒ‡ä»¤ï¼Œå¦‚æžœæ²’æœ‰æŒ‡å®šä½¿ç”¨è€…å§“æ˜Žï¼Œæœƒé¡¯ç¤ºå‡ºæ‰€æœ‰æ­£åœ¨ç·šä¸ŠçŽ©å®¶
+çš„é€£ç·šè³‡æ–™ã€‚åä¹‹ï¼Œå‰‡å¯é¡¯ç¤ºæœ‰é—œæŸå€‹çŽ©å®¶çš„é€£ç·šï¼Œæ¬Šé™ç­‰è³‡æ–™ã€‚
+å¦‚æžœä½¿ç”¨äº† -m åƒæ•¸ï¼Œå¯ä»¥åˆ—å‡ºä½¿ç”¨é¢å…·çš„çŽ©å®¶ã€‚
  
 see also : who
 HELP );

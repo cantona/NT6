@@ -51,7 +51,7 @@ int room_path(object me, object ob)
 
         if(!objectp(ob)) return 1;
 
-        if(stringp(tmp=ob->query_menu(me,0)))//Èç¹û¶ÔÏóÄÜ½âÊÍ²Ëµ¥£¬ÔòÖ±½Ó·µ»Ø²Ëµ¥
+        if(stringp(tmp=ob->query_menu(me,0)))//å¦‚æœå°è±¡èƒ½è§£é‡‹èœå–®ï¼Œå‰‡ç›´æ¥è¿”å›èœå–®
         {
                 write(tmp);
                 return 1;
@@ -65,33 +65,33 @@ int room_path(object me, object ob)
         }
 
 //      if(ob->query_temp("apply/name")) name=ob->query_temp("apply/name");
-        tmp=TMI("mbegin "+ob->name(1)+";"+id)+TMI("mitem ¹Û²ì$U;look "+id);
+        tmp=TMI("mbegin "+ob->name(1)+";"+id)+TMI("mitem è§€å¯Ÿ$U;look "+id);
         if(living(ob))
         {
                 if(interactive(ob))
                 {
-                        tmp+=TMI("mitem ¸æËß$U...;tell "+id+" ...")+TMI("mitem ¶Ô$U¶úÓï...;whisper "+id+" ...");
+                        tmp+=TMI("mitem å‘Šè¨´$U...;tell "+id+" ...")+TMI("mitem å°$Uè€³èª...;whisper "+id+" ...");
                         if( id == query_temp("reply", me) )
-                                write(TMI("mitem »Ø´ğ$U...;reply ..."));
+                                write(TMI("mitem å›ç­”$U...;reply ..."));
                 }
                 if( query("ridable", ob) )
                 {
-                        tmp+=TMI("mitem ÆïÉÏ$U;ride "+id);
+                        tmp+=TMI("mitem é¨ä¸Š$U;ride "+id);
                 }
 
-                tmp+=(me->query_leader()==ob)?TMI("mitem Í£Ö¹¸úËæ$U;follow none"):TMI("mitem ¸úËæ$U;follow "+id);
+                tmp+=(me->query_leader()==ob)?TMI("mitem åœæ­¢è·Ÿéš¨$U;follow none"):TMI("mitem è·Ÿéš¨$U;follow "+id);
                 if( !query("no_fight", environment(me)) )
                 {
-                        tmp+=TMI("mitem Óë$UÇĞ´è;fight "+id);
+                        tmp+=TMI("mitem èˆ‡$Uåˆ‡ç£‹;fight "+id);
                         if( query("age", ob)>17 || !interactive(ob) )
-                                tmp+=TMI("mitem ¹¥»÷$U;hit "+id)+TMI("mitem É±ËÀ$U;kill "+id)+TMI("mitem ÍµÏ®$U;touxi "+id)+TMI("mitem Íµ$UµÄ...;steal ... from "+id);
+                                tmp+=TMI("mitem æ”»æ“Š$U;hit "+id)+TMI("mitem æ®ºæ­»$U;kill "+id)+TMI("mitem å·è¥²$U;touxi "+id)+TMI("mitem å·$Uçš„...;steal ... from "+id);
                 }
                 if( query("inquiry", ob)){
                         str=keys(query("inquiry", ob));
                         for(i=0; i<sizeof(str); i++)
-                                tmp+=TMI("mitem Ïò$U´òÌı¹ØÓÚ"+str[i]+"µÄĞÅÏ¢;ask "+id+" about "+str[i]+"");
+                                tmp+=TMI("mitem å‘$Uæ‰“è½é—œäº"+str[i]+"çš„ä¿¡æ¯;ask "+id+" about "+str[i]+"");
                 }
-                tmp+=TMI("mitem ¸ø$U...¶«Î÷;give ... to "+id );
+                tmp+=TMI("mitem çµ¦$U...æ±è¥¿;give ... to "+id );
                 if( query("owner", ob) == query("id", me) )
                 {
 
@@ -99,57 +99,57 @@ int room_path(object me, object ob)
                         {
                                 if( query_temp("is_changing", me) )
                                 {
-                                        tmp+=TMI("mitem ½â³ı-->¡¼îø»¯¡½ ;recall recover "+id+"");
+                                        tmp+=TMI("mitem è§£é™¤-->â–¡é§åŒ–â–¡ ;recall recover "+id+"");
                                 }
                                 else
                                 {
-                                        tmp+=TMI("mitem »ÃÊŞ-->¡¼îø»¯¡½ ;recall change "+id+"");
+                                        tmp+=TMI("mitem å¹»ç¸-->â–¡é§åŒ–â–¡ ;recall change "+id+"");
                                 }
 
                         }
                         if( query("magic/owner", ob) )
                         {
-                                tmp+=TMI("mitem ¹©ÄÜ-->¡¼$U¡½ ;upgrade "+id+"");
+                                tmp+=TMI("mitem ä¾›èƒ½-->â–¡$Uâ–¡ ;upgrade "+id+"");
 
                         }
-                        // tmp+=TMI("mitem ½Ìµ¼-->¡¼$U¡½ ;teach "+"...");
-                        // tmp+=TMI("mitem ¼¼ÄÜ-->¡¼$U¡½ ;skills "+id+"");
+                        // tmp+=TMI("mitem æ•™å°-->â–¡$Uâ–¡ ;teach "+"...");
+                        // tmp+=TMI("mitem æŠ€èƒ½-->â–¡$Uâ–¡ ;skills "+id+"");
                 }
-                if( query("family/family_name", me) == "Ø¤°ï"){
+                if( query("family/family_name", me) == "ä¸å¹«"){
                         if ( me->query_skill("checking",1) >= 10 )
-                                tmp+=TMI("mitem ´òÌ½...µÄ¼¼ÄÜ;check ...");
-                        if( query("family/family_name", ob) != "Ø¤°ï" )
-                                tmp+=TMI("mitem ÆòÌÖ$UµÄ...;beg ... from "+id);
+                                tmp+=TMI("mitem æ‰“æ¢...çš„æŠ€èƒ½;check ...");
+                        if( query("family/family_name", ob) != "ä¸å¹«" )
+                                tmp+=TMI("mitem ä¹è¨$Uçš„...;beg ... from "+id);
                 }
                 if( query("vendor_goods", ob)){
-                        tmp+=TMI("mitem ²éÑ¯$U³öÊÛµÄ¶«Î÷;list "+id+"");
-                        tmp+=TMI("mitem Ïò$UÂò...;buy ...");
+                        tmp+=TMI("mitem æŸ¥è©¢$Uå‡ºå”®çš„æ±è¥¿;list "+id+"");
+                        tmp+=TMI("mitem å‘$Uè²·...;buy ...");
                 }
                 if( query("dealer", ob) == "pawn"){
                         if( !query("vendor_goods", ob)){
-                                tmp+=TMI("mitem ²éÑ¯$U³öÊÛµÄ¶«Î÷;list");
-                                tmp+=TMI("mitem Ïò$UÂò...;buy ...");
+                                tmp+=TMI("mitem æŸ¥è©¢$Uå‡ºå”®çš„æ±è¥¿;list");
+                                tmp+=TMI("mitem å‘$Uè²·...;buy ...");
                         }
-                        tmp+=TMI("mitem ¹À¼Û...;value ...");
-                        tmp+=TMI("mitem Âô...¸ø$U;sell ...");
-                        tmp+=TMI("mitem µäµ±...¸ø$U;pawn ...");
+                        tmp+=TMI("mitem ä¼°åƒ¹...;value ...");
+                        tmp+=TMI("mitem è³£...çµ¦$U;sell ...");
+                        tmp+=TMI("mitem å…¸ç•¶...çµ¦$U;pawn ...");
                         if( query("pawns", me) )
-                                tmp+=TMI("mitem Êê»ØÎïÆ·...;redeem ...");
+                                tmp+=TMI("mitem è´–å›ç‰©å“...;redeem ...");
                 }
                 if( query("dealer", ob) == "bank"){
-                        tmp+=TMI("mitem ¶Ò»»»õ±Ò;convert ...");
-                        tmp+=TMI("mitem ´æÇ®;deposit ...");
+                        tmp+=TMI("mitem å…Œæ›è²¨å¹£;convert ...");
+                        tmp+=TMI("mitem å­˜éŒ¢;deposit ...");
                         if( query("balance", me)){
-                                tmp+=TMI("mitem ²éÑ¯´æ¿î;check");
-                                tmp+=TMI("mitem È¡Ç®;withdraw ...");
+                                tmp+=TMI("mitem æŸ¥è©¢å­˜æ¬¾;check");
+                                tmp+=TMI("mitem å–éŒ¢;withdraw ...");
                         }
                 }
                 if( query("family/master_name", me) != ob->name(1)){
                         if(ob->is_master())
-                                tmp+=TMI("mitem °İ$UÎªÊ¦;bai "+id);
+                                tmp+=TMI("mitem æ‹œ$Uç‚ºå¸«;bai "+id);
                 } else {
-                        tmp+=TMI("mitem ÏòÊ¦¸¸$U¿ÄÍ·;bai "+id);
-                        tmp+=TMI("mitem ²éÑ¯Ê¦¸¸$U¼¼ÄÜ;skills "+id);
+                        tmp+=TMI("mitem å‘å¸«çˆ¶$Uç£•é ­;bai "+id);
+                        tmp+=TMI("mitem æŸ¥è©¢å¸«çˆ¶$UæŠ€èƒ½;skills "+id);
                         if( ob->query_skills() && query("jing", me) >= 1
                                  && query("potential", me)>query("learned_points", me)){
                                 skills=ob->query_skills();
@@ -162,28 +162,28 @@ int room_path(object me, object ob)
                                                          && my_skill*my_skill*my_skill/10>query("combat_exp", me) )
                                                         continue;
                                                 if(skills[str[i]]>my_skill && str[i]!="idle")
-                                                        tmp+=TMI("mitem Ñ§Ï°"+to_chinese(str[i])+";learn "+id+" "+str[i]+" ...");
+                                                        tmp+=TMI("mitem å­¸ç¿’"+to_chinese(str[i])+";learn "+id+" "+str[i]+" ...");
                                         } else
-                                        tmp+=TMI("mitem Ñ§Ï°"+to_chinese(str[i])+";learn "+id+" "+str[i]+" ...");
+                                        tmp+=TMI("mitem å­¸ç¿’"+to_chinese(str[i])+";learn "+id+" "+str[i]+" ...");
                                 }
                         }
                 }
         } else {
                 if( !query("no_get", ob) )
-                        tmp+=TMI("mitem °Ñ$U¼ñÆğÀ´;get "+id);
+                        tmp+=TMI("mitem æŠŠ$Uæ’¿èµ·ä¾†;get "+id);
                 if(ob->is_container()) {
                         inv = all_inventory(ob);
                         if(sizeof(inv)) {
-                                tmp+=TMI("mitem °Ñ$UÀïµÄ¶«Î÷¶¼ÄÃ³öÀ´;get all from "+id);
-                                tmp+=TMI("mitem ´Ó$UÀïÄÃ³ö...;get ... from "+id);
+                                tmp+=TMI("mitem æŠŠ$Uè£¡çš„æ±è¥¿éƒ½æ‹¿å‡ºä¾†;get all from "+id);
+                                tmp+=TMI("mitem å¾$Uè£¡æ‹¿å‡º...;get ... from "+id);
                         }
-                        tmp+=TMI("mitem °Ñ...×°½ø$UÀï;put ... in "+id);
+                        tmp+=TMI("mitem æŠŠ...è£é€²$Uè£¡;put ... in "+id);
                 }
                 if(id=="board") {
-                        tmp+=TMI("mitem ¶ÁĞÂµÄÁôÑÔ;read new");
-                        tmp+=TMI("mitem ¶ÁµÚ...ÌõÁôÑÔ;read ...");
-                        tmp+=TMI("mitem Ğ´ĞÂµÄÁôÑÔ;post ...");
-                        tmp+=TMI("mitem É¾³ıÁôÑÔ...;discard ...");
+                        tmp+=TMI("mitem è®€æ–°çš„ç•™è¨€;read new");
+                        tmp+=TMI("mitem è®€ç¬¬...æ¢ç•™è¨€;read ...");
+                        tmp+=TMI("mitem å¯«æ–°çš„ç•™è¨€;post ...");
+                        tmp+=TMI("mitem åˆªé™¤ç•™è¨€...;discard ...");
                 }
         }
         tmp+=TMI("mendd");
@@ -198,60 +198,60 @@ int user_path(object me, object ob)
 
         if(!objectp(ob)) return 1;
 
-        if(stringp(tmp=ob->query_menu(me,1)))//Èç¹û¶ÔÏóÄÜ½âÊÍ²Ëµ¥£¬ÔòÖ±½Ó·µ»Ø²Ëµ¥
+        if(stringp(tmp=ob->query_menu(me,1)))//å¦‚æœå°è±¡èƒ½è§£é‡‹èœå–®ï¼Œå‰‡ç›´æ¥è¿”å›èœå–®
         {
                 write(tmp);
                 return 1;
         }
 
         id=query("id", ob);
-        tmp=TMI("mbegin "+ob->name(1)+";"+id)+TMI("mitem ¹Û²ì$U;look "+id);
+        tmp=TMI("mbegin "+ob->name(1)+";"+id)+TMI("mitem è§€å¯Ÿ$U;look "+id);
 
         if( !query("no_drop", ob) )
-                tmp+=TMI("mitem ¶ªÆú$U;drop "+id);
+                tmp+=TMI("mitem ä¸Ÿæ£„$U;drop "+id);
 
         if( !query("no_give", ob) )
-                tmp+=TMI("mitem °Ñ$U¸ø...;give "+id+" to ...");
+                tmp+=TMI("mitem æŠŠ$Uçµ¦...;give "+id+" to ...");
 
         if( query("ridable", ob) && query_temp("is_rided_by", ob) == me && 
            query_temp("is_riding", me) == ob )
         {
-                tmp+=TMI("mitem ÌøÏÂ$U;unride "+id);
+                tmp+=TMI("mitem è·³ä¸‹$U;unride "+id);
         }
 
         if( query("liquid", ob)){
                 if( query("liquid/remaining", ob) )
-                        tmp+=TMI("mitem ºÈ$U;drink "+id);
+                        tmp+=TMI("mitem å–$U;drink "+id);
                 if( query("resource/water", environment(me)) )
-                        tmp+=TMI("mitem °Ñ$U×°ÂúË®;fill "+id);
+                        tmp+=TMI("mitem æŠŠ$Uè£æ»¿æ°´;fill "+id);
         }
 
         if( query("food_remaining", ob) )
-                tmp+=TMI("mitem ³Ô$U;eat "+id);
+                tmp+=TMI("mitem åƒ$U;eat "+id);
 
         if(ob->is_container()) {
-                tmp+=TMI("mitem °Ñ$UÀïµÄ¶«Î÷¶¼ÄÃ³öÀ´;get all from "+id);
-                tmp+=TMI("mitem ´Ó$UÀïÄÃ³ö...;get ... from "+id);
-                tmp+=TMI("mitem °Ñ...×°½ø$UÀï;put ... in "+id);
+                tmp+=TMI("mitem æŠŠ$Uè£¡çš„æ±è¥¿éƒ½æ‹¿å‡ºä¾†;get all from "+id);
+                tmp+=TMI("mitem å¾$Uè£¡æ‹¿å‡º...;get ... from "+id);
+                tmp+=TMI("mitem æŠŠ...è£é€²$Uè£¡;put ... in "+id);
         }
         if(mapp(prop=query("armor_prop",ob)) && stringp(query("armor_type", ob)) ) {
                 if( !query("equipped", ob) )
-                        tmp+=TMI("mitem ´©ÉÏ$U;wear "+id);
+                        tmp+=TMI("mitem ç©¿ä¸Š$U;wear "+id);
                 else
-                        tmp+=TMI("mitem ÍÑÏÂ$U;remove "+id);
+                        tmp+=TMI("mitem è„«ä¸‹$U;remove "+id);
         }
 
         if(mapp(prop=query("weapon_prop", ob)) && stringp(query("skill_type", ob))) {
                 if( !query("equipped", ob) )
-                        tmp+=TMI("mitem ×°±¸$U;wield "+id);
+                        tmp+=TMI("mitem è£å‚™$U;wield "+id);
                 else
-                        tmp+=TMI("mitem ½â³ı×°±¸$U;unwield "+id);
+                        tmp+=TMI("mitem è§£é™¤è£å‚™$U;unwield "+id);
         }
 
         if( query("skill", ob) )
-                tmp+=TMI("mitem ¶Á$U;study "+id);
+                tmp+=TMI("mitem è®€$U;study "+id);
 
-        // "»ÃÊŞµÑÊ¹ÓÃÁĞ±í
+        // "å¹»ç¸ç¬›ä½¿ç”¨åˆ—è¡¨
         if(id=="shou shao")
         {
                 if( query("can_whistle", me) )
@@ -261,34 +261,34 @@ int user_path(object me, object ob)
                         huanshou_str=keys(query("can_whistle", me));
                         if( query_temp("pet_id", me) )
                         {
-                                tmp+=TMI("mitem ÇıÊ¹¡¼¹¥»÷¡½ ;attack "+"...");
-                                tmp+=TMI("mitem Í£Ö¹¡¼¹¥»÷¡½ ;stop "+huanshou_str[0]+"");
-                                tmp+=TMI("mitem ²é¿´¡¼»ÃÊŞ¡½ ;shape "+huanshou_str[0]+"");
-                                tmp+=TMI("mitem ÕÙ»Ø¡¼»ÃÊŞ¡½ ;whistle "+huanshou_str[0]+"");
+                                tmp+=TMI("mitem é©…ä½¿â–¡æ”»æ“Šâ–¡ ;attack "+"...");
+                                tmp+=TMI("mitem åœæ­¢â–¡æ”»æ“Šâ–¡ ;stop "+huanshou_str[0]+"");
+                                tmp+=TMI("mitem æŸ¥çœ‹â–¡å¹»ç¸â–¡ ;shape "+huanshou_str[0]+"");
+                                tmp+=TMI("mitem å¬å›â–¡å¹»ç¸â–¡ ;whistle "+huanshou_str[0]+"");
                         }
                         else
                         {
-                                tmp+=TMI("mitem ÕÙ»½¡¼»ÃÊŞ¡½ ;whistle "+huanshou_str[0]+"");
+                                tmp+=TMI("mitem å¬å–šâ–¡å¹»ç¸â–¡ ;whistle "+huanshou_str[0]+"");
                         }
-                                // tmp+=TMI("mitem ÃèÊö¡¼»ÃÊŞ¡½ ;modify "+huanshou_str[0]+"");
+                                // tmp+=TMI("mitem æè¿°â–¡å¹»ç¸â–¡ ;modify "+huanshou_str[0]+"");
                         if( query_temp("beastdied", me) )
                         {
-                                tmp+=TMI("mitem ¸´»î¡¼»ÃÊŞ¡½ ;recall reborn "+huanshou_str[0]+"");
+                                tmp+=TMI("mitem å¾©æ´»â–¡å¹»ç¸â–¡ ;recall reborn "+huanshou_str[0]+"");
                         }
                 }
         }
-        //¶¾Ò©Ê¹ÓÃ¼ÓÇ¿
+        //æ¯’è—¥ä½¿ç”¨åŠ å¼·
         if( query("poison_type", ob) == "poison" )
         {
                 if( query("can_pour", ob) )
-                        tmp+=TMI("mitem ÔÚ¡¼ÈİÆ÷¡½ÖĞ´ã¶¾ ;pour "+id+" in ...");
+                        tmp+=TMI("mitem åœ¨â–¡å®¹å™¨â–¡ä¸­æ·¬æ¯’ ;pour "+id+" in ...");
                 if( query("can_drug", ob) )
-                        tmp+=TMI("mitem ÔÚ¡¼Ê³Îï¡½ÖĞ´ã¶¾ ;drug "+id+" in ...");
+                        tmp+=TMI("mitem åœ¨â–¡é£Ÿç‰©â–¡ä¸­æ·¬æ¯’ ;drug "+id+" in ...");
                 if( query("can_daub", ob) )
                 {
-                        tmp+=TMI("mitem ÔÚ¡¼ÎäÆ÷¡½ÉÏ´ã¶¾ ;daub "+id+" on ...");
-                        tmp+=TMI("mitem ÔÚ¡¼·À¾ß¡½ÉÏ´ã¶¾(Î£ÏÕ) ;daub "+id+" on ...");
-                        tmp+=TMI("mitem ÔÚ¡¼ÊÖÉÏ¡½ÉÏ´ã¶¾(Î£ÏÕ) ;daub "+id+" on hand ...");
+                        tmp+=TMI("mitem åœ¨â–¡æ­¦å™¨â–¡ä¸Šæ·¬æ¯’ ;daub "+id+" on ...");
+                        tmp+=TMI("mitem åœ¨â–¡é˜²å…·â–¡ä¸Šæ·¬æ¯’(å±éšª) ;daub "+id+" on ...");
+                        tmp+=TMI("mitem åœ¨â–¡æ‰‹ä¸Šâ–¡ä¸Šæ·¬æ¯’(å±éšª) ;daub "+id+" on hand ...");
                 }
         }
         tmp+=TMI("mendd");

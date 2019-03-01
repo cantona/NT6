@@ -2,12 +2,12 @@ inherit ROOM;
 
 void create()
 {
-          set("short", "»¨Ô°");
+          set("short", "èŠ±åœ’");
         set("long", @LONG
-ÄãµÄÑÛÇ°³öÏÖÁËÒ»¸öÃÀÀöµÄ»¨Ô°£¬»¨Ô°ÀïÖÖ×ÅÒ»Ð©»¨£¬»¨´ÓÖÐÒþ
-Ô¼¿É¼ûÆ®ÃìµÄÙ»Ó°£¬ÄÇÊÇ¹¬ÖÐµÄ½ãÃÃÃÇÔÚÍæË£¡£»¨Ô°ÖÐÑëÓÐÒ»×ù¼ÙÉ½
-(jiashan) ¡£»¨Ô°µÄ¶«Î÷Á½Í·ÊÇ³¤ÀÈ£¬±±±ßÓÐÒ»ÌõÐ¡µÀÍ¨ÏòÌìÉ½Í¯ÀÑ
-ÐÞÁ·Ö®´¦¡£
+ä½ çš„çœ¼å‰å‡ºç¾äº†ä¸€å€‹ç¾Žéº—çš„èŠ±åœ’ï¼ŒèŠ±åœ’è£¡ç¨®è‘—ä¸€äº›èŠ±ï¼ŒèŠ±å¾žä¸­éš±
+ç´„å¯è¦‹é£„æ¸ºçš„å€©å½±ï¼Œé‚£æ˜¯å®®ä¸­çš„å§å¦¹å€‘åœ¨çŽ©è€ã€‚èŠ±åœ’ä¸­å¤®æœ‰ä¸€åº§å‡å±±
+(jiashan) ã€‚èŠ±åœ’çš„æ±è¥¿å…©é ­æ˜¯é•·å»Šï¼ŒåŒ—é‚Šæœ‰ä¸€æ¢å°é“é€šå‘å¤©å±±ç«¥å§¥
+ä¿®ç·´ä¹‹è™•ã€‚
 LONG );
           set("exits",([
                       "west" : __DIR__"changl1",
@@ -17,7 +17,7 @@ LONG );
           ]));
           set("outdoors", "lingjiu");
         set("item_desc", ([
-                "jiashan" : "Õâ×ù¼ÙÉ½¿´ÆðÀ´²»ËãÌ«´ó£¬ÄãÓ¦¸Ã¿ÉÒÔ°á¶¯(move)Ëü.\n",
+                "jiashan" : "é€™åº§å‡å±±çœ‹èµ·ä¾†ä¸ç®—å¤ªå¤§ï¼Œä½ æ‡‰è©²å¯ä»¥æ¬å‹•(move)å®ƒ.\n",
         ]));
           set("objects", ([
                       "/clone/quarry/lu" : 1,
@@ -37,15 +37,15 @@ int do_move(string arg)
         object me = this_player();
         
         if (! arg || arg != "jiashan")
-                return notify_fail("ÄãÒªÒÆ¶¯Ê²Ã´£¿\n");
+                return notify_fail("ä½ è¦ç§»å‹•ä»€éº¼ï¼Ÿ\n");
         if ((int)me->query_str() > 28)
         {
-                message_vision("$NÊ¹³ö³ÔÄÌµÄÁ¦Æø°Ñ¼ÙÉ½Å²¿ª,Ö»¼ûÏÂÃæÂ¶³öÒ»¸ö´ó¶´£¬ËÆºõ¿ÉÒÔ½øÈ¥(enter)¡£\n", 
+                message_vision("$Nä½¿å‡ºåƒå¥¶çš„åŠ›æ°£æŠŠå‡å±±æŒªé–‹,åªè¦‹ä¸‹é¢éœ²å‡ºä¸€å€‹å¤§æ´žï¼Œä¼¼ä¹Žå¯ä»¥é€²åŽ»(enter)ã€‚\n", 
                         this_player());
                 set("move_jiashan", 1);
         }
         else
-                message_vision("$NÊ¹³ö³ÔÄÌµÄÁ¦ÆøÒ²Å²²»¶¯¼ÙÉ½£¬Ö»ºÃã¬ã¬µØ·ÅÆúÁË¡£\n", this_player());        
+                message_vision("$Nä½¿å‡ºåƒå¥¶çš„åŠ›æ°£ä¹ŸæŒªä¸å‹•å‡å±±ï¼Œåªå¥½æ‚»æ‚»åœ°æ”¾æ£„äº†ã€‚\n", this_player());        
         return 1;        
 }
 
@@ -58,12 +58,12 @@ int do_enter(object me)
         where = environment(me);
         
         if( !query("move_jiashan", where) )
-                return notify_fail("ÄãÒª½øÄÄÈ¥£¿\n");
+                return notify_fail("ä½ è¦é€²å“ªåŽ»ï¼Ÿ\n");
                 
         if (! (room = find_object(__DIR__"midao1")))
                 room = load_object(__DIR__"midao1");
                 
-        message_vision("$N¡°¹¾ßË¡±Ò»Éù£¬Ìø½ø¶´ÖÐ¡£\n", me);
+        message_vision("$Nâ€œå’•å’šâ€ä¸€è²ï¼Œè·³é€²æ´žä¸­ã€‚\n", me);
         me->move(room);
         set("move_jiashan", 0);
         return 1;

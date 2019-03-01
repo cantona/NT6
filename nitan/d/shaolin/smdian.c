@@ -9,13 +9,13 @@ int do_open(string arg);
 
 void create()
 {
-        set("short", "É½ÃÅµî");
+        set("short", "å±±é–€æ®¿");
         set("long", @LONG
-ÕâÀï±ãÊÇÉÙÁÖËÂµÄÇ°µîÉ½ÃÅµîÁË¡£Ö»¼ûµîÄÚÇà×©ÆÌµØ£¬Á½²à·ÖÁĞ
-ºß¡¢¹ş¶ş½«¡£ÉíÇûĞÛÎ°£¬ÃæÏà·ŞÅ­£¬Í·´ø±¦¹Ú£¬ÉÏ°ëÉíÂãÂ¶£¬ÊÖÖ´½ğ
-¸ÕèÆ£¬Ò»¹Ä±Ç£¬Ò»ÕÅ¿Ú£¬Â¶ÑÀÕöÄ¿£¬Ğ×ÃÍ¿ÉÎ·¡£Á½±ß¸÷·ÅÒ»ºìÄ¾¹©×À£¬
-³ÂÁĞÏãÖò£¬ÒÔ¹©É®Ë×ßµ°İ¡£×Ô´ËµÄ×óÓÒ¸÷ÓĞÒ»¼äÆ«µî£¬¹©±ÈÇğÃÇ´ò×ø
-ËĞ¾­Ö®ÓÃ¡£ÄÏÃæÊÇÒ»µÀÈıÕÉÀ´¸ßµÄÖìºìÉ¼Ä¾°üÍ­´óÃÅ(gate)¡£
+é€™è£¡ä¾¿æ˜¯å°‘æ—å¯ºçš„å‰æ®¿å±±é–€æ®¿äº†ã€‚åªè¦‹æ®¿å…§é’ç£šèˆ–åœ°ï¼Œå…©å´åˆ†åˆ—
+å“¼ã€å“ˆäºŒå°‡ã€‚èº«è»€é›„å‰ï¼Œé¢ç›¸å¿¿æ€’ï¼Œé ­å¸¶å¯¶å† ï¼Œä¸ŠåŠèº«è£¸éœ²ï¼Œæ‰‹åŸ·é‡‘
+å‰›æµï¼Œä¸€é¼“é¼»ï¼Œä¸€å¼µå£ï¼Œéœ²ç‰™çœç›®ï¼Œå…‡çŒ›å¯ç•ã€‚å…©é‚Šå„æ”¾ä¸€ç´…æœ¨ä¾›æ¡Œï¼Œ
+é™³åˆ—é¦™ç‡­ï¼Œä»¥ä¾›åƒ§ä¿—å©æ‹œã€‚è‡ªæ­¤çš„å·¦å³å„æœ‰ä¸€é–“åæ®¿ï¼Œä¾›æ¯”ä¸˜å€‘æ‰“å
+èª¦ç¶“ä¹‹ç”¨ã€‚å—é¢æ˜¯ä¸€é“ä¸‰ä¸ˆä¾†é«˜çš„æœ±ç´…æ‰æœ¨åŒ…éŠ…å¤§é–€(gate)ã€‚
 LONG );
         set("exits", ([
                 "east" : __DIR__"smdian1",
@@ -47,10 +47,10 @@ void close_gate()
         if(objectp(room))
         {
                 delete("exits/south");
-                        message("vision", HIY "É®±øÉÏÇ°°Ñ´óÃÅ¹ØÁËÆğÀ´¡£\n" NOR,
+                        message("vision", HIY "åƒ§å…µä¸Šå‰æŠŠå¤§é–€é—œäº†èµ·ä¾†ã€‚\n" NOR,
                                           this_object());
                 delete("exits/north", room);
-                message("vision", HIY "Ö»ÌıÆ¹µØÒ»Éù£¬ÀïÃæÓĞÈË°Ñ´óÃÅ¹ØÉÏÁË¡£\n"
+                message("vision", HIY "åªè½ä¹’åœ°ä¸€è²ï¼Œè£¡é¢æœ‰äººæŠŠå¤§é–€é—œä¸Šäº†ã€‚\n"
                                   NOR, room);
         }
 }
@@ -58,12 +58,12 @@ void close_gate()
 int do_close(string arg)
 {
         if (!query("exits/south"))
-                return notify_fail("´óÃÅÒÑ¾­ÊÇ¹Ø×ÅµÄÁË¡£\n");
+                return notify_fail("å¤§é–€å·²ç¶“æ˜¯é—œè‘—çš„äº†ã€‚\n");
 
         if (!arg || (arg != "gate" && arg != "south"))
-                return notify_fail("ÄãÒª¹ØÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦é—œä»€éº¼ï¼Ÿ\n");
 
-        message_vision(CYN "$N" CYN "³¯×ÅÉ®±øµãÁËµãÍ·¡£\n" NOR, this_player());
+        message_vision(CYN "$N" CYN "æœè‘—åƒ§å…µé»äº†é»é ­ã€‚\n" NOR, this_player());
 
         remove_call_out("close_gate");
         call_out("close_gate", 2);
@@ -76,19 +76,19 @@ int do_open(string arg)
         object room;
 
         if (query("exits/south"))
-                return notify_fail("´óÃÅÒÑ¾­ÊÇ¿ª×ÅÁË¡£\n");
+                return notify_fail("å¤§é–€å·²ç¶“æ˜¯é–‹è‘—äº†ã€‚\n");
 
         if (!arg || (arg != "gate" && arg != "south"))
-                return notify_fail("ÄãÒª¿ªÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦é–‹ä»€éº¼ï¼Ÿ\n");
 
         if(!( room = find_object(__DIR__"guangchang1")) )
                 room = load_object(__DIR__"guangchang1");
         if(objectp(room))
         {
                 set("exits/south", __DIR__"guangchang1");
-                message_vision(HIY "$N" HIY "Ê¹¾¢°Ñ´óÃÅ´òÁË¿ªÀ´¡£\n" NOR, this_player());
+                message_vision(HIY "$N" HIY "ä½¿å‹æŠŠå¤§é–€æ‰“äº†é–‹ä¾†ã€‚\n" NOR, this_player());
                 set("exits/north", __FILE__, room);
-                message("vision", HIY "Ö»ÌıÖ¨µØÒ»Éù£¬ÀïÃæÓĞÈË°Ñ´óÃÅ´ò¿ªÁË¡£\n" NOR, room);
+                message("vision", HIY "åªè½å±åœ°ä¸€è²ï¼Œè£¡é¢æœ‰äººæŠŠå¤§é–€æ‰“é–‹äº†ã€‚\n" NOR, room);
                 remove_call_out("close_gate");
                 call_out("close_gate", 10);
         }
@@ -98,7 +98,7 @@ int do_open(string arg)
 
 string look_gate()
 {
-        return YEL "Ò»µÀÈıÕÉÀ´¸ßµÄÖìºìÉ¼Ä¾°üÍ­´óÃÅ¡£\n" NOR;
+        return YEL "ä¸€é“ä¸‰ä¸ˆä¾†é«˜çš„æœ±ç´…æ‰æœ¨åŒ…éŠ…å¤§é–€ã€‚\n" NOR;
 }
 
 int valid_leave(object me, string dir)

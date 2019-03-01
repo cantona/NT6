@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "���");
+        set("short", "大殿");
         set("long", @LONG
- ������ѩɽ�µĴ����빩���ŷ�������ɮ���������ž��ģ�
-�����������������ʢ��Զ����������������ϵ�Ĥ�ݡ������
-�඼�ǲ�
+ 這裡是雪山寺的大殿，中央供奉著佛祖塑像。僧人們在念著經文，
+所以這裡的香火很是旺盛。遠來的香客們在這裡虔誠地膜拜。大殿兩
+側都是側殿。
 LONG );
         set("exits", ([
                 "east"  : __DIR__"cedian1",

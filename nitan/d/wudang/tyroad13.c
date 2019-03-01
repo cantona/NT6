@@ -1,4 +1,4 @@
-// tyroad13.c ÌÒÔ°Ð¡Â·
+// tyroad13.c æ¡ƒåœ’å°è·¯
 // by Marz 
 
 inherit ROOM;
@@ -18,12 +18,12 @@ void create()
 {
         int i = random(sizeof(npcs));
             
-        set("short", "ÌÒÔ°");
+        set("short", "æ¡ƒåœ’");
         set("long", @LONG
-ÑÛÇ°»íÈ»¿ªÀÊ£¬ÄãÇáËÉµØ×ßÔÚÌÒÔ°µÄÐ¡Â·ÉÏ¡£Á½±ßÊÇÌÒÊ÷ÁÖ(tre
-e)£¬Ê÷ÉÏÊ¢¿ª×Å·ÛºìµÄÌÒ»¨£¬ºìÔÆÒ»Æ¬£¬Íû²»µ½±ß¡£²»Ê±ÓÐÃÛ·ä¡¸ÎË
-ÎË¡¹µØ·É¹ý£¬ÏûÊ§ÔÚÔÚ»¨´ÔÖÐ£»¼¸Ö»ºï×ÓÔÚÊ÷ÉÏ»¥Ïà×·Öð×Å£¬ß´ß´Ôû
-ÔûµØÕùÇÀÌÒ×Ó¡£Ô¶´¦ÊÇ¸ß¸ßµÄÌìÖù·å(feng)¡£
+çœ¼å‰è±ç„¶é–‹æœ—ï¼Œä½ è¼•é¬†åœ°èµ°åœ¨æ¡ƒåœ’çš„å°è·¯ä¸Šã€‚å…©é‚Šæ˜¯æ¡ƒæ¨¹æž—(tre
+e)ï¼Œæ¨¹ä¸Šç››é–‹è‘—ç²‰ç´…çš„æ¡ƒèŠ±ï¼Œç´…é›²ä¸€ç‰‡ï¼Œæœ›ä¸åˆ°é‚Šã€‚ä¸æ™‚æœ‰èœœèœ‚ã€Œå—¡
+å—¡ã€åœ°é£›éŽï¼Œæ¶ˆå¤±åœ¨åœ¨èŠ±å¢ä¸­ï¼›å¹¾åªçŒ´å­åœ¨æ¨¹ä¸Šäº’ç›¸è¿½é€è‘—ï¼Œå˜°å˜°å–³
+å–³åœ°çˆ­æ¶æ¡ƒå­ã€‚é è™•æ˜¯é«˜é«˜çš„å¤©æŸ±å³°(feng)ã€‚
 LONG );
         set("outdoors", "wudang");
 
@@ -35,7 +35,7 @@ LONG );
         set("item_desc", ([
                 "feng" : (:look_feng:),
                 "tree" : 
-"ÕâÊÇÒ»Æ¬ÌÒÁÖ£¬ÉÏÃæ½áÂúÁËË®ÃÛÌÒ£¬ÒýµÃÈË¹þÀ®×Ó¶¼µôÏÂÀ´ÁË¡£\n"
+"é€™æ˜¯ä¸€ç‰‡æ¡ƒæž—ï¼Œä¸Šé¢çµæ»¿äº†æ°´èœœæ¡ƒï¼Œå¼•å¾—äººå“ˆå–‡å­éƒ½æŽ‰ä¸‹ä¾†äº†ã€‚\n"
          ]));
         set("objects", ([
                 CLASS_D("wudang") + "/shouyuan" : 1,
@@ -58,13 +58,13 @@ void init()
 int do_zhai(string arg)
 {       object tao;
          if( !arg || arg=="" ) {
-message_vision("ÄãÏëÕªÊ²Ã´£¿\n", this_player());
+message_vision("ä½ æƒ³æ‘˜ä»€éº¼ï¼Ÿ\n", this_player());
 return 1;
 }
         if( arg=="tao"||arg=="taozi" ) {
             if(query("taocount") > 0){
                 message_vision(
-       "$NÌÒÊ÷ÉÏÕªÏÂÒ»¸öÊìÍ¸µÄË®ÃÛÌÒ¡£\n"
+       "$Næ¡ƒæ¨¹ä¸Šæ‘˜ä¸‹ä¸€å€‹ç†Ÿé€çš„æ°´èœœæ¡ƒã€‚\n"
                         , this_player());
                 tao = new("/d/wudang/obj/mitao");
                 tao->move(this_player());
@@ -72,7 +72,7 @@ return 1;
                 return 1;
                 }else
         message_vision(
-        "ÄãÕâÃ´×Å¼±Ñ½£¿ÌÒ»¹Ã»ÊìÄØ¡£\n" , this_player());
+        "ä½ é€™éº¼è‘—æ€¥å‘€ï¼Ÿæ¡ƒé‚„æ²’ç†Ÿå‘¢ã€‚\n" , this_player());
         remove_call_out("do_tao");
         call_out("do_tao",60);
         return 1;            
@@ -85,12 +85,12 @@ int do_kan (string arg)
     object weapon, ob;
 
     if( !arg || arg !="tree" )
-        return notify_fail("ÄãÒª¿³Ê²Ã´£¿\n");
+        return notify_fail("ä½ è¦ç ä»€éº¼ï¼Ÿ\n");
 
     if( !objectp(weapon=query_temp("weapon", this_player())) )
-        return notify_fail("²»ÓÃÎäÆ÷¿ÖÅÂ²»ÐÐ°É£¡\n");
+        return notify_fail("ä¸ç”¨æ­¦å™¨ææ€•ä¸è¡Œå§ï¼\n");
 
-    message_vision("$N³é³ö±øÈÐ£¬à§µØ¿³ÏÂÁËÒ»¸ùÌÒÊ÷Ö¦¡£\n", this_player());
+    message_vision("$NæŠ½å‡ºå…µåˆƒï¼Œå”°åœ°ç ä¸‹äº†ä¸€æ ¹æ¡ƒæ¨¹æžã€‚\n", this_player());
     ob = new("/d/wudang/quest/obj/trunk");
     ob->move(file_name(environment(this_player())));
     return 1; 

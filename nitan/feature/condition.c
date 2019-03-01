@@ -161,7 +161,7 @@ nomask void apply_condition(string cnd, mixed info)
 {
         object applyer;
 
-        if( !stringp(cnd) ) cnd = "poison";  // 加上调试，cnd 丢失
+        if( !stringp(cnd) ) cnd = "poison";  // 鍔犱笂瑾胯│锛宑nd 涓熷け
         if( !stringp(cnd) ) {
                 log_file("condition.err", sprintf("Error to apply condition(%O) from object(%O) with info(%O)\n",
                         cnd, previous_object(), info));
@@ -280,7 +280,7 @@ nomask int affect_by(string cnd, mixed para)
                 para["duration"] = para["duration"] * (100 + add) / 100;
         }
 
-        // 提高抗毒效果
+        // 鎻愰珮鎶楁瘨鏁堟灉
         para["level"] = para["level"] * (100 - reduce) / 100;
         para["duration"] = para["duration"] * (100 - reduce) / 100;
 

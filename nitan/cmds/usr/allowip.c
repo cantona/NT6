@@ -10,14 +10,14 @@ varargs void allow_ip_list(string *allow_ip,string name)
 {
     int i;
     if (!name)
-        name="Äã";
+        name="ä½ ";
     if (allow_ip && sizeof(allow_ip)){
-        write("\n"+name+"ËùÉè¶¨µÄµÇÂ¼µØÖ··¶Î§ÓĞ£º\n");
+        write("\n"+name+"æ‰€è¨­å®šçš„ç™»éŒ„åœ°å€èŒƒåœæœ‰ï¼š\n");
         for (i=0;i<sizeof(allow_ip);i++)
                     printf("\t%s\n", allow_ip[i]);
     }else{
-        write(YEL+"¾¯¸æ£º"+name+"Ä¿Ç°Ã»ÓĞÉè¶¨ÈÎºÎµÇÂ¼µØÖ·£¬"+name+"µÄÕÊºÅ¿ÉÒÔ´ÓÈÎºÎµØ·½ÉÏÏß£¡\n"+NOR);
-     if (name=="Äã")
+        write(YEL+"è­¦å‘Šï¼š"+name+"ç›®å‰æ²’æœ‰è¨­å®šä»»ä½•ç™»éŒ„åœ°å€ï¼Œ"+name+"çš„å¸³è™Ÿå¯ä»¥å¾ä»»ä½•åœ°æ–¹ä¸Šç·šï¼\n"+NOR);
+     if (name=="ä½ ")
         help();
     }
 }
@@ -63,7 +63,7 @@ int main(object me, string arg)
                         return 1;
                     case "-d" :
                         delete("allow_ip", link_ob);
-                        write(query("name", link_ob)+"µÄµÇÂ¼µØÖ·ÉèÖÃÒÑ±»É¾³ı¡£\n");
+                        write(query("name", link_ob)+"çš„ç™»éŒ„åœ°å€è¨­ç½®å·²è¢«åˆªé™¤ã€‚\n");
                         link_ob->save();
                         return 1;
                 }
@@ -75,26 +75,26 @@ int main(object me, string arg)
     switch(term){
         case "-?":
              if (!vaild_enter(arg,allow_ip)){
-                write(arg+" ²»ÔÚÄãËùÉè¶¨µÄµÇÂ¼µØÖ·ÄÚ¡£\n");
+                write(arg+" ä¸åœ¨ä½ æ‰€è¨­å®šçš„ç™»éŒ„åœ°å€å…§ã€‚\n");
              }else{
-                write(arg+" ¿ÉÒÔÕı³£µÇÂ¼¡£\n");
+                write(arg+" å¯ä»¥æ­£å¸¸ç™»éŒ„ã€‚\n");
              }
                 return 1;
         case "-d":
             if (!allow_ip || !sizeof(allow_ip))
-                return notify_fail(YEL+"\n¾¯¸æ£ºÄãÄ¿Ç°Ã»ÓĞÉè¶¨ÈÎºÎµÇÂ¼µØÖ·£¬ÄãµÄÕÊºÅ¿ÉÒÔ´ÓÈÎºÎµØ·½ÉÏÏß£¡\n"+NOR);
-            if (member_array(arg,allow_ip)==-1)    return notify_fail("Äã²¢Ã»ÓĞÉè¶¨"+arg+"\n");
+                return notify_fail(YEL+"\nè­¦å‘Šï¼šä½ ç›®å‰æ²’æœ‰è¨­å®šä»»ä½•ç™»éŒ„åœ°å€ï¼Œä½ çš„å¸³è™Ÿå¯ä»¥å¾ä»»ä½•åœ°æ–¹ä¸Šç·šï¼\n"+NOR);
+            if (member_array(arg,allow_ip)==-1)    return notify_fail("ä½ ä¸¦æ²’æœ‰è¨­å®š"+arg+"\n");
             allow_ip -= ({ arg });
                 line=query_ip_number(me);
             if (!vaild_enter(line,allow_ip)){
-                write("¾¯¸æ£ºÄãÄ¿Ç°µÄIPµØÖ· "+line+" ²»ÔÚÄãËùÉè¶¨µÄµÇÂ¼µØÖ·ÄÚ¡£\nÇëÖØĞÂÉèÖÃ£¡\n");
+                write("è­¦å‘Šï¼šä½ ç›®å‰çš„IPåœ°å€ "+line+" ä¸åœ¨ä½ æ‰€è¨­å®šçš„ç™»éŒ„åœ°å€å…§ã€‚\nè«‹é‡æ–°è¨­ç½®ï¼\n");
                 return 1;
             }
             break;
         case "-s" :
             allow_ip=explode(arg,"|");
             allow_ip -= ({""});
-            write("Éè¶¨µÇÂ¼µØÖ·£º");
+            write("è¨­å®šç™»éŒ„åœ°å€ï¼š");
             for (i=0;i<sizeof(allow_ip);i++){
                 if (sscanf(allow_ip[i],"%s.%s.%s.%s",tmp1,tmp2,tmp3,tmp4)==4){
                     if (tmp1=="*")
@@ -105,7 +105,7 @@ int main(object me, string arg)
             }
             line=query_ip_number(me);
             if (!vaild_enter(line,allow_ip)){
-                   write(YEL+"\n¾¯¸æ£ºÄãÄ¿Ç°µÄIPµØÖ· "+line+" ²»ÔÚÄãËùÉè¶¨µÄµÇÂ¼µØÖ·ÄÚ¡£\nÇëÖØĞÂÉèÖÃ£¡\n"+NOR);
+                   write(YEL+"\nè­¦å‘Šï¼šä½ ç›®å‰çš„IPåœ°å€ "+line+" ä¸åœ¨ä½ æ‰€è¨­å®šçš„ç™»éŒ„åœ°å€å…§ã€‚\nè«‹é‡æ–°è¨­ç½®ï¼\n"+NOR);
                     return 1;
             }else{
                 break;
@@ -126,23 +126,23 @@ int main(object me, string arg)
 int help()
 {
         write(@TEXT
-Ö¸Áî¸ñÊ½£ºallowip [-?] [-d] [IPµØÖ·»ò·¶Î§]
+æŒ‡ä»¤æ ¼å¼ï¼šallowip [-?] [-d] [IPåœ°å€æˆ–èŒƒåœ]
  
-Éè¶¨×Ô¼ºµÄµÇÂ¼IPµØÖ·£¬Èç
+è¨­å®šè‡ªå·±çš„ç™»éŒ„IPåœ°å€ï¼Œå¦‚
       allowip 202.96.138.138
 
-Ò²¿ÉÉè¶¨Ò»¸öIPµØÖ··¶Î§£¬Èç
+ä¹Ÿå¯è¨­å®šä¸€å€‹IPåœ°å€èŒƒåœï¼Œå¦‚
       allowip 202.96.138.*
 
-Ò²¿ÉÍ¬Ê±Éè¶¨¶à¸öµØÖ··¶Î§(²»³¬¹ıÎå¸ö)£¬ÖĞ¼äÓÃ"|"¸ô¿ª£¬Èç
+ä¹Ÿå¯åŒæ™‚è¨­å®šå¤šå€‹åœ°å€èŒƒåœ(ä¸è¶…éäº”å€‹)ï¼Œä¸­é–“ç”¨"|"éš”é–‹ï¼Œå¦‚
       allowip 202.96.138.138|202.98.100.*|172.21.*.*
 
-¼´Ê¹±ğÈËÖªµÀÄãµÄÃÜÂë£¬Ò²²»ÄÜ´ÓÆäËûipµØÖ·µÇÂ¼¡£
+å³ä½¿åˆ¥äººçŸ¥é“ä½ çš„å¯†ç¢¼ï¼Œä¹Ÿä¸èƒ½å¾å…¶ä»–ipåœ°å€ç™»éŒ„ã€‚
 
-ÆäËû²ÎÊı:
+å…¶ä»–åƒæ•¸:
 
--?  : ÑéÖ¤Ä³¸öIPµØÖ·ÊÇ·ñÄÜµÇÂ¼
--d  : É¾³ıÄ³¸öµÇÂ¼µØÖ·
+-?  : é©—è¨¼æŸå€‹IPåœ°å€æ˜¯å¦èƒ½ç™»éŒ„
+-d  : åˆªé™¤æŸå€‹ç™»éŒ„åœ°å€
 
 TEXT
         );

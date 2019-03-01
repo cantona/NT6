@@ -7,9 +7,9 @@ void init()
 
 void create()
 {
-        set_name("¹ÖÉßÖ®µ¨", ({"guai shedan", "dan", "shedan"}));
-        set("unit", "Ö»");
-        set("long", "ÕâÊÇ¹ÖÉßµÄµ¨£¬Ô²Ô²µÄ£¬³ÊÉî×ÏÉ«£¬ĞÈ³ôÎŞ±È£¬²»ÖªÓĞÃ»ÓĞ¶¾¡£\n");
+        set_name("æ€ªè›‡ä¹‹è†½", ({"guai shedan", "dan", "shedan"}));
+        set("unit", "åª");
+        set("long", "é€™æ˜¯æ€ªè›‡çš„è†½ï¼Œåœ“åœ“çš„ï¼Œå‘ˆæ·±ç´«è‰²ï¼Œè…¥è‡­ç„¡æ¯”ï¼Œä¸çŸ¥æœ‰æ²’æœ‰æ¯’ã€‚\n");
         set("value", 1000);
         setup();
 }
@@ -23,20 +23,20 @@ int do_eat(string arg)
         food_limit = me->max_food_capacity();
         water_limit = me->max_water_capacity();
 
-        if(!id(arg)) return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+        if(!id(arg)) return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if(!present(this_object(), me))
-                return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if( me->is_busy() )
-                return notify_fail("±ğ¼±£¬ÂıÂı³Ô£¬Ğ¡ĞÄ±ğÒ­×ÅÁË¡£\n");
+                return notify_fail("åˆ¥æ€¥ï¼Œæ…¢æ…¢åƒï¼Œå°å¿ƒåˆ¥å™è‘—äº†ã€‚\n");
 
         if( (query("food", me) >= food_limit) || (query("water", me) >= water_limit) )
-                return notify_fail("ÄãÒÑ¾­³Ô±¥ÁË£¬ÔÙÒ²³Ô²»ÏÂÈÎºÎÒ»µã¶«Î÷¡£\n");
+                return notify_fail("ä½ å·²ç¶“åƒé£½äº†ï¼Œå†ä¹Ÿåƒä¸ä¸‹ä»»ä½•ä¸€é»æ±è¥¿ã€‚\n");
         if ( neili_limit <= force_limit  )
         {
                 addn("max_neili", 2, me);
                 addn("neili", 5, me);
         }
-        message_vision(HIY "$N³ÔÏÂÒ»¿ÅÉßµ¨£¬Ö»¾õÖ­ÒºĞÈ¼«¿à¼«£¬ÄÑ³ÔÎŞ±È£¬Ö»ÏëÅçÁË³öÈ¥¡£\n" NOR, this_player());
+        message_vision(HIY "$Nåƒä¸‹ä¸€é¡†è›‡è†½ï¼Œåªè¦ºæ±æ¶²è…¥æ¥µè‹¦æ¥µï¼Œé›£åƒç„¡æ¯”ï¼Œåªæƒ³å™´äº†å‡ºå»ã€‚\n" NOR, this_player());
         addn("food", 50, me);
         addn("water", 50, me);
         destruct(this_object());

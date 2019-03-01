@@ -6,85 +6,85 @@
 // how long the period is for chasers to take actions
 
 mapping wanted_list = ([
-        "/clone/weapon/treasure/baihong-jian.c"     : 1 ,//°×ºç½£
-        "/clone/weapon/treasure/bishou.c"           : 1 ,//Ø°Ê×
-        "/clone/weapon/treasure/dragonblade.c"      : 1 ,//ÍÀÁúµ¶
-        "/clone/weapon/treasure/duanyun-axe.c"      : 1 ,//¶ÏÔÆ¸«
-        "/clone/weapon/treasure/fumo-dao.c"         : 1 ,//·üÄ§µ¶
-        "/clone/weapon/treasure/ganjiang-jian.c"    : 1 ,//¸É½«
-        "/clone/weapon/treasure/greenwater-sword.c" : 1 ,//±ÌË®½£
-        "/clone/weapon/treasure/green-sword.c"      : 1 ,//±ÌË®½£
-        "/clone/weapon/treasure/jiandao.c"          : 1 ,//Îå¶¾¼ô
-        "/clone/weapon/treasure/jiaowei-qin.c"      : 1 ,//½¹Î²ÇÙ
-        "/clone/weapon/treasure/jinfenggou.c"       : 1 ,//½ğ·ï¹³
-        "/clone/weapon/treasure/jinhua.c"           : 1 ,//¶áÃü½ğ»¨
-        "/clone/weapon/treasure/jinlun.c"           : 1 ,//½ğÂÖ
-        "/clone/weapon/treasure/jinlongbian.c"      : 1 ,//½ğÁú±Ş
-        "/clone/weapon/treasure/jinshe-jian.c"      : 1 ,//½ğÉß½£
-        "/clone/weapon/treasure/jinwu-staff.c"      : 1 ,//½ğÎÚÕÈ
-        "/clone/weapon/treasure/king-blade.c"       : 1 ,//´³Íõ±¦µ¶
-        "/clone/weapon/treasure/langyabang.c"       : 1 ,//ÀÇÑÀ°ô
-        "/clone/weapon/treasure/lingshezhang.c"     : 1 ,//ÁéÉßÕÈ
-        "/clone/weapon/treasure/liquan-qiang.c"     : 1 ,//Á¤ÈªÇ¹
-        "/clone/weapon/treasure/longquan-jian.c"    : 1 ,//ÁúÈª½£
-        "/clone/weapon/treasure/moye-jian.c"        : 1 ,//ÄªĞ°
-        "/clone/weapon/treasure/qin.c"              : 1 ,//°×ÓñÑşÇÙ
-        "/clone/weapon/treasure/qingguang-jian.c"   : 1 ,//Çà¹â½£
-        "/clone/weapon/treasure/sea-wood.c"         : 1 ,//ÄÏº£ÉñÄ¾
-        "/clone/weapon/treasure/skysword.c"         : 1 ,//ÒĞÌì½£
-        "/clone/weapon/treasure/xblade.c"           : 1 ,//Ñªµ¶
-        "/clone/weapon/treasure/xuantie-jian.c"     : 1 ,//ĞşÌúÖØ½£
-        "/clone/weapon/treasure/xuantie-sword.c"    : 1 ,//ĞşÌú½£
-//        "/clone/weapon/treasure/yinlun.c"           : 1 ,//ÒøÂÖ
-        "/clone/weapon/treasure/yitian-jian.c"      : 1 ,//ÒĞÌì½£
-        "/clone/weapon/treasure/ylbian.c"           : 1 ,//ÔÆÁú±Ş
-        "/clone/weapon/treasure/youlong-jian.c"     : 1 ,//ÓÎÁú½£
-        "/clone/weapon/treasure/yuchang-jian.c"     : 1 ,//Óã³¦½£
-        "/clone/weapon/treasure/yuewang-jian.c"     : 1 ,//Ô½Íõ½£
-        "/clone/weapon/treasure/zhanlu-jian.c"      : 1 ,//Õ¿Â®½£
-        "/clone/weapon/treasure/zhen.c"             : 1 ,//Ğå»¨Õë
-        "/clone/weapon/treasure/zhenwu-jian.c"      : 1 ,//ÕæÎä½£
-        "/clone/weapon/treasure/zhenyue.c"          : 1 ,//ÕòÔÀÉĞ·½
-        "/clone/armor/treasure/baojia.c"            : 1 ,//ÕæË¿±¦¼×
-        "/clone/armor/treasure/jingang-zhao.c"      : 1 ,//½ğ¸ÕÕÖ
-        "/clone/armor/treasure/wucanyi.c"           : 1 ,//ÎÚ²ÏÒÂ
-        "/clone/armor/treasure/skirt.c"             : 1 ,//Ìì²ÏË¿È¹
-        "/clone/book/9book.c"                       : 1 ,//¾ÅÒõÕæ±¾
-//        "/clone/book/bagua0.c"                      : 1 ,//ºÓÍ¼
-//        "/clone/book/bagua1.c"                      : 1 ,//ÂåÊé
-        "/clone/book/medicine6.c"                   : 1 ,//ºúÇàÅ£Ò½¾­
-        "/clone/book/medicine7.c"                   : 1 ,//ÍõÄÑ¹Ã¶¾¾­
-//        "/clone/book/jinshe1.c"                     : 1 ,//½ğÉßÃØ¼®ÉÏ²á
-//        "/clone/book/yijing0.c"                     : 1 ,//Ò×¾­ĞòØÔÆª
-//        "/clone/book/yijing1.c"                     : 1 ,//Ò×¾­ËµØÔÆª
-//        "/clone/book/yijing2.c"                     : 1 ,//Ò×¾­ÔÓØÔÆª
-//        "/clone/book/yijing3.c"                     : 1 ,//Ò×¾­Ïµ´ÇÆª
-        "/clone/book/jiuyin1.c"                     : 1 ,//¾ÅÒõÕæ¾­ÉÏ²á
-        "/clone/book/jiuyin2.c"                     : 1 ,//¾ÅÒõÕæ¾­ÏÂ²á
-        "/clone/book/shipian.c"                     : 1 ,//³¤Ê¯Æ¬
-/*        "/clone/weapon/xiangmo-chu.c"  : 1,  // ½µÄ§èÆ
-        "/clone/weapon/yitian-jian.c"  : 1,  // ÒĞÌì½£
-        "/clone/unique/yuxiao.c"       : 1,  // Óñóï
-        "/clone/unique/fumo-dao.c"     : 1,  // ·üÄ§µ¶
-        "/clone/unique/jinshe-jian.c"  : 1,  // ½ğÉß½£
-        "/clone/unique/eyujian.c"      : 1,  // öù×ì¼ô
-        "/clone/unique/eweibian.c"     : 1,  // öùÎ²±Ş
-        "/clone/unique/xuantie-jian.c" : 1,  // ĞşÌúÖØ½£
-        "/d/huashan/obj/jinshe-zhui.c" : 1,  // ½ğÉß×¶
-        "/clone/unique/yuzhu-zhang.c"  : 1,  // ÓñÖñÕÈ
-        "/clone/weapon/qijue.c"        : 1,  // Æß¾øÕë
-        "/clone/unique/yuchang-jian.c" : 1,  // Óã³¦½£
-        "/clone/unique/zhenwu.c"       : 1,  // ÕæÎä½£
-        "/clone/unique/cy-jian.c"      : 1,  // ÖØÑô½£
-        "/d/shaolin/obj/jingang-zhao.c": 1,  // ½ğ¸ÕÕÖ
-        "/d/xueshan/obj/wucan-yi.c"    : 1,  // ÎÚ²ÏÒÂ
-        "/d/taohua/obj/ruanwei-jia.c"  : 1,  // Èíâ¬¼×
-        "/d/taohua/obj/taomu-jian.c"   : 1,  // ÌÒÄ¾½£
-        "/clone/unique/xuedao.c"       : 1,  // Ñªµ¶
-        "/d/city/npc/obj/shenzhao.c"   : 3,  // ÉñÕÕ¾­
-        "/kungfu/class/wudang/obj/canpian.c" : 3, //¾ÅÑô²ĞÆª
-        "/clone/unique/jiuyin_force_book.c" : 3, //¾ÅÒõÕæ¾­
-        "/clone/unique/kusang-bang.c"        : 1,        // ¿ŞÉ¥°ô
+        "/clone/weapon/treasure/baihong-jian.c"     : 1 ,//ç™½è™¹åŠ
+        "/clone/weapon/treasure/bishou.c"           : 1 ,//åŒ•é¦–
+        "/clone/weapon/treasure/dragonblade.c"      : 1 ,//å± é¾åˆ€
+        "/clone/weapon/treasure/duanyun-axe.c"      : 1 ,//æ–·é›²æ–§
+        "/clone/weapon/treasure/fumo-dao.c"         : 1 ,//ä¼é­”åˆ€
+        "/clone/weapon/treasure/ganjiang-jian.c"    : 1 ,//å¹¹å°‡
+        "/clone/weapon/treasure/greenwater-sword.c" : 1 ,//ç¢§æ°´åŠ
+        "/clone/weapon/treasure/green-sword.c"      : 1 ,//ç¢§æ°´åŠ
+        "/clone/weapon/treasure/jiandao.c"          : 1 ,//äº”æ¯’å‰ª
+        "/clone/weapon/treasure/jiaowei-qin.c"      : 1 ,//ç„¦å°¾ç´
+        "/clone/weapon/treasure/jinfenggou.c"       : 1 ,//é‡‘é³³é‰¤
+        "/clone/weapon/treasure/jinhua.c"           : 1 ,//å¥ªå‘½é‡‘èŠ±
+        "/clone/weapon/treasure/jinlun.c"           : 1 ,//é‡‘è¼ª
+        "/clone/weapon/treasure/jinlongbian.c"      : 1 ,//é‡‘é¾é­
+        "/clone/weapon/treasure/jinshe-jian.c"      : 1 ,//é‡‘è›‡åŠ
+        "/clone/weapon/treasure/jinwu-staff.c"      : 1 ,//é‡‘çƒæ–
+        "/clone/weapon/treasure/king-blade.c"       : 1 ,//é—–ç‹å¯¶åˆ€
+        "/clone/weapon/treasure/langyabang.c"       : 1 ,//ç‹¼ç‰™æ£’
+        "/clone/weapon/treasure/lingshezhang.c"     : 1 ,//éˆè›‡æ–
+        "/clone/weapon/treasure/liquan-qiang.c"     : 1 ,//ç€æ³‰æ§
+        "/clone/weapon/treasure/longquan-jian.c"    : 1 ,//é¾æ³‰åŠ
+        "/clone/weapon/treasure/moye-jian.c"        : 1 ,//è«é‚ª
+        "/clone/weapon/treasure/qin.c"              : 1 ,//ç™½ç‰ç‘¤ç´
+        "/clone/weapon/treasure/qingguang-jian.c"   : 1 ,//é’å…‰åŠ
+        "/clone/weapon/treasure/sea-wood.c"         : 1 ,//å—æµ·ç¥æœ¨
+        "/clone/weapon/treasure/skysword.c"         : 1 ,//å€šå¤©åŠ
+        "/clone/weapon/treasure/xblade.c"           : 1 ,//è¡€åˆ€
+        "/clone/weapon/treasure/xuantie-jian.c"     : 1 ,//ç„éµé‡åŠ
+        "/clone/weapon/treasure/xuantie-sword.c"    : 1 ,//ç„éµåŠ
+//        "/clone/weapon/treasure/yinlun.c"           : 1 ,//éŠ€è¼ª
+        "/clone/weapon/treasure/yitian-jian.c"      : 1 ,//å€šå¤©åŠ
+        "/clone/weapon/treasure/ylbian.c"           : 1 ,//é›²é¾é­
+        "/clone/weapon/treasure/youlong-jian.c"     : 1 ,//éŠé¾åŠ
+        "/clone/weapon/treasure/yuchang-jian.c"     : 1 ,//é­šè…¸åŠ
+        "/clone/weapon/treasure/yuewang-jian.c"     : 1 ,//è¶Šç‹åŠ
+        "/clone/weapon/treasure/zhanlu-jian.c"      : 1 ,//æ¹›å»¬åŠ
+        "/clone/weapon/treasure/zhen.c"             : 1 ,//ç¹¡èŠ±é‡
+        "/clone/weapon/treasure/zhenwu-jian.c"      : 1 ,//çœŸæ­¦åŠ
+        "/clone/weapon/treasure/zhenyue.c"          : 1 ,//é®å²³å°šæ–¹
+        "/clone/armor/treasure/baojia.c"            : 1 ,//çœŸçµ²å¯¶ç”²
+        "/clone/armor/treasure/jingang-zhao.c"      : 1 ,//é‡‘å‰›ç½©
+        "/clone/armor/treasure/wucanyi.c"           : 1 ,//çƒè ¶è¡£
+        "/clone/armor/treasure/skirt.c"             : 1 ,//å¤©è ¶çµ²è£™
+        "/clone/book/9book.c"                       : 1 ,//ä¹é™°çœŸæœ¬
+//        "/clone/book/bagua0.c"                      : 1 ,//æ²³åœ–
+//        "/clone/book/bagua1.c"                      : 1 ,//æ´›æ›¸
+        "/clone/book/medicine6.c"                   : 1 ,//èƒ¡é’ç‰›é†«ç¶“
+        "/clone/book/medicine7.c"                   : 1 ,//ç‹é›£å§‘æ¯’ç¶“
+//        "/clone/book/jinshe1.c"                     : 1 ,//é‡‘è›‡ç§˜ç±ä¸Šå†Š
+//        "/clone/book/yijing0.c"                     : 1 ,//æ˜“ç¶“åºå¦ç¯‡
+//        "/clone/book/yijing1.c"                     : 1 ,//æ˜“ç¶“èªªå¦ç¯‡
+//        "/clone/book/yijing2.c"                     : 1 ,//æ˜“ç¶“é›œå¦ç¯‡
+//        "/clone/book/yijing3.c"                     : 1 ,//æ˜“ç¶“ç³»è¾­ç¯‡
+        "/clone/book/jiuyin1.c"                     : 1 ,//ä¹é™°çœŸç¶“ä¸Šå†Š
+        "/clone/book/jiuyin2.c"                     : 1 ,//ä¹é™°çœŸç¶“ä¸‹å†Š
+        "/clone/book/shipian.c"                     : 1 ,//é•·çŸ³ç‰‡
+/*        "/clone/weapon/xiangmo-chu.c"  : 1,  // é™é­”æµ
+        "/clone/weapon/yitian-jian.c"  : 1,  // å€šå¤©åŠ
+        "/clone/unique/yuxiao.c"       : 1,  // ç‰ç°«
+        "/clone/unique/fumo-dao.c"     : 1,  // ä¼é­”åˆ€
+        "/clone/unique/jinshe-jian.c"  : 1,  // é‡‘è›‡åŠ
+        "/clone/unique/eyujian.c"      : 1,  // é±·å˜´å‰ª
+        "/clone/unique/eweibian.c"     : 1,  // é±·å°¾é­
+        "/clone/unique/xuantie-jian.c" : 1,  // ç„éµé‡åŠ
+        "/d/huashan/obj/jinshe-zhui.c" : 1,  // é‡‘è›‡éŒ
+        "/clone/unique/yuzhu-zhang.c"  : 1,  // ç‰ç«¹æ–
+        "/clone/weapon/qijue.c"        : 1,  // ä¸ƒçµ•é‡
+        "/clone/unique/yuchang-jian.c" : 1,  // é­šè…¸åŠ
+        "/clone/unique/zhenwu.c"       : 1,  // çœŸæ­¦åŠ
+        "/clone/unique/cy-jian.c"      : 1,  // é‡é™½åŠ
+        "/d/shaolin/obj/jingang-zhao.c": 1,  // é‡‘å‰›ç½©
+        "/d/xueshan/obj/wucan-yi.c"    : 1,  // çƒè ¶è¡£
+        "/d/taohua/obj/ruanwei-jia.c"  : 1,  // è»Ÿâ–¡ç”²
+        "/d/taohua/obj/taomu-jian.c"   : 1,  // æ¡ƒæœ¨åŠ
+        "/clone/unique/xuedao.c"       : 1,  // è¡€åˆ€
+        "/d/city/npc/obj/shenzhao.c"   : 3,  // ç¥ç…§ç¶“
+        "/kungfu/class/wudang/obj/canpian.c" : 3, //ä¹é™½æ®˜ç¯‡
+        "/clone/unique/jiuyin_force_book.c" : 3, //ä¹é™°çœŸç¶“
+        "/clone/unique/kusang-bang.c"        : 1,        // å“­å–ªæ£’
         "/clone/drug/renshen_guo.c"    : 1,
         "/clone/drug/xuelian.c"               : 1,
         "/clone/drug/xueteng.c"               : 1,

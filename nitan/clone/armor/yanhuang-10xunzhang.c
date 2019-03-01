@@ -6,13 +6,13 @@ inherit MEDAL3;
 
 void create()
 {
-        set_name(HIY "Ñ×»Æ·çÓêÊ®Äê¼ÍÄîÑ«ÕÂ" NOR, ({ "yhhero year10", "yhhero", "year10" }));
-        set("long", HIY "Îª¼ÍÄîÑ×»ÆÔËÓªÊ®ÖÜÄê£¬¡°·çÓêÊ®Äê¡±»î¶¯ÌØ±ğÏŞÁ¿·¢ĞĞµÄ¼ÍÄîÑ«ÕÂ£¡\n" NOR);
+        set_name(HIY "ç‚é»ƒé¢¨é›¨åå¹´ç´€å¿µå‹›ç« " NOR, ({ "yhhero year10", "yhhero", "year10" }));
+        set("long", HIY "ç‚ºç´€å¿µç‚é»ƒé‹ç‡Ÿåå‘¨å¹´ï¼Œâ€œé¢¨é›¨åå¹´â€æ´»å‹•ç‰¹åˆ¥é™é‡ç™¼è¡Œçš„ç´€å¿µå‹›ç« ï¼\n" NOR);
         set_weight(1);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ã¶");
+                set("unit", "æš");
                 set("value", 200000);
                 set("material", "bronze");
                 set("armor_prop/year10", 1);
@@ -20,9 +20,9 @@ void create()
                 set("armor_prop/armor", 4000);
                 set("armor_prop/force", 200);
                 set("armor_prop/add_yanjiu_times", 100);
-                set("special/desc", HIR "Åå´øºó¿ÉÔö¼ÓÉñÁúµºÉ±¹Ö¾­Ñé¼°Ç±ÄÜ½±Àø5%\n"
-                                        "                  ¶îÍâÌáÉı100´ÎÑĞ¾¿´ÎÊı\n"
-                                        "                  ÓĞĞ§ÄÚ¹¦ÌáÉı200¼¶" NOR);
+                set("special/desc", HIR "ä½©å¸¶å¾Œå¯å¢åŠ ç¥é¾å³¶æ®ºæ€ªç¶“é©—åŠæ½›èƒ½çå‹µ5%\n"
+                                        "                  é¡å¤–æå‡100æ¬¡ç ”ç©¶æ¬¡æ•¸\n"
+                                        "                  æœ‰æ•ˆå…§åŠŸæå‡200ç´š" NOR);
                 set("armor_prop/con", 40);
                 set("armor_prop/dex", 40);
                 set("armor_prop/str", 40);

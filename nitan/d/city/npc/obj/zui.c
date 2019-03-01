@@ -1,4 +1,4 @@
-// zui.c  ÉñÏÉ×í
+// zui.c  ç¥ä»™é†‰
 // created by cpu 2002
 #include <ansi.h>
 inherit ITEM;
@@ -10,13 +10,13 @@ void init()
 }
 void create()
 {
-        set_name(HIG"ÉñÏÉ×í¾Æ"NOR, ({"shenxian zui", "jiubei"}));
+        set_name(HIG"ç¥ä»™é†‰é…’"NOR, ({"shenxian zui", "jiubei"}));
         set_weight(700);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIB"Ò»Ö»ÍâĞÍÆæÌØµÄ¾Æ±­£¬ÀïÃæ×°µÄËÆºõÊÇÒ»ÖÖÁÒĞÔ°×¾Æ¡£\n"NOR);
-                set("unit", "±­");
+                set("long", HIB"ä¸€åªå¤–å‹å¥‡ç‰¹çš„é…’æ¯ï¼Œè£¡é¢è£çš„ä¼¼ä¹æ˜¯ä¸€ç¨®çƒˆæ€§ç™½é…’ã€‚\n"NOR);
+                set("unit", "æ¯");
                 set("value", 5000);
                 
         }
@@ -31,9 +31,9 @@ int do_drink(string arg)
         drk=(query("con", me)+query("max_neili", me)/50)*2;
             
 if (!id(arg))
-        return notify_fail("ÄãÒªºÈÊ²Ã´£¿\n");
+        return notify_fail("ä½ è¦å–ä»€éº¼ï¼Ÿ\n");
 me->apply_condition("drunk",drk-1);
-message_vision(HIG"$NºÈÏÂÒ»±­ÉñÏÉ×í¾Æ£¬¿´ÉÏÈ¥¶ÙÊ±ÓĞÁË¼¸·Ö×íÒâ£¡\n"NOR,me);
+message_vision(HIG"$Nå–ä¸‹ä¸€æ¯ç¥ä»™é†‰é…’ï¼Œçœ‹ä¸Šå»é “æ™‚æœ‰äº†å¹¾åˆ†é†‰æ„ï¼\n"NOR,me);
         destruct(this_object());
         return 1;
 }

@@ -4,14 +4,14 @@ inherit NPC;
 
 void create()
 {
-    set_name("ÕÔº×", ({"zhao he", "zhao", "he"}));
-    set("nickname", HIC "·ÉÌìÉñÄ§" NOR );
-    set("title", "ÈÕÔÂÉñ½Ì³¤ÀÏ");
-    set("gender", "ÄÐÐÔ");
+    set_name("è¶™é¶´", ({"zhao he", "zhao", "he"}));
+    set("nickname", HIC "é£›å¤©ç¥žé­”" NOR );
+    set("title", "æ—¥æœˆç¥žæ•™é•·è€");
+    set("gender", "ç”·æ€§");
     set("age", 42);
     set("shen_type", -1);
     set("long",
-        "ËûÊÇÈÕÔÂÉñ½Ì³¤ÀÏ¡£\n");
+        "ä»–æ˜¯æ—¥æœˆç¥žæ•™é•·è€ã€‚\n");
     set("attitude", "peaceful");
 
     set("per", 21);
@@ -47,7 +47,7 @@ void create()
     map_skill("dodge", "lingxu-bu");
     map_skill("parry", "tianshan-zhang");
 
-    create_family("ÈÕÔÂÉñ½Ì", 2, "³¤ÀÏ");
+    create_family("æ—¥æœˆç¥žæ•™", 2, "é•·è€");
 
     setup();
     carry_object("/d/heimuya/npc/obj/leizhendang")->wield();

@@ -1,5 +1,5 @@
 // This program is a part of NT MudLIB
-// jian.c ¼ò³¤ÀÏ
+// jian.c ç°¡é•·è€
 
 #include <ansi.h>
 #include "gaibang.h"
@@ -16,15 +16,15 @@ mixed ask_me();
 
 void create()
 {
-        set_name("¼ò³¤ÀÏ", ({ "jian zhanglao", "jian", "zhanglao" }));
+        set_name("ç°¡é•·è€", ({ "jian zhanglao", "jian", "zhanglao" }));
         set("long", @LONG
-¼ò³¤ÀÏÊÇØ¤°îµÄÖ´·¨³¤ÀÏ£¬´ú°ïÖ÷Ö´ÕÆ·¨µ¶ÒÔ
-¼°ÇàÖñÁîµÈ¡£ËûÏòÀ´¼µ¶ñÈç³ğ£¬µÜ×ÓÖĞÓĞË­·¸
-¹ı£¬³öÊÖ¾ö²»ÈİÇé¡£
+ç°¡é•·è€æ˜¯ä¸é‚¦çš„åŸ·æ³•é•·è€ï¼Œä»£å¹«ä¸»åŸ·æŒæ³•åˆ€ä»¥
+åŠé’ç«¹ä»¤ç­‰ã€‚ä»–å‘ä¾†å«‰æƒ¡å¦‚ä»‡ï¼Œå¼Ÿå­ä¸­æœ‰èª°çŠ¯
+éï¼Œå‡ºæ‰‹æ±ºä¸å®¹æƒ…ã€‚
 LONG);
-        set("nickname", HIR "Ö´·¨³¤ÀÏ" NOR);
-        set("title", "Ø¤°ï¾Å´ü³¤ÀÏ");
-        set("gender", "ÄĞĞÔ");
+        set("nickname", HIR "åŸ·æ³•é•·è€" NOR);
+        set("title", "ä¸å¹«ä¹è¢‹é•·è€");
+        set("gender", "ç”·æ€§");
         set("age", 50);
         set("attitude", "peaceful");
 
@@ -75,7 +75,7 @@ LONG);
 
         prepare_skill("hand", "shexing-diaoshou");
 
-        create_family("Ø¤°ï", 18, "¾Å´ü³¤ÀÏ");
+        create_family("ä¸å¹«", 18, "ä¹è¢‹é•·è€");
 
         set("chat_chance_combat", 120);
         set("chat_msg_combat", ({
@@ -89,7 +89,7 @@ LONG);
         set_temp("apply/armor", 200);
 
         set("inquiry", ([
-                "ÇàÖñÁî" : (: ask_me :)
+                "é’ç«¹ä»¤" : (: ask_me :)
         ]));
 
         set("master_ob",4);
@@ -109,7 +109,7 @@ void init()
         &&  file_name(environment(this_object())) == "/d/gaibang/gbandao")
         {
                 myfam=query("family", ob);
-                if ((! myfam || myfam["family_name"] != "Ø¤°ï") &&
+                if ((! myfam || myfam["family_name"] != "ä¸å¹«") &&
                         (! wizardp(ob))) {
                         remove_call_out("saying");
                         call_out("saying", 2, ob);
@@ -122,10 +122,10 @@ void saying(object ob)
         if (! ob || environment(ob) != environment())
                 return;
 
-        message_sort("\n\n$n¿´ÁË$NÒ»ÑÛ£¬ÀäÀäµØËµµ½£º¡°ºé°ïÖ÷ËûÀÏÈË¼ÒËµÎÒ²»¸Ã"
-                     "ËæÒâÔğ´òØ¤°ïµÜ×Ó£¬ÄãÓÖ²»ÊôÎÒØ¤°ï£¬ÎÒ´òÄã×Ü¿ÉÒÔ°É£¿¡±"
-                     "ËµÍêÓÒÍÈÒ»Ì§£¬$NË³ÊÆÓ¦ÁËÒ»ÕĞÇà³ÇÅÉµÄ¡¸Æ¨¹ÉÏòºó£¬Æ½É³ÂäÑãÊ½¡¹"
-                     "£­£­°Èß´\n\n", ob, this_object());
+        message_sort("\n\n$nçœ‹äº†$Nä¸€çœ¼ï¼Œå†·å†·åœ°èªªåˆ°ï¼šâ€œæ´ªå¹«ä¸»ä»–è€äººå®¶èªªæˆ‘ä¸è©²"
+                     "éš¨æ„è²¬æ‰“ä¸å¹«å¼Ÿå­ï¼Œä½ åˆä¸å±¬æˆ‘ä¸å¹«ï¼Œæˆ‘æ‰“ä½ ç¸½å¯ä»¥å§ï¼Ÿâ€"
+                     "èªªå®Œå³è…¿ä¸€æŠ¬ï¼Œ$Né †å‹¢æ‡‰äº†ä¸€æ‹›é’åŸæ´¾çš„ã€Œå±è‚¡å‘å¾Œï¼Œå¹³æ²™è½é›å¼ã€"
+                     "ï¼ï¼å­å˜°\n\n", ob, this_object());
         remove_call_out("kicking");
         call_out("kicking", 1, ob);
 
@@ -137,14 +137,14 @@ void kicking(object ob)
                 return;
 
         ob->move("/d/gaibang/pomiao");
-        message("vision","Ö»Ìı¡°àØ¡±µØÒ»Éù£¬½ô½Ó×Å"+query("name", ob)+
-                "´ÓĞ¡ÃÅÀï·ÉÁË³öÀ´£¬Æ¨¹ÉÉÏÓĞÒ»¸öÇå³şµÄĞ¬Ó¡¡£\n", environment(ob), ob);
+        message("vision","åªè½â€œâ–¡â€åœ°ä¸€è²ï¼Œç·Šæ¥è‘—"+query("name", ob)+
+                "å¾å°é–€è£¡é£›äº†å‡ºä¾†ï¼Œå±è‚¡ä¸Šæœ‰ä¸€å€‹æ¸…æ¥šçš„é‹å°ã€‚\n", environment(ob), ob);
 }
 
 void attempt_apprentice(object ob)
 {
         command("hmm");
-        command("say ÀÏ·ò²»ÊÕÍ½µÜ£¬Äã»¹ÊÇÇë»Ø°É¡£");
+        command("say è€å¤«ä¸æ”¶å¾’å¼Ÿï¼Œä½ é‚„æ˜¯è«‹å›å§ã€‚");
 }
 
 mixed ask_me()
@@ -155,15 +155,15 @@ mixed ask_me()
         me = this_player();
 
         if( query("family/family_name", me) != query("family/family_name") )
-                return "¸óÏÂÓë±¾°ïËØÎŞÀ´Íù£¬²»Öª´Ë»°´ÓºÎÌ¸Æğ£¿";
+                return "é–£ä¸‹èˆ‡æœ¬å¹«ç´ ç„¡ä¾†å¾€ï¼Œä¸çŸ¥æ­¤è©±å¾ä½•è«‡èµ·ï¼Ÿ";
 
         if( query("combat_exp", me)<10000 )
-                return "ºÙºÙ£¬Äã¾ÍÕâµã±¾ÊÂÒ²ºÃÒâË¼À´ÒªÇàÖñÁî£¿";
+                return "å˜¿å˜¿ï¼Œä½ å°±é€™é»æœ¬äº‹ä¹Ÿå¥½æ„æ€ä¾†è¦é’ç«¹ä»¤ï¼Ÿ";
 
         lvl=query("family/beggarlvl", me);
 
         if (lvl >= 9)
-                return "ÄãÒÑ¾­ÊÇ±¾°ï³¤ÀÏÁË£¬ÓÖºÎÈ¥¸úºó±²ÃÇ¼Æ½Ï¡£";
+                return "ä½ å·²ç¶“æ˜¯æœ¬å¹«é•·è€äº†ï¼Œåˆä½•å»è·Ÿå¾Œè¼©å€‘è¨ˆè¼ƒã€‚";
 
         if (lvl <= 0)
                 gx = 100;
@@ -171,13 +171,13 @@ mixed ask_me()
                 gx = lvl * 100 + 200;
 
         if( query("family/gongji", me)<gx )
-                return "ÄãÎª±¾°ïĞ§Á¦²»¹»£¬ÔİÊ±²»ÄÜ¸øÄãÉı´ü¡£";
+                return "ä½ ç‚ºæœ¬å¹«æ•ˆåŠ›ä¸å¤ ï¼Œæš«æ™‚ä¸èƒ½çµ¦ä½ å‡è¢‹ã€‚";
 
         if (present("qingzhu ling", me))
-                return "ÄãÉíÉÏ²»ÊÇÒÑ¾­ÓĞÇàÖñÁîÁËÂğ£¿";
+                return "ä½ èº«ä¸Šä¸æ˜¯å·²ç¶“æœ‰é’ç«¹ä»¤äº†å—ï¼Ÿ";
 
         if( time()-query_temp("have_ling", me)<100 )
-                return "ÎÒ²»ÊÇ¸Õ¸Õ²Å¸øÁËÄãÒ»ÃæÂğ£¿ÉÔÎ¢µÈ»á°É¡£";
+                return "æˆ‘ä¸æ˜¯å‰›å‰›æ‰çµ¦äº†ä½ ä¸€é¢å—ï¼Ÿç¨å¾®ç­‰æœƒå§ã€‚";
 
         ob = new(LING);
         ob->move(this_object());
@@ -185,7 +185,7 @@ mixed ask_me()
           command("give qingzhu ling to "+query("id", me));
         set_temp("have_ling", time(), me);
 
-        return "Æ¾ÕâÃæÇàÖñÁî£¬Äã¿É×ÔÓÉÏòÄãµÄÍ¬ÃÅ´óÊ¦ĞÖÌôÕ½¡£";
+        return "æ†‘é€™é¢é’ç«¹ä»¤ï¼Œä½ å¯è‡ªç”±å‘ä½ çš„åŒé–€å¤§å¸«å…„æŒ‘æˆ°ã€‚";
 }
 
 int accept_object(object ob, object obj)
@@ -200,19 +200,19 @@ int accept_object(object ob, object obj)
 
         if (base_name(obj) != POBU)
         {
-                command("say Äã¸øÎÒÕâÖÖ¶«Î÷¸ÉÊ²Ã´£¿");
+                command("say ä½ çµ¦æˆ‘é€™ç¨®æ±è¥¿å¹¹ä»€éº¼ï¼Ÿ");
                 return 0;
         }
 
         if( query("owner", obj) != ob->name() )
         {
-                command("say ÄãÕâ¿ìÆÆ²¼ÊÇ´ÓÄÄÀïÍµÀ´µÄ£¿");
+                command("say ä½ é€™å¿«ç ´å¸ƒæ˜¯å¾å“ªè£¡å·ä¾†çš„ï¼Ÿ");
                 return 0;
         }
 
         if( query_temp("have_cloth", ob)<1 )
         {
-                command("say ÄãÕæµÄÌôÊ¤ÁËÃ´£¿ÎÒÔõÃ´¾ÍÃ»ÌıËµ£¿");
+                command("say ä½ çœŸçš„æŒ‘å‹äº†éº¼ï¼Ÿæˆ‘æ€éº¼å°±æ²’è½èªªï¼Ÿ");
                 return 0;
         }
 
@@ -220,7 +220,7 @@ int accept_object(object ob, object obj)
 
         if (lvl >= 9)
         {
-                command("say ÄãÒÑ¾­ÊÇ±¾°ï³¤ÀÏÁË£¬»¹Ïëµ±°ïÖ÷£¿");
+                command("say ä½ å·²ç¶“æ˜¯æœ¬å¹«é•·è€äº†ï¼Œé‚„æƒ³ç•¶å¹«ä¸»ï¼Ÿ");
                 return 0;
         }
 
@@ -231,7 +231,7 @@ int accept_object(object ob, object obj)
 
         if( query("family/gongji", ob)<gx )
         {
-                command("say Õâ¸ö¡­ÄãÎª±¾°ïĞ§Á¦²»¹»£¬ÔİÊ±²»ÄÜ¸øÄãÉı´ü¡£");
+                command("say é€™å€‹â€¦ä½ ç‚ºæœ¬å¹«æ•ˆåŠ›ä¸å¤ ï¼Œæš«æ™‚ä¸èƒ½çµ¦ä½ å‡è¢‹ã€‚");
                 return 0;
         }
 
@@ -240,11 +240,11 @@ int accept_object(object ob, object obj)
         delete_temp("have_cloth", ob);
         delete_temp("newtitle", ob);
 
-        message_vision(HIY "\n$N" HIY "½Ó¹ıÁËÆÆ²¼£¬È»ºó½«Æä¶¤"
-                       "ÔÚ$n" HIY "µÄÆÆÒÂ·şÉÏ£¬Ù²È»Ò»¸öĞÂ¿Ú´ü"
-                       "¡£\n\n" NOR, me, ob);
+        message_vision(HIY "\n$N" HIY "æ¥éäº†ç ´å¸ƒï¼Œç„¶å¾Œå°‡å…¶é‡˜"
+                       "åœ¨$n" HIY "çš„ç ´è¡£æœä¸Šï¼Œå„¼ç„¶ä¸€å€‹æ–°å£è¢‹"
+                       "ã€‚\n\n" NOR, me, ob);
         command("nod");
-        command("say ¼ÈÈ»Éı´ü£¬¾Íµ±ÀÎ¼Ç°ï¹æ£¬ÎªÃñ³ıº¦£¡");
+        command("say æ—¢ç„¶å‡è¢‹ï¼Œå°±ç•¶ç‰¢è¨˜å¹«è¦ï¼Œç‚ºæ°‘é™¤å®³ï¼");
 
         lvl = lvl + 1;
         exp = lvl * 600 + random(lvl * 400);
@@ -258,13 +258,13 @@ int accept_object(object ob, object obj)
         addn("weiwang", ww, ob);
         addn("family/gongji", -gx, ob);
 
-        msg = HIC "\nÍ¨¹ıÉı´üµÄ¾­Àú£¬Äã»ñµÃÁË" +
-              chinese_number(exp) + "µã¾­Ñé¡¢" +
-              chinese_number(pot) + "µãÇ±ÄÜ¡¢" +
-              chinese_number(sc) + "µã½­ºşÔÄÀúÒÔ¼°" +
-              chinese_number(ww) + "µã½­ºşÍşÍû£¬Í¬Ê±"
-              "ÏûºÄÁË" + chinese_number(gx) + "µãÃÅ"
-              "ÅÉ¹±Ï×£¬ÎäÑ§µÃµ½ÁË¾«½ø¡£\n\n" NOR;
+        msg = HIC "\né€šéå‡è¢‹çš„ç¶“æ­·ï¼Œä½ ç²å¾—äº†" +
+              chinese_number(exp) + "é»ç¶“é©—ã€" +
+              chinese_number(pot) + "é»æ½›èƒ½ã€" +
+              chinese_number(sc) + "é»æ±Ÿæ¹–é–±æ­·ä»¥åŠ" +
+              chinese_number(ww) + "é»æ±Ÿæ¹–å¨æœ›ï¼ŒåŒæ™‚"
+              "æ¶ˆè€—äº†" + chinese_number(gx) + "é»é–€"
+              "æ´¾è²¢ç»ï¼Œæ­¦å­¸å¾—åˆ°äº†ç²¾é€²ã€‚\n\n" NOR;
 
         tell_object(ob, sort_string(msg, 54));
         ob->improve_skill("martial-cognize", 1500000);

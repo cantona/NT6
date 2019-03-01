@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����");
+        set("short", "衙門");
         set("long", @LONG
-���������Ŵ��ţ�������ľ���Ž����ر��š����ྲ�����رܡ�����
-�ӷַ���ͷʯʨ�ӵ��Աߡ�ǰ����һ����ģ���Ȼ�ǹ�С����ԩ�õġ���
-����������ǰѲ�ߡ�
+這裡是衙門大門，兩扇朱木大門緊緊關閉著。“肅靜”“回避”的牌
+子分放兩頭石獅子的旁邊。前面有一個大鼓，顯然是供小民鳴冤用的。幾
+名衙役在門前巡邏。
 LONG);
         set("outdoors", "luoyang");
         set("no_clean_up", 0);

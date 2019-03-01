@@ -4,37 +4,37 @@
 #include <ansi.h>
 inherit NPC;
 
-string comeon = HIB"Äã¸Õ×ß¹ýÀ´£¬¾Í¾õÒ»¹ÉÒõÀäµÄº®ÆøÓ­ÃæÏ®À´£¬²»½û´òÁË¸ö¶ßàÂ¡£\n"NOR;
+string comeon = HIB"ä½ å‰›èµ°éŽä¾†ï¼Œå°±è¦ºä¸€è‚¡é™°å†·çš„å¯’æ°£è¿Žé¢è¥²ä¾†ï¼Œä¸ç¦æ‰“äº†å€‹å“†å—¦ã€‚\n"NOR;
 
 string *stya = ({
-HIB"Ò»ÕóÒõ·çÏ®À´£¬$NºöÈ»¾õµÃÈ«ÉíÑªÒºËÆºõ¶¼±»Õâ¹ÉÒõ·ç¶³×¡¡£\n"NOR,
-HIB"$N¸Ðµ½Ò»¹Éº®ÆøË³¾­ÂöÁ÷±éÖÜÉí£¬²»½ûÍ´¿àµÄÃÆºßÁËÒ»Éù¡£\n"NOR,
-HIR"$N¸Ðµ½ÉíÉÏÒ»Õó¾çÍ´¡£\n"NOR,
-HIB"$NÍ»¾õÉíÉÏ±»Ò°¹í½ô½ô×¥×¡£¬´ó¾ªÊ§É«£¬Á¬Ã¦ºóÍËÊý²½¡£\n"NOR
+HIB"ä¸€é™£é™°é¢¨è¥²ä¾†ï¼Œ$Nå¿½ç„¶è¦ºå¾—å…¨èº«è¡€æ¶²ä¼¼ä¹Žéƒ½è¢«é€™è‚¡é™°é¢¨å‡ä½ã€‚\n"NOR,
+HIB"$Næ„Ÿåˆ°ä¸€è‚¡å¯’æ°£é †ç¶“è„ˆæµéå‘¨èº«ï¼Œä¸ç¦ç—›è‹¦çš„æ‚¶å“¼äº†ä¸€è²ã€‚\n"NOR,
+HIR"$Næ„Ÿåˆ°èº«ä¸Šä¸€é™£åŠ‡ç—›ã€‚\n"NOR,
+HIB"$Nçªè¦ºèº«ä¸Šè¢«é‡Žé¬¼ç·Šç·ŠæŠ“ä½ï¼Œå¤§é©šå¤±è‰²ï¼Œé€£å¿™å¾Œé€€æ•¸æ­¥ã€‚\n"NOR
 });
 
 string *styb = ({
-HIC"$N¶Ô$n´óºÈµÀ£º¡°ÑýÄ§£¬ÄãÂÅ·¬º¦ÈËÐÔÃü£¬±¾µÀÒ¯½ñÈÕÈÃÄãÓÀ²»µÃ³¬Éú£¡¡±\n"NOR,
-HIY"$N¶¶¶¯ÊÖÖÐµÄ"HIM"ÌÒÄ¾½£"HIY"£¬·¢³öÒ«ÑÛµÄ¹âÃ¢£¬µÀµÀ½ð¹âÏò$n´ÌÈ¥¡£\n"NOR,
-HIC"$NÊÖÖÐ"HIM"ÌÒÄ¾½£"HIC"»®³öÎÞÊý¸ö½ð»·£¬Ò»È¦Ò»È¦Ì×Ïò$n¡£\n"NOR
+HIC"$Nå°$nå¤§å–é“ï¼šâ€œå¦–é­”ï¼Œä½ å±¢ç•ªå®³äººæ€§å‘½ï¼Œæœ¬é“çˆºä»Šæ—¥è®“ä½ æ°¸ä¸å¾—è¶…ç”Ÿï¼â€\n"NOR,
+HIY"$NæŠ–å‹•æ‰‹ä¸­çš„"HIM"æ¡ƒæœ¨åŠ"HIY"ï¼Œç™¼å‡ºè€€çœ¼çš„å…‰èŠ’ï¼Œé“é“é‡‘å…‰å‘$nåˆºåŽ»ã€‚\n"NOR,
+HIC"$Næ‰‹ä¸­"HIM"æ¡ƒæœ¨åŠ"HIC"åŠƒå‡ºç„¡æ•¸å€‹é‡‘ç’°ï¼Œä¸€åœˆä¸€åœˆå¥—å‘$nã€‚\n"NOR
 });
 
 void check_time();
 
 void create()
 {
-    set_name("Ò°¹í", ({ "wild ghost", "ghost" }));
-    set("gender", "ÄÐÐÔ");
-    set("race", "ÑýÄ§");
+    set_name("é‡Žé¬¼", ({ "wild ghost", "ghost" }));
+    set("gender", "ç”·æ€§");
+    set("race", "å¦–é­”");
     set("age", 200);
     set("per", 10);
     set("long",
-        "Ò»¸öÐ×Éñ¶ñÉ²¡¢ÃæÄ¿ÕøÄüµÄ¹í»ê¡£ËüÁ³É«²Ò°×£¬ÑÀ³ÝÓÖ³¤ÓÖ¼â£¬Ê®Ö¸ÈÔÔÚµÎ×Å
-ÏÊÑª£¬ÕýËÀËÀµØ¶¢×ÅÄã¡£\n");
+        "ä¸€å€‹å…‡ç¥žæƒ¡å‰Žã€é¢ç›®çŒ™ç°çš„é¬¼é­‚ã€‚å®ƒè‡‰è‰²æ…˜ç™½ï¼Œç‰™é½’åˆé•·åˆå°–ï¼ŒåæŒ‡ä»åœ¨æ»´è‘—
+é®®è¡€ï¼Œæ­£æ­»æ­»åœ°ç›¯è‘—ä½ ã€‚\n");
     set("combat_exp", 50000);
     set("shen_type", -1);
     set("attitude", "peaceful");
-    set("limbs", ({ "ÑÀ³Ý", "ÊÖ×¦" }) );
+    set("limbs", ({ "ç‰™é½’", "æ‰‹çˆª" }) );
     set("verbs", ({ "bite", "claw" }) );
     set("env/invisible", 1);
     set("water", 200);

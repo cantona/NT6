@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-string name() { return HIB "½£ÉÁ¾ªÀ×" NOR; }
+string name() { return HIB "åŠé–ƒé©šé›·" NOR; }
 
 inherit F_SSERVER;
 
@@ -16,28 +16,28 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
         
         if (! target || ! me->is_fighting(target))
-                return notify_fail(name()+ "Ö»ÄÜÔÚÕ½¶·ÖĞ¶Ô¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(name()+ "åªèƒ½åœ¨æˆ°é¬¥ä¸­å°å°æ‰‹ä½¿ç”¨ã€‚\n");
         
         if( !objectp(weapon=query_temp("weapon", me)) || 
             query("skill_type", weapon) != "sword" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô£¬ÄÑÒÔÊ©Õ¹" +name()+ "¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ï¼Œé›£ä»¥æ–½å±•" +name()+ "ã€‚\n");
         
         if (me->query_skill("lunhui-sword", 1) < 1200)
-                return notify_fail("ÄãµÄÁùµÀÂÖ»Ø½£ĞŞÎª²»¹»£¬ÄÑÒÔÊ©Õ¹" +name()+ "¡£\n");
+                return notify_fail("ä½ çš„å…­é“è¼ªå›åŠä¿®ç‚ºä¸å¤ ï¼Œé›£ä»¥æ–½å±•" +name()+ "ã€‚\n");
         
         if (me->query_skill_mapped("sword") != "lunhui-sword")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢ÁùµÀÂÖ»Ø½££¬ÄÑÒÔÊ©Õ¹" +name()+ "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼å…­é“è¼ªå›åŠï¼Œé›£ä»¥æ–½å±•" +name()+ "ã€‚\n");
         
         if (me->query_skill_mapped("sword") != "lunhui-sword")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢ÁùµÀÂÖ»Ø½££¬ÄÑÒÔÊ©Õ¹" +name()+ "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼å…­é“è¼ªå›åŠï¼Œé›£ä»¥æ–½å±•" +name()+ "ã€‚\n");
         
         if( query("neili", me)<3000 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬ÄÑÒÔÊ©Õ¹" +name()+ "¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" +name()+ "ã€‚\n");
         
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
         
-        msg = HIC "$N" HIC "ÇáĞ¥Ò»Éù£¬ÊÖÖĞ" + weapon->name() + HIC "Æ½Æ½Ò»½£´Ì³ö£¬ËÙ¶ÈÖ®¿ì£¬ÓĞÈçµçÉÁÀ×ÃùÒ»°ã£¡\n" NOR;
+        msg = HIC "$N" HIC "è¼•å˜¯ä¸€è²ï¼Œæ‰‹ä¸­" + weapon->name() + HIC "å¹³å¹³ä¸€åŠåˆºå‡ºï¼Œé€Ÿåº¦ä¹‹å¿«ï¼Œæœ‰å¦‚é›»é–ƒé›·é³´ä¸€èˆ¬ï¼\n" NOR;
         
         ap=me->query_skill("sword")+query("force", me)+me->query_skill("martial-cognize",1);
         dp=target->query_skill("parry")+query("force", target)+target->query_skill("martial-cognize",1);
@@ -45,16 +45,16 @@ int perform(object me, object target)
         if (1)
         {
                 damage = ap / 4 + random(ap / 3);
-                //damage += weapon->apply_damage(); // ×·¼ÓÒ»´ÎÎäÆ÷µÄÉËº¦
+                //damage += weapon->apply_damage(); // è¿½åŠ ä¸€æ¬¡æ­¦å™¨çš„å‚·å®³
                 addn("neili", -3000, me);
                 me->start_busy(3);
                 msg += COMBAT_D->do_damage(me, target, WEAPON_ATTACK, damage, 75,
-                                           HIR "Ö»Ìı$n" HIR "Ò»Éù²Ò½Ğ£¬$N" HIR +
-                                           weapon->name() + HIR "½£¹ıÖ®´¦£¬Ò»µÀÀ¶É«µç¹âÉä"
-                                           "Èë$p" HIR "ÌåÄÚ¡£\n"
+                                           HIR "åªè½$n" HIR "ä¸€è²æ…˜å«ï¼Œ$N" HIR +
+                                           weapon->name() + HIR "åŠéä¹‹è™•ï¼Œä¸€é“è—è‰²é›»å…‰å°„"
+                                           "å…¥$p" HIR "é«”å…§ã€‚\n"
                                            NOR);
                 
-                // ×·¼ÓÒ»´ÎÎäÆ÷ÉËº¦
+                // è¿½åŠ ä¸€æ¬¡æ­¦å™¨å‚·å®³
                 ran = 35;
                 ndam = 10;
                 if (me->query_skill("lunhui-sword", 1) >= 5000)
@@ -74,30 +74,30 @@ int perform(object me, object target)
                 {
                         ran = 50;
                 }
-                // ×·¼ÓÒ»´ÎÎäÆ÷ÉËº¦
+                // è¿½åŠ ä¸€æ¬¡æ­¦å™¨å‚·å®³
                 if (random(100) < ran || wizardp(me))
                 {
-                        msg = msg + HIG + weapon->name() + HIG "·¢³öÀ×Ãù°ãµÄÏìÉù£¬°éËæ×ÅÒ»µÀ½£¹âÔÙ´Î´©Í¸" +
-                              target->name() + HIG "ÉíÌå¡­¡­\n" NOR +
-                              HIR "Ò»¹ÉÏÊÑªË³×Å" + weapon->name() + HIR "ÅçÉä¶ø³ö£¡\n" NOR;
+                        msg = msg + HIG + weapon->name() + HIG "ç™¼å‡ºé›·é³´èˆ¬çš„éŸ¿è²ï¼Œä¼´éš¨è‘—ä¸€é“åŠå…‰å†æ¬¡ç©¿é€" +
+                              target->name() + HIG "èº«é«”â€¦â€¦\n" NOR +
+                              HIR "ä¸€è‚¡é®®è¡€é †è‘—" + weapon->name() + HIR "å™´å°„è€Œå‡ºï¼\n" NOR;
                         target->receive_damage("qi", weapon->apply_damage() / 2, me);
                         target->receive_wound("qi", weapon->apply_damage() / 2, me);
                 }
         
                 if( !query_temp("lunhui-sword/jinglei", target) )
                 {
-                        // µÚÒ»´ÎÖ±½Ó10%×î´óÆøÑªÉËº¦
+                        // ç¬¬ä¸€æ¬¡ç›´æ¥10%æœ€å¤§æ°£è¡€å‚·å®³
                         target->receive_damage("qi",query("max_qi", target)/ndam,me);
                         target->receive_wound("qi",query("max_qi", target)/ndam,me);
-                        msg = msg + target->name() +  HIM "ÃÆºßÒ»Éù£¬ÏÊÑªÅç³ö£¬¿´À´ÊÇÊÜµ½ÁËÕâÒ»½£µÄ½£ÆøËùÉË¡£\n" NOR;
+                        msg = msg + target->name() +  HIM "æ‚¶å“¼ä¸€è²ï¼Œé®®è¡€å™´å‡ºï¼Œçœ‹ä¾†æ˜¯å—åˆ°äº†é€™ä¸€åŠçš„åŠæ°£æ‰€å‚·ã€‚\n" NOR;
                         set_temp("lunhui-sword/jinglei", 1, target);
                 }
         } else
         {
                 addn("neili", -1000, me);
                 me->start_busy(4);
-                msg += CYN "$n" CYN "¼û$P" CYN "À´ÊÆĞÚÓ¿£¬²»¸ÒÇáÒ×µÖ"
-                       "µ²£¬Á¬Ã¦·ÉÉíÌÚÅ²£¬¶ãÉÁ¿ªÀ´¡£\n" NOR;
+                msg += CYN "$n" CYN "è¦‹$P" CYN "ä¾†å‹¢æ´¶æ¹§ï¼Œä¸æ•¢è¼•æ˜“æŠµ"
+                       "æ“‹ï¼Œé€£å¿™é£›èº«é¨°æŒªï¼Œèº²é–ƒé–‹ä¾†ã€‚\n" NOR;
         }
         message_combatd(sort_msg(msg), me, target);
         

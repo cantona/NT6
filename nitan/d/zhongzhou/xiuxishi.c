@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����");
+        set("short", "旁廳");
         set("long", @LONG
-һ��СС����Ϣ�ң�ûʲô���������ߵ�����ֻ�����º�
-����Ϣһ�¡���ͷ������С����õ�Ũ�衣
+一個小小的休息室，沒什麼東西。你走到這裡只想躺下好
+好休息一下。床頭櫃上有小二沏好的濃茶。
 LONG);
         set("exits", ([
                 "east" : __DIR__"yinghaoup",

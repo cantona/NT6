@@ -15,14 +15,14 @@ void init()
 
 void create()
 {
-        set_name("ÌìÉ½Ñ©Á«", ({"xuelian", "lian", "lotus"}));
+        set_name("å¤©å±±é›ªè“®", ({"xuelian", "lian", "lotus"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Öê");
+                set("unit", "æ ª");
                 set("vegetable", 32);
                 set("nostrum", 4);
-                set("long", "ÕâÊÇÒ»ÖêÖ»ÓĞÔÚº®ÀäµÄµØ·½²ÅÄÜÉú³¤µÄÑ©Á«¡£\n");
+                set("long", "é€™æ˜¯ä¸€æ ªåªæœ‰åœ¨å¯’å†·çš„åœ°æ–¹æ‰èƒ½ç”Ÿé•·çš„é›ªè“®ã€‚\n");
                 set("value", 100);
         }
         set("pour_type", "1");
@@ -33,16 +33,16 @@ int do_eat(string arg)
 {
         object me = this_player();
 
-        if(!id(arg)) return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+        if(!id(arg)) return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if(!present(this_object(), me))
-                return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if( me->is_busy() )
-                return notify_fail("±ğ¼±£¬ÂıÂı³Ô£¬Ğ¡ĞÄ±ğÒ­×ÅÁË¡£\n");
+                return notify_fail("åˆ¥æ€¥ï¼Œæ…¢æ…¢åƒï¼Œå°å¿ƒåˆ¥å™è‘—äº†ã€‚\n");
 
         if( query("eff_qi", me) == query("max_qi", me) )
-                return notify_fail("ÄãÏÖÔÚ²»ÓÃ³ÔÕâ±¦±´£¡\n");
+                return notify_fail("ä½ ç¾åœ¨ä¸ç”¨åƒé€™å¯¶è²ï¼\n");
         me->receive_curing("qi",200);
-        message_vision("$NĞ¡ĞÄµØ³ÔÏÂÒ»ÖêÑ©Á«£¬¶ÙÊ±¾õµÃÉñÇåÆøË¬ÁË²»ÉÙ£¡\n", me);
+        message_vision("$Nå°å¿ƒåœ°åƒä¸‹ä¸€æ ªé›ªè“®ï¼Œé “æ™‚è¦ºå¾—ç¥æ¸…æ°£çˆ½äº†ä¸å°‘ï¼\n", me);
         destruct(this_object());
         return 1;
 }

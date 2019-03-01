@@ -3,11 +3,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ɽ��");
+        set("short", "山頂");
         set("long", @LONG
-����ɽ����ֻ���������£��Ǹ���Զ���Ŀ�����������ȥ��ֻ
-�����޳�����һ��СС�ĺڵ㣬��Ŀ������ȴãã�����������棬ֻ
-��һ������ʴ�һ�㣬�Ǿ��ǳ����ˡ�
+爬上山頂，只覺空氣清新，登高望遠，心曠神怡。向東望去，只
+見揚洲城有如一個小小的黑點，極目向西，卻茫茫而不見。南面，只
+見一條大江如彩帶一般，那就是長江了。
 LONG );
         set("exits", ([
                 //"eastdown" : __DIR__"qingshan2",

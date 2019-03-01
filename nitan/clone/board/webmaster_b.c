@@ -2,10 +2,10 @@ inherit BULLETIN_BOARD;
 
 void create()
 {
-        set_name("Ö÷Ò³Î¬»¤ÊÒÁôÑÔ°æ", ({ "board" }) );
+        set_name("ä¸»é ç¶­è­·å®¤ç•™è¨€ç‰ˆ", ({ "board" }) );
         set("location", "/u/viremploy/webmaster");
         set("board_id", "webmaster_b");
-        set("long", "ÇëÈÏÕæ¼ÇÂ¼¡£\n" );
+        set("long", "è«‹èªçœŸè¨˜éŒ„ã€‚\n" );
         setup();
         set("capacity", 100);
         replace_program(BULLETIN_BOARD);

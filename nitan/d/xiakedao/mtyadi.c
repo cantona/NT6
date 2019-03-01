@@ -1,15 +1,15 @@
-// mtyadi.c ÑÂµ×
+// mtyadi.c å´–åº•
 
 inherit ROOM;
 
 int do_climb(string arg);
 void create()
 {
-        set("short", "ÑÂµ×");
+        set("short", "å´–åº•");
         set("long", @TEXT
-ÄãµÄÃæÇ°ÊÇÒ»×ù±ÈÖ±µÄÉ½·å£¬¸ßÈôÇ§ÕÉ£¬·å¶¥ÔÚÔÆÎíÖÐÒþÔ¼¿É
-¼û£¬É½·å¹âÍºÍºµÄ£¬¸üÎÞÖÃÊÖ×ã´¦£¬É½·å´¹ÏÂÒ»ÌõÌúÁ´(lian)£¬×Ð
-Ï¸Ò»¿´£¬ÌúÁ´²¢ÎÞÐâ¼££¬ËÆºõÓÐÈËÓÃËüÅÀÉÏÅÀÏÂ.
+ä½ çš„é¢å‰æ˜¯ä¸€åº§æ¯”ç›´çš„å±±å³°ï¼Œé«˜è‹¥åƒä¸ˆï¼Œå³°é ‚åœ¨é›²éœ§ä¸­éš±ç´„å¯
+è¦‹ï¼Œå±±å³°å…‰ç¦¿ç¦¿çš„ï¼Œæ›´ç„¡ç½®æ‰‹è¶³è™•ï¼Œå±±å³°åž‚ä¸‹ä¸€æ¢éµéˆ(lian)ï¼Œä»”
+ç´°ä¸€çœ‹ï¼Œéµéˆä¸¦ç„¡é½è·¡ï¼Œä¼¼ä¹Žæœ‰äººç”¨å®ƒçˆ¬ä¸Šçˆ¬ä¸‹.
 TEXT );
         set("outdoors", "motianya");
         set("exits", ([
@@ -32,17 +32,17 @@ int do_climb(string arg)
         n = this_player()->query_skill("dodge",1);
         if ( !arg || arg != "lian")
         {
-            write("ÄãÒªÅÀÊ²Ã´Ñ½? \n");
+            write("ä½ è¦çˆ¬ä»€éº¼å‘€? \n");
             return 1;
         }
-message_vision("$NÉîÎüÁËÒ»¿ÚÆø£¬ÂýÂýÑØ×ÅÌúÁ´µÄÏòÉÏÅÀ¡£\n", this_player());
+message_vision("$Næ·±å¸äº†ä¸€å£æ°£ï¼Œæ…¢æ…¢æ²¿è‘—éµéˆçš„å‘ä¸Šçˆ¬ã€‚\n", this_player());
         if(n >80){
-message_vision("$NÅÀÁË°ëÌì£¬ÖÕÓÚÅÀÁËÉÏÈ¥£¬$N¸ßÐËµÄ²»½ûÌøÁËÆðÀ´¡£\n", this_player());
+message_vision("$Nçˆ¬äº†åŠå¤©ï¼Œçµ‚äºŽçˆ¬äº†ä¸ŠåŽ»ï¼Œ$Né«˜èˆˆçš„ä¸ç¦è·³äº†èµ·ä¾†ã€‚\n", this_player());
             this_player()->move(__DIR__"mtdating");
         }
         else
         {
-message_vision("$NÅÀÁËÒ»»á£¬Ò»²»Ð¡ÐÄË¤ÁËÏÂÀ´¡£\n", this_player());
+message_vision("$Nçˆ¬äº†ä¸€æœƒï¼Œä¸€ä¸å°å¿ƒæ‘”äº†ä¸‹ä¾†ã€‚\n", this_player());
             this_player()->receive_damage("qi",50);
             this_player()->receive_wound("qi",50);
         }

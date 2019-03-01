@@ -3,11 +3,11 @@ inherit ROOM;
 
 void create()
 {
-    set("short", "Âí·¿");
+    set("short", "é¦¬æˆ¿");
     set("long", @LONG
-ÕâÀïÊÇ¹ù¸®ÄÚµÄÂí·¿£¬Âí·¿ÀïÃæ³ôºæºæµÄ£¬»¹ÑøÁË¼¸Ê®Æ¥
-Âí¡£Äã¿´¹ıÈ¥£¬ÂíÉíÉÏ¶¼ºÜÔàÁË£¬Ôç¸ÃÏ´Ï´ÁË£¬Âí·¿µÄÅÔ±ßÓĞ
-¸öË®³Ø£¬ÀïÃæÓĞĞ©ÇåË®¡£
+é€™è£¡æ˜¯éƒ­åºœå…§çš„é¦¬æˆ¿ï¼Œé¦¬æˆ¿è£¡é¢è‡­çƒ˜çƒ˜çš„ï¼Œé‚„é¤Šäº†å¹¾ååŒ¹
+é¦¬ã€‚ä½ çœ‹éå»ï¼Œé¦¬èº«ä¸Šéƒ½å¾ˆè‡Ÿäº†ï¼Œæ—©è©²æ´—æ´—äº†ï¼Œé¦¬æˆ¿çš„æ—é‚Šæœ‰
+å€‹æ°´æ± ï¼Œè£¡é¢æœ‰äº›æ¸…æ°´ã€‚
 LONG);
         set("no_fight", 1);
         set("exits", ([
@@ -31,26 +31,26 @@ int do_sao(string arg)
 
         me = this_player();
 
-        if( query_temp("mark/É¨ÍêÁË", me) )
-            	return notify_fail(CYN "Âí·¿¹ÜÊÂÈÂÈÂµÀ£ºÎ¹Î¹Î¹£¬ÈÃÄãÈ¥¸²Ãü£¬»¹Áô"
-                                   "ÔÚÕâÀï¸ÉÂï£¿\n" NOR);
+        if( query_temp("mark/æƒå®Œäº†", me) )
+            	return notify_fail(CYN "é¦¬æˆ¿ç®¡äº‹åš·åš·é“ï¼šå–‚å–‚å–‚ï¼Œè®“ä½ å»è¦†å‘½ï¼Œé‚„ç•™"
+                                   "åœ¨é€™è£¡å¹¹å˜›ï¼Ÿ\n" NOR);
 
-        if( query_temp("job_name", me) != "´òÉ¨Âí·¿" )
-            	return notify_fail(CYN "Âí·¿¹ÜÊÂ¶ÔÄãºÈµÀ£ºÃ»ÊÂÄãÏ¹ÕÛÌÚÊ²Ã´£¿\n" NOR);
+        if( query_temp("job_name", me) != "æ‰“æƒé¦¬æˆ¿" )
+            	return notify_fail(CYN "é¦¬æˆ¿ç®¡äº‹å°ä½ å–é“ï¼šæ²’äº‹ä½ çæŠ˜é¨°ä»€éº¼ï¼Ÿ\n" NOR);
 
         if (me->is_busy())
-		return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ£¡\n");
+		return notify_fail("ä½ ç¾åœ¨æ­£å¿™è‘—å‘¢ï¼\n");
 
         if (me->is_fighting())
-		return notify_fail("ÄãÕıÔÚÕ½¶·ÖĞ£¬ÎŞ·¨×¨ĞÄ¸É»î£¡\n");
+		return notify_fail("ä½ æ­£åœ¨æˆ°é¬¥ä¸­ï¼Œç„¡æ³•å°ˆå¿ƒå¹¹æ´»ï¼\n");
 
         if( !objectp(weapon=query_temp("weapon", me) )
             || query("id", weapon) != "sao zhou" )
-                return notify_fail(CYN "Âí·¿¹ÜÊÂ¼¥Ğ¦µÀ£ºÄãÊÇÏëÓÃÊ²Ã´À´´òÉ¨Ñ½£¬ÓÃ"
-                                   "ÊÖÂğ£¿\n" NOR);
+                return notify_fail(CYN "é¦¬æˆ¿ç®¡äº‹è­ç¬‘é“ï¼šä½ æ˜¯æƒ³ç”¨ä»€éº¼ä¾†æ‰“æƒå‘€ï¼Œç”¨"
+                                   "æ‰‹å—ï¼Ÿ\n" NOR);
 
         if (! arg || arg != "mafang")
-		return notify_fail("ÄãÒª´òÉ¨Ê²Ã´£¿\n");
+		return notify_fail("ä½ è¦æ‰“æƒä»€éº¼ï¼Ÿ\n");
 
         costj=random(query("con", me)/3)+1;
         costq=random(query("str", me)/3)+1;
@@ -58,8 +58,8 @@ int do_sao(string arg)
         if( query("jing", me)<costj
 	 || query("qi", me)<costq )
 	{
-             	message_vision(HIR "\n$N" HIR "½ÅÒ»»¬£¬½á¹û²»Ğ¡ĞÄ»¬µ¹ÔÚ·à¶ÑÀï£¬³Ô"
-                               "ÁËÒ»´ó¿ÚÂí·à¡£\n" NOR, me);
+             	message_vision(HIR "\n$N" HIR "è…³ä¸€æ»‘ï¼Œçµæœä¸å°å¿ƒæ»‘å€’åœ¨ç³å †è£¡ï¼Œåƒ"
+                               "äº†ä¸€å¤§å£é¦¬ç³ã€‚\n" NOR, me);
              addn("food", 100, 	me);
              	me->unconcious();
              	return 1;
@@ -70,25 +70,25 @@ int do_sao(string arg)
         me->start_busy(1 + random(2));
 
         if (! (int)me->query_condition("wuguan_job")
-            && query_temp("mark/É¨", me)>10+random(10 )
+            && query_temp("mark/æƒ", me)>10+random(10 )
            && present("mafang guanshi", environment(me)))
 	{
-              set_temp("mark/É¨ÍêÁË", 1, 	me);
-              	message_vision(CYN "\nÂí·¿¹ÜÊÂ¶Ô$N" CYN "Ëµ£º¸ÉµÄ²»´í£¬ºÃÁË£¬Äã¿É"
-                               "ÒÔÈ¥ÏòÒ®ÂÉ´óÒ¯¸²Ãü(" HIY "fuming" NOR + CYN ")ÁË"
-                               "¡£\n" NOR, me);
+              set_temp("mark/æƒå®Œäº†", 1, 	me);
+              	message_vision(CYN "\né¦¬æˆ¿ç®¡äº‹å°$N" CYN "èªªï¼šå¹¹çš„ä¸éŒ¯ï¼Œå¥½äº†ï¼Œä½ å¯"
+                               "ä»¥å»å‘è€¶å¾‹å¤§çˆºè¦†å‘½(" HIY "fuming" NOR + CYN ")äº†"
+                               "ã€‚\n" NOR, me);
               	return 1;
         }
 
-        message_vision(HIM "$N" HIM "¿ªÊ¼´òÉ¨Âí·¿£¬³ôÎ¶Ê¹Äã²»ÓÉ±Õ½ôÁËºôÎü¡£\n" NOR, me);
-        addn_temp("mark/É¨", 1, me);
+        message_vision(HIM "$N" HIM "é–‹å§‹æ‰“æƒé¦¬æˆ¿ï¼Œè‡­å‘³ä½¿ä½ ä¸ç”±é–‰ç·Šäº†å‘¼å¸ã€‚\n" NOR, me);
+        addn_temp("mark/æƒ", 1, me);
 
         if ((int)me->query_skill("claw", 1) < 50
            && (int)me->query_skill("club", 1) < 50
            && me->can_improve_skill("claw")
            && me->can_improve_skill("club"))
 	{
-                write(HIC "ÄãÔÚÉ¨µØ¹ı³ÌÖĞ¶Ô×¦·¨¼°¹÷·¨ÓĞĞ©Ìå»á¡£\n" NOR);
+                write(HIC "ä½ åœ¨æƒåœ°éç¨‹ä¸­å°çˆªæ³•åŠæ£æ³•æœ‰äº›é«”æœƒã€‚\n" NOR);
                 me->improve_skill("claw",(query("int", me)/6));
                 me->improve_skill("club",(query("int", me)/6));
         }

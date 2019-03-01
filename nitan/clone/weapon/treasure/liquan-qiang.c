@@ -1,4 +1,4 @@
-// liquan-qiang.c Á¤ÈªÇ¹
+// liquan-qiang.c ç€æ³‰æ§
 // Last Modified by winder on Sep. 7 2001
 
 #include <ansi.h>;
@@ -8,18 +8,18 @@ inherit F_UNIQUE;
 
 void create()
 {
-        set_name(HIW"Á¤ÈªÇ¹"NOR,({"liquan spear", "spear", "qiang"}));
+        set_name(HIW"ç€æ³‰æ§"NOR,({"liquan spear", "spear", "qiang"}));
         set_weight(100000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸Ë");
-                set("long","ÕâÊÇÎäÄÂÒÅÎï¡£µ±ÄêÔÀÎäÄÂÄíÁéÉß¶øµÃÉñ±ø£¬°ÙÕ½¹¦³É£¬¶àÀµ´ËÇ¹¡£\n");
+                set("unit", "æ¡¿");
+                set("long","é€™æ˜¯æ­¦ç©†éºç‰©ã€‚ç•¶å¹´å²³æ­¦ç©†æ»éˆè›‡è€Œå¾—ç¥å…µï¼Œç™¾æˆ°åŠŸæˆï¼Œå¤šè³´æ­¤æ§ã€‚\n");
                 set("material", "steel");
                 set("no_drop", 1);
                 set("value", 100);
-                set("wield_msg", "$N¡¸à§¡¹µÄÒ»ÉùÌáÆğÒ»¸ù$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$nÊÕ»Ø±³ºó¡£\n");
+                set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€è²æèµ·ä¸€æ ¹$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°‡æ‰‹ä¸­çš„$næ”¶å›èƒŒå¾Œã€‚\n");
         }
         init_spear(200);
         setup();

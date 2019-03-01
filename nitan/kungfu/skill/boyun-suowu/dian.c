@@ -2,7 +2,7 @@
 
 inherit F_SSERVER;
 
-string name() { return "ÔÆÎí°µµã"; }
+string name() { return "é›²éœ§æš—é»ž"; }
 
 int perform(object me, object target)
 {
@@ -16,24 +16,24 @@ int perform(object me, object target)
         }
 
         if( query_temp("weapon", me) )
-                return notify_fail("ÄãÊÖÉÏ²»ÄÜ×°±¸ÈÎºÎ¶«Î÷¡£\n");
+                return notify_fail("ä½ æ‰‹ä¸Šä¸èƒ½è£å‚™ä»»ä½•æ±è¥¿ã€‚\n");
 
         if (! me->is_fighting(target))
-                return notify_fail("Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( (int)me->query_skill("boyun-suowu", 1) < 100 )
-                return notify_fail("ÄãµÄ¡¸²¦ÔÆËøÎí¡¹²»¹»æµÊì£¬²»ÄÜÊ¹ÓÃ¡¸ÔÆÎí°µµã¡¹¡£\n");
+                return notify_fail("ä½ çš„ã€Œæ’¥é›²éŽ–éœ§ã€ä¸å¤ å«»ç†Ÿï¼Œä¸èƒ½ä½¿ç”¨ã€Œé›²éœ§æš—é»žã€ã€‚\n");
 
         if( (int)me->query_skill("biyun-xinfa",1) < 100)
-                return notify_fail("ÄãµÄÐÄ·¨²»¹»ÊìÁ·£¡\n");
+                return notify_fail("ä½ çš„å¿ƒæ³•ä¸å¤ ç†Ÿç·´ï¼\n");
 
         if( query("neili", me)<800 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ã€‚\n");
 
         ap = attack_power(me, "hand") + me->query_dex()*10;
         dp = defense_power(target, "dodge") + target->query_dex()*10;
 
-        msg = HIG "$NÊÖÍóÒ»·­£¬ÐÅÊÖÒ»¸öÄé»¨¾÷£¬ÄÚÁ¦°µÍÂ£¬¡°àÍ¡±µÄÒ»Éù£¬ÆÆ¿Õ¶øÈ¥!\n"NOR;
+        msg = HIG "$Næ‰‹è…•ä¸€ç¿»ï¼Œä¿¡æ‰‹ä¸€å€‹æ‹ˆèŠ±è¨£ï¼Œå…§åŠ›æš—åï¼Œâ€œå—¤â€çš„ä¸€è²ï¼Œç ´ç©ºè€ŒåŽ»!\n"NOR;
 
         message_combatd(msg, me, target);
 
@@ -43,10 +43,10 @@ int perform(object me, object target)
         {
                 if (! target->is_busy())
                         target->start_busy(ap/100 +2);
-                msg = HIC "$nÈ«Éí¶Ù¾õÒ»Âé£¬ËÆºõ²»ÄÜ¶¯µ¯¡£\n"NOR;
+                msg = HIC "$nå…¨èº«é “è¦ºä¸€éº»ï¼Œä¼¼ä¹Žä¸èƒ½å‹•å½ˆã€‚\n"NOR;
         }
         else
-                msg = HIM "Ö»¼û$n²àÉíÒ»ÈÃ£¬Ò»Õó·çÉù£¬ÆÆ¿Õ¶ø¹ý£¡\n"NOR;
+                msg = HIM "åªè¦‹$nå´èº«ä¸€è®“ï¼Œä¸€é™£é¢¨è²ï¼Œç ´ç©ºè€ŒéŽï¼\n"NOR;
         message_combatd(msg, me, target);
 
         return 1;

@@ -1,4 +1,4 @@
-// ¹âÖ®½£
+// å…‰ä¹‹åŠ
 #include <ansi.h>
 #include <weapon.h>
 inherit SWORD;
@@ -6,14 +6,14 @@ inherit F_UNIQUE;
 
 void create()
 {
-        set_name(HIY"¹âÖ®½£"NOR, ({"light jian", "lightsword"}));
+        set_name(HIY"å…‰ä¹‹åŠ"NOR, ({"light jian", "lightsword"}));
         set_weight(15000);
 
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", HIY"ÕâÊÇÒ»°Ñ¹âÖ®½£,×ö¹¤¼«Æä¾«ÖÂ¡£ÊÇÖÚÉñµÄÒÅ²úÖ®Ò»!\n"NOR);
+                set("unit", "æŠŠ");
+                set("long", HIY"é€™æ˜¯ä¸€æŠŠå…‰ä¹‹åŠ,åšå·¥æ¥µå…¶ç²¾è‡´ã€‚æ˜¯çœ¾ç¥çš„éºç”¢ä¹‹ä¸€!\n"NOR);
                 set("unique", 1);
                 set("value", 0);
 		set("no_put", 1);
@@ -37,8 +37,8 @@ void create()
         set("armor_prop/karay",15);
         set("armor_prop/percao",15);
                 set("treasure",1);       
-                set("wield_msg",HIY"Ò»ÕóÒ«ÑÛµÄÊ¥¹â¹ıºó £¬$NµÄÊÖÉÏ¶à³öÁËÒ»°Ñ¹âÖ®½£¡£\n"NOR);
-                set("unwield_msg",HIY"$N°ÑÊÖÖĞµÄ¹âÖ®½£²åÈë½£ÇÊ¡£Ò«ÑÛµÄÊ¥¹âÒ²¸ú×ÅÏûÊ§ÁË¡£\n"NOR);
+                set("wield_msg",HIY"ä¸€é™£è€€çœ¼çš„è–å…‰éå¾Œ ï¼Œ$Nçš„æ‰‹ä¸Šå¤šå‡ºäº†ä¸€æŠŠå…‰ä¹‹åŠã€‚\n"NOR);
+                set("unwield_msg",HIY"$NæŠŠæ‰‹ä¸­çš„å…‰ä¹‹åŠæ’å…¥åŠé˜ã€‚è€€çœ¼çš„è–å…‰ä¹Ÿè·Ÿè‘—æ¶ˆå¤±äº†ã€‚\n"NOR);
         }
      init_sword(1777);
         setup();
@@ -58,8 +58,8 @@ int a;
 if (1)
 if (random(4)==0)
 {
-message_vision(HIY"$NÊÖÉÏµÄ¹âÖ®½£Í»È»Ê¥¹â´ó×÷!!Ò»µÀÊ¥¹âÕÕÔÚÁË$NµÄÉíÉÏ!!\n"NOR, me,victim);
-message_vision(HIY"»Ø¸´Ê¥¹â!!  $NÈ«Éí¸Ğµ½ÎŞ±ÈµÄÊæÊÊ£¡£¡\n"NOR, me,victim); 
+message_vision(HIY"$Næ‰‹ä¸Šçš„å…‰ä¹‹åŠçªç„¶è–å…‰å¤§ä½œ!!ä¸€é“è–å…‰ç…§åœ¨äº†$Nçš„èº«ä¸Š!!\n"NOR, me,victim);
+message_vision(HIY"å›å¾©è–å…‰!!  $Nå…¨èº«æ„Ÿåˆ°ç„¡æ¯”çš„èˆ’é©ï¼ï¼\n"NOR, me,victim); 
 	if((int)me->query("qi") < (int)me->query("max_qi")+(int)me->query("max_qi")/3)
         {
         me->add("qi",me->query("eff_qi")/6);
@@ -79,23 +79,23 @@ if (me->query("eff_jing") > me->query("max_jing"))
 me->set("eff_jing",me->query("max_jing"));
 
          }
-message_vision(HIY"$NÉíÉÏµÄÉËÇáÁË²»ÉÙ!!\n"NOR, me,victim);
+message_vision(HIY"$Nèº«ä¸Šçš„å‚·è¼•äº†ä¸å°‘!!\n"NOR, me,victim);
 }
 if (random(4)==1)
 {
-message_vision(HIY"$NÊÖÉÏµÄ¹âÖ®½£Í»È»Ê¥¹â´ó×÷!!$NµÄÉíºó³öÏÖÁËÊ¥»ğ!!\n"NOR, me,victim);
-message_vision(HIY"¹âÖ®ÀñÔŞ!!  $NÈ«Éí·¢³öÁËÒ«ÑÛµÄ¹âÃ¢£¡£¡\n"NOR, me,victim); 
+message_vision(HIY"$Næ‰‹ä¸Šçš„å…‰ä¹‹åŠçªç„¶è–å…‰å¤§ä½œ!!$Nçš„èº«å¾Œå‡ºç¾äº†è–ç«!!\n"NOR, me,victim);
+message_vision(HIY"å…‰ä¹‹ç¦®è®š!!  $Nå…¨èº«ç™¼å‡ºäº†è€€çœ¼çš„å…‰èŠ’ï¼ï¼\n"NOR, me,victim); 
  if ( random(me->query("combat_exp"))>(int)victim->query("combat_exp")/3)
 {
 if (!victim->is_busy())
 victim->start_busy(2);
-message_vision(HIY"$n¾õµÄÕõ²»¿ªÑÛÁË!!\n"NOR, me,victim);
+message_vision(HIY"$nè¦ºçš„æ™ä¸é–‹çœ¼äº†!!\n"NOR, me,victim);
 }
-else message_vision(HIY"$n·ÉÉíÔ¾Æğ£¬ÌÓ¹ıÁËÒ»ÄÑ¡£!\n"NOR, me,victim);
+else message_vision(HIY"$né£›èº«èºèµ·ï¼Œé€ƒéäº†ä¸€é›£ã€‚!\n"NOR, me,victim);
 }
 if (me->is_busy())
 {
 me->start_busy(1);
-message_vision(HIY"$NÔÚ¹âÖ®ÀñÔŞµÄ×÷ÓÃÏÂ£¬»Ö¸´ÁËĞĞ¶¯!!\n"NOR, me,victim);
+message_vision(HIY"$Nåœ¨å…‰ä¹‹ç¦®è®šçš„ä½œç”¨ä¸‹ï¼Œæ¢å¾©äº†è¡Œå‹•!!\n"NOR, me,victim);
 }
 }

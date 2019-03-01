@@ -1,4 +1,4 @@
-// club.c »ù±¾¹÷·¨
+// club.c åŸºæœ¬æ£æ³•
 // Last Modified by winder on Mar. 10 2000
 
 #include <ansi.h>;
@@ -13,16 +13,16 @@ int power_point(object me) { return 1; }
 
 int help(object me)
 {
-        write(HIC"\n»ù±¾¹÷·¨£º"NOR"\n");
+        write(HIC"\nåŸºæœ¬æ£æ³•ï¼š"NOR"\n");
         write(@HELP
 
-    ¹÷ÀàÎä¼¼µÄ»ù±¾¹¦¡£
-    ËùÎ½¡°Ç¹ÔúÒ»ÌõÏß£¬¹÷´òÒ»´óÆ¬¡±£¬Ò»É¨Ò»ÅüÈ«Éí×ÅÁ¦¡£¹÷Á·
-ÆðÀ´»¢»¢Éú·ç£¬½Ú×àÉú¶¯£¬¹÷·¨ÃÜ¼¯£¬¿ìËÙÓÂÃÍ¡£Ëü¼ÈÄÜÇ¿Éí½¡Ìå£¬
-ÓÖÄÜ¿ËµÐÖÆÊ¤£¬ÔÚÀú´ú¿¹µÐÓùÎêÖÐ£¬ÉÙÁÖ¹÷·¢»Ó¹ýÖØÒªµÄ×÷ÓÃ¡£ 
+    æ£é¡žæ­¦æŠ€çš„åŸºæœ¬åŠŸã€‚
+    æ‰€è¬‚â€œæ§ç´®ä¸€æ¢ç·šï¼Œæ£æ‰“ä¸€å¤§ç‰‡â€ï¼Œä¸€æŽƒä¸€åŠˆå…¨èº«è‘—åŠ›ã€‚æ£ç·´
+èµ·ä¾†è™Žè™Žç”Ÿé¢¨ï¼Œç¯€å¥ç”Ÿå‹•ï¼Œæ£æ³•å¯†é›†ï¼Œå¿«é€Ÿå‹‡çŒ›ã€‚å®ƒæ—¢èƒ½å¼·èº«å¥é«”ï¼Œ
+åˆèƒ½å…‹æ•µåˆ¶å‹ï¼Œåœ¨æ­·ä»£æŠ—æ•µå¾¡ä¾®ä¸­ï¼Œå°‘æž—æ£ç™¼æ®éŽé‡è¦çš„ä½œç”¨ã€‚ 
 
-        Ñ§Ï°ÒªÇó£º
-                ÎÞ
+        å­¸ç¿’è¦æ±‚ï¼š
+                ç„¡
 HELP
         );
         return 1;

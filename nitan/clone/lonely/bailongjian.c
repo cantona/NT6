@@ -5,20 +5,20 @@ inherit SWORD;
 
 void create()
 {
-        set_name(HIW "°×Áú½£" NOR, ({ "bailong jian", "bailong", "jian" }) );
+        set_name(HIW "ç™½é¾åŠ" NOR, ({ "bailong jian", "bailong", "jian" }) );
         set_weight(5500);
         if (clonep())
                 destruct(this_object());
         else {
-                set("long", HIW "Çà·æ³¤Ô¼Èı³ß£¬½£¼¹»¨ÎÆ¹ÅÆÓ£¬·æ¿ÚÒşÒş·¢×ÅÒøÔó¡£\n" NOR);
-                set("unit", "±ú");
+                set("long", HIW "é’é‹’é•·ç´„ä¸‰å°ºï¼ŒåŠè„ŠèŠ±ç´‹å¤æ¨¸ï¼Œé‹’å£éš±éš±ç™¼è‘—éŠ€æ¾¤ã€‚\n" NOR);
+                set("unit", "æŸ„");
                 set("value", 800000);
                 set("no_sell", 1);
                 set("material", "steel");
-                set("wield_msg", HIW "$N" HIW "´Ó±³ºó¡¸à§¡¹µÄ³é³öÒ»±úÀû½££¬"
-                                 "½£ÈĞÔÚÑô¹âÏÂÉÁÉÁÉú»Ô¡£\n" NOR);
-                set("unwield_msg", HIW "$N" HIW "½«ÊÖÖĞ°×Áú½£¿ÕÎè¸ö½£»¨£¬²å"
-                                 "»Ø½£ÇÊ¡£\n" NOR);
+                set("wield_msg", HIW "$N" HIW "å¾èƒŒå¾Œã€Œå”°ã€çš„æŠ½å‡ºä¸€æŸ„åˆ©åŠï¼Œ"
+                                 "åŠåˆƒåœ¨é™½å…‰ä¸‹é–ƒé–ƒç”Ÿè¼ã€‚\n" NOR);
+                set("unwield_msg", HIW "$N" HIW "å°‡æ‰‹ä¸­ç™½é¾åŠç©ºèˆå€‹åŠèŠ±ï¼Œæ’"
+                                 "å›åŠé˜ã€‚\n" NOR);
                 set("stable", 100);
         }
         init_sword(150);
@@ -39,15 +39,15 @@ mixed hit_ob(object me, object victim, int damage_bonus)
         case 0:
                 if (! victim->is_busy())
                 victim->start_busy(me->query_skill("sword") / 10 + 2);
-                return HIW "$N" HIW "½«ÊÖÖĞ°×Áú½£Ğ±Ğ±Ï÷³ö£¬½£Éí¶¸È»ÑúÆğÒ»µÀ"
-                       "°×¹â£¬½«$n" HIW "±ÆµÃÁ¬Á¬ºóÍË£¡\n" NOR;
+                return HIW "$N" HIW "å°‡æ‰‹ä¸­ç™½é¾åŠæ–œæ–œå‰Šå‡ºï¼ŒåŠèº«é™¡ç„¶æ¼¾èµ·ä¸€é“"
+                       "ç™½å…‰ï¼Œå°‡$n" HIW "é€¼å¾—é€£é€£å¾Œé€€ï¼\n" NOR;
 
         case 1:
                 n = me->query_skill("sword");
                 victim->receive_damage("qi", n * 3 / 4, me);
                 victim->receive_wound("qi", n * 3 / 4, me);
-                return HIW "$N" HIW "Ò»ÉùÇåĞ¥£¬ÊÖÖĞ°×Áú½£Á¬Îè³öÆß¡¢°Ë¸ö½£»¨"
-                       "£¬çÍ·×Ï÷Ïò$n" HIW "ÖÜÉí¸÷´¦£¡\n" NOR;
+                return HIW "$N" HIW "ä¸€è²æ¸…å˜¯ï¼Œæ‰‹ä¸­ç™½é¾åŠé€£èˆå‡ºä¸ƒã€å…«å€‹åŠèŠ±"
+                       "ï¼Œç¹½ç´›å‰Šå‘$n" HIW "å‘¨èº«å„è™•ï¼\n" NOR;
         }
         return damage_bonus;
 }

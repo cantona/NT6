@@ -6,19 +6,19 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIY"½ğÎÚµ¶Æ×"NOR, ({ "jinwu-book" }));
+        set_name(HIY"é‡‘çƒåˆ€è­œ"NOR, ({ "jinwu-book" }));
         set_weight(600);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
-                set("long", "ÕâÊÇÒ»±¾Ñ§Ï°½ğÎÚµ¶·¨µÄÊé¡£\n");
+                set("unit", "æœ¬");
+                set("long", "é€™æ˜¯ä¸€æœ¬å­¸ç¿’é‡‘çƒåˆ€æ³•çš„æ›¸ã€‚\n");
                 set("value", 1000);
                 set("material", "paper");
                 set("skill", ([
                         "name":         "jinwu-blade",
                         "exp_required": 10000,
-     					"family_name" : "Ñ©É½ÅÉ",
+     					"family_name" : "é›ªå±±æ´¾",
                         "jing_cost" :   30,
                         "difficulty":   30,
                         "max_skill":    100,

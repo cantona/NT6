@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����С��");
+        set("short", "綠泥小徑");
         set("long", @LONG
-����������ɽׯ�е�����С���ϡ�С�����������һ����軨����
-������������ɫ�軨��ʱ�з�ɵ���ϷŪ���䡣�㲻�Ҷ���������ǰ
-�С�
+你走在蔓陀山莊中的綠泥小徑上。小徑兩側擺滿拉一盆盆茶花，結
+了許許多多的五色茶花，時有蜂飛蝶舞戲弄花間。你不敢多留，急步前
+行。
 LONG );
         set("outdoors", "mantuo");
         set("no_clean_up", 0);

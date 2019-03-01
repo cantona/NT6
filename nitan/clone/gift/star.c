@@ -6,15 +6,15 @@ inherit ITEM;
 
 void create()
 {
-        set_name(BLINK HIY "ĞÇĞÇ" NOR, ({ "star" }) );
+        set_name(BLINK HIY "æ˜Ÿæ˜Ÿ" NOR, ({ "star" }) );
         set_weight(30);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "´ÓÌì¿ÕÉÏÕªÏÂÀ´Ò»¿ÅĞÇĞÇ£¬Õâ¿É²»ÊÇÓÃ½ğÇ®À´"
-                            "ºâÁ¿µÄ£¬ÔõÃ´Ò²ËãÊÇÒ»·¬ĞÄÒâ°¢¡£\n" NOR);
+                set("long", HIW "å¾å¤©ç©ºä¸Šæ‘˜ä¸‹ä¾†ä¸€é¡†æ˜Ÿæ˜Ÿï¼Œé€™å¯ä¸æ˜¯ç”¨é‡‘éŒ¢ä¾†"
+                            "è¡¡é‡çš„ï¼Œæ€éº¼ä¹Ÿç®—æ˜¯ä¸€ç•ªå¿ƒæ„é˜¿ã€‚\n" NOR);
                 set("value", 0);
-                set("unit", "¿Å");
+                set("unit", "é¡†");
         }
         setup();
 }

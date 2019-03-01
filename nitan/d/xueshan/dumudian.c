@@ -13,12 +13,12 @@ int reset_to_normal();
 
 void create()
 {
-        set("short", "¶ÈÄ¸µî");
+        set("short", "åº¦æ¯æ®¿");
         set("long", @LONG
- ÕâÀïÊÇÑ©É½ËÂµÄ¶ÈÄ¸µî£¬ÕıÖĞÎå×ğ´ó×ù·ğ£¬¾ùÎª¸ßÈâ÷Ù¡¢ÍâÅûÌ»
-ÓÒôÂôÄ¡¢½áõÊõÃ×ø¡¢Ö´ÊÖÓ¡Ğëåô×ø¸÷Òì¡£µîÄÚ¶Ô³ÆÅÅÁĞËÄ¸ù´óÖù£¬ÉÏ
-µñÈÌ¶¬ÎÆ£¬ÏÂ¿ÌÁ¬ÖéÎÆ¡£±±±ÚÉÏ¹©ÓĞÁ½×ğ½ğ¸ÕÏñ£ºÂíÍ·Ã÷ÍõºÍÑÖÄ§»¤
-·¨¡£
+ é€™è£¡æ˜¯é›ªå±±å¯ºçš„åº¦æ¯æ®¿ï¼Œæ­£ä¸­äº”å°Šå¤§åº§ä½›ï¼Œå‡ç‚ºé«˜è‚‰é«»ã€å¤–æŠ«è¢’
+å³è¢ˆè£Ÿã€çµè·è¶ºåã€åŸ·æ‰‹å°é ˆå¼­åå„ç•°ã€‚æ®¿å…§å°ç¨±æ’åˆ—å››æ ¹å¤§æŸ±ï¼Œä¸Š
+é›•å¿å†¬ç´‹ï¼Œä¸‹åˆ»é€£ç ç´‹ã€‚åŒ—å£ä¸Šä¾›æœ‰å…©å°Šé‡‘å‰›åƒï¼šé¦¬é ­æ˜ç‹å’Œé–»é­”è­·
+æ³•ã€‚
 LONG );
         set("exits", ([
                                 "west" : "/d/xueshan/zoulang1",
@@ -42,8 +42,8 @@ void init() {
     object challenger, me = this_player();
 
 //    printf("blah blah blah\n");
-    if( (query("family/family_name", me) == "Ñ©É½ËÂ" || 
-          query("family/family_name", me) == "Ñªµ¶ÃÅ" )
+    if( (query("family/family_name", me) == "é›ªå±±å¯º" || 
+          query("family/family_name", me) == "è¡€åˆ€é–€" )
          && !(current_job)
           && query("combat_exp", me)>2000000){
 //        printf("hehehe\n");
@@ -67,9 +67,9 @@ int introduce_robber(object current_player)
         robber->setup_robber(query("combat_exp", current_player));
         robber->move(this_object());
 //        printf("test3\n");
-//        message("vision", "Ò»¸ö"+robber->name(1)+"¼±¼±Ã¦Ã¦×ßÁË¹ıÀ´¡£\n", this_object(), robber);
-        message_vision(HIC"Ò»¸ö$N¼±¼±Ã¦Ã¦×ßÁË¹ıÀ´¡£\n"NOR, robber);
-        message_vision(HIR"$NËµµÀ£ºÌıËµÕâ¸öÍ­¸×Àï´æ×ÅÀ®ÂïÓÃµÄËÖÓÍ£¬ÀÏ×Ó½ñÌìÌØµØÀ´¿´¿´£¬Ê¶ÏàµÄ¸Ï¿ì¸øÎÒ¹ö¿ª£¡\n" NOR, robber, current_player);
+//        message("vision", "ä¸€å€‹"+robber->name(1)+"æ€¥æ€¥å¿™å¿™èµ°äº†éä¾†ã€‚\n", this_object(), robber);
+        message_vision(HIC"ä¸€å€‹$Næ€¥æ€¥å¿™å¿™èµ°äº†éä¾†ã€‚\n"NOR, robber);
+        message_vision(HIR"$Nèªªé“ï¼šè½èªªé€™å€‹éŠ…ç¼¸è£¡å­˜è‘—å–‡å˜›ç”¨çš„é…¥æ²¹ï¼Œè€å­ä»Šå¤©ç‰¹åœ°ä¾†çœ‹çœ‹ï¼Œè­˜ç›¸çš„è¶•å¿«çµ¦æˆ‘æ»¾é–‹ï¼\n" NOR, robber, current_player);
         robber->start_checking(current_player);
 //        printf("test4\n");
     }

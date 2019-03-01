@@ -4,12 +4,12 @@ inherit ITEM;
 
 void create()
 {
-        set_name("ïÚ³µ", ({ "silver cart", "cart"}) );
+        set_name("é¢è»Š", ({ "silver cart", "cart"}) );
         set_weight(3000000);
         set("no_get", 1);
         set_max_encumbrance(80000000);
-        set("unit", "Á¾");
-        set("long", "Ò»Á¾ºÚÆáÆáµÄïÚ³µ£¬ÉÏÃæ²å×Å¸£ÍşïÚ¾ÖµÄ´óÆì¡£\n");
+        set("unit", "è¼›");
+        set("long", "ä¸€è¼›é»‘æ¼†æ¼†çš„é¢è»Šï¼Œä¸Šé¢æ’è‘—ç¦å¨é¢å±€çš„å¤§æ——ã€‚\n");
         set("closed", 1);
         set("value", 2000);
     
@@ -30,8 +30,8 @@ int do_close(string arg)
         me = this_player();
         ob = this_object();
         if(arg != "cart" && arg != "silver cart")
-                return notify_fail("ÄãÒª¹ØÉÏÊ²Ã´£¿\n");
-               message_vision("$N°Ñ$nÃÅ¹ØÉÏÁË¡£\n", me, ob);
+                return notify_fail("ä½ è¦é—œä¸Šä»€éº¼ï¼Ÿ\n");
+               message_vision("$NæŠŠ$né–€é—œä¸Šäº†ã€‚\n", me, ob);
         set("closed", 1, ob);
         return 1;
 }
@@ -41,12 +41,12 @@ int do_open(string arg)
         object me, ob;
 
         if(arg != "cart" && arg != "silver cart")
-                return notify_fail("ÄãÒª´ò¿ªÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦æ‰“é–‹ä»€éº¼ï¼Ÿ\n");
         me = this_player();
         if (objectp(ob=present("biao tou",environment())))
-                return notify_fail(ob->name()+"µÉÁËÄãÒ»ÑÛ£º¡°ÄãÒª¸ÉÊ²Ã´£¡¡±\n");
+                return notify_fail(ob->name()+"çªäº†ä½ ä¸€çœ¼ï¼šâ€œä½ è¦å¹¹ä»€éº¼ï¼â€\n");
         set("closed", 0, this_object());
-        message_vision("$N½«$n¸Ç´ò¿ª¡£\n", me, this_object());
+        message_vision("$Nå°‡$nè“‹æ‰“é–‹ã€‚\n", me, this_object());
         return 1;
 }
 

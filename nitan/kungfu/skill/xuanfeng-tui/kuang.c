@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-string name() { return HIY "¿ñ·ç¾ø¼¼" NOR; }
+string name() { return HIY "ç‹‚é¢¨çµ•æŠ€" NOR; }
 
 inherit F_SSERVER;
 
@@ -18,58 +18,58 @@ int perform(object me, object target)
         }
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(name() + "Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(name() + "åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( query_temp("weapon", me) || query_temp("secondary_weapon", me) )
-                return notify_fail(name() + "Ö»ÄÜ¿ÕÊÖÊ©Õ¹¡£\n");
+                return notify_fail(name() + "åªèƒ½ç©ºæ‰‹æ–½å±•ã€‚\n");
 
         if ((int)me->query_skill("xuanfeng-tui", 1) < 100)
-                return notify_fail("ÄãÐý·çÉ¨Ò¶ÍÈ²»¹»æµÊì£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ æ—‹é¢¨æŽƒè‘‰è…¿ä¸å¤ å«»ç†Ÿï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if ((int)me->query_skill("xuanfeng-tui", 1) < 100)
-                return notify_fail("ÄãµÄÐý·çÉ¨Ò¶ÍÈ²»¹»æµÊì£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„æ—‹é¢¨æŽƒè‘‰è…¿ä¸å¤ å«»ç†Ÿï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (me->query_skill_mapped("unarmed") != "xuanfeng-tui")
-                return notify_fail("ÄãÃ»ÓÐ¼¤·¢Ðý·çÉ¨Ò¶ÍÈ£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼æ—‹é¢¨æŽƒè‘‰è…¿ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (me->query_skill_prepared("unarmed") != "xuanfeng-tui")
-                return notify_fail("ÄãÃ»ÓÐ×¼±¸Ðý·çÉ¨Ò¶ÍÈ£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æº–å‚™æ—‹é¢¨æŽƒè‘‰è…¿ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if( query("neili", me)<300 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIY "$N" HIY "Ê¹³öÌÒ»¨µº¿ñ·ç¾ø¼¼£¬Éí·¨Æ®ºö²»¶¨£¬×ã´ø·ç³¾£¬ÕÆÐ¯"
-              "Íò¾û£¬ÓÐÈôÌìÏÉ£¡\n" NOR;
+        msg = HIY "$N" HIY "ä½¿å‡ºæ¡ƒèŠ±å³¶ç‹‚é¢¨çµ•æŠ€ï¼Œèº«æ³•é£„å¿½ä¸å®šï¼Œè¶³å¸¶é¢¨å¡µï¼ŒæŽŒæ”œ"
+              "è¬éˆžï¼Œæœ‰è‹¥å¤©ä»™ï¼\n" NOR;
         message_combatd(msg, me);
         addn("neili", -100, me);
 
         count = me->query_skill("bibo-shengong", 1) / 2 + me->query_skill("xuanfeng-tui", 1);
         addn_temp("apply/attack", count, me);
 
-        msg = YEL  "\n$N" YEL"¾ÛÁ¦ÓÚ×óÕÆ£¬ÓÒÍÈÒ»½Å¸ú×ÅÌß³ö£¡\n"NOR;
+        msg = YEL  "\n$N" YEL"èšåŠ›äºŽå·¦æŽŒï¼Œå³è…¿ä¸€è…³è·Ÿè‘—è¸¢å‡ºï¼\n"NOR;
         message_combatd(msg,me,target);
         COMBAT_D->do_attack(me,target,weapon,TYPE_REGULAR,msg);
 
-        msg = HIM  "ÈËÓ°ÖÐ£¬" HIM "$N" HIM "·­Éí¶øÆð£¬×óÕÆ´óÁ¦µÃ»ÓÏò$n£¡\n"NOR;
+        msg = HIM  "äººå½±ä¸­ï¼Œ" HIM "$N" HIM "ç¿»èº«è€Œèµ·ï¼Œå·¦æŽŒå¤§åŠ›å¾—æ®å‘$nï¼\n"NOR;
         message_combatd(msg,me,target);
         COMBAT_D->do_attack(me,target,weapon,TYPE_REGULAR,msg);
 
-        msg = YEL "\n$N" YEL "¼û" YEL "$n" YEL "ÃÅ»§´ó¿ª£¬°µÔËÄÚÁ¦£¬Ë«ÍÈÁ¬»·ÌßÏò" YEL "$n£¡\n"NOR;
+        msg = YEL "\n$N" YEL "è¦‹" YEL "$n" YEL "é–€æˆ¶å¤§é–‹ï¼Œæš—é‹å…§åŠ›ï¼Œé›™è…¿é€£ç’°è¸¢å‘" YEL "$nï¼\n"NOR;
         message_combatd(msg,me,target);
         COMBAT_D->do_attack(me,target,weapon,TYPE_REGULAR,msg);
 
-        msg = HIM  "$N" HIM "Ô½Õ½Ô½ÓÂ£¬ÖÜÎ§ÖèÆðÒ»ÕóÐý·ç£¬Ê¹µÃ" HIM "$n" CYN "¿´²»Çå·½Ïò£¡\n"NOR;
+        msg = HIM  "$N" HIM "è¶Šæˆ°è¶Šå‹‡ï¼Œå‘¨åœé©Ÿèµ·ä¸€é™£æ—‹é¢¨ï¼Œä½¿å¾—" HIM "$n" CYN "çœ‹ä¸æ¸…æ–¹å‘ï¼\n"NOR;
         message_combatd(msg,me,target);
         COMBAT_D->do_attack(me,target,weapon,TYPE_REGULAR,msg);
 
-        msg = YEL "\n$N" YEL "ÈçÐÇ¹âÕ§ÏÖ£¬ÓÒÕÆÂÔ´øÓÆÈ»Ö®É«ÇáÅÄ" YEL "$n£¡\n"NOR;
+        msg = YEL "\n$N" YEL "å¦‚æ˜Ÿå…‰ä¹ç¾ï¼Œå³æŽŒç•¥å¸¶æ‚ ç„¶ä¹‹è‰²è¼•æ‹" YEL "$nï¼\n"NOR;
         message_combatd(msg,me,target);
         COMBAT_D->do_attack(me,target,weapon,TYPE_REGULAR,msg);
 
-        msg = HIM "$N" HIM "³¤Ð¥Ò»Éù£¬ÃæÈç³à·¢£¬ºöÈ»×ªµ½" HIM "$n" HIM"Éíºó£¬·´ÊÖÓÖÊÇÒ»ÕÆ£¡\n"NOR;
+        msg = HIM "$N" HIM "é•·å˜¯ä¸€è²ï¼Œé¢å¦‚èµ¤ç™¼ï¼Œå¿½ç„¶è½‰åˆ°" HIM "$n" HIM"èº«å¾Œï¼Œåæ‰‹åˆæ˜¯ä¸€æŽŒï¼\n"NOR;
         message_combatd(msg,me,target);
         COMBAT_D->do_attack(me,target,weapon,TYPE_REGULAR,msg);
 

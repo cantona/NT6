@@ -7,18 +7,18 @@ inherit STAFF;
 
 void create()
 {
-        set_name(HIC"ÉßĞÎÕÈ"NOR, ({"shexing zhang", "zhang"}) );
+        set_name(HIC"è›‡å½¢æ–"NOR, ({"shexing zhang", "zhang"}) );
         set_weight(20000);
         set("taskobj", 1);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ìõ");
-                set("long", "Ò»ÌõÉßĞÎ³¤ÕÈ£¬ÊÇÅ·Ñô¿ËµÄ±øÆ÷¡£\n");
+                set("unit", "æ¢");
+                set("long", "ä¸€æ¢è›‡å½¢é•·æ–ï¼Œæ˜¯æ­é™½å…‹çš„å…µå™¨ã€‚\n");
                 set("value", 0);
                 set("material", "steel");
-                set("wield_msg", "¡°à²¡±µÄÒ»Éù£¬$NÊÖÖĞÒÑ¶àÁËÒ»¸ù$n¡£\n");
-                set("unwield_msg", "ÄãÑÛÇ°Ò»»¨£¬$NÊÖÖĞµÄ$nÒÑ²»¼ûÁË¡£\n");
+                set("wield_msg", "â€œå—–â€çš„ä¸€è²ï¼Œ$Næ‰‹ä¸­å·²å¤šäº†ä¸€æ ¹$nã€‚\n");
+                set("unwield_msg", "ä½ çœ¼å‰ä¸€èŠ±ï¼Œ$Næ‰‹ä¸­çš„$nå·²ä¸è¦‹äº†ã€‚\n");
         }
 
         setup();

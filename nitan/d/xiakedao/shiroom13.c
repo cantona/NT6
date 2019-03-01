@@ -1,25 +1,25 @@
-// /d/xiakedao/shiroom13.c ���͵� ʯ��13
+// /d/xiakedao/shiroom13.c 俠客島 石室13
 
 inherit ROOM;
 
 int do_study(string arg);
 void create()
 {
-        set("short", "ʯ��");
+        set("short", "石室");
         set("long", @LONG
-ʯ����������ϯ�ض��������Ա�Ŀ���ɣ���Ȼ����������ŵ���
-�ơ�һ�������ֳּ��������ڵ������ذ�Ū���ƺ�����ռ����ż��
-̧ͷ����ʯ��(wall)����������
+石室正中三人席地而坐，各自閉目吐納，隱然是天地人三才的陣
+勢。一個書生手持幾根短竹，在地下來回擺弄，似乎正在佔卜。偶爾
+抬頭望望石壁(wall)，若有所悟。
 LONG );
         set("exits", ([
                 "south" : __DIR__"shihole4",
         ]));
         set("item_desc", ([
                 "wall" : @WALL
-ǽ�����Ϸ����š�������Ȼŵ���������֡��ֵ��·�ȴ�̵���һ����
-���ķ��˰���ͼ��������Щ�Ĳ����⡣һ����ע����Ի�����ھ�ʳ��
-��禷������������롣����ע�ƣ�����Ի�����鼫���ؾ��ơ�����Щ
-׭��Сע��������
+牆的正上方刻著「三杯吐然諾」幾個大字。字的下方卻刻的是一副淡
+淡的伏羲八卦圖案，頗有些文不對題。一旁有注：經曰：困于酒食，
+朱紱方來，利用享祀。又有注雲：老子曰：致虛極，守靜篤。另有些
+篆字小注，語意艱深。
 WALL
         ]));
         set("no_clean_up", 0);

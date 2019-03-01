@@ -1,7 +1,7 @@
 // Copyright (C) 2003, by Lonely. All rights reserved.
 // This software can not be used, copied, or modified 
 // in any form without the written permission from authors.
-// chen.c ³Â¼ÒÂå
+// chen.c é™³å®¶æ´›
 
 #include <ansi.h>
 
@@ -10,14 +10,14 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("³Â¼ÒÂå", ({ "chen jialuo", "chen","jialuo" }));
-        set("title", HIR "ºì»¨»á×Ü¶æÖ÷" NOR);
+        set_name("é™³å®¶æ´›", ({ "chen jialuo", "chen","jialuo" }));
+        set("title", HIR "ç´…èŠ±æœƒç¸½èˆµä¸»" NOR);
         set("long", 
-"ËûÒ»¸±Ä£ÑùÖ±ÊÇ¸ö¸»¹óÈË¼ÒµÄæı¿ã×ÓµÜ£¬·á×ËÈçÓñ£¬Ä¿ÀÊËÆĞÇ£¬Çá
-ÅÛ»º´ø£¬ÊÖÖĞÒ¡×ÅÒ»±úÕÛÉÈ£¬Éñ²É·ÉÑï£¬Æø¶ÈÏĞÑÅ£¬ÍÂÊôË¹ÎÄ¡£·ş
-ÊÎÙ²È»ÊÇ¸ö¹ó½é¹«×Ó¡£\n");
-        set("nickname", HIW"ÓñÃæÉñÁú"NOR);
-        set("gender", "ÄĞĞÔ");
+"ä»–ä¸€å‰¯æ¨¡æ¨£ç›´æ˜¯å€‹å¯Œè²´äººå®¶çš„ç´ˆè¤²å­å¼Ÿï¼Œè±å§¿å¦‚ç‰ï¼Œç›®æœ—ä¼¼æ˜Ÿï¼Œè¼•
+è¢ç·©å¸¶ï¼Œæ‰‹ä¸­æ–è‘—ä¸€æŸ„æŠ˜æ‰‡ï¼Œç¥æ¡é£›æšï¼Œæ°£åº¦é–’é›…ï¼Œåå±¬æ–¯æ–‡ã€‚æœ
+é£¾å„¼ç„¶æ˜¯å€‹è²´ä»‹å…¬å­ã€‚\n");
+        set("nickname", HIW"ç‰é¢ç¥é¾"NOR);
+        set("gender", "ç”·æ€§");
         set("class", "scholar");
         set("age", 22);
         set("attitude", "friendly");
@@ -71,7 +71,7 @@ void create()
                 (: exert_function, "recover" :),
         }) );
         
-        create_family("ºì»¨»á", 2, "×Ü¶æÖ÷");
+        create_family("ç´…èŠ±æœƒ", 2, "ç¸½èˆµä¸»");
         setup();
         carry_object("/clone/cloth/jinduan")->wear();
         carry_object("/clone/cloth/yaodai")->wear();
@@ -81,16 +81,16 @@ int accept_ask(object me, string topic)
 {
         switch (topic)
         {
-        case "ÀúÁ·" :
-        case "ÀúÁ¶" :
-        case "¶ÍÁ¶" :
+        case "æ­·ç·´" :
+        case "æ­·ç…‰" :
+        case "é›ç…‰" :
                 return QUEST_D->accept_ask(this_object(), me, topic);
                 break;
 
-        case "°Ù»¨´íÂÒ" :
+        case "ç™¾èŠ±éŒ¯äº‚" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/baihua-cuoquan/luan",
-                           "name"    : "°Ù»¨´íÂÒ",
+                           "name"    : "ç™¾èŠ±éŒ¯äº‚",
                            "sk1"     : "baihua-cuoquan",
                            "lv1"     : 180,
                            "dodge"   : 150,
@@ -99,10 +99,10 @@ int accept_ask(object me, string topic)
                            "shen"    : 38000, ]));
                 break;
 
-        case "°Ù»¨´íÒ×" :
+        case "ç™¾èŠ±éŒ¯æ˜“" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/baihua-cuoquan/yi",
-                           "name"    : "°Ù»¨´íÒ×",
+                           "name"    : "ç™¾èŠ±éŒ¯æ˜“",
                            "sk1"     : "baihua-cuoquan",
                            "lv1"     :  130,
                            "force"   :  180,
@@ -111,10 +111,10 @@ int accept_ask(object me, string topic)
                            "shen"    : 43000, ]));
                 break;
 
-        case "Õ½ÉñºäÌì¾÷" :
+        case "æˆ°ç¥è½Ÿå¤©è¨£" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/baihua-cuoquan/hong",
-                           "name"    : "Õ½ÉñºäÌì¾÷",
+                           "name"    : "æˆ°ç¥è½Ÿå¤©è¨£",
                            "sk1"     : "baihua-cuoquan",
                            "lv1"     : 180,
                            "sk2"     : "zhanshen-xinjing",
@@ -125,10 +125,10 @@ int accept_ask(object me, string topic)
                            "shen"    : 68000, ]));
                 break;
 
-        case "»¯µû" : 
+        case "åŒ–è¶" : 
                return MASTER_D->teach_pfm(me, this_object(), 
                        ([ "perform" : "can_perform/zhuangzi-wu/hua", 
-                          "name" : "»¯µû", 
+                          "name" : "åŒ–è¶", 
                           "sk1" : "zhuangzi-wu", 
                           "lv1" : 150, 
                           "neili" : 1000, 
@@ -147,8 +147,8 @@ int recognize_apprentice(object ob, string skill)
 {
         if (ob->query_skill(skill, 1) >= 600)
         {
-                command("say ¹»ÁË£¡ÎÒ¾Í½ÌÄãµ½ÕâÀï°É£¬Îä¹¦»¹ÊÇ"
-                        "Òª¿¿×Ô¼º¶àÑĞ¾¿²ÅÊÇ£¡");
+                command("say å¤ äº†ï¼æˆ‘å°±æ•™ä½ åˆ°é€™è£¡å§ï¼Œæ­¦åŠŸé‚„æ˜¯"
+                        "è¦é è‡ªå·±å¤šç ”ç©¶æ‰æ˜¯ï¼");
                 return -1;
         }              
 
@@ -157,13 +157,13 @@ int recognize_apprentice(object ob, string skill)
 
         if (skill == "baihua-cuoquan")
         {
-                message_vision("$N¿´ÁË¿´$n£¬µãµãÍ·µÀ£ºÄãÎÒ¼ÈÈ»Èç´ËÓĞÔµ£¬ÎÒ¾Í´«ÊÚÄã°Ù»¨´íÈ­¡£\n",
+                message_vision("$Nçœ‹äº†çœ‹$nï¼Œé»é»é ­é“ï¼šä½ æˆ‘æ—¢ç„¶å¦‚æ­¤æœ‰ç·£ï¼Œæˆ‘å°±å‚³æˆä½ ç™¾èŠ±éŒ¯æ‹³ã€‚\n",
                                this_object(), ob);
                 set_temp("can_learn/chen/baihua-cuoquan", 1, ob);
                 return 1;
         }
 
-        command("say ÎÒÖ»ÄÜ´«ÊÚÄã°Ù»¨´íÈ­ºÍÏà¹ØµÄÎä¹¦£¬Äã¿É²»ÒªÎªÄÑÎÒ¡£");
+        command("say æˆ‘åªèƒ½å‚³æˆä½ ç™¾èŠ±éŒ¯æ‹³å’Œç›¸é—œçš„æ­¦åŠŸï¼Œä½ å¯ä¸è¦ç‚ºé›£æˆ‘ã€‚");
         return -1;
 }
 

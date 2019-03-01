@@ -3,11 +3,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("Ð¡Ñ§Í¯", ({ "xue tong","tong" }) );
-        set("gender", "ÄÐÐÔ" );
+        set_name("å°å­¸ç«¥", ({ "xue tong","tong" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 14);
         set("per", 30);
-        set("long", "ÕâÊÇÒ»¸öÊ®ÈýËÄËêµÄÐ¡Í¯£¬ÕýÐÄ²»ÔÚÑÉµÄ¸ú×ÅÏÈÉúºúÂÒÄî×Å¡£\n");
+        set("long", "é€™æ˜¯ä¸€å€‹åä¸‰å››æ­²çš„å°ç«¥ï¼Œæ­£å¿ƒä¸åœ¨ç„‰çš„è·Ÿè‘—å…ˆç”Ÿèƒ¡äº‚å¿µè‘—ã€‚\n");
         set("combat_exp", 300);
         set("attitude", "friendly");
         set_skill("dodge", 5);
@@ -17,10 +17,10 @@ void create()
 
         set("chat_chance", 10);
         set("chat_msg", ({
-                CYN "Ð¡Ñ§Í¯¶Ï¶ÏÐøÐøµÄÄîµÀ£ºÈËÖ®³õ£¬ÐÔ±¾¡­¡­ºô¡­ºô¡­¡­\n" NOR,
-                CYN "Ð¡Ñ§Í¯Ò¡Í·»ÎÄÔµÄÄîµÀ£ºòåòåð¯ð¯£¬ÔÚºÓÖÞÖÞ£¬ñºñ»ÊÇÄã£¬¾ý×Ó¸ßåÏ¡£\n" NOR,
-                CYN "Ð¡Ñ§Í¯×ÔÑÔ×ÔÓïµÀ£ºÉúÉúËÀËÀ£¬ËÀËÀÉúÉú£¬ÏÈÉúÏÈËÀ£¬ÏÈËÀÏÈÉú¡£\n" NOR,
-                CYN "Ð¡Ñ§Í¯ËæÉù¸½ºÍµÀ£º´ºÃß²»¾õÏþ£¬ËùÒÔË¯ÀÁ¾õ¡£\n" NOR,
+                CYN "å°å­¸ç«¥æ–·æ–·çºŒçºŒçš„å¿µé“ï¼šäººä¹‹åˆï¼Œæ€§æœ¬â€¦â€¦å‘¼â€¦å‘¼â€¦â€¦\n" NOR,
+                CYN "å°å­¸ç«¥æ–é ­æ™ƒè…¦çš„å¿µé“ï¼šèŸˆèŸˆé³©é³©ï¼Œåœ¨æ²³æ´²æ´²ï¼Œçªˆçª•æ˜¯ä½ ï¼Œå›å­é«˜é€‘ã€‚\n" NOR,
+                CYN "å°å­¸ç«¥è‡ªè¨€è‡ªèªžé“ï¼šç”Ÿç”Ÿæ­»æ­»ï¼Œæ­»æ­»ç”Ÿç”Ÿï¼Œå…ˆç”Ÿå…ˆæ­»ï¼Œå…ˆæ­»å…ˆç”Ÿã€‚\n" NOR,
+                CYN "å°å­¸ç«¥éš¨è²é™„å’Œé“ï¼šæ˜¥çœ ä¸è¦ºæ›‰ï¼Œæ‰€ä»¥ç¡æ‡¶è¦ºã€‚\n" NOR,
         }));
 
         setup();

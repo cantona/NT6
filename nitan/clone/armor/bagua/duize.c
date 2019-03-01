@@ -6,16 +6,16 @@ inherit CLOTH;
 
 void create()
 {
-        set_name(HIY "°ËØÔ¶ÒÔóÒÂ" NOR, ({ "duize yi", "duize", "yi" }));
+        set_name(HIY "å…«å¦å…Œæ¾¤è¡£" NOR, ({ "duize yi", "duize", "yi" }));
         set_weight(100);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIY"Ñ×»Æ·çÓêÊ®Äê¼ÍÄîÌ××°Ö®£º°ËØÔ¶ÒÔóÒÂ\n" NOR);
-                set("unit", "¼ş");
+                set("long", HIY"ç‚é»ƒé¢¨é›¨åå¹´ç´€å¿µå¥—è£ä¹‹ï¼šå…«å¦å…Œæ¾¤è¡£\n" NOR);
+                set("unit", "ä»¶");
                 set("value", 100);
                 set("armor_prop/armor", 1000);
-                set("armor_prop/T_bagua", 1); // Ì××°¼ÆÊı±êÖ¾
+                set("armor_prop/T_bagua", 1); // å¥—è£è¨ˆæ•¸æ¨™å¿—
         }
         setup();
 }

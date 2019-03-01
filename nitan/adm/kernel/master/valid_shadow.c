@@ -2,23 +2,23 @@
 
 /*
 
-        valid_shadow - ¿ØÖÆÄÄĞ©Îï¼ş¿ÉÒÔ±»Í¶Ó° (shadow)¡£
-Óï·¨£º
+        valid_shadow - æ§åˆ¶å“ªäº›ç‰©ä»¶å¯ä»¥è¢«æŠ•å½± (shadow)ã€‚
+èªæ³•ï¼š
         int valid_shadow( object ob );
 
-        ÕûÊı valid_shadow( Îï¼ş Îï¼ş );
-ÓÃ·¨£º
-        µ±Ò»¸öÎï¼ş³¢ÊÔÍ¶Ó° ob Ê±¡´Ê¹ÓÃ shadow() Íâ²¿º¯Ê½ (efun)¡µ£¬»áºô½Ğ
-        Ö÷Ô×Îï¼şÖĞµÄ valid_shadow() º¯Ê½¡£Ò»¸öÎï¼şÓ¦¸Ã×÷Îª´Ëº¯Ê½µÄ²ÎÊı¡£´Ë
-        Îï¼şÊÇ previous_object() ³¢ÊÔÍ¶Ó°µÄÎï¼ş¡£Èç¹û²»×¼Í¶Ó°£¬
-        valid_shadow() Ó¦´«»Ø 0£¬µ¼ÖÂ shadow() ºô½ĞÊ§°Ü²¢´«»Ø 0¡£Èç¹û
-        valid_shadow() ´«»Ø 1£¬ÔòÔÊĞíÍ¶Ó°¡£
-²Î¿¼£º
+        æ•´æ•¸ valid_shadow( ç‰©ä»¶ ç‰©ä»¶ );
+ç”¨æ³•ï¼š
+        ç•¶ä¸€å€‹ç‰©ä»¶å˜—è©¦æŠ•å½± ob æ™‚ã€ˆä½¿ç”¨ shadow() å¤–éƒ¨å‡½å¼ (efun)ã€‰ï¼Œæœƒå‘¼å«
+        ä¸»å®°ç‰©ä»¶ä¸­çš„ valid_shadow() å‡½å¼ã€‚ä¸€å€‹ç‰©ä»¶æ‡‰è©²ä½œç‚ºæ­¤å‡½å¼çš„åƒæ•¸ã€‚æ­¤
+        ç‰©ä»¶æ˜¯ previous_object() å˜—è©¦æŠ•å½±çš„ç‰©ä»¶ã€‚å¦‚æœä¸æº–æŠ•å½±ï¼Œ
+        valid_shadow() æ‡‰å‚³å› 0ï¼Œå°è‡´ shadow() å‘¼å«å¤±æ•—ä¸¦å‚³å› 0ã€‚å¦‚æœ
+        valid_shadow() å‚³å› 1ï¼Œå‰‡å…è¨±æŠ•å½±ã€‚
+åƒè€ƒï¼š
         shadow, query_shadowing
-×÷Õß£º
+ä½œè€…ï¼š
         Tim Hollebeek  Beek@ZorkMUD, Lima Bean, IdeaExchange, and elsewhere
-·­Òë£º
-        spock@muds.net          2000.May.21.    v22 °æ
+ç¿»è­¯ï¼š
+        spock@muds.net          2000.May.21.    v22 ç‰ˆ
 */
 
 // valid_shadow: controls whether an object may be shadowed or not

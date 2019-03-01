@@ -11,21 +11,21 @@ int exert(object me, object target)
         int skill;
 
         if (target != me)
-                return notify_fail("你只能用不败神功提升自己的战斗力。\n");
+                return notify_fail("浣犲彧鑳界敤涓嶆晽绁炲姛鎻愬崌鑷繁鐨勬埌楝ュ姏銆俓n");
 
         if( query("neili", me)<100 )
-                return notify_fail("你的内力不够!");
+                return notify_fail("浣犵殑鍏у姏涓嶅!");
 
         if( query_temp("powerup", me) )
-                return notify_fail("你已经在运功中了。\n");
+                return notify_fail("浣犲凡缍撳湪閬嬪姛涓簡銆俓n");
 
         skill = me->query_skill("force");
 
         addn("neili", -100, me);
         me->receive_damage("qi", 0);
 
-        message_combatd(HIY "$N" HIY "纵声长笑，丹田中内力激荡，"
-                        "衣角悄然扬起，似乎要乘风而去，飘飘欲仙！\n" NOR, me);
+        message_combatd(HIY "$N" HIY "绺辫伈闀风瑧锛屼腹鐢颁腑鍏у姏婵�鐩紝"
+                        "琛ｈ鎮勭劧鎻氳捣锛屼技涔庤涔橀ⅷ鑰屽幓锛岄椋勬浠欙紒\n" NOR, me);
 
         addn_temp("apply/attack", skill*2/5, me);
         addn_temp("apply/defense", skill*2/5, me);
@@ -46,6 +46,6 @@ void remove_effect(object me, int amount)
                 addn_temp("apply/attack", -amount, me);
                 addn_temp("apply/defense", -amount, me);
                 delete_temp("powerup", me);
-                tell_object(me, "你的不败神功运行完毕，将内力收回丹田。\n");
+                tell_object(me, "浣犵殑涓嶆晽绁炲姛閬嬭瀹岀暍锛屽皣鍏у姏鏀跺洖涓圭敯銆俓n");
         }
 }

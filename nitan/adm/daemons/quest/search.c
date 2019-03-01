@@ -1,4 +1,4 @@
-// Íæ¼ÒÈÎÎñÊØ»¤½ø³Ì£ºsearch.c
+// ç©å®¶ä»»å‹™å®ˆè­·é€²ç¨‹ï¼šsearch.c
 
 #include <ansi.h>
 
@@ -26,7 +26,7 @@ string *lost_objs = ({
 
 void startup();
 
-// ÈÎÎñ¶ÔÏó´´½¨
+// ä»»å‹™å°è±¡å‰µå»º
 void create()
 {
         seteuid(getuid());
@@ -39,22 +39,22 @@ void start_quest()
         string qob_name;
         string *ob_names;
 
-        // ÅÉÉúÆäËüµÄÈÎÎñ¶ÔÏó£º±ØĞëÓĞ¿ÉÓÃÎïÆ·£¬µ±Ç°ÈÎÎñ < 5
+        // æ´¾ç”Ÿå…¶å®ƒçš„ä»»å‹™å°è±¡ï¼šå¿…é ˆæœ‰å¯ç”¨ç‰©å“ï¼Œç•¶å‰ä»»å‹™ < 5
         ob_names=filter_array(lost_objs,(:!find_object($1) || !query_temp("quest_ob", get_object($1)):));
         if (sizeof(ob_names) < 1)
                 return;
 
         if (sizeof(children("/clone/quest/search")) > 20)
-                // ÏµÍ³ÖĞ×î¶à10¸öÑ°ÕÒÎïÆ·µÄÈÎÎñ
+                // ç³»çµ±ä¸­æœ€å¤š10å€‹å°‹æ‰¾ç‰©å“çš„ä»»å‹™
                 return;
 
         qob_name = ob_names[random(sizeof(ob_names))];
         qob = new("/clone/quest/search");
         qob->init_quest(qob_name);
         CHANNEL_D->do_channel(find_object(QUEST_D),
-                              "debug", "½ø³Ì(SEARCH)"
-                              NOR HIW "ÀûÓÃ" + qob_name->name() +
-                              NOR HIW "´´½¨ÁËÒ»¸öÈÎÎñ¡£");
+                              "debug", "é€²ç¨‹(SEARCH)"
+                              NOR HIW "åˆ©ç”¨" + qob_name->name() +
+                              NOR HIW "å‰µå»ºäº†ä¸€å€‹ä»»å‹™ã€‚");
 }
 
 private void heart_beat()
@@ -62,27 +62,27 @@ private void heart_beat()
         if (! find_object(QUEST_D))
                 return;
 
-        // Èç¹û¿ÉÒÔ£¬Ã¿´ÎĞÄÌø²úÉúÒ»¸öQUEST
+        // å¦‚æœå¯ä»¥ï¼Œæ¯æ¬¡å¿ƒè·³ç”¢ç”Ÿä¸€å€‹QUEST
         start_quest();
 }
 
-// ÈÎÎñÊØ»¤½ø³Ì»½ĞÑÕâ¸ö½ø³Ì
+// ä»»å‹™å®ˆè­·é€²ç¨‹å–šé†’é€™å€‹é€²ç¨‹
 void startup()
 {
-        // Æô¶¯
+        // å•Ÿå‹•
         if (! find_object(QUEST_D))
                 return;
 
         if (! query_heart_beat())
                 CHANNEL_D->do_channel(find_object(QUEST_D),
-                                      "sys", "½ø³Ì(SEARCH)Æô¶¯ÁË¡£");
+                                      "sys", "é€²ç¨‹(SEARCH)å•Ÿå‹•äº†ã€‚");
 
-        // Æ½¾ùÃ¿ËÄ·ÖÖÓ²úÉúÒ»¸öÈÎÎñ
+        // å¹³å‡æ¯å››åˆ†é˜ç”¢ç”Ÿä¸€å€‹ä»»å‹™
         //set_heart_beat(110 + random(20));
         set_heart_beat(2 + random(2));
 }
 
-// Í£Ö¹Õâ¸öÈÎÎñ½ø³Ì
+// åœæ­¢é€™å€‹ä»»å‹™é€²ç¨‹
 void stop()
 {
         set_heart_beat(0);

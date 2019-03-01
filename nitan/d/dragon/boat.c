@@ -2,10 +2,10 @@ inherit ROOM;
 #include <ansi.h> 
 void create()
 {
-        set("short", "Óæ´¬ÖĞ");
+        set("short", "æ¼èˆ¹ä¸­");
         set("long",
-"[1;32mÒ»Ò¶Ğ¡ÖÛÆ¯¸¡ÔÚºşÃæÉÏ£¬ËÄÖÜÈºÉ½»·ÈÆ£¬·ç¾°Ê®·ÖÓÅÃÀ¡£Ğ¡\n"
-"ÖÛºÜĞ¡£¬½ö¿É³Ë×øÒ»ÈË£¬µ«½¨ÔìµÄÊ®·Ö¾«ÖÂ²¢ÇÒÀÎ¹Ì£¬ÖÛÉÏºá·Å×ÅÒ»¶Ô½¬¡£\n"
+"[1;32mä¸€è‘‰å°èˆŸæ¼‚æµ®åœ¨æ¹–é¢ä¸Šï¼Œå››å‘¨ç¾¤å±±ç’°ç¹ï¼Œé¢¨æ™¯ååˆ†å„ªç¾ã€‚å°\n"
+"èˆŸå¾ˆå°ï¼Œåƒ…å¯ä¹˜åä¸€äººï¼Œä½†å»ºé€ çš„ååˆ†ç²¾è‡´ä¸¦ä¸”ç‰¢å›ºï¼ŒèˆŸä¸Šæ©«æ”¾è‘—ä¸€å°æ¼¿ã€‚\n"
 );
         set("objects",([
                 ]));
@@ -27,7 +27,7 @@ int do_dive()
    me = this_player();
 
    if( query_temp("marks/gateplace", me)){
-      message_vision("$NÕ¾ÆğÉíÀ´£¬ÉîÎüÒ»¿ÚÆø£¬Ò»¸öÃÍ×ÓÔúµ½ÁËºşÀï¡£\n\n", me);
+      message_vision("$Nç«™èµ·èº«ä¾†ï¼Œæ·±å¸ä¸€å£æ°£ï¼Œä¸€å€‹çŒ›å­ç´®åˆ°äº†æ¹–è£¡ã€‚\n\n", me);
       room = find_object(__DIR__"gongmen");
       if(!objectp(room))  room = load_object(__DIR__"gongmen");
       me->move(room);
@@ -47,30 +47,30 @@ int do_sail()
    if(!objectp(land))
       land=load_object(__DIR__"lake2");
    if (query("exits/up")) return 0;
-   if( query_temp("m_success/Óã¹Ö", me)){
+   if( query_temp("m_success/é­šæ€ª", me)){
       if( query_temp("marks/gateplace", me)){
-         message_vision("$NÇáÓ¯µØ»®×ÅĞ¡´¬£¬»º»ºµØ¿¿µ½ÁËºş±ß¡£\n",me);
-         message("vision",me->name()+"ÇáÓ¯µØ»®×ÅĞ¡´¬£¬»º»ºµØ¿¿µ½ÁËºş±ß¡£\n",land); 
+         message_vision("$Nè¼•ç›ˆåœ°åŠƒè‘—å°èˆ¹ï¼Œç·©ç·©åœ°é åˆ°äº†æ¹–é‚Šã€‚\n",me);
+         message("vision",me->name()+"è¼•ç›ˆåœ°åŠƒè‘—å°èˆ¹ï¼Œç·©ç·©åœ°é åˆ°äº†æ¹–é‚Šã€‚\n",land); 
          delete_temp("marks/gateplace", me);
          set("exits/up", __DIR__"lake2");
          set("exits/down", __DIR__"boat", land);
          call_out("boat_leave", 10, land);
          return 1;
       }
-      message_vision("$N³­Æğ´¬½¬ÇáÓ¯µØ°ÑĞ¡´¬»®ÏòºşµÄ¶«±±·½¡£\n", me);
+      message_vision("$NæŠ„èµ·èˆ¹æ¼¿è¼•ç›ˆåœ°æŠŠå°èˆ¹åŠƒå‘æ¹–çš„æ±åŒ—æ–¹ã€‚\n", me);
       set_temp("marks/gateplace", 1, me);
       me->start_busy(3);
       return 1;
    }
    if(random(150) < slvl) {
-      message_vision("Ğ¡´¬»º»ºµØ¿¿µ½ÁËºş±ß¡£\n", me);
-      message("vision",me->name()+"»®×ÅĞ¡´¬£¬»º»ºµØ¿¿µ½ÁËºş±ß¡£\n",land); 
+      message_vision("å°èˆ¹ç·©ç·©åœ°é åˆ°äº†æ¹–é‚Šã€‚\n", me);
+      message("vision",me->name()+"åŠƒè‘—å°èˆ¹ï¼Œç·©ç·©åœ°é åˆ°äº†æ¹–é‚Šã€‚\n",land); 
       set("exits/up", __DIR__"lake2");
       set("exits/down", __DIR__"boat", land);
       call_out("boat_leave", 10, land);
       return 1;
    }
-   message_vision("$NÂşÎŞÄ¿µÄµÄÔÚºşÉÏ»®×ÅĞ¡´¬¡£ \n", me);
+   message_vision("$Næ¼«ç„¡ç›®çš„çš„åœ¨æ¹–ä¸ŠåŠƒè‘—å°èˆ¹ã€‚ \n", me);
    return 1;
 }
 
@@ -78,6 +78,6 @@ void boat_leave(object land)
 {
    if (query("exits/up")) delete("exits/up");
    if( query("exits/down", land))delete("exits/down", land);
-   message("vision","Ò»ÕóÎ¢·ç·÷¹ı£¬Ğ¡´¬µ´ÀëÁË°¶±ß¡£\n",this_object()); 
-   message("vision","Ò»ÕóÎ¢·ç·÷¹ı£¬Ğ¡´¬µ´ÀëÁË°¶±ß¡£\n",land); 
+   message("vision","ä¸€é™£å¾®é¢¨æ‹‚éï¼Œå°èˆ¹ç›ªé›¢äº†å²¸é‚Šã€‚\n",this_object()); 
+   message("vision","ä¸€é™£å¾®é¢¨æ‹‚éï¼Œå°èˆ¹ç›ªé›¢äº†å²¸é‚Šã€‚\n",land); 
 }

@@ -4,17 +4,17 @@ inherit TESSERA;
 
 void create()
 {
-        set_name(HIG "¾ÅµØ¡¤ĞşÓñ" NOR, ({"jiudi xuanyu", "jiudi", "xuanyu"}));
+        set_name(HIG "ä¹åœ°ï¹’ç„ç‰" NOR, ({"jiudi xuanyu", "jiudi", "xuanyu"}));
         set_weight(50);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", HIG "Ò»¿éÂÌÉ«µÄ¾ÅµØĞşÓñ£¬ÓµÓĞÄÜÒ½ÖØ²¡£¬ÓÖÄÜ¶¾\n"
-                            "É±ÈËÓÚÒ»ÉíµÄÖÁ±¦¡ª¡ª¾ÅµØĞşÓñ£¬Ïà´«ÉñÅ©ÊÏ\n"
-                            "ËùÓÃÉñÅ©³ß¾ÍÊÇÓÃÕâÃ¶¾ÅµØĞşÓñ¾«Á¶¶ø³É¡£ÉÏ\n"
-                            "¹ÅÉñÎï£¬ÒÑ¾­Í¨Áé¡£\n" NOR);
+                set("long", HIG "ä¸€å¡Šç¶ è‰²çš„ä¹åœ°ç„ç‰ï¼Œæ“æœ‰èƒ½é†«é‡ç—…ï¼Œåˆèƒ½æ¯’\n"
+                            "æ®ºäººäºä¸€èº«çš„è‡³å¯¶â”€â”€ä¹åœ°ç„ç‰ï¼Œç›¸å‚³ç¥è¾²æ°\n"
+                            "æ‰€ç”¨ç¥è¾²å°ºå°±æ˜¯ç”¨é€™æšä¹åœ°ç„ç‰ç²¾ç…‰è€Œæˆã€‚ä¸Š\n"
+                            "å¤ç¥ç‰©ï¼Œå·²ç¶“é€šéˆã€‚\n" NOR);
                 set("value", 10000000);
-                set("unit", "¿é");
+                set("unit", "å¡Š");
                 set("can_be_enchased", 1);
                 set("magic/type", "earth");
                 set("magic/power", 1000);

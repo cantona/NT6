@@ -5,18 +5,18 @@ inherit STAFF;
 
 void create()
 {
-        set_name("ÌÒÄ¾ÕÈ", ({ "taomu zhang" }));
+        set_name("æ¡ƒæœ¨æ–", ({ "taomu zhang" }));
         set_weight(100);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ù");
-                set("long", "ÕâÊÇÒ»¸ùÓÃÌÒÊ÷¸ù×öµÄÕÈ¡£\n");
+                set("unit", "æ ¹");
+                set("long", "é€™æ˜¯ä¸€æ ¹ç”¨æ¡ƒæ¨¹æ ¹åšçš„æ–ã€‚\n");
                 set("value", 2000);
                 set("rigidity", 100);
                 set("material", "wood");
-                set("wield_msg", "$N³é³öÒ»¸ù$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²å»ØÑü¼ä¡£\n");
+                set("wield_msg", "$NæŠ½å‡ºä¸€æ ¹$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°‡æ‰‹ä¸­çš„$næ’å›è…°é–“ã€‚\n");
         }
           init_staff(100);
         setup();

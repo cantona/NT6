@@ -4,10 +4,10 @@ inherit BULLETIN_BOARD;
 
 void create()
 {
-        set_name("归云庄记事板", ({ "board" }) );
+        set_name("姝搁洸鑾婅浜嬫澘", ({ "board" }) );
         set("location", "/d/guiyun/dayuan");
         set("board_id", "guiyun_b");
-        set("long", "这是一个专供桃花岛弟子在岛外使用的留言板。\n" );
+        set("long", "閫欐槸涓�鍊嬪皥渚涙鑺卞扯寮熷瓙鍦ㄥ扯澶栦娇鐢ㄧ殑鐣欒█鏉裤�俓n" );
         setup();
         set("capacity", 100);
         replace_program(BULLETIN_BOARD);

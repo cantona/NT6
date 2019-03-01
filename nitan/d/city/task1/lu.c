@@ -1,18 +1,18 @@
-// lu.c Â¹ÕÈ¿Í
+// lu.c é¹¿æ–å®¢
 
 #include <ansi.h>
 inherit NPC;
 
 void create()
 {
-        set_name("Â¹ÕÈ¿Í", ({ "lu  zhangke"}));
-        set("gender", "ÄĞĞÔ");
-        set("nickname", HIC"ĞşÚ¤¶şÀÏ"NOR);
+        set_name("é¹¿æ–å®¢", ({ "lu  zhangke"}));
+        set("gender", "ç”·æ€§");
+        set("nickname", HIC"ç„å†¥äºŒè€"NOR);
         set("age", 54);
         set("str", 25);
         set("dex", 16);
         set("per", 21);
-        set("long", "ËûÒ»Éí³¤Ğë´¹ĞØ£¬Òõ¶¾¶àÖÇ£¬ĞÔºÃÉ«¡£\n");
+        set("long", "ä»–ä¸€èº«é•·é ˆå‚èƒ¸ï¼Œé™°æ¯’å¤šæ™ºï¼Œæ€§å¥½è‰²ã€‚\n");
         set("combat_exp", 3000000+ random(1000000));
         set("attitude", "peaceful");
         set("neili", 2000);

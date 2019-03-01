@@ -4,9 +4,9 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "»ÆÍÁÂ·");
+        set("short", "é»ƒåœŸè·¯");
         set("long", @LONG
-Äã×ßÔÚÒ»ÌõòêÑÑµÄĞ¡Â·ÉÏ£¬±±Ãæ¾ÍÊÇÍò°²ËÂÁË¡£
+ä½ èµ°åœ¨ä¸€æ¢èœ¿èœ’çš„å°è·¯ä¸Šï¼ŒåŒ—é¢å°±æ˜¯è¬å®‰å¯ºäº†ã€‚
 LONG );
         set("exits", ([
                 "north" : "/d/tulong/yitian/road3",

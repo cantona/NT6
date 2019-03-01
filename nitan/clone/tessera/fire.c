@@ -1,18 +1,18 @@
-// fire.c Ñ×¾§
+// fire.c ç‚æ™¶
 
 #include <ansi.h>
 inherit ITEM;
 
 void create()
 {
-        set_name(RED "Ñ×¾§" NOR, ({ "yan jing", "fire" }) );
+        set_name(RED "ç‚æ™¶" NOR, ({ "yan jing", "fire" }) );
         set_weight(30);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", RED "ÕâÊÇÒ»¿éÑ×¾§£¬µØ·ÎÈÛÑÒÊÜÄÏÃ÷Àë»ğËù»¯£¬É«³àºì£¬ÎÂ¶È¼«¸ß¡£\n" NOR);
+                set("long", RED "é€™æ˜¯ä¸€å¡Šç‚æ™¶ï¼Œåœ°è‚ºç†”å·–å—å—æ˜é›¢ç«æ‰€åŒ–ï¼Œè‰²èµ¤ç´…ï¼Œæº«åº¦æ¥µé«˜ã€‚\n" NOR);
                 set("value", 2000);
-                set("unit", "¿é");
+                set("unit", "å¡Š");
                 set("magic/element", "fire");
         }
         setup();

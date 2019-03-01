@@ -1,18 +1,18 @@
-// metal.c ¾«½ğ
+// metal.c ç²¾é‡‘
 
 #include <ansi.h>
 inherit ITEM;
 
 void create()
 {
-        set_name(HIW "¾«½ğ" NOR, ({ "jing jin", "metal" }) );
+        set_name(HIW "ç²¾é‡‘" NOR, ({ "jing jin", "metal" }) );
         set_weight(30);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "ÕâÊÇÒ»Ã¶¾«½ğ£¬ÓÉÎ÷·½¸ıĞÁÖ®ÆøÄı½á¶ø³É£¬É«Òø°×£¬¼á²»¿É´İ¡£\n" NOR);
+                set("long", HIW "é€™æ˜¯ä¸€æšç²¾é‡‘ï¼Œç”±è¥¿æ–¹åºšè¾›ä¹‹æ°£å‡çµè€Œæˆï¼Œè‰²éŠ€ç™½ï¼Œå …ä¸å¯æ‘§ã€‚\n" NOR);
                 set("value", 2000);
-                set("unit", "Ã¶");
+                set("unit", "æš");
                 set("magic/element", "metal");
         }
         setup();

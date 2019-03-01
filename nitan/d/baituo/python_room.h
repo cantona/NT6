@@ -1,4 +1,4 @@
-// snake_room.h Éß¹ÈÖÐÓÐÉßµÄ·¿¼ä
+// snake_room.h è›‡è°·ä¸­æœ‰è›‡çš„æˆ¿é–“
 
 void python_attack(object);
 
@@ -10,9 +10,9 @@ void init()
 
         string *msg =
         ({
-                HIR"Äã×ßµ½ÕâÀï£¬Í»È»¾õµÃÓÐ¹ÉÐÈ³ôµÄÆøÎ¶¡­¡­\n"NOR,
-                HIR"Äã¶ú±ßÌýµ½Ò»Õó¡uÉ³É³¡vµÄÏ¸ËéÉùÏì£¬ÐÄÀïÌá¸ßÁË¾¯¾õ¡£\n"NOR,
-                HIR"ÄãÒ»×ßµ½ÕâµØ·½£¬Í»È»ÓÐµãÐÄÉñ²»Äþ¡­¡­\n"NOR,
+                HIR"ä½ èµ°åˆ°é€™è£¡ï¼Œçªç„¶è¦ºå¾—æœ‰è‚¡è…¥è‡­çš„æ°£å‘³â€¦â€¦\n"NOR,
+                HIR"ä½ è€³é‚Šè½åˆ°ä¸€é™£â–¡æ²™æ²™â–¡çš„ç´°ç¢Žè²éŸ¿ï¼Œå¿ƒè£¡æé«˜äº†è­¦è¦ºã€‚\n"NOR,
+                HIR"ä½ ä¸€èµ°åˆ°é€™åœ°æ–¹ï¼Œçªç„¶æœ‰é»žå¿ƒç¥žä¸å¯§â€¦â€¦\n"NOR,
         });
 
         me = this_player();
@@ -25,10 +25,10 @@ void init()
                 set("hide_python", 1, here);
 
 
-        if( random(query("hide_python")+1) != 0 && query("race", me) != "ÉßÀà"){
+        if( random(query("hide_python")+1) != 0 && query("race", me) != "è›‡é¡ž"){
                 remove_call_out("python_attack");
                 call_out("python_attack", 6+random(3), me);
-                if( query("family/family_name", me) == "°×ÍÕÉ½" )
+                if( query("family/family_name", me) == "ç™½é§å±±" )
                 tell_object(me, msg[random(sizeof(msg))]);
         }
 }
@@ -50,8 +50,8 @@ void python_attack(object me)
         python->move(here);
         set("last_comeout", time() );
 
-        message("vision", HIR"ÄãºöÈ»ÎÅµÃÒ»ÕóÐÈ·ç£¬ÃÍ¼ûÒ»Ìõ"+python->name()+HIR"´ÜÁË³öÀ´£¬Â¶³öâ²ÑÀ£¬¼²Ïò"+me->name()+"Ò§È¥£¡\n"NOR, environment(me), me);
-        tell_object(me, HIR"Äã¶úÖÐºöÎÅË»Ë»ÉùÏì£¬Ò»³ÙÒÉ¼ä£¬ÝëµØÐÈ³ôÓ­Ãæ£¬Ò»Ìõ"+python->name()+HIR"´ÓÅÔ´Ü³ö£¬ÃÍÈ»ÏòÄãÕÅ¿ÚÆËÀ´£¡\n"NOR);
+        message("vision", HIR"ä½ å¿½ç„¶èžå¾—ä¸€é™£è…¥é¢¨ï¼ŒçŒ›è¦‹ä¸€æ¢"+python->name()+HIR"ç«„äº†å‡ºä¾†ï¼Œéœ²å‡ºç ç‰™ï¼Œç–¾å‘"+me->name()+"å’¬åŽ»ï¼\n"NOR, environment(me), me);
+        tell_object(me, HIR"ä½ è€³ä¸­å¿½èžå˜¶å˜¶è²éŸ¿ï¼Œä¸€é²ç–‘é–“ï¼Œé©€åœ°è…¥è‡­è¿Žé¢ï¼Œä¸€æ¢"+python->name()+HIR"å¾žæ—ç«„å‡ºï¼ŒçŒ›ç„¶å‘ä½ å¼µå£æ’²ä¾†ï¼\n"NOR);
 
         python->kill_ob(me);
 

@@ -1,7 +1,7 @@
 // This program is a part of NT MudLIB
 
 #include <ansi.h>
-#define GIFT_NAME "Ìì¸³·ÖÅä¹¤¾ß"
+#define GIFT_NAME "å¤©è³¦åˆ†é…å·¥å…·"
 inherit ITEM;
 
 int do_fen(string arg);
@@ -13,10 +13,10 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼ş");
+                set("unit", "ä»¶");
                 set("long", @LONG
-¿ÉÒÔ°Ñmygift»ñµÃµÄÏÈÌìÌì¸³·Ö£¨fen£©µ½ÄãÏëÒªµÄÏÈÌìÊôĞÔÉÏ
-¸ñÊ½Îª fen ÎòĞÔ 1 ÕâÖÖ¸ñÊ½¡£
+å¯ä»¥æŠŠmygiftç²å¾—çš„å…ˆå¤©å¤©è³¦åˆ†ï¼ˆfenï¼‰åˆ°ä½ æƒ³è¦çš„å…ˆå¤©å±¬æ€§ä¸Š
+æ ¼å¼ç‚º fen æ‚Ÿæ€§ 1 é€™ç¨®æ ¼å¼ã€‚
 LONG );
                 set("value", 0);
                 /*
@@ -49,48 +49,48 @@ int do_fen(string arg)
         object me = this_player();
 
         if (! arg || sscanf(arg, "%s %d", htsx, jnd) != 2)
-                return notify_fail("Ö¸Áî¸ñÊ½£ºfen <ÏÈÌìÊôĞÔ> <µãÊı>\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šfen <å…ˆå¤©å±¬æ€§> <é»æ•¸>\n");
 
         if( query("tianfu", me)<1 )
-                return notify_fail("ÄãÄ¿Ç°Ã»ÓĞÊ£ÏÂÈÎºÎµÄÏÈÌìÌì¸³µãÊı¿ÉÓÃÀ´·ÖÅä£¡\n");
+                return notify_fail("ä½ ç›®å‰æ²’æœ‰å‰©ä¸‹ä»»ä½•çš„å…ˆå¤©å¤©è³¦é»æ•¸å¯ç”¨ä¾†åˆ†é…ï¼\n");
 
-        if (htsx != "ëöÁ¦" && htsx != "ÎòĞÔ" && htsx != "¸ù¹Ç" && htsx != "Éí·¨"
+        if (htsx != "è†‚åŠ›" && htsx != "æ‚Ÿæ€§" && htsx != "æ ¹éª¨" && htsx != "èº«æ³•"
                 && htsx != "str" && htsx != "int" && htsx != "con" && htsx != "dex")
-                return notify_fail("ÄãÖ»¿ÉÒÔ½«ÏÈÌìÌì¸³µãÊı·ÖÅäµ½ëöÁ¦¡¢ÎòĞÔ¡¢¸ù¹ÇºÍÉí·¨ÕâËÄÖÖÌì¸³ÊôĞÔÉÏ£¡\n");
+                return notify_fail("ä½ åªå¯ä»¥å°‡å…ˆå¤©å¤©è³¦é»æ•¸åˆ†é…åˆ°è†‚åŠ›ã€æ‚Ÿæ€§ã€æ ¹éª¨å’Œèº«æ³•é€™å››ç¨®å¤©è³¦å±¬æ€§ä¸Šï¼\n");
 
-        if (jnd < 1) return notify_fail("ÏÈÌìÌì¸³µãÊıµÄ·ÖÅäÃ¿´Î×îÉÙÒªÇóÊÇ£±µã¡£\n");
+        if (jnd < 1) return notify_fail("å…ˆå¤©å¤©è³¦é»æ•¸çš„åˆ†é…æ¯æ¬¡æœ€å°‘è¦æ±‚æ˜¯ï¼‘é»ã€‚\n");
 
         if( jnd>query("tianfu", me) )
-                return notify_fail("ÄãÃ»ÓĞÄÇÃ´¶àµÄÏÈÌìÌì¸³µãÊı£¡\n");
+                return notify_fail("ä½ æ²’æœ‰é‚£éº¼å¤šçš„å…ˆå¤©å¤©è³¦é»æ•¸ï¼\n");
 
         switch (htsx)
         {
-        case "ëöÁ¦":
+        case "è†‚åŠ›":
         case "str":
                 addn("str", jnd, me);
-                tell_object(me, HIY "Ú¤Ú¤ÖĞ£¬ÄãËÆºõ¸Ğ¾õÓĞÒ»µÀ¹âÃ¢ÉäÈëÄãµÄÌåÄÚ£¡\n" NOR);
-                tell_object(me, HIG "ÄãµÄ¡¸" + HIR + "ÏÈÌìëöÁ¦" + NOR + HIG "¡¹ÌáÉıÁË " + HIR + chinese_number(jnd) + NOR + HIG + " µã£¡\n" NOR);
+                tell_object(me, HIY "å†¥å†¥ä¸­ï¼Œä½ ä¼¼ä¹æ„Ÿè¦ºæœ‰ä¸€é“å…‰èŠ’å°„å…¥ä½ çš„é«”å…§ï¼\n" NOR);
+                tell_object(me, HIG "ä½ çš„ã€Œ" + HIR + "å…ˆå¤©è†‚åŠ›" + NOR + HIG "ã€æå‡äº† " + HIR + chinese_number(jnd) + NOR + HIG + " é»ï¼\n" NOR);
                 break;
-        case "ÎòĞÔ":
+        case "æ‚Ÿæ€§":
         case "int":
                 addn("int", jnd, me);
-                tell_object(me, HIY "Ú¤Ú¤ÖĞ£¬ÄãËÆºõ¸Ğ¾õÓĞÒ»µÀ¹âÃ¢ÉäÈëÄãµÄÌåÄÚ£¡\n" NOR);
-                tell_object(me, HIG "ÄãµÄ¡¸" + HIR + "ÏÈÌìÎòĞÔ" + NOR + HIG "¡¹ÌáÉıÁË " + HIR + chinese_number(jnd) + NOR + HIG + " µã£¡\n" NOR);
+                tell_object(me, HIY "å†¥å†¥ä¸­ï¼Œä½ ä¼¼ä¹æ„Ÿè¦ºæœ‰ä¸€é“å…‰èŠ’å°„å…¥ä½ çš„é«”å…§ï¼\n" NOR);
+                tell_object(me, HIG "ä½ çš„ã€Œ" + HIR + "å…ˆå¤©æ‚Ÿæ€§" + NOR + HIG "ã€æå‡äº† " + HIR + chinese_number(jnd) + NOR + HIG + " é»ï¼\n" NOR);
                 break;
-        case "¸ù¹Ç":
+        case "æ ¹éª¨":
         case "con":
                 addn("con", jnd, me);
-                tell_object(me, HIY "Ú¤Ú¤ÖĞ£¬ÄãËÆºõ¸Ğ¾õÓĞÒ»µÀ¹âÃ¢ÉäÈëÄãµÄÌåÄÚ£¡\n" NOR);
-                tell_object(me, HIG "ÄãµÄ¡¸" + HIR + "ÏÈÌì¸ù¹Ç" + NOR + HIG "¡¹ÌáÉıÁË " + HIR + chinese_number(jnd) + NOR + HIG + " µã£¡\n" NOR);
+                tell_object(me, HIY "å†¥å†¥ä¸­ï¼Œä½ ä¼¼ä¹æ„Ÿè¦ºæœ‰ä¸€é“å…‰èŠ’å°„å…¥ä½ çš„é«”å…§ï¼\n" NOR);
+                tell_object(me, HIG "ä½ çš„ã€Œ" + HIR + "å…ˆå¤©æ ¹éª¨" + NOR + HIG "ã€æå‡äº† " + HIR + chinese_number(jnd) + NOR + HIG + " é»ï¼\n" NOR);
                 break;
-        case "Éí·¨":
+        case "èº«æ³•":
         case "dex":
                 addn("dex", jnd, me);
-                tell_object(me, HIY "Ú¤Ú¤ÖĞ£¬ÄãËÆºõ¸Ğ¾õÓĞÒ»µÀ¹âÃ¢ÉäÈëÄãµÄÌåÄÚ£¡\n" NOR);
-                tell_object(me, HIG "ÄãµÄ¡¸" + HIR + "ÏÈÌìÉí·¨" + NOR + HIG "¡¹ÌáÉıÁË " + HIR + chinese_number(jnd) + NOR + HIG + " µã£¡\n" NOR);
+                tell_object(me, HIY "å†¥å†¥ä¸­ï¼Œä½ ä¼¼ä¹æ„Ÿè¦ºæœ‰ä¸€é“å…‰èŠ’å°„å…¥ä½ çš„é«”å…§ï¼\n" NOR);
+                tell_object(me, HIG "ä½ çš„ã€Œ" + HIR + "å…ˆå¤©èº«æ³•" + NOR + HIG "ã€æå‡äº† " + HIR + chinese_number(jnd) + NOR + HIG + " é»ï¼\n" NOR);
                 break;
         default:
-                return notify_fail("Ö¸Áî¸ñÊ½£ºfen <ÏÈÌìÊôĞÔ> <µãÊı>\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šfen <å…ˆå¤©å±¬æ€§> <é»æ•¸>\n");
                 break;
         }
         addn("tianfu", -jnd, me);
@@ -102,7 +102,7 @@ int do_fen(string arg)
         }
 
         if( query("tianfu", me)>0 )
-                tell_object(me,HIG"ÄãÄ¿Ç°»¹ÓĞ"+chinese_number(query("tianfu", me))+"µãÏÈÌìÌì¸³Ã»ÓĞ·ÖÅä£¡\n\n"NOR);
+                tell_object(me,HIG"ä½ ç›®å‰é‚„æœ‰"+chinese_number(query("tianfu", me))+"é»å…ˆå¤©å¤©è³¦æ²’æœ‰åˆ†é…ï¼\n\n"NOR);
         return 1;
 }
 

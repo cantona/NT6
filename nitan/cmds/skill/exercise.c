@@ -22,42 +22,42 @@ int main(object me, string arg)
         where = environment(me);
 
         if( query("pigging", where) )
-                return notify_fail("Äã»¹ÊÇ×¨ĞÄ¹°Öí°É£¡\n");
+                return notify_fail("ä½ é‚„æ˜¯å°ˆå¿ƒæ‹±è±¬å§ï¼\n");
 
         if( me->is_busy() || query_temp("pending/exercising", me) )
-                return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£å¿™è‘—å‘¢ã€‚\n");
 
         if (me->is_fighting())
-                return notify_fail("Õ½¶·ÖĞ²»ÄÜÁ·ÄÚ¹¦£¬»á×ß»ğÈëÄ§¡£\n");
+                return notify_fail("æˆ°é¬¥ä¸­ä¸èƒ½ç·´å…§åŠŸï¼Œæœƒèµ°ç«å…¥é­”ã€‚\n");
 
         if (! stringp(force = me->query_skill_mapped("force")))
-                return notify_fail("Äã±ØĞëÏÈÓÃ enable Ñ¡ÔñÄãÒªÓÃµÄÄÚ¹¦ĞÄ·¨¡£\n");
+                return notify_fail("ä½ å¿…é ˆå…ˆç”¨ enable é¸æ“‡ä½ è¦ç”¨çš„å…§åŠŸå¿ƒæ³•ã€‚\n");
 
         if (! arg || ! sscanf(arg, "%d", exercise_cost))
-                return notify_fail("ÄãÒª»¨¶àÉÙÆøÁ·¹¦£¿\n");
+                return notify_fail("ä½ è¦èŠ±å¤šå°‘æ°£ç·´åŠŸï¼Ÿ\n");
 
         if (exercise_cost < 10)
-                return notify_fail("ÄãµÄÄÚ¹¦»¹Ã»ÓĞ´ïµ½ÄÇ¸ö¾³½ç£¡\n");
+                return notify_fail("ä½ çš„å…§åŠŸé‚„æ²’æœ‰é”åˆ°é‚£å€‹å¢ƒç•Œï¼\n");
 
         if( query("qi", me)<exercise_cost )
-                return notify_fail("ÄãÏÖÔÚµÄÆøÌ«ÉÙÁË£¬ÎŞ·¨²úÉúÄÚÏ¢ÔËĞĞÈ«Éí¾­Âö¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çš„æ°£å¤ªå°‘äº†ï¼Œç„¡æ³•ç”¢ç”Ÿå…§æ¯é‹è¡Œå…¨èº«ç¶“è„ˆã€‚\n");
 
         if( query("jing", me)*100/query("max_jing", me)<70 )
-                return notify_fail("ÄãÏÖÔÚ¾«²»¹»£¬ÎŞ·¨¿ØÖÆÄÚÏ¢µÄÁ÷¶¯£¡\n");
+                return notify_fail("ä½ ç¾åœ¨ç²¾ä¸å¤ ï¼Œç„¡æ³•æ§åˆ¶å…§æ¯çš„æµå‹•ï¼\n");
 
         if( query("no_fight", environment(me)) && 
             //(query("doing", me) != "scheme" || this_player(1)) )
             (query("doing", me) != "scheme") )
-                return notify_fail("ÄãÎŞ·¨ÔÚÕâ¸öµØ·½°²ĞÄ´ò×ø¡£\n");
+                return notify_fail("ä½ ç„¡æ³•åœ¨é€™å€‹åœ°æ–¹å®‰å¿ƒæ‰“åã€‚\n");
 
-        notify_fail("ÄãÎŞ·¨Ë³ÀûµÄÔË×ªÄÚÏ¢¡£\n");
+        notify_fail("ä½ ç„¡æ³•é †åˆ©çš„é‹è½‰å…§æ¯ã€‚\n");
         if (SKILL_D(force)->do_effect(me))
                 return 0;
         
         msg = SKILL_D(force)->exercise_msg(me);
         
         if (! msg || undefinedp(msg["start_self"]))
-                write("Äã×øÏÂÀ´ÔËÆøÓÃ¹¦£¬Ò»¹ÉÄÚÏ¢¿ªÊ¼ÔÚÌåÄÚÁ÷¶¯¡£\n");
+                write("ä½ åä¸‹ä¾†é‹æ°£ç”¨åŠŸï¼Œä¸€è‚¡å…§æ¯é–‹å§‹åœ¨é«”å…§æµå‹•ã€‚\n");
         else 
                 write(msg["start_self"]);
 
@@ -65,12 +65,12 @@ int main(object me, string arg)
         set_temp("exercise_cost", exercise_cost, me);
         
         if (! msg || undefinedp(msg["apply_short"]))        
-                me->set_short_desc("Õı×øÔÚµØÏÂĞŞÁ¶ÄÚÁ¦¡£");
+                me->set_short_desc("æ­£ååœ¨åœ°ä¸‹ä¿®ç…‰å…§åŠ›ã€‚");
         else
                 me->set_short_desc(msg["apply_short"]);
 
         if (! msg || undefinedp(msg["start_other"]))
-                tell_room(environment(me), me->name() + "ÅÌÏ¥×øÏÂ£¬¿ªÊ¼ĞŞÁ¶ÄÚÁ¦¡£\n", me);
+                tell_room(environment(me), me->name() + "ç›¤è†åä¸‹ï¼Œé–‹å§‹ä¿®ç…‰å…§åŠ›ã€‚\n", me);
         else
                 tell_room(environment(me), msg["start_other"], me); 
                                             
@@ -127,12 +127,12 @@ int exercising(object me)
         me->set_short_desc(0);
         
         if (! msg || undefinedp(msg["finish_self"]))
-                tell_object(me, "ÄãÖ»¾õÄÚÏ¢ÔË×ªË³³©£¬½«ÕæÆø»¹ºÏµ¤Ìï£¬Õ¾ÁËÆğÀ´¡£\n");
+                tell_object(me, "ä½ åªè¦ºå…§æ¯é‹è½‰é †æš¢ï¼Œå°‡çœŸæ°£é‚„åˆä¸¹ç”°ï¼Œç«™äº†èµ·ä¾†ã€‚\n");
         else
                 tell_object(me, msg["finish_self"]);
         
         if (! msg || undefinedp(msg["finish_other"]))
-                tell_room(environment(me), me->name() + "ÔË¹¦Íê±Ï£¬ÉîÉîÎüÁË¿ÚÆø£¬Õ¾ÁËÆğÀ´¡£\n", me);
+                tell_room(environment(me), me->name() + "é‹åŠŸå®Œç•¢ï¼Œæ·±æ·±å¸äº†å£æ°£ï¼Œç«™äº†èµ·ä¾†ã€‚\n", me);
         else
                 tell_room(environment(me), msg["finish_other"], me);
                                         
@@ -142,14 +142,14 @@ int exercising(object me)
         {
                 if( query("max_neili", me) >= me->query_current_neili_limit() )
                 {
-                        write("ÄãµÄÄÚÁ¦ĞŞÎªËÆºõÒÑ¾­´ïµ½ÁËÆ¿¾±¡£\n");
+                        write("ä½ çš„å…§åŠ›ä¿®ç‚ºä¼¼ä¹å·²ç¶“é”åˆ°äº†ç“¶é ¸ã€‚\n");
                         set("neili",query("max_neili",  me), me);
                         return 0;
                 } else
                 {
                         addn("max_neili", 1, me);
                         set("neili",query("max_neili",  me), me);
-                        write("ÄãµÄÄÚÁ¦Ôö¼ÓÁË£¡£¡\n");
+                        write("ä½ çš„å…§åŠ›å¢åŠ äº†ï¼ï¼\n");
                         return 0;
                 }
         }
@@ -164,12 +164,12 @@ int halt_exercise(object me)
                 msg = SKILL_D(force)->exercise_msg(me);
 
         if (! msg || undefinedp(msg["halt_self"]))                        
-                tell_object(me, "Äã½«ÕæÆøÑ¹»Øµ¤Ìï£¬Õ¾ÁËÆğÀ´¡£\n");
+                tell_object(me, "ä½ å°‡çœŸæ°£å£“å›ä¸¹ç”°ï¼Œç«™äº†èµ·ä¾†ã€‚\n");
         else 
                 tell_object(me, msg["halt_self"]);
                 
         if (! msg || undefinedp(msg["halt_other"]))                  
-                tell_room(environment(me), me->name() + "ÉîÎüÒ»¿ÚÆø£¬Õ¾ÁËÆğÀ´¡£\n", me);
+                tell_room(environment(me), me->name() + "æ·±å¸ä¸€å£æ°£ï¼Œç«™äº†èµ·ä¾†ã€‚\n", me);
         else
                 tell_room(environment(me), msg["halt_other"], me);                        
          
@@ -183,11 +183,11 @@ int halt_exercise(object me)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : exercise|dazuo [<ºÄ·Ñ¡¸Æø¡¹µÄÁ¿> ±ØĞë¶àÓÚ 10]
+æŒ‡ä»¤æ ¼å¼ : exercise|dazuo [<è€—è²»ã€Œæ°£ã€çš„é‡> å¿…é ˆå¤šäº 10]
 
-ÔËÆøÁ·¹¦£¬¿ØÖÆÌåÄÚµÄÆøÔÚ¸÷¾­Âö¼äÁ÷¶¯£¬½åÒÔÑµÁ·ÈËÌå¼¡Èâ¹Ç÷ÀµÄÄÍ
-Á¦¡¢±¬·¢Á¦£¬²¢ÇÒÓÃÄÚÁ¦µÄĞÎÊ½½«ÄÜÁ¿´¢±¸ÏÂÀ´¡£×¢Òâ£ºÄã²»ÄÜÔÚ²»ÄÜ
-Õ½¶·µÄµØ·½´ò×ø¡£
+é‹æ°£ç·´åŠŸï¼Œæ§åˆ¶é«”å…§çš„æ°£åœ¨å„ç¶“è„ˆé–“æµå‹•ï¼Œè—‰ä»¥è¨“ç·´äººé«”è‚Œè‚‰éª¨éª¼çš„è€
+åŠ›ã€çˆ†ç™¼åŠ›ï¼Œä¸¦ä¸”ç”¨å…§åŠ›çš„å½¢å¼å°‡èƒ½é‡å„²å‚™ä¸‹ä¾†ã€‚æ³¨æ„ï¼šä½ ä¸èƒ½åœ¨ä¸èƒ½
+æˆ°é¬¥çš„åœ°æ–¹æ‰“åã€‚
 
 HELP );
         return 1;

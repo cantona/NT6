@@ -13,7 +13,7 @@ int main(object me, string arg)
                 return 0;
 
         if (! arg)
-                return notify_fail("giftall ÅÉÀñÎï¸øÔÚÏßÍæ¼Ò£¬ÃüÁî¸ñÊ½£º giftall </Â·¾¶/../Ä¿±êÎÄ¼şÃû> <ÊıÁ¿>\n\n");
+                return notify_fail("giftall æ´¾ç¦®ç‰©çµ¦åœ¨ç·šç©å®¶ï¼Œå‘½ä»¤æ ¼å¼ï¼š giftall </è·¯å¾‘/../ç›®æ¨™æ–‡ä»¶å> <æ•¸é‡>\n\n");
 
         if (sscanf(arg, "%s %d", target, count) != 2)
                 target = arg;
@@ -23,7 +23,7 @@ int main(object me, string arg)
         gift_file = target;
 
         if (file_size(gift_file) == -1)
-                return notify_fail("Â·¾¶²»ÕıÈ·£¬ÎŞ·¨ÕÒµ½ÎïÆ·¡£\n");
+                return notify_fail("è·¯å¾‘ä¸æ­£ç¢ºï¼Œç„¡æ³•æ‰¾åˆ°ç‰©å“ã€‚\n");
 
         seteuid(getuid());
 
@@ -36,12 +36,12 @@ int main(object me, string arg)
 
                 ob -> move(player);
 
-                tell_object(player, HIW "\n\nºöÈ»´Ó¼«¸ß¼«Ô¶µÄÌì¿ÕÖĞ¼«ËÙ½µÏÂÒ»Ö»»ëÉíÁÒÑæµÄ"HIR"»ğ·ï"HIW"£¬ÖÜÉíÉÁÒ«Æß²Ê¹âÃ¢¡£\n" NOR);
-                tell_object(player, HIC "Ëü×¦ÏÂËÆºõ×¥×ÅÊ²Ã´¶«Î÷£¬Í»È»"HIC"»ğ·ï"HIW"ËÉ¿ª½Å×¦£¬ÓĞ¸ö¶«Î÷Ö±ÏòÄãµôÂäÏÂÀ´¡£\n" NOR);
-                tell_object(player, HIG "ÄãÃÍÒ»ÌáÆø×İÉíÒ»Ô¾ÕÉ¸ß½«´ËÎï×¥ÔÚÊÖÖĞ£¬ÓÖäìÈ÷µÄÆ®ÂäµØÃæ¡£\n\n" NOR);
+                tell_object(player, HIW "\n\nå¿½ç„¶å¾æ¥µé«˜æ¥µé çš„å¤©ç©ºä¸­æ¥µé€Ÿé™ä¸‹ä¸€åªæ¸¾èº«çƒˆç‡„çš„"HIR"ç«é³³"HIW"ï¼Œå‘¨èº«é–ƒè€€ä¸ƒå½©å…‰èŠ’ã€‚\n" NOR);
+                tell_object(player, HIC "å®ƒçˆªä¸‹ä¼¼ä¹æŠ“è‘—ä»€éº¼æ±è¥¿ï¼Œçªç„¶"HIC"ç«é³³"HIW"é¬†é–‹è…³çˆªï¼Œæœ‰å€‹æ±è¥¿ç›´å‘ä½ æ‰è½ä¸‹ä¾†ã€‚\n" NOR);
+                tell_object(player, HIG "ä½ çŒ›ä¸€ææ°£ç¸±èº«ä¸€èºä¸ˆé«˜å°‡æ­¤ç‰©æŠ“åœ¨æ‰‹ä¸­ï¼Œåˆç€Ÿæ´’çš„é£„è½åœ°é¢ã€‚\n\n" NOR);
 
         }
-        str=sprintf("¹²ÓĞ%dÎ»Íæ¼ÒµÃµ½ÁË%s¡£\n\n",sizeof(users()),query("name", get_object(target)));
+        str=sprintf("å…±æœ‰%dä½ç©å®¶å¾—åˆ°äº†%sã€‚\n\n",sizeof(users()),query("name", get_object(target)));
         me->start_more(str);
         return 1;
 }
@@ -49,9 +49,9 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½£ºgiveall ÎïÆ·Â·¾¶
+æŒ‡ä»¤æ ¼å¼ï¼šgiveall ç‰©å“è·¯å¾‘
 
-¸øÔÚÏßµÄËùÓĞÍæ¼ÒÒ»¼şÎïÆ·¡£
+çµ¦åœ¨ç·šçš„æ‰€æœ‰ç©å®¶ä¸€ä»¶ç‰©å“ã€‚
 HELP
         );
         return 1;

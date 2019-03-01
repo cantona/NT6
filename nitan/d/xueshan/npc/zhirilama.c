@@ -4,10 +4,10 @@ string ask_xiang();
 
 void create()
 {
-        set_name("ÖµÈÕÀ®Âï", ({ "zhiri lama", "lama" }));
+        set_name("å€¼æ—¥å–‡å˜›", ({ "zhiri lama", "lama" }));
         set("long", 
-"Õâ¸öÖµÈÕÀ®ÂïÄÃ×ÅÒ»±¾ÕË²¾£¬ËûÊÇ×¨ÃÅ¸ºÔğ¹ÜÀí¾èÄÉÏäµÄ¡£\n");
-        set("gender", "ÄĞĞÔ");
+"é€™å€‹å€¼æ—¥å–‡å˜›æ‹¿è‘—ä¸€æœ¬è³¬ç°¿ï¼Œä»–æ˜¯å°ˆé–€è² è²¬ç®¡ç†æç´ç®±çš„ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 20);
         set("attitude", "peaceful");
         set("class","bonze");
@@ -30,7 +30,7 @@ void create()
         set_skill("strike", 20);
 
         set("inquiry",([
-                "¾èÄÉÏä"  : (: ask_xiang :),
+                "æç´ç®±"  : (: ask_xiang :),
                 "balance"  : (: ask_xiang :),
         ]));
 
@@ -58,8 +58,8 @@ string ask_xiang()
            if ( sizeof(names) < 2 )
                         return "";
            
-           str1 = "±¾ËÂ×Ô½ñÎªÖ¹Ò»¹²Ä¼¼¯µ½" + MONEY_D->price_str(box_info["total_value"]) + "\n";
-           str2 = "ÏÖ¾èÄÉÏäÄÚ»¹´æÓĞ" + MONEY_D->price_str(box_info["current_value"]) + "\n";
+           str1 = "æœ¬å¯ºè‡ªä»Šç‚ºæ­¢ä¸€å…±å‹Ÿé›†åˆ°" + MONEY_D->price_str(box_info["total_value"]) + "\n";
+           str2 = "ç¾æç´ç®±å…§é‚„å­˜æœ‰" + MONEY_D->price_str(box_info["current_value"]) + "\n";
            str3 = "";
            if (box_info["total_value"] > 0) {
 
@@ -98,7 +98,7 @@ string ask_xiang()
                    }
 
                    if (first > 0) {
-                          str3 = "ÆäÖĞ¾´·î×î¶àµÄ¼¸Î»Ê©Ö÷ÊÇ£º\n\n" + 
+                          str3 = "å…¶ä¸­æ•¬å¥‰æœ€å¤šçš„å¹¾ä½æ–½ä¸»æ˜¯ï¼š\n\n" + 
                           sprintf( "%30-s %s", first1, MONEY_D->price_str(first) ) + "\n";
                           if (second > 0)
                     str3 += sprintf( "%30-s %s", second1, MONEY_D->price_str(second) ) + "\n"; 
@@ -109,7 +109,7 @@ string ask_xiang()
    }
    else
    {
-       stats = "¾èÄÉÏä±»ÈËÄÃ×ßÁË£¬Ã»·¨²é¡£\n";
+       stats = "æç´ç®±è¢«äººæ‹¿èµ°äº†ï¼Œæ²’æ³•æŸ¥ã€‚\n";
    }
 
    return stats;

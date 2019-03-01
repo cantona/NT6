@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ʯ��");
+        set("short", "石階");
         set("long", @LONG
-ֻ��һ��ʯ���������£���ʧ��ŨŨ�ĺڰ��С�ʯ���ϳ�������ɫ����
-̦���������š�Զ���ڰ��ľ�ͷ�ƺ��е��ƵĹ�����
+只見一排石階盤旋而下，消失在濃濃的黑暗中。石階上長滿的綠色的青
+苔，滑不留腳。遠處黑暗的盡頭似乎有點昏黃的光亮。
 LONG        );
         set("exits", ([ /* sizeof() == 2 */
   "westup" : __DIR__"shijie-1",

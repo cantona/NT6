@@ -9,12 +9,12 @@ int valid_enable(string usage) { return usage == "medical"; }
 int valid_learn(object me)
 {
         if ((int)me->query_skill("medical", 1) < 100)
-                return notify_fail("你的基本医术造诣太浅，无"
-                                   "法领会深奥的武当药理。\n");
+                return notify_fail("浣犵殑鍩烘湰閱閫犺澶泛锛岀劇"
+                                   "娉曢牁鏈冩繁濂х殑姝︾暥钘ョ悊銆俓n");
 
         if ((int)me->query_skill("medical", 1) < (int)me->query_skill("wudang-yaoli", 1))
-                return notify_fail("你的基本医术水平有限，无"
-                                   "法掌握更深奥的武当药理。\n");
+                return notify_fail("浣犵殑鍩烘湰閱姘村钩鏈夐檺锛岀劇"
+                                   "娉曟帉鎻℃洿娣卞ェ鐨勬鐣惰棩鐞嗐�俓n");
 
         return 1;
 }

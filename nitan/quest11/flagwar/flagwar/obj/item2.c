@@ -3,10 +3,10 @@ inherit ITEM;
 
 void create()
 {
-	      set_name(HIG"ÇÀÆìÕ½ - "HIW"ÎåÀ×ºä¶¥·û"NOR, ({"fwar five thunder seal","seal"}) );
+	      set_name(HIG"æ¶æ——æˆ° - "HIW"äº”é›·è½Ÿé ‚ç¬¦"NOR, ({"fwar five thunder seal","seal"}) );
         set_weight(300);
-        set("unit", "¸ö");
-        set("long", "ÇÀÆìÕ½×¨ÓÃÌØÊâÎïÆ·£¬Ê¹ÓÃ(apply)ºó¿ÉÕÙ»½ÎåÀ×¶Ô×ÔÉíËùÔÚµØºä¶¥¡£\n");
+        set("unit", "å€‹");
+        set("long", "æ¶æ——æˆ°å°ˆç”¨ç‰¹æ®Šç‰©å“ï¼Œä½¿ç”¨(apply)å¾Œå¯å¬å–šäº”é›·å°è‡ªèº«æ‰€åœ¨åœ°è½Ÿé ‚ã€‚\n");
         set("value", 1);
         set("can_be_applied", 1);
         set("no_store",1);
@@ -21,10 +21,10 @@ int do_apply(object me) {
 	object ob;
 	if(!me) return 0;
 	ob = this_object();
-  if(environment() != me) return notify_fail(name()+"²»ÔÚÄãÉíÉÏ¡£\n");
-  if(!sizeof(me->query_temp("flag_war"))) return notify_fail(name()+"Ö»ÄÜÔÚÇÀÆìÕ½µÄÊ±ºòÊ¹ÓÃ¡£\n");
-  if(!sscanf(base_name(environment(me)), "/d/flagwar/%*s")) return notify_fail(name()+"Ö»ÄÜÔÚÇÀÆìÕ½³¡Ê¹ÓÃ¡£\n");
-  message_vision("$NÄÃÆğ$n£¬¿ÚÖĞà«à«†ˆ×ÅÌı²»¶®µÄÒô½Ú£¬ÊÖÖ¸×Å$nºúÂÒ»ÓÎè×Å¡£\nÍ»È»´Ó$nÃ°³öÒ«ÑÛµÄ¹âÃ¢£¬$n¿ªÊ¼È¼ÉÕ²¢ÊÍ·Å³öÇ¿´óµÄÁ¦Á¿¡£\n", me, ob);
+  if(environment() != me) return notify_fail(name()+"ä¸åœ¨ä½ èº«ä¸Šã€‚\n");
+  if(!sizeof(me->query_temp("flag_war"))) return notify_fail(name()+"åªèƒ½åœ¨æ¶æ——æˆ°çš„æ™‚å€™ä½¿ç”¨ã€‚\n");
+  if(!sscanf(base_name(environment(me)), "/d/flagwar/%*s")) return notify_fail(name()+"åªèƒ½åœ¨æ¶æ——æˆ°å ´ä½¿ç”¨ã€‚\n");
+  message_vision("$Næ‹¿èµ·$nï¼Œå£ä¸­å–ƒå–ƒâ–¡è‘—è½ä¸æ‡‚çš„éŸ³ç¯€ï¼Œæ‰‹æŒ‡è‘—$nèƒ¡äº‚æ®èˆè‘—ã€‚\nçªç„¶å¾$nå†’å‡ºè€€çœ¼çš„å…‰èŠ’ï¼Œ$né–‹å§‹ç‡ƒç‡’ä¸¦é‡‹æ”¾å‡ºå¼·å¤§çš„åŠ›é‡ã€‚\n", me, ob);
   me->start_busy(3);
   ob->set("apply_room", base_name(environment(me)));
   SCHEDULE_D->set_event(1, 0, this_object(), "thunder_count", me, 1);
@@ -39,18 +39,18 @@ int thunder_count(object me, int num)
 	object ob = this_object();
 	
 	if(ob->query("apply_room") != base_name(environment(me))) {
-		message_vision("$NÈ¼ÉÕµ¡¾¡ÁË¡£\n", ob, me);
+		message_vision("$Nç‡ƒç‡’æ€ ç›¡äº†ã€‚\n", ob, me);
 		destruct(ob);
 		return 1;
 	}
 	
 	if(num >= 5) {
-		message_vision(HIR"×îÇ¿´óµÄÒ»µÀÌìÀ×°éËæ×ÅÇ¿´óµÄÄÜÁ¿ÂäÏÂ¡£\n"NOR, ob, me);		
+		message_vision(HIR"æœ€å¼·å¤§çš„ä¸€é“å¤©é›·ä¼´éš¨è‘—å¼·å¤§çš„èƒ½é‡è½ä¸‹ã€‚\n"NOR, ob, me);		
     foreach(object ppl in all_inventory(environment(me))) {
     	if(ppl == me) continue;
     	if(ppl->query_temp("flag_war/guard")) {
     		ppl->add_temp("flag_war/guard", -1);
-    		message_vision(HIY"$NÉíÉÏµÄÌØÊâ·À»¤Ğ§¹û·¢»ÓĞ§ÓÃµÖµ²ÌìÀ×µÄºä»÷¡£\n"NOR, ppl);
+    		message_vision(HIY"$Nèº«ä¸Šçš„ç‰¹æ®Šé˜²è­·æ•ˆæœç™¼æ®æ•ˆç”¨æŠµæ“‹å¤©é›·çš„è½Ÿæ“Šã€‚\n"NOR, ppl);
     	  continue;
     	}
     	damage = 5000*num;
@@ -61,16 +61,16 @@ int thunder_count(object me, int num)
       ppl->kill_ob(me); 
       if(random(2)) ppl->unconcious();
     }		
-		message_vision("$NÈ¼ÉÕµ¡¾¡ÁË¡£\n", ob, me);
+		message_vision("$Nç‡ƒç‡’æ€ ç›¡äº†ã€‚\n", ob, me);
 		destruct(ob);
 		me->start_busy(2);
 	} else {
-		message_vision(color_str[num-1]+"Ìì¿ÕÖĞÎÚÔÆÃÜ²¼£¬·Â·ğÊÜµ½$N"+color_str[num-1]+"µÄÕÙÒı£¬µÚ"+chinese_number(num)+color_str[num-1]+"µÀÌìÀ×·è¿ñµÄÂäÏÂ¡£\n"NOR, ob, me);
+		message_vision(color_str[num-1]+"å¤©ç©ºä¸­çƒé›²å¯†å¸ƒï¼Œä»¿ä½›å—åˆ°$N"+color_str[num-1]+"çš„å¬å¼•ï¼Œç¬¬"+chinese_number(num)+color_str[num-1]+"é“å¤©é›·ç˜‹ç‹‚çš„è½ä¸‹ã€‚\n"NOR, ob, me);
     foreach(object ppl in all_inventory(environment(me))) {
     	if(ppl == me) continue;
     	if(ppl->query_temp("flag_war/guard")) {
     		ppl->add_temp("flag_war/guard", -1);
-    		message_vision(HIY"$NÉíÉÏµÄÌØÊâ·À»¤Ğ§¹û·¢»ÓĞ§ÓÃµÖµ²ÌìÀ×µÄºä»÷¡£\n"NOR, ppl);
+    		message_vision(HIY"$Nèº«ä¸Šçš„ç‰¹æ®Šé˜²è­·æ•ˆæœç™¼æ®æ•ˆç”¨æŠµæ“‹å¤©é›·çš„è½Ÿæ“Šã€‚\n"NOR, ppl);
     	  continue;
     	}
     	damage = 5000*num;

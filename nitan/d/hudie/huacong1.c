@@ -1,17 +1,17 @@
-// »¨´ÔÖÐ huacong1.c
+// èŠ±å¢ä¸­ huacong1.c
  
 #include <ansi.h>
 inherit ROOM;
 
 void create() 
 { 
-        set("short", "»¨´ÔÖÐ");
+        set("short", "èŠ±å¢ä¸­");
         set("long", @LONG
-ÕâÀïÖÜÎ§¶¼ÊÇæÌºìæ±×ÏµÄÏÊ»¨£¬¸÷ÖÖÆæ»¨Òì²Ý£¬·ÝÍâ·ÒÏã¡£ÑÛÇ°
-ÓÐÒ»ÌõÐ¡¾¶¼ÐÔÓÔÚÏÊ»¨´ÔÖÐ¡£
+é€™è£¡å‘¨åœéƒ½æ˜¯å«£ç´…â–¡ç´«çš„é®®èŠ±ï¼Œå„ç¨®å¥‡èŠ±ç•°è‰ï¼Œä»½å¤–èŠ¬é¦™ã€‚çœ¼å‰
+æœ‰ä¸€æ¢å°å¾‘å¤¾é›œåœ¨é®®èŠ±å¢ä¸­ã€‚
 LONG );
 
-        set("outdoors", "ºûµû¹È");
+        set("outdoors", "è´è¶è°·");
 
         set("exits", ([ 
             "north" : __DIR__"xiaojing",

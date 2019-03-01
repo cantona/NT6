@@ -7,21 +7,21 @@ void init()
 {
         object me = this_player();
         if (me->query_temp("thd/onquest")==2) { 
-           message_vision(HIY"$N¼ûµ½ºÚ·çË«É·À´ÊÆÃÍ¶ñ£¬¶ÙÊ±ÏëÆðÑ¥ÅÔµÄØ°Ê×(bishou)¡£\n"NOR,me);
+           message_vision(HIY"$Nè¦‹åˆ°é»‘é¢¨é›™ç…žä¾†å‹¢çŒ›æƒ¡ï¼Œé “æ™‚æƒ³èµ·é´æ—çš„åŒ•é¦–(bishou)ã€‚\n"NOR,me);
            add_action("do_chou","chou");
         }
 }
 
 void create()
 {
-        set_name( "³ÂÐþ·ç" ,({ "chen xuanfeng", "chen" }));
-        set("title", "ºÚ·çË«É·");
-        set("nickname", HIY"Í­Ê¬"NOR);
-        set("gender", "ÄÐÐÔ");
+        set_name( "é™³çŽ„é¢¨" ,({ "chen xuanfeng", "chen" }));
+        set("title", "é»‘é¢¨é›™ç…ž");
+        set("nickname", HIY"éŠ…å±"NOR);
+        set("gender", "ç”·æ€§");
         set("age", 35);
         set("long",
-            "´ËÈËÊÇ»ÆÒ©Ê¦µÄ¶þµÜ×Ó£¬ËûÅ¨Ã¼´óÑÛ£¬±³ºñ°ò¿í£¬ÇûÌåÉõÊÇ×³½¡£¬Ö»ÊÇ\n"
-            "ÃæÉ«Î¢Î¢·º»Æ¡£\n");
+            "æ­¤äººæ˜¯é»ƒè—¥å¸«çš„äºŒå¼Ÿå­ï¼Œä»–æ¿ƒçœ‰å¤§çœ¼ï¼ŒèƒŒåŽšè†€å¯¬ï¼Œè»€é«”ç”šæ˜¯å£¯å¥ï¼Œåªæ˜¯\n"
+            "é¢è‰²å¾®å¾®æ³›é»ƒã€‚\n");
         set("attitude", "aggressive");
         set("str", 37);
         set("int", 32);
@@ -56,18 +56,18 @@ void create()
         map_skill("leg", "xuanfeng-tui");
         prepare_skill("claw", "jiuyin-baiguzhua");
 
-        create_family("ÌÒ»¨µº", 2, "±»ÖðµÜ×Ó");
+        create_family("æ¡ƒèŠ±å³¶", 2, "è¢«é€å¼Ÿå­");
         set("inquiry", ([
-           "Í­Ê¬":     "½­ºþÉÏµÄÈË¶¼ÕâÃ´½ÐÎÒµÄ£¬ÄãÅÂ²»ÅÂ£¿¹þ¹þ¹þ¹þ¡£",
-           "¶«Ð°":     "ÄÇÊÇÎÒÊ¦¸¸µÄ´ÂºÅ¡£",
-           "Î÷¶¾":     "ÄÇÊÇÓë¼ÒÊ¦ÆëÃûµÄ¸ßÊÖÖ®Ò»£¬ÊÇ¸öÀÏ¶¾Îï£¬×¡ÔÚ°×ÍÕÉ½¡£",
-           "ÄÏµÛ":     "¶ÎÍõÒ¯ÒÑ³ö¼Òµ±ºÍÉÐÈ¥ÁË£¬·¨Ãû½ÐÒ»µÆ¡£",
-           "±±Ø¤":     "±±Ø¤Í³ÁìÖÐÔ­µÄØ¤°ï£¬ÊÆÁ¦ÆÄÎªÇ¿´ó¡£",
-           "ºéÆß¹«":   "ºéÆß¹«Îä¹¦¸ßÇ¿£¬¶øÇÒ½Ì»á¹ù¾¸ÄÇÐ¡¶ù½µÁúÊ®°ËÕÆ£¬¿ÉºÞ£¡",
-           "»ÆÈØ":     "ËýÊÇÎÒÊ¦¸¸µÄ¶ÀÅ®£¬×îÊÇµóÂùÈÎÐÔ¡£",
-           "Ã·³¬·ç":   "ËýÊÇÎÒµÄÊ¦ÃÃ£¬Ò²ÊÇÎÒµÄÄÚÊÒ¡£",
-           "³ÂÐþ·ç":   "²»¾ÍÊÇÎÒÃ´£¿ÄãÊÇ°×³Õ°¡£¿",
-           "»ÆÒ©Ê¦":   "ËûÊÇÎÒÊ¦¸¸¡£"]) );
+           "éŠ…å±":     "æ±Ÿæ¹–ä¸Šçš„äººéƒ½é€™éº¼å«æˆ‘çš„ï¼Œä½ æ€•ä¸æ€•ï¼Ÿå“ˆå“ˆå“ˆå“ˆã€‚",
+           "æ±é‚ª":     "é‚£æ˜¯æˆ‘å¸«çˆ¶çš„ç¶½è™Ÿã€‚",
+           "è¥¿æ¯’":     "é‚£æ˜¯èˆ‡å®¶å¸«é½Šåçš„é«˜æ‰‹ä¹‹ä¸€ï¼Œæ˜¯å€‹è€æ¯’ç‰©ï¼Œä½åœ¨ç™½é§å±±ã€‚",
+           "å—å¸":     "æ®µçŽ‹çˆºå·²å‡ºå®¶ç•¶å’Œå°šåŽ»äº†ï¼Œæ³•åå«ä¸€ç‡ˆã€‚",
+           "åŒ—ä¸":     "åŒ—ä¸çµ±é ˜ä¸­åŽŸçš„ä¸å¹«ï¼Œå‹¢åŠ›é —ç‚ºå¼·å¤§ã€‚",
+           "æ´ªä¸ƒå…¬":   "æ´ªä¸ƒå…¬æ­¦åŠŸé«˜å¼·ï¼Œè€Œä¸”æ•™æœƒéƒ­é–é‚£å°å…’é™é¾åå…«æŽŒï¼Œå¯æ¨ï¼",
+           "é»ƒè“‰":     "å¥¹æ˜¯æˆ‘å¸«çˆ¶çš„ç¨å¥³ï¼Œæœ€æ˜¯åˆè »ä»»æ€§ã€‚",
+           "æ¢…è¶…é¢¨":   "å¥¹æ˜¯æˆ‘çš„å¸«å¦¹ï¼Œä¹Ÿæ˜¯æˆ‘çš„å…§å®¤ã€‚",
+           "é™³çŽ„é¢¨":   "ä¸å°±æ˜¯æˆ‘éº¼ï¼Ÿä½ æ˜¯ç™½ç—´å•Šï¼Ÿ",
+           "é»ƒè—¥å¸«":   "ä»–æ˜¯æˆ‘å¸«çˆ¶ã€‚"]) );
         setup();
         carry_object(ARMOR_D("cloth"))->wear();
 }
@@ -75,8 +75,8 @@ void create()
 void kill_ob(object me)
 {
         object ob=this_object();
-        command("say ÏëÇÀÎÒµÄ¾ÅÒõÕæ¾­£¿Ã»ÄÇÃ´ÈÝÒ×£¡");
-        message_vision(HIY"³ÂÐþ·çÏò$N¼±¹¥ÊýÕÐ£¬¶áÂ·ÏòÍâÅÜÈ¥¡£\n\n"NOR,me);
+        command("say æƒ³æ¶æˆ‘çš„ä¹é™°çœŸç¶“ï¼Ÿæ²’é‚£éº¼å®¹æ˜“ï¼");
+        message_vision(HIY"é™³çŽ„é¢¨å‘$Næ€¥æ”»æ•¸æ‹›ï¼Œå¥ªè·¯å‘å¤–è·‘åŽ»ã€‚\n\n"NOR,me);
         COMBAT_D->do_attack(ob, me, ob->query_temp("weapon"), 3);
         COMBAT_D->do_attack(ob, me, ob->query_temp("weapon"), 3);
         COMBAT_D->do_attack(ob, me, ob->query_temp("weapon"), 3);
@@ -96,16 +96,16 @@ int do_chou(string arg)
         object obj;
         string msg;
         if (!arg||arg!="bishou")
-                return notify_fail("Ê²Ã´£¿\n");
+                return notify_fail("ä»€éº¼ï¼Ÿ\n");
         if (me->query_temp("thd/onquest")!=2)
-                return notify_fail("Ê²Ã´£¿\n");         
+                return notify_fail("ä»€éº¼ï¼Ÿ\n");         
         if(arg=="bishou"&&me->query_temp("thd/onquest")==2)
         {
-                msg = HIR"$N¼ûµ½ºÚ·çË«É²Ï®À´£¬ÐÄÖÐÒ»¾ª£¬³é³öØ°Ê×ºúÂÒ»ÓÎèÆðÀ´¡£\n";
-                msg+= HIR"³ÂÐþ·çÀäÐ¦Ò»Éù£¬ÔÚ$N¼çÍ·ÇàÃÅÑ¨Ò»µ¯£¬$NÊÖÒ»³Á£¬¾¹È»ÕýºÃ²åÔÚ\n";
-                msg+= HIR"ËûµÄ¶ÇÆêÉÏ£¡\n\n"NOR;
-                msg+= HIY"³ÂÐþ·çµÉÖø$N£¬Éí×ÓÂýÂýµÄÈíµ¹¡£\n\n"NOR;
-                msg+= HIC"Ã·³¬·ç²Ò½ÐÒ»Éù£¬²»¹ÊÐÔÃüµÄÏòÄã¹¥À´£¡\n"NOR;
+                msg = HIR"$Nè¦‹åˆ°é»‘é¢¨é›™å‰Žè¥²ä¾†ï¼Œå¿ƒä¸­ä¸€é©šï¼ŒæŠ½å‡ºåŒ•é¦–èƒ¡äº‚æ®èˆžèµ·ä¾†ã€‚\n";
+                msg+= HIR"é™³çŽ„é¢¨å†·ç¬‘ä¸€è²ï¼Œåœ¨$Nè‚©é ­é’é–€ç©´ä¸€å½ˆï¼Œ$Næ‰‹ä¸€æ²‰ï¼Œç«Ÿç„¶æ­£å¥½æ’åœ¨\n";
+                msg+= HIR"ä»–çš„è‚šè‡ä¸Šï¼\n\n"NOR;
+                msg+= HIY"é™³çŽ„é¢¨çžªè‘—$Nï¼Œèº«å­æ…¢æ…¢çš„è»Ÿå€’ã€‚\n\n"NOR;
+                msg+= HIC"æ¢…è¶…é¢¨æ…˜å«ä¸€è²ï¼Œä¸æ•…æ€§å‘½çš„å‘ä½ æ”»ä¾†ï¼\n"NOR;
                         if (!objectp(obj = present("mei chaofeng",environment(me)))) {
                                 call_out("do_dest",1,ob);
                                 return 1;
@@ -151,11 +151,11 @@ void die()
 			::die();
 			return;
 		}
-		message_vision(HIY"\n$N¿´µ½³ÂÐþ·çÉíÉÏÓÐÒ»Æ¬Æ¤¸ï£¬Ë³ÊÖÄÃÁËÆðÀ´¡£\n"NOR,me);
+		message_vision(HIY"\n$Nçœ‹åˆ°é™³çŽ„é¢¨èº«ä¸Šæœ‰ä¸€ç‰‡çš®é©ï¼Œé †æ‰‹æ‹¿äº†èµ·ä¾†ã€‚\n"NOR,me);
 		skin->set("owner", me->query("id"));
 		skin->move(me);
 		if(! me->query("quest/jiuyin2/pass"))
-			log_file("quest/jiuyin",sprintf("%-18sÊ§°Ü%s´Îºó£¬´Ó³ÂÐþ·ç´¦µÃµ½¾ÅÒõÕæ¾­ÏÂ¾í£¬¸££º%d¡£\n",
+			log_file("quest/jiuyin",sprintf("%-18så¤±æ•—%sæ¬¡å¾Œï¼Œå¾žé™³çŽ„é¢¨è™•å¾—åˆ°ä¹é™°çœŸç¶“ä¸‹å·ï¼Œç¦ï¼š%dã€‚\n",
               			me->name(1)+"("+capitalize(getuid(me))+")",chinese_number(me->query("quest/jiuyin2/fail")),
               			me->query("kar")), me);
 		me->set("quest/jiuyin2/pass", 1);
@@ -166,7 +166,7 @@ void die()
         me->set("quest/jiuyin2/time", time());
         me->set("quest/jiuyin2/combat_exp", me->query("combat_exp"));
 	log_file("quest/jiuyin",
-		sprintf("%-18sÏë´Ó³ÂÐþ·ç´¦µÃµ½¾ÅÒõÕæ¾­ÏÂ¾í£¬Ê§°Ü%s´Î¡£\n",
+		sprintf("%-18sæƒ³å¾žé™³çŽ„é¢¨è™•å¾—åˆ°ä¹é™°çœŸç¶“ä¸‹å·ï¼Œå¤±æ•—%sæ¬¡ã€‚\n",
 			me->name(1)+"("+capitalize(getuid(me))+")",
                         chinese_number(me->query("quest/jiuyin2/fail"))
 		), me

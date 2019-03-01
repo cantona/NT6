@@ -13,38 +13,38 @@ int perform(object me, object target)
         i = me->query_skill("ruying-suixingtui", 1) / 4;
 
         if( userp(me) && !query("can_perform/ruying-suixingtui/ruying", me) )
-                return notify_fail("ÄãËùÊ¹ÓÃµÄÍâ¹¦ÖĞÃ»ÓĞÕâÑùµÄ¹¦ÄÜ¡£\n");
+                return notify_fail("ä½ æ‰€ä½¿ç”¨çš„å¤–åŠŸä¸­æ²’æœ‰é€™æ¨£çš„åŠŸèƒ½ã€‚\n");
         
         if( !target ) target = offensive_target(me);
 
         if( !target || !me->is_fighting(target) )
-                return notify_fail("¡¸ÈçÓ°ËæĞÎ¡¹Ö»ÄÜÔÚÕ½¶·ÖĞ¶Ô¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œå¦‚å½±éš¨å½¢ã€åªèƒ½åœ¨æˆ°é¬¥ä¸­å°å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( objectp(query_temp("weapon", me)) )
-                return notify_fail("Ê¹ÓÃ¡¸ÈçÓ°ËæĞÎ¡¹Ê±Ë«ÊÖ±ØĞë¿Õ×Å£¡\n");
+                return notify_fail("ä½¿ç”¨ã€Œå¦‚å½±éš¨å½¢ã€æ™‚é›™æ‰‹å¿…é ˆç©ºè‘—ï¼\n");
 
         if( (int)me->query_skill("ruying-suixingtui", 1) < 160 )
-                return notify_fail("ÄãµÄÈçÓ°ËæĞÎÍÈ²»¹»æµÊì£¬²»»áÊ¹ÓÃ¡¸ÈçÓ°ËæĞÎ¡¹¡£\n");
+                return notify_fail("ä½ çš„å¦‚å½±éš¨å½¢è…¿ä¸å¤ å«»ç†Ÿï¼Œä¸æœƒä½¿ç”¨ã€Œå¦‚å½±éš¨å½¢ã€ã€‚\n");
 
         if( (int)me->query_skill("force", 1) < 160 )
-                return notify_fail("ÄãµÄÄÚ¹¦µÈ¼¶²»¹»£¬²»ÄÜÊ¹ÓÃ¡¸ÈçÓ°ËæĞÎ¡¹¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸç­‰ç´šä¸å¤ ï¼Œä¸èƒ½ä½¿ç”¨ã€Œå¦‚å½±éš¨å½¢ã€ã€‚\n");
 
         if( (int)me->query_dex() < 30 )
-                return notify_fail("ÄãµÄÉí·¨²»¹»Ç¿£¬²»ÄÜÊ¹ÓÃ¡¸ÈçÓ°ËæĞÎ¡¹¡£\n");
+                return notify_fail("ä½ çš„èº«æ³•ä¸å¤ å¼·ï¼Œä¸èƒ½ä½¿ç”¨ã€Œå¦‚å½±éš¨å½¢ã€ã€‚\n");
 
         if (me->query_skill_prepared("unarmed") != "ruying-suixingtui"
         || me->query_skill_mapped("unarmed") != "ruying-suixingtui")
-                return notify_fail("ÄãÏÖÔÚÎŞ·¨Ê¹ÓÃ¡¸ÈÕÔÂÍ¬»Ô¡¹½øĞĞ¹¥»÷¡£\n");
+                return notify_fail("ä½ ç¾åœ¨ç„¡æ³•ä½¿ç”¨ã€Œæ—¥æœˆåŒè¼ã€é€²è¡Œæ”»æ“Šã€‚\n");
  
         if( query("max_neili", me)<2000 )
-                return notify_fail("ÄãµÄÄÚÁ¦ĞŞÎªÌ«Èõ£¬²»ÄÜÊ¹ÓÃ¡¸ÈçÓ°ËæĞÎ¡¹£¡\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¿®ç‚ºå¤ªå¼±ï¼Œä¸èƒ½ä½¿ç”¨ã€Œå¦‚å½±éš¨å½¢ã€ï¼\n");
 
         if( query("neili", me)<700 )
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«ÉÙ£¬²»ÄÜÊ¹ÓÃ¡¸ÈçÓ°ËæĞÎ¡¹¡£\n"); 
+                return notify_fail("ä½ ç¾åœ¨å…§åŠ›å¤ªå°‘ï¼Œä¸èƒ½ä½¿ç”¨ã€Œå¦‚å½±éš¨å½¢ã€ã€‚\n"); 
 
         addn("neili", -500, me);
       
-        msg = YEL "\nÄãÃÍÎüÒ»¿ÚÕæÆø£¬ÌåÄÚ¾¢Á¦Ë²Ê±±¬·¢£¡\n" NOR;
+        msg = YEL "\nä½ çŒ›å¸ä¸€å£çœŸæ°£ï¼Œé«”å…§å‹åŠ›ç¬æ™‚çˆ†ç™¼ï¼\n" NOR;
         message_vision(msg, me, target); 
        
         addn_temp("apply/str", i, me);
@@ -55,36 +55,36 @@ int perform(object me, object target)
         if( random(query("combat_exp", me))>query("combat_exp", target)/2
         &&  random((int)me->query_skill("force")) > (int)target->query_skill("force") / 2)
        { 
-             msg = HIY "$NºöÈ»Ô¾Æğ£¬×ó½ÅÒ»¹´Ò»µ¯£¬ö®Ê±Ö®¼äÌß³öÒ»ÕĞ¡¸Èç¡¹×Ö¾÷µÄ´©ĞÄÍÈ£¬Ö±Ï®$nÇ°ĞØ£¡"NOR;
+             msg = HIY "$Nå¿½ç„¶èºèµ·ï¼Œå·¦è…³ä¸€å‹¾ä¸€å½ˆï¼Œéœæ™‚ä¹‹é–“è¸¢å‡ºä¸€æ‹›ã€Œå¦‚ã€å­—è¨£çš„ç©¿å¿ƒè…¿ï¼Œç›´è¥²$nå‰èƒ¸ï¼"NOR;
              COMBAT_D->do_attack(me,target,query_temp("weapon", me),TYPE_QUICK,msg);
         
-             msg = HIY "½ô½Ó×Å$N×óÍÈ¹´»Ø£¬½«ÑüÉíÒ»Å¤£¬ÄÇÓÒÍÈµÄÒ»ÕĞ¡¸Ó°¡¹×Ö¾÷±ã½ôËæ¶øÖÁ£¬·ÉÏò$n£¡"NOR;
+             msg = HIY "ç·Šæ¥è‘—$Nå·¦è…¿å‹¾å›ï¼Œå°‡è…°èº«ä¸€æ‰­ï¼Œé‚£å³è…¿çš„ä¸€æ‹›ã€Œå½±ã€å­—è¨£ä¾¿ç·Šéš¨è€Œè‡³ï¼Œé£›å‘$nï¼"NOR;
              COMBAT_D->do_attack(me,target,query_temp("weapon", me),1,msg);
  
-             msg = HIY"Ö»¼û$NÓÒ½Å¾¢Á¦Î´Ïû£¬±ãÁè¿ÕÒ»×ª£¬×óÍÈË³ÊÆÉ¨³öÒ»ÕĞ¡¸Ëæ¡¹×Ö¾÷£¬ÈçÓ°¶øÖÁ£¡"NOR;
+             msg = HIY"åªè¦‹$Nå³è…³å‹åŠ›æœªæ¶ˆï¼Œä¾¿å‡Œç©ºä¸€è½‰ï¼Œå·¦è…¿é †å‹¢æƒå‡ºä¸€æ‹›ã€Œéš¨ã€å­—è¨£ï¼Œå¦‚å½±è€Œè‡³ï¼"NOR;
              COMBAT_D->do_attack(me,target,query_temp("weapon", me),TYPE_QUICK,msg);
 
-             msg = HIY"°ë¿ÕÖĞ$N½ÅÎ´ºó³·£¬ÒÑ¾­ÔËÆğ¡¸ĞÎ¡¹×Ö¾÷£¬ÄÚ¾¢Ö±Í¸½Å¼â£¬ÔÚ$nĞØ¸¹´¦Á¬µãÁËÊıÊ®ÏÂ£¡"NOR;
+             msg = HIY"åŠç©ºä¸­$Nè…³æœªå¾Œæ’¤ï¼Œå·²ç¶“é‹èµ·ã€Œå½¢ã€å­—è¨£ï¼Œå…§å‹ç›´é€è…³å°–ï¼Œåœ¨$nèƒ¸è…¹è™•é€£é»äº†æ•¸åä¸‹ï¼"NOR;
              COMBAT_D->do_attack(me,target,query_temp("weapon", me),TYPE_QUICK,msg);
 
-             msg = HIR"ÕâÊ±$NË«±ÛÕ¹¶¯£¬´øÆğÒ»¹ÉÇ¿ÁÒµÄĞı·ç£¬Ë«ÍÈö®Ê±Æë²¢£¬¡¸ÈçÓ°ËæĞÎ¡¹Ò»»÷ÖØÅÚºäÔÚ$nĞØÌÅÖ®ÉÏ£¡"NOR;
+             msg = HIR"é€™æ™‚$Né›™è‡‚å±•å‹•ï¼Œå¸¶èµ·ä¸€è‚¡å¼·çƒˆçš„æ—‹é¢¨ï¼Œé›™è…¿éœæ™‚é½Šä¸¦ï¼Œã€Œå¦‚å½±éš¨å½¢ã€ä¸€æ“Šé‡ç‚®è½Ÿåœ¨$nèƒ¸è†›ä¹‹ä¸Šï¼"NOR;
              COMBAT_D->do_attack(me,target,query_temp("weapon", me),TYPE_QUICK,msg);
         } else 
        {
-             msg = HIY"$NºöÈ»Ô¾Æğ£¬×ó½ÅÒ»¹´Ò»µ¯£¬ö®Ê±Ö®¼äÌß³öÒ»ÕĞ¡¸Èç¡¹×Ö¾÷µÄ´©ĞÄÍÈ£¬Ö±Ï®$nÇ°ĞØ£¡"NOR;
+             msg = HIY"$Nå¿½ç„¶èºèµ·ï¼Œå·¦è…³ä¸€å‹¾ä¸€å½ˆï¼Œéœæ™‚ä¹‹é–“è¸¢å‡ºä¸€æ‹›ã€Œå¦‚ã€å­—è¨£çš„ç©¿å¿ƒè…¿ï¼Œç›´è¥²$nå‰èƒ¸ï¼"NOR;
              COMBAT_D->do_attack(me,target,query_temp("weapon", me),TYPE_QUICK,msg);
         
-             msg = HIY"½ô½Ó×Å$N×óÍÈ¹´»Ø£¬½«ÑüÉíÒ»Å¤£¬ÄÇÓÒÍÈµÄÒ»ÕĞ¡¸Ó°¡¹×Ö¾÷±ã½ôËæ¶øÖÁ£¬·ÉÏò$n£¡"NOR;
+             msg = HIY"ç·Šæ¥è‘—$Nå·¦è…¿å‹¾å›ï¼Œå°‡è…°èº«ä¸€æ‰­ï¼Œé‚£å³è…¿çš„ä¸€æ‹›ã€Œå½±ã€å­—è¨£ä¾¿ç·Šéš¨è€Œè‡³ï¼Œé£›å‘$nï¼"NOR;
              COMBAT_D->do_attack(me,target,query_temp("weapon", me),1,msg);
  
-             msg = HIY"Ö»¼û$NÓÒ½Å¾¢Á¦Î´Ïû£¬±ãÁè¿ÕÒ»×ª£¬×óÍÈË³ÊÆÉ¨³öÒ»ÕĞ¡¸Ëæ¡¹×Ö¾÷£¬ÈçÓ°¶øÖÁ£¡"NOR;
+             msg = HIY"åªè¦‹$Nå³è…³å‹åŠ›æœªæ¶ˆï¼Œä¾¿å‡Œç©ºä¸€è½‰ï¼Œå·¦è…¿é †å‹¢æƒå‡ºä¸€æ‹›ã€Œéš¨ã€å­—è¨£ï¼Œå¦‚å½±è€Œè‡³ï¼"NOR;
              COMBAT_D->do_attack(me,target,query_temp("weapon", me),TYPE_QUICK,msg);
 
-             msg = HIY"°ë¿ÕÖĞ$N½ÅÎ´ºó³·£¬ÒÑ¾­ÔËÆğ¡¸ĞÎ¡¹×Ö¾÷£¬ÄÚ¾¢Ö±Í¸½Å¼â£¬ÔÚ$nĞØ¸¹´¦Á¬µãÁËÊıÊ®ÏÂ£¡"NOR;
+             msg = HIY"åŠç©ºä¸­$Nè…³æœªå¾Œæ’¤ï¼Œå·²ç¶“é‹èµ·ã€Œå½¢ã€å­—è¨£ï¼Œå…§å‹ç›´é€è…³å°–ï¼Œåœ¨$nèƒ¸è…¹è™•é€£é»äº†æ•¸åä¸‹ï¼"NOR;
              COMBAT_D->do_attack(me,target,query_temp("weapon", me),1,msg);
         }
  
-             msg = YEL "\nÄãÁ¬»··ÉÍÈÊ¹Íê£¬È«ÉíÒ»×ª£¬ÎÈÎÈÂäÔÚµØÉÏ¡£\n" NOR;
+             msg = YEL "\nä½ é€£ç’°é£›è…¿ä½¿å®Œï¼Œå…¨èº«ä¸€è½‰ï¼Œç©©ç©©è½åœ¨åœ°ä¸Šã€‚\n" NOR;
                
              addn("neili", -400, me);
              addn_temp("apply/dex", -i, me);

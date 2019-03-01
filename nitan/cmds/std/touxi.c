@@ -1,4 +1,4 @@
-// touxi.c ͵Ϯ
+// touxi.c 偷襲
 // by King 97.05
 
 #include <ansi.h>
@@ -9,37 +9,37 @@ int main(object me, string arg)
         int skill, count;
 
         if( query("no_fight", environment(me)) )
-                return notify_fail("�����ֹս����\n");
+                return notify_fail("這裡禁止戰鬥。\n");
 
         if (! arg || !objectp(obj = present(arg, environment(me))) || !me->visible(obj) )
-                return notify_fail("����͵Ϯ˭��\n");
+                return notify_fail("你想偷襲誰？\n");
 
         if (me->is_chatter())
-                return notify_fail("�����������ʲô��͵Ϯ�ģ�\n");
+                return notify_fail("你這個樣子有什麼好偷襲的？\n");
 
         if (! obj->is_character())
-                return notify_fail("�����һ�㣬�ǲ��������\n");
+                return notify_fail("看清楚一點，那並不是生物。\n");
 
         if (obj->is_fighting(me))
-                return notify_fail("���Ѿ���ս�����ˣ�����͵Ϯ��\n");
+                return notify_fail("你已經在戰鬥中了，還想偷襲？\n");
 
         if (! living(obj))
-                return notify_fail(obj->name() + "���Ѿ������ˣ��㻹��"
-                                   "����͵Ϯ��\n"); 
+                return notify_fail(obj->name() + "都已經這樣了，你還用"
+                                   "得著偷襲嗎？\n"); 
 
         if (obj == me)
-                return notify_fail("͵Ϯ�Լ�������ô�벻����\n");
+                return notify_fail("偷襲自己？別這麼想不開。\n");
 
         if (me->is_busy())
-                return notify_fail("��Ķ�����û����ɣ�����͵Ϯ��\n");
+                return notify_fail("你的動作還沒有完成，不能偷襲。\n");
 
         if (obj->query_competitor())
-                return notify_fail("�˼ұ�����Ҫ͵Ϯ������̫��Ҫ���ˡ�\n");
+                return notify_fail("人家比武你要偷襲？真是太不要臉了。\n");
 
-        tell_object(me, "�������������" + obj->name() +"��\n\n");
-        tell_object(obj, CYN + me->name() + "��Ȼ����������\n\n" NOR);
-        message("vision", CYN + me->name() + "��Ȼ��" + obj->name() +
-                          "��ȥ��\n\n" NOR, environment(me), ({me, obj}));
+        tell_object(me, "你飛身縱起，撲向" + obj->name() +"！\n\n");
+        tell_object(obj, CYN + me->name() + "忽然向你撲來！\n\n" NOR);
+        message("vision", CYN + me->name() + "忽然向" + obj->name() +
+                          "撲去！\n\n" NOR, environment(me), ({me, obj}));
 
         switch (obj->accept_touxi(me))
         {
@@ -78,12 +78,12 @@ int main(object me, string arg)
 int help(object me)
 {
   write(@HELP
-ָ���ʽ : touxi <����>
+指令格式 : touxi <人物>
  
-���ָ�����������͵Ϯ��͵Ϯ����ʱ����������������ر��ʺ���
-����͵��������ߵ����������:)
+這個指令用來向敵人偷襲。偷襲不成時，則會招至反擊。特別適合于
+經驗低的玩家向經驗高的玩家拚命。:)
 
-�������ָ��: fight, kill, hit
+其他相關指令: fight, kill, hit
 HELP
     );
     return 1;

@@ -1,4 +1,4 @@
-// yishiting.c ÅÌÁú¾ÓÒéÊÂÌü
+// yishiting.c ç›¤é¾å±…è­°äº‹å»³
 
 #include <room.h>
 
@@ -7,16 +7,16 @@ inherit ROOM;                                   /* EXAMPLE */
 
 void create()
 {
-        set("short", "ÒéÊÂÌü");
+        set("short", "è­°äº‹å»³");
         set("long", @LONG
-Õâ¾ÍÊÇÅÌÁú¾ÓÖ÷ÈËºÍÖØÒªÈËÎïÉÌÁ¿´óÊÂÖ®´¦£¬ÕýÖÐÓÐ²»ÉÙ×ÀÒÎ£¬²à
-ÃæÊÇÆÁ·ç£¬ÌüÌÃÖÐ¹Ò×ÅÁ½¸öÌõ·ù£¬Á½ÅÔÍ¨ÍùÑÝÎäÌü¡£
+é€™å°±æ˜¯ç›¤é¾å±…ä¸»äººå’Œé‡è¦äººç‰©å•†é‡å¤§äº‹ä¹‹è™•ï¼Œæ­£ä¸­æœ‰ä¸å°‘æ¡Œæ¤…ï¼Œå´
+é¢æ˜¯å±é¢¨ï¼Œå»³å ‚ä¸­æŽ›è‘—å…©å€‹æ¢å¹…ï¼Œå…©æ—é€šå¾€æ¼”æ­¦å»³ã€‚
 LONG );
 
-        set("default_long", "Õâ¾ÍÊÇROOM_NAMEÖ÷ÈËROOM_OWNERºÍÖØÒªÈËÎï"  /* EXAMPLE */
-                            "ÉÌÁ¿½­ºþ´óÊÂÖ®´¦£¬ÕýÖÐÓÐ²»ÉÙ×ÀÒÎ£¬²àÃæÊÇ" /* EXAMPLE */
-                            "ÆÁ·ç£¬ÌüÌÃÖÐ¹Ò×ÅÁ½¸öÌõ·ù£¬Á½ÅÔÍ¨ÍùÑÝÎäÌü" /* EXAMPLE */
-                            "¡£");                                     /* EXAMPLE */
+        set("default_long", "é€™å°±æ˜¯ROOM_NAMEä¸»äººROOM_OWNERå’Œé‡è¦äººç‰©"  /* EXAMPLE */
+                            "å•†é‡æ±Ÿæ¹–å¤§äº‹ä¹‹è™•ï¼Œæ­£ä¸­æœ‰ä¸å°‘æ¡Œæ¤…ï¼Œå´é¢æ˜¯" /* EXAMPLE */
+                            "å±é¢¨ï¼Œå»³å ‚ä¸­æŽ›è‘—å…©å€‹æ¢å¹…ï¼Œå…©æ—é€šå¾€æ¼”æ­¦å»³" /* EXAMPLE */
+                            "ã€‚");                                     /* EXAMPLE */
                                                                        /* EXAMPLE */
 
         set("exits", ([

@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "���ɹ����");
+        set("short", "漁村曬網場");
         set("long", @LONG
-С�岻��ȴ�и��ô��ɹ����������С���ڳ������ǵ���ˣ��
-�������֡����Ϻ����ϣ��и��������󺣣���Ȼ������
+小村不大，卻有個好大的曬網場。幾個小孩在場中無憂地玩耍，
+聲音喧鬧。靠南海邊上，有個漁夫面向大海，悠然垂釣。
 LONG );
         set("outdoors", "nanhai");
         set("exits", ([

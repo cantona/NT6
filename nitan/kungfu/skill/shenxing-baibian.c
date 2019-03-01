@@ -1,4 +1,4 @@
-// shenxing-baibian.c ���аٱ�
+// shenxing-baibian.c 神行百變
 // Last Modified by sir on 10.18.2001
 
 #include <ansi.h>;
@@ -7,16 +7,16 @@ string type() { return "martial"; }
 string martialtype() { return "dodge"; }
 
 string *dodge_msg = ({
-"$nһʽ"HIC"��������ˮ��"NOR"�������㣬�Ų��ƣ�������������ˮ��ֱ�������ࡣ\n",
-"$nһʽ"BLU"��Ǳ��ҹ�С�"NOR"����Ȼһ������ȫ�����ض��У���ʱ������$N���������ơ�\n",
-"$nһʽ"HIW"���Ʋ����Ρ�"NOR"���㲻�����ֲ�̧��һת�ۼ���Ƶ���$N������\n",
-"$nһʽ"MAG"��������Ӱ��"NOR"��һת���䣬����˷�Ʈ����������$n����Ӱ����$N�����޴롣\n",
-"$nһʽ"HIB"���貨΢����"NOR"����̤�㣬��תǬ������һ�Σ��㵽����Զ�ĵط���\n",
-"$nһʽ"HIM"�����ϲ�¥��"NOR"�����ڿ��У������������һ�㣬��$Nͷ���ڿն�����\n",
-"$nһʽ"HIW"�����ӳ�ˮ��"NOR"������һ����ȫ����Ϊһ����Ӱ�����ĵش�$Nͷ��Ʈ�䡣\n",
-"$nһʽ"HIG"�����·ת��"NOR"�����������ݰ㼱ת����ʱһ������ӿ������$N���Զ�����\n",
-"$nһʽ"GRN"�������ﲨ��"NOR"������ٿ�Ĵ�$N����ǰֱ�Ƶ�����$N�ɴ������ۣ��������ԡ�\n",
-"$nһʽ"HIY"�����ӻ�ͷ��"NOR"������ٿ�Ĵ�$N����ǰƮ��������һ˦������֮����\n",
+"$n一式"HIC"「行雲流水」"NOR"，身不傾，腳不移，身體如行雲流水般直滑出丈余。\n",
+"$n一式"BLU"「潛音夜行」"NOR"，忽然一彎腰，全身貼地而行，頓時閃過了$N的凌厲攻勢。\n",
+"$n一式"HIW"「移步換形」"NOR"，足不動，手不抬，一轉眼間便繞到了$N的身後。\n",
+"$n一式"MAG"「分身化影」"NOR"，一轉身間，四面八方飄動著無數個$n的身影，令$N手足無措。\n",
+"$n一式"HIB"「凌波微步」"NOR"，左踏巽，右轉乾，身行一晃，便到幾丈遠的地方。\n",
+"$n一式"HIM"「更上層樓」"NOR"，身在空中，左腳在右足上一點，從$N頭頂騰空而過。\n",
+"$n一式"HIW"「仙子出水」"NOR"，長袖一拂，全身化為一道白影，幽幽地從$N頭頂飄落。\n",
+"$n一式"HIG"「峰回路轉」"NOR"，身體如陀螺般急轉，登時一股氣流湧出，令$N難以動彈。\n",
+"$n一式"GRN"「臨行秋波」"NOR"，身行倏的從$N的眼前直繞到身後，$N瞪大了兩眼，不明所以。\n",
+"$n一式"HIY"「浪子回頭」"NOR"，身行倏的從$N的眼前飄過，長發一甩，瀟洒之極。\n",
 });
 
 int valid_enable(string usage) { return (usage=="dodge") || (usage=="move"); }
@@ -24,13 +24,13 @@ int valid_learn(object me)
 {
         if( query("kar", me)<25
               || query("int", me)<21 )
-                return notify_fail("��������Ե�������аٱ䡣\n");
+                return notify_fail("看來你無緣領悟神行百變。\n");
         return 1;
 }
 int practice_skill(object me)
 {
         if( query("qi", me)<40 || query("neili", me)<8 )
-                return notify_fail("�������̫���ˣ����������аٱ䡣\n");
+                return notify_fail("你的體力太差了，不能練神行百變。\n");
         me->receive_damage("qi", 40);
         addn("neili", -8, me);
         return 1;
@@ -63,21 +63,21 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
         {
                 result = ([ "damage": -damage ]);
 
-                 result += (["msg" : HIC "$n" HIC "ʩչ���аٱ䣬�����ϣ�һת���䣬����˷�Ʈ����������$n����Ӱ��\n"
-                                    HIC "$N" HIC "�����޴룬ͷ�Է��裬ֻ�������涼��$n����Ӱ����������������ա�\n" NOR]);
+                 result += (["msg" : HIC "$n" HIC "施展神行百變，神光離合，一轉身間，四面八方飄動著無數個$n的身影，\n"
+                                    HIC "$N" HIC "手足無措，頭腦發昏，只覺得四面都是$n的身影，所發招數盡數落空。\n" NOR]);
                 return result;
         }
 }
 
 int help(object me)
 {
-        write(HIC"\n���аٱ䣺"NOR"\n");
+        write(HIC"\n神行百變："NOR"\n");
         write(@HELP
 
-    ���аٱ���������ľɣ���������������Ṧ�������������ĸ��С�
+    神行百變是鐵劍門木桑道長所傳下來的輕功絕技，是逃命的高招。
 
-        ѧϰҪ��
-           һ���Ļ�Ե���������ѧϰ
+        學習要求：
+           一定的機緣向獨臂神尼學習
 HELP
         );
         return 1;

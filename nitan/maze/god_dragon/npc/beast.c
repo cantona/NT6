@@ -1,9 +1,9 @@
 #include <ansi.h>
 
 inherit NPC;
-string *first_name = ({ "Ìì", "Ìì¿Õ"});
+string *first_name = ({ "å¤©", "å¤©ç©º"});
 string *first_id = ({ "tian", "sky"});
-string *name_words = ({ "¾ŞÁé", "¹Ö"});
+string *name_words = ({ "å·¨éˆ", "æ€ª"});
 string *id_words = ({ "juling", "guai"});
 int combatpower();
 
@@ -50,8 +50,8 @@ void create()
         set_temp("apply/armor", 2000+random(2000));        
 
         set("drops", ([
-                "RA&RANDOM70"                                    :       40,  // µÍ¼¶ÆÕÍ¨×°±¸
-                "RA&RANDOM80"                                    :       30,  // ÖĞ¼¶ÆÕÍ¨×°±¸
+                "RA&RANDOM70"                                    :       40,  // ä½ç´šæ™®é€šè£å‚™
+                "RA&RANDOM80"                                    :       30,  // ä¸­ç´šæ™®é€šè£å‚™
         ]));
 
         set_weight(500000);
@@ -79,8 +79,8 @@ mixed hit_ob(object me, object ob, int damage_bouns)
         if (damage < 0) damage = 0;
         ob->receive_wound("qi", damage, me);
         set("neili",query("max_neili",  me), me);
-        return HIC "$N" HIC "¡°ºô¡±µÄÒ»Éù´µ³öÒ»Õó¿ñ·ç£¬µÇÊ±Áî$n"
-               HIC "»ëÉíÓÌÈçµ¶¸îÒ»°ã¡£\n" NOR;
+        return HIC "$N" HIC "â€œå‘¼â€çš„ä¸€è²å¹å‡ºä¸€é™£ç‹‚é¢¨ï¼Œç™»æ™‚ä»¤$n"
+               HIC "æ¸¾èº«çŒ¶å¦‚åˆ€å‰²ä¸€èˆ¬ã€‚\n" NOR;
 }
 
 void unconcious()

@@ -1,11 +1,11 @@
-// Room in ����
+// Room in 高麗
 inherit ROOM;
 void create()        
 {
-        set("short", "ɳ̲");
+        set("short", "沙灘");
         set("long", @LONG        
-������ɳ̲֮�ϣ������������ĺ�ɳ���ϱ���һ���޼ʵĴ󺣡�Զ
-Զ��ȥ�����м��Ҵ�ͣ���ڰ��ߣ��ں��˵ĳ���²�ס��ҡ�Ρ�
+你走在沙灘之上，腳下是鬆軟的海沙。南邊是一望無際的大海。遠
+遠望去，還有幾艘大船停泊在岸邊，在海浪的沖擊下不住的搖晃。
 LONG
         );
 set("outdoors", "gaoli");

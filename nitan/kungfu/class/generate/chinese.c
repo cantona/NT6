@@ -1,5 +1,5 @@
 // This program is a part of NITAN MudLIB
-// chan_cler �й���ս�� 
+// chan_cler 中國挑戰者 
    
 inherit NPC; 
 
@@ -36,8 +36,8 @@ function *init_family = ({ (: from_wudang :),   (: from_shaolin :),   (: from_hu
 void create() 
 { 
         NPC_D->generate_cn_name(this_object()); 
-        set("long", "һ���ˡ�\n"); 
-        set("gender", "����"); 
+        set("long", "一個人。\n"); 
+        set("gender", "男性"); 
         set("age", 20); 
         set("str", 20); 
         set("int", 20); 
@@ -63,25 +63,25 @@ void create()
 public void setup_family(string family);
 
 mapping init_family = ([
-        "������"   : (: from_shaolin :),
-        "�䵱��"   : (: from_wudang :),
-        "ؤ��"     : (: from_gaibang :),
-        "��ɽ��"   : (: from_huashan :),
-        "ѩɽ��"   : (: from_xueshan :),
-        "�һ���"   : (: from_taohua :),
-        "��Ĺ��"   : (: from_gumu :),
-        "ȫ���"   : (: from_quanzhen :),
-        "������"   : (: from_xingxiu :),
-        "������"   : (: from_emei :),
-        "Ѫ����"   : (: from_xuedao :),
-        "��ң��"   : (: from_xiaoyao :),
-        "����"     : (: from_mingjiao :),
-        "���չ�"   : (: from_lingjiu :),
-        "������"   : (: from_shenlong :),
-        "�������" : (: from_hujia :),
-        "ŷ������" : (: from_ouyang :),
-        "Ľ������" : (: from_murong :),
-        "���ϻ���" : (: from_duanshi :),
+        "少林寺"   : (: from_shaolin :),
+        "武當派"   : (: from_wudang :),
+        "丐幫"     : (: from_gaibang :),
+        "華山派"   : (: from_huashan :),
+        "雪山寺"   : (: from_xueshan :),
+        "桃花島"   : (: from_taohua :),
+        "古墓派"   : (: from_gumu :),
+        "全真教"   : (: from_quanzhen :),
+        "星宿派"   : (: from_xingxiu :),
+        "峨嵋派"   : (: from_emei :),
+        "血刀門"   : (: from_xuedao :),
+        "逍遙派"   : (: from_xiaoyao :),
+        "明教"     : (: from_mingjiao :),
+        "靈鷲宮"   : (: from_lingjiu :),
+        "神龍教"   : (: from_shenlong :),
+        "關外胡家" : (: from_hujia :),
+        "歐陽世家" : (: from_ouyang :),
+        "慕容世家" : (: from_murong :),
+        "段氏皇族" : (: from_duanshi :),
 ]);
 
 
@@ -90,8 +90,8 @@ void create()
         string *fams;
 
         NPC_D->generate_cn_name(this_object());
-        set("long", "һ���ˡ�\n");
-        set("gender", "����");
+        set("long", "一個人。\n");
+        set("gender", "男性");
         set("age", 20);
         set("str", 20);
         set("int", 20);
@@ -136,7 +136,7 @@ void setup_family(string family)
         set("family/family_name", family);
         set("family/generation", 0);
         */
-        create_family(family, 0, "����"); 
+        create_family(family, 0, "高手"); 
 
         evaluate(f);
 }
@@ -145,9 +145,9 @@ private void from_wudang()
 {
         set("scale", 200);
         set("from", ({
-                "��˵���˳����䵱�����䵱�ɵĸ��֣�Ȼ�����䲻�޵£���ϧ����ϧ��",
-                "���Ŵ��˱����䵱ɽ��һũ�򣬶���ĿȾ����Ȼ���ͳɷǷ��书��",
-                "��˵�������䵱��ͽ�����그��ɱ���������󣬲�����շ�����ԭ��",
+                "據說此人出自武當，是武當派的高手，然而修武不修德，可惜啊可惜。",
+                "聽聞此人本是武當山下一農夫，耳瀆目染，居然練就成非凡武功。",
+                "據說此人乃武當棄徒，當年犯了殺戒逃至東洋，不想今日返回中原！",
         }));
 
         set_skill("force", 1);
@@ -188,12 +188,12 @@ private void from_shaolin()
 {
         set("scale", 150);
         set("from", ({
-                "��˵���˳������֣������ֵ��׼Ҹ��֣���ȴû�а��ȱ�֮�ģ�����",
-                "���Ŵ���͵ʦ�����֣�������һ���������׵ı��졣",
-                "��˵���������ֵĻ�ͷ�ӣ�͵ѧ���պ󱻷��֣���Ȼ����"
-                + "��ĦԺ���ϳ��������벻�����շ�����ԭ��",
-                "��˵���˵��그�����ֵĽ��ɣ��������£��벻�����Ӷ���"
-                + "�Ժ��Ȼ�س�������"
+                "據說此人出自少林，是少林的俗家高手，可卻沒有半點慈悲之心，唉！",
+                "聽聞此人偷師于少林，練就了一身超凡脫俗的本領。",
+                "據說此人乃少林的火工頭陀，偷學武藝後被發現，竟然打死"
+                + "達摩院長老出逃西域，想不到今日返回中原！",
+                "據說此人當年犯了少林的戒律，被迫離寺，想不到隱居多年"
+                + "以後居然重出江湖。"
         }));
 
         set_skill("force", 1);
@@ -236,10 +236,10 @@ private void from_huashan()
 {
         set("scale", 130);
         set("from", ({
-                "��˵���˳��Ի�ɽ���޶����������м���Ȼ�������벻�������ֳ�ͷ��",
-                "���Ŵ��˱��ǻ�ɽ���ϣ�����֮��ԶͶ��أ���֪�ιʷ�����ԭ��",
-                "��˵���˱��Ǳ����Ե׵���ɽȥ�ģ�͵ѧ�����Ժ�û�ر���"
-                + "�����ٵؿ��ޣ��������ڵó�������",
+                "據說此人出自華山，無惡不作，後來行跡忽然不見，想不到今日又出頭。",
+                "聽聞此人本是華山長老，因劍氣之爭遠投異地，不知何故返回中原！",
+                "據說此人本是別派臥底到華山去的，偷學本領以後沒回本派"
+                + "反而覓地苦修，今日終于得出江湖。",
         }));
 
         set_skill("force", 1);
@@ -273,10 +273,10 @@ private void from_ouyang()
 { 
         set("scale", 130); 
         set("from", ({ 
-                "��˵����ԭ�ǵ���������ʦŷ������ֳ�����֪�ι�ʧ�٣���" 
-                + "�վ�Ȼ�ֳ����ˡ�", 
-                "���Ŵ���͵ѧ���������ɽׯŷ�����ҵ��书��������ŷ��" 
-                + "�淢�ִ�����ˣ����˴��˶��ߣ���Ȼ����գ�����˼�飡", 
+                "據說此人原是當今武林宗師歐陽鋒的兄長，不知何故失蹤，今" 
+                + "日居然又出現了。", 
+                "聽聞此人偷學了西域白駝山莊歐陽世家的武功，後來被歐陽" 
+                + "鋒發現打成重傷，此人帶傷而走，竟然活到今日，不可思議！", 
         })); 
         
         set_skill("force", 1); 
@@ -320,8 +320,8 @@ private void from_gaibang()
 {
         set("scale", 130);
         set("from", ({
-                "��˵����ԭ��ؤ�ﳤ�ϣ��书�߾���������������Ů�Ӷ���"
-                + "������⣬�������ֽ�����������Ѫ���ȷ硣"
+                "據說此人原是丐幫長老，武功高絕，後因欺辱良家女子而被"
+                + "逐出幫外，今日重現江湖比如又起血雨腥風。"
         }));
 
         set_skill("force", 1);
@@ -360,7 +360,7 @@ private void from_taohua()
 {
         set("scale", 135);
         set("from", ({
-                "��˵���˺��һ�������ҩʦ��Щ��ϵ��",
+                "據說此人和桃花島主黃藥師有些關系。",
         }));
 
         set_skill("force", 1);
@@ -412,8 +412,8 @@ private void from_gumu()
 
         set("scale", 130);
         set("from", ({
-                "��˵�������ֳ�Ӣ�ĵ��ӣ��������ʦ���ˡ�",
-                "���˾�˵�ǹ�Ĺ���ˣ�����Ī������ԨԴ��",
+                "據說此人是林朝英的弟子，被她逐出師門了。",
+                "這人據說是古墓傳人，和李莫愁頗有淵源。",
         }));
 
         set_skill("force", 1);
@@ -465,7 +465,7 @@ private void from_xingxiu()
 {
         set("scale", 130);
         set("from", ({
-                "��˵�����������ɵ��ӣ���Ϊ���������ɣ�ֻ���ӳ������ɡ�",
+                "據說此人是星宿派弟子，因為得罪了老仙，只好逃出星宿派。",
         }));
 
         set_skill("force", 1);
@@ -518,7 +518,7 @@ private void from_xueshan()
 {
         set("scale", 135);
         set("from", ({
-                "��˵������ѩɽ�ɵĸ��֣�������ԭ�������޼ɣ��书�����˵á�",
+                "據說此人是雪山派的高手，獨創中原，橫行無忌，武功甚是了得。",
         }));
 
         set_skill("force", 1);
@@ -568,7 +568,7 @@ private void from_xuedao()
 { 
         set("scale", 135); 
         set("from", ({ 
-                "��˵���˺�����Ѫ��������ʦ�ֵܣ�һ����ĺ�������", 
+                "據說此人和西域血刀老祖是師兄弟，一般的心狠手辣。", 
         })); 
         
         set_skill("force", 1); 
@@ -620,7 +620,7 @@ private void from_xiaoyao()
 { 
         set("scale", 135); 
         set("from", ({ 
-                "��˵���˺���ң�������ӱ���ͬ�ŵ��ӣ�������֪�ιʷ����ɳ�", 
+                "據說此人和逍遙派無崖子本是同門弟子，後來不知何故翻臉成仇。", 
         })); 
         
         set_skill("force", 1); 
@@ -670,7 +670,7 @@ private void from_shenlong()
 { 
         set("scale", 135); 
         set("from", ({ 
-                "��˵��������������������״����ӣ������г������̣�����������", 
+                "據說此人是神龍島洪教主的親傳弟子，後來判出神龍教，獨闖江湖。", 
         })); 
         
         set_skill("force", 1); 
@@ -713,7 +713,7 @@ private void from_lingjiu()
 {  
         set("scale", 130);
         set("from", ({   
-                "���������չ�����ͽ����������������", 
+                "此人是靈鷲宮的叛徒。現在正在逃亡。", 
         }));
 
         set_skill("force", 1);
@@ -753,7 +753,7 @@ private void from_mingjiao()
 { 
         set("scale", 130);
         set("from", ({  
-                "���������̵���ͽ��",  
+                "此人是明教的叛徒。",  
         }));
 
         set_skill("force", 1);
@@ -790,8 +790,8 @@ private void from_quanzhen()
 { 
         set("scale", 150); 
         set("from", ({ 
-               "��˵���˳���ȫ�棬��ȫ���ɸ��֡�", 
-               "��˵�������������ĵ��ӣ��������ʦ���ˡ�", 
+               "據說此人出自全真，是全真派高手。", 
+               "據說此人是王重陽的弟子，被他逐出師門了。", 
         }));
 
         set_skill("force", 1); 
@@ -836,8 +836,8 @@ private void from_emei()
 
         set("scale", 130);
         set("from", ({ 
-               "��˵���������ʦ̫�ĵ��ӣ��������ʦ���ˡ�", 
-               "�������ʦ̫�ĵ��ӣ����ĺ������ĵ��ӡ�", 
+               "據說此人是滅絕師太的弟子，被她逐出師門了。", 
+               "這是滅絕師太的弟子，最心狠手辣的弟子。", 
         })); 
 
        set_skill("force", 1); 
@@ -882,7 +882,7 @@ private void from_murong()
 
         set("scale", 130);
         set("from", ({  
-               "��˵������Ľ���ɵ��ӣ����ڱ���ʦ�ţ���������������",  
+               "據說此人是慕容派弟子，由于背叛師門，現在正在逃亡。",  
         }));  
 
         set_skill("force", 1);
@@ -927,7 +927,7 @@ private void from_hujia()
 
        set("scale", 130); 
        set("from", ({   
-              "��˵�����Ǻ��ҵ��ӣ�����ʦ�ţ������С�",   
+              "據說此人是胡家弟子，背叛師門，逃亡中。",   
        }));
 
        set_skill("force", 1); 
@@ -968,7 +968,7 @@ private void from_duanshi()
 {
         set("scale", 135); 
         set("from", ({ 
-               "��˵���˺Ͷμ���Щ��ϵ��", 
+               "據說此人和段家有些關系。", 
         }));
 
         set_skill("force", 1); 

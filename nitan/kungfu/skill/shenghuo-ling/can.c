@@ -5,7 +5,7 @@
 
 inherit F_SSERVER;
 
-string name() { return HIR "²ĞÑªÁî" NOR; }
+string name() { return HIR "æ®˜è¡€ä»¤" NOR; }
 
 int perform(object me, object target)
 {
@@ -27,54 +27,54 @@ int perform(object me, object target)
         skill = me->query_skill("shenghuo-ling", 1);
 
         if (! (me->is_fighting()))
-                return notify_fail(name() + "Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(name() + "åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if (! objectp(weapon = query_temp("weapon", me)) ||
             (string)query("skill_type", weapon) != "sword")
-                return notify_fail("ÄãÊ¹ÓÃµÄ±øÆ÷²»¶Ô£¬²»ÄÜÊ¹ÓÃÊ¥»ğÁî·¨Ö®" +
-                                   name() + "¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„å…µå™¨ä¸å°ï¼Œä¸èƒ½ä½¿ç”¨è–ç«ä»¤æ³•ä¹‹" +
+                                   name() + "ã€‚\n");
 
         if (skill < 220)
-                return notify_fail("ÄãµÄÊ¥»ğÁî·¨µÈ¼¶²»¹», ²»ÄÜÊ¹ÓÃÊ¥»ğÁî"
-                                   "·¨Ö®" + name() + "¡£\n");
+                return notify_fail("ä½ çš„è–ç«ä»¤æ³•ç­‰ç´šä¸å¤ , ä¸èƒ½ä½¿ç”¨è–ç«ä»¤"
+                                   "æ³•ä¹‹" + name() + "ã€‚\n");
 
         if (me->query_skill("force") < 350)
-                return notify_fail("ÄãµÄÄÚ¹¦»ğºò²»¹»£¬²»ÄÜÊ¹ÓÃÊ¥»ğÁî·¨Ö®" +
-                                   name() + "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸç«å€™ä¸å¤ ï¼Œä¸èƒ½ä½¿ç”¨è–ç«ä»¤æ³•ä¹‹" +
+                                   name() + "ã€‚\n");
 
         if (query("max_neili", me) < 5000)
-                return notify_fail("ÄãµÄÄÚÁ¦ĞŞÎª²»×ã£¬²»ÄÜÊ¹ÓÃÊ¥»ğÁî·¨Ö®" +
-                                   name() + "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¿®ç‚ºä¸è¶³ï¼Œä¸èƒ½ä½¿ç”¨è–ç«ä»¤æ³•ä¹‹" +
+                                   name() + "ã€‚\n");
 
         if (query("neili", me) < 400)
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬²»ÄÜÊ¹ÓÃÊ¥»ğÁî·¨Ö®" + name() + "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ï¼Œä¸èƒ½ä½¿ç”¨è–ç«ä»¤æ³•ä¹‹" + name() + "ã€‚\n");
 
         if (me->query_skill_mapped("sword") != "shenghuo-ling")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢Ê¥»ğÁî·¨£¬ÎŞ·¨Ê¹ÓÃ" + name() + "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼è–ç«ä»¤æ³•ï¼Œç„¡æ³•ä½¿ç”¨" + name() + "ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIR "$N" HIR "Ò»Éù³¤Ğ¥£¬ÊÖÖĞ" + weapon->name() +
-              HIR "Ò»×ª£¬ÕĞÊı¶ÙÊ±±äµÃ¹îÒìÎŞ±È£¬´ÓÒâÏë²»µ½µÄ·½"
-              "Î»¹¥Ïò$n" HIR "£¡\n" NOR;
+        msg = HIR "$N" HIR "ä¸€è²é•·å˜¯ï¼Œæ‰‹ä¸­" + weapon->name() +
+              HIR "ä¸€è½‰ï¼Œæ‹›æ•¸é “æ™‚è®Šå¾—è©­ç•°ç„¡æ¯”ï¼Œå¾æ„æƒ³ä¸åˆ°çš„æ–¹"
+              "ä½æ”»å‘$n" HIR "ï¼\n" NOR;
 
-        // ÅäºÏÊ¥»ğÁî·¨±¾Éí¾ß±¸µÄ max_hit´øÀ´¶îÍâµÄÉËº¦¡£
-        // Ô­ÖøÖĞ¸ÃÁî·¨ÄËºÜÄÑ¿´Í¸µÄÕĞÊı£¬ËùÒÔ³öÏÖÔö¼Ó¹¥
-        // »÷µÄĞ§ÂÊ·Ç³£´ó¡£
+        // é…åˆè–ç«ä»¤æ³•æœ¬èº«å…·å‚™çš„ max_hitå¸¶ä¾†é¡å¤–çš„å‚·å®³ã€‚
+        // åŸè‘—ä¸­è©²ä»¤æ³•ä¹ƒå¾ˆé›£çœ‹é€çš„æ‹›æ•¸ï¼Œæ‰€ä»¥å‡ºç¾å¢åŠ æ”»
+        // æ“Šçš„æ•ˆç‡éå¸¸å¤§ã€‚
         ap = attack_power(me, "sword");
         dp = defense_power(target, "parry");
 
         if (ap / 2 + random(ap) > dp)
         {
-                msg += HIR "$n" HIR "ÍêÈ«ÎŞ·¨¿´Í¸$N" HIR "ÕĞÖĞĞéÊµ£¬²»ÓÉµÃĞÄ"
-                       "Éú¾åÒâ£¬ÕĞÊ½Ò»ÖÍ£¬µÇÊ±ÆÆÕÀ°Ù³ö¡£\n" NOR;
+                msg += HIR "$n" HIR "å®Œå…¨ç„¡æ³•çœ‹é€$N" HIR "æ‹›ä¸­è™›å¯¦ï¼Œä¸ç”±å¾—å¿ƒ"
+                       "ç”Ÿæ‡¼æ„ï¼Œæ‹›å¼ä¸€æ»¯ï¼Œç™»æ™‚ç ´ç¶»ç™¾å‡ºã€‚\n" NOR;
                 count = ap / 6;
                 addn_temp("shenghuo-ling/max_hit", 1, me);
         } else
         {
-                msg += HIY "$n" HIY "¼û$N" HIY "À´ÊÆĞÚÓ¿£¬ĞÄµ×Ò»¾ª£¬´òÆğ¾«"
-                       "ÉñĞ¡ĞÄ½ÓÕĞ¡£\n" NOR;
+                msg += HIY "$n" HIY "è¦‹$N" HIY "ä¾†å‹¢æ´¶æ¹§ï¼Œå¿ƒåº•ä¸€é©šï¼Œæ‰“èµ·ç²¾"
+                       "ç¥å°å¿ƒæ¥æ‹›ã€‚\n" NOR;
                 count = 0;
         }
 

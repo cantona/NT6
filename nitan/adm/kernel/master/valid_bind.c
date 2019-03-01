@@ -1,22 +1,22 @@
 // This program is a part of NT MudLIB
 
 /*
-Ãû³Æ£º
-        valid_bind - ÅĞ¶ÏÒ»¸öÖ¸¶¨µÄº¯Ê½Ö¸±ê (function pointer) ÊÇ·ñÄÜ½áºÏ
-                     (bind) µ½Ò»¸öÎï¼şÉÏ¡£
-Óï·¨£º
+åç¨±ï¼š
+        valid_bind - åˆ¤æ–·ä¸€å€‹æŒ‡å®šçš„å‡½å¼æŒ‡æ¨™ (function pointer) æ˜¯å¦èƒ½çµåˆ
+                     (bind) åˆ°ä¸€å€‹ç‰©ä»¶ä¸Šã€‚
+èªæ³•ï¼š
         int valid_bind( object doer, object owner, object victim );
 
-        ÕûÊı valid_bind( Îï¼ş ×÷ÓÃÕß, Îï¼ş ÓµÓĞÕß, Îï¼ş ÊÜº¦Õß );
-ÓÃ·¨£º
-        µ± doer ³¢ÊÔÊ¹ÓÃ bind() Íâ²¿º¯Ê½½áºÏ owner ¶Ô victim Îï¼şµÄº¯Ê½Ö¸
-        ±ê£¬»áºô½Ğ´Ëº¯Ê½¡£Èç¹û´Ëº¯Ê½´«»Ø 0£¬¾Í½ûÖ¹½áºÏ¡£
-²Î¿¼£º
+        æ•´æ•¸ valid_bind( ç‰©ä»¶ ä½œç”¨è€…, ç‰©ä»¶ æ“æœ‰è€…, ç‰©ä»¶ å—å®³è€… );
+ç”¨æ³•ï¼š
+        ç•¶ doer å˜—è©¦ä½¿ç”¨ bind() å¤–éƒ¨å‡½å¼çµåˆ owner å° victim ç‰©ä»¶çš„å‡½å¼æŒ‡
+        æ¨™ï¼Œæœƒå‘¼å«æ­¤å‡½å¼ã€‚å¦‚æœæ­¤å‡½å¼å‚³å› 0ï¼Œå°±ç¦æ­¢çµåˆã€‚
+åƒè€ƒï¼š
         bind
-×÷Õß£º
+ä½œè€…ï¼š
         Tim Hollebeek  Beek@ZorkMUD, Lima Bean, IdeaExchange, and elsewhere
-·­Òë£º
-        spock@muds.net          2000.May.21.    v22 °æ
+ç¿»è­¯ï¼š
+        spock@muds.net          2000.May.21.    v22 ç‰ˆ
 */
 
 int valid_bind(object binder, object old_owner, object new_owner)

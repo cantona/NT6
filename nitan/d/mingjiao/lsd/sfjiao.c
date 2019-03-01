@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-	set("short", GRN"ɽ�����"NOR);
+	set("short", GRN"山峰腳下"NOR);
         set("long", @LONG
-�������ܳ������೤�ݣ��˵���Ϊ�����ߵ��������϶�Ȼ������
-�࣬��ʱ���ж���ܳ�����������ֻ�ܾ�����ͺ��ɽʯ����š�����
-������ɽ�嶥������ϡ�ɼ�һ��é���������С�
+這裡四周長著許多長草，此島名為『靈蛇島』，島上定然長蟲特
+多，不時會有毒蟲竄出。在這裡你只能盡往光禿的山石處落腳。往南
+而上是山峰頂部，依稀可見一座茅屋座落其中。
 LONG );
 	set("exits", ([ 
   		"south" : __DIR__"lsgu",
@@ -17,6 +17,6 @@ LONG );
 	set("objects",([
             "/clone/beast/snake"  :       1,
 	]));
-	set("outdoors","���ߵ�");
+	set("outdoors","靈蛇島");
 	setup();
 }

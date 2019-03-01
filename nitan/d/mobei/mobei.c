@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create ()
 {
-        set ("short", "Į��");
+        set ("short", "漠北");
         set ("long", @LONG
-Į���ຮ֮�أ��絶˪����������Ƭƶ�������ϣ��ɹ���һ����
-������ľ�����������򱱹�ȥ�����ɹŵĲ�ԭ�����Ϸ�������ԭ����
-�ڡ�
+漠北苦寒之地，風刀霜劍，就在這片貧瘠的土地上，蒙古新一代的
+霸主鐵木真正在崛起，向北過去就是蒙古的草原，東南方向是中原的所
+在。
 LONG);
         set("outdoors","mobei");
         set("exits", ([ /* sizeof() == 2 */

@@ -4,9 +4,9 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÍÁæ½¹İ");
+        set("short", "åœŸå¨¼é¤¨");
         set("long", @LONG
-»¹Ã»ÏëºÃÄØ£¡ºÇºÇ£¡
+é‚„æ²’æƒ³å¥½å‘¢ï¼å‘µå‘µï¼
 LONG );
         set("exits", ([ /* sizeof() == 1 */
                 "south" : "/d/changan/huarui6",

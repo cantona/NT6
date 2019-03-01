@@ -10,16 +10,16 @@ int valid_enable(string usage)
 int valid_learn(object me)
 {
         if ((int)me->query_skill("force") < 80)
-                return notify_fail("ÄãµÄÄÚ¹¦ÐÄ·¨»ðºò²»¹»£¬ÎÞ·¨Ñ§±ùÆÇÉñÕë¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸå¿ƒæ³•ç«å€™ä¸å¤ ï¼Œç„¡æ³•å­¸å†°é­„ç¥žé‡ã€‚\n");
 
         if ((int)me->query_skill("dodge") < 100)
-                return notify_fail("ÄãµÄÇá¹¦»ðºò²»¹»£¬ÎÞ·¨ÁìÎò±ùÆÇÉñÕë¡£\n");
+                return notify_fail("ä½ çš„è¼•åŠŸç«å€™ä¸å¤ ï¼Œç„¡æ³•é ˜æ‚Ÿå†°é­„ç¥žé‡ã€‚\n");
 
         if ((int)me->query_dex() < 34)
-                return notify_fail("ÄãµÄÉí·¨²»¹»ÁéÇÉ£¬ÎÞ·¨ÁìÎò±ùÆÇÉñÕë¡£\n");
+                return notify_fail("ä½ çš„èº«æ³•ä¸å¤ éˆå·§ï¼Œç„¡æ³•é ˜æ‚Ÿå†°é­„ç¥žé‡ã€‚\n");
 
         if ((int)me->query_skill("throwing", 1) < (int)me->query_skill("bingpo-shenzhen", 1))
-                return notify_fail("ÄãµÄ»ù±¾°µÆ÷Ë®Æ½ÓÐÏÞ£¬ÄÑÒÔÁì»á¸ü¸ßÉîµÄ±ùÆÇÉñÕë¡£\n");
+                return notify_fail("ä½ çš„åŸºæœ¬æš—å™¨æ°´å¹³æœ‰é™ï¼Œé›£ä»¥é ˜æœƒæ›´é«˜æ·±çš„å†°é­„ç¥žé‡ã€‚\n");
 
         return 1;
 }
@@ -29,10 +29,10 @@ int practice_skill(object me)
         object weapon;
 
         if( query("qi", me)<80 )
-                return notify_fail("ÄãµÄÌåÁ¦Ì«µÍÁË¡£\n");
+                return notify_fail("ä½ çš„é«”åŠ›å¤ªä½Žäº†ã€‚\n");
 
         if( query("neili", me)<80 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»Á·±ùÆÇÉñÕë¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ç·´å†°é­„ç¥žé‡ã€‚\n");
 
         me->receive_damage("qi", 72);
         addn("neili", -65, me);

@@ -2,11 +2,11 @@ inherit ROOM;
 string p = "";
 void create()
 {
-        set("short", "Ñò³¦Ð¡Â·");
+        set("short", "ç¾Šè…¸å°è·¯");
         set("long", @LONG
-ÕâÊÇÒ»ÌõòêÑÑÇúÕÛµÄÐ¡Â·£¬ÓÒÃæÊÇÒ»Ð¡Æ¬µÍ°«µÄÊ÷ÁÖ£¬×óÃæ
-ÊÇ¶¸ÇÍµÄÉ½±Ú¡£µØÉÏÂúÊÇÂÒÊ¯×Ó£¬ÓÐµÄ»¹ºÜ¼âÀû£¬¿´Ñù×ÓÕâÀïºÜ
-ÉÙÓÐÈËÀ´¡£ÕýÇ°·½ÊÇÒ»¶Ñ´Ö´óµÄÔ­Ä¾µ²×¡ÁËÈ¥Â·¡£
+é€™æ˜¯ä¸€æ¢èœ¿èœ’æ›²æŠ˜çš„å°è·¯ï¼Œå³é¢æ˜¯ä¸€å°ç‰‡ä½ŽçŸ®çš„æ¨¹æž—ï¼Œå·¦é¢
+æ˜¯é™¡å³­çš„å±±å£ã€‚åœ°ä¸Šæ»¿æ˜¯äº‚çŸ³å­ï¼Œæœ‰çš„é‚„å¾ˆå°–åˆ©ï¼Œçœ‹æ¨£å­é€™è£¡å¾ˆ
+å°‘æœ‰äººä¾†ã€‚æ­£å‰æ–¹æ˜¯ä¸€å †ç²—å¤§çš„åŽŸæœ¨æ“‹ä½äº†åŽ»è·¯ã€‚
 LONG
         );
         set("exits", ([ /* sizeof() == 1 */
@@ -27,7 +27,7 @@ int do_push(string arg)
 
         if( query("exits/west") )
         {
-                tell_object(me, "Ô­Ä¾ÒÑ¾­ÒÆ¿ªÁË¡£\n");
+                tell_object(me, "åŽŸæœ¨å·²ç¶“ç§»é–‹äº†ã€‚\n");
                 return 1;
         }
 
@@ -38,26 +38,26 @@ int do_push(string arg)
         {
                 case "left":
                         p = "l";
-                        tell_object(me, "ÄãÏò×óÃæÊ¹¾¢ÍÆÁËÒ»ÏÂÔ­Ä¾¡£\n");
+                        tell_object(me, "ä½ å‘å·¦é¢ä½¿å‹æŽ¨äº†ä¸€ä¸‹åŽŸæœ¨ã€‚\n");
                         return 1;
                 case "right":
                         p += "r";
-                        tell_object(me, "ÄãÏòÓÒÃæÊ¹¾¢ÍÆÁËÒ»ÏÂÔ­Ä¾¡£\n");
-                        if( (sizeof(p)>5) && (p[<6..] == "lrrrrr") && (query_temp("murong_ask", me) || query("family/master_name",me) == "Ê¯ÍòàÁ") )
+                        tell_object(me, "ä½ å‘å³é¢ä½¿å‹æŽ¨äº†ä¸€ä¸‹åŽŸæœ¨ã€‚\n");
+                        if( (sizeof(p)>5) && (p[<6..] == "lrrrrr") && (query_temp("murong_ask", me) || query("family/master_name",me) == "çŸ³è¬å—”") )
                         {
                                 p = "";
                                 if(!query("exits/north"))
                                 {
                                         set("exits/north", __DIR__"ycl9");
                                         call_out("remove_north", 5);
-                                        tell_room(__FILE__, "Ô­Ä¾Ïò×óÃæÒ»¶¯£¬Â¶³öÁËÒ»¸ö·ìÏ¶¡£\n");
+                                        tell_room(__FILE__, "åŽŸæœ¨å‘å·¦é¢ä¸€å‹•ï¼Œéœ²å‡ºäº†ä¸€å€‹ç¸«éš™ã€‚\n");
                                         return 1;
                                 }
                                 return 1;
                         }
                         return 1;
                 default:
-                        tell_object(me, "ÄãÒªÍùÄÄ¸ö·½ÏòÍÆ£¿\n");
+                        tell_object(me, "ä½ è¦å¾€å“ªå€‹æ–¹å‘æŽ¨ï¼Ÿ\n");
                         return 1;
         }
 }

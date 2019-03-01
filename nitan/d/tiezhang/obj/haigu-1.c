@@ -14,14 +14,14 @@ void init()
 
 void create()
 {
-       set_name("º¡¹Ç", ({"haigu","skeleton"}) );
+       set_name("éª¸éª¨", ({"haigu","skeleton"}) );
        set_weight(10000);
        set_max_encumbrance(6000000);
        if( clonep() )
                set_default_object(__FILE__);
        else{
-       set("unit", "¾ß");
-       set("long", "Õâ¸±º¡¹ÇÌÉÔÚÕâÀïÒÑ¾­ºÜ¾ÃÁË¡£\n");
+       set("unit", "å…·");
+       set("long", "é€™å‰¯éª¸éª¨èººåœ¨é€™è£¡å·²ç¶“å¾ˆä¹…äº†ã€‚\n");
        set("value", 0);
        set("material","wood");
        set("no_get",1);
@@ -40,7 +40,7 @@ int do_move(string arg)
                 
                 {
                 message_vision(
-HIR"$NÇáÇáµØÅ²¶¯º¡¹Ç£¬Í»È»´Óº¡¹ÇµÄÉíºóÉä³öÒ»Ã¶¸ÖÕë£¬´ÌÈë$NµÄÌåÄÚ¡£\n"NOR, this_player());
+HIR"$Nè¼•è¼•åœ°æŒªå‹•éª¸éª¨ï¼Œçªç„¶å¾žéª¸éª¨çš„èº«å¾Œå°„å‡ºä¸€æžšé‹¼é‡ï¼Œåˆºå…¥$Nçš„é«”å…§ã€‚\n"NOR, this_player());
                 me->unconcious();
                 me->move("/u/zqb/tiezhang/shanlu-6");
                 return 1;

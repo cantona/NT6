@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��ɽ");
+        set("short", "鼓山");
         set("long", @LONG
-��ɽ��ɽ����ʯ����ģ���֮���޹Ķ���������ֻɽ����ĸ��ء�
-ɽ�ϲ��ɵδ䣬������ģ��羰�������ļ��紺���н���������Ϊ����
-��������֮һ��
+鼓山以山上有石形如鼓，扣之如擂鼓而得名，非只山勢如鼓覆地。
+山上蒼鬆滴翠，巖秀谷幽，風景秀麗，四季如春。有晉以來，即為“八
+閩二絕”之一。
 LONG );
         set("exits", ([
                 "north"    : __DIR__"yongquan",

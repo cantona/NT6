@@ -5,19 +5,19 @@ inherit HEAD;
 
 void create()
 {
-        set_name(HIW"ÈıÉúÓĞÔ¼"NOR, ({"sansheng youyue", "youyue",}));
+        set_name(HIW"ä¸‰ç”Ÿæœ‰ç´„"NOR, ({"sansheng youyue", "youyue",}));
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¶ä");
-                set("long", "Ò»¶ä½à°×µÄ°ÙºÏ»¨£¬¹ÚÉÏÄÇÃ´Â¡ÖØµÄÃû×Öµ¹ÓĞĞ©Ôì×÷ÁË¡£\n");
+                set("unit", "æœµ");
+                set("long", "ä¸€æœµæ½”ç™½çš„ç™¾åˆèŠ±ï¼Œå† ä¸Šé‚£éº¼éš†é‡çš„åå­—å€’æœ‰äº›é€ ä½œäº†ã€‚\n");
                 set("value", 10000);
                 set("material", "plant");
                 set_weight(10);
                 set("armor_prop/armor", 0);
                 set("armor_prop/per", 3);
-                set("wear_msg", "$NÇáÇáµØ°ÑÒ»¶ä$n²åÔÚ÷Ş¼ä£¬Î¢Î¢Ò»Ğ¦¡£\n");
-                set("unequip_msg", "$NÓÄÓÄ³¤Ì¾£¬ÇáÇáµØ°Ñ$n´ÓÍ·ÉÏÕªÁËÏÂÀ´¡£\n");
+                set("wear_msg", "$Nè¼•è¼•åœ°æŠŠä¸€æœµ$næ’åœ¨é¬¢é–“ï¼Œå¾®å¾®ä¸€ç¬‘ã€‚\n");
+                set("unequip_msg", "$Nå¹½å¹½é•·å˜†ï¼Œè¼•è¼•åœ°æŠŠ$nå¾é ­ä¸Šæ‘˜äº†ä¸‹ä¾†ã€‚\n");
         }
         setup();
 }

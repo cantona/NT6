@@ -1,7 +1,7 @@
 // Copyright (C) 2003, by Lonely. All rights reserved.
 // This software can not be used, copied, or modified 
 // in any form without the written permission from authors.
-// xuanyuan-sword.c ĞùÔ¯ÏÄÓí 
+// xuanyuan-sword.c è»’è½…å¤ç¦¹ 
 // for only one object in mud 
 
 #include <ansi.h> 
@@ -11,25 +11,25 @@ inherit F_UNIQUE;
 
 void create() 
 { 
-        set_name(HIW "´¿¾û½£" NOR, ({"chunjun sword", "chunjun", "sword"})); 
+        set_name(HIW "ç´”éˆåŠ" NOR, ({"chunjun sword", "chunjun", "sword"})); 
         set_weight(15000); 
         if (clonep()) 
                 set_default_object(__FILE__); 
         else { 
-                set("unit", "°Ñ"); 
-                set("long", sort_msg(HIW "´¿¾û½££¬ÓÖÃû´¿¹³½£¡£´Ë½£ÒÀÈ»ÊÇÅ·Ò±×ÓÔÚÕ¿Â¬É½ÉÏËùÖı¡£"
-                                     "×ğ¹ó»ªÃÀÖ®½£¡£\n" NOR));
+                set("unit", "æŠŠ"); 
+                set("long", sort_msg(HIW "ç´”éˆåŠï¼Œåˆåç´”é‰¤åŠã€‚æ­¤åŠä¾ç„¶æ˜¯æ­å†¶å­åœ¨æ¹›ç›§å±±ä¸Šæ‰€é‘„ã€‚"
+                                     "å°Šè²´è¯ç¾ä¹‹åŠã€‚\n" NOR));
                                      
                 set("value", 100000); 
                 set("material", "steel");
-                set("no_sell", "ÎÒµÄÌì¡­Äã¡­ÄãÖªµÀÕâÊÇÉ¶Ã´£¿ÕâÄãÒ²¸ÒÄÃÀ´Âô£¿"); 
+                set("no_sell", "æˆ‘çš„å¤©â€¦ä½ â€¦ä½ çŸ¥é“é€™æ˜¯å•¥éº¼ï¼Ÿé€™ä½ ä¹Ÿæ•¢æ‹¿ä¾†è³£ï¼Ÿ"); 
                 set("unique", 1); 
                 set("rigidity", 500); 
                 set("replica_ob", "/clone/weapon/changjian");
                 set("no_put",1); 
                 set("no_steal",1);   
-                set("wield_msg",HIR"$N[àá]µÄÒ»Éù³é³öÒ»°Ñ´¿¾û£¬ÂşÌìÎÚÔÆ£¬É±ÆøËÄ½¦¡£\n"NOR); 
-                set("unwield_msg",HIR"$N°ÑÊÖÖĞµÄ´¿¾ûÈë½£ÇÊ£¬ÎÚÔÆËÙÉ¢£¬É±Æø¶ÙÎŞ¡£\n"NOR); 
+                set("wield_msg",HIR"$N[å™Œ]çš„ä¸€è²æŠ½å‡ºä¸€æŠŠç´”éˆï¼Œæ¼«å¤©çƒé›²ï¼Œæ®ºæ°£å››æ¿ºã€‚\n"NOR); 
+                set("unwield_msg",HIR"$NæŠŠæ‰‹ä¸­çš„ç´”éˆå…¥åŠé˜ï¼Œçƒé›²é€Ÿæ•£ï¼Œæ®ºæ°£é “ç„¡ã€‚\n"NOR); 
         }
         init_sword(500); 
         setup();
@@ -39,6 +39,6 @@ mixed hit_ob(object me, object victim, int damage_bonus)
 {
         victim->receive_damage("jing",query("str", me)*2,me);
         victim->receive_wound("jing",query("str", me)*2,me);
-        return HIM "´¿¾û¼Ğ´ø×Å´Ì¶úµÄÆÆ¿ÕÉù»®³öÒ»µÀµÀ³¤ºç£¬ö®Ê±¼ä$n"
-               HIM "Ö»¸Ğµ½±»ÓÅÑÅµÄÆøÊÆËùÃÔ×¡¡£\n" NOR;
+        return HIM "ç´”éˆå¤¾å¸¶è‘—åˆºè€³çš„ç ´ç©ºè²åŠƒå‡ºä¸€é“é“é•·è™¹ï¼Œéœæ™‚é–“$n"
+               HIM "åªæ„Ÿåˆ°è¢«å„ªé›…çš„æ°£å‹¢æ‰€è¿·ä½ã€‚\n" NOR;
 }

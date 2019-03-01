@@ -4,13 +4,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(YEL "ÌìÀÎÔ¿³×" NOR, ({ "tianlao key", "key" }));
+        set_name(YEL "å¤©ç‰¢é‘°åŒ™" NOR, ({ "tianlao key", "key" }));
         set_weight(200);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "Ò»°Ñ¿ªÆôÌìÀÎµÄÔ¿³×¡£\n");
+                set("unit", "æŠŠ");
+                set("long", "ä¸€æŠŠé–‹å•Ÿå¤©ç‰¢çš„é‘°åŒ™ã€‚\n");
                 set("value", 200);
                 set("maze_item", 1);
         }

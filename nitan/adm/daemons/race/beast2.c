@@ -5,48 +5,48 @@
 mapping combat_action =
 ([
         "hoof": ([
-                "action":        "$NÓÃºóÍÈÍù$nµÄ$lÓÃÁ¦Ò»µÅ",
+                "action":        "$Nç”¨å¾Œè…¿å¾€$nçš„$lç”¨åŠ›ä¸€è¹¬",
                 "damage":        100,
-                "damage_type":        "ğöÉË",
+                "damage_type":        "ç˜€å‚·",
         ]),
         "sting": ([
-                "action":        "$N·´×ªÉíÓÃÎ²°Í¼â¶Ô×¼$nµÄ$lÒ»´Ì",
+                "action":        "$Nåè½‰èº«ç”¨å°¾å·´å°–å°æº–$nçš„$lä¸€åˆº",
                 "damage":        20,
-                "damage_type":        "Ò§ÉË",
+                "damage_type":        "å’¬å‚·",
         ]),
         "bite": ([
-                "action":        "$NÆËÉÏÀ´ÕÅ×ìÍù$nµÄ$lºİºİµØÒ»Ò§",
+                "action":        "$Næ’²ä¸Šä¾†å¼µå˜´å¾€$nçš„$lç‹ ç‹ åœ°ä¸€å’¬",
                 "damage":        20,
-                "damage_type":        "Ò§ÉË",
+                "damage_type":        "å’¬å‚·",
         ]),
         "claw": ([
-                "action":        "$NÓÃ×¦×ÓÍù$nµÄ$lÒ»×¥",
-                "damage_type":        "Ò§ÉË",
+                "action":        "$Nç”¨çˆªå­å¾€$nçš„$lä¸€æŠ“",
+                "damage_type":        "å’¬å‚·",
         ]),
         "poke": ([
-                "action":        "$NÓÃ×ìÍù$nµÄ$lÒ»×Ä",
+                "action":        "$Nç”¨å˜´å¾€$nçš„$lä¸€å•„",
                 "damage":        30,
-                "damage_type":        "×¥ÉË",
+                "damage_type":        "æŠ“å‚·",
         ]),
         "knock": ([
-                "action":        "$NÌ§ÆğÌã×ÓÍù$nµÄ$lÒ»õß",
+                "action":        "$NæŠ¬èµ·è¹„å­å¾€$nçš„$lä¸€è¸¹",
                 "damage":        100,
-                "damage_type":        "ğöÉË",
+                "damage_type":        "ç˜€å‚·",
         ]),
         "wind": ([
-                "action":        "$NÕÅ¿ª³á°òÍù$nµÄ$l·ÜÁ¦Ò»ÉÈ",
+                "action":        "$Nå¼µé–‹ç¿…è†€å¾€$nçš„$lå¥®åŠ›ä¸€æ‰‡",
                 "damage":        40,
-                "damage_type":        "ğöÉË",
+                "damage_type":        "ç˜€å‚·",
         ]),
         "rope": ([
-                "action":        "$NÓÃÉíÌå²ø×¡ÁË$nÓÃÁ¦Ò»ÀÕ",
+                "action":        "$Nç”¨èº«é«”çºä½äº†$nç”¨åŠ›ä¸€å‹’",
                 "damage":        40,
-                "damage_type":        "ÀÕÉË",
+                "damage_type":        "å‹’å‚·",
         ]),
         "angel":([
-                "action":        "$NÓÃê÷½Ç¶ñºİºİµØÏò$nÒ»¶¥",
+                "action":        "$Nç”¨çŠ„è§’æƒ¡ç‹ ç‹ åœ°å‘$nä¸€é ‚",
                 "damage":        50,
-                "damage_type":        "ğöÉË",
+                "damage_type":        "ç˜€å‚·",
         ]),
 ]);
 
@@ -63,18 +63,18 @@ void setup_beast(object ob)
 
         my = ob->query_entire_dbase();
 
-        my["unit"] = "Ö»";
+        my["unit"] = "åª";
 
         if( undefinedp(my["actions"]) ) {
                 if( pointerp(my["verbs"]) )
                         set("default_actions", (:call_other,__FILE__,"query_action":), ob);
                 else
                         my["default_actions"] = ([
-                                "action": "$N¹¥»÷$nµÄ%s£¬%s\n",
+                                "action": "$Næ”»æ“Š$nçš„%sï¼Œ%s\n",
                         ]);
         }
         
-        if( undefinedp(my["gender"]) ) my["gender"] = "ĞÛĞÔ";
+        if( undefinedp(my["gender"]) ) my["gender"] = "é›„æ€§";
         if( undefinedp(my["age"]) ) my["age"] = random(40) + 5;
 
         if( undefinedp(my["str"]) ) my["str"] = random(41) + 5;

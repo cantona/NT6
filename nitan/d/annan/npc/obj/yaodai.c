@@ -4,13 +4,13 @@ inherit WAIST;
 
 void create()
 {
-   set_name(HIG"°²ÄÏÑü´ø"NOR, ({ "yaodai"}) );
+   set_name(HIG"å®‰å—è…°å¸¶"NOR, ({ "yaodai"}) );
    set_weight(800);
    if( clonep() )
      set_default_object(__FILE__);
    else {
-     set("material", "Ìú");
-     set("unit", "¸±");
+     set("material", "éµ");
+     set("unit", "å‰¯");
      set("value",3000);
      set("armor_prop/armor",38);
      //set("armor_prop/dodge",-1);

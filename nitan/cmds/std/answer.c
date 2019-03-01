@@ -14,7 +14,7 @@ int main(object me, string arg)
         mixed info;
 
         if (! arg || arg == "")
-                return notify_fail("ÄãÒª»Ø´ğÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦å›ç­”ä»€éº¼ï¼Ÿ\n");
 
         env = environment(me);
 
@@ -39,58 +39,58 @@ int main(object me, string arg)
                 {
                         if( query_temp("quest_gift/skill", me) )
                         {
-                                message_vision( CYN "\n$N" CYN "¼±Ã¦µãµãÍ·£¬Ëµ"
-                                                "µÀ£ºÕâÎä¹¦ÕıºÃÎÒÒ²ÏëÑ§£¬¾Í´«ÊÚ¸ø"
-                                                "ÎÒ°É¡£\n" NOR, me );
+                                message_vision( CYN "\n$N" CYN "æ€¥å¿™é»é»é ­ï¼Œèªª"
+                                                "é“ï¼šé€™æ­¦åŠŸæ­£å¥½æˆ‘ä¹Ÿæƒ³å­¸ï¼Œå°±å‚³æˆçµ¦"
+                                                "æˆ‘å§ã€‚\n" NOR, me );
 
                                 if( query("family/gongji", me)<gongxian )
                                 {
-                                        message_vision( CYN "$N" CYN "Í»È»Ò»ã¶"
-                                                        "£¬ËµµÀ£ºàÅ£¿Õâ¸ö¡­Äã×î"
-                                                        "½ü»¹²»¹»Å¬Á¦¡­ÏÂ´Î°É¡£"
+                                        message_vision( CYN "$N" CYN "çªç„¶ä¸€æ„£"
+                                                        "ï¼Œèªªé“ï¼šå—¯ï¼Ÿé€™å€‹â€¦ä½ æœ€"
+                                                        "è¿‘é‚„ä¸å¤ åŠªåŠ›â€¦ä¸‹æ¬¡å§ã€‚"
                                                         "\n" NOR, obj );
                                         delete_temp("quest_gift", me);
-                                        return notify_fail(HIY "¿´À´ÊÇÄãµÄÃÅÅÉ"
-                                                        "¹±Ï×Öµ²»¹»ÁË¡£\n" NOR);
+                                        return notify_fail(HIY "çœ‹ä¾†æ˜¯ä½ çš„é–€æ´¾"
+                                                        "è²¢ç»å€¼ä¸å¤ äº†ã€‚\n" NOR);
                                 }
 
                                 me->set_skill(query_temp("quest_gift/skill", me),180);
                                 addn("family/gongji", -gongxian, me);
 
 
-                                message_vision( HIY "$n" HIY "Î¢Î¢Ò»Ğ¦£¬½«"
+                                message_vision( HIY "$n" HIY "å¾®å¾®ä¸€ç¬‘ï¼Œå°‡"
                                                 +to_chinese(query_temp("quest_gift/skill", me))+
-                                                HIY "´«ÊÚ¸ø$N" HIY "¡£\n" NOR,
+                                                HIY "å‚³æˆçµ¦$N" HIY "ã€‚\n" NOR,
                                                 me, obj );
                         }
                         else
                         {
-                                message_vision( CYN "\n$N" CYN "¼±Ã¦µãµãÍ·£¬Ëµ"
-                                                "µÀ£ºÕâ¶«Î÷ÕıºÃÎÒÒ²ĞèÒª£¬¾Í½»¸ø"
-                                                "ÎÒ°É¡£\n" NOR, me );
+                                message_vision( CYN "\n$N" CYN "æ€¥å¿™é»é»é ­ï¼Œèªª"
+                                                "é“ï¼šé€™æ±è¥¿æ­£å¥½æˆ‘ä¹Ÿéœ€è¦ï¼Œå°±äº¤çµ¦"
+                                                "æˆ‘å§ã€‚\n" NOR, me );
 
                                 if( query("family/gongji", me)<gongxian )
                                 {
-                                        message_vision( CYN "$N" CYN "Í»È»Ò»ã¶"
-                                                        "£¬ËµµÀ£ºàÅ£¿Õâ¸ö¡­Äã×î"
-                                                        "½ü»¹²»¹»Å¬Á¦¡­ÏÂ´Î°É¡£"
+                                        message_vision( CYN "$N" CYN "çªç„¶ä¸€æ„£"
+                                                        "ï¼Œèªªé“ï¼šå—¯ï¼Ÿé€™å€‹â€¦ä½ æœ€"
+                                                        "è¿‘é‚„ä¸å¤ åŠªåŠ›â€¦ä¸‹æ¬¡å§ã€‚"
                                                         "\n" NOR, obj );
                                         delete_temp("quest_gift", me);
-                                        return notify_fail(HIY "¿´À´ÊÇÄãµÄÃÅÅÉ"
-                                                        "¹±Ï×Öµ²»¹»ÁË¡£\n" NOR);
+                                        return notify_fail(HIY "çœ‹ä¾†æ˜¯ä½ çš„é–€æ´¾"
+                                                        "è²¢ç»å€¼ä¸å¤ äº†ã€‚\n" NOR);
                                 }
 
                                 ob=new(query_temp("quest_gift/obj", me));
 
                                 if (! ob)
                                 {
-                                        message_vision(CYN "$N" CYN "ÄÉÃÆµÀ£º"
-                                                        "ß×£¿ÎÒµÄ¶«Î÷ÄØ£¿¸Õ²Å»¹"
-                                                        "ÔÚ£¬ÔõÃ´Í»È»¾ÍÃ»ÁË¡£\n"
+                                        message_vision(CYN "$N" CYN "ç´æ‚¶é“ï¼š"
+                                                        "å’¦ï¼Ÿæˆ‘çš„æ±è¥¿å‘¢ï¼Ÿå‰›æ‰é‚„"
+                                                        "åœ¨ï¼Œæ€éº¼çªç„¶å°±æ²’äº†ã€‚\n"
                                                         NOR, obj);
                                                 delete_temp("quest_gift", me);
-                                        return notify_fail("ÎïÆ·ÎÄ¼ş³öÏÖÁËÎÊÌâ"
-                                                        "£¬ÇëÓëÎ×Ê¦ÁªÏµ¡£\n");
+                                        return notify_fail("ç‰©å“æ–‡ä»¶å‡ºç¾äº†å•é¡Œ"
+                                                        "ï¼Œè«‹èˆ‡å·«å¸«è¯ç³»ã€‚\n");
                                 }
 
                                 if( query("base_unit", ob) )
@@ -100,9 +100,9 @@ int main(object me, string arg)
 
                                 addn("family/gongji", -gongxian, me);
 
-                                message_vision( CYN "$n" CYN "Î¢Î¢Ò»Ğ¦£¬´Ó»³ÖĞ"
-                                                "È¡³öÒ»" + un + ob->name() +
-                                                CYN "½»¸ø$N" CYN "¡£\n" NOR,
+                                message_vision( CYN "$n" CYN "å¾®å¾®ä¸€ç¬‘ï¼Œå¾æ‡·ä¸­"
+                                                "å–å‡ºä¸€" + un + ob->name() +
+                                                CYN "äº¤çµ¦$N" CYN "ã€‚\n" NOR,
                                                 me, obj );
                                 ob->move(me, 1);
                         }
@@ -115,23 +115,23 @@ int main(object me, string arg)
                 {
                         if( query_temp("quest_gift/skill", me) )
                         {
-                                message_vision(CYN "\n$N" CYN "ÆÄÎªŞÏŞÎµÄËµµÀ£º"
-                                       "àÅ¡­ÎÒ¶ÔÕâ¸öÎä¹¦Ã»ÓĞĞËÈ¤£¬»¹"
-                                       "ÊÇËãÁË°É¡£\n" NOR, me);
+                                message_vision(CYN "\n$N" CYN "é —ç‚ºå°·å°¬çš„èªªé“ï¼š"
+                                       "å—¯â€¦æˆ‘å°é€™å€‹æ­¦åŠŸæ²’æœ‰èˆˆè¶£ï¼Œé‚„"
+                                       "æ˜¯ç®—äº†å§ã€‚\n" NOR, me);
 
-                                message_vision(CYN "$n" CYN "¶Ô$N" CYN "Ì¾ÆøµÀ"
-                                       "£ºÒ²°Õ£¬¼ÈÈ»Äã²»ÏëÑ§£¬ÕâÎä¹¦ÎÒ"
-                                       "¾Í´«ÊÚ¸ø±ğÈË°É¡£\n" NOR, me, obj);
+                                message_vision(CYN "$n" CYN "å°$N" CYN "å˜†æ°£é“"
+                                       "ï¼šä¹Ÿç½·ï¼Œæ—¢ç„¶ä½ ä¸æƒ³å­¸ï¼Œé€™æ­¦åŠŸæˆ‘"
+                                       "å°±å‚³æˆçµ¦åˆ¥äººå§ã€‚\n" NOR, me, obj);
                         }
                         else
                         {
-                                message_vision(CYN "\n$N" CYN "ÆÄÎªŞÏŞÎµÄËµµÀ£º"
-                                       "àÅ¡­ÎÒÏÖÔÚÄÃÕâ¶«Î÷Ò²ÎŞÓÃ´¦£¬»¹"
-                                       "ÊÇËãÁË°É¡£\n" NOR, me);
+                                message_vision(CYN "\n$N" CYN "é —ç‚ºå°·å°¬çš„èªªé“ï¼š"
+                                       "å—¯â€¦æˆ‘ç¾åœ¨æ‹¿é€™æ±è¥¿ä¹Ÿç„¡ç”¨è™•ï¼Œé‚„"
+                                       "æ˜¯ç®—äº†å§ã€‚\n" NOR, me);
 
-                                message_vision(CYN "$n" CYN "¶Ô$N" CYN "Ì¾ÆøµÀ"
-                                       "£ºÒ²°Õ£¬¼ÈÈ»Äã²»ĞèÒª£¬Õâ¶«Î÷ÎÒ"
-                                       "¾ÍÁô¸ø±ğÈË°É¡£\n" NOR, me, obj);
+                                message_vision(CYN "$n" CYN "å°$N" CYN "å˜†æ°£é“"
+                                       "ï¼šä¹Ÿç½·ï¼Œæ—¢ç„¶ä½ ä¸éœ€è¦ï¼Œé€™æ±è¥¿æˆ‘"
+                                       "å°±ç•™çµ¦åˆ¥äººå§ã€‚\n" NOR, me, obj);
                         }
 
                         delete_temp("quest_gift", me);
@@ -154,12 +154,12 @@ int main(object me, string arg)
                         return 1;
                 }
 
-                write("Õâ¸öµØ·½²»ÄÜ½²»°¡£\n");
+                write("é€™å€‹åœ°æ–¹ä¸èƒ½è¬›è©±ã€‚\n");
                 return 1;
         }
 
         if( !stringp(target=query_temp("ask_you", me)) )
-                return notify_fail("¸Õ²ÅÃ»ÓĞÈËÏòÄãÑ¯ÎÊ¡£\n");
+                return notify_fail("å‰›æ‰æ²’æœ‰äººå‘ä½ è©¢å•ã€‚\n");
 
         if (me->ban_say(1))
                 return 0;
@@ -171,14 +171,14 @@ int main(object me, string arg)
         if (! obj) obj = MESSAGE_D->find_user(target);
 
         if (! obj)
-                return notify_fail("¸Õ²ÅÏòÄãÑ¯ÎÊµÄÈËÏÖÔÚÎŞ·¨Ìı¼ûÄã£¬»ò"
-                                   "ÕßÒÑ¾­Àë¿ªÓÎÏ·ÁË¡£\n");
+                return notify_fail("å‰›æ‰å‘ä½ è©¢å•çš„äººç¾åœ¨ç„¡æ³•è½è¦‹ä½ ï¼Œæˆ–"
+                                   "è€…å·²ç¶“é›¢é–‹éŠæˆ²äº†ã€‚\n");
 
         if (environment(obj) != environment(me))
-                return notify_fail("¸Õ²ÅÏòÄãÑ¯ÎÊµÄÈËÏÖÔÚ²»ÔÙÕâÀïÁË¡£\n");
+                return notify_fail("å‰›æ‰å‘ä½ è©¢å•çš„äººç¾åœ¨ä¸å†é€™è£¡äº†ã€‚\n");
 
-        message_vision(CYN "$N" CYN "»Ø´ğ$n" CYN
-                       "£º¡º" HIG + arg + NOR CYN "¡»\n" NOR, me, obj);
+        message_vision(CYN "$N" CYN "å›ç­”$n" CYN
+                       "ï¼šã€" HIG + arg + NOR CYN "ã€\n" NOR, me, obj);
 
         if (userp(obj) || obj->is_chatter())
         {
@@ -192,10 +192,10 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½£ºanswer [ <player> ] <Ñ¶Ï¢>
+æŒ‡ä»¤æ ¼å¼ï¼šanswer [ <player> ] <è¨Šæ¯>
 
-Äã¿ÉÒÔÓÃÕâ¸öÖ¸ÁîºÍ¸Õ²ÅÓÃ ask ºÍÄãËµ»°µÄÊ¹ÓÃÕßËµ»°£¬Èç¹û
-Ö¸Ã÷ÁËÍæ¼ÒÔò»Ø´ğÖ¸¶¨µÄÍæ¼Ò¡£
+ä½ å¯ä»¥ç”¨é€™å€‹æŒ‡ä»¤å’Œå‰›æ‰ç”¨ ask å’Œä½ èªªè©±çš„ä½¿ç”¨è€…èªªè©±ï¼Œå¦‚æœ
+æŒ‡æ˜äº†ç©å®¶å‰‡å›ç­”æŒ‡å®šçš„ç©å®¶ã€‚
 
 see also : tell
 HELP

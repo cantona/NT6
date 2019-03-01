@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��̨�㳡");
+        set("short", "月台廣場");
         set("long", @LONG
-����ƽ̹�⻬��ʯ��㳡���м�͹��һ̨�棬�����һ�ٵ�¯��̨
-����Ƕ����ʮ����ʨ��������ʯ��������Ũ��������ζ����������
-һ���ֺ��ʯ����
+這是平坦光滑的石面廣場，中間凸起一台面，面放置一焚吊爐。台
+座邊嵌著七十二幅獅身人面青石浮雕，有著濃厚的異國風味。東西各有
+一座恢宏的石塔。
 LONG );
         set("outdoors", "quanzhou");
         set("no_clean_up", 0);

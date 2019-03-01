@@ -5,15 +5,15 @@ inherit COMBINED_ITEM;
 void create()
 {
 
-        set_name("ÃÉº¹Ò©", ({ "menghan yao", "yao" }) );
+        set_name("è’™æ±—è—¥", ({ "menghan yao", "yao" }) );
         if( clonep() )
                 set_default_object(__FILE__);
         else {
                 set("long",
-                        "ÕâÊÇ¼«ÆÕÍ¨µÄÃÉº¹Ò©\n" );
-                set("unit", "°ü");
+                        "é€™æ˜¯æ¥µæ™®é€šçš„è’™æ±—è—¥\n" );
+                set("unit", "åŒ…");
                 set("base_value", 700);
-                set("base_unit", "¥÷");
+                set("base_unit", "â–¡");
                 set("base_weight", 30);
         }
         set_amount(1);
@@ -33,18 +33,18 @@ int do_pour(string arg)
         if( !arg
         ||        sscanf(arg, "%s in %s", me, what)!=2
         ||        !id(me) )
-                return notify_fail("ÃüÁî¸ñÊ½: pour <Ò©> in <ÎïÆ·>¡£\n");
+                return notify_fail("å‘½ä»¤æ ¼å¼: pour <è—¥> in <ç‰©å“>ã€‚\n");
 
         ob = present(what, this_player());
         if( !ob )
-                return notify_fail("ÄãÉíÉÏÃ»ÓĞ" + what + "ÕâÑù¶«Î÷¡£\n");
+                return notify_fail("ä½ èº«ä¸Šæ²’æœ‰" + what + "é€™æ¨£æ±è¥¿ã€‚\n");
         if( !query("liquid/remaining", ob) )
-                return notify_fail(ob->name() + "ÀïÊ²Ã´Ò²Ã»ÓĞ£¬ÏÈ×°Ğ©¾ÆË®²ÅÄÜÈÜ»¯Ò©·Û\n");
+                return notify_fail(ob->name() + "è£¡ä»€éº¼ä¹Ÿæ²’æœ‰ï¼Œå…ˆè£äº›é…’æ°´æ‰èƒ½æº¶åŒ–è—¥ç²‰\n");
         f = (: call_other, __FILE__, "drink_drug" :);
         set("liquid/drink_func", bind(f,ob), ob);
         addn("liquid/slumber_effect", 100, ob);
-        message_vision("$N½«Ò»Ğ©" + name() + "µ¹½ø" + ob->name() 
-                + "Ò¡»ÎÁË¼¸ÏÂ¡£\n", this_player());
+        message_vision("$Nå°‡ä¸€äº›" + name() + "å€’é€²" + ob->name() 
+                + "æ–æ™ƒäº†å¹¾ä¸‹ã€‚\n", this_player());
         add_amount(-1);
         return 1;
 }

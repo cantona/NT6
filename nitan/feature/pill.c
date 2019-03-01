@@ -13,16 +13,16 @@ int do_eat(string arg)
 
         if( !this_object()->id(arg) ) return 0;
         if( this_player()->is_busy() )
-                return notify_fail("你正忙着呢。\n");
+                return notify_fail("浣犳蹇欒憲鍛€�俓n");
 
         if (!(healwhat = query("heal")))
-                return notify_fail("这样东西不能疗伤。\n");
+                return notify_fail("閫欐ǎ鏉辫タ涓嶈兘鐧傚偡銆俓n");
 
 
         if( !query("food_remaining") )
-                return notify_fail( name() + "已经没什么好吃的了。\n");
+                return notify_fail( name() + "宸茬稉娌掍粈楹煎ソ鍚冪殑浜嗐�俓n");
         if( (int)query("food", this_player()) >= (int)this_player()->max_food_capacity() )
-                return notify_fail("你已经吃太饱了，再也塞不下任何东西了。\n");
+                return notify_fail("浣犲凡缍撳悆澶＝浜嗭紝鍐嶄篃濉炰笉涓嬩换浣曟澅瑗夸簡銆俓n");
 
         addn("food", query("food_supply"), this_player());
         if( this_player()->is_fighting() ) this_player()->start_busy(2);
@@ -33,11 +33,11 @@ int do_eat(string arg)
         set("value", 0);
         addn("food_remaining", -1);
         if( !query("food_remaining") ) {
-                message_vision("$N将剩下的" + name() + "吃得干干净净。\n", this_player());
+                message_vision("$N灏囧墿涓嬬殑" + name() + "鍚冨緱骞瑰构鍑堝噲銆俓n", this_player());
                 if( !this_object()->finish_eat() )
                         destruct(this_object());
         } else
-                message_vision("$N拿起" + name() + "咬了几口。\n", this_player());
+                message_vision("$N鎷胯捣" + name() + "鍜簡骞惧彛銆俓n", this_player());
 
         return 1;
 }

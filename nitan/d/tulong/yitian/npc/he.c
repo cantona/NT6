@@ -5,14 +5,14 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("ºÎÌ«³å", ({ "he taichong", "he", "taichong" }));
-        set("long", "Ò»¸öÎåÊ®¶àËêµÄÖĞÄêÄĞ×Ó£¬Ã¼Í·½ôËø£¬Ô­À´\n"
-                    "Õâ¾ÍÊÇÀ¥ÂØÅÉµÄÕÆÃÅ£¬ÈË³Æ¡°ÌúÇÙÏÈÉú¡±µÄ\n"
-                    "ºÎÌ«³å£¬ÖÁÁù´óÃÅÅÉÎ§¹¥¹âÃ÷¶¥Ö®ºó£¬±»ÕÔ\n"
-                    "ÓÃ¼ÆÇÜÄÃ£¬¹ØÑºÔÚÕâÀï¡£\n");
-        set("title", "À¥ÂØÅÉµÚÈı´úÕÆÃÅ");
-        set("nickname", WHT "ÌúÇÙÏÈÉú" NOR);
-        set("gender", "ÄĞĞÔ");
+        set_name("ä½•å¤ªæ²–", ({ "he taichong", "he", "taichong" }));
+        set("long", "ä¸€å€‹äº”åå¤šæ­²çš„ä¸­å¹´ç”·å­ï¼Œçœ‰é ­ç·Šé–ï¼ŒåŸä¾†\n"
+                    "é€™å°±æ˜¯æ˜†ä¾–æ´¾çš„æŒé–€ï¼Œäººç¨±â€œéµç´å…ˆç”Ÿâ€çš„\n"
+                    "ä½•å¤ªæ²–ï¼Œè‡³å…­å¤§é–€æ´¾åœæ”»å…‰æ˜é ‚ä¹‹å¾Œï¼Œè¢«è¶™\n"
+                    "ç”¨è¨ˆæ“’æ‹¿ï¼Œé—œæŠ¼åœ¨é€™è£¡ã€‚\n");
+        set("title", "æ˜†ä¾–æ´¾ç¬¬ä¸‰ä»£æŒé–€");
+        set("nickname", WHT "éµç´å…ˆç”Ÿ" NOR);
+        set("gender", "ç”·æ€§");
         set("age", 58);
         set("attitude", "peaceful");
         set("shen_type", -1);
@@ -59,7 +59,7 @@ void create()
 
         prepare_skill("strike", "cuixin-zhang");
 
-        create_family("À¥ÂØÅÉ", 3, "ÕÆÃÅ");
+        create_family("æ˜†ä¾–æ´¾", 3, "æŒé–€");
 
         setup();
         carry_object("/clone/cloth/cloth")->wear();
@@ -73,26 +73,26 @@ void init()
 
 int accept_fight(object who)
 {
-        command("say ºß£¬ÈçÎÒºÎÌ«³åÄÚÁ¦ÉĞÔÚ£¬Ò²ÓÉ²»µÃÄã²ş¿ñ¡£");
+        command("say å“¼ï¼Œå¦‚æˆ‘ä½•å¤ªæ²–å…§åŠ›å°šåœ¨ï¼Œä¹Ÿç”±ä¸å¾—ä½ çŒ–ç‹‚ã€‚");
         return 0;
 }
 
 int accept_hit(object who)
 {
-        command("say ºß£¬ÈçÎÒºÎÌ«³åÄÚÁ¦ÉĞÔÚ£¬Ò²ÓÉ²»µÃÄã²ş¿ñ¡£");
+        command("say å“¼ï¼Œå¦‚æˆ‘ä½•å¤ªæ²–å…§åŠ›å°šåœ¨ï¼Œä¹Ÿç”±ä¸å¾—ä½ çŒ–ç‹‚ã€‚");
         return 0;
 }
 
 int accept_kill(object who)
 {
         command("heng");
-        command("say ÎÒºÎÌ«³å±»ÄãÃÇÓÃ¹î¼ÆÇÜ×¡£¬Ôç¾ÍÃ»Ïë¹ıÒª¼ÌĞø´æ»î£¬ÒªÉ±¾Í¶¯ÊÖ°É¡£");
-        return notify_fail("É²ÄÇ¼äÄãÖ»¾õÏÂ²»ÁËÊÖ¡£\n");
+        command("say æˆ‘ä½•å¤ªæ²–è¢«ä½ å€‘ç”¨è©­è¨ˆæ“’ä½ï¼Œæ—©å°±æ²’æƒ³éè¦ç¹¼çºŒå­˜æ´»ï¼Œè¦æ®ºå°±å‹•æ‰‹å§ã€‚");
+        return notify_fail("å‰é‚£é–“ä½ åªè¦ºä¸‹ä¸äº†æ‰‹ã€‚\n");
 }
 
 int accept_ansuan(object who)
 {
-        return notify_fail("Äã¸ÕÏë°µËã£¬¿ÉÊÇÖ»¼ûÂ¥ÉÏÈËÓ°»Î¶¯£¬¸ù±¾¿´²»Çå³ş¡£\n");
+        return notify_fail("ä½ å‰›æƒ³æš—ç®—ï¼Œå¯æ˜¯åªè¦‹æ¨“ä¸Šäººå½±æ™ƒå‹•ï¼Œæ ¹æœ¬çœ‹ä¸æ¸…æ¥šã€‚\n");
 }
 
 int begin()
@@ -104,14 +104,14 @@ int begin()
         if( !objectp(weapon=query_temp("weapon", me)) || 
             query("skill_type", weapon) != "sword" )
         {
-                command("say ÎÒÄÚÁ¦È«Ê§£¬ÏÖÔÚÖ»ÄÜºÍÄã±È½££¡");
-                return notify_fail("¿´ÆğÀ´ºÎÌ«³å²¢²»Ïë¸úÄã½ÏÁ¿¡£\n");
+                command("say æˆ‘å…§åŠ›å…¨å¤±ï¼Œç¾åœ¨åªèƒ½å’Œä½ æ¯”åŠï¼");
+                return notify_fail("çœ‹èµ·ä¾†ä½•å¤ªæ²–ä¸¦ä¸æƒ³è·Ÿä½ è¼ƒé‡ã€‚\n");
         }
 
         command("heng");
-        command("say ½øÕĞ°É£¡");
-        message_vision(HIY "$N»°ÒôÎ´Âä£¬µ¥ÊÖÒ»¶¶£¬ÊÖÖĞÖñ½£¶Ô×¼$n" HIY
-                           "µ±ĞØĞ±Ğ±´Ì³ö£¡ÕıÊÇÀ¥ÂØµÕ´«µÄÁ½ÒÇ½£·¨¡£\n" NOR,
+        command("say é€²æ‹›å§ï¼");
+        message_vision(HIY "$Nè©±éŸ³æœªè½ï¼Œå–®æ‰‹ä¸€æŠ–ï¼Œæ‰‹ä¸­ç«¹åŠå°æº–$n" HIY
+                           "ç•¶èƒ¸æ–œæ–œåˆºå‡ºï¼æ­£æ˜¯æ˜†ä¾–å«¡å‚³çš„å…©å„€åŠæ³•ã€‚\n" NOR,
                            obj, this_player());
 
         set_temp("bi", 1, me);
@@ -125,7 +125,7 @@ void die()
 {
         if (objectp(query("anti")))
         {
-                message_vision(CYN "\nÕÔÃôÖåÁËÖåÃ¼Í·£¬µÍÉùÂîµÀ£º¡°·ÏÎï£¡¡±\n" NOR,
+                message_vision(CYN "\nè¶™æ•çšºäº†çšºçœ‰é ­ï¼Œä½è²ç½µé“ï¼šâ€œå»¢ç‰©ï¼â€\n" NOR,
                                    this_object());
 
                 set_temp("win_he", 1, query("anti"));

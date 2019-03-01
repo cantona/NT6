@@ -3,7 +3,7 @@
 
 inherit F_SSERVER;
 
-string name() { return HIW "²ÎÉÌ½£Æø" NOR; }
+string name() { return HIW "åƒå•†åŠæ°£" NOR; }
 
 int perform( object me, object target)
 {
@@ -15,40 +15,40 @@ int perform( object me, object target)
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("²ÎÉÌ½£ÆøÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ£¡\n");
+                return notify_fail("åƒå•†åŠæ°£åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ï¼\n");
 
         if( query_temp("canshang", me) )
-                return notify_fail("ÄãÒÑ¾­ÔÚÊ¹ÓÃ²ÎÉÌ½£ÆøÁË£¡\n");
+                return notify_fail("ä½ å·²ç¶“åœ¨ä½¿ç”¨åƒå•†åŠæ°£äº†ï¼\n");
 
         if( objectp(query_temp("weapon", me)) )
-                        return notify_fail("²ÎÉÌ½£ÆøĞèÒªÄã¿ÕÊÖ²ÅÄÜÊ©Õ¹£¡\n");
+                        return notify_fail("åƒå•†åŠæ°£éœ€è¦ä½ ç©ºæ‰‹æ‰èƒ½æ–½å±•ï¼\n");
 
         if( me->query_skill_mapped("finger") != "canhe-zhi" )
-                return notify_fail("ÄãËùÊ¹ÓÃµÄ²¢·Ç²ÎºÏÖ¸£¬²»ÄÜÊ©Õ¹²ÎÉÌ½£Æø£¡\n");
+                return notify_fail("ä½ æ‰€ä½¿ç”¨çš„ä¸¦éåƒåˆæŒ‡ï¼Œä¸èƒ½æ–½å±•åƒå•†åŠæ°£ï¼\n");
 
         if( me->query_skill_prepared("finger") != "canhe-zhi" )
-                return notify_fail("ÄãËù±¸µÄ²¢·Ç²ÎºÏÖ¸£¬²»ÄÜÊ©Õ¹²ÎÉÌ½£Æø£¡\n");
+                return notify_fail("ä½ æ‰€å‚™çš„ä¸¦éåƒåˆæŒ‡ï¼Œä¸èƒ½æ–½å±•åƒå•†åŠæ°£ï¼\n");
 
         if( me->query_skill_mapped("force") != "shenyuan-gong" )
-                return notify_fail("ÄãËù¼¤·¢µÄÄÚ¹¦²¢·ÇÉñÔª¹¦£¬Ê©Õ¹²»³ö²ÎÉÌ½£Æø£¡\n");
+                return notify_fail("ä½ æ‰€æ¿€ç™¼çš„å…§åŠŸä¸¦éç¥å…ƒåŠŸï¼Œæ–½å±•ä¸å‡ºåƒå•†åŠæ°£ï¼\n");
 
         if( me->query_skill("force") < 140 )
-                return notify_fail("ÄãµÄÄÚ¹¦»ğºò²»µ½£¬ÎŞ·¨Ê©Õ¹Ä½Èİ¼Ò´«¾øÑ§£¡\n");
+                return notify_fail("ä½ çš„å…§åŠŸç«å€™ä¸åˆ°ï¼Œç„¡æ³•æ–½å±•æ…•å®¹å®¶å‚³çµ•å­¸ï¼\n");
 
         if( me->query_int() < 22 )
-                return notify_fail("ÄãµÄÎòĞÔÌ«²î£¬²»ÄÜÊ©Õ¹¹ÃËÕÄ½Èİ¼Ò´«¾øÑ§£¡\n");
+                return notify_fail("ä½ çš„æ‚Ÿæ€§å¤ªå·®ï¼Œä¸èƒ½æ–½å±•å§‘è˜‡æ…•å®¹å®¶å‚³çµ•å­¸ï¼\n");
 
         if( (lvl=me->query_skill("finger")) < 100 )
-                return notify_fail("²ÎÉÌ½£ÆøĞèÒª¾«ÉîµÄÖ¸Á¦·½ÄÜ×àĞ§£¡\n");
+                return notify_fail("åƒå•†åŠæ°£éœ€è¦ç²¾æ·±çš„æŒ‡åŠ›æ–¹èƒ½å¥æ•ˆï¼\n");
 
         if( query("neili", me) <= lvl*3/2 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»×ãÒÔÊ¹ÓÃÄ½Èİ¾øÑ§²ÎÉÌÖ¸·¨£¡\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸è¶³ä»¥ä½¿ç”¨æ…•å®¹çµ•å­¸åƒå•†æŒ‡æ³•ï¼\n");
 
         if( query("jingli", me)<lvl )
-                return notify_fail("ÄãµÄ¾«Á¦²»×ãÒÔÊ¹ÓÃÄ½Èİ¾øÑ§²ÎÉÌÖ¸·¨£¡\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›ä¸è¶³ä»¥ä½¿ç”¨æ…•å®¹çµ•å­¸åƒå•†æŒ‡æ³•ï¼\n");
 
-        message_combatd(HIM "$N" HIM "¿ÚÖĞÄ¬Äî¡°¶¯¾²Èç²ÎÉÌ¡±£¬ĞÄËæÒâ×ª£¬¾¢¸úÁ¦·¢¡£Ö»ÌıµÃÄÚÁ¦ÆÆ¿ÕÖ®ÉùßÚßÚ×÷Ïì£¡\n"
-                        HIM "ÄÚÁ¦»¯×÷Ò»¹É½£ÆøÖ±±¼$n" HIM "ÉäÈ¥£¡\n" NOR, me, target);
+        message_combatd(HIM "$N" HIM "å£ä¸­é»˜å¿µâ€œå‹•éœå¦‚åƒå•†â€ï¼Œå¿ƒéš¨æ„è½‰ï¼Œå‹è·ŸåŠ›ç™¼ã€‚åªè½å¾—å…§åŠ›ç ´ç©ºä¹‹è²å‘²å‘²ä½œéŸ¿ï¼\n"
+                        HIM "å…§åŠ›åŒ–ä½œä¸€è‚¡åŠæ°£ç›´å¥”$n" HIM "å°„å»ï¼\n" NOR, me, target);
         str = me->query_str()/2;
         dex = me->query_dex()/3;
         addn_temp("apply/str", str, me);
@@ -70,5 +70,5 @@ void end_perform( object me, int str, int dex)
         addn_temp("apply/dex", -dex, me);
         delete_temp("canshang", me);
 
-        tell_object(me, HIY "Äã»º»ºÊÕ×¡ÉíĞÎ£¬ÇáÓõÒ»¿ÚÆø£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï¡£\n" NOR);
+        tell_object(me, HIY "ä½ ç·©ç·©æ”¶ä½èº«å½¢ï¼Œè¼•åä¸€å£æ°£ï¼Œå°‡å…§åŠ›æ”¶å›ä¸¹ç”°ã€‚\n" NOR);
 }

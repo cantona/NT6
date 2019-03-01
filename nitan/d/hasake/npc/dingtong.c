@@ -3,10 +3,10 @@
 inherit NPC;
 void create()
 {
-       set_name("¶¡Í¬", ({ "ding tong", "ding", "tong" }) );
-       set("title", "ïÚÊ¦");
-       set("nickname", "Á½Í·Éß");
-       set("gender", "ÄĞĞÔ" );
+       set_name("ä¸åŒ", ({ "ding tong", "ding", "tong" }) );
+       set("title", "é¢å¸«");
+       set("nickname", "å…©é ­è›‡");
+       set("gender", "ç”·æ€§" );
        set("shen", -2000);
        set("age", 45);
        set("str", 20);
@@ -14,7 +14,7 @@ void create()
        set("int", 20);
        set("dex", 20);
        set("env/wimpy", 60);
-       set("long","ËûÊÇ»ôÔªÁúÊÖÏÂµÄïÚÊ¦Ö®Ò»£¬Ò»Ö±ÔÚÕâÒ»´øÑ°ÕÒ×ÅÒ»¸öÈË¡£\n" );
+       set("long","ä»–æ˜¯éœå…ƒé¾æ‰‹ä¸‹çš„é¢å¸«ä¹‹ä¸€ï¼Œä¸€ç›´åœ¨é€™ä¸€å¸¶å°‹æ‰¾è‘—ä¸€å€‹äººã€‚\n" );
        set("combat_exp", 200000);
        set("attitude", "heroism");
        set("chat_chance", 30);

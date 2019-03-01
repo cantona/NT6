@@ -10,15 +10,15 @@ inherit TESSERA;
 void create()
 {
 //**    set_name("$name", ({ "$id", }));                        /* NAME_ENTRY */
-        set_name(HIR "ÉñÖ®ºì±¦Ê¯" NOR, ({ "magic ruby" }) );  /* NAME_EXIT  */
+        set_name(HIR "ç¥ä¹‹ç´…å¯¶çŸ³" NOR, ({ "magic ruby" }) );  /* NAME_EXIT  */
         set_weight(20);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
 //**            set("$dbase_key", "$dbase_value\n");            /* DBASE_ENTRY */
-                set("long", HIR "Ò»¿Å»À·¢×ÅÆæÒìµÄ¹â²ÊµÄºì±¦Ê¯£¬¸øÈËÒÔ²»Í¬Ñ°³£µÄ¸Ğ¾õ¡£\n" NOR);  /* DBASE_EXIT  */
+                set("long", HIR "ä¸€é¡†ç…¥ç™¼è‘—å¥‡ç•°çš„å…‰å½©çš„ç´…å¯¶çŸ³ï¼Œçµ¦äººä»¥ä¸åŒå°‹å¸¸çš„æ„Ÿè¦ºã€‚\n" NOR);  /* DBASE_EXIT  */
                 set("value", 200000);
-                set("unit", "¿Å");
+                set("unit", "é¡†");
                 set("level", 4);
                 set("material", "mruby");
                 set("can_be_enchased", 1);

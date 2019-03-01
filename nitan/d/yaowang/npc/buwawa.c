@@ -4,8 +4,8 @@ inherit NPC;
 
 void create()
 {
-        set_name("²¼ÍŞÍŞ", ({ "buwawa", "bu", "wawa" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("å¸ƒå¨ƒå¨ƒ", ({ "buwawa", "bu", "wawa" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 22);
         set("combat_exp", 100);
         set("attitude", "friendly");
@@ -25,21 +25,21 @@ int do_lianxi(string arg)
         me=this_player();
         i=(int)me->query_skill("zhenjiu-shu",1);
 
-        if( query("family/family_name", me) != "Ò©Íõ¹È" || me->query_skill("zhenjiu-shu",1) >= 100 )
+        if( query("family/family_name", me) != "è—¥ç‹è°·" || me->query_skill("zhenjiu-shu",1) >= 100 )
         {       
-                return notify_fail("Äã²»ÄÜÊ¹ÓÃ²¼ÍŞÍŞ£¡\n");
+                return notify_fail("ä½ ä¸èƒ½ä½¿ç”¨å¸ƒå¨ƒå¨ƒï¼\n");
         }
 
         if (!id(arg))
-                return notify_fail("Ö¸Áî¸ñÊ½£ºlianxi <ID> \n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šlianxi <ID> \n");
 
         if( me->is_fighting() || me->is_busy() )
-                return notify_fail("ÄãÕıÃ¦×ÅÄØ£¡\n");
+                return notify_fail("ä½ æ­£å¿™è‘—å‘¢ï¼\n");
 
         if( query("jing", me) <= i )
-                return notify_fail("ÄãÌ«ÀÛÁË£¬ĞİÏ¢Ò»»á¶ù°É£¡\n");
+                return notify_fail("ä½ å¤ªç´¯äº†ï¼Œä¼‘æ¯ä¸€æœƒå…’å§ï¼\n");
 
-        message_vision ("$NÄÃÆğÒ»Ö§ÒøÕë£¬ÔÚ²¼ÍŞÍŞÉíÉÏÕÕ×Å¾­ÂçÍ¼£¬±È»®×Å£¡\n", me);
+        message_vision ("$Næ‹¿èµ·ä¸€æ”¯éŠ€é‡ï¼Œåœ¨å¸ƒå¨ƒå¨ƒèº«ä¸Šç…§è‘—ç¶“çµ¡åœ–ï¼Œæ¯”åŠƒè‘—ï¼\n", me);
         me->improve_skill("zhenjiu-shu", (i/3));
         addn("jing", -i, me);
         me->start_busy(1);

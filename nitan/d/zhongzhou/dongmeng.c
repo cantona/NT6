@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "¶«ÃÅ");
+        set("short", "æ±é–€");
         set("long", @LONG
-ÕâÀïÊÇÖÐÖÝµÄ¶«³ÇÃÅ¡£³ö³ÇÊÇÒ»Ìõ´óæäµÀ£¬ÍâµØµ½ÖÐÖÝµÄ
-ÈË¶¼´ÓÕâÀï½øÖÐÖÝ³Ç£¬¹Ù¸®ÔÚÕâÀïÉè¹Ø¿¨²éÎÊ¹ýÍùÐÐÈË¡£Ò»µ½
-¾ÖÊÆ²»ÎÈµÄÊ±ºòÕâÀï¾ÍÌØ±ðµÄ½ôÕÅ¡£
+é€™è£¡æ˜¯ä¸­å·žçš„æ±åŸŽé–€ã€‚å‡ºåŸŽæ˜¯ä¸€æ¢å¤§é©›é“ï¼Œå¤–åœ°åˆ°ä¸­å·žçš„
+äººéƒ½å¾žé€™è£¡é€²ä¸­å·žåŸŽï¼Œå®˜åºœåœ¨é€™è£¡è¨­é—œå¡æŸ¥å•éŽå¾€è¡Œäººã€‚ä¸€åˆ°
+å±€å‹¢ä¸ç©©çš„æ™‚å€™é€™è£¡å°±ç‰¹åˆ¥çš„ç·Šå¼µã€‚
 LONG);
         set("objects", ([
                 "/d/city/npc/bing" : 4,

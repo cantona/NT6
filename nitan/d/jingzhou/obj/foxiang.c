@@ -6,14 +6,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name(YEL"´ó·ðÏñ"NOR, ({ "dafo xiang", "xiang", "dafo" }) );
+        set_name(YEL"å¤§ä½›åƒ"NOR, ({ "dafo xiang", "xiang", "dafo" }) );
         set_weight(3000);
         set_max_encumbrance(5000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "×ð");
-                set("long", "Ò»×ðÃæÄ¿´ÈÏéµÄÈçÀ´·ðÏñ¡£ºÃÏóÊÇÓÃ»Æ½ðÖý¾ÍµÄ¡£\n");
+                set("unit", "å°Š");
+                set("long", "ä¸€å°Šé¢ç›®æ…ˆç¥¥çš„å¦‚ä¾†ä½›åƒã€‚å¥½è±¡æ˜¯ç”¨é»ƒé‡‘é‘„å°±çš„ã€‚\n");
                 set("value", 1000);
                 set("material", "gold");
                 set("no_get",1);
@@ -36,7 +36,7 @@ void init()
                 ob->set_amount(10);
                 ob->move(this_object());
                 addn("amount", -10, this_object());
-                tell_object(me, "\nÄãºöÈ»¿´µ½¹¦µÂÏäÀïÓÐÊ²÷á¶«Î÷ÔÚÉÁÉÁ·¢¹â£¡\n\n");
+                tell_object(me, "\nä½ å¿½ç„¶çœ‹åˆ°åŠŸå¾·ç®±è£¡æœ‰ä»€éº¼æ±è¥¿åœ¨é–ƒé–ƒç™¼å…‰ï¼\n\n");
                 addn("combat_exp", 1, me);
         }
         add_action("do_put", "put");
@@ -50,19 +50,19 @@ int do_put(string arg)
 
         me = this_player();
 
-        if(!arg) return notify_fail("ÄãÒª½«Ê²Ã´¶«Î÷·Å½øÄÄÀï£¿\n");
+        if(!arg) return notify_fail("ä½ è¦å°‡ä»€éº¼æ±è¥¿æ”¾é€²å“ªè£¡ï¼Ÿ\n");
 
         if( sscanf(arg, "%s in %s", item, target)!=2 
         ||  sscanf(item, "%d %s", amount, item)!=2
         ||  !objectp(obj = present(item, me)) )
 
-        return notify_fail("ÄãÒª¸øË­Ê²Ã´¶«Î÷£¿\n");
+        return notify_fail("ä½ è¦çµ¦èª°ä»€éº¼æ±è¥¿ï¼Ÿ\n");
 
         if( query("money_id", obj) == "silver"
         &&  obj->query_amount() >= 5 && amount >= 5 ) 
         {
                 if( query("begger", me)>0){
-                        message_vision( sprintf(HIY "$N½«Ò»%s%s·Å½ø%s¡£\n" NOR,
+                        message_vision( sprintf(HIY "$Nå°‡ä¸€%s%sæ”¾é€²%sã€‚\n" NOR,
                                 query("unit", obj),obj->name(),
                                 this_object()->name()),me );
                         obj->set_amount(obj->query_amount() - amount);;

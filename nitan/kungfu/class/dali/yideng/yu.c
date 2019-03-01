@@ -1,4 +1,4 @@
-// yu.c µã²ÔÓæÒş
+// yu.c é»è’¼æ¼éš±
 
 #include <ansi.h>
 inherit NPC;
@@ -6,13 +6,13 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("µã²ÔÓæÒş", ({ "diancang yuyin", "yu" }));
-        set("title",  "´óÀí¹úË®¾ü¶¼¶½" );
+        set_name("é»è’¼æ¼éš±", ({ "diancang yuyin", "yu" }));
+        set("title",  "å¤§ç†åœ‹æ°´è»éƒ½ç£" );
         set("long", 
-"Ëû¾ÍÊÇ´óÀí¹úµÄÔ­Ë®¾ü¶¼¶½£¬Ò»µÆ´óÊ¦µÄËÄ´óµÜ×ÓÖ®Ò»¡£
-ËûÔ¼ÄªËÄÊ®À´ËêÄê¼Í£¬Ò»ÕÅºÚÆáÆáµÄ¹øµ×Á³£¬ò°÷×ÂúÈù£¬
-¸ù¸ùÈçÌú¡£\n");
-        set("gender", "ÄĞĞÔ");
+"ä»–å°±æ˜¯å¤§ç†åœ‹çš„åŸæ°´è»éƒ½ç£ï¼Œä¸€ç‡ˆå¤§å¸«çš„å››å¤§å¼Ÿå­ä¹‹ä¸€ã€‚
+ä»–ç´„è«å››åä¾†æ­²å¹´ç´€ï¼Œä¸€å¼µé»‘æ¼†æ¼†çš„é‹åº•è‡‰ï¼Œè™¯é«¯æ»¿è…®ï¼Œ
+æ ¹æ ¹å¦‚éµã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 45);
         set("class", "officer");
         set("attitude", "friendly");
@@ -59,9 +59,9 @@ void create()
         prepare_skill("strike", "wuluo-zhang");
 
         set("inquiry", ([
-                "Ò»µÆ´óÊ¦"   : "Ê¦¸¸ËûÀÏÈË¼ÒÔÚÉÏÃæ¡£\n",
-                "¶ÎÖÇĞË"     : "ÄÇÊÇÎÒÊ¦¸¸Ë×ÊÀµÄÃû»ä¡£\n",
-                "Áõçø¹Ã"     : "ËıÊÇÎÒÊ¦¸¸Ë×ÊÀµÄåú×Ó¡£\n",
+                "ä¸€ç‡ˆå¤§å¸«"   : "å¸«çˆ¶ä»–è€äººå®¶åœ¨ä¸Šé¢ã€‚\n",
+                "æ®µæ™ºèˆˆ"     : "é‚£æ˜¯æˆ‘å¸«çˆ¶ä¿—ä¸–çš„åè«±ã€‚\n",
+                "åŠ‰ç‘›å§‘"     : "å¥¹æ˜¯æˆ‘å¸«çˆ¶ä¿—ä¸–çš„å¦ƒå­ã€‚\n",
         ]) );
 
         setup();
@@ -69,7 +69,7 @@ void create()
         carry_object("/kungfu/class/dali/obj/diaogan")->wield();
         add_money("silver", 50);
 
-        create_family("´óÀí¶Î¼Ò",25,"µÜ×Ó");
+        create_family("å¤§ç†æ®µå®¶",25,"å¼Ÿå­");
 }
 
 void init()
@@ -91,7 +91,7 @@ void greeting(object ob)
         myfam = (mapping)query("family", ob);
         if( myfam["master_id"] == "yideng dashi")
         {
-message_vision(HIY"µã²ÔÓæÒş¶Ô$NËµ£ºÄã»ØÀ´ÁË¡£×Ô¼ºÉÏÈ¥¼ûÊ¦¸¸°É¡£\n"NOR, ob);
+message_vision(HIY"é»è’¼æ¼éš±å°$Nèªªï¼šä½ å›ä¾†äº†ã€‚è‡ªå·±ä¸Šå»è¦‹å¸«çˆ¶å§ã€‚\n"NOR, ob);
                 set_temp("yu_allow", 1, ob);
         }
         return;
@@ -101,11 +101,11 @@ int accept_object(object who, object ob)
 {
         if ( !who || environment(who) != environment() ) return 0;
         if ( !objectp(ob) ) return 0;
-        if ( !present(ob, who) ) return notify_fail("ÄãÃ»ÓĞÕâ¼ş¶«Î÷¡£\n");
+        if ( !present(ob, who) ) return notify_fail("ä½ æ²’æœ‰é€™ä»¶æ±è¥¿ã€‚\n");
 
         if( query("id", ob) != "hongbu" )
-                return notify_fail("µã²ÔÓæÒş²»ÏëÒªÕâ¼ş¶«Î÷¡£\n");
-        say( "µã²ÔÓæÒş³åÄãµãÁËµãÍ·£º½øÎİÈ¥°É¡£\n");
+                return notify_fail("é»è’¼æ¼éš±ä¸æƒ³è¦é€™ä»¶æ±è¥¿ã€‚\n");
+        say( "é»è’¼æ¼éš±æ²–ä½ é»äº†é»é ­ï¼šé€²å±‹å»å§ã€‚\n");
         set_temp("yu_allow", 1, who);
         return 1;
 }

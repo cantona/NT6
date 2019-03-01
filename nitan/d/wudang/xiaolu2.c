@@ -3,10 +3,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÁÖ¼äĞ¡¾¶");
+        set("short", "æ—é–“å°å¾‘");
         set("long", @LONG
-Äã×ßÔÚÒ»ÌõĞ¡¾¶ÉÏ£¬Á½ÅÔÖÖÂúÁËÖñ×Ó£¬ĞŞóòÉ­É­£¬ÂÌÒñÂúµØ£¬³ı
-ÁËÖñÒ¶ÉùºÍÄñÃùÉù£¬Ìı²»µ½±ğµÄ¶¯¾²¡£ÄÏÃæËÆºõÓĞÒ»×ù¼òÂªµÄĞ¡Ôº¡£
+ä½ èµ°åœ¨ä¸€æ¢å°å¾‘ä¸Šï¼Œå…©æ—ç¨®æ»¿äº†ç«¹å­ï¼Œä¿®ç¯æ£®æ£®ï¼Œç¶ è”­æ»¿åœ°ï¼Œé™¤
+äº†ç«¹è‘‰è²å’Œé³¥é³´è²ï¼Œè½ä¸åˆ°åˆ¥çš„å‹•éœã€‚å—é¢ä¼¼ä¹æœ‰ä¸€åº§ç°¡é™‹çš„å°é™¢ã€‚
 LONG );
         set("exits", ([
                 "south" : __DIR__"xiaoyuan.c",
@@ -16,7 +16,7 @@ LONG );
                 CLASS_D("wudang") + "/qingfeng": 1,
                 CLASS_D("wudang") + "/mingyue": 1,
         ]));
-        create_door("south", "ÖñÃÅ", "north", DOOR_CLOSED);
+        create_door("south", "ç«¹é–€", "north", DOOR_CLOSED);
         set("outdoors", "wudang");
         set("coor/x", -370);
         set("coor/y", -330);

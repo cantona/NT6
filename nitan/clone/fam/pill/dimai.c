@@ -3,12 +3,12 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIM "µØÂöÑªÈª" NOR, ({ "dimai xuequan", "dimai", "xuequan" }));
+        set_name(HIM "åœ°è„ˆè¡€æ³‰" NOR, ({ "dimai xuequan", "dimai", "xuequan" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿é");
-                set("long", HIM "ÕâÊÇÒ»¿éÉ¢·¢×ÅÑªÉ«¹âÔóµÄ¾§Ìå£¬ÊÀ¼äº±ÓÐ¡£\n" NOR);
+                set("unit", "å¡Š");
+                set("long", HIM "é€™æ˜¯ä¸€å¡Šæ•£ç™¼è‘—è¡€è‰²å…‰æ¾¤çš„æ™¶é«”ï¼Œä¸–é–“ç½•æœ‰ã€‚\n" NOR);
                 set("value", 30000);
                 set("only_do_effect", 1);
         }
@@ -26,15 +26,15 @@ int do_effect(object me)
 
         if ((int)me->query_condition("pill_drug") > 0)
         {
-                write("Äã¾õµÃÏÖÔÚÄÚÏ¢Î´¶¨£¬¾­ÂöÒþÒþ»¹ÄÜ¸Ðµ½ÕæÆø³åµ´£¬²»"
-                      "¸ÒÃ³È»·þÊ³¡£\n");
+                write("ä½ è¦ºå¾—ç¾åœ¨å…§æ¯æœªå®šï¼Œç¶“è„ˆéš±éš±é‚„èƒ½æ„Ÿåˆ°çœŸæ°£æ²–ç›ªï¼Œä¸"
+                      "æ•¢è²¿ç„¶æœé£Ÿã€‚\n");
                 return 1;
         }
 
         me->apply_condition("pill_drug", 4000);
 
-        message_vision(HIY "$N" HIY "ÍÌÏÂÒ»" + un + na + HIY "£¬Á³É«Ò»±ä£¬ËÆ"
-                       "ºõ¾«ÉñÁËÐí¶à¡£\n" NOR, me);
+        message_vision(HIY "$N" HIY "åžä¸‹ä¸€" + un + na + HIY "ï¼Œè‡‰è‰²ä¸€è®Šï¼Œä¼¼"
+                       "ä¹Žç²¾ç¥žäº†è¨±å¤šã€‚\n" NOR, me);
 
         mapsk = me->query_skill_mapped("force");
 
@@ -47,9 +47,9 @@ int do_effect(object me)
                 if (stringp(mapsk) && me->can_improve_skill(mapsk))
                         me->improve_skill(mapsk, 20000);
 
-                tell_object(me, HIR "ÄãÖ»¾õÒ»¹ÉÅ¯ÆøÉ¢²¼È«Éí£¬Ëµ²»³öµÄÊæ·þÊÜÓÃ¡£\n" NOR);
+                tell_object(me, HIR "ä½ åªè¦ºä¸€è‚¡æš–æ°£æ•£å¸ƒå…¨èº«ï¼Œèªªä¸å‡ºçš„èˆ’æœå—ç”¨ã€‚\n" NOR);
         } else
-                tell_object(me, HIY "ÄãÖ»¾õÒ»¹ÉÈÈÁ÷Ó¿ÉÏ£¬ÄÚÏ¢µÃµ½ÁËÍêÈ«µÄ²¹³ä¡£\n" NOR);
+                tell_object(me, HIY "ä½ åªè¦ºä¸€è‚¡ç†±æµæ¹§ä¸Šï¼Œå…§æ¯å¾—åˆ°äº†å®Œå…¨çš„è£œå……ã€‚\n" NOR);
 
         me->improve_neili(100 + random(101));
 

@@ -18,35 +18,35 @@ int update_condition(object me, int duration)
         if (duration == 4)
         {
                 if (me->query("food") <= 0 && me->query("water") <= 0)
-                        tell_object(me, HIY "Äã¶öµÃÍ·ÔÎÑÛ»¨£¬¿ÊµÃºíÁüÃ°ÑÌ£¬¿´À´"
-                                    "Òª¸Ï¿ìÕÒµã³ÔºÈµÄ¶«Î÷ÁË¡£\n"NOR);
+                        tell_object(me, HIY "ä½ é¤“å¾—é ­æšˆçœ¼èŠ±ï¼Œæ¸´å¾—å–‰åš¨å†’ç…™ï¼Œçœ‹ä¾†"
+                                    "è¦è¶•å¿«æ‰¾é»žåƒå–çš„æ±è¥¿äº†ã€‚\n"NOR);
                 else
                 if (me->query("food") <= 0)
-                        tell_object(me, HIY "Äã¶öµÃÍ·ÔÎÑÛ»¨£¬¿´À´Òª¸Ï¿ìÕÒµã³ÔµÄÁË¡£\n" NOR);
+                        tell_object(me, HIY "ä½ é¤“å¾—é ­æšˆçœ¼èŠ±ï¼Œçœ‹ä¾†è¦è¶•å¿«æ‰¾é»žåƒçš„äº†ã€‚\n" NOR);
                 else
                 if (me->query("water") <= 0)
-                        tell_object(me, HIY "\nÄã¿ÊµÃºíÁüÃ°ÑÌ£¬¿´À´Òª¸Ï¿ìºÈµãÊ²Ã´ÁË¡£\n" NOR);
+                        tell_object(me, HIY "\nä½ æ¸´å¾—å–‰åš¨å†’ç…™ï¼Œçœ‹ä¾†è¦è¶•å¿«å–é»žä»€éº¼äº†ã€‚\n" NOR);
         }
         else
         if (duration == 7)
         {
                 if (me->query("food") <= 0 && me->query("water") <= 0)
-                        tell_object(me, HIR "ÄãÓÖ¼¢ÓÖ¿Ê£¬¾õµÃ×Ô¼º¿ìÒªËÀÁË¡£\n"NOR);
+                        tell_object(me, HIR "ä½ åˆé¥‘åˆæ¸´ï¼Œè¦ºå¾—è‡ªå·±å¿«è¦æ­»äº†ã€‚\n"NOR);
                 else
                 if (me->query("food") <= 0)
-                        tell_object(me, HIR "Äã¶öµÃ¿ìËÀÁË¡£\n"NOR);
+                        tell_object(me, HIR "ä½ é¤“å¾—å¿«æ­»äº†ã€‚\n"NOR);
                 else
                 if (me->query("water") <= 0)
-                        tell_object(me, HIR "Äã¿ÊµÃÒªÐéÍÑÁË¡£\n"NOR);
+                        tell_object(me, HIR "ä½ æ¸´å¾—è¦è™›è„«äº†ã€‚\n"NOR);
         }
         else
         if (duration >= 13)
         {
                 if (wizardp(me))
                 {
-                        tell_object(me, HIY "ÄãÑÛ¿´¿ìÒª¶öËÀÁË£¬ºÃÔÚÄãÊÇÎ×Ê¦£¬±ä£¡"
-                                        "±ä£¡±ä£¡ÄãÈý¿ÚÁ½¿Ú°Ñ±ä³öÀ´\n" +
-                                        "µÄ²»ÖªµÀÊ²Ã´¶«Î÷¸øÍÌÏÂ¶Ç£¬¸Ð¾õºÃ¶àÁË¡£\n" NOR);
+                        tell_object(me, HIY "ä½ çœ¼çœ‹å¿«è¦é¤“æ­»äº†ï¼Œå¥½åœ¨ä½ æ˜¯å·«å¸«ï¼Œè®Šï¼"
+                                        "è®Šï¼è®Šï¼ä½ ä¸‰å£å…©å£æŠŠè®Šå‡ºä¾†\n" +
+                                        "çš„ä¸çŸ¥é“ä»€éº¼æ±è¥¿çµ¦åžä¸‹è‚šï¼Œæ„Ÿè¦ºå¥½å¤šäº†ã€‚\n" NOR);
                         me->set("food", me->max_food_capacity());
                         me->set("water", me->max_food_capacity());
                         return 0;
@@ -54,22 +54,22 @@ int update_condition(object me, int duration)
 
                 if (me->query("mud_age") < 86400)
                 {
-                        tell_object(me, HIY "ÄãÑÛ¿´¾ÍÒª²»ÐÐÁË£¬Í»È»ÌìÏÂµôÏÂÏÚ±ýÅ£"
-                                        "ÄÌ£¬ÄãÒ»Õó¿ñ³ÔÀÄºÈ£¬¸Ð¾õ×Ü\n" +
-                                        "ËãÊÇºÃ¶àÁË¡£\n" NOR);
+                        tell_object(me, HIY "ä½ çœ¼çœ‹å°±è¦ä¸è¡Œäº†ï¼Œçªç„¶å¤©ä¸‹æŽ‰ä¸‹é¤¡é¤…ç‰›"
+                                        "å¥¶ï¼Œä½ ä¸€é™£ç‹‚åƒæ¿«å–ï¼Œæ„Ÿè¦ºç¸½\n" +
+                                        "ç®—æ˜¯å¥½å¤šäº†ã€‚\n" NOR);
                         me->set("food", me->max_food_capacity());
                         me->set("water", me->max_food_capacity());
                         return 0;
                 }
 
                 if (me->query("food") <= 0 && me->query("water") == 0)
-                        tell_object(me, HIR "ÄãÓÖ¼¢ÓÖ¿Ê£¬ÖÕÓÚÔÎÁË¹ýÈ¥¡£\n"NOR);
+                        tell_object(me, HIR "ä½ åˆé¥‘åˆæ¸´ï¼Œçµ‚äºŽæšˆäº†éŽåŽ»ã€‚\n"NOR);
                 else
                 if (me->query("food") <= 0)
-                        tell_object(me, HIR "Äã¶öµÃÔÎÁË¹ýÈ¥¡£\n"NOR);
+                        tell_object(me, HIR "ä½ é¤“å¾—æšˆäº†éŽåŽ»ã€‚\n"NOR);
                 else
                 if (me->query("water") <= 0)
-                        tell_object(me, HIR "Äã¿ÊµÃÔÎÁË¹ýÈ¥¡£\n"NOR);
+                        tell_object(me, HIR "ä½ æ¸´å¾—æšˆäº†éŽåŽ»ã€‚\n"NOR);
                 me->receive_damage("qi", 0);
                 me->unconcious();
                 return 0;

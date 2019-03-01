@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define BING "¡¸" HIW "±ù¼áµØÓü" NOR "¡¹"
+#define BING "ã€Œ" HIW "å†°å …åœ°ç„" NOR "ã€"
 
 inherit F_SSERVER;
 
@@ -15,37 +15,37 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if( userp(me) && !query("can_perform/xuantian-zhi/bing", me) )
-                return notify_fail("ÄãËùÊ¹ÓÃµÄÍâ¹¦ÖĞÃ»ÓĞÕâÖÖ¹¦ÄÜ¡£\n");
+                return notify_fail("ä½ æ‰€ä½¿ç”¨çš„å¤–åŠŸä¸­æ²’æœ‰é€™ç¨®åŠŸèƒ½ã€‚\n");
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(BING "Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(BING "åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( objectp(query_temp("weapon", me)) )
-                return notify_fail("Äã±ØĞë¿ÕÊÖ²ÅÄÜÊ¹ÓÃ" BING "¡£\n");         
+                return notify_fail("ä½ å¿…é ˆç©ºæ‰‹æ‰èƒ½ä½¿ç”¨" BING "ã€‚\n");         
 
         if (me->query_skill_mapped("finger") != "xuantian-zhi")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢ĞşÌìÖ¸£¬²»ÄÜÊ¹ÓÃ" BING "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼ç„å¤©æŒ‡ï¼Œä¸èƒ½ä½¿ç”¨" BING "ã€‚\n");
 
         if (me->query_skill_prepared("finger") != "xuantian-zhi")
-                return notify_fail("ÄãÏÖÔÚÃ»ÓĞ×¼±¸Ê¹ÓÃĞşÌìÖ¸£¬ÎŞ·¨Ê¹ÓÃ" BING "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ²’æœ‰æº–å‚™ä½¿ç”¨ç„å¤©æŒ‡ï¼Œç„¡æ³•ä½¿ç”¨" BING "ã€‚\n");
 
         if ((int)me->query_skill("xuantian-wujigong", 1) < 180)
-                return notify_fail("ÄãµÄĞşÌìÎŞ¼«¹¦»ğºò²»¹»£¬Ê¹²»³ö" BING "¡£\n");
+                return notify_fail("ä½ çš„ç„å¤©ç„¡æ¥µåŠŸç«å€™ä¸å¤ ï¼Œä½¿ä¸å‡º" BING "ã€‚\n");
 
         if ((int)me->query_skill("xuantian-zhi", 1) < 180)
-                return notify_fail("ÄãµÄĞşÌìÖ¸²»¹»ÊìÁ·£¬²»»áÊ¹ÓÃ" BING "¡£\n");
+                return notify_fail("ä½ çš„ç„å¤©æŒ‡ä¸å¤ ç†Ÿç·´ï¼Œä¸æœƒä½¿ç”¨" BING "ã€‚\n");
 
         if( query("max_neili", me)<2000 )
-                return notify_fail("ÄãµÄÄÚÁ¦ĞŞÎª²»×ã£¬ÎŞ·¨Ê¹ÓÃ" BING "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¿®ç‚ºä¸è¶³ï¼Œç„¡æ³•ä½¿ç”¨" BING "ã€‚\n");
 
         if( query("neili", me)<500 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬ÎŞ·¨Ê¹ÓÃ" BING "¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼Œç„¡æ³•ä½¿ç”¨" BING "ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIW "$N" HIW "Ä¬ÔËĞşÌìÎŞ¼«¹¦£¬¶ÙÊ±Ò»²ãº®ËªÁıÕÖÈ«Éí£¬Ò»ÉùÀä"
-              "Ğ¦£¬¾ÛÁ¦ÓÚÖ¸£¬Ö±´Á$n" HIW "ÒªÑ¨£¡\n"NOR;  
+        msg = HIW "$N" HIW "é»˜é‹ç„å¤©ç„¡æ¥µåŠŸï¼Œé “æ™‚ä¸€å±¤å¯’éœœç± ç½©å…¨èº«ï¼Œä¸€è²å†·"
+              "ç¬‘ï¼ŒèšåŠ›äºæŒ‡ï¼Œç›´æˆ³$n" HIW "è¦ç©´ï¼\n"NOR;  
 
         lvl = me->query_skill("xuantian-zhi", 1);
 
@@ -62,11 +62,11 @@ int perform(object me, object target)
                                   "id":query("id", me),
                                   "duration" : lvl / 50 + random(lvl / 20) ]));
                                   msg += COMBAT_D->do_damage(me, target, UNARMED_ATTACK,
-                                         damage, 70, HIW "$n" HIW "ÉÔ²»ÁôÉñ£¬ÒÑ±»$P" HIW
-                                         "Ò»Ö¸µãÖĞ£¬Òõº®Ö®¾¢¶ÙÊ±ÇÖÈëÈı½¹ÁùÂö¡£\n" NOR);
+                                         damage, 70, HIW "$n" HIW "ç¨ä¸ç•™ç¥ï¼Œå·²è¢«$P" HIW
+                                         "ä¸€æŒ‡é»ä¸­ï¼Œé™°å¯’ä¹‹å‹é “æ™‚ä¾µå…¥ä¸‰ç„¦å…­è„ˆã€‚\n" NOR);
         } else
         {
-                msg += CYN "$n" CYN "¼û$N" CYN "À´ÊÆĞÚÓ¿£¬¼±Ã¦ÌáÆøÔ¾¿ª¡£\n" NOR;
+                msg += CYN "$n" CYN "è¦‹$N" CYN "ä¾†å‹¢æ´¶æ¹§ï¼Œæ€¥å¿™ææ°£èºé–‹ã€‚\n" NOR;
         }
         message_combatd(msg, me, target);
 

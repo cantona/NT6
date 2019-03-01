@@ -1,24 +1,24 @@
 
 
 
-$HIY$$BLINK$                         ¡ï$NOR$
-$HIY$                                                                          ¡î$NOR$
-$HIB$                       ¨x¨y¨z¨{¨|¨}¨~¨€$HIY$¡î$HIB$¨$HIY$$BLINK$¡ñ$NOR$$HIB$¨Ž$HIY$¡î$HIB$¨€¨~¨}¨|¨{¨z¨y¨x $HIW$ ¨B$NOR$
-$HIW$¨¨}¨|¨{¨z¨{¨|¨}¨~¨Ž                                                ¨¨~¨}¨|¨{¨z¨{¨|¨}¨$NOR$
-$HIY$    ¨¨Ž¨z¨{¨|¨}¨~¨¨Ž $HIG$¨¨Ž  ¨Ž $HIC$¨¨~¨~¨Ž$HIY$¨¨~¨~¨Ž$HIM$¨¨~¨~¨Ž $HIR$¨¨Ž  ¨Ž $HIY$¨¨¨~¨}¨|¨{¨z¨¨Ž$NOR$
-$HIW$      ¨¨Ž¨y¨z¨|¨}¨Ž¨€ $NOR$$GRN$¨€¨  ¨€    $CYN$¨€      $YEL$¨€   $MAG$¨€    ¨€ $RED$¨€¨  ¨€ $HIW$¨€¨¨}¨|¨z¨y¨¨Ž$NOR$
-$HIW$        ¨¨y¨{¨~¨¨¨€ $HIG$¨€  ¨Ž¨€    $HIC$¨€      $HIY$¨€   $HIM$¨€¨}¨}¨€ $HIR$¨€  ¨Ž¨€ $HIW$¨€¨¨¨~¨{¨y¨Ž$NOR$
-$HIW$          ¨           $HIG$¨  ¨¨ $HIC$¨¨€¨€¨   $HIY$¨€   $HIM$¨    ¨ $HIR$¨  ¨¨           $HIW$¨$NOR$
-$HIW$   £®                                   $HIY$$BLINK$¨B$NOR$
-$WHT$            Ò»ÈëÄàÌ¶ÉîËÆº£  ¸öÖÐ×ÔÓÐ³Õ¶ùÅ® $HIW$¡ï$NOR$$WHT$ ½£ÒÐºÀÇé¿°ºÎ¼Ä  Ò»ËòÑÌÓêÈÎÆ½Éú$NOR$
-$HIY$                                      ¨B$NOR$
-$HIY$$BLINK$               ¡ï                                                        $NOR$$HIW$£®$NOR$
-$HIR$                                                                     ¨y¨y$NOR$
-$HIY$                                                         £®        $HIR$¨Š$BRED$·âÍõ$NOR$$HIR$¨†$NOR$
-$HIW$                      $BBLU$Çý¶¯°æ±¾ : MudOS v22.2b14 NT-Build on FreeBSD$NOR$$HIR$¨Š$BRED$Ó¡Õß$NOR$$HIR$¨†$NOR$
-$HIW$                      $BBLU$¹Ù·½ÂÛÌ³ :  http://www.mudbuilder.com$NOR$          $HIR$¨‰¨‰$NOR$
-$HIY$           £®                     $HIW$$BLINK$£®$NOR$
-$HIY$                                                     ¡î                            $HIW$$BLINK$£®$NOR$
+$HIY$$BLINK$                         âˆ´$NOR$
+$HIY$                                                                          âˆµ$NOR$
+$HIB$                       è‚è‚˜è‚›è‚šè‚²è‰¯èŠ’Â€$HIY$âˆµ$HIB$$HIY$$BLINK$â™‚$NOR$$HIB$$HIY$âˆµ$HIB$Â€èŠ’è‰¯è‚²è‚šè‚›è‚˜è‚ $HIW$ æ­¥$NOR$
+$HIW$è‰¯è‚²è‚šè‚›è‚šè‚²è‰¯èŠ’                                                èŠ’è‰¯è‚²è‚šè‚›è‚šè‚²è‰¯$NOR$
+$HIY$    è‚›è‚šè‚²è‰¯èŠ’ $HIG$   $HIC$èŠ’èŠ’$HIY$èŠ’èŠ’$HIM$èŠ’èŠ’ $HIR$   $HIY$èŠ’è‰¯è‚²è‚šè‚›$NOR$
+$HIW$      è‚˜è‚›è‚²è‰¯Â€ $NOR$$GRN$Â€  Â€    $CYN$Â€      $YEL$Â€   $MAG$Â€    Â€ $RED$Â€  Â€ $HIW$Â€è‰¯è‚²è‚›è‚˜$NOR$
+$HIW$        è‚˜è‚šèŠ’Â€ $HIG$Â€  Â€    $HIC$Â€      $HIY$Â€   $HIM$Â€è‰¯è‰¯Â€ $HIR$Â€  Â€ $HIW$Â€èŠ’è‚šè‚˜$NOR$
+$HIW$                     $HIG$   $HIC$Â€Â€   $HIY$Â€   $HIM$     $HIR$             $HIW$$NOR$
+$HIW$   ã„                                   $HIY$$BLINK$æ­¥$NOR$
+$WHT$            ç¨ï µæ‡¾æŠ¾æ—®ä¾”æ¼†  è·ºç¬¢èµ»è¡„åšå«èº“ $HIW$âˆ´$NOR$$WHT$ è†›çœ“ç‘°ïž–è†©ç¡æ•µ  ç¨å¯æˆè¿¾ï ˜ï›æ±œ$NOR$
+$HIY$                                      æ­¥$NOR$
+$HIY$$BLINK$               âˆ´                                                        $NOR$$HIW$ã„$NOR$
+$HIR$                                                                     è‚˜è‚˜$NOR$
+$HIY$                                                         ã„        $HIR$$BRED$çŒ¾å¼$NOR$$HIR$$NOR$
+$HIW$                      $BBLU$ïžªé›„å”³æŽ› : MudOS v22.2b14 NT-Build on FreeBSD$NOR$$HIR$$BRED$è‚æ°ª$NOR$$HIR$$NOR$
+$HIW$                      $BBLU$å¤¥æºè¹¦æŠ­ :  http://www.mudbuilder.com$NOR$          $HIR$$NOR$
+$HIY$           ã„                     $HIW$$BLINK$ã„$NOR$
+$HIY$                                                     âˆµ                            $HIW$$BLINK$ã„$NOR$
 
 
 

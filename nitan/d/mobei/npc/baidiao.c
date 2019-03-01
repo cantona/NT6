@@ -5,18 +5,18 @@ inherit NPC;
 mixed random_leave();
 void create()
 {
-        set_name("´ó°×µñ", ({ "bai diao", "diao"}) );
-        set("race", "·ÉÇİ");
+        set_name("å¤§ç™½é›•", ({ "bai diao", "diao"}) );
+        set("race", "é£›ç¦½");
         set("age", 18);
-        set("long", "Éú³¤ÔÚ´ó²İÔ­ÖĞµÄÒ»ÖÖÃÍÇİ¡£\n");
+        set("long", "ç”Ÿé•·åœ¨å¤§è‰åŸä¸­çš„ä¸€ç¨®çŒ›ç¦½ã€‚\n");
         set("str", 28);
         set("cor", 24);
         set("combat_exp",180000);
         set("env/wimpy",50);
         set("chat_chance", 6);
         set("chat_msg", ({
-                "´ó°×µñÔÚÔÆ²ãÖĞÅÌĞı£¬Ë«³áÂÓ¹ıÖØÖØ°×ÔÆ¡£\n",
-                "ÔÆ²ãÖĞÒ»µÀÉÁµçÅüÏÂ£¬ÔÚÄãÑÛÇ°ÉÁ¹ıÒ»µÀ½ğ¹â¡£\n",
+                "å¤§ç™½é›•åœ¨é›²å±¤ä¸­ç›¤æ—‹ï¼Œé›™ç¿…æ éé‡é‡ç™½é›²ã€‚\n",
+                "é›²å±¤ä¸­ä¸€é“é–ƒé›»åŠˆä¸‹ï¼Œåœ¨ä½ çœ¼å‰é–ƒéä¸€é“é‡‘å…‰ã€‚\n",
                 (:random_leave:),
         }));
         set_temp("apply/attack", 28);
@@ -44,26 +44,26 @@ void init()
 mixed random_leave()
 {
 mapping default_dirs = ([
-        "east":         "¶«",
-        "west":         "Î÷",
-        "south":        "ÄÏ",
-        "north":        "±±",
-        "eastup":       "¶«±ß",
-        "westup":       "Î÷±ß",
-        "southup":      "ÄÏ±ß",
-        "northup":      "±±±ß",
-        "eastdown":     "¶«±ß",
-        "westdown":     "Î÷±ß",
-        "southdown":    "ÄÏ±ß",
-        "northdown":    "±±±ß",
-        "southeast":    "¶«ÄÏ",
-        "southwest":    "Î÷ÄÏ",
-        "northeast":    "¶«±±",
-        "northwest":    "Î÷±±",
-        "up":           "ÉÏ",
-        "down":         "ÏÂ",
-        "out":          "Íâ",
-        "enter":        "Àï",
+        "east":         "æ±",
+        "west":         "è¥¿",
+        "south":        "å—",
+        "north":        "åŒ—",
+        "eastup":       "æ±é‚Š",
+        "westup":       "è¥¿é‚Š",
+        "southup":      "å—é‚Š",
+        "northup":      "åŒ—é‚Š",
+        "eastdown":     "æ±é‚Š",
+        "westdown":     "è¥¿é‚Š",
+        "southdown":    "å—é‚Š",
+        "northdown":    "åŒ—é‚Š",
+        "southeast":    "æ±å—",
+        "southwest":    "è¥¿å—",
+        "northeast":    "æ±åŒ—",
+        "northwest":    "è¥¿åŒ—",
+        "up":           "ä¸Š",
+        "down":         "ä¸‹",
+        "out":          "å¤–",
+        "enter":        "è£¡",
 ]);
 
         mapping exits;
@@ -77,9 +77,9 @@ mapping default_dirs = ([
         
         if( !undefinedp(default_dirs[dirs[i]]) ) dir = default_dirs[dirs[i]];
         else dir =dirs[i];
-        message_vision("$NÒ»Éù³¤Ãù£¬Õñ³áÏò"+dir+"·ÉÈ¥¡£\n",this_object());
+        message_vision("$Nä¸€è²é•·é³´ï¼ŒæŒ¯ç¿…å‘"+dir+"é£›å»ã€‚\n",this_object());
         move(where[i]);
-        tell_room(where[i],"Ò»Ö»´ó°×µñ·ÉÁË¹ıÀ´£¬ÔÚÔÆ²ãÖĞÅÌĞı¡£\n");
+        tell_room(where[i],"ä¸€åªå¤§ç™½é›•é£›äº†éä¾†ï¼Œåœ¨é›²å±¤ä¸­ç›¤æ—‹ã€‚\n");
         return;
         return 1;
 }

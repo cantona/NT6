@@ -3,13 +3,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIW "ÈçÒâÍ¨Ììïã" NOR, ({"ruyi jue", "ruyi", "jue"}));
+        set_name(HIW "å¦‚æ„é€šå¤©â–¡" NOR, ({"ruyi jue", "ruyi", "jue"}));
         set_weight(300);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "´¿°×ÎŞÏ¾µÄ±¦Óñ£¬´«ËµÖ»ÓĞÔÚÌì½ç²Å»á³öÏÖ¡£\n" NOR);
-                set("unit", "¿é");
+                set("long", HIW "ç´”ç™½ç„¡æš‡çš„å¯¶ç‰ï¼Œå‚³èªªåªæœ‰åœ¨å¤©ç•Œæ‰æœƒå‡ºç¾ã€‚\n" NOR);
+                set("unit", "å¡Š");
                 set("value", 50000);
                 set("can_be_enchased", 1);
                 set("magic/type", "cold");

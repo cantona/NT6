@@ -1,4 +1,4 @@
-// jinchuang.c ½ð´´Ò©
+// jinchuang.c é‡‘å‰µè—¥
 
 inherit ITEM;
 #include <ansi.h>
@@ -14,14 +14,14 @@ void init()
 
 void create()
 {
-        set_name(HIY"½ð´´Ò©"NOR, ({"jinchuang yao", "jinchuang", "yao"}));
+        set_name(HIY"é‡‘å‰µè—¥"NOR, ({"jinchuang yao", "jinchuang", "yao"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°ü");
+                set("unit", "åŒ…");
                 set("vegetable", 49);
                 set("nostrum", 70);
-                set("long", "ÕâÊÇÒ»°üÎäÁÖÈËÊ¿±Ø±¸µÄ½ð´´Ò©¡£\n");
+                set("long", "é€™æ˜¯ä¸€åŒ…æ­¦æž—äººå£«å¿…å‚™çš„é‡‘å‰µè—¥ã€‚\n");
                 set("value", 5000);
         }
         set("pour_type", "1");
@@ -32,17 +32,17 @@ int do_eat(string arg)
 {
         object me = this_player();
 
-        if(!id(arg)) return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+        if(!id(arg)) return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if(!present(this_object(), me))
-                return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if( me->is_busy() )
-                return notify_fail("±ð¼±£¬ÂýÂý³Ô£¬Ð¡ÐÄ±ðÒ­×ÅÁË¡£\n");
+                return notify_fail("åˆ¥æ€¥ï¼Œæ…¢æ…¢åƒï¼Œå°å¿ƒåˆ¥å™Žè‘—äº†ã€‚\n");
 
         if( query("eff_qi", me) == query("max_qi", me) )
-                return notify_fail("ÄãÏÖÔÚ²»ÐèÒªÓÃ½ð´´Ò©¡£\n");
+                return notify_fail("ä½ ç¾åœ¨ä¸éœ€è¦ç”¨é‡‘å‰µè—¥ã€‚\n");
         else {
                 me->receive_curing("qi", 50);
-                message_vision("$N³ÔÏÂÒ»°ü½ð´´Ò©£¬ÆøÉ«¿´ÆðÀ´ºÃ¶àÁË¡£\n", me);
+                message_vision("$Nåƒä¸‹ä¸€åŒ…é‡‘å‰µè—¥ï¼Œæ°£è‰²çœ‹èµ·ä¾†å¥½å¤šäº†ã€‚\n", me);
                 me->start_busy(2);
                 destruct(this_object());
                 return 1;

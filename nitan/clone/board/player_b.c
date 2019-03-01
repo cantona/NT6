@@ -4,10 +4,10 @@ inherit BULLETIN_BOARD;
 
 void create()
 {
-        set_name("½­ºş¶÷Ô¹ÁôÑÔ°å", ({ "board" }) );
+        set_name("æ±Ÿæ¹–æ©æ€¨ç•™è¨€æ¿", ({ "board" }) );
         set("location", "/d/city/chaguan");
         set("board_id", "player_b");
-        set("long", "ÕâÊÇÒ»¸ö¹©Íæ¼Ò·¢Ğ¹½­ºş¶÷Ô¹µÄÁôÑÔ°å¡£Ğ»¾øÈËÉí¹¥»÷¡£\n" );
+        set("long", "é€™æ˜¯ä¸€å€‹ä¾›ç©å®¶ç™¼æ³„æ±Ÿæ¹–æ©æ€¨çš„ç•™è¨€æ¿ã€‚è¬çµ•äººèº«æ”»æ“Šã€‚\n" );
         setup();
         set("capacity", 100);
         replace_program(BULLETIN_BOARD);

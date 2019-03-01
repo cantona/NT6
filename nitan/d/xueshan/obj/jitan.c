@@ -1,5 +1,5 @@
 // /d/xueshan/obj/jitan.c
-// jitan.c ·¨Ì³
+// jitan.c æ³•å£‡
 // Ryu
 // kane
 
@@ -9,15 +9,15 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIY"ÎŞÃ÷·¨Ì³"NOR, ({ "fa tan", "altar", "tan" }) );
+        set_name(HIY"ç„¡æ˜æ³•å£‡"NOR, ({ "fa tan", "altar", "tan" }) );
         set_weight(300000);
         set_max_encumbrance(5000000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
-                set("long", "ÕâÊÇÒ»¸ö¼«ÆäÅÓ´óµÄÍ­ÖÆ¼ÀÌ³£¬¸ßÔ¼ÈıÕÉ£¬·½Ô²Ô¼ÓĞÎåÕÉ£¬ÄËÊÇµ±ÄêÍÂ·¬¹úÍõÇ×\n"
-                            "×ÔÖ¸»ÓÖıÔìµÄ£¬ºÄÇã¹úÖ®Á¦£¬Ê®Äê·½³É¡£\n");
+                set("unit", "å€‹");
+                set("long", "é€™æ˜¯ä¸€å€‹æ¥µå…¶é¾å¤§çš„éŠ…åˆ¶ç¥­å£‡ï¼Œé«˜ç´„ä¸‰ä¸ˆï¼Œæ–¹åœ“ç´„æœ‰äº”ä¸ˆï¼Œä¹ƒæ˜¯ç•¶å¹´åç•ªåœ‹ç‹è¦ª\n"
+                            "è‡ªæŒ‡æ®é‘„é€ çš„ï¼Œè€—å‚¾åœ‹ä¹‹åŠ›ï¼Œåå¹´æ–¹æˆã€‚\n");
                 set("value", 1000);
                 set("material", "wood");
                 set("no_get",1);
@@ -48,23 +48,23 @@ int do_put(string arg)
         if (me->is_busy()
          || query_temp("pending/exercising", me )
          || query_temp("exit_blocked", me) )
-                return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£å¿™è‘—å‘¢ã€‚\n");
 
         if( !arg || sscanf(arg, "%s in %s", item, target) != 2 )
-                return notify_fail("ÄãÒª½«Ê²Ã´¶«Î÷·Å½øÄÄÀï£¿\n");
+                return notify_fail("ä½ è¦å°‡ä»€éº¼æ±è¥¿æ”¾é€²å“ªè£¡ï¼Ÿ\n");
                 
         if( item == "all" ) {
-                write("»¹ÊÇÒ»ÑùÒ»ÑùÀ´°É¡£\n");
+                write("é‚„æ˜¯ä¸€æ¨£ä¸€æ¨£ä¾†å§ã€‚\n");
                 return 1;
         }
                                                                 
         sscanf(item, "%d %s", amount, item);
         
         if( !objectp(obj = present(item, me)) )
-                return notify_fail("ÄãÒª¸øË­Ê²Ã´¶«Î÷£¿\n");
+                return notify_fail("ä½ è¦çµ¦èª°ä»€éº¼æ±è¥¿ï¼Ÿ\n");
 
         if( query("id", obj) != "corpse"){
-                write("Äã²»ÄÜÍù¼ÀÌ³Àï·ÅÕâÑù¶«Î÷¡£\n");
+                write("ä½ ä¸èƒ½å¾€ç¥­å£‡è£¡æ”¾é€™æ¨£æ±è¥¿ã€‚\n");
                 return 1;
         }
 
@@ -74,20 +74,20 @@ int do_light(string arg)
         object  me = this_player();
 
         if (!present("fire", me))
-                return notify_fail("ÄãÒªÓÃÊ²Ã´µã»ğ£¿\n");
+                return notify_fail("ä½ è¦ç”¨ä»€éº¼é»ç«ï¼Ÿ\n");
         if (!query("in_use"))
-                return notify_fail("ÄãÒªµãÈ¼Ê²Ã´£¿\n");
+                return notify_fail("ä½ è¦é»ç‡ƒä»€éº¼ï¼Ÿ\n");
         if (!id(arg))
-                return notify_fail("ÄãÒªµãÈ¼Ê²Ã´£¿\n");
+                return notify_fail("ä½ è¦é»ç‡ƒä»€éº¼ï¼Ÿ\n");
         if( query("pending", this_object()) != query("name", me) )
-                return notify_fail("ÓÖ²»ÊÇÄã³¬¶È£¬Ï¹»ı¼«Ê²Ã´£¿\n");
-        message_vision(HIR"$NµãÈ¼ÁË¼ÀÌ³ÖĞµÄÄ¾²ñÓëËÖÓÍ£¬ĞÜĞÜÁÒ»ğ³åÌì¶øÆğ¡£\n"NOR, me);
+                return notify_fail("åˆä¸æ˜¯ä½ è¶…åº¦ï¼Œçç©æ¥µä»€éº¼ï¼Ÿ\n");
+        message_vision(HIR"$Né»ç‡ƒäº†ç¥­å£‡ä¸­çš„æœ¨æŸ´èˆ‡é…¥æ²¹ï¼Œç†Šç†Šçƒˆç«æ²–å¤©è€Œèµ·ã€‚\n"NOR, me);
         set("burning", 1);
         set("pending",query("name", me));
-        set("long", query("long") + HIR"ÀïÃæÈ¼×ÅĞÜĞÜµÄ»ğÑæ¡£\n"NOR);
+        set("long", query("long") + HIR"è£¡é¢ç‡ƒè‘—ç†Šç†Šçš„ç«ç‡„ã€‚\n"NOR);
         set("in_use", 0);
         log_file("job/xueshan",query("name", me)+"("+
-            query("id", me)+")¿ªÊ¼ÉÕÈË"+ctime(time())+"\n");
+            query("id", me)+")é–‹å§‹ç‡’äºº"+ctime(time())+"\n");
         remove_call_out("burning");
         call_out("burning",20+random(20), me);
         return 1;
@@ -124,7 +124,7 @@ void burning(object me)
         point = point * me->query_skill("lamaism")/20;
                 
         if( query("combat_exp", me)<150000)point=point/2;
-        message_vision(BLU"Ò»Ë¿»êÆÇÉı³ö¼ÀÌ³£¬È½È½¶øÆğ¡£»êÆÇÊÜ$N·ğ·¨¸ĞÕÙ£¬ÅÇ»²²»È¥¡£\n"NOR, me);
+        message_vision(BLU"ä¸€çµ²é­‚é­„å‡å‡ºç¥­å£‡ï¼Œå†‰å†‰è€Œèµ·ã€‚é­‚é­„å—$Nä½›æ³•æ„Ÿå¬ï¼Œå¾˜å¾Šä¸å»ã€‚\n"NOR, me);
 /************ add butter bonus ******/
                 point += butter;
 /************************************/
@@ -144,15 +144,15 @@ int do_spray(string arg)
         if (!present("lubo", me))
                 return 0;
         if( query("name", me) != query("pending") )
-                return notify_fail("Äã¸úÕâ¶ù´ÕÊ²Ã´ÈÈÄÖ£¿\n");
+                return notify_fail("ä½ è·Ÿé€™å…’æ¹Šä»€éº¼ç†±é¬§ï¼Ÿ\n");
         if (!query("wait_for_spray"))
-                return notify_fail("Ê±³½Î´µ½£¡\n");
+                return notify_fail("æ™‚è¾°æœªåˆ°ï¼\n");
         if (!id(arg))
-                return notify_fail("ÄãÏëÍùÄÄ¶ùÅç£¿\n");
+                return notify_fail("ä½ æƒ³å¾€å“ªå…’å™´ï¼Ÿ\n");
         if( query("liquid/remaining", ob)<1 )
-                return notify_fail("Â­²§ÀïÃæµÄË®ÒÑ¾­ËùÊ£ÎŞ¼¸ÁË¡£\n");
+                return notify_fail("é¡±ç µè£¡é¢çš„æ°´å·²ç¶“æ‰€å‰©ç„¡å¹¾äº†ã€‚\n");
 
-        message_vision(HIW"$N¶ËÆğÂ­²§Îü½øÒ»¿ÚË®£¬¡¸àÛ¡¹µÄÒ»ÉùÃÍµØ³¯ÄÇĞÜĞÜ»ğÑæÅç½«¹ıÈ¥¡£\n"NOR, me);
+        message_vision(HIW"$Nç«¯èµ·é¡±ç µå¸é€²ä¸€å£æ°´ï¼Œã€Œå™—ã€çš„ä¸€è²çŒ›åœ°æœé‚£ç†Šç†Šç«ç‡„å™´å°‡éå»ã€‚\n"NOR, me);
         addn("liquid/remaining", -1, ob);
         set("wait_for_spray", 0);
         set("time_to_dazuo", 1);
@@ -165,16 +165,16 @@ int do_dazuo()
         if (me->is_busy()
          || query_temp("pending/exercising", me )
          || query_temp("exit_blocked", me) )
-                return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£å¿™è‘—å‘¢ã€‚\n");
         
         if( query("name", me) != query("pending") )
-                return notify_fail("Äã´ÕÊ²Ã´ÈÈÄÖ£¿\n");
+                return notify_fail("ä½ æ¹Šä»€éº¼ç†±é¬§ï¼Ÿ\n");
         if( query("neili", me)<600 )
-                return notify_fail("ÄãÄÚÁ¦²»¹»£¡\n");
+                return notify_fail("ä½ å…§åŠ›ä¸å¤ ï¼\n");
         if (!query("time_to_dazuo"))
-                return notify_fail("Õâ²»ÊÇÄã´ò×øµÄÊ±ºò¡£\n");
+                return notify_fail("é€™ä¸æ˜¯ä½ æ‰“åçš„æ™‚å€™ã€‚\n");
 
-        message_vision(HIY"$NÅÌÍÈ´ò×ø£¬Éñ¹âÄÚÔÌ£¬¿ÚÖĞÄîÄîÓĞ´Ç£¬½¥½¥ÓĞÒ»Ë¿»êÆÇÔÚ$NÃæÇ°Äı¾Û³ÉĞÎ¡£\n"NOR, me);
+        message_vision(HIY"$Nç›¤è…¿æ‰“åï¼Œç¥å…‰å…§è˜Šï¼Œå£ä¸­å¿µå¿µæœ‰è¾­ï¼Œæ¼¸æ¼¸æœ‰ä¸€çµ²é­‚é­„åœ¨$Né¢å‰å‡èšæˆå½¢ã€‚\n"NOR, me);
         me->start_busy(20);
         remove_call_out("rise");
         call_out("rise",20+random(20), me);
@@ -182,16 +182,16 @@ int do_dazuo()
 }
 void rise(object me)
 {
-        message_vision(BLU"»êÆÇÔ½¾ÛÔ½¶à£¬¾¹È»³Ê³öÈËĞÎ£¡ $NÊÖÖ¸ÈËĞÎ£¬¿ÚÄîÕæÑÔ£¬Ö¸ÒıÍùÉúÖ®Â·¡£\n"NOR, me);
+        message_vision(BLU"é­‚é­„è¶Šèšè¶Šå¤šï¼Œç«Ÿç„¶å‘ˆå‡ºäººå½¢ï¼ $Næ‰‹æŒ‡äººå½¢ï¼Œå£å¿µçœŸè¨€ï¼ŒæŒ‡å¼•å¾€ç”Ÿä¹‹è·¯ã€‚\n"NOR, me);
         addn("neili", -600, me);
         if( query_temp("award_pending", me)*10/query("combat_exp", me) >= 16){
         addn("max_neili", me->query_skill("lamaism",1)/100, me);
-        log_file("job/xueshan",query("name", me)+"("+query("id", me)+")µÃµ½"+me->query_skill("lamaism",1)/100+"µã×î´óÄÚÁ¦Öµ"+ctime(time())+"\n");
+        log_file("job/xueshan",query("name", me)+"("+query("id", me)+")å¾—åˆ°"+me->query_skill("lamaism",1)/100+"é»æœ€å¤§å…§åŠ›å€¼"+ctime(time())+"\n");
         }
 
         if( query_temp("award_doubling", me)){
         addn("max_neili", me->query_skill("lamaism",1)/20, me);
-        log_file("job/xueshan",query("name", me)+"("+query("id", me)+")µÃµ½"+me->query_skill("lamaism",1)/100+"µã×î´óÄÚÁ¦Öµ"+ctime(time())+"\n");
+        log_file("job/xueshan",query("name", me)+"("+query("id", me)+")å¾—åˆ°"+me->query_skill("lamaism",1)/100+"é»æœ€å¤§å…§åŠ›å€¼"+ctime(time())+"\n");
         }
         set("time_to_dazuo", 0);
         set("time_to_wave", 1);
@@ -201,22 +201,22 @@ int do_wave(string arg)
         object weapon, me = this_player();
 
         if (!arg && arg != "ling" && arg != "fa ling")
-                return notify_fail("ÄãÒªÒ¡Ê²Ã´£¿\n");
+                return notify_fail("ä½ è¦æ–ä»€éº¼ï¼Ÿ\n");
                 
         if (!present("fa ling", me))
-                return notify_fail("ÄãÒªÒ¡Ê²Ã´£¿\n");
+                return notify_fail("ä½ è¦æ–ä»€éº¼ï¼Ÿ\n");
 
         if( query("name", me) != query("pending") )
-                return notify_fail("Äã¸úÕâ¶ù´ÕÊ²Ã´ÈÈÄÖ£¿\n");
+                return notify_fail("ä½ è·Ÿé€™å…’æ¹Šä»€éº¼ç†±é¬§ï¼Ÿ\n");
 
         if( !objectp(weapon=query_temp("weapon", me) )
-         || (query_temp("weapon",query("name",  me))) != "·¨Áå" )
-                return notify_fail("ÄãÊÖÖĞÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+         || (query_temp("weapon",query("name",  me))) != "æ³•éˆ´" )
+                return notify_fail("ä½ æ‰‹ä¸­æ²’æœ‰é€™æ¨£æ±è¥¿ã€‚\n");
         
         if (!query("time_to_wave"))
-                return notify_fail("Ê±³½Î´µ½£¡\n");
+                return notify_fail("æ™‚è¾°æœªåˆ°ï¼\n");
 
-        message_vision(CYN"$NÊÖ³Ö·¨Áå£¬±ß×ß±ßÒ¡£¬¸ßÉùËĞ¶ÁÃÜ´«¾­Öä¡£Í»È»´óºÈÒ»Éù¡£ÉùËÆÀ×öª¡£\n"NOR, me);
+        message_vision(CYN"$Næ‰‹æŒæ³•éˆ´ï¼Œé‚Šèµ°é‚Šæ–ï¼Œé«˜è²èª¦è®€å¯†å‚³ç¶“å’’ã€‚çªç„¶å¤§å–ä¸€è²ã€‚è²ä¼¼é›·éœ†ã€‚\n"NOR, me);
         set("time_to_wave", 0);
         remove_call_out("close_up");
         call_out("close_up",20+random(20), me);
@@ -268,10 +268,10 @@ void close_up(object me)
         gaining = gaining + butter;
 //************************************
 
-        message_vision(HIW"´óÔºÀï¹âÃ£ËÄÆğ£¬Ò»Éù¾ŞÏì¹ıºó£¬ÓÖ»Ö¸´ÁËÆ½¾²¡£³¬¶ÈÍê±Ï¡£\n"NOR, me);
-        set("long", "ÕâÊÇÒ»¸ö¼«ÆäÅÓ´óµÄÍ­ÖÆ¼ÀÌ³£¬¸ßÔ¼ÈıÕÉ£¬·½Ô²Ô¼ÓĞÎåÕÉ£¬ÄËÊÇµ±ÄêÍÂ·¬¹úÍõÇ×\n"
-                    "×ÔÖ¸»ÓÖıÔìµÄ£¬ºÄÇã¹úÖ®Á¦£¬Ê®Äê·½³É¡£\n");
-        set("long", query("long") + RED"ÀïÃæÈ¼×ÅµÄ»ğÑæ¿ìÏ¨ÃğÁË¡£\n"NOR);
+        message_vision(HIW"å¤§é™¢è£¡å…‰èŒ«å››èµ·ï¼Œä¸€è²å·¨éŸ¿éå¾Œï¼Œåˆæ¢å¾©äº†å¹³éœã€‚è¶…åº¦å®Œç•¢ã€‚\n"NOR, me);
+        set("long", "é€™æ˜¯ä¸€å€‹æ¥µå…¶é¾å¤§çš„éŠ…åˆ¶ç¥­å£‡ï¼Œé«˜ç´„ä¸‰ä¸ˆï¼Œæ–¹åœ“ç´„æœ‰äº”ä¸ˆï¼Œä¹ƒæ˜¯ç•¶å¹´åç•ªåœ‹ç‹è¦ª\n"
+                    "è‡ªæŒ‡æ®é‘„é€ çš„ï¼Œè€—å‚¾åœ‹ä¹‹åŠ›ï¼Œåå¹´æ–¹æˆã€‚\n");
+        set("long", query("long") + RED"è£¡é¢ç‡ƒè‘—çš„ç«ç‡„å¿«ç†„æ»…äº†ã€‚\n"NOR);
         me->improve_skill("lamaism",query("int", me));
         addn("jingli", -300, me);
         set("burning", 0);
@@ -279,15 +279,15 @@ void close_up(object me)
         expG = gaining*2 + random(gaining);
          if( query_temp("award_pending", me) )
             addn("combat_exp", expG, me);
-        log_file("job/xueshan",query("name", me)+"("+query("id", me)+")ÉÕÈË»ñµÃ"+
-            expG + " µã¾­ÑéºÍ "+ 0 + " µãÇ³ÄÜ "+ctime(time())+"\n");
+        log_file("job/xueshan",query("name", me)+"("+query("id", me)+")ç‡’äººç²å¾—"+
+            expG + " é»ç¶“é©—å’Œ "+ 0 + " é»æ·ºèƒ½ "+ctime(time())+"\n");
 
        // if (me->query_temp("award_doubling"))
         //me->addn("combat_exp", (int)me->query_temp("award_pending")/50);       
         delete_temp("award_pending", me);
         delete_temp("award_doubling", me);
         delete_temp("award_pot", me);
-        delete_temp("marks/¸ğ", me);
+        delete_temp("marks/è‘›", me);
 
         //clean all stuff in fatan after finish  // by maco
         inv = all_inventory(ob);
@@ -307,6 +307,6 @@ void renewing(object ob)
 {
         set("last_burner",query("pending",  ob), ob);
         set("pending", 0, ob);
-        ob->set("long","ÕâÊÇÒ»¸ö¼«ÆäÅÓ´óµÄÍ­ÖÆ¼ÀÌ³£¬¸ßÔ¼ÈıÕÉ£¬·½Ô²Ô¼ÓĞÎåÕÉ£¬ÄËÊÇµ±ÄêÍÂ·¬¹úÍõÇ×\n"
-                        "×ÔÖ¸»ÓÖıÔìµÄ£¬ºÄÇã¹úÖ®Á¦£¬Ê®Äê·½³É¡£\n");
+        ob->set("long","é€™æ˜¯ä¸€å€‹æ¥µå…¶é¾å¤§çš„éŠ…åˆ¶ç¥­å£‡ï¼Œé«˜ç´„ä¸‰ä¸ˆï¼Œæ–¹åœ“ç´„æœ‰äº”ä¸ˆï¼Œä¹ƒæ˜¯ç•¶å¹´åç•ªåœ‹ç‹è¦ª\n"
+                        "è‡ªæŒ‡æ®é‘„é€ çš„ï¼Œè€—å‚¾åœ‹ä¹‹åŠ›ï¼Œåå¹´æ–¹æˆã€‚\n");
 }                                

@@ -4,16 +4,16 @@ inherit __DIR__"skpaper";
 
 void create()
 {
-        set_name(NOR + WHT "µ¶µä²ĞÆª" NOR, ({ "daodian canpian", "daodian", "canpian" }));
+        set_name(NOR + WHT "åˆ€å…¸æ®˜ç¯‡" NOR, ({ "daodian canpian", "daodian", "canpian" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "ÕÅ");
-                set("long", "ÕâÊÇÒ»ÕÅ²ĞÈ±²»È«µÄÊéÒ³¡£\n" NOR);
+                set("unit", "å¼µ");
+                set("long", "é€™æ˜¯ä¸€å¼µæ®˜ç¼ºä¸å…¨çš„æ›¸é ã€‚\n" NOR);
                 set("value", 30);
-                set("no_sell", "Ê²Ã´ÊÀµÀ£¬¾ÍÒ»ÕÅÆÆÖ½Í·Ò²ÄÃÀ´ÂôÇ®£¿");
+                set("no_sell", "ä»€éº¼ä¸–é“ï¼Œå°±ä¸€å¼µç ´ç´™é ­ä¹Ÿæ‹¿ä¾†è³£éŒ¢ï¼Ÿ");
                 set("material", "paper");
-                set("skill_name", "»ù±¾µ¶·¨");
+                set("skill_name", "åŸºæœ¬åˆ€æ³•");
                 set("skill_type", "blade");
                 set("power_point", 30000);
                 set("need_exp", 300000);

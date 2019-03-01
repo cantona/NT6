@@ -3,9 +3,9 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÀÏĞã²Å", ({ "lao xiucai", "lao" }));
-        set("long", "Ò»¸öÇîÀ§ÁÊµ¹µÄÂäµÚĞã²Å£¬ÔÚÕâÀï¿ªÌÃÊÚ¿ÎÎªÉú¡£\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("è€ç§€æ‰", ({ "lao xiucai", "lao" }));
+        set("long", "ä¸€å€‹çª®å›°æ½¦å€’çš„è½ç¬¬ç§€æ‰ï¼Œåœ¨é€™è£¡é–‹å ‚æˆèª²ç‚ºç”Ÿã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 65);
 
         set_skill("literate", 100);
@@ -27,19 +27,19 @@ void create()
 
 int recognize_apprentice(object ob)
 {
-        if( !query_temp("mark/Öì", ob) )
+        if( !query_temp("mark/æœ±", ob) )
                 return 0; 
-        addn_temp("mark/Öì", -1, ob);
+        addn_temp("mark/æœ±", -1, ob);
         return 1;
 }
 
 int accept_object(object who, object ob)
 {
-        if( !query_temp("mark/Öì", who) )
-                set_temp("mark/Öì", 0, who);
+        if( !query_temp("mark/æœ±", who) )
+                set_temp("mark/æœ±", 0, who);
         if( query("money_id", ob) && ob->value() >= 5000){
-                message_vision("ÀÏĞã²ÅÍ¬ÒâÖ¸µã$NÒ»Ğ©ÎÊÌâ¡£\n", who);
-                addn_temp("mark/Öì", ob->value()/250, who);
+                message_vision("è€ç§€æ‰åŒæ„æŒ‡é»$Nä¸€äº›å•é¡Œã€‚\n", who);
+                addn_temp("mark/æœ±", ob->value()/250, who);
                 return 1;
         }
         return 0;

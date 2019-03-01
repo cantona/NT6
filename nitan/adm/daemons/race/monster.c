@@ -16,9 +16,9 @@ void setup_monster(object ob)
 
         my = ob->query_entire_dbase();
 
-        my["unit"] = "Ö»";
+        my["unit"] = "åª";
         
-        if( undefinedp(my["gender"]) ) my["gender"] = "ĞÛĞÔ";
+        if( undefinedp(my["gender"]) ) my["gender"] = "é›„æ€§";
         if( undefinedp(my["age"]) ) my["age"] = random(80) + 5;
 
         if( undefinedp(my["str"]) ) my["str"] = random(41) + 10;
@@ -47,11 +47,11 @@ void setup_monster(object ob)
         //        ob->init_limbs(LIMBS);
         if( !ob->query_weight() ) ob->set_weight(BASE_WEIGHT + (my["str"] - 10)* 2000);
 
-        set("dead_message",       "\n$NÑöÌì²Òº¿ÁËÒ»Éù£¬Å¿ÔÚµØÉÏ²»¶¯ÁË¡£\n\n"      );
-        set("unconcious_message", "\n$NÅØÏøÒ»Éù£¬µ¹ÔÚµØÉÏ»èÁË¹ıÈ¥¡£\n\n"          );
-        set("revive_message",     "\n$NÂıÂıÕö¿ªÑÛ¾¦£¬ÇåĞÑÁË¹ıÀ´¡£\n\n"            );
-        set("leave_msg",          "Àë¿ª"                                  );
-        set("arrive_msg",         "»º»ºµØ×ßÁË¹ıÀ´"                            );
-        set("fleeout_message",    "ÅØÏø×ÅÂä»Ä¶øÌÓÁË"                  );
-        set("fleein_message",     "Ò¡Ò¡°Ú°ÚµØÅÜÁË¹ıÀ´£¬Éì³öÉàÍ·ºôºôµØ´­×Å´ÖÆø");
+        set("dead_message",       "\n$Nä»°å¤©æ…˜åšäº†ä¸€è²ï¼Œè¶´åœ¨åœ°ä¸Šä¸å‹•äº†ã€‚\n\n"      );
+        set("unconcious_message", "\n$Nå’†å“®ä¸€è²ï¼Œå€’åœ¨åœ°ä¸Šæ˜äº†éå»ã€‚\n\n"          );
+        set("revive_message",     "\n$Næ…¢æ…¢çœé–‹çœ¼ç›ï¼Œæ¸…é†’äº†éä¾†ã€‚\n\n"            );
+        set("leave_msg",          "é›¢é–‹"                                  );
+        set("arrive_msg",         "ç·©ç·©åœ°èµ°äº†éä¾†"                            );
+        set("fleeout_message",    "å’†å“®è‘—è½è’è€Œé€ƒäº†"                  );
+        set("fleein_message",     "æ–æ–æ“ºæ“ºåœ°è·‘äº†éä¾†ï¼Œä¼¸å‡ºèˆŒé ­å‘¼å‘¼åœ°å–˜è‘—ç²—æ°£");
 }

@@ -1,4 +1,4 @@
-// rongwutang.c ������
+// rongwutang.c 容物堂
 // Winder Oct.10 1998
 
 #include <ansi.h>
@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "������");
+        set("short", "容物堂");
         set("long", @LONG
-������ȫ������֮��̷���˵ľ��ң���䷿����ʰ�ĺ���ͨ����
-��ûʲô����ֻ��һ����Ⱦ��ǽ��б����һ�ѱ�����
+這裡是全真七子之二譚處端的居室，這間房間收拾的和普通的民
+居沒什麼區別，只是一塵不染，牆上斜掛著一把寶劍。
 LONG
         );
         set("exits", ([

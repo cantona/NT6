@@ -10,14 +10,14 @@ void init()
 
 void create()
 {
-        set_name("ôÂôÄ", ({"jia sha", "jia", "sha"}));
+        set_name("è¢ˆè£Ÿ", ({"jia sha", "jia", "sha"}));
         set_weight(800);
         set("taskobj", 1);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¼ş¾ÉµÃÒÑ¾­¿´²»³öÑÕÉ«µÄôÂôÄ£¬ÉÏÃæÓĞºÃ¶à¿ßÁş¡£\n");
-                set("unit", "¼ş");
+                set("long", "ä¸€ä»¶èˆŠå¾—å·²ç¶“çœ‹ä¸å‡ºé¡è‰²çš„è¢ˆè£Ÿï¼Œä¸Šé¢æœ‰å¥½å¤šçªŸçª¿ã€‚\n");
+                set("unit", "ä»¶");
                 set("material", "cloth");
         }
         setup();

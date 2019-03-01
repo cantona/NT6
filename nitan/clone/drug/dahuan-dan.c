@@ -1,5 +1,5 @@
 //Cracked by Roath
-// dahuan-dan.c ´ó»¹µ¤
+// dahuan-dan.c å¤§é‚„ä¸¹
 
 #include <ansi.h>
 
@@ -15,17 +15,17 @@ void init()
 
 void create()
 {
-        set_name("´ó»¹µ¤", ({"dahuan dan", "dahuan", "dan"}));
+        set_name("å¤§é‚„ä¸¹", ({"dahuan dan", "dahuan", "dan"}));
         set_weight(10);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
-                set("long", "ÕâÊÇÒ»¿Å×Ïºì¾§ÁÁµÄ´ó»¹µ¤¡£´Ëµ¤ÄËÉÙÁÖÕäÒ©£¬Ìá¸ß¹¦Á¦£¬ÁéÐ§ÎÞ±È¡£\n");
+                set("unit", "é¡†");
+                set("long", "é€™æ˜¯ä¸€é¡†ç´«ç´…æ™¶äº®çš„å¤§é‚„ä¸¹ã€‚æ­¤ä¸¹ä¹ƒå°‘æž—çè—¥ï¼Œæé«˜åŠŸåŠ›ï¼Œéˆæ•ˆç„¡æ¯”ã€‚\n");
                 set("value", 10000);
                 set("no_sell", 1);
                 set("medicine", 1);
-                set("no_drop", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
+                set("no_drop", "é€™æ¨£æ±è¥¿ä¸èƒ½é›¢é–‹ä½ ã€‚\n");
         }
 
         set("shaolin",1);
@@ -42,7 +42,7 @@ int cure_ob(object me)
                 else 
                         set("max_neili", 1, me);
 
-                message_vision(HIR "$N³ÔÏÂÒ»¿Å´ó»¹µ¤£¬Ö»¾õµÃ¸Î³¦´ç¶Ï£¬Ô­À´ËùÁ·ÄÚ¹¦²»·û£¬·´¶ø´óËðÕæÔª£¡\n" NOR, me);
+                message_vision(HIR "$Nåƒä¸‹ä¸€é¡†å¤§é‚„ä¸¹ï¼Œåªè¦ºå¾—è‚è…¸å¯¸æ–·ï¼ŒåŽŸä¾†æ‰€ç·´å…§åŠŸä¸ç¬¦ï¼Œåè€Œå¤§æçœŸå…ƒï¼\n" NOR, me);
                 me->unconcious();
                 destruct(this_object());
                 return 1;
@@ -51,12 +51,12 @@ int cure_ob(object me)
         if ( (int)me->query_condition("bonze_drug" ) > 0 )
         {  
                 addn("max_neili", -1, me);
-            message_vision(HIR "$N³ÔÏÂÒ»¿Å´ó»¹µ¤£¬Ö»¾õµÃÍ·ÖØ½ÅÇá£¬Ò¡Ò¡Óûµ¹£¬Ô­À´·þÊ³Ì«¼±Ì«¶à£¬Ò©Ð§ÊÊµÃÆä·´£¡\n" NOR, me);
+            message_vision(HIR "$Nåƒä¸‹ä¸€é¡†å¤§é‚„ä¸¹ï¼Œåªè¦ºå¾—é ­é‡è…³è¼•ï¼Œæ–æ–æ¬²å€’ï¼ŒåŽŸä¾†æœé£Ÿå¤ªæ€¥å¤ªå¤šï¼Œè—¥æ•ˆé©å¾—å…¶åï¼\n" NOR, me);
         }
         else {
                 addn("max_neili", 1, me);
-                message_vision(HIG "$N³ÔÏÂÒ»¿Å´ó»¹µ¤£¬Ö»¾õµÃÌåÄÚÕæÁ¦Ô´Ô´×ÌÉú£¬¹ý×Ï¹¬£¬ÈëÄàÍè
-Í¸Ê®¶þÖØÂ¥£¬±é²¼Ææ½î°ËÂö£¬È«Éí¹¦Á¦¶ÙÈ»Ìá¸ß !\n" NOR, me);
+                message_vision(HIG "$Nåƒä¸‹ä¸€é¡†å¤§é‚„ä¸¹ï¼Œåªè¦ºå¾—é«”å…§çœŸåŠ›æºæºæ»‹ç”Ÿï¼ŒéŽç´«å®®ï¼Œå…¥æ³¥ä¸¸
+é€åäºŒé‡æ¨“ï¼Œéå¸ƒå¥‡ç­‹å…«è„ˆï¼Œå…¨èº«åŠŸåŠ›é “ç„¶æé«˜ !\n" NOR, me);
         }
 
         me->apply_condition("bonze_drug", 60);

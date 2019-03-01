@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÃÜ¶´");
+        set("short", "å¯†æ´");
         set("long", @LONG
-¶´ÄÚÉîñºÎŞ±È£¬ÉñÃØÄÑ²â¡£ÄãÒ»×ß½øÀ´£¬±ã·¢¾õ¶´ÖĞ²æ¶´¶àÈçÃÔ¹¬£¬¹ÖÒì
-Äª²â£¬ËÆºõ÷îºÚÎŞµ×¡£
+æ´å…§æ·±çªˆç„¡æ¯”ï¼Œç¥ç§˜é›£æ¸¬ã€‚ä½ ä¸€èµ°é€²ä¾†ï¼Œä¾¿ç™¼è¦ºæ´ä¸­å‰æ´å¤šå¦‚è¿·å®®ï¼Œæ€ªç•°
+è«æ¸¬ï¼Œä¼¼ä¹é»é»‘ç„¡åº•ã€‚
 LONG);
         set("exits", ([
                 "east" : __FILE__,
@@ -31,19 +31,19 @@ int do_use(string arg)
    me = this_player();
    if(!living(me) ) return 0;
    if (me->is_busy() || me->is_fighting())
-      return notify_fail("ÄãÕıÃ¦×ÅÄÄ£¡\n");
+      return notify_fail("ä½ æ­£å¿™è‘—å“ªï¼\n");
    if(!objectp(ob = present("fire", me)))
-      return notify_fail("ÄãÊÖÖĞÃ»ÓĞ»ğÕÛ¡£\n");
+      return notify_fail("ä½ æ‰‹ä¸­æ²’æœ‰ç«æŠ˜ã€‚\n");
    if( !arg || arg=="" ) return 0;
    if( arg == "fire" ) {
-      message_vision(BLU"$NµãÈ¼»ğÕÛ£¬°Ñ¶´ÄÚÕÕÁÁÁËÒ»Ğ©£¬Î¢ÈõµÄ»ğ¹âÒ»ÉÁÒ»ÉÁµÄ¡£\n"NOR, me);
-      message_vision(BLU"$NËÆºõ¿´³öÃÜ¶´µÄÒ»Ğ©ÃÅµÀ¡£\n"NOR, me);
-      me->set_temp("baozang/north_",2+random(8));//±±
-      me->set_temp("baozang/south_",2+random(8));//ÄÏ
-      me->set_temp("baozang/east_",2+random(8));//¶«
-      me->set_temp("baozang/west_",2+random(8));//Î÷
-      tell_object(me,HIY"ÄãÓÖ°µÀïÍÆËãÒ»·¬£¬Ô­À´Èç´Ë£º¶«ĞĞ"+chinese_number(me->query_temp("baozang/east_"))+"²½£¬Î÷ĞĞ"+chinese_number(me->query_temp("baozang/west_"))
-                        +"£¬±±ÕÛ"+chinese_number(me->query_temp("baozang/north_"))+"£¬ÄÏ»Ø"+chinese_number(me->query_temp("baozang/south_"))+"¼´¿É£¡\n"NOR);
+      message_vision(BLU"$Né»ç‡ƒç«æŠ˜ï¼ŒæŠŠæ´å…§ç…§äº®äº†ä¸€äº›ï¼Œå¾®å¼±çš„ç«å…‰ä¸€é–ƒä¸€é–ƒçš„ã€‚\n"NOR, me);
+      message_vision(BLU"$Nä¼¼ä¹çœ‹å‡ºå¯†æ´çš„ä¸€äº›é–€é“ã€‚\n"NOR, me);
+      me->set_temp("baozang/north_",2+random(8));//åŒ—
+      me->set_temp("baozang/south_",2+random(8));//å—
+      me->set_temp("baozang/east_",2+random(8));//æ±
+      me->set_temp("baozang/west_",2+random(8));//è¥¿
+      tell_object(me,HIY"ä½ åˆæš—è£¡æ¨ç®—ä¸€ç•ªï¼ŒåŸä¾†å¦‚æ­¤ï¼šæ±è¡Œ"+chinese_number(me->query_temp("baozang/east_"))+"æ­¥ï¼Œè¥¿è¡Œ"+chinese_number(me->query_temp("baozang/west_"))
+                        +"ï¼ŒåŒ—æŠ˜"+chinese_number(me->query_temp("baozang/north_"))+"ï¼Œå—å›"+chinese_number(me->query_temp("baozang/south_"))+"å³å¯ï¼\n"NOR);
       return 1; 
    }
 }
@@ -61,18 +61,18 @@ int valid_leave(object me, string dir)
         if (me->query_temp("baozang/north") >= 13||me->query_temp("baozang/south") >= 13
            ||me->query_temp("baozang/east") >= 13||me->query_temp("baozang/west") >= 13)
         {
-         	  message_vision(HIG"$NÏñÃ»Í·²ÔÓ¬Ò»ÑùÔÚ¶´ÀïÏ¹×ê£¬½á¹ûÒ»Í·×²ÔÚ¶´±ÚÉÏ¡£Äã¾õµÃÄãÔÎºõºõµÄ£¬ËÆºõ×²ÉµÁË¡£\n"NOR, me);
+         	  message_vision(HIG"$Nåƒæ²’é ­è’¼è …ä¸€æ¨£åœ¨æ´è£¡çé‘½ï¼Œçµæœä¸€é ­æ’åœ¨æ´å£ä¸Šã€‚ä½ è¦ºå¾—ä½ æšˆä¹ä¹çš„ï¼Œä¼¼ä¹æ’å‚»äº†ã€‚\n"NOR, me);
             me->delete_temp("baozang/north");
             me->delete_temp("baozang/south");
             me->delete_temp("baozang/east");
             me->delete_temp("baozang/west");
             me->start_busy(1);
-            return notify_fail(HIB"Äã³Ô¾ªµØ·¢ÏÖ£¬ÄãÏÖÔÚµÄÎ»ÖÃ¾¹È»¾ÍÊÇ×î³õµÄÎ»ÖÃ¡£\n"NOR);
+            return notify_fail(HIB"ä½ åƒé©šåœ°ç™¼ç¾ï¼Œä½ ç¾åœ¨çš„ä½ç½®ç«Ÿç„¶å°±æ˜¯æœ€åˆçš„ä½ç½®ã€‚\n"NOR);
         }  
         if (me->query_temp("baozang/north") == 10 && me->query_temp("baozang/south") == 10
           && me->query_temp("baozang/east") == 10 && me->query_temp("baozang/west") == 10)
         {
-         	  message_vision(HIC"$NÏñÃ»Í·²ÔÓ¬Ò»ÑùÔÚ¶´ÀïÏ¹×ê£¬½á¹ûÒ»Í·×²ÔÚ¶´±ÚÉÏ¡£Äã¾õµÃÄãÔÎºõºõµÄ£¬ËÆºõ×²ÉµÁË¡£\n"NOR, me);
+         	  message_vision(HIC"$Nåƒæ²’é ­è’¼è …ä¸€æ¨£åœ¨æ´è£¡çé‘½ï¼Œçµæœä¸€é ­æ’åœ¨æ´å£ä¸Šã€‚ä½ è¦ºå¾—ä½ æšˆä¹ä¹çš„ï¼Œä¼¼ä¹æ’å‚»äº†ã€‚\n"NOR, me);
             me->delete_temp("baozang/north");
             me->delete_temp("baozang/south");
             me->delete_temp("baozang/east");
@@ -82,8 +82,8 @@ int valid_leave(object me, string dir)
             me->delete_temp("baozang/east_");
             me->delete_temp("baozang/west_");
             me->move(__DIR__"shuku");
-            tell_room(environment(me), me->name()+"´ÓÎ÷±ßµÄÃÜ¶´×ßÁË¹ıÀ´¡£\n", ({ me }));
-            return notify_fail(HIB"Äã³Ô¾ªµØ·¢ÏÖ£¬ÄãÖÕÓÚ×ß³öÁËÃÜ¶´¡£\n"NOR);
+            tell_room(environment(me), me->name()+"å¾è¥¿é‚Šçš„å¯†æ´èµ°äº†éä¾†ã€‚\n", ({ me }));
+            return notify_fail(HIB"ä½ åƒé©šåœ°ç™¼ç¾ï¼Œä½ çµ‚äºèµ°å‡ºäº†å¯†æ´ã€‚\n"NOR);
         } 
         if (me->query_temp("baozang/north_") 
             && me->query_temp("baozang/north") == me->query_temp("baozang/north_") 
@@ -100,8 +100,8 @@ int valid_leave(object me, string dir)
             me->delete_temp("baozang/east_");
             me->delete_temp("baozang/west_");
             me->move(__DIR__"shuku");
-            tell_room(environment(me), me->name()+"´ÓÎ÷±ßµÄÃÜ¶´×ßÁË¹ıÀ´¡£\n", ({ me }));
-            return notify_fail(HIY"ÄãÀÛµÃ°ëËÀ£¬ÖÕì¶×ß³öÁËÃÜ¶´¡£\n"NOR);
+            tell_room(environment(me), me->name()+"å¾è¥¿é‚Šçš„å¯†æ´èµ°äº†éä¾†ã€‚\n", ({ me }));
+            return notify_fail(HIY"ä½ ç´¯å¾—åŠæ­»ï¼Œçµ‚æ–¼èµ°å‡ºäº†å¯†æ´ã€‚\n"NOR);
         }                          
         return ::valid_leave(me,dir);
 }

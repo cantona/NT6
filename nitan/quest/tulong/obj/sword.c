@@ -4,8 +4,8 @@ inherit SWORD;
 
 void create()
 {
-        set_name(HIC"¾«Áé³¤½£"NOR, ({ "spirit sword", "sword" })); 
-        set("long", "¾«ÁéµÄ±¦Îï£¬ÆäÖĞ°üº¬×Å¾«ÁéÖ®Íõ"+HIY"Ò¹"+HIG"³½"NOR+"µÄÁ¦Á¿¡£\n");
+        set_name(HIC"ç²¾éˆé•·åŠ"NOR, ({ "spirit sword", "sword" })); 
+        set("long", "ç²¾éˆçš„å¯¶ç‰©ï¼Œå…¶ä¸­åŒ…å«è‘—ç²¾éˆä¹‹ç‹"+HIY"å¤œ"+HIG"è¾°"NOR+"çš„åŠ›é‡ã€‚\n");
         set("no_get",1);
         set("no_give",1);
         set("no_steal",1);
@@ -15,11 +15,11 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
+                set("unit", "æŸ„");
                 set("value", 0);
                 set("material", "iron");
-                set("wield_msg", HIC"$NÓÒÊÖ½áÓ¡£¬´¹Ä¿Ä¬ÄîÖäÓï¡£Ò»µã¹âÃ¢ÔÚ$NÕÆÖĞÖğ½¥ÁÁÆğ£¬$n"NOR+HIC"½¥½¥³ÉĞÎ¡£\n"NOR);
-                set("unwield_msg", "$n"+HIC"´Ó$NÊÖÖĞÒ»Ô¾¶øÆğ£¬»¯ÎªÒ»Æ¬Ã÷ÁÁµÄ¹âÃ¢¡£\n"NOR); 
+                set("wield_msg", HIC"$Nå³æ‰‹çµå°ï¼Œå‚ç›®é»˜å¿µå’’èªã€‚ä¸€é»å…‰èŠ’åœ¨$NæŒä¸­é€æ¼¸äº®èµ·ï¼Œ$n"NOR+HIC"æ¼¸æ¼¸æˆå½¢ã€‚\n"NOR);
+                set("unwield_msg", "$n"+HIC"å¾$Næ‰‹ä¸­ä¸€èºè€Œèµ·ï¼ŒåŒ–ç‚ºä¸€ç‰‡æ˜äº®çš„å…‰èŠ’ã€‚\n"NOR); 
         }
         init_sword(300);
         setup();
@@ -27,13 +27,13 @@ void create()
 
 void owner_is_killed()
 {
-        write(HIY"Ö»¾õ½ğ¹âÒ»ÉÁ£¬ÓĞÊ²Ã´¶«Î÷²»¼ûÁË¡£\n"NOR);
+        write(HIY"åªè¦ºé‡‘å…‰ä¸€é–ƒï¼Œæœ‰ä»€éº¼æ±è¥¿ä¸è¦‹äº†ã€‚\n"NOR);
        destruct(this_object());
 }
 /*
 int query_autoload()
 {
-        write(HIG"Ò»ÕóÇå·ç·÷¹ıÉí²à£¬·Â·ğÔÚÄØà«Ê²Ã´ÖäÓï¡£\n"NOR);
+        write(HIG"ä¸€é™£æ¸…é¢¨æ‹‚éèº«å´ï¼Œä»¿ä½›åœ¨å‘¢å–ƒä»€éº¼å’’èªã€‚\n"NOR);
        return 1;
 }
 */ 
@@ -45,6 +45,6 @@ mixed hit_ob(object me, object victim, int damage_bonus)
         { 
         dam = random(10)+10;
         victim->receive_wound("qi",dam);
-        return HIC "¾«Áé³¤½£·¢³öÒ»µÀÉÁ¹â£¬ÕıºÃ»÷ÖĞÁË$n¡£\n" NOR;
+        return HIC "ç²¾éˆé•·åŠç™¼å‡ºä¸€é“é–ƒå…‰ï¼Œæ­£å¥½æ“Šä¸­äº†$nã€‚\n" NOR;
         }
 }

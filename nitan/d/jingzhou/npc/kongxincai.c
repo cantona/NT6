@@ -4,11 +4,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("¿ÕĞÄ²Ë",({ "kongxin cai", "kid" }) );
-        set("gender", "Å®ĞÔ" );
+        set_name("ç©ºå¿ƒèœ",({ "kongxin cai", "kid" }) );
+        set("gender", "å¥³æ€§" );
         set("age", 5);
         set("long", 
-"Ò»¸öÌìÕæ¿É°®µÄĞ¡Å®º¢£¬ËıÊÇÍò¼Ò¹«×ÓÍò¹çµÄÅ®¶ù¡£\n");
+"ä¸€å€‹å¤©çœŸå¯æ„›çš„å°å¥³å­©ï¼Œå¥¹æ˜¯è¬å®¶å…¬å­è¬åœ­çš„å¥³å…’ã€‚\n");
         set("combat_exp", 20);
         set("shen_type", 1);
         set("str", 14);

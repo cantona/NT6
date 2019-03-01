@@ -5,7 +5,7 @@
 
 inherit F_CLEAN_UP;
 
-string name() { return HIW "���λ�λ" NOR; }
+string name() { return HIW "移形換位" NOR; }
 
 int perform(object me, string skill)
 {
@@ -14,24 +14,24 @@ int perform(object me, string skill)
         object target;
 
         if (me->query("jing") < 100)
-                return notify_fail("��ľ��񲻼ã�����ʩչ���λ�λ��\n");
+                return notify_fail("你的精神不濟，難以施展移形換位。\n");
 
         me->clean_up_enemy();
         target = me->select_opponent();
 
         if (! me->is_fighting())
-                return notify_fail("���ֲ����ڴ�ܣ�û�����������ʲô��\n");
+                return notify_fail("你又不是在打架，沒事自言自語幹什麼？\n");
 
-        message_vision(HIM "$N" HIM "�鼱���ǣ�����$n" HIM
-                       "���ϲ������Ҵ�һͨ���������컨��׹�������ɼ䣬����ʩչ�����Ȱ��������֮زز��\n",
+        message_vision(HIM "$N" HIM "情急生智，對著$n" HIM
+                       "滔滔不絕，亂吹一通，當真是天花亂墜……遲疑間，你已施展出鬼魅般的身法逃之夭夭。\n",
                        me, target);
 
         me->receive_damage("jing", 30 + random(20));
 
-        message_vision(HIM "$n" HIM "�������κ������ƼٷǼ٣��������ޣ���֪���ԣ�"
-                           "��ֻ�ǻ���һ����$N" HIM "���Ѿ����ߡ�\n" NOR,
+        message_vision(HIM "$n" HIM "聽得暈暈乎乎，似假非假，若有若無，不知所以，"
+                           "手只是緩了一緩，$N" HIM "早已經溜走。\n" NOR,
                             me, target);
-        me->set_temp("success_flee", HIG "��ɹ��������ˣ�\n" NOR);
+        me->set_temp("success_flee", HIG "你成功的逃走了！\n" NOR);
         GO_CMD->do_flee(me);
 
         return 1;

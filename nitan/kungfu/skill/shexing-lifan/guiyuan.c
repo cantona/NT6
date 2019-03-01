@@ -11,28 +11,28 @@ int perform(object me, object target)
         int count, cnt, skill;
 
         if( query_temp("gui_yuan", me) )
-                return notify_fail("ÄãÒÑ¾­ÔËÆğ¡¸¾ÅÒõ¹éÔª¡¹ÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“é‹èµ·ã€Œä¹é™°æ­¸å…ƒã€äº†ã€‚\n");
 
         if ((int)me->query_skill("shexing-lifan", 1)< 150)
-                return notify_fail("ÄãµÄÉßĞĞÀê·­µÈ¼¶²»¹»£¬ÄÑÒÔÊ©Õ¹´ËÏî¾ø¼¼£¡\n");
+                return notify_fail("ä½ çš„è›‡è¡Œè²ç¿»ç­‰ç´šä¸å¤ ï¼Œé›£ä»¥æ–½å±•æ­¤é …çµ•æŠ€ï¼\n");
 
         if ((int)me->query_dex() < 30)
-                return notify_fail("ÄãµÄÉí·¨²»¹»Ê¹ÓÃ¡¸¾ÅÒõ¹éÔª¡¹¾ø¼¼£¡\n");
+                return notify_fail("ä½ çš„èº«æ³•ä¸å¤ ä½¿ç”¨ã€Œä¹é™°æ­¸å…ƒã€çµ•æŠ€ï¼\n");
 
         if ((int)me->query_skill("force", 1)< 150)
-                return notify_fail("ÄãµÄÄÚ¹¦»ğºò²»¹»£¬ÄÑÒÔÊ©Õ¹´ËÏî¾ø¼¼£¡\n");
+                return notify_fail("ä½ çš„å…§åŠŸç«å€™ä¸å¤ ï¼Œé›£ä»¥æ–½å±•æ­¤é …çµ•æŠ€ï¼\n");
 
         if ((int)me->query_skill("dodge", 1)< 150)
-                return notify_fail("ÄãµÄÇá¹¦ĞŞÎª²»¹»£¬²»»áÊ¹ÓÃ´ËÏî¾ø¼¼£¡\n");
+                return notify_fail("ä½ çš„è¼•åŠŸä¿®ç‚ºä¸å¤ ï¼Œä¸æœƒä½¿ç”¨æ­¤é …çµ•æŠ€ï¼\n");
 
         if( query("max_neili", me)<1000 )
-                return notify_fail("ÄãµÄÄÚÁ¦ĞŞÎª²»¹»Ê¹ÓÃ¡¸¾ÅÒõ¹éÔª¡¹£¡\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¿®ç‚ºä¸å¤ ä½¿ç”¨ã€Œä¹é™°æ­¸å…ƒã€ï¼\n");
 
         if( query("neili", me)<250 )
-                return notify_fail("Äã´ËÊ±µÄÄÚÁ¦²»×ã£¡\n");
+                return notify_fail("ä½ æ­¤æ™‚çš„å…§åŠ›ä¸è¶³ï¼\n");
 
-        msg = HIW "$N" HIW "ÔËÆğ¾ÅÒõÕæÆø£¬Ë«±Û¹Ç÷ÀÒ»Õó±¬Ïì£¬ÉíĞÎÒ»Õ¹£¬Õû"
-                  "¸öÈË¶ÙÊ±Áè¿ÕÆ®Æğ£¬ËÙ¶È±äµÃÒì³£Ãô½İ¡£\n" NOR;
+        msg = HIW "$N" HIW "é‹èµ·ä¹é™°çœŸæ°£ï¼Œé›™è‡‚éª¨éª¼ä¸€é™£çˆ†éŸ¿ï¼Œèº«å½¢ä¸€å±•ï¼Œæ•´"
+                  "å€‹äººé “æ™‚å‡Œç©ºé£„èµ·ï¼Œé€Ÿåº¦è®Šå¾—ç•°å¸¸æ•æ·ã€‚\n" NOR;
         
         message_combatd(msg, me, target);
         skill = me->query_skill("shexing-lifan", 1);
@@ -59,6 +59,6 @@ void remove_effect(object me, int amount, int amount1)
                 addn_temp("apply/str", -amount, me);
                 addn_temp("apply/dex", -amount, me);
                 delete_temp("gui_yuan", me);
-                tell_object(me, "ÄãµÄ¡¸¾ÅÒõ¹éÔª¡¹ÔË¹¦Íê±Ï£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï¡£\n");
+                tell_object(me, "ä½ çš„ã€Œä¹é™°æ­¸å…ƒã€é‹åŠŸå®Œç•¢ï¼Œå°‡å…§åŠ›æ”¶å›ä¸¹ç”°ã€‚\n");
         }
 }

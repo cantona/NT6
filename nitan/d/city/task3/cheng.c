@@ -7,13 +7,13 @@ int ask_stop();
 
 void create()
 {
-        set_name("³ÌÒ©·¢", ({ "cheng yaofa", "cheng" , "yaofa"}) );
-        set("title", "ÑïÖİÖª¸®" );
-        set("gender", "ÄĞĞÔ" );
+        set_name("ç¨‹è—¥ç™¼", ({ "cheng yaofa", "cheng" , "yaofa"}) );
+        set("title", "æšå·çŸ¥åºœ" );
+        set("gender", "ç”·æ€§" );
         set("age", 43);
         set("str", 20);
         set("dex", 20);
-        set("long", "Ëû¾ÍÊÇ³ÌÒ©·¢£¬ÑïÖİÏÖÈÎÖª¸®¡£\n");
+        set("long", "ä»–å°±æ˜¯ç¨‹è—¥ç™¼ï¼Œæšå·ç¾ä»»çŸ¥åºœã€‚\n");
         set("combat_exp", 30000);
         set("shen_type", 0);
         set("attitude", "heroism");
@@ -32,13 +32,13 @@ void create()
         set("max_neili", 500);
         set("jiali", 10);
         set("inquiry", ([
-                "ÈÎÎñ": (: ask_me :),
-                "²¶¿ì": (: ask_me :),
+                "ä»»å‹™": (: ask_me :),
+                "æ•å¿«": (: ask_me :),
                 "work": (: ask_me :),
-                "Ğ§Á¦": (: ask_me :),
+                "æ•ˆåŠ›": (: ask_me :),
                 "quest": (: ask_me :),
-                "ÑïÖİ¸®": (: ask_me :),
-                "·ÅÆú": (: ask_stop :),
+                "æšå·åºœ": (: ask_me :),
+                "æ”¾æ£„": (: ask_stop :),
                 "stop": (: ask_stop :),
         ]) );
         setup();
@@ -64,12 +64,12 @@ int ask_me()
         me = this_player();
         if( query("officerlvl", me)<1 )
         {
-                command("say ÕâÎ»"+ RANK_D->query_respect(me)
-                        + "ÈôÓĞÒâÎª³¯Í¢Ğ§Á¦£¬²»·Áµ½Ç©Ñº·¿±¨Ãû£¡\n");
+                command("say é€™ä½"+ RANK_D->query_respect(me)
+                        + "è‹¥æœ‰æ„ç‚ºæœå»·æ•ˆåŠ›ï¼Œä¸å¦¨åˆ°ç°½æŠ¼æˆ¿å ±åï¼\n");
                 return 1;
         }
-        command("say ÄãÉíÎª³¯Í¢¹ÙÔ±£¬²»ÄÜ°×³Ô¹ú¼ÒÙºÂ»£¬ĞëµÃÅ¬Á¦¹¤×÷(work)²ÅÊÇ
-°¡£¡Ã¿´Î°ì²î¹éÀ´ĞëÈçÊµÏò±¾¸®»ã±¨(finish)¡£");
+        command("say ä½ èº«ç‚ºæœå»·å®˜å“¡ï¼Œä¸èƒ½ç™½åƒåœ‹å®¶ä¿¸ç¥¿ï¼Œé ˆå¾—åŠªåŠ›å·¥ä½œ(work)æ‰æ˜¯
+å•Šï¼æ¯æ¬¡è¾¦å·®æ­¸ä¾†é ˆå¦‚å¯¦å‘æœ¬åºœåŒ¯å ±(finish)ã€‚");
         return 1;
 }
 int ask_stop()
@@ -78,11 +78,11 @@ int ask_stop()
         me = this_player();
         if( !query_temp("bt/working", me) )
         {
-                command("say ÕâÎ»"+ RANK_D->query_respect(me)
-                        + "Èô²»Ô¸ÒâÎª³¯Í¢Ğ§Á¦£¬±¾¸®Ò²²»ÃãÇ¿£¡\n");
+                command("say é€™ä½"+ RANK_D->query_respect(me)
+                        + "è‹¥ä¸é¡˜æ„ç‚ºæœå»·æ•ˆåŠ›ï¼Œæœ¬åºœä¹Ÿä¸å‹‰å¼·ï¼\n");
                 return 1;
         }
-        command("say ÄãÕæµÄÃ»ÓĞ×¥µ½×ï·¸Âğ£¿(answer yes»òanswer no)");
+        command("say ä½ çœŸçš„æ²’æœ‰æŠ“åˆ°ç½ªçŠ¯å—ï¼Ÿ(answer yesæˆ–answer no)");
         set_temp("bt/stop", 1, me);
         return 1;
 }
@@ -90,21 +90,21 @@ int do_answer(string arg)
 {
         object ob,me;
         me = this_player();
-        if( !query_temp("bt/stop", me))return notify_fail("Ê²Ã´£¿\n");
+        if( !query_temp("bt/stop", me))return notify_fail("ä»€éº¼ï¼Ÿ\n");
         if (!arg || (arg !="yes"&&arg !="no"))
         {
-                command("say ÄãÍÌÍÌÍÂÍÂµÄÔÚËµÊ²Ã´°¡£¡\n");
+                command("say ä½ ååååçš„åœ¨èªªä»€éº¼å•Šï¼\n");
                 return 1;
         }
         if (arg =="no")
         {                               //113
-                command("say ×ï·¸¼ÈÒÑ×¥µ½ÁËÄã»¹Òª·ÅÆúÊ²Ã´£¿\n");
+                command("say ç½ªçŠ¯æ—¢å·²æŠ“åˆ°äº†ä½ é‚„è¦æ”¾æ£„ä»€éº¼ï¼Ÿ\n");
                 return 1;
         }
-        message_vision (BLU"³ÌÒ©·¢²»ÓÉ´óÅ­£¬ÅÄ°¸¶øÆğ¡£\n"NOR,me);
-        command("say ´óµ¨£¡ÈêÉíÎª³¯Í¢¹ÙÔ±£¬Ê³¹ú¼ÒÙºÂ»£¬°ì²îÈç´Ë²»Á¦£¬Ğİ¹Ö±¾¸®ÎŞ");
-        command("say À´°¡£¬ÓëÎÒÖØÔğ¶şÊ®´ó°å¡£");
-        message_vision(BLU"ËÄÏÂÀï¶ÙÊ±Óµ³ö¼¸¸öÈçÀÇËÆ»¢µÄÑÃÒÛ½«"+query("name", me)+"°´·­ÔÚµØ¡£\n"NOR,me);
+        message_vision (BLU"ç¨‹è—¥ç™¼ä¸ç”±å¤§æ€’ï¼Œæ‹æ¡ˆè€Œèµ·ã€‚\n"NOR,me);
+        command("say å¤§è†½ï¼æ±èº«ç‚ºæœå»·å®˜å“¡ï¼Œé£Ÿåœ‹å®¶ä¿¸ç¥¿ï¼Œè¾¦å·®å¦‚æ­¤ä¸åŠ›ï¼Œä¼‘æ€ªæœ¬åºœç„¡");
+        command("say ä¾†å•Šï¼Œèˆ‡æˆ‘é‡è²¬äºŒåå¤§æ¿ã€‚");
+        message_vision(BLU"å››ä¸‹è£¡é “æ™‚æ“å‡ºå¹¾å€‹å¦‚ç‹¼ä¼¼è™çš„è¡™å½¹å°‡"+query("name", me)+"æŒ‰ç¿»åœ¨åœ°ã€‚\n"NOR,me);
         delete_temp("bt/stop", me);
         me->apply_condition("bt_stop", 10);
         return 1;

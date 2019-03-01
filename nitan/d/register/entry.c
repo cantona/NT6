@@ -14,40 +14,40 @@ int do_washto(string arg);
 int do_born(string arg);
 
 mapping born = ([
-        "¹ØÍâÈËÊÏ" : "/d/guanwai/kedian",
-        "ÑàÕÔÈËÊÏ" : "/d/beijing/kedian",
-        "ÆëÂ³ÈËÊÏ" : "/d/taishan/kedian",
-        "ÇØ½úÈËÊÏ" : "/d/changan/kezhan",
-        "ÃÉ¹ÅÈËÊÏ" : 0,
-        "ÖĞÔ­ÈËÊÏ" : "/d/nanyang/kedian1",
-        "Î÷ÓòÈËÊÏ" : "/d/xingxiu/kezhan",
-        "¾£ÖİÈËÊÏ" : "/d/jingzhou/kedian",
-        "ÑïÖİÈËÊÏ" : "/d/city/kedian",
-        "ËÕÖİÈËÊÏ" : "/d/suzhou/kedian",
-        "º¼ÖİÈËÊÏ" : "/d/hangzhou/kedian",
-        "¸£½¨ÈËÊÏ" : "/d/fuzhou/rongcheng",
-        "°ÍÊñÈËÊÏ" : "/d/chengdu/kedian",
-        "ÔÆÄÏÈËÊÏ" : "/d/dali/kedian",
-        "Ç­ÖĞÈËÊÏ" : 0,
-        "Á½¹ãÈËÊÏ" : "/d/foshan/beidimiao",
-        "Å·ÑôÊÀ¼Ò" : ([ "born"      : "Î÷ÓòÈËÊÏ",
-                        "surname"   : "Å·Ñô",
+        "é—œå¤–äººæ°" : "/d/guanwai/kedian",
+        "ç‡•è¶™äººæ°" : "/d/beijing/kedian",
+        "é½Šé­¯äººæ°" : "/d/taishan/kedian",
+        "ç§¦æ™‰äººæ°" : "/d/changan/kezhan",
+        "è’™å¤äººæ°" : 0,
+        "ä¸­åŸäººæ°" : "/d/nanyang/kedian1",
+        "è¥¿åŸŸäººæ°" : "/d/xingxiu/kezhan",
+        "èŠå·äººæ°" : "/d/jingzhou/kedian",
+        "æšå·äººæ°" : "/d/city/kedian",
+        "è˜‡å·äººæ°" : "/d/suzhou/kedian",
+        "æ­å·äººæ°" : "/d/hangzhou/kedian",
+        "ç¦å»ºäººæ°" : "/d/fuzhou/rongcheng",
+        "å·´èœ€äººæ°" : "/d/chengdu/kedian",
+        "é›²å—äººæ°" : "/d/dali/kedian",
+        "é»”ä¸­äººæ°" : 0,
+        "å…©å»£äººæ°" : "/d/foshan/beidimiao",
+        "æ­é™½ä¸–å®¶" : ([ "born"      : "è¥¿åŸŸäººæ°",
+                        "surname"   : "æ­é™½",
                         "startroom" : "/d/baituo/dating",
                      ]),
-        "¹ØÍâºú¼Ò" : ([ "born"      : "¹ØÍâÈËÊÏ",
-                        "surname"   : "ºú",
+        "é—œå¤–èƒ¡å®¶" : ([ "born"      : "é—œå¤–äººæ°",
+                        "surname"   : "èƒ¡",
                         "startroom" : "/d/guanwai/xiaowu",
                      ]),
-        "¶ÎÊÏ»Ê×å" : ([ "born"      : "´óÀíÈËÊÏ",
-                        "surname"   : "¶Î",
+        "æ®µæ°çš‡æ—" : ([ "born"      : "å¤§ç†äººæ°",
+                        "surname"   : "æ®µ",
                         "startroom" : "/d/dali/wangfugate",
                      ]),
-        "Ä½ÈİÊÀ¼Ò" : ([ "born"      : "½­ÄÏÈËÊÏ",
-                        "surname"   : "Ä½Èİ",
+        "æ…•å®¹ä¸–å®¶" : ([ "born"      : "æ±Ÿå—äººæ°",
+                        "surname"   : "æ…•å®¹",
                         "startroom" : "/d/yanziwu/cuixia",
                      ]),
-        "ÌÆÃÅÊÀ¼Ò" : ([ "born"      : "°ÍÊñÈËÊÏ",
-                        "surname"   : "ÌÆ",
+        "å”é–€ä¸–å®¶" : ([ "born"      : "å·´èœ€äººæ°",
+                        "surname"   : "å”",
                         "startroom" : "/d/tangmen/kedian",
                      ]),
 ]);
@@ -58,23 +58,23 @@ void create()
         string desc;
         string *position;
 
-        set("short", HIR "ÉúÃüÖ®¹È" NOR);
+        set("short", HIR "ç”Ÿå‘½ä¹‹è°·" NOR);
         set("long",
-"»ìãç³õ·ÖÅÌ¹Å¿ªÌìµØ£¬ÃÔÎí¡¢Î¢·ç£¬ÌìµØ³õ¿ª£¬ËÄÖÜ»ìãç£¬ÎíÃ£\n"
-"Ã£Ò»Æ¬£¬ÕâÀï¾ÍÊÇ×ÓÌì³óµØÈËÒú³öµÄÉúÃüÖ®¹È¡£\n"
-"¡¡¡¡¹ÈÖĞÓĞÒ»¸öÊ¯Í·Æö³ÉµÄ³Ø×Ó£¬ÆäÖĞË®Çå³ºÈ´²»¼ûµ×£¬²»ÖªµÀËü¾¿\n"
-"¾¹ÓĞ¶àÉî£¬³Ø×ÓÕıÉÏ·½Ğü¹Ò×ÅÌ«¼«Á½ÒÇËÄÏó£¬²»ÖªÓĞºÎ°ÂÃî£¿£¡\n"
+"æ··æ²Œåˆåˆ†ç›¤å¤é–‹å¤©åœ°ï¼Œè¿·éœ§ã€å¾®é¢¨ï¼Œå¤©åœ°åˆé–‹ï¼Œå››å‘¨æ··æ²Œï¼Œéœ§èŒ«\n"
+"èŒ«ä¸€ç‰‡ï¼Œé€™è£¡å°±æ˜¯å­å¤©é†œåœ°äººå¯…å‡ºçš„ç”Ÿå‘½ä¹‹è°·ã€‚\n"
+"ã€€ã€€è°·ä¸­æœ‰ä¸€å€‹çŸ³é ­ç Œæˆçš„æ± å­ï¼Œå…¶ä¸­æ°´æ¸…æ¾ˆå»ä¸è¦‹åº•ï¼Œä¸çŸ¥é“å®ƒç©¶\n"
+"ç«Ÿæœ‰å¤šæ·±ï¼Œæ± å­æ­£ä¸Šæ–¹æ‡¸æ›è‘—å¤ªæ¥µå…©å„€å››è±¡ï¼Œä¸çŸ¥æœ‰ä½•å¥§å¦™ï¼Ÿï¼\n"
 );
         set("no_fight", 1);
         set("objects", ([
                 __DIR__"npc/pangu" : 1,
         ]));
 
-        // set("no_say", "ÅÌ¹ÅÕıÔÚ±ÕÄ¿³ÁË¼£¬ÄãÄÄÀï¸ÒÂÒËµ»°£¿\n");
+        // set("no_say", "ç›¤å¤æ­£åœ¨é–‰ç›®æ²‰æ€ï¼Œä½ å“ªè£¡æ•¢äº‚èªªè©±ï¼Ÿ\n");
 
 /*
         set("item_desc", ([
-                "paizi" : "Í¶Ì¥ÄËÈËÉú´óÊÂ£¬ÇĞ¼Ç²»¿É²İÂÊ£¡Ñ¡ºÃ·½Ïò£¬¾ÍÊäÈëborn <µØÃû>¡£\n"
+                "paizi" : "æŠ•èƒä¹ƒäººç”Ÿå¤§äº‹ï¼Œåˆ‡è¨˜ä¸å¯è‰ç‡ï¼é¸å¥½æ–¹å‘ï¼Œå°±è¼¸å…¥born <åœ°å>ã€‚\n"
         ]));
 
         desc = query("item_desc/paizi");
@@ -124,11 +124,11 @@ int do_choose(string arg)
 
         if (n < 1 || n > 4)
         {
-                write("ÄúÖ»ÄÜÑ¡Ôñ(choose)ÏµÍ³ËùÌá¹©µÄÕâËÄÖÖ½ÇÉ«ĞÔ¸ñ£º\n"
-                    HIC "1" NOR ".¹âÃ÷ÀÚÂä  "
-                    HIC "2" NOR ".½Æ÷ï¶à±ä  "
-                    HIC "3" NOR ".ĞÄºİÊÖÀ±  "
-                    HIC "4" NOR ".ÒõÏÕ¼éÕ© ("
+                write("æ‚¨åªèƒ½é¸æ“‡(choose)ç³»çµ±æ‰€æä¾›çš„é€™å››ç¨®è§’è‰²æ€§æ ¼ï¼š\n"
+                    HIC "1" NOR ".å…‰æ˜ç£Šè½  "
+                    HIC "2" NOR ".ç‹¡é» å¤šè®Š  "
+                    HIC "3" NOR ".å¿ƒç‹ æ‰‹è¾£  "
+                    HIC "4" NOR ".é™°éšªå§¦è© ("
                     HIC "choose 1" NOR "-" HIC "4" NOR ")\n");
                 return 1;
         }
@@ -136,22 +136,22 @@ int do_choose(string arg)
         switch(n)
         {
         case 1:
-                set("character", "¹âÃ÷ÀÚÂä", me);
+                set("character", "å…‰æ˜ç£Šè½", me);
                 break;
         case 2:
-                set("character", "½Æ÷ï¶à±ä", me);
+                set("character", "ç‹¡é» å¤šè®Š", me);
                 break;
         case 3:
-                set("character", "ĞÄºİÊÖÀ±", me);
+                set("character", "å¿ƒç‹ æ‰‹è¾£", me);
                 break;
         case 4:
-                set("character", "ÒõÏÕ¼éÕ©", me);
+                set("character", "é™°éšªå§¦è©", me);
                 break;
         }
         
-        write(HIC"ÄãÑ¡ÔñÁË"NOR+HIM+query("character", me)+NOR+HIC"µÄĞÔ¸ñ£¬½ÓÏÂÀ´Äã¿ÉÒÔÏ´(washto)Ìì¸³ÁË¡£\n"NOR,me);
-        write(HIY "ĞÂÊÖµ¼Ê¦£ºÆİ³¤·¢ÓĞÏ´Ìì¸³µ¤³öÊÛ(Ò»Á½»Æ½ğ)£¬¿ÉÒÔÖØĞÂÉè¶¨Ìì¸³£¬ËùÒÔÄã²»ÓÃÔÚÕâÀï¾À½á¶øÀË·ÑÊ±¼ä¡£\n" NOR); 
-        write("Ö¸Áî¸ñÊ½£ºwashto <ëöÁ¦> <ÎòĞÔ> <¸ù¹Ç> <Éí·¨>\nÀı    Èç£ºwashto 20 20 20 20\n"); 
+        write(HIC"ä½ é¸æ“‡äº†"NOR+HIM+query("character", me)+NOR+HIC"çš„æ€§æ ¼ï¼Œæ¥ä¸‹ä¾†ä½ å¯ä»¥æ´—(washto)å¤©è³¦äº†ã€‚\n"NOR,me);
+        write(HIY "æ–°æ‰‹å°å¸«ï¼šæˆšé•·ç™¼æœ‰æ´—å¤©è³¦ä¸¹å‡ºå”®(ä¸€å…©é»ƒé‡‘)ï¼Œå¯ä»¥é‡æ–°è¨­å®šå¤©è³¦ï¼Œæ‰€ä»¥ä½ ä¸ç”¨åœ¨é€™è£¡ç³¾çµè€Œæµªè²»æ™‚é–“ã€‚\n" NOR); 
+        write("æŒ‡ä»¤æ ¼å¼ï¼šwashto <è†‚åŠ›> <æ‚Ÿæ€§> <æ ¹éª¨> <èº«æ³•>\nä¾‹    å¦‚ï¼šwashto 20 20 20 20\n"); 
         return 1;
 }
         
@@ -169,29 +169,29 @@ int do_wash(string arg)
 
         if( !query("character", me) )
         {
-                write(HIC "Äã»¹ÊÇÏÈÈ·¶¨(choose)ºÃÄãµÄ½ÇÉ«ĞÔ¸ñÔÙÑ¡Ìì¸³°É¡£\n" NOR, me);
+                write(HIC "ä½ é‚„æ˜¯å…ˆç¢ºå®š(choose)å¥½ä½ çš„è§’è‰²æ€§æ ¼å†é¸å¤©è³¦å§ã€‚\n" NOR, me);
                 return 1;
         }
                 
-        write(HIC "ÄãÌøÈëÉúÃü³Ø£¬¶ÙÊ±±»Ò»¹É¼¤Á÷¾íÁË½øÈ¥¡£\n" NOR, me);
+        write(HIC "ä½ è·³å…¥ç”Ÿå‘½æ± ï¼Œé “æ™‚è¢«ä¸€è‚¡æ¿€æµå·äº†é€²å»ã€‚\n" NOR, me);
 
         tmpstr = tmpint = tmpcon = tmpdex = 13;
 
         switch(query("type", me) )
         {
-        case "ÃÍÊ¿ĞÍ":
+        case "çŒ›å£«å‹":
                 tmpstr = 20;
                 break;
 
-        case "ÖÇ»ÛĞÍ":
+        case "æ™ºæ…§å‹":
                 tmpint = 20;
                 break;
 
-        case "ÄÍÁ¦ĞÍ":
+        case "è€åŠ›å‹":
                 tmpcon = 20;
                 break;
 
-        case "Ãô½İĞÍ":
+        case "æ•æ·å‹":
                 tmpdex = 20;
                 break;
 
@@ -218,13 +218,13 @@ int do_wash(string arg)
         my["kar"] = 10 + random(21);
         my["per"] = 10 + random(21);
 
-        write(HIC "¡°Å¾¡±µÄÒ»Éù£¬Äã±»ÊªäõäõµÄÅ×ÁË³öÀ´¡£\n" NOR, me);
-        write(sprintf(HIY "\nÄãÕâ´Î»ñµÃµÄËÄÏîÏÈÌìÌì¸³·Ö±ğÊÇ£º\n"
-                          "ëöÁ¦£º¡¾ " HIG "%d" HIY " ¡¿ "
-                          "ÎòĞÔ£º¡¾ " HIG "%d" HIY " ¡¿ "
-                          "¸ù¹Ç£º¡¾ " HIG "%d" HIY " ¡¿ "
-                          "Éí·¨£º¡¾ " HIG "%d" HIY " ¡¿\n"
-                          "Èç¹ûÄãÂúÒâ£¬¾ÍÈ¥Í¶Ì¥(born)°É£¡\n\n" NOR,
+        write(HIC "â€œå•ªâ€çš„ä¸€è²ï¼Œä½ è¢«æ¿•æ¼‰æ¼‰çš„æ‹‹äº†å‡ºä¾†ã€‚\n" NOR, me);
+        write(sprintf(HIY "\nä½ é€™æ¬¡ç²å¾—çš„å››é …å…ˆå¤©å¤©è³¦åˆ†åˆ¥æ˜¯ï¼š\n"
+                          "è†‚åŠ›ï¼šã€ " HIG "%d" HIY " ã€‘ "
+                          "æ‚Ÿæ€§ï¼šã€ " HIG "%d" HIY " ã€‘ "
+                          "æ ¹éª¨ï¼šã€ " HIG "%d" HIY " ã€‘ "
+                          "èº«æ³•ï¼šã€ " HIG "%d" HIY " ã€‘\n"
+                          "å¦‚æœä½ æ»¿æ„ï¼Œå°±å»æŠ•èƒ(born)å§ï¼\n\n" NOR,
                       tmpstr, tmpint, tmpcon, tmpdex));
         set_temp("washed", 1, me);
 
@@ -243,32 +243,32 @@ int do_washto(string arg)
 
         if( !query("character", me) )
         {
-                write(HIC "Äã»¹ÊÇÏÈÈ·¶¨(choose)ºÃÄãµÄ½ÇÉ«ĞÔ¸ñÔÙÑ¡Ìì¸³°É¡£\n" NOR, me);
+                write(HIC "ä½ é‚„æ˜¯å…ˆç¢ºå®š(choose)å¥½ä½ çš„è§’è‰²æ€§æ ¼å†é¸å¤©è³¦å§ã€‚\n" NOR, me);
                 return 1;
         }
         
         if (! arg || sscanf(arg, "%d %d %d %d", tmpstr, tmpint, tmpcon, tmpdex) != 4)
-                return notify_fail("Ö¸Áî¸ñÊ½£ºwashto <ëöÁ¦> <ÎòĞÔ> <¸ù¹Ç> <Éí·¨>\n" +
-                                   "Àı    Èç£ºwashto 20 20 20 20\n"); 
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šwashto <è†‚åŠ›> <æ‚Ÿæ€§> <æ ¹éª¨> <èº«æ³•>\n" +
+                                   "ä¾‹    å¦‚ï¼šwashto 20 20 20 20\n"); 
   
         if (tmpstr > 30 || tmpstr < 13) 
-                return notify_fail("ÄãËùÑ¡ÔñµÄëöÁ¦ÊıÖµÒªÇó±ØĞëÔÚ13ºÍ30Ö®¼ä¡£\n"); 
+                return notify_fail("ä½ æ‰€é¸æ“‡çš„è†‚åŠ›æ•¸å€¼è¦æ±‚å¿…é ˆåœ¨13å’Œ30ä¹‹é–“ã€‚\n"); 
         
         if (tmpint > 30 || tmpint < 13) 
-                return notify_fail("ÄãËùÑ¡ÔñµÄÎòĞÔÊıÖµÒªÇó±ØĞëÔÚ13ºÍ30Ö®¼ä¡£\n"); 
+                return notify_fail("ä½ æ‰€é¸æ“‡çš„æ‚Ÿæ€§æ•¸å€¼è¦æ±‚å¿…é ˆåœ¨13å’Œ30ä¹‹é–“ã€‚\n"); 
                 
         if (tmpcon > 30 || tmpcon < 13) 
-                return notify_fail("ÄãËùÑ¡ÔñµÄ¸ù¹ÇÊıÖµÒªÇó±ØĞëÔÚ13ºÍ30Ö®¼ä¡£\n"); 
+                return notify_fail("ä½ æ‰€é¸æ“‡çš„æ ¹éª¨æ•¸å€¼è¦æ±‚å¿…é ˆåœ¨13å’Œ30ä¹‹é–“ã€‚\n"); 
                 
         if (tmpdex > 30 || tmpdex < 13) 
-                return notify_fail("ÄãËùÑ¡ÔñµÄÉí·¨ÊıÖµÒªÇó±ØĞëÔÚ13ºÍ30Ö®¼ä¡£\n"); 
+                return notify_fail("ä½ æ‰€é¸æ“‡çš„èº«æ³•æ•¸å€¼è¦æ±‚å¿…é ˆåœ¨13å’Œ30ä¹‹é–“ã€‚\n"); 
 
         if (tmpstr + tmpint + tmpcon + tmpdex > 80) 
-                return notify_fail("ÄãËùÑ¡ÔñµÄÌì¸³ÊıÖµ×ÜºÍ²»ÄÜ´óÓÚ80¡£\n"); 
+                return notify_fail("ä½ æ‰€é¸æ“‡çš„å¤©è³¦æ•¸å€¼ç¸½å’Œä¸èƒ½å¤§äº80ã€‚\n"); 
         
         dower = 80 - (tmpstr + tmpint + tmpcon + tmpdex);
       
-        write(HIC "ÄãÌøÈëÍüÓÇ³Ø£¬¶ÙÊ±±»Ò»¹É¼¤Á÷¾íÁË½øÈ¥¡£\n" NOR, me); 
+        write(HIC "ä½ è·³å…¥å¿˜æ†‚æ± ï¼Œé “æ™‚è¢«ä¸€è‚¡æ¿€æµå·äº†é€²å»ã€‚\n" NOR, me); 
         my = me->query_entire_dbase(); 
   
         my["str"] = tmpstr; 
@@ -281,30 +281,30 @@ int do_washto(string arg)
                 my["dow"] = dower;
           
 /*
-        write(HIC "Ö»Ìı¡°Å¾¡±µÄÒ»Éù£¬Äã±»ÊªäõäõµÄÅ×ÁË³öÀ´¡£\n" NOR, me); 
-        write(sprintf(HIY "\nÄãÕâ´Î»ñµÃµÄËÄÏîÏÈÌìÌì¸³·Ö±ğÊÇ£º\n" 
-                    "ëöÁ¦£º¡¾ " HIG "%d" HIY " ¡¿ " 
-                    "ÎòĞÔ£º¡¾ " HIG "%d" HIY " ¡¿ " 
-                    "¸ù¹Ç£º¡¾ " HIG "%d" HIY " ¡¿ " 
-                    "Éí·¨£º¡¾ " HIG "%d" HIY " ¡¿\n" 
-                    "Ìì¸³×ÜºÍÎª¡¾ " HIR "%d" HIY " ¡¿£¬Èç¹ûÄãÂúÒâ£¬¾ÍÈ¥Í¶Ì¥(born)°É£¡·½·¨Èç" HIR "<born ÑïÖİÈËÊÏ>\n\n" NOR,
+        write(HIC "åªè½â€œå•ªâ€çš„ä¸€è²ï¼Œä½ è¢«æ¿•æ¼‰æ¼‰çš„æ‹‹äº†å‡ºä¾†ã€‚\n" NOR, me); 
+        write(sprintf(HIY "\nä½ é€™æ¬¡ç²å¾—çš„å››é …å…ˆå¤©å¤©è³¦åˆ†åˆ¥æ˜¯ï¼š\n" 
+                    "è†‚åŠ›ï¼šã€ " HIG "%d" HIY " ã€‘ " 
+                    "æ‚Ÿæ€§ï¼šã€ " HIG "%d" HIY " ã€‘ " 
+                    "æ ¹éª¨ï¼šã€ " HIG "%d" HIY " ã€‘ " 
+                    "èº«æ³•ï¼šã€ " HIG "%d" HIY " ã€‘\n" 
+                    "å¤©è³¦ç¸½å’Œç‚ºã€ " HIR "%d" HIY " ã€‘ï¼Œå¦‚æœä½ æ»¿æ„ï¼Œå°±å»æŠ•èƒ(born)å§ï¼æ–¹æ³•å¦‚" HIR "<born æšå·äººæ°>\n\n" NOR,
                      tmpstr, tmpint, tmpcon, tmpdex, 80 - dower)); 
 */
         set_temp("washed", 1, me);
   
 
         set("startroom", "/d/newbie/shijiezhishu", me);
-        set("born", "¹Å´å", me);
-        set("born_family", "Ã»ÓĞ", me);
-        // Ñ¡ÔñÌØÊâ¼¼ÄÜ
+        set("born", "å¤æ‘", me);
+        set("born_family", "æ²’æœ‰", me);
+        // é¸æ“‡ç‰¹æ®ŠæŠ€èƒ½
         UPDATE_D->born_player(me);
 
         me->move("/d/newbie/shijiezhishu");
         set("mud_age", 0, me);
         set("age", 11, me);
         me->save();
-        message_vision("$NÈàÈàÑÛ¾¦£¬ÃÔã¯µÄÍû×ÅÕâ¸öÄ°ÉúµÄÊÀ½ç¡£\n", me);
-        tell_object(me, HIY "ĞÂÊÖµ¼Ê¦£º²é¿´±¾ÈËËùÔÚµØµÄµØÍ¼Ö¸Áîmap£¬²é¿´ËùÓĞµØÍ¼Ö¸ÁîÎªmap map\n" NOR);
+        message_vision("$Næ‰æ‰çœ¼ç›ï¼Œè¿·æƒ˜çš„æœ›è‘—é€™å€‹é™Œç”Ÿçš„ä¸–ç•Œã€‚\n", me);
+        tell_object(me, HIY "æ–°æ‰‹å°å¸«ï¼šæŸ¥çœ‹æœ¬äººæ‰€åœ¨åœ°çš„åœ°åœ–æŒ‡ä»¤mapï¼ŒæŸ¥çœ‹æ‰€æœ‰åœ°åœ–æŒ‡ä»¤ç‚ºmap map\n" NOR);
         return 1; 
 }
 
@@ -322,20 +322,20 @@ int do_born(string arg)
                 return 1;
 
         if( !query("character", me) )
-                return notify_fail("ÄãÏÈÑ¡Ôñ(choose)ºÃ½ÇÉ«ĞÔ¸ñ£¬ÄãÔÙÍ¶Ì¥Ò²²»³Ù°¡£¡\n");
+                return notify_fail("ä½ å…ˆé¸æ“‡(choose)å¥½è§’è‰²æ€§æ ¼ï¼Œä½ å†æŠ•èƒä¹Ÿä¸é²å•Šï¼\n");
                 
         if( !query_temp("washed", me) )
-                return notify_fail("ÄãÏÈÔÚÉúÃü³ØÖĞÏ´Ò»ÏÂ(washto)£¬Ñ¡ÔñºÃÌì¸³ÄãÔÙÍ¶Ì¥Ò²²»³Ù°¡£¡\n");
+                return notify_fail("ä½ å…ˆåœ¨ç”Ÿå‘½æ± ä¸­æ´—ä¸€ä¸‹(washto)ï¼Œé¸æ“‡å¥½å¤©è³¦ä½ å†æŠ•èƒä¹Ÿä¸é²å•Šï¼\n");
 
         if (arg && arg[0] < 160)
-                return notify_fail("Äã±ØĞëÊäÈëÖĞÎÄµØÃû£¬±ÈÈçborn ÑïÖİÈËÊÏ£¬»òÕßÊÇborn Å·ÑôÊÀ¼ÒÒÔ±ÜÃâÍ¶´íÌ¥¡£\n");
+                return notify_fail("ä½ å¿…é ˆè¼¸å…¥ä¸­æ–‡åœ°åï¼Œæ¯”å¦‚born æšå·äººæ°ï¼Œæˆ–è€…æ˜¯born æ­é™½ä¸–å®¶ä»¥é¿å…æŠ•éŒ¯èƒã€‚\n");
 
         new_name = 0;
         if (arg) sscanf(arg, "%s %s", arg, new_name);
 
         if (! arg || (! stringp(dest = born[arg]) && ! mapp(dest)))
         {
-                message_vision("ÓĞ¸öÉùÒô¶ñºİºİµÄ¶Ô$NËµ£ºÄãÒª¸ÉÊ²Ã´£¡Í¶Ì¥È¥ÄÄÀï£¿\n", me);
+                message_vision("æœ‰å€‹è²éŸ³æƒ¡ç‹ ç‹ çš„å°$Nèªªï¼šä½ è¦å¹¹ä»€éº¼ï¼æŠ•èƒå»å“ªè£¡ï¼Ÿ\n", me);
                 return 1;
         }
 
@@ -348,7 +348,7 @@ int do_born(string arg)
                         obj = load_object(dest);
                 set("startroom", dest, me);
                 set("born", arg, me);
-                set("born_family", "Ã»ÓĞ", me);
+                set("born_family", "æ²’æœ‰", me);
         } else
         {
                 if (! objectp(obj = find_object(dest["startroom"])))
@@ -360,24 +360,24 @@ int do_born(string arg)
                                 new_name = dest["surname"] + new_name;
 
                         if (strlen(new_name) > 8)
-                                return notify_fail("ÄãµÄÃû×ÖÌ«³¤ÁË¡£\n");
+                                return notify_fail("ä½ çš„åå­—å¤ªé•·äº†ã€‚\n");
 
                         if (strlen(new_name) < 4)
-                                return notify_fail("ÄãµÄÃû×ÖÌ«¶ÌÁË¡£\n");
+                                return notify_fail("ä½ çš„åå­—å¤ªçŸ­äº†ã€‚\n");
 
                         if (! is_chinese(new_name))
-                                return notify_fail("ÇëÄãÓÃÖĞÎÄÆğÃû×Ö¡£\n");
+                                return notify_fail("è«‹ä½ ç”¨ä¸­æ–‡èµ·åå­—ã€‚\n");
                 }
 
                 if( query("surname", me) != dest["surname"] )
                 {
-                        // Ãû×ÖĞèÒª±ä»¯
+                        // åå­—éœ€è¦è®ŠåŒ–
                         NAME_D->remove_name(me->name(1),query("id", me));
                         if( !new_name)new_name=dest["surname"]+query("purename", me);
                         if (stringp(msg = NAME_D->invalid_new_name(new_name)))
                         {
                                 write(msg);
-                                write("Äã¿ÉÒÔ¿¼ÂÇÔÚÍ¶ÈëÊÀ¼ÒµÄÊ±ºòÖØĞÂÑ¡ÔñÃû×Ö£ºborn <ÊÀ¼Ò> <Ãû×Ö>\n");
+                                write("ä½ å¯ä»¥è€ƒæ…®åœ¨æŠ•å…¥ä¸–å®¶çš„æ™‚å€™é‡æ–°é¸æ“‡åå­—ï¼šborn <ä¸–å®¶> <åå­—>\n");
                                 return 1;
                         }
                         set("surname", dest["surname"], me);
@@ -398,23 +398,23 @@ int do_born(string arg)
         }
         if (! objectp(obj))
         {
-                message_vision("ÓĞ¸öÉùÒôà«à«ËµµÀ£ºÔõÃ´ºÃÏñÓĞÎÊÌâ...\n", me);
+                message_vision("æœ‰å€‹è²éŸ³å–ƒå–ƒèªªé“ï¼šæ€éº¼å¥½åƒæœ‰å•é¡Œ...\n", me);
                 return 1;
         }
 
-        message_vision("Ò»µÀ½ğ¹âÉÁ¹ı£¬$NÏûÊ§µÃÎŞÓ°ÎŞ×Ù¡£\n", me);
+        message_vision("ä¸€é“é‡‘å…‰é–ƒéï¼Œ$Næ¶ˆå¤±å¾—ç„¡å½±ç„¡è¹¤ã€‚\n", me);
         
         foreach (item in all_inventory(me))
                 if( !query("armor_type", item) )
                 {
-                        message_vision("$N¶ªÏÂÁË$n¡£\n", me, item);
+                        message_vision("$Nä¸Ÿä¸‹äº†$nã€‚\n", me, item);
                         if( item->is_character() || query("value", item) )
                                 item->move(environment(me));
                         else
                                 destruct(item);
                 }
 
-        // Ñ¡ÔñÌØÊâ¼¼ÄÜ
+        // é¸æ“‡ç‰¹æ®ŠæŠ€èƒ½
         UPDATE_D->born_player(me);
 
         me->move(obj);
@@ -422,8 +422,8 @@ int do_born(string arg)
         set("age", 14, me);
         me->save();
         HELP_CMD->main(me, "rules");
-        message_vision("$NÈàÈàÑÛ¾¦£¬ÃÔã¯µÄÍû×ÅÕâ¸öÄ°ÉúµÄÊÀ½ç¡£\n", me);
-        tell_object(me, HIY "ĞÂÊÖµ¼Ê¦£º²é¿´±¾ÈËËùÔÚµØµÄµØÍ¼Ö¸Áîmap£¬²é¿´ËùÓĞµØÍ¼Ö¸ÁîÎªmap map\n" NOR);
+        message_vision("$Næ‰æ‰çœ¼ç›ï¼Œè¿·æƒ˜çš„æœ›è‘—é€™å€‹é™Œç”Ÿçš„ä¸–ç•Œã€‚\n", me);
+        tell_object(me, HIY "æ–°æ‰‹å°å¸«ï¼šæŸ¥çœ‹æœ¬äººæ‰€åœ¨åœ°çš„åœ°åœ–æŒ‡ä»¤mapï¼ŒæŸ¥çœ‹æ‰€æœ‰åœ°åœ–æŒ‡ä»¤ç‚ºmap map\n" NOR);
 
         return 1;
 }

@@ -6,7 +6,7 @@
 int update_condition(object me, int duration)
 {
         if (duration < 2) {
-                tell_object(me, HIW "ÊØÎÀÊ±¼äÒÑµ½£¬¿ì»ØÈ¥¸´Ãü(task ok)°É£¡\n" NOR);
+                tell_object(me, HIW "å®ˆè¡›æ™‚é–“å·²åˆ°ï¼Œå¿«å›žåŽ»å¾©å‘½(task ok)å§ï¼\n" NOR);
         set_temp("shouwei_ok", 1, me);
                 return 0;
         }

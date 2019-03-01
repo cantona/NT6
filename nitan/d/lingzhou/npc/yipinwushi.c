@@ -4,12 +4,12 @@ inherit NPC;
 
 void create()
 {
-        set_name("Ò»Æ·ÌÃÎäÊ¿", ({ "wu shi", "shi" }));
-        set("gender", "ÄĞĞÔ");
+        set_name("ä¸€å“å ‚æ­¦å£«", ({ "wu shi", "shi" }));
+        set("gender", "ç”·æ€§");
         set("age", random(10) + 20);
         set("str", 25);
         set("dex", 16);
-        set("long", "ÕâÊÇÒ»Æ·ÌÃµÄ»¤ÔºÎäÊ¿£¬ÉíÅû¸Ö¼×£¬ÊÖÖ´Íäµ¶¡£\n");
+        set("long", "é€™æ˜¯ä¸€å“å ‚çš„è­·é™¢æ­¦å£«ï¼Œèº«æŠ«é‹¼ç”²ï¼Œæ‰‹åŸ·å½åˆ€ã€‚\n");
         set("combat_exp", 50000);
         set("shen_type", 1);
         set("attitude", "peaceful");

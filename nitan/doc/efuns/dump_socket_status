@@ -1,15 +1,15 @@
 
         dump_socket_status()
 
-        Ãû³Æ£º
-                dump_socket_status() ÏÔÊ¾³öÃ¿Ò»¸ö LPC Ì×½Ó¿ÚµÄ×´Ì¬
+        åç¨±ï¼š
+                dump_socket_status() é¡¯ç¤ºå‡ºæ¯ä¸€å€‹ LPC å¥—æ¥å£çš„ç‹€æ…‹
 
-        Óï·¨£º
+        èªæ³•ï¼š
                 string dump_socket_status();
-                ×Ö·û´® dump_socket_status()
+                å­—ç¬¦ä¸² dump_socket_status()
 
-        ËµÃ÷£º
-                ´Ëº¯ÊıÒÑÈ¡Ïû£¬ÓÉ socket_status º¯Êı´úÌæ¡£
+        èªªæ˜ï¼š
+                æ­¤å‡½æ•¸å·²å–æ¶ˆï¼Œç”± socket_status å‡½æ•¸ä»£æ›¿ã€‚
 
-        by ·¢ÏÖºÅ(Find@tx)
+        by ç™¼ç¾è™Ÿ(Find@tx)
 

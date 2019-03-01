@@ -9,10 +9,10 @@ inherit F_QUESTER;
 
 void create()
 {
-        set_name("Óà²×º£", ({ "yu canghai", "yu", "canghai" }));
-        set("gender", "ÄĞĞÔ");
+        set_name("ä½™æ»„æµ·", ({ "yu canghai", "yu", "canghai" }));
+        set("gender", "ç”·æ€§");
         set("age", 52);
-        set("long", "ËûÉíĞÎ°«Ğ¡£¬¿ÉÊÇÉñÇéÄıÖØ£¬Ù²È»Ò»ÅÉ´ó×ÚÊ¦Æø¡£\n");
+        set("long", "ä»–èº«å½¢çŸ®å°ï¼Œå¯æ˜¯ç¥æƒ…å‡é‡ï¼Œå„¼ç„¶ä¸€æ´¾å¤§å®—å¸«æ°£ã€‚\n");
         set("class", "taoist");
         set("combat_exp", 3000000);
         set("class", "taoist");
@@ -64,7 +64,7 @@ void create()
                 (: exert_function, "recover" :),
         }) );
 
-        create_family("Çà³ÇÅÉ", 5, "ÕÆÃÅ");
+        create_family("é’åŸæ´¾", 5, "æŒé–€");
         setup();
         carry_object("/clone/weapon/changjian")->wield();
         carry_object("/d/wudang/obj/bluecloth")->wear();
@@ -83,20 +83,20 @@ void attempt_apprentice(object ob)
 
         if( query("apprentice_available") ) {
                 if( find_call_out("do_recruit") != -1 )
-                        command("say ÂıÖø£¬Ò»¸öÒ»¸öÀ´¡£");
+                        command("say æ…¢è‘—ï¼Œä¸€å€‹ä¸€å€‹ä¾†ã€‚");
                 else
                         call_out("do_recruit", 2, ob);
         } else {
-                command("say ÀÏµÀ½ñÌìÒÑ¾­ÊÕÁËÈı¸öµÜ×Ó£¬²»ÏëÔÙÊÕÍ½ÁË¡£");
+                command("say è€é“ä»Šå¤©å·²ç¶“æ”¶äº†ä¸‰å€‹å¼Ÿå­ï¼Œä¸æƒ³å†æ”¶å¾’äº†ã€‚");
         }
 }
 
 void do_recruit(object ob)
 {
         if( query("int", ob)<20 )
-                command("say ÎÒÇà³ÇÅÉÒÔ°µÆ÷¼û³¤£¬ÒÀÎÒ¿´"+RANK_D->query_respect(ob)+"²»ÊÊºÏÓÚÑ§°µÆ÷¡£");
+                command("say æˆ‘é’åŸæ´¾ä»¥æš—å™¨è¦‹é•·ï¼Œä¾æˆ‘çœ‹"+RANK_D->query_respect(ob)+"ä¸é©åˆäºå­¸æš—å™¨ã€‚");
         else {
-                command("say ºÃ£¬ºÜºÃ¡£");
+                command("say å¥½ï¼Œå¾ˆå¥½ã€‚");
                 command("recruit "+query("id", ob));
         }
 }

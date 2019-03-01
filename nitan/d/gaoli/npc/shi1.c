@@ -1,14 +1,14 @@
-// ´óÌÆË«Áú´«
-//shi1.c Ğ¡±ø
+// å¤§å”é›™é¾å‚³
+//shi1.c å°å…µ
  
 inherit NPC;
 
 void create()
 {
-        set_name("ÎäÊ¿", ({ "wu shi", "wushi", "shi" }));
+        set_name("æ­¦å£«", ({ "wu shi", "wushi", "shi" }));
         set("age", 18+random(10));
-        set("gender", "ÄĞĞÔ");
-        set("long","ÕâÊÇÒ»Ãû¹©·îÓÚ¸ßÀö¹¬Í¢µÄÎäÊ¿£¬´©×ÅÒ»ÉíÎäÊ¿×°£¬Íş·çÁİÁİ\n");
+        set("gender", "ç”·æ€§");
+        set("long","é€™æ˜¯ä¸€åä¾›å¥‰äºé«˜éº—å®®å»·çš„æ­¦å£«ï¼Œç©¿è‘—ä¸€èº«æ­¦å£«è£ï¼Œå¨é¢¨å‡œå‡œ\n");
         set("attitude", "peaceful");
    set("str", 20);
         set("combat_exp", 350000);

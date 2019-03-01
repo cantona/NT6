@@ -24,13 +24,13 @@ int main(object me, string arg)
 
         total=query("information", get_object(QUEST_D));
         if (! mapp(total))
-                return notify_fail("µ±Ç°ÏµÍ³Ã»ÓĞÈÎºÎÈÎÎñ¡£\n");
+                return notify_fail("ç•¶å‰ç³»çµ±æ²’æœ‰ä»»ä½•ä»»å‹™ã€‚\n");
 
         obs = keys(total);
         obs = filter_array(obs, (: objectp($1) :));
 
         if (! sizeof(obs))
-                return notify_fail("µ±Ç°ÏµÍ³Ã»ÓĞÈÎºÎÈÎÎñ¡£\n");
+                return notify_fail("ç•¶å‰ç³»çµ±æ²’æœ‰ä»»ä½•ä»»å‹™ã€‚\n");
 
         if (arg)
         {
@@ -41,20 +41,20 @@ int main(object me, string arg)
                         obs = filter_array(obs, (: $1->name() == $(arg) :));
                         if (! sizeof(obs))
                         {
-                                write("Ä¿Ç°ÏµÍ³ÖĞ²»´æÔÚ " + arg +
-                                      " Õâ¸öÈÎÎñ¡£\n");
+                                write("ç›®å‰ç³»çµ±ä¸­ä¸å­˜åœ¨ " + arg +
+                                      " é€™å€‹ä»»å‹™ã€‚\n");
                                 return 1;
                         }
                         qob = obs[0];
                 }
 
-                write(sprintf("ÓĞ¹ØÈÎÎñ " + qob->name() + " µÄÇé±¨ĞÅÏ¢£º\n%O\n",
+                write(sprintf("æœ‰é—œä»»å‹™ " + qob->name() + " çš„æƒ…å ±ä¿¡æ¯ï¼š\n%O\n",
                               total[qob]));
                 return 1;
         }
 
-        str = WHT "ÈÎÎñÃû³Æ              Ö´ĞĞÊ±¼ä    ×´  Ì¬    ÈÎÎñ¶ÔÏó¶ÔÓ¦µÄÏµÍ³OBJECT\n" NOR
-              HIW "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n" NOR;
+        str = WHT "ä»»å‹™åç¨±              åŸ·è¡Œæ™‚é–“    ç‹€  æ…‹    ä»»å‹™å°è±¡å°æ‡‰çš„ç³»çµ±OBJECT\n" NOR
+              HIW "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n" NOR;
         foreach (qob in obs)
         {
                 str += sprintf("%-22s%-12s%-10s%s\n",
@@ -63,8 +63,8 @@ int main(object me, string arg)
                                qob->query_status(),
                                file_name(qob));
         }
-        str += HIW "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n" NOR
-               WHT "ÏµÍ³Ä¿Ç°¹²ÓĞ " CYN + sizeof(obs) + WHT " ¸öÈÎÎñ¡£\n" NOR;
+        str += HIW "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n" NOR
+               WHT "ç³»çµ±ç›®å‰å…±æœ‰ " CYN + sizeof(obs) + WHT " å€‹ä»»å‹™ã€‚\n" NOR;
 
         me->start_more(str);
 
@@ -74,9 +74,9 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : qinfo [<ÈÎÎñÃû³Æ>]
+æŒ‡ä»¤æ ¼å¼ : qinfo [<ä»»å‹™åç¨±>]
 
-´ËÖ¸Áî¿É²é¿´µ±Ç°ÏµÍ³ÓĞµÄÈÎÎñ¡£
+æ­¤æŒ‡ä»¤å¯æŸ¥çœ‹ç•¶å‰ç³»çµ±æœ‰çš„ä»»å‹™ã€‚
 HELP );
         return 1;
 }

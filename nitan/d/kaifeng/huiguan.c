@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ɽ�¸ʻ��");
+        set("short", "山陝甘會館");
         set("long", @LONG
-ɽ�¸ʻ����ɽ��������������ĸ��̾޼ֽ���ģ�������ͬ��
-�ۻ�ĳ��������Ǹ������ص��˾ۻ�ġ���ȻҲ���ڴ�����̸����ġ�
-������ǹص�����
+山陝甘會館是山西，陝西，甘肅的富商巨賈建造的，是旅汴同鄉
+聚會的場所，就是給這三地的人聚會的。當然也有在此來商談生意的。
+裡面就是關帝廟。
 LONG );
         set("no_clean_up", 0);
         set("exits", ([

@@ -8,15 +8,15 @@ int main(object me, string arg)
 
         pts = 0;
         if (! arg || (arg != "none" && ! sscanf(arg, "%d", pts)))
-                return notify_fail("Ö¸Áî¸ñÊ½£ºpique|jianu <Ê¹³ö¼¸³É·ßÅ­ÉËµĞ>|none\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼špique|jianu <ä½¿å‡ºå¹¾æˆæ†¤æ€’å‚·æ•µ>|none\n");
 
         max_pts = me->query_max_craze() / 100;
         if (max_pts < 1)
-                return notify_fail("ÄãµÄĞÔ¸ñ²»ºÏ£¬ÎŞ·¨Ê¹ÓÃ·ßÅ­¹¥»÷¡£\n");
+                return notify_fail("ä½ çš„æ€§æ ¼ä¸åˆï¼Œç„¡æ³•ä½¿ç”¨æ†¤æ€’æ”»æ“Šã€‚\n");
 
         if (pts > max_pts)
-                return notify_fail("ÄãÃ¿´Î³öÕĞÖ»ÄÜÊ¹³ö " + max_pts +
-                                   " µã·ßÅ­¡£\n");
+                return notify_fail("ä½ æ¯æ¬¡å‡ºæ‹›åªèƒ½ä½¿å‡º " + max_pts +
+                                   " é»æ†¤æ€’ã€‚\n");
         if (pts == 0)
                 delete("jianu", me);
         else
@@ -29,13 +29,13 @@ int main(object me, string arg)
 int help (object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½: pique|jianu <Ê¹³ö¼¸µã·ßÅ­ÉËµĞ>|none
+æŒ‡ä»¤æ ¼å¼: pique|jianu <ä½¿å‡ºå¹¾é»æ†¤æ€’å‚·æ•µ>|none
  
-Õâ¸öÖ¸ÁîÈÃÄãÖ¸¶¨Ã¿´Î»÷ÖĞµĞÈËÊ±£¬Òª·¢³ö¼¸µã·ßÅ­ÒÔÉËº¦¶Ô·½¡£Èç
-¹ûÊ¹ÓÃÁË·ßÅ­ÉËµĞ£¬ÔòÔÚ¹¥»÷ÖĞ»¹ÓĞÒ»¶¨µÄ¼¸ÂÊ¿ÉÒÔÊ¹³ö·ßÅ­±ØÉ±¼¼
-±©Å­ÕĞÊ½¡£
+é€™å€‹æŒ‡ä»¤è®“ä½ æŒ‡å®šæ¯æ¬¡æ“Šä¸­æ•µäººæ™‚ï¼Œè¦ç™¼å‡ºå¹¾é»æ†¤æ€’ä»¥å‚·å®³å°æ–¹ã€‚å¦‚
+æœä½¿ç”¨äº†æ†¤æ€’å‚·æ•µï¼Œå‰‡åœ¨æ”»æ“Šä¸­é‚„æœ‰ä¸€å®šçš„å¹¾ç‡å¯ä»¥ä½¿å‡ºæ†¤æ€’å¿…æ®ºæŠ€
+æš´æ€’æ‹›å¼ã€‚
 
-pique none Ôò±íÊ¾Äã²»Ê¹ÓÃ·ßÅ­¡£
+pique none å‰‡è¡¨ç¤ºä½ ä¸ä½¿ç”¨æ†¤æ€’ã€‚
 
 HELP );
         return 1;

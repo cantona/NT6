@@ -9,15 +9,15 @@ inherit THROWING;
 
 void create()
 {
-        set_name("Ê¯×Ó", ({ "shizi", "shi" }));
+        set_name("çŸ³å­", ({ "shizi", "shi" }));
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¶ÑÆÕÆÕÍ¨Í¨µÄËéÊ¯×Ó¡£\n");               
-                set("unit", "¶Ñ");
+                set("long", "ä¸€å †æ™®æ™®é€šé€šçš„ç¢çŸ³å­ã€‚\n");               
+                set("unit", "å †");
                 set("value", 1);
                 set("base_value", 0);
-                set("base_unit", "¿Å");
+                set("base_unit", "é¡†");
                 set("base_weight", 12);
         }
         set_amount(random(70) + 81);

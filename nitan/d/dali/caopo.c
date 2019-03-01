@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-        set("short","�������");
+        set("short","村外草坡");
         set("long", @LONG
-һ��Ƭɽ�³�����ݣ����Ƿ���ţ��ĺõط�������������ߣ�
-��ճ�����ɫ������ɽ����ľ�Ѿ����٣������϶��ǵͰ���ľ��ݵء�
-���ٸ����Ĵ����ڴ˷�����
+一大片山坡長滿青草，正是放牧牛羊的好地方。這裡地勢甚高，
+天空呈深藍色，附近山嶺樹木已經甚少，基本上都是低矮灌木或草地。
+不少附近的村民在此放牧。
 LONG );
         set("objects",([
             "/d/dali/npc/muyangren": 1,

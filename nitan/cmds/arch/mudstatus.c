@@ -20,25 +20,25 @@ void select_mud(int funct,int si,string *mud,string x)
 
         if( stringp(x) && x[0]=='q' )
         {
-                tell(this_player(), "Àë¿ª¡£\n", CMDMSG);
+                tell(this_player(), "é›¢é–‹ã€‚\n", CMDMSG);
                 return;
         }
 
         if( !sscanf(x,"%d",input) || input<0 || input > si )
         {
-                tell(this_player(), "²»ºÏ·¨µÄÊäÈë£¬ÇëÖØĞÂÊäÈë£º\n", CMDMSG);
+                tell(this_player(), "ä¸åˆæ³•çš„è¼¸å…¥ï¼Œè«‹é‡æ–°è¼¸å…¥ï¼š\n", CMDMSG);
                 input_to((: select_mud,funct,si,mud :));
                 return;
         }
         mudname=mud[input];
         switch(funct)
         {
-                case 1:if(I2D->set_status(mudname,GB_CODE)) tell(this_player(), "Íê³É¡£\n", CMDMSG);return;
-                case 2:if(I2D->set_status(mudname,ANTI_AD)) tell(this_player(), "Íê³É¡£\n", CMDMSG);return;
-                case 3:if(I2D->set_status(mudname,IGNORED)) tell(this_player(), "Íê³É¡£\n", CMDMSG);return;
-                case 6:if(I2D->set_status(mudname,-GB_CODE)) tell(this_player(), "Íê³É¡£\n", CMDMSG);return;
-                case 7:if(I2D->set_status(mudname,-ANTI_AD)) tell(this_player(), "Íê³É¡£\n", CMDMSG);return;
-                case 8:if(I2D->set_status(mudname,-IGNORED)) tell(this_player(), "Íê³É¡£\n", CMDMSG);return;
+                case 1:if(I2D->set_status(mudname,GB_CODE)) tell(this_player(), "å®Œæˆã€‚\n", CMDMSG);return;
+                case 2:if(I2D->set_status(mudname,ANTI_AD)) tell(this_player(), "å®Œæˆã€‚\n", CMDMSG);return;
+                case 3:if(I2D->set_status(mudname,IGNORED)) tell(this_player(), "å®Œæˆã€‚\n", CMDMSG);return;
+                case 6:if(I2D->set_status(mudname,-GB_CODE)) tell(this_player(), "å®Œæˆã€‚\n", CMDMSG);return;
+                case 7:if(I2D->set_status(mudname,-ANTI_AD)) tell(this_player(), "å®Œæˆã€‚\n", CMDMSG);return;
+                case 8:if(I2D->set_status(mudname,-IGNORED)) tell(this_player(), "å®Œæˆã€‚\n", CMDMSG);return;
         }
 
 }
@@ -58,13 +58,13 @@ void get_mud_name(int funct,string name)
 
         if( stringp(name) && name[0]=='q' )
         {
-                tell(this_player(), "Àë¿ª¡£\n", CMDMSG);
+                tell(this_player(), "é›¢é–‹ã€‚\n", CMDMSG);
                 return;
         }
 
         if( !sizeof(mud=I2D->fetch_mudname(name)) )
         {
-                tell(this_player(), "±§Ç¸£¬ÕÒ²»µ½Õ¾Ì¨£¬ÇëÖØĞÂÊäÈë¡£\n", CMDMSG);
+                tell(this_player(), "æŠ±æ­‰ï¼Œæ‰¾ä¸åˆ°ç«™å°ï¼Œè«‹é‡æ–°è¼¸å…¥ã€‚\n", CMDMSG);
                 input_to((: get_mud_name,funct :));
                 return;
         }
@@ -83,7 +83,7 @@ void get_mud_name(int funct,string name)
                 tell(this_player(),sprintf("[%4d] %s %s[%s]\n",i,x,ansi(current_status[funct][0]),test_status(x,current_status[funct][1])));
                 i++;
         }
-        tell(this_player(), "ÇëÑ¡Ôñ 0~"+(si-1), CMDMSG);
+        tell(this_player(), "è«‹é¸æ“‡ 0~"+(si-1), CMDMSG);
         input_to((: select_mud,funct,si,mud :));
         return;
 }
@@ -96,13 +96,13 @@ void get_mud_ip(int funct,string name)
 
         if( stringp(name) && name[0]=='q' )
         {
-                tell(this_player(), "Àë¿ª¡£\n", CMDMSG);
+                tell(this_player(), "é›¢é–‹ã€‚\n", CMDMSG);
                 return;
         }
 
         if( !sizeof(mud=I2D->fetch_mudip(name)) )
         {
-                tell(this_player(), "±§Ç¸£¬ÕÒ²»µ½Õ¾Ì¨£¬ÇëÖØĞÂÊäÈë¡£\n", CMDMSG);
+                tell(this_player(), "æŠ±æ­‰ï¼Œæ‰¾ä¸åˆ°ç«™å°ï¼Œè«‹é‡æ–°è¼¸å…¥ã€‚\n", CMDMSG);
                 input_to((: get_mud_ip,funct :));
                 return;
         }
@@ -118,7 +118,7 @@ void get_mud_ip(int funct,string name)
                 tell(this_player(),sprintf("[%4d] %s %s[%s]\n",i,x,ansi(current_status[funct][0]),test_status(x,current_status[funct][1])));
                 i++;
         }
-        tell(this_player(), "ÇëÑ¡Ôñ 0~"+(si-1), CMDMSG);
+        tell(this_player(), "è«‹é¸æ“‡ 0~"+(si-1), CMDMSG);
         input_to((: select_mud,funct,si,mud :));
         return;
 
@@ -131,24 +131,24 @@ void select_target_way(int funct,string x)
 
         if(stringp(x) && x[0]=='q' )
         {
-                tell(this_player(), "Àë¿ª¡£\n", CMDMSG);
+                tell(this_player(), "é›¢é–‹ã€‚\n", CMDMSG);
                 return;
         }
 
         if( !sscanf(x,"%d",input) || member_array(input,num)==-1 )
         {
-                tell(this_player(), "ÇëÊäÈë[ 1~2 ] µÄÊı×Ö£º\n", CMDMSG);
+                tell(this_player(), "è«‹è¼¸å…¥[ 1~2 ] çš„æ•¸å­—ï¼š\n", CMDMSG);
                 input_to((: select_target_way,funct :));
                 return;
         }
 
         switch(input)
         {
-                case  1:tell(this_player(), "ÇëÊäÈëÕ¾Ì¨Ãû³Æ£º\n", CMDMSG);
+                case  1:tell(this_player(), "è«‹è¼¸å…¥ç«™å°åç¨±ï¼š\n", CMDMSG);
                         input_to((: get_mud_name,funct :));
                         return;
                 case  2:
-                        tell(this_player(), "ÇëÊäÈëÕ¾Ì¨ 'IP:PORT'£º\n", CMDMSG);
+                        tell(this_player(), "è«‹è¼¸å…¥ç«™å° 'IP:PORT'ï¼š\n", CMDMSG);
                         input_to((: get_mud_ip,funct :));
                         return;
         }
@@ -162,25 +162,25 @@ void add_mud_list(string name)
 
         if( stringp(name) && name[0]=='q' )
         {
-                tell(this_player(), "Àë¿ª¡£\n", CMDMSG);
+                tell(this_player(), "é›¢é–‹ã€‚\n", CMDMSG);
                 return;
         }
 
         if( sizeof(I2D->fetch_mudip(name)) )
         {
-                tell(this_player(), "±§Ç¸£¬ÒÑ¾­ÓĞÕâ¸öÕ¾Ì¨£¬ÇëÖØĞÂÊäÈë¡£\n", CMDMSG);
+                tell(this_player(), "æŠ±æ­‰ï¼Œå·²ç¶“æœ‰é€™å€‹ç«™å°ï¼Œè«‹é‡æ–°è¼¸å…¥ã€‚\n", CMDMSG);
                 input_to((: add_mud_list :));
                 return;
         }
 
         if( sscanf(name, "%s:%d", address, port) != 2 )
         {
-                tell(this_player(), "±§Ç¸£¬¸ñÊ½²»¶Ô£¬ÇëÖØĞÂÊäÈë¡£\n", CMDMSG);
+                tell(this_player(), "æŠ±æ­‰ï¼Œæ ¼å¼ä¸å°ï¼Œè«‹é‡æ–°è¼¸å…¥ã€‚\n", CMDMSG);
                 input_to((: add_mud_list :));
                 return;
         }
         I2D->add_incoming_mudlist(address, port);
-        tell(this_player(), "Ôö¼ÓĞÂÕ¾Ì¨³É¹¦¡£\n", CMDMSG);
+        tell(this_player(), "å¢åŠ æ–°ç«™å°æˆåŠŸã€‚\n", CMDMSG);
         return;
 }
 
@@ -190,19 +190,19 @@ void select_main_menu(string x)
 
         if(stringp(x) && x[0]=='q' )
         {
-                tell(this_player(), "Àë¿ª¡£\n", CMDMSG);
+                tell(this_player(), "é›¢é–‹ã€‚\n", CMDMSG);
                 return;
         }
 
         if( !sscanf(x,"%d",input) || member_array(input,num)==-1 )
         {
-                tell(this_player(), "ÇëÊäÈë[ 1~3,5~9 ] µÄÊı×Ö£º\n", CMDMSG);
+                tell(this_player(), "è«‹è¼¸å…¥[ 1~3,5~9 ] çš„æ•¸å­—ï¼š\n", CMDMSG);
                 input_to((: select_main_menu :));
                 return;
         }
         if( input==5)
         {
-                tell(this_player(), "ÇëÊäÈëÕ¾Ì¨ 'IP:PORT'£º\n", CMDMSG);
+                tell(this_player(), "è«‹è¼¸å…¥ç«™å° 'IP:PORT'ï¼š\n", CMDMSG);
                 input_to((: add_mud_list :));
                 return;
         }
@@ -211,28 +211,28 @@ void select_main_menu(string x)
                 if( fetch_variable("debug",find_object(I2D))==1 )
                 {
                         I2D->debug();
-                        tell(this_player(), "³ı´í¹¦ÄÜ¹Ø±Õ¡£\n", CMDMSG);
+                        tell(this_player(), "é™¤éŒ¯åŠŸèƒ½é—œé–‰ã€‚\n", CMDMSG);
                         return;
                 } else {
                         I2D->debug();
-                        tell(this_player(), "³ı´í¹¦ÄÜ¿ªÆô¡£\n", CMDMSG);
+                        tell(this_player(), "é™¤éŒ¯åŠŸèƒ½é–‹å•Ÿã€‚\n", CMDMSG);
                         return;
                 }
         }
-        tell(this_player(), "1.ÊÖ¶¯ÊäÈëÕ¾Ì¨Ãû³Æ\n2.ÊÖ¶¯ÊäÈë IP Î»Ö·\n\n", CMDMSG);
+        tell(this_player(), "1.æ‰‹å‹•è¼¸å…¥ç«™å°åç¨±\n2.æ‰‹å‹•è¼¸å…¥ IP ä½å€\n\n", CMDMSG);
         switch(input)
         {
-                case  1:tell(this_player(), "ÇëÑ¡ÔñÄãÏëÔö¼Ó #×ªÂë# ¹¦ÄÜµÄÕ¾Ì¨ÊäÈë·½Ê½£º\n", CMDMSG);
+                case  1:tell(this_player(), "è«‹é¸æ“‡ä½ æƒ³å¢åŠ  #è½‰ç¢¼# åŠŸèƒ½çš„ç«™å°è¼¸å…¥æ–¹å¼ï¼š\n", CMDMSG);
                         input_to((: select_target_way,1 :));break;
-                case  2:tell(this_player(), "ÇëÑ¡ÔñÄãÏëÔö¼Ó #¹ã¸æ# ¹¦ÄÜµÄÕ¾Ì¨ÊäÈë·½Ê½£º\n", CMDMSG);
+                case  2:tell(this_player(), "è«‹é¸æ“‡ä½ æƒ³å¢åŠ  #å»£å‘Š# åŠŸèƒ½çš„ç«™å°è¼¸å…¥æ–¹å¼ï¼š\n", CMDMSG);
                         input_to((: select_target_way,2 :));break;
-                case  3:tell(this_player(), "ÇëÑ¡ÔñÄãÏëÔö¼Ó #ºöÂÔ# ¹¦ÄÜµÄÕ¾Ì¨ÊäÈë·½Ê½£º\n", CMDMSG);
+                case  3:tell(this_player(), "è«‹é¸æ“‡ä½ æƒ³å¢åŠ  #å¿½ç•¥# åŠŸèƒ½çš„ç«™å°è¼¸å…¥æ–¹å¼ï¼š\n", CMDMSG);
                         input_to((: select_target_way,3 :));break;
-                case  6:tell(this_player(), "ÇëÑ¡ÔñÄãÏë½â³ı #×ªÂë# ¹¦ÄÜµÄÕ¾Ì¨ÊäÈë·½Ê½£º\n", CMDMSG);
+                case  6:tell(this_player(), "è«‹é¸æ“‡ä½ æƒ³è§£é™¤ #è½‰ç¢¼# åŠŸèƒ½çš„ç«™å°è¼¸å…¥æ–¹å¼ï¼š\n", CMDMSG);
                         input_to((: select_target_way,6 :));break;
-                case  7:tell(this_player(), "ÇëÑ¡ÔñÄãÏë½â³ı #¹ã¸æ# ¹¦ÄÜµÄÕ¾Ì¨ÊäÈë·½Ê½£º\n", CMDMSG);
+                case  7:tell(this_player(), "è«‹é¸æ“‡ä½ æƒ³è§£é™¤ #å»£å‘Š# åŠŸèƒ½çš„ç«™å°è¼¸å…¥æ–¹å¼ï¼š\n", CMDMSG);
                         input_to((: select_target_way,7 :));break;
-                case  8:tell(this_player(), "ÇëÑ¡ÔñÄãÏë½â³ı #ºöÂÔ# ¹¦ÄÜµÄÕ¾Ì¨ÊäÈë·½Ê½£º\n", CMDMSG);
+                case  8:tell(this_player(), "è«‹é¸æ“‡ä½ æƒ³è§£é™¤ #å¿½ç•¥# åŠŸèƒ½çš„ç«™å°è¼¸å…¥æ–¹å¼ï¼š\n", CMDMSG);
                         input_to((: select_target_way,8 :));break;
 
         }
@@ -246,19 +246,19 @@ int main(object me, string arg)
 
         if( !arg )
         {
-                tell(me, "»¶Ó­Ê¹ÓÃ Intermud2 Daemon Tool £¡£¡\n", CMDMSG);
-                tell(me, "ÇëÊäÈëÏëÊ¹ÓÃµÄÏîÄ¿£º\n"+@ITEM
-[1]. Ôö¼Ó #×ªÂë# ¹¦ÄÜµ½Ä³Õ¾( BIG5 <-> GB ¼ä»¥×ª )
-[2]. Ôö¼Ó #¹ã¸æ# ¹¦ÄÜµ½Ä³Õ¾( ½«¸ÃÕ¾ËùÓĞÆµµÀÑ¶Ï¢×ªÖÁ AD Channel )
-[3]. Ôö¼Ó #ºöÂÔ# ¹¦ÄÜµ½Ä³Õ¾( ºöÂÔËùÓĞ¸ÃÕ¾Ëù×öµÄ¶¯×÷ )
-[4]--(±£Áô)
-[5]. Ôö¼ÓÄ³Õ¾µ½ mudlist
-[6]. ½â³ıÄ³Õ¾µÄ #×ªÂë# ¹¦ÄÜ
-[7]. ½â³ıÄ³Õ¾µÄ #¹ã¸æ# ¹¦ÄÜ
-[8]. ½â³ıÄ³Õ¾µÄ #ºöÂÔ# ¹¦ÄÜ
-[9]. ³ı´í¹¦ÄÜ±ä¸ü( DEBUG Mode On/Off )
-[q]. Àë¿ª¡£
-ÇëÊäÈë[ 1~3,5~9 ] µÄÊı×Ö£º
+                tell(me, "æ­¡è¿ä½¿ç”¨ Intermud2 Daemon Tool ï¼ï¼\n", CMDMSG);
+                tell(me, "è«‹è¼¸å…¥æƒ³ä½¿ç”¨çš„é …ç›®ï¼š\n"+@ITEM
+[1]. å¢åŠ  #è½‰ç¢¼# åŠŸèƒ½åˆ°æŸç«™( BIG5 <-> GB é–“äº’è½‰ )
+[2]. å¢åŠ  #å»£å‘Š# åŠŸèƒ½åˆ°æŸç«™( å°‡è©²ç«™æ‰€æœ‰é »é“è¨Šæ¯è½‰è‡³ AD Channel )
+[3]. å¢åŠ  #å¿½ç•¥# åŠŸèƒ½åˆ°æŸç«™( å¿½ç•¥æ‰€æœ‰è©²ç«™æ‰€åšçš„å‹•ä½œ )
+[4]--(ä¿ç•™)
+[5]. å¢åŠ æŸç«™åˆ° mudlist
+[6]. è§£é™¤æŸç«™çš„ #è½‰ç¢¼# åŠŸèƒ½
+[7]. è§£é™¤æŸç«™çš„ #å»£å‘Š# åŠŸèƒ½
+[8]. è§£é™¤æŸç«™çš„ #å¿½ç•¥# åŠŸèƒ½
+[9]. é™¤éŒ¯åŠŸèƒ½è®Šæ›´( DEBUG Mode On/Off )
+[q]. é›¢é–‹ã€‚
+è«‹è¼¸å…¥[ 1~3,5~9 ] çš„æ•¸å­—ï¼š
 ITEM, CMDMSG);
                 input_to((: select_main_menu :));
                 return 1;

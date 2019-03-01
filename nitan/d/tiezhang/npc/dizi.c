@@ -5,13 +5,13 @@
 inherit NPC;
 void create()
 {
-          set_name("ºñÍÁÆìµÜ×Ó", ({"dizi"}));
+          set_name("åšåœŸæ——å¼Ÿå­", ({"dizi"}));
        set("long",
-                "ËûÊÇÉí²Ä°«Ğ¡£¬Á½±Û´Ö×³£¬°òÀ«ÑüÔ²¡£ËûÊÖ³Ö±ø\n"
-                "ÈĞ£¬Éí´©Ò»ºÚÉ«Ê¥ÒÂ£¬ËÆºõÓĞÒ»ÉíÎäÒÕ¡£\n"
+                "ä»–æ˜¯èº«æçŸ®å°ï¼Œå…©è‡‚ç²—å£¯ï¼Œè†€é—Šè…°åœ“ã€‚ä»–æ‰‹æŒå…µ\n"
+                "åˆƒï¼Œèº«ç©¿ä¸€é»‘è‰²è–è¡£ï¼Œä¼¼ä¹æœ‰ä¸€èº«æ­¦è—ã€‚\n"
         );
 
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("attitude", "peaceful");
         
         set("age", 35);
@@ -33,7 +33,7 @@ void create()
         set_skill("dodge", 50);
         set_skill("tiyunzong", 50);
         set_skill("cuff", 50);
-//        set_skill("banruo-zhang", 50);´ı¼Ó
+//        set_skill("banruo-zhang", 50);å¾…åŠ 
         set_skill("parry", 50);
         set_skill("blade", 50);
         
@@ -59,16 +59,16 @@ void init()
         if (interactive(ob) 
          && !query("no_fight", environment(ob) )
         && !present("tieyan ling", ob) 
-         && ((fam=query("family", ob)) && fam["family_name"] != "Ã÷½Ì") )
+         && ((fam=query("family", ob)) && fam["family_name"] != "æ˜æ•™") )
         {
                 if( !query_temp("warned", ob)){
-                        command("say ÄãÊÇË­£¿  ÔõÃ´´³µ½¹âÃ÷¶¥ÀïÀ´ÁË£¿£¡");
-                        command("say ¿ì¸øÎÒËÙËÙÀë¿ª£¬ÏÂ´Î¿´µ½¾ö²»ÇáÈÄ£¡");
+                        command("say ä½ æ˜¯èª°ï¼Ÿ  æ€éº¼é—–åˆ°å…‰æ˜é ‚è£¡ä¾†äº†ï¼Ÿï¼");
+                        command("say å¿«çµ¦æˆ‘é€Ÿé€Ÿé›¢é–‹ï¼Œä¸‹æ¬¡çœ‹åˆ°æ±ºä¸è¼•é¥’ï¼");
                         set_temp("warned", 1, ob);
                 }
                   else if( query_temp("stay", ob)<3)addn_temp("stay", 1, ob);
                 else {
-                        command("say ´óµ¨¿ñÍ½£¬¾¹¸Ò´³µ½Ã÷½ÌÀ´ÈöÒ°£¡£¡£¡\n");
+                        command("say å¤§è†½ç‹‚å¾’ï¼Œç«Ÿæ•¢é—–åˆ°æ˜æ•™ä¾†æ’’é‡ï¼ï¼ï¼\n");
                         remove_call_out("hiting_ob");
                              call_out("hiting_ob", 1, ob);
                 }
@@ -90,10 +90,10 @@ int moving_ob(object ob)
         if (!living(ob)){
         switch( random(3) ) {
         case 0:
-                     command("say ºß£¬¿´ÄãÒÔºó»¹¸Ò²»¸ÒÂÒ´³¹âÃ÷¶¥£¡£¡£¡");
+                     command("say å“¼ï¼Œçœ‹ä½ ä»¥å¾Œé‚„æ•¢ä¸æ•¢äº‚é—–å…‰æ˜é ‚ï¼ï¼ï¼");
         break;
         case 1:
-                command("say ½»¸øÀä´óÈË´¦Àí°É£¬¹ØËûÒ»Äê°ëÔÂµÄ¡£");
+                command("say äº¤çµ¦å†·å¤§äººè™•ç†å§ï¼Œé—œä»–ä¸€å¹´åŠæœˆçš„ã€‚");
         break;
         case 2:
                 command("nod");

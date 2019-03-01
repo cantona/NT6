@@ -24,18 +24,18 @@ int main(object me, string str)
         z0=query("coor/z", room);
    
         if (! x0 && ! y0 && ! z0 && base_name(room) != "/d/city/guangchang") 
-                return notify_fail(WHT "Õâ¸öµØ·½²»ÄÜÊ¹ÓÃlocateÖ¸Áî£¬Ö»ÓĞÔÚÓĞtask·¢²¼µÄµØÇø²Å¿ÉÒÔÊ¹ÓÃ£¡\n" NOR);
+                return notify_fail(WHT "é€™å€‹åœ°æ–¹ä¸èƒ½ä½¿ç”¨locateæŒ‡ä»¤ï¼Œåªæœ‰åœ¨æœ‰taskç™¼å¸ƒçš„åœ°å€æ‰å¯ä»¥ä½¿ç”¨ï¼\n" NOR);
                 
         if (! str) 
-                return notify_fail("Ö¸Áî¸ñÊ½: locate <ÎïÆ·>\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼: locate <ç‰©å“>\n");
 
 /*
         if( query("reborn/times", me) )
-                return notify_fail("×ªÊÀÍæ¼Ò²»¿ÉÒÔ×öÊ¹ÃüÈÎÎñ¡£\n");
+                return notify_fail("è½‰ä¸–ç©å®¶ä¸å¯ä»¥åšä½¿å‘½ä»»å‹™ã€‚\n");
 */
 
         if( query("qi", me)<30 )
-                return notify_fail("ÄãµÄÆø²»×ãÒÔ²éÑ°Î»ÖÃ¡£\n");
+                return notify_fail("ä½ çš„æ°£ä¸è¶³ä»¥æŸ¥å°‹ä½ç½®ã€‚\n");
                 
         me->receive_damage("qi", 20);
         output = TASK_D->locate_ob(me, str);
@@ -43,7 +43,7 @@ int main(object me, string str)
         // output = QUESTNPC_D->locate_obj(me, str);
         
         if (output == "")
-                return notify_fail("È·¶¨²»ÁË" + str + "µÄ´ó¸ÅÎ»ÖÃ¡£\n");
+                return notify_fail("ç¢ºå®šä¸äº†" + str + "çš„å¤§æ¦‚ä½ç½®ã€‚\n");
         
         write(output);
         return 1;
@@ -64,9 +64,9 @@ object find_env(object ob)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½: locate <ÎïÆ·> 
-Õâ¸öÖ¸ÁîÊÇÓÃÀ´µÃÖªÊ¹ÃüÎïÆ·µÄ´ó¸ÅÎ»ÖÃ¡£
-³¯Í¢¹ÙÔ±»¹¿ÉÒÔÓÃ´ËÖ¸Áî²éÑ°ÈËÎïµÄ´ó¸ÅÎ»ÖÃ¡£ 
+æŒ‡ä»¤æ ¼å¼: locate <ç‰©å“> 
+é€™å€‹æŒ‡ä»¤æ˜¯ç”¨ä¾†å¾—çŸ¥ä½¿å‘½ç‰©å“çš„å¤§æ¦‚ä½ç½®ã€‚
+æœå»·å®˜å“¡é‚„å¯ä»¥ç”¨æ­¤æŒ‡ä»¤æŸ¥å°‹äººç‰©çš„å¤§æ¦‚ä½ç½®ã€‚ 
 HELP
         );
         return 1;

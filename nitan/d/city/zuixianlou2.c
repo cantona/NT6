@@ -5,14 +5,14 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "×íÏÉÂ¥¶þÂ¥");
+	set("short", "é†‰ä»™æ¨“äºŒæ¨“");
         set("long", @LONG
-ÕâÀïÊÇ×íÏÉÂ¥Õý¶Ô×Å½ÖÃæµÄ¶þÂ¥£¬ÎÄÈËÑ§Ê¿ÔÚÕâÀïÒ÷Ê«×÷»­£¬¸»
-ÉÌÍÁºÀÔÚÕâÀï´ó¿ì¶äÒÃ£¬½­ºþºÀ¿ÍÔò×ÔÈ»ÊÇõõôÃ»»¾Æ£¬×ÝÇéºÀÒûÁË¡£
-¶«±ßµÄ¼¸¼äÏá·¿ÄÚÔòÓÐÈËÔÚ¾Ù°ìÏ²Ñç£¬´óÑç±ö¿Í¡£
+é€™è£¡æ˜¯é†‰ä»™æ¨“æ­£å°è‘—è¡—é¢çš„äºŒæ¨“ï¼Œæ–‡äººå­¸å£«åœ¨é€™è£¡åŸè©©ä½œç•«ï¼Œå¯Œ
+å•†åœŸè±ªåœ¨é€™è£¡å¤§å¿«æœµé ¤ï¼Œæ±Ÿæ¹–è±ªå®¢å‰‡è‡ªç„¶æ˜¯è²‚è£˜æ›é…’ï¼Œç¸±æƒ…è±ªé£²äº†ã€‚
+æ±é‚Šçš„å¹¾é–“å»‚æˆ¿å…§å‰‡æœ‰äººåœ¨èˆ‰è¾¦å–œå®´ï¼Œå¤§å®´è³“å®¢ã€‚
 LONG );
 	set("item_desc", ([
-		"paizi" : "±¾µê³öÊÛ¿¾Ñ¼¼°ÉÏµÈ»¨µñ¾Æ¡£\n",
+		"paizi" : "æœ¬åº—å‡ºå”®çƒ¤é´¨åŠä¸Šç­‰èŠ±é›•é…’ã€‚\n",
 	]));
 	set("objects", ([
 		"/d/city/npc/xian" : 1,

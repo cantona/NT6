@@ -7,10 +7,10 @@ void greeting(object);
 void init();
 void create()
 {
-        set_name("Àî½ÌÍ·", ({ "li"}) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("ææ•™é ­", ({ "li"}) );
+        set("gender", "ç”·æ€§" );
         set("age", 25);
-        set("long", "ÕâÊÇ¸öºÍ°ª¿ÉÇ×µÄ½ÌÍ·¡£\n");
+        set("long", "é€™æ˜¯å€‹å’Œè—¹å¯è¦ªçš„æ•™é ­ã€‚\n");
         set("attitude", "friendly");
         set("shen_type", -1);
 
@@ -49,13 +49,13 @@ void create()
                 (: exert_function, "reserve" :),
                 (: exert_function, "recover" :),
         }) );
-        create_family("Å·ÑôÊÀ¼Ò", 0, "½ÌÍ·");
+        create_family("æ­é™½ä¸–å®¶", 0, "æ•™é ­");
 
         set("chat_chance", 2);
         set("chat_msg", ({
-                "Àî½ÌÍ·ËµµÀ£ºÇÚÑ§¿àÁ··½¿É³öÉñ¹¦¡£\n",
-                "Àî½ÌÍ·¹ÄÀøĞ¡µÜ×ÓÃÇ²»Î·¼è¿à£¬ºÃºÃÁ·¹¦¡£\n",
-                "Àî½ÌÍ·ÅÄÅÄÑ§Í½µÄÍ·Ëµ£ººÃÑùµÄ£¡\n",
+                "ææ•™é ­èªªé“ï¼šå‹¤å­¸è‹¦ç·´æ–¹å¯å‡ºç¥åŠŸã€‚\n",
+                "ææ•™é ­é¼“å‹µå°å¼Ÿå­å€‘ä¸ç•è‰±è‹¦ï¼Œå¥½å¥½ç·´åŠŸã€‚\n",
+                "ææ•™é ­æ‹æ‹å­¸å¾’çš„é ­èªªï¼šå¥½æ¨£çš„ï¼\n",
         }) );
         setup();
 }
@@ -76,28 +76,28 @@ void init()
 void greeting(object ob)
 {
         if( !ob || environment(ob) != environment() ) return;
-        if( query("family/family_name", ob) == "Å·ÑôÊÀ¼Ò" )
+        if( query("family/family_name", ob) == "æ­é™½ä¸–å®¶" )
         {
-                message_vision("Àî½ÌÍ·³å×Å$NµãµãÍ·£¬Î¢Î¢Ğ¦ÁËĞ¦¡£\n",ob);
+                message_vision("ææ•™é ­æ²–è‘—$Né»é»é ­ï¼Œå¾®å¾®ç¬‘äº†ç¬‘ã€‚\n",ob);
                 return;
         }
 
-        message_vision("Àî½ÌÍ·¶Ô$NÈÂµÀ£ºĞ¡¼Ò»ï£¬ÄãÏ¹¹äÊ²Ã´ÄØ£¿\n",ob);
+        message_vision("ææ•™é ­å°$Nåš·é“ï¼šå°å®¶ä¼™ï¼Œä½ çé€›ä»€éº¼å‘¢ï¼Ÿ\n",ob);
 }
 
 
 int accept_fight(object ob)
 {
-        if( query("family/family_name", ob) == "Å·ÑôÊÀ¼Ò" )
+        if( query("family/family_name", ob) == "æ­é™½ä¸–å®¶" )
         {
                 if( query("combat_exp", ob)<1000 )
-                        return notify_fail("Àî½ÌÍ·Ğ¦µÀ£ºÄãµÄ¾­ÑéÌ«µÍÁË£¬»¹ÊÇÏÈÕÒÅãÁ·Í¯×Ó±È»®¼¸ÕĞ°É¡££¡\n");
+                        return notify_fail("ææ•™é ­ç¬‘é“ï¼šä½ çš„ç¶“é©—å¤ªä½äº†ï¼Œé‚„æ˜¯å…ˆæ‰¾é™ªç·´ç«¥å­æ¯”åŠƒå¹¾æ‹›å§ã€‚ï¼\n");
         }
         return 1;
 }
 
 void attempt_apprentice(object ob)
 {
-        command("say ÎÒÃÇ×·ËæÅ·ÑôÊÀ¼Ò£¬²»ÊÕÍ½¡£");
+        command("say æˆ‘å€‘è¿½éš¨æ­é™½ä¸–å®¶ï¼Œä¸æ”¶å¾’ã€‚");
         return;
 }

@@ -5,11 +5,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("蟒蛇", ({ "python", "she" }) );
+        set_name("锜掕泧", ({ "python", "she" }) );
         set_weight(1000000);
-        set("race", "爬蛇");
+        set("race", "鐖泧");
         set("age", 110);
-        set("long", "一条愈丈长的巨蟒，盘着身子睡觉。\n");
+        set("long", "涓�姊濈檼涓堥暦鐨勫法锜掞紝鐩よ憲韬瓙鐫¤銆俓n");
         set("attitude", "aggressive");
 
         set("str", 40);

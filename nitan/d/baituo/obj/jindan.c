@@ -5,13 +5,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name("½ğÉßµ¨", ({ "jin dan", "jin" }));
+        set_name("é‡‘è›‡è†½", ({ "jin dan", "jin" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ö»");
-                set("long", "ÕâÊÇÒ»Ö»»Æ²Ó²ÓµÄ½ğÉßµ¨£¬ÊÇÖÆ±¸¡ºÉßµ¨¸à¡»"
-                            "µÄÔ­ÁÏ¡£\n");
+                set("unit", "åª");
+                set("long", "é€™æ˜¯ä¸€åªé»ƒç‡¦ç‡¦çš„é‡‘è›‡è†½ï¼Œæ˜¯åˆ¶å‚™ã€è›‡è†½è†ã€"
+                            "çš„åŸæ–™ã€‚\n");
                 set("value", 200);
                 set("only_do_effect", 1);
         }
@@ -20,5 +20,5 @@ void create()
 
 int do_effect(object me)
 {
-        return notify_fail("ÄãÕÒËÀ°¡¡£\n");
+        return notify_fail("ä½ æ‰¾æ­»å•Šã€‚\n");
 }

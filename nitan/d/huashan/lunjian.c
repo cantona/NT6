@@ -3,9 +3,9 @@ inherit ROOM;
 
 void create()
 {
-        set("short", RED "Ô¡Ñª²ĞÑô" NOR);
-        set("long", HIR "                Ï¦     Ñô\n" + NOR + RED +
-                "ÒÑ½«Õû¸ö¾ø¶¥È¾³ÉÑªºìÉ«£¬Äã·Â·ğÒÑĞáµ½Ò»¹ÉÑªĞÈÖ®Æø¡£" + NOR + "\n ");
+        set("short", RED "æµ´è¡€æ®˜é™½" NOR);
+        set("long", HIR "                å¤•     é™½\n" + NOR + RED +
+                "å·²å°‡æ•´å€‹çµ•é ‚æŸ“æˆè¡€ç´…è‰²ï¼Œä½ ä»¿ä½›å·²å—…åˆ°ä¸€è‚¡è¡€è…¥ä¹‹æ°£ã€‚" + NOR + "\n ");
         set("exits", ([ /* sizeof() == 1 */
         ]));
         set("no_magic", 1);
@@ -25,7 +25,7 @@ void init()
 
 int discmds()
 {
-        tell_object(this_player(), "±ÈÎäÊÇ¹âÃ÷Õı´ó£¬²»Ğí×÷±×£¡\n"); 
+        tell_object(this_player(), "æ¯”æ­¦æ˜¯å…‰æ˜æ­£å¤§ï¼Œä¸è¨±ä½œå¼Šï¼\n"); 
         return 1; 
 }
 

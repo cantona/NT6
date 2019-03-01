@@ -4,7 +4,7 @@ inherit ITEM;
 
 void create()
 {
-        set_name("Ä¾ºĞ×Ó", ({ "woodbox", "Ä¾ºĞ×Ó" }) );
+        set_name("æœ¨ç›’å­", ({ "woodbox", "æœ¨ç›’å­" }) );
         set_weight(500);        
         set_max_encumbrance(2000);      
         set("prep","on");        
@@ -12,8 +12,8 @@ void create()
                 set_default_object(__FILE__);        
         else 
         {
-                set("unit", "¸ö");
-                set("long", "ÕâĞ¡Ä¾ºĞ×ÓÂúÊÇ»Ò³¾£¬Õ³ÂúÁËÃºĞ¼²ñ²İ£¬ÄãËÆºõ¿ÉÒÔ°ÑËü´ò¿ª£¨£ï£ğ£å£î£©¡£\n");
+                set("unit", "å€‹");
+                set("long", "é€™å°æœ¨ç›’å­æ»¿æ˜¯ç°å¡µï¼Œç²˜æ»¿äº†ç…¤å±‘æŸ´è‰ï¼Œä½ ä¼¼ä¹å¯ä»¥æŠŠå®ƒæ‰“é–‹ï¼ˆï½ï½ï½…ï½ï¼‰ã€‚\n");
                 set("value", 100);
                 set("closed", 1);
         }
@@ -32,12 +32,12 @@ int do_open(string arg)
 {
         object  me, ob;
         if( !arg || arg != "woodbox" )
-                return notify_fail("ÄãÒª´ò¿ªÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦æ‰“é–‹ä»€éº¼ï¼Ÿ\n");
         me = this_player();
         ob = this_object();
         if( !query("closed", ob) )
-                return notify_fail("Ä¾ºĞ×ÓÒÑ¾­´ò¿ªÁË£¡\n");
-        message_vision("$NĞ¡ĞÄÒíÒí´ò¿ª$n¡£\n", me, ob);
+                return notify_fail("æœ¨ç›’å­å·²ç¶“æ‰“é–‹äº†ï¼\n");
+        message_vision("$Nå°å¿ƒç¿¼ç¿¼æ‰“é–‹$nã€‚\n", me, ob);
         set("closed", 0, ob);
         return 1;
 } 

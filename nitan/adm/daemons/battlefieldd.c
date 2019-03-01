@@ -40,12 +40,12 @@ int sort_user(object ob1, object ob2)
 
 class team
 {
-        int score;      // »ı·Ö
-        int win;        // »ñÊ¤
-        int lose;       // Ê§°Ü
-        string name;    // ¶ÓÎéÃû³Æ
-        string *member; // ¶ÓÎé³ÉÔ±
-        string leader;  // ¶Ó³¤
+        int score;      // ç©åˆ†
+        int win;        // ç²å‹
+        int lose;       // å¤±æ•—
+        string name;    // éšŠä¼åç¨±
+        string *member; // éšŠä¼æˆå“¡
+        string leader;  // éšŠé•·
 }
 nosave class team *all = ({});
 nosave class team team1, team2;
@@ -99,39 +99,39 @@ int query_player_number(object player)
         return member_array(player->query_id(1), keys(battle_player)) + 1;
 }
 
-// ÉèÖÃÕ½ÒÛÃû³Æ
+// è¨­ç½®æˆ°å½¹åç¨±
 void set_battle_name(string name)
 {
         battle_name = name;
 }
 
-// ÉèÖÃ¶ÓÎéÃû³Æ
+// è¨­ç½®éšŠä¼åç¨±
 void set_team_name(string name1, string name2)
 {
         team1->name = name1;
         team2->name = name2;
 }
 
-// ÉèÖÃ¶ÓÎéÈë¿Ú
+// è¨­ç½®éšŠä¼å…¥å£
 void set_entry_room(string where1, string where2)
 {
         entry1 = where1;
         entry2 = where2;
 }
 
-// ÉèÖÃ±¨ÃûÌõ¼ş
+// è¨­ç½®å ±åæ¢ä»¶
 void set_max_level(int level)
 {
         max_level = level;
 }
 
-// ÉèÖÃ½±Àø±ÈÀı%
+// è¨­ç½®çå‹µæ¯”ä¾‹%
 void set_bonus_percent(int per)
 {
         percent = per;
 }
 
-// ÉèÖÃÁ½Ö§°ïÅÉ
+// è¨­ç½®å…©æ”¯å¹«æ´¾
 void set_bunch_team(string name1, string name2)
 {
         bunch_flag = 1;
@@ -154,7 +154,7 @@ void init_player(object me)
         int i;
         object *obs;
         
-        tell_object(me, HIY "ÄãÑÛÇ°ºöÈ»Ò»»¨...\n" NOR);
+        tell_object(me, HIY "ä½ çœ¼å‰å¿½ç„¶ä¸€èŠ±...\n" NOR);
         me->set_override("unconcious", (: call_other, __FILE__, "check_out" :));
         me->set_override("die", (: call_other, __FILE__, "check_out" :));
         me->set_override("quit", (: call_other, __FILE__, "check_quit" :));
@@ -180,10 +180,10 @@ void init_player(object me)
                 total += ({ me });
        
         move_to_battle(me);
-        tell_object(me, HIY "Äã±»´«ËÍµ½Õ½³¡ÖĞ...¡£\n");
+        tell_object(me, HIY "ä½ è¢«å‚³é€åˆ°æˆ°å ´ä¸­...ã€‚\n");
 }
 
-// ²ÎÓëÕ½Õù
+// åƒèˆ‡æˆ°çˆ­
 void join_battle(object me)
 {
         string where;
@@ -191,56 +191,56 @@ void join_battle(object me)
         string id = me->query_id(1);
 
         if( battle_start_flag )
-                return tell_object(me, "Õ½³¡ÒÑ¾­¿ªÆô£¬±¨ÃûÖÕÖ¹¡£\n");
+                return tell_object(me, "æˆ°å ´å·²ç¶“é–‹å•Ÿï¼Œå ±åçµ‚æ­¢ã€‚\n");
 
         if( me->is_busy() )
                 return tell_object(me, BUSY_MESSAGE);
 
         if( me->is_fighting() )
-                return tell_object(me, "ÄãÄ¿Ç°ÕıÔÚÕ½¶·ÖĞ£¬»¹ÊÇÏÈ´¦ÀíÄ¿Ç°µÄ¶ÔÊÖÔÙËµ°É¡£\n");
+                return tell_object(me, "ä½ ç›®å‰æ­£åœ¨æˆ°é¬¥ä¸­ï¼Œé‚„æ˜¯å…ˆè™•ç†ç›®å‰çš„å°æ‰‹å†èªªå§ã€‚\n");
 
         if( me->query_condition("killer") )
-                return tell_object(me, "¹Ù¸®ÕıÔÚÍ¨¼©Äã£¬Äã»¹¸ÒÔÚÕâ¶ùÅ×Í·Â¶Ãæ£¿\n");
+                return tell_object(me, "å®˜åºœæ­£åœ¨é€šç·ä½ ï¼Œä½ é‚„æ•¢åœ¨é€™å…’æ‹‹é ­éœ²é¢ï¼Ÿ\n");
 
         if( !battle_open_flag )
-                return tell_object(me, "Õ½ÕùÃ»ÓĞ·¢³ö¼¯½á£¬Ä¿Ç°ÎŞ·¨±¨Ãû¡£\n");
+                return tell_object(me, "æˆ°çˆ­æ²’æœ‰ç™¼å‡ºé›†çµï¼Œç›®å‰ç„¡æ³•å ±åã€‚\n");
 
         if( me->is_ghost() )
-                return tell_object(me, "µÈÄã»¹Ñôºó£¬ÔÙ±¨Ãû°É¡£\n");
+                return tell_object(me, "ç­‰ä½ é‚„é™½å¾Œï¼Œå†å ±åå§ã€‚\n");
 
         if (me->is_in_prison()) 
-                return tell_object(me, "ÄãÕıÔÚ×öÀÎÄØ£¬ÄãÏë¸ÉÊ²Ã´£¿£¡\n"); 
+                return tell_object(me, "ä½ æ­£åœ¨åšç‰¢å‘¢ï¼Œä½ æƒ³å¹¹ä»€éº¼ï¼Ÿï¼\n"); 
 
         if( query("level", me) < 5 )
-                return tell_object(me, "ÄãÕâ¸öĞÂÄñ¾Í²»Òª²Î¼Ó¸ßÄÑ¶ÈµÄÕ½³¡°É¡£\n");
+                return tell_object(me, "ä½ é€™å€‹æ–°é³¥å°±ä¸è¦åƒåŠ é«˜é›£åº¦çš„æˆ°å ´å§ã€‚\n");
 
         if( query("level", me) > max_level )
-                return tell_object(me, "Äã¾Í±ğ½øÈ¥ÆÛ¸ºÄÇĞ©ĞÂÄñ°É¡£\n");
+                return tell_object(me, "ä½ å°±åˆ¥é€²å»æ¬ºè² é‚£äº›æ–°é³¥å§ã€‚\n");
         
         if( bunch_flag )
         {
                 if( !bunchp(me) )
-                        return tell_object(me, "±¾´ÎÕ½ÕùÖ»ÄÜÊÇ°ïÅÉÍæ¼Ò±¨Ãû²Î¼Ó¡£\n");
+                        return tell_object(me, "æœ¬æ¬¡æˆ°çˆ­åªèƒ½æ˜¯å¹«æ´¾ç©å®¶å ±ååƒåŠ ã€‚\n");
                 
                 if( me->query_bunch() != team1->name && 
                     me->query_bunch() != team2->name )
-                        return tell_object(me, "±¾´ÎÕ½ÕùÄãËùÔÚµÄ°ïÅÉ²»ÄÜ±¨Ãû²Î¼Ó¡£\n");
+                        return tell_object(me, "æœ¬æ¬¡æˆ°çˆ­ä½ æ‰€åœ¨çš„å¹«æ´¾ä¸èƒ½å ±ååƒåŠ ã€‚\n");
         }
         
         where = base_name(environment(me));
         if( sscanf(where, "/d/newbie/%s") )
-                return tell_object(me, "Äã»¹Ã»ÓĞÕıÊ½´³µ½½­ºşÄØ£¬²»ÄÜ²Î¼Ó±¨Ãû£¡\n");
+                return tell_object(me, "ä½ é‚„æ²’æœ‰æ­£å¼é—–åˆ°æ±Ÿæ¹–å‘¢ï¼Œä¸èƒ½åƒåŠ å ±åï¼\n");
 
         if( !undefinedp(battle_player[id]) )
         {
                 if( !battle_start_flag )
-                        return tell_object(me, "ÄãÒÑ¾­±¨Ãû²ÎÓëÕâ´ÎµÄÕ½Õù£¬ÇëÄÍĞÄµÈºòÕÙ¼¯¡£\n");
+                        return tell_object(me, "ä½ å·²ç¶“å ±ååƒèˆ‡é€™æ¬¡çš„æˆ°çˆ­ï¼Œè«‹è€å¿ƒç­‰å€™å¬é›†ã€‚\n");
 
                 if( inside_battlefield(me) )
-                        return tell_object(me, "ÄãÒÑ¾­ÔÚÕ½³¡ÖĞ£¬¿ìµãÉ±µĞ°É¡£\n");
+                        return tell_object(me, "ä½ å·²ç¶“åœ¨æˆ°å ´ä¸­ï¼Œå¿«é»æ®ºæ•µå§ã€‚\n");
 
                 if( !query_temp("battle_rejoin", me) )
-                        return tell_object(me, "Äã±ØĞëÊ¹ÓÃÕ½ÕùÑ«ÕÂ·½¿ÉÖØĞÂ½øÈëÕ½³¡¡£\n");
+                        return tell_object(me, "ä½ å¿…é ˆä½¿ç”¨æˆ°çˆ­å‹›ç« æ–¹å¯é‡æ–°é€²å…¥æˆ°å ´ã€‚\n");
 
                 delete_temp("battle_rejoin", me);
                 set_temp("battle/leave_room", where, me);
@@ -249,42 +249,42 @@ void join_battle(object me)
         }
 
         if( member_array(query_ip_number(me), ip_number) != -1 )
-                return tell_object(me, "ÄãËùÔÚµÄIPÒÑ¾­±¨Ãû¹ıÁË!\n");
+                return tell_object(me, "ä½ æ‰€åœ¨çš„IPå·²ç¶“å ±åéäº†!\n");
 
         ip_number += ({ query_ip_number(me) });
         battle_player[id] = allocate_mapping(0);
 
-        CHANNEL_D->channel_broadcast("war", "Ä¿Ç°¹²ÓĞ "+sizeof(battle_player)+
-                                            " Î»Íæ¼Ò±¨Ãû²ÎÓë¡¸"+battle_name+HIR"¡¹");
+        CHANNEL_D->channel_broadcast("war", "ç›®å‰å…±æœ‰ "+sizeof(battle_player)+
+                                            " ä½ç©å®¶å ±ååƒèˆ‡ã€Œ"+battle_name+HIR"ã€");
 }
 
-// È¡Ïû²ÎÓëÕ½Õù
+// å–æ¶ˆåƒèˆ‡æˆ°çˆ­
 void cancel_battle(object me)
 {
         string id = me->query_id(1);
 
         if( undefinedp(battle_player[id]) )
-                return tell_object(me, "ÄãÔ­±¾¾ÍÃ»ÓĞ±¨Ãû²ÎÓëÕâ´ÎµÄÕ½Õù¡£\n");
+                return tell_object(me, "ä½ åŸæœ¬å°±æ²’æœ‰å ±ååƒèˆ‡é€™æ¬¡çš„æˆ°çˆ­ã€‚\n");
 
         if( battle_start_flag )
-                return tell_object(me, "Õâ´ÎµÄÕ½ÕùÒÑ¾­¿ªÊ¼£¬ÄãÎŞ·¨È¡Ïû£¬¿ÉÓÃquitÖ¸ÁîÌÓÀëÕ½³¡¡£\n");
+                return tell_object(me, "é€™æ¬¡çš„æˆ°çˆ­å·²ç¶“é–‹å§‹ï¼Œä½ ç„¡æ³•å–æ¶ˆï¼Œå¯ç”¨quitæŒ‡ä»¤é€ƒé›¢æˆ°å ´ã€‚\n");
 
         map_delete(battle_player, id);
         ip_number -= ({ query_ip_number(me) });
 
-        addn("honors", -100, me); // ¿Û¼õÈÙÓş
+        addn("honors", -100, me); // æ‰£æ¸›æ¦®è­½
         if( query("honors", me) < 0 );
                 set("honors", 0, me);
 
-        CHANNEL_D->channel_broadcast("war", "Ä¿Ç°¹²ÓĞ "+sizeof(battle_player)+
-                                            " Î»Íæ¼Ò±¨Ãû²ÎÓë¡¸"+battle_name+HIR"¡¹");
+        CHANNEL_D->channel_broadcast("war", "ç›®å‰å…±æœ‰ "+sizeof(battle_player)+
+                                            " ä½ç©å®¶å ±ååƒèˆ‡ã€Œ"+battle_name+HIR"ã€");
 }
 
 int check_quit(object me)
 {
-        CHANNEL_D->channel_broadcast("war", HIR"Õ½"NOR RED"³¡"HIR"£ºÍæ¼Ò" + me->name(1) +"ÔÚ¡¸"+battle_name+HIR"¡¹ÖĞÁÙÕóÍÑÌÓ£¬Áï×ßÁË¡£"NOR);
+        CHANNEL_D->channel_broadcast("war", HIR"æˆ°"NOR RED"å ´"HIR"ï¼šç©å®¶" + me->name(1) +"åœ¨ã€Œ"+battle_name+HIR"ã€ä¸­è‡¨é™£è„«é€ƒï¼Œæºœèµ°äº†ã€‚"NOR);
 
-        addn("honors", -500, me); // ¿Û¼õÈÙÓş
+        addn("honors", -500, me); // æ‰£æ¸›æ¦®è­½
         if( query("honors", me)<0);
                 set("honors", 0, me);
 
@@ -293,9 +293,9 @@ int check_quit(object me)
         if( arrayp(ip_number) )
                 ip_number -= ({ query_ip_number(me) });
 
-        tell_object(me, "ÄãÒ»¿ÚÆøÌÓ³öÁËÕ½³¡¡£\n");
+        tell_object(me, "ä½ ä¸€å£æ°£é€ƒå‡ºäº†æˆ°å ´ã€‚\n");
         restore_status(me);
-        message("vision", "Ö»¼û" + me->name() + "»ÅÀï»ÅÕÅµÄÅÜÁË¹ıÀ´¡£\n",
+        message("vision", "åªè¦‹" + me->name() + "æ…Œè£¡æ…Œå¼µçš„è·‘äº†éä¾†ã€‚\n",
                 environment(me), ({ me }));
 
         return 1;
@@ -368,10 +368,10 @@ int check_out(object me)
         my["qi"] = 1;
         my["jing"] = 1;
 
-        tell_object(me, HIR "\nÄã¾õµÃÑÛÇ°Ò»ÕóÄ£ºı...ÕâÏÂÍêÁË£¡\n" NOR);
+        tell_object(me, HIR "\nä½ è¦ºå¾—çœ¼å‰ä¸€é™£æ¨¡ç³Š...é€™ä¸‹å®Œäº†ï¼\n" NOR);
         if( ob = me->query_last_damage_from() )
         {
-                msg = me->name(1) + "²ÒÔâ" + ob->name(1) + "µÄ¶¾ÊÖ£¬±»ÎŞÇé£Ğ£Ë¡£";
+                msg = me->name(1) + "æ…˜é­" + ob->name(1) + "çš„æ¯’æ‰‹ï¼Œè¢«ç„¡æƒ…ï¼°ï¼«ã€‚";
                 if( userp(ob) )
                 {
                         if( userp(me) )
@@ -395,18 +395,18 @@ int check_out(object me)
                         }
                 }
         } else
-                 msg = me->name(1) + "ÔËÆø²»¼Ñ£¬±¾ÁìÓĞÏŞ¡¢ÒÑ¾­²ÒÔâ£Ğ£Ë¡£";
+                 msg = me->name(1) + "é‹æ°£ä¸ä½³ï¼Œæœ¬é ˜æœ‰é™ã€å·²ç¶“æ…˜é­ï¼°ï¼«ã€‚";
 
         message("vision", msg, environment(me), ({ me }));
 
         restore_status(me);
         total -= ({ me });
 
-        message("vision", "Ò»¸öºÚÓ°Ù¿µÄ´ÜÁË³öÀ´£¬Ëæ¼´¾ÍÊÇ¡°Å¾¡±µÄ"
-                "Ò»Éù£¬¾Í¼û" + me->name() +"Ë¤µ¹ÁËµØÉÏ£¬Ò»¸±°ëËÀ²»"
-                "»îµÄÑù×Ó¡£\n", environment(me), ({ me }));
-        tell_object(me, "°ë»è°ëÃÔÖĞ£¬Äã¾õµÃ±»ÈËÁàÁËÆğÀ´£¬ÓÖ"
-                "ÖØÖØµÄË¤µ¹ÁËµØÉÏ¡£\n");
+        message("vision", "ä¸€å€‹é»‘å½±å€çš„ç«„äº†å‡ºä¾†ï¼Œéš¨å³å°±æ˜¯â€œå•ªâ€çš„"
+                "ä¸€è²ï¼Œå°±è¦‹" + me->name() +"æ‘”å€’äº†åœ°ä¸Šï¼Œä¸€å‰¯åŠæ­»ä¸"
+                "æ´»çš„æ¨£å­ã€‚\n", environment(me), ({ me }));
+        tell_object(me, "åŠæ˜åŠè¿·ä¸­ï¼Œä½ è¦ºå¾—è¢«äººæ‹äº†èµ·ä¾†ï¼Œåˆ"
+                "é‡é‡çš„æ‘”å€’äº†åœ°ä¸Šã€‚\n");
 
         if( !living(me) )
                 me->revive();
@@ -434,12 +434,12 @@ void start_battle()
                 bunch_flag = 0;
                 battle_open_flag = 0;
                 battle_start_time = 0;
-                CHANNEL_D->channel_broadcast("war", "±¨Ãû²ÎÓë¡¸"+battle_name+HIR"¡¹Õ½ÒÛµÄÍæ¼Ò²»×ã 5 ÈË£¬È¡Ïû±¾´ÎÕ½ÒÛ¡£");
+                CHANNEL_D->channel_broadcast("war", "å ±ååƒèˆ‡ã€Œ"+battle_name+HIR"ã€æˆ°å½¹çš„ç©å®¶ä¸è¶³ 5 äººï¼Œå–æ¶ˆæœ¬æ¬¡æˆ°å½¹ã€‚");
                 return;
         }
 
-        CHANNEL_D->channel_broadcast("war", "¡¸"+battle_name+HIR"¡¹¿ªÊ¼³öÕ÷£¡¹²¼Æ "+sizeof(battle_player)+
-                                            " Î»Íæ¼Ò²ÎÓë¡¸"+battle_name+HIR"¡¹£¬¼ÆÊ± "+(BATTLE_TIME/60)+" ·ÖÖÓ½áÊø");
+        CHANNEL_D->channel_broadcast("war", "ã€Œ"+battle_name+HIR"ã€é–‹å§‹å‡ºå¾ï¼å…±è¨ˆ "+sizeof(battle_player)+
+                                            " ä½ç©å®¶åƒèˆ‡ã€Œ"+battle_name+HIR"ã€ï¼Œè¨ˆæ™‚ "+(BATTLE_TIME/60)+" åˆ†é˜çµæŸ");
 
         foreach(string id, mapping data in battle_player)
         {
@@ -450,7 +450,7 @@ void start_battle()
 
                 if( query_temp("running", player)  )
                 {
-                        tell(player, pnoun(2, player)+"ÕıÔÚ·ÉĞĞÖĞ£¬ÎŞ·¨¼ÓÈëÕ½³¡¡£\n");
+                        tell(player, pnoun(2, player)+"æ­£åœ¨é£›è¡Œä¸­ï¼Œç„¡æ³•åŠ å…¥æˆ°å ´ã€‚\n");
                         unavailable_players |= ({ player });
                         continue;
                 }
@@ -463,7 +463,7 @@ void start_battle()
         team1->member = ({});
         team2->member = ({});
         
-        // Èç¹ûÊÇÁ½Ö§°ïÅÉ×÷Õ½£¬Ôò°´°ïÅÉ·ÖÅäÕóÓª
+        // å¦‚æœæ˜¯å…©æ”¯å¹«æ´¾ä½œæˆ°ï¼Œå‰‡æŒ‰å¹«æ´¾åˆ†é…é™£ç‡Ÿ
         if( bunch_flag )
         {
                 obs = filter_array(all_player, (: query("bunch/bunch_name", $1) == team1->name :));
@@ -472,7 +472,7 @@ void start_battle()
                         team1->member += ({ ob->query_id(1) });
                         set_temp("battle/team_name", team1->name, ob);
                         set_temp("battle/entrance", entry1, ob);
-                        where = base_name(environment(ob)); // ¼ÇÂ¼Íæ¼ÒËùÔÚÎ»ÖÃ
+                        where = base_name(environment(ob)); // è¨˜éŒ„ç©å®¶æ‰€åœ¨ä½ç½®
                         set_temp("battle/leave_room", where, ob);
                         init_player(ob);
                 }
@@ -482,14 +482,14 @@ void start_battle()
                         team2->member += ({ ob->query_id(1) });
                         set_temp("battle/team_name", team2->name, ob);
                         set_temp("battle/entrance", entry2, ob);
-                        where = base_name(environment(ob)); // ¼ÇÂ¼Íæ¼ÒËùÔÚÎ»ÖÃ
+                        where = base_name(environment(ob)); // è¨˜éŒ„ç©å®¶æ‰€åœ¨ä½ç½®
                         set_temp("battle/leave_room", where, ob);
                         init_player(ob);
                 }
         }
         else
         {
-                // ¿ªÊ¼·ÖÅä¶ÓÎéÕóÓª        
+                // é–‹å§‹åˆ†é…éšŠä¼é™£ç‡Ÿ        
                 all_player = sort_array(all_player, (: sort_user :));
 
                 for( i=0; i<sizeof(all_player); i++ )
@@ -516,7 +516,7 @@ void start_battle()
                                 set_temp("battle/entrance", entry2, all_player[i]);
                         }
 
-                        where = base_name(environment(all_player[i])); // ¼ÇÂ¼Íæ¼ÒËùÔÚÎ»ÖÃ
+                        where = base_name(environment(all_player[i])); // è¨˜éŒ„ç©å®¶æ‰€åœ¨ä½ç½®
                         set_temp("battle/leave_room", where, all_player[i]);
 
                         init_player(all_player[i]);
@@ -527,7 +527,7 @@ void start_battle()
         battle_time_countdown = BATTLE_TIME;
 }
 
-// Ä³Õ½³¡¿ªÊ¼½ÓÊÜ±¨Ãû TIME_D µ÷ÓÃ
+// æŸæˆ°å ´é–‹å§‹æ¥å—å ±å TIME_D èª¿ç”¨
 void start_join(string name)
 {
         object ob;
@@ -542,9 +542,9 @@ void start_join(string name)
 
         team1 = new(class team);
         team2 = new(class team);
-        ob->init_battle(); // ÉèÖÃ¶ÓÎéµÄÃû³Æ£¬¶ÓÎéµÄÈë¿Ú£¬Õ½³¡µÄÃû³ÆÒÔ¼°³õÊ¼»¯Õ½³¡ÆäËûÉèÖÃµÈ
-        CHANNEL_D->channel_broadcast("war", HIY"ÈÙÒ«"NOR YEL"Ö®Õ½"HIR"·¢³öÕ½Õù¼¯½á£¬¼´½«ÔÚ "+(BATTLE_JOIN_TIME/60)+
-                                            " ·ÖÖÓºó·¢¶¯¡¸"+battle_name+HIR"¡¹£¬ÇëÊ¹ÓÃ battle Ö¸Áî¼ÓÈëÕ½ÒÛ¡£");
+        ob->init_battle(); // è¨­ç½®éšŠä¼çš„åç¨±ï¼ŒéšŠä¼çš„å…¥å£ï¼Œæˆ°å ´çš„åç¨±ä»¥åŠåˆå§‹åŒ–æˆ°å ´å…¶ä»–è¨­ç½®ç­‰
+        CHANNEL_D->channel_broadcast("war", HIY"æ¦®è€€"NOR YEL"ä¹‹æˆ°"HIR"ç™¼å‡ºæˆ°çˆ­é›†çµï¼Œå³å°‡åœ¨ "+(BATTLE_JOIN_TIME/60)+
+                                            " åˆ†é˜å¾Œç™¼å‹•ã€Œ"+battle_name+HIR"ã€ï¼Œè«‹ä½¿ç”¨ battle æŒ‡ä»¤åŠ å…¥æˆ°å½¹ã€‚");
 
         ip_number = allocate(0);
         total = allocate(0);
@@ -665,7 +665,7 @@ void stop_battle()
                 //ob->remove_all_killer();
                 ob->remove_all_enemy(1);
                 restore_status(ob);
-                tell_object(ob, "¡¸"+battle_name+"¡¹½áÊø£¬Äã±»´«ÀëÕ½³¡...\n");
+                tell_object(ob, "ã€Œ"+battle_name+"ã€çµæŸï¼Œä½ è¢«å‚³é›¢æˆ°å ´...\n");
         }
 
         ip_number = allocate(0);
@@ -675,10 +675,10 @@ void stop_battle()
         battle_start_flag = 0;
         battle_time_countdown = 0;        
 
-        CHANNEL_D->channel_broadcast("war", WHT"¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª"NOR);
-        CHANNEL_D->channel_broadcast("war", HIR"Õ½"NOR RED"Õù"HIR"£º¡¸"+battle_name+HIR"¡¹ÖÕÓÚ½¥½¥Æ½Ï¢..."NOR);
-        CHANNEL_D->channel_broadcast("war", HIR"Õ½"NOR RED"Õù"HIR"£ºÕıÔÚÍ³¼ÆÕ½¼¨..."NOR);
-        CHANNEL_D->channel_broadcast("war", WHT"¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª"NOR);
+        CHANNEL_D->channel_broadcast("war", WHT"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"NOR);
+        CHANNEL_D->channel_broadcast("war", HIR"æˆ°"NOR RED"çˆ­"HIR"ï¼šã€Œ"+battle_name+HIR"ã€çµ‚äºæ¼¸æ¼¸å¹³æ¯..."NOR);
+        CHANNEL_D->channel_broadcast("war", HIR"æˆ°"NOR RED"çˆ­"HIR"ï¼šæ­£åœ¨çµ±è¨ˆæˆ°ç¸¾..."NOR);
+        CHANNEL_D->channel_broadcast("war", WHT"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"NOR);
 
 
         if( ob = find_object(BATTLE_FIELD_DIR + battle_name) )
@@ -715,7 +715,7 @@ void calculate_score()
 
         map_delete(battle_player, 0);
 
-        CHANNEL_D->channel_broadcast("war", WHT"¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª"NOR);
+        CHANNEL_D->channel_broadcast("war", WHT"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"NOR);
 
         rank = 0;
         foreach(string id in get_sorted_players())
@@ -727,7 +727,7 @@ void calculate_score()
 
                 score = get_player_score(id);
 
-                CHANNEL_D->channel_broadcast("war", HIR"Õ½"NOR RED"Õù"HIR"£º"+(++rank)+"."+name+HIR"µÄ"+player->query_idname()+HIR"¹²»÷É± "+battle_player[id]["killplayer"]+" Î»Íæ¼Ò£¬Õ½¼¨½áËãÎª "+NUMBER_D->number_symbol(score)+(battle_player[id]["bonus"]>0 ? "("NOR CYN"+"HIC+battle_player[id]["bonus"]+HIR")":"")+" ·Ö"NOR);
+                CHANNEL_D->channel_broadcast("war", HIR"æˆ°"NOR RED"çˆ­"HIR"ï¼š"+(++rank)+"."+name+HIR"çš„"+player->query_idname()+HIR"å…±æ“Šæ®º "+battle_player[id]["killplayer"]+" ä½ç©å®¶ï¼Œæˆ°ç¸¾çµç®—ç‚º "+NUMBER_D->number_symbol(score)+(battle_player[id]["bonus"]>0 ? "("NOR CYN"+"HIC+battle_player[id]["bonus"]+HIR")":"")+" åˆ†"NOR);
 
                 //addn("battle/score", score, player);
                 addn("honors", score, player);
@@ -764,7 +764,7 @@ void calculate_score()
                                 insigne = new("/clone/tongren/tongren1");
                         else
                                 insigne = new("/clone/tongren/tongren2");
-                        tell_object(player, "Äã»ñµÃ "+insigne_count+" ¸ö"+insigne->name()+"¡£\n");
+                        tell_object(player, "ä½ ç²å¾— "+insigne_count+" å€‹"+insigne->name()+"ã€‚\n");
                         insigne->set_amount(insigne_count);
                         insigne->move(player);
                 }
@@ -774,7 +774,7 @@ void calculate_score()
 
         if( team1->win )
         {
-                msg = team1->name + "Ê¤" + team2->name;
+                msg = team1->name + "å‹" + team2->name;
                 member = team1->member;
                 for( i=0; i<sizeof(member); i++)
                 {
@@ -788,7 +788,7 @@ void calculate_score()
         }
         else if( team2->win )
         {
-                msg = team1->name + "¸º" + team2->name;
+                msg = team1->name + "è² " + team2->name;
                 member = team2->member;
                 for( i=0; i<sizeof(member); i++)
                 {
@@ -802,7 +802,7 @@ void calculate_score()
         }
         else if( team1->score > team2->score )
         {
-                msg = team1->name + "Ê¤" + team2->name;
+                msg = team1->name + "å‹" + team2->name;
                 member = team1->member;
                 for( i=0; i<sizeof(member); i++)
                 {
@@ -816,7 +816,7 @@ void calculate_score()
         }
         else if( team1->score < team2->score )
         {
-                msg = team1->name + "¸º" + team2->name;
+                msg = team1->name + "è² " + team2->name;
                 member = team2->member;
                 for( i=0; i<sizeof(member); i++)
                 {
@@ -830,7 +830,7 @@ void calculate_score()
         }
         else
         {
-                msg = team1->name + "Æ½" + team2->name;
+                msg = team1->name + "å¹³" + team2->name;
                 member = team1->member;
                 for( i=0; i<sizeof(member); i++)
                 {
@@ -856,7 +856,7 @@ void calculate_score()
 
         msg += "\n";
 
-        CHANNEL_D->channel_broadcast("war", HIR"Õ½"NOR RED"Õù"HIR"£º"+msg+NOR);
+        CHANNEL_D->channel_broadcast("war", HIR"æˆ°"NOR RED"çˆ­"HIR"ï¼š"+msg+NOR);
 
         bunch_flag = 0;
         all = allocate(0);
@@ -872,9 +872,9 @@ string do_score()
         object ob;
 
         desc = HIY"
-¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡¾µ±Ç°Õ½³¡³É¼¨¡¿¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù
+â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»ã€ç•¶å‰æˆ°å ´æˆç¸¾ã€‘â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»
 ________________________________________________________________________________
-¶Ó±ğ  ¶ÓÃû     »ı·Ö  ³ÉÔ±                                \n" NOR;
+éšŠåˆ¥  éšŠå     ç©åˆ†  æˆå“¡                                \n" NOR;
 
         n = sizeof(all);
         if( n > 1 )
@@ -900,7 +900,7 @@ ________________________________________________________________________________
                                 else
                                 {
                                         ob = UPDATE_D->global_find_player(member[j]);
-                                        desc_temp += sprintf("%-8s(²» ÔÚ)",
+                                        desc_temp += sprintf("%-8s(ä¸ åœ¨)",
                                                      ob->name());
                                         UPDATE_D->global_destruct_player(ob, 1);
                                 }
@@ -932,8 +932,8 @@ void heart_beat()
                         case 600:
                         case 900:
                         case 1200:
-                                CHANNEL_D->channel_broadcast("war", HIY"ÈÙÒ«"NOR YEL"Ö®Õ½"HIR"·¢³öÕ½Õù¼¯½á£¬¼´½«ÔÚ "+(battle_start_time/60)+
-                                                                    " ·ÖÖÓºó·¢¶¯¡¸"+battle_name+HIR"¡¹£¬ÇëÊ¹ÓÃ battle Ö¸Áî¼ÓÈëÕ½ÒÛ¡£");
+                                CHANNEL_D->channel_broadcast("war", HIY"æ¦®è€€"NOR YEL"ä¹‹æˆ°"HIR"ç™¼å‡ºæˆ°çˆ­é›†çµï¼Œå³å°‡åœ¨ "+(battle_start_time/60)+
+                                                                    " åˆ†é˜å¾Œç™¼å‹•ã€Œ"+battle_name+HIR"ã€ï¼Œè«‹ä½¿ç”¨ battle æŒ‡ä»¤åŠ å…¥æˆ°å½¹ã€‚");
                                 break;
                 }
 
@@ -953,7 +953,7 @@ void heart_beat()
                 auto_check();
 
         if( battle_time_countdown == 60 || battle_time_countdown == 180 )
-                CHANNEL_D->channel_broadcast("war", HIR"Õ½"NOR RED"Õù"HIR"£º¡¸"+battle_name+HIR"¡¹¼´½«ÔÚ "+(battle_time_countdown/60)+" ·ÖÖÓºó½áÊø..."NOR);
+                CHANNEL_D->channel_broadcast("war", HIR"æˆ°"NOR RED"çˆ­"HIR"ï¼šã€Œ"+battle_name+HIR"ã€å³å°‡åœ¨ "+(battle_time_countdown/60)+" åˆ†é˜å¾ŒçµæŸ..."NOR);
 }
 
 void restore_status(object me)
@@ -1009,7 +1009,7 @@ int remove()
         {
                 object player;
 
-                CHANNEL_D->channel_broadcast("war", HIR"Õ½"NOR RED"Õù"HIR"£ºÏµÍ³¸üĞÂ£¬ÖØÖÃ¡¸"+battle_name+HIR"¡¹"NOR);
+                CHANNEL_D->channel_broadcast("war", HIR"æˆ°"NOR RED"çˆ­"HIR"ï¼šç³»çµ±æ›´æ–°ï¼Œé‡ç½®ã€Œ"+battle_name+HIR"ã€"NOR);
 
                 foreach(string id in keys(battle_player))
                 {
@@ -1033,7 +1033,7 @@ void create()
         names = get_dir(BATTLE_FIELD_DIR+ "*.c");
         names = map_array(names, (: $1[0..<3] :));
 
-        // Îö¹¹ËùÓĞµÄÕ½³¡
+        // ææ§‹æ‰€æœ‰çš„æˆ°å ´
         foreach (string name in names)
         {
                 if (objectp(ob = find_object(BATTLE_FIELD_DIR + name)))
@@ -1046,5 +1046,5 @@ void create()
 
 string query_name()
 {
-        return "Õ½³¡ÏµÍ³(BATTLEFIELD_D)";
+        return "æˆ°å ´ç³»çµ±(BATTLEFIELD_D)";
 }

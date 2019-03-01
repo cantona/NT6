@@ -1,7 +1,7 @@
 // $file_name.c                                         /* COMMENT_ENTRY */
 // Create by TEMPLATE_D. $time.                         /* COMMENT_ENTRY */
 // armor.c
-// ×Ô¶¯´´½¨·À¾ßµÄ»ù×¼ÎÄ¼þ¡£                             /* COMMENT_EXIT  */
+// è‡ªå‹•å‰µå»ºé˜²å…·çš„åŸºæº–æ–‡ä»¶ã€‚                             /* COMMENT_EXIT  */
 
 #include <armor.h>
 inherit RINGS;
@@ -10,15 +10,15 @@ inherit RINGS;
 void create()
 {
 //**    set_name("$name", ({ "$id", }));                /* NAME_ENTRY */
-        set_name("½äÖ¸", ({ "ring", }));                /* NAME_EXIT  */ 
+        set_name("æˆ’æŒ‡", ({ "ring", }));                /* NAME_EXIT  */ 
 
         if (clonep())
                 set_default_object(__FILE__);
         else
         {
 //**            set("$dbase_key", "$dbase_value\n");    /* DBASE_ENTRY */
-                set("long", "ÕâÊÇÒ»Ã¶ÆÕÍ¨µÄ½äÖ¸¡£\n");  /* DBASE_EXIT  */
-                set("unit", "Ã¶");
+                set("long", "é€™æ˜¯ä¸€æžšæ™®é€šçš„æˆ’æŒ‡ã€‚\n");  /* DBASE_EXIT  */
+                set("unit", "æžš");
                 set("value", 200);
                 set("material", "gold");
                 set("armor_prop/armor", 1);

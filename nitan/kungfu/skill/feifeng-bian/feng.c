@@ -1,12 +1,12 @@
 // This program is a part of NT MudLIB
-// feng.c ·ï³¯»Ë
+// feng.c é³³æœå‡°
 
 #include <ansi.h>
 
 #include <combat.h>
 inherit F_SSERVER;
 
-string name() { return "·ï³¯»Ë"; }
+string name() { return "é³³æœå‡°"; }
 
 int perform(object me, object target)
 {
@@ -20,30 +20,30 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail( "·ï³¯»ËÖ»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ\n");
+                return notify_fail( "é³³æœå‡°åªèƒ½åœ¨æˆ°é¬¥ä¸­ä½¿ç”¨\n");
 
 
         if( !objectp(weapon=query_temp("weapon", me)) ||
               query("skill_type", weapon) != "whip" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ã€‚\n");
 
 
         if (me->query_skill("force") < 150)
-                return notify_fail("ÄãµÄÄÚ¹¦µÄĞŞÎª²»¹»£¬²»ÄÜÊ¹ÓÃ¡¸·ï³¯»Ë¡¹£¡\n");
+                return notify_fail("ä½ çš„å…§åŠŸçš„ä¿®ç‚ºä¸å¤ ï¼Œä¸èƒ½ä½¿ç”¨ã€Œé³³æœå‡°ã€ï¼\n");
 
         if (me->query_skill("feifeng-bian", 1) < 150)
-                return notify_fail("ÄãµÄ·É·ï±Ş·¨ĞŞÎª²»¹»£¬Ä¿Ç°²»ÄÜÊ¹ÓÃ¡¸·ï³¯»Ë¡¹£¡\n");
+                return notify_fail("ä½ çš„é£›é³³é­æ³•ä¿®ç‚ºä¸å¤ ï¼Œç›®å‰ä¸èƒ½ä½¿ç”¨ã€Œé³³æœå‡°ã€ï¼\n");
 
         if( query("neili", me)<500 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬ÎŞ·¨Ê¹ÓÃ¡¸·ï³¯»Ë¡¹£¡\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼Œç„¡æ³•ä½¿ç”¨ã€Œé³³æœå‡°ã€ï¼\n");
 
         if (me->query_skill_mapped("whip") != "feifeng-bian")
-                return notify_fail("ÄãÃ»¼¤·¢·É·ï±Ş·¨£¬²»ÄÜÊ¹ÓÃ¡¸·ï³¯»Ë¡¹£¡\n");
+                return notify_fail("ä½ æ²’æ¿€ç™¼é£›é³³é­æ³•ï¼Œä¸èƒ½ä½¿ç”¨ã€Œé³³æœå‡°ã€ï¼\n");
 
-        msg = HIY "$N" HIY "³å×Å" HIY "$n" HIY "ÇáÙ¬Ò»Ğ¦£¬ÏòÇ°¼±³å,ÊÖÖĞ" + weapon->name() +
-              HIY "È´ºÁ²»Í£Áô£¬Ò»ÕĞ¡¸·ï³¯»Ë¡¹\n"
-              HIY "Èç»ËÏ´¿Õ£¬³¤·ïÏ·Óğ£¬"
-              HIY "ÂÒÓêÇãÅè°ã·Öµã" HIY "$n" HIY "×óÓÒ!! \n" NOR;
+        msg = HIY "$N" HIY "æ²–è‘—" HIY "$n" HIY "è¼•ä½»ä¸€ç¬‘ï¼Œå‘å‰æ€¥æ²–,æ‰‹ä¸­" + weapon->name() +
+              HIY "å»æ¯«ä¸åœç•™ï¼Œä¸€æ‹›ã€Œé³³æœå‡°ã€\n"
+              HIY "å¦‚å‡°æ´—ç©ºï¼Œé•·é³³æˆ²ç¾½ï¼Œ"
+              HIY "äº‚é›¨å‚¾ç›†èˆ¬åˆ†é»" HIY "$n" HIY "å·¦å³!! \n" NOR;
 
         ap = attack_power(me, "whip");
         if (living(target))
@@ -52,15 +52,15 @@ int perform(object me, object target)
 
         if (ap / 2 + random(ap) > dp)
         {
-                msg += HIR "½á¹û$p" HIR "±»$P" HIR
-                       "¹¥ÁË¸ö´ëÊÖ²»¼°£¬Ä¿½Ó²»Ï¾£¬Æ£ÓÚ±¼Ãü£¡\n" NOR;
+                msg += HIR "çµæœ$p" HIR "è¢«$P" HIR
+                       "æ”»äº†å€‹æªæ‰‹ä¸åŠï¼Œç›®æ¥ä¸æš‡ï¼Œç–²äºå¥”å‘½ï¼\n" NOR;
                 count = ap;
 
                 addn_temp("apply/attack", count, me);
 
         } else
         {
-                msg += HIC "$n" HIC "¼û$N" HIC "±ŞÊÆºİÀ±£¬ĞÄÏÂÁİÈ»£¬ÄıÉñÓ¦¸¶¡£\n" NOR;
+                msg += HIC "$n" HIC "è¦‹$N" HIC "é­å‹¢ç‹ è¾£ï¼Œå¿ƒä¸‹å‡œç„¶ï¼Œå‡ç¥æ‡‰ä»˜ã€‚\n" NOR;
                 count = 0;
         }
 

@@ -1,9 +1,9 @@
 #include <ansi.h>
-#define GIFT_NAME "ôÕ×Ó"
-// ±¾´ÎµÄÀñÎï·¢·Å
-#define THIS_GIFT_USER "2013_¶ËÎç"
-// ÉÏ´ÎµÄÀñÎï·¢·Å
-#define LAST_GIFT_USER "2013_²âÊÔÀñÎï5"
+#define GIFT_NAME "ç²½å­"
+// æœ¬æ¬¡çš„ç¦®ç‰©ç™¼æ”¾
+#define THIS_GIFT_USER "2013_ç«¯åˆ"
+// ä¸Šæ¬¡çš„ç¦®ç‰©ç™¼æ”¾
+#define LAST_GIFT_USER "2013_æ¸¬è©¦ç¦®ç‰©5"
 
 inherit ITEM;
 
@@ -11,8 +11,8 @@ void create()
 {
 	set_name(HIR + GIFT_NAME + NOR, ({"zong zi","zong", "zi"}));
 	set_weight(200);
-	set("unit", "¼ş");
-	set("long",HIG"NTÎ×Ê¦ÌØµØÎª´ó¼ÒÖÆ×÷µÄ¶ËÎçôÕ×Ó£¬¿´ÆğÀ´ºÜÃÀÎ¶µÄÑù×Ó£¬\nÆ·³¢(eat)Ò»ÏÂÊÇÊ²Ã´Î¶µÀ£¿\n"NOR);
+	set("unit", "ä»¶");
+	set("long",HIG"NTå·«å¸«ç‰¹åœ°ç‚ºå¤§å®¶åˆ¶ä½œçš„ç«¯åˆç²½å­ï¼Œçœ‹èµ·ä¾†å¾ˆç¾å‘³çš„æ¨£å­ï¼Œ\nå“å˜—(eat)ä¸€ä¸‹æ˜¯ä»€éº¼å‘³é“ï¼Ÿ\n"NOR);
 	set("value", 0);
 	set("no_give",1);
 	set("no_get",1);
@@ -32,31 +32,31 @@ int do_eat(string arg)
 	me = this_player();
 	
 	if (!id(arg))
-		return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+		return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
 	
 	if (query(THIS_GIFT_USER, me) && query("gift_dw", me) == (CHINESE_D->chinese_time(7, ctime(time()))) )  
 	{
-		tell_object(me,HIY "¶ËÎç½ÚÊ¹ÕßÍ»È»ÔÚÒ»ÕóÑÌÎíÖĞ³öÏÖ£¬Ò»°Ñ×¥¹ıÄãÊÖÖĞµÄôÕ×Ó£º¡°Äã½ñÌìÒÑ¾­³Ô¹ıÁË°É£¿¿É±ğÌ°ĞÄÅ¶£¡¡±ËµÍê½«ôÕ×ÓÊÕ×ßÁË¡£\n"NOR);
+		tell_object(me,HIY "ç«¯åˆç¯€ä½¿è€…çªç„¶åœ¨ä¸€é™£ç…™éœ§ä¸­å‡ºç¾ï¼Œä¸€æŠŠæŠ“éä½ æ‰‹ä¸­çš„ç²½å­ï¼šâ€œä½ ä»Šå¤©å·²ç¶“åƒéäº†å§ï¼Ÿå¯åˆ¥è²ªå¿ƒå“¦ï¼â€èªªå®Œå°‡ç²½å­æ”¶èµ°äº†ã€‚\n"NOR);
 		destruct(this_object());	
 		return 1;
 	}
 	
 	if ( (CHINESE_D->chinese_time(7, ctime(time()))) != "2013/06/12" &&
 		(CHINESE_D->chinese_time(7, ctime(time()))) != "2013/06/13" &&
-		(CHINESE_D->chinese_time(7, ctime(time()))) != "2013/06/14" ) { //ÏŞ¶¨ÔÚÕâ3ÌìÖ®¼äÊ¹ÓÃÓĞĞ§
-		tell_object(me,HIY "¶ËÎç½ÚÊ¹ÕßÍ»È»ÔÚÒ»ÕóÑÌÎíÖĞ³öÏÖ£¬Ò»°Ñ×¥¹ıÄãÊÖÖĞµÄôÕ×Ó£º¡°ÄãÕâôÕ×ÓÒÑ¾­¹ıÆÚÁË°É£¿¡±ËµÍê½«ôÕ×ÓÊÕ×ßÁË¡£\n"NOR);
+		(CHINESE_D->chinese_time(7, ctime(time()))) != "2013/06/14" ) { //é™å®šåœ¨é€™3å¤©ä¹‹é–“ä½¿ç”¨æœ‰æ•ˆ
+		tell_object(me,HIY "ç«¯åˆç¯€ä½¿è€…çªç„¶åœ¨ä¸€é™£ç…™éœ§ä¸­å‡ºç¾ï¼Œä¸€æŠŠæŠ“éä½ æ‰‹ä¸­çš„ç²½å­ï¼šâ€œä½ é€™ç²½å­å·²ç¶“éæœŸäº†å§ï¼Ÿâ€èªªå®Œå°‡ç²½å­æ”¶èµ°äº†ã€‚\n"NOR);
 		destruct(this_object());	
 		return 1;
 	} else {
-		tell_object(me, HIC "Äã¿´×ÅÃÀÎ¶µÄôÕ×Ó£¬ÏëÒ²²»ÏëÒ»¿ÚÍÌ½øÁË¶ÇÀï£¡\n" NOR);     	
-		delete(LAST_GIFT_USER, me);//É¾³ıÉÏ´ÎÅÉÀñÎïÉú³ÉµÄ²ÎÊı£¬Ôö¼Ó±¾´Î²ÎÊı£¬È·±£Ã¿Î»Íæ¼ÒÖ»ÄÜÓÃÒ»´Î¡£
+		tell_object(me, HIC "ä½ çœ‹è‘—ç¾å‘³çš„ç²½å­ï¼Œæƒ³ä¹Ÿä¸æƒ³ä¸€å£åé€²äº†è‚šè£¡ï¼\n" NOR);     	
+		delete(LAST_GIFT_USER, me);//åˆªé™¤ä¸Šæ¬¡æ´¾ç¦®ç‰©ç”Ÿæˆçš„åƒæ•¸ï¼Œå¢åŠ æœ¬æ¬¡åƒæ•¸ï¼Œç¢ºä¿æ¯ä½ç©å®¶åªèƒ½ç”¨ä¸€æ¬¡ã€‚
 		set(THIS_GIFT_USER, 1, me);
 		set("gift_dw", (CHINESE_D->chinese_time(7, ctime(time()))), me);
 		addn("combat_exp", 10000, me);
 		addn("potential", 10000, me);
 		addn("max_neili", 100, me);
 		addn("max_jingli", 100, me);
-		tell_object(me,HIC "Äã¸Ğ¾õ×Ô¼ºÉíÌå·¢ÉúÁËÃ÷ÏÔµÄ±ä»¯£­£­³¤ÅÖÁË£¡\n" NOR);     	
+		tell_object(me,HIC "ä½ æ„Ÿè¦ºè‡ªå·±èº«é«”ç™¼ç”Ÿäº†æ˜é¡¯çš„è®ŠåŒ–ï¼ï¼é•·èƒ–äº†ï¼\n" NOR);     	
 		destruct(this_object());
 	}
 	return 1;

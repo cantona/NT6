@@ -5,18 +5,18 @@ inherit BLADE;
 
 void create()
 {
-        set_name("Âùµ¶", ({ "man dao", "dao", "blade" }));
+        set_name("è »åˆ€", ({ "man dao", "dao", "blade" }));
         set_weight(7000);
         set("taskobj", 1);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
-                set("long", "ÕâÊÇÒ»±úÁÁ»Î»ÎµÄÂùµ¶£¬ÊÇÔÆ¹óÉÙÊıÃñ×åÊ×ÁìµÄ³£±¸ÎäÆ÷¡£\n");
+                set("unit", "æŸ„");
+                set("long", "é€™æ˜¯ä¸€æŸ„äº®æ™ƒæ™ƒçš„è »åˆ€ï¼Œæ˜¯é›²è²´å°‘æ•¸æ°‘æ—é¦–é ˜çš„å¸¸å‚™æ­¦å™¨ã€‚\n");
                 set("value", 0);
                 set("material", "steel");
-                set("wield_msg", "$N¡¸à§¡¹µÄÒ»Éù³é³öÒ»±ú$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²å»Øµ¶ÇÊ¡£\n");
+                set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€è²æŠ½å‡ºä¸€æŸ„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°‡æ‰‹ä¸­çš„$næ’å›åˆ€é˜ã€‚\n");
         }
         setup();
 }

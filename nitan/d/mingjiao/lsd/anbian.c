@@ -1,4 +1,4 @@
-// anbian.c °¶±ß
+// anbian.c å²¸é‚Š
 // Modify By River@SJ 99.06
 #include <ansi.h>
 inherit ROOM;
@@ -6,23 +6,23 @@ inherit ROOM;
 void home( object ob );
 void create()
 {
-        set("short", GRN"°¶±ß"NOR);
+        set("short", GRN"å²¸é‚Š"NOR);
         set("long", @LONG
-Ö»¼û°¶±ßÊýÀïÖ®ÍâÊ÷Ä¾´Ð´ä£¬Ææ·åÍ¦°Î£¬ËÊÁ¢×ÅºÃ¼¸×ù¸ßÉ½¡£µº
-¶«¶ËÉ½Ê¯Ö±½µÈËÈëº££¬²¢ÎÞÇ³Ì²£¬·«´¬³ÔË®½ÏÉî£¬È´¿ÉÒÔ²´ÔÚ°¶±ß¡£
-ÕâÊ±Äã¿´¼û²»Ô¶µÄÓÐÒ»¿éÆÄÎªÆ½ÕûµÄÑÒÊ¯£¬ÉÏÃæ±»ÈËÓÃÀûÆ÷¿Ì×Å¡ºÁé
-Éßµº¡»Èý¸ö´ó×Ö£¬Æä²à»¹ÓÐ¼¸¸ö¿´²»Ì«ÇåµÄÐ¡×Ö(zi)¡£Íù¶«¶øÉÏÊÇÒ»
-¸öºÜ¸ßµÄÉ½¸Ú£¬ÔÙÉÏÃæÊÇÒ»×ùÉ½·å¡£º£Ì²ÉÏÓÐ¼¸Ö»º£´¬£¬¿´À´¿ÉÒÔÍÆ
-(tui)ÏÂº£È¥¡£
+åªè¦‹å²¸é‚Šæ•¸è£¡ä¹‹å¤–æ¨¹æœ¨è”¥ç¿ ï¼Œå¥‡å³°æŒºæ‹”ï¼Œè³ç«‹è‘—å¥½å¹¾åº§é«˜å±±ã€‚å³¶
+æ±ç«¯å±±çŸ³ç›´é™äººå…¥æµ·ï¼Œä¸¦ç„¡æ·ºç˜ï¼Œå¸†èˆ¹åƒæ°´è¼ƒæ·±ï¼Œå»å¯ä»¥æ³Šåœ¨å²¸é‚Šã€‚
+é€™æ™‚ä½ çœ‹è¦‹ä¸é çš„æœ‰ä¸€å¡Šé —ç‚ºå¹³æ•´çš„å·–çŸ³ï¼Œä¸Šé¢è¢«äººç”¨åˆ©å™¨åˆ»è‘—ã€Žéˆ
+è›‡å³¶ã€ä¸‰å€‹å¤§å­—ï¼Œå…¶å´é‚„æœ‰å¹¾å€‹çœ‹ä¸å¤ªæ¸…çš„å°å­—(zi)ã€‚å¾€æ±è€Œä¸Šæ˜¯ä¸€
+å€‹å¾ˆé«˜çš„å±±å´—ï¼Œå†ä¸Šé¢æ˜¯ä¸€åº§å±±å³°ã€‚æµ·ç˜ä¸Šæœ‰å¹¾åªæµ·èˆ¹ï¼Œçœ‹ä¾†å¯ä»¥æŽ¨
+(tui)ä¸‹æµ·åŽ»ã€‚
 LONG );
         set("exits", ([ 
                 "eastup" : __DIR__"shanguang",
         ]));
         set("item_desc", ([
-                "zi" :HIR"\t\tÌ¤×ãÁéÉßµº£¬±ØËÀ£¡\n"NOR
+                "zi" :HIR"\t\tè¸è¶³éˆè›‡å³¶ï¼Œå¿…æ­»ï¼\n"NOR
         ]));
         set("boat", 1);
-        set("outdoors", "ÁéÉßµº");
+        set("outdoors", "éˆè›‡å³¶");
         setup();
 }
 
@@ -45,9 +45,9 @@ int do_enter()
              inv = all_inventory(sea);
              for(i= 0;i< sizeof(inv);i++){
                    if(inv[i]->query("boat_of") == base_name(this_object())){
-                          message_vision("$NÏóºï×ÓÒ»Ñù±ÄµÃÀÏ¸ß£¬Á½ÏÂ¾Í´ÜÉÏÁËº£´¬¡£\n\n", me);
+                          message_vision("$Nè±¡çŒ´å­ä¸€æ¨£è¹¦å¾—è€é«˜ï¼Œå…©ä¸‹å°±ç«„ä¸Šäº†æµ·èˆ¹ã€‚\n\n", me);
                           me->move(inv[i]);
-                          message("vision",me->name()+"Ïóºï×ÓÒ»Ñù±ÄÁËÉÏÀ´¡£\n",environment(me), ({me}) );
+                          message("vision",me->name()+"è±¡çŒ´å­ä¸€æ¨£è¹¦äº†ä¸Šä¾†ã€‚\n",environment(me), ({me}) );
                           return 1;
                    }
              }
@@ -61,13 +61,13 @@ int do_push(string arg)
         object me, ob;
         me = this_player();
         
-        if( arg=="chuan" || arg=="´¬" ) {
-            if(me->is_busy()) return notify_fail("ÄãÕýÃ¦×ÅÄØ¡£\n");
-            if(!query("boat")) return notify_fail("°¶ÉÏÒÑ¾­Ã»ÓÐº£´¬ÁË¡£\n");
-            if(query("boat_on_sea")) return notify_fail("°¶±ßÓÐËÒº£´¬ÄØ£¬ÄãÔÙÍÆÏÂÈ¥Ò»ËÒ£¬ËüÃÇ»áÏà×²µÄ¡£\n");
+        if( arg=="chuan" || arg=="èˆ¹" ) {
+            if(me->is_busy()) return notify_fail("ä½ æ­£å¿™è‘—å‘¢ã€‚\n");
+            if(!query("boat")) return notify_fail("å²¸ä¸Šå·²ç¶“æ²’æœ‰æµ·èˆ¹äº†ã€‚\n");
+            if(query("boat_on_sea")) return notify_fail("å²¸é‚Šæœ‰è‰˜æµ·èˆ¹å‘¢ï¼Œä½ å†æŽ¨ä¸‹åŽ»ä¸€è‰˜ï¼Œå®ƒå€‘æœƒç›¸æ’žçš„ã€‚\n");
             me->start_busy(5);
             add("boat", -1);
-            message_vision("$NÊ¹³ö³ÔÄÌµÄ¾¢£¬½«º£´¬ÍÆ½øÁË´óº££¬ÏÖÔÚ×ÜËã¿ÉÒÔÉÏ´¬(enter)ÁË¡£\n", me);
+            message_vision("$Nä½¿å‡ºåƒå¥¶çš„å‹ï¼Œå°‡æµ·èˆ¹æŽ¨é€²äº†å¤§æµ·ï¼Œç¾åœ¨ç¸½ç®—å¯ä»¥ä¸Šèˆ¹(enter)äº†ã€‚\n", me);
             EMOTE_D->do_emote(me,"touch", me->query("id"));
             me->add("jingli", -50);
             ob=new("/clone/misc/boat2");
@@ -92,20 +92,20 @@ int do_enter ( string arg )
         string dir;
         if (! arg || arg != "chuan")
         {
-                tell_object(this_player() , "ÄãÒª enter ÄÄ¶ù£¿\n" ) ;
+                tell_object(this_player() , "ä½ è¦ enter å“ªå…’ï¼Ÿ\n" ) ;
                 return 1 ;
         }
         ob = this_player () ;
-        message_vision("´¬·òÒ»¼ûÓÐÈËÉÏ´¬£¬Ã¦½ÐÁËÒ»Éù£º¿ª´¬à¶£¡\n", ob);
-        message_vision("´¬·òÉýÆð·«£¬´¬¾ÍÏòÎ÷·½º½ÐÐ¡£\n", ob);
+        message_vision("èˆ¹å¤«ä¸€è¦‹æœ‰äººä¸Šèˆ¹ï¼Œå¿™å«äº†ä¸€è²ï¼šé–‹èˆ¹å˜ï¼\n", ob);
+        message_vision("èˆ¹å¤«å‡èµ·å¸†ï¼Œèˆ¹å°±å‘è¥¿æ–¹èˆªè¡Œã€‚\n", ob);
         ob->move("/d/mingjiao/lsd/dahai") ;
-        tell_object(ob, BLU "ÄãÔÚº£ÉÏº½ÐÐÁËÈýÌìÈýÒ¹.......\n" NOR ) ;
+        tell_object(ob, BLU "ä½ åœ¨æµ·ä¸Šèˆªè¡Œäº†ä¸‰å¤©ä¸‰å¤œ.......\n" NOR ) ;
         call_out("home", 10 , ob );
         return 1 ;
 }
 void home( object ob )
 {
-        tell_object(ob , "´ó´¬ÖÕÓÚµÖ´ïÁËÄÏº£°¶±ß¡£Äã×ßÏÂ´¬À´¡£\n" ) ;
+        tell_object(ob , "å¤§èˆ¹çµ‚äºŽæŠµé”äº†å—æµ·å²¸é‚Šã€‚ä½ èµ°ä¸‹èˆ¹ä¾†ã€‚\n" ) ;
         ob->move("/d/beijing/haigang") ;
 }
 

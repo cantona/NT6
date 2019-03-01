@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "³±ÉùÑÒ");
+        set("short", "æ½®è²å·–");
         set("long", @LONG
-³±ÉùÑÒÒ»°ë½şÃ»ÔÚË®ÖĞ¡£ÑÒÊ¯´ó¿ÉÕÉĞí£¬ÄÚÀïÔç±»²¨ÀËÌÍ¿Õ¡£Ò»µ©
-³±Ë®À´Ê±£¬Ë®²¨Ïà¼¤£¬ºäÈ»×öÏì£¬ÉùÎÅÔ¶½ü¡£ºşÀË³å»÷³±ÉùÑÒÄÚ±Ú£¬ÃÍ
-È»·´½¦»ØÀ´£¬ÄãÒ»ã¶Éñ£¬²»×Ô½û¾ÙÊÖÏëµ²(dang)Ò»ÏÂ¡£
+æ½®è²å·–ä¸€åŠæµ¸æ²’åœ¨æ°´ä¸­ã€‚å·–çŸ³å¤§å¯ä¸ˆè¨±ï¼Œå…§è£¡æ—©è¢«æ³¢æµªæç©ºã€‚ä¸€æ—¦
+æ½®æ°´ä¾†æ™‚ï¼Œæ°´æ³¢ç›¸æ¿€ï¼Œè½Ÿç„¶åšéŸ¿ï¼Œè²èé è¿‘ã€‚æ¹–æµªæ²–æ“Šæ½®è²å·–å…§å£ï¼ŒçŒ›
+ç„¶åæ¿ºå›ä¾†ï¼Œä½ ä¸€æ„£ç¥ï¼Œä¸è‡ªç¦èˆ‰æ‰‹æƒ³æ“‹(dang)ä¸€ä¸‹ã€‚
 LONG );
         set("outdoors", "mantuo");
         set("no_clean_up", 0);
@@ -32,16 +32,16 @@ int do_parry()
         int skilllvl = me->query_skill("parry",1);
         int exp=query("combat_exp", me);
         if( query("qi", me)<10 )
-                return notify_fail("Äã³öÊÖÏëµ²£¬¿ÉÊÇÃ»Á¦ÆøÀ²£¬µ±³¡Ë®ÁÜÂúÍ·¡£\n");
+                return notify_fail("ä½ å‡ºæ‰‹æƒ³æ“‹ï¼Œå¯æ˜¯æ²’åŠ›æ°£å•¦ï¼Œç•¶å ´æ°´æ·‹æ»¿é ­ã€‚\n");
         addn("qi", -10, me);
         addn("eff_qi", -2, me);
         if (skilllvl < 50)
-                return notify_fail("Äã³öÊÖÏëµ²£¬¿ÉÊÇÀ´²»¼°À²£¬ÀËÍ·¸ÇÏÂ£¬½½Äã¸öÒ»Í·Êª¡£\n");
+                return notify_fail("ä½ å‡ºæ‰‹æƒ³æ“‹ï¼Œå¯æ˜¯ä¾†ä¸åŠå•¦ï¼Œæµªé ­è“‹ä¸‹ï¼Œæ¾†ä½ å€‹ä¸€é ­æ¿•ã€‚\n");
         if (skilllvl > 150)
-                return notify_fail("µ²Ê²Ã´µ²£¡ÕâµãĞ¡ÀËÓĞÊ²Ã´¿ÉÅÂµÄ£¿\n");
+                return notify_fail("æ“‹ä»€éº¼æ“‹ï¼é€™é»å°æµªæœ‰ä»€éº¼å¯æ€•çš„ï¼Ÿ\n");
         if( !objectp(weapon=query_temp("weapon", me)) )
-                return notify_fail("Ã»ÓĞÓÃ±øÆ÷£¬¿ÖÅÂµ²²»×¡°É£¿\n");
+                return notify_fail("æ²’æœ‰ç”¨å…µå™¨ï¼Œææ€•æ“‹ä¸ä½å§ï¼Ÿ\n");
         if ((skilllvl*skilllvl*skilllvl/10) < exp)
                 me->improve_skill("parry", random(me->query_skill("parry",1)));
-        return notify_fail("ÄãÌáÆğ"+query("name", weapon)+"£¬ÏòÀËÍ·»ÓÈ¥£¬Ò»¹Éî¸Æø½«ÀËÍ·»÷µÃËÄÉ¢½¦Âä¡£\n");
+        return notify_fail("ä½ æèµ·"+query("name", weapon)+"ï¼Œå‘æµªé ­æ®å»ï¼Œä¸€è‚¡ç½¡æ°£å°‡æµªé ­æ“Šå¾—å››æ•£æ¿ºè½ã€‚\n");
 }

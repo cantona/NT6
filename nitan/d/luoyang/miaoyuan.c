@@ -3,12 +3,12 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��԰");
+        set("short", "苗園");
         set("long", @LONG
-�����������������������Ļ��һ���������ң������������滨
-��ݺǻ������У���Ȼ�����и������ĵ����ֻ����ĵ����ģ��׵ģ���
-�ģ��ϵģ��Ƶģ���ɫ���������涷�ޣ��������Σ������Ͱ�����һ���
-Ϊ����������������Ҳ�����������ֻ���
+這裡是苗舖主人用來養花的花棚，一個大大的溫室，將各種樣的奇花
+異草呵護在其中，當然花叢中更多的是牡丹，只見那牡丹紅的，白的，黑
+的，紫的，黃的，各色各樣，爭奇鬥艷，嬌艷欲滴，不愧和白馬寺一起成
+為了洛陽的象征。你也可以在這裡種花。
 LONG);
         set("outdoors", "luoyang");
         set("no_fight",1);
@@ -36,37 +36,37 @@ int do_peiyu()
 
         if( !query_temp("zhonghua", me) )
         {
-                tell_object(me, "�����Ӷ�û�У������ֻ���\n"); 
+                tell_object(me, "你種子都沒有，還想種花？\n"); 
                 return 1;
         }
 
         if( query_temp("jiaoshui", me) == 1 )
         {
-                tell_object(me, "���Ѿ��������������������ڿ��Խ�ˮ"
-                                HIY "(jiaoshui)" NOR "��\n");
+                tell_object(me, "你已經完成了培育這道程序，現在可以澆水"
+                                HIY "(jiaoshui)" NOR "。\n");
                 return 1;
         }
 
         if( query("combat_exp", me)<8000 )
         {
-                tell_object(me, "��ľ�����ǳ�������ȵ������߶��߶��ɡ�\n");
+                tell_object(me, "你的經驗尚淺，還是先到處多走動走動吧。\n");
                 return 1;
         }
 
         if( query("combat_exp", me)>30000 )
         {
-                tell_object(me, "��������ݴ�Ų��ʺ��ֻ��˰ɡ�\n");
+                tell_object(me, "以你的身份大概不適合種花了吧。\n");
                 return 1;
         }
 
         if( query("jing", me)<70 )
         {
-                tell_object(me, "���Ѿ���ƣ���ˣ���Ϣһ���ٽ����ְɡ�\n");
+                tell_object(me, "你已經很疲憊了，休息一下再接著種吧。\n");
                 return 1;
         }
 
-        message_vision(HIC "$N" HIC "��������Χ�úõ�������һ�£�ʹ��������"
-                       "�ʺϻ���������\n" NOR, me); 
+        message_vision(HIC "$N" HIC "把土坑周圍好好地修整了一下，使土壤更加"
+                       "適合花的生長。\n" NOR, me); 
         set_temp("peiyu", 1, me);
         set_temp("jiaoshui", 1, me);
         me->start_busy(1 + random(3));
@@ -82,17 +82,17 @@ int do_jiaoshui()
 
         if( query("jing", me)<70 )
         {
-                tell_object(me, "���Ѿ���ƣ���ˣ���Ϣһ���ٽ����ְɡ�\n");
+                tell_object(me, "你已經很疲憊了，休息一下再接著種吧。\n");
                 return 1;
         }
         if (me->is_busy())
         {
-                tell_object(me, "����æ���أ����ż���\n");
+                tell_object(me, "你正忙著呢，別著急。\n");
                 return 1;
         }
         if( !query_temp("peiyu", me) == 1 )
         {
-                tell_object(me, "��û�¸ɽ�ʲôˮ����\n");
+                tell_object(me, "你沒事幹澆什麼水啊！\n");
                 return 1;
         }
         if( query_temp("peiyu", me) == 2 )
@@ -113,7 +113,7 @@ int do_jiaoshui()
                                 if (random(10000) == 8)
                                 {
                                         ob = new("/d/shenlong/obj/hua4");
-                                        message_vision(HIY "$N" HIY "�ֳ���һ���������\n"
+                                        message_vision(HIY "$N" HIY "種出了一朵翡翠蘭。\n"
                                                        NOR, me);
                                         ob->move(me, 1);
                                         delete_temp("jiaoshui", me);
@@ -126,13 +126,13 @@ int do_jiaoshui()
                                 ob = new("/d/shenlong/obj/hua2");
                                 addn("combat_exp", 20+random(10), me);
                                 me->improve_potential(20 + random(10));
-                                message_vision(HIY "$N" HIY "�ֳ���һ����������\n" NOR,me);
+                                message_vision(HIY "$N" HIY "種出了一朵無名花。\n" NOR,me);
                                 return 1;
                         }
-                        message_vision(HIC "$N" HIC "ʮ��С�ĵĸ�С���ｽ��һЩ"
-                                       "ˮ��ͻȻһ��"+query("name", ob)+HIC
-                                       "�ӿ���ð�˳�����\n" NOR, me);   
-                        message_vision(HIY "$N" HIY "����ժ���������������\n" NOR, me);
+                        message_vision(HIC "$N" HIC "十分小心的給小坑裡澆了一些"
+                                       "水，突然一朵"+query("name", ob)+HIC
+                                       "從坑裡冒了出來。\n" NOR, me);   
+                        message_vision(HIY "$N" HIY "把它摘了下來，拿在手裡。\n" NOR, me);
                         ob->move(me, 1);
                         delete_temp("jiaoshui", me);
                         delete_temp("peiyu", me);
@@ -147,13 +147,13 @@ int do_jiaoshui()
                         addn("combat_exp", exp, me);
                         me->improve_potential(pot);
 
-                        tell_object(me, HIC "ͨ�����ѵ����������" + chinese_number(exp)
-                                        + "�㾭���" + chinese_number(pot) + "��Ǳ�ܡ�\n"
+                        tell_object(me, HIC "通過這次訓練，你獲得了" + chinese_number(exp)
+                                        + "點經驗和" + chinese_number(pot) + "點潛能。\n"
                                         NOR);
                         return 1; 
                 }
-                message_vision(HIR "$N" HIR "���ֱ��ŵ�����ˮ����С���ｽˮ����"
-                               "��ˮ����̫��ѻ������ˡ�\n", me); 
+                message_vision(HIR "$N" HIR "笨手笨腳的拿起水壺給小坑裡澆水，結"
+                               "果水洒的太多把花給毀了。\n", me); 
                 delete_temp("jiaoshui", me);
                 delete_temp("zhonghua", me);
                 delete_temp("peiyu", me);
@@ -164,7 +164,7 @@ int do_jiaoshui()
         }
         if( query_temp("jiaoshui", me) == 1 )
         {
-                message_vision(HIC "$N" HIC "����ˮ����С�ӽ���һЩˮ��\n" NOR, me); 
+                message_vision(HIC "$N" HIC "拿起水壺給小坑澆了一些水。\n" NOR, me); 
                 addn("jing", -70, me);
                 set_temp("peiyu", 2, me);
                 me->start_busy(1 + random(2)); 

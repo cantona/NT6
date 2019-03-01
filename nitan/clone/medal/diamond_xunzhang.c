@@ -6,20 +6,20 @@ inherit MEDAL;
 
 void create()
 {
-        set_name(HIW "×êÊ¯Ñ«ÕÂ" NOR, ({ "diamond medal", "diamond", "xunzhang", "medal" }));
-        set("long", HIW "ÎªÄàÌ¶×ö³öÖØ´ó¹±Ï×¶ø»ñµÃµÄÑ«ÕÂ£¬·Ç³£Õä¹ó£¬ÄËî£ÕßµÄÏóÕ÷¡£\n" NOR);
+        set_name(HIW "é‘½çŸ³å‹›ç« " NOR, ({ "diamond medal", "diamond", "xunzhang", "medal" }));
+        set("long", HIW "ç‚ºæ³¥æ½­åšå‡ºé‡å¤§è²¢ç»è€Œç²å¾—çš„å‹›ç« ï¼Œéå¸¸çè²´ï¼Œä¹ƒç¿è€…çš„è±¡å¾ã€‚\n" NOR);
         set_weight(500);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ã¶");
+                set("unit", "æš");
                 set("value", 200000);
                 set("material", "gold");
                 set("armor_prop/research_times", 500);
                 set("armor_prop/practice_times", 500);
                 set("armor_prop/derive_times", 500);
         }
-        set("bindable", 1); // ×°±¸°ó¶¨
+        set("bindable", 1); // è£å‚™ç¶å®š
         set("auto_load", 1);
         setup();
 }

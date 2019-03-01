@@ -1,7 +1,7 @@
 #include <combat.h>
 #include  <ansi.h>
 
-string name() { return HIM "ÍòÂí±¼ÌÚ" NOR; }
+string name() { return HIM "è¬é¦¬å¥”é¨°" NOR; }
 
 string final1(object me, object target, int damage);
 
@@ -21,44 +21,44 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(name() + "Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(name() + "åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if ((int)query("max_neili", me) < 100000)
-                return notify_fail("ÄãÄÚÁ¦ĞŞÎª²»¹»£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ å…§åŠ›ä¿®ç‚ºä¸å¤ ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if ((lvl = me->query_skill("daojian-guizhen", 1)) < 200)
-                return notify_fail("Äãµ¶½£¹éÕæĞŞÎª²»×ã200¼¶£¬ÎŞ·¨Ê©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ åˆ€åŠæ­¸çœŸä¿®ç‚ºä¸è¶³200ç´šï¼Œç„¡æ³•æ–½å±•" + name() + "ã€‚\n");
 
         weapon1 = query_temp("weapon", me);
         weapon2 = query_temp("secondary_weapon", me) || query_temp("handing", me);
 
         if (! objectp(weapon1) || ! objectp(weapon2))
-                return notify_fail("ÄãÃ»ÓĞÍ¬Ê±×°±¸µ¶½££¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰åŒæ™‚è£å‚™åˆ€åŠï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (query("consistence", weapon2) <= 0)
-                return notify_fail("ÄãµÄ" + weapon2->name() + "ÒÑ¾­ÑÏÖØ"
-                                   "Ëğ»µ£¬ÎŞ·¨¼ÌĞøÊ¹ÓÃÁË¡£\n");
+                return notify_fail("ä½ çš„" + weapon2->name() + "å·²ç¶“åš´é‡"
+                                   "æå£ï¼Œç„¡æ³•ç¹¼çºŒä½¿ç”¨äº†ã€‚\n");
 
         type1 = query("skill_type", weapon1);
         type2 = query("skill_type", weapon2);
 
         if ((type1 != "sword" && type1 != "blade")
            || (type2 != "sword" && type2 != "blade"))
-                return notify_fail("ÄãËùÊ¹ÓÃµÄÎäÆ÷²»¶Ô£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ æ‰€ä½¿ç”¨çš„æ­¦å™¨ä¸å°ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if ((type1 == "sword" && type2 != "blade")
            || (type1 == "blade" && type2 != "sword"))
-                return notify_fail("ÄãÃ»ÓĞÍ¬Ê±×°±¸µ¶½££¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰åŒæ™‚è£å‚™åˆ€åŠï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (me->query_skill_mapped("sword") != "daojian-guizhen"
            || me->query_skill_mapped("blade") != "daojian-guizhen")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢µ¶½£¹éÕæ£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼åˆ€åŠæ­¸çœŸï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (query("neili", me) < 30000)
-                return notify_fail("ÄãÏÖÔÚµÄÕæÆø²»¹»£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çš„çœŸæ°£ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
         addn("neili", -30000, me);
 
@@ -67,9 +67,9 @@ int perform(object me, object target)
         dp = defense_power(target, "parry") + target->query_skill("sword", 1) +
              target->query_skill("blade", 1);
 
-        message_combatd(HIY "$N" HIY "Ë«Ä¿Î¢±Õ£¬ÒÂÉÑÎŞ·ç×ÔÆğ£¬É²ÄÇ¼ä£¬É±Æø³ä³â ¡­¡­\n"
-                     HIC "Ò»Êøµ¶¹â£¬" HIM "Ò»µÀ½£Ó°£¬" HIY "Ò»ÕĞ¡¸ÍòÂí±¼ÌÚ¡¹ºÁÎŞÕ÷Õ×µØÊ¹³ö£¬µ¶¹â½£Æø¾ÍÓÌÈçµØ\n"
-                     "ÓüÓÄÁé°ãµØºôĞ¥¶ø³ö£¬½«$n" HIY "ÁıÕÖ¡­¡­\n" NOR, me, target);
+        message_combatd(HIY "$N" HIY "é›™ç›®å¾®é–‰ï¼Œè¡£è£³ç„¡é¢¨è‡ªèµ·ï¼Œå‰é‚£é–“ï¼Œæ®ºæ°£å……æ–¥ â€¦â€¦\n"
+                     HIC "ä¸€æŸåˆ€å…‰ï¼Œ" HIM "ä¸€é“åŠå½±ï¼Œ" HIY "ä¸€æ‹›ã€Œè¬é¦¬å¥”é¨°ã€æ¯«ç„¡å¾å…†åœ°ä½¿å‡ºï¼Œåˆ€å…‰åŠæ°£å°±çŒ¶å¦‚åœ°\n"
+                     "ç„å¹½éˆèˆ¬åœ°å‘¼å˜¯è€Œå‡ºï¼Œå°‡$n" HIY "ç± ç½©â€¦â€¦\n" NOR, me, target);
 
         if (ap / 2 + random(ap / 2) > dp)
         {
@@ -77,7 +77,7 @@ int perform(object me, object target)
                 damage += damage_power(me, "sword");
                 damage+=query("jiali", me);
 
-                message_combatd(HIC "$N" HIC "±»Á½µÀ·É³Û¶øÀ´µÄÇ¿¹âÁıÕÖ×Å£¬ºÁÎŞË¼¿¼µÄÓàµØ£¬Ö»µÃÆ´ËÀµÖ¿¹¡­¡­\n" NOR, target);
+                message_combatd(HIC "$N" HIC "è¢«å…©é“é£›é¦³è€Œä¾†çš„å¼·å…‰ç± ç½©è‘—ï¼Œæ¯«ç„¡æ€è€ƒçš„ä½™åœ°ï¼Œåªå¾—æ‹¼æ­»æŠµæŠ—â€¦â€¦\n" NOR, target);
 
                 msg = COMBAT_D->do_damage(me, target, attack_type, damage, 500 + 200 * (userp(me)?0:1),
                                           (: final1, me, target, damage :));
@@ -85,10 +85,10 @@ int perform(object me, object target)
         }
         else
         {
-                message_combatd(HIM "$N" HIM "¾ªº§²»ÒÑ£¬È´Ó²×ÅÍ·Æ¤Ê©Õ¹Çá¹¦ÉÁ±Ü£¬¾¹ÎŞÒâ¼ä¶ã¹ı´ËÕĞ¡£\n" NOR, target);
+                message_combatd(HIM "$N" HIM "é©šé§­ä¸å·²ï¼Œå»ç¡¬è‘—é ­çš®æ–½å±•è¼•åŠŸé–ƒé¿ï¼Œç«Ÿç„¡æ„é–“èº²éæ­¤æ‹›ã€‚\n" NOR, target);
         }
 
-        // 20%¼¸ÂÊÎŞBUSY
+        // 20%å¹¾ç‡ç„¡BUSY
         if (random(5) < 4) me->start_busy(3);
         target->start_busy(3);
 
@@ -103,8 +103,8 @@ string final1(object me, object target, int damage)
                target->apply_condition("no_perform", 5);
                set_temp("daojian_cimu", 1, target);
                call_out("cimu_end", 20 + random(31), me, target);
-               return HIR "$n" HIR "Ö»¾õË«Ä¿±»Ò»ÕóÇ¿¹âÂÔ¹ı£¬ÑÛÇ°Ò»ºÚ£¬¾ÍÊ²Ã´"
-                       "Ò²¿´²»¼ûÁË£¬ĞÄÖĞÎŞÏŞ¿Ö¾å¡£\n" NOR;
+               return HIR "$n" HIR "åªè¦ºé›™ç›®è¢«ä¸€é™£å¼·å…‰ç•¥éï¼Œçœ¼å‰ä¸€é»‘ï¼Œå°±ä»€éº¼"
+                       "ä¹Ÿçœ‹ä¸è¦‹äº†ï¼Œå¿ƒä¸­ç„¡é™ææ‡¼ã€‚\n" NOR;
         }
         else
                 return "";
@@ -116,7 +116,7 @@ void cimu_end(object me, object target)
         {
                 if (living(target))
                 {
-                        tell_object(target, HIR "ºöÈ»¼ä£¬ÑÛÇ°ÂıÂıÃ÷ÁÁÁËÆğÀ´£¬ÄÜ¿´¼ûÁË¡£\n" NOR);
+                        tell_object(target, HIR "å¿½ç„¶é–“ï¼Œçœ¼å‰æ…¢æ…¢æ˜äº®äº†èµ·ä¾†ï¼Œèƒ½çœ‹è¦‹äº†ã€‚\n" NOR);
                 }
                 delete_temp("block_msg/all", target);
                target->clear_condition("no_perform");

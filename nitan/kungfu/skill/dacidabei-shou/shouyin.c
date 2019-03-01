@@ -14,36 +14,36 @@ int perform(object me, object target)
 
 
       if (me->query_skill("buddhism", 1) < 300)
-           return notify_fail("ÄãµÄ·ð·¨ÐÞÎª²»×ã£¬ÎÞ·¨Ê©Õ¹¸Ã¾øÕÐ£¡\n");
+           return notify_fail("ä½ çš„ä½›æ³•ä¿®ç‚ºä¸è¶³ï¼Œç„¡æ³•æ–½å±•è©²çµ•æ‹›ï¼\n");
       
       if( !target ) target = offensive_target(me);
      
       if( !target || !me->is_fighting(target) || !living(target) )
-           return notify_fail("¡¸´óÊÖÓ¡¡¹Ö»ÄÜÔÚÕ½¶·ÖÐ¶Ô¶ÔÊÖÊ¹ÓÃ¡£\n");        
+           return notify_fail("ã€Œå¤§æ‰‹å°ã€åªèƒ½åœ¨æˆ°é¬¥ä¸­å°å°æ‰‹ä½¿ç”¨ã€‚\n");        
       
       if( (int)me->query_skill("dacidabei-shou",1) < 120 )
-           return notify_fail("ÄãµÄ´ó´È´ó±¯ÊÖ²»¹»æµÊì£¬²»»áÊ¹ÓÃ¡¸´óÊÖÓ¡¡¹£¡\n");
+           return notify_fail("ä½ çš„å¤§æ…ˆå¤§æ‚²æ‰‹ä¸å¤ å«»ç†Ÿï¼Œä¸æœƒä½¿ç”¨ã€Œå¤§æ‰‹å°ã€ï¼\n");
       
       if( (int)me->query_skill("hand",1) < 120 )
-           return notify_fail("ÄãµÄ»ù±¾ÊÖ·¨²»¹»æµÊì£¬²»»áÊ¹ÓÃ¡¸´óÊÖÓ¡¡¹£¡\n");
+           return notify_fail("ä½ çš„åŸºæœ¬æ‰‹æ³•ä¸å¤ å«»ç†Ÿï¼Œä¸æœƒä½¿ç”¨ã€Œå¤§æ‰‹å°ã€ï¼\n");
 
       if( (int)me->query_str() < 35 )
-           return notify_fail("ÄãµÄ±ÛÁ¦²»¹»Ç¿£¬²»ÄÜÊ¹ÓÃ¡¸´óÊÖÓ¡¡¹£¡\n");
+           return notify_fail("ä½ çš„è‡‚åŠ›ä¸å¤ å¼·ï¼Œä¸èƒ½ä½¿ç”¨ã€Œå¤§æ‰‹å°ã€ï¼\n");
       
       if( query("max_neili", me)<1200 )
-           return notify_fail("ÄãµÄÄÚÁ¦Ì«Èõ£¬²»ÄÜÊ¹ÓÃ¡¸´óÊÖÓ¡¡¹£¡\n");
+           return notify_fail("ä½ çš„å…§åŠ›å¤ªå¼±ï¼Œä¸èƒ½ä½¿ç”¨ã€Œå¤§æ‰‹å°ã€ï¼\n");
       
       if( query("neili", me)<800 )
-           return notify_fail("ÄãµÄÄÚÁ¦Ì«ÉÙÁË£¬ÎÞ·¨Ê¹ÓÃ³ö¡¸´óÊÖÓ¡¡¹£¡\n");   
+           return notify_fail("ä½ çš„å…§åŠ›å¤ªå°‘äº†ï¼Œç„¡æ³•ä½¿ç”¨å‡ºã€Œå¤§æ‰‹å°ã€ï¼\n");   
 
       if( (int)target->query_condition("dashouyin"))
-           return notify_fail("¶Ô·½ÔçÒÑÉíÖÐ¡¸´óÊÖÓ¡¡¹¾ø¼¼ÁË£¡\n");   
+           return notify_fail("å°æ–¹æ—©å·²èº«ä¸­ã€Œå¤§æ‰‹å°ã€çµ•æŠ€äº†ï¼\n");   
       
       if (me->query_skill_prepared("hand") != "dacidabei-shou")
-           return notify_fail("Äã»¹Ã»ÓÐ×¼±¸´ó´È´ó±¯ÊÖ£¬ÎÞ·¨Ê©Õ¹¡¸´óÊÖÓ¡¡¹£¡\n");   
+           return notify_fail("ä½ é‚„æ²’æœ‰æº–å‚™å¤§æ…ˆå¤§æ‚²æ‰‹ï¼Œç„¡æ³•æ–½å±•ã€Œå¤§æ‰‹å°ã€ï¼\n");   
           
       if( objectp(query_temp("weapon", me)) )
-           return notify_fail("Äã±ØÐë¿ÕÊÖÊ¹ÓÃ¡¸´óÊÖÓ¡¡¹£¡\n");                                                                              
+           return notify_fail("ä½ å¿…é ˆç©ºæ‰‹ä½¿ç”¨ã€Œå¤§æ‰‹å°ã€ï¼\n");                                                                              
       jiali=query("jiali", me)+1;
       attack=query("combat_exp", me)/1000;
       attack += me->query_skill("hand");
@@ -56,23 +56,23 @@ int perform(object me, object target)
       damage = me->query_skill("dacidabei-shou", 1)/40 * jiali;
       if(damage > 1500) damage = 1500;
       
-      message_vision(HIR "\n$NÍ»È»ÃæÉ«Í¨ºì£¬µÍÉùÄ¬Äîìø×ÚÕæÑÔ£¬Ë«±Û¹Ç½ÚÒ»Õó±¬Ïì£¬ÃÍÈ»"
-                     "ÌÚ¿Õ¶øÆð£¬ÉìÊÖÏò$nÐØÇ°°´È¥£¬ºÃÒ»Ê½¡¸´óÊÖÓ¡¡¹£¡\n"NOR,me,target);
+      message_vision(HIR "\n$Nçªç„¶é¢è‰²é€šç´…ï¼Œä½Žè²é»˜å¿µç¦ªå®—çœŸè¨€ï¼Œé›™è‡‚éª¨ç¯€ä¸€é™£çˆ†éŸ¿ï¼ŒçŒ›ç„¶"
+                     "é¨°ç©ºè€Œèµ·ï¼Œä¼¸æ‰‹å‘$nèƒ¸å‰æŒ‰åŽ»ï¼Œå¥½ä¸€å¼ã€Œå¤§æ‰‹å°ã€ï¼\n"NOR,me,target);
  
       if( attack > defense ) { 
                if( objectp(armor=query_temp("armor/cloth", target) )
                    && query("armor_prop/armor", armor)<200
                   && damage > 500){
-                        message_vision(HIY"Ö»¼ûÕâ¶·´óµÄÊÖÓ¡ÕýºÃÓ¡ÔÚ$NµÄ$n"HIY"ÉÏ£¬Ô½±äÔ½"
-                                       "´ó£¬¾¹½«ËüÕðµÃ·ÛËé£¬ÁÑ³ÉÒ»¿é¿éµôÔÚµØÉÏ£¡\n"NOR, target, armor);
+                        message_vision(HIY"åªè¦‹é€™é¬¥å¤§çš„æ‰‹å°æ­£å¥½å°åœ¨$Nçš„$n"HIY"ä¸Šï¼Œè¶Šè®Šè¶Š"
+                                       "å¤§ï¼Œç«Ÿå°‡å®ƒéœ‡å¾—ç²‰ç¢Žï¼Œè£‚æˆä¸€å¡Šå¡ŠæŽ‰åœ¨åœ°ä¸Šï¼\n"NOR, target, armor);
                         armor->unequip();
                         armor->move(environment(target));
-                        set("name", "ÆÆËéµÄ"+query("name", armor), armor);
+                        set("name", "ç ´ç¢Žçš„"+query("name", armor), armor);
                         set("value", 0, armor);
                         set("armor_prop/armor", 0, armor);
                         target->reset_action();
                         }
-               tell_object(target, RED"ÄãÖ»¾õµÃ»ôµÄÐØ¿ÚÒ»Õó¾çÍ´£¬ÒÑ¾­±»ÅÄÖÐÁËÇ°ÐØ£¡\n"NOR);
+               tell_object(target, RED"ä½ åªè¦ºå¾—éœçš„èƒ¸å£ä¸€é™£åŠ‡ç—›ï¼Œå·²ç¶“è¢«æ‹ä¸­äº†å‰èƒ¸ï¼\n"NOR);
                target->receive_damage("qi", damage,  me);
          target->receive_wound("qi", damage/3, me);
          p=query("qi", target)*100/query("max_qi", target);

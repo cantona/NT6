@@ -1,7 +1,7 @@
 //tranemote.c
 //Made by jason@pkuxkx
 //FreeWare
-#define ERROR "Ö¸Áî¸ñÊ½£ºtranemote emote À´Ô´emoteÎÄ¼ş\n"
+#define ERROR "æŒ‡ä»¤æ ¼å¼ï¼štranemote emote ä¾†æºemoteæ–‡ä»¶\n"
 inherit F_SAVE;
 string source_file="";
 mapping emote=([]);
@@ -23,25 +23,25 @@ int main(object me,string arg)
                 return notify_fail(ERROR);
         }
         if(file_size(file+".o")<=0)
-                return notify_fail("¶ÁemoteÔ´ÎÄ¼ş´íÎó¡£\n" );
+                return notify_fail("è®€emoteæºæ–‡ä»¶éŒ¯èª¤ã€‚\n" );
         source_file=file;
         if(!restore())
         {
-                return notify_fail("emoteÔ´ÎÄ¼şÎŞ·¨Restore¡£\n");
+                return notify_fail("emoteæºæ–‡ä»¶ç„¡æ³•Restoreã€‚\n");
         }
         old_emote=emote;
         if(!mapp(old_emote)||sizeof(old_emote)<=0)
         {
-                return notify_fail("emoteÔ´ÎÄ¼şÎŞ·¨Restore¡£\n");
+                return notify_fail("emoteæºæ–‡ä»¶ç„¡æ³•Restoreã€‚\n");
         }
         source_file="/data/emoted";
         if(!restore())
         {
-                return notify_fail("emoteÄ¿±êÎÄ¼ş´íÎó¡£\n");
+                return notify_fail("emoteç›®æ¨™æ–‡ä»¶éŒ¯èª¤ã€‚\n");
         }
         if(!mapp(emote)||sizeof(emote)<=0)
         {
-                return notify_fail("emoteÄ¿±êÎÄ¼şÎŞ·¨Restore¡£\n");
+                return notify_fail("emoteç›®æ¨™æ–‡ä»¶ç„¡æ³•Restoreã€‚\n");
         }
         key=keys(old_emote);
         if(wizardp(me)&&wizhood(me)=="(admin)")
@@ -53,7 +53,7 @@ int main(object me,string arg)
                         nowtime=""+time();
                         cp("/data/emoted.o","/data/emoted.o."+nowtime);
                         key2=keys(emote);
-                        shout("Emote ÎÄ¼ş×ª»»ÖĞ¡£¡£¡£¡£\n");
+                        shout("Emote æ–‡ä»¶è½‰æ›ä¸­ã€‚ã€‚ã€‚ã€‚\n");
                         for(int i=0;i < sizeof(key);i++)
                         {
                                 reset_eval_cost();
@@ -63,16 +63,16 @@ int main(object me,string arg)
                                 write(key[i]+"\n");
                                 unit++;
                         }
-                        write("Emote ÎÄ¼ş "+file+" ×ª»»½øÈë/data/emoted.o³É¹¦£¡\
+                        write("Emote æ–‡ä»¶ "+file+" è½‰æ›é€²å…¥/data/emoted.oæˆåŠŸï¼\
 n");            
-                        write("Ò»¹²ÓĞ"+chinese_number(unit)+"¸öemote×ª»»³É¹¦¡£\n
+                        write("ä¸€å…±æœ‰"+chinese_number(unit)+"å€‹emoteè½‰æ›æˆåŠŸã€‚\n
 ");
-                        write("ÏÖÓĞemote±¸·İÎª"+"/data/emoted.o."+nowtime+"\n");
-                        log_file("tran_emote",getuid(me)+"×ª»» "+file+" ÖĞµÄEmot
-e½øÈëµ±Ç°EmoteÖĞ¡£
+                        write("ç¾æœ‰emoteå‚™ä»½ç‚º"+"/data/emoted.o."+nowtime+"\n");
+                        log_file("tran_emote",getuid(me)+"è½‰æ› "+file+" ä¸­çš„Emot
+eé€²å…¥ç•¶å‰Emoteä¸­ã€‚
 \n"+
-                        "Ê±¼ä£º"+ctime(time())+"\n"+
-                        "ÏÖÓĞemote±¸·İÎª"+"/data/emoted.o."+nowtime+"\n");
+                        "æ™‚é–“ï¼š"+ctime(time())+"\n"+
+                        "ç¾æœ‰emoteå‚™ä»½ç‚º"+"/data/emoted.o."+nowtime+"\n");
                         return 1;
                 }
         
@@ -80,28 +80,28 @@ e½øÈëµ±Ç°EmoteÖĞ¡£
         ee=lower_case(ee);
         if(member_array(ee,key)==-1)
         {
-                return notify_fail(ee+" ²»´æÔÚÓÚ "+file+"¡£\n");
+                return notify_fail(ee+" ä¸å­˜åœ¨äº "+file+"ã€‚\n");
         }
         if(!mapp(old_emote[ee]))
         {
-                return notify_fail(ee+" ²»ÊÇÒ»¸öºÏ·¨µÄemote¡£\n");
+                return notify_fail(ee+" ä¸æ˜¯ä¸€å€‹åˆæ³•çš„emoteã€‚\n");
         }
         if(!undefinedp(emote[ee]))
         {
-                return notify_fail(ee+" ´æÔÚÓÚÄ¿±êemoteÎÄ¼şÖĞ£¬²»ÄÜ¸²¸Ç¡£\n");
+                return notify_fail(ee+" å­˜åœ¨äºç›®æ¨™emoteæ–‡ä»¶ä¸­ï¼Œä¸èƒ½è¦†è“‹ã€‚\n");
         }
         EMOTE_D->set_emote(ee,old_emote[ee]);
-        write("Emote×ª»» "+ee+" ³É¹¦¡£\n");
+        write("Emoteè½‰æ› "+ee+" æˆåŠŸã€‚\n");
         return 1;
 }
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½£ºtranemote emote À´Ô´emoteÎÄ¼ş
-½«À´Ô´emoteÎÄ¼şÖĞµÄÖ¸¶¨emote¼ÓÈëµ±Ç°emoteÎÄ¼şÖĞ¡£
-¸ñÊ½¶ş£ºtranemote -All À´Ô´emoteÎÄ¼ş
-½«À´Ô´emoteÎÄ¼şÖĞËùÓĞµ±Ç°emoteÎÄ¼şÖĞÃ»ÓĞµÄemote¼ÓÈë¡£
-Í¬Ê±¸øµ±Ç°emoteÎÄ¼ş°´Ê±¼ä±¸·İ¡£
+æŒ‡ä»¤æ ¼å¼ï¼štranemote emote ä¾†æºemoteæ–‡ä»¶
+å°‡ä¾†æºemoteæ–‡ä»¶ä¸­çš„æŒ‡å®šemoteåŠ å…¥ç•¶å‰emoteæ–‡ä»¶ä¸­ã€‚
+æ ¼å¼äºŒï¼štranemote -All ä¾†æºemoteæ–‡ä»¶
+å°‡ä¾†æºemoteæ–‡ä»¶ä¸­æ‰€æœ‰ç•¶å‰emoteæ–‡ä»¶ä¸­æ²’æœ‰çš„emoteåŠ å…¥ã€‚
+åŒæ™‚çµ¦ç•¶å‰emoteæ–‡ä»¶æŒ‰æ™‚é–“å‚™ä»½ã€‚
 HELP
         );
         return 1;

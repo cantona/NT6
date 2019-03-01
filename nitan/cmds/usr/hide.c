@@ -1,4 +1,4 @@
-// hide.c Òş²Ø±øÆ÷
+// hide.c éš±è—å…µå™¨
 
 #include <ansi.h>
 #include <command.h>
@@ -11,22 +11,22 @@ int main(object me, string str)
         int i;
 
         if (! str)
-                return notify_fail("ÄãÒªÒş²ØÊ²Ã´ÎïÆ·£¿\n");
+                return notify_fail("ä½ è¦éš±è—ä»€éº¼ç‰©å“ï¼Ÿ\n");
 
 /*
         if( !stringp(query("can_summon/"+str, me)) )
-                return notify_fail("Äã²»ÖªµÀÈçºÎÒş²ØÕâ¸öÎïÆ·¡£\n");
+                return notify_fail("ä½ ä¸çŸ¥é“å¦‚ä½•éš±è—é€™å€‹ç‰©å“ã€‚\n");
 */
 
         if (! objectp(ob = present(str, me)) &&
             ! objectp(ob = present(str, environment(me))))
-                return notify_fail("ÄãÉí±ßÃ»ÓĞÕâ¸öÎïÆ·¡£\n");
+                return notify_fail("ä½ èº«é‚Šæ²’æœ‰é€™å€‹ç‰©å“ã€‚\n");
 
         if (! ob->hide_anywhere(me))
         {
-                message_vision(HIM "$N" HIM "¾Ù×Å" + ob->name() +
-                               HIM "£¬¿ÚÖĞÄîÄîÓĞ´Ê¡£\nÈ»¶ø"
-                               "Ê²Ã´Ò²Ã»ÓĞ·¢Éú :)\n", me);
+                message_vision(HIM "$N" HIM "èˆ‰è‘—" + ob->name() +
+                               HIM "ï¼Œå£ä¸­å¿µå¿µæœ‰è©ã€‚\nç„¶è€Œ"
+                               "ä»€éº¼ä¹Ÿæ²’æœ‰ç™¼ç”Ÿ :)\n", me);
         }
 
         return 1;
@@ -35,9 +35,9 @@ int main(object me, string str)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : hide <ÎïÆ·µÄID>
+æŒ‡ä»¤æ ¼å¼ : hide <ç‰©å“çš„ID>
 
-´ËÖ¸Áî¿ÉÈÃÄãÒş²ØÄ³Ğ©ÎïÆ·£¬ÈÃËüÃÇÔİÊ±ÏûÊ§¡£
+æ­¤æŒ‡ä»¤å¯è®“ä½ éš±è—æŸäº›ç‰©å“ï¼Œè®“å®ƒå€‘æš«æ™‚æ¶ˆå¤±ã€‚
 HELP
     );
     return 1;

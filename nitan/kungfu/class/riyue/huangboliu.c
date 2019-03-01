@@ -6,12 +6,12 @@ inherit F_GUARDER;
 
 void create()
 {
-        set_name("»Æ²®Á÷", ({ "huang boliu","huang","boliu"}) );
-        set("gender", "ÄĞĞÔ" );
-        set("title", "ÈÕÔÂÉñ½Ì·çÀ×ÌÃÏãÖ÷");
-        set("nickname", HIW"Òø÷×òÔ"NOR);
+        set_name("é»ƒä¼¯æµ", ({ "huang boliu","huang","boliu"}) );
+        set("gender", "ç”·æ€§" );
+        set("title", "æ—¥æœˆç¥æ•™é¢¨é›·å ‚é¦™ä¸»");
+        set("nickname", HIW"éŠ€é«¯è›Ÿ"NOR);
         set("age", 85);
-        set("long", "Ò»²¿°×Ğë£¬Ö±´¹ÖÁĞØ£¬Éí²Ä¿ıÎàÖ®¼«¡£\n");
+        set("long", "ä¸€éƒ¨ç™½é ˆï¼Œç›´å‚è‡³èƒ¸ï¼Œèº«æé­æ¢§ä¹‹æ¥µã€‚\n");
         set("attitude", "peaceful");
         set("shen_type", -1);
 
@@ -64,7 +64,7 @@ void create()
            "id"        : "dongfang bubai" ]),
         }));
 
-        create_family("ÈÕÔÂÉñ½Ì",2,"µÜ×Ó ·çÀ×ÌÃÏãÖ÷");
+        create_family("æ—¥æœˆç¥æ•™",2,"å¼Ÿå­ é¢¨é›·å ‚é¦™ä¸»");
 
         set("master_ob",2);
         setup();

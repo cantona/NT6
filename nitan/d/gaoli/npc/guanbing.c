@@ -4,14 +4,14 @@ inherit NPC;
 
 void create()
 {
-   set_name("¹Ù±ø",({ "bing" }) );
-   set("gender", "ÄĞĞÔ" );
+   set_name("å®˜å…µ",({ "bing" }) );
+   set("gender", "ç”·æ€§" );
    set("age", 32);
-   set("long", "ÕâÊÇÊØÎÀ¸ßÀöµÄ¹Ù±ø£¬ÔÚÕâÀï¼ì²éÀ´ÍùµÄĞĞÈË¡£\n");
+   set("long", "é€™æ˜¯å®ˆè¡›é«˜éº—çš„å®˜å…µï¼Œåœ¨é€™è£¡æª¢æŸ¥ä¾†å¾€çš„è¡Œäººã€‚\n");
        
    set("combat_exp",800000);
    
-   set("guard","¸ßÀö");
+   set("guard","é«˜éº—");
    set("attitude", "peaceful");
    
         set("max_qi", 1000);

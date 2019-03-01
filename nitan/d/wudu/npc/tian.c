@@ -1,14 +1,14 @@
-// tian.c  ÌïÉ©
+// tian.c  ç”°å«‚
 
 inherit NPC;
 
 void create()
 {
-        set_name("ÌïÉ©", ({"tian sao","tian","sao"}));
-        set("title", "Å®Ò×ÑÀ");
-        set("gender", "Å®ĞÔ" );
+        set_name("ç”°å«‚", ({"tian sao","tian","sao"}));
+        set("title", "å¥³æ˜“ç‰™");
+        set("gender", "å¥³æ€§" );
         set("age", 36);
-        set("long", "Ò»¸ö°×ğª·áÂúµÄÖĞÄê¸¾ÈË¡£\n");
+        set("long", "ä¸€å€‹ç™½çš™è±æ»¿çš„ä¸­å¹´å©¦äººã€‚\n");
         set("combat_exp", 2000);
         set("attitude", "friendly");
         setup();
@@ -24,17 +24,17 @@ void init()
 int do_yao(string arg)
 {
         object m,mm;
-        message_vision("$NÏòÌïÉ©ÎÊµÀ£º´óÉ©£¬¿ª·¹ÁËÂğ£¿\n", this_player());
+        message_vision("$Nå‘ç”°å«‚å•é“ï¼šå¤§å«‚ï¼Œé–‹é£¯äº†å—ï¼Ÿ\n", this_player());
 
         if( query("food", this_player()) >= 
            (int)this_player()->max_food_capacity()*90/100 )
-                return notify_fail("ÌïÉ©Ğ¦µÀ£ºÃ»ÄÇ£¬µÈ¿ª·¹Ê±ÔÙÀ´°É£¡\n");
+                return notify_fail("ç”°å«‚ç¬‘é“ï¼šæ²’é‚£ï¼Œç­‰é–‹é£¯æ™‚å†ä¾†å§ï¼\n");
 
         if((present("baozi", this_player())))
-        return notify_fail("ÌïÉ©Ğ¦µÀ£º²»ÒªÄÃ×ÅÊÖÀïµÄ£¬»¹¿´×Å¹øÀïµÄ£¡\n");
+        return notify_fail("ç”°å«‚ç¬‘é“ï¼šä¸è¦æ‹¿è‘—æ‰‹è£¡çš„ï¼Œé‚„çœ‹è‘—é‹è£¡çš„ï¼\n");
         
         if ( present("baozi", environment()) )
-                return notify_fail("ÌïÉ©Ğ¦µÀ£ºÄÇ²»ÊÇÓĞÒ»¿éÄØÂï£¬³ÔÍêÔÙËµ£¡\n");
+                return notify_fail("ç”°å«‚ç¬‘é“ï¼šé‚£ä¸æ˜¯æœ‰ä¸€å¡Šå‘¢å˜›ï¼Œåƒå®Œå†èªªï¼\n");
 
         m=new(__DIR__"obj/baozi2");
         mm=new(__DIR__"obj/baozi2");
@@ -43,6 +43,6 @@ int do_yao(string arg)
         m->move(this_player());
         mm->move(this_player());
 
-        message_vision("ÌïÉ©¶Ô$NĞ¦µÀ£º¶öÁË°É£¬Âıµã³Ô¡£\n", this_player());
+        message_vision("ç”°å«‚å°$Nç¬‘é“ï¼šé¤“äº†å§ï¼Œæ…¢é»åƒã€‚\n", this_player());
                 return 1;
 }

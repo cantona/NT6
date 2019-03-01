@@ -2,15 +2,15 @@
 inherit TASK; 
 void create() 
 { 
-    set_name(HIR"»ëÌì±¦¼ø"NOR, ({ "book", "book" }) ); 
+    set_name(HIR"æ¸¾å¤©å¯¶é‘’"NOR, ({ "book", "book" }) ); 
     set_weight(1); 
     if( clonep() ) 
             destruct(this_object()); 
     else { 
-            set("unit", "±¾"); 
+            set("unit", "æœ¬"); 
             set("material", "book"); 
-            set("long", "Ò»±¾Ğ´×Å»ëÌì±¦¼øÄÚ¹¦µÄÃØ¼®¡£\n"); 
+            set("long", "ä¸€æœ¬å¯«è‘—æ¸¾å¤©å¯¶é‘’å…§åŠŸçš„ç§˜ç±ã€‚\n"); 
          }
-    set("owner", "ÄÏÏÍ"); 
+    set("owner", "å—è³¢"); 
     setup();
 }

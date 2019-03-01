@@ -2,15 +2,15 @@ inherit ROOM;
 #include <ansi.h> 
 void create ()
 {
-  set ("short", "ĞİÏ¢ÊÒ");
+  set ("short", "ä¼‘æ¯å®¤");
   set ("long", HIG @LONG
-ÕâÀï¿´ÉÏÈ¥ÏóÊÇÒ»¼äĞİÏ¢ÊÒ£¬Îİ×ÓÖĞÑë°Ú×Å¼¸ÕÅ×À×Ó£¬ÉÏÃæÓĞ
-Ò»Ğ©Ğ¡²Ë£¬Îİ½ÇÓĞÒ»¸ö¹ñ×Ó(closet)£¬´ÓÀïÃæ´«³öÆË±ÇµÄÏãÆø£¬Áî
-ÈË´¹ÏÑ¡£¿¿´°ÓĞÈ¡Å¯×°ÖÃ£¬ÎİÀïÎÂÅ¯Èç´º¡£
+é€™è£¡çœ‹ä¸Šå»è±¡æ˜¯ä¸€é–“ä¼‘æ¯å®¤ï¼Œå±‹å­ä¸­å¤®æ“ºè‘—å¹¾å¼µæ¡Œå­ï¼Œä¸Šé¢æœ‰
+ä¸€äº›å°èœï¼Œå±‹è§’æœ‰ä¸€å€‹æ«ƒå­(closet)ï¼Œå¾è£¡é¢å‚³å‡ºæ’²é¼»çš„é¦™æ°£ï¼Œä»¤
+äººå‚æ¶ã€‚é çª—æœ‰å–æš–è£ç½®ï¼Œå±‹è£¡æº«æš–å¦‚æ˜¥ã€‚
 LONG);
 
   set("item_desc", ([
-     "closet" : "Ò»¸öÖñÖÆµÄ¹ñ×Ó£¬ÀïÃæ·Å×ÅÑÌ(cigarette)£¬¾Æ(wine)ºÍÌÇ¹û(sugar)£¬¿ÉÒÔÄÃ(take)³öÀ´³ÔÅ¶¡£\n",
+     "closet" : "ä¸€å€‹ç«¹åˆ¶çš„æ«ƒå­ï¼Œè£¡é¢æ”¾è‘—ç…™(cigarette)ï¼Œé…’(wine)å’Œç³–æœ(sugar)ï¼Œå¯ä»¥æ‹¿(take)å‡ºä¾†åƒå“¦ã€‚\n",
    ]));
   set("exits", ([
         "north"    : __DIR__"spirit5",
@@ -35,39 +35,39 @@ int do_take(string arg)
 {
         object me=this_player();
         object ob;
-        if(!arg) return notify_fail("ÄãÒªÄÃÊ²Ã´£¿\n"); 
+        if(!arg) return notify_fail("ä½ è¦æ‹¿ä»€éº¼ï¼Ÿ\n"); 
         if(arg=="wine"){
        ob = new ("/quest/tulong/obj/wine");   
        ob->move(me); 
-  message_vision ("$N´Ó¹ñ×ÓÄÃ³ö$n¡£\n",me,ob);   
+  message_vision ("$Nå¾æ«ƒå­æ‹¿å‡º$nã€‚\n",me,ob);   
         return 1;
         }
         if(arg=="sugar"){
        ob = new ("/quest/tulong/obj/sugar");   
        ob->move(me); 
-  message_vision ("$N´Ó¹ñ×ÓÄÃ³ö$n¡£\n",me,ob);   
+  message_vision ("$Nå¾æ«ƒå­æ‹¿å‡º$nã€‚\n",me,ob);   
         return 1;
         }
         if(arg=="cigarette"){
        ob = new ("/quest/tulong/obj/cigarette");   
        ob->move(me); 
-  message_vision ("$N´Ó¹ñ×ÓÄÃ³ö$n¡£\n",me,ob);   
+  message_vision ("$Nå¾æ«ƒå­æ‹¿å‡º$nã€‚\n",me,ob);   
         return 1;
         }
         else
-        write("ÄÇÀïÃæÃ»ÓĞÕâÑù¶«Î÷£¡\n");
+        write("é‚£è£¡é¢æ²’æœ‰é€™æ¨£æ±è¥¿ï¼\n");
         return 1;  
 }
 int valid_leave()
 {
         if((present("wine", this_player())))
-            return notify_fail("Çë²»Òª´ø×ßÕâÀïµÄ¶«Î÷¡£\n"); 
+            return notify_fail("è«‹ä¸è¦å¸¶èµ°é€™è£¡çš„æ±è¥¿ã€‚\n"); 
         if((present("sugar", this_player())))
-            return notify_fail("Çë²»Òª´ø×ßÕâÀïµÄ¶«Î÷¡£\n"); 
+            return notify_fail("è«‹ä¸è¦å¸¶èµ°é€™è£¡çš„æ±è¥¿ã€‚\n"); 
         if((present("cigarette", this_player())))
-            return notify_fail("Çë²»Òª´ø×ßÕâÀïµÄ¶«Î÷¡£\n"); 
+            return notify_fail("è«‹ä¸è¦å¸¶èµ°é€™è£¡çš„æ±è¥¿ã€‚\n"); 
         if((present("budai", this_player())))
-            return notify_fail("Çë·ÅÏÂ²¼´ü£¬ÕâÀïµÄ¶«Î÷²»ÄÜ´ø³öÈ¥£¬Ğ»Ğ»¡£\n");
+            return notify_fail("è«‹æ”¾ä¸‹å¸ƒè¢‹ï¼Œé€™è£¡çš„æ±è¥¿ä¸èƒ½å¸¶å‡ºå»ï¼Œè¬è¬ã€‚\n");
 
     return ::valid_leave();
 }

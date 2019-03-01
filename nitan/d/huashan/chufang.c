@@ -2,17 +2,17 @@
 inherit ROOM;
 void create()
 {
-        set("short","³ø·¿");
+        set("short","å»šæˆ¿");
         set("long", @LONG
-ÕâÊÇ»ªÉ½ÅÉµÄ³ø·¿£¬Ò»Î»»ªÉ½Ğ¡Ê¦ÃÃÕıÔÚÉÕ·¹¡£Õû¸ö·¿¼äÃÖÂş×Å
-·¹²ËÏã¡£Äã¿ÉÒÔÏòĞ¡Ê¦ÃÃÒª(serve) Ğ©³ÔµÄºÈµÄ¡£Ç½ÉÏÌù×ÅÒ»ÕÅÆôÊÂ
-(note)¡£
+é€™æ˜¯è¯å±±æ´¾çš„å»šæˆ¿ï¼Œä¸€ä½è¯å±±å°å¸«å¦¹æ­£åœ¨ç‡’é£¯ã€‚æ•´å€‹æˆ¿é–“å½Œæ¼«è‘—
+é£¯èœé¦™ã€‚ä½ å¯ä»¥å‘å°å¸«å¦¹è¦(serve) äº›åƒçš„å–çš„ã€‚ç‰†ä¸Šè²¼è‘—ä¸€å¼µå•Ÿäº‹
+(note)ã€‚
 LONG );
         set("exits",([
                 "east" : __DIR__"garden",
         ]));
         set("item_desc",([
-                "note" : "Ò»ÖàÒ»·¹£¬µ±Ë¼À´Ö®²»Ò×¡£\n",
+                "note" : "ä¸€ç²¥ä¸€é£¯ï¼Œç•¶æ€ä¾†ä¹‹ä¸æ˜“ã€‚\n",
         ]));
         set("objects",([
                 __DIR__"npc/girldizi" : 1,
@@ -25,7 +25,7 @@ LONG );
 int valid_leave(object me, string dir)
 {
         if ( present("soup", me) || present("rice", me))
-        return notify_fail("Ğ¡Ê¦ÃÃµÉÁËÄãÒ»ÑÛ: ³Ô²»ÁËÒª¶µ×Å×ß°¡? \n");
+        return notify_fail("å°å¸«å¦¹çªäº†ä½ ä¸€çœ¼: åƒä¸äº†è¦å…œè‘—èµ°å•Š? \n");
         return ::valid_leave(me, dir);
 }
 
@@ -40,15 +40,15 @@ int do_serve()
         object food;
         object water;
         me=this_player();
-        if( query("family/family_name", me) != "»ªÉ½ÅÉ" )
-                return notify_fail("Ğ¡Ê¦ÃÃµÀ£ºÄã²»ÊÇ»ªÉ½ÅÉµÜ×Ó£¬²»ÄÜÄÃÈ¡Ê³Îï¡£\n");
+        if( query("family/family_name", me) != "è¯å±±æ´¾" )
+                return notify_fail("å°å¸«å¦¹é“ï¼šä½ ä¸æ˜¯è¯å±±æ´¾å¼Ÿå­ï¼Œä¸èƒ½æ‹¿å–é£Ÿç‰©ã€‚\n");
         if(present("rice",this_player()) ) 
-                return notify_fail("Ğ¡Ê¦ÃÃµÀ£º³ÔÍêÁËÔÙÄÃ£¬±ğÀË·ÑÊ³Îï¡£\n");
+                return notify_fail("å°å¸«å¦¹é“ï¼šåƒå®Œäº†å†æ‹¿ï¼Œåˆ¥æµªè²»é£Ÿç‰©ã€‚\n");
         if(present("rice",this_object()) ) 
-                return notify_fail("Ğ¡Ê¦ÃÃµÀ£º³ÔÍêÁËÔÙÄÃ£¬±ğÀË·ÑÊ³Îï¡£\n");
+                return notify_fail("å°å¸«å¦¹é“ï¼šåƒå®Œäº†å†æ‹¿ï¼Œåˆ¥æµªè²»é£Ÿç‰©ã€‚\n");
         if (query("ricewater")>0)
         {
-                message_vision("Ğ¡Ê¦ÃÃÁ¬Éù´ğÓ¦£¬¸ø$NÒ»Íë»ÆÃ×·¹ºÍÒ»ÍëÏÊ¹½ÌÀ¡£\n",me);
+                message_vision("å°å¸«å¦¹é€£è²ç­”æ‡‰ï¼Œçµ¦$Nä¸€ç¢—é»ƒç±³é£¯å’Œä¸€ç¢—é®®è‡æ¹¯ã€‚\n",me);
                 food=new(__DIR__"obj/rice");
                 water=new(__DIR__"obj/soup");
                 food->move(me);
@@ -56,7 +56,7 @@ int do_serve()
                 addn("ricewater",-1);
         }
         else 
-                message_vision("Ğ¡Ê¦ÃÃ¶Ô$NÇ¸ÉùµÀ: àË£¬³ÔµÄºÈµÄ¶¼Ã»ÁË¡£\n",me);
+                message_vision("å°å¸«å¦¹å°$Næ­‰è²é“: å—¨ï¼Œåƒçš„å–çš„éƒ½æ²’äº†ã€‚\n",me);
         return 1; 
 }
 

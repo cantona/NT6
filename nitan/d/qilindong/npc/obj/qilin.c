@@ -4,14 +4,14 @@
 inherit ITEM; 
 void create()
 {
-        set_name( RED"÷è÷ë±Û"NOR, ({ "qilin bi", "qilin", "bi", "arm" }) );
+        set_name( RED"éº’éºŸè‡‚"NOR, ({ "qilin bi", "qilin", "bi", "arm" }) );
         set_weight(10000);
         if( clonep() )
                 set_default_object(__FILE__);
         else
         {
-                set("long", "ÕâÊÇÒ»¸ùÊÖ±Û£¬Ïà´«ÊÇÓÚÔÀÉÙÄêÊ±³à²²²«¶·»ğ÷è÷ë£¬×ó±Û±»÷è÷ëÑªËù½¦¶ø³É¡£\n");
-                set("unit", "¸ù");
+                set("long", "é€™æ˜¯ä¸€æ ¹æ‰‹è‡‚ï¼Œç›¸å‚³æ˜¯äºå²³å°‘å¹´æ™‚èµ¤è†Šæé¬¥ç«éº’éºŸï¼Œå·¦è‡‚è¢«éº’éºŸè¡€æ‰€æ¿ºè€Œæˆã€‚\n");
+                set("unit", "æ ¹");
                 set("value", 150);
                 set("no_sell", 1);
         }

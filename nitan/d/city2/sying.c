@@ -3,10 +3,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�ξ���Ӫ"NOR);
+        set("short", "宋軍大營"NOR);
         set("long", @LONG
-������ǡ����Ρ���Ӫ�ˣ�һ�����߸�������������һ����
-������顸�Ρ��֣�ǰ�治Զ�����ξ�Ԫ˧����Ӫ�ˡ�
+這裡就是「大宋」軍營了，一面大旗高高樹起，上面書著一個鬥
+大的隸書「宋」字，前面不遠就是宋軍元帥的帳營了。
 LONG );
 
         set("no_magic", "1");

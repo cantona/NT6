@@ -12,18 +12,18 @@ void setup()
 int cure_ob(string);
 void create()
 {
-        set_name(HIY"Èý»Æ±¦À¯Íè"NOR, ({"sanhuang wan","wan"}));
+        set_name(HIY"ä¸‰é»ƒå¯¶è Ÿä¸¸"NOR, ({"sanhuang wan","wan"}));
         set_weight(50);
         if (clonep())
             set_default_object(__FILE__);
     else
     {
-        set("unit", "¿Å");
+        set("unit", "é¡†");
         set("no_sell",1);
         set("no_get",1);
         set("no_drop",1);
         set("long",
-"Ò»¿Å»Æ³Î³ÎµÄÒ©Íè£¬ÓÉÅ£»Æ¡¢ÐÛ»Æ¡¢´Æ»ÆÕâÈý»ÆÎªÖ÷£¬¸¨ÒÔÆäËüÒ©Îï\nÁ¶ÖÆ¶ø³É£¬ÊÇÎäµ±ÅÉÁÆÉË¡¢ÁÆ¶¾µÄÁéÒ©¡£¶Ô³æ¶¾ÓÐÆæÐ§¡£\n");
+"ä¸€é¡†é»ƒæ¾„æ¾„çš„è—¥ä¸¸ï¼Œç”±ç‰›é»ƒã€é›„é»ƒã€é›Œé»ƒé€™ä¸‰é»ƒç‚ºä¸»ï¼Œè¼”ä»¥å…¶å®ƒè—¥ç‰©\nç…‰åˆ¶è€Œæˆï¼Œæ˜¯æ­¦ç•¶æ´¾ç™‚å‚·ã€ç™‚æ¯’çš„éˆè—¥ã€‚å°èŸ²æ¯’æœ‰å¥‡æ•ˆã€‚\n");
                 set("value", 20000);
                 set("medicine", 1);
     }
@@ -39,12 +39,12 @@ int cure_ob(object me)
                 else
                         addn("neili", -(query("neili", me)), me);
 
-                message_vision(BLU"$N·þÏÂÒ»¿Å"+query("name")+BLU"£¬¾õµÃÌåÄÚÕæÆøÄæÐÐ£¬ÄÚÁ¦´óËð¡£Ô­À´·þÊ³\nÌ«¼±Ì«¶à£¬Ò©Ð§ÊÊµÃÆä·´£¡\n" NOR, me);
+                message_vision(BLU"$Næœä¸‹ä¸€é¡†"+query("name")+BLU"ï¼Œè¦ºå¾—é«”å…§çœŸæ°£é€†è¡Œï¼Œå…§åŠ›å¤§æã€‚åŽŸä¾†æœé£Ÿ\nå¤ªæ€¥å¤ªå¤šï¼Œè—¥æ•ˆé©å¾—å…¶åï¼\n" NOR, me);
         destruct(this_object());
         return 1;
         }
            
-        message_vision(HIM"$N·þÏÂÒ»¿Å"+query("name")+HIM"£¬Ö»¾õÍ¨ÌåÊæÌ©£¬¾«Éñ»À·¢£¬ÉËÊÆ´óÓÐºÃ×ª¡£\n"NOR, me);
+        message_vision(HIM"$Næœä¸‹ä¸€é¡†"+query("name")+HIM"ï¼Œåªè¦ºé€šé«”èˆ’æ³°ï¼Œç²¾ç¥žç…¥ç™¼ï¼Œå‚·å‹¢å¤§æœ‰å¥½è½‰ã€‚\n"NOR, me);
         me->receive_heal("qi", 400+random(200));
         me->apply_condition("hot_drug", 15);
 

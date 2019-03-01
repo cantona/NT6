@@ -1,4 +1,4 @@
-// tiejia.c Ìú¼×
+// tiejia.c éµç”²
 //
 
 #include <armor.h>
@@ -8,12 +8,12 @@ inherit ARMOR;
 
 void create()
 {
-        set_name(NOR + WHT "¸ÖÌúîø" NOR, ({ "gangtie kai2", "gangtie", "kai2" }) );
+        set_name(NOR + WHT "é‹¼éµé§" NOR, ({ "gangtie kai2", "gangtie", "kai2" }) );
         set_weight(30000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼ş");
+                set("unit", "ä»¶");
                 set("material", "steel");
                                 set("value", 300000);
                 set("armor_prop/armor", 300);

@@ -2,22 +2,22 @@
 // by Find.
 
 /*
-µ¥Ïî¼ÇÂ¼¸ñÊ½£º
-({"find","/obj/book/guwen_book",933947068,"/d/chang/hockshop","ÕâÊÇ"})
-   ID     pawned ob             µ½ÆÚÊ±¼ä   µ±ÆÌÎï¼ş            stamp long
+å–®é …è¨˜éŒ„æ ¼å¼ï¼š
+({"find","/obj/book/guwen_book",933947068,"/d/chang/hockshop","é€™æ˜¯"})
+   ID     pawned ob             åˆ°æœŸæ™‚é–“   ç•¶èˆ–ç‰©ä»¶            stamp long
 */
 
-/* ´Ë¹¦ÄÜĞèÒª¶ÔËùÓĞµÄµäµ±Îï¼ş½øĞĞ¹ÜÀíºÍ¾­³£ĞÔµÄ¼ìË÷²Ù×÷
- * ¶ÔÏµÍ³×ÊÔ´£¨CPU & ¼ÇÒäÌå£©¶¼ÓĞºÜ´óµÄÏûºÄ£¬Ã¿¸öÍæ¼ÒËù
- * ÄÜµäµ±µÄÎïÆ·×ÜÊıÓ¦ÓĞÏŞÖÆ£¬»¹ÓĞ¾ÙĞĞÅÄÂô´ó»áµÄÊ±¼ä¼ä¸ô£¬
- * ¼ä¸ôÔ½´ó¸ºµ£Ô½ÖØ£¬Ä¿Ç°Ôİ¶¨ÎªÃ¿ĞÇÆÚ3¡¢6Íí°Ëµã¾ÙĞĞ£¬ÒÔ
- * ºóÈç±ØÒª¿É¸ÄÎªÃ¿ĞÇÆÚ2¡¢4¡¢6Íí¾ÙĞĞ¡£
- * config ÀïµÄ maximum array size Ò²Ó¦×ã¹»´ó£¬Ä¿Ç°ÔİÉè
- * Îª 50000¡£
+/* æ­¤åŠŸèƒ½éœ€è¦å°æ‰€æœ‰çš„å…¸ç•¶ç‰©ä»¶é€²è¡Œç®¡ç†å’Œç¶“å¸¸æ€§çš„æª¢ç´¢æ“ä½œ
+ * å°ç³»çµ±è³‡æºï¼ˆCPU & è¨˜æ†¶é«”ï¼‰éƒ½æœ‰å¾ˆå¤§çš„æ¶ˆè€—ï¼Œæ¯å€‹ç©å®¶æ‰€
+ * èƒ½å…¸ç•¶çš„ç‰©å“ç¸½æ•¸æ‡‰æœ‰é™åˆ¶ï¼Œé‚„æœ‰èˆ‰è¡Œæ‹è³£å¤§æœƒçš„æ™‚é–“é–“éš”ï¼Œ
+ * é–“éš”è¶Šå¤§è² æ“”è¶Šé‡ï¼Œç›®å‰æš«å®šç‚ºæ¯æ˜ŸæœŸ3ã€6æ™šå…«é»èˆ‰è¡Œï¼Œä»¥
+ * å¾Œå¦‚å¿…è¦å¯æ”¹ç‚ºæ¯æ˜ŸæœŸ2ã€4ã€6æ™šèˆ‰è¡Œã€‚
+ * config è£¡çš„ maximum array size ä¹Ÿæ‡‰è¶³å¤ å¤§ï¼Œç›®å‰æš«è¨­
+ * ç‚º 50000ã€‚
 */
 
-/* ÎªÍ³Ò»»õ±Òµ¥Î»¡¢Ö±¹ÛÀûÓÚÍæ¼Ò³ö¼Û²Î¼Ó¾ºÂò£¬ËùÓĞÏÔÊ¾¼Û
- * Öµ¾ù×ª»»³ÉÕûÊıÒøÁ½µÄ°¢À­²®Êı×Ö
+/* ç‚ºçµ±ä¸€è²¨å¹£å–®ä½ã€ç›´è§€åˆ©äºç©å®¶å‡ºåƒ¹åƒåŠ ç«¶è²·ï¼Œæ‰€æœ‰é¡¯ç¤ºåƒ¹
+ * å€¼å‡è½‰æ›æˆæ•´æ•¸éŠ€å…©çš„é˜¿æ‹‰ä¼¯æ•¸å­—
  */
 #define PAWN_STAMP        "/std/room/obj/pawn_stamp"
 
@@ -27,30 +27,30 @@ inherit F_DBASE;
 
 protected string *all;
 
-protected int max_item_limit = 5;        /* Íæ¼Ò¿Éµäµ±ÎïÆ·µÄ×î´óÊıÄ¿ */
+protected int max_item_limit = 5;        /* ç©å®¶å¯å…¸ç•¶ç‰©å“çš„æœ€å¤§æ•¸ç›® */
 protected int be_in_sale_meeting = 0;
-protected int min_can_sale_num = 5;        /* ÕÙ¿ªÅÄÂô´ó»áËùÒªÇóµÄ×îÉÙµÄËÀµ±ÎïÆ·ÊıÁ¿ */
+protected int min_can_sale_num = 5;        /* å¬é–‹æ‹è³£å¤§æœƒæ‰€è¦æ±‚çš„æœ€å°‘çš„æ­»ç•¶ç‰©å“æ•¸é‡ */
 
 protected void begain_sale_meeting();
 protected int find_next_object();
 protected void end_sale_meeting();
-protected int num_during_meeting = -1;        /* ÅÄÂô´ó»á¹ı³ÌÖĞµÄÎïÆ·±àºÅ */
-protected object current_object;                /* ÕıÔÚÅÄÂôµÄµ±Ç°ÎïÆ· */
-protected int current_value = 0;                /* µ±Ç°¼Û¸ñ */
-protected object current_user;                /* ÕıÔÚ³ö¼ÛµÄÍæ¼Ò */
-protected int min_value_per_chu;                /* Ã¿´Î¼Ó¼ÛµÄ×îĞ¡Öµ */
-protected int unvalid_flag = 0;                /* µ±Ç°ÊÇ·ñ¿ÉÒÔ³ö¼Û */
+protected int num_during_meeting = -1;        /* æ‹è³£å¤§æœƒéç¨‹ä¸­çš„ç‰©å“ç·¨è™Ÿ */
+protected object current_object;                /* æ­£åœ¨æ‹è³£çš„ç•¶å‰ç‰©å“ */
+protected int current_value = 0;                /* ç•¶å‰åƒ¹æ ¼ */
+protected object current_user;                /* æ­£åœ¨å‡ºåƒ¹çš„ç©å®¶ */
+protected int min_value_per_chu;                /* æ¯æ¬¡åŠ åƒ¹çš„æœ€å°å€¼ */
+protected int unvalid_flag = 0;                /* ç•¶å‰æ˜¯å¦å¯ä»¥å‡ºåƒ¹ */
 
-protected int call_interval = 5;                /* Ã¿´Îº°¼ÛÖ®¼äµÄ¼ä¸ô */
-protected int COST = 5;                        /* ÅÄÂôÆğ¼ÛÕÛ¿Û */
+protected int call_interval = 5;                /* æ¯æ¬¡å–Šåƒ¹ä¹‹é–“çš„é–“éš” */
+protected int COST = 5;                        /* æ‹è³£èµ·åƒ¹æŠ˜æ‰£ */
 
 void create()
 {
         seteuid(getuid());
-        set("channel_id", "µäµ±¾«Áé");
+        set("channel_id", "å…¸ç•¶ç²¾éˆ");
 }
 
-/* Íæ¼Ò login Ê±ÓÉ´Ëº¯ÊıÖÆÔìµ±Æ± */
+/* ç©å®¶ login æ™‚ç”±æ­¤å‡½æ•¸åˆ¶é€ ç•¶ç¥¨ */
 void restore_players_pawnstamp(object me)
 {
         mixed *user_objs;
@@ -59,7 +59,7 @@ void restore_players_pawnstamp(object me)
         if(!objectp(me) || !userp(me))
                 return;
 
-        // ÅÄÂô»áÆÚ¼ä²»´¦Àí
+        // æ‹è³£æœƒæœŸé–“ä¸è™•ç†
         if(be_in_sale_meeting)
                 return;
 
@@ -78,7 +78,7 @@ void restore_players_pawnstamp(object me)
         }
 }
 
-/* ·µ»ØÒ»¸öÍæ¼ÒÒÑµäµ±µÄËùÓĞÎïÆ·µÄÊıÁ¿ÊÇ·ñÒÑ³¬¹ı×î¸ßÏŞ */
+/* è¿”å›ä¸€å€‹ç©å®¶å·²å…¸ç•¶çš„æ‰€æœ‰ç‰©å“çš„æ•¸é‡æ˜¯å¦å·²è¶…éæœ€é«˜é™ */
 int can_pawn_ob(string id)
 {
         if(!stringp(id) || id == "")
@@ -87,10 +87,10 @@ int can_pawn_ob(string id)
                 return (DATABASE_D->query_count_user_pob(id) < max_item_limit);
 }
 
-/* µäµ±Ò»¸öÎïÆ·¡£
- * return 0        ³öÏÖ´íÎó
- * return -1        ÒÑ´ïµ½ÁËÍæ¼Ò¿Éµäµ±ÎïÆ·µÄ×î´óÊıÄ¿
- * return 1        ³É¹¦
+/* å…¸ç•¶ä¸€å€‹ç‰©å“ã€‚
+ * return 0        å‡ºç¾éŒ¯èª¤
+ * return -1        å·²é”åˆ°äº†ç©å®¶å¯å…¸ç•¶ç‰©å“çš„æœ€å¤§æ•¸ç›®
+ * return 1        æˆåŠŸ
  */
 int pawn_one_object(object stamp)
 {
@@ -103,22 +103,22 @@ int pawn_one_object(object stamp)
         return DATABASE_D->pawn_one_object( stamp->query_all_msg() );
 }
 
-/* Êê»ØÒ»¸öÎïÆ·¡£
- * return 0        ³öÏÖ´íÎó
- * return -1        Ã»ÓĞµäµ±¹ıÕâ¸öÎïÆ·
- * return 1        ³É¹¦
+/* è´–å›ä¸€å€‹ç‰©å“ã€‚
+ * return 0        å‡ºç¾éŒ¯èª¤
+ * return -1        æ²’æœ‰å…¸ç•¶éé€™å€‹ç‰©å“
+ * return 1        æˆåŠŸ
  *
- * ´Ëº¯ÊıÃ»ÓĞ½øĞĞÊÇ·ñÒÑ¹ıÆÚ¼ì²é¡£
- * Ö÷ÒªÁô´ıÓÚÁíÒ»¸öÏë·¨£º
- * Ä¿Ç°ÎïÆ·¹ıÆÚ¾Í²»ÄÜÔÙÊê»ØÁË£¬Ö»ÄÜÅÄÂô´ó»áÉÏ¼û£¬
- * ¹ıÆÚ¼ì²éÔÚ HOCKSHOP Îï¼şÀï¡£
- * ÊÇ·ñ¿ÉÒÔÎïÆ·ÔÚ¹ıÆÚºóÓëÉÏÅÄÂô´ó»áÇ°µÄÒ»¶ÎÊ±¼äÀï
- * »¹¿ÉÊê»Ø£¬²»¹ıÒªÓÃÁ½±¶µÄ¼Û¸ñÂò»Ø×÷Îª³Í·££¿
- * ÈçÕâÑù HOCKSHOP ÀïÒª×÷ÏàÓ¦µÄĞŞ¸Ä£¬return -1
- * Ò²¾ßÓĞÁË²»Í¬µÄÒâÒå---¼´£ºÒÑÂô³ö¡£
- * restore_players_pawnstamp º¯ÊıÀï¶Ô¹ıÆÚµÄµ±Æ±Ò²
- * Ó¦½»¸¶Íæ¼Ò£¬¿ÉÒÔ°Ñµ±Æ±Ãû³Æ¸Ä³É¡°¹ıÆÚµÄµ±Æ±¡±¡£
- * ÊÇ·ñÈç´ËÓĞ´ıÓÚÌÖÂÛ¡£
+ * æ­¤å‡½æ•¸æ²’æœ‰é€²è¡Œæ˜¯å¦å·²éæœŸæª¢æŸ¥ã€‚
+ * ä¸»è¦ç•™å¾…äºå¦ä¸€å€‹æƒ³æ³•ï¼š
+ * ç›®å‰ç‰©å“éæœŸå°±ä¸èƒ½å†è´–å›äº†ï¼Œåªèƒ½æ‹è³£å¤§æœƒä¸Šè¦‹ï¼Œ
+ * éæœŸæª¢æŸ¥åœ¨ HOCKSHOP ç‰©ä»¶è£¡ã€‚
+ * æ˜¯å¦å¯ä»¥ç‰©å“åœ¨éæœŸå¾Œèˆ‡ä¸Šæ‹è³£å¤§æœƒå‰çš„ä¸€æ®µæ™‚é–“è£¡
+ * é‚„å¯è´–å›ï¼Œä¸éè¦ç”¨å…©å€çš„åƒ¹æ ¼è²·å›ä½œç‚ºæ‡²ç½°ï¼Ÿ
+ * å¦‚é€™æ¨£ HOCKSHOP è£¡è¦ä½œç›¸æ‡‰çš„ä¿®æ”¹ï¼Œreturn -1
+ * ä¹Ÿå…·æœ‰äº†ä¸åŒçš„æ„ç¾©---å³ï¼šå·²è³£å‡ºã€‚
+ * restore_players_pawnstamp å‡½æ•¸è£¡å°éæœŸçš„ç•¶ç¥¨ä¹Ÿ
+ * æ‡‰äº¤ä»˜ç©å®¶ï¼Œå¯ä»¥æŠŠç•¶ç¥¨åç¨±æ”¹æˆâ€œéæœŸçš„ç•¶ç¥¨â€ã€‚
+ * æ˜¯å¦å¦‚æ­¤æœ‰å¾…äºè¨è«–ã€‚
  */
 int redeem_one_object(object stamp)
 {
@@ -128,7 +128,7 @@ int redeem_one_object(object stamp)
         return DATABASE_D->retrieve_one_object(stamp->query_master(),stamp->query_rtime());
 }
 
-// ÒÔÏÂÎªÅÄÂô´ó»á²¿·Ö£º
+// ä»¥ä¸‹ç‚ºæ‹è³£å¤§æœƒéƒ¨åˆ†ï¼š
 void touch_meeting()
 {
         object selling_room;
@@ -160,14 +160,14 @@ protected void begain_sale_meeting()
 
         if(!can_begain_meeting())
         {
-                CHANNEL_D->do_channel( this_object(), "paimai",sprintf("¡ô%s´´ÊÀ%sÄê¶ÈÈ«¹úÅÄÂô´ó»áÍ¨¸æ¡ô£º"+
-                "±¾½ìÅÄÂô´ó»áÓÉÓÚËÀµ±ÎïÆ·¹ıÉÙ£¬¾ö¶¨È¡Ïû£¡£¡",MUD_NAME,(!year)?"Ôª":chinese_number(year)));
+                CHANNEL_D->do_channel( this_object(), "paimai",sprintf("â—†%så‰µä¸–%så¹´åº¦å…¨åœ‹æ‹è³£å¤§æœƒé€šå‘Šâ—†ï¼š"+
+                "æœ¬å±†æ‹è³£å¤§æœƒç”±äºæ­»ç•¶ç‰©å“éå°‘ï¼Œæ±ºå®šå–æ¶ˆï¼ï¼",MUD_NAME,(!year)?"å…ƒ":chinese_number(year)));
                 be_in_sale_meeting = 0;
                 return;
         }
 
-        CHANNEL_D->do_channel( this_object(), "paimai",sprintf("%s´´ÊÀ%sÄê¶ÈÈ«¹úÅÄÂô´ó»áÏÖÔÚ¿ªÄ»£¡"+
-                "»¶Ó­¸÷½çÈËÊ¿²Î¼Ó¾ºÂò£¡£¡",MUD_NAME,(!year)?"Ôª":chinese_number(year)));
+        CHANNEL_D->do_channel( this_object(), "paimai",sprintf("%så‰µä¸–%så¹´åº¦å…¨åœ‹æ‹è³£å¤§æœƒç¾åœ¨é–‹å¹•ï¼"+
+                "æ­¡è¿å„ç•Œäººå£«åƒåŠ ç«¶è²·ï¼ï¼",MUD_NAME,(!year)?"å…ƒ":chinese_number(year)));
         call_out("teach_rules",2);
         return;
 }
@@ -175,24 +175,24 @@ protected void begain_sale_meeting()
 protected void teach_rules()
 {
         CHANNEL_D->do_channel( this_object(), "paimai",
-                      "²Î¼Ó¾ºÂòÈËÊ¿¿ÉÒÔÊ¹ÓÃ chu <ÒøÁ½Êı> ÃüÁî¶Ôµ±Ç°ÅÄÂôÎïÆ·³ö¼Û£¬\n"+
-        "              ±íÊ¾ÄãÔ¸Òâ³ö¶àÉÙÁ½Òø×Ó¹ºÂòµ±Ç°ÅÄÂôÎïÆ·¡£\n");
+                      "åƒåŠ ç«¶è²·äººå£«å¯ä»¥ä½¿ç”¨ chu <éŠ€å…©æ•¸> å‘½ä»¤å°ç•¶å‰æ‹è³£ç‰©å“å‡ºåƒ¹ï¼Œ\n"+
+        "              è¡¨ç¤ºä½ é¡˜æ„å‡ºå¤šå°‘å…©éŠ€å­è³¼è²·ç•¶å‰æ‹è³£ç‰©å“ã€‚\n");
         call_out("lasting_sale_objs",5,0);
 }
 
 protected void reset_variable()
 {
-        current_object = 0;                /* ÕıÔÚÅÄÂôµÄµ±Ç°ÎïÆ· */
-        current_value = 0;                /* µ±Ç°¼Û¸ñ */
-        current_user = 0;                /* ÕıÔÚ³ö¼ÛµÄÍæ¼Ò */
-        min_value_per_chu = 0;                /* Ã¿´Î¼Ó¼ÛµÄ×îĞ¡Öµ */
+        current_object = 0;                /* æ­£åœ¨æ‹è³£çš„ç•¶å‰ç‰©å“ */
+        current_value = 0;                /* ç•¶å‰åƒ¹æ ¼ */
+        current_user = 0;                /* æ­£åœ¨å‡ºåƒ¹çš„ç©å®¶ */
+        min_value_per_chu = 0;                /* æ¯æ¬¡åŠ åƒ¹çš„æœ€å°å€¼ */
 }
 
 protected void give_obj_to_user()
 {
         int cant_hold_flag;
 
-        CHANNEL_D->do_channel( this_object(), "paimai",sprintf("¹§Ï²%s(%s)ÒÔ %d Á½Òø×Ó¹ºµÃ %s"+HIY+"¡£\n",
+        CHANNEL_D->do_channel( this_object(), "paimai",sprintf("æ­å–œ%s(%s)ä»¥ %d å…©éŠ€å­è³¼å¾— %s"+HIY+"ã€‚\n",
                 query("name", current_user),geteuid(current_user),
                 (current_value/100),current_object->name()));
 
@@ -204,11 +204,11 @@ protected void give_obj_to_user()
                         current_object->move(environment(current_user));
                 }
 
-                tell_object(current_user,sprintf("Ò»¸öĞ¡»ï¼ÆÂúÍ·´óº¹µØÅÜµ½Äã¸úÇ°ËµµÀ£º¡°ÕâÊÇÄúÂòµÄ¶«Î÷%s¡£¡±\n",
-                        (cant_hold_flag)?"¸øÄú·ÅµØÉÏÁË":"ÄúÊÕºÃ" ));
+                tell_object(current_user,sprintf("ä¸€å€‹å°ä¼™è¨ˆæ»¿é ­å¤§æ±—åœ°è·‘åˆ°ä½ è·Ÿå‰èªªé“ï¼šâ€œé€™æ˜¯æ‚¨è²·çš„æ±è¥¿%sã€‚â€\n",
+                        (cant_hold_flag)?"çµ¦æ‚¨æ”¾åœ°ä¸Šäº†":"æ‚¨æ”¶å¥½" ));
         }
         else
-                tell_object(current_user,"ÄãµÄÒøĞĞ´æ¿î²»¹»£¡\n");
+                tell_object(current_user,"ä½ çš„éŠ€è¡Œå­˜æ¬¾ä¸å¤ ï¼\n");
 
         delete_temp("be_in_sale_meeting_chu", current_user);
 
@@ -221,7 +221,7 @@ protected void lasting_sale_objs(int when)
 
         remove_call_out("lasting_sale_objs");
 
-        if(num_during_meeting == -1) // »¹Î´¿ªÊ¼ÅÄÂô
+        if(num_during_meeting == -1) // é‚„æœªé–‹å§‹æ‹è³£
         {
                 num_during_meeting = 0;
                 find_next_object();
@@ -229,40 +229,40 @@ protected void lasting_sale_objs(int when)
                         value = current_object->value();
                 current_value = to_int(ceil(value/10*COST/100))*100;
                 min_value_per_chu = to_int(ceil(value/1000))*100;
-                CHANNEL_D->do_channel( this_object(), "paimai","´ó»áÕıÊ½¿ªÊ¼£¬µÚÒ»¼şÎïÆ·£º\n"+
-                        sprintf("             %s"+HIY+"Ò»%s£¬Ô­¼Û %d Á½°×Òø£º£¬Æğ¼Û£º%d Á½°×Òø\n"+
-                                "             Ã¿´Î³ö¼ÛÖÁÉÙÒª¸ßÓÚµ±Ç°¼Û¸ñ %d Á½°×Òø£¬ÇëÓĞÒâÕß³ö¼Û¡£\n",
+                CHANNEL_D->do_channel( this_object(), "paimai","å¤§æœƒæ­£å¼é–‹å§‹ï¼Œç¬¬ä¸€ä»¶ç‰©å“ï¼š\n"+
+                        sprintf("             %s"+HIY+"ä¸€%sï¼ŒåŸåƒ¹ %d å…©ç™½éŠ€ï¼šï¼Œèµ·åƒ¹ï¼š%d å…©ç™½éŠ€\n"+
+                                "             æ¯æ¬¡å‡ºåƒ¹è‡³å°‘è¦é«˜äºç•¶å‰åƒ¹æ ¼ %d å…©ç™½éŠ€ï¼Œè«‹æœ‰æ„è€…å‡ºåƒ¹ã€‚\n",
                                 current_object->name(),(query("unit", current_object))?
-                                query("unit", current_object):"¼ş",to_int(ceil(value/100)),
+                                query("unit", current_object):"ä»¶",to_int(ceil(value/100)),
                                 (current_value/100),(min_value_per_chu/100)));
                 unvalid_flag = 0;
                 call_out("lasting_sale_objs",call_interval+2,0);
                 return;
         }
 
-        if(!when)        // ĞÂ¼Û¸ñ»òÕßĞÂÎïÆ·³öÀ´ºó½øĞĞÒ»´ÎÑ¯ÎÊ
+        if(!when)        // æ–°åƒ¹æ ¼æˆ–è€…æ–°ç‰©å“å‡ºä¾†å¾Œé€²è¡Œä¸€æ¬¡è©¢å•
         {
                 CHANNEL_D->do_channel( this_object(), "paimai",
-                        sprintf("%s"+HIY+"µ±Ç°¼Û¸ñ£º%d Á½°×Òø£¬%s£¿\n",current_object->name(),
+                        sprintf("%s"+HIY+"ç•¶å‰åƒ¹æ ¼ï¼š%d å…©ç™½éŠ€ï¼Œ%sï¼Ÿ\n",current_object->name(),
                         (current_value/100),
-                        (current_user)?"»¹ÓĞÈË³ö¸ü¸ßµÄ¼Û¸ñÂğ":"ÓĞÈË¶ÔÕâ¸ö¼Û¸ñ¸ĞĞËÈ¤Âğ"));
+                        (current_user)?"é‚„æœ‰äººå‡ºæ›´é«˜çš„åƒ¹æ ¼å—":"æœ‰äººå°é€™å€‹åƒ¹æ ¼æ„Ÿèˆˆè¶£å—"));
                 call_out("lasting_sale_objs",call_interval,1);
                 return;
         }
 
-        if(when == 1)        // µÚÒ»´Î¼ÆÊı
+        if(when == 1)        // ç¬¬ä¸€æ¬¡è¨ˆæ•¸
         {
                 CHANNEL_D->do_channel( this_object(), "paimai",
-                        sprintf("µ±Ç°ÎïÆ·£º%s"+HIY+"£¬%d Á½°×Òø µÚÒ»´Î£¡ÓĞĞËÈ¤µÄ¿ì³ö¼ÛÀ²£¡\n",current_object->name(),
+                        sprintf("ç•¶å‰ç‰©å“ï¼š%s"+HIY+"ï¼Œ%d å…©ç™½éŠ€ ç¬¬ä¸€æ¬¡ï¼æœ‰èˆˆè¶£çš„å¿«å‡ºåƒ¹å•¦ï¼\n",current_object->name(),
                         (current_value/100)));
                 call_out("lasting_sale_objs",call_interval,2);
                 return;
         }
 
-        if(when == 2)        // µÚ¶ş´Î¼ÆÊı
+        if(when == 2)        // ç¬¬äºŒæ¬¡è¨ˆæ•¸
         {
                 CHANNEL_D->do_channel( this_object(), "paimai",
-                        sprintf("µ±Ç°ÎïÆ·£º%s"+HIY+"£¬%d Á½°×Òø µÚ¶ş´Î£¡»ú»áÄÑµÃÑ½£¡\n",current_object->name(),
+                        sprintf("ç•¶å‰ç‰©å“ï¼š%s"+HIY+"ï¼Œ%d å…©ç™½éŠ€ ç¬¬äºŒæ¬¡ï¼æ©Ÿæœƒé›£å¾—å‘€ï¼\n",current_object->name(),
                         (current_value/100)));
                 call_out("lasting_sale_objs",call_interval,3);
                 return;
@@ -286,11 +286,11 @@ protected void lasting_sale_objs(int when)
                                 value = current_object->value();
                         current_value = to_int(ceil(value/10*COST/100))*100;
                         min_value_per_chu = to_int(ceil(value/1000))*100;
-                        CHANNEL_D->do_channel( this_object(), "paimai","¼ÌĞø½øĞĞÏÂÒ»¼şÎïÆ·£º\n"+
-                                sprintf("             %s"+HIY+"Ò»%s£¬Ô­¼Û %d Á½°×Òø£º£¬Æğ¼Û£º%d Á½°×Òø\n"+
-                                "             Ã¿´Î³ö¼ÛÖÁÉÙÒª¸ßÓÚµ±Ç°¼Û¸ñ %d Á½°×Òø£¬ÇëÓĞÒâÕß³ö¼Û¡£\n",
+                        CHANNEL_D->do_channel( this_object(), "paimai","ç¹¼çºŒé€²è¡Œä¸‹ä¸€ä»¶ç‰©å“ï¼š\n"+
+                                sprintf("             %s"+HIY+"ä¸€%sï¼ŒåŸåƒ¹ %d å…©ç™½éŠ€ï¼šï¼Œèµ·åƒ¹ï¼š%d å…©ç™½éŠ€\n"+
+                                "             æ¯æ¬¡å‡ºåƒ¹è‡³å°‘è¦é«˜äºç•¶å‰åƒ¹æ ¼ %d å…©ç™½éŠ€ï¼Œè«‹æœ‰æ„è€…å‡ºåƒ¹ã€‚\n",
                                 current_object->name(),(query("unit", current_object))?
-                                query("unit", current_object):"¼ş",(value/100),
+                                query("unit", current_object):"ä»¶",(value/100),
                                 (current_value/100),(min_value_per_chu/100)));
                         unvalid_flag = 0;
                         call_out("lasting_sale_objs",call_interval+2,0);
@@ -300,8 +300,8 @@ protected void lasting_sale_objs(int when)
 }
 
 /*
- * return 0 ÒÑÃ»ÓĞ¿ÉÅÄÂôµÄÎïÆ·ÁË
- * return 1 ÕÒµ½ÏÂÒ»¸ö¿ÉÅÄÂôµÄÎïÆ·
+ * return 0 å·²æ²’æœ‰å¯æ‹è³£çš„ç‰©å“äº†
+ * return 1 æ‰¾åˆ°ä¸‹ä¸€å€‹å¯æ‹è³£çš„ç‰©å“
  */
 protected int find_next_object()
 {
@@ -324,7 +324,7 @@ protected int find_next_object()
 protected void end_sale_meeting()
 {
 
-        CHANNEL_D->do_channel( this_object(), "paimai","±¾½ìÅÄÂô´ó»áÔ²Âú½áÊø¡£");
+        CHANNEL_D->do_channel( this_object(), "paimai","æœ¬å±†æ‹è³£å¤§æœƒåœ“æ»¿çµæŸã€‚");
 
         all = 0;
         num_during_meeting = -1;
@@ -361,7 +361,7 @@ int query_min_value_per_chu()
         return min_value_per_chu;
 }
 
-/* ½ÓÊÜÍæ¼ÒµÄ³ö¼Û */
+/* æ¥å—ç©å®¶çš„å‡ºåƒ¹ */
 void accept_chujia(object usr,int value)
 {
         if(!usr || (current_user == usr))
@@ -377,7 +377,7 @@ void accept_chujia(object usr,int value)
         current_value = value;
 
         CHANNEL_D->do_channel( this_object(), "paimai",
-                sprintf("%s(%s)³ö¼Û %d Á½°×Òø¾ºÂò %s"+HIY+"¡£\n",
+                sprintf("%s(%s)å‡ºåƒ¹ %d å…©ç™½éŠ€ç«¶è²· %s"+HIY+"ã€‚\n",
                 query("name", current_user),geteuid(current_user),
                 current_value/100,current_object->name()));
 

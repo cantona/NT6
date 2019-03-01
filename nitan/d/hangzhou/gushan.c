@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-        set("short", "��ɽ");
+        set("short", "孤山");
         set("long", @LONG
-ͨ���������ǰ��ӭ��ʯ���Ͽ��С���ɽ������������֡�����
-ʰ����ɽ����ƽ̨�������߱��Ƿź�ͤ�����ϱ�����ƽ�����¡�����
-��ͨ�������š�
+通過林蔭道向前，迎面石壁上刻有“孤山”兩個丹紅大字。朝南
+拾級登山便是平台。東北邊便是放鶴亭。東南邊則是平湖秋月。西北
+邊通往西泠橋。
 LONG);
         set("exits", ([
             "westup"    : "/d/meizhuang/shijie",

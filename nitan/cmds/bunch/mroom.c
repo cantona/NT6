@@ -27,12 +27,12 @@ int main(object me, string arg)
 		return 0;
 
 	if(undefinedp(r_dir[arg]))
-		return notify_fail(sprintf("·¿¼äµÄ³ö¿ÚÖ»ÄÜ´ÓÒÔÏÂ·½ÏòÖÖÑ¡Ôñ£º\n%s\n",vdirs));
+		return notify_fail(sprintf("æˆ¿é–“çš„å‡ºå£åªèƒ½å¾ä»¥ä¸‹æ–¹å‘ç¨®é¸æ“‡ï¼š\n%s\n",vdirs));
 
 	if(env->query("exits/"+arg) || env->query("hide_exits/"+arg))
-		return notify_fail(sprintf("ÕâÀïÒÑ¾­ÓĞÁË %s ³ö¿Ú¡£\n",arg));
+		return notify_fail(sprintf("é€™è£¡å·²ç¶“æœ‰äº† %s å‡ºå£ã€‚\n",arg));
 
-	write("ÇëÊäÈëĞÂ½¨·¿¼äµÄÃû³Æ[2-6¸öºº×Ö]('q'ÍË³ö)£º\n");
+	write("è«‹è¼¸å…¥æ–°å»ºæˆ¿é–“çš„åç¨±[2-6å€‹æ¼¢å­—]('q'é€€å‡º)ï¼š\n");
 	input_to( (: get_room_short :), me, env, arg);
 
 	return 1;
@@ -47,7 +47,7 @@ protected void get_room_short(string sdesc, object who, object env, string dir)
 
 	if(!stringp(sdesc) || (sdesc == ""))
 	{
-		tell_object(who, "ÇëÊäÈëĞÂ½¨·¿¼äµÄÃû³Æ[2-6¸öºº×Ö]£¬ÊäÈë('q'ÍË³ö)£º\n");
+		tell_object(who, "è«‹è¼¸å…¥æ–°å»ºæˆ¿é–“çš„åç¨±[2-6å€‹æ¼¢å­—]ï¼Œè¼¸å…¥('q'é€€å‡º)ï¼š\n");
 		input_to( (: get_room_short :), who, env, dir);
 		return;
 	}
@@ -55,13 +55,13 @@ protected void get_room_short(string sdesc, object who, object env, string dir)
 	if( (sdesc[0] == 'q')
 	|| (sdesc[0] == 'Q') )
 	{
-		tell_object(who, "ÖÕÖ¹·¿¼ä´´½¨¡£\n");
+		tell_object(who, "çµ‚æ­¢æˆ¿é–“å‰µå»ºã€‚\n");
 		return;
 	}
 
 	if( ((l = strlen(sdesc)) < 4) || (l > 12) )
 	{
-		tell_object(who, "ĞÂ½¨·¿¼äµÄÃû³Æ±ØĞëÎª2-6¸öºº×Ö£¬ÊäÈë('q'ÍË³ö)£º\n");
+		tell_object(who, "æ–°å»ºæˆ¿é–“çš„åç¨±å¿…é ˆç‚º2-6å€‹æ¼¢å­—ï¼Œè¼¸å…¥('q'é€€å‡º)ï¼š\n");
 		input_to( (: get_room_short :), who, env, dir);
 		return;
 	}
@@ -72,7 +72,7 @@ protected void get_room_short(string sdesc, object who, object env, string dir)
 
                 if( sdesc[l]<128 )
 		{
-			tell_object(who, "ĞÂ½¨·¿¼äµÄÃû³Æ±ØĞëÊ¹ÓÃÖĞÎÄ£¬ÊäÈë('q'ÍË³ö)£º\n");
+			tell_object(who, "æ–°å»ºæˆ¿é–“çš„åç¨±å¿…é ˆä½¿ç”¨ä¸­æ–‡ï¼Œè¼¸å…¥('q'é€€å‡º)ï¼š\n");
 			input_to( (: get_room_short :), who, env, dir);
 			return;
                 }
@@ -84,17 +84,17 @@ protected void get_room_short(string sdesc, object who, object env, string dir)
 			if( (section < 16)
 			|| (section > 87) )
 			{
-				tell_object(who,"\nĞÂ½¨·¿¼äµÄÃû³Æ±ØĞëÊ¹ÓÃ³£ÓÃ¡¸ºº×Ö¡¹£¬ÊäÈë('q'ÍË³ö)£º\n");
+				tell_object(who,"\næ–°å»ºæˆ¿é–“çš„åç¨±å¿…é ˆä½¿ç”¨å¸¸ç”¨ã€Œæ¼¢å­—ã€ï¼Œè¼¸å…¥('q'é€€å‡º)ï¼š\n");
 				input_to( (: get_room_short :), who, env, dir);
 				return;
 			}
 		}
 	}
 
-	tell_object(who, sprintf("ĞÂ·¿¼äÃû³ÆÎª£º%s\nÇëÎª%sÉè¶¨ÃèÊö£º
-¡¤ÎªÁË·¿¼äµÄÃÀ¹Û£¬Ã¿Ò»ĞĞÇë²»Òª³¬¹ı%s¸öÖĞÎÄ×Ö
-¡¤µÚÒ»ĞĞµÄÄÚÈİ³¤¶È±ÈÆäËüĞĞµÄ³¤¶ÈÉÙÁ½¸öÖĞÎÄ×Ö¿í²ÅÄÜ¶ÔÆë
-¡¤ÃèÊöÄÚÈİ²»ÄÜ³¬¹ı%sĞĞ\nÇëÊäÈë('.'½áÊøÊäÈë£¬'q'ÍË³ö)£º\n------------------------------------------------------\n",
+	tell_object(who, sprintf("æ–°æˆ¿é–“åç¨±ç‚ºï¼š%s\nè«‹ç‚º%sè¨­å®šæè¿°ï¼š
+ï¹’ç‚ºäº†æˆ¿é–“çš„ç¾è§€ï¼Œæ¯ä¸€è¡Œè«‹ä¸è¦è¶…é%så€‹ä¸­æ–‡å­—
+ï¹’ç¬¬ä¸€è¡Œçš„å…§å®¹é•·åº¦æ¯”å…¶å®ƒè¡Œçš„é•·åº¦å°‘å…©å€‹ä¸­æ–‡å­—å¯¬æ‰èƒ½å°é½Š
+ï¹’æè¿°å…§å®¹ä¸èƒ½è¶…é%sè¡Œ\nè«‹è¼¸å…¥('.'çµæŸè¼¸å…¥ï¼Œ'q'é€€å‡º)ï¼š\n------------------------------------------------------\n",
 		sdesc, sdesc, chinese_number(room_desc_l/2), chinese_number(room_desc_h)));
 
 	input_to( (: get_room_long :), who, env, dir, sdesc, "" );
@@ -114,25 +114,25 @@ protected void get_room_long(string str, object who, object env, string dir, str
 	if( (str[0] == 'q')
 	|| (str[0] == 'Q') )
 	{
-		tell_object(who, "ÖÕÖ¹·¿¼ä´´½¨¡£\n");
+		tell_object(who, "çµ‚æ­¢æˆ¿é–“å‰µå»ºã€‚\n");
 		return;
 	}
 
-	if(str[0] == '.')	// ½áÊøÊäÈë
+	if(str[0] == '.')	// çµæŸè¼¸å…¥
 	{
 		if( (ldesc == "") || (sizeof(ldesc) < 10) )
 		{
-			tell_object(who, sprintf("ÄãÃ»ÓĞÎª%sµÄÃèÊöÉè¶¨×ã¹»µÄÄÚÈİ\n·¿Îİ´´½¨Ê§°Ü\n", sdesc));
+			tell_object(who, sprintf("ä½ æ²’æœ‰ç‚º%sçš„æè¿°è¨­å®šè¶³å¤ çš„å…§å®¹\næˆ¿å±‹å‰µå»ºå¤±æ•—\n", sdesc));
 			return;
 		}
 
 		if( sizeof(explode(ldesc, "\n")) > room_desc_h)
 		{
-			tell_object(who, sprintf(HBCYN HIG"¡¤ÃèÊöÄÚÈİ²»ÄÜ³¬¹ı%sĞĞ\n·¿Îİ´´½¨Ê§°Ü¡£\n"NOR, chinese_number(room_desc_h)));
+			tell_object(who, sprintf(HBCYN HIG"ï¹’æè¿°å…§å®¹ä¸èƒ½è¶…é%sè¡Œ\næˆ¿å±‹å‰µå»ºå¤±æ•—ã€‚\n"NOR, chinese_number(room_desc_h)));
 			return;
 		}
 
-		tell_object(who,sprintf("%sÊÇ·ñÎª»§Íâ·¿¼ä£¿\n(»§Íâ·¿¼ä¿ÉÒÔ¿´µ½Æøºò±ä»¯µÄÃèÊö)\nÇëÑ¡Ôñ[y/n](qÍË³ö)£º", sdesc));
+		tell_object(who,sprintf("%sæ˜¯å¦ç‚ºæˆ¶å¤–æˆ¿é–“ï¼Ÿ\n(æˆ¶å¤–æˆ¿é–“å¯ä»¥çœ‹åˆ°æ°£å€™è®ŠåŒ–çš„æè¿°)\nè«‹é¸æ“‡[y/n](qé€€å‡º)ï¼š", sdesc));
 		input_to( (: get_room_outdoor :), who, env, dir, sdesc, ldesc );
 		return;
 	}
@@ -146,14 +146,14 @@ protected void get_room_long(string str, object who, object env, string dir, str
 		for(int i=0; i<n; i++)
 			if(strlen(tmp[i]) > room_desc_l)
 			{
-				tell_object(who, sprintf(HBCYN HIG"Ã¿Ò»ĞĞ²»ÄÜ³¬¹ı%s¸öÖĞÎÄ×Ö£¬ÇëÖØĞÂÊäÈëÉÏÒ»´ÎÊäÈëµÄÄÚÈİ£º\n"NOR, chinese_number(room_desc_l/2)));
+				tell_object(who, sprintf(HBCYN HIG"æ¯ä¸€è¡Œä¸èƒ½è¶…é%så€‹ä¸­æ–‡å­—ï¼Œè«‹é‡æ–°è¼¸å…¥ä¸Šä¸€æ¬¡è¼¸å…¥çš„å…§å®¹ï¼š\n"NOR, chinese_number(room_desc_l/2)));
 				input_to( (: get_room_long :), who, env, dir, sdesc, ldesc );
 				return;
 			}
 
 		if((n + sizeof(explode(ldesc, "\n"))) > room_desc_h)
 		{
-			tell_object(who, sprintf(HBCYN HIG"¡¤ÃèÊöÄÚÈİ²»ÄÜ³¬¹ı%sĞĞ\n·¿Îİ´´½¨Ê§°Ü¡£\n"NOR, chinese_number(room_desc_h)));
+			tell_object(who, sprintf(HBCYN HIG"ï¹’æè¿°å…§å®¹ä¸èƒ½è¶…é%sè¡Œ\næˆ¿å±‹å‰µå»ºå¤±æ•—ã€‚\n"NOR, chinese_number(room_desc_h)));
 			return;
 		}
 	}
@@ -162,14 +162,14 @@ protected void get_room_long(string str, object who, object env, string dir, str
 	{
 		if(strlen(str) > room_desc_l)
 		{
-			tell_object(who, sprintf(HBCYN HIG"Ã¿Ò»ĞĞ²»ÄÜ³¬¹ı%s¸öÖĞÎÄ×Ö£¬ÇëÖØĞÂÊäÈëÉÏÒ»´ÎÊäÈëµÄÄÚÈİ£º\n"NOR, chinese_number(room_desc_l/2)));
+			tell_object(who, sprintf(HBCYN HIG"æ¯ä¸€è¡Œä¸èƒ½è¶…é%så€‹ä¸­æ–‡å­—ï¼Œè«‹é‡æ–°è¼¸å…¥ä¸Šä¸€æ¬¡è¼¸å…¥çš„å…§å®¹ï¼š\n"NOR, chinese_number(room_desc_l/2)));
 			input_to( (: get_room_long :), who, env, dir, sdesc, ldesc );
 			return;
 		}
 
 		if( sizeof(explode(ldesc, "\n")) > (room_desc_h -1) )
 		{
-			tell_object(who, sprintf(HBCYN HIG"¡¤ÃèÊöÄÚÈİ²»ÄÜ³¬¹ı%sĞĞ\n·¿Îİ´´½¨Ê§°Ü¡£\n"NOR, chinese_number(room_desc_h)));
+			tell_object(who, sprintf(HBCYN HIG"ï¹’æè¿°å…§å®¹ä¸èƒ½è¶…é%sè¡Œ\næˆ¿å±‹å‰µå»ºå¤±æ•—ã€‚\n"NOR, chinese_number(room_desc_h)));
 			return;
 		}
 	}
@@ -195,8 +195,8 @@ protected void get_room_outdoor(string str, object who, object env, string dir, 
 	build_up(who, env, dir, sdesc, ldesc, ot);
 }
 
-// ÓûÁ¬½ÓµÄ·¿¼ä±ØĞëÒÑ´æÔÚ£¬²¢ÇÒ¿ÉÒÔÕıÈ·ÔØÈëÄÚ´æ
-// µ±Ç°·¿¼äÃ»ÓĞ³ö¿ÚµÄÇé¿ö²»¿¼ÂÇ£¬ÕâÔÚ°ïÅÉÏµÍ³ÖĞ²»»á³öÏÖ
+// æ¬²é€£æ¥çš„æˆ¿é–“å¿…é ˆå·²å­˜åœ¨ï¼Œä¸¦ä¸”å¯ä»¥æ­£ç¢ºè¼‰å…¥å…§å­˜
+// ç•¶å‰æˆ¿é–“æ²’æœ‰å‡ºå£çš„æƒ…æ³ä¸è€ƒæ…®ï¼Œé€™åœ¨å¹«æ´¾ç³»çµ±ä¸­ä¸æœƒå‡ºç¾
 protected int add_exit(object room, string link_to, string dir, string room_dir)
 {
 	string fname, fcn, f_sect, e_sect, m_sect, content, estr;
@@ -288,18 +288,18 @@ protected void build_up(object who, object env, string dir, string sdesc, string
 	|| (environment(who) != env))
 		return;
 
-	// È·¶¨ĞÂ·¿¼äÎÄ¼şÃû
+	// ç¢ºå®šæ–°æˆ¿é–“æ–‡ä»¶å
 	fname = base_name(env);
 
 	if(!bname = who->query_banghui_id())
 	{
-		tell_object(who, "ÄãµÄ°ïÅÉ¼ÇÂ¼´íÂÒ¡£\nĞŞ¸ÄÊ§°Ü¡£\n");
+		tell_object(who, "ä½ çš„å¹«æ´¾è¨˜éŒ„éŒ¯äº‚ã€‚\nä¿®æ”¹å¤±æ•—ã€‚\n");
 		return;
 	}
 
 	if(undefinedp(r_dir[dir]))
 	{
-		tell_object(who, "·¿¼ä³ö¿ÚÑ¡Ôñ´íÎó¡£\n´´½¨·¿ÎİÊ§°Ü¡£\n");
+		tell_object(who, "æˆ¿é–“å‡ºå£é¸æ“‡éŒ¯èª¤ã€‚\nå‰µå»ºæˆ¿å±‹å¤±æ•—ã€‚\n");
 		return;
 	}
 
@@ -314,12 +314,12 @@ protected void build_up(object who, object env, string dir, string sdesc, string
 
 	if(!in_same_dir(fname, nname))
 	{
-		tell_object(who, "·¿¼äÄ¿Â¼¶ÔÓ¦´íÎó¡£\nĞŞ¸ÄÊ§°Ü¡£\n");
+		tell_object(who, "æˆ¿é–“ç›®éŒ„å°æ‡‰éŒ¯èª¤ã€‚\nä¿®æ”¹å¤±æ•—ã€‚\n");
 		return;
 	}
 
 	fname = replace_string(fname, room_dir, "__DIR__\"");
-	// ½¨ĞÂ·¿
+	// å»ºæ–°æˆ¿
 
 	roomtext = sprintf("// Room: %s\n\ninherit ROOM;\nvoid create()\n{\n",nname);
 	roomtext += sprintf("\tset(\"short\", \"%s\");\n\tset(\"long\", @LONG\n%sLONG\n);\n", sdesc, ldesc);
@@ -330,16 +330,16 @@ protected void build_up(object who, object env, string dir, string sdesc, string
 
 	if(!write_file(nname, roomtext, 1))
 	{
-		tell_object(who, "±£´æ·¿Îİ·¢Éú´íÎó¡£\n´´½¨·¿ÎİÊ§°Ü¡£\n");
+		tell_object(who, "ä¿å­˜æˆ¿å±‹ç™¼ç”ŸéŒ¯èª¤ã€‚\nå‰µå»ºæˆ¿å±‹å¤±æ•—ã€‚\n");
 		return;
 	}
 
-	// ¿ª³ö¿Ú
+	// é–‹å‡ºå£
 	if(!add_exit(env, nname[0..<3], dir, room_dir))
 	{
-		tell_object(who, "ÎŞ·¨¿ª±Ù³ö¿Ú¡£\n´´½¨·¿ÎİÊ§°Ü¡£\n");
+		tell_object(who, "ç„¡æ³•é–‹è¾Ÿå‡ºå£ã€‚\nå‰µå»ºæˆ¿å±‹å¤±æ•—ã€‚\n");
 		return;
 	}
 
-	tell_object(who, sprintf("%s½¨Ôì³É¹¦¡£\n",sdesc));
+	tell_object(who, sprintf("%så»ºé€ æˆåŠŸã€‚\n",sdesc));
 }

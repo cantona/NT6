@@ -1,4 +1,4 @@
-// zizhuxiao.c ×ÏÖñóï
+// zizhuxiao.c ç´«ç«¹ç°«
 
 #include <ansi.h>
 #include <weapon.h>
@@ -6,16 +6,16 @@ inherit SWORD;
 
 void create()
 {
-        set_name(MAG "×ÏÖñóï" NOR, ({"zizhu xiao", "xiao"}) );
+        set_name(MAG "ç´«ç«¹ç°«" NOR, ({"zizhu xiao", "xiao"}) );
         set_weight(1000);
         if ( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "´ËóïÓÃ×ÏÖñÖÆ³É£¬³¤Ô¼Èı³ßÓĞÓà¡£¡£\n");
+                set("long", "æ­¤ç°«ç”¨ç´«ç«¹åˆ¶æˆï¼Œé•·ç´„ä¸‰å°ºæœ‰ä½™ã€‚ã€‚\n");
                 set("value", 600);
-                set("unit", "Ö§");
-                 set("wield_msg","$NÂş²»¾­ĞÄµÄ°Ñ$nÎÕÔÚÊÖÉÏ¡£\n");
-                set("unwield_msg", "$N·ÅÏÂÊÖÀïµÄ$n¡£\n");
+                set("unit", "æ”¯");
+                 set("wield_msg","$Næ¼«ä¸ç¶“å¿ƒçš„æŠŠ$næ¡åœ¨æ‰‹ä¸Šã€‚\n");
+                set("unwield_msg", "$Næ”¾ä¸‹æ‰‹è£¡çš„$nã€‚\n");
         }
         init_sword(3);
         setup();

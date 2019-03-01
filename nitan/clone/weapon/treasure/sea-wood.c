@@ -1,4 +1,4 @@
-// sea-wood.c ÄÏº£ÉñÄ¾
+// sea-wood.c å—æµ·ç¥æœ¨
 // Last Modified by winder on Sep. 7 2001
 
 #include <ansi.h>;
@@ -8,17 +8,17 @@ inherit F_UNIQUE;
 
 void create()
 {
-        set_name(HIC"ÄÏº£ÉñÄ¾"NOR, ({ "sea wood", "wood", "sword" }));
+        set_name(HIC"å—æµ·ç¥æœ¨"NOR, ({ "sea wood", "wood", "sword" }));
         set_weight(2000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ù");
-                set("long", "ÕâÊÇÒ»¸ù±éÌå·¢³öÇà¹âµÄ½£ĞÎÄ¾¹÷¡£\n");
+                set("unit", "æ ¹");
+                set("long", "é€™æ˜¯ä¸€æ ¹éé«”ç™¼å‡ºé’å…‰çš„åŠå½¢æœ¨æ£ã€‚\n");
                 set("value", 2000);
                 set("material", "wood");
-                set("wield_msg", "$N´Ó±³ºó½«ÄÏº£ÉñÄ¾°Î³öÀ´£¬ÄÃÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$nÖØĞÂ²å»Ø±³ºó¡£\n");
+                set("wield_msg", "$Nå¾èƒŒå¾Œå°‡å—æµ·ç¥æœ¨æ‹”å‡ºä¾†ï¼Œæ‹¿åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°‡æ‰‹ä¸­çš„$né‡æ–°æ’å›èƒŒå¾Œã€‚\n");
         }
         init_sword(100);
         setup();

@@ -7,13 +7,13 @@
 inherit HAMMER;
 
 string* names = ({
-        "¶ìÂÑÊ¯","Ê¯¿é","´óÊ¯Í·",
+        "éµåµçŸ³","çŸ³å¡Š","å¤§çŸ³é ­",
 });
 
 string* longs = ({
-        "ÕâÊÇÒ»¿é²»Ì«´óµÄ¶ìÂÑÊ¯¡£\n",
-        "ÕâÊÇÒ»¿éÓĞ×ÅÀâ½ÇµÄÊ¯¿é¡£\n",
-        "ÕâÊÇÒ»¿é³ÁµéµéµÄ´óÊ¯Í·¡£\n",
+        "é€™æ˜¯ä¸€å¡Šä¸å¤ªå¤§çš„éµåµçŸ³ã€‚\n",
+        "é€™æ˜¯ä¸€å¡Šæœ‰è‘—æ£±è§’çš„çŸ³å¡Šã€‚\n",
+        "é€™æ˜¯ä¸€å¡Šæ²‰ç”¸ç”¸çš„å¤§çŸ³é ­ã€‚\n",
 });
 
 void create()
@@ -26,8 +26,8 @@ void create()
        set_default_object(__FILE__);
     else {
        set("long", longs[i]);
-        set("unit","¿é");
-        set("wield_msg","$N°áÆğÒ»¿éÊ¯Í·×¼±¸Õ½¶·¡£\n");
+        set("unit","å¡Š");
+        set("wield_msg","$Næ¬èµ·ä¸€å¡ŠçŸ³é ­æº–å‚™æˆ°é¬¥ã€‚\n");
         set("material", "stone");
     }
     init_hammer(i+1);
@@ -44,13 +44,13 @@ int do_break(string arg)
         object obj, me;
 
         if (!arg || (arg != "stone" && arg != "shikuai"))
-                return notify_fail("Ê²Ã´£¿\n");
+                return notify_fail("ä»€éº¼ï¼Ÿ\n");
 
         me = this_player();
         if( query("neili", me)<500 )
-                return notify_fail("Äã¹¦Á¦²»×ã£¬²»ÄÜ»÷Ê¯³É·Û£¡\n");
-        message_vision(HIW"$NÆø³Áµ¤Ìï£¬ÔË×ãÕæÆø£¬ÏòÊ¯Í·»÷È¥£¡\n"NOR,me); 
-        write(HIW"Ö»ÌıµÃ¡°àØ¡±µÄÒ»Éù£¬Ê¯Í·±»»÷³ÉËé¿é£¡\n"NOR);
+                return notify_fail("ä½ åŠŸåŠ›ä¸è¶³ï¼Œä¸èƒ½æ“ŠçŸ³æˆç²‰ï¼\n");
+        message_vision(HIW"$Næ°£æ²‰ä¸¹ç”°ï¼Œé‹è¶³çœŸæ°£ï¼Œå‘çŸ³é ­æ“Šå»ï¼\n"NOR,me); 
+        write(HIW"åªè½å¾—â€œâ–¡â€çš„ä¸€è²ï¼ŒçŸ³é ­è¢«æ“Šæˆç¢å¡Šï¼\n"NOR);
         obj = new("/d/taohua/obj/shizi2");
         obj->move(me);
         addn("neili", -(100+random(100)), me);

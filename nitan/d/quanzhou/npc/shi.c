@@ -5,11 +5,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("Ê©ÀÅ", ({ "shi lang", "lang", "shi" }));
-        set("title", "´óÇå¾¸º£ºî");
+        set_name("æ–½ç…", ({ "shi lang", "lang", "shi" }));
+        set("title", "å¤§æ¸…é–æµ·ä¾¯");
         set("str", 30);
         set("dex", 30);
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("age", 35);
         set("attitude", "friendly");
         set_skill("unarmed", 50);

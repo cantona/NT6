@@ -7,13 +7,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name("ÌúÏä", ({"tie xiang", "box"}));
+        set_name("éµç®±", ({"tie xiang", "box"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
                 set("long",
-                              "ÕâÊÇÖ»ÌúÏä£¬ºÃÏñÄÜ´ò¿ª(open)\n");
-                set("unit", "Ö»");
+                              "é€™æ˜¯åªéµç®±ï¼Œå¥½åƒèƒ½æ‰“é–‹(open)\n");
+                set("unit", "åª");
                 set("open_count", 1);
                 set("weight", 1000);
         }
@@ -31,7 +31,7 @@ int do_open()
         if (query("open_count") > 0)
         {
                 message_vision(
-                        HIY "$NÉìÊÖ´ò¿ªÌúÏä£¬Ïä×ÓÀïÓĞÒ»±¾Êé£¬ÉÏĞ´¡¶ÌìÄ§¾÷¡·Èı×Ö¡£\n" NOR, 
+                        HIY "$Nä¼¸æ‰‹æ‰“é–‹éµç®±ï¼Œç®±å­è£¡æœ‰ä¸€æœ¬æ›¸ï¼Œä¸Šå¯«ã€Šå¤©é­”è¨£ã€‹ä¸‰å­—ã€‚\n" NOR, 
                         this_player());
                 addn("open_count", -1);
                 ob = new("/clone/book/tianmo-jue");
@@ -39,5 +39,5 @@ int do_open()
                 return 1;
         }
         else 
-                return notify_fail("ÌúºĞÒÑ¾­±»±ğÈË´ò¿ª¹ıÁË¡£\n");
+                return notify_fail("éµç›’å·²ç¶“è¢«åˆ¥äººæ‰“é–‹éäº†ã€‚\n");
 }

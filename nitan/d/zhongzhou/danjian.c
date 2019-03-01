@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ѻƬ��");
+        set("short", "鴉片館");
         set("long", @LONG
-����ѻƬ���ڵ�һ��С���䣬�м��������ڴ��齫������
-ȥ���ѻƬ�ݾ������ǿ��ġ�
+這是鴉片館內的一個小單間，有幾個人正在打麻將。看上
+去這個鴉片館就是他們開的。
 LONG);
         set("exits", ([
                  "west" : __DIR__"yanguan",                 

@@ -15,9 +15,9 @@ int main(object me, string arg)
                 return 0;  
 
         if( !me->is_admin() )
-                return notify_fail("Äã²»ÄÜÊ¹ÓÃ¸ÃÃüÁî¡£\n"); 
+                return notify_fail("ä½ ä¸èƒ½ä½¿ç”¨è©²å‘½ä»¤ã€‚\n"); 
 
-        if (!arg) return notify_fail("Ö¸Áî¸ñÊ½£ºeval <LPC Script>\n");
+        if (!arg) return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼ševal <LPC Script>\n");
 
         arg = replace_string(arg, "\n", "");
         if( arg[<1] != ';' ) arg += ";";
@@ -62,10 +62,10 @@ FILE + arg + @FILE
         stime = to_float(einfo["stime"] - sinfo["stime"])/1000000;
         etime = to_float(time_exp + EXPT_TRIM)/1000000;
 
-        msg  = sprintf("\nĞ§ÂÊÆÀ¹À: %d\n", cost + COST_TRIM);
-        msg += sprintf("ÏµÍ³Ê±¼ä: %.6f s\n", stime);
-        msg += sprintf("Ê¹ÓÃÊ±¼ä: %.6f s\n", utime);
-        msg += sprintf("ÔËËãÊ±¼ä: %.6f s\n", etime);
+        msg  = sprintf("\næ•ˆç‡è©•ä¼°: %d\n", cost + COST_TRIM);
+        msg += sprintf("ç³»çµ±æ™‚é–“: %.6f s\n", stime);
+        msg += sprintf("ä½¿ç”¨æ™‚é–“: %.6f s\n", utime);
+        msg += sprintf("é‹ç®—æ™‚é–“: %.6f s\n", etime);
         
         tell_object(me, msg);
 }
@@ -75,7 +75,7 @@ FILE;
         path = "/u/"+id;
         file = sprintf("%s/%s", path, EVAL_FILE);
         if( file_size(path) != -2 )
-                return tell_object(me, "Ã»ÓĞ "+path+" Õâ¸öÄ¿Â¼¡£\nÆÀ¹ÀÇ°ÇëÏÈ½¨Á¢´ËÄ¿Â¼¡£\n");
+                return tell_object(me, "æ²’æœ‰ "+path+" é€™å€‹ç›®éŒ„ã€‚\nè©•ä¼°å‰è«‹å…ˆå»ºç«‹æ­¤ç›®éŒ„ã€‚\n");
 
         if( eval_ob = find_object(file) ) 
                 destruct(eval_ob);
@@ -84,14 +84,14 @@ FILE;
 
         if( !(err = catch(load_object(file))) )
         {
-                tell_object(me, "±àÒë³É¹¦¡£\n");
+                tell_object(me, "ç·¨è­¯æˆåŠŸã€‚\n");
                 rm(file);
 
                 if( eval_ob = find_object(file) ) 
                         destruct(eval_ob);
         } 
         else
-                tell_object(me, "±àÒëÊ§°Ü¡£\n");
+                tell_object(me, "ç·¨è­¯å¤±æ•—ã€‚\n");
 
         return 1;         
 }
@@ -124,17 +124,17 @@ int parse_script(string arg)
                 }
         }
         if( d_quote%2 )
-                printf("Prasing error: Ë«ÒıºÅ²»Õı³£½áÊø¡£\n");
+                printf("Prasing error: é›™å¼•è™Ÿä¸æ­£å¸¸çµæŸã€‚\n");
         if( s_quote%2 )
-                printf("Prasing error: µ¥ÒıºÅ²»Õı³£½áÊø¡£\n");
+                printf("Prasing error: å–®å¼•è™Ÿä¸æ­£å¸¸çµæŸã€‚\n");
         if( s_symbol )
-                printf("Prasing error: () À¨ºÅ±ØĞë³É¶Ô [%sÁË %d ¸öÓÒÀ¨ºÅ]¡£\n",
-                    (s_symbol > 0 ? "ÉÙ":"¶à"), to_int(abs(s_symbol)));
+                printf("Prasing error: () æ‹¬è™Ÿå¿…é ˆæˆå° [%säº† %d å€‹å³æ‹¬è™Ÿ]ã€‚\n",
+                    (s_symbol > 0 ? "å°‘":"å¤š"), to_int(abs(s_symbol)));
         if( m_symbol )
-                printf("Prasing error: [] À¨ºÅ±ØĞë³É¶Ô [%sÁË %d ¸öÓÒÀ¨ºÅ]¡£\n",
+                printf("Prasing error: [] æ‹¬è™Ÿå¿…é ˆæˆå° [%säº† %d å€‹å³æ‹¬è™Ÿ]ã€‚\n",
 
-                    (m_symbol > 0 ? "ÉÙ":"¶à"), to_int(abs(m_symbol)));
+                    (m_symbol > 0 ? "å°‘":"å¤š"), to_int(abs(m_symbol)));
         if( b_symbol )
-                printf("Prasing error: {} À¨ºÅ±ØĞë³É¶Ô [%sÁË %d ¸öÓÒÀ¨ºÅ]¡£\n",
-                    (b_symbol > 0 ? "ÉÙ":"¶à"), to_int(abs(b_symbol)));
+                printf("Prasing error: {} æ‹¬è™Ÿå¿…é ˆæˆå° [%säº† %d å€‹å³æ‹¬è™Ÿ]ã€‚\n",
+                    (b_symbol > 0 ? "å°‘":"å¤š"), to_int(abs(b_symbol)));
 }

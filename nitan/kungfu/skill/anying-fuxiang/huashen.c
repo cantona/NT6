@@ -10,24 +10,24 @@ int perform(object me, object target)
         int i;
         
         if (! me->is_fighting())
-                return notify_fail("ÄãÖ»ÄÜÔÚÕ½¶·ÖÖÊ¹ÓÃÖîÌì»¯Éí²½¡£\n");
+                return notify_fail("ä½ åªèƒ½åœ¨æˆ°é¬¥ç¨®ä½¿ç”¨è«¸å¤©åŒ–èº«æ­¥ã€‚\n");
 
         if ((int)me->query_skill("linji-zhuang", 1) < 100)
-                return notify_fail("ÄãµÄÁÙ¼ÃÊ®¶þ×¯»¹²»¹»»ðºò£¬Ê¹²»³öÖîÌì»¯Éí²½¡£\n");  
+                return notify_fail("ä½ çš„è‡¨æ¿ŸåäºŒèŽŠé‚„ä¸å¤ ç«å€™ï¼Œä½¿ä¸å‡ºè«¸å¤©åŒ–èº«æ­¥ã€‚\n");  
 
         if ((int)me->query_skill("anying-fuxiang", 1) < 100)
-                return notify_fail("ÄãµÄ°µÓ°¸¡Ïã»¹²»¹»»ðºò£¬Ê¹²»³öÖîÌì»¯Éí²½¡£\n");  
+                return notify_fail("ä½ çš„æš—å½±æµ®é¦™é‚„ä¸å¤ ç«å€™ï¼Œä½¿ä¸å‡ºè«¸å¤©åŒ–èº«æ­¥ã€‚\n");  
 
         if( query("jing", me)<500 )
-                return notify_fail("ÄãÏÖÔÚ¾«²»¹»¡£\n");
+                return notify_fail("ä½ ç¾åœ¨ç²¾ä¸å¤ ã€‚\n");
 
         if( query("neili", me)<500 )
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ ç¾åœ¨å…§åŠ›ä¸å¤ ã€‚\n");
 
         if( query_temp("emei/parry", me) )
-                return notify_fail("ÄãÕýÔÚÊ¹ÓÃÖîÌì»¯Éí²½¡£\n");
+                return notify_fail("ä½ æ­£åœ¨ä½¿ç”¨è«¸å¤©åŒ–èº«æ­¥ã€‚\n");
 
-        msg = HBYEL "$NÊ¹³ö°µÓ°¸¡ÏãµÄÖîÌì»¯Éí²½£¬ÉíÊÖµÇÊ±¸ü¼ÓÁéÇÉ£¡\n\n" NOR; 
+        msg = HBYEL "$Nä½¿å‡ºæš—å½±æµ®é¦™çš„è«¸å¤©åŒ–èº«æ­¥ï¼Œèº«æ‰‹ç™»æ™‚æ›´åŠ éˆå·§ï¼\n\n" NOR; 
 
         addn("neili", -200+random(100), me);
         me->recieve_damage("jing", 50);
@@ -58,7 +58,7 @@ void remove_effect(object me, int count)
                 addn_temp("apply/dex", -i, me);
                 addn_temp("apply/con", -i, me);
                 delete_temp("emei/parry", me);
-                tell_object(me, HIW "ÄãÍ£Ö¹ÁËÖîÌì»¯Éí²½£¬ÉîÉîµÄÎüÁË¿ÚÆø¡£\n" NOR);
+                tell_object(me, HIW "ä½ åœæ­¢äº†è«¸å¤©åŒ–èº«æ­¥ï¼Œæ·±æ·±çš„å¸äº†å£æ°£ã€‚\n" NOR);
                 return;
        }
        call_out("remove_effect", 1 ,me ,count -1);

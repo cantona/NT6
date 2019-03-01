@@ -3,12 +3,12 @@ inherit ROOM;
 
 void create()
 {
-        set("short", HIG "����" NOR );
+        set("short", HIG "大廳" NOR );
         set("long", @LONG
-���������˽�����ԭ���������������������ػ���ľ�õĴ���
-���ڣ�ֻ��һ�Ű����Ϲ����������ƣ��м�һ��д�š���������֮λ
-�������һ��д�š�������ƽ����֣֮λ����������һ���ľ (baim
-u)��������������ȫ��Ѫ�֡�������һ������(duilian)��
+你推門走了進來，原來這裡就是天下聞名的天地會青木堂的大廳
+所在，只見一張板桌上供著兩個靈牌，中間一個寫著『大明天子之位
+』，側邊一個寫著『大明延平郡王鄭之位』。此外有一塊白木 (baim
+u)，上面密密麻麻全是血字。廳側有一副對聯(duilian)。
 LONG );
         set("valid_startroom", 1);
         set("exits", ([
@@ -16,13 +16,13 @@ LONG );
         ]));
         set("item_desc", ([
 "baimu" : 
-HIR "\n  ֻ����ľ��д����������У��ظ����������˵�ͬ��������\n"
-"����԰���£�ԼΪ�ֵܣ��պ�����������Ϊһ�ҡ�����Ϊ����\n"
-"�ݵ�Ϊĸ, ��Ϊ�֣���Ϊ��ã��������ģ�һѩǰ�ܣ�˳��\n"
-"�е����ָ��������ѪΪ�ˣ�����������\n" NOR,
+HIR "\n  只見白木上寫道：天地萬有，回復大明。吾人當同生共死，\n"
+"仿桃園故事，約為兄弟，姓洪名金蘭，合為一家。拜天為父，\n"
+"拜地為母, 日為兄，月為姊妹，焚香設誓，一雪前恥，順天\n"
+"行道，恢復明朝。歃血為盟，神明降鑒。\n" NOR,
 "duilian":
-HIC "\n����߸ԣ�һ��Ϫɽǧ����\n" NOR +
-HIG "�ų��󺣣����Ӻ�ˮ������\n" NOR,
+HIC "\n地振高岡，一派溪山千古秀\n" NOR +
+HIG "門朝大海，三河合水萬年流\n" NOR,
         ]));
         set("objects", ([
                 CLASS_D("yunlong") + "/chen" : 1,

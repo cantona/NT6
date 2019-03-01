@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "±øÆ÷¿â");
+        set("short", "å…µå™¨åº«");
         set("long",@LONG
-ÕâÀïÊÇºì»¨»áµÄ±øÆ÷¿â£¬Ò»À¦À¦µÄ±øÆ÷¶ÑµÃº£ÁË¡£Çå±øÂÅ´Î½ø·¸»Ø
-½®£¬½»Õ½ÆµÈÔ£¬ÕâÀïºÜ¶à±øÆ÷¶¼ÊÇÍòÀïÌöÌöÍâµÄÖÐÔ­Âé·³Çå±ø´øÀ´µÄ¡£
+é€™è£¡æ˜¯ç´…èŠ±æœƒçš„å…µå™¨åº«ï¼Œä¸€æ†æ†çš„å…µå™¨å †å¾—æµ·äº†ã€‚æ¸…å…µå±¢æ¬¡é€²çŠ¯å›ž
+ç–†ï¼Œäº¤æˆ°é »ä»ï¼Œé€™è£¡å¾ˆå¤šå…µå™¨éƒ½æ˜¯è¬è£¡è¿¢è¿¢å¤–çš„ä¸­åŽŸéº»ç…©æ¸…å…µå¸¶ä¾†çš„ã€‚
 LONG );
         set("objects", ([
                 WEAPON_DIR"zhujian"     : random(2)+1,

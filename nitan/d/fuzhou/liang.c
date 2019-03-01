@@ -10,10 +10,10 @@ inherit ROOM;
 void create()
 {
         object item;
-        set("short","ÃÜÊÒ·¿Áº");
+        set("short","å¯†å®¤æˆ¿æ¨‘");
         set("long", @LONG
-ÄãÏÖÔÚÔÚÃÜÊÒµÄ·¿ÁºÉÏËÄÏÂ¹ÛÇÆ£¬ÖÜÎ§¶¼ÊÇĞ©ÀÃÄ¾Í·ÆÆ×©Íß¡£Í»È»
-Äãî©¼ûê÷½Çê¸ê¹´¦ÓĞÒ»¼şôÂôÄ¡£
+ä½ ç¾åœ¨åœ¨å¯†å®¤çš„æˆ¿æ¨‘ä¸Šå››ä¸‹è§€ç§ï¼Œå‘¨åœéƒ½æ˜¯äº›çˆ›æœ¨é ­ç ´ç£šç“¦ã€‚çªç„¶
+ä½ çŸè¦‹çŠ„è§’æ—®æ—¯è™•æœ‰ä¸€ä»¶è¢ˆè£Ÿã€‚
 LONG );
         set("exits", ([
                 "down" : __DIR__"mishi",
@@ -58,14 +58,14 @@ void init()
                 addn("combat_exp", exp, me);
                 addn("potential", pot, me);
                 addn("score", sc, me);
-                tell_object(me, HIY "\nÄã¸ÕÔ¾ÉÏ·¿Áº£¬¶ÙÊ±·¢ÏÖÒ»¼şôÂôÄ°Ú·ÅÆäÖĞ¡£\n\n"
-                                NOR + HIW "Äã³É¹¦µÄÕÒµ½ÁË¿û»¨±¦µä£¡\n" NOR + HIC
-                                "Í¨¹ıÕâ´ÎµÄÀúÁ·£¬Äã»ñµÃÁË" + chinese_number(exp) +
-                                "µã¾­Ñé¡¢" + chinese_number(pot) + "µãÇ±\nÄÜÒÔ¼°"
-                                + chinese_number(sc) + "µã½­ºşÔÄÀú¡£\n\n" NOR);
+                tell_object(me, HIY "\nä½ å‰›èºä¸Šæˆ¿æ¨‘ï¼Œé “æ™‚ç™¼ç¾ä¸€ä»¶è¢ˆè£Ÿæ“ºæ”¾å…¶ä¸­ã€‚\n\n"
+                                NOR + HIW "ä½ æˆåŠŸçš„æ‰¾åˆ°äº†è‘µèŠ±å¯¶å…¸ï¼\n" NOR + HIC
+                                "é€šéé€™æ¬¡çš„æ­·ç·´ï¼Œä½ ç²å¾—äº†" + chinese_number(exp) +
+                                "é»ç¶“é©—ã€" + chinese_number(pot) + "é»æ½›\nèƒ½ä»¥åŠ"
+                                + chinese_number(sc) + "é»æ±Ÿæ¹–é–±æ­·ã€‚\n\n" NOR);
                 set("skybook/xiaoao/baodian", 1, me);
         } else
-                tell_object(me, HIY "\nÄã¸ÕÔ¾ÉÏ·¿Áº£¬¶ÙÊ±·¢ÏÖÒ»¼şôÂôÄ°Ú·ÅÆäÖĞ¡£\n\n" NOR);
+                tell_object(me, HIY "\nä½ å‰›èºä¸Šæˆ¿æ¨‘ï¼Œé “æ™‚ç™¼ç¾ä¸€ä»¶è¢ˆè£Ÿæ“ºæ”¾å…¶ä¸­ã€‚\n\n" NOR);
 }
 
 void reset()

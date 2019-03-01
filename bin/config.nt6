@@ -7,7 +7,7 @@
 ###############################################################################
 
 # name of this mud
-name : Ğ¦°Á½­ºş
+name : ç¬‘å‚²æ±Ÿæ¹–
 
 # port number to accept users on
 port number : 6666
@@ -122,10 +122,10 @@ hash table size : 16387
 object table size : 8003
 
 # default no-matching-action message
-default fail message : Ê²÷á£¿
+default fail message : ä»€éº¼ï¼Ÿ
 
 # default message when error() occurs (optional)
-default error message : [1;33mÄã·¢ÏÖÊÂÇé²»´ó¶ÔÁË£¬µ«ÊÇÓÖËµ²»ÉÏÀ´¡£[2;37;0m
+default error message : [1;33mä½ ç™¼ç¾äº‹æƒ…ä¸å¤§å°äº†ï¼Œä½†æ˜¯åˆèªªä¸ä¸Šä¾†ã€‚[2;37;0m
 
 ###############################################################################
 #          The following aren't currently used or implemented (yet)           #

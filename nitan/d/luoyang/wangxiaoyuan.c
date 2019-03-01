@@ -4,11 +4,11 @@ inherit  ROOM;
 
 void  create  ()
 {
-        set("short",  "СͥԺ");
+        set("short",  "小庭院");
         set("long",  @LONG
-�������š��ľ����˳ɶ��㣬��԰��ɫ��Ⱥ�����Ľ��ţ�����һ��
-ʮ�����ɵ�С԰��԰��СС�ĳ����У�ǳǳ��ˮ�����һЩϸϸ����
-�㣬Ҳ�����ų�����ʢ�ŵ�ĵ����
+穿過掛著“幽徑天姿成獨秀，古園國色冠群芳”的角門，便是一個
+十分秀巧的小園。園中小小的池塘中，淺淺的水裡，養著一些細細的遊
+魚，也養護著池塘邊盛放的牡丹。
 LONG);
         set("exits",  ([  /*  sizeof()  ==  2  */
                 "east"   :  __DIR__"wangdayuan",

@@ -1,4 +1,4 @@
-// shield.c 护体神功
+// shield.c 璀烽珨绁炲姛
 //
 
 #include <ansi.h>
@@ -12,23 +12,23 @@ int exert(object me, object target)
         int skill;
 
         if (target != me)
-                return notify_fail("你只能用辟邪剑法来提升自己的防御力。\n");
+                return notify_fail("浣犲彧鑳界敤杈熼偑鍔嶆硶渚嗘彁鍗囪嚜宸辩殑闃插尽鍔涖�俓n");
 
         if( query("neili", me)<100 )
-                return notify_fail("你的内力不够。\n");
+                return notify_fail("浣犵殑鍏у姏涓嶅銆俓n");
 
         if ((int)me->query_skill("pixie-jian", 1) < 50)
-                return notify_fail("你的辟邪剑法修为不够。\n");
+                return notify_fail("浣犵殑杈熼偑鍔嶆硶淇偤涓嶅銆俓n");
 
         if( query_temp("shield", me) )
-                return notify_fail("你已经在运功中了。\n");
+                return notify_fail("浣犲凡缍撳湪閬嬪姛涓簡銆俓n");
 
         skill = me->query_skill("force");
         addn("neili", -100, me);
         me->receive_damage("qi", 0);
 
-        message_combatd(HIW "$N" HIW "身子忽前忽后，忽左忽右，一"
-                        "层层气浪跌宕翻涌，护住全身！\n" NOR, me);
+        message_combatd(HIW "$N" HIW "韬瓙蹇藉墠蹇藉緦锛屽拷宸﹀拷鍙筹紝涓�"
+                        "灞ゅ堡姘ｆ氮璺屽畷缈绘恭锛岃浣忓叏韬紒\n" NOR, me);
 
         addn_temp("apply/armor", skill*3/2, me);
         set_temp("shield", 1, me);
@@ -44,5 +44,5 @@ void remove_effect(object me, int amount)
 {
         addn_temp("apply/armor", -amount, me);
         delete_temp("shield", me);
-        tell_object(me, "你的辟邪剑法运行完毕，将内力收回丹田。\n");
+        tell_object(me, "浣犵殑杈熼偑鍔嶆硶閬嬭瀹岀暍锛屽皣鍏у姏鏀跺洖涓圭敯銆俓n");
 }

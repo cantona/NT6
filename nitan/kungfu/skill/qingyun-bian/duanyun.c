@@ -13,19 +13,19 @@ int perform(object me, object target)
         if( !target ) target = offensive_target(me);
 
         if( userp(me) && !query("can_perform/qingyun-bian/duanyun", me) )
-                return notify_fail("ÄãËùÊ¹ÓÃµÄÍâ¹¦ÖÐÃ»ÓÐÕâÑùµÄ¹¦ÄÜ¡£\n");
+                return notify_fail("ä½ æ‰€ä½¿ç”¨çš„å¤–åŠŸä¸­æ²’æœ‰é€™æ¨£çš„åŠŸèƒ½ã€‚\n");
         
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("[¶ÏÔÆ¾ö]Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("[æ–·é›²æ±º]åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
 
         if( me->query_skill("force") < 100 )
-        return notify_fail("ÄãµÄ»ù±¾ÄÚ¹¦»ðºòÎ´µ½£¬ÎÞ·¨Ê©Õ¹¶ÏÔÆ¾ö£¡\n");
+        return notify_fail("ä½ çš„åŸºæœ¬å…§åŠŸç«å€™æœªåˆ°ï¼Œç„¡æ³•æ–½å±•æ–·é›²æ±ºï¼\n");
 
         if( me->query_skill("whip") < 80 )
-        return notify_fail("¶ÏÔÆ¾öÐèÒª¾«Õ¿µÄÇàÔÆ±Þ·¨·½ÄÜÓÐÐ§Ê©Õ¹£¡\n");
+        return notify_fail("æ–·é›²æ±ºéœ€è¦ç²¾æ¹›çš„é’é›²éž­æ³•æ–¹èƒ½æœ‰æ•ˆæ–½å±•ï¼\n");
 
         // for a 800K player, frce/2 = 150, shen/3K = 300, power = 300
         // for players > 1.2M, power will hit max
@@ -39,11 +39,11 @@ int perform(object me, object target)
         if(power>480)power=480;
 
         if( query("neili", me) <= 200 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»Ê¹ÓÃ¶ÏÔÆ¾ö£¡\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ä½¿ç”¨æ–·é›²æ±ºï¼\n");
 
-        message_vision(HIW "$NÔË×ãÄÚÁ¦£¬ÃÍµØÒ»Ñï"NOR + "$n" + 
-                       HIW "¾íÆðÎÞ±ß·çÔÆÕÚÔÂÑÚÈÕ£¬Ò»¹É"NOR + 
-                       HIM "î¸·ç" NOR + HIW "ËæÖøÂþÌì±ÞÓ°ÆËÌì¸ÇµØµÄÏòµÐÈËÏ®À´¡£\n" 
+        message_vision(HIW "$Né‹è¶³å…§åŠ›ï¼ŒçŒ›åœ°ä¸€æš"NOR + "$n" + 
+                       HIW "å·èµ·ç„¡é‚Šé¢¨é›²é®æœˆæŽ©æ—¥ï¼Œä¸€è‚¡"NOR + 
+                       HIM "ç½¡é¢¨" NOR + HIW "éš¨è‘—æ¼«å¤©éž­å½±æ’²å¤©è“‹åœ°çš„å‘æ•µäººè¥²ä¾†ã€‚\n" 
                          NOR,me,query_temp("weapon", me));
 
         addn_temp("apply/attack", power/10, me);
@@ -57,7 +57,7 @@ int perform(object me, object target)
         if( random(10)>5)COMBAT_D->do_attack(me,target,query_temp("weapon", me));
         if( random(10)>8)COMBAT_D->do_attack(me,target,query_temp("weapon", me));
         
-        me->start_perform(1 + random(2),"[¶ÏÔÆ¾ö]");
+        me->start_perform(1 + random(2),"[æ–·é›²æ±º]");
         
         addn_temp("apply/attack", -power/10, me);
         addn_temp("apply/damage", -power/10, me);

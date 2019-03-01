@@ -5,13 +5,13 @@ void do_stun();
 void do_attack();
 void create()
 {
-        string *names = ({"×ØĞÜÍõ","ºÚĞÜÍõ","°×ĞÜÍõ"});
+        string *names = ({"æ£•ç†Šç‹","é»‘ç†Šç‹","ç™½ç†Šç‹"});
         set_name( names[random(sizeof(names))], ({ "bear king","bear"}));
         set("vendetta_mark","bear");
-        set("race", "Ò°ÊŞ");
-        set("gender", "ĞÛĞÔ");
+        set("race", "é‡ç¸");
+        set("gender", "é›„æ€§");
         set("age", 20);
-        set("long", "ÕâÊÇÒ»Ö»Ğ×ÃÍµÄĞÜÍõ¡£\n");
+        set("long", "é€™æ˜¯ä¸€åªå…‡çŒ›çš„ç†Šç‹ã€‚\n");
 
         set("str", 200);
         set("dex", 80);
@@ -28,7 +28,7 @@ void create()
                 (: do_attack() :),
         }) );
 
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "Ç°½Å", "áá½Å", "Î²°Í" }) );
+        set("limbs", ({ "é ­éƒ¨", "èº«é«”", "å‰è…³", "å¾Œè…³", "å°¾å·´" }) );
         set("verbs", ({ "bite", "claw" }) );
         set("combat_exp", 500000);
 
@@ -49,7 +49,7 @@ void do_stun()
         if (!enemies || sizeof(enemies)==0)
                 return;
         enemy = enemies[random(sizeof(enemies))];
-        msg = HIC"\n$NÍ»È»Õ¾Á¢ÆğÀ´£¬ÂÕÆğĞÜÕÆ³¯$nÅÄÀ´£¡\n"NOR;
+        msg = HIC"\n$Nçªç„¶ç«™ç«‹èµ·ä¾†ï¼Œæ„èµ·ç†ŠæŒæœ$næ‹ä¾†ï¼\n"NOR;
         message_combatd(msg, this_object(), enemy);
         COMBAT_D->do_attack(this_object(),enemy, 0, 0);
         start_busy(2);
@@ -65,7 +65,7 @@ void do_attack()
         if (!enemies || sizeof(enemies)==0)
                 return;
         enemy = enemies[random(sizeof(enemies))];
-        msg = HIB"\n$NÍ»È»¿ñĞÔ´ó·¢£¬ÂÕÆğĞÜÕÆ³¯$nÅÄÀ´£¡\n"NOR;
+        msg = HIB"\n$Nçªç„¶ç‹‚æ€§å¤§ç™¼ï¼Œæ„èµ·ç†ŠæŒæœ$næ‹ä¾†ï¼\n"NOR;
         message_combatd(msg,this_object(),enemy);
         i = 2+random(3);
         while (i--)

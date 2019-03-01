@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��·");
+        set("short", "土路");
         set("long", @LONG
-����һ�������۵���·��ȴ������ѩɽ������ԭ�ıؾ�֮·����
-�ߵ��Ĵ�����ϡ�ɼ�����������ͨ��ѩɽ�¡�
+這是一條不起眼的土路，卻是連接雪山寺與中原的必經之路。西
+邊點點的炊煙依稀可見。往北可以通往雪山寺。
 LONG );
         set("outdoors", "xuedao");
         set("exits", ([

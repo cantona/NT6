@@ -6,7 +6,7 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIR "óô»ð" NOR, ({ "needfire", "gou huo", "huo" }) );
+        set_name(HIR "ç¯ç«" NOR, ({ "needfire", "gou huo", "huo" }) );
         set_weight(100);
         if (clonep())
         {
@@ -14,10 +14,10 @@ void create()
                 call_out("light", 30 + random(20));
         } else
         {
-                set("unit", "¶Ñ");
-                set("long", "ÕâÊÇÒ»¶ÑÕýÔÚÈ¼ÉÕµÄóô»ð£¬¿´ÉÏÈ¥¿ÉÒÔÔÚÉÏÃæ¿¾¿¾¶«Î÷(kao)¡£\n");
-                set("no_get", "ÄãÒ²²»ÅÂÉÕÁËÊÖ£¿\n");
-                set("no_fire", "ÕâÕýÔÚÈ¼ÉÕ°¡£¬ÄãµÄÄÔ×ÓÊÇ²»ÊÇÓÐÎÊÌâ£¿\n");
+                set("unit", "å †");
+                set("long", "é€™æ˜¯ä¸€å †æ­£åœ¨ç‡ƒç‡’çš„ç¯ç«ï¼Œçœ‹ä¸ŠåŽ»å¯ä»¥åœ¨ä¸Šé¢çƒ¤çƒ¤æ±è¥¿(kao)ã€‚\n");
+                set("no_get", "ä½ ä¹Ÿä¸æ€•ç‡’äº†æ‰‹ï¼Ÿ\n");
+                set("no_fire", "é€™æ­£åœ¨ç‡ƒç‡’å•Šï¼Œä½ çš„è…¦å­æ˜¯ä¸æ˜¯æœ‰å•é¡Œï¼Ÿ\n");
         }
         setup();
 }
@@ -37,16 +37,16 @@ void light()
 {
         call_out("destroy", 10 + random(10));
         if (environment())
-                message("vision", HIR "óô»ð½¥½¥µÄ÷öµ­ÁËÏÂÈ¥£¬ËÆ"
-                        "ºõ¿ìÒªÏ¨ÃðÁË¡£\n" NOR, environment());
-        set("long", "ÕâÊÇÒ»¶ÑÕýÔÚÈ¼ÉÕµÄóô»ð£¬»ð¹â°µµ­£¬¿´ÉÏÈ¥¿ìÒªÏ¨ÃðÁË¡£\n");
+                message("vision", HIR "ç¯ç«æ¼¸æ¼¸çš„é»¯æ·¡äº†ä¸‹åŽ»ï¼Œä¼¼"
+                        "ä¹Žå¿«è¦ç†„æ»…äº†ã€‚\n" NOR, environment());
+        set("long", "é€™æ˜¯ä¸€å †æ­£åœ¨ç‡ƒç‡’çš„ç¯ç«ï¼Œç«å…‰æš—æ·¡ï¼Œçœ‹ä¸ŠåŽ»å¿«è¦ç†„æ»…äº†ã€‚\n");
 }
 
 void destroy()
 {
         if (environment())
-                message("visoin", RED "»ðÑæ×îºóÕõÔú×ÅÌø¶¯ÁË¼¸ÏÂ£¬"
-                        "½¥½¥µÄÏ¨ÃðÁË£¬Ö»ÁôÏÂÁËÒ»µã»Ò½ý¡£\n" NOR,
+                message("visoin", RED "ç«ç‡„æœ€å¾ŒæŽ™ç´®è‘—è·³å‹•äº†å¹¾ä¸‹ï¼Œ"
+                        "æ¼¸æ¼¸çš„ç†„æ»…äº†ï¼Œåªç•™ä¸‹äº†ä¸€é»žç°ç‡¼ã€‚\n" NOR,
                         environment());
         destruct(this_object());
 }
@@ -57,11 +57,11 @@ int do_kao(string arg)
         object me;
 
         if (! arg)
-                return notify_fail("¿¾µãÊ²Ã´¶«Î÷ÄØ£¿\n");
+                return notify_fail("çƒ¤é»žä»€éº¼æ±è¥¿å‘¢ï¼Ÿ\n");
 
         me = this_player();
         if (! objectp(ob = present(arg, me)))
-                return notify_fail("ÄãÉíÉÏºÃÏñÃ»ÓÐÕâÑù¶«Î÷¡£\n");
+                return notify_fail("ä½ èº«ä¸Šå¥½åƒæ²’æœ‰é€™æ¨£æ±è¥¿ã€‚\n");
 
         return ob->broil(me, this_object());
 }

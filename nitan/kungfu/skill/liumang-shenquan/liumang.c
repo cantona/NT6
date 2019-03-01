@@ -1,4 +1,4 @@
-// liumang.c Á÷Ã¥ÉñÈ­
+// liumang.c æµæ°“ç¥æ‹³
 // By Alf, Last Update 2001.11
 
 #include <ansi.h>
@@ -12,15 +12,15 @@ int perform(object me, object target)
         if(!target) target = offensive_target(me);
 
         if(!target || !target->is_character() || !me->is_fighting(target))
-                return notify_fail("ÄãÖ»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃÕâÒ»¾øÕĞ¡£\n");
+                return notify_fail("ä½ åªèƒ½åœ¨æˆ°é¬¥ä¸­ä½¿ç”¨é€™ä¸€çµ•æ‹›ã€‚\n");
 
     if((int)me->query_skill("liumang-shenquan", 1) < 80)
-                return notify_fail("ÄãµÄÁ÷Ã¥ÉñÈ­»¹²»¹»´¿Êì£¬ÎŞ·¨Ê¹³öÕâÒ»¾øÕĞ¡£\n");
+                return notify_fail("ä½ çš„æµæ°“ç¥æ‹³é‚„ä¸å¤ ç´”ç†Ÿï¼Œç„¡æ³•ä½¿å‡ºé€™ä¸€çµ•æ‹›ã€‚\n");
 
         if( query("neili", me)<200 )
-                return notify_fail("ÄãµÄÄÚÁ¦ĞŞÎª»¹²»¹»¸ß¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¿®ç‚ºé‚„ä¸å¤ é«˜ã€‚\n");
 
-        msg = HIG"$NÉîÉîÎüÁË¿ÚÆø£¬ÆøÔËµ¤Ìï£¬¶¸È»¼äÕÅ×ìÒ»Éù¿ñºÈ£º\n"NOR;
+        msg = HIG"$Næ·±æ·±å¸äº†å£æ°£ï¼Œæ°£é‹ä¸¹ç”°ï¼Œé™¡ç„¶é–“å¼µå˜´ä¸€è²ç‹‚å–ï¼š\n"NOR;
         msg += HIC"
 I@@L      @@@@       I@@@ ezz,_zzzzzz_     @@@L     I@@I       zzzL  @@@' Izzz  
 `@@@_I--zz@@~~-----  I@@@ I@@I     I@@I    `~~~ ezz_a@@bzz_,   `~~~,I@@@ I~~~'  
@@ -32,7 +32,7 @@ I@@L I@@@_____@@@L   @@@  I@@M~~@@@@~~     I@@P I@@ I@@II@@I ~~~~@@@@~~~-@@@~~~~
 I@@@  I@@ I@@ @@@ .  @@@  I@@I  I@@I  _    I@@I '~~'I@@I~~'  ~~~~~~~~@@@@~~~~~~~
 I@@I  a@@ I@@ @@@_%  ~-@bz`@@@zz-I@@zd~    I@@I     I@@I        I-z_z@@@P       \n"NOR;
 
-        msg += HIY"\n¸ú×ÅÈ­ËæÉùÖÁ£¬ÊÆÈç¼±·çÖèÓêÒ»°ã£¬åÉÖ±»÷Íù$nµÄĞØ¸¹Òªº¦£¡£¡£¡\n"NOR;  
+        msg += HIY"\nè·Ÿè‘—æ‹³éš¨è²è‡³ï¼Œå‹¢å¦‚æ€¥é¢¨é©Ÿé›¨ä¸€èˆ¬ï¼Œé€•ç›´æ“Šå¾€$nçš„èƒ¸è…¹è¦å®³ï¼ï¼ï¼\n"NOR;  
 
         if( random(query("combat_exp", me))>query("combat_exp", target)/2 )
         { 
@@ -45,12 +45,12 @@ I@@I  a@@ I@@ @@@_%  ~-@bz`@@@zz-I@@zd~    I@@I     I@@I        I-z_z@@@P       
                 target->receive_damage("qi", damage);
                 target->receive_wound("qi", damage/2);
                 addn("neili", -200, me);
-                msg += HIR"$n¶ú¼ÊÈçÔâÀ×éê£¬ãÂÈ»²»ÖªÉÁ±Ü£¬±»$NÕâÕĞÖØÖØ»÷Êµ£¬²»ÓÉµÃ³¤Éù²Òºô£¡\n"NOR;
+                msg += HIR"$nè€³éš›å¦‚é­é›·æ®›ï¼Œæ‡µç„¶ä¸çŸ¥é–ƒé¿ï¼Œè¢«$Né€™æ‹›é‡é‡æ“Šå¯¦ï¼Œä¸ç”±å¾—é•·è²æ…˜å‘¼ï¼\n"NOR;
         }
 
         else
         {
-                msg += YEL"$n¼±Ã¦×÷ÊÆĞ±ÆË£¬Ò»¸ö¾ÍµØÊ®°Ë¹ö£¬ÀÇ±·Íò×´µÄ¶ã¿ªÁË$NÕâÕĞ¡£\n"NOR;
+                msg += YEL"$næ€¥å¿™ä½œå‹¢æ–œæ’²ï¼Œä¸€å€‹å°±åœ°åå…«æ»¾ï¼Œç‹¼ç‹½è¬ç‹€çš„èº²é–‹äº†$Né€™æ‹›ã€‚\n"NOR;
                 me->start_busy(1);
         }
 

@@ -1,15 +1,15 @@
-// by É½Ã¨ADX @ snow 99-12-4
+// by å±±è²“ADX @ snow 99-12-4
 
 #include <ansi.h>
 inherit ROOM;
 
 void create ()
 {
-        set("short",  "´å¿Ú");
+        set("short",  "æ‘å£");
         set("long",
-"ÕâÀï¾ÍÊÇ"HBRED WHT"¡ºÄàÌ¶¡»"NOR+
-"µÄÍæ¼Ò´å¡£ÕâÀï·Ç³£µÄ°²¾²£¬¿´À´Íæ¼ÒÃÇ¶¼ÔÚÃ¦\n"
-"×ÅÍÚÄà°Í£¬ÕæÊÇÀÛ°¡£¡\n"
+"é€™è£¡å°±æ˜¯"HBRED WHT"ã€Žæ³¥æ½­ã€"NOR+
+"çš„çŽ©å®¶æ‘ã€‚é€™è£¡éžå¸¸çš„å®‰éœï¼Œçœ‹ä¾†çŽ©å®¶å€‘éƒ½åœ¨å¿™\n"
+"è‘—æŒ–æ³¥å·´ï¼ŒçœŸæ˜¯ç´¯å•Šï¼\n"
 );
         set("exits",  ([
                 "north"  :  __DIR__"guandao8",

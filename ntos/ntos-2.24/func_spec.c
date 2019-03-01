@@ -281,7 +281,7 @@ void message(mixed, mixed, string | string * | object | object *,
  * Object properties
  */
     int interactive(object default:F__THIS_OBJECT);
-    // mxp zmp ºÍ gmcp µ¼ÖÂ efun G2B and B2G ³ö´í£¬ËùÒÔÔÝÊ±¹Ø±Õ by Lonely@NT
+    // mxp zmp å’Œ gmcp å°Žè‡´ efun G2B and B2G å‡ºéŒ¯ï¼Œæ‰€ä»¥æš«æ™‚é—œé–‰ by Lonely@NT
     //int has_mxp(object default:F__THIS_OBJECT);
     //int has_zmp(object default:F__THIS_OBJECT);
     //void send_zmp(string, string *);

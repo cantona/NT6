@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ɽ·");
+        set("short", "山路");
         set("long", @LONG
-�����ں�ɽɽ·�ϣ�����ɽ����䣬�������ϪȪ���٣�����
-���ƣ��������ش�졣ɽ·��������ͨ�򷽹��¡������������塣
+你走在衡山山路上，四望山峰錯落，林壑幽深，溪泉飛瀑，雲霧
+繚繞，不覺心胸大快。山路向西可以通向方廣寺。東面是天柱峰。
 LONG );
         set("exits", ([ 
                 "eastup"    : __DIR__"tianzhu",

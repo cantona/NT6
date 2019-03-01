@@ -12,18 +12,18 @@ int main(object me, string arg)
 
         seteuid(geteuid(me));
         if (!arg||arg=="")
-                  return notify_fail("Ö¸Áî¸ñÊ½ : topten ÅÅÐÐÀàÐÍ
-Ä¿Ç°µÄÅÅÐÐÀàÐÍÓÐ£º\n
-        ¡¾"+LOCAL_MUD_NAME()+"¡¿Ê®´ó¸ßÊÖÅÅÐÐ°ñ£¨gaoshou£©
-        ¡¾"+LOCAL_MUD_NAME()+"¡¿Ê®´óÐÂÈñÅÅÐÐ°ñ£¨xinrui£©
-        ¡¾"+LOCAL_MUD_NAME()+"¡¿Ê®´ó¾­ÑéÅÅÐÐ°ñ£¨exp£©
-        ¡¾"+LOCAL_MUD_NAME()+"¡¿Ê®´ó¸»ÎÌÅÅÐÐ°ñ£¨richman£©
-        ¡¾"+LOCAL_MUD_NAME()+"¡¿Ê®´óÄÚÁ¦ÅÅÐÐ°ñ£¨neili£©
-        ¡¾"+LOCAL_MUD_NAME()+"¡¿Ê®´ó¾«Á¦ÅÅÐÐ°ñ£¨jingli£©
-        ¡¾"+LOCAL_MUD_NAME()+"¡¿Ê®´óÎÄºÀÅÅÐÐ°ñ£¨dushu£©\n");
+                  return notify_fail("æŒ‡ä»¤æ ¼å¼ : topten æŽ’è¡Œé¡žåž‹
+ç›®å‰çš„æŽ’è¡Œé¡žåž‹æœ‰ï¼š\n
+        ã€"+LOCAL_MUD_NAME()+"ã€‘åå¤§é«˜æ‰‹æŽ’è¡Œæ¦œï¼ˆgaoshouï¼‰
+        ã€"+LOCAL_MUD_NAME()+"ã€‘åå¤§æ–°éŠ³æŽ’è¡Œæ¦œï¼ˆxinruiï¼‰
+        ã€"+LOCAL_MUD_NAME()+"ã€‘åå¤§ç¶“é©—æŽ’è¡Œæ¦œï¼ˆexpï¼‰
+        ã€"+LOCAL_MUD_NAME()+"ã€‘åå¤§å¯Œç¿æŽ’è¡Œæ¦œï¼ˆrichmanï¼‰
+        ã€"+LOCAL_MUD_NAME()+"ã€‘åå¤§å…§åŠ›æŽ’è¡Œæ¦œï¼ˆneiliï¼‰
+        ã€"+LOCAL_MUD_NAME()+"ã€‘åå¤§ç²¾åŠ›æŽ’è¡Œæ¦œï¼ˆjingliï¼‰
+        ã€"+LOCAL_MUD_NAME()+"ã€‘åå¤§æ–‡è±ªæŽ’è¡Œæ¦œï¼ˆdushuï¼‰\n");
 
         if( time()-query_temp("last_topten", me)<1 )
-              return notify_fail("ÏµÍ³Æø´­ÐêµØÌ¾µÀ£ºÂýÂýÀ´ ....\n");  
+              return notify_fail("ç³»çµ±æ°£å–˜å™“åœ°å˜†é“ï¼šæ…¢æ…¢ä¾† ....\n");  
 
         if( !wizardp(me) )
         set_temp("last_topten", time(), me);
@@ -33,12 +33,12 @@ int main(object me, string arg)
               type="xinrui";
         else if(arg=="exp")
         {
-              // if (!wizardp(me)) return notify_fail("ÄãÎÞÈ¨²é¿´Õâ¸öÏîÄ¿¡£\n");
+              // if (!wizardp(me)) return notify_fail("ä½ ç„¡æ¬ŠæŸ¥çœ‹é€™å€‹é …ç›®ã€‚\n");
               type="exp";
         }
         else if(arg=="richman"||arg=="rich")
         {
-              // if (!wizardp(me)) return notify_fail("ÄãÎÞÈ¨²é¿´Õâ¸öÏîÄ¿¡£\n");
+              // if (!wizardp(me)) return notify_fail("ä½ ç„¡æ¬ŠæŸ¥çœ‹é€™å€‹é …ç›®ã€‚\n");
               type="rich";
         }
         else if(arg=="neili")
@@ -52,12 +52,12 @@ int main(object me, string arg)
         if (type == "gaoshou")
         {
                 paiming = COMPETE_D->query_tops();
-                str = HIC "      *          ÐÛ       °Ô       Ìì       ÏÂ          *\n"NOR;
+                str = HIC "      *          é›„       éœ¸       å¤©       ä¸‹          *\n"NOR;
                 str += HIC "-------------------------------------------------------------\n";
                 str += "\n";
                 for (i = 0;i < sizeof(paiming);i++)
                 {
-                        str += HIY + "   ¡¾ÌìÏÂµÚ" + chinese_number(i+1) + "¡¿ " + NOR + 
+                        str += HIY + "   ã€å¤©ä¸‹ç¬¬" + chinese_number(i+1) + "ã€‘ " + NOR + 
                                paiming[i]["title"] + "\n";
                         str += "\n";
                 }
@@ -65,12 +65,12 @@ int main(object me, string arg)
         } else if (type == "xinrui")
         {
                 paiming = XINRUI_D->query_tops();
-                str = HIC "      *          Ðñ       ÈÕ       ¶«       Éý          *\n"NOR;
+                str = HIC "      *          æ—­       æ—¥       æ±       å‡          *\n"NOR;
                 str += HIC "-------------------------------------------------------------\n";
                 str += "\n";
                 for (i = 0;i < sizeof(paiming);i++)
                 {
-                        str += HIY + "   ¡¾µÚ" + chinese_number(i+1) + "ÐÂÈñ¡¿ " + NOR + 
+                        str += HIY + "   ã€ç¬¬" + chinese_number(i+1) + "æ–°éŠ³ã€‘ " + NOR + 
                                paiming[i]["title"] + "\n";
                         str += "\n";
                 }
@@ -83,15 +83,15 @@ int main(object me, string arg)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : topten ÅÅÐÐÀàÐÍ
-Ä¿Ç°µÄÅÅÐÐÀàÐÍÓÐ:
-gaoshou  Ê®´ó¸ßÊÖ
-xinrui   Ê®´óÐÂÈñ
-exp      Ê®´ó¾­Ñé[Î×Ê¦²é¿´]
-richman  Ê®´ó¸»ÎÌ[Î×Ê¦²é¿´]
-neili    Ê®´óÄÚÁ¦
-jingli   Ê®´ó¾«Á¦
-dushu    Ê®´óÎÄ²É
+æŒ‡ä»¤æ ¼å¼ : topten æŽ’è¡Œé¡žåž‹
+ç›®å‰çš„æŽ’è¡Œé¡žåž‹æœ‰:
+gaoshou  åå¤§é«˜æ‰‹
+xinrui   åå¤§æ–°éŠ³
+exp      åå¤§ç¶“é©—[å·«å¸«æŸ¥çœ‹]
+richman  åå¤§å¯Œç¿[å·«å¸«æŸ¥çœ‹]
+neili    åå¤§å…§åŠ›
+jingli   åå¤§ç²¾åŠ›
+dushu    åå¤§æ–‡æŽ¡
 HELP
     );
     return 1;

@@ -1,14 +1,14 @@
 // /d/gaoli/yudao1
-// Room in ����
+// Room in 高麗
 // rich 99/03/28
 inherit ROOM;
 void create()        
 {
-        set("short", "�ʳ�����");
+        set("short", "皇城御道");
         set("long", @LONG
-����Ľֵ��������ɾ�������������·�汻��ˮ��ù����羵����
-���ڲ��Ǹߴ��ΰ�Ļʳǳ�ǽ������ͨ��ʳǵ����ţ���������Χ�ƻ�
-���Ļʳ�������
+這裡的街道寬敞而幹凈，漢白玉砌的路面被雨水沖得光明如鏡，街
+道內側是高大宏偉的皇城城牆。北面通向皇城的正門，東西兩面圍繞皇
+宮的皇城御道。
 LONG
         );
 set("outdoors", "gaoli");

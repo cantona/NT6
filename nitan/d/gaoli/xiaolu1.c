@@ -1,11 +1,11 @@
-// Room in ����
+// Room in 高麗
 inherit ROOM;
 void create()        
 {
-        set("short", "С·");
+        set("short", "小路");
         set("long", @LONG
-������һ��С·֮�ϡ�������һ����ʯ��·���ϱ߾��Ǻ����ˣ���
-�����������������ӿ����������ʱ�м�ֻ��Ÿ�����ͷ�Ϸɹ���
+你走在一條小路之上。東邊是一條青石大路，南邊就是海邊了，從
+這裡可以聽到波濤洶湧的聲音，不時有幾只海鷗從你的頭上飛過。
 LONG
         );
 set("outdoors", "gaoli");

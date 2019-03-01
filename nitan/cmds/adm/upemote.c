@@ -13,64 +13,64 @@ int main(object me)
         str=sort_array(EMOTE_D->query_all_emote(), 1);
         for (i=0;i<sizeof(str);i++){
         emote = EMOTE_D->query_emote(str[i]);
-//²»Ö¸¶¨¶ÔÏóÊ¹ÓÃÕâ¸ö emote Ê±£¬Äã×Ô¼º¿´µ½µÄÑ¶Ï¢£º
+//ä¸æŒ‡å®šå°è±¡ä½¿ç”¨é€™å€‹ emote æ™‚ï¼Œä½ è‡ªå·±çœ‹åˆ°çš„è¨Šæ¯ï¼š
         if( stringp(arg = emote["myself"]) ) {
                 arg = replace_string(arg, "$N", "$P");
                 arg = replace_string(arg, "$p", "$P");
-                arg = replace_string(arg, "Äã", "$P");
-                arg = replace_string(arg, "ÔÚÏÂ", "$S");
-                arg = replace_string(arg, "´óÒ¯ÎÒ", "$s");
+                arg = replace_string(arg, "ä½ ", "$P");
+                arg = replace_string(arg, "åœ¨ä¸‹", "$S");
+                arg = replace_string(arg, "å¤§çˆºæˆ‘", "$s");
                 emote["myself"]=arg;
         }
-//²»Ö¸¶¨¶ÔÏóÊ¹ÓÃÕâ¸ö emote Ê±£¬ÆäËûÈË¿´µ½µÄÑ¶Ï¢£º
+//ä¸æŒ‡å®šå°è±¡ä½¿ç”¨é€™å€‹ emote æ™‚ï¼Œå…¶ä»–äººçœ‹åˆ°çš„è¨Šæ¯ï¼š
         if( stringp(arg = emote["others"]) ) {
                 arg = replace_string(arg, "$P", "$N");
                 arg = replace_string(arg, "$p", "$N");
-                arg = replace_string(arg, "ÔÚÏÂ", "$S");
-                arg = replace_string(arg, "´óÒ¯ÎÒ", "$s");
+                arg = replace_string(arg, "åœ¨ä¸‹", "$S");
+                arg = replace_string(arg, "å¤§çˆºæˆ‘", "$s");
                 emote["others"]=arg;
         }
-//¶Ô×Ô¼ºÊ¹ÓÃÕâ¸ö emote Ê±£¬×Ô¼º¿´µ½µÄÑ¶Ï¢£º
+//å°è‡ªå·±ä½¿ç”¨é€™å€‹ emote æ™‚ï¼Œè‡ªå·±çœ‹åˆ°çš„è¨Šæ¯ï¼š
         if( stringp(arg = emote["myself_self"]) ) {
                 arg = replace_string(arg, "$N", "$P");
                 arg = replace_string(arg, "$p", "$P");
-                arg = replace_string(arg, "Äã", "$P");
-                arg = replace_string(arg, "ÔÚÏÂ", "$S");
-                arg = replace_string(arg, "´óÒ¯ÎÒ", "$s");
+                arg = replace_string(arg, "ä½ ", "$P");
+                arg = replace_string(arg, "åœ¨ä¸‹", "$S");
+                arg = replace_string(arg, "å¤§çˆºæˆ‘", "$s");
                 emote["myself_self"]=arg;
         }
-//¶Ô×Ô¼ºÊ¹ÓÃÕâ¸ö emote Ê±£¬ÆäËûÈË¿´µ½µÄÑ¶Ï¢£º
+//å°è‡ªå·±ä½¿ç”¨é€™å€‹ emote æ™‚ï¼Œå…¶ä»–äººçœ‹åˆ°çš„è¨Šæ¯ï¼š
         if( stringp(arg = emote["others_self"]) ) {
                 arg = replace_string(arg, "$P", "$N");
-                arg = replace_string(arg, "ÔÚÏÂ", "$S");
-                arg = replace_string(arg, "´óÒ¯ÎÒ", "$s");
+                arg = replace_string(arg, "åœ¨ä¸‹", "$S");
+                arg = replace_string(arg, "å¤§çˆºæˆ‘", "$s");
                 emote["others_self"]=arg;
         }
-//¶Ô±ğÈËÊ¹ÓÃÕâ¸ö emote Ê±£¬×Ô¼º¿´µ½µÄÑ¶Ï¢£º
+//å°åˆ¥äººä½¿ç”¨é€™å€‹ emote æ™‚ï¼Œè‡ªå·±çœ‹åˆ°çš„è¨Šæ¯ï¼š
         if( stringp(arg = emote["myself_target"]) ) {
                 arg = replace_string(arg, "$N", "$P");
                 arg = replace_string(arg, "$p", "$P");
-                arg = replace_string(arg, "Äã", "$P");
-                arg = replace_string(arg, "Ëû", "$n");
-                arg = replace_string(arg, "ÔÚÏÂ", "$S");
-                arg = replace_string(arg, "´óÒ¯ÎÒ", "$s");
+                arg = replace_string(arg, "ä½ ", "$P");
+                arg = replace_string(arg, "ä»–", "$n");
+                arg = replace_string(arg, "åœ¨ä¸‹", "$S");
+                arg = replace_string(arg, "å¤§çˆºæˆ‘", "$s");
                 emote["myself_target"]=arg;
         }
-//¶Ô±ğÈËÊ¹ÓÃÕâ¸ö emote Ê±£¬Ê¹ÓÃ¶ÔÏó¿´µ½µÄÑ¶Ï¢£º
+//å°åˆ¥äººä½¿ç”¨é€™å€‹ emote æ™‚ï¼Œä½¿ç”¨å°è±¡çœ‹åˆ°çš„è¨Šæ¯ï¼š
         if( stringp(arg = emote["target"]) ) {
                 arg = replace_string(arg, "$n", "$p");
                 arg = replace_string(arg, "$P", "$N");
-                arg = replace_string(arg, "Äã", "$p");
-                arg = replace_string(arg, "ÔÚÏÂ", "$S");
-                arg = replace_string(arg, "´óÒ¯ÎÒ", "$s");
+                arg = replace_string(arg, "ä½ ", "$p");
+                arg = replace_string(arg, "åœ¨ä¸‹", "$S");
+                arg = replace_string(arg, "å¤§çˆºæˆ‘", "$s");
                 emote["target"]=arg;
         }
-//¶Ô±ğÈËÊ¹ÓÃÕâ¸ö emote Ê±£¬³ıÄã×Ô¼ººÍÊ¹ÓÃ¶ÔÏóÍâ£¬ÆäËûÈË¿´µ½µÄÑ¶Ï¢£º
+//å°åˆ¥äººä½¿ç”¨é€™å€‹ emote æ™‚ï¼Œé™¤ä½ è‡ªå·±å’Œä½¿ç”¨å°è±¡å¤–ï¼Œå…¶ä»–äººçœ‹åˆ°çš„è¨Šæ¯ï¼š
         if( stringp(arg = emote["others_target"]) ) {
                 arg = replace_string(arg, "$P", "$N");
                 arg = replace_string(arg, "$p", "$n");
-                arg = replace_string(arg, "ÔÚÏÂ", "$S");
-                arg = replace_string(arg, "´óÒ¯ÎÒ", "$s");
+                arg = replace_string(arg, "åœ¨ä¸‹", "$S");
+                arg = replace_string(arg, "å¤§çˆºæˆ‘", "$s");
                 emote["others_target"]=arg;
         }
         EMOTE_D->set_emote(str[i], emote);
@@ -80,9 +80,9 @@ int main(object me)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : upemote
+æŒ‡ä»¤æ ¼å¼ : upemote
  
-Õâ¸öÖ¸Áî¿ÉÒÔ×Ô¶¯ĞŞÕı emote ÖĞµÄÒ»Ğ©´íÎó¡£
+é€™å€‹æŒ‡ä»¤å¯ä»¥è‡ªå‹•ä¿®æ­£ emote ä¸­çš„ä¸€äº›éŒ¯èª¤ã€‚
 HELP
     );
     return 1;

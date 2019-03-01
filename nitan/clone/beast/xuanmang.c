@@ -1,15 +1,15 @@
 #include <ansi.h>
 inherit SNAKE;
 
-#define NAME    HIW "Ğş±ù" HIR "³à" HIW "òş" NOR
+#define NAME    HIW "ç„å†°" HIR "èµ¤" HIW "èŸ’" NOR
 
 void create()
 {
         set_name(NAME, ({ "xuanbing chimang", "xuan", "bing", "xuanbing",
                           "chimang", "mang", "snake" }));
         set("long", HIW @LONG
-ÕâÊÇÒ»Ö»Ñ©É½¹ÖÉß£¬Ö»¼ûËüÍ¨ÌåÑ©°×£¬ÑÛÈçÁÒ
-Ñ×¡£¿´À´Õâ¸ö±ù¶´ÊÇËüµÄ³²Ñ¨¡£
+é€™æ˜¯ä¸€åªé›ªå±±æ€ªè›‡ï¼Œåªè¦‹å®ƒé€šé«”é›ªç™½ï¼Œçœ¼å¦‚çƒˆ
+ç‚ã€‚çœ‹ä¾†é€™å€‹å†°æ´æ˜¯å®ƒçš„å·¢ç©´ã€‚
 LONG NOR);
 
         set("age", 15);

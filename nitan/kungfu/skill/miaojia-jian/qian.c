@@ -3,7 +3,7 @@
 
 inherit F_SSERVER;
 
-string name() { return HIY "½£ÎèÇ§Çï" NOR; }
+string name() { return HIY "åŠèˆåƒç§‹" NOR; }
 
 int perform(object me, object target)
 {
@@ -16,32 +16,32 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(name() + "Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(name() + "åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me)) ||
             query("skill_type", weapon) != "sword" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if ((int)me->query_skill("miaojia-jian", 1) < 160)
-                return notify_fail("ÄãÃç¼Ò½£·¨²»¹»æµÊì£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ è‹—å®¶åŠæ³•ä¸å¤ å«»ç†Ÿï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if ((int)me->query_skill("force") < 220 )
-                return notify_fail("ÄãµÄÄÚ¹¦»ğºò²»¹»£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸç«å€™ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if( query("max_neili", me)<1800 )
-                return notify_fail("ÄãµÄÄÚÁ¦ĞŞÎª²»¹»£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¿®ç‚ºä¸å¤ ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if( query("neili", me)<300 )
-                return notify_fail("ÄãÏÖÔÚÕæÆø²»¹»£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çœŸæ°£ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (me->query_skill_mapped("sword") != "miaojia-jian")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢Ãç¼Ò½£·¨£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼è‹—å®¶åŠæ³•ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIY "$N" HIY "ÊÖÖĞ" + weapon->name() + HIY "Ò»ÉùÁúÒ÷£¬ÈıÊ®ÆßÊÆÃç"
-              "¼Ò½£Á¬»·Ê©³ö£¬½«$n" HIY "ÕÖÔÚ½£¹âÖ®ÖĞ¡£\n" NOR;
+        msg = HIY "$N" HIY "æ‰‹ä¸­" + weapon->name() + HIY "ä¸€è²é¾åŸï¼Œä¸‰åä¸ƒå‹¢è‹—"
+              "å®¶åŠé€£ç’°æ–½å‡ºï¼Œå°‡$n" HIY "ç½©åœ¨åŠå…‰ä¹‹ä¸­ã€‚\n" NOR;
 
         ap = attack_power(me, "sword");
         dp = defense_power(target, "parry");
@@ -49,16 +49,16 @@ int perform(object me, object target)
         attack_time = 5;
         if (ap / 2 + random(ap) > dp)
         {
-                msg += HIR "$p" HIR "Ö»¼ûµÃ½£¹âÍòµÀ£¬¶ÙÊ±±»$P" HIR
-                       "ÁèÀ÷µÄ½£ÕĞ¹¥µÃÓ¦½Ó²»Ï¾£¬Á¬Á¬ºóÍË£¡\n" NOR;
+                msg += HIR "$p" HIR "åªè¦‹å¾—åŠå…‰è¬é“ï¼Œé “æ™‚è¢«$P" HIR
+                       "å‡Œå²çš„åŠæ‹›æ”»å¾—æ‡‰æ¥ä¸æš‡ï¼Œé€£é€£å¾Œé€€ï¼\n" NOR;
                 count = ap / 10;
                 addn_temp("apply/attack", count, me);
                 addn_temp("apply/damage", count, me);
                 attack_time += random(ap / 200);
         } else
         {
-                msg += HIC "$n" HIC "¼û$N" HIC "½£ÊÆĞÚÓ¿£¬»ô»ô½£¹â"
-                       "±ÆÈË¶øÀ´£¬²»¸Ò´óÒâ£¬Ğ¡ĞÄÓ¦¸¶¡£\n" NOR;
+                msg += HIC "$n" HIC "è¦‹$N" HIC "åŠå‹¢æ´¶æ¹§ï¼ŒéœéœåŠå…‰"
+                       "é€¼äººè€Œä¾†ï¼Œä¸æ•¢å¤§æ„ï¼Œå°å¿ƒæ‡‰ä»˜ã€‚\n" NOR;
                 count = 0;
         }
 

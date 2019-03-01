@@ -1,5 +1,5 @@
 // This program is a part of NT MudLIB
-// murongfu.c Ä½Èİ¸´
+// murongfu.c æ…•å®¹å¾©
 
 #include <ansi.h>
 #include "murong.h"
@@ -14,14 +14,14 @@ string ask_dan1();
 
 void create()
 {
-        set_name("Ä½Èİ¸´", ({ "murong fu", "murong", "fu" }));
+        set_name("æ…•å®¹å¾©", ({ "murong fu", "murong", "fu" }));
         set("long", @LONG
-ËûÊÇ¹ÃËÕÄ½ÈİµÄ´«ÈË£¬ÊÇÄ½Èİ²©Ö®×Ó£¬ËùÎ½ÄÏÄ½Èİ¡¢±±ÇÇ·å¡£
-´ËÈËÕıÊÇºÍÇÇ·åÆëÃûµÄÄ½Èİ¼Ò¸ßÊÖ¡£ËûÈİÃ²¿¡ÑÅ£¬·ç¶È¹ıÈË£¬
-µÄÈ··ÇÑ°³£ÈË¿É±È¡£
+ä»–æ˜¯å§‘è˜‡æ…•å®¹çš„å‚³äººï¼Œæ˜¯æ…•å®¹åšä¹‹å­ï¼Œæ‰€è¬‚å—æ…•å®¹ã€åŒ—å–¬å³°ã€‚
+æ­¤äººæ­£æ˜¯å’Œå–¬å³°é½Šåçš„æ…•å®¹å®¶é«˜æ‰‹ã€‚ä»–å®¹è²Œä¿Šé›…ï¼Œé¢¨åº¦éäººï¼Œ
+çš„ç¢ºéå°‹å¸¸äººå¯æ¯”ã€‚
 LONG );
-        set("titile", "¹ÃËÕÄ½Èİ");
-        set("gender", "ÄĞĞÔ");
+        set("titile", "å§‘è˜‡æ…•å®¹");
+        set("gender", "ç”·æ€§");
         set("age", 25);
         set("shen_type",-1);
         set("attitude", "peaceful");
@@ -73,22 +73,22 @@ LONG );
 
         set("inquiry",
         ([
-                "name"       : "ÎÒ¾ÍÊÇÒÔ±ËÖ®µÀ£¬»¹Ê©±ËÉíµÄ¹ÃËÕÄ½Èİ¸´¡£\n",
-                "here"       : "ÕâÀïÊÇ´óÃû¶¦¶¦µÄÑà×ÓÎë£¬ÄÑµÀÄãÃ»ÓĞÌıËµ¹ı£¿\n",
-                "rumors"     : "¼Ò¸¸Í»È¾¶ñ¼²£¬ÎÒÁ¬ËûÀÏÈË¼Ò×îºóÒ»Ãæ¶¼Ã»¼ûµ½£¬´ËÊÂ¶¥ÓĞõèõÎ£¡\n",
-                "¹ÃÂè"       : "ÎÒµÄ¹ÃÂè×¡ÔÚÂüÙ¢ÂŞÉ½×¯£¬ÄÇÀïÓĞÎÅÃûÌìÏÂµÄÄïçÙÓñ¶´¡£\n",
-                "ÍõÓïæÌ"    : "ÓïæÌÊÇÎÒ±íÃÃ£¬ÎÒÒ»Ö±°ÑËıµ±Ğ¡ÃÃÃÃ¿´´ı¡£\n",
-                "ÄÏÄ½Èİ"    : "¡°ÄÏÄ½Èİ±±ÇÇ·å¡±£¬ÄÇÊÇ½­ºşÉÏµÄÅóÓÑÌ§°®ÁË£¡\n",
-                "Ä½Èİ¸´"    : "ÄÇÊÇ¼úÃû¡£Çë½Ì×ğ¼İÊÇ£¿\n",
-                "µË°Ù´¨"    : "ÄãÎÊµË´ó¸ç°¡£¿ËûÔÚËûÇà·ç×¯ÉÏÄØ¡£\n",
-                "¹«Ò±Ç¬"    : "¹«Ò±¶ş¸ç°ÑĞÅ¸ë´«ÊéÒ»±àÂë£¬¾ÍÃ»¼¸¸öÈË¶ÁµÃ¶®ÁË¡£\n",
-                "°ü²»Í¬"    : "°üÈı¸ç×î°®Ì§¸ÜÁË£¬Äã¼ûÁËËû»¹ÊÇ±Õ×ìµÄºÃ¡£\n",
-                "·ç²¨¶ñ"    : "·çËÄ¸ç×îÊÇºÀË¬ÁË£¬Ëû´Ó²»ÓëÈË¼Æ½ÏÊ²Ã´¡£\n",
-                // "»¹Ê©Ë®¸ó"   : (: ask_ge :),
-                // "ÍõÓïæÌ"     : (: ask_wang :),
-                // "¹éÔªµ¤"     : (: ask_dan :),
-                "ÓñÂ¶ÇåĞÂÉ¢" : (: ask_dan1 :),
-                // "ÎäÑ§ĞŞÑø"   : (: ask_learn :),
+                "name"       : "æˆ‘å°±æ˜¯ä»¥å½¼ä¹‹é“ï¼Œé‚„æ–½å½¼èº«çš„å§‘è˜‡æ…•å®¹å¾©ã€‚\n",
+                "here"       : "é€™è£¡æ˜¯å¤§åé¼é¼çš„ç‡•å­å¡¢ï¼Œé›£é“ä½ æ²’æœ‰è½èªªéï¼Ÿ\n",
+                "rumors"     : "å®¶çˆ¶çªæŸ“æƒ¡ç–¾ï¼Œæˆ‘é€£ä»–è€äººå®¶æœ€å¾Œä¸€é¢éƒ½æ²’è¦‹åˆ°ï¼Œæ­¤äº‹é ‚æœ‰è¹Šè¹ºï¼\n",
+                "å§‘åª½"       : "æˆ‘çš„å§‘åª½ä½åœ¨æ›¼ä½—ç¾…å±±èŠï¼Œé‚£è£¡æœ‰èåå¤©ä¸‹çš„å¨˜ç¹¯ç‰æ´ã€‚\n",
+                "ç‹èªå«£"    : "èªå«£æ˜¯æˆ‘è¡¨å¦¹ï¼Œæˆ‘ä¸€ç›´æŠŠå¥¹ç•¶å°å¦¹å¦¹çœ‹å¾…ã€‚\n",
+                "å—æ…•å®¹"    : "â€œå—æ…•å®¹åŒ—å–¬å³°â€ï¼Œé‚£æ˜¯æ±Ÿæ¹–ä¸Šçš„æœ‹å‹æŠ¬æ„›äº†ï¼\n",
+                "æ…•å®¹å¾©"    : "é‚£æ˜¯è³¤åã€‚è«‹æ•™å°Šé§•æ˜¯ï¼Ÿ\n",
+                "é„§ç™¾å·"    : "ä½ å•é„§å¤§å“¥å•Šï¼Ÿä»–åœ¨ä»–é’é¢¨èŠä¸Šå‘¢ã€‚\n",
+                "å…¬å†¶ä¹¾"    : "å…¬å†¶äºŒå“¥æŠŠä¿¡é´¿å‚³æ›¸ä¸€ç·¨ç¢¼ï¼Œå°±æ²’å¹¾å€‹äººè®€å¾—æ‡‚äº†ã€‚\n",
+                "åŒ…ä¸åŒ"    : "åŒ…ä¸‰å“¥æœ€æ„›æŠ¬æ§“äº†ï¼Œä½ è¦‹äº†ä»–é‚„æ˜¯é–‰å˜´çš„å¥½ã€‚\n",
+                "é¢¨æ³¢æƒ¡"    : "é¢¨å››å“¥æœ€æ˜¯è±ªçˆ½äº†ï¼Œä»–å¾ä¸èˆ‡äººè¨ˆè¼ƒä»€éº¼ã€‚\n",
+                // "é‚„æ–½æ°´é–£"   : (: ask_ge :),
+                // "ç‹èªå«£"     : (: ask_wang :),
+                // "æ­¸å…ƒä¸¹"     : (: ask_dan :),
+                "ç‰éœ²æ¸…æ–°æ•£" : (: ask_dan1 :),
+                // "æ­¦å­¸ä¿®é¤Š"   : (: ask_learn :),
         ]));
 
         set("chat_chance_combat", 120);
@@ -99,7 +99,7 @@ LONG );
                 (: perform_action, "cuff.zhai" :),
         }));
 
-        create_family("Ä½ÈİÊÀ¼Ò", 16, "´«ÈË");
+        create_family("æ…•å®¹ä¸–å®¶", 16, "å‚³äºº");
 
         set("coagents", ({
                 ([ "startroom" : "/d/yanziwu/canheju",
@@ -120,14 +120,14 @@ void attempt_apprentice(object ob)
 
         if( query("shen", ob)>0 )
         {
-                command("say ÎÒÄ½ÈİÊÀ¼ÒÏòÀ´²»ºÍÄãÃÇÕâĞ©ËùÎ½ÕıµÀÈËÊ¿½»Íù¡£");
-                command("say Äã»¹ÊÇÇë»Ø°É£¡");
+                command("say æˆ‘æ…•å®¹ä¸–å®¶å‘ä¾†ä¸å’Œä½ å€‘é€™äº›æ‰€è¬‚æ­£é“äººå£«äº¤å¾€ã€‚");
+                command("say ä½ é‚„æ˜¯è«‹å›å§ï¼");
                 return;
         }
 
 
         command("nod");
-        command("say ½ñÈÕÎÒ¾ÍÔİÇÒÊÕÏÂÄã£¬ÈÕºó¶¨Ğë¿Ì¿àÁ·Îä£¬¹â¸´´óÑà¡£");
+        command("say ä»Šæ—¥æˆ‘å°±æš«ä¸”æ”¶ä¸‹ä½ ï¼Œæ—¥å¾Œå®šé ˆåˆ»è‹¦ç·´æ­¦ï¼Œå…‰å¾©å¤§ç‡•ã€‚");
         command("recruit "+query("id", ob));
 }
 
@@ -135,36 +135,36 @@ int accept_ask(object me, string topic)
 {
         switch (topic)
         {
-        case "ÀúÁ·" :
-        case "ÀúÁ¶" :
-        case "¶ÍÁ¶" :
+        case "æ­·ç·´" :
+        case "æ­·ç…‰" :
+        case "é›ç…‰" :
                 return QUEST_D->accept_ask(this_object(), me, topic);
                 break;
 
-        case "ÕªĞÇÊ½" :
+        case "æ‘˜æ˜Ÿå¼" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/qixing-quan/zhai",
-                           "name"    : "ÕªĞÇÊ½",
+                           "name"    : "æ‘˜æ˜Ÿå¼",
                            "sk1"     : "qixing-quan",
                            "lv1"     : 40,
                            "gongxian": 140,
                            "shen"    : -4000, ]));
                 break;
 
-        case "½£×ªÆßĞÇ" :
+        case "åŠè½‰ä¸ƒæ˜Ÿ" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/murong-jianfa/xing",
-                           "name"    : "½£×ªÆßĞÇ",
+                           "name"    : "åŠè½‰ä¸ƒæ˜Ÿ",
                            "sk1"     : "murong-jianfa",
                            "lv1"     :  40,
                            "gongxian":  200,
                            "shen"    : -6000, ]));
                 break;
 
-        case "°×ºç¹áÈÕ" :
+        case "ç™½è™¹è²«æ—¥" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/murong-jianfa/hong",
-                           "name"    : "°×ºç¹áÈÕ",
+                           "name"    : "ç™½è™¹è²«æ—¥",
                            "sk1"     : "murong-jianfa",
                            "lv1"     : 80,
                            "force"   : 90,
@@ -172,20 +172,20 @@ int accept_ask(object me, string topic)
                            "shen"    : -9000, ]));
                 break;
 
-        case "ÈÕÔÂÍ¬»Ô" :
+        case "æ—¥æœˆåŒè¼" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/xingyi-zhang/riyue",
-                           "name"    : "ÈÕÔÂÍ¬»Ô",
+                           "name"    : "æ—¥æœˆåŒè¼",
                            "sk1"     : "xingyi-zhang",
                            "lv1"     :  40,
                            "gongxian":  200,
                            "shen"    : -6000, ]));
                 break;
 
-        case "ĞÇ¹âµãµã" :
+        case "æ˜Ÿå…‰é»é»" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/xingyi-zhang/xing",
-                           "name"    : "ĞÇ¹âµãµã",
+                           "name"    : "æ˜Ÿå…‰é»é»",
                            "sk1"     : "xingyi-zhang",
                            "lv1"     : 80,
                            "force"   : 90,
@@ -193,10 +193,10 @@ int accept_ask(object me, string topic)
                            "shen"    : -9000, ]));
                 break;
 
-        case "µ¶Ó°ÕÆ" :
+        case "åˆ€å½±æŒ" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/murong-daofa/ying",
-                           "name"    : "µ¶Ó°ÕÆ",
+                           "name"    : "åˆ€å½±æŒ",
                            "sk1"     : "murong-daofa",
                            "lv1"     : 80,
                            "force"   : 90,
@@ -222,13 +222,13 @@ string ask_dan1()
         mapping fam;
         object ob;
 
-        if( !(fam=query("family", this_player())) || fam["family_name"] != "¹ÃËÕÄ½Èİ" )
+        if( !(fam=query("family", this_player())) || fam["family_name"] != "å§‘è˜‡æ…•å®¹" )
                 return RANK_D->query_respect(this_player()) +
-                "Óë±¾ÅÉËØÎŞÀ´Íù£¬²»Öª´Ë»°´ÓºÎÌ¸Æğ£¿";
+                "èˆ‡æœ¬æ´¾ç´ ç„¡ä¾†å¾€ï¼Œä¸çŸ¥æ­¤è©±å¾ä½•è«‡èµ·ï¼Ÿ";
         if (query("san_count") < 1)
-                return "ÄãÀ´ÍíÁË£¬±¾ÅÉµÄÓñÂ¶ÇåĞÂÉ¢²»ÔÚ´Ë´¦¡£";
+                return "ä½ ä¾†æ™šäº†ï¼Œæœ¬æ´¾çš„ç‰éœ²æ¸…æ–°æ•£ä¸åœ¨æ­¤è™•ã€‚";
         addn("san_count", -1);
         ob = new("/clone/medicine/nostrum/yulusan");
         ob->move(this_player());
-        return "ºÃ°É£¬ÕâÓñÂ¶ÇåĞÂÉ¢ÄãÄÃÈ¥°É¡£";
+        return "å¥½å§ï¼Œé€™ç‰éœ²æ¸…æ–°æ•£ä½ æ‹¿å»å§ã€‚";
 }

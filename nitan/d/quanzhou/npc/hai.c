@@ -1,4 +1,4 @@
-// hai.c º£¹«¹«
+// hai.c æµ·å…¬å…¬
 // Jay 4/6/96
 
 inherit NPC;
@@ -8,24 +8,24 @@ int ask_for_gongzi();
 
 void create()
 {
-        set_name("º£¹«¹«", ({"hai gonggong", "hai", "gonggong"}));
-        set("title", "¶«³§Ç§»§");
+        set_name("æµ·å…¬å…¬", ({"hai gonggong", "hai", "gonggong"}));
+        set("title", "æ±å» åƒæˆ¶");
         set("long",
-"ËûÊÇ¶«³§´óÌ«¼àº£´ó¸»£¬ÇÇ×°¸Ä°ç³ÉÉÌÈËÄ£Ñù³ö¾©Ñ°»¶×÷ÀÖ£¬³¤µÃ¼ÈÏñ
-ÀÏÍ·ÓÖÏñÀÏÌ«Ì«¡£\n"
+"ä»–æ˜¯æ±å» å¤§å¤ªç›£æµ·å¤§å¯Œï¼Œå–¬è£æ”¹æ‰®æˆå•†äººæ¨¡æ¨£å‡ºäº¬å°‹æ­¡ä½œæ¨‚ï¼Œé•·å¾—æ—¢åƒ
+è€é ­åˆåƒè€å¤ªå¤ªã€‚\n"
         );
 
-        set("gender", "ÎŞĞÔ");
-        set("rank_info/respect", "¹«¹«");
+        set("gender", "ç„¡æ€§");
+        set("rank_info/respect", "å…¬å…¬");
 
         set("attitude", "heroism");
         set("class", "eunach");
 
         set("inquiry",([
-                "×Ô¹¬"    : (: ask_for_zigong :),
+                "è‡ªå®®"    : (: ask_for_zigong :),
                 "zigong"  : (: ask_for_zigong :),
-                "¹¤×Ê"    : (: ask_for_gongzi :),
-                "Ğ½Ë®"    : (: ask_for_gongzi :),
+                "å·¥è³‡"    : (: ask_for_gongzi :),
+                "è–ªæ°´"    : (: ask_for_gongzi :),
                 "salary"  : (: ask_for_gongzi :),
                 "payment" : (: ask_for_gongzi :),
                 "gongzi"  : (: ask_for_gongzi :),
@@ -81,22 +81,22 @@ string ask_for_zigong()
 
         me = this_player();
 
-        if( query("gender", me) == "ÎŞĞÔ" )
-                return "ÄãÎÒÍ¬ÊÇÑËÈË£¬ºÎ±Ø¿ªÈç´ËÎŞÁÄµÄÍæĞ¦£¿\n";
+        if( query("gender", me) == "ç„¡æ€§" )
+                return "ä½ æˆ‘åŒæ˜¯é–¹äººï¼Œä½•å¿…é–‹å¦‚æ­¤ç„¡èŠçš„ç©ç¬‘ï¼Ÿ\n";
 
-        if( query("gender", me) == "Å®ĞÔ" )
-                return "ÎÒËäÒÑ·Ï£¬µ«Ò»Ñù¿ÉÒÔ¸øÄãÕâ¸öĞ¡ÃÀÈË´øÀ´¿ìÀÖ£¬Òª²»ÒªÊÔÊÔ£¿\n";
+        if( query("gender", me) == "å¥³æ€§" )
+                return "æˆ‘é›–å·²å»¢ï¼Œä½†ä¸€æ¨£å¯ä»¥çµ¦ä½ é€™å€‹å°ç¾äººå¸¶ä¾†å¿«æ¨‚ï¼Œè¦ä¸è¦è©¦è©¦ï¼Ÿ\n";
         /*
         if( me->query("str", me) > 28 )
-                return "ÕâÎ»ºÃºº¹ıÓÚ´Ö×³£¬×Ô¹¬ÓĞ°­¹ÛÕ°£¬²»Í×£¬²»Í×¡£\n";
+                return "é€™ä½å¥½æ¼¢éäºç²—å£¯ï¼Œè‡ªå®®æœ‰ç¤™è§€ç»ï¼Œä¸å¦¥ï¼Œä¸å¦¥ã€‚\n";
         */
 
         if( query("mud_age", me)<600 )
-                return "ÕâÎ»Ğ¡ĞÖµÜ²Å³öÄïÌ¥£¬¾ÍÒª×Ô¹¬£¬ºÃ¿ÉÁ¯¼ûµÄ¡£\n";
+                return "é€™ä½å°å…„å¼Ÿæ‰å‡ºå¨˜èƒï¼Œå°±è¦è‡ªå®®ï¼Œå¥½å¯æ†è¦‹çš„ã€‚\n";
 
         set_temp("pending/zigong", 1, me);
-        return "×Ô¹¬£¿ÕâÎ»¹«×ÓÏàÃ²ÌÃÌÃ£¬ºÎ±Ø... ÎÒÕæÏ£ÍûÄÜÓĞÄãµÄÄÇ¸ö¡£×Ô¹¬Ö®ºó£¬
-²»¿Éºó»Ú£¬ÄãÈô¾öĞÄÒÑ¶¨(decide)£¬¸æËßÎÒ¡£\n";
+        return "è‡ªå®®ï¼Ÿé€™ä½å…¬å­ç›¸è²Œå ‚å ‚ï¼Œä½•å¿…... æˆ‘çœŸå¸Œæœ›èƒ½æœ‰ä½ çš„é‚£å€‹ã€‚è‡ªå®®ä¹‹å¾Œï¼Œ
+ä¸å¯å¾Œæ‚”ï¼Œä½ è‹¥æ±ºå¿ƒå·²å®š(decide)ï¼Œå‘Šè¨´æˆ‘ã€‚\n";
 }
 
 int do_decide()
@@ -105,14 +105,14 @@ int do_decide()
                 return 0;
 
         message_vision(
-                "$NÒ»Ò§ÑÀ£¬ÍÊÏÂÖĞÒÂ¡££¨Å®Íæ¼Ò±ÕÑÛ£¡£©\n\n"
-                "$nÉì³ö³¤½£²åµ½$NÁ½ÍÈÖ®¼ä£¬·ÉËÙÒ»Øà£¬¡­¡­\n\n"
-                "$N¶ÙÊ±²Ò½ĞÒ»Éù»èÁË¹ıÈ¥¡­¡­\n\n",
+                "$Nä¸€å’¬ç‰™ï¼Œè¤ªä¸‹ä¸­è¡£ã€‚ï¼ˆå¥³ç©å®¶é–‰çœ¼ï¼ï¼‰\n\n"
+                "$nä¼¸å‡ºé•·åŠæ’åˆ°$Nå…©è…¿ä¹‹é–“ï¼Œé£›é€Ÿä¸€å‰œï¼Œâ€¦â€¦\n\n"
+                "$Né “æ™‚æ…˜å«ä¸€è²æ˜äº†éå»â€¦â€¦\n\n",
                 this_player(), this_object() );
-        command("chat àË¡­¡­");
+        command("chat å—¨â€¦â€¦");
         command("hehe");
         delete_temp("pending/zigong", this_player());
-        set("gender", "ÎŞĞÔ", this_player());
+        set("gender", "ç„¡æ€§", this_player());
         set("class", "eunach", this_player());
         set("combat_exp",query("combat_exp",  this_player())+1000, this_player());
         this_player()->unconcious();
@@ -125,10 +125,10 @@ int ask_for_gongzi()
         int paytimes;
 
         me = this_player();
-        if( query("gender", me) != "ÎŞĞÔ")return 0;
+        if( query("gender", me) != "ç„¡æ€§")return 0;
         if ( me->query_skill("pixie-jian",1) < 60)
         {
-                tell_object(me,"º£¹«¹«µÀ£ºÏÂµÈÊ¹ÒÛÌ«¼àÄÄÓĞ¹¤×Ê£¿½ø¶«³§ÔÙËµ£¡\n");
+                tell_object(me,"æµ·å…¬å…¬é“ï¼šä¸‹ç­‰ä½¿å½¹å¤ªç›£å“ªæœ‰å·¥è³‡ï¼Ÿé€²æ±å» å†èªªï¼\n");
                        return 1;
         }
         paytimes=(query("mud_age", me)/7200);
@@ -137,8 +137,8 @@ int ask_for_gongzi()
             payment=new("/clone/money/gold");
             payment->move(me);
             addn("paytimes", 1, me);
-            tell_object(me,"º£¹«¹«µÀ£ºÕâÊÇÄã±¾ÔÂµÄ·İ¶î£¬ÊÕºÃ°É¡£\n");
+            tell_object(me,"æµ·å…¬å…¬é“ï¼šé€™æ˜¯ä½ æœ¬æœˆçš„ä»½é¡ï¼Œæ”¶å¥½å§ã€‚\n");
         }
-        else tell_object(me,"º£¹«¹«µÀ£ºÆÛ¸ºÎÒÀÏºıÍ¿£¿Äã±¾ÔÂ¹¤×ÊÒÑ¾­ÁìÈ¡¹ıÁË£¡\n");
+        else tell_object(me,"æµ·å…¬å…¬é“ï¼šæ¬ºè² æˆ‘è€ç³Šå¡—ï¼Ÿä½ æœ¬æœˆå·¥è³‡å·²ç¶“é ˜å–éäº†ï¼\n");
         return 1;
 }

@@ -10,10 +10,10 @@ void create()
         mapping my;
 
         ::create();
-        set("gender", "ÄĞĞÔ" );
+        set("gender", "ç”·æ€§" );
         set("age", 30 + random(30));
-        set_name(BLU "ÃÉÃæÈË" NOR, ({"figure", "mengmian ren", "ren"}));
-        set("long", "Õâ¸öÈËÍ·ÉÏ´÷ÖøÃÉÃæÍ·ÕÖ£¬°Ë³É×¼±¸¸ÉÊ²÷á»µÊÂ¡£\n");
+        set_name(BLU "è’™é¢äºº" NOR, ({"figure", "mengmian ren", "ren"}));
+        set("long", "é€™å€‹äººé ­ä¸Šæˆ´è‘—è’™é¢é ­ç½©ï¼Œå…«æˆæº–å‚™å¹¹ä»€éº¼å£äº‹ã€‚\n");
         set("attitude", "friendly");
         set("scale", 150);
         set("chat_chance_combat", 120);
@@ -63,14 +63,14 @@ void kill_ob(object ob)
         if (! is_busy())
                 exert_function("powerup");
 
-        message_vision(HIB "$n¶Ô$N£¬ºÈµÀ: ¡°Ê²Ã´ÈËÈç´Ë´óµ¨£¬"+
-                           "¾¹¸ÒÉÃ´³ÁøÂÌÉ½×¯£¿£¡\n" NOR, ob, this_object());
+        message_vision(HIB "$nå°$Nï¼Œå–é“: â€œä»€éº¼äººå¦‚æ­¤å¤§è†½ï¼Œ"+
+                           "ç«Ÿæ•¢æ“…é—–æŸ³ç¶ å±±èŠï¼Ÿï¼\n" NOR, ob, this_object());
         ::kill_ob(ob);
 }
 
 void unconcious()
 {
-        message_vision(HIR "$N´ó½ĞÒ»Éù£ººÃÀ÷º¦£¡È»ºóµØ°åÍ»È»·­Æğ£¬$N×êÁË½øÈ¥²»¼ûÁË¡£\n",
+        message_vision(HIR "$Nå¤§å«ä¸€è²ï¼šå¥½å²å®³ï¼ç„¶å¾Œåœ°æ¿çªç„¶ç¿»èµ·ï¼Œ$Né‘½äº†é€²å»ä¸è¦‹äº†ã€‚\n",
                        this_object());
         destruct(this_object());
         return ;

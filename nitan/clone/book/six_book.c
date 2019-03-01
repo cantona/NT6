@@ -6,13 +6,13 @@ string skl_name();
 int do_yanjiu(string arg);
 void create()
 {
-        set_name( HIC"ÁùÂöÉñ½£Æ×"NOR,({ "sixfinger book","book"}));
+        set_name( HIC"å…­è„ˆç¥åŠè­œ"NOR,({ "sixfinger book","book"}));
         set_weight(200);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
-                set("long","ÕâÊÇÒ»·ùÍ¼¡£ÉÏÃæ¶¼ÊÇ×İºá½»²æµÄÖ±Ïß¡¢Ô²È¦ºÍ»¡ĞÎ¡£\n");
+                set("unit", "æœ¬");
+                set("long","é€™æ˜¯ä¸€å¹…åœ–ã€‚ä¸Šé¢éƒ½æ˜¯ç¸±æ©«äº¤å‰çš„ç›´ç·šã€åœ“åœˆå’Œå¼§å½¢ã€‚\n");
                 set("value", 500);
                 set("material", "paper");
                 set("skill", ([
@@ -51,38 +51,38 @@ int do_yanjiu(string arg)
 
         if ((int)me->query_skill("literate",1)<1)
         {
-                write("ÄãÊÇ¸öÎÄÃ¤£¬ÏÈÑ§µã¶ÁÊéĞ´×Ö(literate)°É¡£\n");
+                write("ä½ æ˜¯å€‹æ–‡ç›²ï¼Œå…ˆå­¸é»è®€æ›¸å¯«å­—(literate)å§ã€‚\n");
                 return 1;
         }
 
         if (me->is_busy() || me->is_fighting())
         {
-                write("ÄãÕıÃ¦×ÅÄØ¡£\n");
+                write("ä½ æ­£å¿™è‘—å‘¢ã€‚\n");
                 return 1;
         }
 
         if (!arg || sscanf(arg,"%s from %s",skill,book)!=2)
         {
-                write("ÑĞ¶Á¾ø¼¼µÄÖ¸ÁîÊÇ yanjiu ¾ø¼¼Ãû from book\n");
+                write("ç ”è®€çµ•æŠ€çš„æŒ‡ä»¤æ˜¯ yanjiu çµ•æŠ€å from book\n");
                 return 1;
         }
 
         if (!id(book))
         {
-                write("Ã»ÓĞÕâ±¾Êé¡£\n");
+                write("æ²’æœ‰é€™æœ¬æ›¸ã€‚\n");
                 return 1;
         }
 
-        if (skill != "´ËÈ¥±ËÀ´" && skill != "Ô¦½£Æø" 
+        if (skill != "æ­¤å»å½¼ä¾†" && skill != "é¦­åŠæ°£" 
            && skill != "ciqu" && skill != "yuqi")
         {
-                write("ÊéÉÏ²¢Ã»ÓĞ½éÉÜ¹ØÓÚ"+skill+"µÄÄÚÈİ¡£\n");
+                write("æ›¸ä¸Šä¸¦æ²’æœ‰ä»‹ç´¹é—œäº"+skill+"çš„å…§å®¹ã€‚\n");
                 return 1;
         }
 
         if( query("combat_exp", me)<1000000 )
         {
-                write("ÄãµÄÊµÕ½¾­ÑéÌ«µÍ£¬¶Á²»¶®ÕâÃ´Éî°ÂµÄ¶«Î÷¡£\n");
+                write("ä½ çš„å¯¦æˆ°ç¶“é©—å¤ªä½ï¼Œè®€ä¸æ‡‚é€™éº¼æ·±å¥§çš„æ±è¥¿ã€‚\n");
                 return 1;
         }
 
@@ -90,82 +90,82 @@ int do_yanjiu(string arg)
             query("qi", me)<100 || 
             query("neili", me)<200 )
   {
-          write("ÄãÏÖÔÚ¹ıÓÚÆ£¾ë£¬ÎŞ·¨×¨ĞÄÏÂÀ´ÑĞ¶ÁĞÂÖª¡£\n");
+          write("ä½ ç¾åœ¨éäºç–²å€¦ï¼Œç„¡æ³•å°ˆå¿ƒä¸‹ä¾†ç ”è®€æ–°çŸ¥ã€‚\n");
           return 1;
   }
   
   switch(skill)
   {
           case "ciqu":
-          case "´ËÈ¥±ËÀ´":
+          case "æ­¤å»å½¼ä¾†":
            if( query("can_perform/six-finger/ciqu", me) )
            {
-                write("Äã²»ÊÇÒÑ¾­»áÁËÂğ£¿\n");
+                write("ä½ ä¸æ˜¯å·²ç¶“æœƒäº†å—ï¼Ÿ\n");
                 return 1;
            }
            if (me->query_skill("six-finger", 1) < 120)
            {
-                write("ÄãÁùÂöÉñ½£²»¹»ÊìÁ·£¬ÎŞ·¨ÑĞ¶Á´Ë¾øÕĞ£¡\n");
+                write("ä½ å…­è„ˆç¥åŠä¸å¤ ç†Ÿç·´ï¼Œç„¡æ³•ç ”è®€æ­¤çµ•æ‹›ï¼\n");
                 return 1;
            }
 
            if (random (10) != 1)
            {
-                write("ÄãÑĞ¾¿ÁË°ëÌì£¬ÈÔÈ»ÎŞ·¨½«¡¸´ËÈ¥±ËÀ´¡¹ÈÚ»á¹áÍ¨£¡\n");
+                write("ä½ ç ”ç©¶äº†åŠå¤©ï¼Œä»ç„¶ç„¡æ³•å°‡ã€Œæ­¤å»å½¼ä¾†ã€èæœƒè²«é€šï¼\n");
                 me->start_busy(15); 
                 set("jing", 1, me);
                 return 1;
            }
-           msg = HIG "$N" HIG "·­¿´½£Æ×£¬×ĞÏ¸ÑĞ¾¿ÉÏÃæËù¼ÇÔØµÄÎäÑ§£¬ö®ÄÇ¼äºöÓĞËùÎò"
-                     "¡­¡­\n" NOR;
-           msg += HIW "$N" HIW "Ì¯¿ªË«ÊÖ£¬ÊÖÖ¸Á¬µ¯£¬ö®Ê±¼ä¿ÕÆøÖËÈÈ£¬¼¸"
-                  "Óû·ĞÌÚ£¬ÁùµÀ½£Æø·Ö×ÔÁùÑ¨£¬Ò»Æğ³åÏòÌì¼Ê" HIW "£¡\n" NOR;
-           msg += HIG "$N" HIG "³¤Ì¾Ò»Éù£¬¸Ğ¿®ÍòÇ§£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï¡£\n" NOR; 
+           msg = HIG "$N" HIG "ç¿»çœ‹åŠè­œï¼Œä»”ç´°ç ”ç©¶ä¸Šé¢æ‰€è¨˜è¼‰çš„æ­¦å­¸ï¼Œéœé‚£é–“å¿½æœ‰æ‰€æ‚Ÿ"
+                     "â€¦â€¦\n" NOR;
+           msg += HIW "$N" HIW "æ”¤é–‹é›™æ‰‹ï¼Œæ‰‹æŒ‡é€£å½ˆï¼Œéœæ™‚é–“ç©ºæ°£ç‚™ç†±ï¼Œå¹¾"
+                  "æ¬²æ²¸é¨°ï¼Œå…­é“åŠæ°£åˆ†è‡ªå…­ç©´ï¼Œä¸€èµ·æ²–å‘å¤©éš›" HIW "ï¼\n" NOR;
+           msg += HIG "$N" HIG "é•·å˜†ä¸€è²ï¼Œæ„Ÿæ…¨è¬åƒï¼Œå°‡å…§åŠ›æ”¶å›ä¸¹ç”°ã€‚\n" NOR; 
            message_vision(msg, me); 
 
                    me->improve_skill("finger", 1500000);
                    me->improve_skill("six-finger", 1500000);
 
-           write(HIW "ÄãÑ§»áÁË¡¸" HIG "´ËÈ¥±ËÀ´" HIW "¡¹¡£\n" NOR);
+           write(HIW "ä½ å­¸æœƒäº†ã€Œ" HIG "æ­¤å»å½¼ä¾†" HIW "ã€ã€‚\n" NOR);
            set("can_perform/six-finger/ciqu", 1, me);
            return 1;
           case "yuqi":
-          case "Ô¦½£Æø":
+          case "é¦­åŠæ°£":
            if( query("can_perform/six-finger/yuqi", me) )
            {
-                write("Äã²»ÊÇÒÑ¾­»áÁËÂğ£¿\n");
+                write("ä½ ä¸æ˜¯å·²ç¶“æœƒäº†å—ï¼Ÿ\n");
                 return 1;
            }
            if (me->query_skill("six-finger", 1) < 120)
            {
-                write("ÄãÁùÂöÉñ½£²»¹»ÊìÁ·£¬ÎŞ·¨ÑĞ¶Á´Ë¾øÕĞ£¡\n");
+                write("ä½ å…­è„ˆç¥åŠä¸å¤ ç†Ÿç·´ï¼Œç„¡æ³•ç ”è®€æ­¤çµ•æ‹›ï¼\n");
                 return 1;
            }
            if (me->query_skill("force", 1) < 120)
            {
-                write("ÄãÄÚ¹¦»ğºò²»¹»£¬ÎŞ·¨ÑĞ¶Á´Ë¾øÕĞ£¡\n");
+                write("ä½ å…§åŠŸç«å€™ä¸å¤ ï¼Œç„¡æ³•ç ”è®€æ­¤çµ•æ‹›ï¼\n");
                 return 1;
            }
 
            if (random (20) != 1)
            {
-                write("ÄãÑĞ¾¿ÁË°ëÌì£¬ÈÔÈ»ÎŞ·¨½«¡¸Ô¦½£Æø¡¹ÈÚ»á¹áÍ¨£¡\n");
+                write("ä½ ç ”ç©¶äº†åŠå¤©ï¼Œä»ç„¶ç„¡æ³•å°‡ã€Œé¦­åŠæ°£ã€èæœƒè²«é€šï¼\n");
                 me->start_busy(15);
                 set("jing", 1, me);
                 return 1;
            }
-           msg = HIG "$N" HIG "·­¿´½£Æ×£¬×ĞÏ¸ÑĞ¾¿ÉÏÃæËù¼ÇÔØµÄÎäÑ§£¬ö®ÄÇ¼äºöÓĞËùÎò"
-                     "¡­¡­\n" NOR;
-           msg += HIM "$N" HIM "Ò»ÉùÇåĞ¥£¬Ê®Ö¸·×µ¯£¬¶Ù¾õÁùÂö½£ÆøÒÑÓ¿ÉÏĞÄÍ·£¬´ËÆğ"
-                  "±Ë·ü¡¢Á¬Ãà²»¾ø¡£ö®Ê±½£ÆøÈç±¼£¬Á¬ÃàÎŞ¾¡µÄÍòµÀ½£Æø»íÈ»¹áÏòĞé¿Õ" HIM 
-                  "£¡\n" NOR;
-           msg += HIG "$N" HIG "³¤Ì¾Ò»Éù£¬¸Ğ¿®ÍòÇ§£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï¡£\n" NOR; 
+           msg = HIG "$N" HIG "ç¿»çœ‹åŠè­œï¼Œä»”ç´°ç ”ç©¶ä¸Šé¢æ‰€è¨˜è¼‰çš„æ­¦å­¸ï¼Œéœé‚£é–“å¿½æœ‰æ‰€æ‚Ÿ"
+                     "â€¦â€¦\n" NOR;
+           msg += HIM "$N" HIM "ä¸€è²æ¸…å˜¯ï¼ŒåæŒ‡ç´›å½ˆï¼Œé “è¦ºå…­è„ˆåŠæ°£å·²æ¹§ä¸Šå¿ƒé ­ï¼Œæ­¤èµ·"
+                  "å½¼ä¼ã€é€£ç¶¿ä¸çµ•ã€‚éœæ™‚åŠæ°£å¦‚å¥”ï¼Œé€£ç¶¿ç„¡ç›¡çš„è¬é“åŠæ°£è±ç„¶è²«å‘è™›ç©º" HIM 
+                  "ï¼\n" NOR;
+           msg += HIG "$N" HIG "é•·å˜†ä¸€è²ï¼Œæ„Ÿæ…¨è¬åƒï¼Œå°‡å…§åŠ›æ”¶å›ä¸¹ç”°ã€‚\n" NOR; 
            message_vision(msg, me); 
 
                    me->improve_skill("finger", 1500000);
                    me->improve_skill("six-finger", 1500000);
 
-           write(HIW "ÄãÑ§»áÁË¡¸" HIG "Ô¦½£Æø" HIW "¡¹¡£\n" NOR);
+           write(HIW "ä½ å­¸æœƒäº†ã€Œ" HIG "é¦­åŠæ°£" HIW "ã€ã€‚\n" NOR);
            set("can_perform/six-finger/yuqi", 1, me);
            return 1;
                   break;

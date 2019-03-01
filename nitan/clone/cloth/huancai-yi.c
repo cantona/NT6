@@ -6,13 +6,13 @@ inherit CLOTH;
 
 void create()
 {
-        set_name(HIM "»Ã²ÊÒÂ" NOR, ({"huan caiyi", "huan", "caiyi"}));
+        set_name(HIM "å¹»å½©è¡£" NOR, ({"huan caiyi", "huan", "caiyi"}));
         set_weight(1);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼ş");
-                set("long", HIM "´ËÒÂÖ»Ó¦ÌìÉÏÓĞ£¡\n");
+                set("unit", "ä»¶");
+                set("long", HIM "æ­¤è¡£åªæ‡‰å¤©ä¸Šæœ‰ï¼\n");
                 set("material", "silk");
                 set("armor_prop/armor", 1000);
                 set("value",100);

@@ -1,18 +1,18 @@
-// qishayan.c ÆáÉ³Ñâ
+// qishayan.c æ¼†æ²™ç¡¯
 
 inherit ITEM;
 #include <ansi.h>;
 void create()
 {
-        set_name(HIM"ÆáÉ³Ñâ"NOR, ({"qisha yan", "yan"}) );
+        set_name(HIM"æ¼†æ²™ç¡¯"NOR, ({"qisha yan", "yan"}) );
         set("taskobj", 1);
         set_weight(100);
         if ( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long","ÆáÉ³Ñâ£¬ÉÏÓĞËÎĞûºÍÄÚ¸®ÖÆÁù×Ö¡£ÆäĞÎÖÊÀà³ÎÉ³¶ø¾øÇá£¬ÈëË®²»³Á£¬ÉõÒìÖ®¡£\n");
+                set("long","æ¼†æ²™ç¡¯ï¼Œä¸Šæœ‰å®‹å®£å’Œå…§åºœåˆ¶å…­å­—ã€‚å…¶å½¢è³ªé¡æ¾„æ²™è€Œçµ•è¼•ï¼Œå…¥æ°´ä¸æ²‰ï¼Œç”šç•°ä¹‹ã€‚\n");
                 set("value", 0);
-                set("unit" , "·½");
+                set("unit" , "æ–¹");
         }
         setup();
 }

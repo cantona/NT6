@@ -1,10 +1,10 @@
-ĞÂÔö Package arith_operator:
+æ–°å¢ Package arith_operator:
     
-    ĞÂÔö mixed count(mixed, string, mixed);
-         ÓÃÓÚ(string)´óÊıÔËËãÓë´óÊıÊıÖµ±È½Ï
+    æ–°å¢ mixed count(mixed, string, mixed);
+         ç”¨äº(string)å¤§æ•¸é‹ç®—èˆ‡å¤§æ•¸æ•¸å€¼æ¯”è¼ƒ
          
          coutn (1, "<", 2)
 
 
-By Clode@RW on 2002/6/3 04:01ÏÂÎç
+By Clode@RW on 2002/6/3 04:01ä¸‹åˆ
 

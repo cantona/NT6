@@ -36,7 +36,7 @@ int main(object me, string arg)
         }
         
         for (j = 0; j < 10; j++) 
-                printf("%d : ¸öÊıÎª %d\n", j, a[j]);
+                printf("%d : å€‹æ•¸ç‚º %d\n", j, a[j]);
         
         return 1;
 }
@@ -44,9 +44,9 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : ran <number>
+æŒ‡ä»¤æ ¼å¼ : ran <number>
 
-ÓÃ´¦ : ²âÊÔËæ»úº¯ÊıµÄ·Ö²¼¡£
+ç”¨è™• : æ¸¬è©¦éš¨æ©Ÿå‡½æ•¸çš„åˆ†å¸ƒã€‚
 HELP
         );
         return 1;

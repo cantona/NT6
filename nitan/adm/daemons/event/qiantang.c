@@ -1,4 +1,4 @@
-// qiantang.c ÊÂ¼ş£ºÇ®ÌÁ½­³±ĞÅ
+// qiantang.c äº‹ä»¶ï¼šéŒ¢å¡˜æ±Ÿæ½®ä¿¡
 
 #include <ansi.h>
 
@@ -8,14 +8,14 @@ void create() { seteuid(getuid()); }
 #define STATUS_START            2
 #define STATUS_END              3
 
-// ¿ªÊ¼´´½¨ÊÂ¼ş
+// é–‹å§‹å‰µå»ºäº‹ä»¶
 void create_event()
 {
-        // Ã÷Äê8ÔÂ·İ18ÈÕÕÇ³±£¬ÌáÇ°Ò»ÌìÌáÊ¾
+        // æ˜å¹´8æœˆä»½18æ—¥æ¼²æ½®ï¼Œæå‰ä¸€å¤©æç¤º
         EVENT_D->at_after(1, -8, -17, -12, STATUS_PROMPT);
 }
 
-// ½±Àø
+// çå‹µ
 private void do_bonus(object room)
 {
         object *obs;
@@ -27,23 +27,23 @@ private void do_bonus(object room)
         if (sizeof(obs) < 1)
                 return;
 
-        msg = HIC "Ö»Ìı¡°Â¡Â¡¡±Ò»ÕóÀ×ÃùÏì¹ı£¬³±Ë®ÈçÓ¿Ò»°ãµÄÏò°¶±ß¾íÀ´¡£\n"
-                  "É²ÄÇ¼ä£¬Âş½­·ĞÌÚ£¬²¨ÌÎÍòÇê£¬³±¸ßÕÉâÅ£¬ÍòÂí±¼ÌÚ£¬ÕæÓĞ\n"
-                  "¡°ÌÎÀ´ÊÆ×ªĞÛ£¬ÁÔÁÔ¼İ³¤·ç¡£À×ÕğÔÆÄŞÀï£¬É½·ÉËªÑ©ÖĞ¡±µÄ\n"
-                  "×³ÀöÆøÊÆ£¡ÕıËùÎ½¡°Ô¶ÈôËØÁ·ºá½­£¬ÉùÈç½ğ¹Ä£»½üÔòØ¨ÈçÉ½\n"
-                  "ÔÀ£¬·ÜÈçÀ×öª¡±¡£Ò»Ê±¼äÄã²»½û³Á½şµ±ÖĞ£¬ÌìµØÍòÎï¶¼ÒÑÈ»\n"
-                  "Íü»³ÁË¡£\n" NOR;
+        msg = HIC "åªè½â€œéš†éš†â€ä¸€é™£é›·é³´éŸ¿éï¼Œæ½®æ°´å¦‚æ¹§ä¸€èˆ¬çš„å‘å²¸é‚Šå·ä¾†ã€‚\n"
+                  "å‰é‚£é–“ï¼Œæ¼«æ±Ÿæ²¸é¨°ï¼Œæ³¢æ¿¤è¬é ƒï¼Œæ½®é«˜ä¸ˆé¤˜ï¼Œè¬é¦¬å¥”é¨°ï¼ŒçœŸæœ‰\n"
+                  "â€œæ¿¤ä¾†å‹¢è½‰é›„ï¼Œçµçµé§•é•·é¢¨ã€‚é›·éœ‡é›²éœ“è£¡ï¼Œå±±é£›éœœé›ªä¸­â€çš„\n"
+                  "å£¯éº—æ°£å‹¢ï¼æ­£æ‰€è¬‚â€œé è‹¥ç´ ç·´æ©«æ±Ÿï¼Œè²å¦‚é‡‘é¼“ï¼›è¿‘å‰‡äº™å¦‚å±±\n"
+                  "å²³ï¼Œå¥®å¦‚é›·éœ†â€ã€‚ä¸€æ™‚é–“ä½ ä¸ç¦æ²‰æµ¸ç•¶ä¸­ï¼Œå¤©åœ°è¬ç‰©éƒ½å·²ç„¶\n"
+                  "å¿˜æ‡·äº†ã€‚\n" NOR;
         message("vision", msg, obs);
-        msg = "ÌıËµ°ËÔÂÊ®°Ë" + implode(sizeof(obs) > 4 ? obs[0..3]->name(1)
-                                                       : obs->name(1), "¡¢") +
-              "µÈÈËÔÚÇ®ÌÁ½­¹Û³±¡£";
+        msg = "è½èªªå…«æœˆåå…«" + implode(sizeof(obs) > 4 ? obs[0..3]->name(1)
+                                                       : obs->name(1), "ã€") +
+              "ç­‰äººåœ¨éŒ¢å¡˜æ±Ÿè§€æ½®ã€‚";
         CHANNEL_D->do_channel(this_object(), "rumor", msg);
 
         obs=filter_array(obs,(:query("combat_exp", $1) >= 10000:));
         if (sizeof(obs) < 1)
                 return;
 
-        msg = HIG "ÄãÍû×ÅĞÚÓ¿µÄ³±Ë®£¬ÈôÓĞËùÎò£¬¶ÔÎä¹¦ÓÖÓĞÁËĞÂµÄÌå»á¡£\n" NOR;
+        msg = HIG "ä½ æœ›è‘—æ´¶æ¹§çš„æ½®æ°´ï¼Œè‹¥æœ‰æ‰€æ‚Ÿï¼Œå°æ­¦åŠŸåˆæœ‰äº†æ–°çš„é«”æœƒã€‚\n" NOR;
         message("vision", msg, obs);
         for( int i=0; i<sizeof(obs); i++ )
         {
@@ -51,38 +51,38 @@ private void do_bonus(object room)
                 obs[i]->improve_potential(100 + random(100));
                 obs[i]->improve_skill("force", 1000 + random(1000), 1);
         }
-        MAP_D->record_rumor(obs, "Ç®ÌÁ½­³±ĞÅ", this_object());
+        MAP_D->record_rumor(obs, "éŒ¢å¡˜æ±Ÿæ½®ä¿¡", this_object());
 }
 
-// ÊÂ¼ş´¥·¢
+// äº‹ä»¶è§¸ç™¼
 void trigger_event(int status)
 {
         object room;
 
         room = find_object("/d/hangzhou/qiantang");
 
-        // Ç®ÌÁ½­³±ĞÅ
+        // éŒ¢å¡˜æ±Ÿæ½®ä¿¡
         switch (status)
         {
         case STATUS_PROMPT:
                 CHANNEL_D->do_channel(this_object(), "rumor",
-                        "°ËÔÂÊ®°ËÓÖÒªµ½ÁË£¬ÌıËµ²»ÉÙÈËÇ°ÍùÇ®ÌÁ½­¹Û³±¡£");
-                // Ã÷Ìì18µãÖÓÆğ³±
+                        "å…«æœˆåå…«åˆè¦åˆ°äº†ï¼Œè½èªªä¸å°‘äººå‰å¾€éŒ¢å¡˜æ±Ÿè§€æ½®ã€‚");
+                // æ˜å¤©18é»é˜èµ·æ½®
                 EVENT_D->at_after(0, 0, 1, -18, STATUS_START);
                 break;
                 
         case STATUS_START:
                 if (objectp(room))
                         do_bonus(room);
-                // Ò»¸öĞ¡Ê±ÒÔºóÂä³±
+                // ä¸€å€‹å°æ™‚ä»¥å¾Œè½æ½®
                 EVENT_D->at_after(0, 0, 0, 1, STATUS_END);
                 break;
 
         case STATUS_END:
                 if (objectp(room))
-                        message("vision", "³±Ë®½¥½¥µÄÍËÁËÏÂÈ¥£¬ÄãÕâ²Å"
-                                          "·Â·ğ´ÓÃÎÖĞĞÑÁË¹ıÀ´¡£\n", room);
-                // ¼ÌĞøÖ´ĞĞdefaultÖĞµÄÄÚÈİ
+                        message("vision", "æ½®æ°´æ¼¸æ¼¸çš„é€€äº†ä¸‹å»ï¼Œä½ é€™æ‰"
+                                          "ä»¿ä½›å¾å¤¢ä¸­é†’äº†éä¾†ã€‚\n", room);
+                // ç¹¼çºŒåŸ·è¡Œdefaultä¸­çš„å…§å®¹
 
         default:
                 create_event();
@@ -90,13 +90,13 @@ void trigger_event(int status)
         }
 }
 
-// ÃèÊö
+// æè¿°
 string query_detail(string topic)
 {
         switch (topic)
         {
-        case "Ç®ÌÁ½­³±ĞÅ":
-                return "Ã¿Äê°ËÔÂÊ®°ËÇ®ÌÁ½­ÕÇ³±£¬·Ç³£×¼Ê±£¬¹Ê³ÆÖ®Îª³±ĞÅ¡£Ã¿´Î³±Ë®À´ÁÙ"
-                       "Ê±²¨ÌÎĞÚÓ¿£¬ÆøÊÆ±ÆÈË£¬Ê®·Ö×³¹Û¡£\n";
+        case "éŒ¢å¡˜æ±Ÿæ½®ä¿¡":
+                return "æ¯å¹´å…«æœˆåå…«éŒ¢å¡˜æ±Ÿæ¼²æ½®ï¼Œéå¸¸æº–æ™‚ï¼Œæ•…ç¨±ä¹‹ç‚ºæ½®ä¿¡ã€‚æ¯æ¬¡æ½®æ°´ä¾†è‡¨"
+                       "æ™‚æ³¢æ¿¤æ´¶æ¹§ï¼Œæ°£å‹¢é€¼äººï¼Œååˆ†å£¯è§€ã€‚\n";
         }
 }

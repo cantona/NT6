@@ -2,23 +2,23 @@
 
 int permit_recruit(object ob)
 {
-        if( query("detach/Ã÷½Ì", ob) || 
-            query("betrayer/Ã÷½Ì", ob) )
+        if( query("detach/æ˜æ•™", ob) || 
+            query("betrayer/æ˜æ•™", ob) )
         {
-                command("say Àë¿ªÁËÃ÷½Ì¾Í²»ÒªÔÙ»ØÀ´£¡");
+                command("say é›¢é–‹äº†æ˜æ•™å°±ä¸è¦å†å›ä¾†ï¼");
                 return 0;
         }
 
         if( query("betrayer/times", ob) )
         {
-                command("say ¸óÏÂ²»ÖÒ²»ĞÅ£¬ÎÒÃÇÃ÷½Ì×îºŞµÄ¾ÍÊÇÄãÕâÖÖÈË¡£");
+                command("say é–£ä¸‹ä¸å¿ ä¸ä¿¡ï¼Œæˆ‘å€‘æ˜æ•™æœ€æ¨çš„å°±æ˜¯ä½ é€™ç¨®äººã€‚");
                 return 0;
         }
 
         if( query("family/family_name", ob) && 
-            query("family/family_name", ob) != "Ã÷½Ì" )
+            query("family/family_name", ob) != "æ˜æ•™" )
         {
-                command("say ÄãÓĞÁËÊ¦¸µ£¬¾Í²»ÒªÀ´ÎÒÃÇÃ÷½ÌÁË£¡");
+                command("say ä½ æœ‰äº†å¸«å‚…ï¼Œå°±ä¸è¦ä¾†æˆ‘å€‘æ˜æ•™äº†ï¼");
                 return 0;
         }
 
@@ -31,9 +31,9 @@ int recognize_apprentice(object ob, string skill)
         object me = this_object();
         mapping ob_fam;
 
-        if( !(ob_fam=query("family", ob)) || ob_fam["family_name"] != "Ã÷½Ì" )
+        if( !(ob_fam=query("family", ob)) || ob_fam["family_name"] != "æ˜æ•™" )
         {
-                command("say " + RANK_D->query_respect(ob) + "Óë±¾½ÌËØÎŞÀ´Íù£¬²»Öª´Ë»°´ÓºÎÌ¸Æğ£¿");
+                command("say " + RANK_D->query_respect(ob) + "èˆ‡æœ¬æ•™ç´ ç„¡ä¾†å¾€ï¼Œä¸çŸ¥æ­¤è©±å¾ä½•è«‡èµ·ï¼Ÿ");
                 return -1;
         }
 

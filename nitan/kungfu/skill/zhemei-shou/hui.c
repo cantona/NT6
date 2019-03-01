@@ -3,7 +3,7 @@
 
 inherit F_SSERVER;
 
-string name() { return "»Ò·ÉäÎÃğ"; }
+string name() { return "ç°é£›æ¹®æ»…"; }
 
 int perform(object me, object target)
 {

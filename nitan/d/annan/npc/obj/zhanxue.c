@@ -4,13 +4,13 @@ inherit BOOTS;
 
 void create()
 {
-   set_name(HIC"°²ÄÏÕ½Ñ¥"NOR, ({ "boot"}) );
+   set_name(HIC"å®‰å—æˆ°é´"NOR, ({ "boot"}) );
    set_weight(100);
    if( clonep() )
      set_default_object(__FILE__);
    else {
-     set("material", "Æ¤¸ï");
-     set("unit", "Ë«");
+     set("material", "çš®é©");
+     set("unit", "é›™");
      set("value",3000);
      set("armor_prop/armor",100);
      set("armor_prop/dodge",6);

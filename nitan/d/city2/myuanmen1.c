@@ -3,11 +3,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Ô¯ÃÅÍâ"NOR);
+        set("short", "è½…é–€å¤–"NOR);
         set("long", @LONG
-ÕâÀï¾ÍÊÇ¡¸ÃÉ¹Å¡¹¾üÓª×¤ÔúµØÁË£¬Ô¶Ô¶µØ¿ÉÒÔ¿´¼û´óÓªÄÚ·ÉÑïµÄ
-³¾ÍÁ£¬²»Ê±ÓĞ¼¸Æ¥¿ìÂí·É±¼½ø³ö£¬ÄãÕıÓûÔÙ¿´£¬ºöÈ»à²µØÒ»Ã¶Àä¼ı´Ó
-ÄãÍ·ÉÏ·É¹ı£¬»¹ÊÇ¸Ï¿ìÀë¿ªµÄºÃ¡£
+é€™è£¡å°±æ˜¯ã€Œè’™å¤ã€è»ç‡Ÿé§ç´®åœ°äº†ï¼Œé é åœ°å¯ä»¥çœ‹è¦‹å¤§ç‡Ÿå…§é£›æšçš„
+å¡µåœŸï¼Œä¸æ™‚æœ‰å¹¾åŒ¹å¿«é¦¬é£›å¥”é€²å‡ºï¼Œä½ æ­£æ¬²å†çœ‹ï¼Œå¿½ç„¶å—–åœ°ä¸€æšå†·ç®­å¾
+ä½ é ­ä¸Šé£›éï¼Œé‚„æ˜¯è¶•å¿«é›¢é–‹çš„å¥½ã€‚
 LONG );
         set("defence",120);
         set("no_magic", "1");
@@ -35,25 +35,25 @@ int do_break()
         object room = this_object(), me = this_player();
 
         if (me->is_busy())
-                return notify_fail("ÄãÕıÃ¦×ÅÄØ£¡\n");
+                return notify_fail("ä½ æ­£å¿™è‘—å‘¢ï¼\n");
 
         if( query("exits/north", room) )
-                return notify_fail("Ô¯ÃÅµÄµÄ·ÀÓùÒÑ¾­±»»÷ÆÆÁË£¬¿ì³å½øÈ¥°¡£¡\n");
+                return notify_fail("è½…é–€çš„çš„é˜²å¾¡å·²ç¶“è¢«æ“Šç ´äº†ï¼Œå¿«æ²–é€²å»å•Šï¼\n");
 
         if( query("defence", room)<1 )
         {
                 set("defence", 0, room);
-                tell_object(me, HIR "Ô¯ÃÅµÄµÄ·ÀÓùÒÑ¾­±»»÷ÆÆÁË£¬¿ì³å½øÈ¥°¡£¡\n" NOR);
+                tell_object(me, HIR "è½…é–€çš„çš„é˜²å¾¡å·²ç¶“è¢«æ“Šç ´äº†ï¼Œå¿«æ²–é€²å»å•Šï¼\n" NOR);
                 set("exits/north", __DIR__"mying", room);
                 call_out("door_close", 20, room);
                 return 1;
         } else
         {
                 if( query_temp("warquest/group", me) < 1 )
-                        return notify_fail("Äã»¹ÊÇ´øÁì¶ÓÎéÀ´¹¥»÷Ô¯ÃÅµÄ·ÀÓù¹¤ÊÂ°É£¡\n");
+                        return notify_fail("ä½ é‚„æ˜¯å¸¶é ˜éšŠä¼ä¾†æ”»æ“Šè½…é–€çš„é˜²å¾¡å·¥äº‹å§ï¼\n");
 
                 message_vision(
-                        HIY "$N´ø×ÅÒ»Ö§¹¥³Ç¶ÓÎéÕı¼Ó½ô¹¥»÷×ÅÔ¯ÃÅµÄ·ÀÓù¹¤ÊÂ£¡\n" NOR, me);
+                        HIY "$Nå¸¶è‘—ä¸€æ”¯æ”»åŸéšŠä¼æ­£åŠ ç·Šæ”»æ“Šè‘—è½…é–€çš„é˜²å¾¡å·¥äº‹ï¼\n" NOR, me);
                 addn("defence", -random(query_temp("warquest/group", me)), room);
                 me->start_busy(3 + random(2));
                 return 1;
@@ -66,7 +66,7 @@ void door_close(object room)
         {
                 delete("exits/north", room);
                 tell_object(all_inventory(room),
-                        HIW "ÃÉ¹Å¾üÁ¬Ã¦´ø×ÅÒ»Ö§¶ÓÎé°ÑÔ¯ÃÅµÄ·ÀÓù¹¤ÊÂĞŞºÃÁË£¡\n" NOR);
+                        HIW "è’™å¤è»é€£å¿™å¸¶è‘—ä¸€æ”¯éšŠä¼æŠŠè½…é–€çš„é˜²å¾¡å·¥äº‹ä¿®å¥½äº†ï¼\n" NOR);
         }
         return;
 }

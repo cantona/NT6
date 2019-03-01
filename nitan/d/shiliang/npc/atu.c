@@ -3,10 +3,10 @@ inherit NPC;
 string inquiry_afeng();
 void create()
 {
-        set_name("°¢ÍÁ", ({ "a tu","a","tu"}) );
-        set("gender", "ÄÐÐÔ" );
+        set_name("é˜¿åœŸ", ({ "a tu","a","tu"}) );
+        set("gender", "ç”·æ€§" );
         set("age", 18);
-        set("long", "ÕâÊÇÒ»¸öÓ¢¿¡äìÈ÷µÄÆÍÈË¡£\n");
+        set("long", "é€™æ˜¯ä¸€å€‹è‹±ä¿Šç€Ÿæ´’çš„åƒ•äººã€‚\n");
         set("shen_type", 1);
         set("combat_exp", 500);
         set("str", 16);
@@ -16,12 +16,12 @@ void create()
         set("attitude", "friendly");
         set("chat_chance",1);
         set("chat_msg",({
-            "°¢ÍÁÒ»±ßÉ¨µØÒ»±ßÒ¡×ÅÍ·¡£\n",
-            "°¢ÍÁ×ÔÑÔ×ÔÓïµØËµ£ºÎÒÒ»Ö±Ï²»¶°¢·ï£¬µ«ÊÇÔõÃ´ÏòËý±í°×ÄØ£¿\n",
-            "°¢ÍÁÍ»È»ÅÄÁËÅÄÄÔ´ü£º¶ÔÁË£¬ÎÒ¸øËýÐ´ÇéÊé°É£¡\n"
+            "é˜¿åœŸä¸€é‚ŠæŽƒåœ°ä¸€é‚Šæ–è‘—é ­ã€‚\n",
+            "é˜¿åœŸè‡ªè¨€è‡ªèªžåœ°èªªï¼šæˆ‘ä¸€ç›´å–œæ­¡é˜¿é³³ï¼Œä½†æ˜¯æ€Žéº¼å‘å¥¹è¡¨ç™½å‘¢ï¼Ÿ\n",
+            "é˜¿åœŸçªç„¶æ‹äº†æ‹è…¦è¢‹ï¼šå°äº†ï¼Œæˆ‘çµ¦å¥¹å¯«æƒ…æ›¸å§ï¼\n"
         }) );
         set("inquiry",([
-                "°¢·ï" : (: inquiry_afeng :),
+                "é˜¿é³³" : (: inquiry_afeng :),
         ]) );
         set_temp("qingshu",1);
         setup();
@@ -31,14 +31,14 @@ string inquiry_afeng()
 {
  object me=this_player();
  object obn;
- message_vision("°¢ÍÁËµµÀ£ºÕâÎ»"+ RANK_D->query_respect(me)+"£¬ÎÒ¿´ÄãÒ²ÊÇÐÔÇéÖÐÈË,ÎÒ¾Í²»ºÍÄãÈÆÈ¦×ÓÁË£¬ÄãÄÜ°ÑÕâ·âÐÅ½»¸ø°¢·ïÂð£¿\n", me );
+ message_vision("é˜¿åœŸèªªé“ï¼šé€™ä½"+ RANK_D->query_respect(me)+"ï¼Œæˆ‘çœ‹ä½ ä¹Ÿæ˜¯æ€§æƒ…ä¸­äºº,æˆ‘å°±ä¸å’Œä½ ç¹žåœˆå­äº†ï¼Œä½ èƒ½æŠŠé€™å°ä¿¡äº¤çµ¦é˜¿é³³å—Žï¼Ÿ\n", me );
  if(query_temp("qingshu")==0)
- {  message_vision("°¢ÍÁÓÖËµµÀ£ºÕâÎ»"+ RANK_D->query_respect(me)+"£¬ÎÒÒÑ¾­ÍÐÈË°ïÎÒ´øÁË£¬Ò²²»ÖªµÀËýµÄÐÄÒâÈçºÎ£¬°¦.....\n",me);
+ {  message_vision("é˜¿åœŸåˆèªªé“ï¼šé€™ä½"+ RANK_D->query_respect(me)+"ï¼Œæˆ‘å·²ç¶“æ‰˜äººå¹«æˆ‘å¸¶äº†ï¼Œä¹Ÿä¸çŸ¥é“å¥¹çš„å¿ƒæ„å¦‚ä½•ï¼Œå”‰.....\n",me);
    return "";
  }
-   message_vision("°¢ÍÁÓÖËµµÀ£ºÕâÎ»"+ RANK_D->query_respect(me)+"£¬ÎÒÕâÀïÓÐ·âÎÒÐ´ÁËÈýÌìÈýÒ¹µÄÇéÊé£¬Âé·³ÄãÁË,ÎÒºó°ëÉúµÄÐÒ¸£¾ÍÍÐ¸øÄãÁË¡£\n" , me);
+   message_vision("é˜¿åœŸåˆèªªé“ï¼šé€™ä½"+ RANK_D->query_respect(me)+"ï¼Œæˆ‘é€™è£¡æœ‰å°æˆ‘å¯«äº†ä¸‰å¤©ä¸‰å¤œçš„æƒ…æ›¸ï¼Œéº»ç…©ä½ äº†,æˆ‘å¾ŒåŠç”Ÿçš„å¹¸ç¦å°±æ‰˜çµ¦ä½ äº†ã€‚\n" , me);
    obn=new("/d/shiliang/npc/obj/qingshu");
    obn->move(me);
    set_temp("qingshu",0);
-   return "ÇëÄãÒ»¶¨½»µ½ËýµÄÊÖÉÏ¡£ËµÍê´Ó»³ÀïÃþ³öÒ»·âÕÛµþ³ÉÇ§Ö½º×°ãµÄÐÅ£¬½»¸øÄã¡£\n";
+   return "è«‹ä½ ä¸€å®šäº¤åˆ°å¥¹çš„æ‰‹ä¸Šã€‚èªªå®Œå¾žæ‡·è£¡æ‘¸å‡ºä¸€å°æŠ˜ç–Šæˆåƒç´™é¶´èˆ¬çš„ä¿¡ï¼Œäº¤çµ¦ä½ ã€‚\n";
 }

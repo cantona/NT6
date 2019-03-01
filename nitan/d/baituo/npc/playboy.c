@@ -4,11 +4,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("»¨»¨¹«×Ó", ({ "playboy" }) );
-        set("nickname", "²É»¨´óµÁ");
-        set("gender", "ÄÐÐÔ" );
+        set_name("èŠ±èŠ±å…¬å­", ({ "playboy" }) );
+        set("nickname", "æŽ¡èŠ±å¤§ç›œ");
+        set("gender", "ç”·æ€§" );
         set("age", 19);
-        set("long", "ÕâÊÇ¸öÁ÷ÀïÁ÷ÆøµÄ»¨»¨¹«×Ó¡£\n");
+        set("long", "é€™æ˜¯å€‹æµè£¡æµæ°£çš„èŠ±èŠ±å…¬å­ã€‚\n");
         set("attitude", "friendly");
         set("shen_type", -1);
 
@@ -45,13 +45,13 @@ void greeting(object ob)
         if (! ob || environment(ob) != environment())
                 return;
 
-        if( query("gender", ob) == "Å®ÐÔ" )
+        if( query("gender", ob) == "å¥³æ€§" )
         {
                 if (random(2) == 1)
-                        say("»¨»¨¹«×ÓÉ«ÃÔÃÔËµ£º" + RANK_D->query_respect(ob) +
-                            "¸ÉÂïÄÇÃ´×Å¼±¸ÏÂ·£¬ÅãÎÒÍæÍæ²»ÐÐÂð£¿\n");
+                        say("èŠ±èŠ±å…¬å­è‰²è¿·è¿·èªªï¼š" + RANK_D->query_respect(ob) +
+                            "å¹¹å˜›é‚£éº¼è‘—æ€¥è¶•è·¯ï¼Œé™ªæˆ‘çŽ©çŽ©ä¸è¡Œå—Žï¼Ÿ\n");
                 else
-                        say("»¨»¨¹«×Ó³ªµÀ£ºÂ·±ßµÄÒ°»¨²»²É°×²»²É~~¡£ÕâÎ»" +
-                            RANK_D->query_respect(ob) + "ÄãËµÊÇÂð£¿\n");
+                        say("èŠ±èŠ±å…¬å­å”±é“ï¼šè·¯é‚Šçš„é‡ŽèŠ±ä¸æŽ¡ç™½ä¸æŽ¡~~ã€‚é€™ä½" +
+                            RANK_D->query_respect(ob) + "ä½ èªªæ˜¯å—Žï¼Ÿ\n");
         }
 }

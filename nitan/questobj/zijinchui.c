@@ -1,5 +1,5 @@
 // bishuijian.c
-// for ÔÀÁéÉº
+// for å²³éˆçŠ
 
 #include <ansi.h>
 #include <weapon.h>
@@ -7,18 +7,18 @@ inherit HAMMER;
 
 void create()
 {
-        set_name(HIM"×Ï½ğ´¸"NOR, ({ "zijin chui", "chui", "hammer" }));
+        set_name(HIM"ç´«é‡‘éŒ˜"NOR, ({ "zijin chui", "chui", "hammer" }));
         set_weight(20000);
         set("taskobj", 1);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ã¶");
-                set("long","ÕâÊÇÒ»Ã¶ÓÉº£µ×½ğÄ¸ÖıÔì¶ø³ÉµÄ´ó´¸£¬¿´ÉÏÈ¥×Ï\n¹âÓ¯Ó¯£¬ÏÔµÃ¼«ÊÇ³ÁÖØ¡£\n");
+                set("unit", "æš");
+                set("long","é€™æ˜¯ä¸€æšç”±æµ·åº•é‡‘æ¯é‘„é€ è€Œæˆçš„å¤§éŒ˜ï¼Œçœ‹ä¸Šå»ç´«\nå…‰ç›ˆç›ˆï¼Œé¡¯å¾—æ¥µæ˜¯æ²‰é‡ã€‚\n");
                 set("value", 0);
                 set("material", "steel");
-                set("wield_msg", "$NÕñ±ÛÒ»»Ó, ÂÕ³öÒ»Ã¶³ÁÖØµÄ$n¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$nÂıÂıÊÕ»Ø¡£\n");
+                set("wield_msg", "$NæŒ¯è‡‚ä¸€æ®, æ„å‡ºä¸€æšæ²‰é‡çš„$nã€‚\n");
+                set("unwield_msg", "$Nå°‡æ‰‹ä¸­çš„$næ…¢æ…¢æ”¶å›ã€‚\n");
         }
         setup();
 }

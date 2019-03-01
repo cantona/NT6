@@ -1,4 +1,4 @@
-// chufang.c �����ӳ���
+// chufang.c 盤龍居廚房
 
 //** inherit PRIVATE_ROOM;
 inherit ROOM;                                   /* EXAMPLE */
@@ -16,13 +16,13 @@ string *names = ({
 
 void create()
 {
-        set("short", "����");
+        set("short", "廚房");
         set("long", @LONG
-�˴����������ӵĳ������书�ٸ��վ�Ҳ���ܱٹȣ�������Ҫ�Եġ�
+此處便是盤龍居的廚房，武功再高終究也不能辟谷，飯總是要吃的。
 LONG );
 
-        set("default_long", "�˴�����ROOM_NAME�ĳ�����ֻ�伸������æ��"/* EXAMPLE */
-                            "æȥ������ЪϢ��");                       /* EXAMPLE */
+        set("default_long", "此處便是ROOM_NAME的廚房，只間幾個僕人忙來"/* EXAMPLE */
+                            "忙去，不得歇息。");                       /* EXAMPLE */
                                                                        /* EXAMPLE */
 
         set("exits", ([

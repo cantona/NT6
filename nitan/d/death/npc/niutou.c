@@ -4,13 +4,13 @@ inherit NPC;
 
 void create()
 {
-        set_name("Å£Í·", ({ "niu tou", "niu", "tou" }) );
-        set("title", HIR "Ú¤¸®µØ²ØÍõµîÇ°" NOR);
-        set("nickname", HIY "½ğ¿ø" NOR + HIW "Òø¼×" NOR);
-        set("gender", "ÄĞĞÔ");
+        set_name("ç‰›é ­", ({ "niu tou", "niu", "tou" }) );
+        set("title", HIR "å†¥åºœåœ°è—ç‹æ®¿å‰" NOR);
+        set("nickname", HIY "é‡‘ç›”" NOR + HIW "éŠ€ç”²" NOR);
+        set("gender", "ç”·æ€§");
         set("age", 623);
         set("long", @LONG
-Ò»¸ö¸ß´ïÕÌĞí£¬Å£Í·ÈËÉíµÄ¹ÖÎï£¬¿´ÆğÀ´ºÜ²»ºÃÈÇ¡£
+ä¸€å€‹é«˜é”ä»—è¨±ï¼Œç‰›é ­äººèº«çš„æ€ªç‰©ï¼Œçœ‹èµ·ä¾†å¾ˆä¸å¥½æƒ¹ã€‚
 LONG );
         set("str", 35);
         set("int", 35);
@@ -72,8 +72,8 @@ void fight_ob(object ob)
         if (is_fighting(ob))
                 return;
 
-        message_vision(HIR "$N" HIR "´óÅ­£¬Ò»Éù±©ºÈ£¬Éíºó"
-                       "µÇÊ±ÌÚÆğÎŞÊıÔ©»ê£¬Ò»Æëâú¿Ş°§º¿¡£\n" NOR, this_object(), ob);
+        message_vision(HIR "$N" HIR "å¤§æ€’ï¼Œä¸€è²æš´å–ï¼Œèº«å¾Œ"
+                       "ç™»æ™‚é¨°èµ·ç„¡æ•¸å†¤é­‚ï¼Œä¸€é½Šæ…Ÿå“­å“€åšã€‚\n" NOR, this_object(), ob);
 
         ::fight_ob(ob);
         if( !is_killing(query("id", ob)) )

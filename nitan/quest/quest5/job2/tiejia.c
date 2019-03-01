@@ -3,12 +3,12 @@
 inherit CLOTH;
 void create()
 {
-        set_name(BLK"ÖØ¸ÖÕ½¼×"NOR, ({ "zhonggang zhanjia","jia" }) );   
+        set_name(BLK"é‡é‹¼æˆ°ç”²"NOR, ({ "zhonggang zhanjia","jia" }) );   
         set_weight(20000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼ş");
+                set("unit", "ä»¶");
                 set("material", "gold");
                 set("value", 1000000);
                 set("armor_prop/armor", 500);

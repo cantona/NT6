@@ -7,21 +7,21 @@ inherit HEAD;
 
 void create()
 {
-        set_name(HIR "ºìÃµ¹å" NOR, ({ "hong meigui", "meigui" }));
+        set_name(HIR "ç´…çŽ«ç‘°" NOR, ({ "hong meigui", "meigui" }));
         set_weight(10);
         if (clonep())
                 set_default_object(__FILE__);
         else 
         {
-                set("long", "ÈÈ±¼±¼·ÅµÄºìÃµ¹å¡£\n");
-                set("unit", "¶ä");
+                set("long", "ç†±å¥”å¥”æ”¾çš„ç´…çŽ«ç‘°ã€‚\n");
+                set("unit", "æœµ");
                 set("no_sell", 1);
                 set("value", 100000);
                 set("material", "plant");
                 set("armor_prop/armor", 0);
                 set("armor_prop/per", 3);
-                set("wear_msg", "$NÇáÇáµØ°ÑÒ»¶ä$n´÷ÔÚÍ·ÉÏ¡£\n");
-                set("unwield_msg", "$NÇáÇáµØ°Ñ$n´ÓÍ·ÉÏ³ýÁËÏÂÀ´¡£\n");
+                set("wear_msg", "$Nè¼•è¼•åœ°æŠŠä¸€æœµ$næˆ´åœ¨é ­ä¸Šã€‚\n");
+                set("unwield_msg", "$Nè¼•è¼•åœ°æŠŠ$nå¾žé ­ä¸Šé™¤äº†ä¸‹ä¾†ã€‚\n");
                 set("female_only", 1);
         }
 

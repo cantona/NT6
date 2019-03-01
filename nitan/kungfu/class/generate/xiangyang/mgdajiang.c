@@ -10,10 +10,10 @@ void check_time();
 
 void create()
 {
-        set_name(HIC "ÃÉ¹Å´ó½«" NOR, ({"menggu dajiang", "dajiang" }));
-        set("gender", "ÄÐÐÔ");
+        set_name(HIC "è’™å¤å¤§å°‡" NOR, ({"menggu dajiang", "dajiang" }));
+        set("gender", "ç”·æ€§");
         set("age", 40 + random(20));
-        set("long", "ÕâÊÇÃÉ¹Å¾ü´ó½«£¬Í³Ë§Èý¾ü£¬ÆøÆÇ²»·²¡££¡");
+        set("long", "é€™æ˜¯è’™å¤è»å¤§å°‡ï¼Œçµ±å¸¥ä¸‰è»ï¼Œæ°£é­„ä¸å‡¡ã€‚ï¼");
         set("chat_chance", 30);
         set("chat_msg", ({ (: random_move :) }));
         set("chat_chance_combat", 60);
@@ -27,7 +27,7 @@ void create()
 
         set("no_get", 1);
 
-        // ÃÉ¹ÅÊ¿±ø±êÖ¾
+        // è’™å¤å£«å…µæ¨™å¿—
         set("mgbing", 1);
         
         set("no_nuoyi", 1);
@@ -36,7 +36,7 @@ void create()
         
         set_temp("apply/armor", 5000);
         set_temp("apply/damage",10000);
-        set_temp("apply/attack", 100000); // ¸ßÃüÖÐ
+        set_temp("apply/attack", 100000); // é«˜å‘½ä¸­
 
         set("str", 80);
         set("int", 40 + random(24));
@@ -73,12 +73,12 @@ void create()
 
         set_temp("born_time", time());
 
-        set_temp("dest_now", 0); // ³·ÍË±ê¼Ç 0 Îª²»³·ÍË¼ÌÐøÕ½¶·
+        set_temp("dest_now", 0); // æ’¤é€€æ¨™è¨˜ 0 ç‚ºä¸æ’¤é€€ç¹¼çºŒæˆ°é¬¥
 
         add_money("gold", 1500 + random(1000));
 
-        // ÉèÖÃ½±Àø¼¶±ð
-        set("gift/level", "´ó½«");
+        // è¨­ç½®çŽå‹µç´šåˆ¥
+        set("gift/level", "å¤§å°‡");
         set("gift/exp", 500000);
         set("gift/pot", 500000);
         set("gift/experience", 500000);
@@ -97,7 +97,7 @@ void check_time()
 
         if (! me->is_fighting())return;
 
-        // Í¬Ê±²¹³äÄÚÁ¦
+        // åŒæ™‚è£œå……å…§åŠ›
         set("neili", query("max_neili"));
 
         if (random(10) == 1)
@@ -118,7 +118,7 @@ void check_time()
 
         if (me->is_busy())me->interrupt_busy(this_object(),1000); 
 
-        // ºÜÐ¡¼¸ÂÊ»Ö¸´ÆøÑª
+        // å¾ˆå°å¹¾çŽ‡æ¢å¾©æ°£è¡€
         if (random(20) == 1)
         {
                 if (me->query("eff_qi") < me->query("max_qi") / 3)me->add("eff_qi", me->query("max_qi") / 5);
@@ -128,7 +128,7 @@ void check_time()
 
 int accept_fight(object ob)
 {
-        command("say ÎÒ¿ÉÃ»ÐËÈ¤ÅãÄãÍæ£¬¿ì¸øÎÒ¹ö¿ª¡£");
+        command("say æˆ‘å¯æ²’èˆˆè¶£é™ªä½ çŽ©ï¼Œå¿«çµ¦æˆ‘æ»¾é–‹ã€‚");
         return 0;
 }
 
@@ -139,29 +139,29 @@ int accept_hit(object ob)
 
 int accept_ansuan(object ob)
 {
-        return notify_fail("ÄÇÈË¾¯ÌèÐÔºÃ¸ß£¬ÄãÄÑÒÔÏÂÊÖ¡£\n");
+        return notify_fail("é‚£äººè­¦æƒ•æ€§å¥½é«˜ï¼Œä½ é›£ä»¥ä¸‹æ‰‹ã€‚\n");
 }
 
 int accept_touxi(object ob)
 {
-        return notify_fail("ÄÇÈË¾¯ÌèÐÔºÃ¸ß£¬ÄãÄÑÒÔÏÂÊÖ¡£\n");
+        return notify_fail("é‚£äººè­¦æƒ•æ€§å¥½é«˜ï¼Œä½ é›£ä»¥ä¸‹æ‰‹ã€‚\n");
 }
 
 void die(object killer)
 {
-        object dob;             // ´òÔÎÕâ¸öNPCµÄÈË
-        int n;                  // ×é¶ÓÖÐ¶ÓÔ±ÊýÄ¿
-        int exp;                // ÐèÒª¹Ï·ÖµÄ¾­Ñé
-        int pot;                // ÐèÒª¹Ï·ÖµÄÇ±ÄÜ
-        int tihui;              // ÐèÒª¹Ï·ÖµÄÌå»á
-        int weiwang;            // ÐèÒª¹Ï·ÖµÄÍþÍû
-        int score;              // ÐèÒª¹Ï·ÖµÄÔÄÀú
+        object dob;             // æ‰“æšˆé€™å€‹NPCçš„äºº
+        int n;                  // çµ„éšŠä¸­éšŠå“¡æ•¸ç›®
+        int exp;                // éœ€è¦ç“œåˆ†çš„ç¶“é©—
+        int pot;                // éœ€è¦ç“œåˆ†çš„æ½›èƒ½
+        int tihui;              // éœ€è¦ç“œåˆ†çš„é«”æœƒ
+        int weiwang;            // éœ€è¦ç“œåˆ†çš„å¨æœ›
+        int score;              // éœ€è¦ç“œåˆ†çš„é–±æ­·
 
-        object *t;              // É±ËÀÎÒµÄÈËµÄ¶ÓÎéÁÐ±í
+        object *t;              // æ®ºæ­»æˆ‘çš„äººçš„éšŠä¼åˆ—è¡¨
         object tob;
         int i;
 
-        // ÕÒµ½É±ÁËÎÒ(NPC)»òÊÇ´òÔÎÎÒµÄÈË
+        // æ‰¾åˆ°æ®ºäº†æˆ‘(NPC)æˆ–æ˜¯æ‰“æšˆæˆ‘çš„äºº
         if (! objectp(dob = killer))
                 dob = query_defeated_by();
 
@@ -172,7 +172,7 @@ void die(object killer)
                 return;
         }
 
-        // Õ½¶·½øÐÐÊ±²ÅÓÐ½±Àø
+        // æˆ°é¬¥é€²è¡Œæ™‚æ‰æœ‰çŽå‹µ
         if (XYWAR_D->now_status() != 2)
         {
                 //XYWAR_D->soldier_die(this_object()->query("route"), 1);
@@ -186,12 +186,12 @@ void die(object killer)
                 pot = query("gift/pot");
                 tihui = query("gift/experience");
 
-                // ×é¶Ó
+                // çµ„éšŠ
                 t = dob->query_team();
 
                 if (pointerp(t))n = sizeof(t);
 
-                // ×é¶ÓºóÐèÒª¹Ï·Ö¾­Ñé
+                // çµ„éšŠå¾Œéœ€è¦ç“œåˆ†ç¶“é©—
                 if (n > 1)
                 {
                        exp /= n;
@@ -205,37 +205,37 @@ void die(object killer)
                                 
                 if (pointerp(t))
                 {                                                
-                        /// 999 ±íÃ÷»ñµÃµÄÌØÊâ½±Àø²»ÊÜÉÏÏÞÏÞÖÆ
+                        /// 999 è¡¨æ˜Žç²å¾—çš„ç‰¹æ®ŠçŽå‹µä¸å—ä¸Šé™é™åˆ¶
                         foreach(tob in t)
                         {
                                    if (objectp(tob) && living(tob))
                                    {
-                                                     // ÉèÖÃÉ±µÐ±êÖ¾£¬×îÎª×îÖÕ½±ÀøÒÀ¾Ý
+                                                     // è¨­ç½®æ®ºæ•µæ¨™å¿—ï¼Œæœ€ç‚ºæœ€çµ‚çŽå‹µä¾æ“š
                                                      tob->set("xywar/xy_" + sprintf("%d", XYWAR_D->get_ran_num()), pot);
 
                                                   GIFT_D->delay_bonus(tob,
                                                          ([ "exp"         : exp + ((tob == dob) ? exp : 0),
                                                               "pot"         : pot + ((tob == dob) ? pot : 0),
                                                                "mar"         : tihui + ((tob == dob) ? tihui : 0),
-                                                              "prompt"      : "ÄãµÄ¶ÓÎé»÷±Ð" + name() + "Ö®ºó" ]), 999);
+                                                              "prompt"      : "ä½ çš„éšŠä¼æ“Šæ–ƒ" + name() + "ä¹‹å¾Œ" ]), 999);
                                                                   
                                     }
                         }
                 }
                 else
                 {
-                        // ÉèÖÃÉ±µÐ±êÖ¾£¬×îÎª×îÖÕ½±ÀøÒÀ¾Ý
+                        // è¨­ç½®æ®ºæ•µæ¨™å¿—ï¼Œæœ€ç‚ºæœ€çµ‚çŽå‹µä¾æ“š
                         dob->set("xywar/xy_" + sprintf("%d", XYWAR_D->get_ran_num()), pot);
                         
                         GIFT_D->delay_bonus(dob,
                             ([ "exp"         : exp,
                                "pot"         : pot,
                                "mar"         : tihui,
-                               "prompt"      : "ÄãÔÚ»÷±Ð" + name() + "Ö®ºó" ]), 999);
+                               "prompt"      : "ä½ åœ¨æ“Šæ–ƒ" + name() + "ä¹‹å¾Œ" ]), 999);
                 }
         }
 
-        // Õý³£ËÀÍö
+        // æ­£å¸¸æ­»äº¡
         //XYWAR_D->soldier_die(this_object()->query("route"), 1);
         destruct(this_object());
 
@@ -264,22 +264,22 @@ void random_move()
                 set_temp("dest_now", 1);
         }
 
-        // ÐÐ½øÂ·¾¶·½Ïò
-        // ÐèÒªÏÈÉèÖÃ
+        // è¡Œé€²è·¯å¾‘æ–¹å‘
+        // éœ€è¦å…ˆè¨­ç½®
         route = query("route");
 
         env = environment(this_object());
 
         if (! objectp(env))return;
 
-        // Èç¹ûµ½´ïÖÐÑë¹ã³¡Ðû¸æÏåÑô±£ÎÀÕ½Ê§°Ü
+        // å¦‚æžœåˆ°é”ä¸­å¤®å»£å ´å®£å‘Šè¥„é™½ä¿è¡›æˆ°å¤±æ•—
         if (base_name(env) == "/d/xiangyang/guangchang")
         {                        
-               XYWAR_D->arrived_center();// ±£ÎÀÕ½Ê§°Ü
+               XYWAR_D->arrived_center();// ä¿è¡›æˆ°å¤±æ•—
                return;
         }
 
-        // °´ÕÕÂ·ÓÉÁÐ±íÒÆ¶¯
+        // æŒ‰ç…§è·¯ç”±åˆ—è¡¨ç§»å‹•
         if (stringp(route) && XYWAR_D->now_status() == 2)command("go " + route);
 }
 
@@ -290,11 +290,11 @@ void init()
         if (! living(me) || me->query_temp("apply/invisible"))
                  return;
 
-        // ÃÉ¹Å²¢²»Ïà»¥Õ½¶·
+        // è’™å¤ä¸¦ä¸ç›¸äº’æˆ°é¬¥
                 if (me->query("mgbing"))return;                        
 
-        // ÑÓ³ÙÒ»¶¨Ê±¼ä¹¥»÷
-        // ÎªÁËÉèÖÃfighting±ê¼ÇÒ²¸üÕæÊµ
+        // å»¶é²ä¸€å®šæ™‚é–“æ”»æ“Š
+        // ç‚ºäº†è¨­ç½®fightingæ¨™è¨˜ä¹Ÿæ›´çœŸå¯¦
         if (! me->query("env/invisible"))call_out("do_kill", 6 + random(8), me);
         if (playerp(me))me->set("env/combatd",4);
 }
@@ -306,10 +306,10 @@ void do_kill(object me)
         if (! living(me) || me->query_temp("apply/invisible"))
                  return;
 
-        // ²¢²»ÊÇÃ¿¸ö¶ÔÏó¶¼¹¥»÷£¬ÕâÑù×öÊÇÎªÁË½ÚÔ¼ÏµÍ³×ÊÔ´ºÍ¸üÎªÕæÊµ
+        // ä¸¦ä¸æ˜¯æ¯å€‹å°è±¡éƒ½æ”»æ“Šï¼Œé€™æ¨£åšæ˜¯ç‚ºäº†ç¯€ç´„ç³»çµ±è³‡æºå’Œæ›´ç‚ºçœŸå¯¦
         if (me->is_fighting() && random(3) == 1)return;
 
-        // Ö»ÄÜÍ¬Ê±¹¥»÷Ò»¸öÈË
+        // åªèƒ½åŒæ™‚æ”»æ“Šä¸€å€‹äºº
         if (this_object()->is_fighting())return;
 
         kill_ob(me);

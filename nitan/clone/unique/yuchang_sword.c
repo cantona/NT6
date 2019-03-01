@@ -1,7 +1,7 @@
 // Copyright (C) 2003, by Xlz. All rights reserved. 
 // This software can not be used, copied, or modified  
 // in any form without the written permission from authors. 
-// yuchang-sword.c Óã³¦½£
+// yuchang-sword.c é­šè…¸åŠ
 // for only one object in mud  
 
 #include <ansi.h>  
@@ -11,23 +11,23 @@ inherit F_UNIQUE;
 
 void create()  
 {  
-        set_name(HIY "Óã³¦½£" NOR, ({"yuchang sword", "yuchang", "sword"}));  
+        set_name(HIY "é­šè…¸åŠ" NOR, ({"yuchang sword", "yuchang", "sword"}));  
         set_weight(15000);  
         if (clonep())  
                 set_default_object(__FILE__);  
         else {  
-        set("unit", "°Ñ");  
-                        set("long", sort_msg(CYN "´Ë½£ÄËÊÇÅ·Ò±×ÓÔÚÕ¿Â¬É½ÉÏËùÖı£¬Óã³¦½£ÊÇÒ»°ÑÓÂ¾øÖ®½£¡£\n" NOR));
+        set("unit", "æŠŠ");  
+                        set("long", sort_msg(CYN "æ­¤åŠä¹ƒæ˜¯æ­å†¶å­åœ¨æ¹›ç›§å±±ä¸Šæ‰€é‘„ï¼Œé­šè…¸åŠæ˜¯ä¸€æŠŠå‹‡çµ•ä¹‹åŠã€‚\n" NOR));
         set("value", 100000);  
         set("material", "steel"); 
-        set("no_sell", "ÎÒµÄÌì¡­Äã¡­ÄãÖªµÀÕâÊÇÉ¶Ã´£¿ÕâÄãÒ²¸ÒÄÃÀ´Âô£¿");  
+        set("no_sell", "æˆ‘çš„å¤©â€¦ä½ â€¦ä½ çŸ¥é“é€™æ˜¯å•¥éº¼ï¼Ÿé€™ä½ ä¹Ÿæ•¢æ‹¿ä¾†è³£ï¼Ÿ");  
         set("unique", 1);  
         set("rigidity", 500);  
         set("replica_ob", "/clone/weapon/changjian"); 
         set("no_put",1);  
         set("no_steal",1);    
-        set("wield_msg",CYN"$N[àá]µÄÒ»Éù³é³öÒ»°ÑÓã³¦½££¬ÂşÌìÎÚÔÆ£¬É±ÆøËÄ½¦¡£\n"NOR);  
-        set("unwield_msg",CYN"$N°ÑÊÖÖĞµÄÓã³¦½£²åÈë½£ÇÊ£¬ÎÚÔÆËÙÉ¢£¬É±Æø¶ÙÎŞ¡£\n"NOR);  
+        set("wield_msg",CYN"$N[å™Œ]çš„ä¸€è²æŠ½å‡ºä¸€æŠŠé­šè…¸åŠï¼Œæ¼«å¤©çƒé›²ï¼Œæ®ºæ°£å››æ¿ºã€‚\n"NOR);  
+        set("unwield_msg",CYN"$NæŠŠæ‰‹ä¸­çš„é­šè…¸åŠæ’å…¥åŠé˜ï¼Œçƒé›²é€Ÿæ•£ï¼Œæ®ºæ°£é “ç„¡ã€‚\n"NOR);  
      }
      init_sword(650); 
      setup(); 
@@ -37,6 +37,6 @@ mixed hit_ob(object me, object victim, int damage_bonus)
 { 
         victim->receive_damage("jing",query("str", me)*2,me);
         victim->receive_wound("jing",query("str", me)*2,me);
-         return CYN "Óã³¦½£¼Ğ´ø×Å´Ì¶úµÄÆÆ¿ÕÉù»®³öÒ»µÀµÀ³¤ºç£¬ö®Ê±¼ä$n" 
-               CYN "Ö»¸Ğµ½ĞÄÉñÒâÂÒ¡£\n" NOR; 
+         return CYN "é­šè…¸åŠå¤¾å¸¶è‘—åˆºè€³çš„ç ´ç©ºè²åŠƒå‡ºä¸€é“é“é•·è™¹ï¼Œéœæ™‚é–“$n" 
+               CYN "åªæ„Ÿåˆ°å¿ƒç¥æ„äº‚ã€‚\n" NOR; 
 }

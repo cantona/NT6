@@ -40,7 +40,7 @@ int set_valid_level(int level)
         valid_level = level;
         return level;
 }
-// µÈ¼¶·âÓ¡
+// ç­‰ç´šå°å°
 int can_improve_level(int level)
 {
         if (level >= valid_level)
@@ -66,10 +66,10 @@ int level_summary(object me, int level)
                 lvl_lst = ([]);
                 lvl_lst[str] = 1;
                 CHANNEL_D->channel_broadcast(
-                        "news", sprintf("%s(%s)µÄÈËÎïµÈ¼¶ÒÑ¾­´ïµ½ÁË %d ¼¶£¨¹Å½ñÎäÁÖµÚÒ»ÈË£©¡£",
+                        "news", sprintf("%s(%s)çš„äººç‰©ç­‰ç´šå·²ç¶“é”åˆ°äº† %d ç´šï¼ˆå¤ä»Šæ­¦æ—ç¬¬ä¸€äººï¼‰ã€‚",
                                         query("name", me),query("id", me),level));
 
-                HISTORY_D->add_history("ÈËÎïµÈ¼¶ÅÅÃû", query("id", me), sprintf("ÈËÎïµÈ¼¶ %d ¼¶£¬ÄêÁä %d ÅÅÃû: 1.\n",
+                HISTORY_D->add_history("äººç‰©ç­‰ç´šæ’å", query("id", me), sprintf("äººç‰©ç­‰ç´š %d ç´šï¼Œå¹´é½¡ %d æ’å: 1.\n",
                                         level, query("age", me)));
         }
         else
@@ -83,10 +83,10 @@ int level_summary(object me, int level)
                                 map_delete(lvl_lst,lvl_term[i]);
                                 lvl_lst[str]=1;
                                 CHANNEL_D->channel_broadcast(
-                                        "news",sprintf("%s(%s)µÄÈËÎïµÈ¼¶ÒÑ¾­´ïµ½ÁË %d ¼¶£¨µ±½ñÎäÁÖµÚÒ»ÈË£©¡£",
+                                        "news",sprintf("%s(%s)çš„äººç‰©ç­‰ç´šå·²ç¶“é”åˆ°äº† %d ç´šï¼ˆç•¶ä»Šæ­¦æ—ç¬¬ä¸€äººï¼‰ã€‚",
                                                         query("name", me),query("id", me),level));
                                         
-                                HISTORY_D->add_history("ÈËÎïµÈ¼¶ÅÅÃû", query("id", me), sprintf("ÈËÎïµÈ¼¶ %d ¼¶£¬ÄêÁä %d ÅÅÃû: 1.\n",
+                                HISTORY_D->add_history("äººç‰©ç­‰ç´šæ’å", query("id", me), sprintf("äººç‰©ç­‰ç´š %d ç´šï¼Œå¹´é½¡ %d æ’å: 1.\n",
                                                         level, query("age", me)));
                         }
 
@@ -97,10 +97,10 @@ int level_summary(object me, int level)
                                 if( n <= 10 )   
                                 {
                                         CHANNEL_D->channel_broadcast(
-                                                "news",sprintf("%s(%s)µÄÈËÎïµÈ¼¶ÒÑ¾­´ïµ½ÁË %d ¼¶£¨µ±½ñÎäÁÖµÚ%sÈË£©¡£",
+                                                "news",sprintf("%s(%s)çš„äººç‰©ç­‰ç´šå·²ç¶“é”åˆ°äº† %d ç´šï¼ˆç•¶ä»Šæ­¦æ—ç¬¬%säººï¼‰ã€‚",
                                                                 query("name", me),query("id", me),level,chinese_number(lvl_lst[lvl_term[i]])));
                                 
-                                        HISTORY_D->add_history("ÈËÎïµÈ¼¶ÅÅÃû", query("id", me), sprintf("ÈËÎïµÈ¼¶ %d ¼¶£¬ÄêÁä %d ÅÅÃû: %d.\n",
+                                        HISTORY_D->add_history("äººç‰©ç­‰ç´šæ’å", query("id", me), sprintf("äººç‰©ç­‰ç´š %d ç´šï¼Œå¹´é½¡ %d æ’å: %d.\n",
                                                                 level, query("age", me), n));
                                 }
                         }
@@ -108,7 +108,7 @@ int level_summary(object me, int level)
                         if (level<file_level)
                         {
                                 CHANNEL_D->channel_broadcast(
-                                        "news",sprintf("%s(%s)µÄÈËÎïÒÑ¾­´ïµ½ÁË %d ¼¶¡£",
+                                        "news",sprintf("%s(%s)çš„äººç‰©å·²ç¶“é”åˆ°äº† %d ç´šã€‚",
                                                         query("name", me),query("id", me),level));
                         }
                 }
@@ -130,9 +130,9 @@ int improve_valid_level(object ob, int level)
                 total+=({query("id", ob)});
                 if (sizeof(total) >= 10)
                 {
-                        CHANNEL_D->channel_broadcast("news", HIM+query("id", ob)+HIM"ºÏ"+implode(total[0..sizeof(total) - 3], "¡¢") +
-                                "ºÍ" + total[sizeof(total) - 2] + "µÈÖÚÈËÖ®Á¦£¬"+
-                                "ÆÆ³ıÁË" HIY + valid_level + NOR +HIM "¼¶·âÓ¡¡£\n" NOR);
+                        CHANNEL_D->channel_broadcast("news", HIM+query("id", ob)+HIM"åˆ"+implode(total[0..sizeof(total) - 3], "ã€") +
+                                "å’Œ" + total[sizeof(total) - 2] + "ç­‰çœ¾äººä¹‹åŠ›ï¼Œ"+
+                                "ç ´é™¤äº†" HIY + valid_level + NOR +HIM "ç´šå°å°ã€‚\n" NOR);
                         valid_level += 10;
                         total = ({});
                 }
@@ -173,7 +173,7 @@ void check_user(object ob)
         if( query("family/generation", ob) == 0 )
                 delete("family", ob);
 
-        if( query("gender", ob) == "ÎŞĞÔ" )
+        if( query("gender", ob) == "ç„¡æ€§" )
                 set("class", "eunach", ob);
 
         if( query("combat/today/which_day", ob) != time()/86400 )
@@ -182,7 +182,7 @@ void check_user(object ob)
         if( query("couple", ob) && !query("static/marry", ob) )
                 set("static/marry", 1, ob);
         /*
-        if( query("family/family_name", ob) == "Ø¤°ï" &&
+        if( query("family/family_name", ob) == "ä¸å¹«" &&
             query("family/beggarlvl", ob) )
         {
                 budai = new("/d/gaibang/obj/budai");
@@ -194,13 +194,13 @@ void check_user(object ob)
         if (mapp(party = my["party"]) && stringp(party["party_name"]))
                 party["party_name"] = filter_color(party["party_name"]);
 
-        // ¼ÇÂ¼Ãû×Ö
+        // è¨˜éŒ„åå­—
         NAME_D->map_name(query("name", ob),query("id", ob));
 
-        // ÖØĞÂÉèÖÃÔËĞĞ¼ÆÊ±Æ÷
+        // é‡æ–°è¨­ç½®é‹è¡Œè¨ˆæ™‚å™¨
         reset_eval_cost();
 
-        // ¸³Óè³ÆºÅ
+        // è³¦äºˆç¨±è™Ÿ
         set_title(ob);
 
         if (undefinedp(my["eff_jing"]))  my["eff_jing"] = my["max_jing"];
@@ -275,7 +275,7 @@ varargs string clear_user_data(string user, string cat, int raw)
             getuid(previous_object()) != ROOT_UID &&
             geteuid(previous_object()) != "lonely" &&
             geteuid(previous_object()) != user)
-                return "ÄãÎŞÈ¨Çå³ı¸ÃÍæ¼ÒµÄÊı¾İ¡£\n";
+                return "ä½ ç„¡æ¬Šæ¸…é™¤è©²ç©å®¶çš„æ•¸æ“šã€‚\n";
 
         // find the user's body
         seteuid(getuid());
@@ -289,14 +289,14 @@ varargs string clear_user_data(string user, string cat, int raw)
                 if (!ob)
                 {
                         catch(destruct(login_ob));
-                        return "ÔİÊ±ÎŞ·¨Éú³ÉÍæ¼Ò¶ÔÏó¡£\n";
+                        return "æš«æ™‚ç„¡æ³•ç”Ÿæˆç©å®¶å°è±¡ã€‚\n";
                 }
 
                 if (!ob->restore())
                 {
                         catch(destruct(login_ob));
                         catch(destruct(ob));
-                        return "Ã»ÓĞÕâ¸öÍæ¼Ò¡£\n";
+                        return "æ²’æœ‰é€™å€‹ç©å®¶ã€‚\n";
                 }
 
                 ob->setup();
@@ -334,7 +334,7 @@ varargs string clear_user_data(string user, string cat, int raw)
                                 if (environment(temp))
                                 {
                                         message("vision", HIM + temp->name() +
-                                                HIM "ºöÈ»»¯×÷Ò»ÂÆÇåÑÌ£¬²»¼ûÁË£¡\n" NOR,
+                                                HIM "å¿½ç„¶åŒ–ä½œä¸€ç¸·æ¸…ç…™ï¼Œä¸è¦‹äº†ï¼\n" NOR,
                                                 environment(temp));
                                 }
                         }
@@ -366,7 +366,7 @@ varargs string clear_user_data(string user, string cat, int raw)
                             environment(item))
                         {
                                 message("vision", HIM + item->name() +
-                                        "ºöÈ»»¯×÷Ò»¹ÉÇáÑÌ£¬²»¼ûÁË£¡\n" NOR,
+                                        "å¿½ç„¶åŒ–ä½œä¸€è‚¡è¼•ç…™ï¼Œä¸è¦‹äº†ï¼\n" NOR,
                                         environment(item));
                         }
 
@@ -402,7 +402,7 @@ varargs string clear_user_data(string user, string cat, int raw)
                                 if (environment(temp))
                                 {
                                         message("vision", HIM + temp->name() +
-                                                HIM "ºöÈ»»¯×÷Ò»ÂÆÇåÑÌ£¬²»¼ûÁË£¡\n" NOR,
+                                                HIM "å¿½ç„¶åŒ–ä½œä¸€ç¸·æ¸…ç…™ï¼Œä¸è¦‹äº†ï¼\n" NOR,
                                                 environment(temp));
                                 }
                         }
@@ -431,7 +431,7 @@ varargs string clear_user_data(string user, string cat, int raw)
                                 if (environment(temp))
                                 {
                                         message("vision", HIM + temp->name() +
-                                                HIM "ºöÈ»»¯×÷Ò»ÂÆÇåÑÌ£¬²»¼ûÁË£¡\n" NOR,
+                                                HIM "å¿½ç„¶åŒ–ä½œä¸€ç¸·æ¸…ç…™ï¼Œä¸è¦‹äº†ï¼\n" NOR,
                                                 environment(temp));
                                 }
                         }
@@ -606,7 +606,7 @@ varargs string clear_user_data(string user, string cat, int raw)
                 catch(destruct(ob));
         }
 
-        return "³É¹¦¡£\n";
+        return "æˆåŠŸã€‚\n";
 }
 
 // remove an user
@@ -616,7 +616,7 @@ varargs string remove_user(string user, int raw)
         string result;
         string flogin, fuser, fpackage;
 
-        if (user == "lonely") return "ºÃÏó²»¿ÉÒÔÒ®£¡";
+        if (user == "lonely") return "å¥½è±¡ä¸å¯ä»¥è€¶ï¼";
 
         // destruct the user object
         if (ob = find_player(user))
@@ -660,7 +660,7 @@ varargs string remove_user(string user, int raw)
                 rm(DATA_DIR + flogin);
                 rm(DATA_DIR + fuser);
         }
-        // ÂÛÌ³É¾³ıID
+        // è«–å£‡åˆªé™¤ID
         BOARD_D->db_remove_player(user);
 #else
         cp(DATA_DIR + flogin, TEMP_DIR + flogin);
@@ -693,24 +693,24 @@ void born_player(object me)
         set("eff_jing", 450, me);
         set("jing", 450, me);
 
-        msg = HIG "ÄãÓëÉú¾ãÀ´µÄ¼¼ÄÜÓĞ£º" NOR;
+        msg = HIG "ä½ èˆ‡ç”Ÿä¿±ä¾†çš„æŠ€èƒ½æœ‰ï¼š" NOR;
 
-        // ²é¿´ËùÓĞµÄÌØÊâ¼¼ÄÜÎÄ¼ş
+        // æŸ¥çœ‹æ‰€æœ‰çš„ç‰¹æ®ŠæŠ€èƒ½æ–‡ä»¶
         // files = get_dir("/kungfu/special/");
         files = special_skill;
         delete("special_skill", me);
 
         if (sizeof(files))
         {
-                // ÕûÀíËùÓĞµÄ¼¼ÄÜÎÄ¼ş
+                // æ•´ç†æ‰€æœ‰çš„æŠ€èƒ½æ–‡ä»¶
                 // for (i = 0; i < sizeof(files); i++)
                         // sscanf(files[i], "%s.c", files[i]);
 
-                // ÏÈÌìÈİÃ² < 20 ²»»á×¤ÑÕ
+                // å…ˆå¤©å®¹è²Œ < 20 ä¸æœƒé§é¡
                 if( query("per", me)<20 )
                         files -= ({ "youth" });
 
-                // »ñµÃµÚÒ»Ïî¼¼ÄÜ
+                // ç²å¾—ç¬¬ä¸€é …æŠ€èƒ½
                 special = files[random(sizeof(files))];
                 set("special_skill/"+special, 1, me);
                 msg += SPECIAL_D(special)->name();
@@ -719,26 +719,26 @@ void born_player(object me)
                 //if (sizeof(files) && random(100) == 1)
                 if (sizeof(files))
                 {
-                        // »ñµÃµÚ¶şÏî¼¼ÄÜ
+                        // ç²å¾—ç¬¬äºŒé …æŠ€èƒ½
                         special = files[random(sizeof(files))];
                         set("special_skill/"+special, 1, me);
-                        msg += HIG "¡¢" NOR + SPECIAL_D(special)->name();
+                        msg += HIG "ã€" NOR + SPECIAL_D(special)->name();
                 }
 
                 if (random(1000000) == 1)
                 {
-                        // »ñµÃÖÕ¼«¼¼ÄÜ
+                        // ç²å¾—çµ‚æ¥µæŠ€èƒ½
                         special = special_ultimate[random(sizeof(special_ultimate))];
                         set("special_skill/"+special, 1, me);
-                        msg += HIG "¡¢" NOR + SPECIAL_D(special)->name();
+                        msg += HIG "ã€" NOR + SPECIAL_D(special)->name();
                 }
 
-                msg += HIG "¡£\n" NOR;
+                msg += HIG "ã€‚\n" NOR;
                 me->start_call_out((: call_other, __FILE__,
                                       "notice_player", me, msg :), 0);
         }
 #ifdef DB_BOARD
-        // ÂÛÌ³´´½¨ID
+        // è«–å£‡å‰µå»ºID
         BOARD_D->db_create_user(me);
 #endif
 }
@@ -751,7 +751,7 @@ void notice_player(object me, string msg)
                                       me:), 3);
 }
 
-// ¸øÓèĞÂµÄMYGIFT¸¨ÖúÈÎÎñ
+// çµ¦äºˆæ–°çš„MYGIFTè¼”åŠ©ä»»å‹™
 void give_new_mygift_quest(object me)
 {
         MYGIFT_D->give_mygift(me, "1");
@@ -775,7 +775,7 @@ mixed set_title_base(mixed ts)
         title_base = ts;
 }
 
-// Çå³ıÄ³¸öÍæ¼ÒµÄ title
+// æ¸…é™¤æŸå€‹ç©å®¶çš„ title
 void remove_title(object ob)
 {
         int i;
@@ -788,16 +788,16 @@ void remove_title(object ob)
 
         for (i = 0; i < sizeof(title_base); i++)
         {
-                // ËÑË÷ËùÓĞµÄ title
+                // æœç´¢æ‰€æœ‰çš„ title
                 if( title_base[i][1] == query("id", ob) )
-                        // È¥µôtitle
+                        // å»æ‰title
                         title_base[i][1] = 0;
         }
         save();
         return;
 }
 
-// ÉèÖÃÄ³¸öÍæ¼ÒµÄ title
+// è¨­ç½®æŸå€‹ç©å®¶çš„ title
 void set_title(object ob)
 {
         string id;
@@ -810,20 +810,20 @@ void set_title(object ob)
         for (i = 0; i < sizeof(title_base); i++)
                 if (title_base[i][1] == id)
                 {
-                        // ¼ÓÉÏtitle
+                        // åŠ ä¸Štitle
                         set_temp("title", title_base[i][0], ob);
                         return;
                 }
 
-        // Õâ¸öÓÃ»§²¢Ã»ÓĞ·ÖÅäµÄ³ÆºÅ
+        // é€™å€‹ç”¨æˆ¶ä¸¦æ²’æœ‰åˆ†é…çš„ç¨±è™Ÿ
         delete("granted_title", ob);
 }
 
-// Ñ°ÕÒ»òµ÷ÈëÄ³Ò»¸öÍæ¼Ò
-// Èç¹û³ÌĞò´¦ÀíÖĞĞèÒª¸üĞÂÄÇĞ©²»ÔÚÏßµÄÍæ¼Ò£¬Ôò¿ÉÒÔÊ¹ÓÃ¸Ãº¯Êı
-// ½«Õâ¸öÍæ¼Òµ÷Èë²¢ÇÒ½øĞĞĞŞ¸Ä£¬Çë×¢Òâ£ºĞŞ¸ÄÍê±ÏÒÔºó³ÌĞò±ØĞë
-// ±£´æÍæ¼Ò£¬²¢ÇÒÊ¹ÓÃ global_destruct_player ½«Íæ¼ÒÎö¹¹£¬Èç
-// ¹ûÃ»ÓĞµ÷ÓÃÕâ¸öº¯Êı£¬Ôò¸³ÓèÍæ¼ÒµÄ¶¨Ê±Æ÷»á×Ô¶¯Îö¹¹Íæ¼Ò¡£
+// å°‹æ‰¾æˆ–èª¿å…¥æŸä¸€å€‹ç©å®¶
+// å¦‚æœç¨‹åºè™•ç†ä¸­éœ€è¦æ›´æ–°é‚£äº›ä¸åœ¨ç·šçš„ç©å®¶ï¼Œå‰‡å¯ä»¥ä½¿ç”¨è©²å‡½æ•¸
+// å°‡é€™å€‹ç©å®¶èª¿å…¥ä¸¦ä¸”é€²è¡Œä¿®æ”¹ï¼Œè«‹æ³¨æ„ï¼šä¿®æ”¹å®Œç•¢ä»¥å¾Œç¨‹åºå¿…é ˆ
+// ä¿å­˜ç©å®¶ï¼Œä¸¦ä¸”ä½¿ç”¨ global_destruct_player å°‡ç©å®¶ææ§‹ï¼Œå¦‚
+// æœæ²’æœ‰èª¿ç”¨é€™å€‹å‡½æ•¸ï¼Œå‰‡è³¦äºˆç©å®¶çš„å®šæ™‚å™¨æœƒè‡ªå‹•ææ§‹ç©å®¶ã€‚
 object global_find_player(string user)
 {
         object ob;
@@ -858,7 +858,7 @@ object global_find_player(string user)
         return ob;
 }
 
-// Îö¹¹Ò»¸ö±» UPDATE_D µ÷ÈëµÄÍæ¼Ò
+// ææ§‹ä¸€å€‹è¢« UPDATE_D èª¿å…¥çš„ç©å®¶
 void global_destruct_player(object ob, int raw)
 {
         if( objectp(ob) && query_temp("temp_loaded", ob) )

@@ -4,11 +4,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÏÉº×»¨ÎÆ", ({ "picture"}) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("ä»™é¶´èŠ±ç´‹", ({ "picture"}) );
+        set("gender", "ç”·æ€§" );
         set("age", 34);
         set("long",
-                "ÕâÊÇÈ«Éí¶¼ÕÖÔÚºÚÉ´ÖĞµÄÉñÃØÈË£¬È«ÉíÉ¢·¢×ÅÒ»¹ÉÒõÉ­µÄÆøÏ¢¡£\n");
+                "é€™æ˜¯å…¨èº«éƒ½ç½©åœ¨é»‘ç´—ä¸­çš„ç¥ç§˜äººï¼Œå…¨èº«æ•£ç™¼è‘—ä¸€è‚¡é™°æ£®çš„æ°£æ¯ã€‚\n");
         set("max_qi", 5000);
         set("max_jing", 5000);
         set("max_neili", 5000);
@@ -54,7 +54,7 @@ int do_look(string arg)
 {
         if( arg == "picture" && query("id", this_object()) == "picture" )
     {
-            write("ÕâÊÇÒ»ÕÅ¹Ù¸®µÄ"+query("name", this_object())+"¡£\n");
+            write("é€™æ˜¯ä¸€å¼µå®˜åºœçš„"+query("name", this_object())+"ã€‚\n");
             destruct(this_object());
       return 1;
     }
@@ -102,9 +102,9 @@ void init()
                 set_skill("yunlong-shengong", maxskill);
                 if (!present("long sword",obj))
                         carry_object("/clone/weapon/changjian")->wield();
-                set("title", "ÌæÌìĞĞµÀ", obj);
+                set("title", "æ›¿å¤©è¡Œé“", obj);
                 obj->set_weight(500000);
-                set_name("ÉñÃØÈË", ({ "shenmi ren","sr"}) );
+                set_name("ç¥ç§˜äºº", ({ "shenmi ren","sr"}) );
                 remove_call_out ("destroy_npc");
                 call_out ("destroy_npc", 900); // 15 min
         }
@@ -113,14 +113,14 @@ void init()
 }
 void destroy_npc()
 {
-        message_vision(query("name", this_object())+"ºöÈ»´òÁË¸ö¶ßàÂ£¬²»ÓÉĞÄÉú¾åÒâ£¬ÉíĞÎÒ»»Î£¬¶ÙÊ±»ìÈëÃ§Ã§ÈËº£Ö®ÖĞ¡£\n",environment(this_object()));
+        message_vision(query("name", this_object())+"å¿½ç„¶æ‰“äº†å€‹å“†å—¦ï¼Œä¸ç”±å¿ƒç”Ÿæ‡¼æ„ï¼Œèº«å½¢ä¸€æ™ƒï¼Œé “æ™‚æ··å…¥è½è½äººæµ·ä¹‹ä¸­ã€‚\n",environment(this_object()));
         destruct(this_object());
 }
 void die()
 {
         object ob,me;
         string own;
-        message_vision("$Nµ¹ÔÚµØÉÏ£¬ËÀÁË£¡\n", this_object());
+        message_vision("$Nå€’åœ¨åœ°ä¸Šï¼Œæ­»äº†ï¼\n", this_object());
         ob = this_object();
         own=query_temp("bt_ownname", ob);
         if(own) me = find_player(own);

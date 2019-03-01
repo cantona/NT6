@@ -4,16 +4,16 @@
 inherit ITEM;
 void create()
 {
-        set_name(RED"»éÔ¼"NOR, ({"marrycard"}) );
+        set_name(RED"å©šç´„"NOR, ({"marrycard"}) );
         set_weight(10);
         set("no_get",1);
         set("no_steal",1);
-        set("no_drop","ÄãµÄ»éÔ¼²»ÄÜ¶ªÆú,Ö»ÄÜÈ¥ºìÄï×¯½â³ý»éÔ¼¡£\n");
+        set("no_drop","ä½ çš„å©šç´„ä¸èƒ½ä¸Ÿæ£„,åªèƒ½åŽ»ç´…å¨˜èŽŠè§£é™¤å©šç´„ã€‚\n");
         if( clonep() )
                 set_default_object(__FILE__);
         else
         {
-                set("unit", "±¾");
+                set("unit", "æœ¬");
                 set("material", "paper");
         }
 }
@@ -32,7 +32,7 @@ int do_put(string arg)
         if(arg!="marrycard in corpse") return 0;
         else
         {
-          tell_object(me,"ÕâÊÇÄã×îÕä¹óµÄ¶«Î÷£¬ÔõÃ´¿ÉÒÔ·Åµ½ÄÇ¶ùÈ¥£¿\n");
+          tell_object(me,"é€™æ˜¯ä½ æœ€çè²´çš„æ±è¥¿ï¼Œæ€Žéº¼å¯ä»¥æ”¾åˆ°é‚£å…’åŽ»ï¼Ÿ\n");
           return 1;
         }
 }
@@ -54,42 +54,42 @@ int do_cemote(string arg)
                 cardname=query("name", list[i]);
         }
 
-        if (sscanf(cardname,"ÄãºÍ%sµÄ»éÔ¼" ,target)!=1)
-                return notify_fail("ÄãÃ»ÓÐ°éÂÂ.\n");
+        if (sscanf(cardname,"ä½ å’Œ%sçš„å©šç´„" ,target)!=1)
+                return notify_fail("ä½ æ²’æœ‰ä¼´ä¾¶.\n");
 
         couple_ob = find_player(target);
         if( !couple_ob )
-          return notify_fail("ÄãµÄ°éÂÂÏÖÔÚÌý²»¼ûÄã£¬»òÕßÒÑ¾­Àë¿ªÓÎÏ·ÁË¡£\n");
-        if( query("gender", couple_ob) != "Å®ÐÔ" )
+          return notify_fail("ä½ çš„ä¼´ä¾¶ç¾åœ¨è½ä¸è¦‹ä½ ï¼Œæˆ–è€…å·²ç¶“é›¢é–‹éŠæˆ²äº†ã€‚\n");
+        if( query("gender", couple_ob) != "å¥³æ€§" )
         {
-                tmpstr1 = "ÀÏÆÅ"; tmpstr2 = "ÀÏ¹«";
-                str1 = "Ëý"; str2 = "Ëû";
+                tmpstr1 = "è€å©†"; tmpstr2 = "è€å…¬";
+                str1 = "å¥¹"; str2 = "ä»–";
         } else
         {
-                tmpstr1 = "ÀÏ¹«"; tmpstr2 = "ÀÏÆÅ";
-                str1 = "Ëû"; str2 = "Ëý";
+                tmpstr1 = "è€å…¬"; tmpstr2 = "è€å©†";
+                str1 = "ä»–"; str2 = "å¥¹";
         }
 
         if (!arg)
         {
-                write( MAG "ÄãÓÖÉîÇéµÄÏëÄîÄãµÄ°®ÂÂÁË¡£\n" NOR);
+                write( MAG "ä½ åˆæ·±æƒ…çš„æƒ³å¿µä½ çš„æ„›ä¾¶äº†ã€‚\n" NOR);
                 tell_room(environment(me), CYN+(string)me->name()+
-                "ÓÖÉîÇéµÄÏëÄî"+str1+"µÄ°®ÂÂ"+ (string)couple_ob->name()+
-                "ÁË¡£\n" +NOR, ({me, couple_ob}));
+                "åˆæ·±æƒ…çš„æƒ³å¿µ"+str1+"çš„æ„›ä¾¶"+ (string)couple_ob->name()+
+                "äº†ã€‚\n" +NOR, ({me, couple_ob}));
                 tell_object(couple_ob, sprintf(MAG "%s %s
-                ÓÖÔÚÉîÇéµÄÏëÄãÁË\n"NOR, tmpstr1,me->name(1) ));
+                åˆåœ¨æ·±æƒ…çš„æƒ³ä½ äº†\n"NOR, tmpstr1,me->name(1) ));
                 return 1;
         }
         if (environment(me) == environment(couple_ob ) )
         {
            if (arg == "kiss")
            {
-              write( MAG "ÄãÓµ×¡ÄãµÄ°®ÂÂ£¬ÉîÉîµÄÒ»ÎÇ£¬Ðí¾Ã...Ðí¾Ã...\n" NOR);
+              write( MAG "ä½ æ“ä½ä½ çš„æ„›ä¾¶ï¼Œæ·±æ·±çš„ä¸€å»ï¼Œè¨±ä¹…...è¨±ä¹…...\n" NOR);
               tell_room(environment(me), CYN+(string)me->name()+
-              "Óµ×¡"+(string)couple_ob->name()+"£¬ÉîÉîµÄÒ»ÎÇ¡£\n"
+              "æ“ä½"+(string)couple_ob->name()+"ï¼Œæ·±æ·±çš„ä¸€å»ã€‚\n"
                 +NOR, ({me, couple_ob}));
                 tell_object(couple_ob, sprintf(MAG "%s %s
-                Óµ×¡Äã£¬ÉîÉîµÄÒ»ÎÇ£¬Ðí¾Ã...Ðí¾Ã...\n"NOR,tmpstr1,me->name(1)));
+                æ“ä½ä½ ï¼Œæ·±æ·±çš„ä¸€å»ï¼Œè¨±ä¹…...è¨±ä¹…...\n"NOR,tmpstr1,me->name(1)));
            }
         }
 
@@ -113,25 +113,25 @@ int do_coupletalk(string arg)
                 cardname=query("name", list[i]);
         }
 
-        if (sscanf(cardname,"ÄãºÍ%sµÄ»éÔ¼" ,target)!=1)
-                return notify_fail("ÄãÃ»ÓÐ°éÂÂ.\n");
+        if (sscanf(cardname,"ä½ å’Œ%sçš„å©šç´„" ,target)!=1)
+                return notify_fail("ä½ æ²’æœ‰ä¼´ä¾¶.\n");
 
         couple_ob = find_player(target);
         if( !couple_ob )
-           return notify_fail("ÄãµÄ°éÂÂÏÖÔÚÌý²»¼ûÄã£¬»òÕßÒÑ¾­Àë¿ªÓÎÏ·ÁË¡£\n");
-        if( query("gender", couple_ob) != "Å®ÐÔ" )
+           return notify_fail("ä½ çš„ä¼´ä¾¶ç¾åœ¨è½ä¸è¦‹ä½ ï¼Œæˆ–è€…å·²ç¶“é›¢é–‹éŠæˆ²äº†ã€‚\n");
+        if( query("gender", couple_ob) != "å¥³æ€§" )
         {
-                tmpstr1 = "ÀÏÆÅ";
-                tmpstr2 = "ÀÏ¹«";
+                tmpstr1 = "è€å©†";
+                tmpstr2 = "è€å…¬";
         } else
         {
-                tmpstr1 = "ÀÏ¹«";
-                tmpstr2 = "ÀÏÆÅ";
+                tmpstr1 = "è€å…¬";
+                tmpstr2 = "è€å©†";
         }
 
-        write(sprintf(MAG"Äã¶Ô%s %s Ëµ£º%s\n"NOR,
+        write(sprintf(MAG"ä½ å°%s %s èªªï¼š%s\n"NOR,
                 tmpstr2,couple_ob->name(1), arg ));
-        tell_object(couple_ob, sprintf(MAG "%s %s ¶ÔÄãËµ£º%s\n"NOR,
+        tell_object(couple_ob, sprintf(MAG "%s %s å°ä½ èªªï¼š%s\n"NOR,
                tmpstr1,me->name(1), arg ));
 
         return 1;
@@ -140,7 +140,7 @@ int do_coupletalk(string arg)
 void owner_is_killed()
 {
         object me = this_player();
-        write(HIW"Ê¬ÌåÖÐµÄ»é¿¨»¯ÎªÔÆÑÌÏûÊ§ÁË¡­¡­\n"NOR);
+        write(HIW"å±é«”ä¸­çš„å©šå¡åŒ–ç‚ºé›²ç…™æ¶ˆå¤±äº†â€¦â€¦\n"NOR);
         destruct(this_object());
 }
 
@@ -160,7 +160,7 @@ string query_autoload()
                 cardname=query("name", list[i]);
         }
 
-        sscanf(cardname,"ÄãºÍ%sµÄ»éÔ¼" ,target);
+        sscanf(cardname,"ä½ å’Œ%sçš„å©šç´„" ,target);
         return target;
 }
 
@@ -175,19 +175,19 @@ void autoload(string arg)
         couple_ob = find_player(arg);
         if (couple_ob)
         {
-             if( query("gender", couple_ob) != "Å®ÐÔ" )
+             if( query("gender", couple_ob) != "å¥³æ€§" )
              {
-                    tmpstr1 = "ÀÏ¹«";
-                    tmpstr = "ÀÏÆÅ";
+                    tmpstr1 = "è€å…¬";
+                    tmpstr = "è€å©†";
               } else
               {
-                    tmpstr1 = "ÀÏÆÅ";
-                    tmpstr = "ÀÏ¹«";
+                    tmpstr1 = "è€å©†";
+                    tmpstr = "è€å…¬";
               }
-              write(sprintf( MAG "ÄãµÄ%sÒ²ÔÚÕâÀï£¬¿ìÈ¥ÕÒÀ²...\n"NOR,tmpstr1));
+              write(sprintf( MAG "ä½ çš„%sä¹Ÿåœ¨é€™è£¡ï¼Œå¿«åŽ»æ‰¾å•¦...\n"NOR,tmpstr1));
               tell_object(couple_ob ,
-              sprintf( MAG "ÄãµÄ%sÀ´À²,¿ìÈ¥½Ó...\n" NOR, tmpstr));
+              sprintf( MAG "ä½ çš„%sä¾†å•¦,å¿«åŽ»æŽ¥...\n" NOR, tmpstr));
 //me->name(1)+"("+me->query("id")+")",environment(me))->query("name") );
         }
-        set("name","ÄãºÍ"+arg+"µÄ»éÔ¼");
+        set("name","ä½ å’Œ"+arg+"çš„å©šç´„");
 }

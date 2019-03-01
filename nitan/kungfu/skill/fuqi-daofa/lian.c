@@ -1,4 +1,4 @@
-// lian.c¡¡·òÆŞµ¶·¨¾øÕĞ£ºÁ¬Ãà²»¾ø
+// lian.cã€€å¤«å¦»åˆ€æ³•çµ•æ‹›ï¼šé€£ç¶¿ä¸çµ•
 // By Alf, Last Update 2001.05
 
 #include <ansi.h>
@@ -18,14 +18,14 @@ int perform(object me, object target)
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("ÄãÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃÕâÒ»¾øÕĞ¡£\n");
+                return notify_fail("ä½ åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨é€™ä¸€çµ•æ‹›ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me) )
                  || query("skill_type", weapon) != "blade" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ã€‚\n");
 
         if( (int)me->query_skill("fuqi-daofa", 1) < 40 )
-                return notify_fail("ÒÀÄãÄ¿Ç°µÄ¹¦Á¦£¬»¹Ê¹²»³öÕâÒ»¾øÕĞ¡£\n");
+                return notify_fail("ä¾ä½ ç›®å‰çš„åŠŸåŠ›ï¼Œé‚„ä½¿ä¸å‡ºé€™ä¸€çµ•æ‹›ã€‚\n");
 
         if( random(query("combat_exp", me))>query("combat_exp", target)/20 )
         {
@@ -33,8 +33,8 @@ int perform(object me, object target)
                 if(attack_time < 1)
                         attack_time = 1;
 
-        msg = HIC "$Nµ­È»Ò»Ğ¦£¬µ¶ÊÆÖèÈ»¼Ó¿ì£¬ÕĞÊıÊ×Î²ÏàÏÎ£¬Á¬Ãà²»¾øµÄ¹¥Ïò$n£¡\n" NOR;
-        msg += HIM "$n¿´²»ÇåÕĞÊ½À´Â·£¬¶ÙÊ±ÊÖÃ¦½ÅÂÒ£¬µÖµ²²»¼°£¬Ë²¼äÒÑ½ÓÁ¬ÖĞÕĞ£¡\n" NOR;
+        msg = HIC "$Næ·¡ç„¶ä¸€ç¬‘ï¼Œåˆ€å‹¢é©Ÿç„¶åŠ å¿«ï¼Œæ‹›æ•¸é¦–å°¾ç›¸éŠœï¼Œé€£ç¶¿ä¸çµ•çš„æ”»å‘$nï¼\n" NOR;
+        msg += HIM "$nçœ‹ä¸æ¸…æ‹›å¼ä¾†è·¯ï¼Œé “æ™‚æ‰‹å¿™è…³äº‚ï¼ŒæŠµæ“‹ä¸åŠï¼Œç¬é–“å·²æ¥é€£ä¸­æ‹›ï¼\n" NOR;
 
                 for(i = 0; i < attack_time; i++)
                         COMBAT_D->do_attack(me,target,query_temp("weapon", me),0);
@@ -45,8 +45,8 @@ int perform(object me, object target)
 
         else
         {
-        msg = HIC "$Nµ­È»Ò»Ğ¦£¬µ¶ÊÆÖèÈ»¼Ó¿ì£¬ÕĞÊıÊ×Î²ÏàÏÎ£¬Á¬Ãà²»¾øµÄ¹¥Ïò$n£¡\n" NOR;
-        msg += HIY"¿ÉÊÇ$nÔçÓĞ·À±¸£¬¼ûÕĞ²ğÕĞ£¬ÊØÓùµÃË®ÆÃ²»½ø£¬½«À´ÕĞÒ»Ò»»¯½â¡£\n" NOR;
+        msg = HIC "$Næ·¡ç„¶ä¸€ç¬‘ï¼Œåˆ€å‹¢é©Ÿç„¶åŠ å¿«ï¼Œæ‹›æ•¸é¦–å°¾ç›¸éŠœï¼Œé€£ç¶¿ä¸çµ•çš„æ”»å‘$nï¼\n" NOR;
+        msg += HIY"å¯æ˜¯$næ—©æœ‰é˜²å‚™ï¼Œè¦‹æ‹›æ‹†æ‹›ï¼Œå®ˆå¾¡å¾—æ°´æ½‘ä¸é€²ï¼Œå°‡ä¾†æ‹›ä¸€ä¸€åŒ–è§£ã€‚\n" NOR;
                 message_combatd(msg, me, target);
                 me->start_busy(3);
         }

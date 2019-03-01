@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����С·");
+        set("short", "黃土小路");
         set("long", @LONG
-������ï�������е�һ������С·�����ּ��ܣ����涼��������
-�ĸо����װ׵ı�ѩ����ҫ�ۡ�������һ��ɽ����Σ��֮�ߣ�ǰ����
-һ��С����
+這裡是茂密鬆林中的一條黃土小路。鬆林極密，四面都是藍幽幽
+的感覺，白白的冰雪反光耀眼。你來到一個山腰的危崖之邊，前邊有
+一個小洞。
 LONG );
         set("exits", ([
                 "east"  : __DIR__"huangtulu1",

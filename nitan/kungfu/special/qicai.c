@@ -3,10 +3,10 @@
 
 inherit F_CLEAN_UP;
 
-string name() { return HIM "Á·ÎäÆæ²Å" NOR; }
+string name() { return HIM "ç·´æ­¦å¥‡æ‰" NOR; }
 
 int perform(object me, string skill)
 {
-        return notify_fail("Äã³öÉúÓÚÎäÑ§ÊÀ¼Ò£¬ÌìÉú´ÏÓ±£¬ÄËÁ·ÎäÉÏµÈÖ®²Ä¡£ÑĞ¾¿¼¼ÄÜÊ±¿ÉÌáÉı5%Ğ§ÂÊ¡£²»ĞèÒªÔËÓÃ¡£\n");
+        return notify_fail("ä½ å‡ºç”Ÿäºæ­¦å­¸ä¸–å®¶ï¼Œå¤©ç”Ÿè°ç©ï¼Œä¹ƒç·´æ­¦ä¸Šç­‰ä¹‹æã€‚ç ”ç©¶æŠ€èƒ½æ™‚å¯æå‡5%æ•ˆç‡ã€‚ä¸éœ€è¦é‹ç”¨ã€‚\n");
 }
 

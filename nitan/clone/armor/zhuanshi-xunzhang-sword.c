@@ -7,20 +7,20 @@ inherit MEDAL2;
 
 void create()
 {
-        set_name(HIG "×ªÊÀÑ«ÕÂ£¨Éñ½££©" NOR, ({ "shenjian xunzhang", "shenjian", "xunzhang" }));
-        set("long", HIG "×ªÊÀºó»ñµÃµÄÑ«ÕÂ£¬ÉÏ»æÉñ½£´ÌÔÂÍ¼£¬ÉÁÉÁ·¢ÁÁ£¬ÉõÊÇ¾«ÖÂ¡£\n" NOR);
+        set_name(HIG "è½‰ä¸–å‹›ç« ï¼ˆç¥åŠï¼‰" NOR, ({ "shenjian xunzhang", "shenjian", "xunzhang" }));
+        set("long", HIG "è½‰ä¸–å¾Œç²å¾—çš„å‹›ç« ï¼Œä¸Šç¹ªç¥åŠåˆºæœˆåœ–ï¼Œé–ƒé–ƒç™¼äº®ï¼Œç”šæ˜¯ç²¾è‡´ã€‚\n" NOR);
         set_weight(500);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ã¶");
+                set("unit", "æš");
                 set("value", 200000);
                 set("material", "bronze");
                 set("armor_prop/damage", 500);
                 set("armor_prop/str", 10);
                 set("armor_prop/scborn", 1);
                 set("armor_prop/sword", "apply_armor() * 3");
-                set("special/desc", HIR "ÓÃÄªĞ°Ê¥·ûÉı¼¶ºó¿ÉÏâÇ¶Ìá¸ßÓĞĞ§½£·¨µÈ¼¶¡£" NOR); 
+                set("special/desc", HIR "ç”¨è«é‚ªè–ç¬¦å‡ç´šå¾Œå¯é‘²åµŒæé«˜æœ‰æ•ˆåŠæ³•ç­‰ç´šã€‚" NOR); 
                 set("limit", ([
                         "scborn" : 1, 
                 ]));

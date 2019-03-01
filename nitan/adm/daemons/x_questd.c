@@ -1,5 +1,5 @@
 // This program is a part of NITAN MudLIB
-// /adm/daemons/x_questd.c ×ÚÊ¦¿ÚÑ¶ÈÎÎñÊØ»¤½ø³Ì
+// /adm/daemons/x_questd.c å®—å¸«å£è¨Šä»»å‹™å®ˆè­·é€²ç¨‹
 // from huaxia
 
 #define ANTI_ROBOT      "/kungfu/class/ultra/robot"
@@ -12,17 +12,17 @@ public int query_quest(object me, object ob)
     object maze_target;
     object maze_object;
 
-    temp = X_PointD->get_question();    //ÓÉÊØ»¤³ÌÐò²úÉúµãÕóÈÎÎñ
+    temp = X_PointD->get_question();    //ç”±å®ˆè­·ç¨‹åºç”¢ç”Ÿé»žé™£ä»»å‹™
     // temp =  ANTI_ROBOT->get_question();
     question = temp["question"];
     answer = temp["answer"];
 
-    message("vision", sprintf("%sÐ¡ÉùµÄ¶Ô%s·Ô¸À×ÅÊ²Ã´£¬%sÒ»±ßÌý£¬"
-                              "Ò»±ß²»×¡µÄµãÍ·¡£\n",
+    message("vision", sprintf("%så°è²çš„å°%så©å’è‘—ä»€éº¼ï¼Œ%sä¸€é‚Šè½ï¼Œ"
+                              "ä¸€é‚Šä¸ä½çš„é»žé ­ã€‚\n",
                                 ob->name(1), me->name(), me->name()),
                                 environment(me), ({ me }));
 
-    npc = new(CLASS_D("generate") + "/player_npc.c");   //Éú³ÉÊÕÑ¶ÈË
+    npc = new(CLASS_D("generate") + "/player_npc.c");   //ç”Ÿæˆæ”¶è¨Šäºº
     FUBEN_D->clear_fuben("ultra",query("id", me));
     maze_object=get_object("/f/ultra/"+query("id", me)+"/maze");
     maze_object->set_maze_boss(npc);
@@ -33,8 +33,8 @@ public int query_quest(object me, object ob)
     set_temp("quester",query("id",  me), npc);
     set("ultra_whisper",query("id",  me), npc);
 
-    msg = sprintf("\n%s¶ÔÄãËµµÀ£ºÄã¸Ï½ô×ßÒ»ÌË£¬½«Õâ¸ö¿ÚÑ¶´«ËÍ"
-                  "(whisper)¸ø%s£¬¾ÝËµËûÕýÔÚÒ»¸öÃÔ¹¬ÖÐ£¬²»µÃÑÓÎó£º\n",
+    msg = sprintf("\n%så°ä½ èªªé“ï¼šä½ è¶•ç·Šèµ°ä¸€è¶Ÿï¼Œå°‡é€™å€‹å£è¨Šå‚³é€"
+                  "(whisper)çµ¦%sï¼Œæ“šèªªä»–æ­£åœ¨ä¸€å€‹è¿·å®®ä¸­ï¼Œä¸å¾—å»¶èª¤ï¼š\n",
                     ob->name(1), npc->name(1));
     msg += question;
 
@@ -45,7 +45,7 @@ public int query_quest(object me, object ob)
     quest["name"] = npc->name(1);
     quest["id"]=query("id", npc);
     quest["answer"] = answer;
-    quest["type"] = "´«";
+    quest["type"] = "å‚³";
     switch(query("id", ob) )
     {
         case "dugu qiubai":

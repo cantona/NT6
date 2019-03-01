@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ʯ��");
+        set("short", "石橋");
         set("long", @LONG
-ֻ��һ��Сʯ�ţ������������ú���������Ȼ����ȴ�ǳ���
-���������ϵ�������໨�ݶ������������
+只是一座小石橋，連接了漪瀾堂和智珠殿。橋雖然不大，卻非常精
+美。橋欄上雕刻了許多花草動物，栩栩如生。
 LONG
         );
         set("exits", ([

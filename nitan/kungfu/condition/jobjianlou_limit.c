@@ -18,8 +18,8 @@ int update_condition(object me, int duration)
         if( query_temp("guo_shoucheng/where", me) != query("site", room )
          && !query_temp("guo_shoucheng/job_over", me) )
         {
-                message_vision(HIY "Ò»¸öËÎ±øÅÜ¹ıÀ´¶Ô$NËµµÀ£ºÄã¾ÓÈ»ÁÙÕóÍÑÌÓ£¬" +
-                               "ÎÒÈ¥±¨¸æ¹ù´óÈË£¡\n" NOR, me);
+                message_vision(HIY "ä¸€å€‹å®‹å…µè·‘éä¾†å°$Nèªªé“ï¼šä½ å±…ç„¶è‡¨é™£è„«é€ƒï¼Œ" +
+                               "æˆ‘å»å ±å‘Šéƒ­å¤§äººï¼\n" NOR, me);
 
                 set_temp("guo_shoucheng/failed", 1, me);
                 me->apply_condition("jobjianlou_limit", 0);  
@@ -31,16 +31,16 @@ int update_condition(object me, int duration)
                 if (duration % 2 == 0 && duration > 20)     
                 {
                         step = random(9) + 1;
-                        message_vision(HIY "ºöÈ»$N´Ó¼ı¶â¿ÚËÆºõ¿´µ½³ÇÏÂ" HIW + chinese_number(step) +
-                                       HIY "¼ıÍâÓĞÒ»Ãû" HIR "ÃÉ¹Å¼ıÊÖ" HIY "ÔÚÌ½Í·Ì½ÄÔ¡£\n" NOR, me);
+                        message_vision(HIY "å¿½ç„¶$Nå¾ç®­å›å£ä¼¼ä¹çœ‹åˆ°åŸä¸‹" HIW + chinese_number(step) +
+                                       HIY "ç®­å¤–æœ‰ä¸€å" HIR "è’™å¤ç®­æ‰‹" HIY "åœ¨æ¢é ­æ¢è…¦ã€‚\n" NOR, me);
                         obb = new("/quest/quest5/job2/robber4");
                         obb->move("/d/xiangyang/"+query("site", room)+step);
                         obb->change_ob(me);
                         set("where",query("site",  room), obb);
                 } else
                 if (duration % 10 == 0)  
-                        message_vision(HIY "$NÍ¨¹ı¼ı¶â¿Ú¾¯ÌèµØÑ²ÊÓ×Å³ÇÍâµÄÇé¿ö£¬" +
-                                       "¿ÉÊÇºÃÏóÃ»ÓĞ·¢ÏÖÈÎºÎµĞÇé¡£\n" NOR, me);
+                        message_vision(HIY "$Né€šéç®­å›å£è­¦æƒ•åœ°å·¡è¦–è‘—åŸå¤–çš„æƒ…æ³ï¼Œ" +
+                                       "å¯æ˜¯å¥½è±¡æ²’æœ‰ç™¼ç¾ä»»ä½•æ•µæƒ…ã€‚\n" NOR, me);
         }
 
         if (me->is_ghost())
@@ -53,8 +53,8 @@ int update_condition(object me, int duration)
         if (duration == 1
          && query_temp("guo_shoucheng/where", me) == query("site", room) )
         {
-                message_vision(CYN "\nÒ»¸öÊØ³ÇËÎ±øÅÜ¹ıÀ´ËµµÀ£ºÃÉ¹Å÷°×ÓÔİÊ±±»»÷ÍËÁË£¬" +
-                               "$N¿ÉÒÔ»ØÈ¥¸´ÃüÁË£¡\n"NOR,me);
+                message_vision(CYN "\nä¸€å€‹å®ˆåŸå®‹å…µè·‘éä¾†èªªé“ï¼šè’™å¤é¼å­æš«æ™‚è¢«æ“Šé€€äº†ï¼Œ" +
+                               "$Nå¯ä»¥å›å»å¾©å‘½äº†ï¼\n"NOR,me);
                 if( query_temp("guo_shoucheng/start_job", me) )
                         set_temp("guo_shoucheng/job_over", 1, me);
                 delete_temp("guo_shoucheng/start_job", me);

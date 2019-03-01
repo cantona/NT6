@@ -3,10 +3,10 @@ inherit BULLETIN_BOARD;
 
 void create()
 {
-        set_name("»áÒé¼ÇÂ¼²¾", ({ "board" }));
+        set_name("æœƒè­°è¨˜éŒ„ç°¿", ({ "board" }));
         set("location", "/d/wizard/meeting_room");
         set("board_id", "meet_b");
-        set("long", HIY "Õâ¶ÂÇ½ÉÏ¿ÌÂúÁËÏ£Ææ¹Å¹ÖµÄÖäÎÄ£¬Ò²²»ÖªµÀ¼ÇÔØÁËĞ©Ê²Ã´¡£\n" NOR);
+        set("long", HIY "é€™å µç‰†ä¸Šåˆ»æ»¿äº†å¸Œå¥‡å¤æ€ªçš„å’’æ–‡ï¼Œä¹Ÿä¸çŸ¥é“è¨˜è¼‰äº†äº›ä»€éº¼ã€‚\n" NOR);
         setup();
         set("capacity", 1000);
         replace_program(BULLETIN_BOARD);

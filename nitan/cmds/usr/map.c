@@ -30,7 +30,7 @@ int main(object me, string arg)
 
                 me->start_more(color_filter(MAP_D->show_map(environment(me)))); 
                 return 1;
-                return notify_fail("¸ñÊ½£ºmap here | rumor | view | all | <µØµã> | <ÕäÎÅ>¡£\n");
+                return notify_fail("æ ¼å¼ï¼šmap here | rumor | view | all | <åœ°é»> | <çè>ã€‚\n");
         }
 
         if (arg == "rumor")
@@ -41,50 +41,50 @@ int main(object me, string arg)
 
         if( !query("out_family", me) )
         {
-                write("ÄãÏÖÔÚ»¹Ã»ÓĞ´ÓÊ¦¸µÄÇÀïÁìµ½µØÍ¼²á¡£\n");
+                write("ä½ ç¾åœ¨é‚„æ²’æœ‰å¾å¸«å‚…é‚£è£¡é ˜åˆ°åœ°åœ–å†Šã€‚\n");
                 return 1;
         }
 
-        // ²éÔÄµ±Ç°µÄ»·¾³
+        // æŸ¥é–±ç•¶å‰çš„ç’°å¢ƒ
         env = environment(me);
         name = env->short();
         if( !stringp(here=query("outdoors", env)) )
         {
-                write("Ö»ÓĞÔÚ»§Íâ²ÅÓĞ±ØÒª»æÖÆµØÍ¼¡£\n");
+                write("åªæœ‰åœ¨æˆ¶å¤–æ‰æœ‰å¿…è¦ç¹ªåˆ¶åœ°åœ–ã€‚\n");
                 return 1;
         }
 
         if (! stringp(name) || clonep(env))
         {
-                write("ÕâÀïÊÇÒ»´¦ÉñÃØµÄµØ·½£¬ÄãÎŞ·¨ÅĞ¶ÏËüµÄ·½Î»¡£\n");
+                write("é€™è£¡æ˜¯ä¸€è™•ç¥ç§˜çš„åœ°æ–¹ï¼Œä½ ç„¡æ³•åˆ¤æ–·å®ƒçš„æ–¹ä½ã€‚\n");
                 return 1;
         }
 
         if( query("map_all", me) )
         {
-                write("ÄãÒÑ¾­»ñµÃÁËµØÍ¼È«¼¯£¬Ã»ÓĞ±ØÒªÔÙ»æÖÆµØÍ¼ÁË¡£\n");
+                write("ä½ å·²ç¶“ç²å¾—äº†åœ°åœ–å…¨é›†ï¼Œæ²’æœ‰å¿…è¦å†ç¹ªåˆ¶åœ°åœ–äº†ã€‚\n");
                 return 1;
         }
 
         if (me->is_busy())
         {
-                write("ÄãÏÖÔÚÕıÃ¦£¬Ã»ÓĞÊ±¼ä»æÖÆµØÍ¼¡£\n");
+                write("ä½ ç¾åœ¨æ­£å¿™ï¼Œæ²’æœ‰æ™‚é–“ç¹ªåˆ¶åœ°åœ–ã€‚\n");
                 return 1;
         }
 
-        // ²éÔÄÒÑ¾­»æÖÆ¹ıµÄµØÍ¼
+        // æŸ¥é–±å·²ç¶“ç¹ªåˆ¶éçš„åœ°åœ–
         mapped=query("map/"+here, me);
         if (! arrayp(mapped)) mapped = ({ });
         if (member_array(name, mapped) != -1)
         {
-                write("ÄãÒÑ¾­»æÖÆ¹ıÕâ¸½½üµÄµØÍ¼ÁË£¬Ã»ÓĞ±ØÒª"
-                      "ÔÙÖØ¸´ÁË¡£\n");
+                write("ä½ å·²ç¶“ç¹ªåˆ¶éé€™é™„è¿‘çš„åœ°åœ–äº†ï¼Œæ²’æœ‰å¿…è¦"
+                      "å†é‡å¾©äº†ã€‚\n");
                 return 1;
         }
 
         if (! MAP_D->been_known(here))
         {
-                write("Äã¾õµÃÕâÀïÃ»Ê²Ã´ºÃ»­µÄ¡£\n");
+                write("ä½ è¦ºå¾—é€™è£¡æ²’ä»€éº¼å¥½ç•«çš„ã€‚\n");
                 return 1;
         }
 
@@ -94,35 +94,35 @@ int main(object me, string arg)
                 if (stringp(prompt))
                         write(prompt);
                 else
-                        write("Äã¿´ÁË°ëÌì£¬Ò²Ã»ÓĞÅªÇå³ş¸½½üµÄµØĞÎ¡£\n");
+                        write("ä½ çœ‹äº†åŠå¤©ï¼Œä¹Ÿæ²’æœ‰å¼„æ¸…æ¥šé™„è¿‘çš„åœ°å½¢ã€‚\n");
                 return 1;
         }
 
         if( query("jing", me)<50 )
         {
-                write("ÄãµÄ¾«Éñ²»¼Ñ£¬ÎŞ·¨¼¯ÖĞÈ«Éñ¹á×¢µÄ»æÖÆµØÍ¼¡£\n");
+                write("ä½ çš„ç²¾ç¥ä¸ä½³ï¼Œç„¡æ³•é›†ä¸­å…¨ç¥è²«æ³¨çš„ç¹ªåˆ¶åœ°åœ–ã€‚\n");
                 return 1;
         }
 
-        // ÏûºÄ¾«
+        // æ¶ˆè€—ç²¾
         me->receive_damage("jing", 20 + random(30));
 
         if ((lvl = me->query_skill("drawing", 1)) < 30)
         {
-                write("ÄãÔÚÖ½ÉÏÍ¿Ä¨ÁËÒ»»á¶ù£¬Á¬×Ô¼º¶¼¿´²»³öÊÇÊ²Ã´¶«Î÷¡£\n");
+                write("ä½ åœ¨ç´™ä¸Šå¡—æŠ¹äº†ä¸€æœƒå…’ï¼Œé€£è‡ªå·±éƒ½çœ‹ä¸å‡ºæ˜¯ä»€éº¼æ±è¥¿ã€‚\n");
                 return 1;
         }
 
-        message("vision", me->name() + "Ì§Í·¿´ÁË¿´ËÄÖÜ£¬ÂñÍ·"
-                "×Ğ×ĞÏ¸Ï¸µÄ»æÖÆ×ÅÊ²Ã´¡£\n", environment(me), ({ me }));
-        tell_object(me, "Äã¾«ĞÄµÄ»æÖÆÁË" + name + "¸½½üµÄµØĞÎ¡£\n");
+        message("vision", me->name() + "æŠ¬é ­çœ‹äº†çœ‹å››å‘¨ï¼ŒåŸ‹é ­"
+                "ä»”ä»”ç´°ç´°çš„ç¹ªåˆ¶è‘—ä»€éº¼ã€‚\n", environment(me), ({ me }));
+        tell_object(me, "ä½ ç²¾å¿ƒçš„ç¹ªåˆ¶äº†" + name + "é™„è¿‘çš„åœ°å½¢ã€‚\n");
 
         mapped += ({ name });
         set("map/"+here, mapped, me);
 
         me->start_busy(1 + random(3));
 
-        // ¼ÆËã½±Àø
+        // è¨ˆç®—çå‹µ
         if (lvl > 200)
                 lvl = (lvl - 200) / 4 + 150;
         else
@@ -138,16 +138,16 @@ int main(object me, string arg)
         if (pot >= pot_limit)
                 pot = pot_limit;
 
-        msg = "Äã»ñµÃÁË" + chinese_number(exp) + "µã¾­Ñé";
+        msg = "ä½ ç²å¾—äº†" + chinese_number(exp) + "é»ç¶“é©—";
         if (pot > 0)
-                msg += "ºÍ" + chinese_number(pot) + "µãÇ±ÄÜ";
+                msg += "å’Œ" + chinese_number(pot) + "é»æ½›èƒ½";
 
         if (score)
-                msg += "£¬Í¨¹ıÌåÑé£¬ÄãÀÛ»ıÁË" + chinese_number(score) +
-                       "µã½­ºşÔÄÀú";
+                msg += "ï¼Œé€šéé«”é©—ï¼Œä½ ç´¯ç©äº†" + chinese_number(score) +
+                       "é»æ±Ÿæ¹–é–±æ­·";
 
-        // ½±ÀøÉúĞ§
-        write(HIC + msg + "¡£\n" NOR);
+        // çå‹µç”Ÿæ•ˆ
+        write(HIC + msg + "ã€‚\n" NOR);
         addn("combat_exp", exp, me);
         addn("potential", pot, me);
         addn("score", score, me);
@@ -155,7 +155,7 @@ int main(object me, string arg)
         return 1;
 }
 
-// ²é¿´ÒÑ¾­»æÖÆ²¿·ÖµÄµØÍ¼
+// æŸ¥çœ‹å·²ç¶“ç¹ªåˆ¶éƒ¨åˆ†çš„åœ°åœ–
 int map_view(object me, string arg)
 {
         mapping mapped;
@@ -177,37 +177,37 @@ int map_view(object me, string arg)
 
         if( !query("out_family", me) )
         {
-                write("Äã»¹Ã»ÓĞ³öÃÅÀúÁ·£¬¿ªÊ¼»æÖÆµØÍ¼ÄØ¡£\n");
+                write("ä½ é‚„æ²’æœ‰å‡ºé–€æ­·ç·´ï¼Œé–‹å§‹ç¹ªåˆ¶åœ°åœ–å‘¢ã€‚\n");
                 return 1;
         }
 
         mapped=query("map", me);
         if( !query("map_all", me) && !mapp(mapped) )
         {
-                write("Äã»¹Ã»ÓĞ»æÖÆÈÎºÎÒ»¸öµØ·½µÄµØÍ¼¡£\n");
+                write("ä½ é‚„æ²’æœ‰ç¹ªåˆ¶ä»»ä½•ä¸€å€‹åœ°æ–¹çš„åœ°åœ–ã€‚\n");
                 return 1;
         }
 
         if (me->is_busy())
         {
-                write("ÄãÏÖÔÚÕıÃ¦£¬Ã»·¨²é¿´µØÍ¼¡£\n");
+                write("ä½ ç¾åœ¨æ­£å¿™ï¼Œæ²’æ³•æŸ¥çœ‹åœ°åœ–ã€‚\n");
                 return 1;
         }
 
-        message_vision("$NÄÃ³öÒ»±¾¶«Î÷£¬»©À²»©À²µÄ"
-                       "·­¿ª¿´ÁËÆğÀ´¡£\n", me);
+        message_vision("$Næ‹¿å‡ºä¸€æœ¬æ±è¥¿ï¼Œå˜©å•¦å˜©å•¦çš„"
+                       "ç¿»é–‹çœ‹äº†èµ·ä¾†ã€‚\n", me);
         me->start_busy(1);
 
-        // ²ì¿´ÊÇ·ñÔÄ¶Á¼ÇÔØ
+        // å¯Ÿçœ‹æ˜¯å¦é–±è®€è¨˜è¼‰
         if( mapp(rumor=query("rumor", me)) && 
             member_array(arg, keys(rumor)) != -1)
         {
-                write("Äã·­µ½µØÍ¼²áµÄºóÃæ£¬×ĞÏ¸ÔÄ¶ÁÓĞ¹Ø¡º" + arg +
-                      "¡»µÄ¼ÇÔØ¡£\n" WHT + rumor[arg]->query_detail(arg) + NOR);
+                write("ä½ ç¿»åˆ°åœ°åœ–å†Šçš„å¾Œé¢ï¼Œä»”ç´°é–±è®€æœ‰é—œã€" + arg +
+                      "ã€çš„è¨˜è¼‰ã€‚\n" WHT + rumor[arg]->query_detail(arg) + NOR);
                 return 1;
         }
 
-        // ÊÇ·ñÊÇ²ì¿´±¾µØµØÍ¼£¿
+        // æ˜¯å¦æ˜¯å¯Ÿçœ‹æœ¬åœ°åœ°åœ–ï¼Ÿ
         if( arg == "view" || query("map_all", me) )
         {
                 write(MAP_D->marked_map(environment(me)));
@@ -215,16 +215,16 @@ int map_view(object me, string arg)
                 return 1;
         }
 
-        // ÅĞ¶ÏÊÇ·ñÊÇÖĞÎÄµØÍ¼Ãû×Ö
+        // åˆ¤æ–·æ˜¯å¦æ˜¯ä¸­æ–‡åœ°åœ–åå­—
         foreach (key in keys(mapped))
                 if (MAP_D->query_map_short(key) == arg)
                 {
-                        // ÊÇÖĞÎÄÃû×Ö£¬×ª»»³ÉÓ¢ÎÄID
+                        // æ˜¯ä¸­æ–‡åå­—ï¼Œè½‰æ›æˆè‹±æ–‡ID
                         arg = key;
                         break;
                 }
 
-        // ²éÕÒÕâ·½ÃæµÄµØÍ¼
+        // æŸ¥æ‰¾é€™æ–¹é¢çš„åœ°åœ–
         if (arrayp(shorts = mapped[arg]))
         {
                 result = MAP_D->query_maps(arg);
@@ -237,22 +237,22 @@ int map_view(object me, string arg)
                 }
                 result = replace_string(result, "@R", WHT);
                 result = replace_string(result, "@N", NOR);
-                me->start_more(MAP_D->query_map_short(arg) + "µÄµØÍ¼ĞÅÏ¢£º\n" + result);
+                me->start_more(MAP_D->query_map_short(arg) + "çš„åœ°åœ–ä¿¡æ¯ï¼š\n" + result);
                 me->start_busy(2);
                 return 1;
         }
 
         if (arg != "all")
         {
-                write("ÄãµÄµØÍ¼²áÖĞ²¢Ã»ÓĞÓĞ¹Ø " + arg + " µÄĞÅÏ¢°¡£¡\n");
+                write("ä½ çš„åœ°åœ–å†Šä¸­ä¸¦æ²’æœ‰æœ‰é—œ " + arg + " çš„ä¿¡æ¯å•Šï¼\n");
                 return 1;
         }
 
         outdoors=query("outdoors", environment(me));
         if (stringp(outdoors))
-                result = "ÄãÏÖÔÚÉí´¦" + MAP_D->query_map_short(outdoors) + "¾³ÄÚ¡£\n";
+                result = "ä½ ç¾åœ¨èº«è™•" + MAP_D->query_map_short(outdoors) + "å¢ƒå…§ã€‚\n";
 
-        result = "Ä¿Ç°ÄãÒÑ¾­»æÖÆÁËÒÔÏÂÕâĞ©µØ·½µÄµØÍ¼£º\n";
+        result = "ç›®å‰ä½ å·²ç¶“ç¹ªåˆ¶äº†ä»¥ä¸‹é€™äº›åœ°æ–¹çš„åœ°åœ–ï¼š\n";
         foreach (key in keys(mapped))
                 result += MAP_D->query_map_short(key) + "("
                           HIY + key + NOR ")\n";
@@ -267,11 +267,11 @@ int map_rumor(object me, string arg)
 
         if( !mapp(rumor=query("rumor", me)) )
         {
-                write("ÄãÏÖÔÚ²¢Ã»ÓĞ¼ÇÂ¼ÈÎºÎ´«ÎÅÈ¤ÊÂ¡£\n");
+                write("ä½ ç¾åœ¨ä¸¦æ²’æœ‰è¨˜éŒ„ä»»ä½•å‚³èè¶£äº‹ã€‚\n");
                 return 1;
         }
 
-        msg = "ÄãÄ¿Ç°¼ÇÔØÁËÓĞ¹Ø" + implode(keys(rumor), "¡¢") + "µÄ´«ÎÅ¡£\n";
+        msg = "ä½ ç›®å‰è¨˜è¼‰äº†æœ‰é—œ" + implode(keys(rumor), "ã€") + "çš„å‚³èã€‚\n";
         msg = sort_string(msg, 60);
         write(msg);
         return 1;
@@ -280,19 +280,19 @@ int map_rumor(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : map here | rumor | all | map | view | <µØµã> | <ÕäÎÅ>
+æŒ‡ä»¤æ ¼å¼ : map here | rumor | all | map | view | <åœ°é»> | <çè>
 
-Èç¹ûÄãÉíÉÏÓĞÁËµØÍ¼²á£¬¾Í¿ÉÒÔÊ¹ÓÃÕâÌõÃüÁî»æÖÆ¸½½üµÄµØÍ¼¡£µ±È»
-Äã±ØĞëÊÇÔÚ»§Íâ£¬²¢ÇÒ¾ß±¸ÓĞÒ»¶¨µÄ»æ»­¼¼ÇÉ²Å¿ÉÒÔ¡£»æÖÆµØÍ¼¿ÉÒÔ
-Ôö¼ÓÄãµÄ¾­Ñé¡¢Ç±ÄÜ²¢»ıÀÛ½­ºşÔÄÀú¡£
+å¦‚æœä½ èº«ä¸Šæœ‰äº†åœ°åœ–å†Šï¼Œå°±å¯ä»¥ä½¿ç”¨é€™æ¢å‘½ä»¤ç¹ªåˆ¶é™„è¿‘çš„åœ°åœ–ã€‚ç•¶ç„¶
+ä½ å¿…é ˆæ˜¯åœ¨æˆ¶å¤–ï¼Œä¸¦ä¸”å…·å‚™æœ‰ä¸€å®šçš„ç¹ªç•«æŠ€å·§æ‰å¯ä»¥ã€‚ç¹ªåˆ¶åœ°åœ–å¯ä»¥
+å¢åŠ ä½ çš„ç¶“é©—ã€æ½›èƒ½ä¸¦ç©ç´¯æ±Ÿæ¹–é–±æ­·ã€‚
 
-Ê¹ÓÃ map all ¿ÉÒÔ²é¿´ÄãÏÖÔÚÒÑ¾­»æÖÆÁËÄÄĞ©µØ·½µÄµØÍ¼£¬ ¶øÈç¹û
-Ö¸ÃûÁË¾ßÌåµÄµØ·½£¬Ôò¿ÉÒÔ²é¿´¸ÃµØµãµÄµØÍ¼»æÖÆÇé¿ö¡£
+ä½¿ç”¨ map all å¯ä»¥æŸ¥çœ‹ä½ ç¾åœ¨å·²ç¶“ç¹ªåˆ¶äº†å“ªäº›åœ°æ–¹çš„åœ°åœ–ï¼Œ è€Œå¦‚æœ
+æŒ‡åäº†å…·é«”çš„åœ°æ–¹ï¼Œå‰‡å¯ä»¥æŸ¥çœ‹è©²åœ°é»çš„åœ°åœ–ç¹ªåˆ¶æƒ…æ³ã€‚
 
-Èç¹ûÄãÔÚ»§Íâ£¬Ôò¿ÉÒÔÊ¹ÓÃ map view ÃüÁî²é¿´ÄãËùÔÚµÄµØµã¡£
+å¦‚æœä½ åœ¨æˆ¶å¤–ï¼Œå‰‡å¯ä»¥ä½¿ç”¨ map view å‘½ä»¤æŸ¥çœ‹ä½ æ‰€åœ¨çš„åœ°é»ã€‚
 
-map rumor ¿ÉÒÔ²éÔÄÄãÄ¿Ç°¼ÇÂ¼µÄ¸÷µØÕäÎÅ£¬Ê¹ÓÃ map <ÕäÎÅ> Ôò¿É
-ÒÔ²é¿´¾ßÌåÄÚÈİ¡£
+map rumor å¯ä»¥æŸ¥é–±ä½ ç›®å‰è¨˜éŒ„çš„å„åœ°çèï¼Œä½¿ç”¨ map <çè> å‰‡å¯
+ä»¥æŸ¥çœ‹å…·é«”å…§å®¹ã€‚
 HELP );
     return 1;
 }

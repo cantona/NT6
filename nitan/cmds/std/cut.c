@@ -11,7 +11,7 @@ int main(object me, string arg)
         string who;
 
         if (! arg)
-                return notify_fail("ÄãÒª¸îÊ²Ã´¶«Î÷£¿\n");
+                return notify_fail("ä½ è¦å‰²ä»€éº¼æ±è¥¿ï¼Ÿ\n");
 
         if (sscanf(arg, "%s from %s", part, who) != 2)
         {
@@ -20,28 +20,28 @@ int main(object me, string arg)
         }
 
         if (! objectp(ob = present(who, environment(me))))
-                return notify_fail("Äã¸½½üÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+                return notify_fail("ä½ é™„è¿‘æ²’æœ‰é€™æ¨£æ±è¥¿ã€‚\n");
 
         if (ob == me)
-                return notify_fail("¸î×Ô¼º£¿ÄãÓĞÃ«²¡°¡£¿\n");
+                return notify_fail("å‰²è‡ªå·±ï¼Ÿä½ æœ‰æ¯›ç—…å•Šï¼Ÿ\n");
 
         if( query("can_speak", ob) )
-                return notify_fail("»îÈËÄãÒ²¸Ò¸î£¬ÕÒ´òÃ´¡£\n");
+                return notify_fail("æ´»äººä½ ä¹Ÿæ•¢å‰²ï¼Œæ‰¾æ‰“éº¼ã€‚\n");
 
-        notify_fail("ÄãÃ»ÓĞµØ·½ÏÂÊÖ¡£\n");
+        notify_fail("ä½ æ²’æœ‰åœ°æ–¹ä¸‹æ‰‹ã€‚\n");
         return ob->do_cut(me, part);
 }
 
 int help(object me)
 {
         write( @HELP
-Ö¸Áî¸ñÊ½: cut <something> from sth. | <sb>.
+æŒ‡ä»¤æ ¼å¼: cut <something> from sth. | <sb>.
 
-´ÓÄ³Ñù¶«Î÷ÉÏÃæ¸îÏÂÒ»Ñù¶«Î÷¡£±ÈÈç£º
+å¾æŸæ¨£æ±è¥¿ä¸Šé¢å‰²ä¸‹ä¸€æ¨£æ±è¥¿ã€‚æ¯”å¦‚ï¼š
 cut head from corpse
 cut middle finger from arm
 
-ÊäÈë cut ? from sth Äã¿ÉÒÔÕÒµ½ÏÂÊÖµÄ²¿Î»¡£
+è¼¸å…¥ cut ? from sth ä½ å¯ä»¥æ‰¾åˆ°ä¸‹æ‰‹çš„éƒ¨ä½ã€‚
 
 HELP );
         return 1;

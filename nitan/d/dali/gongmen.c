@@ -5,11 +5,11 @@ inherit ROOM;
 void create()
 {
         set("short","");
-        set("short", "����");
+        set("short", "宮門");
         set("long", @LONG
-�����Ǵ����ʹ��Ĺ��ţ��ſڷ��������ߴ�ʯʨ�������ʵ�û��
-һ����ӣ���������ֹ���ǽ���ʹ������������֣������ͽ���ʹ�
-�ˡ�
+這裡是大理皇宮的宮門，門口放著兩個高大石獅，大理皇帝沒有
+一點架子，從來不禁止人們進入皇宮，往南是御街，往北就進入皇宮
+了。
 LONG );
         set("outdoors", "daligong");
         set("exits",([ /* sizeof() == 1 */

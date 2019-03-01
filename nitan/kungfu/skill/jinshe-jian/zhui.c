@@ -1,5 +1,5 @@
 // This program is a part of NITAN MudLIB
-// zhui.c  ×·Ãü
+// zhui.c  è¿½å‘½
 
 #include <ansi.h>
 #include <combat.h>
@@ -15,19 +15,19 @@ int perform(object me, object target)
         if( !target ) target = offensive_target(me);
 
         if( !target || !target->is_character() || !me->is_fighting(target) )
-                return notify_fail("¡¸×·Ãü¡¹Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œè¿½å‘½ã€åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me) )
          || query("skill_type", weapon) != "sword" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ã€‚\n");
                 
         if( (int)me->query_skill("jinshe-jian", 1) < 150 )
-                return notify_fail("ÄãµÄ½ðÉß½£·¨²»¹»æµÊì£¬²»»áÊ¹ÓÃ¡£\n");
+                return notify_fail("ä½ çš„é‡‘è›‡åŠæ³•ä¸å¤ å«»ç†Ÿï¼Œä¸æœƒä½¿ç”¨ã€‚\n");
                                 
         if( query("neili", me)<800 )
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ£¬²»ÄÜÊ¹ÓÃ¡¸×·Ãü¡¹¡£\n");
+                return notify_fail("ä½ ç¾åœ¨å…§åŠ›å¤ªå¼±ï¼Œä¸èƒ½ä½¿ç”¨ã€Œè¿½å‘½ã€ã€‚\n");
                         
-        msg = HIY "$NÎ¢Î¢Ò»Ð¦£¬½£ÒâÈôÓÐÈôÎÞ£¬$nÈ´¸Ðµ½Äª´óµÄÑ¹Á¦¡£\n"NOR;
+        msg = HIY "$Nå¾®å¾®ä¸€ç¬‘ï¼ŒåŠæ„è‹¥æœ‰è‹¥ç„¡ï¼Œ$nå»æ„Ÿåˆ°èŽ«å¤§çš„å£“åŠ›ã€‚\n"NOR;
 
         me->want_kill(target);
         if( !target->is_killing(me) ) 
@@ -44,13 +44,13 @@ int perform(object me, object target)
                 damage = damage_power(me, "sword");
                 
                 addn("neili", -400, me);
-                pmsg = HIR "Ö»¼û$N½£×ßÁË¸ö¹ÖÒìµÄ»¡Ïß£¬´Ó²»¿ÉË¼ÒéµÄ½Ç¶ÈÏò$nÉ±È¥,\n$nÖ»¾õµÃ±³ÐÄÒ»Õó±ùÁ¹£¬´ô´ôµØ¿´×ÅÇ°ÐØµÄ½£¼â£¡\n" NOR;
+                pmsg = HIR "åªè¦‹$NåŠèµ°äº†å€‹æ€ªç•°çš„å¼§ç·šï¼Œå¾žä¸å¯æ€è­°çš„è§’åº¦å‘$næ®ºåŽ»,\n$nåªè¦ºå¾—èƒŒå¿ƒä¸€é™£å†°æ¶¼ï¼Œå‘†å‘†åœ°çœ‹è‘—å‰èƒ¸çš„åŠå°–ï¼\n" NOR;
                 
                 msg += COMBAT_D->do_damage(me, target, WEAPON_ATTACK, damage, 65, pmsg);
                 me->start_busy(2);
         } else 
         {
-                msg += CYN"¿ÉÊÇ$pÃÍµØÏòÇ°Ò»Ô¾,Ìø³öÁË$PµÄ¹¥»÷·¶Î§¡£\n"NOR;
+                msg += CYN"å¯æ˜¯$pçŒ›åœ°å‘å‰ä¸€èº,è·³å‡ºäº†$Pçš„æ”»æ“ŠèŒƒåœã€‚\n"NOR;
                 addn("neili", -200, me);
                 me->start_busy(4);
         }

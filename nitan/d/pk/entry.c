@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÍÀÈË³¡Èë¿Ú");
+        set("short", "å± äººå ´å…¥å£");
         set("long", @LONG
-ÕâÀïÊÇÒ»¼ä²»Ëã´óµÄÐ¡ÎÝ£¬µ±ÖÐ°ÚÁËÒ»¸ö×À×Ó£¬ºóÃæ×ö×ÅÒ»¸öÈË£¬
-ÕýÐ¦Ò÷Ò÷µÄ¿´×ÅÄã¡£ËûÉíºóÓÐÒ»ÉÈÃÅ£¬ÐéÑÚ×Å£¬ÀïÃæºÚºõºõµÄ£¬Ò²²»Öª
-µÀÍ¨ÍùÄÄÀï¡£Î÷ÃæÍû³öÈ¥ÊÇ¿íÀ«³¨ÁÁµÄ´ó½Ö£¬ÈÃÈËÎÞÏÞÏòÍù¡£
+é€™è£¡æ˜¯ä¸€é–“ä¸ç®—å¤§çš„å°å±‹ï¼Œç•¶ä¸­æ“ºäº†ä¸€å€‹æ¡Œå­ï¼Œå¾Œé¢åšè‘—ä¸€å€‹äººï¼Œ
+æ­£ç¬‘åŸåŸçš„çœ‹è‘—ä½ ã€‚ä»–èº«å¾Œæœ‰ä¸€æ‰‡é–€ï¼Œè™›æŽ©è‘—ï¼Œè£¡é¢é»‘ä¹Žä¹Žçš„ï¼Œä¹Ÿä¸çŸ¥
+é“é€šå¾€å“ªè£¡ã€‚è¥¿é¢æœ›å‡ºåŽ»æ˜¯å¯¬é—Šæ•žäº®çš„å¤§è¡—ï¼Œè®“äººç„¡é™å‘å¾€ã€‚
 LONG
         );
         set("exits", ([
@@ -29,7 +29,7 @@ LONG
 int valid_leave(object me, string dir)
 {
         if (dir == "north")
-                return notify_fail("ÎÚÀÏ´óºÈµÀ£º¸øÎÒÕ¾×¡£¡ÄÇ¶ù²»ÄÜËæÒâ½øÈë¡£\n");
+                return notify_fail("çƒè€å¤§å–é“ï¼šçµ¦æˆ‘ç«™ä½ï¼é‚£å…’ä¸èƒ½éš¨æ„é€²å…¥ã€‚\n");
 
         return ::valid_leave(me, dir);
 }

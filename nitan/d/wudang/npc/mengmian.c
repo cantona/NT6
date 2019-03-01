@@ -1,13 +1,13 @@
-// mengmian.c ÃÉÃæ´óºº
+// mengmian.c è’™é¢å¤§æ¼¢
 
 inherit NPC;
 
 void create()
 {
-        set_name("ÃÉÃæ´óºº", ({ "dahan" }));
+        set_name("è’™é¢å¤§æ¼¢", ({ "dahan" }));
         set("long",
-                "ËûÊÇÒ»¸öÃÉÃæ´óºº¡£\n");
-        set("gender", "ÄĞĞÔ");
+                "ä»–æ˜¯ä¸€å€‹è’™é¢å¤§æ¼¢ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 30);
         set("attitude", "aggressive");
         set("shen_type", 1);

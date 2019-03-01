@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "���С·");
+        set("short", "後村小路");
         set("long", @LONG
-����һ�����ѵ���ʯ�̾͵�С·����ͨ���ɽ��Ψһ�ĵ�
-·��·���Կ�����֪����Ұ����������Ʈ��������һƬ����
-����԰��⡣
+這是一條蜿蜒的青石舖就的小路，是通向後山的唯一的道
+路，路兩旁開滿不知名的野花，陣陣花香飄過，真是一片美麗
+的田園風光。
 LONG);
         set("exits", ([
                 "west" :  __DIR__"lianwuchang",

@@ -5,11 +5,11 @@ string show_hua();
 
 void create()
 {
-        set("short", "�ٺ�ի");
+        set("short", "百狐齋");
         set("long", @LONG
-������Ƕŷ���İٺ�ի����ʵһ����֪���ⲻ����һ���ƾɵ�
-���ã� ֻ�����ڳ����ª��ǽ��ȴ�����˻�(hua)����Щ���Ƕŷ��
-�Լ�������ƽʱ�Ϳ�����Щ��Ϊ����
+這裡就是杜鳳鄂的百狐齋，其實一看就知道這不過是一間破舊的
+草堂， 只見堂內陳設簡陋，牆上卻掛滿了畫(hua)，這些都是杜鳳鄂
+自己畫的他平時就靠賣這些畫為生。
 LONG );
         set("objects", ([
                 __DIR__"npc/dufeng" : 1,
@@ -34,7 +34,7 @@ LONG );
 
 string show_hua()
 {
-        return HIW "\nֻ��ÿ���������ľ��Ǻ����а׺���������ں����������Ϻ�\n"
-               "�����򾲡����ҡ���ŭ�����ģ���������顢�򽿺���ǧ\n"
-               "�˰�̬�������ߡ�\n\n" NOR;
+        return HIW "\n只見每副畫所畫的均是狐，有白狐、赤狐、黑狐、藍狐、紫狐\n"
+               "……或靜、或嬉、或怒、或媚，或狡黠、或機靈、或嬌憨，千\n"
+               "姿百態，形神兼具。\n\n" NOR;
 }

@@ -3,11 +3,11 @@
 
 void create()
 {
-        set_name(HIY "·∞ Ø" NOR, ({ "lan shi", "lan", "shi" }));
+        set_name(HIY "ÂµêÁü≥" NOR, ({ "lan shi", "lan", "shi" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("base_unit", "ø≈");
+                set("base_unit", "È°Ü");
                 set("base_value", 50000);
                 set("base_weight", 100);
         }

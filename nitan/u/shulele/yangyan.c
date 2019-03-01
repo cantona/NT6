@@ -4,10 +4,10 @@ inherit ITEM;
 int do_fu(string arg);
 void create()
 {
-   set_name(HIR"ÑøÑÕµ¤"NOR, ({ "yangyan dan","dan" }));
+   set_name(HIR"é¤Šé¡ä¸¹"NOR, ({ "yangyan dan","dan" }));
    set_weight(100);
-   set("unit", "¿Å");
-   set("long","ÕâÊÇÒ»¿ÅÓÉ¶àÖÖÃÀÈİÎïÖÊÌáÁ¶¶ø³ÉµÄµ¤Ò©,·şÓÃ(fu dan)ËüÄÜÃÀÈİ.\n");
+   set("unit", "é¡†");
+   set("long","é€™æ˜¯ä¸€é¡†ç”±å¤šç¨®ç¾å®¹ç‰©è³ªæç…‰è€Œæˆçš„ä¸¹è—¥,æœç”¨(fu dan)å®ƒèƒ½ç¾å®¹.\n");
    set("value", 150000);
    
 }
@@ -20,12 +20,12 @@ int do_fu(string arg)
 {
 	object me,ob;int i;
 	ob=this_object();me=this_player();
-	if(!arg||(arg!="dan"&&arg!="µ¤"))
-		return notify_fail("ÄãÒª·şÓÃÊ²Ã´?\n");
+	if(!arg||(arg!="dan"&&arg!="ä¸¹"))
+		return notify_fail("ä½ è¦æœç”¨ä»€éº¼?\n");
                             if(me->query("per")>30)
-		return notify_fail("Äã¶¼ÕâÃ´ÃÀÁË£¬»¹ÑøÊ²Ã´ÑÕ£¬²»ÈÃ±ğÈË»îÁË°¡£¡\n");
+		return notify_fail("ä½ éƒ½é€™éº¼ç¾äº†ï¼Œé‚„é¤Šä»€éº¼é¡ï¼Œä¸è®“åˆ¥äººæ´»äº†å•Šï¼\n");
 	me->add("per",1);
-	message_vision("$N·şÏÂÁËÒ»¿Å[ÑøÑÕµ¤]£¬¸Ğ¾õµ½×Ô¼º±äÃÀÁË¡£\n",me);
+	message_vision("$Næœä¸‹äº†ä¸€é¡†[é¤Šé¡ä¸¹]ï¼Œæ„Ÿè¦ºåˆ°è‡ªå·±è®Šç¾äº†ã€‚\n",me);
 	destruct(ob);
 	return 1;
 }

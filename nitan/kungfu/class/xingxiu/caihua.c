@@ -4,14 +4,14 @@ inherit NPC;
 
 void create()
 {
-        set_name("²É»¨×Ó", ({ "caihua zi", "caihua", "zi" }) );
-        set("gender", "ÄĞĞÔ" );
-        set("nickname", "ÈüÀ¥ÂØ");
+        set_name("æ¡èŠ±å­", ({ "caihua zi", "caihua", "zi" }) );
+        set("gender", "ç”·æ€§" );
+        set("nickname", "è³½æ˜†ä¾–");
         set("age", 38);
         set("long", 
-                "²É»¨×ÓÊÇĞÇËŞÅÉµÄÒ»¸öĞ¡à¶ÂŞ£¬Îä¹¦Ëä²»ºÃ£¬µ«ÉúĞÔÒùĞ°£¬"
-                "¾­³£¼éÒùÁ¼¼Ò¸¾Å®£¬ÊÇ¹Ù¸®Í¨¼©µÄ·¸ÈË£¬¹Ê¶øĞÇËŞÅÉÃûÒåÉÏ"
-                "Ò²²»³ĞÈÏÓĞÕâ¸öµÜ×Ó¡£\n");
+                "æ¡èŠ±å­æ˜¯æ˜Ÿå®¿æ´¾çš„ä¸€å€‹å°å˜ç¾…ï¼Œæ­¦åŠŸé›–ä¸å¥½ï¼Œä½†ç”Ÿæ€§æ·«é‚ªï¼Œ"
+                "ç¶“å¸¸å§¦æ·«è‰¯å®¶å©¦å¥³ï¼Œæ˜¯å®˜åºœé€šç·çš„çŠ¯äººï¼Œæ•…è€Œæ˜Ÿå®¿æ´¾åç¾©ä¸Š"
+                "ä¹Ÿä¸æ‰¿èªæœ‰é€™å€‹å¼Ÿå­ã€‚\n");
         set("str", 25);
         set("dex", 30);
         set("con", 17);
@@ -27,13 +27,13 @@ void create()
         set("max_jing", 100);
         set("neili", 500);
         set("max_neili", 500);
-        create_family("ĞÇËŞÅÉ", 2, "µÜ×Ó");
+        create_family("æ˜Ÿå®¿æ´¾", 2, "å¼Ÿå­");
 
         set("attitude", "peaceful");
         set("inquiry", ([
-                "name" : "ÎÒÒ²¼Ç²»ÇåÎÒĞÕÉõÃûË­ÁË£¬½­ºşÅóÓÑËÍÎÒÑÅºÅ²É»¨×Ó¡£",
-                "²É»¨" : "ÄÇ¿ÉÊÇÑ§ÎÊ£¬ÎÒ²»ÄÜËæ±ã½Ì¡£",
-                "Ñ§ÎÊ" : "ºÙºÙ£¬Äï¶ùÃÇÏĞ×Å£¬Æñ²»ÊÇÀË·ÑÁË£¿",
+                "name" : "æˆ‘ä¹Ÿè¨˜ä¸æ¸…æˆ‘å§“ç”šåèª°äº†ï¼Œæ±Ÿæ¹–æœ‹å‹é€æˆ‘é›…è™Ÿæ¡èŠ±å­ã€‚",
+                "æ¡èŠ±" : "é‚£å¯æ˜¯å­¸å•ï¼Œæˆ‘ä¸èƒ½éš¨ä¾¿æ•™ã€‚",
+                "å­¸å•" : "å˜¿å˜¿ï¼Œå¨˜å…’å€‘é–’è‘—ï¼Œè±ˆä¸æ˜¯æµªè²»äº†ï¼Ÿ",
         ]) );
         setup();
         carry_object(CLOTH_DIR"male-cloth")->wear();
@@ -55,16 +55,16 @@ void greeting(object me)
 {
         mapping myfam;
         myfam=query("family", me);
-        if (myfam && myfam["family_name"] == "ĞÇËŞÅÉ" &&
-                (query("gender", me) == "ÄĞĞÔ") )
-                command("say ÎÒ×òÌì´ÓÉ½ÏÂÓÖ×½ÁË¸öĞ¡æ¤À´¡£Ë®Áé¼«ÁË£¬¾Í¹ØÔÚÎÒµÄåĞÒ£¶´Àï£¬\nÕÛÌÚÁËÒ»Ò¹£¬´óÒ¯ÎÒË¬¹»ÁË£¬ÄãÒª²»Òª½øÈ¥ÊÔÊÔ£¿");
-        set_temp("marks/»¨", 0, me);
+        if (myfam && myfam["family_name"] == "æ˜Ÿå®¿æ´¾" &&
+                (query("gender", me) == "ç”·æ€§") )
+                command("say æˆ‘æ˜¨å¤©å¾å±±ä¸‹åˆæ‰äº†å€‹å°å¦ä¾†ã€‚æ°´éˆæ¥µäº†ï¼Œå°±é—œåœ¨æˆ‘çš„é€é™æ´è£¡ï¼Œ\næŠ˜é¨°äº†ä¸€å¤œï¼Œå¤§çˆºæˆ‘çˆ½å¤ äº†ï¼Œä½ è¦ä¸è¦é€²å»è©¦è©¦ï¼Ÿ");
+        set_temp("marks/èŠ±", 0, me);
 }
 
 void attempt_apprentice(object ob)
 {
         command("hehe");
-        command("say ÏëÑ§ÎÒµÄ²É»¨Éñ¼¼£¿Ã»ÃÅ¶ù£¡");
+        command("say æƒ³å­¸æˆ‘çš„æ¡èŠ±ç¥æŠ€ï¼Ÿæ²’é–€å…’ï¼");
         return;
 }
 
@@ -73,28 +73,28 @@ int accept_object(object me, object obj)
         mapping myfam;
         myfam=query("family", me);
 
-        if (!myfam || myfam["family_name"] != "ĞÇËŞÅÉ") 
-                command("say ÉÙ¸úÎÒÌ×½üºõ¡£");
+        if (!myfam || myfam["family_name"] != "æ˜Ÿå®¿æ´¾") 
+                command("say å°‘è·Ÿæˆ‘å¥—è¿‘ä¹ã€‚");
         else {
                 if( !query("money_id", obj) )
                 {
-                        if( query("gender", me) == "Å®ĞÔ" )
+                        if( query("gender", me) == "å¥³æ€§" )
                         {
                                 command("kiss"+query("id", me));
-                                command("say Ïë²»µ½Ê¦½ãÒ²ÓĞÕâ¸ö°®ºÃ¡£");
+                                command("say æƒ³ä¸åˆ°å¸«å§ä¹Ÿæœ‰é€™å€‹æ„›å¥½ã€‚");
                         }
                         else
                         {
                                 command("bow"+query("id", me));
-                                command("say ¶àĞ»Ê¦ĞÖ¡£");
+                                command("say å¤šè¬å¸«å…„ã€‚");
                         }
-                        command("say ¶Ô²»Æğ£¬ÄÇĞ¡æ¤×òÌìÍíÉÏ±»²»ÖªµÀÄÄ¸ö»ìµ°¾È×ßÁË£¬²»¹ı\nÄã¿ÉÒÔ½ø¶´Ë¯Ò»¾õ¡£");
-                        set_temp("marks/»¨", 1, me);
+                        command("say å°ä¸èµ·ï¼Œé‚£å°å¦æ˜¨å¤©æ™šä¸Šè¢«ä¸çŸ¥é“å“ªå€‹æ··è›‹æ•‘èµ°äº†ï¼Œä¸é\nä½ å¯ä»¥é€²æ´ç¡ä¸€è¦ºã€‚");
+                        set_temp("marks/èŠ±", 1, me);
                 }
                 else
                 {
                         command("thank"+query("id", me));
-                        command("say Ç®ÎÒÓĞµÄÊÇ£¬Äã»¹ÊÇ¸øÎÒµã±ğµÄÊ²Ã´°É¡£");
+                        command("say éŒ¢æˆ‘æœ‰çš„æ˜¯ï¼Œä½ é‚„æ˜¯çµ¦æˆ‘é»åˆ¥çš„ä»€éº¼å§ã€‚");
                 }
         }
         return 1;

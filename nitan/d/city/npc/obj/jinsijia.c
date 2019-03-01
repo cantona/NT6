@@ -7,12 +7,12 @@ inherit CLOTH;
 
 void create()
 {
-        set_name( HIY"½ğË¿¼×"NOR, ({ "jinsi jia", "jia"}) );
+        set_name( HIY"é‡‘çµ²ç”²"NOR, ({ "jinsi jia", "jia"}) );
         set_weight(10000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼ş");
+                set("unit", "ä»¶");
 /*
                 set("no_get", "1");
                 set("no_put", "1");
@@ -33,6 +33,6 @@ int query_autoload()
 }
 void owner_is_killed()
 {
-        write(HIY"Ö»¼ûÑÛÇ°½ğ¹âÒ»ÉÁ...ºÃÏóÊÇ.....\n"NOR);
+        write(HIY"åªè¦‹çœ¼å‰é‡‘å…‰ä¸€é–ƒ...å¥½è±¡æ˜¯.....\n"NOR);
         destruct(this_object());
 } 

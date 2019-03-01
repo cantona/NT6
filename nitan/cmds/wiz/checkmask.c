@@ -15,13 +15,13 @@ int main(object me)
         mask_ob = filter_array(users(), (: mask_check :));
 
         if ( sizeof(mask_ob) > 0 ) {
-                str = "目前线上使用面具的玩家有：\n";
+                str = "鐩墠绶氫笂浣跨敤闈㈠叿鐨勭帺瀹舵湁锛歕n";
                 for (i = 0;i < sizeof(mask_ob);i ++)
                         str = sprintf("%s%-16s      =    %s \n", str, mask_ob[i]->name(1) + "(" +
                                 query("id", mask_ob[i])+")",mask_ob[i]->name(0));
                 me->start_more(str);
                 return 1;
-        } else  return notify_fail("目前没有玩家使用面具。\n");
+        } else  return notify_fail("鐩墠娌掓湁鐜╁浣跨敤闈㈠叿銆俓n");
 }
 
 int mask_check(object ob)

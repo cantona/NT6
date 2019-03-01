@@ -6,13 +6,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIW"±ùÆÇÓñ¾«"NOR, ({"bingpo yujing", "yujing"}));
+        set_name(HIW"å†°é­„ç‰ç²¾"NOR, ({"bingpo yujing", "yujing"}));
         set_weight(80);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long","ÕâÊÇÍòÄêº®ÓñËùÄı½á¶ø³ÉµÄ±ùÆÇÓñ¾«£¬¿´ÉÏÈ¥½à°×ÌŞÍ¸£¬É¢·¢³öÂÌÓÄÓÄµÄ¹âÃ¢¡£\n");
-                set("unit", "¿é");
+                set("long","é€™æ˜¯è¬å¹´å¯’ç‰æ‰€å‡çµè€Œæˆçš„å†°é­„ç‰ç²¾ï¼Œçœ‹ä¸Šå»æ½”ç™½å‰”é€ï¼Œæ•£ç™¼å‡ºç¶ å¹½å¹½çš„å…‰èŠ’ã€‚\n");
+                set("unit", "å¡Š");
                 set("value", 70000);
         }
 }

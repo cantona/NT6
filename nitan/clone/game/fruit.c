@@ -4,20 +4,20 @@ inherit F_LIQUID;
 
 void create()
 {
-        set_name(HIY "¹ûÖ­±ù" NOR, ({"fruit water","fruit"}));
+        set_name(HIY "æœæ±å†°" NOR, ({"fruit water","fruit"}));
         set_weight(700);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long",HIG "ÕâÊÇÒ»±­ÓÉĞÂÏÊéÙÖ­ÖÆ³ÉµÄ¹ûÖ­±ù£¬±ùµÃ¸ÕºÃ£¬¿´ÆğÀ´ÓÕÈË¼«ÁË¡£\n" NOR);
-                set("unit", "±­");
+                set("long",HIG "é€™æ˜¯ä¸€æ¯ç”±æ–°é®®æ©˜æ±åˆ¶æˆçš„æœæ±å†°ï¼Œå†°å¾—å‰›å¥½ï¼Œçœ‹èµ·ä¾†èª˜äººæ¥µäº†ã€‚\n" NOR);
+                set("unit", "æ¯");
                 set("value", 100);
                 set("max_liquid", 5);
         }
 
         set("liquid", ([
                 "type": "water",
-                 "name":HIY "¹ûÖ­±ù" NOR,
+                 "name":HIY "æœæ±å†°" NOR,
                 "remaining": 5,
                 "supply": 10,
                 "drunk_apply": 3,

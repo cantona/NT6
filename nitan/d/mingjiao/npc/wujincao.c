@@ -15,13 +15,13 @@ void dest_ob(object);
 
 void create()
 {
-        set_name("Îâ¾¢²İ", ({ "wu jincao","wu"}) );
+        set_name("å³å‹è‰", ({ "wu jincao","wu"}) );
         set("long",
-        "ËûÊÇÒ»Î»¿´ÉÏÈ¥ºÜ¾«¸ÉµÄÖĞÄêÄĞ×Ó£¬Éí´©Ò»¼ş°×²¼³¤ÅÛ¡£\n"
-        "ËûÌìÉúÉñÁ¦£¬ÊÖÖĞµÄÁ½Í·ÀÇÑÀ°ôÓĞÍò·ò²»µ±Ö®ÓÂ£¬ÕæÊÇÒ»ÌõÍş·çÁİÁİµÄºº×Ó¡£\n"
+        "ä»–æ˜¯ä¸€ä½çœ‹ä¸Šå»å¾ˆç²¾å¹¹çš„ä¸­å¹´ç”·å­ï¼Œèº«ç©¿ä¸€ä»¶ç™½å¸ƒé•·è¢ã€‚\n"
+        "ä»–å¤©ç”Ÿç¥åŠ›ï¼Œæ‰‹ä¸­çš„å…©é ­ç‹¼ç‰™æ£’æœ‰è¬å¤«ä¸ç•¶ä¹‹å‹‡ï¼ŒçœŸæ˜¯ä¸€æ¢å¨é¢¨å‡œå‡œçš„æ¼¢å­ã€‚\n"
         );
-        set("title", HIG "Ã÷½Ì" HIW "Èñ½ğÆì" NOR "ÕÆÆì¸±Ê¹");
-        set("gender", "ÄĞĞÔ");
+        set("title", HIG "æ˜æ•™" HIW "éŠ³é‡‘æ——" NOR "æŒæ——å‰¯ä½¿");
+        set("gender", "ç”·æ€§");
         set("attitude", "friendly");
         set("class", "fighter");
 
@@ -55,16 +55,16 @@ void create()
         map_skill("parry", "jingang-quan");
 
         prepare_skill("cuff", "jingang-quan");
-        create_family("Ã÷½Ì", 37, "Èñ½ğÆìÕÆÆì¸±Ê¹");
+        create_family("æ˜æ•™", 37, "éŠ³é‡‘æ——æŒæ——å‰¯ä½¿");
 
 
         set("inquiry", ([
-                "name" : "ÔÚÏÂ¾ÍÊÇÃ÷½ÌÈñ½ğÆìÕÆÆì¸±Ê¹Îâ¾¢²İ£¬²»Öª¸óÏÂÓĞºÎÖ¸½Ì¡£",
-                "´òÌú" : (: ask_job :),
+                "name" : "åœ¨ä¸‹å°±æ˜¯æ˜æ•™éŠ³é‡‘æ——æŒæ——å‰¯ä½¿å³å‹è‰ï¼Œä¸çŸ¥é–£ä¸‹æœ‰ä½•æŒ‡æ•™ã€‚",
+                "æ‰“éµ" : (: ask_job :),
                 "datie": (: ask_job :),
-                "¾«Ìú´¢²Ø" : (: ask_jingtie_num :),
+                "ç²¾éµå„²è—" : (: ask_jingtie_num :),
                 "reserve"  : (: ask_jingtie_num :),
-                "¾«Ìú" : (: ask_jingtie :),
+                "ç²¾éµ" : (: ask_jingtie :),
                 "jingtie" : (: ask_jingtie :),
         ]));
 
@@ -81,32 +81,32 @@ string ask_job()
      mapping fam ;
      object ling,chui,qiao;
 
-    if( !(fam=query("family", this_player())) || fam["family_name"] != "Ã÷½Ì" )
-        return "ÕâÎ»"+RANK_D->query_respect(player)+"²¢·ÇÎÒ½ÌµÜĞÖ£¬ÄÇ¸ÒÔÚÏÂÄÇ¸Ò·ÖÅÉ¸óÏÂÊ²Ã´ÈÎÎñÄØ¡£\n";
+    if( !(fam=query("family", this_player())) || fam["family_name"] != "æ˜æ•™" )
+        return "é€™ä½"+RANK_D->query_respect(player)+"ä¸¦éæˆ‘æ•™å¼Ÿå…„ï¼Œé‚£æ•¢åœ¨ä¸‹é‚£æ•¢åˆ†æ´¾é–£ä¸‹ä»€éº¼ä»»å‹™å‘¢ã€‚\n";
 
         if( query("combat_exp", player)>400000 )
-                 return "ÕâÎ»"+RANK_D->query_respect(player)+"ÊµÕ½¾­ÑéÒÑ¾­ÆÄ¸ß£¬Æñ¸ÒÀÍ·³´ó¼Ü¡£\n";
+                 return "é€™ä½"+RANK_D->query_respect(player)+"å¯¦æˆ°ç¶“é©—å·²ç¶“é —é«˜ï¼Œè±ˆæ•¢å‹ç…©å¤§æ¶ã€‚\n";
 
         if (fam["generation"] <37)
-                 return "ÕâÎ»"+RANK_D->query_respect(player)+"ÔÚÎÒÃ÷½ÌÖĞµØÎ»ÆÄ¸ß£¬Æñ¸ÒÀÍ·³´ó¼Ü¡£\n";
+                 return "é€™ä½"+RANK_D->query_respect(player)+"åœ¨æˆ‘æ˜æ•™ä¸­åœ°ä½é —é«˜ï¼Œè±ˆæ•¢å‹ç…©å¤§æ¶ã€‚\n";
 
         if( query("mingjiao/job", player) != "jin_caikuang" )
                 return judge_jobmsg(player,0);
 
         if( !present("wujin kuangshi",player ) )
-                return "Äã²¢Î´²ÉÀ´¿óÊ¯£¬ÈçºÎ´òÌú£¿\n";
+                return "ä½ ä¸¦æœªæ¡ä¾†ç¤¦çŸ³ï¼Œå¦‚ä½•æ‰“éµï¼Ÿ\n";
 
         qiao=present("tie qiao",player );
         if (qiao) destruct(qiao);
-        tell_object(player,"Äã°ÑÌúÇÂ½»¸øÎâ¾¢²İ¡£\n\n");
+        tell_object(player,"ä½ æŠŠéµé¬äº¤çµ¦å³å‹è‰ã€‚\n\n");
 
         command("nod"+query("id", player));
 
         chui=new(OBJ_PATH"/tiechui");
         chui->move(player);
-        tell_object(player,"Îâ¾¢²İ¸øÄãÒ»°ÑÌú´¸¡£\n");
+        tell_object(player,"å³å‹è‰çµ¦ä½ ä¸€æŠŠéµéŒ˜ã€‚\n");
 
-        return "ºÃ£¡¿ìÈ¥°Ñ²ÉÀ´µÄ¿óÊ¯Á¶³É¾«Ìú°É¡£\n";
+        return "å¥½ï¼å¿«å»æŠŠæ¡ä¾†çš„ç¤¦çŸ³ç…‰æˆç²¾éµå§ã€‚\n";
 }
 
 int accept_object(object me, object ob)
@@ -122,16 +122,16 @@ int accept_object(object me, object ob)
 
         job_flg = judge_jobmsg(me,1);
 
-        if ( job_flg !=  "²É¼¯Ìú¿ó" )
+        if ( job_flg !=  "æ¡é›†éµç¤¦" )
         {
                 command("hmm"+query("id", me));
-                command("say Ã»ÓĞÕâÏî¹¤×÷£¬¾Í²»ÒªºúÂÒ¿ª²É£¡");
+                command("say æ²’æœ‰é€™é …å·¥ä½œï¼Œå°±ä¸è¦èƒ¡äº‚é–‹æ¡ï¼");
                 return 0;
         }
         else
         {
                 command("thumb"+query("id", this_player()));
-                command("say ÕâÎ»ĞÖµÜĞÁ¿àÁË!ÏÂÈ¥ºÃºÃĞİÏ¢ĞİÏ¢£¡");
+                command("say é€™ä½å…„å¼Ÿè¾›è‹¦äº†!ä¸‹å»å¥½å¥½ä¼‘æ¯ä¼‘æ¯ï¼");
                 tool=present("tie chui",me );
                 if (tool) destruct(tool);
                 remove_call_out("dest_ob");
@@ -163,7 +163,7 @@ int get_jingtie_num()
 
 string ask_jingtie_num()
 {
-        return "ÏÖÔÚ»¹ÓĞ"+chinese_number(get_jingtie_num())+"¿é¾«Ìú¡£\n";
+        return "ç¾åœ¨é‚„æœ‰"+chinese_number(get_jingtie_num())+"å¡Šç²¾éµã€‚\n";
 }
 
 string ask_jingtie()
@@ -174,20 +174,20 @@ string ask_jingtie()
         string job_flg;
 
         job_flg = judge_jobmsg(me,1);
-        if (job_flg != "´òÔì»ğÇ¹")
-                return "ÕâÎ»"+RANK_D->query_respect(me)+"ºÃÏóÃ»ÓĞÔì»ğÇ¹µÄÈÎÎñ°É¡£\n";
+        if (job_flg != "æ‰“é€ ç«æ§")
+                return "é€™ä½"+RANK_D->query_respect(me)+"å¥½è±¡æ²’æœ‰é€ ç«æ§çš„ä»»å‹™å§ã€‚\n";
 
         if (present("jing tie",me) )
         {
                 command("hmm"+query("id", me));
-                return "Äã²»ÊÇÒÑ¾­ÓĞÒ»¿éÁËÂğ£¿»¹ÏëÒª£¬ÕæÊÇÌ°µÃÎŞÑá¡£\n";
+                return "ä½ ä¸æ˜¯å·²ç¶“æœ‰ä¸€å¡Šäº†å—ï¼Ÿé‚„æƒ³è¦ï¼ŒçœŸæ˜¯è²ªå¾—ç„¡å­ã€‚\n";
         }
 
         if ( get_jingtie_num() <= 0 )
-                return "¶Ô²»Æğ£¬ÎÒÕâÀïÒÑ¾­Ã»ÓĞ¾«ÌúÁË¡£\n";
+                return "å°ä¸èµ·ï¼Œæˆ‘é€™è£¡å·²ç¶“æ²’æœ‰ç²¾éµäº†ã€‚\n";
 
         command("nod"+query("id", me));
-        message_vision("Îâ¾¢²İÄÃÁËÒ»¿é¾«Ìú¸ø$N\n",me);
+        message_vision("å³å‹è‰æ‹¿äº†ä¸€å¡Šç²¾éµçµ¦$N\n",me);
         if (!(room = find_object("/d/mingjiao/mj_center.c")))
                 room = load_object("/d/mingjiao/mj_center.c");
         addn("jingtie", -1, room);
@@ -195,7 +195,7 @@ string ask_jingtie()
         jingtie=new(OBJ_PATH"/jingtie");
         jingtie->move(me);
 
-        return "ÕâÊÇĞÖµÜÃÇĞÁĞÁ¿à¿àÁ¶³öÀ´µÄ¾«Ìú£¬ÄãÒªÓÃËüºÃºÃ´òÔì±øÆ÷¡£\n";
+        return "é€™æ˜¯å…„å¼Ÿå€‘è¾›è¾›è‹¦è‹¦ç…‰å‡ºä¾†çš„ç²¾éµï¼Œä½ è¦ç”¨å®ƒå¥½å¥½æ‰“é€ å…µå™¨ã€‚\n";
 }
 
 void dest_ob(object ob) { destruct(ob);}

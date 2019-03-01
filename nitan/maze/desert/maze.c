@@ -4,10 +4,10 @@ inherit VRM_SERVER;
 
 void create()
 {
-        //�Թ��������̳е�����ĵ������ơ�
+        //迷宮房間所繼承的物件的檔案名稱。
         set_inherit_room( ROOM );
 
-        //Ψһ����
+        //唯一房間
         set_unique_room( ({
                 "/maze/desert/unique_room/guai_boss_room",
                 "/maze/desert/unique_room/guai_boss_room",
@@ -16,7 +16,7 @@ void create()
         }) );
         set_center_room("/maze/desert/unique_room/king_boss_room");
 
-        //�Թ�������Ĺ��
+        //迷宮房間裡的怪物。
         set_maze_npcs( ([
                 "/maze/desert/npc/guai": 1 + random(3),
         ]) );
@@ -28,52 +28,52 @@ void create()
         set_maze_boxs(5);
 
 
-        //�Թ��ĵ��߳�
+        //迷宮的單邊長
         set_maze_long(8);
 
-        //��ڷ���(�����ڶ���)
+        //入口方向(出口在對面)
         set_entry_dir("north");
 
-        //�������������ӷ���
+        //入口與區域的連接方向
         set_link_entry_dir("north");
 
-        //�������������ӵ�����
+        //入口與區域的連接檔案名
         set_link_entry_room("/d/changan/ca10");
 
-        //��������������ӷ���
+        //出口與區域的連接方向
         set_link_exit_dir("south");
 
-        //��������������ӵ�����
+        //出口與區域的連接檔案名
         set_link_exit_room(__DIR__"out");  
 
 
-        //��ͨ��������
-        set_maze_room_short(RED "�޾���Į" NOR);
+        //普通房間描述
+        set_maze_room_short(RED "無盡大漠" NOR);
 
         set_maze_room_desc(@LONG
-һ���޼ʵĴ�Į�����ա���ɳ���ຮ�����ȣ���ʱ������ĥ��ÿ
-һ���ˣ�����������û����ˮ�����п��ܾͻᱻɹ����ɳ�ӹ��̣�
-���԰ѽ����ã�һ�����ϣ�ȴ�ֱ����͸�ǡ�
+一望無際的大漠，烈日、風沙、苦寒、酷熱，無時不在折磨著每
+一個人，在這裡，如果你沒有飲水，很有可能就會被曬死，沙子滾燙，
+足以把腳燙爛，一到晚上，卻又冰冷得透骨。
 LONG);
 
-        //��ڷ��������
-        set_entry_short(HIR "�޾���Į���" NOR);
+        //入口房間短描述
+        set_entry_short(HIR "無盡大漠入口" NOR);
 
-        //��ڷ�������
+        //入口房間描述
         set_entry_desc(@LONG
-һ���޼ʵĴ�Į�����ա���ɳ���ຮ�����ȣ���ʱ������ĥ��ÿ
-һ���ˣ�����������û����ˮ�����п��ܾͻᱻɹ����ɳ�ӹ��̣�
-���԰ѽ����ã�һ�����ϣ�ȴ�ֱ����͸�ǡ�
+一望無際的大漠，烈日、風沙、苦寒、酷熱，無時不在折磨著每
+一個人，在這裡，如果你沒有飲水，很有可能就會被曬死，沙子滾燙，
+足以把腳燙爛，一到晚上，卻又冰冷得透骨。
 LONG);
 
-        //���ڷ��������
-        set_exit_short(WHT "�޾���Į����" NOR);
+        //出口房間短描述
+        set_exit_short(WHT "無盡大漠出口" NOR);
 
-        //���ڷ�������
+        //出口房間描述
         set_exit_desc(@LONG
-һ���޼ʵĴ�Į�����ա���ɳ���ຮ�����ȣ���ʱ������ĥ��ÿ
-һ���ˣ�����������û����ˮ�����п��ܾͻᱻɹ����ɳ�ӹ��̣�
-���԰ѽ����ã�һ�����ϣ�ȴ�ֱ����͸�ǡ�
+一望無際的大漠，烈日、風沙、苦寒、酷熱，無時不在折磨著每
+一個人，在這裡，如果你沒有飲水，很有可能就會被曬死，沙子滾燙，
+足以把腳燙爛，一到晚上，卻又冰冷得透骨。
 LONG);
         set_outdoors(1);
 }

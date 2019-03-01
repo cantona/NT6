@@ -15,11 +15,11 @@ string *can_converts = ({
 
 void create()
 {
-        set_name("½ğ¸´»¹", ({ "jin fuhuan", "jin","fuhuan" }));
-        set("title", "Öé±¦ĞĞÀÏ°å");
+        set_name("é‡‘å¾©é‚„", ({ "jin fuhuan", "jin","fuhuan" }));
+        set("title", "ç å¯¶è¡Œè€æ¿");
         set("shen_type", 1);
         set("str", 35);
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("age", 45);
         set("combat_exp", 50000);
         set("attitude", "friendly");
@@ -55,24 +55,24 @@ int do_convert(string arg)
 
         me = this_player();
         if( !arg || sscanf(arg, "%d %s to %s", amount, sid, what) != 3 )
-                return notify_fail("Ö¸Áî¸ñÊ½£ºconvert <ÊıÁ¿> <ÎïÆ·> to <ĞÂÎïÆ·>\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šconvert <æ•¸é‡> <ç‰©å“> to <æ–°ç‰©å“>\n");
 
         if( amount < 1 || amount > 5000 )
-                return notify_fail("¶Ò»»µÄÊıÁ¿²»¿ÉÒÔĞ¡ÓÚ1¸öÍ¬Ê±²»¿ÉÒÔ´óÓÚ5000¸ö¡£\n");
+                return notify_fail("å…Œæ›çš„æ•¸é‡ä¸å¯ä»¥å°äº1å€‹åŒæ™‚ä¸å¯ä»¥å¤§äº5000å€‹ã€‚\n");
 
         if( !objectp(ob = present(sid, me)) )
-                return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÖÖ¶«Î÷¡£\n");
+                return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™ç¨®æ±è¥¿ã€‚\n");
 
         if( member_array(sid, can_converts) == -1 )
-                return notify_fail("Öé±¦ÉÌËµµÀ£º¡°ÎÒ¶ÔÄãÕâ¸ö¶«Î÷Ã»ÓĞĞËÈ¤¡£¡±\n");
+                return notify_fail("ç å¯¶å•†èªªé“ï¼šâ€œæˆ‘å°ä½ é€™å€‹æ±è¥¿æ²’æœ‰èˆˆè¶£ã€‚â€\n");
 
         if( member_array(what, can_converts) == -1 )
-                return notify_fail("Öé±¦ÉÌËµµÀ£º¡°ÄãÒª¶Ò»»Õâ¸ö¶«Î÷ÎÒÕâÀïÃ»ÓĞ¡£¡±\n");
+                return notify_fail("ç å¯¶å•†èªªé“ï¼šâ€œä½ è¦å…Œæ›é€™å€‹æ±è¥¿æˆ‘é€™è£¡æ²’æœ‰ã€‚â€\n");
 
         sscanf(sid, "%s%d", id, n1);
         sscanf(what, "%s%d", id, n2);
 
-        if( n1 > n2 ) return notify_fail("Öé±¦ÉÌËµµÀ£º¡°ÎÒ²»×öÕâÑùµÄ¶Ò»»·½Ê½ÂòÂô¡£¡±\n");
+        if( n1 > n2 ) return notify_fail("ç å¯¶å•†èªªé“ï¼šâ€œæˆ‘ä¸åšé€™æ¨£çš„å…Œæ›æ–¹å¼è²·è³£ã€‚â€\n");
         else if( n1 < n2 ) n = (int)pow(3, (n2 - n1));
 
         flag = 0;
@@ -107,7 +107,7 @@ int do_convert(string arg)
                 flag--;
         }
 
-        message_vision(HIC "$N½«¶Ò»»ºóµÄÎïÆ·¸øÁË$n¡£\n", this_object(), me);
+        message_vision(HIC "$Nå°‡å…Œæ›å¾Œçš„ç‰©å“çµ¦äº†$nã€‚\n", this_object(), me);
         return 1;
 }
 

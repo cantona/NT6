@@ -2,16 +2,16 @@
 inherit ITEM;
 void create()
 {
-        set_name(HIG "ÏÉ»ê²İ" NOR, ({"xianhuncao"}));
+        set_name(HIG "ä»™é­‚è‰" NOR, ({"xianhuncao"}));
         set_weight(1);
         if (clonep())
                 set_default_object(__FILE__);
         else {  
-        	set("long", HIG "ÏÉ»ê²İ³¤ÓÚÀ¥ÂØÉ½ÈÜ¶´Ö®ÖĞ£¬´«ËµÎüÊÕÁËĞŞÏÉÖ®ÈËµÄ»êÆÇ£¡\n" + 
-        	                "·şÊ³(fushi xianhuncao)ºó¿ÉÓÀ¾ÃÌáÉıÎäÑ§ĞŞÑø1¼¶¡£\n" HIC
-        	                /*"ÓµÓĞÕß£ºÓµÓĞÕßID*/"\n" NOR);
-                set("unit", "Êø");
-                set("owner", "ÓµÓĞÕßID"); // °ó¶¨ÓµÓĞÕß
+        	set("long", HIG "ä»™é­‚è‰é•·äºæ˜†ä¾–å±±æº¶æ´ä¹‹ä¸­ï¼Œå‚³èªªå¸æ”¶äº†ä¿®ä»™ä¹‹äººçš„é­‚é­„ï¼\n" + 
+        	                "æœé£Ÿ(fushi xianhuncao)å¾Œå¯æ°¸ä¹…æå‡æ­¦å­¸ä¿®é¤Š1ç´šã€‚\n" HIC
+        	                /*"æ“æœ‰è€…ï¼šæ“æœ‰è€…ID*/"\n" NOR);
+                set("unit", "æŸ");
+                set("owner", "æ“æœ‰è€…ID"); // ç¶å®šæ“æœ‰è€…
 	        set("no_drop", 1);set("no_store", 1);set("no_sell", 1);
         }
         setup();
@@ -29,18 +29,18 @@ int do_use(string arg)
 	me = this_player();
 
 	if (! arg || arg != query("id"))
-		return notify_fail("ÄãÒª·şÊ³Ê²Ã´£¿\n");
+		return notify_fail("ä½ è¦æœé£Ÿä»€éº¼ï¼Ÿ\n");
 
 	if (! objectp(ob = present(arg, me)))
-		return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâ¸ö¶«Î÷£¡\n");
+		return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™å€‹æ±è¥¿ï¼\n");
 
 /*
 	if( query("owner", ob) != query("id", me) )
-		return notify_fail(ob->name() + NOR "ÒÑ¾­ÓÚÆäËûÍæ¼Ò°ó¶¨£¡\n");
+		return notify_fail(ob->name() + NOR "å·²ç¶“äºå…¶ä»–ç©å®¶ç¶å®šï¼\n");
 */	
    me->add_skill("martial-cognize", 1);
 
-	tell_object(me, HIG "¹§Ï²£¡Äã·şÏÂ" + ob->name() + HIG "ºó£¬ÎäÑ§ĞŞÑøÌáÉı1¼¶£¡\n");
+	tell_object(me, HIG "æ­å–œï¼ä½ æœä¸‹" + ob->name() + HIG "å¾Œï¼Œæ­¦å­¸ä¿®é¤Šæå‡1ç´šï¼\n");
 	
 	me->save();
 	

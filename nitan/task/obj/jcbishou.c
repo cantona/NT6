@@ -2,15 +2,15 @@
 inherit TASK; 
 void create() 
 { 
-        set_name( HIB "¼Ò´«Ø°Ê×" NOR, ({ "bishou" }) ); 
+        set_name( HIB "å®¶å‚³åŒ•é¦–" NOR, ({ "bishou" }) ); 
         set_weight(20); 
         if( clonep() ) 
                 destruct(this_object()); 
         else { 
-                set("unit", "°Ñ"); 
+                set("unit", "æŠŠ"); 
                 set("material", "iron"); 
-                set("long", "ÕâÊÇÒ»°Ñ¶ÌĞ¡·æÀûµÄØ°Ê×£¬Ø°Ê×±úÉÏ¿Ì×ÅÒ»¸ö¡±¿µ¡°×Ö£¬ÁîÈËÄÑÒÔ×½Ãş¡£\n"); 
+                set("long", "é€™æ˜¯ä¸€æŠŠçŸ­å°é‹’åˆ©çš„åŒ•é¦–ï¼ŒåŒ•é¦–æŸ„ä¸Šåˆ»è‘—ä¸€å€‹â€åº·â€œå­—ï¼Œä»¤äººé›£ä»¥æ‰æ‘¸ã€‚\n"); 
         } 
-        set("owner", "Ñî¹ı"); 
+        set("owner", "æ¥Šé"); 
         setup(); 
 } 

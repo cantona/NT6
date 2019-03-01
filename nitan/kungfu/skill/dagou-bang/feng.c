@@ -5,7 +5,7 @@
 
 inherit F_SSERVER;
 
-string name() { return HIG "·â×Ö¾÷" NOR; }
+string name() { return HIG "å°å­—è¨£" NOR; }
 
 int perform(object me, object target)
 {
@@ -16,31 +16,31 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if( query_temp("feng_zijue", me) )
-                return notify_fail("ÄãÏÖÔÚÕıÔÚÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£åœ¨æ–½å±•" + name() + "ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me)) ||
             query("skill_type", weapon) != "staff" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         skill = me->query_skill("dagou-bang", 1);
 
         if (skill < 120)
-                return notify_fail("Äã´ò¹·°ô·¨²»¹»æµÊì£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ æ‰“ç‹—æ£’æ³•ä¸å¤ å«»ç†Ÿï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (me->query_skill_mapped("staff") != "dagou-bang")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢´ò¹·°ô·¨£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼æ‰“ç‹—æ£’æ³•ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if ((int)me->query_skill("force") < 180)
-                return notify_fail("ÄãµÄÄÚ¹¦»ğºò²»×ã£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸç«å€™ä¸è¶³ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if( query("neili", me)<200 )
-                return notify_fail("ÄãÏÖÔÚµÄÕæÆø²»¹»£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çš„çœŸæ°£ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         wp = weapon->name();
 
-        message_combatd(HIG "$N" HIG "Ê¹³ö´ò¹·°ô·¨¡¸" HIY "·â"
-                        HIG "¡¹×Ö¾÷£¬ÊÖÖĞ" + wp + HIG "¼²ËÙÎè"
-                        "¶¯£¬»Ã³öĞíĞí°ôÓ°»¤×¡ÖÜÉí¡£\n" NOR, me);
+        message_combatd(HIG "$N" HIG "ä½¿å‡ºæ‰“ç‹—æ£’æ³•ã€Œ" HIY "å°"
+                        HIG "ã€å­—è¨£ï¼Œæ‰‹ä¸­" + wp + HIG "ç–¾é€Ÿèˆ"
+                        "å‹•ï¼Œå¹»å‡ºè¨±è¨±æ£’å½±è­·ä½å‘¨èº«ã€‚\n" NOR, me);
 
         addn("neili", -150, me);
         addn_temp("apply/defense", skill/3, me);
@@ -61,6 +61,6 @@ void remove_effect(object me, int amount)
         {
                 addn_temp("apply/defense", -amount, me);
                 delete_temp("feng_zijue", me);
-                tell_object(me, "ÄãµÄ" + name() + "Ê©Õ¹Íê±Ï£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï¡£\n");
+                tell_object(me, "ä½ çš„" + name() + "æ–½å±•å®Œç•¢ï¼Œå°‡å…§åŠ›æ”¶å›ä¸¹ç”°ã€‚\n");
         }
 }

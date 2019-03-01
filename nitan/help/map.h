@@ -1,2 +1,2 @@
-сно╥╣ьм╪==@==/doc/map/map
-╣ьм╪дЯН╚==@==/help/mapall.txt
+И│┼Ф┬╡Е°╟Е°√==@==/doc/map/map
+Е°╟Е°√ИЁ╔Г·╟==@==/help/mapall.txt

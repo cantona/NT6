@@ -3,19 +3,19 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIM "Áú»Ë×ÏÖé" NOR, ({"longhuang zizhu", "longhuang", "zizhu"}));
+        set_name(HIM "é¾å‡°ç´«ç " NOR, ({"longhuang zizhu", "longhuang", "zizhu"}));
         set_weight(2000);
-        set("long", HIM "ÕâÒ»¿Å×ÏÉ«µÄÖé×Ó£¬¾§Ó¨ÌŞÍ¸£¬Öé×ÓÖĞÑë¿Ì»æ×ÅÁú·ï³ÊÏéµÄÍ¼°¸¡£\n" NOR);
+        set("long", HIM "é€™ä¸€é¡†ç´«è‰²çš„ç å­ï¼Œæ™¶ç‘©å‰”é€ï¼Œç å­ä¸­å¤®åˆ»ç¹ªè‘—é¾é³³å‘ˆç¥¥çš„åœ–æ¡ˆã€‚\n" NOR);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
+                set("unit", "é¡†");
                 set("value", 500000);
-                set("enchase/name", "Áú»Ë×ÏÖé");
+                set("enchase/name", "é¾å‡°ç´«ç ");
                 set("enchase/point", 7);
                 set("enchase/type", "medal2");
                 set("enchase/cur_firm", 100);
-                set("nine_object", 1); // ¾Å¿×ÏâÇ¶ÎïÆ·±ê¼Ç
+                set("nine_object", 1); // ä¹å­”é‘²åµŒç‰©å“æ¨™è¨˜
                 set("enchase/spe_data", ([]) );  
         }
         setup();

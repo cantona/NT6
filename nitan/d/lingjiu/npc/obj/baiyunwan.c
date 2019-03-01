@@ -1,15 +1,15 @@
-// baiyunwan.c °×ÔÆĞÜµ¨Íè
+// baiyunwan.c ç™½é›²ç†Šè†½ä¸¸
 
 inherit ITEM;
 
 void create()
 {
-        set_name("°×ÔÆĞÜµ¨Íè", ({"baiyunxiudan wan", "wan"}));
+        set_name("ç™½é›²ç†Šè†½ä¸¸", ({"baiyunxiudan wan", "wan"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
-                set("long", "ÕâÊÇÒ»¿ÅÎäÁÖÈËÊ¿ÃÎÃÂÒÔÇóµÄÁÆÉËÊ¥Ò©¡£\n");
+                set("unit", "é¡†");
+                set("long", "é€™æ˜¯ä¸€é¡†æ­¦æ—äººå£«å¤¢å¯ä»¥æ±‚çš„ç™‚å‚·è–è—¥ã€‚\n");
                 set("value", 50000);
                 set("only_do_effect", 1);
         }
@@ -20,7 +20,7 @@ int do_effect(object me)
 {
         me->receive_curing("qi", 800);
         me->receive_curing("jing", 400);
-        message_vision("$N³ÔÏÂÒ»¿Å°×ÔÆĞÜµ¨Íè£¬Ö»¾õ¾«ÆøÉÏÉı£¬ÆøÉ«´óºÃ¡£\n", me);
+        message_vision("$Nåƒä¸‹ä¸€é¡†ç™½é›²ç†Šè†½ä¸¸ï¼Œåªè¦ºç²¾æ°£ä¸Šå‡ï¼Œæ°£è‰²å¤§å¥½ã€‚\n", me);
         destruct(this_object());
         return 1;
 }

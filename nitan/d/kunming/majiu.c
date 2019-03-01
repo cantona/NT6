@@ -4,11 +4,11 @@ inherit TRANS_ROOM;
 void create()
 {
 mapping map_short = ([
-         "chengdu"     : "�ɶ�",
-         "dali"        : "����",
-         "jingzhou"    : "����",
-         "emei"        : "����ɽ",
-         "xiangyang"   : "����",
+         "chengdu"     : "成都",
+         "dali"        : "大理",
+         "jingzhou"    : "荊州",
+         "emei"        : "峨嵋山",
+         "xiangyang"   : "襄陽",
 ]);
 
 mapping trans_pay = ([
@@ -19,13 +19,13 @@ mapping trans_pay = ([
          "xiangyang"   : 500,
 ]);
 
-              set("short","����");
+              set("short","馬廄");
               set("long",@LONG
-����Ԫ�˿�ջ������ǣ����깩Ӧ���ʲ��ϡ�������紾
-�ӣ������ǻ����ǣ�����Ǻ����տ���������ι�����㣬��ϴ
-ˢ�ø�Ǭ������һֱ�ź򵽿�����·�����������µ���ľ����
-����һ����ľ�� (paizi)�������жѷ������Ѳ��ϣ�������һ
-����ۡ�
+這是元人客棧後的馬廄，常年供應新鮮草料。昆明民風淳
+樸，馬夫們會把馬牽到馬廄好生照看，將它們喂飽飲足，再洗
+刷得幹乾凈凈，一直伺候到客人上路。馬廄雨檐下的爛木柱上
+釘著一塊破木牌 (paizi)。馬廄中堆放著幾堆草料，正中有一
+口泔槽。
 LONG);
         set("outdoors", "kunming");
         set("no_fight", 1);

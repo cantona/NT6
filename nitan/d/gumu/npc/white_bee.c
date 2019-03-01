@@ -1,4 +1,4 @@
-// white_bee.c        Óñ·äÈº
+// white_bee.c        ç‰èœ‚ç¾¤
 // by April 01.09.01
 
 #include <ansi.h>
@@ -7,15 +7,15 @@ inherit NPC;
 
 void create()
 {
-        set_name(WHT"Óñ·äÈº"NOR, ({ "yufeng qun","bees" }) );
-        set("race", "À¥³æ");
-        set("subrace", "·É³æ");
+        set_name(WHT"ç‰èœ‚ç¾¤"NOR, ({ "yufeng qun","bees" }) );
+        set("race", "æ˜†èŸ²");
+        set("subrace", "é£›èŸ²");
         set("age", 1);
-        set("long", "ÕâÊÇ¹ÅÄ¹ÅÉÑ±ÑøµÄÒ»ÈºÓñ·ä£¬ÎËÎËµÄ£¬²»ÖªÓĞ¶àÉÙ¡£\n");
+        set("long", "é€™æ˜¯å¤å¢“æ´¾é¦´é¤Šçš„ä¸€ç¾¤ç‰èœ‚ï¼Œå—¡å—¡çš„ï¼Œä¸çŸ¥æœ‰å¤šå°‘ã€‚\n");
         set("str", 60);
         set("dex", 80);
 
-        set("limbs", ({ "ÃÜ¼¯´¦", "Ï¡±¡´¦", "ºËĞÄ", "ÍâÎ§" }) );
+        set("limbs", ({ "å¯†é›†è™•", "ç¨€è–„è™•", "æ ¸å¿ƒ", "å¤–åœ" }) );
 
         set("max_jing",1000);
         set("jing",1000);
@@ -40,7 +40,7 @@ void die()
 {
         object ob;
 
-        message_vision("\n$NÖÕÓÚ¶¼ËÀÁË£¬µØÉÏ°×Ã£Ã£Ò»Æ¬¡£\n", this_object());
+        message_vision("\n$Nçµ‚äºéƒ½æ­»äº†ï¼Œåœ°ä¸Šç™½èŒ«èŒ«ä¸€ç‰‡ã€‚\n", this_object());
         destruct(this_object());
 }
 
@@ -69,29 +69,29 @@ int do_attack(string arg)
         if (!arg) return 0;
 
         victim = arg;
-        if( victim == query("id", me))return notify_fail("Óñ·äÈº²»ÖªËù´ë£¬Ö»ÊÇÎ§×ÅÄã´ò×ª¡£\n");
+        if( victim == query("id", me))return notify_fail("ç‰èœ‚ç¾¤ä¸çŸ¥æ‰€æªï¼Œåªæ˜¯åœè‘—ä½ æ‰“è½‰ã€‚\n");
 
         ob = present(victim, environment(me));
         bees = present("yufeng qun", environment(me));
 
-        if (!ob) return notify_fail("ÕâÀï²¢ÎŞ´ËÈË£¡\n");
+        if (!ob) return notify_fail("é€™è£¡ä¸¦ç„¡æ­¤äººï¼\n");
 
-        message_vision(HIR "$N×ìÀïÎËÎË×÷Éù£¬Ö¸»ÓÓñ·äÈºÏò$n¹¥È¥¡£\n" NOR, me, ob);
+        message_vision(HIR "$Nå˜´è£¡å—¡å—¡ä½œè²ï¼ŒæŒ‡æ®ç‰èœ‚ç¾¤å‘$næ”»å»ã€‚\n" NOR, me, ob);
 
-        if( query("owner") != me || query("race", ob) != "ÈËÀà"
-                 || query("family/family_name", ob) == "¹ÅÄ¹ÅÉ"){
-                message_vision( "$N²»ÖªËù´ë£¬Ö»ÊÇÎ§×ÅÄã´ò×ª¡£\n" NOR, bees );
+        if( query("owner") != me || query("race", ob) != "äººé¡"
+                 || query("family/family_name", ob) == "å¤å¢“æ´¾"){
+                message_vision( "$Nä¸çŸ¥æ‰€æªï¼Œåªæ˜¯åœè‘—ä½ æ‰“è½‰ã€‚\n" NOR, bees );
                 return 1;
         }
 
         if( random(20) ){
-                message_vision( HIW"Ö»¼û$N·¢·è°ãÏò$nÆËÁË¹ıÈ¥¡£\n" NOR, bees, ob );
+                message_vision( HIW"åªè¦‹$Nç™¼ç˜‹èˆ¬å‘$næ’²äº†éå»ã€‚\n" NOR, bees, ob );
                 bees->kill_ob(ob);
                 me->want_kill(ob);
                 ob->kill_ob(me);
         }
         else
-                message_vision( "$N²»ÖªËù´ë£¬Ö»ÊÇÎ§×ÅÄã´ò×ª¡£\n" NOR, bees );
+                message_vision( "$Nä¸çŸ¥æ‰€æªï¼Œåªæ˜¯åœè‘—ä½ æ‰“è½‰ã€‚\n" NOR, bees );
 
         return 1;
 }

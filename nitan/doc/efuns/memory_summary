@@ -1,32 +1,32 @@
 
         memory_summary
 
-        ���ƣ�
-                memory_summary() �����ڴ�ʹ������ĸ�Ҫ
+        名稱：
+                memory_summary() 傳回內存使用情況的概要
 
-        �﷨��
+        語法：
                 mapping memory_summary();
-                ӳ�� memory_summary();
+                映射 memory_summary();
 
-        �÷���
-                memory_summary() ����һ�����¸�ʽ�����У�
+        用法：
+                memory_summary() 返回一個以下格式的陣列：
 
                 PRE(
                 ([ 
-                  ������ : ([
-                    ������ : ռ�õ��ڴ�,
+                  程序名 : ([
+                    變量名 : 佔用的內存,
                     ...
                   ])
                   ...
                 ])
                 )
 
-                ����ռ�õ��ڴ���ָ�洢��ֵ����Ҫ�����ڴ����
-                �ض���������Ŀ�ĵ��ģ���ȷ��ͳ��һ��������ռ
-                �õ��ڴ��ǲ����ܵġ�
+                變量佔用的內存是指存儲數值所需要的總內存除以
+                特定變量的數目的到的，精確的統計一個變量所佔
+                用的內存是不可能的。
 
-        �˺�����Ҫ���� MudOS ʱ�������ļ��ﶨ���� PACKAGE_CONTRIB��
+        此函數需要編譯 MudOS 時在配置文件裡定義了 PACKAGE_CONTRIB。
 
-        by ���ֺ�(Find@tx)
+        by 發現號(Find@tx)
 
 

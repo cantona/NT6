@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��������");
+        set("short", "王府正廳");
         set("long", @LONG
-������ƽ����������������������̫ʦ�Σ�ǽ�Ϲ���һ��
-�ֻ������õļ���ࡣ����յ�����û��һ���ˣ�����ƽ��
-��ƽʱ���������ֻ�м������˲�ʱ����ɨһ�¡�
+這裡是平西王府的正廳，正中兩把太師椅，牆上掛著一幅
+字畫，布置的簡單清潔。這裡空盪盪的沒有一個人，看來平西
+王平時極少來這裡，只有幾個下人不時來打掃一下。
 LONG);
         set("exits", ([
                 "south"    :__DIR__"wangfu1",

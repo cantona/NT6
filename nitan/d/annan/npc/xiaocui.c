@@ -2,10 +2,10 @@ inherit NPC;
 
 void create()
 {
-   set_name("Ğ¡´ä",({ "xiao cui","xiao","cui"}) );
-        set("gender", "Å®ĞÔ" );
+   set_name("å°ç¿ ",({ "xiao cui","xiao","cui"}) );
+        set("gender", "å¥³æ€§" );
         set("age", 18);
-   set("long", "ËıÊÇÓ­¾ıÂ¥µÄ¹ÃÄï¡£\n");
+   set("long", "å¥¹æ˜¯è¿å›æ¨“çš„å§‘å¨˜ã€‚\n");
        
    set("combat_exp", 10000);
    set("str", 14);
@@ -13,8 +13,8 @@ void create()
    set("attitude", "friendly");
    set("chat_chance",40);
    set("chat_msg",({
-           "Ğ¡´ä½¿Ğ¦µÀ£ºßÏ£¬ÕâÎ»¿Í¹Ù£¬À´½øÀ´×ø×øÂï£¡\n",
-           "Ğ¡´äĞ¦µÀ£ºßÏ£¬¿Í¹Ù£¬½øÀ´°É£¬°üÄãÂúÒâ£¡\n",
+           "å°ç¿ å¬Œç¬‘é“ï¼šå‘¦ï¼Œé€™ä½å®¢å®˜ï¼Œä¾†é€²ä¾†ååå˜›ï¼\n",
+           "å°ç¿ ç¬‘é“ï¼šå‘¦ï¼Œå®¢å®˜ï¼Œé€²ä¾†å§ï¼ŒåŒ…ä½ æ»¿æ„ï¼\n",
    }));
    setup();
    carry_object(__DIR__"obj/shayi")->wear();

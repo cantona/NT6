@@ -193,15 +193,15 @@ int accept_fight(object who)
                 {
                 case "heroism":
                         if( perqi >= 50 ) {
-                                command("say ºß£¡³öÕĞ°É£¡");
+                                command("say å“¼ï¼å‡ºæ‹›å§ï¼");
                                 return 1;
                         } else {
-                                command("say ºß£¡ÎÒĞ¡ĞªÆ¬¿ÌÔÙÊÕÊ°Äã²»³Ù¡£");
+                                command("say å“¼ï¼æˆ‘å°æ­‡ç‰‡åˆ»å†æ”¶æ‹¾ä½ ä¸é²ã€‚");
                                 return 0;
                         }
                         break;
                 default:
-                        command("say ÏëÒĞ¶àÎªÊ¤£¬Õâ²»ÊÇÆÛÈËÌ«ÉõÂğ£¡");
+                        command("say æƒ³å€šå¤šç‚ºå‹ï¼Œé€™ä¸æ˜¯æ¬ºäººå¤ªç”šå—ï¼");
                         return 0;
                 }
         }
@@ -211,23 +211,23 @@ int accept_fight(object who)
                 {
                 case "friendly":
                         command("say " + RANK_D->query_self(this_object())
-                                + "ÔõÃ´¿ÉÄÜÊÇ" + RANK_D->query_respect(who)
-                                + "µÄ¶ÔÊÖ£¿");
+                                + "æ€éº¼å¯èƒ½æ˜¯" + RANK_D->query_respect(who)
+                                + "çš„å°æ‰‹ï¼Ÿ");
                         return 0;
                 case "aggressive":
                 case "killer":
-                        command("say ºß£¡³öÕĞ°É£¡");
+                        command("say å“¼ï¼å‡ºæ‹›å§ï¼");
                         break;
                 default:
-                        command("say ¼ÈÈ»" + RANK_D->query_respect(who)
-                                + "´Í½Ì£¬" + RANK_D->query_self(this_object())
-                                + "Ö»ºÃ·îÅã¡£");
+                        command("say æ—¢ç„¶" + RANK_D->query_respect(who)
+                                + "è³œæ•™ï¼Œ" + RANK_D->query_self(this_object())
+                                + "åªå¥½å¥‰é™ªã€‚");
                         break;
                 }
                 return 1;
         }
 
-        command("say ½ñÌìÓĞĞ©Æ£±¹£¬¸ÄÈÕÔÙÕ½Ò²²»³Ù°¡¡£");
+        command("say ä»Šå¤©æœ‰äº›ç–²æ†Šï¼Œæ”¹æ—¥å†æˆ°ä¹Ÿä¸é²å•Šã€‚");
         return 0;
 }
 
@@ -248,8 +248,8 @@ int accept_hit(object who)
 
 /*
         if( this_object()->is_master() ) {
-                command("say ÕâÎ»" + RANK_D->query_respect(who)
-                        + "£¬»¹ÊÇ¸ÄÈÕÔÙÇĞ´è°É£¡");
+                command("say é€™ä½" + RANK_D->query_respect(who)
+                        + "ï¼Œé‚„æ˜¯æ”¹æ—¥å†åˆ‡ç£‹å§ï¼");
                 return -1;
         }
 */
@@ -266,49 +266,49 @@ int accept_hit(object who)
                 {
                 case "friendly":
                 case "peaceful":
-                        command("say ÕâÎ»" + RANK_D->query_respect(who)
-                                + "£¬ÇÒÂı£¡");
+                        command("say é€™ä½" + RANK_D->query_respect(who)
+                                + "ï¼Œä¸”æ…¢ï¼");
                         break;
                 case "aggressive":
                         if( random(t) > 8 ) {
-                                command("say ËûÄÌÄÌµÄ£¬ÔõÃ´ÕâÃ´·³£¿¾ÍÈÃ" +
+                                command("say ä»–å¥¶å¥¶çš„ï¼Œæ€éº¼é€™éº¼ç…©ï¼Ÿå°±è®“" +
                                         RANK_D->query_self_rude(this_object()) +
-                                        "¿ª¿ªÉ±½ä£¡");
+                                        "é–‹é–‹æ®ºæˆ’ï¼");
                                 kill_ob(who);
                                 return 1;
                         }
-                        command("say ºÃ¸ö" + RANK_D->query_rude(who) +
-                                "£¬½ÓÕĞ£¡");
+                        command("say å¥½å€‹" + RANK_D->query_rude(who) +
+                                "ï¼Œæ¥æ‹›ï¼");
                         break;
                 case "killer":
                         if( random(t) > 3 ) {
-                                command("say ºß£¬ÕÒËÀÕÒµ½ÕâÀïÀ´ÁË£¬" +
+                                command("say å“¼ï¼Œæ‰¾æ­»æ‰¾åˆ°é€™è£¡ä¾†äº†ï¼Œ" +
                                         RANK_D->query_self_rude(this_object()) +
-                                        "ÊÖÕıÑ÷ÄØ£¡");
+                                        "æ‰‹æ­£ç™¢å‘¢ï¼");
                                 kill_ob(who);
                                 return 1;
                         }
-                        command("say ½ÓÕĞ°É£¡");
+                        command("say æ¥æ‹›å§ï¼");
                         break;
                 default:
                         if( random(t) > 7 ) {
-                                command("say ÄãÒªÕÒËÀ°¡£¡");
+                                command("say ä½ è¦æ‰¾æ­»å•Šï¼");
                                 kill_ob(who);
                                 return 1;
                         }
-                        command("say ÕâÎ»" + RANK_D->query_respect(who)
-                                + "£¬ÇÒÂı£¡");
+                        command("say é€™ä½" + RANK_D->query_respect(who)
+                                + "ï¼Œä¸”æ…¢ï¼");
                         break;
                         switch (random(3))
                         {
                         case 0:
-                                command("say À´À´À´£¡");
+                                command("say ä¾†ä¾†ä¾†ï¼");
                                 break;
                         case 1:
-                                command("say ÄÇ¾Í½ÏÁ¿½ÏÁ¿£¡");
+                                command("say é‚£å°±è¼ƒé‡è¼ƒé‡ï¼");
                                 break;
                         case 2:
-                                command("say À´°É£¡ÎÒ»¹»áÅÂÁËÄã²»³É£¿");
+                                command("say ä¾†å§ï¼æˆ‘é‚„æœƒæ€•äº†ä½ ä¸æˆï¼Ÿ");
                                 break;
                         }
                         break;
@@ -317,17 +317,17 @@ int accept_hit(object who)
                 switch(att) {
                 case "friendly":
                 case "peaceful":
-                        command("say ¼ÈÈ»" + RANK_D->query_respect(who)
-                                + "Èç´ËÎŞÀñ£¬ÎÒÖ»ÓĞ²»ÈİÇéÁË£¡");
+                        command("say æ—¢ç„¶" + RANK_D->query_respect(who)
+                                + "å¦‚æ­¤ç„¡ç¦®ï¼Œæˆ‘åªæœ‰ä¸å®¹æƒ…äº†ï¼");
                         break;
                 case "aggressive":
                 case "killer":
                         command("say " + RANK_D->query_rude(who) +
-                                "£¡ÄãÕÒËÀ¡£");
+                                "ï¼ä½ æ‰¾æ­»ã€‚");
                         break;
                 default:
-                        command("say Äã²»ÈÊ£¬ÎÒ²»Òå£¡" + RANK_D->query_rude(who) +
-                                "£¬¿É²»Òª¹ÖÎÒ¡£");
+                        command("say ä½ ä¸ä»ï¼Œæˆ‘ä¸ç¾©ï¼" + RANK_D->query_rude(who) +
+                                "ï¼Œå¯ä¸è¦æ€ªæˆ‘ã€‚");
                         break;
                 }
                 this_object()->kill_ob(who);
@@ -352,17 +352,17 @@ int accept_kill(object who)
         {
         case "friendly":
         case "peaceful":
-                command("say ¼ÈÈ»" + RANK_D->query_respect(who)
-                        + "Èç´Ë±ÆÆÈ£¬Äª¹ÖÔÚÏÂ²»ÁôÇé£¡");
+                command("say æ—¢ç„¶" + RANK_D->query_respect(who)
+                        + "å¦‚æ­¤é€¼è¿«ï¼Œè«æ€ªåœ¨ä¸‹ä¸ç•™æƒ…ï¼");
                 break;
         case "aggressive":
         case "killer":
                 command("say " + RANK_D->query_rude(who) +
-                        "£¡Ã÷ÄêµÄ½ñÌì£¬¾ÍÊÇÄãµÄ¼ÉÈÕ£¡¡£");
+                        "ï¼æ˜å¹´çš„ä»Šå¤©ï¼Œå°±æ˜¯ä½ çš„å¿Œæ—¥ï¼ã€‚");
                 break;
         default:
-                command("say ºÃ£¡" + RANK_D->query_rude(who)
-                        + "£¬ÔÛÃÇ¾ÍÒ»¾öÉúËÀ£¡");
+                command("say å¥½ï¼" + RANK_D->query_rude(who)
+                        + "ï¼Œå’±å€‘å°±ä¸€æ±ºç”Ÿæ­»ï¼");
                 break;
         }
         return 1;
@@ -378,7 +378,7 @@ int accept_ansuan(object who)
         if( this_object()->is_guarder())
                 return this_object()->check_enemy(who, "ansuan");
 
-        command(random(2) ? "say àÅ£¿ÔõÃ´¡­" : "say °¡Ñ½£¬²»ºÃ£¡");
+        command(random(2) ? "say å—¯ï¼Ÿæ€éº¼â€¦" : "say å•Šå‘€ï¼Œä¸å¥½ï¼");
         return 1;
 }
 
@@ -390,24 +390,24 @@ int accept_touxi(object who)
         if( this_object()->is_guarder() )
                 return this_object()->check_enemy(who, "touxi");
 
-        command(random(2) ? "say àÅ£¡ÔõÃ´¡­ÊÇË­£¡" : "say °¡Ñ½¡­Äã¡­");
+        command(random(2) ? "say å—¯ï¼æ€éº¼â€¦æ˜¯èª°ï¼" : "say å•Šå‘€â€¦ä½ â€¦");
         return 1;
 }
 
-// ÎªÈÎÎñÌá¹©Á¬½Ó
+// ç‚ºä»»å‹™æä¾›é€£æ¥
 mixed accept_ask(object who, string topic)
 {
         if( this_object()->is_quester() )
                 return QUEST_D->accept_ask(this_object(), who, topic);
 
-        // ÏÂÃæµÄ³ÌĞòÎª×ÚÊ¦ÈÎÎñ·şÎñ
+        // ä¸‹é¢çš„ç¨‹åºç‚ºå®—å¸«ä»»å‹™æœå‹™
         if( !this_object()->is_knower() ) {
                 if( query("ultraquest/id", who) == query("id") )
                         return ULTRA_QUEST_D->ask_information(this_object(), who, topic);
         }
 }
 
-// ½ÓÊÕÎïÆ·
+// æ¥æ”¶ç‰©å“
 int accept_object(object who, object ob)
 {
         string id;
@@ -415,7 +415,7 @@ int accept_object(object who, object ob)
         if( this_object()->is_quester() )
                 return QUEST_D->accept_object(this_object(), who, ob);
 
-        // ÏÂÃæ³ÌĞòÎª×ÚÊ¦ÈÎÎñ·şÎñ
+        // ä¸‹é¢ç¨‹åºç‚ºå®—å¸«ä»»å‹™æœå‹™
         id = query("ultraquest/id", who);
 
         if( !id ) return 0;
@@ -426,7 +426,7 @@ int accept_object(object who, object ob)
                 return ULTRA_QUEST_D->accept_object(this_object(), who, ob);
 }
 
-// »Ø¸²ÈÎÎñÈËÎïµÄÓ¦³ê
+// å›è¦†ä»»å‹™äººç‰©çš„æ‡‰é…¬
 int need_accede(object who)
 {
         string id;
@@ -456,7 +456,7 @@ int return_home(object home)
                 return 0;
 
         // Leave for home now.
-        message("vision", this_object()->name() + "¼±¼±Ã¦Ã¦µØÀë¿ªÁË¡£\n",
+        message("vision", this_object()->name() + "æ€¥æ€¥å¿™å¿™åœ°é›¢é–‹äº†ã€‚\n",
                 environment(), this_object());
 
         return move(home);
@@ -475,7 +475,7 @@ void scan()
         }
 
         if( !me->is_fighting() ) {
-                // Ïû³ı³ğºŞ
+                // æ¶ˆé™¤ä»‡æ¨
                 me->remove_hatred();
         }
 
@@ -491,19 +491,19 @@ int heal_self()
         int cost;
 
         if( is_busy() || is_fighting() )
-                // ÕıÃ¦£¿
+                // æ­£å¿™ï¼Ÿ
                 return 0;
 
         if( query("not_living") )
-                // ·ÇÉúÎï
+                // éç”Ÿç‰©
                 return 0;
 
         if( !query_skill_mapped("force") )
-                // Ã»ÓĞ¼¤·¢ÄÚ¹¦
+                // æ²’æœ‰æ¿€ç™¼å…§åŠŸ
                 return 0;
 
         if( query_temp("no_exert") )
-                // ÌØÊâÇé¿ö½ûÖ¹Ê¹ÓÃÄÚ¹¦
+                // ç‰¹æ®Šæƒ…æ³ç¦æ­¢ä½¿ç”¨å…§åŠŸ
                 return 0;
 
         my = this_object()->query_entire_dbase();
@@ -511,7 +511,7 @@ int heal_self()
                 return 0;
 
         if( my["jing"] < my["eff_jing"] * 8 / 10 ) {
-                // ¾«ÆøÌ«ÉÙ
+                // ç²¾æ°£å¤ªå°‘
                 exert_function("regenerate");
                 return 1;
         }
@@ -519,26 +519,26 @@ int heal_self()
         if( my["qi"] < my["eff_qi"] * 8 / 10 &&
             query_skill("force") >= 150 &&
             my["eff_qi"] > my["max_qi"]/2 ) {
-                // ÆøÑª²»¹»³äÅæ²¢ÇÒÄÚ¹¦µÈ¼¶¸ß
+                // æ°£è¡€ä¸å¤ å……æ²›ä¸¦ä¸”å…§åŠŸç­‰ç´šé«˜
                 exert_function("recover");
                 return 1;
         }
 
         if( my["eff_qi"] < my["max_qi"] ) {
-                // ÊÜÉËÁË
+                // å—å‚·äº†
                 exert_function("heal");
                 return 1;
         }
 
         if( my["eff_jing"] < my["max_jing"] &&
             my["eff_qi"] > my["max_qi"]/2 ) {
-                // ¾«ÊÜµ½ÁËËğÊ§
+                // ç²¾å—åˆ°äº†æå¤±
                 exert_function("jingheal");
                 return 1;
         }
 
         if( my["neili"] < my["max_neili"] - 10 ) {
-                // ÄÚÁ¦²»¹»³äÅæ£¬´ò×ø»Ö¸´
+                // å…§åŠ›ä¸å¤ å……æ²›ï¼Œæ‰“åæ¢å¾©
                 cost = my["max_neili"] - my["neili"];
                 if( cost > my["qi"] / 2 ) cost = my["qi"] / 2;
                 command(sprintf("dazuo %d", cost));
@@ -680,9 +680,9 @@ void relay_emote(object me, string verb)
 
         att = query( "attitude" );
 
-        // Èç¹ûÕâ¸önpcÉíÉÏÉèÁËemoteÕâ¸ömapping
-        // ¶ÔÒ»Ğ©emoteÓĞÌØÊâµÄ·´Ó¦£¬
-        // Õâ¸ö·´Ó¦¿ÉÒÔÊÇ¸östring£¬Ò²¿ÉÒÔÊÇ¸öfunction
+        // å¦‚æœé€™å€‹npcèº«ä¸Šè¨­äº†emoteé€™å€‹mapping
+        // å°ä¸€äº›emoteæœ‰ç‰¹æ®Šçš„åæ‡‰ï¼Œ
+        // é€™å€‹åæ‡‰å¯ä»¥æ˜¯å€‹stringï¼Œä¹Ÿå¯ä»¥æ˜¯å€‹function
 
         if( relay_msg = query("emote/" + verb) ) {
                 if( stringp(relay_msg) )
@@ -733,7 +733,7 @@ void full_self()
 void attempt_apprentice(object ob)
 {
         command("sigh "+query("id", ob));
-        command("say "+RANK_D->query_self(this_object())+"²ÅÊèÑ§Ç³£¬²»¸ÒÎóÈË×ÓµÜ£¬ÕâÎ»"+
-                       RANK_D->query_respect(ob)+"ÁíÄ±¸ß¾Í°É£¡");
+        command("say "+RANK_D->query_self(this_object())+"æ‰ç–å­¸æ·ºï¼Œä¸æ•¢èª¤äººå­å¼Ÿï¼Œé€™ä½"+
+                       RANK_D->query_respect(ob)+"å¦è¬€é«˜å°±å§ï¼");
         return;
 }

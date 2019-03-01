@@ -25,7 +25,7 @@ int main(object me, string arg)
                 
         seteuid(geteuid(me));
         if (!SECURITY_D->valid_write(dir, me))
-                return notify_fail("Ã»ÓĞ×ã¹»µÄ¶ÁĞ´È¨ÏŞ.\n");
+                return notify_fail("æ²’æœ‰è¶³å¤ çš„è®€å¯«æ¬Šé™.\n");
                 
         else if(file_size(dir) == -2) 
         {
@@ -41,11 +41,11 @@ int main(object me, string arg)
                                 total = total + 1;
                         }
                 }
-                write(HIW "¹²ÓĞ" + total + "¸öÎÄ¼şËäÒª´¦Àí\n");
-                write(HIW "ËùÓĞÎÄ¼ş´¦ÀíÍê±Ï.\n" NOR);
+                write(HIW "å…±æœ‰" + total + "å€‹æ–‡ä»¶é›–è¦è™•ç†\n");
+                write(HIW "æ‰€æœ‰æ–‡ä»¶è™•ç†å®Œç•¢.\n" NOR);
                 return 1;
         }
-        else return notify_fail("Ã»ÓĞÕâ¸öÄ¿Â¼.\n");
+        else return notify_fail("æ²’æœ‰é€™å€‹ç›®éŒ„.\n");
         return 1;  
 }
 
@@ -73,7 +73,7 @@ protected string *deep_file_list(string dir)
 
 protected int Ctoc(string file)
 {
-        write("°Ñ" + file + "×ªÎÄĞ¡Ğ´(*.C->*.c)\n");
+        write("æŠŠ" + file + "è½‰æ–‡å°å¯«(*.C->*.c)\n");
         rename(file , lower_case(file));
         return 1;
 }
@@ -83,8 +83,8 @@ write(@HELP
 Written by ken@NT. All rights reserved.
 E-mail: printken@yahoo.com.hk
 
-½«Ä¿Â¼¼°¸ÃÄ¿Â¼ÏÂµÄËùÓĞ´óĞ´ÎÄ¼ş×ª»»³ÉĞ¡Ğ´ÎÄ¼ş.
-¸ñÊ½ : tolower <Ä¿Â¼>
+å°‡ç›®éŒ„åŠè©²ç›®éŒ„ä¸‹çš„æ‰€æœ‰å¤§å¯«æ–‡ä»¶è½‰æ›æˆå°å¯«æ–‡ä»¶.
+æ ¼å¼ : tolower <ç›®éŒ„>
 HELP);
 return 1;
 }

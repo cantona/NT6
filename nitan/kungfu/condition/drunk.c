@@ -14,24 +14,24 @@ int dispel(object me, object ob, int duration)
         {
                 if (me == ob)
                 {
-                        tell_object(me, "ÄãµÄÄÚ¹¦»ðºòÉÐÓÐÇ·È±£¬ÎÞ·¨Ïû³ý×í¾ÆµÄÓ°Ïì¡£\n");
+                        tell_object(me, "ä½ çš„å…§åŠŸç«å€™å°šæœ‰æ¬ ç¼ºï¼Œç„¡æ³•æ¶ˆé™¤é†‰é…’çš„å½±éŸ¿ã€‚\n");
                         return -1;
                 } else
                 {
-                        tell_object(me, "ÄãµÄÄÚ¹¦»ðºòÉÐÓÐÇ·È±£¬ÎÞ·¨°ïÖú" + ob->name() + "Ïû³ý×í¾ÆµÄÓ°Ïì¡£\n");
+                        tell_object(me, "ä½ çš„å…§åŠŸç«å€™å°šæœ‰æ¬ ç¼ºï¼Œç„¡æ³•å¹«åŠ©" + ob->name() + "æ¶ˆé™¤é†‰é…’çš„å½±éŸ¿ã€‚\n");
                         return -1;
                 }
         }
 
         if (me == ob)
         {
-                tell_object(me, "µ÷Ï¢ÒÔºó£¬ÄãÇåÐÑ¶àÁË£¬ÔÙÃ»ÓÐ°ëµã×í¾ÆµÄ¸Ð¾õ¡£\n");
+                tell_object(me, "èª¿æ¯ä»¥å¾Œï¼Œä½ æ¸…é†’å¤šäº†ï¼Œå†æ²’æœ‰åŠé»žé†‰é…’çš„æ„Ÿè¦ºã€‚\n");
         } else
         {
-                tell_object(me, "Äã½«ÄÚÁ¦»º»ºµÄÊäÈëµ½" + ob->name() + "¾­Âö£¬" +
-                            ob->name() + "¾«ÉñÒ»Õñ¡£\n");
-                tell_object(ob, "Äã¾õµÃ" + me->name() +
-                            "½«ÄÚÁ¦ÊäÈëÄãµÄÆæ¾­°ËÂö£¬ÄãÇåÐÑ¶àÁË£¬ÔÙÃ»ÓÐ×í¾ÆµÄ¸Ð¾õ¡£\n");
+                tell_object(me, "ä½ å°‡å…§åŠ›ç·©ç·©çš„è¼¸å…¥åˆ°" + ob->name() + "ç¶“è„ˆï¼Œ" +
+                            ob->name() + "ç²¾ç¥žä¸€æŒ¯ã€‚\n");
+                tell_object(ob, "ä½ è¦ºå¾—" + me->name() +
+                            "å°‡å…§åŠ›è¼¸å…¥ä½ çš„å¥‡ç¶“å…«è„ˆï¼Œä½ æ¸…é†’å¤šäº†ï¼Œå†æ²’æœ‰é†‰é…’çš„æ„Ÿè¦ºã€‚\n");
         }
 
         ob->clear_condition("drunk");
@@ -51,18 +51,18 @@ int update_condition(object me, int duration)
                 return 0;
         } else if (!living(me))
         {
-                message("vision", me->name() + "´òÁË¸ö¸ô£¬²»¹ýÒÀÈ»ÀÃ×íÈçÄà¡£\n",
+                message("vision", me->name() + "æ‰“äº†å€‹éš”ï¼Œä¸éŽä¾ç„¶çˆ›é†‰å¦‚æ³¥ã€‚\n",
                         environment(me), me);
         } else if (duration > limit / 2)
         {
-                tell_object(me, "Äã¾õµÃÄÔÖÐ»è»è³Á³Á£¬Éí×ÓÇáÆ®Æ®µØ£¬´ó¸ÅÊÇ×íÁË¡£\n");
-                message("vision", me->name() + "Ò¡Í·»ÎÄÔµØÕ¾¶¼Õ¾²»ÎÈ£¬ÏÔÈ»ÊÇºÈ×íÁË¡£\n",
+                tell_object(me, "ä½ è¦ºå¾—è…¦ä¸­æ˜æ˜æ²‰æ²‰ï¼Œèº«å­è¼•é£„é£„åœ°ï¼Œå¤§æ¦‚æ˜¯é†‰äº†ã€‚\n");
+                message("vision", me->name() + "æ–é ­æ™ƒè…¦åœ°ç«™éƒ½ç«™ä¸ç©©ï¼Œé¡¯ç„¶æ˜¯å–é†‰äº†ã€‚\n",
                         environment(me), me);
                 me->receive_damage("jing", 10);
         } else if (duration > limit/4)
         {
-                tell_object(me, "Äã¾õµÃÒ»Õó¾ÆÒâÉÏ³å£¬ÑÛÆ¤ÓÐÐ©³ÁÖØÁË¡£\n");
-                message("vision", me->name() + "Á³ÉÏÒÑ¾­ÂÔÏÔ¾ÆÒâÁË¡£\n",
+                tell_object(me, "ä½ è¦ºå¾—ä¸€é™£é…’æ„ä¸Šæ²–ï¼Œçœ¼çš®æœ‰äº›æ²‰é‡äº†ã€‚\n");
+                message("vision", me->name() + "è‡‰ä¸Šå·²ç¶“ç•¥é¡¯é…’æ„äº†ã€‚\n",
                         environment(me), me);
                 me->receive_healing("jing", 10);
                 me->receive_healing("qi", 15);

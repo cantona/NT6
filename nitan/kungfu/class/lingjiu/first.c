@@ -13,8 +13,8 @@ void create()
 string zm_apply()
 {
         object ob = this_player();
-        if ( query("gender", ob)!= "Å®ĞÔ" )
-                return "ÁéğÕ¹¬Ö»ÓĞÅ®×Ó²ÅÄÜ½ÓÈÎÕÆÃÅµÜ×ÓÒ»Ö°¡£";
+        if ( query("gender", ob)!= "å¥³æ€§" )
+                return "éˆé·²å®®åªæœ‰å¥³å­æ‰èƒ½æ¥ä»»æŒé–€å¼Ÿå­ä¸€è·ã€‚";
         return ::zm_apply();
 }
 

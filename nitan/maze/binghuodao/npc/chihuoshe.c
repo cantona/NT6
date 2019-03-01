@@ -3,8 +3,8 @@ inherit __DIR__"bhd_npc.c";
 
 void create()
 {
-        set_name(HIR "³à»ğÉß" NOR, ({ "chihuo she", "chihuo", "she" }));
-        set("long", HIW "ÕâÊÇÒ»Ö»»ëÉí»ğºìµÄ¾ŞÉß£¬ËÆºõÔÚÕâÀïÉú´æÁËÊıÇ§Äê¡£\n" NOR);
+        set_name(HIR "èµ¤ç«è›‡" NOR, ({ "chihuo she", "chihuo", "she" }));
+        set("long", HIW "é€™æ˜¯ä¸€åªæ¸¾èº«ç«ç´…çš„å·¨è›‡ï¼Œä¼¼ä¹åœ¨é€™è£¡ç”Ÿå­˜äº†æ•¸åƒå¹´ã€‚\n" NOR);
 
         set("age", 1900);
         set("str",80);
@@ -39,7 +39,7 @@ void create()
 }
 void init()
 {
-        // Ëæ»ú¹¥»÷Íæ¼Ò
+        // éš¨æ©Ÿæ”»æ“Šç©å®¶
         if (userp(this_player()) && random(2) == 1)
         {
                 kill_ob(this_player());

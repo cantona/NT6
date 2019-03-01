@@ -1,4 +1,4 @@
-// dulewu.c ¶ÀÀÖ¾ÓĞ¡Îİ
+// dulewu.c ç¨æ¨‚å±…å°å±‹
 #include <ansi.h>
 
 //** inherit PRIVATE_ROOM;
@@ -6,16 +6,16 @@ inherit ROOM;                                   /* EXAMPLE */
 
 void create()
 {
-        set("short", "Ğ¡Îİ");                   /* EXAMPLE */
-//**    set("short", "ROOM_NAMEĞ¡Îİ");
+        set("short", "å°å±‹");                   /* EXAMPLE */
+//**    set("short", "ROOM_NAMEå°å±‹");
         set("long", @LONG
-Îİ×Ó²»´ó£¬¿¿´°µÄµØ·½°ÚÁËÒ»ÕÅ´²£¬ÎİÖĞÒ»ÕÅ×À£¬¼¸Ö»ÒÎ£¬·Ç³£¼òµ¥¡£
-¿ÖÅÂÖ»ÓĞ¸ÊÓÚ¼ÅÄ¯µÄÈË²Å×¡µÃÁËÕâÖÖ¼òÆÓµÄÎİ×Ó¡£
+å±‹å­ä¸å¤§ï¼Œé çª—çš„åœ°æ–¹æ“ºäº†ä¸€å¼µåºŠï¼Œå±‹ä¸­ä¸€å¼µæ¡Œï¼Œå¹¾åªæ¤…ï¼Œéå¸¸ç°¡å–®ã€‚
+ææ€•åªæœ‰ç”˜äºå¯‚å¯çš„äººæ‰ä½å¾—äº†é€™ç¨®ç°¡æ¨¸çš„å±‹å­ã€‚
 LONG );
 
-        set("default_long", "Îİ×Ó²»´ó£¬¿¿´°µÄµØ·½°ÚÁËÒ»ÕÅ´²£¬"   /**/
-                            "ÎİÖĞÒ»ÕÅ×À£¬¼¸Ö»ÒÎ£¬·Ç³£¼òµ¥¡£"     /**/
-                            "¿´À´Ö÷ÈËÊÇÒ»¸ö¸ÊÓÚÆ½µ­¼ÅÄ¯µÄÈË¡£"); /**/
+        set("default_long", "å±‹å­ä¸å¤§ï¼Œé çª—çš„åœ°æ–¹æ“ºäº†ä¸€å¼µåºŠï¼Œ"   /**/
+                            "å±‹ä¸­ä¸€å¼µæ¡Œï¼Œå¹¾åªæ¤…ï¼Œéå¸¸ç°¡å–®ã€‚"     /**/
+                            "çœ‹ä¾†ä¸»äººæ˜¯ä¸€å€‹ç”˜äºå¹³æ·¡å¯‚å¯çš„äººã€‚"); /**/
 
 //**    set("objects", ([
 //**            "/adm/npc/obj/xiang" : 1,
@@ -60,13 +60,13 @@ int do_findbaby(string arg)
                 return 0;
 
         if( !query("couple/child_id", me) )
-                return notify_fail("ÄãÓÖ»¹Ã»ÓĞº¢×Ó£¬À´ÕâÀï´ÕÊ²Ã´ÈÈÄÖ°¡£¿\n");
+                return notify_fail("ä½ åˆé‚„æ²’æœ‰å­©å­ï¼Œä¾†é€™è£¡æ¹Šä»€éº¼ç†±é¬§å•Šï¼Ÿ\n");
 
         if( objectp(baby=find_living(query("couple/child_id", me)) )
         &&  environment(baby) && baby->is_baby())
-                return notify_fail("ÄãÃÇµÄº¢×ÓÒÑ¾­ÅÜ³öÈ¥ÍæÁË£¬ºÃºÃËÄ´¦ÕÒÕÒ°É£¡\n");
+                return notify_fail("ä½ å€‘çš„å­©å­å·²ç¶“è·‘å‡ºå»ç©äº†ï¼Œå¥½å¥½å››è™•æ‰¾æ‰¾å§ï¼\n");
 
-        if( query("gender", me) == "Å®ĞÔ" )
+        if( query("gender", me) == "å¥³æ€§" )
                 file=read_file("/data/baby/"+query("id", me)+".o");
         else file=read_file("/data/baby/"+query("couple/couple_id", me)+".o");
 
@@ -76,13 +76,13 @@ int do_findbaby(string arg)
 
                 baby->load_baby(me);
                 baby->move(environment(me));
-                message_vision("ÄãºöÈ»¿´µ½´²µ×ÏÂ" +
-                        ({"Ì½³öÒ»¿ÅĞ¡ÄÔ¹Ï", "Éì³öÒ»Ë«Ğ¡½ÅÑ¾", "Éì³öÒ»Ö§Ğ¡ÊÖ"})
-                        [random(3)] + "£®£®£®\n", me);
+                message_vision("ä½ å¿½ç„¶çœ‹åˆ°åºŠåº•ä¸‹" +
+                        ({"æ¢å‡ºä¸€é¡†å°è…¦ç“œ", "ä¼¸å‡ºä¸€é›™å°è…³ä¸«", "ä¼¸å‡ºä¸€æ”¯å°æ‰‹"})
+                        [random(3)] + "ï¼ï¼ï¼\n", me);
 
         } else
         {
-                tell_object(me, MAG "ÄãÃÇµÄº¢×Ó²»ĞÒØ²ÕÛÁË£¬Çë½Ú°§°É¡£\n" NOR);
+                tell_object(me, MAG "ä½ å€‘çš„å­©å­ä¸å¹¸å¤­æŠ˜äº†ï¼Œè«‹ç¯€å“€å§ã€‚\n" NOR);
                 delete("couple/child_id", me);
                 delete("couple/child_name", me);
         }

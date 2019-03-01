@@ -1,17 +1,17 @@
-// baozi.c °ü×Ó
+// baozi.c åŒ…å­
 
 inherit ITEM;
 inherit F_FOOD;
 
 void create()
 {
-        set_name("Èâ°ü×Ó", ({"baozi", "bao"}));
+        set_name("è‚‰åŒ…å­", ({"baozi", "bao"}));
         set_weight(80);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¸öÏãÅçÅçµÄÈâ°ü×Ó,²»ÖªµÀÊÇÓÃÊ²Ã´Èâ×öµÄ¡£\n");
-                set("unit", "¸ö");
+                set("long", "ä¸€å€‹é¦™å™´å™´çš„è‚‰åŒ…å­,ä¸çŸ¥é“æ˜¯ç”¨ä»€éº¼è‚‰åšçš„ã€‚\n");
+                set("unit", "å€‹");
                 set("value", 20);
                 set("food_remaining", 3);
                 set("food_supply", 20);

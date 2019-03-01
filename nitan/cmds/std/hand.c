@@ -11,39 +11,39 @@ int main(object me, string arg)
         string str;
 
         if (! arg)
-                return notify_fail("ÄãÒªÄÃ³öÊ²Ã´¶«Î÷£¿\n");
+                return notify_fail("ä½ è¦æ‹¿å‡ºä»€éº¼æ±è¥¿ï¼Ÿ\n");
 
         if (arg == "none" || arg == "nothing")
         {
                 if( !objectp(ob=query_temp("handing", me)) )
-                        return notify_fail("Äã±¾À´¾ÍÊ²Ã´¶¼Ã»ÓĞÄÃ°¡£¿\n");
+                        return notify_fail("ä½ æœ¬ä¾†å°±ä»€éº¼éƒ½æ²’æœ‰æ‹¿å•Šï¼Ÿ\n");
 
                 if( !stringp(str=query("unhand_msg", ob)) )
-                        str = "$N°Ñ$nÊÕ»Ø°üÄÒ¡£\n";
+                        str = "$NæŠŠ$næ”¶å›åŒ…å›Šã€‚\n";
                 message_vision(str, me, ob);
                 delete_temp("handing", me);
                 return 1;
         }
 
         if (! objectp(ob = present(arg, me)))
-                return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+                return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™æ¨£æ±è¥¿ã€‚\n");
                 
         if( ob->is_pet() || ob->is_warcraft() || query("ridable", ob) )
-                return notify_fail("³èÎï»òÕß×øÆï²»¿ÉÒÔÄÃÔÚÊÖÉÏ¡£\n");
+                return notify_fail("å¯µç‰©æˆ–è€…åé¨ä¸å¯ä»¥æ‹¿åœ¨æ‰‹ä¸Šã€‚\n");
                 
         if( objectp(old=query_temp("handing", me)) )
         {
                 if (old == ob)
-                        return notify_fail("Äã²»ÊÇÕıÄÃ×ÅËüÂğ£¿\n");
+                        return notify_fail("ä½ ä¸æ˜¯æ­£æ‹¿è‘—å®ƒå—ï¼Ÿ\n");
 
                 if( !stringp(str=query("unhand_msg", old)) )
-                        str = "$NÊÕ»ØÊÖÖĞµÄ$n¡£\n";
+                        str = "$Næ”¶å›æ‰‹ä¸­çš„$nã€‚\n";
                 message_vision(str, me, old);
                 delete_temp("handing", me);
         }
 
         if( (ob->query_amount()?query("base_weight", ob):ob->query_weight())>20000 )
-                return notify_fail(ob->name() + "Ì«ÖØÁË£¬Äãµ¥ÊÖÄÃ²»×¡¡£\n");
+                return notify_fail(ob->name() + "å¤ªé‡äº†ï¼Œä½ å–®æ‰‹æ‹¿ä¸ä½ã€‚\n");
 
         weapon=query_temp("weapon", me);
         if (weapon &&
@@ -53,27 +53,27 @@ int main(object me, string arg)
              query_temp("armor/finger", me)) )
         {
                 // none of two hand is free
-                return notify_fail("ÄãË«ÊÖ¶¼ÄÃ×ÅÎäÆ÷£¬Ã»ÓĞ°ì·¨"
-                                   "ÔÙÄÃ×Å" + ob->name() + "ÁË¡£\n");
+                return notify_fail("ä½ é›™æ‰‹éƒ½æ‹¿è‘—æ­¦å™¨ï¼Œæ²’æœ‰è¾¦æ³•"
+                                   "å†æ‹¿è‘—" + ob->name() + "äº†ã€‚\n");
         }
 
         if( query_temp("armor/hands", me) && 
             query_temp("armor/finger", me) )
         {
                 // none of two hand is free
-                return notify_fail("ÄãË«ÊÖ¶¼´÷×ÅÎäÆ÷£¬Ã»ÓĞ°ì·¨"
-                                   "ÔÙÄÃ×Å" + ob->name() + "ÁË¡£\n");
+                return notify_fail("ä½ é›™æ‰‹éƒ½æˆ´è‘—æ­¦å™¨ï¼Œæ²’æœ‰è¾¦æ³•"
+                                   "å†æ‹¿è‘—" + ob->name() + "äº†ã€‚\n");
         }
         if( query("equipped", ob) )
-                return notify_fail("ÄãÕı×°±¸×ÅËüÄØ£¡\n");
+                return notify_fail("ä½ æ­£è£å‚™è‘—å®ƒå‘¢ï¼\n");
 
         set_temp("handing", ob, me);
         if( !stringp(str=query("hand_msg", ob)) )
-                str = "$NÄÃ³ö" + (old && ob->name() == old->name() ? "ÁíÍâ" : "") +
-                      // "Ò»" + (ob->query_amount() ? ob->query("base_unit")
-                      "Ò»"+(ob->query_amount()?query("unit", ob )
+                str = "$Næ‹¿å‡º" + (old && ob->name() == old->name() ? "å¦å¤–" : "") +
+                      // "ä¸€" + (ob->query_amount() ? ob->query("base_unit")
+                      "ä¸€"+(ob->query_amount()?query("unit", ob )
                                                  :query("unit", ob))+
-                      "$n£¬ÎÕÔÚÊÖÖĞ¡£\n";
+                      "$nï¼Œæ¡åœ¨æ‰‹ä¸­ã€‚\n";
         message_vision(str, me, ob); 
         return 1;
 }
@@ -81,9 +81,9 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : hand <ÎïÆ·Ãû³Æ> | nothing
+æŒ‡ä»¤æ ¼å¼ : hand <ç‰©å“åç¨±> | nothing
  
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄãÄÃ³öÒ»ÑùÄãËùĞ¯´øµÄÎïÆ·£¬ËæÊ±×¼±¸Ê¹ÓÃ¡£
+é€™å€‹æŒ‡ä»¤å¯ä»¥è®“ä½ æ‹¿å‡ºä¸€æ¨£ä½ æ‰€æ”œå¸¶çš„ç‰©å“ï¼Œéš¨æ™‚æº–å‚™ä½¿ç”¨ã€‚
  
 HELP );
     return 1;

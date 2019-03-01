@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define ZHEN "¡¸" HIR "ÕğÀ×Ç¬À¤" NOR "¡¹"
+#define ZHEN "ã€Œ" HIR "éœ‡é›·ä¹¾å¤" NOR "ã€"
 
 inherit F_SSERVER;
 
@@ -12,54 +12,54 @@ int perform(object me, object target)
         int i, ap, dp, count;
 
         if( userp(me) && !query("can_perform/qujing-gunfa/zhen", me) )
-                return notify_fail("ÄãËùÊ¹ÓÃµÄÍâ¹¦ÖĞÃ»ÓĞÕâÖÖ¹¦ÄÜ¡£\n");
+                return notify_fail("ä½ æ‰€ä½¿ç”¨çš„å¤–åŠŸä¸­æ²’æœ‰é€™ç¨®åŠŸèƒ½ã€‚\n");
 
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(ZHEN "Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(ZHEN "åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me)) || 
             query("skill_type", weapon) != "club" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô£¬ÄÑÒÔÊ©Õ¹" ZHEN "¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ï¼Œé›£ä»¥æ–½å±•" ZHEN "ã€‚\n");
 
         if (me->query_skill_mapped("club") != "qujing-gunfa")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢È¡¾­¹÷·¨£¬ÄÑÒÔÊ©Õ¹" ZHEN "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼å–ç¶“æ£æ³•ï¼Œé›£ä»¥æ–½å±•" ZHEN "ã€‚\n");
 
         if(me->query_skill("qujing-gunfa", 1) < 200 )
-                return notify_fail("ÄãÈ¡¾­¹÷·¨²»¹»æµÊì£¬ÄÑÒÔÊ©Õ¹" ZHEN "¡£\n");
+                return notify_fail("ä½ å–ç¶“æ£æ³•ä¸å¤ å«»ç†Ÿï¼Œé›£ä»¥æ–½å±•" ZHEN "ã€‚\n");
 
         if( (int)me->query_skill("force") < 350 )
-                return notify_fail("ÄãµÄÄÚ¹¦ĞŞÎª²»¹»£¬ÄÑÒÔÊ©Õ¹" ZHEN "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸä¿®ç‚ºä¸å¤ ï¼Œé›£ä»¥æ–½å±•" ZHEN "ã€‚\n");
 
         if( query("max_neili", me)<4500 )
-                return notify_fail("ÄãµÄÄÚÁ¦ĞŞÎªÌ«Èõ£¬ÄÑÒÔÊ©Õ¹" ZHEN "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¿®ç‚ºå¤ªå¼±ï¼Œé›£ä»¥æ–½å±•" ZHEN "ã€‚\n");
 
         if( query("neili", me)<300 )
-                return notify_fail("ÄãÏÖÔÚµÄÕæÆøÌ«Èõ£¬ÄÑÒÔÊ©Õ¹" ZHEN "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çš„çœŸæ°£å¤ªå¼±ï¼Œé›£ä»¥æ–½å±•" ZHEN "ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIW "$N" HIW "½«ÊÖÖĞ" + weapon->name() + HIW "»º»ºÑ¹Ïò$n"
-              HIW "£¬¹÷ÌåÒşÒş´ø×Å·çÀ×Ö®¾¢£¬ÕıÊÇÈ¡¾­¹÷·¨É±×Å¡¸" HIR "Õğ"
-              "À×Ç¬À¤" HIW "¡¹£¡\nµç¹â»ğÊ¯¼ä£¬¹÷¶Ë¾¹È«±»×ÏµçËùÁıÕÖ£¬" +
-              weapon->name() + HIW "»Ã×÷Ç§°Ù¸ùÏàËÆ£¬±¼À×³¸µç°ãÏò$n" HIW
-              "Ï¯¾í¶øÈ¥¡£\n" NOR;
+        msg = HIW "$N" HIW "å°‡æ‰‹ä¸­" + weapon->name() + HIW "ç·©ç·©å£“å‘$n"
+              HIW "ï¼Œæ£é«”éš±éš±å¸¶è‘—é¢¨é›·ä¹‹å‹ï¼Œæ­£æ˜¯å–ç¶“æ£æ³•æ®ºè‘—ã€Œ" HIR "éœ‡"
+              "é›·ä¹¾å¤" HIW "ã€ï¼\né›»å…‰ç«çŸ³é–“ï¼Œæ£ç«¯ç«Ÿå…¨è¢«ç´«é›»æ‰€ç± ç½©ï¼Œ" +
+              weapon->name() + HIW "å¹»ä½œåƒç™¾æ ¹ç›¸ä¼¼ï¼Œå¥”é›·æ£é›»èˆ¬å‘$n" HIW
+              "å¸­å·è€Œå»ã€‚\n" NOR;
 
         ap = me->query_skill("club");
         dp = target->query_skill("parry");
 
         if (ap / 2 + random(ap * 2) > dp)
         {
-                msg += HIR "$n" HIR "±»$N" HIR "ÆøÊÆËùº³£¬ÍêÈ«²»Öª¸ÃÈç"
-                       "ºÎÕĞ¼Ü£¬¾¹¶ø´ôÁ¢µ±³¡£¡\n" NOR;
+                msg += HIR "$n" HIR "è¢«$N" HIR "æ°£å‹¢æ‰€æ’¼ï¼Œå®Œå…¨ä¸çŸ¥è©²å¦‚"
+                       "ä½•æ‹›æ¶ï¼Œç«Ÿè€Œå‘†ç«‹ç•¶å ´ï¼\n" NOR;
                 count = ap / 8;
                 addn_temp("apply/attack", count, me);
         } else
         {
-                msg += HIC "$n" HIC "¼û$N" HIC "ÆøÊÆÈçºç£¬ĞÄÏÂÁİÈ»£¬¼±"
-                       "Ã¦ÄıÉñ¾ÛÆø£¬Ğ¡ĞÄÓ¦¸¶£¡\n" NOR;
+                msg += HIC "$n" HIC "è¦‹$N" HIC "æ°£å‹¢å¦‚è™¹ï¼Œå¿ƒä¸‹å‡œç„¶ï¼Œæ€¥"
+                       "å¿™å‡ç¥èšæ°£ï¼Œå°å¿ƒæ‡‰ä»˜ï¼\n" NOR;
                 count = 0;
         }
         message_combatd(msg, me, target);

@@ -5,20 +5,20 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIR "¸É½«¾«Ôª" NOR, ({ "ganjiang jingyuan" }) );
+        set_name(HIR "å¹¹å°‡ç²¾å…ƒ" NOR, ({ "ganjiang jingyuan" }) );
         set_weight(1);
 
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIR "ÕâÊÇÒ»¿Å¾§Ó¨ÎŞè¦µÄ±¦Ê¯£¬¾İËµÓµÓĞ×ÅÆæ»ÃµÄÁ¦Á¿¡£\n"
-                                "ÊäÈëÖ¸Áî use <ÄãµÄ¾Å¼¶±øÆ÷ID> ¿É½«¾Å¼¶±øÆ÷ÌáÉıµ½´ıÏâÇ¶×´Ì¬¡£\n"
-                                "Ö»Òª½øĞĞ×îºóÒ»²½ÏâÇ¶¼´¿É½«ÄãµÄ¾Å¼¶±øÆ÷ÌáÉıÎªÊ®¼¶ÉñÆ÷¡£        Ê®¼¶Éñ\n"
-                                "Æ÷ÓµÓĞ×Å³¬·²µÄÁ¦Á¿¡£\n"
-                                "ÓĞ¹Ø×îºóÒ»²½ÏâÇ¶¼°Ê®¼¶ÉñÆ÷½éÉÜÇë²Î¼û°ïÖúÎÄ¼ş help weapon | help enchase\n" NOR);
+                set("long", HIR "é€™æ˜¯ä¸€é¡†æ™¶ç‘©ç„¡ç‘•çš„å¯¶çŸ³ï¼Œæ“šèªªæ“æœ‰è‘—å¥‡å¹»çš„åŠ›é‡ã€‚\n"
+                                "è¼¸å…¥æŒ‡ä»¤ use <ä½ çš„ä¹ç´šå…µå™¨ID> å¯å°‡ä¹ç´šå…µå™¨æå‡åˆ°å¾…é‘²åµŒç‹€æ…‹ã€‚\n"
+                                "åªè¦é€²è¡Œæœ€å¾Œä¸€æ­¥é‘²åµŒå³å¯å°‡ä½ çš„ä¹ç´šå…µå™¨æå‡ç‚ºåç´šç¥å™¨ã€‚        åç´šç¥\n"
+                                "å™¨æ“æœ‰è‘—è¶…å‡¡çš„åŠ›é‡ã€‚\n"
+                                "æœ‰é—œæœ€å¾Œä¸€æ­¥é‘²åµŒåŠåç´šç¥å™¨ä»‹ç´¹è«‹åƒè¦‹å¹«åŠ©æ–‡ä»¶ help weapon | help enchase\n" NOR);
                 set("value", 1);
                 set("no_sell", 1);
-                set("unit", "¿é");
+                set("unit", "å¡Š");
         }
 
         setup();
@@ -41,24 +41,24 @@ int do_use(string arg)
 
                 me = this_player();
 
-                if (! arg)return notify_fail("Ö¸Áî¸ñÊ½: use <Äã¾Å¼¶±øÆ÷µÄID>\n");
+                if (! arg)return notify_fail("æŒ‡ä»¤æ ¼å¼: use <ä½ ä¹ç´šå…µå™¨çš„ID>\n");
 
                 if (! objectp(weapon = present(arg, me)))
-                        return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑùµÀ¾ß¡£\n");
+                        return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™æ¨£é“å…·ã€‚\n");
 
             if (! weapon->is_item_make())
-                        return notify_fail("ÎŞ·¨ÔÚ´ËµÀ¾ßÉÏÍê³É¡£\n");
+                        return notify_fail("ç„¡æ³•åœ¨æ­¤é“å…·ä¸Šå®Œæˆã€‚\n");
 
             if (weapon->weapon_level() < 12000)
-                        return notify_fail("Ö»ÄÜ¾Å¼¶±øÆ÷²ÅÄÜ½øĞĞ¸ÃÏî²Ù×÷¡£\n");
+                        return notify_fail("åªèƒ½ä¹ç´šå…µå™¨æ‰èƒ½é€²è¡Œè©²é …æ“ä½œã€‚\n");
 
                 weapon->set("magic/imbue_ok", 1);
                 weapon->set("owner/" + weapon->item_owner(), 5000000);
                 
                 weapon->save();
             
-        tell_object(me, HIC "Äã¸ĞÊÜ" + weapon->name() + HIC "·¢ÉúÁË"
-                    "²»¿ÉÑÔÓ÷µÄ±ä»¯¡£\n" NOR);
+        tell_object(me, HIC "ä½ æ„Ÿå—" + weapon->name() + HIC "ç™¼ç”Ÿäº†"
+                    "ä¸å¯è¨€å–»çš„è®ŠåŒ–ã€‚\n" NOR);
 
 
                 destruct(this_object());

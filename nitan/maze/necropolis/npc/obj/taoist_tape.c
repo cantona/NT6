@@ -3,7 +3,7 @@ inherit ITEM;
 
 void create()
 {
-        set_name("Â¼Òô´ø", ({ "tape" }) );
+        set_name("éŒ„éŸ³å¸¶", ({ "tape" }) );
         set_weight(2);
         set("no_get", 1);
         set("no_put", 1);
@@ -11,8 +11,8 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
-                set("long", "Â¼Òô´ø¡£\n");
+                set("unit", "å€‹");
+                set("long", "éŒ„éŸ³å¸¶ã€‚\n");
                 set("value", 1);
         }
         setup();
@@ -25,32 +25,32 @@ void play_sound_0(object speaker,int index) {
                 return;
         switch (index)  {
                 case(0):
-                        tell_room(environment(),CYN"¶¡Ò»ËµµÀ£ºÎÒÄËµ±½ñÈıÇå¹¬ÕÆÃÅ¶¡³Ë·çµÄÊ¦Êå......\n"NOR);
+                        tell_room(environment(),CYN"ä¸ä¸€èªªé“ï¼šæˆ‘ä¹ƒç•¶ä»Šä¸‰æ¸…å®®æŒé–€ä¸ä¹˜é¢¨çš„å¸«å”......\n"NOR);
                         break;
                 case(1):
-                        tell_room(environment(),CYN"¶¡Ò»ËµµÀ£º½üÀ´´Ë´¦Ä¹Ô°·¢ÉúÒì±ä£¬ÎÒ´øÁìÃÅÏÂµÜ×ÓÀ´²ì¿´£¬²»ÏëÔâÓö²»²â......\n"NOR);
+                        tell_room(environment(),CYN"ä¸ä¸€èªªé“ï¼šè¿‘ä¾†æ­¤è™•å¢“åœ’ç™¼ç”Ÿç•°è®Šï¼Œæˆ‘å¸¶é ˜é–€ä¸‹å¼Ÿå­ä¾†å¯Ÿçœ‹ï¼Œä¸æƒ³é­é‡ä¸æ¸¬......\n"NOR);
                         break;
                 case(2):
-                        tell_room(environment(),CYN"¶¡Ò»ËµµÀ£ºÕâ¸öÄ¹Ô°Éî´¦ÀïÓĞÒ»´¦¾ÛÁé·¨Õó£¬ÆäÏÂÕòÑ¹ÁËÒ»¸öÉÏ¹ÅÑªÄ§¡£\n"NOR);
+                        tell_room(environment(),CYN"ä¸ä¸€èªªé“ï¼šé€™å€‹å¢“åœ’æ·±è™•è£¡æœ‰ä¸€è™•èšéˆæ³•é™£ï¼Œå…¶ä¸‹é®å£“äº†ä¸€å€‹ä¸Šå¤è¡€é­”ã€‚\n"NOR);
                         break;
                 case(3):
-                        tell_room(environment(),CYN"¶¡Ò»ËµµÀ£ºÎÒµÈ·¢ÏÖ£¬ÎŞÊıËÀÁéÒÑ¾­´Ó·¨ÕóÖĞÌÓÒİ£¬ÑªÄ§ÒàÓĞÍÑÀ§µÄ¼£Ïó¡£\n"NOR);
+                        tell_room(environment(),CYN"ä¸ä¸€èªªé“ï¼šæˆ‘ç­‰ç™¼ç¾ï¼Œç„¡æ•¸æ­»éˆå·²ç¶“å¾æ³•é™£ä¸­é€ƒé€¸ï¼Œè¡€é­”äº¦æœ‰è„«å›°çš„è·¡è±¡ã€‚\n"NOR);
                         break;
                 case(4):
-                        tell_room(environment(),CYN"¶¡Ò»ËµµÀ£º¾ÍÔÚÎÒÃÇÖØĞÂ²¼ÖÃ·¨ÕóµÄÊ±ºò£¬Ò»ÈºÉÙÁÖºÍÉĞÉ±ÁË¹ıÀ´¡£\n"NOR);
+                        tell_room(environment(),CYN"ä¸ä¸€èªªé“ï¼šå°±åœ¨æˆ‘å€‘é‡æ–°å¸ƒç½®æ³•é™£çš„æ™‚å€™ï¼Œä¸€ç¾¤å°‘æ—å’Œå°šæ®ºäº†éä¾†ã€‚\n"NOR);
                         break;
                 case(5):
-                        tell_room(environment(),CYN"¶¡Ò»ËµµÀ£ºÕâĞ©ºÍÉĞÒ»¶¨ÊÇÊÜµ½ÁËÑªÄ§µÄ×çÖä£¬É¥ĞÄ²¡¿ñÁË¡£\n"NOR);
+                        tell_room(environment(),CYN"ä¸ä¸€èªªé“ï¼šé€™äº›å’Œå°šä¸€å®šæ˜¯å—åˆ°äº†è¡€é­”çš„è©›å’’ï¼Œå–ªå¿ƒç—…ç‹‚äº†ã€‚\n"NOR);
                         break;
                 case(6):
-                        tell_room(environment(),CYN"¶¡Ò»ËµµÀ£ºÎÒÃÇÁ½·½¶·ÁË¸öÁ½°Ü¾ãÉË£¬µÜ×ÓÃÇŞÕËÀ±£»¤ÎÒ£¬Èç½ñÖ»Ê£ÎÒÒ»¸öÖØÉËÌÓÀëÖÁ´Ë......\n"NOR);
+                        tell_room(environment(),CYN"ä¸ä¸€èªªé“ï¼šæˆ‘å€‘å…©æ–¹é¬¥äº†å€‹å…©æ•—ä¿±å‚·ï¼Œå¼Ÿå­å€‘æ‹šæ­»ä¿è­·æˆ‘ï¼Œå¦‚ä»Šåªå‰©æˆ‘ä¸€å€‹é‡å‚·é€ƒé›¢è‡³æ­¤......\n"NOR);
                         break;
                 case(7):
-                        tell_room(environment(),YEL"¶¡Ò»ÎØÎØµÄ¿ŞÆğÀ´......\n"NOR);
+                        tell_room(environment(),YEL"ä¸ä¸€å—šå—šçš„å“­èµ·ä¾†......\n"NOR);
                         break;
                 case(8):
-                        tell_room(environment(),CYN"¶¡Ò»ËµµÀ£ºÄã¿ÉÔ¸Òâ°ïÎÒÃÇ¶Ô¸¶ÑªÄ§£¿(accept yes/no)\n"NOR);
-                        set_temp("¿ª³¡°×½áÊø", 1, speaker);
+                        tell_room(environment(),CYN"ä¸ä¸€èªªé“ï¼šä½ å¯é¡˜æ„å¹«æˆ‘å€‘å°ä»˜è¡€é­”ï¼Ÿ(accept yes/no)\n"NOR);
+                        set_temp("é–‹å ´ç™½çµæŸ", 1, speaker);
                         break;
                 default: 
                         delete_temp("in_speech", speaker);
@@ -69,29 +69,29 @@ void play_sound_1(object speaker,int index) {
                 return;
         switch (index)  {
                 case(0):
-                        tell_room(environment(),CYN"¶¡Ò»ËµµÀ£ºàÅ......¶àĞ»......\n"NOR);
+                        tell_room(environment(),CYN"ä¸ä¸€èªªé“ï¼šå—¯......å¤šè¬......\n"NOR);
                         break;
                 case(1):
-                        tell_room(environment(),CYN"¶¡Ò»ËµµÀ£ºÑªÄ§ÊµÔÚÊÇ·¨Á¦ÎŞ±ß......Ëû×îÉÃ³¤ÓÕ»ó......ÎÒÒÑ¾­·Ö²»ÇåµĞÎÒ£¡\n"NOR);
+                        tell_room(environment(),CYN"ä¸ä¸€èªªé“ï¼šè¡€é­”å¯¦åœ¨æ˜¯æ³•åŠ›ç„¡é‚Š......ä»–æœ€æ“…é•·èª˜æƒ‘......æˆ‘å·²ç¶“åˆ†ä¸æ¸…æ•µæˆ‘ï¼\n"NOR);
                         break;
                 case(2):
-                        tell_room(environment(),CYN"¶¡Ò»ËµµÀ£º¾ÍÇëÄãÖ¤Ã÷ÉĞÎ´±»ÑªÄ§ÓÕ»ó: É±°Ë¸ö÷¼÷Ã£¬°Ë¸öÓÄÁé£¬°Ë¸ö½©Ê¬¡£\n"NOR);
+                        tell_room(environment(),CYN"ä¸ä¸€èªªé“ï¼šå°±è«‹ä½ è¨¼æ˜å°šæœªè¢«è¡€é­”èª˜æƒ‘: æ®ºå…«å€‹éª·é«ï¼Œå…«å€‹å¹½éˆï¼Œå…«å€‹åƒµå±ã€‚\n"NOR);
                         break;
                 case(3):
-                        tell_room(environment(),CYN"¶¡Ò»ËµµÀ£ºÍê³ÉºóÔÙÀ´ÕÒÎÒ(report)¡£\n"NOR);
-                        set_temp("ÈÎÎñ", 1, speaker);
+                        tell_room(environment(),CYN"ä¸ä¸€èªªé“ï¼šå®Œæˆå¾Œå†ä¾†æ‰¾æˆ‘(report)ã€‚\n"NOR);
+                        set_temp("ä»»å‹™", 1, speaker);
                         break;
                 default: 
                         mazeobj = FUBEN_D->query_maze_mainobj(speaker);
                         if(mazeobj) {
                                 set("quest/maze_code", "necropolis", mazeobj);
                                 set("quest/quest_index", 1, mazeobj);
-                                set("quest/quest_name", "Ö¤Ã÷ÖÒ³Ï", mazeobj);
-                                set("quest/quest_desc", "É±°Ë¸ö÷¼÷Ã£¬°Ë¸öÓÄÁé£¬°Ë¸ö½©Ê¬", mazeobj);
+                                set("quest/quest_name", "è¨¼æ˜å¿ èª ", mazeobj);
+                                set("quest/quest_desc", "æ®ºå…«å€‹éª·é«ï¼Œå…«å€‹å¹½éˆï¼Œå…«å€‹åƒµå±", mazeobj);
                                 set("quest/quest_branch", "taoist", mazeobj);
-                                set("quest/to_kill/÷¼÷Ã", 8, mazeobj);
-                                set("quest/to_kill/ÓÄÁé", 8, mazeobj);
-                                set("quest/to_kill/½©Ê¬", 8, mazeobj);
+                                set("quest/to_kill/éª·é«", 8, mazeobj);
+                                set("quest/to_kill/å¹½éˆ", 8, mazeobj);
+                                set("quest/to_kill/åƒµå±", 8, mazeobj);
                         }
                         delete_temp("in_speech", speaker);
                         destruct(this_object());
@@ -108,20 +108,20 @@ void play_sound_2(object speaker,int index) {
                 return;
         switch (index)  {
                 case(0):
-                        tell_room(environment(),CYN"¶¡Ò»ËµµÀ£ººÃ...×öµÃ²»´í!\n"NOR);
+                        tell_room(environment(),CYN"ä¸ä¸€èªªé“ï¼šå¥½...åšå¾—ä¸éŒ¯!\n"NOR);
                         break;
                 case(1):
-                        tell_room(environment(),CYN"¶¡Ò»ËµµÀ£ºÏëÒªÌôÕ½ÑªÄ§, ÏÈÒªÁË½âÑªÄ§µÄÄÜÁ¦......\n"NOR);
+                        tell_room(environment(),CYN"ä¸ä¸€èªªé“ï¼šæƒ³è¦æŒ‘æˆ°è¡€é­”, å…ˆè¦äº†è§£è¡€é­”çš„èƒ½åŠ›......\n"NOR);
                         break;
                 case(2):
-                        tell_room(environment(),CYN"¶¡Ò»ËµµÀ£ºÕâ¸öÄ¹Ô°ÓĞºÜ¶àÑªÄ§µÄÊÖÏÂ......ËûµÄÃ¿¸öÊÖÏÂ´ú±íÁËËûµÄÒ»ÖÖÄÜÁ¦£¡\n"NOR);
+                        tell_room(environment(),CYN"ä¸ä¸€èªªé“ï¼šé€™å€‹å¢“åœ’æœ‰å¾ˆå¤šè¡€é­”çš„æ‰‹ä¸‹......ä»–çš„æ¯å€‹æ‰‹ä¸‹ä»£è¡¨äº†ä»–çš„ä¸€ç¨®èƒ½åŠ›ï¼\n"NOR);
                         break;
                 case(3):
-                        tell_room(environment(),CYN"¶¡Ò»ËµµÀ£ºÈ¥³¢ÊÔ×ÅÉ±µôÈı¸ö÷¼÷ÃÎäÊ¿£¬Èı¸ö÷¼÷Ã·¨Ê¦£¬Èı¸öÓÄÁéÖ®ÑÛ£¬Èı¸öÓÄÁéÖ®»ğ£¬Èı¸öÑª½©Ê¬£¬ºÍÈı¸öÊ¬É·¡£\n"NOR);
+                        tell_room(environment(),CYN"ä¸ä¸€èªªé“ï¼šå»å˜—è©¦è‘—æ®ºæ‰ä¸‰å€‹éª·é«æ­¦å£«ï¼Œä¸‰å€‹éª·é«æ³•å¸«ï¼Œä¸‰å€‹å¹½éˆä¹‹çœ¼ï¼Œä¸‰å€‹å¹½éˆä¹‹ç«ï¼Œä¸‰å€‹è¡€åƒµå±ï¼Œå’Œä¸‰å€‹å±ç…ã€‚\n"NOR);
                         break;
                 case(4):
-                        tell_room(environment(),CYN"¶¡Ò»ËµµÀ£ºÍê³ÉºóÔÙÀ´ÕÒÎÒ(report)¡£\n"NOR);
-                        set_temp("ÈÎÎñ", 2, speaker);
+                        tell_room(environment(),CYN"ä¸ä¸€èªªé“ï¼šå®Œæˆå¾Œå†ä¾†æ‰¾æˆ‘(report)ã€‚\n"NOR);
+                        set_temp("ä»»å‹™", 2, speaker);
                         break;
                 default: 
                         mazeobj = FUBEN_D->query_maze_mainobj(speaker);
@@ -129,15 +129,15 @@ void play_sound_2(object speaker,int index) {
                                 delete("quest/to_kill", mazeobj);
                                 set("quest/maze_code", "necropolis", mazeobj);
                                 set("quest/quest_index", 2, mazeobj);
-                                set("quest/quest_name", "Ö¤Ã÷ÊµÁ¦", mazeobj);
-                                set("quest/quest_desc", "É±Èı¸ö÷¼÷ÃÎäÊ¿£¬Èı¸ö÷¼÷Ã·¨Ê¦£¬Èı¸öÓÄÚ¤Ö®ÑÛ£¬Èı¸öÓÄÚ¤Ö®»ğ£¬Èı¸öÑª½©Ê¬£¬Èı¸öÊ¬É·", mazeobj);
+                                set("quest/quest_name", "è¨¼æ˜å¯¦åŠ›", mazeobj);
+                                set("quest/quest_desc", "æ®ºä¸‰å€‹éª·é«æ­¦å£«ï¼Œä¸‰å€‹éª·é«æ³•å¸«ï¼Œä¸‰å€‹å¹½å†¥ä¹‹çœ¼ï¼Œä¸‰å€‹å¹½å†¥ä¹‹ç«ï¼Œä¸‰å€‹è¡€åƒµå±ï¼Œä¸‰å€‹å±ç…", mazeobj);
                                 set("quest/quest_branch", "taoist", mazeobj);
-                                set("quest/to_kill/÷¼÷ÃÎäÊ¿", 3, mazeobj);
-                                set("quest/to_kill/÷¼÷Ã·¨Ê¦", 3, mazeobj);
-                                set("quest/to_kill/ÓÄÚ¤Ö®ÑÛ", 3, mazeobj);
-                                set("quest/to_kill/ÓÄÚ¤Ö®»ğ", 3, mazeobj);
-                                set("quest/to_kill/Ñª½©Ê¬", 3, mazeobj);
-                                set("quest/to_kill/Ê¬É·", 3, mazeobj);
+                                set("quest/to_kill/éª·é«æ­¦å£«", 3, mazeobj);
+                                set("quest/to_kill/éª·é«æ³•å¸«", 3, mazeobj);
+                                set("quest/to_kill/å¹½å†¥ä¹‹çœ¼", 3, mazeobj);
+                                set("quest/to_kill/å¹½å†¥ä¹‹ç«", 3, mazeobj);
+                                set("quest/to_kill/è¡€åƒµå±", 3, mazeobj);
+                                set("quest/to_kill/å±ç…", 3, mazeobj);
                         }
                         delete_temp("in_speech", speaker);
                         destruct(this_object());
@@ -154,17 +154,17 @@ void play_sound_3(object speaker,int index) {
                 return;
         switch (index)  {
                 case(0):
-                        tell_room(environment(),CYN"¶¡Ò»ËµµÀ£º×öµÃºÜºÃ!\n"NOR);
+                        tell_room(environment(),CYN"ä¸ä¸€èªªé“ï¼šåšå¾—å¾ˆå¥½!\n"NOR);
                         break;
                 case(1):
-                        tell_room(environment(),CYN"¶¡Ò»ËµµÀ£ºÄãÓĞÕâÑùµÄÊµÁ¦ÎÒ¾Í·ÅĞÄÁË£¡\n"NOR);
+                        tell_room(environment(),CYN"ä¸ä¸€èªªé“ï¼šä½ æœ‰é€™æ¨£çš„å¯¦åŠ›æˆ‘å°±æ”¾å¿ƒäº†ï¼\n"NOR);
                         break;
                 case(2):
-                        tell_room(environment(),CYN"¶¡Ò»ËµµÀ£ºÈ¥ÕÒµ½ÄÇĞ©¶éÂäµÄÉÙÁÖºÍÉĞ£¬É±ÁËËûÃÇ¡£ËûÃÇÊÖÖĞÓĞ¸ö·¨Æ÷£¬¿ÉÒÔ¶Ô¸¶ÑªÄ§¡£\n"NOR);
+                        tell_room(environment(),CYN"ä¸ä¸€èªªé“ï¼šå»æ‰¾åˆ°é‚£äº›å¢®è½çš„å°‘æ—å’Œå°šï¼Œæ®ºäº†ä»–å€‘ã€‚ä»–å€‘æ‰‹ä¸­æœ‰å€‹æ³•å™¨ï¼Œå¯ä»¥å°ä»˜è¡€é­”ã€‚\n"NOR);
                         break;
                 case(3):
-                        tell_room(environment(),CYN"¶¡Ò»ËµµÀ£ºÍê³ÉºóÔÙÀ´ÕÒÎÒ(report)¡£\n"NOR);
-                        set_temp("ÈÎÎñ", 3, speaker);
+                        tell_room(environment(),CYN"ä¸ä¸€èªªé“ï¼šå®Œæˆå¾Œå†ä¾†æ‰¾æˆ‘(report)ã€‚\n"NOR);
+                        set_temp("ä»»å‹™", 3, speaker);
                         break;
                 default: 
                         mazeobj = FUBEN_D->query_maze_mainobj(speaker);
@@ -172,11 +172,11 @@ void play_sound_3(object speaker,int index) {
                                 delete("quest/to_kill", mazeobj);
                                 set("quest/maze_code", "necropolis", mazeobj);
                                 set("quest/quest_index", 3, mazeobj);
-                                set("quest/quest_name", "ÅÅ³ıÒì¼º", mazeobj);
-                                set("quest/quest_desc", "É±ÉÙÁÖºÍÉĞ£¬È¡µÃ·¨Æ÷", mazeobj);
+                                set("quest/quest_name", "æ’é™¤ç•°å·±", mazeobj);
+                                set("quest/quest_desc", "æ®ºå°‘æ—å’Œå°šï¼Œå–å¾—æ³•å™¨", mazeobj);
                                 set("quest/quest_branch", "taoist", mazeobj);
-                                set("quest/to_kill/ĞÄÎä", 1, mazeobj);
-                                set("quest/to_find/¾ÛÁéËş", 1, mazeobj);
+                                set("quest/to_kill/å¿ƒæ­¦", 1, mazeobj);
+                                set("quest/to_find/èšéˆå¡”", 1, mazeobj);
                         }
                         delete_temp("in_speech", speaker);
                         destruct(this_object());
@@ -193,17 +193,17 @@ void play_sound_4(object speaker,int index) {
                 return;
         switch (index)  {
                 case(0):
-                        tell_room(environment(),CYN"¶¡Ò»ËµµÀ£ºÌ«ºÃÁË!¿É¶ñµÄºÍÉĞ£¬¸úÎÒÕù......¹ş¹ş.....Å¶...ÄÇ¸ö...¿È¿È...\n"NOR);
+                        tell_room(environment(),CYN"ä¸ä¸€èªªé“ï¼šå¤ªå¥½äº†!å¯æƒ¡çš„å’Œå°šï¼Œè·Ÿæˆ‘çˆ­......å“ˆå“ˆ.....å“¦...é‚£å€‹...å’³å’³...\n"NOR);
                         break;
                 case(1):
-                        tell_room(environment(),CYN"¶¡Ò»ËµµÀ£ºÆô¶¯¾ÛÁé·¨ÕóĞèÒªÒ»Ğ©ÒõÆø½ÏÊ¢µÄ¶«Î÷ÎªÒı£¬\n"NOR);
+                        tell_room(environment(),CYN"ä¸ä¸€èªªé“ï¼šå•Ÿå‹•èšéˆæ³•é™£éœ€è¦ä¸€äº›é™°æ°£è¼ƒç››çš„æ±è¥¿ç‚ºå¼•ï¼Œ\n"NOR);
                         break;
                 case(2):
-                        tell_room(environment(),CYN"¶¡Ò»ËµµÀ£ºÎ×ÑıµÄ¹ÇÕÈ£¬ÓÄÚ¤Ä§µÄÓÄÚ¤Ö®»ğ£¬½©Ê¬ÍõµÄ½©Ê¬Ñª£¬¸÷È¡Ò»ÑùÀ´£¡\n"NOR);
+                        tell_room(environment(),CYN"ä¸ä¸€èªªé“ï¼šå·«å¦–çš„éª¨æ–ï¼Œå¹½å†¥é­”çš„å¹½å†¥ä¹‹ç«ï¼Œåƒµå±ç‹çš„åƒµå±è¡€ï¼Œå„å–ä¸€æ¨£ä¾†ï¼\n"NOR);
                         break;
                 case(3):
-                        tell_room(environment(),CYN"¶¡Ò»ËµµÀ£ºÍê³ÉºóÔÙÀ´ÕÒÎÒ(report)¡£\n"NOR);
-                        set_temp("ÈÎÎñ", 4, speaker);
+                        tell_room(environment(),CYN"ä¸ä¸€èªªé“ï¼šå®Œæˆå¾Œå†ä¾†æ‰¾æˆ‘(report)ã€‚\n"NOR);
+                        set_temp("ä»»å‹™", 4, speaker);
                         break;
                 default: 
                         mazeobj = FUBEN_D->query_maze_mainobj(speaker);
@@ -212,12 +212,12 @@ void play_sound_4(object speaker,int index) {
                                 delete("quest/to_find", mazeobj);
                                 set("quest/maze_code", "necropolis", mazeobj);
                                 set("quest/quest_index", 4, mazeobj);
-                                set("quest/quest_name", "Ñ°ÕÒ·¨Òı", mazeobj);
-                                set("quest/quest_desc", "ÕÒµ½Î×ÑıµÄ¹ÇÕÈ£¬ÓÄÚ¤Ä§µÄÓÄÚ¤Ö®»ğ£¬½©Ê¬ÍõµÄ½©Ê¬Ñª¸÷Ò»Ñù", mazeobj);
+                                set("quest/quest_name", "å°‹æ‰¾æ³•å¼•", mazeobj);
+                                set("quest/quest_desc", "æ‰¾åˆ°å·«å¦–çš„éª¨æ–ï¼Œå¹½å†¥é­”çš„å¹½å†¥ä¹‹ç«ï¼Œåƒµå±ç‹çš„åƒµå±è¡€å„ä¸€æ¨£", mazeobj);
                                 set("quest/quest_branch", "taoist", mazeobj);
-                                set("quest/to_find/¹ÇÕÈ", 1, mazeobj);
-                                set("quest/to_find/ÓÄÚ¤Ö®»ğ", 1, mazeobj);
-                                set("quest/to_find/½©Ê¬Ñª", 1, mazeobj);
+                                set("quest/to_find/éª¨æ–", 1, mazeobj);
+                                set("quest/to_find/å¹½å†¥ä¹‹ç«", 1, mazeobj);
+                                set("quest/to_find/åƒµå±è¡€", 1, mazeobj);
                         }
                         delete_temp("in_speech", speaker);
                         destruct(this_object());
@@ -239,14 +239,14 @@ void play_sound_5(object speaker,object leader,int index) {
         }
         switch (index)  {
                 case(0):
-                        tell_room(environment(),CYN"¶¡Ò»ËµµÀ£ºÕâÑùËùÓĞĞèÒªµÄ·¨Æ÷¾ÍÈ«ÁË£¡\n"NOR);
+                        tell_room(environment(),CYN"ä¸ä¸€èªªé“ï¼šé€™æ¨£æ‰€æœ‰éœ€è¦çš„æ³•å™¨å°±å…¨äº†ï¼\n"NOR);
                         break;
                 case(1):
-                        tell_room(environment(),CYN"¶¡Ò»ËµµÀ£ºÎÒÃÇµ½¾ÛÁé·¨ÕóÄÇÀï£¬ÎÒÀ´×÷·¨£¬ÖØĞÂÕÙ»½...Å¶²»£¬ÖØĞÂ·âÓ¡ÑªÄ§£¡\n"NOR);
+                        tell_room(environment(),CYN"ä¸ä¸€èªªé“ï¼šæˆ‘å€‘åˆ°èšéˆæ³•é™£é‚£è£¡ï¼Œæˆ‘ä¾†ä½œæ³•ï¼Œé‡æ–°å¬å–š...å“¦ä¸ï¼Œé‡æ–°å°å°è¡€é­”ï¼\n"NOR);
                         break;
                 case(2):
-                        tell_room(environment(),CYN"¶¡Ò»ËµµÀ£º·¨ÕóÄÇÀï¿ÉÄÜ»¹ÓĞĞ©ÑªÄ§µÄÊÖÏÂ......Äã´ÓÇ°Ãæ´øÂ·°É£¡\n"NOR);
-                        set_temp("ÈÎÎñ", 5, speaker);
+                        tell_room(environment(),CYN"ä¸ä¸€èªªé“ï¼šæ³•é™£é‚£è£¡å¯èƒ½é‚„æœ‰äº›è¡€é­”çš„æ‰‹ä¸‹......ä½ å¾å‰é¢å¸¶è·¯å§ï¼\n"NOR);
+                        set_temp("ä»»å‹™", 5, speaker);
                         break;
                 default: 
                         mazeobj = FUBEN_D->query_maze_mainobj(speaker);
@@ -254,8 +254,8 @@ void play_sound_5(object speaker,object leader,int index) {
                                 delete("quest/to_find", mazeobj);
                                 set("quest/maze_code", "necropolis", mazeobj);
                                 set("quest/quest_index", 5, mazeobj);
-                                set("quest/quest_name", "ÇåÀí·¨Õó", mazeobj);
-                                set("quest/quest_desc", "°Ñ¶¡Ò»´øµ½¾ÛÁé·¨Õó£¬²¢ÇåÀíÄÇÀïµÄÑªÄ§ÊÖÏÂ", mazeobj);
+                                set("quest/quest_name", "æ¸…ç†æ³•é™£", mazeobj);
+                                set("quest/quest_desc", "æŠŠä¸ä¸€å¸¶åˆ°èšéˆæ³•é™£ï¼Œä¸¦æ¸…ç†é‚£è£¡çš„è¡€é­”æ‰‹ä¸‹", mazeobj);
                                 set("quest/quest_branch", "taoist", mazeobj);
                                 speaker->set_leader(leader);
                         }
@@ -274,33 +274,33 @@ void play_sound_6(object speaker,int index) {
                 return;
         switch (index)  {
                 case(0):
-                        tell_room(environment(),CYN"¶¡Ò»ËµµÀ£ººÃ£¬ÎÒ¿ÉÒÔ¿ªÊ¼×÷·¨ÁË£¡\n"NOR);
+                        tell_room(environment(),CYN"ä¸ä¸€èªªé“ï¼šå¥½ï¼Œæˆ‘å¯ä»¥é–‹å§‹ä½œæ³•äº†ï¼\n"NOR);
                         break;
                 case(1):
-                        tell_room(environment(),CYN"¶¡Ò»ËµµÀ£º¾ÛÁéËşĞèÒªÎüÊÕÊ®¸öÍöÁé²ÅÄÜ·¢»Ó×÷ÓÃ¡££¡\n"NOR);
+                        tell_room(environment(),CYN"ä¸ä¸€èªªé“ï¼šèšéˆå¡”éœ€è¦å¸æ”¶åå€‹äº¡éˆæ‰èƒ½ç™¼æ®ä½œç”¨ã€‚ï¼\n"NOR);
                         break;
                 case(2):
-                        tell_room(environment(),CYN"¶¡Ò»ËµµÀ£ºÔÚÎÒÊ©·¨ÆÚ¼ä£¬»áÓĞºÜ¶àÍöÁé±»ÎüÒıÀ´£¬°ïÎÒÉ±¹»Ê®¸ö£¡\n"NOR);
+                        tell_room(environment(),CYN"ä¸ä¸€èªªé“ï¼šåœ¨æˆ‘æ–½æ³•æœŸé–“ï¼Œæœƒæœ‰å¾ˆå¤šäº¡éˆè¢«å¸å¼•ä¾†ï¼Œå¹«æˆ‘æ®ºå¤ åå€‹ï¼\n"NOR);
                         break;
                 case(3):
-                        tell_room(environment(),HIW"¶¡Ò»½«¹ÇÕÈ¡¢ÓÄÚ¤Ö®»ğºÍ½©Ê¬ÑªÍ¶Èëµ½¾ÛÁé·¨ÕóÖĞ...·¨Õó¶ÙÊ±ÁÁÁËÆğÀ´£¡\n"NOR);
+                        tell_room(environment(),HIW"ä¸ä¸€å°‡éª¨æ–ã€å¹½å†¥ä¹‹ç«å’Œåƒµå±è¡€æŠ•å…¥åˆ°èšéˆæ³•é™£ä¸­...æ³•é™£é “æ™‚äº®äº†èµ·ä¾†ï¼\n"NOR);
                         break;
                 case(4):
-                        tell_room(environment(),HIY"¶¡Ò»ÄÃ³ö¾ÛÁéËş£¬´óÉùµÄÄî×ÅÖäÓï......\n"NOR);
-                        set_temp("ÈÎÎñ", 6, speaker);
+                        tell_room(environment(),HIY"ä¸ä¸€æ‹¿å‡ºèšéˆå¡”ï¼Œå¤§è²çš„å¿µè‘—å’’èª......\n"NOR);
+                        set_temp("ä»»å‹™", 6, speaker);
                         break;
                 default: 
                         mazeobj = FUBEN_D->query_maze_mainobj(speaker);
                         if(mazeobj) {
                                 set("quest/maze_code", "necropolis", mazeobj);
                                 set("quest/quest_index", 6, mazeobj);
-                                set("quest/quest_name", "³¬¶ÈÍöÁé", mazeobj);
-                                set("quest/quest_desc", "»¤ÎÀ¶¡Ò»£¬Í¬Ê±ÔÚ¾ÛÁé·¨Õó´¦É±ËÀÊ®¸öÍöÁé", mazeobj);
+                                set("quest/quest_name", "è¶…åº¦äº¡éˆ", mazeobj);
+                                set("quest/quest_desc", "è­·è¡›ä¸ä¸€ï¼ŒåŒæ™‚åœ¨èšéˆæ³•é™£è™•æ®ºæ­»åå€‹äº¡éˆ", mazeobj);
                                 set("quest/quest_branch", "taoist", mazeobj);
-                                set("quest/to_kill/ÍöÁé", 10, mazeobj);
+                                set("quest/to_kill/äº¡éˆ", 10, mazeobj);
                                 speaker->summon_undead(environment(),mazeobj);
                                 //speaker->start_call_out( (:call_other,speaker, "summon_undead",environment(),mazeobj :),5);
-                                //mazeobj->delete("quest/killed/ÍöÁé",20);
+                                //mazeobj->delete("quest/killed/äº¡éˆ",20);
                         }
                         delete_temp("in_speech", speaker);
                         destruct(this_object());
@@ -317,8 +317,8 @@ void play_sound_7(object speaker,int index) {
                 return;
         switch (index)  {
                 case(0):
-                        tell_room(environment(),HIC"\n¶¡Ò»ËµµÀ£º³É°ÜÔÚ´ËÒ»¾Ù£¡\n\n"NOR);
-                        tell_room(environment(),BLINK HIC"\n¾ÛÁéËşÉıÉÏÌì¿Õ£¬¾ÛÁé·¨Õó·¢³öÒ«ÑÛµÄÎå²Ê¹âÃ¢¡£\n\n"NOR);
+                        tell_room(environment(),HIC"\nä¸ä¸€èªªé“ï¼šæˆæ•—åœ¨æ­¤ä¸€èˆ‰ï¼\n\n"NOR);
+                        tell_room(environment(),BLINK HIC"\nèšéˆå¡”å‡ä¸Šå¤©ç©ºï¼Œèšéˆæ³•é™£ç™¼å‡ºè€€çœ¼çš„äº”å½©å…‰èŠ’ã€‚\n\n"NOR);
                         objs = all_inventory(environment());
                         foreach(obj in objs) {
                                 if(obj && obj->is_undead())
@@ -326,41 +326,41 @@ void play_sound_7(object speaker,int index) {
                         }
                         break;
                 case(1):
-                        tell_room(environment(),HIR"Ò»µÀÑªÉ«µÄÈËÓ°´Ó¾ÛÁé·¨ÕóÖĞÆ¯³ö£¬Í¶Èëµ½¾ÛÁéËşÖĞ£¡\n\n"NOR);
+                        tell_room(environment(),HIR"ä¸€é“è¡€è‰²çš„äººå½±å¾èšéˆæ³•é™£ä¸­æ¼‚å‡ºï¼ŒæŠ•å…¥åˆ°èšéˆå¡”ä¸­ï¼\n\n"NOR);
                         break;
                 case(2):
-                        tell_room(environment(),HIR"¶¡Ò»ÊÕ»ØÁË¾ÛÁéËş£¬Ö»¼ûÑªÉ«ÈËÓ°ºÍ¶¡Ò»ºÏ¶øÎªÒ»£¡\n\n"NOR);
+                        tell_room(environment(),HIR"ä¸ä¸€æ”¶å›äº†èšéˆå¡”ï¼Œåªè¦‹è¡€è‰²äººå½±å’Œä¸ä¸€åˆè€Œç‚ºä¸€ï¼\n\n"NOR);
                         break;
                 case(3):
-                        tell_room(environment(),HIR"¶¡Ò»ÂúÄ¿³àºì£¬·è¿ñµÄ´óĞ¦µÀ£º¹ş¹ş¹ş£¡ÎÒ³É¹¦ÁË£¡ÎÒ³É¹¦ÁË£¡\n\n"NOR);
+                        tell_room(environment(),HIR"ä¸ä¸€æ»¿ç›®èµ¤ç´…ï¼Œç˜‹ç‹‚çš„å¤§ç¬‘é“ï¼šå“ˆå“ˆå“ˆï¼æˆ‘æˆåŠŸäº†ï¼æˆ‘æˆåŠŸäº†ï¼\n\n"NOR);
                         break;
                 case(4):
-                        tell_room(environment(),HIR"¶¡Ò»¿ñĞ¦µÀ£ºÎÒ¶¡Ò»£¬ÏÖÔÚ¾ÍÊÇÑªÄ§£¡ÑªÄ§¾ÍÊÇÎÒ£¡\n\n"NOR);
+                        tell_room(environment(),HIR"ä¸ä¸€ç‹‚ç¬‘é“ï¼šæˆ‘ä¸ä¸€ï¼Œç¾åœ¨å°±æ˜¯è¡€é­”ï¼è¡€é­”å°±æ˜¯æˆ‘ï¼\n\n"NOR);
                         break;
                 case(5):
-                        tell_room(environment(),BLINK HIR"\n¶¡Ò»½«¾ÛÁéËşÖÀÏòÌì¿Õ£¬Ö»¼ûÌì¼Ê¾¹È»ÉıÆğÒ»ÂÖÑªºìÉ«µÄÔÂÁÁ£¡\n\n");
+                        tell_room(environment(),BLINK HIR"\nä¸ä¸€å°‡èšéˆå¡”æ“²å‘å¤©ç©ºï¼Œåªè¦‹å¤©éš›ç«Ÿç„¶å‡èµ·ä¸€è¼ªè¡€ç´…è‰²çš„æœˆäº®ï¼\n\n");
                         moon = new("/maze/necropolis/obj/bloodmoon");
                         set("owner", speaker, moon);
                         moon->move(environment());
-                        set("short", "¾ÛÁé·¨Õó", environment());
+                        set("short", "èšéˆæ³•é™£", environment());
                         objs = all_inventory(environment());
                         foreach(obj in objs) 
                                         if(obj && userp(obj))
                                                         obj->ccommand("look");
-                        set("short", HIY"¾ÛÁé·¨Õó"NOR, environment());
+                        set("short", HIY"èšéˆæ³•é™£"NOR, environment());
                         moon->hurt();
                         break;
                 case(6):
-                        tell_room(environment(),HIR"\n\n¶¡Ò»ËµµÀ£ºÅóÓÑÃÇ£¬ÏÖÔÚÊÇÎÒ±¨´ğÄãÃÇµÄÊ±ºòÁË£¡¾ÍÊÇ°ÑÄãÃÇ±ä³ÉÑªÄ§µÄÒ»²¿·Ö£¡¹ş¹ş£¡\n\n"NOR);
-                        set_temp("ÈÎÎñ", 7, speaker);
+                        tell_room(environment(),HIR"\n\nä¸ä¸€èªªé“ï¼šæœ‹å‹å€‘ï¼Œç¾åœ¨æ˜¯æˆ‘å ±ç­”ä½ å€‘çš„æ™‚å€™äº†ï¼å°±æ˜¯æŠŠä½ å€‘è®Šæˆè¡€é­”çš„ä¸€éƒ¨åˆ†ï¼å“ˆå“ˆï¼\n\n"NOR);
+                        set_temp("ä»»å‹™", 7, speaker);
                         mazeobj = FUBEN_D->query_maze_mainobj(speaker);
                         if(mazeobj) {
                                 set("quest/maze_code", "necropolis", mazeobj);
                                 set("quest/quest_index", 7, mazeobj);
-                                set("quest/quest_name", "ÖÕ½áÑªÄ§", mazeobj);
-                                set("quest/quest_desc", "É±ËÀ³ÉÎªÑªÄ§µÄ¶¡Ò»", mazeobj);
+                                set("quest/quest_name", "çµ‚çµè¡€é­”", mazeobj);
+                                set("quest/quest_desc", "æ®ºæ­»æˆç‚ºè¡€é­”çš„ä¸ä¸€", mazeobj);
                                 set("quest/quest_branch", "taoist", mazeobj);
-                                set("quest/to_kill/¶¡Ò»", 1, mazeobj);
+                                set("quest/to_kill/ä¸ä¸€", 1, mazeobj);
                         }
                         set("attitude", "aggressive", speaker);
                         set("bellicosity", 50000, speaker);
@@ -394,13 +394,13 @@ void play_sound_8(string dir,int index) {
 
         switch (index)  {
                 case(0):
-                        tell_room(environment(),HIM"\n¶¡Ò»º°µ½£ºÕâ²»¿ÉÄÜ£¡ÑªÄ§£¡ÎÒÊÇÑªÄ§£¡\n\n"NOR);
-                        tell_room(environment(),HIM"\n¶¡Ò»ÂıÂı±ä³ÉÁËÒ»Ì²ÎÛÑª£¡\n\n"NOR, this_object());
+                        tell_room(environment(),HIM"\nä¸ä¸€å–Šåˆ°ï¼šé€™ä¸å¯èƒ½ï¼è¡€é­”ï¼æˆ‘æ˜¯è¡€é­”ï¼\n\n"NOR);
+                        tell_room(environment(),HIM"\nä¸ä¸€æ…¢æ…¢è®Šæˆäº†ä¸€ç˜æ±¡è¡€ï¼\n\n"NOR, this_object());
                         call_out("play_sound_8",1,dir,++index);
                         break;
                 /*
                 case(1):
-                        tell_room(environment(),HIY"¸±±¾½«ÔÚÒ»·ÖÖÓºóÏûÊ§£¡\n"NOR);
+                        tell_room(environment(),HIY"å‰¯æœ¬å°‡åœ¨ä¸€åˆ†é˜å¾Œæ¶ˆå¤±ï¼\n"NOR);
                         call_out("play_sound_8",60,dir,++index);
                         break;
                 case(2):

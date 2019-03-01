@@ -4,10 +4,10 @@ inherit ITEM;
 int do_fu(string arg);
 void create()
 {
-   set_name(HIR"ËÀÈËÍ·"NOR, ({ "head"}));
+   set_name(HIR"æ­»äººé ­"NOR, ({ "head"}));
    set_weight(100);
-   set("unit", "¿Å");
-   set("long","ÕâÊÇÒ»¿ÅËÀÈËÍ·,³ÔÁËËû(eat head)»á±äµÃºÜĞ°¶ñ.\n");
+   set("unit", "é¡†");
+   set("long","é€™æ˜¯ä¸€é¡†æ­»äººé ­,åƒäº†ä»–(eat head)æœƒè®Šå¾—å¾ˆé‚ªæƒ¡.\n");
    set("value", 50000);
    
 }
@@ -20,10 +20,10 @@ int do_fu(string arg)
 {
 	object me,ob;int i;
 	ob=this_object();me=this_player();
-	if(!arg||(arg!="head"&&arg!="Í·"))
-		return notify_fail("ÄãÒª³ÔÊ²Ã´?\n");
+	if(!arg||(arg!="head"&&arg!="é ­"))
+		return notify_fail("ä½ è¦åƒä»€éº¼?\n");
 	me->add("bellicosity",100);
-	message_vision("$N×¥ÆğÒ»¿Å[ËÀÈËÍ·]¿ñ¿ĞÆğÀ´£¬ÂúÁ³¶¼Í¸Â¶×ÅĞ°Æø¡£\n",me);
+	message_vision("$NæŠ“èµ·ä¸€é¡†[æ­»äººé ­]ç‹‚å•ƒèµ·ä¾†ï¼Œæ»¿è‡‰éƒ½é€éœ²è‘—é‚ªæ°£ã€‚\n",me);
 	destruct(ob);
 	return 1;
 }

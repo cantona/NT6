@@ -1,11 +1,11 @@
 // This program is a part of NITAN MudLIB
-// fugu.c ÈçÇù¸½¹Ç
+// fugu.c å¦‚è›†é™„éª¨
 
 #include <ansi.h>
 
 inherit F_SSERVER;
 
-string name() { return HIW "ÈçÇù¸½¹Ç" NOR; }
+string name() { return HIW "å¦‚è›†é™„éª¨" NOR; }
 
 int perform(object me, object target)
 {
@@ -16,26 +16,26 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(name() + "Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(name() + "åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me)) ||
             query("skill_type", weapon) != "staff" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ã€‚\n");
 
         if (target->is_busy())
-                return notify_fail(target->name() + "Ä¿Ç°Õý×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É£¡\n");
+                return notify_fail(target->name() + "ç›®å‰æ­£è‡ªé¡§ä¸æš‡ï¼Œæ”¾è†½æ”»æ“Šå§ï¼\n");
 
         if ((int)me->query_skill("tianshan-zhang", 1) < 60)
-                return notify_fail("ÄãµÄÌìÉ½ÕÈ·¨²»¹»æµÊì£¬²»»áÊ¹ÓÃ" + name() + "¡£\n");
+                return notify_fail("ä½ çš„å¤©å±±æ–æ³•ä¸å¤ å«»ç†Ÿï¼Œä¸æœƒä½¿ç”¨" + name() + "ã€‚\n");
 
         if (me->query_skill_mapped("staff") != "tianshan-zhang")
-                return notify_fail("ÄãÃ»ÓÐ¼¤·¢ÌìÉ½ÕÈ·¨£¬Ê¹²»ÁË" + name() + "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼å¤©å±±æ–æ³•ï¼Œä½¿ä¸äº†" + name() + "ã€‚\n");
 
        if (! living(target))
-              return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+              return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIG "$N" HIG "èîèî¼éÐ¦£¬ÊÖÖÐµÄ" + weapon->name() +
-              HIG "¾ÍÏñÓ°×ÓÒ»°ãÏ®Ïò$n¡£\n" NOR;
+        msg = HIG "$N" HIG "æ¡€æ¡€å§¦ç¬‘ï¼Œæ‰‹ä¸­çš„" + weapon->name() +
+              HIG "å°±åƒå½±å­ä¸€èˆ¬è¥²å‘$nã€‚\n" NOR;
 
         ap = attack_power(me, "staff");
         dp = defense_power(target, "dodge");
@@ -43,14 +43,14 @@ int perform(object me, object target)
         if (ap / 2 + random(ap) > dp)
         {
                 me->start_busy(1);
-                msg += HIR "½á¹û$n" HIR "±»$N" HIR "ÏÅµÃ¾ª»ÅÊ§´ë£¬"
-                       "Ò»Ê±¼äÊÖÃ¦½ÅÂÒ£¬ÄÑÒÔÓ¦¶Ô£¡\n" NOR;
+                msg += HIR "çµæžœ$n" HIR "è¢«$N" HIR "åš‡å¾—é©šæ…Œå¤±æŽªï¼Œ"
+                       "ä¸€æ™‚é–“æ‰‹å¿™è…³äº‚ï¼Œé›£ä»¥æ‡‰å°ï¼\n" NOR;
 
                 target->start_busy(ap/100 + 2);
         } else
         {
-                msg += "¿ÉÊÇ$n" HIR "¿´ÆÆÁË$N" HIR "µÄÆóÍ¼£¬"
-                       "ÇáÇáÒ»ÍË£¬ÉÁÈ¥ÁË$N" HIR "µÄ×·»÷¡£\n" NOR;
+                msg += "å¯æ˜¯$n" HIR "çœ‹ç ´äº†$N" HIR "çš„ä¼åœ–ï¼Œ"
+                       "è¼•è¼•ä¸€é€€ï¼Œé–ƒåŽ»äº†$N" HIR "çš„è¿½æ“Šã€‚\n" NOR;
                 me->start_busy(2);
         }
         message_combatd(msg, me, target);

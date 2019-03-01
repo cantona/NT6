@@ -1,5 +1,5 @@
 // letter.c
-// Ê¦¸µÊÖÚÍ
+// å¸«å‚…æ‰‹è«­
 
 #include <ansi.h>
 
@@ -7,13 +7,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name("Ê¦ÃÅĞÅ¼ş", ({ "letter", "quest letter" }));
+        set_name("å¸«é–€ä¿¡ä»¶", ({ "letter", "quest letter" }));
         if (clonep())
                 set_default_object(__FILE__);
         else
         {
-                set("unit", "ÕÅ");
-                set("long", "ÕâÊÇÒ»·âÊ¦¸µËÍÀ´µÄÇ×±ÊĞÅ¡£\n");
+                set("unit", "å¼µ");
+                set("long", "é€™æ˜¯ä¸€å°å¸«å‚…é€ä¾†çš„è¦ªç­†ä¿¡ã€‚\n");
                 set("value", 0);
         }
         setup();
@@ -21,14 +21,14 @@ void create()
 
 void init()
 {
-        // ½ÓÊÜ
+        // æ¥å—
         add_action("do_accept", "accept");
 
-        // ¾Ü¾ø
+        // æ‹’çµ•
         add_action("do_refuse", "refuse");
 }
 
-// ²é¿´Ê±ÏÔÊ¾ÈÎÎñÌáÊ¾
+// æŸ¥çœ‹æ™‚é¡¯ç¤ºä»»å‹™æç¤º
 string long()
 {
         string msg;
@@ -43,96 +43,96 @@ string long()
         if( query("id", me) != query("quester") )
                 return msg;
 
-        // call_out ²»Ò»¶¨ºÜ×¼Ê±£¬ËùÒÔÕâÀïÒª·ÀÖ¹³öÏÖ
-        // ¡°¸ºÒ»Ãë¡±ÕâÑùµÄÇé¿ö
+        // call_out ä¸ä¸€å®šå¾ˆæº–æ™‚ï¼Œæ‰€ä»¥é€™è£¡è¦é˜²æ­¢å‡ºç¾
+        // â€œè² ä¸€ç§’â€é€™æ¨£çš„æƒ…æ³
         if (time() > query("dest_time"))
                 return msg;
 
-        msg += "ÉÏÃæĞ´×Å£º\n";
+        msg += "ä¸Šé¢å¯«è‘—ï¼š\n";
 
-        // ÎªÆäËûÀàĞÍµÄÈÎÎñÌá¹©À©Õ¹ÓàµØ
+        // ç‚ºå…¶ä»–é¡å‹çš„ä»»å‹™æä¾›æ“´å±•ä½™åœ°
         switch (quest["type"])
         {
         case "kill" :
-                // Ñ°ÕÒ master Ì«¹ıÂé·³£¬ËùÒÔÕâÀï¾Í¸ù¾İ±¾ÈËµÄÉÆ¶ñ
-                // ÅĞ¶ÏÏûÏ¢
-                msg += "\n¡°×ÖÚÍµÜ×Ó" + me->name() + "£º";
+                // å°‹æ‰¾ master å¤ªééº»ç…©ï¼Œæ‰€ä»¥é€™è£¡å°±æ ¹æ“šæœ¬äººçš„å–„æƒ¡
+                // åˆ¤æ–·æ¶ˆæ¯
+                msg += "\nâ€œå­—è«­å¼Ÿå­" + me->name() + "ï¼š";
                 if (me->is_good())
                 {
-                        msg += ("µÃÎÅ¶ñÔô" HIR + quest["name"] + "(" + quest["id"] + ")" + NOR
-                                "´ò¼Ò½ÙÉá£¬ÎŞ¶ñ²»×÷¡£½üÈÕËûÔÚ" HIR +
-                                quest["place"] + NOR "³öÃ»£¬ÕıÊÇ´óºÃ"
-                                "»ú»á½«Ëû³ıÈ¥£¬ÄãÈôÔ¸Òâ£¬±ã´úÎÒ³öÊÖ"
-                                "ÎŞ·Á£¬µ«Îñ±ØĞëÔÚ" HIR +
+                        msg += ("å¾—èæƒ¡è³Š" HIR + quest["name"] + "(" + quest["id"] + ")" + NOR
+                                "æ‰“å®¶åŠ«èˆï¼Œç„¡æƒ¡ä¸ä½œã€‚è¿‘æ—¥ä»–åœ¨" HIR +
+                                quest["place"] + NOR "å‡ºæ²’ï¼Œæ­£æ˜¯å¤§å¥½"
+                                "æ©Ÿæœƒå°‡ä»–é™¤å»ï¼Œä½ è‹¥é¡˜æ„ï¼Œä¾¿ä»£æˆ‘å‡ºæ‰‹"
+                                "ç„¡å¦¨ï¼Œä½†å‹™å¿…é ˆåœ¨" HIR +
                                 CHINESE_D->chinese_monthday(quest["limit"]) +
-                                NOR "Ö®Ç°Íê³É¡£·ñÔò»ØÉ½¸´Ãü¼´¿É¡£" +
-                                quest["master_name"] + "ÓÚ" +
+                                NOR "ä¹‹å‰å®Œæˆã€‚å¦å‰‡å›å±±å¾©å‘½å³å¯ã€‚" +
+                                quest["master_name"] + "äº" +
                                 CHINESE_D->chinese_monthday(quest["time"]) +
-                                "¡£¡±\n");
+                                "ã€‚â€\n");
                 } else
                 if (me->is_bad())
                 {
-                        msg += ("µÃÎÅËùÎ½´óÏÀ" HIR + quest["name"] + "(" + quest["id"] + ")" + NOR
-                                "ÂÅ´ÎºÍÎÒÅÉ×÷¶Ô£¬½üÈÕËûÔÚ" HIR +
-                                quest["place"] + NOR "³öÃ»£¬ÕıÊÇ´óºÃ"
-                                "»ú»á½«Ëû³ıÈ¥£¬ÄãÈôÔ¸Òâ£¬±ã´úÎÒ³öÊÖ"
-                                "ÎŞ·Á£¬µ«Îñ±ØĞëÔÚ" HIR +
+                        msg += ("å¾—èæ‰€è¬‚å¤§ä¿ " HIR + quest["name"] + "(" + quest["id"] + ")" + NOR
+                                "å±¢æ¬¡å’Œæˆ‘æ´¾ä½œå°ï¼Œè¿‘æ—¥ä»–åœ¨" HIR +
+                                quest["place"] + NOR "å‡ºæ²’ï¼Œæ­£æ˜¯å¤§å¥½"
+                                "æ©Ÿæœƒå°‡ä»–é™¤å»ï¼Œä½ è‹¥é¡˜æ„ï¼Œä¾¿ä»£æˆ‘å‡ºæ‰‹"
+                                "ç„¡å¦¨ï¼Œä½†å‹™å¿…é ˆåœ¨" HIR +
                                 CHINESE_D->chinese_monthday(quest["limit"]) +
-                                NOR "Ö®Ç°Íê³É¡£·ñÔò»ØÉ½¸´Ãü¼´¿É¡£" +
-                                quest["master_name"] + "ÓÚ" +
+                                NOR "ä¹‹å‰å®Œæˆã€‚å¦å‰‡å›å±±å¾©å‘½å³å¯ã€‚" +
+                                quest["master_name"] + "äº" +
                                 CHINESE_D->chinese_monthday(quest["time"]) +
-                                "¡£¡±\n");
+                                "ã€‚â€\n");
                 } else {
-                        msg += ("ÎäÁÖÈËÊ¿" HIR + quest["name"] + "(" + quest["id"] + ")" + NOR
-                                "ËùÎªÉõÊÇÌÖÑá£¬µÃÎÅ½üÈÕËûÔÚ" HIR +
-                                quest["place"] + NOR "³öÃ»£¬ÕıÊÇ´óºÃ"
-                                "»ú»á½«Ëû³ıÈ¥£¬ÄãÈôÔ¸Òâ£¬±ã´úÎÒ³öÊÖ"
-                                "ÎŞ·Á£¬µ«Îñ±ØĞëÔÚ" HIR +
+                        msg += ("æ­¦æ—äººå£«" HIR + quest["name"] + "(" + quest["id"] + ")" + NOR
+                                "æ‰€ç‚ºç”šæ˜¯è¨å­ï¼Œå¾—èè¿‘æ—¥ä»–åœ¨" HIR +
+                                quest["place"] + NOR "å‡ºæ²’ï¼Œæ­£æ˜¯å¤§å¥½"
+                                "æ©Ÿæœƒå°‡ä»–é™¤å»ï¼Œä½ è‹¥é¡˜æ„ï¼Œä¾¿ä»£æˆ‘å‡ºæ‰‹"
+                                "ç„¡å¦¨ï¼Œä½†å‹™å¿…é ˆåœ¨" HIR +
                                 CHINESE_D->chinese_monthday(quest["limit"]) +
-                                NOR "Ö®Ç°Íê³É¡£·ñÔò»ØÉ½¸´Ãü¼´¿É¡£" +
-                                quest["master_name"] + "ÓÚ" +
+                                NOR "ä¹‹å‰å®Œæˆã€‚å¦å‰‡å›å±±å¾©å‘½å³å¯ã€‚" +
+                                quest["master_name"] + "äº" +
                                 CHINESE_D->chinese_monthday(quest["time"]) +
-                                "¡£¡±\n");
+                                "ã€‚â€\n");
                 }
                 break;
         }
-        // ÏëÁ¢¼´¾Ü¾øµÄ»°¾ÍÊäÈë refuse£¬·ñÔòµÈ 30 ÃëÒ²Ã»¹ØÏµ
-        msg += HIC "\nÈç¹ûÄãÔ¸Òâ½ÓÊÜ´ËÈÎÎñ£¬ÇëÔÚ" HIW +
+        // æƒ³ç«‹å³æ‹’çµ•çš„è©±å°±è¼¸å…¥ refuseï¼Œå¦å‰‡ç­‰ 30 ç§’ä¹Ÿæ²’é—œç³»
+        msg += HIC "\nå¦‚æœä½ é¡˜æ„æ¥å—æ­¤ä»»å‹™ï¼Œè«‹åœ¨" HIW +
                chinese_number(query("dest_time") - time()) +
-               HIC "ÃëÖ®ÄÚÊäÈë" HIW "(accept quest)"
-               HIC "ÒÔÈ·ÈÏ£¬·ñÔò¼´Îª¾Ü¾ø"
-               HIW "(refuse quest)" HIC "¡£\n" NOR;
+               HIC "ç§’ä¹‹å…§è¼¸å…¥" HIW "(accept quest)"
+               HIC "ä»¥ç¢ºèªï¼Œå¦å‰‡å³ç‚ºæ‹’çµ•"
+               HIW "(refuse quest)" HIC "ã€‚\n" NOR;
         msg = sort_msg(msg);
         return msg;
 }
 
 private void eval_function(function fun) { evaluate(fun); }
 
-// ×Ô¶¯È¡Ïû
+// è‡ªå‹•å–æ¶ˆ
 void start_auto_cancel(object who, int timeout)
 {
         call_out("refuse_quest", timeout, who);
 }
 
-// ½ÓÊÜÈÎÎñ
-// ·¢·ÅÉÏÒ»¸öÈÎÎñµÄ½±Àø£¬Éú³ÉÕâÒ»¸öÈÎÎñµÄ npc
+// æ¥å—ä»»å‹™
+// ç™¼æ”¾ä¸Šä¸€å€‹ä»»å‹™çš„çå‹µï¼Œç”Ÿæˆé€™ä¸€å€‹ä»»å‹™çš„ npc
 int do_accept(string arg)
 {
         object head;
         object me;
 
         if (arg != "quest")
-                return notify_fail("ÄãÒª½ÓÊÜÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦æ¥å—ä»€éº¼ï¼Ÿ\n");
 
         if (query_temp("obsolete"))
                 return 0;
 
         me = this_player();
         if( query("id", me) != query("quester") )
-                return notify_fail("ÕâĞÅ¿É²»ÊÇ¼Ä¸øÄãµÄ¡£\n");
+                return notify_fail("é€™ä¿¡å¯ä¸æ˜¯å¯„çµ¦ä½ çš„ã€‚\n");
 
         if( query("quest/id", me) != query("killed_id") )
-                write("Äã¿´ÁË¿´ĞÅ£¬ÉÏÃæµÄ¶«Î÷¿´À´ÊÇ¹ıÊ±ÁË¡£\n");
+                write("ä½ çœ‹äº†çœ‹ä¿¡ï¼Œä¸Šé¢çš„æ±è¥¿çœ‹ä¾†æ˜¯éæ™‚äº†ã€‚\n");
         else
         {
             if (QUEST_D->remote_bonus(me))
@@ -144,21 +144,21 @@ int do_accept(string arg)
                     if (objectp(head = present("head", me)) &&
                         query("owner_id", head) == query("killed_id") )
                     {
-                        message_vision("$N¿´¿´ÊÖÖĞµÄ" + head->name() +
-                                       "£¬ĞÄµÀ´ËÎïÒÑÈ»ÎŞÓÃ£¬Ë³ÊÖ¾ÍÍùµØÉÏÒ»ÈÓ¡£\n",
+                        message_vision("$Nçœ‹çœ‹æ‰‹ä¸­çš„" + head->name() +
+                                       "ï¼Œå¿ƒé“æ­¤ç‰©å·²ç„¶ç„¡ç”¨ï¼Œé †æ‰‹å°±å¾€åœ°ä¸Šä¸€æ‰”ã€‚\n",
                                       me);
                         destruct(head);
                     } else
                     if (objectp(head = present("head", environment(me))) &&
                         query("owner_id", head) == query("killed_id") )
                     {
-                        message_vision("$N¿´¿´µØÉÏµÄ" + head->name() +
-                                       "£¬ĞÄµÀ´ËÎïÒÑÈ»ÎŞÓÃ£¬Ë³ÊÖ¾ÍÍù±ßÉÏÒ»Ìß¡£\n",
+                        message_vision("$Nçœ‹çœ‹åœ°ä¸Šçš„" + head->name() +
+                                       "ï¼Œå¿ƒé“æ­¤ç‰©å·²ç„¶ç„¡ç”¨ï¼Œé †æ‰‹å°±å¾€é‚Šä¸Šä¸€è¸¢ã€‚\n",
                                       me);
                         destruct(head);
                     }
             } else
-                    write("Äã¿´ÁË¿´ĞÅ£¬ËÆºõÃ»É¶ÖØÒªµÄ¡£\n");
+                    write("ä½ çœ‹äº†çœ‹ä¿¡ï¼Œä¼¼ä¹æ²’å•¥é‡è¦çš„ã€‚\n");
         }
 
         set_temp("obsolete", 1);
@@ -167,26 +167,26 @@ int do_accept(string arg)
         return 1;
 }
 
-// Îö¹¹º¯Êı
+// ææ§‹å‡½æ•¸
 void dest_ob(object ob)
 {
         destruct(ob);
 }
 
-// ¾Ü¾ø
+// æ‹’çµ•
 int do_refuse(string arg)
 {
         object me;
 
         if (arg != "quest")
-                return notify_fail("ÄãÒª¾Ü¾øÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦æ‹’çµ•ä»€éº¼ï¼Ÿ\n");
 
         if (query_temp("obsolete"))
                 return 0;
 
         me = this_player();
         if( query("id", me) != query("quester") )
-                return notify_fail("ÕâĞÅ¿É²»ÊÇ¼Ä¸øÄãµÄ¡£\n");
+                return notify_fail("é€™ä¿¡å¯ä¸æ˜¯å¯„çµ¦ä½ çš„ã€‚\n");
 
         message_sort(query("msg/refuse"), me);
 
@@ -195,7 +195,7 @@ int do_refuse(string arg)
         return 1;
 }
 
-// CLASS_D("generate") + "/killed" ÑÓÊ±µ÷ÓÃµÄÎö¹¹º¯Êı
+// CLASS_D("generate") + "/killed" å»¶æ™‚èª¿ç”¨çš„ææ§‹å‡½æ•¸
 void refuse_quest(object me)
 {
         message_sort(query("msg/refuse"), me);

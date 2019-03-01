@@ -13,10 +13,10 @@ int main(object me, string arg)
         seteuid(getuid());
 
         if (me->is_fighting())
-                return notify_fail("Ò»±ß´ò¼ÜÒ»±ßÑ±ÊŞ£¿ÄãÕæÊÇ»îÄåÁË£¡\n");
+                return notify_fail("ä¸€é‚Šæ‰“æ¶ä¸€é‚Šé¦´ç¸ï¼Ÿä½ çœŸæ˜¯æ´»è†©äº†ï¼\n");
 
         if (me->query_skill("training", 1) < 10)
-                return notify_fail("ÄãµÄÔ¦ÊŞÊõ»¹²»´¿Êì£¬ÎŞ·¨ÈÃÒ°ÊŞ¸úËæÄã£¡\n");
+                return notify_fail("ä½ çš„é¦­ç¸è¡“é‚„ä¸ç´”ç†Ÿï¼Œç„¡æ³•è®“é‡ç¸è·Ÿéš¨ä½ ï¼\n");
 
         if( objectp(cob=query_temp("comedby", me)) )
         {
@@ -25,49 +25,49 @@ int main(object me, string arg)
                         if (cob->query_leader() == me)
                                 cob->set_leader(0);
                 } else
-                        return notify_fail("ÒÑ¾­ÓĞÒ°ÊŞ¸ú×ÅÄãÁË£¡\n");
+                        return notify_fail("å·²ç¶“æœ‰é‡ç¸è·Ÿè‘—ä½ äº†ï¼\n");
         }
 
         if (! arg)
-                return notify_fail("ÄãÒªÈÃÊ²Ã´Ò°ÊŞ¸úËæÄã£¿\n");
+                return notify_fail("ä½ è¦è®“ä»€éº¼é‡ç¸è·Ÿéš¨ä½ ï¼Ÿ\n");
 
         if (! objectp(ob = present(arg, environment(me))))
-                return notify_fail("ÕâÀïÃ»ÓĞÕâÖ»Ò°ÊŞ°É£¿\n");
+                return notify_fail("é€™è£¡æ²’æœ‰é€™åªé‡ç¸å§ï¼Ÿ\n");
 
         if (userp(ob)) 
-                return notify_fail("ÈË¼ÒÒ²ÊÇÍæ¼Ò£¬Äã¸ãÊ²Ã´¸ã°¡£¿\n");
+                return notify_fail("äººå®¶ä¹Ÿæ˜¯ç©å®¶ï¼Œä½ æä»€éº¼æå•Šï¼Ÿ\n");
 
-        if( query("race", ob) != "Ò°ÊŞ" )
-                return notify_fail("Õâ²»ÊÇÒ°ÊŞ£¬ÄãÔÎÍ·ÁË°É£¿\n");
+        if( query("race", ob) != "é‡ç¸" )
+                return notify_fail("é€™ä¸æ˜¯é‡ç¸ï¼Œä½ æšˆé ­äº†å§ï¼Ÿ\n");
 
         if (ob->is_fighting())
-                return notify_fail(ob->name() + "ÕıÔÚ´ò¼Ü£¬Ã»¿ÕÀíÄã£¡\n");
+                return notify_fail(ob->name() + "æ­£åœ¨æ‰“æ¶ï¼Œæ²’ç©ºç†ä½ ï¼\n");
 
         if (ob->is_busy())
-                return notify_fail(ob->name() + "ÕıÔÚÃ¦ºõ£¬Ã»¿ÕÀíÄã£¡\n");
+                return notify_fail(ob->name() + "æ­£åœ¨å¿™ä¹ï¼Œæ²’ç©ºç†ä½ ï¼\n");
 
         if( !query_temp("owner", ob) )
-                return notify_fail(ob->name() + "ÊÇÖ»ÎŞÖ÷Ò°ÊŞ£¬ÄãµÃÏÈÑ±·ş(train)Ëü°¡£¡\n");
+                return notify_fail(ob->name() + "æ˜¯åªç„¡ä¸»é‡ç¸ï¼Œä½ å¾—å…ˆé¦´æœ(train)å®ƒå•Šï¼\n");
 
         if( query_temp("owner", ob) != query("id", me) )
         {
                 ob->kill_ob(me);
-                return notify_fail(ob->name() + "Ôç±»ÈË¼ÒÑ±·şÁË£¬Äã²»ÊÇÕÒËÀ°¡£¡\n");
+                return notify_fail(ob->name() + "æ—©è¢«äººå®¶é¦´æœäº†ï¼Œä½ ä¸æ˜¯æ‰¾æ­»å•Šï¼\n");
         }
 
         if (ob == me)
-                return notify_fail("ÄãÃ»ÎÊÌâ°É£¬×Ô¼º¸ú×Ô¼º£¿\n");
+                return notify_fail("ä½ æ²’å•é¡Œå§ï¼Œè‡ªå·±è·Ÿè‡ªå·±ï¼Ÿ\n");
 
         if (! living(ob)) 
-                return notify_fail("ÕâÖ»Ò°ÊŞÔÎµ¹ÁË£¬ÄãÔõÄÜÈÃËü¸úÄãÄØ£¿\n");
+                return notify_fail("é€™åªé‡ç¸æšˆå€’äº†ï¼Œä½ æ€èƒ½è®“å®ƒè·Ÿä½ å‘¢ï¼Ÿ\n");
 
         cost=query("max_jing", me)/(me->query_skill("training",1)/10)-10;
 
         if( query("jing", me) <= cost )
-                return notify_fail("ÏÖÔÚÄãÌ«ÀÛÁË£¬ÎŞ·¨ÈÃÒ°ÊŞ¸úËæ¡£\n");
+                return notify_fail("ç¾åœ¨ä½ å¤ªç´¯äº†ï¼Œç„¡æ³•è®“é‡ç¸è·Ÿéš¨ã€‚\n");
 
-        message_vision("Ö»¼û$N³å×Å" + ob->name() +
-                       "ÊÖÖĞ°ÚÁË¸öÊÖÊ½£¬ËüÒ»´Ü¾Í¸úÉÏÁË¡£\n\n",me);
+        message_vision("åªè¦‹$Næ²–è‘—" + ob->name() +
+                       "æ‰‹ä¸­æ“ºäº†å€‹æ‰‹å¼ï¼Œå®ƒä¸€ç«„å°±è·Ÿä¸Šäº†ã€‚\n\n",me);
 
         me->receive_damage("jing", cost);
         set_temp("comedby", ob, me);
@@ -78,16 +78,16 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : come <¶¯Îï>
+æŒ‡ä»¤æ ¼å¼ : come <å‹•ç‰©>
 
-´ËÖ¸Áî¿ÉÓÃÓÚÈÃÄ³¶¯Îï¸úËæÄã¡£¶ÔÓÚÒÑ¾­Ñ±·şµÄ¶¯Îï£¬¿ÉÒÔ½øĞĞÏÂÊöÖ¸Áî£º
+æ­¤æŒ‡ä»¤å¯ç”¨äºè®“æŸå‹•ç‰©è·Ÿéš¨ä½ ã€‚å°äºå·²ç¶“é¦´æœçš„å‹•ç‰©ï¼Œå¯ä»¥é€²è¡Œä¸‹è¿°æŒ‡ä»¤ï¼š
 
-»ù±¾Ö¸Áî£º
-        come <¶¯ÎïÃû>           ÈÃ¶¯Îï¸úËæÖ÷ÈËĞĞ¶¯¡£
-        stay                    Í£Ö¹¶¯ÎïµÄ¸úËæ×´Ì¬¡£
-        attack <Ä³ÈË>           ÈÃ¶¯Îï¹¥»÷µĞÈË¡£
-        stop <¶¯ÎïÃû>           ÈÃ¶¯ÎïÍ£Ö¹¶ÔÈËµÄ¹¥»÷¡£
-        release                 ½áÊøÖ÷Å«×´Ì¬£¬½«¶¯Îï·ÅÀë¡£
+åŸºæœ¬æŒ‡ä»¤ï¼š
+        come <å‹•ç‰©å>           è®“å‹•ç‰©è·Ÿéš¨ä¸»äººè¡Œå‹•ã€‚
+        stay                    åœæ­¢å‹•ç‰©çš„è·Ÿéš¨ç‹€æ…‹ã€‚
+        attack <æŸäºº>           è®“å‹•ç‰©æ”»æ“Šæ•µäººã€‚
+        stop <å‹•ç‰©å>           è®“å‹•ç‰©åœæ­¢å°äººçš„æ”»æ“Šã€‚
+        release                 çµæŸä¸»å¥´ç‹€æ…‹ï¼Œå°‡å‹•ç‰©æ”¾é›¢ã€‚
 
 HELP );
         return 1;

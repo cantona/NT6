@@ -7,10 +7,10 @@ int join_battle();
 
 void create()
 {
-        set_name(HIM "Ğ»ÏşÊ«" NOR, ({ "xiexiao shi", "xiexiao", "shi" }));
-        set("title", HIW "±ù" HIR "»ğ" HIC "Ê¹Õß");
-        set("long", "ËıÊÇ¸ºÔğ»¤ËÍÍæ¼Òµ½±ù»ğµºµÄÃØÃÜÊ¹Õß¡£\n");
-        set("gender", "Å®ĞÔ");
+        set_name(HIM "è¬æ›‰è©©" NOR, ({ "xiexiao shi", "xiexiao", "shi" }));
+        set("title", HIW "å†°" HIR "ç«" HIC "ä½¿è€…");
+        set("long", "å¥¹æ˜¯è² è²¬è­·é€ç©å®¶åˆ°å†°ç«å³¶çš„ç§˜å¯†ä½¿è€…ã€‚\n");
+        set("gender", "å¥³æ€§");
         set("age", 20);
         set("max_qi", 99999);
         set("qi", 99999);
@@ -28,8 +28,8 @@ void create()
         set("str", 88);
 
         set("inquiry", ([
-                "±ù»ğµº" : (: move_bhd :),
-                "°ïÅÉÕù¶áÕ½" : (: join_battle :),
+                "å†°ç«å³¶" : (: move_bhd :),
+                "å¹«æ´¾çˆ­å¥ªæˆ°" : (: join_battle :),
         ]));
         set("combat_exp", 10000000);
         set("shen_type", 1);
@@ -41,15 +41,15 @@ int move_bhd()
 {
         object me = this_player();
         
-        // ÉíÉÏÇ®²»×ã
+        // èº«ä¸ŠéŒ¢ä¸è¶³
         if( query("balance", me)<100 )
         {
-                command("say ÄãµÄÒø¿âÖĞËÆºõÈ±Ç®°É£¬ÎÒ»¤ËÍÄãµ½±ù»ğµºÖÁÉÙµÃÒ»°ÙÁ½»Æ½ğ£¡");
+                command("say ä½ çš„éŠ€åº«ä¸­ä¼¼ä¹ç¼ºéŒ¢å§ï¼Œæˆ‘è­·é€ä½ åˆ°å†°ç«å³¶è‡³å°‘å¾—ä¸€ç™¾å…©é»ƒé‡‘ï¼");
                 return 1;
         }
         addn("balance", -100, me);
         
-        command("say ¼ÈÈ»Èç´Ë£¬ÎÒ¾Í»¤ËÍÄãµ½±ù»ğµº°É£¡");
+        command("say æ—¢ç„¶å¦‚æ­¤ï¼Œæˆ‘å°±è­·é€ä½ åˆ°å†°ç«å³¶å§ï¼");
 
         me->move("/maze/binghuodao/haitan"); 
         return 1;

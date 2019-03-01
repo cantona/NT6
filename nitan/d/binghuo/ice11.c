@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����");
+        set("short", "冰海");
         set("long", @LONG
-�������ǻ������������һմ����ͨһ����ˤ���˺��С�����
-�ı�ˮ������ȫ����ֱ���������ǻ����Ѻܽ��ˡ��ǻ����˱�������
-��һ�����ɽ���������䣬�յ�ɽ�Ժ�ˮů�ˡ�
+冰上甚是滑溜，你右足稍稍一沾，撲通一聲，摔入了海中。寒冷
+的冰水凍得你全身僵直，好在離那火柱已很近了。那火柱乃北極附近
+的一座活火山，火燄噴射，燒得山旁海水暖了。
 LONG );
         set("outdoors", "binghuo");
         set("no_clean_up", 0);

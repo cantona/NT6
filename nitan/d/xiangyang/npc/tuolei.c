@@ -7,10 +7,10 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("ÍÏÀ×", ({ "tuo lei", "lei", "tuo" }));
+        set_name("æ‹–é›·", ({ "tuo lei", "lei", "tuo" }));
         set("long", 
-"ÍÏÀ×ÊÇ³É¼ªË¼º¹Ó××Ó£¬¼áÈÌ¹û¾ö¡£´Ë´Î´ø±øÄÏÀ´£¬ÊÆÈçÆÆÖñ£¬±ø·æ±ÏÂ¶¡£\n");
-        set("gender", "ÄĞĞÔ");
+"æ‹–é›·æ˜¯æˆå‰æ€æ±—å¹¼å­ï¼Œå …å¿æœæ±ºã€‚æ­¤æ¬¡å¸¶å…µå—ä¾†ï¼Œå‹¢å¦‚ç ´ç«¹ï¼Œå…µé‹’ç•¢éœ²ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 18);
         set("attitude", "friendly");
         set("shen_type", 1);

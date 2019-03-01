@@ -1,4 +1,4 @@
-// stick.c »ù±¾°ô·¨
+// stick.c åŸºæœ¬æ£’æ³•
 // Last Modified by winder on Mar. 10 2000
 
 #include <ansi.h>;
@@ -13,13 +13,13 @@ int power_point(object me) { return 1; }
 
 int help(object me)
 {
-        write(HIC"\n»ù±¾°ô·¨£º"NOR"\n");
+        write(HIC"\nåŸºæœ¬æ£’æ³•ï¼š"NOR"\n");
         write(@HELP
 
-    °ôÀàÎä¼¼µÄ»ù±¾¹¦¡£
+    æ£’é¡æ­¦æŠ€çš„åŸºæœ¬åŠŸã€‚
 
-        Ñ§Ï°ÒªÇó£º
-                ÎŞ
+        å­¸ç¿’è¦æ±‚ï¼š
+                ç„¡
 HELP
         );
         return 1;

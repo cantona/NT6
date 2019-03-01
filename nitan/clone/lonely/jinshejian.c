@@ -5,25 +5,25 @@ inherit SWORD;
 
 void create()
 {
-        set_name(YEL "½ðÉß½£" NOR, ({ "jinshe jian", "jinshe", "jian" }) );
+        set_name(YEL "é‡‘è›‡åŠ" NOR, ({ "jinshe jian", "jinshe", "jian" }) );
         set_weight(10000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIY "Ö»¼ûÄÇ½£ÐÎ×´ÉõÊÇÆæÌØ£¬Õû±ú½£¾ÍÈçÊÇÒ»ÌõÉßÅÌ\n"
-                                "Çú¶ø³É£¬ÉßÎ²¹´³É½£±ú£¬ÉßÍ·ÔòÊÇ½£¼â£¬ÉßÉàÉì\n"
-                                "³ö·Ö²æ£¬ÊÇÒÔ½£¼â¾¹ÓÐÁ½²æ¡£ÄÇ½£½ð¹â²ÓÀÃ£¬ÎÕ\n"
-                                "ÔÚÊÖÖÐÉõÊÇ³ÁÖØ£¬¿´À´¾¹ÊÇ»Æ½ð»ìºÍÁËÆäËûÎå½ð\n"
-                                "ËùÖý£¬½£ÉíÉÏÒ»µÀÑªºÛ£¬·¢³ö±ÌÓÍÓÍµÄ°µ¹â£¬¼«\n"
-                                "ÊÇ¹îÒì¡£¡£\n" NOR);
+                set("long", HIY "åªè¦‹é‚£åŠå½¢ç‹€ç”šæ˜¯å¥‡ç‰¹ï¼Œæ•´æŸ„åŠå°±å¦‚æ˜¯ä¸€æ¢è›‡ç›¤\n"
+                                "æ›²è€Œæˆï¼Œè›‡å°¾å‹¾æˆåŠæŸ„ï¼Œè›‡é ­å‰‡æ˜¯åŠå°–ï¼Œè›‡èˆŒä¼¸\n"
+                                "å‡ºåˆ†å‰ï¼Œæ˜¯ä»¥åŠå°–ç«Ÿæœ‰å…©å‰ã€‚é‚£åŠé‡‘å…‰ç‡¦çˆ›ï¼Œæ¡\n"
+                                "åœ¨æ‰‹ä¸­ç”šæ˜¯æ²‰é‡ï¼Œçœ‹ä¾†ç«Ÿæ˜¯é»ƒé‡‘æ··å’Œäº†å…¶ä»–äº”é‡‘\n"
+                                "æ‰€é‘„ï¼ŒåŠèº«ä¸Šä¸€é“è¡€ç—•ï¼Œç™¼å‡ºç¢§æ²¹æ²¹çš„æš—å…‰ï¼Œæ¥µ\n"
+                                "æ˜¯è©­ç•°ã€‚ã€‚\n" NOR);
 
-                set("unit", "±ú");
+                set("unit", "æŸ„");
                 set("value", 800);
                 // set("no_sell", 1);
                 // set("unique", 1);
                 set("material", "steel");
-                set("wield_msg", HIY "ÆÆ¿Õ¶øÏì£¬½ðÉß½£ÒÑ³öÇÊ£¬$N" HIY "È«ÉíÁ¹ì¬ì¬µØÖ»¸Ðº®Æø±ÆÈË¡£\n" NOR); 
-                set("unwield_msg", HIY "$N" HIY "ÊÖÒ»Ñï£¬½ðÉß½£»ØÇÊ£¬ËÄÖÜº®Æø¶ÙÏû¡£\n" NOR);
+                set("wield_msg", HIY "ç ´ç©ºè€ŒéŸ¿ï¼Œé‡‘è›‡åŠå·²å‡ºéž˜ï¼Œ$N" HIY "å…¨èº«æ¶¼é¢¼é¢¼åœ°åªæ„Ÿå¯’æ°£é€¼äººã€‚\n" NOR); 
+                set("unwield_msg", HIY "$N" HIY "æ‰‹ä¸€æšï¼Œé‡‘è›‡åŠå›žéž˜ï¼Œå››å‘¨å¯’æ°£é “æ¶ˆã€‚\n" NOR);
                 set("stable", 100);
         }
         init_sword(100);
@@ -48,15 +48,15 @@ mixed hit_ob(object me, object victim, int damage_bonus)
         case 0:
                 if (! victim->is_busy())
                       victim->start_busy(me->query_skill("sword") / 10 + 4);
-                return HIY "$N" HIY "Å­ºÈÒ»Éù£¬½ðÉß½£ÓÌÈçÁéÉßÒ»°ã£¬òêÑÑÓÎ¶¯£¬·ºÆð\nµ­µ­±ÌÂÌÖ®¹â£¬¾¹"
-                       "½«$n" HIY "ÁýÕÖÔÚÒø¹â»ÃÓ°Ö®ÏÂ¡£\n" NOR;
+                return HIY "$N" HIY "æ€’å–ä¸€è²ï¼Œé‡‘è›‡åŠçŒ¶å¦‚éˆè›‡ä¸€èˆ¬ï¼Œèœ¿èœ’éŠå‹•ï¼Œæ³›èµ·\næ·¡æ·¡ç¢§ç¶ ä¹‹å…‰ï¼Œç«Ÿ"
+                       "å°‡$n" HIY "ç± ç½©åœ¨éŠ€å…‰å¹»å½±ä¹‹ä¸‹ã€‚\n" NOR;
 
         case 1:
                 n = me->query_skill("sword");
                 victim->receive_damage("qi", n * 3 / 4, me);
                 victim->receive_wound("qi", n * 3 / 4, me);
-                return  HIY "$N" HIY "·ÉÉí¶øÆð£¬½ðÉß½£×ÔÌì¶øÏÂ£¬ÓÌÈçÁéÉß°ãµØÎè¶¯×Å¾íÏò$n" HIY
-                        "ÖÜÉí¸÷´¦´óÑ¨£¡\n" NOR;
+                return  HIY "$N" HIY "é£›èº«è€Œèµ·ï¼Œé‡‘è›‡åŠè‡ªå¤©è€Œä¸‹ï¼ŒçŒ¶å¦‚éˆè›‡èˆ¬åœ°èˆžå‹•è‘—å·å‘$n" HIY
+                        "å‘¨èº«å„è™•å¤§ç©´ï¼\n" NOR;
 
         }
         return damage_bonus;

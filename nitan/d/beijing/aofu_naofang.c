@@ -3,11 +3,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "÷¡¸®ÀÎ·¿");
+        set("short", "é°²åºœç‰¢æˆ¿");
         set("long", @LONG
-ÕâÊÇÒ»¸ö»è°µµÄ·¿¼ä£¬´°»§¶¼±»¶¤ËÀ¡£µØÉÏ·Å×ÅÆ¤±Þ¡¢Ä¾¹÷µÈÐÌ
-¾ß£¬ÏÔÈ»ÕâÊÇ÷¡ºÝË½Á¢¹«ÌÃ£¬ÉóÑ¶ÈË·¸µÄËùÔÚ¡£Ò»¸öÊéÉú±»À¦ÔÚÇ½ÉÏ£¬
-ÏÊÑªÁÜÀì£¬±éÌåÁÛÉË¡£
+é€™æ˜¯ä¸€å€‹æ˜æš—çš„æˆ¿é–“ï¼Œçª—æˆ¶éƒ½è¢«é‡˜æ­»ã€‚åœ°ä¸Šæ”¾è‘—çš®éž­ã€æœ¨æ£ç­‰åˆ‘
+å…·ï¼Œé¡¯ç„¶é€™æ˜¯é°²ç‹ ç§ç«‹å…¬å ‚ï¼Œå¯©è¨ŠäººçŠ¯çš„æ‰€åœ¨ã€‚ä¸€å€‹æ›¸ç”Ÿè¢«æ†åœ¨ç‰†ä¸Šï¼Œ
+é®®è¡€æ·‹æ¼“ï¼Œéé«”é±—å‚·ã€‚
 LONG );
         set("exits", ([
                 "south" :  "/d/beijing/aofu_houyuan",

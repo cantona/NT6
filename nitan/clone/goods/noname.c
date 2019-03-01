@@ -5,20 +5,20 @@ int is_reform_ob() { return 1; }
 
 void create()
 {
-        set_name(HIM "ÎŞÃûÖ®Îï" NOR, ({"no name", "no", "name"}));
+        set_name(HIM "ç„¡åä¹‹ç‰©" NOR, ({"no name", "no", "name"}));
         set_weight(1000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", sort_msg(HIM "·Ç½ğ·ÇÓñ·ÇÊ¯·ÇÄ¾ÎŞÃûÖ®Îï£¬¿´ËÆÆ½·²"
-                                         "µ«ÓÖËÆ²»Æ½·²£¬ºöÒşºöÏÖ£¬ºöÃ÷ºö°µ¡£"
-                                         "ËÆºõ°üÈİ×Å²»ÎªÈËÖªµÄÁ¦Á¿£¬µ«È´¸Ğ¾õ"
-                                         "²»µ½Ò»µãÄÜÁ¿¡£\n" NOR));
-                set("unit", "¿é");
+                set("long", sort_msg(HIM "éé‡‘éç‰éçŸ³éæœ¨ç„¡åä¹‹ç‰©ï¼Œçœ‹ä¼¼å¹³å‡¡"
+                                         "ä½†åˆä¼¼ä¸å¹³å‡¡ï¼Œå¿½éš±å¿½ç¾ï¼Œå¿½æ˜å¿½æš—ã€‚"
+                                         "ä¼¼ä¹åŒ…å®¹è‘—ä¸ç‚ºäººçŸ¥çš„åŠ›é‡ï¼Œä½†å»æ„Ÿè¦º"
+                                         "ä¸åˆ°ä¸€é»èƒ½é‡ã€‚\n" NOR));
+                set("unit", "å¡Š");
                 set("value", 20000000);
                 set("item_origin", 1);
                 set("material_attrib", "no name");
-                set("material_name", HIM "ÎŞÃûÖ®Îï" NOR);
+                set("material_name", HIM "ç„¡åä¹‹ç‰©" NOR);
                 set("can_make", "all");
                 set("power_point", 300);
         }

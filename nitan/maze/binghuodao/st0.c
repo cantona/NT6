@@ -3,12 +3,12 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�ܵ�");
+        set("short", "密道");
         set("long", @LONG
-�����Ǳ��𵺼�̳�ڵ�һ���ܵ������ĳ���������ײ�
-֪��ͨ��δ����ܵ��ڵƹ�谵���������󣬲�ʱ���������
-Ц����ż��������һ������֪�������޵Ŀݹǣ�����ȫ��ֱ��
-��Ƥ�����鼱֮��ֻ���Ĵ�Ѱ·(xunlu)������û�µĳ�·��
+這裡是冰火島祭壇內的一處密道，幽幽長長，深不見底不
+知道通向何處。密道內燈光昏暗，陰風陣陣，不時傳來詭異的
+笑聲，偶爾還觸及一兩根不知是人是獸的枯骨，讓你全身直起
+雞皮疙瘩。情急之下只有四處尋路(xunlu)看看有沒新的出路。
 LONG);
         set("no_sleep_room",1);
         set("objects", ([
@@ -25,11 +25,11 @@ void init()
         me->start_busy(2 + random(3));
         if (random(2))
         {
-                tell_object(me, HIC "�㲻С�Ĳȵ�һ���ݹǣ���Ȼ�����쳣����\n" NOR);
+                tell_object(me, HIC "你不小心踩到一副枯骨，竟然驚慌異常……\n" NOR);
         }
         else
         {
-                tell_object(me, HIC "ͻȻһȺ��Ѫ����ɹ�������æӦ�� ����\n" NOR);
+                tell_object(me, HIC "突然一群吸血蝙蝠飛過，你連忙應付 ……\n" NOR);
         }
 }
 
@@ -37,7 +37,7 @@ int do_wang()
 {
         object ob = this_player();
 
-        message_vision(HIC "\n$N" HIC "�Ĵ��Ҵܣ�Ѱ���µĳ�·���ƺ�����Զ�����һ˿������\n"NOR, ob);
+        message_vision(HIC "\n$N" HIC "四處亂竄，尋找新的出路，似乎發現遠處射出一絲光亮。\n"NOR, ob);
 
         switch (random(4))
         {

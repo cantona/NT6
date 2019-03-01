@@ -5,9 +5,9 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÉÙÅ®", ({"young girl","girl","young"}));
-        set("long", "ÕâÊÇÒ»¸öÉñÁú½ÌÅ®µÜ×Ó£¬Ò»Ï®ºìÒÂ£¬³¤µÃÆÄÎª¿É°®¡£\n");
-        set("gender", "Å®ÐÔ");
+        set_name("å°‘å¥³", ({"young girl","girl","young"}));
+        set("long", "é€™æ˜¯ä¸€å€‹ç¥žé¾æ•™å¥³å¼Ÿå­ï¼Œä¸€è¥²ç´…è¡£ï¼Œé•·å¾—é —ç‚ºå¯æ„›ã€‚\n");
+        set("gender", "å¥³æ€§");
         set("attitude", "peaceful");
 
         set("age", 10+random(10));
@@ -34,20 +34,20 @@ void create()
         prepare_skill("hand","shenlong-bashi");
         set("chat_chance", 3);
         set("chat_msg", ({
-                "ÉÙÅ®ËµµÀ£ººé½ÌÖ÷ÉíÍ¨»¤ÓÓ£¬ÖÚµÜ×ÓÓÂÆø°Ù±¶£¬ÒÔÒ»µ±°Ù£¬ÒÔ°Ùµ±Íò¡£\n",
-                "ÉÙÅ®ËµµÀ£ººé½ÌÖ÷ÉñÄ¿Èçµç£¬ÖòÕÕËÄ·½¡£\n",
-                "ÉÙÅ®ËµµÀ£ºÎÒµÜ×ÓÉ±µÐ»¤½Ì£¬ºé½ÌÖ÷Ç×¼ÓÌá°Î£¬ÉýÈÎÊ¥Ö°¡£\n",
-                "ÉÙÅ®ËµµÀ£ºÎÒ½ÌµÜ×Ó»¤½Ì¶øËÀ£¬Í¬ÉýÌìÌÃ¡£\n",
-                "ÉÙÅ®¸ßÉù½ÐµÀ£º½ÌÖ÷±¦Ñµ£¬Ê±¿ÌÔÚÐÄ£¬½¨¹¦¿ËµÐ£¬ÎÞÊÂ²»³É£¡\n",
-                "ÉÙÅ®ºöÈ»ÆëÉù½ÐµÀ£ºÖÚÖ¾ÆëÐÄ¿É³É³Ç£¬ÍþÕðÌìÏÂÎÞ±ÈÂ×£¡\n",
-                "ÉÙÅ®ºöÈ»ÆëÉù½ÐµÀ£ºÉñÁú·ÉÌìÆëÑöÍû£¬½ÌÖ÷ÉùÍþ¸Ç°Ë·½£¡\n",
-                "ÉÙÅ®ºöÈ»ÆëÉù½ÐµÀ£º³Ë·çÆÆÀË³ÑÓ¢ºÀ£¬½ÌÖ÷ÈçÍ¬ÈÕÔÂ¹â£¡\n",
-                "ÉÙÅ®ÆëÉù½ÐµÀ£º½ÌÖ÷ÓÀÏíÏÉ¸££¬ÊÙÓëÌìÆë£¡\n",
+                "å°‘å¥³èªªé“ï¼šæ´ªæ•™ä¸»èº«é€šè­·ä½‘ï¼Œçœ¾å¼Ÿå­å‹‡æ°£ç™¾å€ï¼Œä»¥ä¸€ç•¶ç™¾ï¼Œä»¥ç™¾ç•¶è¬ã€‚\n",
+                "å°‘å¥³èªªé“ï¼šæ´ªæ•™ä¸»ç¥žç›®å¦‚é›»ï¼Œç‡­ç…§å››æ–¹ã€‚\n",
+                "å°‘å¥³èªªé“ï¼šæˆ‘å¼Ÿå­æ®ºæ•µè­·æ•™ï¼Œæ´ªæ•™ä¸»è¦ªåŠ ææ‹”ï¼Œå‡ä»»è–è·ã€‚\n",
+                "å°‘å¥³èªªé“ï¼šæˆ‘æ•™å¼Ÿå­è­·æ•™è€Œæ­»ï¼ŒåŒå‡å¤©å ‚ã€‚\n",
+                "å°‘å¥³é«˜è²å«é“ï¼šæ•™ä¸»å¯¶è¨“ï¼Œæ™‚åˆ»åœ¨å¿ƒï¼Œå»ºåŠŸå…‹æ•µï¼Œç„¡äº‹ä¸æˆï¼\n",
+                "å°‘å¥³å¿½ç„¶é½Šè²å«é“ï¼šçœ¾å¿—é½Šå¿ƒå¯æˆåŸŽï¼Œå¨éœ‡å¤©ä¸‹ç„¡æ¯”å€«ï¼\n",
+                "å°‘å¥³å¿½ç„¶é½Šè²å«é“ï¼šç¥žé¾é£›å¤©é½Šä»°æœ›ï¼Œæ•™ä¸»è²å¨è“‹å…«æ–¹ï¼\n",
+                "å°‘å¥³å¿½ç„¶é½Šè²å«é“ï¼šä¹˜é¢¨ç ´æµªé€žè‹±è±ªï¼Œæ•™ä¸»å¦‚åŒæ—¥æœˆå…‰ï¼\n",
+                "å°‘å¥³é½Šè²å«é“ï¼šæ•™ä¸»æ°¸äº«ä»™ç¦ï¼Œå£½èˆ‡å¤©é½Šï¼\n",
         }) );
-        set("party/party_name", HIY"ÉñÁú½Ì"NOR);
-        set("party/rank", HIR"³àÁúÃÅ"NOR"½ÌÖÚ");
+        set("party/party_name", HIY"ç¥žé¾æ•™"NOR);
+        set("party/rank", HIR"èµ¤é¾é–€"NOR"æ•™çœ¾");
         set("party/level", 1);
-        create_family("ÉñÁú½Ì",3,"µÜ×Ó");
+        create_family("ç¥žé¾æ•™",3,"å¼Ÿå­");
 
         setup();
         switch( random(5) )

@@ -1,13 +1,13 @@
-// huatuo.c »ªÍÓ¶şÊÀ
+// huatuo.c è¯é™€äºŒä¸–
 
 inherit BUNCHER;
 
 void create()
 {
-        set_name("»ªÍÓ¶şÊÀ", ({ "huatuo ershi", "huatuo", "ershi", "hua", "tuo" }));
-        set("title", "Ò©ÆÌÀÏ°å");
-        set("gender", "ÄĞĞÔ");
-        set("long", "Ëû¾ÍÊÇÒ½Êõ¸ß³¬µÄ»ªÍÓºóÒá¡£¿ÉÊÇËûĞÔ¸ñ¹Å¹Ö£¬²»ÊÇÊ²Ã´ÈË¶¼Ò½µÄ¡£\n");
+        set_name("è¯é™€äºŒä¸–", ({ "huatuo ershi", "huatuo", "ershi", "hua", "tuo" }));
+        set("title", "è—¥èˆ–è€æ¿");
+        set("gender", "ç”·æ€§");
+        set("long", "ä»–å°±æ˜¯é†«è¡“é«˜è¶…çš„è¯é™€å¾Œè£”ã€‚å¯æ˜¯ä»–æ€§æ ¼å¤æ€ªï¼Œä¸æ˜¯ä»€éº¼äººéƒ½é†«çš„ã€‚\n");
         set("age", 65);
         set("int", 30);
         

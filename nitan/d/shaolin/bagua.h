@@ -2,8 +2,8 @@
 // Date: YZC 96/01/19
 
 string* dirs = ({
-        "ø≤", "¿§", "¿Î", "«¨",
-        "Ùﬁ", "’", "Ÿ„", "∂“"
+        "Âùé", "Âù§", "Èõ¢", "‰πæ",
+        "ËâÆ", "Èúá", "Â∑Ω", "ÂÖå"
         });
 
 int check_dirs(object me, string dir)
@@ -15,52 +15,52 @@ int check_dirs(object me, string dir)
 
                 switch (dir)
                 {
-                case "ø≤":
+                case "Âùé":
                         if (bc == 0 || bc == 13 || bc == 17) {
                                 set_temp("bagua/count", bc+1, me);
                                 me->receive_damage("jing",50); }                        
                         else
                                 delete_temp("bagua/count", me);
                         break;
-                case "¿§":
+                case "Âù§":
                         delete_temp("bagua/count", me);
                         break;
-                case "¿Î":
+                case "Èõ¢":
                         if (bc == 1 || bc == 12 ) {
                                 set_temp("bagua/count", bc+1, me);
                                 addn("neili", -50, me);}
                         else
                                 delete_temp("bagua/count", me);
                         break;
-                case "«¨":
+                case "‰πæ":
                         if (bc == 8 ) {
                                 set_temp("bagua/count", bc+1, me);
                                 me->receive_damage("qi", 50); }
                         else
                                 delete_temp("bagua/count", me);
                         break;
-                case "Ùﬁ":
+                case "ËâÆ":
                         if (bc == 3 || bc == 4 || bc == 15) {
                                 set_temp("bagua/count", bc+1, me);
                                 addn("combat_exp", -50, me);}
                         else
                                 delete_temp("bagua/count", me);
                         break;
-                case "’":
+                case "Èúá":
                         if (bc == 2 || bc == 7 || bc == 9 ) {
                                 set_temp("bagua/count", bc+1, me);
                                 me->unconcious(); }
                         else
                                 delete_temp("bagua/count", me);
                         break;
-                case "Ÿ„":
+                case "Â∑Ω":
                         if (bc == 6 || bc == 11 ) {
                                 set_temp("bagua/count", bc+1, me);
                                 me->receive_wound("qi", 50); }
                         else
                                 delete_temp("bagua/count", me);
                         break;
-                case "∂“":
+                case "ÂÖå":
                         if (bc == 5 || bc == 10 || bc == 14 || bc == 16) {
                                 set_temp("bagua/count", bc+1, me);
                                 me->receive_wound("jing", 50); }
@@ -72,7 +72,7 @@ int check_dirs(object me, string dir)
                         break;
                 }
 
-                if (dir == "¿§")
+                if (dir == "Âù§")
                 {
                         delete_temp("bagua", me);
                 }

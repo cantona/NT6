@@ -6,12 +6,12 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÄÏº£¶ñòÔ", ({ "monster dragon", "dragon", "nanhai ejiao" }) );
-        set("title", HIC "Áú×å" NOR);
-        set("gender", "ÄĞĞÔ");
+        set_name("å—æµ·æƒ¡è›Ÿ", ({ "monster dragon", "dragon", "nanhai ejiao" }) );
+        set("title", HIC "é¾æ—" NOR);
+        set("gender", "ç”·æ€§");
         set("age", 23);
         set("long", @LONG
-ÕâÊÇÒ»¸öÆøÊÆĞÚĞÚµÄ¶ñòÔ£¬»ëÉí²øÈÆ×ÅÎåÑÕÁùÉ«µÄÒì²ÊÔÆÏé¡£
+é€™æ˜¯ä¸€å€‹æ°£å‹¢æ´¶æ´¶çš„æƒ¡è›Ÿï¼Œæ¸¾èº«çºç¹è‘—äº”é¡å…­è‰²çš„ç•°å½©é›²ç¥¥ã€‚
 LONG );
         set("combat_exp", 10000000);
         set("shen_type", 0);
@@ -58,8 +58,8 @@ void fight_ob(object ob)
         if (is_fighting(ob))
                 return;
 
-        message_vision(HIW "$N" HIW "ÀäºßÒ»Éù£¬»ëÉíÔÆÆø´óÊ¢£¬"
-                       "ÑıÆøÃÖÂş¡£\n" NOR, this_object(), ob);
+        message_vision(HIW "$N" HIW "å†·å“¼ä¸€è²ï¼Œæ¸¾èº«é›²æ°£å¤§ç››ï¼Œ"
+                       "å¦–æ°£å½Œæ¼«ã€‚\n" NOR, this_object(), ob);
 
         ::fight_ob(ob);
         if( !is_killing(query("id", ob)) )
@@ -68,7 +68,7 @@ void fight_ob(object ob)
 
 int accept_fight(object ob)
 {
-        message_vision("$NÎ¢Ò»Ò¡Í·£¬ÂÔÒ»°ÚÎ²£¬É¨ÁËÉÏÀ´¡£\n",
+        message_vision("$Nå¾®ä¸€æ–é ­ï¼Œç•¥ä¸€æ“ºå°¾ï¼Œæƒäº†ä¸Šä¾†ã€‚\n",
                        this_object(), ob);
         kill_ob(ob);
         return -1;
@@ -88,8 +88,8 @@ mixed hit_ob(object me, object ob, int damage_bouns)
 {
         ob->receive_wound("qi", 200 + random(200), me);
         set("neili",query("max_neili",  me), me);
-        return HIY "$N" HIY "ÖÜÎ§ÑÌÎíçÔÈÆ£¬¹â»ªËÄÉä£¬µÇÊ±Áî$n"
-               HIY "ÃÔ»ó²»ÒÑ£¬ÄÑÒÔ×Ô°Î¡£\n" NOR;
+        return HIY "$N" HIY "å‘¨åœç…™éœ§ç¹šç¹ï¼Œå…‰è¯å››å°„ï¼Œç™»æ™‚ä»¤$n"
+               HIY "è¿·æƒ‘ä¸å·²ï¼Œé›£ä»¥è‡ªæ‹”ã€‚\n" NOR;
 }
 
 void unconcious()
@@ -109,16 +109,16 @@ varargs void die(object killer)
 
         str = prize[random(sizeof(prize))];
         ob = new(str);
-        command("chat °¡Ñ½£¡²»ºÃ£¬¿´À´Õâ´Î³öÊ¦²»Àû£¬´ıÎÒ»ØÄÏº£ĞŞÁ¶ÉÏ¼¸ÄêÔÙËµ£¡");
-        message_sort(HIR "$N" HIR "Éí×ÓÒ»Å¤£¬ÏûÊ§ÔÚÔÆÆøÖĞ£¬"
-                     "Ö»Ìı¶£ÁáÁáµÄÒ»Éù£¬´Ó$N" HIR "ÉíÉÏµôÏÂÁËÒ»" +
+        command("chat å•Šå‘€ï¼ä¸å¥½ï¼Œçœ‹ä¾†é€™æ¬¡å‡ºå¸«ä¸åˆ©ï¼Œå¾…æˆ‘å›å—æµ·ä¿®ç…‰ä¸Šå¹¾å¹´å†èªªï¼");
+        message_sort(HIR "$N" HIR "èº«å­ä¸€æ‰­ï¼Œæ¶ˆå¤±åœ¨é›²æ°£ä¸­ï¼Œ"
+                     "åªè½å®ç²ç²çš„ä¸€è²ï¼Œå¾$N" HIR "èº«ä¸Šæ‰ä¸‹äº†ä¸€" +
                      query("unit", ob)+ob->name()+
-                     HIR "¡£\n" NOR, this_object());
+                     HIR "ã€‚\n" NOR, this_object());
         if (objectp(killer)) set("who_get", ([ "id"    : query("id", killer),
-                                               "time"  : time() + 60]), ob); // 60ÃëÄÚÖ»ÔÊĞíÉ±ËÀÎÒµÄID¼ğ
+                                               "time"  : time() + 60]), ob); // 60ç§’å…§åªå…è¨±æ®ºæ­»æˆ‘çš„IDæ€
         ob->move(environment());
-        // µÛÍõ·ûÍ¼
-        // ±àºÅ33
+        // å¸ç‹ç¬¦åœ–
+        // ç·¨è™Ÿ33
         if (random(10) == 1)
         {
                 int n_tt;
@@ -127,19 +127,19 @@ varargs void die(object killer)
                 ob_tt = new("/clone/tuteng/diwang-suipian" + sprintf("%d", n_tt));
                 if (ob_tt)
                 {
-                        write(HIG "¶£~~Ò»ÕÅµÛÍõ·ûÍ¼ËéÆ¬ÂäÔÚµØÉÏ¡£\n" NOR);
+                        write(HIG "å®~~ä¸€å¼µå¸ç‹ç¬¦åœ–ç¢ç‰‡è½åœ¨åœ°ä¸Šã€‚\n" NOR);
                         ob_tt->move(environment());
                 }
         }
 
-        // 1/800¼¸ÂÊµô³öÎŞÃûÍ­ÈË
+        // 1/800å¹¾ç‡æ‰å‡ºç„¡åéŠ…äºº
         if (random(800) < 1)
         {
                 object ob_tongren;
                 ob_tongren = new("/clone/tongren/tongren" + (1 + random(2)));
-                message_vision(HIR "µ±~~Ò»Éù£¬´Ó$N" HIR "ÉíÉÏµô³ö" + ob_tongren->name() + HIR "£¬ÂäÔÚµØÉÏ¡£\n" NOR, this_object());
+                message_vision(HIR "ç•¶~~ä¸€è²ï¼Œå¾$N" HIR "èº«ä¸Šæ‰å‡º" + ob_tongren->name() + HIR "ï¼Œè½åœ¨åœ°ä¸Šã€‚\n" NOR, this_object());
                 set("who_get/id", "NONE", ob_tongren);
-                set("who_get/time", time() + 30, ob_tongren); // 30ÃëÄÚ¶¼²»ÄÜ¼ñÈ¡
+                set("who_get/time", time() + 30, ob_tongren); // 30ç§’å…§éƒ½ä¸èƒ½æ’¿å–
                 ob_tongren->move(environment(this_object()));
         }
         destruct(this_object());
@@ -149,10 +149,10 @@ void random_move()
 {
         if (time() - query("born_time") > 1800)
         {
-                message_vision("$N¼±¼±Ã¦Ã¦µÄ×ßÁË¡£\n", this_object());
+                message_vision("$Næ€¥æ€¥å¿™å¿™çš„èµ°äº†ã€‚\n", this_object());
                 CHANNEL_D->channel_broadcast("rumor",
-                        "ÌıËµ" + name() + HIM "åĞÒ£·²ÊÀ£¬Îª»öÈË¼äÁ¼¾Ã"
-                        "·½²Å·µ»ØÄÏº££¬°ÙĞÕ±¥ÊÜİ±¶¾¡£" NOR);
+                        "è½èªª" + name() + HIM "é€é™å‡¡ä¸–ï¼Œç‚ºç¦äººé–“è‰¯ä¹…"
+                        "æ–¹æ‰è¿”å›å—æµ·ï¼Œç™¾å§“é£½å—è¼æ¯’ã€‚" NOR);
                 destruct(this_object());
                 return;
         }

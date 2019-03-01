@@ -10,11 +10,11 @@ inherit NPC;
 
 void create()
 {
-        set_name(HIY "ÎŞÎÒ×ğÕß" NOR, ({ "wuwo zunzhe"}) );
-        set("title", HIG "ÍüÓÇ¹ÈÖ÷ÈË" NOR);
-        set("long", HIR "Ò»Î»ÃæÉ«ºÍÉÆµÄ×ğÕß£¬ËÆºõ¿´¾¡Ò»ÇĞ³¾ÊÀ·²Ë×£¡\n" NOR);
+        set_name(HIY "ç„¡æˆ‘å°Šè€…" NOR, ({ "wuwo zunzhe"}) );
+        set("title", HIG "å¿˜æ†‚è°·ä¸»äºº" NOR);
+        set("long", HIR "ä¸€ä½é¢è‰²å’Œå–„çš„å°Šè€…ï¼Œä¼¼ä¹çœ‹ç›¡ä¸€åˆ‡å¡µä¸–å‡¡ä¿—ï¼\n" NOR);
 
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("age", 49);
 
         // yun perform
@@ -23,7 +23,7 @@ void create()
               // 
               (: command("perform sword.ben twice") :), 
               (: command("perform sword.ben and sword.tian") :),
-              // ÒõÑô12t
+              // é™°é™½12t
               (: command("perform finger.tian twice") :), 
               (: command("perform finger.zhen and finger.jiu") :), 
 
@@ -35,12 +35,12 @@ void create()
 
         setup();
 
-        // ÒÂ·ş
+        // è¡£æœ
         carry_object("/clone/cloth/bupao")->wear();
-        // ÎäÆ÷
+        // æ­¦å™¨
         carry_object("/clone/weapon/fengshen-jian")->wield();
 
-        // ÉèÖÃµØµã
+        // è¨­ç½®åœ°é»
         //set("startroom", "/d/shenlong/huodong1");
 }
 
@@ -167,8 +167,8 @@ void init_npc(object me)
                 npc_qi = 250000000; // 2.5E
         }
                         
-        // ¶ÔNPC_qiĞŞÕı
-        npc_qi -= npc_qi / 2; // ½µµÍ50%
+        // å°NPC_qiä¿®æ­£
+        npc_qi -= npc_qi / 2; // é™ä½50%
 
         reset_eval_cost();
 
@@ -176,7 +176,7 @@ void init_npc(object me)
         set("eff_qi", npc_qi);
         set("qi", npc_qi);
 
-        // ¹Ì¶¨Öµ
+        // å›ºå®šå€¼
         set("str",50);
         set("int", 200);
         set("con", 200);
@@ -191,14 +191,14 @@ void init_npc(object me)
         set("neili", 10000000);
         set("max_neili", 10000000);
         set("jiali", 1000);
-        set("no_nuoyi", 1); // ²»±»Å²ÒÆÓ°Ïì
-        set_temp("apply/qy", 20);  // ÆøÔË
-        set_temp("apply/fy", 20);  // ¸£Ôµ
+        set("no_nuoyi", 1); // ä¸è¢«æŒªç§»å½±éŸ¿
+        set_temp("apply/qy", 20);  // æ°£é‹
+        set_temp("apply/fy", 20);  // ç¦ç·£
 
         npc_level = max_skill; 
         
-        // ¶Ônpc_levelĞŞÕı 
-        npc_level -= npc_level / 5; // ½µµÍ20%
+        // å°npc_levelä¿®æ­£ 
+        npc_level -= npc_level / 5; // é™ä½20%
 
         set_skill("unarmed", npc_level);
         set_skill("finger", npc_level);
@@ -239,7 +239,7 @@ void init_npc(object me)
         prepare_skill("finger", "yinyang-shiertian");
         prepare_skill("unarmed", "yinyang-shiertian");
 
-        // ½±Àø
+        // çå‹µ
         exp = max_skill * 10;
         pot = max_skill * 20;
         mar = max_skill * 5;
@@ -291,17 +291,17 @@ void unconcious()
 
 void die(object killer)
 {
-        object dob;             // ´òÔÎÕâ¸öNPCµÄÈË
-        int exp;                // ĞèÒª¹Ï·ÖµÄ¾­Ñé
-        int pot;                // ĞèÒª¹Ï·ÖµÄÇ±ÄÜ
-        int mar;                //  ĞèÒª¹Ï·ÖµÄÌå»á
+        object dob;             // æ‰“æšˆé€™å€‹NPCçš„äºº
+        int exp;                // éœ€è¦ç“œåˆ†çš„ç¶“é©—
+        int pot;                // éœ€è¦ç“œåˆ†çš„æ½›èƒ½
+        int mar;                //  éœ€è¦ç“œåˆ†çš„é«”æœƒ
         int i;
         object gift_ob, gift_ob2, gift_ob3, ob_tys;
         string s_gift, *key_s_gift;
         int gift_point, ran;
 
-        // ¶¨Òå½±ÀøÎïÆ·ÁĞ±í
-        // ¼¸ÂÊ  X / °Ù·ÖÖ®
+        // å®šç¾©çå‹µç‰©å“åˆ—è¡¨
+        // å¹¾ç‡  X / ç™¾åˆ†ä¹‹
         mixed oblist = ([
                 "/clone/fam/max/naobaijin"               : 1,
                 "/clone/fam/pill/sheli4"                 : 1,
@@ -371,12 +371,12 @@ void die(object killer)
         ]);
 
 
-        // dob ÉèÖÃÔÚÎÒÉíÉÏ init_npc(me)µÄÊ±ºòÒÑ¾­ÉèÖÃ
+        // dob è¨­ç½®åœ¨æˆ‘èº«ä¸Š init_npc(me)çš„æ™‚å€™å·²ç¶“è¨­ç½®
         dob = query("me");
 
         if (! dob)destruct(this_object());
         
-        // ·ÀÖ¹Ö±½Ócall_die()
+        // é˜²æ­¢ç›´æ¥call_die()
         if (query("qi") > 500000)
         {
                 revive();
@@ -395,7 +395,7 @@ void die(object killer)
                                         ([ "exp"      : exp + exp / 10,
                                            "pot"      : pot + pot  / 10,
                                            "mar"      : mar + mar/ 10, 
-                                           "prompt"   : "ÄãÔÚÕ½Ê¤" + name() + HIG "Ö®ºó"]), 999);
+                                           "prompt"   : "ä½ åœ¨æˆ°å‹" + name() + HIG "ä¹‹å¾Œ"]), 999);
                 }
 
                 else
@@ -404,16 +404,16 @@ void die(object killer)
                                         ([ "exp"      : exp,
                                            "pot"      : pot,
                                            "mar"      : mar,
-                                           "prompt"   : "ÄãÔÚÕ½Ê¤" + name() + HIG "Ö®ºó"]), 999); 
+                                           "prompt"   : "ä½ åœ¨æˆ°å‹" + name() + HIG "ä¹‹å¾Œ"]), 999); 
                 }
         }
 
-        // 50%µôÎïÆ·
+        // 50%æ‰ç‰©å“
         if (random(100) < 25)
         {
                 key_s_gift = keys(oblist);
 
-                // 100%ÖÁÉÙ±¬Ò»¼ş
+                // 100%è‡³å°‘çˆ†ä¸€ä»¶
                 if (1)
                 {
                         s_gift = key_s_gift[random(sizeof(key_s_gift))];
@@ -421,19 +421,19 @@ void die(object killer)
                         gift_ob = new(s_gift);
                         if (objectp(gift_ob))
                         {
-                                message_vision(HIC "µ±~~Ò»Éù£¬´Ó$N" HIC "ÉíÉÏµô³ö" + 
-                                               gift_ob->name() + HIC "£¬ÂäÔÚµØÉÏ¡£\n" NOR, this_object());
+                                message_vision(HIC "ç•¶~~ä¸€è²ï¼Œå¾$N" HIC "èº«ä¸Šæ‰å‡º" + 
+                                               gift_ob->name() + HIC "ï¼Œè½åœ¨åœ°ä¸Šã€‚\n" NOR, this_object());
                                 gift_ob->set("who_get/id", "NONE");
-                                gift_ob->set("who_get/time", time() + 30); // 30ÃëÄÚ¶¼²»ÄÜ¼ñÈ¡
+                                gift_ob->set("who_get/time", time() + 30); // 30ç§’å…§éƒ½ä¸èƒ½æ’¿å–
                                 gift_ob->move(environment(this_object()));
                         }
-                        else // ¼ÍÂ¼Ö®
+                        else // ç´€éŒ„ä¹‹
                         {
                                 //log_file("gift-none", s_gift + " from " + __FILE__ + "\n");
                         }
                 }
                 
-                // 20%¼¸ÂÊÔÙ×·¼ÓÒ»¼şÎïÆ·
+                // 20%å¹¾ç‡å†è¿½åŠ ä¸€ä»¶ç‰©å“
                 if (random(10) < 2)
                 {
                         s_gift = key_s_gift[random(sizeof(key_s_gift))];
@@ -441,51 +441,51 @@ void die(object killer)
                         gift_ob2 = new(s_gift);
                         if (objectp(gift_ob2))
                         {
-                                message_vision(HIC "µ±~~Ò»Éù£¬´Ó$N" HIC "ÉíÉÏµô³ö" + 
-                                               gift_ob2->name() + HIC "£¬ÂäÔÚµØÉÏ¡£\n" NOR, this_object());
+                                message_vision(HIC "ç•¶~~ä¸€è²ï¼Œå¾$N" HIC "èº«ä¸Šæ‰å‡º" + 
+                                               gift_ob2->name() + HIC "ï¼Œè½åœ¨åœ°ä¸Šã€‚\n" NOR, this_object());
                                 gift_ob2->move(environment(this_object()));
                         }
-                        else // ¼ÍÂ¼Ö®
+                        else // ç´€éŒ„ä¹‹
                         {
                                 //log_file("gift-none", s_gift + " from " + __FILE__ + "\n");
                         }
                 }
         }
         
-        // 50%¼¸ÂÊµô³öÌúÓ¢Ê¯Í·
+        // 50%å¹¾ç‡æ‰å‡ºéµè‹±çŸ³é ­
         if (random(100) < 25)
         {
                 ob_tys = new("/clone/fam/item/tieying-shi");
                 ob_tys->set_amount(1 + random(5));
                 if (objectp(ob_tys))
                 {
-                        message_vision(HIG "µ±~~Ò»Éù£¬´Ó$N" HIG "ÉíÉÏµô³ö" + HIY + 
-                                       sprintf("%d", ob_tys->query_amount()) + HIG "¿é" + 
-                                       ob_tys->name() + HIG "£¬ÂäÔÚµØÉÏ¡£\n" NOR, this_object());
+                        message_vision(HIG "ç•¶~~ä¸€è²ï¼Œå¾$N" HIG "èº«ä¸Šæ‰å‡º" + HIY + 
+                                       sprintf("%d", ob_tys->query_amount()) + HIG "å¡Š" + 
+                                       ob_tys->name() + HIG "ï¼Œè½åœ¨åœ°ä¸Šã€‚\n" NOR, this_object());
                         ob_tys->move(environment(this_object()));
                 }
-                else // ¼ÍÂ¼Ö®
+                else // ç´€éŒ„ä¹‹
                 {
-                        log_file("gift-none", "ÌúÓ¢Ê¯ from " + __FILE__ + "\n");
+                        log_file("gift-none", "éµè‹±çŸ³ from " + __FILE__ + "\n");
                 }               
                 
         }
         
 /*      
-        // 5/100¼¸ÂÊµô³öÎŞÃûÍ­ÈË
+        // 5/100å¹¾ç‡æ‰å‡ºç„¡åéŠ…äºº
         if (random(100) < 5)
         {
                 object ob_tongren;
                 ob_tongren = new("/clone/fam/item/wuming-tongren");
-                message_vision(HIR "µ±~~Ò»Éù£¬´Ó$N" HIR "ÉíÉÏµô³ö" + ob_tongren->name() + HIR "£¬ÂäÔÚµØÉÏ¡£\n" NOR, this_object());
+                message_vision(HIR "ç•¶~~ä¸€è²ï¼Œå¾$N" HIR "èº«ä¸Šæ‰å‡º" + ob_tongren->name() + HIR "ï¼Œè½åœ¨åœ°ä¸Šã€‚\n" NOR, this_object());
                 ob_tongren->set("who_get/id", "NONE");
-== Î´Íê¼ÌĞø 95% == (ENTER ¼ÌĞøÏÂÒ»Ò³£¬q Àë¿ª£¬b Ç°Ò»Ò³)
-                ob_tongren->set("who_get/time", time() + 30); // 30ÃëÄÚ¶¼²»ÄÜ¼ñÈ¡
+== æœªå®Œç¹¼çºŒ 95% == (ENTER ç¹¼çºŒä¸‹ä¸€é ï¼Œq é›¢é–‹ï¼Œb å‰ä¸€é )
+                ob_tongren->set("who_get/time", time() + 30); // 30ç§’å…§éƒ½ä¸èƒ½æ’¿å–
                 ob_tongren->move(environment(this_object()));
         }
    */
    
-        // ÎªÍæ¼ÒËùÔÚ°ïÅÉÀÛ»ı»ı·Ö
+        // ç‚ºç©å®¶æ‰€åœ¨å¹«æ´¾ç´¯ç©ç©åˆ†
         BUNCH_D->add_points(dob);
         
         destruct(this_object());

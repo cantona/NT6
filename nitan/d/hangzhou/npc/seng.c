@@ -3,12 +3,12 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÀÏºÍÉĞ", ({"lao heshang","seng"}));
+        set_name("è€å’Œå°š", ({"lao heshang","seng"}));
         set("long",
-"Ò»¸ö´ÈÃ¼ÉÆÄ¿µÄÀÏºÍÉĞ¡£\n"
+"ä¸€å€‹æ…ˆçœ‰å–„ç›®çš„è€å’Œå°šã€‚\n"
         );
 
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("attitude", "peace");
         set("class", "bonze");
 

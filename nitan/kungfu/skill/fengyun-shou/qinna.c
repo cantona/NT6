@@ -1,12 +1,12 @@
 // This program is a part of NITAN MudLIB
-// qinna.c ÇÜÄÃ
+// qinna.c æ“’æ‹¿
 
 #include <ansi.h>
 #include <combat.h>
 
 inherit F_SSERVER;
 
-string name() { return "ÇÜÄÃ"; }
+string name() { return "æ“’æ‹¿"; }
 
 int perform(object me)
 {
@@ -21,24 +21,24 @@ int perform(object me)
         }
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail("·çÔÆÊÖ¡¸ÇÜÄÃ¡¹Ö»ÄÜÔÚÕ½¶·ÖÐ¶Ô¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("é¢¨é›²æ‰‹ã€Œæ“’æ‹¿ã€åªèƒ½åœ¨æˆ°é¬¥ä¸­å°å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         skill = me->query_skill("fengyun-shou", 1);
 
         if (skill < 120)
-                return notify_fail("ÄãµÄ·çÔÆÊÖµÈ¼¶²»¹»£¬²»»áÊ¹ÓÃ¡¸ÇÜÄÃ¡¹£¡\n");
+                return notify_fail("ä½ çš„é¢¨é›²æ‰‹ç­‰ç´šä¸å¤ ï¼Œä¸æœƒä½¿ç”¨ã€Œæ“’æ‹¿ã€ï¼\n");
 
         if( query("neili", me)<100 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬ÎÞ·¨ÔËÓÃ¡¸ÇÜÄÃ¡¹£¡\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼Œç„¡æ³•é‹ç”¨ã€Œæ“’æ‹¿ã€ï¼\n");
 
         if (me->query_skill_mapped("hand") != "fengyun-shou")
-                return notify_fail("ÄãÃ»ÓÐ¼¤·¢·çÔÆÊÖ£¬ÎÞ·¨Ê¹ÓÃ¡¸ÇÜÄÃ¡¹£¡\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼é¢¨é›²æ‰‹ï¼Œç„¡æ³•ä½¿ç”¨ã€Œæ“’æ‹¿ã€ï¼\n");
 
        if (! living(target))
-              return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+              return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIC "$N" HIC "ÌùÉÏÇ°À´£¬ºÍ$n" HIC "½üÉí²«»÷£¬Ö»¼û$P"
-              "µÄÊÖºöÕÛºöÅ¤£¬»ò×¥»òË¦£¬ÁîÈËÑÛ»¨çÔÂÒ£¡\n" NOR;
+        msg = HIC "$N" HIC "è²¼ä¸Šå‰ä¾†ï¼Œå’Œ$n" HIC "è¿‘èº«ææ“Šï¼Œåªè¦‹$P"
+              "çš„æ‰‹å¿½æŠ˜å¿½æ‰­ï¼Œæˆ–æŠ“æˆ–ç”©ï¼Œä»¤äººçœ¼èŠ±ç¹šäº‚ï¼\n" NOR;
 
         ap = attack_power(me, "hand");
         dp = defense_power(target, "parry");
@@ -48,16 +48,16 @@ int perform(object me)
                 addn("neili", -80, me);
                 damage = damage_power(me, "hand");
                 msg += COMBAT_D->do_damage(me, target, UNARMED_ATTACK, damage, 50,
-                                           HIR "$p" HIR "·ÜÁ¦µÖ¿¹£¬ÖÕ¾¿²»µÐ$P"
-                                           HIR "£¬Á¬ÖÐÊýÕÐºó»¹ÊÇ±»Ñ¹ÖÆµÃÎÞ·¨"
-                                           "·´»÷£¡\n" NOR);
+                                           HIR "$p" HIR "å¥®åŠ›æŠµæŠ—ï¼Œçµ‚ç©¶ä¸æ•µ$P"
+                                           HIR "ï¼Œé€£ä¸­æ•¸æ‹›å¾Œé‚„æ˜¯è¢«å£“åˆ¶å¾—ç„¡æ³•"
+                                           "åæ“Šï¼\n" NOR);
                 me->start_busy(1 + random(2));
                 if (ap / 3 + random(ap) > dp && ! target->is_busy())
                         target->start_busy(random(2) + 3);
         } else
         {
-                msg += CYN "¿ÉÊÇ$p" CYN "µÄ¿´ÆÆÁË$P" CYN
-                       "µÄÕÐÊ½£¬ÇÉÃîµÄÒ»Ò»²ð½â£¬Ã»Â¶°ëµãÆÆÕÀ£¡\n" NOR;
+                msg += CYN "å¯æ˜¯$p" CYN "çš„çœ‹ç ´äº†$P" CYN
+                       "çš„æ‹›å¼ï¼Œå·§å¦™çš„ä¸€ä¸€æ‹†è§£ï¼Œæ²’éœ²åŠé»žç ´ç¶»ï¼\n" NOR;
                 addn("neili", -20, me);
                 me->start_busy(3);
         }

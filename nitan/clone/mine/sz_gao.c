@@ -9,16 +9,16 @@ int no_save_in_home() { return 1; }
 string query_long()
 {
         if(mangle > 0)
-                return "ÕâÊÇÒ»°ÑÍÚ¾òÓÃµÄÊ®×Ö¸ä¡£\n";
+                return "é€™æ˜¯ä¸€æŠŠæŒ–æ˜ç”¨çš„åå­—é¬ã€‚\n";
         else
-                return "ÕâÊÇÒ»°Ñ»µµôµÄÊ®×Ö¸ä¡£\n";
+                return "é€™æ˜¯ä¸€æŠŠå£æ‰çš„åå­—é¬ã€‚\n";
 }
 
 void create()
 {
-        set_name("Ê®×Ö¸ä", ({ "shizi gao" }) );
+        set_name("åå­—é¬", ({ "shizi gao" }) );
         set_weight(2000);
-        set("unit", "°Ñ");
+        set("unit", "æŠŠ");
         set("long", (: query_long :));
         set("value", 500);
 }
@@ -26,6 +26,6 @@ void create()
 void use_this_tool()
 {
         if( (--mangle <= 0) && environment() )
-                tell_object(environment(), "\nÊ®×Ö¸ä»µÁË¡£\n\n");
+                tell_object(environment(), "\nåå­—é¬å£äº†ã€‚\n\n");
         set("value", 0);
 }

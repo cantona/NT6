@@ -1,17 +1,17 @@
-// wudu-ling.c Îå¶¾Áî
+// wudu-ling.c äº”æ¯’ä»¤
 // Modified by Venus Nov.1997
 #include <ansi.h>
 inherit ITEM;
 void create()
 {
-        set_name(HIB"Îå¶¾Áî"NOR, ({"wudu ling", "ling"}));
+        set_name(HIB"äº”æ¯’ä»¤"NOR, ({"wudu ling", "ling"}));
         set_weight(500);
         if( clonep() )
                 set_default_object(__FILE__);
         else
         {
-                set("unit", "Ãæ");
-                set("long","ÕâÒ»¿éÎå¶¾Áî£¬Æ¾´ËÅÆµÜ×Ó¿ÉÒª¶¾³æ¡£\n");
+                set("unit", "é¢");
+                set("long","é€™ä¸€å¡Šäº”æ¯’ä»¤ï¼Œæ†‘æ­¤ç‰Œå¼Ÿå­å¯è¦æ¯’èŸ²ã€‚\n");
                 set("value", 0);
                 set("material", "steel");
         }

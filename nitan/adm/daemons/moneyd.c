@@ -1,4 +1,4 @@
-// moneyd.c  Ç®µÄ¹¦ÄÜ
+// moneyd.c  éŒ¢çš„åŠŸèƒ½
 // by Xiang@XKX (95/12/22)
 // Rewritten by Lonely@chinamud.cn
 
@@ -11,17 +11,17 @@ string money_str(int amount)
         string output;
 
         if( amount / 10000 ) {
-                output = chinese_number(amount / 10000) + "Á½»Æ½ğ";
+                output = chinese_number(amount / 10000) + "å…©é»ƒé‡‘";
                 amount %= 10000;
         }
         else
                 output = "";
         if( amount / 100 ) {
-                output = output + chinese_number(amount / 100) + "Á½°×Òø";
+                output = output + chinese_number(amount / 100) + "å…©ç™½éŠ€";
                 amount %= 100;
         }
         if( amount )
-                return output + chinese_number(amount) + "ÎÄÍ­Ç®";
+                return output + chinese_number(amount) + "æ–‡éŠ…éŒ¢";
         return output;
 }
 
@@ -34,23 +34,23 @@ string price_str(int amount)
                 amount = 1;
 
         if( amount / 10000 ) {
-                output = chinese_number(amount / 10000) + "Á½»Æ½ğ";
+                output = chinese_number(amount / 10000) + "å…©é»ƒé‡‘";
                 amount %= 10000;
         }
         else
                 output = "";
         if( amount / 100 ) {
                 if( output != "" )
-                        output += "ÓÖ" + chinese_number(amount / 100) + "Á½°×Òø";
+                        output += "åˆ" + chinese_number(amount / 100) + "å…©ç™½éŠ€";
                 else
-                        output = chinese_number(amount / 100) + "Á½°×Òø";
+                        output = chinese_number(amount / 100) + "å…©ç™½éŠ€";
                 amount %= 100;
         }
         if( amount )
                 if( output != "" )
-                        return output + "ÓÖ" + chinese_number(amount) + "ÎÄÍ­°å";
+                        return output + "åˆ" + chinese_number(amount) + "æ–‡éŠ…æ¿";
                 else
-                        return chinese_number(amount) + "ÎÄÍ­°å";
+                        return chinese_number(amount) + "æ–‡éŠ…æ¿";
         return output;
 }
 

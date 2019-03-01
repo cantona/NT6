@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ѩɽɽ·");
+        set("short", "雪山山路");
         set("long", @LONG
-��ѩɽ��´�ĵ��Ʋ������ߣ���Χ����һЩСɽ��������һ��
-��Ժ��ɽ�������Ե��쳣�ߴ���Ժ��ƽ�����ͣ����ɴ�ʯ���ɣ�ǽ
-���ʵ������խС��
+大雪山北麓的地勢不是甚高，周圍還有一些小山丘。西面有一座
+寺院依山而建。顯得異常高大。寺院呈平頂梯型，多由大石砌成，牆
+體厚實，窗口窄小。
 LONG );
         set("exits", ([
                 "north"   : __DIR__"nroad3",

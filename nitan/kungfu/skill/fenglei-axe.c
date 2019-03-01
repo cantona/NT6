@@ -1,19 +1,19 @@
-// fenglei-axe.c ¾ÅÏö·çÀ×¸« 
+// fenglei-axe.c ä¹éœ„é¢¨é›·æ–§ 
 
 inherit SKILL;
 #include <ansi.h>
 
 string *action_msg = ({
-       "$N½«$wÒ»°Ú£¬ÏÈÌìÕæÆø¼¤µ´£¬µÚÒ»Ê½¡º´ºÀ×Õ§Ïì¡»»ëÈ»Ìì³É£¬ÓÐÈôÊµÖÊµÄÆø¾¢ÈçÀû¸«°ãÅüÏò$n" NOR,
-       "$w¸«ÊÆÒ»±ä£¬¾¹Èç´©»¨Òýµû°ãÐ¡ÇÉÏ¸Äå£¬ÕýÊÇ¡º¾ÅÏö·çÀ×¸«¡»µÚ¾ÅÊ½¡ºÒõ·ç²ØÓê¡»" NOR,
-       "$N´ó¿ª´óãØ£¬µÚ¶þÊ½¡º¿ñ·çÂÒÔÆ¡»ÉÁµç°ãÅüÏò$n" NOR,
-       "$N±©ºÈÉùÖÐ$w¸ß¾Ù¹ýÍ·£¬ÔË¾¢Ö±Åü£¬µÚËÄÊ½¡ºÌìÀ×·Ù³Ç¡»¹ûÈ»¾øÎÞ°ëµã»¨ÇÎ" NOR,
-       "$wÔÙ±ä£¬´Ó$NÀßÏÂ´©³ö£¬Ò£»÷$nµÄ$l£¬µÚÆßÊ½¡ºÑ¸À×Ç§»Ã¡»ÈÃ$nÍêÈ«ÎÞ·¨×½ÃþÀ´ÊÆ" NOR,
-       "$NÊÖÖÐ$w×Ô×ó¶øÓÒ»®ÁËÒ»¸ö´ó»¡£¬$w½èµÚÎåÊ½¡º±©·ç½ÊÉ³¡»ÕâµÀ»¡Ïß·ºÆð²ã²ã¸«Ó°£¬Ïò$nÆ½ÍÆ¶øÖÁ" NOR,
-       "$NÔ¾ÖÁ°ë¿Õ£¬Ê¹³öµÚÈýÊ½¡º¾ÅÏöÂäÀ×¡»£¬ÊÖÖÐ$wÒþÐ®À×Òô£¬Ö¯³ÉÒ»µÀ¸«ÍøÏò$nÕÖÈ¥" NOR,
-       "$NÄýÆøÊØÖÐ£¬$w»¯´óÇÉÎª´ó×¾£¬ÔË¾¢±Æ³öÕÉÐíÑ©ÁÁ¸«Ã¢£¬µÚÁùÊ½¡º¼²·çÖèÓê¡»Ò»¸«¿ìËÆÒ»¸«µØ¹¥Ïò$n" NOR,
-       "$N»Ó¸«ÓÉÖÐ¹¬Ö±½ø£¬ÊÖÍó·­´¦£¬ÖÐÍ¾×ªÏò£¬µÚ°ËÊ½¡ººµµØÀ×Òô¡»ÔçÒÑ±ä»»ÁËÊý¸ö·½Î»£¬×îÖÕÅüÏò$nµÄ$l" NOR,
-       "$w×Ô$NÊÖÖÐµ¯Æð£¬»¯³öÒ»µÀÆ¯ÁÁµÄ»¡ÏßÅüÏò$n£¬Í¬Ê±×óÊÖ»ÓÈ­Ö±»÷£¬ÕýÊÇÍþÁ¦×î´óµÄµÚÊ®Ê½¡º·çÀ×ÆëÖÁ¡»" NOR,
+       "$Nå°‡$wä¸€æ“ºï¼Œå…ˆå¤©çœŸæ°£æ¿€ç›ªï¼Œç¬¬ä¸€å¼ã€Žæ˜¥é›·ä¹éŸ¿ã€æ¸¾ç„¶å¤©æˆï¼Œæœ‰è‹¥å¯¦è³ªçš„æ°£å‹å¦‚åˆ©æ–§èˆ¬åŠˆå‘$n" NOR,
+       "$wæ–§å‹¢ä¸€è®Šï¼Œç«Ÿå¦‚ç©¿èŠ±å¼•è¶èˆ¬å°å·§ç´°è†©ï¼Œæ­£æ˜¯ã€Žä¹éœ„é¢¨é›·æ–§ã€ç¬¬ä¹å¼ã€Žé™°é¢¨è—é›¨ã€" NOR,
+       "$Nå¤§é–‹å¤§é—”ï¼Œç¬¬äºŒå¼ã€Žç‹‚é¢¨äº‚é›²ã€é–ƒé›»èˆ¬åŠˆå‘$n" NOR,
+       "$Næš´å–è²ä¸­$wé«˜èˆ‰éŽé ­ï¼Œé‹å‹ç›´åŠˆï¼Œç¬¬å››å¼ã€Žå¤©é›·ç„šåŸŽã€æžœç„¶çµ•ç„¡åŠé»žèŠ±ä¿" NOR,
+       "$wå†è®Šï¼Œå¾ž$Nè‚‹ä¸‹ç©¿å‡ºï¼Œé™æ“Š$nçš„$lï¼Œç¬¬ä¸ƒå¼ã€Žè¿…é›·åƒå¹»ã€è®“$nå®Œå…¨ç„¡æ³•æ‰æ‘¸ä¾†å‹¢" NOR,
+       "$Næ‰‹ä¸­$wè‡ªå·¦è€Œå³åŠƒäº†ä¸€å€‹å¤§å¼§ï¼Œ$wå€Ÿç¬¬äº”å¼ã€Žæš´é¢¨çµžæ²™ã€é€™é“å¼§ç·šæ³›èµ·å±¤å±¤æ–§å½±ï¼Œå‘$nå¹³æŽ¨è€Œè‡³" NOR,
+       "$Nèºè‡³åŠç©ºï¼Œä½¿å‡ºç¬¬ä¸‰å¼ã€Žä¹éœ„è½é›·ã€ï¼Œæ‰‹ä¸­$wéš±æŒ¾é›·éŸ³ï¼Œç¹”æˆä¸€é“æ–§ç¶²å‘$nç½©åŽ»" NOR,
+       "$Nå‡æ°£å®ˆä¸­ï¼Œ$wåŒ–å¤§å·§ç‚ºå¤§æ‹™ï¼Œé‹å‹é€¼å‡ºä¸ˆè¨±é›ªäº®æ–§èŠ’ï¼Œç¬¬å…­å¼ã€Žç–¾é¢¨é©Ÿé›¨ã€ä¸€æ–§å¿«ä¼¼ä¸€æ–§åœ°æ”»å‘$n" NOR,
+       "$Næ®æ–§ç”±ä¸­å®®ç›´é€²ï¼Œæ‰‹è…•ç¿»è™•ï¼Œä¸­é€”è½‰å‘ï¼Œç¬¬å…«å¼ã€Žæ—±åœ°é›·éŸ³ã€æ—©å·²è®Šæ›äº†æ•¸å€‹æ–¹ä½ï¼Œæœ€çµ‚åŠˆå‘$nçš„$l" NOR,
+       "$wè‡ª$Næ‰‹ä¸­å½ˆèµ·ï¼ŒåŒ–å‡ºä¸€é“æ¼‚äº®çš„å¼§ç·šåŠˆå‘$nï¼ŒåŒæ™‚å·¦æ‰‹æ®æ‹³ç›´æ“Šï¼Œæ­£æ˜¯å¨åŠ›æœ€å¤§çš„ç¬¬åå¼ã€Žé¢¨é›·é½Šè‡³ã€" NOR,
 });
 
 int valid_enable(string usage) { return usage == "axe" || usage == "parry"; }
@@ -21,9 +21,9 @@ int valid_enable(string usage) { return usage == "axe" || usage == "parry"; }
 int valid_learn(object me)
 {
         if( query("max_neili", me)<100 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ã€‚\n");
         if ((int)me->query_skill("zidian-jin", 1) < 25)
-                return notify_fail("ÄãµÄÐþÌì×Ïµç¾¢»ðºòÌ«Ç³¡£\n");
+                return notify_fail("ä½ çš„çŽ„å¤©ç´«é›»å‹ç«å€™å¤ªæ·ºã€‚\n");
         return 1;
 }
 
@@ -35,7 +35,7 @@ mapping query_action(object me, object weapon)
                 "attack": 100 + random(30),
                 "dodge" : 100 + random(30),
                 "parry" : 100 + random(30),
-                "damage_type" : random(2)?"ÅüÉË":"¿³ÉË",
+                "damage_type" : random(2)?"åŠˆå‚·":"ç å‚·",
         ]);
 }
 
@@ -51,7 +51,7 @@ mixed hit_ob(object me, object victim, int damage)
         if (random(damage / 2) > 50) 
         {
                 result = ([ "damage": damage ]);                 
-                result += (["msg" : HIR "Ö»¼û×ÏÃ¢ÉÁ¹ý£¬$nõrÑªËÄžR£¬±»$N" HIR "¸«ÉÏ¾Û¼¯µÄÐþÌì×Ïµç¾¢ËùÉË£¡\n" NOR]);
+                result += (["msg" : HIR "åªè¦‹ç´«èŠ’é–ƒéŽï¼Œ$nâ–¡è¡€å››â–¡ï¼Œè¢«$N" HIR "æ–§ä¸Šèšé›†çš„çŽ„å¤©ç´«é›»å‹æ‰€å‚·ï¼\n" NOR]);
                 return result;
         }
 }
@@ -63,11 +63,11 @@ int practice_skill(object me)
 
         if( !objectp(weapon=query_temp("weapon", me) )
          || query("skill_type", weapon) != "axe" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ã€‚\n");
         if( query("qi", me)<70 )
-                return notify_fail("ÄãµÄÌåÁ¦²»¹»Á·¾ÅÏö·çÀ×¸«¡£\n");
+                return notify_fail("ä½ çš„é«”åŠ›ä¸å¤ ç·´ä¹éœ„é¢¨é›·æ–§ã€‚\n");
         if( query("neili", me)<70 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»Á·¾ÅÏö·çÀ×¸«¡£\n");               
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ç·´ä¹éœ„é¢¨é›·æ–§ã€‚\n");               
         me->receive_damage("qi", 60);
         addn("neili", -60, me);
         return 1;

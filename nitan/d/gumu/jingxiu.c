@@ -5,18 +5,18 @@
 inherit ROOM;
 void create()
 {
-        set("short",HIC"Ê¯ÊÒ"NOR);
+        set("short",HIC"çŸ³å®¤"NOR);
         set("long", @LONG
-´ËµØ¹©¸÷µÜ×Ó´ò×ø¾²ĞŞÖ®ÓÃ¡£µØÉÏ½öÓĞ¼¸¸öÆÑÍÅ£¬¼¸¸ö¹ÅÄ¹µÜ×ÓÕı
-ÔÚ±ÕÄ¿ÁìÎò¡£ÕıÃæµÄÊ¯Ç½( qiang)ÉÏ¿Ì×Å²»ÉÙÎÄ×Ö, ×ĞÏ¸Ò»¿´£¬Ô­À´¶¼
-³­Â¼×ÅËÄÊéÎå¾­µÈ¹Å¼®£¬ÓÃÀ´¸ø¹ÅÄ¹µÜ×ÓÌá¸ßĞŞÑø¡£
+æ­¤åœ°ä¾›å„å¼Ÿå­æ‰“åéœä¿®ä¹‹ç”¨ã€‚åœ°ä¸Šåƒ…æœ‰å¹¾å€‹è’²åœ˜ï¼Œå¹¾å€‹å¤å¢“å¼Ÿå­æ­£
+åœ¨é–‰ç›®é ˜æ‚Ÿã€‚æ­£é¢çš„çŸ³ç‰†( qiang)ä¸Šåˆ»è‘—ä¸å°‘æ–‡å­—, ä»”ç´°ä¸€çœ‹ï¼ŒåŸä¾†éƒ½
+æŠ„éŒ„è‘—å››æ›¸äº”ç¶“ç­‰å¤ç±ï¼Œç”¨ä¾†çµ¦å¤å¢“å¼Ÿå­æé«˜ä¿®é¤Šã€‚
 LONG        );
 
         set("exits", ([
                 "south" : __DIR__"mudao21",
         ]));
         set("item_desc", ([
-                "qiang" : "Ç½ÉÏĞ´ÂúÁË¸÷ÖÖ¹Å¼®ÎÄ×Ö¡£\n",
+                "qiang" : "ç‰†ä¸Šå¯«æ»¿äº†å„ç¨®å¤ç±æ–‡å­—ã€‚\n",
         ]));
         set("coor/x", -3190);
         set("coor/y", 10);
@@ -37,25 +37,25 @@ int do_think(string arg)
 
         if ( !living(me) ) return 0;
         if (me->is_busy() || me->is_fighting())
-                return notify_fail("ÄãÕıÃ¦×ÅÄÄ£¡\n");
-        if( !(fam=query("family", me)) || fam["family_name"] != "¹ÅÄ¹ÅÉ" )
-                return notify_fail("Äã²»ÊÇ¹ÅÄ¹´«ÈË£¬ÈçºÎÄÜÁìÎò¹ÅÄ¹Îä¹¦£¿\n");
+                return notify_fail("ä½ æ­£å¿™è‘—å“ªï¼\n");
+        if( !(fam=query("family", me)) || fam["family_name"] != "å¤å¢“æ´¾" )
+                return notify_fail("ä½ ä¸æ˜¯å¤å¢“å‚³äººï¼Œå¦‚ä½•èƒ½é ˜æ‚Ÿå¤å¢“æ­¦åŠŸï¼Ÿ\n");
         if (arg == "qiang" || arg == "wall")
         {
                 if( query("jing", me)<20 )
-                        return notify_fail("Äã¾õµÃºÃÀÛ,ºÃÏëË¯¾õ¡£\n");
+                        return notify_fail("ä½ è¦ºå¾—å¥½ç´¯,å¥½æƒ³ç¡è¦ºã€‚\n");
                 if ( me->query_skill("literate", 1) > 140)
-                        return notify_fail("ÄãÒÑ¾­ÍêÈ«¶Á¶®ÁËÇ½ÉÏµÄÎÄ×Ö¡£\n");
+                        return notify_fail("ä½ å·²ç¶“å®Œå…¨è®€æ‡‚äº†ç‰†ä¸Šçš„æ–‡å­—ã€‚\n");
                 if ( me->query_skill("literate", 1) > 10 &&
                         me->query_skill("literate",1)>query("combat_exp", me)/1000 )
-                        return notify_fail("ÄãµÄ¾­Ñé²»¹»£¬²»ÄÜ¶Á¶®Ç½ÉÏµÄÎÄ×Ö¡£\n");
+                        return notify_fail("ä½ çš„ç¶“é©—ä¸å¤ ï¼Œä¸èƒ½è®€æ‡‚ç‰†ä¸Šçš„æ–‡å­—ã€‚\n");
                 if( query("potential", me)-query("learned_points", me)<1 )
-                        return notify_fail("ÄãÃ»Ç±ÄÜÁË£¬²»ÄÜÔÙ¼ÌĞøĞŞÏ°ÁË¡£\n");
+                        return notify_fail("ä½ æ²’æ½›èƒ½äº†ï¼Œä¸èƒ½å†ç¹¼çºŒä¿®ç¿’äº†ã€‚\n");
                 addn("learned_points", 1, me);
                 me->receive_damage("jing", 5 + random(10));
                 me->improve_skill("literate", random(me->query_int()));
-                write("Äã¶Ô×ÅÊ¯±Ú£¬·Â·ğÓĞËùÁìÎò¡£\n");
+                write("ä½ å°è‘—çŸ³å£ï¼Œä»¿ä½›æœ‰æ‰€é ˜æ‚Ÿã€‚\n");
                 return 1;
         }
-        return notify_fail("ÄãÒªÁìÎòÊ²Ã´£¿\n");
+        return notify_fail("ä½ è¦é ˜æ‚Ÿä»€éº¼ï¼Ÿ\n");
 }

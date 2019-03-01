@@ -1,4 +1,4 @@
-// qiuyue-lai.c ÇïÔÂô¥
+// qiuyue-lai.c ç§‹æœˆç±Ÿ
 
 #include <ansi.h>
 
@@ -11,10 +11,10 @@ int valid_enable(string usage) { return usage == "tanqin-jifa"; }
 int valid_learn(object me)
 {
         if (me->query_skill("tanqin-jifa", 1) < 50)
-                return notify_fail("ÄãµÄµ¯ÇÙ¼¼·¨Ë®Æ½Ì«²î£¬»¹ÊÇÏÈÁ·ºÃÔÙËµ°É£¡\n");
+                return notify_fail("ä½ çš„å½ˆç´æŠ€æ³•æ°´å¹³å¤ªå·®ï¼Œé‚„æ˜¯å…ˆç·´å¥½å†èªªå§ï¼\n");
 
         if (me->query_skill("tanqin-jifa", 1) < me->query_skill("qiuyue-lai", 1))
-                return notify_fail("ÄãµÄµ¯ÇÙ¼¼·¨ËùÓĞÓĞÏŞ£¬ÎŞ·¨Áì»á¸ü¾«ÃîµÄÇïÔÂô¥¡£\n");
+                return notify_fail("ä½ çš„å½ˆç´æŠ€æ³•æ‰€æœ‰æœ‰é™ï¼Œç„¡æ³•é ˜æœƒæ›´ç²¾å¦™çš„ç§‹æœˆç±Ÿã€‚\n");
 
         return 1;
 }
@@ -25,13 +25,13 @@ int practice_skill(object me)
 
         if( !objectp(ob=query_temp("handing", me)) || 
             ! ob->valid_as_qin())
-                return notify_fail("Äã²»ÄÃÇÙÔÚÊÖÉÏ£¬ÔõÃ´Á·Ï°£¿\n");
+                return notify_fail("ä½ ä¸æ‹¿ç´åœ¨æ‰‹ä¸Šï¼Œæ€éº¼ç·´ç¿’ï¼Ÿ\n");
 
         if( query("jing", me)<80 )
-                return notify_fail("ÄãµÄ¾«Éñ²»¹»ºÃ£¬Ã»·¨Á·Ï°ÁË¡£\n");
+                return notify_fail("ä½ çš„ç²¾ç¥ä¸å¤ å¥½ï¼Œæ²’æ³•ç·´ç¿’äº†ã€‚\n");
 
         if( query("qi", me)<30 )
-                return notify_fail("ÄãÏÖÔÚ¿Ú¸ÉÉàÔï£¬ÊµÔÚÊÇÌ«ÀÛÁË¡£\n");
+                return notify_fail("ä½ ç¾åœ¨å£å¹¹èˆŒç‡¥ï¼Œå¯¦åœ¨æ˜¯å¤ªç´¯äº†ã€‚\n");
 
         me->receive_damage("jing", 25);
         me->receive_damage("qi", 10);
@@ -52,7 +52,7 @@ void do_effect(object me)
 
         obs = all_inventory(environment(me)) - ({ me });
         obs->receive_heal("jing", random(lvl / 10) + 10);
-        message("vision", HIC "ÄãÌıÁË" + me->name() + HIC "Ò»Ê×Çï"
-                          "ÔÂô¥£¬±ãÍğÈçÖÃÉíÓÚÇïÒ¹Ò»°ã£¬ÁéÌ¨´¦Ò»Æ¬"
-                          "ÇåĞÀ£¬¾«ÉñÎªÖ®Ò»Õñ¡£\n" NOR, obs);
+        message("vision", HIC "ä½ è½äº†" + me->name() + HIC "ä¸€é¦–ç§‹"
+                          "æœˆç±Ÿï¼Œä¾¿å®›å¦‚ç½®èº«äºç§‹å¤œä¸€èˆ¬ï¼Œéˆå°è™•ä¸€ç‰‡"
+                          "æ¸…æ¬£ï¼Œç²¾ç¥ç‚ºä¹‹ä¸€æŒ¯ã€‚\n" NOR, obs);
 }

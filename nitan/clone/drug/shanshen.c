@@ -1,5 +1,5 @@
 // Code of ShenZhou
-// shanshen.c ÀÏÉ½Èş
+// shanshen.c è€å±±ä¸‰
 
 inherit ITEM;
 #include <ansi.h>
@@ -9,12 +9,12 @@ void setup()
 int cure_ob(string);
 void create()
 {
-        set_name("ÀÏÉ½²Î", ({"laoshan shen", "shen"}));
+        set_name("è€å±±åƒ", ({"laoshan shen", "shen"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Öê");
-                set("long", "ÕâÊÇÒ»ÖêÕ´ÂúÉ½ÄàµÄ³¤°×ÀÏÉ½²Î¡£\n");
+                set("unit", "æ ª");
+                set("long", "é€™æ˜¯ä¸€æ ªæ²¾æ»¿å±±æ³¥çš„é•·ç™½è€å±±åƒã€‚\n");
                 set("value", 10000);
                 set("no_sell", 1);
                 set("medicine", 1);
@@ -28,19 +28,19 @@ int cure_ob(object me)
         {
                 addn("eff_jingli", -1, me);
                 addn("max_jingli", -1, me);
-                message_vision(HIR "$N³ÔÏÂÒ»Ö§ÀÏÉ½²Î£¬Ö»¾õµÃÍ·ÖØ½ÅÇá£¬»ğÆø·­ÌÚ£¬Ô­À´·şÊ³Ì«¶à£¬Ò©Ğ§ÊÊµÃÆä·´£¡\n" NOR, me);
+                message_vision(HIR "$Nåƒä¸‹ä¸€æ”¯è€å±±åƒï¼Œåªè¦ºå¾—é ­é‡è…³è¼•ï¼Œç«æ°£ç¿»é¨°ï¼ŒåŸä¾†æœé£Ÿå¤ªå¤šï¼Œè—¥æ•ˆé©å¾—å…¶åï¼\n" NOR, me);
                 destruct(this_object());
         }
         if( random(2) == 1)
         {
-        message_vision("$N³ÔÏÂÒ»ÖêÀÏÉ½²Î£¬×ìÀï¾õµÃÌğÌğµÄ¡£\n", me);
+        message_vision("$Nåƒä¸‹ä¸€æ ªè€å±±åƒï¼Œå˜´è£¡è¦ºå¾—ç”œç”œçš„ã€‚\n", me);
         destruct(this_object());
         return 1;
         }
         else{
                 addn("eff_jingli", 1, me);
                 addn("max_jingli", 1, me);
-        message_vision(HIG"$N³ÔÏÂÒ»ÖêÀÏÉ½²Î£¬Ö»¾õµÃ»ëÉíÒ»¹ÉÈÈÆø¶µµ×Ã°ÁËÉÏÀ´ !\n" NOR, me);
+        message_vision(HIG"$Nåƒä¸‹ä¸€æ ªè€å±±åƒï¼Œåªè¦ºå¾—æ¸¾èº«ä¸€è‚¡ç†±æ°£å…œåº•å†’äº†ä¸Šä¾† !\n" NOR, me);
         }
         me->apply_condition("bonze_drug", 
         this_player()->query_condition("bonze_drug")+30);

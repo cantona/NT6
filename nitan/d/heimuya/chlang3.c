@@ -3,10 +3,10 @@ inherit ROOM;
 
 void create()
 {
-  set("short","����");
+  set("short","長廊");
         set("long", @LONG
-�����Ƿǳ����ɵĳ��ȣ��䱸ɭ�ϡ����߾����������ʥ���δ�
-С��ľ��ҡ�
+這裡是非常氣派的長廊，戒備森嚴。東邊就是日月神教聖姑任大
+小姐的居室。
 LONG );
   set("exits",([
       "east"  : __DIR__"shenggu",

@@ -7,18 +7,18 @@ inherit SWORD;
 
 void create()
 {
-        set_name(HIG "ÇàÍ­óï" NOR,({ "tong xiao", "xiao" }) );
+        set_name(HIG "é’éŠ…ç°«" NOR,({ "tong xiao", "xiao" }) );
         set_weight(5000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ö§");
+                set("unit", "æ”¯");
                 set("value", 400);
                 set("material", "steel");
                 set("shape", "flute");
-                set("long", "Ò»±úÇàÍ­´òÔìµÄ¶´óï£¬Í¨ÌåÍ­ÂÌ°ßìµ£¬¿´ÆğÀ´ÓĞĞ©ÄêÍ·ÁË¡£\n");
-                set("wield_msg", "$N´Ó»³ÀïÌÍ³öÒ»Ö§$n£¬ÎÕÔÚÊÖÖĞ¡£\n" NOR);
-                set("unwield_msg", "$NĞ¡ĞÄÒíÒíµÄ½«$n·ÅÈë»³Àï¡£\n" NOR);
+                set("long", "ä¸€æŸ„é’éŠ…æ‰“é€ çš„æ´ç°«ï¼Œé€šé«”éŠ…ç¶ æ–‘æ–•ï¼Œçœ‹èµ·ä¾†æœ‰äº›å¹´é ­äº†ã€‚\n");
+                set("wield_msg", "$Nå¾æ‡·è£¡æå‡ºä¸€æ”¯$nï¼Œæ¡åœ¨æ‰‹ä¸­ã€‚\n" NOR);
+                set("unwield_msg", "$Nå°å¿ƒç¿¼ç¿¼çš„å°‡$næ”¾å…¥æ‡·è£¡ã€‚\n" NOR);
         }
         init_sword(40);
         setup();

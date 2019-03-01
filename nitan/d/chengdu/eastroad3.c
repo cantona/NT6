@@ -5,12 +5,12 @@
 inherit ROOM;
 void create()
 {
-        set("short", "¶«´ó½Ö");
+        set("short", "æ±å¤§è¡—");
         set("long", @LONG
-Äã×ßÔÚ¶«´ó½ÖÉÏ£¬²È×Å¼áÊµµÄÇàÊ¯°åµØÃæ¡£Ïò±±ÊÇÒ»Ìõ¿íÖ±µÄ´ó
-µÀ¡£±±±ß¿ÉÒÔÍ¨Íù¶«³ÇÃÅ£¬Î÷ÄÏ±ßÍ¨ÏòÄÏ´ó½Ö£¬¶«ÄÏ·½¾ÍÊÇÓÐÃûµÄÍû
-½­Â¥ÁË¡£¶«±ßÔòÊÇ´óÃû¶¦¶¦µÄÏÀÒåÃË³É¶¼·Ö²¿¡£²»Ô¶´¦ÓÐÒ»´±ÆÆÀÃµÄ
-·¿ÎÝ£¬µ«ÊÇÎÝ×ÓµÄÃÅÁº (liang)ÒÑ¾­¿åËú£¬°ÑÃÅ·âÁË¸öÑÏÊµ¡£
+ä½ èµ°åœ¨æ±å¤§è¡—ä¸Šï¼Œè¸©è‘—å …å¯¦çš„é’çŸ³æ¿åœ°é¢ã€‚å‘åŒ—æ˜¯ä¸€æ¢å¯¬ç›´çš„å¤§
+é“ã€‚åŒ—é‚Šå¯ä»¥é€šå¾€æ±åŸŽé–€ï¼Œè¥¿å—é‚Šé€šå‘å—å¤§è¡—ï¼Œæ±å—æ–¹å°±æ˜¯æœ‰åçš„æœ›
+æ±Ÿæ¨“äº†ã€‚æ±é‚Šå‰‡æ˜¯å¤§åé¼Žé¼Žçš„ä¿ ç¾©ç›Ÿæˆéƒ½åˆ†éƒ¨ã€‚ä¸é è™•æœ‰ä¸€å¹¢ç ´çˆ›çš„
+æˆ¿å±‹ï¼Œä½†æ˜¯å±‹å­çš„é–€æ¨‘ (liang)å·²ç¶“åž®å¡Œï¼ŒæŠŠé–€å°äº†å€‹åš´å¯¦ã€‚
 LONG );
         set("outdoors", "chengdu");
         set("exits", ([
@@ -21,7 +21,7 @@ LONG );
         ]));
 
         set("item_desc", ([
-                    "liang" : "·¿×ÓµÄÃÅÁº¿åËú£¬½«ÃÅ·âÁË¸öÑÏÊµ¡£\n",
+                    "liang" : "æˆ¿å­çš„é–€æ¨‘åž®å¡Œï¼Œå°‡é–€å°äº†å€‹åš´å¯¦ã€‚\n",
         ]) );
 
 //        set("no_clean_up", 0);
@@ -45,23 +45,23 @@ int do_break(string arg)
                 return 0;
 
         if (query("break"))
-                return notify_fail("·¿ÁºÒÑ¾­±»Õð·É£¬ÓÃ²»×ÅÔÙ·ÑÁ¦ÁË¡£\n");
+                return notify_fail("æˆ¿æ¨‘å·²ç¶“è¢«éœ‡é£›ï¼Œç”¨ä¸è‘—å†è²»åŠ›äº†ã€‚\n");
 
-        message_vision(HIY "$N" HIY "×ßµ½·¿Ç°£¬ÔËÆøË«ÕÆ£¬ÃÍµØ»÷"
-                       "Ïò¿åËúµÄ·¿Áº£¡\n" NOR, me);
+        message_vision(HIY "$N" HIY "èµ°åˆ°æˆ¿å‰ï¼Œé‹æ°£é›™æŽŒï¼ŒçŒ›åœ°æ“Š"
+                       "å‘åž®å¡Œçš„æˆ¿æ¨‘ï¼\n" NOR, me);
 
         if( query("max_neili", me)<1000 )
         {
-               message_vision(HIR "½á¹ûÖ»ÌýÒ»ÉùÃÆºß£¬$N" HIR "ÄÚ"
-                              "Á¦²»¼Ã£¬±»·¿Áº·´Õð£¬ÑÛÇ°¶ÙÊ±Ò»ºÚ¡­"
-                              "¡­\n" NOR, me);
+               message_vision(HIR "çµæžœåªè½ä¸€è²æ‚¶å“¼ï¼Œ$N" HIR "å…§"
+                              "åŠ›ä¸æ¿Ÿï¼Œè¢«æˆ¿æ¨‘åéœ‡ï¼Œçœ¼å‰é “æ™‚ä¸€é»‘â€¦"
+                              "â€¦\n" NOR, me);
                set("neili", 0, me);
                me->unconcious();
                return 1;
         }
 
-        message_vision(HIY "Ö»ÌýÒ»ÉùºäÏì£¬·¿Áº¶ÙÊ±±»$N" HIY "Õð"
-                       "µÃ·ÉÆð£¬Â¶³öÁË´óÃÅ£¡\n" NOR, me);
+        message_vision(HIY "åªè½ä¸€è²è½ŸéŸ¿ï¼Œæˆ¿æ¨‘é “æ™‚è¢«$N" HIY "éœ‡"
+                       "å¾—é£›èµ·ï¼Œéœ²å‡ºäº†å¤§é–€ï¼\n" NOR, me);
 
         set("exits/enter", __DIR__"minju");
         set("neili", 0, me);

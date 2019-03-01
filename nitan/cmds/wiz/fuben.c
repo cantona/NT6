@@ -1,6 +1,6 @@
 // This program is a part of NITAN MudLIB
 // Written by Lonely@nitan.org (16/05/2008)
-// fuben.c ¸±±¾¹ÜÀíÖ¸Áî
+// fuben.c å‰¯æœ¬ç®¡ç†æŒ‡ä»¤
 
 #include <ansi.h>
 
@@ -32,16 +32,16 @@ int main(object me,string arg)
         all  = FUBEN_D->query_fuben_all();
         data = FUBEN_D->query_fuben_data();
         if( !stringp(fbname) ) {
-                if( !all ) return notify_fail("ÄàÌ¶ÏÖÔÚÃ»ÓĞÈÎºÎ¸±±¾¡£\n");
-                msg += "ÄàÌ¶ÏÖÔÚ¿ªÆôµÄ¸±±¾¿Õ¼äÈçÏÂ£º\n";
-                msg += "£½£½£½£½£½£½£½£½£½£½£½£½£½£½£½£½£½£½\n";
+                if( !all ) return notify_fail("æ³¥æ½­ç¾åœ¨æ²’æœ‰ä»»ä½•å‰¯æœ¬ã€‚\n");
+                msg += "æ³¥æ½­ç¾åœ¨é–‹å•Ÿçš„å‰¯æœ¬ç©ºé–“å¦‚ä¸‹ï¼š\n";
+                msg += "ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼\n";
                 ks = keys(all);
                 for( i=0;i<sizeof(ks);i++ ) {
                         temp=all[ks[i]];
                         if( mapp(temp) && sizeof(temp) ) {
                                 os = keys(temp);
                                 for( j=0;j<sizeof(os);j++ )
-                                        msg += sprintf("¸±±¾Ãû³Æ£º%-33sÊ£ÓàÊ±¼ä£º%s\n",
+                                        msg += sprintf("å‰¯æœ¬åç¨±ï¼š%-33så‰©ä½™æ™‚é–“ï¼š%s\n",
                                                 data[ks[i]]["name"]+"<"+ks[i]+">("+os[j]+")",
                                                 appromix_time(temp[os[j]] - time()) );
                         }
@@ -60,25 +60,25 @@ int main(object me,string arg)
 
                 if( fbname != "all" && (undefinedp(data[fbname]) ||
                     undefinedp(all[fbname])) )
-                        return notify_fail("ÄàÌ¶ÏÖÔÚÃ»ÓĞÕâ¸ö¸±±¾¡£\n");
+                        return notify_fail("æ³¥æ½­ç¾åœ¨æ²’æœ‰é€™å€‹å‰¯æœ¬ã€‚\n");
 
                 if( cmd == "list" ) {
-                        msg += sprintf("ÄàÌ¶ÏÖÔÚ¿ªÆôµÄ%s¸±±¾¿Õ¼äÈçÏÂ£º\n", (fbname=="all")?"ËùÓĞ":data[fbname]["name"]);
-                        msg += "£½£½£½£½£½£½£½£½£½£½£½£½£½£½£½£½£½£½\n";
+                        msg += sprintf("æ³¥æ½­ç¾åœ¨é–‹å•Ÿçš„%så‰¯æœ¬ç©ºé–“å¦‚ä¸‹ï¼š\n", (fbname=="all")?"æ‰€æœ‰":data[fbname]["name"]);
+                        msg += "ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼\n";
                         if( fbname == "all" ) {
                                 ks = keys(data);
                                 for( i=0;i<sizeof(ks);i++ ) {
-                                        msg += sprintf("¸±±¾Ãû³Æ£º%-26s×é¶ÓÒªÇó£º%-8sÈÎÎñÊ±¼ä£º%s\n",
+                                        msg += sprintf("å‰¯æœ¬åç¨±ï¼š%-26sçµ„éšŠè¦æ±‚ï¼š%-8sä»»å‹™æ™‚é–“ï¼š%s\n",
                                                data[ks[i]]["name"]+"<"+ks[i]+">",
-                                               (!undefinedp(data[ks[i]]["team"]))?"±ØĞë":
-                                               (!undefinedp(data[ks[i]]["single"])?"µ¥ÈË":"ÈÎÒâ"),
+                                               (!undefinedp(data[ks[i]]["team"]))?"å¿…é ˆ":
+                                               (!undefinedp(data[ks[i]]["single"])?"å–®äºº":"ä»»æ„"),
                                                appromix_time(to_int(data[ks[i]]["time"])) );
                                 }
                         } else {
                                 temp = all[fbname];
                                 ks = keys(temp);
                                 for( i=0;i<sizeof(ks);i++ ) {
-                                        msg += sprintf("¸±±¾Ãû³Æ£º%-33sÊ£ÓàÊ±¼ä£º%s\n",
+                                        msg += sprintf("å‰¯æœ¬åç¨±ï¼š%-33så‰©ä½™æ™‚é–“ï¼š%s\n",
                                                data[fbname]["name"]+"<"+fbname+">("+ks[i]+")",
                                                appromix_time(temp[ks[i]] - time()) );
                                 }
@@ -110,14 +110,14 @@ int main(object me,string arg)
 int help (object me)
 {
                       write(@HELP
-Ö¸Áî¸ñÊ½ : fuben list [¸±±¾Ãû³Æ]
-           fuben dest  ¸±±¾Ãû³Æ  [¸±±¾Ö÷ÈË]
+æŒ‡ä»¤æ ¼å¼ : fuben list [å‰¯æœ¬åç¨±]
+           fuben dest  å‰¯æœ¬åç¨±  [å‰¯æœ¬ä¸»äºº]
 
-fuben list [all]              ²é¿´µ±Ç°ÓÎÏ·ÖĞËùÓĞµÄ¸±±¾ÏêÏ¸ĞÅÏ¢
-fuben list ¸±±¾Ãû³Æ           ²é¿´Ö¸¶¨¸±±¾µÄÏêÏ¸ĞÅÏ¢
-fuben open|dest all|¸±±¾Ãû³Æ  ²é¿´Ö¸¶¨¸±±¾µÄÏêÏ¸ĞÅÏ¢
-fuben dest ¸±±¾Ãû³Æ           Ïú»ÙÖ¸¶¨ÀàĞÍ¸±±¾µÄËùÓĞ¸±±¾
-fuben dest ¸±±¾Ãû³Æ ¸±±¾Ö÷ÈË  Ïú»ÙÖ¸¶¨ÀàĞÍ¸±±¾µÄÄ³ÈË¸±±¾
+fuben list [all]              æŸ¥çœ‹ç•¶å‰éŠæˆ²ä¸­æ‰€æœ‰çš„å‰¯æœ¬è©³ç´°ä¿¡æ¯
+fuben list å‰¯æœ¬åç¨±           æŸ¥çœ‹æŒ‡å®šå‰¯æœ¬çš„è©³ç´°ä¿¡æ¯
+fuben open|dest all|å‰¯æœ¬åç¨±  æŸ¥çœ‹æŒ‡å®šå‰¯æœ¬çš„è©³ç´°ä¿¡æ¯
+fuben dest å‰¯æœ¬åç¨±           éŠ·æ¯€æŒ‡å®šé¡å‹å‰¯æœ¬çš„æ‰€æœ‰å‰¯æœ¬
+fuben dest å‰¯æœ¬åç¨± å‰¯æœ¬ä¸»äºº  éŠ·æ¯€æŒ‡å®šé¡å‹å‰¯æœ¬çš„æŸäººå‰¯æœ¬
 
 HELP );
                       return 1;

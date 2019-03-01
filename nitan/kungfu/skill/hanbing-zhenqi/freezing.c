@@ -1,7 +1,7 @@
 #include <ansi.h>
 inherit F_CLEAN_UP;
 
-#define FRE "¡¸" HIW "º®±ùÕæÆø" NOR "¡¹"
+#define FRE "ã€Œ" HIW "å¯’å†°çœŸæ°£" NOR "ã€"
 
 void remove_effect(object me);
 
@@ -10,35 +10,35 @@ int exert(object me, object target)
         int skill;
 
         if( userp(me) && !query("can_perform/hanbing-zhenqi/freezing", me) )
-                return notify_fail("ÄãËùÑ§µÄÄÚ¹¦ÖĞÃ»ÓĞÕâÖÖ¹¦ÄÜ¡£\n");
+                return notify_fail("ä½ æ‰€å­¸çš„å…§åŠŸä¸­æ²’æœ‰é€™ç¨®åŠŸèƒ½ã€‚\n");
 
         if( query_temp("freezing", me) )
-                return notify_fail("ÄãÏÖÔÚÕıÔÚÊ©Õ¹" FRE "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£åœ¨æ–½å±•" FRE "ã€‚\n");
 
         if (target != me)
-                return notify_fail(FRE "Ö»ÄÜ¶Ô×Ô¼ºÊ¹ÓÃ¡£\n");
+                return notify_fail(FRE "åªèƒ½å°è‡ªå·±ä½¿ç”¨ã€‚\n");
 
         skill = me->query_skill("hanbing-zhenqi", 1);
 
         if( query("con", me)<34 )
-                return notify_fail("ÄãµÄÏÈÌì¸ù¹Ç²»×ã£¬ÎŞ·¨Ê©Õ¹" FRE "¡£\n");
+                return notify_fail("ä½ çš„å…ˆå¤©æ ¹éª¨ä¸è¶³ï¼Œç„¡æ³•æ–½å±•" FRE "ã€‚\n");
 
         if (skill < 140)
-                return notify_fail("ÄãµÄº®±ùÕæÆø²»¹»£¬ÄÑÒÔÊ©Õ¹" FRE "¡£\n");
+                return notify_fail("ä½ çš„å¯’å†°çœŸæ°£ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" FRE "ã€‚\n");
 
         if( query("max_neili", me)<2200 )
-                return notify_fail("ÄãµÄÄÚÁ¦ĞŞÎª²»×ã£¬ÄÑÒÔÊ©Õ¹" FRE "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¿®ç‚ºä¸è¶³ï¼Œé›£ä»¥æ–½å±•" FRE "ã€‚\n");
 
         if( !query_temp("powerup", me) )
-                return notify_fail("ÄãÏÖÔÚÉĞÎ´ÔøÔË¹¦£¬ÄÑÒÔÊ©Õ¹" FRE "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨å°šæœªæ›¾é‹åŠŸï¼Œé›£ä»¥æ–½å±•" FRE "ã€‚\n");
 
         if( query("neili", me)<1000 )
-                return notify_fail("ÄãÄ¿Ç°µÄÄÚÁ¦²»¹»£¬ÄÑÒÔÊ©Õ¹" FRE "¡£\n");
+                return notify_fail("ä½ ç›®å‰çš„å…§åŠ›ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" FRE "ã€‚\n");
 
         addn("neili", -300, me);
 
-        message_combatd(HIW "$N" HIW "Ò»ÉùÀäĞ¦£¬ÌåÄÚº®±ùÕæÆøÑ¸ËÙ¼²×ªÊı¸öÖÜ"
-                        "Ìì£¬½«Á¦¾ÛÓÚÕÆĞÄ¡£\n" NOR, me);
+        message_combatd(HIW "$N" HIW "ä¸€è²å†·ç¬‘ï¼Œé«”å…§å¯’å†°çœŸæ°£è¿…é€Ÿç–¾è½‰æ•¸å€‹å‘¨"
+                        "å¤©ï¼Œå°‡åŠ›èšäºæŒå¿ƒã€‚\n" NOR, me);
         set_temp("freezing", 1, me);
 
         me->start_call_out((: call_other, __FILE__, "remove_effect",
@@ -54,6 +54,6 @@ void remove_effect(object me)
         if( query_temp("freezing", me) )
         {
                 delete_temp("freezing", me);
-                tell_object(me, "ÄãµÄ" FRE "ÔËĞĞÍê±Ï£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï¡£\n");
+                tell_object(me, "ä½ çš„" FRE "é‹è¡Œå®Œç•¢ï¼Œå°‡å…§åŠ›æ”¶å›ä¸¹ç”°ã€‚\n");
         }
 }

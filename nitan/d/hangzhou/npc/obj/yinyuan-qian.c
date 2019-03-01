@@ -1,4 +1,4 @@
-// yinyuan-qian.c ÒöÔµÇ©
+// yinyuan-qian.c å§»ç·£ç°½
 // By Alf, Last Update 2002.1130
 
 #include <ansi.h>
@@ -7,14 +7,14 @@ inherit ITEM;
 
 void create()
 {
-    set_name(HIM"ÒöÔµÇ©"NOR, ({"yinyuan qian", "qian"}));
+    set_name(HIM"å§»ç·£ç°½"NOR, ({"yinyuan qian", "qian"}));
     set_weight(500);
     if(clonep())
         set_default_object(__FILE__);
     else
     {
-        set("unit", "Ö§");
-        set("long", HIC"ÕâÊÇÒ»Ö§ÔÂÀÏìôÄÚÇóµÃµÄÒöÔµÇ©£¬ÉÏÃæĞ´×Å£º\n"NOR);
+        set("unit", "æ”¯");
+        set("long", HIC"é€™æ˜¯ä¸€æ”¯æœˆè€ç¥ å…§æ±‚å¾—çš„å§»ç·£ç°½ï¼Œä¸Šé¢å¯«è‘—ï¼š\n"NOR);
         set("value", 0);
         set("material", "bamboo");
     }

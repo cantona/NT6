@@ -1,4 +1,4 @@
-// powerup.c 无妄神功加力
+// powerup.c 鐒″绁炲姛鍔犲姏
 
 #include <ansi.h>
 
@@ -11,19 +11,19 @@ int exert(object me, object target)
         int skill;
 
         if (target != me)
-                return notify_fail("你只能用无妄神功提升自己的战斗力。\n");
+                return notify_fail("浣犲彧鑳界敤鐒″绁炲姛鎻愬崌鑷繁鐨勬埌楝ュ姏銆俓n");
 
         if( query("neili", me)<100 )
-                return notify_fail("你的内力不够。\n");
+                return notify_fail("浣犵殑鍏у姏涓嶅銆俓n");
 
         if( query_temp("powerup", me) )
-                return notify_fail("你已经在运功中了。\n");
+                return notify_fail("浣犲凡缍撳湪閬嬪姛涓簡銆俓n");
 
         skill = me->query_skill("force");
         addn("neili", -100, me);
         me->receive_damage("qi", 0);
 
-        message_combatd(HIW "$N" HIW "长啸一声，全身真气迸发，顿时一股阴寒气流弥漫四周。\n" NOR, me);
+        message_combatd(HIW "$N" HIW "闀峰槸涓�鑱诧紝鍏ㄨ韩鐪熸埃杩哥櫦锛岄爴鏅備竴鑲￠櫚瀵掓埃娴佸綄婕洓鍛ㄣ�俓n" NOR, me);
 
         addn_temp("apply/attack", skill/3, me);
         addn_temp("apply/defense", skill/3, me);
@@ -43,6 +43,6 @@ void remove_effect(object me, int amount)
                 addn_temp("apply/attack", -amount, me);
                 addn_temp("apply/defense", -amount, me);
                 delete_temp("powerup", me);
-                tell_object(me, "你的无妄神功运行完毕，将内力收回丹田。\n");
+                tell_object(me, "浣犵殑鐒″绁炲姛閬嬭瀹岀暍锛屽皣鍏у姏鏀跺洖涓圭敯銆俓n");
         }
 }

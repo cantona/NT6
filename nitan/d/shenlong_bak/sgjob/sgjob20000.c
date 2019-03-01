@@ -6,99 +6,99 @@
 inherit F_CLEAN_UP;
 
 mapping *sgjobs = ({
-        ([      "sgjob":          "µ¿µ¬æ≠",
-                "sgjob_type":           "—∞",
+        ([      "sgjob":          "ÈÅìÂæ∑Á∂ì",
+                "sgjob_type":           "Â∞ã",
                 "exp_bonus":             10,
                 "pot_bonus":             3,
                 "score":                 1
         ]),
 
-        ([      "sgjob":          "°∫–«Àﬁ∂ææ≠°ª",
-                "sgjob_type":           "—∞",
+        ([      "sgjob":          "„ÄéÊòüÂÆøÊØíÁ∂ì„Äè",
+                "sgjob_type":           "Â∞ã",
                 "exp_bonus":             30,
                 "pot_bonus":             8,
                 "score":                 1
         ]),
 
-        ([      "sgjob":          "≥÷ ¿Õ”¬ﬁƒ·æ≠",
-                "sgjob_type":           "—∞",
+        ([      "sgjob":          "ÊåÅ‰∏ñÈôÄÁæÖÂ∞ºÁ∂ì",
+                "sgjob_type":           "Â∞ã",
                 "exp_bonus":             40,
                 "pot_bonus":             10,
                 "score":                 1
         ]),
 
-        ([      "sgjob":          "Ã˙∞Àÿ‘",
-                "sgjob_type":           "—∞",
+        ([      "sgjob":          "ÈêµÂÖ´Âç¶",
+                "sgjob_type":           "Â∞ã",
                 "exp_bonus":             120,
                 "pot_bonus":             30,
                 "score":                 2
         ]),
 
-        ([      "sgjob":          "ª™…ΩΩ£∆◊",
-                "sgjob_type":           "—∞",
+        ([      "sgjob":          "ËèØÂ±±ÂäçË≠ú",
+                "sgjob_type":           "Â∞ã",
                 "exp_bonus":             150,
                 "pot_bonus":             40,
                 "score":                 2
         ]),
 
-        ([      "sgjob":          "Ã∆ ´—°º≠",
-                "sgjob_type":           "—∞",
+        ([      "sgjob":          "ÂîêË©©ÈÅ∏ËºØ",
+                "sgjob_type":           "Â∞ã",
                 "exp_bonus":             150,
                 "pot_bonus":             40,
                 "score":                 2
         ]),
 
-        ([      "sgjob":          "∫˙º“µ∂∑®≤–∆™",
-                "sgjob_type":           "—∞",
+        ([      "sgjob":          "ËÉ°ÂÆ∂ÂàÄÊ≥ïÊÆòÁØá",
+                "sgjob_type":           "Â∞ã",
                 "exp_bonus":             250,
                 "pot_bonus":             60,
                 "score":                 2
         ]),
 
-        ([      "sgjob":          "…Ÿ¡÷”¢–€¡Ó",
-                "sgjob_type":           "—∞",
+        ([      "sgjob":          "Â∞ëÊûóËã±ÈõÑ‰ª§",
+                "sgjob_type":           "Â∞ã",
                 "exp_bonus":             120,
                 "pot_bonus":             30,
                 "score":                 1
         ]),
 
-        ([      "sgjob":          "∑£∂Ò¡Ó",
-                "sgjob_type":           "—∞",
+        ([      "sgjob":          "ÁΩ∞ÊÉ°‰ª§",
+                "sgjob_type":           "Â∞ã",
                 "exp_bonus":             100,
                 "pot_bonus":             25,
                 "score":                 2
         ]),
 
-        ([      "sgjob":          "…Õ…∆¡Ó",
-                "sgjob_type":           "—∞",
+        ([      "sgjob":          "Ë≥ûÂñÑ‰ª§",
+                "sgjob_type":           "Â∞ã",
                 "exp_bonus":             100,
                 "pot_bonus":             25,
                 "score":                 2
         ]),
 
-        ([      "sgjob":          "’˝∆¯æ˜æ˜∆◊…œæÌ",
-                "sgjob_type":           "—∞",
+        ([      "sgjob":          "Ê≠£Ê∞£Ë®£Ë®£Ë≠ú‰∏äÂç∑",
+                "sgjob_type":           "Â∞ã",
                 "exp_bonus":             30,
                 "pot_bonus":             8,
                 "score":                 1
         ]),
 
-        ([      "sgjob":          "’˝∆¯æ˜æ˜∆◊œ¬æÌ",
-                "sgjob_type":           "—∞",
+        ([      "sgjob":          "Ê≠£Ê∞£Ë®£Ë®£Ë≠ú‰∏ãÂç∑",
+                "sgjob_type":           "Â∞ã",
                 "exp_bonus":             30,
                 "pot_bonus":             8,
                 "score":                 1
         ]),
 
-        ([      "sgjob":          "◊œÎ≥“˜æ˜∆◊…œæÌ",
-                "sgjob_type":           "—∞",
+        ([      "sgjob":          "Á¥´Ê∞§ÂêüË®£Ë≠ú‰∏äÂç∑",
+                "sgjob_type":           "Â∞ã",
                 "exp_bonus":             30,
                 "pot_bonus":             8,
                 "score":                 1
         ]),
 
-        ([      "sgjob":          "◊œÎ≥“˜æ˜∆◊œ¬æÌ",
-                "sgjob_type":           "—∞",
+        ([      "sgjob":          "Á¥´Ê∞§ÂêüË®£Ë≠ú‰∏ãÂç∑",
+                "sgjob_type":           "Â∞ã",
                 "exp_bonus":             30,
                 "pot_bonus":             8,
                 "score":                 1

@@ -1,4 +1,4 @@
-// jinghua.c ÏÉÒôÝ¼»ª
+// jinghua.c ä»™éŸ³èè¯
 // Created by rcwiz for yhonline
 
 #include <ansi.h>
@@ -7,13 +7,13 @@ inherit F_CLEAN_UP;
 
 int is_scborn() { return 1; }
 
-string name() { return HIM "ÏÉÒô¾»»¯" NOR; }
+string name() { return HIM "ä»™éŸ³å‡ˆåŒ–" NOR; }
 
 int perform(object me, string skill)
 {
-        return notify_fail("ÔÚ×ªÉúµÄ¹ý³ÌÖÐÄãÊÜµ½ÁËÌì½çÏÉÒôµÄ¾»»¯£¬\n"
-                           "×ªÊÀºó×ÔÉíµÄÏÈÌìµÃµ½ÁË¼«´óµÄÌáÉý¡£´Ë\n"
-                           "Ïî¼¼ÄÜ¿ÉÒÔÊ¹ÄãµÄÏÈÌìÎòÐÔ¡¢¸ù¹Ç¡¢±ÛÁ¦\n"
-                           "ÒÔ¼°ÏÈÌìÉí·¨ÆÆ¸ñÌáÉýÁ½µã¡£\n");
+        return notify_fail("åœ¨è½‰ç”Ÿçš„éŽç¨‹ä¸­ä½ å—åˆ°äº†å¤©ç•Œä»™éŸ³çš„å‡ˆåŒ–ï¼Œ\n"
+                           "è½‰ä¸–å¾Œè‡ªèº«çš„å…ˆå¤©å¾—åˆ°äº†æ¥µå¤§çš„æå‡ã€‚æ­¤\n"
+                           "é …æŠ€èƒ½å¯ä»¥ä½¿ä½ çš„å…ˆå¤©æ‚Ÿæ€§ã€æ ¹éª¨ã€è‡‚åŠ›\n"
+                           "ä»¥åŠå…ˆå¤©èº«æ³•ç ´æ ¼æå‡å…©é»žã€‚\n");
 
 }

@@ -1,4 +1,4 @@
-// xiaoer2.c ¾ÆµêĞ¡¶ş
+// xiaoer2.c é…’åº—å°äºŒ
 
 inherit KNOWER;
 inherit F_DEALER;
@@ -7,15 +7,15 @@ mixed do_ask(string arg);
 
 void create()
 {
-        set_name("ÌÆĞ¡Ò»", ({ "tang xiaoyi", "tang", "xiaoyi" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("å”å°ä¸€", ({ "tang xiaoyi", "tang", "xiaoyi" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 22);
         set("long",
-                "ÕâÎ»ÌÆĞ¡Ò»ÕıĞ¦ßäßäµØÃ¦Öø£¬»¹²»Ê±ÄÃÆğ¹ÒÔÚ²±×ÓÉÏµÄÄ¨²¼²ÁÁ³¡£\n");
+                "é€™ä½å”å°ä¸€æ­£ç¬‘å’ªå’ªåœ°å¿™è‘—ï¼Œé‚„ä¸æ™‚æ‹¿èµ·æ›åœ¨è„–å­ä¸Šçš„æŠ¹å¸ƒæ“¦è‡‰ã€‚\n");
         set("combat_exp", 100);
         set("attitude", "friendly");
         set("no_get", "1");
-        set("rank_info/respect", "Ğ¡Ò»¸ç");
+        set("rank_info/respect", "å°ä¸€å“¥");
         set("vendor_goods", ({
                 "/clone/food/jiudai",
                 "/clone/food/meat",
@@ -53,15 +53,15 @@ void greeting(object ob)
         switch( random(3) ) 
         {
                 case 0:
-                        say( "ÌÆĞ¡Ò»Ğ¦ßäßäµØËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-                                + "£¬½øÀ´ºÈ±­²è£¬ĞªĞªÍÈ°É¡£\n");
+                        say( "å”å°ä¸€ç¬‘å’ªå’ªåœ°èªªé“ï¼šé€™ä½" + RANK_D->query_respect(ob)
+                                + "ï¼Œé€²ä¾†å–æ¯èŒ¶ï¼Œæ­‡æ­‡è…¿å§ã€‚\n");
                         break;
                 case 1:
-                        say( "ÌÆĞ¡Ò»ÓÃ²±×ÓÉÏµÄÃ«½íÄ¨ÁËÄ¨ÊÖ£¬ËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-                                + "£¬Çë½øÇë½ø¡£\n");
+                        say( "å”å°ä¸€ç”¨è„–å­ä¸Šçš„æ¯›å·¾æŠ¹äº†æŠ¹æ‰‹ï¼Œèªªé“ï¼šé€™ä½" + RANK_D->query_respect(ob)
+                                + "ï¼Œè«‹é€²è«‹é€²ã€‚\n");
                         break;
                 case 2:
-                        say ("ÕâÎ»¿Í¹Ù£¬ÓĞÊ²Ã´ÊÂµÄ»°Äú¾ÍÎÊĞ¡µÄÒ»Éù£¬Ğ¡µÄÂíÉÏ¾Íµ½£¡\n");
+                        say ("é€™ä½å®¢å®˜ï¼Œæœ‰ä»€éº¼äº‹çš„è©±æ‚¨å°±å•å°çš„ä¸€è²ï¼Œå°çš„é¦¬ä¸Šå°±åˆ°ï¼\n");
                         break;        
         }
 }
@@ -74,31 +74,31 @@ mixed do_ask(string arg)
         me=this_player();
         myfam=query("family", me);
         
-        // say(HIC"À´À²£¬ÓĞÊÂÄã¾¡¹ÜÎÊ°É£¡\n"NOR);
+        // say(HIC"ä¾†å•¦ï¼Œæœ‰äº‹ä½ ç›¡ç®¡å•å§ï¼\n"NOR);
                 
         if( query_temp("yiwen", me) )
-                return "Äã·³²»·³°¡£¬¶¼ºÍÄãËµ¹ıÁË£¬Äã»¹À´ÎÊÎÒ£¬ÎÒÏÖÓĞÊ²Ã´¶¼²»ÖªµÀÁË! \n";
+                return "ä½ ç…©ä¸ç…©å•Šï¼Œéƒ½å’Œä½ èªªéäº†ï¼Œä½ é‚„ä¾†å•æˆ‘ï¼Œæˆ‘ç¾æœ‰ä»€éº¼éƒ½ä¸çŸ¥é“äº†! \n";
          
-        if ( !myfam || myfam["family_name"] != "ÌÆÃÅÊÀ¼Ò")
-                return "ÕâÎ»"+RANK_D->query_respect(me)+"£¬ÄãÓë±¾ÃÅËØÎŞÀ´Íù£¬´Ë»°´ÓºÎÌ¸Æğ£¡\n";
+        if ( !myfam || myfam["family_name"] != "å”é–€ä¸–å®¶")
+                return "é€™ä½"+RANK_D->query_respect(me)+"ï¼Œä½ èˆ‡æœ¬é–€ç´ ç„¡ä¾†å¾€ï¼Œæ­¤è©±å¾ä½•è«‡èµ·ï¼\n";
         
-        if ( myfam["family_name"]=="ÌÆÃÅÊÀ¼Ò")
+        if ( myfam["family_name"]=="å”é–€ä¸–å®¶")
         {      
                 set_temp("yiwen", 1, me);
                 switch( random(2) )
                 {
                    case 0:
-                        tell_object(me, HIG"Ô­À´ÊÇ×Ô¼ºÈË°¡£¬ÇëÉÏÂ¥£¬ÌÆÀÏ°åÕıºÃ»ØÀ´ÁË£¡\n"NOR);
+                        tell_object(me, HIG"åŸä¾†æ˜¯è‡ªå·±äººå•Šï¼Œè«‹ä¸Šæ¨“ï¼Œå”è€æ¿æ­£å¥½å›ä¾†äº†ï¼\n"NOR);
                         me->move("/d/tangmen/jiulou2");
                         set_temp("askxiao", 1, me);
                         break;
                    case 1:
-                        tell_object(me, HIR"²»ÇÉ°¡£¬ÌÆÀÏ°åÕıºÃ³öÃÅÁË£¬Äã¹ıÒ»ÕóÔÙÀ´°É£¡\n"NOR);
+                        tell_object(me, HIR"ä¸å·§å•Šï¼Œå”è€æ¿æ­£å¥½å‡ºé–€äº†ï¼Œä½ éä¸€é™£å†ä¾†å§ï¼\n"NOR);
                         break;
                  }            
                         
         }
           
         set_temp("yiwen", 1, me);
-        return "²»ÖªÕâÎ»"+RANK_D->query_respect(me)+"ÎÊÎÒ¼ÒÀÏ°åÓĞÊ²Ã´ÊÂ! \n";
+        return "ä¸çŸ¥é€™ä½"+RANK_D->query_respect(me)+"å•æˆ‘å®¶è€æ¿æœ‰ä»€éº¼äº‹! \n";
 }

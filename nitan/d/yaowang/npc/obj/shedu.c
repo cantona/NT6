@@ -4,12 +4,12 @@ inherit ITEM;
 
 void create()
 {
-        set_name( WHT "Éß¶¾" NOR , ({"she du"}));
+        set_name( WHT "è›‡æ¯’" NOR , ({"she du"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»µÎ×Ç°×É«µÄÉß¶¾¡£\n");
-                set("unit", "µÎ");
+                set("long", "ä¸€æ»´æ¿ç™½è‰²çš„è›‡æ¯’ã€‚\n");
+                set("unit", "æ»´");
                 set("yaowang", 1);
                 set("value", 1000);
                 set("weight", 1000);

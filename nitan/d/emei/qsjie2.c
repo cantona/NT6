@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-      set("short", "��ʯ��");
+      set("short", "青石階");
         set("long", @LONG
-�Ѿ��Ƕ���ɽ�����ˡ�����һ��ͨ�����ҵ���ʯ�ף�����������
-�Σ�����ʮ�����¡����Ϸ�ͨ����گ�Ĵ����������ߺ������˴��˸�
-С���
+已經是峨嵋山腳下了。南面一條通往峨嵋的青石階，兩旁綠樹蔭
+蔽，空氣十分清新。西南方通向南詘的大理國。西邊好象有人搭了個
+小草棚。
 LONG );
       set("outdoors", "emei");
       set("exits", ([

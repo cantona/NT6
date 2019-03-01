@@ -5,17 +5,17 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIR "ÈÕ" HIY "ÔÂ" NOR + WHT "¾µ" NOR, ({ "riyue jing", "riyue", "jing" }) );
+        set_name(HIR "æ—¥" HIY "æœˆ" NOR + WHT "é¡" NOR, ({ "riyue jing", "riyue", "jing" }) );
         set_weight(3000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ãæ");
-                set("long", HIC "´«ËµÅ®æ´´´ÔìÉúÁéµÄÊ±ºò£¬ÎªÁËÊ±¿Ì¼àÊÓÉúÁéµÄÒ»¾ÙÒ»¶¯£¬\n"
-                                "ÓÚÊÇÇëÇóÉÏÌì´ÍÓèÁËËıÒ»Ãæ±¦¾µ£¬ÃûÔ»ÈÕÔÂ¾µ£¬ÓµÓĞÈÕÔÂ\n"
-                                "¾µµÄÈË¿ÉÒÔËæÊ±²é¿´µ½ÓÎÏ·ÖĞµÄÉúÎï¡¢Íæ¼Ò¼°NPCµÄÎ»ÖÃ¡£\n"
-                                "Ã¿´ÎÊ¹ÓÃÏûºÄ»Æ½ğÒ»Á½£¬¼´´ÓÑ×»ÆÒø¿â¿Û1YSG/´Î¡£\n" HIY
-                                "Ö¸Áî£º echo ÉúÎïÓ¢ÎÄID\n" NOR);
+                set("unit", "é¢");
+                set("long", HIC "å‚³èªªå¥³åª§å‰µé€ ç”Ÿéˆçš„æ™‚å€™ï¼Œç‚ºäº†æ™‚åˆ»ç›£è¦–ç”Ÿéˆçš„ä¸€èˆ‰ä¸€å‹•ï¼Œ\n"
+                                "äºæ˜¯è«‹æ±‚ä¸Šå¤©è³œäºˆäº†å¥¹ä¸€é¢å¯¶é¡ï¼Œåæ›°æ—¥æœˆé¡ï¼Œæ“æœ‰æ—¥æœˆ\n"
+                                "é¡çš„äººå¯ä»¥éš¨æ™‚æŸ¥çœ‹åˆ°éŠæˆ²ä¸­çš„ç”Ÿç‰©ã€ç©å®¶åŠNPCçš„ä½ç½®ã€‚\n"
+                                "æ¯æ¬¡ä½¿ç”¨æ¶ˆè€—é»ƒé‡‘ä¸€å…©ï¼Œå³å¾ç‚é»ƒéŠ€åº«æ‰£1YSG/æ¬¡ã€‚\n" HIY
+                                "æŒ‡ä»¤ï¼š echo ç”Ÿç‰©è‹±æ–‡ID\n" NOR);
                 set("value", 800000);
                 
         }
@@ -37,34 +37,34 @@ int do_echo(string arg)
 
         if (environment(this_object()) != me)return 0;
 
-        if (! arg)return notify_fail("Ö¸Áî¸ñÊ½£º echo ÉúÎïÓ¢ÎÄID\n");
+        if (! arg)return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼š echo ç”Ÿç‰©è‹±æ–‡ID\n");
 
         target = find_living(arg);
 
         if (! objectp(target))
-                return notify_fail(HIG "ÈÕÔÂ¾µ·¢³öÒ»µÀÁÁ¹â£ºÃ»ÓĞÕÒµ½Ä¿±êÉúÎï£¬¿ÉÄÜ¸ÃÉúÎï²»´æÔÚ»òÎ´±»¸üĞÂ£¡\n" NOR);
+                return notify_fail(HIG "æ—¥æœˆé¡ç™¼å‡ºä¸€é“äº®å…‰ï¼šæ²’æœ‰æ‰¾åˆ°ç›®æ¨™ç”Ÿç‰©ï¼Œå¯èƒ½è©²ç”Ÿç‰©ä¸å­˜åœ¨æˆ–æœªè¢«æ›´æ–°ï¼\n" NOR);
                 
-        // ²»ÄÜ²é¿´ÒşÉíID¼°Î×Ê¦
+        // ä¸èƒ½æŸ¥çœ‹éš±èº«IDåŠå·«å¸«
         if (wizardp(target))
-                return notify_fail(HIG "ÈÕÔÂ¾µ·¢³öÒ»µÀÁÁ¹â£ºÃ»ÓĞÕÒµ½Ä¿±êÉúÎï£¬¿ÉÄÜ¸ÃÉúÎï²»´æÔÚ»òÎ´±»¸üĞÂ£¡\n" NOR);
+                return notify_fail(HIG "æ—¥æœˆé¡ç™¼å‡ºä¸€é“äº®å…‰ï¼šæ²’æœ‰æ‰¾åˆ°ç›®æ¨™ç”Ÿç‰©ï¼Œå¯èƒ½è©²ç”Ÿç‰©ä¸å­˜åœ¨æˆ–æœªè¢«æ›´æ–°ï¼\n" NOR);
                 
-        // ¿Û³ıYSG
+        // æ‰£é™¤YSG
         if (me->query("stocks/balance") < 1)
-                return notify_fail("¶Ô²»Æğ£¬ÄãµÄYSG²»×ã£¬ÎŞ·¨Ê¹ÓÃÈÕÔÂ¾µ£¡\n");        
+                return notify_fail("å°ä¸èµ·ï¼Œä½ çš„YSGä¸è¶³ï¼Œç„¡æ³•ä½¿ç”¨æ—¥æœˆé¡ï¼\n");        
         
         if (target->query_temp("apply/invisible") && ! me->query_condition("niuyanlei"))
-                return notify_fail(HIG "ÈÕÔÂ¾µ·¢³öÒ»µÀÁÁ¹â£ºÃ»ÓĞÕÒµ½Ä¿±êÉúÎï£¬¿ÉÄÜ¸ÃÉúÎï²»´æÔÚ»òÎ´±»¸üĞÂ£¡\n" NOR);
+                return notify_fail(HIG "æ—¥æœˆé¡ç™¼å‡ºä¸€é“äº®å…‰ï¼šæ²’æœ‰æ‰¾åˆ°ç›®æ¨™ç”Ÿç‰©ï¼Œå¯èƒ½è©²ç”Ÿç‰©ä¸å­˜åœ¨æˆ–æœªè¢«æ›´æ–°ï¼\n" NOR);
 
         me->add("stocks/balance", -1);
 
         if (! environment(target))
-                return notify_fail("¶Ô²»Æğ£¬¸Ã¶ÔÏóÎŞ·¨²éÑ¯µ½¾ßÌåÎ»ÖÃ¡£\n");
+                return notify_fail("å°ä¸èµ·ï¼Œè©²å°è±¡ç„¡æ³•æŸ¥è©¢åˆ°å…·é«”ä½ç½®ã€‚\n");
 
         where = stringp(environment(target)->query("short")) ? environment(target)->query("short")
                                                                  : environment(target)->short();
 
-        tell_object(me, HIG "ÈÕÔÂ¾µ·¢³öÒ»µÀÁÁ¹â£º" + target->name() + "(" + arg + ")ÏÖÔÚÔÚ" + 
-                         where + HIG "¡£\n" NOR);
+        tell_object(me, HIG "æ—¥æœˆé¡ç™¼å‡ºä¸€é“äº®å…‰ï¼š" + target->name() + "(" + arg + ")ç¾åœ¨åœ¨" + 
+                         where + HIG "ã€‚\n" NOR);
 
         return 1;
 }

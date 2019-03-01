@@ -1,21 +1,21 @@
-// pkp.c ÆË¿ËÅÆ
+// pkp.c æ’²å…‹ç‰Œ
 
 #include <weapon.h>
 inherit SWORD;
 
 void create()
 {
-        set_name("ÆË¿ËÅÆ", ({ "pkp" }));
+        set_name("æ’²å…‹ç‰Œ", ({ "pkp" }));
         set_weight(5000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "ÕÅ");
-                set("long", "ÕâÊÇÒ»ÕÅÆÕÍ¨µÄÆË¿ËÅÆ£¬Ò»°ãµÄ¶ÄÍ½¶¼Ê¹ÓÃËü¡£\n");
+                set("unit", "å¼µ");
+                set("long", "é€™æ˜¯ä¸€å¼µæ™®é€šçš„æ’²å…‹ç‰Œï¼Œä¸€èˆ¬çš„è³­å¾’éƒ½ä½¿ç”¨å®ƒã€‚\n");
                 set("value", 100);
                 set("material", "paper");
-                set("wield_msg", "$N¡¸à§¡¹µÄÒ»Éù³é³öÒ»ÕÅ$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n·Å»Ø¿Ú´ü¡£\n");
+                set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€è²æŠ½å‡ºä¸€å¼µ$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°‡æ‰‹ä¸­çš„$næ”¾å›å£è¢‹ã€‚\n");
         }
         init_sword(25);
         setup();

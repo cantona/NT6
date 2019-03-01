@@ -1,7 +1,7 @@
 // action_d.c
-// »î¶¯¾«Áé£¬¸ºÔğ·¢ÆğºÍ¹Ø±ÕÃ¿ÈÕµÄ»î¶¯
-// Õâ¸ödaemonÎÒÇãÏòÓÚ×ö³É¹ã²¥Æ÷ºÍ»î¶¯×´Ì¬µÄÈİÆ÷
-// Ëû±¾ÉíÊ²Ã´Ò²²»×ö£¬ÆäËûÏµÍ³´ÓËûÕâÀï»ñÈ¡Ä³¸ö»î¶¯ÊÇ·ñ¿ªÆôµÄ×´Ì¬
+// æ´»å‹•ç²¾éˆï¼Œè² è²¬ç™¼èµ·å’Œé—œé–‰æ¯æ—¥çš„æ´»å‹•
+// é€™å€‹daemonæˆ‘å‚¾å‘äºåšæˆå»£æ’­å™¨å’Œæ´»å‹•ç‹€æ…‹çš„å®¹å™¨
+// ä»–æœ¬èº«ä»€éº¼ä¹Ÿä¸åšï¼Œå…¶ä»–ç³»çµ±å¾ä»–é€™è£¡ç²å–æŸå€‹æ´»å‹•æ˜¯å¦é–‹å•Ÿçš„ç‹€æ…‹
 
 #include <localtime.h>
 #include <ansi.h>
@@ -16,7 +16,7 @@ void create()
 {
         seteuid(getuid());
         if( setup() ) {
-                CHANNEL_D->channel_broadcast("sys", "»î¶¯¾«ÁéÒÑ¾­Æô¶¯¡£");
+                CHANNEL_D->channel_broadcast("sys", "æ´»å‹•ç²¾éˆå·²ç¶“å•Ÿå‹•ã€‚");
                 check_action_startend();
                 SCHEDULE_D->set_event(600, 1, this_object(), "check_action_startend");
         }
@@ -30,45 +30,45 @@ void check_action_startend()
 
         tmp = 0;
         ltime = localtime(time());
-        now_min = ltime[LT_HOUR]*60+ltime[LT_MIN]; // µ±Ç°·ÖÖÓ£¬ÕâÀïÒªÓÃlocaltime(»ñÈ¡±¾µØÊ±¼ä)
+        now_min = ltime[LT_HOUR]*60+ltime[LT_MIN]; // ç•¶å‰åˆ†é˜ï¼Œé€™è£¡è¦ç”¨localtime(ç²å–æœ¬åœ°æ™‚é–“)
 
-        // Öğ¸ösetting×öÅĞ¶Ï£¬60ÃëÒ»´Î£¬Õâ¸öĞ§ÂÊ¿ÉÒÔ½ÓÊÜ
+        // é€å€‹settingåšåˆ¤æ–·ï¼Œ60ç§’ä¸€æ¬¡ï¼Œé€™å€‹æ•ˆç‡å¯ä»¥æ¥å—
         foreach( string key in keys(action_settings) ) {
-                // µ±Ç°Ê±¼äÔÚ¿ªÊ¼Ê±¼äÒÔÇ°£¬ÄÇÃ´Ê²Ã´Ò²²»×ö
+                // ç•¶å‰æ™‚é–“åœ¨é–‹å§‹æ™‚é–“ä»¥å‰ï¼Œé‚£éº¼ä»€éº¼ä¹Ÿä¸åš
                 if( now_min<action_settings[key]["start"] )
                         continue;
-                // µ±Ç°Ê±¼äÔÚ½áÊøÊ±¼äÖ®ºó£¬ÔòĞèÒªÊÔÊÔÊÇ·ñÓ¦¸Ã¹Ø±ÕËü
+                // ç•¶å‰æ™‚é–“åœ¨çµæŸæ™‚é–“ä¹‹å¾Œï¼Œå‰‡éœ€è¦è©¦è©¦æ˜¯å¦æ‡‰è©²é—œé–‰å®ƒ
                 if( now_min>=action_settings[key]["end"] ) {
-                        // ´æÔÚÓÚ»îÔ¾ÁĞ±í£¬Ôò½áÊøÖ®
+                        // å­˜åœ¨äºæ´»èºåˆ—è¡¨ï¼Œå‰‡çµæŸä¹‹
                         if( !undefinedp(active_actions[key]) ) {
                                 map_delete(active_actions,key);
-                                // ¹ã²¥
-                                message("system", HIY "¡¾»î¶¯¡¿±¾ÈÕ»î¶¯£º"+action_settings[key]["name"]+"[±¶ÂÊ£º"+action_settings[key]["times"]+"]ÒÑ¾­½áÊø¡£\n" NOR, users());
-                        } // ·ñÔòÊ²Ã´Ò²²»×ö
+                                // å»£æ’­
+                                message("system", HIY "ã€æ´»å‹•ã€‘æœ¬æ—¥æ´»å‹•ï¼š"+action_settings[key]["name"]+"[å€ç‡ï¼š"+action_settings[key]["times"]+"]å·²ç¶“çµæŸã€‚\n" NOR, users());
+                        } // å¦å‰‡ä»€éº¼ä¹Ÿä¸åš
                         continue;
                 }
-                // ¿¼ÂÇµ½createµÄÇé¿ö£¬ËùÒÔµ±Ê±¼äÂäÔÚstartºÍendÖ®¼äµÄÊ±ºò£¬ĞèÒª¶àÒ»¸öÅĞ¶Ï
+                // è€ƒæ…®åˆ°createçš„æƒ…æ³ï¼Œæ‰€ä»¥ç•¶æ™‚é–“è½åœ¨startå’Œendä¹‹é–“çš„æ™‚å€™ï¼Œéœ€è¦å¤šä¸€å€‹åˆ¤æ–·
 
                 if( undefinedp(active_actions[key]) ) {
                         tmp ++;
-                        active_actions[key] = action_settings[key]["times"];// »ñµÃ±¶ÂÊ
-                        // ¹ã²¥
-                        message("system", HIY "¡¾»î¶¯¡¿±¾ÈÕ»î¶¯£º"+action_settings[key]["name"]+"[±¶ÂÊ£º"+action_settings[key]["times"]+"]ÒÑ¾­¿ªÊ¼£¨±¾»î¶¯½«³ÖĞøÔ¼"+chinese_number(action_settings[key]["end"]-now_min)+"·ÖÖÓ£©¡£\n" NOR, users());
+                        active_actions[key] = action_settings[key]["times"];// ç²å¾—å€ç‡
+                        // å»£æ’­
+                        message("system", HIY "ã€æ´»å‹•ã€‘æœ¬æ—¥æ´»å‹•ï¼š"+action_settings[key]["name"]+"[å€ç‡ï¼š"+action_settings[key]["times"]+"]å·²ç¶“é–‹å§‹ï¼ˆæœ¬æ´»å‹•å°‡æŒçºŒç´„"+chinese_number(action_settings[key]["end"]-now_min)+"åˆ†é˜ï¼‰ã€‚\n" NOR, users());
                 }
         }
-        if( !tmp && !random(3) ) {// Æ½¾ùÃ¿Èı·ÖÖÓannouncÒ»´Î
+        if( !tmp && !random(3) ) {// å¹³å‡æ¯ä¸‰åˆ†é˜announcä¸€æ¬¡
                 foreach( string key in keys(active_actions) ) {
-                        message("system", HIY "¡¾»î¶¯¡¿µ±Ç°»î¶¯£º"+action_settings[key]["name"]+"[±¶ÂÊ£º"+action_settings[key]["times"]+"]½øĞĞÖĞ£¨±¾»î¶¯½«³ÖĞøÔ¼"+chinese_number(action_settings[key]["end"]-now_min)+"·ÖÖÓ£©¡£\n" NOR, users());
+                        message("system", HIY "ã€æ´»å‹•ã€‘ç•¶å‰æ´»å‹•ï¼š"+action_settings[key]["name"]+"[å€ç‡ï¼š"+action_settings[key]["times"]+"]é€²è¡Œä¸­ï¼ˆæœ¬æ´»å‹•å°‡æŒçºŒç´„"+chinese_number(action_settings[key]["end"]-now_min)+"åˆ†é˜ï¼‰ã€‚\n" NOR, users());
                 }
         }
 }
-//²âÊÔ½Ó¿Ú£¬»ñÈ¡ËùÓĞµÄactionÁĞ±í
+//æ¸¬è©¦æ¥å£ï¼Œç²å–æ‰€æœ‰çš„actionåˆ—è¡¨
 mixed query_action_settings()
 {
         return action_settings;
 }
 
-// ¸ø²éÑ¯Ö¸ÁîÁôµÄ½Ó¿Ú
+// çµ¦æŸ¥è©¢æŒ‡ä»¤ç•™çš„æ¥å£
 string str2(int i)
 {
         return (i<10)?("0"+i):(""+i);
@@ -81,31 +81,31 @@ string query_action_string()
         int now_min;
 
 //      if(!sizeof(active_actions))
-//              return HIY"µ±Ç°Ã»ÓĞÕıÔÚ½øĞĞÖĞµÄ»î¶¯¡£\n"NOR;
+//              return HIY"ç•¶å‰æ²’æœ‰æ­£åœ¨é€²è¡Œä¸­çš„æ´»å‹•ã€‚\n"NOR;
 
         ltime = localtime(time());
         now_min = ltime[LT_HOUR]*60+ltime[LT_MIN];
-/*      ret = HIY"µ±Ç°ÕıÔÚ½øĞĞÖĞµÄ»î¶¯ÓĞ£º\n";
+/*      ret = HIY"ç•¶å‰æ­£åœ¨é€²è¡Œä¸­çš„æ´»å‹•æœ‰ï¼š\n";
         foreach(string key in keys(active_actions)) {
-                ret += action_settings[key]["name"]+"£º"+chinese_number(action_settings[key]["times"])+"±¶[Ê£Óà"+chinese_number(action_settings[key]["end"]-now_min)+"·ÖÖÓ]\n";
+                ret += action_settings[key]["name"]+"ï¼š"+chinese_number(action_settings[key]["times"])+"å€[å‰©ä½™"+chinese_number(action_settings[key]["end"]-now_min)+"åˆ†é˜]\n";
         }
         ret += NOR;
         return ret;
 */
-        ret = HIY"Ä¿Ç°"+MUD_NAME+"Ìá¹©µÄ»î¶¯°üÀ¨£º\n";
+        ret = HIY"ç›®å‰"+MUD_NAME+"æä¾›çš„æ´»å‹•åŒ…æ‹¬ï¼š\n";
         foreach( string key in keys(action_settings) ) {
-                ret += "\t"+action_settings[key]["name"]+"£º"+str2(action_settings[key]["start"]/60)+":"+str2(action_settings[key]["start"]%60)+"¡«"+str2(action_settings[key]["end"]/60)+":"+str2(action_settings[key]["end"]%60)+"£¨"+chinese_number(action_settings[key]["times"])+"±¶£©";
+                ret += "\t"+action_settings[key]["name"]+"ï¼š"+str2(action_settings[key]["start"]/60)+":"+str2(action_settings[key]["start"]%60)+"ï½"+str2(action_settings[key]["end"]/60)+":"+str2(action_settings[key]["end"]%60)+"ï¼ˆ"+chinese_number(action_settings[key]["times"])+"å€ï¼‰";
                 if( active_actions[key] ) {
-                        ret += HIG"-µ±Ç°½øĞĞÖĞ-Ê£Óà"+chinese_number(action_settings[key]["end"]-now_min)+"·ÖÖÓ\n"HIY;
+                        ret += HIG"-ç•¶å‰é€²è¡Œä¸­-å‰©ä½™"+chinese_number(action_settings[key]["end"]-now_min)+"åˆ†é˜\n"HIY;
                 } else {
-                        ret +=HIG"-µ±Ç°Î´¿ªÆô\n"HIY;
+                        ret +=HIG"-ç•¶å‰æœªé–‹å•Ÿ\n"HIY;
                 }
         }
 
         return ret+NOR;
 }
 
-// ÕâÀïÊÇÆäËûÏµÍ³µ÷ÓÃ²éÑ¯µ±Ç°ÊÇ·ñ´¦ÓÚÄ³¸ö»î¶¯ÖĞµÄ½Ó¿Ú£¬·µ»ØµÄÊÇ±¶ÂÊ
+// é€™è£¡æ˜¯å…¶ä»–ç³»çµ±èª¿ç”¨æŸ¥è©¢ç•¶å‰æ˜¯å¦è™•äºæŸå€‹æ´»å‹•ä¸­çš„æ¥å£ï¼Œè¿”å›çš„æ˜¯å€ç‡
 int query_action(string action)
 {
         if( undefinedp(active_actions[action]) )
@@ -127,27 +127,27 @@ int setup()
         mixed file;
         mixed tmp;
 
-        // ÕâÀïÓ¦¸ÃÅĞ¶ÏÊÇ·ñÓĞÎÄ¼ş
+        // é€™è£¡æ‡‰è©²åˆ¤æ–·æ˜¯å¦æœ‰æ–‡ä»¶
         if( !(file = read_file("/adm/etc/action_list")) )
                 return 0;
-        // ¹ıÂËwinµÄ»»ĞĞ·û
+        // éæ¿¾winçš„æ›è¡Œç¬¦
         file = replace_string(file,"\r","");
         file = explode(file,"\n");
         file = filter_array( file , (: $1[0] != '#' :) );
         foreach( string line in file ) {
-                //È·±£²»ÊÇ¿ÕĞĞ
+                //ç¢ºä¿ä¸æ˜¯ç©ºè¡Œ
                 if( strlen(line) ) {
-                        // action_listĞÎÈç£º
+                        // action_listå½¢å¦‚ï¼š
                         // action_name:chinese_name:starttime:endtime:times
-                        // task_reward:¶à±¶TASK½±Àø:1500:1700:2
-                        // »î¶¯Ó¢ÎÄ±êÊ¶:»î¶¯ÖĞÎÄÃû:¿ªÊ¼Ê±¼ä:½áÊøÊ±¼ä:±¶ÂÊ
-                        // Ê±¼äÓ¦¸ÃĞÎÈç0830(Ç°Á½Î»±íÊ¾Ğ¡Ê±-24Ğ¡Ê±ÖÆ£¬ºóÁ½Î»±íÊ¾·ÖÖÓ)£¬²¢ÇÒ¿ªÊ¼Ê±¼äÓ¦µ±Ğ¡ÓÚ½áÊøÊ±¼ä
-                        // ÕâÀï¼ÙÉèÅäÖÃÎÄ¼şÊÇ¶ÔµÄ¡£¡£¡£
+                        // task_reward:å¤šå€TASKçå‹µ:1500:1700:2
+                        // æ´»å‹•è‹±æ–‡æ¨™è­˜:æ´»å‹•ä¸­æ–‡å:é–‹å§‹æ™‚é–“:çµæŸæ™‚é–“:å€ç‡
+                        // æ™‚é–“æ‡‰è©²å½¢å¦‚0830(å‰å…©ä½è¡¨ç¤ºå°æ™‚-24å°æ™‚åˆ¶ï¼Œå¾Œå…©ä½è¡¨ç¤ºåˆ†é˜)ï¼Œä¸¦ä¸”é–‹å§‹æ™‚é–“æ‡‰ç•¶å°äºçµæŸæ™‚é–“
+                        // é€™è£¡å‡è¨­é…ç½®æ–‡ä»¶æ˜¯å°çš„ã€‚ã€‚ã€‚
                         tmp = explode(line, ":");
                         action_settings[tmp[0]] = ([]);
                         action_settings[tmp[0]]["name"] = tmp[1];
-                        action_settings[tmp[0]]["start"] = get_minute_by_string(tmp[2]);//Ò»ÌìµÄµÚ¼¸·ÖÖÓ
-                        action_settings[tmp[0]]["end"] = get_minute_by_string(tmp[3]);  //Ò»ÌìµÄµÚ¼¸·ÖÖÓ
+                        action_settings[tmp[0]]["start"] = get_minute_by_string(tmp[2]);//ä¸€å¤©çš„ç¬¬å¹¾åˆ†é˜
+                        action_settings[tmp[0]]["end"] = get_minute_by_string(tmp[3]);  //ä¸€å¤©çš„ç¬¬å¹¾åˆ†é˜
                         action_settings[tmp[0]]["times"] = atoi(tmp[4]);
                 }
         }
@@ -156,5 +156,5 @@ int setup()
 
 string query_name()
 {
-        return "»î¶¯¾«Áé(ACTION_D)";
+        return "æ´»å‹•ç²¾éˆ(ACTION_D)";
 }

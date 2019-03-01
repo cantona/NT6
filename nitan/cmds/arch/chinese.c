@@ -41,8 +41,8 @@ int main(object me, string arg)
 int help()
 {
         write(@HELP
-Ö¸Áî¸ñÊ½£ºchinese <Ó¢ÎÄ>==<ÖĞÎÄ> »ò
-          chinese -d <Ó¢ÎÄ>
+æŒ‡ä»¤æ ¼å¼ï¼šchinese <è‹±æ–‡>==<ä¸­æ–‡> æˆ–
+          chinese -d <è‹±æ–‡>
 HELP );
         return 1 ;
 }

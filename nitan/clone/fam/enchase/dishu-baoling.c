@@ -3,19 +3,19 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIY "µØÊé±¦Áé" NOR, ({"dishu baoling", "dishu"}));
+        set_name(HIY "åœ°æ›¸å¯¶éˆ" NOR, ({"dishu baoling", "dishu"}));
         set_weight(1000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
+                set("unit", "é¡†");
                 set("value", 500000);
-                set("enchase/name", "µØÊé±¦Áé");
+                set("enchase/name", "åœ°æ›¸å¯¶éˆ");
                 set("enchase/point", 1);
                 set("enchase/type", "head");
-                set("limit", 10); // ÖÁÉÙÓĞ10¸ö¿×µÄÊ±ºò·½¿ÉÏâÇ¶
+                set("limit", 10); // è‡³å°‘æœ‰10å€‹å­”çš„æ™‚å€™æ–¹å¯é‘²åµŒ
                 set("enchase/cur_firm", 100);
-                set("enchase/spe_data", (["add_jiqu" : 10]) );  // Ã¿¸öÌá¸ßÑĞ¾¿Ğ§ÂÊ10%
+                set("enchase/spe_data", (["add_jiqu" : 10]) );  // æ¯å€‹æé«˜ç ”ç©¶æ•ˆç‡10%
         }
         setup();
 }

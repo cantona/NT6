@@ -4,13 +4,13 @@ inherit ITEM;
 #include <ansi.h>;
 void create()
 {
-        set_name(HIY"»Æ²¼Ğ¡ÄÒ"NOR, ({"huangbu xiaonan", "xiaonan"}));
+        set_name(HIY"é»ƒå¸ƒå°å›Š"NOR, ({"huangbu xiaonan", "xiaonan"}));
         set_weight(80);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»Ö»»Æ²¼Ğ¡ÄÒ£¬²»ÖªµÀÓĞÊ²Ã´ÓÃ´¦¡£\n");
-                set("unit", "Ö»");
+                set("long", "é€™æ˜¯ä¸€åªé»ƒå¸ƒå°å›Šï¼Œä¸çŸ¥é“æœ‰ä»€éº¼ç”¨è™•ã€‚\n");
+                set("unit", "åª");
                 set("value", 1);
         }
 }

@@ -7,14 +7,14 @@ inherit THROWING;
 
 void create()
 {
-        set_name(HIY"¿û»¨"BLK"Õë"NOR, ({ "kuihua zhen", "zhen" }) );
+        set_name(HIY"è‘µèŠ±"BLK"é‡"NOR, ({ "kuihua zhen", "zhen" }) );
         set("taskobj", 1);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "¿û»¨ÕëÊÇÒ»ÖÖ×¨ÃÅ´òÖÆµÄ°µÆ÷£¬ÍâĞÎ¼«±¡£¬É±ÉËÁ¦Ç¿¡£\n");
-                set("unit", "Êø");
-                set("base_unit", "¸ù");
+                set("long", "è‘µèŠ±é‡æ˜¯ä¸€ç¨®å°ˆé–€æ‰“åˆ¶çš„æš—å™¨ï¼Œå¤–å½¢æ¥µè–„ï¼Œæ®ºå‚·åŠ›å¼·ã€‚\n");
+                set("unit", "æŸ");
+                set("base_unit", "æ ¹");
                 set("base_weight", 1);
                 set("base_value", 0);
                 set("value", 0);

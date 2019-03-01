@@ -5,14 +5,14 @@ inherit ITEM;
 inherit F_FOOD;
 void create()
 {
-        set_name("¿¾Èâ", ({"kaorou", "rou", "fried meat", "meat" }) );
+        set_name("çƒ¤è‚‰", ({"kaorou", "rou", "fried meat", "meat" }) );
         set_weight(350);
         if( clonep() )
                 set_default_object(__FILE__);
         else 
         {
-                set("long", "Ò»´®Åëâ¿ºÃµÄÏãÅçÅçµÄ¿¾Èâ£¬ÒÑ¾­¿´²»³öÊÇÓÃÊ²Ã´×öµÄÁË£¬Ö»ÎÅµ½Ò»¹É¹ÉµÄÏãÆøÆË±Ç¶øÀ´¡£\n");
-                set("unit", "´®");
+                set("long", "ä¸€ä¸²çƒ¹é£ªå¥½çš„é¦™å™´å™´çš„çƒ¤è‚‰ï¼Œå·²ç¶“çœ‹ä¸å‡ºæ˜¯ç”¨ä»€éº¼åšçš„äº†ï¼Œåªèåˆ°ä¸€è‚¡è‚¡çš„é¦™æ°£æ’²é¼»è€Œä¾†ã€‚\n");
+                set("unit", "ä¸²");
                 set("food_remaining", 10);
                 set("food_supply", 50); 
                 set("material", "bone");

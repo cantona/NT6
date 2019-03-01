@@ -2,15 +2,15 @@
 inherit TASK;
 void create()
 {
-    set_name(HIC"ÈıÇå¹¬¹æ"NOR, ({ "sqgonggui" }) );
+    set_name(HIC"ä¸‰æ¸…å®®è¦"NOR, ({ "sqgonggui" }) );
     set_weight(1);
     if( clonep() )
             destruct(this_object());
     else {
-            set("unit", "±¾");
+            set("unit", "æœ¬");
             set("material", "stone");
-            set("long", "Ò»±¾ÈıÇå¹¬µÄ¹¬¹æ\n");
+            set("long", "ä¸€æœ¬ä¸‰æ¸…å®®çš„å®®è¦\n");
           } 
-    set("owner", "Íõ´¦Ò»");
+    set("owner", "ç‹è™•ä¸€");
         setup();  
 }   

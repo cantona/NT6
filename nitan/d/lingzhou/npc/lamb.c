@@ -1,4 +1,4 @@
-// lamb.c Ò°»ÆÑò
+// lamb.c é‡é»ƒç¾Š
 
 #include <command.h>
 #include <dbase.h>
@@ -9,9 +9,9 @@ inherit NPC;
 
 void create()
 {
-        set_name(HIY"Ò°»ÆÑò"NOR, ({ "lamb" }));
-        set("long","Ò»Ö»Ò°»ÆÑò£¬ÕıµÍÍ·ÈÏÕæµØ³Ô×Å²İ¡£\n");
-        set("race", "×ßĞó");
+        set_name(HIY"é‡é»ƒç¾Š"NOR, ({ "lamb" }));
+        set("long","ä¸€åªé‡é»ƒç¾Šï¼Œæ­£ä½é ­èªçœŸåœ°åƒè‘—è‰ã€‚\n");
+        set("race", "èµ°ç•œ");
         set("age", 5);
         set("int", 30);
         set("ridable", "1");

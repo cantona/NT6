@@ -44,7 +44,7 @@ void create()
         ::create();
         id = COMPETE_D->query_new_id();
         if( !id ) id = "test";
-        set_name( "ÄàÌ¶¸ßÊÖ" , ({ id }) );
+        set_name( "æ³¥æ½­é«˜æ‰‹" , ({ id }) );
         setup();
         restore();
 }

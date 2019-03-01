@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�ϴ��");
+        set("short", "南大街");
         set("long", @LONG
-�ֵ����࣬��ľ���졣����ʢ�Ŀ��ȣ���ֲ����������ˬ��������
-�ųǡ��������Ǹ��ã�������һ�����˹ݡ�
+街道兩側，榕木參天。福州盛夏苦熱，廣植榕樹以納涼爽，別名“
+榕城”。西面是府衙，東面是一家閩菜館。
 LONG );
         set("exits", ([
                 "south"   : __DIR__"nanmendou",

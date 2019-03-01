@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short","ÆÆÃíÃÜÊÒ");
+        set("short","ç ´å»Ÿå¯†å®¤");
         set("long", @LONG
-ÕâÊÇØ¤°ïÖØÒªÃÜµÀÖ®Ò»¡£ÓÉ´ËÉÏÍù£¬¿ÉÖ±´ïÆÆÃí¡£ËÄÖÜ¹âÏß»è°µ£¬
-ËÆºõÓÐ¼¸¸öºÚ°µµÄ¶´¿ÚÔÚÄãÉí±ß¡£½ÅÏÂµØÉÏÈÓÂúÁËÀ¬»ø£¬²ÈÉÏÈ¥Ï¤Ï¤
-Ë÷Ë÷µØÏì¡£
+é€™æ˜¯ä¸å¹«é‡è¦å¯†é“ä¹‹ä¸€ã€‚ç”±æ­¤ä¸Šå¾€ï¼Œå¯ç›´é”ç ´å»Ÿã€‚å››å‘¨å…‰ç·šæ˜æš—ï¼Œ
+ä¼¼ä¹Žæœ‰å¹¾å€‹é»‘æš—çš„æ´žå£åœ¨ä½ èº«é‚Šã€‚è…³ä¸‹åœ°ä¸Šæ‰”æ»¿äº†åžƒåœ¾ï¼Œè¸©ä¸ŠåŽ»æ‚‰æ‚‰
+ç´¢ç´¢åœ°éŸ¿ã€‚
 LONG );
         set("exits", ([
                 "up" : __DIR__"pomiao",

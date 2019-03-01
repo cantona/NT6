@@ -4,16 +4,16 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIW "¡¸ÓñÈ§ÉñÂö¾­¡¹" NOR, ({ "yuquan jing", "yuquan", "jing", "book" }));
+        set_name(HIW "ã€Œç‰é¡´ç¥è„ˆç¶“ã€" NOR, ({ "yuquan jing", "yuquan", "jing", "book" }));
         set_weight(500);
         if (clonep())
                 destruct(this_object());
         else {
-                set("unit", "±¾");
-                set("long", HIW "ÕâÊÇÒ»±¾¾«×°Êé²á£¬ÊéÒ³ÒÑÈ»·¢»Æ£¬Êé"
-                            "Æ¤ÉÏĞ´×Å¡¸ÓñÈ§ÉñÂö¾­¡¹Îå¸ö×Ö¡£\n" NOR);
+                set("unit", "æœ¬");
+                set("long", HIW "é€™æ˜¯ä¸€æœ¬ç²¾è£æ›¸å†Šï¼Œæ›¸é å·²ç„¶ç™¼é»ƒï¼Œæ›¸"
+                            "çš®ä¸Šå¯«è‘—ã€Œç‰é¡´ç¥è„ˆç¶“ã€äº”å€‹å­—ã€‚\n" NOR);
                 set("value", 1);
-                set("no_sell", "ÄÌÄÌµÄ£¬Õâ±¾ÆÆÊéÒ²ÄÜÂôÇ®£¿");
+                set("no_sell", "å¥¶å¥¶çš„ï¼Œé€™æœ¬ç ´æ›¸ä¹Ÿèƒ½è³£éŒ¢ï¼Ÿ");
                 set("material", "paper");
                 set("skill", ([
                         "name" : "jingluo-xue",

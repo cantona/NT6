@@ -14,58 +14,58 @@ int main(object me, string arg)
         int i, f, flag;
 
         if( !arg || sscanf(arg,"%s with %s", what, arg) != 2 )
-                return notify_fail("Ö¸Áî¸ñÊ½£ºextract <×°±¸> with <ÎïÆ·> & <ÎïÆ·> & ¡­¡­\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šextract <è£å‚™> with <ç‰©å“> & <ç‰©å“> & â€¦â€¦\n");
 
         if( me->is_busy() )
-                return notify_fail("ÏÈÃ¦ÍêÁËÄãµÄÊÂÇéÔÙ×öÕâ¼şÊÂÇé°É£¡\n");
+                return notify_fail("å…ˆå¿™å®Œäº†ä½ çš„äº‹æƒ…å†åšé€™ä»¶äº‹æƒ…å§ï¼\n");
 
         if( me->is_fighting() )
-                return notify_fail("ÄãÏÖÔÚÕıÔÚ´ò¼Ü£¬Ã»Ê±¼ä×öÕâĞ©ÊÂÇé¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£åœ¨æ‰“æ¶ï¼Œæ²’æ™‚é–“åšé€™äº›äº‹æƒ…ã€‚\n");
 
         if( query("max_jingli", me)<300 )
-                return notify_fail("ÄãÏÖÔÚµÄ¾«Á¦ĞŞÎªÓĞÏŞ£¬ÎŞ·¨³éÈ¡ÎïÆ·¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çš„ç²¾åŠ›ä¿®ç‚ºæœ‰é™ï¼Œç„¡æ³•æŠ½å–ç‰©å“ã€‚\n");
 
         if( query("jingli", me)<300 )
-                return notify_fail("ÄãÏÖÔÚ¾«Á¦²»¼Ã£¬ÎŞ·¨³éÈ¡ÎïÆ·¡£\n");
+                return notify_fail("ä½ ç¾åœ¨ç²¾åŠ›ä¸æ¿Ÿï¼Œç„¡æ³•æŠ½å–ç‰©å“ã€‚\n");
 
         if( !objectp(obj = present(what, me)) )
-                return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑùÎïÆ·¡£\n");
+                return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™æ¨£ç‰©å“ã€‚\n");
 
         if( query("equipped", obj) )
-                return notify_fail("ÄãÏÈĞ¶³ıËûÏÈ¡£\n");
+                return notify_fail("ä½ å…ˆå¸é™¤ä»–å…ˆã€‚\n");
 
         if( !query("enchase", obj) || !query("enchase/apply_prop", obj) )
-                return notify_fail("Õâ¸öÎïÆ·ÉÏÃæÃ»ÓĞ¿ÉÓÃÀ´³éÈ¡µÄÊôĞÔ¡£\n");
+                return notify_fail("é€™å€‹ç‰©å“ä¸Šé¢æ²’æœ‰å¯ç”¨ä¾†æŠ½å–çš„å±¬æ€§ã€‚\n");
 
         if( query("maze_item", obj) )
-                return notify_fail("Õâ¸öÎïÆ·À´Àú²»Ã÷£¬²»¿É±»³éÈ¡ÊôĞÔ¡£\n");
+                return notify_fail("é€™å€‹ç‰©å“ä¾†æ­·ä¸æ˜ï¼Œä¸å¯è¢«æŠ½å–å±¬æ€§ã€‚\n");
 
         if( query("enchase/increase", obj) )
-                return notify_fail("¸ÄÔì¹ıµÄ×°±¸²»¿ÉÒÔ±»³éÈ¡ÊôĞÔ¡£\n");
+                return notify_fail("æ”¹é€ éçš„è£å‚™ä¸å¯ä»¥è¢«æŠ½å–å±¬æ€§ã€‚\n");
 
         item_list = explode(arg, "&");
         ob_list   = allocate(sizeof(item_list));
 
         for( i=0; i<sizeof(item_list); i++ ) {
                 bname = item_list[i];
-                if( !bname ) return notify_fail("¸ñÊ½´íÎó¡£\n");
+                if( !bname ) return notify_fail("æ ¼å¼éŒ¯èª¤ã€‚\n");
                 while( bname[0] == ' ' ) bname = bname[1..<0];
                 while( bname[strlen(bname) - 1] == ' ' ) bname = bname[0..<2];
                 ob_list[i] = present(bname, me);
 
                 if( !objectp(ob_list[i]) )
-                        return notify_fail("ÄãÉíÉÏÃ»ÓĞ " + bname + " ÕâÖÖÎïÆ·°¡¡£\n");
+                        return notify_fail("ä½ èº«ä¸Šæ²’æœ‰ " + bname + " é€™ç¨®ç‰©å“å•Šã€‚\n");
 
                 if( !query("can_extract", ob_list[i]) )
-                        return notify_fail("Ö»ÓĞºÚË®¾§»ò³¬¼¶ºÚË®¾§²Å¿ÉÒÔÓÃÀ´¸½Ä§×°±¸ÊôĞÔ¡£\n");
+                        return notify_fail("åªæœ‰é»‘æ°´æ™¶æˆ–è¶…ç´šé»‘æ°´æ™¶æ‰å¯ä»¥ç”¨ä¾†é™„é­”è£å‚™å±¬æ€§ã€‚\n");
 
                 if( i > 0 && member_array(ob_list[i], ob_list[0..i - 1]) != -1 )
-                        return notify_fail("³éÈ¡ÎïÆ·ĞèÒªÖ¸Ã÷²»Í¬µÄÎïÆ·£¬²»ÒªÖØ¸´Ö¸"
-                                           "Ã÷Ò»¼şÎïÆ·¡£\n");
+                        return notify_fail("æŠ½å–ç‰©å“éœ€è¦æŒ‡æ˜ä¸åŒçš„ç‰©å“ï¼Œä¸è¦é‡å¾©æŒ‡"
+                                           "æ˜ä¸€ä»¶ç‰©å“ã€‚\n");
         }
 
-        tell_object(me, HIW "\nÄãË«Ä¿Î¢±Õ£¬½«ÊıÑùÎïÆ·ÄıÓÚÉíÇ°£¬ÔË×ªÄÚ¾¢ÆÈ"
-                        "Ê¹ËüÃÇ¿ÕÖĞĞı×ª½»ÈÚ¡£\n" NOR);
+        tell_object(me, HIW "\nä½ é›™ç›®å¾®é–‰ï¼Œå°‡æ•¸æ¨£ç‰©å“å‡äºèº«å‰ï¼Œé‹è½‰å…§å‹è¿«"
+                        "ä½¿å®ƒå€‘ç©ºä¸­æ—‹è½‰äº¤èã€‚\n" NOR);
 
         me->start_busy(1);
         addn("jingli", -200, me);
@@ -90,20 +90,20 @@ int main(object me, string arg)
         }
 
         if( flag ) {
-                message("vision", HIW "\nö®Ê±¼äÖ»¼û" + me->name() + HIW "ÉíÇ°Ò»µÀ"
-                        "¹â»ªÉÁ¹ı£¬µ«×ªË²¼´ÊÅ£¬ËÆºõ·¢ÉúÁËÊ²Ã´²»Í¬Ñ°³£µÄ"
-                        "ÊÂÇé¡£\n\n" NOR, environment(me), ({me}));
+                message("vision", HIW "\néœæ™‚é–“åªè¦‹" + me->name() + HIW "èº«å‰ä¸€é“"
+                        "å…‰è¯é–ƒéï¼Œä½†è½‰ç¬å³é€ï¼Œä¼¼ä¹ç™¼ç”Ÿäº†ä»€éº¼ä¸åŒå°‹å¸¸çš„"
+                        "äº‹æƒ…ã€‚\n\n" NOR, environment(me), ({me}));
 
-                tell_object(me, HIW "ö®Ê±¼äÖ»¼ûÍòµÀ¹â»ª¼²ÉÁ¶ø¹ı£¬Äã¼±Ã¦Éì³öË«ÊÖ½«ºÚË®½Ó×¡£¬"
-                        "·¢ÏÖÕÆĞÄ\nºÚË®ÔÌÑú×ÅÆßÉ«Ï¼¹â¡£\n\n" NOR);
+                tell_object(me, HIW "éœæ™‚é–“åªè¦‹è¬é“å…‰è¯ç–¾é–ƒè€Œéï¼Œä½ æ€¥å¿™ä¼¸å‡ºé›™æ‰‹å°‡é»‘æ°´æ¥ä½ï¼Œ"
+                        "ç™¼ç¾æŒå¿ƒ\né»‘æ°´è˜Šæ¼¾è‘—ä¸ƒè‰²éœå…‰ã€‚\n\n" NOR);
 
                 addn("max_jingli", -1, me);
 
                 return 1;
 
         }
-        tell_object(me, HIR "¿ÉÊÇ¹ıÁË°ëÌì£¬ËÆºõÃ»ÓĞÈÎºÎ±ä»¯£¬Äã²»½ûÒ»Éù"
-                        "³¤Ì¾¡£\n" NOR);
+        tell_object(me, HIR "å¯æ˜¯éäº†åŠå¤©ï¼Œä¼¼ä¹æ²’æœ‰ä»»ä½•è®ŠåŒ–ï¼Œä½ ä¸ç¦ä¸€è²"
+                        "é•·å˜†ã€‚\n" NOR);
 
         return 1;
 }

@@ -6,14 +6,14 @@ inherit MI_QIN;
 
 void create()
 {
-        set_name(HIY "Ììô¥Ö®Ô´" NOR, ({ "tianlai zhiyuan", "tianlai", "zhiyuan" }));
+        set_name(HIY "å¤©ç±Ÿä¹‹æº" NOR, ({ "tianlai zhiyuan", "tianlai", "zhiyuan" }));
         set_weight(1);
 
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", HIY "´ËÇÙÍ¨Ìå·º³öÆß²ÊÖ®¹â£¬Ò«ÑÛ¶áÄ¿£¬ÄËÌìÏÂµÚÒ»ÇÙ¡£ÉÏ¿Ì¡¸" HIC "Ììô¥Ö®Ô´" HIY "¡¹¡£\n" NOR);
+                set("unit", "æŠŠ");
+                set("long", HIY "æ­¤ç´é€šé«”æ³›å‡ºä¸ƒå½©ä¹‹å…‰ï¼Œè€€çœ¼å¥ªç›®ï¼Œä¹ƒå¤©ä¸‹ç¬¬ä¸€ç´ã€‚ä¸Šåˆ»ã€Œ" HIC "å¤©ç±Ÿä¹‹æº" HIY "ã€ã€‚\n" NOR);
                 set("value", 5000000);
                 set("material", "gold");
         }

@@ -8,19 +8,19 @@ inherit CLOTH;
 
 void create()
 {
-        set_name(NOR + WHT "Ìì½µ¡¤ÈËÆ¤±¦ÒÂ" NOR, ({ "renpi baoyi", "renpi", "baoyi" }) );
+        set_name(NOR + WHT "å¤©é™ï¹’äººçš®å¯¶è¡£" NOR, ({ "renpi baoyi", "renpi", "baoyi" }) );
         set_weight(3000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼ş");
-                set("long", NOR + WHT "´«ËµÕâÊÇÒ»¼şÓÉÈËÆ¤ÖÆ³ÉµÄ±¦ÒÂ£¬ÉÏÃæËÆºõ¼ÇÂ¼ÁËÄ³ÖÖÆæÌØµÄÎäÑ§¡£\n" NOR);
+                set("unit", "ä»¶");
+                set("long", NOR + WHT "å‚³èªªé€™æ˜¯ä¸€ä»¶ç”±äººçš®åˆ¶æˆçš„å¯¶è¡£ï¼Œä¸Šé¢ä¼¼ä¹è¨˜éŒ„äº†æŸç¨®å¥‡ç‰¹çš„æ­¦å­¸ã€‚\n" NOR);
                 set("material", "steel");
                 set("value", 80000000);
                 set("armor_prop/armor", 3000);
                 set("armor_prop/parry", 200);
-                set("special/desc", "ÓĞĞ§ÕĞ¼ÜÌá¸ß200¼¶¡£\n" +
-                                    "´©ÉÏºó¿ÉÊ©Õ¹µ¶½£¹éÕæÖ®¡¸ÍòÂí±¼ÌÚ¡¹\n"
+                set("special/desc", "æœ‰æ•ˆæ‹›æ¶æé«˜200ç´šã€‚\n" +
+                                    "ç©¿ä¸Šå¾Œå¯æ–½å±•åˆ€åŠæ­¸çœŸä¹‹ã€Œè¬é¦¬å¥”é¨°ã€\n"
                 );
                 set("armor_prop/daojian_ben", 1);
                 set("limit", ([

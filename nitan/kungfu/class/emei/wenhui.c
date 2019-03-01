@@ -1,14 +1,14 @@
 // This program is a part of NT MudLIB
-// wenhui.c ÎÄêÍĞ¡Ê¦Ì«
+// wenhui.c æ–‡æš‰å°å¸«å¤ª
 
 inherit NPC;
 
 void create()
 {
-        set_name("ÎÄêÍĞ¡Ê¦Ì«", ({ "wenhui","wenhui xiaoshitai","xiaoshitai"}));
+        set_name("æ–‡æš‰å°å¸«å¤ª", ({ "wenhui","wenhui xiaoshitai","xiaoshitai"}));
         set("long",
-                "ËıÊÇ¶ëáÒÅÉµÄµÚÎå´úµÜ×Ó¡£\n");
-        set("gender", "Å®ĞÔ");
+                "å¥¹æ˜¯å³¨åµ‹æ´¾çš„ç¬¬äº”ä»£å¼Ÿå­ã€‚\n");
+        set("gender", "å¥³æ€§");
         set("age", 15);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -36,7 +36,7 @@ void create()
         set_temp("apply/defense", 15);
         set_temp("apply/damage", 5);
 
-        create_family("¶ëáÒÅÉ", 5, "µÜ×Ó");
+        create_family("å³¨åµ‹æ´¾", 5, "å¼Ÿå­");
 
         setup();
         carry_object(WEAPON_DIR"changjian")->wield();
@@ -66,7 +66,7 @@ void greeting(object ob)
         if( base_name(environment()) != query("startroom") )
                 return;
 
-        command( "say ÕâÎ»Ê©Ö÷ÇëÏÈÈë×ù£¬ÎÒÕâ¾Í¸øÄúÉÏ²èµã¡£\n");
+        command( "say é€™ä½æ–½ä¸»è«‹å…ˆå…¥åº§ï¼Œæˆ‘é€™å°±çµ¦æ‚¨ä¸ŠèŒ¶é»ã€‚\n");
 }
 
 

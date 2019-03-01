@@ -5,9 +5,9 @@ inherit "/inherit/char/punisher";
 
 void create()
 {
-        set_name("ÌÆÃÅÒşÊ¿", ({ "yin shi", "yin", "shi" }));
-        set("long",  "Ëû¾ÍÊÇÌÆÃÅµÄ¸ßÊÖ£¬¾İËµ³¤ÄêÒş²ØÓÚÉ½ÖĞ¡£\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("å”é–€éš±å£«", ({ "yin shi", "yin", "shi" }));
+        set("long",  "ä»–å°±æ˜¯å”é–€çš„é«˜æ‰‹ï¼Œæ“šèªªé•·å¹´éš±è—äºå±±ä¸­ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 55);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -55,7 +55,7 @@ void create()
 
         prepare_skill("hand", "boyun-suowu");
 
-        create_family("ÌÆÃÅÊÀ¼Ò", 0, "ÒşÊ¿");
+        create_family("å”é–€ä¸–å®¶", 0, "éš±å£«");
 
         set_temp("apply/attack", 100);
         set_temp("apply/damage", 100);

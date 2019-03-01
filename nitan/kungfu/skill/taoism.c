@@ -1,4 +1,4 @@
-// taoism.c ��ѧ�ķ�
+// taoism.c 道學心法
 // Last Modified by winder on Mar. 10 2000
 
 #include <ansi.h>;
@@ -18,28 +18,28 @@ int valid_learn(object me)
 
         lvl = (int)me->query_skill("taoism", 1);
 
-        if( query("gender", me) == "����" && lvl>19 )
-                return notify_fail("�����һ�������������Ժ���ԭ����û������֮\n"
-                           "�����޷��������������仯֮����\n");
+        if( query("gender", me) == "無性" && lvl>19 )
+                return notify_fail("你剛聽一會兒，便覺心智迷糊，原來你沒有陽剛之\n"
+                           "氣，無法領會裡面的陰陽變化之道。\n");
 
         return 1;
 }
 
 int practice_skill(object me)
 {
-        return notify_fail("��ѧ�ķ�ֻ�ܿ�ѧϰ����ߡ�\n");
+        return notify_fail("道學心法只能靠學習來提高。\n");
 }
 
 int help(object me)
 {
-        write(HIC"\n��ѧ�ķ���"NOR"\n");
+        write(HIC"\n道學心法："NOR"\n");
         write(@HELP
 
-    ̫�ϵ��洫�µĵ���������ǧ�����̺��Ĳ�������ķ���
-    ��Ѱ�ҵ��¾��Ķ���
+    太上道祖傳下的道德真言五千字中蘊涵的博大精深的心法。
+    可尋找道德經閱讀。
 
-        ѧϰҪ��
-                �������ķ��������ķ�����������������ͻ����������ܼ�ѧ
+        學習要求：
+                與禪宗心法、密宗心法、紫氳吟、正氣訣和基本毒技不能兼學
 HELP
         );
         return 1;

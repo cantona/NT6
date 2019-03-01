@@ -17,10 +17,10 @@ int ask_xiaoke();
 
 void create()
 {
-    	set_name("ºúÇàÅ£", ({ "hu qingniu", "hu", "qingniu" }));
-    	set("title", YEL"µû¹ÈÒ½ÏÉ"NOR);
-    	set("gender", "ÄĞĞÔ");
-    	set("long", "Ëû¾ÍÊÇÒ½Êõ¸ß³¬µÄ¡¸µû¹ÈÒ½ÏÉ¡¹ºúÇàÅ£¡£\n");
+    	set_name("èƒ¡é’ç‰›", ({ "hu qingniu", "hu", "qingniu" }));
+    	set("title", YEL"è¶è°·é†«ä»™"NOR);
+    	set("gender", "ç”·æ€§");
+    	set("long", "ä»–å°±æ˜¯é†«è¡“é«˜è¶…çš„ã€Œè¶è°·é†«ä»™ã€èƒ¡é’ç‰›ã€‚\n");
     	set("age", 65);
     	set("int", 30);
     	set("qi", 1000);
@@ -38,16 +38,16 @@ void create()
     	set_temp("apply/damage", 50);
        set("inquiry", 
 	([
-    		"ÆĞÌá×Ó":(:ask_puti:),
-    		"ÓñÇåÉ¢":(:ask_yuqing:),
-    		"½ğ´´Ò©":(:ask_jinchuang:),
-    		"Ñø¾«µ¤":(:ask_yangjing:),
-		"¾Å»¨ÓñÂ¶Íè":(:ask_jiuhua:),
-		"¼²·çÖèÓêµ¤":(:ask_jifeng:),
-		"ÕıÈË¾ı×Óµ¤":(:ask_zhengqi:),
-		"ĞÄºİÊÖÀ±µ¤":(:ask_xieqi:),
-		"ÁúÏ¬°Ù²İµ¤":(:ask_longxi:),
-		"Ïû¿ÊÖ¹¶öµ¤":(:ask_xiaoke:),
+    		"è©æå­":(:ask_puti:),
+    		"ç‰æ¸…æ•£":(:ask_yuqing:),
+    		"é‡‘å‰µè—¥":(:ask_jinchuang:),
+    		"é¤Šç²¾ä¸¹":(:ask_yangjing:),
+		"ä¹èŠ±ç‰éœ²ä¸¸":(:ask_jiuhua:),
+		"ç–¾é¢¨é©Ÿé›¨ä¸¹":(:ask_jifeng:),
+		"æ­£äººå›å­ä¸¹":(:ask_zhengqi:),
+		"å¿ƒç‹ æ‰‹è¾£ä¸¹":(:ask_xieqi:),
+		"é¾çŠ€ç™¾è‰ä¸¹":(:ask_longxi:),
+		"æ¶ˆæ¸´æ­¢é¤“ä¸¹":(:ask_xiaoke:),
 
        ]));
      	set("vendor_goods", 	({
@@ -74,16 +74,16 @@ int accept_object(object who, object ob)
 {
     
        if( !query("peifang", who) )
-       	return notify_fail("ºúÇàÅ£ÖåÃ¼ËµµÀ£ºÄã²»ÊÇÃ÷½ÌµÜ×Ó£¬¸øÎÒÇ®£¬ÎÒ¾Í»á¸øÄãÖÎ²¡Âğ£¿\n");
+       	return notify_fail("èƒ¡é’ç‰›çšºçœ‰èªªé“ï¼šä½ ä¸æ˜¯æ˜æ•™å¼Ÿå­ï¼Œçµ¦æˆ‘éŒ¢ï¼Œæˆ‘å°±æœƒçµ¦ä½ æ²»ç—…å—ï¼Ÿ\n");
 
     	if( query("money_id", ob) && ob->value()<100000 )
     	{
-	       return notify_fail("ºúÇàÅ£ÖåÃ¼ËµµÀ£ºÕâÃ´Ò»µãµãÇ®£¬»¹²»¹»¸øÁ¶Ò©Í¯×ÓµÄÁãÓÃÄØ£¡\n");
+	       return notify_fail("èƒ¡é’ç‰›çšºçœ‰èªªé“ï¼šé€™éº¼ä¸€é»é»éŒ¢ï¼Œé‚„ä¸å¤ çµ¦ç…‰è—¥ç«¥å­çš„é›¶ç”¨å‘¢ï¼\n");
     	}
 
     	else if( query("money_id", ob) && ob->value() >= 100000 )
     	{
-        	message_vision ("ºúÇàÅ£ËµµÀ£º"+RANK_D->query_respect(who)+"£¬ÉÏ´ÎµÄÅä·½Á¶²»³öÀ´£¿Ã»¹ØÏµ£¬ÎÒÕâÀïµÄÒ©·½»¹¶à×ÅÄØ¡£\n");
+        	message_vision ("èƒ¡é’ç‰›èªªé“ï¼š"+RANK_D->query_respect(who)+"ï¼Œä¸Šæ¬¡çš„é…æ–¹ç…‰ä¸å‡ºä¾†ï¼Ÿæ²’é—œç³»ï¼Œæˆ‘é€™è£¡çš„è—¥æ–¹é‚„å¤šè‘—å‘¢ã€‚\n");
         delete("peifang", 	who);
         delete("mubiao", 	who);
         	return 1;
@@ -107,13 +107,13 @@ int ask_puti()
 
 	if((int)who->query_skill("liandan-shu",1) < 200)
 	{
-		message_vision ("$NËµµÀ£º"+RANK_D->query_respect(who)+"£¬ÄãµÄÁ¶µ¤ÄÜÁ¦²»×ã£¬²»ÄÜÁ¶ÖÆÆĞÌá×Ó¡£\n",me);
+		message_vision ("$Nèªªé“ï¼š"+RANK_D->query_respect(who)+"ï¼Œä½ çš„ç…‰ä¸¹èƒ½åŠ›ä¸è¶³ï¼Œä¸èƒ½ç…‰åˆ¶è©æå­ã€‚\n",me);
 		return 1;
 	}
 
 	if( query("peifang", who) )
 	{
-		message_vision ("$NËµµÀ£º"+RANK_D->query_respect(who)+"£¬ÎÒÉÏ´Î¸øÄãµÄÅä·½Á¶ºÃÁËÂğ£¿\n",me);
+		message_vision ("$Nèªªé“ï¼š"+RANK_D->query_respect(who)+"ï¼Œæˆ‘ä¸Šæ¬¡çµ¦ä½ çš„é…æ–¹ç…‰å¥½äº†å—ï¼Ÿ\n",me);
 		return 1;
 	}
 
@@ -127,8 +127,8 @@ int ask_puti()
 set("peifang", peifang, 	who);
 set("mubiao", "putizi", 	who);
 
-   	message_vision("$NÂ¶³öÉîË¼µÄÉñÉ«£¬¶Ô$nËµµÀ£ºÆĞÌá×ÓµÄÅä·½Âğ£¿ÎÒÕâÀïÕıºÃÓĞÒ»¸ö£¬µ«ÊÇĞèÒª"+query("name", gen)+"¡¢"
-	+query("name", mu)+"¡¢"+query("name", cao)+"¡¢"+query("name", hua)+"¡¢"+query("name", guo)+"ÕâÎåÎ¶Ò©²Ä²ÅÄÜÁ¶³É¡£\n",me,who);
+   	message_vision("$Néœ²å‡ºæ·±æ€çš„ç¥è‰²ï¼Œå°$nèªªé“ï¼šè©æå­çš„é…æ–¹å—ï¼Ÿæˆ‘é€™è£¡æ­£å¥½æœ‰ä¸€å€‹ï¼Œä½†æ˜¯éœ€è¦"+query("name", gen)+"ã€"
+	+query("name", mu)+"ã€"+query("name", cao)+"ã€"+query("name", hua)+"ã€"+query("name", guo)+"é€™äº”å‘³è—¥ææ‰èƒ½ç…‰æˆã€‚\n",me,who);
 	destruct(gen);
 	destruct(mu);
 	destruct(cao);
@@ -152,13 +152,13 @@ int ask_yuqing()
 
 	if((int)who->query_skill("liandan-shu",1) < 200)
 	{
-		message_vision ("$NËµµÀ£º"+RANK_D->query_respect(who)+"£¬ÄãµÄÁ¶µ¤ÄÜÁ¦²»×ã£¬²»ÄÜÁ¶ÖÆÓñÇåÉ¢¡£\n",me);
+		message_vision ("$Nèªªé“ï¼š"+RANK_D->query_respect(who)+"ï¼Œä½ çš„ç…‰ä¸¹èƒ½åŠ›ä¸è¶³ï¼Œä¸èƒ½ç…‰åˆ¶ç‰æ¸…æ•£ã€‚\n",me);
 		return 1;
 	}
 
 	if( query("peifang", who) )
 	{
-		message_vision ("$NËµµÀ£º"+RANK_D->query_respect(who)+"£¬ÎÒÉÏ´Î¸øÄãµÄÅä·½Á¶ºÃÁËÂğ£¿\n",me);
+		message_vision ("$Nèªªé“ï¼š"+RANK_D->query_respect(who)+"ï¼Œæˆ‘ä¸Šæ¬¡çµ¦ä½ çš„é…æ–¹ç…‰å¥½äº†å—ï¼Ÿ\n",me);
 		return 1;
 	}
 
@@ -173,8 +173,8 @@ set("peifang", peifang, 	who);
 set("mubiao", "yuqingsan", 	who);
 
 
-   	message_vision("$NÂ¶³öÉîË¼µÄÉñÉ«£¬¶Ô$nËµµÀ£ºÓñÇåÉ¢µÄÅä·½Âğ£¿ÎÒÕâÀïÕıºÃÓĞÒ»¸ö£¬µ«ÊÇĞèÒª"+query("name", gen)+"¡¢"
-	+query("name", mu)+"¡¢"+query("name", cao)+"¡¢"+query("name", hua)+"¡¢"+query("name", guo)+"ÕâÎåÎ¶Ò©²Ä²ÅÄÜÁ¶³É¡£\n",me,who);
+   	message_vision("$Néœ²å‡ºæ·±æ€çš„ç¥è‰²ï¼Œå°$nèªªé“ï¼šç‰æ¸…æ•£çš„é…æ–¹å—ï¼Ÿæˆ‘é€™è£¡æ­£å¥½æœ‰ä¸€å€‹ï¼Œä½†æ˜¯éœ€è¦"+query("name", gen)+"ã€"
+	+query("name", mu)+"ã€"+query("name", cao)+"ã€"+query("name", hua)+"ã€"+query("name", guo)+"é€™äº”å‘³è—¥ææ‰èƒ½ç…‰æˆã€‚\n",me,who);
 	destruct(gen);
 	destruct(mu);
 	destruct(cao);
@@ -195,7 +195,7 @@ int ask_yangjing()
 
 	if( query("peifang", who) )
 	{
-		message_vision ("$NËµµÀ£º"+RANK_D->query_respect(who)+"£¬ÎÒÉÏ´Î¸øÄãµÄÅä·½Á¶ºÃÁËÂğ£¿\n",me);
+		message_vision ("$Nèªªé“ï¼š"+RANK_D->query_respect(who)+"ï¼Œæˆ‘ä¸Šæ¬¡çµ¦ä½ çš„é…æ–¹ç…‰å¥½äº†å—ï¼Ÿ\n",me);
 		return 1;
 	}
 
@@ -206,8 +206,8 @@ set("peifang", peifang, 	who);
 set("mubiao", "yangjing", 	who);
 
 
-   	message_vision("$NÂ¶³öÉîË¼µÄÉñÉ«£¬¶Ô$nËµµÀ£ºÑø¾«µ¤µÄÅä·½Âğ£¿ÎÒÕâÀïÕıºÃÓĞÒ»¸ö£¬µ«ÊÇĞèÒª"+query("name", gen)+"¡¢"
-	+query("name", mu)+"ÕâÁ½Î¶Ò©²Ä²ÅÄÜÁ¶³É¡£\n",me,who);
+   	message_vision("$Néœ²å‡ºæ·±æ€çš„ç¥è‰²ï¼Œå°$nèªªé“ï¼šé¤Šç²¾ä¸¹çš„é…æ–¹å—ï¼Ÿæˆ‘é€™è£¡æ­£å¥½æœ‰ä¸€å€‹ï¼Œä½†æ˜¯éœ€è¦"+query("name", gen)+"ã€"
+	+query("name", mu)+"é€™å…©å‘³è—¥ææ‰èƒ½ç…‰æˆã€‚\n",me,who);
 	destruct(gen);
 	destruct(mu);
 	return 1;
@@ -224,7 +224,7 @@ int ask_jinchuang()
 
 	if( query("peifang", who) )
 	{
-		message_vision ("$NËµµÀ£º"+RANK_D->query_respect(who)+"£¬ÎÒÉÏ´Î¸øÄãµÄÅä·½Á¶ºÃÁËÂğ£¿\n",me);
+		message_vision ("$Nèªªé“ï¼š"+RANK_D->query_respect(who)+"ï¼Œæˆ‘ä¸Šæ¬¡çµ¦ä½ çš„é…æ–¹ç…‰å¥½äº†å—ï¼Ÿ\n",me);
 		return 1;
 	}
 
@@ -235,8 +235,8 @@ addn("peifang", peifang, 	who);
 set("mubiao", "jinchuang", 	who);
 
 
-   	message_vision("$NÂ¶³öÉîË¼µÄÉñÉ«£¬¶Ô$nËµµÀ£º½ğ´´Ò©µÄÅä·½Âğ£¿ÎÒÕâÀïÕıºÃÓĞÒ»¸ö£¬µ«ÊÇĞèÒª"+query("name", gen)+"¡¢"
-	+query("name", cao)+"ÕâÁ½Î¶Ò©²Ä²ÅÄÜÁ¶³É¡£\n",me,who);
+   	message_vision("$Néœ²å‡ºæ·±æ€çš„ç¥è‰²ï¼Œå°$nèªªé“ï¼šé‡‘å‰µè—¥çš„é…æ–¹å—ï¼Ÿæˆ‘é€™è£¡æ­£å¥½æœ‰ä¸€å€‹ï¼Œä½†æ˜¯éœ€è¦"+query("name", gen)+"ã€"
+	+query("name", cao)+"é€™å…©å‘³è—¥ææ‰èƒ½ç…‰æˆã€‚\n",me,who);
 	destruct(gen);
 	destruct(cao);
 	return 1;
@@ -255,13 +255,13 @@ int ask_jiuhua()
 
 	if((int)who->query_skill("liandan-shu",1) < 50)
 	{
-		message_vision ("$NËµµÀ£º"+RANK_D->query_respect(who)+"£¬ÄãµÄÁ¶µ¤ÄÜÁ¦²»×ã£¬²»ÄÜÁ¶ÖÆ¾Å»¨ÓñÂ¶Íè¡£\n",me);
+		message_vision ("$Nèªªé“ï¼š"+RANK_D->query_respect(who)+"ï¼Œä½ çš„ç…‰ä¸¹èƒ½åŠ›ä¸è¶³ï¼Œä¸èƒ½ç…‰åˆ¶ä¹èŠ±ç‰éœ²ä¸¸ã€‚\n",me);
 		return 1;
 	}
 
 	if( query("peifang", who) )
 	{
-		message_vision ("$NËµµÀ£º"+RANK_D->query_respect(who)+"£¬ÎÒÉÏ´Î¸øÄãµÄÅä·½Á¶ºÃÁËÂğ£¿\n",me);
+		message_vision ("$Nèªªé“ï¼š"+RANK_D->query_respect(who)+"ï¼Œæˆ‘ä¸Šæ¬¡çµ¦ä½ çš„é…æ–¹ç…‰å¥½äº†å—ï¼Ÿ\n",me);
 		return 1;
 	}
 
@@ -274,8 +274,8 @@ set("peifang", peifang, 	who);
 set("mubiao", "jiuhuawan", 	who);
 
 
-   	message_vision("$NÂ¶³öÉîË¼µÄÉñÉ«£¬¶Ô$nËµµÀ£º¾Å»¨ÓñÂ¶ÍèµÄÅä·½Âğ£¿ÎÒÕâÀïÕıºÃÓĞÒ»¸ö£¬µ«ÊÇĞèÒª"+query("name", gen)+"¡¢"
-	+query("name", mu)+"¡¢"+query("name", cao)+"ÕâÈıÎ¶Ò©²Ä²ÅÄÜÁ¶³É¡£\n",me,who);
+   	message_vision("$Néœ²å‡ºæ·±æ€çš„ç¥è‰²ï¼Œå°$nèªªé“ï¼šä¹èŠ±ç‰éœ²ä¸¸çš„é…æ–¹å—ï¼Ÿæˆ‘é€™è£¡æ­£å¥½æœ‰ä¸€å€‹ï¼Œä½†æ˜¯éœ€è¦"+query("name", gen)+"ã€"
+	+query("name", mu)+"ã€"+query("name", cao)+"é€™ä¸‰å‘³è—¥ææ‰èƒ½ç…‰æˆã€‚\n",me,who);
 	destruct(gen);
 	destruct(mu);
 	destruct(cao);
@@ -295,13 +295,13 @@ int ask_jifeng()
 
 	if((int)who->query_skill("liandan-shu",1) < 50)
 	{
-		message_vision ("$NËµµÀ£º"+RANK_D->query_respect(who)+"£¬ÄãµÄÁ¶µ¤ÄÜÁ¦²»×ã£¬²»ÄÜÁ¶ÖÆ¼²·çÖèÓêµ¤¡£\n",me);
+		message_vision ("$Nèªªé“ï¼š"+RANK_D->query_respect(who)+"ï¼Œä½ çš„ç…‰ä¸¹èƒ½åŠ›ä¸è¶³ï¼Œä¸èƒ½ç…‰åˆ¶ç–¾é¢¨é©Ÿé›¨ä¸¹ã€‚\n",me);
 		return 1;
 	}
 
 	if( query("peifang", who) )
 	{
-		message_vision ("$NËµµÀ£º"+RANK_D->query_respect(who)+"£¬ÎÒÉÏ´Î¸øÄãµÄÅä·½Á¶ºÃÁËÂğ£¿\n",me);
+		message_vision ("$Nèªªé“ï¼š"+RANK_D->query_respect(who)+"ï¼Œæˆ‘ä¸Šæ¬¡çµ¦ä½ çš„é…æ–¹ç…‰å¥½äº†å—ï¼Ÿ\n",me);
 		return 1;
 	}
 
@@ -314,8 +314,8 @@ set("peifang", peifang, 	who);
 set("mubiao", "jifengdan", 	who);
 
 
-   	message_vision("$NÂ¶³öÉîË¼µÄÉñÉ«£¬¶Ô$nËµµÀ£º¼²·çÖèÓêµ¤µÄÅä·½Âğ£¿ÎÒÕâÀïÕıºÃÓĞÒ»¸ö£¬µ«ÊÇĞèÒª"+query("name", gen)+"¡¢"
-	+query("name", mu)+"¡¢"+query("name", cao)+"ÕâÈıÎ¶Ò©²Ä²ÅÄÜÁ¶³É¡£\n",me,who);
+   	message_vision("$Néœ²å‡ºæ·±æ€çš„ç¥è‰²ï¼Œå°$nèªªé“ï¼šç–¾é¢¨é©Ÿé›¨ä¸¹çš„é…æ–¹å—ï¼Ÿæˆ‘é€™è£¡æ­£å¥½æœ‰ä¸€å€‹ï¼Œä½†æ˜¯éœ€è¦"+query("name", gen)+"ã€"
+	+query("name", mu)+"ã€"+query("name", cao)+"é€™ä¸‰å‘³è—¥ææ‰èƒ½ç…‰æˆã€‚\n",me,who);
 	destruct(gen);
 	destruct(mu);
 	destruct(cao);
@@ -336,13 +336,13 @@ int ask_zhengqi()
 
 	if((int)who->query_skill("liandan-shu",1) < 100)
 	{
-		message_vision ("$NËµµÀ£º"+RANK_D->query_respect(who)+"£¬ÄãµÄÁ¶µ¤ÄÜÁ¦²»×ã£¬²»ÄÜÁ¶ÖÆÕıÈË¾ı×Óµ¤¡£\n",me);
+		message_vision ("$Nèªªé“ï¼š"+RANK_D->query_respect(who)+"ï¼Œä½ çš„ç…‰ä¸¹èƒ½åŠ›ä¸è¶³ï¼Œä¸èƒ½ç…‰åˆ¶æ­£äººå›å­ä¸¹ã€‚\n",me);
 		return 1;
 	}
 
 	if( query("peifang", who) )
 	{
-		message_vision ("$NËµµÀ£º"+RANK_D->query_respect(who)+"£¬ÎÒÉÏ´Î¸øÄãµÄÅä·½Á¶ºÃÁËÂğ£¿\n",me);
+		message_vision ("$Nèªªé“ï¼š"+RANK_D->query_respect(who)+"ï¼Œæˆ‘ä¸Šæ¬¡çµ¦ä½ çš„é…æ–¹ç…‰å¥½äº†å—ï¼Ÿ\n",me);
 		return 1;
 	}
 
@@ -356,8 +356,8 @@ set("peifang", peifang, 	who);
 set("mubiao", "zhengrendan", 	who);
 
 
-   	message_vision("$NÂ¶³öÉîË¼µÄÉñÉ«£¬¶Ô$nËµµÀ£ºÕıÈË¾ı×Óµ¤µÄÅä·½Âğ£¿ÎÒÕâÀïÕıºÃÓĞÒ»¸ö£¬µ«ÊÇĞèÒª"+query("name", gen)+"¡¢"
-	+query("name", mu)+"¡¢"+query("name", cao)+"¡¢"+query("name", hua)+"ÕâËÄÎ¶Ò©²Ä²ÅÄÜÁ¶³É¡£\n",me,who);
+   	message_vision("$Néœ²å‡ºæ·±æ€çš„ç¥è‰²ï¼Œå°$nèªªé“ï¼šæ­£äººå›å­ä¸¹çš„é…æ–¹å—ï¼Ÿæˆ‘é€™è£¡æ­£å¥½æœ‰ä¸€å€‹ï¼Œä½†æ˜¯éœ€è¦"+query("name", gen)+"ã€"
+	+query("name", mu)+"ã€"+query("name", cao)+"ã€"+query("name", hua)+"é€™å››å‘³è—¥ææ‰èƒ½ç…‰æˆã€‚\n",me,who);
 	destruct(gen);
 	destruct(mu);
 	destruct(cao);
@@ -378,13 +378,13 @@ int ask_xieqi()
 
 	if((int)who->query_skill("liandan-shu",1) < 100)
 	{
-		message_vision ("$NËµµÀ£º"+RANK_D->query_respect(who)+"£¬ÄãµÄÁ¶µ¤ÄÜÁ¦²»×ã£¬²»ÄÜÁ¶ÖÆĞÄºİÊÖÀ±µ¤¡£\n",me);
+		message_vision ("$Nèªªé“ï¼š"+RANK_D->query_respect(who)+"ï¼Œä½ çš„ç…‰ä¸¹èƒ½åŠ›ä¸è¶³ï¼Œä¸èƒ½ç…‰åˆ¶å¿ƒç‹ æ‰‹è¾£ä¸¹ã€‚\n",me);
 		return 1;
 	}
 
 	if( query("peifang", who) )
 	{
-		message_vision ("$NËµµÀ£º"+RANK_D->query_respect(who)+"£¬ÎÒÉÏ´Î¸øÄãµÄÅä·½Á¶ºÃÁËÂğ£¿\n",me);
+		message_vision ("$Nèªªé“ï¼š"+RANK_D->query_respect(who)+"ï¼Œæˆ‘ä¸Šæ¬¡çµ¦ä½ çš„é…æ–¹ç…‰å¥½äº†å—ï¼Ÿ\n",me);
 		return 1;
 	}
 
@@ -398,8 +398,8 @@ set("peifang", peifang, 	who);
 set("mubiao", "xinhendan", 	who);
 
 
-   	message_vision("$NÂ¶³öÉîË¼µÄÉñÉ«£¬¶Ô$nËµµÀ£ºĞÄºİÊÖÀ±µ¤µÄÅä·½Âğ£¿ÎÒÕâÀïÕıºÃÓĞÒ»¸ö£¬µ«ÊÇĞèÒª"+query("name", gen)+"¡¢"
-	+query("name", mu)+"¡¢"+query("name", cao)+"¡¢"+query("name", guo)+"ÕâËÄÎ¶Ò©²Ä²ÅÄÜÁ¶³É¡£\n",me,who);
+   	message_vision("$Néœ²å‡ºæ·±æ€çš„ç¥è‰²ï¼Œå°$nèªªé“ï¼šå¿ƒç‹ æ‰‹è¾£ä¸¹çš„é…æ–¹å—ï¼Ÿæˆ‘é€™è£¡æ­£å¥½æœ‰ä¸€å€‹ï¼Œä½†æ˜¯éœ€è¦"+query("name", gen)+"ã€"
+	+query("name", mu)+"ã€"+query("name", cao)+"ã€"+query("name", guo)+"é€™å››å‘³è—¥ææ‰èƒ½ç…‰æˆã€‚\n",me,who);
 	destruct(gen);
 	destruct(mu);
 	destruct(cao);
@@ -422,13 +422,13 @@ int ask_longxi()
 
 	if((int)who->query_skill("liandan-shu",1) < 200)
 	{
-		message_vision ("$NËµµÀ£º"+RANK_D->query_respect(who)+"£¬ÄãµÄÁ¶µ¤ÄÜÁ¦²»×ã£¬²»ÄÜÁ¶ÖÆÁúÏ¬°Ù²İµ¤¡£\n",me);
+		message_vision ("$Nèªªé“ï¼š"+RANK_D->query_respect(who)+"ï¼Œä½ çš„ç…‰ä¸¹èƒ½åŠ›ä¸è¶³ï¼Œä¸èƒ½ç…‰åˆ¶é¾çŠ€ç™¾è‰ä¸¹ã€‚\n",me);
 		return 1;
 	}
 
 	if( query("peifang", who) )
 	{
-		message_vision ("$NËµµÀ£º"+RANK_D->query_respect(who)+"£¬ÎÒÉÏ´Î¸øÄãµÄÅä·½Á¶ºÃÁËÂğ£¿\n",me);
+		message_vision ("$Nèªªé“ï¼š"+RANK_D->query_respect(who)+"ï¼Œæˆ‘ä¸Šæ¬¡çµ¦ä½ çš„é…æ–¹ç…‰å¥½äº†å—ï¼Ÿ\n",me);
 		return 1;
 	}
 
@@ -443,8 +443,8 @@ set("peifang", peifang, 	who);
 set("mubiao", "longxidan", 	who);
 
 
-   	message_vision("$NÂ¶³öÉîË¼µÄÉñÉ«£¬¶Ô$nËµµÀ£ºÁúÏ¬°Ù²İµ¤µÄÅä·½Âğ£¿ÎÒÕâÀïÕıºÃÓĞÒ»¸ö£¬µ«ÊÇĞèÒª"+query("name", gen)+"¡¢"
-	+query("name", mu)+"¡¢"+query("name", cao)+"¡¢"+query("name", hua)+"¡¢"+query("name", guo)+"ÕâÎåÎ¶Ò©²Ä²ÅÄÜÁ¶³É¡£\n",me,who);
+   	message_vision("$Néœ²å‡ºæ·±æ€çš„ç¥è‰²ï¼Œå°$nèªªé“ï¼šé¾çŠ€ç™¾è‰ä¸¹çš„é…æ–¹å—ï¼Ÿæˆ‘é€™è£¡æ­£å¥½æœ‰ä¸€å€‹ï¼Œä½†æ˜¯éœ€è¦"+query("name", gen)+"ã€"
+	+query("name", mu)+"ã€"+query("name", cao)+"ã€"+query("name", hua)+"ã€"+query("name", guo)+"é€™äº”å‘³è—¥ææ‰èƒ½ç…‰æˆã€‚\n",me,who);
 	destruct(gen);
 	destruct(mu);
 	destruct(cao);
@@ -466,13 +466,13 @@ int ask_xiaoke()
 
 	if((int)who->query_skill("liandan-shu",1) < 50)
 	{
-		message_vision ("$NËµµÀ£º"+RANK_D->query_respect(who)+"£¬ÄãµÄÁ¶µ¤ÄÜÁ¦²»×ã£¬²»ÄÜÁ¶ÖÆÏû¿ÊÖ¹¶öµ¤¡£\n",me);
+		message_vision ("$Nèªªé“ï¼š"+RANK_D->query_respect(who)+"ï¼Œä½ çš„ç…‰ä¸¹èƒ½åŠ›ä¸è¶³ï¼Œä¸èƒ½ç…‰åˆ¶æ¶ˆæ¸´æ­¢é¤“ä¸¹ã€‚\n",me);
 		return 1;
 	}
 
 	if( query("peifang", who) )
 	{
-		message_vision ("$NËµµÀ£º"+RANK_D->query_respect(who)+"£¬ÎÒÉÏ´Î¸øÄãµÄÅä·½Á¶ºÃÁËÂğ£¿\n",me);
+		message_vision ("$Nèªªé“ï¼š"+RANK_D->query_respect(who)+"ï¼Œæˆ‘ä¸Šæ¬¡çµ¦ä½ çš„é…æ–¹ç…‰å¥½äº†å—ï¼Ÿ\n",me);
 		return 1;
 	}
 
@@ -485,8 +485,8 @@ set("peifang", peifang, 	who);
 set("mubiao", "xiaokedan", 	who);
 
 
-   	message_vision("$NÂ¶³öÉîË¼µÄÉñÉ«£¬¶Ô$nËµµÀ£ºÏû¿ÊÖ¹¶öµ¤µÄÅä·½Âğ£¿ÎÒÕâÀïÕıºÃÓĞÒ»¸ö£¬µ«ÊÇĞèÒª"+query("name", gen)+"¡¢"
-	+query("name", mu)+"¡¢"+query("name", cao)+"ÕâÈıÎ¶Ò©²Ä²ÅÄÜÁ¶³É¡£\n",me,who);
+   	message_vision("$Néœ²å‡ºæ·±æ€çš„ç¥è‰²ï¼Œå°$nèªªé“ï¼šæ¶ˆæ¸´æ­¢é¤“ä¸¹çš„é…æ–¹å—ï¼Ÿæˆ‘é€™è£¡æ­£å¥½æœ‰ä¸€å€‹ï¼Œä½†æ˜¯éœ€è¦"+query("name", gen)+"ã€"
+	+query("name", mu)+"ã€"+query("name", cao)+"é€™ä¸‰å‘³è—¥ææ‰èƒ½ç…‰æˆã€‚\n",me,who);
 	destruct(gen);
 	destruct(mu);
 	destruct(cao);

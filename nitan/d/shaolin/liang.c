@@ -4,17 +4,17 @@ inherit ROOM;
 
 void create()
 { 
-       set("short","²Ø¾­¸ó·¿Áº");
+       set("short","è—ç¶“é–£æˆ¿æ¨‘");
         set("long", @LONG
-ÄãÏÖÔÚÔÚ²Ø¾­¸óµÄ·¿ÁºÉÏËÄÏÂ¹ÛÇÆ£¬ÖÜÎ§¶¼ÊÇÒ»Ð©¸ß´óµÄÊé¼Ü(s
-hujia)¡£
+ä½ ç¾åœ¨åœ¨è—ç¶“é–£çš„æˆ¿æ¨‘ä¸Šå››ä¸‹è§€çž§ï¼Œå‘¨åœéƒ½æ˜¯ä¸€äº›é«˜å¤§çš„æ›¸æž¶(s
+hujia)ã€‚
 LONG );
         set("exits", ([
                 "down" : __DIR__"cjlou1",
         ]));       
         set("item_desc", ([
-                "shujia" : "Êé¼Ü¶¥ÉÏ»ýÂúÁËºñºñµÄ»Ò³¾¡£\n",
-                "Êé¼Ü"   : "Êé¼Ü¶¥ÉÏ»ýÂúÁËºñºñµÄ»Ò³¾¡£\n",
+                "shujia" : "æ›¸æž¶é ‚ä¸Šç©æ»¿äº†åŽšåŽšçš„ç°å¡µã€‚\n",
+                "æ›¸æž¶"   : "æ›¸æž¶é ‚ä¸Šç©æ»¿äº†åŽšåŽšçš„ç°å¡µã€‚\n",
         ]) ); 
         set("objects", ([
                 "/d/shaolin/obj/muban" : 1,
@@ -37,15 +37,15 @@ int do_jump(string arg)
                 return 0;
         if( arg == "shujia" )
         {
-                if( query_temp("marks/Ìø1", me) )
+                if( query_temp("marks/è·³1", me) )
                 {
                         if (me->query_skill("dodge",1)<100)
-                                write("ÄãÊÔÍ¼ÌøÉÏÊé¼ÜµÄ¶¥¶Ë£¬µ«ÀÏÊÇÌø²»ÉÏÈ¥¡£\n");
+                                write("ä½ è©¦åœ–è·³ä¸Šæ›¸æž¶çš„é ‚ç«¯ï¼Œä½†è€æ˜¯è·³ä¸ä¸ŠåŽ»ã€‚\n");
                         else 
                         {
-                                write("Äã×ÝÉíÔ¾ÉÏÁËÊé¼Ü¶¥¶Ë¡£\n");
+                                write("ä½ ç¸±èº«èºä¸Šäº†æ›¸æž¶é ‚ç«¯ã€‚\n");
                                 message("vision",
-                                        me->name() + "Ò»×ÝÉíÔ¾ÉÏÁËÊé¼Ü¶¥¶Ë¡£\n",
+                                        me->name() + "ä¸€ç¸±èº«èºä¸Šäº†æ›¸æž¶é ‚ç«¯ã€‚\n",
                                         environment(me), ({me}) );
                                 me->move("/d/shaolin/shujiad");
 
@@ -58,7 +58,7 @@ int do_jump(string arg)
 
 int valid_leave(object me, string dir)
 {
-        delete_temp("marks/Ìø1", me);
+        delete_temp("marks/è·³1", me);
         return ::valid_leave(me, dir);
 }
 

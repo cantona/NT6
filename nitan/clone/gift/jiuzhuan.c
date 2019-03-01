@@ -1,20 +1,20 @@
-// jiuzhuan.c ¾Å×ª½ğµ¤
+// jiuzhuan.c ä¹è½‰é‡‘ä¸¹
 
 #include <ansi.h>
 #include "gift.h"
 
 void create()
 {
-        set_name(HIY "¾Å×ª½ğµ¤" NOR, ({ "jiuzhuan jindan", "dan" }) );
+        set_name(HIY "ä¹è½‰é‡‘ä¸¹" NOR, ({ "jiuzhuan jindan", "dan" }) );
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¿Å½ğÉ«µÄÏÉµ¤£¬´«ËµÊÇÌ«ÉÏÀÏ¾ı"
-                              "¾«ĞÄĞŞÁ¶µÄÁéµ¤ÃîÒ©¡£³É¹¦¼¸ÂÊ100%"
-                            "Ôö¼ÓÏÈÌì¸÷ËÄµã\n");
+                set("long", "ä¸€é¡†é‡‘è‰²çš„ä»™ä¸¹ï¼Œå‚³èªªæ˜¯å¤ªä¸Šè€å›"
+                              "ç²¾å¿ƒä¿®ç…‰çš„éˆä¸¹å¦™è—¥ã€‚æˆåŠŸå¹¾ç‡100%"
+                            "å¢åŠ å…ˆå¤©å„å››é»\n");
                 set("base_value", 150000);
                 set("base_weight", 200);
-                set("base_unit", "¿Å");
+                set("base_unit", "é¡†");
                 set("only_do_effect", 1);
         }       
         setup();
@@ -25,17 +25,17 @@ int do_effect(object me)
         int effect;
 
         /*
-        log_file("static/using", sprintf("%s(%s) eat ¾Å×ª½ğµ¤ at %s.\n",
+        log_file("static/using", sprintf("%s(%s) eat ä¹è½‰é‡‘ä¸¹ at %s.\n",
                  me->name(1),query("id", me),ctime(time())));
         */
 
         effect = 0;
-        message_vision("$NÒ»Ñö²±£¬ÍÌÏÂÁËÒ»¿Å" + this_object()->name() +
-                       "¡£\n", me);
+        message_vision("$Nä¸€ä»°è„–ï¼Œåä¸‹äº†ä¸€é¡†" + this_object()->name() +
+                       "ã€‚\n", me);
         if( query("gift/int/succeed", me)<4 && random(2) )
         {
                 effect++;
-                write(HIM "Äã¾õµÃ×Ô¼ºµÄÍ·ÄÔ¸üÇåĞÑÁË¡£\n" NOR);
+                write(HIM "ä½ è¦ºå¾—è‡ªå·±çš„é ­è…¦æ›´æ¸…é†’äº†ã€‚\n" NOR);
                 addn("gift/xiandan", 1, me);
                 addn("gift/int/succeed", 1, me);
                 addn("int", 1, me);
@@ -44,7 +44,7 @@ int do_effect(object me)
         if( query("gift/dex/succeed", me)<4 && random(2) )
         {
                 effect++;
-                write(HIR "Äã¾õµÃ×Ô¼ºµÄÍÈ½Å¸üÁé»îÁË¡£\n" NOR);
+                write(HIR "ä½ è¦ºå¾—è‡ªå·±çš„è…¿è…³æ›´éˆæ´»äº†ã€‚\n" NOR);
                 addn("gift/unknowdan", 1, me);
                 addn("dex", 1, me);
                 addn("gift/dex/succeed", 1, me);
@@ -53,7 +53,7 @@ int do_effect(object me)
         if( query("gift/con/succeed", me)<4 && random(2) )
         {
                 effect++;
-                write(HIC "Äã¾õµÃ×Ô¼ºµÄÄÚÏ¢¸üÍ¨³©ÁË¡£\n" NOR);
+                write(HIC "ä½ è¦ºå¾—è‡ªå·±çš„å…§æ¯æ›´é€šæš¢äº†ã€‚\n" NOR);
                 addn("gift/xisuidan", 1, me);
                 addn("con", 1, me);
                 addn("gift/con/succeed", 1, me);
@@ -62,13 +62,13 @@ int do_effect(object me)
         if( query("gift/str/succeed", me)<4 && random(2) )
         {
                 effect++;
-                write(HIG "Äã¾õµÃ×Ô¼ºµÄëöÁ¦¸üÇ¿½¡ÁË¡£\n" NOR);
+                write(HIG "ä½ è¦ºå¾—è‡ªå·±çš„è†‚åŠ›æ›´å¼·å¥äº†ã€‚\n" NOR);
                 addn("gift/shenliwan", 1, me);
                 addn("str", 1, me);
                 addn("gift/str/succeed", 1, me);
         }
 
-        write(HIM "Ú¤Ú¤ÖĞÄãÓĞËù¸ĞÎò¡£Ö»¾õµÃÁéÌ¨Ò»Æ¬¿ÕÃ÷£¬´¿¾»ÎŞ±È¡£\n" NOR);
+        write(HIM "å†¥å†¥ä¸­ä½ æœ‰æ‰€æ„Ÿæ‚Ÿã€‚åªè¦ºå¾—éˆå°ä¸€ç‰‡ç©ºæ˜ï¼Œç´”å‡ˆç„¡æ¯”ã€‚\n" NOR);
         addn("magic_points", 1000+random(1000), me);
 
         add_amount(-1);

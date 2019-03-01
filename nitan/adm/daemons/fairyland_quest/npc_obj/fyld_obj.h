@@ -7,7 +7,7 @@ void setme( int iii )
 {
 //    if( iii == 99 )
 //        iii = random(3);
-// ÆäËûÎÄ¼şÄÚÊ¹ÓÃÕâ¸ö·½Ê½Ëæ»ú  set.
+// å…¶ä»–æ–‡ä»¶å…§ä½¿ç”¨é€™å€‹æ–¹å¼éš¨æ©Ÿ  set.
 
     set( "iii", iii );
 
@@ -15,15 +15,15 @@ void setme( int iii )
     set_weight(100);
     if( !query( "host_id") ) set("host_id","----");
     set("hj_game/obj",my_mark);
-    set("msg", MAG"°ë¿ÕÖĞºöµØµôÏÂÒ»¼şÎïÊÂ£¬ÏñÊÇÒ»¼ş±¦Îï£¡\n"NOR);
+    set("msg", MAG"åŠç©ºä¸­å¿½åœ°æ‰ä¸‹ä¸€ä»¶ç‰©äº‹ï¼Œåƒæ˜¯ä¸€ä»¶å¯¶ç‰©ï¼\n"NOR);
     if( iii !=3 )
         set("long", longs[ iii ]+query("host_id")+"\n");
     else set("long", longs[ iii ]+"\n");
     set("unit", units[ iii ]);
-    set("value", 1);  // ¸ÃÎï¼şÈÓÏÂºó²»»áÏûÊ§¡£
+    set("value", 1);  // è©²ç‰©ä»¶æ‰”ä¸‹å¾Œä¸æœƒæ¶ˆå¤±ã€‚
 
     set("pivotal",pivotal[ iii ] );
-    set("no_refresh", 1);  // ÓĞ´ËÉèÖÃÊ±£¬ÔÚ no_clean_up µÄ·¿¼äÄÚ£¬²»»á±»Ë¢ĞÂµô£¡
+    set("no_refresh", 1);  // æœ‰æ­¤è¨­ç½®æ™‚ï¼Œåœ¨ no_clean_up çš„æˆ¿é–“å…§ï¼Œä¸æœƒè¢«åˆ·æ–°æ‰ï¼
 
     remove_call_out( "checking" );
     remove_call_out( "delete_me" );
@@ -42,7 +42,7 @@ void init()
     add_action("do_zuhe","zuhe");
 }
 
-// Èç¹û¸ÃOBJµÄÁ¥ÊôÍæ¼Ò²»´æÔÚ»òÒÑÍË³öÓÎÏ·£¬±¾OBJÇå³ı¡£
+// å¦‚æœè©²OBJçš„éš¸å±¬ç©å®¶ä¸å­˜åœ¨æˆ–å·²é€€å‡ºéŠæˆ²ï¼Œæœ¬OBJæ¸…é™¤ã€‚
 void checking()
 {
     object my_host;
@@ -81,20 +81,20 @@ int do_zuhe(string arg)
     if( query("id", ob) == ids[3])return 0;
 
     if( query("pivotal", ob) != "yes" )
-        return notify_fail(query("name", ob)+"²»ÊÇ×îÖØÒªµÄ²¿·Ö£¬²»ÄÜÓÉËü¿ªÊ¼×éºÏ¡£\n");
+        return notify_fail(query("name", ob)+"ä¸æ˜¯æœ€é‡è¦çš„éƒ¨åˆ†ï¼Œä¸èƒ½ç”±å®ƒé–‹å§‹çµ„åˆã€‚\n");
 
     need1=ob;
     need2=present(ids[1],me);
     need3=present(ids[2],me);
 
     if(!need1 || !need2 || !need3)
-        return notify_fail("ËùÓĞµÄ²¿·Ö»¹Î´ÕÒÈ«ÄØ¡£\n");
+        return notify_fail("æ‰€æœ‰çš„éƒ¨åˆ†é‚„æœªæ‰¾å…¨å‘¢ã€‚\n");
 
-    message_vision(my_color+"$N"NOR""+my_color+"È¡³ö"+names[0]+my_color+"¡¢"+names[1]+my_color+"ºÍ"+names[2]+my_color+"£¬°ÑËüÃÇ×éºÏ³ÉÁË"+my_msg+"µÄ±¦Îï¡ª¡ª"+names[4]+my_color+"£¡\n"NOR,me);
+    message_vision(my_color+"$N"NOR""+my_color+"å–å‡º"+names[0]+my_color+"ã€"+names[1]+my_color+"å’Œ"+names[2]+my_color+"ï¼ŒæŠŠå®ƒå€‘çµ„åˆæˆäº†"+my_msg+"çš„å¯¶ç‰©â”€â”€"+names[4]+my_color+"ï¼\n"NOR,me);
 
     ok_obj=new(base_name(this_object()));
 
-    if(!ok_obj) return notify_fail(HIR"¸ÃÎÄ¼şÂ·¾¶»òÎÄ¼şÃûÒÑ¾­¸ü¸Ä£¬ÎŞ·¨¼ÌĞøÓÎÏ·¡£ÇëÁªÏµÎ×Ê¦»ñµÃ°ïÖú²¢ÉêÇë½±Àø¡£\n");
+    if(!ok_obj) return notify_fail(HIR"è©²æ–‡ä»¶è·¯å¾‘æˆ–æ–‡ä»¶åå·²ç¶“æ›´æ”¹ï¼Œç„¡æ³•ç¹¼çºŒéŠæˆ²ã€‚è«‹è¯ç³»å·«å¸«ç²å¾—å¹«åŠ©ä¸¦ç”³è«‹çå‹µã€‚\n");
 
     if( query("host_id", need1) != query("id", me) || 
         query("host_id", need2) != query("id", me) || 
@@ -116,13 +116,13 @@ int do_zuhe(string arg)
 
     destruct(need2);
     destruct(need3);
-    destruct(need1);  // ±¾ÎÄ¼ş×îºóÇå³ı¡£
+    destruct(need1);  // æœ¬æ–‡ä»¶æœ€å¾Œæ¸…é™¤ã€‚
     return 1;
 }
 
 void delete_me()
 {
     if( !environment( this_object() ) ) return;
-    message_vision("$NºöµØÒ»ÉÁ¹â£¬ÏûÊ§²»¼ûÁË¡£\n",this_object());
+    message_vision("$Nå¿½åœ°ä¸€é–ƒå…‰ï¼Œæ¶ˆå¤±ä¸è¦‹äº†ã€‚\n",this_object());
     destruct(this_object());
 }

@@ -4,10 +4,10 @@
 inherit ROOM;
 void create()
 {
-        set("short","³ø·¿");
+        set("short","å»šæˆ¿");
         set("long", @LONG
-ÕâÊÇÕòÄÏÍõ¸®µÄ³ø·¿£¬ÖÐÑëÓÐ¸ö´ó×À×Ó£¬ÖÜÎ§Ôò·Å×Å¼¸¸öÔ²µÊ£¬
-ÕâÀïÊÇ¶Î¼ÒµÜ×ÓÓÃ²ÍµÄµØ·½¡£
+é€™æ˜¯éŽ®å—çŽ‹åºœçš„å»šæˆ¿ï¼Œä¸­å¤®æœ‰å€‹å¤§æ¡Œå­ï¼Œå‘¨åœå‰‡æ”¾è‘—å¹¾å€‹åœ“å‡³ï¼Œ
+é€™è£¡æ˜¯æ®µå®¶å¼Ÿå­ç”¨é¤çš„åœ°æ–¹ã€‚
 LONG );
         set("objects", ([
             "/d/dali/obj/xueli"       : 4,

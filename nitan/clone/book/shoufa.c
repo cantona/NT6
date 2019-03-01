@@ -3,18 +3,18 @@ inherit ITEM;
 
 void create()
 {
-        set_name( "ÉñÁú°ËÊ½ÊÖ·¨",({ "shoufa book","shoufa","shu","book"}));
+        set_name( "ç¥é¾å…«å¼æ‰‹æ³•",({ "shoufa book","shoufa","shu","book"}));
         set_weight(200);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
-                set("long","ÕâÊÇÒ»±¾ÉñÁú°ËÊ½ÊÖ·¨¡£\n");
+                set("unit", "æœ¬");
+                set("long","é€™æ˜¯ä¸€æœ¬ç¥é¾å…«å¼æ‰‹æ³•ã€‚\n");
                 set("value", 5000);
                 set("material", "paper");
                 set("skill", ([
                         "name": "shenlong-bashi",  //name of the skill
-			            "family_name" : "ÉñÁú½Ì",
+			            "family_name" : "ç¥é¾æ•™",
                         "exp_required": 10000 , //minimum combat experience required
                         "jing_cost": 20+random(30),// jing cost every time study this
                         "difficulty":        20,        // the base int to learn this skill

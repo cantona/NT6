@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÄÏÊ÷ÁÖ");
+        set("short", "å—æ¨¹æž—");
         set("long", @LONG
-ÕâÀï³¤ÂúÁË¸ß´óµÄÊ÷Ä¾£¬¾¡ÊÇÍë¿Ú°ã´Ö´óµÄÊ÷Ä¾£¬
-ÔÚÊ÷Ä¾µÄÑÚÓ³ÏÂ£¬¹âÏßÒ²»è°µÏÂÀ´¡£¸÷ÖÖÐ¡¶¯ÎïÔÚÁÖ
-¼äÌøÀ´ÌøÈ¥£¬Ê¹ÕâÀï³äÂúÁË²ª²ªÉú»ú¡£
+é€™è£¡é•·æ»¿äº†é«˜å¤§çš„æ¨¹æœ¨ï¼Œç›¡æ˜¯ç¢—å£èˆ¬ç²—å¤§çš„æ¨¹æœ¨ï¼Œ
+åœ¨æ¨¹æœ¨çš„æŽ©æ˜ ä¸‹ï¼Œå…‰ç·šä¹Ÿæ˜æš—ä¸‹ä¾†ã€‚å„ç¨®å°å‹•ç‰©åœ¨æž—
+é–“è·³ä¾†è·³åŽ»ï¼Œä½¿é€™è£¡å……æ»¿äº†å‹ƒå‹ƒç”Ÿæ©Ÿã€‚
 LONG);
         set("exits", ([
                 "west" : __DIR__"zhulin",

@@ -8,17 +8,17 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("»ÛÕæ×ğÕß", ({
+        set_name("æ…§çœŸå°Šè€…", ({
                 "huizhen zunzhe",
                 "huizhen",
                 "zunzhe",
         }));
         set("long",
-                "ËûÊÇÒ»Î»Á½÷Ş°ß°×µÄÀÏÉ®£¬Éí´©Ò»Ï®Çà²¼Ïâ±ßôÂôÄ¡£ËûÉí²ÄÂÔ¸ß£¬\n"
-                "Ì«ÑôÑ¨Î¢Í¹£¬Ë«Ä¿¾¼¾¼ÓĞÉñ¡£\n"
+                "ä»–æ˜¯ä¸€ä½å…©é¬¢æ–‘ç™½çš„è€åƒ§ï¼Œèº«ç©¿ä¸€è¥²é’å¸ƒé‘²é‚Šè¢ˆè£Ÿã€‚ä»–èº«æç•¥é«˜ï¼Œ\n"
+                "å¤ªé™½ç©´å¾®å‡¸ï¼Œé›™ç›®ç‚¯ç‚¯æœ‰ç¥ã€‚\n"
         );
 
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("attitude", "friendly");
         set("class", "bonze");
 
@@ -61,7 +61,7 @@ void create()
         prepare_skill("finger", "yizhi-chan");
         prepare_skill("strike", "banruo-zhang");
 
-        create_family("ÉÙÁÖÅÉ", 38, "µÜ×Ó");
+        create_family("å°‘æ—æ´¾", 38, "å¼Ÿå­");
 
         set("master_ob",2);
         setup();
@@ -87,10 +87,10 @@ void init()
                 return;
 
         if( !mapp(mine=query("family", me)) || 
-            mine["family_name"] != "ÉÙÁÖÅÉ" ||
+            mine["family_name"] != "å°‘æ—æ´¾" ||
             ! present("shou yu", me))
         {
-                  command("say ´óµ¨¿ñÍ½£¬¾¹¸Ò´³Èë²Ø¾­¸ó£¬¿´ÕĞ!\n");
+                  command("say å¤§è†½ç‹‚å¾’ï¼Œç«Ÿæ•¢é—–å…¥è—ç¶“é–£ï¼Œçœ‹æ‹›!\n");
                   kill_ob(me);
         }
 }

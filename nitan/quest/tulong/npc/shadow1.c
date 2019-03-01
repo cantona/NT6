@@ -4,14 +4,14 @@ inherit NPC;
 
 void create()
 {
-        set_name("Ñªµ¶ÀÏ×æ--»Ã", ({ "xuedao laozu-shadow","shadow" }));
+        set_name("è¡€åˆ€è€ç¥–--å¹»", ({ "xuedao laozu-shadow","shadow" }));
         set("long",@LONG
-ÕâÀ®ÂïÉí×Å»ÆÅÛ£¬Äê¼Í¼«ÀÏ£¬¼âÍ·Ï÷¶ú£¬Á³ÉÏ¶¼ÊÇÖåÎÆ¡£Ëû¾ÍÊÇÑªµ¶ÃÅµÚËÄ´úÕÆÃÅ¡£
-²»¹ý×ÐÏ¸Ò»¿´£¬ËÆºõ²»ÏóÊÇÕæÈË¡£
+é€™å–‡å˜›èº«è‘—é»ƒè¢ï¼Œå¹´ç´€æ¥µè€ï¼Œå°–é ­å‰Šè€³ï¼Œè‡‰ä¸Šéƒ½æ˜¯çšºç´‹ã€‚ä»–å°±æ˜¯è¡€åˆ€é–€ç¬¬å››ä»£æŽŒé–€ã€‚
+ä¸éŽä»”ç´°ä¸€çœ‹ï¼Œä¼¼ä¹Žä¸è±¡æ˜¯çœŸäººã€‚
 LONG
         );
-        set("title",HIR"Ñªµ¶ÃÅµÚËÄ´úÕÆÃÅ"NOR);
-        set("gender", "ÄÐÐÔ");
+        set("title",HIR"è¡€åˆ€é–€ç¬¬å››ä»£æŽŒé–€"NOR);
+        set("gender", "ç”·æ€§");
         set("age", 85);
         set("attitude", "peaceful");
         set("shen_type", -1);
@@ -57,7 +57,7 @@ LONG
                 (: perform_action, "blade.shendao" :),
         }) );
 
-        create_family("Ñ©É½ËÂ", 4, "µÜ×Ó");
+        create_family("é›ªå±±å¯º", 4, "å¼Ÿå­");
         set("class", "bonze");
 
         setup();
@@ -68,18 +68,18 @@ LONG
 int accept_fight(object ob)
 {
         ob=this_player();   
-        if( !query("fighter", ob)){command("grin");command("say ºÃ£¬ËÍËÀµÄÀ´ÁË£¡\n");
+        if( !query("fighter", ob)){command("grin");command("say å¥½ï¼Œé€æ­»çš„ä¾†äº†ï¼\n");
         set("fighter", 1, ob);
-        set_temp("m_success/»ÃÓ°", 1, ob);
+        set_temp("m_success/å¹»å½±", 1, ob);
         remove_call_out("kill_ob");
         call_out("kill_ob", 1, ob);
         return 1;
         }
         else
-        write(query("name", ob)+"£¬ÄãÒÑ¾­ÉÏ¹ý³¡ÁË£¡\n");}
+        write(query("name", ob)+"ï¼Œä½ å·²ç¶“ä¸ŠéŽå ´äº†ï¼\n");}
 void die()
 {
-        object ob;        message_vision("\n$NÒ»»Î£¬±äÎªÒ»ÂÆÇáÑÌÏûÊ§ÁË¡£\n", this_object());
+        object ob;        message_vision("\n$Nä¸€æ™ƒï¼Œè®Šç‚ºä¸€ç¸·è¼•ç…™æ¶ˆå¤±äº†ã€‚\n", this_object());
         ob = new("/quest/tulong/npc/shadow2");
         ob->move(environment(this_object()));
         destruct(this_object());

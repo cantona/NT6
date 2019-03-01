@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ƽ̨");
+        set("short", "平台");
         set("long", @LONG
-�ɷ�ͤ������ɽ��ʯ���ж���һƽ̨��ƽ̨ʯ��Ϊ�����������
-��Զ����ͤ�š�����������̨���ѡ���ƽ̨����ɽ��ʯ���������
-���
+由風亭西行下山，石徑中段有一平台，平台石欄為法海寺遺物。在
+此遠眺五亭橋、白塔、釣魚台諸景最佳。出平台，過山澗石樑，即達觀
+音殿。
 LONG );
         set("outdoors", "shouxihu");
         set("exits", ([

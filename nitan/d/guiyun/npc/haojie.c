@@ -5,10 +5,10 @@ inherit NPC;
 int ask_back();
 void create()
 {
-        set_name("Ì«ºşºÀ½Ü", ({ "hao jie", "jie" }));
-        set("gender", "ÄĞĞÔ");
+        set_name("å¤ªæ¹–è±ªå‚‘", ({ "hao jie", "jie" }));
+        set("gender", "ç”·æ€§");
         set("age", 25);
-        set("long", "ÕâÊÇ¹éÔÆ×¯ÊôÏÂµÄÔÚÌ«ºş½Ù¸»¼ÃÆ¶µÄÌ«ºşºÀ½Ü¡£\n");
+        set("long", "é€™æ˜¯æ­¸é›²èŠå±¬ä¸‹çš„åœ¨å¤ªæ¹–åŠ«å¯Œæ¿Ÿè²§çš„å¤ªæ¹–è±ªå‚‘ã€‚\n");
         set("combat_exp", 100000);
         set_skill("dodge", 50);
         set_skill("lingxu-bu", 50);
@@ -20,10 +20,10 @@ void create()
         map_skill("dodge", "lingxu-bu");
         set("shen_type", 1);
         set("chat_msg", ({
-                "Ì«ºşºÀ½ÜµÀ£º¡°Òª·µº½£¬¾Í¸æËßÎÒ....\n",
+                "å¤ªæ¹–è±ªå‚‘é“ï¼šâ€œè¦è¿”èˆªï¼Œå°±å‘Šè¨´æˆ‘....\n",
         }));
         set("inquiry", ([
-                "·µº½": (:ask_back:),
+                "è¿”èˆª": (:ask_back:),
         ]));
         setup();
 
@@ -43,16 +43,16 @@ void init()
 void greeting(object ob)
 {
         if( !ob || environment(ob) != environment() ) return;
-        tell_object(ob,"Ì«ºşºÀ½ÜµÀ£º¡°ÕâÎ»"+RANK_D->query_respect(ob)+"£¬Òª·µº½£¬¾Í¸æËßÎÒ....¡±\n");
+        tell_object(ob,"å¤ªæ¹–è±ªå‚‘é“ï¼šâ€œé€™ä½"+RANK_D->query_respect(ob)+"ï¼Œè¦è¿”èˆªï¼Œå°±å‘Šè¨´æˆ‘....â€\n");
 }
 
 int ask_back()
 {
         object ob = this_player();
         delete("exits/out", environment(ob));
-        message_vision("´¬ÉÏÈºµÁÆëÉùÓ¦µÀ£º³¶·«£¬»ØÈ¥Çì¹¦à¶£¡\n", ob);
-        message_vision("´¬·òÉıÆğ·«£¬´¬¾ÍÏò¹éÔÆ×¯º½ĞĞ¡£\n", ob);
-        tell_object(ob, CYN "ÄãÂÊ´¬ÔÚºşÉÏÆÆÀËÇ°ĞĞ£¬Íş·çÁİÁİ.......\n" NOR ) ;
+        message_vision("èˆ¹ä¸Šç¾¤ç›œé½Šè²æ‡‰é“ï¼šæ‰¯å¸†ï¼Œå›å»æ…¶åŠŸå˜ï¼\n", ob);
+        message_vision("èˆ¹å¤«å‡èµ·å¸†ï¼Œèˆ¹å°±å‘æ­¸é›²èŠèˆªè¡Œã€‚\n", ob);
+        tell_object(ob, CYN "ä½ ç‡èˆ¹åœ¨æ¹–ä¸Šç ´æµªå‰è¡Œï¼Œå¨é¢¨å‡œå‡œ.......\n" NOR ) ;
         call_out("rguiyun", 10 , ob );
         return 1 ;
 }
@@ -63,6 +63,6 @@ void rguiyun( object ob )
                 ship = load_object("/d/guiyun/ship");
         if(!( matou = find_object("/d/guiyun/matou")) )
                 matou = load_object("/d/guiyun/matou");
-        tell_object(ob , "Õ½´¬ÔÚÒ»ÕóÕó·çÀËÉùÖĞ¿¿ÉÏÁËÂëÍ·¡£\n" ) ;
+        tell_object(ob , "æˆ°èˆ¹åœ¨ä¸€é™£é™£é¢¨æµªè²ä¸­é ä¸Šäº†ç¢¼é ­ã€‚\n" ) ;
         set("exits/out", "/d/guiyun/matou", ship);
 }

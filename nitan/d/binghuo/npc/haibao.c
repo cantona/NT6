@@ -4,10 +4,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("º£±ª", ({ "hai bao", "bao" }) );
-        set("race", "×ßÊÞ");
+        set_name("æµ·è±¹", ({ "hai bao", "bao" }) );
+        set("race", "èµ°ç¸");
         set("age", 20);
-        set("long", "Ò»Ö»Éú»îÔÚ±ùº£µÄº£±ª¡£\n");
+        set("long", "ä¸€åªç”Ÿæ´»åœ¨å†°æµ·çš„æµ·è±¹ã€‚\n");
         set("attitude", "friendly");
         set("shen_type", 0);
 
@@ -22,7 +22,7 @@ void create()
 void die()
 {
         object ob, corpse;
-        message_vision("$NÆà²ÒµÄº¿ÁË¼¸Éù£¬ËÀÁË¡£\n", this_object());
+        message_vision("$Nå‡„æ…˜çš„åšŽäº†å¹¾è²ï¼Œæ­»äº†ã€‚\n", this_object());
         if( objectp(corpse = CHAR_D->make_corpse(this_object())) )
         {
                 if(random(10) > 6)

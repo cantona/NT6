@@ -1,4 +1,4 @@
-// named.c ±£´æËùÓÐÍæ¼ÒµÄÃû×Ö
+// named.c ä¿å­˜æ‰€æœ‰çŽ©å®¶çš„åå­—
 
 #include <ansi.h>
 
@@ -8,15 +8,15 @@
 inherit F_SAVE;
 inherit F_DBASE;
 
-nosave string *family_name = ({ "¶«·½", "¶À¹Â", "Ä½ÈÝ", "Å·Ñô", "Ë¾Âí",
-                                "Î÷ÃÅ", "Î¾³Ù", "³¤Ëï", "Öî¸ð", "ÉÏ¹Ù",
-                                "ÏÄºò", "ÎÅÈË", "»Ê¸¦", "å£Ì¨", "¹«ÖÎ",
-                                "´¾ÓÚ", "ÉêÍÀ", "¹«Ëï", "¹«Ñò", "ÐùÔ¯",
-                                "Áîºü", "ÖÓÀë", "ÓîÎÄ", "Ä»ÈÝ", "ÖÙËï",
-                                "Ë¾Í½", "Ë¾¿Õ", "¶ËÄ¾", "¹«Á¼", "°ÙÀï",
-                                "¶«¹ù", "ÄÏ¹ù", "ºôÑÓ", "ÑòÉà", "¶«ÃÅ",
-                                "ÄÏ¹Ù", "ÄÏ¹¬", "ÍØ°Î", "ÍêÑÕ", "Ò®ÂÉ",
-                                "ÏÊÓÚ" });
+nosave string *family_name = ({ "æ±æ–¹", "ç¨å­¤", "æ…•å®¹", "æ­é™½", "å¸é¦¬",
+                                "è¥¿é–€", "å°‰é²", "é•·å­«", "è«¸è‘›", "ä¸Šå®˜",
+                                "å¤å€™", "èžäºº", "çš‡ç”«", "æ¾¹å°", "å…¬æ²»",
+                                "æ·³äºŽ", "ç”³å± ", "å…¬å­«", "å…¬ç¾Š", "è»’è½…",
+                                "ä»¤ç‹", "é˜é›¢", "å®‡æ–‡", "å¹•å®¹", "ä»²å­«",
+                                "å¸å¾’", "å¸ç©º", "ç«¯æœ¨", "å…¬è‰¯", "ç™¾è£¡",
+                                "æ±éƒ­", "å—éƒ­", "å‘¼å»¶", "ç¾ŠèˆŒ", "æ±é–€",
+                                "å—å®˜", "å—å®®", "æ‹“æ‹”", "å®Œé¡", "è€¶å¾‹",
+                                "é®®äºŽ" });
 
 void create()
 {
@@ -93,9 +93,9 @@ public string who_is(string name)
 
         if (! stringp(name) || strlen(name) < 2 ||
             ! stringp(id = query(PATH(name))))
-                return "Ã»ÓÐÈË½ÐÕâ¸öÃû×Ö¡£\n";
+                return "æ²’æœ‰äººå«é€™å€‹åå­—ã€‚\n";
 
-        return "ÓÎÏ·ÖÐ½Ð" + name + "µÄÓÐ£º" + id + "\n";
+        return "éŠæˆ²ä¸­å«" + name + "çš„æœ‰ï¼š" + id + "\n";
 }
 
 // check the id - name
@@ -168,16 +168,16 @@ public string invalid_new_name(string name)
         int l;
 
         if (! stringp(name) || strlen(name) < 2)
-                return "²»ÄÜÊ¹ÓÃ¿ÕÃû×Ö¡£\n";
+                return "ä¸èƒ½ä½¿ç”¨ç©ºåå­—ã€‚\n";
 
         if (member_array(name, family_name) != -1)
-                return "²»ÄÜÊ¹ÓÃ¸´ÐÕ×÷ÎªÃû×Ö¡£\n";
+                return "ä¸èƒ½ä½¿ç”¨å¾©å§“ä½œç‚ºåå­—ã€‚\n";
 
-        // ºÍ¶ÔÓÐ¹ØID-Ãû×ÖµÄÐÅÏ¢
+        // å’Œå°æœ‰é—œID-åå­—çš„ä¿¡æ¯
         assure_map_name(name);
 
         if (id = query(PATH(name)))
-                return "Õâ¸öÃû×ÖºÍ " + id + " µÄÃû×ÖÖØ¸´ÁË¡£\n";
+                return "é€™å€‹åå­—å’Œ " + id + " çš„åå­—é‡å¾©äº†ã€‚\n";
 
         if (strlen(name) < 4)
                 return 0;
@@ -185,18 +185,18 @@ public string invalid_new_name(string name)
         l = strlen(name);
         for (i = 0; i <= l - 4; i++)
         {
-                // ºÍ¶ÔÓÐ¹ØID-Ãû×ÖµÄÐÅÏ¢
+                // å’Œå°æœ‰é—œID-åå­—çš„ä¿¡æ¯
                 assure_map_name(name[i..i + 3]);
                 if (i + 6 <= l)
                         assure_map_name(name[i..i + 5]);
 
                 if (member_array(name[i..i + 3], family_name) == -1 &&
                     stringp(id = query(PATH(name[i..i + 3]))))
-                        return "Õâ¸öÃû×ÖºÍ " + id + " µÄÃû×ÖÌ«½Ó½üÁË¡£\n";
+                        return "é€™å€‹åå­—å’Œ " + id + " çš„åå­—å¤ªæŽ¥è¿‘äº†ã€‚\n";
 
                 if ((i + 6 <= l) &&
                     stringp(id = query(PATH(name[i..i + 5]))))
-                        return "Õâ¸öÃû×ÖºÍ " + id + " µÄÃû×ÖÌ«½Ó½üÁË¡£\n";
+                        return "é€™å€‹åå­—å’Œ " + id + " çš„åå­—å¤ªæŽ¥è¿‘äº†ã€‚\n";
         }
 
         return 0;

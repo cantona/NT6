@@ -3,8 +3,8 @@ inherit ITEM;
 
 void create()
 {
-     set_name(HIG"±Ù¹ÈÍè"NOR, ({ "bigu wan", "wan" })); set("unit", "¿Å");
-        set("long", "Ò»¿Å±ÌÂÌÉ«µÄÒ©Íè£¬¡£\n");
+     set_name(HIG"è¾Ÿè°·ä¸¸"NOR, ({ "bigu wan", "wan" })); set("unit", "é¡†");
+        set("long", "ä¸€é¡†ç¢§ç¶ è‰²çš„è—¥ä¸¸ï¼Œã€‚\n");
         set_weight(1000);
         set("yaowang", 1);
         set("no_get", 1);
@@ -50,19 +50,19 @@ int do_eat(string arg)
         int i=query("value", this_object())/10;
 
         if (!id(arg))
-                return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
 
         if (me->is_busy() )
-                return notify_fail("±ğ¼±£¬ÂıÂı³Ô£¬Ğ¡ĞÄ±ğÒ­×ÅÁË¡£\n");
+                return notify_fail("åˆ¥æ€¥ï¼Œæ…¢æ…¢åƒï¼Œå°å¿ƒåˆ¥å™è‘—äº†ã€‚\n");
 
         if( query("food", me) >= ((query("str", me)*10)+100 )
                  && query("water", me) >= ((query("str", me)*10)+100) )
-                return notify_fail("ÄãËÆºõ²»¶ö°¡£¿\n");
+                return notify_fail("ä½ ä¼¼ä¹ä¸é¤“å•Šï¼Ÿ\n");
 
         addn("food", i, me);
         addn("water", i, me);
 //      me->addn("neili", i);
-        message_vision(HIG"$N·şÏÂÒ»¿Å±Ù¹ÈÍè£¬¶Ù¾õÒ»¹ÉÇåÁ¹Ö®Æø´Ó¸¹ÖĞÉıÆğ¡£\n"NOR, me);
+        message_vision(HIG"$Næœä¸‹ä¸€é¡†è¾Ÿè°·ä¸¸ï¼Œé “è¦ºä¸€è‚¡æ¸…æ¶¼ä¹‹æ°£å¾è…¹ä¸­å‡èµ·ã€‚\n"NOR, me);
         destruct(this_object());
         return 1;
 }

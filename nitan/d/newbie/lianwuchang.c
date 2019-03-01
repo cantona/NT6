@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "���䳡");
+        set("short", "練武場");
         set("long", @LONG
-���ǹŴ�����䳡��һ��¶��ĳ���������������õ�ɳ����
-ľ�ˣ���������С������һλ���ߵ�֪���º�������ػӶ���ȭ�š�
+這是古村的練武場，一個露天的場地裡擺滿了練武用的沙袋和
+木人，幾個年輕小伙正在一位老者的知道下呼呼生風地揮動著拳腳。
 LONG);
         set("exits", ([
                 "north" : __DIR__"bingqishi",

@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Ϳ��ˮ��");
+        set("short", "塗門水關");
         set("long", @LONG
-����ȥ���ۿڵ���Ҫͨ�������СϪ֮�ϣ�ΡȻ��������ν������
-�ɣ����һ��
+這是去往港口的主要通道，橫跨小溪之上，巍然矗立，可謂巧手天
+成，別具一格。
 LONG );
         set("outdoors", "quanzhou");
         set("no_clean_up", 0);

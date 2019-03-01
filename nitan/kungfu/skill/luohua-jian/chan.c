@@ -1,10 +1,10 @@
 // Last Modified by winder on Sep. 12 2001
-// chan.c ²ø×Ö¾÷
+// chan.c çºå­—è¨£
 
 #include <ansi.h>
 
 inherit F_SSERVER;
-#define PNAME "¡¸²ø¡¹×Ö¾÷"
+#define PNAME "ã€Œçºã€å­—è¨£"
 int perform(object me, object target)
 {
         object weapon;
@@ -19,21 +19,21 @@ int perform(object me, object target)
    !query("can_perform/"+sskill+"/"+pfname, me) && 
    !query_temp("murong/xingyi", me) && 
    !SCBORN_D->valid_perform(me,sskill,pfname))
-   return notify_fail("ÄãËùÊ¹ÓÃµÄÍâ¹¦ÖĞÃ»ÓĞÕâÖÖ¹¦ÄÜ¡£\n");
+   return notify_fail("ä½ æ‰€ä½¿ç”¨çš„å¤–åŠŸä¸­æ²’æœ‰é€™ç¨®åŠŸèƒ½ã€‚\n");
 
         if( !objectp(target) ) {flag =1;target = offensive_target(me);}
         
         if( !target || !target->is_character() || target == me ||        
                   !me->is_fighting(target) ||
           !living(target) || query_temp("noliving", target) )
-                return notify_fail(PNAME"Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(PNAME"åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
                 
         if( !objectp(weapon=query_temp("weapon", me)) || 
                 query("skill_type", weapon) != "sword" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ã€‚\n");
 
         if( target->is_busy() )
-                return notify_fail(target->name()+"Ä¿Ç°Õı×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É¡£\n");
+                return notify_fail(target->name()+"ç›®å‰æ­£è‡ªé¡§ä¸æš‡ï¼Œæ”¾è†½æ”»æ“Šå§ã€‚\n");
 
         fskill = "honghua-shengong";
         bskill = "sword";
@@ -47,47 +47,47 @@ int perform(object me, object target)
         }
 
         if( (int)me->query_skill(fskill, 1) < 40 )
-                return notify_fail("ÄãµÄ"+to_chinese(fskill)+"²»¹»æµÊì£¬Ê¹²»³ö"+PNAME+"¡£\n");
+                return notify_fail("ä½ çš„"+to_chinese(fskill)+"ä¸å¤ å«»ç†Ÿï¼Œä½¿ä¸å‡º"+PNAME+"ã€‚\n");
 
         if( (int)me->query_skill(sskill, 1) < 40 )
-                return notify_fail("ÄãµÄ"+to_chinese(sskill)+"²»¹»æµÊì£¬²»»áÊ¹ÓÃ"+PNAME+"¡£\n");
+                return notify_fail("ä½ çš„"+to_chinese(sskill)+"ä¸å¤ å«»ç†Ÿï¼Œä¸æœƒä½¿ç”¨"+PNAME+"ã€‚\n");
 
         if( query("max_neili", me)<300 )
-                return notify_fail("ÄãµÄÄÚÁ¦ĞŞÎª²»¹»£¡\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¿®ç‚ºä¸å¤ ï¼\n");
 
         if( query("neili", me)<200 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¡\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼\n");
 
-        msg = HIG"$NÊ¹³öÂä»¨Ê®Èı½£¡¸²ø¡¹×Ö¾÷£¬Á¬µİÊı¸öĞéÕĞÆóÍ¼ÈÅÂÒ$nµÄ¹¥ÊÆ¡£\n";
+        msg = HIG"$Nä½¿å‡ºè½èŠ±åä¸‰åŠã€Œçºã€å­—è¨£ï¼Œé€£éæ•¸å€‹è™›æ‹›ä¼åœ–æ“¾äº‚$nçš„æ”»å‹¢ã€‚\n";
 
         me->start_busy(1);
         if( random(query("combat_exp", me))>query("combat_exp", target)/3 )
         {
-                msg += HIR "½á¹û$p±»$P¹¥ÁË¸ö´ëÊÖ²»¼°£¡\n" NOR;
+                msg += HIR "çµæœ$pè¢«$Pæ”»äº†å€‹æªæ‰‹ä¸åŠï¼\n" NOR;
                 target->start_busy( (int)me->query_skill(bskill,1) / 30 );
         } else {
-                msg += "¿ÉÊÇ$pÉñ¶¨ÆøÏĞ£¬¿´ÆÆÁË$PµÄÆóÍ¼¡£\n" NOR;
+                msg += "å¯æ˜¯$pç¥å®šæ°£é–’ï¼Œçœ‹ç ´äº†$Pçš„ä¼åœ–ã€‚\n" NOR;
         }
         addn("neili", -100, me);
         message_combatd(msg, me, target);
 
         return 1;
 }
-string name() {return replace_string(replace_string(PNAME,"¡¸",""),"¡¹","");}
+string name() {return replace_string(replace_string(PNAME,"ã€Œ",""),"ã€","");}
 
 int help(object me)
 {
-        write(WHT"\n"+to_chinese(explode(__FILE__,"/")[<2])+"Ö®"+name()+WHT"£º"NOR"\n");
+        write(WHT"\n"+to_chinese(explode(__FILE__,"/")[<2])+"ä¹‹"+name()+WHT"ï¼š"NOR"\n");
         write(@HELP
 
-        Ê¹ÓÃ¹¦Ğ§£º
-                ³ÙÖÍ¶ÔÊÖ³öÕĞ
+        ä½¿ç”¨åŠŸæ•ˆï¼š
+                é²æ»¯å°æ‰‹å‡ºæ‹›
 
-        ³öÊÖÒªÇó£º
-                ºì»¨Éñ¹¦40¼¶
-                Âä»¨Ê®Èı½£40¼¶
-                ÄÚÁ¦ĞŞÎª300
-                ÄÚÁ¦200
+        å‡ºæ‰‹è¦æ±‚ï¼š
+                ç´…èŠ±ç¥åŠŸ40ç´š
+                è½èŠ±åä¸‰åŠ40ç´š
+                å…§åŠ›ä¿®ç‚º300
+                å…§åŠ›200
 HELP
         );
         return 1;

@@ -4,13 +4,13 @@ inherit ITEM;
 int query_autoload() { return 1; }
 void create()
 {
-        set_name(HIM "Å·Ò±×ÓÊ¥·û" NOR, ({ "ouyezi symbol", "symbol" }));
+        set_name(HIM "æ­å†¶å­è–ç¬¦" NOR, ({ "ouyezi symbol", "symbol" }));
         set_weight(3000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIM "Å·Ò±×ÓÊ¥·û¿ÉÒÔ½«¸ÄÔì×°±¸µÄ³É¹¦ÂÊÌáÉıµ½90%¡£\n" NOR);
-                set("unit", "ÕÅ");
+                set("long", HIM "æ­å†¶å­è–ç¬¦å¯ä»¥å°‡æ”¹é€ è£å‚™çš„æˆåŠŸç‡æå‡åˆ°90%ã€‚\n" NOR);
+                set("unit", "å¼µ");
                 set("value", 500000);
         }
         setup();

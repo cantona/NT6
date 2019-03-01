@@ -9,18 +9,18 @@ int do_tu(string arg)
         i = (me->query_skill("poison")/10)+3+(me->query_skill("five-poison")/10)+3;
 
         if( !arg || sscanf(arg, "%s on %s", my, what)!=2 || !id(my) )
-                return notify_fail("ÃüÁî¸ñÊ½: tu <Ò©> on <ÎäÆ÷>¡£\n");
+                return notify_fail("å‘½ä»¤æ ¼å¼: tu <è—¥> on <æ­¦å™¨>ã€‚\n");
 
         ob = present(what, me);
-        if( !ob ) return notify_fail("ÄãÉíÉÏÃ»ÓĞ" + what + "ÕâÑù¶«Î÷¡£\n");
+        if( !ob ) return notify_fail("ä½ èº«ä¸Šæ²’æœ‰" + what + "é€™æ¨£æ±è¥¿ã€‚\n");
         if( !query("weapon_prop", ob) )
-                return notify_fail("Ö»ÄÜÍ¿ÔÚÎäÆ÷ÉÏ¡£\n");
+                return notify_fail("åªèƒ½å¡—åœ¨æ­¦å™¨ä¸Šã€‚\n");
         
         set("poisoned", query("pour_type"), ob);
         set("poison_number",query("poison_number",  ob)+i, ob);
 
-        set_temp("apply/long", ({query("long", ob)+"µ«¿´ÉÏÈ¥"+query("drug_color")+"£¬ºÃÏóÊÇ±»Î¹ÁË¾ç¶¾¡£\n"}), ob);
-        message_vision("$N±³¹ıÉíÈ¥£¬½«"+query("name")+"Í¿ÔÚ$nÉÏ¡£\n", me, ob);
+        set_temp("apply/long", ({query("long", ob)+"ä½†çœ‹ä¸Šå»"+query("drug_color")+"ï¼Œå¥½è±¡æ˜¯è¢«å–‚äº†åŠ‡æ¯’ã€‚\n"}), ob);
+        message_vision("$NèƒŒéèº«å»ï¼Œå°‡"+query("name")+"å¡—åœ¨$nä¸Šã€‚\n", me, ob);
         me->start_busy(2);
         add_amount(-1);
         return 1;
@@ -28,7 +28,7 @@ int do_tu(string arg)
 
 void destruct(object ob)
 {
-        message_vision("$NÂıÂıµØÈ¼ÉÕÍêÁË¡£\n",ob);
+        message_vision("$Næ…¢æ…¢åœ°ç‡ƒç‡’å®Œäº†ã€‚\n",ob);
         ob->add_amount(-1);
         return;
 }

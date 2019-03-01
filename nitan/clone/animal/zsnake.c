@@ -6,15 +6,15 @@ inherit "/inherit/char/trainee";
 
 void create()
 {
-        set_name("ÖñÒ¶Çà", ({ "zhuye qing", "snake" }) );
-        set("race", "ÅÀÉß");
+        set_name("ç«¹è‘‰é’", ({ "zhuye qing", "snake" }) );
+        set("race", "çˆ¬è›‡");
         set("age", 4);
-        set("long", "Ò»Ö»ÉíÌå±ÌÂÌµÄÉß£¬ÏÔµÃÌØ±ðÏ¸Ð¡¡£\n");
+        set("long", "ä¸€åªèº«é«”ç¢§ç¶ çš„è›‡ï¼Œé¡¯å¾—ç‰¹åˆ¥ç´°å°ã€‚\n");
         set("attitude", "peaceful");
 
-        set("msg_fail", "$n³å$NË»µØÒ»ÍÂÉàÍ·");
-        set("msg_succ", "$nË»Ë»×öÏì£¬ÉßÍ·Ëæ×Å$NµÄÊÖ¶¯ÁËÆðÀ´");
-        set("msg_trained","$nÇÄÎÞÉùÏ¢µØÓÎµ½$NµÄ½ÅÏÂ²»¶¯ÁË");
+        set("msg_fail", "$næ²–$Nå˜¶åœ°ä¸€åèˆŒé ­");
+        set("msg_succ", "$nå˜¶å˜¶åšéŸ¿ï¼Œè›‡é ­éš¨è‘—$Nçš„æ‰‹å‹•äº†èµ·ä¾†");
+        set("msg_trained","$næ‚„ç„¡è²æ¯åœ°éŠåˆ°$Nçš„è…³ä¸‹ä¸å‹•äº†");
         set("auto_follow",0);
         set("wildness", 11);
 
@@ -36,7 +36,7 @@ void init()
         ::init();
         add_action("convert","bian");
         if (interactive(ob = this_player()) &&
-            query("family/family_name", ob) != "°×ÍÕÉ½" && 
+            query("family/family_name", ob) != "ç™½é§å±±" && 
                 random(ob->query_kar() + ob->query_per()) < 30) {
                         remove_call_out("kill_ob");
                         call_out("kill_ob", 1, ob); 
@@ -63,7 +63,7 @@ int convert(string arg)
         object ob;
 
         if (arg!="snake" && arg!="zhuye qing") return 0;
-        if( query("family/family_name", me) != "°×ÍÕÉ½" )
-                return notify_fail("Äã²»ÄÜ»¯ÉßÎªÕÈ¡£\n");
-        return notify_fail("ÖñÒ¶Çà¹ýÓÚÏ¸Ð¡£¬²»ÄÜ»¯ÎªÕÈ¡£\n");
+        if( query("family/family_name", me) != "ç™½é§å±±" )
+                return notify_fail("ä½ ä¸èƒ½åŒ–è›‡ç‚ºæ–ã€‚\n");
+        return notify_fail("ç«¹è‘‰é’éŽäºŽç´°å°ï¼Œä¸èƒ½åŒ–ç‚ºæ–ã€‚\n");
 }

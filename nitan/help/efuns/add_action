@@ -1,6 +1,6 @@
-¡õ add_action.c
+â–¡ add_action.c
 
-Ôö¼ÓÖ¸Áî¿ÉÈÝÐí×ÖÊý    
+å¢žåŠ æŒ‡ä»¤å¯å®¹è¨±å­—æ•¸    
 ---------------------------------------
 void f_command PROT((void))
 {
@@ -8,7 +8,7 @@ void f_command PROT((void))
 
     if (current_object && !(current_object->flags & O_DESTRUCTED))
     {
-        char buff[100000]; // ½« char buff[¸Ä´ó]
+        char buff[100000]; // å°‡ char buff[æ”¹å¤§]
         int save_eval_cost = eval_cost;
 
         if (SVALUE_STRLEN(sp) > sizeof(buff) - 1)

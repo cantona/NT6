@@ -7,11 +7,11 @@ string look_dazi();
 
 void create()
 {
-        set("short", "ɽ·");
+        set("short", "山路");
         set("long", @LONG
-������һ����᫵�ɽ·�ϣ�����ɽ����������ݹ������м�һ����С
-·������һ����ǿ��ȥ��ǰ����һƬï�ܵ����֡�·�Ե�ʯ���Ͽ��ż�����
-��(dazi)��
+你走在一條崎嶇的山路上，道旁山峰壁立，長草過腰，中間一條羊腸小
+路，僅容一人勉強過去。前面有一片茂密的鬆林。路旁的石壁上刻著幾個大
+字(dazi)。
 LONG        );
         set("exits", ([ /* sizeof() == 2 */
   "north" : __DIR__"sslin-1",
@@ -31,9 +31,9 @@ string look_dazi()
 {
         return
         "\n"
-"    ���ư��ص�    \n"    
+"    鐵掌幫重地    \n"    
         "\n"
- "    ������----    \n"
-RED"              ����    \n"NOR
+ "    擅入者----    \n"
+RED"              死！    \n"NOR
         "\n";
 }

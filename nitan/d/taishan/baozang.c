@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "±¦²ØÁë");
+        set("short", "å¯¶è—å¶º");
         set("long", @LONG
-ÕâÀïÊÇÌ©É½µÄÓÖÒ»¸öÃûÊ¤¡£ÁëÉÏÓÐÒ»×ù×´ËÆÊ¨×ÓµÄ¾ÞÊ¯£¬³ÆÎªÊ¨×Ó
-ÑÂ¡£×î³öÃûµÄ»¹ÊÇÒªÊýÔÚ¶«±±ÃæµÄ¶«ÔÀÃí£¬Ò²³ÆÉÏÔÀÃí£¬ÊÇ¹Å´ú·âìøµÄ
-µØ·½£¬ÄÇÀïÓÐÒ»¿éÌÆÐþ×ÚµÄ¼ÍÌ©É½Ãú¡£
+é€™è£¡æ˜¯æ³°å±±çš„åˆä¸€å€‹åå‹ã€‚å¶ºä¸Šæœ‰ä¸€åº§ç‹€ä¼¼ç…å­çš„å·¨çŸ³ï¼Œç¨±ç‚ºç…å­
+å´–ã€‚æœ€å‡ºåçš„é‚„æ˜¯è¦æ•¸åœ¨æ±åŒ—é¢çš„æ±å²³å»Ÿï¼Œä¹Ÿç¨±ä¸Šå²³å»Ÿï¼Œæ˜¯å¤ä»£å°ç¦ªçš„
+åœ°æ–¹ï¼Œé‚£è£¡æœ‰ä¸€å¡Šå”çŽ„å®—çš„ç´€æ³°å±±éŠ˜ã€‚
 LONG );
         set("exits", ([
                 "northwest" : __DIR__"bixia",

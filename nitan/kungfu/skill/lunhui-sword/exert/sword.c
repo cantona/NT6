@@ -11,28 +11,28 @@ int exert(object me, object target)
         object weapon;
 
         if (target != me)
-                return notify_fail("ÄãÖ»ÄÜÓÃÁùµÀÂÖ»Ø½£À´ÌáÉı×Ô¼ºµÄÕ½¶·Á¦¡£\n");
+                return notify_fail("ä½ åªèƒ½ç”¨å…­é“è¼ªå›åŠä¾†æå‡è‡ªå·±çš„æˆ°é¬¥åŠ›ã€‚\n");
 
         if( query_temp("sword", me) )
-                return notify_fail("ÄãÒÑ¾­ÔÚÔË¹¦ÖĞÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“åœ¨é‹åŠŸä¸­äº†ã€‚\n");
 
         if (me->query_skill_mapped("sword") != "lunhui-sword")
-                return notify_fail("Äã»¹Ã»ÓĞ¼¤·¢ÁùµÀÂÖ»Ø½£Îª½£·¨£¬ÎŞ·¨ÔË¹¦¡£\n");
+                return notify_fail("ä½ é‚„æ²’æœ‰æ¿€ç™¼å…­é“è¼ªå›åŠç‚ºåŠæ³•ï¼Œç„¡æ³•é‹åŠŸã€‚\n");
                 
         if( !objectp(weapon=query_temp("weapon", me)) )
-                return notify_fail("Äã»¹Ã»ÓĞ×°±¸ÉÏÄãµÄ±¦½££¬ÎŞ·¨ÔË¹¦¡£\n");
+                return notify_fail("ä½ é‚„æ²’æœ‰è£å‚™ä¸Šä½ çš„å¯¶åŠï¼Œç„¡æ³•é‹åŠŸã€‚\n");
                 
         skill = me->query_skill("force");
         
         if( query("neili", me)<3000 )
-                return notify_fail("ÄãÄÚÁ¦²»×ã£¬ÎŞ·¨ÔË¹¦¡£\n");
+                return notify_fail("ä½ å…§åŠ›ä¸è¶³ï¼Œç„¡æ³•é‹åŠŸã€‚\n");
                 
         addn("neiil", -3000, me);
         
-        message_combatd(NOR + CYN "$NÇá×ªÊÖÖĞ" + weapon->name() + NOR + CYN "£¬Çê¿Ì¼ä£¬Ö»¼û" + weapon->name() + 
-                        NOR + CYN "±»Ò»µÀÍÌÍÂ²»¶¨µÄÇàÃ¢ËùÁıÕÖ£¬ÉõÊÇÆæÒì£¡\n\n" NOR, me);
+        message_combatd(NOR + CYN "$Nè¼•è½‰æ‰‹ä¸­" + weapon->name() + NOR + CYN "ï¼Œé ƒåˆ»é–“ï¼Œåªè¦‹" + weapon->name() + 
+                        NOR + CYN "è¢«ä¸€é“ååä¸å®šçš„é’èŠ’æ‰€ç± ç½©ï¼Œç”šæ˜¯å¥‡ç•°ï¼\n\n" NOR, me);
 
-        // ´òÍ¨BREAKUPºóµÄĞ§¹ûÔö¼Ó20%
+        // æ‰“é€šBREAKUPå¾Œçš„æ•ˆæœå¢åŠ 20%
         if( query("breakup", me))skill=skill+skill*2/10;
 
         addn_temp("apply/damage", skill/4, me);
@@ -57,7 +57,7 @@ void remove_effect(object me, int amount)
                 addn_temp("apply/sword", -amount/8, me);
 
                 delete_temp("sword", me);
-                tell_object(me, HIW "ÄãµÄÁùµÀÂÖ»Ø½£¡¸ÂÖ»Ø½£Æø¡¹ÔËĞĞÍê±Ï£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï¡£\n" NOR);
+                tell_object(me, HIW "ä½ çš„å…­é“è¼ªå›åŠã€Œè¼ªå›åŠæ°£ã€é‹è¡Œå®Œç•¢ï¼Œå°‡å…§åŠ›æ”¶å›ä¸¹ç”°ã€‚\n" NOR);
         }
 
 

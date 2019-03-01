@@ -1,407 +1,407 @@
-                   ÄàÌ¶Â·¾¶Ö®»·ÓÎÄàÌ¶×îĞÂ°æ
-ÒÔÏÂÂ·¾¶È«²¿´ÓÑïÖİÖĞÑë¹ã³¡n;e;e¿ªÊ¼(·²ÊÇÓĞridetoµÄn;e;eºóĞèÒªride xxxÂí¾ÇÀïÓĞµÄÂí
+                   æ³¥æ½­è·¯å¾‘ä¹‹ç’°éŠæ³¥æ½­æœ€æ–°ç‰ˆ
+ä»¥ä¸‹è·¯å¾‘å…¨éƒ¨å¾æšå·ä¸­å¤®å»£å ´n;e;eé–‹å§‹(å‡¡æ˜¯æœ‰ridetoçš„n;e;eå¾Œéœ€è¦ride xxxé¦¬å»„è£¡æœ‰çš„é¦¬
 
-×ÚÊ¦Â·¾¶:
-¶À¹ÂÇó°Ü:rideto huashan;#wa 2000;ne;cross
-¿û»¨Ì«¼à:rideto beijing;#wa 2000;#7 s;se;se;e;n;nw;nw;ne;wu;nu;wu
-ÄÏº£ÉñÄá:rideto foshan;#wa 2000;#4 s;w;enter
-»Æ    ÉÑ:rideto dali;#wa 2000;n;n;n;w;w;wu;wu;wd;wd;w;s
+å®—å¸«è·¯å¾‘:
+ç¨å­¤æ±‚æ•—:rideto huashan;#wa 2000;ne;cross
+è‘µèŠ±å¤ªç›£:rideto beijing;#wa 2000;#7 s;se;se;e;n;nw;nw;ne;wu;nu;wu
+å—æµ·ç¥å°¼:rideto foshan;#wa 2000;#4 s;w;enter
+é»ƒ    è£³:rideto dali;#wa 2000;n;n;n;w;w;wu;wu;wd;wd;w;s
 
-¸÷´óBOSSÂ·¾¶:
+å„å¤§BOSSè·¯å¾‘:
 
-»ªÉ½ÅÑÍ½:rideto yangzhou;#wa 3000;#4 3
+è¯å±±å›å¾’:rideto yangzhou;#wa 3000;#4 3
 
-³¯Í¢ÇÕ·¸:rideto beijing;#wa 2000;#wa 3000;#6 s
+æœå»·æ¬½çŠ¯:rideto beijing;#wa 2000;#wa 3000;#6 s
 
-½£Ú£µ¶¿Í:rideto xiangyang;#wa 2000;#6 e;ne;e;e;n;e;s;e;n;n
+åŠå¡šåˆ€å®¢:rideto xiangyang;#wa 2000;#6 e;ne;e;e;n;e;s;e;n;n
 
-µÁÄ¹·ÉÔô:rideto gumu
+ç›œå¢“é£›è³Š:rideto gumu
 
-Ìï²®¹â:rideto huashan;#wa 2000;nw
+ç”°ä¼¯å…‰:rideto huashan;#wa 2000;nw
 
-Îå¶¾Ê¥Îï:rideto wudu;#wa 2000;w;w;wd;wd;w
+äº”æ¯’è–ç‰©:rideto wudu;#wa 2000;w;w;wd;wd;w
 
-Ğ¡ÁúÅ®:rideto jueqing;#wa 2000;s;s;sw;sd;e;eu
+å°é¾å¥³:rideto jueqing;#wa 2000;s;s;sw;sd;e;eu
 
-½ğÂÖ·¨Íõ:rideto jueqing;#wa 2000;enter;w;w;n;n;w;w;nw;nw;nu
+é‡‘è¼ªæ³•ç‹:rideto jueqing;#wa 2000;enter;w;w;n;n;w;w;nw;nw;nu
 
-¹«Ëï¹ÈÖ÷:rideto jueqing:#wa 2000;enter;w;w;n;n
+å…¬å­«è°·ä¸»:rideto jueqing:#wa 2000;enter;w;w;n;n
 
-·öÉ£ÎäÊ¿:rideto nanhai;#wa 2000;n
+æ‰¶æ¡‘æ­¦å£«:rideto nanhai;#wa 2000;n
 
-Î÷¶¾Å·Ñô·æ:nu;eu;#3 nu;#10 n;#wa 1000;n;n;w;n;open door;out;ne
+è¥¿æ¯’æ­é™½é‹’:nu;eu;#3 nu;#10 n;#wa 1000;n;n;w;n;open door;out;ne
 
-Õòº£ÉñÁú:ÏÀ¿Íµºº£±õ.rideto nanhai;#wa 2000;n;e;n;ask zhang ÉÍÉÆ·£¶ñÁî;s;w;w;w;enter boat
+é®æµ·ç¥é¾:ä¿ å®¢å³¶æµ·æ¿±.rideto nanhai;#wa 2000;n;e;n;ask zhang è³å–„ç½°æƒ¡ä»¤;s;w;w;w;enter boat
 
-»Æ½ğ¾ŞÁú:rideto jiayu;#wa 2000;n
+é»ƒé‡‘å·¨é¾:rideto jiayu;#wa 2000;n
 
-ÉñÊ¥¾ŞÁú;rideto xueshan;#wa 2000;n;e;e;#3 n;ed;s;s;w;w;w
-
-
-ÏÈÌì¸÷ÖÖÔö¼Ó·½·¨:Ò»³Ôµ¤.¶ş½âÃÜ.ÈıÁ·Îä¹¦.¾ßÌåÇëhelp add_gift
+ç¥è–å·¨é¾;rideto xueshan;#wa 2000;n;e;e;#3 n;ed;s;s;w;w;w
 
 
-¸÷ÖÖÊé±¾ºÍ½âÃÜ:
+å…ˆå¤©å„ç¨®å¢åŠ æ–¹æ³•:ä¸€åƒä¸¹.äºŒè§£å¯†.ä¸‰ç·´æ­¦åŠŸ.å…·é«”è«‹help add_gift
 
-ÕıÆø¾÷:rideto huashan;#wa 2000;#2 su;#2 eu;su;eu;eu;#4 su;eu;#3 n;w;s;get all
 
-ÌìÄ§¾÷:ringto yangzhou;#wa 2000;#4 w;s;w;ask gui san about ÌìÄ§¾ö;È»ºóµ½ÑïÖİ¶«´ó½Ö--Î÷´ó½Ö¸½½üÕÒÕÒÂäÆÇ¹«×Ó.
-       ÕÒµ½ºóask gong zi about ¹íÈı;kill li;get all from corpse;rideto yangzhou#wa 2000;#4 w;s;w;give gui san xiao;enter
-       ½øÈ¥pull¿ÉÒÔÄÃµ½Ò»¸öÌúÏä×Ó£¬open xiang;¾Í¿ÉÒÔÄÃµ½ÌìÄ§¾öÁË
+å„ç¨®æ›¸æœ¬å’Œè§£å¯†:
 
-ÉñÕÕ¾­:rideto jingzhou;#wa 2000;#4 e;n;get juhua
+æ­£æ°£è¨£:rideto huashan;#wa 2000;#2 su;#2 eu;su;eu;eu;#4 su;eu;#3 n;w;s;get all
+
+å¤©é­”è¨£:ringto yangzhou;#wa 2000;#4 w;s;w;ask gui san about å¤©é­”æ±º;ç„¶å¾Œåˆ°æšå·æ±å¤§è¡—--è¥¿å¤§è¡—é™„è¿‘æ‰¾æ‰¾è½é­„å…¬å­.
+       æ‰¾åˆ°å¾Œask gong zi about é¬¼ä¸‰;kill li;get all from corpse;rideto yangzhou#wa 2000;#4 w;s;w;give gui san xiao;enter
+       é€²å»pullå¯ä»¥æ‹¿åˆ°ä¸€å€‹éµç®±å­ï¼Œopen xiang;å°±å¯ä»¥æ‹¿åˆ°å¤©é­”æ±ºäº†
+
+ç¥ç…§ç¶“:rideto jingzhou;#wa 2000;#4 e;n;get juhua
        rideto jingzhou;#wa 2000;w;s;kill ya yi;s;s;kill guan jia;
-       w;give juyou juhua;e;unlock men;e;ask ling about ¶¡´ó¸ç
+       w;give juyou juhua;e;unlock men;e;ask ling about ä¸å¤§å“¥
        w;s;w;u;e;s;get all;n;w;d;e;n;n;kill ling;open door;e;
        give ding green flower
 
 
-Ì«¼à±Ù±ÙĞ°½£·¨: 
-1È¥ÂåÑôÕÒµ½ÆÎÌïÉÙÁÖËÂ¸ßÊÖ¶ÉÔªìøÊ¦(duyuan chanshi)£¬ÎÊËû
-¹ØÓÚ±ÙĞ°½£Æ×µÄÊÂ£¬Ëû»áÉ±Äã£¬¸ÉµôËû£¬ÉíÉÏ¾ÍÓĞ±¾ôÂôÄ¡£
+å¤ªç›£è¾Ÿè¾Ÿé‚ªåŠæ³•: 
+1å»æ´›é™½æ‰¾åˆ°è†ç”°å°‘æ—å¯ºé«˜æ‰‹æ¸¡å…ƒç¦ªå¸«(duyuan chanshi)ï¼Œå•ä»–
+é—œäºè¾Ÿé‚ªåŠè­œçš„äº‹ï¼Œä»–æœƒæ®ºä½ ï¼Œå¹¹æ‰ä»–ï¼Œèº«ä¸Šå°±æœ‰æœ¬è¢ˆè£Ÿã€‚
 
-2×Ô¹¬ºó£¬È¥»ªÉ½ÓñÅ®ìô£¨ÕòÔÀ¹¬eu;w£©jump cliffÔÙclimb up
- ÊÇÌ«¼àµÄ»°¾Í»á´¥·¢¶Ô»°¾çÇé£¬Çé½Ú½áÊø»áµÃµ½Ò»¼şôÂôÄ
+2è‡ªå®®å¾Œï¼Œå»è¯å±±ç‰å¥³ç¥ ï¼ˆé®å²³å®®eu;wï¼‰jump cliffå†climb up
+ æ˜¯å¤ªç›£çš„è©±å°±æœƒè§¸ç™¼å°è©±åŠ‡æƒ…ï¼Œæƒ…ç¯€çµæŸæœƒå¾—åˆ°ä¸€ä»¶è¢ˆè£Ÿ
 
-3È¥¸£Öİ¸£ÍşïÚ¾Ö£¬ÕÒÁÖÕğÄÏÑ¯ÎÊ¡°¸£ÍşïÚ¾Ö¡¢Ô¶Í¼¹«¡¢±ÙĞ°
-½£·¨¡¢Í­°å¡±µÃµ½ÃÜÂëºóµ½ÏòÑôÀÏÕ¬µÄ¾®ÖĞÊäÈëÊı×Ö£¬½øÈëÃÜÊÒºóÔÚ
-·¿ÁºÉÏ¾ÍÄÜÕÒµ½µÚ3¼şôÂôÄ¡£(rideto fuzhou;w;w;n;enter;n;ask lin
-about ¸£ÍşïÚ¾Ö;ask lin about Ô¶Í¼¹«;ask lin about ±ÙĞ°½£·¨;ask
-lin about Í­°å;È»ºóÂò»ğÕÛ£¬ÂòÂôÌáºÍÑîÓÀ¸£ÄÇÀï¶¼ÓĞ¡£½ÓÏÂÀ´£¬
+3å»ç¦å·ç¦å¨é¢å±€ï¼Œæ‰¾æ—éœ‡å—è©¢å•â€œç¦å¨é¢å±€ã€é åœ–å…¬ã€è¾Ÿé‚ª
+åŠæ³•ã€éŠ…æ¿â€å¾—åˆ°å¯†ç¢¼å¾Œåˆ°å‘é™½è€å®…çš„äº•ä¸­è¼¸å…¥æ•¸å­—ï¼Œé€²å…¥å¯†å®¤å¾Œåœ¨
+æˆ¿æ¨‘ä¸Šå°±èƒ½æ‰¾åˆ°ç¬¬3ä»¶è¢ˆè£Ÿã€‚(rideto fuzhou;w;w;n;enter;n;ask lin
+about ç¦å¨é¢å±€;ask lin about é åœ–å…¬;ask lin about è¾Ÿé‚ªåŠæ³•;ask
+lin about éŠ…æ¿;ç„¶å¾Œè²·ç«æŠ˜ï¼Œè²·è³£æå’Œæ¥Šæ°¸ç¦é‚£è£¡éƒ½æœ‰ã€‚æ¥ä¸‹ä¾†ï¼Œ
 rideto fuzhou;s;s;w;w;n;break men;n;down;use fire;zuan;press xxxx
-(xxxxÎªÁÖÕğÄÏ¸æËßÄãµÄÍ­°åÊı);½øµ½ÃÜÊÒclimb tie xiang;jump liang;
+(xxxxç‚ºæ—éœ‡å—å‘Šè¨´ä½ çš„éŠ…æ¿æ•¸);é€²åˆ°å¯†å®¤climb tie xiang;jump liang;
 move jia sha)
 
-È«ÕæÏÈÌì¹¦:
-ÏÈÌì¹¦Ö®´¿ÑôÍ¨Éñ¹¦£ºÈ«ÕæµÜ×Óµ±×ÔÉíÈ«Õæ¼¼ÄÜÔìÒèÒÑ¾­¼«¸ßÊ±£¬¿É
-³¢ÊÔÔÚÍõÖØÑô×æÊ¦ÃæÇ°ĞĞÀñ£¨ketou£©,Èç¹û×ÔÉíÌõ¼ş´ïµ½£¬½«»á¼¸ÂÊ
-ĞÔµÄµÃµ½´¿ÑôÉñÍ¨¹¦ÃØ¾÷(shentong mijue)£¬°´ÕÕÃØ¾÷ÒªÇó²ÎÎò£¬¼´
-¿ÉÁìÎòÏÈÌì¹¦µÄÎŞÉÏĞÄ·¨--´¿ÑôÉñÍ¨¹¦¡£
+å…¨çœŸå…ˆå¤©åŠŸ:
+å…ˆå¤©åŠŸä¹‹ç´”é™½é€šç¥åŠŸï¼šå…¨çœŸå¼Ÿå­ç•¶è‡ªèº«å…¨çœŸæŠ€èƒ½é€ è©£å·²ç¶“æ¥µé«˜æ™‚ï¼Œå¯
+å˜—è©¦åœ¨ç‹é‡é™½ç¥–å¸«é¢å‰è¡Œç¦®ï¼ˆketouï¼‰,å¦‚æœè‡ªèº«æ¢ä»¶é”åˆ°ï¼Œå°‡æœƒå¹¾ç‡
+æ€§çš„å¾—åˆ°ç´”é™½ç¥é€šåŠŸç§˜è¨£(shentong mijue)ï¼ŒæŒ‰ç…§ç§˜è¨£è¦æ±‚åƒæ‚Ÿï¼Œå³
+å¯é ˜æ‚Ÿå…ˆå¤©åŠŸçš„ç„¡ä¸Šå¿ƒæ³•--ç´”é™½ç¥é€šåŠŸã€‚
      
-Ô²ÔÂÍäµ¶½âÃÜ:
-Ô²ÔÂÍäµ¶Ñ§Ï°½âÃÜ£ºÃ¿Äê7ÔÂ15ÈÕÔÂÒ¹ µ½´ïÔ²ÔÂÉ½×¯±³ºóÉ½¹µ£¬¿´µ½
-ºéË®ºó¡£ÌøÈëÉ½¹µ»áÁ¢¿Ì»èÃÔ£¬ĞÑÀ´Èç¹û¿´¼û±»³åÈëÉ½¹ÈÖĞÒ»¸öºÜÉî
-µÄ¶´Ñ¨£¨ËÄÃæ¶¼ÊÇÉ½£¬¶¼ÊÇÊ÷£¬ÓêºóµÄÉ½¹È³±Êª¶øĞÂÏÊ£¬¾ÍÏñÊÇ¸ö³õ
-Ô¡µÄ´¦Å®¡£¶´Ñ¨µÄËÄ±Ú»­ÂúÁËÍ¼»­£¬»­µÄÈ´²»ÊÇÈË¼ä£¬¶øÊÇÌìÉÏ¡££©
-ÔÚ´Ë´¦×ÔÉ±(ci hou)£¨Ã»ÓĞÎäÆ÷µÄ»°»áÌáÊ¾Ã»ÓĞÎäÆ÷ÔõÃ´´Ìºí£©»á³ö
-ÏÖÒ»Ìõµ­µ­µÄÓ°×Ó£¬´ø×ÅÖÖµ­µ­µÄÏãÆø£¬´ÓÃæÇ°·ÉÁË¹ıÈ¥£¬ºöÈ»ÓÖ²»
-¼ûÁË¡£½Ó×ÅÊÖÖĞµÄÎäÆ÷»áÏûÊ§¡£È»ºó×²Ç½(zhuang qiang)»á´¥·¢ÇàÇà
-¾ÈÈËµÄ¹ÊÊÂ£¬È»ºóÇàÇà»á´øÄã½øÈëÓÇ³î¹È£¨ÕâÀïÊÇ¸öÓÄ¹È£¬ÓÄÉîµÄÉ½
-¹È£¬ËÄÃæ¶¼ÊÇ¸ß²»¿ÉÅÊµÄ¾ø±Ú£¬ºÃÏñ¸ù±¾Ã»ÓĞ³öÂ·¡£É½¹È²¢²»´ó£¬Ëä
-È»Ò²ÓĞÍ¥Ô°¹¬ÊÒ¡¢Í¤Ì¨Â¥¸ó£¬¾°ÏóËäÈ»ºÍÄÇ¶´Ñ¨µÄ±Ú»­Ò»Ñù£¬È´Ö»²»
-¹ıÍ¼»­ÖĞµÄÒ»½Ç¶øÒÑ¡££©ÏòÇàÇàÒªµ¶£¬Èç¹ûÏÈÌìÂú×ãµÄ»°ÇàÇà»á¸øÄã
-Ô²ÔÂÍäµ¶È»ºó¿ÉÒÔÏòÇàÇàÑ§Ï°Ô²ÔÂµ¶·¨¡£
+åœ“æœˆå½åˆ€è§£å¯†:
+åœ“æœˆå½åˆ€å­¸ç¿’è§£å¯†ï¼šæ¯å¹´7æœˆ15æ—¥æœˆå¤œ åˆ°é”åœ“æœˆå±±èŠèƒŒå¾Œå±±æºï¼Œçœ‹åˆ°
+æ´ªæ°´å¾Œã€‚è·³å…¥å±±æºæœƒç«‹åˆ»æ˜è¿·ï¼Œé†’ä¾†å¦‚æœçœ‹è¦‹è¢«æ²–å…¥å±±è°·ä¸­ä¸€å€‹å¾ˆæ·±
+çš„æ´ç©´ï¼ˆå››é¢éƒ½æ˜¯å±±ï¼Œéƒ½æ˜¯æ¨¹ï¼Œé›¨å¾Œçš„å±±è°·æ½®æ¿•è€Œæ–°é®®ï¼Œå°±åƒæ˜¯å€‹åˆ
+æµ´çš„è™•å¥³ã€‚æ´ç©´çš„å››å£ç•«æ»¿äº†åœ–ç•«ï¼Œç•«çš„å»ä¸æ˜¯äººé–“ï¼Œè€Œæ˜¯å¤©ä¸Šã€‚ï¼‰
+åœ¨æ­¤è™•è‡ªæ®º(ci hou)ï¼ˆæ²’æœ‰æ­¦å™¨çš„è©±æœƒæç¤ºæ²’æœ‰æ­¦å™¨æ€éº¼åˆºå–‰ï¼‰æœƒå‡º
+ç¾ä¸€æ¢æ·¡æ·¡çš„å½±å­ï¼Œå¸¶è‘—ç¨®æ·¡æ·¡çš„é¦™æ°£ï¼Œå¾é¢å‰é£›äº†éå»ï¼Œå¿½ç„¶åˆä¸
+è¦‹äº†ã€‚æ¥è‘—æ‰‹ä¸­çš„æ­¦å™¨æœƒæ¶ˆå¤±ã€‚ç„¶å¾Œæ’ç‰†(zhuang qiang)æœƒè§¸ç™¼é’é’
+æ•‘äººçš„æ•…äº‹ï¼Œç„¶å¾Œé’é’æœƒå¸¶ä½ é€²å…¥æ†‚æ„è°·ï¼ˆé€™è£¡æ˜¯å€‹å¹½è°·ï¼Œå¹½æ·±çš„å±±
+è°·ï¼Œå››é¢éƒ½æ˜¯é«˜ä¸å¯æ”€çš„çµ•å£ï¼Œå¥½åƒæ ¹æœ¬æ²’æœ‰å‡ºè·¯ã€‚å±±è°·ä¸¦ä¸å¤§ï¼Œé›–
+ç„¶ä¹Ÿæœ‰åº­åœ’å®®å®¤ã€äº­å°æ¨“é–£ï¼Œæ™¯è±¡é›–ç„¶å’Œé‚£æ´ç©´çš„å£ç•«ä¸€æ¨£ï¼Œå»åªä¸
+éåœ–ç•«ä¸­çš„ä¸€è§’è€Œå·²ã€‚ï¼‰å‘é’é’è¦åˆ€ï¼Œå¦‚æœå…ˆå¤©æ»¿è¶³çš„è©±é’é’æœƒçµ¦ä½ 
+åœ“æœˆå½åˆ€ç„¶å¾Œå¯ä»¥å‘é’é’å­¸ç¿’åœ“æœˆåˆ€æ³•ã€‚
 
 
-½ğÉß½£;Çë²Î¿¼wenxuan 2010 6
+é‡‘è›‡åŠ;è«‹åƒè€ƒwenxuan 2010 6
 
-ÁéÉßµº:Ê×ÏÈrideto hangzhou;#wa 3000;s;s;s;#2 sw;#3 w;sw;s;s;ed;enter zhou
-       ask yin ±ù»ğµº;decideÏÂ´¬ºóÏÈµ½ÍõÅÌÉ½n;get stone;#5 break boat;s;n;s
-       kill ËùÓĞÈË;s;s;ne;ne;ne;se;l chuan;enter chuan¾Íµ½ÁË
+éˆè›‡å³¶:é¦–å…ˆrideto hangzhou;#wa 3000;s;s;s;#2 sw;#3 w;sw;s;s;ed;enter zhou
+       ask yin å†°ç«å³¶;decideä¸‹èˆ¹å¾Œå…ˆåˆ°ç‹ç›¤å±±n;get stone;#5 break boat;s;n;s
+       kill æ‰€æœ‰äºº;s;s;ne;ne;ne;se;l chuan;enter chuanå°±åˆ°äº†
        
 
-±ù»ğµº:ÏÈ²Î¿¼wenxuan 2010 3 ÒòÎªÀïÃæÓĞĞ©Â·¾¶²»¾ßÌå,ÇÒÓĞµÄµØ·½ÓĞ¸Ä¶¯ËùÒÔÎÒÔÚÕâÀï²¹³äÂ·¾¶
-       Ê×ÏÈrideto hangzhou;#wa 3000;s;s;s;#2 sw;#3 w;sw;s;s;ed;enter zhou
-       ask yin ±ù»ğµº;decide
-       ÏÂ´¬ºóÏÈµ½ÍõÅÌÉ½n;get stone;#5 break boat;s;n;s
-       kill ËùÓĞÈË;s;s;ne;ne;ne;se;½ÓÏÂ¼ÌĞø²Î¿¼wenxuan 2010 3
-       (ÌáÊ¾£º±ØĞëÓĞÍÀÁúµ¶¹ÊÊÂ´¥·¢²ÅÄÜÈ¥±ù»ğµº·ñÔò²»ÄÜbreak boat).
+å†°ç«å³¶:å…ˆåƒè€ƒwenxuan 2010 3 å› ç‚ºè£¡é¢æœ‰äº›è·¯å¾‘ä¸å…·é«”,ä¸”æœ‰çš„åœ°æ–¹æœ‰æ”¹å‹•æ‰€ä»¥æˆ‘åœ¨é€™è£¡è£œå……è·¯å¾‘
+       é¦–å…ˆrideto hangzhou;#wa 3000;s;s;s;#2 sw;#3 w;sw;s;s;ed;enter zhou
+       ask yin å†°ç«å³¶;decide
+       ä¸‹èˆ¹å¾Œå…ˆåˆ°ç‹ç›¤å±±n;get stone;#5 break boat;s;n;s
+       kill æ‰€æœ‰äºº;s;s;ne;ne;ne;se;æ¥ä¸‹ç¹¼çºŒåƒè€ƒwenxuan 2010 3
+       (æç¤ºï¼šå¿…é ˆæœ‰å± é¾åˆ€æ•…äº‹è§¸ç™¼æ‰èƒ½å»å†°ç«å³¶å¦å‰‡ä¸èƒ½break boat).
 
-¾ÅÑôÉñ¹¦:Çë²Î¿¼wenxuan 2010 2(ÌáÊ¾ÄÃÊéµÄĞ¡ºÅ±ÛÁ¦±ØĞëĞ¡ÓÚ20·ñÔòÄÃ²»µ½¼ÇµÃ´øÎäÆ÷)
-         Ğ¡ºÅÄÃµ½ºó°Ñ°ü¹ü¸ø´óºÅ..´óºÅ´ò¿ªĞèÂíÉÏget all
+ä¹é™½ç¥åŠŸ:è«‹åƒè€ƒwenxuan 2010 2(æç¤ºæ‹¿æ›¸çš„å°è™Ÿè‡‚åŠ›å¿…é ˆå°äº20å¦å‰‡æ‹¿ä¸åˆ°è¨˜å¾—å¸¶æ­¦å™¨)
+         å°è™Ÿæ‹¿åˆ°å¾ŒæŠŠåŒ…è£¹çµ¦å¤§è™Ÿ..å¤§è™Ÿæ‰“é–‹éœ€é¦¬ä¸Šget all
 
-Ç¬À¤´óÅ²ÒÆ:rideto mingjiao;#wa 2000;w;w;w;wu;wu;w;w;enter;break men(ĞèÒª300»ù±¾ÄÚ¹¦)
-           enter:#4 n;ÓöÃÅÔòopen door;Óö¼ûº¡¹ÇÇëketou;get all
+ä¹¾å¤å¤§æŒªç§»:rideto mingjiao;#wa 2000;w;w;w;wu;wu;w;w;enter;break men(éœ€è¦300åŸºæœ¬å…§åŠŸ)
+           enter:#4 n;é‡é–€å‰‡open door;é‡è¦‹éª¸éª¨è«‹ketou;get all
 
-Ì«Ğş¹¦:rideto nanhai;#wa 2000;n;e;n;ask zhang ÉÍÉÆ·£¶ñÁî(ÒªÇó200force 200ÎäÑ§ 5000ÄÚÁ¦ 10WÍşÍû);s;w;w;enter boat
-       µ½º£Ì²Ê±s;s;s;e;se;w;nw;e;s;s;#5 su;jump pubu;s;s;e;enter;s;think bi(Ï¸½ÚÇëhelp pub_skill)
+å¤ªç„åŠŸ:rideto nanhai;#wa 2000;n;e;n;ask zhang è³å–„ç½°æƒ¡ä»¤(è¦æ±‚200force 200æ­¦å­¸ 5000å…§åŠ› 10Wå¨æœ›);s;w;w;enter boat
+       åˆ°æµ·ç˜æ™‚s;s;s;e;se;w;nw;e;s;s;#5 su;jump pubu;s;s;e;enter;s;think bi(ç´°ç¯€è«‹help pub_skill)
 
-°Ù»¨´íÈ­,×¯×ÓÎè,Õ½ÉñĞÄ¾­:rideto hangzhou;#wa 3000;s;s;s;#2 sw;#3 w;sw;s;s;wu;enter
-                         kill all;u;Ò»Ö±ÕÒµ½³Â¼ÒÂå.xue chen baihua-cuoquan À´¼¤·¢
-                         ½Ó×Å¿ÉÒÔxue chen zhuangzi-wu 
+ç™¾èŠ±éŒ¯æ‹³,èŠå­èˆ,æˆ°ç¥å¿ƒç¶“:rideto hangzhou;#wa 3000;s;s;s;#2 sw;#3 w;sw;s;s;wu;enter
+                         kill all;u;ä¸€ç›´æ‰¾åˆ°é™³å®¶æ´›.xue chen baihua-cuoquan ä¾†æ¿€ç™¼
+                         æ¥è‘—å¯ä»¥xue chen zhuangzi-wu 
                                  xue chen zhanshen-xinjing
 
-¾ÅÒõÕæ¾­:ÍÀÁúµ¶ÄÃ·¨£ºrideto hangzhou;#wa 3000;s;s;s;#2 sw;#3 w;sw;s;s;ed;enter zhou;ask yin ±ù»ğµº;decide
-                     ÏÂ´¬ºó;n;get stone;break boat;s;n;s;kill all;s;s;get all from ding
+ä¹é™°çœŸç¶“:å± é¾åˆ€æ‹¿æ³•ï¼šrideto hangzhou;#wa 3000;s;s;s;#2 sw;#3 w;sw;s;s;ed;enter zhou;ask yin å†°ç«å³¶;decide
+                     ä¸‹èˆ¹å¾Œ;n;get stone;break boat;s;n;s;kill all;s;s;get all from ding
 
-         ÒĞÌì½£;rideto beijing;w;w;n;n;#5 w;enter;kill all;enter;½øÈ¥ºó.n;n;n;u;Ò»Â·kill all
-                Ò»Ö±ÕÒµ½ÕÔÃôget all from shelf.È»ºóºÍÆäÊÖÏÂ±È»®biÒ»Ö±±ÈÍêÄÃ½£
-                (ÌáÊ¾£º¿ÉÄÜÒĞÌì½£»áÔÚ°¢´óµÄcorpseÖĞ)
-         Á½Ñù¶¼ÄÃµ½ºóhukan yitian jianÔòµÃµ½ÎäÄÂÒÅÊé 18ÕÆºÍ¾ÅÒõÕæ¾­
+         å€šå¤©åŠ;rideto beijing;w;w;n;n;#5 w;enter;kill all;enter;é€²å»å¾Œ.n;n;n;u;ä¸€è·¯kill all
+                ä¸€ç›´æ‰¾åˆ°è¶™æ•get all from shelf.ç„¶å¾Œå’Œå…¶æ‰‹ä¸‹æ¯”åŠƒbiä¸€ç›´æ¯”å®Œæ‹¿åŠ
+                (æç¤ºï¼šå¯èƒ½å€šå¤©åŠæœƒåœ¨é˜¿å¤§çš„corpseä¸­)
+         å…©æ¨£éƒ½æ‹¿åˆ°å¾Œhukan yitian jianå‰‡å¾—åˆ°æ­¦ç©†éºæ›¸ 18æŒå’Œä¹é™°çœŸç¶“
 
-¶À¹Â¾Å½£:rideto huashan;#2 su;#2 eu;su;eu;eu;#4 su;eu;sd;su;su;say ·çÇåÑïÒ»Ö±µ½³öÏÖÌáÊ¾Ñ°ÕÒĞşÌú½£
-         ½ÓÏÂÀ´nd;nd;nu;n;nw;ne;eu;shout ·çÀÏÇ°±²Ò»Ö±µ½³öÏÖÌï²®¹â.
-         fight tiao.½¨Òéall 200»ñÊ¤ºónÒ»²½¼ûµ½ÌÕ¹ÈÁùÏÉ.
-         È«²¿fight Ò»±é²Å¿ÉÒÔÍ¨¹ıÈ»ºóne;enter;xue feng lonely-sword
+ç¨å­¤ä¹åŠ:rideto huashan;#2 su;#2 eu;su;eu;eu;#4 su;eu;sd;su;su;say é¢¨æ¸…æšä¸€ç›´åˆ°å‡ºç¾æç¤ºå°‹æ‰¾ç„éµåŠ
+         æ¥ä¸‹ä¾†nd;nd;nu;n;nw;ne;eu;shout é¢¨è€å‰è¼©ä¸€ç›´åˆ°å‡ºç¾ç”°ä¼¯å…‰.
+         fight tiao.å»ºè­°all 200ç²å‹å¾Œnä¸€æ­¥è¦‹åˆ°é™¶è°·å…­ä»™.
+         å…¨éƒ¨fight ä¸€éæ‰å¯ä»¥é€šéç„¶å¾Œne;enter;xue feng lonely-sword
 
-¶À¹Â¾Å½£ÎŞÕĞ½âÃÜ:rideto xiangyang;#wa 2000;#5 e;ne;e;e;n;n;n;e;s;n;
+ç¨å­¤ä¹åŠç„¡æ‹›è§£å¯†:rideto xiangyang;#wa 2000;#5 e;ne;e;e;n;n;n;e;s;n;
 n;n;#wa 1000;enter;n;s;out;n;n;n;wa qingtai;climb bi;enter,
-È»ºóhole1~hole6¶ÔÓ¦ÏàÓ¦µÄ»ú¹Ø£¬enter holeºómove desk;out;
-l doorµ±6°Ñ»ğ¾æ¶¼ÁÁ×Å¾Í¿ÉÒÔenter;get canben;rideto huashan;
+ç„¶å¾Œhole1~hole6å°æ‡‰ç›¸æ‡‰çš„æ©Ÿé—œï¼Œenter holeå¾Œmove desk;out;
+l doorç•¶6æŠŠç«ç‚¬éƒ½äº®è‘—å°±å¯ä»¥enter;get canben;rideto huashan;
 ne;cross;give dugu canben
 
-ÁùÂöÉñ½£:rideto dali;#4 n;nw;n;ne;e;#3 s;#wa 1000;e;#2 s;w;#6 s;kill kurong(Ëæ»ú³öÏÖÁùÂöÉñ½£½£Æ×.×¢ÒâĞèÒªskills300ÒÔÉÏ·½°²È«)
+å…­è„ˆç¥åŠ:rideto dali;#4 n;nw;n;ne;e;#3 s;#wa 1000;e;#2 s;w;#6 s;kill kurong(éš¨æ©Ÿå‡ºç¾å…­è„ˆç¥åŠåŠè­œ.æ³¨æ„éœ€è¦skills300ä»¥ä¸Šæ–¹å®‰å…¨)
 
-ÌÆÊ«½£·¨:¿ÉÒÔ²Î¿¼wenxuan 2010 4
+å”è©©åŠæ³•:å¯ä»¥åƒè€ƒwenxuan 2010 4
 
-ÆäÓà¸÷ÖÖ½âÃÜ¿ÉÒÔ²Î¿¼help fam_skill help pub_skill
+å…¶ä½™å„ç¨®è§£å¯†å¯ä»¥åƒè€ƒhelp fam_skill help pub_skill
 
 
-taskNPCÂ·¾¶
+taskNPCè·¯å¾‘
                 
-ÈÎÎÒĞĞÎ»ÖÃ:rideto beijing;#wa 2000;w;w;n;n;w;w;w;w;w;w;sw;w;w;e;s;e;n;e;w;w;w;sw;w;n;n
+ä»»æˆ‘è¡Œä½ç½®:rideto beijing;#wa 2000;w;w;n;n;w;w;w;w;w;w;sw;w;w;e;s;e;n;e;w;w;w;sw;w;n;n
 
-»ôÇàÍ©Î»ÖÃ:rideto mingjiao;#wa 2000;e;n;n;s;s;e;e;e;e;e;se;e
+éœé’æ¡ä½ç½®:rideto mingjiao;#wa 2000;e;n;n;s;s;e;e;e;e;e;se;e
 
-ËÎÇàÊéÎ»ÖÃ:rideto emei:#wa 2000;#4 wu;su;su;su;se;sw;su;se;wu;su;se;enter;w;jump chuang;s;s;se
+å®‹é’æ›¸ä½ç½®:rideto emei:#wa 2000;#4 wu;su;su;su;se;sw;su;se;wu;su;se;enter;w;jump chuang;s;s;se
 
-ÏôÔ¶É½Î»ÖÃ:rideto ruzhou;#wa 2000;#7 n;ne;nw;ne
+è•­é å±±ä½ç½®:rideto ruzhou;#wa 2000;#7 n;ne;nw;ne
 
-ÓñÕæ×ÓÎ»ÖÃ:rideto ruzhou;#wa 2000;#7 n;ne;nw;ne;ne;ne;n;n;ne;ne;ne;ne;#4 n
+ç‰çœŸå­ä½ç½®:rideto ruzhou;#wa 2000;#7 n;ne;nw;ne;ne;ne;n;n;ne;ne;ne;ne;#4 n
 
-´ó±¯ÀÏÈËÎ»ÖÃ:ÑïÖİÖĞÑë:#3 s;#4 e;#3 se;e
+å¤§æ‚²è€äººä½ç½®:æšå·ä¸­å¤®:#3 s;#4 e;#3 se;e
 
-¹éÔÆ×¯Ö÷Â½¹ÚÓ¢:ÑïÖİÖĞÑë;#3 s;#4 e;#3 se;e;s;s
+æ­¸é›²èŠä¸»é™¸å† è‹±:æšå·ä¸­å¤®;#3 s;#4 e;#3 se;e;s;s
 
-ÀîÄª³îÎ»ÖÃ:ÑïÖİÖĞÑë:n;e;e;goto jiaxing;ne;n;e
+æè«æ„ä½ç½®:æšå·ä¸­å¤®:n;e;e;goto jiaxing;ne;n;e
 
-Ğ»ÑÌ¿ÍÎ»ÖÃ:rideto henyang;#wa 2000;#6 w;s;climb lian
+è¬ç…™å®¢ä½ç½®:rideto henyang;#wa 2000;#6 w;s;climb lian
 
-Ô½Å®Î»ÖÃ:rideto hangzhou;#wa 2000;n;w;sw;#2 w;wu
+è¶Šå¥³ä½ç½®:rideto hangzhou;#wa 2000;n;w;sw;#2 w;wu
 
-÷¡°İ;rideto beijing;#wa 2000;#2 w;#7 n;kill shi wei;n;n;
+é°²æ‹œ;rideto beijing;#wa 2000;#2 w;#7 n;kill shi wei;n;n;
 
-ÕÅÈı·á:rideto wudang;#wa 2000;wu;w;su;su;su;su;sd;su;sd;su;su;su;su;s;s;s;s;s
+å¼µä¸‰è±:rideto wudang;#wa 2000;wu;w;su;su;su;su;sd;su;sd;su;su;su;su;s;s;s;s;s
 
-Ò¦´º:rideto beijing;#wa 2000;w;w;n;e;e;n
+å§šæ˜¥:rideto beijing;#wa 2000;w;w;n;e;e;n
 
-Ğ»Ñ·:²Î¿¼help pathÀïµÄ±ù»ğµº¾ÍÕÒµ½ÁË
+è¬éœ:åƒè€ƒhelp pathè£¡çš„å†°ç«å³¶å°±æ‰¾åˆ°äº†
 
-»ÆÒ©Ê¦:rideto taohua;#wa 2000;ask sha Íæ;agree;w;w
+é»ƒè—¥å¸«:rideto taohua;#wa 2000;ask sha ç©;agree;w;w
 
-ÀèÉú:rideto yangzhou;#wa 2000;enter;say ÌìÌÃÓĞÂ·Äã²»×ßÑ½;d;5;ne;ne
+é»ç”Ÿ:rideto yangzhou;#wa 2000;enter;say å¤©å ‚æœ‰è·¯ä½ ä¸èµ°å‘€;d;5;ne;ne
 
-Íõ´¦Ò»:rideto quanzhen:#wa 2000;knock gate;e
+ç‹è™•ä¸€:rideto quanzhen:#wa 2000;knock gate;e
 
-Â³°à:rideto yangzhou;#wa 2000;n;n;n;n;n;n;e;
+é­¯ç­:rideto yangzhou;#wa 2000;n;n;n;n;n;n;e;
 
-³ÂÓĞµÂ:rideto yangzhou;#wa 2000;w;w;s
+é™³æœ‰å¾·:rideto yangzhou;#wa 2000;w;w;s
 
-ÁÖÕğÄÏ;rideto yangzhou;#wa 2000;w;w;w;s;s
+æ—éœ‡å—;rideto yangzhou;#wa 2000;w;w;w;s;s
 
-Ä½Èİ²©:rideto murong;#wa 2000;nd;eu;e;e;s;s;w;w;s;s
+æ…•å®¹åš:rideto murong;#wa 2000;nd;eu;e;e;s;s;w;w;s;s
 
-Ä½Èİ¸´:rideto murong;#wa 2000;nd;eu;e;e;s;s;w;w;s;s;e;e;e
+æ…•å®¹å¾©:rideto murong;#wa 2000;nd;eu;e;e;s;s;w;w;s;s;e;e;e
 
-°¢ÇìÉ©:rideto yangzhou;s;s;w
+é˜¿æ…¶å«‚:rideto yangzhou;s;s;w
 
-ĞìÌì´¨:rideto beijing;#wa 2000;#3 w;#5 s;e
+å¾å¤©å·:rideto beijing;#wa 2000;#3 w;#5 s;e
 
-½ÓÒıÊ¹;rideto mingjiao;#wa 2000;w;w;w
+æ¥å¼•ä½¿;rideto mingjiao;#wa 2000;w;w;w
 
-Ñî¹ı:rideto xiangyang;#wa 2000;#6 e;ne;e;e;n;e;s;e;n;n;n
+æ¥Šé:rideto xiangyang;#wa 2000;#6 e;ne;e;e;n;e;s;e;n;n;n
 
-ºúÇàÅ£:rideto mingjiao;#wa 2000;w;w;w;wu;wu;#4 nu;enter;enter
+èƒ¡é’ç‰›:rideto mingjiao;#wa 2000;w;w;w;wu;wu;#4 nu;enter;enter
 
-³Â¼ÒÂå:rideto hangzhou;#wa 3000;s;s;s;#2 sw;#3 w;sw;s;s;wu;enter;kill all;upµ½¶¥
+é™³å®¶æ´›:rideto hangzhou;#wa 3000;s;s;s;#2 sw;#3 w;sw;s;s;wu;enter;kill all;upåˆ°é ‚
 
-¶Ä¿Í:rideto beijing;#wa 2000;s;s;e;n
+è³­å®¢:rideto beijing;#wa 2000;s;s;e;n
 
-»ªºÕôŞ:rideto dali;#wa 2000;n;n;e;n;enter;n;n;wĞèÒªkill zhu wanli
+è¯èµ«è‰®:rideto dali;#wa 2000;n;n;e;n;enter;n;n;wéœ€è¦kill zhu wanli
 
-È«¹ÚÇå:rideto yangzhou;#wa 2000;e;e;e;#3 s
+å…¨å† æ¸…:rideto yangzhou;#wa 2000;e;e;e;#3 s
 
-Ëµ²»µÃ:rideto mingjiao;#wa 2000;w;w;w;wu;wu;#4 nu;enter;#4 nu;n
+èªªä¸å¾—:rideto mingjiao;#wa 2000;w;w;w;wu;wu;#4 nu;enter;#4 nu;n
 
-ÈÎÓ¯Ó¯;rideto heimuya;#wa 2000;#6 ed;yell boat;enter boat;ÏÂ´¬ºó;eu;s;#10 e
+ä»»ç›ˆç›ˆ;rideto heimuya;#wa 2000;#6 ed;yell boat;enter boat;ä¸‹èˆ¹å¾Œ;eu;s;#10 e
 
-ÀÏÏÈÉú:rideto xiangyang;#wa 2000;s;e
+è€å…ˆç”Ÿ:rideto xiangyang;#wa 2000;s;e
 
-¶àÂ¡:rideto beijing;#wa 2000;s;s;w;s;s;s
+å¤šéš†:rideto beijing;#wa 2000;s;s;w;s;s;s
 
-¶À±ÛÉñÄá:rideto beijing;#wa 2000;s;s;w;n;n;e;
+ç¨è‡‚ç¥å°¼:rideto beijing;#wa 2000;s;s;w;n;n;e;
 
-ÂòÂôÌá:rideto yili;#wa 2000;w
+è²·è³£æ:rideto yili;#wa 2000;w
 
-Àî¿ÉĞã:¸ß²ıÀï
+æå¯ç§€:é«˜æ˜Œè£¡
 
-²É»¨×Ó:rideto xingxiu;#wa 2000;n;w;w;
+æ¡èŠ±å­:rideto xingxiu;#wa 2000;n;w;w;
 
-ÅíÓĞ¾´;rideto yangzhou;#wa 2000;#3 n;e;e;w;w;n;(e n w )²»Í£Ñ­»·
+å½­æœ‰æ•¬;rideto yangzhou;#wa 2000;#3 n;e;e;w;w;n;(e n w )ä¸åœå¾ªç’°
 
-Î¤´º·¼;rideto xiangyang;#wa 2000;s;s;e
+éŸ‹æ˜¥èŠ³;rideto xiangyang;#wa 2000;s;s;e
 
-ÕÅ´äÉ½;rideto hangzhou;#wa 3000;s;s;s;#2 sw;#3 w;sw;s;s;ed;enter zhou
-       ask yin ±ù»ğµº;decideÏÂ´¬ºón;get stone break boat;s;kill all;s;s
+å¼µç¿ å±±;rideto hangzhou;#wa 3000;s;s;s;#2 sw;#3 w;sw;s;s;ed;enter zhou
+       ask yin å†°ç«å³¶;decideä¸‹èˆ¹å¾Œn;get stone break boat;s;kill all;s;s
 
-ÑÃÒÛ;rideto yangzhou;#wa 2000;w;n
+è¡™å½¹;rideto yangzhou;#wa 2000;w;n
 
-º£¹«¹«:rideto yangzhou;#wa 2000;#6 e
+æµ·å…¬å…¬:rideto yangzhou;#wa 2000;#6 e
 
-ÎŞÃûÀÏÉ®;rideto shaolin;#wa 2000;½øÈ¥ºóhelp here ²Ø¾­¸óÒ»Â¥
+ç„¡åè€åƒ§;rideto shaolin;#wa 2000;é€²å»å¾Œhelp here è—ç¶“é–£ä¸€æ¨“
 
-³Â½üÄÏ:rideto beijing;#wa 2000;w;w;#5 s;e;s
+é™³è¿‘å—:rideto beijing;#wa 2000;w;w;#5 s;e;s
 
-Öììä;rideto yangzhou;e;n
+æœ±ç†¹;rideto yangzhou;e;n
 
-Âí³¬ĞË;rideto yangzhou;#3 n
+é¦¬è¶…èˆˆ;rideto yangzhou;#3 n
 
-ÍõÎå:rideto yangzhou;n;n;e;u
+ç‹äº”:rideto yangzhou;n;n;e;u
 
 
 
-ÉÙÁ¿ÃÅÅÉÂ·¾¶ºÍ½±ÀøÂ·¾¶
+å°‘é‡é–€æ´¾è·¯å¾‘å’Œçå‹µè·¯å¾‘
 
-ÉñÏÉ½ã½ã:åĞÒ£×Ó´¦d;s;e;e;open door;n;n;w
+ç¥ä»™å§å§:é€é™å­è™•d;s;e;e;open door;n;n;w
 
-´ïÄ¦Î»ÖÃ: n;sw;sw;n;n;n;n;s;e;e;s;w;n;nw;n;
+é”æ‘©ä½ç½®: n;sw;sw;n;n;n;n;s;e;e;s;w;n;nw;n;
 
-Íò½Ù¹ÈÂ·¾¶:rideto dali;#wa 2000;#7 n;nw;nd;#3 w;wu;su;wu;wd;nd;w;pushaside grass;enter;pull ring;enter;n;out;knock duan;n
+è¬åŠ«è°·è·¯å¾‘:rideto dali;#wa 2000;#7 n;nw;nd;#3 w;wu;su;wu;wd;nd;w;pushaside grass;enter;pull ring;enter;n;out;knock duan;n
 
-´óÀíÎŞÁ¿É½È¥·¨:rideto dali:#wa 2000;#3 n;w;w;s;wu;wu;nu;eu;nu;wd
+å¤§ç†ç„¡é‡å±±å»æ³•:rideto dali:#wa 2000;#3 n;w;w;s;wu;wu;nu;eu;nu;wd
 
-ÁéğÕÃÜµÀ:move jiashan;enter;nd;nd;ed;n;n;n;n;n;e;n;w;w
+éˆé·²å¯†é“:move jiashan;enter;nd;nd;ed;n;n;n;n;n;e;n;w;w
 
-ÏÀ¿Íµº:rideto nanhai;#wa 2000;n;e;n;ask zhang ÉÍÉÆ·£¶ñÁî(ÒªÇó200force 200ÎäÑ§ 5000ÄÚÁ¦ 10WÍşÍû);s;w;w;enter boat
+ä¿ å®¢å³¶:rideto nanhai;#wa 2000;n;e;n;ask zhang è³å–„ç½°æƒ¡ä»¤(è¦æ±‚200force 200æ­¦å­¸ 5000å…§åŠ› 10Wå¨æœ›);s;w;w;enter boat
 
-»Æ¹ûÊ÷ÆÙ²¼:rideto dali;#7 s;se;sw;n;w
+é»ƒæœæ¨¹ç€‘å¸ƒ:rideto dali;#7 s;se;sw;n;w
 
-ÉÙÁÖ¹ã³¡--½ğ¸Õ·üÄ§È¦£ºe;e;s;e;s;e;n;n;e;w;s
+å°‘æ—å»£å ´--é‡‘å‰›ä¼é­”åœˆï¼še;e;s;e;s;e;n;n;e;w;s
 
-½ğ¸Õ·üÄ§È¦--ÉÙÁÖ¹ã³¡£ºout;sd;w;e;n;e;s;n;e;w;w;w
+é‡‘å‰›ä¼é­”åœˆ--å°‘æ—å»£å ´ï¼šout;sd;w;e;n;e;s;n;e;w;w;w
 
-»ªÉ½½£×ÚÂ·¾¶:rideto huashan;#wa 2000;nw;w;w;w;w;w;s;s;s;s;s;s;se;ne;e;e;eu;su;use fire;zuan;wu;su;s;e
+è¯å±±åŠå®—è·¯å¾‘:rideto huashan;#wa 2000;nw;w;w;w;w;w;s;s;s;s;s;s;se;ne;e;e;eu;su;use fire;zuan;wu;su;s;e
 
-ÌÒ»¨µºÌÒ»¨ÁÖÃÔ¹¬:{n;ne;e;se;s;sw;w;nw},Ñ­»·×ß
+æ¡ƒèŠ±å³¶æ¡ƒèŠ±æ—è¿·å®®:{n;ne;e;se;s;sw;w;nw},å¾ªç’°èµ°
 
-ÉÙÁÖÎåĞĞ¶´:s;e;s;;n;w;n;e;s;u;out;e;s;s;sd;s;open gate;s
-½ğ  »ÆÉ«  ÉúÃÅ north ËÀÃÅwest  ÆäËûÊÇÏĞÃÅ
-Ä¾  ÂÌÉ«  ÉúÃÅ south ËÀÃÅwest
-Ë®  À¶É«  ÉúÃÅ east  ËÀÃÅnorth
-»ğ  ºìÉ«  ÉúÃÅ north ËÀÃÅwest
-ÍÁ  °×É«  ÉúÃÅ west ËÀÃÅnorth
+å°‘æ—äº”è¡Œæ´:s;e;s;;n;w;n;e;s;u;out;e;s;s;sd;s;open gate;s
+é‡‘  é»ƒè‰²  ç”Ÿé–€ north æ­»é–€west  å…¶ä»–æ˜¯é–’é–€
+æœ¨  ç¶ è‰²  ç”Ÿé–€ south æ­»é–€west
+æ°´  è—è‰²  ç”Ÿé–€ east  æ­»é–€north
+ç«  ç´…è‰²  ç”Ÿé–€ north æ­»é–€west
+åœŸ  ç™½è‰²  ç”Ÿé–€ west æ­»é–€north
 
-                                      ¸ßĞ§ÂÊµÄridetoÇé¿öÏÂ»¹ÊÇĞèÒª³Ç¼ÊÇá¹ìÀ´ÈÏÊ¶Â·¾¶
+                                      é«˜æ•ˆç‡çš„ridetoæƒ…æ³ä¸‹é‚„æ˜¯éœ€è¦åŸéš›è¼•è»Œä¾†èªè­˜è·¯å¾‘
 
-                                                  ÃÅÅÉÂ·¾¶
+                                                  é–€æ´¾è·¯å¾‘
 
-ÑïÖİ-¹ÅÄ¹(Ã»°İÊ¦) n;e;e;rideto gumu;#wa 2000;move shi;s;s;e;e
+æšå·-å¤å¢“(æ²’æ‹œå¸«) n;e;e;rideto gumu;#wa 2000;move shi;s;s;e;e
 
-ÑïÖİ-ÁéğÕ£ºn;e;e;rideto lingjiu;#wa 2000;zou tiesuo;eu;n;n;n
+æšå·-éˆé·²ï¼šn;e;e;rideto lingjiu;#wa 2000;zou tiesuo;eu;n;n;n
 
-ÑïÖİ-Îäµ±: n;e;e;rideto wudang;#wa 2000;wu;w;#4 su;sd;su;sd;su;#4 su;s
+æšå·-æ­¦ç•¶: n;e;e;rideto wudang;#wa 2000;wu;w;#4 su;sd;su;sd;su;#4 su;s
 
-Îäµ±ÈıÇåµî-ÑïÖİ£ºn;#4 nd;nu;nd;nu;#4 nd;e;#2 ed;e;e;n;nw;e;ne;e;se;e;#8 n
+æ­¦ç•¶ä¸‰æ¸…æ®¿-æšå·ï¼šn;#4 nd;nu;nd;nu;#4 nd;e;#2 ed;e;e;n;nw;e;ne;e;se;e;#8 n
 
-ÑïÖİ-åĞÒ£ÅÉ:#7 s;e;s;s;e;s;w;e;e;s;w
+æšå·-é€é™æ´¾:#7 s;e;s;s;e;s;w;e;e;s;w
 
-åĞÒ£ÅÉÁÖ¼äĞ¡µÀ-ÑïÖİ:e;e;n;w;#8 n
+é€é™æ´¾æ—é–“å°é“-æšå·:e;e;n;w;#8 n
 
-ÑïÖİÖĞÑë--Ì©É½:#6 e;ne;#2 n
+æšå·ä¸­å¤®--æ³°å±±:#6 e;ne;#2 n
 
-Ì©É½--ÑïÖİÖĞÑë:#2 s;sw;#6 w
+æ³°å±±--æšå·ä¸­å¤®:#2 s;sw;#6 w
 
-ÑïÖİÖĞÑë--Íò¾ø¹È:#8 s;w;nw;w;sw;w;#2 sw;w;s;#4 sw;nw;nd;#3 w;wu;su;wu;wd;nd;w;pushaside grass;enter;#wa 1000;pull ring;enter;n;out;knock ¶Î;n
+æšå·ä¸­å¤®--è¬çµ•è°·:#8 s;w;nw;w;sw;w;#2 sw;w;s;#4 sw;nw;nd;#3 w;wu;su;wu;wd;nd;w;pushaside grass;enter;#wa 1000;pull ring;enter;n;out;knock æ®µ;n
 
-Íò¾ø¹È--ÑïÖİÖĞÑë£ºs;enter;s;out;out;e;su;eu;ed;nd;ed;#3 e;su;se;#4 ne;n;e;#2 ne;e;ne;e;se;e;#8 n
+è¬çµ•è°·--æšå·ä¸­å¤®ï¼šs;enter;s;out;out;e;su;eu;ed;nd;ed;#3 e;su;se;#4 ne;n;e;#2 ne;e;ne;e;se;e;#8 n
 
-ÑïÖİÖĞÑë--¶ëáÒ:#8 s;w;nw;#wa 1000;w;sw;w;#2 sw;w;s;sw;su;w;s;s;w;#7 wu;w
+æšå·ä¸­å¤®--å³¨åµ‹:#8 s;w;nw;#wa 1000;w;sw;w;#2 sw;w;s;sw;su;w;s;s;w;#7 wu;w
 
-¶ëáÒ--ÑïÖİÖĞÑë:e;#7 ed;e;n;n;e;nd;ne;n;e;#2 ne;e;ne;e;#wa 1000;se;e;#8 n
+å³¨åµ‹--æšå·ä¸­å¤®:e;#7 ed;e;n;n;e;nd;ne;n;e;#2 ne;e;ne;e;#wa 1000;se;e;#8 n
 
-ÑïÖİÖĞÑë--ÌÆÃÅ:#8 s;w;nw;#wa 1000;w;sw;w;#2 sw;w;s;w;sw;#5 w;#8 s;w;w;nw;#2 nu;w;nw;
+æšå·ä¸­å¤®--å”é–€:#8 s;w;nw;#wa 1000;w;sw;w;#2 sw;w;s;w;sw;#5 w;#8 s;w;w;nw;#2 nu;w;nw;
 
-ÌÆÃÅ--ÑïÖİÖĞÑë:se;e;sd;sd;se;e;e;#8 n;#5 e;ne;e;n;e;#2 ne;e;ne;e;#wa 1000;se;e;#8 n
+å”é–€--æšå·ä¸­å¤®:se;e;sd;sd;se;e;e;#8 n;#5 e;ne;e;n;e;#2 ne;e;ne;e;#wa 1000;se;e;#8 n
 
-ÑïÖİÖĞÑë--Çà³ÇÉ½ÁèÏö³Ç:#8 s;w;nw;#wa 1000;w;sw;w;#2 sw;w;s;w;sw;#7 w;#wa 1000;n;ne;e;#3 n;w;#3 n;nw;#3 wu;nu;#wa 1000;#2 {nu;eu};s;
+æšå·ä¸­å¤®--é’åŸå±±å‡Œéœ„åŸ:#8 s;w;nw;#wa 1000;w;sw;w;#2 sw;w;s;w;sw;#7 w;#wa 1000;n;ne;e;#3 n;w;#3 n;nw;#3 wu;nu;#wa 1000;#2 {nu;eu};s;
 
-Çà³ÇÉ½--ÑïÖİÖĞÑë:n;#2 {wd;sd};sd;#3 ed;se;#3 s;e;#3 s;#wa 1000;w;sw;s;#7 e;ne;e;n;e;#2 ne;e;ne;e;#wa 1000;se;e;#8 n
+é’åŸå±±--æšå·ä¸­å¤®:n;#2 {wd;sd};sd;#3 ed;se;#3 s;e;#3 s;#wa 1000;w;sw;s;#7 e;ne;e;n;e;#2 ne;e;ne;e;#wa 1000;se;e;#8 n
 
-ÑïÖİÖĞÑë--ĞÇËŞ;n;e;e;goto changan;´ïµ½ºógoto yili;´ïµ½ºów;#3 s;sw;wu;n;nd
+æšå·ä¸­å¤®--æ˜Ÿå®¿;n;e;e;goto changan;é”åˆ°å¾Œgoto yili;é”åˆ°å¾Œw;#3 s;sw;wu;n;nd
 
-ĞÇËŞ--ÑïÖİÖĞÑë;su;s;ed;ne;n;n;n;e;goto changan;´ïµ½ºógoto yangzhou;w;w;s
+æ˜Ÿå®¿--æšå·ä¸­å¤®;su;s;ed;ne;n;n;n;e;goto changan;é”åˆ°å¾Œgoto yangzhou;w;w;s
 
-ÑïÖİÖĞÑë--Ñªµ¶ÃÅn;e;e;goto changan;µ½´ïºógoto chengdu;µ½´ïºó;w;nw;w;s;s;s;#3 w;wu;wu;su;s;sd;enter
+æšå·ä¸­å¤®--è¡€åˆ€é–€n;e;e;goto changan;åˆ°é”å¾Œgoto chengdu;åˆ°é”å¾Œ;w;nw;w;s;s;s;#3 w;wu;wu;su;s;sd;enter
 
-Ñªµ¶ÃÅ-ÑïÖİÖĞÑë:out;nu;n;nd;ed;ed;#3 e;#3 n;e;se;e;goto changan;µ½´ïºó;goto yangzhou;w;w;s
+è¡€åˆ€é–€-æšå·ä¸­å¤®:out;nu;n;nd;ed;ed;#3 e;#3 n;e;se;e;goto changan;åˆ°é”å¾Œ;goto yangzhou;w;w;s
 
-ÑïÖİÖĞÑë--Ñ©É½ÅÉ:n;e;e;goto changan;µ½´ïºó;goto chengdu;w;nw;w;#3 s;w;w;#3 n;#2 w;s;wu
+æšå·ä¸­å¤®--é›ªå±±æ´¾:n;e;e;goto changan;åˆ°é”å¾Œ;goto chengdu;w;nw;w;#3 s;w;w;#3 n;#2 w;s;wu
 
-Ñ©É½ÅÉ--ÑïÖİÖĞÑë:ed;n;e;e;#3 s;e;e;#3 n;e;se;e;goto changan;µ½´ïºó;goto yangzhou;w;w;s
+é›ªå±±æ´¾--æšå·ä¸­å¤®:ed;n;e;e;#3 s;e;e;#3 n;e;se;e;goto changan;åˆ°é”å¾Œ;goto yangzhou;w;w;s
 
-ÑïÖİÖĞĞÄ--»ªÉ½É½½Å:#6 w;nw;#3 w;nw;wu;#14 w;wd;#wa 1000;#3 w;#2 n;nw;#wa 1000;n;nw;#6 n;#5 e
+æšå·ä¸­å¿ƒ--è¯å±±å±±è…³:#6 w;nw;#3 w;nw;wu;#14 w;wd;#wa 1000;#3 w;#2 n;nw;#wa 1000;n;nw;#6 n;#5 e
 
-»ªÉ½É½½Å--ÑïÖİÖĞĞÄ;#5 w;#6 s;se;s;se;#2 s;#wa 1000;#3 e;eu;#7 e;#wa 1000;#7 e;ed;se;#3 e;se;#6 e
+è¯å±±å±±è…³--æšå·ä¸­å¿ƒ;#5 w;#6 s;se;s;se;#2 s;#wa 1000;#3 e;eu;#7 e;#wa 1000;#7 e;ed;se;#3 e;se;#6 e
 
-ÑïÖİÖĞĞÄ--Îäµ±½â½£ÑÒ:#8 s;w;nw;w;sw;w;se;s;#2 w;#2 wu
+æšå·ä¸­å¿ƒ--æ­¦ç•¶è§£åŠå·–:#8 s;w;nw;w;sw;w;se;s;#2 w;#2 wu
 
-Îäµ±½â½£ÑÒ--ÑïÖİÖĞĞÄ:ed;#2 e;n;nw;e;ne;e;se;e;#8 n
+æ­¦ç•¶è§£åŠå·–--æšå·ä¸­å¿ƒ:ed;#2 e;n;nw;e;ne;e;se;e;#8 n
 
-ÑïÖİÖĞĞÄ--È«Õæ½ÌÖÕÄÏÉ½½Å:n;e;e;gogo changan;µ½´ïºó;goto hanzhong;w;s;#3 w;ne;eu;se;eu
+æšå·ä¸­å¿ƒ--å…¨çœŸæ•™çµ‚å—å±±è…³:n;e;e;gogo changan;åˆ°é”å¾Œ;goto hanzhong;w;s;#3 w;ne;eu;se;eu
 
-È«Õæ½ÌÖÕÄÏÉ½½Å--ÑïÖİÖĞĞÄ:wd;nw;wd;sw;#3 e;n;e;goto changan;µ½´ïºó;goto yangzhou;w;w;s
+å…¨çœŸæ•™çµ‚å—å±±è…³--æšå·ä¸­å¿ƒ:wd;nw;wd;sw;#3 e;n;e;goto changan;åˆ°é”å¾Œ;goto yangzhou;w;w;s
 
-ÑïÖİÖĞĞÄ--ÉÙÁÖ;n;e;e;goto nanyang;w;w;#3 n;ne;#3 n;#4 w;nu;nu;wu;#4 nu;e
+æšå·ä¸­å¿ƒ--å°‘æ—;n;e;e;goto nanyang;w;w;#3 n;ne;#3 n;#4 w;nu;nu;wu;#4 nu;e
 
-ÉÙÁÖ-ÑïÖİÖĞĞÄ;w;#4 sd;ed;sd;sd;#4 e;#3 s;sw;#3 s;e;e;goto yangzhou;w;w;s
+å°‘æ—-æšå·ä¸­å¿ƒ;w;#4 sd;ed;sd;sd;#4 e;#3 s;sw;#3 s;e;e;goto yangzhou;w;w;s
 
-ÑïÖİÖĞĞÄ--áÔÉ½;n;e;e;goto nanyang;w;w;#3 n;ne;#3 n;#3 w;#3 n
+æšå·ä¸­å¿ƒ--åµ©å±±;n;e;e;goto nanyang;w;w;#3 n;ne;#3 n;#3 w;#3 n
 
-áÔÉ½--ÑïÖİÖĞĞÄ:#3 s;#3 e;sw;#3 s;e;e;goto yangzhou;w;w;s
+åµ©å±±--æšå·ä¸­å¿ƒ:#3 s;#3 e;sw;#3 s;e;e;goto yangzhou;w;w;s
 
-ÑïÖİÖĞĞÄ--ÉÌ¼Ò±¤´óÃÅ:n;e;e;goto nanyang;´ïµ½ºó;#2 w;#3 n;ne;e;n;
+æšå·ä¸­å¿ƒ--å•†å®¶å ¡å¤§é–€:n;e;e;goto nanyang;é”åˆ°å¾Œ;#2 w;#3 n;ne;e;n;
 
-ÉÌ¼Ò±¤--ÑïÖİÖĞĞÄ:s;w;sw;#3 s;e;e;goto yangzhou;µ½´ïºó;w;w;s
+å•†å®¶å ¡--æšå·ä¸­å¿ƒ:s;w;sw;#3 s;e;e;goto yangzhou;åˆ°é”å¾Œ;w;w;s
 
-ÑïÖİÖĞĞÄ--ÌÒ»¨µº:n;e;e;goto jiaxing;ne;n;e;e;ask chuanfu ³öº£;give 1 gold to chuanfu
+æšå·ä¸­å¿ƒ--æ¡ƒèŠ±å³¶:n;e;e;goto jiaxing;ne;n;e;e;ask chuanfu å‡ºæµ·;give 1 gold to chuanfu
 
-ÑïÖİÖĞĞÄ--Ô²ÔÂÉ½×¯:#8 s;w;nw;w;sw;w;#3 n;
+æšå·ä¸­å¿ƒ--åœ“æœˆå±±èŠ:#8 s;w;nw;w;sw;w;#3 n;
 
-Ô²ÔÂÉ½×¯--ÑïÖİÖĞĞÄ:#3 s;e;ne;e;ne;e;#8 n
+åœ“æœˆå±±èŠ--æšå·ä¸­å¿ƒ:#3 s;e;ne;e;ne;e;#8 n
 
-                                            ³ÇÊĞÂ·¾¶
+                                            åŸå¸‚è·¯å¾‘
 
-ÑïÖİÖĞĞÄ-ÌìµØ»á:n;e;e;goto beijing;µ½´ïºó;e;e;s;s;s;s;s;s
+æšå·ä¸­å¿ƒ-å¤©åœ°æœƒ:n;e;e;goto beijing;åˆ°é”å¾Œ;e;e;s;s;s;s;s;s
 
-ÌìµØ»á--ÑïÖİÖĞĞÄ:#6 n;w;w;goto yangzhou;w;w;s
+å¤©åœ°æœƒ--æšå·ä¸­å¿ƒ:#6 n;w;w;goto yangzhou;w;w;s
 
-ÑïÖİÖĞÑë-ÏåÑôÖĞÑë:#8 s;w;#7 n
+æšå·ä¸­å¤®-è¥„é™½ä¸­å¤®:#8 s;w;#7 n
 
-ÏåÑôÖĞÑë--ÑïÖİÖĞÑë:#7 s;e;#8 n                                         
+è¥„é™½ä¸­å¤®--æšå·ä¸­å¤®:#7 s;e;#8 n                                         
 
-ÑïÖİÖĞÑë--³É¶¼¹ã³¡:#8 s;w;nw;#wa 1000;w;sw;w;#2 sw;w;s;w;sw;#5 w
+æšå·ä¸­å¤®--æˆéƒ½å»£å ´:#8 s;w;nw;#wa 1000;w;sw;w;#2 sw;w;s;w;sw;#5 w
 
-³É¶¼¹ã³¡--ÑïÖİÖĞÑë:#5 e;ne;e;n;e;#2 ne;e;ne;e;#wa 1000;se;e;#8 n
+æˆéƒ½å»£å ´--æšå·ä¸­å¤®:#5 e;ne;e;n;e;#2 ne;e;ne;e;#wa 1000;se;e;#8 n
 
-ÑïÖİÖĞÑë-ÂåÑô¹ã³¡:#6 w;nw;#3 w;nw;wu;#7 w
+æšå·ä¸­å¤®-æ´›é™½å»£å ´:#6 w;nw;#3 w;nw;wu;#7 w
 
-ÂåÑô¹ã³¡--ÑïÖİÖĞÑë:#7 e;ed;se;#3 e;se;#6 e
+æ´›é™½å»£å ´--æšå·ä¸­å¤®:#7 e;ed;se;#3 e;se;#6 e
 
-ÑïÖİÖĞÑë--ÎŞÎıÈıÑô¹ã³¡:#3 s;#4 e;#3 se;e;s;ne;se;sd;#6 e
+æšå·ä¸­å¤®--ç„¡éŒ«ä¸‰é™½å»£å ´:#3 s;#4 e;#3 se;e;s;ne;se;sd;#6 e
 
-ÎŞÎıÈıÑô¹ã³¡--ÑïÖİÖĞÑë:#6 w;nu;nw;sw;n;w;#3 nw;#4 w;#3 n
+ç„¡éŒ«ä¸‰é™½å»£å ´--æšå·ä¸­å¤®:#6 w;nu;nw;sw;n;w;#3 nw;#4 w;#3 n
 
-ÑïÖİÖĞÑë--ËÕÖİ:#3 s;#4 e;#3 se;e;s;ne;se;sd;#6 e;#wa 1000;#7 e;se;#4 s
+æšå·ä¸­å¤®--è˜‡å·:#3 s;#4 e;#3 se;e;s;ne;se;sd;#6 e;#wa 1000;#7 e;se;#4 s
 
-ËÕÖİ--ÑïÖİÖĞÑë:#4 n;nw;#7 w;#wa 1000;#6 w;nu;nw;sw;n;w;#3 nw;#4 w;#3 n
+è˜‡å·--æšå·ä¸­å¤®:#4 n;nw;#7 w;#wa 1000;#6 w;nu;nw;sw;n;w;#3 nw;#4 w;#3 n
 
-ÑïÖİÖĞĞÄ--¼ÎĞË;n;e;e;goto jiaxing;ne;n
+æšå·ä¸­å¿ƒ--å˜‰èˆˆ;n;e;e;goto jiaxing;ne;n
 
-¼ÎĞË--ÑïÖİÖĞĞÄ;s;sw;goto yangzhou;w;w;s
+å˜‰èˆˆ--æšå·ä¸­å¿ƒ;s;sw;goto yangzhou;w;w;s
 
-ÑïÖİÖĞĞÄ-ÈêÖİ³Ç:n;e;e;goto nanyang;µ½´ïºó;w;w;#3 n;ne;#3 n
+æšå·ä¸­å¿ƒ-æ±å·åŸ:n;e;e;goto nanyang;åˆ°é”å¾Œ;w;w;#3 n;ne;#3 n
 
-ÈêÖİ³Ç--ÑïÖİÖĞĞÄ:#3 s;sw;#3 s;e;e;goto yangzhou;µ½´ïºó;w;w;s
+æ±å·åŸ--æšå·ä¸­å¿ƒ:#3 s;sw;#3 s;e;e;goto yangzhou;åˆ°é”å¾Œ;w;w;s
 
-ÑïÖİÖĞĞÄ--¸£Öİ¶«½Ö¿Ú;n;e;e;goto jiaxing;µ½´ïºó;goto fuzhou;s;s;w
+æšå·ä¸­å¿ƒ--ç¦å·æ±è¡—å£;n;e;e;goto jiaxing;åˆ°é”å¾Œ;goto fuzhou;s;s;w
 
-¸£Öİ¶«½Ö¿Ú--ÑïÖİÖĞĞÄ:e;n;n;goto jiaxing;µ½´ïºó;goto yangzhou;w;w;s
+ç¦å·æ±è¡—å£--æšå·ä¸­å¿ƒ:e;n;n;goto jiaxing;åˆ°é”å¾Œ;goto yangzhou;w;w;s
 
-ÑïÖİÖĞĞÄ--ºâÑô;#8 s;su;se;sw;sw;s;sw;w;w
+æšå·ä¸­å¿ƒ--è¡¡é™½;#8 s;su;se;sw;sw;s;sw;w;w
 
-ºâÑô--ÑïÖİÖĞĞÄ;e;e;ne;n;ne;ne;nw;nd;#8 n
+è¡¡é™½--æšå·ä¸­å¿ƒ;e;e;ne;n;ne;ne;nw;nd;#8 n
 
-ÑïÖİÖĞÑë--´óÀíÖĞĞÄ¹ã³¡:n;e;e;goto xiangyang;µ½´ïºó;goto dali;e;n;e;n
+æšå·ä¸­å¤®--å¤§ç†ä¸­å¿ƒå»£å ´:n;e;e;goto xiangyang;åˆ°é”å¾Œ;goto dali;e;n;e;n
 
-´óÀíÖĞĞÄ¹ã³¡--ÑïÖİÖĞÑë:s;w;s;w;goto xiangyang;´ïµ½ºó;goto yangzhou;w;w;s;
+å¤§ç†ä¸­å¿ƒå»£å ´--æšå·ä¸­å¤®:s;w;s;w;goto xiangyang;é”åˆ°å¾Œ;goto yangzhou;w;w;s;
 

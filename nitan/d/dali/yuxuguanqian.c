@@ -4,10 +4,10 @@
 inherit ROOM;
 void create()
 {
-        set("short","ÓñÐé¹ÛÇ°");
+        set("short","çŽ‰è™›è§€å‰");
         set("long", @LONG
-¶«ÃæÒ»×ùÃí¹Û£¬ÃÅÇ°ØÒÉÏÐ´×Å¡ºÓñÐé¹Û¡»Èý¸ö´ó×Ö£¬Î÷±ßÒ»¸ö±Ì
-Ë®µ´ÑúµÄÐ¡ºþ£¬ËÄÖÜÂÌÁø³ÉÒñ£¬ÊµÄËÐÞÐÄÑøÐÔµÄºÃµØ·½¡£
+æ±é¢ä¸€åº§å»Ÿè§€ï¼Œé–€å‰åŒ¾ä¸Šå¯«è‘—ã€ŽçŽ‰è™›è§€ã€ä¸‰å€‹å¤§å­—ï¼Œè¥¿é‚Šä¸€å€‹ç¢§
+æ°´ç›ªæ¼¾çš„å°æ¹–ï¼Œå››å‘¨ç¶ æŸ³æˆè”­ï¼Œå¯¦ä¹ƒä¿®å¿ƒé¤Šæ€§çš„å¥½åœ°æ–¹ã€‚
 LONG );
         set("objects", ([
            "/d/dali/npc/xiaodaogu": 2,

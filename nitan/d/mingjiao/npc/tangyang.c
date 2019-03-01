@@ -11,14 +11,14 @@ string ask_job();
 
 void create()
 {
-        set_name("����", ({ "tang yang", "tang", "yang", }));
+        set_name("唐洋", ({ "tang yang", "tang", "yang", }));
         set("long",
-        "����һλ�ߴ��ΰ���������ӣ�����һ���ײ����ۡ�\n"
-        "���������������е���ͷ����������򲻵�֮�£�����һ���������ݵĺ��ӡ�\n"
+        "他是一位高大魁偉的中年男子，身穿一件白布長袍。\n"
+        "他天生神力，手中的兩頭狼牙棒有萬夫不當之勇，真是一條威風凜凜的漢子。\n"
         );
 
-        set("title", HIG "����" BLK "��ˮ��" NOR "����ʹ");
-        set("gender", "����");
+        set("title", HIG "明教" BLK "洪水旗" NOR "掌旗使");
+        set("gender", "男性");
         set("attitude", "friendly");
         set("class", "fighter");
 
@@ -63,14 +63,14 @@ void create()
         prepare_skill("cuff", "shenghuo-quan");
         prepare_skill("strike", "guangming-zhang");
 
-        create_family("����", 37, "��ˮ������ʹ");
-        set("inherit_title",HIG"����"NOR"��ˮ�����"NOR);
+        create_family("明教", 37, "洪水旗掌旗使");
+        set("inherit_title",HIG"明教"NOR"洪水旗教眾"NOR);
 
         set("inquiry", ([
-                "name" : "���¾������̺�ˮ������ʹ���󣬲�֪�����к�ָ�̡�",
-                "����" : (: ask_job :),
+                "name" : "在下就是明教洪水旗掌旗使唐洋，不知閣下有何指教。",
+                "任務" : (: ask_job :),
                 "job"  : (: ask_job :),
-                "����" : (: ask_abandon :),
+                "放棄" : (: ask_abandon :),
                 "abandon" : (: ask_abandon :),
         ]));
 
@@ -85,14 +85,14 @@ string ask_job()
      mapping fam ;
      object ling,tong;
 
-    if( !(fam=query("family", this_player())) || fam["family_name"] != "����" )
-        return "��λ"+RANK_D->query_respect(player)+"�����ҽ̵��֣������ĸҷ��ɸ���ʲô�����أ�\n";
+    if( !(fam=query("family", this_player())) || fam["family_name"] != "明教" )
+        return "這位"+RANK_D->query_respect(player)+"並非我教弟兄，在下哪敢分派閣下什麼任務呢？\n";
 
         if( query("combat_exp", player)>400000 )
-                 return "��λ"+RANK_D->query_respect(player)+"ʵս�����Ѿ��ĸߣ�����ͷ���ܡ�\n";
+                 return "這位"+RANK_D->query_respect(player)+"實戰經驗已經頗高，豈敢勞煩大架。\n";
 
         if (fam["generation"] <=37)
-                 return "��λ"+RANK_D->query_respect(player)+"�������̵�λ�����ĸߣ�����ͷ���ܡ�\n";
+                 return "這位"+RANK_D->query_respect(player)+"在我明教地位已是頗高，豈敢勞煩大架。\n";
 
         if( query_temp("water_amount", player) >= 15 )
         {
@@ -100,8 +100,8 @@ string ask_job()
                 if (tong=present("mu tong",player))
                         destruct(tong);
                 delete_temp("water_amount", player);
-                call_out("reward",0,this_player(),"��ˮ");
-                return "�ɵò�������ȥ�ú���Ϣ��Ϣ��\n";
+                call_out("reward",0,this_player(),"挑水");
+                return "幹得不錯！下去好好休息休息。\n";
         }
 
         if( query("mingjiao/job", player) )
@@ -113,11 +113,11 @@ string ask_job()
 
         tong=new(OBJ_PATH"/mutong");
         tong->move(player);
-        tell_object(player,"�������һ��ľͰ��\n");
+        tell_object(player,"唐洋給你一個木桶。\n");
 
-        return "�Һ�ˮ���ڽ��ڸ������춾ˮ�������ˮ�������ˣ���ȥ\n"
-                "��ˮ��̶ȡЩˮ����������ˮ�ҵĴ�����̶ˮ���Ǻ�\n"
-                "�䣬��Ҫ���С�ġ�\n";
+        return "我洪水旗在教內負責制造毒水，最近冰水快用完了，你去\n"
+                "碧水寒潭取些水來，倒進藏水室的大缸裡。那潭水極是寒\n"
+                "冷，你要多加小心。\n";
 }
 
 #include "zhangqishi.h"

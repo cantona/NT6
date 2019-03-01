@@ -4,18 +4,18 @@ inherit F_LIQUID;
 
 void create()
 {
-        set_name(HIG"ÌìÂé"HIW"Òø¶ú"HIY"ÌÀ"NOR, ({"tianma soup"}));
+        set_name(HIG"å¤©éº»"HIW"éŠ€è€³"HIY"æ¹¯"NOR, ({"tianma soup"}));
         set_weight(1000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                           set("long", "ÕâÊÇ¡°ËÄ¼¾ÃÀ·¹×¯¡±µÄÒ»µÀÃû²Ë£¬ÏãÅçÅçµØÃ°×ÅÈÈÆø¡£\n");
-                set("unit", "Íë");
+                           set("long", "é€™æ˜¯â€œå››å­£ç¾é£¯èŠâ€çš„ä¸€é“åèœï¼Œé¦™å™´å™´åœ°å†’è‘—ç†±æ°£ã€‚\n");
+                set("unit", "ç¢—");
                 set("value", 800);
                 set("max_liquid", 30);
              }
                 set("liquid", ([
-                    "name" : HIG"ÌìÂé"HIW"Òø¶ú"HIY"ÌÀ"NOR,
+                    "name" : HIG"å¤©éº»"HIW"éŠ€è€³"HIY"æ¹¯"NOR,
                     "remaining" : 8,
                     "type" : "water"
         ]) );

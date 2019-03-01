@@ -1,4 +1,4 @@
-// qingyu.c ÇàÓã
+// qingyu.c é’é­š
 
 inherit ITEM;
 
@@ -7,13 +7,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name("ÇàÓã", ({ "qingyu", "qing yu" }) );
+        set_name("é’é­š", ({ "qingyu", "qing yu" }) );
         if (clonep())
                 set_default_object(__FILE__);
         else
         {
-                set("long", "Ò»Ìõ²»°²·ÖµÄÇàÓã¡£\n");
-                set("unit", "Ìõ");
+                set("long", "ä¸€æ¢ä¸å®‰åˆ†çš„é’é­šã€‚\n");
+                set("unit", "æ¢");
         }
 
         setup();

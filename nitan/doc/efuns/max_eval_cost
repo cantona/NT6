@@ -1,14 +1,14 @@
         max_eval_cost(3)        LP MudOSv21c7                (7 Jul 1996)
-        º¯ÊıÃû³Æ:
-                max_eval_cost() - ´«»Ø×î¸ßµÄÖ´ĞĞºÄ·ÑÊ±¼ä (evaluation cost)
-        º¯ÊıÓï·¨:
+        å‡½æ•¸åç¨±:
+                max_eval_cost() - å‚³å›æœ€é«˜çš„åŸ·è¡Œè€—è²»æ™‚é–“ (evaluation cost)
+        å‡½æ•¸èªæ³•:
                 void max_eval_cost()
-                ÎŞ´«»ØÖµ max_eval_cost()
-        º¯ÊıÓÃ·¨:
-                max_eval_cost() ÔÚÇı¶¯³ÌÊ½ (driver) ÅĞ¶Ï´ËÊ±ÊÇ·ñÏİÈë
-                Ò»¸öÎŞÇî»ØÈ¦Ö®Ç°, ´«»ØÊÇ·ñ¿ÉÒÔÖ´ĞĞµÄÖ¸Ê¾Êı×Ö.
-        ²Î¿¼º¯Êı:
+                ç„¡å‚³å›å€¼ max_eval_cost()
+        å‡½æ•¸ç”¨æ³•:
+                max_eval_cost() åœ¨é©…å‹•ç¨‹å¼ (driver) åˆ¤æ–·æ­¤æ™‚æ˜¯å¦é™·å…¥
+                ä¸€å€‹ç„¡çª®å›åœˆä¹‹å‰, å‚³å›æ˜¯å¦å¯ä»¥åŸ·è¡Œçš„æŒ‡ç¤ºæ•¸å­—.
+        åƒè€ƒå‡½æ•¸:
                 catch(3), error(3), throw(3), error_handler(4),
                 set_eval_limit(3), reset_eval_cost(3)
-        ÊÖ²á·­Òë:
+        æ‰‹å†Šç¿»è­¯:
                 Phoebus@ZH        97.Apr.15.                (Writen 5/23/97)

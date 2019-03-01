@@ -5,12 +5,12 @@ inherit COMBINED_ITEM;
 
 void create()
 {
-        set_name("ÉßÈâ", ({ "she rou", "she", "rou" }));
+        set_name("è›‡è‚‰", ({ "she rou", "she", "rou" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", NOR + WHT "ÕâÊÇÒ»¿éÉ¢·¢×ÅÐÈëý³ôµÄÉßÈâ¡£\n" NOR);
-                set("base_unit", "¿é");
+                set("long", NOR + WHT "é€™æ˜¯ä¸€å¡Šæ•£ç™¼è‘—è…¥è‡Šè‡­çš„è›‡è‚‰ã€‚\n" NOR);
+                set("base_unit", "å¡Š");
                 set("base_value", 60);
         }
         setup();

@@ -1,11 +1,11 @@
 // This program is a part of NT MudLIB
 // moduled.c
-// ĞŞ¸ÄÖ§³ÖÍ¬Ê±´©¶à¸öÌ××° by lonely
+// ä¿®æ”¹æ”¯æŒåŒæ™‚ç©¿å¤šå€‹å¥—è£ by lonely
 
 /*
-// ×ÔÔì×°±¸Ì××°Êı¾İ¸ñÊ½
+// è‡ªé€ è£å‚™å¥—è£æ•¸æ“šæ ¼å¼
 <1>
-<mod_name>$HIC$´óµÀ$NOR$</mod_name>
+<mod_name>$HIC$å¤§é“$NOR$</mod_name>
 <bas>5</bas>
 <num>12</num>
 <bas_prop>
@@ -25,17 +25,17 @@ reduce_damage:5
 </adv_prop>
 </1>
 
-// ·Ç×ÔÔì×°±¸Ì××°¸ñÊ½...
+// éè‡ªé€ è£å‚™å¥—è£æ ¼å¼...
 <M3000>
-<mod_name>$CYNGRN$ÁúÖ®ÉñÁ¦$NOR$</mod_name>
+<mod_name>$CYNGRN$é¾ä¹‹ç¥åŠ›$NOR$</mod_name>
 <mod_parts>
-A3000:$CYNGRN$ÁúÖ®»¤Íó$NOR$
-A3001:$CYNGRN$ÁúÉñÁÛ¼×$NOR$
-A3002:$CYNGRN$ÁúÉñÅû·ç$NOR$
-A3003:$CYNGRN$ÁúÖ®Êø´ø$NOR$
-A3004:$CYNGRN$¶ñÁúÖ®´¥$NOR$
-A3005:$CYNGRN$Áú¹ÇëÖ¼×$NOR$
-A3006:$CYNGRN$Áú¹ÇÕ½ÒÂ$NOR$
+A3000:$CYNGRN$é¾ä¹‹è­·è…•$NOR$
+A3001:$CYNGRN$é¾ç¥é±—ç”²$NOR$
+A3002:$CYNGRN$é¾ç¥æŠ«é¢¨$NOR$
+A3003:$CYNGRN$é¾ä¹‹æŸå¸¶$NOR$
+A3004:$CYNGRN$æƒ¡é¾ä¹‹è§¸$NOR$
+A3005:$CYNGRN$é¾éª¨è„›ç”²$NOR$
+A3006:$CYNGRN$é¾éª¨æˆ°è¡£$NOR$
 </mod_parts>
 <bas>3</bas>
 <num>6</num>
@@ -54,14 +54,14 @@ reduce_damage:20
 </adv_prop>
 </M3000>
 
-// ·Ç×ÔÔìÌ××°²¿¼ş¸ñÊ½...
+// éè‡ªé€ å¥—è£éƒ¨ä»¶æ ¼å¼...
 <A3002>
 <type>armor/surcoat</type>
-<name>$CYNGRN$ÁúÉñÅû·ç$NOR$</name>
+<name>$CYNGRN$é¾ç¥æŠ«é¢¨$NOR$</name>
 <id>dragon surcoat</id>
 <value>10000</value>
 <mod_level>M3000</mod_level>
-<mod_name>$CYNGRN$ÁúÖ®ÉñÁ¦$NOR$</mod_name>
+<mod_name>$CYNGRN$é¾ä¹‹ç¥åŠ›$NOR$</mod_name>
 <require>
 level:20
 con:30
@@ -81,13 +81,13 @@ used:2
 <insert>
 [1]
 id:magic stone
-name:ĞşÊ¯
+name:ç„çŸ³
 apply_prop/armor1:10
 apply_prop/str:2
 [/1]
 [2]
 id:magic stone
-name:ÁéÊ¯
+name:éˆçŸ³
 apply_prop/dex:1
 apply_prop/dodge:1
 [/2]
@@ -99,18 +99,18 @@ apply_prop/dodge:1
 inherit F_DBASE;
 
 #define EQUIP_LIST      CONFIG_DIR "equiplist/"
-#define NCH_CHANNEL(x) CHANNEL_D->channel_broadcast("nch", "Ì××°¾«Áé£º"+(string)x)
+#define NCH_CHANNEL(x) CHANNEL_D->channel_broadcast("nch", "å¥—è£ç²¾éˆï¼š"+(string)x)
 
 class eqmodule
 {
-        string mod_level;       // Ì××°ĞòºÅ ×÷ÎªĞòÒı¶ÁÈ¡×ÊÁÏ
-        string mod_name;        // Ì××°Ãû³Æ
-        mapping mod_parts;      // Ì××°×é¼şÃû³Æ
-        int bas;                // Ì××°¼¤»î»ù±¾ÊôĞÔÊıÁ¿
-        int num;                // Ì××°×é¼şÊıÁ¿
-        mapping bas_prop;       // Ì××°×éºÏ»ù±¾ÊôĞÔ
-        mapping adv_prop;       // Ì××°×éºÏ¸ß¼¶ÊôĞÔ
-        mapping add_prop;       // Ì××°×éºÏ²¹³äÊôĞÔ£¬Ì××°ÊôĞÔÓ¦¸ÃÊÇbas_prop+adv_prop+add_prop
+        string mod_level;       // å¥—è£åºè™Ÿ ä½œç‚ºåºå¼•è®€å–è³‡æ–™
+        string mod_name;        // å¥—è£åç¨±
+        mapping mod_parts;      // å¥—è£çµ„ä»¶åç¨±
+        int bas;                // å¥—è£æ¿€æ´»åŸºæœ¬å±¬æ€§æ•¸é‡
+        int num;                // å¥—è£çµ„ä»¶æ•¸é‡
+        mapping bas_prop;       // å¥—è£çµ„åˆåŸºæœ¬å±¬æ€§
+        mapping adv_prop;       // å¥—è£çµ„åˆé«˜ç´šå±¬æ€§
+        mapping add_prop;       // å¥—è£çµ„åˆè£œå……å±¬æ€§ï¼Œå¥—è£å±¬æ€§æ‡‰è©²æ˜¯bas_prop+adv_prop+add_prop
 }
 
 class eqmodule load_module(string modlevel);
@@ -123,11 +123,11 @@ void unequip_module(object ob, object owner);
 void create()
 {
         seteuid(ROOT_UID);
-        set("channel_id", "Ì××°¾«Áé");
-        CHANNEL_D->do_channel(this_object(), "sys", "Ì××°ÏµÍ³ÒÑ¾­Æô¶¯¡£");
+        set("channel_id", "å¥—è£ç²¾éˆ");
+        CHANNEL_D->do_channel(this_object(), "sys", "å¥—è£ç³»çµ±å·²ç¶“å•Ÿå‹•ã€‚");
 }
 
-// ¸ù¾İÌ××°²¿¼şºÍ³ÖÓĞ²¿¼şÕß´òÓ¡²¿¼şĞÅÏ¢,Ó¦ÓÃÓÚlook.cµ÷ÓÃ
+// æ ¹æ“šå¥—è£éƒ¨ä»¶å’ŒæŒæœ‰éƒ¨ä»¶è€…æ‰“å°éƒ¨ä»¶ä¿¡æ¯,æ‡‰ç”¨äºlook.cèª¿ç”¨
 string module_stats(object ob, object owner)
 {
         class eqmodule mod_stats;
@@ -137,15 +137,15 @@ string module_stats(object ob, object owner)
         int i, j, n, bas, num, len = 0;
         string msg, str, eq_str;
 
-        // ³õÊ¼»¯×ÊÁÏ
+        // åˆå§‹åŒ–è³‡æ–™
         msg = "";
         modlevel = query("mod_level", ob);
         modname = query("mod_name", ob);
 
-        // ×ÔÔìÌ××°»ñÈ¡mod_level
+        // è‡ªé€ å¥—è£ç²å–mod_level
         if( ob->is_item_make() )
         {
-                if( query_temp("modequip_min_level_"+modname, owner) ) // »ñÈ¡Ì××°µÄ×îµÍµÈ¼¶
+                if( query_temp("modequip_min_level_"+modname, owner) ) // ç²å–å¥—è£çš„æœ€ä½ç­‰ç´š
                         modlevel = query_temp("modequip_min_level_"+modname, owner);
 
                 if( query_temp("modequip_mark_level_"+modname, owner) )
@@ -157,7 +157,7 @@ string module_stats(object ob, object owner)
                 mark_level = modlevel;
 
         if( classp(query_temp("modequip_"+mark_level+"_"+modname+"_stats", owner)) && query_temp("modequip_"+mark_level+"_"+modname+"_name", owner) )
-                mod_stats = query_temp("modequip_"+mark_level+"_"+modname+"_stats", owner); // Ö±½Ó´ÓÍæ¼ÒÉíÉÏ»ñÈ¡Ì××°×ÊÁÏ
+                mod_stats = query_temp("modequip_"+mark_level+"_"+modname+"_stats", owner); // ç›´æ¥å¾ç©å®¶èº«ä¸Šç²å–å¥—è£è³‡æ–™
         else
         {
                 if( undefinedp(all[modlevel]) )
@@ -166,15 +166,15 @@ string module_stats(object ob, object owner)
                         mod_stats = copy(all[modlevel]);
         }
 
-        // ¼ì²éºÏ·¨ĞÔ
+        // æª¢æŸ¥åˆæ³•æ€§
         if( valid_module(mod_stats) )
         {
-                num = mod_stats->num;   // Ì××°²¿¼şÊıÁ¿
-                // ¼¤»îÌ××°²¿¼ş»òµôÂäµÄÌ××°²¿¼ş
+                num = mod_stats->num;   // å¥—è£éƒ¨ä»¶æ•¸é‡
+                // æ¿€æ´»å¥—è£éƒ¨ä»¶æˆ–æ‰è½çš„å¥—è£éƒ¨ä»¶
                 if( query_temp("modequip_"+mark_level+"_"+modname+"_name", owner) || !ob->is_item_make() )
                         modparts = mod_stats->mod_parts;
 
-                // ×ÔÔìÎ´¼¤»îÌ××°²¿¼ş
+                // è‡ªé€ æœªæ¿€æ´»å¥—è£éƒ¨ä»¶
                 else
                         modparts = query_temp("modparts_" + mark_level+"_"+modname, owner);
                 
@@ -184,7 +184,7 @@ string module_stats(object ob, object owner)
                 msg = sprintf(HIW"  %s(%d/%d"NOR")\n",
                                modname,
                                query_temp("modamount_"+mark_level+"_"+modname, owner), num);
-                msg+= sprintf(NOR "©³©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©·\n");
+                msg+= sprintf(NOR "â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡\n");
 
                 data = query_temp("modparts_" + mark_level+"_"+modname, owner);
                 if( !mapp(data) ) data = ([]);
@@ -195,35 +195,35 @@ string module_stats(object ob, object owner)
                         eq_str = "  ";
 
                         if( member_array(apply[i], eq_files) != -1 )
-                                eq_str = WHT "¡Ì" NOR;
+                                eq_str = WHT "âˆš" NOR;
 
                         if( query("mod_mark", ob) == apply[i] )
                                 if( query_temp("mod_equip", ob) )
-                                        eq_str = HIR"¡Ì"NOR;
+                                        eq_str = HIR"âˆš"NOR;
                                 else
-                                        eq_str = RED"¡Á"NOR;
+                                        eq_str = RED"Ã—"NOR;
 
-                        str = sprintf(NOR "©§%s%-18s"NOR"©§\n",eq_str, modparts[apply[i]]);
+                        str = sprintf(NOR "â–¡%s%-18s"NOR"â–¡\n",eq_str, modparts[apply[i]]);
                         msg += str;
                 }
                 if( ob->is_item_make() && member_array(query("mod_mark", ob), apply) == -1 )
                 {
-                        eq_str = RED"¡Á"NOR;
-                        str = sprintf(NOR "©§%s%-18s"NOR"©§\n",eq_str, ob->name(1));
+                        eq_str = RED"Ã—"NOR;
+                        str = sprintf(NOR "â–¡%s%-18s"NOR"â–¡\n",eq_str, ob->name(1));
                         msg += str;
                 }
 
-                msg += sprintf(NOR "©»©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¿\n");
+                msg += sprintf(NOR "â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡\n");
                 bas = mod_stats->bas;
                 if( query_temp("modamount_"+mark_level+"_"+modname, owner) >= bas )
                         eq_str = HIR;
                 else
                         eq_str = HIK;
-                //msg += sprintf(HIG"  ×°±¸Ğ§¹û"NOR")\n");
-                msg += sprintf(NOR "%s©³©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©·"NOR"\n", eq_str);
+                //msg += sprintf(HIG"  è£å‚™æ•ˆæœ"NOR")\n");
+                msg += sprintf(NOR "%sâ–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡"NOR"\n", eq_str);
 
-                str = sprintf("%d¼ş:", bas);
-                msg += sprintf(NOR "%s©§"NOR"%-20s%s©§"NOR"\n", eq_str, str, eq_str);
+                str = sprintf("%dä»¶:", bas);
+                msg += sprintf(NOR "%sâ–¡"NOR"%-20s%sâ–¡"NOR"\n", eq_str, str, eq_str);
                 stats = copy(mod_stats->bas_prop);
                 key = keys(stats);
                 if( sizeof(key) > 0 )
@@ -235,7 +235,7 @@ string module_stats(object ob, object owner)
 #ifndef LONELY_IMPROVED
                                 len = color_len(str);
 #endif
-                                msg += sprintf(NOR "%s©§"NOR"%-" + (20 + len) + "s%s©§"NOR"\n",
+                                msg += sprintf(NOR "%sâ–¡"NOR"%-" + (20 + len) + "s%sâ–¡"NOR"\n",
                                                        eq_str, str, eq_str);
                         }
                 }
@@ -243,8 +243,8 @@ string module_stats(object ob, object owner)
                         eq_str = HIR;
                 else
                         eq_str = HIK;
-                str = sprintf("%d¼ş:", num);
-                msg += sprintf(NOR "%s©§"NOR"%-20s%s©§"NOR"\n", eq_str, str, eq_str);
+                str = sprintf("%dä»¶:", num);
+                msg += sprintf(NOR "%sâ–¡"NOR"%-20s%sâ–¡"NOR"\n", eq_str, str, eq_str);
                 stats = copy(mod_stats->adv_prop);
                 key = keys(stats);
                 if( sizeof(key) > 0 )
@@ -256,7 +256,7 @@ string module_stats(object ob, object owner)
 #ifndef LONELY_IMPROVED
                                 len = color_len(str);
 #endif
-                                msg += sprintf(NOR "%s©§"NOR"%-" + (20 + len) + "s%s©§"NOR"\n",
+                                msg += sprintf(NOR "%sâ–¡"NOR"%-" + (20 + len) + "s%sâ–¡"NOR"\n",
                                                        eq_str, str, eq_str);
                         }
                 }
@@ -266,7 +266,7 @@ string module_stats(object ob, object owner)
                 else
                         eq_str = HIK;
                 str = sprintf("Add:");
-                msg += sprintf(NOR "%s©§"NOR"%-20s%s©§"NOR"\n", eq_str, str, eq_str);
+                msg += sprintf(NOR "%sâ–¡"NOR"%-20s%sâ–¡"NOR"\n", eq_str, str, eq_str);
                 stats = copy(mod_stats->add_prop);
                 key = keys(stats);
                 if( sizeof(key) > 0 )
@@ -278,16 +278,16 @@ string module_stats(object ob, object owner)
 #ifndef LONELY_IMPROVED
                                 len = color_len(str);
 #endif
-                                msg += sprintf(NOR "%s©§"NOR"%-" + (20 + len) + "s%s©§"NOR"\n",
+                                msg += sprintf(NOR "%sâ–¡"NOR"%-" + (20 + len) + "s%sâ–¡"NOR"\n",
                                                        eq_str, str, eq_str);
                         }
                 }
-                msg += sprintf(NOR "%s©»©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¿"NOR"\n", eq_str);
+                msg += sprintf(NOR "%sâ–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡"NOR"\n", eq_str);
         }
         return msg;
 }
 
-// ¸ù¾İ¼ì²éÒ»¸öÌ××°ÊÇ·ñºÏ·¨£¬¼´ÊÇ·ñ´æÔÚ£¬Èç¹ûÌ××°Êı¾İ»¹ÊÇ³õÊ¼»¯Êı¾İ£¬¾ÍÊÇ²»´æÔÚ¡£
+// æ ¹æ“šæª¢æŸ¥ä¸€å€‹å¥—è£æ˜¯å¦åˆæ³•ï¼Œå³æ˜¯å¦å­˜åœ¨ï¼Œå¦‚æœå¥—è£æ•¸æ“šé‚„æ˜¯åˆå§‹åŒ–æ•¸æ“šï¼Œå°±æ˜¯ä¸å­˜åœ¨ã€‚
 int valid_module(class eqmodule mod_stats)
 {
         if( mod_stats->mod_level == "" )
@@ -311,7 +311,7 @@ int valid_module(class eqmodule mod_stats)
         return 1;
 }
 
-// ¸ù¾İĞòºÅ²éÕÒÌ××°Êı¾İ
+// æ ¹æ“šåºè™ŸæŸ¥æ‰¾å¥—è£æ•¸æ“š
 class eqmodule load_module(string modlevel)
 {
         string filename, this_file, temp_str;
@@ -337,24 +337,24 @@ class eqmodule load_module(string modlevel)
         }
         else if( modlevel == "1" || modlevel == "2" || modlevel == "3" || modlevel == "4" )
         {
-                // Íæ¼Ò×ÔÔì×°±¸Ì××°»¯
+                // ç©å®¶è‡ªé€ è£å‚™å¥—è£åŒ–
                 filename = EQUIP_LIST + "ultra.mod";
         }
 
-        // ³õÊ¼»¯Ò»¸ö¿ÕµÄÌ××°ÎÄ¼ş
+        // åˆå§‹åŒ–ä¸€å€‹ç©ºçš„å¥—è£æ–‡ä»¶
         item = new(class eqmodule);
         item->mod_level = "";
         item->mod_name = "";
         item->mod_parts = ([]);
-        item->add_prop = ([]); // ×°±¸²¿¼şÔö¼ÓµÄÌ××°ÊôĞÔ
+        item->add_prop = ([]); // è£å‚™éƒ¨ä»¶å¢åŠ çš„å¥—è£å±¬æ€§
 
-        // ÎÄ¼şÎª¿Õ¡£·µ»Ø¿ÕÖµ¡£
+        // æ–‡ä»¶ç‚ºç©ºã€‚è¿”å›ç©ºå€¼ã€‚
         if( !stringp(filename) || file_size(filename) < 0 )
                 return item;
 
         this_file = read_file(filename);
 
-        // ¸ù¾İÌ××°ĞòºÅ²éÕÒĞòºÅËùÔÚÎÄ¼ş±í£¬²éÕÒÆ¥ÅäÌ××°Êı¾İ
+        // æ ¹æ“šå¥—è£åºè™ŸæŸ¥æ‰¾åºè™Ÿæ‰€åœ¨æ–‡ä»¶è¡¨ï¼ŒæŸ¥æ‰¾åŒ¹é…å¥—è£æ•¸æ“š
         sscanf( this_file, "%*s<"+modlevel+">%s</"+modlevel+">%*s", temp_str);
         sscanf( temp_str, "%*s<mod_name>%s</mod_name>%*s", modname);
         sscanf( temp_str, "%*s<mod_parts>\n%s\n</mod_parts>%*s", names);
@@ -364,12 +364,12 @@ class eqmodule load_module(string modlevel)
         sscanf( temp_str, "%*s<adv_prop>\n%s\n</adv_prop>%*s", adv_prop);
 
         item->mod_level = modlevel;
-        item->mod_name = trans_color(modname, 3); // ×ª»»ÑÕÉ«
+        item->mod_name = trans_color(modname, 3); // è½‰æ›é¡è‰²
 
         if( bas ) item->bas = bas;
         if( num ) item->num = num;
 
-        // ½âÎöÊôĞÔ±í£¬ÌîÈëÊôĞÔ¹Ø¼ü×ÖºÍÌ××°ÊôĞÔ¡£
+        // è§£æå±¬æ€§è¡¨ï¼Œå¡«å…¥å±¬æ€§é—œéµå­—å’Œå¥—è£å±¬æ€§ã€‚
         if (bas_prop != "")
         {
                 stats = ([]);
@@ -379,7 +379,7 @@ class eqmodule load_module(string modlevel)
                         //field[i] = replace_string(field[i], " ", "");
                         if( sscanf( field[i], "%s:%d", key, value ) != 2 )
                             sscanf( field[i], "%s:%s", key, value );
-                        // ÎŞĞè¸´ÔÓµÄ½âÎö
+                        // ç„¡éœ€å¾©é›œçš„è§£æ
                         stats[key] = value;
                 }
                 item->bas_prop = copy(stats);
@@ -394,13 +394,13 @@ class eqmodule load_module(string modlevel)
                         //field[i] = replace_string(field[i], " ", "");
                         if( sscanf( field[i], "%s:%d", key, value ) != 2 )
                             sscanf( field[i], "%s:%s", key, value );
-                        // ÎŞĞè¸´ÔÓµÄ½âÎö
+                        // ç„¡éœ€å¾©é›œçš„è§£æ
                         stats[key] = value;
                 }
                 item->adv_prop = copy(stats);
         }
 
-        // ½âÎöÎÄ¼ş±í£¬ÌîÈëÎÄ¼şÃû³ÆºÍÌ××°²¿¼şÖĞÎÄÃû×Ö¡£
+        // è§£ææ–‡ä»¶è¡¨ï¼Œå¡«å…¥æ–‡ä»¶åç¨±å’Œå¥—è£éƒ¨ä»¶ä¸­æ–‡åå­—ã€‚
         if( sizeof(names) )
         {
                 stats = ([]);
@@ -408,7 +408,7 @@ class eqmodule load_module(string modlevel)
                 for (i=0;i<sizeof(field);i++)
                 {
                         //field[i] = replace_string(field[i], " ", "");
-                        field[i] = trans_color(field[i], 3); // ×ª»»ÑÕÉ«
+                        field[i] = trans_color(field[i], 3); // è½‰æ›é¡è‰²
                         sscanf( field[i], "%s:%s", key, value );
                         stats[key] = value;
                 }
@@ -420,8 +420,8 @@ class eqmodule load_module(string modlevel)
         return item;
 }
 
-// ×°±¸Ì××°²¿¼ş
-// obÌ××°²¿¼ş owner×°±¸Õß
+// è£å‚™å¥—è£éƒ¨ä»¶
+// obå¥—è£éƒ¨ä»¶ ownerè£å‚™è€…
 void equip_module(object ob, object owner)
 {
         class eqmodule mod_stats;
@@ -437,16 +437,16 @@ void equip_module(object ob, object owner)
 
         if( ob->is_item_make() )
         {
-                // ×ÔÔì×°±¸·Ç×°±¸Ö÷ÈËÎŞ·¨¼¤»îÌ××°ÊôĞÔ
+                // è‡ªé€ è£å‚™éè£å‚™ä¸»äººç„¡æ³•æ¿€æ´»å¥—è£å±¬æ€§
                 if( ob->item_owner() != query("id", owner) )
                         return;
         }
 
-        modlevel = query("mod_level", ob); // Ì××°µÄĞòºÅ¡¢µÈ¼¶
-        modname = query("mod_name", ob);   // modname À´ÅĞ¶ÏÊÇ·ñÊÇÌ××°
+        modlevel = query("mod_level", ob); // å¥—è£çš„åºè™Ÿã€ç­‰ç´š
+        modname = query("mod_name", ob);   // modname ä¾†åˆ¤æ–·æ˜¯å¦æ˜¯å¥—è£
         
         inv = all_inventory(owner);
-        if( ob->is_item_make() )        // ¼ì²éÌ××°²¿¼ş
+        if( ob->is_item_make() )        // æª¢æŸ¥å¥—è£éƒ¨ä»¶
         {
                 obs = filter_array(inv,
                         (: query("equipped", $1) && query("mod_name", $1) == $(modname) &&
@@ -455,22 +455,22 @@ void equip_module(object ob, object owner)
                 n = sizeof(obs);
                 for( i=0; i<n; i++ ) {
                         if( to_int(query("mod_level", obs[i])) < to_int(modlevel) )
-                                modlevel = query("mod_level", obs[i]); // »ñÈ¡Ì××°µÄ×îµÍµÈ¼¶
+                                modlevel = query("mod_level", obs[i]); // ç²å–å¥—è£çš„æœ€ä½ç­‰ç´š
                 }
                 */
 
-                // Õâ¸öµÈ¼¶»á±ä»¯
+                // é€™å€‹ç­‰ç´šæœƒè®ŠåŒ–
                 if( !query_temp("modequip_min_level_"+modname, owner) )
-                        set_temp("modequip_min_level_"+modname, modlevel, owner); // Ì××°µÄ×îµÍµÈ¼¶
+                        set_temp("modequip_min_level_"+modname, modlevel, owner); // å¥—è£çš„æœ€ä½ç­‰ç´š
                 if( to_int(modlevel) < to_int(query_temp("modequip_min_level_"+modname, owner)) )
                 {
-                        set_temp("modequip_min_level_"+modname, modlevel, owner); // Ì××°µÄ×îµÍµÈ¼¶
+                        set_temp("modequip_min_level_"+modname, modlevel, owner); // å¥—è£çš„æœ€ä½ç­‰ç´š
                         change = 1;
                 }
                 else
-                        modlevel = query_temp("modequip_min_level_"+modname, owner); // Ì××°µÄ×îµÍµÈ¼¶
+                        modlevel = query_temp("modequip_min_level_"+modname, owner); // å¥—è£çš„æœ€ä½ç­‰ç´š
 
-                if( !query_temp("modequip_mark_level_"+modname, owner) )    // Ì××°µÄ±ê¼ÇµÈ¼¶£¬ÒÔ×°±¸µÄµÚÒ»¼şÌ××°µÈ¼¶Îª±ê¼Ç
+                if( !query_temp("modequip_mark_level_"+modname, owner) )    // å¥—è£çš„æ¨™è¨˜ç­‰ç´šï¼Œä»¥è£å‚™çš„ç¬¬ä¸€ä»¶å¥—è£ç­‰ç´šç‚ºæ¨™è¨˜
                         set_temp("modequip_mark_level_"+modname, modlevel, owner);
         }
         else
@@ -478,9 +478,9 @@ void equip_module(object ob, object owner)
                         (: query("equipped", $1) && query("mod_name", $1) == $(modname) &&
                            query("mod_level", $1) == $(modlevel) && !$1->is_item_make() :));
 
-        n = sizeof(obs); // ×°±¸µÄÌ××°¼şÊı
+        n = sizeof(obs); // è£å‚™çš„å¥—è£ä»¶æ•¸
         
-        // ×ÔÔìµÄÂÌ»¯µÄÊ±ºòÓÃbase_name×÷Îªmark£¬µôÂäµÄÓÃ²¿¼şĞòºÅ×÷Îªmark
+        // è‡ªé€ çš„ç¶ åŒ–çš„æ™‚å€™ç”¨base_nameä½œç‚ºmarkï¼Œæ‰è½çš„ç”¨éƒ¨ä»¶åºè™Ÿä½œç‚ºmark
         file = query("mod_mark", ob);
         name = query("name", ob);
 
@@ -489,44 +489,44 @@ void equip_module(object ob, object owner)
         else
                 mark_level = modlevel;
 
-        // ±ê¼ÇÌ××°×é¼ş
+        // æ¨™è¨˜å¥—è£çµ„ä»¶
         modparts=query_temp("modparts_"+mark_level+"_"+modname, owner);
         if( !mapp(modparts) || !sizeof(modparts) ) modparts = ([]);
         modparts[file] = name; 
         set_temp("modparts_"+mark_level+"_"+modname, modparts, owner);
 
-        // ±ê¼ÇÌ××°¼şÊı
+        // æ¨™è¨˜å¥—è£ä»¶æ•¸
         addn_temp("modamount_"+mark_level+"_"+modname, 1, owner);
 
-        // ×°±¸µÄÌ××°ÉèÖÃ±ê¼Ç
+        // è£å‚™çš„å¥—è£è¨­ç½®æ¨™è¨˜
         set_temp("mod_equip", 1, ob);
         
-        // ÉÙÓÚ3¼ş²»³ÉÌ××°
+        // å°‘äº3ä»¶ä¸æˆå¥—è£
         if( n < 2 ) return;
                 
-        // ¶ÁÈ¡Ì××°×ÊÁÏ
+        // è®€å–å¥—è£è³‡æ–™
         if( undefinedp(all[modlevel]) )
                 mod_stats = load_module(modlevel);
         else
                 mod_stats = copy(all[modlevel]);
                 
-        // ¼ì²éºÏ·¨ĞÔ
+        // æª¢æŸ¥åˆæ³•æ€§
         //if( !valid_module(mod_stats) )
         //        return;
 
         bas = mod_stats->bas;
         num = mod_stats->num;
 
-        if( n < bas-1 ) return; // Ğ¡ÓÚ×îÉÙ¼¤»îÌ××°ÊıÁ¿£¬ÎŞ·¨¼¤»îÌ××°ÊôĞÔ
+        if( n < bas-1 ) return; // å°äºæœ€å°‘æ¿€æ´»å¥—è£æ•¸é‡ï¼Œç„¡æ³•æ¿€æ´»å¥—è£å±¬æ€§
         else if( n == bas-1 )
         {
-                // ¼ÓÉÏÕıÔÚ×°±¸µÄob£¬ÕıºÃ¼¤»îÌ××°ÊôĞÔ
-                mod_stats->mod_name = modname;  // ×ÔÔìÌ××°Ãû³Æ²»ÊÇÒ»Ñù
-                if( ob->is_item_make() )        // ²¹³äÌ××°µÄ²¿¼ş×ÊÁÏ
+                // åŠ ä¸Šæ­£åœ¨è£å‚™çš„obï¼Œæ­£å¥½æ¿€æ´»å¥—è£å±¬æ€§
+                mod_stats->mod_name = modname;  // è‡ªé€ å¥—è£åç¨±ä¸æ˜¯ä¸€æ¨£
+                if( ob->is_item_make() )        // è£œå……å¥—è£çš„éƒ¨ä»¶è³‡æ–™
                         mod_stats->mod_parts = ([ file : name ]);
 
-                set_temp("mod_active", 1, ob);  // lookÊ±ºòÑÕÉ«±ä»¯
-                stats = copy(query("enchase/mod_prop", ob));  // ÂÌ»¯Ê±ºòÓµÓĞµÄÊôĞÔÍ¬Ê±¼¤»î
+                set_temp("mod_active", 1, ob);  // lookæ™‚å€™é¡è‰²è®ŠåŒ–
+                stats = copy(query("enchase/mod_prop", ob));  // ç¶ åŒ–æ™‚å€™æ“æœ‰çš„å±¬æ€§åŒæ™‚æ¿€æ´»
                 if( !sizeof(stats) ) stats = ([]);
                 for( i=0; i<n; i++ ) {
                         if( ob->is_item_make() )
@@ -536,7 +536,7 @@ void equip_module(object ob, object owner)
                                 mod_stats->mod_parts = copy(data);
                         }
 
-                        set_temp("mod_active", 1, obs[i]);  // lookÊ±ºòÑÕÉ«±ä»¯
+                        set_temp("mod_active", 1, obs[i]);  // lookæ™‚å€™é¡è‰²è®ŠåŒ–
                         prop = copy(query("enchase/mod_prop", obs[i]));
                         if( !sizeof(prop) ) continue;
                         apply = keys(prop);
@@ -548,10 +548,10 @@ void equip_module(object ob, object owner)
                         }
                 }
                 if( sizeof(stats) )
-                        mod_stats->add_prop = copy(stats); // Ì××°²¹³äÊôĞÔ
+                        mod_stats->add_prop = copy(stats); // å¥—è£è£œå……å±¬æ€§
 
-                set_temp("modequip_"+mark_level+"_"+modname+"_stats", mod_stats, owner);  // Íæ¼ÒÉíÉÏ±ê¼ÇÌ××°ÊôĞÔ
-                set_temp("modequip_"+mark_level+"_"+modname+"_name", modname, owner);     // Íæ¼ÒÉíÉÏ±ê¼ÇÒÑ¾­¼¤»îµÄÌ××°Ãû³Æ
+                set_temp("modequip_"+mark_level+"_"+modname+"_stats", mod_stats, owner);  // ç©å®¶èº«ä¸Šæ¨™è¨˜å¥—è£å±¬æ€§
+                set_temp("modequip_"+mark_level+"_"+modname+"_name", modname, owner);     // ç©å®¶èº«ä¸Šæ¨™è¨˜å·²ç¶“æ¿€æ´»çš„å¥—è£åç¨±
 
                 if( sizeof(stats) ) apply = keys(stats);
                 else apply = ({});
@@ -571,7 +571,7 @@ void equip_module(object ob, object owner)
                                 applied_prop[apply[i]] += stats[apply[i]];
                 }
 
-                stats = copy(mod_stats->bas_prop); // Ì××°»ù±¾ÊôĞÔ
+                stats = copy(mod_stats->bas_prop); // å¥—è£åŸºæœ¬å±¬æ€§
                 apply = keys(stats);
                 for( i = 0; i<sizeof(apply); i++ )
                 {
@@ -586,7 +586,7 @@ void equip_module(object ob, object owner)
                                 applied_prop[apply[i]] += stats[apply[i]];
                 }
 
-                set_temp("apply", applied_prop, owner); // Ì××°»ù±¾ÊôĞÔ¼°²¹³äÊôĞÔÉúĞ§
+                set_temp("apply", applied_prop, owner); // å¥—è£åŸºæœ¬å±¬æ€§åŠè£œå……å±¬æ€§ç”Ÿæ•ˆ
                 if( flag ) CHAR_D->setup_char(owner);
                 return;
         }
@@ -594,10 +594,10 @@ void equip_module(object ob, object owner)
         {
                 if( !classp(tmp_stats = copy(query_temp("modequip_"+mark_level+"_"+modname+"_stats", owner))) ||
                     !query_temp("modequip_"+mark_level+"_"+modname+"_name", owner) )
-                        error("Ì××°ÊôĞÔ³öÏÖ»ìÂÒ£¬ÇëÁ¢¿ÌÌá½»bug¸øadmin¡£\n");
+                        error("å¥—è£å±¬æ€§å‡ºç¾æ··äº‚ï¼Œè«‹ç«‹åˆ»æäº¤bugçµ¦adminã€‚\n");
 
-                // Ì××°È«ÆëÁË
-                mod_stats->mod_name = modname;  // ×ÔÔìÌ××°Ãû³Æ²»ÊÇÒ»Ñù
+                // å¥—è£å…¨é½Šäº†
+                mod_stats->mod_name = modname;  // è‡ªé€ å¥—è£åç¨±ä¸æ˜¯ä¸€æ¨£
                 if( ob->is_item_make() )
                 {
                         data = copy(tmp_stats->mod_parts);
@@ -613,7 +613,7 @@ void equip_module(object ob, object owner)
 
                 stats = copy(tmp_stats->add_prop);
                 if( !sizeof(stats) ) stats = ([]);
-                prop = copy(query("enchase/mod_prop", ob)); // Ì××°²¹³äÊôĞÔ
+                prop = copy(query("enchase/mod_prop", ob)); // å¥—è£è£œå……å±¬æ€§
                 if( sizeof(prop) )
                 {
                         apply = keys(prop);
@@ -635,16 +635,16 @@ void equip_module(object ob, object owner)
                         }
                 }
                 if( sizeof(stats) )
-                        mod_stats->add_prop = copy(stats); // Ì××°²¹³äÊôĞÔ
+                        mod_stats->add_prop = copy(stats); // å¥—è£è£œå……å±¬æ€§
 
-                set_temp("modequip_"+mark_level+"_"+modname+"_stats", mod_stats, owner);  // Íæ¼ÒÉíÉÏ±ê¼ÇÌ××°ÊôĞÔ
-                set_temp("modequip_"+mark_level+"_"+modname+"_name", modname, owner);     // Íæ¼ÒÉíÉÏ±ê¼ÇÒÑ¾­¼¤»îµÄÌ××°Ãû³Æ
+                set_temp("modequip_"+mark_level+"_"+modname+"_stats", mod_stats, owner);  // ç©å®¶èº«ä¸Šæ¨™è¨˜å¥—è£å±¬æ€§
+                set_temp("modequip_"+mark_level+"_"+modname+"_name", modname, owner);     // ç©å®¶èº«ä¸Šæ¨™è¨˜å·²ç¶“æ¿€æ´»çš„å¥—è£åç¨±
                 if( ob->is_item_make() )
-                        set_temp("modequip_itemmake_level", to_int(modlevel), owner);     // Íæ¼ÒÉíÉÏ±ê¼ÇÈ«Ì×µÄ×ÔÔìÌ××°µÈ¼¶
+                        set_temp("modequip_itemmake_level", to_int(modlevel), owner);     // ç©å®¶èº«ä¸Šæ¨™è¨˜å…¨å¥—çš„è‡ªé€ å¥—è£ç­‰ç´š
 
                 if( change )
                 {
-                        stats = copy(tmp_stats->bas_prop); // ÓÉÓÚ¿ÉÌ××°µÈ¼¶±ä»¯£¬Ì××°»ù±¾ÊôĞÔ»á±ä»¯£¬ÏÈÈ¥³ıÔ­ÓĞµÄ
+                        stats = copy(tmp_stats->bas_prop); // ç”±äºå¯å¥—è£ç­‰ç´šè®ŠåŒ–ï¼Œå¥—è£åŸºæœ¬å±¬æ€§æœƒè®ŠåŒ–ï¼Œå…ˆå»é™¤åŸæœ‰çš„
                         apply = keys(stats);
                         for( i=0; i<sizeof(apply); i++ ) {
                                 if (apply[i] == "int" || apply[i] == "str" ||
@@ -655,7 +655,7 @@ void equip_module(object ob, object owner)
                                 applied_prop[apply[i]] -= stats[apply[i]];
                         }
 
-                        stats = copy(mod_stats->bas_prop); // Ì××°»ù±¾ÊôĞÔ
+                        stats = copy(mod_stats->bas_prop); // å¥—è£åŸºæœ¬å±¬æ€§
                         apply = keys(stats);
                         for( i = 0; i<sizeof(apply); i++ )
                         {
@@ -670,7 +670,7 @@ void equip_module(object ob, object owner)
                                         applied_prop[apply[i]] += stats[apply[i]];
                         }
                 }
-                stats = copy(mod_stats->adv_prop);      // Ì××°¸ß¼¶ÊôĞÔ
+                stats = copy(mod_stats->adv_prop);      // å¥—è£é«˜ç´šå±¬æ€§
                 apply = keys(stats);
                 for( i = 0; i<sizeof(apply); i++ )
                 {
@@ -691,13 +691,13 @@ void equip_module(object ob, object owner)
         }
         else
         {
-                // ÒÑ¾­¼¤»îÌ××°ÊôĞÔ£¬¸½¼ÓĞÂµÄÌ××°µ¥¼şÊôĞÔ
-                // Ê×ÏÈ¼ì²éÒÑ¾­¼¤»îµÄÌ××°ÊôĞÔÊÇ·ñ³öÁËÎÊÌâ
+                // å·²ç¶“æ¿€æ´»å¥—è£å±¬æ€§ï¼Œé™„åŠ æ–°çš„å¥—è£å–®ä»¶å±¬æ€§
+                // é¦–å…ˆæª¢æŸ¥å·²ç¶“æ¿€æ´»çš„å¥—è£å±¬æ€§æ˜¯å¦å‡ºäº†å•é¡Œ
                 if( !classp(tmp_stats = copy(query_temp("modequip_"+mark_level+"_"+modname+"_stats", owner))) ||
                     !query_temp("modequip_"+mark_level+"_"+modname+"_name", owner) )
-                        error("Ì××°ÊôĞÔ³öÏÖ»ìÂÒ£¬ÇëÁ¢¿ÌÌá½»bug¸øadmin¡£\n");
+                        error("å¥—è£å±¬æ€§å‡ºç¾æ··äº‚ï¼Œè«‹ç«‹åˆ»æäº¤bugçµ¦adminã€‚\n");
 
-                mod_stats->mod_name = modname;  // ×ÔÔìÌ××°Ãû³Æ²»ÊÇÒ»Ñù
+                mod_stats->mod_name = modname;  // è‡ªé€ å¥—è£åç¨±ä¸æ˜¯ä¸€æ¨£
 
                 if( ob->is_item_make() )
                 {
@@ -714,7 +714,7 @@ void equip_module(object ob, object owner)
 
                 stats = copy(tmp_stats->add_prop);
                 if( !sizeof(stats) ) stats = ([]);
-                prop = copy(query("enchase/mod_prop", ob)); // Ì××°²¹³äÊôĞÔ
+                prop = copy(query("enchase/mod_prop", ob)); // å¥—è£è£œå……å±¬æ€§
                 if( sizeof(prop) )
                 {
                         apply = keys(prop);
@@ -736,14 +736,14 @@ void equip_module(object ob, object owner)
                         }
                 }
                 if( sizeof(stats) )
-                        mod_stats->add_prop = copy(stats); // Ì××°²¹³äÊôĞÔ
+                        mod_stats->add_prop = copy(stats); // å¥—è£è£œå……å±¬æ€§
 
-                set_temp("modequip_"+mark_level+"_"+modname+"_stats", mod_stats, owner);  // Íæ¼ÒÉíÉÏ±ê¼ÇÌ××°ÊôĞÔ
-                set_temp("modequip_"+mark_level+"_"+modname+"_name", modname, owner);     // Íæ¼ÒÉíÉÏ±ê¼ÇÒÑ¾­¼¤»îµÄÌ××°Ãû³Æ
+                set_temp("modequip_"+mark_level+"_"+modname+"_stats", mod_stats, owner);  // ç©å®¶èº«ä¸Šæ¨™è¨˜å¥—è£å±¬æ€§
+                set_temp("modequip_"+mark_level+"_"+modname+"_name", modname, owner);     // ç©å®¶èº«ä¸Šæ¨™è¨˜å·²ç¶“æ¿€æ´»çš„å¥—è£åç¨±
 
                 if( change )
                 {
-                        stats = copy(tmp_stats->bas_prop); // ÓÉÓÚ¿ÉÌ××°µÈ¼¶±ä»¯£¬Ì××°»ù±¾ÊôĞÔ»á±ä»¯£¬ÏÈÈ¥³ıÔ­ÓĞµÄ
+                        stats = copy(tmp_stats->bas_prop); // ç”±äºå¯å¥—è£ç­‰ç´šè®ŠåŒ–ï¼Œå¥—è£åŸºæœ¬å±¬æ€§æœƒè®ŠåŒ–ï¼Œå…ˆå»é™¤åŸæœ‰çš„
                         apply = keys(stats);
                         for( i=0; i<sizeof(apply); i++ ) {
                                 if (apply[i] == "int" || apply[i] == "str" ||
@@ -754,7 +754,7 @@ void equip_module(object ob, object owner)
                                 applied_prop[apply[i]] -= stats[apply[i]];
                         }
 
-                        stats = copy(mod_stats->bas_prop); // Ì××°»ù±¾ÊôĞÔ
+                        stats = copy(mod_stats->bas_prop); // å¥—è£åŸºæœ¬å±¬æ€§
                         apply = keys(stats);
                         for( i = 0; i<sizeof(apply); i++ )
                         {
@@ -777,8 +777,8 @@ void equip_module(object ob, object owner)
 }
 
 
-// Ğ¶ÏÂÌ××°²¿¼ş
-// obÌ××°²¿¼ş owner×°±¸Õß
+// å¸ä¸‹å¥—è£éƒ¨ä»¶
+// obå¥—è£éƒ¨ä»¶ ownerè£å‚™è€…
 void unequip_module(object ob, object owner)
 {
         class eqmodule mod_stats;
@@ -801,23 +801,23 @@ void unequip_module(object ob, object owner)
         modname = query("mod_name", ob);
         
         inv = all_inventory(owner);
-        if( ob->is_item_make() )        // ¼ì²éÌ××°²¿¼ş
+        if( ob->is_item_make() )        // æª¢æŸ¥å¥—è£éƒ¨ä»¶
         {
                 obs = filter_array(inv,
                         (: query("equipped", $1) && query("mod_name", $1) == $(modname) &&
                            $1->is_item_make() && $1->item_owner() == $(query("id", owner)) :));
 
-                modlevel = query_temp("modequip_min_level_"+modname, owner); // Ì××°µÄ×îµÍµÈ¼¶
-                if( query("mod_level", ob) == modlevel ) // Ì××°µÈ¼¶¿ÉÄÜ»á±ä»¯
+                modlevel = query_temp("modequip_min_level_"+modname, owner); // å¥—è£çš„æœ€ä½ç­‰ç´š
+                if( query("mod_level", ob) == modlevel ) // å¥—è£ç­‰ç´šå¯èƒ½æœƒè®ŠåŒ–
                 {
                         modlevel = "4";
                         n = sizeof(obs);
                         for( i=0; i<n; i++ ) {
                                 if( obs[i] == ob ) continue;
                                 if( to_int(query("mod_level", obs[i])) < to_int(modlevel) )
-                                        modlevel = query("mod_level", obs[i]); // »ñÈ¡Ì××°µÄ×îµÍµÈ¼¶
+                                        modlevel = query("mod_level", obs[i]); // ç²å–å¥—è£çš„æœ€ä½ç­‰ç´š
                         }
-                        set_temp("modequip_min_level_"+modname, modlevel, owner); // Ì××°µÄ×îµÍµÈ¼¶
+                        set_temp("modequip_min_level_"+modname, modlevel, owner); // å¥—è£çš„æœ€ä½ç­‰ç´š
                         if( modlevel != query("mod_level", ob) )
                                 change = 1;
                 }
@@ -831,7 +831,7 @@ void unequip_module(object ob, object owner)
 
         n = sizeof(obs);
 
-        // ¼ì²éÌ××°²¿¼şobÊÇ·ñÊÇÌ××°ÀïµÄÒ»¼ş
+        // æª¢æŸ¥å¥—è£éƒ¨ä»¶obæ˜¯å¦æ˜¯å¥—è£è£¡çš„ä¸€ä»¶
         file = query("mod_mark", ob);
         name = query("name", ob);
 
@@ -840,7 +840,7 @@ void unequip_module(object ob, object owner)
         else
                 mark_level = modlevel;
 
-        // ±ê¼ÇÌ××°ÎÄ¼ş
+        // æ¨™è¨˜å¥—è£æ–‡ä»¶
         modparts=query_temp("modparts_"+mark_level+"_"+modname, owner);
         if( !mapp(modparts) || !sizeof(modparts) )
                 modparts = ([]);
@@ -857,55 +857,55 @@ void unequip_module(object ob, object owner)
                 }
         }
 
-        // ±ê¼ÇÌ××°¼şÊı
+        // æ¨™è¨˜å¥—è£ä»¶æ•¸
         addn_temp("modamount_"+mark_level+"_"+modname, -1, owner);
         if( query_temp("modamount_"+mark_level+"_"+modname, owner)<0 )
                 delete_temp("modamount_"+mark_level+"_"+modname, owner);
 
-        // É¾³ı×°±¸Ì××°²¿¼ş±ê¼Ç
+        // åˆªé™¤è£å‚™å¥—è£éƒ¨ä»¶æ¨™è¨˜
         delete_temp("mod_equip", ob);
-        delete_temp("mod_active", ob); // lookÊ±ºòÏÔÊ¾mod_propÑÕÉ«±ä»¯
+        delete_temp("mod_active", ob); // lookæ™‚å€™é¡¯ç¤ºmod_propé¡è‰²è®ŠåŒ–
 
         /*
         if( query_temp("modamount_"+mark_level+"_"+modname, owner) != n )
-                error("Ì××°×°±¸¼şÊı³öÏÖ»ìÂÒ£¬ÇëÁ¢¿ÌÌá½»bug¸øadmin¡£\n");
+                error("å¥—è£è£å‚™ä»¶æ•¸å‡ºç¾æ··äº‚ï¼Œè«‹ç«‹åˆ»æäº¤bugçµ¦adminã€‚\n");
         */
         
-        // ÉÙÓÚ3¼ş²»³ÉÌ××°
+        // å°‘äº3ä»¶ä¸æˆå¥—è£
         if( n < 3 ) return;
       
 
-        // ¶ÁÈ¡Ì××°×ÊÁÏ
+        // è®€å–å¥—è£è³‡æ–™
         if( undefinedp(all[modlevel]) )
                 mod_stats = load_module(modlevel);
         else
                 mod_stats = copy(all[modlevel]);
 
-        // ¼ì²éºÏ·¨ĞÔ
+        // æª¢æŸ¥åˆæ³•æ€§
         //if( !valid_module(mod_stats) )
         //        return;
                 
         bas = mod_stats->bas;
         num = mod_stats->num;
 
-        // Èç¹ûonwerÉíÉÏ×°±¸µÄÌ××°¼şÊı+1Î´´ïµ½Ì××°¼¤»î¼şÊıÊ±£¬
-        // ÒòÎªÃ»¸½¼Ó¹ıÌ××°ÊôĞÔ£¬ËùÒÔ²»ĞèÒªÖ´ĞĞÉ¾³ıonwerÌ××°ÊôĞÔ
+        // å¦‚æœonwerèº«ä¸Šè£å‚™çš„å¥—è£ä»¶æ•¸+1æœªé”åˆ°å¥—è£æ¿€æ´»ä»¶æ•¸æ™‚ï¼Œ
+        // å› ç‚ºæ²’é™„åŠ éå¥—è£å±¬æ€§ï¼Œæ‰€ä»¥ä¸éœ€è¦åŸ·è¡Œåˆªé™¤onwerå¥—è£å±¬æ€§
         if( n < bas ) return;
         else if( n == bas ) {
                 if( !classp(tmp_stats = copy(query_temp("modequip_"+mark_level+"_"+modname+"_stats", owner))) ||
                     !query_temp("modequip_"+mark_level+"_"+modname+"_name", owner) )
-                        error("Ì××°ÊôĞÔ³öÏÖ»ìÂÒ£¬ÇëÁ¢¿ÌÌá½»bug¸øadmin¡£\n");
+                        error("å¥—è£å±¬æ€§å‡ºç¾æ··äº‚ï¼Œè«‹ç«‹åˆ»æäº¤bugçµ¦adminã€‚\n");
 
-                // ÕıºÃbas¼ş£¬Ğ¶ÏÂÌ××°²¿¼ş£¬ÔòÏû³ıÌ××°µÄËùÓĞ²¹³äÊôĞÔºÍ»ù±¾ÊôĞÔ
+                // æ­£å¥½basä»¶ï¼Œå¸ä¸‹å¥—è£éƒ¨ä»¶ï¼Œå‰‡æ¶ˆé™¤å¥—è£çš„æ‰€æœ‰è£œå……å±¬æ€§å’ŒåŸºæœ¬å±¬æ€§
                 for( i=0; i<sizeof(obs); i++ )
                 {
                         if( obs[i] == ob ) continue;
-                        delete_temp("mod_equip", obs[i]);   // È¡Ïû×°±¸±ê¼Ç
-                        delete_temp("mod_active", obs[i]);  // È¡Ïû¼¤»î±ê¼Ç
+                        delete_temp("mod_equip", obs[i]);   // å–æ¶ˆè£å‚™æ¨™è¨˜
+                        delete_temp("mod_active", obs[i]);  // å–æ¶ˆæ¿€æ´»æ¨™è¨˜
                 }
 
                 applied_prop = query_temp("apply", owner);
-                stats = copy(tmp_stats->add_prop); // ²¹³äÊôĞÔ
+                stats = copy(tmp_stats->add_prop); // è£œå……å±¬æ€§
                 apply = keys(stats);
                 for( i=0; i<sizeof(apply); i++ ) {
                         if (apply[i] == "int" || apply[i] == "str" ||
@@ -916,7 +916,7 @@ void unequip_module(object ob, object owner)
                         applied_prop[apply[i]] -= stats[apply[i]];
                 }
 
-                stats = copy(tmp_stats->bas_prop); // »ù±¾ÊôĞÔ
+                stats = copy(tmp_stats->bas_prop); // åŸºæœ¬å±¬æ€§
                 apply = keys(stats);
                 for( i=0; i<sizeof(apply); i++ ) {
                         if (apply[i] == "int" || apply[i] == "str" ||
@@ -937,19 +937,19 @@ void unequip_module(object ob, object owner)
         else if( n == num ) {
                 if( !classp(tmp_stats = copy(query_temp("modequip_"+mark_level+"_"+modname+"_stats", owner))) ||
                     !query_temp("modequip_"+mark_level+"_"+modname+"_name", owner) )
-                        error("Ì××°ÊôĞÔ³öÏÖ»ìÂÒ£¬ÇëÁ¢¿ÌÌá½»bug¸øadmin¡£\n");
+                        error("å¥—è£å±¬æ€§å‡ºç¾æ··äº‚ï¼Œè«‹ç«‹åˆ»æäº¤bugçµ¦adminã€‚\n");
                 
-                mod_stats->mod_name = modname;  // ×ÔÔìÌ××°Ãû³Æ²»ÊÇÒ»Ñù
+                mod_stats->mod_name = modname;  // è‡ªé€ å¥—è£åç¨±ä¸æ˜¯ä¸€æ¨£
                 if( ob->is_item_make() )
                 {
                         data = copy(tmp_stats->mod_parts);
                         map_delete(data, file);
                         mod_stats->mod_parts = copy(data);
                 }
-                // È¡ÏûÌ××°µÄ²¿¼ş²¹³äÊôĞÔ¼°Ì××°¸ß¼¶ÊôĞÔ
+                // å–æ¶ˆå¥—è£çš„éƒ¨ä»¶è£œå……å±¬æ€§åŠå¥—è£é«˜ç´šå±¬æ€§
                 applied_prop = query_temp("apply", owner);
                 stats = copy(tmp_stats->add_prop);
-                prop = copy(query("enchase/mod_prop", ob)); // Ì××°²¹³äÊôĞÔ
+                prop = copy(query("enchase/mod_prop", ob)); // å¥—è£è£œå……å±¬æ€§
                 if( sizeof(prop) )
                 {
                         apply = keys(prop);
@@ -967,9 +967,9 @@ void unequip_module(object ob, object owner)
 
                 set_temp("modequip_"+mark_level+"_"+modname+"_stats", mod_stats, owner);
                 if( ob->is_item_make() )
-                        delete_temp("modequip_itemmake_level", owner); // É¾³ıÌ××°µÈ¼¶£¬suit specialµ÷ÓÃ
+                        delete_temp("modequip_itemmake_level", owner); // åˆªé™¤å¥—è£ç­‰ç´šï¼Œsuit specialèª¿ç”¨
 
-                stats = copy(tmp_stats->adv_prop);      // Ì××°¸ß¼¶ÊôĞÔ
+                stats = copy(tmp_stats->adv_prop);      // å¥—è£é«˜ç´šå±¬æ€§
                 apply = keys(stats);
                 for( i = 0; i<sizeof(apply); i++ )
                 {
@@ -982,7 +982,7 @@ void unequip_module(object ob, object owner)
                 }
                 if( change )
                 {
-                        stats = copy(tmp_stats->bas_prop); // ÓÉÓÚ¿ÉÌ××°µÈ¼¶±ä»¯£¬Ì××°»ù±¾ÊôĞÔ»á±ä»¯£¬ÏÈÈ¥³ıÔ­ÓĞµÄ
+                        stats = copy(tmp_stats->bas_prop); // ç”±äºå¯å¥—è£ç­‰ç´šè®ŠåŒ–ï¼Œå¥—è£åŸºæœ¬å±¬æ€§æœƒè®ŠåŒ–ï¼Œå…ˆå»é™¤åŸæœ‰çš„
                         apply = keys(stats);
                         for( i=0; i<sizeof(apply); i++ ) {
                                 if (apply[i] == "int" || apply[i] == "str" ||
@@ -993,7 +993,7 @@ void unequip_module(object ob, object owner)
                                 applied_prop[apply[i]] -= stats[apply[i]];
                         }
 
-                        stats = copy(mod_stats->bas_prop); // Ì××°»ù±¾ÊôĞÔ
+                        stats = copy(mod_stats->bas_prop); // å¥—è£åŸºæœ¬å±¬æ€§
                         apply = keys(stats);
                         for( i = 0; i<sizeof(apply); i++ )
                         {
@@ -1017,19 +1017,19 @@ void unequip_module(object ob, object owner)
         {
                 if( !classp(tmp_stats = copy(query_temp("modequip_"+mark_level+"_"+modname+"_stats", owner))) ||
                     !query_temp("modequip_"+mark_level+"_"+modname+"_name", owner) )
-                        error("Ì××°ÊôĞÔ³öÏÖ»ìÂÒ£¬ÇëÁ¢¿ÌÌá½»bug¸øadmin¡£\n");
+                        error("å¥—è£å±¬æ€§å‡ºç¾æ··äº‚ï¼Œè«‹ç«‹åˆ»æäº¤bugçµ¦adminã€‚\n");
                 
-                mod_stats->mod_name = modname;  // ×ÔÔìÌ××°Ãû³Æ²»ÊÇÒ»Ñù
+                mod_stats->mod_name = modname;  // è‡ªé€ å¥—è£åç¨±ä¸æ˜¯ä¸€æ¨£
                 if( ob->is_item_make() )
                 {
                         data = copy(tmp_stats->mod_parts);
                         map_delete(data, file);
                         mod_stats->mod_parts = copy(data);
                 }
-                // ½ö½öÈ¡ÏûÌ××°²¿¼şµÄ²¹³äÊôĞÔ
+                // åƒ…åƒ…å–æ¶ˆå¥—è£éƒ¨ä»¶çš„è£œå……å±¬æ€§
                 applied_prop = query_temp("apply", owner);
                 stats = copy(tmp_stats->add_prop);
-                prop = copy(query("enchase/mod_prop", ob)); // Ì××°²¹³äÊôĞÔ
+                prop = copy(query("enchase/mod_prop", ob)); // å¥—è£è£œå……å±¬æ€§
                 if( sizeof(prop) )
                 {
                         apply = keys(prop);
@@ -1049,7 +1049,7 @@ void unequip_module(object ob, object owner)
 
                 if( change )
                 {
-                        stats = copy(tmp_stats->bas_prop); // ÓÉÓÚ¿ÉÌ××°µÈ¼¶±ä»¯£¬Ì××°»ù±¾ÊôĞÔ»á±ä»¯£¬ÏÈÈ¥³ıÔ­ÓĞµÄ
+                        stats = copy(tmp_stats->bas_prop); // ç”±äºå¯å¥—è£ç­‰ç´šè®ŠåŒ–ï¼Œå¥—è£åŸºæœ¬å±¬æ€§æœƒè®ŠåŒ–ï¼Œå…ˆå»é™¤åŸæœ‰çš„
                         apply = keys(stats);
                         for( i=0; i<sizeof(apply); i++ ) {
                                 if (apply[i] == "int" || apply[i] == "str" ||
@@ -1060,7 +1060,7 @@ void unequip_module(object ob, object owner)
                                 applied_prop[apply[i]] -= stats[apply[i]];
                         }
 
-                        stats = copy(mod_stats->bas_prop); // Ì××°»ù±¾ÊôĞÔ
+                        stats = copy(mod_stats->bas_prop); // å¥—è£åŸºæœ¬å±¬æ€§
                         apply = keys(stats);
                         for( i = 0; i<sizeof(apply); i++ )
                         {
@@ -1081,7 +1081,7 @@ void unequip_module(object ob, object owner)
         }
 }
 
-// ÒÆ³ıÌ××°ÌØ¼¼Ğ§¹û
+// ç§»é™¤å¥—è£ç‰¹æŠ€æ•ˆæœ
 void remove_effect(object me, string name, int level)
 {
         int i;
@@ -1099,7 +1099,7 @@ void remove_effect(object me, string name, int level)
                         }
                 }
                 delete_temp("suit/jifa_list", me);
-                tell_object(me, HIC "ÄãµÄÌ××°ÌØ¼¼" + name + HIC "ÔËĞĞÍê±Ï£¡\n");
+                tell_object(me, HIC "ä½ çš„å¥—è£ç‰¹æŠ€" + name + HIC "é‹è¡Œå®Œç•¢ï¼\n");
                 return;
         }
 }
@@ -1112,12 +1112,12 @@ void remove_effect2(object me, string name, int damage, int armor)
                 addn_temp("apply/armor", -1 * armor, me);
 
                 delete_temp("suit_defense", me);
-                tell_object(me, HIC "ÄãµÄÌ××°ÌØ¼¼" + name + HIC "ÔËĞĞÍê±Ï£¡\n");
+                tell_object(me, HIC "ä½ çš„å¥—è£ç‰¹æŠ€" + name + HIC "é‹è¡Œå®Œç•¢ï¼\n");
                 return;
         }
 }
 
-// µ÷ÓÃÀ´×Ô /cmds/std/suit.c Ê¹ÓÃÌ××°ÌØ¼¼
+// èª¿ç”¨ä¾†è‡ª /cmds/std/suit.c ä½¿ç”¨å¥—è£ç‰¹æŠ€
 public int suit_special(object me, string arg)
 {
         int i;
@@ -1128,33 +1128,33 @@ public int suit_special(object me, string arg)
         slvl = query_temp("modequip_itemmake_level", me);
 
         /*
-        ²¢¶îÍâ¸½¼ÓÌ××°ÌØ¼¼ ĞÇ³½Ö®Á¦(stars)¡£Ê©Õ¹(special stars <ÏîÄ¿>)
-        ºó¿ÉÌáÉıÏÂÁĞÄ³Ïî×´Ì¬ 50% £¬²¢³ÖĞø 10 ·ÖÖÓ¡£
-        ÎŞÊÓ¹¥»÷¡¢ÎŞÊÓ¶ãÉÁ¡¢ÎŞÊÓÕĞ¼Ü¡¢ÎŞÊÓÄÚ¹¦¡¢¿¹¶¾Ğ§¹û¡¢¶¾ËØÉËº¦
-        ĞéÈõ¶ÔÊÖ¡¢½â·â¾øÕĞ¡¢¾øÕĞÉËº¦¡¢¾øÕĞÃüÖĞ¡¢Ë«±¶ÉËº¦¡¢
-        »¯½âÉËº¦¡¢µÖ¿¹ĞéÈõ¡¢·â´æ¾øÕĞ¡¢¾øÕĞ·ÀÓù¡¢ÑĞ¾¿Ğ§¹û¡¢¼³È¡Ğ§¹û
+        ä¸¦é¡å¤–é™„åŠ å¥—è£ç‰¹æŠ€ æ˜Ÿè¾°ä¹‹åŠ›(stars)ã€‚æ–½å±•(special stars <é …ç›®>)
+        å¾Œå¯æå‡ä¸‹åˆ—æŸé …ç‹€æ…‹ 50% ï¼Œä¸¦æŒçºŒ 10 åˆ†é˜ã€‚
+        ç„¡è¦–æ”»æ“Šã€ç„¡è¦–èº²é–ƒã€ç„¡è¦–æ‹›æ¶ã€ç„¡è¦–å…§åŠŸã€æŠ—æ¯’æ•ˆæœã€æ¯’ç´ å‚·å®³
+        è™›å¼±å°æ‰‹ã€è§£å°çµ•æ‹›ã€çµ•æ‹›å‚·å®³ã€çµ•æ‹›å‘½ä¸­ã€é›™å€å‚·å®³ã€
+        åŒ–è§£å‚·å®³ã€æŠµæŠ—è™›å¼±ã€å°å­˜çµ•æ‹›ã€çµ•æ‹›é˜²å¾¡ã€ç ”ç©¶æ•ˆæœã€æ±²å–æ•ˆæœ
         */
 
 
         if( slvl < 2 )
         {
-                return notify_fail("ÄãÄ¿Ç°µÄÌ××°µÈ¼¶²»¹»£¬ÎŞ·¨Ê¹ÓÃÌ××°ÌØ¼¼£¡\n");
+                return notify_fail("ä½ ç›®å‰çš„å¥—è£ç­‰ç´šä¸å¤ ï¼Œç„¡æ³•ä½¿ç”¨å¥—è£ç‰¹æŠ€ï¼\n");
         }
 
         sscanf(arg, "special %s", arg);
         if (slvl == 2)
         {
                 if( arg != "changying" )
-                        return notify_fail("ÄãÄ¿Ç°²»¾ß±¸¸ÃÌ××°ÌØ¼¼£¡\n");
+                        return notify_fail("ä½ ç›®å‰ä¸å…·å‚™è©²å¥—è£ç‰¹æŠ€ï¼\n");
 
                 if( query_temp("suit_special", me) )
-                        return notify_fail("ÄãÏÖÔÚÕıÔÚÔËÓÃ´ËÀàÌØ¼¼ÖĞ£¬ÇëÉÔºóÔÙÊ¹ÓÃ¡£\n");
+                        return notify_fail("ä½ ç¾åœ¨æ­£åœ¨é‹ç”¨æ­¤é¡ç‰¹æŠ€ä¸­ï¼Œè«‹ç¨å¾Œå†ä½¿ç”¨ã€‚\n");
 
                 if( query("neili", me) < query("max_neili", me))
-                        return notify_fail("ÄãµÄÊ£ÓàÄÚÁ¦²»×ã£¬ÎŞ·¨Ê©Õ¹Ì××°¾ø¼¼¡£\n");
+                        return notify_fail("ä½ çš„å‰©ä½™å…§åŠ›ä¸è¶³ï¼Œç„¡æ³•æ–½å±•å¥—è£çµ•æŠ€ã€‚\n");
                 set("neili", 0, me);
 
-                message_combatd(HIC "$NÒ»Éù³¤Ò÷£¬È«Éí×°±¸É²ÄÇ¼äÁ÷¹âÒì²Ê£¬½«ÆäÁıÕÖ£¡\n" NOR, me);
+                message_combatd(HIC "$Nä¸€è²é•·åŸï¼Œå…¨èº«è£å‚™å‰é‚£é–“æµå…‰ç•°å½©ï¼Œå°‡å…¶ç± ç½©ï¼\n" NOR, me);
                 set_temp("suit_special", 100, me);
 
                 jifa_list = ({});
@@ -1170,25 +1170,25 @@ public int suit_special(object me, string arg)
                         }
                 }
 
-                me->start_call_out((: call_other,  __FILE__, "remove_effect", me, HIC "³¤Ò÷" NOR, 200 :), 300);
+                me->start_call_out((: call_other,  __FILE__, "remove_effect", me, HIC "é•·åŸ" NOR, 200 :), 300);
                 return 1;
         }
 
         if( slvl == 3 )
         {
                 if( arg != "zongheng" && arg != "tianzhidao" )
-                        return notify_fail("ÄãÄ¿Ç°²»¾ß±¸¸ÃÌ××°ÌØ¼¼£¡\n");
+                        return notify_fail("ä½ ç›®å‰ä¸å…·å‚™è©²å¥—è£ç‰¹æŠ€ï¼\n");
 
                 if( arg == "tianzhidao" )
                 {
                         if( me->query_temp("suit_special") )
-                                return notify_fail("ÄãÏÖÔÚÕıÔÚÔËÓÃ´ËÀàÌØ¼¼ÖĞ£¬ÇëÉÔºóÔÙÊ¹ÓÃ¡£\n");
+                                return notify_fail("ä½ ç¾åœ¨æ­£åœ¨é‹ç”¨æ­¤é¡ç‰¹æŠ€ä¸­ï¼Œè«‹ç¨å¾Œå†ä½¿ç”¨ã€‚\n");
 
                         if( query("neili", me) < query("max_neili", me))
-                                return notify_fail("ÄãµÄÊ£ÓàÄÚÁ¦²»×ã£¬ÎŞ·¨Ê©Õ¹Ì××°¾ø¼¼¡£\n");
+                                return notify_fail("ä½ çš„å‰©ä½™å…§åŠ›ä¸è¶³ï¼Œç„¡æ³•æ–½å±•å¥—è£çµ•æŠ€ã€‚\n");
                         set("neili", 0, me);
 
-                        message_combatd(HIG "$NÊ©Õ¹³öÌ××°¾ø¼¼¡¸ÌìÖ®µÀ¡¹£¬Ë²¼äÈ«Éí·º³ö½ğÉ«¹âÃ¢£¡\n" NOR, me);
+                        message_combatd(HIG "$Næ–½å±•å‡ºå¥—è£çµ•æŠ€ã€Œå¤©ä¹‹é“ã€ï¼Œç¬é–“å…¨èº«æ³›å‡ºé‡‘è‰²å…‰èŠ’ï¼\n" NOR, me);
                         set_temp("suit_special", 150, me);
 
                         jifa_list = ({});
@@ -1203,24 +1203,24 @@ public int suit_special(object me, string arg)
                                         addn_temp("apply/" + jifa_list[i], 400, me);
                                 }
                         }
-                        me->start_call_out((: call_other,  __FILE__, "remove_effect", me, HIG "ÌìÖ®µÀ" NOR, 400:), 600);
+                        me->start_call_out((: call_other,  __FILE__, "remove_effect", me, HIG "å¤©ä¹‹é“" NOR, 400:), 600);
                         return 1;
                 }
                 if( arg == "zongheng" )
                 {
                         if( query_temp("suit_defense", me) )
-                                return notify_fail("ÄãÏÖÔÚÕıÔÚÔËÓÃ´ËÀàÌØ¼¼ÖĞ£¬ÇëÉÔºóÔÙÊ¹ÓÃ¡£\n");
+                                return notify_fail("ä½ ç¾åœ¨æ­£åœ¨é‹ç”¨æ­¤é¡ç‰¹æŠ€ä¸­ï¼Œè«‹ç¨å¾Œå†ä½¿ç”¨ã€‚\n");
 
                         if( query("neili", me) < query("max_neili", me))
-                                return notify_fail("ÄãµÄÊ£ÓàÄÚÁ¦²»×ã£¬ÎŞ·¨Ê©Õ¹Ì××°¾ø¼¼¡£\n");
+                                return notify_fail("ä½ çš„å‰©ä½™å…§åŠ›ä¸è¶³ï¼Œç„¡æ³•æ–½å±•å¥—è£çµ•æŠ€ã€‚\n");
                         set("neili", 0, me);
 
-                        message_combatd(HIG "$NÊ©Õ¹³öÌ××°¾ø¼¼¡¸×İºá¡¹£¬Á½µÀ½ğ¹âÒ»×İÒ»ºá´ÓÌì¼ÊÂÓ¹ı£¬Ğı×ªÓÚ$NËÄÖÜ£¡\n" NOR, me);
+                        message_combatd(HIG "$Næ–½å±•å‡ºå¥—è£çµ•æŠ€ã€Œç¸±æ©«ã€ï¼Œå…©é“é‡‘å…‰ä¸€ç¸±ä¸€æ©«å¾å¤©éš›æ éï¼Œæ—‹è½‰äº$Nå››å‘¨ï¼\n" NOR, me);
                         set_temp("suit_defense", 1, me);
                         addn_temp("apply/damage", 10000, me);
                         addn_temp("apply/armor", 5000, me);
 
-                        me->start_call_out((: call_other,  __FILE__, "remove_effect2", me, HIG "ÌìÖ®µÀ" NOR, 10000, 5000 :), 300);
+                        me->start_call_out((: call_other,  __FILE__, "remove_effect2", me, HIG "å¤©ä¹‹é“" NOR, 10000, 5000 :), 300);
                         return 1;
                 }
         }
@@ -1228,18 +1228,18 @@ public int suit_special(object me, string arg)
         if( slvl == 4 )
         {
                 if (arg != "juedai" && arg != "tianjiao")
-                        return notify_fail("ÄãÄ¿Ç°²»¾ß±¸¸ÃÌ××°ÌØ¼¼£¡\n");
+                        return notify_fail("ä½ ç›®å‰ä¸å…·å‚™è©²å¥—è£ç‰¹æŠ€ï¼\n");
 
                 if (arg == "tianjiao")
                 {
                         if( query_temp("suit_special", me) )
-                                return notify_fail("ÄãÏÖÔÚÕıÔÚÔËÓÃ´ËÀàÌØ¼¼ÖĞ£¬ÇëÉÔºóÔÙÊ¹ÓÃ¡£\n");
+                                return notify_fail("ä½ ç¾åœ¨æ­£åœ¨é‹ç”¨æ­¤é¡ç‰¹æŠ€ä¸­ï¼Œè«‹ç¨å¾Œå†ä½¿ç”¨ã€‚\n");
 
                         if( query("neili", me) < query("max_neili", me))
-                                return notify_fail("ÄãµÄÊ£ÓàÄÚÁ¦²»×ã£¬ÎŞ·¨Ê©Õ¹Ì××°¾ø¼¼¡£\n");
+                                return notify_fail("ä½ çš„å‰©ä½™å…§åŠ›ä¸è¶³ï¼Œç„¡æ³•æ–½å±•å¥—è£çµ•æŠ€ã€‚\n");
                         set("neili", 0, me);
 
-                        message_combatd(HIM "$N¸ºÊÖ¶øÁ¦£¬ÒÂÉÑÎŞ·ç¶ø¶¯£¬¿ÚÖĞÄîÄîÓĞ´Ê£¬¡¸ÌìòœÖ®»ê¡¹ÒÑÈ»±Å·¢¶ø³ö£¡\n" NOR, me);
+                        message_combatd(HIM "$Nè² æ‰‹è€ŒåŠ›ï¼Œè¡£è£³ç„¡é¢¨è€Œå‹•ï¼Œå£ä¸­å¿µå¿µæœ‰è©ï¼Œã€Œå¤©â–¡ä¹‹é­‚ã€å·²ç„¶è¿¸ç™¼è€Œå‡ºï¼\n" NOR, me);
                         set_temp("suit_special", 200, me);
 
                         jifa_list = ({});
@@ -1255,24 +1255,24 @@ public int suit_special(object me, string arg)
                                 }
                         }
 
-                        me->start_call_out((: call_other,  __FILE__, "remove_effect", me, HIM "ÌìòœÖ®»ê" NOR, 600 :), 900);
+                        me->start_call_out((: call_other,  __FILE__, "remove_effect", me, HIM "å¤©â–¡ä¹‹é­‚" NOR, 600 :), 900);
                         return 1;
                 }
                 if( arg == "juedai" )
                 {
                         if( query_temp("suit_defense", me) )
-                                return notify_fail("ÄãÏÖÔÚÕıÔÚÔËÓÃ´ËÀàÌØ¼¼ÖĞ£¬ÇëÉÔºóÔÙÊ¹ÓÃ¡£\n");
+                                return notify_fail("ä½ ç¾åœ¨æ­£åœ¨é‹ç”¨æ­¤é¡ç‰¹æŠ€ä¸­ï¼Œè«‹ç¨å¾Œå†ä½¿ç”¨ã€‚\n");
 
                         if( query("neili", me) < query("max_neili", me))
-                                return notify_fail("ÄãµÄÊ£ÓàÄÚÁ¦²»×ã£¬ÎŞ·¨Ê©Õ¹Ì××°¾ø¼¼¡£\n");
+                                return notify_fail("ä½ çš„å‰©ä½™å…§åŠ›ä¸è¶³ï¼Œç„¡æ³•æ–½å±•å¥—è£çµ•æŠ€ã€‚\n");
                         set("neili", 0, me);
 
-                        message_combatd(HIM "$NÄ¿¹âÈç¾æ£¬»ëÉí×Ï¹âÉÁÏÖ£¬ÁîÈË²»º®¶øÀõ£¬ÊµÄËÒ»´úÌìòœ£¬ÎŞÓë¿¹ºâ£¡\n" NOR, me);
+                        message_combatd(HIM "$Nç›®å…‰å¦‚ç‚¬ï¼Œæ¸¾èº«ç´«å…‰é–ƒç¾ï¼Œä»¤äººä¸å¯’è€Œæ —ï¼Œå¯¦ä¹ƒä¸€ä»£å¤©â–¡ï¼Œç„¡èˆ‡æŠ—è¡¡ï¼\n" NOR, me);
                         set_temp("suit_defense", 1, me);
                         addn_temp("apply/damage", 15000, me);
                         addn_temp("apply/armor", 10000, me);
 
-                        me->start_call_out((: call_other,  __FILE__, "remove_effect2", me, HIM "½^´úÌìòœ" NOR, 15000, 10000 :), 600);
+                        me->start_call_out((: call_other,  __FILE__, "remove_effect2", me, HIM "â–¡ä»£å¤©â–¡" NOR, 15000, 10000 :), 600);
                         return 1;
                 }
         }
@@ -1280,18 +1280,18 @@ public int suit_special(object me, string arg)
         if( slvl == 5 )
         {
                 if( arg != "zhanws1" && arg != "zhanws2" )
-                        return notify_fail("ÄãÄ¿Ç°²»¾ß±¸¸ÃÌ××°ÌØ¼¼£¡\n");
+                        return notify_fail("ä½ ç›®å‰ä¸å…·å‚™è©²å¥—è£ç‰¹æŠ€ï¼\n");
 
                 if( arg == "zhanws2" )
                 {
                         if( query_temp("suit_special", me) )
-                                return notify_fail("ÄãÏÖÔÚÕıÔÚÔËÓÃ´ËÀàÌØ¼¼ÖĞ£¬ÇëÉÔºóÔÙÊ¹ÓÃ¡£\n");
+                                return notify_fail("ä½ ç¾åœ¨æ­£åœ¨é‹ç”¨æ­¤é¡ç‰¹æŠ€ä¸­ï¼Œè«‹ç¨å¾Œå†ä½¿ç”¨ã€‚\n");
 
                         if( query("neili", me) < query("max_neili", me))
-                                return notify_fail("ÄãµÄÊ£ÓàÄÚÁ¦²»×ã£¬ÎŞ·¨Ê©Õ¹Ì××°¾ø¼¼¡£\n");
+                                return notify_fail("ä½ çš„å‰©ä½™å…§åŠ›ä¸è¶³ï¼Œç„¡æ³•æ–½å±•å¥—è£çµ•æŠ€ã€‚\n");
                         set("neili", 0, me);
 
-                        message_combatd(HIR "$N¾ÙÍ·ÍûÌì£¬ÓÆÈ»Ò»Éù³¤Ì¾£¬ºöÈ»È«Éí±»ºìÉ«µÄ¹âÃ¢°ü¹ü£¬É±ÆøÖèÏÖ£¡\n" NOR, me);
+                        message_combatd(HIR "$Nèˆ‰é ­æœ›å¤©ï¼Œæ‚ ç„¶ä¸€è²é•·å˜†ï¼Œå¿½ç„¶å…¨èº«è¢«ç´…è‰²çš„å…‰èŠ’åŒ…è£¹ï¼Œæ®ºæ°£é©Ÿç¾ï¼\n" NOR, me);
                         set_temp("suit_special", 300, me);
 
                         jifa_list = ({});
@@ -1306,24 +1306,24 @@ public int suit_special(object me, string arg)
                                         addn_temp("apply/" + jifa_list[i], 1000, me);
                                 }
                         }
-                        me->start_call_out((: call_other,  __FILE__, "remove_effect", me, HIR "”Ø¡¤Ÿoëp" NOR, 1000 :), 1800);
+                        me->start_call_out((: call_other,  __FILE__, "remove_effect", me, HIR "â–¡ï¹’â–¡â–¡" NOR, 1000 :), 1800);
                         return 1;
                 }
                 if( arg == "zhanws1" )
                 {
                         if( query_temp("suit_defense", me) )
-                                return notify_fail("ÄãÏÖÔÚÕıÔÚÔËÓÃ´ËÀàÌØ¼¼ÖĞ£¬ÇëÉÔºóÔÙÊ¹ÓÃ¡£\n");
+                                return notify_fail("ä½ ç¾åœ¨æ­£åœ¨é‹ç”¨æ­¤é¡ç‰¹æŠ€ä¸­ï¼Œè«‹ç¨å¾Œå†ä½¿ç”¨ã€‚\n");
 
                         if( query("neili", me) < query("max_neili", me))
-                                return notify_fail("ÄãµÄÊ£ÓàÄÚÁ¦²»×ã£¬ÎŞ·¨Ê©Õ¹Ì××°¾ø¼¼¡£\n");
+                                return notify_fail("ä½ çš„å‰©ä½™å…§åŠ›ä¸è¶³ï¼Œç„¡æ³•æ–½å±•å¥—è£çµ•æŠ€ã€‚\n");
                         set("neili", 0, me);
 
-                        message_combatd(HIR "$N³¤Ğ¥Ò»Éù£¬Çá¸§È«Éí×°±¸£¬Ëù¹ıÖ®´¦·º³öºìÉ«ÑªÃ¢£¬ÁîÈËĞÄµ¨¾ßº®¡£\n" NOR, me);
+                        message_combatd(HIR "$Né•·å˜¯ä¸€è²ï¼Œè¼•æ’«å…¨èº«è£å‚™ï¼Œæ‰€éä¹‹è™•æ³›å‡ºç´…è‰²è¡€èŠ’ï¼Œä»¤äººå¿ƒè†½å…·å¯’ã€‚\n" NOR, me);
                         set_temp("suit_defense", 1, me);
                         addn_temp("apply/damage", 20000, me);
                         addn_temp("apply/armor", 10000, me);
 
-                        me->start_call_out((: call_other,  __FILE__, "remove_effect2", me, HIR "‘ğ¡¤Ÿoëp" NOR, 20000, 10000 :), 1200);
+                        me->start_call_out((: call_other,  __FILE__, "remove_effect2", me, HIR "â–¡ï¹’â–¡â–¡" NOR, 20000, 10000 :), 1200);
                         return 1;
                 }
         }

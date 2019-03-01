@@ -4,10 +4,10 @@ inherit NPC;
 
 void create ()
 {
-        set_name("ÖÜÛß", ({"zhou qi","zhou"}));
-        set("title","ÍòÃÅ¶şµÜ×Ó");
+        set_name("å‘¨åœ»", ({"zhou qi","zhou"}));
+        set("title","è¬é–€äºŒå¼Ÿå­");
         set("long", "\n");
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("age", 26);
         set("combat_exp", 100000);
         set("str", 20);
@@ -27,7 +27,7 @@ void create ()
         map_skill("sword", "tangshi-jian");
         set("chat_chance", 10);
         set("chat_msg", ({
-                "ÖÜÛßÀäÀäÑÔµÀ£º¡°½ñÌìÊÇÍòÀÏÒ¯µÄºÃÈÕ×Ó£¬Äú¿É±ğÀ´½Á¾Ö¡£\n",
+                "å‘¨åœ»å†·å†·è¨€é“ï¼šâ€œä»Šå¤©æ˜¯è¬è€çˆºçš„å¥½æ—¥å­ï¼Œæ‚¨å¯åˆ¥ä¾†æ”ªå±€ã€‚\n",
         }) );
         setup();
 

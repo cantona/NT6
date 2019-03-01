@@ -8,18 +8,18 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("Ğş¼Å´óÊ¦", ({
+        set_name("ç„å¯‚å¤§å¸«", ({
                 "xuanji dashi",
                 "xuanji",
                 "dashi",
         }));
         set("long",
-                "ËûÊÇÒ»Î»°×Ğë°×Ã¼µÄÀÏÉ®£¬Éí´©Ò»Ï®ÒøË¿×Ø»ÆôÂôÄ¡£ËûÉí²Ä¸ß´ó£¬\n"
-                "Á½ÊÖ¹ıÏ¥¡£Ë«Ä¿°ëÕö°ë±Õ£¬È´²»Ê±Éä³öÒ»ÂÆ¾«¹â¡£\n"
+                "ä»–æ˜¯ä¸€ä½ç™½é ˆç™½çœ‰çš„è€åƒ§ï¼Œèº«ç©¿ä¸€è¥²éŠ€çµ²æ£•é»ƒè¢ˆè£Ÿã€‚ä»–èº«æé«˜å¤§ï¼Œ\n"
+                "å…©æ‰‹éè†ã€‚é›™ç›®åŠçœåŠé–‰ï¼Œå»ä¸æ™‚å°„å‡ºä¸€ç¸·ç²¾å…‰ã€‚\n"
         );
 
-        set("nickname", "ÁúÊ÷ÔºÊ××ù");
-        set("gender", "ÄĞĞÔ");
+        set("nickname", "é¾æ¨¹é™¢é¦–åº§");
+        set("gender", "ç”·æ€§");
         set("attitude", "friendly");
         set("class", "bonze");
 
@@ -62,7 +62,7 @@ void create()
 
         prepare_skill("strike", "yipai-liangsan");
 
-        create_family("ÉÙÁÖÅÉ", 36, "µÜ×Ó");
+        create_family("å°‘æ—æ´¾", 36, "å¼Ÿå­");
 
         set("chat_chance_combat", 120);
         set("chat_msg_combat", ({

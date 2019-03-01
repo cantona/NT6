@@ -11,11 +11,11 @@ int query_generate_taoist() {
 
 void create()
 {
-        set_name("¹×²Ä", ({"coffin"}) );
+        set_name("æ£ºæ", ({"coffin"}) );
         set_weight(300);
         set("no_get", 1);
-        set("unit", "ÂÖ");
-        set("long", "Ò»¾ß¸¯ÐàµÄ¹×Ä¾,ºÃÏñ¿ÉÒÔÍÆ¿ª¸Ç×Ó(push)¡£\n");
+        set("unit", "è¼ª");
+        set("long", "ä¸€å…·è…æœ½çš„æ£ºæœ¨,å¥½åƒå¯ä»¥æŽ¨é–‹è“‹å­(push)ã€‚\n");
         set("value", 2000);
         setup();
 } 
@@ -27,14 +27,14 @@ void init () {
 int do_push(string arg) {
         object taoist;
         
-        if(!arg || (arg!="coffin" &&  arg!="¹×²Ä")) 
-                return notify_fail("ÄãÒªÍÆÊ²Ã´£¿\n");
+        if(!arg || (arg!="coffin" &&  arg!="æ£ºæ")) 
+                return notify_fail("ä½ è¦æŽ¨ä»€éº¼ï¼Ÿ\n");
                 
         if(query_generate_taoist()) {
-                message_vision("$NÍÆ¿ªÁË¹×²Ä£¬µ«ÊÇÀïÃæÊ²Ã´¶¼Ã»ÓÐ¡£\n",this_player());
+                message_vision("$NæŽ¨é–‹äº†æ£ºæï¼Œä½†æ˜¯è£¡é¢ä»€éº¼éƒ½æ²’æœ‰ã€‚\n",this_player());
                 return 1;
         } else {
-                message_vision("$NÍÆ¿ªÁË¹×²Ä£¬ÀïÃæ¹ö³ö¸öÈËÀ´¡£\n",this_player());
+                message_vision("$NæŽ¨é–‹äº†æ£ºæï¼Œè£¡é¢æ»¾å‡ºå€‹äººä¾†ã€‚\n",this_player());
                 taoist = new("/maze/necropolis/npc/taoist");
                 taoist->move(environment(this_player()));
                 set_generate_taoist(1);

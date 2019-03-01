@@ -4,14 +4,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name("·¹²§", ({ "bowl" }) );
+        set_name("é£¯ç µ", ({ "bowl" }) );
         set_weight(5000);
         set_max_encumbrance(800);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
-                set("long", "Ò»¸öºÍÉÐÓÃµÄ·¹²§\n");
+                set("unit", "å€‹");
+                set("long", "ä¸€å€‹å’Œå°šç”¨çš„é£¯ç µ\n");
                 set("value", 1);
         }
 }

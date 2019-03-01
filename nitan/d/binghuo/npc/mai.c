@@ -5,13 +5,13 @@ inherit F_MASTER;
 #include <ansi.h>;
 void create()
 {
-        set_name("Âó¾¨", ({ "mai jing", "mai", "jing" }));
-        set("title", HIC"¾Ş¾¨°ï°ïÖ÷"NOR);
+        set_name("éº¥é¯¨", ({ "mai jing", "mai", "jing" }));
+        set("title", HIC"å·¨é¯¨å¹«å¹«ä¸»"NOR);
         set("long", 
-"Ëû´ÓÆß°ËËêÆğ£¬±ã³£×êµ½º£µ×ÃşÓã×½Ğ·£¬Ë®ĞÔ¼«¸ß£¬±ãÒ»ìÄÏã²»
-³öË®Ãæ£¬Ò²ÑÍËû²»ËÀ¡£\n");
+"ä»–å¾ä¸ƒå…«æ­²èµ·ï¼Œä¾¿å¸¸é‘½åˆ°æµ·åº•æ‘¸é­šæ‰èŸ¹ï¼Œæ°´æ€§æ¥µé«˜ï¼Œä¾¿ä¸€ç‚·é¦™ä¸
+å‡ºæ°´é¢ï¼Œä¹Ÿæ·¹ä»–ä¸æ­»ã€‚\n");
 
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("age", 52);
         set("attitude", "peaceful");
         set("shen_type", -1);

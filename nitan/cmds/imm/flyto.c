@@ -14,7 +14,7 @@ int main(object me, string arg)
         if (! SECURITY_D->valid_grant(me, "(immortal)"))
                 return 0;
 
-        if (! arg) return notify_fail("ƒ„“™∑…µΩƒƒ∂˘»•£ø\n");
+        if (! arg) return notify_fail("‰Ω†Ë¶ÅÈ£õÂà∞Âì™ÂÖíÂéªÔºü\n");
 
         obj = MESSAGE_D->find_user(arg);
         if (! obj) obj = find_living(arg);
@@ -26,7 +26,7 @@ int main(object me, string arg)
                 {
                         if (file_size(arg) >= 0)
                                 return me->move(arg);
-                        return notify_fail("√ª”–’‚∏ˆÕÊº“°¢…˙ŒÔ°¢ªÚµÿ∑Ω°£\n");
+                        return notify_fail("Ê≤íÊúâÈÄôÂÄãÁé©ÂÆ∂„ÄÅÁîüÁâ©„ÄÅÊàñÂú∞Êñπ„ÄÇ\n");
                 }
         }
 
@@ -34,17 +34,17 @@ int main(object me, string arg)
                        obj = environment(obj);
 
         if (obj == environment(me))
-                return notify_fail("≤ªæÕ‘⁄ƒ„√Ê«∞√¥£ø¬“∑…∏ˆ…∂£ø\n");
+                return notify_fail("‰∏çÂ∞±Âú®‰Ω†Èù¢ÂâçÈ∫ºÔºü‰∫ÇÈ£õÂÄãÂï•Ôºü\n");
 
-        if (! obj) return notify_fail("’‚∏ˆŒÔº˛√ª”–ª∑æ≥ø…“‘ flyto°£\n");
-        tell_object(me, "ﬂ◊£¨‘ı√¥ªπ≤ª∆∑…ƒÿ£ø°≠°≠\n");
-        tell_object(me, "∫«∫«∫«∫«£¨∑…¡À∑…¡À£°–°–°Œ◊ ¶∑…—Ω∑…°≠°≠£°\n");
+        if (! obj) return notify_fail("ÈÄôÂÄãÁâ©‰ª∂Ê≤íÊúâÁí∞Â¢ÉÂèØ‰ª• flyto„ÄÇ\n");
+        tell_object(me, "Âí¶ÔºåÊÄéÈ∫ºÈÇÑ‰∏çËµ∑È£õÂë¢Ôºü‚Ä¶‚Ä¶\n");
+        tell_object(me, "ÂëµÂëµÂëµÂëµÔºåÈ£õ‰∫ÜÈ£õ‰∫ÜÔºÅÂ∞èÂ∞èÂ∑´Â∏´È£õÂëÄÈ£õ‚Ä¶‚Ä¶ÔºÅ\n");
         if( !query("env/invisible", me) )
-                message("vision", me->name() + "«·∆Æ∆Æµƒ∑…¡À∆¿¥°£\n",
+                message("vision", me->name() + "ËºïÈ£ÑÈ£ÑÁöÑÈ£õ‰∫ÜËµ∑‰æÜ„ÄÇ\n",
                         environment(me), ({ me }));
-        tell_object(me, "µΩ¡À£øµΩ¡À£°Ωµ¬‰‡∂£°£°£°\n");
+        tell_object(me, "Âà∞‰∫ÜÔºüÂà∞‰∫ÜÔºÅÈôçËêΩÂòçÔºÅÔºÅÔºÅ\n");
         if( !query("env/invisible", me) )
-                message("vision", me->name() + "¥”ÃÏ…œ¬˝¬˝µƒ¬‰¡Àœ¬¿¥°£\n", obj);
+                message("vision", me->name() + "ÂæûÂ§©‰∏äÊÖ¢ÊÖ¢ÁöÑËêΩ‰∫Ü‰∏ã‰æÜ„ÄÇ\n", obj);
         me->move(obj);
         return 1;
 }
@@ -52,7 +52,7 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-÷∏¡Ó∏Ò Ω : flyto <ƒø±Í>
+Êåá‰ª§Ê†ºÂºè : flyto <ÁõÆÊ®ô>
 HELP);
             return 1;
 }

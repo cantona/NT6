@@ -4,8 +4,8 @@ inherit BLADE;
 
 void create()
 {
-        set_name(HIY"¾«Áéµ¶"NOR, ({ "spirit blade", "blade" })); 
-        set("long", "¾«ÁéµÄ±¦Îï£¬ÓµÓĞ¾«ÁéµÄÁ¦Á¿¡£\n");
+        set_name(HIY"ç²¾éˆåˆ€"NOR, ({ "spirit blade", "blade" })); 
+        set("long", "ç²¾éˆçš„å¯¶ç‰©ï¼Œæ“æœ‰ç²¾éˆçš„åŠ›é‡ã€‚\n");
         set("no_get",1);
         set("no_give",1);
         set("no_steal",1);
@@ -15,11 +15,11 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
+                set("unit", "æŸ„");
                 set("value", 0);
                 set("material", "iron");
-                set("wield_msg", HIC"$N"+HIC"ÓÒÊÖ½áÓ¡£¬´¹Ä¿Ä¬ÄîÖäÓï¡£Ò»µã¹âÃ¢ÔÚ$N"+HIC"ÕÆÖĞÖğ½¥ÁÁÆğ£¬$n"NOR+HIC"½¥½¥³ÉĞÎ¡£\n"NOR);
-                set("unwield_msg", "$n"+HIC"´Ó$N"+HIC"ÊÖÖĞÒ»Ô¾¶øÆğ£¬»¯ÎªÒ»µÀÇå·ç¡£\n"NOR); 
+                set("wield_msg", HIC"$N"+HIC"å³æ‰‹çµå°ï¼Œå‚ç›®é»˜å¿µå’’èªã€‚ä¸€é»å…‰èŠ’åœ¨$N"+HIC"æŒä¸­é€æ¼¸äº®èµ·ï¼Œ$n"NOR+HIC"æ¼¸æ¼¸æˆå½¢ã€‚\n"NOR);
+                set("unwield_msg", "$n"+HIC"å¾$N"+HIC"æ‰‹ä¸­ä¸€èºè€Œèµ·ï¼ŒåŒ–ç‚ºä¸€é“æ¸…é¢¨ã€‚\n"NOR); 
             set("skill", ([
                 "name": "spirit-blade",    // name of the skill
                 "exp_required": 1000,    // minimum combat experience required
@@ -34,13 +34,13 @@ void create()
 
 void owner_is_killed()
 {
-        write(HIY"Ö»¾õÒ»ÕóÇå·ç´µ¹ı£¬ºÃÏóÊÇ¡­¡­\n"NOR);
+        write(HIY"åªè¦ºä¸€é™£æ¸…é¢¨å¹éï¼Œå¥½è±¡æ˜¯â€¦â€¦\n"NOR);
        destruct(this_object());
 }
 /*
 int query_autoload()
 {
-        write(HIG"Ò»ÕóÇå·ç·÷¹ıÉí²à£¬·Â·ğÔÚÄØà«Ê²Ã´ÖäÓï¡£\n"NOR);
+        write(HIG"ä¸€é™£æ¸…é¢¨æ‹‚éèº«å´ï¼Œä»¿ä½›åœ¨å‘¢å–ƒä»€éº¼å’’èªã€‚\n"NOR);
        return 1;
 }
 */
@@ -56,17 +56,17 @@ int do_back(string arg)
     string name;
     name=query("name", this_player());
     if( query("jing", this_player())<20 )
-                return notify_fail("ÄãµÄ¾«ÉñÎŞ·¨¼¯ÖĞ£¡\n");
-    if( !arg ) return notify_fail("ÄãÒª»ØÄÄÀï? \n");
+                return notify_fail("ä½ çš„ç²¾ç¥ç„¡æ³•é›†ä¸­ï¼\n");
+    if( !arg ) return notify_fail("ä½ è¦å›å“ªè£¡? \n");
     {
         if ( arg == "spirit" )
         {
-            message_vision(HIG"$NÄ¬ÄîÖäÓï£¬ÊÖÖĞ"NOR+HIY"¾«Áéµ¶"NOR+HIG"»¯ÎªÒ»ÕóÇå·ç£¬ÅÌĞı·ÉÎè¡£\n"NOR,this_player() );
+            message_vision(HIG"$Né»˜å¿µå’’èªï¼Œæ‰‹ä¸­"NOR+HIY"ç²¾éˆåˆ€"NOR+HIG"åŒ–ç‚ºä¸€é™£æ¸…é¢¨ï¼Œç›¤æ—‹é£›èˆã€‚\n"NOR,this_player() );
             this_player()->receive_damage("jing",10);
             tell_room(environment(this_player()),
-                 name+"µÄÉíÓ°ÏûÊ§ÔÚÇå·çÖĞ¡£\n",this_player() );
+                 name+"çš„èº«å½±æ¶ˆå¤±åœ¨æ¸…é¢¨ä¸­ã€‚\n",this_player() );
             tell_room("/d/city/spirit",
-                 name+"µÄÉíÓ°³öÏÖÔÚÒ»ÕóÇå·çÖĞ¡£\n",this_player() );
+                 name+"çš„èº«å½±å‡ºç¾åœ¨ä¸€é™£æ¸…é¢¨ä¸­ã€‚\n",this_player() );
             this_player()->move("/d/city/spirit");
          }
      }
@@ -78,14 +78,14 @@ int do_nopoison(string arg)
         object me;
         me = this_player(); 
         if( query("jing", me)<20 )
-                return notify_fail("ÄãµÄ¾«ÉñÎŞ·¨¼¯ÖĞ£¡\n");
+                return notify_fail("ä½ çš„ç²¾ç¥ç„¡æ³•é›†ä¸­ï¼\n");
         if( !arg )
-                return notify_fail("ÄãÒªÎªË­ÁÆ¶¾£¿\n");
+                return notify_fail("ä½ è¦ç‚ºèª°ç™‚æ¯’ï¼Ÿ\n");
         if ( arg == "spirit" )
           {        me->receive_damage("jing",10);
-                        message_vision(HIC"$NË«ÕÆºÏÊ®£¬Åõ×Å"NOR+HIY"¾«Áéµ¶"NOR+HIC"£¬Ä¬ÄîÖäÓï¡£\n"NOR, me);
+                        message_vision(HIC"$Né›™æŒåˆåï¼Œæ§è‘—"NOR+HIY"ç²¾éˆåˆ€"NOR+HIC"ï¼Œé»˜å¿µå’’èªã€‚\n"NOR, me);
         me->clear_condition();  
-               write("Äã³É¹¦Çı³ıÁËÌåÄÚ¶¾ËØ£¡\n");
+               write("ä½ æˆåŠŸé©…é™¤äº†é«”å…§æ¯’ç´ ï¼\n");
         return 1;  
           }
 }
@@ -96,11 +96,11 @@ int do_summons(string arg)
         object ob;
  
         if( !me->is_fighting() )
-                return notify_fail("Ö»ÓĞÕ½¶·ÖĞ²ÅÄÜÕÙ»½¾«Áé£¡\n");
+                return notify_fail("åªæœ‰æˆ°é¬¥ä¸­æ‰èƒ½å¬å–šç²¾éˆï¼\n");
         if( query("jing", me)<40 )
-                return notify_fail("ÄãµÄ¾«ÉñÎŞ·¨¼¯ÖĞ£¡\n");
+                return notify_fail("ä½ çš„ç²¾ç¥ç„¡æ³•é›†ä¸­ï¼\n");
 
-        message_vision(HIY"$N"+HIY"½«¾«Áéµ¶Ò»»Ó£¬à«à«µØÄîÁË¼¸¾äÖäÓï¡£\n"NOR, me);
+        message_vision(HIY"$N"+HIY"å°‡ç²¾éˆåˆ€ä¸€æ®ï¼Œå–ƒå–ƒåœ°å¿µäº†å¹¾å¥å’’èªã€‚\n"NOR, me);
 
          me->receive_damage("jing", 30);
         ob = new("/quest/tulong/npc/spirit");
@@ -115,11 +115,11 @@ int do_change(string arg)
         object ob = this_object();
         object obj;
         if( query("jing", me)<20 )
-                return notify_fail("ÄãµÄ¾«ÉñÎŞ·¨¼¯ÖĞ£¡\n");
+                return notify_fail("ä½ çš„ç²¾ç¥ç„¡æ³•é›†ä¸­ï¼\n");
         if( arg == "sword")
         { 
        me->receive_damage("jing",10);
-                        message_vision(HIC"$NÊÖÖĞ"NOR+HIY"¾«Áéµ¶"NOR+HIC"ÇáÇáÒ»»Î£¬±ä³öÁËÒ»°Ñ½£¡£\n"NOR, me); 
+                        message_vision(HIC"$Næ‰‹ä¸­"NOR+HIY"ç²¾éˆåˆ€"NOR+HIC"è¼•è¼•ä¸€æ™ƒï¼Œè®Šå‡ºäº†ä¸€æŠŠåŠã€‚\n"NOR, me); 
         obj=new("quest/tulong/obj/sword");
         obj->move(me);   
         destruct(ob);

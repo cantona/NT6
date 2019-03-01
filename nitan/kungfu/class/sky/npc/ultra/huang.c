@@ -5,11 +5,11 @@ inherit NPC;
 void create()
 {
         object ob;
-        set_name("»ÆÉÑ", ({"huang shang", "huang", "shang"}));
-        set("title", "´ó×ÚÊ¦");
-        set("gender", "ÄÐÐÔ");
+        set_name("é»ƒè£³", ({"huang shang", "huang", "shang"}));
+        set("title", "å¤§å®—å¸«");
+        set("gender", "ç”·æ€§");
         set("age", 42);
-        set("long", "´ËÈËÆø¶ÈÏÐÑÅ£¬¿´²»³öÎä¹¦¸ßµÍ¡£\n");
+        set("long", "æ­¤äººæ°£åº¦é–’é›…ï¼Œçœ‹ä¸å‡ºæ­¦åŠŸé«˜ä½Žã€‚\n");
         set("attitude", "peaceful");
         set("class", "scholar");
         set("str", 40);
@@ -56,7 +56,7 @@ void create()
         set("opinion/ultra",  1);
         set("opinion/master", 1);
 
-        set("rank_info/self", "Ä³¼Ò");
+        set("rank_info/self", "æŸå®¶");
 
         set("chat_chance_combat", 100);
         set("chat_msg_combat", ({
@@ -139,7 +139,7 @@ void die()
 
         return;
 }
-// ÆøÑªÐ¡ÓÚ1000ÔòËÀÍö£¬±ÜÃâËûÈËÐ­Öú°ïÃ¦×ªÊÀ
+// æ°£è¡€å°äºŽ1000å‰‡æ­»äº¡ï¼Œé¿å…ä»–äººå”åŠ©å¹«å¿™è½‰ä¸–
 void heart_beat()
 {
         if (this_object()->query("qi") < 1000 || this_object()->query("eff_qi") < 1000)

@@ -9,19 +9,19 @@ int exert(object me, object target)
         int skill;
 
         if (target != me)
-                return notify_fail("你只能用天雷神功来提升自己的战斗力。\n");
+                return notify_fail("浣犲彧鑳界敤澶╅浄绁炲姛渚嗘彁鍗囪嚜宸辩殑鎴伴鍔涖�俓n");
 
         if( query("neili", me)<150 )
-                return notify_fail("你的内力不够。\n");
+                return notify_fail("浣犵殑鍏у姏涓嶅銆俓n");
 
         if( query_temp("powerup", me) )
-                return notify_fail("你已经在运功中了。\n");
+                return notify_fail("浣犲凡缍撳湪閬嬪姛涓簡銆俓n");
 
         skill = me->query_skill("force");
         addn("neili", -100, me);
         me->receive_damage("qi", 0);
-        message_combatd(YEL "$N" YEL "微一凝神，运起天雷神功，真气顿时灌满全身，整"
-                        "个身体竟呈现出古铜色的光泽。\n" NOR, me);
+        message_combatd(YEL "$N" YEL "寰竴鍑濈锛岄亱璧峰ぉ闆风鍔燂紝鐪熸埃闋撴檪鐏屾豢鍏ㄨ韩锛屾暣"
+                        "鍊嬭韩楂旂珶鍛堢従鍑哄彜閵呰壊鐨勫厜婢ゃ�俓n" NOR, me);
         addn_temp("apply/attack", skill/3, me);
         addn_temp("apply/defense", skill/3, me);
         set_temp("powerup", 1, me);
@@ -39,6 +39,6 @@ void remove_effect(object me, int amount)
                 addn_temp("apply/attack", -amount, me);
                 addn_temp("apply/defense", -amount, me);
                 delete_temp("powerup", me);
-                tell_object(me, "你的天雷神功运行完毕，将内力收回丹田。\n");
+                tell_object(me, "浣犵殑澶╅浄绁炲姛閬嬭瀹岀暍锛屽皣鍏у姏鏀跺洖涓圭敯銆俓n");
         }
 }

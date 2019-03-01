@@ -1,5 +1,5 @@
 mapping dirs = ([
-"ÑïÖİ½¼Íâ" :     ({ "/d/city/jiaowai1",
+"æšå·éƒŠå¤–" :     ({ "/d/city/jiaowai1",
                     "/d/city/jiaowai2",
                     "/d/city/jiaowai3",
                     "/d/city/jiaowai4",
@@ -13,7 +13,7 @@ mapping dirs = ([
                     "/d/city/jiaowai12",
                     "/d/city/jiaowai13"
                  }),
-"Ì«ºşÒ»´ø" :     ({ "/d/guiyun/shulin1",
+"å¤ªæ¹–ä¸€å¸¶" :     ({ "/d/guiyun/shulin1",
                     "/d/guiyun/shulin2",
                     "/d/guiyun/shulin3",
                     "/d/guiyun/shulin4",
@@ -22,7 +22,7 @@ mapping dirs = ([
                     "/d/guiyun/shanlu2",
                     "/d/guiyun/tiandi"
                  }),
-"»ÆºÓÒ»´ø" :     ({ "/d/huanghe/caodi1",
+"é»ƒæ²³ä¸€å¸¶" :     ({ "/d/huanghe/caodi1",
                     "/d/huanghe/caodi2",
                     "/d/huanghe/shulin1",
                     "/d/huanghe/shulin2",
@@ -64,7 +64,7 @@ mapping dirs = ([
                     "/d/huanghe/yinpanshui"
                  }),
 
-"³¤°×É½ÉÏ" :     ({ "/d/guanwai/milin1",
+"é•·ç™½å±±ä¸Š" :     ({ "/d/guanwai/milin1",
                     "/d/guanwai/milin2",
                     "/d/guanwai/milin3",
                     "/d/guanwai/heifengkou",
@@ -83,7 +83,7 @@ mapping dirs = ([
                     "/d/guanwai/tiyun"
                  }),
 
-"´óÀí½¼Íâ" :     ({ "/d/dali/atoubu",
+"å¤§ç†éƒŠå¤–" :     ({ "/d/dali/atoubu",
                     "/d/dali/badidian",
                     "/d/dali/banshan",
                     "/d/dali/bijishan",
@@ -179,7 +179,7 @@ mapping dirs = ([
                  }),
 
 
-"·ğÉ½Ò»´ø" :     ({ "/d/foshan/nanling",
+"ä½›å±±ä¸€å¸¶" :     ({ "/d/foshan/nanling",
                     "/d/foshan/road1",
                     "/d/foshan/road2",
                     "/d/foshan/road3",
@@ -195,7 +195,7 @@ mapping dirs = ([
                     "/d/foshan/road13",
                     "/d/foshan/road14"
                  }),
-"¸£ÖİÒ»´ø" :     ({ "/d/fuzhou/fzroad1",
+"ç¦å·ä¸€å¸¶" :     ({ "/d/fuzhou/fzroad1",
                     "/d/fuzhou/fzroad2",
                     "/d/fuzhou/fzroad3",
                     "/d/fuzhou/fzroad4",
@@ -221,7 +221,7 @@ mapping dirs = ([
                     "/d/fuzhou/wuyishan7",
                     "/d/fuzhou/yushan"
                  }),
-"ºãÉ½Ò»´ø" :     ({ "/d/hengshan/cuiping1",
+"æ†å±±ä¸€å¸¶" :     ({ "/d/hengshan/cuiping1",
                     "/d/hengshan/cuiping2",
                     "/d/hengshan/cuipinggu1",
                     "/d/hengshan/cuipinggu2",
@@ -238,7 +238,7 @@ mapping dirs = ([
                     "/d/hengshan/zhandao",
                     "/d/hengshan/zhanqiao"
                  }),
-"ºâÉ½Ò»´ø" :     ({ "/d/henshan/banshan",
+"è¡¡å±±ä¸€å¸¶" :     ({ "/d/henshan/banshan",
                     "/d/henshan/chidifeng",
                     "/d/henshan/denggaotai",
                     "/d/henshan/heishatan",
@@ -280,7 +280,7 @@ mapping dirs = ([
                  }),
 
 
-"»ªÉ½Ò»´ø" :     ({ "/d/huashan/baichi",
+"è¯å±±ä¸€å¸¶" :     ({ "/d/huashan/baichi",
                     "/d/huashan/canglong",
                     "/d/huashan/chaopath1",
                     "/d/huashan/chaopath2",
@@ -324,7 +324,7 @@ mapping dirs = ([
                     "/d/huashan/zhandao",
                     "/d/huashan/ziqitai"
                  }),
-"Çà³ÇÉ½ÉÏ" :       ({ "/d/qingcheng/gulongqiao",
+"é’åŸå±±ä¸Š" :       ({ "/d/qingcheng/gulongqiao",
                       "/d/qingcheng/maguchi",
                       "/d/qingcheng/path1",
                       "/d/qingcheng/path2",
@@ -341,7 +341,7 @@ mapping dirs = ([
                       "/d/qingcheng/zhuhezhuang",
                       "/d/qingcheng/zushidian"
                  }),
-"ÁéÖİÒ»´ø" :     ({ "/d/lingzhou/chiling",
+"éˆå·ä¸€å¸¶" :     ({ "/d/lingzhou/chiling",
                     "/d/lingzhou/dalu",
                     "/d/lingzhou/deling",
                     "/d/lingzhou/gongling",
@@ -361,7 +361,7 @@ mapping dirs = ([
                     "/d/lingzhou/xuanhebao"
                  }),
 
-"ÖÕÄÏÉ½Ò»´ø" :   ({ "/d/quanzhen/baishulin1",
+"çµ‚å—å±±ä¸€å¸¶" :   ({ "/d/quanzhen/baishulin1",
                     "/d/quanzhen/baishulin2",
                     "/d/quanzhen/baishulin3",
                     "/d/quanzhen/baishulin4",
@@ -441,7 +441,7 @@ mapping dirs = ([
                     "/d/gumu/zhufeng"
                  }),
 
-"áÔÉ½Ò»´ø" :     ({ "/d/songshan/chaotian",
+"åµ©å±±ä¸€å¸¶" :     ({ "/d/songshan/chaotian",
                     "/d/songshan/chongsheng",
                     "/d/songshan/fengchantai",
                     "/d/songshan/luyanpubu",
@@ -456,7 +456,7 @@ mapping dirs = ([
                     "/d/songshan/taishique",
                     "/d/songshan/tianzhongge"
                  }),
-"Ì©É½Ò»´ø" :     ({ "/d/taishan/baihe",
+"æ³°å±±ä¸€å¸¶" :     ({ "/d/taishan/baihe",
                     "/d/taishan/baozang",
                     "/d/taishan/beitian",
                     "/d/taishan/daizong",
@@ -480,7 +480,7 @@ mapping dirs = ([
                     "/d/taishan/yuhuang",
                     "/d/taishan/zhangren"
                  }),
-"Ñ©É½½ÅÏÂ" :     ({ "/d/xueshan/caoyuan",
+"é›ªå±±è…³ä¸‹" :     ({ "/d/xueshan/caoyuan",
                     "/d/xueshan/caoyuan1",
                     "/d/xueshan/hubian1",
                     "/d/xueshan/hubian2",

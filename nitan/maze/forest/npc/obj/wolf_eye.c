@@ -4,12 +4,12 @@ inherit COMBINED_ITEM;
 
 void create()
 {
-        set_name("¿«—€", ({"wolf eye"}) );
+        set_name("ÁãºÁúº", ({"wolf eye"}) );
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", NOR + YEL "¿«—€°£\n" NOR);
-                set("base_unit", "∂‘");
+                set("long", NOR + YEL "ÁãºÁúº„ÄÇ\n" NOR);
+                set("base_unit", "Â∞ç");
                 set("base_value", 8000);
                 set("base_weight", 500);
         }

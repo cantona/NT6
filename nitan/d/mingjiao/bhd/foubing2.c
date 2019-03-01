@@ -1,20 +1,20 @@
-// foubing2.c ±ùÉ½
+// foubing2.c å†°å±±
 // Modify By River@SJ 99.06
 #include <ansi.h>
 inherit ROOM;
 void create()
 {
-	set("short",HIW"±ùÉ½"NOR);
+	set("short",HIW"å†°å±±"NOR);
         set("long", @LONG
-ÕâÊÇÒ»¿éºÜ´ó¸¡¶¯±ùÉ½£¬ÊÇÓÉÍòÄêĞş±ù×é³É¡£ÓÉÓÚÇ°ÃæµÄ±ùÉ½ÊÜ
-µ½»ğÉ½Ö®ÈÈ£¬²»¶ÏµÄÈÛ»¯£¬ÕâÊ±·´¶øËæ×Å±ùÉ½ÈÛ»¯³ÉÅ¯Ë®Ò»³åÓÖÏòÄÏ
-Æ®£¬ÕâÊ±Äã¿´µ½²»Ô¶Ö®´¦ÓĞÒ»¿éĞ¡»ù¿é(bing)£¬¿ÉÄÜ¿ÉÒÔµ±´¬ÓÃ£¬Ïò
-µº»®¶¯¡£
+é€™æ˜¯ä¸€å¡Šå¾ˆå¤§æµ®å‹•å†°å±±ï¼Œæ˜¯ç”±è¬å¹´ç„å†°çµ„æˆã€‚ç”±äºå‰é¢çš„å†°å±±å—
+åˆ°ç«å±±ä¹‹ç†±ï¼Œä¸æ–·çš„ç†”åŒ–ï¼Œé€™æ™‚åè€Œéš¨è‘—å†°å±±ç†”åŒ–æˆæš–æ°´ä¸€æ²–åˆå‘å—
+é£„ï¼Œé€™æ™‚ä½ çœ‹åˆ°ä¸é ä¹‹è™•æœ‰ä¸€å¡Šå°åŸºå¡Š(bing)ï¼Œå¯èƒ½å¯ä»¥ç•¶èˆ¹ç”¨ï¼Œå‘
+å³¶åŠƒå‹•ã€‚
 LONG );
         set("no_fight", 1);
         set("no_get_from", 1); 
         set("no_sleep_room", 1); 
-        set("outdoors","¼«±±");
+        set("outdoors","æ¥µåŒ—");
 	setup();
 }
 
@@ -31,10 +31,10 @@ int do_jump(string arg)
 {
 	object me=this_player();
 	if (!arg) return 0;
-	if (arg=="bing" || arg== "Ğ¡±ù¿é"){
-            message("vision", me->name() + "ÕÅÊÖ±§ÏòĞ¡±ù¿é£¬ ÆËÍ¨Ò»ÉùÌøÈëº£ÖĞ¡£\n",environment(me), ({me}) );
+	if (arg=="bing" || arg== "å°å†°å¡Š"){
+            message("vision", me->name() + "å¼µæ‰‹æŠ±å‘å°å†°å¡Šï¼Œ æ’²é€šä¸€è²è·³å…¥æµ·ä¸­ã€‚\n",environment(me), ({me}) );
        	    me->move(__DIR__"xbkai");
-            message("vision", me->name() + "ÀÇÀÇ±·±·µÄÌøÁË¹ıÀ´£¬Ë«ÊÖ±§ÏòĞ¡±ù¿é¡£\n",environment(me), ({me}) );
+            message("vision", me->name() + "ç‹¼ç‹¼ç‹½ç‹½çš„è·³äº†éä¾†ï¼Œé›™æ‰‹æŠ±å‘å°å†°å¡Šã€‚\n",environment(me), ({me}) );
             return 1;
         }
         return 0;
@@ -46,7 +46,7 @@ void run()
      int i;
      obj = all_inventory(this_object());
      for(i=0; i<sizeof(obj); i++){ 
-        tell_object(obj[i],HIW"\n±ùÉ½Ëæ×Åº£Ë®Å¯Á÷ÏòÄÏÆ®Àë¡£\n\n"NOR);
+        tell_object(obj[i],HIW"\nå†°å±±éš¨è‘—æµ·æ°´æš–æµå‘å—é£„é›¢ã€‚\n\n"NOR);
        	obj[i]->move(__DIR__"dbshan");
      }
 }

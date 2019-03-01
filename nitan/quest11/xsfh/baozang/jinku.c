@@ -3,14 +3,14 @@
 #include <ansi.h>
 #include <room.h>
 inherit ROOM;
-#define QUESTDIR5 "quest/Ñ©É½·Éºü/±¦²Ø/"
+#define QUESTDIR5 "quest/é›ªå±±é£›ç‹/å¯¶è—/"
 
 void create()
 {
-        set("short",YEL"½ð¿â"NOR);
+        set("short",YEL"é‡‘åº«"NOR);
         set("long", @long
-ÕâÀïÊÇ½ð¿â£¬Äã¿ÉÒÔ¿´¼ûÅ¼¶ûÊ§ÂäµÄ±¦Óñ»Æ½ð£¬Ö»ÊÇ´«ËµÖÐµÄÄÇÎÞÊýµÄ
-±¦²Ø£¬ËÆºõ²¢Ã»ÓÐ·¢ÏÖ¡£ÕâÀïÃ÷ÏÔÓÐÒ»Ð©´ò¶·µÄºÛ¼££¬ÅÂÊÇÔçÓÐÈËÀ´¹ý¡£
+é€™è£¡æ˜¯é‡‘åº«ï¼Œä½ å¯ä»¥çœ‹è¦‹å¶çˆ¾å¤±è½çš„å¯¶çŽ‰é»ƒé‡‘ï¼Œåªæ˜¯å‚³èªªä¸­çš„é‚£ç„¡æ•¸çš„
+å¯¶è—ï¼Œä¼¼ä¹Žä¸¦æ²’æœ‰ç™¼ç¾ã€‚é€™è£¡æ˜Žé¡¯æœ‰ä¸€äº›æ‰“é¬¥çš„ç—•è·¡ï¼Œæ€•æ˜¯æ—©æœ‰äººä¾†éŽã€‚
 long);
         set("exits", ([
                 "north" : __DIR__"tiantan",
@@ -44,31 +44,31 @@ void greeting(object me)
 	obj->set_amount(300+random(300));
 	obj->move(me);
     
-	message_vision(WHT"\n$N¼ñÆðÒ»Ð©"+obj->query("name")+WHT"£¡\n"NOR, me);
+	message_vision(WHT"\n$Næ’¿èµ·ä¸€äº›"+obj->query("name")+WHT"ï¼\n"NOR, me);
 	obj=new("/d/xingxiu/obj/yuqi");
 	obj->move(me);
-	message_vision(WHT"$N¼ñÆðÒ»¿é"+obj->query("name")+WHT"£¡\n"NOR, me);
+	message_vision(WHT"$Næ’¿èµ·ä¸€å¡Š"+obj->query("name")+WHT"ï¼\n"NOR, me);
 	obj=new("/d/hj/obj/tu");
 	obj->move(me);
-	message_vision(WHT"$N¼ñÆðÒ»·ù"+obj->query("name")+WHT"£¡\n"NOR, me);
+	message_vision(WHT"$Næ’¿èµ·ä¸€å¹…"+obj->query("name")+WHT"ï¼\n"NOR, me);
 	obj=new("/d/hj/obj/tu");
 	obj->move(me);
-	message_vision(WHT"$N¼ñÆðÒ»·ù"+obj->query("name")+WHT"£¡\n"NOR, me);
+	message_vision(WHT"$Næ’¿èµ·ä¸€å¹…"+obj->query("name")+WHT"ï¼\n"NOR, me);
 	obj=new("/d/hj/obj/tu");
 	obj->move(me);
-	message_vision(WHT"$N¼ñÆðÒ»·ù"+obj->query("name")+WHT"£¡\n"NOR, me);
+	message_vision(WHT"$Næ’¿èµ·ä¸€å¹…"+obj->query("name")+WHT"ï¼\n"NOR, me);
 	obj=new("/d/hj/obj/shiqi");
 	obj->move(me);
-	message_vision(WHT"$N¼ñÆðÒ»¿é"+obj->query("name")+WHT"£¡\n"NOR, me);
+	message_vision(WHT"$Næ’¿èµ·ä¸€å¡Š"+obj->query("name")+WHT"ï¼\n"NOR, me);
 	obj=new("/d/hj/obj/shiqi");
 	obj->move(me);
-	message_vision(WHT"$N¼ñÆðÒ»¿é"+obj->query("name")+WHT"£¡\n"NOR, me);
+	message_vision(WHT"$Næ’¿èµ·ä¸€å¡Š"+obj->query("name")+WHT"ï¼\n"NOR, me);
 	obj=new("/d/hj/obj/shiqi");
 	obj->move(me);
-	message_vision(WHT"$N¼ñÆðÒ»¿é"+obj->query("name")+WHT"£¡\n"NOR, me);
+	message_vision(WHT"$Næ’¿èµ·ä¸€å¡Š"+obj->query("name")+WHT"ï¼\n"NOR, me);
 
-	tell_object(me,HIR"\nÄãËÄ´¦×ªÁËÒ»È¦£¬¹ûÈ»ÕÒµ½ºÜ¶àÓñÆ÷»Æ½ð£¬»¹ÓÐÒ»Ð©ÖµÇ®µÄÃû¼££¬¿´À´Õâ´Î²»Ðé´ËÐÐ°¡¡£\n"NOR);
-	tell_object(me,HIG"Í»È»·¢ÏÖµØÉÏÒ»µþ²»ÆðÑÛµÄÊ¯°å¡£ÄãÉìÊÖ¼ñÁËÆðÀ´£¬¾¹È»ÊÇ¸ß²ýµÄÃûÎï£¡\n"NOR);
-	message("channel:rumor", HIM"¡¾Ò¥ÑÔ¡¿´«ËµÔÚ´³Íõ±¦²ØµÄ"+environment(me)->query("short")+HIM"Àï£¬ÓÐÈËÕÒµ½´óÁ¿±¦Îï»Æ½ð£¡\n"NOR,users() );
-	log_file("quest/FEIHU", sprintf("%s(%s)´Ó±¦²ØÖÐ»ñµÃÎÞÊýµÄ»Æ½ðÓñÆ÷ºÍÃû»­¡£¾­Ñé%d¡£", me->name(1),me->query("id"), me->query("combat_exp")) );
+	tell_object(me,HIR"\nä½ å››è™•è½‰äº†ä¸€åœˆï¼Œæžœç„¶æ‰¾åˆ°å¾ˆå¤šçŽ‰å™¨é»ƒé‡‘ï¼Œé‚„æœ‰ä¸€äº›å€¼éŒ¢çš„åè·¡ï¼Œçœ‹ä¾†é€™æ¬¡ä¸è™›æ­¤è¡Œå•Šã€‚\n"NOR);
+	tell_object(me,HIG"çªç„¶ç™¼ç¾åœ°ä¸Šä¸€ç–Šä¸èµ·çœ¼çš„çŸ³æ¿ã€‚ä½ ä¼¸æ‰‹æ’¿äº†èµ·ä¾†ï¼Œç«Ÿç„¶æ˜¯é«˜æ˜Œçš„åç‰©ï¼\n"NOR);
+	message("channel:rumor", HIM"ã€è¬ è¨€ã€‘å‚³èªªåœ¨é—–çŽ‹å¯¶è—çš„"+environment(me)->query("short")+HIM"è£¡ï¼Œæœ‰äººæ‰¾åˆ°å¤§é‡å¯¶ç‰©é»ƒé‡‘ï¼\n"NOR,users() );
+	log_file("quest/FEIHU", sprintf("%s(%s)å¾žå¯¶è—ä¸­ç²å¾—ç„¡æ•¸çš„é»ƒé‡‘çŽ‰å™¨å’Œåç•«ã€‚ç¶“é©—%dã€‚", me->name(1),me->query("id"), me->query("combat_exp")) );
 }

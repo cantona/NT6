@@ -9,15 +9,15 @@ inherit F_UNIQUE;
 
 void create()
 {
-        set_name("ÖÜµß", ({ "zhou dian", "zhou", "dian", }));
+        set_name("å‘¨é¡›", ({ "zhou dian", "zhou", "dian", }));
         set("long",
-        "ËûÊÇÒ»Î»·è·èµßµßµÄÀÏÕß£¬Éí´©Ò»¼ş°×²¼³¤ÅÛ¡£\n"
-        "Ëû×ÜÊÇ»Å»ÅÕÅÕÅµÄ£¬ÏÈÌìÏÂÖ®¼±¶ø¼±¡£\n"
+        "ä»–æ˜¯ä¸€ä½ç˜‹ç˜‹é¡›é¡›çš„è€è€…ï¼Œèº«ç©¿ä¸€ä»¶ç™½å¸ƒé•·è¢ã€‚\n"
+        "ä»–ç¸½æ˜¯æ…Œæ…Œå¼µå¼µçš„ï¼Œå…ˆå¤©ä¸‹ä¹‹æ€¥è€Œæ€¥ã€‚\n"
         );
 
-        set("title", HIG "Ã÷½Ì" NOR "ÎåÉ¢ÈË");
-        set("nickname", "Ã»ÊÂ²»µßÓĞÊÂµß");
-        set("gender", "ÄĞĞÔ");
+        set("title", HIG "æ˜æ•™" NOR "äº”æ•£äºº");
+        set("nickname", "æ²’äº‹ä¸é¡›æœ‰äº‹é¡›");
+        set("gender", "ç”·æ€§");
         set("attitude", "friendly");
         set("class", "scholar");
 
@@ -59,8 +59,8 @@ void create()
         prepare_skill("cuff", "shenghuo-quan");
         prepare_skill("strike", "guangming-zhang");
 
-        create_family("Ã÷½Ì", 36, "ÎåÉ¢ÈË");
-        set("inherit_title",HIG"Ã÷½Ì"NOR"¹âÃ÷ÕÆÆìÊ¹"NOR);
+        create_family("æ˜æ•™", 36, "äº”æ•£äºº");
+        set("inherit_title",HIG"æ˜æ•™"NOR"å…‰æ˜æŒæ——ä½¿"NOR);
 
         setup();
 

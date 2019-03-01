@@ -7,14 +7,14 @@ inherit NPC;
 int ask_hbd(object me, object ob);
 void create()
 {
-        set_name("Ãí×£", ({ "keeper" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("å»Ÿç¥", ({ "keeper" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 60);
-        set("long", "Õâ¸öÀÏÈË¿´ÆğÀ´ÁùÊ®¶àËêÁË£¬¾«ÉñÈ´ºÜºÃ¡£\n");
+        set("long", "é€™å€‹è€äººçœ‹èµ·ä¾†å…­åå¤šæ­²äº†ï¼Œç²¾ç¥å»å¾ˆå¥½ã€‚\n");
         set("combat_exp", 100);
         set("attitude", "friendly");
         set("inquiry",([ 
-                      "ºÚ°×µÀ" : (: ask_hbd :), 
+                      "é»‘ç™½é“" : (: ask_hbd :), 
                  ]) ); 
 
 
@@ -36,30 +36,30 @@ void greeting(object ob)
         if (! ob || ! present(ob, environment(this_object()))) 
                 return;
 
-        say("Ãí×£ËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob) +
-            "£¬¾èµãÏã»ğÇ®°É¡£\n");
+        say("å»Ÿç¥èªªé“ï¼šé€™ä½" + RANK_D->query_respect(ob) +
+            "ï¼Œæé»é¦™ç«éŒ¢å§ã€‚\n");
 }
 int ask_hbd(object me, object ob) 
 { 
      me=this_player(); 
      ob=this_object(); 
 
-     if( query("bunch/bunch_name", me) != "ºÚ°×µÀ" && query("shen", me) <= 0 )
+     if( query("bunch/bunch_name", me) != "é»‘ç™½é“" && query("shen", me) <= 0 )
      { 
-           command("whisper"+query("id", me)+"ĞÖµÜÊÇÏë¼ÓÈëÔÛÃÇºÚ°×µÀµÄ°É£¡ËæÎÒÀ´°É£¡");
-           tell_object(me,HIB"Ãí×£´øÄãÈÆµ½·ğÏñºóÃæ£¬¿ªÁËÒ»ÉÈĞ¡ÃÅ£¬ÄãË³×ÅĞ¡ÃÅ×ßÁËÏÂÈ¥¡£\n"NOR);
-           message("vision", me->name() + "´ø×ÅÃí×£¼±¼±Ã¦Ã¦µÄ×ßÁË¡£\n", 
+           command("whisper"+query("id", me)+"å…„å¼Ÿæ˜¯æƒ³åŠ å…¥å’±å€‘é»‘ç™½é“çš„å§ï¼éš¨æˆ‘ä¾†å§ï¼");
+           tell_object(me,HIB"å»Ÿç¥å¸¶ä½ ç¹åˆ°ä½›åƒå¾Œé¢ï¼Œé–‹äº†ä¸€æ‰‡å°é–€ï¼Œä½ é †è‘—å°é–€èµ°äº†ä¸‹å»ã€‚\n"NOR);
+           message("vision", me->name() + "å¸¶è‘—å»Ÿç¥æ€¥æ€¥å¿™å¿™çš„èµ°äº†ã€‚\n", 
                               environment(me), ({me}) ); 
            me->move("/d/changan/hbd_cafb");
            return 1; 
      } 
      if( good_bunch(me) || query("shen", me)>0 )
      { 
-           command("say Ê©Ö÷£¬ÎÒ²»Ã÷°×ÄãµÄÒâË¼¡£\n"); 
+           command("say æ–½ä¸»ï¼Œæˆ‘ä¸æ˜ç™½ä½ çš„æ„æ€ã€‚\n"); 
            return 1; 
      } 
 
-     tell_object(me,"Ãí×£ËµµÀ£º¡°¼ÈÈ»ÊÇ±¾°ïĞÖµÜ£¬¾ÍËæÎÒÀ´°É£¡¡±\n");
+     tell_object(me,"å»Ÿç¥èªªé“ï¼šâ€œæ—¢ç„¶æ˜¯æœ¬å¹«å…„å¼Ÿï¼Œå°±éš¨æˆ‘ä¾†å§ï¼â€\n");
      me->move("/d/changan/hbd_cafb"); 
      return 1; 
 } 

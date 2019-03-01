@@ -22,48 +22,48 @@ int main(object me, string arg)
         where = environment(me);
         
         if (! arg)
-               return notify_fail("ÄãÒª±Õ¹Ø×êÑĞÊ²Ã´Îä¹¦£¿\n");
+               return notify_fail("ä½ è¦é–‰é—œé‘½ç ”ä»€éº¼æ­¦åŠŸï¼Ÿ\n");
         
         if (! me->query_skill(arg) || 
             file_size(SKILL_D(arg) + ".c") < 0)    
-               return notify_fail("ÄãÒª×êÑĞµÄÎä¹¦²»´æÔÚ»òÄã²»»á¸ÃÎä¹¦¡£\n");
+               return notify_fail("ä½ è¦é‘½ç ”çš„æ­¦åŠŸä¸å­˜åœ¨æˆ–ä½ ä¸æœƒè©²æ­¦åŠŸã€‚\n");
         
         //if (! SKILL_D(arg)->is_invent_skill())
         if (me->query_skillo(arg, 1) < 4600 )
-               return notify_fail("Äã¶Ô" + to_chinese(arg) + "µÄÁìÎò»¹²»¹»£¬ÎŞ·¨ÌáÉıÆäCOMBATÍşÁ¦¡£\n");  
+               return notify_fail("ä½ å°" + to_chinese(arg) + "çš„é ˜æ‚Ÿé‚„ä¸å¤ ï¼Œç„¡æ³•æå‡å…¶COMBATå¨åŠ›ã€‚\n");  
                
         if( query("pigging", where) )
-                return notify_fail("Äã»¹ÊÇ×¨ĞÄ¹°Öí°É£¡\n");
+                return notify_fail("ä½ é‚„æ˜¯å°ˆå¿ƒæ‹±è±¬å§ï¼\n");
 
         if( !query("no_fight", where) )
-                return notify_fail("ÔÚÕâÀï±Õ¹Ø×êÑĞ£¿²»Ì«°²È«°É£¿\n");
+                return notify_fail("åœ¨é€™è£¡é–‰é—œé‘½ç ”ï¼Ÿä¸å¤ªå®‰å…¨å§ï¼Ÿ\n");
 
         if( !query("sleep_room", where) )
-                return notify_fail("ÄãµÃÕÒÒ»¸öÄÜ¹»ĞİÏ¢µÄµØ·½±Õ¹Ø×êÑĞ¡£\n");
+                return notify_fail("ä½ å¾—æ‰¾ä¸€å€‹èƒ½å¤ ä¼‘æ¯çš„åœ°æ–¹é–‰é—œé‘½ç ”ã€‚\n");
 
         if (me->is_busy())
-                return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£å¿™è‘—å‘¢ã€‚\n");
                         
         if( query("potential", me)-query("learned_points", me)<1000000 )
-                return notify_fail("ÄãµÄÇ±ÄÜ²»¹»£¬Ã»·¨±Õ¹Ø×êÑĞ¡£\n");
+                return notify_fail("ä½ çš„æ½›èƒ½ä¸å¤ ï¼Œæ²’æ³•é–‰é—œé‘½ç ”ã€‚\n");
 
         if( query("experience", me)<query("learned_experience", me)+600000 )
-                return notify_fail("ÄãÏÖÔÚ»ıÀÛµÄÊµÕ½Ìå»á»¹Ì«ÉÙ¡£\n"); 
+                return notify_fail("ä½ ç¾åœ¨ç©ç´¯çš„å¯¦æˆ°é«”æœƒé‚„å¤ªå°‘ã€‚\n"); 
         
         if( query("qi", me)*100/query("max_qi", me)<90 )
-                return notify_fail("ÄãÏÖÔÚµÄÆøÌ«ÉÙÁË£¬ÎŞ·¨¾²ĞÄ×êÑĞ¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çš„æ°£å¤ªå°‘äº†ï¼Œç„¡æ³•éœå¿ƒé‘½ç ”ã€‚\n");
 
         if( query("jing", me)*100/query("max_jing", me)<90 )
-                return notify_fail("ÄãÏÖÔÚµÄ¾«Ì«ÉÙÁË£¬ÎŞ·¨¾²ĞÄ×êÑĞ¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çš„ç²¾å¤ªå°‘äº†ï¼Œç„¡æ³•éœå¿ƒé‘½ç ”ã€‚\n");
 
         if( query("max_neili", me)<4000 )
-                return notify_fail("Äã¾õµÃÄÚÁ¦ÆÄÓĞ²»×ã£¬¿´À´Ä¿Ç°»¹ÄÑÒÔ"
-                                   "½øĞĞ³¤Ê±¼äµÄ±Õ¹Ø×êÑĞ¡£\n");
+                return notify_fail("ä½ è¦ºå¾—å…§åŠ›é —æœ‰ä¸è¶³ï¼Œçœ‹ä¾†ç›®å‰é‚„é›£ä»¥"
+                                   "é€²è¡Œé•·æ™‚é–“çš„é–‰é—œé‘½ç ”ã€‚\n");
 
         if( query("neili", me)*100/query("max_neili", me)<90 )
-                return notify_fail("ÄãÏÖÔÚµÄÄÚÁ¦Ì«ÉÙÁË£¬ÎŞ·¨¾²ĞÄ×êÑĞ¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çš„å…§åŠ›å¤ªå°‘äº†ï¼Œç„¡æ³•éœå¿ƒé‘½ç ”ã€‚\n");
 
-        message_vision("$NÅÌÏ¥×øÏÂ£¬¿ªÊ¼Ú¤ÉñÔË¹¦£¬±Õ¹Ø×êÑĞ" + to_chinese(arg) + "¡£\n", me);
+        message_vision("$Nç›¤è†åä¸‹ï¼Œé–‹å§‹å†¥ç¥é‹åŠŸï¼Œé–‰é—œé‘½ç ”" + to_chinese(arg) + "ã€‚\n", me);
         set("startroom", base_name(where), me);
         set("doing", "invent", me);
         set("upgrade", arg, me);
@@ -71,7 +71,7 @@ int main(object me, string arg)
         me->start_busy(bind((:call_other, __FILE__, "closing" :), me),
                        bind((:call_other, __FILE__, "halt_closing" :), me));
         CHANNEL_D->do_channel(this_object(), "rumor",
-                              sprintf("´ó×ÚÊ¦%s(%s)¿ªÊ¼±Õ¹ØĞŞÁ¶×êÑĞ%s¡£",
+                              sprintf("å¤§å®—å¸«%s(%s)é–‹å§‹é–‰é—œä¿®ç…‰é‘½ç ”%sã€‚",
                               me->name(1),query("id", me),to_chinese(arg)));
 
         return 1;
@@ -82,7 +82,7 @@ int continue_uping(object me)
         me->start_busy(bind((:call_other, __FILE__, "closing" :), me),
                        bind((:call_other, __FILE__, "halt_closing" :), me));
         CLOSE_D->user_closed(me);
-        tell_object(me,HIR"\nÄã¼ÌĞø±Õ¹ØĞŞÁ¶×êÑĞ"+to_chinese(query("upgrade", me))+"...\n"NOR);
+        tell_object(me,HIR"\nä½ ç¹¼çºŒé–‰é—œä¿®ç…‰é‘½ç ”"+to_chinese(query("upgrade", me))+"...\n"NOR);
         return 1;
 }
 
@@ -113,11 +113,11 @@ int closing(object me)
         if( pot <= query("learned_points", me )
          || mar <= query("learned_experience", me) )
         {
-                tell_object(me, "ÄãµÄÇ±ÄÜ»òÌå»áºÄ¾¡ÁË¡£\n");
-                message_vision("$NÕö¿ªË«Ä¿£¬»º»ºÍÂÁËÒ»¿ÚÆø£¬Õ¾ÁËÆğÀ´¡£\n", me);
+                tell_object(me, "ä½ çš„æ½›èƒ½æˆ–é«”æœƒè€—ç›¡äº†ã€‚\n");
+                message_vision("$Nçœé–‹é›™ç›®ï¼Œç·©ç·©åäº†ä¸€å£æ°£ï¼Œç«™äº†èµ·ä¾†ã€‚\n", me);
                 CLOSE_D->user_opened(me);
                 CHANNEL_D->do_channel(this_object(), "rumor",
-                                      sprintf("ÌıËµ%s(%s)ĞŞÁ¶×êÑĞ%s¹¦µÂÔ²Âú¡£",
+                                      sprintf("è½èªª%s(%s)ä¿®ç…‰é‘½ç ”%såŠŸå¾·åœ“æ»¿ã€‚",
                                       me->name(1),query("id", me),to_chinese(skill)));
                 if (! interactive(me))
                 {
@@ -148,20 +148,20 @@ int closing(object me)
         set_temp("last_closing", tn, me);
                 
         if (random(10) == 0)
-                //tell_object(me, "±Õ¹ØĞŞÁ¶" + to_chinese(skill) + "ÖĞ...\n");
-                tell_object(me, "Äã±Õ¹Ø×êÑĞ" + to_chinese(skill) + "£¬ËÆÓĞËùË¼¡£\n");
+                //tell_object(me, "é–‰é—œä¿®ç…‰" + to_chinese(skill) + "ä¸­...\n");
+                tell_object(me, "ä½ é–‰é—œé‘½ç ”" + to_chinese(skill) + "ï¼Œä¼¼æœ‰æ‰€æ€ã€‚\n");
         
         /*
         if ((random(100) < 3) && me->can_improve_neili())
         {
-                tell_object(me, HIR "Äã¶ÔÄÚ¹¦ÓĞËùÁìÎò£¬¸Ğµ½ÄÚÁ¦½ø²½ÁË£¡\n" NOR);
+                tell_object(me, HIR "ä½ å°å…§åŠŸæœ‰æ‰€é ˜æ‚Ÿï¼Œæ„Ÿåˆ°å…§åŠ›é€²æ­¥äº†ï¼\n" NOR);
                 addn("improve/neili", 1, me);
                 me->improve_neili(10 + random(20));
         }
 
         if ((random(100) < 3) && me->can_improve_jingli())
         {
-                tell_object(me, HIM "Äã¶ÔÉñÍ¨ÓĞËùÁìÎò£¬¸Ğµ½¾«Á¦½ø²½ÁË£¡\n" NOR);
+                tell_object(me, HIM "ä½ å°ç¥é€šæœ‰æ‰€é ˜æ‚Ÿï¼Œæ„Ÿåˆ°ç²¾åŠ›é€²æ­¥äº†ï¼\n" NOR);
                 addn("improve/jingli", 1, me);
                 me->improve_jingli(5 + random(10));
         }
@@ -173,12 +173,12 @@ int closing(object me)
         addn("combat_exp", exp_inc, me);
         me->improve_skill("martial-cognize", 800 + random(800));
 
-        tell_object(me, HIM "ÄãÄÔÖĞÍ»È»Áé¹âÒ»ÉÁ£¬Äã¶Ô" + to_chinese(skill) + "ÓĞÁË¸üÉîµÄÁìÎò£¡\n" NOR); 
+        tell_object(me, HIM "ä½ è…¦ä¸­çªç„¶éˆå…‰ä¸€é–ƒï¼Œä½ å°" + to_chinese(skill) + "æœ‰äº†æ›´æ·±çš„é ˜æ‚Ÿï¼\n" NOR); 
         me->improve_skill(skill, 5000 + random(1000));
         SKILLS_D->upgrade_skill_power(skill); 
         CHANNEL_D->do_channel(find_object(SKILLS_D), "rumor", 
-                              "½­ºş´«ÑÔ£¬ÎäÑ§´ó×ÚÊ¦" + me->name(1) + "±Õ¹ØĞŞÁ¶×êÑĞ" + 
-                              to_chinese(skill) + "£¬ÖÕÓÚÍêÉÆÆäÆÆÕÀÖ®´¦£¬²¢¹ãÎªÁ÷´«¡£"); 
+                              "æ±Ÿæ¹–å‚³è¨€ï¼Œæ­¦å­¸å¤§å®—å¸«" + me->name(1) + "é–‰é—œä¿®ç…‰é‘½ç ”" + 
+                              to_chinese(skill) + "ï¼Œçµ‚äºå®Œå–„å…¶ç ´ç¶»ä¹‹è™•ï¼Œä¸¦å»£ç‚ºæµå‚³ã€‚"); 
 
         return 1;
 }
@@ -186,12 +186,12 @@ int closing(object me)
 int halt_closing(object me)
 {
         CLOSE_D->user_opened(me);
-        tell_object(me,"ÄãÖĞÖ¹ÁË±Õ¹ØĞŞÁ¶"+to_chinese(query("upgrade", me))+"¡£\n");
-        message_vision(HIY "$N" HIY "´óºÈÒ»Éù£¬Õö¿ªÑÛÀ´£¬Ò»¹ÉÆøÁ÷µÇÊ±"
-                       "½«ÖÚÈËÆÈÍËËÄ²½¡£\n\n" NOR, me);
+        tell_object(me,"ä½ ä¸­æ­¢äº†é–‰é—œä¿®ç…‰"+to_chinese(query("upgrade", me))+"ã€‚\n");
+        message_vision(HIY "$N" HIY "å¤§å–ä¸€è²ï¼Œçœé–‹çœ¼ä¾†ï¼Œä¸€è‚¡æ°£æµç™»æ™‚"
+                       "å°‡çœ¾äººè¿«é€€å››æ­¥ã€‚\n\n" NOR, me);
 
-        CHANNEL_D->do_channel(this_object(), "rumor", "ÌıËµ" + me->name(1) +
-                              "ĞŞÁ¶"+to_chinese(query("upgrade", me))+"ÖĞÍ¾Í»È»¸´³ö¡£");
+        CHANNEL_D->do_channel(this_object(), "rumor", "è½èªª" + me->name(1) +
+                              "ä¿®ç…‰"+to_chinese(query("upgrade", me))+"ä¸­é€”çªç„¶å¾©å‡ºã€‚");
         return 1;
 }
 
@@ -206,13 +206,13 @@ protected void user_quit(object me)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : upskill
+æŒ‡ä»¤æ ¼å¼ : upskill
 
-±Õ¹ØĞŞÁ¶ÑĞ¾¿Îä¹¦£¬Ö»ÓĞÄãÎä¹¦´ïµ½4600¼¶ÒÔºó²ÅÄÜ¹»±Õ¹ØĞŞÁ¶ÑĞ¾¿ÌáÉıÄãµÄÎä¹¦
-µÄCOMBATÊıÖµ£¬ÒªÇó±ØĞëÔÚÒ»¸ö°²È«²¢ÇÒ¿ÉÒÔĞİÏ¢µÄµØ·½²ÅÄÜĞŞÁ¶£¬ĞŞÁ¶Ç°ĞèÒªÓĞ
-Ò»°ÙÍòµãÇ±ÄÜ¼°ÁùÊ®ÍòÌå»á£¬±Õ¹Ø¿ªÊ¼ÒÔºó£¬Íæ¼ÒÀëÏßÒÔºóÆä½ÇÉ«½«ÈÔÈ»ÔÚÏßĞŞĞĞ£¬
-Ö±µ½Íæ¼ÒÖĞÖ¹ĞŞÁ¶(halt)»òÊÇÇ±ÄÜ»òÌå»áºÄ¾¡¡£ÆÚ¼äÄÚÍæ¼ÒµÄ¾­Ñé¡¢ĞŞÁ¶Îä¹¦¡¢Îä
-Ñ§ĞŞÑø¡¢ÒÔ¼°ĞŞÁ¶Îä¹¦ÍşÁ¦½«»áÌáÉı¡£
+é–‰é—œä¿®ç…‰ç ”ç©¶æ­¦åŠŸï¼Œåªæœ‰ä½ æ­¦åŠŸé”åˆ°4600ç´šä»¥å¾Œæ‰èƒ½å¤ é–‰é—œä¿®ç…‰ç ”ç©¶æå‡ä½ çš„æ­¦åŠŸ
+çš„COMBATæ•¸å€¼ï¼Œè¦æ±‚å¿…é ˆåœ¨ä¸€å€‹å®‰å…¨ä¸¦ä¸”å¯ä»¥ä¼‘æ¯çš„åœ°æ–¹æ‰èƒ½ä¿®ç…‰ï¼Œä¿®ç…‰å‰éœ€è¦æœ‰
+ä¸€ç™¾è¬é»æ½›èƒ½åŠå…­åè¬é«”æœƒï¼Œé–‰é—œé–‹å§‹ä»¥å¾Œï¼Œç©å®¶é›¢ç·šä»¥å¾Œå…¶è§’è‰²å°‡ä»ç„¶åœ¨ç·šä¿®è¡Œï¼Œ
+ç›´åˆ°ç©å®¶ä¸­æ­¢ä¿®ç…‰(halt)æˆ–æ˜¯æ½›èƒ½æˆ–é«”æœƒè€—ç›¡ã€‚æœŸé–“å…§ç©å®¶çš„ç¶“é©—ã€ä¿®ç…‰æ­¦åŠŸã€æ­¦
+å­¸ä¿®é¤Šã€ä»¥åŠä¿®ç…‰æ­¦åŠŸå¨åŠ›å°‡æœƒæå‡ã€‚
 
 HELP );
         return 1;

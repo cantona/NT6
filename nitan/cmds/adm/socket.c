@@ -14,7 +14,7 @@ int main(object me, string arg)
 
         // write(dump_socket_status());
 
-        out ="Fd    ×´Ì¬       ÀàĞÍ      ±¾µØµØÖ·        Ô¶¶ËµØÖ·           ËùÓĞÕß\n"+
+        out ="Fd    ç‹€æ…‹       é¡å‹      æœ¬åœ°åœ°å€        é ç«¯åœ°å€           æ‰€æœ‰è€…\n"+
              "--  ---------  --------  ------------  ------------------ ---------------\n";
 
         status = socket_status();
@@ -26,16 +26,16 @@ int main(object me, string arg)
                         status[i][0],status[i][1],status[i][2],status[i][3],status[i][4],status[i][5]);
         printf("%s\n",out);
 
-        printf("Êı¾İ¿â×´Ì¬£º%s\n",db_status());
+        printf("æ•¸æ“šåº«ç‹€æ…‹ï¼š%s\n",db_status());
         return 1;
 }
 
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : socket
+æŒ‡ä»¤æ ¼å¼ : socket
  
-ÁĞ³öµ±Ç°Ã¿Ò»¸ö LPC socket µÄ×´Ì¬¡£
+åˆ—å‡ºç•¶å‰æ¯ä¸€å€‹ LPC socket çš„ç‹€æ…‹ã€‚
  
 HELP
     );

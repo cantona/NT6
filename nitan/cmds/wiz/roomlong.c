@@ -22,7 +22,7 @@ int main(object me, string arg)
 
         seteuid(geteuid(me));
 
-        if (! arg) return notify_fail("Ö¸Áî¸ñÊ½ : roomlong <·¿¼äµµÃû>|here \n");
+        if (! arg) return notify_fail("æŒ‡ä»¤æ ¼å¼ : roomlong <æˆ¿é–“æª”å>|here \n");
 
         file=resolve_path(query("cwd", me),arg);
 
@@ -35,7 +35,7 @@ int main(object me, string arg)
 
                 if (! ob) ob = present(arg, environment(me));
 
-                if (! ob) return notify_fail("Ã»ÓĞÕâ¸öµµ°¸1¡£\n");
+                if (! ob) return notify_fail("æ²’æœ‰é€™å€‹æª”æ¡ˆ1ã€‚\n");
 
                 file = base_name(ob) + ".c";
 
@@ -44,18 +44,18 @@ int main(object me, string arg)
 
         if (! SECURITY_D->valid_read(file, me, "write"))
 
-                return notify_fail("Ã»ÓĞÕâ¸öµµ°¸2¡£\n");
+                return notify_fail("æ²’æœ‰é€™å€‹æª”æ¡ˆ2ã€‚\n");
 
 
         ob = load_object(file);
-        if (!ob) return notify_fail(file + "Õâ¸öµµ°¸ÓĞ´íÎó£¡\n");
+        if (!ob) return notify_fail(file + "é€™å€‹æª”æ¡ˆæœ‰éŒ¯èª¤ï¼\n");
 
         if (!is_room(ob))
-                return notify_fail("Õâ²»ÊÇÒ»¸ö·¿¼äµµ°¸¡£\n");
+                return notify_fail("é€™ä¸æ˜¯ä¸€å€‹æˆ¿é–“æª”æ¡ˆã€‚\n");
 
         long=replace_string(query("long", ob),"\n","");
-        long = replace_string(long,"¡°","¡º");
-        long = replace_string(long,"¡±","¡»");
+        long = replace_string(long,"â€œ","ã€");
+        long = replace_string(long,"â€","ã€");
 
         if (clonep(ob) && !userp(ob)) destruct(ob);
 
@@ -95,10 +95,10 @@ int main(object me, string arg)
         }
 
         if (!begin1)
-                return notify_fail("Ã»ÓĞ¶¨Î»³É¹¦ÃèÊöĞĞÊ×£¡\n");
+                return notify_fail("æ²’æœ‰å®šä½æˆåŠŸæè¿°è¡Œé¦–ï¼\n");
 
         if (!begin2)
-                return notify_fail("Ã»ÓĞ¶¨Î»³É¹¦ÃèÊöĞĞÎ²£¡\n");
+                return notify_fail("æ²’æœ‰å®šä½æˆåŠŸæè¿°è¡Œå°¾ï¼\n");
 
         str1 = "        set\(\"long\", @LONG\n";
         str2 = "LONG \);\n";
@@ -137,9 +137,9 @@ int is_room(object ob)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : roomlong <·¿¼äµµ°¸>|here
+æŒ‡ä»¤æ ¼å¼ : roomlong <æˆ¿é–“æª”æ¡ˆ>|here
 
-´ËÖ¸Áî¿ÉÈÃ½«·¿¼äµÄÃèÊö¸ñÊ½»¯ÎªÆßÊ®¸ö×Ö·û³¤¶È¡£
+æ­¤æŒ‡ä»¤å¯è®“å°‡æˆ¿é–“çš„æè¿°æ ¼å¼åŒ–ç‚ºä¸ƒåå€‹å­—ç¬¦é•·åº¦ã€‚
 HELP
     );
     return 1;

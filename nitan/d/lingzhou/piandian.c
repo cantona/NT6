@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ƫ��");
+        set("short", "偏殿");
         set("long", @LONG
-�����Ǻ󹬱��ϵ�ƫ���Ȼ����ȴ�����룬�м������Ӻ�һ����
-�ӣ�����Ů����Ϣ�ĵط���
+這裡是後宮邊上的偏殿，雖然不大卻很整齊，有幾把椅子和一張桌
+子，是侍女們休息的地方。
 LONG
         );
         set("exits", ([ /* sizeof() == 2 */

@@ -1,4 +1,4 @@
-// hongshao-qiezi.c ºìÉÕÇÑ×Ó
+// hongshao-qiezi.c ç´…ç‡’èŒ„å­
 // Last Modified by Sir on May. 22 2001
 
 inherit ITEM;
@@ -6,13 +6,13 @@ inherit F_FOOD;
 
 void create()
 {
-        set_name("ºìÉÕÇÑ×Ó", ({"hongshao qiezi","qiezi"}));
+        set_name("ç´…ç‡’èŒ„å­", ({"hongshao qiezi","qiezi"}));
         set_weight(200);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»ÅèÇàºìÏà¼ä£¬½ğ»ÆÍ¸ÀÃ£¬ÇåÏãËÄÒçµÄºìÉÕÇÑ×Ó¡£\n");
-                set("unit", "Åè");
+                set("long", "ä¸€ç›†é’ç´…ç›¸é–“ï¼Œé‡‘é»ƒé€çˆ›ï¼Œæ¸…é¦™å››æº¢çš„ç´…ç‡’èŒ„å­ã€‚\n");
+                set("unit", "ç›†");
                 set("value", 150);
                 set("food_remaining", 4);
                 set("food_supply", 40);

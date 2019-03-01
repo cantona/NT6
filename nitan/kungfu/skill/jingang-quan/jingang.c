@@ -1,5 +1,5 @@
 // This program is a part of NITAN MudLIB
-// jingsng.c ½ğ¸ÕÈ­ ´ó½ğ¸ÕÉñÍ¨
+// jingsng.c é‡‘å‰›æ‹³ å¤§é‡‘å‰›ç¥é€š
 
 #include <ansi.h>
 
@@ -14,7 +14,7 @@ int perform(object me, object target)
         int d_count, count, qi, maxqi, skill;
 
         if( query_temp("jingang", me) )
-                return notify_fail("ÄãÒÑ¾­ÔÚÔË¹¦ÖĞÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“åœ¨é‹åŠŸä¸­äº†ã€‚\n");
 
         if (! target)
         {
@@ -22,24 +22,24 @@ int perform(object me, object target)
                 target = me->select_opponent();
         }
         if (! target || ! me->is_fighting(target))
-                return notify_fail("¡¸´ó½ğ¸ÕÉñÍ¨¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œå¤§é‡‘å‰›ç¥é€šã€åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( query("neili", me)<500 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬ÎŞ·¨Ê©Õ¹¡¸´ó½ğ¸ÕÉñÍ¨¡¹£¡\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼Œç„¡æ³•æ–½å±•ã€Œå¤§é‡‘å‰›ç¥é€šã€ï¼\n");
 
         if ((int)me->query_skill("force") < 150)
-                return notify_fail("ÄãµÄÄÚ¹¦ĞŞÎª²»¹»£¬²»ÄÜÊ¹ÓÃ´ó½ğ¸ÕÉñÍ¨£¡\n");
+                return notify_fail("ä½ çš„å…§åŠŸä¿®ç‚ºä¸å¤ ï¼Œä¸èƒ½ä½¿ç”¨å¤§é‡‘å‰›ç¥é€šï¼\n");
 
         if ((int)me->query_skill("cuff") < 150)
-                return notify_fail("ÄãµÄÈ­·¨»¹²»µ½¼Ò£¬ÎŞ·¨Ê¹ÓÃ´ó½ğ¸ÕÉñÍ¨£¡\n");
+                return notify_fail("ä½ çš„æ‹³æ³•é‚„ä¸åˆ°å®¶ï¼Œç„¡æ³•ä½¿ç”¨å¤§é‡‘å‰›ç¥é€šï¼\n");
 
         if (me->query_skill_mapped("cuff") != "jingang-quan")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢½ğ¸ÕÈ­£¬ÎŞ·¨Ê¹ÓÃ´ó½ğ¸ÕÉñÍ¨£¡\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼é‡‘å‰›æ‹³ï¼Œç„¡æ³•ä½¿ç”¨å¤§é‡‘å‰›ç¥é€šï¼\n");
 
        if (! living(target))
-              return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+              return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIY "$N" HIY "Ê¹³ö´ó½ğ¸ÕÈ­µÄ¾ø¼¼¡¸´ó½ğ¸ÕÉñÍ¨¡¹£¬±ÛÁ¦¶¸È»Ôö¼Ó£¡\n" NOR;
+        msg = HIY "$N" HIY "ä½¿å‡ºå¤§é‡‘å‰›æ‹³çš„çµ•æŠ€ã€Œå¤§é‡‘å‰›ç¥é€šã€ï¼Œè‡‚åŠ›é™¡ç„¶å¢åŠ ï¼\n" NOR;
 
         qi=query("qi", me);
         maxqi=query("max_qi", me);
@@ -59,8 +59,8 @@ int perform(object me, object target)
                 addn("neili", -150, me);
         } else
         {
-                msg = HIR "$N" HIR "Æ´¾¡±ÏÉú¹¦Á¦Ê¹³öÁË´ó½ğ¸ÕÈ­µÄÖÕ"
-                      "¼«¾ø¼¼, È«Éí¹Ç÷ÀÒ»Õó±¬Ïì, ÓûÓë$n" HIR "Í¬¹éÓÚ¾¡£¡\n" NOR;
+                msg = HIR "$N" HIR "æ‹¼ç›¡ç•¢ç”ŸåŠŸåŠ›ä½¿å‡ºäº†å¤§é‡‘å‰›æ‹³çš„çµ‚"
+                      "æ¥µçµ•æŠ€, å…¨èº«éª¨éª¼ä¸€é™£çˆ†éŸ¿, æ¬²èˆ‡$n" HIR "åŒæ­¸äºç›¡ï¼\n" NOR;
                 message_combatd(msg, me, target);
                 addn_temp("apply/str", count*9, me);
                 set_temp("jingang", 1, me);
@@ -69,7 +69,7 @@ int perform(object me, object target)
                 set("neili", 0, me);
                 addn("max_neili", -10, me);
 
-                msg = HIR "$N" HIR "ÓÃ¾¡ÁË×îºóÒ»µãÆøÁ¦, Åç³öÒ»¿ÚÏÊÑª, Ò»Í·ÔÔµ¹ÔÚµØ£¡\n" NOR;
+                msg = HIR "$N" HIR "ç”¨ç›¡äº†æœ€å¾Œä¸€é»æ°£åŠ›, å™´å‡ºä¸€å£é®®è¡€, ä¸€é ­æ ½å€’åœ¨åœ°ï¼\n" NOR;
                 message_combatd(msg, me, target);
                 addn_temp("apply/str", -(count*9), me);
                 delete_temp("jingang", me);
@@ -85,6 +85,6 @@ void remove_effect(object me, int aamount, int damount)
                 addn_temp("apply/str", -aamount, me);
                 addn_temp("apply/dex", damount, me);
                 delete_temp("jingang", me);
-                tell_object(me, "ÄãµÄ´ó½ğ¸ÕÉñÍ¨ÔËĞĞÍê±Ï£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï¡£\n");
+                tell_object(me, "ä½ çš„å¤§é‡‘å‰›ç¥é€šé‹è¡Œå®Œç•¢ï¼Œå°‡å…§åŠ›æ”¶å›ä¸¹ç”°ã€‚\n");
         }
 }

@@ -20,10 +20,10 @@ int main(object me, string arg)
         if (! arg) return help(me);
 
         if( query("no_bid", environment(me)) )
-                return notify_fail("ÕâÀï½ûÖ¹²ÎÓëÅÄÂô£¬Ê¡Ê¡°É£¡\n");
+                return notify_fail("é€™è£¡ç¦æ­¢åƒèˆ‡æ‹è³£ï¼Œçœçœå§ï¼\n");
 
         if (me->is_ghost() || domain_file(base_name(environment(me))) == "death")
-                return notify_fail("¶¼×ö¹íÁË£¬»¹Ïë²ÎÓëÅÄÂô£¿Ê¡Ê¡°É£¡\n");
+                return notify_fail("éƒ½åšé¬¼äº†ï¼Œé‚„æƒ³åƒèˆ‡æ‹è³£ï¼Ÿçœçœå§ï¼\n");
 
         if (arg == "cancel")
         {
@@ -38,7 +38,7 @@ int main(object me, string arg)
                         write(str);
                         return 1;
                 }
-                return notify_fail("Ä¿Ç°Ã»ÓĞÈÎºÎ¶«Î÷ÕıÔÚÅÄÂô¡£\n");
+                return notify_fail("ç›®å‰æ²’æœ‰ä»»ä½•æ±è¥¿æ­£åœ¨æ‹è³£ã€‚\n");
         }
 
         if (sscanf(arg, "accept %s", name) == 1)
@@ -50,11 +50,11 @@ int main(object me, string arg)
         if (sscanf(arg, "%s for %s", name, str) == 2)
         {
                 if (! objectp(ob = present(name, me)))
-                        return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâ¸ö¶«Î÷¡£\n");
+                        return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™å€‹æ±è¥¿ã€‚\n");
 
                 if (! intp(money = to_money(str)) || ! money
                         || money < 0 || money > 100000000)
-                        return notify_fail("ÊäÈë¼Û¸ñ´íÎó¡£\n");
+                        return notify_fail("è¼¸å…¥åƒ¹æ ¼éŒ¯èª¤ã€‚\n");
 
                 AUCTION_D->add_auction(me, ob, money);
                 return 1;
@@ -64,11 +64,11 @@ int main(object me, string arg)
         {
                 if (! intp(money = to_money(str)) || ! money
                         || money < 0 || money > 100000000)
-                        return notify_fail("ÊäÈë¼Û¸ñ´íÎó¡£\n");
+                        return notify_fail("è¼¸å…¥åƒ¹æ ¼éŒ¯èª¤ã€‚\n");
 
                 if (! me->can_afford(money)
                  && query("balance", me)<money )
-                        return notify_fail("ÄãÉíÉÏºÍÄãµÄÒøĞĞ¶¼Ã»ÓĞÄÇÃ´¶àÇ®¡£\n");
+                        return notify_fail("ä½ èº«ä¸Šå’Œä½ çš„éŠ€è¡Œéƒ½æ²’æœ‰é‚£éº¼å¤šéŒ¢ã€‚\n");
 
                 AUCTION_D->join_auction(me, name, money);
                 return 1;
@@ -120,20 +120,20 @@ int to_money(string str)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : auction <ÎïÆ·> for <ÊıÁ¿> <Ç®µÄÖÖÀà>
-           ÅÄÂô³öÒ»¼şÎïÆ·¡£
+æŒ‡ä»¤æ ¼å¼ : auction <ç‰©å“> for <æ•¸é‡> <éŒ¢çš„ç¨®é¡>
+           æ‹è³£å‡ºä¸€ä»¶ç‰©å“ã€‚
 
-           auction <ÊıÁ¿> <Ç®µÄÖÖÀà> to <Íæ¼Ò>
-           ²ÎÓë½Ğ¼Û¡£
+           auction <æ•¸é‡> <éŒ¢çš„ç¨®é¡> to <ç©å®¶>
+           åƒèˆ‡å«åƒ¹ã€‚
 
-           auction accept <Íæ¼Ò>
-           ¾ö¶¨°Ñ×Ô¼ºÅÄÂôÖĞµÄÎïÆ·ÅÄÂô¸øÄ³ÈË¡£
+           auction accept <ç©å®¶>
+           æ±ºå®šæŠŠè‡ªå·±æ‹è³£ä¸­çš„ç‰©å“æ‹è³£çµ¦æŸäººã€‚
 
            auction check
-           ²ì¿´Ä¿Ç°ËùÓĞÕıÔÚÅÄÂôµÄÎïÆ·¡£
+           å¯Ÿçœ‹ç›®å‰æ‰€æœ‰æ­£åœ¨æ‹è³£çš„ç‰©å“ã€‚
 
            auction cancel
-           È¡Ïû×Ô¼ºÎïÆ·µÄÅÄÂô¡£
+           å–æ¶ˆè‡ªå·±ç‰©å“çš„æ‹è³£ã€‚
 HELP
     );
         return 1;

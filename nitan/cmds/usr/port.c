@@ -13,7 +13,7 @@ int main(object me, string arg)
         int i, I1, I2, I3, I4;
         
         ob = filter_array(children(USER_OB),(: userp :));
-        str = HBRED"ÒÔÏÂÎª±¾ÓÎÏ·¸÷¶Ë¿ÚÊ¹ÓÃÇé¿ö£¬ÆäÖĞ 6000 Îª´óÎåÂë(BIG5)×¨ÓÃ¶Ë¿Ú¡£\n"NOR;
+        str = HBRED"ä»¥ä¸‹ç‚ºæœ¬éŠæˆ²å„ç«¯å£ä½¿ç”¨æƒ…æ³ï¼Œå…¶ä¸­ 6000 ç‚ºå¤§äº”ç¢¼(BIG5)å°ˆç”¨ç«¯å£ã€‚\n"NOR;
         for(i=0;i<sizeof(ob);i++){
                 if(!environment(ob[i])) continue;
                 if(query_ip_port(ob[i]) == 5000) I1++;
@@ -22,7 +22,7 @@ int main(object me, string arg)
                 if(query_ip_port(ob[i]) == 3000) I4++;
         }
 
-        str += sprintf(HBRED"    " CYN "©¦3000£º" HIW "%3d" CYN "ÈË©¦5000£º" HIW"%3d" CYN "ÈË©¦6000£º"HIW "%3d" CYN"ÈË|7000£º "HIW "%3d" CYN "ÈË|     \n" NOR,I4,I1,I2,I3);
+        str += sprintf(HBRED"    " CYN "â”‚3000ï¼š" HIW "%3d" CYN "äººâ”‚5000ï¼š" HIW"%3d" CYN "äººâ”‚6000ï¼š"HIW "%3d" CYN"äºº|7000ï¼š "HIW "%3d" CYN "äºº|     \n" NOR,I4,I1,I2,I3);
 
         write(NOR + str + "\n");
         return 1;
@@ -32,10 +32,10 @@ int help(object me)
 {
         write(@HELP
 
-Ö¸Áî¸ñÊ½£ºport
+æŒ‡ä»¤æ ¼å¼ï¼šport
 
-Õâ¸öÖ¸ÁîÊÇÈÃÄãÁË½âÄ¿Ç°ÓÎÏ·ÖĞ¸÷¶Ë¿ÚµÄÊ¹ÓÃ³Ì¶È¡£ÎªÁË¸øÄúÌá¹©Ò»¸öÁ÷
-³©µÄÍøÂç»·¾³£¬½¨ÒéÑ¡ÔñÊ¹ÓÃÂÊ½ÏµÍµÄ¶Ë¿ÚÁ¬Ïß¡£
+é€™å€‹æŒ‡ä»¤æ˜¯è®“ä½ äº†è§£ç›®å‰éŠæˆ²ä¸­å„ç«¯å£çš„ä½¿ç”¨ç¨‹åº¦ã€‚ç‚ºäº†çµ¦æ‚¨æä¾›ä¸€å€‹æµ
+æš¢çš„ç¶²çµ¡ç’°å¢ƒï¼Œå»ºè­°é¸æ“‡ä½¿ç”¨ç‡è¼ƒä½çš„ç«¯å£é€£ç·šã€‚
 
 HELP
         );

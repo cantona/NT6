@@ -3,7 +3,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-string name() { return HIY "ÆÆ" HIG "¶¨" HIC "¾ü" HIW "É½" NOR; }
+string name() { return HIY "ç ´" HIG "å®š" HIC "è»" HIW "å±±" NOR; }
 
 inherit F_SSERVER;
 
@@ -20,32 +20,32 @@ int perform(object me, object target)
                 target = me->select_opponent();
         }
         if (! target || ! me->is_fighting(target))
-                return notify_fail(name() + "Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(name() + "åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me) )
                  || query("skill_type", weapon) != "sword"
                  && query("skill_type", weapon) != "blade" )
-                        return notify_fail("ÄãËùÊ¹ÓÃµÄÎäÆ÷²»¶Ô£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                        return notify_fail("ä½ æ‰€ä½¿ç”¨çš„æ­¦å™¨ä¸å°ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (me->query_skill("daojian-guizhen", 1) < 300)
-                return notify_fail("ÄãµÄµ¶½£¹éÕæ²»¹»æµÊì£¬²»»áÊ¹ÓÃ" + name() + "¡£\n");
+                return notify_fail("ä½ çš„åˆ€åŠæ­¸çœŸä¸å¤ å«»ç†Ÿï¼Œä¸æœƒä½¿ç”¨" + name() + "ã€‚\n");
 
         if (me->query_skill("force") < 350)
-                return notify_fail("ÄãµÄÄÚ¹¦ĞŞÎª²»¹»¸ß¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸä¿®ç‚ºä¸å¤ é«˜ã€‚\n");
 
         if( query("neili", me)<800 )
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ£¬²»ÄÜÊ¹ÓÃ" + name() + "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨å…§åŠ›å¤ªå¼±ï¼Œä¸èƒ½ä½¿ç”¨" + name() + "ã€‚\n");
 
 
-        msg = HIC "$N" HIC "´óºğÒ»Éù£¬Ë«ÊÖºáÎÕ" + weapon->name() +
-              HIC "£¬³¤ÎüÒ»¿ÚÆø£¬È«Á¦Ïò$n" HIC "Ñ¸ÃÍÅüÈ¥£¡\n\n" NOR;
+        msg = HIC "$N" HIC "å¤§å¼ä¸€è²ï¼Œé›™æ‰‹æ©«æ¡" + weapon->name() +
+              HIC "ï¼Œé•·å¸ä¸€å£æ°£ï¼Œå…¨åŠ›å‘$n" HIC "è¿…çŒ›åŠˆå»ï¼\n\n" NOR;
 
 
         if( query_temp("powerup", me) )
         {
                 msg += HIW + weapon->name() +
-                HIW "ÎŞ±ßµÄÉ±ÆøËºÁÑ¿ÕÆø£¬ÎäÆ÷ÉÏËù´øµÄº®Æø·Â·ğ¿ÉÒÔ±ù¶³Ò»ÇĞ£¬"
-                "ÈĞÎ´ÖÁ¶øÆøÏÈ¼°£¬$n" HIW "Ã¼Ã«¶¼ÃÉÉÏÁË±¡±¡°×Ëª£¡\n\n" NOR;
+                HIW "ç„¡é‚Šçš„æ®ºæ°£æ’•è£‚ç©ºæ°£ï¼Œæ­¦å™¨ä¸Šæ‰€å¸¶çš„å¯’æ°£ä»¿ä½›å¯ä»¥å†°å‡ä¸€åˆ‡ï¼Œ"
+                "åˆƒæœªè‡³è€Œæ°£å…ˆåŠï¼Œ$n" HIW "çœ‰æ¯›éƒ½è’™ä¸Šäº†è–„è–„ç™½éœœï¼\n\n" NOR;
         }
 
         ap = attack_power(me, "blade");
@@ -60,53 +60,53 @@ int perform(object me, object target)
                 if( !objectp(weapon2=query_temp("weapon", target)) )
                 {
                         msg += COMBAT_D->do_damage(me, target, WEAPON_ATTACK, damage, 100,
-                                                       HIR "Ö»¼û$n" HIR "Ò»Éù²Ò½Ğ£¬ĞØ¿Ú¸ø"
-                                                       "Åü¿ªÒ»¸ö¾Ş´óµÄ¿Ú×Ó£¬ÏÊÑªĞÚÓ¿Åç³ö£¡\n" NOR);
+                                                       HIR "åªè¦‹$n" HIR "ä¸€è²æ…˜å«ï¼Œèƒ¸å£çµ¦"
+                                                       "åŠˆé–‹ä¸€å€‹å·¨å¤§çš„å£å­ï¼Œé®®è¡€æ´¶æ¹§å™´å‡ºï¼\n" NOR);
 
                         if (me->query_skill("daojian-guizhen", 1) > 320)
                                 msg += COMBAT_D->do_damage(me, target, WEAPON_ATTACK, damage, 60,
-                                                           HIB "\n$n" HIB "ÉíĞÎÒ¡»Î¼ä£¬¸Ğ¾õµ½"
+                                                           HIB "\n$n" HIB "èº«å½¢æ–æ™ƒé–“ï¼Œæ„Ÿè¦ºåˆ°"
                                                            + weapon->name() + HIB +
-                                                           "ÉÏÒ»Õó´Ì¹ÇµÄº®ÆøÇÖÈëÌåÄÚ£¬¸´ÓÖÅç³ö"
-                                                           "Ò»¿ÚÏÊÑª£¡\n" NOR);
+                                                           "ä¸Šä¸€é™£åˆºéª¨çš„å¯’æ°£ä¾µå…¥é«”å…§ï¼Œå¾©åˆå™´å‡º"
+                                                           "ä¸€å£é®®è¡€ï¼\n" NOR);
 
                         if (me->query_skill("daojian-guizhen", 1) > 350)
                                 msg += COMBAT_D->do_damage(me, target, WEAPON_ATTACK, damage, 60,
-                                                           HIY "\n$n" HIY "ÔÙÒ²¼á³Ö²»×¡£¬¼¸ÓûÔÎµ¹"
-                                                           "$N½«ÊÖÖĞÀûÈĞÔÚµØÉÏÒ»ÍÏ£¬$NË³ÊÆ·´ÊÖÍùÓÖÉÏ"
-                                                           "ÁÃÁËÒ»ÕĞ£¬$nºÁÎŞ·ÀÓù£¬ÉË¿ÚÔÙ´ÎÀ©´ó£¬\n"
-                                                           "ÓÖÊÇÒ»¹ÉÑªÖùÖ±Åç¶ø³ö£¡\n" NOR);
+                                                           HIY "\n$n" HIY "å†ä¹Ÿå …æŒä¸ä½ï¼Œå¹¾æ¬²æšˆå€’"
+                                                           "$Nå°‡æ‰‹ä¸­åˆ©åˆƒåœ¨åœ°ä¸Šä¸€æ‹–ï¼Œ$Né †å‹¢åæ‰‹å¾€åˆä¸Š"
+                                                           "æ’©äº†ä¸€æ‹›ï¼Œ$næ¯«ç„¡é˜²å¾¡ï¼Œå‚·å£å†æ¬¡æ“´å¤§ï¼Œ\n"
+                                                           "åˆæ˜¯ä¸€è‚¡è¡€æŸ±ç›´å™´è€Œå‡ºï¼\n" NOR);
 
                 } else
                 {
                         if( weapon2->is_item_make() || query("damage", weapon2)>800 ||
                             query("skill_type", weapon2) == "hammer" )
                                 msg += COMBAT_D->do_damage(me, target, WEAPON_ATTACK, damage, 90,
-                                                           HIG "$p" HIG "ºá¹ı" + weapon2->name() + HIG "ÊÔÍ¼ÕĞ¼Ü£¬"
-                                                           HIG "ÔõÄÎÕâµ¶ÆøÈç´ËÏ¬Àû£¬Í¸¹ı" + weapon2->name() +
-                                                           HIG "Ö±ÕğµÃ$p" HIG "¿ñÍÂÏÊÑª£¬ÎåÔàÁù¸­¶¼Òª·­×ª¹ıÀ´£¡\n\n" NOR);
+                                                           HIG "$p" HIG "æ©«é" + weapon2->name() + HIG "è©¦åœ–æ‹›æ¶ï¼Œ"
+                                                           HIG "æ€å¥ˆé€™åˆ€æ°£å¦‚æ­¤çŠ€åˆ©ï¼Œé€é" + weapon2->name() +
+                                                           HIG "ç›´éœ‡å¾—$p" HIG "ç‹‚åé®®è¡€ï¼Œäº”è‡Ÿå…­è…‘éƒ½è¦ç¿»è½‰éä¾†ï¼\n\n" NOR);
                         else
                         {
                                 msg += COMBAT_D->do_damage(me, target, WEAPON_ATTACK, damage, 70,
-                                                           HIR "$n" HIR "¼û×´²»Ãî£¬Á¬Ã¦¾ÙÆğ" +
-                                                           weapon2->name() + HIR + "µÖµ²£¬ÔÚ$N" HIR
-                                                           "Õâ°ÔÆøÎŞË«µÄÒ»ÕĞÏÂ£¬" + weapon2->name() +
-                                                           HIR "¸øÕğ³ÉËéÆ¬£¡\n\n" NOR);
+                                                           HIR "$n" HIR "è¦‹ç‹€ä¸å¦™ï¼Œé€£å¿™èˆ‰èµ·" +
+                                                           weapon2->name() + HIR + "æŠµæ“‹ï¼Œåœ¨$N" HIR
+                                                           "é€™éœ¸æ°£ç„¡é›™çš„ä¸€æ‹›ä¸‹ï¼Œ" + weapon2->name() +
+                                                           HIR "çµ¦éœ‡æˆç¢ç‰‡ï¼\n\n" NOR);
                                 n = 3 + random(3);
                                 for (i = 0; i < n; i++)
                                 {
-                                        msg += (random(2) ? HIB : HIC) + "ËéÆ¬ËÄÉ¢·É½¦£¬ÉäÈëÁË$nµÄÉíÌå£¡\n" NOR;
+                                        msg += (random(2) ? HIB : HIC) + "ç¢ç‰‡å››æ•£é£›æ¿ºï¼Œå°„å…¥äº†$nçš„èº«é«”ï¼\n" NOR;
 
                                         target->receive_damage("qi", damage / 7, me);
                                                 target->receive_wound("qi",damage / 15 + random(damage / 15), me);
                                 }
 
-                                msg += "\n" + HIY + weapon->name() + HIY "ÓàÊÆÎ´¾¡£¬ÓÖÅüÈëÁË$n" + HIY +
-                                        "µÄĞØ¿Ú£¬$nÔâ´ËÖØ´´£¬ÏÊÑª¿ñÅç¶ø³ö£¡\n" NOR;
+                                msg += "\n" + HIY + weapon->name() + HIY "ä½™å‹¢æœªç›¡ï¼ŒåˆåŠˆå…¥äº†$n" + HIY +
+                                        "çš„èƒ¸å£ï¼Œ$né­æ­¤é‡å‰µï¼Œé®®è¡€ç‹‚å™´è€Œå‡ºï¼\n" NOR;
 
                                 if( query("material", weapon2) != "tian jing" && random(2) == 1 )
                                 {
-                                        weapon2->set_name("ËéÁÑµÄ"+query("name", weapon2));
+                                        weapon2->set_name("ç¢è£‚çš„"+query("name", weapon2));
                                         weapon2->move(environment(target));
                                         set("value", 0, weapon2);
                                         set("weapon_prop", 0, weapon2);
@@ -124,18 +124,18 @@ int perform(object me, object target)
 
                         if( query_temp("powerup", me) )
                                 msg += COMBAT_D->do_damage(me, target, WEAPON_ATTACK, damage, 25,
-                                                           HIB "\n$n" HIB "ÉíĞÎÒ¡»Î¼ä£¬¸Ğ¾õµ½"
+                                                           HIB "\n$n" HIB "èº«å½¢æ–æ™ƒé–“ï¼Œæ„Ÿè¦ºåˆ°"
                                                            + weapon->name() + HIB +
-                                                           "ÉÏÒ»Õó´Ì¹ÇµÄº®ÆøÇÖÈëÌåÄÚ£¬¸´ÓÖÅç³ö"
-                                                           "Ò»¿ÚÏÊÑª£¡\n" NOR);
+                                                           "ä¸Šä¸€é™£åˆºéª¨çš„å¯’æ°£ä¾µå…¥é«”å…§ï¼Œå¾©åˆå™´å‡º"
+                                                           "ä¸€å£é®®è¡€ï¼\n" NOR);
                 }
                 me->start_busy(3);
                 target->start_busy(1 + random(2));
         } else
         {
-                msg += HIY "$n" HIY "¼ûÊÆ²»Ãî£¬³éÉí¼±ÍË£¬ÏÕÏÕ±Ü¹ı$N"
-                       HIY "µÄÉ±ÕĞ£¬³¾ÍÁ·ÉÑïÖĞ£¬µØÉÏÁÑ¿ªÁËÒ»µÀ´ó¿Ú×Ó£¡\n"
-                       HIR "$NµÄÍ·ÉÏÃ°³öÒ»¿Å¿Å¶¹´óµÄÀäº¹£¬Ò»Ê±Ö®¼äÒ²ÎŞ·¨Ê¹³ö·´»÷µÄÕĞÊ½£¡\n" NOR;
+                msg += HIY "$n" HIY "è¦‹å‹¢ä¸å¦™ï¼ŒæŠ½èº«æ€¥é€€ï¼Œéšªéšªé¿é$N"
+                       HIY "çš„æ®ºæ‹›ï¼Œå¡µåœŸé£›æšä¸­ï¼Œåœ°ä¸Šè£‚é–‹äº†ä¸€é“å¤§å£å­ï¼\n"
+                       HIR "$Nçš„é ­ä¸Šå†’å‡ºä¸€é¡†é¡†è±†å¤§çš„å†·æ±—ï¼Œä¸€æ™‚ä¹‹é–“ä¹Ÿç„¡æ³•ä½¿å‡ºåæ“Šçš„æ‹›å¼ï¼\n" NOR;
                 addn("neili", -100, me);
                 me->start_busy(3);
                 if( !target->is_busy() )

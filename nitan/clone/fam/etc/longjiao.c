@@ -3,13 +3,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIR "ÇàÁúÖ®½Ç" NOR, ({ "dragon horn", "horn" }));
+        set_name(HIR "é’é¾ä¹‹è§’" NOR, ({ "dragon horn", "horn" }));
         set_weight(3000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIR "Ò»¸ùÇàÁúÖ®½Ç£¬Í¨ÌåÉîºì¡£\n" NOR);
-                set("unit", "¸ù");
+                set("long", HIR "ä¸€æ ¹é’é¾ä¹‹è§’ï¼Œé€šé«”æ·±ç´…ã€‚\n" NOR);
+                set("unit", "æ ¹");
                 set("value", 500000);
         }
         setup();

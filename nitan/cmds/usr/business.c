@@ -18,6 +18,6 @@ nomask int main(object me, string arg)
 
 int help()
 {
-        write("\n此命令可以列出你的贸易情况。\n\n");
+        write("\n姝ゅ懡浠ゅ彲浠ュ垪鍑轰綘鐨勮部鏄撴儏娉併�俓n\n");
         return 1;
 }

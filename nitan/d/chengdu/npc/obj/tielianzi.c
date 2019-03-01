@@ -6,20 +6,20 @@ inherit THROWING;
  
 void create()
 {
-        set_name("ÌúÁ«×Ó", ({ "tie lianzi", "lianzi", "zi" }) );
+        set_name("éµè“®å­", ({ "tie lianzi", "lianzi", "zi" }) );
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "¾«Ìú´òÖÆµÄÁ«×Ó×´°µÆ÷¡£\n");
-                set("unit", "°Ñ");
+                set("long", "ç²¾éµæ‰“åˆ¶çš„è“®å­ç‹€æš—å™¨ã€‚\n");
+                set("unit", "æŠŠ");
                 set("value", 0);
-                set("base_unit", "Á£");
+                set("base_unit", "ç²’");
                 set("base_weight", 1);
                 set("base_value", 0);
                 set("material", "iron");
                 set("damage", 5);        //Here the damage=int_throwing, added by King
-                set("wield_msg", HIC"$NÑ¸ËÙµØ´Ó°µÆ÷´üÖĞÌÍ³öÒ»Ğ©ÌúÁ«×Ó£¬ÄóÔÚÊÖÖĞ¾Í´ı·¢³ö£¡\n"NOR);
-                set("unwield_msg",HIC"$N½«ÊÖÀïÊ£ÏÂµÄÌúÁ«×Ó¾¡Êı·Å»Ø°µÆ÷´üÖĞ¡£\n"NOR);
+                set("wield_msg", HIC"$Nè¿…é€Ÿåœ°å¾æš—å™¨è¢‹ä¸­æå‡ºä¸€äº›éµè“®å­ï¼Œæåœ¨æ‰‹ä¸­å°±å¾…ç™¼å‡ºï¼\n"NOR);
+                set("unwield_msg",HIC"$Nå°‡æ‰‹è£¡å‰©ä¸‹çš„éµè“®å­ç›¡æ•¸æ”¾å›æš—å™¨è¢‹ä¸­ã€‚\n"NOR);
         }
         set_amount(30);
         init_throwing(15);

@@ -64,7 +64,7 @@ class LpcData
             {
                 case ':':
                 break;
-                case ',': // ,¿ªÍ·£¬¾Í´ú±íÒª´¦ÀíÏÂÒ»¸öÁË£¬ÒòÎªÊÇ map ËùÒÔ¿ªÍ·Ò»¶¨ÊÇ"
+                case ',': // ,é–‹é ­ï¼Œå°±ä»£è¡¨è¦è™•ç†ä¸‹ä¸€å€‹äº†ï¼Œå› ç‚ºæ˜¯ map æ‰€ä»¥é–‹é ­ä¸€å®šæ˜¯"
                     $i++;
                     if($tmp[$i] == ']')
                     {
@@ -76,7 +76,7 @@ class LpcData
                     $i = $this->ptr;
 
                 break;
-                case '"': // ×Ö´®µÄ¿ªÊ¼
+                case '"': // å­—ä¸²çš„é–‹å§‹
                     $this->ptr = $i;
                     $map[$ts] = $this->processString($tmp);
                     $i = $this->ptr;
@@ -85,14 +85,14 @@ class LpcData
                     $i++;
                     switch($tmp[$i])
                     {
-                        case '[': // ÓÖÒª»ØÍ·´¦Àí mapping ÁË
+                        case '[': // åˆè¦å›žé ­è™•ç† mapping äº†
 
                             $i++;
                             $this->ptr = $i;
                             $map[$ts] = $this->processMapping($tmp);
                             $i = $this->ptr - 1;
                         break;
-                        case '{': // ´¦Àí array
+                        case '{': // è™•ç† array
                             
                             $i++;
                             $this->ptr = $i;
@@ -103,7 +103,7 @@ class LpcData
                         default:
                     }
                 break;  
-                case '-': // ÒÔÏÂÎªÊý×ÖµÄ¿ªÊ¼
+                case '-': // ä»¥ä¸‹ç‚ºæ•¸å­—çš„é–‹å§‹
                 case '0': case '1': case '2': case '3': case '4':
                 case '5': case '6': case '7': case '8': case '9':
                     $this->ptr = $i;
@@ -135,9 +135,9 @@ class LpcData
             switch($tmp[$i])
             {
     
-                case ',': // ,¿ªÍ·£¬¾Í´ú±íÒª´¦ÀíÏÂÒ»¸öÁË£¬ÒòÎªÊÇ map ËùÒÔ¿ªÍ·Ò»¶¨ÊÇ"
+                case ',': // ,é–‹é ­ï¼Œå°±ä»£è¡¨è¦è™•ç†ä¸‹ä¸€å€‹äº†ï¼Œå› ç‚ºæ˜¯ map æ‰€ä»¥é–‹é ­ä¸€å®šæ˜¯"
                 break;
-                case '"': // ×Ö´®µÄ¿ªÊ¼
+                case '"': // å­—ä¸²çš„é–‹å§‹
                     $this->ptr = $i;
                     $arr[] = $this->processString($tmp);
                     $i = $this->ptr;
@@ -146,13 +146,13 @@ class LpcData
                     $i++;
                     switch($tmp[$i])
                     {
-                        case '[': // ÓÖÒª»ØÍ·´¦Àí mapping ÁË
+                        case '[': // åˆè¦å›žé ­è™•ç† mapping äº†
                             $i++;
                             $this->ptr = $i;
                             $arr[]= $this->processMapping($tmp);
                             $i = $this->ptr - 1;
                         break;
-                        case '{' :// ´¦Àí array
+                        case '{' :// è™•ç† array
                             $i++;
                             $this->ptr = $i;
                             $arr[]= $this->processArray($tmp);
@@ -161,7 +161,7 @@ class LpcData
                         default:
                     }
                 break;  
-                case '-': // ÒÔÏÂÎªÊý×ÖµÄ¿ªÊ¼
+                case '-': // ä»¥ä¸‹ç‚ºæ•¸å­—çš„é–‹å§‹
                 case '0': case '1': case '2': case '3': case '4':
                 case '5': case '6': case '7': case '8': case '9':
                     $this->ptr = $i;
@@ -180,12 +180,12 @@ class LpcData
         $i--;
         while($i++)
         {
-            // µ½,¾ÍÊÇÕâ¸ö Êý×Ö µÄ½áÊø
+            // åˆ°,å°±æ˜¯é€™å€‹ æ•¸å­— çš„çµæŸ
             if($tmp[$i] == ',') break;
         }
         $ts = substr($tmp,$t,$i - $t) ; 
 
-        // ¼ÓÉÏÒ»¸ö£¬À´ÈÃËû±ä³É»¹ÊÇ,¿ªÍ·
+        // åŠ ä¸Šä¸€å€‹ï¼Œä¾†è®“ä»–è®Šæˆé‚„æ˜¯,é–‹é ­
         $this->ptr = $i;
         return $ts;  
     }
@@ -196,10 +196,10 @@ class LpcData
         
         while($i++)
         {
-            // "µÄ»°£¬´ú±íÕâ¸ö×Ö´®½áÊøÁË
+            // "çš„è©±ï¼Œä»£è¡¨é€™å€‹å­—ä¸²çµæŸäº†
 
             if($tmp[$i] == '"') break;
-            // ¼ÙÉèÕâ¸öÊÇ \ µÄ»°£¬ÏÂÒ»¸ö¾Í±»ºöÂÔµô
+            // å‡è¨­é€™å€‹æ˜¯ \ çš„è©±ï¼Œä¸‹ä¸€å€‹å°±è¢«å¿½ç•¥æŽ‰
             if($tmp[$i] == '\\') $i++;
             
         }

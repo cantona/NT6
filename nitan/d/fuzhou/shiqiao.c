@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ʯ��");
+        set("short", "石橋");
         set("long", @LONG
-���ǳ���һ������ͨͨ��ʯ�š�������м�������ʷ�ˣ��Ų�����
-��̦��������С��Ϸˮ������ϴ�µ�ĸ�״����ǳ����Լ��ĺ��ӡ�
+這是城裡一條普普通通的石橋。大概總有幾百年歷史了，橋側生滿
+青苔，橋下有小孩戲水，岸邊洗衣的母親大聲呵斥著自己的孩子。
 LONG );
 
         set("exits", ([

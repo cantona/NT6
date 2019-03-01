@@ -6,18 +6,18 @@ inherit MEDAL;
 
 void create()
 {
-        set_name(HIG "Õ¶ÑıÑ«ÕÂ" NOR, ({ "zhanyao xunzhang", "zhanyao", "xunzhang" }));
-        set("long", HIG "Õ¶É±Ç§Äê¾ÅÍ·Éß¾«ºó»ñµÃµÄÑ«ÕÂ£¬·Ç³£Õä¹ó£¬ÄËÓÂÕßµÄÏóÕ÷¡£\n" NOR);
+        set_name(HIG "æ–¬å¦–å‹›ç« " NOR, ({ "zhanyao xunzhang", "zhanyao", "xunzhang" }));
+        set("long", HIG "æ–¬æ®ºåƒå¹´ä¹é ­è›‡ç²¾å¾Œç²å¾—çš„å‹›ç« ï¼Œéå¸¸çè²´ï¼Œä¹ƒå‹‡è€…çš„è±¡å¾ã€‚\n" NOR);
         set_weight(500);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ã¶");
+                set("unit", "æš");
                 set("value", 200000);
                 set("material", "bronze");
                 set("armor_prop/damage", 200);
                 set("armor_prop/zhanyao", 1);
-                set("special/desc", HIR "Åå´øºó¿ÉÔö¼ÓÉñÁúµºÉ±¹Ö¾­Ñé¼°Ç±ÄÜ½±Àø10%¡£" NOR);
+                set("special/desc", HIR "ä½©å¸¶å¾Œå¯å¢åŠ ç¥é¾å³¶æ®ºæ€ªç¶“é©—åŠæ½›èƒ½çå‹µ10%ã€‚" NOR);
                 set("armor_prop/con", 6);
                 set("armor_prop/dex", 6);
                 set("armor_prop/str", 6);

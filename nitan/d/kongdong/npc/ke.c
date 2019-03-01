@@ -3,8 +3,8 @@ inherit NPC;
 
 void create()
 {
-        set_name("½øÏã¿Í", ({ "jinxiang ke","ke" }) );
-        set("gender", "Å®ĞÔ" );
+        set_name("é€²é¦™å®¢", ({ "jinxiang ke","ke" }) );
+        set("gender", "å¥³æ€§" );
         set("age",60);
 	set_xiuwei("unarmed", random(200) );
         set("combat_exp",2000);

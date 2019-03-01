@@ -17,17 +17,17 @@ int do_washto(string arg);
 
 void create()
 {
-        set_name(HIR "Ï´Ìì¸³µ¤" NOR, ({"wash gift", "gift"}));
+        set_name(HIR "æ´—å¤©è³¦ä¸¹" NOR, ({"wash gift", "gift"}));
         set_weight(200);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
+                set("unit", "é¡†");
                 set("long", @LONG
-ÕâÊÇÌá¹©¸øÄÇĞ©³öÉúÊ±ºòÑ¡´íÌì¸³µÄÈËÒ»´ÎÖØĞÂ·ÖÅäÏÈÌìÌì¸³µÄÏ´Ìì¸³µ¤¡£
-Ï´Ìì¸³µ¤Ã¿ÈËÖ»ÄÜÊ¹ÓÃÒ»´Î£¬¸ñÊ½Îª washto <ëöÁ¦> <ÎòĞÔ> <¸ù¹Ç> <Éí·¨>
-ÀıÈç£ºwashto 20 20 20 20 £¬Ï´Ìì¸³Ê±ºòÒªÇó½âÍêËùÓĞ¼ÓÏÈÌìµÄÃÔ¼°³ÔÈ«Ëù
-ÓĞ¼ÓÏÈÌìµÄµ¤ºÍÊ¹ÓÃÍêmygiftÀñÎïµÄËÄµãÏÈÌì¡£
+é€™æ˜¯æä¾›çµ¦é‚£äº›å‡ºç”Ÿæ™‚å€™é¸éŒ¯å¤©è³¦çš„äººä¸€æ¬¡é‡æ–°åˆ†é…å…ˆå¤©å¤©è³¦çš„æ´—å¤©è³¦ä¸¹ã€‚
+æ´—å¤©è³¦ä¸¹æ¯äººåªèƒ½ä½¿ç”¨ä¸€æ¬¡ï¼Œæ ¼å¼ç‚º washto <è†‚åŠ›> <æ‚Ÿæ€§> <æ ¹éª¨> <èº«æ³•>
+ä¾‹å¦‚ï¼šwashto 20 20 20 20 ï¼Œæ´—å¤©è³¦æ™‚å€™è¦æ±‚è§£å®Œæ‰€æœ‰åŠ å…ˆå¤©çš„è¿·åŠåƒå…¨æ‰€
+æœ‰åŠ å…ˆå¤©çš„ä¸¹å’Œä½¿ç”¨å®Œmygiftç¦®ç‰©çš„å››é»å…ˆå¤©ã€‚
 LONG );
                 set("value", 1);
                 set("no_sell", 1);
@@ -57,35 +57,35 @@ int do_washto(string arg)
         me = this_player();
 
         if (! arg || sscanf(arg, "%d %d %d %d", tmpstr, tmpint, tmpcon, tmpdex) != 4)
-                return notify_fail("Ö¸Áî¸ñÊ½£ºwashto <ëöÁ¦> <ÎòĞÔ> <¸ù¹Ç> <Éí·¨>\n" +
-                                   "Àı    Èç£ºwashto 20 20 20 20\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šwashto <è†‚åŠ›> <æ‚Ÿæ€§> <æ ¹éª¨> <èº«æ³•>\n" +
+                                   "ä¾‹    å¦‚ï¼šwashto 20 20 20 20\n");
 
         /*
         if( query("age", me) > 20 )
-                return notify_fail("ÄãÒÑ¾­¹ıÁËĞÂÊÖÆÚ£¬ÔÚ×ªÊÀÇ°²»ÔÚÓµÓĞµ÷ÕûÌì¸³µÄ»ú»á¡£\n");
+                return notify_fail("ä½ å·²ç¶“éäº†æ–°æ‰‹æœŸï¼Œåœ¨è½‰ä¸–å‰ä¸åœ¨æ“æœ‰èª¿æ•´å¤©è³¦çš„æ©Ÿæœƒã€‚\n");
 
         if( query("gift/washed", me) )
-                return notify_fail("ÄãÒÑ¾­Ê¹ÓÃ¹ıÏ´Ìì¸³µ¤ÁË£¬Ã¿ÈËÖ»ÓĞÒ»´Î»ú»á¡£\n");
+                return notify_fail("ä½ å·²ç¶“ä½¿ç”¨éæ´—å¤©è³¦ä¸¹äº†ï¼Œæ¯äººåªæœ‰ä¸€æ¬¡æ©Ÿæœƒã€‚\n");
 
         if (query("reborn/times", me))
-                return notify_fail("Ï´Ìì¸³µ¤Ö»ÄÜÃ»ÓĞ×ªÊÀµÄÍæ¼ÒÊ¹ÓÃ£¬ÄãÏÖÔÚÒÑ¾­´í¹ı»úÔµÁË¡£\n");
+                return notify_fail("æ´—å¤©è³¦ä¸¹åªèƒ½æ²’æœ‰è½‰ä¸–çš„ç©å®¶ä½¿ç”¨ï¼Œä½ ç¾åœ¨å·²ç¶“éŒ¯éæ©Ÿç·£äº†ã€‚\n");
         */
 
         //if (tmpstr > 43 || tmpstr < 21)
         if (tmpstr > 100 || tmpstr < 13)
-                return notify_fail("ÄãËùÑ¡ÔñµÄëöÁ¦ÊıÖµÒªÇó±ØĞëÔÚ21ºÍ43Ö®¼ä¡£\n");
+                return notify_fail("ä½ æ‰€é¸æ“‡çš„è†‚åŠ›æ•¸å€¼è¦æ±‚å¿…é ˆåœ¨21å’Œ43ä¹‹é–“ã€‚\n");
 
         //if (tmpint > 43 || tmpint < 21)
         if (tmpint > 100 || tmpint < 13)
-                return notify_fail("ÄãËùÑ¡ÔñµÄÎòĞÔÊıÖµÒªÇó±ØĞëÔÚ21ºÍ43Ö®¼ä¡£\n");
+                return notify_fail("ä½ æ‰€é¸æ“‡çš„æ‚Ÿæ€§æ•¸å€¼è¦æ±‚å¿…é ˆåœ¨21å’Œ43ä¹‹é–“ã€‚\n");
 
         //if (tmpcon > 46 || tmpcon < 24)
         if (tmpcon > 100 || tmpcon < 13)
-                return notify_fail("ÄãËùÑ¡ÔñµÄ¸ù¹ÇÊıÖµÒªÇó±ØĞëÔÚ24ºÍ46Ö®¼ä¡£\n");
+                return notify_fail("ä½ æ‰€é¸æ“‡çš„æ ¹éª¨æ•¸å€¼è¦æ±‚å¿…é ˆåœ¨24å’Œ46ä¹‹é–“ã€‚\n");
 
         //if (tmpdex > 43 || tmpdex < 21)
         if (tmpdex > 100 || tmpdex < 13)
-                return notify_fail("ÄãËùÑ¡ÔñµÄÉí·¨ÊıÖµÒªÇó±ØĞëÔÚ21ºÍ43Ö®¼ä¡£\n");
+                return notify_fail("ä½ æ‰€é¸æ“‡çš„èº«æ³•æ•¸å€¼è¦æ±‚å¿…é ˆåœ¨21å’Œ43ä¹‹é–“ã€‚\n");
 
         my = me->query_entire_dbase();
         str = copy(my["str"]);
@@ -95,10 +95,10 @@ int do_washto(string arg)
 
         points = str + wux + con + dex;
         if (tmpstr + tmpint + tmpcon + tmpdex != points)
-                return notify_fail("ÄãËùÖØĞÂÑ¡ÔñµÄÌì¸³ÊıÖµºÍ×Ô¼ºÌì¸³µÄ" + points + "×ÜÖµ²»Ò»ÖÂ¡£\n");
+                return notify_fail("ä½ æ‰€é‡æ–°é¸æ“‡çš„å¤©è³¦æ•¸å€¼å’Œè‡ªå·±å¤©è³¦çš„" + points + "ç¸½å€¼ä¸ä¸€è‡´ã€‚\n");
         /*
 
-        write(HIW "¿ªÊ¼¼ì²éÏÖÓĞÌì¸³ÏÂËùÑ§¼¼ÄÜÊÇ·ñÂú×ãÉı¼¶Ìõ¼ş...\n" NOR);
+        write(HIW "é–‹å§‹æª¢æŸ¥ç¾æœ‰å¤©è³¦ä¸‹æ‰€å­¸æŠ€èƒ½æ˜¯å¦æ»¿è¶³å‡ç´šæ¢ä»¶...\n" NOR);
 
         skill_status = me->query_skills();
         if (mapp(skill_status) && sizeof(skill_status))
@@ -178,7 +178,7 @@ int do_washto(string arg)
                                 if (objectp(weapon))
                                         destruct(weapon);
 
-                                return notify_fail(HIR "ÇëÊäÈë yanjiu " + sname[i] + " 1£¬È·ÈÏ¿ÉÒÔÑĞ¾¿ºóÔÙÏ´ĞÂÌì¸³¡£\n" NOR);
+                                return notify_fail(HIR "è«‹è¼¸å…¥ yanjiu " + sname[i] + " 1ï¼Œç¢ºèªå¯ä»¥ç ”ç©¶å¾Œå†æ´—æ–°å¤©è³¦ã€‚\n" NOR);
                         }
 
                         if (objectp(weapon))
@@ -187,11 +187,11 @@ int do_washto(string arg)
         }
         */
 
-        write("ÄãÖØĞÂ·ÖÅäµÄÌì¸³Îª\n"
-              "ëöÁ¦[" + tmpstr + "]\n"
-              "ÎòĞÔ[" + tmpint + "]\n"
-              "¸ù¹Ç[" + tmpcon + "]\n"
-              "Éí·¨[" + tmpdex + "]¡£\n");
+        write("ä½ é‡æ–°åˆ†é…çš„å¤©è³¦ç‚º\n"
+              "è†‚åŠ›[" + tmpstr + "]\n"
+              "æ‚Ÿæ€§[" + tmpint + "]\n"
+              "æ ¹éª¨[" + tmpcon + "]\n"
+              "èº«æ³•[" + tmpdex + "]ã€‚\n");
 
         my["str"] = tmpstr;
         my["int"] = tmpint;
@@ -199,7 +199,7 @@ int do_washto(string arg)
         my["dex"] = tmpdex;
         
         /*
-        write(HIW "¿ªÊ¼¼ì²éĞÂÌì¸³ÏÂËùÑ§¼¼ÄÜÊÇ·ñÂú×ãÑ§Ï°Ìõ¼ş...\n" NOR);
+        write(HIW "é–‹å§‹æª¢æŸ¥æ–°å¤©è³¦ä¸‹æ‰€å­¸æŠ€èƒ½æ˜¯å¦æ»¿è¶³å­¸ç¿’æ¢ä»¶...\n" NOR);
         
         if (mapp(skill_status) && sizeof(skill_status))
         {
@@ -282,7 +282,7 @@ int do_washto(string arg)
                                 my["int"] = wux;
                                 my["con"] = con;
                                 my["dex"] = dex;
-                                return notify_fail(HIR "ĞÂÌì¸³²»ÄÜÂú×ã" + to_chinese(sname[i]) + "Ñ§Ï°Ìõ¼ş£¬ĞŞ¸ÄÊ§°Ü¡£\n" NOR);
+                                return notify_fail(HIR "æ–°å¤©è³¦ä¸èƒ½æ»¿è¶³" + to_chinese(sname[i]) + "å­¸ç¿’æ¢ä»¶ï¼Œä¿®æ”¹å¤±æ•—ã€‚\n" NOR);
                         }
 
                         if (objectp(weapon))
@@ -292,7 +292,7 @@ int do_washto(string arg)
         */
         addn("gift/washed", 1, me);
 
-        write("ÄãÖØĞÂ·ÖÅäÄãµÄÌì¸³³É¹¦£¬ÇëÊäÈëÖ¸Áî(hp -g)²é¿´¡£\n");
+        write("ä½ é‡æ–°åˆ†é…ä½ çš„å¤©è³¦æˆåŠŸï¼Œè«‹è¼¸å…¥æŒ‡ä»¤(hp -g)æŸ¥çœ‹ã€‚\n");
         destruct(this_object());
         return 1;
 }

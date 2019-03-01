@@ -1,6 +1,6 @@
-//                ±ê×¼ÃèÊö³¤¶ÈÊ¾Àı                                   |
-// ÇåµÀ·ò£¬ËÄ´¦¼ğÈ¡À¬»ø
-// by naihe  2002-10-23  ÓÚÃ¯Ãû
+//                æ¨™æº–æè¿°é•·åº¦ç¤ºä¾‹                                   |
+// æ¸…é“å¤«ï¼Œå››è™•æ€å–åƒåœ¾
+// by naihe  2002-10-23  äºèŒ‚å
 
 #include <ansi.h>
 
@@ -9,24 +9,24 @@ inherit NPC;
 #include "hj_settings/room_amount_hj.h"
 
 int begin=1,move_time=3,temp=1;
-string out_msg="$NºöµØ´ÓÅÔ±ßµÄÊ÷Ä¾ÁÖÖĞ×êÈ¥£¬²»¼ûÁË¡£\n";
-string help_msg=CYN"$N"NOR+CYN"ĞªË¹µ×Àï°ã½ĞµÀ£º¡°À´ÈËÀ²£¡¾ÈÃüÀ²£¡ÓĞÈËÒªÉ±ÈËÀ²£¡¡±\n"NOR;
-string xixi_msg=CYN"$N"NOR+CYN"¡¸ÎûÎûÎû¡¹ÉµĞ¦ÁË¼¸Éù¡£\n"NOR;
+string out_msg="$Nå¿½åœ°å¾æ—é‚Šçš„æ¨¹æœ¨æ—ä¸­é‘½å»ï¼Œä¸è¦‹äº†ã€‚\n";
+string help_msg=CYN"$N"NOR+CYN"æ­‡æ–¯åº•è£¡èˆ¬å«é“ï¼šâ€œä¾†äººå•¦ï¼æ•‘å‘½å•¦ï¼æœ‰äººè¦æ®ºäººå•¦ï¼â€\n"NOR;
+string xixi_msg=CYN"$N"NOR+CYN"ã€Œå˜»å˜»å˜»ã€å‚»ç¬‘äº†å¹¾è²ã€‚\n"NOR;
 
 int steal_times;
 
 void create()
 {
-    set_name("Ğ¡°«ÈË",({"ai ren","ren"}));
-    set("long","ÕâÊÇÒ»¸öĞ¡°«ÈË£¬Ä£Ñù³óÂª¡£\n");
-    set("gender","ÄĞĞÔ");
+    set_name("å°çŸ®äºº",({"ai ren","ren"}));
+    set("long","é€™æ˜¯ä¸€å€‹å°çŸ®äººï¼Œæ¨¡æ¨£é†œé™‹ã€‚\n");
+    set("gender","ç”·æ€§");
     set("age",55);
     set("per",14);
     set("attitude","friendly");
     set("no_refresh",1);
 
     set("hj_game/npc","ashman");
-    set("msg","Ö»ÌıµÃÒ»ÕóÊ÷Ò¶²¦À­Ö®Éù£¬Ò»¸ö"+query("name", this_object())+"´ÓÅÔ±ßÁÖ×ÓÀï×êÁË³öÀ´¡£\n");
+    set("msg","åªè½å¾—ä¸€é™£æ¨¹è‘‰æ’¥æ‹‰ä¹‹è²ï¼Œä¸€å€‹"+query("name", this_object())+"å¾æ—é‚Šæ—å­è£¡é‘½äº†å‡ºä¾†ã€‚\n");
 
     set_temp("hj_hp_max",100+random(101));
     set_temp("hj_hp",query_temp("hj_hp_max"));
@@ -46,7 +46,7 @@ void init()
     }
 }
 
-// ÊÜµ½¹¥»÷Ê±Òı·¢Ò»Ğ©ĞĞÎª
+// å—åˆ°æ”»æ“Šæ™‚å¼•ç™¼ä¸€äº›è¡Œç‚º
 void hj_get_attack( object attacker )
 {
     remove_call_out("checking");
@@ -65,13 +65,13 @@ void checking()
     {
         remove_call_out("delete_me");
         inv = all_inventory(ob);
-        out_msg="$N²Ò½ĞÒ»Éù£¬Õû¸öÉíÌå¿äÕÅµØÅ¤ÇúÆğÀ´£¬Ëæ¼´ÏûÊ§²»¼ûÁË¡£\n";
+        out_msg="$Næ…˜å«ä¸€è²ï¼Œæ•´å€‹èº«é«”å¤¸å¼µåœ°æ‰­æ›²èµ·ä¾†ï¼Œéš¨å³æ¶ˆå¤±ä¸è¦‹äº†ã€‚\n";
         if(inv || sizeof(inv) > 0)
         {
             for(i=0;i<sizeof(inv);i++)
             {
                 inv[i]->move(environment(ob));
-                message_vision(sprintf("$NÉíÉÏºöµØµôÏÂÁËÒ»%s%s£¡\n",query("unit", inv[i]),query("name", inv[i])),ob);
+                message_vision(sprintf("$Nèº«ä¸Šå¿½åœ°æ‰ä¸‹äº†ä¸€%s%sï¼\n",query("unit", inv[i]),query("name", inv[i])),ob);
             }
         }
         call_out("delete_me",1,ob);
@@ -100,7 +100,7 @@ void normal()
     move_time=3;
     temp=1;
     delete("killme_by");
-    message_vision("$NÉñÉ«½ôÕÅµØËÄ´¦ÕÅÍû×Å£¬Ò»¸±¾ª»êÎ´¶¨µÄÑù×Ó¡£\n",this_object());
+    message_vision("$Nç¥è‰²ç·Šå¼µåœ°å››è™•å¼µæœ›è‘—ï¼Œä¸€å‰¯é©šé­‚æœªå®šçš„æ¨£å­ã€‚\n",this_object());
 }
 
 void delete_me()
@@ -109,14 +109,14 @@ void delete_me()
     if( objectp( (env=environment(ob)) ) )
     {
         message_vision(out_msg, ob );
-        // naihe 05-9-7 9:29 °«ÈËÍµ¶«Î÷Å¼¶û¿ÉÄÜµôĞ©»ØÀ´¡£Ò²ËãÊÇ¸øµã»ú»á¸øÍæ¼Ò£¡
+        // naihe 05-9-7 9:29 çŸ®äººå·æ±è¥¿å¶çˆ¾å¯èƒ½æ‰äº›å›ä¾†ã€‚ä¹Ÿç®—æ˜¯çµ¦é»æ©Ÿæœƒçµ¦ç©å®¶ï¼
         if( sizeof( (inv=all_inventory( ob )) ) > 0 )
         {
             foreach( t in inv )
             {
                 if( !random(5) && query("hj_game/obj", t) )
                 {
-                    message_vision("$NÉíÉÏºöµØµôÏÂÒ»"+query("unit", t)+"$n¡£\n",ob,t);
+                    message_vision("$Nèº«ä¸Šå¿½åœ°æ‰ä¸‹ä¸€"+query("unit", t)+"$nã€‚\n",ob,t);
                     t->move( env );
                 }
             }
@@ -125,8 +125,8 @@ void delete_me()
     destruct(this_object());
 }
 
-// naihe 05-8-29 10:13 ¼ÓÈëÕæÕıÇåÀ¬»øµÄº¯Êı¡­¡­
-// ÒÔÇ°ÄÔ×Ó·¢ÔÎ£¬¸ã¸ö get all »¹ÒªÈ«²¿ hj obj ÅäºÏ£¬¿¿¡£
+// naihe 05-8-29 10:13 åŠ å…¥çœŸæ­£æ¸…åƒåœ¾çš„å‡½æ•¸â€¦â€¦
+// ä»¥å‰è…¦å­ç™¼æšˆï¼Œæå€‹ get all é‚„è¦å…¨éƒ¨ hj obj é…åˆï¼Œé ã€‚
 void do_real_get_all()
 {
     object *inv, ob, env;
@@ -143,14 +143,14 @@ void do_real_get_all()
     }
 }
 
-void get_all()      // ¼ÓÈëËæ»úÍµÈ¡Íæ¼Ò¶«Î÷µÄº¯Êı by naihe 10:52 02-10-30
+void get_all()      // åŠ å…¥éš¨æ©Ÿå·å–ç©å®¶æ±è¥¿çš„å‡½æ•¸ by naihe 10:52 02-10-30
 {
     object *all_here,*inv, env, ob = this_object();
     int i,iii,amount;
     string steal="no";
 
     if( !(env=environment(ob)) || query_temp("hj_hp") < 1 ) return;
-    // ×¼±¸È¥ËÀÁËµÄ°«ÈË²»ÄÜÔÙÍµ¶«Î÷   fix by naihe 03-01-22
+    // æº–å‚™å»æ­»äº†çš„çŸ®äººä¸èƒ½å†å·æ±è¥¿   fix by naihe 03-01-22
 
     if(random(2) == 1)
     {
@@ -164,8 +164,8 @@ void get_all()      // ¼ÓÈëËæ»úÍµÈ¡Íæ¼Ò¶«Î÷µÄº¯Êı by naihe 10:52 02-10-30
         }
     }
 
-    // »òÕßÆäÔÚÃ¦Ê±ÖĞ£¬²»µÃÍµ¶«Î÷
-    if( is_busy() || steal_times >= 3 )  // Ã¿¸ö Ğ¡°«ÈË ×î¶àÒ²¾ÍÍµÈ¡ 3 ¸öÎïÆ·
+    // æˆ–è€…å…¶åœ¨å¿™æ™‚ä¸­ï¼Œä¸å¾—å·æ±è¥¿
+    if( is_busy() || steal_times >= 3 )  // æ¯å€‹ å°çŸ®äºº æœ€å¤šä¹Ÿå°±å·å– 3 å€‹ç‰©å“
     {
         remove_call_out("get_all");
         call_out("get_all",5,ob);
@@ -178,7 +178,7 @@ void get_all()      // ¼ÓÈëËæ»úÍµÈ¡Íæ¼Ò¶«Î÷µÄº¯Êı by naihe 10:52 02-10-30
         if( query("hj_game/npc", all_here[i] )
          || !query_temp("hj_hp", all_here[i] )
          || query_temp("huanjing", all_here[i]) != "start"
-        || present( "hj temp leave obj", all_here[i] )      // ÁÙÊ±Àë¿ªÓÎÏ·Õß£¬²»ÍµÈ¡
+        || present( "hj temp leave obj", all_here[i] )      // è‡¨æ™‚é›¢é–‹éŠæˆ²è€…ï¼Œä¸å·å–
         )
             continue;
 
@@ -189,14 +189,14 @@ void get_all()      // ¼ÓÈëËæ»úÍµÈ¡Íæ¼Ò¶«Î÷µÄº¯Êı by naihe 10:52 02-10-30
         {
             if( query("hj_game/obj", inv[iii]))amount++;
         }
-        if( amount > 20 )  // µ±Íæ¼ÒĞ¯´øÁËµÄ»Ã¾³ÄÚÎïÆ·³¬¹ı´ËÊı×Ö£¬½«»á±»Ëæ»úÍµÈ¡µôÒ»¼ş¡£
+        if( amount > 20 )  // ç•¶ç©å®¶æ”œå¸¶äº†çš„å¹»å¢ƒå…§ç‰©å“è¶…éæ­¤æ•¸å­—ï¼Œå°‡æœƒè¢«éš¨æ©Ÿå·å–æ‰ä¸€ä»¶ã€‚
         {
             for(iii=0;iii<sizeof(inv);iii++)
             {
                 if( random(10) == 1 && query("id", inv[iii]) != "qixing deng" && 
                    query("hj_game/obj", inv[iii]) )
                 {
-                    message_vision(sprintf("$NÉíÉÏ´ø×ÅµÄÒ»%s%sËÆºõ±»Ë­ÍµÍµÃş×ßÁË£¡\n",query("unit", inv[iii]),query("name", inv[iii])),all_here[i]);
+                    message_vision(sprintf("$Nèº«ä¸Šå¸¶è‘—çš„ä¸€%s%sä¼¼ä¹è¢«èª°å·å·æ‘¸èµ°äº†ï¼\n",query("unit", inv[iii]),query("name", inv[iii])),all_here[i]);
                     inv[iii]->move(ob);
                     steal="yes";
                     steal_times++;

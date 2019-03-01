@@ -128,7 +128,7 @@ void heart_beat()
         // Do attack if we are fighting.
         if( is_busy() ) {
                 if( is_fighting() )
-                        tell_object(me, "\n--->>ÄãÉÏÒ»¸ö¶¯×÷Ã»ÓĞÍê³É£¬Ê§È¥Ò»´Î½ø¹¥»ú»á¡£\n");
+                        tell_object(me, "\n--->>ä½ ä¸Šä¸€å€‹å‹•ä½œæ²’æœ‰å®Œæˆï¼Œå¤±å»ä¸€æ¬¡é€²æ”»æ©Ÿæœƒã€‚\n");
                 continue_action();
         } else if( living(me) ) {
                 // Is it time to flee?
@@ -145,7 +145,7 @@ void heart_beat()
                         if( my["eff_qi"] > 0 && my["qi"] * 100 / my["eff_qi"] <= 50 )
                                 SKILL_D("force/recover")->exert(me, me);
 
-                        // Èç¹û²»ÔÚ´ò¼Ü¶øÇÒ´¦ÓÚÊÜÉË×´Ì¬£¬Ôò×ÔĞĞÁÆÉË
+                        // å¦‚æœä¸åœ¨æ‰“æ¶è€Œä¸”è™•äºå—å‚·ç‹€æ…‹ï¼Œå‰‡è‡ªè¡Œç™‚å‚·
                         if( !is_fighting() ) {
                                 if( my["eff_jing"] < my["max_jing"] )
                                         SKILL_D("force/inspire")->exert(me, me);
@@ -159,7 +159,7 @@ void heart_beat()
                 else    attack();
         }
         
-        // ¼ì²â¸¨ÖúÈÎÎñ  
+        // æª¢æ¸¬è¼”åŠ©ä»»å‹™  
         MYGIFT_D->check_curgift(me);
         
         if (my["doing"] == "trigger")
@@ -177,7 +177,7 @@ void heart_beat()
                 // scan() may do anything -- include destruct(this_object())
                 if( !me) return;
         } else {
-                // É±Â¾ÖµËæÊ±¼ä¶ø¼õÉÙ
+                // æ®ºæˆ®å€¼éš¨æ™‚é–“è€Œæ¸›å°‘
                 if( query("pk_score") > 0 ) {
                         if( time() - query("pk_score_time") >= 3600 ) {
                                 addn("pk_score", -1, me);
@@ -185,7 +185,7 @@ void heart_beat()
                         }
                 }
 
-                // µÀ¾ßÊ±¼ä½±Àø
+                // é“å…·æ™‚é–“çå‹µ
                 if( mapp(my["time_reward"]) ) {
                         if( !undefinedp(my["time_reward"]["study"]) ) {
                                 my["time_reward"]["study"] -= 1;
@@ -203,13 +203,13 @@ void heart_beat()
         if( tick-- ) return;
         else tick = 5 + random(10);
 
-        if( !my["not_living"] ) // Ä¾ÈË²»µ÷ÓÃupdate condition
+        if( !my["not_living"] ) // æœ¨äººä¸èª¿ç”¨update condition
                 cnd_flag = update_condition();
         if( !me ) return;
 
         /*
-        // ¼«Æä²»ºÏÀí£¬ÔÚÍæ¼Ò½Ï¶àµÄÓÎÏ·
-        // CPU ÀË·Ñ¼«´ó£¬ÓÃÁíÍâµÄ·½·¨´¦Àí¡£
+        // æ¥µå…¶ä¸åˆç†ï¼Œåœ¨ç©å®¶è¼ƒå¤šçš„éŠæˆ²
+        // CPU æµªè²»æ¥µå¤§ï¼Œç”¨å¦å¤–çš„æ–¹æ³•è™•ç†ã€‚
         // Find.
         if( !(cnd_flag & CND_NO_HEAL_UP) )
                 cnd_flag = heal_up();
@@ -248,10 +248,10 @@ void heart_beat()
                 period = t - ((int) my["last_save"]);
                 if( period < 0 || period > 15 * 60 ) {
                         string msg;
-                        // msg = HIG "¡¾µµ°¸´æ´¢¡¿ÄúµÄµµ°¸ÒÑ¾­×Ô¶¯´æÅÌ¡£\n" NOR;
+                        // msg = HIG "ã€æª”æ¡ˆå­˜å„²ã€‘æ‚¨çš„æª”æ¡ˆå·²ç¶“è‡ªå‹•å­˜ç›¤ã€‚\n" NOR;
                         if( !me->save() )
-                                msg = HIR "¡¾Êı¾İ±£»¤¡¿ÓÉÓÚÊı¾İÒì³££¬ÄúµÄµµ"
-                                          "°¸±¾´Î´æÅÌÊ§°Ü¡£\n" NOR;
+                                msg = HIR "ã€æ•¸æ“šä¿è­·ã€‘ç”±äºæ•¸æ“šç•°å¸¸ï¼Œæ‚¨çš„æª”"
+                                          "æ¡ˆæœ¬æ¬¡å­˜ç›¤å¤±æ•—ã€‚\n" NOR;
                         set("last_save", t);
                         if( msg )
                                 tell_object(me, msg);
@@ -323,7 +323,7 @@ int visible(object ob)
         return 1;
 }
 
-// ÕâÀïÓ¦¸ÃÇø·ÖÊÇ·ñ´øÃæ¾ßÃû×Ö£¬¶ø²»ÊÇ´óĞ¡Ğ´
+// é€™è£¡æ‡‰è©²å€åˆ†æ˜¯å¦å¸¶é¢å…·åå­—ï¼Œè€Œä¸æ˜¯å¤§å°å¯«
 varargs string query_idname(int raw)
 {
         if( !raw ) return query("name") + "(" + query("id") + ")";
@@ -438,7 +438,7 @@ varargs string short(int raw)
                 if( !stringp(title = query_temp("title")) )
                         title = query("title");
                 if( nick = query("nickname") ) {
-                        str = "¡¸" + nick + "¡¹" + str;
+                        str = "ã€Œ" + nick + "ã€" + str;
                         if( title ) str = title + str;
                 } else if( title ) str = title + " " + str;
 
@@ -450,7 +450,7 @@ varargs string short(int raw)
                 if( stringp(bname = query("bunch/bunch_name")) )
                         str = sprintf("%s%s%s" NOR " %s",
                                 query(bname + "/color", get_object(BUNCH_D)) ? query(bname + "/color", find_object(BUNCH_D)) : NOR,
-                                bname, (string)query("bunch/title") ? query("bunch/title") : "°ïÖÚ", str);
+                                bname, (string)query("bunch/title") ? query("bunch/title") : "å¹«çœ¾", str);
 
                 if( stringp(title = query("viremploy/job")) )
                         str = sprintf(HIY "%s" NOR " %s", title, str);
@@ -466,16 +466,16 @@ varargs string short(int raw)
                 str += HIY "{" + obj->name(1) + NOR + HIY "}" NOR;
 
         if( me->is_ghost() )
-                str = HIB "(¹íÆø) " NOR + str;
+                str = HIB "(é¬¼æ°£) " NOR + str;
 
         if( me->is_weak() )
-                str += HIB " <ĞéÈõ>" NOR;
+                str += HIB " <è™›å¼±>" NOR;
 
         if( me->query_condition("killer") )
-                str += HIR " <Í¨¼©·¸>" NOR;
+                str += HIR " <é€šç·çŠ¯>" NOR;
 
         if( me->is_fighting() )
-                str += HIR " <Õ½¶·ÖĞ>" NOR;
+                str += HIR " <æˆ°é¬¥ä¸­>" NOR;
 
         if( me->is_net_dead() ) {
                 switch( query("doing") )
@@ -483,44 +483,44 @@ varargs string short(int raw)
                 case "breakup":
                 case "animaout":
                 case "invent":
-                        str += HIY " <±Õ¹ØÖĞ>" NOR;
+                        str += HIY " <é–‰é—œä¸­>" NOR;
                         break;
 
                 case "closed":
                 case "xiulian":
-                        str += HIY " <ĞŞÁ¶ÖĞ>" NOR;
+                        str += HIY " <ä¿®ç…‰ä¸­>" NOR;
                         break;
 
                 case "scheme":
-                        str += HIW " <¼Æ»®ÖĞ>" NOR;
+                        str += HIW " <è¨ˆåŠƒä¸­>" NOR;
                         break;
 
                 case "trigger":
-                        str += HIW " <´¥·¢ÖĞ>" NOR;
+                        str += HIW " <è§¸ç™¼ä¸­>" NOR;
                         break;
 
                 default:
-                        str += HIG " <¶ÏÏßÖĞ>" NOR;
+                        str += HIG " <æ–·ç·šä¸­>" NOR;
                 }
         }
 
         if( query_temp("on_bantan") )
-                str += HIG " <°ÚÌ¯ÖĞ> " NOR;
+                str += HIG " <æ“ºæ”¤ä¸­> " NOR;
 
         if( in_input() )
-                str += HIC " <ÊäÈëÎÄ×ÖÖĞ>" NOR;
+                str += HIC " <è¼¸å…¥æ–‡å­—ä¸­>" NOR;
 
         if( !living(me) && query("disable_type") )
                 str += HIR + query("disable_type") + NOR;
 
         if( in_edit() )
-                str += HIY " <±à¼­µµ°¸ÖĞ>" NOR;
+                str += HIY " <ç·¨è¼¯æª”æ¡ˆä¸­>" NOR;
 
         if( interactive(this_object()) &&
             !query("doing") &&
             query_idle(this_object()) > 120 )
-                if( wizardp(this_object())) str += HIM " <Ë¼¿¼ÖĞ>" NOR;
-                else str += HIM " <·¢´ôÖĞ>" NOR;
+                if( wizardp(this_object())) str += HIM " <æ€è€ƒä¸­>" NOR;
+                else str += HIM " <ç™¼å‘†ä¸­>" NOR;
 
         return str;
 }

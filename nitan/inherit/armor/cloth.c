@@ -23,15 +23,15 @@ int do_tear(string str)
         if( !id(str) ) return 0;
         
         if( (string)query("material") != "cloth" )
-                return notify_fail("ÄãÖ»ÄÜËº²¼ÁÏµÄÒÂ·ş¡£\n");
+                return notify_fail("ä½ åªèƒ½æ’•å¸ƒæ–™çš„è¡£æœã€‚\n");
     
         if( (int)query("teared_count") >= 4 )
-                return notify_fail( name() + "µÄĞä¿Ú£¬ÏÂ¡õÒÑ¾­Ã»ÓĞ¶àÓàµÄ²¼¿ÉËºÁË¡£\n");
+                return notify_fail( name() + "çš„è¢–å£ï¼Œä¸‹â–¡å·²ç¶“æ²’æœ‰å¤šä½™çš„å¸ƒå¯æ’•äº†ã€‚\n");
     
-        message_vision("$N´Ó" + name() + "ËºÏÂÒ»Ìõ²¼Ìõ¡£\n", this_player() );       
+        message_vision("$Nå¾" + name() + "æ’•ä¸‹ä¸€æ¢å¸ƒæ¢ã€‚\n", this_player() );       
         addn("teared_count", 1);
         ob = new("/clone/misc/bandage");
-        ob->set_name("´Ó" + name() + "ËºÏÂµÄ²¼Ìõ", ({ "cloth piece", "piece", "cloth" }) );
+        ob->set_name("å¾" + name() + "æ’•ä¸‹çš„å¸ƒæ¢", ({ "cloth piece", "piece", "cloth" }) );
         ob->move(this_player(), 1);
         return 1;
 }
@@ -55,7 +55,7 @@ int washed(int n)
                 n -= n * 7 / 10;
                 break;
         }
-        set_temp("no_wear", "ÏÖÔÚ" + name() + "»¹ÊÇÊªºõºõµÄ£¬ÄãÃ»·¨´©¡£\n");
+        set_temp("no_wear", "ç¾åœ¨" + name() + "é‚„æ˜¯æ¿•ä¹ä¹çš„ï¼Œä½ æ²’æ³•ç©¿ã€‚\n");
         delete_temp("daub");
         remove_call_out("dry_cloth");
         if( n ) call_out("dry_cloth", n);
@@ -67,5 +67,5 @@ void dry_cloth()
         if( !objectp(this_object()) )
                 return;
         delete_temp("no_wear");
-        message("vision", name() + "ÒÑ¾­¸ÉÁË¡£\n", environment());
+        message("vision", name() + "å·²ç¶“å¹¹äº†ã€‚\n", environment());
 }

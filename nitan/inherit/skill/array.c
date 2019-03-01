@@ -1,7 +1,7 @@
 /**************************
  * array.c
  *
- * Õó·¨»ù´¡Îï¼ş¡£
+ * é™£æ³•åŸºç¤ç‰©ä»¶ã€‚
  * #define SKI_ZHEN
  * by Find.
  **************************/
@@ -11,18 +11,18 @@
 
 inherit F_CLEAN_UP;
 
-nosave  string mp,      // Õó·¨ËùÊôÃÅÅÉ
-        name,                // Õó·¨Ãû³Æ
-        ski_name,        // ´ËÕó·¨µÄ id
-        su_msg,                // ³ÉÕóÑ¶Ï¢
-        skill_type;        // Õó·¨ËùÓÃµÄÎä¹¦
+nosave  string mp,      // é™£æ³•æ‰€å±¬é–€æ´¾
+        name,                // é™£æ³•åç¨±
+        ski_name,        // æ­¤é™£æ³•çš„ id
+        su_msg,                // æˆé™£è¨Šæ¯
+        skill_type;        // é™£æ³•æ‰€ç”¨çš„æ­¦åŠŸ
 
-nosave  int num,                // Õó·¨ÒªÇóµÄÈËÔ±ÊıÁ¿
-        master_level,                // ÕóÖ÷Õó·¨µÈ¼¶
-        member_level,                // ³ÉÔ±Õó·¨µÈ¼¶
-        master_skill_level,        // ÕóÖ÷Îä¹¦µÈ¼¶
-        member_skill_level,        // ³ÉÔ±Îä¹¦µÈ¼¶
-        e_level;                // Õó·¨µÄÓĞĞ§Öµ
+nosave  int num,                // é™£æ³•è¦æ±‚çš„äººå“¡æ•¸é‡
+        master_level,                // é™£ä¸»é™£æ³•ç­‰ç´š
+        member_level,                // æˆå“¡é™£æ³•ç­‰ç´š
+        master_skill_level,        // é™£ä¸»æ­¦åŠŸç­‰ç´š
+        member_skill_level,        // æˆå“¡æ­¦åŠŸç­‰ç´š
+        e_level;                // é™£æ³•çš„æœ‰æ•ˆå€¼
 
 void create()
 {
@@ -46,7 +46,7 @@ int valid_learn(object me)
         if( stringp(mp)
         && !wizardp(me)
          && (query("family/family_name", me) != mp) )
-                return notify_fail("Äã²»ÄÜÑ§Ï°Õâ¸öÕó·¨¡£\n");
+                return notify_fail("ä½ ä¸èƒ½å­¸ç¿’é€™å€‹é™£æ³•ã€‚\n");
 
         return 1;
 }
@@ -124,14 +124,14 @@ int valid_build(object who)
 
         if( mp && (query("family/family_name", who) != mp) )
         {
-                tell_object(who,sprintf("Ö»ÓĞ±¾ÃÅÅÉµÜ×Ó²ÅÄÜÊ¹ÓÃ¡º%s¡»¡£\n",
+                tell_object(who,sprintf("åªæœ‰æœ¬é–€æ´¾å¼Ÿå­æ‰èƒ½ä½¿ç”¨ã€%sã€ã€‚\n",
                         name ));
                 return 0;
         }
 
         if(who->query_skill(ski_name,1) < master_level)
         {
-                tell_object(who,sprintf("Äã¶Ô¡º%s¡»µÄÀí½â²»¹»£¬ÎŞ·¨Ö÷³Ö´ËÕó·¨¡£\n",
+                tell_object(who,sprintf("ä½ å°ã€%sã€çš„ç†è§£ä¸å¤ ï¼Œç„¡æ³•ä¸»æŒæ­¤é™£æ³•ã€‚\n",
                         name ));
                 return 0;
         }
@@ -139,7 +139,7 @@ int valid_build(object who)
         if( !(n = who->query_skill(skill_type,1))
         || (n < master_skill_level) )
         {
-                tell_object(who,sprintf("ÄãµÄ¡º%s¡»µÈ¼¶Ì«µÍ£¬ÎŞ·¨Ö÷³Ö¡º%s¡»¡£\n",
+                tell_object(who,sprintf("ä½ çš„ã€%sã€ç­‰ç´šå¤ªä½ï¼Œç„¡æ³•ä¸»æŒã€%sã€ã€‚\n",
                         to_chinese(skill_type),name));
                 return 0;
         }
@@ -155,16 +155,16 @@ int valid_member(object who)
                 return 0;
 
         if( mp && (query("family/family_name", who) != mp) )
-                return notify_fail(sprintf("Ö»ÓĞ±¾ÃÅÅÉµÜ×Ó²ÅÄÜÊ¹ÓÃ¡º%s¡»¡£\n",
+                return notify_fail(sprintf("åªæœ‰æœ¬é–€æ´¾å¼Ÿå­æ‰èƒ½ä½¿ç”¨ã€%sã€ã€‚\n",
                         name ));
 
         if(who->query_skill(ski_name,1) < member_level)
-                return notify_fail(sprintf("%s¶Ô¡º%s¡»µÄÀí½â²»¹»£¬ÎŞ·¨²Î¼Ó%s¡£\n",
+                return notify_fail(sprintf("%så°ã€%sã€çš„ç†è§£ä¸å¤ ï¼Œç„¡æ³•åƒåŠ %sã€‚\n",
                         who->name(),name,name));
 
         if( !(n = who->query_skill(skill_type,1))
         || (n < member_skill_level) )
-                return notify_fail(sprintf("%sµÄ¡º%s¡»µÈ¼¶Ì«µÍ£¬ÎŞ·¨²Î¼Ó¡º%s¡»¡£\n",
+                return notify_fail(sprintf("%sçš„ã€%sã€ç­‰ç´šå¤ªä½ï¼Œç„¡æ³•åƒåŠ ã€%sã€ã€‚\n",
                         who->name(),to_chinese(skill_type),name));
 
         return 1;
@@ -176,7 +176,7 @@ string success_msg()
                 return su_msg;
 
         else
-                return sprintf(MAG BWHT"\n$N´øÁìµÄ¡º%s¡»¿ªÊ¼·¢»ÓÍşÁ¦£¡\n"NOR,name);
+                return sprintf(MAG BWHT"\n$Nå¸¶é ˜çš„ã€%sã€é–‹å§‹ç™¼æ®å¨åŠ›ï¼\n"NOR,name);
 }
 
 void set_success_msg(string arg)

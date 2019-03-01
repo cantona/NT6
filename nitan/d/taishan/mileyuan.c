@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����Ժ");
+        set("short", "彌勒院");
         set("long", @LONG
-����Ժ���������ʿ֮���Ƹ�����Ź���������Ժ����ԭ��ľ����
-�շ𣻶��д���ʽ����ͤ����ʱ�����ٻµ�ɽ���˸��£����д���ʽ��
-ͥ��
+彌勒院由祀觀音大士之飛雲閣與紅門宮相連。東院正殿原祀木雕彌
+勒佛；東有穿堂式更衣亭，舊時帝王官宦登山至此更衣；南有穿堂式過
+庭。
 LONG );
         set("exits", ([
                 "west"      : __DIR__"hongmen",

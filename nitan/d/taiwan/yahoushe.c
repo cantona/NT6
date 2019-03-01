@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�ź���");
+        set("short", "雅猴社");
         set("long", @LONG
-�ź����ֳư����磬�˵�����������ƽ����������֧�尢����֮��
-�����롣��������ԭ�����ڴ��磬��δ���ʱ��������ѣ�ֻ����
-�ض�Ǩ�����н��磬��Ϊ�ź��硣
+雅猴社又稱阿猴社，乃得名自西拉雅平埔族馬卡道支族阿侯社之社
+名音譯。馬卡道族原生活于打狗社，明未清初時，因漢人入墾，只得棄
+地東遷，另行建社，是為雅猴社。
 LONG );
         set("exits", ([
                 "west" : __DIR__"dagougang",

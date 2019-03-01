@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "���԰��¥");
+        set("short", "大觀園茶樓");
         set("long", @LONG
-���԰��¥�����ݳ�����ָ�����Ĵ��¥�����ǲ�¥��ȴ
-û�����ˡ���������и�¥�����£�΢΢������͸����ζ����
-������ͷ�е㷢�衣
+大觀園茶樓乃中州城內屈指可數的大茶樓，可是茶樓裡卻
+沒幾個人。裡面好象有個樓梯往下，微微從下面透出的味道讓
+人聞了頭有點發昏。
 LONG);
         set("exits", ([
                   "east" : __DIR__"wendingnan2",

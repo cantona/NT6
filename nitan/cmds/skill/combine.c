@@ -8,7 +8,7 @@ inherit F_CLEAN_UP;
 void create() { seteuid(getuid()); }
 
 mapping combine_list = ([
-        //Ñ«ÕÂºÏ³É
+        //å‹›ç« åˆæˆ
         ({
           "/clone/medal/xinrui_xunzhang3-1",
           "/clone/medal/xinrui_xunzhang3-2",
@@ -70,7 +70,7 @@ mapping combine_list = ([
           "/clone/medal/lunjian_xunzhang1-2",
         }) :  "/clone/medal/diamond_xunzhang",
                                 
-        //±¦Ê¯ºÏ³É
+        //å¯¶çŸ³åˆæˆ
         ({
           "/inherit/template/gem/cdiamond-1",
           "/inherit/template/gem/cdiamond-2",
@@ -230,7 +230,7 @@ mapping combine_list = ([
           "/clone/tessera/ftopaz-2",
           "/clone/tessera/ftopaz-3",
           }) :  "/clone/tessera/mtopaz",          
-        //×°±¸Ö®»ê
+        //è£å‚™ä¹‹é­‚
         ({
           "/clone/enchase/charm_soul1-1",
           "/clone/enchase/charm_soul1-2",
@@ -556,7 +556,7 @@ mapping combine_list = ([
           "/clone/enchase/boots_soul5-2",
           "/clone/enchase/boots_soul5-3",
           }) :  "/clone/enchase/boots_soul6",
-        // µÛÍõ·ûÍ¼...
+        // å¸ç‹ç¬¦åœ–...
         ({
           "/clone/tuteng/diwang-suipian1-1",
           "/clone/tuteng/diwang-suipian2-1",
@@ -622,7 +622,7 @@ mapping combine_list = ([
           })  : "/clone/tuteng/futu7",
 
 
-        // ·ûÎÄµÄºÏ³É¹«Ê½
+        // ç¬¦æ–‡çš„åˆæˆå…¬å¼
         ({ "/clone/tessera/rune01-1",
            "/clone/tessera/rune01-2",
            "/clone/tessera/rune01-3", }) : "/clone/tessera/rune02",
@@ -767,302 +767,302 @@ mapping combine_list = ([
            "/clone/tessera/rune35-2",
            "/inherit/template/gem/mdiamond-1", }) : "/clone/tessera/rune36",                      
 
-       // ·ğ¹â±¦Öé
+       // ä½›å…‰å¯¶ç 
        ({
        	  "/clone/quarry/item/zhenzhu-1",
        	  "/clone/quarry/item/zhenzhu-2",
        	  "/clone/quarry/item/zhenzhu-3",   })  : "/clone/quarry/item/combine/foguang-baozhu",
        	  
-       // ÍòÄêºì
+       // è¬å¹´ç´…
        ({
        	  "/clone/fam/item/bixue-1",
        	  "/clone/fam/item/bless_water-1",
        	  "/clone/fam/pill/neili2-1",   })  : "/clone/fam/item/wannian-hong",
 
-        // ÕòÓü¾ªÌìÍè
+        // é®ç„é©šå¤©ä¸¸
         ({ "/clone/fam/max/xuanhuang-1",
            "/clone/fam/max/longjia-1",
            "/clone/fam/item/kunlun-1",
            "/clone/fam/item/baxian-1", }) : "/clone/fam/max/zhenyu",
 
-        // ×ÓÎçÁú¼×µ¤
+        // å­åˆé¾ç”²ä¸¹
         ({ "/clone/fam/pill/dimai-1",
            "/clone/fam/pill/renshen4-1",
            "/clone/fam/etc/lv7d-1", }) : "/clone/fam/max/longjia",
 
-        // Ğş»Æ×Ïóäµ¤
+        // ç„é»ƒç´«ç®ä¸¹
         ({ "/clone/fam/pill/yulu-1",
            "/clone/fam/pill/lingzhi4-1",
            "/clone/fam/etc/lv7a-1", }) : "/clone/fam/max/xuanhuang",
 
-        // µØÂöÑªÈª
+        // åœ°è„ˆè¡€æ³‰
         ({ "/clone/fam/pill/puti2-1",
            "/clone/fam/pill/sheli3-1",
            "/clone/fam/etc/lv7b-1", }) : "/clone/fam/pill/dimai",
 
-        // ÌìÏãÓñÂ¶
+        // å¤©é¦™ç‰éœ²
         ({ "/clone/fam/pill/sheli2-1",
            "/clone/fam/pill/puti3-1",
            "/clone/fam/etc/lv7c-1", }) : "/clone/fam/pill/yulu",
 
-        // Ç§Äê²ÎĞÄµ¤
+        // åƒå¹´åƒå¿ƒä¸¹
         ({ "/clone/fam/pill/renshen1-1",
            "/clone/fam/pill/renshen2-1",
            "/clone/fam/etc/lv5c-1", }) : "/clone/fam/pill/renshen4",
 
-        // Ç§ÄêÁéÖ¥Íè
+        // åƒå¹´éˆèŠä¸¸
         ({ "/clone/fam/pill/lingzhi1-1",
            "/clone/fam/pill/lingzhi2-1",
            "/clone/fam/etc/lv5c-1", }) : "/clone/fam/pill/lingzhi4",
 
-        // Ç§ÄêÑ©Á«¸à
+        // åƒå¹´é›ªè“®è†
         ({ "/clone/fam/pill/xuelian1-1",
            "/clone/fam/pill/xuelian2-1",
            "/clone/fam/etc/lv5c-1", }) : "/clone/fam/pill/xuelian4",
 
-        // °ÙÄê²ÎĞÄµ¤
+        // ç™¾å¹´åƒå¿ƒä¸¹
         ({ "/clone/fam/pill/renshen1-1",
            "/clone/fam/etc/lv5e-1", }) : "/clone/fam/pill/renshen3",
 
-        // °ÙÄêÁéÖ¥Íè
+        // ç™¾å¹´éˆèŠä¸¸
         ({ "/clone/fam/pill/lingzhi1-1",
            "/clone/fam/etc/lv5e-1", }) : "/clone/fam/pill/lingzhi3",
 
-        // °ÙÄêÑ©Á«¸à
+        // ç™¾å¹´é›ªè“®è†
         ({ "/clone/fam/pill/xuelian1-1",
            "/clone/fam/etc/lv5e-1", }) : "/clone/fam/pill/xuelian3",
 
-        // ê»Ììµ¤
+        // æ˜Šå¤©ä¸¹
         ({ "/clone/fam/pill/linghui1-1",
            "/clone/fam/pill/full1-1", }) : "/clone/fam/pill/linghui2",
 
-        // »ğÁú¹û
+        // ç«é¾æœ
         ({ "/clone/fam/pill/neili1-1",
            "/clone/fam/pill/full1-1", }) : "/clone/fam/pill/neili2",
 
-        // ÆĞÌá×Ó
+        // è©æå­
         ({ "/clone/fam/pill/puti1-1",
            "/clone/fam/pill/puti2-1",
            "/clone/fam/pill/puti3-1", }) : "/clone/fam/pill/puti4",
 
-        // Ê¥ÉáÀû
+        // è–èˆåˆ©
         ({ "/clone/fam/pill/sheli1-1",
            "/clone/fam/pill/sheli2-1",
            "/clone/fam/pill/sheli3-1", }) : "/clone/fam/pill/sheli4",
 
-        // µÛÕßÉáÀû
+        // å¸è€…èˆåˆ©
         ({ "/clone/fam/pill/sheli2-1",
            "/clone/fam/pill/full1-1", }) : "/clone/fam/pill/sheli3",
 
-        // ±ùÆĞÌá
+        // å†°è©æ
         ({ "/clone/fam/pill/puti2-1",
            "/clone/fam/pill/full1-1", }) : "/clone/fam/pill/puti3",
 
-        // ĞÄÆĞÌá
+        // å¿ƒè©æ
         ({ "/clone/fam/pill/puti1-1",
            "/clone/fam/pill/full1-1", }) : "/clone/fam/pill/puti2",
 
-        // ·ğ×ğÉáÀû
+        // ä½›å°Šèˆåˆ©
         ({ "/clone/fam/pill/sheli1-1",
            "/clone/fam/pill/full1-1", }) : "/clone/fam/pill/sheli2",
 
-        // ÍüÇéÌìÊé
+        // å¿˜æƒ…å¤©æ›¸
         ({ "/clone/fam/etc/lv5a-1",
            "/clone/fam/etc/lv5b-1",
            "/clone/fam/etc/lv5d-1",
            "/clone/fam/etc/lv7d-1",
            "/clone/fam/gift/str3-1", }) : "/clone/fam/max/tianshu1",
 
-        // ÍüÇéÌìÊé
+        // å¿˜æƒ…å¤©æ›¸
         ({ "/clone/fam/etc/lv5a-1",
            "/clone/fam/etc/lv5b-1",
            "/clone/fam/etc/lv5d-1",
            "/clone/fam/etc/lv7d-1",
            "/clone/fam/gift/con3-1", }) : "/clone/fam/max/tianshu1",
 
-        // ÍüÇéÌìÊé
+        // å¿˜æƒ…å¤©æ›¸
         ({ "/clone/fam/etc/lv5a-1",
            "/clone/fam/etc/lv5b-1",
            "/clone/fam/etc/lv5d-1",
            "/clone/fam/etc/lv7d-1",
            "/clone/fam/gift/int3-1", }) : "/clone/fam/max/tianshu1",
 
-        // ÍüÇéÌìÊé
+        // å¿˜æƒ…å¤©æ›¸
         ({ "/clone/fam/etc/lv5a-1",
            "/clone/fam/etc/lv5b-1",
            "/clone/fam/etc/lv5d-1",
            "/clone/fam/etc/lv7d-1",
            "/clone/fam/gift/dex3-1", }) : "/clone/fam/max/tianshu1",
-        // ÎåÕÅ¾ÅÏüÎÆıˆÍ¼ËéÆ¬Æ´´Õ³öÍêÕûµÄ¾ÅÏüÎÆıˆÍ¼
+        // äº”å¼µä¹å®µç´‹â–¡åœ–ç¢ç‰‡æ‹¼æ¹Šå‡ºå®Œæ•´çš„ä¹å®µç´‹â–¡åœ–
         ({ "/clone/tattoo/spcs1-1",
            "/clone/tattoo/spcs1-2",
            "/clone/tattoo/spcs1-3",
            "/clone/tattoo/spcs1-4",
            "/clone/tattoo/spcs1-5" }) : "/clone/tattoo/spc1",
 
-        // ÎåÕÅ·ïÎè¾ÅÌìÍ¼ËéÆ¬Æ´´Õ³öÍêÕûµÄ·ïÎè¾ÅÌìÍ¼
+        // äº”å¼µé³³èˆä¹å¤©åœ–ç¢ç‰‡æ‹¼æ¹Šå‡ºå®Œæ•´çš„é³³èˆä¹å¤©åœ–
         ({ "/clone/tattoo/spcs2-1",
            "/clone/tattoo/spcs2-2",
            "/clone/tattoo/spcs2-3",
            "/clone/tattoo/spcs2-4",
            "/clone/tattoo/spcs2-5" }) : "/clone/tattoo/spc2",
 
-        // ÎåÕÅÍò·ğ³¯Ê¥Í¼ËéÆ¬Æ´´Õ³öÍêÕûµÄÍò·ğ³¯Ê¥Í¼
+        // äº”å¼µè¬ä½›æœè–åœ–ç¢ç‰‡æ‹¼æ¹Šå‡ºå®Œæ•´çš„è¬ä½›æœè–åœ–
         ({ "/clone/tattoo/spcs3-1",
            "/clone/tattoo/spcs3-2",
            "/clone/tattoo/spcs3-3",
            "/clone/tattoo/spcs3-4",
            "/clone/tattoo/spcs3-5" }) : "/clone/tattoo/spc3",
 
-        // ÎåÕÅ°Ù¹íÒ¹ĞĞÍ¼ËéÆ¬Æ´´Õ³öÍêÕûµÄ°Ù¹íÒ¹ĞĞÍ¼
+        // äº”å¼µç™¾é¬¼å¤œè¡Œåœ–ç¢ç‰‡æ‹¼æ¹Šå‡ºå®Œæ•´çš„ç™¾é¬¼å¤œè¡Œåœ–
         ({ "/clone/tattoo/spcs4-1",
            "/clone/tattoo/spcs4-2",
            "/clone/tattoo/spcs4-3",
            "/clone/tattoo/spcs4-4",
            "/clone/tattoo/spcs4-5" }) : "/clone/tattoo/spc4",
 
-        // ÎåÕÅÍĞËşÌìÍõÍ¼ËéÆ¬Æ´´Õ³öÍêÕûµÄÍĞËşÌìÍõÍ¼
+        // äº”å¼µæ‰˜å¡”å¤©ç‹åœ–ç¢ç‰‡æ‹¼æ¹Šå‡ºå®Œæ•´çš„æ‰˜å¡”å¤©ç‹åœ–
         ({ "/clone/tattoo/spcs5-1",
            "/clone/tattoo/spcs5-2",
            "/clone/tattoo/spcs5-3",
            "/clone/tattoo/spcs5-4",
            "/clone/tattoo/spcs5-5" }) : "/clone/tattoo/spc5",
 
-        // ÎåÕÅÇ§ÊÖ¹ÛÒôÍ¼ËéÆ¬Æ´´Õ³öÍêÕûµÄÇ§ÊÖ¹ÛÒôÍ¼
+        // äº”å¼µåƒæ‰‹è§€éŸ³åœ–ç¢ç‰‡æ‹¼æ¹Šå‡ºå®Œæ•´çš„åƒæ‰‹è§€éŸ³åœ–
         ({ "/clone/tattoo/spcs6-1",
            "/clone/tattoo/spcs6-2",
            "/clone/tattoo/spcs6-3",
            "/clone/tattoo/spcs6-4",
            "/clone/tattoo/spcs6-5" }) : "/clone/tattoo/spc6",
 
-        // ÎåÕÅ½õĞåÉ½ºÓÍ¼ËéÆ¬Æ´´Õ³öÍêÕûµÄ½õĞåÉ½ºÓÍ¼
+        // äº”å¼µéŒ¦ç¹¡å±±æ²³åœ–ç¢ç‰‡æ‹¼æ¹Šå‡ºå®Œæ•´çš„éŒ¦ç¹¡å±±æ²³åœ–
         ({ "/clone/tattoo/spcs7-1",
            "/clone/tattoo/spcs7-2",
            "/clone/tattoo/spcs7-3",
            "/clone/tattoo/spcs7-4",
            "/clone/tattoo/spcs7-5" }) : "/clone/tattoo/spc7",
 
-        // ÎåÕÅºóôàÉäÈÕÍ¼ËéÆ¬Æ´´Õ³öÍêÕûµÄºóôàÉäÈÕÍ¼
+        // äº”å¼µå¾Œç¾¿å°„æ—¥åœ–ç¢ç‰‡æ‹¼æ¹Šå‡ºå®Œæ•´çš„å¾Œç¾¿å°„æ—¥åœ–
         ({ "/clone/tattoo/spcs8-1",
            "/clone/tattoo/spcs8-2",
            "/clone/tattoo/spcs8-3",
            "/clone/tattoo/spcs8-4",
            "/clone/tattoo/spcs8-5" }) : "/clone/tattoo/spc8",
 
-        // ÎåÕÅ¾ÅÒÇÌì×ğÍ¼ËéÆ¬Æ´´Õ³öÍêÕûµÄ¾ÅÒÇÌì×ğÍ¼
+        // äº”å¼µä¹å„€å¤©å°Šåœ–ç¢ç‰‡æ‹¼æ¹Šå‡ºå®Œæ•´çš„ä¹å„€å¤©å°Šåœ–
         ({ "/clone/tattoo/spcs9-1",
            "/clone/tattoo/spcs9-2",
            "/clone/tattoo/spcs9-3",
            "/clone/tattoo/spcs9-4",
            "/clone/tattoo/spcs9-5" }) : "/clone/tattoo/spc9",
 
-        // ÎåÕÅÚ¤»ÊÁ¶ÓüÍ¼ËéÆ¬Æ´´Õ³öÍêÕûµÄÚ¤»ÊÁ¶ÓüÍ¼
+        // äº”å¼µå†¥çš‡ç…‰ç„åœ–ç¢ç‰‡æ‹¼æ¹Šå‡ºå®Œæ•´çš„å†¥çš‡ç…‰ç„åœ–
         ({ "/clone/tattoo/spcs10-1",
            "/clone/tattoo/spcs10-2",
            "/clone/tattoo/spcs10-3",
            "/clone/tattoo/spcs10-4",
            "/clone/tattoo/spcs10-5" }) : "/clone/tattoo/spc10",
 
-        // Èı¸ö×êÊ¯ËéÆ¬ºÏ²¢³ÉÎªÒ»¸ö×êÊ¯
+        // ä¸‰å€‹é‘½çŸ³ç¢ç‰‡åˆä¸¦æˆç‚ºä¸€å€‹é‘½çŸ³
         ({ "/clone/gift/cdiamond-1",
            "/clone/gift/cdiamond-2",
            "/clone/gift/cdiamond-3" }) : "/clone/gift/diamond",
 
-        // Èı¸ö×êÊ¯ºÏ²¢³ÉÎªÒ»¸ö¾«ÃÀ×êÊ¯
+        // ä¸‰å€‹é‘½çŸ³åˆä¸¦æˆç‚ºä¸€å€‹ç²¾ç¾é‘½çŸ³
         ({ "/clone/gift/diamond-1",
            "/clone/gift/diamond-2",
            "/clone/gift/diamond-3" }) : "/clone/gift/fdiamond",
 
-        // Èı¸ö¾«ÃÀ×êÊ¯ºÏ²¢³ÉÎªÒ»¸öÉñÖ®×êÊ¯
+        // ä¸‰å€‹ç²¾ç¾é‘½çŸ³åˆä¸¦æˆç‚ºä¸€å€‹ç¥ä¹‹é‘½çŸ³
         ({ "/clone/gift/fdiamond-1",
            "/clone/gift/fdiamond-2",
            "/clone/gift/fdiamond-3" }) : "/clone/gift/mdiamond",
 
-        // Èı¸öÂêè§ËéÆ¬ºÏ²¢³ÉÎªÒ»¸öÂêè§
+        // ä¸‰å€‹ç‘ªç‘™ç¢ç‰‡åˆä¸¦æˆç‚ºä¸€å€‹ç‘ªç‘™
         ({ "/clone/gift/cagate-1",
            "/clone/gift/cagate-2",
            "/clone/gift/cagate-3" }) : "/clone/gift/agate",
 
-        // Èı¸öÂêè§ºÏ²¢³ÉÎªÒ»¸ö¾«ÃÀÂêè§
+        // ä¸‰å€‹ç‘ªç‘™åˆä¸¦æˆç‚ºä¸€å€‹ç²¾ç¾ç‘ªç‘™
         ({ "/clone/gift/agate-1",
            "/clone/gift/agate-2",
            "/clone/gift/agate-3" }) : "/clone/gift/fagate",
 
-        // Èı¸ö¾«ÃÀÂêè§ºÏ²¢³ÉÎªÒ»¸öÉñÖ®Âêè§
+        // ä¸‰å€‹ç²¾ç¾ç‘ªç‘™åˆä¸¦æˆç‚ºä¸€å€‹ç¥ä¹‹ç‘ªç‘™
         ({ "/clone/gift/fagate-1",
            "/clone/gift/fagate-2",
            "/clone/gift/fagate-3" }) : "/clone/gift/magate",
 
-        // Èı¸öË®¾§ËéÆ¬ºÏ²¢³ÉÎªÒ»¸öË®¾§
+        // ä¸‰å€‹æ°´æ™¶ç¢ç‰‡åˆä¸¦æˆç‚ºä¸€å€‹æ°´æ™¶
         ({ "/clone/gift/ccrystal-1",
            "/clone/gift/ccrystal-2",
            "/clone/gift/ccrystal-3" }) : "/clone/gift/crystal",
 
-        // Èı¸öË®¾§ºÏ²¢³ÉÎªÒ»¸ö¾«ÃÀË®¾§
+        // ä¸‰å€‹æ°´æ™¶åˆä¸¦æˆç‚ºä¸€å€‹ç²¾ç¾æ°´æ™¶
         ({ "/clone/gift/crystal-1",
            "/clone/gift/crystal-2",
            "/clone/gift/crystal-3" }) : "/clone/gift/fcrystal",
 
-        // Èı¸ö¾«ÃÀË®¾§ºÏ²¢³ÉÎªÒ»¸öÉñÖ®Ë®¾§
+        // ä¸‰å€‹ç²¾ç¾æ°´æ™¶åˆä¸¦æˆç‚ºä¸€å€‹ç¥ä¹‹æ°´æ™¶
         ({ "/clone/gift/fcrystal-1",
            "/clone/gift/fcrystal-2",
            "/clone/gift/fcrystal-3" }) : "/clone/gift/mcrystal",
 
-        // Èı¸öôä´äËéÆ¬ºÏ²¢³ÉÎªÒ»¸öôä´ä
+        // ä¸‰å€‹ç¿¡ç¿ ç¢ç‰‡åˆä¸¦æˆç‚ºä¸€å€‹ç¿¡ç¿ 
         ({ "/clone/gift/cjade-1",
            "/clone/gift/cjade-2",
            "/clone/gift/cjade-3" }) : "/clone/gift/jade",
 
-        // Èı¸öôä´äºÏ²¢³ÉÎªÒ»¸ö¾«ÃÀôä´ä
+        // ä¸‰å€‹ç¿¡ç¿ åˆä¸¦æˆç‚ºä¸€å€‹ç²¾ç¾ç¿¡ç¿ 
         ({ "/clone/gift/jade-1",
            "/clone/gift/jade-2",
            "/clone/gift/jade-3" }) : "/clone/gift/fjade",
 
-        // Èı¸ö¾«ÃÀôä´äºÏ²¢³ÉÎªÒ»¸öÉñÖ®ôä´ä
+        // ä¸‰å€‹ç²¾ç¾ç¿¡ç¿ åˆä¸¦æˆç‚ºä¸€å€‹ç¥ä¹‹ç¿¡ç¿ 
         ({ "/clone/gift/fjade-1",
            "/clone/gift/fjade-2",
            "/clone/gift/fjade-3" }) : "/clone/gift/mjade",
 
 /*
-        // Ç¬À¤Ê¥Ë®
+        // ä¹¾å¤è–æ°´
         ({ "/clone/fam/gift/int3-1",
            "/clone/fam/gift/con3-1",
            "/clone/fam/gift/str3-1",
            "/clone/fam/gift/dex3-1" }) : "/clone/fam/item/bless_water",
 */
 
-        // Ç¬À¤Ê¥Ë®
+        // ä¹¾å¤è–æ°´
         ({ "/clone/fam/gift/int3-1",
            "/clone/fam/etc/lv7a-1",
            "/clone/fam/item/stone5-1" }) : "/clone/fam/item/bless_water",
 
-        // Ç¬À¤Ê¥Ë®
+        // ä¹¾å¤è–æ°´
         ({ "/clone/fam/gift/con3-1",
            "/clone/fam/etc/lv7a-1",
            "/clone/fam/item/stone5-1" }) : "/clone/fam/item/bless_water",
 
-        // Ç¬À¤Ê¥Ë®
+        // ä¹¾å¤è–æ°´
         ({ "/clone/fam/gift/dex3-1",
            "/clone/fam/etc/lv7a-1",
            "/clone/fam/item/stone5-1" }) : "/clone/fam/item/bless_water",
 
-        // Ç¬À¤Ê¥Ë®
+        // ä¹¾å¤è–æ°´
         ({ "/clone/fam/gift/str3-1",
            "/clone/fam/etc/lv7a-1",
            "/clone/fam/item/stone5-1" }) : "/clone/fam/item/bless_water",
 
-        // »ÔÊ¯
+        // è¼çŸ³
         ({ "/clone/fam/item/stone3-1",
            "/clone/fam/item/stone1-1",
            }) : "/clone/fam/item/stone4",
 
-        // ğ©Ê¯
+        // çš“çŸ³
         ({ "/clone/fam/item/stone2-1",
            "/clone/fam/item/stone1-1",
            }) : "/clone/fam/item/stone3",
 
 
-        // »ÔÔÂ»ªÊ¯
+        // è¼æœˆè¯çŸ³
         ({ "/clone/fam/item/stone1-1",
            "/clone/fam/item/stone4-1",
            "/clone/fam/item/stone3-1",
@@ -1070,17 +1070,17 @@ mapping combine_list = ([
            }) : "/clone/fam/item/stone5",
 
         /******************************************
-                    ÏâÇ¶Ö®ÎïÆ·--¸ß¼¶
+                    é‘²åµŒä¹‹ç‰©å“--é«˜ç´š
         *******************************************/
-        // ±ÌÆÇ±ù¾§
+        // ç¢§é­„å†°æ™¶
         ({ "/clone/fam/etc/lv5f-1",
-          "/clone/fam/etc/lv7c-1", // ÇàÁúÑÀ
-          "/clone/fam/etc/lv7d-1", // ÈçÒâÍ¨Ììïã
-          "/clone/fam/etc/lv7a-1", // Îå²ÊÁáççÖé
-          "/clone/fam/etc/prize5-1", // ÉñÂ}ÑªÇå
+          "/clone/fam/etc/lv7c-1", // é’é¾ç‰™
+          "/clone/fam/etc/lv7d-1", // å¦‚æ„é€šå¤©â–¡
+          "/clone/fam/etc/lv7a-1", // äº”å½©ç²ç“ç 
+          "/clone/fam/etc/prize5-1", // ç¥â–¡è¡€æ¸…
            }) : "/clone/fam/etc/bipo",
 
-        // »ÃÊ¯
+        // å¹»çŸ³
         ({ "/clone/fam/item/baxian-1",
           "/clone/fam/item/kunlun-1",
           "/clone/fam/etc/lv7d-1",
@@ -1088,15 +1088,15 @@ mapping combine_list = ([
           "/clone/fam/etc/prize5-1",
            }) : "/clone/fam/etc/huanshi",
 
-        // ±ù»ğÖé
+        // å†°ç«ç 
         ({ "/clone/fam/item/leihuo-1",
           "/clone/fam/item/lihuo-1",
-          "/clone/fam/etc/lv5d-1", // »ÃµØÉñÖé
+          "/clone/fam/etc/lv5d-1", // å¹»åœ°ç¥ç 
           "/clone/fam/etc/lv7a-1",
           "/clone/fam/etc/prize5-1",
            }) : "/clone/fam/etc/binghuozhu",
 
-        // À×ÉñÖé
+        // é›·ç¥ç 
         ({ "/clone/fam/item/leihuo-1",
           "/clone/fam/etc/lv7c-1",
           "/clone/fam/etc/lv7d-1",
@@ -1105,30 +1105,30 @@ mapping combine_list = ([
            }) : "/clone/fam/etc/leishenzhu",
 
         /******************************************
-                    ÏâÇ¶Ö®ÎïÆ·--ÕäÆ·
+                    é‘²åµŒä¹‹ç‰©å“--çå“
         *******************************************/
-        // ÉñÖ®º®¾§¡¤±ù
+        // ç¥ä¹‹å¯’æ™¶ï¹’å†°
         ({ "/clone/fam/etc/bipo-1",
           "/clone/fam/item/bless_water-1",
           "/clone/fam/etc/lv5d-1",
           "/clone/fam/etc/prize4-1",
            }) : "/clone/fam/etc/hanjing",
 
-        // Ä§Ö®ĞÄ¡¤Ä§
+        // é­”ä¹‹å¿ƒï¹’é­”
         ({ "/clone/fam/etc/huanshi-1",
           "/clone/fam/item/bless_water-1",
           "/clone/fam/etc/lv5d-1",
           "/clone/fam/item/stone5-1",
            }) : "/clone/fam/etc/mozhixin",
 
-        // »ğÖ®¾«Áé¡¤»ğ
+        // ç«ä¹‹ç²¾éˆï¹’ç«
         ({ "/clone/fam/etc/binghuozhu-1",
           "/clone/fam/item/bless_water-1",
           "/clone/fam/etc/lv7d-1",
           "/clone/fam/etc/lv7b-1",
            }) : "/clone/fam/etc/huojingling",
 
-        // À×ÉñÖ®Í«¡¤µç
+        // é›·ç¥ä¹‹ç³ï¹’é›»
         ({ "/clone/fam/etc/leishenzhu-1",
           "/clone/fam/item/bless_water-1",
           "/clone/fam/etc/lv5d-1",
@@ -1136,11 +1136,11 @@ mapping combine_list = ([
           "/clone/fam/item/zhenlong-1",
            }) : "/clone/fam/etc/leishentong",
 
-        // °×»¢¡¤½ğ = ¾«½ğ + ÈçÒâÍ¨Ììïã + À×ÉñÖé   + »Ô»ªÔÂÊ¯
-        // ÇàÁú¡¤Ä¾ = Ä¾Áé + ÕòÁúÊ¯     + ÇàÁúÑÀ   + Ç¬À¤Ê¥Ë®
-        // ĞşÎä¡¤Ë® = Ğş±ù + ±ÌÆÇ±ù¾§   + ÉñÂ}ÑªÇå + Ç¬À¤Ê¥Ë®
-        // ÖìÈ¸¡¤»ğ = Ñ×¾§ + ±ù»ğÖé     + ³ãÊ¯     + Îå²ÊÁáççÖé
-        // ÷è÷ë¡¤ÍÁ = ÓñËè + »ÃÊ¯       + Ï¢ÈÀ     + »Ô»ªÔÂÊ¯
+        // ç™½è™ï¹’é‡‘ = ç²¾é‡‘ + å¦‚æ„é€šå¤©â–¡ + é›·ç¥ç    + è¼è¯æœˆçŸ³
+        // é’é¾ï¹’æœ¨ = æœ¨éˆ + é®é¾çŸ³     + é’é¾ç‰™   + ä¹¾å¤è–æ°´
+        // ç„æ­¦ï¹’æ°´ = ç„å†° + ç¢§é­„å†°æ™¶   + ç¥â–¡è¡€æ¸… + ä¹¾å¤è–æ°´
+        // æœ±é›€ï¹’ç« = ç‚æ™¶ + å†°ç«ç      + ç†¾çŸ³     + äº”å½©ç²ç“ç 
+        // éº’éºŸï¹’åœŸ = ç‰é«“ + å¹»çŸ³       + æ¯å£¤     + è¼è¯æœˆçŸ³
         ({ "/clone/tessera/metal-1",
           "/clone/fam/etc/lv7d-1",
           "/clone/fam/etc/leishenzhu-1",
@@ -1177,10 +1177,10 @@ mapping combine_list = ([
           }) : "/clone/goods/tianjing",
 
 /**********************************************************
- ÌØÊâ×°±¸»òÕßÎïÆ·£¬·Ç³£Õä¹ó£¬Ö»ÄÜÍ¨¹ıÒ»Ğ©ÌØÊâÍ¾¾¶»ñÈ¡»òºÏ³É
- ±ÈÈç¹ÊÊÂµÈ¡£
+ ç‰¹æ®Šè£å‚™æˆ–è€…ç‰©å“ï¼Œéå¸¸çè²´ï¼Œåªèƒ½é€šéä¸€äº›ç‰¹æ®Šé€”å¾‘ç²å–æˆ–åˆæˆ
+ æ¯”å¦‚æ•…äº‹ç­‰ã€‚
 **********************************************************/
-       // Ñ×ıˆÂ}¼×
+       // ç‚â–¡â–¡ç”²
        ({
           "/clone/fam/etc/longlin-1",
           "/clone/fam/etc/longlin-2",
@@ -1200,7 +1200,7 @@ mapping combine_list = ([
           "/clone/fam/etc/prize3-1",
           "/clone/fam/etc/prize3-2"}) : "/clone/fam/armor/yanlongjia",
 
-       // ×ÏöŞ¼×
+       // ç´«é®«ç”²
        ({
           "/clone/fam/etc/jiaopige-1",
           "/clone/fam/etc/jiaopige-2",
@@ -1214,7 +1214,7 @@ mapping combine_list = ([
           "/clone/fam/pill/dimai-5",
           "/clone/fam/pill/dimai-6"}) : "/clone/fam/armor/zijiaojia",
 
-      // ×ÏöŞÆ¤¸ï
+      // ç´«é®«çš®é©
       ({
           "/clone/fam/etc/jiaopi-1",
           "/clone/fam/etc/jiaopi-2",
@@ -1227,7 +1227,7 @@ mapping combine_list = ([
           "/clone/fam/etc/jiaopi-9",
           "/clone/fam/etc/jiaopi-10"}) : "/clone/fam/etc/jiaopige",
 
-      //·ï»ËÓğÃ«
+      //é³³å‡°ç¾½æ¯›
       ({
           "/clone/fam/etc/yumao-1",
           "/clone/fam/etc/yumao-2",
@@ -1236,7 +1236,7 @@ mapping combine_list = ([
           "/clone/fam/etc/yumao-5" }) : "/clone/fam/etc/yumao2",
 
 
-       // ·ï»ËÅû·ç
+       // é³³å‡°æŠ«é¢¨
        ({
           "/clone/fam/etc/yumao2-1",
           "/clone/fam/etc/yumao2-2",
@@ -1248,7 +1248,7 @@ mapping combine_list = ([
           "/clone/fam/etc/lv7a-1",
           "/clone/fam/etc/lv7a-2"}) : "/clone/fam/armor/fenghuangjia",
 
-       // °×»¢Æ¤¸ï
+       // ç™½è™çš®é©
       ({
           "/clone/fam/etc/hupi-1",
           "/clone/fam/etc/hupi-2",
@@ -1262,7 +1262,7 @@ mapping combine_list = ([
           "/clone/fam/etc/hupi-10"}) : "/clone/fam/etc/hupige",
 
 
-       // ·ï»ËÍ·¹Ú
+       // é³³å‡°é ­å† 
       ({
           "/clone/fam/etc/yumao-1",
           "/clone/fam/etc/yumao-2",
@@ -1271,7 +1271,7 @@ mapping combine_list = ([
           "/clone/fam/etc/fenghuangjiao-3",
           "/clone/fam/etc/fenghuangjiao-4"}) : "/clone/fam/armor/fenghuanghead",
 
-       // Ñ×ÁúÉñ¹Ú
+       // ç‚é¾ç¥å† 
       ({
           "/clone/fam/etc/longlin-1",
           "/clone/fam/etc/longlin-2",
@@ -1280,7 +1280,7 @@ mapping combine_list = ([
           "/clone/fam/etc/longjiao-3",
           "/clone/fam/etc/longjiao-4"}) : "/clone/fam/armor/yanlonghead",
 
-       // ×ÏòÔÍ·Â­
+       // ç´«è›Ÿé ­é¡±
       ({
           "/clone/fam/etc/jiaopi-1",
           "/clone/fam/etc/jiaopi-2",
@@ -1289,7 +1289,7 @@ mapping combine_list = ([
           "/clone/fam/etc/jiaoxu-3",
           "/clone/fam/etc/jiaoxu-4"}) : "/clone/fam/armor/zijiaohead",
 
-       // °×»¢»¤Íó
+       // ç™½è™è­·è…•
       ({
           "/clone/fam/etc/hugu-1",
           "/clone/fam/etc/hugu-2",
@@ -1299,21 +1299,21 @@ mapping combine_list = ([
           "/clone/fam/etc/hupi-4"}) : "/clone/fam/armor/baihuwrists",
 
 
-       // ·ï»ËÑü´ø
+       // é³³å‡°è…°å¸¶
       ({
           "/clone/fam/etc/fenghuangjin-1",
           "/clone/fam/etc/fenghuangjin-2",
           "/clone/fam/etc/fenghuangjin-3",
           "/clone/fam/etc/fenghuangjin-4"}) : "/clone/fam/armor/fenghuangyaodai",
 
-       // Éñ»¢Ñü´ø
+       // ç¥è™è…°å¸¶
       ({
           "/clone/fam/etc/hujin-1",
           "/clone/fam/etc/hujin-2",
           "/clone/fam/etc/hujin-3",
           "/clone/fam/etc/hujin-4"}) : "/clone/fam/armor/baihuyaodai",
 
-       // Éñ»¢Õ½¼×
+       // ç¥è™æˆ°ç”²
       ({
           "/clone/fam/etc/hupige-1",
           "/clone/fam/etc/hupige-2",
@@ -1325,21 +1325,21 @@ mapping combine_list = ([
           "/clone/fam/etc/lv7d-3",
           "/clone/fam/etc/lv7d-4"}) : "/clone/fam/armor/shenhujia",
 
-       // Ñ×ÁúÑü´ø
+       // ç‚é¾è…°å¸¶
       ({
           "/clone/fam/etc/longjin-1",
           "/clone/fam/etc/longjin-2",
           "/clone/fam/etc/longjin-3",
           "/clone/fam/etc/longjin-4"}) : "/clone/fam/armor/yanlongyaodai",
 
-       // ×ÏòÔÑü´ø
+       // ç´«è›Ÿè…°å¸¶
       ({
           "/clone/fam/etc/jiaojin-1",
           "/clone/fam/etc/jiaojin-2",
           "/clone/fam/etc/jiaojin-3",
           "/clone/fam/etc/jiaojin-4"}) : "/clone/fam/armor/zijiaoyaodai",
 
-       // À¶±¦Ê¯
+       // è—å¯¶çŸ³
       ({
           "/clone/quarry/item/lan-baoshikuang-1",
           "/clone/quarry/item/lan-baoshikuang-2",
@@ -1347,7 +1347,7 @@ mapping combine_list = ([
           "/clone/quarry/item/lan-baoshikuang-4",
 	  "/clone/quarry/item/lan-baoshikuang-5",}) : "/clone/fam/enchase/lan-baoshi",
 
-       // ºì±¦Ê¯
+       // ç´…å¯¶çŸ³
       ({
           "/clone/quarry/item/hong-baoshikuang-1",
           "/clone/quarry/item/hong-baoshikuang-2",
@@ -1356,31 +1356,31 @@ mapping combine_list = ([
           "/clone/quarry/item/hong-baoshikuang-5",}) : "/clone/fam/enchase/hong-baoshi",
           
 /*
-        // ·ç¶´Ö®ÑÛ¡¤·ç
+        // é¢¨æ´ä¹‹çœ¼ï¹’é¢¨
        ({ "/inherit/template/gem/skull7-1",
           "/inherit/template/gem/yelgem7-1",
           "/clone/tessera/rune20-1",
            }) : "/clone/item/fengdong.c",
 
-        // ÉñÖ®º®¾§¡¤±ù
+        // ç¥ä¹‹å¯’æ™¶ï¹’å†°
        ({ "/inherit/template/gem/skull7-1",
           "/inherit/template/gem/grngem7-1",
           "/clone/tessera/rune21-1",
            }) : "/clone/item/hanjing",
 
-        // Ê¥Ä§Ö®ĞÄ¡¤Ä§
+        // è–é­”ä¹‹å¿ƒï¹’é­”
        ({ "/inherit/template/gem/skull7-1",
           "/inherit/template/gem/blugem7-1",
           "/clone/tessera/rune22-1",
            }) : "/clone/item/mozhixin",
 
-        // »ğÖ®¾«Áé¡¤»ğ
+        // ç«ä¹‹ç²¾éˆï¹’ç«
        ({ "/inherit/template/gem/skull7-1",
           "/inherit/template/gem/redgem7-1",
           "/clone/tessera/rune23-1",
            }) : "/clone/item/huojingling",
 
-        // À×ÉñÖ®Í«¡¤µç
+        // é›·ç¥ä¹‹ç³ï¹’é›»
        ({ "/inherit/template/gem/skull7-1",
           "/inherit/template/gem/maggem7-1",
           "/clone/tessera/rune24-1",
@@ -1390,28 +1390,28 @@ mapping combine_list = ([
 
 int main(object me, string arg)
 {
-        mapping same;                   // ÅĞ¶ÏÖØ¸´µÄÎïÆ·µÄĞèÒªµÄmapping
-        string *item_list, *name_list;  // ºÏ²¢µÄÎïÆ·ID±íºÍÆ¥ÅäµÄ»ù±¾Ãû×Ö±í
-        string bname;                   // ÎïÆ·¶ÔÓ¦µÄÎÄ¼şµÄ»ù±¾Ãû×Ö
-        object *ob_list;                // ºÏ²¢µÄËùÓĞÎïÆ·
-        string *per;                    // mappingÖĞ¼ÇÂ¼µÄ¿ÉºÏ²¢µÄ»ù±¾Ãû×Ö±í
-        object obj;                     // Éú³ÉµÄÎïÆ·
+        mapping same;                   // åˆ¤æ–·é‡å¾©çš„ç‰©å“çš„éœ€è¦çš„mapping
+        string *item_list, *name_list;  // åˆä¸¦çš„ç‰©å“IDè¡¨å’ŒåŒ¹é…çš„åŸºæœ¬åå­—è¡¨
+        string bname;                   // ç‰©å“å°æ‡‰çš„æ–‡ä»¶çš„åŸºæœ¬åå­—
+        object *ob_list;                // åˆä¸¦çš„æ‰€æœ‰ç‰©å“
+        string *per;                    // mappingä¸­è¨˜éŒ„çš„å¯åˆä¸¦çš„åŸºæœ¬åå­—è¡¨
+        object obj;                     // ç”Ÿæˆçš„ç‰©å“
         int mp, i;
 
         if (! arg)
-                return notify_fail("ÄãÒªºÏ²¢Ê²Ã´ÎïÆ·£¿\n");
+                return notify_fail("ä½ è¦åˆä¸¦ä»€éº¼ç‰©å“ï¼Ÿ\n");
 
         if (me->is_busy())
-                return notify_fail("ÏÈÃ¦ÍêÁËÄãµÄÊÂÇéÔÙ×öÕâ¼şÊÂÇé°É£¡\n");
+                return notify_fail("å…ˆå¿™å®Œäº†ä½ çš„äº‹æƒ…å†åšé€™ä»¶äº‹æƒ…å§ï¼\n");
 
         if (me->is_fighting())
-                return notify_fail("ÄãÏÖÔÚÕıÔÚ´ò¼Ü£¬Ã»Ê±¼ä×öÕâĞ©ÊÂÇé¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£åœ¨æ‰“æ¶ï¼Œæ²’æ™‚é–“åšé€™äº›äº‹æƒ…ã€‚\n");
 
         if( query("max_jingli", me)<300 )
-                return notify_fail("ÄãÏÖÔÚµÄ¾«Á¦ĞŞÎªÓĞÏŞ£¬ÎŞ·¨ºÏ³ÉÎïÆ·¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çš„ç²¾åŠ›ä¿®ç‚ºæœ‰é™ï¼Œç„¡æ³•åˆæˆç‰©å“ã€‚\n");
 
         if( query("jingli", me)<300 )
-                return notify_fail("ÄãÏÖÔÚ¾«Á¦²»¼Ã£¬ÎŞ·¨ºÏ³ÉÎïÆ·¡£\n");
+                return notify_fail("ä½ ç¾åœ¨ç²¾åŠ›ä¸æ¿Ÿï¼Œç„¡æ³•åˆæˆç‰©å“ã€‚\n");
 
         item_list = explode(arg, "&");
         ob_list   = allocate(sizeof(item_list));
@@ -1420,23 +1420,23 @@ int main(object me, string arg)
         for (i = 0; i < sizeof(item_list); i++)
         {
                 bname = item_list[i];
-                if (! bname || bname == " ") return notify_fail("¸ñÊ½´íÎó¡£\n");
+                if (! bname || bname == " ") return notify_fail("æ ¼å¼éŒ¯èª¤ã€‚\n");
                 while (bname[0] == ' ') bname = bname[1..<0];
-                if( sizeof(bname) < 2 ) notify_fail("¸ñÊ½´íÎó¡£\n");
+                if( sizeof(bname) < 2 ) notify_fail("æ ¼å¼éŒ¯èª¤ã€‚\n");
                 while (bname[strlen(bname) - 1] == ' ') bname = bname[0..<2];
                 ob_list[i] = present(bname, me);
 
                 if (! objectp(ob_list[i]))
-                        return notify_fail("ÄãÉíÉÏÃ»ÓĞ " + bname + " ÕâÖÖÎïÆ·°¡¡£\n");
+                        return notify_fail("ä½ èº«ä¸Šæ²’æœ‰ " + bname + " é€™ç¨®ç‰©å“å•Šã€‚\n");
 
                 /*
                 if( query("no_identify", ob_list[i]) )
-                        return notify_fail("ÄãÉíÉÏµÄ " + bname + " »¹Ã»ÓĞÈ¥¼ø¶¨°¡¡£\n");
+                        return notify_fail("ä½ èº«ä¸Šçš„ " + bname + " é‚„æ²’æœ‰å»é‘’å®šå•Šã€‚\n");
                 */
 
                 if (i > 0 && member_array(ob_list[i], ob_list[0..i - 1]) != -1)
-                        return notify_fail("ºÏ²¢ÎïÆ·ĞèÒªÖ¸Ã÷²»Í¬µÄÎïÆ·£¬²»ÒªÖØ¸´Ö¸"
-                                           "Ã÷Ò»¼şÎïÆ·¡£\n");
+                        return notify_fail("åˆä¸¦ç‰©å“éœ€è¦æŒ‡æ˜ä¸åŒçš„ç‰©å“ï¼Œä¸è¦é‡å¾©æŒ‡"
+                                           "æ˜ä¸€ä»¶ç‰©å“ã€‚\n");
 
                 bname = base_name(ob_list[i]);
                 /*
@@ -1450,8 +1450,8 @@ int main(object me, string arg)
                 name_list[i] = bname + "-" + (string) same[bname];
         }
 
-        tell_object(me, HIW "\nÄãË«Ä¿Î¢±Õ£¬½«ÊıÑùÎïÆ·ÄıÓÚÕÆÖĞ£¬ÔË×ªÄÚ¾¢ÆÈ"
-                        "Ê¹ËüÃÇ½»ÈÚ¡£\n" NOR);
+        tell_object(me, HIW "\nä½ é›™ç›®å¾®é–‰ï¼Œå°‡æ•¸æ¨£ç‰©å“å‡äºæŒä¸­ï¼Œé‹è½‰å…§å‹è¿«"
+                        "ä½¿å®ƒå€‘äº¤èã€‚\n" NOR);
 
         me->start_busy(1);
         addn("jingli", -200, me);
@@ -1459,7 +1459,7 @@ int main(object me, string arg)
         {
                 if (per - name_list == ({ }) && sizeof(per) == sizeof(name_list))
                 {
-                        // ÕÒµ½ÁËºÏÊÊµÄ×éºÏ
+                        // æ‰¾åˆ°äº†åˆé©çš„çµ„åˆ
                         obj = new(combine_list[per]);
                         for (i = 0; i < sizeof(ob_list); i++)
                         {
@@ -1474,13 +1474,13 @@ int main(object me, string arg)
                                         destruct(ob_list[i]);
                                 }
                         }
-                        message("vision", HIW "\nö®Ê±¼äÖ»¼û" + me->name() + HIW "ÕÆĞÄÒ»µÀ"
-                                          "¹â»ªÉÁ¹ı£¬µ«×ªË²¼´ÊÅ£¬ËÆºõ·¢ÉúÁËÊ²Ã´²»Í¬Ñ°³£µÄ"
-                                          "ÊÂÇé¡£\n\n" NOR, environment(me), ({me}));
+                        message("vision", HIW "\néœæ™‚é–“åªè¦‹" + me->name() + HIW "æŒå¿ƒä¸€é“"
+                                          "å…‰è¯é–ƒéï¼Œä½†è½‰ç¬å³é€ï¼Œä¼¼ä¹ç™¼ç”Ÿäº†ä»€éº¼ä¸åŒå°‹å¸¸çš„"
+                                          "äº‹æƒ…ã€‚\n\n" NOR, environment(me), ({me}));
 
-                        tell_object(me, HIW "ö®Ê±¼äÖ»¼ûÍòµÀ¹â»ª¼²ÉÁ¶ø¹ı£¬Äã¼±Ã¦Ì¯¿ªÊÖÕÆ£¬"
-                                        "·¢ÏÖÕÆĞÄ\n»íÈ»³öÏÖÁËÒ»"+query("unit", obj)+
-                                        obj->name() + HIW "£¬ÔÌÑú×ÅÆßÉ«Ï¼¹â¡£\n\n" NOR);
+                        tell_object(me, HIW "éœæ™‚é–“åªè¦‹è¬é“å…‰è¯ç–¾é–ƒè€Œéï¼Œä½ æ€¥å¿™æ”¤é–‹æ‰‹æŒï¼Œ"
+                                        "ç™¼ç¾æŒå¿ƒ\nè±ç„¶å‡ºç¾äº†ä¸€"+query("unit", obj)+
+                                        obj->name() + HIW "ï¼Œè˜Šæ¼¾è‘—ä¸ƒè‰²éœå…‰ã€‚\n\n" NOR);
 
                         if( query("value", obj) )
                         {
@@ -1490,9 +1490,9 @@ int main(object me, string arg)
                                 if (mp > 100) mp = 100;
 
                                 addn("magic_points", mp, me);
-                                tell_object(me, HIC "ÄãÍ¨¹ıºÏ³É"+ obj->name() + HIC "µÄÀú"
-                                                "Á·¹ı³Ì£¬´Ó¶ø»ñµÃÁË" + chinese_number(mp) +
-                                                "µãÁé»Û¡£\n" NOR);
+                                tell_object(me, HIC "ä½ é€šéåˆæˆ"+ obj->name() + HIC "çš„æ­·"
+                                                "ç·´éç¨‹ï¼Œå¾è€Œç²å¾—äº†" + chinese_number(mp) +
+                                                "é»éˆæ…§ã€‚\n" NOR);
                         }
                         addn("max_jingli", -1, me);
                         obj->move(me, 1);
@@ -1500,8 +1500,8 @@ int main(object me, string arg)
                         return 1;
                 }
         }
-        tell_object(me, HIR "¿ÉÊÇ¹ıÁË°ëÌì£¬ËÆºõÃ»ÓĞÈÎºÎ±ä»¯£¬Äã²»½ûÒ»Éù"
-                        "³¤Ì¾¡£\n" NOR);
+        tell_object(me, HIR "å¯æ˜¯éäº†åŠå¤©ï¼Œä¼¼ä¹æ²’æœ‰ä»»ä½•è®ŠåŒ–ï¼Œä½ ä¸ç¦ä¸€è²"
+                        "é•·å˜†ã€‚\n" NOR);
 
         return 1;
 }
@@ -1509,12 +1509,12 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : combine <ÌØÊâÎïÆ·> & <ÌØÊâÎïÆ·> & ¡­¡­
+æŒ‡ä»¤æ ¼å¼ : combine <ç‰¹æ®Šç‰©å“> & <ç‰¹æ®Šç‰©å“> & â€¦â€¦
 
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄã½«Ä³Ğ©ÌØÊâÎïÆ·ºÏ²¢³ÉÒ»ÖÖĞÂµÄÎïÆ·£¬ÄÄĞ©²ÅÄÜºÏ
-²¢£¿Õâ¾ÍÒª¿¿ÄãÈ¥·¢¾òÁË¡£Ã¿´ÎºÏ²¢¶¼»áËğÊ§Ò»µã¾«Á¦µÄÉÏÏŞ¡£Èç¹û
-ÒªºÏ²¢µÄ¼¸¸öÎïÆ·Ãû×ÖÏàÍ¬£¬ÔòĞèÒªÖ¸Ã÷ËûÃÇµÄĞòºÅ£¬±ÈÈçÓĞÈı¸ö×ê
-Ê¯£¬Èç¹ûÒªºÏÒ»£¬ÔòĞèÒªÊäÈë£º
+é€™å€‹æŒ‡ä»¤å¯ä»¥è®“ä½ å°‡æŸäº›ç‰¹æ®Šç‰©å“åˆä¸¦æˆä¸€ç¨®æ–°çš„ç‰©å“ï¼Œå“ªäº›æ‰èƒ½åˆ
+ä¸¦ï¼Ÿé€™å°±è¦é ä½ å»ç™¼æ˜äº†ã€‚æ¯æ¬¡åˆä¸¦éƒ½æœƒæå¤±ä¸€é»ç²¾åŠ›çš„ä¸Šé™ã€‚å¦‚æœ
+è¦åˆä¸¦çš„å¹¾å€‹ç‰©å“åå­—ç›¸åŒï¼Œå‰‡éœ€è¦æŒ‡æ˜ä»–å€‘çš„åºè™Ÿï¼Œæ¯”å¦‚æœ‰ä¸‰å€‹é‘½
+çŸ³ï¼Œå¦‚æœè¦åˆä¸€ï¼Œå‰‡éœ€è¦è¼¸å…¥ï¼š
 
   combine diamond & diamond 2 & diamond 3
 

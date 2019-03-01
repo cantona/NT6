@@ -1,14 +1,14 @@
-// xu.c Ğì³¤ÀÏ
+// xu.c å¾é•·è€
 
 #include <ansi.h>
 inherit NPC;
 
 void create()
 {
-        set_name("Ğì³¤ÀÏ", ({ "xu  zhanglao"}));
-        set("nickname", "Ø¤°ïÅÑÍ½");
-        set("long", "Ø¤°ïµÄÅÑÍ½£¬¾İËµØ¤°ïµÜ×ÓÕıÔÚËÄ´¦´òÌ½ËûµÄ×Ù¼£¡£\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("å¾é•·è€", ({ "xu  zhanglao"}));
+        set("nickname", "ä¸å¹«å›å¾’");
+        set("long", "ä¸å¹«çš„å›å¾’ï¼Œæ“šèªªä¸å¹«å¼Ÿå­æ­£åœ¨å››è™•æ‰“æ¢ä»–çš„è¹¤è·¡ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 66);
         set("attitude", "peaceful");
         set("str", 28);

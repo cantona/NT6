@@ -1,82 +1,82 @@
 // This program is a part of NITAN MudLIB
 
 mapping region_names = ([
-        "register" : "»ìãç½ì",
-        "baituo"   : "Î÷Óò°×ÍÕÉ½",
-        "beijing"  : "±±¾©³Ç",
-        "changan"  : "³¤°²³Ç",
-        "city"     : "ÑïÖİ³Ç",
-        "city2"    : "±±¾©³Ç",
-        "city3"    : "³É¶¼³Ç",
-        "chengdu"  : "³É¶¼³Ç",
-        "dali"     : "ÔÆÄÏ´óÀí³Ç",
-        "death"    : "¹íÃÅ¹Ø",
-        "emei"     : "ËÄ´¨¶ëáÒ",
-        "foshan"   : "¹ã¶«·ğÉ½",
-        "fuzhou"   : "¸£½¨¸£Öİ",
-        "gaochang"  : "¸ß²ı",
-        "gaibang"  : "Ø¤°ïËùÔÚµØ",
-        "guanwai"  : "¹ØÍâ¾³ÄÚ",
-        "guiyun"   : "¹éÔÆ×¯",
-        "gumu"     : "¹ÅÄ¹ÅÉ¾³ÄÚ",
-        "hangzhou" : "º¼Öİ³Ç",
-        "heimuya"  : "ºÚÄ¾ÑÂ¾³ÄÚ",
-        "hengshan" : "ºãÉ½¾³ÄÚ",
-        "henshan"  : "ºâÉ½¾³ÄÚ",
-        "huanggon" : "»Ê¹¬",
-        "huanghe"  : "»ÆºÓ±ß",
-        "huashan"  : "»ªÉ½¾³ÄÚ",
-        "hudie"    : "ºûµû¹È",
-        "jinshe"   : "»ªÉ½½ğÉß¶´",
-        "jingzhou" : "¾£Öİ¾³ÄÚ",
-        "jianzhong": "½£Ú£",
-        "lingjiu"  : "ÁéğÕ¹¬¾³ÄÚ",
-        "lingzhou" : "ÁéÖİ³Ç",
-        "luoyang"  : "ÂåÑô¾³ÄÚ",
-        "lanzhou"  : "À¼Öİ¾³ÄÚ",
-        "jueqing" : "¾øÇé¹È",
-        "jiaxing" : "¼ÎĞË",
-        "kunlun"  : "À¥ÂØ",
-        "kaifeng"  : "¿ª·â¾³ÄÚ",
-        "kunming"  : "À¥Ã÷¾³ÄÚ",
-        "meizhuang": "Ã·×¯",
-        "mingjiao" : "Ã÷½Ì¾³ÄÚ",
-        "pk"           : "ÍÀÈË³¡",
-        "qingcheng": "Çà³ÇÉ½¾³ÄÚ",
-        "quanzhen" : "È«ÕæÅÉ¾³ÄÚ",
-        "shaolin"  : "ÉÙÁÖËÂ¾³ÄÚ",
-        "shenlong" : "ÉñÁúµº¾³ÄÚ",
-        "songshan" : "áÔÉ½¾³ÄÚ",
-        "suzhou"   : "ËÕÖİ³Ç",
-        "taishan"  : "Ì©É½¾³ÄÚ",
-        "taohua"   : "ÌÒ»¨µº¾³ÄÚ",
-        "tianlongsi": "ÌìÁúËÂ¾³ÄÚ",
-        "tulong"   : "Íò°²ËÂ»òÕßÍõÅÌÉ½µº",
-        "village"  : "»ªÉ½´å",
-        "wanjiegu" : "Íò½Ù¹È",
-        "wizard"   : "ÏÉ½ç",
-        "wudang"   : "Îäµ±É½¾³ÄÚ",
-        "wuxi"     : "ÎŞÎı",
-        "xiakedao" : "ÏÀ¿Íµº¾³ÄÚ",
-        "xiangyang": "ÏåÑô³Ç",
-        "xiaoyao"  : "åĞÒ£ÅÉ¾³ÄÚ",
-        "xingxiu"  : "ĞÇËŞÅÉ¾³ÄÚ",
-        "dragon"   : "Î÷Óò",
-        "xuedao"   : "Ñªµ¶ÃÅ¾³ÄÚ",
-        "xueshan"  : "Ñ©É½ËÂ",
-        "yangziwu" : "Ñà×ÓÎÙ",
-        "yuanyue" : "Ô²ÔÂÉ½×¯",
-        "zhongzhou": "ÖĞÖİ¾³ÄÚ",
-        "sdxl"     : "½£Ú£",
-        "tangmen"  : "ËÄ´¨ÌÆÃÅ¾³ÄÚ",
-        "wudu"    : "Îå¶¾½Ì",
-        "quanzhou"   : "ÈªÖİ",
-        "newbie"  : "¹Å´å",
+        "register" : "æ··æ²Œå±†",
+        "baituo"   : "è¥¿åŸŸç™½é§å±±",
+        "beijing"  : "åŒ—äº¬åŸ",
+        "changan"  : "é•·å®‰åŸ",
+        "city"     : "æšå·åŸ",
+        "city2"    : "åŒ—äº¬åŸ",
+        "city3"    : "æˆéƒ½åŸ",
+        "chengdu"  : "æˆéƒ½åŸ",
+        "dali"     : "é›²å—å¤§ç†åŸ",
+        "death"    : "é¬¼é–€é—œ",
+        "emei"     : "å››å·å³¨åµ‹",
+        "foshan"   : "å»£æ±ä½›å±±",
+        "fuzhou"   : "ç¦å»ºç¦å·",
+        "gaochang"  : "é«˜æ˜Œ",
+        "gaibang"  : "ä¸å¹«æ‰€åœ¨åœ°",
+        "guanwai"  : "é—œå¤–å¢ƒå…§",
+        "guiyun"   : "æ­¸é›²èŠ",
+        "gumu"     : "å¤å¢“æ´¾å¢ƒå…§",
+        "hangzhou" : "æ­å·åŸ",
+        "heimuya"  : "é»‘æœ¨å´–å¢ƒå…§",
+        "hengshan" : "æ†å±±å¢ƒå…§",
+        "henshan"  : "è¡¡å±±å¢ƒå…§",
+        "huanggon" : "çš‡å®®",
+        "huanghe"  : "é»ƒæ²³é‚Š",
+        "huashan"  : "è¯å±±å¢ƒå…§",
+        "hudie"    : "è´è¶è°·",
+        "jinshe"   : "è¯å±±é‡‘è›‡æ´",
+        "jingzhou" : "èŠå·å¢ƒå…§",
+        "jianzhong": "åŠå¡š",
+        "lingjiu"  : "éˆé·²å®®å¢ƒå…§",
+        "lingzhou" : "éˆå·åŸ",
+        "luoyang"  : "æ´›é™½å¢ƒå…§",
+        "lanzhou"  : "è˜­å·å¢ƒå…§",
+        "jueqing" : "çµ•æƒ…è°·",
+        "jiaxing" : "å˜‰èˆˆ",
+        "kunlun"  : "æ˜†ä¾–",
+        "kaifeng"  : "é–‹å°å¢ƒå…§",
+        "kunming"  : "æ˜†æ˜å¢ƒå…§",
+        "meizhuang": "æ¢…èŠ",
+        "mingjiao" : "æ˜æ•™å¢ƒå…§",
+        "pk"           : "å± äººå ´",
+        "qingcheng": "é’åŸå±±å¢ƒå…§",
+        "quanzhen" : "å…¨çœŸæ´¾å¢ƒå…§",
+        "shaolin"  : "å°‘æ—å¯ºå¢ƒå…§",
+        "shenlong" : "ç¥é¾å³¶å¢ƒå…§",
+        "songshan" : "åµ©å±±å¢ƒå…§",
+        "suzhou"   : "è˜‡å·åŸ",
+        "taishan"  : "æ³°å±±å¢ƒå…§",
+        "taohua"   : "æ¡ƒèŠ±å³¶å¢ƒå…§",
+        "tianlongsi": "å¤©é¾å¯ºå¢ƒå…§",
+        "tulong"   : "è¬å®‰å¯ºæˆ–è€…ç‹ç›¤å±±å³¶",
+        "village"  : "è¯å±±æ‘",
+        "wanjiegu" : "è¬åŠ«è°·",
+        "wizard"   : "ä»™ç•Œ",
+        "wudang"   : "æ­¦ç•¶å±±å¢ƒå…§",
+        "wuxi"     : "ç„¡éŒ«",
+        "xiakedao" : "ä¿ å®¢å³¶å¢ƒå…§",
+        "xiangyang": "è¥„é™½åŸ",
+        "xiaoyao"  : "é€é™æ´¾å¢ƒå…§",
+        "xingxiu"  : "æ˜Ÿå®¿æ´¾å¢ƒå…§",
+        "dragon"   : "è¥¿åŸŸ",
+        "xuedao"   : "è¡€åˆ€é–€å¢ƒå…§",
+        "xueshan"  : "é›ªå±±å¯º",
+        "yangziwu" : "ç‡•å­é¢",
+        "yuanyue" : "åœ“æœˆå±±èŠ",
+        "zhongzhou": "ä¸­å·å¢ƒå…§",
+        "sdxl"     : "åŠå¡š",
+        "tangmen"  : "å››å·å”é–€å¢ƒå…§",
+        "wudu"    : "äº”æ¯’æ•™",
+        "quanzhou"   : "æ³‰å·",
+        "newbie"  : "å¤æ‘",
 ]);
 
 mapping place = ([
         "city"     : ({ 
-                "ÑïÖİ½¼Íâ", ({ 
+                "æšå·éƒŠå¤–", ({ 
                         "/d/city/jiaowai1",
                         "/d/city/jiaowai2",
                         "/d/city/jiaowai3",
@@ -92,7 +92,7 @@ mapping place = ([
                         "/d/city/jiaowai13"
                  }),}),
         "guiyun"   : ({ 
-                "Ì«ºşÒ»´ø", ({ 
+                "å¤ªæ¹–ä¸€å¸¶", ({ 
                         "/d/guiyun/shulin1",
                         "/d/guiyun/shulin2",
                         "/d/guiyun/shulin3",
@@ -103,7 +103,7 @@ mapping place = ([
                         "/d/guiyun/tiandi"
                  }),}),
         "huanghe"   : ({ 
-                "»ÆºÓÒ»´ø", ({ 
+                "é»ƒæ²³ä¸€å¸¶", ({ 
                         "/d/huanghe/caodi1",
                         "/d/huanghe/caodi2",
                         "/d/huanghe/shulin1",
@@ -147,7 +147,7 @@ mapping place = ([
                  }),}),
 
         "guanwai"   : ({
-                "³¤°×É½ÉÏ", ({ 
+                "é•·ç™½å±±ä¸Š", ({ 
                         "/d/guanwai/milin1",
                         "/d/guanwai/milin2",
                         "/d/guanwai/milin3",
@@ -168,7 +168,7 @@ mapping place = ([
                  }),}),
 
         "dali"      : ({
-                "´óÀí½¼Íâ", ({ 
+                "å¤§ç†éƒŠå¤–", ({ 
                         "/d/dali/atoubu",
                     "/d/dali/badidian",
                     "/d/dali/banshan",
@@ -266,7 +266,7 @@ mapping place = ([
 
 
         "foshan"   : ({
-                "·ğÉ½Ò»´ø", ({ 
+                "ä½›å±±ä¸€å¸¶", ({ 
                         "/d/foshan/nanling",
                     "/d/foshan/road1",
                     "/d/foshan/road2",
@@ -284,7 +284,7 @@ mapping place = ([
                     "/d/foshan/road14"
                  }),}),
         "fuzhou"   : ({
-                "¸£ÖİÒ»´ø", ({ "/d/fuzhou/fzroad1",
+                "ç¦å·ä¸€å¸¶", ({ "/d/fuzhou/fzroad1",
                     "/d/fuzhou/fzroad2",
                     "/d/fuzhou/fzroad3",
                     "/d/fuzhou/fzroad4",
@@ -311,7 +311,7 @@ mapping place = ([
                     "/d/fuzhou/yushan"
                  }),}),
         "hengshan"  : ({
-                "ºãÉ½Ò»´ø", ({ "/d/hengshan/cuiping1",
+                "æ†å±±ä¸€å¸¶", ({ "/d/hengshan/cuiping1",
                     "/d/hengshan/cuiping2",
                     "/d/hengshan/cuipinggu1",
                     "/d/hengshan/cuipinggu2",
@@ -329,7 +329,7 @@ mapping place = ([
                     "/d/hengshan/zhanqiao"
                  }),}),
         "hengshan"   : ({
-                "ºâÉ½Ò»´ø", ({ "/d/henshan/banshan",
+                "è¡¡å±±ä¸€å¸¶", ({ "/d/henshan/banshan",
                     "/d/henshan/chidifeng",
                     "/d/henshan/denggaotai",
                     "/d/henshan/heishatan",
@@ -372,7 +372,7 @@ mapping place = ([
 
 
         "huashan" :  ({
-                "»ªÉ½Ò»´ø", ({ "/d/huashan/baichi",
+                "è¯å±±ä¸€å¸¶", ({ "/d/huashan/baichi",
                     "/d/huashan/canglong",
                     "/d/huashan/chaopath1",
                     "/d/huashan/chaopath2",
@@ -417,7 +417,7 @@ mapping place = ([
                     "/d/huashan/ziqitai"
                  }),}),
         "qingcheng" :  ({
-                "Çà³ÇÉ½ÉÏ", ({ "/d/qingcheng/gulongqiao",
+                "é’åŸå±±ä¸Š", ({ "/d/qingcheng/gulongqiao",
                       "/d/qingcheng/maguchi",
                       "/d/qingcheng/path1",
                       "/d/qingcheng/path2",
@@ -435,7 +435,7 @@ mapping place = ([
                       "/d/qingcheng/zushidian"
                  }),}),
         "lingzhou" : ({ 
-                "ÁéÖİÒ»´ø", ({ "/d/lingzhou/chiling",
+                "éˆå·ä¸€å¸¶", ({ "/d/lingzhou/chiling",
                     "/d/lingzhou/dalu",
                     "/d/lingzhou/deling",
                     "/d/lingzhou/gongling",
@@ -456,7 +456,7 @@ mapping place = ([
                  }),}),
 
         "quanzhen"   : ({
-                "ÖÕÄÏÉ½Ò»´ø", ({ "/d/quanzhen/baishulin1",
+                "çµ‚å—å±±ä¸€å¸¶", ({ "/d/quanzhen/baishulin1",
                     "/d/quanzhen/baishulin2",
                     "/d/quanzhen/baishulin3",
                     "/d/quanzhen/baishulin4",
@@ -486,7 +486,7 @@ mapping place = ([
                     "/d/quanzhen/xiaomiao",
                  }),}),
         "gumu"   : ({
-                "ÖÕÄÏÉ½Ò»´ø", ({
+                "çµ‚å—å±±ä¸€å¸¶", ({
                     "/d/gumu/baimatang",
                     "/d/gumu/baoziyan",
                     "/d/gumu/caodi",
@@ -539,7 +539,7 @@ mapping place = ([
                  }),}),
 
         "songshan"  : ({
-                "áÔÉ½Ò»´ø", ({ "/d/songshan/chaotian",
+                "åµ©å±±ä¸€å¸¶", ({ "/d/songshan/chaotian",
                     "/d/songshan/chongsheng",
                     "/d/songshan/fengchantai",
                     "/d/songshan/luyanpubu",
@@ -555,7 +555,7 @@ mapping place = ([
                     "/d/songshan/tianzhongge"
                  }),}),
         "taishan" :  ({
-                "Ì©É½Ò»´ø", ({ "/d/taishan/baihe",
+                "æ³°å±±ä¸€å¸¶", ({ "/d/taishan/baihe",
                     "/d/taishan/baozang",
                     "/d/taishan/beitian",
                     "/d/taishan/daizong",
@@ -580,7 +580,7 @@ mapping place = ([
                     "/d/taishan/zhangren"
                  }),}),
         "xueshan" : ({
-                "Ñ©É½½ÅÏÂ", ({ "/d/xueshan/caoyuan",
+                "é›ªå±±è…³ä¸‹", ({ "/d/xueshan/caoyuan",
                     "/d/xueshan/caoyuan1",
                     "/d/xueshan/hubian1",
                     "/d/xueshan/hubian2",

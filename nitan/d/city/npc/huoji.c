@@ -1,15 +1,15 @@
-// huoji. Ò©ÆÌ»ï¼Æ
+// huoji. è—¥èˆ–ä¼™è¨ˆ
 
 inherit BUNCHER; 
 inherit F_DEALER;
 
 void create()
 {
-        set_name("Ò©ÆÌ»ï¼Æ", ({ "yaopu huoji", "huoji" }));
+        set_name("è—¥èˆ–ä¼™è¨ˆ", ({ "yaopu huoji", "huoji" }));
         set("str", 20);
-        set("gender", "ÄÐÐÔ");
+        set("gender", "ç”·æ€§");
         set("age", 18);
-        set("long", "ËûÊÇÆ½ÉñÒ½´ÓÏçÏÂÕÐÀ´°ïÃ¦µÄ¡£\n");
+        set("long", "ä»–æ˜¯å¹³ç¥žé†«å¾žé„‰ä¸‹æ‹›ä¾†å¹«å¿™çš„ã€‚\n");
         set("combat_exp", 250);
         set("attitude", "friendly");
         set("vendor_goods", ({

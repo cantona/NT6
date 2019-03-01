@@ -1,4 +1,4 @@
-// tianxianggao.c ÌìÏã¶ÏĞø¸à
+// tianxianggao.c å¤©é¦™æ–·çºŒè†
 
 inherit ITEM;
 #include <ansi.h>
@@ -10,12 +10,12 @@ void init()
 
 void create()
 {
-        set_name(HIY"ÌìÏã¶ÏĞø¸à"NOR, ({"tianxiang duanxugao", "gao"}));
-        set("unit", "¿é");
+        set_name(HIY"å¤©é¦™æ–·çºŒè†"NOR, ({"tianxiang duanxugao", "gao"}));
+        set("unit", "å¡Š");
         set("vegetable", 25);
         set("nostrum", 13);
         set("level", 50);
-        set("long", "ÕâÊÇÒ»¿éÌìÏã¶ÏĞø¸à£¬ÊÇºãÉ½ÅÉµÄÁÆÉËÊ¥Ò©¡£ÊÜÉËÖ®ºó£¬ÊÊÊ±·ó(fu)Ò©£¬µ±ÓĞÆğËÀÖ®¹¦¡£\n");
+        set("long", "é€™æ˜¯ä¸€å¡Šå¤©é¦™æ–·çºŒè†ï¼Œæ˜¯æ†å±±æ´¾çš„ç™‚å‚·è–è—¥ã€‚å—å‚·ä¹‹å¾Œï¼Œé©æ™‚æ•·(fu)è—¥ï¼Œç•¶æœ‰èµ·æ­»ä¹‹åŠŸã€‚\n");
         set("pour_type", "1");
         setup();
 }
@@ -24,17 +24,17 @@ int do_fu(string arg)
 {
         object me=this_player();
 
-        if(!id(arg)) return notify_fail("ÄãÒª·óÊ²Ã´£¿\n");
+        if(!id(arg)) return notify_fail("ä½ è¦æ•·ä»€éº¼ï¼Ÿ\n");
         if(!present(this_object(), me))
-                return notify_fail("ÄãÒª·óÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦æ•·ä»€éº¼ï¼Ÿ\n");
         if( me->is_busy() )
-                return notify_fail("±ğ¼±£¬ÂıÂı·ó£¬Ğ¡ĞÄ±ğ·óÍáÁË¡£\n");
+                return notify_fail("åˆ¥æ€¥ï¼Œæ…¢æ…¢æ•·ï¼Œå°å¿ƒåˆ¥æ•·æ­ªäº†ã€‚\n");
 
         if( query("eff_jing", me) >= query("max_jing", me) && 
                 query("eff_qi", me) >= query("max_qi", me) && 
                 query("neili", me) >= query("max_neili", me) )
         {
-                message_vision("$NÃ»±ØÒª·óÌìÏã¶ÏĞø¸à¡£\n",me);
+                message_vision("$Næ²’å¿…è¦æ•·å¤©é¦™æ–·çºŒè†ã€‚\n",me);
         }
         else
         {
@@ -43,7 +43,7 @@ int do_fu(string arg)
                 set("eff_qi",query("max_qi",  me), me);
                 set("qi",query("eff_qi",  me), me);
                 addn("neili",query("max_neili",  me), me);
-                message_vision("$NÄÃ³öÒ»¿éÌìÏã¶ÏĞø¸à£¬ÔËÄÚÁ¦ÎæÈÈºó£¬¡°Å¾¡±µØÒ»Éù£¬·óÔÚ´´¿ÚÉÏ¡£\n",me);
+                message_vision("$Næ‹¿å‡ºä¸€å¡Šå¤©é¦™æ–·çºŒè†ï¼Œé‹å…§åŠ›æ‚ç†±å¾Œï¼Œâ€œå•ªâ€åœ°ä¸€è²ï¼Œæ•·åœ¨å‰µå£ä¸Šã€‚\n",me);
                 destruct(this_object());
         }
         return 1;

@@ -4,10 +4,10 @@ inherit  ROOM;
 
 void  create  ()
 {
-        set("short",  "��ٵ�");
+        set("short",  "大官道");
         set("long",  @LONG
-����һ��������ֱ�Ĺٵ�������ݵ���ʮ�����ۡ�������ͨ�򺯹�
-�أ�������ֱ�ﳤ���ǡ�
+這是一條寬闊筆直的官道，足可容得下十馬並馳。往東南通向函谷
+關，往西則直達長安城。
 LONG);
         set("exits",  ([  /*  sizeof()  ==  2  */
                 "north"      :  __DIR__"boshulin1",

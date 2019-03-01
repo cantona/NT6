@@ -1,6 +1,6 @@
 // This program is a part of NT MudLIB 
 // Written by Lonely@nitan.org
-// boots.c Æ¤Ñ¥
+// boots.c çš®é´
  
 #include <ansi.h>
 #include <armor.h>
@@ -9,14 +9,14 @@ inherit BOOTS;
  
 void create()
 {
-        set_name(HIY "Éñ" HIW "Ö®" HIM "×£¸£" NOR YEL "Æ¤Ñ¥"NOR, ({ "zhufu boots", "pi xue", "xue", "boots" }) );
+        set_name(HIY "ç¥" HIW "ä¹‹" HIM "ç¥ç¦" NOR YEL "çš®é´"NOR, ({ "zhufu boots", "pi xue", "xue", "boots" }) );
         set_weight(200);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
                 set("material", "leather");
-                set("unit", "Ë«");
-                set("long", "ÕâÊÇÒ»Ë«ÓÃÉÏºÃÅ£Æ¤×÷µÄÆ¤Ñ¥£¬ÓÃÒÔ±£»¤×ã²¿¡£\n");
+                set("unit", "é›™");
+                set("long", "é€™æ˜¯ä¸€é›™ç”¨ä¸Šå¥½ç‰›çš®ä½œçš„çš®é´ï¼Œç”¨ä»¥ä¿è­·è¶³éƒ¨ã€‚\n");
                 set("value", 1000);
                 set("armor_prop/dodge", 20);
         }
@@ -24,7 +24,7 @@ void create()
         set("auto_load", 1); 
         set("mod_mark", "A2014");  
         set("mod_level", "M2010");  
-        set("mod_name", HIY"Éñ"HIW"Ö®"HIM"×£¸£"NOR YEL"Ì××°"NOR); 
+        set("mod_name", HIY"ç¥"HIW"ä¹‹"HIM"ç¥ç¦"NOR YEL"å¥—è£"NOR); 
 
         set("enchase", ([ 
                 "flute" : 1,
@@ -38,7 +38,7 @@ void create()
         set("insert", ([ /* sizeof() == 1 */
                 "1" : ([ /* sizeof() == 3 */
                         "id" : "magic stone",
-                        "name" : HIM"ĞşÊ¯"NOR,
+                        "name" : HIM"ç„çŸ³"NOR,
                         "apply_prop" : ([ /* sizeof() == 2 */
                                 "armor1" : 30,
                                 "dex" : 1,

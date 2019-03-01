@@ -16,15 +16,15 @@ void init()
 
 void create()
 {
-        set_name( HIR "¹ÖÉßÑª" NOR , ({"she xue", "blood"}));
+        set_name( HIR "æ€ªè›‡è¡€" NOR , ({"she xue", "blood"}));
         set_weight(90);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¹Ü");
-                set("long", "Ò»¹Ü¹ÖÉßµÄÑªÒº£¬ºÜÊÇĞÈ³ô£¬¿´ÆğÀ´ÂÌÓÍÓÍµÄ¡£\n");
+                set("unit", "ç®¡");
+                set("long", "ä¸€ç®¡æ€ªè›‡çš„è¡€æ¶²ï¼Œå¾ˆæ˜¯è…¥è‡­ï¼Œçœ‹èµ·ä¾†ç¶ æ²¹æ²¹çš„ã€‚\n");
                 set("value", 1000);
-                set("drug_type", "²¹Æ·");
+                set("drug_type", "è£œå“");
         }
         set("is_monitored",1);
         set("no_put",1);
@@ -40,16 +40,16 @@ int do_drink(string arg)
         neili_limit=query("max_neili", me);
         force_skill = me->query_skill("force", 1);
  
-        if(!id(arg)) return notify_fail("ÄãÒªºÈÊ²Ã´£¿\n");
+        if(!id(arg)) return notify_fail("ä½ è¦å–ä»€éº¼ï¼Ÿ\n");
         if(!present(this_object(), this_player()))
-                return notify_fail("ÄãÒªºÈÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦å–ä»€éº¼ï¼Ÿ\n");
         if( me->is_busy() )
-                return notify_fail("±ğ¼±£¬ÂıÂıºÈ£¬Ğ¡ĞÄ±ğÇº×ÅÁË¡£\n");
+                return notify_fail("åˆ¥æ€¥ï¼Œæ…¢æ…¢å–ï¼Œå°å¿ƒåˆ¥å—†è‘—äº†ã€‚\n");
 
         if ( neili_limit <= force_limit  )
         {
                 addn("max_neili", 5, me);
-                message_vision( HIR"$NÖ»¾õÒ»¹ÉÈÈÏß´ÓÑÊºíÖ±Í¨µ½¸¹ÖĞ£¬È»ºóµ¤Ìï¾ÍÏóÓĞÒ»ÍÅ»ğ°ãÉÕÁËÆğÀ´¡£\n" NOR, me);
+                message_vision( HIR"$Nåªè¦ºä¸€è‚¡ç†±ç·šå¾åš¥å–‰ç›´é€šåˆ°è…¹ä¸­ï¼Œç„¶å¾Œä¸¹ç”°å°±è±¡æœ‰ä¸€åœ˜ç«èˆ¬ç‡’äº†èµ·ä¾†ã€‚\n" NOR, me);
         }
         destruct(this_object());
         return 1;
@@ -59,10 +59,10 @@ void decay()
 {
         object where = environment(this_object());
         if ( interactive(where) )
-                message("vision", MAG"Öñ¹ÜÅ¾µÄÒ»ÉùÆÆÁË£¬ÉßÑªÁ÷³öÅªµÃÄãÒ»ÉíÉõÊÇĞÈ³ô¡£\n"NOR, 
+                message("vision", MAG"ç«¹ç®¡å•ªçš„ä¸€è²ç ´äº†ï¼Œè›‡è¡€æµå‡ºå¼„å¾—ä½ ä¸€èº«ç”šæ˜¯è…¥è‡­ã€‚\n"NOR, 
                         where); 
         else
-                message("vision", MAG"Öñ¹ÜÅ¾µÄÒ»ÉùÆÆÁË£¬ÉßÑªÁ÷ÁËÒ»µØ¡£\n"NOR,
+                message("vision", MAG"ç«¹ç®¡å•ªçš„ä¸€è²ç ´äº†ï¼Œè›‡è¡€æµäº†ä¸€åœ°ã€‚\n"NOR,
                         where);
         destruct(this_object());
 }

@@ -3,8 +3,8 @@ inherit QUARRY;
 
 void create()
 {
-        set_name(HIW "ÒøÀÇ" NOR, ({ "yin lang", "yin", "lang" }));
-        set("long", HIW "ÕâÊÇÒ»Ö»È«ÉíÑ©°×µÄÒøÀÇ¡£\n" NOR);
+        set_name(HIW "éŠ€ç‹¼" NOR, ({ "yin lang", "yin", "lang" }));
+        set("long", HIW "é€™æ˜¯ä¸€åªå…¨èº«é›ªç™½çš„éŠ€ç‹¼ã€‚\n" NOR);
 
         set("age", 3);
         set("str", 35);

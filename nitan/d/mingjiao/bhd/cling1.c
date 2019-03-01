@@ -7,12 +7,12 @@ inherit ROOM;
 string look_tree();
 void create()
 { 
-        set("short",HIG"´ÔÁÖ"NOR);
+        set("short",HIG"å¢æ—"NOR);
         set("long", @LONG
-ÕâÊÇÒ»Æ¬ºñºñµÄ´ÔÁÖ¡£¼¸Ê®ÕÉ¸ßµÄÊ÷Ä¾(tree)´ØÔÚÒ»¿é£¬ÃÜÊµµÄ
-Ö¦Ò¶ÏóÒ»ÅîÅî¾ŞÉ¡ºãÉìÏòÌì¿Õ£¬°ÑÑô¹âÕÚµÃË¿ºÁÒ²ÎŞ¡£ÓÉÓÚ´ÔÁÖÀúÊ±
-Äê´úºÜ¾Ã£¬ÓÖº±ÓĞÈËÖÁ£¬ËùÒÔ¶¯Ö²ÎïÖÖÀàºÜ¶à£¬·ÉÇİ×ßÊŞÓ¦ÓĞ¾¡ÓĞ¡£
-Å¼¶û»áÓĞ³ÔÈâÊŞ³öÀ´ÉËÈË¡£ÄãÒ»×ß½øÕâÕâ¾õµÃÒõÒõÉ­ÁÖµÄ¡£
+é€™æ˜¯ä¸€ç‰‡åšåšçš„å¢æ—ã€‚å¹¾åä¸ˆé«˜çš„æ¨¹æœ¨(tree)ç°‡åœ¨ä¸€å¡Šï¼Œå¯†å¯¦çš„
+æè‘‰è±¡ä¸€è“¬è“¬å·¨å‚˜æ†ä¼¸å‘å¤©ç©ºï¼ŒæŠŠé™½å…‰é®å¾—çµ²æ¯«ä¹Ÿç„¡ã€‚ç”±äºå¢æ—æ­·æ™‚
+å¹´ä»£å¾ˆä¹…ï¼Œåˆç½•æœ‰äººè‡³ï¼Œæ‰€ä»¥å‹•æ¤ç‰©ç¨®é¡å¾ˆå¤šï¼Œé£›ç¦½èµ°ç¸æ‡‰æœ‰ç›¡æœ‰ã€‚
+å¶çˆ¾æœƒæœ‰åƒè‚‰ç¸å‡ºä¾†å‚·äººã€‚ä½ ä¸€èµ°é€²é€™é€™è¦ºå¾—é™°é™°æ£®æ—çš„ã€‚
 LONG );
         set("exits", ([
                 "south" : __DIR__"cling",
@@ -24,7 +24,7 @@ LONG );
                 "/d/mingjiao/npc/xiong"  :  2,
         ]));
         set("tree_count", 2);
-        set("outdoors","±ù»ğµº");
+        set("outdoors","å†°ç«å³¶");
         setup();
 }
 
@@ -37,7 +37,7 @@ void reset()
 void init()
 {
         add_action("do_chop","chop");
-        add_action("do_chop","¿³");
+        add_action("do_chop","ç ");
 }
 
 int do_chop(string arg)
@@ -45,22 +45,22 @@ int do_chop(string arg)
         object me, weapon;
         me = this_player();
         weapon = me->query_temp("weapon");
-        if( arg=="tree" || arg=="Tree" || arg=="Ê÷Ä¾" ) {
-             if(me->is_busy()) return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
-             if(query("tree_count") < 1) return notify_fail("Ê£ÏÂµÄÊ÷Ä¾¶¼Ì«´óÁË£¬Äã»¹ÊÇÔÙÕÒÕÒ°É¡£\n");
+        if( arg=="tree" || arg=="Tree" || arg=="æ¨¹æœ¨" ) {
+             if(me->is_busy()) return notify_fail("ä½ æ­£å¿™è‘—å‘¢ã€‚\n");
+             if(query("tree_count") < 1) return notify_fail("å‰©ä¸‹çš„æ¨¹æœ¨éƒ½å¤ªå¤§äº†ï¼Œä½ é‚„æ˜¯å†æ‰¾æ‰¾å§ã€‚\n");
              me->start_busy(1);
              if(!weapon){
-                     message_vision("\n$NÔË¹¦ÍÂÆø£¬Ò»ÕÆ´òÔÚÄÇÇ§ÄêÀÏÊ÷¼áÊµµÄÊ÷¸ÉÉÏ£¬Í´µÃ$PÑÛÀáÖ±ÍùÏÂµô£¡\n\n",me);
-                     me->set_temp("last_damage_from", "±»×Ô¼ºµÄ·´ÕğÁ¦´ò");
+                     message_vision("\n$Né‹åŠŸåæ°£ï¼Œä¸€æŒæ‰“åœ¨é‚£åƒå¹´è€æ¨¹å …å¯¦çš„æ¨¹å¹¹ä¸Šï¼Œç—›å¾—$Pçœ¼æ·šç›´å¾€ä¸‹æ‰ï¼\n\n",me);
+                     me->set_temp("last_damage_from", "è¢«è‡ªå·±çš„åéœ‡åŠ›æ‰“");
                      me->receive_wound("qi", 50);
                      me->receive_damage("qi", 50);
                      EMOTE_D->do_emote(me,"nocry");
                      return 1;
              }
              else if(weapon->query("flag")!=4){
-                     message_vision("\n$NÄÃÆğ$n£¬ÍùÊ÷ÉÏÒ»ÕóÂÒÇÃ¡£\n"+
-                                    "½á¹û°ğµÄÒ»ÉùµôÏÂ¸ù¿İÊ÷Ö¦À´£¬ÕıºÃ´òÔÚ$PÍ·ÉÏ£¬¶ÙÊ±ÆğÁË¸ö´ó°ü£¡\n",me, weapon);
-                     me->set_temp("last_damage_from", "±»Ê÷Ö¦Ñ¹");
+                     message_vision("\n$Næ‹¿èµ·$nï¼Œå¾€æ¨¹ä¸Šä¸€é™£äº‚æ•²ã€‚\n"+
+                                    "çµæœæ¢†çš„ä¸€è²æ‰ä¸‹æ ¹æ¯æ¨¹æä¾†ï¼Œæ­£å¥½æ‰“åœ¨$Pé ­ä¸Šï¼Œé “æ™‚èµ·äº†å€‹å¤§åŒ…ï¼\n",me, weapon);
+                     me->set_temp("last_damage_from", "è¢«æ¨¹æå£“");
                      EMOTE_D->do_emote(me,"pain");
                      EMOTE_D->do_emote(me,"cry");
                      me->receive_wound("qi", 50);
@@ -68,9 +68,9 @@ int do_chop(string arg)
                      return 1;
              }
              else{
-                     message_vision("\n$N²ÙÆğ$n£¬ÍùÊ÷¸ÉÉÏ¿³°¡£¬¿³°¡£¬¿³°¡¡£¡£¡£\n",me, weapon);
+                     message_vision("\n$Næ“èµ·$nï¼Œå¾€æ¨¹å¹¹ä¸Šç å•Šï¼Œç å•Šï¼Œç å•Šã€‚ã€‚ã€‚\n",me, weapon);
                      if(random(100) > 90){
-                          message_vision("\nÖ»Ìı»©À²Ò»Éù£¬Õâ¿ÃÊ÷Ä¾×ÜËã±»$N¿³µ¹ÁË¡£\n",me);
+                          message_vision("\nåªè½å˜©å•¦ä¸€è²ï¼Œé€™æ£µæ¨¹æœ¨ç¸½ç®—è¢«$Nç å€’äº†ã€‚\n",me);
                           new("/d/mingjiao/obj/tree")->move(this_object());
                           add("tree_count", -1);
                      }
@@ -94,6 +94,6 @@ string look_tree()
 ^^    ^^   |   ^^  ^^      *|*     ^^   ^^
 ------------------------------------------
 
-ÕâÀïµÄÊ÷Ä¾¸ß´óÃ¯ÃÜ£¬Ê÷¸É½áÊµ£¬ºÜÊÊºÏÖÆÔì´¬²°¡£\n";
+é€™è£¡çš„æ¨¹æœ¨é«˜å¤§èŒ‚å¯†ï¼Œæ¨¹å¹¹çµå¯¦ï¼Œå¾ˆé©åˆåˆ¶é€ èˆ¹èˆ¶ã€‚\n";
 }
 

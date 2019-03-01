@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����Ӫ��");
+        set("short", "拖雷營帳");
         set("long", @LONG
-��������ľ����Ķ��ӣ�Ҳ�Ǵ����Ӱ��Ķ��ӡ���������͸���о���
-ս�ĲŻ�Զ������֮�ϡ�
+拖雷是鐵木真的四兒子，也是大汗最鐘愛的兒子。他聰明梯透，行軍打
+戰的才華遠在諸兄之上。
 LONG
         );
         set("objects", ([ /* sizeof() == 1 */

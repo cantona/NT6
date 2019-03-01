@@ -5,11 +5,11 @@ int savemu();
 
 void create()
 {
-        set_name("»ÆÃ¼´óÊ¦", ({ "huangmei dashi", "dashi", "huangmei" }));
+        set_name("é»ƒçœ‰å¤§å¸«", ({ "huangmei dashi", "dashi", "huangmei" }));
         set("age", 69);
-        set("gender", "ÄĞĞÔ");
-        set("long", "ÕâÊÇÒ»¸öÂúÁ³ÖåÎÆ¡¢ÉíĞÎ¸ß´óµÄÀÏÉ®¡£ÕâÀÏÉ®Á½µÀ½¹»Æ³¤Ã¼£¬
-Ã¼Î²ÏÂ´¹£¬ÊÇÄé»¨ËÂÖ÷³Ö¡£\n");
+        set("gender", "ç”·æ€§");
+        set("long", "é€™æ˜¯ä¸€å€‹æ»¿è‡‰çšºç´‹ã€èº«å½¢é«˜å¤§çš„è€åƒ§ã€‚é€™è€åƒ§å…©é“ç„¦é»ƒé•·çœ‰ï¼Œ
+çœ‰å°¾ä¸‹å‚ï¼Œæ˜¯æ‹ˆèŠ±å¯ºä¸»æŒã€‚\n");
         set("attitude", "peaceful");
         set("class", "bonze");
 
@@ -55,8 +55,8 @@ void create()
         prepare_skill("strike", "sanhua-zhang");
 
         set("inquiry", ([
-                "¾ÈÈË" : (: savemu :),
-                "¾ÈÄ¾ÍñÇå" : (: savemu :),
+                "æ•‘äºº" : (: savemu :),
+                "æ•‘æœ¨å©‰æ¸…" : (: savemu :),
                 "help" : (: savemu :),
         ]) );
 
@@ -72,10 +72,10 @@ int savemu()
         object obj;
 
         if(obj = present("duan yanqing", environment(this_object()) ) ) {
-            command("say ºÃ°É£¬ÄãÄÃ½âÒ©¸øÄ¾¹ÃÄï£¬ÎÒÀ´²ø×¡¶ÎÑÓÇì¡£\n");
+            command("say å¥½å§ï¼Œä½ æ‹¿è§£è—¥çµ¦æœ¨å§‘å¨˜ï¼Œæˆ‘ä¾†çºä½æ®µå»¶æ…¶ã€‚\n");
             this_object()->kill_ob(obj);
             obj->kill_ob(this_object() );
         } else
-            command("say Ä¾¹ÃÄïÔÚÀïÃæ£¬¿ìÄÃ½âÒ©¸øËı¡£\n");
+            command("say æœ¨å§‘å¨˜åœ¨è£¡é¢ï¼Œå¿«æ‹¿è§£è—¥çµ¦å¥¹ã€‚\n");
         return 1;
 }

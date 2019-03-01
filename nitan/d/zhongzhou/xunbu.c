@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Ѳ����");
+        set("short", "巡捕房");
         set("long", @LONG
-һ�߽��谵��Ѳ������һʱ��ɶ�����������;����е���
-ɭ���¡���ɿ�������Լ���û����ʲô���캦�����¡�
+一走進昏暗的巡捕房，一時你啥都看不見，就覺得有點陰
+森可怕。你飛快的想著自己有沒做過什麼傷天害理的事。
 LONG);
         set("objects", ([
                   "clone/npc/xunbu" : 2,

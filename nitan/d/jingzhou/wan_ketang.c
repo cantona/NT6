@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create ()
 {
-        set ("short", "����");
+        set ("short", "客堂");
         set ("long", @LONG
-�������������ؿ��˵�С���á��м�һ��СԲ��ľ���ϣ�������
-һ����ϯ�����ſ����������ε��⣬���Կ�����԰�Ĵ�ɫ��
+這裡是萬家請貴重客人的小客堂。中間一個小圓紅木桌上，擺滿了
+一桌酒席，等著客人上坐。鏤雕窗外，可以看到花園的春色。
 LONG);
         set("region", "jingzhou");
         set("exits", ([

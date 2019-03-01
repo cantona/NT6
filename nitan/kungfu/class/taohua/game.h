@@ -1,4 +1,4 @@
-// ¼ğÖñÇ©ÓÎÏ·£¬Ã¿´ÎÄÃ1-3¸ù£¬ÄÃµ½×îºóÒ»¸ùµÄÊä
+// æ€ç«¹ç°½éŠæˆ²ï¼Œæ¯æ¬¡æ‹¿1-3æ ¹ï¼Œæ‹¿åˆ°æœ€å¾Œä¸€æ ¹çš„è¼¸
 
 #define                MATCHNUM        15        
 #define                MAXNUM                3
@@ -11,11 +11,11 @@ int play_game( object me, object ob )
         set_temp("match_game/remain", MATCHNUM, me);
         set_temp("match_game/last", 0, me);
         set_temp("match_game/playing", 1, me);
-        message_vision(obname+"²»Öª´ÓÄÄÀïÄÃ³ö¼¸¸ùÖñÇ©°ÚÔÚ×À×ÓÉÏ¡£\n", me);
-        command("say ÕâÀïÓĞ"+chinese_number(MATCHNUM)+"¸ùÖñÇ©£¬Ã¿´Î×î¶àÄÃÈı¸ù£¬×îÉÙÒ»¸ù£¬²»ÄÜ²»ÄÃ¡£Ë­ÄÃµ½×îºóÒ»¸ùËãÊä¡£");
-        command("say ÄãÏÈÄÃ°É¡£\n");
+        message_vision(obname+"ä¸çŸ¥å¾å“ªè£¡æ‹¿å‡ºå¹¾æ ¹ç«¹ç°½æ“ºåœ¨æ¡Œå­ä¸Šã€‚\n", me);
+        command("say é€™è£¡æœ‰"+chinese_number(MATCHNUM)+"æ ¹ç«¹ç°½ï¼Œæ¯æ¬¡æœ€å¤šæ‹¿ä¸‰æ ¹ï¼Œæœ€å°‘ä¸€æ ¹ï¼Œä¸èƒ½ä¸æ‹¿ã€‚èª°æ‹¿åˆ°æœ€å¾Œä¸€æ ¹ç®—è¼¸ã€‚");
+        command("say ä½ å…ˆæ‹¿å§ã€‚\n");
         add_action("take_match","take");
-        write(YEL +"Äã¿ÉÒÔÓÃ take + ¸ùÊı À´Íæ¡£\n\n"+ NOR);
+        write(YEL +"ä½ å¯ä»¥ç”¨ take + æ ¹æ•¸ ä¾†ç©ã€‚\n\n"+ NOR);
         return 1;
 }
 
@@ -27,45 +27,45 @@ int take_match(string arg)
         object ob = this_object();
         
         if( query_temp("match_game/win", me) || query_temp("match_game/lost", me) )
-                return         notify_fail("ÓÎÏ·ÒÑ¾­½áÊøÁË¡£\n\n");
+                return         notify_fail("éŠæˆ²å·²ç¶“çµæŸäº†ã€‚\n\n");
         n = atoi(arg);
         if (!intp(n))
-                return notify_fail("ÄãÒªÄÃÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦æ‹¿ä»€éº¼ï¼Ÿ\n");
         if (n > MAXNUM || n <= 0)
-                return notify_fail("Ò»´ÎÖ»ÄÜÄÃÒ»µ½"+chinese_number(MAXNUM)+"¸ùÖñÇ©¡£\n");
+                return notify_fail("ä¸€æ¬¡åªèƒ½æ‹¿ä¸€åˆ°"+chinese_number(MAXNUM)+"æ ¹ç«¹ç°½ã€‚\n");
         if (n > REMAIN) 
-                return notify_fail("Ö»Ê£ÏÂ"+chinese_number(REMAIN)+"¸ùÖñÇ©ÁË¡£\n");
+                return notify_fail("åªå‰©ä¸‹"+chinese_number(REMAIN)+"æ ¹ç«¹ç°½äº†ã€‚\n");
         addn_temp("match_game/remain", -n, me);
-        message_vision("$NÄÃÁË"+chinese_number(n)+"¸ùÖñÇ©\n", me);
+        message_vision("$Næ‹¿äº†"+chinese_number(n)+"æ ¹ç«¹ç°½\n", me);
         if (REMAIN == 0) {
-                message_vision(WHT +"Ã»ÓĞÖñÇ©ÁË£¬$NÊäÁË¡£\n"+ NOR, me);
-                message_vision(obname+"Ğ¦×ÅÅÄ×ÅÊÖ£¬¶Ô$N½Ğµ½£ºÄãºÃ±¿à¸£¬ÄãÊäÀ²£¡\n\n", me);
+                message_vision(WHT +"æ²’æœ‰ç«¹ç°½äº†ï¼Œ$Nè¼¸äº†ã€‚\n"+ NOR, me);
+                message_vision(obname+"ç¬‘è‘—æ‹è‘—æ‰‹ï¼Œå°$Nå«åˆ°ï¼šä½ å¥½ç¬¨å–”ï¼Œä½ è¼¸å•¦ï¼\n\n", me);
                 set_temp("match_game/lost", 1, me);
                 delete_temp("match_game/playing", me);
                 return 1;                
         }
         else {
-                message_vision("»¹Ê£ÏÂ"+chinese_number(REMAIN)+"¸ùÖñÇ©¡£\n\n", me);
+                message_vision("é‚„å‰©ä¸‹"+chinese_number(REMAIN)+"æ ¹ç«¹ç°½ã€‚\n\n", me);
                 for (n = REMAIN; n > MAXNUM; n = n - MAXNUM - 1);
                 n = (n + 3) % 4;
                 if (n == 0)
                            n = (REMAIN > MAXNUM ? random(MAXNUM)+1 : random(REMAIN)+1); 
                 addn_temp("match_game/remain", -n, me);
-                message_vision(obname+"ÄÃÁË"+chinese_number(n)+"¸ùÖñÇ©¡£\n", me);
+                message_vision(obname+"æ‹¿äº†"+chinese_number(n)+"æ ¹ç«¹ç°½ã€‚\n", me);
                 if (REMAIN != 0) {
                         if (REMAIN == 1) {
                                 set_temp("match_game/lost", 1, me);
                                 delete_temp("match_game/playing", me);
-                                message_vision(WHT +"»¹Ê£ÏÂ"+chinese_number(REMAIN)+"¸ùÖñÇ©£¬$NÊäÁË¡£\n"+ NOR, me);
-                                message_vision(obname+"Ğ¦×ÅÅÄ×ÅÊÖ£¬¶Ô$N½Ğµ½£ºÄãºÃ±¿à¸£¬ÄãÊäÀ²£¡\n\n", me);
+                                message_vision(WHT +"é‚„å‰©ä¸‹"+chinese_number(REMAIN)+"æ ¹ç«¹ç°½ï¼Œ$Nè¼¸äº†ã€‚\n"+ NOR, me);
+                                message_vision(obname+"ç¬‘è‘—æ‹è‘—æ‰‹ï¼Œå°$Nå«åˆ°ï¼šä½ å¥½ç¬¨å–”ï¼Œä½ è¼¸å•¦ï¼\n\n", me);
                                 return 1;
                         }
                         else                                
-                                message_vision("»¹Ê£ÏÂ"+chinese_number(REMAIN)+"¸ùÖñÇ©£¬¸Ã$NÄÃÁË¡£\n\n", me);
+                                message_vision("é‚„å‰©ä¸‹"+chinese_number(REMAIN)+"æ ¹ç«¹ç°½ï¼Œè©²$Næ‹¿äº†ã€‚\n\n", me);
                 }
                 else {
-                        message_vision(HIW +"Ã»ÓĞÖñÇ©ÁË£¬$NÓ®ÁË¡£\n"+ NOR, me);
-                        message_vision(obname+"¿´ÁË¿´ÊÖÀïµÄÖñÇ©ÓÖ¿´ÁË¿´$N£¬ËµµÀ£ºÊÇÄãÏ¹Ã¨Åö×ÅËÀºÄ×Ó£¬±ãÒËÄãÁË¡£\n\n", me);
+                        message_vision(HIW +"æ²’æœ‰ç«¹ç°½äº†ï¼Œ$Nè´äº†ã€‚\n"+ NOR, me);
+                        message_vision(obname+"çœ‹äº†çœ‹æ‰‹è£¡çš„ç«¹ç°½åˆçœ‹äº†çœ‹$Nï¼Œèªªé“ï¼šæ˜¯ä½ çè²“ç¢°è‘—æ­»è€—å­ï¼Œä¾¿å®œä½ äº†ã€‚\n\n", me);
                         set_temp("match_game/win", 1, me);
                         delete_temp("match_game/playing", me);
                         return 1;

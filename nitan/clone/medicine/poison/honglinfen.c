@@ -8,15 +8,15 @@ inherit F_UNIQUE;
 
 void create()
 {
-        set_name(HIR"ºìÁ×·Û"NOR, ({ "honglin fen", "fen", "honglin" }) );
+        set_name(HIR"ç´…ç£·ç²‰"NOR, ({ "honglin fen", "fen", "honglin" }) );
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long","Ò»°üÒÔÉß¶¾¡¢¶Ï³¦²İµÈÎªÔ­ÁÏÖÆ³ÉµÄĞÈºìÉ«µÄ¶¾·Û¡£¿ÉÒÔÓÃÀ´Éú³É(make)»ğ¶Ñ(huodui)¡£Ò²¿ÉÒÔµ¹(pour)½ø¾ÆË®Àï£¬»òÍ¿(tu)ÔÚ±øÆ÷ÉÏ¡££¨Í¿Ö®Ç°±ØĞëÏÈµãÈ¼(dian)Ëü£©\n" );
-//                set("unit", "Ğ©");
-                set("unit", "°ü");
+                set("long","ä¸€åŒ…ä»¥è›‡æ¯’ã€æ–·è…¸è‰ç­‰ç‚ºåŸæ–™åˆ¶æˆçš„è…¥ç´…è‰²çš„æ¯’ç²‰ã€‚å¯ä»¥ç”¨ä¾†ç”Ÿæˆ(make)ç«å †(huodui)ã€‚ä¹Ÿå¯ä»¥å€’(pour)é€²é…’æ°´è£¡ï¼Œæˆ–å¡—(tu)åœ¨å…µå™¨ä¸Šã€‚ï¼ˆå¡—ä¹‹å‰å¿…é ˆå…ˆé»ç‡ƒ(dian)å®ƒï¼‰\n" );
+//                set("unit", "äº›");
+                set("unit", "åŒ…");
 //                set("base_value", 5000);
-//                set("base_unit", "°ü");
+//                set("base_unit", "åŒ…");
 //                set("base_weight", 30);
                 set("drug2", __DIR__"honglinfen1");
                 set("pour_type", "hot_poison");

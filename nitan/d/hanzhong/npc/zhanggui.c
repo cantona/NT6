@@ -5,9 +5,9 @@ inherit F_DEALER;
 
 void create()
 {
-        set_name("ÕÆ¹ñ", ({ "zhanggui", "gui" }));
-        set("long", "ÕâÊÇÎ»ºÍºÍÆøÆøµÄÉúÒâÈË¡£\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("æŒæ«ƒ", ({ "zhanggui", "gui" }));
+        set("long", "é€™æ˜¯ä½å’Œå’Œæ°£æ°£çš„ç”Ÿæ„äººã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 45);
 
         set("combat_exp", 7500);

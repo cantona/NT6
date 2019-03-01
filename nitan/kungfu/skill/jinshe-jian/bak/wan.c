@@ -21,29 +21,29 @@ int perform(object me, object target)
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("¡¸½ğÉßÍòµÀ¡¹Ö»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œé‡‘è›‡è¬é“ã€åªèƒ½åœ¨æˆ°é¬¥ä¸­ä½¿ç”¨ã€‚\n");
                 
         if( !objectp(weapon=query_temp("weapon", me) )
                  || query("skill_type", weapon) != "sword" )
-                        return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                        return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ã€‚\n");
                         
         if( query("id", weapon) != "jinshejian" )
-                return notify_fail("Ã»ÓĞ½ğÉß½£ÓÖÔõÄÜÊ¹³ö½ğÉß½£·¨µÄ¶ÀÃÅÕĞÊ½¡¾½ğÉßÍòµÀ¡¿£¿\n");
+                return notify_fail("æ²’æœ‰é‡‘è›‡åŠåˆæ€èƒ½ä½¿å‡ºé‡‘è›‡åŠæ³•çš„ç¨é–€æ‹›å¼ã€é‡‘è›‡è¬é“ã€‘ï¼Ÿ\n");
                 
         if((int)me->query_skill("sword") <200)
-                return notify_fail("ÄãµÄ½£·¨ĞŞÎª²»¹»£¬ Ä¿Ç°²»ÄÜÊ¹ÓÃ¡¾½ğÉßÍòµÀ¡¿! \n");
+                return notify_fail("ä½ çš„åŠæ³•ä¿®ç‚ºä¸å¤ ï¼Œ ç›®å‰ä¸èƒ½ä½¿ç”¨ã€é‡‘è›‡è¬é“ã€‘! \n");
                 
         weapon=query_temp("weapon", me);
         if( query("neili", me)<1000 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¡\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼\n");
                 
-        msg = HIR  "$NÃÍÎüÒ»¿ÚÕæÆø£¬ÑÛÖĞÉñ¹â´óÊ¢£¬ÊÖÖĞµÄ"+ weapon->name()+  HIR"¼±ËÙ»ÓÎè£¬»¯×÷ÍòµÀ½ğºçÏò$n¾íÀ´£¡" NOR;
+        msg = HIR  "$NçŒ›å¸ä¸€å£çœŸæ°£ï¼Œçœ¼ä¸­ç¥å…‰å¤§ç››ï¼Œæ‰‹ä¸­çš„"+ weapon->name()+  HIR"æ€¥é€Ÿæ®èˆï¼ŒåŒ–ä½œè¬é“é‡‘è™¹å‘$nå·ä¾†ï¼" NOR;
         message_combatd(msg,me,target);
         addn_temp("apply/attack", extra/5, me);
         addn_temp("apply/damage", extra/5, me);
         for(i=1;i<=(int)time;i++)
         {
-                // msg =  YEL "$NÑÛÖĞº®ÒâÓÄÓÄ£¬½«½ğÉßÍòµÀ·¢»Óµ½×î¸ß¾³½ç£¡\n" NOR;
+                // msg =  YEL "$Nçœ¼ä¸­å¯’æ„å¹½å¹½ï¼Œå°‡é‡‘è›‡è¬é“ç™¼æ®åˆ°æœ€é«˜å¢ƒç•Œï¼\n" NOR;
                 COMBAT_D->do_attack(me,target,query_temp("weapon", me),TYPE_REGULAR);
         }
         addn_temp("apply/attack", -extra/5, me);

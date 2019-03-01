@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�ɹŲ�ԭ");
+        set("short", "蒙古草原");
         set("long", @LONG
-Į������Ƭ��ԭ������ƶ񤣬ֻ��������Ϊ������������Ƭ������
-���ɹŸ�������֮��Ϊ����ţ��ū�������أ��Ʋ���������ɱ����ľ
-����ǵ�����ǿʢ��һ�����䡣
+漠北的這片荒原，土地貧瘠，只能以畜牧為生，生活在這片土地上
+的蒙古各個部落之間為爭奪牛羊，奴隸，土地，財帛而互相廝殺，鐵木
+真就是當今最強盛的一個部落。
 LONG);
         set("objects", ([ /* sizeof() == 1 */
                 __DIR__"npc/heijiu" : 2,

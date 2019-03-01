@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short","¶É½­ÇÅ");
+        set("short","æ¸¡æ±Ÿæ©‹");
         set("long",@LONG
-Ò»×ùÈý¹°Ê¯ÇÅºáÎÔÔÚ´óÔËºÓÉÏ£¬ÇÅµÄ²àÀ¸ÉÏÓÉÖªÖÝÅ·ÑôÐÞÌâ×Å¡¸¶É
-½­ÇÅ¡¹£¬ÇÅÏÂ¸÷É«´¬Ö»´©Á÷²»Ï¢¡£¶«±ßÊÇÑïÖÝ×î´óµÄÂëÍ·£¬äîÔËµÄÁ¸Ê³£¬
-Á½»´²úµÄÑÎ£¬¶àÔÚ´Ë×°Ð¶¡£¹ýÁËÇÅ¾ÍÊÇÑïÖÝµÄÄÏÃÅ¡£
+ä¸€åº§ä¸‰æ‹±çŸ³æ©‹æ©«è‡¥åœ¨å¤§é‹æ²³ä¸Šï¼Œæ©‹çš„å´æ¬„ä¸Šç”±çŸ¥å·žæ­é™½ä¿®é¡Œè‘—ã€Œæ¸¡
+æ±Ÿæ©‹ã€ï¼Œæ©‹ä¸‹å„è‰²èˆ¹åªç©¿æµä¸æ¯ã€‚æ±é‚Šæ˜¯æšå·žæœ€å¤§çš„ç¢¼é ­ï¼Œæ¼•é‹çš„ç³§é£Ÿï¼Œ
+å…©æ·®ç”¢çš„é¹½ï¼Œå¤šåœ¨æ­¤è£å¸ã€‚éŽäº†æ©‹å°±æ˜¯æšå·žçš„å—é–€ã€‚
 LONG );
         set("outdoors", "yangzhou");
         set("region", "yangzhou_zone");

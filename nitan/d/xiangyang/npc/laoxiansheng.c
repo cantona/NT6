@@ -1,4 +1,4 @@
-// zhu.c Öììä
+// zhu.c æœ±ç†¹
 
 inherit NPC;
 #include <ansi.h>
@@ -7,11 +7,11 @@ string ask_buy();
 int ask_degree();
 void create()
 {
-        set_name("ÀÏÏÈÉú", ({ "lao xiansheng", "lao", "xiansheng"}));
+        set_name("è€å…ˆç”Ÿ", ({ "lao xiansheng", "lao", "xiansheng"}));
         set("long",
-"ÕâÎ»ÀÏÏÈÉúÔøÖĞ¹ı×´Ôª£¬×ö¹ı´ó¹Ù£¬ÏÖÒòÄêÀÏ»ØÀÏ¼ÒÏåÑôÒÃÑøÌìÄê£¬¾­
-°²¸§Ê¹ÂÀÎÄµÂµÄÔÙÈıÑûÇë£¬ÔÚÕâ¶ùÎªĞã²ÅÃÇ½²¿Î¡£\n");
-        set("gender", "ÄĞĞÔ");
+"é€™ä½è€å…ˆç”Ÿæ›¾ä¸­éç‹€å…ƒï¼Œåšéå¤§å®˜ï¼Œç¾å› å¹´è€å›è€å®¶è¥„é™½é ¤é¤Šå¤©å¹´ï¼Œç¶“
+å®‰æ’«ä½¿å‘‚æ–‡å¾·çš„å†ä¸‰é‚€è«‹ï¼Œåœ¨é€™å…’ç‚ºç§€æ‰å€‘è¬›èª²ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 65);
         set("no_get", 1);
         set_skill("literate", 300);
@@ -30,24 +30,24 @@ void create()
 
 int recognize_apprentice(object ob)
 {
-        if( !query_temp("mark/Öì", ob) )
+        if( !query_temp("mark/æœ±", ob) )
                 return 0;
-        addn_temp("mark/Öì", -1, ob);
+        addn_temp("mark/æœ±", -1, ob);
         return 1;
 }
 
 int accept_object(object who, object ob)
 {
         object me = this_player();
-        if( !query_temp("mark/Öì", who) )
-                set_temp("mark/Öì", 0, who);
+        if( !query_temp("mark/æœ±", who) )
+                set_temp("mark/æœ±", 0, who);
         if( query("money_id", ob) && ob->value() >= 1000 )
         {
-                message_vision("ÀÏÏÈÉúÍ¬ÒâÖ¸µã$NÒ»Ğ©¶ÁÊéĞ´×ÖµÄÎÊÌâ¡£\n", who);
-                addn_temp("mark/Öì", ob->value()/50, who);
+                message_vision("è€å…ˆç”ŸåŒæ„æŒ‡é»$Nä¸€äº›è®€æ›¸å¯«å­—çš„å•é¡Œã€‚\n", who);
+                addn_temp("mark/æœ±", ob->value()/50, who);
                 if( me->query_skill("literate", 1) > 21)
                 {
-tell_object(me,"ÄãÏÖÔÚÒÑÓĞÒ»¶¨µÄÎÄ»¯ÖªÊ¶£¬Ò²¿ÉÒÔ×Ô¼º¶ÁÊéÉîÔìÁË¡£\n");
+tell_object(me,"ä½ ç¾åœ¨å·²æœ‰ä¸€å®šçš„æ–‡åŒ–çŸ¥è­˜ï¼Œä¹Ÿå¯ä»¥è‡ªå·±è®€æ›¸æ·±é€ äº†ã€‚\n");
                         return 1;
                 }
                 return 1;

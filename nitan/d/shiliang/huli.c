@@ -5,10 +5,10 @@ inherit ROOM;
 int do_swim(string arg);
 void create()
 {
-        set("short", "ºşÀï");
+        set("short", "æ¹–è£¡");
         set("long", @LONG
-Ë®ºÜÉî£¬Äã¶ú±ßÈ«ÊÇË®Éù£¬°¶ÉÏ´ó¼Ò¾ªÑÈµÄ¿´×ÅÄã¡­
-Äã¾õµÃ×Ô¼º¸ÉÁË¼şÉµÊÂ£¬Ì«¹ÏÁË¡£
+æ°´å¾ˆæ·±ï¼Œä½ è€³é‚Šå…¨æ˜¯æ°´è²ï¼Œå²¸ä¸Šå¤§å®¶é©šè¨çš„çœ‹è‘—ä½ â€¦
+ä½ è¦ºå¾—è‡ªå·±å¹¹äº†ä»¶å‚»äº‹ï¼Œå¤ªç“œäº†ã€‚
 LONG
         );
         set("objects", ([
@@ -28,13 +28,13 @@ void check_trigger()
         object me;
         me = this_player();
         if ((int)query("trigger") == 13) {
-                message_vision("$NÖÕÓÚÓÎÉÏÁË°¶, ÄãÅÀÉÏ°¶Ò»¿´, ÄãµÄÒÂ·şÒÑ¾­±»´ó¼ÒÄÃ×ßÁË...\n", me);
+                message_vision("$Nçµ‚äºéŠä¸Šäº†å²¸, ä½ çˆ¬ä¸Šå²¸ä¸€çœ‹, ä½ çš„è¡£æœå·²ç¶“è¢«å¤§å®¶æ‹¿èµ°äº†...\n", me);
                 me->move(__DIR__"zoulang4");
                 delete("trigger");
                 return;
         }
         if ((int)query("trigger") < 0) {
-                message_vision("$NÓÖÓÎ»ØÔ­À´µÄ°¶±ß,$NÅÀÉÏ°¶Ò»¿´, ÄãµÄÒÂ·şÒÑ¾­±»´ó¼ÒÄÃ×ßÁË...\n",me);
+                message_vision("$NåˆéŠå›åŸä¾†çš„å²¸é‚Š,$Nçˆ¬ä¸Šå²¸ä¸€çœ‹, ä½ çš„è¡£æœå·²ç¶“è¢«å¤§å®¶æ‹¿èµ°äº†...\n",me);
                 me->move(__DIR__"zoulang4");
                 delete("trigger");
                 return;
@@ -44,12 +44,12 @@ int do_swim(string arg)
 {
         int i;
         if (!arg || arg == "") {
-                write("ÄãÍù±±ÓÎ»¹ÊÇÍùÄÏÓÎ£¿\n");
+                write("ä½ å¾€åŒ—éŠé‚„æ˜¯å¾€å—éŠï¼Ÿ\n");
                 return 1;
         }
         if (arg == "north" || arg == "n") {
                 addn("trigger", 1);
-                write("Äã·ÜÁ¦Ïò±±°¶ÓÎÈ¥¡­¡­\n");
+                write("ä½ å¥®åŠ›å‘åŒ—å²¸éŠå»â€¦â€¦\n");
                 check_trigger();
                 return 1;
         }
@@ -57,7 +57,7 @@ int do_swim(string arg)
                 i = (int)query("trigger")-1;
                 delete("trigger");
                 addn("trigger", i);
-                write("Äã·ÜÁ¦ÏòÄÏ°¶ÓÎÈ¥¡­¡­\n");
+                write("ä½ å¥®åŠ›å‘å—å²¸éŠå»â€¦â€¦\n");
                 check_trigger();
                 return 1;
         }

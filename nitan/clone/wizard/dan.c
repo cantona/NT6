@@ -12,13 +12,13 @@ void init()
 
 void create()
 {
-        set_name(HIB "»¹»êµ¤" NOR, ({ "huanhun dan", "compensation dan", "dan" }));
+        set_name(HIB "é‚„é­‚ä¸¹" NOR, ({ "huanhun dan", "compensation dan", "dan" }));
         if (clonep())
                 set_default_object(__FILE__);
         else
         {
-                set("unit", "Á£");
-                set("long", "ÕâÊÇÒ»Á£·Ç³£ÆæÒìµÄÒ©Íè£¬¾İËµÒ»³Ô¾ÍËÀ£¬µ«Ò²»òĞíÓĞÄ³Ğ©ÆæĞ§¡£\n");
+                set("unit", "ç²’");
+                set("long", "é€™æ˜¯ä¸€ç²’éå¸¸å¥‡ç•°çš„è—¥ä¸¸ï¼Œæ“šèªªä¸€åƒå°±æ­»ï¼Œä½†ä¹Ÿæˆ–è¨±æœ‰æŸäº›å¥‡æ•ˆã€‚\n");
         }
         setup();
 }
@@ -35,13 +35,13 @@ int do_eat(string arg)
         skill_status = me->query_skillc();
 
         if (! id(arg))
-                return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
 
         if (! living(me))
-                return notify_fail("Ê²Ã´£¿\n");
+                return notify_fail("ä»€éº¼ï¼Ÿ\n");
 
         if( !query("me_id") || query("me_id") != query("id", me) )
-                return notify_fail("ÄãÓÃÁ¦³¯Ò»³Ô¾ÍËÀµ¤Ò»¿ÚÒ§ÏÂÈ¥£¬¡°°¥Ñ½£¡¡±ÌÌµÃ¸Ï½ôÍÂ³öÀ´£¬×ìÀïÆğÁËÒ»È¦Åİ£¡\n");
+                return notify_fail("ä½ ç”¨åŠ›æœä¸€åƒå°±æ­»ä¸¹ä¸€å£å’¬ä¸‹å»ï¼Œâ€œå“å‘€ï¼â€ç‡™å¾—è¶•ç·Šåå‡ºä¾†ï¼Œå˜´è£¡èµ·äº†ä¸€åœˆæ³¡ï¼\n");
 
         sname = keys(skill_status);
         for(i = 0; i < sizeof(skill_status); i++)
@@ -60,12 +60,12 @@ int do_eat(string arg)
         addn("combat/dietimes", -1, me);
         me->save();
         log_file("static/eat_dan",
-                 sprintf("(%s)%s(%s)·şÓÃÒ»³Ô¾ÍËÀµ¤Ò»´Î\n",
+                 sprintf("(%s)%s(%s)æœç”¨ä¸€åƒå°±æ­»ä¸¹ä¸€æ¬¡\n",
                          ctime(time()),me->name(),query("id", me)));
 
-        message_vision(HIB "Ö»¼û$N" HIB "»ëÉíÒ»²ü£¬ÆßÇÏ¶¼Ã°³öÀ¶ÑÌÀ´¡£\n", me);
+        message_vision(HIB "åªè¦‹$N" HIB "æ¸¾èº«ä¸€é¡«ï¼Œä¸ƒç«…éƒ½å†’å‡ºè—ç…™ä¾†ã€‚\n", me);
 
-        write("ÄãÊ§È¥µÄ¼¼ÄÜ¡¢Ç±ÄÜºÍ¾­Ñé±»ÉñÁ¦»Ö¸´»ØÀ´ÁË¡£\n");
+        write("ä½ å¤±å»çš„æŠ€èƒ½ã€æ½›èƒ½å’Œç¶“é©—è¢«ç¥åŠ›æ¢å¾©å›ä¾†äº†ã€‚\n");
         destruct(this_object());
         return 1;
 }
@@ -82,7 +82,7 @@ int do_name(string arg)
 
         set("me_id", arg);
 
-        write("ÕâÁ£Ò»³Ô¾ÍËÀµ¤±»ÉèÎª" + arg + "×¨ÓÃµÄ£¬±ğÈËÎŞ·¨³Ô£¡\n");
+        write("é€™ç²’ä¸€åƒå°±æ­»ä¸¹è¢«è¨­ç‚º" + arg + "å°ˆç”¨çš„ï¼Œåˆ¥äººç„¡æ³•åƒï¼\n");
         return 1;
 }
 

@@ -5,9 +5,9 @@ inherit ITEM;
 void create()
 {
         set_weight(30000);
-        set_name("µ¯Í·", ({"dan tou"}));
-        set("long", "ÕâÊÇÒ»Ã¶ÅÚµ¯µ¯Í·¡£\n");
-        set("unit", "Ã¶");
+        set_name("å½ˆé ­", ({"dan tou"}));
+        set("long", "é€™æ˜¯ä¸€æžšç‚®å½ˆå½ˆé ­ã€‚\n");
+        set("unit", "æžš");
               
         set("value",100);
         setup();

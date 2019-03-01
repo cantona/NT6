@@ -7,10 +7,10 @@ inherit F_CLEAN_UP;
 int main(object user, mapping info)
 {
         if (! stringp(info[MSGTO]))
-                return MESSAGE_D->error_msg("ÄãÒª·¢ÏûÏ¢¸øË­£¿\n");
+                return MESSAGE_D->error_msg("ä½ è¦ç™¼æ¶ˆæ¯çµ¦èª°ï¼Ÿ\n");
 
         if (! stringp(info[MESSAGE]))
-                return MESSAGE_D->error_msg("ÄãÒªËµÊ²Ã´»°£¿\n");
+                return MESSAGE_D->error_msg("ä½ è¦èªªä»€éº¼è©±ï¼Ÿ\n");
 
         return MESSAGE_D->send_msg_to(user, info[MSGTO], info[MESSAGE]);
 }

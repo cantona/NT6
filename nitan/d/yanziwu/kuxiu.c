@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "¿àÐÞ³¡");
+        set("short", "è‹¦ä¿®å ´");
         set("long", @LONG
-ÕâÀïµÄ³¡µØÓÐÐ©ÆÆÂä£¬ËäÈ»¾­³£´òÉ¨£¬µ«ÊÇ³¡µØÈÔÈ»¿´µÃ³ö²»ÉÙ
-ºÛ¼£¡£Ï£Íû³öÈËÍ·µØµÄÄ½ÈÝ¼ÒµÜ×ÓÔÚÎä¹¦ÓÐÁËÒ»¶¨µÄÐÞÎªÒÔºóÍùÍùµ½
-ÕâÀïÀ´×÷½øÒ»²½µÄÐÞÐÐ¡£
+é€™è£¡çš„å ´åœ°æœ‰äº›ç ´è½ï¼Œé›–ç„¶ç¶“å¸¸æ‰“æŽƒï¼Œä½†æ˜¯å ´åœ°ä»ç„¶çœ‹å¾—å‡ºä¸å°‘
+ç—•è·¡ã€‚å¸Œæœ›å‡ºäººé ­åœ°çš„æ…•å®¹å®¶å¼Ÿå­åœ¨æ­¦åŠŸæœ‰äº†ä¸€å®šçš„ä¿®ç‚ºä»¥å¾Œå¾€å¾€åˆ°
+é€™è£¡ä¾†ä½œé€²ä¸€æ­¥çš„ä¿®è¡Œã€‚
 LONG );
         set("outdoors", "yanziwu");
         set("exits", ([
@@ -16,7 +16,7 @@ LONG );
                 "east":  __DIR__"kuxiu2",
         ]));
 
-        set("for_family", "Ä½ÈÝÊÀ¼Ò");
+        set("for_family", "æ…•å®¹ä¸–å®¶");
         setup();
         replace_program(ROOM);
 }

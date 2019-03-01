@@ -4,20 +4,20 @@
 inherit BLADE;
 void create()
 {
-        set_name(HIW"ÃÉ¹ÅÍäµ¶"NOR, ({ "wan dao","blade" }));
+        set_name(HIW"è’™å¤å½åˆ€"NOR, ({ "wan dao","blade" }));
         set_weight(12000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
-                set("long", "ÕâÊÇÒ»±úÁÁ»Î»ÎµÄ¸Öµ¶£¬ÊÇÃÉ¹Å¹Ù±øµÄ³£±¸ÎäÆ÷¡£\n");
+                set("unit", "æŸ„");
+                set("long", "é€™æ˜¯ä¸€æŸ„äº®æ™ƒæ™ƒçš„é‹¼åˆ€ï¼Œæ˜¯è’™å¤å®˜å…µçš„å¸¸å‚™æ­¦å™¨ã€‚\n");
                 set("value", 1000);
                 set("rigidity",200);
                 set("no_get",1);
                 set("no_put",1);
                 set("material", "steel");
-                set("wield_msg", "$N¡¸à§¡¹µÄÒ»Éù³é³öÒ»±ú$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²å»Øµ¶ÇÊ¡£\n");
+                set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€è²æŠ½å‡ºä¸€æŸ„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°‡æ‰‹ä¸­çš„$næ’å›åˆ€é˜ã€‚\n");
         }
         init_blade(400);
         setup();
@@ -37,25 +37,25 @@ mixed hit_ob(object me, object victim, int damage_bonus)
                 {
                         if( query_temp("warquest/group", victim) )
                                   message_vision(
-                                          BLINK+HIM"$NµÄ×óÒíÔâµ½¹¥»÷£¬ËğÊ§ÁË²¿·Ö¾ü¶Ó£¡\n"NOR,victim);
+                                          BLINK+HIM"$Nçš„å·¦ç¿¼é­åˆ°æ”»æ“Šï¼Œæå¤±äº†éƒ¨åˆ†è»éšŠï¼\n"NOR,victim);
                   }
                 else if( dam < 80 )
                 {
                         if( query_temp("warquest/group", victim) )
                                   message_vision(
-                                              BLINK+HIM"$NµÄÓÒÒíÔâµ½·ü»÷£¬ËğÊ§²ÒÖØ£¡£¡\n"NOR,victim);
+                                              BLINK+HIM"$Nçš„å³ç¿¼é­åˆ°ä¼æ“Šï¼Œæå¤±æ…˜é‡ï¼ï¼\n"NOR,victim);
                 }
                 else if( dam < 120 )
                 {
                         if( query_temp("warquest/group", victim) )
                                   message_vision(
-                                          BLINK+HIM"$NµÄÖĞ¾üÔâµ½Âñ·ü£¬ËğÊ§´ù¾¡£¡£¡\n"NOR,victim);
+                                          BLINK+HIM"$Nçš„ä¸­è»é­åˆ°åŸ‹ä¼ï¼Œæå¤±æ®†ç›¡ï¼ï¼\n"NOR,victim);
                 }
                 else  
                 {
                         if( query_temp("warquest/group", victim) )
                                   message_vision(
-                                          BLINK+HIM"$NµÄÈ«¾üÏİÈëÁËµĞ¾üµÄÂñ·ü£¬´æÍöÒÑÔÚµ©Ï¦£¡£¡\n"NOR,victim);  
+                                          BLINK+HIM"$Nçš„å…¨è»é™·å…¥äº†æ•µè»çš„åŸ‹ä¼ï¼Œå­˜äº¡å·²åœ¨æ—¦å¤•ï¼ï¼\n"NOR,victim);  
                 }
                 
                 victim->receive_damage("qi",dam, me);

@@ -1,18 +1,18 @@
 #include <ansi.h>
-// ¹ÅÄ¹ÅÉ jueqing-quyu
+// å¤å¢“æ´¾ jueqing-quyu
 inherit SKILL; 
 string type() { return "knowledge"; } 
 
 int is_fmsk() { return 1; }
-string family_name() { return "¹ÅÄ¹ÅÉ"; }
+string family_name() { return "å¤å¢“æ´¾"; }
 
 int valid_learn(object me)
 {        
         if( query("family/family_name", me) != family_name() )
-                return notify_fail("Ì«ÉÏÍüÇéÖ»ÄÜ¹ÅÄ¹ÅÉµÜ×Ó·½¿ÉÑÐÏ°¡£\n");
+                return notify_fail("å¤ªä¸Šå¿˜æƒ…åªèƒ½å¤å¢“æ´¾å¼Ÿå­æ–¹å¯ç ”ç¿’ã€‚\n");
 
         if (me->query_skill("yunv-xinfa", 1) < 200)
-                return notify_fail("ÄãÓñÅ®ÐÄ·¨»ðºò²»×ã£¬ÎÞ·¨Ì«ÉÏÍüÇé¡£\n");
+                return notify_fail("ä½ çŽ‰å¥³å¿ƒæ³•ç«å€™ä¸è¶³ï¼Œç„¡æ³•å¤ªä¸Šå¿˜æƒ…ã€‚\n");
 
         return 1;
 }

@@ -4,19 +4,19 @@ inherit NPC;
 
 #include <ansi.h>
 
-// ½ÓÊÕµÄ»õÎï
+// æ¥æ”¶çš„è²¨ç‰©
 #define CHECK_GOODS     "stone"
 
 void create()
 {
-        set_name("ÍõÊ¯½³", ({ "wang shijiang", "wang" }) );
-        set("title", HIY "Ìì¹ú´ó½³" NOR);
-        set("gender", "ÄĞĞÔ" );
+        set_name("ç‹çŸ³åŒ ", ({ "wang shijiang", "wang" }) );
+        set("title", HIY "å¤©åœ‹å¤§åŒ " NOR);
+        set("gender", "ç”·æ€§" );
         set("age", 48);
         set("str", 35);
         set("long", @LONG
-Ò»¸öÂúÁ³²×É£µÄÀÏ½³ÈË£¬¿´ÉÏÈ¥ÒÀÈ»Ç¿×³ÓĞÁ¦¡£ÑÛÉñÖĞÍ¸Â¶³ö×ÔĞÅ
-ÓëÍşÑÏ¡£
+ä¸€å€‹æ»¿è‡‰æ»„æ¡‘çš„è€åŒ äººï¼Œçœ‹ä¸Šå»ä¾ç„¶å¼·å£¯æœ‰åŠ›ã€‚çœ¼ç¥ä¸­é€éœ²å‡ºè‡ªä¿¡
+èˆ‡å¨åš´ã€‚
 LONG);
         set("attitude", "friendly");
 
@@ -39,19 +39,19 @@ int filter_ob(object ob)
 
         owner = ob->query_owner();
         if (! objectp(owner))
-                // ¸Ã³µÎŞÖ÷
+                // è©²è»Šç„¡ä¸»
                 return 0;
 
         if (environment(owner) != environment())
-                // Ö÷ÈË²»ÔÚ
+                // ä¸»äººä¸åœ¨
                 return 0;
 
         if( query_temp("goods/id", ob) != CHECK_GOODS )
-                // Ã»ÓĞ×°ÔØÊ¯ÁÏ
+                // æ²’æœ‰è£è¼‰çŸ³æ–™
                 return 0;
 
         if( query_temp("goods/amount", ob)<1 )
-                // Ã»ÓĞ»õ
+                // æ²’æœ‰è²¨
                 return 0;
 
         return 1;
@@ -74,51 +74,51 @@ void heart_beat()
 
         if (! stringp(startroom = query("startroom")) ||
             find_object(startroom) != environment())
-                // ²»ÔÚ³öÉúµØµã
+                // ä¸åœ¨å‡ºç”Ÿåœ°é»
                 return;
 
         obs = all_inventory(environment());
         obs = filter_array(obs, (: filter_ob :));
         if (sizeof(obs) < 1)
         {
-                // Ã»ÓĞµ½´ïºÏÊÊµÄ³µÁ¾£¬Í£Ö¹ĞÄÌø
+                // æ²’æœ‰åˆ°é”åˆé©çš„è»Šè¼›ï¼Œåœæ­¢å¿ƒè·³
                 set_heart_beat(0);
                 return;
         }
 
-        // µ½´ïÁËºÏÊÊµÄ³µÁ¾
+        // åˆ°é”äº†åˆé©çš„è»Šè¼›
         ob = obs[0];
         owner = ob->query_owner();
-        message_vision("$N¿´µ½$nÑº»õ¶øÀ´£¬Á¬Á¬µãÍ·µÀ£º¡°ºÜ"
-                       "ºÃ£¡ºÜºÃ£¡¾ÍĞ¶µ½ÕâÀï°É£¡¡±\n",
+        message_vision("$Nçœ‹åˆ°$næŠ¼è²¨è€Œä¾†ï¼Œé€£é€£é»é ­é“ï¼šâ€œå¾ˆ"
+                       "å¥½ï¼å¾ˆå¥½ï¼å°±å¸åˆ°é€™è£¡å§ï¼â€\n",
                        this_object(), owner);
-        tell_object(owner,"ÄãĞ¶ÏÂ"+query_temp("goods/name", ob)+
-                    "£¬½«" + ob->name() + "½»¸øÑ§Í½À­×ß¡£\n");
+        tell_object(owner,"ä½ å¸ä¸‹"+query_temp("goods/name", ob)+
+                    "ï¼Œå°‡" + ob->name() + "äº¤çµ¦å­¸å¾’æ‹‰èµ°ã€‚\n");
 
-        // Ğ¶ÏÂÊ¯ÁÏ
+        // å¸ä¸‹çŸ³æ–™
         goods=query_temp("goods", ob);
         amount = goods["amount"];
         environment()->improve_product_amount(goods["id"], amount);
 
-        // ¸øÓë½±Àø
+        // çµ¦èˆ‡çå‹µ
         MONEY_D->pay_player(owner, amount / 100 * 300);
-        tell_object(owner, "ÄãÁìµ½ÁËÒ»Ğ©¹¤Ç®¡£\n");
+        tell_object(owner, "ä½ é ˜åˆ°äº†ä¸€äº›å·¥éŒ¢ã€‚\n");
         if( query_temp("job/owner", ob) == owner )
         {
-                // Õâ¸öÊÇ±¾ÈËÁìµÄ¹¤×÷£¬»ñµÃ½±Àø
+                // é€™å€‹æ˜¯æœ¬äººé ˜çš„å·¥ä½œï¼Œç²å¾—çå‹µ
                 GIFT_D->work_bonus(owner, ([ "exp" : 1000 + random(600),
                                         "pot" : 500 + random(400),
                                         "score" : 30 + random(50),
-                                        "prompt" : "Í¨¹ıÕâ´ÎÑºËÍ" + goods["name"] + HIG ]));
+                                        "prompt" : "é€šéé€™æ¬¡æŠ¼é€" + goods["name"] + HIG ]));
 
-                // È¥µôÎÒ×öÕâ¸ö¹¤×÷µÄĞÅÏ¢
+                // å»æ‰æˆ‘åšé€™å€‹å·¥ä½œçš„ä¿¡æ¯
                 delete("job/"+query_temp("job/info", ob), owner);
         }
         destruct(ob);
 
         if (sizeof(obs) < 2)
         {
-                // ÒÑ¾­´¦ÀíÍê±Ï£¬Ã»ÓĞĞÂµÄ³µÁ¾µ½´ï£¬Í£Ö¹ĞÄÌø
+                // å·²ç¶“è™•ç†å®Œç•¢ï¼Œæ²’æœ‰æ–°çš„è»Šè¼›åˆ°é”ï¼Œåœæ­¢å¿ƒè·³
                 set_heart_beat(0);
         }
 }

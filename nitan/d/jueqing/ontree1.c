@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", NOR + RED "´óÔæÊ÷ÉÏ" NOR);
+        set("short", NOR + RED "å¤§æ£—æ¨¹ä¸Š" NOR);
         set("long", @LONG
-ÕâÀïÊÇÊ¯¿ßÄÚµÄÒ»¿Ã°ÙÕÌ¸ßµÄ´óÔæÊ÷ÉÏ£¬µ«¼û´Ë´¦±»Ê÷Ò¶
-Ëù¸Ç£¬ÃÜ²»Í¸·ç¡£
+é€™è£¡æ˜¯çŸ³çªŸå…§çš„ä¸€æ£µç™¾ä»—é«˜çš„å¤§æ£—æ¨¹ä¸Šï¼Œä½†è¦‹æ­¤è™•è¢«æ¨¹è‘‰
+æ‰€è“‹ï¼Œå¯†ä¸é€é¢¨ã€‚
 LONG);
         set("exits", ([
               "up"    :  __DIR__"ontree2",
@@ -31,18 +31,18 @@ int do_jump(string arg)
         object ob;
 
         if (! arg || arg != "down" )
-                return notify_fail("ÄãÒªÍùÄÄ¶ùÌø£¿\n");
+                return notify_fail("ä½ è¦å¾€å“ªå…’è·³ï¼Ÿ\n");
 
         if (! ob = find_object(__DIR__"undertan"))
                 ob = load_object(__DIR__"undertan");
 
         if (me->is_busy())
-                return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ£¡\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£å¿™è‘—å‘¢ï¼\n");
 
         if (me->is_fighting())
-                return notify_fail("Äã»¹ÊÇÏÈ°ÑÄãÃæÇ°Õâ¸ö¼Ò»ï½â¾öÁËÔÙËµ¡£\n");
+                return notify_fail("ä½ é‚„æ˜¯å…ˆæŠŠä½ é¢å‰é€™å€‹å®¶ä¼™è§£æ±ºäº†å†èªªã€‚\n");
 
-        tell_room(ob, HIC + me->name() + "´Ó´óÔæÊ÷ÉÏÌøÁËÏÂÀ´¡£\n" NOR, me);
+        tell_room(ob, HIC + me->name() + "å¾å¤§æ£—æ¨¹ä¸Šè·³äº†ä¸‹ä¾†ã€‚\n" NOR, me);
 
         me->move(ob);
 
@@ -54,7 +54,7 @@ int valid_leave(object me, string dir)
 {
         if (dir == "down")
         { 
-               write(HIC "ÕâÀïÀëµØÃæÌ«¸ß£¬¿´À´ÄãÖ»ÓĞÌøÏÂÈ¥ÁË¡£\n" NOR);
+               write(HIC "é€™è£¡é›¢åœ°é¢å¤ªé«˜ï¼Œçœ‹ä¾†ä½ åªæœ‰è·³ä¸‹å»äº†ã€‚\n" NOR);
                return -1;
         }
 

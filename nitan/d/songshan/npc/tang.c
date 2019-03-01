@@ -4,9 +4,9 @@ inherit NPC;
 #include <ansi.h>;
 void create()
 {
-        set_name("ÌÀÓ¢ðÀ", ({ "tang yinghu", "yinghu", "tang" }) );
-        set("long", "ËûÊÇáÔÉ½ÅÉÕÆÃÅÈËµÄÆßÊ¦µÜ£¬ÕÆÃÅÈËµÄµÃÁ¦ÖúÊÖ¡£\n");
-        set("gender", "ÄÐÐÔ");
+        set_name("æ¹¯è‹±éµ ", ({ "tang yinghu", "yinghu", "tang" }) );
+        set("long", "ä»–æ˜¯åµ©å±±æ´¾æŽŒé–€äººçš„ä¸ƒå¸«å¼Ÿï¼ŒæŽŒé–€äººçš„å¾—åŠ›åŠ©æ‰‹ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("class", "swordsman");
         set("age", 45);
         set("attitude", "peaceful");
@@ -55,7 +55,7 @@ void create()
                 (: exert_function, "regenerate" :),
                 (: exert_function, "recover" :),
         }) );
-        create_family("áÔÉ½ÅÉ", 13, "µÜ×Ó");
+        create_family("åµ©å±±æ´¾", 13, "å¼Ÿå­");
         setup();
 
         carry_object(WEAPON_DIR+"kuojian")->wield();

@@ -3,7 +3,7 @@ inherit __DIR__"fengd";
 
 void create()
 {
-        set("short", "¹àÄ¾´Ô");
+        set("short", "çŒæœ¨å¢");
         set("long", query_long());
         set("exits", ([
   "north" : __DIR__"fengd6",
@@ -11,8 +11,8 @@ void create()
 ]));
 
         set("item_desc", ([
-        "¹û×Ó" : (: query_item_desc :),
-        "Ğ¡¹û×Ó" : (: query_item_desc :),
+        "æœå­" : (: query_item_desc :),
+        "å°æœå­" : (: query_item_desc :),
 ]));
         set("outdoors", "yaowang");
         setup();

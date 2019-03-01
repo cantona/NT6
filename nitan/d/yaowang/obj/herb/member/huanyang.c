@@ -2,12 +2,12 @@
 
 void create()
 {
-        set_name(HIC "ÎåÔÂ»¹Ñô" NOR, ({ "huanyang5", "Sedum odontophyllum", "herb_5yhuanyang" }));
+        set_name(HIC "äº”æœˆé‚„é™½" NOR, ({ "huanyang5", "Sedum odontophyllum", "herb_5yhuanyang" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "¾°Ìì¿ÆÖ²Îï³İÒ¶¾°Ìì(Sedum odontophyllum)µÄÈ«²İ¡£ÒòËüÏûÖ×Ö¹Í´¹¦Ğ§ºÜÇ¿£¬ÓÖÒòÕâÒ»Ö²ÎïÒ»°ãÔÚ5ÔÂ¿ª»¨£¬ËùÒÔÒ²³Æ¡°ÎåÔÂ»¹Ñô¡±¡£\n" NOR);
-                set("base_unit", "¸ù");
+                set("long", HIW "æ™¯å¤©ç§‘æ¤ç‰©é½’è‘‰æ™¯å¤©(Sedum odontophyllum)çš„å…¨è‰ã€‚å› å®ƒæ¶ˆè…«æ­¢ç—›åŠŸæ•ˆå¾ˆå¼·ï¼Œåˆå› é€™ä¸€æ¤ç‰©ä¸€èˆ¬åœ¨5æœˆé–‹èŠ±ï¼Œæ‰€ä»¥ä¹Ÿç¨±â€œäº”æœˆé‚„é™½â€ã€‚\n" NOR);
+                set("base_unit", "æ ¹");
                 set("base_value", 20000);
                 set("base_weight", 100);
         }

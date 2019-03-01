@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create ()
 {
-        set ("short", "������");
+        set ("short", "漢川街");
         set ("long", @LONG
-�����人����Ľֵ����Ӵ��ϱ����ĸ�ɫ�˵ȣ�����������Ħ
-����ࡣ������һ�ҿ�ջ����������ҩ�ĵĵ��̣��ƺ�������������ҩ��
-����һ������ʯ�ʵ�������
+這是武漢最繁華的街道。從大江南北來的各色人等，熙熙攘攘，摩
+肩接踵。東邊是一家客棧，西邊是賣藥材的店舖，似乎有人在炮制中藥，
+傳來一陣陣舂石臼的聲音。
 LONG);
         set("outdoors", "wuchang");
         set("exits", ([

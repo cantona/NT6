@@ -3,11 +3,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÌìÌ³±±ÃÅ");
+        set("short", "å¤©å£‡åŒ—é–€");
         set("long", @LONG
-ÕâÀïÊÇÌìÌ³µÄ±±ÃÅ£¬Õ¾ÔÚÕâÀïÒÑ¾­¿ÉÒÔÇå³þµÄÍû¼ûÌìÌ³ÖÐ¼äÄÇ×ù
-×î¸ßµÄ½¨Öþ¡ª¡ª»Êñ·Óî£¬Ïà´«Ã¿µ±»ÊµÛ¼ÀÌìÖ®ºó£¬×ÜÊÇµ½ÄÇÀïÏò×ÅÎÞ
-Êý¸öÉñÎ»ßµÍ·ÒÔÖÂÐ»Òâ¡£´ÓÌìÌ³±±ÃÅÍù±±ÔòÍ¨ÍùÖøÃûµÄ·²±ÝÇÅ¡£
+é€™è£¡æ˜¯å¤©å£‡çš„åŒ—é–€ï¼Œç«™åœ¨é€™è£¡å·²ç¶“å¯ä»¥æ¸…æ¥šçš„æœ›è¦‹å¤©å£‡ä¸­é–“é‚£åº§
+æœ€é«˜çš„å»ºç¯‰â”€â”€çš‡ç©¹å®‡ï¼Œç›¸å‚³æ¯ç•¶çš‡å¸ç¥­å¤©ä¹‹å¾Œï¼Œç¸½æ˜¯åˆ°é‚£è£¡å‘è‘—ç„¡
+æ•¸å€‹ç¥žä½å©é ­ä»¥è‡´è¬æ„ã€‚å¾žå¤©å£‡åŒ—é–€å¾€åŒ—å‰‡é€šå¾€è‘—åçš„å‡¡é™›æ©‹ã€‚
 LONG );
         set("exits", ([
                 "south" : "/d/beijing/tiantan",

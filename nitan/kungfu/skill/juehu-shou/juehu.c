@@ -1,4 +1,4 @@
-// juehu.c »¢×¦¾ø»§ÊÖ¡¸¾ø»§¡¹
+// juehu.c è™çˆªçµ•æˆ¶æ‰‹ã€Œçµ•æˆ¶ã€
 // by Lonely
 
 #include <ansi.h>
@@ -12,24 +12,24 @@ int perform(object me, object target)
         if( !target ) target = offensive_target(me);
 
         if( !target || !target->is_character() || !me->is_fighting(target) )
-                return notify_fail("Éñ¹¦ÉËµĞÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ç¥åŠŸå‚·æ•µåªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( objectp(query_temp("weapon", me)) )
-                return notify_fail("Äã±ØĞë¿ÕÊÖ²ÅÄÜÊ¹ÓÃ¡¸¾ø»§¡¹Éñ¹¦£¡\n");  
+                return notify_fail("ä½ å¿…é ˆç©ºæ‰‹æ‰èƒ½ä½¿ç”¨ã€Œçµ•æˆ¶ã€ç¥åŠŸï¼\n");  
                 
         if( (int)me->query_skill("juehu-shou", 1) < 100 )
-                return notify_fail("ÄãµÄ»¢×¦¾ø»§ÊÖ²»¹»æµÊì£¬²»»áÊ¹ÓÃ¡¸¾ø»§¡¹Éñ¹¦\n");
+                return notify_fail("ä½ çš„è™çˆªçµ•æˆ¶æ‰‹ä¸å¤ å«»ç†Ÿï¼Œä¸æœƒä½¿ç”¨ã€Œçµ•æˆ¶ã€ç¥åŠŸ\n");
 
         if( (int)me->query_skill("taiji-shengong", 1) < 100 )
-                return notify_fail("ÄãµÄÌ«¼«Éñ¹¦²»¹»¸ß£¬²»ÄÜÓÃ¡¸¾ø»§¡¹Éñ¹¦ÉËµĞ¡£\n");
+                return notify_fail("ä½ çš„å¤ªæ¥µç¥åŠŸä¸å¤ é«˜ï¼Œä¸èƒ½ç”¨ã€Œçµ•æˆ¶ã€ç¥åŠŸå‚·æ•µã€‚\n");
 
         if( query("shen", me)<10000 )
-                return notify_fail("ÄãĞ°ÆøÌ«ÖØ£¬ÎŞ·¨Ê¹³ö¡¸¾ø»§¡¹ÕĞÊ½¡£\n");
+                return notify_fail("ä½ é‚ªæ°£å¤ªé‡ï¼Œç„¡æ³•ä½¿å‡ºã€Œçµ•æˆ¶ã€æ‹›å¼ã€‚\n");
 
         if( query("neili", me)<400 )
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ£¬²»ÄÜÊ¹³ö¡¸¾ø»§¡¹ÕĞÊ½¡£\n");
+                return notify_fail("ä½ ç¾åœ¨å…§åŠ›å¤ªå¼±ï¼Œä¸èƒ½ä½¿å‡ºã€Œçµ•æˆ¶ã€æ‹›å¼ã€‚\n");
 
-        msg = BLU "$NÄ¬ÔËÉñ¹¦£¬Á³É«°×µÃÏÅÈË£¬Í»È»Ê¹³ö»¢×¦¾ø»§ÊÖµÄ×îºóÒ»»÷¡¸¾ø»§¡¹£¬ÆóÍ¼µ±³¡°Ñ$n·ÏÓÚ×¥ÏÂ¡£\n" NOR;
+        msg = BLU "$Né»˜é‹ç¥åŠŸï¼Œè‡‰è‰²ç™½å¾—åš‡äººï¼Œçªç„¶ä½¿å‡ºè™çˆªçµ•æˆ¶æ‰‹çš„æœ€å¾Œä¸€æ“Šã€Œçµ•æˆ¶ã€ï¼Œä¼åœ–ç•¶å ´æŠŠ$nå»¢äºæŠ“ä¸‹ã€‚\n" NOR;
         
         
         addn("shen", -8000, me);
@@ -42,7 +42,7 @@ int perform(object me, object target)
         {       
                 damage = damage_power(me, "claw");
                 addn("neili", -300, me);
-                pmsg = RED "½á¹û$NÒ»»÷ÃüÖĞ£¬$nÖ»¸Ğµ½ÏÂÌåÒ»Õó´ÌÍ´£¬ÌåÄÚ¾«Ôª²»¶ÏÍâĞ¹£¬¶ÙÊ±¾õµÄËÄÖ«ÎŞÁ¦£¬Á½ÍÈ²»Í£²ü¶¶¡£\n" NOR;
+                pmsg = RED "çµæœ$Nä¸€æ“Šå‘½ä¸­ï¼Œ$nåªæ„Ÿåˆ°ä¸‹é«”ä¸€é™£åˆºç—›ï¼Œé«”å…§ç²¾å…ƒä¸æ–·å¤–æ³„ï¼Œé “æ™‚è¦ºçš„å››è‚¢ç„¡åŠ›ï¼Œå…©è…¿ä¸åœé¡«æŠ–ã€‚\n" NOR;
                 msg += COMBAT_D->do_damage(me, target, UNARMED_ATTACK, damage, 50, pmsg);
 
                 me->start_busy(3);
@@ -51,7 +51,7 @@ int perform(object me, object target)
         } else 
         {
                 addn("neili", 150, me);
-                msg += CYN "¿ÉÊÇ$p" CYN "¿´ÆÆÁË$P" CYN "µÄºİ¶¾ÆóÍ¼£¬ÏòÅÔÌø¿ªÊı²½£¬¶ã¿ªÁË$P" CYN "µÄÁèÀ÷Ò»»÷£¡\n" NOR;
+                msg += CYN "å¯æ˜¯$p" CYN "çœ‹ç ´äº†$P" CYN "çš„ç‹ æ¯’ä¼åœ–ï¼Œå‘æ—è·³é–‹æ•¸æ­¥ï¼Œèº²é–‹äº†$P" CYN "çš„å‡Œå²ä¸€æ“Šï¼\n" NOR;
                 me->start_busy(4);
         }
         
@@ -60,16 +60,16 @@ int perform(object me, object target)
         if (damage > 200)
         {
                 target->apply_condition("juehu_hurt",(500*query("age", target)));
-                if( query("gender", target) == "ÄĞĞÔ" )
+                if( query("gender", target) == "ç”·æ€§" )
                 {
-                        message_combatd(HIW "$NÍ»È»¾õµÄµ¤ÌïÄÚµÄ¾«ÔªÒÑÁ÷Ê§åÊ¾¡£¬ĞÄÀïÒ»ÕóÄÑ¹ı£¬ÖªµÀ×Ô¼ºÓĞÒ»¶ÎÊ±¼ä²»ÄÜĞĞ»¶×öÀÖÁË!\n" NOR, target);
+                        message_combatd(HIW "$Nçªç„¶è¦ºçš„ä¸¹ç”°å…§çš„ç²¾å…ƒå·²æµå¤±è¿¨ç›¡ï¼Œå¿ƒè£¡ä¸€é™£é›£éï¼ŒçŸ¥é“è‡ªå·±æœ‰ä¸€æ®µæ™‚é–“ä¸èƒ½è¡Œæ­¡åšæ¨‚äº†!\n" NOR, target);
                 } else
                 {
-                        if( query("gender", target) == "Å®ĞÔ" )
-                                message_combatd(HIW "$N±»ÄãÒ»»÷ÃüÖĞ£¬£¬²»½û¼ÈĞßÓÖÅ­£¬¼û$n¾¹¶ÔÒ»Å®Á÷Ö®±²Ò²ÓÃ´ËÒõ¶¾ÕĞÊı£¡\n"NOR,
+                        if( query("gender", target) == "å¥³æ€§" )
+                                message_combatd(HIW "$Nè¢«ä½ ä¸€æ“Šå‘½ä¸­ï¼Œï¼Œä¸ç¦æ—¢ç¾åˆæ€’ï¼Œè¦‹$nç«Ÿå°ä¸€å¥³æµä¹‹è¼©ä¹Ÿç”¨æ­¤é™°æ¯’æ‹›æ•¸ï¼\n"NOR,
                                                 target,me);
                         else
-                                message_combatd(HIW "$NËäÈ»»÷ÖĞ$nµÄÒªº¦£¬µ«¸Ğ¾õÊÜÁ¦ÉõÇá£¬ËÆºõÒÑÎŞÒªº¦¿ÉÑÔ!\n"NOR,
+                                message_combatd(HIW "$Né›–ç„¶æ“Šä¸­$nçš„è¦å®³ï¼Œä½†æ„Ÿè¦ºå—åŠ›ç”šè¼•ï¼Œä¼¼ä¹å·²ç„¡è¦å®³å¯è¨€!\n"NOR,
                                 me,target);
                 }
           

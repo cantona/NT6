@@ -7,11 +7,11 @@ int give_anqi();
 
 void create()
 {
-        set_name("ÌÆïÚ", ({ "tang biao", "tang", "biao"}));
+        set_name("å”é¢", ({ "tang biao", "tang", "biao"}));
         set("long", 
-"ÌÆÃÅÖĞËùÓĞµÄ¾øÃÅïÚ·¨£¬Ëû¶¼»áÓÃ¡£\n");        
-        set("gender", "ÄĞĞÔ");
-        set("gender", "ÄĞĞÔ");
+"å”é–€ä¸­æ‰€æœ‰çš„çµ•é–€é¢æ³•ï¼Œä»–éƒ½æœƒç”¨ã€‚\n");        
+        set("gender", "ç”·æ€§");
+        set("gender", "ç”·æ€§");
         set("age", 32);
         set("class", "tangmen");
         set("attitude", "peaceful");
@@ -60,13 +60,13 @@ void create()
         set_temp("apply/unarmed_damage", 100);  
         set_temp("apply/armor", 200);  
         
-        create_family("ÌÆÃÅÊÀ¼Ò", 2, "µÜ×Ó");
+        create_family("å”é–€ä¸–å®¶", 2, "å¼Ÿå­");
 
         set("inquiry", ([
                 "job" : ( : give_job  : ),
-                "¹¤×÷": ( : give_job  : ),
+                "å·¥ä½œ": ( : give_job  : ),
                 "anqi": ( : give_anqi : ),
-                "°µÆ÷": ( : give_anqi : ),
+                "æš—å™¨": ( : give_anqi : ),
         ]));
 
         setup();
@@ -82,7 +82,7 @@ int give_job()
         int coun;
 
         string *tar = ({
-                "","Ìú¿óÊ¯",
+                "","éµç¤¦çŸ³",
         });
 
         me = this_player();
@@ -90,17 +90,17 @@ int give_job()
 
         if( !environment() || base_name(environment()) != query("startroom") )
         {
-                say("ÌÆïÚËµµÀ:¡°ÎÒÏÖÔÚÃ»ĞÄÇé¸øÄãÅÉ»î£¬µÈÎÒ»ØÖÆïÚ·¿ÔÙËµ°É£¡¡±\n");
+                say("å”é¢èªªé“:â€œæˆ‘ç¾åœ¨æ²’å¿ƒæƒ…çµ¦ä½ æ´¾æ´»ï¼Œç­‰æˆ‘å›åˆ¶é¢æˆ¿å†èªªå§ï¼â€\n");
                 return 0;
         }
 
         if( !query_temp("tangmen/biao", me) )
-                command("say ¡°ÕâÀïÃ»ÓĞ»îÄÜ¸øÄã¸É£¬ÄãÌıË­ËµµÄ£¿¡±");
+                command("say â€œé€™è£¡æ²’æœ‰æ´»èƒ½çµ¦ä½ å¹¹ï¼Œä½ è½èª°èªªçš„ï¼Ÿâ€");
         else
         {
                 if( query_temp("biao", me) )
                 {
-                        command("say ¡°Äã»¹Ã»ÓĞÍê³É¸Õ²Å¸øÄãµÄÈÎÎñÄØ£¡¡±");
+                        command("say â€œä½ é‚„æ²’æœ‰å®Œæˆå‰›æ‰çµ¦ä½ çš„ä»»å‹™å‘¢ï¼â€");
                         return 1;
                 }
                 coun = 1 + random(sizeof(tar));
@@ -108,7 +108,7 @@ int give_job()
                         coun = ( sizeof(tar) - 1 );
                 targ = tar[coun];
                 printf("%d/%d\n",coun,sizeof(tar));
-                say("ÌÆïÚËµµÀ:¡°ÎÒÕâÀïÉÏºÃµÄ" + targ + "²»¶àÁË£¬ÄãÈ¥ºóÉ½¸øÎÒÕÒÒ»Ğ©À´°É£¡¡±\n");
+                say("å”é¢èªªé“:â€œæˆ‘é€™è£¡ä¸Šå¥½çš„" + targ + "ä¸å¤šäº†ï¼Œä½ å»å¾Œå±±çµ¦æˆ‘æ‰¾ä¸€äº›ä¾†å§ï¼â€\n");
                 set_temp("biao", coun, me);
         }
         return 1;
@@ -119,13 +119,13 @@ int give_anqi()
         object me = this_player();
         object ob;
         
-        if( query("family/family_name", me) != "ÌÆÃÅÊÀ¼Ò" )
+        if( query("family/family_name", me) != "å”é–€ä¸–å®¶" )
         {
-                command("say Äã²»ÊÇÎÒÌÆÃÅÖĞÈË£¬ÎÒÎŞ·¨¸øÄãÆß×Ó¸ÕïÚ£¡\n");
+                command("say ä½ ä¸æ˜¯æˆ‘å”é–€ä¸­äººï¼Œæˆ‘ç„¡æ³•çµ¦ä½ ä¸ƒå­å‰›é¢ï¼\n");
                 return 1;
         } else
         {
-                command("say ´ËÆß×Ó¸ÕïÚÍşÁ¦ÎŞÇî£¬ÅäºÏÌÆÃÅÆæ¶¾Ê¹ÓÃµÄ»°£¬Ğ§¹û¸üºÃ£¡\n");
+                command("say æ­¤ä¸ƒå­å‰›é¢å¨åŠ›ç„¡çª®ï¼Œé…åˆå”é–€å¥‡æ¯’ä½¿ç”¨çš„è©±ï¼Œæ•ˆæœæ›´å¥½ï¼\n");
                 ob = new("/kungfu/class/tangmen/obj/biao");
 //                ob->move(this_object());
 //                command("give qizi gangbiao to"+query("id", me));
@@ -137,7 +137,7 @@ int give_anqi()
 
 int accept_object(object who, object ob)
 {
-        command("say ÒªÊÇÕÒµ½ÁË£¬¾Í·Åµ½´¢²ØÊÒÈ¥°É£¡¸øÎÒ¸ÉÊ²Ã´?");
-        write("ÌÆïÚ³å×ÅÄã²»ÄÍ·³µÄ»ÓÁË»ÓÊÖ£¬µÍ×ÅÍ·½Ó×ÅÑĞ¾¿°µÆ÷Í¼Æ×¡£\n");
+        command("say è¦æ˜¯æ‰¾åˆ°äº†ï¼Œå°±æ”¾åˆ°å„²è—å®¤å»å§ï¼çµ¦æˆ‘å¹¹ä»€éº¼?");
+        write("å”é¢æ²–è‘—ä½ ä¸è€ç…©çš„æ®äº†æ®æ‰‹ï¼Œä½è‘—é ­æ¥è‘—ç ”ç©¶æš—å™¨åœ–è­œã€‚\n");
         return 0;
 }

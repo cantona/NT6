@@ -1,4 +1,4 @@
-//tanggan.c                ËÄ´¨ÌÆÃÅ¡ªÌÆ¸ÐÎÔÊÒ
+//tanggan.c                å››å·å”é–€â”€å”æ„Ÿè‡¥å®¤
 
 #include <ansi.h>
 #include <room.h>
@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÇÞÊÒ");
+        set("short", "å¯¢å®¤");
         set("long",
-"ÕâÊÇÒ»¼ä¼òÂªµÄÎÔÊÒ¡£ÎÝÖÐÖ»ÓÐÒ»ÕÅÓ²Ä¾´²ºÍÒ»ÕÅÔæÄ¾ºì×À¡£ÕâÀï×¡\n"
-"×ÅÌÆÀÏÌ«Ì«µÄÌùÉí±£ïÚÌÆ¸Ð¡£\n"
+"é€™æ˜¯ä¸€é–“ç°¡é™‹çš„è‡¥å®¤ã€‚å±‹ä¸­åªæœ‰ä¸€å¼µç¡¬æœ¨åºŠå’Œä¸€å¼µæ£—æœ¨ç´…æ¡Œã€‚é€™è£¡ä½\n"
+"è‘—å”è€å¤ªå¤ªçš„è²¼èº«ä¿é¢å”æ„Ÿã€‚\n"
 );
         set("exits", ([
                 "west" : __DIR__"nzlang2",

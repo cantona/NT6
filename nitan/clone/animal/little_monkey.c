@@ -5,11 +5,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("Ğ¡ºï",({ "little monkey", "monkey"}) );
-        set("race", "×ßÊŞ");
-        set("gender", "ĞÛĞÔ" );
+        set_name("å°çŒ´",({ "little monkey", "monkey"}) );
+        set("race", "èµ°ç¸");
+        set("gender", "é›„æ€§" );
         set("age", 7);
-        set("long", "ÕâÊÇÒ»Ö»µ÷Æ¤µÄĞ¡ºï×Ó£¬ËäÊÇĞóÉü£¬È´Ï²»¶Ä£·ÂÈËÑù¡£\n");
+        set("long", "é€™æ˜¯ä¸€åªèª¿çš®çš„å°çŒ´å­ï¼Œé›–æ˜¯ç•œç‰²ï¼Œå»å–œæ­¡æ¨¡ä»¿äººæ¨£ã€‚\n");
         set("combat_exp", 50);
         set("shen_type", -1);
         set("str", 11);

@@ -45,12 +45,12 @@ string time_period(int time)
         h = t % 24;             t /= 24;
         d = t;
 
-        if( d ) str = chinese_number(d) + "Ìì";
+        if( d ) str = chinese_number(d) + "å¤©";
         else str = "";
 
-        if( h ) str += chinese_number(h) + "Ğ¡Ê±";
-        if( m ) str += chinese_number(m) + "·Ö";
-        str += chinese_number(s) + "Ãë";
+        if( h ) str += chinese_number(h) + "å°æ™‚";
+        if( m ) str += chinese_number(m) + "åˆ†";
+        str += chinese_number(s) + "ç§’";
 
         return str;
 }

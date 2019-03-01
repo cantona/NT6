@@ -1,10 +1,10 @@
-// sheshen.c ÉáÉí¼¼
+// sheshen.c èˆèº«æŠ€
 
 #include <ansi.h>
 
 inherit F_SSERVER;
 
-string name() { return "ÉáÉí"; }
+string name() { return "èˆèº«"; }
 
 int perform(object me, object target)
 {
@@ -18,32 +18,32 @@ int perform(object me, object target)
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("ÉáÉíÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("èˆèº«åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( me->is_ghost() || query("eff_qi", me)<0 )
-                return notify_fail("ÄãÒÑ¾­ËÀÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“æ­»äº†ã€‚\n");
 
 
         if( me->is_busy() )
-                return notify_fail("ÄãÏÖÔÚÃ¦×ÅÄØ£¬Ê¹²»³öÕâÒ»ÕĞ¡£\n");
+                return notify_fail("ä½ ç¾åœ¨å¿™è‘—å‘¢ï¼Œä½¿ä¸å‡ºé€™ä¸€æ‹›ã€‚\n");
 
 
 //        if( !me->query("yinliting_teach") )
-//                 return notify_fail("ÄãÎ´µÃ½ÌÖ÷´«ÊÚ£¬²»»áÊ¹ÓÃÉáÉí¡£\n");
+//                 return notify_fail("ä½ æœªå¾—æ•™ä¸»å‚³æˆï¼Œä¸æœƒä½¿ç”¨èˆèº«ã€‚\n");
 
         if( (int)me->query_skill("strike") < 250 )
-                return notify_fail("ÄãµÄÓ¢ĞÛÈıÕĞ¼«²»¹»æµÊì£¬²»»áÊ¹ÓÃÉáÉí¡£\n");
+                return notify_fail("ä½ çš„è‹±é›„ä¸‰æ‹›æ¥µä¸å¤ å«»ç†Ÿï¼Œä¸æœƒä½¿ç”¨èˆèº«ã€‚\n");
 //        if( me->query("neili") >= 100 || me->query("qi") >= 200)
-//                                               return notify_fail("ÄãÎ´µ½É½ÇîË®¾¡Ö®µØ£¬²»ĞèÓÃ´ËºİÕĞ£¡\n")
+//                                               return notify_fail("ä½ æœªåˆ°å±±çª®æ°´ç›¡ä¹‹åœ°ï¼Œä¸éœ€ç”¨æ­¤ç‹ æ‹›ï¼\n")
         if( (int)me->query_skill("shenlong-xinfa", 1) < 250 && (int)me->query_skill("busi-shenlong", 1) < 250 )
-                return notify_fail("ÄãµÄÄÚ¹¦ĞŞÎª²»¹»£¬²»»áÊ¹ÓÃÉáÉí¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸä¿®ç‚ºä¸å¤ ï¼Œä¸æœƒä½¿ç”¨èˆèº«ã€‚\n");
 
         if( me->query_skill_mapped("force") != "shenlong-xinfa" &&
             me->query_skill_mapped("force") != "busi-shenlong" )
-                return notify_fail("ÄãËùÓÃµÄÄÚ¹¦ÓÚÓ¢ĞÛÈıÕĞÆøÂ·Ïàã££¡\n");
+                return notify_fail("ä½ æ‰€ç”¨çš„å…§åŠŸäºè‹±é›„ä¸‰æ‹›æ°£è·¯ç›¸æ‚–ï¼\n");
 
         if( query("combat_exp", me)<500000 )
-                return notify_fail("ÄãÊµÕ½¾­Ñé²»×ã£¬²»»áÊ¹ÓÃÉáÉí¡£\n");
+                return notify_fail("ä½ å¯¦æˆ°ç¶“é©—ä¸è¶³ï¼Œä¸æœƒä½¿ç”¨èˆèº«ã€‚\n");
 
         if( query("shen", target)>10000 )
                 shen=-query("shen", me)/50;
@@ -51,13 +51,13 @@ int perform(object me, object target)
 
         exp=query("combat_exp", me)/100;
 
-        msg = HIW"$NÒ»Éù±¯Ğ¥£¬¿ÕÃÅ´ó¿ª£¬È«Éí×²Ïò$n"+HIW"£¬ÒÑ¾­ÊÇÆ´ÃüµÄ´ò·¨£¡£¡£¡\n"NOR;
+        msg = HIW"$Nä¸€è²æ‚²å˜¯ï¼Œç©ºé–€å¤§é–‹ï¼Œå…¨èº«æ’å‘$n"+HIW"ï¼Œå·²ç¶“æ˜¯æ‹¼å‘½çš„æ‰“æ³•ï¼ï¼ï¼\n"NOR;
 
         mine=random(query("combat_exp", me)-query("shen", me));
 
         if( mine>query("combat_exp", target)/3*2 )
         {
-                msg += HIR"$n"+HIR"â§²»¼°·ÀÖ®ÏÂ£¬±»$NÆË¸öÕı×Å£¬Ö»¾õ»ëÉí×ÆÈÈÎŞ±È£¬È´ÓÖ»ëÉí¶¯µ¯²»µÃ£¬\nÈÌ²»×¡ÁË·¢³öÒ»ÉùÉùÆàÀ÷µÄ²Ò½Ğ£¡£¡£¡$nÃæÄ¿±äµÄÕøÄü¿ÉÅÂ£¬´¹ËÀÇ°µÄÕõÔúÖÕÓÚÍ£Ö¹ÁË¡£\nÁ½ÈË¶¼ºÄ¾¡ËùÓĞµÄÆøÁ¦£¬Ö»ÁôÏÂ¾ªĞÄ¶¯ÆÇµÄ±¯²ÒÒ»Ä»£¡£¡£¡\n" NOR;
+                msg += HIR"$n"+HIR"çŒä¸åŠé˜²ä¹‹ä¸‹ï¼Œè¢«$Næ’²å€‹æ­£è‘—ï¼Œåªè¦ºæ¸¾èº«ç¼ç†±ç„¡æ¯”ï¼Œå»åˆæ¸¾èº«å‹•å½ˆä¸å¾—ï¼Œ\nå¿ä¸ä½äº†ç™¼å‡ºä¸€è²è²å‡„å²çš„æ…˜å«ï¼ï¼ï¼$né¢ç›®è®Šçš„çŒ™ç°å¯æ€•ï¼Œå‚æ­»å‰çš„æ™ç´®çµ‚äºåœæ­¢äº†ã€‚\nå…©äººéƒ½è€—ç›¡æ‰€æœ‰çš„æ°£åŠ›ï¼Œåªç•™ä¸‹é©šå¿ƒå‹•é­„çš„æ‚²æ…˜ä¸€å¹•ï¼ï¼ï¼\n" NOR;
                 message_combatd(msg, me, target);
                 addn("max_neili", -(30+random(30)), me);
                 addn("combat_exp", -exp, me);
@@ -67,8 +67,8 @@ int perform(object me, object target)
                 me->start_busy(3 + random(3));
                 if( !target->is_busy() )
                         target->start_busy(3 + random(3));
-                set_temp("die_reason", "Óë"+target->name(1)+"Í¬¹éÓÚ¾¡", me);
-                set_temp("die_reason", "Óë"+me->name(1)+"Í¬¹éÓÚ¾¡", target);
+                set_temp("die_reason", "èˆ‡"+target->name(1)+"åŒæ­¸äºç›¡", me);
+                set_temp("die_reason", "èˆ‡"+me->name(1)+"åŒæ­¸äºç›¡", target);
                 me->die();
                 target->die();
                 return 1;
@@ -76,7 +76,7 @@ int perform(object me, object target)
         }
         else
         {
-                msg += HIC "$n" HIC "²»ÁÏ$N" HIC "ÓÃ´ËÕĞÊı£¬ÊÖÃ¦½ÅÂÒ£¬ÀÇ±·Íò×´µÄ¶ãÉÁ¿ªÈ¥£¬µ«ÒÑÏÅµÃÊÖ×ã±ùÁ¹£¬ºÃÒ»Õó¶¯µ¯²»µÃ¡£\n"NOR;
+                msg += HIC "$n" HIC "ä¸æ–™$N" HIC "ç”¨æ­¤æ‹›æ•¸ï¼Œæ‰‹å¿™è…³äº‚ï¼Œç‹¼ç‹½è¬ç‹€çš„èº²é–ƒé–‹å»ï¼Œä½†å·²åš‡å¾—æ‰‹è¶³å†°æ¶¼ï¼Œå¥½ä¸€é™£å‹•å½ˆä¸å¾—ã€‚\n"NOR;
                 message_combatd(msg, me, target);
                 me->receive_wound("qi",query("max_qi", me)+200, target);
                 me->start_busy(3);

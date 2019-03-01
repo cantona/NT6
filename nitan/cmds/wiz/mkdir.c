@@ -20,25 +20,25 @@ int main(object me, string arg)
         {
                 grant = SECURITY_D->query_site_privilege("edit");
                 if( !grant && !sscanf(dir, "/u/%*s") )
-                        return notify_fail("ÄãÖ»ÄÜÔÚÄã×Ô¼ºµÄÄ¿Â¼ÏÂ½¨×ÓÄ¿Â¼¡£\n");
+                        return notify_fail("ä½ åªèƒ½åœ¨ä½ è‡ªå·±çš„ç›®éŒ„ä¸‹å»ºå­ç›®éŒ„ã€‚\n");
                         
                 if( grant != "all" && !sscanf(dir, "/%s/%*s", grant) )
-                        return notify_fail("ÄãÖ»ÄÜÔÚÄã×Ô¼ºÄ¿Â¼ÏÂÒÔ¼°" + grant + "Ä¿Â¼ÏÂ½¨×ÓÄ¿Â¼¡£\n");
+                        return notify_fail("ä½ åªèƒ½åœ¨ä½ è‡ªå·±ç›®éŒ„ä¸‹ä»¥åŠ" + grant + "ç›®éŒ„ä¸‹å»ºå­ç›®éŒ„ã€‚\n");
         }
         seteuid(geteuid(me));
         if (mkdir(dir))
                 write("Ok.\n");
         else
-                write("ÄãÃ»ÓĞÔÚÕâÀï½¨×ÓÄ¿Â¼µÄÈ¨Àû¡£\n");
+                write("ä½ æ²’æœ‰åœ¨é€™è£¡å»ºå­ç›®éŒ„çš„æ¬Šåˆ©ã€‚\n");
         return 1;        
 }
 
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : mkdir <×ÓÄ¿Â¼Ãû>
+æŒ‡ä»¤æ ¼å¼ : mkdir <å­ç›®éŒ„å>
 
-½¨Á¢Ò»¸ö×ÓÄ¿Â¼¡£
+å»ºç«‹ä¸€å€‹å­ç›®éŒ„ã€‚
 
 see also: rm
 HELP );

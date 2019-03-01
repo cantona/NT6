@@ -1,4 +1,4 @@
-// tianshi.c ÀîÌìÊ¦
+// tianshi.c æå¤©å¸«
 // Modified by haiyan
 
 #include <ansi.h>
@@ -10,10 +10,10 @@ int accept_object(object me, object ob);
 
 void create()
 {
-        set_name("ÀîÌìÊ¦", ({ "li tianshi", "li", "tianshi" }));
-        set("long", "ÕâÊÇÒ»Î»ÏÉ·çµÀ¹ÇµÄ·¨Ê¦£¬ÉíÉÏµÄµÀÅÛÉÏ»­×ÅÒ»Ğ©·ûºÅ¡£\n");
-        set("nickname", HIY"ÕòÑıÕæÈË"NOR);
-        set("gender", "ÄĞĞÔ");
+        set_name("æå¤©å¸«", ({ "li tianshi", "li", "tianshi" }));
+        set("long", "é€™æ˜¯ä¸€ä½ä»™é¢¨é“éª¨çš„æ³•å¸«ï¼Œèº«ä¸Šçš„é“è¢ä¸Šç•«è‘—ä¸€äº›ç¬¦è™Ÿã€‚\n");
+        set("nickname", HIY"é®å¦–çœŸäºº"NOR);
+        set("gender", "ç”·æ€§");
         set("age", 30);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -49,10 +49,10 @@ void create()
 
         set("inquiry", ([ 
                 "job"   : (: ask_ghost :),
-                "×½¹í"  : (: ask_ghost :),
-                "Ê§°Ü"  : (: ask_fail :),
+                "æ‰é¬¼"  : (: ask_ghost :),
+                "å¤±æ•—"  : (: ask_fail :),
                 "fail"  : (: ask_fail :),
-                "ÌÒÄ¾½£": "ÌÒÄ¾½£ÊÇ×½¹íµÄ±Ø±¸Ö®Îï£¬×Ô¼ºÈ¥×öÒ»°ÑºÃÁË¡£",
+                "æ¡ƒæœ¨åŠ": "æ¡ƒæœ¨åŠæ˜¯æ‰é¬¼çš„å¿…å‚™ä¹‹ç‰©ï¼Œè‡ªå·±å»åšä¸€æŠŠå¥½äº†ã€‚",
         ])); 
 
         setup();
@@ -70,21 +70,21 @@ mixed ask_ghost()
       int t, dam;
       me = this_player(); 
 
-      if (me->query("family/family_name") != "Îäµ±ÅÉ" &&
-          me->query("family/family_name") != "È«Õæ½Ì") 
-           return "ÕâÎ»" + RANK_D->query_respect(me) + "Ò²ÓĞ×½¹íµÄ±¾ÊÂÂğ£¿"; 
+      if (me->query("family/family_name") != "æ­¦ç•¶æ´¾" &&
+          me->query("family/family_name") != "å…¨çœŸæ•™") 
+           return "é€™ä½" + RANK_D->query_respect(me) + "ä¹Ÿæœ‰æ‰é¬¼çš„æœ¬äº‹å—ï¼Ÿ"; 
 
       if (me->query_skill("taoism", 1) < 100) 
-           return "»¹ÊÇËãÁË°É£¡ÄãÕâµãµÀĞĞÖ»ÅÂ¸ø¹í×½ÁË¡£"; 
+           return "é‚„æ˜¯ç®—äº†å§ï¼ä½ é€™é»é“è¡Œåªæ€•çµ¦é¬¼æ‰äº†ã€‚"; 
 
       if (me->query_skill("taoism", 1) >= 500) 
-           return "ÄãµÄĞŞÎªÒÑ¾­Ì«¸ßÁË£¡×½¹íµÄÊÂ»¹ÊÇÈÃĞ¡±²ÃÇÈ¥°É¡£"; 
+           return "ä½ çš„ä¿®ç‚ºå·²ç¶“å¤ªé«˜äº†ï¼æ‰é¬¼çš„äº‹é‚„æ˜¯è®“å°è¼©å€‘å»å§ã€‚"; 
 
       if (me->query("combat_exp") > 10000000) 
-           return "ÄãÎä¹¦¸ßÇ¿£¬×½¹íµÄÊÂ¾Í²»ÀÍÄã·ÑĞÄÁË£¡"; 
+           return "ä½ æ­¦åŠŸé«˜å¼·ï¼Œæ‰é¬¼çš„äº‹å°±ä¸å‹ä½ è²»å¿ƒäº†ï¼"; 
 
       if (me->query_temp("gui/shougui"))
-           return "¸Õ²Å²»ÊÇÈÃÄãÈ¥×½¹íÁËÂï£¿ÔõÃ´ÓÖ»ØÀ´ÁË£¿"; 
+           return "å‰›æ‰ä¸æ˜¯è®“ä½ å»æ‰é¬¼äº†å˜›ï¼Ÿæ€éº¼åˆå›ä¾†äº†ï¼Ÿ"; 
 
       if (me->query_skill("taoism", 1) < 500)  t = 500;
       if (me->query_skill("taoism", 1) < 400)  t = 400;
@@ -94,7 +94,7 @@ mixed ask_ghost()
       kp = keys(dirs); 
       p = kp[random(sizeof(kp))]; 
       room = dirs[p][random(sizeof(dirs[p]))];
-      if( wizardp(me) )  tell_object(me,sprintf("<¹í³öÏÖÔÚ %s µØµã>\n",room)); 
+      if( wizardp(me) )  tell_object(me,sprintf("<é¬¼å‡ºç¾åœ¨ %s åœ°é»>\n",room)); 
 
       dam = t + (me->query_temp("gui/count") % 5) * 10;
       ghost = new(gui[random(sizeof(gui))] );
@@ -105,17 +105,17 @@ mixed ask_ghost()
       ghost->set_skill("claw", me->query_skill("taoism", 1) +
                       (me->query_temp("gui/count") % 5) * 10);
 
-      tell_object(me, this_object()->name() + "¶ÔÄãµÀ£º¾İËµ×î½ü" +
-                  p + "³£ÓĞ" + ghost->name() + "³öÃ»£¬¸½½ü¾ÓÃñ"
-                  "ÉîÊÜÆäº¦¡£ÄãÈ¥°ÑËüÊÕÁË°É¡£\n");
-      message("vision", this_object()->name() + "ÔÚ" + me->name() + "¶ú±ß·Ô¸À×ÅÊ²Ã´£¬" +
-              me->name() + "Ò»±ßÌı£¬Ò»±ß²»×¡µØµãÍ·¡£\n", environment(me), me);
+      tell_object(me, this_object()->name() + "å°ä½ é“ï¼šæ“šèªªæœ€è¿‘" +
+                  p + "å¸¸æœ‰" + ghost->name() + "å‡ºæ²’ï¼Œé™„è¿‘å±…æ°‘"
+                  "æ·±å—å…¶å®³ã€‚ä½ å»æŠŠå®ƒæ”¶äº†å§ã€‚\n");
+      message("vision", this_object()->name() + "åœ¨" + me->name() + "è€³é‚Šå©å’è‘—ä»€éº¼ï¼Œ" +
+              me->name() + "ä¸€é‚Šè½ï¼Œä¸€é‚Šä¸ä½åœ°é»é ­ã€‚\n", environment(me), me);
       ob = new("/d/wudang/quest/obj/fuzhi"); 
       ob->move(this_object());
       command("give fu zhi to " + me->query("id"));
-      tell_object(me, this_object()->name() + "¼ÌĞøµÀ£º" + ob->name() +
-                  "¿ÉÒÔÈÃ¹í»êÏÖÉí£¬¿É±ğÅª¶ªÁË¡£\n");
-      message_vision("$n¶Ô$NËµµÀ£º¿ì¶¯Éí°É£¬¶à¼ÓĞ¡ĞÄ¡£\n", me, this_object()); 
+      tell_object(me, this_object()->name() + "ç¹¼çºŒé“ï¼š" + ob->name() +
+                  "å¯ä»¥è®“é¬¼é­‚ç¾èº«ï¼Œå¯åˆ¥å¼„ä¸Ÿäº†ã€‚\n");
+      message_vision("$nå°$Nèªªé“ï¼šå¿«å‹•èº«å§ï¼Œå¤šåŠ å°å¿ƒã€‚\n", me, this_object()); 
       me->set_temp("gui/shougui", 1);
       return 1; 
 } 
@@ -125,7 +125,7 @@ string ask_fail()
       object me = this_player(); 
 
       if (! me->query_temp("gui/shougui")) 
-           return "ÎÒÃ»ÓĞ¸øÄãÊ²Ã´ÈÎÎñ°¡£¿"; 
+           return "æˆ‘æ²’æœ‰çµ¦ä½ ä»€éº¼ä»»å‹™å•Šï¼Ÿ"; 
 
       if (present("fu zhi", me)) 
           destruct(present("fu zhi", me));
@@ -135,8 +135,8 @@ string ask_fail()
       command("sigh " + me->query("id"));
       me->add("weiwang", -random(20));
       if (me->query("weiwang") < 0) me->set("weiwang", 0);
-      tell_object(me, HIR"ÄãµÄ½­ºşÍşÍû½µµÍÁË£¡\n"NOR);
-      return "Äã²»ÄÜ¸É£¬ÎÒÖ»ºÃÇë±ğÈËÈ¥ÁË£¡";
+      tell_object(me, HIR"ä½ çš„æ±Ÿæ¹–å¨æœ›é™ä½äº†ï¼\n"NOR);
+      return "ä½ ä¸èƒ½å¹¹ï¼Œæˆ‘åªå¥½è«‹åˆ¥äººå»äº†ï¼";
 }
 
 
@@ -147,16 +147,16 @@ int accept_object(object me, object ob)
     string msg;
     if( !me || environment(me) != environment() ) return 0; 
     if ( !objectp(ob) ) return 0;  
-    if ( !present(ob, me) ) return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷¡£"); 
+    if ( !present(ob, me) ) return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™æ¨£æ±è¥¿ã€‚"); 
     if ( (string)ob->query("id") == "fu zhi") 
     {
          if (! me->query_temp("gui/finish"))
          {
              command("sneer " + me->query("id")); 
-             command("say ÏëÃÉÆ­±¾ÌìÊ¦Âğ£¿");
+             command("say æƒ³è’™é¨™æœ¬å¤©å¸«å—ï¼Ÿ");
              me->add("weiwang", -random(50));
              if (me->query("weiwang") < 0) me->set("weiwang", 0);
-             tell_object(me, HIR"ÄãµÄÍşÍû½µµÍÁË£¡\n"NOR);
+             tell_object(me, HIR"ä½ çš„å¨æœ›é™ä½äº†ï¼\n"NOR);
              return 1;
          }
 
@@ -168,74 +168,74 @@ int accept_object(object me, object ob)
          if (me->query("potential") >= me->query_potential_limit())  pot = 1; 
          if (count % 10 == 0)
          {
-            message_vision("$nÅÄÁËÅÄ$NµÄ¼ç°ò£ººÃ¼Ò»ï£¬¾ÓÈ»Á¬×Å" + chinese_number(count) +
-                  "´Î¶¼Ã»ÓĞÊ§ÊÖ£¬¸ÉµÃºÃ£¡\n", me, this_object());
+            message_vision("$næ‹äº†æ‹$Nçš„è‚©è†€ï¼šå¥½å®¶ä¼™ï¼Œå±…ç„¶é€£è‘—" + chinese_number(count) +
+                  "æ¬¡éƒ½æ²’æœ‰å¤±æ‰‹ï¼Œå¹¹å¾—å¥½ï¼\n", me, this_object());
 
             if (count == 50)
             {
-               message_vision("$n¶Ô$NËµµÀ£ºÕâ¶«Î÷ÊÇ½±¸øÄãµÄ£¬ºÃºÃ¸úÎÒ¸É£¬" +
-                              "±¾ÌìÊ¦²»»á¿÷´ıÄã£¡\n", me, this_object());
+               message_vision("$nå°$Nèªªé“ï¼šé€™æ±è¥¿æ˜¯ççµ¦ä½ çš„ï¼Œå¥½å¥½è·Ÿæˆ‘å¹¹ï¼Œ" +
+                              "æœ¬å¤©å¸«ä¸æœƒè™§å¾…ä½ ï¼\n", me, this_object());
                switch(random(20))
                {
                   case 0:
                      gift = new("/clone/gift/xiandan");
-                     msg = "Ò»¿Å";
+                     msg = "ä¸€é¡†";
                      break;
                   case 1:
                      gift = new("/clone/gift/xisuidan");
-                     msg = "Ò»¿Å";
+                     msg = "ä¸€é¡†";
                      break;
                   case 2:
                      gift = new("/clone/gift/shenliwan");
-                     msg = "Ò»¿Å";
+                     msg = "ä¸€é¡†";
                      break;
                   case 3:
                      gift = new("/clone/gift/unknowdan");
-                     msg = "Ò»¿Å";
+                     msg = "ä¸€é¡†";
                      break;
                   default:
                      gift = new("/clone/gift/jinkuai");
-                     msg = "Ò»¶§";
+                     msg = "ä¸€éŒ ";
                      break;
                }
                gift->move(me);
-               tell_object(me, "Äã»ñµÃÁË" + msg + gift->name() + "¡£\n");
+               tell_object(me, "ä½ ç²å¾—äº†" + msg + gift->name() + "ã€‚\n");
             }
 
             if (count == 100 || count == 200)
             {
-               message_vision("$n¶Ô$NËµµÀ£ºÕâ¶«Î÷ÊÇ½±¸øÄãµÄ£¬ºÃºÃ¸úÎÒ¸É£¬" +
-                              "±¾ÌìÊ¦²»»á¿÷´ıÄã£¡\n", me, this_object());
-               msg = "Ò»¿Å";
+               message_vision("$nå°$Nèªªé“ï¼šé€™æ±è¥¿æ˜¯ççµ¦ä½ çš„ï¼Œå¥½å¥½è·Ÿæˆ‘å¹¹ï¼Œ" +
+                              "æœ¬å¤©å¸«ä¸æœƒè™§å¾…ä½ ï¼\n", me, this_object());
+               msg = "ä¸€é¡†";
                gift = new("/d/shaolin/obj/puti-zi");
                gift->move(me);
-               tell_object(me, "Äã»ñµÃÁË" + msg + gift->name() + "¡£\n");
+               tell_object(me, "ä½ ç²å¾—äº†" + msg + gift->name() + "ã€‚\n");
             }
 
             if (count == 300 || count == 400)
             {
-               message_vision("$n¶Ô$NËµµÀ£ºÕâ¶«Î÷ÊÇ½±¸øÄãµÄ£¬ºÃºÃ¸úÎÒ¸É£¬" +
-                              "±¾ÌìÊ¦²»»á¿÷´ıÄã£¡\n", me, this_object());
-               msg = "Ò»µÎ";
+               message_vision("$nå°$Nèªªé“ï¼šé€™æ±è¥¿æ˜¯ççµ¦ä½ çš„ï¼Œå¥½å¥½è·Ÿæˆ‘å¹¹ï¼Œ" +
+                              "æœ¬å¤©å¸«ä¸æœƒè™§å¾…ä½ ï¼\n", me, this_object());
+               msg = "ä¸€æ»´";
                gift = new("/clone/misc/tianxiang");
                gift->move(me);
-               tell_object(me, "Äã»ñµÃÁË" + msg + gift->name() + "¡£\n");
+               tell_object(me, "ä½ ç²å¾—äº†" + msg + gift->name() + "ã€‚\n");
             }
 
             if (count == 500)
             {
-               message_vision("$n¶Ô$NËµµÀ£ºÕâ¶«Î÷ÊÇ½±¸øÄãµÄ£¬ºÃºÃ¸úÎÒ¸É£¬" +
-                              "±¾ÌìÊ¦²»»á¿÷´ıÄã£¡\n", me, this_object());
-               msg = "Ò»¿Å";
+               message_vision("$nå°$Nèªªé“ï¼šé€™æ±è¥¿æ˜¯ççµ¦ä½ çš„ï¼Œå¥½å¥½è·Ÿæˆ‘å¹¹ï¼Œ" +
+                              "æœ¬å¤©å¸«ä¸æœƒè™§å¾…ä½ ï¼\n", me, this_object());
+               msg = "ä¸€é¡†";
                gift = new("/clone/gift/jiuzhuan");
                gift->move(me);
-               tell_object(me, "Äã»ñµÃÁË" + msg + gift->name() + "¡£\n");
+               tell_object(me, "ä½ ç²å¾—äº†" + msg + gift->name() + "ã€‚\n");
             }
          }
-         else  message_vision("$n¶Ô$NµãÁËµãÍ·£º²»´í£¬²»´í¡£\n", me, this_object()); 
+         else  message_vision("$nå°$Né»äº†é»é ­ï¼šä¸éŒ¯ï¼Œä¸éŒ¯ã€‚\n", me, this_object()); 
 
-         tell_object(me, HIG "Í¨¹ıÕâ´ÎìÑÁ¶£¬Äã»ñµÃÁË" + chinese_number(exp) + 
-                     "µã¾­ÑéºÍ" + chinese_number(pot) + "µãÇ±ÄÜ¡£\n" NOR); 
+         tell_object(me, HIG "é€šéé€™æ¬¡â–¡ç…‰ï¼Œä½ ç²å¾—äº†" + chinese_number(exp) + 
+                     "é»ç¶“é©—å’Œ" + chinese_number(pot) + "é»æ½›èƒ½ã€‚\n" NOR); 
          me->add("combat_exp", exp); 
          me->add("shen", random(exp)); 
          me->add("potential", pot); 
@@ -246,7 +246,7 @@ int accept_object(object me, object ob)
     }
     else
     {
-        command("say Äã¸øÎÒÕâÖÖ¶«Î÷¸ÉÊ²Ã´£¿"); 
+        command("say ä½ çµ¦æˆ‘é€™ç¨®æ±è¥¿å¹¹ä»€éº¼ï¼Ÿ"); 
         return 0;
     }
 } 

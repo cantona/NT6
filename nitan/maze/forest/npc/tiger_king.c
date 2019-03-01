@@ -5,13 +5,13 @@ void do_stun();
 void do_attack();
 void create()
 {
-        string *names = ({"»¢Ñı"});
+        string *names = ({"è™å¦–"});
         set_name( names[random(sizeof(names))], ({ "tiger king","tiger"}));
         set("vendetta_mark","tiger");
-        set("race", "Ò°ÊŞ");
-        set("gender", "ĞÛĞÔ");
+        set("race", "é‡ç¸");
+        set("gender", "é›„æ€§");
         set("age", 1000);
-        set("long", "ÕâÊÇÒ»Ö»ĞŞÁ¶³ÉÑıµÄ»¢¾«¹Ö¡£\n");
+        set("long", "é€™æ˜¯ä¸€åªä¿®ç…‰æˆå¦–çš„è™ç²¾æ€ªã€‚\n");
 
         set("str", 80);
         set("cor", 120);
@@ -29,7 +29,7 @@ void create()
                 (: do_attack() :),
         }) );
 
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "Ç°½Å", "áá½Å", "Î²°Í" }) );
+        set("limbs", ({ "é ­éƒ¨", "èº«é«”", "å‰è…³", "å¾Œè…³", "å°¾å·´" }) );
         set("verbs", ({ "bite", "claw" }) );
         set("combat_exp", 600000);
         set("bellicosity", 5 );
@@ -50,15 +50,15 @@ void do_attack() {
         if (!enemies || sizeof(enemies)==0)
                         return;
         enemy = enemies[random(sizeof(enemies))];
-        msg = HIW"\n$NÃ¼ĞÄÕÅ¿ªµÚÈıÖ»ÑÛ£¬¾ÛÆğÒ»µÀ°×¹âÉäÏò$n£¡\n"NOR;
+        msg = HIW"\n$Nçœ‰å¿ƒå¼µé–‹ç¬¬ä¸‰åªçœ¼ï¼Œèšèµ·ä¸€é“ç™½å…‰å°„å‘$nï¼\n"NOR;
         message_combatd(msg,this_object(),enemy);
         if( random(query("combat_exp"))*6>query("combat_exp", enemy)){
-                        msg = HIW"$n¶ãÉÁ²»¼°£¬±»°×¹âÕÖ×¡£¡\n"NOR;
+                        msg = HIW"$nèº²é–ƒä¸åŠï¼Œè¢«ç™½å…‰ç½©ä½ï¼\n"NOR;
                         message_combatd(msg,this_object(),enemy);
                         enemy->receive_damage("qi",50+random(50));
                         COMBAT_D->report_status(enemy);
         } else {
-                        msg = HIW"µ«ÊÇ±»$n¶ã¿ªÁË¡£\n"NOR;
+                        msg = HIW"ä½†æ˜¯è¢«$nèº²é–‹äº†ã€‚\n"NOR;
                         message_combatd(msg,this_object(),enemy);
         }
 
@@ -67,6 +67,6 @@ void do_attack() {
 
 varargs void start_busy(mixed new_busy, mixed new_interrupt)
 {
-        message_vision(HIY"\n$NÍ»È»·¢³öÒ»ÉùÏì³¹É½ÁÖµÄÅ­ºğ£¬$n¶ÙÊ±´ó¾ªÊ§É«£¡\n"NOR,this_object());
+        message_vision(HIY"\n$Nçªç„¶ç™¼å‡ºä¸€è²éŸ¿å¾¹å±±æ—çš„æ€’å¼ï¼Œ$né “æ™‚å¤§é©šå¤±è‰²ï¼\n"NOR,this_object());
         ::start_busy(1);
 }

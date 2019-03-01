@@ -9,10 +9,10 @@ int ask_tianmo();
 
 void create()
 {
-        set_name("¹íÈı", ({ "gui san", "san", "gui" }));
-        set("gender", "ÄĞĞÔ");
+        set_name("é¬¼ä¸‰", ({ "gui san", "san", "gui" }));
+        set("gender", "ç”·æ€§");
         set("age", 65);
-        set("long", HIB"Ëû¾ÍÊÇÉñÃØµÄ¹íÈı¡£\n"NOR);
+        set("long", HIB"ä»–å°±æ˜¯ç¥ç§˜çš„é¬¼ä¸‰ã€‚\n"NOR);
         set("combat_exp", 30000);
         set("shen_type", -1000);
         set("max_neili", 500);
@@ -23,7 +23,7 @@ void create()
         set_skill("dodge", 50);
         set_skill("parry", 50);
         set("inquiry", ([
-                "ÌìÄ§¾÷" : (: ask_tianmo:),
+                "å¤©é­”è¨£" : (: ask_tianmo:),
         ]) );
         set_temp("apply/attack", 50);
         set_temp("apply/defense", 50);
@@ -34,7 +34,7 @@ void create()
 }
 int ask_tianmo()
 {
-        command("say ºÙºÙ,Ã»Ïëµ½°¡,ÄãĞ¡Ğ¡ÄêÁä¼ÈÈ»Ò²ÖªµÀ¡¶ÌìÄ§¾÷¡·µÄÊÂ£¬ºÃ£¬Ö»ÒªĞ¡ĞÖµÜ°ïÎÒÕÒ»Ø\n         ÎÒµÄ´«¼Ò±¦"HIG"º®ÓñÏô(hanyu xiao)"CYN"ÀÏ·ò¾Í´øÄãÈ¥´òÌìÄ§¾÷!\n"NOR);
+        command("say å˜¿å˜¿,æ²’æƒ³åˆ°å•Š,ä½ å°å°å¹´é½¡æ—¢ç„¶ä¹ŸçŸ¥é“ã€Šå¤©é­”è¨£ã€‹çš„äº‹ï¼Œå¥½ï¼Œåªè¦å°å…„å¼Ÿå¹«æˆ‘æ‰¾å›\n         æˆ‘çš„å‚³å®¶å¯¶"HIG"å¯’ç‰è•­(hanyu xiao)"CYN"è€å¤«å°±å¸¶ä½ å»æ‰“å¤©é­”è¨£!\n"NOR);
         set_temp("search", 1, this_player());
         return 1;
 }
@@ -43,7 +43,7 @@ int accept_object(object me, object obj)
          if( query("id", obj) == "hanyu xiao" )
         {
                 command("bow"+query("id", me));
-                command("say ¹ş¹ş£¬ºÃºÃºÃ£¬ÀÏ·òÕâ¾Í´øÄãÈ¥ÕÒ¡¶ÌìÄ§¾÷¡·¡£");
+                command("say å“ˆå“ˆï¼Œå¥½å¥½å¥½ï¼Œè€å¤«é€™å°±å¸¶ä½ å»æ‰¾ã€Šå¤©é­”è¨£ã€‹ã€‚");
                 set_temp("search", 0, me);
                 call_out("create_exit",1); 
                 return 1;
@@ -55,6 +55,6 @@ void create_exit()
         object where,ob; 
         ob=this_object(); 
         where = environment(ob); 
-        write("¹íÈıÏÆÆğÇ½ÉÏµÄ»­£¬½ÒÆğĞ¡Ä¾°å£¬Â¶³öÒ»¸ö³¤·½´ó¶´¡£\n\n", ); 
+        write("é¬¼ä¸‰æ€èµ·ç‰†ä¸Šçš„ç•«ï¼Œæ­èµ·å°æœ¨æ¿ï¼Œéœ²å‡ºä¸€å€‹é•·æ–¹å¤§æ´ã€‚\n\n", ); 
         set("exits/enter", "/d/city/didao", where);
 } 

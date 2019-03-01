@@ -1,4 +1,4 @@
-// chongxu.c ³åĞé
+// chongxu.c æ²–è™›
 
 #include <ansi.h>
 
@@ -6,9 +6,9 @@ inherit "/inherit/char/punisher";
 
 void create()
 {
-        set_name("³åĞé", ({ "chong xu", "xu" }));
-        set("long",  "Ëû¾ÍÊÇÎäµ±ÅÉµÄ¸ßÊÖ³åĞéµÀ³¤£¬µÀÃ²°¶È»£¬Æ®Æ®ÓûÏÉ¡£\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("æ²–è™›", ({ "chong xu", "xu" }));
+        set("long",  "ä»–å°±æ˜¯æ­¦ç•¶æ´¾çš„é«˜æ‰‹æ²–è™›é“é•·ï¼Œé“è²Œå²¸ç„¶ï¼Œé£„é£„æ¬²ä»™ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 55);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -53,7 +53,7 @@ void create()
         prepare_skill("unarmed", "taiji-quan");
         prepare_skill("strike", "wudang-zhang");
 
-        create_family("Îäµ±ÅÉ", 0, "ÃûËŞ");
+        create_family("æ­¦ç•¶æ´¾", 0, "åå®¿");
 
         set("chat_chance_combat", 120);
         set("chat_msg_combat", ({

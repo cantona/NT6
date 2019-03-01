@@ -13,24 +13,24 @@ int main(object me, string arg)
 
         seteuid(geteuid(me));
         if (! arg || sscanf(arg, "%s %s", src, dst) != 2)
-                return notify_fail("Ö¸Áî¸ñÊ½: mv <Ô­µµÃû> <Ä¿±êµµÃû> \n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼: mv <åŸæª”å> <ç›®æ¨™æª”å> \n");
  
         src=resolve_path(query("cwd", me),src);
         dst=resolve_path(query("cwd", me),dst);
  
         if (file_size(src) == -1)
         {
-                write("Ô´ÎÄ¼şÃû×Ö´íÎó¡£\n");
+                write("æºæ–‡ä»¶åå­—éŒ¯èª¤ã€‚\n");
                 return 1;
         }
         if (! me->is_admin()) 
         {
                 dir = SECURITY_D->query_site_privilege("edit");
                 if( !dir && (!sscanf(src, "/u/%*s") || !sscanf(dst, "/u/%*s")) )
-                        return notify_fail("ÄãÖ»ÄÜÒÆ¶¯Äã×Ô¼ºµÄÄ¿Â¼ÏÂÎÄ¼ş¡£\n");
+                        return notify_fail("ä½ åªèƒ½ç§»å‹•ä½ è‡ªå·±çš„ç›®éŒ„ä¸‹æ–‡ä»¶ã€‚\n");
                         
                 if( dir != "all" && (!sscanf(src, "/%s/%*s", dir) || !sscanf(dst, "/%s/%*s", dir)) )
-                        return notify_fail("ÄãÖ»ÄÜÒÆ¶¯Äã×Ô¼ºÄ¿Â¼ÏÂÒÔ¼°" + dir + "Ä¿Â¼ÏÂÎÄ¼ş¡£\n");
+                        return notify_fail("ä½ åªèƒ½ç§»å‹•ä½ è‡ªå·±ç›®éŒ„ä¸‹ä»¥åŠ" + dir + "ç›®éŒ„ä¸‹æ–‡ä»¶ã€‚\n");
         }
         SECURITY_D->backup_file(dst);
         if (rename(src, dst) == 0)
@@ -39,10 +39,10 @@ int main(object me, string arg)
         {
                 if (! SECURITY_D->valid_read(src, me, "ls"))
                 {
-                        write("Ô´ÎÄ¼şÃû×Ö´íÎó¡£\n");
+                        write("æºæ–‡ä»¶åå­—éŒ¯èª¤ã€‚\n");
                         return 1;
                 }
-                write("ÄãÃ»ÓĞ×ã¹»µÄ¶ÁĞ´È¨ÀûÒÆ¶¯ÎÄ¼ş¡£\n");
+                write("ä½ æ²’æœ‰è¶³å¤ çš„è®€å¯«æ¬Šåˆ©ç§»å‹•æ–‡ä»¶ã€‚\n");
         }
         return 1;
 }
@@ -50,9 +50,9 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : mv <Ô­µµÃû> <Ä¿±êµµÃû>
+æŒ‡ä»¤æ ¼å¼ : mv <åŸæª”å> <ç›®æ¨™æª”å>
  
-´ËÖ¸Áî¿ÉÈÃÄãĞŞ¸ÄÄ³¸öµµ°¸»òÄ¿Â¼Ãû³Æ¡£
+æ­¤æŒ‡ä»¤å¯è®“ä½ ä¿®æ”¹æŸå€‹æª”æ¡ˆæˆ–ç›®éŒ„åç¨±ã€‚
 
 see also: cp, rm
 HELP );

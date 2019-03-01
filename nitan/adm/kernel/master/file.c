@@ -5,21 +5,21 @@ string creator_file(string str)
         return (string)call_other(SIMUL_EFUN_OB, "creator_file", str);
 }
 
-// ÅĞ¶ÏÒ»¸öÖ¸¶¨Îï¼şËùÊôµÄÇøÓò
+// åˆ¤æ–·ä¸€å€‹æŒ‡å®šç‰©ä»¶æ‰€å±¬çš„å€åŸŸ
 string domain_file(string str)
 {
         return (string)call_other(SIMUL_EFUN_OB, "domain_file", str);
 }
 
-// ÅĞ¶ÏÒ»¸öÖ¸¶¨Îï¼şµÄ×÷ÕßÎªË­
-// Ğè¶¨Òå PACKAGE_MUDLIB_STATS
+// åˆ¤æ–·ä¸€å€‹æŒ‡å®šç‰©ä»¶çš„ä½œè€…ç‚ºèª°
+// éœ€å®šç¾© PACKAGE_MUDLIB_STATS
 string author_file(string str)
 {
         return (string)call_other(SIMUL_EFUN_OB, "author_file", str);
 }
 
-// ÎªĞÂ´´ÔìµÄÎï¼şÖ¸¶¨Ò»¸öÒşË½×Ö´®
-// Ğè¶¨Òå PRIVS
+// ç‚ºæ–°å‰µé€ çš„ç‰©ä»¶æŒ‡å®šä¸€å€‹éš±ç§å­—ä¸²
+// éœ€å®šç¾© PRIVS
 string privs_file(string filename)
 {
         return filename;

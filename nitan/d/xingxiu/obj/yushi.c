@@ -6,22 +6,22 @@ void create()
 {
         switch(random(8))
         {
-                case 0 : set_name(HIW "°×ÔÆÊ¯" NOR, ({ "yushi"})); break;
-                case 1 : set_name(GRN "Ã¨ÑÛÊ¯" NOR, ({ "yushi"})); break;
-                case 2 : set_name(RED "¼¦ÑªÊ¯" NOR, ({ "yushi"})); break;
-                case 3 : set_name(BLU "À¶ÓñÊ¯" NOR, ({ "yushi"})); break;
-                case 4 : set_name(WHT "°×ÓñÊ¯" NOR, ({ "yushi"})); break;
-                case 5 : set_name(MAG "×Ï»¨Óñ" NOR, ({ "yushi"})); break;
-                case 6 : set_name(YEL "»Æ°ßÓñ" NOR, ({ "yushi"})); break;
-                case 7 : set_name(CYN "ÇàÀ¼Óñ" NOR, ({ "yushi"})); break;
+                case 0 : set_name(HIW "ç™½é›²çŸ³" NOR, ({ "yushi"})); break;
+                case 1 : set_name(GRN "è²“çœ¼çŸ³" NOR, ({ "yushi"})); break;
+                case 2 : set_name(RED "é›è¡€çŸ³" NOR, ({ "yushi"})); break;
+                case 3 : set_name(BLU "è—ç‰çŸ³" NOR, ({ "yushi"})); break;
+                case 4 : set_name(WHT "ç™½ç‰çŸ³" NOR, ({ "yushi"})); break;
+                case 5 : set_name(MAG "ç´«èŠ±ç‰" NOR, ({ "yushi"})); break;
+                case 6 : set_name(YEL "é»ƒæ–‘ç‰" NOR, ({ "yushi"})); break;
+                case 7 : set_name(CYN "é’è˜­ç‰" NOR, ({ "yushi"})); break;
         }
         if (clonep())
                 set_default_object(__FILE__);
         else {
                 set("value", 300000);
-                set("unit", "¿é");
+                set("unit", "å¡Š");
                 set("weight", 100);
-                set("long", "ÕâÊÇÒ»Ğ¡¿éÓñÊ¯£¬ºÃÏó»¹ÄÜÖµ¼¸¸öÇ®¡£\n");
+                set("long", "é€™æ˜¯ä¸€å°å¡Šç‰çŸ³ï¼Œå¥½è±¡é‚„èƒ½å€¼å¹¾å€‹éŒ¢ã€‚\n");
                 set("material", "stone");
                 }
         setup();

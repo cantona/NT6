@@ -1,4 +1,4 @@
-// huxiao.c »¢Ğ¥É½ÁÖ
+// huxiao.c è™å˜¯å±±æ—
 // gladiator
 
 #include <ansi.h>
@@ -16,34 +16,34 @@ int perform(object me, object target)
         k = me->query_skill("claw",1);
 
         if( userp(me) && !query("can_perform/huzhua-claw/huxiao", me) )
-                return notify_fail("Äã»¹²»»áÊ¹ÓÃ¡¸»¢Ğ¥É½ÁÖ¡¹¡£\n");            
+                return notify_fail("ä½ é‚„ä¸æœƒä½¿ç”¨ã€Œè™å˜¯å±±æ—ã€ã€‚\n");            
         
         if( !target ) target = offensive_target(me);
 
         if( !target || !me->is_fighting(target) )
-                return notify_fail("¡¸»¢Ğ¥É½ÁÖ¡¹Ö»ÄÜÔÚÕ½¶·ÖĞ¶Ô¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œè™å˜¯å±±æ—ã€åªèƒ½åœ¨æˆ°é¬¥ä¸­å°å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( objectp(query_temp("weapon", me)) )
-                return notify_fail("Ê¹ÓÃ¡¸»¢Ğ¥É½ÁÖ¡¹Ê±Ë«ÊÖ±ØĞë¿Õ×Å£¡\n");
+                return notify_fail("ä½¿ç”¨ã€Œè™å˜¯å±±æ—ã€æ™‚é›™æ‰‹å¿…é ˆç©ºè‘—ï¼\n");
 
         if( (int)me->query_skill("huzhua-claw", 1) < 120 )
-                return notify_fail("ÄãµÄ»¢×¦ÇÜÄÃÊÖ²»¹»æµÊì£¬²»»áÊ¹ÓÃ¡¸»¢Ğ¥É½ÁÖ¡¹¡£\n");
+                return notify_fail("ä½ çš„è™çˆªæ“’æ‹¿æ‰‹ä¸å¤ å«»ç†Ÿï¼Œä¸æœƒä½¿ç”¨ã€Œè™å˜¯å±±æ—ã€ã€‚\n");
 
         if( (int)me->query_skill("shaolin-xinfa", 1) < 120 )
-                return notify_fail("ÄãµÄÄÚ¹¦µÈ¼¶²»¹»£¬²»ÄÜÊ¹ÓÃ¡¸»¢Ğ¥É½ÁÖ¡¹¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸç­‰ç´šä¸å¤ ï¼Œä¸èƒ½ä½¿ç”¨ã€Œè™å˜¯å±±æ—ã€ã€‚\n");
 
         if( (int)me->query_dex() < 27 )
-                return notify_fail("ÄãµÄÉí·¨²»¹»Ç¿£¬²»ÄÜÊ¹ÓÃ¡¸»¢Ğ¥É½ÁÖ¡¹¡£\n");
+                return notify_fail("ä½ çš„èº«æ³•ä¸å¤ å¼·ï¼Œä¸èƒ½ä½¿ç”¨ã€Œè™å˜¯å±±æ—ã€ã€‚\n");
 
         if (me->query_skill_prepared("claw") != "huzhua-claw"
         || me->query_skill_mapped("claw") != "huzhua-claw")
-                return notify_fail("ÄãÏÖÔÚÎŞ·¨Ê¹ÓÃ¡¸»¢Ğ¥É½ÁÖ¡¹½øĞĞ¹¥»÷¡£\n");                                                                                 
+                return notify_fail("ä½ ç¾åœ¨ç„¡æ³•ä½¿ç”¨ã€Œè™å˜¯å±±æ—ã€é€²è¡Œæ”»æ“Šã€‚\n");                                                                                 
       
 
         if( query("neili", me)<600 )
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ£¬²»ÄÜÊ¹ÓÃ¡¸»¢Ğ¥É½ÁÖ¡¹¡£\n");
+                return notify_fail("ä½ ç¾åœ¨å…§åŠ›å¤ªå¼±ï¼Œä¸èƒ½ä½¿ç”¨ã€Œè™å˜¯å±±æ—ã€ã€‚\n");
 
-        msg = HIR "$N³¤Ğ¥Ò»Éù£¬½«ÄÚÁ¦¾ÛÓÚÊÖĞÄ£¬ÈçÃÍ»¢ÏÂÉ½Ò»°ãÆËÏò$n£¡\n" NOR;
+        msg = HIR "$Né•·å˜¯ä¸€è²ï¼Œå°‡å…§åŠ›èšäºæ‰‹å¿ƒï¼Œå¦‚çŒ›è™ä¸‹å±±ä¸€èˆ¬æ’²å‘$nï¼\n" NOR;
 
 
         if( random(10) >= 5 
@@ -55,22 +55,22 @@ int perform(object me, object target)
           switch(random(3))
           {
             case 0 :
-               msg  = HIB "$NÄ¿Â¶Ğ×¹â£¬Ê¹³ö¡¸ºÚ»¢ÌÍĞÄ¡¹£¬ÕĞÕĞ×¥Ïò$nĞØ¿Ú£¡\n" NOR;
-               msg += HIB "$n±»$N±ÆµÄÁ¬Á¬ááÍË£¬ÎŞÁ¦»¹ÕĞ£¡\n" NOR;
+               msg  = HIB "$Nç›®éœ²å…‡å…‰ï¼Œä½¿å‡ºã€Œé»‘è™æå¿ƒã€ï¼Œæ‹›æ‹›æŠ“å‘$nèƒ¸å£ï¼\n" NOR;
+               msg += HIB "$nè¢«$Né€¼çš„é€£é€£å¾Œé€€ï¼Œç„¡åŠ›é‚„æ‹›ï¼\n" NOR;
                me->start_busy(3);
                message_combatd(msg, me, target);
                break;
 
             case 1 :
-               msg  = MAG "$NÊ©³ö¡¸»¢¾áÁúÅÌ¡¹£¬Ë«ÊÖ·×·É£¬»Ã³öÎŞÊıÊÖÓ°£¡\n" NOR;
-               msg += MAG "$nÖ»¾õÑÛ»¨çÔÂÒ£¬²»ÖªËù´ë¡£\n" NOR;
+               msg  = MAG "$Næ–½å‡ºã€Œè™è¸é¾ç›¤ã€ï¼Œé›™æ‰‹ç´›é£›ï¼Œå¹»å‡ºç„¡æ•¸æ‰‹å½±ï¼\n" NOR;
+               msg += MAG "$nåªè¦ºçœ¼èŠ±ç¹šäº‚ï¼Œä¸çŸ¥æ‰€æªã€‚\n" NOR;
                me->start_busy(1+random(2));
                message_combatd(msg, me, target);
                break;
 
             case 2 :
-               msg  = BLU "$NÒ»ÕĞ¡¸»¢»¢ÉúÍş¡¹£¬ÄÃÏò$n£¬ËÆºõ$nµÄÈ«Éí¶¼±»ÊÖÓ°ÁıÕÖ£¡\n" NOR;
-               msg += BLU "$nÖ»¾õµÃÖÜÎ§È«±»ÊÖÓ°ÁıÕÖ£¬ºÁÎŞ¶ãÉÁµÄÓàµØ¡£\n" NOR;
+               msg  = BLU "$Nä¸€æ‹›ã€Œè™è™ç”Ÿå¨ã€ï¼Œæ‹¿å‘$nï¼Œä¼¼ä¹$nçš„å…¨èº«éƒ½è¢«æ‰‹å½±ç± ç½©ï¼\n" NOR;
+               msg += BLU "$nåªè¦ºå¾—å‘¨åœå…¨è¢«æ‰‹å½±ç± ç½©ï¼Œæ¯«ç„¡èº²é–ƒçš„ä½™åœ°ã€‚\n" NOR;
                me->start_busy(random(3));
                message_combatd(msg, me, target);
                break;
@@ -85,7 +85,7 @@ int perform(object me, object target)
           addn("neili", -100*count, me);
        } else
        {
-           msg += HIR "$nÊ¶ÆÆÄãµÄÕĞÊ½£¬ÔçÔçÌá·ÀÉÁµ½ÁËÒ»±ß¡£\n" NOR;
+           msg += HIR "$nè­˜ç ´ä½ çš„æ‹›å¼ï¼Œæ—©æ—©æé˜²é–ƒåˆ°äº†ä¸€é‚Šã€‚\n" NOR;
            me->start_busy(1 + random(2));
            addn("neili", -200, me);
         message_vision(msg, me, target);

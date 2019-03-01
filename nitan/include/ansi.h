@@ -87,7 +87,7 @@ Minimum requirements for VT100 emulation:
 
                 /* High Intensity Background Colors  */
 
-#define HBBLK   ESC+"[40;1m"        /* µ­ºÚ     */
+#define HBBLK   ESC+"[40;1m"        /* æ·¡é»‘     */
 #define HBRED   ESC+"[41;1m"        /* Red      */
 #define HBGRN   ESC+"[42;1m"        /* Green    */
 #define HBYEL   ESC+"[43;1m"        /* Yellow   */
@@ -172,29 +172,29 @@ Minimum requirements for VT100 emulation:
 #define UNFR    ESC+"[r"            /* Unfreeze top and bottom lines */
 #define BLINK   ESC+"[5m"           /* Initialize blink mode */
 #define U       ESC+"[4m"           /* Initialize underscore mode */
-#define ITALIC  ESC+"[3m"           /* Ğ±Ìå */
+#define ITALIC  ESC+"[3m"           /* æ–œé«” */
 #define REV     ESC+"[7m"           /* Turns reverse video mode on */
 #define HIREV   ESC+"[1;7m"         /* Hi intensity reverse video  */
  
 #define FLASH   ESC+"[5m"           // flash
-                /*¹ØÓÚĞĞ¿ØÖÆ */
-                /*1.ÒÆ¶¯ */
-#define TOTOP(x)        (ESC+"["+x+"A")         /*ÏòÉÏÌø×ªxĞĞ*/
-#define TOBOT(x)        (ESC+"["+x+"B")         /*ÏòÏÂÌø×ªxĞĞ*/
-                                                /*µ± ÓÎ±êÒÑ¾­ÔÚÓ©Ä»µÄ×îÏÂÒ»ÁĞÊ±, ´ËÒ»ÃüÁîÃ»ÓĞ×÷ÓÃ*/
-#define TORIGHT(x)      (ESC+"["+x+"C")         /*ÏòÓÒÒÆ¶¯xĞĞ*/
-                                                /*µ±ÓÎ±êÒÑ¾­ÔÚÓ©Ä»µÄ×îÓÒÒ»À¸Ê±, ´ËÒ»ÃüÁîÃ»ÓĞ×÷ÓÃ¡£*/
-#define TOLEFT(x)       (ESC+"["+x+"D")         /*Ïò×óÒÆ¶¯xĞĞ*/
-                                                /*µ±ÓÎ±êÒÑ¾­ÔÚÓ©Ä»µÄ×î×óÒ»À¸Ê±, ´ËÒ»ÃüÁîÃ»ÓĞ×÷ÓÃ¡£*/
-#define TOPOINT(x,y)    (ESC+"["+x+";"+y+"f")   /*ÒÆ¶¯µ½µã×ø±êÎª(x,y) x:ĞĞ£¬y:ÁĞ*/
+                /*é—œäºè¡Œæ§åˆ¶ */
+                /*1.ç§»å‹• */
+#define TOTOP(x)        (ESC+"["+x+"A")         /*å‘ä¸Šè·³è½‰xè¡Œ*/
+#define TOBOT(x)        (ESC+"["+x+"B")         /*å‘ä¸‹è·³è½‰xè¡Œ*/
+                                                /*ç•¶ éŠæ¨™å·²ç¶“åœ¨è¢å¹•çš„æœ€ä¸‹ä¸€åˆ—æ™‚, æ­¤ä¸€å‘½ä»¤æ²’æœ‰ä½œç”¨*/
+#define TORIGHT(x)      (ESC+"["+x+"C")         /*å‘å³ç§»å‹•xè¡Œ*/
+                                                /*ç•¶éŠæ¨™å·²ç¶“åœ¨è¢å¹•çš„æœ€å³ä¸€æ¬„æ™‚, æ­¤ä¸€å‘½ä»¤æ²’æœ‰ä½œç”¨ã€‚*/
+#define TOLEFT(x)       (ESC+"["+x+"D")         /*å‘å·¦ç§»å‹•xè¡Œ*/
+                                                /*ç•¶éŠæ¨™å·²ç¶“åœ¨è¢å¹•çš„æœ€å·¦ä¸€æ¬„æ™‚, æ­¤ä¸€å‘½ä»¤æ²’æœ‰ä½œç”¨ã€‚*/
+#define TOPOINT(x,y)    (ESC+"["+x+";"+y+"f")   /*ç§»å‹•åˆ°é»åæ¨™ç‚º(x,y) x:è¡Œï¼Œy:åˆ—*/
 #define TOPOINTA(x,y)   (ESC+"["+x+";"+y+"H")
-                /*2.Çå³ıÆÁÄ»*/
-#define CLR_LINE        ESC+"[K"                /*Çå³ıµ½ĞĞÎ²*/
+                /*2.æ¸…é™¤å±å¹•*/
+#define CLR_LINE        ESC+"[K"                /*æ¸…é™¤åˆ°è¡Œå°¾*/
 #define SETDISPLAY(x,y) (ESC+"["+x+";"+y+"f") 
 // #define DELLINE      ESC+"[K" 
-                /*3.¶³½áÆÁÄ»Ö¸¶¨ĞĞ*/
-/* ¶³½áÆÁÄ»Ö¸¶¨ĞĞ£¬x ÊÇĞĞºÅ£¬´ÓÉÏÍùÏÂÊı£¬·Ö±æÂÊÎª 800 x 600£¬y = 35£¬
- * ·Ö±æÂÊÎª 1024 x 768£¬y = 40¡£  */              
+                /*3.å‡çµå±å¹•æŒ‡å®šè¡Œ*/
+/* å‡çµå±å¹•æŒ‡å®šè¡Œï¼Œx æ˜¯è¡Œè™Ÿï¼Œå¾ä¸Šå¾€ä¸‹æ•¸ï¼Œåˆ†è¾¨ç‡ç‚º 800 x 600ï¼Œy = 35ï¼Œ
+ * åˆ†è¾¨ç‡ç‚º 1024 x 768ï¼Œy = 40ã€‚  */              
 #define FRELINE(x,y)    (ESC+"["+x+";"+y+"r")
 
 #define CUP(n)                sprintf(ESC+"[%dA",n)        /* Cursor Up n lines */

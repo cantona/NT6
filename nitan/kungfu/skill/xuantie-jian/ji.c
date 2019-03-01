@@ -3,7 +3,7 @@
 
 inherit F_SSERVER;
 
-string name() { return "Ç§¾ùÒ»»÷"; }
+string name() { return "åƒå‡ä¸€æ“Š"; }
 
 int perform(object me, object target)
 {
@@ -19,27 +19,27 @@ int perform(object me, object target)
 
         if( !target ) target = offensive_target(me);
         if( !target || !target->is_character() || !me->is_fighting(target) )
-                return notify_fail("Ç§¾ùÒ»»÷Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("åƒå‡ä¸€æ“Šåªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me)) )
-                return notify_fail("ÄãÎ´³ÖÎäÆ÷£¬²»ÄÜÊ¹ÓÃÇ§¾ùÒ»»÷£¡\n");
+                return notify_fail("ä½ æœªæŒæ­¦å™¨ï¼Œä¸èƒ½ä½¿ç”¨åƒå‡ä¸€æ“Šï¼\n");
 
         if( me->query_skill("force") < 300 )
-                return notify_fail("ÄãµÄÄÚ¹¦»ðºòÎ´µ½£¬ÎÞ·¨Ê©Õ¹Ç§¾ùÒ»»÷£¡\n");
+                return notify_fail("ä½ çš„å…§åŠŸç«å€™æœªåˆ°ï¼Œç„¡æ³•æ–½å±•åƒå‡ä¸€æ“Šï¼\n");
 
         if( me->query_skill("sword") < 300 )
-                return notify_fail("ÄãµÄ½£·¨»ðºòÎ´µ½£¬ÎÞ·¨Ê©Õ¹Ç§¾ùÒ»»÷£¡\n");
+                return notify_fail("ä½ çš„åŠæ³•ç«å€™æœªåˆ°ï¼Œç„¡æ³•æ–½å±•åƒå‡ä¸€æ“Šï¼\n");
 
         if( query("max_neili", me) <= 3000 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»Ê©Õ¹Ç§¾ùÒ»»÷£¡\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ æ–½å±•åƒå‡ä¸€æ“Šï¼\n");
 
         if( query("neili", me) <= 1000 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»Ê©Õ¹Ç§¾ùÒ»»÷£¡\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ æ–½å±•åƒå‡ä¸€æ“Šï¼\n");
 
         if( query("jingli", me) <= 1000 )
-                return notify_fail("ÄãµÄ¾«Á¦²»¹»Ê©Õ¹Ç§¾ùÒ»»÷£¡\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤ æ–½å±•åƒå‡ä¸€æ“Šï¼\n");
 
-        msg=HIW"\n\n$NÉí×Ó×óÐ±£¬×óÊÖ³é³ö±³¸ºµÄ"+query("name", weapon)+"£¬Ë³ÊÖÒ»ÕÐ¡¸Ç§¾ùÒ»»÷¡¹!\n"NOR;
+        msg=HIW"\n\n$Nèº«å­å·¦æ–œï¼Œå·¦æ‰‹æŠ½å‡ºèƒŒè² çš„"+query("name", weapon)+"ï¼Œé †æ‰‹ä¸€æ‹›ã€Œåƒå‡ä¸€æ“Šã€!\n"NOR;
 
         ap=attack_power(me, "sword");
         dp=defense_power(target, "force");
@@ -48,8 +48,8 @@ int perform(object me, object target)
 
         if ( ap/2 + random(ap) > dp )
         {
-                msg+=HIB"$NÁ¦µÀÊ¹µÃ¼«ÃÍ,Í¦½£ËÍ³ö¡£$nÔçÓÐÌá·À£¬È´ÍòÏë²»µ½À´ÊÆ¾¹ÊÇÈç´ËÃÍÁÒ£¬ÑÛ¼ûÉÁ±Ü²»¼°£¬\n"
-                        "Ö»ÌýÅéµÄÒ»ÉùÃÍÏì£¬µÇÊ±Á¬ÍËÁËÎåÁù²½£¬²ÅÃãÇ¿ÄÃ´»Õ¾¶¨£¬µÈÊ±Á³Èç½ðÖ½¡£\n"NOR;
+                msg+=HIB"$NåŠ›é“ä½¿å¾—æ¥µçŒ›,æŒºåŠé€å‡ºã€‚$næ—©æœ‰æé˜²ï¼Œå»è¬æƒ³ä¸åˆ°ä¾†å‹¢ç«Ÿæ˜¯å¦‚æ­¤çŒ›çƒˆï¼Œçœ¼è¦‹é–ƒé¿ä¸åŠï¼Œ\n"
+                        "åªè½ç °çš„ä¸€è²çŒ›éŸ¿ï¼Œç™»æ™‚é€£é€€äº†äº”å…­æ­¥ï¼Œæ‰å‹‰å¼·æ‹¿æ¤¿ç«™å®šï¼Œç­‰æ™‚è‡‰å¦‚é‡‘ç´™ã€‚\n"NOR;
                 target->receive_damage("qi", damage,  me);
                 target->receive_wound("qi", random(damage/2)+damage/2, me);
                 me->start_busy(1+random(2));
@@ -58,8 +58,8 @@ int perform(object me, object target)
 
         else if( query("int", me)>random(query("int", target)*2) )
         {
-                msg+=HIB"$NÒ»½£»÷³ö£¬ÓÒÊÖ³¤ÐäË³ÊÆ·÷È¥£¬$nÇê¿Ì¼äÖ»¸ÐÎåÔàÁù¸­¶¼ËÆ·­×ªÁË£¬Õ¾ÔÚµ±µØ£¬¼È²»¸ÒÔËÆø£¬\n"
-                        "Ò²²»¸ÒÒÆ¶¯°ë²½£¬±ãÈç½©ÁËÒ»°ã¡£\n"NOR;
+                msg+=HIB"$Nä¸€åŠæ“Šå‡ºï¼Œå³æ‰‹é•·è¢–é †å‹¢æ‹‚åŽ»ï¼Œ$né ƒåˆ»é–“åªæ„Ÿäº”è‡Ÿå…­è…‘éƒ½ä¼¼ç¿»è½‰äº†ï¼Œç«™åœ¨ç•¶åœ°ï¼Œæ—¢ä¸æ•¢é‹æ°£ï¼Œ\n"
+                        "ä¹Ÿä¸æ•¢ç§»å‹•åŠæ­¥ï¼Œä¾¿å¦‚åƒµäº†ä¸€èˆ¬ã€‚\n"NOR;
                 if (! target->is_busy())
                         target->start_busy(3+random(4));
                 me->start_busy(2+random(2));
@@ -67,7 +67,7 @@ int perform(object me, object target)
         }
         else if (query("str", me)>random(query("str", target)*2) )
         {
-                msg+=HIC"$NÖ»¾õ¶Ô·½³å×²¶øÀ´µÄ¾¢Á¦ÃàÃà²»¾ø£¬Ô½À´Ô½Ç¿,ÔË³öËùÓÐÄÚÁ¦Õñ±ÛÒ»»÷¡£\n" NOR;
+                msg+=HIC"$Nåªè¦ºå°æ–¹æ²–æ’žè€Œä¾†çš„å‹åŠ›ç¶¿ç¶¿ä¸çµ•ï¼Œè¶Šä¾†è¶Šå¼·,é‹å‡ºæ‰€æœ‰å…§åŠ›æŒ¯è‡‚ä¸€æ“Šã€‚\n" NOR;
                 addn("neili", -300, me);
                 addn("neili", -300, target);
                 me->start_busy(1+random(2));
@@ -77,7 +77,7 @@ int perform(object me, object target)
         }
         else
         {
-                msg += HIG"$nÁè¿Õ·ÉÔ¾£¬ÉíÐÎ¼²ÉÁ£¬Ê¹³ö±¾ÃÅÇá¹¦£¬Éí×ÓÍù»ØÇáÇáÒ»²à£¬$NµÄ·¢ÕÐÊý¾¡ÊýÂä¿Õ¡£\n"NOR;
+                msg += HIG"$nå‡Œç©ºé£›èºï¼Œèº«å½¢ç–¾é–ƒï¼Œä½¿å‡ºæœ¬é–€è¼•åŠŸï¼Œèº«å­å¾€å›žè¼•è¼•ä¸€å´ï¼Œ$Nçš„ç™¼æ‹›æ•¸ç›¡æ•¸è½ç©ºã€‚\n"NOR;
                 me->start_busy(2+random(2));
         }
         addn("neili", -200, me);

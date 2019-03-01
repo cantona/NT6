@@ -4,8 +4,8 @@ inherit NPC;
 #include <ansi.h>;
 void create()
 {
-        set_name("Íò´óÆ½", ({ "wan daping", "daping", "wan" }) );
-        set("gender", "ÄĞĞÔ");
+        set_name("è¬å¤§å¹³", ({ "wan daping", "daping", "wan" }) );
+        set("gender", "ç”·æ€§");
         set("class", "swordsman");
         set("age", 25);
         set("attitude", "peaceful");
@@ -42,7 +42,7 @@ void create()
         map_skill("force", "hanbing-zhenqi");
         prepare_skill("strike", "songyang-strike");
         prepare_skill("hand", "poyun-hand");
-        create_family("áÔÉ½ÅÉ", 14, "µÜ×Ó");
+        create_family("åµ©å±±æ´¾", 14, "å¼Ÿå­");
         set("env/wimpy", 60);
         set("chat_chance_combat", 60);
         set("chat_msg_combat", ({

@@ -10,9 +10,9 @@ string ask_me(object who);
 
 void create()
 {
-        set_name("ÍõÎå", ({ "wang wu", "wang" }) );
-        set("title", "¾Æ¿Í");
-        set("gender", "ÄÐÐÔ" );
+        set_name("çŽ‹äº”", ({ "wang wu", "wang" }) );
+        set("title", "é…’å®¢");
+        set("gender", "ç”·æ€§" );
         set("shen_type", -1);
         set("age", 40);
         set("str", 25);
@@ -20,20 +20,20 @@ void create()
         set("dex", 25);
         set("int", 25);
         set("long",
-                "ÕâÊÇ¸öºÈµÃ×íõ¸õ¸µÄ¾Æ¹í£¬Õý¶¢×ÅÊÖÖÐµÄ¾Æ±­à«à«µØÄîß¶×ÅÊ²÷á¡£\n" );
+                "é€™æ˜¯å€‹å–å¾—é†‰é†ºé†ºçš„é…’é¬¼ï¼Œæ­£ç›¯è‘—æ‰‹ä¸­çš„é…’æ¯å–ƒå–ƒåœ°å¿µå¨è‘—ä»€éº¼ã€‚\n" );
 
         set("combat_exp", 20000);
         set("attitude", "heroism");
         set("chat_chance_combat", 15);
         set("chat_msg_combat", ({
-                "ÍõÎåËµµÀ: Äãµ±Õæ³ÔÁË±ª×Óµ¨À² ? ¸Ò¸ú´óÒ¯½ÏÁ¿ ! \n",
-                "ÍõÎåºöÈ»»Ó³öÒ»µ¶£¬ÕÐÊý¾«Ææ£¬µ«µ¶µ½ÖÐÍ¾È´ÓÖ¼±Ã¦ÊÕÕÐ¡£\n",
-                "ÍõÎåËµµÀ: ¿ì¹ö ! ËãÎÒÊäÁË»¹²»ÐÐ ?....\n"
+                "çŽ‹äº”èªªé“: ä½ ç•¶çœŸåƒäº†è±¹å­è†½å•¦ ? æ•¢è·Ÿå¤§çˆºè¼ƒé‡ ! \n",
+                "çŽ‹äº”å¿½ç„¶æ®å‡ºä¸€åˆ€ï¼Œæ‹›æ•¸ç²¾å¥‡ï¼Œä½†åˆ€åˆ°ä¸­é€”å»åˆæ€¥å¿™æ”¶æ‹›ã€‚\n",
+                "çŽ‹äº”èªªé“: å¿«æ»¾ ! ç®—æˆ‘è¼¸äº†é‚„ä¸è¡Œ ?....\n"
         }) );
 
         set("inquiry", ([
-                "ÍõÀÏÎå" : "¹þ¹þ¹þ! ÓÐÈ¤ÓÐÈ¤£¬¿ÉÏ§ÄãÈÏ´íÈËÁË¡£" ,
-                "¹íµ¶"   : (: ask_me :),
+                "çŽ‹è€äº”" : "å“ˆå“ˆå“ˆ! æœ‰è¶£æœ‰è¶£ï¼Œå¯æƒœä½ èªéŒ¯äººäº†ã€‚" ,
+                "é¬¼åˆ€"   : (: ask_me :),
         ]) );
 
         set_skill("blade", 50);
@@ -54,27 +54,27 @@ string ask_me(object who)
         object *ob;
 
         if( query("revealed") ) {
-                if( is_killing(who) ) return "Äã¼ÈÈ»ÖªµÀÁËÎÒµÄÉí·Ö£¬½ñÈÕÐÝÏë»îÃü£¡\n";
+                if( is_killing(who) ) return "ä½ æ—¢ç„¶çŸ¥é“äº†æˆ‘çš„èº«åˆ†ï¼Œä»Šæ—¥ä¼‘æƒ³æ´»å‘½ï¼\n";
                 else {
                         kill_ob(who);
                         who->fight_ob(this_object());
-                        return "ÀÏ×Ó¾ÍÊÇ¹íµ¶ÍõÎå£¬¹íµ¶ÍõÎå¾ÍÊÇÄãÀÏ×Ó£¡ÄÉÃüÀ´°É£¡\n";
+                        return "è€å­å°±æ˜¯é¬¼åˆ€çŽ‹äº”ï¼Œé¬¼åˆ€çŽ‹äº”å°±æ˜¯ä½ è€å­ï¼ç´å‘½ä¾†å§ï¼\n";
                 }
         }
 
         if( (random(10) < 5) || is_fighting() )
-                return "ÎÒ¡­²»ÖªµÀ¡£\n";
+                return "æˆ‘â€¦ä¸çŸ¥é“ã€‚\n";
 
         set_temp("apply/attack",  50);
         set_temp("apply/defense", 50);
         set_temp("apply/damage",  20);
 
-        set("title", HIR "¹íµ¶" NOR);
+        set("title", HIR "é¬¼åˆ€" NOR);
 
         message("vision",
-                HIY "ÍõÎåÑÛÖÐÍ»È»·Å³öÒìÑùµÄ¹âÃ¢£¬²üÉùËµµÀ£¬¿´À´...Äã¶¼ÖªµÀÁË£¿\n"
-                "ÍõÎå´óºÈÒ»Éù£¬½ÐµÀ£¬¼ÈÈ»Èç´Ë£¬ÀÏ×Ó½ñÌì·´Õý»í³öÈ¥£¬¸úÄãÆ´ÁË¡£\n" 
-                "ÍõÎåÊ¹¿ªµ¥µ¶£¬ÕÐÊý¾«Ææ£¬³ÁÃÍºÝÀ±£¬ºÍ¸Õ²ÅµÄ×í¹í¼òÖ±ÅÐÈôÁ½ÈË¡£\n" NOR,
+                HIY "çŽ‹äº”çœ¼ä¸­çªç„¶æ”¾å‡ºç•°æ¨£çš„å…‰èŠ’ï¼Œé¡«è²èªªé“ï¼Œçœ‹ä¾†...ä½ éƒ½çŸ¥é“äº†ï¼Ÿ\n"
+                "çŽ‹äº”å¤§å–ä¸€è²ï¼Œå«é“ï¼Œæ—¢ç„¶å¦‚æ­¤ï¼Œè€å­ä»Šå¤©åæ­£è±å‡ºåŽ»ï¼Œè·Ÿä½ æ‹¼äº†ã€‚\n" 
+                "çŽ‹äº”ä½¿é–‹å–®åˆ€ï¼Œæ‹›æ•¸ç²¾å¥‡ï¼Œæ²‰çŒ›ç‹ è¾£ï¼Œå’Œå‰›æ‰çš„é†‰é¬¼ç°¡ç›´åˆ¤è‹¥å…©äººã€‚\n" NOR,
                 environment(), this_object() );
 
         set("pursuer", 1);
@@ -101,5 +101,5 @@ string ask_me(object who)
         }
         add_money("silver", 50);
         set("revealed", 1);
-        return "ÀÏ×Ó¾ÍÊÇ¹íµ¶ÍõÎå£¬¹íµ¶ÍõÎå¾ÍÊÇÄãÀÏ×Ó£¡ÄÉÃüÀ´°É£¡\n";
+        return "è€å­å°±æ˜¯é¬¼åˆ€çŽ‹äº”ï¼Œé¬¼åˆ€çŽ‹äº”å°±æ˜¯ä½ è€å­ï¼ç´å‘½ä¾†å§ï¼\n";
 }

@@ -10,13 +10,13 @@ int main(object me, string arg)
         object *t;
 
         if (! pointerp(t = me->query_team()) || ! me->is_team_leader())
-                return notify_fail("你必须是一个队伍的领袖才能组织阵形。\n");
+                return notify_fail("浣犲繀闋堟槸涓�鍊嬮殜浼嶇殑闋樿鎵嶈兘绲勭箶闄ｅ舰銆俓n");
 
         if (!arg || sscanf(arg,"%s to %s",arg,target) != 2)
                 target = "no enemy";
 
         if (! me->query_skill(arg, 1))
-                return notify_fail("这种阵形你没学过。\n");
+                return notify_fail("閫欑ó闄ｅ舰浣犳矑瀛搁亷銆俓n");
         if (target == "no enemy")
                 return SKILL_D(arg)->form_array(me);
         else

@@ -3,18 +3,18 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIG "ÈËÊé±¦Áé" NOR, ({"renshu baoling", "renshu"}));
+        set_name(HIG "äººæ›¸å¯¶éˆ" NOR, ({"renshu baoling", "renshu"}));
         set_weight(1000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
+                set("unit", "é¡†");
                 set("value", 500000);
-                set("enchase/name", "ÈËÊé±¦Áé");
+                set("enchase/name", "äººæ›¸å¯¶éˆ");
                 set("enchase/point", 1);
                 set("enchase/type", "head");
                 set("enchase/cur_firm", 100);
-                set("enchase/spe_data", (["add_jiqu" : 5]) );  // Ã¿¸öÌá¸ßÑĞ¾¿Ğ§ÂÊ5%
+                set("enchase/spe_data", (["add_jiqu" : 5]) );  // æ¯å€‹æé«˜ç ”ç©¶æ•ˆç‡5%
         }
         setup();
 }

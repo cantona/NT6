@@ -9,10 +9,10 @@ int do_pian(string);
 
 void create()
 {
-        set("short", "¾ÞÊ¯ÏÂ");
+        set("short", "å·¨çŸ³ä¸‹");
         set("long", @LONG
-Äã´ô´ôµØÊ¹³öÈ«Á¦¶¥Æð¾ÞÊ¯£¬ÉúÅÂÒ»ËÉÊÖÔÒËÀÁË×Ô¼º£¬Å©·òÀäÀä
-µØÕ¾ÔÚÒ»ÅÔÐäÊÖÅÔ¹Û£¬Ò»µãÏàÖúµÄÒâË¼Ò²Ã»ÓÐ¡£
+ä½ å‘†å‘†åœ°ä½¿å‡ºå…¨åŠ›é ‚èµ·å·¨çŸ³ï¼Œç”Ÿæ€•ä¸€é¬†æ‰‹ç ¸æ­»äº†è‡ªå·±ï¼Œè¾²å¤«å†·å†·
+åœ°ç«™åœ¨ä¸€æ—è¢–æ‰‹æ—è§€ï¼Œä¸€é»žç›¸åŠ©çš„æ„æ€ä¹Ÿæ²’æœ‰ã€‚
 LONG );
         set("invalid_startroom", 1);
         set("no_fight", "1");
@@ -43,9 +43,9 @@ void dropjingli(object me, int losejl)
       if (!me || environment(me) != environment()) 
               return; 
         if (environment(me)==find_object("/d/heizhao/yideng6.c")) {
-                message_vision("$NÍÐµÃ¾ÃÁË£¬Ö»¾õµÃÁ½±Û·¢Âé£¬ÑÛÇ°Ò»Õó½ðÐÇÂÒÃ°£¡\n",me);
+                message_vision("$Næ‰˜å¾—ä¹…äº†ï¼Œåªè¦ºå¾—å…©è‡‚ç™¼éº»ï¼Œçœ¼å‰ä¸€é™£é‡‘æ˜Ÿäº‚å†’ï¼\n",me);
                       losejl = 10+random(40);
-                set_temp("die_reason", "¾«Á¦Í¸Ö§¹ý¶È¶øËÀÁË", me);
+                set_temp("die_reason", "ç²¾åŠ›é€æ”¯éŽåº¦è€Œæ­»äº†", me);
                 addn("jing", -losejl, me);
                 return;
         }
@@ -56,7 +56,7 @@ void moveout(object me)
       if (!me || environment(me) != environment())  
               return;  
         if (environment(me)==find_object("/d/heizhao/yideng6.c")) {
-                message_vision("$NÑÛÇ°Ò»Õó·¢ºÚ£¬ÖÕÓÚ¼á³Ö²»×¡ÁË£¬ÊÖÒ»ËÉ£¬¡°ºäÂ¡¡±£¡ ... ...\n",me);
+                message_vision("$Nçœ¼å‰ä¸€é™£ç™¼é»‘ï¼Œçµ‚äºŽå …æŒä¸ä½äº†ï¼Œæ‰‹ä¸€é¬†ï¼Œâ€œè½Ÿéš†â€ï¼ ... ...\n",me);
                 me->unconcious();
                 me->move("/d/heizhao/shanlu9.c");
                 return;
@@ -65,7 +65,7 @@ void moveout(object me)
 
 int do_exert(string arg)
 {
-        tell_object(this_player(), "ÄãÕýÍÐ×Å´óÊ¯Í·ÄØ£¬ÔõÃ´ÔËÆø£¿£¡\n");
+        tell_object(this_player(), "ä½ æ­£æ‰˜è‘—å¤§çŸ³é ­å‘¢ï¼Œæ€Žéº¼é‹æ°£ï¼Ÿï¼\n");
         return 1;
 }
 
@@ -74,9 +74,9 @@ int do_pian(string arg)
         object me;
         me=this_player();
         if (arg=="nong" || arg=="wu santong" || arg=="farmer" || arg=="wu") {
-                message_vision("$NÇé¼±ÉúÖÇ£¬´óº°µÀ£º¡°´óÊå£¬ÎÒ»³ÀïÓÐÒ»·âºéÀÏÒ¯×Ó¸ø¶Î»ÊÒ¯µÄÐÅ£¡¡±\n",me);
-                message_vision("¡°ÄãÀ´ÔÝÍÐÒ»ÏÂ£¬´ýÎÒÈ¡³ö¸øÄã¡£¡±\n",me);
-                message_vision("µÈµ½Å©·òÍÐÆð´óÊ¯£¬$NÉíÐÎÒ»×Ý£¬´ÓËûÉí±ßÂÓ¹ý£¬³åÏòºóÉ½£¡\n\n",me);
+                message_vision("$Næƒ…æ€¥ç”Ÿæ™ºï¼Œå¤§å–Šé“ï¼šâ€œå¤§å”ï¼Œæˆ‘æ‡·è£¡æœ‰ä¸€å°æ´ªè€çˆºå­çµ¦æ®µçš‡çˆºçš„ä¿¡ï¼â€\n",me);
+                message_vision("â€œä½ ä¾†æš«æ‰˜ä¸€ä¸‹ï¼Œå¾…æˆ‘å–å‡ºçµ¦ä½ ã€‚â€\n",me);
+                message_vision("ç­‰åˆ°è¾²å¤«æ‰˜èµ·å¤§çŸ³ï¼Œ$Nèº«å½¢ä¸€ç¸±ï¼Œå¾žä»–èº«é‚ŠæŽ éŽï¼Œæ²–å‘å¾Œå±±ï¼\n\n",me);
                 me->move("/d/heizhao/yideng7.c");
                 return 1;
         }

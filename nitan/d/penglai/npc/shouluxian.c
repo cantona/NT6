@@ -7,11 +7,11 @@ inherit NPC;
 
 void create()
 {
-        set_name(HIY "ÊØÂ·ÏÉÈË" NOR, ({ "shoulu xian", "shoulu", "xian" }));
+        set_name(HIY "å®ˆè·¯ä»™äºº" NOR, ({ "shoulu xian", "shoulu", "xian" }));
 
-        set("long", HIY "ÕâÊÇÊØ»¤ÄÏÉ½Â·¿ÚµÄÏÉÈË£¬Òª½øÈëÄÏÉ½·ÇµÃÊØÂ·ÏÉÈËµÄÖ¸Òı²»¿É¡£\n" NOR);
+        set("long", HIY "é€™æ˜¯å®ˆè­·å—å±±è·¯å£çš„ä»™äººï¼Œè¦é€²å…¥å—å±±éå¾—å®ˆè·¯ä»™äººçš„æŒ‡å¼•ä¸å¯ã€‚\n" NOR);
 
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("age", 9999);
         set("attitude", "friendly");
         set("shen_type", 1);
@@ -42,9 +42,9 @@ void create()
         map_skill("unarmed", "yinyang-shiertian");
         
         set("inquiry", ([
-                "ÅîÀ³ÏÉµº"               :   "Õâ²»ÊÇÄã¸ÃÀ´µÄµØ·½£¬ÎÒ¿´Äã»¹ÊÇ¿ì×ß°É¡£\n",
-                "ÄÏÉ½Èë¿Ú"               :   "ºÇºÇ£¬Èç¹ûÄãÄÜ¸øÎÒÒ»Æ¿ÇàÃ·¾Æ£¬ÎÒ±ãÖ¸ÒıÄãÈë¿ÚËùÔÚ¡£\n",
-                "ÇàÃ·¾Æ"                 :   "Äã²»ÖªµÀÃ´£¬ÕâµºÉÏÏÉÈË¶¼°®ºÈ£¬²»¹ıÄğÖÆ·½·¨Ö»ÓĞ¾Æ½£ÏÉÖªµÀ£¬¹ş¹ş¡¡¡­¡­",
+                "è“¬èŠä»™å³¶"               :   "é€™ä¸æ˜¯ä½ è©²ä¾†çš„åœ°æ–¹ï¼Œæˆ‘çœ‹ä½ é‚„æ˜¯å¿«èµ°å§ã€‚\n",
+                "å—å±±å…¥å£"               :   "å‘µå‘µï¼Œå¦‚æœä½ èƒ½çµ¦æˆ‘ä¸€ç“¶é’æ¢…é…’ï¼Œæˆ‘ä¾¿æŒ‡å¼•ä½ å…¥å£æ‰€åœ¨ã€‚\n",
+                "é’æ¢…é…’"                 :   "ä½ ä¸çŸ¥é“éº¼ï¼Œé€™å³¶ä¸Šä»™äººéƒ½æ„›å–ï¼Œä¸éé‡€åˆ¶æ–¹æ³•åªæœ‰é…’åŠä»™çŸ¥é“ï¼Œå“ˆå“ˆã€€â€¦â€¦",
         ]));
         
         set("chat_chance_combat", 120);
@@ -62,7 +62,7 @@ void init()
         object me = this_player();
         
         if (objectp(present("penglai qingmeijiu", me)))
-                command("say ºÃÏã~~£¬ÊÇË­µÄÇàÃ·¾Æ¿ì¿ìÄÃ³öÀ´ÈÃ±¾ÏÉÈËÆ·³¢Æ·³¢¡£");
+                command("say å¥½é¦™~~ï¼Œæ˜¯èª°çš„é’æ¢…é…’å¿«å¿«æ‹¿å‡ºä¾†è®“æœ¬ä»™äººå“å˜—å“å˜—ã€‚");
 }
 
 void unconcious()
@@ -83,20 +83,20 @@ int accept_object(object me, object obj)
             base_name(obj) == "/d/penglai/obj/qingmeijiu")
         {
                 command("wa");
-                message_vision(HIC "$N" HIC "½Ó¹ı" + obj->name() + HIC "£¬Ò»¿Ú±ãºÈÁË¸ö¾«¹â ¡­¡­\n" NOR, this_object());
+                message_vision(HIC "$N" HIC "æ¥é" + obj->name() + HIC "ï¼Œä¸€å£ä¾¿å–äº†å€‹ç²¾å…‰ â€¦â€¦\n" NOR, this_object());
                 command("haha");
-                command("say ºÃ£¬ÊµÔÚÊÇºÃ~~~~");
-                command("say ¼ÈÈ»Äã½âÁË±¾ÏÉÈËµÄ¾Æñ«£¬½øÈëÄÏÉ½µÄ·½·¨ÎÒ×ÔÈ»»á½Ì¸øÄã ¡­¡­");
-                message_vision("\n$N" NOR "¶Ô×Å$n" NOR "ÇÔÇÔË½Óï£¬ËÆºõÔÚ´«ÊÚÊ²Ã´¿Ú¾÷¡£\n\n" NOR, this_object(), me);
-                tell_object(me, HIG "ÊØÂ·ÏÉÈËÔÚÄã¶ú±ßËµµÀ£º#%&$#%@%&%$&#$%@#@$\n" NOR);
-                command("say Äã¿É¼ÇºÃÁË£¬ÕâÈëÉ½µÄ·½·¨¾ÍÔÚÕâÀïÃæ¡£");
+                command("say å¥½ï¼Œå¯¦åœ¨æ˜¯å¥½~~~~");
+                command("say æ—¢ç„¶ä½ è§£äº†æœ¬ä»™äººçš„é…’ç™®ï¼Œé€²å…¥å—å±±çš„æ–¹æ³•æˆ‘è‡ªç„¶æœƒæ•™çµ¦ä½  â€¦â€¦");
+                message_vision("\n$N" NOR "å°è‘—$n" NOR "ç«Šç«Šç§èªï¼Œä¼¼ä¹åœ¨å‚³æˆä»€éº¼å£è¨£ã€‚\n\n" NOR, this_object(), me);
+                tell_object(me, HIG "å®ˆè·¯ä»™äººåœ¨ä½ è€³é‚Šèªªé“ï¼š#%&$#%@%&%$&#$%@#@$\n" NOR);
+                command("say ä½ å¯è¨˜å¥½äº†ï¼Œé€™å…¥å±±çš„æ–¹æ³•å°±åœ¨é€™è£¡é¢ã€‚");
                 me->set("penglai/nanshan_quest/ok", 1);
                 destruct(obj);
                 return 1;
         }
         else
         {
-                command("say ±¾ÏÉÈËÖ»ÒªÇàÃ·¾Æ£¬ÆäËûÊ²Ã´¶¼²»Òª¡£");
+                command("say æœ¬ä»™äººåªè¦é’æ¢…é…’ï¼Œå…¶ä»–ä»€éº¼éƒ½ä¸è¦ã€‚");
                 return 0;
         }        
 

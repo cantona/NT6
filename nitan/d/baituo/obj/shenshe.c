@@ -2,14 +2,14 @@
 inherit ITEM;
 void create()
 {
-        set_name("ÒıÂ·ÉñÉß", ({ "shen she", "snake"}));
+        set_name("å¼•è·¯ç¥è›‡", ({ "shen she", "snake"}));
         set_weight(100);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»ÌõÓĞÊ¶Â·ÄÜÁ¦µÄÉñÉß£¬¿ÉÒÔ°ÑÖ÷ÈË´øµ½°×"
-                            "ÍÕÉ½¡£(¼üÈëhome¼´¿É)\n");
-                set("unit", "Ìõ");
+                set("long", "ä¸€æ¢æœ‰è­˜è·¯èƒ½åŠ›çš„ç¥è›‡ï¼Œå¯ä»¥æŠŠä¸»äººå¸¶åˆ°ç™½"
+                            "é§å±±ã€‚(éµå…¥homeå³å¯)\n");
+                set("unit", "æ¢");
                 set("value", 0);
         }
 }
@@ -27,14 +27,14 @@ int do_home()
 
         env = environment(me);
 
-        if (env->short() != "´óÉ³Ä®")
-                return notify_fail("Ê¹ÓÃÒıÂ·ÉñÉß±ØĞëÔÚÎ÷ÓòÉ³Ä®¡£\n");
+        if (env->short() != "å¤§æ²™æ¼ ")
+                return notify_fail("ä½¿ç”¨å¼•è·¯ç¥è›‡å¿…é ˆåœ¨è¥¿åŸŸæ²™æ¼ ã€‚\n");
 
-        if( query("family/family_name", me) != "Å·ÑôÊÀ¼Ò" )
-                return notify_fail("ÄãÄÓÄÓÄÔ´ü£¬²»ÖªµÀÔõÃ´Ê¹ÓÃ¡¸ÒıÂ·ÉñÉß¡¹¡£\n");
+        if( query("family/family_name", me) != "æ­é™½ä¸–å®¶" )
+                return notify_fail("ä½ æ’“æ’“è…¦è¢‹ï¼Œä¸çŸ¥é“æ€éº¼ä½¿ç”¨ã€Œå¼•è·¯ç¥è›‡ã€ã€‚\n");
 
-        message_vision("$N´Ó»³ÖĞÌÍ³ö¡¸ÒıÂ·ÉñÉß¡¹£¬¿ÚÀï²»ÖªÄîÁËĞ©Ê²Ã´£¬\n"
-                       "¾Í¼û¡¸ÒıÂ·ÉñÉß¡¹ÍÂÍÂĞ¾×Ó£¬Ò¡Í·°ÚÎ²µØ°Ñ$NÍù°×ÍÕÉ½´øÈ¥¡«¡«¡«\n",me);
+        message_vision("$Nå¾æ‡·ä¸­æå‡ºã€Œå¼•è·¯ç¥è›‡ã€ï¼Œå£è£¡ä¸çŸ¥å¿µäº†äº›ä»€éº¼ï¼Œ\n"
+                       "å°±è¦‹ã€Œå¼•è·¯ç¥è›‡ã€ååèŠ¯å­ï¼Œæ–é ­æ“ºå°¾åœ°æŠŠ$Nå¾€ç™½é§å±±å¸¶å»ï½ï½ï½\n",me);
         me->move("/d/baituo/damen");
         return 1;
 }

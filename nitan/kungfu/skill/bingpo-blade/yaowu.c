@@ -1,5 +1,5 @@
 // modify by xiha@wmkj
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è©±ä¸–ç•Œï¹’è¥¿éŠè¨˜ï¹’ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 #include <ansi.h>
@@ -16,26 +16,26 @@ int perform(object me, object target)
         ||      !target->is_character()
         ||      target->is_corpse()
         ||      target==me)
-                return notify_fail("ÄãÒª¶ÔË­Ê©Õ¹ÕâÒ»ÕĞ¡¸ÑıÎí³åÌì¡¹?\n");
+                return notify_fail("ä½ è¦å°èª°æ–½å±•é€™ä¸€æ‹›ã€Œå¦–éœ§æ²–å¤©ã€?\n");
         weapon=query_temp("weapon", me);
         if(!me->is_fighting())
-                return notify_fail("¡¸ÑıÎí³åÌì¡¹Ö»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ!\n");
+                return notify_fail("ã€Œå¦–éœ§æ²–å¤©ã€åªèƒ½åœ¨æˆ°é¬¥ä¸­ä½¿ç”¨!\n");
 
         if( query("max_neili", me)<1500 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¡\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ï¼\n");
 
    if( query("neili", me)<500 )
-     return notify_fail("ÄãµÄÄÚÁ¦²»×ã£¡\n");
+     return notify_fail("ä½ çš„å…§åŠ›ä¸è¶³ï¼\n");
 
 
 if( !weapon || query("skill_type", weapon) != "blade" )
-    return notify_fail("Äã±ØĞëÔÚÊ¹ÓÃ±øÆ÷Ê±²ÅÄÜÊ¹ÓÃ£¡\n");
+    return notify_fail("ä½ å¿…é ˆåœ¨ä½¿ç”¨å…µå™¨æ™‚æ‰èƒ½ä½¿ç”¨ï¼\n");
 
         if((int)me->query_skill("bingpo-blade",1) < 120)
-        return notify_fail("ÄãµÄ±ùÆÇº®µ¶µÈ¼¶»¹²»¹»!\n");
+        return notify_fail("ä½ çš„å†°é­„å¯’åˆ€ç­‰ç´šé‚„ä¸å¤ !\n");
 
     msg = MAG
-"\n$NÒõÒõÒ»Ğ¦,ÊÖÖĞµÄ"+weapon->name()+""+MAG"ÇáÇáÒ»»Ó,µÇÊ±·ÉÉ³×ßÊ¯,ÑıÎíÖ±³åÌì¼Ê!!\n"NOR;
+"\n$Né™°é™°ä¸€ç¬‘,æ‰‹ä¸­çš„"+weapon->name()+""+MAG"è¼•è¼•ä¸€æ®,ç™»æ™‚é£›æ²™èµ°çŸ³,å¦–éœ§ç›´æ²–å¤©éš›!!\n"NOR;
 message_vision(msg, me, target);
    delete("env/brief_message", me);
    delete("env/brief_message", target);

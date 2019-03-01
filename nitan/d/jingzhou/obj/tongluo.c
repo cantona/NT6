@@ -13,12 +13,12 @@ void init()
 
 void create()
 {
-        set_name(HIY"Í­Âà"NOR, ({"tongluo"}));
+        set_name(HIY"éŠ…é‘¼"NOR, ({"tongluo"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ãæ");
-                set("long", "ÕâÊÇÒ»ÃæÎäºº²úµÄÍ­Âà¡£Äã¿ÉÒÔÇÃÇÃ(qiao)Ëü¡£\n");
+                set("unit", "é¢");
+                set("long", "é€™æ˜¯ä¸€é¢æ­¦æ¼¢ç”¢çš„éŠ…é‘¼ã€‚ä½ å¯ä»¥æ•²æ•²(qiao)å®ƒã€‚\n");
                 set("value", 100);
         }
 //        setup();
@@ -27,16 +27,16 @@ void create()
 int do_qiao(string arg)
 {
         if (!id(arg))
-                return notify_fail("ÄãÒªÇÃÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦æ•²ä»€éº¼ï¼Ÿ\n");
         switch( random(2) ) {
                 case 0:
-                        say(this_player()->name() + "ÇÃÁËÇÃÍ­Âà£¬ïÛ¡«¡«¡«£¬°ÑÄãÏÅÁËÒ»Ìø¡£\n");
-                        write(this_player()->name() + "ÇÃÁËÇÃÍ­Âà£¬ïÛ¡«¡«¡«£¬°ÑÅÔ±ßµÄÈËÏÅÁËÒ»Ìø¡£\n");
+                        say(this_player()->name() + "æ•²äº†æ•²éŠ…é‘¼ï¼Œéœï½žï½žï½žï¼ŒæŠŠä½ åš‡äº†ä¸€è·³ã€‚\n");
+                        write(this_player()->name() + "æ•²äº†æ•²éŠ…é‘¼ï¼Œéœï½žï½žï½žï¼ŒæŠŠæ—é‚Šçš„äººåš‡äº†ä¸€è·³ã€‚\n");
 
                         break;
                 case 1:
-                        say(this_player()->name() + "Ê¹¾¢ÇÃÇÃÍ­Âà£ºßÛ¡«¡«¡«£¬ÕæÊÇÕð¶úÓûÁû¡£\n");
-                        write(this_player()->name() + "Ê¹¾¢ÇÃÇÃÍ­Âà£ºßÛ¡«¡«¡«£¬ÕæÊÇÕð¶úÓûÁû¡£\n");
+                        say(this_player()->name() + "ä½¿å‹æ•²æ•²éŠ…é‘¼ï¼šâ–¡ï½žï½žï½žï¼ŒçœŸæ˜¯éœ‡è€³æ¬²è¾ã€‚\n");
+                        write(this_player()->name() + "ä½¿å‹æ•²æ•²éŠ…é‘¼ï¼šâ–¡ï½žï½žï½žï¼ŒçœŸæ˜¯éœ‡è€³æ¬²è¾ã€‚\n");
 
                         break;
         }

@@ -7,21 +7,21 @@ int do_jiao(string arg);
 
 void create()
 {
-        set_name("ɽˮ��", ({ "shanshui hua", "shanshui", "hua" }) );
+        set_name("山水畫", ({ "shanshui hua", "shanshui", "hua" }) );
         set("long","
-ֻ��������һ������ͻأ�ĸ�ɽ����������ɽ�壬�м�һ���ȸߣ�
-����ָ�죬�����Ʊ���ɽ������һ�����������һ�ѩ����������������
-�����������֮�ҡ���������һ�����ɣ�ȴ��ͦȻֱ��ΡΡ��Σ���
-����ʻ���һ��ӭ���轣�Ľ�����������Ŀ�Ѽ���������Ʈ�٣�������
-�ס�ȫ��������ˮīɽˮ�������������𣬸����Ե�׿����Ⱥ������
-������ֻ����һ��ʫ�ƣ������곾�������£�����Ѱ���ϴ�΢����
-ɽ��ˮ�����㣬����߳������顣��
+只見畫中是一座陡峭突兀的高山，共有五座山峰，中間一峰尤高，
+筆立指天，聳入雲表，山側生著一排鬆樹，鬆梢積雪，樹身盡皆向南彎
+曲，想見北風之烈。峰西獨有一棵老鬆，卻是挺然直起，巍巍秀拔，樹
+下朱筆畫著一個迎風舞劍的將軍。這人面目難見，但衣袂飄舉，資形脫
+俗。全幅畫都是水墨山水，獨此人殷紅如火，更加顯得卓犖不群。畫上
+並無書款，只題著一首詩雲：“經年塵土滿征衣，特特尋芳上翠微，好
+山好水看不足，馬蹄催趁月明歸。”
 ");
         set_weight(10);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "��");
+                set("unit", "幅");
         }
         setup();
 }
@@ -43,19 +43,19 @@ int do_jiao(string arg)
         for (i = 0; i < sizeof(inv); i++) {
                 if( mapp(query("liquid", inv[i]))){
                         if( (remaining=query("liquid/remaining", inv[i]))>0){
-                                write("���"+query("name", inv[i])+"�ﵹ��Щ"+query("liquid/name", inv[i])+"����Ϳ�ڻ��ϡ�\n");
-                                write("�����������½���ϡ¶�������ּ�����..�����飬..����..����....�壬�ڶ�..�ڡ���\n");
+                                write("你從"+query("name", inv[i])+"裡倒出些"+query("liquid/name", inv[i])+"來，塗在畫上。\n");
+                                write("忽見畫的右下角依稀露出幾行字跡：“..穆遺書，..鐵掌..，中....峰，第二..節。”\n");
                                 set_temp("wumu_shanshui", 1, me);
                                 remaining--;
                                 set("liquid/remaining", remaining, inv[i]);
                                 return 1;
                         }
                         else {
-                                write("���"+query("name", inv[i])+"�Ѿ����ˣ���Ҳ������һ��"+query("liquid/name", inv[i])+"�ˣ�\n");
+                                write("你的"+query("name", inv[i])+"已經空了，再也擠不出一滴"+query("liquid/name", inv[i])+"了！\n");
                                 return 1;
                         }
                 }
         }
-        write("�������û�д�ʢˮ�����ߣ�\n");
+        write("你的身上沒有帶盛水的器具！\n");
         return 1;
 }

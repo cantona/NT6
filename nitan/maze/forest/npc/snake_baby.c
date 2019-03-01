@@ -1,13 +1,13 @@
 inherit NPC;
 void create()
 {
-        string *names = ({"Ğ¡ÇàÉß","Ğ¡ÂÌÉß","Ğ¡»¨Éß"});
+        string *names = ({"å°é’è›‡","å°ç¶ è›‡","å°èŠ±è›‡"});
         set_name( names[random(sizeof(names))], ({ "little snake","snake"}));
         set("vendetta_mark","snake");
-        set("race", "Ò°ÊŞ");
-        set("gender", "ĞÛĞÔ");
+        set("race", "é‡ç¸");
+        set("gender", "é›„æ€§");
         set("age", 20);
-        set("long", "ÕâÊÇÒ»ÌõĞ¡Éß¡£\n");
+        set("long", "é€™æ˜¯ä¸€æ¢å°è›‡ã€‚\n");
 
         set("str", 20);
         set("cor", 100);
@@ -22,9 +22,9 @@ void create()
         set("attitude", "peaceful");
                                 //set("chat_chance", 2);
         //set("chat_msg", ({
-        //                "Ğ¡ĞÜ¹°ÁË¹°ÄãµÄ½Å¡£\n"
+        //                "å°ç†Šæ‹±äº†æ‹±ä½ çš„è…³ã€‚\n"
         //}) );
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "Î²°Í", "Æß´ç" }) );
+        set("limbs", ({ "é ­éƒ¨", "èº«é«”", "å°¾å·´", "ä¸ƒå¯¸" }) );
         set("verbs", ({ "bite" }) );
         set("combat_exp", 100000);
         set("bellicosity", 5 );

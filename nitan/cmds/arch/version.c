@@ -19,9 +19,9 @@ int main(object me, string arg)
                         return 0;
 
                 if (VERSION_D->clear_syn_info())
-                        write("����˰汾�������ڵ�ͬ����Ϣ��\n");
+                        write("清除了版本精靈正在的同步信息。\n");
                 else
-                        write("Ŀǰ�汾����û���κ�ͬ����Ϣ��\n");
+                        write("目前版本精靈沒有任何同步信息。\n");
 
                 return 1;
         }
@@ -30,8 +30,8 @@ int main(object me, string arg)
         {
                 if (! SECURITY_D->valid_grant(me, "(arch)"))
                 {
-                        write("��û��Ȩ��ͬ��" + LOCAL_MUD_NAME() +
-                              "�İ汾��\n");
+                        write("你沒有權限同步" + LOCAL_MUD_NAME() +
+                              "的版本。\n");
                         return 1;
                 }
 
@@ -39,7 +39,7 @@ int main(object me, string arg)
                     intp(ver=query("VERSION_NO", get_object(VERSION_D))) && 
                     time() > ver && time() - ver < 86400)
                 {
-                        write("����汾�����һ�����ɵģ�������û�б�Ҫ��ͬ����\n");
+                        write("這個版本是最近一天生成的，你現在沒有必要再同步。\n");
                         return 1;
                 }
 
@@ -50,7 +50,7 @@ int main(object me, string arg)
         {
                 if (! SECURITY_D->valid_grant(me, "(admin)"))
                 {
-                        write("��û��Ȩ�޶�ȡ�������ϵ��ļ���\n");
+                        write("你沒有權限讀取服務器上的文件。\n");
                         return 1;
                 }
 
@@ -72,28 +72,28 @@ void show_version()
 
         if (! VERSION_D->is_version_ok())
         {
-                write("Ŀǰ�汾����ͬ���С�\n");
+                write("目前版本正在同步中。\n");
                 return;
         }
 
         if( !intp(ver=query("VERSION_NO", get_object(VERSION_D))) || !ver )
         {
-                write(sprintf("%sĿǰ���еİ汾���顣\n",
+                write(sprintf("%s目前運行的版本不祥。\n",
                               LOCAL_MUD_NAME()));
                 return;
         }
 
-        write(sprintf("%sĿǰ���еİ汾�ǣ�%O[%s ����]\n",
+        write(sprintf("%s目前運行的版本是：%O[%s 生成]\n",
                       LOCAL_MUD_NAME(), ver, ctime(ver)));
         if (wiz_level(this_player()) > wiz_level("(arch)") &&
             VERSION_D->is_release_server())
         {
                 si = VERSION_D->query_socket_info();
                 if (! mapp(si) || sizeof(si) < 1)
-                        write("Ŀǰû������վ���ڰ汾�汾��\n");
+                        write("目前沒有其它站點在版本版本。\n");
                 else
                 {
-                        write("Ŀǰ�� " + sizeof(si) + " ��վ����ͬ���汾�С�\n");
+                        write("目前有 " + sizeof(si) + " 個站點在同步版本中。\n");
                         i = 1;
                         foreach (k in keys(si))
                         {
@@ -105,12 +105,12 @@ void show_version()
                                 if (percent > 100)
                                         percent = 100;
 
-                                write(sprintf("%d. %s  ���ڴ��ͣ�%s(%d%%)\n",
+                                write(sprintf("%d. %s  正在傳送：%s(%d%%)\n",
                                               i, si[k][SUB_SITES],
-                                              stringp(si[k][FILE_NAME]) ? si[k][FILE_NAME] : "δ֪�ļ�",
+                                              stringp(si[k][FILE_NAME]) ? si[k][FILE_NAME] : "未知文件",
                                               percent));
                         }
-                        // ��ʾ��һ��ͬ����Ϣ
+                        // 顯示下一個同步信息
                 }
         }
 }
@@ -118,16 +118,16 @@ void show_version()
 int help(object me)
 {
         write(@HELP
-ָ���ʽ : version [sync] | get <file>
+指令格式 : version [sync] | get <file>
  
-���ָ�����ʾ��ϷĿǰ���õ� MudLib �汾�����ָ����sync������
-��ϵͳ������ͬ�����µİ汾��ע�⣺��������ͬ���ǲ��ɿ��ģ���
-Ϊϵͳ�����Զ��ĸ����Ѿ������ڴ�Ķ���ֻ�е������ڴ��еĶ�
-������Ժ󣬰汾��������ͬ���ˡ����ͬ����汾�������������
-MUD �����ֹ�����(update)��Щ��ͬ�ĵط���
+這個指令會顯示遊戲目前所用的 MudLib 版本。如果指明了sync參數，
+則系統將嘗試同步最新的版本。注意：在運行中同步是不可靠的，因
+為系統不能自動的更新已經載入內存的對象，只有等所有內存中的對
+象更新以後，版本才真正的同步了。因此同步完版本最好是重新啟動
+MUD 或是手工更新(update)那些不同的地方。
 
-ʹ�� version get <file> ���Զ�ȡ�������� /version/  ·������
-��ĳ���ļ���
+使用 version get <file> 可以讀取服務器上 /version/  路徑下面
+的某個文件。
  
 HELP );
         return 1;

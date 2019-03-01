@@ -6,16 +6,16 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Ã÷½ÌÃÜ¶´");
+        set("short", "æ˜æ•™å¯†æ´");
         set("long", @LONG
-ÕâÀïÊÇÒ»¸öĞ¡Ğ¡ÍÁ¶´£¬ÖÜÎ§ºÚºõºõµÄºÜÄÑ¿´Çå³ş¡£ÒşÒşÔ¼Ô¼£¬¿É
-ÒÔ¿´µ½Ò»ÉÈ´óÊ¯ÃÅ(men)¡£
+é€™è£¡æ˜¯ä¸€å€‹å°å°åœŸæ´ï¼Œå‘¨åœé»‘ä¹ä¹çš„å¾ˆé›£çœ‹æ¸…æ¥šã€‚éš±éš±ç´„ç´„ï¼Œå¯
+ä»¥çœ‹åˆ°ä¸€æ‰‡å¤§çŸ³é–€(men)ã€‚
 LONG );
         set("exits", ([
                 "out"  : __DIR__"huangtulu2",
         ]));
         set("item_desc", ([
-                "men"  : "Ò»ÉÈ´óÊ¯ÃÅ£¬¿´À´×ÜÓĞÁ½Íò½ïÖØ°É¡£\n",
+                "men"  : "ä¸€æ‰‡å¤§çŸ³é–€ï¼Œçœ‹ä¾†ç¸½æœ‰å…©è¬æ–¤é‡å§ã€‚\n",
         ]));
         set("outdoors", "mingjiao");
         setup();
@@ -32,24 +32,24 @@ int do_break(string arg)
         int i;
 
         if (arg != "men")
-                return notify_fail("ÄãÔÚ¸ÉÂğ? \n");
+                return notify_fail("ä½ åœ¨å¹¹å—? \n");
 
         if (query("neili", me) < 2500)
         {
-                write("ÄãÔËÁËÔËÆø£¬¾õµÃ×Ô¼ºÏÖÔÚµÄÄÚÁ¦²»¼Ã¡£\n");
+                write("ä½ é‹äº†é‹æ°£ï¼Œè¦ºå¾—è‡ªå·±ç¾åœ¨çš„å…§åŠ›ä¸æ¿Ÿã€‚\n");
                 return 1;
         }
 
         addn("neili", -2000, me);
         if (me->query_skill("force", 1) < 300)
         {
-                message_vision(CYN "$N" CYN "Ñ½Ñ½ºÙºÙ·ÏÁË°ëÌìÁ¦Æø£¬½á¹û"
-                                  "Ã»Ê²Ã´¶¯¾²¡£\n", me);
-                tell_object(me, "¿´À´ÊÇ×Ô¼ºµÄÄÚ¹¦»ğºò»¹²»¹»¡£\n");
+                message_vision(CYN "$N" CYN "å‘€å‘€å˜¿å˜¿å»¢äº†åŠå¤©åŠ›æ°£ï¼Œçµæœ"
+                                  "æ²’ä»€éº¼å‹•éœã€‚\n", me);
+                tell_object(me, "çœ‹ä¾†æ˜¯è‡ªå·±çš„å…§åŠŸç«å€™é‚„ä¸å¤ ã€‚\n");
                 return 1;
         }
 
-        message_vision(CYN "Ê¯ÃÅÔÚ$N" CYN "Ò»»÷Ö®ÏÂÔşÔşÉùÏì£¬»º»ºÒÆ¿ª¡£\n" NOR,
+        message_vision(CYN "çŸ³é–€åœ¨$N" CYN "ä¸€æ“Šä¹‹ä¸‹è»‹è»‹è²éŸ¿ï¼Œç·©ç·©ç§»é–‹ã€‚\n" NOR,
                        me);
 
         set("exits/enter",__DIR__"midao0");
@@ -61,6 +61,6 @@ int do_break(string arg)
 
 void close(object room)
 {
-        message("vision", "Ê¯ÃÅÓÖÔÚÔşÔşÉùÏì£¬»º»º±ÕÉÏ¡£\n"NOR, room);
+        message("vision", "çŸ³é–€åˆåœ¨è»‹è»‹è²éŸ¿ï¼Œç·©ç·©é–‰ä¸Šã€‚\n"NOR, room);
         delete("exits/enter");
 }

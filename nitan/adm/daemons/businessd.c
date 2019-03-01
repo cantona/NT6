@@ -2,11 +2,11 @@
 
 #define ETC_FILE        "/adm/etc/busi_domains"
 #define WROOM(x)        sprintf("/d/%s/business",x)
-// ×îĞ¡µ÷Õû¶î 50000 Á½»Æ½ğ£¬¼´£º500ÍòÁ½°×Òø
+// æœ€å°èª¿æ•´é¡ 50000 å…©é»ƒé‡‘ï¼Œå³ï¼š500è¬å…©ç™½éŠ€
 #define MIN_CHANGE      500000
 
-#define MAX_ARRIVE      1       /* 1Ìì */
-#define MIN_ARRIVE      60      /* 60 Ìì */
+#define MAX_ARRIVE      1       /* 1å¤© */
+#define MIN_ARRIVE      60      /* 60 å¤© */
 
 #include <price.h>
 
@@ -63,14 +63,14 @@ protected void init_domains()
 
                 if(sscanf(domains[i],"%s %s",domain,temp) != 2)
                 {
-                        log_file("business",sprintf("BUSINESS_D: Í¨ÉÌÇø %s ¶¨Òå´íÎó¡£\n",
+                        log_file("business",sprintf("BUSINESS_D: é€šå•†å€ %s å®šç¾©éŒ¯èª¤ã€‚\n",
                                 domains[i]));
                         continue;
                 }
 
                 if(sscanf(temp,"%d,%d",x,y) != 2)
                 {
-                        log_file("business",sprintf("BUSINESS_D: Í¨ÉÌÇø %s ¶¨Òå´íÎó¡£\n",
+                        log_file("business",sprintf("BUSINESS_D: é€šå•†å€ %s å®šç¾©éŒ¯èª¤ã€‚\n",
                                 domains[i]));
                         continue;
                 }
@@ -91,7 +91,7 @@ string *query_valid_domains()
                 return ({});
 }
 
-// Ëæ»úÒòËØ£º1Ğ¡Ê±ÂÖÑ²Ò»´Î¡£
+// éš¨æ©Ÿå› ç´ ï¼š1å°æ™‚è¼ªå·¡ä¸€æ¬¡ã€‚
 varargs void random_check(int f)
 {
         int max,min,i,n,a,flag;
@@ -104,9 +104,9 @@ varargs void random_check(int f)
                 return;
         */
 
-        flag = 0; // Ã¿´ÎÂÖÑ²ÒªÓĞÒ»¸öÉÌĞĞ±»»Ö¸´
+        flag = 0; // æ¯æ¬¡è¼ªå·¡è¦æœ‰ä¸€å€‹å•†è¡Œè¢«æ¢å¾©
         max = 100;
-        min = 100; // Ã¿´ÎÂÖÑ²ÒªÓĞÒ»¸öÉÌĞĞ¼Û¸ñ±»µ÷Õû
+        min = 100; // æ¯æ¬¡è¼ªå·¡è¦æœ‰ä¸€å€‹å•†è¡Œåƒ¹æ ¼è¢«èª¿æ•´
 
         domains = keys(valid_domains);
 
@@ -155,51 +155,51 @@ varargs void random_check(int f)
 
         a = random(100);
 
-        if(a < 20 || f) // µ÷Õû×îĞ¡Öµ
+        if(a < 20 || f) // èª¿æ•´æœ€å°å€¼
         {
                 if(objectp(min_room))
                         random_change(min_room,1);
         }
 
-        else if(a < 60) // Ëæ»úµ÷Õû
+        else if(a < 60) // éš¨æ©Ÿèª¿æ•´
         {
                 if(sizeof(rooms))
                         random_change(rooms[random(sizeof(rooms))],0);
         }
 
-        else if(a < 80) // µ÷Õû×î´óÖµ
+        else if(a < 80) // èª¿æ•´æœ€å¤§å€¼
         {
                 if(objectp(max_room))
                         random_change(max_room,1);
         }
 }
 
-// flag = 1 »Ö¸´µ÷Õû; flag = 0 Ëæ»úµ÷Õû
+// flag = 1 æ¢å¾©èª¿æ•´; flag = 0 éš¨æ©Ÿèª¿æ•´
 void random_change(object room,int flag)
 {
         int dir,rate,times;
 
         rate = room->query_price_rate();
 
-        if(flag && (rate != 100))       // »Ö¸´µ÷Õû
+        if(flag && (rate != 100))       // æ¢å¾©èª¿æ•´
         {
                 times = abs(100 - rate)/10;
                 if(times < 1)
                         times = 1;
                 if( rate < 100 )
-                        dir = 1;        // Ïò´óµ÷
+                        dir = 1;        // å‘å¤§èª¿
                 else
-                        dir = -1;       // ÏòĞ¡µ÷
+                        dir = -1;       // å‘å°èª¿
         }
 
-        else    // Ëæ»úµ÷Õû
+        else    // éš¨æ©Ÿèª¿æ•´
         {
                 if(random(2))
                         dir = 1;
                 else
                         dir = -1;
 
-                if(!random(10)) // ÖĞ´ó½±À²
+                if(!random(10)) // ä¸­å¤§çå•¦
                         times = 2;
                 else
                         times = 1;
@@ -210,9 +210,9 @@ void random_change(object room,int flag)
 
 int
 count_fasong_time(
-        string now,     /* »õÎïµ±Ç°ËùÔÚµØ */
-        string dest,    /* Ä¿µÄµØ */
-        int value       /* »õÎï×ÜÖµ(µ¥Î» gold) */
+        string now,     /* è²¨ç‰©ç•¶å‰æ‰€åœ¨åœ° */
+        string dest,    /* ç›®çš„åœ° */
+        int value       /* è²¨ç‰©ç¸½å€¼(å–®ä½ gold) */
         )
 {
         class coordinate nowp,destp;

@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�Ϻ����");
+        set("short", "南海漁村");
         set("long", @LONG
-�����Ϻ��ذ���ƫƧС�壬ϡϡ����ļ����˼ҡ��յ������ż�
-��������������ǲ��κ������Ϻ��ˡ������ߺ����и���ۡ�����
-��С���ɳ̲ɹ������
+這是南海沿岸的偏僻小村，稀稀落落的幾戶人家。空地上晾著幾
+頂漁網。南面就是波濤浩淼的南海了。向西走好象還有個漁港。東面
+是小村的沙灘曬網場。
 LONG );
         set("outdoors", "nanhai");
         set("exits", ([

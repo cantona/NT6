@@ -4,18 +4,18 @@ inherit ROOM;
 string look_notice();
 void create()
 {
-        set("short", "×³Äê×é");
+        set("short", "å£¯å¹´çµ„");
         set("long", @LONG
-ÄãÑÛÇ°ÊÇÒ»Æ¬ÂÌÉ«µÄ´ó²İÆº,²İÆºµÄÖĞÑëÊÇÒ»¿é´óÊ¯Ì¨¡£Ê¯Ì¨µÄÅÔ±ß·ÅÖÃ×Å
-Ò»¿éÊ¯±®(notice)ºÍ¼¸¸ö±øÆ÷¼Ü(jia)£¬Ê¯±®µÄºóÃæÒ»Ãæ´óÆì(flag)Ó­·çÕĞÕ¹!!!!!!!
-´óÊ¯Ì¨ÉÏ¸ß¸ßĞü¹ÒÒ»¿é´óÄ¾ÅÆ(paizi)£¬ÉÏÃæĞ´×ÅËùÓĞÈü³Ì°²ÅÅÇé¿ö¡£
+ä½ çœ¼å‰æ˜¯ä¸€ç‰‡ç¶ è‰²çš„å¤§è‰åª,è‰åªçš„ä¸­å¤®æ˜¯ä¸€å¡Šå¤§çŸ³å°ã€‚çŸ³å°çš„æ—é‚Šæ”¾ç½®è‘—
+ä¸€å¡ŠçŸ³ç¢‘(notice)å’Œå¹¾å€‹å…µå™¨æ¶(jia)ï¼ŒçŸ³ç¢‘çš„å¾Œé¢ä¸€é¢å¤§æ——(flag)è¿é¢¨æ‹›å±•!!!!!!!
+å¤§çŸ³å°ä¸Šé«˜é«˜æ‡¸æ›ä¸€å¡Šå¤§æœ¨ç‰Œ(paizi)ï¼Œä¸Šé¢å¯«è‘—æ‰€æœ‰è³½ç¨‹å®‰æ’æƒ…æ³ã€‚
 LONG
     );
         set("item_desc", ([ /* sizeof() == 1 */
-                "´ó¹Ä" : "ÕâÊÇÒ»Ö»Å£Æ¤ÖÆ³ÉµÄ¾Ş¹Ä£¬ÎäÁÖÈËÊ¿ÔÚ»ªÉ½ÂÛ½£Ê±ÇÃÏì(knock)Ëü¿ªÊ¼±ÈÎä¡£",
-                "flag" : " ×Ô ¹Å Ó¢ ĞÛ ³ö ÉÙ Äê \n",
-                "jia"  : "¿ÉÒÔÄÃ(na)µÄ±øÆ÷ÓĞ½£(sword)£¬µ¶(blade)£¬ÕÈ(staff)£¬±Ş(whip)£¬Ìú´¸(hammer)£¬\n"
-                         "°µÆ÷(throwing)£¬¹÷×Ó(club)¡£»¹ÓĞÒÂ·ş(cloth)£¬»¤ÊÖ(hand)£¬Ö¸Ì×(finger)¡£\n",
+                "å¤§é¼“" : "é€™æ˜¯ä¸€åªç‰›çš®åˆ¶æˆçš„å·¨é¼“ï¼Œæ­¦æ—äººå£«åœ¨è¯å±±è«–åŠæ™‚æ•²éŸ¿(knock)å®ƒé–‹å§‹æ¯”æ­¦ã€‚",
+                "flag" : " è‡ª å¤ è‹± é›„ å‡º å°‘ å¹´ \n",
+                "jia"  : "å¯ä»¥æ‹¿(na)çš„å…µå™¨æœ‰åŠ(sword)ï¼Œåˆ€(blade)ï¼Œæ–(staff)ï¼Œé­(whip)ï¼ŒéµéŒ˜(hammer)ï¼Œ\n"
+                         "æš—å™¨(throwing)ï¼Œæ£å­(club)ã€‚é‚„æœ‰è¡£æœ(cloth)ï¼Œè­·æ‰‹(hand)ï¼ŒæŒ‡å¥—(finger)ã€‚\n",
                 "notice" : (: look_notice :),
         ]));
         
@@ -39,7 +39,7 @@ void init()
         /*
         if (! wizardp(me) && (age >= 40 || age < 30))
         {
-                tell_object(me,"´ó»áÖ÷³Ö¸æËßÄã£ºÄã²»¿ÉÒÔÔÚÕâ¸ö³¡µØ±ÈÎä£¡ÇëÑ¡ÔñÄãÄêÁäÏàÓ¦µÄ³¡µØ£¡£¡\n");
+                tell_object(me,"å¤§æœƒä¸»æŒå‘Šè¨´ä½ ï¼šä½ ä¸å¯ä»¥åœ¨é€™å€‹å ´åœ°æ¯”æ­¦ï¼è«‹é¸æ“‡ä½ å¹´é½¡ç›¸æ‡‰çš„å ´åœ°ï¼ï¼\n");
                 me->move("/d/huashan/houzhiwangyu");
                 return;
         }
@@ -75,7 +75,7 @@ void do_recover(object me)
 
 int discmds()
 {
-        tell_object(this_player(),"ÏÖÔÚÄã»¹ÊÇ×¨ĞÄ¿´±ÈÎä°É£¡\n");
+        tell_object(this_player(),"ç¾åœ¨ä½ é‚„æ˜¯å°ˆå¿ƒçœ‹æ¯”æ­¦å§ï¼\n");
 
         return 1;
 }
@@ -89,7 +89,7 @@ int get_weapon(string arg)
         
         me = this_player();
         
-        if (! arg) return notify_fail("ÄãÒªÄÃÈ¡Ê²Ã´ÎïÆ·£¿\n");
+        if (! arg) return notify_fail("ä½ è¦æ‹¿å–ä»€éº¼ç‰©å“ï¼Ÿ\n");
         
         cloth = sword = blade = staff = whip = hammer = throwing = hand = finger = club = 0;
         
@@ -137,54 +137,54 @@ int get_weapon(string arg)
         switch (arg) 
         {
         case "cloth":
-                if (cloth) return notify_fail("ÄãÉíÉÏ²»ÊÇÒÑ¾­ÓĞÁËÂğ£¿\n");
+                if (cloth) return notify_fail("ä½ èº«ä¸Šä¸æ˜¯å·²ç¶“æœ‰äº†å—ï¼Ÿ\n");
                 ob = new("/clone/cloth/cloth");
                 break;
         case "sword":
-                if (sword) return notify_fail("ÄãÉíÉÏ²»ÊÇÒÑ¾­ÓĞÁËÂğ£¿\n");
+                if (sword) return notify_fail("ä½ èº«ä¸Šä¸æ˜¯å·²ç¶“æœ‰äº†å—ï¼Ÿ\n");
                 ob = new("/clone/weapon/changjian");
                 break;
         case "blade":
-                if (blade) return notify_fail("ÄãÉíÉÏ²»ÊÇÒÑ¾­ÓĞÁËÂğ£¿\n");
+                if (blade) return notify_fail("ä½ èº«ä¸Šä¸æ˜¯å·²ç¶“æœ‰äº†å—ï¼Ÿ\n");
                 ob = new("/clone/weapon/blade");
                 break;
         case "staff":
-                if (staff) return notify_fail("ÄãÉíÉÏ²»ÊÇÒÑ¾­ÓĞÁËÂğ£¿\n");
+                if (staff) return notify_fail("ä½ èº«ä¸Šä¸æ˜¯å·²ç¶“æœ‰äº†å—ï¼Ÿ\n");
                 ob = new("/clone/weapon/zhubang");
                 break;
         case "club":
-                if (club) return notify_fail("ÄãÉíÉÏ²»ÊÇÒÑ¾­ÓĞÁËÂğ£¿\n");
+                if (club) return notify_fail("ä½ èº«ä¸Šä¸æ˜¯å·²ç¶“æœ‰äº†å—ï¼Ÿ\n");
                 ob = new("/clone/weapon/qimeigun");
                 break;
         case "whip":
-                if (whip) return notify_fail("ÄãÉíÉÏ²»ÊÇÒÑ¾­ÓĞÁËÂğ£¿\n");
+                if (whip) return notify_fail("ä½ èº«ä¸Šä¸æ˜¯å·²ç¶“æœ‰äº†å—ï¼Ÿ\n");
                 ob = new("/clone/weapon/changbian");
                 break;
         case "hammer":
-                if (hammer) return notify_fail("ÄãÉíÉÏ²»ÊÇÒÑ¾­ÓĞÁËÂğ£¿\n");
+                if (hammer) return notify_fail("ä½ èº«ä¸Šä¸æ˜¯å·²ç¶“æœ‰äº†å—ï¼Ÿ\n");
                 ob = new("/clone/weapon/hammer");
                 break;
         case "throwing":
-                if (throwing) return notify_fail("ÄãÉíÉÏ²»ÊÇÒÑ¾­ÓĞÁËÂğ£¿\n");
+                if (throwing) return notify_fail("ä½ èº«ä¸Šä¸æ˜¯å·²ç¶“æœ‰äº†å—ï¼Ÿ\n");
                 ob = new("/d/tangmen/obj/qinglianzi");
                 ob->set_amount(1000);
                 break;
         case "finger":
-                if (finger) return notify_fail("ÄãÉíÉÏ²»ÊÇÒÑ¾­ÓĞÁËÂğ£¿\n");
+                if (finger) return notify_fail("ä½ èº«ä¸Šä¸æ˜¯å·²ç¶“æœ‰äº†å—ï¼Ÿ\n");
                 ob = new("/d/city/npc/obj/zhitao");
                 break;
         case "hand":
-                if (hand) return notify_fail("ÄãÉíÉÏ²»ÊÇÒÑ¾­ÓĞÁËÂğ£¿\n");
+                if (hand) return notify_fail("ä½ èº«ä¸Šä¸æ˜¯å·²ç¶“æœ‰äº†å—ï¼Ÿ\n");
                 ob = new("/d/city/npc/obj/tieshou");
                 break;
         default:  
-                return notify_fail("ÄãÒªÄÃÈ¡Ê²Ã´ÎïÆ·£¿\n"); 
+                return notify_fail("ä½ è¦æ‹¿å–ä»€éº¼ç‰©å“ï¼Ÿ\n"); 
                 break;
         }
         
         ob->move(me, 1);
         
-        tell_object(me,"Äã´Ó¼ÜÉÏÄÃÏÂÁËÒ»"+query("unit", ob)+ob->name()+"¡£\n");
+        tell_object(me,"ä½ å¾æ¶ä¸Šæ‹¿ä¸‹äº†ä¸€"+query("unit", ob)+ob->name()+"ã€‚\n");
         return 1;
 }
         
@@ -198,7 +198,7 @@ string look_notice()
         who = this_player();
         file = read_file("/log/static/lunjian3");
         if (! file)
-                return "Ä¿Ç°Ã»ÓĞÈÎºÎ±ÈÎä¼ÇÂ¼¡£\n";
+                return "ç›®å‰æ²’æœ‰ä»»ä½•æ¯”æ­¦è¨˜éŒ„ã€‚\n";
         name_list = explode(file, "\n");
         for (i = 0; i < sizeof(name_list); i++) 
         {
@@ -206,11 +206,11 @@ string look_notice()
                 {
                         j++;
                         k = 0;
-                        printf("\nµÚ" + chinese_number(j) + "½ì(×³Äê×é)»ªÉ½ÂÛ½£½á¹û£º\n");
+                        printf("\nç¬¬" + chinese_number(j) + "å±†(å£¯å¹´çµ„)è¯å±±è«–åŠçµæœï¼š\n");
                         continue;
                 }
                 k++;
-                printf(GRN "µÚ" + chinese_number(k) + "Ãû£º%-50s\n" NOR, name_list[i]);
+                printf(GRN "ç¬¬" + chinese_number(k) + "åï¼š%-50s\n" NOR, name_list[i]);
         }
         return "\n";
 }

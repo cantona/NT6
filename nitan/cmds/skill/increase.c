@@ -11,21 +11,21 @@ int main(object me, string arg)
         object obj, item;
 
         if (! arg)
-                return notify_fail("ÄãÒª¸ÄÔìÊ²Ã´ÎïÆ·£¿\n");
+                return notify_fail("ä½ è¦æ”¹é€ ä»€éº¼ç‰©å“ï¼Ÿ\n");
 
         if (me->is_busy())
-                return notify_fail("ÏÈÃ¦ÍêÁËÄãµÄÊÂÇéÔÙ×öÕâ¼şÊÂÇé°É£¡\n");
+                return notify_fail("å…ˆå¿™å®Œäº†ä½ çš„äº‹æƒ…å†åšé€™ä»¶äº‹æƒ…å§ï¼\n");
 
         if (me->is_fighting())
-                return notify_fail("ÄãÏÖÔÚÕıÔÚ´ò¼Ü£¬Ã»Ê±¼ä×öÕâĞ©ÊÂÇé¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£åœ¨æ‰“æ¶ï¼Œæ²’æ™‚é–“åšé€™äº›äº‹æƒ…ã€‚\n");
 
         if (! objectp(item = present(arg, me)))
-                return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑùµÀ¾ß¡£\n");
+                return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™æ¨£é“å…·ã€‚\n");
 
         if (! objectp(obj = present("increase stone", me)))
-                return notify_fail("ÄãÉíÉÏÃ»ÓĞ¸ÄÔìÊ¯¡£\n");
+                return notify_fail("ä½ èº«ä¸Šæ²’æœ‰æ”¹é€ çŸ³ã€‚\n");
 
-        notify_fail(item->name() + "Ã»ÓĞ°ì·¨±»¸ÄÔì¡£\n");
+        notify_fail(item->name() + "æ²’æœ‰è¾¦æ³•è¢«æ”¹é€ ã€‚\n");
 
         return item->do_increase(me, obj);
 }
@@ -33,10 +33,10 @@ int main(object me, string arg)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : increase <ÎïÆ·Ãû³Æ>
+æŒ‡ä»¤æ ¼å¼ : increase <ç‰©å“åç¨±>
 
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄã¸ÄÔìµÀ¾ß£¬ÒÔ¶ÍÁ¶ÄÇÖÖµÀ¾ß»òÊÇ·¢»ÓËüµÄÍşÁ¦£¬Ã¿
-´ÎÏûºÄ¸ÄÔìÊ¯Ò»¿é¡£
+é€™å€‹æŒ‡ä»¤å¯ä»¥è®“ä½ æ”¹é€ é“å…·ï¼Œä»¥é›ç…‰é‚£ç¨®é“å…·æˆ–æ˜¯ç™¼æ®å®ƒçš„å¨åŠ›ï¼Œæ¯
+æ¬¡æ¶ˆè€—æ”¹é€ çŸ³ä¸€å¡Šã€‚
 
 HELP
     );

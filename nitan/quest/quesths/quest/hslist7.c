@@ -3,28 +3,28 @@
 mapping *quest = ({
         ([
                 "id" :    "yue er",
-                "name" :  "‘¬∂˘",
+                "name" :  "ÊúàÂÖí",
                 "bonus":  75,
-                "type":   "…±",
+                "type":   "ÊÆ∫",
         ]),
         ([
                 "id" :    "cloth",
-                "name" :  "≤º“¬",
+                "name" :  "Â∏ÉË°£",
                 "bonus":  50,
-                "type":   "—∞",
+                "type":   "Â∞ã",
         ]),
         ([
                 "id" :    "cloth",
-                "name" :  "≤º“¬",
+                "name" :  "Â∏ÉË°£",
                 "bonus":  60,
-                "type":   "’˜",
+                "type":   "ÂæÅ",
                 "object": "/d/city/obj/cloth.c",
         ]),
         ([
                 "id" :    "cloth",
-                "name" :  "≤º“¬",
+                "name" :  "Â∏ÉË°£",
                 "bonus":  60,
-                "type":   "ÀÕ",
+                "type":   "ÈÄÅ",
                 "object": "/d/city/obj/cloth.c",
         ]),
 });

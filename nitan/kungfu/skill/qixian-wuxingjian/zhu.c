@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define ZHU "¡¸" HIW "ÆßÏÒÁ¬»·Öï" NOR "¡¹"
+#define ZHU "ã€Œ" HIW "ä¸ƒå¼¦é€£ç’°èª…" NOR "ã€"
 
 inherit F_SSERVER;
 
@@ -21,46 +21,46 @@ int perform(object me, object target)
         }
 
         if( userp(me) && !query("can_perform/qixian-wuxingjian/zhu", me) )
-                return notify_fail("ÄãËùÊ¹ÓÃµÄÍâ¹¦ÖĞÃ»ÓĞÕâÖÖ¹¦ÄÜ¡£\n");
+                return notify_fail("ä½ æ‰€ä½¿ç”¨çš„å¤–åŠŸä¸­æ²’æœ‰é€™ç¨®åŠŸèƒ½ã€‚\n");
 
         if (! me->is_fighting(target))
-                return notify_fail(ZHU "Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(ZHU "åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         skill = me->query_skill("qixian-wuxingjian", 1);
 
         if (me->query_skill("force") < 300)
-                return notify_fail("ÄãµÄÄÚ¹¦µÄĞŞÎª²»¹»£¬ÏÖÔÚÎŞ·¨Ê¹ÓÃ" ZHU "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸçš„ä¿®ç‚ºä¸å¤ ï¼Œç¾åœ¨ç„¡æ³•ä½¿ç”¨" ZHU "ã€‚\n");
 
         if (skill < 180)
-                return notify_fail("ÄãµÄÆßÏÒÎŞĞÎ½£ĞŞÎªÓĞÏŞ£¬ÏÖÔÚÎŞ·¨Ê¹ÓÃ" ZHU "¡£\n");
+                return notify_fail("ä½ çš„ä¸ƒå¼¦ç„¡å½¢åŠä¿®ç‚ºæœ‰é™ï¼Œç¾åœ¨ç„¡æ³•ä½¿ç”¨" ZHU "ã€‚\n");
 
         if( query("neili", me)<500 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬ÎŞ·¨ÔËÓÃ" ZHU "¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼Œç„¡æ³•é‹ç”¨" ZHU "ã€‚\n");
 
         weapon=query_temp("weapon", me);
 
         if( weapon && query("skill_type", weapon) != "sword" )
-                return notify_fail("Äã²»ÄÜÊ¹ÓÃÕâÖÖ±øÆ÷Ê©Õ¹" ZHU "¡£\n");
+                return notify_fail("ä½ ä¸èƒ½ä½¿ç”¨é€™ç¨®å…µå™¨æ–½å±•" ZHU "ã€‚\n");
 
         if (weapon && me->query_skill_mapped("sword") != "qixian-wuxingjian")
-                return notify_fail("ÄãÏÖÔÚÃ»ÓĞ×¼±¸Ê¹ÓÃÆßÏÒÎŞĞÎ½££¬ÎŞ·¨Ê©Õ¹" ZHU "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ²’æœ‰æº–å‚™ä½¿ç”¨ä¸ƒå¼¦ç„¡å½¢åŠï¼Œç„¡æ³•æ–½å±•" ZHU "ã€‚\n");
 
         if (! weapon && me->query_skill_prepared("unarmed") != "qixian-wuxingjian")
-                return notify_fail("ÄãÏÖÔÚÃ»ÓĞ×¼±¸Ê¹ÓÃÆßÏÒÎŞĞÎ½££¬ÎŞ·¨Ê©Õ¹" ZHU "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ²’æœ‰æº–å‚™ä½¿ç”¨ä¸ƒå¼¦ç„¡å½¢åŠï¼Œç„¡æ³•æ–½å±•" ZHU "ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
         if (weapon)
         {
-                msg = HIW "Ö»¼û$N" HIW "Ë«Ä¿Î¢±Õ£¬µ¥ÊÖÔÚ" + weapon->name() +
-                      HIW "ÉÏÇáÇá²¦¶¯£¬¶ÙÊ±Ö»Ìı¡°à£à£à£¡±ÆÆ¿ÕÖ®ÉùÁ¬Ğø²»¶Ï"
-                      "£¬Êı¹ÉÆÆ\nÌåÎŞĞÎ½£Æø¼¤Éä¶ø³ö£¬Ö±±¼$n" HIW "¶øÈ¥¡£\n" NOR;
+                msg = HIW "åªè¦‹$N" HIW "é›™ç›®å¾®é–‰ï¼Œå–®æ‰‹åœ¨" + weapon->name() +
+                      HIW "ä¸Šè¼•è¼•æ’¥å‹•ï¼Œé “æ™‚åªè½â€œå•µå•µå•µâ€ç ´ç©ºä¹‹è²é€£çºŒä¸æ–·"
+                      "ï¼Œæ•¸è‚¡ç ´\né«”ç„¡å½¢åŠæ°£æ¿€å°„è€Œå‡ºï¼Œç›´å¥”$n" HIW "è€Œå»ã€‚\n" NOR;
         } else
         {
-                msg = HIW "Ö»¼û$N" HIW "Ë«Ä¿Î¢±Õ£¬Ë«ÊÖÇáÇáÎèÅª£¬¶¸È»¼äÊ®Ö¸Ò»"
-                      "²¢»şÕÅ£¬¶ÙÊ±Ö»Ìı¡°à£à£à£¡±ÆÆ¿ÕÖ®ÉùÁ¬Ğø²»\n¶Ï£¬Êı¹ÉÆÆ"
-                      "ÌåÎŞĞÎ½£Æø¼¤Éä¶ø³ö£¬Ö±±¼$n" HIW "¶øÈ¥¡£\n" NOR;
+                msg = HIW "åªè¦‹$N" HIW "é›™ç›®å¾®é–‰ï¼Œé›™æ‰‹è¼•è¼•èˆå¼„ï¼Œé™¡ç„¶é–“åæŒ‡ä¸€"
+                      "ä¸¦ç®•å¼µï¼Œé “æ™‚åªè½â€œå•µå•µå•µâ€ç ´ç©ºä¹‹è²é€£çºŒä¸\næ–·ï¼Œæ•¸è‚¡ç ´"
+                      "é«”ç„¡å½¢åŠæ°£æ¿€å°„è€Œå‡ºï¼Œç›´å¥”$n" HIW "è€Œå»ã€‚\n" NOR;
         }
 
         ap = me->query_skill("force");
@@ -69,14 +69,14 @@ int perform(object me, object target)
 
         if (an > dn)
         {
-                msg += HIR "$p" HIR "Ö»¸Ğµ½$P" HIR "ÄÚÁ¦ÅìÅÈ£¬ĞÚÓ¿¶øÖÁ£¬ö®"
-                       "Ê±ĞÄÉñ¾åËé£¬´ôÁ¢µ±³¡£¡\n" NOR;
+                msg += HIR "$p" HIR "åªæ„Ÿåˆ°$P" HIR "å…§åŠ›æ¾æ¹ƒï¼Œæ´¶æ¹§è€Œè‡³ï¼Œéœ"
+                       "æ™‚å¿ƒç¥æ‡¼ç¢ï¼Œå‘†ç«‹ç•¶å ´ï¼\n" NOR;
                 count = ap / 8;
                 addn_temp("apply/attack", count, me);
         } else
         {
-                msg += HIC "$n" HIC "Ö»¸Ğµ½$P" HIC "ÄÚÁ¦ÅìÅÈ£¬ĞÚÓ¿¶øÖÁ£¬¼±"
-                       "Ã¦ÄıÉñ¾ÛÆø£¬Ğ¡ĞÄÓ¦¸¶¡£\n" NOR;
+                msg += HIC "$n" HIC "åªæ„Ÿåˆ°$P" HIC "å…§åŠ›æ¾æ¹ƒï¼Œæ´¶æ¹§è€Œè‡³ï¼Œæ€¥"
+                       "å¿™å‡ç¥èšæ°£ï¼Œå°å¿ƒæ‡‰ä»˜ã€‚\n" NOR;
                 count = ap / 15;
                 addn_temp("apply/attack", count, me);
         }

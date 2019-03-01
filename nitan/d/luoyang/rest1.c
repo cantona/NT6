@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����Ϣ��");
+        set("short", "男休息室");
         set("long", @LONG
-�����ǹ�ϴ����Ŀ�����Ϣ�ĵط�����������������࣬�д���ķ�
-�������࿿�Σ��Ա߷�����ë�����Լ�ȡ�ã��������ﻹ�ṩ��ˮ����
+這裡是供洗完澡的客人休息的地方，整個房間寬敞整潔，有次序的放
+置了許多靠椅，旁邊放有熱毛巾，自己取用，而且這裡還提供茶水服務。
 LONG);
         set("no_clean_up", 0);
         set("exits", ([

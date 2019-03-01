@@ -23,10 +23,10 @@ void init_battle()
         
         refresh_map();
         
-        BATTLEFIELD_D->set_battle_name(HIY"ÍõÕß¹éÀ´"NOR);
-        BATTLEFIELD_D->set_team_name(HIR"ÍõÕß¶Ó"NOR, HIB"ÎŞµĞ¶Ó"NOR);
+        BATTLEFIELD_D->set_battle_name(HIY"ç‹è€…æ­¸ä¾†"NOR);
+        BATTLEFIELD_D->set_team_name(HIR"ç‹è€…éšŠ"NOR, HIB"ç„¡æ•µéšŠ"NOR);
         BATTLEFIELD_D->set_entry_room("/maze/battle2/enter1", "/maze/battle2/enter2");
-        BATTLEFIELD_D->set_bonus_percent(120); // ½±Àø120%
+        BATTLEFIELD_D->set_bonus_percent(120); // çå‹µ120%
 }
 
 

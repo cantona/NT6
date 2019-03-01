@@ -8,25 +8,25 @@ inherit POISON;
 
 string name() { return "baituo_poison"; }
 
-string chinese_name() { return "°×ÍÕÉß¶¾"; }
+string chinese_name() { return "ç™½é§è›‡æ¯’"; }
 
 string update_msg_others()
 {
-        return HIR "$N" HIR "Ò»Éù²Òº¿£¬È«ÉíÓÌÈçÍòÉäÆëÊÉ£¬Í´¿à²»¿°¡£\n" NOR;
+        return HIR "$N" HIR "ä¸€è²æ…˜åšï¼Œå…¨èº«çŒ¶å¦‚è¬å°„é½Šå™¬ï¼Œç—›è‹¦ä¸å ªã€‚\n" NOR;
 }
 
 string update_msg_self()
 {
-        return HIR "ÄãÖ»¾õÈ«ÉíÆæÍ´ÎŞ±È£¬ÄÑÒÔÈÌÊÜ¡£\n" NOR;
+        return HIR "ä½ åªè¦ºå…¨èº«å¥‡ç—›ç„¡æ¯”ï¼Œé›£ä»¥å¿å—ã€‚\n" NOR;
 }
 
 string die_msg_others()
 {
-        return HIR "$N" HIR "½¹¿İµÄÉí×ÓÔÚµØÉÏÆËÌÚÁË¼¸ÏÂ£¬¾ÍÔÙÃ»"
-               "°ëµã¶¯¾²ÁË¡£\n" NOR;
+        return HIR "$N" HIR "ç„¦æ¯çš„èº«å­åœ¨åœ°ä¸Šæ’²é¨°äº†å¹¾ä¸‹ï¼Œå°±å†æ²’"
+               "åŠé»å‹•éœäº†ã€‚\n" NOR;
 }
 
 string die_reason()
 {
-        return "±»°×ÍÕÉß¶¾¹¥ĞÄ¶øËÀ";
+        return "è¢«ç™½é§è›‡æ¯’æ”»å¿ƒè€Œæ­»";
 }

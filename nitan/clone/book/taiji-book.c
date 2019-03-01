@@ -4,14 +4,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name("Ì«¼«È­¾­", ({ "taiji book", "book" }));
+        set_name("å¤ªæ¥µæ‹³ç¶“", ({ "taiji book", "book" }));
         set_weight(600);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
+                set("unit", "æœ¬");
                 set("long", @LONG
-ÕâÊÇÒ»±¾·¢»ÆµÄÊÖ³­µä¼®¡£ÊÇÕÅÈı·áÇ×ÊÖ³­Â¼µÄ¡£·­¿ªÊ×Ò³£¬Ã¿Ò³¶¼ÓĞÕĞÊ½Í¼Æ×¡£
+é€™æ˜¯ä¸€æœ¬ç™¼é»ƒçš„æ‰‹æŠ„å…¸ç±ã€‚æ˜¯å¼µä¸‰è±è¦ªæ‰‹æŠ„éŒ„çš„ã€‚ç¿»é–‹é¦–é ï¼Œæ¯é éƒ½æœ‰æ‹›å¼åœ–è­œã€‚
 
     o,     o,    o     o      o     o      o
     )-'   /|'    )-'   )-'   (-'    )-'    )-'
@@ -23,7 +23,7 @@ LONG);
                 set("material", "paper");
                 set("skill", ([
                         "name":          "taiji-quan",        // name of the skill
-		        "family_name" :   "Îäµ±ÅÉ",
+		        "family_name" :   "æ­¦ç•¶æ´¾",
                         "exp_required":        10000,        // minimum combat experience required
                         "jing_cost":        30,        // jing cost every time study this
                         "difficulty":        20,        // the base int to learn this skill

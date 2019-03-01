@@ -5,26 +5,26 @@ inherit WAIST;
 
 void create()
 {
-        set_name(HIW "°×»¢½î" NOR, ({ "tiger vein", "vein" }));
+        set_name(HIW "ç™½è™ç­‹" NOR, ({ "tiger vein", "vein" }));
         set_weight(2000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "Ò»¸ù°×»¢½î£¬ÄËÖÆÒÂ¼«Æ·£¬ÊÀ¼äº±ÓĞ¡£¿ÉÒÔ½«ËüÏµ(wear)ÔÚÑü¼ä¡£\n" NOR
-                            HIC "ÓĞĞ§ÕĞ¼ÜĞŞÕı£º+ 10        ÓĞĞ§Çá¹¦ĞŞÕı£º+ 10\n" NOR
-                            HIC "¿¹¶¾Ğ§¹ûĞŞÕı£º+ 3%        ·ÀÓùĞ§¹ûµÈ¼¶£º  10\n" NOR
-                            HIC "¿¹¶¾»Ø±ÜĞŞÕı£º+ 2%\n" NOR);
-                set("unit", "¸ù");
+                set("long", HIW "ä¸€æ ¹ç™½è™ç­‹ï¼Œä¹ƒåˆ¶è¡£æ¥µå“ï¼Œä¸–é–“ç½•æœ‰ã€‚å¯ä»¥å°‡å®ƒç³»(wear)åœ¨è…°é–“ã€‚\n" NOR
+                            HIC "æœ‰æ•ˆæ‹›æ¶ä¿®æ­£ï¼š+ 10        æœ‰æ•ˆè¼•åŠŸä¿®æ­£ï¼š+ 10\n" NOR
+                            HIC "æŠ—æ¯’æ•ˆæœä¿®æ­£ï¼š+ 3%        é˜²å¾¡æ•ˆæœç­‰ç´šï¼š  10\n" NOR
+                            HIC "æŠ—æ¯’å›é¿ä¿®æ­£ï¼š+ 2%\n" NOR);
+                set("unit", "æ ¹");
                 set("value", 500000);
                 set("armor_prop/armor", 10);
                 set("armor_prop/avoid_poison", 2);
                 set("armor_prop/reduce_poison", 3);
                 set("armor_prop/dodge", 10);
                 set("armor_prop/parry", 10);
-                set("wear_msg", HIW "$N" HIW "ÇáÇáµØ°Ñ$n"
-                    HIC "ÏµÔÚÑü¼ä¡£\n" NOR);
-                set("remove_msg", HIC "$N" HIC "ÇáÇáµØ°Ñ$n"
-                    HIC "´ÓÑü¼äÈ¡ÁËÏÂÀ´¡£\n" NOR);
+                set("wear_msg", HIW "$N" HIW "è¼•è¼•åœ°æŠŠ$n"
+                    HIC "ç³»åœ¨è…°é–“ã€‚\n" NOR);
+                set("remove_msg", HIC "$N" HIC "è¼•è¼•åœ°æŠŠ$n"
+                    HIC "å¾è…°é–“å–äº†ä¸‹ä¾†ã€‚\n" NOR);
         }
         setup();
 }

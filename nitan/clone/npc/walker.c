@@ -15,12 +15,12 @@ int ask_quest();
 
 void create()
 {
-        set_name("Ê°»ÄÕß", ({ "walker" }));
-        set("gender", "ÄĞĞÔ");
+        set_name("æ‹¾è’è€…", ({ "walker" }));
+        set("gender", "ç”·æ€§");
         set("age", 53 + random(20));
         set("long", @LONG
-ÕâÊÇÒ»¸öÊ°»ÄÕß£¬¿´ÉÏÈ¥ÀÏÊµ°Í½»µÄ¡£²»¹ıÌı
-ËµËûºÍ¹Ù¸®ÓĞ½»Çé£¬×îºÃ±ğÈ¥ÕĞÈÇ¡£
+é€™æ˜¯ä¸€å€‹æ‹¾è’è€…ï¼Œçœ‹ä¸Šå»è€å¯¦å·´äº¤çš„ã€‚ä¸éè½
+èªªä»–å’Œå®˜åºœæœ‰äº¤æƒ…ï¼Œæœ€å¥½åˆ¥å»æ‹›æƒ¹ã€‚
 LONG);
         set("attitude", "heroism");
         set("str", 35);
@@ -36,7 +36,7 @@ LONG);
         }));
 
         set("inquiry", ([
-                "Ê°»Ä" : (: ask_quest :),
+                "æ‹¾è’" : (: ask_quest :),
                 "help" : (: ask_quest :),
         ]));
         setup();
@@ -64,7 +64,7 @@ int do_walk()
                     !mapp(obmap=query_temp("objects", room)) || 
                     member_array(this_object(), values(obmap)) == -1)
                 {
-                        message_vision(CYN "$N" CYN "Ì¾ÁËÌ¾Æø£¬×ßÁË¡£\n"
+                        message_vision(CYN "$N" CYN "å˜†äº†å˜†æ°£ï¼Œèµ°äº†ã€‚\n"
                                        NOR, this_object());
                         destruct(this_object());
                         return 0;
@@ -85,12 +85,12 @@ int do_walk()
         }
 
         if (n == 1)
-                message_vision(HIC "$N" HIC "Ò»ÍäÑü£¬´ÓµØÉÏ¼ñÆğÒ»Ñù"
-                               "¶«Î÷¡£\n" NOR, this_object());
+                message_vision(HIC "$N" HIC "ä¸€å½è…°ï¼Œå¾åœ°ä¸Šæ’¿èµ·ä¸€æ¨£"
+                               "æ±è¥¿ã€‚\n" NOR, this_object());
         else
         if (n > 1)
-                message_vision(HIC "$N" HIC "ÍäÑüÔÚµØÉÏÃşÃşË÷Ë÷ÕÒÁË"
-                               "°ëÌì£¬¼ñÆğÒ»¶Ñ¶«Î÷¡£\n" NOR,
+                message_vision(HIC "$N" HIC "å½è…°åœ¨åœ°ä¸Šæ‘¸æ‘¸ç´¢ç´¢æ‰¾äº†"
+                               "åŠå¤©ï¼Œæ’¿èµ·ä¸€å †æ±è¥¿ã€‚\n" NOR,
                                this_object());
                         
         random_move();
@@ -106,37 +106,37 @@ int ask_quest()
 {
         int t, count;
         object ob = this_player();
-        // ÔÄÀú²»¹»²»ÄÜÁìÈ¡ÈÎÎñ
+        // é–±æ­·ä¸å¤ ä¸èƒ½é ˜å–ä»»å‹™
         if( query("score", ob)<2000 )
         {
-                command("say ÄãÕâµãÔÄÀú£¬¿ÖÅÂµØÍ¼¶¼»¹Ã»ÓĞÅÜÊì°É£¬±ğÔÚÕâÀï¸øÎÒÌíÂÒÁË£¡\n");
+                command("say ä½ é€™é»é–±æ­·ï¼Œææ€•åœ°åœ–éƒ½é‚„æ²’æœ‰è·‘ç†Ÿå§ï¼Œåˆ¥åœ¨é€™è£¡çµ¦æˆ‘æ·»äº‚äº†ï¼\n");
                 return 1;
         }
-        // Ê°»Ä¼¼ÄÜ²»¹»²»ÄÜÁìÈ¡ÈÎÎñ
+        // æ‹¾è’æŠ€èƒ½ä¸å¤ ä¸èƒ½é ˜å–ä»»å‹™
         if (ob->query_skill("gleaning", 1) < 30)
         {
-                command("say Äã¹À¼ÆÁ¬Ê²Ã´ÊÇÀ¬»ø¶¼²»ÖªµÀ£¬»¹ÊÇºÍÎÒÑ§Ñ§ÔÙËµ°É£¡\n");
+                command("say ä½ ä¼°è¨ˆé€£ä»€éº¼æ˜¯åƒåœ¾éƒ½ä¸çŸ¥é“ï¼Œé‚„æ˜¯å’Œæˆ‘å­¸å­¸å†èªªå§ï¼\n");
                 return 1;
         }
-        // ²»ÄÜÁ¬ĞøÁìÈÎÎñ
+        // ä¸èƒ½é€£çºŒé ˜ä»»å‹™
         if( query("walker_quest/finish_time", ob) )
         {
                 if( time()-query("walker_quest/finsh_time", ob)<ONEDAY )
                 {
-                        command("say Äã°ïÎÒÒ²Òª×¢ÒâÉíÌå£¬»¹ÊÇĞİÏ¢ĞİÏ¢£¬¸ÄÌìÔÙ×ö°É£¡\n");
+                        command("say ä½ å¹«æˆ‘ä¹Ÿè¦æ³¨æ„èº«é«”ï¼Œé‚„æ˜¯ä¼‘æ¯ä¼‘æ¯ï¼Œæ”¹å¤©å†åšå§ï¼\n");
                         return 1;
                 }
             }
-        // ÒÑ¾­Áì¹ıÈÎÎñÉĞÎ´Íê³É
+        // å·²ç¶“é ˜éä»»å‹™å°šæœªå®Œæˆ
         if( query("walker_quest/count", ob) )
         {
-                command("say Äã²»ÊÇ´ğÓ¦ÎÒ°ïÎÒÊ°»ÄÁËÂğ£¿»¹Õ¾ÔÚÕâÀïÂŞàÂÊ²Ã´£¿\n");
+                command("say ä½ ä¸æ˜¯ç­”æ‡‰æˆ‘å¹«æˆ‘æ‹¾è’äº†å—ï¼Ÿé‚„ç«™åœ¨é€™è£¡ç¾…å—¦ä»€éº¼ï¼Ÿ\n");
                 return 1;
         }
-        // ÁìÈ¡ÈÎÎñ
+        // é ˜å–ä»»å‹™
         t = time();
         set("walker_quest/time", t, ob);
-        // ÈÎÎñ¸öÊı
+        // ä»»å‹™å€‹æ•¸
         count = random(9) + 1;
         set("walker_quest/count", count, ob);
         if (count > 5)
@@ -145,14 +145,14 @@ int ask_quest()
                 t += 2 * ONEDAY;
         set("walker_quest/limit", t, ob);
 
-        message("vision", WHT + name() + WHT "Ğ¡ÉùµÄ¶Ô" + ob->name() +
-                          WHT "·Ô¸À×ÅÊ²Ã´£¬" + ob->name() +
-                          WHT "Ò»±ßÌı£¬Ò»±ß²»×¡µÄµãÍ·¡£\n" NOR,
+        message("vision", WHT + name() + WHT "å°è²çš„å°" + ob->name() +
+                          WHT "å©å’è‘—ä»€éº¼ï¼Œ" + ob->name() +
+                          WHT "ä¸€é‚Šè½ï¼Œä¸€é‚Šä¸ä½çš„é»é ­ã€‚\n" NOR,
                           environment(ob), ({ ob }));
-        message("vision", WHT + name() + WHT "ÔÚÄã¶ú±ßÇÄÉùËµµÀ£ºÄã¾ÍÈ¥°ïÎÒ"
+        message("vision", WHT + name() + WHT "åœ¨ä½ è€³é‚Šæ‚„è²èªªé“ï¼šä½ å°±å»å¹«æˆ‘"
                                           NOR + HIY + CHINESE_D->chinese_number(count) + NOR + WHT
-                                          "¼şÀ¬»øÀ´°É£¡\nÄãÎñ±ØÒªÔÚ" NOR + HIY + CHINESE_D->chinese_monthday(t) + NOR + WHT
-                          "Ö®Ç°Íê³É£¡\n" NOR, ob);
+                                          "ä»¶åƒåœ¾ä¾†å§ï¼\nä½ å‹™å¿…è¦åœ¨" NOR + HIY + CHINESE_D->chinese_monthday(t) + NOR + WHT
+                          "ä¹‹å‰å®Œæˆï¼\n" NOR, ob);
         ob->start_busy(1);
         return 1;
 }
@@ -161,16 +161,16 @@ int accept_object(object who, object ob)
 {
         int count, intime, amount, pot, score, weiwang, exp;
         object gold, silver;
-        // Ã»ÓĞÁì¹ıÈÎÎñ
+        // æ²’æœ‰é ˜éä»»å‹™
         if( !query("walker_quest/count", who) )
         {
-                command("say Äã¸øÎÒÕâ¸ö¶«Î÷¸ÉÂğ£¿\n");
+                command("say ä½ çµ¦æˆ‘é€™å€‹æ±è¥¿å¹¹å—ï¼Ÿ\n");
                 return -1;
         }
-        // ·ÇÈÎÎñÎïÆ·
+        // éä»»å‹™ç‰©å“
         if( !query("walker_item", ob) )
         {
-                command("say ÕâĞ©¶«Î÷±ğÈË»¹ÓĞÓÃ£¬ÄãÔõÃ´¾Í¸ø¼ğÀ´ÁË£¿\n");
+                command("say é€™äº›æ±è¥¿åˆ¥äººé‚„æœ‰ç”¨ï¼Œä½ æ€éº¼å°±çµ¦æ€ä¾†äº†ï¼Ÿ\n");
                 return -1;
         }
         count=query("walker_quest/count", who);
@@ -180,9 +180,9 @@ int accept_object(object who, object ob)
         else
                 intime = 0;
         if (intime)
-                command("say ¶÷£¬×öµÃ²»´í£¬ÕâÊÇ¸øÄãµÄ½±Àø¡£\n");
+                command("say æ©ï¼Œåšå¾—ä¸éŒ¯ï¼Œé€™æ˜¯çµ¦ä½ çš„çå‹µã€‚\n");
         else
-                command("say ¶÷£¬ËäÈ»ÍíÁËµã£¬µ«Ò²»¹²»´í£¬ÕâÊÇ¸øÄãµÄ½±Àø¡£\n");
+                command("say æ©ï¼Œé›–ç„¶æ™šäº†é»ï¼Œä½†ä¹Ÿé‚„ä¸éŒ¯ï¼Œé€™æ˜¯çµ¦ä½ çš„çå‹µã€‚\n");
         amount = random(2) + 1;
         exp = random(30) + 10;
         pot = exp / 3;
@@ -190,14 +190,14 @@ int accept_object(object who, object ob)
         weiwang = random(2) + 1;
         if (intime)
         {
-                // 1/4µÄ¼¸ÂÊ»ñµÃ¶îÍâµÄ½±Àø
+                // 1/4çš„å¹¾ç‡ç²å¾—é¡å¤–çš„çå‹µ
                 if (random(4)==0)
                         amount++;
                 gold = new("/clone/money/gold");
                 gold->set_amount(amount);
                 gold->move(this_object());
                 command("give gold to "+query("id", who));
-                // Èç¹û¼°Ê±Íê³ÉµÄ»°£¬µÃµ½µÄ½±Àø¼Ó±¶
+                // å¦‚æœåŠæ™‚å®Œæˆçš„è©±ï¼Œå¾—åˆ°çš„çå‹µåŠ å€
                 pot *= 2;
                 score *= 2;
                 exp *= 2;
@@ -210,7 +210,7 @@ int accept_object(object who, object ob)
                 silver->move(this_object());
         }
                 
-                // Èç¹ûÊ°»Ä¼¼ÄÜ³¬¹ı60¼¶Ôò½±Àø¼Ó±¶
+                // å¦‚æœæ‹¾è’æŠ€èƒ½è¶…é60ç´šå‰‡çå‹µåŠ å€
                 if (who->query_skill("gleaning", 1) >= 60)
                 {
                         pot *= 1.5;
@@ -221,16 +221,16 @@ int accept_object(object who, object ob)
         addn("weiwang", -weiwang, who);
         if( query("weiwang", who)<0 )
                 set("weiwang", 0, who);
-        // È«²¿Íê³É
+        // å…¨éƒ¨å®Œæˆ
         if( query("walker_quest/count", who) == 0 )
         {
             set("walker_quest/finish_time", time(), who);
-            command("say ºÃÁË£¬ÄãÒ²ÀÛÁË£¬È¥ĞİÏ¢ĞİÏ¢°É£¡\n");
+            command("say å¥½äº†ï¼Œä½ ä¹Ÿç´¯äº†ï¼Œå»ä¼‘æ¯ä¼‘æ¯å§ï¼\n");
         }
         else
-                       message("vision", WHT + name() + WHT "ÔÚÄã¶ú±ßÇÄÉùËµµÀ£ºÄã»¹ĞèÒª°ïÎÒ¼ğ"
+                       message("vision", WHT + name() + WHT "åœ¨ä½ è€³é‚Šæ‚„è²èªªé“ï¼šä½ é‚„éœ€è¦å¹«æˆ‘æ€"
                                           NOR+HIY+CHINESE_D->chinese_number(query("walker_quest/count", who))+NOR+WHT
-                                          "¼şÀ¬»ø¡£\n" NOR, who);
+                                          "ä»¶åƒåœ¾ã€‚\n" NOR, who);
         destruct(ob);
         return 1;
 }
@@ -240,7 +240,7 @@ int recognize_apprentice(object me, string skill)
 
         if (skill != "gleaning")
         {
-                command("say ÎÒ³ıÁËÊ°»ÄÔÚĞĞ£¬ÆäËû¿ÉÊ²Ã´¶¼²»»á°¡¡£\n");
+                command("say æˆ‘é™¤äº†æ‹¾è’åœ¨è¡Œï¼Œå…¶ä»–å¯ä»€éº¼éƒ½ä¸æœƒå•Šã€‚\n");
                 return -1;
         }
 

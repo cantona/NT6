@@ -6,27 +6,27 @@ int exert(object me, object target)
 {
         int level = me->query_skill("linji-zhuang", 1);
 
-        if (level < 30) return notify_fail("ÄãµÄÁÙ¼ÃÊ®¶þ×¯ÐÞÎª»¹²»¹»¡£\n");
+        if (level < 30) return notify_fail("ä½ çš„è‡¨æ¿ŸåäºŒèŽŠä¿®ç‚ºé‚„ä¸å¤ ã€‚\n");
 
         if (me->is_fighting())
-                return notify_fail("Õ½¶·ÖÐ²»ÄÜÔËÓÃÌìµØ¶þ×¯¡£\n");
+                return notify_fail("æˆ°é¬¥ä¸­ä¸èƒ½é‹ç”¨å¤©åœ°äºŒèŽŠã€‚\n");
 
         if( query("max_neili", me)<5*level )
-                return notify_fail("ÄãµÄÄÚÁ¦»¹²»¹»Ç¿¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›é‚„ä¸å¤ å¼·ã€‚\n");
 
         if( query("neili", me)<4*level )
-                return notify_fail("ÄãµÄÕæÆø²»¹»¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ã€‚\n");
 
         if( query("eff_qi", me)<query("max_qi", me)/2 )
-                return notify_fail("ÄãÒÑ¾­ÊÜÉË¹ýÖØ£¬Ö»ÅÂÒ»ÔËÕæÆø±ãÓÐÉúÃüÎ£ÏÕ£¡\n");
+                return notify_fail("ä½ å·²ç¶“å—å‚·éŽé‡ï¼Œåªæ€•ä¸€é‹çœŸæ°£ä¾¿æœ‰ç”Ÿå‘½å±éšªï¼\n");
 
         if( query_temp("linji/tiandi", me) )
-                return notify_fail("ÄãÒÑ¾­ÔËÓÃÌìµØ¶þ×¯¾Û¾«ÆøÓÚÉíÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“é‹ç”¨å¤©åœ°äºŒèŽŠèšç²¾æ°£äºŽèº«äº†ã€‚\n");
 
         set_temp("linji/tiandi", 1, me);
-        write( HIY "ÄãÏ¯µØ¶ø×ø£¬ÎåÐÄÏòÌì£¬ÔËÐÐÌìµØ¶þ×¯£¬ÒæÆøÉýÑô£¬ÒæÒõÇ±Ñô£¬Éý½µ·´Õý£¬ÌìµØ¶þÆø½»Ì©ÓÚÉí£¬¶Ù¾õ×Ô¼º¾«ÆøÉÏÏÞÔö¼ÓÁË¡£\n" NOR);
+        write( HIY "ä½ å¸­åœ°è€Œåï¼Œäº”å¿ƒå‘å¤©ï¼Œé‹è¡Œå¤©åœ°äºŒèŽŠï¼Œç›Šæ°£å‡é™½ï¼Œç›Šé™°æ½›é™½ï¼Œå‡é™åæ­£ï¼Œå¤©åœ°äºŒæ°£äº¤æ³°äºŽèº«ï¼Œé “è¦ºè‡ªå·±ç²¾æ°£ä¸Šé™å¢žåŠ äº†ã€‚\n" NOR);
         message_combatd(
-                HIY + "Ö»¼û" + me->name() + "Ï¯µØ¶ø×ø£¬ÎåÐÄÏòÌì£¬Á³ÉÏºì¹âÊ±ÒþÊ±ÏÖ£¬²»Ò»»á¶ù±ãÉñ²ÉÞÄÞÄµØÕ¾ÁËÆðÀ´¡£\n" NOR,
+                HIY + "åªè¦‹" + me->name() + "å¸­åœ°è€Œåï¼Œäº”å¿ƒå‘å¤©ï¼Œè‡‰ä¸Šç´…å…‰æ™‚éš±æ™‚ç¾ï¼Œä¸ä¸€æœƒå…’ä¾¿ç¥žæŽ¡å¼ˆå¼ˆåœ°ç«™äº†èµ·ä¾†ã€‚\n" NOR,
                 me);
 
         addn("max_qi", level*10, me);
@@ -51,5 +51,5 @@ void remove_effect(object me, int level)
                 set("eff_jing",query("max_jing",  me), me);
         delete_temp("linji/tiandi", me);
 
-        tell_object(me, HIG"ÄãËù¾ÛÌìµØÖ®¾«ÆøÒÑÉ¢»ØÌìµØÖ®¼ä£¬ÄãÓÖ»Ö¸´ÁËÔ­ÓÐ¾«Æø¡£\n"NOR);
+        tell_object(me, HIG"ä½ æ‰€èšå¤©åœ°ä¹‹ç²¾æ°£å·²æ•£å›žå¤©åœ°ä¹‹é–“ï¼Œä½ åˆæ¢å¾©äº†åŽŸæœ‰ç²¾æ°£ã€‚\n"NOR);
 }

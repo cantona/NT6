@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "É½¶´");
+        set("short", "å±±æ´ž");
         set("long", @LONG
-ÕâÊÇÒ»¸öºÁ²»ÆðÑÛµÄÉ½¶´£¬µ«ÊÇÀïÃæµÄÊ¯±ÚÉÏÈ´»­ÂúÁËÎåÔÀ½£ÅÉ
-ËùÓÐÒÑ¾­Ê§´«µÄ¾«Ãî¾øÕÐ¡£»¨¸ÚÑÒÊ¯±Ú(wall)ÉÏºÜ¶àÐ¡ÈË£¬È«ÊÇÓÃÀû
-Æ÷¿ÌÖÆ£¬Ïë¼ûµ±³õÔËÁ¦Ö®ÈËÄÚÁ¦Ê®·ÖÉîºñ¡£
+é€™æ˜¯ä¸€å€‹æ¯«ä¸èµ·çœ¼çš„å±±æ´žï¼Œä½†æ˜¯è£¡é¢çš„çŸ³å£ä¸Šå»ç•«æ»¿äº†äº”å²³åŠæ´¾
+æ‰€æœ‰å·²ç¶“å¤±å‚³çš„ç²¾å¦™çµ•æ‹›ã€‚èŠ±å´—å·–çŸ³å£(wall)ä¸Šå¾ˆå¤šå°äººï¼Œå…¨æ˜¯ç”¨åˆ©
+å™¨åˆ»åˆ¶ï¼Œæƒ³è¦‹ç•¶åˆé‹åŠ›ä¹‹äººå…§åŠ›ååˆ†æ·±åŽšã€‚
 LONG );
         set("exits", ([ /* sizeof() == 4 */
             "southup"   : __DIR__"sgyhole2",
@@ -48,46 +48,46 @@ int do_mianbi()
 
         if( !query("can_perform/poyang-jian/long", ob) )
         {
-                write("Äã¾õµÃÊ¯±ÚÉÏµÄÄÚÈÝ¶ÔÄã¶øÑÔ¹ýÓÚÉî°Â£¬Ò»Ê±ÄÑÒÔÌå»á¡£\n");
+                write("ä½ è¦ºå¾—çŸ³å£ä¸Šçš„å…§å®¹å°ä½ è€Œè¨€éŽäºŽæ·±å¥§ï¼Œä¸€æ™‚é›£ä»¥é«”æœƒã€‚\n");
                 return 1;
         }
 
         if( query("real_perform/poyang-jian/long", ob) )
         {
-                write("Äã¾õµÃÊ¯±ÚÉÏµÄÄÚÈÝ¶ÔÄã¶øÑÔ¹ýÓÚ·ôÇ³¡£\n");
+                write("ä½ è¦ºå¾—çŸ³å£ä¸Šçš„å…§å®¹å°ä½ è€Œè¨€éŽäºŽè†šæ·ºã€‚\n");
                 return 1;
         }
 
         if( query("combat_exp", ob)<1000000 )
         {
-                write("ÄãµÄÊµÕ½¾­Ñé²»×ã£¬ÎÞ·¨ÁìÎòÊ¯±ÚÄÚÈÝ¡£\n");
+                write("ä½ çš„å¯¦æˆ°ç¶“é©—ä¸è¶³ï¼Œç„¡æ³•é ˜æ‚ŸçŸ³å£å…§å®¹ã€‚\n");
                 return 1; 
         }
 
         if (c_skill < 160)
         {
-                write("ÄãÑÐ¾¿ÁË°ëÌì£¬Ê¼ÖÕÎÞ·¨²ÎÎòÍ¸Ê¯±ÚÉÏµÄÄÚÈÝ¡£\n");
+                write("ä½ ç ”ç©¶äº†åŠå¤©ï¼Œå§‹çµ‚ç„¡æ³•åƒæ‚Ÿé€çŸ³å£ä¸Šçš„å…§å®¹ã€‚\n");
                 return 1; 
         }
 
         if( query("jing", ob)<80 )
         {
-                write("Äã¾«Á¦²»ÄÜ¼¯ÖÐ£¬ÏÖÔÚÎÞ·¨ÁìÎòÊ¯±ÚÄÚÈÝ¡£\n",ob);
+                write("ä½ ç²¾åŠ›ä¸èƒ½é›†ä¸­ï¼Œç¾åœ¨ç„¡æ³•é ˜æ‚ŸçŸ³å£å…§å®¹ã€‚\n",ob);
                 return 1; 
         }
       
         if (random(15) != 1)
         {
         
-                write("ÄãÃæ¶Ô×ÅÊ¯±ÚõÃ×ø¾²Ë¼£¬Á¼¾Ã£¬¶Ô¡¸ÌìÍâÓñÁú¡¹"
-                               "ÕâÕÐËÆÓÐËùÎò£¬µ«ÈÔÓÐÐí¶à²»½âÖ®´¦¡£\n", ob);
+                write("ä½ é¢å°è‘—çŸ³å£è¶ºåéœæ€ï¼Œè‰¯ä¹…ï¼Œå°ã€Œå¤©å¤–çŽ‰é¾ã€"
+                               "é€™æ‹›ä¼¼æœ‰æ‰€æ‚Ÿï¼Œä½†ä»æœ‰è¨±å¤šä¸è§£ä¹‹è™•ã€‚\n", ob);
                 ob->start_bisy(2);
                 return 1;
         }
 
-        message_sort(HIW"\n$N" HIW"Ãæ¶Ô×ÅÊ¯±ÚõÃ×ø¾²Ë¼£¬ÃÍÈ»¼äÒ»Éù³¤Ì¾£¬Öî"
-                     "¶à·²³¾¾ÉÊÂÒÑÓ¿ÉÏÐÄÍ·£¬$N" HIW "ÖÕÓÚ½«¡¸ÌìÍâÓñÁú¡¹"
-                     "²ÎÎò³öÀ´£¬´Ó´ËÔÙÎÞÒÉÂÇ¡£\n", ob);
+        message_sort(HIW"\n$N" HIW"é¢å°è‘—çŸ³å£è¶ºåéœæ€ï¼ŒçŒ›ç„¶é–“ä¸€è²é•·å˜†ï¼Œè«¸"
+                     "å¤šå‡¡å¡µèˆŠäº‹å·²æ¹§ä¸Šå¿ƒé ­ï¼Œ$N" HIW "çµ‚äºŽå°‡ã€Œå¤©å¤–çŽ‰é¾ã€"
+                     "åƒæ‚Ÿå‡ºä¾†ï¼Œå¾žæ­¤å†ç„¡ç–‘æ…®ã€‚\n", ob);
 
         if (ob->can_improve_skill("sword"))
                  ob->improve_skill("sword", 1500000);   
@@ -96,7 +96,7 @@ int do_mianbi()
         if (ob->can_improve_skill("martial-cognize"))
                  ob->improve_skill("martial-cognize", 1500000);
     
-        write(HIC "ÄãÑ§»áÁË¡¸ÌìÍâÓñÁú¡¹¡£\n" NOR);
+        write(HIC "ä½ å­¸æœƒäº†ã€Œå¤©å¤–çŽ‰é¾ã€ã€‚\n" NOR);
         set("real_perform/poyang-jian/long", 1, ob);
         ob->receive_damage("jing", 75);
         ob->start_busy(2);

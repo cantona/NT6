@@ -4,16 +4,16 @@
 inherit ROOM;
 void create()
 {
-	set("short", GRN"ɽ��"NOR);
+	set("short", GRN"山崗"NOR);
         set("long", @LONG
-ֻ��ɽ����ϡϡ���䳤��һЩ���ݺͷ�ò�֪������ľ����ľ��
-�ߣ���ȴ���ôд䣬ɽ�ڵ���һ����һ��Сʯɽ�����������ǰ��ߣ�
-����������ɽ����¡��������������߹ȡ�
+只見山崗上稀稀落落長著一些花草和風棵不知名的樹木，樹木不
+高，但卻長得蔥翠，山崗的另一側是一座小石山。往西而下是岸邊，
+往東而下是山峰腳下。往北而下是靈蛇谷。
 LONG );
 	set("exits", ([ 
   		"westdown" : __DIR__"anbian",
 		"northdown" : __DIR__"lsgu",
 	]));
-	set("outdoors","���ߵ�");
+	set("outdoors","靈蛇島");
 	setup();
 }

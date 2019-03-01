@@ -22,7 +22,7 @@ int main(object me, string arg)
 
                 vars = me->query_all_vars();
 
-                content = "����ǰ���õ�˽�б����У�\n";
+                content = "您當前設置的私有變量有：\n";
 
                 content += sprintf("me\t: %s\t== %O\n", typeof(me), me);
                 content += sprintf("here\t: %s\t== %O\n",
@@ -55,7 +55,7 @@ int main(object me, string arg)
 
         if (name == "me" || name == "here")
         {
-                return notify_fail("����ϵͳԤ�����˽�б�����\n");
+                return notify_fail("這是系統預定義的私有變量。\n");
         }
 
         if (! value)
@@ -78,7 +78,7 @@ int main(object me, string arg)
         }
 
         if (me->query_var_count() >= MAX_VAR_COUNT)
-                return notify_fail("�벻Ҫ���ù����˽�б�����\n");
+                return notify_fail("請不要設置過多的私有變量。\n");
 
         result = me->evaluate_shell(value, 0);
 
@@ -95,15 +95,15 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-ָ���ʽ : var name=value
+指令格式 : var name=value
 
 
-���ָ���������˽�б��������� value ���﷨�� LPC ������ȫ��ͬ��
-���������� dual ������Ƕ shell ��ʹ�ã����� export ������������ȥ��
+這個指令可以設置私有變量，其中 value 的語法和 LPC 程序完全相同。
+變量可以在 dual 或者內嵌 shell 中使用，或者 export 到環境變量中去。
 
-����ʹ�� var �����г�Ŀǰ��˽�б����б���
+單獨使用 var 命令列出目前的私有變量列表。
 
-ϵͳ��Ԥ������� me �� here
+系統已預定義變量 me 和 here
 
 HELP
         );

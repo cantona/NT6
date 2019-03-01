@@ -1,4 +1,4 @@
-// ÉÏ¹ÅÊ®´óÉñÆ÷Ö® ·üôËÇÙ
+// ä¸Šå¤åå¤§ç¥å™¨ä¹‹ ä¼ç¾²ç´
 // Create by Rcwiz for Hero.cn 2003/09
 
 #include <ansi.h>
@@ -9,17 +9,17 @@ int is_magic_item() { return 1; }
 
 void create()
 {
-        set_name(NOR + MAG "·üôËÇÙ" NOR, ({ "fuxi qin", "fuxi", "qin" }) );
+        set_name(NOR + MAG "ä¼ç¾²ç´" NOR, ({ "fuxi qin", "fuxi", "qin" }) );
         set_weight(800);
         if (clonep())
                 set_default_object(__FILE__);
         else
         {
-                set("unit", "°Ñ");
-                set("long", NOR + MAG "ÕâÊÇÒ»°Ñ¿´ËÆÆÕÍ¨µÄ¹ÅÇÙ£¬´«ËµÄËÉÏ¹Å·üôËÊÏ\n"
-                                      "ËùÓÃ¡£\n"
-                                      "µ¯×à(tan)ºó¿É»Ö¸´ËùÓĞ¾«¡¢Æø¡¢ÄÚÁ¦ºÍÒì³£×´Ì¬¡£\n" 
-                                      "ĞèÒªµ¯ÇÙ¼¼·¨Ò»°Ù¼¶£¬tan ? ²é¿´Ê¹ÓÃ´ÎÊı¡£\n" NOR);
+                set("unit", "æŠŠ");
+                set("long", NOR + MAG "é€™æ˜¯ä¸€æŠŠçœ‹ä¼¼æ™®é€šçš„å¤ç´ï¼Œå‚³èªªä¹ƒä¸Šå¤ä¼ç¾²æ°\n"
+                                      "æ‰€ç”¨ã€‚\n"
+                                      "å½ˆå¥(tan)å¾Œå¯æ¢å¾©æ‰€æœ‰ç²¾ã€æ°£ã€å…§åŠ›å’Œç•°å¸¸ç‹€æ…‹ã€‚\n" 
+                                      "éœ€è¦å½ˆç´æŠ€æ³•ä¸€ç™¾ç´šï¼Œtan ? æŸ¥çœ‹ä½¿ç”¨æ¬¡æ•¸ã€‚\n" NOR);
 
         }
         setup();
@@ -41,16 +41,16 @@ int do_tan(string arg)
 
         if (arg == "?")
         {
-                 write(HIG "Ê¹ÓÃ´ÎÊı " + this_object()->query("count") + "/3\n" NOR);
+                 write(HIG "ä½¿ç”¨æ¬¡æ•¸ " + this_object()->query("count") + "/3\n" NOR);
                  return 1;
         }
                 
         if (me->is_fighting() || me->is_busy())
-                 return notify_fail("ÄãÕıÃ¦ÄØ£¡\n");
+                 return notify_fail("ä½ æ­£å¿™å‘¢ï¼\n");
 
-        message_sort(NOR + MAG + "\n$N" NOR + MAG "ÅÌÏ¥¶ø×ø£¬ÇáÇáµØ²¦Åª×Å·üôËÇÙ£¬"
-                                 "°éËæ×ÅÁîÈËĞÄ×íµÄÇÙÉù£¬$N" NOR + MAG "Ö»¾õµÃÖÜÉí"
-                                 "ÊæÌ©Ö®¼«¡£\n" NOR, me);
+        message_sort(NOR + MAG + "\n$N" NOR + MAG "ç›¤è†è€Œåï¼Œè¼•è¼•åœ°æ’¥å¼„è‘—ä¼ç¾²ç´ï¼Œ"
+                                 "ä¼´éš¨è‘—ä»¤äººå¿ƒé†‰çš„ç´è²ï¼Œ$N" NOR + MAG "åªè¦ºå¾—å‘¨èº«"
+                                 "èˆ’æ³°ä¹‹æ¥µã€‚\n" NOR, me);
 
         my = me->query_entire_dbase();
         my["jing"]   = my["eff_jing"]   = my["max_jing"];
@@ -66,7 +66,7 @@ int do_tan(string arg)
         this_object()->add("count", 1);
         if (this_object()->query("count") >= 3)
         {
-                write(HIW "Ö»ÌıµÃÒ»Õó´àÏì£¬·üôËÇÙÒÑËğ»µÁË¡£\n" NOR);
+                write(HIW "åªè½å¾—ä¸€é™£è„†éŸ¿ï¼Œä¼ç¾²ç´å·²æå£äº†ã€‚\n" NOR);
                 destruct(this_object());        
         }
 

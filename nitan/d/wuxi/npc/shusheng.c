@@ -4,11 +4,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("Âô»­ÊéÉú", ({ "maihua shusheng", "shusheng" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("è³£ç•«æ›¸ç”Ÿ", ({ "maihua shusheng", "shusheng" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 32);
         set("int", 28);
-        set("long", "Ò»¸öÇîÆÇÁÄµ¹µÄÊéÉú£¬Ö»ÄÜ¿¿Ò»ÊÖµ¤ÇàÔÚ·ç¾°ÇøËÄÖÜÂôÂô×Ö»­ÎªÉú£¬ÑÛÖĞ³£Á÷³öÒ»Ğ©ÎŞÄÎµÄÉñÇé¡£\n");
+        set("long", "ä¸€å€‹çª®é­„èŠå€’çš„æ›¸ç”Ÿï¼Œåªèƒ½é ä¸€æ‰‹ä¸¹é’åœ¨é¢¨æ™¯å€å››å‘¨è³£è³£å­—ç•«ç‚ºç”Ÿï¼Œçœ¼ä¸­å¸¸æµå‡ºä¸€äº›ç„¡å¥ˆçš„ç¥æƒ…ã€‚\n");
 
         set("attitude", "peaceful");
         set_skill("literate", 40);

@@ -7,14 +7,14 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("Å·Ñô·æ", ({ "ouyang-feng", "ouyang", "feng" }));
-        set("long", "ËûÊÇ°×ÍÕÉ½×¯Ö÷£¬ºÅ³Æ¡°Î÷¶¾¡±µÄÅ·Ñô·æ¡£\n"
-                   +"ÓÉÓÚÏ°Á·¡¸¾ÅÒõÕæ¾­¡¹×ß»ğÈëÄ§£¬ÒÑ±äµÃ¾«\n"
-                   +"Éñ´íÂÒ£¬ÕûÈÕÅûÍ·É¢·¢¡£\n");
-        set("title", "°×ÍÕÉ½×¯Ö÷");
-        set("gender", "ÄĞĞÔ");
+        set_name("æ­é™½é‹’", ({ "ouyang-feng", "ouyang", "feng" }));
+        set("long", "ä»–æ˜¯ç™½é§å±±èŠä¸»ï¼Œè™Ÿç¨±â€œè¥¿æ¯’â€çš„æ­é™½é‹’ã€‚\n"
+                   +"ç”±äºç¿’ç·´ã€Œä¹é™°çœŸç¶“ã€èµ°ç«å…¥é­”ï¼Œå·²è®Šå¾—ç²¾\n"
+                   +"ç¥éŒ¯äº‚ï¼Œæ•´æ—¥æŠ«é ­æ•£ç™¼ã€‚\n");
+        set("title", "ç™½é§å±±èŠä¸»");
+        set("gender", "ç”·æ€§");
         set("age", 53);
-        set("nickname", HIR "Î÷¶¾" NOR);
+        set("nickname", HIR "è¥¿æ¯’" NOR);
         set("shen_type",-1);
         set("shen", -150000);
         set("attitude", "peaceful");
@@ -53,7 +53,7 @@ void create()
         map_skill("parry", "lingshe-zhangfa");
         map_skill("staff", "lingshe-zhangfa");
 
-        create_family("°×ÍÕÉ½ÅÉ",1, "¿ªÉ½×æÊ¦");
+        create_family("ç™½é§å±±æ´¾",1, "é–‹å±±ç¥–å¸«");
         setup();
         carry_object("/clone/weapon/gangzhang")->wield();
         carry_object("/clone/misc/cloth")->wear();
@@ -78,7 +78,7 @@ void greeting(object ob)
         int i;
 
         obj = all_inventory(environment(me));
-        command("say Ê®²½Ò»ÈË£¬°Ù²½Ê®ÈË£¬ÈËÁ¦ÓĞÏŞ£¬ÈçºÎÉ±ÄØ¡£");
+        command("say åæ­¥ä¸€äººï¼Œç™¾æ­¥åäººï¼ŒäººåŠ›æœ‰é™ï¼Œå¦‚ä½•æ®ºå‘¢ã€‚");
         command("consider");
         for(i=0; i<sizeof(obj); i++)
         {

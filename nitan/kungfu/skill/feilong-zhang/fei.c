@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-string name() { return HIY "Áú·ÉÊÆ" NOR; }
+string name() { return HIY "é¾é£›å‹¢" NOR; }
 
 inherit F_SSERVER;
 
@@ -15,34 +15,34 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(name() + "Ö»ÄÜÔÚÕ½¶·ÖÐ¶Ô¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(name() + "åªèƒ½åœ¨æˆ°é¬¥ä¸­å°å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me) )
             || query("skill_type", weapon) != "staff" )
-                return notify_fail("ÄãËùÊ¹ÓÃµÄÎäÆ÷²»¶Ô£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ æ‰€ä½¿ç”¨çš„æ­¦å™¨ä¸å°ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if ((int)me->query_skill("feilong-zhang", 1) < 160)
-                return notify_fail("Äã·ÉÁúÕÈ·¨²»¹»æµÊì£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ é£›é¾æ–æ³•ä¸å¤ å«»ç†Ÿï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (me->query_skill_mapped("staff") != "feilong-zhang")
-                return notify_fail("ÄãÃ»ÓÐ¼¤·¢·ÉÁúÕÈ·¨£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼é£›é¾æ–æ³•ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if ((int)me->query_skill("force") < 240)
-                return notify_fail("ÄãµÄÄÚ¹¦»ðºò²»¹»£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸç«å€™ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if( query("max_neili", me)<2500 )
-                return notify_fail("ÄãµÄÄÚÁ¦ÐÞÎª²»¹»£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¿®ç‚ºä¸å¤ ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if( query("neili", me)<500 )
-                return notify_fail("ÄãÏÖÔÚµÄÕæÆø²»×ã£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çš„çœŸæ°£ä¸è¶³ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
         wn = weapon->name();
 
-        msg = HIW "$N" HIW "àÁÄ¿´óºÈ£¬½«È«Éí¾¢Á¦ÔËÓÚÓÒ±Û£¬ÕÆÖÐ" + wn +
-              HIW "¶ÙÊ±ÀëÊÖÉä³ö£¬³¯$n" HIW "·ÉÈ¥£¡\n" NOR;
+        msg = HIW "$N" HIW "å—”ç›®å¤§å–ï¼Œå°‡å…¨èº«å‹åŠ›é‹äºŽå³è‡‚ï¼ŒæŽŒä¸­" + wn +
+              HIW "é “æ™‚é›¢æ‰‹å°„å‡ºï¼Œæœ$n" HIW "é£›åŽ»ï¼\n" NOR;
 
         ap = attack_power(me, "staff");
         dp = defense_power(target, "dodge");
@@ -51,21 +51,21 @@ int perform(object me, object target)
         {
                 damage = damage_power(me, "staff");
                 msg += COMBAT_D->do_damage(me, target, WEAPON_ATTACK, damage, 55,
-                                           HIR "$n" HIR "Ö»¾õÒ»¹É¾¢·çÏ®µ½£¬ÉÁ±Ü"
-                                           "²»¼°£¬ÄÇ¸ù" + wn + HIR "ÕýºÃ»÷ÖÐÐØ¿Ú"
-                                           "£¬×²¶ÏÊý¸ùÀß¹Ç¡£\n" NOR);
+                                           HIR "$n" HIR "åªè¦ºä¸€è‚¡å‹é¢¨è¥²åˆ°ï¼Œé–ƒé¿"
+                                           "ä¸åŠï¼Œé‚£æ ¹" + wn + HIR "æ­£å¥½æ“Šä¸­èƒ¸å£"
+                                           "ï¼Œæ’žæ–·æ•¸æ ¹è‚‹éª¨ã€‚\n" NOR);
                 me->start_busy(2);
                 addn("neili", -300, me);
         } else
         {
-                msg += CYN "$n" CYN "¼û$N" CYN "ÆøÊÆÈçºç£¬²»¸ÒÓ²"
-                       "½Ó£¬µ±¼´ÏòºóºáÒÆÊý³ß£¬¶ãÉÁ¿ªÀ´¡£\n" NOR;
+                msg += CYN "$n" CYN "è¦‹$N" CYN "æ°£å‹¢å¦‚è™¹ï¼Œä¸æ•¢ç¡¬"
+                       "æŽ¥ï¼Œç•¶å³å‘å¾Œæ©«ç§»æ•¸å°ºï¼Œèº²é–ƒé–‹ä¾†ã€‚\n" NOR;
                 me->start_busy(3);
                 addn("neili", -200, me);
         }
 
-        msg += HIY "Ö»¼ûÄÇ¸ù" + wn + HIY "ÓàÊÆ²»¾¡£¬ÓÖÏòÇ°·É³öÊý"
-               "ÕÉ£¬·½²ÅÃ»ÈëÍÁÖÐ¡£\n" NOR;
+        msg += HIY "åªè¦‹é‚£æ ¹" + wn + HIY "ä½™å‹¢ä¸ç›¡ï¼Œåˆå‘å‰é£›å‡ºæ•¸"
+               "ä¸ˆï¼Œæ–¹æ‰æ²’å…¥åœŸä¸­ã€‚\n" NOR;
         weapon->move(environment(me));
 
         message_combatd(msg, me, target);

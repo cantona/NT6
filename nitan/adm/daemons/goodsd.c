@@ -39,7 +39,7 @@ int query_rate() { return rate; }
 void create()
 {
         seteuid(ROOT_UID);
-        set("name", "ÍõÕßÉÌ³Ç");
+        set("name", "ç‹è€…å•†åŸ");
         init_goods();
 }
 
@@ -100,23 +100,23 @@ string chinese_type(string type)
 {
         switch(type)
         {
-        case "object"   : return HIC "ÎïÆ·" NOR;
-        case "pill"     : return HIM "µ¤Ò©" NOR;
-        case "special"  : return HIG "ÏÈÌì¼¼ÄÜ" NOR;
-        case "special2" : return HIB "×ªÊÀ¼¼ÄÜ" NOR;
-        case "special3" : return HIM "Í¼ÌÚ¼¼ÄÜ" NOR;
-        case "story"    : return WHT "¹ÊÊÂ" NOR;
-        case "enchase"  : return HIW "ÏâÇ¶" NOR;
-        case "symbol"   : return YEL "Éñ·û" NOR;
-        case "card"     : return HIY "»áÔ±¿¨" NOR;
-        case "gold"     : return HIY "»Æ½ğ" NOR;
-        case "prop"     : return HIY "×°±¸" NOR;
-        case "module"   : return HIG "Ì××°" NOR;
-        case "element"  : return HIG "ÔªËØ" NOR;
-        case "package"  : return HIR "Àñ°ü" NOR;
-        case "srv"      : return HIM "·şÎñ" NOR;
-        case "other"    : return HIR "ÆäËû" NOR;
-        default         : return HIR "Î´Öª" NOR;
+        case "object"   : return HIC "ç‰©å“" NOR;
+        case "pill"     : return HIM "ä¸¹è—¥" NOR;
+        case "special"  : return HIG "å…ˆå¤©æŠ€èƒ½" NOR;
+        case "special2" : return HIB "è½‰ä¸–æŠ€èƒ½" NOR;
+        case "special3" : return HIM "åœ–é¨°æŠ€èƒ½" NOR;
+        case "story"    : return WHT "æ•…äº‹" NOR;
+        case "enchase"  : return HIW "é‘²åµŒ" NOR;
+        case "symbol"   : return YEL "ç¥ç¬¦" NOR;
+        case "card"     : return HIY "æœƒå“¡å¡" NOR;
+        case "gold"     : return HIY "é»ƒé‡‘" NOR;
+        case "prop"     : return HIY "è£å‚™" NOR;
+        case "module"   : return HIG "å¥—è£" NOR;
+        case "element"  : return HIG "å…ƒç´ " NOR;
+        case "package"  : return HIR "ç¦®åŒ…" NOR;
+        case "srv"      : return HIM "æœå‹™" NOR;
+        case "other"    : return HIR "å…¶ä»–" NOR;
+        default         : return HIR "æœªçŸ¥" NOR;
         }
 }
 
@@ -125,7 +125,7 @@ void log_buyinfo(object ob, class goods item)
         string buyinfo;
 
         buyinfo = MEMBER_D->db_query_member(ob, "buyinfo");
-        buyinfo += sprintf("%s(%s)ÓÚ%s»¨·Ñ %d $NT¹ºÂòÎïÆ· %s 1¡£\n",
+        buyinfo += sprintf("%s(%s)äº%sèŠ±è²» %d $NTè³¼è²·ç‰©å“ %s 1ã€‚\n",
                            ob->name(1),
                            query("id", ob),
                            TIME_D->replace_ctime(time()),
@@ -148,15 +148,15 @@ public varargs int show_goods(object me, string arg)
         int len = 0;
 
         if( !sizeof(all_goods) ) {
-                tell_object(me, sprintf("Ä¿Ç°%sÃ»ÓĞ¿ÉÒÔÂôµÄ¶«Î÷¡£\n", query("name")));
+                tell_object(me, sprintf("ç›®å‰%sæ²’æœ‰å¯ä»¥è³£çš„æ±è¥¿ã€‚\n", query("name")));
                 return 1;
         }
 
         if( !arg ) arg = "all";
 
-        msg  = sprintf("%sÄ¿Ç°³öÊÛÒÔÏÂ»õÎï£º\n\n" NOR, query("name"));
+        msg  = sprintf("%sç›®å‰å‡ºå”®ä»¥ä¸‹è²¨ç‰©ï¼š\n\n" NOR, query("name"));
         msg += sprintf(HIW "%-6s%-16s%-16s%-11s%-10s%s\n" NOR,
-                      "±àºÅ", "Ãû³Æ", "´úºÅ", "¼Û¸ñ($NT)", "ÖÖÀà", "¹¦ÄÜ¼òÒª");
+                      "ç·¨è™Ÿ", "åç¨±", "ä»£è™Ÿ", "åƒ¹æ ¼($NT)", "ç¨®é¡", "åŠŸèƒ½ç°¡è¦");
         msg += HIG "------------------------------------------------------------------------------------------\n\n" NOR;
         foreach( item in all_goods ) {
                 if( item->type == arg || arg == "all"  )
@@ -175,14 +175,14 @@ public varargs int show_goods(object me, string arg)
         }
 
         msg += "\n";
-        msg += HIG "ÇëÈÏÕæÔÄ¶ÁÓĞ¹ØËµÃ÷£¬¹ºÂòÇ°Çë¿¼ÂÇÇå³ş£¬ ÈçÎŞ²î´í£¬Ë¡²»ÍË»õ£¡\n" NOR;
-        msg += HIG "ÓĞ¹ØÍõÕßÉÌ³ÇµÄËµÃ÷¼°¹ºÂòÍõÕß±Ò($NT)µÄ·½Ê½£¬ÇëÊäÈëÖ¸Áî help ntstore ²é¿´¡£\n" NOR;
+        msg += HIG "è«‹èªçœŸé–±è®€æœ‰é—œèªªæ˜ï¼Œè³¼è²·å‰è«‹è€ƒæ…®æ¸…æ¥šï¼Œ å¦‚ç„¡å·®éŒ¯ï¼Œæ•ä¸é€€è²¨ï¼\n" NOR;
+        msg += HIG "æœ‰é—œç‹è€…å•†åŸçš„èªªæ˜åŠè³¼è²·ç‹è€…å¹£($NT)çš„æ–¹å¼ï¼Œè«‹è¼¸å…¥æŒ‡ä»¤ help ntstore æŸ¥çœ‹ã€‚\n" NOR;
         msg += HIG "------------------------------------------------------------------------------------------\n" NOR;
-        msg += HIY "µ±Ç°´ÙÏú»î¶¯£ºËùÓĞÉÌÆ·ÏúÊÛ¿ÛÂÊ " + rate + "%£¬°ÑÎÕ»ú»áÅ¶¡£\n" NOR;
+        msg += HIY "ç•¶å‰ä¿ƒéŠ·æ´»å‹•ï¼šæ‰€æœ‰å•†å“éŠ·å”®æ‰£ç‡ " + rate + "%ï¼ŒæŠŠæ¡æ©Ÿæœƒå“¦ã€‚\n" NOR;
         me->start_more(msg);
         return 1;
 }
-// ¹ºÂòÖ¸¶¨ÔªËØ
+// è³¼è²·æŒ‡å®šå…ƒç´ 
 void get_element_id(string arg, object ob, int value, int num, class goods item)
 {
         mapping props;
@@ -196,7 +196,7 @@ void get_element_id(string arg, object ob, int value, int num, class goods item)
 
         if( !arg )
         {
-                write(HIG "ÇëÊäÈëÄãĞèÒª¹ºÂòµÄÔªËØID»òÕßÃû×Ö£¨Èçadd_skill»òÌáÉı¼¼ÄÜ£©»òÍË³ö(q)£¬ÔªËØ±àºÅÇëÍË³öºóhelp element ²éÑ¯ £º" NOR);
+                write(HIG "è«‹è¼¸å…¥ä½ éœ€è¦è³¼è²·çš„å…ƒç´ IDæˆ–è€…åå­—ï¼ˆå¦‚add_skillæˆ–æå‡æŠ€èƒ½ï¼‰æˆ–é€€å‡º(q)ï¼Œå…ƒç´ ç·¨è™Ÿè«‹é€€å‡ºå¾Œhelp element æŸ¥è©¢ ï¼š" NOR);
                 input_to("get_element_id", ob, value, num, item);
                 return;
         }
@@ -217,7 +217,7 @@ void get_element_id(string arg, object ob, int value, int num, class goods item)
         if( member_array(arg, ks) != -1 )
         {
                 my_id = arg;
-                my_name = EQUIPMENT_D->chinese(my_id)+"ÔªËØ"; 
+                my_name = EQUIPMENT_D->chinese(my_id)+"å…ƒç´ "; 
                 data = ([]); 
                 data["element"] = my_id;
                 data["name"] = my_name; 
@@ -225,14 +225,14 @@ void get_element_id(string arg, object ob, int value, int num, class goods item)
                 obj->set_name(my_name, ({my_id, "element"})); 
                 if( !MEMBER_D->player_pay(ob, value) )
                 {
-                        write("\n¹ºÂòÎïÆ·Ê§°Ü£¬ÇëÓë±¾Õ¾ADMINÁªÏµ£¡\n");
+                        write("\nè³¼è²·ç‰©å“å¤±æ•—ï¼Œè«‹èˆ‡æœ¬ç«™ADMINè¯ç³»ï¼\n");
                         destruct(obj);
                         return;
                 }
                 obj->move(ob, 1); 
                 log_buyinfo(ob, item);
-                write(HIG "\n¹ºÂò³É¹¦£¬ ÄúµÄ¹ºÂò¼ÇÂ¼ÒÑĞ´ÈëÎÄ¼ş£¬ÇëÊ¹ÓÃ " HIR "member show buyinfo " HIG " ²éÑ¯£¡ \n" NOR);
-                write(HIC "Äú×Ü¹²»¨·ÑÁË " HIY + value + HIC + " $NT, ×£ÄúºÃÔË£¡\n" NOR);
+                write(HIG "\nè³¼è²·æˆåŠŸï¼Œ æ‚¨çš„è³¼è²·è¨˜éŒ„å·²å¯«å…¥æ–‡ä»¶ï¼Œè«‹ä½¿ç”¨ " HIR "member show buyinfo " HIG " æŸ¥è©¢ï¼ \n" NOR);
+                write(HIC "æ‚¨ç¸½å…±èŠ±è²»äº† " HIY + value + HIC + " $NT, ç¥æ‚¨å¥½é‹ï¼\n" NOR);
                 return;
         } 
         else
@@ -244,7 +244,7 @@ void get_element_id(string arg, object ob, int value, int num, class goods item)
                         {
                                 flag = 1;
                                 my_id = ks[i];
-                                my_name = EQUIPMENT_D->chinese(my_id)+"ÔªËØ"; 
+                                my_name = EQUIPMENT_D->chinese(my_id)+"å…ƒç´ "; 
                                 data = ([]); 
                                 data["element"] = my_id;
                                 data["name"] = my_name; 
@@ -252,23 +252,23 @@ void get_element_id(string arg, object ob, int value, int num, class goods item)
                                 obj->set_name(my_name, ({my_id, "element"})); 
                                 if( !MEMBER_D->player_pay(ob, value) )
                                 {
-                                        write("\n¹ºÂòÎïÆ·Ê§°Ü£¬ÇëÓë±¾Õ¾ADMINÁªÏµ£¡\n");
+                                        write("\nè³¼è²·ç‰©å“å¤±æ•—ï¼Œè«‹èˆ‡æœ¬ç«™ADMINè¯ç³»ï¼\n");
                                         destruct(obj);
                                         return;
                                 }
                                 obj->move(ob, 1); 
                                 log_buyinfo(ob, item);
-                                write(HIG "\n¹ºÂò³É¹¦£¬ ÄúµÄ¹ºÂò¼ÇÂ¼ÒÑĞ´ÈëÎÄ¼ş£¬ÇëÊ¹ÓÃ " HIR "member show buyinfo " HIG " ²éÑ¯£¡ \n" NOR);
-                                write(HIC "Äú×Ü¹²»¨·ÑÁË " HIY + value + HIC + " $NT, ×£ÄúºÃÔË£¡\n" NOR);
+                                write(HIG "\nè³¼è²·æˆåŠŸï¼Œ æ‚¨çš„è³¼è²·è¨˜éŒ„å·²å¯«å…¥æ–‡ä»¶ï¼Œè«‹ä½¿ç”¨ " HIR "member show buyinfo " HIG " æŸ¥è©¢ï¼ \n" NOR);
+                                write(HIC "æ‚¨ç¸½å…±èŠ±è²»äº† " HIY + value + HIC + " $NT, ç¥æ‚¨å¥½é‹ï¼\n" NOR);
                                 return;
                         }
                 }       
         }
-        write("Ã»ÓĞÕâ¸öÔªËØ£¬Çëhelp elementºË²éºóÔÙÊÔ£¡\n");
+        write("æ²’æœ‰é€™å€‹å…ƒç´ ï¼Œè«‹help elementæ ¸æŸ¥å¾Œå†è©¦ï¼\n");
         return;
 }  
         
-// ¹ºÂòÖ¸¶¨Í­ÈË
+// è³¼è²·æŒ‡å®šéŠ…äºº
 void get_tongren_id(string arg, object ob, int value, class goods item)
 {
         object obj;
@@ -278,7 +278,7 @@ void get_tongren_id(string arg, object ob, int value, class goods item)
 
         if( !arg )
         {
-                write(HIG "\nÇëÊäÈëÄãĞèÒª¹ºÂòµÄÍ­ÈË±àºÅ£¨Èçb4,m5£©»òÍË³ö(q)£¬Í­ÈË±àºÅÇëÍË³öºóÊ¹ÓÃÖ¸Áî jingmai bh ²éÑ¯ £º" NOR);
+                write(HIG "\nè«‹è¼¸å…¥ä½ éœ€è¦è³¼è²·çš„éŠ…äººç·¨è™Ÿï¼ˆå¦‚b4,m5ï¼‰æˆ–é€€å‡º(q)ï¼ŒéŠ…äººç·¨è™Ÿè«‹é€€å‡ºå¾Œä½¿ç”¨æŒ‡ä»¤ jingmai bh æŸ¥è©¢ ï¼š" NOR);
                 input_to("get_tongren_id", ob, value, item);
                 return;
         }
@@ -290,8 +290,8 @@ void get_tongren_id(string arg, object ob, int value, class goods item)
 
         if( file_size(file) < 0 )
         {
-                write(HIR "\nÄãÊäÈëµÄÍ­ÈË±àºÅÓĞÎó£¬ÇëÖØĞÂÊäÈë£¡\n" NOR);
-                write(HIG "\nÇëÊäÈëÄãĞèÒª¹ºÂòµÄÍ­ÈË±àºÅ£¨Èçb4,m5£©»òÍË³ö(q)£¬Í­ÈË±àºÅÇëÍË³öºóÊ¹ÓÃÖ¸Áî jingmai bh ²éÑ¯ £º" NOR);
+                write(HIR "\nä½ è¼¸å…¥çš„éŠ…äººç·¨è™Ÿæœ‰èª¤ï¼Œè«‹é‡æ–°è¼¸å…¥ï¼\n" NOR);
+                write(HIG "\nè«‹è¼¸å…¥ä½ éœ€è¦è³¼è²·çš„éŠ…äººç·¨è™Ÿï¼ˆå¦‚b4,m5ï¼‰æˆ–é€€å‡º(q)ï¼ŒéŠ…äººç·¨è™Ÿè«‹é€€å‡ºå¾Œä½¿ç”¨æŒ‡ä»¤ jingmai bh æŸ¥è©¢ ï¼š" NOR);
                 input_to("get_tongren_id", ob, value, item);
                 return;
         }
@@ -299,13 +299,13 @@ void get_tongren_id(string arg, object ob, int value, class goods item)
         obj = new(file);
         if( !objectp(obj) )
         {
-                write("\n¸´ÖÆÎïÆ·Ê§°Ü£¬ÇëÓë±¾Õ¾ADMINÁªÏµ£¡\n");
+                write("\nå¾©åˆ¶ç‰©å“å¤±æ•—ï¼Œè«‹èˆ‡æœ¬ç«™ADMINè¯ç³»ï¼\n");
                 return;
         }
 
         if( !MEMBER_D->player_pay(ob, value) )
         {
-                write("\n¹ºÂòÎïÆ·Ê§°Ü£¬ÇëÓë±¾Õ¾ADMINÁªÏµ£¡\n");
+                write("\nè³¼è²·ç‰©å“å¤±æ•—ï¼Œè«‹èˆ‡æœ¬ç«™ADMINè¯ç³»ï¼\n");
                 destruct(obj);
                 return;
         }
@@ -313,8 +313,8 @@ void get_tongren_id(string arg, object ob, int value, class goods item)
         obj->move(ob, 1);
 
         log_buyinfo(ob, item);
-        write(HIG "\n¹ºÂò³É¹¦£¬ ÄúµÄ¹ºÂò¼ÇÂ¼ÒÑĞ´ÈëÎÄ¼ş£¬ÇëÊ¹ÓÃ " HIR "member show buyinfo " HIG " ²éÑ¯£¡ \n" NOR);
-        write(HIC "Äú×Ü¹²»¨·ÑÁË " HIY + value + HIC + " $NT, ×£ÄúºÃÔË£¡\n" NOR);
+        write(HIG "\nè³¼è²·æˆåŠŸï¼Œ æ‚¨çš„è³¼è²·è¨˜éŒ„å·²å¯«å…¥æ–‡ä»¶ï¼Œè«‹ä½¿ç”¨ " HIR "member show buyinfo " HIG " æŸ¥è©¢ï¼ \n" NOR);
+        write(HIC "æ‚¨ç¸½å…±èŠ±è²»äº† " HIY + value + HIC + " $NT, ç¥æ‚¨å¥½é‹ï¼\n" NOR);
         return;
 }
 
@@ -328,12 +328,12 @@ public int buy_goods(object ob, string arg)
 
         n = sizeof(all_goods);
         if( !n ) {
-                write(sprintf("Ä¿Ç°%sÃ»ÓĞ¿ÉÒÔÂôµÄ¶«Î÷¡£\n", query("name")));
+                write(sprintf("ç›®å‰%sæ²’æœ‰å¯ä»¥è³£çš„æ±è¥¿ã€‚\n", query("name")));
                 return 1;
         }
 
         if( !MEMBER_D->is_member(ob) ) {
-                write("Äã»¹Ã»ÓĞ³åÖµ£¬ÓĞ¹Ø³åÖµ·½Ê½£¬ÇëÊäÈëÖ¸Áî help store ²é¿´¡£\n");
+                write("ä½ é‚„æ²’æœ‰æ²–å€¼ï¼Œæœ‰é—œæ²–å€¼æ–¹å¼ï¼Œè«‹è¼¸å…¥æŒ‡ä»¤ help store æŸ¥çœ‹ã€‚\n");
                 return 1;
         }
 
@@ -345,13 +345,13 @@ public int buy_goods(object ob, string arg)
         }
 
         if( i >= n ) {
-                write(HIR "ÄãÏëÂòÊ²Ã´£¿ ÇëÊ¹ÓÃ store show all ²éÑ¯¡£\n" NOR);
+                write(HIR "ä½ æƒ³è²·ä»€éº¼ï¼Ÿ è«‹ä½¿ç”¨ store show all æŸ¥è©¢ã€‚\n" NOR);
                 return 1;
 
         }
 
         if( all_goods[i]->type == "manual" ) {
-                write("¶Ô²»Æğ£¬¸Ã·şÎñ±ØĞëÓÉ admin ÊÖ¶¯ÊµÏÖ£¬Çë¼°Ê±Óë admin ÁªÏµ£¡\n");
+                write("å°ä¸èµ·ï¼Œè©²æœå‹™å¿…é ˆç”± admin æ‰‹å‹•å¯¦ç¾ï¼Œè«‹åŠæ™‚èˆ‡ admin è¯ç³»ï¼\n");
                 return 1;
         }
 
@@ -365,7 +365,7 @@ public int buy_goods(object ob, string arg)
 
         if( value < 1 ) value = 1;
         if( money < value) {
-                write("¶Ô²»Æğ£¬ÄúµÄÍõÕß±Ò($NT)ÊıÁ¿²»¹»£¡\n");
+                write("å°ä¸èµ·ï¼Œæ‚¨çš„ç‹è€…å¹£($NT)æ•¸é‡ä¸å¤ ï¼\n");
                 return 1;
         }
 
@@ -373,7 +373,7 @@ public int buy_goods(object ob, string arg)
         {
         case "package":
                 if( !MEMBER_D->player_pay(ob, value) ) {
-                        write("¹ºÂòÎïÆ·Ê§°Ü£¬ÇëÓë±¾Õ¾ADMINÁªÏµ£¡\n");
+                        write("è³¼è²·ç‰©å“å¤±æ•—ï¼Œè«‹èˆ‡æœ¬ç«™ADMINè¯ç³»ï¼\n");
                         return 1;
                 }
 
@@ -610,8 +610,8 @@ public int buy_goods(object ob, string arg)
 
                 //log_buyinfo(ob, items[0], value);
                 log_buyinfo(ob, all_goods[i]);
-                write(HIG "¹ºÂò³É¹¦£¬ ÄúµÄ¹ºÂò¼ÇÂ¼ÒÑĞ´ÈëÎÄ¼ş£¬ÇëÊ¹ÓÃ " HIR "member show buyinfo " HIG " ²éÑ¯£¡ \n" NOR);
-                write(HIC "Äú×Ü¹²»¨·ÑÁË " HIY + value + HIC + " $NT, ×£ÄúºÃÔË£¡\n" NOR);
+                write(HIG "è³¼è²·æˆåŠŸï¼Œ æ‚¨çš„è³¼è²·è¨˜éŒ„å·²å¯«å…¥æ–‡ä»¶ï¼Œè«‹ä½¿ç”¨ " HIR "member show buyinfo " HIG " æŸ¥è©¢ï¼ \n" NOR);
+                write(HIC "æ‚¨ç¸½å…±èŠ±è²»äº† " HIY + value + HIC + " $NT, ç¥æ‚¨å¥½é‹ï¼\n" NOR);
                 return 1;
 
         case "object":
@@ -621,12 +621,12 @@ public int buy_goods(object ob, string arg)
                 which = all_goods[i]->id;
                 item = new(all_goods[i]->file);
                 if( !objectp(item) ) {
-                        write("¸´ÖÆÎïÆ·Ê§°Ü£¬ÇëÓë±¾Õ¾ADMINÁªÏµ£¡\n");
+                        write("å¾©åˆ¶ç‰©å“å¤±æ•—ï¼Œè«‹èˆ‡æœ¬ç«™ADMINè¯ç³»ï¼\n");
                         return 1;
                 }
 
                 if( !MEMBER_D->player_pay(ob, value) ) {
-                        write("¹ºÂòÎïÆ·Ê§°Ü£¬ÇëÓë±¾Õ¾ADMINÁªÏµ£¡\n");
+                        write("è³¼è²·ç‰©å“å¤±æ•—ï¼Œè«‹èˆ‡æœ¬ç«™ADMINè¯ç³»ï¼\n");
                         destruct(item);
                         return 1;
                 }
@@ -651,12 +651,12 @@ public int buy_goods(object ob, string arg)
 
                 item->move(ob, 1);
                 log_buyinfo(ob, all_goods[i]);
-                write(HIG "¹ºÂò³É¹¦£¬ ÄúµÄ¹ºÂò¼ÇÂ¼ÒÑĞ´ÈëÎÄ¼ş£¬ÇëÊ¹ÓÃ " HIR "member show buyinfo " HIG " ²éÑ¯£¡ \n" NOR);
-                write(HIC "Äú×Ü¹²»¨·ÑÁË " HIY + value + HIC + " $NT, ×£ÄúºÃÔË£¡\n" NOR);
+                write(HIG "è³¼è²·æˆåŠŸï¼Œ æ‚¨çš„è³¼è²·è¨˜éŒ„å·²å¯«å…¥æ–‡ä»¶ï¼Œè«‹ä½¿ç”¨ " HIR "member show buyinfo " HIG " æŸ¥è©¢ï¼ \n" NOR);
+                write(HIC "æ‚¨ç¸½å…±èŠ±è²»äº† " HIY + value + HIC + " $NT, ç¥æ‚¨å¥½é‹ï¼\n" NOR);
                 return 1;
         case "srv":
                 if( !MEMBER_D->player_pay(ob, value) ) {
-                        write("¹ºÂòÎïÆ·Ê§°Ü£¬ÇëÓë±¾Õ¾ADMINÁªÏµ£¡\n");
+                        write("è³¼è²·ç‰©å“å¤±æ•—ï¼Œè«‹èˆ‡æœ¬ç«™ADMINè¯ç³»ï¼\n");
                         return 1;
                 }
 
@@ -695,30 +695,30 @@ public int buy_goods(object ob, string arg)
                 }
 
                 log_buyinfo(ob, all_goods[i]);
-                write(HIG "¹ºÂò³É¹¦£¬ ÄúµÄ¹ºÂò¼ÇÂ¼ÒÑĞ´ÈëÎÄ¼ş£¬ÇëÊ¹ÓÃ " HIR "member show buyinfo " HIG " ²éÑ¯£¡ \n" NOR);
-                write(HIC "Äú×Ü¹²»¨·ÑÁË " HIY + value + HIC + " $NT, ×£ÄúºÃÔË£¡\n" NOR);
+                write(HIG "è³¼è²·æˆåŠŸï¼Œ æ‚¨çš„è³¼è²·è¨˜éŒ„å·²å¯«å…¥æ–‡ä»¶ï¼Œè«‹ä½¿ç”¨ " HIR "member show buyinfo " HIG " æŸ¥è©¢ï¼ \n" NOR);
+                write(HIC "æ‚¨ç¸½å…±èŠ±è²»äº† " HIY + value + HIC + " $NT, ç¥æ‚¨å¥½é‹ï¼\n" NOR);
                 return 1;
                 
         case "element":
                 switch( all_goods[i]->id )
                 {
                 case "element2" :
-                        write(HIG "ÇëÊäÈëÄãĞèÒª¹ºÂòµÄÔªËØID»òÕßÃû×Ö£¨Èçadd_skill»òÌáÉı¼¼ÄÜ£©»òÍË³ö(q)£¬ÔªËØ±àºÅÇëÍË³öºóhelp element ²éÑ¯ £º" NOR);
+                        write(HIG "è«‹è¼¸å…¥ä½ éœ€è¦è³¼è²·çš„å…ƒç´ IDæˆ–è€…åå­—ï¼ˆå¦‚add_skillæˆ–æå‡æŠ€èƒ½ï¼‰æˆ–é€€å‡º(q)ï¼Œå…ƒç´ ç·¨è™Ÿè«‹é€€å‡ºå¾Œhelp element æŸ¥è©¢ ï¼š" NOR);
                                 input_to("get_element_id", ob, value, 2, all_goods[i]);
                         return 1;
                         break;
                 case "element3" :
-                        write(HIG "ÇëÊäÈëÄãĞèÒª¹ºÂòµÄÔªËØID»òÕßÃû×Ö£¨Èçadd_skill»òÌáÉı¼¼ÄÜ£©»òÍË³ö(q)£¬ÔªËØ±àºÅÇëÍË³öºóhelp element ²éÑ¯ £º" NOR);
+                        write(HIG "è«‹è¼¸å…¥ä½ éœ€è¦è³¼è²·çš„å…ƒç´ IDæˆ–è€…åå­—ï¼ˆå¦‚add_skillæˆ–æå‡æŠ€èƒ½ï¼‰æˆ–é€€å‡º(q)ï¼Œå…ƒç´ ç·¨è™Ÿè«‹é€€å‡ºå¾Œhelp element æŸ¥è©¢ ï¼š" NOR);
                                 input_to("get_element_id", ob, value, 3, all_goods[i]);
                         return 1;
                         break;
                 case "element5" :
-                        write(HIG "ÇëÊäÈëÄãĞèÒª¹ºÂòµÄÔªËØID»òÕßÃû×Ö£¨Èçadd_skill»òÌáÉı¼¼ÄÜ£©»òÍË³ö(q)£¬ÔªËØ±àºÅÇëÍË³öºóhelp element ²éÑ¯ £º" NOR);
+                        write(HIG "è«‹è¼¸å…¥ä½ éœ€è¦è³¼è²·çš„å…ƒç´ IDæˆ–è€…åå­—ï¼ˆå¦‚add_skillæˆ–æå‡æŠ€èƒ½ï¼‰æˆ–é€€å‡º(q)ï¼Œå…ƒç´ ç·¨è™Ÿè«‹é€€å‡ºå¾Œhelp element æŸ¥è©¢ ï¼š" NOR);
                                 input_to("get_element_id", ob, value, 5, all_goods[i]);
                         return 1;
                         break;
                 case "element10":
-                        write(HIG "ÇëÊäÈëÄãĞèÒª¹ºÂòµÄÔªËØID»òÕßÃû×Ö£¨Èçadd_skill»òÌáÉı¼¼ÄÜ£©»òÍË³ö(q)£¬ÔªËØ±àºÅÇëÍË³öºóhelp element ²éÑ¯ £º" NOR);
+                        write(HIG "è«‹è¼¸å…¥ä½ éœ€è¦è³¼è²·çš„å…ƒç´ IDæˆ–è€…åå­—ï¼ˆå¦‚add_skillæˆ–æå‡æŠ€èƒ½ï¼‰æˆ–é€€å‡º(q)ï¼Œå…ƒç´ ç·¨è™Ÿè«‹é€€å‡ºå¾Œhelp element æŸ¥è©¢ ï¼š" NOR);
                                 input_to("get_element_id", ob, value, 10, all_goods[i]);
                         return 1;
                         break;
@@ -731,20 +731,20 @@ public int buy_goods(object ob, string arg)
                 switch( all_goods[i]->id )
                 {
                 case "tongren" :
-                        write(HIG "ÇëÊäÈëÄãĞèÒª¹ºÂòµÄÍ­ÈË±àºÅ£¨Èçb4,m5£©»òÍË³ö(q)£¬Í­ÈË±àºÅÇëÍË³öºóÊ¹ÓÃÖ¸Áî jingmai bh ²éÑ¯ £º" NOR);
+                        write(HIG "è«‹è¼¸å…¥ä½ éœ€è¦è³¼è²·çš„éŠ…äººç·¨è™Ÿï¼ˆå¦‚b4,m5ï¼‰æˆ–é€€å‡º(q)ï¼ŒéŠ…äººç·¨è™Ÿè«‹é€€å‡ºå¾Œä½¿ç”¨æŒ‡ä»¤ jingmai bh æŸ¥è©¢ ï¼š" NOR);
                                 input_to("get_tongren_id", ob, value, all_goods[i]);
                         return 1;
                         break;
                 case "cleardie" :
                         if( !MEMBER_D->player_pay(ob, value) ) {
-                                write("¹ºÂòÎïÆ·Ê§°Ü£¬ÇëÓë±¾Õ¾ADMINÁªÏµ£¡\n");
+                                write("è³¼è²·ç‰©å“å¤±æ•—ï¼Œè«‹èˆ‡æœ¬ç«™ADMINè¯ç³»ï¼\n");
                                 return 1;
                         }
                         delete("combat/last_die", ob);
                         delete("combat/dietimes", ob);
                         log_buyinfo(ob, all_goods[i]);
-                        write(HIG "¹ºÂò³É¹¦£¬ ÄúµÄ¹ºÂò¼ÇÂ¼ÒÑĞ´ÈëÎÄ¼ş£¬ÇëÊ¹ÓÃ " HIR "member show buyinfo " HIG " ²éÑ¯£¡ \n" NOR);
-                        write(HIC "Äú×Ü¹²»¨·ÑÁË " HIY + value + HIC + " $NT, ×£ÄúºÃÔË£¡\n" NOR);
+                        write(HIG "è³¼è²·æˆåŠŸï¼Œ æ‚¨çš„è³¼è²·è¨˜éŒ„å·²å¯«å…¥æ–‡ä»¶ï¼Œè«‹ä½¿ç”¨ " HIR "member show buyinfo " HIG " æŸ¥è©¢ï¼ \n" NOR);
+                        write(HIC "æ‚¨ç¸½å…±èŠ±è²»äº† " HIY + value + HIC + " $NT, ç¥æ‚¨å¥½é‹ï¼\n" NOR);
                         return 1;
                 default :
                         break;
@@ -757,12 +757,12 @@ public int buy_goods(object ob, string arg)
                 &&  arg  != "seasoncard"
                 &&  arg != "yearcard"
                 &&  arg != "forevercard" ) {
-                        write("Ã»ÓĞÕâÖÖÀàĞÍµÄ»áÔ±¿¨£¡\n");
+                        write("æ²’æœ‰é€™ç¨®é¡å‹çš„æœƒå“¡å¡ï¼\n");
                         return 0;
                 }
 
                 if( !MEMBER_D->player_pay(ob, value) ) {
-                        write("¹ºÂòÄ§¿¨Ê§°Ü£¬ÇëÓë±¾Õ¾ADMINÁªÏµ£¡\n");
+                        write("è³¼è²·é­”å¡å¤±æ•—ï¼Œè«‹èˆ‡æœ¬ç«™ADMINè¯ç³»ï¼\n");
                         return 1;
                 }
 
@@ -779,61 +779,61 @@ public int buy_goods(object ob, string arg)
                         MEMBER_D->db_fee_member(ob, 365, 1);
 
                 log_buyinfo(ob, all_goods[i]);
-                write(HIG "¹ºÂò³É¹¦ £¬ ÄúµÄ¹ºÂò¼ÇÂ¼ÒÑĞ´ÈëÎÄ¼ş£¬ÇëÊ¹ÓÃ " HIR "member show buyinfo " HIG " ²éÑ¯£¡ \n" NOR);
-                write(HIC "Äú×Ü¹²»¨·ÑÁË " HIY + value + HIC + " $NT, ×£ÄúºÃÔË£¡\n" NOR);
+                write(HIG "è³¼è²·æˆåŠŸ ï¼Œ æ‚¨çš„è³¼è²·è¨˜éŒ„å·²å¯«å…¥æ–‡ä»¶ï¼Œè«‹ä½¿ç”¨ " HIR "member show buyinfo " HIG " æŸ¥è©¢ï¼ \n" NOR);
+                write(HIC "æ‚¨ç¸½å…±èŠ±è²»äº† " HIY + value + HIC + " $NT, ç¥æ‚¨å¥½é‹ï¼\n" NOR);
                 return 1;
 
         case "story":
                 if( query("gift/"+all_goods[i]->id, ob)){
-                        write("ÄúÒÑ¾­ÖĞ¹ı»ò¹ºÂò¹ı¸Ã¹ÊÊÂÁË£¡\n");
+                        write("æ‚¨å·²ç¶“ä¸­éæˆ–è³¼è²·éè©²æ•…äº‹äº†ï¼\n");
                         return 0;
                 }
                 if( !MEMBER_D->player_pay(ob, value) ) {
-                        write("¹ºÂò¹ÊÊÂÊ§°Ü£¬ÇëÓë±¾Õ¾ADMINÁªÏµ£¡\n");
+                        write("è³¼è²·æ•…äº‹å¤±æ•—ï¼Œè«‹èˆ‡æœ¬ç«™ADMINè¯ç³»ï¼\n");
                         return 0;
                 }
                 addn("gift/"+all_goods[i]->id, 1, ob);
                 addn(all_goods[i]->file, 1, ob);
                 log_buyinfo(ob, all_goods[i]);
 
-                write(HIG "¹ºÂò³É¹¦ £¬ ÄúµÄ¹ºÂò¼ÇÂ¼ÒÑĞ´ÈëÎÄ¼ş£¬ÇëÊ¹ÓÃ " HIR "member show buyinfo " HIG " ²éÑ¯£¡ \n" NOR);
-                write(HIC "Äú×Ü¹²»¨·ÑÁË " HIY + value + HIC + " $NT, ×£ÄúºÃÔË£¡\n" NOR);
+                write(HIG "è³¼è²·æˆåŠŸ ï¼Œ æ‚¨çš„è³¼è²·è¨˜éŒ„å·²å¯«å…¥æ–‡ä»¶ï¼Œè«‹ä½¿ç”¨ " HIR "member show buyinfo " HIG " æŸ¥è©¢ï¼ \n" NOR);
+                write(HIC "æ‚¨ç¸½å…±èŠ±è²»äº† " HIY + value + HIC + " $NT, ç¥æ‚¨å¥½é‹ï¼\n" NOR);
                 return 1;
 
         case "gold" :
                 if( !MEMBER_D->player_pay(ob, value) ) {
-                        write("¹ºÂò»Æ½ğÊ§°Ü£¬ÇëÓë±¾Õ¾ADMINÁªÏµ£¡\n");
+                        write("è³¼è²·é»ƒé‡‘å¤±æ•—ï¼Œè«‹èˆ‡æœ¬ç«™ADMINè¯ç³»ï¼\n");
                         return 1;
                 }
 
                 addn("balance", 100000000, ob);
                 log_buyinfo(ob, all_goods[i]);
-                write(HIG "¹ºÂò³É¹¦ £¬ ÄúµÄ¹ºÂò¼ÇÂ¼ÒÑĞ´ÈëÎÄ¼ş£¬ÇëÊ¹ÓÃ " HIR "member show buyinfo " HIG " ²éÑ¯£¡ \n" NOR);
-                write(HIC "Äú×Ü¹²»¨·ÑÁË " HIY + value + HIC + " $NT, ×£ÄúºÃÔË£¡\n" NOR);
+                write(HIG "è³¼è²·æˆåŠŸ ï¼Œ æ‚¨çš„è³¼è²·è¨˜éŒ„å·²å¯«å…¥æ–‡ä»¶ï¼Œè«‹ä½¿ç”¨ " HIR "member show buyinfo " HIG " æŸ¥è©¢ï¼ \n" NOR);
+                write(HIC "æ‚¨ç¸½å…±èŠ±è²»äº† " HIY + value + HIC + " $NT, ç¥æ‚¨å¥½é‹ï¼\n" NOR);
                 return 1;
 
         case "special":
                 specials=keys(query("special_skill", ob));
 
                 if( member_array(all_goods[i]->id, specials) != -1 ) {
-                        write("¶Ô²»Æğ£¬ÄúÒÑ¾­ÓĞÕâ¸öÌØÊâ¼¼ÄÜÁË£¡\n");
+                        write("å°ä¸èµ·ï¼Œæ‚¨å·²ç¶“æœ‰é€™å€‹ç‰¹æ®ŠæŠ€èƒ½äº†ï¼\n");
                         return 0;
                 }
 
                 if( sizeof(specials) >= 10 ) {
-                        write("¶Ô²»Æğ£¬Ò»¸öÕÊºÅ×î¶àÖ»ÄÜÓµÓĞÊ®¸öÌØÊâ¼¼ÄÜ£¡\n");
+                        write("å°ä¸èµ·ï¼Œä¸€å€‹å¸³è™Ÿæœ€å¤šåªèƒ½æ“æœ‰åå€‹ç‰¹æ®ŠæŠ€èƒ½ï¼\n");
                         return 0;
                 }
 
                 if( !MEMBER_D->player_pay(ob, value) ) {
-                        write("¹ºÂòÏÈÌì¼¼ÄÜÊ§°Ü£¬ÇëÓë±¾Õ¾ADMINÁªÏµ£¡\n");
+                        write("è³¼è²·å…ˆå¤©æŠ€èƒ½å¤±æ•—ï¼Œè«‹èˆ‡æœ¬ç«™ADMINè¯ç³»ï¼\n");
                         return 0;
                 }
 
                 set("special_skill/"+all_goods[i]->id, 1, ob);
                 log_buyinfo(ob, all_goods[i]);
-                write(HIG "¹ºÂò³É¹¦£¬ ÄúµÄ¹ºÂò¼ÇÂ¼ÒÑĞ´ÈëÎÄ¼ş£¬ÇëÊ¹ÓÃ " HIR "member show buyinfo " HIG " ²éÑ¯£¡ \n" NOR);
-                write(HIC "Äú×Ü¹²»¨·ÑÁË " HIY + value + HIC + " $NT, ×£ÄúºÃÔË£¡\n" NOR);
+                write(HIG "è³¼è²·æˆåŠŸï¼Œ æ‚¨çš„è³¼è²·è¨˜éŒ„å·²å¯«å…¥æ–‡ä»¶ï¼Œè«‹ä½¿ç”¨ " HIR "member show buyinfo " HIG " æŸ¥è©¢ï¼ \n" NOR);
+                write(HIC "æ‚¨ç¸½å…±èŠ±è²»äº† " HIY + value + HIC + " $NT, ç¥æ‚¨å¥½é‹ï¼\n" NOR);
                 return 1;
 
         case "special2":
@@ -845,23 +845,23 @@ public int buy_goods(object ob, string arg)
                 if( query("reborn/times", ob)){
                         if( sizeof(specials) > 0 ) {
                                 if( member_array(all_goods[i]->id, specials) != -1 ) {
-                                        write("¶Ô²»Æğ£¬ÄúÒÑ¾­ÓĞÕâ¸öÆæÓö¼¼ÄÜÁË£¡\n");
+                                        write("å°ä¸èµ·ï¼Œæ‚¨å·²ç¶“æœ‰é€™å€‹å¥‡é‡æŠ€èƒ½äº†ï¼\n");
                                         return 1;
                                 }
                         }
 
                         if( !MEMBER_D->player_pay(ob, value) ) {
-                                write("¹ºÂòÆæÓö¼¼ÄÜÊ§°Ü£¬ÇëÓë±¾Õ¾ADMINÁªÏµ£¡\n");
+                                write("è³¼è²·å¥‡é‡æŠ€èƒ½å¤±æ•—ï¼Œè«‹èˆ‡æœ¬ç«™ADMINè¯ç³»ï¼\n");
                                 return 0;
                         }
 
                         set("special_skill/"+all_goods[i]->id, 1, ob);
                         log_buyinfo(ob, all_goods[i]);
-                        write(HIG "¹ºÂò³É¹¦£¬ ÄúµÄ¹ºÂò¼ÇÂ¼ÒÑĞ´ÈëÎÄ¼ş£¬ÇëÊ¹ÓÃ " HIR "member show buyinfo " HIG " ²éÑ¯£¡ \n" NOR);
-                        write(HIC "Äú×Ü¹²»¨·ÑÁË " HIY + value + HIC + " $NT, ×£ÄúºÃÔË£¡\n" NOR);
+                        write(HIG "è³¼è²·æˆåŠŸï¼Œ æ‚¨çš„è³¼è²·è¨˜éŒ„å·²å¯«å…¥æ–‡ä»¶ï¼Œè«‹ä½¿ç”¨ " HIR "member show buyinfo " HIG " æŸ¥è©¢ï¼ \n" NOR);
+                        write(HIC "æ‚¨ç¸½å…±èŠ±è²»äº† " HIY + value + HIC + " $NT, ç¥æ‚¨å¥½é‹ï¼\n" NOR);
                         return 1;
                 } else {
-                        write("ÄãÄ¿Ç°Ìõ¼ş»¹ÎŞ·¨¹ºÂòÆæÓö¼¼ÄÜ£¡ÇëÁÂ½â£¡\n");
+                        write("ä½ ç›®å‰æ¢ä»¶é‚„ç„¡æ³•è³¼è²·å¥‡é‡æŠ€èƒ½ï¼è«‹è«’è§£ï¼\n");
                         return 0;
                 }
 
@@ -874,17 +874,17 @@ public int buy_goods(object ob, string arg)
                 if( !query("quest_tuteng/end2", ob)){
                         if( sizeof(specials) > 0 ) {
                                 if( member_array(all_goods[i]->id, specials) != -1 ) {
-                                        write("¶Ô²»Æğ£¬ÄúÒÑ¾­ÓĞÕâ¸öÍ¼ÌÚÌØ¼¼ÁË£¡\n");
+                                        write("å°ä¸èµ·ï¼Œæ‚¨å·²ç¶“æœ‰é€™å€‹åœ–é¨°ç‰¹æŠ€äº†ï¼\n");
                                         return 1;
                                 }
                         }
 
                         if( !MEMBER_D->player_pay(ob, value) ) {
-                                write("¹ºÂòÍ¼ÌÚÌØ¼¼Ê§°Ü£¬ÇëÓë±¾Õ¾ADMINÁªÏµ£¡\n");
+                                write("è³¼è²·åœ–é¨°ç‰¹æŠ€å¤±æ•—ï¼Œè«‹èˆ‡æœ¬ç«™ADMINè¯ç³»ï¼\n");
                                 return 0;
                         }
                         
-                        // µÛÍõÖ®ĞÇ
+                        // å¸ç‹ä¹‹æ˜Ÿ
 		        if( all_goods[i]->id == "diwang" )
 		        {
 				addn("int", 2, ob);
@@ -896,15 +896,15 @@ public int buy_goods(object ob, string arg)
                         set("special_skill/"+all_goods[i]->id, 1, ob);
                         set("quest_tuteng/end2", 1, ob);
                         log_buyinfo(ob, all_goods[i]);
-                        write(HIG "¹ºÂò³É¹¦£¬ ÄúµÄ¹ºÂò¼ÇÂ¼ÒÑĞ´ÈëÎÄ¼ş£¬ÇëÊ¹ÓÃ " HIR "member show buyinfo " HIG " ²éÑ¯£¡ \n" NOR);
-                        write(HIC "Äú×Ü¹²»¨·ÑÁË " HIY + value + HIC + " $NT, ×£ÄúºÃÔË£¡\n" NOR);
+                        write(HIG "è³¼è²·æˆåŠŸï¼Œ æ‚¨çš„è³¼è²·è¨˜éŒ„å·²å¯«å…¥æ–‡ä»¶ï¼Œè«‹ä½¿ç”¨ " HIR "member show buyinfo " HIG " æŸ¥è©¢ï¼ \n" NOR);
+                        write(HIC "æ‚¨ç¸½å…±èŠ±è²»äº† " HIY + value + HIC + " $NT, ç¥æ‚¨å¥½é‹ï¼\n" NOR);
                         return 1;
                 } else {
-                        write("¶Ô²»Æğ£¬Äã²»ÄÜÔÙ¹ºÂò´ËÀà¼¼ÄÜ£¨Í¼ÌÚÌØ¼¼£©ÁË£¨×î¶à¿É¹ºÂò1¸ö£©£¡\n");
+                        write("å°ä¸èµ·ï¼Œä½ ä¸èƒ½å†è³¼è²·æ­¤é¡æŠ€èƒ½ï¼ˆåœ–é¨°ç‰¹æŠ€ï¼‰äº†ï¼ˆæœ€å¤šå¯è³¼è²·1å€‹ï¼‰ï¼\n");
                         return 0;
                 }
         default:
-                write("ÎŞĞ§ÎïÆ·ÖÖÀà£¡\n");
+                write("ç„¡æ•ˆç‰©å“ç¨®é¡ï¼\n");
                 return 0;
         }
 }
@@ -915,13 +915,13 @@ public int do_look(object me, string arg)
         object item;
 
         if( me->is_busy() ) {
-                write("ÄãÕıÔÚÃ¦×ÅÄØ£¡\n");
+                write("ä½ æ­£åœ¨å¿™è‘—å‘¢ï¼\n");
                 return 1;
         }
 
         n = sizeof(all_goods);
         if( !n ) {
-                write(sprintf("Ä¿Ç°%sÃ»ÓĞ¿ÉÒÔÂôµÄ¶«Î÷¡£\n", query("name")));
+                write(sprintf("ç›®å‰%sæ²’æœ‰å¯ä»¥è³£çš„æ±è¥¿ã€‚\n", query("name")));
                 return 1;
         }
 
@@ -934,28 +934,28 @@ public int do_look(object me, string arg)
         }
 
         if( i >= n ) {
-                write("ÄãÏë¿´Ê²Ã´£¿\n");
+                write("ä½ æƒ³çœ‹ä»€éº¼ï¼Ÿ\n");
                 return 1;
         }
 
         if( all_goods[i]->type != "object" &&
             all_goods[i]->type != "pill" ) {
                 write(HIM + all_goods[i]->name+"("+all_goods[i]->id +")\n" NOR);
-                write(HIC "¹¦ÄÜ¼òÒª£º" + all_goods[i]->desc + "\n" NOR);
-                write(HIY "¼Û¸ñ£º" + all_goods[i]->value + " $NT\n\n" NOR);
+                write(HIC "åŠŸèƒ½ç°¡è¦ï¼š" + all_goods[i]->desc + "\n" NOR);
+                write(HIY "åƒ¹æ ¼ï¼š" + all_goods[i]->value + " $NT\n\n" NOR);
                 return 1;
         }
 
         catch(call_other(all_goods[i]->file, "???"));
         item = find_object(all_goods[i]->file);
         if( !objectp(item) ) {
-                write("³öÊÛµÄÎïÆ·ÊôĞÔ²é¿´³ö´í£¬ÇëÓëADMINÁªÏµ£¡\n");
+                write("å‡ºå”®çš„ç‰©å“å±¬æ€§æŸ¥çœ‹å‡ºéŒ¯ï¼Œè«‹èˆ‡ADMINè¯ç³»ï¼\n");
                 return 1;
         }
 
         LOOK_CMD->look_item(me, item);
-        write(HIC "¹¦ÄÜ¼òÒª£º" + all_goods[i]->desc + "\n" NOR);
-        write(HIY "¼Û¸ñ£º" + all_goods[i]->value + " $NT\n\n" NOR);
+        write(HIC "åŠŸèƒ½ç°¡è¦ï¼š" + all_goods[i]->desc + "\n" NOR);
+        write(HIY "åƒ¹æ ¼ï¼š" + all_goods[i]->value + " $NT\n\n" NOR);
 
         return 1;
 }

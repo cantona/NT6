@@ -9,13 +9,13 @@ int do_answer(string);
 
 void create()
 {
-        set_name("çø¹Ã", ({ "ying gu", "ying", "gu" }) );
-        set("gender", "Å®ÐÔ" );
-        set("nickname", CYN "ÉñËã×Ó" NOR ) ;
+        set_name("ç‘›å§‘", ({ "ying gu", "ying", "gu" }) );
+        set("gender", "å¥³æ€§" );
+        set("nickname", CYN "ç¥žç®—å­" NOR ) ;
         set("age", 48);
         set("long",
-                "ËýÍ··¢»¨°×£¬ÉíÅúÂéÉÀ£¬ÄýÊÓ×ÅµØÉÏÎÞÊýµÄÒ»¸ù¸ùÖñÆ¬£¬"
-                "ÏÔÈ»ÕýÔÚÇ±ÐÄË¼Ë÷£¬ËäÈ»ÌýµÃÓÐÈË½øÀ´£¬È´²»Ì§Í·¡£\n");
+                "å¥¹é ­ç™¼èŠ±ç™½ï¼Œèº«æ‰¹éº»è¡«ï¼Œå‡è¦–è‘—åœ°ä¸Šç„¡æ•¸çš„ä¸€æ ¹æ ¹ç«¹ç‰‡ï¼Œ"
+                "é¡¯ç„¶æ­£åœ¨æ½›å¿ƒæ€ç´¢ï¼Œé›–ç„¶è½å¾—æœ‰äººé€²ä¾†ï¼Œå»ä¸æŠ¬é ­ã€‚\n");
 
         set("str", 25);
         set("dex", 35);
@@ -34,10 +34,10 @@ void create()
 
         set("attitude", "peaceful");
         set("inquiry", ([
-                "¶Î»ÊÒ¯"  : "ÄãÌáËû×÷Ê²Ã´£¬ºß£¬ÇóËûÒ½ÉË÷á£¬ËÀÁËÕâÌõÐÄ°É¡£",
-                "ÖÜ²®Í¨"  : "Ëû¡¢Ëû¡¢¡¢ËûÔÚÄÄÀï£¡",
-                "¶ÎÖÇÐË"  : "Õâ¸öÀÏºÍÉÐ£¬Í÷³Æ´È±¯£¡\n",
-                "ËãÊõ"    :  (: ask_me :),
+                "æ®µçš‡çˆº"  : "ä½ æä»–ä½œä»€éº¼ï¼Œå“¼ï¼Œæ±‚ä»–é†«å‚·éº¼ï¼Œæ­»äº†é€™æ¢å¿ƒå§ã€‚",
+                "å‘¨ä¼¯é€š"  : "ä»–ã€ä»–ã€ã€ä»–åœ¨å“ªè£¡ï¼",
+                "æ®µæ™ºèˆˆ"  : "é€™å€‹è€å’Œå°šï¼Œæž‰ç¨±æ…ˆæ‚²ï¼\n",
+                "ç®—è¡“"    :  (: ask_me :),
         ]) );
 
         set("book_count", 1);
@@ -58,30 +58,30 @@ void init()
 string ask_me()
 {
         object who=this_player();
-        if( query_temp("marks/çø", who)){
-                        write("çø¹ÃÀäÀäµÄËµ£ºÉÏÒ»µÀÄã»¹Ã»´ð³öÀ´ÄØ£¬¼±Ê²Ã´£¿\n");
-                        return "Ò»µÀÒ»µÀµÄÀ´¡£\n";
+        if( query_temp("marks/ç‘›", who)){
+                        write("ç‘›å§‘å†·å†·çš„èªªï¼šä¸Šä¸€é“ä½ é‚„æ²’ç­”å‡ºä¾†å‘¢ï¼Œæ€¥ä»€éº¼ï¼Ÿ\n");
+                        return "ä¸€é“ä¸€é“çš„ä¾†ã€‚\n";
         }
         else {
-                write("çø¹ÃÌ§Í·¿´ÁËÄãÒ»ÑÛ£ºÕâÎ»"+RANK_D->query_respect(who)+"¶®ËãÊõÂð£¿\n");
+                write("ç‘›å§‘æŠ¬é ­çœ‹äº†ä½ ä¸€çœ¼ï¼šé€™ä½"+RANK_D->query_respect(who)+"æ‡‚ç®—è¡“å—Žï¼Ÿ\n");
                 switch(random(2))
                 {
                 case 0:
-                        write("ÎåÍòÎåÇ§¶þ°Ù¶þÊ®ÎåµÄÆ½·½¸ùÎªÆäºÎ\n");
-                        set_temp("marks/çø", 1, who);
+                        write("äº”è¬äº”åƒäºŒç™¾äºŒåäº”çš„å¹³æ–¹æ ¹ç‚ºå…¶ä½•\n");
+                        set_temp("marks/ç‘›", 1, who);
                         break;
                 case 1:
-                        write("°ÙÊý·½Õó£¬×ÝºáÐ±Õý¸÷Îå°ÙÁãÎåÊý£¬\n");
-                        write("ËÄ¶þ£¬ËÄÒ»£¬ÆßÁù¸÷¾ÝÒ»½Ç£¬Óà½ÇºÎÊý? \n");
-                        set_temp("marks/çø", 2, who);
+                        write("ç™¾æ•¸æ–¹é™£ï¼Œç¸±æ©«æ–œæ­£å„äº”ç™¾é›¶äº”æ•¸ï¼Œ\n");
+                        write("å››äºŒï¼Œå››ä¸€ï¼Œä¸ƒå…­å„æ“šä¸€è§’ï¼Œä½™è§’ä½•æ•¸? \n");
+                        set_temp("marks/ç‘›", 2, who);
                         break;
                 case 2:
-                        write("ÕÉÐí³¤¸Ë£¬ÈÕÈ¡Æä°ë£¬¼¸ÈÕ¿ÉÖÕ? \n");
-                        set_temp("marks/çø", 3, who);
+                        write("ä¸ˆè¨±é•·æ¡¿ï¼Œæ—¥å–å…¶åŠï¼Œå¹¾æ—¥å¯çµ‚? \n");
+                        set_temp("marks/ç‘›", 3, who);
                         break;
                 }
-                message_vision("çø¹ÃÀäÀäµØ¶Ô$NËµ£º½â·ñ? \n", who);
-                return "Äã½â³öÀ´¾Í»Ø´ð(answer)ÎÒ¡£\n";
+                message_vision("ç‘›å§‘å†·å†·åœ°å°$Nèªªï¼šè§£å¦? \n", who);
+                return "ä½ è§£å‡ºä¾†å°±å›žç­”(answer)æˆ‘ã€‚\n";
         }
 }
 
@@ -90,46 +90,46 @@ int do_answer(string arg)
         int soln,riddle;
         object ob;
         object me = this_player();
-        riddle=query_temp("marks/çø", this_player());
+        riddle=query_temp("marks/ç‘›", this_player());
 
         if (!riddle) {
-                write("ÎÒÓÖ²»ÊÇÄãÊ¦¸µ£¬ÄãÓÃ²»×Å»Ø´ðÎÒ¡£\n");
+                write("æˆ‘åˆä¸æ˜¯ä½ å¸«å‚…ï¼Œä½ ç”¨ä¸è‘—å›žç­”æˆ‘ã€‚\n");
                 return 1;
         }
 
         if( !arg || arg=="" ) {
-                write("ÏëºÃÃÕµ×ÔÙ»Ø´ð¡£\n");
+                write("æƒ³å¥½è¬Žåº•å†å›žç­”ã€‚\n");
                 return 1;
         }
-        message("vision", me->name() + "ÀÊÉù»Ø´ð¡£\n", environment(me), ({me}));
+        message("vision", me->name() + "æœ—è²å›žç­”ã€‚\n", environment(me), ({me}));
 
         switch (arg)
         {
-        case "¶þ°ÙÈýÊ®Îå": soln=1; break;
-        case "ÁùÊ®" : soln=2; break;
-        case "ÍòÔØ²»ÖÕ" : soln=3; break;
+        case "äºŒç™¾ä¸‰åäº”": soln=1; break;
+        case "å…­å" : soln=2; break;
+        case "è¬è¼‰ä¸çµ‚" : soln=3; break;
         default :
-                say("çø¹ÃÀäÐ¦µÀ£º¡°°àÃÅÅª¸«¡£¡±È»ºó¾Í°Ñ"+ me->name() +"¸ÏÁË³öÈ¥¡£\n");
+                say("ç‘›å§‘å†·ç¬‘é“ï¼šâ€œç­é–€å¼„æ–§ã€‚â€ç„¶å¾Œå°±æŠŠ"+ me->name() +"è¶•äº†å‡ºåŽ»ã€‚\n");
                 me->move("/d/heizhao/maze1");
         return 1;
         }
 
         if (riddle==soln) {
-                say ("çø¹ÃÌ§Í·ÀäÀäµÄÆ³ÁË"+me->name()+"Ò»ÑÛ£¬¶ÎÖÇÐËÔÚ¶«±±·½ÏòµÄÌÒÔ´¡£\n");
-                set_temp("marks/çø", 0, this_player());
+                say ("ç‘›å§‘æŠ¬é ­å†·å†·çš„çž¥äº†"+me->name()+"ä¸€çœ¼ï¼Œæ®µæ™ºèˆˆåœ¨æ±åŒ—æ–¹å‘çš„æ¡ƒæºã€‚\n");
+                set_temp("marks/ç‘›", 0, this_player());
                 ob = new("/d/heizhao/npc/obj/whiteobj");
                 ob->move(me);
                 ob = new("/d/heizhao/npc/obj/yellowobj");
                 ob->move(me);
                 ob = new("/d/heizhao/npc/obj/redobj");
                 ob->move(me);
-                say ("ÄãÏë¼ûËû£¿ºÃ°É£¬ÕâÈý¸öÄÒ¶ù¸øÄã£¬ÓÐÔµÄã¾ÍÈ¥ÕÒËû°É¡£\n");
-                say ("çø¹ÃµÍÍ·¿ªÊ¼ÑÐ¾¿ËãÊõ²»ÔÙÀí"+me->name()+"¡£\n");
+                say ("ä½ æƒ³è¦‹ä»–ï¼Ÿå¥½å§ï¼Œé€™ä¸‰å€‹å›Šå…’çµ¦ä½ ï¼Œæœ‰ç·£ä½ å°±åŽ»æ‰¾ä»–å§ã€‚\n");
+                say ("ç‘›å§‘ä½Žé ­é–‹å§‹ç ”ç©¶ç®—è¡“ä¸å†ç†"+me->name()+"ã€‚\n");
                 return 1;
         }
         else {
                 command("slapsb "+getuid(me));
-                say("çø¹ÃÅ­µÀ£º¡°Äãµ½µ×¶®²»¶®ËãÊõ£¿£¡¡±°Ñ"+ me->name() +"¸ÏÁË³öÈ¥¡£\n");
+                say("ç‘›å§‘æ€’é“ï¼šâ€œä½ åˆ°åº•æ‡‚ä¸æ‡‚ç®—è¡“ï¼Ÿï¼â€æŠŠ"+ me->name() +"è¶•äº†å‡ºåŽ»ã€‚\n");
                 me->move("/d/heizhao/maze1");
         return 1;
         }

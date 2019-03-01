@@ -5,9 +5,9 @@ inherit "/inherit/char/punisher";
 
 void create()
 {
-        set_name("ÌúÕÆÉ½ÒşÊ¿", ({ "yin shi", "yin", "shi" }));
-        set("long",  "Ëû¾ÍÊÇÌúÕÆÅÉµÄ¸ßÊÖ£¬¾İËµ³¤ÄêÒş²ØÓÚÉ½ÖĞ¡£\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("éµæŒå±±éš±å£«", ({ "yin shi", "yin", "shi" }));
+        set("long",  "ä»–å°±æ˜¯éµæŒæ´¾çš„é«˜æ‰‹ï¼Œæ“šèªªé•·å¹´éš±è—äºå±±ä¸­ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 55);
         set("attitude", "peaceful");
           set("shen_type", -1);
@@ -55,7 +55,7 @@ void create()
         map_skill("dodge", "dengping-dushui");
         map_skill("staff", "feilong-zhang");
         prepare_skill("strike", "tie-zhang");
-        create_family("ÌúÕÆ°ï", 0, "ÒşÊ¿");
+        create_family("éµæŒå¹«", 0, "éš±å£«");
         set("chat_chance_combat", 120);
         set("chat_msg_combat", ({
                 (: perform_action, "strike.juesha" :),

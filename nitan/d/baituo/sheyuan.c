@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��԰");
+        set("short", "蛇園");
         set("long", @LONG
-�����ǰ���ɽׯ����԰������ɽ�Զ��������£�����Ҫ�Ķ��ʾ�
-���Զ��ߡ����������ߣ�ǽ��Ҳ�����ߣ�������Ҳ���´����ߣ���
-֦��Ҳ�������ߣ������㲻�ľ���
+這裡是白駝山莊的蛇園。白駝山以毒名揚天下，最重要的毒質就
+來自毒蛇。這裡遍地是蛇，牆上也巴著蛇，屋檐上也向下垂著蛇，樹
+枝上也盤繞著蛇，不由你不心驚。
 LONG );
         set("exits",([
                 "north"      : __DIR__"road1",

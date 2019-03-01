@@ -20,70 +20,70 @@ int main(object me, string arg)
                 if (arg == "cancel")
                 {
                         if( !stringp(master=query("quest/master_id", me)) )
-                                return notify_fail("ÓĞÈËÏòÄãÏÂÈÎÎñÁËÂğ£¿\n");
+                                return notify_fail("æœ‰äººå‘ä½ ä¸‹ä»»å‹™äº†å—ï¼Ÿ\n");
 
                         if (! objectp(ob = present(master, environment(me))))
-                                return notify_fail("¸øÄãÏÂÈÎÎñµÄÄÇ¸öÈËÏÖÔÚ²»ÔÚÕâÀï°É£¿\n");
+                                return notify_fail("çµ¦ä½ ä¸‹ä»»å‹™çš„é‚£å€‹äººç¾åœ¨ä¸åœ¨é€™è£¡å§ï¼Ÿ\n");
                 } else
                 if (! objectp(ob = present(arg, environment(me))))
-                        return notify_fail("ÕâÀïÃ»ÓĞÕâ¸öÈË£¬ÄãÔõÃ´ÁìÈÎÎñ£¿\n");
+                        return notify_fail("é€™è£¡æ²’æœ‰é€™å€‹äººï¼Œä½ æ€éº¼é ˜ä»»å‹™ï¼Ÿ\n");
 
                 if (! living(ob))
-                        return notify_fail("Äã»¹ÊÇµÈ" + ob->name() +
-                                           "ĞÑÁËÔÙËµ°É£¡\n");
+                        return notify_fail("ä½ é‚„æ˜¯ç­‰" + ob->name() +
+                                           "é†’äº†å†èªªå§ï¼\n");
 
                 if (me->is_fighting())
-                        return notify_fail("×¨ĞÄ´òÄãµÄ¼Ü£¡\n");
+                        return notify_fail("å°ˆå¿ƒæ‰“ä½ çš„æ¶ï¼\n");
 
                 if (me->is_busy())
-                        return notify_fail("Äã»¹ÊÇÓĞ¿ÕÁËÔÙºÍ" + ob->name() +
-                                           "Ì¸ÕâĞ©ÎÊÌâ°É£¡\n");
+                        return notify_fail("ä½ é‚„æ˜¯æœ‰ç©ºäº†å†å’Œ" + ob->name() +
+                                           "è«‡é€™äº›å•é¡Œå§ï¼\n");
 
                 if (ob->is_fighting())
-                        return notify_fail("Äã»¹ÊÇµÈ" + ob->name() +
-                                           "´òÍê¼ÜÔÙËµ°É£¡\n");
+                        return notify_fail("ä½ é‚„æ˜¯ç­‰" + ob->name() +
+                                           "æ‰“å®Œæ¶å†èªªå§ï¼\n");
 
                 if (ob->is_busy())
                         return notify_fail(ob->name() +
-                                           "ÕıÃ¦×ÅÄØ£¬Ã»¹¦·òÀíÄã¡£\n");
+                                           "æ­£å¿™è‘—å‘¢ï¼Œæ²’åŠŸå¤«ç†ä½ ã€‚\n");
 
-                notify_fail(ob->name() + "Íû×ÅÄãºÇºÇµÄÉµĞ¦¡£\n");
+                notify_fail(ob->name() + "æœ›è‘—ä½ å‘µå‘µçš„å‚»ç¬‘ã€‚\n");
                 return (arg == "cancel" ? ob->cancel_quest(me)
                                         : ob->ask_quest(me));
         }
-        write(HIR + "°ï»áÈÎÎñÏµÍ³£º\n" + NOR);
+        write(HIR + "å¹«æœƒä»»å‹™ç³»çµ±ï¼š\n" + NOR);
         if( query_temp("finish_bunch_times", me) )
-                write(sprintf("Í·¶ù½»¸øÄãµÄÈÎÎñ£¬ÄãÒÑ¾­Á¬ĞøÍê³ÉÁË %d ¸ö¡£\n",
+                write(sprintf("é ­å…’äº¤çµ¦ä½ çš„ä»»å‹™ï¼Œä½ å·²ç¶“é€£çºŒå®Œæˆäº† %d å€‹ã€‚\n",
                        query_temp("finish_bunch_times", me)));
 
         msg = "";
              if( mapp(quest=query("bunch_quest", me)) )
          {
                 flag_bh = 1;
-                msg = quest["type"] + "£º" + quest["msg"];
-                write("Äã¸Õ²ÅÁìµÄÈÎÎñ£º\n"+msg+"\n");
+                msg = quest["type"] + "ï¼š" + quest["msg"];
+                write("ä½ å‰›æ‰é ˜çš„ä»»å‹™ï¼š\n"+msg+"\n");
                 if (quest["id"] == "xc")
                 {
                         place = ({});
                         place = quest["place"];
                         if (sizeof(place))
                         {
-                                msg = "Äã»¹ĞèÒªÑ²ÂßÕâĞ©µØ·½£º";
+                                msg = "ä½ é‚„éœ€è¦å·¡é‚é€™äº›åœ°æ–¹ï¼š";
                                 for (i = 0;i < sizeof(place);i++)
                                 {
                                         env = get_object(place[i]);
                                         msg += env->short() + " ";
                                 }
                                 write(msg + "\n");
-                        } else write("Äã¿ÉÒÔ»ØÈ¥½»²îÁË£¡\n");
+                        } else write("ä½ å¯ä»¥å›å»äº¤å·®äº†ï¼\n");
                 }
          }
 
-        if (!flag_bh) write("ÄãÄ¿Ç°Ã»ÓĞ´Ó°ï»áÄÇÀï½ÓÈÎÎñ£¡\n");
+        if (!flag_bh) write("ä½ ç›®å‰æ²’æœ‰å¾å¹«æœƒé‚£è£¡æ¥ä»»å‹™ï¼\n");
 
-        write(HIR + "\nÃÅÅÉÈÎÎñÏµÍ³£º\n" + NOR);
+        write(HIR + "\né–€æ´¾ä»»å‹™ç³»çµ±ï¼š\n" + NOR);
         if( query("quest_count", me) )
-                write(sprintf("Ê¦³¤½»¸øÄãµÄÈÎÎñ£¬ÄãÒÑ¾­Á¬ĞøÍê³ÉÁË %d ¸ö¡£\n",
+                write(sprintf("å¸«é•·äº¤çµ¦ä½ çš„ä»»å‹™ï¼Œä½ å·²ç¶“é€£çºŒå®Œæˆäº† %d å€‹ã€‚\n",
                        query("quest_count", me)));
  
         if( mapp(q=query("quest", me)) )
@@ -91,84 +91,84 @@ int main(object me, string arg)
                  switch (q["type"])
                 { 
                   case "kill":
-                        write(q["master_name"] + "·Ô¸ÀÄãÔÚ" + CHINESE_D->chinese_monthday(q["limit"]) +
-                      "Ö®Ç°¸îÏÂ" HIR + q["name"] + NOR "µÄÈËÍ·£¬»Ø" + q["family"] + "½»²î¡£\n" +
-                      "¾İËµ´ËÈËÇ°²»¾ÃÔø¾­ÔÚ" + q["place"] + "³öÃ»¡£\n");
+                        write(q["master_name"] + "å©å’ä½ åœ¨" + CHINESE_D->chinese_monthday(q["limit"]) +
+                      "ä¹‹å‰å‰²ä¸‹" HIR + q["name"] + NOR "çš„äººé ­ï¼Œå›" + q["family"] + "äº¤å·®ã€‚\n" +
+                      "æ“šèªªæ­¤äººå‰ä¸ä¹…æ›¾ç¶“åœ¨" + q["place"] + "å‡ºæ²’ã€‚\n");
                       tag_fam = 1;
                       break;
                 case "letter":
-                      write(q["master_name"] + "·Ô¸ÀÄãÔÚ" + CHINESE_D->chinese_monthday(q["limit"]) +
-                      "Ö®Ç°°ÑĞÅ¼şËÍµ½" HIC + q["name"] + NOR "ÊÖÖĞ£¬È¡»ØÖ´½»²î¡£\n" +
-                      "¾İÎÅ²»¾ÃÇ°´ËÈËÔø¾­ÔÚ" + q["place"] + "¡£\n");
+                      write(q["master_name"] + "å©å’ä½ åœ¨" + CHINESE_D->chinese_monthday(q["limit"]) +
+                      "ä¹‹å‰æŠŠä¿¡ä»¶é€åˆ°" HIC + q["name"] + NOR "æ‰‹ä¸­ï¼Œå–å›åŸ·äº¤å·®ã€‚\n" +
+                      "æ“šèä¸ä¹…å‰æ­¤äººæ›¾ç¶“åœ¨" + q["place"] + "ã€‚\n");
                       tag_fam = 1;
                       break;
                 }
         }
-        if (!tag_fam) write("ÄãÏÖÔÚÃ»ÓĞÁìÈÎºÎÃÅÅÉÈÎÎñ£¡\n");
+        if (!tag_fam) write("ä½ ç¾åœ¨æ²’æœ‰é ˜ä»»ä½•é–€æ´¾ä»»å‹™ï¼\n");
         
-        write(HIR + "\n×ÚÊ¦ÈÎÎñÏµÍ³£º\n" + NOR);
+        write(HIR + "\nå®—å¸«ä»»å‹™ç³»çµ±ï¼š\n" + NOR);
 
         if( query("questdg_times", me) )
-                     write("¶À¹ÂÇó°Ü½»¸øÄãµÄÈÎÎñ£¬ÄãÒÑÁ¬ĞøÍê³É"+query("questdg_times", me)+"¸öÁË¡£\n");
+                     write("ç¨å­¤æ±‚æ•—äº¤çµ¦ä½ çš„ä»»å‹™ï¼Œä½ å·²é€£çºŒå®Œæˆ"+query("questdg_times", me)+"å€‹äº†ã€‚\n");
         if( query("questkh_times", me) )
-                     write("¿û»¨Ì«¼à½»¸øÄãµÄÈÎÎñ£¬ÄãÒÑÁ¬ĞøÍê³É"+query("questkh_times", me)+"¸öÁË¡£\n");
+                     write("è‘µèŠ±å¤ªç›£äº¤çµ¦ä½ çš„ä»»å‹™ï¼Œä½ å·²é€£çºŒå®Œæˆ"+query("questkh_times", me)+"å€‹äº†ã€‚\n");
         if( query("questsn_times", me) )
-                     write("ÄÏº£ÉñÄá½»¸øÄãµÄÈÎÎñ£¬ÄãÒÑÁ¬ĞøÍê³É"+query("questsn_times", me)+"¸öÁË¡£\n");;
+                     write("å—æµ·ç¥å°¼äº¤çµ¦ä½ çš„ä»»å‹™ï¼Œä½ å·²é€£çºŒå®Œæˆ"+query("questsn_times", me)+"å€‹äº†ã€‚\n");;
         if( query("quesths_times", me) )
-                 write("»ÆÉÑ½»¸øÄãµÄÈÎÎñ£¬ÄãÒÑÁ¬ĞøÍê³É"+query("quesths_times", me)+"¸öÁË¡£\n");
+                 write("é»ƒè£³äº¤çµ¦ä½ çš„ä»»å‹™ï¼Œä½ å·²é€£çºŒå®Œæˆ"+query("quesths_times", me)+"å€‹äº†ã€‚\n");
 
         msg = "";
-        // ¶À¹ÂÇó°Ü
+        // ç¨å­¤æ±‚æ•—
          if( mapp(quest=query("quest_dg", me)) )
          {
                 flag_zs = 1;
                 msg = quest["dgmsg"];
-                write("Äã¸Õ²ÅÁìµÄÈÎÎñ£º\n"+msg+"\n");
+                write("ä½ å‰›æ‰é ˜çš„ä»»å‹™ï¼š\n"+msg+"\n");
          }
 
          msg = "";
-        // ¶«·½²»°Ü
+        // æ±æ–¹ä¸æ•—
         if( mapp(quest=query("quest_kh", me)) )
          {
                 flag_zs = 1;
                         msg = quest["khmsg"];
-                if (quest["desc"] == "Ãğ")
+                if (quest["desc"] == "æ»…")
                            if(quest["time"] < time())
-                                     msg += "\nÄãÒÑ¾­³¬¹ıÁË¹æ¶¨Ê±¼äÁË£¡";
+                                     msg += "\nä½ å·²ç¶“è¶…éäº†è¦å®šæ™‚é–“äº†ï¼";
                              else
-                                            msg += "\nÄã»¹ÓĞ"+time_period(quest["time"]-time())+"µÄÊ±¼ä¡£";
-                write("Äã¸Õ²ÅÁìµÄÈÎÎñ£º\n"+msg+"\n");
+                                            msg += "\nä½ é‚„æœ‰"+time_period(quest["time"]-time())+"çš„æ™‚é–“ã€‚";
+                write("ä½ å‰›æ‰é ˜çš„ä»»å‹™ï¼š\n"+msg+"\n");
          }
 
         msg = "";
-        // »ÆÉÑ
+        // é»ƒè£³
          if( mapp(quest=query("quest_hs", me)) )
          {
                 flag_zs = 1;
                 msg = quest["msg"];
-                if (quest["type"] == "ÊÕ")
+                if (quest["type"] == "æ”¶")
                 {
-                                     msg += "\nÄãÒÑ¾­Íê³ÉÁË" + quest["ok"] + "¸ö£¬";
-                                            msg += "\nÄã»¹ĞèÒªÕÒ" + (quest["want"] - quest["ok"]) + "¸ö¡£";
+                                     msg += "\nä½ å·²ç¶“å®Œæˆäº†" + quest["ok"] + "å€‹ï¼Œ";
+                                            msg += "\nä½ é‚„éœ€è¦æ‰¾" + (quest["want"] - quest["ok"]) + "å€‹ã€‚";
                 }
-                write("Äã¸Õ²ÅÁìµÄÈÎÎñ£º\n"+msg+"\n");
+                write("ä½ å‰›æ‰é ˜çš„ä»»å‹™ï¼š\n"+msg+"\n");
          }
 
         msg = "";
-        // ÄÏº£ÉñÄá
+        // å—æµ·ç¥å°¼
          if( mapp(quest=query("quest_sn", me)) )
          {
                 flag_zs = 1;
                 msg = quest["msg"];
-                if (quest["type"] == "ÊÕ")
+                if (quest["type"] == "æ”¶")
                 {
-                                     msg += "\nÄãÒÑ¾­Íê³ÉÁË" + quest["ok"] + "¸ö£¬";
-                                            msg += "\nÄã»¹ĞèÒªÕÒ" + (quest["want"] - quest["ok"]) + "¸ö¡£";
+                                     msg += "\nä½ å·²ç¶“å®Œæˆäº†" + quest["ok"] + "å€‹ï¼Œ";
+                                            msg += "\nä½ é‚„éœ€è¦æ‰¾" + (quest["want"] - quest["ok"]) + "å€‹ã€‚";
                 }
-                write("Äã¸Õ²ÅÁìµÄÈÎÎñ£º\n"+msg+"\n");
+                write("ä½ å‰›æ‰é ˜çš„ä»»å‹™ï¼š\n"+msg+"\n");
          }
 
-        if (!flag_zs) write("ÄãÄ¿Ç°Ã»ÓĞ´ÓÈÎºÎ×ÚÊ¦ÄÇÀï½ÓÈÎÎñ£¡\n");
+        if (!flag_zs) write("ä½ ç›®å‰æ²’æœ‰å¾ä»»ä½•å®—å¸«é‚£è£¡æ¥ä»»å‹™ï¼\n");
         return 1;
 }
 
@@ -182,23 +182,23 @@ string time_period(int timep)
    h = t % 24;             t /= 24;
    d = t;
  
-   if(d) time = chinese_number(d) + "Ìì";
+   if(d) time = chinese_number(d) + "å¤©";
    else time = "";
  
-   if(h) time += chinese_number(h) + "Ğ¡Ê±";
-   if(m) time += chinese_number(m) + "·Ö";
-   time += chinese_number(s) + "Ãë";
+   if(h) time += chinese_number(h) + "å°æ™‚";
+   if(m) time += chinese_number(m) + "åˆ†";
+   time += chinese_number(s) + "ç§’";
    return time;
 }
 
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : quest  Õâ¸öÖ¸Áî¿ÉÒÔÓÃÀ´ÏòÄãµÄÃÅÅÉµÄÕÆÃÅ»òÊÀ¼Ò³¤±²
-ÁìÈ¡ÈÎÎñ£¬Èç¹û²»¼ÓÈÎºÎ²ÎÊıÔòÏÔÊ¾³öÄãµ±Ç°µÄÈÎÎñ¡£
+æŒ‡ä»¤æ ¼å¼ : quest  é€™å€‹æŒ‡ä»¤å¯ä»¥ç”¨ä¾†å‘ä½ çš„é–€æ´¾çš„æŒé–€æˆ–ä¸–å®¶é•·è¼©
+é ˜å–ä»»å‹™ï¼Œå¦‚æœä¸åŠ ä»»ä½•åƒæ•¸å‰‡é¡¯ç¤ºå‡ºä½ ç•¶å‰çš„ä»»å‹™ã€‚
 
-´Ó×ÚÊ¦ÄÇÀïÁìÈ¡ÈÎÎñÖ»ĞèÒªµ½×ÚÊ¦ËùÔÚµØ·½ÊäÈëquest£¬²»ĞèÒª¼ÓÈÎºÎ
-²ÎÊı¡£
+å¾å®—å¸«é‚£è£¡é ˜å–ä»»å‹™åªéœ€è¦åˆ°å®—å¸«æ‰€åœ¨åœ°æ–¹è¼¸å…¥questï¼Œä¸éœ€è¦åŠ ä»»ä½•
+åƒæ•¸ã€‚
 
 HELP );
         return 1;

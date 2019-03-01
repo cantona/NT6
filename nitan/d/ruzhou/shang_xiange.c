@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "���᷿");
+        set("short", "東廂房");
         set("long", @LONG
-�������̼ұ����������һ���᷿���ǹ���Զ���Ŀ��˺���
-�ҵ�������ס�ġ��᷿������ż��Ŵ󴲣��������ӡ����й���
-��ͣ�ʹ�˸���˯�⡣
+這裡是商家堡後廳東側的一個廂房，是供給遠來的客人和商
+家弟子所居住的。廂房中央擺著幾張大床，幾張桌子。室中光線
+柔和，使人更增睡意。
 LONG);
         set("exits", ([
                 "west"  : __DIR__"shang_houting",

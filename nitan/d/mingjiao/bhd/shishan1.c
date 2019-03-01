@@ -1,22 +1,22 @@
-// shishan1.c Ğ¡Ê¯É½
+// shishan1.c å°çŸ³å±±
 // Modify By River@SJ 99.06
 #include <ansi.h>
 inherit ROOM;
 void create()
 {
-	set("short", YEL"Ğ¡Ê¯É½"NOR);
+	set("short", YEL"å°çŸ³å±±"NOR);
         set("long", @LONG
-ÕâÊÇÒ»×ùĞ¡É½Ê¯£¬±ÈÖ®Î÷ÃæµÄÊ¯É½ÒªĞ¡¶àÁË¡£É½Ê¯ÖÜÎ§µ½´¦¶¼ÊÇ
-Ææ»¨ÒìÊ÷£¬ÒìÊ÷´ÔÖĞ´«À´ÕóÕóµÄÆæÏã£¬½ÔÓÉ²»ÖªÃûÖ®»¨¶ä´«³ö¡£É½½Å
-ÏÂÂ¶³öÒ»¸öĞ¡Ğ¡µÄÊ¯¶´(dong)£¬Î÷±ßÓĞÒ»×ùÊ¯É½¡£
+é€™æ˜¯ä¸€åº§å°å±±çŸ³ï¼Œæ¯”ä¹‹è¥¿é¢çš„çŸ³å±±è¦å°å¤šäº†ã€‚å±±çŸ³å‘¨åœåˆ°è™•éƒ½æ˜¯
+å¥‡èŠ±ç•°æ¨¹ï¼Œç•°æ¨¹å¢ä¸­å‚³ä¾†é™£é™£çš„å¥‡é¦™ï¼Œçš†ç”±ä¸çŸ¥åä¹‹èŠ±æœµå‚³å‡ºã€‚å±±è…³
+ä¸‹éœ²å‡ºä¸€å€‹å°å°çš„çŸ³æ´(dong)ï¼Œè¥¿é‚Šæœ‰ä¸€åº§çŸ³å±±ã€‚
 LONG );
-	set("outdoors","±ù»ğµº");
+	set("outdoors","å†°ç«å³¶");
         set("resource/water", 1);
 	set("exits",([
 		"west"  :  __DIR__"shishan",
 	]));
         set("item_desc", ([
-                "dong" : "ÕâÊÇÒ»¸öÉ½¶´£¬ÀïÃæ²»ÖªµÀÓĞĞ©Ê²Ã´¹Å¹Ö¡£\n",
+                "dong" : "é€™æ˜¯ä¸€å€‹å±±æ´ï¼Œè£¡é¢ä¸çŸ¥é“æœ‰äº›ä»€éº¼å¤æ€ªã€‚\n",
         ]));
 	setup();
 }
@@ -31,9 +31,9 @@ int do_enter(string arg)
         object me;
         me = this_player();
         if( arg=="dong") {
-            message("vision",me->name()+"Ò»ÍäÑüÍù¶´Àï×ßÁË½øÈ¥¡£\n",environment(me), ({me}) );
+            message("vision",me->name()+"ä¸€å½è…°å¾€æ´è£¡èµ°äº†é€²å»ã€‚\n",environment(me), ({me}) );
             me->move(__DIR__"xdong");
-            message("vision",me->name()+"´Ó¶´Íâ×ßÁË½øÀ´¡£\n",environment(me), ({me}) );
+            message("vision",me->name()+"å¾æ´å¤–èµ°äº†é€²ä¾†ã€‚\n",environment(me), ({me}) );
             return 1;
         }
 }       

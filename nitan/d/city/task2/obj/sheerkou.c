@@ -1,4 +1,4 @@
-// sheerkou.c Éß¶ù¿Ú
+// sheerkou.c è›‡å…’å£
 #include <ansi.h>
 inherit ITEM;
 
@@ -12,15 +12,15 @@ void init()
 
 void create()
 {
-        set_name(HIM"Éß¶ù¿Ú"NOR, ({ "sheer kou", "sk" }) );
+        set_name(HIM"è›‡å…’å£"NOR, ({ "sheer kou", "sk" }) );
         set_weight(600);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ö§");
+                set("unit", "æ”¯");
                 set("value", 0);
                 set("material", "steel");
-                set("long", "ÕâÊÇ´«ËµÖĞ¹ÅÀÏ¶øÉñÃØµÄ°µÆ÷--Éß¶ù¿Ú¡£\n");
+                set("long", "é€™æ˜¯å‚³èªªä¸­å¤è€è€Œç¥ç§˜çš„æš—å™¨--è›‡å…’å£ã€‚\n");
         }
         setup();
 }
@@ -33,20 +33,20 @@ int do_shot(string arg)
         int tired;
 
         if( query("no_fight", environment(me)) )
-                return notify_fail("ÕâÀï½ûÖ¹Õ½¶·¡£\n");
+                return notify_fail("é€™è£¡ç¦æ­¢æˆ°é¬¥ã€‚\n");
         if( !arg)
-                return notify_fail("ÄãÒª¹¥»÷Ë­£¿\n");
+                return notify_fail("ä½ è¦æ”»æ“Šèª°ï¼Ÿ\n");
         if( !objectp(obj = present(arg, environment(me)) ))
-                return notify_fail("ÕâÀïÃ»ÓĞÕâ¸öÈË£¡\n");
+                return notify_fail("é€™è£¡æ²’æœ‰é€™å€‹äººï¼\n");
         if( !obj->is_character() || obj->is_corpse() )
         if( !obj->is_character() || obj->is_corpse() )
-                return notify_fail("¿´Çå³şÒ»µã£¬ÄÇ²¢²»ÊÇ»îÎï¡£\n");
+                return notify_fail("çœ‹æ¸…æ¥šä¸€é»ï¼Œé‚£ä¸¦ä¸æ˜¯æ´»ç‰©ã€‚\n");
         if (obj == me)
-                return notify_fail("¶Ô×Ô¼ºÏÂ¶¾ÊÖ£¿±ğÏë²»¿ª°¡¡£\n");
+                return notify_fail("å°è‡ªå·±ä¸‹æ¯’æ‰‹ï¼Ÿåˆ¥æƒ³ä¸é–‹å•Šã€‚\n");
 
         tired=query("total_tired", obj);
-        message_vision(HIM "$NÊÖÒ»Ñï£¬Ò»¹É·ÛºìÉ«µÄÑÌÎí½«$n°üÎ§ÔÚÆäÖĞ£¬$nÒ»ÕóÃÔÂÒÖ®ÏÂ£¬ºÃÏó¸Ğ¾õµ½ÑÌÎíÖĞ\n"+
-                        "ÓĞĞí¶àÉßÕıÔÚÕùÏÈ¿ÖºóµØ²øÈÆ×Å×Ô¼º£¡\n" NOR,
+        message_vision(HIM "$Næ‰‹ä¸€æšï¼Œä¸€è‚¡ç²‰ç´…è‰²çš„ç…™éœ§å°‡$nåŒ…åœåœ¨å…¶ä¸­ï¼Œ$nä¸€é™£è¿·äº‚ä¹‹ä¸‹ï¼Œå¥½è±¡æ„Ÿè¦ºåˆ°ç…™éœ§ä¸­\n"+
+                        "æœ‰è¨±å¤šè›‡æ­£åœ¨çˆ­å…ˆæå¾Œåœ°çºç¹è‘—è‡ªå·±ï¼\n" NOR,
                         me, obj);
         obj->apply_condition("snake_poison",random(max_poison) + random(least_poison * tired));
 

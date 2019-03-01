@@ -2,9 +2,9 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÎŞÀµ", ({"wu lai", "wu", "lai"}));
-        set("long", "´óÏà¹úËÂ¸½½üµÄÎŞÀµ£¬Æ½Ê±×¨µ½²ËÔ°ÖĞÍµ²Ë¡£\n" );
-        set("gender", "ÄĞĞÔ");
+        set_name("ç„¡è³´", ({"wu lai", "wu", "lai"}));
+        set("long", "å¤§ç›¸åœ‹å¯ºé™„è¿‘çš„ç„¡è³´ï¼Œå¹³æ™‚å°ˆåˆ°èœåœ’ä¸­å·èœã€‚\n" );
+        set("gender", "ç”·æ€§");
         set("age",25);
         set("combat_exp", 7000);
         set("shen_type", -1);

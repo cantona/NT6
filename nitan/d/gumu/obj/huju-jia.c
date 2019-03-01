@@ -4,14 +4,14 @@
 inherit ITEM;
 void create()
 {
-        set_name(HIW "»¤¾ß¼Ü" NOR, ({ "huju jia", "jia" }) );         
+        set_name(HIW "è­·å…·æ¶" NOR, ({ "huju jia", "jia" }) );         
         set_weight(30000000);
         if( clonep() )
                 set_default_object(__FILE__);
         else
         {
-                set("unit", "¸ö");
-                set("long", "Ò»¸öÄ¾Í·ÖÆ³ÉµÄ¼Ü×Ó£¬ÉÏÃæ¹Ò×ÅÌú¼×(armor)µÈ»¤¾ß¡£Äã¿ÉÒÔÄÃ(na)Ğ©È¥ÓÃ¡£\n");
+                set("unit", "å€‹");
+                set("long", "ä¸€å€‹æœ¨é ­åˆ¶æˆçš„æ¶å­ï¼Œä¸Šé¢æ›è‘—éµç”²(armor)ç­‰è­·å…·ã€‚ä½ å¯ä»¥æ‹¿(na)äº›å»ç”¨ã€‚\n");
                 set("material","wood");
                 set("no_get",1);
         }
@@ -30,23 +30,23 @@ int do_get(string arg)
         string arg1, arg2;
 
         if(query("count") < 0)
-                return notify_fail("¼ÜÉÏÒÑ¾­¿Õ¿ÕÈçÒ²ÁË¡£\n");
+                return notify_fail("æ¶ä¸Šå·²ç¶“ç©ºç©ºå¦‚ä¹Ÿäº†ã€‚\n");
         if(!arg || sscanf(arg, "%s from %s", arg1, arg2)!=2)
-                return notify_fail("ÃüÁî¸ñÊ½: na <»¤¾ßÃû³Æ> from jia¡£\n");
+                return notify_fail("å‘½ä»¤æ ¼å¼: na <è­·å…·åç¨±> from jiaã€‚\n");
         if (arg2!="jia")
-                return notify_fail("ÃüÁî¸ñÊ½: na <»¤¾ßÃû³Æ> from jia¡£\n");
-        if( query_temp("marks/ÄÃ", me) )
-                return notify_fail("ÄãÔõÃ´ÕâÃ´Ì°ĞÄ£¬ÄÃ¹ıÁË»¹ÒªÄÃ£¿\n");
+                return notify_fail("å‘½ä»¤æ ¼å¼: na <è­·å…·åç¨±> from jiaã€‚\n");
+        if( query_temp("marks/æ‹¿", me) )
+                return notify_fail("ä½ æ€éº¼é€™éº¼è²ªå¿ƒï¼Œæ‹¿éäº†é‚„è¦æ‹¿ï¼Ÿ\n");
         if( query("combat_exp", me)>120000 )
-                return notify_fail("ÄãÎäÒÕÒÑµ½Ò»¶¨³Ì¶È£¬»¹ÊÇ×ÔÊ³ÆäÁ¦°É¡£\n");
+                return notify_fail("ä½ æ­¦è—å·²åˆ°ä¸€å®šç¨‹åº¦ï¼Œé‚„æ˜¯è‡ªé£Ÿå…¶åŠ›å§ã€‚\n");
         if (arg1 =="armor")
         {
                 ob=new(ARMOR_DIR"tiejia"); 
                 ob->move(me);
-                message_vision("$N´Ó»¤¾ß¼ÜÉÏÄÃ³öÒ»¼ş$n¡£\n",me, ob); 
-                set_temp("marks/ÄÃ", 1, me);
+                message_vision("$Nå¾è­·å…·æ¶ä¸Šæ‹¿å‡ºä¸€ä»¶$nã€‚\n",me, ob); 
+                set_temp("marks/æ‹¿", 1, me);
                 addn("count", -1);
                 return 1;
         }     
-        return notify_fail("»¤¾ß¼ÜÉÏÃ»ÓĞÄãÏëÒªÄÃµÄ¶«Î÷¡£\n");
+        return notify_fail("è­·å…·æ¶ä¸Šæ²’æœ‰ä½ æƒ³è¦æ‹¿çš„æ±è¥¿ã€‚\n");
 }

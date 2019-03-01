@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����ͤ");
+        set("short", "望州亭");
         set("long", @LONG
-����ĵ��ƻ�Ȼ���ʣ��������ʯ������������ͷ�������ʳơ���
-ʯ����������ǰ̽�����ƺ�Ҳ�ڼ����½��������ʯ��һͤͻأ�����
-����ʣ��ֳơ�����ͤ����ƾ��Զ����Ȫ��ȫ���������۵ס�
+這裡的地勢豁然開朗，有三塊巨石如三條大蟒伸頭出洞，故稱「蟒
+石」。蟒首向前探望，似乎也在鑒賞下界的美景。石上一亭突兀，如飛
+來神筆，又稱「飛來亭」。憑欄遠望，泉州全景，盡收眼底。
 LONG );
         set("outdoors", "quanzhou");
         set("no_clean_up", 0);

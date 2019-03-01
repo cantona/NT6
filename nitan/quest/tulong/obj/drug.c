@@ -5,13 +5,13 @@ inherit CLOTH;
 
 void create()
 {
-        set_name("ÁúÔª", ({ "dragon soul" }) );
+        set_name("é¾å…ƒ", ({ "dragon soul" }) );
         set_weight(1);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long","ÕâÊÇÁúµÄÄÚµ¤£¬¼¦µ°´óĞ¡£¬Èç»ğÑæ°ã³àºì¡£ÓÃ·¨£ºboost\n");
-                set("unit", "¿Å");
+                set("long","é€™æ˜¯é¾çš„å…§ä¸¹ï¼Œé›è›‹å¤§å°ï¼Œå¦‚ç«ç‡„èˆ¬èµ¤ç´…ã€‚ç”¨æ³•ï¼šboost\n");
+                set("unit", "é¡†");
                 set("value", 50000);
                 set("no_drop",1);
         }
@@ -44,7 +44,7 @@ int boost_skill()
         if( ob->query_condition("putizi_drug")>0 || query("dragon_soul", ob)>100 )
         {
                 addn("max_neili", -50, ob);
-                message_vision(HIR "$NÊÔÍ¼ÎüÄÉÁúÔª£¬µ«ÉíÌå³ĞÊÜ²»ÁË£¬½á¹ûÊÊµÃÆä·´£¡\n" NOR, ob);
+                message_vision(HIR "$Nè©¦åœ–å¸ç´é¾å…ƒï¼Œä½†èº«é«”æ‰¿å—ä¸äº†ï¼Œçµæœé©å¾—å…¶åï¼\n" NOR, ob);
                 destruct(this_object());
                 return 1;
         }
@@ -53,10 +53,10 @@ int boost_skill()
                 addn("max_neili", 50, ob);
                 addn("neili", 50, ob);
 
-                message_vision(HIY "$NÔË¾¢ÎüÄÉÁúÔª£¬Ö»¼û$NÃæÉ«³àºìÈç»ğ£¬ÌåÄÚÕæÆøÔ´Ô´¶øÉú¡£\n" NOR, this_player());
+                message_vision(HIY "$Né‹å‹å¸ç´é¾å…ƒï¼Œåªè¦‹$Né¢è‰²èµ¤ç´…å¦‚ç«ï¼Œé«”å…§çœŸæ°£æºæºè€Œç”Ÿã€‚\n" NOR, this_player());
                 ob->apply_condition("putizi_drug", 1000);
         }        if(!sizeof(skl)) {
-                write( "ÄãÄ¿Ç°²¢Ã»ÓĞÑ§»áÈÎºÎ¼¼ÄÜ¡£\n");
+                write( "ä½ ç›®å‰ä¸¦æ²’æœ‰å­¸æœƒä»»ä½•æŠ€èƒ½ã€‚\n");
                 return 1;
         }
         sname  = sort_array( keys(skl), (: strcmp :) );
@@ -73,7 +73,7 @@ int boost_skill()
         }
         ob->set_skill(theskill, (int)thelevel+1);
         addn("dragon_soul", 1, ob);
-message_vision("$NµÄ"+to_chinese(theskill)+"ÔöÇ¿ÁË¡£\n", this_player());
+message_vision("$Nçš„"+to_chinese(theskill)+"å¢å¼·äº†ã€‚\n", this_player());
 destruct(this_object());
 return 1;
 }

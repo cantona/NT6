@@ -8,13 +8,13 @@ inherit CLOTH;
 
 void create()
 {
-        set_name(HIR"Ìì²ÏË¿È¹"NOR, ({ "skirt" }) );
+        set_name(HIR"å¤©è ¶çµ²è£™"NOR, ({ "skirt" }) );
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¼şÓÃÌì²ÏË¿Ö¯³ÉµÄÈ¹×Ó£¬ÃşÉÏÈ¥ÈáÈí¹â»¬¡£\n");
-                set("unit", "¼ş");
+                set("long", "ä¸€ä»¶ç”¨å¤©è ¶çµ²ç¹”æˆçš„è£™å­ï¼Œæ‘¸ä¸Šå»æŸ”è»Ÿå…‰æ»‘ã€‚\n");
+                set("unit", "ä»¶");
                 set("material", "cloth");
                 set("armor_prop/armor", 150);
        }

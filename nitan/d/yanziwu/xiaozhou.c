@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-        set("short", "С��");
+        set("short", "小舟");
         set("long", @LONG
-���̺���Ʈ����һҶС�ۣ�һ��������Ů��ִ˫����������ˮ��
-���г�����ٯС���������������ǣ����ö��ġ�һ˫����������
-ӳ���̲�������͸��һ�㡣
+碧綠湖面飄盪的一葉小舟，一個綠衫少女手執雙槳，緩緩劃水，
+口中唱著吳儂小曲。歌聲嬌柔無那，歡悅動心。一雙纖手皓膚如玉，
+映著綠波，便如透明一般。
 LONG );
         set("outdoors", "yanziwu");
         set("no_clean_up", 0);

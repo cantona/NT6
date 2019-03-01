@@ -1,11 +1,11 @@
 inherit ROOM;
 void create()
 {
-        set("short","���");
+        set("short","清池");
         set("long", @LONG
-�������������ܵ��������е��徻����ؽ�����گ��䣬������
-�����ڴ���԰�ֹ����İ����£������˲ʡ�������Ϻ��浹Ҳ���˲�
-�٣������ļ��紺�������£��ɻ�˯���ޱ���次�
+在這裡你能享受到城內少有的清凈。清池建于南詘年間，後有修
+復，在大宋園林工匠的幫助下，更添姿彩。池內魚蝦龜蟲倒也養了不
+少，在這四季如春的氣候下，荷花睡蓮無比妖嬈。
 LONG );
         set("outdoors", "dali");
         set("exits",([

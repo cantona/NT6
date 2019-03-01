@@ -1,11 +1,11 @@
-// qi.c ÎŞĞÎ½£Æø
+// qi.c ç„¡å½¢åŠæ°£
 
 #include <ansi.h>
 #include <combat.h>
 
 inherit F_SSERVER;
 
-#define QI "¡¸" HIG "ÎŞĞÎ½£Æø" NOR "¡¹"
+#define QI "ã€Œ" HIG "ç„¡å½¢åŠæ°£" NOR "ã€"
 
 int perform(object me, object target)
 {
@@ -18,30 +18,30 @@ int perform(object me, object target)
 
 
         if( userp(me) && !query("can_perform/liumai-shenjian/qi", me) )
-                return notify_fail("ÄãËùÊ¹ÓÃµÄÍâ¹¦ÖĞÃ»ÓĞÕâÖÖ¹¦ÄÜ¡£\n");
+                return notify_fail("ä½ æ‰€ä½¿ç”¨çš„å¤–åŠŸä¸­æ²’æœ‰é€™ç¨®åŠŸèƒ½ã€‚\n");
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(QI "Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(QI "åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if ((int)me->query_skill("force") < 420)
-                return notify_fail("ÄãµÄÄÚ¹¦»ğºò²»¹»£¬Ê¹²»³ö" QI "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸç«å€™ä¸å¤ ï¼Œä½¿ä¸å‡º" QI "ã€‚\n");
 
         if( query("max_neili", me)<5000 )
-                return notify_fail("ÄãµÄÄÚÁ¦ĞŞÎª»¹²»×ãÒÔÊ¹³öÈç´ËÏ¬ÀûµÄ" QI "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¿®ç‚ºé‚„ä¸è¶³ä»¥ä½¿å‡ºå¦‚æ­¤çŠ€åˆ©çš„" QI "ã€‚\n");
 
         if( query("neili", me)<500 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬ÎŞ·¨Ê¹ÓÃ" QI "¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼Œç„¡æ³•ä½¿ç”¨" QI "ã€‚\n");
 
         if (me->query_skill("liumai-shenjian", 1) < 200)
-                return notify_fail("ÄãµÄÁùÂöÉñ½£ĞŞÎªÓĞÏŞ£¬ÎŞ·¨Ê¹ÓÃ" QI "£¡\n");
+                return notify_fail("ä½ çš„å…­è„ˆç¥åŠä¿®ç‚ºæœ‰é™ï¼Œç„¡æ³•ä½¿ç”¨" QI "ï¼\n");
 
         if (me->query_skill_prepared("finger") != "liumai-shenjian")
-                return notify_fail("ÄãÃ»ÓĞ×¼±¸ÁùÂöÉñ½££¬ÎŞ·¨Ê¹ÓÃ" QI "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æº–å‚™å…­è„ˆç¥åŠï¼Œç„¡æ³•ä½¿ç”¨" QI "ã€‚\n");
 
         if (! living(target))
-               return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+               return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIG "$N" HIG "ÖĞÖ¸Ò»°´£¬Ò»¹ÉÁèÀ÷ÎŞÂ×µÄÎŞĞÎ½£ÆøÖ±±¼$n" HIG "ĞØÇ°ÉäÈ¥¡£\n" NOR;  
+        msg = HIG "$N" HIG "ä¸­æŒ‡ä¸€æŒ‰ï¼Œä¸€è‚¡å‡Œå²ç„¡å€«çš„ç„¡å½¢åŠæ°£ç›´å¥”$n" HIG "èƒ¸å‰å°„å»ã€‚\n" NOR;  
 
         ap=me->query_skill("finger")+query("force", me);
         dp = target->query_skill("force") + target->query_skill("dodge");
@@ -53,30 +53,30 @@ int perform(object me, object target)
                 addn("neili", -400, me);
                 if( !objectp(weapon) || query("skill_type", weapon) == "pin" )
                         msg += COMBAT_D->do_damage(me, target, UNARMED_ATTACK, damage, 120,
-                                                   HIR "$n" HIR "Ö»¾õµÃĞØÇ°Ò»Õó¾çÍ´£¬ÏÊÑª"
-                                                   "×Ô´´¿Ú¼¤Éä¶ø³ö£¬ÑÛÇ°¶ÙÊ±Ò»ºÚ£¡\n" NOR);
+                                                   HIR "$n" HIR "åªè¦ºå¾—èƒ¸å‰ä¸€é™£åŠ‡ç—›ï¼Œé®®è¡€"
+                                                   "è‡ªå‰µå£æ¿€å°„è€Œå‡ºï¼Œçœ¼å‰é “æ™‚ä¸€é»‘ï¼\n" NOR);
                 else
                 if( weapon->is_item_make() || query("damage", weapon)>180 || 
                     query("skill_type", weapon) == "hammer" )
                         msg += COMBAT_D->do_damage(me, target, REMOTE_ATTACK, damage, 100,
-                                                   HIR "$n" HIR "ºá" + weapon->name() + HIR "ÊÔÍ¼ÕĞ¼Ü£¬"
-                                                   HIR "ÔõÄÎÕâ¹É½£ÆøÈç´ËÏ¬Àû£¬Í¸¹ı" + weapon->name() +
-                                                   HIR "Ö±ÕğµÃ$n" HIR "¿ñÍÂÏÊÑª£¬ÎåÔàÁù¸­¶¼Òª·­×ª¹ıÀ´£¡\n" NOR);
+                                                   HIR "$n" HIR "æ©«" + weapon->name() + HIR "è©¦åœ–æ‹›æ¶ï¼Œ"
+                                                   HIR "æ€å¥ˆé€™è‚¡åŠæ°£å¦‚æ­¤çŠ€åˆ©ï¼Œé€é" + weapon->name() +
+                                                   HIR "ç›´éœ‡å¾—$n" HIR "ç‹‚åé®®è¡€ï¼Œäº”è‡Ÿå…­è…‘éƒ½è¦ç¿»è½‰éä¾†ï¼\n" NOR);
                 else
                 {
                         msg += COMBAT_D->do_damage(me, target, REMOTE_ATTACK, damage, 80,
-                                                   HIR "$n" HIR "ºá×ª" + weapon->name() + HIR "£¬µ²ÔÚĞØ"
-                                                   "Ç°£¬Ö»ÌıÅ¾À²Ò»Éù£¬" + weapon->name() +
-                                                   HIR "Ëé³ÉÊı½Ø£¬¼¤·ÉÉÏÌì£¡\n$n" HIR "Á¬ÍË"
-                                                   "¼¸²½£¬¡°ÍÛ¡±µÄÍÂÁËÒ»¿ÚÏÊÑª£¬Á³É«±äµÄ²Ò°×¡£\n" NOR);
+                                                   HIR "$n" HIR "æ©«è½‰" + weapon->name() + HIR "ï¼Œæ“‹åœ¨èƒ¸"
+                                                   "å‰ï¼Œåªè½å•ªå•¦ä¸€è²ï¼Œ" + weapon->name() +
+                                                   HIR "ç¢æˆæ•¸æˆªï¼Œæ¿€é£›ä¸Šå¤©ï¼\n$n" HIR "é€£é€€"
+                                                   "å¹¾æ­¥ï¼Œâ€œå“‡â€çš„åäº†ä¸€å£é®®è¡€ï¼Œè‡‰è‰²è®Šçš„æ…˜ç™½ã€‚\n" NOR);
                         weapon->move(environment(me));
-                        set("no_wield", weapon->name()+"ÒÑ¾­ËéµôÁË£¬Ã»·¨×°±¸ÁË¡£\n", weapon);
-                        weapon->set_name("ËéµôµÄ" + weapon->name());
+                        set("no_wield", weapon->name()+"å·²ç¶“ç¢æ‰äº†ï¼Œæ²’æ³•è£å‚™äº†ã€‚\n", weapon);
+                        weapon->set_name("ç¢æ‰çš„" + weapon->name());
                         set("value", 0, weapon);
                 }
         } else
         {
-                msg += CYN "¿ÉÊÇ$p" CYN "ÄÚ¹¦ÆÄÎªÉîºñ£¬ÇáÇá½«ÕâµÀ½£Æø»¯½âÓÚÎŞĞÎ¡£\n" NOR;
+                msg += CYN "å¯æ˜¯$p" CYN "å…§åŠŸé —ç‚ºæ·±åšï¼Œè¼•è¼•å°‡é€™é“åŠæ°£åŒ–è§£äºç„¡å½¢ã€‚\n" NOR;
         }
         message_combatd(msg, me, target);
 

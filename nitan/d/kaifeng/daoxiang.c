@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "µ¾Ïã¾Ó");
+        set("short", "ç¨»é¦™å±…");
         set("long", @LONG
-µ¾Ïã¾ÓÓÐÈý°ÙÄêµÄÀúÊ·ÁË¡£´ÓÕâ¶°Â¥ÍâÃæºÚºÚµÄÕÐÅÆÆì¾ÍÄÜ¿´³ö
-À´¡£²»¹ýÀïÃæµÄÊ³¿Í»¹ÊÇÍ¦¶à¡£×À×Ó×øÂúÁËÈË¡£Â¥ÉÏµ±È»ÓÐÑÅ×ù£¬²»
-¹ýÊÇÒªÓÐÒ»¶¨Éí·ÝµØÎ»µÄÈË²ÅÄÜÉÏ¡£
+ç¨»é¦™å±…æœ‰ä¸‰ç™¾å¹´çš„æ­·å²äº†ã€‚å¾žé€™æ£Ÿæ¨“å¤–é¢é»‘é»‘çš„æ‹›ç‰Œæ——å°±èƒ½çœ‹å‡º
+ä¾†ã€‚ä¸éŽè£¡é¢çš„é£Ÿå®¢é‚„æ˜¯æŒºå¤šã€‚æ¡Œå­åæ»¿äº†äººã€‚æ¨“ä¸Šç•¶ç„¶æœ‰é›…åº§ï¼Œä¸
+éŽæ˜¯è¦æœ‰ä¸€å®šèº«ä»½åœ°ä½çš„äººæ‰èƒ½ä¸Šã€‚
 LONG );
         set("exits", ([
                 "up" : __DIR__"daoxiang2",

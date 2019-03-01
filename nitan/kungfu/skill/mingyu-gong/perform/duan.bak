@@ -7,47 +7,47 @@ int exert(object me, object target, int amount)
         int i, skill, damage,extra,force,max_force,state,base,res_kee; 
         string msg;
         if( query("class", me) != "yihua" )
-                return notify_fail ("����������ֻ���ƻ���������ʹ�á�\n");
+                return notify_fail ("﹝柔腕斷玉﹞只有移花宮弟子能使用。\n");
         if( !me->is_fighting() )
-                return notify_fail("�������ֻ����ս����ʹ�á�\n"); 
+                return notify_fail("柔腕斷玉只能在戰鬥中使用。\n"); 
         force=query("force", me);
         if( force < 500 )
-                return notify_fail("�������������\n"); 
+                return notify_fail("你的內力不夠。\n"); 
         
         skill = me->query_skill("mingyu-force",1);
         extra = me->query_skill("force");
-        if (skill<120) return notify_fail("���������δ�ﵽ�����أ�����ʩչ�������\n"); 
+        if (skill<120) return notify_fail("你的明玉功尚未達到第六重，不能施展柔腕斷玉。\n"); 
         
                                 if( !target || target==me) target = offensive_target(me); 
                     if( !target
                     ||      !target->is_character()
                     ||      !me->is_fighting(target) )
-                            return notify_fail("����������ֻ�ܶ�ս���еĶ���ʹ�á�\n");
+                            return notify_fail("﹝柔腕斷玉﹞只能對戰鬥中的對手使用。\n");
 
                 
         //suppose: force: 220,mingyu-force: 180, max_force: 650+220*5=1750
-        //xingxiexuanzhuan�������3�� max_force = 1750 * 3 =5250
+        //xingxiexuanzhuan最多吸到3倍 max_force = 1750 * 3 =5250
         //dam_max = 5250 * 9= 47250
         damage = force*skill/20;
         damage = damage/2+random(damage/2);
         
-        msg = HIY "$N�Ķ�����,����Ѹ�ٻû��ɼ��ǵ�͸������ɫ��\n"NOR;
+        msg = HIY "$N鼓動真氣,手掌迅速幻化成見骨的透明淡黃色！\n"NOR;
         
         //state=damage/5000;
         //if (state>3) state=3;
         state = random(4);
         switch (state) {
                 case 0:
-                                msg += HIC "\n$N����΢΢һת��$n������$N�����ƿ�����ת���������϶���һ���������ӡ��\n\n"NOR;
+                                msg += HIC "\n$N手腕微微一轉，$n竟隨著$N的手勢快速旋轉起來，身上多了一道黑青的掌印！\n\n"NOR;
                                 break;
                 case 1:
-                                msg += HIG "\n$N����΢΢һת��$n�����ػ�������һ����˳�ȥ��\n\n"NOR;
+                                msg += HIG "\n$N手腕微微一轉，$n如受重擊，稻草一般飛了出去！\n\n"NOR;
                                 break;
                 case 2:
-                                msg += HIR "\n$N����΢΢һת��һ��Ѫ����$n�������������\n\n"NOR;
+                                msg += HIR "\n$N手腕微微一轉，一股血箭從$n身上噴射而出！\n\n"NOR;
                                 break;
                 case 3:
-                                msg += HIM "\n$N����΢ת������ͻ�����䣬$nãȻ�޴��У�һ������͸�������\n\n"NOR;
+                                msg += HIM "\n$N手腕微轉，氣流突生激變，$n茫然無措中，一道氣劍透體而過！\n\n"NOR;
                                 break;
                 }
         

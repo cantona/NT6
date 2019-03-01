@@ -33,17 +33,17 @@ void init()
         add_action("do_cuihuo", "cuihuo");
         add_action("do_repair", "repair");
         add_action("do_repair", "xiuli");
-        add_action("do_epurate", "tilian");     // ÌáÁ¶¡¢¾«Á¶¿ó
+        add_action("do_epurate", "tilian");     // æç…‰ã€ç²¾ç…‰ç¤¦
         add_action("do_ronghe", "ronghe");
 }
 
 void setup()
 {
         set("inquiry/job",    (: ask_me :));
-        set("inquiry/¹¤×÷",   (: ask_me :));
-        set("inquiry/repair", "ÄãÏëÒªĞŞ(repair)µãÊ²Ã´£¿");
-        set("inquiry/ĞŞÀí",   "ÄãÏëÒªĞŞ(repair)µãÊ²Ã´£¿");
-        set("inquiry/¼ø¶¨",   (: identify_mine_stone :));
+        set("inquiry/å·¥ä½œ",   (: ask_me :));
+        set("inquiry/repair", "ä½ æƒ³è¦ä¿®(repair)é»ä»€éº¼ï¼Ÿ");
+        set("inquiry/ä¿®ç†",   "ä½ æƒ³è¦ä¿®(repair)é»ä»€éº¼ï¼Ÿ");
+        set("inquiry/é‘’å®š",   (: identify_mine_stone :));
 
         ::setup();
 }
@@ -53,33 +53,33 @@ string ask_me()
         object me = this_player();
 
         if (query("combat_exp", me) > 50000)
-                return "ÈÃÄúÀÏ¸ÉÕâ¸öÎ´ÃâÇü×ğÁË°É£¿";
+                return "è®“æ‚¨è€å¹¹é€™å€‹æœªå…å±ˆå°Šäº†å§ï¼Ÿ";
 
         if (query("qi", me) < 50)
-                return "Äã»¹ÊÇĞª»á¶ù°É£¡ÒªÊÇ³öÁËÈËÃüÎÒ¿É³Ğµ£²»Æğ¡£";
+                return "ä½ é‚„æ˜¯æ­‡æœƒå…’å§ï¼è¦æ˜¯å‡ºäº†äººå‘½æˆ‘å¯æ‰¿æ“”ä¸èµ·ã€‚";
 
         if (query_temp("smith/gu", me))
-                return "ÈÃÄã¹Ä·çÏä£¬ÄãÔõÃ´»¹Ä¥²ä(gu)£¿";
+                return "è®“ä½ é¼“é¢¨ç®±ï¼Œä½ æ€éº¼é‚„ç£¨è¹­(gu)ï¼Ÿ";
 
         if (query_temp("smith/dapi", me))
-                return "½ĞÄã´òµÄÅ÷Äã´òÁËÃ»ÓĞ(dapi)£¿";
+                return "å«ä½ æ‰“çš„å¯ä½ æ‰“äº†æ²’æœ‰(dapi)ï¼Ÿ";
 
         if (query_temp("smith/cuihuo", me))
-                return "¸É»îÔõÃ´¾¡ÍµÀÁ£¿¿ì¸øÎÒ´ã»ğÈ¥(cuihuo)£¡";
+                return "å¹¹æ´»æ€éº¼ç›¡å·æ‡¶ï¼Ÿå¿«çµ¦æˆ‘æ·¬ç«å»(cuihuo)ï¼";
 
         switch(random(3))
         {
         case 0:
                 set_temp("smith/gu", 1, me);
-                return "ºÃ£¡Äã°ïÎÒ¹ÄÒ»»á¶ù·çÏä(gu)¡£";
+                return "å¥½ï¼ä½ å¹«æˆ‘é¼“ä¸€æœƒå…’é¢¨ç®±(gu)ã€‚";
 
         case 1:
                 set_temp("smith/dapi", 1, me);
-                return "ÕâÑù°É£¬Äã°ïÎÒ´òÒ»ÏÂÅ÷°É(dapi)£¡";
+                return "é€™æ¨£å§ï¼Œä½ å¹«æˆ‘æ‰“ä¸€ä¸‹å¯å§(dapi)ï¼";
 
         case 2:
                 set_temp("smith/cuihuo", 1, me);
-                return "È¥°ïÎÒ°ÑÕâĞ©¸Õ³öÂ¯µÄ´ãÒ»ÏÂ»ğ(cuihuo)¡£";
+                return "å»å¹«æˆ‘æŠŠé€™äº›å‰›å‡ºçˆçš„æ·¬ä¸€ä¸‹ç«(cuihuo)ã€‚";
         }
 }
 
@@ -88,17 +88,17 @@ int do_gu(string arg)
         object me = this_player();
 
         if (me->is_busy())
-                return notify_fail("ÄãÏÖÔÚÕıÃ¦¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£å¿™ã€‚\n");
 
         if (!query_temp("smith/gu", me))
         {
-                message_vision("$n¸ÕÍµÍµµÄÀ­Æğ¹Ä·ç»ú£¬¹ÄÁË¼¸Õó·ç¡£"
-                               "¾ÍÌı¼û$N¶Ô$n´óºÈµÀ£º¹ö¿ª£¬ÂÒ¸ãÊ²Ã´¡£\n",
+                message_vision("$nå‰›å·å·çš„æ‹‰èµ·é¼“é¢¨æ©Ÿï¼Œé¼“äº†å¹¾é™£é¢¨ã€‚"
+                               "å°±è½è¦‹$Nå°$nå¤§å–é“ï¼šæ»¾é–‹ï¼Œäº‚æä»€éº¼ã€‚\n",
                                this_object(), me);
                 return 1;
         }
 
-        message_vision("$nÀ­Æğ¹Ä·ç»úÆ´Ãü¹ÄÁËÆğÀ´£¬$N¿´ÁËµãÁËµãÍ·¡£\n",
+        message_vision("$næ‹‰èµ·é¼“é¢¨æ©Ÿæ‹¼å‘½é¼“äº†èµ·ä¾†ï¼Œ$Nçœ‹äº†é»äº†é»é ­ã€‚\n",
                        this_object(), me);
         reward(me);
         return 1;
@@ -109,18 +109,18 @@ int do_dapi(string arg)
         object me = this_player();
 
         if (me->is_busy())
-                return notify_fail("ÄãÏÖÔÚÕıÃ¦¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£å¿™ã€‚\n");
 
         if (!query_temp("smith/dapi", me))
         {
-                message_vision("$nÄÃÆğ¼¸¿éÉúÌú£¬ÔÚÊÖÀïµàÁËµà¡£"
-                               "¾ÍÌı¼û$N¶Ô$n´óºÈµÀ£º·ÅÏÂ£¬ÂÒ¸ãÊ²Ã´¡£\n",
+                message_vision("$næ‹¿èµ·å¹¾å¡Šç”Ÿéµï¼Œåœ¨æ‰‹è£¡æ‚äº†æ‚ã€‚"
+                               "å°±è½è¦‹$Nå°$nå¤§å–é“ï¼šæ”¾ä¸‹ï¼Œäº‚æä»€éº¼ã€‚\n",
                                this_object(), me);
                 return 1;
         }
 
-        message_vision("$nÄÃ×Å´¸×Ó¶Ô¸Õ³öÂ¯µÄ»ğÈÈµÄÉúÌúÓÃÁ¦ÇÃ´ò×Å£¬"
-                        "$N¡°àÅ¡±ÁËÒ»Éù£¬¿´ÉÏÈ¥ÓĞĞ©ÂúÒâ¡£\n",
+        message_vision("$næ‹¿è‘—éŒ˜å­å°å‰›å‡ºçˆçš„ç«ç†±çš„ç”Ÿéµç”¨åŠ›æ•²æ‰“è‘—ï¼Œ"
+                        "$Nâ€œå—¯â€äº†ä¸€è²ï¼Œçœ‹ä¸Šå»æœ‰äº›æ»¿æ„ã€‚\n",
                        this_object(), me);
         reward(me);
         return 1;
@@ -131,18 +131,18 @@ int do_cuihuo(string arg)
         object me = this_player();
 
         if (me->is_busy())
-                return notify_fail("ÄãÏÖÔÚÕıÃ¦¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£å¿™ã€‚\n");
 
         if (!query_temp("smith/cuihuo", me))
         {
-                message_vision("$n¸Õ³­ÆğÒ»¸ö´òÔìºÃµÄÅ÷×Ó£¬"
-                               "¾ÍÌı¼û$N¶Ô$n´óºÈµÀ£º·ÅÏÂ£¬±ğ¸øÎÒ¸ã»µÁË¡£\n",
+                message_vision("$nå‰›æŠ„èµ·ä¸€å€‹æ‰“é€ å¥½çš„å¯å­ï¼Œ"
+                               "å°±è½è¦‹$Nå°$nå¤§å–é“ï¼šæ”¾ä¸‹ï¼Œåˆ¥çµ¦æˆ‘æå£äº†ã€‚\n",
                                this_object(), me);
                 return 1;
         }
 
-        message_vision("$NÓÃÌúÇ¯³­ÆğÒ»¿é»ğºìµÄÅ÷×Ó£¬Éì½øÁËË®"
-                       "³Ø£¬¡°ßê¡±µÄÒ»ÉùÇáÑÌËÄÃ°¡£\n",
+        message_vision("$Nç”¨éµé‰—æŠ„èµ·ä¸€å¡Šç«ç´…çš„å¯å­ï¼Œä¼¸é€²äº†æ°´"
+                       "æ± ï¼Œâ€œå“§â€çš„ä¸€è²è¼•ç…™å››å†’ã€‚\n",
                        me);
         reward(me);
         return 1;
@@ -161,14 +161,14 @@ void reward(object me)
         coin = new("/clone/money/silver");
         coin->set_amount(1 + random(2));
         coin->move(this_object());
-        message_vision("$N¶Ô$nµÀ£ºÕâÊÇ¸øÄãµÄ¹¤Ç®¡£\n",
+        message_vision("$Nå°$né“ï¼šé€™æ˜¯çµ¦ä½ çš„å·¥éŒ¢ã€‚\n",
                        this_object(), me);
         command("give coin to " + query("id", me));
         if (! query("zhufu_mod/armor", me) && random(10) == 1)
         {
                 ob = new("/clone/goods/zhufu_armor");
                 //ob->move(this_object());
-                message_vision("$N¶Ô$nºÙºÙÒ»Ğ¦£¬µÀ£º¸ÉµÃ²»Àµ£¬ÓĞµãÒâË¼£¬Õâ¸öÉñÖ®×£¸£»¤¼×¾ÍËãÊÇÎÒËÍ¸øÄãµÄÀñÎï°É¡£\n",
+                message_vision("$Nå°$nå˜¿å˜¿ä¸€ç¬‘ï¼Œé“ï¼šå¹¹å¾—ä¸è³´ï¼Œæœ‰é»æ„æ€ï¼Œé€™å€‹ç¥ä¹‹ç¥ç¦è­·ç”²å°±ç®—æ˜¯æˆ‘é€çµ¦ä½ çš„ç¦®ç‰©å§ã€‚\n",
                                this_object(), me);
                 ob->move(me, 1);
                 //command("give zhufu armor to " + query("id", me));
@@ -199,23 +199,23 @@ int do_repair(string arg)
 
         me = this_player();
         if (! objectp(ob = present(arg, me)))
-                return notify_fail("ÄãÉíÉÏºÃÏñÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+                return notify_fail("ä½ èº«ä¸Šå¥½åƒæ²’æœ‰é€™æ¨£æ±è¥¿ã€‚\n");
 
         if (undefinedp(consistence = query("consistence", ob)))
-                return notify_fail(ob->name() + "ËÆºõ²»ĞèÒªÔÚÕâÀïĞŞÀí°É£¿\n");
+                return notify_fail(ob->name() + "ä¼¼ä¹ä¸éœ€è¦åœ¨é€™è£¡ä¿®ç†å§ï¼Ÿ\n");
 
         if (undefinedp(max = query("max_consistence", ob)))
                 max = 100;
 
         if (consistence == max)
-                return notify_fail(ob->name() + "ÏÖÔÚÍêºÃÎŞËğ£¬ĞŞÀí×öÊ²Ã´£¿\n");
+                return notify_fail(ob->name() + "ç¾åœ¨å®Œå¥½ç„¡æï¼Œä¿®ç†åšä»€éº¼ï¼Ÿ\n");
 
         if (! undefinedp(msg = query("no_repair", ob)))
         {
                 if (stringp(msg))
-                        write(name() + "µÀ£ºÕâÎÒ¿ÉĞŞÀí²»ÁË¡£\n");
+                        write(name() + "é“ï¼šé€™æˆ‘å¯ä¿®ç†ä¸äº†ã€‚\n");
                 else
-                        write(name() + "µÀ£º" + msg);
+                        write(name() + "é“ï¼š" + msg);
                 return 1;
         }
 
@@ -223,19 +223,19 @@ int do_repair(string arg)
             repair["item"] == ob)
         {
                 if (me->is_busy())
-                        return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ£¡\n");
+                        return notify_fail("ä½ ç¾åœ¨æ­£å¿™è‘—å‘¢ï¼\n");
 
-                notify_fail("ÄãÏÈ´ø¹»ÁËÇ®ÔÙËµ¡£\n");
+                notify_fail("ä½ å…ˆå¸¶å¤ äº†éŒ¢å†èªªã€‚\n");
                 if (MONEY_D->player_pay(me, repair["cost"]) != 1)
                         return 0;
 
-                message_vision("$n°Ñ" + ob->name() + "µİ¸øÁË$N¡£Ö»¼û$N"
-                               "ÄÃÆğ¹¤¾ß£¬¶«ÇÃÎ÷²¹£¬½«" + ob->name() +
-                               "ºÃºÃĞŞÁËĞŞ¡£\n", this_object(), me);
+                message_vision("$næŠŠ" + ob->name() + "éçµ¦äº†$Nã€‚åªè¦‹$N"
+                               "æ‹¿èµ·å·¥å…·ï¼Œæ±æ•²è¥¿è£œï¼Œå°‡" + ob->name() +
+                               "å¥½å¥½ä¿®äº†ä¿®ã€‚\n", this_object(), me);
                 set("consistence", max, ob);
-                message_vision("$NµÀ£º¡°ºÃÁË£¡¡±ËæÊÖ°Ñ" + ob->name() +
-                               "»¹¸øÁË$n£¬$n¿´ÁË¿´£¬ÂúÒâµÄÌÍ³öÁËÒ»Ğ©Ç®"
-                               "¸¶ÁËÕÊ¡£\n", this_object(), me);
+                message_vision("$Né“ï¼šâ€œå¥½äº†ï¼â€éš¨æ‰‹æŠŠ" + ob->name() +
+                               "é‚„çµ¦äº†$nï¼Œ$nçœ‹äº†çœ‹ï¼Œæ»¿æ„çš„æå‡ºäº†ä¸€äº›éŒ¢"
+                               "ä»˜äº†å¸³ã€‚\n", this_object(), me);
                 me->start_busy(1 + random(max - consistence) / 20);
                 delete_temp("pending/repair", me);
                 return 1;
@@ -247,15 +247,15 @@ int do_repair(string arg)
         if (cost >= 1000)   cost = cost / 100 * 100; else
         if (cost >= 100)    cost = cost / 10 * 10;
 
-        msg = "$nÄÃ³öÒ»" + query("unit", ob) + ob->name() +
-              "£¬$NÆ³ÁËÒ»ÑÛ£¬µÀ£º¡°ÒªĞŞºÃËüµÃÒª" +
-              MONEY_D->price_str(cost) + "²ÅĞĞ¡£¡±\n";
-        if (query("family/family_name", me) == "¶ÎÊÏ»Ê×å" &&
+        msg = "$næ‹¿å‡ºä¸€" + query("unit", ob) + ob->name() +
+              "ï¼Œ$Nç¥äº†ä¸€çœ¼ï¼Œé“ï¼šâ€œè¦ä¿®å¥½å®ƒå¾—è¦" +
+              MONEY_D->price_str(cost) + "æ‰è¡Œã€‚â€\n";
+        if (query("family/family_name", me) == "æ®µæ°çš‡æ—" &&
             ob->item_owner() == query("id", me))
         {
                 cost /= 2;
-                msg += "$nµÀ£º¡°ßÏ£¬ÊÇÄú°¡£¬²»ºÃÒâË¼£¬´ò¸öÎåÕÛ£¬¾Í" +
-                       MONEY_D->price_str(cost) + "°É£¡¡±\n";
+                msg += "$né“ï¼šâ€œå‘¦ï¼Œæ˜¯æ‚¨å•Šï¼Œä¸å¥½æ„æ€ï¼Œæ‰“å€‹äº”æŠ˜ï¼Œå°±" +
+                       MONEY_D->price_str(cost) + "å§ï¼â€\n";
         } else
         if (me->query_skill("higgling", 1) >= 30 && cost >= 50)
         {
@@ -263,23 +263,23 @@ int do_repair(string arg)
                 switch (random(5))
                 {
                 case 0:
-                        msg += "$nµÀ£º¡°´ó¸ç£¬¿´ÔÚÎÒ³£ÄêÕÕ¹ËÄãÉúÒâ·İÉÏ£¬»¹²»¸øµãÕÛ¿Û£¿¡±\n";
+                        msg += "$né“ï¼šâ€œå¤§å“¥ï¼Œçœ‹åœ¨æˆ‘å¸¸å¹´ç…§é¡§ä½ ç”Ÿæ„ä»½ä¸Šï¼Œé‚„ä¸çµ¦é»æŠ˜æ‰£ï¼Ÿâ€\n";
                         break;
 
                 case 1:
-                        msg += "$nµÀ£º¡°ÄãÃÇ´óÀÏ°å¿ÉÊÇÎÒµÄÊìÈË°¡£¬Õâ¸ö£¬Õâ¸ö...¡±\n";
+                        msg += "$né“ï¼šâ€œä½ å€‘å¤§è€æ¿å¯æ˜¯æˆ‘çš„ç†Ÿäººå•Šï¼Œé€™å€‹ï¼Œé€™å€‹...â€\n";
                         break;
 
                 case 2:
-                        msg += "$nµÀ£º¡°ÕâÎ»´ó¸çºÃ£¬Äú×î½üÉúÒâÕâÃ´ºÃ... ¸øµãÕÛ¿ÛÈçºÎ£¿¡±\n";
+                        msg += "$né“ï¼šâ€œé€™ä½å¤§å“¥å¥½ï¼Œæ‚¨æœ€è¿‘ç”Ÿæ„é€™éº¼å¥½... çµ¦é»æŠ˜æ‰£å¦‚ä½•ï¼Ÿâ€\n";
                         break;
 
                 case 3:
-                        msg += "$nµÀ£º¡°Ì«¹óÁË£¬ÎÒÊµÔÚÃ»ÕâÃ´¶àÁË£¬±ãÒËµã£¬±ãÒËµã¾ÍºÃ¡£¡±\n";
+                        msg += "$né“ï¼šâ€œå¤ªè²´äº†ï¼Œæˆ‘å¯¦åœ¨æ²’é€™éº¼å¤šäº†ï¼Œä¾¿å®œé»ï¼Œä¾¿å®œé»å°±å¥½ã€‚â€\n";
                         break;
 
                 case 4:
-                        msg += "$nµÀ£º¡°ÎÒ¼±ĞŞ£¬ÕâÑù°É£¬ÏÂ´ÎÎÒÒ»¶¨¸ø×ã£¬Õâ´ÎÄú¾ÍĞĞ¸öºÃ£¬±ãÒËµã°É¡£¡±\n";
+                        msg += "$né“ï¼šâ€œæˆ‘æ€¥ä¿®ï¼Œé€™æ¨£å§ï¼Œä¸‹æ¬¡æˆ‘ä¸€å®šçµ¦è¶³ï¼Œé€™æ¬¡æ‚¨å°±è¡Œå€‹å¥½ï¼Œä¾¿å®œé»å§ã€‚â€\n";
                         break;
                 }
 
@@ -287,13 +287,13 @@ int do_repair(string arg)
                         cost = cost / 100 * 100;
                 else
                         cost = cost / 10 * 10;
-                msg += "$NËÊËÊ¼çµÀ£º¡°ËãÁË£¬ËãÁË£¬ÄÇ¾Í" +
+                msg += "$Nè³è³è‚©é“ï¼šâ€œç®—äº†ï¼Œç®—äº†ï¼Œé‚£å°±" +
                        MONEY_D->price_str(cost) +
-                      "ºÃÁË¡£¡±\n";
+                      "å¥½äº†ã€‚â€\n";
         }
 
         message_vision(msg, this_object(), me);
-        tell_object(me, YEL "Èç¹ûÄãµÄÈ·ÏëĞŞÀíÕâ¼şÎïÆ·£¬ÇëÔÙÊäÈëÒ»´ÎÕâÌõÃüÁî¡£\n" NOR);
+        tell_object(me, YEL "å¦‚æœä½ çš„ç¢ºæƒ³ä¿®ç†é€™ä»¶ç‰©å“ï¼Œè«‹å†è¼¸å…¥ä¸€æ¬¡é€™æ¢å‘½ä»¤ã€‚\n" NOR);
         set_temp("pending/repair/item", ob, me);
         set_temp("pending/repair/cost", cost, me);
         return 1;
@@ -307,10 +307,10 @@ string identify_mine_stone(object who)
                 return 0;
 
         if(!sizeof(inv = filter_array(all_inventory(who), (: $1->is_mine_stone() && !$1->query_check() :))))
-                return "ÄãÉíÉÏÃ»ÓĞĞèÒª¼ø¶¨µÄ¿óÊ¯¡£\n";
+                return "ä½ èº«ä¸Šæ²’æœ‰éœ€è¦é‘’å®šçš„ç¤¦çŸ³ã€‚\n";
 
         inv->set_check_flag(1);
-        return sprintf("¶¼¼ø¶¨ºÃÁË%s¡£\n",!random(3)?"£¬Ã»Ê²Ã´ÖµÇ®µÄ¶«Î÷":"");
+        return sprintf("éƒ½é‘’å®šå¥½äº†%sã€‚\n",!random(3)?"ï¼Œæ²’ä»€éº¼å€¼éŒ¢çš„æ±è¥¿":"");
 }
 
 int do_epurate(string arg)
@@ -320,12 +320,12 @@ int do_epurate(string arg)
         int ew, value, rtn;
 
         if(this_object()->is_busy())
-                return notify_fail(sprintf("%sËµµÀ£ºµÈ»á¶ù£¬ÕıÃ¦×ÅÄØ¡£\n", name()));
+                return notify_fail(sprintf("%sèªªé“ï¼šç­‰æœƒå…’ï¼Œæ­£å¿™è‘—å‘¢ã€‚\n", name()));
 
         if(!arg || !objectp(ob = present(arg, me)))
-                return notify_fail("ÄãÒªÌáÁ¶Ê²Ã´£¿\n");
+                return notify_fail("ä½ è¦æç…‰ä»€éº¼ï¼Ÿ\n");
 
-        if(ob->is_mine_stone())         // ÌáÁ¶¿óÊ¯
+        if(ob->is_mine_stone())         // æç…‰ç¤¦çŸ³
         {
                 if(!ob->query_check())
                         ob->set_check_flag(1);
@@ -333,13 +333,13 @@ int do_epurate(string arg)
                 if( !(mcs = ob->query_mine_class())
                 ||  !(cmcs = MINE_D->chinese_mine_class(mcs))
                 ||  (member_array(mcs, can_epurate) == -1) )
-                        return notify_fail(sprintf("%sÒ¡Ò¡Í·ËµµÀ£ºÕâÀï²»º¬ÈÎºÎ¿óÎï³É·İ¡£\n", name()));
+                        return notify_fail(sprintf("%sæ–æ–é ­èªªé“ï¼šé€™è£¡ä¸å«ä»»ä½•ç¤¦ç‰©æˆä»½ã€‚\n", name()));
 
                 if( (ew = ob->query_eff_weight()) < 1 )
-                        return notify_fail(sprintf("%sÒ¡Ò¡Í·ËµµÀ£ºÕâÀïº¬µÄ%sÌ«ÉÙÁË£¬Ã»·¨ÌáÁ¶¡£\n", name(), cmcs));
+                        return notify_fail(sprintf("%sæ–æ–é ­èªªé“ï¼šé€™è£¡å«çš„%så¤ªå°‘äº†ï¼Œæ²’æ³•æç…‰ã€‚\n", name(), cmcs));
 
                 if(!objectp(tg = MINE_D->query_mine_class_up_ob(mcs)))
-                        return notify_fail(sprintf("%sÒ¡Ò¡Í·ËµµÀ£ºÕâ¿é¿óÊ¯Ã»·¨ÌáÁ¶¡£\n", name()));
+                        return notify_fail(sprintf("%sæ–æ–é ­èªªé“ï¼šé€™å¡Šç¤¦çŸ³æ²’æ³•æç…‰ã€‚\n", name()));
 
                 value = MINE_D->query_mine_class_value(tg->query_mine_class()) * ew * 3 / 10;
                 if(value < 1)
@@ -348,17 +348,17 @@ int do_epurate(string arg)
                 if(!(rtn=MONEY_D->player_pay(me,value)) || (rtn == 2))
                 {
                         destruct(tg);
-                        return notify_fail(sprintf("%sËµµÀ£ºÌáÁ¶Õâ¿é¿óÊ¯ÀïµÄ%sĞèÒª%s¡£\n",
+                        return notify_fail(sprintf("%sèªªé“ï¼šæç…‰é€™å¡Šç¤¦çŸ³è£¡çš„%séœ€è¦%sã€‚\n",
                                 this_object()->name(), cmcs, MONEY_D->money_str(value)));
                 }
 
-                message_vision("$N³¯×Å$nµãµãÍ·ËµµÀ£ºµÈÒ»»á¶ù¡£\n", this_object(), me);
+                message_vision("$Næœè‘—$né»é»é ­èªªé“ï¼šç­‰ä¸€æœƒå…’ã€‚\n", this_object(), me);
 
                 call_out("epurate_it", 1+random(2), me, ob, tg);
                 return 1;
         }
 
-        else if(ob->is_iron_class_res())        // ¾«Á¶
+        else if(ob->is_iron_class_res())        // ç²¾ç…‰
         {
                 int upq;
 
@@ -366,14 +366,14 @@ int do_epurate(string arg)
                 ||  !(cmcs = MINE_D->chinese_mine_class(mcs))
                 ||  (member_array(mcs, can_epurate) == -1)
                 ||  !(upq = MINE_D->query_mine_class_up_quantity(mcs)) )
-                        return notify_fail(sprintf("%sÒ¡Ò¡Í·ËµµÀ£ºÕâ¶«Î÷Ã»·¨ÔÙ¾«Á¶ÁË¡£\n", this_object()->name()));
+                        return notify_fail(sprintf("%sæ–æ–é ­èªªé“ï¼šé€™æ±è¥¿æ²’æ³•å†ç²¾ç…‰äº†ã€‚\n", this_object()->name()));
 
                 if( (ew = ob->query_weight()/100) < upq )
-                        return notify_fail(sprintf("%sÒ¡Ò¡Í·ËµµÀ£º¶Ô%s¾«Á¶ÖÁÉÙĞèÒª %d Á½£¬Õâ¿é%s²»¹»¡£\n",
+                        return notify_fail(sprintf("%sæ–æ–é ­èªªé“ï¼šå°%sç²¾ç…‰è‡³å°‘éœ€è¦ %d å…©ï¼Œé€™å¡Š%sä¸å¤ ã€‚\n",
                                 this_object()->name(),cmcs, upq, cmcs));
 
                 if(!objectp(tg = MINE_D->query_mine_class_up_ob(mcs)))
-                        return notify_fail(sprintf("%sÒ¡Ò¡Í·ËµµÀ£ºÎÒÕâÃ»·¨¶Ô%s½øĞĞ¾«Á¶ÁË¡£\n", this_object()->name(), cmcs));
+                        return notify_fail(sprintf("%sæ–æ–é ­èªªé“ï¼šæˆ‘é€™æ²’æ³•å°%sé€²è¡Œç²¾ç…‰äº†ã€‚\n", this_object()->name(), cmcs));
 
                 ew /= upq;
                 value = (MINE_D->query_mine_class_value(tg->query_mine_class()) -
@@ -385,7 +385,7 @@ int do_epurate(string arg)
                 if(!(rtn=MONEY_D->player_pay(me,value)) || (rtn == 2))
                 {
                         destruct(tg);
-                        return notify_fail(sprintf("%sËµµÀ£º¶ÔÕâ¿é%s½øĞĞ¾«Á¶ĞèÒª%s¡£\n",
+                        return notify_fail(sprintf("%sèªªé“ï¼šå°é€™å¡Š%sé€²è¡Œç²¾ç…‰éœ€è¦%sã€‚\n",
                                 name(), cmcs, MONEY_D->money_str(value)));
                 }
 
@@ -394,16 +394,16 @@ int do_epurate(string arg)
                 if(!tg->move(me) && !tg->move(environment()))
                 {
                         destruct(tg);
-                        return notify_fail("Òì³£³¬ÖØ£¬ÏòÎ×Ê¦±¨¸æ°É¡£\n");
+                        return notify_fail("ç•°å¸¸è¶…é‡ï¼Œå‘å·«å¸«å ±å‘Šå§ã€‚\n");
                 }
 
                 rong_he(me, tg);
-                write(sprintf("%sµãµãÍ·ËµµÀ£ººÃÁË£¬ÄÃÈ¥°É¡£\n", name()));
+                write(sprintf("%sé»é»é ­èªªé“ï¼šå¥½äº†ï¼Œæ‹¿å»å§ã€‚\n", name()));
                 return 1;
         }
 
         else
-                return notify_fail(sprintf("%sÒ¡Ò¡Í·ËµµÀ£ºÕâ¶«Î÷Ã»·¨ÌáÁ¶¡£\n", name()));
+                return notify_fail(sprintf("%sæ–æ–é ­èªªé“ï¼šé€™æ±è¥¿æ²’æ³•æç…‰ã€‚\n", name()));
 }
 
 protected void epurate_it(object me, object ob, object tg)
@@ -431,7 +431,7 @@ protected void epurate_it(object me, object ob, object tg)
                 destruct(tg);
 
         rong_he(me, tg);
-        message_vision("$N³¯×Å$nµãµãÍ·ËµµÀ£ºÌáÁ¶ºÃÁË£¬ÄÃÈ¥°É¡£\n", this_object(), me);
+        message_vision("$Næœè‘—$né»é»é ­èªªé“ï¼šæç…‰å¥½äº†ï¼Œæ‹¿å»å§ã€‚\n", this_object(), me);
 }
 
 int do_ronghe(string arg)
@@ -442,10 +442,10 @@ int do_ronghe(string arg)
         || !sizeof(arg)
         || !objectp(ob = present(arg, me))
         || !ob->is_iron_class_res() )
-                return notify_fail("ÄãÒªÈÛºÏÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦ç†”åˆä»€éº¼ï¼Ÿ\n");
 
         rong_he(me, ob);
-        write(sprintf("%sµãµãÍ·ËµµÀ£ººÃÁË¡£\n", name()));
+        write(sprintf("%sé»é»é ­èªªé“ï¼šå¥½äº†ã€‚\n", name()));
         return 1;
 }
 

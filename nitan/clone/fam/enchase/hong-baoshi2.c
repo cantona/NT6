@@ -3,19 +3,19 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIR "ºì±¦Ê¯" NOR, ({"hong baoshi2", "baoshi2" }));
+        set_name(HIR "ç´…å¯¶çŸ³" NOR, ({"hong baoshi2", "baoshi2" }));
         set_weight(2000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIR "Ò»¿ÅºìÉ«ÉÁÁÁµÄ±¦Ê¯£¬ÄËÈË¼äÕæÆ·¡£\n" NOR);
-                set("unit", "¿Å");
+                set("long", HIR "ä¸€é¡†ç´…è‰²é–ƒäº®çš„å¯¶çŸ³ï¼Œä¹ƒäººé–“çœŸå“ã€‚\n" NOR);
+                set("unit", "é¡†");
                 set("value", 500000);
-                set("enchase/name", "ºì±¦Ê¯");
+                set("enchase/name", "ç´…å¯¶çŸ³");
                 set("enchase/point", 1);
                 set("enchase/type", "neck");
                                 set("enchase/cur_firm", 100);
-                                //set("nine_object", 1); // ¾Å¿×ÏâÇ¶ÎïÆ·±ê¼Ç
+                                //set("nine_object", 1); // ä¹å­”é‘²åµŒç‰©å“æ¨™è¨˜
                                 set("enchase/spe_data", ([]) );  
         }
         setup();

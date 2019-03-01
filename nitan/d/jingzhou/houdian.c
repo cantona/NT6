@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "���");
+        set("short", "後殿");
         set("long", @LONG
-�����ǹص����ĺ����жѷ����㡢������ǽ�ϵ�ᣲ���
-�������µġ�
+這裡是關帝廟的後殿，殿中堆放著香、燭等雜物。牆上的幔布看
+起來滿新的。
 LONG );
         set("exits", ([
                 "north" : __DIR__"houmen",

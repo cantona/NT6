@@ -3,19 +3,19 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIC "º£À¶Ê¯" NOR, ({"hailan shi", "hailan", "shi" }));
+        set_name(HIC "æµ·è—çŸ³" NOR, ({"hailan shi", "hailan", "shi" }));
         set_weight(900);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIC "¶«º£Ö®±¦£¬Ç§ÄêÄÑÇó¡£¾İËµÊÇ¶«º£ÁúÅ®¼Ş×±¡£\n" NOR);
-                set("unit", "¿é");
+                set("long", HIC "æ±æµ·ä¹‹å¯¶ï¼Œåƒå¹´é›£æ±‚ã€‚æ“šèªªæ˜¯æ±æµ·é¾å¥³å«å¦ã€‚\n" NOR);
+                set("unit", "å¡Š");
                 set("value", 5000);
-                set("enchase/name", "º£À¶Ê¯");
+                set("enchase/name", "æµ·è—çŸ³");
                 set("enchase/point", 1);
                 set("enchase/type", "att");
                                 set("enchase/cur_firm", 90);
-                                set("nine_object", 1); // ¾Å¿×ÏâÇ¶ÎïÆ·±ê¼Ç
+                                set("nine_object", 1); // ä¹å­”é‘²åµŒç‰©å“æ¨™è¨˜
                                 set("enchase/spe_data", ([]) );  
         }
         setup();

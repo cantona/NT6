@@ -6,11 +6,11 @@ inherit F_NOCLONE;
 
 void create()
 {
-            set_name(NOR + YEL "·ÉÍÕ½ğ¼×" NOR, ({ "feituo jinjia", "feituo", "jinjia", "armor", "jia", }) );
+            set_name(NOR + YEL "é£›é§é‡‘ç”²" NOR, ({ "feituo jinjia", "feituo", "jinjia", "armor", "jia", }) );
         set_weight(10000);
-        set("unit", "¸±");
-              set("long", YEL "ÕâÊÇÒ»¸±ÓÃ»Æ½ğ´òÔì¶ø³ÉµÄ»¤¼×£¬¼×ÉÏµñ¿Ì×Å±³Éú³á\n"
-                    "°òµÄÂæÍÕ¡£´«ËµÖĞÖ»ÓĞ¸ß²ı¹úÍõ²Å¿ÉÊ¹ÓÃ·ÉÍÕ±ê¼Ç¡£\n" NOR);
+        set("unit", "å‰¯");
+              set("long", YEL "é€™æ˜¯ä¸€å‰¯ç”¨é»ƒé‡‘æ‰“é€ è€Œæˆçš„è­·ç”²ï¼Œç”²ä¸Šé›•åˆ»è‘—èƒŒç”Ÿç¿…\n"
+                    "è†€çš„é§±é§ã€‚å‚³èªªä¸­åªæœ‰é«˜æ˜Œåœ‹ç‹æ‰å¯ä½¿ç”¨é£›é§æ¨™è¨˜ã€‚\n" NOR);
         set("material", "cloth");
         set("value",1000000);
         set("no_sell", 1);

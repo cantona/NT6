@@ -1,17 +1,17 @@
-// puliu.c ÊÂ¼þ£º»Æ¹ûÊ÷ÆÙ²¼
+// puliu.c äº‹ä»¶ï¼šé»ƒæžœæ¨¹ç€‘å¸ƒ
 
 #include <ansi.h>
 
 void create() { seteuid(getuid()); }
 
-// ¿ªÊ¼´´½¨ÊÂ¼þ
+// é–‹å§‹å‰µå»ºäº‹ä»¶
 void create_event()
 {
-        // Ã÷Ìì5µãÖÓÆÙÁ÷×î¼±
+        // æ˜Žå¤©5é»žé˜ç€‘æµæœ€æ€¥
         EVENT_D->at_after(0, 0, 1, -5);
 }
 
-// ½±Àø
+// çŽå‹µ
 private void do_bonus(object room)
 {
         object *obs;
@@ -28,10 +28,10 @@ private void do_bonus(object room)
         r = random(365);
         if (r == 0)
         { 
-                msg = HIR "Ö»ÌýºäÂ¡Â¡ÉùÒô´ó×ö£¬·¢¶úÓûñù£¬ÁîÈËÐÄÉñ¾ãÒ¡£¡ÄãÌ§Í·¿´È¥£¬Ö»¼û\n"
-                          "³¿êØÖÐ»Æ¹ûÊ÷ÆÙ²¼ÁýÕÖ×Å²ã²ãÎíÆø£¬·ÖÍâÒªÈË¡£Ë®Á÷·ÉÐº£¬ÆøÊÆ¾ªÈË£¡\n" NOR;
-                msg += HIG "ÄãÍû×ÅÍÄ¼±µÄÆÙ²¼·ÉÁ·£¬ÎªÕâÊÀ¼äÃÀ¾°¾ªÌ¾²»ÒÑ£¬´Ó"
-                           "ÖÐ²»½ûÁìÎòµ½ÁËÎäÑ§µÄµÀÀí¡£\n" NOR; 
+                msg = HIR "åªè½è½Ÿéš†éš†è²éŸ³å¤§åšï¼Œç™¼è€³æ¬²èµï¼Œä»¤äººå¿ƒç¥žä¿±æ–ï¼ä½ æŠ¬é ­çœ‹åŽ»ï¼Œåªè¦‹\n"
+                          "æ™¨æ›¦ä¸­é»ƒæžœæ¨¹ç€‘å¸ƒç± ç½©è‘—å±¤å±¤éœ§æ°£ï¼Œåˆ†å¤–è¦äººã€‚æ°´æµé£›ç€‰ï¼Œæ°£å‹¢é©šäººï¼\n" NOR;
+                msg += HIG "ä½ æœ›è‘—æ¹æ€¥çš„ç€‘å¸ƒé£›ç·´ï¼Œç‚ºé€™ä¸–é–“ç¾Žæ™¯é©šå˜†ä¸å·²ï¼Œå¾ž"
+                           "ä¸­ä¸ç¦é ˜æ‚Ÿåˆ°äº†æ­¦å­¸çš„é“ç†ã€‚\n" NOR; 
 
                 for( int i=0; i<sizeof(obs); i++ )
                 {
@@ -41,31 +41,31 @@ private void do_bonus(object room)
 
                 message("vision", msg, obs);
 
-                // ¼ÇÂ¼ÊÂ¼þ
-                MAP_D->record_rumor(obs, "»Æ¹ûÊ÷¼¤Á÷", this_object());
+                // è¨˜éŒ„äº‹ä»¶
+                MAP_D->record_rumor(obs, "é»ƒæžœæ¨¹æ¿€æµ", this_object());
 
                 CHANNEL_D->do_channel(this_object(), "rumor",
-                                      "ÌýËµ»Æ¹ûÊ÷¼¤Á÷ÅìÅÈ£¬Ææ¾°·Ç·²£¬ÎÞÊýÓÎÈËÌ¾ÏÛ²»ÒÑ¡£");
+                                      "è½èªªé»ƒæžœæ¨¹æ¿€æµæ¾Žæ¹ƒï¼Œå¥‡æ™¯éžå‡¡ï¼Œç„¡æ•¸éŠäººå˜†ç¾¨ä¸å·²ã€‚");
         } else 
         if (r < 250) 
         {
-                msg = HIY "Ò»ÕóºäÂ¡ºäÂ¡µÄÉùÒô´«À´£¬ÄãÌ§Í·Ò»¿´£¬Ö»¼û³¿êØÖÐÆÙ²¼ÌÚÆð²ã²ãÎíÆø¡£\n" NOR;
+                msg = HIY "ä¸€é™£è½Ÿéš†è½Ÿéš†çš„è²éŸ³å‚³ä¾†ï¼Œä½ æŠ¬é ­ä¸€çœ‹ï¼Œåªè¦‹æ™¨æ›¦ä¸­ç€‘å¸ƒé¨°èµ·å±¤å±¤éœ§æ°£ã€‚\n" NOR;
                 switch (random(3)) 
                 { 
                 case 0: 
-                        msg += HIY "¿´×ÅÕâ×³ÀöµÄÆÙÁ÷£¬Äã²»½û¸ÐÌ¾£¬ÕýËùÎ½¡¸·ÉÁ÷Ö±"
-                                    "ÏÂÈýÇ§³ß£¬ÒÉÊÇÒøºÓÂä¾ÅÌì¡¹°¡¡£\n" NOR; 
+                        msg += HIY "çœ‹è‘—é€™å£¯éº—çš„ç€‘æµï¼Œä½ ä¸ç¦æ„Ÿå˜†ï¼Œæ­£æ‰€è¬‚ã€Œé£›æµç›´"
+                                    "ä¸‹ä¸‰åƒå°ºï¼Œç–‘æ˜¯éŠ€æ²³è½ä¹å¤©ã€å•Šã€‚\n" NOR; 
                         break; 
                 case 1: 
-                        msg += HIY "ÆÙÁ÷¾ÍÏñÒ»Ï¯µ¹¹ÒµÄ°×Á±£¬ÆøÊÆÈçºç£¬ÌìµØ¶¼²»½ûÎªÖ®Ê§É«¡£\n" NOR; 
+                        msg += HIY "ç€‘æµå°±åƒä¸€å¸­å€’æŽ›çš„ç™½ç°¾ï¼Œæ°£å‹¢å¦‚è™¹ï¼Œå¤©åœ°éƒ½ä¸ç¦ç‚ºä¹‹å¤±è‰²ã€‚\n" NOR; 
                         break; 
                 default: 
 
-                        msg += HIY "ÆÙÁ÷Ö±ÈçË®ÒøÐ¹µØÒ»°ã£¬Ë®»¨ËÄ½¦¡£\n" NOR; 
+                        msg += HIY "ç€‘æµç›´å¦‚æ°´éŠ€æ³„åœ°ä¸€èˆ¬ï¼Œæ°´èŠ±å››æ¿ºã€‚\n" NOR; 
                         break; 
                 } 
-                msg += HIG "¹ÛÉÍ×Å·ÉÁ÷Ö±ÏÂµÄË®ÆÙ£¬Äã²»ÓÉµÃ¸ÐÌ¾×ÔÈ»Ôì»¯µÄÆæÃî£¬Òþ"
-                           "ÒþÈ»¶ÔÎäÑ§Ò²ÓÐÁËÒ»µãÁì»á¡£\n" NOR; 
+                msg += HIG "è§€è³žè‘—é£›æµç›´ä¸‹çš„æ°´ç€‘ï¼Œä½ ä¸ç”±å¾—æ„Ÿå˜†è‡ªç„¶é€ åŒ–çš„å¥‡å¦™ï¼Œéš±"
+                           "éš±ç„¶å°æ­¦å­¸ä¹Ÿæœ‰äº†ä¸€é»žé ˜æœƒã€‚\n" NOR; 
 
                 for( int i=0; i<sizeof(obs); i++ )
                 {
@@ -75,48 +75,48 @@ private void do_bonus(object room)
  
                 message("vision", msg, obs);
 
-                // ¼ÇÂ¼ÊÂ¼þ
-                MAP_D->record_rumor(obs, "»Æ¹ûÊ÷ÆÙ²¼", this_object());
+                // è¨˜éŒ„äº‹ä»¶
+                MAP_D->record_rumor(obs, "é»ƒæžœæ¨¹ç€‘å¸ƒ", this_object());
         } else
         {
                 switch (random(3))
                 {
                 case 0:
-                        msg = WHT "ÆÙÁ÷½¥½¥»ºÁËÏÂÀ´¡£\n" NOR;
+                        msg = WHT "ç€‘æµæ¼¸æ¼¸ç·©äº†ä¸‹ä¾†ã€‚\n" NOR;
                         break;
                 case 1:
-                        msg = WHT "ÆÙÁ÷×ÜÊÇ²»¼ûÓÐÔöÇ¿µÄÇ÷ÊÆ¡£\n" NOR;
+                        msg = WHT "ç€‘æµç¸½æ˜¯ä¸è¦‹æœ‰å¢žå¼·çš„è¶¨å‹¢ã€‚\n" NOR;
                         break;
                 default:
-                        msg = WHT "ÆÙÁ÷ÓÐÈçÐ¡ÇÅÁ÷Ë®£¬¶£¶£ßËßË£¬ÀëÄãËùÆÚÍûµÄÏà²îÉõÔ¶¡£\n" NOR;
+                        msg = WHT "ç€‘æµæœ‰å¦‚å°æ©‹æµæ°´ï¼Œå®å®å’šå’šï¼Œé›¢ä½ æ‰€æœŸæœ›çš„ç›¸å·®ç”šé ã€‚\n" NOR;
                         break;
                 }
-                msg += HIG "ÄãÐÄÖÐ´ó¸ÐÊ§Íû¡£\n" NOR;
+                msg += HIG "ä½ å¿ƒä¸­å¤§æ„Ÿå¤±æœ›ã€‚\n" NOR;
 
                 message("vision", msg, obs);
         }
 } 
  
-// ÊÂ¼þ´¥·¢ 
+// äº‹ä»¶è§¸ç™¼ 
 void trigger_event() 
 { 
         object room; 
-        // »Æ¹ûÊ÷ÆÙÁ÷ 
+        // é»ƒæžœæ¨¹ç€‘æµ 
         if (objectp(room = find_object("/d/dali/huanggs"))) 
                 do_bonus(room); 
  
         create_event(); 
 } 
 
-// ÃèÊö 
+// æè¿° 
 string query_detail(string topic) 
 { 
         switch (topic) 
         { 
-        case "»Æ¹ûÊ÷¼¤Á÷": 
-                return "»Æ¹ûÊ÷ÆÙ²¼Ë®Á÷ÍÄ¼±£¬Ê±ÓÐ¼¤Á÷ÅìÅÈ£¬ÄËÊÇº±¼ûµÄ¾°¹Û¡£\n"; 
+        case "é»ƒæžœæ¨¹æ¿€æµ": 
+                return "é»ƒæžœæ¨¹ç€‘å¸ƒæ°´æµæ¹æ€¥ï¼Œæ™‚æœ‰æ¿€æµæ¾Žæ¹ƒï¼Œä¹ƒæ˜¯ç½•è¦‹çš„æ™¯è§€ã€‚\n"; 
  
-        case "»Æ¹ûÊ÷ÆÙ²¼": 
-                return "´óÀíµÄ»Æ¹ûÊ÷ÆÙ²¼×ÔÈ»·ç¹âÃÔÈË£¬ÆÙÁ÷ÃÀÀö×³¹Û¡£\n"; 
+        case "é»ƒæžœæ¨¹ç€‘å¸ƒ": 
+                return "å¤§ç†çš„é»ƒæžœæ¨¹ç€‘å¸ƒè‡ªç„¶é¢¨å…‰è¿·äººï¼Œç€‘æµç¾Žéº—å£¯è§€ã€‚\n"; 
         }
 } 

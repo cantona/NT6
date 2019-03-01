@@ -1,38 +1,38 @@
 // Last Modified by sir on 4.10.2002
-// Òª¿ª·¢Ä³¸ö³ÇÊĞ£¬±ØĞëÊ¥Ö¼ÈÎÃü¹ÙÖ°¡£¹ÙÀô
-// ³ıÁËÖª¸®Íâ£¬±ğµÄ¸±¹ÙÖ»ÄÜ¿ª·¢Ä³²¿·ÖÖ¸Êı¡£
-// ¿ÉÒÔÈÎÃüÒ»Ğ©Ñ²¸§£¬×¨ÃÅÀ´Ìô´Ì¡£½µµÍÖ¸Êı¡£
-// ×ÔÈ»ÔÖº¦£¬ÆÆ»µ³ÇÊĞÖ¸Êı¡£
-// topten¶¨ÆÚ³¯Í¢À´¸öÆÀ¼Û¡£
-// title¼¤ÀøÍæ¼Ò¡£
-// city : ×ÛºÏÆÀ¼Û    city_level  ¾ŞĞÍ¶¼ÊĞ   ´óĞÍ¶¼ÊĞ  ÖĞĞÍ¶¼ÊĞ  Ğ¡ĞÍ¶¼ÊĞ
-//         ÈË¿Ú       people       800Íò      500Íò    300Íò     100Íò
-//                   ÎåÏîÖ¸Êı×î´ó   8000       5000     3000      1000
-//         Å©Òµ       farming     Á¦Á¿ + ÄÍÁ¦   Ôö¼ÓÈË¿Ú ¼õµÍÃñÖÒ
-//         ÖÎ°²       peace       Éí·¨ + µ¨Ê¶   Ôö¼ÓÃñÖÒ 
-//         Ë®Àû       water       ¸ù¹Ç + ¶¨Á¦   Ôö¼ÓÃñÖÒ 
-//         ÉÌÒµ       business    ¸£Ôµ + ÈİÃ²   Ôö¼ÓÈË¿Ú ¼õµÍÃñÖÒ
-//         ¼¼Êõ       technology  ÎòĞÔ + ÁéĞÔ   Ôö¼Ó¿ª·¢ËÙ¶È
-//         Ë°ÂÊ       tax_rate    0-100 Ö®¼ä    
-//                    0-15  Ö®¼ä   ·Ç³£ÂúÒâ Ôö¼ÓÈË¿Ú Ôö¼ÓÃñÖÒ
-//                    15-30 Ö®¼ä    ÂúÒâ    Ôö¼ÓÈË¿Ú ÃñÖÒ²»±ä
-//                    30-40 Ö®¼ä   Î¢ÓĞÔ¹ÑÔ ÈË¿Ú²»±ä  ¼õµÍÃñÖÒ Å©Òµ,ÖÎ°²ÊÜµ½ÆÆ»µ 
-//                    40-60 Ö®¼ä   Ô¹ÉùÔØµÀ  ÈË¿Ú¼õÉÙ ¼õµÍÃñÖÒ Å©Òµ,ÖÎ°²,ÉÌÒµÊÜµ½ÆÆ»µ 
-//                    60-80 Ö®¼ä   ÃñÔ¹·ĞÌÚ  ÈË¿Ú´ó¼õ ÃñÖÒ¿ñ½µ ÎåÏîÖ¸Êı¶¼ÊÜµ½ÆÆ»µ
-//                    80-100Ö®¼ä   Á÷ÃñËÄÆğ  ÈËĞÄ²»¹Å ÎåÏîÖ¸Êı¶¼¿ñ¼õ 
-//         ÃñÖÒ       fealty      0-100Ö®¼ä
-//    ÈİÃ² per  Á¦Á¿ str Éí·¨ dex ¸£Ôµ kar ÄÍÁ¦ sta 
-//    ÎòĞÔ int  µ¨Ê¶ cor ¶¨Á¦ cps ¸ù¹Ç con ÁéĞÔ spi
+// è¦é–‹ç™¼æŸå€‹åŸå¸‚ï¼Œå¿…é ˆè–æ—¨ä»»å‘½å®˜è·ã€‚å®˜å
+// é™¤äº†çŸ¥åºœå¤–ï¼Œåˆ¥çš„å‰¯å®˜åªèƒ½é–‹ç™¼æŸéƒ¨åˆ†æŒ‡æ•¸ã€‚
+// å¯ä»¥ä»»å‘½ä¸€äº›å·¡æ’«ï¼Œå°ˆé–€ä¾†æŒ‘åˆºã€‚é™ä½æŒ‡æ•¸ã€‚
+// è‡ªç„¶ç½å®³ï¼Œç ´å£åŸå¸‚æŒ‡æ•¸ã€‚
+// toptenå®šæœŸæœå»·ä¾†å€‹è©•åƒ¹ã€‚
+// titleæ¿€å‹µç©å®¶ã€‚
+// city : ç¶œåˆè©•åƒ¹    city_level  å·¨å‹éƒ½å¸‚   å¤§å‹éƒ½å¸‚  ä¸­å‹éƒ½å¸‚  å°å‹éƒ½å¸‚
+//         äººå£       people       800è¬      500è¬    300è¬     100è¬
+//                   äº”é …æŒ‡æ•¸æœ€å¤§   8000       5000     3000      1000
+//         è¾²æ¥­       farming     åŠ›é‡ + è€åŠ›   å¢åŠ äººå£ æ¸›ä½æ°‘å¿ 
+//         æ²»å®‰       peace       èº«æ³• + è†½è­˜   å¢åŠ æ°‘å¿  
+//         æ°´åˆ©       water       æ ¹éª¨ + å®šåŠ›   å¢åŠ æ°‘å¿  
+//         å•†æ¥­       business    ç¦ç·£ + å®¹è²Œ   å¢åŠ äººå£ æ¸›ä½æ°‘å¿ 
+//         æŠ€è¡“       technology  æ‚Ÿæ€§ + éˆæ€§   å¢åŠ é–‹ç™¼é€Ÿåº¦
+//         ç¨…ç‡       tax_rate    0-100 ä¹‹é–“    
+//                    0-15  ä¹‹é–“   éå¸¸æ»¿æ„ å¢åŠ äººå£ å¢åŠ æ°‘å¿ 
+//                    15-30 ä¹‹é–“    æ»¿æ„    å¢åŠ äººå£ æ°‘å¿ ä¸è®Š
+//                    30-40 ä¹‹é–“   å¾®æœ‰æ€¨è¨€ äººå£ä¸è®Š  æ¸›ä½æ°‘å¿  è¾²æ¥­,æ²»å®‰å—åˆ°ç ´å£ 
+//                    40-60 ä¹‹é–“   æ€¨è²è¼‰é“  äººå£æ¸›å°‘ æ¸›ä½æ°‘å¿  è¾²æ¥­,æ²»å®‰,å•†æ¥­å—åˆ°ç ´å£ 
+//                    60-80 ä¹‹é–“   æ°‘æ€¨æ²¸é¨°  äººå£å¤§æ¸› æ°‘å¿ ç‹‚é™ äº”é …æŒ‡æ•¸éƒ½å—åˆ°ç ´å£
+//                    80-100ä¹‹é–“   æµæ°‘å››èµ·  äººå¿ƒä¸å¤ äº”é …æŒ‡æ•¸éƒ½ç‹‚æ¸› 
+//         æ°‘å¿        fealty      0-100ä¹‹é–“
+//    å®¹è²Œ per  åŠ›é‡ str èº«æ³• dex ç¦ç·£ kar è€åŠ› sta 
+//    æ‚Ÿæ€§ int  è†½è­˜ cor å®šåŠ› cps æ ¹éª¨ con éˆæ€§ spi
 
 #ifndef CITYDATA
-#define CITYDATA "/data/city/"  //ÎÄ¼ş´æ·ÅµØÖ·
+#define CITYDATA "/data/city/"  //æ–‡ä»¶å­˜æ”¾åœ°å€
 #endif
-#define NAMEOFCITY "yangzhou"  //Òª¿ª·¢µÄ³ÇÊĞÃû
-#define CNAMEOFCITY "ÑïÖİ"     //ÖĞÎÄ³ÇÊĞÃû
+#define NAMEOFCITY "yangzhou"  //è¦é–‹ç™¼çš„åŸå¸‚å
+#define CNAMEOFCITY "æšå·"     //ä¸­æ–‡åŸå¸‚å
 #define FILE_PATH CITYDATA + NAMEOFCITY
-#define LEVEL_OF_CITY "´óĞÍ¶¼ÊĞ"  //×ÛºÏÆÀ¼Û
-#define LEVEL 500   //³ÇÊĞµÄÆğÊ¼¹æÄ£
-#define MAX_LEVEL 800  //³ÇÊĞµÄ×î´ó¹æÄ£
+#define LEVEL_OF_CITY "å¤§å‹éƒ½å¸‚"  //ç¶œåˆè©•åƒ¹
+#define LEVEL 500   //åŸå¸‚çš„èµ·å§‹è¦æ¨¡
+#define MAX_LEVEL 800  //åŸå¸‚çš„æœ€å¤§è¦æ¨¡
 
 #include <ansi.h>
 inherit ITEM;
@@ -41,27 +41,27 @@ inherit F_SAVE;
 int do_kaifa(string);
 
 void create()
-{        set_name(HIY"¹Ù¸®Í¨¸æ"NOR, ({ "guanfu tonggao", "tonggao"}) );
-        set("long","ÕâÊÇÒ»ÕÅ¼ÇÂ¼"+CNAMEOFCITY+"¿ª·¢Çé¿öµÄ¹Ù¸®Í¨¸æ¡£\n
-Ïë²é¿´Ä¿Ç°µÄÇé¿ö£¬ÇëÏÈ help ms_city ÁË½â¾ßÌå²Ù×÷¡£\n");
-        set("LAST_KAIFA_PLAYER","none of us"); //×îºó¿ª·¢¹ı³ÇÊĞµÄÍæ¼Ò
-        set("city_name", NAMEOFCITY); //³ÇÊĞÃû
-        set("city_level", LEVEL_OF_CITY);// ×ÛºÏÆÀ¼Û
-        set("fealty", LEVEL/10);  // ÃñÖÒ
-        set("tax_rate",LEVEL/10); // Ë°ÂÊ
-        set("people", LEVEL*10000);        // ÈË¿Ú
-        set("water", LEVEL*10); // Ë®Àû 
-        set("water_pro", LEVEL*2); // Ë®ÀûÊìÁ·¶È  
-        set("peace", LEVEL*10);  // ÖÎ°²
+{        set_name(HIY"å®˜åºœé€šå‘Š"NOR, ({ "guanfu tonggao", "tonggao"}) );
+        set("long","é€™æ˜¯ä¸€å¼µè¨˜éŒ„"+CNAMEOFCITY+"é–‹ç™¼æƒ…æ³çš„å®˜åºœé€šå‘Šã€‚\n
+æƒ³æŸ¥çœ‹ç›®å‰çš„æƒ…æ³ï¼Œè«‹å…ˆ help ms_city äº†è§£å…·é«”æ“ä½œã€‚\n");
+        set("LAST_KAIFA_PLAYER","none of us"); //æœ€å¾Œé–‹ç™¼éåŸå¸‚çš„ç©å®¶
+        set("city_name", NAMEOFCITY); //åŸå¸‚å
+        set("city_level", LEVEL_OF_CITY);// ç¶œåˆè©•åƒ¹
+        set("fealty", LEVEL/10);  // æ°‘å¿ 
+        set("tax_rate",LEVEL/10); // ç¨…ç‡
+        set("people", LEVEL*10000);        // äººå£
+        set("water", LEVEL*10); // æ°´åˆ© 
+        set("water_pro", LEVEL*2); // æ°´åˆ©ç†Ÿç·´åº¦  
+        set("peace", LEVEL*10);  // æ²»å®‰
         set("peace_pro", LEVEL*2);
-        set("farming", LEVEL*10); // ³Ç·À
+        set("farming", LEVEL*10); // åŸé˜²
         set("farming_pro", LEVEL*2);
-        set("business", LEVEL*10); // ÉÌÒµ
+        set("business", LEVEL*10); // å•†æ¥­
         set("business_pro", LEVEL*2);
-        set("technology", LEVEL*10); // ¼¼Êõ
+        set("technology", LEVEL*10); // æŠ€è¡“
         set("technology_pro", LEVEL*2);
         set("no_get", 1);
-        set("unit", "ÕÅ");
+        set("unit", "å¼µ");
         restore();
 }
         
@@ -86,23 +86,23 @@ string long()
         string msg;
         object ob;
         ob=this_object();
-        msg=HIC"Õâ¸öÒ»ÕÅ¹Ù¸®Í¨¸æÉÏÃæ½éÉÜÁË±¾³ÇµÄ¿ª·¢Çé¿ö: \n"+
-        HIY"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n"NOR;
-        msg+=sprintf(HIC"\n ³ÇÊĞ:" HIY "%8s" NOR HIC"\t\t³ÇÊĞ¹æÄ£: " HIY "%8s\n" NOR,
+        msg=HIC"é€™å€‹ä¸€å¼µå®˜åºœé€šå‘Šä¸Šé¢ä»‹ç´¹äº†æœ¬åŸçš„é–‹ç™¼æƒ…æ³: \n"+
+        HIY"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n"NOR;
+        msg+=sprintf(HIC"\n åŸå¸‚:" HIY "%8s" NOR HIC"\t\tåŸå¸‚è¦æ¨¡: " HIY "%8s\n" NOR,
         CNAMEOFCITY,query("city_level", ob),);
-        msg+=sprintf(HIC"\n Ë°ÂÊ:  " HIW "%5d" NOR HIC"\t\t³ÇÖĞÈË¿Ú: " HIG "%8d\n" NOR,
+        msg+=sprintf(HIC"\n ç¨…ç‡:  " HIW "%5d" NOR HIC"\t\tåŸä¸­äººå£: " HIG "%8d\n" NOR,
         query("tax_rate", ob),query("people", ob),);
-        msg+=sprintf(HIC"\n ÖÎ°²: " HIW "%8d" NOR HIC"\t\tÖÎ°²Ö¸Êı: " HIG "%8d\n" NOR,
+        msg+=sprintf(HIC"\n æ²»å®‰: " HIW "%8d" NOR HIC"\t\tæ²»å®‰æŒ‡æ•¸: " HIG "%8d\n" NOR,
         query("peace", ob),query("peace_pro", ob),);
-        msg+=sprintf(HIC"\n ÉÌÒµ: " HIW "%8d" NOR HIC"\t\tÉÌÒµÖ¸Êı: " HIG "%8d\n" NOR,
+        msg+=sprintf(HIC"\n å•†æ¥­: " HIW "%8d" NOR HIC"\t\tå•†æ¥­æŒ‡æ•¸: " HIG "%8d\n" NOR,
         query("business", ob),query("business_pro", ob),);
-        msg+=sprintf(HIC"\n Å©Òµ: " HIW "%8d" NOR HIC"\t\tÅ©ÒµÖ¸Êı: " HIG "%8d\n" NOR,
+        msg+=sprintf(HIC"\n è¾²æ¥­: " HIW "%8d" NOR HIC"\t\tè¾²æ¥­æŒ‡æ•¸: " HIG "%8d\n" NOR,
         query("farming", ob),query("farming_pro", ob),);
-        msg+=sprintf(HIC"\n Ë®Àû: " HIW "%8d" NOR HIC"\t\tË®ÀûÖ¸Êı: " HIG "%8d\n" NOR,
+        msg+=sprintf(HIC"\n æ°´åˆ©: " HIW "%8d" NOR HIC"\t\tæ°´åˆ©æŒ‡æ•¸: " HIG "%8d\n" NOR,
         query("water", ob),query("water_pro", ob),);
-        msg+=sprintf(HIC"\n ¼¼Êõ: " HIW "%8d" NOR HIC"\t\t¼¼ÊõÖ¸Êı: " HIG "%8d\n" NOR,
+        msg+=sprintf(HIC"\n æŠ€è¡“: " HIW "%8d" NOR HIC"\t\tæŠ€è¡“æŒ‡æ•¸: " HIG "%8d\n" NOR,
         query("technology", ob),query("technology_pro", ob),);
-        msg+=HIY"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n"NOR;
+        msg+=HIY"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n"NOR;
         return msg;
 }
 
@@ -123,31 +123,31 @@ int do_kaifa(string arg)
         ob_technology=query("technology", ob)/100;
 /*
         if( !query("CITY_KAIFA", me)) )
-                return notify_fail("ÄãÃ»ÓĞµÃµ½¿µÇ×ÍõµÄĞí¿É£¬ÎŞ·¨Ğ­Öú¿ª·¢³¯Í¢ËùÊôµØÅÌ¡£\n");
+                return notify_fail("ä½ æ²’æœ‰å¾—åˆ°åº·è¦ªç‹çš„è¨±å¯ï¼Œç„¡æ³•å”åŠ©é–‹ç™¼æœå»·æ‰€å±¬åœ°ç›¤ã€‚\n");
         if( query("CITY_KAIFA/name", me) != query("city_name", ob) )
-                return notify_fail("ÄãÒªĞ­Öú¿ª·¢µÄ³ÇÊĞºÃÏó²»ÊÇÕâÀï°É£¿\n");
+                return notify_fail("ä½ è¦å”åŠ©é–‹ç™¼çš„åŸå¸‚å¥½è±¡ä¸æ˜¯é€™è£¡å§ï¼Ÿ\n");
 */
-//½­ºşÔÄÀúĞ¡ÓÚ1000¾Í²»ÈÃ¼ÌĞø¿ª·¢        
+//æ±Ÿæ¹–é–±æ­·å°äº1000å°±ä¸è®“ç¹¼çºŒé–‹ç™¼        
          
         if (me_score<1000)
-                return notify_fail("ÄãµÄ½­ºşÔÄÀú²»¹»£¬»¹ÊÇ¶à»ıÀÛµãÔÄÀúÔÙÀ´°É!\n");
-//´æ¿îĞ¡ÓÚ100 gold ¾Í²»ÈÃ¼ÌĞø¿ª·¢
+                return notify_fail("ä½ çš„æ±Ÿæ¹–é–±æ­·ä¸å¤ ï¼Œé‚„æ˜¯å¤šç©ç´¯é»é–±æ­·å†ä¾†å§!\n");
+//å­˜æ¬¾å°äº100 gold å°±ä¸è®“ç¹¼çºŒé–‹ç™¼
         if(me_balance<1000000)
-                return notify_fail("ÄãµÄ´æ¿î²»¹»£¬ÎŞ·¨Âú×ã¿ª·¢ËùĞèÒªµÄ×Ê½ğÒªÇó!\n");
+                return notify_fail("ä½ çš„å­˜æ¬¾ä¸å¤ ï¼Œç„¡æ³•æ»¿è¶³é–‹ç™¼æ‰€éœ€è¦çš„è³‡é‡‘è¦æ±‚!\n");
         if( query_temp("busy", ob) )
-                return notify_fail("ÓĞÈË¸ÕÏÂ¹ı¿ª·¢ÃüÁî£¬ÉÔºò........\n");
-        if( !arg || ( arg!= "Ë®Àû" && arg!="Å©Òµ"
-                  && arg!="ÖÎ°²" && arg!="ÉÌÒµ" && arg!="¼¼Êõ"))
-                return notify_fail("ÄãÒª¿ª·¢Ê²Ã´£¿\n"); 
-//   ÉÌÒµ business    ¸£Ôµ + ÈİÃ² + ±¾³Ç¼¼ÊõÖµ  Ôö¼ÓÈË¿Ú ¼õµÍÃñÖÒ
-        if( arg=="ÉÌÒµ")
+                return notify_fail("æœ‰äººå‰›ä¸‹éé–‹ç™¼å‘½ä»¤ï¼Œç¨å€™........\n");
+        if( !arg || ( arg!= "æ°´åˆ©" && arg!="è¾²æ¥­"
+                  && arg!="æ²»å®‰" && arg!="å•†æ¥­" && arg!="æŠ€è¡“"))
+                return notify_fail("ä½ è¦é–‹ç™¼ä»€éº¼ï¼Ÿ\n"); 
+//   å•†æ¥­ business    ç¦ç·£ + å®¹è²Œ + æœ¬åŸæŠ€è¡“å€¼  å¢åŠ äººå£ æ¸›ä½æ°‘å¿ 
+        if( arg=="å•†æ¥­")
            { 
-              tell_object(me,"ÄãË¼ÂÇÔÙÈı£¬¾ö¶¨¿ªÊ¼Ğ­Öú¹Ù¸®¿ª·¢"+CNAMEOFCITY+"µÄÉÌÒµ£¬ÇëµÈºò½á¹û°É£¡\n");
+              tell_object(me,"ä½ æ€æ…®å†ä¸‰ï¼Œæ±ºå®šé–‹å§‹å”åŠ©å®˜åºœé–‹ç™¼"+CNAMEOFCITY+"çš„å•†æ¥­ï¼Œè«‹ç­‰å€™çµæœå§ï¼\n");
               pro_num=query("business_pro", ob);
               lvl_num=query("business", ob);
               if(lvl_num >= MAX_LEVEL*10)
                 { 
-                 return notify_fail(CNAMEOFCITY+"µÄÉÌÒµÒÑ¾­×ã¹»·¢´ïÁË£¬Äã¿ÉÒÔÊÔ×ÅÈ¥¿ª·¢ÆäËûÏîÄ¿ÁË£¡\n"); 
+                 return notify_fail(CNAMEOFCITY+"çš„å•†æ¥­å·²ç¶“è¶³å¤ ç™¼é”äº†ï¼Œä½ å¯ä»¥è©¦è‘—å»é–‹ç™¼å…¶ä»–é …ç›®äº†ï¼\n"); 
                 }
               else
               { 
@@ -158,7 +158,7 @@ int do_kaifa(string arg)
                     {
                      lvl_num+=1;
                      pro_num = pro_num - lvl_num;
-                     message("channel:sys",HIY"¡¾·çÎÅ¡¿"HIG+CNAMEOFCITY+"µÄÉÌÒµÔÚ"+query("name", me)+"µÄĞ­Öú¿ª·¢ÏÂ±äµÄÔ½À´Ô½·±»ªÁË£¡\n"NOR,users());
+                     message("channel:sys",HIY"ã€é¢¨èã€‘"HIG+CNAMEOFCITY+"çš„å•†æ¥­åœ¨"+query("name", me)+"çš„å”åŠ©é–‹ç™¼ä¸‹è®Šçš„è¶Šä¾†è¶Šç¹è¯äº†ï¼\n"NOR,users());
                      ob_people=ob_people+lvl_num*(1+random(3));
                      if(ob_fealty>=5) ob_fealty-=random(5);
                      }
@@ -166,18 +166,18 @@ int do_kaifa(string arg)
 //                 ob->set("fealty",ob_fealty);
                  set("business_pro", pro_num, ob);
                  set("business", lvl_num, ob);
-                 message_vision( HIW"³ÇÊĞµÄÉÌÒµÖ¸ÊıÌá¸ßÁË¡£\n"NOR,me);
+                 message_vision( HIW"åŸå¸‚çš„å•†æ¥­æŒ‡æ•¸æé«˜äº†ã€‚\n"NOR,me);
                 } 
            }
-//    Å©Òµ       farming     Á¦Á¿ + ÄÍÁ¦+ ±¾³Ç¼¼ÊõÖµ   Ôö¼ÓÈË¿Ú ¼õµÍÃñÖÒ
-        if( arg=="Å©Òµ")
+//    è¾²æ¥­       farming     åŠ›é‡ + è€åŠ›+ æœ¬åŸæŠ€è¡“å€¼   å¢åŠ äººå£ æ¸›ä½æ°‘å¿ 
+        if( arg=="è¾²æ¥­")
            { 
-              tell_object(me,"ÄãË¼ÂÇÔÙÈı£¬¾ö¶¨¿ªÊ¼Ğ­Öú¹Ù¸®¿ª·¢"+CNAMEOFCITY+"µÄÅ©Òµ£¬ÇëµÈºò½á¹û°É£¡\n");
+              tell_object(me,"ä½ æ€æ…®å†ä¸‰ï¼Œæ±ºå®šé–‹å§‹å”åŠ©å®˜åºœé–‹ç™¼"+CNAMEOFCITY+"çš„è¾²æ¥­ï¼Œè«‹ç­‰å€™çµæœå§ï¼\n");
               pro_num=query("farming_pro", ob);
               lvl_num=query("farming", ob);
               if(lvl_num >= MAX_LEVEL*10)
                 { 
-                 return notify_fail(CNAMEOFCITY+"µÄÅ©ÒµÒÑ¾­×ã¹»·¢´ïÁË£¬Äã¿ÉÒÔÊÔ×ÅÈ¥¿ª·¢ÆäËûÏîÄ¿ÁË£¡\n"); 
+                 return notify_fail(CNAMEOFCITY+"çš„è¾²æ¥­å·²ç¶“è¶³å¤ ç™¼é”äº†ï¼Œä½ å¯ä»¥è©¦è‘—å»é–‹ç™¼å…¶ä»–é …ç›®äº†ï¼\n"); 
                 }
               else
               { 
@@ -188,7 +188,7 @@ int do_kaifa(string arg)
                     {
                      lvl_num+=1;
                      pro_num = pro_num - lvl_num;
-                     message("channel:sys",HIY"¡¾·çÎÅ¡¿"HIG+CNAMEOFCITY+"µÄÅ©ÌïÔÚ"+query("name", me)+"µÄĞ­Öú¿ª¿ÑÏÂ±äµÄÔ½À´Ô½·ÊÎÖÁË£¡\n"NOR,users());
+                     message("channel:sys",HIY"ã€é¢¨èã€‘"HIG+CNAMEOFCITY+"çš„è¾²ç”°åœ¨"+query("name", me)+"çš„å”åŠ©é–‹å¢¾ä¸‹è®Šçš„è¶Šä¾†è¶Šè‚¥æ²ƒäº†ï¼\n"NOR,users());
                      ob_people=ob_people+lvl_num*(1+random(3));
                      if(ob_fealty>=5) ob_fealty-=random(5);;
                      }
@@ -196,18 +196,18 @@ int do_kaifa(string arg)
 //                 ob->set("fealty",ob_fealty);
                  set("farming_pro", pro_num, ob);
                  set("farming", lvl_num, ob);
-                 message_vision( HIY"³ÇÊĞµÄÅ©ÒµÖ¸ÊıÌá¸ßÁË¡£\n"NOR,me);
+                 message_vision( HIY"åŸå¸‚çš„è¾²æ¥­æŒ‡æ•¸æé«˜äº†ã€‚\n"NOR,me);
                 }         
            }           
-//   ÖÎ°²   peace   Éí·¨ + µ¨Ê¶+ ±¾³Ç¼¼ÊõÖµ   Ôö¼ÓÃñÖÒ 
-        if( arg=="ÖÎ°²")
+//   æ²»å®‰   peace   èº«æ³• + è†½è­˜+ æœ¬åŸæŠ€è¡“å€¼   å¢åŠ æ°‘å¿  
+        if( arg=="æ²»å®‰")
            { 
-              tell_object(me,"ÄãË¼ÂÇÔÙÈı£¬¾ö¶¨¿ªÊ¼Ğ­Öú¹Ù¸®¿ª·¢"+CNAMEOFCITY+"µÄÖÎ°²£¬ÇëµÈºò½á¹û°É£¡\n");
+              tell_object(me,"ä½ æ€æ…®å†ä¸‰ï¼Œæ±ºå®šé–‹å§‹å”åŠ©å®˜åºœé–‹ç™¼"+CNAMEOFCITY+"çš„æ²»å®‰ï¼Œè«‹ç­‰å€™çµæœå§ï¼\n");
               pro_num=query("peace_pro", ob);
               lvl_num=query("peace", ob);
               if(lvl_num >= MAX_LEVEL*10)
                 { 
-                 return notify_fail(CNAMEOFCITY+"µÄÖÎ°²ÒÑ¾­×ã¹»·¢´ïÁË£¬Äã¿ÉÒÔÊÔ×ÅÈ¥¿ª·¢ÆäËûÏîÄ¿ÁË£¡\n"); 
+                 return notify_fail(CNAMEOFCITY+"çš„æ²»å®‰å·²ç¶“è¶³å¤ ç™¼é”äº†ï¼Œä½ å¯ä»¥è©¦è‘—å»é–‹ç™¼å…¶ä»–é …ç›®äº†ï¼\n"); 
                 }
               else
               { 
@@ -218,25 +218,25 @@ int do_kaifa(string arg)
                     {
                      lvl_num+=1;
                      pro_num = pro_num - lvl_num;
-                     message("channel:sys",HIY"¡¾·çÎÅ¡¿"HIG+CNAMEOFCITY+"µÄÖÎ°²ÔÚ"+query("name", me)+"µÄĞ­ÖúÖÎÀíÏÂ±äµÄÔ½À´Ô½°²¶¨ÁË£¡\n"NOR,users());
+                     message("channel:sys",HIY"ã€é¢¨èã€‘"HIG+CNAMEOFCITY+"çš„æ²»å®‰åœ¨"+query("name", me)+"çš„å”åŠ©æ²»ç†ä¸‹è®Šçš„è¶Šä¾†è¶Šå®‰å®šäº†ï¼\n"NOR,users());
                      if(ob_fealty<100) ob_fealty+=random(5);
                      if(ob_fealty>100) ob_fealty=100;
                      }
 //                 ob->set("fealty",ob_fealty);
                  set("peace_pro", pro_num, ob);
                  set("peace", lvl_num, ob);
-                 message_vision( HIC"³ÇÊĞµÄÖÎ°²Ö¸ÊıÌá¸ßÁË¡£\n"NOR,me);
+                 message_vision( HIC"åŸå¸‚çš„æ²»å®‰æŒ‡æ•¸æé«˜äº†ã€‚\n"NOR,me);
                 }         
            }         
-//    Ë®Àû  water       ¸ù¹Ç + ¶¨Á¦+ ±¾³Ç¼¼ÊõÖµ   Ôö¼ÓÃñÖÒ 
-        if( arg=="Ë®Àû")
+//    æ°´åˆ©  water       æ ¹éª¨ + å®šåŠ›+ æœ¬åŸæŠ€è¡“å€¼   å¢åŠ æ°‘å¿  
+        if( arg=="æ°´åˆ©")
            { 
-              tell_object(me,"ÄãË¼ÂÇÔÙÈı£¬¾ö¶¨¿ªÊ¼Ğ­Öú¹Ù¸®¿ª·¢"+CNAMEOFCITY+"µÄË®Àû£¬ÇëµÈºò½á¹û°É£¡\n");
+              tell_object(me,"ä½ æ€æ…®å†ä¸‰ï¼Œæ±ºå®šé–‹å§‹å”åŠ©å®˜åºœé–‹ç™¼"+CNAMEOFCITY+"çš„æ°´åˆ©ï¼Œè«‹ç­‰å€™çµæœå§ï¼\n");
               pro_num=query("water_pro", ob);
               lvl_num=query("water", ob);
               if(lvl_num >= MAX_LEVEL*10)
                 { 
-                 return notify_fail(CNAMEOFCITY+"µÄË®ÀûÒÑ¾­×ã¹»·¢´ïÁË£¬Äã¿ÉÒÔÊÔ×ÅÈ¥¿ª·¢ÆäËûÏîÄ¿ÁË£¡\n"); 
+                 return notify_fail(CNAMEOFCITY+"çš„æ°´åˆ©å·²ç¶“è¶³å¤ ç™¼é”äº†ï¼Œä½ å¯ä»¥è©¦è‘—å»é–‹ç™¼å…¶ä»–é …ç›®äº†ï¼\n"); 
                 }
               else
               { 
@@ -247,25 +247,25 @@ int do_kaifa(string arg)
                     {
                      lvl_num+=1;
                      pro_num = pro_num - lvl_num;
-                     message("channel:sys",HIY"¡¾·çÎÅ¡¿"HIG+CNAMEOFCITY+"µÄË®ÀûÔÚ"+query("name", me)+"µÄĞ­Öú¿ª·¢ÏÂ±äµÄÔ½À´Ô½·¢´ïÁË£¡\n"NOR,users());
+                     message("channel:sys",HIY"ã€é¢¨èã€‘"HIG+CNAMEOFCITY+"çš„æ°´åˆ©åœ¨"+query("name", me)+"çš„å”åŠ©é–‹ç™¼ä¸‹è®Šçš„è¶Šä¾†è¶Šç™¼é”äº†ï¼\n"NOR,users());
                      if(ob_fealty<100) ob_fealty+=random(5);
                      if(ob_fealty>100) ob_fealty=100;
                      }
 //                 ob->set("fealty",ob_fealty);
                  set("water_pro", pro_num, ob);
                  set("water", lvl_num, ob);
-                 message_vision( HIC"³ÇÊĞµÄË®ÀûÖ¸ÊıÌá¸ßÁË¡£\n"NOR,me);
+                 message_vision( HIC"åŸå¸‚çš„æ°´åˆ©æŒ‡æ•¸æé«˜äº†ã€‚\n"NOR,me);
                 }         
            }        
-//  ¼¼Êõ   technology  ÎòĞÔ + ÁéĞÔ   Ôö¼Ó¿ª·¢ËÙ¶È        
-        if( arg=="¼¼Êõ")
+//  æŠ€è¡“   technology  æ‚Ÿæ€§ + éˆæ€§   å¢åŠ é–‹ç™¼é€Ÿåº¦        
+        if( arg=="æŠ€è¡“")
            { 
-              tell_object(me,"ÄãË¼ÂÇÔÙÈı£¬¾ö¶¨¿ªÊ¼Ğ­Öú¹Ù¸®¿ª·¢"+CNAMEOFCITY+"µÄ¼¼Êõ£¬ÇëµÈºò½á¹û°É£¡\n");
+              tell_object(me,"ä½ æ€æ…®å†ä¸‰ï¼Œæ±ºå®šé–‹å§‹å”åŠ©å®˜åºœé–‹ç™¼"+CNAMEOFCITY+"çš„æŠ€è¡“ï¼Œè«‹ç­‰å€™çµæœå§ï¼\n");
               pro_num=query("technology_pro", ob);
               lvl_num=query("technology", ob);
               if(lvl_num >= MAX_LEVEL*10)
                 { 
-                 return notify_fail(CNAMEOFCITY+"µÄ¼¼ÊõÒÑ¾­×ã¹»·¢´ïÁË£¬Äã¿ÉÒÔÊÔ×ÅÈ¥¿ª·¢ÆäËûÏîÄ¿ÁË£¡\n"); 
+                 return notify_fail(CNAMEOFCITY+"çš„æŠ€è¡“å·²ç¶“è¶³å¤ ç™¼é”äº†ï¼Œä½ å¯ä»¥è©¦è‘—å»é–‹ç™¼å…¶ä»–é …ç›®äº†ï¼\n"); 
                 }
               else
               { 
@@ -276,35 +276,35 @@ int do_kaifa(string arg)
                     {
                      lvl_num+=1;
                      pro_num = pro_num - lvl_num;
-                     message("channel:sys",HIY"¡¾·çÎÅ¡¿"HIG+CNAMEOFCITY+"µÄ¼¼ÊõÔÚ"+query("name", me)+"µÄĞ­ÖúÑĞ¾¿ÏÂ±äµÄÔ½À´Ô½ÏÈ½øÁË£¡\n"NOR,users());
+                     message("channel:sys",HIY"ã€é¢¨èã€‘"HIG+CNAMEOFCITY+"çš„æŠ€è¡“åœ¨"+query("name", me)+"çš„å”åŠ©ç ”ç©¶ä¸‹è®Šçš„è¶Šä¾†è¶Šå…ˆé€²äº†ï¼\n"NOR,users());
                      }
                  set("technology_pro", pro_num, ob);
                  set("technology", lvl_num, ob);
-                 message_vision( HIB"³ÇÊĞµÄ¼¼ÊõÖ¸ÊıÌá¸ßÁË¡£\n"NOR,me);
+                 message_vision( HIB"åŸå¸‚çš„æŠ€è¡“æŒ‡æ•¸æé«˜äº†ã€‚\n"NOR,me);
                  
                 }         
            }                                   
-//Ã¿´ÎÖ´ĞĞ¿ª·¢Ö¸Áî£¬¶¼Òª¿¼ÂÇµ½³ÇÊĞË°ÂÊ¶Ô±¾ÂÖ¿ª·¢µÄÓ°Ïì ÕâÑù¸Ğ¾õ²ÅÓĞµã¶¯Ì¬ĞÔ ºÇºÇ
-//         0-15  Ö®¼ä   ·Ç³£ÂúÒâ Ôö¼ÓÈË¿Ú Ôö¼ÓÃñÖÒ
-//         15-30 Ö®¼ä    ÂúÒâ    Ôö¼ÓÈË¿Ú ÃñÖÒ²»±ä
-//      30-40 Ö®¼ä   Î¢ÓĞÔ¹ÑÔ ÈË¿Ú²»±ä  ¼õµÍÃñÖÒ Å©Òµ,ÖÎ°²ÊÜµ½ÆÆ»µ 
-//      40-60 Ö®¼ä   Ô¹ÉùÔØµÀ  ÈË¿Ú¼õÉÙ ¼õµÍÃñÖÒ Å©Òµ,ÖÎ°²,ÉÌÒµÊÜµ½ÆÆ»µ
-//      60-80 Ö®¼ä   ÃñÔ¹·ĞÌÚ  ÈË¿Ú´ó¼õ ÃñÖÒ¿ñ½µ ÎåÏîÖ¸Êı¶¼ÊÜµ½ÆÆ»µ
-//      80-100Ö®¼ä   Á÷ÃñËÄÆğ  ÈËĞÄ²»¹Å ÎåÏîÖ¸Êı¶¼¿ñ¼õ 
+//æ¯æ¬¡åŸ·è¡Œé–‹ç™¼æŒ‡ä»¤ï¼Œéƒ½è¦è€ƒæ…®åˆ°åŸå¸‚ç¨…ç‡å°æœ¬è¼ªé–‹ç™¼çš„å½±éŸ¿ é€™æ¨£æ„Ÿè¦ºæ‰æœ‰é»å‹•æ…‹æ€§ å‘µå‘µ
+//         0-15  ä¹‹é–“   éå¸¸æ»¿æ„ å¢åŠ äººå£ å¢åŠ æ°‘å¿ 
+//         15-30 ä¹‹é–“    æ»¿æ„    å¢åŠ äººå£ æ°‘å¿ ä¸è®Š
+//      30-40 ä¹‹é–“   å¾®æœ‰æ€¨è¨€ äººå£ä¸è®Š  æ¸›ä½æ°‘å¿  è¾²æ¥­,æ²»å®‰å—åˆ°ç ´å£ 
+//      40-60 ä¹‹é–“   æ€¨è²è¼‰é“  äººå£æ¸›å°‘ æ¸›ä½æ°‘å¿  è¾²æ¥­,æ²»å®‰,å•†æ¥­å—åˆ°ç ´å£
+//      60-80 ä¹‹é–“   æ°‘æ€¨æ²¸é¨°  äººå£å¤§æ¸› æ°‘å¿ ç‹‚é™ äº”é …æŒ‡æ•¸éƒ½å—åˆ°ç ´å£
+//      80-100ä¹‹é–“   æµæ°‘å››èµ·  äººå¿ƒä¸å¤ äº”é …æŒ‡æ•¸éƒ½ç‹‚æ¸› 
        if( ob_taxrate>=0&&ob_taxrate<=15) 
            { 
              if(ob_fealty<100) ob_fealty+=random(5);
              if(ob_fealty>100) ob_fealty=100;
              if(ob_people<MAX_LEVEL*10000)
              ob_people=ob_people+(100-ob_taxrate)*(10+random(5));
-             message_vision( MAG"ÓÉÓÚ³ÇÊĞµÄË°ÂÊ¶¨µÄÏàµ±µÍ£¬ÕâÀï°ÙĞÕ·Ç³£ÂúÒâ£¬²¢ÓĞºÜ¶àÍâµØµÄÈË¿ÚÀ´ÕâÀïÄ±Éú¡£\n"NOR,me);
+             message_vision( MAG"ç”±äºåŸå¸‚çš„ç¨…ç‡å®šçš„ç›¸ç•¶ä½ï¼Œé€™è£¡ç™¾å§“éå¸¸æ»¿æ„ï¼Œä¸¦æœ‰å¾ˆå¤šå¤–åœ°çš„äººå£ä¾†é€™è£¡è¬€ç”Ÿã€‚\n"NOR,me);
             }
            
        else if( ob_taxrate>=16&&ob_taxrate<=30)
             {  
              if(ob_people<MAX_LEVEL*10000)
              ob_people=ob_people+(100-ob_taxrate)*(10+random(5));
-             message_vision( GRN"ÓÉÓÚ³ÇÊĞµÄË°ÂÊ¶¨µÄÏà¶Ô½ÏµÍ£¬°ÙĞÕ»¹ËãÂúÒâ£¬¾­³£ÓĞÒ»Ğ©ÍâµØµÄÈË¿ÚÀ´ÕâÀïÄ±Éú¡£\n"NOR,me);
+             message_vision( GRN"ç”±äºåŸå¸‚çš„ç¨…ç‡å®šçš„ç›¸å°è¼ƒä½ï¼Œç™¾å§“é‚„ç®—æ»¿æ„ï¼Œç¶“å¸¸æœ‰ä¸€äº›å¤–åœ°çš„äººå£ä¾†é€™è£¡è¬€ç”Ÿã€‚\n"NOR,me);
              }
 
        else if( ob_taxrate>=31&&ob_taxrate<=40)
@@ -323,7 +323,7 @@ int do_kaifa(string arg)
                       pro_num = (int)pro_num-random(100);
                       set("peace_pro", pro_num, ob);
                     }      
-               message_vision( CYN"³ÇÖĞµÄÒ»Ğ©ÈËÈÏÎª¹Ù¸®µÄË°ÂÊ¶¨µÄ²»Ì«ºÏÀí£¬Î¢ÓĞÔ¹ÑÔ£¬ÓĞÈËÔÚ³ÇÀï·¢ÏÖĞ¡ÍµºÍÒ»Ğ©²»Ô¸ÖÖÌïµÄÅ©Ãñ¡£\n"NOR,me);
+               message_vision( CYN"åŸä¸­çš„ä¸€äº›äººèªç‚ºå®˜åºœçš„ç¨…ç‡å®šçš„ä¸å¤ªåˆç†ï¼Œå¾®æœ‰æ€¨è¨€ï¼Œæœ‰äººåœ¨åŸè£¡ç™¼ç¾å°å·å’Œä¸€äº›ä¸é¡˜ç¨®ç”°çš„è¾²æ°‘ã€‚\n"NOR,me);
                }
         else if( ob_taxrate>=41&&ob_taxrate<=60)
              {
@@ -347,7 +347,7 @@ int do_kaifa(string arg)
                       pro_num = (int)pro_num-random(100);
                       set("business_pro", pro_num, ob);
                      }     
-                     message_vision( YEL"³ÇÖĞ°ÙĞÕÔ¹ÉùÔØµÀ£¬´ó²¿·ÖÉÌÈËÒ²ÈÏÎª¹Ù¸®ÊÕµÄË°Ì«¸ßÁË£¬ÓĞÈËÔÚ³ÇÖĞ¸ãÆğĞ¡ÆÆ»µ£¬À´±§Ô¹¶Ô¹Ù¸®µÄ²»Âú¡£\n"NOR,me);
+                     message_vision( YEL"åŸä¸­ç™¾å§“æ€¨è²è¼‰é“ï¼Œå¤§éƒ¨åˆ†å•†äººä¹Ÿèªç‚ºå®˜åºœæ”¶çš„ç¨…å¤ªé«˜äº†ï¼Œæœ‰äººåœ¨åŸä¸­æèµ·å°ç ´å£ï¼Œä¾†æŠ±æ€¨å°å®˜åºœçš„ä¸æ»¿ã€‚\n"NOR,me);
                      }
          else if( ob_taxrate>=61&&ob_taxrate<=80)
              {
@@ -363,7 +363,7 @@ int do_kaifa(string arg)
                           addn("technology", -1, ob);
                      if( query("peace", ob)>5 && random(2) == 1 )
                           addn("peace", -1, ob);
-                     message_vision( BLU"³ÇÖĞÃñÔ¹·ĞÌÚ£¬°ÙĞÕÒ»ÖÂÈÏÎª¹Ù¸®ÊÕµÄË°Ì«¸ßÁË£¬²¢Öğ½¥¶ÔÕâÀïµÄµØ·½¹ÙÔ±Ê§È¥ĞÅĞÄ¡£\n"NOR,me);
+                     message_vision( BLU"åŸä¸­æ°‘æ€¨æ²¸é¨°ï¼Œç™¾å§“ä¸€è‡´èªç‚ºå®˜åºœæ”¶çš„ç¨…å¤ªé«˜äº†ï¼Œä¸¦é€æ¼¸å°é€™è£¡çš„åœ°æ–¹å®˜å“¡å¤±å»ä¿¡å¿ƒã€‚\n"NOR,me);
              }  
         else
              {
@@ -379,14 +379,14 @@ int do_kaifa(string arg)
                           addn("technology", -2, ob);
                      if( query("peace", ob)>5 && random(2) == 1 )
                           addn("peace", -2, ob);
-                     message_vision( RED"¿ÁÕşÃÍÓÚ»¢£¬³ÇÖĞ°ÙĞÕÎŞ·¨ÈÌÊÜ¹Ù¸®µÄÅÌ°ş£¬·×·×±³¾®ÀëÏç¡£\n"NOR,me);
+                     message_vision( RED"è‹›æ”¿çŒ›äºè™ï¼ŒåŸä¸­ç™¾å§“ç„¡æ³•å¿å—å®˜åºœçš„ç›¤å‰ï¼Œç´›ç´›èƒŒäº•é›¢é„‰ã€‚\n"NOR,me);
                      }  
-// Ã¿´ÎÖ´ĞĞÖ¸ÁîÏûºÄ50µÄ½­ºşÔÄÀú ºÍÒ»¶¨µÄ´æ¿î£¨Óë±¾³ÇµÄË°ÂÊÓĞ¹Ø Èç¹ûË°ÂÊ´ï100¾Í²»»¨Ç®£©
+// æ¯æ¬¡åŸ·è¡ŒæŒ‡ä»¤æ¶ˆè€—50çš„æ±Ÿæ¹–é–±æ­· å’Œä¸€å®šçš„å­˜æ¬¾ï¼ˆèˆ‡æœ¬åŸçš„ç¨…ç‡æœ‰é—œ å¦‚æœç¨…ç‡é”100å°±ä¸èŠ±éŒ¢ï¼‰
         me_score = me_score-50;
         me_balance = me_balance-2000*(100-ob_taxrate);
         set("score", me_score, me);
         set("balance", me_balance, me);
-//·ÀÖ¹Ö´ĞĞ¹ı³ÌÖĞ³öÏÖ¸ºÈË¿Ú ºÍÃñÖÒÖµ³¬¹ı·¶Î§
+//é˜²æ­¢åŸ·è¡Œéç¨‹ä¸­å‡ºç¾è² äººå£ å’Œæ°‘å¿ å€¼è¶…éèŒƒåœ
         if( ob_people<0) ob_people=1;
         set("people", ob_people, ob);
         if (ob_fealty<0) ob_fealty=0;
@@ -395,7 +395,7 @@ int do_kaifa(string arg)
         save();
         set_temp("busy", 1, ob);
         remove_call_out("enough_rest");
-//1ÃëºóÈ¡Ïûbusy
+//1ç§’å¾Œå–æ¶ˆbusy
         call_out("enough_rest", 1);
         return 1;
 }
@@ -403,18 +403,18 @@ int do_tax(string arg)
 {  int ob_taxrate,taxrate;
    object ob=this_object();
    if( query_temp("busy", ob) )
-        return notify_fail("ÓĞÈË¸ÕÏÂ¹ı¿ª·¢ÃüÁî£¬ÉÔºò........\n");
+        return notify_fail("æœ‰äººå‰›ä¸‹éé–‹ç™¼å‘½ä»¤ï¼Œç¨å€™........\n");
    if( !arg
         ||      !sscanf(arg, "%d", taxrate) )
-      return notify_fail("ÄãÏë½«Ë°ÂÊ¶¨Îª¶àÉÙ£¿\n");
+      return notify_fail("ä½ æƒ³å°‡ç¨…ç‡å®šç‚ºå¤šå°‘ï¼Ÿ\n");
    if(taxrate>100||taxrate<0)
-      return notify_fail("Ë°ÂÊÖ»ÄÜÔÚ0µ½100Ö®¼ä£¡\n");
+      return notify_fail("ç¨…ç‡åªèƒ½åœ¨0åˆ°100ä¹‹é–“ï¼\n");
    ob_taxrate=taxrate;
    set("tax_rate", ob_taxrate, ob);
    save();
    set_temp("busy", 1, ob);
    remove_call_out("enough_rest");
-//1ÃëºóÈ¡Ïûbusy
+//1ç§’å¾Œå–æ¶ˆbusy
    call_out("enough_rest", 1);
    return 1;
 }

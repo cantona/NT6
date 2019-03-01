@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����Ȫ");
+        set("short", "憨憨泉");
         set("long", @LONG
-��ɽ��������һ����Ȫ��ϵ�ϳ�������ɮ�������������䣬���һ
-ǧ�İٶ��ꡣ��˵Ȫ��ͨ��������������ӿȪ����ˮ������Ϊ�����µ�
-��Ȫ����ʯ�̡�����Ȫ�����֣�ϵ�������������⡣
+在山道西側有一憨憨泉，系南朝樑代高僧憨憨尊者所開鑿，距今一
+千四百多年。據說泉眼通海，姑又名“海湧泉”。水甚清冽為“天下第
+五泉”。石刻“憨憨泉”三字，系北宋呂升卿所題。
 LONG );
         set("outdoors", "suzhou");
         set("no_clean_up", 0);

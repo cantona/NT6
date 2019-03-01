@@ -7,12 +7,12 @@ string ask_me();
 
 void create()
 {
-        set_name("¶É¶ò", ({ "du-e", "e" }) );
-        set("title", "ÉÙÁÖ³¤ÀÏ");
-        set("gender", "ÄĞĞÔ");
+        set_name("æ¸¡å„", ({ "du-e", "e" }) );
+        set("title", "å°‘æ—é•·è€");
+        set("gender", "ç”·æ€§");
         set("age", 90);
         set("long",
-                "ÕâÊÇÒ»¸öÃæ¼ÕÉîÏİ£¬Êİ¹ÇÁã¶¡µÄÀÏÉ®£¬ËûÁ³É«¿İ»Æ£¬ÈçÍ¬Ò»¶Î¿İÄ¾¡£\n");
+                "é€™æ˜¯ä¸€å€‹é¢é °æ·±é™·ï¼Œç˜¦éª¨é›¶ä¸çš„è€åƒ§ï¼Œä»–è‡‰è‰²æ¯é»ƒï¼Œå¦‚åŒä¸€æ®µæ¯æœ¨ã€‚\n");
 
         set("attitude", "peaceful");
         set("class", "bonze");
@@ -31,8 +31,8 @@ void create()
         set("max_neili", 2000);
         set("jiali", 90);
 
-        create_family("ÉÙÁÖÅÉ", 35, "µÜ×Ó");
-        assign_apprentice("µÜ×Ó", 0);
+        create_family("å°‘æ—æ´¾", 35, "å¼Ÿå­");
+        assign_apprentice("å¼Ÿå­", 0);
 
         set_skill("force", 150);
         set_skill("whip", 170);

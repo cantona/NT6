@@ -1,5 +1,5 @@
 
-//×ªÊÀÈÎÎñÖ÷¿ØÎÄ¼ş
+//è½‰ä¸–ä»»å‹™ä¸»æ§æ–‡ä»¶
 #include <ansi.h>
 
 inherit F_DBASE;
@@ -13,29 +13,29 @@ void wudie_close(object n_place);
 void qilin_close(object place);
 
 mapping dir_list = ([
-"±±¾©" : "/d/beijing/",
-"³¤°²" : "/d/changan/",
-"ÑïÖİ" : "/d/city/",
-"³É¶¼" : "/d/city3/",
-"´óÀí" : "/d/dali/",
-"·ğÉ½" : "/d/foshan/",
-"¸£Öİ" : "/d/fuzhou/",
-"¹ØÍâ" : "/d/guanwai/",
-"º¼Öİ" : "/d/hangzhou/",
-"ºãÉ½" : "/d/hengshan/",
-"¾£Öİ" : "/d/jingzhou/",
-"¿ª·â" : "/d/kaifeng/",
-"»ªÉ½" : "/d/huashan/",
-"À¥Ã÷" : "/d/kunming/",
-"À¼Öİ" : "/d/lanzhou/",
-"ÁéÖİ" : "/d/lingzhou/",
-"ÂåÑô" : "/d/luoyang/",
-"áÔÉ½" : "/d/songshan/",
-"ËÕÖİ" : "/d/suzhou/",
-"Ì©É½" : "/d/taishan/",
-"Îäµ±É½" : "/d/wudang/",
-"ÏåÑô" : "/d/xiangyang/",
-"ÖĞÖİ" : "/d/zhongzhou/",
+"åŒ—äº¬" : "/d/beijing/",
+"é•·å®‰" : "/d/changan/",
+"æšå·" : "/d/city/",
+"æˆéƒ½" : "/d/city3/",
+"å¤§ç†" : "/d/dali/",
+"ä½›å±±" : "/d/foshan/",
+"ç¦å·" : "/d/fuzhou/",
+"é—œå¤–" : "/d/guanwai/",
+"æ­å·" : "/d/hangzhou/",
+"æ†å±±" : "/d/hengshan/",
+"èŠå·" : "/d/jingzhou/",
+"é–‹å°" : "/d/kaifeng/",
+"è¯å±±" : "/d/huashan/",
+"æ˜†æ˜" : "/d/kunming/",
+"è˜­å·" : "/d/lanzhou/",
+"éˆå·" : "/d/lingzhou/",
+"æ´›é™½" : "/d/luoyang/",
+"åµ©å±±" : "/d/songshan/",
+"è˜‡å·" : "/d/suzhou/",
+"æ³°å±±" : "/d/taishan/",
+"æ­¦ç•¶å±±" : "/d/wudang/",
+"è¥„é™½" : "/d/xiangyang/",
+"ä¸­å·" : "/d/zhongzhou/",
 ]);
 
 array place = values(dir_list);
@@ -44,15 +44,15 @@ array c_place = keys(dir_list);
 void create()
 {
         seteuid(ROOT_UID);
-        set("channel_id", "×ªÊÀ¾«Áé");
-        CHANNEL_D->do_channel( this_object(), "wiz", "×ªÊÀ¾«ÁéÆô¶¯¡£"); 
-        //¾ªÑã¹¬Èë¿Ú
+        set("channel_id", "è½‰ä¸–ç²¾éˆ");
+        CHANNEL_D->do_channel( this_object(), "wiz", "è½‰ä¸–ç²¾éˆå•Ÿå‹•ã€‚"); 
+        //é©šé›å®®å…¥å£
         remove_call_out("jingyan_open");
         call_out("jingyan_open", 350);
-                //ÎèµûÈë¿Ú
+                //èˆè¶å…¥å£
         remove_call_out("wudie_open");
         call_out("wudie_open", 350);
-       //÷è÷ë¿ßÈë¿Ú
+       //éº’éºŸçªŸå…¥å£
         remove_call_out("qilin_open");
         call_out("qilin_open", 550);
 }
@@ -69,14 +69,14 @@ void jingyan_open()
 
         do {       
                 s_place = plist[random(sizeof(plist))];     
-                //ÎÄ¼şÃûÖĞº¬ÓĞbakµÄÎÄ¼ş²»Òª£¬¼ÌĞøÕÒÏÂÒ»¸ö
+                //æ–‡ä»¶åä¸­å«æœ‰bakçš„æ–‡ä»¶ä¸è¦ï¼Œç¹¼çºŒæ‰¾ä¸‹ä¸€å€‹
                 if ( strsrch(s_place,"bak") > -1 ) continue; 
-                //²»ÊÇcÎÄ¼şµÄÒ²ÂË¹ı
+                //ä¸æ˜¯cæ–‡ä»¶çš„ä¹Ÿæ¿¾é
                 i = sizeof(s_place);
                 if ( s_place[(i-2)..i] != ".c" ) continue;
-                //Èç¹û¸Ã·¿¼äÒÑ¾­µ÷³öÔÚÄÚ´æÀïµÄÖ±½Ófind
-                //find²»µ½ËµÃ÷Ã»µ÷³öÔÚÄÚ´æÀï£¬ÄÇ¾Íload³öÀ´ 
-                //loadÒ²load²»³öÀ´´ó¸Å¾ÍÓĞÎÊÌâÁË£¬ÄÇ¾ÍÕÒÏÂÒ»¸öÁË   
+                //å¦‚æœè©²æˆ¿é–“å·²ç¶“èª¿å‡ºåœ¨å…§å­˜è£¡çš„ç›´æ¥find
+                //findä¸åˆ°èªªæ˜æ²’èª¿å‡ºåœ¨å…§å­˜è£¡ï¼Œé‚£å°±loadå‡ºä¾† 
+                //loadä¹Ÿloadä¸å‡ºä¾†å¤§æ¦‚å°±æœ‰å•é¡Œäº†ï¼Œé‚£å°±æ‰¾ä¸‹ä¸€å€‹äº†   
                 if ( ! objectp(n_place = find_object(city + s_place)))
                
                 if ( ! objectp(n_place = load_object(city + s_place)))
@@ -88,14 +88,14 @@ void jingyan_open()
 
                
        CHANNEL_D->do_channel(this_object(), 
-         "wiz", "¾ªÑã¹¬Èë¿ÚÁ¬½Óµ½ÁË" + c_place[num] + city + s_place + "Çë×¢Òâ¡£");
+         "wiz", "é©šé›å®®å…¥å£é€£æ¥åˆ°äº†" + c_place[num] + city + s_place + "è«‹æ³¨æ„ã€‚");
                 
-       set("jingyan/out", city + s_place); //Ö÷ÎÄ¼şÀï¼ÇÂ¼ÏÂÃÔ¹¬µÄÁ¬½Ó´¦
+       set("jingyan/out", city + s_place); //ä¸»æ–‡ä»¶è£¡è¨˜éŒ„ä¸‹è¿·å®®çš„é€£æ¥è™•
                                           
-       message("vision", HIG"¡¾" HIR "½­ºş´«ÑÔ" HIG"¡¿" HIW 
-               "£ºÉñÃØµÄ¾ªÑã¹¬ÖØÏÖ½­ºşÁË£¬ËÆºõÔÚ"
-               + c_place[num] + "·½Ïò¡£\n" + NOR,users());
-       //10·ÖÖÓºó¹Ø±Õ£¬Ê±¼ä¿ÉÒÔÉèÖÃ
+       message("vision", HIG"ã€" HIR "æ±Ÿæ¹–å‚³è¨€" HIG"ã€‘" HIW 
+               "ï¼šç¥ç§˜çš„é©šé›å®®é‡ç¾æ±Ÿæ¹–äº†ï¼Œä¼¼ä¹åœ¨"
+               + c_place[num] + "æ–¹å‘ã€‚\n" + NOR,users());
+       //10åˆ†é˜å¾Œé—œé–‰ï¼Œæ™‚é–“å¯ä»¥è¨­ç½®
 
        remove_call_out("jingyan_close");
        call_out("jingyan_close", 600, n_place);      
@@ -106,12 +106,12 @@ void jingyan_close(object n_place)
      if (n_place && n_place->query("exits/jingyangong"))
      {       
        n_place->delete("exits/jingyangong");       
-       message("vision", HIG"¡¾" HIR"½­ºş´«ÑÔ" HIG"¡¿" HIW"£ºÉñÃØµÄ¾ªÑã¹¬ÓÖÏûÊ§ÁË¡£\n" 
+       message("vision", HIG"ã€" HIR"æ±Ÿæ¹–å‚³è¨€" HIG"ã€‘" HIW"ï¼šç¥ç§˜çš„é©šé›å®®åˆæ¶ˆå¤±äº†ã€‚\n" 
                       NOR,users());
      }
      remove_call_out("jingyan_open");
-   //  call_out("jingyan_open", 3600 * 3); //¶¨ÈıĞ¡Ê±¿ªÒ»´Î¿Ú
-     call_out("jingyan_open", 1800); //²âÊÔÊ±¶¨°ëĞ¡Ê±¿ªÒ»´Î¿Ú
+   //  call_out("jingyan_open", 3600 * 3); //å®šä¸‰å°æ™‚é–‹ä¸€æ¬¡å£
+     call_out("jingyan_open", 1800); //æ¸¬è©¦æ™‚å®šåŠå°æ™‚é–‹ä¸€æ¬¡å£
 
 }
 void wudie_open()
@@ -126,14 +126,14 @@ void wudie_open()
 
         do {       
                 s_place = plist[random(sizeof(plist))];     
-                //ÎÄ¼şÃûÖĞº¬ÓĞbakµÄÎÄ¼ş²»Òª£¬¼ÌĞøÕÒÏÂÒ»¸ö
+                //æ–‡ä»¶åä¸­å«æœ‰bakçš„æ–‡ä»¶ä¸è¦ï¼Œç¹¼çºŒæ‰¾ä¸‹ä¸€å€‹
                 if ( strsrch(s_place,"bak") > -1 ) continue; 
-                //²»ÊÇcÎÄ¼şµÄÒ²ÂË¹ı
+                //ä¸æ˜¯cæ–‡ä»¶çš„ä¹Ÿæ¿¾é
                 i = sizeof(s_place);
                 if ( s_place[(i-2)..i] != ".c" ) continue;
-                //Èç¹û¸Ã·¿¼äÒÑ¾­µ÷³öÔÚÄÚ´æÀïµÄÖ±½Ófind
-                //find²»µ½ËµÃ÷Ã»µ÷³öÔÚÄÚ´æÀï£¬ÄÇ¾Íload³öÀ´ 
-                //loadÒ²load²»³öÀ´´ó¸Å¾ÍÓĞÎÊÌâÁË£¬ÄÇ¾ÍÕÒÏÂÒ»¸öÁË   
+                //å¦‚æœè©²æˆ¿é–“å·²ç¶“èª¿å‡ºåœ¨å…§å­˜è£¡çš„ç›´æ¥find
+                //findä¸åˆ°èªªæ˜æ²’èª¿å‡ºåœ¨å…§å­˜è£¡ï¼Œé‚£å°±loadå‡ºä¾† 
+                //loadä¹Ÿloadä¸å‡ºä¾†å¤§æ¦‚å°±æœ‰å•é¡Œäº†ï¼Œé‚£å°±æ‰¾ä¸‹ä¸€å€‹äº†   
                 if ( ! objectp(n_place = find_object(city + s_place)))
                
                 if ( ! objectp(n_place = load_object(city + s_place)))
@@ -145,14 +145,14 @@ void wudie_open()
 
                
        CHANNEL_D->do_channel(this_object(), 
-         "wiz", "ÎèµûÉ½×¯Á¬½Óµ½ÁË" + c_place[num] + city + s_place + "Çë×¢Òâ¡£");
+         "wiz", "èˆè¶å±±èŠé€£æ¥åˆ°äº†" + c_place[num] + city + s_place + "è«‹æ³¨æ„ã€‚");
                 
-       set("wudie/out", city + s_place); //Ö÷ÎÄ¼şÀï¼ÇÂ¼ÏÂÃÔ¹¬µÄÁ¬½Ó´¦
+       set("wudie/out", city + s_place); //ä¸»æ–‡ä»¶è£¡è¨˜éŒ„ä¸‹è¿·å®®çš„é€£æ¥è™•
                                           
-       message("vision", HIG"¡¾" HIR "ÉñÃØÃÅÅÉ" HIG"¡¿" HIW 
-               "£º´«ËµÖĞµÄÎèµûÉ½×¯ÖØÏÖ½­ºşÁË£¬ËÆºõÔÚ"
-               + c_place[num] + "·½Ïò¡£\n" + NOR,users());
-       //10·ÖÖÓºó¹Ø±Õ£¬Ê±¼ä¿ÉÒÔÉèÖÃ
+       message("vision", HIG"ã€" HIR "ç¥ç§˜é–€æ´¾" HIG"ã€‘" HIW 
+               "ï¼šå‚³èªªä¸­çš„èˆè¶å±±èŠé‡ç¾æ±Ÿæ¹–äº†ï¼Œä¼¼ä¹åœ¨"
+               + c_place[num] + "æ–¹å‘ã€‚\n" + NOR,users());
+       //10åˆ†é˜å¾Œé—œé–‰ï¼Œæ™‚é–“å¯ä»¥è¨­ç½®
 
        remove_call_out("wudie_close");
        call_out("wudie_close", 600, n_place);      
@@ -163,12 +163,12 @@ void wudie_close(object n_place)
      if (n_place && n_place->query("exits/wudie"))
      {       
        n_place->delete("exits/wudie");       
-       message("vision", HIG"¡¾" HIR"ÉñÃØÃÅÅÉ" HIG"¡¿" HIW"£º´«ËµÖĞµÄÎèµûÉ½×¯ÓÖÏûÊ§ÁË¡£\n" 
+       message("vision", HIG"ã€" HIR"ç¥ç§˜é–€æ´¾" HIG"ã€‘" HIW"ï¼šå‚³èªªä¸­çš„èˆè¶å±±èŠåˆæ¶ˆå¤±äº†ã€‚\n" 
                       NOR,users());
      }
      remove_call_out("wudie_open");
-   //  call_out("jingyan_open", 3600 * 3); //¶¨ÈıĞ¡Ê±¿ªÒ»´Î¿Ú
-     call_out("wudie_open", 1800); //²âÊÔÊ±¶¨°ëĞ¡Ê±¿ªÒ»´Î¿Ú
+   //  call_out("jingyan_open", 3600 * 3); //å®šä¸‰å°æ™‚é–‹ä¸€æ¬¡å£
+     call_out("wudie_open", 1800); //æ¸¬è©¦æ™‚å®šåŠå°æ™‚é–‹ä¸€æ¬¡å£
 
 }
 
@@ -180,11 +180,11 @@ void qilin_open()
 
     room->set("exits/qilinku", QILIN);
     
-     message("vision", HIG"¡¾" HIR"½­ºş´«ÑÔ" HIG"¡¿" HIW
-                "£º³É¶¼³ÇÍâºéË®ÍËÈ¥£¬÷è÷ë¿ßÖØÏÖÊÀ¼ä¡£\n"NOR,users());
+     message("vision", HIG"ã€" HIR"æ±Ÿæ¹–å‚³è¨€" HIG"ã€‘" HIW
+                "ï¼šæˆéƒ½åŸå¤–æ´ªæ°´é€€å»ï¼Œéº’éºŸçªŸé‡ç¾ä¸–é–“ã€‚\n"NOR,users());
       
     remove_call_out("qilin_close");
-    call_out("qilin_close", 600, room); //Ê®·ÖÖÖºó¹Ø±Õ
+    call_out("qilin_close", 600, room); //ååˆ†ç¨®å¾Œé—œé–‰
 }
 
 void qilin_close(object room)
@@ -192,12 +192,12 @@ void qilin_close(object room)
      if ( room && room->query("exits/qilinku"));
          room->delete("exits/qilinku");
 
-     message("vision", HIG"¡¾" HIR"½­ºş´«ÑÔ" HIG"¡¿" HIW
-                "£º³É¶¼³ÇÍâºéË®ĞÚÓ¿£¬÷è÷ë¿ßÔÙ´ÎÏûÊ§ÔÚÈËÊÀ¼ä¡£\n"NOR,users());
+     message("vision", HIG"ã€" HIR"æ±Ÿæ¹–å‚³è¨€" HIG"ã€‘" HIW
+                "ï¼šæˆéƒ½åŸå¤–æ´ªæ°´æ´¶æ¹§ï¼Œéº’éºŸçªŸå†æ¬¡æ¶ˆå¤±åœ¨äººä¸–é–“ã€‚\n"NOR,users());
 
     remove_call_out("qilin_open");
-  //  call_out("qilin_open", 3600 * 6); //¶¨ÁùĞ¡Ê±¿ªÒ»´Î¿Ú
-   call_out("qilin_open", 1800); //²âÊÔÊ±¶¨°ëĞ¡Ê±¿ªÒ»´Î¿Ú
+  //  call_out("qilin_open", 3600 * 6); //å®šå…­å°æ™‚é–‹ä¸€æ¬¡å£
+   call_out("qilin_open", 1800); //æ¸¬è©¦æ™‚å®šåŠå°æ™‚é–‹ä¸€æ¬¡å£
 
 }
 

@@ -6,21 +6,21 @@ inherit THROWING;
 
 void create()
 {
-        set_name(HIC"±ùÆÇÒøÕë"NOR, ({ "ice_sting", "zhen" })); 
+        set_name(HIC"å†°é­„éŠ€é‡"NOR, ({ "ice_sting", "zhen" })); 
         set("taskobj", 1);
         set_weight(300);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "Õâ¾ÍÊÇÎäÁÖÖĞÈËÎÅÖ®É«±äµÄ±ùÆÇÒøÕë£¬ÕëÉíÂÆ¿Ì»¨ÎÆ£¬´òÔìµÃ¼«ÊÇ¾«Ï¸£¬ÁîÈËÈÌ²»×¡Ïë°ÑÍæ(bawan)Ò»·¬¡£\n");
+                set("unit", "æŠŠ");
+                set("long", "é€™å°±æ˜¯æ­¦æ—ä¸­äººèä¹‹è‰²è®Šçš„å†°é­„éŠ€é‡ï¼Œé‡èº«ç¸·åˆ»èŠ±ç´‹ï¼Œæ‰“é€ å¾—æ¥µæ˜¯ç²¾ç´°ï¼Œä»¤äººå¿ä¸ä½æƒ³æŠŠç©(bawan)ä¸€ç•ªã€‚\n");
                 set("value", 0);
-                set("base_unit", "¸ù");
+                set("base_unit", "æ ¹");
                 set("base_weight", 30);
                 set("base_value", 0);
                 set("meterial", "iron");
-                set("wield_msg", "$NĞ¡ĞÄÒíÒíµØÈ¡³öÒ»¸ù±ùÆÇÒøÕëµ±ÎäÆ÷¡£\n");
-                set("unwield_msg", "$N°ÑÒøÕë·Å»ØÒÂÄÒÖĞ¡£\n");
+                set("wield_msg", "$Nå°å¿ƒç¿¼ç¿¼åœ°å–å‡ºä¸€æ ¹å†°é­„éŠ€é‡ç•¶æ­¦å™¨ã€‚\n");
+                set("unwield_msg", "$NæŠŠéŠ€é‡æ”¾å›è¡£å›Šä¸­ã€‚\n");
         }
         setup();
 }

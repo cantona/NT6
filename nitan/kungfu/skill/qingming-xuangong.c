@@ -1,4 +1,4 @@
-// qingming-xuangong.c ÇàÚ¤Ğş¹¦
+// qingming-xuangong.c é’å†¥ç„åŠŸ
 // Last Modified by winder on Aug. 10 2000
 
 #include <ansi.h>;
@@ -17,14 +17,14 @@ int valid_enable(string usage) { return usage == "force"; }
 int valid_learn(object me)
 {
         if (me->query_skill("force",1) < 10)
-                return notify_fail("»ù±¾ÄÚ¹¦»¹²»µ½»ğºò£¬ÔõÄÜÑ§ÇàÚ¤Ğş¹¦£¿£¡\n");
+                return notify_fail("åŸºæœ¬å…§åŠŸé‚„ä¸åˆ°ç«å€™ï¼Œæ€èƒ½å­¸é’å†¥ç„åŠŸï¼Ÿï¼\n");
 
         return valid_public(me);
 }
 
 int practice_skill(object me)
 {
-        return notify_fail("ÇàÚ¤Ğş¹¦Ö»ÄÜÓÃÑ§(learn)µÄÀ´Ôö¼ÓÊìÁ·¶È¡£\n");
+        return notify_fail("é’å†¥ç„åŠŸåªèƒ½ç”¨å­¸(learn)çš„ä¾†å¢åŠ ç†Ÿç·´åº¦ã€‚\n");
 }
 
 string exert_function_file(string func)
@@ -33,13 +33,13 @@ string exert_function_file(string func)
 }
 int help(object me)
 {
-        write(HIC"\nÇàÚ¤Ğş¹¦£º"NOR"\n");
+        write(HIC"\né’å†¥ç„åŠŸï¼š"NOR"\n");
         write(@HELP
 
-    ÇàÚ¤Ğş¹¦ÊÇÇà³ÇÅÉ±¾ÃÅÄÚ¹¦¡£
+    é’å†¥ç„åŠŸæ˜¯é’åŸæ´¾æœ¬é–€å…§åŠŸã€‚
 
-        Ñ§Ï°ÒªÇó£º
-                »ù±¾ÄÚ¹¦10¼¶
+        å­¸ç¿’è¦æ±‚ï¼š
+                åŸºæœ¬å…§åŠŸ10ç´š
 HELP
         );
         return 1;

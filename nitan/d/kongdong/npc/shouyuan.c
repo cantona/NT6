@@ -3,8 +3,8 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÊØÔ°ÈË", ({ "shouyuan ren","shouyuan","ren" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("å®ˆåœ’äºº", ({ "shouyuan ren","shouyuan","ren" }) );
+        set("gender", "ç”·æ€§" );
         set("age",65);
         set("social_exp",2000);
         set("combat_exp",10000);

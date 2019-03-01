@@ -5,20 +5,20 @@ inherit F_LIQUID;
 
 void create()
 {
-        set_name("¾Æ±­", ({"wine"}));
+        set_name("é…’æ¯", ({"wine"}));
         set_weight(700);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»¸öÆÕÆÕÍ¨Í¨µÄ¾Æ±­¡£\n");
-                set("unit", "±­");
+                set("long", "é€™æ˜¯ä¸€å€‹æ™®æ™®é€šé€šçš„é…’æ¯ã€‚\n");
+                set("unit", "æ¯");
                 set("value", 100);
                 set("max_liquid", 5);
         }
 
         set("liquid", ([
                 "type": "alcohol",
-                "name": "Ã×¾Æ",
+                "name": "ç±³é…’",
                 "remaining": 5,
                 "supply": 15,
                 "drunk_apply": 3,

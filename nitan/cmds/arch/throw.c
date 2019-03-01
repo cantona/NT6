@@ -18,7 +18,7 @@ int main(object me, string arg)
         can = SECURITY_D->valid_grant(me, "(arch)");
 
         if (! arg)
-                return notify_fail("ÄãÒª°ÑË­ËÍ½øµØÓü£¿\n");
+                return notify_fail("ä½ è¦æŠŠèª°é€é€²åœ°ç„ï¼Ÿ\n");
 
         sscanf(arg, "%s because %s", arg, because);
 
@@ -42,17 +42,17 @@ int main(object me, string arg)
         }
 
         if (! time)
-                return notify_fail("ÄãÒª½û±Õ±ğÈË¶à¾Ã£¿\n");
+                return notify_fail("ä½ è¦ç¦é–‰åˆ¥äººå¤šä¹…ï¼Ÿ\n");
 
         ob = find_player(arg);
         if (wiz_level(me) < 1 && ! objectp(ob))
-                return notify_fail("Ã»ÓĞÕâ¸öÍæ¼Ò¡£\n");
+                return notify_fail("æ²’æœ‰é€™å€‹ç©å®¶ã€‚\n");
 
         if (! objectp(ob))
         {
                 ob = UPDATE_D->global_find_player(arg);
                 if (! objectp(ob))
-                        return notify_fail("Ã»ÓĞÕâ¸öÍæ¼Ò¡£\n");
+                        return notify_fail("æ²’æœ‰é€™å€‹ç©å®¶ã€‚\n");
 
                 if( stringp(query("startroom", ob)) )
                         ob->move(query("startroom", ob));
@@ -61,14 +61,14 @@ int main(object me, string arg)
         }
 
         if (! ob || ! me->visible(ob))
-                return notify_fail("Ã»ÓĞÕâ¸öÍæ¼Ò¡£\n");
+                return notify_fail("æ²’æœ‰é€™å€‹ç©å®¶ã€‚\n");
 
         if (ob == me || time < 0)
-                return notify_fail("·èÁË... ÄãÕæÊÇ·èÁË£¡\n");
+                return notify_fail("ç˜‹äº†... ä½ çœŸæ˜¯ç˜‹äº†ï¼\n");
 
         /*
         if (wiz_level(ob) > 0)
-                return notify_fail("Äã²»ÄÜ½û±ÕÎ×Ê¦£¡\n");
+                return notify_fail("ä½ ä¸èƒ½ç¦é–‰å·«å¸«ï¼\n");
         */
 
         bmsg = "";
@@ -77,7 +77,7 @@ int main(object me, string arg)
                 if (! because)
                 {
                         UPDATE_D->global_destruct_player(ob);
-                        return notify_fail("ËÍÈË½ø¼àÓüÄã±ØĞëÓĞÒ»¸öÀíÓÉ²ÅĞĞ¡£\n");
+                        return notify_fail("é€äººé€²ç›£ç„ä½ å¿…é ˆæœ‰ä¸€å€‹ç†ç”±æ‰è¡Œã€‚\n");
                 }
 
                 switch (because)
@@ -92,7 +92,7 @@ int main(object me, string arg)
 
                 default:
                         UPDATE_D->global_destruct_player(ob);
-                        return notify_fail("ÄãÕâ¸öÀíÓÉÒ²Ì«²»³ä·ÖÁË¡£\n");
+                        return notify_fail("ä½ é€™å€‹ç†ç”±ä¹Ÿå¤ªä¸å……åˆ†äº†ã€‚\n");
                 }
         }
 
@@ -100,13 +100,13 @@ int main(object me, string arg)
         {
                 if (card = present("throw card", me))
                 {
-                        message("vision", me->name() + "ÌÍ³öÒ»ÕÅ¿¨Æ¬£¬"
-                                "µÎàÖ¹¾¹¾µÄ²»ÖªµÀÔÚËµĞ©Ê²Ã´£¬ºÃÏñ"
-                                "Ìáµ½ÁË"+query("name", ob)+"¡£\n",
+                        message("vision", me->name() + "æå‡ºä¸€å¼µå¡ç‰‡ï¼Œ"
+                                "æ»´å˜€å’•å’•çš„ä¸çŸ¥é“åœ¨èªªäº›ä»€éº¼ï¼Œå¥½åƒ"
+                                "æåˆ°äº†"+query("name", ob)+"ã€‚\n",
                                 environment(me), ({ me }));
-                        tell_object(me, "ÄãÌÍ³ö" + card->name() + "£¬"
-                                "¿ÚÖĞÄîÄîÓĞ´Ê£ºÌìÁéÁé£¡µØÁéÁé£¡¿ì°Ñ" +
-                                query("name", ob)+"ËÍµ½µØÓüÈ¥£¡\n");
+                        tell_object(me, "ä½ æå‡º" + card->name() + "ï¼Œ"
+                                "å£ä¸­å¿µå¿µæœ‰è©ï¼šå¤©éˆéˆï¼åœ°éˆéˆï¼å¿«æŠŠ" +
+                                query("name", ob)+"é€åˆ°åœ°ç„å»ï¼\n");
                         time=query("time_to_leave", card);
                         destruct(card);
                         can = 1;
@@ -116,7 +116,7 @@ int main(object me, string arg)
         if (! can)
         {
                 UPDATE_D->global_destruct_player(ob);
-                return notify_fail("ÄãÎŞÈ¨°Ñ"+query("name", ob)+"ËÍ½øµØÓü£¡\n");
+                return notify_fail("ä½ ç„¡æ¬ŠæŠŠ"+query("name", ob)+"é€é€²åœ°ç„ï¼\n");
         }
 
         if (! ob->is_in_prison())
@@ -132,18 +132,18 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : throw <Íæ¼ÒID> [ <Ê±¼ä> ] because <ÀíÓÉ>
+æŒ‡ä»¤æ ¼å¼ : throw <ç©å®¶ID> [ <æ™‚é–“> ] because <ç†ç”±>
  
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄã°ÑÄ³¸öÍæ¼Ò½û±ÕÒ»¶ÎÊ±¼ä¡£Ê±¼äÒÔ·ÖÖÓÎªµ¥Î»£¬¿É
-ÒÔÓÃ h ±íÊ¾Ğ¡Ê±£¬d ±íÊ¾Ìì£¬m ±íÊ¾ÔÂ·İ£¬y ±íÊ¾Äê¡£
+é€™å€‹æŒ‡ä»¤å¯ä»¥è®“ä½ æŠŠæŸå€‹ç©å®¶ç¦é–‰ä¸€æ®µæ™‚é–“ã€‚æ™‚é–“ä»¥åˆ†é˜ç‚ºå–®ä½ï¼Œå¯
+ä»¥ç”¨ h è¡¨ç¤ºå°æ™‚ï¼Œd è¡¨ç¤ºå¤©ï¼Œm è¡¨ç¤ºæœˆä»½ï¼Œy è¡¨ç¤ºå¹´ã€‚
 
-½û±ÕËûÈËÀíÓÉÖ÷ÒªÈçÏÂ£º
-1. ¿Ú³öÎÛÑÔ»àÓï(rude)
-2. ·¢²¼ËûÈËËµµÄÎÛÑÔ»àÓï(copy)
-3. ÔìÒ¥ÉúÊÂ(rumor)
-4. É¢²¼ÖØ¸´ĞÅÏ¢(flood)
-5. Ê¹ÓÃÏµÍ³´íÎó£¬µµ°¸´ı²é(bug)
-6. ³öÓÚÎ¬»¤¸ÃÍæ¼Òµµ°¸µÄÄ¿µÄ(main)
+ç¦é–‰ä»–äººç†ç”±ä¸»è¦å¦‚ä¸‹ï¼š
+1. å£å‡ºæ±¡è¨€ç©¢èª(rude)
+2. ç™¼å¸ƒä»–äººèªªçš„æ±¡è¨€ç©¢èª(copy)
+3. é€ è¬ ç”Ÿäº‹(rumor)
+4. æ•£å¸ƒé‡å¾©ä¿¡æ¯(flood)
+5. ä½¿ç”¨ç³»çµ±éŒ¯èª¤ï¼Œæª”æ¡ˆå¾…æŸ¥(bug)
+6. å‡ºäºç¶­è­·è©²ç©å®¶æª”æ¡ˆçš„ç›®çš„(main)
 
 see also : free 
 HELP );

@@ -1,14 +1,14 @@
-// ´óÌÆË«Áú´«
-//bing.c Ğ¡±ø
+// å¤§å”é›™é¾å‚³
+//bing.c å°å…µ
  
 inherit NPC;
 
 void create()
 {
-        set_name("Ğ¡±ø", ({ "xiao bing", "bing" }));
+        set_name("å°å…µ", ({ "xiao bing", "bing" }));
         set("age", 18+random(10));
-        set("gender", "ÄĞĞÔ");
-        set("long","ÕâÊÇÒ»Ãû¸ßÀöÊ¿±ø£¬ÕâĞ©Ê¿±øÁ¥ÊôÓùÁÖ¾ü£¬ÊÇÊ¿±øÖĞµÄ¾«Èñ¡£\n");
+        set("gender", "ç”·æ€§");
+        set("long","é€™æ˜¯ä¸€åé«˜éº—å£«å…µï¼Œé€™äº›å£«å…µéš¸å±¬å¾¡æ—è»ï¼Œæ˜¯å£«å…µä¸­çš„ç²¾éŠ³ã€‚\n");
         set("attitude", "peaceful");
         set("str", 20);
         set("combat_exp", 80000);

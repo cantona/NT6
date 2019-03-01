@@ -13,13 +13,13 @@ int do_not();
 
 void create()
 {
-        set("short", "Î×Ê¦»áÒéÊÒ");
+        set("short", "å·«å¸«æœƒè­°å®¤");
         set("long", @LONG
-ÕâÀï¾ÍÊÇÄàÌ¶Î×Ê¦µÄ»áÒéÊÒËùÔÚ¡£¸Õ·ÛË¢¹ıµÄËÄÖÜÇ½±ÚÉÏ¹Ò×ÅÄà
-Ì¶¢å Î×Ê¦»­Ïñ£¬·Ö±ğÓĞ£º¸ß´¦²»Ê¤º®(lonely)¡¢ÔñÃ÷(ken)¡¢°²È«ÖĞ
-ĞÄ(sinb)£»ÄàÌ¶¢æÎ×Ê¦»­Ïñ£º¸ß´¦²»Ê¤º®(lonely)¡¢Ò»ÈËÁ½½Ç(yezh)£»
-ÄàÌ¶¢ç Î×Ê¦»­Ïñ£º¸ß´¦²»Ê¤º®(lonely)¡¢·ç·É(wind)¡£ Îİ×ÓµÄÕıÖĞ
-Ñë·Å×ÅÒ»ÕÅéªÄ¾×ÀÒÎ£¬ÊÇÄàÌ¶Î×Ê¦×éÓÃÀ´¿ª»áÓÃµÄ¡£
+é€™è£¡å°±æ˜¯æ³¥æ½­å·«å¸«çš„æœƒè­°å®¤æ‰€åœ¨ã€‚å‰›ç²‰åˆ·éçš„å››å‘¨ç‰†å£ä¸Šæ›è‘—æ³¥
+æ½­â–¡ å·«å¸«ç•«åƒï¼Œåˆ†åˆ¥æœ‰ï¼šé«˜è™•ä¸å‹å¯’(lonely)ã€æ“‡æ˜(ken)ã€å®‰å…¨ä¸­
+å¿ƒ(sinb)ï¼›æ³¥æ½­â–¡å·«å¸«ç•«åƒï¼šé«˜è™•ä¸å‹å¯’(lonely)ã€ä¸€äººå…©è§’(yezh)ï¼›
+æ³¥æ½­â–¡ å·«å¸«ç•«åƒï¼šé«˜è™•ä¸å‹å¯’(lonely)ã€é¢¨é£›(wind)ã€‚ å±‹å­çš„æ­£ä¸­
+å¤®æ”¾è‘—ä¸€å¼µæ¥ æœ¨æ¡Œæ¤…ï¼Œæ˜¯æ³¥æ½­å·«å¸«çµ„ç”¨ä¾†é–‹æœƒç”¨çš„ã€‚
 LONG );
 
         set("exits", ([ 
@@ -66,10 +66,10 @@ int do_start(string arg)
         me = this_player();
 
         if (wiz_level(me) < wiz_level("(arch)"))
-                return notify_fail("¶Ô²»Æğ£¬ÄúÎŞÈ¨ÕÙ¿ªÎ×Ê¦»áÒé¡£\n");
+                return notify_fail("å°ä¸èµ·ï¼Œæ‚¨ç„¡æ¬Šå¬é–‹å·«å¸«æœƒè­°ã€‚\n");
 
         if ((int)query("meeting_trigger") != 0)
-                return notify_fail("»áÒéÕıÔÚ½øĞĞÖĞ¡£\n");
+                return notify_fail("æœƒè­°æ­£åœ¨é€²è¡Œä¸­ã€‚\n");
 
         set("meeting_trigger", 1);
 
@@ -81,17 +81,17 @@ int do_start(string arg)
                 if (player == me)
                         continue;
 
-                tell_object(player, sprintf(GRN "%s(%s)¸æËßÄã£ºÎ×Ê¦»áÒéÏÖÔÚÕÙ¿ª£¬Çëµ½Î×Ê¦»áÒéÊÒ¿ª»á¡£\n" NOR, 
+                tell_object(player, sprintf(GRN "%s(%s)å‘Šè¨´ä½ ï¼šå·«å¸«æœƒè­°ç¾åœ¨å¬é–‹ï¼Œè«‹åˆ°å·«å¸«æœƒè­°å®¤é–‹æœƒã€‚\n" NOR, 
                                             query("name", me),query("id", me)));
                                             
                 player->move("/d/wizard/meeting_room.c");
-                message_vision("$N×¼Ê±µ½´ïÁË»á³¡¡£\n", player);       
-                set_temp("disable_type", HIW"<»áÒéÖĞ>"NOR, player);
+                message_vision("$Næº–æ™‚åˆ°é”äº†æœƒå ´ã€‚\n", player);       
+                set_temp("disable_type", HIW"<æœƒè­°ä¸­>"NOR, player);
         }
 
         set_temp("keeper", 1, me);
         
-        message_vision(HIW "\n$N´óÉùĞû²¼£º¡°»áÒéÏÖÔÚ¿ªÊ¼¡£¡±\n" NOR, me);
+        message_vision(HIW "\n$Nå¤§è²å®£å¸ƒï¼šâ€œæœƒè­°ç¾åœ¨é–‹å§‹ã€‚â€\n" NOR, me);
 
         log_file("meeting.log", sprintf("%s(%s) start the meeting on %s.\n", 
                                         me->name(1), geteuid(me),
@@ -106,7 +106,7 @@ int do_say(string msg)
         SAY_CMD->main(this_player(), msg);
         
         if ((int)query("meeting_trigger") == 1)        
-                log_file("meeting.log", sprintf(CYN "%s(%s)ËµµÀ£º" + msg + "\n" NOR,
+                log_file("meeting.log", sprintf(CYN "%s(%s)èªªé“ï¼š" + msg + "\n" NOR,
                                                 this_player()->name(1), 
                                                 query("id", this_player())));
         return 1;
@@ -120,10 +120,10 @@ int do_over()
         me = this_player();
         
         if (! wizardp(me) || wiz_level(me) < wiz_level("(arch)"))
-                return notify_fail("ÄãÃ»ÓĞÈ¨Á¦ÖÕÖ¹»áÒé¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¬ŠåŠ›çµ‚æ­¢æœƒè­°ã€‚\n");
                 
         if ((int)query("meeting_trigger") == 0)
-                return notify_fail("ÏÖÔÚÃ»ÓĞ½øĞĞÈÎºÎ»áÒé¡£\n");
+                return notify_fail("ç¾åœ¨æ²’æœ‰é€²è¡Œä»»ä½•æœƒè­°ã€‚\n");
         
         delete("meeting_trigger");
  
@@ -132,11 +132,11 @@ int do_over()
                 if (! wizardp(player))
                         continue;
                         
-                if( query_temp("disable_type", player) == HIW"<»áÒéÖĞ>"NOR )
+                if( query_temp("disable_type", player) == HIW"<æœƒè­°ä¸­>"NOR )
                         delete_temp("disable_type", player);
         }
         
-        message_vision(HIW "\n$N´óÉùĞû²¼£º¡°»áÒéÏÖÔÚ½áÊø¡£¡±\n" NOR, me);
+        message_vision(HIW "\n$Nå¤§è²å®£å¸ƒï¼šâ€œæœƒè­°ç¾åœ¨çµæŸã€‚â€\n" NOR, me);
         log_file("meeting.log", sprintf("%s(%s) over the meeting on %s.\n", 
                                         me->name(1), geteuid(me), 
                                         ctime(time())));
@@ -147,7 +147,7 @@ int do_not()
 {
        if (query("meeting_trigger"))
        {
-               write("Çë×¨ĞÄ¿ª»á£¡\n");
+               write("è«‹å°ˆå¿ƒé–‹æœƒï¼\n");
                return 1;
        }
        return 0;
@@ -156,7 +156,7 @@ int do_not()
 int valid_leave(object me, string dir)
 {
         if (query("meeting_trigger"))
-                return notify_fail("ÏÖÔÚÕıÔÚ¿ª»áÄØ£¬Äã×îºÃÄÄÀïÒ²²»ÒªÈ¥¡£\n");
+                return notify_fail("ç¾åœ¨æ­£åœ¨é–‹æœƒå‘¢ï¼Œä½ æœ€å¥½å“ªè£¡ä¹Ÿä¸è¦å»ã€‚\n");
                 
         return ::valid_leave(me, dir);
 }

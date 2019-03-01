@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-        set("short", "´©ÀÈÃÅ");
+        set("short", "ç©¿å»Šé–€");
         set("long", @LONG
-ÕâÀïÊÇËÉ·ç¹ÛÍ¨ÍùºóÔºµÄÖÐÃÅ£¬ÃÅºñÈý´ç£¬ºìËÉÍ­¹¿£¬ÊýÊ®ÄêÓÌÓÐ
-ËÉÏãÆ®µ´£¬ºÍ¹ÛÖÐÏã»ð²ôºÍ³öÒ»¹É³öÊÀµÄ×ÌÎ¶¡£ÍâÅÉÈËÊ¿µ½´Ë¾Í¸Ã»ØÍ·
-ÁË¡£
+é€™è£¡æ˜¯é¬†é¢¨è§€é€šå¾€å¾Œé™¢çš„ä¸­é–€ï¼Œé–€åŽšä¸‰å¯¸ï¼Œç´…é¬†éŠ…ç®ï¼Œæ•¸åå¹´çŒ¶æœ‰
+é¬†é¦™é£„ç›ªï¼Œå’Œè§€ä¸­é¦™ç«æ‘»å’Œå‡ºä¸€è‚¡å‡ºä¸–çš„æ»‹å‘³ã€‚å¤–æ´¾äººå£«åˆ°æ­¤å°±è©²å›žé ­
+äº†ã€‚
 LONG );
         set("exits", ([
                 "south" : __DIR__"qiandian",
@@ -27,18 +27,18 @@ int valid_leave(object me, string dir)
 {
 /*        mapping myfam;
         myfam=query("family", me);
-        if ((!myfam || (myfam["family_name"] != "Çà³ÇÅÉ")) && (dir == "north"))
-                return notify_fail("·ÇÇà³ÇµÜ×Ó£¬µ½´ËÖ¹²½°É¡£\n");
+        if ((!myfam || (myfam["family_name"] != "é’åŸŽæ´¾")) && (dir == "north"))
+                return notify_fail("éžé’åŸŽå¼Ÿå­ï¼Œåˆ°æ­¤æ­¢æ­¥å§ã€‚\n");
         else return 1;
 */
 if (dir != "south" )
         {
-                if( query("family/family_name", me) != "Çà³ÇÅÉ" )
+                if( query("family/family_name", me) != "é’åŸŽæ´¾" )
                 {                        
                        if(present("yu renhao", environment(me)) && living(present("yu renhao", environment(me))))
                         {
                                 return notify_fail(
-"ÓÚÈËºÀºÈµÀ£ººóÃæÊÇ±¾ÅÉÖØµØ£¬ÕâÎ»" + RANK_D->query_respect(me) + "ÇëÖ¹²½¡£\n");
+"äºŽäººè±ªå–é“ï¼šå¾Œé¢æ˜¯æœ¬æ´¾é‡åœ°ï¼Œé€™ä½" + RANK_D->query_respect(me) + "è«‹æ­¢æ­¥ã€‚\n");
                         }
                         else
                                 return ::valid_leave(me, dir);                        

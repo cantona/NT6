@@ -16,42 +16,42 @@ int perform(object me, object target)
           !sizeof(can_perform) || 
           member_array("hand",can_perform) == -1
          )
-                return notify_fail("Äã»¹Ã»ÓĞÑ§»áÊ¹ÓÃ£ÛÌìÁúÖ®ÊÖ£İ£¡\n");
+                return notify_fail("ä½ é‚„æ²’æœ‰å­¸æœƒä½¿ç”¨ï¹å¤©é¾ä¹‹æ‰‹ï¹ï¼\n");
 
         if (me->is_busy())
-                return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É£¬ÎŞ·¨Ê¹ÓÃÌìÁúÖ®ÊÖ¡£\n");
+                return notify_fail("ä½ ä¸Šä¸€å€‹å‹•ä½œé‚„æ²’æœ‰å®Œæˆï¼Œç„¡æ³•ä½¿ç”¨å¤©é¾ä¹‹æ‰‹ã€‚\n");
 
         lvl = (int)me->query_skill("martial-cognize",1);
 
        if(lvl < 250)
-                return notify_fail("ÄãµÄÎäÑ§ĞŞÑø²»¹»¸ßÉî£¡\n");
+                return notify_fail("ä½ çš„æ­¦å­¸ä¿®é¤Šä¸å¤ é«˜æ·±ï¼\n");
 
         if( query("jingli", me)<500 )
-                return notify_fail("ÄãµÄ¾«Á¦²»¹»£¡\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤ ï¼\n");
 
         if( query("max_jingli", me)<1000 )
-                return notify_fail("ÄãµÄ¾«Á¦»¹Ã»ÓĞ´ïµ½×ã¹»µÄ²ã´Î£¡\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›é‚„æ²’æœ‰é”åˆ°è¶³å¤ çš„å±¤æ¬¡ï¼\n");
 
        if( query("jing", me) <= 300 )
-                return notify_fail("ÄãµÄ¾«Éñ×´Ì¬²»ºÃ£¡\n");
+                return notify_fail("ä½ çš„ç²¾ç¥ç‹€æ…‹ä¸å¥½ï¼\n");
 
         if( !target || !target->is_character() )
-                return notify_fail("ÄãÒª¶ÔË­Ê¹ÓÃ£ÛÌìÁúÖ®ÊÖ£İ£¿\n");
+                return notify_fail("ä½ è¦å°èª°ä½¿ç”¨ï¹å¤©é¾ä¹‹æ‰‹ï¹ï¼Ÿ\n");
 
         if( target->is_corpse() )
-                return notify_fail("À´²»¼°ÁË£¬Ö»ÓĞ»îÈË²ÅÄÜ¾ÈĞÑ¡£\n");
+                return notify_fail("ä¾†ä¸åŠäº†ï¼Œåªæœ‰æ´»äººæ‰èƒ½æ•‘é†’ã€‚\n");
 
        if(me->is_fighting() || target->is_fighting())
-                return notify_fail("Õ½¶·ÖĞ²»ÄÜÊ¹ÓÃ£ÛÌìÁúÖ®ÊÖ£İ£¡\n");
+                return notify_fail("æˆ°é¬¥ä¸­ä¸èƒ½ä½¿ç”¨ï¹å¤©é¾ä¹‹æ‰‹ï¹ï¼\n");
 
         addn("jingli", -400, me);
         me->receive_damage("jing", 250);
 
        if (target == me)
-                message_vision( HIY "$NË«ÊÖ½»µşÌùÔÚ¶îÍ·, ±ÕÉÏÑÛ¾¦»º»ºµÍÒ÷...\n" NOR, me);
+                message_vision( HIY "$Né›™æ‰‹äº¤ç–Šè²¼åœ¨é¡é ­, é–‰ä¸Šçœ¼ç›ç·©ç·©ä½åŸ...\n" NOR, me);
         else
-                message_vision( HIY "$NÒ»ÊÖ·ÅÔÚ$nµÄÌìÁé¸ÇÉÏ, Ò»ÊÖÌùÔÚ$nµÄºóĞÄ, ±ÕÉÏÑÛ¾¦»º»ºµÍÒ÷...\n" NOR, me, target);
-        message_vision( HIY "$NÁ³ÉÏÕÀ·Å³öÓ¤º¢°ãµÄĞ¦Èİ£¬ËÆºõÕı´¦ÉíÓÚÎ÷·½¼«ÀÖÊÀ½ç...\n" NOR, target);
+                message_vision( HIY "$Nä¸€æ‰‹æ”¾åœ¨$nçš„å¤©éˆè“‹ä¸Š, ä¸€æ‰‹è²¼åœ¨$nçš„å¾Œå¿ƒ, é–‰ä¸Šçœ¼ç›ç·©ç·©ä½åŸ...\n" NOR, me, target);
+        message_vision( HIY "$Nè‡‰ä¸Šç¶»æ”¾å‡ºå¬°å­©èˆ¬çš„ç¬‘å®¹ï¼Œä¼¼ä¹æ­£è™•èº«äºè¥¿æ–¹æ¥µæ¨‚ä¸–ç•Œ...\n" NOR, target);
 
        if( query("jing", target)<1 )
                 set("jing", 1, target);

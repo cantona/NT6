@@ -1,4 +1,4 @@
-//jiaowei qin ½¹Î²ÇÙ
+//jiaowei qin ç„¦å°¾ç´
 
 #include <weapon.h>
 #include <ansi.h>
@@ -8,18 +8,18 @@ inherit SWORD;
 
 void create()
 {
-        set_name(HIM"½¹Î²ÇÙ"NOR,({"jiaowei qin","qin"}));
+        set_name(HIM"ç„¦å°¾ç´"NOR,({"jiaowei qin","qin"}));
         set_weight(500);
         if(clonep())
                  set_default_object(__FILE__);
         else{
-                set("unit","ÕÅ");
+                set("unit","å¼µ");
                 set("value",40000);
                 set("material","steel");
-                set("long","Ïà´«Õâ±ãÊÇµ±Äê²ÌÎÄ¼§´Ó»ğÖĞËù¾È³öµÄ½¹Ä¾×ö³ÉµÄÃÀÇÙ£¬ÇÙµÄÎ²¶ËÈÔ¿É¼û½¹ºÚÉ«¡£\n");
-                set("wield_msg",HIY"$NÉìÊÖÇáÇáÒ»»Ó,Ò»ÕÅ½¹Î²ÇÙ±ãÒÑ³öÏÖÔÚ$NÊÖÖĞ.\n"NOR);
-                set("unwield_msg",HIY"$NÊ®Ö¸Ò»·÷£¬ÇÙÉùÒ·È»¶øÖ¹¡£$NÊÕÆğ½¹Î²ÇÙ£¬·Å½ø±³×ÅµÄ°ü¸¤Àï¡£\n"NOR);
-//                set("unequip_msg",HIY"ÄãÊ®Ö¸Ò»·÷£¬ÇÙÉùÒ·È»¶øÖ¹¡£ÄãÊÕÆğ½¹Î²ÇÙ£¬·Å½ø±³×ÅµÄ°ü¸¤Àï¡£.\n"NOR);
+                set("long","ç›¸å‚³é€™ä¾¿æ˜¯ç•¶å¹´è”¡æ–‡å§¬å¾ç«ä¸­æ‰€æ•‘å‡ºçš„ç„¦æœ¨åšæˆçš„ç¾ç´ï¼Œç´çš„å°¾ç«¯ä»å¯è¦‹ç„¦é»‘è‰²ã€‚\n");
+                set("wield_msg",HIY"$Nä¼¸æ‰‹è¼•è¼•ä¸€æ®,ä¸€å¼µç„¦å°¾ç´ä¾¿å·²å‡ºç¾åœ¨$Næ‰‹ä¸­.\n"NOR);
+                set("unwield_msg",HIY"$NåæŒ‡ä¸€æ‹‚ï¼Œç´è²æ›³ç„¶è€Œæ­¢ã€‚$Næ”¶èµ·ç„¦å°¾ç´ï¼Œæ”¾é€²èƒŒè‘—çš„åŒ…è¢±è£¡ã€‚\n"NOR);
+//                set("unequip_msg",HIY"ä½ åæŒ‡ä¸€æ‹‚ï¼Œç´è²æ›³ç„¶è€Œæ­¢ã€‚ä½ æ”¶èµ·ç„¦å°¾ç´ï¼Œæ”¾é€²èƒŒè‘—çš„åŒ…è¢±è£¡ã€‚.\n"NOR);
         }
         init_sword(150);
         setup();
@@ -30,7 +30,7 @@ void create()
 //        object ob = environment();
 
 /*        if (ob && !wizardp(ob)) {
-                tell_object(ob, name() + "ÊÇÎ×Ê¦ÓÃÆ·£¬Äã²»ÄÜÊ¹ÓÃ£¬ÇëÂíÉÏÏòÎ×Ê¦±¨¸æ£¬·ñÔòºó¹û×Ô¸º¡£\n");
+                tell_object(ob, name() + "æ˜¯å·«å¸«ç”¨å“ï¼Œä½ ä¸èƒ½ä½¿ç”¨ï¼Œè«‹é¦¬ä¸Šå‘å·«å¸«å ±å‘Šï¼Œå¦å‰‡å¾Œæœè‡ªè² ã€‚\n");
                 call_out("let_him_die", 300, ob);
                 return 0;
         }*/
@@ -41,7 +41,7 @@ void let_him_die(object ob)
 {
         if (ob = environment()) {
                 addn("combat_exp", -30000, ob);
-                set_temp("last_damage_from", "µÁÓÃÎ×Ê¦ÓÃÆ·ÖĞ¶¾", ob);
+                set_temp("last_damage_from", "ç›œç”¨å·«å¸«ç”¨å“ä¸­æ¯’", ob);
                 ob->die();
         }
 }
@@ -61,15 +61,15 @@ mixed weapon_hit_ob(object me, object victim, int damage_bonus)
                 if (! victim->is_busy())
                 {
                         victim->start_busy(me->query_skill("sword") / 100 + 1);
-                  return WHT "$N" WHT "Ò»Éù¶ÏºÈ£¬µ¥ÊÖÃÍÈ»·÷¹ıÊÖÖĞ½¹Î²ÇÙ£¬½¹Î²ÇÙ¶ÙÊ±·¢³öÒ»¹É¼âÈñµÄ"
-                       "ÇÙÒô£¬$n" WHT "Ö»¾õÍ·ÔÎÄ¿Ñ££¬¼¸Óû»èØÊ£¡\n" NOR;
+                  return WHT "$N" WHT "ä¸€è²æ–·å–ï¼Œå–®æ‰‹çŒ›ç„¶æ‹‚éæ‰‹ä¸­ç„¦å°¾ç´ï¼Œç„¦å°¾ç´é “æ™‚ç™¼å‡ºä¸€è‚¡å°–éŠ³çš„"
+                       "ç´éŸ³ï¼Œ$n" WHT "åªè¦ºé ­æšˆç›®çœ©ï¼Œå¹¾æ¬²æ˜å¥ï¼\n" NOR;
                 }
         case 1:
                 n = me->query_skill("sword");
                 victim->receive_damage("qi", n * 3 / 4, me);
                 victim->receive_wound("qi", n * 3 / 4, me);
-                return WHT "$N" WHT "Ò»ÉùÀäºß£¬ÊÖÖĞ½¹Î²ÇÙÒ»Õñ£¬ö®Ê±ÁúÒ÷ÖèÆğ£¬Ò»µÀ½£ÆøĞ¯×Å¼â"
-                       "ÈñµÄÇÙÒôÖ±Éä$n" WHT "¶øÈ¥£¡\n" NOR;
+                return WHT "$N" WHT "ä¸€è²å†·å“¼ï¼Œæ‰‹ä¸­ç„¦å°¾ç´ä¸€æŒ¯ï¼Œéœæ™‚é¾åŸé©Ÿèµ·ï¼Œä¸€é“åŠæ°£æ”œè‘—å°–"
+                       "éŠ³çš„ç´éŸ³ç›´å°„$n" WHT "è€Œå»ï¼\n" NOR;
         }
         return damage_bonus;
 }

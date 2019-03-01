@@ -3,11 +3,11 @@
 
 inherit F_CLEAN_UP;
 
-string name() { return HIG "ÃîÊÖÒ©Íõ" NOR; }
+string name() { return HIG "å¦™æ‰‹è—¥çŽ‹" NOR; }
 
 int perform(object me, string skill)
 {
-        return notify_fail("Äã¶ÔËùÓÐÒ©Àí¼°¶¾ÎïÔËÓÃ³öÉñÈë»¯£¬´ø¶¾Àà¹¥»÷¶ÔÊÖ£¬¿ÉÊ¹¶ÔÊÖÖÐ¶¾³Ì¶È¼ÓÉî20%£»\n"
-                           "Í¬Ê±£¬¾ßÓÐ±¾²ÝÖªÊ¶¼¼ÄÜµÄÌØÐ§£¬ÇÒÐ§¹ûÌáÉý10%¡£²»ÐèÒªÔËÓÃ¡£\n");
+        return notify_fail("ä½ å°æ‰€æœ‰è—¥ç†åŠæ¯’ç‰©é‹ç”¨å‡ºç¥žå…¥åŒ–ï¼Œå¸¶æ¯’é¡žæ”»æ“Šå°æ‰‹ï¼Œå¯ä½¿å°æ‰‹ä¸­æ¯’ç¨‹åº¦åŠ æ·±20%ï¼›\n"
+                           "åŒæ™‚ï¼Œå…·æœ‰æœ¬è‰çŸ¥è­˜æŠ€èƒ½çš„ç‰¹æ•ˆï¼Œä¸”æ•ˆæžœæå‡10%ã€‚ä¸éœ€è¦é‹ç”¨ã€‚\n");
 }
 

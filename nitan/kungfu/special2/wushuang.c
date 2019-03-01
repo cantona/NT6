@@ -1,4 +1,4 @@
-// wushuang.c ¹úÊ¿ÎÞË«
+// wushuang.c åœ‹å£«ç„¡é›™
 // Created by rcwiz for yhonline
 
 #include <ansi.h>
@@ -7,11 +7,11 @@ inherit F_CLEAN_UP;
 
 int is_scborn() { return 1; }
 
-string name() { return HIM "¹úÊ¿ÎÞË«" NOR; }
+string name() { return HIM "åœ‹å£«ç„¡é›™" NOR; }
 
 int perform(object me, string skill)
 {
-        return notify_fail("´ËÌìÐÔÕß³Ç¸®¼«Éî£¬ÉÆÓÚÒþ²Ø×Ô¼ºµÄÌØÐÔ£¬\n"
-                           "ÈÃÈË´§Ä¦²»Í¸¡£´ËÌìÐÔÕßÎÞÂÛÐÞÁ¶ºÎÖÖÎä\n"
-                           "¹¦£¬¾ù²»¿¼ÂÇÎä¹¦ÖÐ¹ØÓÚÌìÐÔµÄÏÞÖÆ¡£\n");
+        return notify_fail("æ­¤å¤©æ€§è€…åŸŽåºœæ¥µæ·±ï¼Œå–„äºŽéš±è—è‡ªå·±çš„ç‰¹æ€§ï¼Œ\n"
+                           "è®“äººæ£æ‘©ä¸é€ã€‚æ­¤å¤©æ€§è€…ç„¡è«–ä¿®ç…‰ä½•ç¨®æ­¦\n"
+                           "åŠŸï¼Œå‡ä¸è€ƒæ…®æ­¦åŠŸä¸­é—œäºŽå¤©æ€§çš„é™åˆ¶ã€‚\n");
 }

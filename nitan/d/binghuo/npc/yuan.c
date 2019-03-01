@@ -5,10 +5,10 @@ inherit F_MASTER;
 #include <ansi.h>;
 void create()
 {
-        set_name("Ôª¹ã²¨", ({ "yuan guangbo", "yuan", "guangbo" }));
-        set("title", HIB"º£É³ÅÉ×Ü¶æÖ÷"NOR);
-        set("long", "º£É³ÅÉÎäÒÕÆ½³££¬×¨¿¿¶¾ÑÎº¦ÈË¡£\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("å…ƒå»£æ³¢", ({ "yuan guangbo", "yuan", "guangbo" }));
+        set("title", HIB"æµ·æ²™æ´¾ç¸½èˆµä¸»"NOR);
+        set("long", "æµ·æ²™æ´¾æ­¦è—å¹³å¸¸ï¼Œå°ˆé æ¯’é¹½å®³äººã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 22);
         set("attitude", "peaceful");
         set("shen_type", -1);

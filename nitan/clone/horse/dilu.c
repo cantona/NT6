@@ -3,9 +3,9 @@ inherit "/clone/horse/horse.c";
 
 void create()
 {
-        set_name(HIG "µÄÂ¬Âí" NOR, ({ "dilu ma"}));
-        set("long", HIG "´ËÂí¼«ÆäÐÛ¿¡£¬±¼ÅÜÓÐÁ¦£¬Í¨ÈËÐÔ£¬ÖÒÐÄ¡£ÑÛÏÂÓÐÀá²Û£¬¶î"
-                        "ÉÏÓÐ°×µã£¬ÄËÈý¹úÁõ±¸µÄ°®Âí£¬ÔøÊý´ÎÖúÆäÍÑÏÕ¡£\n" NOR);
+        set_name(HIG "çš„ç›§é¦¬" NOR, ({ "dilu ma"}));
+        set("long", HIG "æ­¤é¦¬æ¥µå…¶é›„ä¿Šï¼Œå¥”è·‘æœ‰åŠ›ï¼Œé€šäººæ€§ï¼Œå¿ å¿ƒã€‚çœ¼ä¸‹æœ‰æ·šæ§½ï¼Œé¡"
+                        "ä¸Šæœ‰ç™½é»žï¼Œä¹ƒä¸‰åœ‹åŠ‰å‚™çš„æ„›é¦¬ï¼Œæ›¾æ•¸æ¬¡åŠ©å…¶è„«éšªã€‚\n" NOR);
 
         set("tili", 3000);
         set("max_tili", 3000);

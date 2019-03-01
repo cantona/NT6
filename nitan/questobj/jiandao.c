@@ -1,22 +1,22 @@
-// jiandao.c Îå¶¾¼ô
+// jiandao.c äº”æ¯’å‰ª
 #include <weapon.h>
 inherit SWORD;
 #include <ansi.h>
 void create()
 {
-        set_name("Îå¶¾¼ô", ({ "jian dao", "gou" }));
+        set_name("äº”æ¯’å‰ª", ({ "jian dao", "gou" }));
         set_weight(5000);
         set("taskobj", 1);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
-                set("long", "ÕâÊÇÒ»±úÆæÃÅ±øÆ÷£¬ºÃËÆÒ»Ö»´ó¼ôµ¶£¬ÉÏÃæÎ¹ÁË¾ç¶¾¡£\n"
+                set("unit", "æŸ„");
+                set("long", "é€™æ˜¯ä¸€æŸ„å¥‡é–€å…µå™¨ï¼Œå¥½ä¼¼ä¸€åªå¤§å‰ªåˆ€ï¼Œä¸Šé¢å–‚äº†åŠ‡æ¯’ã€‚\n"
 );
                 set("value", 0);
                 set("material", "steel");
-                set("wield_msg", "$N¡¸à§¡¹µÄÒ»ÉùÌÍ³öÒ»±ú$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n¹ÒÔÚÑü¼ä¡£\n");
+                set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€è²æå‡ºä¸€æŸ„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°‡æ‰‹ä¸­çš„$næ›åœ¨è…°é–“ã€‚\n");
         }
         setup();
 }

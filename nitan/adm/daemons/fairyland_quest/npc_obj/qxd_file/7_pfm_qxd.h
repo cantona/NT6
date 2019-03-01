@@ -1,155 +1,155 @@
 // for all_cmds_qxd_hj.h
 // naihe 21:42 03-10-17
-// ¸ø¸÷¸ö¼¼ÄÜ¶¼¼ÓÉÏ pfm  05-9-3 21:25
+// çµ¦å„å€‹æŠ€èƒ½éƒ½åŠ ä¸Š pfm  05-9-3 21:25
 
 mapping can_use_pfm( string pfm_id, object me, object target )
 {
 
-    // ³É¹¦Ê±£¬·µ»ØÈçÏÂÐÅÏ¢£¬¸øÕ½¶·º¯ÊýÖÐµÄ "pfm_info" ±äÁ¿½ÓÊÕ¡£
-    // "name": "¼¼ÄÜÖÐÎÄÃû"
-    // "damages": ¹¥»÷Á¦
-    // "me_busy": ×ÔÉíÃ¦Ê±
-    // "msg_all": ¸ø·¿×ÓÀïÆäËûÈË¿´µÄÃèÊö
-    // "msg_me": ¸ø×Ô¼º¿´µÄÃèÊö
-    // "msg_target": ¸ø±»¹¥»÷·¿¿´µÄÃèÊö
-    // "lost_hp": ×Ô¼ºÏûºÄÆøÏ¢
+    // æˆåŠŸæ™‚ï¼Œè¿”å›žå¦‚ä¸‹ä¿¡æ¯ï¼Œçµ¦æˆ°é¬¥å‡½æ•¸ä¸­çš„ "pfm_info" è®Šé‡æŽ¥æ”¶ã€‚
+    // "name": "æŠ€èƒ½ä¸­æ–‡å"
+    // "damages": æ”»æ“ŠåŠ›
+    // "me_busy": è‡ªèº«å¿™æ™‚
+    // "msg_all": çµ¦æˆ¿å­è£¡å…¶ä»–äººçœ‹çš„æè¿°
+    // "msg_me": çµ¦è‡ªå·±çœ‹çš„æè¿°
+    // "msg_target": çµ¦è¢«æ”»æ“Šæˆ¿çœ‹çš„æè¿°
+    // "lost_hp": è‡ªå·±æ¶ˆè€—æ°£æ¯
     mapping pfm_list;
     string *pfm_msg;
     string pfm_skills, pfm_name, pfm_limit;
     int LostHP_pfm = 10, Me_busy = 3+random(3);
-    // PFM_LvNeed ÔÚÆßÐÇµÆ 1 ºÅÎÄ¼þÄÚÒÔ #define ¶¨Òå£¬ÖÁÉÙÓÐ¸ÃµÈ¼¶µÄ¼¼ÄÜ²ÅÄÜÊ¹ÓÃ pfm.
-    // ÒÔÉÏ2¸ö´ø´óÐ´×ÖÄ¸µÄÒÔ¼° PFM_LvNeed ±äÁ¿£¬¼´Î¨Ò»ÅÐ¶¨ pfm ÔÚÊ²Ã´µÈ¼¶ÄÜ¹»Ê¹ÓÃ¡¢
-    // ×Ô¼ºÏûºÄÆøÏ¢µÄÁ¿¡¢×ÔÉíµÄbusy µÄÒÀ¾Ý¡£
+    // PFM_LvNeed åœ¨ä¸ƒæ˜Ÿç‡ˆ 1 è™Ÿæ–‡ä»¶å…§ä»¥ #define å®šç¾©ï¼Œè‡³å°‘æœ‰è©²ç­‰ç´šçš„æŠ€èƒ½æ‰èƒ½ä½¿ç”¨ pfm.
+    // ä»¥ä¸Š2å€‹å¸¶å¤§å¯«å­—æ¯çš„ä»¥åŠ PFM_LvNeed è®Šé‡ï¼Œå³å”¯ä¸€åˆ¤å®š pfm åœ¨ä»€éº¼ç­‰ç´šèƒ½å¤ ä½¿ç”¨ã€
+    // è‡ªå·±æ¶ˆè€—æ°£æ¯çš„é‡ã€è‡ªèº«çš„busy çš„ä¾æ“šã€‚
     string msg_all, msg_me, msg_target, find_name;
     int damages, damages_skills;
     if( !pfm_id || !me )
         return 0;
-    // ¾ø¼¼ÁÐ±í
+    // çµ•æŠ€åˆ—è¡¨
     pfm_list = ([
-        "kf": ({ "hfzj", "¿ñ·ç", "feng", }),
-        "by": ({ "hyzj", "±©Óê", "yu",   }),
-        "jl": ({ "llzj", "¾ªÀ×", "lei",  }),
-        "xd": ({ "ydzj", "Ñ¸µç", "dian", }),
-        "dh": ({ "dhzj", "¶á»ê", 0,      }),
-        "hy": ({ "fhzj", "»ðÑæ", 0,      }),
-        "js": ({ "gszj", "¾ÞÊ¯", 0,      }),
-        //"cs": ({ "heal", "ÖØÉú", 0,      }),  // È¡ÏûÕâ¸ö¡£¸Ð¾õ×ÜÊÇºÜ²»ºÃ
+        "kf": ({ "hfzj", "ç‹‚é¢¨", "feng", }),
+        "by": ({ "hyzj", "æš´é›¨", "yu",   }),
+        "jl": ({ "llzj", "é©šé›·", "lei",  }),
+        "xd": ({ "ydzj", "è¿…é›»", "dian", }),
+        "dh": ({ "dhzj", "å¥ªé­‚", 0,      }),
+        "hy": ({ "fhzj", "ç«ç‡„", 0,      }),
+        "js": ({ "gszj", "å·¨çŸ³", 0,      }),
+        //"cs": ({ "heal", "é‡ç”Ÿ", 0,      }),  // å–æ¶ˆé€™å€‹ã€‚æ„Ÿè¦ºç¸½æ˜¯å¾ˆä¸å¥½
     ]);
-    // ÎÞ´Ë¾ø¼¼´æÔÚ£¬·µ»Ø²»¿ÉÓÃ
+    // ç„¡æ­¤çµ•æŠ€å­˜åœ¨ï¼Œè¿”å›žä¸å¯ç”¨
     if( undefinedp( pfm_list[ pfm_id ] ) )
-        return ([ "err_msg": "ÄãÉè¶¨µÄ¾ø¼¼²»´æÔÚ" ]);
-    // ÄÇÃ´ÓÐ´Ë¾ø¼¼´æÔÚ£¬ÅÐ¶ÏÍæ¼Ò×ÔÉíµÄÌõ¼þÊÇ·ñ·ûºÏ
-    // ÊÇ·ñ¶®µÃ¶ÔÓ¦¼¼ÄÜ£¬ÒÔ¼°¼¼ÄÜµÈ¼¶ÊÇ·ñ×ã¹»
+        return ([ "err_msg": "ä½ è¨­å®šçš„çµ•æŠ€ä¸å­˜åœ¨" ]);
+    // é‚£éº¼æœ‰æ­¤çµ•æŠ€å­˜åœ¨ï¼Œåˆ¤æ–·çŽ©å®¶è‡ªèº«çš„æ¢ä»¶æ˜¯å¦ç¬¦åˆ
+    // æ˜¯å¦æ‡‚å¾—å°æ‡‰æŠ€èƒ½ï¼Œä»¥åŠæŠ€èƒ½ç­‰ç´šæ˜¯å¦è¶³å¤ 
     pfm_msg = pfm_list[ pfm_id ];
     pfm_skills = pfm_msg[0];
     pfm_name = pfm_msg[1];
     pfm_limit = pfm_msg[2];
-    // ²»¶®¸Ã¼¼ÄÜ£¬·µ»Ø²»¿ÉÓÃ
+    // ä¸æ‡‚è©²æŠ€èƒ½ï¼Œè¿”å›žä¸å¯ç”¨
     if( !query_temp("hj_game_skills/"+pfm_skills, me )
       || !query_temp("hj_game_damages/"+pfm_skills, me) )
-        return ([ "err_msg": "Äã²¢²»¶®µÃ¡¸"+pfm_name+"¡¹¾ø¼¼µÄ¼¼ÄÜ" ]);
-    // ¹ú¶È¼¼ÄÜ±¾¹úÊ¹ÓÃ
+        return ([ "err_msg": "ä½ ä¸¦ä¸æ‡‚å¾—ã€Œ"+pfm_name+"ã€çµ•æŠ€çš„æŠ€èƒ½" ]);
+    // åœ‹åº¦æŠ€èƒ½æœ¬åœ‹ä½¿ç”¨
     if( pfm_limit && query_temp("hj_game_find", me) != pfm_limit )
-        return ([ "err_msg": "¡¸"+pfm_name+"¡¹¾ø¼¼Ö»ÄÜÓÉ±¾¹ú¶È×ÓÃñÊ¹ÓÃ" ]);
+        return ([ "err_msg": "ã€Œ"+pfm_name+"ã€çµ•æŠ€åªèƒ½ç”±æœ¬åœ‹åº¦å­æ°‘ä½¿ç”¨" ]);
     damages_skills=query_temp("hj_game_damages/"+pfm_skills, me);
-    // µÈ¼¶ÊÇ·ñ×ã¹»¡¢ÆøÏ¢ÊÇ·ñ×ã¹»
+    // ç­‰ç´šæ˜¯å¦è¶³å¤ ã€æ°£æ¯æ˜¯å¦è¶³å¤ 
     if( damages_skills < PFM_LvNeed )
-        return ([ "err_msg":"ÄãµÄ¼¼ÄÜµÈ¼¶²»¹»£¬ÎÞ·¨Ê¹ÓÃ¡¸"+pfm_name+"¡¹¾ø¼¼" ]);
+        return ([ "err_msg":"ä½ çš„æŠ€èƒ½ç­‰ç´šä¸å¤ ï¼Œç„¡æ³•ä½¿ç”¨ã€Œ"+pfm_name+"ã€çµ•æŠ€" ]);
     if( query_temp("hj_hp", me)<(LostHP_pfm*5) )
-        return ([ "err_msg":"ÄãµÄÆøÏ¢Ì«Èõ£¬ÎÞ·¨Ê¹ÓÃ¡¸"+pfm_name+"¡¹¾ø¼¼" ]);
+        return ([ "err_msg":"ä½ çš„æ°£æ¯å¤ªå¼±ï¼Œç„¡æ³•ä½¿ç”¨ã€Œ"+pfm_name+"ã€çµ•æŠ€" ]);
     /*
-    // ºÃÁË£¡Ò»ÇÐOK£¬¿ÉÒÔÊ¹ÓÃ¾ø¼¼£¡
-    // Èç¹ûÊÇ»Ö¸´¼¼£¬Ö±½ÓÔÚÕâÀï´¦Àí¡£
+    // å¥½äº†ï¼ä¸€åˆ‡OKï¼Œå¯ä»¥ä½¿ç”¨çµ•æŠ€ï¼
+    // å¦‚æžœæ˜¯æ¢å¾©æŠ€ï¼Œç›´æŽ¥åœ¨é€™è£¡è™•ç†ã€‚
     if( pfm_id == "cs" )
     {
         int hp_add;
-        message_vision( CYN"\nÖ»¼û$N"NOR+CYN"ÉîÉîµØÎüÁËÒ»¿ÚÆø£¬¿´ÆðÀ´¾«ÉñºÃ¶àÁË¡£\n\n"NOR, me );
+        message_vision( CYN"\nåªè¦‹$N"NOR+CYN"æ·±æ·±åœ°å¸äº†ä¸€å£æ°£ï¼Œçœ‹èµ·ä¾†ç²¾ç¥žå¥½å¤šäº†ã€‚\n\n"NOR, me );
         hp_add=query_temp("hj_game_damages/"+pfm_skills, me);
         hp_add = hp_add*2 + random(hp_add);
         addn_temp("hj_hp", hp_add, me);
         if( query_temp("hj_hp", me)>query_temp("hj_hp_max", me) )
             set_temp("hj_hp",query_temp("hj_hp_max",  me), me);
         me->start_busy( 3+random(8) );
-        return 0;  // return 0 Ê±ÄÇ±ß¾Í²»ÔÙ´¦ÀíÁË¡£
+        return 0;  // return 0 æ™‚é‚£é‚Šå°±ä¸å†è™•ç†äº†ã€‚
     }
     */
     if( pfm_id == "dh" )
     {
-        // me ÎÞÂÛÈçºÎ¶¼²» busy
+        // me ç„¡è«–å¦‚ä½•éƒ½ä¸ busy
         int target_busy;
         if( target->query_busy() > 3 )
-            return (["err_msg":query("name", target)+"»¹Ã¦µÃºÜÄØ£¬»¹ÊÇ³Ã»ú¹¥»÷°É"]);
+            return (["err_msg":query("name", target)+"é‚„å¿™å¾—å¾ˆå‘¢ï¼Œé‚„æ˜¯è¶æ©Ÿæ”»æ“Šå§"]);
         if( query_temp("hj_hp", me)<(50+damages_skills) )
-            return ([ "err_msg" : "ÄãÆøÏ¢ÐéÈõ£¬ÎÞ·¨Ê©Õ¹¡¸"+pfm_name+"¡¹¾ø¼¼" ]);
-        message_vision( HIB"\nÖ»¼û$N"HIB"ºöµØÉíÐÎÒ»ÉÁ£¬¿ìËÙÎÞÂ×µØÌù½ü$n"HIB"£¬ÓÒÕÆ¶Ô×Å$n"HIB"¼±ÅÄ¶ø³ö£¡\n"NOR, me, target );
+            return ([ "err_msg" : "ä½ æ°£æ¯è™›å¼±ï¼Œç„¡æ³•æ–½å±•ã€Œ"+pfm_name+"ã€çµ•æŠ€" ]);
+        message_vision( HIB"\nåªè¦‹$N"HIB"å¿½åœ°èº«å½¢ä¸€é–ƒï¼Œå¿«é€Ÿç„¡å€«åœ°è²¼è¿‘$n"HIB"ï¼Œå³æŽŒå°è‘—$n"HIB"æ€¥æ‹è€Œå‡ºï¼\n"NOR, me, target );
         addn_temp("hj_hp", -(damages_skills/3+random(damages_skills/5)), me);//99lv=33+19,40lv=16+8
-        // Ê§°Ü
-        // ¶á»ê¼¼ÄÜÌØÊâÔËÓÃÐ§¹û  ÓÐÐ§µÖ¿¹¸÷Àà¶á»ê¹¥»÷
+        // å¤±æ•—
+        // å¥ªé­‚æŠ€èƒ½ç‰¹æ®Šé‹ç”¨æ•ˆæžœ  æœ‰æ•ˆæŠµæŠ—å„é¡žå¥ªé­‚æ”»æ“Š
         if( query_temp("hj_special/sh", target) )
         {
-            message_vision( HIB"Ö»ÌýµÃ$N"HIB"ËÄÖÜºöµØÏìÆðÒ»ÕóÆàÀ÷Ö®Éù£¬ËÆÊÇ°Ñ$N"HIB"±£»¤ÆðÀ´ÁËÒ»°ã¡£\n", target );
+            message_vision( HIB"åªè½å¾—$N"HIB"å››å‘¨å¿½åœ°éŸ¿èµ·ä¸€é™£å‡„åŽ²ä¹‹è²ï¼Œä¼¼æ˜¯æŠŠ$N"HIB"ä¿è­·èµ·ä¾†äº†ä¸€èˆ¬ã€‚\n", target );
         }
         else if( !random(10) || random( 100 )+1 > damages_skills )
         {
-            message_vision( CYN"$N"NOR+CYN"Ò»¾ªÖ®ÏÂ¼±Ã¦Ò»ÉÁ£¬¶ã¿ªÁË$n"NOR+CYN"µÄ¹¥»÷¡£\n\n"NOR, target, me );
+            message_vision( CYN"$N"NOR+CYN"ä¸€é©šä¹‹ä¸‹æ€¥å¿™ä¸€é–ƒï¼Œèº²é–‹äº†$n"NOR+CYN"çš„æ”»æ“Šã€‚\n\n"NOR, target, me );
         }
         else
         {
             target_busy = 5+random( damages_skills/10 );  // lv40:5+random(4)  lv99:5+random(9)
-            tell_object( target, HIR"ÄãÒ»ÏÂ×Ó±»ÅÄ¸öÕýÖÐ£¬Í»È»È«Éí½©Ó²£¬ÎÞ·¨¶¯µ¯£¡ (Ôì³ÉÃ¦Ê± "+target_busy+" Ãë)\n\n"NOR );
-            tell_object(me,HIR+query("name", target)+HIR"±»ÅÄ¸öÕýÖÐ£¬Í»È»Á½ÑÛ·¢Ö±£¬Õû¸öÈË´ô×¡ÁËËÆµÄ¡£(Ôì³ÉÃ¦Ê±"+target_busy+"Ãë)\n\n"NOR);
-            tell_room(environment(target),HIR+query("name", target)+HIR"±»ÅÄ¸öÕýÖÐ£¬Í»È»Á½ÑÛ·¢Ö±£¬Õû¸öÈË´ô×¡ÁËËÆµÄ¡£\n\n"NOR,({me,target}));
+            tell_object( target, HIR"ä½ ä¸€ä¸‹å­è¢«æ‹å€‹æ­£ä¸­ï¼Œçªç„¶å…¨èº«åƒµç¡¬ï¼Œç„¡æ³•å‹•å½ˆï¼ (é€ æˆå¿™æ™‚ "+target_busy+" ç§’)\n\n"NOR );
+            tell_object(me,HIR+query("name", target)+HIR"è¢«æ‹å€‹æ­£ä¸­ï¼Œçªç„¶å…©çœ¼ç™¼ç›´ï¼Œæ•´å€‹äººå‘†ä½äº†ä¼¼çš„ã€‚(é€ æˆå¿™æ™‚"+target_busy+"ç§’)\n\n"NOR);
+            tell_room(environment(target),HIR+query("name", target)+HIR"è¢«æ‹å€‹æ­£ä¸­ï¼Œçªç„¶å…©çœ¼ç™¼ç›´ï¼Œæ•´å€‹äººå‘†ä½äº†ä¼¼çš„ã€‚\n\n"NOR,({me,target}));
             target->start_busy( target_busy );
         }
         return 0;
     }
-    // È·¶¨¾ø¼¼¹¥»÷Á¦
+    // ç¢ºå®šçµ•æŠ€æ”»æ“ŠåŠ›
     damages = (damages_skills * 2) + random( damages_skills / 5 );
     // lv40 = 80 + random(8)
     // lv99 = 198 + random( 19 )
-    // Ð§¹ûÃèÊö¼°¹¥»÷¼Ó³É
+    // æ•ˆæžœæè¿°åŠæ”»æ“ŠåŠ æˆ
     find_name=query_temp("hj_game_find", me);
 
     switch( pfm_name )
     {
-      case "¿ñ·ç":
+      case "ç‹‚é¢¨":
         if( find_name == "feng" )
             damages += damages/4;   // lv40 = 100 +, lv99 = 250+
-        // ÃèÊö
-        msg_all = HIW"\nÖ»¼û$N"HIW"ºöµØÅ­Ä¿Ò»Õö£¬Í¦Éí¶øÁ¢£¬Á½ÊÖÎÕÆðÖä¾÷ÖÃÓÚÐØÇ°£¬´óÉù½ÐµÀ£º¡°¿ñ·çËÙÀ´£¡£¡£¡¡±\nö®Ê±¼äÂäÒ¶·×·É£¬¿ñ·çÅ­ºð£¬´ÓËÄÃæ°Ë·½Ïò×Å$n"HIW"Ö±ÆË¶øÖÁ£¡£¡£¡\n\n"NOR;
-        msg_me = HIW"\nÄãË«Ä¿Ò»Õö£¬Í¦Éí¶øÁ¢£¬Á½ÊÖÎÕÆðÖä¾÷ÖÃÓÚÐØÇ°£¬´óÉù½ÐµÀ£º¡°¿ñ·çËÙÀ´£¡£¡£¡¡±\nö®Ê±¼äÂäÒ¶·×·É£¬¿ñ·çÅ­ºð£¬´ÓËÄÃæ°Ë·½Ïò×Å$n"HIW"Ö±ÆË¶øÖÁ£¡£¡£¡\nÔì³ÉÁË "HIG+damages+HIW" µãÉËº¦¡£\n\n"NOR;
-        msg_target = HIW"\nÖ»¼û$N"HIW"ºöµØË«Ä¿Ò»Õö£¬Í¦Éí¶øÁ¢£¬Á½ÊÖÎÕÆðÖä¾÷ÖÃÓÚÐØÇ°£¬´óÉù½ÐµÀ£º¡°¿ñ·çËÙÀ´£¡£¡£¡¡±\nö®Ê±¼äÂäÒ¶·×·É£¬¿ñ·çÅ­ºð£¬´ÓËÄÃæ°Ë·½Ïò×ÅÄãÖ±ÆË¶øÖÁ£¡£¡£¡\nÔì³ÉÁË "HIR+damages+HIW" µãÉËº¦¡£\n\n"NOR;
+        // æè¿°
+        msg_all = HIW"\nåªè¦‹$N"HIW"å¿½åœ°æ€’ç›®ä¸€çœï¼ŒæŒºèº«è€Œç«‹ï¼Œå…©æ‰‹æ¡èµ·å’’è¨£ç½®äºŽèƒ¸å‰ï¼Œå¤§è²å«é“ï¼šâ€œç‹‚é¢¨é€Ÿä¾†ï¼ï¼ï¼â€\néœŽæ™‚é–“è½è‘‰ç´›é£›ï¼Œç‹‚é¢¨æ€’å¼ï¼Œå¾žå››é¢å…«æ–¹å‘è‘—$n"HIW"ç›´æ’²è€Œè‡³ï¼ï¼ï¼\n\n"NOR;
+        msg_me = HIW"\nä½ é›™ç›®ä¸€çœï¼ŒæŒºèº«è€Œç«‹ï¼Œå…©æ‰‹æ¡èµ·å’’è¨£ç½®äºŽèƒ¸å‰ï¼Œå¤§è²å«é“ï¼šâ€œç‹‚é¢¨é€Ÿä¾†ï¼ï¼ï¼â€\néœŽæ™‚é–“è½è‘‰ç´›é£›ï¼Œç‹‚é¢¨æ€’å¼ï¼Œå¾žå››é¢å…«æ–¹å‘è‘—$n"HIW"ç›´æ’²è€Œè‡³ï¼ï¼ï¼\né€ æˆäº† "HIG+damages+HIW" é»žå‚·å®³ã€‚\n\n"NOR;
+        msg_target = HIW"\nåªè¦‹$N"HIW"å¿½åœ°é›™ç›®ä¸€çœï¼ŒæŒºèº«è€Œç«‹ï¼Œå…©æ‰‹æ¡èµ·å’’è¨£ç½®äºŽèƒ¸å‰ï¼Œå¤§è²å«é“ï¼šâ€œç‹‚é¢¨é€Ÿä¾†ï¼ï¼ï¼â€\néœŽæ™‚é–“è½è‘‰ç´›é£›ï¼Œç‹‚é¢¨æ€’å¼ï¼Œå¾žå››é¢å…«æ–¹å‘è‘—ä½ ç›´æ’²è€Œè‡³ï¼ï¼ï¼\né€ æˆäº† "HIR+damages+HIW" é»žå‚·å®³ã€‚\n\n"NOR;
         break;
-      case "±©Óê":
+      case "æš´é›¨":
         if( find_name == "yu" )
             damages += damages/4;
-        msg_all = HIM"\nÖ»¼û$N"NOR+HIM"ºöµØ¸¡ÉíÀëµØ£¬Ë«Ä¿Î¢±Õ£¬Á½ÊÖÍùÍâÒ»·Ö£¬ÈáÉùÄîµÀ£º¡°ÃÜÃÜÖ®Óê£¬Çë½½È÷¶øÏÂ°É£¡¡±\nÇçÀÊ±Ì¿Õ¶ÙÊ±ÎÚÔÆ±é¸Ç£¬¶¹´óÓêµã´øÆðÅü¿ÕÖ®Éù£¬Ò»¿Å¿Å¶¼¶Ô×¼ÁË$n"NOR+HIM"ºôÐ¥¶øÈ¥£¡£¡£¡\n\n"NOR;
-        msg_me = HIM"\nÄã¸¡ÉíÀëµØ£¬Ë«Ä¿±ÕÆð£¬Á½ÊÖÍùÍâÒ»·Ö£¬ÈáÉùÄîµÀ£º¡°ÃÜÃÜÖ®Óê£¬Çë½½È÷¶øÏÂ°É£¡¡±\nÇçÀÊ±Ì¿Õ¶ÙÊ±ÎÚÔÆ±é¸Ç£¬¶¹´óÓêµã´øÆðÅü¿ÕÖ®Éù£¬Ò»¿Å¿Å¶¼¶Ô×¼ÁË$n"NOR+HIM"ºôÐ¥¶øÈ¥£¡£¡£¡\nÔì³ÉÁË "HIG+ damages + NOR+HIM" µãÉËº¦¡£\n\n"NOR;
-        msg_target = HIM"\nÖ»¼û$N"NOR+HIM"ºöµØ¸¡ÉíÀëµØ£¬Ë«Ä¿Î¢±Õ£¬Á½ÊÖÍùÍâÒ»·Ö£¬ÈáÉùÄîµÀ£º¡°ÃÜÃÜÖ®Óê£¬Çë½½È÷¶øÏÂ°É£¡¡±\nÇçÀÊ±Ì¿Õ¶ÙÊ±ÎÚÔÆ±é¸Ç£¬¶¹´óÓêµã´øÆðÅü¿ÕÖ®Éù£¬Ò»¿Å¿Å¶¼¶Ô×¼ÁËÄãºôÐ¥¶øÀ´£¡£¡£¡\nÔì³ÉÁË "HIR+ damages +NOR+HIM" µãÉËº¦¡£\n\n"NOR;
+        msg_all = HIM"\nåªè¦‹$N"NOR+HIM"å¿½åœ°æµ®èº«é›¢åœ°ï¼Œé›™ç›®å¾®é–‰ï¼Œå…©æ‰‹å¾€å¤–ä¸€åˆ†ï¼ŒæŸ”è²å¿µé“ï¼šâ€œå¯†å¯†ä¹‹é›¨ï¼Œè«‹æ¾†æ´’è€Œä¸‹å§ï¼â€\næ™´æœ—ç¢§ç©ºé “æ™‚çƒé›²éè“‹ï¼Œè±†å¤§é›¨é»žå¸¶èµ·åŠˆç©ºä¹‹è²ï¼Œä¸€é¡†é¡†éƒ½å°æº–äº†$n"NOR+HIM"å‘¼å˜¯è€ŒåŽ»ï¼ï¼ï¼\n\n"NOR;
+        msg_me = HIM"\nä½ æµ®èº«é›¢åœ°ï¼Œé›™ç›®é–‰èµ·ï¼Œå…©æ‰‹å¾€å¤–ä¸€åˆ†ï¼ŒæŸ”è²å¿µé“ï¼šâ€œå¯†å¯†ä¹‹é›¨ï¼Œè«‹æ¾†æ´’è€Œä¸‹å§ï¼â€\næ™´æœ—ç¢§ç©ºé “æ™‚çƒé›²éè“‹ï¼Œè±†å¤§é›¨é»žå¸¶èµ·åŠˆç©ºä¹‹è²ï¼Œä¸€é¡†é¡†éƒ½å°æº–äº†$n"NOR+HIM"å‘¼å˜¯è€ŒåŽ»ï¼ï¼ï¼\né€ æˆäº† "HIG+ damages + NOR+HIM" é»žå‚·å®³ã€‚\n\n"NOR;
+        msg_target = HIM"\nåªè¦‹$N"NOR+HIM"å¿½åœ°æµ®èº«é›¢åœ°ï¼Œé›™ç›®å¾®é–‰ï¼Œå…©æ‰‹å¾€å¤–ä¸€åˆ†ï¼ŒæŸ”è²å¿µé“ï¼šâ€œå¯†å¯†ä¹‹é›¨ï¼Œè«‹æ¾†æ´’è€Œä¸‹å§ï¼â€\næ™´æœ—ç¢§ç©ºé “æ™‚çƒé›²éè“‹ï¼Œè±†å¤§é›¨é»žå¸¶èµ·åŠˆç©ºä¹‹è²ï¼Œä¸€é¡†é¡†éƒ½å°æº–äº†ä½ å‘¼å˜¯è€Œä¾†ï¼ï¼ï¼\né€ æˆäº† "HIR+ damages +NOR+HIM" é»žå‚·å®³ã€‚\n\n"NOR;
         break;
-      case "¾ªÀ×":
+      case "é©šé›·":
         if( find_name == "lei" )
             damages += damages/4;
-        msg_all = HIC"\nºöÈ»Ö»¼û$N"NOR+HIC"Ë«ÕÆÍùÇ°Ò»ÍÆ£¬±©È»ºÈµÀ£º¡°¾ªÐÄÖ®À×£¬Ïì³¹ËÄ·½£¡£¡£¡¡±\nËÄ´¦ºÁÎÞÔ¤Õ×µØÀ×ÉùÕ¨Æð£¬ÉùÉù¾ÞÏìÕðÈËÐÄÆÇ£¬ËÆÓÐÇ§¾üÍòÂí¾¡½Ô³¯$n"NOR+HIC"±¼Ï®¶øÈ¥£¡£¡£¡\n\n"NOR;
-        msg_me = HIC"\nÄãË«ÕÆÍùÇ°Ò»ÍÆ£¬±©È»ºÈµÀ£º¡°¾ªÐÄÖ®À×£¬Ïì³¹ËÄ·½£¡£¡£¡¡±\nËÄ´¦ºÁÎÞÔ¤Õ×µØÀ×ÉùÕ¨Æð£¬ÉùÉù¾ÞÏìÕðÈËÐÄÆÇ£¬ËÆÓÐÇ§¾üÍòÂí¾¡½Ô³¯$n"NOR+HIC"±¼Ï®¶øÈ¥£¡£¡£¡\nÔì³ÉÁË "HIG+ damages + NOR+HIC" µãÉËº¦¡£\n\n"NOR;
-        msg_target = HIC"\nºöÈ»Ö»¼û$N"NOR+HIC"Ë«ÕÆÍùÇ°Ò»ÍÆ£¬±©È»ºÈµÀ£º¡°¾ªÐÄÖ®À×£¬Ïì³¹ËÄ·½£¡£¡£¡¡±\nËÄ´¦ºÁÎÞÔ¤Õ×µØÀ×ÉùÕ¨Æð£¬ÉùÉù¾ÞÏìÕðÈËÐÄÆÇ£¬ËÆÓÐÇ§¾üÍòÂí¾¡½Ô³¯Äã±¼Ï®¶øÀ´£¡£¡£¡\nÔì³ÉÁË "HIR+ damages +NOR+HIC" µãÉËº¦¡£\n\n"NOR;
+        msg_all = HIC"\nå¿½ç„¶åªè¦‹$N"NOR+HIC"é›™æŽŒå¾€å‰ä¸€æŽ¨ï¼Œæš´ç„¶å–é“ï¼šâ€œé©šå¿ƒä¹‹é›·ï¼ŒéŸ¿å¾¹å››æ–¹ï¼ï¼ï¼â€\nå››è™•æ¯«ç„¡é å…†åœ°é›·è²ç‚¸èµ·ï¼Œè²è²å·¨éŸ¿éœ‡äººå¿ƒé­„ï¼Œä¼¼æœ‰åƒè»è¬é¦¬ç›¡çš†æœ$n"NOR+HIC"å¥”è¥²è€ŒåŽ»ï¼ï¼ï¼\n\n"NOR;
+        msg_me = HIC"\nä½ é›™æŽŒå¾€å‰ä¸€æŽ¨ï¼Œæš´ç„¶å–é“ï¼šâ€œé©šå¿ƒä¹‹é›·ï¼ŒéŸ¿å¾¹å››æ–¹ï¼ï¼ï¼â€\nå››è™•æ¯«ç„¡é å…†åœ°é›·è²ç‚¸èµ·ï¼Œè²è²å·¨éŸ¿éœ‡äººå¿ƒé­„ï¼Œä¼¼æœ‰åƒè»è¬é¦¬ç›¡çš†æœ$n"NOR+HIC"å¥”è¥²è€ŒåŽ»ï¼ï¼ï¼\né€ æˆäº† "HIG+ damages + NOR+HIC" é»žå‚·å®³ã€‚\n\n"NOR;
+        msg_target = HIC"\nå¿½ç„¶åªè¦‹$N"NOR+HIC"é›™æŽŒå¾€å‰ä¸€æŽ¨ï¼Œæš´ç„¶å–é“ï¼šâ€œé©šå¿ƒä¹‹é›·ï¼ŒéŸ¿å¾¹å››æ–¹ï¼ï¼ï¼â€\nå››è™•æ¯«ç„¡é å…†åœ°é›·è²ç‚¸èµ·ï¼Œè²è²å·¨éŸ¿éœ‡äººå¿ƒé­„ï¼Œä¼¼æœ‰åƒè»è¬é¦¬ç›¡çš†æœä½ å¥”è¥²è€Œä¾†ï¼ï¼ï¼\né€ æˆäº† "HIR+ damages +NOR+HIC" é»žå‚·å®³ã€‚\n\n"NOR;
         break;
-      case "Ñ¸µç":
+      case "è¿…é›»":
         if( find_name == "dian" )
             damages += damages/4;
-        msg_all = HIG"\nºöÈ»Ö»¼û$N"NOR+HIG"ÓÒÊÖÌ§Æð£¬Ò»Ö¸ÏòÌì£¬½Ó×ÅÐé»­°ëÔ²£¬ÃÍµØÖ¸Ïò$n"NOR+HIG"£¡\nËæ×ÅÕâÒ»Ö¸£¬Ìì¿ÕÀï¾¹È»ÅüÆðÒ»µÀÉÁµç£¬¼Ð×Å³ÁÃÆÀ×Éù£¬Ö±´ò$n"NOR+HIG"¶øÈ¥£¡£¡£¡\n\n"NOR;
-        msg_me = HIG"\nÄãÌ§ÆðÓÒÊÖ£¬Ò»Ö¸ÏòÌì£¬½Ó×ÅÐé»­°ëÔ²£¬°µÄîÖäÎÄ£¬Ëæ¼´Ö¸Ïò$n"NOR+HIG"£¡\nÄãÒ»Ö¸·½Ïò£¬Ìì¿ÕÀï¼´¿ÌÅüÆðÒ»µÀÉÁµç£¬¼Ð×Å³ÁÃÆÀ×Éù£¬Ö±Ïò$n"NOR+HIG"´òÈ¥£¡£¡£¡\nÔì³ÉÁË "HIG+damages+NOR+HIG" µãÉËº¦¡£\n\n"NOR;
-        msg_target = HIG"\nºöÈ»Ö»¼û$N"NOR+HIG"ÓÒÊÖÌ§Æð£¬Ò»Ö¸ÏòÌì£¬½Ó×ÅÐé»­°ëÔ²£¬ÃÍµØÖ¸ÏòÁËÄã£¡\nËæ×ÅÕâÒ»Ö¸£¬Ìì¿ÕÀï¾¹È»ÅüÆðÒ»µÀÉÁµç£¬¼Ð×Å³ÁÃÆÀ×Éù£¬Ö±ÏòÄã´òÁË¹ýÀ´£¡£¡£¡\nÔì³ÉÁË "HIR+damages+NOR+HIR" µãÉËº¦¡£\n\n"NOR;
+        msg_all = HIG"\nå¿½ç„¶åªè¦‹$N"NOR+HIG"å³æ‰‹æŠ¬èµ·ï¼Œä¸€æŒ‡å‘å¤©ï¼ŒæŽ¥è‘—è™›ç•«åŠåœ“ï¼ŒçŒ›åœ°æŒ‡å‘$n"NOR+HIG"ï¼\néš¨è‘—é€™ä¸€æŒ‡ï¼Œå¤©ç©ºè£¡ç«Ÿç„¶åŠˆèµ·ä¸€é“é–ƒé›»ï¼Œå¤¾è‘—æ²‰æ‚¶é›·è²ï¼Œç›´æ‰“$n"NOR+HIG"è€ŒåŽ»ï¼ï¼ï¼\n\n"NOR;
+        msg_me = HIG"\nä½ æŠ¬èµ·å³æ‰‹ï¼Œä¸€æŒ‡å‘å¤©ï¼ŒæŽ¥è‘—è™›ç•«åŠåœ“ï¼Œæš—å¿µå’’æ–‡ï¼Œéš¨å³æŒ‡å‘$n"NOR+HIG"ï¼\nä½ ä¸€æŒ‡æ–¹å‘ï¼Œå¤©ç©ºè£¡å³åˆ»åŠˆèµ·ä¸€é“é–ƒé›»ï¼Œå¤¾è‘—æ²‰æ‚¶é›·è²ï¼Œç›´å‘$n"NOR+HIG"æ‰“åŽ»ï¼ï¼ï¼\né€ æˆäº† "HIG+damages+NOR+HIG" é»žå‚·å®³ã€‚\n\n"NOR;
+        msg_target = HIG"\nå¿½ç„¶åªè¦‹$N"NOR+HIG"å³æ‰‹æŠ¬èµ·ï¼Œä¸€æŒ‡å‘å¤©ï¼ŒæŽ¥è‘—è™›ç•«åŠåœ“ï¼ŒçŒ›åœ°æŒ‡å‘äº†ä½ ï¼\néš¨è‘—é€™ä¸€æŒ‡ï¼Œå¤©ç©ºè£¡ç«Ÿç„¶åŠˆèµ·ä¸€é“é–ƒé›»ï¼Œå¤¾è‘—æ²‰æ‚¶é›·è²ï¼Œç›´å‘ä½ æ‰“äº†éŽä¾†ï¼ï¼ï¼\né€ æˆäº† "HIR+damages+NOR+HIR" é»žå‚·å®³ã€‚\n\n"NOR;
         break;
-      case "»ðÑæ":
-        msg_all = WHT"\nÖ»ÌýµÃ$N"NOR+WHT"¹þ¹þ´óÐ¦Ò»Éù£¬µ¥ÕÆÔÚÉíÇ°Ðé»­Ò»Ô²£¬Ò»ÍÅÍÅ"HIR"»ðÑæ"NOR+WHT"¾¹Æ¾¿ÕÉú³É£¬ÈÈÆø±ÆÈË£¡\n½ô¸ú×Å£¬$N"NOR+WHT"ºÈµÀ£º¡°×Å£¡¡±Ë«ÊÖÁ¬Ë¦£¬ÍÅÍÅ»ðÑæÁ¢Ê±Ïò×Å$n"NOR+WHT"¼¤Éä¶øÈ¥£¡£¡£¡\n\n"NOR;
-        msg_me = WHT"\nÄã¹þ¹þ´óÐ¦Ò»Éù£¬µ¥ÕÆÔÚÉíÇ°Ðé»­Ò»Ô²£¬Ò»ÍÅÍÅ"HIR"»ðÑæ"NOR+WHT"¾Í´ËÆ¾¿ÕÉú³É£¬ÈÈÆø±ÆÈË£¡\n½ô¸ú×Å£¬Äã´óºÈÁËÒ»Éù¡°×Å£¡¡±Ë«ÊÖÁ¬Ë¦£¬ÍÅÍÅ»ðÑæÁ¢Ê±Ïò×Å$n"NOR+WHT"¼¤Éä¶øÈ¥£¡£¡£¡\nÔì³ÉÁË "HIG+damages+NOR+WHT" µãÉËº¦¡£\n\n"NOR;
-        msg_target = WHT"\nÖ»ÌýµÃ$N"NOR+WHT"¹þ¹þ´óÐ¦Ò»Éù£¬µ¥ÕÆÔÚÉíÇ°Ðé»­Ò»Ô²£¬Ò»ÍÅÍÅ"HIR"»ðÑæ"NOR+WHT"¾¹Æ¾¿ÕÉú³É£¬ÈÈÆø±ÆÈË£¡\n½ô¸ú×Å£¬$N"NOR+WHT"ºÈµÀ£º¡°×Å£¡¡±Ë«ÊÖÁ¬Ë¦£¬ÍÅÍÅ»ðÑæÁ¢Ê±Ïò×ÅÄã¼¤Éä¶øÀ´£¡£¡£¡\nÔì³ÉÁË "HIR+damages+NOR+WHT" µãÉËº¦¡£\n\n"NOR;
+      case "ç«ç‡„":
+        msg_all = WHT"\nåªè½å¾—$N"NOR+WHT"å“ˆå“ˆå¤§ç¬‘ä¸€è²ï¼Œå–®æŽŒåœ¨èº«å‰è™›ç•«ä¸€åœ“ï¼Œä¸€åœ˜åœ˜"HIR"ç«ç‡„"NOR+WHT"ç«Ÿæ†‘ç©ºç”Ÿæˆï¼Œç†±æ°£é€¼äººï¼\nç·Šè·Ÿè‘—ï¼Œ$N"NOR+WHT"å–é“ï¼šâ€œè‘—ï¼â€é›™æ‰‹é€£ç”©ï¼Œåœ˜åœ˜ç«ç‡„ç«‹æ™‚å‘è‘—$n"NOR+WHT"æ¿€å°„è€ŒåŽ»ï¼ï¼ï¼\n\n"NOR;
+        msg_me = WHT"\nä½ å“ˆå“ˆå¤§ç¬‘ä¸€è²ï¼Œå–®æŽŒåœ¨èº«å‰è™›ç•«ä¸€åœ“ï¼Œä¸€åœ˜åœ˜"HIR"ç«ç‡„"NOR+WHT"å°±æ­¤æ†‘ç©ºç”Ÿæˆï¼Œç†±æ°£é€¼äººï¼\nç·Šè·Ÿè‘—ï¼Œä½ å¤§å–äº†ä¸€è²â€œè‘—ï¼â€é›™æ‰‹é€£ç”©ï¼Œåœ˜åœ˜ç«ç‡„ç«‹æ™‚å‘è‘—$n"NOR+WHT"æ¿€å°„è€ŒåŽ»ï¼ï¼ï¼\né€ æˆäº† "HIG+damages+NOR+WHT" é»žå‚·å®³ã€‚\n\n"NOR;
+        msg_target = WHT"\nåªè½å¾—$N"NOR+WHT"å“ˆå“ˆå¤§ç¬‘ä¸€è²ï¼Œå–®æŽŒåœ¨èº«å‰è™›ç•«ä¸€åœ“ï¼Œä¸€åœ˜åœ˜"HIR"ç«ç‡„"NOR+WHT"ç«Ÿæ†‘ç©ºç”Ÿæˆï¼Œç†±æ°£é€¼äººï¼\nç·Šè·Ÿè‘—ï¼Œ$N"NOR+WHT"å–é“ï¼šâ€œè‘—ï¼â€é›™æ‰‹é€£ç”©ï¼Œåœ˜åœ˜ç«ç‡„ç«‹æ™‚å‘è‘—ä½ æ¿€å°„è€Œä¾†ï¼ï¼ï¼\né€ æˆäº† "HIR+damages+NOR+WHT" é»žå‚·å®³ã€‚\n\n"NOR;
         break;
-      case "¾ÞÊ¯":
-        msg_all = WHT"\nÖ»ÌýµÃ$N"NOR+WHT"¹þ¹þ´óÐ¦Ò»Éù£¬µ¥ÕÆÔÚÉíÇ°Ðé»­Ò»Ô²£¬Ò»¿é"YEL"¾ÞÊ¯"WHT"¾¹Æ¾¿ÕÉú³É£¡\nËæ×Å$N"NOR+WHT"Ò»Éù¶ÏºÈ¡°×Å£¡¡±£¬Ê¯¿é´øÆð¾Þ´óÑ¹ÆÈÖ®¸Ð£¬Ïò×Å$n"NOR+WHT"ÔÒÈ¥£¡£¡£¡\n\n"NOR;
-        msg_me = WHT"\nÄã¹þ¹þ´óÐ¦Ò»Éù£¬µ¥ÕÆÔÚÉíÇ°Ðé»­Ò»Ô²£¬Ò»¿é"YEL"¾ÞÊ¯"WHT"¾Í´ËÆ¾¿ÕÉú³É£¡\nÄã´óºÈÒ»Éù¡°×Å£¡¡±£¬ÄîÖäÔË¾¢£¬Ê¯¿é´øÆð¾Þ´óÑ¹ÆÈÖ®¸Ð£¬Ïò×Å$n"NOR+WHT"ÔÒÈ¥£¡£¡£¡\nÔì³ÉÁË "HIG+damages+NOR+WHT" µãÉËº¦¡£\n\n"NOR;
-        msg_target = WHT"\nÖ»ÌýµÃ$N"NOR+WHT"¹þ¹þ´óÐ¦Ò»Éù£¬µ¥ÕÆÔÚÉíÇ°Ðé»­Ò»Ô²£¬Ò»¿é"YEL"¾ÞÊ¯"WHT"¾¹Æ¾¿ÕÉú³É£¡\nËæ×Å$N"NOR+WHT"Ò»Éù¶ÏºÈ¡°×Å£¡¡±£¬Ê¯¿é´øÆð¾Þ´óÑ¹ÆÈÖ®¸Ð£¬Ïò×ÅÄãÔÒÁË¹ýÀ´£¡£¡£¡\nÔì³ÉÁË "HIR+damages+NOR+WHT" µãÉËº¦¡£\n\n"NOR;
+      case "å·¨çŸ³":
+        msg_all = WHT"\nåªè½å¾—$N"NOR+WHT"å“ˆå“ˆå¤§ç¬‘ä¸€è²ï¼Œå–®æŽŒåœ¨èº«å‰è™›ç•«ä¸€åœ“ï¼Œä¸€å¡Š"YEL"å·¨çŸ³"WHT"ç«Ÿæ†‘ç©ºç”Ÿæˆï¼\néš¨è‘—$N"NOR+WHT"ä¸€è²æ–·å–â€œè‘—ï¼â€ï¼ŒçŸ³å¡Šå¸¶èµ·å·¨å¤§å£“è¿«ä¹‹æ„Ÿï¼Œå‘è‘—$n"NOR+WHT"ç ¸åŽ»ï¼ï¼ï¼\n\n"NOR;
+        msg_me = WHT"\nä½ å“ˆå“ˆå¤§ç¬‘ä¸€è²ï¼Œå–®æŽŒåœ¨èº«å‰è™›ç•«ä¸€åœ“ï¼Œä¸€å¡Š"YEL"å·¨çŸ³"WHT"å°±æ­¤æ†‘ç©ºç”Ÿæˆï¼\nä½ å¤§å–ä¸€è²â€œè‘—ï¼â€ï¼Œå¿µå’’é‹å‹ï¼ŒçŸ³å¡Šå¸¶èµ·å·¨å¤§å£“è¿«ä¹‹æ„Ÿï¼Œå‘è‘—$n"NOR+WHT"ç ¸åŽ»ï¼ï¼ï¼\né€ æˆäº† "HIG+damages+NOR+WHT" é»žå‚·å®³ã€‚\n\n"NOR;
+        msg_target = WHT"\nåªè½å¾—$N"NOR+WHT"å“ˆå“ˆå¤§ç¬‘ä¸€è²ï¼Œå–®æŽŒåœ¨èº«å‰è™›ç•«ä¸€åœ“ï¼Œä¸€å¡Š"YEL"å·¨çŸ³"WHT"ç«Ÿæ†‘ç©ºç”Ÿæˆï¼\néš¨è‘—$N"NOR+WHT"ä¸€è²æ–·å–â€œè‘—ï¼â€ï¼ŒçŸ³å¡Šå¸¶èµ·å·¨å¤§å£“è¿«ä¹‹æ„Ÿï¼Œå‘è‘—ä½ ç ¸äº†éŽä¾†ï¼ï¼ï¼\né€ æˆäº† "HIR+damages+NOR+WHT" é»žå‚·å®³ã€‚\n\n"NOR;
         break;
     }
     return ([ "name": pfm_name, "damages": damages, "me_busy": Me_busy,"lost_hp": LostHP_pfm+random(LostHP_pfm),

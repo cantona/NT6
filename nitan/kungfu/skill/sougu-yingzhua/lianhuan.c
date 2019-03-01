@@ -1,12 +1,12 @@
 // This program is a part of NT MudLIB
-// lianhuan.c Á¬»··ÉÓ¥×¥
+// lianhuan.c é€£ç’°é£›é·¹æŠ“
 
 
 #include <ansi.h>
 
 inherit F_SSERVER;
 
-string name() { return "Á¬»··ÉÓ¥×¥"; }
+string name() { return "é€£ç’°é£›é·¹æŠ“"; }
 
 int perform(object me, object target)
 {
@@ -18,28 +18,28 @@ int perform(object me, object target)
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("ËÑ¹ÇÓ¥×¦¹¦Áú×¦°ËÏÔÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("æœéª¨é·¹çˆªåŠŸé¾çˆªå…«é¡¯åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( query_temp("lzg_effect", me) )
-                return notify_fail("Äã¸Õ²ÅÒÑ¾­Ê¹³öÁËËÑ¹ÇÓ¥×¦¹¦Á¬»·¹¥»÷£¬Ò»Ê±ÄÑÒÔÔÙĞĞÇÀ¹¥£¡\n");
+                return notify_fail("ä½ å‰›æ‰å·²ç¶“ä½¿å‡ºäº†æœéª¨é·¹çˆªåŠŸé€£ç’°æ”»æ“Šï¼Œä¸€æ™‚é›£ä»¥å†è¡Œæ¶æ”»ï¼\n");
 
         if ( query_temp("weapon", me) )
-                return notify_fail("ËÑ¹ÇÓ¥×¦¹¦Á¬»·¹¥»÷±ØĞë¿ÕÊÖ·½¿ÉÊ©Õ¹¡£\n");
+                return notify_fail("æœéª¨é·¹çˆªåŠŸé€£ç’°æ”»æ“Šå¿…é ˆç©ºæ‰‹æ–¹å¯æ–½å±•ã€‚\n");
 
         if( me->query_skill("force", 1) < 100 )
-                return notify_fail("ÄãµÄÄÚ¹¦»ğºòÎ´µ½£¬ÎŞ·¨Ê©Õ¹ËÑ¹ÇÓ¥×¦¹¦Á¬»·¹¥»÷£¡\n");
+                return notify_fail("ä½ çš„å…§åŠŸç«å€™æœªåˆ°ï¼Œç„¡æ³•æ–½å±•æœéª¨é·¹çˆªåŠŸé€£ç’°æ”»æ“Šï¼\n");
 
         if( me->query_skill("claw",1) < 140 )
-                return notify_fail("ÄãµÄ×¦·¨ĞŞÎªÓĞÏŞ£¬ÎŞ·¨Ê©Õ¹ËÑ¹ÇÓ¥×¦¹¦Á¬»·¹¥»÷£¡\n");
+                return notify_fail("ä½ çš„çˆªæ³•ä¿®ç‚ºæœ‰é™ï¼Œç„¡æ³•æ–½å±•æœéª¨é·¹çˆªåŠŸé€£ç’°æ”»æ“Šï¼\n");
 
         if( me->query_skill("sougu",1) < 140 )
-                return notify_fail("ÄãµÄËÑ¹ÇÓ¥×¦¹¦ÔìÒèÎ´µ½£¬ÎŞ·¨Ê©Õ¹ËÑ¹ÇÓ¥×¦¹¦Á¬»·¹¥»÷£¡\n");
+                return notify_fail("ä½ çš„æœéª¨é·¹çˆªåŠŸé€ è©£æœªåˆ°ï¼Œç„¡æ³•æ–½å±•æœéª¨é·¹çˆªåŠŸé€£ç’°æ”»æ“Šï¼\n");
 
         if( query("neili", me) <= 300 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»×ãÒÔÊ¹³öËÑ¹ÇÓ¥×¦¹¦Á¬»·¹¥»÷£¡\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸è¶³ä»¥ä½¿å‡ºæœéª¨é·¹çˆªåŠŸé€£ç’°æ”»æ“Šï¼\n");
 
         if( query("jingli", me) <= 200 )
-                return notify_fail("ÄãµÄ¾«Á¦²»¹»Ê¹ÓÃËÑ¹ÇÓ¥×¦¹¦Á¬»·¹¥»÷£¡\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤ ä½¿ç”¨æœéª¨é·¹çˆªåŠŸé€£ç’°æ”»æ“Šï¼\n");
 
         claw = me->query_skill("claw");
         lv = (int)me->query_skill("sougu-yingzhua",1);
@@ -50,13 +50,13 @@ int perform(object me, object target)
         addn_temp("apply/attack", lv/5, me);
         addn_temp("apply/unarmed_damage", lv/5, me);
 
-        lzg_msg = HIY"\n$NÍ»È»¼ä´óºÈÒ»Éù£¬×İÉí¶øÉÏ£¬Ë«ÊÖÓÌÈç¿ñ·çÖèÓê£¬";
+        lzg_msg = HIY"\n$Nçªç„¶é–“å¤§å–ä¸€è²ï¼Œç¸±èº«è€Œä¸Šï¼Œé›™æ‰‹çŒ¶å¦‚ç‹‚é¢¨é©Ÿé›¨ï¼Œ";
 
-        if(hit >= 4)lzg_msg += "¡¸ÍÆ×¦Ê½¡¹¡¢¡¸¸Ç×¦Ê½¡¹¡¢¡¸ÌÍ×¦Ê½¡¹¡¢¡¸ÍĞ×¦Ê½¡¹";
-        if(hit >= 6)lzg_msg += "¡¢¡¸ÁÃ×¦Ê½¡¹¡¢¡¸Ëø×¦Ê½¡¹";
-        if(hit >= 8)lzg_msg += "¡¢¡¸Ç§×¦Ê½¡¹¡¢¡¸·É×¦Ê½¡¹";
+        if(hit >= 4)lzg_msg += "ã€Œæ¨çˆªå¼ã€ã€ã€Œè“‹çˆªå¼ã€ã€ã€Œæçˆªå¼ã€ã€ã€Œæ‰˜çˆªå¼ã€";
+        if(hit >= 6)lzg_msg += "ã€ã€Œæ’©çˆªå¼ã€ã€ã€Œé–çˆªå¼ã€";
+        if(hit >= 8)lzg_msg += "ã€ã€Œåƒçˆªå¼ã€ã€ã€Œé£›çˆªå¼ã€";
 
-        lzg_msg += "£¬"+chinese_number(hit)+"Ê½Á¬»·£¬¼²¹¥¶øÖÁ£¡\n"NOR;
+        lzg_msg += "ï¼Œ"+chinese_number(hit)+"å¼é€£ç’°ï¼Œç–¾æ”»è€Œè‡³ï¼\n"NOR;
 
         message_combatd(lzg_msg, me, target);
         set("lzg_times", hit, me);
@@ -71,7 +71,7 @@ int perform(object me, object target)
         addn_temp("apply/attack", -lv/5, me);
         addn_temp("apply/unarmed_damage", -lv/5, me);
 
-        message_combatd(HIY"\nÕâ"+chinese_number(hit)+"Ê½Á¬»·µÄ·ÉÓ¥×¥ÃàÃà²»¾ø£¬±ãÈçÊÇÒ»ÕĞÖĞµÄ"+chinese_number(hit)+"¸ö±ä»¯Ò»°ã£¬¿ì½İÎŞ±È£¡\n"NOR, me);
+        message_combatd(HIY"\né€™"+chinese_number(hit)+"å¼é€£ç’°çš„é£›é·¹æŠ“ç¶¿ç¶¿ä¸çµ•ï¼Œä¾¿å¦‚æ˜¯ä¸€æ‹›ä¸­çš„"+chinese_number(hit)+"å€‹è®ŠåŒ–ä¸€èˆ¬ï¼Œå¿«æ·ç„¡æ¯”ï¼\n"NOR, me);
 
         addn("neili", -hit*20+20, me);
         addn("jingli", -hit*5, me);
@@ -87,5 +87,5 @@ void remove_effect(object me)
 {
         if (!me) return;
         delete_temp("lzg_effect", me);
-        tell_object(me, YEL"\nÄãÎ¢Ò»µ÷Ï¢£¬Æ½¸´ÁËÊ©Õ¹ËÑ¹ÇÓ¥×¦¹¦áá¹Äµ´±¼ÌÚµÄÕæÆø¡£\n"NOR);
+        tell_object(me, YEL"\nä½ å¾®ä¸€èª¿æ¯ï¼Œå¹³å¾©äº†æ–½å±•æœéª¨é·¹çˆªåŠŸå¾Œé¼“ç›ªå¥”é¨°çš„çœŸæ°£ã€‚\n"NOR);
 }

@@ -2,15 +2,15 @@
 inherit TASK; 
 void create() 
 { 
-        set_name( HIB "¹íµ¶" NOR, ({ "gui dao" }) ); 
+        set_name( HIB "é¬¼åˆ€" NOR, ({ "gui dao" }) ); 
         set_weight(40); 
         if( clonep() ) 
                 destruct(this_object()); 
         else { 
-                set("unit", "°Ñ"); 
+                set("unit", "æŠŠ"); 
                 set("material", "iron"); 
-                set("long", "ÕâÊÇÒ»°Ñ¹îÒìµÄÍäµ¶£¬µ¶ÉíÏ¸³¤£¬µ¶±³¿íºñ£¬µ¶±ú¹ÖÒì¡£\n"); 
+                set("long", "é€™æ˜¯ä¸€æŠŠè©­ç•°çš„å½åˆ€ï¼Œåˆ€èº«ç´°é•·ï¼Œåˆ€èƒŒå¯¬åšï¼Œåˆ€æŸ„æ€ªç•°ã€‚\n"); 
         } 
-        set("owner", "ÍõÎå"); 
+        set("owner", "ç‹äº”"); 
         setup(); 
 } 

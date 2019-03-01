@@ -1,15 +1,15 @@
-// duximeng.c ¶ÅÏ£ÃÏ
+// duximeng.c æœå¸Œå­Ÿ
 
 #include <ansi.h>
 inherit NPC;
 
 void create()
 {
-        set_name("¶ÅÏ£ÃÏ", ({ "du ximeng", "du", "ximeng" }) );
-        set("gender", "ÄĞĞÔ");
-        set("title", "Óñ±ÊÉ½×¯×¯Ö÷");
+        set_name("æœå¸Œå­Ÿ", ({ "du ximeng", "du", "ximeng" }) );
+        set("gender", "ç”·æ€§");
+        set("title", "ç‰ç­†å±±èŠèŠä¸»");
         set("age", 53 + random(20));
-        set("long","Ëû¾ÍÊÇÓñ±ÊÉ½×¯µÄ×¯Ö÷£¬Ñ©É½·ÉºüµÄ¾Ë¾Ë¡£\n");
+        set("long","ä»–å°±æ˜¯ç‰ç­†å±±èŠçš„èŠä¸»ï¼Œé›ªå±±é£›ç‹çš„èˆ…èˆ…ã€‚\n");
         set("attitude", "friendly");
         set("str", 15);
         set("int", 15);

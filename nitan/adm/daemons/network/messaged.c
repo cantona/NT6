@@ -306,7 +306,7 @@ private void handle_msg(mapping info)
                     info[FUNCTION] != FUN_LOGOUT)
                 {
                         // The user must logon first
-                        error_handle(error_msg("Ã»ÓĞÄãµÄµÇÂ¼ĞÅÏ¢£¬ÇëÖØĞÂµÇÂ¼¡£\n"));
+                        error_handle(error_msg("æ²’æœ‰ä½ çš„ç™»éŒ„ä¿¡æ¯ï¼Œè«‹é‡æ–°ç™»éŒ„ã€‚\n"));
                         return;
                 }
 
@@ -331,37 +331,37 @@ private int user_logon(mapping info)
         DEBUG_OUT(sprintf("User %s want to login.", info[USER]));
         if (! stringp(user = info[USER]) || strlen(user) < 3)
                 // invalid user name
-                return error_msg("·Ç·¨µÄÓÃ»§Ãû¡£\n");
+                return error_msg("éæ³•çš„ç”¨æˆ¶åã€‚\n");
 
         if (! stringp(pass = info[PASSWORD]))
                 // no password
-                return error_msg("¿ÚÁî²»ÕıÈ·¡£\n");
+                return error_msg("å£ä»¤ä¸æ­£ç¢ºã€‚\n");
 
         ob = find_player(user);
         if (objectp(ob))
                 // the user has existed
-                return error_msg("¸ÃÓÃ»§ÒÑ¾­µÇÂ¼½øÈë" + LOCAL_MUD_NAME() + "¡£\n");
+                return error_msg("è©²ç”¨æˆ¶å·²ç¶“ç™»éŒ„é€²å…¥" + LOCAL_MUD_NAME() + "ã€‚\n");
 
         if (sizeof(connection) > MAX_CONNECTIONS)
-                return error_msg("ÒÑ¾­ÓĞÌ«¶àµÄÓÃ»§µÇÂ¼ÁË¡£\n");
+                return error_msg("å·²ç¶“æœ‰å¤ªå¤šçš„ç”¨æˆ¶ç™»éŒ„äº†ã€‚\n");
 
         ob = new(LOGIN_OB);
         set("id", user, ob);
         if (! ob->restore())
                 // no this user
-                return error_msg(LOCAL_MUD_NAME() + "ÖĞÃ»ÓĞ¸ÃÓÃ»§¡£\n");
+                return error_msg(LOCAL_MUD_NAME() + "ä¸­æ²’æœ‰è©²ç”¨æˆ¶ã€‚\n");
 
         if( !query("registered", ob) )
-                return error_msg("¸ÃÓÃ»§ÉĞÎ´³É¹¦×¢²á¡£\n");
+                return error_msg("è©²ç”¨æˆ¶å°šæœªæˆåŠŸæ³¨å†Šã€‚\n");
 
         if( crypt(pass,query("password", ob)) != query("password", ob) )
-                return error_msg("ÓÃ»§¿ÚÁî²»ÕıÈ·£¬ÇëÖØĞÂÊäÈë¡£\n");
+                return error_msg("ç”¨æˆ¶å£ä»¤ä¸æ­£ç¢ºï¼Œè«‹é‡æ–°è¼¸å…¥ã€‚\n");
 
         if (me = find_chatter(user))
         {
-                notice_msg = "¸ÃÓÃ»§ÒÑ¾­ÔÚÏß£¬×¢ÏúÔ­ÏÈµÄÁ¬½Ó¡£\n";
-                user_logout(me, "ÓĞÈË´Ó(" + query_last_addr() +
-                                ")È¡´úÁËÄãµÄÁ¬½Ó¡£\n");
+                notice_msg = "è©²ç”¨æˆ¶å·²ç¶“åœ¨ç·šï¼Œæ³¨éŠ·åŸå…ˆçš„é€£æ¥ã€‚\n";
+                user_logout(me, "æœ‰äººå¾(" + query_last_addr() +
+                                ")å–ä»£äº†ä½ çš„é€£æ¥ã€‚\n");
         }
 
         body = LOGIN_D->make_body(ob);
@@ -369,14 +369,14 @@ private int user_logon(mapping info)
         {
                 destruct(ob);
                 if (body) destruct(body);
-                return error_msg("ÎŞ·¨¶ÁÈ¡¸ÃÓÃ»§µÄĞÅÏ¢£¬ÇëºÍÎ×Ê¦ÁªÏµ¡£\n");
+                return error_msg("ç„¡æ³•è®€å–è©²ç”¨æˆ¶çš„ä¿¡æ¯ï¼Œè«‹å’Œå·«å¸«è¯ç³»ã€‚\n");
         }
 
         if (body->is_in_prison())
         {
                 destruct(ob);
                 destruct(body);
-                return error_msg("ÄãÒòÎª·¸·¨Ì«¶à£¬ÒÑ¾­±»¹Ø½ø¼àÓü¡£\n");
+                return error_msg("ä½ å› ç‚ºçŠ¯æ³•å¤ªå¤šï¼Œå·²ç¶“è¢«é—œé€²ç›£ç„ã€‚\n");
         }
 
         // create chatter & record the information of the user
@@ -384,7 +384,7 @@ private int user_logon(mapping info)
         if (! objectp(me))
         {
                 destruct(ob);
-                return error_msg("ÔİÊ±ÎŞ·¨½ÓÈëÏµÍ³£¬ÇëÉÔºòÔÙÊÔ¡£\n");
+                return error_msg("æš«æ™‚ç„¡æ³•æ¥å…¥ç³»çµ±ï¼Œè«‹ç¨å€™å†è©¦ã€‚\n");
         }
 
         seteuid(user);
@@ -424,7 +424,7 @@ private int user_logon(mapping info)
         if (notice_msg)
                 tell_user(user, FUN_NOTICE, notice_msg);
 
-        // ·¢ËÍ»·¾³±äÁ¿
+        // ç™¼é€ç’°å¢ƒè®Šé‡
         send_env(user);
 
         return 1;
@@ -443,8 +443,8 @@ void user_logout(mixed user, string msg)
             environment(user) != find_object(VOID_OB))
         {
                 // hide this object
-                message("vision", HIY "Ò»µÀ½ğ¹âÉÁ¹ı£¬" + user->name() +
-                                  HIY "ÏûÊ§µÃÎŞÓ°ÎŞ×Ù¡£\n" NOR,
+                message("vision", HIY "ä¸€é“é‡‘å…‰é–ƒéï¼Œ" + user->name() +
+                                  HIY "æ¶ˆå¤±å¾—ç„¡å½±ç„¡è¹¤ã€‚\n" NOR,
                         environment(user), ({ user }));
         }
 
@@ -465,7 +465,7 @@ private void call_fun(mapping info)
                 if (! stringp(info[MESSAGE]) ||
                     ! objectp(me = connection[info[USER]]))
                 {
-                        error_handle(error_msg("ÏûÏ¢¸ñÊ½²»ÍêÕû¡£\n"));
+                        error_handle(error_msg("æ¶ˆæ¯æ ¼å¼ä¸å®Œæ•´ã€‚\n"));
                         return;
                 }
 
@@ -518,11 +518,11 @@ private void call_fun(mapping info)
 
         default:
                 if (! info[USER] || ! objectp(me = connection[info[USER]]))
-                        result = error_msg("ÇëÏÈµÇÂ¼ÄãµÄÓÃ»§¡£\n");
+                        result = error_msg("è«‹å…ˆç™»éŒ„ä½ çš„ç”¨æˆ¶ã€‚\n");
                 else
                 if (! stringp(fun = me->find_chat_command(info[FUNCTION])))
-                        result = error_msg("Õâ¸ö°æ±¾µÄÏûÏ¢¾«Áé"
-                                           "²»Ö§³ÖÕâ¸ö¹¦ÄÜ¡£\n");
+                        result = error_msg("é€™å€‹ç‰ˆæœ¬çš„æ¶ˆæ¯ç²¾éˆ"
+                                           "ä¸æ”¯æŒé€™å€‹åŠŸèƒ½ã€‚\n");
                 else
                         result = call_other(fun, "main", me, info);
 
@@ -553,8 +553,8 @@ private int fun_logout(mapping info)
                 {
                         // show the disapper message
                         message("vision", HIM + me->name() +
-                                          HIM "µÄÓ°×ÓÔ½À´Ô½Ï¡±¡£¬"
-                                          "½¥½¥µÄÏûÊ§ÁË¡£\n" NOR,
+                                          HIM "çš„å½±å­è¶Šä¾†è¶Šç¨€è–„ï¼Œ"
+                                          "æ¼¸æ¼¸çš„æ¶ˆå¤±äº†ã€‚\n" NOR,
                                 environment(me), ({ me }));
                 }
 
@@ -808,8 +808,8 @@ private int direct_send(object user)
                         if (q[0][MSG_NOTICE])
                         {
                                 notice_user(q[0][MSG_NOTICE], FUN_NOTICE,
-                                            "ÒÑ¾­Óë¸ÃÓÃ»§" + user->full_name() +
-                                            "Ê§È¥ÁªÏµ¡£\n");
+                                            "å·²ç¶“èˆ‡è©²ç”¨æˆ¶" + user->full_name() +
+                                            "å¤±å»è¯ç³»ã€‚\n");
                         }
                         remove_user(user);
 
@@ -822,8 +822,8 @@ private int direct_send(object user)
                 if (q[0][MSG_NOTICE])
                 {
                         notice_user(q[0][MSG_NOTICE], FUN_NOTICE,
-                                    "ÎŞ·¨Ïò" + user->full_name() +
-                                    "·¢ËÍÏûÏ¢¡£\n");
+                                    "ç„¡æ³•å‘" + user->full_name() +
+                                    "ç™¼é€æ¶ˆæ¯ã€‚\n");
                 }
 
                 // drop all packet in the sending queue
@@ -893,14 +893,14 @@ private int queue_msg(object msgto, mapping send_info, mixed user, mixed finish)
 
                         case FUN_TELL:
                                 tell_object(msgto, HIG + send_info[NAME] + "(" +
-                                            send_info[USER] + ")¸æËßÄã£º" +
+                                            send_info[USER] + ")å‘Šè¨´ä½ ï¼š" +
                                             replace_string(send_info[MESSAGE], "\n", "\n ") +
                                             "\n" NOR);
                                 break;
 
                         case FUN_ACKTELL:
-                                tell_object(msgto, sprintf(HIG "Äã¸æËß%s" HIG
-                                                           "(%s)£º%s\n" NOR,
+                                tell_object(msgto, sprintf(HIG "ä½ å‘Šè¨´%s" HIG
+                                                           "(%s)ï¼š%s\n" NOR,
                                                            send_info[NAME],
                                                            send_info[USER],
                                                            send_info[MESSAGE]));
@@ -916,7 +916,7 @@ private int queue_msg(object msgto, mapping send_info, mixed user, mixed finish)
 
         if (! ready_to_send(msgto, send_info, user, finish))
         {
-                notice_user(user, FUN_NOTICE, "ÏµÍ³Õı·±Ã¦£¬ÎŞ·¨´úÄã·¢ËÍ¸ÃÏûÏ¢¡£\n");
+                notice_user(user, FUN_NOTICE, "ç³»çµ±æ­£ç¹å¿™ï¼Œç„¡æ³•ä»£ä½ ç™¼é€è©²æ¶ˆæ¯ã€‚\n");
                 return 0;
         }
 
@@ -1129,9 +1129,9 @@ string reject_tell(object user1, object user2)
                 if( !is_sub(query("id", user1),can_tell) )
                 {
                         if (! visible(user1, user2))
-                                return "Õâ¸öÓÃ»§Ã»ÓĞµÇÂ¼£¬ÄãÎŞ·¨ºÍËû½»Ì¸¡£\n";
+                                return "é€™å€‹ç”¨æˆ¶æ²’æœ‰ç™»éŒ„ï¼Œä½ ç„¡æ³•å’Œä»–äº¤è«‡ã€‚\n";
                         else
-                                return to_name + "²»ÏëÌıÄãÂŞàÂÀ²¡£\n";
+                                return to_name + "ä¸æƒ³è½ä½ ç¾…å—¦å•¦ã€‚\n";
                 }
         }
 
@@ -1139,11 +1139,11 @@ string reject_tell(object user1, object user2)
         {
                 // check target's connection status
                 if (! interactive(user2))
-                        return to_name + "ÏÖÔÚ²»ÔÚÏßÉÏ£¬ÎŞ·¨Ìıµ½ÄãµÄ»°¡£\n";
+                        return to_name + "ç¾åœ¨ä¸åœ¨ç·šä¸Šï¼Œç„¡æ³•è½åˆ°ä½ çš„è©±ã€‚\n";
 
                 // check target's connection status
                 if (! living(user2))
-                        return to_name + "ÏÖÔÚ»èÃÔ²»ĞÑ£¬Ìı²»µ½ÄãËµµÄ»°¡£\n";
+                        return to_name + "ç¾åœ¨æ˜è¿·ä¸é†’ï¼Œè½ä¸åˆ°ä½ èªªçš„è©±ã€‚\n";
         }
 
         // user1 can tell to user2
@@ -1218,14 +1218,14 @@ int send_msg_to(mixed user, string msgto, string msg)
 
         if (! objectp(from = user) &&
             ! objectp(from = find_user(user)))
-                return error_msg("ÄãÃ»ÓĞÕı³£µÇÂ¼£¬ÎŞ·¨½øĞĞ½»Ì¸¡£\n");
+                return error_msg("ä½ æ²’æœ‰æ­£å¸¸ç™»éŒ„ï¼Œç„¡æ³•é€²è¡Œäº¤è«‡ã€‚\n");
 
         if (sscanf(msgto, "%s@%s", msgto, mud) == 2)
                 if (GTELL->send_gtell(mud, msgto, user, msg,
                         stringp(user) ? connection[user][NAME] : 0))
                 {
-                        notice_user(user, FUN_VISION, HIY "Íø¼ÊÑ¶Ï¢ÒÑËÍ³ö£¬¿ÉÄÜ"
-                                    "ÒªÉÔºò²ÅÄÜµÃµ½»ØÓ¦¡£\n" NOR);
+                        notice_user(user, FUN_VISION, HIY "ç¶²éš›è¨Šæ¯å·²é€å‡ºï¼Œå¯èƒ½"
+                                    "è¦ç¨å€™æ‰èƒ½å¾—åˆ°å›æ‡‰ã€‚\n" NOR);
                         return 1;
                 }
 
@@ -1234,14 +1234,14 @@ int send_msg_to(mixed user, string msgto, string msg)
             ! from->visible(to))
         {
                 notice_user(from, FUN_NOTICE,
-                            "Õâ¸öÓÃ»§Ã»ÓĞµÇÂ¼£¬ÄãÎŞ·¨ºÍËû½»Ì¸¡£\n");
+                            "é€™å€‹ç”¨æˆ¶æ²’æœ‰ç™»éŒ„ï¼Œä½ ç„¡æ³•å’Œä»–äº¤è«‡ã€‚\n");
                 return 1;
         }
 
         if (to == from)
         {
                 notice_user(from, FUN_NOTICE,
-                            "×Ô¼º¶Ô×Ô¼ºËµ»°£¿ËÆºõÎŞ´Ë±ØÒª¡£\n");
+                            "è‡ªå·±å°è‡ªå·±èªªè©±ï¼Ÿä¼¼ä¹ç„¡æ­¤å¿…è¦ã€‚\n");
                 return 1;
         }
 
@@ -1284,9 +1284,9 @@ private void acktell(object from, object to, string msg)
         if (interactive(to) && query_idle(to) >= 120)
         {
                 notice_user(from, FUN_VISION,
-                         YEL "¿ÉÊÇ" + gender_pronoun(query("gender", to)) +
-                         "ÒÑ¾­·¢´ô" + chinese_number(query_idle(to) / 60) +
-                         "·ÖÖÓÁË£¬¿ÖÅÂÌı²»µ½ÄãËµµÄ»°¡£\n" NOR);
+                         YEL "å¯æ˜¯" + gender_pronoun(query("gender", to)) +
+                         "å·²ç¶“ç™¼å‘†" + chinese_number(query_idle(to) / 60) +
+                         "åˆ†é˜äº†ï¼Œææ€•è½ä¸åˆ°ä½ èªªçš„è©±ã€‚\n" NOR);
         }
 
 }
@@ -1328,7 +1328,7 @@ void create()
         object ob;
 
         seteuid(getuid());
-        set("channel_id", "ÏûÏ¢¾«Áé");
+        set("channel_id", "æ¶ˆæ¯ç²¾éˆ");
         my_port = __PORT__ + MESSAGE_PORT;
         startup_udp();
 

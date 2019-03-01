@@ -3,7 +3,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-string name() { return HIW "Ë«µ¶ºÏ±Ú" NOR; }
+string name() { return HIW "é›™åˆ€åˆå£" NOR; }
 
 inherit F_SSERVER;
 
@@ -21,7 +21,7 @@ int perform(object me, object target)
         }
 
         if (! me->is_fighting(target))
-                return notify_fail(name() + "Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(name() + "åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         weapon1=query_temp("weapon", me);
         weapon2=query_temp("secondary_weapon", me);
@@ -29,38 +29,38 @@ int perform(object me, object target)
         weapon2=query_temp("handing", me);
 
         if (! objectp(weapon1) || ! objectp(weapon2))
-                return notify_fail("ÄãÃ»ÓĞÍ¬Ê±×°±¸Ë«µ¶£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰åŒæ™‚è£å‚™é›™åˆ€ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if( query("consistence", weapon2) <= 0 )
-                return notify_fail("ÄãµÄ" + weapon2->name() + "ÒÑ¾­ÑÏÖØ"
-                                   "Ëğ»µ£¬ÎŞ·¨¼ÌĞøÊ¹ÓÃÁË¡£\n");
+                return notify_fail("ä½ çš„" + weapon2->name() + "å·²ç¶“åš´é‡"
+                                   "æå£ï¼Œç„¡æ³•ç¹¼çºŒä½¿ç”¨äº†ã€‚\n");
 
         if( query("skill_type", weapon1) != query("skill_type", weapon2) ||
             query("skill_type", weapon1) != "blade" )
-                return notify_fail("ÄãËùÊ¹ÓÃµÄÎäÆ÷²»¶Ô£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ æ‰€ä½¿ç”¨çš„æ­¦å™¨ä¸å°ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         type=query("skill_type", weapon1);
 
         if (me->query_skill(type, 1) < 250)
-                return notify_fail("ÄãµÄ" + to_chinese(type) + "Ì«²î£¬"
-                                   "ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„" + to_chinese(type) + "å¤ªå·®ï¼Œ"
+                                   "é›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (me->query_skill_mapped(type) != "yanzi-blade")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢Ñà×ÓË«·Éµ¶·¨£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼ç‡•å­é›™é£›åˆ€æ³•ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (me->query_skill("yanzi-blade", 1) < 250)
-                return notify_fail("ÄãµÄÑà×ÓË«·Éµ¶·¨µÈ¼¶²»¹»£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„ç‡•å­é›™é£›åˆ€æ³•ç­‰ç´šä¸å¤ ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if( query("neili", me)<500 )
-                return notify_fail("ÄãÏÖÔÚµÄÕæÆø²»¹»£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çš„çœŸæ°£ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIW "$N" HIW "ÊÖ³ÖÁ½°Ñµ¶£¬¹¥Ïò$n " HIW "¡£¿ÉÊÇÔÚÕâÒ»É²ÄÇ¼ä£¬Á½°Ñµ¶·Â·ğºöÈ»±ä³ÉÁËÒ»°Ñµ¶¡£\n"
-              HIW "Ë«µ¶ºÏ±Ú£¬Á¦Á¿¾¹Ôö¼ÓÁËÒ»±¶£¬±¾¸ÃÊÇÒ»Ç§½ïµÄÁ¦Á¿£¬¾¹Ôö¼ÓÎªÁ½Ç§½ï¡£Á¦Á¿Ôö¼ÓÁËÒ»±¶£¬ËÙ¶Èµ±È»Ò²ÒªÔö¼ÓÒ»±¶¡£\n"
-              HIW "$N" HIW "Ë«µ¶ºÏ±Ú£¬Á½°Ñµ¶Ã÷Ã÷ÒÑºÏ¶øÎªÒ»£¬È´ÓÖÆ«Æ«·Â·ğÊÇ´ÓÁ½¸ö²»Í¬µÄ·½ÏòÅüÏÂÀ´µÄ¡£\n"
-              HIW "Ã÷Ã÷ÊÇ¿³Ïò$n" HIW "µÄÓÒ±ß£¬¿ÉÊÇ$n" HIW "Íù×óÉÁ±Ü£¬»¹ÊÇÉÁ²»¿ª¡£$n" HIW "ÍùÓÒÉÁ£¬¸üÉÁ²»¿ª¡£\n" NOR;
+        msg = HIW "$N" HIW "æ‰‹æŒå…©æŠŠåˆ€ï¼Œæ”»å‘$n " HIW "ã€‚å¯æ˜¯åœ¨é€™ä¸€å‰é‚£é–“ï¼Œå…©æŠŠåˆ€ä»¿ä½›å¿½ç„¶è®Šæˆäº†ä¸€æŠŠåˆ€ã€‚\n"
+              HIW "é›™åˆ€åˆå£ï¼ŒåŠ›é‡ç«Ÿå¢åŠ äº†ä¸€å€ï¼Œæœ¬è©²æ˜¯ä¸€åƒæ–¤çš„åŠ›é‡ï¼Œç«Ÿå¢åŠ ç‚ºå…©åƒæ–¤ã€‚åŠ›é‡å¢åŠ äº†ä¸€å€ï¼Œé€Ÿåº¦ç•¶ç„¶ä¹Ÿè¦å¢åŠ ä¸€å€ã€‚\n"
+              HIW "$N" HIW "é›™åˆ€åˆå£ï¼Œå…©æŠŠåˆ€æ˜æ˜å·²åˆè€Œç‚ºä¸€ï¼Œå»åˆååä»¿ä½›æ˜¯å¾å…©å€‹ä¸åŒçš„æ–¹å‘åŠˆä¸‹ä¾†çš„ã€‚\n"
+              HIW "æ˜æ˜æ˜¯ç å‘$n" HIW "çš„å³é‚Šï¼Œå¯æ˜¯$n" HIW "å¾€å·¦é–ƒé¿ï¼Œé‚„æ˜¯é–ƒä¸é–‹ã€‚$n" HIW "å¾€å³é–ƒï¼Œæ›´é–ƒä¸é–‹ã€‚\n" NOR;
 
         ap = attack_power(me, "blade");
         dp = defense_power(target, "parry");
@@ -70,15 +70,15 @@ int perform(object me, object target)
                 damage = damage_power(me, "blade") * 2;
                 addn("neili", -150, me);
                 msg += COMBAT_D->do_damage(me, target, WEAPON_ATTACK, damage, 85,
-                                           HIR "Ö»¼û$n" HIR "Ò»Éù²Ò½Ğ£¬ĞØ¿Ú¸ø"
-                                           "Åü¿ªÒ»¸ö¾Ş´óµÄ¿Ú×Ó£¬ÏÊÑªĞÚÓ¿Åç³ö£¡\n" NOR);
+                                           HIR "åªè¦‹$n" HIR "ä¸€è²æ…˜å«ï¼Œèƒ¸å£çµ¦"
+                                           "åŠˆé–‹ä¸€å€‹å·¨å¤§çš„å£å­ï¼Œé®®è¡€æ´¶æ¹§å™´å‡ºï¼\n" NOR);
                 me->start_busy(2);
                 if (ap / 3 + random(ap / 2) > dp && ! target->is_busy())
                         target->start_busy(3);
         } else
         {
-                msg += CYN "$p" CYN "´ó³ÔÒ»¾ª£¬Ò²²»ÕĞ¼Ü£¬µ±¼´Ïòºó"
-                       "ºáÒÆÊı³ß£¬±Ü¿ªÁË$P" CYN "ÕâÒ»ÕĞ¡£\n" NOR;
+                msg += CYN "$p" CYN "å¤§åƒä¸€é©šï¼Œä¹Ÿä¸æ‹›æ¶ï¼Œç•¶å³å‘å¾Œ"
+                       "æ©«ç§»æ•¸å°ºï¼Œé¿é–‹äº†$P" CYN "é€™ä¸€æ‹›ã€‚\n" NOR;
                 addn("neili", -50, me);
                 me->start_busy(3);
         }

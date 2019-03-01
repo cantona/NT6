@@ -12,26 +12,26 @@ int exert(object me, object target)
         int skill;
         
         if( userp(me) && !query("reborn/times", me) )
-                return notify_fail("ÄãËùÊ¹ÓÃµÄÄÚ¹¦ÖÐÃ»ÓÐÕâÖÖ¹¦ÄÜ¡£\n");
+                return notify_fail("ä½ æ‰€ä½¿ç”¨çš„å…§åŠŸä¸­æ²’æœ‰é€™ç¨®åŠŸèƒ½ã€‚\n");
                 
         if (target != me)
-                return notify_fail("±ÙÐ°½£·¨Ö»ÄÜ¶Ô×Ô¼ºÊ¹ÓÃ¡£\n");
+                return notify_fail("è¾Ÿé‚ªåŠæ³•åªèƒ½å°è‡ªå·±ä½¿ç”¨ã€‚\n");
 
         if( query("neili", me)<100 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¡\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼\n");
 
         if (me->query_skill("pixie-jian", 1) < 120)
-                return notify_fail("ÄãµÄ±ÙÐ°½£·¨ÐÞÐÐ²»¹»£¬ÄÑÒÔÔË¹¦¡£\n");
+                return notify_fail("ä½ çš„è¾Ÿé‚ªåŠæ³•ä¿®è¡Œä¸å¤ ï¼Œé›£ä»¥é‹åŠŸã€‚\n");
 
         if( query_temp("apply/shade_vision", me) )
-                return notify_fail("ÄãÒÑ¾­ÔÚÔË¹¦ÖÐÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“åœ¨é‹åŠŸä¸­äº†ã€‚\n");
 
         skill = me->query_skill("force");
 
         addn("neili", -100, me);
         me->receive_damage("qi", 0);
         
-        message_combatd( HIW "$N" HIW "Î¢Ò»ÄýÉñ£¬ÔËÆð¹¦Á¦£¬Õû¸öÈËÈçÍ¬±»ÑÌÎíÁýÕÖÒ»°ã£¬Æ¯ºö²»¶¨£¬¹í÷ÈÖÁ¼«¡£\n" NOR, me);
+        message_combatd( HIW "$N" HIW "å¾®ä¸€å‡ç¥žï¼Œé‹èµ·åŠŸåŠ›ï¼Œæ•´å€‹äººå¦‚åŒè¢«ç…™éœ§ç± ç½©ä¸€èˆ¬ï¼Œæ¼‚å¿½ä¸å®šï¼Œé¬¼é­…è‡³æ¥µã€‚\n" NOR, me);
 
         set_temp("apply/shade_vision", 1, me);
         me->start_call_out((: call_other, __FILE__, "remove_effect",
@@ -47,6 +47,6 @@ void remove_effect(object me, int level)
         if( query_temp("apply/shade_vision", me) )
         {
                 delete_temp("apply/shade_vision", me);
-                message_vision(HIW "$N" HIW "ÔË¹¦Íê±Ï£¬È«ÉíºöµÄÒ»¶Ù£¬ÏÖ³öÕû¸öÉíÐÎ¡£\n" NOR, me);
+                message_vision(HIW "$N" HIW "é‹åŠŸå®Œç•¢ï¼Œå…¨èº«å¿½çš„ä¸€é “ï¼Œç¾å‡ºæ•´å€‹èº«å½¢ã€‚\n" NOR, me);
         }
 }

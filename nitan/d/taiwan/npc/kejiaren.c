@@ -1,4 +1,4 @@
-// kejiaren.c ¿Í¼ÒÈË
+// kejiaren.c å®¢å®¶äºº
 // Last Modifyed by Ahda on Jan. 4 2002
 
 inherit NPC;
@@ -8,8 +8,8 @@ void create()
         int age;
         age = 20 + random(40);
         
-        set_name("¿Í¼ÒÈË", ({ "kejiaren", "kejia", "ren", }));
-        set("gender", "ÄĞĞÔ");
+        set_name("å®¢å®¶äºº", ({ "kejiaren", "kejia", "ren", }));
+        set("gender", "ç”·æ€§");
         set("age", age);
 
         set_skill("unarmed", 10);

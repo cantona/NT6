@@ -10,15 +10,15 @@ inherit F_COAGENT;
 #include "fawang.h"
 void create()
 {
-        set_name("Î¤Ò»Ğ¦", ({"wei yixiao", "wei", "yixiao",}));
+        set_name("éŸ‹ä¸€ç¬‘", ({"wei yixiao", "wei", "yixiao",}));
         set("long",
-                "Ëû³¤µÃ»îÏóÊÇÒ»Ö»ÇàÒí´óòùòğ¡£\n"
-                "ËûµÄÁ³É«»ÒÆËÆËµÄ¡£\n"
+                "ä»–é•·å¾—æ´»è±¡æ˜¯ä¸€åªé’ç¿¼å¤§è™è ã€‚\n"
+                "ä»–çš„è‡‰è‰²ç°æ’²æ’²çš„ã€‚\n"
         );
 
-        set("title",HIG "Ã÷½Ì" HIC "ÇàÒíòğÍõ" NOR);
+        set("title",HIG "æ˜æ•™" HIC "é’ç¿¼è ç‹" NOR);
         set("level",9);
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("attitude", "peaceful");
 
         set("age", 48);
@@ -67,8 +67,8 @@ void create()
         set("chat_msg_combat", ({
                 (: command("perform strike.jue") :),
         }) );
-        create_family("Ã÷½Ì", 35, "»¤·¨·¨Íõ");
-        set("inherit_title",HIG"Ã÷½Ì"NOR"¹âÃ÷É¢ÈË"NOR);
+        create_family("æ˜æ•™", 35, "è­·æ³•æ³•ç‹");
+        set("inherit_title",HIG"æ˜æ•™"NOR"å…‰æ˜æ•£äºº"NOR);
 
         set("master_ob",4);
 
@@ -97,10 +97,10 @@ int accept_ask(object me, string topic)
         switch (topic)
         {
 
-        case "Á¬Ãà²»¾ø" :
+        case "é€£ç¶¿ä¸çµ•" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/hanbing-mianzhang/jue",
-                           "name"    : "Á¬Ãà²»¾ø",
+                           "name"    : "é€£ç¶¿ä¸çµ•",
                            "sk1"     : "hanbing-mianzhang",
                            "lv1"     : 140,
                            "neili"   : 2000,
@@ -108,10 +108,10 @@ int accept_ask(object me, string topic)
                            "shen"    : 100000, ]));
                 break;
 
-        case "ÎüÑªÇàòğ" :
+        case "å¸è¡€é’è " :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/hanbing-mianzhang/xi",
-                           "name"    : "ÎüÑªÇàòğ",
+                           "name"    : "å¸è¡€é’è ",
                            "sk1"     : "hanbing-mianzhang",
                            "lv1"     : 140,
                            "neili"   : 2000,

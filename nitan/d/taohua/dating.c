@@ -3,18 +3,18 @@ inherit ROOM;
 
 void create()
 {
-    set("short", "´óÌü");
+    set("short", "å¤§å»³");
     set("long", 
-"ÕâÀïÊÇÌÒ»¨É½×¯µÄÕýÌü¡£Õû¸ö´óÌüÊ®·Ö¿íÀ«¡£ÌüÖÐ¸ü¹ÒÂú\n"
-"ÁË¸÷ÖÖÃû¼ÒµÄÊé·¨Õæ¼£¡£µ«×îÎªÏÔÑÛµÄÈ´ÊÇÕýÖÐ¹ÒµÄÒ»·ù¶ÔÁª£º\n\n"
-HIC "           ¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n"
-"           ¡ù                          ¡ù\n"
-"           ¡ù   " HIW "ÌÒ »¨ Ó° Âä ·É Éñ ½£" HIC  "   ¡ù\n"
-"           ¡ù                          ¡ù\n"
-"           ¡ù   " HIW "±Ì º£ ³± Éú °´ Óñ óï" HIC  "   ¡ù\n"
-"           ¡ù                          ¡ù\n"
-"           ¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n\n" NOR
-"Æä×ÖÌååÙ¾¢Í¦°Î£¬ÆøÊÆºêÎ°Ö®¼«£¬Ïë±ØÓ¦ÊÇ³ö×Ô»ÆÒ©Ê¦µÄÊÖ±Ê¡£\n"
+"é€™è£¡æ˜¯æ¡ƒèŠ±å±±èŽŠçš„æ­£å»³ã€‚æ•´å€‹å¤§å»³ååˆ†å¯¬é—Šã€‚å»³ä¸­æ›´æŽ›æ»¿\n"
+"äº†å„ç¨®åå®¶çš„æ›¸æ³•çœŸè·¡ã€‚ä½†æœ€ç‚ºé¡¯çœ¼çš„å»æ˜¯æ­£ä¸­æŽ›çš„ä¸€å¹…å°è¯ï¼š\n\n"
+HIC "           â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»\n"
+"           â€»                          â€»\n"
+"           â€»   " HIW "æ¡ƒ èŠ± å½± è½ é£› ç¥ž åŠ" HIC  "   â€»\n"
+"           â€»                          â€»\n"
+"           â€»   " HIW "ç¢§ æµ· æ½® ç”Ÿ æŒ‰ çŽ‰ ç°«" HIC  "   â€»\n"
+"           â€»                          â€»\n"
+"           â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»\n\n" NOR
+"å…¶å­—é«”é’å‹æŒºæ‹”ï¼Œæ°£å‹¢å®å‰ä¹‹æ¥µï¼Œæƒ³å¿…æ‡‰æ˜¯å‡ºè‡ªé»ƒè—¥å¸«çš„æ‰‹ç­†ã€‚\n"
 );
         set("exits", ([
             "north" : __DIR__"qianyuan",
@@ -23,7 +23,7 @@ HIC "           ¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n"
             "west"  : __DIR__"wofang" ,
         ]));
         set("objects", ([
-            //"/kungfu/class/taohua/huang" : 1, // ÒÑ¾­È¡Ïû¸ÃÇøÓò
+            //"/kungfu/class/taohua/huang" : 1, // å·²ç¶“å–æ¶ˆè©²å€åŸŸ
         ]) );    
         set("valid_startroom", 1);
         set("no_beg", "1");

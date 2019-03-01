@@ -8,30 +8,30 @@ public void set_test_flag(int n){TEST_FLAG = n;}
 
 void create()
 {
-        set("short", HIR "¼ÀÌ³" NOR);
+        set("short", HIR "ç¥­å£‡" NOR);
         set("long",
-"ÕâÀïÊÇ±ù»ğµºµÄÖĞĞÄ£¬Ò²ÊÇÒ»´¦¼ÀÌ³£¬Õâ¸ö¼ÀÌ³Ã»ÓĞÃû×Ö£¬µ«\n"
-"´ÓÆä½¨ÔìµÄ¸´ÔÓ¶ÈºÍÆøÊÆÀ´½²£¬²¢²»ÊäÓÚáÔÉ½µÄ·âìøÌ¨¡£¼ÀÌ³ËÄÖÜ\n"
-"½ÇÂäÈ¼×ÅÀ¶É«µÄ»ğÑæ£¬ÕıÖĞ°Ú·Å×ÅÒ»¸ö¾Ş´óµÄÏãÂ¯ºÍ¼ÀÌ¨(jitai)¡£\n"
+"é€™è£¡æ˜¯å†°ç«å³¶çš„ä¸­å¿ƒï¼Œä¹Ÿæ˜¯ä¸€è™•ç¥­å£‡ï¼Œé€™å€‹ç¥­å£‡æ²’æœ‰åå­—ï¼Œä½†\n"
+"å¾å…¶å»ºé€ çš„å¾©é›œåº¦å’Œæ°£å‹¢ä¾†è¬›ï¼Œä¸¦ä¸è¼¸äºåµ©å±±çš„å°ç¦ªå°ã€‚ç¥­å£‡å››å‘¨\n"
+"è§’è½ç‡ƒè‘—è—è‰²çš„ç«ç‡„ï¼Œæ­£ä¸­æ“ºæ”¾è‘—ä¸€å€‹å·¨å¤§çš„é¦™çˆå’Œç¥­å°(jitai)ã€‚\n"
 );
 
-        set("no_rideto", 1);         // ÉèÖÃ²»ÄÜÆïÂíµ½ÆäËûµØ·½
-        set("no_flyto", 1);          // ÉèÖÃ²»ÄÜ´ÓÆğÀ´µØ·½ÆïÂíÀ´ÕâÀï
-        set("binghuo", 1);           // ±íÊ¾ÔÚ±ù»ğµº
+        set("no_rideto", 1);         // è¨­ç½®ä¸èƒ½é¨é¦¬åˆ°å…¶ä»–åœ°æ–¹
+        set("no_flyto", 1);          // è¨­ç½®ä¸èƒ½å¾èµ·ä¾†åœ°æ–¹é¨é¦¬ä¾†é€™è£¡
+        set("binghuo", 1);           // è¡¨ç¤ºåœ¨å†°ç«å³¶
 
         set("no_clean_up", 1);
         
         set("outdoors", "battle4");
        
-        set("league_flag", "ALL_LEAGUE"); // Ä¬ÈÏËùÓĞ°ïÅÉ¶¼¿ÉÒÔÌáÇ°½øÈëÃÜµÀ
+        set("league_flag", "ALL_LEAGUE"); // é»˜èªæ‰€æœ‰å¹«æ´¾éƒ½å¯ä»¥æå‰é€²å…¥å¯†é“
         set("exits", ([ 
                 "north"   : __DIR__"xuanwutai",
                 "south"   : __DIR__"shenghuotai",
         ]));
         
         set("item_desc", ([ 
-                "jitai"   :  HIC "¼ÀÌ¨ÅÔ¾¹Òş²Ø×ÅÒ»¸öÆæ¹ÖµÄÀ­»·£¬×ª¶¯(turn)À­»·£¨lahuan£©¿ÉÄÜ»á¿ªÆôÊ²Ã´»ú¹Ø¡£\n" NOR,
-                "lahuan"  :  HIM "Ò»¸ö°ëÔ²ĞÎµÄÀ­»·£¬¹ÅÍ­É«£¬ËÆºõÁ¬½Ó×ÅÊ²Ã´»ú¹Ø¡£\n" NOR,
+                "jitai"   :  HIC "ç¥­å°æ—ç«Ÿéš±è—è‘—ä¸€å€‹å¥‡æ€ªçš„æ‹‰ç’°ï¼Œè½‰å‹•(turn)æ‹‰ç’°ï¼ˆlahuanï¼‰å¯èƒ½æœƒé–‹å•Ÿä»€éº¼æ©Ÿé—œã€‚\n" NOR,
+                "lahuan"  :  HIM "ä¸€å€‹åŠåœ“å½¢çš„æ‹‰ç’°ï¼Œå¤éŠ…è‰²ï¼Œä¼¼ä¹é€£æ¥è‘—ä»€éº¼æ©Ÿé—œã€‚\n" NOR,
         ]));
 
         setup();
@@ -48,24 +48,24 @@ int do_turn(string arg)
         object ob;
         
         if (! arg || arg != "lahuan")
-                return notify_fail("ÄãÒª×ª¶¯Ê²Ã´¶«Î÷£¡\n");
+                return notify_fail("ä½ è¦è½‰å‹•ä»€éº¼æ±è¥¿ï¼\n");
                 
         if( query("exits/enter") )
-                return notify_fail("ÃÜµÀÈë¿ÚÒÑ¾­¿ª×ÅÁË£¬ÄãÃ»ÊÂ°É£¿¡£¡£¡£\n");
+                return notify_fail("å¯†é“å…¥å£å·²ç¶“é–‹è‘—äº†ï¼Œä½ æ²’äº‹å§ï¼Ÿã€‚ã€‚ã€‚\n");
 
-        // ¶ÁÈ¡°ïÕ½¿ØÖÆÎÄ¼ş£¬ÅĞ¶ÏÊÇ·ñÃÜµÀ¿ªÆôÁË£¬·ñÔò²»ÄÜÀ­¶¯À­»·
+        // è®€å–å¹«æˆ°æ§åˆ¶æ–‡ä»¶ï¼Œåˆ¤æ–·æ˜¯å¦å¯†é“é–‹å•Ÿäº†ï¼Œå¦å‰‡ä¸èƒ½æ‹‰å‹•æ‹‰ç’°
         if( !BUNCH_D->is_battle_start() && !TEST_FLAG )
-                return notify_fail("ÄãÊ¹¾¢×ª¶¯À­»·£¬ËÆºõÃ»ÓĞÊ²Ã´×÷ÓÃ¡£\n");
+                return notify_fail("ä½ ä½¿å‹è½‰å‹•æ‹‰ç’°ï¼Œä¼¼ä¹æ²’æœ‰ä»€éº¼ä½œç”¨ã€‚\n");
                 
-        // ½ğÃ«Ê¨Íõ´æÔÚÔò²»ÄÜ¿ªÆô
+        // é‡‘æ¯›ç…ç‹å­˜åœ¨å‰‡ä¸èƒ½é–‹å•Ÿ
         if (objectp(ob = present("jinmao shiwang", this_object())))
         {
-                message_vision(HIM "Ò»Õó¹âÃ¢ÉÁ¹ı£¬" + ob->name() + HIM "À¹ÔÚ$N" HIM "ÃæÇ°£¬ºÈµÀ£º¡±ºß£¬ÏÈ¹ıÁËÎÒÕâ¹ØÔÙËµ£¡¡°\n" NOR, me);
+                message_vision(HIM "ä¸€é™£å…‰èŠ’é–ƒéï¼Œ" + ob->name() + HIM "æ””åœ¨$N" HIM "é¢å‰ï¼Œå–é“ï¼šâ€å“¼ï¼Œå…ˆéäº†æˆ‘é€™é—œå†èªªï¼â€œ\n" NOR, me);
                 return 1;
         }
 
-        write("ÄãÊ¹¾¢×ª¶¯À­»·£¬Ö»ÌıÒ»ÉùÃÆÏì£¬¼ÀÌ³Î¢Î¢²ü¶¯£¬¼ÀÌ³ºó¾¹Â¶³öÒ»ÌõÍ¨µÀ(enter)¡£\n" NOR);
-        tell_room(this_object(), HIC + me->name() + HIC "Ê¹¾¢×ª¶¯À­»·£¬Ö»ÌıÒ»ÉùÃÆÏì£¬¼ÀÌ³Î¢Î¢²ü¶¯£¬¼ÀÌ³ºó¾¹Â¶³öÒ»ÌõÍ¨µÀ(enter)¡£\n" NOR, ({me}));
+        write("ä½ ä½¿å‹è½‰å‹•æ‹‰ç’°ï¼Œåªè½ä¸€è²æ‚¶éŸ¿ï¼Œç¥­å£‡å¾®å¾®é¡«å‹•ï¼Œç¥­å£‡å¾Œç«Ÿéœ²å‡ºä¸€æ¢é€šé“(enter)ã€‚\n" NOR);
+        tell_room(this_object(), HIC + me->name() + HIC "ä½¿å‹è½‰å‹•æ‹‰ç’°ï¼Œåªè½ä¸€è²æ‚¶éŸ¿ï¼Œç¥­å£‡å¾®å¾®é¡«å‹•ï¼Œç¥­å£‡å¾Œç«Ÿéœ²å‡ºä¸€æ¢é€šé“(enter)ã€‚\n" NOR, ({me}));
 
         set("exits/enter", __DIR__"st0");
         
@@ -80,11 +80,11 @@ int do_turn(string arg)
 void close_out()
 {
         delete("exits/enter");  
-        tell_room(this_object(), HIC "Ò»ÉùÃÆÏì£¬¼ÀÌ³Î¢Î¢²ü¶¯£¬ËÆºõÊÇÃÜµÀ¹Ø±ÕÁË¡£\n" NOR, ({}));
+        tell_room(this_object(), HIC "ä¸€è²æ‚¶éŸ¿ï¼Œç¥­å£‡å¾®å¾®é¡«å‹•ï¼Œä¼¼ä¹æ˜¯å¯†é“é—œé–‰äº†ã€‚\n" NOR, ({}));
 }
 
 
-// ºô½ĞÀ´×Ô ½ğÃ«Ê¨ÍõËÀÍöºó ,league´ú±í°ïÅÉÃû£¬Èç¹ûÎª"ALL_LEAGUE"±íÊ¾ÈÎºÎ°ïÅÉ¶¼¿ÉÒÔ½øÈë
+// å‘¼å«ä¾†è‡ª é‡‘æ¯›ç…ç‹æ­»äº¡å¾Œ ,leagueä»£è¡¨å¹«æ´¾åï¼Œå¦‚æœç‚º"ALL_LEAGUE"è¡¨ç¤ºä»»ä½•å¹«æ´¾éƒ½å¯ä»¥é€²å…¥
 public set_flag(string league)
 {
         set("league_flag", league);
@@ -92,14 +92,14 @@ public set_flag(string league)
         call_out("clear_league_flag", 60, league);
         
         if (league != "ALL_LEAGUE")
-                tell_room(this_object(), HIM "ÏÖÔÚÖ»ÓĞ¡¾" + league + HIM "¡¿¿ÉÒÔÌáÇ°Ò»·ÖÖÓ½øÈëÃÜµÀ£¡\n" NOR, ({}));
+                tell_room(this_object(), HIM "ç¾åœ¨åªæœ‰ã€" + league + HIM "ã€‘å¯ä»¥æå‰ä¸€åˆ†é˜é€²å…¥å¯†é“ï¼\n" NOR, ({}));
 }
 void clear_league_flag(string league)
 {
         set("league_flag", "ALL_LEAGUE");
         
         if (league != "ALL_LEAGUE")     
-                tell_room(this_object(), HIG "ÆäËû°ïÅÉ¿ÉÒÔ½øÈëÃÜµÀÁË£¡\n" NOR, ({}));
+                tell_room(this_object(), HIG "å…¶ä»–å¹«æ´¾å¯ä»¥é€²å…¥å¯†é“äº†ï¼\n" NOR, ({}));
 }
 
 int valid_leave(object me, string dir)
@@ -107,17 +107,17 @@ int valid_leave(object me, string dir)
         
         if (dir == "enter")
         {
-                // ·Ç°ïÕ½²»ÄÜ½øÈë
+                // éå¹«æˆ°ä¸èƒ½é€²å…¥
                 if( !BUNCH_D->is_battle_start() && !TEST_FLAG )
-                        return notify_fail("ÏÖÔÚ²»ÊÇ°ïÕ½ÆÚ¼ä£¬²»ÄÜ½øÈëÃÜµÀ£¡\n");
+                        return notify_fail("ç¾åœ¨ä¸æ˜¯å¹«æˆ°æœŸé–“ï¼Œä¸èƒ½é€²å…¥å¯†é“ï¼\n");
                 
-                // ½ğÃ«Ê¨ÍõÎ´ËÀÍöµÄ±êÖ¾²»ÄÜ½øÈë
+                // é‡‘æ¯›ç…ç‹æœªæ­»äº¡çš„æ¨™å¿—ä¸èƒ½é€²å…¥
                 if (present("xie xun", this_object()))
-                        return notify_fail("½ğÃ«Ê¨ÍõÊØ»¤×Å¼ÀÌ³ÃÜµÀ£¬²»ÄÜ½øÈë£¡\n" NOR);
+                        return notify_fail("é‡‘æ¯›ç…ç‹å®ˆè­·è‘—ç¥­å£‡å¯†é“ï¼Œä¸èƒ½é€²å…¥ï¼\n" NOR);
                 
-                // ÈçÓĞ°ïÅÉÓÅÏÈ±êÖ¾£¬±êÖ¾²»ÊÇALL_LEAGUE£¬ÎÒ²»ÊÇ±êÖ¾Ö¸Ê¾°ïÅÉ£¬Ôò±êÖ¾´æÔÚÊ±²»ÄÜ½øÈë
+                // å¦‚æœ‰å¹«æ´¾å„ªå…ˆæ¨™å¿—ï¼Œæ¨™å¿—ä¸æ˜¯ALL_LEAGUEï¼Œæˆ‘ä¸æ˜¯æ¨™å¿—æŒ‡ç¤ºå¹«æ´¾ï¼Œå‰‡æ¨™å¿—å­˜åœ¨æ™‚ä¸èƒ½é€²å…¥
                 if( query("league_flag") != "ALL_LEAGUE" && query("bunch/bunch_name", me) != query("league_flag") && !TEST_FLAG )
-                        return notify_fail("ÄãÏÖÔÚÔİÊ±²»ÄÜ½øÈë£¬»¹ÊÇÉÔÎ¢µÈµÈ°É£¡\n");
+                        return notify_fail("ä½ ç¾åœ¨æš«æ™‚ä¸èƒ½é€²å…¥ï¼Œé‚„æ˜¯ç¨å¾®ç­‰ç­‰å§ï¼\n");
         }
         
         return ::valid_leave(me, dir);

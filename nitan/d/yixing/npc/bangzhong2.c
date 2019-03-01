@@ -11,12 +11,12 @@ void create()
 {
         string *bc_skills, *weapons;
         int i, level, exp = 100000 + random(200000);
-        set_name("°ïÖÚ", ({ "bang zhong", "zhong" }));
-        set("gender", "ÄĞĞÔ");
-        set("party/party_name", HIC"³¤ÀÖ°ï"NOR);
-        set("party/rank", "±ª½İÌÃ");
+        set_name("å¹«çœ¾", ({ "bang zhong", "zhong" }));
+        set("gender", "ç”·æ€§");
+        set("party/party_name", HIC"é•·æ¨‚å¹«"NOR);
+        set("party/rank", "è±¹æ·å ‚");
         set("age", 20 + random(10));
-        set("long", "Ò»ÃûÉí²Ä¸ß´óµÄ×³ºº£¬ÂúÁ³É±Æø£¬Ò»¸¶Ğ×Éñ¶ñÉ·µÄÄ£Ñù¡£\n");
+        set("long", "ä¸€åèº«æé«˜å¤§çš„å£¯æ¼¢ï¼Œæ»¿è‡‰æ®ºæ°£ï¼Œä¸€ä»˜å…‡ç¥æƒ¡ç…çš„æ¨¡æ¨£ã€‚\n");
         set("attitude", "heroism");
         set("shen_type", -1);
 
@@ -71,7 +71,7 @@ int auto_check()
 
         if( is_busy() || is_fighting() ) return 1;
 
-        message("vision", name() + "¼±¼±Ã¦Ã¦µØÀë¿ªÁË¡£\n", environment(me), ({me}));
+        message("vision", name() + "æ€¥æ€¥å¿™å¿™åœ°é›¢é–‹äº†ã€‚\n", environment(me), ({me}));
         destruct(me);
         return 1;
 }

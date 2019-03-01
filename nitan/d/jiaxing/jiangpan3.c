@@ -5,9 +5,9 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����");
+        set("short", "江畔");
         set("long", @LONG
-һ���󽭺�ب����ǰ����ˮ�ƺƣ�����ҹҹ�������ݵر���󺣡�
+一條大江橫亙在面前，江水浩浩，日日夜夜無窮無休地奔向大海。
 LONG
         );
         set("no_clean_up", 0);

@@ -63,14 +63,14 @@ string user_list(object *ob, int flag)
         int i;
 
         if (! ob || ! sizeof(ob))
-                return "Ã»ÓĞÈÎºÎ·ûºÏÌõ¼şµÄÍæ¼Ò¡£\n";
+                return "æ²’æœ‰ä»»ä½•ç¬¦åˆæ¢ä»¶çš„ç©å®¶ã€‚\n";
         me = this_player();
         admin = me->is_admin() || (SECURITY_D->query_site_privilege("finger") == "enable");
-        msg = "¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª"
-              "¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª\n" +
-              BBLU WHT "ĞÕÃû          ÕÊºÅ          ÄêÁä          ·¢´ô   Á¬Ïß             \n" NOR +
-              "¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª"
-              "¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª\n";
+        msg = "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"
+              "â”€â”€â”€â”€â”€â”€â”€â”€â”€\n" +
+              BBLU WHT "å§“å          å¸³è™Ÿ          å¹´é½¡          ç™¼å‘†   é€£ç·š             \n" NOR +
+              "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"
+              "â”€â”€â”€â”€â”€â”€â”€â”€â”€\n";
         for(i = 0; i < sizeof(ob); i++)
         {
                 if (me && ! me->visible(ob[i])) continue;
@@ -81,11 +81,11 @@ string user_list(object *ob, int flag)
                         ob[i]->name(flag),NOR,query("id", ob[i]),
                         age_string(query("mud_age", ob[i])),
                         (interactive(ob[i])?((query_idle(ob[i]) >= 120)?HIG:NOR):query("doing", ob[i]) == "closed"?HIY:HIR),
-                        (interactive(ob[i])?(query_idle(ob[i])+"s"):query("doing", ob[i]) == "closed"?"±Õ¹Ø":"¶ÏÏß"),ipname);
+                        (interactive(ob[i])?(query_idle(ob[i])+"s"):query("doing", ob[i]) == "closed"?"é–‰é—œ":"æ–·ç·š"),ipname);
         }
 
-        msg += "¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª"
-               "¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª\n";
+        msg += "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"
+               "â”€â”€â”€â”€â”€â”€â”€â”€â”€\n";
         return msg;
 }
 
@@ -108,14 +108,14 @@ varargs string finger_all(int idle)
                         if (me && ! me->visible(ob[i])) continue;
                         msg = sprintf("%s%-14s%-14s%-14s\n",
                                 msg,query("name", ob[i]),query("id", ob[i]),
-                                (interactive(ob[i]) ? (query_idle(ob[i]) + "s") : HIR "¶ÏÏßÖĞ" NOR));
+                                (interactive(ob[i]) ? (query_idle(ob[i]) + "s") : HIR "æ–·ç·šä¸­" NOR));
                 }
-                return "¡ò " + MUD_NAME + "\n" +
-                       "¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª\n"
-                       + "ĞÕÃû          ÕÊºÅ          ·¢´ô\n" +
-                       "¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª\n"
+                return "â— " + MUD_NAME + "\n" +
+                       "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n"
+                       + "å§“å          å¸³è™Ÿ          ç™¼å‘†\n" +
+                       "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n"
                        + msg +
-                       "¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª\n";
+                       "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n";
         } else         // wizard finger
         {
                 string *counter;
@@ -148,11 +148,11 @@ varargs string finger_all(int idle)
                 login_ob = filter_array(login_ob, (: query_ip_number($1) :) );
                 lcnt = sizeof(login_ob);
 
-                msg = WHT "¡ò " + MUD_NAME + "\n" NOR + user_list(ob, 1) +
-                      sprintf("%d¸öÔÚÏßÍæ¼ÒÀ´×Ô%d¸ö²»Í¬µÄµØµã£¬"
-                              "%sÍæ¼Ò½øÈëÓÎÏ·ÖĞ¡£\n\n",
+                msg = WHT "â— " + MUD_NAME + "\n" NOR + user_list(ob, 1) +
+                      sprintf("%då€‹åœ¨ç·šç©å®¶ä¾†è‡ª%då€‹ä¸åŒçš„åœ°é»ï¼Œ"
+                              "%sç©å®¶é€²å…¥éŠæˆ²ä¸­ã€‚\n\n",
                               pcnt, sizeof(counter),
-                              lcnt ? (string) lcnt + "¸ö" : "Ä¿Ç°Ã»ÓĞ");
+                              lcnt ? (string) lcnt + "å€‹" : "ç›®å‰æ²’æœ‰");
                 return msg;
         }
 }
@@ -199,7 +199,7 @@ varargs string finger_user(string name, mixed me)
         if (! ob->restore())
         {
                 destruct(ob);
-                return "Ã»ÓĞÕâ¸öÍæ¼Ò¡£\n";
+                return "æ²’æœ‰é€™å€‹ç©å®¶ã€‚\n";
         }
 
         if (objectp(body = find_player(name)) && getuid(body) == name)
@@ -214,7 +214,7 @@ varargs string finger_user(string name, mixed me)
                 {
                         destruct(ob);
                         destruct(body);
-                        return "Ã»ÓĞÕâ¸öÍæ¼Ò¡£\n";
+                        return "æ²’æœ‰é€™å€‹ç©å®¶ã€‚\n";
                 }
                 public_flag=query("env/public", body)?1:0;
                 cname=query("name", body);
@@ -228,12 +228,12 @@ varargs string finger_user(string name, mixed me)
 
         if (wiz_level(me) < 2)  // player finger
         {
-                msg =  sprintf("Ó¢ÎÄ´úºÅ£º\t%s\nĞÕ    Ãû£º\t%s\nÈ¨ÏŞµÈ¼¶£º\t%s\n"
-                        "µç×ÓÓÊ¼şµØÖ·£º\t%s\nÉÏ´ÎÁ¬Ïß£º\t%s\n",
+                msg =  sprintf("è‹±æ–‡ä»£è™Ÿï¼š\t%s\nå§“    åï¼š\t%s\næ¬Šé™ç­‰ç´šï¼š\t%s\n"
+                        "é›»å­éƒµä»¶åœ°å€ï¼š\t%s\nä¸Šæ¬¡é€£ç·šï¼š\t%s\n",
                         query("id", ob),
                         cname,
                         SECURITY_D->get_status(name),
-                        (public_flag) ? email : "²»¸æËßÄã",
+                        (public_flag) ? email : "ä¸å‘Šè¨´ä½ ",
                         ctime(query("last_on", ob)));
 
                 if (objectp(body = find_player(name)) &&
@@ -241,14 +241,14 @@ varargs string finger_user(string name, mixed me)
                     MESSAGE_D->visible(me, body))
                 {
                         if (interactive(body))
-                                msg += sprintf("\n%sÄ¿Ç°ÕıÔÚÁ¬ÏßÖĞ¡£\n", cname);
+                                msg += sprintf("\n%sç›®å‰æ­£åœ¨é€£ç·šä¸­ã€‚\n", cname);
                         else
-                                msg += sprintf("\n%sÄ¿Ç°¶ÏÏßÖĞ¡£\n", cname);
+                                msg += sprintf("\n%sç›®å‰æ–·ç·šä¸­ã€‚\n", cname);
                 }
         } else          // wizard finger
         {
-                msg =  sprintf("Ó¢ÎÄ´úºÅ£º\t%s\nĞÕ    Ãû£º\t%s\nÈ¨ÏŞµÈ¼¶£º\t%s\n"
-                        "µç×ÓÓÊ¼şµØÖ·£º\t%s\nÉÏ´ÎÁ¬ÏßµØÖ·£º\t%s( %s )\n",
+                msg =  sprintf("è‹±æ–‡ä»£è™Ÿï¼š\t%s\nå§“    åï¼š\t%s\næ¬Šé™ç­‰ç´šï¼š\t%s\n"
+                        "é›»å­éƒµä»¶åœ°å€ï¼š\t%s\nä¸Šæ¬¡é€£ç·šåœ°å€ï¼š\t%s( %s )\n",
                         query("id", ob),
                         cname,
                         SECURITY_D->get_status(name),
@@ -279,28 +279,28 @@ varargs string finger_user(string name, mixed me)
                                         {
                                                 where = ret[0];
                                                 addr = ret[1];
-                                                msg += sprintf("\n%sÄ¿Ç°ÕıÔÚ´Ó %s (%s£¬%s) Á¬ÏßÖĞ", cname,
+                                                msg += sprintf("\n%sç›®å‰æ­£åœ¨å¾ %s (%sï¼Œ%s) é€£ç·šä¸­", cname,
                                                                query_ip_number(body), where,addr);
                                         } else
 #endif
-                                                msg += sprintf("\n%sÄ¿Ç°ÕıÔÚ´Ó %s Á¬ÏßÖĞ", cname,
+                                                msg += sprintf("\n%sç›®å‰æ­£åœ¨å¾ %s é€£ç·šä¸­", cname,
                                                                query_ip_number(body));
                                         if (same > 1)
                                         {
-                                                msg += sprintf("£¬¸ÃµØÖ·Ò»¹²ÓĞ %d Î»Ê¹ÓÃÕß¡£\n", same);
+                                                msg += sprintf("ï¼Œè©²åœ°å€ä¸€å…±æœ‰ %d ä½ä½¿ç”¨è€…ã€‚\n", same);
                                                 if (previous_object() != find_object(MESSAGE_D))
                                                         // I won't return the list if this is
                                                         // called from a chat user
                                                         msg += user_list(uob, 1);
                                         } else
-                                                msg += "¡£\n";
+                                                msg += "ã€‚\n";
                                 } else
-                                        msg += sprintf("\n%sÄ¿Ç°ÕıÔÚÁ¬ÏßÖĞ¡£\n", cname);
+                                        msg += sprintf("\n%sç›®å‰æ­£åœ¨é€£ç·šä¸­ã€‚\n", cname);
                         } else
-                                msg += sprintf("\n%sÄ¿Ç°¶ÏÏßÖĞ¡£\n", cname);
+                                msg += sprintf("\n%sç›®å‰æ–·ç·šä¸­ã€‚\n", cname);
 
                         if (body->name() != body->name(1))
-                                msg += sprintf("¸ÃÍæ¼ÒÄ¿Ç°ÒÔ%sÉí·İĞĞ¶¯¡£\n", body->name());
+                                msg += sprintf("è©²ç©å®¶ç›®å‰ä»¥%sèº«ä»½è¡Œå‹•ã€‚\n", body->name());
                 }
         }
 
@@ -308,7 +308,7 @@ varargs string finger_user(string name, mixed me)
             MESSAGE_D->query_connection(name) &&
             MESSAGE_D->visible(me, name))
         {
-                msg += "\n" + cname + "Ä¿Ç°ÕıÔÚÁÄÌìÖĞ¡£\n";
+                msg += "\n" + cname + "ç›®å‰æ­£åœ¨èŠå¤©ä¸­ã€‚\n";
         }
 
 #ifdef DB_SAVE
@@ -317,26 +317,26 @@ varargs string finger_user(string name, mixed me)
         if (flag && MESSAGE_D->visible(me, name))
         {
                 if ((int)res[0] == 3)
-                        msg += sprintf("%sµÄÊı¾İÄ¿Ç°ÕıÔÚÂşÓÎÖĞ¡£¡£\n", cname);
+                        msg += sprintf("%sçš„æ•¸æ“šç›®å‰æ­£åœ¨æ¼«éŠä¸­ã€‚ã€‚\n", cname);
                 else
                 {
                         where = res[1];
                         if (stringp(where) && where != LOCAL_STATION)
                         {
                                 if ((int)res[0] == 2)
-                                        msg += sprintf("\n%sÄ¿Ç°ÕıÔÚ%sÕ¾µã±Õ¹ØÖĞ¡£\n",
-                                                       cname, ! undefinedp(stations[where]) ? stations[where] : "ÆäËû",
-                                                       ! undefinedp(stations[where]) ? stations[where] : "ÆäËû");
+                                        msg += sprintf("\n%sç›®å‰æ­£åœ¨%sç«™é»é–‰é—œä¸­ã€‚\n",
+                                                       cname, ! undefinedp(stations[where]) ? stations[where] : "å…¶ä»–",
+                                                       ! undefinedp(stations[where]) ? stations[where] : "å…¶ä»–");
                                 else
                                 if ((int)res[0] == 1)
-                                        msg += sprintf("\n%sÄ¿Ç°ÕıÔÚ%sÕ¾µãÁ¬ÏßÖĞ¡£\n",
-                                                       cname, ! undefinedp(stations[where]) ? stations[where] : "ÆäËû",
-                                                       ! undefinedp(stations[where]) ? stations[where] : "ÆäËû");
+                                        msg += sprintf("\n%sç›®å‰æ­£åœ¨%sç«™é»é€£ç·šä¸­ã€‚\n",
+                                                       cname, ! undefinedp(stations[where]) ? stations[where] : "å…¶ä»–",
+                                                       ! undefinedp(stations[where]) ? stations[where] : "å…¶ä»–");
                                 else
                                 if ((int)res[0] == 0)
-                                        msg += sprintf("\n%sÄ¿Ç°ÕıÔÚ%sÕ¾µã£¬µ«Ã»ÓĞÁ¬Ïß½øÈëÓÎÏ·¡£\n",
-                                                       cname, ! undefinedp(stations[where]) ? stations[where] : "ÆäËû",
-                                                       ! undefinedp(stations[where]) ? stations[where] : "ÆäËû");
+                                        msg += sprintf("\n%sç›®å‰æ­£åœ¨%sç«™é»ï¼Œä½†æ²’æœ‰é€£ç·šé€²å…¥éŠæˆ²ã€‚\n",
+                                                       cname, ! undefinedp(stations[where]) ? stations[where] : "å…¶ä»–",
+                                                       ! undefinedp(stations[where]) ? stations[where] : "å…¶ä»–");
                         }
                 }
         }
@@ -356,9 +356,9 @@ string get_killer()
                 if ((int)ob[i]->query_condition("killer"))
                         msg += (ob[i]->short() + "\n");
         if (msg == "")
-                return "±¾³ÇÖÎ°²Á¼ºÃ¡£\n";
+                return "æœ¬åŸæ²»å®‰è‰¯å¥½ã€‚\n";
         else
-                return "ÏÖÔÚ±¾³ÇÕıÔÚ¼©ÄÃÒÔÏÂÈË·¸£º\n\n" + msg;
+                return "ç¾åœ¨æœ¬åŸæ­£åœ¨ç·æ‹¿ä»¥ä¸‹äººçŠ¯ï¼š\n\n" + msg;
 }
 
 varargs string remote_finger_user(string name, int chinese_flag)
@@ -374,7 +374,7 @@ varargs string remote_finger_user(string name, int chinese_flag)
         if (! ob->restore())
         {
                 destruct(ob);
-                return chinese_flag ? "Ã»ÓĞÕâ¸öÍæ¼Ò¡£\n" : "No such user.\n";
+                return chinese_flag ? "æ²’æœ‰é€™å€‹ç©å®¶ã€‚\n" : "No such user.\n";
         }
 
         if (objectp(body = find_player(name)) && getuid(body) == name)
@@ -389,7 +389,7 @@ varargs string remote_finger_user(string name, int chinese_flag)
                 {
                         destruct(ob);
                         destruct(body);
-                        return "Ã»ÓĞÕâ¸öÍæ¼Ò¡£\n";
+                        return "æ²’æœ‰é€™å€‹ç©å®¶ã€‚\n";
                 }
                 public_flag=query("env/public", body)?1:0;
                 cname=query("name", body);
@@ -398,11 +398,11 @@ varargs string remote_finger_user(string name, int chinese_flag)
         }
 
         if (! public_flag)
-                email = "²»¸æËßÄã";
+                email = "ä¸å‘Šè¨´ä½ ";
 
         if (chinese_flag)
-                msg = sprintf("Ó¢ÎÄ´úºÅ£º\t%s\nĞÕ    Ãû£º\t%s\nÈ¨ÏŞµÈ¼¶£º\t%s\n"
-                              "µç×ÓÓÊ¼şµØÖ·£º\t%s\nÉÏ´ÎÁ¬Ïß£º\t%s\n",
+                msg = sprintf("è‹±æ–‡ä»£è™Ÿï¼š\t%s\nå§“    åï¼š\t%s\næ¬Šé™ç­‰ç´šï¼š\t%s\n"
+                              "é›»å­éƒµä»¶åœ°å€ï¼š\t%s\nä¸Šæ¬¡é€£ç·šï¼š\t%s\n",
                               query("id", ob),
                               SECURITY_D->get_status(name),
                               cname, email,
@@ -417,7 +417,7 @@ varargs string remote_finger_user(string name, int chinese_flag)
             !query("env/invisible", body) )
         {
                 if (chinese_flag)
-                        msg += "\n" + cname + "Ä¿Ç°ÕıÔÚÁ¬ÏßÖĞ¡£\n";
+                        msg += "\n" + cname + "ç›®å‰æ­£åœ¨é€£ç·šä¸­ã€‚\n";
                 else
                         msg += "\n" + capitalize(name) + " is currently connected.\n";
         }
@@ -425,7 +425,7 @@ varargs string remote_finger_user(string name, int chinese_flag)
             !query("env/invisible", body) )
         {
                 if (chinese_flag)
-                        msg += "\n" + cname + "Ä¿Ç°ÕıÔÚÁÄÌìÖĞ¡£\n";
+                        msg += "\n" + cname + "ç›®å‰æ­£åœ¨èŠå¤©ä¸­ã€‚\n";
                 else
                         msg += "\n" + capitalize(name) + " is connected to chat now.\n";
         }

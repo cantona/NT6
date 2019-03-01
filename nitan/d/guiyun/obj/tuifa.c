@@ -1,18 +1,18 @@
-// Obj: /d/guiyun/obj/tuifa.c Ğı·çÉ¨Ò¶ÍÈ·¨
+// Obj: /d/guiyun/obj/tuifa.c æ—‹é¢¨æƒè‘‰è…¿æ³•
 // Last Modified by winder on Jul. 9 2001
 
 inherit ITEM;
 
 void create()
 {
-        set_name("Ğı·çÉ¨Ò¶ÍÈÍ¼½â", ({ "tuifa tujie", "tujie", "shu", "book" }));
+        set_name("æ—‹é¢¨æƒè‘‰è…¿åœ–è§£", ({ "tuifa tujie", "tujie", "shu", "book" }));
         set_weight(200);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
                 set("treasure", 1);
-                set("unit", "±¾");
-                set("long", "Õâ±¾ÍÈ·¨ÖĞÏêÏ¸µØ»­×Å»ÆÒ©Ê¦Ëù´´µÄĞı·çÉ¨Ò¶ÍÈµÄÍ¼½â£¬ËäÈ»¶ÔÄãÀ´ËµÂÔÏÔ¼èÉî£¬µ«ÓÃËüÀ´ÁìÎò»ù±¾ÍÈ·¨µÄ¾÷ÇÏÈ´ÊÇ¿ÉÒÔµÄ¡£\n");
+                set("unit", "æœ¬");
+                set("long", "é€™æœ¬è…¿æ³•ä¸­è©³ç´°åœ°ç•«è‘—é»ƒè—¥å¸«æ‰€å‰µçš„æ—‹é¢¨æƒè‘‰è…¿çš„åœ–è§£ï¼Œé›–ç„¶å°ä½ ä¾†èªªç•¥é¡¯è‰±æ·±ï¼Œä½†ç”¨å®ƒä¾†é ˜æ‚ŸåŸºæœ¬è…¿æ³•çš„è¨£ç«…å»æ˜¯å¯ä»¥çš„ã€‚\n");
                 set("value", 40);
                 set("material", "paper");
                 set("skill", ([

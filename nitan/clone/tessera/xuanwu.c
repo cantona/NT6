@@ -4,14 +4,14 @@ inherit TESSERA;
 
 void create()
 {
-        set_name(HIB "ĞşÎä¡¤Ë®" NOR, ({"xuan wu", "water"}));
+        set_name(HIB "ç„æ­¦ï¹’æ°´" NOR, ({"xuan wu", "water"}));
         set_weight(20);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", HIB "¿ÉÓÃÓÚÏâÇ¶10LV£¬ÊôĞÔË®¡£\n" NOR);
+                set("long", HIB "å¯ç”¨äºé‘²åµŒ10LVï¼Œå±¬æ€§æ°´ã€‚\n" NOR);
                 set("value", 100000);
-                set("unit", "¿é");
+                set("unit", "å¡Š");
                 set("no_identify", 1);
         }
         setup();

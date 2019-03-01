@@ -249,7 +249,7 @@ void send_shutdown()
                 SHUTDOWN->send_shutdown(muds[mud_names[i]]["HOSTADDRESS"],
                         muds[mud_names[i]]["PORTUDP"]);
         socket_close(socket_id);
-        CHANNEL_D->do_channel(this_object(), "sys", "ËÍ³ö shutdown Ñ¶Ï¢¡£\n");
+        CHANNEL_D->do_channel(this_object(), "sys", "é€å‡º shutdown è¨Šæ¯ã€‚\n");
 }
 
 string start_message()
@@ -846,7 +846,7 @@ void create()
 
         restore_euid();
 
-        set("channel_id", "ÍøÂç¾«Áé");
+        set("channel_id", "ç¶²çµ¡ç²¾éˆ");
 
         // find out which port we are on
         my_port = SRVC_PORT_UDP(mud_port());
@@ -879,7 +879,7 @@ void create()
                 "ZONE"        : CONFIG_D->query_string("zone"),
         ]);
 
-        // ÉèÖÃlist_nodes
+        // è¨­ç½®list_nodes
         list_nodes = ({ });
         if (stringp(MUDLIST_DNS1))
                 list_nodes += ({ MUDLIST_DNS1 });
@@ -912,7 +912,7 @@ void create()
 
         // initialise the udp socket, if successful start the database system
         if (startup_udp()) init_database();
-        CHANNEL_D->do_channel(this_object(), "sys", "»¥ÁªºËĞÄ¿ªÊ¼ÊÔÍ¼Á¬½ÓÆäËûÍøÕ¾¡£ \n");
+        CHANNEL_D->do_channel(this_object(), "sys", "äº’è¯æ ¸å¿ƒé–‹å§‹è©¦åœ–é€£æ¥å…¶ä»–ç¶²ç«™ã€‚ \n");
 }
 
 void clear_muds()

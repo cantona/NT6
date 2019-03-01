@@ -3,13 +3,13 @@ inherit ROOM;
 
 void create()
 {
-        set("short", HIR "¡¾ê»ÌìËþÄÚ¡¿" NOR);
+        set("short", HIR "ã€æ˜Šå¤©å¡”å…§ã€‘" NOR);
         set("long", HIR @LONG
 
-              ê»     Ìì     Ëþ      ÄÚ
+              æ˜Š     å¤©     å¡”      å…§
 
-    ÕâÀïÊÇê»ÌìËþÄÚ£¬ËÄÖÜÎÞÈÎºÎ³ö¿Ú£¬µ«¼ûËþ±Ú¹â²ÊÒ«ÑÛ£¬
-ËÆºõÔÌ²Ø×Å¼«´óµÄÁ¦Á¿¡£
+    é€™è£¡æ˜¯æ˜Šå¤©å¡”å…§ï¼Œå››å‘¨ç„¡ä»»ä½•å‡ºå£ï¼Œä½†è¦‹å¡”å£å…‰å½©è€€çœ¼ï¼Œ
+ä¼¼ä¹Žè˜Šè—è‘—æ¥µå¤§çš„åŠ›é‡ã€‚
 
 LONG NOR );
 
@@ -19,14 +19,14 @@ LONG NOR );
 
 void init()
 {     
-       string msg = HIM "ËþÄÚ·ÅÉä³öÒ«ÑÛµÄ¹âÃ¢£¬ÁîÄãÎÞ·¨Õö¿ªË«ÑÛ ¡­¡­\n" NOR;
+       string msg = HIM "å¡”å…§æ”¾å°„å‡ºè€€çœ¼çš„å…‰èŠ’ï¼Œä»¤ä½ ç„¡æ³•çœé–‹é›™çœ¼ â€¦â€¦\n" NOR;
        
-       msg += HIG "ÊýµÀ¹âÃ¢½«ÄãÍÅÍÅÎ§×¡£¬ËÆºõÒª×êÈëÄãµÄÆßÇÏÖ®ÄÚ ¡­¡­\n" NOR;
-       msg += HIY "ÂýÂýµØÄã¾õµÃ×Ô¼º½¥½¥µØÓëÖ«Ìå·ÖÀë£¬ÒâÊ¶Ò²½¥½¥Ä£ºý ¡­¡­\n" NOR;
-       msg += HIR "Õýµ±Äã¿ìÒªÊ§È¥Öª¾õµÄÊ±ºò£¬Æß²Ê¹âÃ¢½«Äã¾í³öÁËê»ÌìËþ ¡­¡­\n" NOR;
-       msg += HIW "Äã¸Ð¾õÄãÔÚÊ±¿ÕÖÐ´©ËóÐí¾Ã£¬»ëÉíÎÞ·¨¶¯µ¯£¬ÒâÊ¶Ò²ÔÚÖð½¥Ä£ºý£¬\n"
-                  "½¥½¥µØ£¬ÄãÔÙÒ²Ïë²»Æð×Ô¼ºÉíÔÚºÎ´¦£¬ÎªºÎ»áÀ´µ½ÕâÀï£¬×Ô¼ºÓÖ\n"
-                  "ÊÇË­£¬½«Òªµ½ºÎ·½ ¡­¡­\n\n" NOR;
+       msg += HIG "æ•¸é“å…‰èŠ’å°‡ä½ åœ˜åœ˜åœä½ï¼Œä¼¼ä¹Žè¦é‘½å…¥ä½ çš„ä¸ƒç«…ä¹‹å…§ â€¦â€¦\n" NOR;
+       msg += HIY "æ…¢æ…¢åœ°ä½ è¦ºå¾—è‡ªå·±æ¼¸æ¼¸åœ°èˆ‡è‚¢é«”åˆ†é›¢ï¼Œæ„è­˜ä¹Ÿæ¼¸æ¼¸æ¨¡ç³Š â€¦â€¦\n" NOR;
+       msg += HIR "æ­£ç•¶ä½ å¿«è¦å¤±åŽ»çŸ¥è¦ºçš„æ™‚å€™ï¼Œä¸ƒå½©å…‰èŠ’å°‡ä½ å·å‡ºäº†æ˜Šå¤©å¡” â€¦â€¦\n" NOR;
+       msg += HIW "ä½ æ„Ÿè¦ºä½ åœ¨æ™‚ç©ºä¸­ç©¿æ¢­è¨±ä¹…ï¼Œæ¸¾èº«ç„¡æ³•å‹•å½ˆï¼Œæ„è­˜ä¹Ÿåœ¨é€æ¼¸æ¨¡ç³Šï¼Œ\n"
+                  "æ¼¸æ¼¸åœ°ï¼Œä½ å†ä¹Ÿæƒ³ä¸èµ·è‡ªå·±èº«åœ¨ä½•è™•ï¼Œç‚ºä½•æœƒä¾†åˆ°é€™è£¡ï¼Œè‡ªå·±åˆ\n"
+                  "æ˜¯èª°ï¼Œå°‡è¦åˆ°ä½•æ–¹ â€¦â€¦\n\n" NOR;
 
        tell_object(this_object(), msg);
        return;

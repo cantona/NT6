@@ -3,9 +3,9 @@
 inherit NPC;
 void create()
 {
-        set_name("ÀÏğ±", ({ "lao bao", "laobao" }) );
-        set("gender", "Å®ĞÔ" );
-        set("title", "ÈºÓñÔºÀÏ°åÄï");
+        set_name("è€é´‡", ({ "lao bao", "laobao" }) );
+        set("gender", "å¥³æ€§" );
+        set("title", "ç¾¤ç‰é™¢è€æ¿å¨˜");
         set("age", 42);
         set("str", 25);
         set("dex", 25);
@@ -44,12 +44,12 @@ void init()
 void greeting(object me)
 {
         command("look"+query("id", me));
-        if( query("gender", me) == "Å®ĞÔ" )
+        if( query("gender", me) == "å¥³æ€§" )
         {
-                command("say °¥Ñ½£¬ÕâÄêÔÂ´ó¹ÃÄïÒ²¹äÒ¤×Ó£¬³ÉºÎÌåÍ¬¡£");
+                command("say å“å‘€ï¼Œé€™å¹´æœˆå¤§å§‘å¨˜ä¹Ÿé€›çª¯å­ï¼Œæˆä½•é«”åŒã€‚");
                 command("sigh");
-                command("say ¿ÉÏ§ÎÒ¶ù×Ó²»ÔÚ£¬²»È»ÈÃËûËÅºòÄã¡£");
+                command("say å¯æƒœæˆ‘å…’å­ä¸åœ¨ï¼Œä¸ç„¶è®“ä»–ä¼ºå€™ä½ ã€‚");
         }
-        command("say Â¥ÉÏÂ¥ÏÂµÄ¹ÃÄïÃÇ£¬¿ÍÈËÀ´ÁË£¡");
+        command("say æ¨“ä¸Šæ¨“ä¸‹çš„å§‘å¨˜å€‘ï¼Œå®¢äººä¾†äº†ï¼");
         return ;
 }

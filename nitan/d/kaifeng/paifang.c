@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�Ʒ�");
+        set("short", "牌坊");
         set("long", @LONG
-����һ���ձڣ�����һ����ʯС������ǰ��Զ����һ���Ʒ���ͨ
-�ú������һ�ߣ�������ԭ���ĵ�ɫ�����Ǹ��ص�ү����ɫ���񣬱�
-���ֺ�������Ϸ¥��������ǹص�����
+穿過一道照壁，走上一條青石小道，眼前不遠就是一道牌坊。通
+用紅漆過了一邊，看不出原來的底色，倒是跟關帝爺的臉色很像，北
+面鬧轟轟的是座戲樓，東面就是關帝廟。
 LONG );
         set("outdoors", "kaifeng");
         set("exits", ([

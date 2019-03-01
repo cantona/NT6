@@ -1,4 +1,4 @@
-// jidao-shaqi.c ¼«µÀÉ·Æø
+// jidao-shaqi.c æ¥µé“ç…æ°£
 // By Alf
 
 inherit FORCE;
@@ -13,38 +13,38 @@ int valid_learn(object me)
     int lvl = (int)me->query_skill("jidao-shaqi", 1);
 
     if ((int)me->query_skill("force", 1) < 30)
-        return notify_fail("ÄãµÄ»ù±¾ÄÚ¹¦»ğºò»¹²»¹»£¬»¹²»ÄÜÑ§Ï°¼«µÀÉ·Æø¡£\n");
+        return notify_fail("ä½ çš„åŸºæœ¬å…§åŠŸç«å€™é‚„ä¸å¤ ï¼Œé‚„ä¸èƒ½å­¸ç¿’æ¥µé“ç…æ°£ã€‚\n");
 
     if (
-    me->query_skill("bahuang-gong",1)    // ÁéğÕ£º°Ë»ÄÁùºÏ¹¦
-    || me->query_skill("beiming-shengong",1)    // åĞÒ££º±±Ú¤Éñ¹¦
-    || me->query_skill("bibo-shengong",1)    // ÌÒ»¨£º±Ì²¨Éñ¹¦
-    || me->query_skill("chunyang-gong",1)    // ´óÀí£º´¿Ñô¹¦
-    || me->query_skill("hamagong",1)    // °×ÍÕ£º¸òó¡¹¦
-    || me->query_skill("huagong-dafa",1)    // ĞÇËŞ£º»¯¹¦´ó·¨
-    || me->query_skill("huntian-qigong",1)    // Ø¤°ï£º»ìÌìÆø¹¦
-    || me->query_skill("hunyuan-yiqi",1)    // ÉÙÁÖ£º»ìÔªÒ»Æø¹¦
-    || me->query_skill("jiuyang-shengong",1)    // ÉÙÁÖ£º¾ÅÑôÉñ¹¦
-    || me->query_skill("linji-zhuang",1)    // ¶ëáÒ£ºÁÙ¼ÃÊ®¶ş×¯
-    || me->query_skill("longhu-baqi",1)    // Îä¹Ù£ºÁú»¢°ÔÆø
-    || me->query_skill("nilian-shengong",1)    // °×ÍÕ£ºÄæÁ·Éñ¹¦
-    || me->query_skill("shenlong-zhanqi",1)    // ÉñÁú£ºÉñÁúÕ½Æø
-    || me->query_skill("taiji-shengong",1)    // Îäµ±£ºÌ«¼«Éñ¹¦
-    || me->query_skill("wolong-xingfa",1)    // Ñ²²¶£ºÎÔÁúĞÄ·¨
-    || me->query_skill("wuwang-shenzhou",1)    // ÁèÏö³Ç£ºÎŞÍıÉñÖä
-    || me->query_skill("xiantian-gong",1)    // È«Õæ£ºÏÈÌì¹¦
-    || me->query_skill("xiawuxiang",1)    // Ñ©É½£ºĞ¡ÎŞÏà¹¦
-    || me->query_skill("xuanmen-neigong",1)    // È«Õæ£ºĞşÃÅÄÚ¹¦
-    || me->query_skill("yunlong-shengong",1) // ÔÆÁú£ºÔÆÁúÉñ¹¦
-    || me->query_skill("zixia-shengong",1) )    // »ªÉ½£º×ÏÏ¼Éñ¹¦
-        return notify_fail("Äã²»ÏÈÉ¢ÁË±ğÅÉÄÚ¹¦£¬ÔõÄÜÑ§¼«µÀÉ·Æø£¿£¡\n");
+    me->query_skill("bahuang-gong",1)    // éˆé·²ï¼šå…«è’å…­åˆåŠŸ
+    || me->query_skill("beiming-shengong",1)    // é€é™ï¼šåŒ—å†¥ç¥åŠŸ
+    || me->query_skill("bibo-shengong",1)    // æ¡ƒèŠ±ï¼šç¢§æ³¢ç¥åŠŸ
+    || me->query_skill("chunyang-gong",1)    // å¤§ç†ï¼šç´”é™½åŠŸ
+    || me->query_skill("hamagong",1)    // ç™½é§ï¼šè›¤èŸ†åŠŸ
+    || me->query_skill("huagong-dafa",1)    // æ˜Ÿå®¿ï¼šåŒ–åŠŸå¤§æ³•
+    || me->query_skill("huntian-qigong",1)    // ä¸å¹«ï¼šæ··å¤©æ°£åŠŸ
+    || me->query_skill("hunyuan-yiqi",1)    // å°‘æ—ï¼šæ··å…ƒä¸€æ°£åŠŸ
+    || me->query_skill("jiuyang-shengong",1)    // å°‘æ—ï¼šä¹é™½ç¥åŠŸ
+    || me->query_skill("linji-zhuang",1)    // å³¨åµ‹ï¼šè‡¨æ¿ŸåäºŒèŠ
+    || me->query_skill("longhu-baqi",1)    // æ­¦å®˜ï¼šé¾è™éœ¸æ°£
+    || me->query_skill("nilian-shengong",1)    // ç™½é§ï¼šé€†ç·´ç¥åŠŸ
+    || me->query_skill("shenlong-zhanqi",1)    // ç¥é¾ï¼šç¥é¾æˆ°æ°£
+    || me->query_skill("taiji-shengong",1)    // æ­¦ç•¶ï¼šå¤ªæ¥µç¥åŠŸ
+    || me->query_skill("wolong-xingfa",1)    // å·¡æ•ï¼šè‡¥é¾å¿ƒæ³•
+    || me->query_skill("wuwang-shenzhou",1)    // å‡Œéœ„åŸï¼šç„¡å¦„ç¥å’’
+    || me->query_skill("xiantian-gong",1)    // å…¨çœŸï¼šå…ˆå¤©åŠŸ
+    || me->query_skill("xiawuxiang",1)    // é›ªå±±ï¼šå°ç„¡ç›¸åŠŸ
+    || me->query_skill("xuanmen-neigong",1)    // å…¨çœŸï¼šç„é–€å…§åŠŸ
+    || me->query_skill("yunlong-shengong",1) // é›²é¾ï¼šé›²é¾ç¥åŠŸ
+    || me->query_skill("zixia-shengong",1) )    // è¯å±±ï¼šç´«éœç¥åŠŸ
+        return notify_fail("ä½ ä¸å…ˆæ•£äº†åˆ¥æ´¾å…§åŠŸï¼Œæ€èƒ½å­¸æ¥µé“ç…æ°£ï¼Ÿï¼\n");
     return 1;
 }
 
 
 int practice_skill(object me)
 {
-    return notify_fail("¼«µÀÉ·ÆøÖ»ÄÜÍ¨¹ıÑ§Ï°(xue)£¬»òÊÇ´ÓÔËÓÃ(yun)ÖĞÔö¼ÓÊìÁ·¶È¡£\n");
+    return notify_fail("æ¥µé“ç…æ°£åªèƒ½é€šéå­¸ç¿’(xue)ï¼Œæˆ–æ˜¯å¾é‹ç”¨(yun)ä¸­å¢åŠ ç†Ÿç·´åº¦ã€‚\n");
 }
 
 string exert_function_file(string func)

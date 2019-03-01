@@ -9,14 +9,14 @@ inherit F_QUESTER;
 
 void create()
 {
-        set_name("Ω ®", ({"jin shi", "jin", "shi"}));
-        set("title", "ƒßΩÃ≥§¿œ");
-        set("gender", "ƒ––‘");
+        set_name("ÈáëÁçÖ", ({"jin shi", "jin", "shi"}));
+        set("title", "È≠îÊïôÈï∑ËÄÅ");
+        set("gender", "Áî∑ÊÄß");
         set("age", 52);
         set("shen_type", -1);
-        set("long", "ƒßΩÃÀƒ¥Û≥§¿œ÷Æ ◊£¨¥À»À»˝≥ﬂ∂‡∏ﬂ£¨»˝≥ﬂ≥§µƒ≈€◊”¥©‘⁄À˚…Ì…œ£¨“—æ≠Õœœ¬¡Àµÿ°£\n"
-                    "À˚µƒ∫˙◊”±»’‚º˛Ω≈€∏¸≥§£¨À˚µƒΩ£±»∫˙◊”ªπ≥§°£±≥∫Û»¥±≥◊≈±˙Àƒ≥ﬂ≥§µƒΩ££¨”√\n"
-                    "ª∆Ω÷˝≥…µƒΩ£« “—Õœ‘⁄µÿ…œ£¨’‚∏ˆ»Àø¥∆¿¥ µ‘⁄“≤≤ªœÒ «∏ˆ»À°£\n");
+        set("long", "È≠îÊïôÂõõÂ§ßÈï∑ËÄÅ‰πãÈ¶ñÔºåÊ≠§‰∫∫‰∏âÂ∞∫Â§öÈ´òÔºå‰∏âÂ∞∫Èï∑ÁöÑË¢çÂ≠êÁ©øÂú®‰ªñË∫´‰∏äÔºåÂ∑≤Á∂ìÊãñ‰∏ã‰∫ÜÂú∞„ÄÇ\n"
+                    "‰ªñÁöÑËÉ°Â≠êÊØîÈÄô‰ª∂ÈáëË¢çÊõ¥Èï∑Ôºå‰ªñÁöÑÂäçÊØîËÉ°Â≠êÈÇÑÈï∑„ÄÇËÉåÂæåÂçªËÉåËëóÊüÑÂõõÂ∞∫Èï∑ÁöÑÂäçÔºåÁî®\n"
+                    "ÈªÉÈáëÈëÑÊàêÁöÑÂäçÈûòÂ∑≤ÊãñÂú®Âú∞‰∏äÔºåÈÄôÂÄã‰∫∫ÁúãËµ∑‰æÜÂØ¶Âú®‰πü‰∏çÂÉèÊòØÂÄã‰∫∫„ÄÇ\n");
         set("attitude", "peaceful");
 
         set("per", 21);
@@ -67,7 +67,7 @@ void create()
 
         prepare_skill("strike", "moshen-zhangfa");
         
-        create_family("ƒßΩÃ", 40, "≥§¿œ");
+        create_family("È≠îÊïô", 40, "Èï∑ËÄÅ");
   
         set("chat_chance_combat", 120); 
         set("chat_msg_combat", ({
@@ -93,7 +93,7 @@ void attempt_apprentice(object ob)
 
         if ((int)ob->query_skill("moshen-xinfa", 1) < 120) 
         {
-                command("say ±æΩÃµƒƒ⁄π¶–ƒ∑®ƒ„ªπ√ª¡∑∫√£¨ªπ“™∂‡œ¬ø‡π¶≤≈––£°");
+                command("say Êú¨ÊïôÁöÑÂÖßÂäüÂøÉÊ≥ï‰Ω†ÈÇÑÊ≤íÁ∑¥Â•ΩÔºåÈÇÑË¶ÅÂ§ö‰∏ãËã¶ÂäüÊâçË°åÔºÅ");
                 return;
         }
         
@@ -104,16 +104,16 @@ int accept_ask(object me, string topic)
 {
         switch (topic)
         {
-        case "¿˙¡∑" :
-        case "¿˙¡∂" :
-        case "∂Õ¡∂" :
+        case "Ê≠∑Á∑¥" :
+        case "Ê≠∑ÁÖâ" :
+        case "ÈçõÁÖâ" :
                 return QUEST_D->accept_ask(this_object(), me, topic);
                 break;
 
-        case "øÒΩ£" :
+        case "ÁãÇÂäç" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/jinshi-kuangjian/kuang",
-                           "name"    : "øÒΩ£",
+                           "name"    : "ÁãÇÂäç",
                            "sk1"     : "jinshi-kuangjian",
                            "lv1"     : 200,
                            "dodge"   : 200,

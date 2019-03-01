@@ -6,15 +6,15 @@ inherit POISON;
 
 string name() { return "yinfeng_dao"; }
 
-string chinese_name() { return "阴风刮骨之扰"; }
+string chinese_name() { return "闄伴ⅷ鍒涔嬫摼"; }
 
 string update_msg_others()
 {
-       return HIW "$N惨嚎一声，只觉全身肌肉就像要撕裂开一般，豆大的汗珠不住的滴下。\n" NOR;
+       return HIW "$N鎱樺殠涓�鑱诧紝鍙鍏ㄨ韩鑲岃倝灏卞儚瑕佹挄瑁傞枊涓�鑸紝璞嗗ぇ鐨勬睏鐝犱笉浣忕殑婊翠笅銆俓n" NOR;
 }
 
 string update_msg_self()
 {
-        return HIW "你感到一股切骨奇寒由伤口处升起，看来是中了阴风刀内劲的干扰！\n" NOR;
+        return HIW "浣犳劅鍒颁竴鑲″垏楠ㄥ瀵掔敱鍌峰彛铏曞崌璧凤紝鐪嬩締鏄腑浜嗛櫚棰ㄥ垁鍏у媮鐨勫构鎿撅紒\n" NOR;
 }
 

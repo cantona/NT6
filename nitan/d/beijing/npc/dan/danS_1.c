@@ -4,11 +4,11 @@ inherit COMBINED_ITEM;
 
 void create()
 {
-        set_name(HIY"ÐùÔ¯"NOR+HIW"²¹ÐÄ"NOR+YEL"µ¤"NOR, ({"xuanyuan dan", "dan"}));
+        set_name(HIY"è»’è½…"NOR+HIW"è£œå¿ƒ"NOR+YEL"ä¸¹"NOR, ({"xuanyuan dan", "dan"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("base_unit", "Á£");
+                set("base_unit", "ç²’");
                 set("base_value", 0);
                 set("only_do_effect", 1);
         }
@@ -22,7 +22,7 @@ int do_effect(object me)
 
         if( time()-query_temp("last_eat/dan(full, me)")<300 )
         {
-                write("Äã¸Õ·þÓÃ¹ýÒ©£¬ÐèÒ©ÐÔ·¢»ÓÍêÐ§ÓÃÒÔºó²ÅÄÜ¼ÌÐø·þÓÃ¡£\n");
+                write("ä½ å‰›æœç”¨éŽè—¥ï¼Œéœ€è—¥æ€§ç™¼æ®å®Œæ•ˆç”¨ä»¥å¾Œæ‰èƒ½ç¹¼çºŒæœç”¨ã€‚\n");
                 return 1;
         }
 
@@ -30,7 +30,7 @@ int do_effect(object me)
 
         set_temp("last_eat/dan(full)", time(), me);
 
-        message_vision(HIY "$N³ÔÏÂÒ»Á£ÐùÔ¯²¹ÐÄµ¤£¬ÔÙÒ²¸Ð¾õ²»µ½ÈÎºÎÆ£±¹¡£\n" NOR, me);
+        message_vision(HIY "$Nåƒä¸‹ä¸€ç²’è»’è½…è£œå¿ƒä¸¹ï¼Œå†ä¹Ÿæ„Ÿè¦ºä¸åˆ°ä»»ä½•ç–²æ†Šã€‚\n" NOR, me);
         my["jingli"] = my["max_jingli"];
         my["neili"]  = my["max_neili"];
         my["jing"]   = my["max_jing"];

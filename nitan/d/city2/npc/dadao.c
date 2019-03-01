@@ -3,10 +3,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("½­Ñó´óµÁ",({ "jiangyang dadao","dadao" }) );
-        set("title",HIB"×¨É±¹Ù¸®"NOR);
-        set("gender", "ÄÐÐÔ" );
-        set("long","ÕâÊÇÒ»»ïÍÁ·Ë´óµÁ£¬×¨ÃÅÓë¹Ù¸®×÷¶Ô£¬ÊµÔÚ²»ºÃÈÇ¡£\n");  
+        set_name("æ±Ÿæ´‹å¤§ç›œ",({ "jiangyang dadao","dadao" }) );
+        set("title",HIB"å°ˆæ®ºå®˜åºœ"NOR);
+        set("gender", "ç”·æ€§" );
+        set("long","é€™æ˜¯ä¸€ä¼™åœŸåŒªå¤§ç›œï¼Œå°ˆé–€èˆ‡å®˜åºœä½œå°ï¼Œå¯¦åœ¨ä¸å¥½æƒ¹ã€‚\n");  
 
         set("int", 30);
         set("str", 25);
@@ -71,7 +71,7 @@ void set_from_me(object me)
                 }) );
         }
         if( exp > 6000000 )
-                set("family/family_name","Îäµ±ÅÉ");
+                set("family/family_name","æ­¦ç•¶æ´¾");
 }
 
 void init()
@@ -103,12 +103,12 @@ varargs void die(object killer)
 {
         object ob=this_object();
 
-        message_vision(HIR"½­Ñô´óµÁ´óºôÒ»Éù£ºµã×ÓÓ²£¬¿ì³·£¡×ªÑÛ¼äÒ»»ïÈËÂíÏûÊ§µÃ"
-                 +"ÎÞÓ°ÎÞ×Ù£¡\n"NOR,ob);    
+        message_vision(HIR"æ±Ÿé™½å¤§ç›œå¤§å‘¼ä¸€è²ï¼šé»žå­ç¡¬ï¼Œå¿«æ’¤ï¼è½‰çœ¼é–“ä¸€ä¼™äººé¦¬æ¶ˆå¤±å¾—"
+                 +"ç„¡å½±ç„¡è¹¤ï¼\n"NOR,ob);    
         remove_call_out("check_me"); 
         if( !killer ) killer = query_last_damage_from(); 
         if( killer )
-                GIFT_D->delay_war_bonus(killer, ([ "prompt" : "ÒòÉ±ËÀ´óµÁ", "exp" : 50, "pot" : 20, "mar" : 5, "gold" : 1 ])); 
+                GIFT_D->delay_war_bonus(killer, ([ "prompt" : "å› æ®ºæ­»å¤§ç›œ", "exp" : 50, "pot" : 20, "mar" : 5, "gold" : 1 ])); 
         destruct(ob);
         return;
 }

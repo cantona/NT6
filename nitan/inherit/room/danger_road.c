@@ -1,13 +1,13 @@
 /* /std/room/danger_road.c
 *
-*  ×ßÒ¹Â·ÓÐ¿ÉÄÜÓöµ½Ç¿µÁ,´ËÎªÒ»¸ö±ê×¼±»½ÙµÄ road ,
-*  Ã¿Ò»ÌõÂ·ÉÏÊÓ´ËÂ·µÄ³¤¶ÌºÍÆ«Æ§³Ì¶È¿É·ÅÖÃ¼¸¸öÕâ¸ö
-*  ±»½ÙµÄÂ·,¼òµ¥¼Ì³Ð´ËÎï¼þ¼´¿É "inherit DANGER_ROAD",
-*  ²»Òª¼Ì³Ð ROOM , ÆäËû¾Í²»ÓÃ¹ÜÁË.
-*  ×¢Òâ:Èç¹ûÄúµÄ·¿¼äÀïÓÃµ½ÁËinit() º¯Êý,ÇëÔÚ½áÎ²´¦
-*  ¼ÓÉÏ ::init().
+*  èµ°å¤œè·¯æœ‰å¯èƒ½é‡åˆ°å¼·ç›œ,æ­¤ç‚ºä¸€å€‹æ¨™æº–è¢«åŠ«çš„ road ,
+*  æ¯ä¸€æ¢è·¯ä¸Šè¦–æ­¤è·¯çš„é•·çŸ­å’Œååƒ»ç¨‹åº¦å¯æ”¾ç½®å¹¾å€‹é€™å€‹
+*  è¢«åŠ«çš„è·¯,ç°¡å–®ç¹¼æ‰¿æ­¤ç‰©ä»¶å³å¯ "inherit DANGER_ROAD",
+*  ä¸è¦ç¹¼æ‰¿ ROOM , å…¶ä»–å°±ä¸ç”¨ç®¡äº†.
+*  æ³¨æ„:å¦‚æžœæ‚¨çš„æˆ¿é–“è£¡ç”¨åˆ°äº†init() å‡½æ•¸,è«‹åœ¨çµå°¾è™•
+*  åŠ ä¸Š ::init().
 *
-*  by ·¢ÏÖºÅ(Find) 10/98.
+*  by ç™¼ç¾è™Ÿ(Find) 10/98.
 */
 
 #define TOU_MU                __DIR__"npc/qiangdao_t"
@@ -38,14 +38,14 @@ return;
                 && !me->is_fighting()
                 && random(100) < 15 )
                 {
-                        obj = new(TOU_MU);        // Í·Ä¿³ö³¡
+                        obj = new(TOU_MU);        // é ­ç›®å‡ºå ´
                         obj->set_attribute(me);
 
                         n = 1+random(3);
 
                         if(n-1)
                         {
-                                obj_1 = new(LOU_LOU);        //Ç¿µÁ¼×³ö³¡
+                                obj_1 = new(LOU_LOU);        //å¼·ç›œç”²å‡ºå ´
                                 obj_1->set_leader(obj);
                                 set("my_leader", obj, obj_1);
                                 addn("tonghuo/", ({obj_1}), obj);
@@ -53,7 +53,7 @@ return;
 
                                 if(n-2)
                                 {
-                                        obj_2 = new(LOU_LOU);        // Ç¿µÁÒÒ³ö³¡
+                                        obj_2 = new(LOU_LOU);        // å¼·ç›œä¹™å‡ºå ´
                                         obj_2->set_leader(obj);
                                         set("my_leader", obj, obj_2);
                                         addn("tonghuo/", ({obj_2}), obj);
@@ -77,10 +77,10 @@ return;
 
                         obj->move(environment(me));
 
-                        message_vision("\nÍ»È»ÅÔ±ß´Ü³ö"+chinese_number(n)+"ÌõÃÉÃæ´óºº³¯×Å$N×ßÁË¹ýÀ´¡£\n",me);
-                        message_vision("\n$N¶ñºÝºÝµÄ¶Ô×Å$nº°µÀ£º´ò½Ù£¡ÄÃ³ö"+
+                        message_vision("\nçªç„¶æ—é‚Šç«„å‡º"+chinese_number(n)+"æ¢è’™é¢å¤§æ¼¢æœè‘—$Nèµ°äº†éŽä¾†ã€‚\n",me);
+                        message_vision("\n$Næƒ¡ç‹ ç‹ çš„å°è‘—$nå–Šé“ï¼šæ‰“åŠ«ï¼æ‹¿å‡º"+
                                 chinese_number((query("age", me)/10)*10)+
-                                "Á½Òø×ÓËãÍêÊÂ£¬Òª²»ÈÃÄã»î²»µ½ÌìÁÁ!\n\n",obj,me);
+                                "å…©éŠ€å­ç®—å®Œäº‹ï¼Œè¦ä¸è®“ä½ æ´»ä¸åˆ°å¤©äº®!\n\n",obj,me);
                         obj->ask_money();
                         if(sizeof(dir))
                                 GUARD_CMD->main(obj,dir[0]);

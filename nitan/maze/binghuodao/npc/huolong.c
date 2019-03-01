@@ -3,8 +3,8 @@ inherit __DIR__"bhd_npc.c";
 
 void create()
 {
-        set_name(HIR "火龙" NOR, ({ "huo long", "huo", "long" }));
-        set("long", HIR "一只巨大的飞龙，在半空中盘旋，全身燃烧着火焰，甚是壮观。\n" NOR);
+        set_name(HIR "鐏緧" NOR, ({ "huo long", "huo", "long" }));
+        set("long", HIR "涓�鍙法澶х殑椋涢緧锛屽湪鍗婄┖涓洡鏃嬶紝鍏ㄨ韩鐕冪噿钁楃伀鐕勶紝鐢氭槸澹銆俓n" NOR);
 
         set("age", 99999);
         set("str",500);
@@ -42,7 +42,7 @@ void create()
 
 void init()
 {
-        // 随机攻击玩家
+        // 闅ㄦ鏀绘搳鐜╁
         if (userp(this_player()) && random(2) == 1)
         {
                 kill_ob(this_player());

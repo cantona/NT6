@@ -8,9 +8,9 @@ inherit SNAKE;
 
 void create()
 {
-        set_name("С��", ({ "snake" }) );
-        set("long", "��ŷ�����Ұ���ɽׯ��������������С�ߣ����׻���ʲ���ߣ�����code��֪����\n");
-        set("unit", "��");
+        set_name("小蛇", ({ "snake" }) );
+        set("long", "由歐陽世家白駝山莊培養出來的新生小蛇，到底會是什麼蛇，經過code才知道。\n");
+        set("unit", "條");
         set("age", 1);
         set("attitude", "peaceful");
 
@@ -55,8 +55,8 @@ int convert(string arg)
         object ob;
 
         if (arg!="snake" && arg!="she") return 0;
-        if( query("family/family_name", me) != "ŷ������" )
-                return notify_fail("�㲻�ܻ���Ϊ�ȡ�\n");
+        if( query("family/family_name", me) != "歐陽世家" )
+                return notify_fail("你不能化蛇為杖。\n");
 
-        return notify_fail(this_object()->name()+"�������ã�����̫С�������ܻ�Ϊ���ȡ�\n");
+        return notify_fail(this_object()->name()+"出生不久，身子太小，還不能化為蛇杖。\n");
 }

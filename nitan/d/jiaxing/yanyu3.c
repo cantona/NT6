@@ -1,15 +1,15 @@
-// Room: /d/jiaxing/Yanyu3.c  ÑÌÓêÂ¥¶¥
+// Room: /d/jiaxing/Yanyu3.c  ç…™é›¨æ¨“é ‚
 // Last Modified by winder on Nov. 17 2000
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "ÑÌÓêÂ¥¶¥");
+        set("short", "ç…™é›¨æ¨“é ‚");
         set("long", @LONG
-ÕâÀïÊÇÑÌÓêÂ¥µÄÂ¥¶¥£¬·ÅÑÛÒ»Æ¬¿ÕÀ«£¬¶«Î÷Á½ºþÈçÔ§Ñì½»¾±£¬ÇáÑÌ
-·÷ä¾£¬Î¢ÓêÓûÀ´£¬Ïþö°ÃÔÃÉ£¬ÕýÊÇÀú´úÎÄÈËÉ§¿Í°Ñ¾ÆÆ¾À¸¡¢µõ¹ÅÒ÷Ó½µÄ
-ºÃËùÔÚ¡£
+é€™è£¡æ˜¯ç…™é›¨æ¨“çš„æ¨“é ‚ï¼Œæ”¾çœ¼ä¸€ç‰‡ç©ºé—Šï¼Œæ±è¥¿å…©æ¹–å¦‚é´›é´¦äº¤é ¸ï¼Œè¼•ç…™
+æ‹‚æ¸šï¼Œå¾®é›¨æ¬²ä¾†ï¼Œæ›‰é„è¿·è’™ï¼Œæ­£æ˜¯æ­·ä»£æ–‡äººé¨·å®¢æŠŠé…’æ†‘æ¬„ã€åŠå¤åŸè© çš„
+å¥½æ‰€åœ¨ã€‚
 LONG );
         set("no_sleep_room",1);
         

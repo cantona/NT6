@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-        set("short","��·");
+        set("short","大路");
         set("long",@LONG
-һ����ͨ�ϱ��Ĵ�·�����ɴ��������ϱ߽����Ĺٵ�����·����
-��������ï�ܣ���Ƭ���ָ���ɽ�룬�˼���ƽ�ƽ̹����·��ֱ����
-���ű��ߵĴ����Ǻ��ϱߵ�ϲ�ݵȳ���
+一條貫通南北的大路，是由大理城往南邊疆土的官道。沿路向南
+叢林癒發茂密，大片雨林覆蓋山嶺，此間地勢較平坦，大路筆直地連
+接著北邊的大理城和南邊的喜州等城鎮。
 LONG);
         set("outdoors", "dalis");
         set("exits",([ /* sizeof() == 1 */

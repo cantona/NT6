@@ -10,12 +10,12 @@ void death_msg();
 
 void create()
 {
-        set_name(HIM "µÁÄ¹·ÉÔô" NOR, ({ "daomu feizei", "daomu", "feizei" }) );
-        set("title", HIC "¡¸ÉñÃØÈË¡¹" NOR);
-        set("gender", random(2) == 1 ? "ÄĞĞÔ" : "Å®ĞÔ");
+        set_name(HIM "ç›œå¢“é£›è³Š" NOR, ({ "daomu feizei", "daomu", "feizei" }) );
+        set("title", HIC "ã€Œç¥ç§˜äººã€" NOR);
+        set("gender", random(2) == 1 ? "ç”·æ€§" : "å¥³æ€§");
         set("age", 25);
         set("long", @LONG
-ÕâÊÇÒ»ÃûµÁÄ¹µÄ·ÉÔô£¬Ò»ÉíºÚÉ«ÃÉÃæ×°Êø£¬¿´ÆğÀ´ÉíĞÎ½Ã½¡¡£
+é€™æ˜¯ä¸€åç›œå¢“çš„é£›è³Šï¼Œä¸€èº«é»‘è‰²è’™é¢è£æŸï¼Œçœ‹èµ·ä¾†èº«å½¢çŸ¯å¥ã€‚
 LONG);
         set("combat_exp", 3000000);
         set("shen_type", 0);
@@ -32,7 +32,7 @@ LONG);
 
         set("no_clean_up", 1);
 
-        //set("no_nuoyi", 1); // ²»±»Å²ÒÆÓ°Ïì
+        //set("no_nuoyi", 1); // ä¸è¢«æŒªç§»å½±éŸ¿
 
         set("str", 28);
         set("int", 25);
@@ -83,8 +83,8 @@ LONG);
         ]));
 
         set("drops", ([
-                "RA&RANDOM10"    :       100,   // µÍ¼¶ÆÕÍ¨×°±¸
-                "RA&RANDOM20"    :       40,    // µÍ¼¶ÆÕÍ¨×°±¸
+                "RA&RANDOM10"    :       100,   // ä½ç´šæ™®é€šè£å‚™
+                "RA&RANDOM20"    :       40,    // ä½ç´šæ™®é€šè£å‚™
                 "FI&/clone/goods/enchant-scroll" :   20,
                 "FI&/clone/goods/sun"    :   20,
                 "FI&/clone/goods/moon"   :   20,
@@ -120,7 +120,7 @@ mixed hit_ob(object me, object ob, int damage_bouns)
 {
         ob->start_busy(5 + random(6));
         me->receive_wound("qi", 300 + random(300), ob);
-        return HIY "$N" HIY "´óºÈÒ»Éù£¬Æ´ËÀ·´¿¹£¬¾¹±ÆµÃ$n" HIY "ÊÖÃ¦½ÅÂÒ¡£\n" NOR;
+        return HIY "$N" HIY "å¤§å–ä¸€è²ï¼Œæ‹¼æ­»åæŠ—ï¼Œç«Ÿé€¼å¾—$n" HIY "æ‰‹å¿™è…³äº‚ã€‚\n" NOR;
 }
 
 void heart_beat()
@@ -138,10 +138,10 @@ void random_move()
         if (time() - query_temp("born_time") > 1800)
         {
                 env = environment(this_object());
-                message_vision("$N¼±¼±Ã¦Ã¦µÄ×ßÁË¡£\n", this_object());
+                message_vision("$Næ€¥æ€¥å¿™å¿™çš„èµ°äº†ã€‚\n", this_object());
 
-                CHANNEL_D->channel_broadcast("mess", env->short() + HIW "(" + LOOK_CMD->locate(base_name(env)) + ")Ò»´ø³öÏÖµÄ" +
-                        HIR + this_object()->short() + HIR "ÏûÊ§ÁË¡£\n" NOR);
+                CHANNEL_D->channel_broadcast("mess", env->short() + HIW "(" + LOOK_CMD->locate(base_name(env)) + ")ä¸€å¸¶å‡ºç¾çš„" +
+                        HIR + this_object()->short() + HIR "æ¶ˆå¤±äº†ã€‚\n" NOR);
 
                 destruct(this_object());
                 return;
@@ -154,15 +154,15 @@ void death_msg()
         if (random(2) == 1)
         {
                 command("chat* grin");
-                command("chat Ïë×¥ÎÒÃ»ÄÇÃ´ÈİÒ×£¬ºó»áÎŞÆÚ...£¡");
-                CHANNEL_D->do_channel(this_object(), "rumor", "ÌıËµ" + name() + HIM "´Ó¹ÅÄ¹ÖĞµÁµÃÕä±¦ºó£¬¶áÂ·¶øÌÓ¡£" NOR);
+                command("chat æƒ³æŠ“æˆ‘æ²’é‚£éº¼å®¹æ˜“ï¼Œå¾Œæœƒç„¡æœŸ...ï¼");
+                CHANNEL_D->do_channel(this_object(), "rumor", "è½èªª" + name() + HIM "å¾å¤å¢“ä¸­ç›œå¾—çå¯¶å¾Œï¼Œå¥ªè·¯è€Œé€ƒã€‚" NOR);
         }
         else
         {
-                message_vision(HIG "ÃÍÈ»¼ä£¬$N " HIG " ÏòºóÒ»Ìø£¬ËæÊÖÈÔ³öÒ»¿ÅºÚÉ«Ğ¡Íè£¬¶ÙÊ±ÌÚÆğÒ»Æ¬ÑÌÎí ...\n" NOR,
+                message_vision(HIG "çŒ›ç„¶é–“ï¼Œ$N " HIG " å‘å¾Œä¸€è·³ï¼Œéš¨æ‰‹ä»å‡ºä¸€é¡†é»‘è‰²å°ä¸¸ï¼Œé “æ™‚é¨°èµ·ä¸€ç‰‡ç…™éœ§ ...\n" NOR,
                                this_object());
-                command("chat ºß£¬µñ³æĞ¡¼¼£¬²»ÅãÄãÃÇÍæÁË£¬¸æ´Ç£¡");
-                CHANNEL_D->do_channel(this_object(), "rumor", "ÌıËµ" + name() + HIM "´Ó¹ÅÄ¹ÖĞµÁµÃÕä±¦ºó£¬¶áÂ·¶øÌÓ¡£" NOR);
+                command("chat å“¼ï¼Œé›•èŸ²å°æŠ€ï¼Œä¸é™ªä½ å€‘ç©äº†ï¼Œå‘Šè¾­ï¼");
+                CHANNEL_D->do_channel(this_object(), "rumor", "è½èªª" + name() + HIM "å¾å¤å¢“ä¸­ç›œå¾—çå¯¶å¾Œï¼Œå¥ªè·¯è€Œé€ƒã€‚" NOR);
         }
 }
 
@@ -176,7 +176,7 @@ void die(object killer)
                 return;
         }
 
-        if( time() < query_temp("end_time") ) // Ê±¼äÃ»ÓĞµ½£¬ËÀÍö²»ÁË
+        if( time() < query_temp("end_time") ) // æ™‚é–“æ²’æœ‰åˆ°ï¼Œæ­»äº¡ä¸äº†
         {
                 addn("jing", query("max_jing") / 10);
                 if( query("jing") > query("max_jing") ) set("jing", query("max_jing"));
@@ -186,14 +186,14 @@ void die(object killer)
                 if( query("qi") > query("max_qi") ) set("qi", query("max_qi"));
                 addn("eff_qi", query("max_qi") / 10);
                 if( query("eff_qi") > query("max_qi") ) set("eff_qi", query("max_qi"));
-                message_vision(HIR "\n$N" HIR "´óºÈÒ»Éù£¬ÔËÓÃÃØ·¨£¬ÆøÑªÓĞËù»ØÉı£¡\n\n" NOR, this_object());
+                message_vision(HIR "\n$N" HIR "å¤§å–ä¸€è²ï¼Œé‹ç”¨ç§˜æ³•ï¼Œæ°£è¡€æœ‰æ‰€å›å‡ï¼\n\n" NOR, this_object());
                 return;
         }
 
         if (! objectp(killer))
                 killer = query_last_damage_from();
 
-        if( objectp(killer) && query("family/family_name", killer) == "¹ÅÄ¹ÅÉ")
+        if( objectp(killer) && query("family/family_name", killer) == "å¤å¢“æ´¾")
                 set("rewards/gongxian", 300);
 
         return ::die();

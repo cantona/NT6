@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ɽ��");
+        set("short", "山谷");
         set("long", @LONG
-������ɽ�ȵĹȵף������ĵ�û��һ�����졣��ڵ�������
-ɢ�������ι�״��Сɽʯ����Щʯͷ���ܼ��������������涫��
-����ġ�
+這裡是山谷的谷底，靜悄悄地沒有一點聲響。漆黑的土地上
+散落著奇形怪狀的小山石，有些石頭還很尖利，人走在上面東倒
+西歪的。
 LONG
         );
         set("exits", ([ /* sizeof() == 3 */

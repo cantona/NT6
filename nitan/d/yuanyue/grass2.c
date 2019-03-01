@@ -3,11 +3,11 @@
 inherit ROOM; 
 void create()
 {
-        set("short", "����ƺ"); 
+        set("short", "芳草坪"); 
         set("long", @LONG
-������һ�鷼��ƺ���̲����𣬺������裬�����˱ǣ����˸е�
-ʮ����⡣�������˾���һͷ�ɵ���ȥ���úõ�ȥ˯һ����������ż
-��Ҳ�������˻��ߡ�
+這裡是一塊芳草坪，綠草茵茵，蝴蝶漫舞，花香撲鼻，讓人感到
+十分愜意。不禁令人就想一頭躺倒上去，好好的去睡一覺，但這裡偶
+爾也會碰到菜花蛇。
 LONG );
         set("type","grassland");
         set("outdoors", "fugui");

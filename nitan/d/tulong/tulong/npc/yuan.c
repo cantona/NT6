@@ -2,10 +2,10 @@
 inherit NPC;
 void create()
 {
-        set_name("Ôª¹ã²¨", ({ "yuan guangbo", "yuan", "guangbo" }) );
-        set("long", "ÕâÊÇº£É³ÅÉ×Ü¶æÖ÷Ôª¹ã²¨£¬Ä¿¹âÈçµç£¬Éí²Ä±ëº´¡£\n");
+        set_name("å…ƒå»£æ³¢", ({ "yuan guangbo", "yuan", "guangbo" }) );
+        set("long", "é€™æ˜¯æµ·æ²™æ´¾ç¸½èˆµä¸»å…ƒå»£æ³¢ï¼Œç›®å…‰å¦‚é›»ï¼Œèº«æå½ªæã€‚\n");
         set("attitude", "heroism");
-        set("title", HIY "º£É³ÅÉ×Ü¶æÖ÷" NOR);
+        set("title", HIY "æµ·æ²™æ´¾ç¸½èˆµä¸»" NOR);
         set("age", 15);
 
         set("max_neili", 1000+random(500));
@@ -26,25 +26,25 @@ void create()
 
 int accept_fight(object who)
 {
-        command("say ÎÒ²»ºÍÄãÂù´ò£¬Ö»ºÍÄã±È(bi)Ò»Ğ©ÎÒº£É³°ïµÄ¾ø¼¼¡£");
+        command("say æˆ‘ä¸å’Œä½ è »æ‰“ï¼Œåªå’Œä½ æ¯”(bi)ä¸€äº›æˆ‘æµ·æ²™å¹«çš„çµ•æŠ€ã€‚");
         return 0;
 }
 
 int accept_hit(object who)
 {
-        command("say ÎÒ²»ºÍÄãÂù´ò£¬Ö»ºÍÄã±È(bi)Ò»Ğ©ÎÒº£É³°ïµÄ¾ø¼¼¡£");
+        command("say æˆ‘ä¸å’Œä½ è »æ‰“ï¼Œåªå’Œä½ æ¯”(bi)ä¸€äº›æˆ‘æµ·æ²™å¹«çš„çµ•æŠ€ã€‚");
         return 0;
 }
 
 int accept_kill(object who)
 {
-        command("say ÔõÃ´£¬ÏëµÃÍÀÁúµ¶¾Í·ÇµÃÒªĞĞĞ×²»³É£¿");
+        command("say æ€éº¼ï¼Œæƒ³å¾—å± é¾åˆ€å°±éå¾—è¦è¡Œå…‡ä¸æˆï¼Ÿ");
         return 1;
 }
 
 int accept_ansuan(object who)
 {
-        return notify_fail("Äã¸ÕÏë°µËã£¬¿ÉÊÇÖ»¼û»á³¡ÀïºÚÑ¹Ñ¹µÄ¼·ÂúÁËÈË£¬¸ù±¾¿´²»Çå³ş¡£\n");
+        return notify_fail("ä½ å‰›æƒ³æš—ç®—ï¼Œå¯æ˜¯åªè¦‹æœƒå ´è£¡é»‘å£“å£“çš„æ“ æ»¿äº†äººï¼Œæ ¹æœ¬çœ‹ä¸æ¸…æ¥šã€‚\n");
 }
 
 int begin()
@@ -54,9 +54,9 @@ int begin()
         return 0;
 
         command("grin");        
-        command("say ÎÒº£É³°ïµÄ¾ø¼¼£¬ÄËÊÇÊ¹ÓÃ¶¾ÑÎº¦ÈË£¬Èç½ñÄãÎÒ¸÷³ÔÒ»Íë£¬ÈçºÎ£¿");
+        command("say æˆ‘æµ·æ²™å¹«çš„çµ•æŠ€ï¼Œä¹ƒæ˜¯ä½¿ç”¨æ¯’é¹½å®³äººï¼Œå¦‚ä»Šä½ æˆ‘å„åƒä¸€ç¢—ï¼Œå¦‚ä½•ï¼Ÿ");
 
-        message_vision(HIW "$N½ĞÊÖÏÂ×°ÁËÁ½´óÍë¶¾ÑÎ£¬$NºÍ$n¸÷³ÔÒ»Íë¡£\n" NOR,
+        message_vision(HIW "$Nå«æ‰‹ä¸‹è£äº†å…©å¤§ç¢—æ¯’é¹½ï¼Œ$Nå’Œ$nå„åƒä¸€ç¢—ã€‚\n" NOR,
                            this_object(),me);
 
         set_temp("bi", 1, me);
@@ -70,8 +70,8 @@ void die()
 {
         if (objectp(query("anti")))
         {
-                command("say Åå·ş£¬Åå·ş......");
-                message_vision(HIR "\n$NË»ÑÆ×ÅÉ¤×Ó¸Éº¿ÁËÁ½Éù£¬Ë«ÑÛ·­°×£¬µøµ¹ÔÚµØ£¬¿ÚÖĞÍÂ³öÒ»Ğ©°×Ä­£¬¾ÍÔÙÒ²Ã»¶¯ÁË¡£\n" NOR,
+                command("say ä½©æœï¼Œä½©æœ......");
+                message_vision(HIR "\n$Nå˜¶å•è‘—å—“å­å¹¹åšäº†å…©è²ï¼Œé›™çœ¼ç¿»ç™½ï¼Œè·Œå€’åœ¨åœ°ï¼Œå£ä¸­åå‡ºä¸€äº›ç™½æ²«ï¼Œå°±å†ä¹Ÿæ²’å‹•äº†ã€‚\n" NOR,
                                    this_object());
                 set_temp("win_yuan", 1, query("anti"));
                 delete_temp("bi", query("anti"));
@@ -83,8 +83,8 @@ void unconcious()
 {
         if (objectp(query("anti")))
         {
-                command("say Åå·ş£¬Åå·ş......");
-                message_vision(HIR "\n$NË»ÑÆ×ÅÉ¤×Ó¸Éº¿ÁËÁ½Éù£¬Ë«ÑÛ·­°×£¬µøµ¹ÔÚµØ£¬¿ÚÖĞÍÂ³öÒ»Ğ©°×Ä­£¬¾ÍÔÙÒ²Ã»¶¯ÁË¡£\n" NOR,
+                command("say ä½©æœï¼Œä½©æœ......");
+                message_vision(HIR "\n$Nå˜¶å•è‘—å—“å­å¹¹åšäº†å…©è²ï¼Œé›™çœ¼ç¿»ç™½ï¼Œè·Œå€’åœ¨åœ°ï¼Œå£ä¸­åå‡ºä¸€äº›ç™½æ²«ï¼Œå°±å†ä¹Ÿæ²’å‹•äº†ã€‚\n" NOR,
                                    this_object());
                 set_temp("win_yuan", 1, query("anti"));
                 delete_temp("bi", query("anti"));
@@ -109,10 +109,10 @@ int do_get(string arg)
 
         if(where == "ding")
         {
-                message_vision(CYN "$NºÈµÀ£ºÎŞ³ÜĞ¡Ôô£¬¸øÎÒ×¡ÊÖ£¡ÄãÆ¾Ê²Ã´µÃ´Ë±¦µ¶£¿\n" NOR,
+                message_vision(CYN "$Nå–é“ï¼šç„¡æ¥å°è³Šï¼Œçµ¦æˆ‘ä½æ‰‹ï¼ä½ æ†‘ä»€éº¼å¾—æ­¤å¯¶åˆ€ï¼Ÿ\n" NOR,
                                    obj,this_player());
 
-                message_vision(CYN "$NÀäÀäµØËµµÀ£ºÒªµÃ´Ëµ¶£¬ÏÈ±È(bi)Ó®ÁËÎÒÔÙËµ£¡\n" NOR,
+                message_vision(CYN "$Nå†·å†·åœ°èªªé“ï¼šè¦å¾—æ­¤åˆ€ï¼Œå…ˆæ¯”(bi)è´äº†æˆ‘å†èªªï¼\n" NOR,
                                    obj,this_player());
 
                 delete_temp("bi", this_player());

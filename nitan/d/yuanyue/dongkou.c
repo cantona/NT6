@@ -1,11 +1,11 @@
 inherit ROOM;
 void create()
 {
-        set("short", "����"); 
+        set("short", "洞口"); 
         set("long", @LONG
-·����ͷ����������ɽ���Ķ��ڣ��̱ǵ���������������Ϣ����
-����һ��ľ���ᵹ�ڵأ������ȥ��ȥľ���ϵ��๸��ֻ������ģģ
-�������š����ж���Ϯ�ˣ����룡���С����ơ�
+路至盡頭，便是神秘山洞的洞口，刺鼻的腥氣癒發令人窒息，洞
+口旁一塊木牌歪倒在地，你湊上去擦去木牌上的泥垢，只見上面模模
+糊糊刻著『洞中惡蟒襲人，勿入！切切』雲雲。
 LONG );
         set("outdoors", "fugui");
         set("type","mountain");

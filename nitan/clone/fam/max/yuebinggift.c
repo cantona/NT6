@@ -8,17 +8,17 @@ void create()
 {
         string msg;
 
-        set_name(HIY "Ñ×»Æ¢òÖĞÇïÔÂ±ı" NOR, ({ "yh2 yuebing", "yh2", "yuebing" }) );
+        set_name(HIY "ç‚é»ƒâ…¡ä¸­ç§‹æœˆé¤…" NOR, ({ "yh2 yuebing", "yh2", "yuebing" }) );
         set_weight(1);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                msg = HIW "¸÷Î»½­ºşºÀ½Ü£º\n"
-                          "    ¸ĞĞ»ÄãÃÇÒ»Ö±ÒÔÀ´¶ÔÑ×»ÆµÄÖ§³Ö£¬ÔÚÖĞÇï¼Ñ½ÚÖ®ÆÚ£¬±¾Õ¾\n"
-                          "Îª¸÷Î»ËÍÉÏÒ»·İ±¡Àñ£¬Ï£Íû´ó¼ÒÒÔºóÔÙ½ÓÔÙÀ÷£¬½«Ñ×»ÆÊÀ½ç·¢\n"
-                          "Ñï¹â´ó£¡\n\n" NOR;
+                msg = HIW "å„ä½æ±Ÿæ¹–è±ªå‚‘ï¼š\n"
+                          "    æ„Ÿè¬ä½ å€‘ä¸€ç›´ä»¥ä¾†å°ç‚é»ƒçš„æ”¯æŒï¼Œåœ¨ä¸­ç§‹ä½³ç¯€ä¹‹æœŸï¼Œæœ¬ç«™\n"
+                          "ç‚ºå„ä½é€ä¸Šä¸€ä»½è–„ç¦®ï¼Œå¸Œæœ›å¤§å®¶ä»¥å¾Œå†æ¥å†å²ï¼Œå°‡ç‚é»ƒä¸–ç•Œç™¼\n"
+                          "æšå…‰å¤§ï¼\n\n" NOR;
                 set("long", msg);
-                set("unit", "¿é");
+                set("unit", "å¡Š");
                 set("only_do_effect", 1);
         }
 }
@@ -34,7 +34,7 @@ int do_effect(object me)
 
         if(! objectp(present("yh2 yuebing", me)))return 0;
 
-               message_vision(HIY "$N" HIY "¹ş¹şÒ»Ğ¦£¬½«Õû¸öÑ×»Æ¢òÖĞÇïÔÂ±ıÒ»ÆğÍÌÁË¡£\n" NOR, me);
+               message_vision(HIY "$N" HIY "å“ˆå“ˆä¸€ç¬‘ï¼Œå°‡æ•´å€‹ç‚é»ƒâ…¡ä¸­ç§‹æœˆé¤…ä¸€èµ·åäº†ã€‚\n" NOR, me);
 
         
                 if (me->query("combat_exp") > 5000 || 1)
@@ -136,9 +136,9 @@ int do_effect(object me)
                 MEMBER_D->add_yhb(me->query("id"), 50000, "#####FORYHONLINEIS2003MADEBYRCWIZ#####");
 
         if (me->query("combat_exp") > 5000)
-                        message_vision(HIM "$N" HIM "»ñµÃÁËÎåÊ®Íòµã¾­ÑéºÍÒ»°ÙÍòµãÇ±ÄÜ¡£\n" NOR, me);
+                        message_vision(HIM "$N" HIM "ç²å¾—äº†äº”åè¬é»ç¶“é©—å’Œä¸€ç™¾è¬é»æ½›èƒ½ã€‚\n" NOR, me);
                 if (MEMBER_D->is_valib_member(me->query("id")))
-                        message_vision(HIY "$N" HIY "»ñµÃÁËÎåÍòÑ×»Æ±Ò(yhb)£¡\n" NOR, me);
+                        message_vision(HIY "$N" HIY "ç²å¾—äº†äº”è¬ç‚é»ƒå¹£(yhb)ï¼\n" NOR, me);
         
         destruct(this_object());
 

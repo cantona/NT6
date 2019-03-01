@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��Ժ");
+        set("short", "書院");
         set("long", @LONG
-��������Ժ�Ľ��ã�����������һ����Ⱦ��һλ�Ϸ�������̫ʦ��
-�Ͻ�ѧ��������������������ѧ��ѧ����һ�Ź��ⰻȻ���鰸��������
-ǰ�棬���ϰ��ż��������˵���װ�鼮��
+這裡是書院的講堂，窗明幾凈，一塵不染。一位老夫子坐在太師椅
+上講學。在他的兩側坐滿了求學的學生。一張古意盎然的書案放在他的
+前面，案上擺著幾本翻開了的線裝書籍。
 LONG );
         set("exits", ([ /* sizeof() == 2 */
                 "northeast" : __DIR__"nandajie1",

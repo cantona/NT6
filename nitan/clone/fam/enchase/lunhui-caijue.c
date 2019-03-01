@@ -3,15 +3,15 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIM "ÂÖ»Ø¡¤²Ã¾ö" NOR, ({"lunhui caijue","lunhui","caijue" }));
+        set_name(HIM "è¼ªå›ï¹’è£æ±º" NOR, ({"lunhui caijue","lunhui","caijue" }));
         set_weight(900);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                 set("long", HIM "ÂÖ»ØÖ®¿à¡¤ÌìÖ®²Ã¾ö¡£\n" NOR);
-                set("unit", "¿é");
+                 set("long", HIM "è¼ªå›ä¹‹è‹¦ï¹’å¤©ä¹‹è£æ±ºã€‚\n" NOR);
+                set("unit", "å¡Š");
                 set("value", 5000);
-                set("enchase/name", "ÂÖ»Ø¡¤²Ã¾ö");
+                set("enchase/name", "è¼ªå›ï¹’è£æ±º");
                 set("enchase/point", 120);
                   set("enchase/type", "all");
                 set("enchase/cur_firm", 85);

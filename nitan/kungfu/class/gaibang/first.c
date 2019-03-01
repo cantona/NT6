@@ -13,7 +13,7 @@ string zm_apply()
 {
         object ob = this_player();
         if ( !query("family/beggarlvl", ob) )
-                return "·ÇØ¤°ïÓĞ´üµÜ×Ó£¬²»ÄÜÊ¤ÈÎÕÆÃÅµÜ×ÓÒ»Ö°¡£";
+                return "éä¸å¹«æœ‰è¢‹å¼Ÿå­ï¼Œä¸èƒ½å‹ä»»æŒé–€å¼Ÿå­ä¸€è·ã€‚";
         return ::zm_apply();
 }
 

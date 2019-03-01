@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short","����Ȫ");
+        set("short","第三泉");
         set("long",@LONG
-����Ȫ��ǧ��ʯ֮�����������£���Ȫ��Ө����ϵ�ƴ���ʥ½��
-���ڣ�������½�𾮡���Ʒ��Ϊ���µ���Ȫ����������Ȫͤ�����⡰��
-���ҡ����֣�ȡ����ʫ���������ұڡ����⡣
+第三泉再千人石之西得鐵華巖下，此泉晶瑩醇厚，系唐代茶聖陸羽
+所挖，故名“陸羽井”，品定為天下第三泉，井上有三泉亭。崖題“鐵
+華巖”三字，取蘇軾詩“鐵華秀巖壁”句意。
 LONG);
         set("outdoors", "suzhou");
         set("exits",([

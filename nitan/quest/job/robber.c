@@ -5,15 +5,15 @@ inherit NPC;
 void init();
 void create()
 {
-        set_name(HIR "½Ù·Ë" NOR, ({ "biao robber", "robber" }) );
-        set("long","ÕâĞ©Ç¿µÁĞ¥¾ÛÉ½ÁÖ£¬×¨ÒÔ´ò½ÙïÚÒøÎªÉú¡£\n");
+        set_name(HIR "åŠ«åŒª" NOR, ({ "biao robber", "robber" }) );
+        set("long","é€™äº›å¼·ç›œå˜¯èšå±±æ—ï¼Œå°ˆä»¥æ‰“åŠ«é¢éŠ€ç‚ºç”Ÿã€‚\n");
 
         set("attitude", "heroism");
 
         set("chat_chance_combat", 15);
         set("chat_msg_combat", ({
-                "½ÙïÚÇ¿µÁºÈµÀ£º¿ì¿ìÅÜ°É£¬²»È»ËÀÁË¶¼²»ÖªµÀÔõÃ´»ØÊÂ£¡\n",
-                "½ÙïÚÇ¿µÁºÈµÀ£ºÀÏ×Ó¿´ÄãÊÇÒªÇ®»¹ÊÇÒªÃü£¡\n"
+                "åŠ«é¢å¼·ç›œå–é“ï¼šå¿«å¿«è·‘å§ï¼Œä¸ç„¶æ­»äº†éƒ½ä¸çŸ¥é“æ€éº¼å›äº‹ï¼\n",
+                "åŠ«é¢å¼·ç›œå–é“ï¼šè€å­çœ‹ä½ æ˜¯è¦éŒ¢é‚„æ˜¯è¦å‘½ï¼\n"
         }) );
 
         setup();
@@ -24,14 +24,14 @@ void create()
 
 int accept_hit(object ob)
 {
-        command("say ¼ÈÈ»ÄãÒªÏÂ»ÆÈªÄÇÎÒ¾Í³ÉÈ«Äã°É£¡");
+        command("say æ—¢ç„¶ä½ è¦ä¸‹é»ƒæ³‰é‚£æˆ‘å°±æˆå…¨ä½ å§ï¼");
         command("yun powerup");
         kill_ob(ob);
         return 1;
 }
 int accept_kill(object ob)
 {
-        command("say ¼ÈÈ»ÄãÒªÏÂ»ÆÈªÄÇÎÒ¾Í³ÉÈ«Äã°É£¡");
+        command("say æ—¢ç„¶ä½ è¦ä¸‹é»ƒæ³‰é‚£æˆ‘å°±æˆå…¨ä½ å§ï¼");
         command("yun powerup");
         return 1;
 }
@@ -55,13 +55,13 @@ void checking()
  
 void die()
 {
-        message_vision("$NÍ»È»²Ò½ĞÒ»Éù£¬¶áÂ·¶øÌÓ£¬×ªÑÛ¾ÍÏûÊ§ÁË¡£\n", this_object() );
+        message_vision("$Nçªç„¶æ…˜å«ä¸€è²ï¼Œå¥ªè·¯è€Œé€ƒï¼Œè½‰çœ¼å°±æ¶ˆå¤±äº†ã€‚\n", this_object() );
         destruct(this_object());
 }
 int leave()
 {
         if(!is_fighting() ) {
-                message_vision(HIB + "½Ù·Ë¼±¼±Ã¦Ã¦µØ×ß¿ªÁË¡£\n" NOR, this_object() );
+                message_vision(HIB + "åŠ«åŒªæ€¥æ€¥å¿™å¿™åœ°èµ°é–‹äº†ã€‚\n" NOR, this_object() );
                 destruct(this_object());
         }
         else call_out("leave",30);

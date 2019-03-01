@@ -7,21 +7,21 @@ inherit F_LIQUID;
 
 void create()
 {
-        set_name("ÓÍÆ¿", ({"youping"}));
+        set_name("æ²¹ç“¶", ({"youping"}));
         set_weight(350);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¸ö×°ÓÍµÄÆ¿×Ó£®\n");
-                set("unit", "¸ö");
+                set("long", "ä¸€å€‹è£æ²¹çš„ç“¶å­ï¼\n");
+                set("unit", "å€‹");
                 set("value", 30);
                 set("max_liquid", 5);
-                set("wield_msg", "$N×¥ÆğÒ»¸ö$n£¬ÎÕÔÚÊÖÖĞµ±ÎäÆ÷¡£\n");
+                set("wield_msg", "$NæŠ“èµ·ä¸€å€‹$nï¼Œæ¡åœ¨æ‰‹ä¸­ç•¶æ­¦å™¨ã€‚\n");
                 set("material", "bone");
         }
         set("liquid", ([
                 "type": "water",
-                "name": "²ËÓÍ",
+                "name": "èœæ²¹",
                 "remaining": 5,
         ]) );
         init_hammer(1);

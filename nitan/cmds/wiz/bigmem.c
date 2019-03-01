@@ -30,30 +30,30 @@ int main(object me,string arg)
 
     objects((: check_ob :));
 
-    //Ñ¡Ôñ¸½ºÍ²éÑ¯Ìõ¼şµÄ
+    //é¸æ“‡é™„å’ŒæŸ¥è©¢æ¢ä»¶çš„
     reset_eval_cost();
     obj_ind = keys(sm_obj_mem);
     obj_ind = filter_array(obj_ind, (: $(sm_obj_mem)[$1] >= $2 :) , large*1024);
 
-    // ÅÅĞò
+    // æ’åº
     reset_eval_cost();
     obj_ind = sort_array(obj_ind, (: $(sm_obj_mem)[$2] - $(sm_obj_mem)[$1] :));
     obj_ind = sort_array(obj_ind, (: $(sm_obj_num)[$2] - $(sm_obj_num)[$1] :));
 
-    // Ñ¡ÔñÇ°100¸ö
-    msg = "Ä¿Ç°ÏµÍ³ÖĞÕ¼ÓÃÄÚ´æ³¬¹ı" + chinese_number(large) + "KµÄÎïÆ·ÈçÏÂ£º\n";
-    msg += sprintf(HIY "%-40s%-10s%s\n" NOR, "ÎïÆ·ÎÄ¼ş", "¸´ÖÆÊıÁ¿", "ºÄÓÃÄÚ´æ");
+    // é¸æ“‡å‰100å€‹
+    msg = "ç›®å‰ç³»çµ±ä¸­ä½”ç”¨å…§å­˜è¶…é" + chinese_number(large) + "Kçš„ç‰©å“å¦‚ä¸‹ï¼š\n";
+    msg += sprintf(HIY "%-40s%-10s%s\n" NOR, "ç‰©å“æ–‡ä»¶", "å¾©åˆ¶æ•¸é‡", "è€—ç”¨å…§å­˜");
     for (i = 0; i < sizeof(obj_ind) && i < 100; i++)
         msg += sprintf("%-40s %-10d %s\n",
                    obj_ind[i],
                    sm_obj_num[obj_ind[i]], 
                    memory_expression(sm_obj_mem[obj_ind[i]]));
 
-    msg += sprintf( "¹²%s¸öÎïÆ·£¬Ê¹ÓÃ %s bytes ¼ÇÒäÌå¡£\n", 
+    msg += sprintf( "å…±%så€‹ç‰©å“ï¼Œä½¿ç”¨ %s bytes è¨˜æ†¶é«”ã€‚\n", 
         chinese_number(obj_num),
         memory_expression(sm_all_mem) );    
 
-    msg += "¼ì²éÍê±Ï£¡\n";
+    msg += "æª¢æŸ¥å®Œç•¢ï¼\n";
 
     sm_obj_mem = 0;
     sm_obj_num = 0;
@@ -104,10 +104,10 @@ int help(object me)
 {
     write(@HELP
 
-Ö¸Áî¸ñÊ½ : bigmem ¼ÇÒäÌå´óĞ¡
+æŒ‡ä»¤æ ¼å¼ : bigmem è¨˜æ†¶é«”å¤§å°
 
-Õâ¸öÖ¸Áî¸æËßÄãÕ¼ÓÃµÄ¼ÇÒäÌåÊıÁ¿³¬¹ıÖ¸¶¨´óĞ¡µÄËùÓĞÎïÆ·¡£
-ÈôÃ»ÓĞÖ¸Ã÷ÊıÖµ£¬ÔòÈ±Ê¡Îª10(k)¡£
+é€™å€‹æŒ‡ä»¤å‘Šè¨´ä½ ä½”ç”¨çš„è¨˜æ†¶é«”æ•¸é‡è¶…éæŒ‡å®šå¤§å°çš„æ‰€æœ‰ç‰©å“ã€‚
+è‹¥æ²’æœ‰æŒ‡æ˜æ•¸å€¼ï¼Œå‰‡ç¼ºçœç‚º10(k)ã€‚
 
 HELP);
     return 1;

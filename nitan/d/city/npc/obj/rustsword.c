@@ -6,17 +6,17 @@ inherit SWORD;
 
 void create()
 {
-        set_name(RED"³¤½£"NOR, ({ "rustsword" }));
+        set_name(RED"é•·åŠ"NOR, ({ "rustsword" }));
         set_weight(6000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
-                set("long", "ÕâÊÇÒ»±úĞâ¼£°ß°ßµÄ¸Ö½££¬²»¹ıËÆºõÒş²Ø×ÅÒ»Ğ©¹âÃ¢¡£\n");
+                set("unit", "æŸ„");
+                set("long", "é€™æ˜¯ä¸€æŸ„é½è·¡æ–‘æ–‘çš„é‹¼åŠï¼Œä¸éä¼¼ä¹éš±è—è‘—ä¸€äº›å…‰èŠ’ã€‚\n");
                 set("value", 400000);
                 set("material", "steel");
-                set("wield_msg", "$N¡¸à§¡¹µÄÒ»Éù³é³öÒ»±ú$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²å»Ø½£ÇÊ¡£\n");
+                set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€è²æŠ½å‡ºä¸€æŸ„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°‡æ‰‹ä¸­çš„$næ’å›åŠé˜ã€‚\n");
         }
         init_sword(10);
         setup();

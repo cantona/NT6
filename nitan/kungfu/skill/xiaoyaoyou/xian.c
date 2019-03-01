@@ -5,7 +5,7 @@
 
 inherit F_SSERVER;
 
-string name() { return HIG "ÏÉÓÎ¾÷" NOR; }
+string name() { return HIG "ä»™éŠè¨£" NOR; }
 
 int perform(object me, object target)
 {
@@ -15,40 +15,40 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(name()+"Ö»ÓĞÔÚÕ½¶·ÖĞ²ÅÄÜÊ¹ÓÃ¡£\n");
+                return notify_fail(name()+"åªæœ‰åœ¨æˆ°é¬¥ä¸­æ‰èƒ½ä½¿ç”¨ã€‚\n");
 
         if ((level = me->query_skill("xiaoyaoyou", 1)) < 100)
-                return notify_fail("ÄãµÄåĞÒ£ÓÎÕÆ·¨²»¹»ÊìÁ·£¬ÄÑÒÔÊ©Õ¹"+name()+"¡£\n");
+                return notify_fail("ä½ çš„é€é™éŠæŒæ³•ä¸å¤ ç†Ÿç·´ï¼Œé›£ä»¥æ–½å±•"+name()+"ã€‚\n");
 
         if (me->query_skill_mapped("dodge") != "xiaoyaoyou")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢åĞÒ£ÓÎÎªÇá¹¦£¬ÄÑÒÔÊ©Õ¹"+name()+"¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼é€é™éŠç‚ºè¼•åŠŸï¼Œé›£ä»¥æ–½å±•"+name()+"ã€‚\n");
 
         if( query("neili", me)<100 )
-                return notify_fail("ÄãÏÖÔÚµÄÕæÆø²»×ã£¬ÄÑÒÔÊ©Õ¹"+name()+"¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çš„çœŸæ°£ä¸è¶³ï¼Œé›£ä»¥æ–½å±•"+name()+"ã€‚\n");
 
         if (target->is_busy())
-                return notify_fail(target->name() + "Ä¿Ç°Õı×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É¡£\n");
+                return notify_fail(target->name() + "ç›®å‰æ­£è‡ªé¡§ä¸æš‡ï¼Œæ”¾è†½æ”»æ“Šå§ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIW "$N" HIW "Éí×ÓÎ¢»Î£¬Ê©³ö¡¸" HIG "ÏÉÓÎ¾÷"
-              HIW "¡¹Âú³¡ÓÎ×ß£¬²½·¨ÑóÑóÈ÷È÷£¬ÉõÎªÆ®Òİ¡£\n" NOR;
+        msg = HIW "$N" HIW "èº«å­å¾®æ™ƒï¼Œæ–½å‡ºã€Œ" HIG "ä»™éŠè¨£"
+              HIW "ã€æ»¿å ´éŠèµ°ï¼Œæ­¥æ³•æ´‹æ´‹æ´’æ´’ï¼Œç”šç‚ºé£„é€¸ã€‚\n" NOR;
 
         ap = attack_power(me, "dodge");
         dp = defense_power(target, "parry");
 
         if (ap / 2 + random(ap) > dp)
         {
-                msg += HIR "$n" HIR "Ö»¼ûÎŞÊıÈËÓ°±¼À´£¬²»ÓÉ´ó"
-                       "¾ªÊ§É«£¬¹¥ÊÆ¶ÙÎª»ºÖÍ¡£\n" NOR;
+                msg += HIR "$n" HIR "åªè¦‹ç„¡æ•¸äººå½±å¥”ä¾†ï¼Œä¸ç”±å¤§"
+                       "é©šå¤±è‰²ï¼Œæ”»å‹¢é “ç‚ºç·©æ»¯ã€‚\n" NOR;
                 target->start_busy(level / 80 + 2);
                 me->start_busy(1);
                 addn("neili", -80, me);
         } else
         {
-                msg += CYN "¿ÉÊÇ$n" CYN "¿´ÆÆÁË$P" CYN "µÄÉí"
-                       "·¨£¬²¢Ã»ÓĞÊÜµ½ÈÎºÎÓ°Ïì¡£\n" NOR;
+                msg += CYN "å¯æ˜¯$n" CYN "çœ‹ç ´äº†$P" CYN "çš„èº«"
+                       "æ³•ï¼Œä¸¦æ²’æœ‰å—åˆ°ä»»ä½•å½±éŸ¿ã€‚\n" NOR;
                 me->start_busy(2);
                 addn("neili", -50, me);
         }

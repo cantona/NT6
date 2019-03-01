@@ -1,17 +1,17 @@
-// /d/shenlong/obj/yaofang.c  Ò©·½
+// /d/shenlong/obj/yaofang.c  è—¥æ–¹
 // Last Modified by winder on Jul. 12 2002
 
 inherit ITEM;
 
 void create()
 {
-        set_name("Ò©·½", ({"yaofang"}));
+        set_name("è—¥æ–¹", ({"yaofang"}));
         set_weight(100);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
-                set("long","ÉÏÃæÃÜÃÜÂéÂéĞ´ÂúÁË×Ö£¬ÁĞ³ö¸÷ÀàÒ©²İ£¬ÅäÖÆ·½·¨ºÍ·ş·¨ÓÃÍ¾¡£\n");
+                set("unit", "å€‹");
+                set("long","ä¸Šé¢å¯†å¯†éº»éº»å¯«æ»¿äº†å­—ï¼Œåˆ—å‡ºå„é¡è—¥è‰ï¼Œé…åˆ¶æ–¹æ³•å’Œæœæ³•ç”¨é€”ã€‚\n");
                 set("material", "paper");
         }
 }

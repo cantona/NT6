@@ -10,23 +10,23 @@ int main(object me, string arg)
         seteuid(getuid());
 
         if( !objectp(link_ob=query_temp("link_ob", me)) )
-                return notify_fail("Äã²»ÊÇ¾­ÓÉÕı³£Á¬Ïß½øÈë£¬²»ÄÜ´¢´æ¡£\n");
+                return notify_fail("ä½ ä¸æ˜¯ç¶“ç”±æ­£å¸¸é€£ç·šé€²å…¥ï¼Œä¸èƒ½å„²å­˜ã€‚\n");
 
         lasttime=time()-query("last_save", me);
         if( lasttime >= 0 && lasttime < 30)
-                return notify_fail("ÎªÁË½µµÍÏµÍ³¸ºÔØ£¬Çë²»ÒªÆµ·±´¢´æ½ø¶È¡£\n");
+                return notify_fail("ç‚ºäº†é™ä½ç³»çµ±è² è¼‰ï¼Œè«‹ä¸è¦é »ç¹å„²å­˜é€²åº¦ã€‚\n");
 
         if( query("valid_startroom", environment(me))){
                 set("startroom", base_name(environment(me)), me);
-                write("µ±ÄãÏÂ´ÎÁ¬Ïß½øÀ´Ê±£¬»á´ÓÕâÀï¿ªÊ¼¡£\n");
+                write("ç•¶ä½ ä¸‹æ¬¡é€£ç·šé€²ä¾†æ™‚ï¼Œæœƒå¾é€™è£¡é–‹å§‹ã€‚\n");
         }
 
         if( (int)link_ob->save() && (int)me->save() ) {
-                write("µµ°¸´¢´æÍê±Ï¡£\n");
+                write("æª”æ¡ˆå„²å­˜å®Œç•¢ã€‚\n");
                 set("last_save", time(), me);
                 return 1;
         } else {
-                write("´¢´æÊ§°Ü¡£\n");
+                write("å„²å­˜å¤±æ•—ã€‚\n");
                 return 0;
         }
 }
@@ -34,9 +34,9 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½£ºsave
+æŒ‡ä»¤æ ¼å¼ï¼šsave
 
-°ÑÄãĞÁ¿à·Ü¶·µÄ½á¹û´æÆğÀ´¡£
+æŠŠä½ è¾›è‹¦å¥®é¬¥çš„çµæœå­˜èµ·ä¾†ã€‚
 HELP
         );
         return 1;

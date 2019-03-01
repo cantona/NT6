@@ -1,17 +1,17 @@
-// qishayan.c ÆáÉ³Ñâ
+// qishayan.c æ¼†æ²™ç¡¯
 
 inherit ITEM;
 
 void create()
 {
-        set_name("ÆáÉ³Ñâ", ({"qisha yan", "yan"}) );
+        set_name("æ¼†æ²™ç¡¯", ({"qisha yan", "yan"}) );
         set_weight(100);
         if ( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long","ÆáÉ³Ñâ£¬ÉÏÓĞËÎĞûºÍÄÚ¸®ÖÆÁù×Ö¡£ÆäĞÎÖÊÀà³ÎÉ³¶ø¾øÇá£¬ÈëË®²»³Á£¬ÉõÒìÖ®¡£\n");
+                set("long","æ¼†æ²™ç¡¯ï¼Œä¸Šæœ‰å®‹å®£å’Œå…§åºœåˆ¶å…­å­—ã€‚å…¶å½¢è³ªé¡æ¾„æ²™è€Œçµ•è¼•ï¼Œå…¥æ°´ä¸æ²‰ï¼Œç”šç•°ä¹‹ã€‚\n");
                 set("value", 5000);
-                set("unit" , "·½");
+                set("unit" , "æ–¹");
         }
         setup();
 }

@@ -1,12 +1,12 @@
 
-// jianzhi.c ½£Ö¸ÏàÅä¹¥»÷
-// ÉñµñÏÀÂÂ(20)£ºÓñóï½£·¨Óëµ¯Ö¸¹¦·ò¾ùÒÔ¹¥µĞÑ¨µÀÎªÖ÷£¬½£Ö¸ÏàÅä£¬¾«Î¢°ÂÃî
+// jianzhi.c åŠæŒ‡ç›¸é…æ”»æ“Š
+// ç¥é›•ä¿ ä¾¶(20)ï¼šç‰ç°«åŠæ³•èˆ‡å½ˆæŒ‡åŠŸå¤«å‡ä»¥æ”»æ•µç©´é“ç‚ºä¸»ï¼ŒåŠæŒ‡ç›¸é…ï¼Œç²¾å¾®å¥§å¦™
 
 #include <ansi.h>
 
 inherit F_SSERVER;
 
-string name() { return "½£Ö¸ÏàÅä"; }
+string name() { return "åŠæŒ‡ç›¸é…"; }
 
 void remove_effect(object me, object weapon, int speed, int damage);
 
@@ -22,70 +22,70 @@ int perform(object me, object target)
         if( !target
         ||  !target->is_character()
         ||  !me->is_fighting(target) )
-                return notify_fail("½£Ö¸ÏàÅä¹¥»÷Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("åŠæŒ‡ç›¸é…æ”»æ“Šåªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon) || query("skill_type", weapon) != "sword" )
-                return notify_fail("ÄãÊÖÖĞÎŞ½££¬ÈçºÎÌ¸µÃÉÏ¡¸½£Ö¸ÏàÅä¡¹£¿\n");
+                return notify_fail("ä½ æ‰‹ä¸­ç„¡åŠï¼Œå¦‚ä½•è«‡å¾—ä¸Šã€ŒåŠæŒ‡ç›¸é…ã€ï¼Ÿ\n");
 
         if( query_temp("secondary_weapon", me) )
-                return notify_fail("ÄãÕıÎÕ×Å¶Ì±ø£¬Ã»ÓĞÊÖÄÜ¿Õ³öÀ´¡¸½£Ö¸ÏàÅä¡¹ÁË¡£\n");
+                return notify_fail("ä½ æ­£æ¡è‘—çŸ­å…µï¼Œæ²’æœ‰æ‰‹èƒ½ç©ºå‡ºä¾†ã€ŒåŠæŒ‡ç›¸é…ã€äº†ã€‚\n");
 
         if( query_temp("th_jianmang", me) )
-                return notify_fail("ÄãÕıÄıÉñÊ¹¶¯¡¸½£Ã¢¡¹£¬²»ÄÜÔÙ·ÖĞÄÁË£¡\n");
+                return notify_fail("ä½ æ­£å‡ç¥ä½¿å‹•ã€ŒåŠèŠ’ã€ï¼Œä¸èƒ½å†åˆ†å¿ƒäº†ï¼\n");
 
         if( query_temp("th_jianzhi", me) )
-                return notify_fail("ÄãÕıÔÚÔËÓÃ½£Ö¸ÏàÅäµÄ¹¥ÊÆ£¡\n");
+                return notify_fail("ä½ æ­£åœ¨é‹ç”¨åŠæŒ‡ç›¸é…çš„æ”»å‹¢ï¼\n");
 
         if( me->query_skill("yuxiao-jianfa",1) < 120 )
-                return notify_fail("ÄãµÄÓñóï½£·¨ĞŞÎªÎ´µ½£¬²»ÄÜ½£Ö¸ÏàÅä¹¥µĞ£¡\n");
+                return notify_fail("ä½ çš„ç‰ç°«åŠæ³•ä¿®ç‚ºæœªåˆ°ï¼Œä¸èƒ½åŠæŒ‡ç›¸é…æ”»æ•µï¼\n");
 
         if( me->query_skill("tanzhi-shentong",1) < 120 )
-                return notify_fail("ÄãµÄµ¯Ö¸ÉñÍ¨ĞŞÎªÎ´µ½£¬²»ÄÜ½£Ö¸ÏàÅä¹¥µĞ£¡\n");
+                return notify_fail("ä½ çš„å½ˆæŒ‡ç¥é€šä¿®ç‚ºæœªåˆ°ï¼Œä¸èƒ½åŠæŒ‡ç›¸é…æ”»æ•µï¼\n");
 
         if( me->query_skill("bibo-shengong", 1) < 120 )
-                return notify_fail("ÄãµÄ±ÌÌÎĞş¹¦ĞŞÎª²»×ã£¬Ç¿Ê¹½£Ö¸ÏàÅä£¬Í½È»·ÖÉ¢¹¦Á¦£¡\n");
+                return notify_fail("ä½ çš„ç¢§æ¿¤ç„åŠŸä¿®ç‚ºä¸è¶³ï¼Œå¼·ä½¿åŠæŒ‡ç›¸é…ï¼Œå¾’ç„¶åˆ†æ•£åŠŸåŠ›ï¼\n");
 
         if( me->query_skill_mapped("sword") != "yuxiao-jianfa")
-                return notify_fail("Äã²¢Ã»ÓĞÊ¹ÓÃÓñóï½£·¨£¡\n");
+                return notify_fail("ä½ ä¸¦æ²’æœ‰ä½¿ç”¨ç‰ç°«åŠæ³•ï¼\n");
 
         if( me->query_skill_mapped("force") != "bibo-shengong")
-                return notify_fail("ÄãËùÔËÊ¹µÄÄÚ¹¦ÎŞ·¨Óë½£Ö¸ÏàÅäÖ®ĞÄ·¨Ğ­µ÷£¡\n");
+                return notify_fail("ä½ æ‰€é‹ä½¿çš„å…§åŠŸç„¡æ³•èˆ‡åŠæŒ‡ç›¸é…ä¹‹å¿ƒæ³•å”èª¿ï¼\n");
 
         if( me->query_skill_mapped("finger") != "tanzhi-shentong")
-                return notify_fail("ÄãËùÊ©Õ¹µÄÖ¸·¨²¢·Çµ¯Ö¸ÉñÍ¨£¡\n");
+                return notify_fail("ä½ æ‰€æ–½å±•çš„æŒ‡æ³•ä¸¦éå½ˆæŒ‡ç¥é€šï¼\n");
 
         if( me->query_skill_prepared("finger") != "tanzhi-shentong")
-                return notify_fail("Äã»¹Ã»ÓĞ×¼±¸ºÃÊ©Õ¹µ¯Ö¸ÉñÍ¨£¡\n");
+                return notify_fail("ä½ é‚„æ²’æœ‰æº–å‚™å¥½æ–½å±•å½ˆæŒ‡ç¥é€šï¼\n");
 
         if( query("max_neili", me) <= 1200 )
-                return notify_fail("ÄãµÄÄÚÁ¦ĞŞÎª²»×ã£¬ÌÈÈôÊ©Õ¹½£Ö¸ÏàÅä£¬·´¶ø»áÓĞÁ¦·ÖÔòÈõµÄĞ×ÏÕ£¡\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¿®ç‚ºä¸è¶³ï¼Œå€˜è‹¥æ–½å±•åŠæŒ‡ç›¸é…ï¼Œåè€Œæœƒæœ‰åŠ›åˆ†å‰‡å¼±çš„å…‡éšªï¼\n");
 
         if( query("neili", me) <= 400 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»×ã£¬²»×ãÒÔÊ©Õ¹½£Ö¸ÏàÅä£¡\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸è¶³ï¼Œä¸è¶³ä»¥æ–½å±•åŠæŒ‡ç›¸é…ï¼\n");
 
         if( query("jingli", me) <= 400 )
-                return notify_fail("ÄãµÄ¾«Á¦²»×ã£¬²»×ãÒÔÊ©Õ¹½£Ö¸ÏàÅä£¡\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›ä¸è¶³ï¼Œä¸è¶³ä»¥æ–½å±•åŠæŒ‡ç›¸é…ï¼\n");
 
         damage = me->query_skill("yuxiao-jianfa",1) + me->query_skill("tanzhi-shentong",1);
         sword = (me->query_skill("sword") + me->query_skill("finger") );
         addn("neili", -250, me);
         addn("jingli", -100, me);
 
-        //ÃüÖĞÂÊÔö¼Ó
+        //å‘½ä¸­ç‡å¢åŠ 
         addn_temp("apply/defense", damage, me);
         addn_temp("apply/attack", damage, me);
 
         COMBAT_D->do_attack(me,target,query_temp("weapon", me));
 
-        message_combatd(HIG"$NÊÖÖĞ"+weapon->name()+HIG"Ò»ÌÚ£¬·ÉÎèÀ´È¥£¬äìÈ÷×ÔÈç£¬ÖøÖø¶¼ÊÇ¹¥ÊÆ£¬Ò»ÕĞ²»´ı$n»¯½â¿ªÈ¥£¬µÚ¶şÕĞµÚÈıÕĞÒÑÁ¬Ãà¶øÖÁ£¡\n"NOR, me,target);
+        message_combatd(HIG"$Næ‰‹ä¸­"+weapon->name()+HIG"ä¸€é¨°ï¼Œé£›èˆä¾†å»ï¼Œç€Ÿæ´’è‡ªå¦‚ï¼Œè‘—è‘—éƒ½æ˜¯æ”»å‹¢ï¼Œä¸€æ‹›ä¸å¾…$nåŒ–è§£é–‹å»ï¼Œç¬¬äºŒæ‹›ç¬¬ä¸‰æ‹›å·²é€£ç¶¿è€Œè‡³ï¼\n"NOR, me,target);
 
-        //µÚ¶ş½£ÉÔ¿ì
+        //ç¬¬äºŒåŠç¨å¿«
         addn_temp("apply/attack", damage/3, me);
         COMBAT_D->do_attack(me,target,query_temp("weapon", me));
         addn_temp("apply/attack", -damage/3, me);
 
         if(me->is_fighting(target) ){
-        message_combatd(HIG"$N½£ÊÆÎ´Ö¹£¬×óÊÖÖ¸Á¦ÒÑÔÌ¾¢µ¯³ö£¬µãÏò$n¸÷Â·Ñ¨µÀ£¬"+HIW"¡¸Óñóï½£·¨¡¹"NOR+HIG"Óë"+HIW"¡¸µ¯Ö¸ÉñÍ¨¡¹"NOR+HIG"»¥ÏàÎªÓÃ£¬Ô½·¢¾«Î¢°ÂÃî£¬±ä»¯ÎŞÇî£¡\n"NOR, me,target);
+        message_combatd(HIG"$NåŠå‹¢æœªæ­¢ï¼Œå·¦æ‰‹æŒ‡åŠ›å·²è˜Šå‹å½ˆå‡ºï¼Œé»å‘$nå„è·¯ç©´é“ï¼Œ"+HIW"ã€Œç‰ç°«åŠæ³•ã€"NOR+HIG"èˆ‡"+HIW"ã€Œå½ˆæŒ‡ç¥é€šã€"NOR+HIG"äº’ç›¸ç‚ºç”¨ï¼Œè¶Šç™¼ç²¾å¾®å¥§å¦™ï¼Œè®ŠåŒ–ç„¡çª®ï¼\n"NOR, me,target);
 
         weapon->unequip();
         COMBAT_D->do_attack(me,target,query_temp("weapon", me));
@@ -111,14 +111,14 @@ void checking(object me, object weapon,int speed, int damage)
         }
         if( !me->is_fighting() )
         {
-                message_combatd("\n$N¼ûÕ½¾ÖÒÑ±Ï£¬±ã¼´ÊÕÆğÁË½£Ö¸ÏàÅäµÄ¹¦·¨¡£\n", me);
+                message_combatd("\n$Nè¦‹æˆ°å±€å·²ç•¢ï¼Œä¾¿å³æ”¶èµ·äº†åŠæŒ‡ç›¸é…çš„åŠŸæ³•ã€‚\n", me);
                 remove_effect(me, weapon, speed, damage);
                 return ;
         }
 
         else if( environment(weapon) != me || weapon != query_temp("weapon", me) )
         {
-                message_combatd("\n$NÊÖÖĞ±øÆ÷ÒÑÊ§£¬µ±ÏÂÊÕ»ØÁË½£Ö¸ÏàÅäµÄ¹¥ÊÆ¡£\n"NOR, me);
+                message_combatd("\n$Næ‰‹ä¸­å…µå™¨å·²å¤±ï¼Œç•¶ä¸‹æ”¶å›äº†åŠæŒ‡ç›¸é…çš„æ”»å‹¢ã€‚\n"NOR, me);
                 remove_effect(me, weapon, speed, damage);
                 return ;
         }
@@ -127,19 +127,19 @@ void checking(object me, object weapon,int speed, int damage)
          || me->query_skill_prepared("finger") != "tanzhi-shentong" )
         {
                 remove_effect(me, weapon, speed, damage);
-                message_combatd(HIG"\n$NÒ»»Ó"+weapon->name()+HIG"£¬ÖèÈ»±ä»»ÕĞÊı£¬²»ÔÙÊÇÓñóï½£·¨Óëµ¯Ö¸ÉñÍ¨µÄ´îÅä½ø»÷£¡\n"NOR, me);
+                message_combatd(HIG"\n$Nä¸€æ®"+weapon->name()+HIG"ï¼Œé©Ÿç„¶è®Šæ›æ‹›æ•¸ï¼Œä¸å†æ˜¯ç‰ç°«åŠæ³•èˆ‡å½ˆæŒ‡ç¥é€šçš„æ­é…é€²æ“Šï¼\n"NOR, me);
                 return ;
         }
         else if( query("neili", me)<500 || query("jingli", me)<500 )
         {
-                tell_object(me, HIW "\nÄã¾ª¾õÄÚÏ¢½¥Èõ£¬ÔÙÈç´Ë¿ì¹¥¿ÖÅÂáá¼Ì·¦Á¦£¬µ±ÏÂ²»¶¯ÉùÉ«£¬°µ°µÊÕÁË×óÊÖ¡¸µ¯Ö¸ÉñÍ¨¡¹¹¥ÊÆ¡£\n" NOR);
+                tell_object(me, HIW "\nä½ é©šè¦ºå…§æ¯æ¼¸å¼±ï¼Œå†å¦‚æ­¤å¿«æ”»ææ€•å¾Œç¹¼ä¹åŠ›ï¼Œç•¶ä¸‹ä¸å‹•è²è‰²ï¼Œæš—æš—æ”¶äº†å·¦æ‰‹ã€Œå½ˆæŒ‡ç¥é€šã€æ”»å‹¢ã€‚\n" NOR);
                 remove_effect(me, weapon, speed, damage);
                 return ;
         }
         else if( query_temp("th_jianzhi", me) <= 20 )
         {
                 remove_effect(me, weapon, speed, damage);
-                message_combatd(HIG"\n$NÒ»»Ó"+weapon->name()+HIG"£¬×óÊÖÊ³ÖĞ¶şÖ¸ÄóÆğ½£¾÷£¬ĞÄÎŞÅÔæğµØÊ¹¶¯¡¸Óñóï½£·¨¡¹£¡\n"NOR, me);
+                message_combatd(HIG"\n$Nä¸€æ®"+weapon->name()+HIG"ï¼Œå·¦æ‰‹é£Ÿä¸­äºŒæŒ‡æèµ·åŠè¨£ï¼Œå¿ƒç„¡æ—é¨–åœ°ä½¿å‹•ã€Œç‰ç°«åŠæ³•ã€ï¼\n"NOR, me);
                 return;
         }
 

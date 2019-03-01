@@ -8,12 +8,12 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("½¯¶æÖ÷", ({"jiang duozhu", "jiang", "duozhu"}));
+        set_name("è”£èˆµä¸»", ({"jiang duozhu", "jiang", "duozhu"}));
         set("long",
-                "ÕâÊÇÎ»ÒÂÖøååËú£¬ÅîÍ·¹¸ÃæµÄØ¤°ï°Ë´üµÜ×Ó£¬ÏÖÈÎ´óÒå·Ö¶æ¶æÖ÷¡£\n");
-        set("gender", "ÄĞĞÔ");
-        set("nickname", HIG"´óÒå·Ö¶æ"HIY"¶æÖ÷"NOR);
-        set("title", "Ø¤°ï°Ë´üµÜ×Ó");
+                "é€™æ˜¯ä½è¡£è‘—é‚‹å¡Œï¼Œè“¬é ­å¢é¢çš„ä¸å¹«å…«è¢‹å¼Ÿå­ï¼Œç¾ä»»å¤§ç¾©åˆ†èˆµèˆµä¸»ã€‚\n");
+        set("gender", "ç”·æ€§");
+        set("nickname", HIG"å¤§ç¾©åˆ†èˆµ"HIY"èˆµä¸»"NOR);
+        set("title", "ä¸å¹«å…«è¢‹å¼Ÿå­");
         set("age", 25);
         set("attitude", "peaceful");
         set("class", "beggar");
@@ -54,10 +54,10 @@ void create()
         map_skill("staff", "fengmo-zhang");
         map_skill("dodge", "xiaoyaoyou");
 
-        //set("party/party_name", HIC"Ø¤°ï"NOR);
-        //set("party/rank", HIG"´óÒå·Ö¶æ"HIY"°Ë´ü¶æÖ÷"NOR);
+        //set("party/party_name", HIC"ä¸å¹«"NOR);
+        //set("party/rank", HIG"å¤§ç¾©åˆ†èˆµ"HIY"å…«è¢‹èˆµä¸»"NOR);
         //set("party/level", 8);
-        create_family("Ø¤°ï", 19, "µÜ×Ó");
+        create_family("ä¸å¹«", 19, "å¼Ÿå­");
 
         setup();
 
@@ -68,5 +68,5 @@ void create()
 void attempt_apprentice(object ob)
 {
         command("hmm");
-        command("say ×ß¿ª£¬ÎÒ²»ÊÕÍ½¡£");
+        command("say èµ°é–‹ï¼Œæˆ‘ä¸æ”¶å¾’ã€‚");
 }

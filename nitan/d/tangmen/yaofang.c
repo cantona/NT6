@@ -1,4 +1,4 @@
-//yaofang.c                ËÄ´¨ÌÆÃÅ¡ªÒ©·¿
+//yaofang.c                å››å·å”é–€â”€è—¥æˆ¿
 
 #include <ansi.h>
 #include <room.h>
@@ -9,12 +9,12 @@ int do_putin(object me, object obj);
 
 void create()
 {
-        set("short", "ÖÆÒ©·¿");
+        set("short", "åˆ¶è—¥æˆ¿");
         set("long",
-"ÕâÀïÊÇÌÆÃÅµÄÁ¶Ò©·¿¡£ÎİÖĞÃ»ÓĞÊ²Ã´°ÚÉè£¬Ö»ÊÇ¿¿Ç½°Ú×ÅÈı¸öÄ¾¼Ü£¬\n"
-"¼Ü×ÓÉÏ°ÚÂúÁËÒ©Æ¿Ò©¹Ş£¬Îİ×ÓÕıÖĞÓÃÉÏºÃµÄÇàÊ¯Àİ³ÉÁËÒ»¸öÔîÌ¨Ò»¸öÅÂÓĞ\n"
-"Ç§½ïÖØµÄ×ÏÍ­Ò©Â¯ÖØÖØµÄÑ¹ÔÚÉÏÃæ£¬ÈÃÈËÆæ¹ÖµÄÊÇÁ½ÕÉ¼û·½µÄÎİ×ÓÀï¾¹Ã»\n"
-"ÓĞÒ»¸ö´°»§¡£\n"
+"é€™è£¡æ˜¯å”é–€çš„ç…‰è—¥æˆ¿ã€‚å±‹ä¸­æ²’æœ‰ä»€éº¼æ“ºè¨­ï¼Œåªæ˜¯é ç‰†æ“ºè‘—ä¸‰å€‹æœ¨æ¶ï¼Œ\n"
+"æ¶å­ä¸Šæ“ºæ»¿äº†è—¥ç“¶è—¥ç½ï¼Œå±‹å­æ­£ä¸­ç”¨ä¸Šå¥½çš„é’çŸ³å£˜æˆäº†ä¸€å€‹ç¶å°ä¸€å€‹æ€•æœ‰\n"
+"åƒæ–¤é‡çš„ç´«éŠ…è—¥çˆé‡é‡çš„å£“åœ¨ä¸Šé¢ï¼Œè®“äººå¥‡æ€ªçš„æ˜¯å…©ä¸ˆè¦‹æ–¹çš„å±‹å­è£¡ç«Ÿæ²’\n"
+"æœ‰ä¸€å€‹çª—æˆ¶ã€‚\n"
 );
         set("exits", ([
                         "southeast" : __DIR__"houroad2",
@@ -44,18 +44,18 @@ int do_put(string arg)
 
         if( sscanf(arg, "%s in yaolu", item) == 1 );
         else 
-                return notify_fail("ÄãÒª·ÅÊ²Ã´¶«Î÷£¿\n");
+                return notify_fail("ä½ è¦æ”¾ä»€éº¼æ±è¥¿ï¼Ÿ\n");
 
         if(sscanf(item, "%d %s", amount, item)==2)
         {
                 if( !objectp(obj = present(item, me)) )        
-                        return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+                        return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™æ¨£æ±è¥¿ã€‚\n");
                 if( !obj->query_amount() )        
-                        return notify_fail( obj->name() + "²»ÄÜ±»·Ö¿ª¸øÈË¡£\n");
+                        return notify_fail( obj->name() + "ä¸èƒ½è¢«åˆ†é–‹çµ¦äººã€‚\n");
                 if( amount < 1 )
-                        return notify_fail("¶«Î÷µÄÊıÁ¿ÖÁÉÙÊÇÒ»¸ö¡£\n");
+                        return notify_fail("æ±è¥¿çš„æ•¸é‡è‡³å°‘æ˜¯ä¸€å€‹ã€‚\n");
                 if( amount > obj->query_amount() ) 
-                        return notify_fail("ÄãÃ»ÓĞÄÇÃ´¶àµÄ" + obj->name() + "¡£\n");
+                        return notify_fail("ä½ æ²’æœ‰é‚£éº¼å¤šçš„" + obj->name() + "ã€‚\n");
                 else 
                         if( amount == (int)obj->query_amount() )
                                 return do_putin(me, obj2);
@@ -86,7 +86,7 @@ int do_put(string arg)
         }
 
         if(!objectp(obj = present(item, me)))
-                return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+                return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™æ¨£æ±è¥¿ã€‚\n");
         return do_putin(me, obj);
 }
 
@@ -95,7 +95,7 @@ int do_putin(object me, object obj)
         string tar, targ;
         int tarm;
         string *duwu = ({
-                "","òÚò¼","¶¾Ğ«×Ó","ÖñÒ¶Çà","½ğ»·Éß","òóÉß","Ç§Äê¶¾Íõ",
+                "","èœˆèš£","æ¯’è å­","ç«¹è‘‰é’","é‡‘ç’°è›‡","è®è›‡","åƒå¹´æ¯’ç‹",
         });
 
         tar=query("name", obj);
@@ -106,16 +106,16 @@ int do_putin(object me, object obj)
 
         if( !query_temp("duyao", me) )
         {
-                message_vision("ÌÆ¶¾Ò»ÉìÊÖ´òÂäÁË$NÊÖÉÏµÄ" + obj->name() + "£¬½Ğµ½£º¡°Ê²Ã´¶«Î÷¾ÍÍùÒ©Â¯Àï·Å¡£¡±\n", me);
+                message_vision("å”æ¯’ä¸€ä¼¸æ‰‹æ‰“è½äº†$Næ‰‹ä¸Šçš„" + obj->name() + "ï¼Œå«åˆ°ï¼šâ€œä»€éº¼æ±è¥¿å°±å¾€è—¥çˆè£¡æ”¾ã€‚â€\n", me);
                 obj->move(this_object());
                 return 1;
         }        
 
         if ( (tar == targ) && objectp(obj) )
         {
-                message_vision("$NÄÃ³ö" + obj->name() + "·Å½øÒ©Â¯¡£\n", me);
+                message_vision("$Næ‹¿å‡º" + obj->name() + "æ”¾é€²è—¥çˆã€‚\n", me);
                 destruct(obj);
-                message_vision("ÌÆ¶¾¶Ô×Å$NµãÁËµãÍ·£¬Ëµµ½£º¡°ºÃ£¬Äã¸ÉµÄºÜºÃ£¬¿ìÈ¥ĞİÏ¢°É¡£¡±\n", me);
+                message_vision("å”æ¯’å°è‘—$Né»äº†é»é ­ï¼Œèªªåˆ°ï¼šâ€œå¥½ï¼Œä½ å¹¹çš„å¾ˆå¥½ï¼Œå¿«å»ä¼‘æ¯å§ã€‚â€\n", me);
                 delete_temp("tangmen", me);
                 delete_temp("duyao", me);
                 addn("combat_exp", 150+random(150), me);
@@ -124,7 +124,7 @@ int do_putin(object me, object obj)
         }
         else
         {
-                message_vision("ÌÆ¶¾Ò»ÉìÊÖ´òÂäÁË$NÊÖÉÏµÄ" + obj->name() + "£¬½Ğµ½£º¡°Ê²Ã´¶«Î÷¾ÍÍùÒ©Â¯Àï·Å¡£¡±\n¿ìÈ¥ÕÒ" + targ+ "»ØÀ´£¡\n", me);
+                message_vision("å”æ¯’ä¸€ä¼¸æ‰‹æ‰“è½äº†$Næ‰‹ä¸Šçš„" + obj->name() + "ï¼Œå«åˆ°ï¼šâ€œä»€éº¼æ±è¥¿å°±å¾€è—¥çˆè£¡æ”¾ã€‚â€\nå¿«å»æ‰¾" + targ+ "å›ä¾†ï¼\n", me);
                 obj->move(this_object());
 //                destruct(obj);
                 return 1;

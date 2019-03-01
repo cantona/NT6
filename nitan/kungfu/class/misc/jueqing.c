@@ -5,9 +5,9 @@ inherit "/inherit/char/punisher";
 
 void create()
 {
-        set_name("¾øÇé¹ÈÒşÊ¿", ({ "yin shi", "yin", "shi" }));
-        set("long",  "Ëû¾ÍÊÇ¾øÇé¹ÈµÄ¸ßÊÖ£¬¾İËµ³¤ÄêÒş²ØÓÚÉ½ÖĞ¡£\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("çµ•æƒ…è°·éš±å£«", ({ "yin shi", "yin", "shi" }));
+        set("long",  "ä»–å°±æ˜¯çµ•æƒ…è°·çš„é«˜æ‰‹ï¼Œæ“šèªªé•·å¹´éš±è—äºå±±ä¸­ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 55);
         set("attitude", "peaceful");
          set("shen_type", 0);
@@ -58,7 +58,7 @@ void create()
 
         prepare_skill("strike", "jueqing-zhang");
 
-        create_family("¾øÇé¹È", 0, "ÒşÊ¿");
+        create_family("çµ•æƒ…è°·", 0, "éš±å£«");
 
         set("chat_chance_combat", 120);
         set("chat_msg_combat", ({

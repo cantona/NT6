@@ -6,15 +6,15 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("á¯ÆäË¹", ({ "cen qisi", "cen", "qisi" }));
-        set("nickname", HIR "Îå¶¾ÐãÊ¿" NOR);
+        set_name("å²‘å…¶æ–¯", ({ "cen qisi", "cen", "qisi" }));
+        set("nickname", HIR "äº”æ¯’ç§€å£«" NOR);
         set("long", @LONG
-Ëû¾ÍÊÇÎå¶¾½ÌµÄÓÒ»¤·¨£¬ÈË³ÆÎå¶¾ÐãÊ¿µÄá¯ÆäË¹¡£
-¾­³£×°°ç³ÉÒ»¸ö°×ÒÂÐãÊ¿µÄÄ£Ñù£¬Ã»ÊÂ×Ü°®¸½Ó¹·ç
-ÑÅ¡£
+ä»–å°±æ˜¯äº”æ¯’æ•™çš„å³è­·æ³•ï¼Œäººç¨±äº”æ¯’ç§€å£«çš„å²‘å…¶æ–¯ã€‚
+ç¶“å¸¸è£æ‰®æˆä¸€å€‹ç™½è¡£ç§€å£«çš„æ¨¡æ¨£ï¼Œæ²’äº‹ç¸½æ„›é™„åº¸é¢¨
+é›…ã€‚
 LONG);
-        set("title","Îå¶¾½Ì»¤·¨");
-        set("gender", "ÄÐÐÔ");
+        set("title","äº”æ¯’æ•™è­·æ³•");
+        set("gender", "ç”·æ€§");
         set("age", 38);
         set("attitude", "friendly");
         set("shen_type", -1);
@@ -57,7 +57,7 @@ LONG);
         prepare_skill("strike", "tianchan-zhang");
         prepare_skill("claw", "wusheng-zhao");
 
-        create_family("Îå¶¾½Ì", 12, "»¤·¨");
+        create_family("äº”æ¯’æ•™", 12, "è­·æ³•");
 
         setup();
 
@@ -74,23 +74,23 @@ void attempt_apprentice(object ob)
 
         if( query("shen", ob)>-5000 )
         {
-                command("say ×öÎÒÎå¶¾½ÌµÜ×Ó±ØÐëÐÄºÝÊÖÀ±¡£");
+                command("say åšæˆ‘äº”æ¯’æ•™å¼Ÿå­å¿…é ˆå¿ƒç‹ æ‰‹è¾£ã€‚");
                 return;
         }
         if ((int)ob->query_skill("wudu-shengong", 1) < 40)
         {
-                command("say ÄãµÄÎå¶¾ÐÄ·¨»¹Ñ§µÄ²»¹»°¡¡£");
+                command("say ä½ çš„äº”æ¯’å¿ƒæ³•é‚„å­¸çš„ä¸å¤ å•Šã€‚");
                 return;
         }
         if ((int)ob->query_skill("wudu-qishu", 1) < 30)
         {
-                command("say ÎÒÎå¶¾½ÌµÜ×ÓÒÔ¶¾É±ÈË£¬ÐÞÏ°¶¾¼¼ÊÇÊ×ÒªµÄ¡£");
-                command("say ÄãÊÇ·ñ»¹Ó¦¸Ã¶à¶à×êÑÐ±¾ÃÅµÄ¾øÑ§£¿");
+                command("say æˆ‘äº”æ¯’æ•™å¼Ÿå­ä»¥æ¯’æ®ºäººï¼Œä¿®ç¿’æ¯’æŠ€æ˜¯é¦–è¦çš„ã€‚");
+                command("say ä½ æ˜¯å¦é‚„æ‡‰è©²å¤šå¤šé‘½ç ”æœ¬é–€çš„çµ•å­¸ï¼Ÿ");
                 return;
         }
 
        command("nod");
-       command("say ²»´í£¬²»´í¡£");
+       command("say ä¸éŒ¯ï¼Œä¸éŒ¯ã€‚");
        command("recruit "+query("id", ob));
        return;
 }

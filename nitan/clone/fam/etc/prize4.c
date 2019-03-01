@@ -5,19 +5,19 @@ inherit F_LIQUID;
 
 void create()
 {
-        set_name(HIW "Â}±­" NOR, ({ "god cup", "god", "cup" }));
+        set_name(HIW "â–¡æ¯" NOR, ({ "god cup", "god", "cup" }));
         set_weight(1000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "¼ƒãyËùÖÆµÄÂ}±­£¬ËÆºõ¿ÉÒÔÙu‚€ºÃƒråX¡£\n" NOR);
-                set("unit", "ëb");
+                set("long", HIW "â–¡â–¡æ‰€åˆ¶çš„â–¡æ¯ï¼Œä¼¼ä¹å¯ä»¥â–¡â–¡å¥½â–¡â–¡ã€‚\n" NOR);
+                set("unit", "â–¡");
                 set("value", 500000);
                 set("max_liquid", 100);
         }
         set("liquid", ([
                 "type"        : "water",
-                "name"        : HIW "Â}Ë®" NOR,
+                "name"        : HIW "â–¡æ°´" NOR,
                 "remaining"   : 100,
                 "drunk_supply": 100,
         ]));

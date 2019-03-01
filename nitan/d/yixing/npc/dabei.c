@@ -5,10 +5,10 @@ void check_body();
 
 void create()
 {
-        set_name("´ó±¯ÀÏÈË", ({ "dabei laoren", "dabei", "laoren" }));
-        set("long", "ËûÊÇ¸öºìÃæÀÏÕß£¬°×·¢·÷ĞØ£¬ÉõÊÇĞÛÎ°¡£\n");
-        set("title", "°×¾¨µºµºÖ÷");
-        set("gender", "ÄĞĞÔ");
+        set_name("å¤§æ‚²è€äºº", ({ "dabei laoren", "dabei", "laoren" }));
+        set("long", "ä»–æ˜¯å€‹ç´…é¢è€è€…ï¼Œç™½ç™¼æ‹‚èƒ¸ï¼Œç”šæ˜¯é›„å‰ã€‚\n");
+        set("title", "ç™½é¯¨å³¶å³¶ä¸»");
+        set("gender", "ç”·æ€§");
         set("attitude", "friendly");
         set("age", 70);
         set("shen_type", 1);
@@ -61,8 +61,8 @@ void check_body()
            ||! objectp(present("18 niou", me)))
                 return;
 
-        message_vision(HIR "\n$N" HIR "ºì×ÅË«ÑÛ£¬±©Å­µÀ£ºÌìÉ±µÄ£¬ÀÏ"
-                       "×Ó½ñÌì»í³öÈ¥ÁË£¡\n" NOR, me);
+        message_vision(HIR "\n$N" HIR "ç´…è‘—é›™çœ¼ï¼Œæš´æ€’é“ï¼šå¤©æ®ºçš„ï¼Œè€"
+                       "å­ä»Šå¤©è±å‡ºå»äº†ï¼\n" NOR, me);
 
         set_temp("apply/attack", 150);
         set_temp("apply/defense", 150);

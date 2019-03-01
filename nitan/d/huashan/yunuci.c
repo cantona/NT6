@@ -3,19 +3,19 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÓñÅ®ìô");
+        set("short", "çŽ‰å¥³ç¥ ");
         set("long", @LONG
-ÓñÅ®ìôÀï¹©·îµÄµ½µ×ÊÇÄÄÎ»ÓñÅ®£¬ÓÐÐí¶à²»Í¬µÄËµ·¨£¬ÏÖÔÚËùÄÜ
-¿´µ½µÄÖ»Ò»×ð´ô°åµÄÊ¯Ïñ¡£ìôÖÐ´óÊ¯ÉÏÓÐÒ»´¦ÉîÏÝ£¬°¼´¦»ýË®Çå±Ì£¬
-ÕâÊÇÓñÅ®µÄÏ´Á³Åè£¬±ÌË®ÖÕÄê²»¸É¡£ÓñÅ®ìô×ó±ßÊÇÒ»´¦É½ÑÂ(cliff)£¬
-ºÜÊÇ¶¸ÇÍ¡£
+çŽ‰å¥³ç¥ è£¡ä¾›å¥‰çš„åˆ°åº•æ˜¯å“ªä½çŽ‰å¥³ï¼Œæœ‰è¨±å¤šä¸åŒçš„èªªæ³•ï¼Œç¾åœ¨æ‰€èƒ½
+çœ‹åˆ°çš„åªä¸€å°Šå‘†æ¿çš„çŸ³åƒã€‚ç¥ ä¸­å¤§çŸ³ä¸Šæœ‰ä¸€è™•æ·±é™·ï¼Œå‡¹è™•ç©æ°´æ¸…ç¢§ï¼Œ
+é€™æ˜¯çŽ‰å¥³çš„æ´—è‡‰ç›†ï¼Œç¢§æ°´çµ‚å¹´ä¸å¹¹ã€‚çŽ‰å¥³ç¥ å·¦é‚Šæ˜¯ä¸€è™•å±±å´–(cliff)ï¼Œ
+å¾ˆæ˜¯é™¡å³­ã€‚
 LONG );
         set("outdoors", "huashan");
         set("exits", ([
                 "east" : __DIR__"yunu",
         ]));
         set("item_desc", ([
-                "cliff" : "ÓñÅ®ìôÏÂµÄÉ½ÑÂºÜÊÇ¶¸ÇÍ£¬ËÆºõÁ¬½ÓÁËÒ»ÌõÐ¡Â·¡£\n",
+                "cliff" : "çŽ‰å¥³ç¥ ä¸‹çš„å±±å´–å¾ˆæ˜¯é™¡å³­ï¼Œä¼¼ä¹Žé€£æŽ¥äº†ä¸€æ¢å°è·¯ã€‚\n",
         ]));
 
         set("resource/water", 1);
@@ -34,32 +34,32 @@ int do_jump(string arg)
 
         if (! arg || arg != "cliff")
         {
-                write("Äã´òËãÍùÄÄÀïÌø£¿\n");
+                write("ä½ æ‰“ç®—å¾€å“ªè£¡è·³ï¼Ÿ\n");
                 return 1;
         }
 
-        message_vision( HIY "$N" HIY "ÉîÎüÁËÒ»¿ÚÆø£¬·ÉÉíÏòÉ½ÑÂÌøÈ¥¡£\n" NOR, me);
+        message_vision( HIY "$N" HIY "æ·±å¸äº†ä¸€å£æ°£ï¼Œé£›èº«å‘å±±å´–è·³åŽ»ã€‚\n" NOR, me);
 
         if (n < 30)
         {
-                message_vision( HIR "½á¹û$N" HIR "²Ò½ÐÁËÒ»Éù£¬µøÏÂÁËÉ½ÑÂ"
-                                "¡£\n" NOR, this_player());
+                message_vision( HIR "çµæžœ$N" HIR "æ…˜å«äº†ä¸€è²ï¼Œè·Œä¸‹äº†å±±å´–"
+                                "ã€‚\n" NOR, this_player());
 
                 me->move(__DIR__"kuihua_2");
                 me->unconcious();
 
-                message("vision", HIR "Ö»Ìý" + me->name() + HIR "Ò»Éù²Ò½Ð"
-                                  "£¬´ÓÉÏÃæµÄÉ½·åÉÏÖØÖØµÄË¤ÁËÏÂÀ´¡£\n" NOR,
+                message("vision", HIR "åªè½" + me->name() + HIR "ä¸€è²æ…˜å«"
+                                  "ï¼Œå¾žä¸Šé¢çš„å±±å³°ä¸Šé‡é‡çš„æ‘”äº†ä¸‹ä¾†ã€‚\n" NOR,
                                   environment(me), ({me}) );
         } else
         {
-                message_vision( HIC "Ö»¼û$N" HIC "Éí·¨½Ã½¡£¬ÇáÇáÒ»×Ý£¬Æ®È»Âä"
-                                "ÖÁÑÂµ×¡£\n" NOR, this_player());
+                message_vision( HIC "åªè¦‹$N" HIC "èº«æ³•çŸ¯å¥ï¼Œè¼•è¼•ä¸€ç¸±ï¼Œé£„ç„¶è½"
+                                "è‡³å´–åº•ã€‚\n" NOR, this_player());
 
                 me->move(__DIR__"kuihua_2");
 
-                message("vision", HIC "Ö»¼û" + me->name() + HIC "´ÓÉÏÃæµÄÉ½·åÇáÇá"
-                                  "µÄÂäÁËÏÂÀ´¡£\n", environment(me), ({me}) );
+                message("vision", HIC "åªè¦‹" + me->name() + HIC "å¾žä¸Šé¢çš„å±±å³°è¼•è¼•"
+                                  "çš„è½äº†ä¸‹ä¾†ã€‚\n", environment(me), ({me}) );
         }
         return 1;
 }

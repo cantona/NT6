@@ -2,15 +2,15 @@
 inherit ITEM;
 void create()
 {
-        set_name(HIY "ÔªÉñÎåÐÐµ¤" NOR, ({"yuanshenwuxingdan"}));
+        set_name(HIY "å…ƒç¥žäº”è¡Œä¸¹" NOR, ({"yuanshenwuxingdan"}));
         set_weight(1);
         if (clonep())
                 set_default_object(__FILE__);
         else {  
-        	set("long", HIY "Ê¹ÓÃ£¨changewx ÎåÐÐ£©ÔªÉñÎåÐÐµ¤ºó¿ÉÖ¸¶¨¸ü»»ÔªÉñÎåÐÐÊôÐÔÒ»´Î¡£\n" + HIC
-        			"ÓµÓÐÕß£ºbing\n" NOR);
-                set("unit", "¿Å");
-                set("owner", "bing"); // °ó¶¨ÓµÓÐÕß
+        	set("long", HIY "ä½¿ç”¨ï¼ˆchangewx äº”è¡Œï¼‰å…ƒç¥žäº”è¡Œä¸¹å¾Œå¯æŒ‡å®šæ›´æ›å…ƒç¥žäº”è¡Œå±¬æ€§ä¸€æ¬¡ã€‚\n" + HIC
+        			"æ“æœ‰è€…ï¼šbing\n" NOR);
+                set("unit", "é¡†");
+                set("owner", "bing"); // ç¶å®šæ“æœ‰è€…
 	        set("no_drop", 1);set("no_give", 1);set("no_store", 1);set("no_sell", 1);
         }
         setup();
@@ -27,41 +27,41 @@ int do_use(string arg)
 	string wuxing;
 	
 	mapping wx = ([
-	   "½ð" : 0,
-	   "Ä¾" : 1,
-	   "Ë®" : 2,
-	   "»ð" : 3,
-	   "ÍÁ" : 4,
+	   "é‡‘" : 0,
+	   "æœ¨" : 1,
+	   "æ°´" : 2,
+	   "ç«" : 3,
+	   "åœŸ" : 4,
 	]);
 
 	me = this_player();
 
 	if (! arg )
-		return notify_fail("Ö¸Áî¸ñÊ½£ºchangewx [ÎåÐÐ]\n");
+		return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šchangewx [äº”è¡Œ]\n");
 
-	if (arg != "½ð" && arg != "Ä¾" && arg != "Ë®" &&
-	    arg != "ÍÁ" && arg !="»ð")
-	    	return notify_fail("ÎåÐÐÊäÈë´íÎó£¬·¶Î§£º½ðÄ¾Ë®»ðÍÁ£¡\n");
+	if (arg != "é‡‘" && arg != "æœ¨" && arg != "æ°´" &&
+	    arg != "åœŸ" && arg !="ç«")
+	    	return notify_fail("äº”è¡Œè¼¸å…¥éŒ¯èª¤ï¼ŒèŒƒåœï¼šé‡‘æœ¨æ°´ç«åœŸï¼\n");
 
 	wuxing = arg;
 	
 	arg = "yuanshenwuxingdan";
 
 	if (me->query("yuanshen/wuxing") == wx[wuxing])
-		return notify_fail("ÄãÎåÐÐÒÑ¾­ÊÇ" + wuxing + "ÊôÐÔÁË£¡\n");
+		return notify_fail("ä½ äº”è¡Œå·²ç¶“æ˜¯" + wuxing + "å±¬æ€§äº†ï¼\n");
 
 	if (! objectp(ob = present(arg, me)))
-		return notify_fail("ÄãÉíÉÏÃ»ÓÐÕâ¸ö¶«Î÷£¡\n");
+		return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™å€‹æ±è¥¿ï¼\n");
 
 
 	if (ob->query("owner") != me->query("id"))
-		return notify_fail(ob->name() + NOR "ÒÑ¾­ÓÚÆäËûÍæ¼Ò°ó¶¨£¡\n");
+		return notify_fail(ob->name() + NOR "å·²ç¶“äºŽå…¶ä»–çŽ©å®¶ç¶å®šï¼\n");
 	
 
-	tell_object(me, HIG "¹§Ï²£¡Äã·þÏÂ" + ob->name() + HIG "ºó£¬ÔªÉñÎåÐÐ±ä¸üÎª£º" HIC + wuxing + HIG "£¡\n");
+	tell_object(me, HIG "æ­å–œï¼ä½ æœä¸‹" + ob->name() + HIG "å¾Œï¼Œå…ƒç¥žäº”è¡Œè®Šæ›´ç‚ºï¼š" HIC + wuxing + HIG "ï¼\n");
 	
-	log_file("super/"+ filter_color(query("name")) , me->query("id") + " at " + ctime(time()) + " Ê¹ÓÃ" + ob->name() + 
-	                                                "ÔªÉñÎåÐÐ±ä¸üÎª£º" + wuxing + "£¡\n");
+	log_file("super/"+ filter_color(query("name")) , me->query("id") + " at " + ctime(time()) + " ä½¿ç”¨" + ob->name() + 
+	                                                "å…ƒç¥žäº”è¡Œè®Šæ›´ç‚ºï¼š" + wuxing + "ï¼\n");
 
 	me->set("yuanshen/wuxing", wx[wuxing]);
 	me->set("yuanshen/last_change_wuxing", time());

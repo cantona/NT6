@@ -2,11 +2,11 @@
 // BANGHUI_MASTER
 // by Find.
 
-// °´È¨ÏŞµÈ¼¶¶¨Òå
+// æŒ‰æ¬Šé™ç­‰ç´šå®šç¾©
 
 #include <banghui.h>
 
-// bid, bname Ò»´ÎÉè¶¨²»ÄÜÔÙ¸ü¸Ä¡£
+// bid, bname ä¸€æ¬¡è¨­å®šä¸èƒ½å†æ›´æ”¹ã€‚
 protected string bname, out_room, dir;
 protected nosave string bid;
 protected mapping
@@ -19,10 +19,10 @@ protected nosave string *banghui_levels = ({
 });
 
 protected mapping chinese_banghui_level = ([
-"a_master" : "°ïÖ÷",
-"b_master" : "»¤·¨",
-"c_master" : "ÏãÖ÷",
-"z_master" : "°ïÖÚ",
+"a_master" : "å¹«ä¸»",
+"b_master" : "è­·æ³•",
+"c_master" : "é¦™ä¸»",
+"z_master" : "å¹«çœ¾",
 ]);
 
 string query_chinese_banghui_level(string level)
@@ -30,7 +30,7 @@ string query_chinese_banghui_level(string level)
 	if(!undefinedp(chinese_banghui_level[level]))
 		return chinese_banghui_level[level];
 	else
-		return "°ïÖÚ";
+		return "å¹«çœ¾";
 }
 
 string query_player_bh_level(string id)
@@ -39,7 +39,7 @@ string query_player_bh_level(string id)
 
 }
 
-protected void get_banghui_id()	// ½¨Á¢µÄÊ±ºòÓÉ create() ºô½Ğ
+protected void get_banghui_id()	// å»ºç«‹çš„æ™‚å€™ç”± create() å‘¼å«
 {
 	string id;
 
@@ -63,14 +63,14 @@ protected int set_banghui_name(string name)
 	tmp = clr_ansi(name);
 
 	if((i < 2) || (i > 12))
-		return notify_fail("°ï»áµÄÃû×Ö±ØĞëÊ¹ÓÃ 1-6 ¸öºº×Ö¡£\n");
+		return notify_fail("å¹«æœƒçš„åå­—å¿…é ˆä½¿ç”¨ 1-6 å€‹æ¼¢å­—ã€‚\n");
 
 	while(i--)
 	{
 		int section;
 
                 if( tmp[i]<128 )
-			return notify_fail("°ï»áµÄÃû×Ö±ØĞëÊ¹ÓÃ *ºº×Ö*¡£\n");
+			return notify_fail("å¹«æœƒçš„åå­—å¿…é ˆä½¿ç”¨ *æ¼¢å­—*ã€‚\n");
 
 		if( i%2==0 )
 		{
@@ -78,12 +78,12 @@ protected int set_banghui_name(string name)
 
 			if( (section < 16)
 			|| (section > 87) )
-				return notify_fail("°ï»áµÄÃû×Ö±ØĞëÊ¹ÓÃ *³£ÓÃ* ºº×Ö¡£\n");
+				return notify_fail("å¹«æœƒçš„åå­—å¿…é ˆä½¿ç”¨ *å¸¸ç”¨* æ¼¢å­—ã€‚\n");
 		}
 	}
 
 	if(!BANGHUI_D->register_banghui_name(tmp))
-		return notify_fail("Õâ¸öÃû×ÖÒÑ¾­ÓĞÈËÊ¹ÓÃÁË£¬ÇëÁíÆğÒ»¸ö¡£\n");
+		return notify_fail("é€™å€‹åå­—å·²ç¶“æœ‰äººä½¿ç”¨äº†ï¼Œè«‹å¦èµ·ä¸€å€‹ã€‚\n");
 
 	bname = name;
 	save();
@@ -102,7 +102,7 @@ varargs protected int set_banghui_id(string id, string ref err)
 
 	if(!regexp(id, "^[a-zA-Z]+$"))
 	{
-		err = "°ï»áµÄ ID Ö»ÄÜÓÉĞ¡Ğ´Ó¢ÎÄµ¥´Ê×é³É¡£\n";
+		err = "å¹«æœƒçš„ ID åªèƒ½ç”±å°å¯«è‹±æ–‡å–®è©çµ„æˆã€‚\n";
 		return 0;
 	}
 
@@ -110,7 +110,7 @@ varargs protected int set_banghui_id(string id, string ref err)
 
 	if(file_size(dir_pre+id) != -1)
 	{
-		err = sprintf("[%s] Õâ¸ö ID ÒÑ¾­ÓĞÈËÊ¹ÓÃÁË£¬ÇëÁíÑ¡Ò»¸ö¡£\n", id);
+		err = sprintf("[%s] é€™å€‹ ID å·²ç¶“æœ‰äººä½¿ç”¨äº†ï¼Œè«‹å¦é¸ä¸€å€‹ã€‚\n", id);
 		return 0;
 	}
 }

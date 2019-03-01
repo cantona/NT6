@@ -2,14 +2,14 @@
 inherit NPC;
 void create()
 {
-        set_name("´ó°×ĞÜ", ({ "xiong" }) );
-        set("race", "Ò°ÊŞ");
+        set_name("å¤§ç™½ç†Š", ({ "xiong" }) );
+        set("race", "é‡ç¸");
         set("age", 6);
         set("con", 100);
         set("str", 100);
-        set("long", "Ò»Ö»Ã«³¤Éí¾Ş£¬×´Èç´óêôÅ£µÄ´ó°×ĞÜ¡£\n");
+        set("long", "ä¸€åªæ¯›é•·èº«å·¨ï¼Œç‹€å¦‚å¤§ç‰¯ç‰›çš„å¤§ç™½ç†Šã€‚\n");
         set("attitude", "aggressive");
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "Ç°×¦", "ºó×¦", "Î²°Í" }) );
+        set("limbs", ({ "é ­éƒ¨", "èº«é«”", "å‰çˆª", "å¾Œçˆª", "å°¾å·´" }) );
         set("verbs", ({ "bite", "claw" }) );
         set("combat_exp", 250000);
               set("chat_chance", 6);

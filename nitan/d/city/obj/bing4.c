@@ -1,4 +1,4 @@
-//bing4.c Èıºì±ı
+//bing4.c ä¸‰ç´…é¤…
 inherit ITEM;
 #include <ansi.h>
 
@@ -9,9 +9,9 @@ void init()
 
 void create()
 {
-        set_name(HIR "Èıºì±ı" NOR, ({"bing4", "sanhongbing"}));
-        set("unit", "¸ö");
-        set("long", "ÕâÊÇÒ»¸öÇåÏãµÄÈıºì±ı¡£\n");
+        set_name(HIR "ä¸‰ç´…é¤…" NOR, ({"bing4", "sanhongbing"}));
+        set("unit", "å€‹");
+        set("long", "é€™æ˜¯ä¸€å€‹æ¸…é¦™çš„ä¸‰ç´…é¤…ã€‚\n");
         set("no_get", 1);
         set("no_drop", 1);
         set("no_put", 1);
@@ -23,17 +23,17 @@ void create()
 int do_eat(string arg)
 {
         object me=this_player();
-        if (!id(arg))  return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+        if (!id(arg))  return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if( query("owner") != query("id", me) )
         {
-                write(HIR"ÄãÖ»ÄÜ³Ô×Ô¸öÓ®À´µÄ±ı¡£\n"NOR);
+                write(HIR"ä½ åªèƒ½åƒè‡ªå€‹è´ä¾†çš„é¤…ã€‚\n"NOR);
                 return 1;
         }
         if(arg=="bing4"||arg=="sanhongbing")
         {
                 addn("combat_exp", 668, me);
                 addn("potential", 198, me);
-                message_vision(HIY "$NÈı¿ÚÁ½¿Ú³ÔÏÂÒ»¿é$n¡£\n" NOR, this_player(), this_object());
+                message_vision(HIY "$Nä¸‰å£å…©å£åƒä¸‹ä¸€å¡Š$nã€‚\n" NOR, this_player(), this_object());
                 destruct(this_object());
         }
         return 1;

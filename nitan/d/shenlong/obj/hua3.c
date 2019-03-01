@@ -6,13 +6,13 @@ inherit ITEM;
 
 void create()
 {
-	set_name(HIR "¶Ï³¦»¨" NOR, ({"duanchang hua", "duanchang"}));
+	set_name(HIR "æ–·è…¸èŠ±" NOR, ({"duanchang hua", "duanchang"}));
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-        	set("unit", "¶ä");
-		set("long", "ÕâÊÇÒ»¶ä¶Ï³¦»¨£¬Í¨ÌåÍ¨ºì£¬ÏÊÄÛÓûµÎ£¬ÃÀÀöÒì³£¡£\n");
-        	set("no_get", "Äã¸ù±¾²»¸Ò½üÇ°¡£\n");
+        	set("unit", "æœµ");
+		set("long", "é€™æ˜¯ä¸€æœµæ–·è…¸èŠ±ï¼Œé€šé«”é€šç´…ï¼Œé®®å«©æ¬²æ»´ï¼Œç¾éº—ç•°å¸¸ã€‚\n");
+        	set("no_get", "ä½ æ ¹æœ¬ä¸æ•¢è¿‘å‰ã€‚\n");
 		set("only_do_effect", 1);
 	}
         setup();
@@ -20,8 +20,8 @@ void create()
 
 int do_effect(object me)
 {
-        message_vision("$N°Ñ" + name() + "ÈÓ½ø×ìÀï£¬¼¸ÏÂ¾ÍÍÌÁËÏÂÈ¥¡£\n", me);
-        set_temp("die_reason", "·şÏÂ¶Ï³¦»¨£¬ÖĞ¶¾ÉíÍöÁË", me);
+        message_vision("$NæŠŠ" + name() + "æ‰”é€²å˜´è£¡ï¼Œå¹¾ä¸‹å°±åäº†ä¸‹å»ã€‚\n", me);
+        set_temp("die_reason", "æœä¸‹æ–·è…¸èŠ±ï¼Œä¸­æ¯’èº«äº¡äº†", me);
 	me->die();
 	destruct(this_object());
 	return 1;

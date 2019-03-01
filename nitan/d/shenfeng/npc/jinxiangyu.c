@@ -5,14 +5,14 @@ inherit F_DEALER;
 
 void create()
 {
-        set_name("½ðÏæÓñ", ({ "jin xiangyu", "jin", "xiangyu" }));
-        set("title", "ÁúÃÅ¿ÍÕ»ÀÏ°åÄï");
+        set_name("é‡‘æ¹˜çŽ‰", ({ "jin xiangyu", "jin", "xiangyu" }));
+        set("title", "é¾é–€å®¢æ£§è€æ¿å¨˜");
         set("shen_type", 0);
-        set("gender", "Å®ÐÔ");
+        set("gender", "å¥³æ€§");
         set("per", 34);
-        set("long", "½ðÏæÓñÊÇ»ÆÍÁ¸ßÔ­Ò»´øÓÐÃûµÄ´óÃÀÈË¡£Ò»Ð©´ï¹Ù\n"
-                    "¹óÈË£¬½­ºþÀË×Ó³£³£ÔÚÕâÀïÐªÏ¢£¬ËùÒÔËý¶ÔÕâÒ»\n"
-                    "´øµÄÒ»¾ÙÒ»¶¯¶¼ÁËÈçÖ¸ÕÆ¡£\n");
+        set("long", "é‡‘æ¹˜çŽ‰æ˜¯é»ƒåœŸé«˜åŽŸä¸€å¸¶æœ‰åçš„å¤§ç¾Žäººã€‚ä¸€äº›é”å®˜\n"
+                    "è²´äººï¼Œæ±Ÿæ¹–æµªå­å¸¸å¸¸åœ¨é€™è£¡æ­‡æ¯ï¼Œæ‰€ä»¥å¥¹å°é€™ä¸€\n"
+                    "å¸¶çš„ä¸€èˆ‰ä¸€å‹•éƒ½äº†å¦‚æŒ‡æŽŒã€‚\n");
         set("combat_exp", 500);
         set("attitude", "friendly");
         set("vendor_goods", ({
@@ -46,12 +46,12 @@ void greeting(object ob)
         switch( random(2) )
         {
         case 0:
-                say(CYN "½ðÏæÓñÐ¦ÃÐÃÐµØËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-                  + CYN + "£¬¿ìÇë½øÀ´ºÈÍë¾Æ°É¡£\n" NOR);
+                say(CYN "é‡‘æ¹˜çŽ‰ç¬‘çœ¯çœ¯åœ°èªªé“ï¼šé€™ä½" + RANK_D->query_respect(ob)
+                  + CYN + "ï¼Œå¿«è«‹é€²ä¾†å–ç¢—é…’å§ã€‚\n" NOR);
                 break;
         case 1:
-                say(CYN "½ðÏæÓñËµµÀ£ºÓ´£¡ÕâÎ»" + RANK_D->query_respect(ob)
-                  + CYN + "¿ìÇë½ø£¬±¾µêÓÐ¸Õ³öÒ¤µÄºÃ¾Æ¡£\n" NOR);
+                say(CYN "é‡‘æ¹˜çŽ‰èªªé“ï¼šå–²ï¼é€™ä½" + RANK_D->query_respect(ob)
+                  + CYN + "å¿«è«‹é€²ï¼Œæœ¬åº—æœ‰å‰›å‡ºçª¯çš„å¥½é…’ã€‚\n" NOR);
                 break;
         }
 }

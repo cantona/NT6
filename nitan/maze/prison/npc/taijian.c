@@ -10,9 +10,9 @@ void set_players(object *ob) {
 void add_player(object ob) {
         if(member_array(ob,players)==-1) {
                 players += ({ob});
-                message_vision(BLU"$N¶Ô$nËµµÀ£ºĞ»Ğ»£¡\n"NOR,this_object(),ob);
+                message_vision(BLU"$Nå°$nèªªé“ï¼šè¬è¬ï¼\n"NOR,this_object(),ob);
         } else
-                message_vision(BLU"$N¶Ô$nËµµÀ£ºÄãÒÑ¾­´ğÓ¦°ïÃ¦£¬Äã²»»á·´»Ú°É£¡\n"NOR,this_object(),ob);
+                message_vision(BLU"$Nå°$nèªªé“ï¼šä½ å·²ç¶“ç­”æ‡‰å¹«å¿™ï¼Œä½ ä¸æœƒåæ‚”å§ï¼\n"NOR,this_object(),ob);
 }
 
 object* query_players() {
@@ -24,15 +24,15 @@ void play_sound_0(object speaker,int index);
 
 void create()
 {
-        set_name("Ì«¼à", ({ "tai jian","tai", "jian" }) );
-        set("gender", "ÎŞĞÔ" );
+        set_name("å¤ªç›£", ({ "tai jian","tai", "jian" }) );
+        set("gender", "ç„¡æ€§" );
         set("age", 40);
         set("str", 50);
         set("con", 30);
         set("dex", 22); 
         set("int", 50);
  
-        set("long","ËûÊÇ»Ê¹¬ÄÚµÄ»ÊµÛÉíÅÔ·Ç³£µÃ³èÒ»¸öÌ«¼à¡£");
+        set("long","ä»–æ˜¯çš‡å®®å…§çš„çš‡å¸èº«æ—éå¸¸å¾—å¯µä¸€å€‹å¤ªç›£ã€‚");
         set("max_qi", 8000000);
         set("eff_qi", 480000);        
         set("max_jing", 8500000);
@@ -87,11 +87,11 @@ void init()
 void greeting(object ob)
 {
         if( !ob || environment(ob) != environment() ) return;
-        if( query_temp("¿ª³¡°×½áÊø") || query_temp("¿ªÊ¼Ëµ¿ª³¡°×") || query_temp("ÈÎÎñ") )
+        if( query_temp("é–‹å ´ç™½çµæŸ") || query_temp("é–‹å§‹èªªé–‹å ´ç™½") || query_temp("ä»»å‹™") )
                 return;
                 
-        message_vision(CYN "$NÓĞÆøÎŞÁ¦µØËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob) +
-                "£¬ÄãÊÇÀ´Îª»Ê¹¬Çå³ıÅÑÄæµÄÂğ£¿£¿(answer yes/no)\n" NOR, this_object(), ob);
+        message_vision(CYN "$Næœ‰æ°£ç„¡åŠ›åœ°èªªé“ï¼šé€™ä½" + RANK_D->query_respect(ob) +
+                "ï¼Œä½ æ˜¯ä¾†ç‚ºçš‡å®®æ¸…é™¤å›é€†çš„å—ï¼Ÿï¼Ÿ(answer yes/no)\n" NOR, this_object(), ob);
 } 
 
 int do_answer(string arg) {
@@ -100,13 +100,13 @@ int do_answer(string arg) {
                         return 0;
                 if(present("tape",environment()))
                         return 0;
-                set_temp("¿ªÊ¼Ëµ¿ª³¡°×",1);
+                set_temp("é–‹å§‹èªªé–‹å ´ç™½",1);
                 set_temp("in_speech", 1);
                 play_sound_0(this_object(),0);
         } else if(arg=="no") {
-                message_vision(BLU"$NËµµÀ£ºË­ÏëÌıÄãÕâ¸öÌ«¼à·Ï»°£¡\n",this_player());
+                message_vision(BLU"$Nèªªé“ï¼šèª°æƒ³è½ä½ é€™å€‹å¤ªç›£å»¢è©±ï¼\n",this_player());
         } else
-                return notify_fail("ÄãÒª»Ø´ğÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦å›ç­”ä»€éº¼ï¼Ÿ\n");
         return 1;
 }
 
@@ -117,14 +117,14 @@ void play_sound_0(object speaker,int index) {
                 return;        
         switch (index)  {
                 case(0):
-                        tell_room(environment(),CYN"Ì«¼àËµµÀ£ºÌìÀÎ×Ü¹ÜÌ«¼à×Ü¹ÜÀîÁ«Ó¢ÔÚÌìÀÎÖĞ¶ÍÁ¶³öÒ»ÅúËÀÊ¿À´´ÌÉ±Ê¥ÉÏ......\n"NOR);
+                        tell_room(environment(),CYN"å¤ªç›£èªªé“ï¼šå¤©ç‰¢ç¸½ç®¡å¤ªç›£ç¸½ç®¡æè“®è‹±åœ¨å¤©ç‰¢ä¸­é›ç…‰å‡ºä¸€æ‰¹æ­»å£«ä¾†åˆºæ®ºè–ä¸Š......\n"NOR);
                         break;
                 case(1):
-                        tell_room(environment(),CYN"Ì«¼àËµµÀ£ºÓÉÓÚÌìÀÎËÀÊ¿¸ö¸ö¶¼ÊôÓÚÎäÁÖÈËÊÏ£¬Îä¹¦¸ßÇ¿£¬ËùÒÔÊ¥ÉÏÑ°Çó¸÷Î»ÓÂÊ¿Ç°À´°ïÖú¡£\n"NOR);
+                        tell_room(environment(),CYN"å¤ªç›£èªªé“ï¼šç”±äºå¤©ç‰¢æ­»å£«å€‹å€‹éƒ½å±¬äºæ­¦æ—äººæ°ï¼Œæ­¦åŠŸé«˜å¼·ï¼Œæ‰€ä»¥è–ä¸Šå°‹æ±‚å„ä½å‹‡å£«å‰ä¾†å¹«åŠ©ã€‚\n"NOR);
                         break;
                 case(2):
-                        tell_room(environment(),CYN"Ì«¼àËµµÀ£ºÄãÔ¸ÒâÎª¹¬Í¢ÇåÀíÅÑÄæ£¬²ù³ıÀîÁ«Ó¢Âğ£¿(accept yes/no)\n"NOR);
-                        speaker->set_temp("¿ª³¡°×½áÊø",1);
+                        tell_room(environment(),CYN"å¤ªç›£èªªé“ï¼šä½ é¡˜æ„ç‚ºå®®å»·æ¸…ç†å›é€†ï¼ŒéŸé™¤æè“®è‹±å—ï¼Ÿ(accept yes/no)\n"NOR);
+                        speaker->set_temp("é–‹å ´ç™½çµæŸ",1);
                         break;
                 default: 
                         speaker->delete_temp("in_speech");
@@ -137,30 +137,30 @@ void play_sound_0(object speaker,int index) {
 int do_accept(string arg) {
         object ob,*team;
         object me = this_player();
-        if(!query_temp("¿ª³¡°×½áÊø"))
+        if(!query_temp("é–‹å ´ç™½çµæŸ"))
                 return 0;
-        if(query_temp("ÈÎÎñ"))
+        if(query_temp("ä»»å‹™"))
                 return 0;
         if(arg=="yes") {                
-                delete_temp("¿ª³¡°×½áÊø");
+                delete_temp("é–‹å ´ç™½çµæŸ");
                 team = me->query_team();
                 if(!team || sizeof(team)==0)
                         team = ({ me });
                 set_players(team);
-                set_temp("ÈÎÎñ", 1);
+                set_temp("ä»»å‹™", 1);
                 ob = new("/maze/prison/npc/obj/key");
                 ob->move(me, 1);
-                tell_room(environment(),CYN"Ì«¼àËµµÀ£ºÕâÊÇ½øÈëÌìÀÎµÄÔ¿³×£¬ÏÖÔÚ½»¸øÄã£¬Ï£Íû" + RANK_D->query_respect(me) + 
-                        "ÄÜÍê³ÉÊ¥ÉÏ·¢²¼ÏÂÀ´µÄÈÎÎñ¡£\n" NOR);
-                message_vision(HIY "$N" HIY "Ëµ°Õ" HIY "±ãÁì×Å$n" HIY "¿ì²½³¯µØÉÏÀÎ·¿×ßÈ¥¡£\n\n" NOR, this_object(), me);
+                tell_room(environment(),CYN"å¤ªç›£èªªé“ï¼šé€™æ˜¯é€²å…¥å¤©ç‰¢çš„é‘°åŒ™ï¼Œç¾åœ¨äº¤çµ¦ä½ ï¼Œå¸Œæœ›" + RANK_D->query_respect(me) + 
+                        "èƒ½å®Œæˆè–ä¸Šç™¼å¸ƒä¸‹ä¾†çš„ä»»å‹™ã€‚\n" NOR);
+                message_vision(HIY "$N" HIY "èªªç½·" HIY "ä¾¿é ˜è‘—$n" HIY "å¿«æ­¥æœåœ°ä¸Šç‰¢æˆ¿èµ°å»ã€‚\n\n" NOR, this_object(), me);
                 me->move("/maze/prison/tianlao");
-                tell_object(me, CYN + name() + "ËµµÀ£º¾ÍÊÇÕâÀï£¬½ÓÏÂÀ´¾Í¿´ÄúÁË¡£\n"
-                        HIC + name() + "ËµÍê±ã¼±¼±Ã¦Ã¦¸ÏÁË»ØÈ¥¡£\n" NOR);                
+                tell_object(me, CYN + name() + "èªªé“ï¼šå°±æ˜¯é€™è£¡ï¼Œæ¥ä¸‹ä¾†å°±çœ‹æ‚¨äº†ã€‚\n"
+                        HIC + name() + "èªªå®Œä¾¿æ€¥æ€¥å¿™å¿™è¶•äº†å›å»ã€‚\n" NOR);                
         }        
         else if(arg=="no") {
-                delete_temp("¿ª³¡°×½áÊø");
-                delete_temp("¿ªÊ¼Ëµ¿ª³¡°×");
-                message_vision(BLU"$NËµµÀ£ºÃ»ºÃ´¦µÄÊÂÇéÎÒ¿É²»¸É£¡\n",this_player());
+                delete_temp("é–‹å ´ç™½çµæŸ");
+                delete_temp("é–‹å§‹èªªé–‹å ´ç™½");
+                message_vision(BLU"$Nèªªé“ï¼šæ²’å¥½è™•çš„äº‹æƒ…æˆ‘å¯ä¸å¹¹ï¼\n",this_player());
         }
         else
                 return 0;

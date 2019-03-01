@@ -1,6 +1,6 @@
 // This program is a part of NT MudLIB
 
-// ÅÐ¶ÏÊÇ·ñ¿ÉÒÔÓÃ LPC->C ±àÒë
+// åˆ¤æ–·æ˜¯å¦å¯ä»¥ç”¨ LPC->C ç·¨è­¯
 int valid_compile_to_c()
 {
             return 1;

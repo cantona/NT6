@@ -1,4 +1,4 @@
-//houroad3.c                四川唐门—青石小路
+//houroad3.c                鍥涘窛鍞愰杸鈹�闈掔煶灏忚矾
 
 #include <ansi.h>
 #include <room.h>
@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "青石小路");
+        set("short", "闈掔煶灏忚矾");
         set("long",
-"这里是后宅西侧的青石小路。隐隐的可以听到远处传来清脆的流水声\n"
-"，展目望去已经可以看见在风中摇摆的片片荷叶。一阵清风吹过带来一股\n"
-"荷花清香。\n"
+"閫欒！鏄緦瀹呰タ鍋寸殑闈掔煶灏忚矾銆傞毐闅辩殑鍙互鑱藉埌閬犺檿鍌充締娓呰剢鐨勬祦姘磋伈\n"
+"锛屽睍鐩湜鍘诲凡缍撳彲浠ョ湅瑕嬪湪棰ㄤ腑鎼栨摵鐨勭墖鐗囪嵎钁夈�備竴闄ｆ竻棰ㄥ惞閬庡付渚嗕竴鑲n"
+"鑽疯姳娓呴銆俓n"
 );
         set("exits", ([
                         "east" : __DIR__"houroad2",

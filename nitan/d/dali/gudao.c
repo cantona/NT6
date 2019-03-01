@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-        set("short","�ŵ�");
+        set("short","古道");
         set("long",@LONG
-һ��ʯ��ŵ���������ľ�Դ䣬ɽ��ƽ����������һ���޼ʵ���
-˫���ɴ�ɭ�֡����������һƬ��ΰ������һ���������ĺ�ǽ������
-Խ��ǽͷ�ɼ�һ����¥���������Ǵ�����ʤ�廪¥��
+一條石板古道，兩邊樹木蒼翠，山勢平緩，南面是一望無際的西
+雙版納大森林。大道北面有一片宏偉建築，一堵裡許長的紅牆隔開，
+越過牆頭可見一座高樓聳立，正是大理名勝五華樓。
 LONG);
         set("outdoors", "dalis");
         set("exits",([ /* sizeof() == 1 */

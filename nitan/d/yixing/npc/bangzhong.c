@@ -14,12 +14,12 @@ int do_destroy(object);
 
 void create()
 {
-        set_name("°ïÖÚ", ({ "bangzhong" }));
-        set("gender", "ÄĞĞÔ");
-        set("party/party_name", HIC"³¤ÀÖ°ï"NOR);
-        set("party/rank", "±ª½İÌÃ");
+        set_name("å¹«çœ¾", ({ "bangzhong" }));
+        set("gender", "ç”·æ€§");
+        set("party/party_name", HIC"é•·æ¨‚å¹«"NOR);
+        set("party/rank", "è±¹æ·å ‚");
         set("age", 20 + random(10));
-        set("long", "Ò»ÃûÉí²Ä¸ß´óµÄ×³ºº£¬ÂúÁ³É±Æø£¬Ò»¸¶Ğ×Éñ¶ñÉ·µÄÄ£Ñù¡£\n");
+        set("long", "ä¸€åèº«æé«˜å¤§çš„å£¯æ¼¢ï¼Œæ»¿è‡‰æ®ºæ°£ï¼Œä¸€ä»˜å…‡ç¥æƒ¡ç…çš„æ¨¡æ¨£ã€‚\n");
         set("attitude", "friendly");
         set("shen_type", -1);
 
@@ -75,12 +75,12 @@ int auto_check()
 
         room = environment();
         if( room != dest ) {
-                message("vision", me->name() + "¼±¼±Ã¦Ã¦µØÀë¿ªÁË¡£\n", room, ({me}));
+                message("vision", me->name() + "æ€¥æ€¥å¿™å¿™åœ°é›¢é–‹äº†ã€‚\n", room, ({me}));
                 me->move(dest);
-                message("vision", me->name() + "×ßÁË¹ıÀ´¡£\n", dest, ({me}));
+                message("vision", me->name() + "èµ°äº†éä¾†ã€‚\n", dest, ({me}));
 
                 me->set_leader(ob);
-                message_vision("$N³Ï»Ì³Ï¿ÖµØËµµÀ£ºÍû°ïÖ÷Ë¡×ï£¡\n", me);
+                message_vision("$Nèª æƒ¶èª æåœ°èªªé“ï¼šæœ›å¹«ä¸»æ•ç½ªï¼\n", me);
                 return 1;
         }
 
@@ -92,7 +92,7 @@ int auto_check()
 
 int do_destroy(object ob)
 {
-        message("vision", ob->name() + "¼±¼±Ã¦Ã¦µØÀë¿ªÁË¡£\n", environment(ob), ({ob}));
+        message("vision", ob->name() + "æ€¥æ€¥å¿™å¿™åœ°é›¢é–‹äº†ã€‚\n", environment(ob), ({ob}));
 
         destruct(ob);
         return 1;
@@ -109,7 +109,7 @@ int accept_kill(object me)
         ||  ob->is_busy()
         ||  ob->is_killing() ) return 1;
 
-        message_vision("$N¶Ô$nºÈµÀ£º¸ÒÉËÎÒµÜĞÖ£¬µ¨×Ó²»Ğ¡£¡\n", ob, me);
+        message_vision("$Nå°$nå–é“ï¼šæ•¢å‚·æˆ‘å¼Ÿå…„ï¼Œè†½å­ä¸å°ï¼\n", ob, me);
         ob->kill_ob(me);
         return 1;
 }
@@ -130,7 +130,7 @@ void die()
                 record = bonus + random(bonus);
                 addn("combat_exp", record, killer);
 
-                log_file("BangJob",sprintf("%sÓÚ%sÊ±ÒòÉ±ÈËÊ¾ÍşµÃ%s¾­Ñéµã\n",query("name", killer),ctime(time()),chinese_number(record)));
+                log_file("BangJob",sprintf("%säº%sæ™‚å› æ®ºäººç¤ºå¨å¾—%sç¶“é©—é»\n",query("name", killer),ctime(time()),chinese_number(record)));
 
                 bonus /= 4;
                 if( obj = present("bang ling", killer) ) {

@@ -2,11 +2,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("ËáĞã²Å", ({ "xiu cai", "xiu", "cai" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("é…¸ç§€æ‰", ({ "xiu cai", "xiu", "cai" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 28);
         set("long",
-        "Ò»¸öåååİµÄĞã²Å£¬Ã»Ê²Ã´Ñ§ÎÊÈ´×ÔÎÊÑ§Ê¶Ô¨²©¡£\n");
+        "ä¸€å€‹é‚‹é¢çš„ç§€æ‰ï¼Œæ²’ä»€éº¼å­¸å•å»è‡ªå•å­¸è­˜æ·µåšã€‚\n");
         set("shen_type", 1);
         set("combat_exp", 10000);
        set("str", 10);

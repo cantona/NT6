@@ -8,13 +8,13 @@ inherit WRISTS;
  
 void create()
 {
-        set_name(HIY "Éñ" HIW "Ö®" HIM "×£¸£" NOR YEL "»¤Íó" NOR, ({ "zhufu wrists", "wrists", "hu wan", "huwan" }) );
+        set_name(HIY "ç¥" HIW "ä¹‹" HIM "ç¥ç¦" NOR YEL "è­·è…•" NOR, ({ "zhufu wrists", "wrists", "hu wan", "huwan" }) );
         set_weight(100);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ë«");
-                set("long", "ÕâÊÇÒ»¼ş²¼ÖÊµÄ»¤Íó£¬ÓÃÒÔ±£»¤Íó²¿¡£\n"); 
+                set("unit", "é›™");
+                set("long", "é€™æ˜¯ä¸€ä»¶å¸ƒè³ªçš„è­·è…•ï¼Œç”¨ä»¥ä¿è­·è…•éƒ¨ã€‚\n"); 
                 set("value", 1000); 
                 set("material", "cloth");
                 set("armor_prop/armor", 20);
@@ -23,7 +23,7 @@ void create()
         set("auto_load", 1); 
         set("mod_mark", "A2015");  
         set("mod_level", "M2010");  
-        set("mod_name", HIY"Éñ"HIW"Ö®"HIM"×£¸£"NOR YEL"Ì××°"NOR); 
+        set("mod_name", HIY"ç¥"HIW"ä¹‹"HIM"ç¥ç¦"NOR YEL"å¥—è£"NOR); 
 
         set("enchase", ([ 
                 "flute" : 1,
@@ -37,7 +37,7 @@ void create()
         set("insert", ([ /* sizeof() == 1 */
                 "1" : ([ /* sizeof() == 3 */
                         "id" : "magic stone",
-                        "name" : HIM"ĞşÊ¯"NOR,
+                        "name" : HIM"ç„çŸ³"NOR,
                         "apply_prop" : ([ /* sizeof() == 2 */
                                 "armor1" : 30,
                                 "int" : 1,

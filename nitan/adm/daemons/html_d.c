@@ -5,11 +5,11 @@
 #include <time.h>
 
 //----------------------------------------------------------------------
-// °×µ×É« HEADER ----------------------------------------------------------------------
+// ç™½åº•è‰² HEADER ----------------------------------------------------------------------
 //----------------------------------------------------------------------
 string WHITE_HEADER = @LONG
 <html>
-<!-- Created by Ğ¦°Á½­ºş %^UPDATETIME%^ -->
+<!-- Created by ç¬‘å‚²æ±Ÿæ¹– %^UPDATETIME%^ -->
 <head>
   <meta http-equiv=Content-Type content="text/html; charset=gb2312">
   %^REFRESH%^
@@ -22,7 +22,7 @@ string WHITE_HEADER = @LONG
 <body bgcolor="#ffffff" text="#55555" link="#666688" vlink="#666688">
 <table width=80% align=center>
   <tr>
-    <td align=center style='font-familiy:verdana;font-size:15px;color:#555;'>±¾Ò³ÃæÓÉMUDÏµÍ³×Ô¶¯½¨ÖÃ£¬¸üĞÂÊ±¼äÎª %^UPDATETIME%^</td>
+    <td align=center style='font-familiy:verdana;font-size:15px;color:#555;'>æœ¬é é¢ç”±MUDç³»çµ±è‡ªå‹•å»ºç½®ï¼Œæ›´æ–°æ™‚é–“ç‚º %^UPDATETIME%^</td>
   </tr>
 </table>
 <hr width=80% align=center><p>
@@ -30,11 +30,11 @@ LONG;
 
 
 //----------------------------------------------------------------------
-// ºÚµ×É« HEADER ----------------------------------------------------------------------
+// é»‘åº•è‰² HEADER ----------------------------------------------------------------------
 //----------------------------------------------------------------------
 string BLACK_HEADER = @LONG
 <html>
-<!-- Created by Ğ¦°Á½­ºş %^UPDATETIME%^ -->
+<!-- Created by ç¬‘å‚²æ±Ÿæ¹– %^UPDATETIME%^ -->
 <head>
   <meta http-equiv=Content-Type content="text/html; charset=gb2312">
   %^REFRESH%^
@@ -47,7 +47,7 @@ string BLACK_HEADER = @LONG
 <body bgcolor="#000000" text="#bbbbbb" link="#666688" vlink="#666688">
 <table width=80% align=center>
   <tr>
-    <td align=center style='font-familiy:verdana;font-size:15px;color:#bbb;'>±¾Ò³ÃæÓÉMUDÏµÍ³×Ô¶¯½¨ÖÃ£¬¸üĞÂÊ±¼äÎª %^UPDATETIME%^</td>
+    <td align=center style='font-familiy:verdana;font-size:15px;color:#bbb;'>æœ¬é é¢ç”±MUDç³»çµ±è‡ªå‹•å»ºç½®ï¼Œæ›´æ–°æ™‚é–“ç‚º %^UPDATETIME%^</td>
   </tr>
 </table>
 <hr width=80% align=center><p>
@@ -55,35 +55,35 @@ LONG;
 
 
 //----------------------------------------------------------------------
-// °×µ×É« FOOTER ----------------------------------------------------------------------
+// ç™½åº•è‰² FOOTER ----------------------------------------------------------------------
 //----------------------------------------------------------------------
 string WHITE_FOOTER = @LONG
 <p><hr width=80% align=center>
 <table width=80% align=center>
   <tr>
-    <td align=center><font face=verdana size=2 color=555555>Copyright &copy;2000-%^YEAR%^ <a href="http://www.muds.cn"><font color=111111><u>Ğ¦°Á½­ºş</u></a> <font color=555555> All Rights Reserved</font></td>
+    <td align=center><font face=verdana size=2 color=555555>Copyright &copy;2000-%^YEAR%^ <a href="http://www.muds.cn"><font color=111111><u>ç¬‘å‚²æ±Ÿæ¹–</u></a> <font color=555555> All Rights Reserved</font></td>
 
   </tr>
 </table>
 </body>
 </html>
-<!-- Created by Ğ¦°Á½­ºş %^UPDATETIME%^ -->
+<!-- Created by ç¬‘å‚²æ±Ÿæ¹– %^UPDATETIME%^ -->
 LONG;
 
 //----------------------------------------------------------------------
-// ºÚµ×É« FOOTER ----------------------------------------------------------------------
+// é»‘åº•è‰² FOOTER ----------------------------------------------------------------------
 //----------------------------------------------------------------------
 string BLACK_FOOTER = @LONG
 <p><hr width=80% align=center>
 <table width=80% align=center>
   <tr>
-    <td align=center><font face=verdana size=2 color=bbbbbb>Copyright &copy;2000-%^YEAR%^ <a href="http://www.muds.cn"><font color=fffff><u>Ğ¦°Á½­ºş</u></a> <font color=bbbbbb> All Rights Reserved</font></td>
+    <td align=center><font face=verdana size=2 color=bbbbbb>Copyright &copy;2000-%^YEAR%^ <a href="http://www.muds.cn"><font color=fffff><u>ç¬‘å‚²æ±Ÿæ¹–</u></a> <font color=bbbbbb> All Rights Reserved</font></td>
 
   </tr>
 </table>
 </body>
 </html>
-<!-- Created by Ğ¦°Á½­ºş %^UPDATETIME%^ -->
+<!-- Created by ç¬‘å‚²æ±Ÿæ¹– %^UPDATETIME%^ -->
 LONG;
 
 //----------------------------------------------------------------------
@@ -170,11 +170,11 @@ mapping ANSI_TO_16;
 
 string translate_to_html(string content)
 {
-	// Ìæ´ú×ÖÔª
+	// æ›¿ä»£å­—å…ƒ
 	content = replace_string(content, "  ", "&nbsp;&nbsp;&nbsp;&nbsp;");
-	content = replace_string(content,"¡õ","¨€");
-	content = replace_string(content,"¦£","£Ô");
-	content = replace_string(content,"¦Ø","£÷");
+	content = replace_string(content,"â–¡","â–¡");
+	content = replace_string(content,"Î“","ï¼´");
+	content = replace_string(content,"Ï‰","ï½—");
 	content = replace_string(content, "\n", "<br>\n");
 
 	foreach(string color, string b16 in ANSI_TO_16)
@@ -198,9 +198,9 @@ void make_html(string content, mapping index)
 	string text;
 	string bgcolor = index["bgcolor"] || "white";
 	int fontsize = index["fontsize"] || 12;
-	string fontface = index["fontface"] || "ĞÂËÎÌå";
+	string fontface = index["fontface"] || "æ–°å®‹é«”";
 	string filename = index["filename"] || "/www/tmp.html";
-	string title = index["title"] || "ÎŞ±êÌâ";
+	string title = index["title"] || "ç„¡æ¨™é¡Œ";
 	int refresh = index["refresh"];
 	
 
@@ -254,23 +254,23 @@ void create_mudlist_html()
         
         muds = MUDLIST_D->query_mudlist();
         
-        text  = "<DIV style='BORDER-BOTTOM: #aaa 3px double; WIDTH: 200px; COLOR: #333; FONT-SIZE: 16px'><IMG src='muds/mudlist/subtitle.gif'>ÖĞÎÄÄà°ÍÁĞ±í</DIV><BR>";
-        text += "<P>¡¡ÒÔÏÂÁĞ³öÄ¿Ç°´óÂ½´ó²¿·İÒÑÖªµÄÄà°Í <ACRONYM title=Äà°ÍÓÎÏ·>MUD</ACRONYM>"; 
-        text += "µÄ¼´Ê±ÁĞ±í£¬²¢Õì²âÁ¬Ïß×´¿öÓëÏßÉÏÍæ¼ÒÈËÊı¹©¸÷Î»²Î¿¼£¬ÈôÄúÏëÍÆ¼öÄ³¸öÖĞÎÄÄà°ÍÕ¾Ì¨£¬ÇëÓÃZmudµÇÂ¼ÓÎÏ· muds.cn 5000 Óë Lonely ÁªÏµ¡£</P>";
-        text += "<UL><LI class=level1><DIV class=li>ÈôÄúµÄÍøÒ³ä¯ÀÀÆ÷Ö§³Ö JavaScript £¬°´À¸Î»¿ÉÒÀÑ¡ÔñÅÅĞò¡£</DIV>";
-        text += "<LI class=level1><DIV class=li>ÉÏÏßÈËÊı N/A ÎªÏµÍ³ÎŞ´ÓµÃÖª´Ë¼ä <ACRONYM title=Äà°ÍÓÎÏ·>MUD</ACRONYM> Ö®ÈËÊı¡£</DIV></LI></UL><P>";
+        text  = "<DIV style='BORDER-BOTTOM: #aaa 3px double; WIDTH: 200px; COLOR: #333; FONT-SIZE: 16px'><IMG src='muds/mudlist/subtitle.gif'>ä¸­æ–‡æ³¥å·´åˆ—è¡¨</DIV><BR>";
+        text += "<P>ã€€ä»¥ä¸‹åˆ—å‡ºç›®å‰å¤§é™¸å¤§éƒ¨ä»½å·²çŸ¥çš„æ³¥å·´ <ACRONYM title=æ³¥å·´éŠæˆ²>MUD</ACRONYM>"; 
+        text += "çš„å³æ™‚åˆ—è¡¨ï¼Œä¸¦åµæ¸¬é€£ç·šç‹€æ³èˆ‡ç·šä¸Šç©å®¶äººæ•¸ä¾›å„ä½åƒè€ƒï¼Œè‹¥æ‚¨æƒ³æ¨è–¦æŸå€‹ä¸­æ–‡æ³¥å·´ç«™å°ï¼Œè«‹ç”¨Zmudç™»éŒ„éŠæˆ² muds.cn 5000 èˆ‡ Lonely è¯ç³»ã€‚</P>";
+        text += "<UL><LI class=level1><DIV class=li>è‹¥æ‚¨çš„ç¶²é ç€è¦½å™¨æ”¯æŒ JavaScript ï¼ŒæŒ‰æ¬„ä½å¯ä¾é¸æ“‡æ’åºã€‚</DIV>";
+        text += "<LI class=level1><DIV class=li>ä¸Šç·šäººæ•¸ N/A ç‚ºç³»çµ±ç„¡å¾å¾—çŸ¥æ­¤é–“ <ACRONYM title=æ³¥å·´éŠæˆ²>MUD</ACRONYM> ä¹‹äººæ•¸ã€‚</DIV></LI></UL><P>";
         text += "<SCRIPT language=javascript type=text/javascript src='muds/mudlist/sorttable.js'></SCRIPT></P><P>";
         
         text += "<TABLE style='BORDER-BOTTOM: #aaa 3px double; BORDER-LEFT: #aaa 3px double; PADDING-BOTTOM: 3px; PADDING-LEFT: 3px; WIDTH: 100%; PADDING-RIGHT: 3px; FONT-SIZE: 13px; BORDER-TOP: #aaa 3px double; BORDER-RIGHT: #aaa 3px double; PADDING-TOP: 3px' border=0 cellSpacing=0 cellPadding=0>";
-        text += "<TBODY><TR><TD><TABLE width='100%'><TBODY><TR><TD width='50%'>Ä¿Ç°¹²ÓĞ" +sizeof(muds)+ "¸öÄà°Í</TD><TD width='50%' align=right>×î½ü¸üĞÂÊ±¼ä£º"+TIME_D->replace_ctime(time())+"</TD></TR></TBODY></TABLE>";
+        text += "<TBODY><TR><TD><TABLE width='100%'><TBODY><TR><TD width='50%'>ç›®å‰å…±æœ‰" +sizeof(muds)+ "å€‹æ³¥å·´</TD><TD width='50%' align=right>æœ€è¿‘æ›´æ–°æ™‚é–“ï¼š"+TIME_D->replace_ctime(time())+"</TD></TR></TBODY></TABLE>";
         text += "<TABLE style='WIDTH: 100%; FONT-SIZE: 13px; BORDER-TOP: #555 1px solid' id=mudlist class=sortable border=0 cellSpacing=0>";
         text += "<TBODY><TR>";
-        text += "<TD style='BORDER-BOTTOM: #555 1px solid; PADDING-BOTTOM: 3px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; PADDING-TOP: 3px' bgColor=#efefdf>Äà°ÍÃû³Æ</TD>";
-        text += "<TD style='BORDER-BOTTOM: #555 1px solid; PADDING-BOTTOM: 3px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; PADDING-TOP: 3px' bgColor=#efefdf>ÍøÂçÎ»ÖÃ</TD>";
-        text += "<TD style='BORDER-BOTTOM: #555 1px solid; PADDING-BOTTOM: 3px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; PADDING-TOP: 3px' bgColor=#efefdf align=center>Á¬½Ó²º</TD>";
-        text += "<TD style='BORDER-BOTTOM: #555 1px solid; PADDING-BOTTOM: 3px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; PADDING-TOP: 3px' bgColor=#efefdf align=center>Ä¿Ç°×´Ì¬</TD>";
-        text += "<TD style='BORDER-BOTTOM: #555 1px solid; PADDING-BOTTOM: 3px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; PADDING-TOP: 3px' bgColor=#efefdf align=center>ÏßÉÏÈË”µ</TD>";
-        text += "<TD style='BORDER-BOTTOM: #555 1px solid; PADDING-BOTTOM: 3px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; PADDING-TOP: 3px' bgColor=#efefdf align=center>×îºó½Ó´¥Ê±¼ä</TD></TR>"; 
+        text += "<TD style='BORDER-BOTTOM: #555 1px solid; PADDING-BOTTOM: 3px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; PADDING-TOP: 3px' bgColor=#efefdf>æ³¥å·´åç¨±</TD>";
+        text += "<TD style='BORDER-BOTTOM: #555 1px solid; PADDING-BOTTOM: 3px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; PADDING-TOP: 3px' bgColor=#efefdf>ç¶²çµ¡ä½ç½®</TD>";
+        text += "<TD style='BORDER-BOTTOM: #555 1px solid; PADDING-BOTTOM: 3px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; PADDING-TOP: 3px' bgColor=#efefdf align=center>é€£æ¥åŸ </TD>";
+        text += "<TD style='BORDER-BOTTOM: #555 1px solid; PADDING-BOTTOM: 3px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; PADDING-TOP: 3px' bgColor=#efefdf align=center>ç›®å‰ç‹€æ…‹</TD>";
+        text += "<TD style='BORDER-BOTTOM: #555 1px solid; PADDING-BOTTOM: 3px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; PADDING-TOP: 3px' bgColor=#efefdf align=center>ç·šä¸Šäººâ–¡</TD>";
+        text += "<TD style='BORDER-BOTTOM: #555 1px solid; PADDING-BOTTOM: 3px; PADDING-LEFT: 3px; PADDING-RIGHT: 3px; PADDING-TOP: 3px' bgColor=#efefdf align=center>æœ€å¾Œæ¥è§¸æ™‚é–“</TD></TR>"; 
         
         mudnamesort = sort_array(keys(muds)-({0}), (: mudlist_sort($(muds), $1, $2) :)) ;
         foreach(ipport in mudnamesort)
@@ -298,7 +298,7 @@ void create_mudlist_html()
                 else
                         lasttime = "";
                 
-                cname = data["MUD_CHINESE_NAME"]||"--Î´ÖªÃû³Æ--";
+                cname = data["MUD_CHINESE_NAME"]||"--æœªçŸ¥åç¨±--";
                 ename = data["MUD_ENGLISH_NAME"]||"--Unknown--";
                 
                 i++;
@@ -310,7 +310,7 @@ void create_mudlist_html()
                 msg += "<TD style='BORDER-BOTTOM: #fff 1px solid; FONT-SIZE: 15px' "+str+">";
                 msg += "<A href='telnet://"+ip+":"+port+"/'><FONT color=#000000>"+ip+"</FONT></A></TD>";
                 msg += "<TD style='BORDER-BOTTOM: #fff 1px solid' "+str+" align=center>"+port+"</TD>";
-                msg += "<TD style='BORDER-BOTTOM: #fff 1px solid; "+(status?"COLOR: #5f5' bgColor=#005f00":"COLOR: #f55' bgColor=#5f0000")+" align=center>"+(status?"¡ğ":"¨w")+"</TD>";
+                msg += "<TD style='BORDER-BOTTOM: #fff 1px solid; "+(status?"COLOR: #5f5' bgColor=#005f00":"COLOR: #f55' bgColor=#5f0000")+" align=center>"+(status?"â—‹":"â–¡")+"</TD>";
                 msg += "<TD style='BORDER-BOTTOM: #fff 1px solid' "+str+" align=center>"+(users<0?"<FONT color=#aaaaaa>N/A</FONT>":users)+"</TD>";
                 msg += "<TD style='BORDER-BOTTOM: #fff 1px solid' "+str+" align=center>"+lasttime+"</TD></TR>";
                 
@@ -318,16 +318,16 @@ void create_mudlist_html()
         }
         text += "</TBODY></TABLE></TD></TR></TBODY></TABLE></P><!-- SECTION [1-3357] -->";
 
-        text += "<A name=ÖĞÎÄÄà°ÍÍæ¼Ò·Ö²¼×´¿ö></A>";
-        text += "<DIV style='BORDER-BOTTOM: #aaa 3px double; WIDTH: 200px; COLOR: #333; FONT-SIZE: 16px'><IMG src='muds/mudlist/subtitle.gif'>ÖĞÎÄÄà°ÍÍæ¼Ò·Ö²¼×´¿ö</DIV><BR>";
+        text += "<A name=ä¸­æ–‡æ³¥å·´ç©å®¶åˆ†å¸ƒç‹€æ³></A>";
+        text += "<DIV style='BORDER-BOTTOM: #aaa 3px double; WIDTH: 200px; COLOR: #333; FONT-SIZE: 16px'><IMG src='muds/mudlist/subtitle.gif'>ä¸­æ–‡æ³¥å·´ç©å®¶åˆ†å¸ƒç‹€æ³</DIV><BR>";
         text += "<P><CENTER><IMG src='muds/mudlist/chart.png'></CENTER>";
             
-        text += "<P></P><!-- SECTION [3358-4159] --><A name=ÖĞÎÄÄà°ÍÍæ¼Ò¼´Ê±Í³¼Æ></A>";
-        text += "<DIV style='BORDER-BOTTOM: #aaa 3px double; WIDTH: 200px; COLOR: #333; FONT-SIZE: 16px'><IMG src='muds/mudlist/subtitle.gif'>ÖĞÎÄÄà°ÍÍæ¼Ò¼´Ê±Í³¼Æ</DIV><BR>";
+        text += "<P></P><!-- SECTION [3358-4159] --><A name=ä¸­æ–‡æ³¥å·´ç©å®¶å³æ™‚çµ±è¨ˆ></A>";
+        text += "<DIV style='BORDER-BOTTOM: #aaa 3px double; WIDTH: 200px; COLOR: #333; FONT-SIZE: 16px'><IMG src='muds/mudlist/subtitle.gif'>ä¸­æ–‡æ³¥å·´ç©å®¶å³æ™‚çµ±è¨ˆ</DIV><BR>";
         text += "<P><CENTER><A href='http://www.muds.cn/muds/mudlist/0_total_count/0_total_count.html' target=_blank><IMG border=0 src='muds/mudlist/0_total_count/0_total_count-day.png'> </A></CENTER>";
         text += "<P></P><!-- SECTION [4160-] --></TD></TR>";
     
-        make_html(text, (["filename":"/www/mudlist.html", "title":"ÖĞÎÄÄà°ÍÁĞ±í", "fontsize":15, "fontface":"ËÎÌå"]));
+        make_html(text, (["filename":"/www/mudlist.html", "title":"ä¸­æ–‡æ³¥å·´åˆ—è¡¨", "fontsize":15, "fontface":"å®‹é«”"]));
 }
 
 void create_html()
@@ -375,5 +375,5 @@ void create()
 
 string query_name()
 {
-	return "HTML ÏµÍ³(HTML_D)";
+	return "HTML ç³»çµ±(HTML_D)";
 }

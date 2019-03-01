@@ -4,17 +4,17 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIY "¡¸Ğı·çÉ¨Ò¶ÍÈ·¨¡¹" NOR, ({ "xuanfeng paper", "xuanfeng", "paper", "shu", "book" }));
+        set_name(HIY "ã€Œæ—‹é¢¨æƒè‘‰è…¿æ³•ã€" NOR, ({ "xuanfeng paper", "xuanfeng", "paper", "shu", "book" }));
         set_weight(500);
         if (clonep())
                 destruct(this_object());
         else {
-                set("unit", "±¾");
-                set("long", HIY "ÕâÊÇÁ½ÕÅÖ½Æ¬£¬ÉÏÃæĞ´µÄ¶¼ÊÇÁ·¹¦µÄ¿Ú¾÷ÒªÖ¼£¬È´ÊÇ\n"
-                            "»ÆÒ©Ê¦µÄÇ×±Ê£¬×Ö¼£åÙ¾¢Í¦°Î£¬µÚÒ»Ò¶ÉÏÓÒÊ×Ğ´×ÅÌâ\nÄ¿£¬"
-                            "ÊÇ¡¸Ğı·çÉ¨Ò¶ÍÈ·¨¡¹Áù×Ö¡£\n" NOR);
+                set("unit", "æœ¬");
+                set("long", HIY "é€™æ˜¯å…©å¼µç´™ç‰‡ï¼Œä¸Šé¢å¯«çš„éƒ½æ˜¯ç·´åŠŸçš„å£è¨£è¦æ—¨ï¼Œå»æ˜¯\n"
+                            "é»ƒè—¥å¸«çš„è¦ªç­†ï¼Œå­—è·¡é’å‹æŒºæ‹”ï¼Œç¬¬ä¸€è‘‰ä¸Šå³é¦–å¯«è‘—é¡Œ\nç›®ï¼Œ"
+                            "æ˜¯ã€Œæ—‹é¢¨æƒè‘‰è…¿æ³•ã€å…­å­—ã€‚\n" NOR);
                 set("value", 1);
-                set("no_sell", "Õâ±¾ÆÆÊéÄã×Ô¼ºÁô×Å°É¡£");
+                set("no_sell", "é€™æœ¬ç ´æ›¸ä½ è‡ªå·±ç•™è‘—å§ã€‚");
                 set("material", "paper");
                 set("skill", ([
                         "name"       : "xuanfeng-tui",

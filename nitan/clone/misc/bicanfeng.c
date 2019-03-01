@@ -6,12 +6,12 @@ inherit ITEM;
 
 void create()
 {
-        set_name(GRN "±Ì²Ï·Û" NOR, ({"bican fen", "fen"}));
+        set_name(GRN "ç¢§è ¶ç²‰" NOR, ({"bican fen", "fen"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»´ü¾ç¶¾µÄ¶¾Ò©£¬Èç¹ûÓÃÀ´Á¶°µÆ÷ÓĞ¼ûÑª·âºíÖ®Ğ§¡£\n");
-                set("unit", "´ü");
+                set("long", "ä¸€è¢‹åŠ‡æ¯’çš„æ¯’è—¥ï¼Œå¦‚æœç”¨ä¾†ç…‰æš—å™¨æœ‰è¦‹è¡€å°å–‰ä¹‹æ•ˆã€‚\n");
+                set("unit", "è¢‹");
                 set("value", 20000);
                 set("can_pour", 1);
                 set("can_daub", 1);
@@ -19,7 +19,7 @@ void create()
                 set("poison", ([
                         "level" : 200,
                         "id"    : "...",
-                        "name"  : "¾ç¶¾",
+                        "name"  : "åŠ‡æ¯’",
                         "duration": 15,
                 ]));
                 set("only_do_effect", 1);
@@ -29,8 +29,8 @@ void create()
 
 int do_effect(object me)
 {
-        message_vision("$NÑöÍ·°ÑÒ»Ğ¡´ü" + name() + "¶¼ÑÊÁËÏÂÈ¥¡£\n", me);
-        set_temp("die_reason", "ÍÌÁË±Ì²Ï·Û£¬ÄªÃûÆäÃîµÄ¼ûÁËÑÖÍõ", me);
+        message_vision("$Nä»°é ­æŠŠä¸€å°è¢‹" + name() + "éƒ½åš¥äº†ä¸‹å»ã€‚\n", me);
+        set_temp("die_reason", "åäº†ç¢§è ¶ç²‰ï¼Œè«åå…¶å¦™çš„è¦‹äº†é–»ç‹", me);
         me->die();
         destruct(this_object());
         return 1;

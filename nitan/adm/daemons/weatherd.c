@@ -1,6 +1,6 @@
-// ÌìÆøÔ¤±¨¾«Áé
-// ´ÓÍøÂçÉÏ×¥È¡ĞÅÏ¢£¬Ô¤±¨ÌìÆø
-// ±¾Àı×ÓÎª×¥È¡À´×Ô£º"202.106.184.193"µÄÌìÆøÔ¤±¨ĞÅÏ¢¡£
+// å¤©æ°£é å ±ç²¾éˆ
+// å¾ç¶²çµ¡ä¸ŠæŠ“å–ä¿¡æ¯ï¼Œé å ±å¤©æ°£
+// æœ¬ä¾‹å­ç‚ºæŠ“å–ä¾†è‡ªï¼š"202.106.184.193"çš„å¤©æ°£é å ±ä¿¡æ¯ã€‚
 
 #include <runtime_config.h>
 #include <getconfig.h>
@@ -24,7 +24,7 @@ string smsg;
 
 void create()
 {
-      set("channel_id", "Íø¼Ê¾«Áé");
+      set("channel_id", "ç¶²éš›ç²¾éˆ");
       seteuid(getuid());
       //check_time();
 }
@@ -33,7 +33,7 @@ void local_input(string str)
 {
         if (str == "CLOSE")
         {
-                write("ÓÃ»§¶Ï¿ªÁËÁ¬½Ó¡£\n");
+                write("ç”¨æˆ¶æ–·é–‹äº†é€£æ¥ã€‚\n");
                 destruct(this_object());
                 return;
         }
@@ -46,7 +46,7 @@ void local_input(string str)
                 if (find_call_out("send_to_remote") == -1)
                         send_to_remote();
         } else
-                write("ÄãÊäÈëµÄÌ«¶àÁË...\n");
+                write("ä½ è¼¸å…¥çš„å¤ªå¤šäº†...\n");
 }
 
 int check_time()
@@ -72,7 +72,7 @@ int check_time()
 
        if (ret != EESUCCESS)
        {
-             write("ÍøÂçÁ¬½Ó´íÎó£¡\n");
+             write("ç¶²çµ¡é€£æ¥éŒ¯èª¤ï¼\n");
              socket_close(fd);
              return 1;
        }
@@ -115,19 +115,19 @@ void send_to_remote()
                 return;
 
         case EEWOULDBLOCK:
-                // ·¢ËÍÊı¾İ×èÈû
+                // ç™¼é€æ•¸æ“šé˜»å¡
                 call_out("send_to_remote", 1);
                 return;
 
         default:
-                // ·¢ËÍÊ§°Ü
+                // ç™¼é€å¤±æ•—
                 return;
         }
 }
 
 void close()
 {        
-        // ³¬Ê±¹Ø±ÕÁ¬½Ó
+        // è¶…æ™‚é—œé–‰é€£æ¥
         socket_close(fd);
  
         write("OK CLOSED!\n");

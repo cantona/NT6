@@ -12,12 +12,12 @@ int do_open(string arg);
 
 void create()
 {
-        set("short", "��¥һ��");
+        set("short", "鐘樓一層");
         set("long", @LONG
-��������¥�ĵײ㣬һ���������ǽ�ϵĻ�ש��϶��͸�������
-����ש����Ͷ�±��µĹ�Ӱ����ͬһ����������ơ����Ͽ���������
-ľ¥�����ƶ��ϣ��ƺ����޾�ͷ��ǽ�ǣ��ݼ����൱�ྻ����������
-��ɮ�˴�ɨ��
+這裡是塔樓的底層，一縷縷陽光從牆上的花磚縫隙裡透射進來，
+在青磚地上投下別致的光影，如同一格格棋盤相似。往上看，長長的
+木樓梯盤繞而上，似乎永無盡頭。牆角，梯級都相當潔凈，看來經常
+有僧人打掃。
 LONG );
         set("exits", ([
                 "up" : __DIR__"zhonglou2",
@@ -47,20 +47,20 @@ int do_open(string arg)
                 return 0;
 
         if( arg=="brick" && !present("blade", this_player()))
-                return notify_fail("�����ڣ� ���²��аɣ�\n");
+                return notify_fail("空手挖？ 恐怕不行吧！\n");
 
         if( arg=="brick" && !query("exits/down") )
         {
                 message_vision( 
-                "$N�ߵ�¥���£�ſ�ڵ��ϣ������ý䵶�����ש������������š���\n"
-                "�ȵ���שһ�������˳���������¶��һ���󶴣�����ʯ��������ȥ��\n"
-                "���������ͨ��һ��������\n", this_player());
+                "$N走到樓梯下，趴在地上，試著用戒刀伸進青磚縫裡，慢慢的撬著……\n"
+                "等到青磚一塊塊地起了出來，地上露出一個大洞，幾排石階往下伸去，\n"
+                "從這裡分明通向一個暗道。\n", this_player());
 
                 set("exits/down", __DIR__"andao3");
                 if( room = find_object(__DIR__"andao3") ) 
                 {
                         set("exits/up", __FILE__, room);
-                        message("vision", "�컨���Ȼ����������������¶��һ�����ϵĽ��ݡ�\n",
+                        message("vision", "天花板忽然發出軋軋的聲音，露出一個向上的階梯。\n",
                                 room );
                 }
                 remove_call_out("close_passage");
@@ -79,9 +79,9 @@ void close_passage()
                 return;
 
         message("vision", 
-        "ֻ��ƹ��һ���죬��¥С�ű����˿�����һȺɮ��һӿ���롣\n"
-        "�����е���ש���еİ转�����ְ˽ŵ���ש��Ѷ��ڷ���������\n"
-        "����ש��佽���պ����֭��\n", this_object() );
+        "只聽乒地一聲響，鐘樓小門被推了開來，一群僧兵一湧而入。\n"
+        "他們有的砌磚，有的拌漿，七手八腳地用磚塊把洞口封了起來，\n"
+        "再在磚縫間澆入燒紅的鐵汁。\n", this_object() );
 
         man=new(__DIR__"npc/seng-bing3");
         man->move(this_object());
@@ -105,8 +105,8 @@ void close_passage()
         if( room = find_object(__DIR__"andao3") ) {
 //                room->delete("exits/up");
                 message("vision", 
-        "ֻ��ƹ���Ҽ������죬���ż��ι��̵���ˮ����������\n"
-        "���ϵĶ��ڱ�����ש������ʵʵ�ط���������\n", room );
+        "只聽乒，乓幾聲巨響，接著幾滴滾燙的鐵水滴了下來。\n"
+        "向上的洞口被人用磚塊嚴嚴實實地封了起來。\n", room );
         }
         delete("exits/down");
 }
@@ -114,5 +114,5 @@ void close_passage()
 string look_floor()
 {
         return
-        "һƬ��ʵƽ������ש���棬ֻ��¥���µ�һ�Ǵ����԰�͹��ƽ��\n";
+        "一片結實平整的青磚地面，只在樓梯下的一角處略顯凹凸不平。\n";
 }

@@ -6,13 +6,13 @@ inherit F_EQUIP;
 
 void create()
 {
-        set_name("¹·Æ¤¸àÒ©", ({ "goupi gaoyao", "gaoyao" }) );
+        set_name("ç‹—çš®è†è—¥", ({ "goupi gaoyao", "gaoyao" }) );
         set_weight(200);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
                 set("value", 20);
-                set("unit", "ÕÅ");
+                set("unit", "å¼µ");
                 set("no_sell", 1);
                 set("material", "cloth");
                 set("armor_type", "bandage");
@@ -34,35 +34,35 @@ int do_bandage(string arg)
         object ob;
 
         if( (int)query("blood_soaked") >= 2 )
-                return notify_fail( name() + "ÒÑ¾­±»ÏÊÑª½şÍ¸£¬²»ÄÜÔÙÓÃÁË¡£\n");
+                return notify_fail( name() + "å·²ç¶“è¢«é®®è¡€æµ¸é€ï¼Œä¸èƒ½å†ç”¨äº†ã€‚\n");
 
         if( query("equipped") )
-                return notify_fail( name() + "ÒÑ¾­ÌùÔÚÄãµÄÉË¿ÚÉÏÁË£¬Èç¹ûÄãÒªÓÃÀ´Ìù±ğÈË£¬ÇëÄãÏÈ°ÑËü³ıÏÂÀ´¡£\n");
+                return notify_fail( name() + "å·²ç¶“è²¼åœ¨ä½ çš„å‚·å£ä¸Šäº†ï¼Œå¦‚æœä½ è¦ç”¨ä¾†è²¼åˆ¥äººï¼Œè«‹ä½ å…ˆæŠŠå®ƒé™¤ä¸‹ä¾†ã€‚\n");
 
         if( !arg ) ob = this_player();
         else {
                 ob = present(arg, environment(this_player()));
                 if( !ob || !userp(ob))
-                        return notify_fail("ÄãÒªÌæË­ÌùÉË£¿\n");
+                        return notify_fail("ä½ è¦æ›¿èª°è²¼å‚·ï¼Ÿ\n");
         }
 
         if( this_player()->is_fighting()
         ||        ob->is_fighting() )
-                return notify_fail("Õ½¶·ÖĞ²»ÄÜÌùÉË¡£\n");
+                return notify_fail("æˆ°é¬¥ä¸­ä¸èƒ½è²¼å‚·ã€‚\n");
 
         if( query("eff_qi", ob) == query("max_qi", ob) )
-                return notify_fail( (ob==this_player()? "Äã" : ob->name())
-                        + "²¢Ã»ÓĞÊÜµ½ÈÎºÎÍâÉË¡£\n");
+                return notify_fail( (ob==this_player()? "ä½ " : ob->name())
+                        + "ä¸¦æ²’æœ‰å—åˆ°ä»»ä½•å¤–å‚·ã€‚\n");
 
         if( query_temp("armor/bandage", ob) )
-                return notify_fail( ob->name() + "ÉíÉÏµÄÉËÒÑ¾­¹üÖøÆäËû¶«Î÷ÁË¡£\n");
+                return notify_fail( ob->name() + "èº«ä¸Šçš„å‚·å·²ç¶“è£¹è‘—å…¶ä»–æ±è¥¿äº†ã€‚\n");
 
         if( !move(ob) ) return 0;
 
         if( ob==this_player() )
-                message_vision("$N°Ñ" + name() + "ÌùÔÚÉË¿ÚÉÏ¡£\n", this_player());
+                message_vision("$NæŠŠ" + name() + "è²¼åœ¨å‚·å£ä¸Šã€‚\n", this_player());
         else
-                message_vision("$N°Ñ" + name() + "Ìùµ½$nµÄÉË¿ÚÉÏ¡£\n", this_player(), ob);
+                message_vision("$NæŠŠ" + name() + "è²¼åˆ°$nçš„å‚·å£ä¸Šã€‚\n", this_player(), ob);
 
         ::wear();
         ob->apply_condition("bandaged", 30);

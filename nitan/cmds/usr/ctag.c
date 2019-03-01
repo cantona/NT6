@@ -10,10 +10,10 @@ protected mapping valid_tags = ([
 ]);
 
 protected mapping c_msg = ([
-        "outdoors" : "»§Íâ±ê¼Ç",
-        "no_fight" : "°²È«Çø±ê¼Ç",
-        "no_magic" : "²»ÄÜÆï×øÆï±ê¼Ç",
-        "valid_startroom" : "ÆğÊ¼µã±ê¼Ç",
+        "outdoors" : "æˆ¶å¤–æ¨™è¨˜",
+        "no_fight" : "å®‰å…¨å€æ¨™è¨˜",
+        "no_magic" : "ä¸èƒ½é¨åé¨æ¨™è¨˜",
+        "valid_startroom" : "èµ·å§‹é»æ¨™è¨˜",
 ]);
 
 protected void delete_room_tag(string str, object who, object env, string tag);
@@ -40,12 +40,12 @@ int main(object me, string arg)
 
         if( query(valid_tags[tags[n]], env) )
         {
-                write(sprintf("ÕâÀïÒÑ¾­Éè¶¨ÁË%s£¬ÊÇ·ñÒªÇå³ı£¿[y/n]£º", c_msg[valid_tags[tags[n]]]));
+                write(sprintf("é€™è£¡å·²ç¶“è¨­å®šäº†%sï¼Œæ˜¯å¦è¦æ¸…é™¤ï¼Ÿ[y/n]ï¼š", c_msg[valid_tags[tags[n]]]));
                 input_to( (: delete_room_tag :), me, env, valid_tags[tags[n]] );
         }
         else
         {
-                write(sprintf("ÕâÀïÃ»ÓĞÉè¶¨%s£¬ÊÇ·ñÒªÉè¶¨£¿[y/n]£º", c_msg[valid_tags[tags[n]]]));
+                write(sprintf("é€™è£¡æ²’æœ‰è¨­å®š%sï¼Œæ˜¯å¦è¦è¨­å®šï¼Ÿ[y/n]ï¼š", c_msg[valid_tags[tags[n]]]));
                 input_to( (: add_room_tag :), me, env, valid_tags[tags[n]] );
         }
 
@@ -67,19 +67,19 @@ protected void delete_room_tag(string str, object who, object env, string tag)
 
         if(environment(who) != env)
         {
-                tell_object(who, "ÄãµÄÎ»ÖÃ·¢ÉúÁË±ä»¯£¬ĞŞ¸Ä±»Í£Ö¹¡£\n");
+                tell_object(who, "ä½ çš„ä½ç½®ç™¼ç”Ÿäº†è®ŠåŒ–ï¼Œä¿®æ”¹è¢«åœæ­¢ã€‚\n");
                 return;
         }
 
         if(undefinedp(c_msg[tag]))
         {
-                tell_object(who, "³öÏÖÒì³£´íÎó£¬ĞŞ¸Ä±»Í£Ö¹¡£\n");
+                tell_object(who, "å‡ºç¾ç•°å¸¸éŒ¯èª¤ï¼Œä¿®æ”¹è¢«åœæ­¢ã€‚\n");
                 return;
         }
 
         if(!content = read_file(fname = base_name(env) + ".c"))
         {
-                tell_object(who, "ÎŞ·¨¶ÁÈ¡ÎÄ¼şÄÚÈİ£¬ĞŞ¸ÄÊ§°Ü¡£\n");
+                tell_object(who, "ç„¡æ³•è®€å–æ–‡ä»¶å…§å®¹ï¼Œä¿®æ”¹å¤±æ•—ã€‚\n");
                 return;
         }
         /*
@@ -89,18 +89,18 @@ protected void delete_room_tag(string str, object who, object env, string tag)
 
                 if(!write_file(fname, result, 1))
                 {
-                        tell_object(who, "ÎŞ·¨Ğ´ÈëÎÄ¼şÄÚÈİ£¬ĞŞ¸ÄÊ§°Ü¡£\n");
+                        tell_object(who, "ç„¡æ³•å¯«å…¥æ–‡ä»¶å…§å®¹ï¼Œä¿®æ”¹å¤±æ•—ã€‚\n");
                         return;
                 }
         }
         */
         if( !BUNCH_D->update_room(env) )
         {
-                tell_object(who, "ÎŞ·¨ÔØÈë·¿¼ä£¬ĞŞ¸ÄÊ§°Ü¡£\n");
+                tell_object(who, "ç„¡æ³•è¼‰å…¥æˆ¿é–“ï¼Œä¿®æ”¹å¤±æ•—ã€‚\n");
                 return;
         }
 
-        tell_object(who, "Çå³ı³É¹¦¡£\n");
+        tell_object(who, "æ¸…é™¤æˆåŠŸã€‚\n");
 }
 
 protected void add_room_tag(string str, object who, object env, string tag)
@@ -118,32 +118,32 @@ protected void add_room_tag(string str, object who, object env, string tag)
 
         if(environment(who) != env)
         {
-                tell_object(who, "ÄãµÄÎ»ÖÃ·¢ÉúÁË±ä»¯£¬ĞŞ¸Ä±»Í£Ö¹¡£\n");
+                tell_object(who, "ä½ çš„ä½ç½®ç™¼ç”Ÿäº†è®ŠåŒ–ï¼Œä¿®æ”¹è¢«åœæ­¢ã€‚\n");
                 return;
         }
 
         if(undefinedp(c_msg[tag]))
         {
-                tell_object(who, "³öÏÖÒì³£´íÎó£¬ĞŞ¸Ä±»Í£Ö¹¡£\n");
+                tell_object(who, "å‡ºç¾ç•°å¸¸éŒ¯èª¤ï¼Œä¿®æ”¹è¢«åœæ­¢ã€‚\n");
                 return;
         }
 
         if(!id = who->query_BUNCH_id())
         {
-                tell_object(who, "ÄãµÄ°ïÅÉ¼ÇÂ¼´íÂÒ¡£\nĞŞ¸ÄÊ§°Ü¡£\n");
+                tell_object(who, "ä½ çš„å¹«æ´¾è¨˜éŒ„éŒ¯äº‚ã€‚\nä¿®æ”¹å¤±æ•—ã€‚\n");
                 return;
         }
 
         if(!content = read_file(fname = base_name(env) + ".c"))
         {
-                tell_object(who, "ÎŞ·¨¶ÁÈ¡ÎÄ¼şÄÚÈİ£¬ĞŞ¸ÄÊ§°Ü¡£\n");
+                tell_object(who, "ç„¡æ³•è®€å–æ–‡ä»¶å…§å®¹ï¼Œä¿®æ”¹å¤±æ•—ã€‚\n");
                 return;
         }
 
         /*
         if(!BUNCH_D->parse_function_body(ref content, "void", "create", ref f_sect, ref m_sect, ref e_sect, 0))
         {
-                tell_object(who, "ÎŞ·¨ÆÊÎöÎÄ¼şÄÚÈİ£¬ĞŞ¸ÄÊ§°Ü¡£\n");
+                tell_object(who, "ç„¡æ³•å‰–ææ–‡ä»¶å…§å®¹ï¼Œä¿®æ”¹å¤±æ•—ã€‚\n");
                 return;
         }
         */
@@ -153,24 +153,24 @@ protected void add_room_tag(string str, object who, object env, string tag)
 
         if(!write_file(fname, result, 1))
         {
-                tell_object(who, "ÎŞ·¨Ğ´ÈëÎÄ¼şÄÚÈİ£¬ĞŞ¸ÄÊ§°Ü¡£\n");
+                tell_object(who, "ç„¡æ³•å¯«å…¥æ–‡ä»¶å…§å®¹ï¼Œä¿®æ”¹å¤±æ•—ã€‚\n");
                 return;
         }
 
         if( !BUNCH_D->update_room(env) )
         {
-                tell_object(who, "ÎŞ·¨ÔØÈë·¿¼ä£¬ĞŞ¸ÄÊ§°Ü¡£\n");
+                tell_object(who, "ç„¡æ³•è¼‰å…¥æˆ¿é–“ï¼Œä¿®æ”¹å¤±æ•—ã€‚\n");
                 return;
         }
 
-        tell_object(who, "ÉèÖÃ³É¹¦¡£\n");
+        tell_object(who, "è¨­ç½®æˆåŠŸã€‚\n");
 }
 
 int help(object me)
 {
 write(@HELP
 
-°ïÖúĞÅÏ¢¡£
+å¹«åŠ©ä¿¡æ¯ã€‚
 
 HELP
     );

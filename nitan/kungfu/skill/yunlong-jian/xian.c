@@ -1,4 +1,4 @@
-// xian.c  ÔÆÁúÈıÏÖ
+// xian.c  é›²é¾ä¸‰ç¾
 
 #include <ansi.h>
 #include <combat.h>
@@ -14,23 +14,23 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail("ÔÆÁúÈıÏÖÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("é›²é¾ä¸‰ç¾åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me)) || 
             query("skill_type", weapon) != "sword" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ã€‚\n");
                 
         if ((int)me->query_skill("yunlong-jian", 1) < 50)
-                return notify_fail("ÄãµÄÔÆÁú½£·¨²»¹»æµÊì£¬²»»áÊ¹ÓÃ¡¸ÔÆÁúÈıÏÖ¡¹¡£\n");
+                return notify_fail("ä½ çš„é›²é¾åŠæ³•ä¸å¤ å«»ç†Ÿï¼Œä¸æœƒä½¿ç”¨ã€Œé›²é¾ä¸‰ç¾ã€ã€‚\n");
                                 
         if ((int)me->query_skill("force") < 120)
-                return notify_fail("ÄãµÄÄÚ¹¦»ğºò²»¹»£¬²»ÄÜÊ¹ÓÃ¡¸ÔÆÁúÈıÏÖ¡¹¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸç«å€™ä¸å¤ ï¼Œä¸èƒ½ä½¿ç”¨ã€Œé›²é¾ä¸‰ç¾ã€ã€‚\n");
                         
         if( query("neili", me)<300 )
-                return notify_fail("ÄãÏÖÔÚÕæÆø²»¹»£¬²»ÄÜÊ¹ÓÃ¡¸ÔÆÁúÈıÏÖ¡¹¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çœŸæ°£ä¸å¤ ï¼Œä¸èƒ½ä½¿ç”¨ã€Œé›²é¾ä¸‰ç¾ã€ã€‚\n");
                         
-        msg = HIM "$N" HIM "Î¢Î¢Ò»Ğ¦£¬ÃÍÎüÒ»¿ÚÆø£¬ÒÔÆøÔ¦½£¹¥»÷ĞéĞéÊµÊµµÄ¹¥Ïò$n"
-              HIM "£¡\n" NOR;
+        msg = HIM "$N" HIM "å¾®å¾®ä¸€ç¬‘ï¼ŒçŒ›å¸ä¸€å£æ°£ï¼Œä»¥æ°£é¦­åŠæ”»æ“Šè™›è™›å¯¦å¯¦çš„æ”»å‘$n"
+              HIM "ï¼\n" NOR;
 
         ap = attack_power(me, "sword");
         dp = defense_power(target, "force");
@@ -41,15 +41,15 @@ int perform(object me, object target)
 
                 addn("neili", -180, me);
                 msg += COMBAT_D->do_damage(me, target, WEAPON_ATTACK, damage, 50,
-                                           HIR "Ö»¼û$N" HIR "ÊÖÖĞ½£¹â»Ã×÷Ò»Ìõ½ğÁú£¬ÌÚ¿Õ¶ø"
-                                           "ÆğÙ¿µÄÕÖÏò$n" HIR "£¬\n$p" HIR "Ö»¾õÒ»¹É´óÁ¦"
-                                           "ÆÌÌì¸ÇµØ°ãÑ¹À´£¬µÇÊ±ÑÛÇ°Ò»»¨£¬Á½¶úºäÃù£¬ÍÛµÄ"
-                                           "Åç³öÒ»¿ÚÏÊÑª£¡£¡\n" NOR);
+                                           HIR "åªè¦‹$N" HIR "æ‰‹ä¸­åŠå…‰å¹»ä½œä¸€æ¢é‡‘é¾ï¼Œé¨°ç©ºè€Œ"
+                                           "èµ·å€çš„ç½©å‘$n" HIR "ï¼Œ\n$p" HIR "åªè¦ºä¸€è‚¡å¤§åŠ›"
+                                           "èˆ–å¤©è“‹åœ°èˆ¬å£“ä¾†ï¼Œç™»æ™‚çœ¼å‰ä¸€èŠ±ï¼Œå…©è€³è½Ÿé³´ï¼Œå“‡çš„"
+                                           "å™´å‡ºä¸€å£é®®è¡€ï¼ï¼\n" NOR);
                 me->start_busy(2);
         } else
         {
-                msg += CYN "¿ÉÊÇ$p" CYN "ÃÍµØÏòÇ°Ò»Ô¾£¬Ìø³öÁË$P"
-                       CYN "µÄ¹¥»÷·¶Î§¡£\n"NOR;
+                msg += CYN "å¯æ˜¯$p" CYN "çŒ›åœ°å‘å‰ä¸€èºï¼Œè·³å‡ºäº†$P"
+                       CYN "çš„æ”»æ“ŠèŒƒåœã€‚\n"NOR;
                 addn("neili", -100, me);
                 me->start_busy(4);
         }

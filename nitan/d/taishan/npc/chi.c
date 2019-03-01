@@ -5,8 +5,8 @@ inherit NPC;
 #include <ansi.h>;
 void create()
 {
-        set_name("³Ù°Ù³Ç", ({ "chi baicheng", "baicheng", "chi" }) );
-        set("gender", "ÄÐÐÔ");
+        set_name("é²ç™¾åŸŽ", ({ "chi baicheng", "baicheng", "chi" }) );
+        set("gender", "ç”·æ€§");
         set("class", "swordsman");
         set("age", 25);
         set("attitude", "peaceful");
@@ -43,7 +43,7 @@ void create()
         map_skill("force", "panshi-shengong");
         map_skill("strike","kuaihuo-strike");
 
-        create_family("Ì©É½ÅÉ", 14, "µÜ×Ó");
+        create_family("æ³°å±±æ´¾", 14, "å¼Ÿå­");
         setup();
 
         carry_object(WEAPON_DIR+"sword/houjian")->wield();
@@ -75,10 +75,10 @@ void greeting(object ob)
         {
                 if(!userp(inv[i])) continue;
                 family=query("family/family_name", inv[i]);
-                if(family=="Ì©É½ÅÉ") continue;
+                if(family=="æ³°å±±æ´¾") continue;
                 if(inv[i]->is_fighting())
                 {
-                        command("say"+query("name", inv[i])+"£¬Äã¾¹¸ÒÔÚÌ©É½ÉÏÈöÒ°£¬ÎÒ¿´ÄãÊÇ²»Ïë»îÁË£¡");
+                        command("say"+query("name", inv[i])+"ï¼Œä½ ç«Ÿæ•¢åœ¨æ³°å±±ä¸Šæ’’é‡Žï¼Œæˆ‘çœ‹ä½ æ˜¯ä¸æƒ³æ´»äº†ï¼");
                         kill_ob(inv[i]);
                         inv[i]->fight_ob(this_object());
                 }

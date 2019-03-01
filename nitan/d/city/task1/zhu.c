@@ -1,14 +1,14 @@
-// zhu.c Öì°²¹ú
+// zhu.c æœ±å®‰åœ‹
 
 #include <ansi.h>
 inherit NPC;
 
 void create()
 {
-        set_name("Öì°²¹ú", ({ "zhu  anguo"}));
-        set("title", "³¯Í¢ÇÕ·¸");
-        set("long", "³¯Í¢×·²¶µÄÒª·¸£¬Ò»Ö±·´¶Ô³¯Í¢¡£\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("æœ±å®‰åœ‹", ({ "zhu  anguo"}));
+        set("title", "æœå»·æ¬½çŠ¯");
+        set("long", "æœå»·è¿½æ•çš„è¦çŠ¯ï¼Œä¸€ç›´åå°æœå»·ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 37);
         set("attitude", "peaceful");
         set("str", 25);

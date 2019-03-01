@@ -9,24 +9,24 @@ int do_cai(string arg)
         object ob;
         object ob1;
         if( query_temp("caiyao", me)<1 )
-                return notify_fail("±ðÔÚÕâÀË·ÑÊ±¼äÁË£¬¿ì×ß°É¡£\n");
+                return notify_fail("åˆ¥åœ¨é€™æµªè²»æ™‚é–“äº†ï¼Œå¿«èµ°å§ã€‚\n");
 
         if (!arg || arg != "yao")
-                return notify_fail("ÄãÒª²ÉÊ²Ã´¡£\n");
+                return notify_fail("ä½ è¦æŽ¡ä»€éº¼ã€‚\n");
 
         if ( me->is_busy() )
-                return notify_fail("ÂýÂýÕÒ£¬ÏÈ±ð¼±¡£\n");
+                return notify_fail("æ…¢æ…¢æ‰¾ï¼Œå…ˆåˆ¥æ€¥ã€‚\n");
        
         if( query("jing", me)<40 )
-                return notify_fail("ÄãÌ«ÀÛÁË£¬ÐÝÏ¢ÏÂ°É¡£\n");
+                return notify_fail("ä½ å¤ªç´¯äº†ï¼Œä¼‘æ¯ä¸‹å§ã€‚\n");
 
         if( query("qi", me)<40 )
-                return notify_fail("ÄãÌ«ÀÛÁË£¬ÐÝÏ¢ÏÂ°É¡£\n");
+                return notify_fail("ä½ å¤ªç´¯äº†ï¼Œä¼‘æ¯ä¸‹å§ã€‚\n");
 
         if( query_temp("caiyao", me) == 2 )
-                return notify_fail("¶«Î÷µ½ÊÖ£¬¿ìÈ¥½»ÁË°É¡£\n"); 
+                return notify_fail("æ±è¥¿åˆ°æ‰‹ï¼Œå¿«åŽ»äº¤äº†å§ã€‚\n"); 
 
-        message_vision("$NÅ¿ÔÚµØÉÏ£¬µÉ´óÁËÑÛ¾¦ÔÚ²Ý´ÔÖÐÕÒÑ°×ÅÒ©²Ý£¬ÉúÅÂÂ©µôÁËÄ¿±ê¡£\n",me); 
+        message_vision("$Nè¶´åœ¨åœ°ä¸Šï¼Œçžªå¤§äº†çœ¼ç›åœ¨è‰å¢ä¸­æ‰¾å°‹è‘—è—¥è‰ï¼Œç”Ÿæ€•æ¼æŽ‰äº†ç›®æ¨™ã€‚\n",me); 
 
         me->start_call_out((: call_other, __FILE__, "cai", me :), 3); 
         me->start_busy(4); 
@@ -41,19 +41,19 @@ int cai(object me)
         {
         me->receive_damage("jing",10+random(20));
         me->receive_damage("qi",10+random(20));   
-        message_vision(CYN"Ò»·­ÃþË÷ºó£¬²Ý´ÔÖÐËÆºõÃ»ÓÐ$NÒªÕÒµÄ¶«Î÷£¬$NÊ§ÍûµÄÌ¾ÁË¿ÚÆø¡£\n"NOR,me);
+        message_vision(CYN"ä¸€ç¿»æ‘¸ç´¢å¾Œï¼Œè‰å¢ä¸­ä¼¼ä¹Žæ²’æœ‰$Nè¦æ‰¾çš„æ±è¥¿ï¼Œ$Nå¤±æœ›çš„å˜†äº†å£æ°£ã€‚\n"NOR,me);
         }
 
         if (random(20) ==1 && ! present("du she", environment(me))) 
         {         
-        tell_room(environment(me),HIR"²Ý´ÔÖÐÒ»Õó»Î¶¯£¬Í»È»×ê³öÒ»Ìõ¶¾Éß¡£\n"NOR );
+        tell_room(environment(me),HIR"è‰å¢ä¸­ä¸€é™£æ™ƒå‹•ï¼Œçªç„¶é‘½å‡ºä¸€æ¢æ¯’è›‡ã€‚\n"NOR );
         ob=new("/d/beijing/npc/liandan_dushe");
         ob->move(environment(me));
         }
 
    else if(random(20)==1 && ! present("du langzhong", environment(me))) 
         {         
-        tell_room(environment(me),HIR"ÁÖ×ÓºóÃæÍ»È»Ìø³öÒ»¸öÐ×Éñ¶ñÉ²µÄÄÐ×Ó£¬ÊÖÌáÒ»°Ñ¶Ìµ¶ÏòÄãÆËÀ´£¡\n"NOR );
+        tell_room(environment(me),HIR"æž—å­å¾Œé¢çªç„¶è·³å‡ºä¸€å€‹å…‡ç¥žæƒ¡å‰Žçš„ç”·å­ï¼Œæ‰‹æä¸€æŠŠçŸ­åˆ€å‘ä½ æ’²ä¾†ï¼\n"NOR );
         ob=new("/d/beijing/npc/liandan_langzhong");
         ob->move(environment(me));
         }
@@ -64,8 +64,8 @@ int cai(object me)
         me->receive_damage("jing",10+random(20));
         me->receive_damage("qi",10+random(20));
         addn_temp("caiyao", 1, me);
-        message_vision(HIG"$NÕÒÁË°ëÌì£¬ÖÕÓÚ·¢ÏÖÆäÖÐÒ»Öê²ÝÃçÓëÆäËüµÄ²ÝÂÔÓÐ²»Í¬£¬
-Ð¡ÐÄÒíÒíµØ¾òÁË³öÀ´¡£\n"NOR,me); 
+        message_vision(HIG"$Næ‰¾äº†åŠå¤©ï¼Œçµ‚äºŽç™¼ç¾å…¶ä¸­ä¸€æ ªè‰è‹—èˆ‡å…¶å®ƒçš„è‰ç•¥æœ‰ä¸åŒï¼Œ
+å°å¿ƒç¿¼ç¿¼åœ°æŽ˜äº†å‡ºä¾†ã€‚\n"NOR,me); 
         }
         me->stop_busy();
         return 1;

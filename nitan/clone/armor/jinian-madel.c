@@ -6,13 +6,13 @@ inherit MEDAL;
 
 void create()
 {
-        set_name(HIM "Ñ×»Æ¼ÍÄîÑ«ÕÂ" NOR, ({ "jinian medal" }));
-        set("long", HIM "ÕâÊÇÒ»Ã¶Ñ×»Æ¹Ù·½ÔùËÍµÄ¼ÍÄîÑ«ÕÂ£¬ÔùÓèÄÇĞ©¶ÔÑ×»Æ·¢Õ¹×ö³ö¹±Ï×µÄÍæ¼Ò¡£\n" NOR);
+        set_name(HIM "ç‚é»ƒç´€å¿µå‹›ç« " NOR, ({ "jinian medal" }));
+        set("long", HIM "é€™æ˜¯ä¸€æšç‚é»ƒå®˜æ–¹è´ˆé€çš„ç´€å¿µå‹›ç« ï¼Œè´ˆäºˆé‚£äº›å°ç‚é»ƒç™¼å±•åšå‡ºè²¢ç»çš„ç©å®¶ã€‚\n" NOR);
         set_weight(500);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ã¶");
+                set("unit", "æš");
                 set("value", 200000);
                 set("material", "gold");
                 set("armor_prop/damage", 100);

@@ -1,12 +1,12 @@
-// queen.c  ¾ÅÌìÐþÅ®
+// queen.c  ä¹å¤©çŽ„å¥³
 
 #include <ansi.h>
 
 inherit F_CLEAN_UP;
 
-string name() { return HIR "¾ÅÌìÐþÅ®" NOR; }
+string name() { return HIR "ä¹å¤©çŽ„å¥³" NOR; }
 
 int perform(object me, string skill)
 {
-        return notify_fail("¾ÅÌìÐþÅ®ÕâÏî¼¼ÄÜ²»ÐèÒªÔËÓÃ¡£\n");
+        return notify_fail("ä¹å¤©çŽ„å¥³é€™é …æŠ€èƒ½ä¸éœ€è¦é‹ç”¨ã€‚\n");
 }

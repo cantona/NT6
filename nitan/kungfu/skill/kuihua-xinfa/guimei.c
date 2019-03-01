@@ -1,4 +1,4 @@
-// guimei.c ¹í÷ÈÉí·¨
+// guimei.c é¬¼é­…èº«æ³•
 // Last Modified by winder on Oct. 28 2000
 
 #include <ansi.h>
@@ -15,26 +15,26 @@ int exert(object me, object target)
   !query("perform/guimei", me) && 
   !query("can_perform/kuihua-xinfa/guimei", me) && 
   !query_temp("murong/xingyi", me) )
-   return notify_fail("ÄãËùÊ¹ÓÃµÄÄÚ¹¦ÖĞÃ»ÓĞÕâÖÖ¹¦ÄÜ¡£");
+   return notify_fail("ä½ æ‰€ä½¿ç”¨çš„å…§åŠŸä¸­æ²’æœ‰é€™ç¨®åŠŸèƒ½ã€‚");
 */
 
         if( query_temp("bixie/guimei", me) )
-                return notify_fail("ÄãÒÑ¾­ÔÚÔËÓÃ¹í÷ÈÉí·¨ÁË°É£¿\n");
+                return notify_fail("ä½ å·²ç¶“åœ¨é‹ç”¨é¬¼é­…èº«æ³•äº†å§ï¼Ÿ\n");
 
 //        if( !target || !target->is_character() || !me->is_fighting(target) )
-//                return notify_fail("ÄãÒ»¸öÈËÌøÀ´ÌøÈ¥¸ÉÊ²Ã´£¿\n");
+//                return notify_fail("ä½ ä¸€å€‹äººè·³ä¾†è·³å»å¹¹ä»€éº¼ï¼Ÿ\n");
 
         if( !query_temp("murong/xingyi", me) )
         {
                 if((int)me->query_skill("kuihua-xinfa", 1) < 100)
-                        return notify_fail(HIY "ÄãµÄ¿û»¨ĞÄ·¨ĞŞÎª²»¹»¡£\n" NOR);
+                        return notify_fail(HIY "ä½ çš„è‘µèŠ±å¿ƒæ³•ä¿®ç‚ºä¸å¤ ã€‚\n" NOR);
                 if((int)me->query_skill("pixie-jian", 1) < 120)
-                        return notify_fail(HIY "ÄãµÄ±ÙĞ°½£·¨²»¹»ÊìÁ·¡£\n" NOR);
+                        return notify_fail(HIY "ä½ çš„è¾Ÿé‚ªåŠæ³•ä¸å¤ ç†Ÿç·´ã€‚\n" NOR);
         }
         if( query("neili", me)<200 )
-                return notify_fail(HIY "ÄãÏÖÔÚÕæÆø²»×ã¡£\n" NOR);
+                return notify_fail(HIY "ä½ ç¾åœ¨çœŸæ°£ä¸è¶³ã€‚\n" NOR);
 
-        msg = HIC"µ«¼û$NµÄÉíĞÎÈç¹íÈç÷È£¬Æ®ºöÀ´È¥£¬Ö±ËÆÇáÑÌ¡£ÒÂĞä´ø·ç£¬È´²»·¢³ö°ëµãÉùÏ¢¡£\n"NOR;
+        msg = HIC"ä½†è¦‹$Nçš„èº«å½¢å¦‚é¬¼å¦‚é­…ï¼Œé£„å¿½ä¾†å»ï¼Œç›´ä¼¼è¼•ç…™ã€‚è¡£è¢–å¸¶é¢¨ï¼Œå»ä¸ç™¼å‡ºåŠé»è²æ¯ã€‚\n"NOR;
         message_combatd(msg, me);
         addn("neili", -200, me);
         set_temp("bixie/guimei", 1, me);
@@ -48,21 +48,21 @@ void remove_effect(object me, int count)
 //        me->delete_temp("apply/dex");
   addn_temp("apply/dex", -count, me);
         delete_temp("bixie/guimei", me);
-        tell_object(me,HIY"Äã¾õµÃÒ»¹É×ÇÆø³ÁÏÂµ¤Ìï£¬ÄãµÄ¹í÷ÈÉí·¨ÊÕ¹¦ÁË£¡\n" NOR);
+        tell_object(me,HIY"ä½ è¦ºå¾—ä¸€è‚¡æ¿æ°£æ²‰ä¸‹ä¸¹ç”°ï¼Œä½ çš„é¬¼é­…èº«æ³•æ”¶åŠŸäº†ï¼\n" NOR);
 }
 
 int help(object me)
 {
-        write(WHT"\n¿û»¨ĞÄ·¨Ö®¹í÷ÈÉí·¨£º"NOR"\n");
+        write(WHT"\nè‘µèŠ±å¿ƒæ³•ä¹‹é¬¼é­…èº«æ³•ï¼š"NOR"\n");
         write(@HELP
 
-        Ê¹ÓÃ¹¦Ğ§£º
-                ÔİÊ±Ìá¸ßÉí·¨
+        ä½¿ç”¨åŠŸæ•ˆï¼š
+                æš«æ™‚æé«˜èº«æ³•
 
-        ³öÊÖÒªÇó£º
-                ¿û»¨ĞÄ·¨100¼¶
-                ±ÙĞ°½£·¨120¼¶
-                ÄÚÁ¦200
+        å‡ºæ‰‹è¦æ±‚ï¼š
+                è‘µèŠ±å¿ƒæ³•100ç´š
+                è¾Ÿé‚ªåŠæ³•120ç´š
+                å…§åŠ›200
 HELP
         );
         return 1;

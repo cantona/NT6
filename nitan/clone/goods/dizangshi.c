@@ -1,23 +1,23 @@
-// dizhangshi.c  µØ²ØÖ®Ê¯  ÎäÆ÷Ô­ÁÏ£¬Ö»ÄÜ±» wizard Ê¹ÓÃ
+// dizhangshi.c  åœ°è—ä¹‹çŸ³  æ­¦å™¨åŸæ–™ï¼Œåªèƒ½è¢« wizard ä½¿ç”¨
 // Written by Doing Lu 1998/11/3
 
 inherit ITEM;
 
 #include <ansi.h>
 
-// ´òÔìÎäÆ÷´ÖÅ÷Ê±ĞèÒªµÄÒ»ÖÖÔ­ÁÏ
-// ¸ù¾İ material_ attrib = x ÎªÅĞ¶Ï±êÖ¾£¬ÆäÓĞĞ§µãÊıÎª:power_point
-// µØ²ØÖ®Ê¯µÄÓĞĞ§µãÊıÊÇ 1000
+// æ‰“é€ æ­¦å™¨ç²—å¯æ™‚éœ€è¦çš„ä¸€ç¨®åŸæ–™
+// æ ¹æ“š material_ attrib = x ç‚ºåˆ¤æ–·æ¨™å¿—ï¼Œå…¶æœ‰æ•ˆé»æ•¸ç‚º:power_point
+// åœ°è—ä¹‹çŸ³çš„æœ‰æ•ˆé»æ•¸æ˜¯ 1000
 
 void create()
 {
-        set_name(YEL "µØ²ØÖ®Ê¯" NOR, ({"dizang zhishi", "shi"}));
+        set_name(YEL "åœ°è—ä¹‹çŸ³" NOR, ({"dizang zhishi", "shi"}));
         set_weight(4000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»¿éÀ´×ÔµØ¸®µÄÊ¯Í·£¬ÁÁ¾§¾§µÄ£¬ÉÁÒ«×Å¹îÒìµÄ¹âÃ¢£¬´«Ëµ¿ÉÒÔÓÃËüÖÆ³É" HIY "ÈçÒâÇ¬À¤´ü¡£\n" NOR);
-                set("unit", "¿é");
+                set("long", "é€™æ˜¯ä¸€å¡Šä¾†è‡ªåœ°åºœçš„çŸ³é ­ï¼Œäº®æ™¶æ™¶çš„ï¼Œé–ƒè€€è‘—è©­ç•°çš„å…‰èŠ’ï¼Œå‚³èªªå¯ä»¥ç”¨å®ƒåˆ¶æˆ" HIY "å¦‚æ„ä¹¾å¤è¢‹ã€‚\n" NOR);
+                set("unit", "å¡Š");
                 //set("material_attrib", "x");
                 set("power_point", 1000);
                 set("value", 10000000);

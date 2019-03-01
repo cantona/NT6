@@ -1,7 +1,7 @@
 // autoload.c
 // From ES2
 // Modified by Xiang for XKX (12/15/95)
-// Modified by Lonely@NITAN (16/05/2009) ½â¾ö¶à¸öÍ¬Ò»ÎïÆ·´æ´¢Ê±ºòµş·ÅÎÊÌâ
+// Modified by Lonely@NITAN (16/05/2009) è§£æ±ºå¤šå€‹åŒä¸€ç‰©å“å­˜å„²æ™‚å€™ç–Šæ”¾å•é¡Œ
 
 string *autoload;
 void clean_up_autoload() { autoload = 0; }
@@ -79,9 +79,9 @@ void restore_autoload()
                         if( file && sscanf(file, "/data/%*s/%s", temp) ) {
                                 if (has_dropped) continue;
                                 has_dropped++;
-                                write("Äã·¢ÏÖÓĞĞ©¶«Î÷ÒÑ¾­Ã»ÓĞÓÃÁË£¬ËæÊÖ¾ÍÈÓµôÁË¡£\n");
+                                write("ä½ ç™¼ç¾æœ‰äº›æ±è¥¿å·²ç¶“æ²’æœ‰ç”¨äº†ï¼Œéš¨æ‰‹å°±æ‰”æ‰äº†ã€‚\n");
                         } else
-                                write("Äã¾õµÃËÆºõÊ§ÂäÁËÊ²Ã´ÖØÒªµÄ¶«Î÷£¬×îºÃÍ¨ÖªÒ»ÏÂÎ×Ê¦¡£\n");
+                                write("ä½ è¦ºå¾—ä¼¼ä¹å¤±è½äº†ä»€éº¼é‡è¦çš„æ±è¥¿ï¼Œæœ€å¥½é€šçŸ¥ä¸€ä¸‹å·«å¸«ã€‚\n");
                         log_file("autoload", sprintf("Fail to autoload %s of %s, error %s(%s)\n",
                                  file, query("name", this_object()),
                                  query("id", this_object()),

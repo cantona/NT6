@@ -1,14 +1,14 @@
-// constitution.c 镇蕴七星
+// constitution.c 閹槉涓冩槦
 // Created by Vin 1/9/2001
 
 #include <ansi.h>
 
 inherit F_CLEAN_UP;
 
-string name() { return HIY "镇蕴七星" NOR; }
+string name() { return HIY "閹槉涓冩槦" NOR; }
 
 int perform(object me, string skill)
 {
-        return notify_fail("这项技能能够使你根骨更高，不需要运用。\n");
+        return notify_fail("閫欓爡鎶�鑳借兘澶犱娇浣犳牴楠ㄦ洿楂橈紝涓嶉渶瑕侀亱鐢ㄣ�俓n");
 }
 

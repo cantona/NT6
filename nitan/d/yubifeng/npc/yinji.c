@@ -1,14 +1,14 @@
-// yinji.c Òó¼ª
+// yinji.c æ®·å‰
 
 #include <ansi.h>
 inherit NPC;
 
 void create()
 {
-        set_name("Òó¼ª", ({ "yin ji", "ji", "yin" }) );
-        set("gender", "ÄĞĞÔ");
-        set("title", "ÁÉ¶«ÌìÁúÃÅÄÏ×ÚµÚÁù´úÕÆÃÅÈË");
-        set("nickname", "ÍşÕğÌìÄÏ");
+        set_name("æ®·å‰", ({ "yin ji", "ji", "yin" }) );
+        set("gender", "ç”·æ€§");
+        set("title", "é¼æ±å¤©é¾é–€å—å®—ç¬¬å…­ä»£æŒé–€äºº");
+        set("nickname", "å¨éœ‡å¤©å—");
         set("age", 43);
         set("attitude", "friendly");
         set("str", 20);

@@ -1,15 +1,15 @@
-// shanzei.c É½Ôô
+// shanzei.c å±±è³Š
 #include <ansi.h>
 inherit NPC;
 
 void create()
 {
-        set_name("É½Ôô", ({ "shan  zei"}));
+        set_name("å±±è³Š", ({ "shan  zei"}));
 //        set("nickname", "");
         set("long",
-        "Ò»¸ö×¨ÃÅ´ò¼Ò½ÙÉáµÄÉ½Ôô¡£\n"
-        "Ò»·ùÔôÃ¼ÊóÑÛµÄÑù×Ó¡£\n");
-        set("gender", "ÄĞĞÔ");
+        "ä¸€å€‹å°ˆé–€æ‰“å®¶åŠ«èˆçš„å±±è³Šã€‚\n"
+        "ä¸€å¹…è³Šçœ‰é¼ çœ¼çš„æ¨£å­ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", random(10) + 25);
         set("attitude", "peaceful");
         set("str", 25);

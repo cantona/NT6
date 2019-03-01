@@ -1,16 +1,16 @@
-// ding.c ¶¡´ºÇï
+// ding.c ä¸æ˜¥ç§‹
 
 inherit NPC;
 inherit F_MASTER;
 
 void create()
 {
-        set_name("¶¡´ºÇï", ({ "ding-chunqiu", "ding" }));
-        set("nickname", "ĞÇËŞÀÏ¹Ö");
+        set_name("ä¸æ˜¥ç§‹", ({ "ding-chunqiu", "ding" }));
+        set("nickname", "æ˜Ÿå®¿è€æ€ª");
         set("long", 
-                "Ëû¾ÍÊÇĞÇËŞÅÉ¿ªÉ½×æÊ¦¡¢ÁîÕıÅÉÈËÊ¿Éî¶ñÍ´¾øµÄĞÇËŞÀÏ¹Ö¶¡´ºÇï¡£\n"
-                "¿ÉÊÇËû¿´ÆğÀ´ĞÎÃ²ÇåÆæ£¬ÏÉ·çµÀ¹Ç¡£\n");
-        set("gender", "ÄĞĞÔ");
+                "ä»–å°±æ˜¯æ˜Ÿå®¿æ´¾é–‹å±±ç¥–å¸«ã€ä»¤æ­£æ´¾äººå£«æ·±æƒ¡ç—›çµ•çš„æ˜Ÿå®¿è€æ€ªä¸æ˜¥ç§‹ã€‚\n"
+                "å¯æ˜¯ä»–çœ‹èµ·ä¾†å½¢è²Œæ¸…å¥‡ï¼Œä»™é¢¨é“éª¨ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 60);
         set("attitude", "friendly");
         set("class", "scholar");
@@ -52,7 +52,7 @@ void create()
         map_skill("parry", "tianshan-zhang");
         map_skill("staff", "tianshan-zhang");
 
-        create_family("ĞÇËŞÅÉ", 1, "¿ªÉ½×æÊ¦");
+        create_family("æ˜Ÿå®¿æ´¾", 1, "é–‹å±±ç¥–å¸«");
         set("class", "taoist");
 
         setup();
@@ -77,7 +77,7 @@ void greeting(object ob)
         int i;
 
         obj = all_inventory(environment(me));
-        command("say Ê®²½É±Ò»ÈË£¬ÏëÁ·³É¾øÊÀÉñ¹¦¾ÍÒª²ĞÈÌ¡£");
+        command("say åæ­¥æ®ºä¸€äººï¼Œæƒ³ç·´æˆçµ•ä¸–ç¥åŠŸå°±è¦æ®˜å¿ã€‚");
         for(i=0; i<sizeof(obj); i++)
         {
                 if( query("id", obj[i]) == "ouyang-feng" )

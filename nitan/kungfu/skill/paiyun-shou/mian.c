@@ -1,5 +1,5 @@
 // This program is a part of NITAN MudLIB
-// mian ÃàÃà²»¾ø
+// mian ç¶¿ç¶¿ä¸çµ•
 
 
 #include <ansi.h>
@@ -7,7 +7,7 @@
 
 inherit F_SSERVER;
 
-string name() { return "ÃàÃà²»¾ø"; }
+string name() { return "ç¶¿ç¶¿ä¸çµ•"; }
 
 int perform(object me, object target)
 {
@@ -16,23 +16,23 @@ int perform(object me, object target)
 
         if( !target ) target = offensive_target(me);
         if( !target || !me->is_fighting(target) )
-                return notify_fail("¡¸ÃàÃà²»¾ø¡¹Ö»ÄÜÔÚÕ½¶·ÖĞ¶Ô¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œç¶¿ç¶¿ä¸çµ•ã€åªèƒ½åœ¨æˆ°é¬¥ä¸­å°å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( objectp(query_temp("weapon", me)) )
-                return notify_fail("Ê¹ÓÃ¡¸ÃàÃà²»¾ø¡¹Ê±±ØĞë¿ÕÊÖ£¡\n");
+                return notify_fail("ä½¿ç”¨ã€Œç¶¿ç¶¿ä¸çµ•ã€æ™‚å¿…é ˆç©ºæ‰‹ï¼\n");
 
         if( (int)me->query_skill("paiyun-shou", 1) < 120 )
-                return notify_fail("ÄãµÄÅÅÔÆÍÆÊÖ²»¹»æµÊì£¬²»»áÊ¹ÓÃ¡¸ÃàÃà²»¾ø¡¹¡£\n");
+                return notify_fail("ä½ çš„æ’é›²æ¨æ‰‹ä¸å¤ å«»ç†Ÿï¼Œä¸æœƒä½¿ç”¨ã€Œç¶¿ç¶¿ä¸çµ•ã€ã€‚\n");
 
         if( query("max_neili", me)<1100 )
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦ĞŞÎª²»¹»£¬²»ÄÜÊ¹ÓÃ¡¸ÃàÃà²»¾ø¡¹¡£\n");
+                return notify_fail("ä½ ç¾åœ¨å…§åŠ›ä¿®ç‚ºä¸å¤ ï¼Œä¸èƒ½ä½¿ç”¨ã€Œç¶¿ç¶¿ä¸çµ•ã€ã€‚\n");
 
         if( query("neili", me)<500 )
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ£¬²»ÄÜÊ¹ÓÃ¡¸ÃàÃà²»¾ø¡¹¡£\n");
+                return notify_fail("ä½ ç¾åœ¨å…§åŠ›å¤ªå¼±ï¼Œä¸èƒ½ä½¿ç”¨ã€Œç¶¿ç¶¿ä¸çµ•ã€ã€‚\n");
 
         if( me->query_skill_prepared("hand") != "paiyun-shou"
         ||  me->query_skill_mapped("hand") != "paiyun-shou")
-                return notify_fail("Äã±ØĞëÈ«ÃæÔËÓÃÅÅÔÆÍÆÊÖ£¬²ÅÄÜÊ¹ÓÃ¡¸ÃàÃà²»¾ø¡¹¡£\n");
+                return notify_fail("ä½ å¿…é ˆå…¨é¢é‹ç”¨æ’é›²æ¨æ‰‹ï¼Œæ‰èƒ½ä½¿ç”¨ã€Œç¶¿ç¶¿ä¸çµ•ã€ã€‚\n");
 
 
         i = (me->query_skill("paiyun-shou", 1)/2);
@@ -49,7 +49,7 @@ int perform(object me, object target)
         {
                 y = 6;
         }
-        msg = HIY "$NºöÈ»ÉíËæÕÆÆğ£¬Ë«ÕÆÈ¦¶¯£¬ËÆĞé¶øÊµ£¬ËÆÈá¶ø¸Õ¡£Ò»ÕÆÅÄ³ö£¬µÚ¶şÕÆ½Óõà¶øÖÁ£¬Ò»Á¬"+chinese_number(y)+"ÕÆ£¬ÆäÒâÈçÅÅÔÆ¹ö¹ö¡£\n" NOR;
+        msg = HIY "$Nå¿½ç„¶èº«éš¨æŒèµ·ï¼Œé›™æŒåœˆå‹•ï¼Œä¼¼è™›è€Œå¯¦ï¼Œä¼¼æŸ”è€Œå‰›ã€‚ä¸€æŒæ‹å‡ºï¼Œç¬¬äºŒæŒæ¥è¸µè€Œè‡³ï¼Œä¸€é€£"+chinese_number(y)+"æŒï¼Œå…¶æ„å¦‚æ’é›²æ»¾æ»¾ã€‚\n" NOR;
         message_combatd(msg, me, target);
         addn_temp("apply/attack", i, me);
 

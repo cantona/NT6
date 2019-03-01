@@ -1,15 +1,15 @@
-// cao.c ²Ü»¯´¾
+// cao.c æ›¹åŒ–æ·³
 
 #include <ansi.h>
 inherit NPC;
 
 void create()
 {
-        set_name("²Ü»¯´¾", ({ "cao  huachun"}));
+        set_name("æ›¹åŒ–æ·³", ({ "cao  huachun"}));
 //        set("nickname", "");
         set("long",
-        "Ô­ÊÇ³¯Í¢µÄ»Â¹Ù£¬ºóÀ´ÓÉÓÚÌ°ÔßÍ÷·¨£¬±»³¯Í¢²é°ìµÄÊ±ºòÌÓÅÜÁË¡£\n");
-        set("gender", "ÎŞĞÔ");
+        "åŸæ˜¯æœå»·çš„å®¦å®˜ï¼Œå¾Œä¾†ç”±äºè²ªè´“æ‰æ³•ï¼Œè¢«æœå»·æŸ¥è¾¦çš„æ™‚å€™é€ƒè·‘äº†ã€‚\n");
+        set("gender", "ç„¡æ€§");
         set("age", 37);
         set("attitude", "peaceful");
         set("str", 25);

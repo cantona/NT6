@@ -4,10 +4,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÀÏ¼ÀË¾", ({ "lao jisi", "jisi" }));
+        set_name("è€ç¥­å¸", ({ "lao jisi", "jisi" }));
         set("age", 62);
-        set("gender", "ÄĞĞÔ");
-        set("long", "Ò»¸öÆÄÀÏĞàµÄ°ÚÒÄÀÏÈË£¬´©´÷ÆëÕû£¬ÊÇ±¾´åµÄ¼ÀË¾£¬È¨Á¦ÆÄ´ó£¬Ïàµ±ÓÚ×å³¤¡£\n"); set("attitude", "peaceful");
+        set("gender", "ç”·æ€§");
+        set("long", "ä¸€å€‹é —è€æœ½çš„æ“ºå¤·è€äººï¼Œç©¿æˆ´é½Šæ•´ï¼Œæ˜¯æœ¬æ‘çš„ç¥­å¸ï¼Œæ¬ŠåŠ›é —å¤§ï¼Œç›¸ç•¶äºæ—é•·ã€‚\n"); set("attitude", "peaceful");
 
         set("str", 20);
         set("per", 12);

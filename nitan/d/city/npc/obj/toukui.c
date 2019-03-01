@@ -1,4 +1,4 @@
-// toukui.c Í·¿ø
+// toukui.c é ­ç›”
  
 #include <armor.h>
  
@@ -6,14 +6,14 @@ inherit HEAD;
  
 void create()
 {
-        set_name("Í·¿ø", ({ "helmet", "toukui" }) );
+        set_name("é ­ç›”", ({ "helmet", "toukui" }) );
         set_weight(2000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
                 set("material", "steel");
-                set("unit", "¶¥");
-                set("long", "ÕâÊÇÒ»¶¥ÌúÖÊµÄ¶Ç´ø£¬ÓÃÒÔ±£»¤Í·²¿¡£\n");
+                set("unit", "é ‚");
+                set("long", "é€™æ˜¯ä¸€é ‚éµè³ªçš„è‚šå¸¶ï¼Œç”¨ä»¥ä¿è­·é ­éƒ¨ã€‚\n");
                 set("value", 1500);
                 set("armor_prop/dodge", -5);
         }

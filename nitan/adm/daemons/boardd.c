@@ -3,41 +3,41 @@
 // Updated by jjgod. 2002/06/16.
 // Finishd by jjgod. 2002/06/28.
 
-// databased.c Ìá¹©µÄº¯Êı£º(* ÎªÉĞÎ´Íê³É)
+// databased.c æä¾›çš„å‡½æ•¸ï¼š(* ç‚ºå°šæœªå®Œæˆ)
 // 
-// °æÃæ¹ÜÀí£º
-//   int    query_forum_id()       - ²éÑ¯°æÃæ ID
-//   mixed  query_forum_info()     - ²éÑ¯°æÃæĞÅÏ¢
-//   string query_mud_name()       - ²éÑ¯ÓÃ»§Ãû('°¢¸£-jjgod' ĞÎÊ½)
-//   string query_user_name()      - ²éÑ¯ÓÃ»§ ID('jjgod' ĞÎÊ½)
-//   int    query_user_id()        - ²éÑ¯ÓÃ»§±àºÅ
-//   int    query_post_id()        - ²éÑ¯ÎÄÕÂ±àºÅ
-//   int    query_topic_id()       - ²éÑ¯Ö÷Ìâ±àºÅ
+// ç‰ˆé¢ç®¡ç†ï¼š
+//   int    query_forum_id()       - æŸ¥è©¢ç‰ˆé¢ ID
+//   mixed  query_forum_info()     - æŸ¥è©¢ç‰ˆé¢ä¿¡æ¯
+//   string query_mud_name()       - æŸ¥è©¢ç”¨æˆ¶å('é˜¿ç¦-jjgod' å½¢å¼)
+//   string query_user_name()      - æŸ¥è©¢ç”¨æˆ¶ ID('jjgod' å½¢å¼)
+//   int    query_user_id()        - æŸ¥è©¢ç”¨æˆ¶ç·¨è™Ÿ
+//   int    query_post_id()        - æŸ¥è©¢æ–‡ç« ç·¨è™Ÿ
+//   int    query_topic_id()       - æŸ¥è©¢ä¸»é¡Œç·¨è™Ÿ
 
-// ÎÄÕÂ¹ÜÀí£º
-//   mixed *query_all_topics()     - ·µ»ØËùÓĞÖ÷Ìâ(²»°üÀ¨»Ø¸´) -+
-//   mixed *query_all_posts()      - ·µ»ØËùÓĞÎÄÕÂ(°üÀ¨»Ø¸´)   -+- ¶şÕß¸ñÊ½²»Í¬
-//   mixed *query_post_info()      - ·µ»ØÎÄÕÂÄÚÈİ(¸ù¾İ POST_ID)
-//   mixed *query_topic_info()     - ·µ»ØÖ÷ÌâÄÚÈİ(¸ù¾İ TOPIC_ID)
-//   mixed *query_new_post()       - ·µ»ØÎ´¶ÁÎÄÕÂ(¸ù¾İ²»Í¬ä¯ÀÀÄ£Ê½·µ»ØÖ÷Ìâ»òÕßËùÓĞÎÄÕÂ)
-//   mixed *query_post()           - ¸ù¾İÓÃ»§Ö¸¶¨µÄ±àºÅÕÒµ½Ó¦¶ÁµÄÎÄÕÂ
-//   int    query_topic_number()   - ·µ»ØÖ÷ÌâµÄ±àºÅ
-//   int   *query_number_post()    - ¸ù¾İĞòºÅÕÒµ½ÎÄÕÂµÄ POST_ID
-//   int   *query_number_topic()   - ¸ù¾İĞòºÅÕÒµ½Ö÷ÌâµÄ TOPIC_ID / POST_ID
-//   mixed *query_post_data()      - ·µ»ØÖ¸¶¨ÎÄÕÂÊı¾İ
+// æ–‡ç« ç®¡ç†ï¼š
+//   mixed *query_all_topics()     - è¿”å›æ‰€æœ‰ä¸»é¡Œ(ä¸åŒ…æ‹¬å›å¾©) -+
+//   mixed *query_all_posts()      - è¿”å›æ‰€æœ‰æ–‡ç« (åŒ…æ‹¬å›å¾©)   -+- äºŒè€…æ ¼å¼ä¸åŒ
+//   mixed *query_post_info()      - è¿”å›æ–‡ç« å…§å®¹(æ ¹æ“š POST_ID)
+//   mixed *query_topic_info()     - è¿”å›ä¸»é¡Œå…§å®¹(æ ¹æ“š TOPIC_ID)
+//   mixed *query_new_post()       - è¿”å›æœªè®€æ–‡ç« (æ ¹æ“šä¸åŒç€è¦½æ¨¡å¼è¿”å›ä¸»é¡Œæˆ–è€…æ‰€æœ‰æ–‡ç« )
+//   mixed *query_post()           - æ ¹æ“šç”¨æˆ¶æŒ‡å®šçš„ç·¨è™Ÿæ‰¾åˆ°æ‡‰è®€çš„æ–‡ç« 
+//   int    query_topic_number()   - è¿”å›ä¸»é¡Œçš„ç·¨è™Ÿ
+//   int   *query_number_post()    - æ ¹æ“šåºè™Ÿæ‰¾åˆ°æ–‡ç« çš„ POST_ID
+//   int   *query_number_topic()   - æ ¹æ“šåºè™Ÿæ‰¾åˆ°ä¸»é¡Œçš„ TOPIC_ID / POST_ID
+//   mixed *query_post_data()      - è¿”å›æŒ‡å®šæ–‡ç« æ•¸æ“š
 
-// ÎÄÕÂ·¢±í¡¢»Ø¸´ÓëÉ¾³ı£º
-//   int   delete_topic()          - É¾³ıÖ¸¶¨±àºÅµÄÖ÷Ìâ
-//   int   delete_post()           - É¾³ıÖ¸¶¨±àºÅµÄÎÄÕÂ
-//   int   reply_topic()           - »Ø¸´Ö÷Ìâ
-//   int   add_topic_view()        - Ôö¼ÓÖ÷ÌâµÄä¯ÀÀ´ÎÊı
-//   int   post_new_topic()        - ·¢±íĞÂÖ÷Ìâ
+// æ–‡ç« ç™¼è¡¨ã€å›å¾©èˆ‡åˆªé™¤ï¼š
+//   int   delete_topic()          - åˆªé™¤æŒ‡å®šç·¨è™Ÿçš„ä¸»é¡Œ
+//   int   delete_post()           - åˆªé™¤æŒ‡å®šç·¨è™Ÿçš„æ–‡ç« 
+//   int   reply_topic()           - å›å¾©ä¸»é¡Œ
+//   int   add_topic_view()        - å¢åŠ ä¸»é¡Œçš„ç€è¦½æ¬¡æ•¸
+//   int   post_new_topic()        - ç™¼è¡¨æ–°ä¸»é¡Œ
 
 #pragma optimize
 #pragma save_binary
 
 // #ifdef DB_SAVE
-// ÔİÊ±¹Ø±Õ
+// æš«æ™‚é—œé–‰
 #ifdef DB_SAVE_A
 
 #include <ansi.h>
@@ -95,7 +95,7 @@ protected int connect_to_database()
 
         n = db_connect(DB_HOST, DATABASE, DB_USER);
 
-        if (intp(n) && (n > 0))  // Á¬½Ó³É¹¦
+        if (intp(n) && (n > 0))  // é€£æ¥æˆåŠŸ
 #ifdef STATIC_LINK
         {
                 db_handle = n;
@@ -143,11 +143,11 @@ protected void create()
 
 protected int valid_caller()
 {
-        // ! ×¢Òâ£¬ÕıÊ½Õ¾µãÒ»¶¨Òª°ÑÏÂÃæµÄÓï¾äÉ¾³ı !
+        // ! æ³¨æ„ï¼Œæ­£å¼ç«™é»ä¸€å®šè¦æŠŠä¸‹é¢çš„èªå¥åˆªé™¤ !
 #ifdef DEBUG
         return 1;
 #else
-        // ! ×¢Òâ£¬ÕıÊ½Õ¾µãÒ»¶¨Òª°ÑÉÏÃæµÄÓï¾äÉ¾³ı !
+        // ! æ³¨æ„ï¼Œæ­£å¼ç«™é»ä¸€å®šè¦æŠŠä¸Šé¢çš„èªå¥åˆªé™¤ !
 
         if (! previous_object() ||
            (previous_object() != find_object(SIMUL_EFUN_OB)) &&
@@ -222,7 +222,7 @@ int query_forum_id(object board)
         return forum_id;
 }
 
-// ²éÑ¯°æÃæĞÅÏ¢
+// æŸ¥è©¢ç‰ˆé¢ä¿¡æ¯
 mixed query_forum_info(object board, string key)
 {
         int forum_id;
@@ -271,8 +271,8 @@ mixed query_forum_info(object board, string key)
         return ret;
 }
 
-// ÈôÃ»ÓĞ×÷ÓÃÊı¾İ¿â±£´æÓÃ»§Êı¾İµÄ¹¤×÷£¬¾ÍÒªĞŞ¸Ä NAME_D ÒÔÌá¹©ÀàËÆµÄ
-// °Ñ id ×ª»»Îª name µÄ¹¦ÄÜ
+// è‹¥æ²’æœ‰ä½œç”¨æ•¸æ“šåº«ä¿å­˜ç”¨æˆ¶æ•¸æ“šçš„å·¥ä½œï¼Œå°±è¦ä¿®æ”¹ NAME_D ä»¥æä¾›é¡ä¼¼çš„
+// æŠŠ id è½‰æ›ç‚º name çš„åŠŸèƒ½
 string query_mud_name(int user_id)
 {
         string user_name;
@@ -289,8 +289,8 @@ string query_mud_name(int user_id)
                        user_name);
 }
 
-// °Ñ Web Êı¾İ¿â±£´æµÄÓÃ»§ id(ÀàËÆ 1¡¢2 ÕâÑùµÄ)×ª»»Îª mud ÖĞµÄ id£¬
-// ¼´ Web ÂÛÌ³ÉÏµÄÓÃ»§Ãû
+// æŠŠ Web æ•¸æ“šåº«ä¿å­˜çš„ç”¨æˆ¶ id(é¡ä¼¼ 1ã€2 é€™æ¨£çš„)è½‰æ›ç‚º mud ä¸­çš„ idï¼Œ
+// å³ Web è«–å£‡ä¸Šçš„ç”¨æˆ¶å
 string query_user_name(int user_id)
 {
         int db;
@@ -329,7 +329,7 @@ string query_user_name(int user_id)
         return ret;
 }
 
-// ·µ»ØËùÓĞµÄÖ÷Ìâ(»Ø¸´´ÓÊôÓÚÖ÷Ìâ£¬ÁíÖÃ)
+// è¿”å›æ‰€æœ‰çš„ä¸»é¡Œ(å›å¾©å¾å±¬äºä¸»é¡Œï¼Œå¦ç½®)
 varargs mixed *query_all_topics(object board, int raw)
 {
         int forum_id;
@@ -378,8 +378,8 @@ varargs mixed *query_all_topics(object board, int raw)
         return res;
 }
 
-// ²éÑ¯Ò»¸ö board ËùÓĞµÄÎÄÕÂ(°üÀ¨»Ø¸´)
-// ({ ÎÄÕÂ±àºÅ, ËùÊôÖ÷Ìâ±àºÅ, ×÷ÕßºÅ, ·¢±íÊ±¼ä })
+// æŸ¥è©¢ä¸€å€‹ board æ‰€æœ‰çš„æ–‡ç« (åŒ…æ‹¬å›å¾©)
+// ({ æ–‡ç« ç·¨è™Ÿ, æ‰€å±¬ä¸»é¡Œç·¨è™Ÿ, ä½œè€…è™Ÿ, ç™¼è¡¨æ™‚é–“ })
 mixed *query_all_posts(object board)
 {
         int forum_id;
@@ -426,8 +426,8 @@ mixed *query_all_posts(object board)
         return res;
 }
 
-// ²éÑ¯Ò»ÆªÎÄÕÂµÄÏêÏ¸ĞÅÏ¢
-// ({ ±êÌâ, BBCODE ¼ø¶¨ºÅ, ÄÚÈİ })
+// æŸ¥è©¢ä¸€ç¯‡æ–‡ç« çš„è©³ç´°ä¿¡æ¯
+// ({ æ¨™é¡Œ, BBCODE é‘’å®šè™Ÿ, å…§å®¹ })
 varargs mixed *query_post_info(int post_id, int raw)
 {
         int db;
@@ -466,8 +466,8 @@ varargs mixed *query_post_info(int post_id, int raw)
         return ret;
 }
 
-// ²éÑ¯Ò»ÆªÖ÷ÌâµÄÏêÏ¸ĞÅÏ¢
-// ({ ±êÌâ, ±àºÅ, ·¢±íÕß±àºÅ, ·¢±íÊ±¼ä, ä¯ÀÀ´ÎÊı, »Ø¸´Êı, Ê×Ìù±àºÅ })
+// æŸ¥è©¢ä¸€ç¯‡ä¸»é¡Œçš„è©³ç´°ä¿¡æ¯
+// ({ æ¨™é¡Œ, ç·¨è™Ÿ, ç™¼è¡¨è€…ç·¨è™Ÿ, ç™¼è¡¨æ™‚é–“, ç€è¦½æ¬¡æ•¸, å›å¾©æ•¸, é¦–è²¼ç·¨è™Ÿ })
 varargs mixed *query_topic_info(int topic_id, int raw)
 {
         int db;
@@ -507,8 +507,8 @@ varargs mixed *query_topic_info(int topic_id, int raw)
         return ret;
 }
 
-// ²éÑ¯Ò»¸öÖ÷ÌâËùÓĞµÄ»Ø¸´(²»°üÀ¨Ê×Ìù)
-// ({ ÎÄÕÂ±àºÅ, ËùÊôÖ÷Ìâ±àºÅ, ×÷ÕßºÅ, ·¢±íÊ±¼ä })
+// æŸ¥è©¢ä¸€å€‹ä¸»é¡Œæ‰€æœ‰çš„å›å¾©(ä¸åŒ…æ‹¬é¦–è²¼)
+// ({ æ–‡ç« ç·¨è™Ÿ, æ‰€å±¬ä¸»é¡Œç·¨è™Ÿ, ä½œè€…è™Ÿ, ç™¼è¡¨æ™‚é–“ })
 mixed *query_all_replies(int topic_id, int first_post_id)
 {
         int db, i;
@@ -552,7 +552,7 @@ mixed *query_all_replies(int topic_id, int first_post_id)
         return res;
 }
 
-// ·µ»ØÒ»ÆªÖ÷ÌâµÄ±àºÅ
+// è¿”å›ä¸€ç¯‡ä¸»é¡Œçš„ç·¨è™Ÿ
 int query_topic_number(object board, int topic_id)
 {
         int num, i, max;
@@ -568,7 +568,7 @@ int query_topic_number(object board, int topic_id)
         }
 }
 
-// ¸ù¾İÓÃ»§Ãû²éÕÒÓÃ»§ id
+// æ ¹æ“šç”¨æˆ¶åæŸ¥æ‰¾ç”¨æˆ¶ id
 int query_user_id(string user_name)
 {
         int db;
@@ -606,7 +606,7 @@ int query_user_id(string user_name)
         return ret;
 }
 
-// ·µ»ØÖ÷ÌâµÄ±àºÅ
+// è¿”å›ä¸»é¡Œçš„ç·¨è™Ÿ
 int query_topic_id(int forum_id, string title)
 {
         int db;
@@ -648,7 +648,7 @@ int query_topic_id(int forum_id, string title)
         return ret;
 }
 
-// ·µ»ØÎÄÕÂµÄ±àºÅ
+// è¿”å›æ–‡ç« çš„ç·¨è™Ÿ
 int query_post_id(int forum_id, int post_time)
 {
         int db;
@@ -690,7 +690,7 @@ int query_post_id(int forum_id, int post_time)
         return ret;
 }
 
-// °Ñ "127.0.0.1" ×ª»»Îª 7F000001 ÕâÑùµÄ 16 ½øÖÆµØÖ·
+// æŠŠ "127.0.0.1" è½‰æ›ç‚º 7F000001 é€™æ¨£çš„ 16 é€²åˆ¶åœ°å€
 string convert_to_ip(string ip)
 {
         array ips;
@@ -705,7 +705,7 @@ string convert_to_ip(string ip)
         return hex_ip;
 }
 
-// ·¢±íĞÂÖ÷Ìâ
+// ç™¼è¡¨æ–°ä¸»é¡Œ
 int post_new_topic(object board, string title, string name, string text, string ip)
 {
         int db;
@@ -738,7 +738,7 @@ int post_new_topic(object board, string title, string name, string text, string 
                 return 0;
 #endif
 
-        // ²åÈëÖ÷Ìâ
+        // æ’å…¥ä¸»é¡Œ
         t = time();
         sql = sprintf("INSERT INTO %s (topic_title, topic_poster, topic_time, forum_id)"
                       " VALUES (\"%s\", %d, %d, %d)",
@@ -748,7 +748,7 @@ int post_new_topic(object board, string title, string name, string text, string 
         if (! intp(ret))
                 log_error("post_new_topic.db_exec", ret);
 
-        // ²åÈëÌû×Ó
+        // æ’å…¥å¸–å­
         topic_id = query_topic_id(forum_id, title);
         sql = sprintf("INSERT INTO %s (topic_id, forum_id, poster_id, post_time, poster_ip)"
                       " VALUES (%d, %d, %d, %d, \"%s\")", 
@@ -758,7 +758,7 @@ int post_new_topic(object board, string title, string name, string text, string 
         if (! intp(ret))
                 log_error("post_new_topic.db_exec", ret);
                 
-        // ²åÈëÌû×ÓÄÚÈİ
+        // æ’å…¥å¸–å­å…§å®¹
         post_id = query_post_id(forum_id, t);
         sql = sprintf("INSERT INTO %s (post_id, post_subject, bbcode_uid, post_text)"
                       " VALUES (%d, \"%s\", \"\", \"%s\")", 
@@ -768,7 +768,7 @@ int post_new_topic(object board, string title, string name, string text, string 
         if (! intp(ret))
                 log_error("post_new_topic.db_exec", ret);
         
-        // Éè¶¨Ê×Ìù id
+        // è¨­å®šé¦–è²¼ id
         sql = sprintf("UPDATE %s SET topic_first_post_id = %d, topic_last_post_id ="
                       " %d WHERE topic_id = %d", TOPICS_TABLE, post_id, post_id, topic_id);
         ret = db_exec(db, sql);
@@ -776,7 +776,7 @@ int post_new_topic(object board, string title, string name, string text, string 
         if (! intp(ret))
                 log_error("post_new_topic.db_exec", ret);
 
-        // Ôö¼ÓÓÃ»§·¢ÌûÊı
+        // å¢åŠ ç”¨æˆ¶ç™¼å¸–æ•¸
         sql = sprintf("UPDATE %s SET user_posts = user_posts + 1 WHERE user_id ="
                       " %d", USERS_TABLE, poster_id);
         ret = db_exec(db, sql);
@@ -784,7 +784,7 @@ int post_new_topic(object board, string title, string name, string text, string 
         if (! intp(ret))
                 log_error("post_new_topic.db_exec", ret);
 
-        // Ôö¼Ó°æÃæÖ÷Ìâ¡¢ÎÄÕÂÊı
+        // å¢åŠ ç‰ˆé¢ä¸»é¡Œã€æ–‡ç« æ•¸
         sql = sprintf("UPDATE %s SET forum_posts = forum_posts + 1, "
                       "forum_topics = forum_topics + 1, forum_last_post_id = "
                       "%d WHERE forum_id = %d",
@@ -800,7 +800,7 @@ int post_new_topic(object board, string title, string name, string text, string 
         return 1;
 }
 
-// Ôö¼ÓÖ÷ÌâµÄä¯ÀÀ´ÎÊı
+// å¢åŠ ä¸»é¡Œçš„ç€è¦½æ¬¡æ•¸
 varargs int add_topic_view(int topic_id, int count)
 {
         int db;
@@ -813,7 +813,7 @@ varargs int add_topic_view(int topic_id, int count)
         if (! intp(topic_id) || ! topic_id)
                 return 0;
 
-        // Ä¬ÈÏÔö¼ÓÒ»´Î
+        // é»˜èªå¢åŠ ä¸€æ¬¡
         if (! count) count = 1;
 
         if (count <= 0)
@@ -842,7 +842,7 @@ varargs int add_topic_view(int topic_id, int count)
         return ret;
 }
 
-// ²éÑ¯Ö¸¶¨ post_id µÄÎÄÕÂÊı¾İ
+// æŸ¥è©¢æŒ‡å®š post_id çš„æ–‡ç« æ•¸æ“š
 mixed *query_post_data(int post_id)
 {
         int db;
@@ -881,7 +881,7 @@ mixed *query_post_data(int post_id)
         return ret;
 }
 
-// ¸ù¾İÓÃ»§Ö¸¶¨µÄ±àºÅÕÒµ½Ö÷ÌâµÄ id
+// æ ¹æ“šç”¨æˆ¶æŒ‡å®šçš„ç·¨è™Ÿæ‰¾åˆ°ä¸»é¡Œçš„ id
 int *query_number_topic(object board, int num, int mode)
 {
         mixed *posts;
@@ -899,13 +899,13 @@ int *query_number_topic(object board, int num, int mode)
             num < 0 && -num > max)
                 return 0;
 
-        // Èô num < 0£¬Ôò·µ»Øµ¹ÊıµÄÖ÷Ìâ id
+        // è‹¥ num < 0ï¼Œå‰‡è¿”å›å€’æ•¸çš„ä¸»é¡Œ id
         if (num < 0) return posts[max + num][TOPIC_ID];
 
         return posts[num][TOPIC_ID];
 }
 
-// ¸ù¾İÓÃ»§Ö¸¶¨µÄ±àºÅÕÒµ½ÎÄÕÂµÄ id
+// æ ¹æ“šç”¨æˆ¶æŒ‡å®šçš„ç·¨è™Ÿæ‰¾åˆ°æ–‡ç« çš„ id
 int *query_number_post(object board, int num)
 {
         mixed *posts;
@@ -922,13 +922,13 @@ int *query_number_post(object board, int num)
             num < 0 && -num > max - 1)
                 return 0;
 
-        // Èô num < 0£¬Ôò·µ»Øµ¹ÊıµÄÖ÷Ìâ id
+        // è‹¥ num < 0ï¼Œå‰‡è¿”å›å€’æ•¸çš„ä¸»é¡Œ id
         if (num < 0) return posts[max + num][TOPIC_ID];
 
         return posts[num][POST_ID];
 }
 
-// »Ø¸´Ö÷Ìâ
+// å›å¾©ä¸»é¡Œ
 int reply_topic(object board, int topic_id, string name, string text, string ip)
 {
         int db;
@@ -964,7 +964,7 @@ int reply_topic(object board, int topic_id, string name, string text, string ip)
 #endif
         t = time();
 
-        // ²åÈëÌû×Ó
+        // æ’å…¥å¸–å­
         sql = sprintf("INSERT INTO %s (topic_id, forum_id, poster_id, post_time, poster_ip)"
                       " VALUES (%d, %d, %d, %d, \"%s\")", 
                       POSTS_TABLE, topic_id, forum_id, poster_id, t, convert_to_ip(ip));
@@ -973,7 +973,7 @@ int reply_topic(object board, int topic_id, string name, string text, string ip)
         if (! intp(ret))
                 log_error("reply_topic.db_exec", ret);
                 
-        // ²åÈëÌû×ÓÄÚÈİ
+        // æ’å…¥å¸–å­å…§å®¹
         post_id = query_post_id(forum_id, t);
         sql = sprintf("INSERT INTO %s (post_id, post_subject, bbcode_uid, post_text)"
                       " VALUES (%d, \"%s\", \"\", \"%s\")", 
@@ -983,7 +983,7 @@ int reply_topic(object board, int topic_id, string name, string text, string ip)
         if (! intp(ret))
                 log_error("reply_topic.db_exec", ret);
         
-        // Éè¶¨Î²Ìù id£¬»Ø¸´¼ÓÒ»£¬Ê±¼ä¸üĞÂ
+        // è¨­å®šå°¾è²¼ idï¼Œå›å¾©åŠ ä¸€ï¼Œæ™‚é–“æ›´æ–°
         sql = sprintf("UPDATE %s SET topic_replies = topic_replies + 1, "
                       "topic_last_post_id = %d, topic_time = %d WHERE topic_id = %d",
                       TOPICS_TABLE, post_id, t, topic_id);
@@ -992,7 +992,7 @@ int reply_topic(object board, int topic_id, string name, string text, string ip)
         if (! intp(ret))
                 log_error("reply_topic.db_exec", ret);
 
-        // Ôö¼ÓÓÃ»§·¢ÌûÊı
+        // å¢åŠ ç”¨æˆ¶ç™¼å¸–æ•¸
         sql = sprintf("UPDATE %s SET user_posts = user_posts + 1 WHERE user_id ="
                       " %d", USERS_TABLE, poster_id);
         ret = db_exec(db, sql);
@@ -1000,7 +1000,7 @@ int reply_topic(object board, int topic_id, string name, string text, string ip)
         if (! intp(ret))
                 log_error("reply_topic.db_exec", ret);
 
-        // Ôö¼Ó°æÃæÎÄÕÂÊı
+        // å¢åŠ ç‰ˆé¢æ–‡ç« æ•¸
         sql = sprintf("UPDATE %s SET forum_posts = forum_posts + 1, "
                       "forum_last_post_id = %d WHERE forum_id = %d",
                       FORUMS_TABLE, post_id, forum_id);
@@ -1015,7 +1015,7 @@ int reply_topic(object board, int topic_id, string name, string text, string ip)
         return 1;
 }
 
-// É¾³ıÖ÷Ìâ
+// åˆªé™¤ä¸»é¡Œ
 int delete_topic(object board, int topic_id)
 {
         int db;
@@ -1042,7 +1042,7 @@ int delete_topic(object board, int topic_id)
                 return 0;
 #endif
 
-        // É¾³ıÖ÷Ìâ
+        // åˆªé™¤ä¸»é¡Œ
         sql = sprintf("DELETE FROM %s WHERE topic_id = %d",
                       TOPICS_TABLE, topic_id);
         ret = db_exec(db, sql);
@@ -1050,7 +1050,7 @@ int delete_topic(object board, int topic_id)
         if (! intp(ret))
                 log_error("delete_topic.db_exec", ret);
 
-        // É¾³ıËùÓĞ±¾Ö÷ÌâÏÂÎÄÕÂÄÚÈİ
+        // åˆªé™¤æ‰€æœ‰æœ¬ä¸»é¡Œä¸‹æ–‡ç« å…§å®¹
         posts = query_all_posts(board);
         foreach (post in posts)
         {
@@ -1062,7 +1062,7 @@ int delete_topic(object board, int topic_id)
                 }
         }
 
-        // É¾³ıËùÓĞ±¾Ö÷ÌâÏÂÎÄÕÂ
+        // åˆªé™¤æ‰€æœ‰æœ¬ä¸»é¡Œä¸‹æ–‡ç« 
         sql = sprintf("DELETE FROM %s WHERE topic_id = %d", 
                       POSTS_TABLE, topic_id);
         ret = db_exec(db, sql);
@@ -1070,7 +1070,7 @@ int delete_topic(object board, int topic_id)
         if (! intp(ret))
                 log_error("delete_topic.db_exec", ret);
 
-        // ¼õÉÙ°æÃæÖ÷Ìâ¡¢ÎÄÕÂÊı
+        // æ¸›å°‘ç‰ˆé¢ä¸»é¡Œã€æ–‡ç« æ•¸
         sql = sprintf("UPDATE %s SET forum_posts = forum_posts - %d, "
                       "forum_topics = forum_topics - 1 WHERE forum_id = %d",
                       FORUMS_TABLE, sizeof(posts), forum_id);
@@ -1085,7 +1085,7 @@ int delete_topic(object board, int topic_id)
         return 1;
 }
 
-// É¾³ıÎÄÕÂ
+// åˆªé™¤æ–‡ç« 
 int delete_post(object board, int post_id)
 {
         int db;
@@ -1115,11 +1115,11 @@ int delete_post(object board, int post_id)
         pdata = query_post_data(post_id);
         tinfo = query_topic_info(pdata[TOPIC_ID]);
 
-        // ÈôÎªÊ×Ìù£¬ÔòÉ¾³ıÕû¸öÖ÷ÌâµÄËùÓĞÎÄÕÂ
+        // è‹¥ç‚ºé¦–è²¼ï¼Œå‰‡åˆªé™¤æ•´å€‹ä¸»é¡Œçš„æ‰€æœ‰æ–‡ç« 
         if (tinfo[TOPIC_FIRST_ID] == post_id)
                 return delete_topic(board, pdata[TOPIC_ID]);
 
-        // É¾³ıÎÄÕÂÄÚÈİ
+        // åˆªé™¤æ–‡ç« å…§å®¹
         sql = sprintf("DELETE FROM %s WHERE post_id = %d", 
                       TEXTS_TABLE, post_id);
         ret = db_exec(db, sql);
@@ -1127,7 +1127,7 @@ int delete_post(object board, int post_id)
         if (! intp(ret))
                 log_error("delete_post.db_exec", ret);
 
-        // É¾³ıËùÓĞ±¾Ö÷ÌâÏÂÎÄÕÂ
+        // åˆªé™¤æ‰€æœ‰æœ¬ä¸»é¡Œä¸‹æ–‡ç« 
         sql = sprintf("DELETE FROM %s WHERE post_id = %d", 
                       POSTS_TABLE, post_id);
         ret = db_exec(db, sql);
@@ -1135,7 +1135,7 @@ int delete_post(object board, int post_id)
         if (! intp(ret))
                 log_error("delete_post.db_exec", ret);
 
-        // ¼õÉÙ°æÃæÖ÷Ìâ¡¢ÎÄÕÂÊı
+        // æ¸›å°‘ç‰ˆé¢ä¸»é¡Œã€æ–‡ç« æ•¸
         sql = sprintf("UPDATE %s SET forum_posts = forum_posts - 1"
                       " WHERE forum_id = %d",
                       FORUMS_TABLE, forum_id);

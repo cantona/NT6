@@ -6,13 +6,13 @@ inherit ITEM;
 inherit F_LIQUID;
 void create()
 {
-        set_name(YEL "»Æ¾ÆÌ³×Ó" NOR, ({"jiu tanzi", "tanzi", "pot"}));
+        set_name(YEL "é»ƒé…’å£‡å­" NOR, ({"jiu tanzi", "tanzi", "pot"}));
         set_weight(8000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¸öÓÃÀ´×°»Æ¾ÆµÄ´óÄàÌ³×Ó£¬·â¿ÚÉÏÌù×ÅºìÖ½¡£\n");
-                set("unit", "¸ö");
+                set("long", "ä¸€å€‹ç”¨ä¾†è£é»ƒé…’çš„å¤§æ³¥å£‡å­ï¼Œå°å£ä¸Šè²¼è‘—ç´…ç´™ã€‚\n");
+                set("unit", "å€‹");
                 set("value", 800);
                 set("max_liquid", 120);
         }
@@ -20,7 +20,7 @@ void create()
         // we set it to contain wine at the beginning
         set("liquid", ([
                 "type": "alcohol",
-                "name": "»Æ¾Æ",
+                "name": "é»ƒé…’",
                 "remaining": 30,
                 "drunk_apply": 10,
         ]));

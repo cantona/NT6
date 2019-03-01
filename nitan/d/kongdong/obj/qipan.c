@@ -3,15 +3,15 @@ inherit ITEM;
 
 void create()
 {
-        set_name("Ê¯¿ÌÆåÅÌ", ({ "qi pan", "pan" }));
-        set("long","ÕâÊÇÒ»¿é¿ÌÔÚ¾ŞÊ¯ÉÏµÄÆåÅÌ£¬ÉÏÃæ·Å×ÅÒ»Ğ©Æå×Ó¡£\n");
+        set_name("çŸ³åˆ»æ£‹ç›¤", ({ "qi pan", "pan" }));
+        set("long","é€™æ˜¯ä¸€å¡Šåˆ»åœ¨å·¨çŸ³ä¸Šçš„æ£‹ç›¤ï¼Œä¸Šé¢æ”¾è‘—ä¸€äº›æ£‹å­ã€‚\n");
         set_weight(1000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿é");
+                set("unit", "å¡Š");
                 set("value", 1000);              
-                set("no_get","Õâ¿éÆåÅÌÊÇÖ±½Ó¿ÌÔÚÑÒÊ¯ÉÏµÄ£¬ÎŞ·¨ÄÃÈ¡¡£\n");
+                set("no_get","é€™å¡Šæ£‹ç›¤æ˜¯ç›´æ¥åˆ»åœ¨å·–çŸ³ä¸Šçš„ï¼Œç„¡æ³•æ‹¿å–ã€‚\n");
                 set("qizi",2);
         }
 }
@@ -28,7 +28,7 @@ int do_get(string arg)
         ob = this_player();
         if(arg == "qi pan" || arg == "pan" )
         {
-                tell_object(ob,"Õâ¿éÆåÅÌÊÇÖ±½Ó¿ÌÔÚÑÒÊ¯ÉÏµÄ£¬ÎŞ·¨ÄÃÈ¡¡£\n");
+                tell_object(ob,"é€™å¡Šæ£‹ç›¤æ˜¯ç›´æ¥åˆ»åœ¨å·–çŸ³ä¸Šçš„ï¼Œç„¡æ³•æ‹¿å–ã€‚\n");
                 return 1;
         }
         if(sscanf( arg, "%s from %s", qizi, qipan)!=2)return 0;
@@ -36,15 +36,15 @@ int do_get(string arg)
         ||(qipan!="qi pan" && qipan != "pan") )return 0;
         if(present("yi zhe",environment(this_object()) ) )
         {
-                tell_object(ob,"±ğÈËÕıÔÚÏÂÆå£¬ÔõÃ´ÄÜ°ÑÆå×ÓÄÃ×ßÄØ£¿\n");
+                tell_object(ob,"åˆ¥äººæ­£åœ¨ä¸‹æ£‹ï¼Œæ€éº¼èƒ½æŠŠæ£‹å­æ‹¿èµ°å‘¢ï¼Ÿ\n");
                 return 1;
         }
         if(query("qizi") <= 0 )
         {
-                tell_object(ob,"Æå×ÓÒÑ¾­±»±ğÈËÄÃ¹âÁË¡£\n");
+                tell_object(ob,"æ£‹å­å·²ç¶“è¢«åˆ¥äººæ‹¿å…‰äº†ã€‚\n");
                 return 1;
         }
-        message_vision("$N´ÓÆåÅÌÉÏÄÃÏÂÒ»°ÑÆå×Ó¡£\n",ob);
+        message_vision("$Nå¾æ£‹ç›¤ä¸Šæ‹¿ä¸‹ä¸€æŠŠæ£‹å­ã€‚\n",ob);
         add("qizi",-1);
         new(__DIR__"qizi")->move(ob);
         return 1;

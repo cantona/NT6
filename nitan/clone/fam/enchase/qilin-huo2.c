@@ -3,15 +3,15 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIR "÷è÷ë»ğ" NOR, ({"qilin huo", "qilin", "huo" }));
+        set_name(HIR "éº’éºŸç«" NOR, ({"qilin huo", "qilin", "huo" }));
         set_weight(1000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
+                set("unit", "é¡†");
                 set("value", 500000);
-                set("long", HIR "¾İËµ÷è÷ë»ğ÷è÷ëÉñÊŞº¡¹ÇËù»¯£¬ÄÃÔÚÊÖÖĞÓĞÖÖ³ãÈÈµÄ¸Ğ¾õ¡£\n" NOR);
-                set("enchase/name", "÷è÷ë»ğ");
+                set("long", HIR "æ“šèªªéº’éºŸç«éº’éºŸç¥ç¸éª¸éª¨æ‰€åŒ–ï¼Œæ‹¿åœ¨æ‰‹ä¸­æœ‰ç¨®ç†¾ç†±çš„æ„Ÿè¦ºã€‚\n" NOR);
+                set("enchase/name", "éº’éºŸç«");
                 set("enchase/point", 5);
                 set("enchase/type", "medal2");
                 set("enchase/cur_firm", 100);

@@ -2,11 +2,11 @@ inherit BUILD_ROOM;
 
 void create()
 {
-        set("short", "����ͷ");
+        set("short", "老龍頭");
         set("long", @LONG
-����ͷ�����ﳤ����ˡ��κ�¥Ρ��߾��ͷ��¥�ϡ��۽������
-���ҾӸ����£�ֱ���󺣡��Գκ�¥����һʯ���𼶶�������󺣣�վ��ʯ
-���ն�¥ƽ̨������������һɫ���ޱ��޼ʣ�������ǧ��
+老龍頭是萬裡長城最東端。澄海樓巍峨高踞城頭，樓上“雄襟萬裡”的
+橫匾居高臨下，直俯大海。自澄海樓築有一石城逐級而下伸入大海，站在石
+城終端樓平台上四眺，海天一色，無邊無際，氣象萬千。
 LONG );
         set("exits", ([
                 "northwest" : __DIR__"shanhaiguan",

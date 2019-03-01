@@ -1,21 +1,21 @@
 #include <ansi.h>
-// Œ‰µ±≈… tianwei-zhengqi
+// Ê≠¶Áï∂Ê¥æ tianwei-zhengqi
 inherit SKILL; 
 string type() { return "knowledge"; } 
 
 int is_fmsk() { return 1; }
-string family_name() { return "Œ‰µ±≈…"; }
+string family_name() { return "Ê≠¶Áï∂Ê¥æ"; }
 
 int valid_learn(object me)
 {        
         if( query("shen", me)<1000000 )
-                return notify_fail("ƒ„––œ¿’Ã“Âµƒ ¬◊ˆµ√ªπ≤ªπª£¨œ÷‘⁄ªπŒﬁ∑®¡ÏŒÚÃÏÕ˛’˝∆¯°£\n");        
+                return notify_fail("‰Ω†Ë°å‰ø†‰ªóÁæ©ÁöÑ‰∫ãÂÅöÂæóÈÇÑ‰∏çÂ§†ÔºåÁèæÂú®ÈÇÑÁÑ°Ê≥ïÈ†òÊÇüÂ§©Â®ÅÊ≠£Ê∞£„ÄÇ\n");        
         
         if( query("family/family_name", me) != family_name() )
-                return notify_fail("ÃÏÕ˛’˝∆¯÷ªƒ‹Œ‰µ±≈…µ‹◊”∑Ωø…—–œ∞°£\n");
+                return notify_fail("Â§©Â®ÅÊ≠£Ê∞£Âè™ËÉΩÊ≠¶Áï∂Ê¥æÂºüÂ≠êÊñπÂèØÁ†îÁøí„ÄÇ\n");
 
         if (me->query_skill("taiji-jian", 1) < 150)
-                return notify_fail("ƒ„Ã´º´Ω£∑®–ﬁŒ™≤ª◊„£¨Œﬁ∑®ºÃ–¯—–œ∞ÃÏÕ˛’˝∆¯°£\n");
+                return notify_fail("‰Ω†Â§™Ê•µÂäçÊ≥ï‰øÆÁÇ∫‰∏çË∂≥ÔºåÁÑ°Ê≥ïÁπºÁ∫åÁ†îÁøíÂ§©Â®ÅÊ≠£Ê∞£„ÄÇ\n");
 
         return 1;
 }

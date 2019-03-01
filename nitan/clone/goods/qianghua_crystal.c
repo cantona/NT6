@@ -1,5 +1,5 @@
 // This program is a part of NT MudLIB
-// ab_crystal.c ÄÜÁ¦Ë®¾§
+// ab_crystal.c èƒ½åŠ›æ°´æ™¶
 
 #include <ansi.h>
 
@@ -7,14 +7,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIC"Ç¿»¯Ë®¾§"NOR, ({ "qianghua crystal", "qianghua", "crystal" }) );
+        set_name(HIC"å¼·åŒ–æ°´æ™¶"NOR, ({ "qianghua crystal", "qianghua", "crystal" }) );
         set_weight(1);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", HIC "±íÃæ·º×ÅÇàÉ«¹âÃ¢µÄÇ¿»¯Ë®¾§£¬×°±¸ÔÚ6ĞÇÖ®Ç°Ê¹ÓÃ£¨²»°üÀ¨6ĞÇ£©£¬¿ÉÒÔ100%Ç¿»¯³É¹¦¡£\n" NOR);
+                set("long", HIC "è¡¨é¢æ³›è‘—é’è‰²å…‰èŠ’çš„å¼·åŒ–æ°´æ™¶ï¼Œè£å‚™åœ¨6æ˜Ÿä¹‹å‰ä½¿ç”¨ï¼ˆä¸åŒ…æ‹¬6æ˜Ÿï¼‰ï¼Œå¯ä»¥100%å¼·åŒ–æˆåŠŸã€‚\n" NOR);
                 set("value", 50000);
-                set("unit", "¿é");
+                set("unit", "å¡Š");
         }
         //set("set_data", 1);
         set("autoload", 1);

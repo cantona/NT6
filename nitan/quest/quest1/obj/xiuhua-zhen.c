@@ -1,21 +1,21 @@
-// weapon: xiuhua.c Ğå»¨Õë
+// weapon: xiuhua.c ç¹¡èŠ±é‡
 // Jay 4/7/96
 #include <weapon.h>
 inherit SWORD;
 void create()
 {
-        set_name("Ğå»¨Õë", ({ "xiuhua zhen", "zhen", "needle" }));
+        set_name("ç¹¡èŠ±é‡", ({ "xiuhua zhen", "zhen", "needle" }));
         set_weight(5);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ù");
-                set("long", "ÕâÊÇÒ»¸ù¾«¸ÖÏ¸Ä¥µÄĞå»¨Õë£¬ÊÇĞå»¨ÓÃµÄ¾ø¼Ñ¹¤¾ß¡£\n");
+                set("unit", "æ ¹");
+                set("long", "é€™æ˜¯ä¸€æ ¹ç²¾é‹¼ç´°ç£¨çš„ç¹¡èŠ±é‡ï¼Œæ˜¯ç¹¡èŠ±ç”¨çš„çµ•ä½³å·¥å…·ã€‚\n");
                 set("value", 100);
                 set("flag",2);
                 set("material", "steel");
-                set("wield_msg", "$NÓÃÄ´Ö¸ºÍÊ³Ö¸´Ó÷Ş¼äÄé³öÒ»¸ù$n¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²å»Ø÷Ş¼ä¡£\n");
+                set("wield_msg", "$Nç”¨æ‹‡æŒ‡å’Œé£ŸæŒ‡å¾é¬¢é–“æ‹ˆå‡ºä¸€æ ¹$nã€‚\n");
+                set("unwield_msg", "$Nå°‡æ‰‹ä¸­çš„$næ’å›é¬¢é–“ã€‚\n");
         }
         init_sword(40,2);
         setup();

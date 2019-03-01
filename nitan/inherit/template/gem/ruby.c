@@ -10,15 +10,15 @@ inherit TESSERA;
 void create()
 {
 //**    set_name("$name", ({ "$id", }));                        /* NAME_ENTRY */
-        set_name(HIR "�챦ʯ" NOR, ({ "ruby" }) );           /* NAME_EXIT  */
+        set_name(HIR "紅寶石" NOR, ({ "ruby" }) );           /* NAME_EXIT  */
         set_weight(20);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
 //**            set("$dbase_key", "$dbase_value\n");            /* DBASE_ENTRY */
-                set("long", HIR "һ�ź�ɫ�ı�ʯ��\n" NOR);  /* DBASE_EXIT  */
+                set("long", HIR "一顆紅色的寶石。\n" NOR);  /* DBASE_EXIT  */
                 set("value", 50000);
-                set("unit", "��");
+                set("unit", "顆");
                 set("level", 2);
                 set("material", "ruby");
                 set("can_be_enchased", 1);

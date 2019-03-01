@@ -5,13 +5,13 @@ inherit STAFF;
 
 void create()
 {
-        set_name(NOR + YEL "ÇàÍ­ÕÈ" NOR, ({ "qingtong zhang","qingtong","zhang" }));
+        set_name(NOR + YEL "é’éŠ…æ–" NOR, ({ "qingtong zhang","qingtong","zhang" }));
         set_weight(800);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ù");
-                set("long", NOR + YEL "ÕâÊÇÒ»¸ùÇàÍ­¶ÍÔìµÄÕÈ£¬ÈëÊÖ³ÁµéµéµÄ£¬ËÆºõÏàµ±½áÊµ¡£\n" NOR);
+                set("unit", "æ ¹");
+                set("long", NOR + YEL "é€™æ˜¯ä¸€æ ¹é’éŠ…é›é€ çš„æ–ï¼Œå…¥æ‰‹æ²‰ç”¸ç”¸çš„ï¼Œä¼¼ä¹ç›¸ç•¶çµå¯¦ã€‚\n" NOR);
                 set("material", "qingtong");
                 set("value", 100000);
         }

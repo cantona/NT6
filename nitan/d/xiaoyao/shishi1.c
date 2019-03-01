@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ʯ��");
+        set("short", "石室");
         set("long", @LONG
-����һ��ʯͷ���ɵķ��䣬��Ϊ�þ�û����������ɢ����һЩ����
-�ŵ���ζ�������е������Կ�����˿�ͳ漣��
+這是一個石頭砌成的房間，因為好久沒有人來過，散發著一些很難
+聞的氣味，房間中到處可以看到蛛絲和蟲跡。
 LONG );
         set("exits", ([
                 "east" : __DIR__"shiji1",

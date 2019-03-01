@@ -7,11 +7,11 @@ inherit F_CLEAN_UP;
 int help(object me)
 {
         write(@HELP
-’Ω≥°÷∏¡Ó£¨ø…“‘±®√˚”Î¿Îø™’Ω≥°
+Êà∞Â†¥Êåá‰ª§ÔºåÂèØ‰ª•Â†±ÂêçËàáÈõ¢ÈñãÊà∞Â†¥
 
-battle info                          - œ‘ æƒø«∞’Ω’˘◊ —∂
-battle join                          - ±®√˚≤Œº”œ¬“ª≥°¥Œµƒ’Ω≥°
-battle cancel                        - »°œ˚±®√˚
+battle info                          - È°ØÁ§∫ÁõÆÂâçÊà∞Áà≠Ë≥áË®ä
+battle join                          - Â†±ÂêçÂèÉÂä†‰∏ã‰∏ÄÂ†¥Ê¨°ÁöÑÊà∞Â†¥
+battle cancel                        - ÂèñÊ∂àÂ†±Âêç
 
 HELP );
         return 1;
@@ -29,7 +29,7 @@ int main(object me, string arg)
                         string ppl = "";
                         int count = 0;
                         
-                        msg = "ƒø«∞π≤ "+sizeof(players)+" ŒªÕÊº“≤Œ”Î’Ω’˘£¨"+(member_array(me->query_id(1), players)==-1?"ƒ„Œ¥≤Œ”Î’Ω’˘":"ƒ„ «∆‰÷–÷Æ“ª")+"°£\n";
+                        msg = "ÁõÆÂâçÂÖ± "+sizeof(players)+" ‰ΩçÁé©ÂÆ∂ÂèÉËàáÊà∞Áà≠Ôºå"+(member_array(me->query_id(1), players)==-1?"‰Ω†Êú™ÂèÉËàáÊà∞Áà≠":"‰Ω†ÊòØÂÖ∂‰∏≠‰πã‰∏Ä")+"„ÄÇ\n";
                                                 
                         if( sizeof(players) > 0 )
                         {
@@ -41,17 +41,17 @@ int main(object me, string arg)
                                                 continue;
                         
                                         if( ++count <= 3 )
-                                                score += player->query_idname()+"°¢";
+                                                score += player->query_idname()+"„ÄÅ";
                                         
-                                        ppl += player->query_idname()+NOR"("+BATTLEFIELD_D->get_player_score(id)+")°¢";
+                                        ppl += player->query_idname()+NOR"("+BATTLEFIELD_D->get_player_score(id)+")„ÄÅ";
                                         if( count % 5 == 0 )
                                                 ppl += "\n";
                                                                                                       
                                 }
                                 
-                                msg += "≤Œ”Î’ﬂ’Ωº®Õ≥º∆£∫\n"+ppl[0..<3]+"°£\n";
+                                msg += "ÂèÉËàáËÄÖÊà∞Á∏æÁµ±Ë®àÔºö\n"+ppl[0..<3]+"„ÄÇ\n";
                                 
-                                msg += "ƒø«∞’Ω’˘º®∑÷≈≈√˚«∞»˝√˚Œ™£∫"+score[0..<3]+"°£\n";
+                                msg += "ÁõÆÂâçÊà∞Áà≠Á∏æÂàÜÊéíÂêçÂâç‰∏âÂêçÁÇ∫Ôºö"+score[0..<3]+"„ÄÇ\n";
                         }
                         
                         tell_object(me, msg);
@@ -64,7 +64,7 @@ int main(object me, string arg)
                         BATTLEFIELD_D->cancel_battle(me);
                         break;
                 default:
-                        tell_object(me, "«Î ‰»Î’˝»∑µƒ÷∏¡Ó∏Ò Ω(help battle)°£\n");
+                        tell_object(me, "Ë´ãËº∏ÂÖ•Ê≠£Á¢∫ÁöÑÊåá‰ª§Ê†ºÂºè(help battle)„ÄÇ\n");
                         break;
         }
         return 1;

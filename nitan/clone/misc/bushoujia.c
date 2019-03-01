@@ -1,4 +1,4 @@
-// bushou jia.c ´şÊŞ¼Ğ
+// bushou jia.c é€®ç¸å¤¾
 // Create by Vin for Heros.cn
 
 #include <ansi.h>
@@ -6,11 +6,11 @@ inherit ITEM;
 
 void create()
 {
-        set_name(NOR + CYN "²¶ÊŞ¼Ğ" NOR, ({ "bushou jia", "bushou", "jia" }));
+        set_name(NOR + CYN "æ•ç¸å¤¾" NOR, ({ "bushou jia", "bushou", "jia" }));
         set_weight(3000);
-        set("long", NOR + CYN "¼Ğ³İ·æÀûµÄ²¶ÊŞ¼Ğ£¬Äã¿ÉÍ¨¹ıËü²¼ÖÃ("
-                    HIY "snare" NOR + CYN ")ÏİÚåÀ´²¶ÁÔ¡£\n" NOR);
-        set("unit", "Ö»");
+        set("long", NOR + CYN "å¤¾é½’é‹’åˆ©çš„æ•ç¸å¤¾ï¼Œä½ å¯é€šéå®ƒå¸ƒç½®("
+                    HIY "snare" NOR + CYN ")é™·é˜±ä¾†æ•çµã€‚\n" NOR);
+        set("unit", "åª");
         set("value", 10000);
         set("no_sell", 1);
         setup();
@@ -30,34 +30,34 @@ int do_snare(string arg)
         me = this_player();
 
         if (me->query_skill("hunting", 1) < 20)
-                return notify_fail("ÄãµÄá÷ÁÔ¼¼ÇÉ²»¹»æµÊì£¬ÄÑÒÔ²¼ÖÃÏİÚå¡£\n");
+                return notify_fail("ä½ çš„ç‹©çµæŠ€å·§ä¸å¤ å«»ç†Ÿï¼Œé›£ä»¥å¸ƒç½®é™·é˜±ã€‚\n");
 
         if( query_temp("id") != query("id", me )
            && query_temp("id")
            && environment() != me)
-                return notify_fail("ÕâÊÇ±ğÈË·ÅÖÃµÄ²¶ÊŞ¼Ğ£¬Äã¶¯Ëü×öÉõ£¿\n");
+                return notify_fail("é€™æ˜¯åˆ¥äººæ”¾ç½®çš„æ•ç¸å¤¾ï¼Œä½ å‹•å®ƒåšç”šï¼Ÿ\n");
 
         if( query("no_fight", environment(me) )
             || query("no_quarry", environment(me)) )
-                return notify_fail("ÔÚÕâÀï·ÅÖÃ²¶ÊŞ¼Ğ£¿²»Ì«ºÃ°É¡£\n");
+                return notify_fail("åœ¨é€™è£¡æ”¾ç½®æ•ç¸å¤¾ï¼Ÿä¸å¤ªå¥½å§ã€‚\n");
 
         if (query_temp("snare"))
-                return notify_fail("²¶ÊŞ¼ĞÒÑ°²ÖÃÍ×ÉÆ£¬¾ÍµÈÁÔÎïÉÏ¹³ÁË¡£\n");
+                return notify_fail("æ•ç¸å¤¾å·²å®‰ç½®å¦¥å–„ï¼Œå°±ç­‰çµç‰©ä¸Šé‰¤äº†ã€‚\n");
 
         if (me->is_busy())
-                return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ£¬µÈÒ»»á¶ù°É¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£å¿™è‘—å‘¢ï¼Œç­‰ä¸€æœƒå…’å§ã€‚\n");
 
         if (me->is_fighting())
-                return notify_fail("»¹ÊÇÏÈ°ÑÄãÃæÇ°µÄ¼Ò»ï·Åµ¹ÔÙËµ°É¡£\n");
+                return notify_fail("é‚„æ˜¯å…ˆæŠŠä½ é¢å‰çš„å®¶ä¼™æ”¾å€’å†èªªå§ã€‚\n");
 
         if (! objectp(ob = present("shi er", me))
            || ! ob->query_amount())
-                return notify_fail("ÏÖÔÚÄãÉíÉÏÃ»ÓĞÊ³¶ü£¬ÄÑÒÔ²¼ÖÃÏİÚå¡£\n");
+                return notify_fail("ç¾åœ¨ä½ èº«ä¸Šæ²’æœ‰é£Ÿé¤Œï¼Œé›£ä»¥å¸ƒç½®é™·é˜±ã€‚\n");
 
         ob->add_amount(-1);
 
-        message_vision(HIR "\n$N" HIR "ÔÚ" + name() + HIR "Àï·ÅÉÏÊ³¶ü£¬ÇáÇá"
-                       "°²ÖÃÔÚµØÉÏ£¬µÈ´ıÁÔÎïÉÏ¹³¡£\n\n" NOR, me);
+        message_vision(HIR "\n$N" HIR "åœ¨" + name() + HIR "è£¡æ”¾ä¸Šé£Ÿé¤Œï¼Œè¼•è¼•"
+                       "å®‰ç½®åœ¨åœ°ä¸Šï¼Œç­‰å¾…çµç‰©ä¸Šé‰¤ã€‚\n\n" NOR, me);
 
         set_temp("snare", 1);
         set_temp("id",query("id", me));
@@ -65,7 +65,7 @@ int do_snare(string arg)
         if (environment() == me)
         {
                 this_object()->move(environment(me));
-                set("no_get", "²¶ÊŞ¼ĞµÄµ¯»ÉÒÑÈ»±Á½ô£¬ÂÒ¶¯Ğ¡ĞÄÊÜÉË¡£\n");
+                set("no_get", "æ•ç¸å¤¾çš„å½ˆç°§å·²ç„¶ç¹ƒç·Šï¼Œäº‚å‹•å°å¿ƒå—å‚·ã€‚\n");
         }
 
         me->move(environment(me));
@@ -106,8 +106,8 @@ void catch_quarry(object me)
         env = environment(this_object());
         if (! objectp(me) || environment(me) != env || ! living(me))
         {
-                message_vision(CYN "Ö»Ìı¡¸¿¦àê¡¹Ò»Éù£¬²¶ÊŞ¼Ğ×Ô¶¯"
-                               "ºÏÂ£ÁË¡£\n" NOR, this_object());
+                message_vision(CYN "åªè½ã€Œå–€åš“ã€ä¸€è²ï¼Œæ•ç¸å¤¾è‡ªå‹•"
+                               "åˆæ”äº†ã€‚\n" NOR, this_object());
                 return;
         }
 
@@ -115,15 +115,15 @@ void catch_quarry(object me)
             || query("no_quarry", env )
             || query("no_fight", env) )
         {
-                message_vision(CYN "µÈÁË°ëÌì£¬Ö»Ìı¡¸¿¦àê¡¹Ò»Éù£¬²¶ÊŞ"
-                               "¼Ğ×Ô¶¯ºÏÂ£ÁË£¬É¶Ò²Ã»×¥µ½¡£\n" HIC "¿´"
-                               "À´Õâ¸öµØ·½²¶×½²»ÁËÊ²Ã´£¬$N" HIC "Ì¾ÁË"
-                               "¿ÚÆø£¬½«²¶ÊŞ¼ĞÊÕ»Ø¡£\n" NOR, me);
+                message_vision(CYN "ç­‰äº†åŠå¤©ï¼Œåªè½ã€Œå–€åš“ã€ä¸€è²ï¼Œæ•ç¸"
+                               "å¤¾è‡ªå‹•åˆæ”äº†ï¼Œå•¥ä¹Ÿæ²’æŠ“åˆ°ã€‚\n" HIC "çœ‹"
+                               "ä¾†é€™å€‹åœ°æ–¹æ•æ‰ä¸äº†ä»€éº¼ï¼Œ$N" HIC "å˜†äº†"
+                               "å£æ°£ï¼Œå°‡æ•ç¸å¤¾æ”¶å›ã€‚\n" NOR, me);
                 back_owner(me);
                 return;
         }
 
-        // µ÷ÓÃ¸ÃµØÍ¼µÄÁÔÎï
+        // èª¿ç”¨è©²åœ°åœ–çš„çµç‰©
         rs=query("quarrys", env);
 
         st = keys(rs);
@@ -154,11 +154,11 @@ void catch_quarry(object me)
                         if (! objectp(quarry))
                                 break;
 
-                        msg = HIY "\n¹ıµÃÁ¼¾Ã£¬$N" HIY "ÉíºóºöÈ»»Î³öÒ»" +
+                        msg = HIY "\néå¾—è‰¯ä¹…ï¼Œ$N" HIY "èº«å¾Œå¿½ç„¶æ™ƒå‡ºä¸€" +
                               query("unit", quarry)+HIY+quarry->name()+
-                              HIY "£¬ÎÅµÃ¶üÏãºó³¯²¶ÊŞ¼ĞÂıÂı¿¿½ü¡£" NOR;
+                              HIY "ï¼Œèå¾—é¤Œé¦™å¾Œæœæ•ç¸å¤¾æ…¢æ…¢é è¿‘ã€‚" NOR;
 
-                        // Éè¶¨ºô³öÕß£¬¼´²¶ÁÔµÄ½±Àø¶ÔÏó
+                        // è¨­å®šå‘¼å‡ºè€…ï¼Œå³æ•çµçš„çå‹µå°è±¡
                         set("owner",query("id",  me), quarry);
                         quarry->move(environment(me));
 
@@ -168,46 +168,46 @@ void catch_quarry(object me)
 
                         if (lvm / 2 + random(lvm) < lvq && lvq <= 20)
                         {
-                                msg += HIY "±ãÔÚ´ËÊ±£¬ºöÌı¡¸¿¦àê¡¹Ò»Éù£¬ÄÇ"
-                                       "²¶ÊŞ¼Ğ¾¹È»×Ô¶¯ºÏÉÏÁË¡£$n" HIY "ÊÜ¾ª"
-                                       "Ö®ÏÂ¼±Ã¦±¼ÌÓ£¬ÏûÊ§ÔÚÁËÁÖ×ÓÉî´¦¡£\n"
+                                msg += HIY "ä¾¿åœ¨æ­¤æ™‚ï¼Œå¿½è½ã€Œå–€åš“ã€ä¸€è²ï¼Œé‚£"
+                                       "æ•ç¸å¤¾ç«Ÿç„¶è‡ªå‹•åˆä¸Šäº†ã€‚$n" HIY "å—é©š"
+                                       "ä¹‹ä¸‹æ€¥å¿™å¥”é€ƒï¼Œæ¶ˆå¤±åœ¨äº†æ—å­æ·±è™•ã€‚\n"
                                        "\n" NOR;
                                 message_sort(msg, me, quarry);
                                 destruct(quarry);
                         } else
                         if (lvm / 2 + random(lvm) < lvq && lvq > 20)
                         {
-                                msg += HIY "±ãÔÚÕâ¸öÊ±ºò£¬ºöÈ»ÌıµÃ¡¸¿¦àê¡¹"
-                                       "Ò»Éù£¬ÄÇÖ»²¶ÊŞ¼Ğ¾¹È»×Ô¶¯ºÏÉÏÁË¡£$n"
-                                       HIY "ÊÜ¾ªÖ®ÏÂ²ªÈ»´óÅ­£¬³¯$N" HIY "Ö±"
-                                       "ÆË¶øÈ¥¡£\n\n" NOR;
+                                msg += HIY "ä¾¿åœ¨é€™å€‹æ™‚å€™ï¼Œå¿½ç„¶è½å¾—ã€Œå–€åš“ã€"
+                                       "ä¸€è²ï¼Œé‚£åªæ•ç¸å¤¾ç«Ÿç„¶è‡ªå‹•åˆä¸Šäº†ã€‚$n"
+                                       HIY "å—é©šä¹‹ä¸‹å‹ƒç„¶å¤§æ€’ï¼Œæœ$N" HIY "ç›´"
+                                       "æ’²è€Œå»ã€‚\n\n" NOR;
                                 message_sort(msg, me, quarry);
                                 quarry->kill_ob(me);
                         }  else
                         if (lvm / 2 + random(lvm) > lvq * 4)
                         {
-                                msg += HIY "Ö»Ìı¡¸Å¾¡¹µÄÒ»Éù£¬$n" HIY "Ö»¹Ë"
-                                       "ÃÙÊ³£¬²»ÁôÉñ¼äÒÑÖĞÁË²¶ÊŞ¼ĞÉÏµÄÏİÚå¡£"
-                                       "ÄÇÏİÚåÉèµÃÆÄÎª¾«Ãî£¬ÄÇ$n" HIY "²»×¡"
-                                       "ÕõÔú£¬ÏÊÑª½¦µÃËÄ´¦¶¼ÊÇ¡£µ«Ö»¹ıµÃÆ¬¿Ì"
-                                       "£¬¾ÍÔÙÃ»ÁË¶¯¾²¡£\n" NOR;
+                                msg += HIY "åªè½ã€Œå•ªã€çš„ä¸€è²ï¼Œ$n" HIY "åªé¡§"
+                                       "è¦“é£Ÿï¼Œä¸ç•™ç¥é–“å·²ä¸­äº†æ•ç¸å¤¾ä¸Šçš„é™·é˜±ã€‚"
+                                       "é‚£é™·é˜±è¨­å¾—é —ç‚ºç²¾å¦™ï¼Œé‚£$n" HIY "ä¸ä½"
+                                       "æ™ç´®ï¼Œé®®è¡€æ¿ºå¾—å››è™•éƒ½æ˜¯ã€‚ä½†åªéå¾—ç‰‡åˆ»"
+                                       "ï¼Œå°±å†æ²’äº†å‹•éœã€‚\n" NOR;
                                 message_sort(msg, me, quarry);
                                 quarry->die(me);
                         }  else
                         if (lvm / 2 + random(lvm) > lvq * 3)
                         {
-                                msg += HIY "Ö»Ìı¡¸Å¾¡¹µÄÒ»Éù£¬$n" HIY "Ö»¹Ë"
-                                       "ÃÙÊ³£¬²»ÁôÉñ¼äÒÑÖĞÁË²¶ÊŞ¼ĞÉÏµÄÏİÚå£¬"
-                                       "µÇÊ±±»¼ĞµÃÏÊÑªÖ±Á÷¡£ÄÇ$n" HIY "²»Í£"
-                                       "ÕõÔúÆóÍ¼ÌÓÅÜ£¬½á¹û´¥¶¯ÉË¿Ú£¬¶ÙÊ±Í´µÃ"
-                                       "»èÁË¹ıÈ¥¡£\n" NOR;
+                                msg += HIY "åªè½ã€Œå•ªã€çš„ä¸€è²ï¼Œ$n" HIY "åªé¡§"
+                                       "è¦“é£Ÿï¼Œä¸ç•™ç¥é–“å·²ä¸­äº†æ•ç¸å¤¾ä¸Šçš„é™·é˜±ï¼Œ"
+                                       "ç™»æ™‚è¢«å¤¾å¾—é®®è¡€ç›´æµã€‚é‚£$n" HIY "ä¸åœ"
+                                       "æ™ç´®ä¼åœ–é€ƒè·‘ï¼Œçµæœè§¸å‹•å‚·å£ï¼Œé “æ™‚ç—›å¾—"
+                                       "æ˜äº†éå»ã€‚\n" NOR;
                                 message_sort(msg, me, quarry);
                                 quarry->unconcious(me);
                         } else
                         {
-                                msg += HIY "Ö»Ìı¡¸Å¾¡¹µÄÒ»Éù£¬$n" HIY "Ö»¹Ë"
-                                       "ÃÙÊ³£¬²»ÁôÉñ¼äÒÑÖĞÁË²¶ÊŞ¼ĞÉÏµÄÏİÚå£¬"
-                                       "µÇÊ±±»¼ĞµÃÏÊÑªÖ±Á÷£¬Í´Éù³¤ºô¡£\n\n" NOR;
+                                msg += HIY "åªè½ã€Œå•ªã€çš„ä¸€è²ï¼Œ$n" HIY "åªé¡§"
+                                       "è¦“é£Ÿï¼Œä¸ç•™ç¥é–“å·²ä¸­äº†æ•ç¸å¤¾ä¸Šçš„é™·é˜±ï¼Œ"
+                                       "ç™»æ™‚è¢«å¤¾å¾—é®®è¡€ç›´æµï¼Œç—›è²é•·å‘¼ã€‚\n\n" NOR;
                                 message_sort(msg, me, quarry);
                                 quarry->receive_wound("qi", dam, me);
                                 quarry->receive_wound("jing", dam, me);
@@ -218,8 +218,8 @@ void catch_quarry(object me)
                 }
                 sum -= rs[st[i]];
         }
-        message_vision(CYN "µÈÁË°ëÌì£¬Ö»Ìı¡¸¿¦àê¡¹Ò»Éù£¬²¶ÊŞ¼Ğ×Ô¶¯"
-                       "ºÏÂ£ÁË£¬É¶Ò²Ã»×¥µ½¡£\n" HIC "$N" HIC "´ôÁË"
-                       "°ëÌì£¬Ò¡ÁËÒ¡Í·£¬½«²¶ÊŞ¼ĞÊÕ»Ø¡£\n" NOR, me);
+        message_vision(CYN "ç­‰äº†åŠå¤©ï¼Œåªè½ã€Œå–€åš“ã€ä¸€è²ï¼Œæ•ç¸å¤¾è‡ªå‹•"
+                       "åˆæ”äº†ï¼Œå•¥ä¹Ÿæ²’æŠ“åˆ°ã€‚\n" HIC "$N" HIC "å‘†äº†"
+                       "åŠå¤©ï¼Œæ–äº†æ–é ­ï¼Œå°‡æ•ç¸å¤¾æ”¶å›ã€‚\n" NOR, me);
         back_owner(me);
 }

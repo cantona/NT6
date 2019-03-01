@@ -1,5 +1,5 @@
 // quanzhen-jianzhen.c
-// È«Õæ½£Õó
+// å…¨çœŸåŠé™£
 
 inherit SKI_ZHEN;
 
@@ -7,13 +7,13 @@ void create()
 {
         ::create(); 
 
-        set_menpai("È«Õæ½Ì");           // Õó·¨ËùÊôÃÅÅÉ 
-        set_member_num(7);              // ÕóĞÎÈËÊı 
-        set_array_name("È«Õæ½£Õó");     // Õó·¨Ãû³Æ 
-        set_master_level(100);          // ÕóÖ÷ÒªÇó´ËÕó·¨µÄ×îµÍµÈ¼¶ 
-        set_member_level(50);           // Õó·¨³ÉÔ±ÒªÇó´ËÕó·¨µÄ×îµÍµÈ¼¶ 
-        set_skill_type("quanzhen-jian");   // Õó·¨ËùÊ¹ÓÃµÄÎä¹¦ 
-        set_master_skill_level(100);    // ÕóÖ÷Îä¹¦µÈ¼¶ 
-        set_member_skill_level(50);     // ³ÉÔ±Îä¹¦µÈ¼¶ 
-        set_effective_level(10);        // Õó·¨ÓĞĞ§Öµ 
+        set_menpai("å…¨çœŸæ•™");           // é™£æ³•æ‰€å±¬é–€æ´¾ 
+        set_member_num(7);              // é™£å½¢äººæ•¸ 
+        set_array_name("å…¨çœŸåŠé™£");     // é™£æ³•åç¨± 
+        set_master_level(100);          // é™£ä¸»è¦æ±‚æ­¤é™£æ³•çš„æœ€ä½ç­‰ç´š 
+        set_member_level(50);           // é™£æ³•æˆå“¡è¦æ±‚æ­¤é™£æ³•çš„æœ€ä½ç­‰ç´š 
+        set_skill_type("quanzhen-jian");   // é™£æ³•æ‰€ä½¿ç”¨çš„æ­¦åŠŸ 
+        set_master_skill_level(100);    // é™£ä¸»æ­¦åŠŸç­‰ç´š 
+        set_member_skill_level(50);     // æˆå“¡æ­¦åŠŸç­‰ç´š 
+        set_effective_level(10);        // é™£æ³•æœ‰æ•ˆå€¼ 
 }

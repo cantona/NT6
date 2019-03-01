@@ -6,23 +6,23 @@ void init();
 
 void init(){
   if (!wizardp(this_player())) {
-    set("no_get","ÄãÊÖÀïÒ»ËÉ£¬ÄÚµ¤´ÓÖ¸¼ä»¬Âä£¡\n");
-    set("no_give","ÕâÃ´Õä¹óµÄÒ©£¬ÄÄÄÜËæ±ã¸øÈË£¿\n");
-    set("no_drop","ÕâÃ´±¦¹óµÄµ¤Ò©£¬ÈÓÁË¶à¿ÉÏ§Ñ½£¡\n");
-    set("no_sell","·²ÈËÄÄÀïÖªµÀ"+query("name", this_object())+"µÄ¼ÛÖµ£¿»¹ÊÇ×Ô¼ºÁô×Å°É¡£\n");
+    set("no_get","ä½ æ‰‹è£¡ä¸€é¬†ï¼Œå…§ä¸¹å¾æŒ‡é–“æ»‘è½ï¼\n");
+    set("no_give","é€™éº¼çè²´çš„è—¥ï¼Œå“ªèƒ½éš¨ä¾¿çµ¦äººï¼Ÿ\n");
+    set("no_drop","é€™éº¼å¯¶è²´çš„ä¸¹è—¥ï¼Œæ‰”äº†å¤šå¯æƒœå‘€ï¼\n");
+    set("no_sell","å‡¡äººå“ªè£¡çŸ¥é“"+query("name", this_object())+"çš„åƒ¹å€¼ï¼Ÿé‚„æ˜¯è‡ªå·±ç•™è‘—å§ã€‚\n");
   }
   add_action("do_eat", "eat");
 }
 void create(){
-    set_name( HIY "ÄÚµ¤" NOR , ({"nei dan", "dan"}));
+    set_name( HIY "å…§ä¸¹" NOR , ({"nei dan", "dan"}));
   set_weight(90);
   if (clonep())
     set_default_object(__FILE__);
   else {
-    set("unit", "¿Å");
-    set("long", "Ò»¿Å½ğ»ÆÉ«µÄµ¤Íè£¬ÂÔÎ¢ÄÜÎÅµ½Ğ©ĞíÏãÆø¡£\n");
+    set("unit", "é¡†");
+    set("long", "ä¸€é¡†é‡‘é»ƒè‰²çš„ä¸¹ä¸¸ï¼Œç•¥å¾®èƒ½èåˆ°äº›è¨±é¦™æ°£ã€‚\n");
     set("value", 0);
-    set("drug_type", "²¹Æ·");
+    set("drug_type", "è£œå“");
   }
   set("is_monitored",1);
   setup();
@@ -36,8 +36,8 @@ int do_eat(string arg){
   addn("max_jing", random(30), me);
   addn("max_qi", random(30), me);
   addn("combat_exp", random(1000), me);
-  message_vision(HIG "$NÇáÇáêş¿ªÒ»¿ÅÄÚµ¤ËÍÈë×ìÖĞ£¬Ò»Ê±¼äÏãÆøËÄÒç¡£
-Ö»¼û$NÁ³ÂıÂı±äµÃÍ¨ºì£¬ºÃÏó·Ç³£Í´¿àµÄÑù×Ó£¬Ò»»á¶ù£¬\n ¿´ÆğÀ´³äÂúÁËÁ¦Á¿£¡\n" NOR, me);
+  message_vision(HIG "$Nè¼•è¼•æ°é–‹ä¸€é¡†å…§ä¸¹é€å…¥å˜´ä¸­ï¼Œä¸€æ™‚é–“é¦™æ°£å››æº¢ã€‚
+åªè¦‹$Nè‡‰æ…¢æ…¢è®Šå¾—é€šç´…ï¼Œå¥½è±¡éå¸¸ç—›è‹¦çš„æ¨£å­ï¼Œä¸€æœƒå…’ï¼Œ\n çœ‹èµ·ä¾†å……æ»¿äº†åŠ›é‡ï¼\n" NOR, me);
   destruct(this_object());
   return 1;
 }

@@ -1,11 +1,11 @@
-// lao-qiao.c ÇÇÈı»±
+// lao-qiao.c å–¬ä¸‰æ§
 
 inherit NPC;
 
 void create()
 {
-        set_name("ÇÇÈı»±", ({ "lao qiao", "qiao" }));
-        set("gender", "ÄĞĞÔ");
+        set_name("å–¬ä¸‰æ§", ({ "lao qiao", "qiao" }));
+        set("gender", "ç”·æ€§");
         set("age", 55 );
 
         set_skill("unarmed", 20);

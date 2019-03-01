@@ -2,16 +2,16 @@
 inherit TASK;
 void create()
 {
-    set_name( WHT "°ÍÉ½Í¼" NOR, ({ "bstu" }) );
+    set_name( WHT "å·´å±±åœ–" NOR, ({ "bstu" }) );
     set_weight(1);
     if( clonep() )
             destruct(this_object());
     else {
-            set("unit", "ÕÅ");
+            set("unit", "å¼µ");
             set("material", "paper");
-            set("long", "Ò»ÕÅÏêÏ¸µÄ°ÍÉ½µØÍ¼£¬×óÏÂ½ÇĞ´ÁËÒ»ĞĞĞ¡×Ö£º
-            ³É¶¼¶«Ê®Àï£¬×óÈıÓÒËÄ£¬×ÓÎçË«Ê±£®£®\n");
+            set("long", "ä¸€å¼µè©³ç´°çš„å·´å±±åœ°åœ–ï¼Œå·¦ä¸‹è§’å¯«äº†ä¸€è¡Œå°å­—ï¼š
+            æˆéƒ½æ±åè£¡ï¼Œå·¦ä¸‰å³å››ï¼Œå­åˆé›™æ™‚ï¼ï¼\n");
           }
-    set("owner", "Âí³¬ĞË");
+    set("owner", "é¦¬è¶…èˆˆ");
     setup();
 }

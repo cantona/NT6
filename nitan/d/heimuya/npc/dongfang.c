@@ -7,14 +7,14 @@ inherit F_MASTER;
 
 void create()
 {
-    set_name("¶«·½²»°Ü", ({"dongfang bubai", "dongfang", "bubai"}));
-    set("nickname", HIY "ÌìÏÂÎÞµÐ" NOR);
-    set("title", HIM "ÈÕÔÂÉñ½Ì½ÌÖ÷" NOR);
-    set("gender", "ÄÐÐÔ");
+    set_name("æ±æ–¹ä¸æ•—", ({"dongfang bubai", "dongfang", "bubai"}));
+    set("nickname", HIY "å¤©ä¸‹ç„¡æ•µ" NOR);
+    set("title", HIM "æ—¥æœˆç¥žæ•™æ•™ä¸»" NOR);
+    set("gender", "ç”·æ€§");
     set("shen_type", -1);
     set("age", 42);
     set("long",
-        "Ëû¾ÍÊÇÈÕÔÂÉñ½Ì½ÌÖ÷¡£ºÅ³ÆÎÞÈË¿ÉµÐ£¬Òò´ËÓÐÒ»³ÆºÅÎª¡¸¶«·½²»°Ü¡¹¡£\n");
+        "ä»–å°±æ˜¯æ—¥æœˆç¥žæ•™æ•™ä¸»ã€‚è™Ÿç¨±ç„¡äººå¯æ•µï¼Œå› æ­¤æœ‰ä¸€ç¨±è™Ÿç‚ºã€Œæ±æ–¹ä¸æ•—ã€ã€‚\n");
     set("attitude", "peaceful");
 
     set("per", 21);
@@ -25,12 +25,12 @@ void create()
 
     set("chat_chance", 1);
     set("chat_msg", ({
-          "¶«·½²»°ÜÌ¾ÁË¿ÚÆøµÀ£º¡°°¦ ¡­¡­ ÎÒµÄÑî´ó¸ç....ËûÔõÃ´»¹²»»ØÀ´,ÎÒºÃ\n"
-         "¹ÒÄîËû ¡­¡­¶«·½²»°ÜÑÛÖÐÁ÷Â¶ÎÞÏÞÃÔÃ£¡£\n",
+          "æ±æ–¹ä¸æ•—å˜†äº†å£æ°£é“ï¼šâ€œå”‰ â€¦â€¦ æˆ‘çš„æ¥Šå¤§å“¥....ä»–æ€Žéº¼é‚„ä¸å›žä¾†,æˆ‘å¥½\n"
+         "æŽ›å¿µä»– â€¦â€¦æ±æ–¹ä¸æ•—çœ¼ä¸­æµéœ²ç„¡é™è¿·èŒ«ã€‚\n",
     }));
     set("inquiry", ([
-        "ÑîÁ«Í¤"   : "Äã¸ÒÖ±³ÆÎÒ°®ÈËµÄÃû×Ö,ÏëÕÒËÀÑ½£¿ \n",
-        "¿û»¨±¦µä" : "Èç¹ûÄãÄÜ°ïÎÒÈ¡µÃ¿û»¨±¦µäÉÏ²á£¬ÎÒÒ»¶¨ÖØÖØÐ»Äã¡£\n",
+        "æ¥Šè“®äº­"   : "ä½ æ•¢ç›´ç¨±æˆ‘æ„›äººçš„åå­—,æƒ³æ‰¾æ­»å‘€ï¼Ÿ \n",
+        "è‘µèŠ±å¯¶å…¸" : "å¦‚æžœä½ èƒ½å¹«æˆ‘å–å¾—è‘µèŠ±å¯¶å…¸ä¸Šå†Šï¼Œæˆ‘ä¸€å®šé‡é‡è¬ä½ ã€‚\n",
     ]));
 
     set("qi", 4000);
@@ -44,16 +44,16 @@ void create()
     set("combat_exp", 2500000);
     set("score", 0);
 
-    set_skill("force", 290);             // »ù±¾ÄÚ¹¦
-    set_skill("finger", 290);            // »ù±¾Ö¸·¨
-    set_skill("unarmed", 290);           // »ù±¾È­½Å
-    set_skill("dodge", 300);             // »ù±¾¶ãÉÁ
-    set_skill("parry", 290);             // »ù±¾ÕÐ¼Ü
-    set_skill("sword", 290);             // »ù±¾½£·¨
-    set_skill("pixie-jian", 300);        // ±ÙÐ°½£·¨
-    set_skill("changquan", 280);         // Ì«×æ³¤È­
-    set_skill("literate", 120);          // ¶ÁÊéÊ¶×Ö
-    set_skill("kuihua-xinfa", 290);      // ¿û»¨ÐÄ·¨
+    set_skill("force", 290);             // åŸºæœ¬å…§åŠŸ
+    set_skill("finger", 290);            // åŸºæœ¬æŒ‡æ³•
+    set_skill("unarmed", 290);           // åŸºæœ¬æ‹³è…³
+    set_skill("dodge", 300);             // åŸºæœ¬èº²é–ƒ
+    set_skill("parry", 290);             // åŸºæœ¬æ‹›æž¶
+    set_skill("sword", 290);             // åŸºæœ¬åŠæ³•
+    set_skill("pixie-jian", 300);        // è¾Ÿé‚ªåŠæ³•
+    set_skill("changquan", 280);         // å¤ªç¥–é•·æ‹³
+    set_skill("literate", 120);          // è®€æ›¸è­˜å­—
+    set_skill("kuihua-xinfa", 290);      // è‘µèŠ±å¿ƒæ³•
 
     map_skill("force", "kuihua-xinfa");
     map_skill("sword", "pixie-jian");
@@ -61,7 +61,7 @@ void create()
     map_skill("dodge", "pixie-jian");
     map_skill("parry", "pixie-jian");
 
-    create_family("ÈÕÔÂÉñ½Ì", 2, "½ÌÖ÷");
+    create_family("æ—¥æœˆç¥žæ•™", 2, "æ•™ä¸»");
 
     setup();
     carry_object("/d/fuzhou/obj/xiuhua")->wield();

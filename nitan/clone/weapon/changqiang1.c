@@ -1,22 +1,22 @@
-// changqiang.c ³¤Ç¹
+// changqiang.c é•·æ§
 
 #include <weapon.h>
 inherit SPEAR;
 
 void create()
 {
-        set_name("³¤Ç¹", ({ "chang qiang","qiang","changqiang" }) );
+        set_name("é•·æ§", ({ "chang qiang","qiang","changqiang" }) );
         set_weight(5000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸Ë");
-                set("long", "ÕâÊÇÒ»¸Ë±ÈÎä×¨ÓÃµÄµÄ¾«¸Ö³¤Ç¹,ÍşÁ¦·Ç±ÈÑ°³£.\n");
+                set("unit", "æ¡¿");
+                set("long", "é€™æ˜¯ä¸€æ¡¿æ¯”æ­¦å°ˆç”¨çš„çš„ç²¾é‹¼é•·æ§,å¨åŠ›éæ¯”å°‹å¸¸.\n");
                 set("value", 0);
                 set("material", "iron");
-                set("long", "Ò»¸Ë³¤Ç¹¡£\n");
-                set("wield_msg", "$N³­ÆğÒ»¸Ë$n£¬Ë³ÊÖ¶¶ÁË¸öÇ¹»¨¡£\n");
-                set("unwield_msg", "$NºßÁËÒ»Éù£¬½«$n²å»ØºóÑü¡£\n");
+                set("long", "ä¸€æ¡¿é•·æ§ã€‚\n");
+                set("wield_msg", "$NæŠ„èµ·ä¸€æ¡¿$nï¼Œé †æ‰‹æŠ–äº†å€‹æ§èŠ±ã€‚\n");
+                set("unwield_msg", "$Nå“¼äº†ä¸€è²ï¼Œå°‡$næ’å›å¾Œè…°ã€‚\n");
         }
         init_spear(100);
         setup();

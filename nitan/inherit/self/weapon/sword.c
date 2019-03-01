@@ -1,6 +1,6 @@
 // sword.c
-// ×ÔÔìÎïÆ· (by Find.)
-// Ã»ÓĞ°²È«ÎÊÌâµ«Ì«Âé·³
+// è‡ªé€ ç‰©å“ (by Find.)
+// æ²’æœ‰å®‰å…¨å•é¡Œä½†å¤ªéº»ç…©
 
 #include <mine_def.h>
 #include <weapon.h>
@@ -11,7 +11,7 @@ inherit SWORD;
 
 protected int weapon_attr_flag, require_res;
 
-string query_selling_msg() { return "×ÔÔì±øÆ÷"; }
+string query_selling_msg() { return "è‡ªé€ å…µå™¨"; }
 
 int query_weapon_attr() { return weapon_attr_flag; }
 int set_weapon_attr(int n)
@@ -86,7 +86,7 @@ nomask mixed set(string prop, mixed data)
 
 protected void create(class weapon_args arg)
 {
-        set("unit", "°Ñ");
+        set("unit", "æŠŠ");
         if( clonep() )
                 set_default_object(__FILE__);
 
@@ -112,12 +112,12 @@ protected void create(class weapon_args arg)
 
         else
         {
-                set_name("³¤½£", ({ "sword" }) );
+                set_name("é•·åŠ", ({ "sword" }) );
                 set_weight(5000);
-                set("long", "ÕâÊÇÒ»°Ñ¿´ÆğÏàµ±ÆÕÍ¨µÄ³¤½££¬·İÁ¿´óÔ¼ÓĞÊ®À´½ï×óÓÒ¡£\n");
+                set("long", "é€™æ˜¯ä¸€æŠŠçœ‹èµ·ç›¸ç•¶æ™®é€šçš„é•·åŠï¼Œä»½é‡å¤§ç´„æœ‰åä¾†æ–¤å·¦å³ã€‚\n");
                 set("value", 400);
-                set("wield_msg", "$N¡¸à§¡¹µØÒ»Éù³é³öÒ»°Ñ$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²åÈëÑü¼äµÄ½£ÇÊ¡£\n");
+                set("wield_msg", "$Nã€Œå”°ã€åœ°ä¸€è²æŠ½å‡ºä¸€æŠŠ$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°‡æ‰‹ä¸­çš„$næ’å…¥è…°é–“çš„åŠé˜ã€‚\n");
                 set("material", "steel");
                 init_sword(25);
         }

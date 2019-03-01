@@ -11,7 +11,7 @@ int valid_leave(object me, string dir)
                 if( addn_temp("out_shamo",-1, me) <= -3 )
                 {
                         me->move("/d/baituo/gebi");
-                        write("ÄãÀÛµÃ°ëËÀ£¬ÖÕì¶×ß³öÁËÉ³Ä®¡£\n");
+                        write("ä½ ç´¯å¾—åŠæ­»ï¼Œçµ‚æ–¼èµ°å‡ºäº†æ²™æ¼ ã€‚\n");
                         return -1;
                 }
         }

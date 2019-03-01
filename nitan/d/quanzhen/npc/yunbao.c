@@ -1,16 +1,16 @@
-// yunbao.c ÔÆ±ª
+// yunbao.c é›²è±¹
 
 #include <ansi.h>;
 inherit NPC;
 
 void create()
 {
-        set_name("ÔÆ±ª", ({ "yun bao", "bao" }) );
-        set("race", "×ßÊÞ");
-        set("gender", "´ÆÐÔ");
+        set_name("é›²è±¹", ({ "yun bao", "bao" }) );
+        set("race", "èµ°ç¸");
+        set("gender", "é›Œæ€§");
         set("age", 5);
         set("long", @LONG
-ÕâÊÇÒ»Ö»°¬Ò¶»¨Æ¤µÄÔÆ±ª£¬ËüµÄÃ«Æ¤¼«ÎªÐÛÃÀ¡¢ºñÊµ¡£
+é€™æ˜¯ä¸€åªè‰¾è‘‰èŠ±çš®çš„é›²è±¹ï¼Œå®ƒçš„æ¯›çš®æ¥µç‚ºé›„ç¾Žã€åŽšå¯¦ã€‚
 LONG);
         set("attitude", "aggressive");
         set("shen_type", -1);
@@ -32,7 +32,7 @@ LONG);
 void die()
 {
         object ob, corpse;
-        message_vision("$N·¢³öÕðÌì¶¯µØµÄÒ»Éù´óºð£¬ºäµØµ¹ÔÚµØÉÏ£¬ËÀÁË£¡\n", this_object());
+        message_vision("$Nç™¼å‡ºéœ‡å¤©å‹•åœ°çš„ä¸€è²å¤§å¼ï¼Œè½Ÿåœ°å€’åœ¨åœ°ä¸Šï¼Œæ­»äº†ï¼\n", this_object());
         if( objectp(corpse = CHAR_D->make_corpse(this_object())) )
         ob = new("/clone/medicine/vegetable/baotai");
         ob->move(corpse);

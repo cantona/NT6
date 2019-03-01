@@ -7,21 +7,21 @@ int valid_enable(string usage) { return usage == "poison"; }
 int valid_learn(object me)
 {
         if ((int)me->query_skill("force") < 80)
-                return notify_fail("ÄãµÄÄÚ¹¦»ðºò²»¹»£¬ÎÞ·¨Ñ§Ï°ÃîÊÖÇý¶¾¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸç«å€™ä¸å¤ ï¼Œç„¡æ³•å­¸ç¿’å¦™æ‰‹é©…æ¯’ã€‚\n");
 
         if( query("max_neili", me)<350 )
-                return notify_fail("ÄãµÄÄÚÁ¦Ì«Èõ£¬ÎÞ·¨Ñ§Ï°ÃîÊÖÇý¶¾¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›å¤ªå¼±ï¼Œç„¡æ³•å­¸ç¿’å¦™æ‰‹é©…æ¯’ã€‚\n");
 
         if ((int)me->query_skill("poison", 1) < 30)
-                return notify_fail("ÄãµÄ»ù±¾¶¾¼¼»ðºò²»¹»£¬ÎÞ·¨Ñ§ÃîÊÖÇý¶¾¡£\n");
+                return notify_fail("ä½ çš„åŸºæœ¬æ¯’æŠ€ç«å€™ä¸å¤ ï¼Œç„¡æ³•å­¸å¦™æ‰‹é©…æ¯’ã€‚\n");
 
         if ((int)me->query_skill("poison", 1) < (int)me->query_skill("dispel-poison", 1))
-                return notify_fail("ÄãµÄ»ù±¾¶¾¼¼Ë®Æ½ÓÐÏÞ£¬ÎÞ·¨Áì»á¸ü¸ßÉîµÄÃîÊÖÇý¶¾¡£\n");
+                return notify_fail("ä½ çš„åŸºæœ¬æ¯’æŠ€æ°´å¹³æœ‰é™ï¼Œç„¡æ³•é ˜æœƒæ›´é«˜æ·±çš„å¦™æ‰‹é©…æ¯’ã€‚\n");
 
         return 1;
 }
 
 int practice_skill(object me)
 {
-        return notify_fail("ÃîÊÖÇý¶¾Ö»ÄÜÍ¨¹ýÑ§Ï°»ñµÃ³¤½ø¡£\n");
+        return notify_fail("å¦™æ‰‹é©…æ¯’åªèƒ½é€šéŽå­¸ç¿’ç²å¾—é•·é€²ã€‚\n");
 }

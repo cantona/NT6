@@ -1,17 +1,17 @@
-subject : Ò×½î¾­
-author_name : Ş±´ó´ô
+subject : æ˜“ç­‹ç¶“
+author_name : è–‡å¤§å‘†
 author_id : vivi
 time : 1206624646
-board : Ş±´ó´ôµÄÁôÑÔ°å
+board : è–‡å¤§å‘†çš„ç•™è¨€æ¿
 file : /data/analecta/2008/25658682.txt
 add_time : 1211022931
 content :
-²Ø¾­¸ó2Â¥jump fangliang;zou mu ban;jump shujia;qing sao
+è—ç¶“é–£2æ¨“jump fangliang;zou mu ban;jump shujia;qing sao
 qingsao
 qingsao
-qingsao2´Î
-qingsaoÁ½´Î
-yijinjing¸úyijin jingµÄÇø±ğÊÇ
-yijinjingÄÜ´Ó0¶Áµ½380
-yijin jingÄÜ´Ó0¶Áµ½401µ«ÊÇËùÏûºÄµÄ¾«Á¦ÊÇyijinjingµÄ3±¶
+qingsao2æ¬¡
+qingsaoå…©æ¬¡
+yijinjingè·Ÿyijin jingçš„å€åˆ¥æ˜¯
+yijinjingèƒ½å¾0è®€åˆ°380
+yijin jingèƒ½å¾0è®€åˆ°401ä½†æ˜¯æ‰€æ¶ˆè€—çš„ç²¾åŠ›æ˜¯yijinjingçš„3å€
 [2;37;0m

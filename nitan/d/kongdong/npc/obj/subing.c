@@ -4,14 +4,14 @@ inherit F_FOOD;
 
 void create()
 {
-        set_name("ËØ±ý", ({"su bing","bing"}));
+        set_name("ç´ é¤…", ({"su bing","bing"}));
         set_weight(150);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¿éËÉÈíµÄËØ±ý¡£\n");
-                set("unit", "¿é");
-                set("value", 4);//ºÜ±ãÒË£¬£¨»ù±¾Ê³Îï¶¼Ó¦¸ÃºÜ±ãÒË£©.
+                set("long", "ä¸€å¡Šé¬†è»Ÿçš„ç´ é¤…ã€‚\n");
+                set("unit", "å¡Š");
+                set("value", 4);//å¾ˆä¾¿å®œï¼Œï¼ˆåŸºæœ¬é£Ÿç‰©éƒ½æ‡‰è©²å¾ˆä¾¿å®œï¼‰.
 		set("food_remaining", 10);
 		set("food_supply", 60);
         }

@@ -5,12 +5,12 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÆÍÈË", ({"pu ren", "pu"}) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("åƒ•äºº", ({"pu ren", "pu"}) );
+        set("gender", "ç”·æ€§" );
         set("age", 50);
         set("long",
-        "ÕâÊÇ¸öÀÏÊµ°Í½»µÄÀÏÆÍÈË£¬ËäÈ»ÒÂ·şÉÏ´òÁËºÜ¶à²¹¶¡£¬È´ÊÇÊ®·ÖµÄÕû½à¡£\n"
-        "ÒòÎª³¤ÆÚ´ıÔÚ³ø·¿Àï£¬ÑÛ¾¦±»ÑÌÑ¬³ÉÁËÒ»Ìõ·ì¡£\n");
+        "é€™æ˜¯å€‹è€å¯¦å·´äº¤çš„è€åƒ•äººï¼Œé›–ç„¶è¡£æœä¸Šæ‰“äº†å¾ˆå¤šè£œä¸ï¼Œå»æ˜¯ååˆ†çš„æ•´æ½”ã€‚\n"
+        "å› ç‚ºé•·æœŸå¾…åœ¨å»šæˆ¿è£¡ï¼Œçœ¼ç›è¢«ç…™ç†æˆäº†ä¸€æ¢ç¸«ã€‚\n");
         set("attitude", "friendly");
         set("shen_type", 1);
 
@@ -34,7 +34,7 @@ void create()
         set_temp("apply/attack", 10);
         set_temp("apply/defense", 15);
         set_temp("apply/damage", 4);
-//        create_family("À¥ÂØÅÉ", 24, "µÜ×Ó");
+//        create_family("æ˜†ä¾–æ´¾", 24, "å¼Ÿå­");
         setup();
         carry_object("/d/kunlun/obj/cloth")->wear();
 }
@@ -55,8 +55,8 @@ void greeting(object ob)
 {
         if( !ob || environment(ob) != environment() ) return;
 
-        say("ÆÍÈËĞ¦Ò÷Ò÷µØËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-                + "ÇëÏÈÈë×ù£¬" + "ÎÒÕâ¾Í¸øÄúÉÏ²è¡£\n");
+        say("åƒ•äººç¬‘åŸåŸåœ°èªªé“ï¼šé€™ä½" + RANK_D->query_respect(ob)
+                + "è«‹å…ˆå…¥åº§ï¼Œ" + "æˆ‘é€™å°±çµ¦æ‚¨ä¸ŠèŒ¶ã€‚\n");
 }
 
 void serve_tea(object who)
@@ -74,20 +74,20 @@ void serve_tea(object who)
         {
                 obn = new("/d/kunlun/obj/dawancha");
                 obn->move(room);
-                message_vision("ÆÍÈË°á³ö¸ö´ó²èºøÀ´£¬½«×ÀÉÏµÄ´óÍë²èµ¹Âú£®\n",
+                message_vision("åƒ•äººæ¬å‡ºå€‹å¤§èŒ¶å£ºä¾†ï¼Œå°‡æ¡Œä¸Šçš„å¤§ç¢—èŒ¶å€’æ»¿ï¼\n",
                         who);
         } else
         {
                 addn_temp("tea_cup", -1, who);
                 obn = new("/d/kunlun/obj/xiangcha");
                 obn->move(room);
-                message_vision("ÆÍÈËÄÃ³ö¸öÉÜĞËĞ¡²èºø£¬ÆãÁË±­Ïã²è£¬·ÅÔÚ×ÀÉÏ£®\n",
+                message_vision("åƒ•äººæ‹¿å‡ºå€‹ç´¹èˆˆå°èŒ¶å£ºï¼Œæ²äº†æ¯é¦™èŒ¶ï¼Œæ”¾åœ¨æ¡Œä¸Šï¼\n",
                         who);
         }
 
         obn = new("/d/kunlun/obj/rice");
         obn->move(room);
-        message_vision("ÆÍÈËÊ¢ÁËÒ»Íë¸ÕÕôºÃµÄ´óÃ×·¹£¬·ÅÔÚ×ÀÉÏ¡£\n", who);
+        message_vision("åƒ•äººç››äº†ä¸€ç¢—å‰›è’¸å¥½çš„å¤§ç±³é£¯ï¼Œæ”¾åœ¨æ¡Œä¸Šã€‚\n", who);
 
         return;
 }

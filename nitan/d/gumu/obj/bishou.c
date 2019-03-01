@@ -1,17 +1,17 @@
-// Room: /d/gumu/obj/bishou.cØ°Ê×
+// Room: /d/gumu/obj/bishou.cåŒ•é¦–
 // Last Modifyed by Winder on Jan. 14 2002
 
 #include <ansi.h>
 inherit ITEM;
 void create()
 {
-        set_name( "Ø°Ê×" , ({ "bi shou", "blade", "bishou" }) );
+        set_name( "åŒ•é¦–" , ({ "bi shou", "blade", "bishou" }) );
         set_weight(100);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "ÕâÊÇÒ»°Ñ±ßÔµ·æÀûµÄØ°Ê×£¬ºÃÏó¿ÉÒÔÕ¶(zhan)¶«Î÷¡£\n");
+                set("unit", "æŠŠ");
+                set("long", "é€™æ˜¯ä¸€æŠŠé‚Šç·£é‹’åˆ©çš„åŒ•é¦–ï¼Œå¥½è±¡å¯ä»¥æ–¬(zhan)æ±è¥¿ã€‚\n");
                 set("value", 0);
                 set("material", "iron");
         }
@@ -20,7 +20,7 @@ void create()
 
 void init()
 {
-        add_action("mark_success", ({"zhan", "Õ¶"}));
+        add_action("mark_success", ({"zhan", "æ–¬"}));
 }
 
 int mark_success(string arg)
@@ -28,29 +28,29 @@ int mark_success(string arg)
         object target, ob,name1, me = this_player();
 
         name1=query("id", me);
-        if(!arg) return notify_fail("ÄãÒªÕ¶Ê²Ã´£¿\n");  
+        if(!arg) return notify_fail("ä½ è¦æ–¬ä»€éº¼ï¼Ÿ\n");  
         target = present(arg, environment(me));  
         if(!target)
-                return notify_fail("ÕÒ²»µ½Õâ¸ö¶«Î÷¡£\n");
+                return notify_fail("æ‰¾ä¸åˆ°é€™å€‹æ±è¥¿ã€‚\n");
         if(!target->is_corpse())
-                return notify_fail("¿´Çå³şµã£¬ÄÇ²»ÊÇÊ¬Ìå¡£\n");
+                return notify_fail("çœ‹æ¸…æ¥šé»ï¼Œé‚£ä¸æ˜¯å±é«”ã€‚\n");
         if( query("no_head", target) )
-                return notify_fail("ÄÇ¾ßÊ¬ÌåÒÑ¾­Ã»ÓĞÊ×¼¶ÁË¡£\n");
+                return notify_fail("é‚£å…·å±é«”å·²ç¶“æ²’æœ‰é¦–ç´šäº†ã€‚\n");
         if(!target->is_character())
-                return notify_fail("ÄÇ¾ßÊ¬ÌåÒÑ¾­¸¯ÀÃÁË¡£\n");
-        message_vision(HIR"$NÑïÆğØ°Ê× £¬¶Ô×¼$nµÄ²±×Ó´¦ÃÍµØÕ¶ÁËÏÂÈ¥£¡\n"NOR, me, target);
+                return notify_fail("é‚£å…·å±é«”å·²ç¶“è…çˆ›äº†ã€‚\n");
+        message_vision(HIR"$Næšèµ·åŒ•é¦– ï¼Œå°æº–$nçš„è„–å­è™•çŒ›åœ°æ–¬äº†ä¸‹å»ï¼\n"NOR, me, target);
         ob=new("/d/gumu/obj/head");
-        ob->set_name(query("victim_name", target)+"µÄÊ×¼¶",({"head"}));
-        set("long", "ÕâÊÇÒ»¿Å"+query("victim_name", target)+"µÄÊ×¼¶¡£\n", ob);
+        ob->set_name(query("victim_name", target)+"çš„é¦–ç´š",({"head"}));
+        set("long", "é€™æ˜¯ä¸€é¡†"+query("victim_name", target)+"çš„é¦–ç´šã€‚\n", ob);
         if( query("victim_user", target) )
         set("victim_user", 1, ob);
         if( query("kill_by", target) )
         set("kill_by",query("kill_by",  target), ob);
         delete("kill_by", target);
-        message_vision(HIR"$N½«$nÕ¶ÁËÏÂÀ´£¬ÌáÔÚÊÖÖĞ¡£\n"NOR, me, ob);
+        message_vision(HIR"$Nå°‡$næ–¬äº†ä¸‹ä¾†ï¼Œæåœ¨æ‰‹ä¸­ã€‚\n"NOR, me, ob);
         ob->move(me);
-        set("name", "ÎŞÍ·Ê¬Ìå", target);
+        set("name", "ç„¡é ­å±é«”", target);
         set("no_head", 1, target);
-        set("long", "Ò»¾ßÎŞÍ·Ê¬Ìå£¬¸¯³ôËÄÒç£¬Çé×´¿É²À¡£\n", target);
+        set("long", "ä¸€å…·ç„¡é ­å±é«”ï¼Œè…è‡­å››æº¢ï¼Œæƒ…ç‹€å¯æ€–ã€‚\n", target);
         return 1;
 }

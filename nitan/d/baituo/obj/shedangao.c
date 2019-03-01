@@ -4,12 +4,12 @@ inherit ITEM;
 
 void create()
 {
-        set_name("Éßµ¨¸à", ({"shedan gao", "gao"}));
+        set_name("è›‡è†½è†", ({"shedan gao", "gao"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿é");
-                set("long", "ÕâÊÇÕä¹ó²¹Æ·¡ºÉßµ¨¸à¡»¡£\n");
+                set("unit", "å¡Š");
+                set("long", "é€™æ˜¯çè²´è£œå“ã€è›‡è†½è†ã€ã€‚\n");
                 set("value", 100);
                 set("only_do_effect", 1);
         }
@@ -19,11 +19,11 @@ void create()
 int do_effect(object me)
 {
         if( query("eff_jing", me) >= query("max_jing", me) )
-                return notify_fail("ÄãÏÖÔÚ³Ô¡ºÉßµ¨¸à¡»²¢ÎŞĞ§ÓÃ£¡\n");
+                return notify_fail("ä½ ç¾åœ¨åƒã€è›‡è†½è†ã€ä¸¦ç„¡æ•ˆç”¨ï¼\n");
 
         me->receive_curing("jing", 30);
-        message_vision("$N³ÔÏÂÒ»¿éÉßµ¨¸à£¬¶Ù¾õÒ»¹ÉºÆµ´ÕæÆøÖ±Ó¿ÉÏÀ´£¬"
-                       "¾«ÉñÁ¢¿ÌºÃ×ª£¡\n", me);
+        message_vision("$Nåƒä¸‹ä¸€å¡Šè›‡è†½è†ï¼Œé “è¦ºä¸€è‚¡æµ©ç›ªçœŸæ°£ç›´æ¹§ä¸Šä¾†ï¼Œ"
+                       "ç²¾ç¥ç«‹åˆ»å¥½è½‰ï¼\n", me);
         destruct(this_object());
         return 1;
 }

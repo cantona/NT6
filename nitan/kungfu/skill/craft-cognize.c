@@ -19,232 +19,232 @@ void skill_improved(object me)
          && !query("craft/infantry/fenzhan", me) )
         {
                 set("craft/infantry/fenzhan", 1, me);
-                tell_object(me, HIC "ÄãÍ¨ÏþÁË¡¸" HIW "±ø·¨" HIC "¡¹Ö®¡¸" HIW
-                        "²½±øÏµ±ø·¨" HIC "¡¹ÖÐ¡¸" HIW "·ÜÕ½" HIC "¡¹µÄ°ÂÃØ¡£\n" NOR);
+                tell_object(me, HIC "ä½ é€šæ›‰äº†ã€Œ" HIW "å…µæ³•" HIC "ã€ä¹‹ã€Œ" HIW
+                        "æ­¥å…µç³»å…µæ³•" HIC "ã€ä¸­ã€Œ" HIW "å¥®æˆ°" HIC "ã€çš„å¥§ç§˜ã€‚\n" NOR);
         }
 
         if (lvl > 110
          && !query("craft/infantry/fendou", me) )
         {
                 set("craft/infantry/fendou", 1, me);
-                tell_object(me, HIC "ÄãÍ¨ÏþÁË¡¸" HIW "±ø·¨" HIC "¡¹Ö®¡¸" HIW
-                        "²½±øÏµ±ø·¨" HIC "¡¹ÖÐ¡¸" HIW "·Ü¶·" HIC "¡¹µÄ°ÂÃØ¡£\n" NOR);
+                tell_object(me, HIC "ä½ é€šæ›‰äº†ã€Œ" HIW "å…µæ³•" HIC "ã€ä¹‹ã€Œ" HIW
+                        "æ­¥å…µç³»å…µæ³•" HIC "ã€ä¸­ã€Œ" HIW "å¥®é¬¥" HIC "ã€çš„å¥§ç§˜ã€‚\n" NOR);
         }
 
         if (lvl > 120
          && !query("craft/infantry/fenxun", me) )
         {
                 set("craft/infantry/fenxun", 1, me);
-                tell_object(me, HIC "ÄãÍ¨ÏþÁË¡¸" HIW "±ø·¨" HIC "¡¹Ö®¡¸" HIW
-                        "²½±øÏµ±ø·¨" HIC "¡¹ÖÐ¡¸" HIW "·ÜÑ¸" HIC "¡¹µÄ°ÂÃØ¡£\n" NOR);
+                tell_object(me, HIC "ä½ é€šæ›‰äº†ã€Œ" HIW "å…µæ³•" HIC "ã€ä¹‹ã€Œ" HIW
+                        "æ­¥å…µç³»å…µæ³•" HIC "ã€ä¸­ã€Œ" HIW "å¥®è¿…" HIC "ã€çš„å¥§ç§˜ã€‚\n" NOR);
         }
 
         if (lvl > 130
          && !query("craft/archer/qishe", me) )
         {
                 set("craft/archer/qishe", 1, me);
-                tell_object(me, HIC "ÄãÍ¨ÏþÁË¡¸" HIW "±ø·¨" HIC "¡¹Ö®¡¸" HIW
-                        "¹­ÆïÏµ±ø·¨" HIC "¡¹ÖÐ¡¸" HIW "ÆïÉä" HIC "¡¹µÄ°ÂÃØ¡£\n" NOR);
+                tell_object(me, HIC "ä½ é€šæ›‰äº†ã€Œ" HIW "å…µæ³•" HIC "ã€ä¹‹ã€Œ" HIW
+                        "å¼“é¨Žç³»å…µæ³•" HIC "ã€ä¸­ã€Œ" HIW "é¨Žå°„" HIC "ã€çš„å¥§ç§˜ã€‚\n" NOR);
         }
 
         if (lvl > 140
          && !query("craft/archer/benshe", me) )
         {
                 set("craft/archer/benshe", 1, me);
-                tell_object(me, HIC "ÄãÍ¨ÏþÁË¡¸" HIW "±ø·¨" HIC "¡¹Ö®¡¸" HIW
-                        "¹­ÆïÏµ±ø·¨" HIC "¡¹ÖÐ¡¸" HIW "±¼Éä" HIC "¡¹µÄ°ÂÃØ¡£\n" NOR);
+                tell_object(me, HIC "ä½ é€šæ›‰äº†ã€Œ" HIW "å…µæ³•" HIC "ã€ä¹‹ã€Œ" HIW
+                        "å¼“é¨Žç³»å…µæ³•" HIC "ã€ä¸­ã€Œ" HIW "å¥”å°„" HIC "ã€çš„å¥§ç§˜ã€‚\n" NOR);
         }
 
         if (lvl > 150
          && !query("craft/archer/feishe", me) )
         {
                 set("craft/archer/feishe", 1, me);
-                tell_object(me, HIC "ÄãÍ¨ÏþÁË¡¸" HIW "±ø·¨" HIC "¡¹Ö®¡¸" HIW
-                        "¹­ÆïÏµ±ø·¨" HIC "¡¹ÖÐ¡¸" HIW "·ÉÉä" HIC "¡¹µÄ°ÂÃØ¡£\n" NOR);
+                tell_object(me, HIC "ä½ é€šæ›‰äº†ã€Œ" HIW "å…µæ³•" HIC "ã€ä¹‹ã€Œ" HIW
+                        "å¼“é¨Žç³»å…µæ³•" HIC "ã€ä¸­ã€Œ" HIW "é£›å°„" HIC "ã€çš„å¥§ç§˜ã€‚\n" NOR);
         }
 
         if (lvl > 160
          && !query("craft/crossbow/qishe", me) )
         {
                 set("craft/crossbow/qishe", 1, me);
-                tell_object(me, HIC "ÄãÍ¨ÏþÁË¡¸" HIW "±ø·¨" HIC "¡¹Ö®¡¸" HIW
-                        "¹­åóÏµ±ø·¨" HIC "¡¹ÖÐ¡¸" HIW "ÆëÉä" HIC "¡¹µÄ°ÂÃØ¡£\n" NOR);
+                tell_object(me, HIC "ä½ é€šæ›‰äº†ã€Œ" HIW "å…µæ³•" HIC "ã€ä¹‹ã€Œ" HIW
+                        "å¼“å¼©ç³»å…µæ³•" HIC "ã€ä¸­ã€Œ" HIW "é½Šå°„" HIC "ã€çš„å¥§ç§˜ã€‚\n" NOR);
         }
 
         if (lvl > 170
          && !query("craft/crossbow/lianshe", me) )
         {
                 set("craft/crossbow/lianshe", 1, me);
-                tell_object(me, HIC "ÄãÍ¨ÏþÁË¡¸" HIW "±ø·¨" HIC "¡¹Ö®¡¸" HIW
-                        "¹­åóÏµ±ø·¨" HIC "¡¹ÖÐ¡¸" HIW "Á¬Éä" HIC "¡¹µÄ°ÂÃØ¡£\n" NOR);
+                tell_object(me, HIC "ä½ é€šæ›‰äº†ã€Œ" HIW "å…µæ³•" HIC "ã€ä¹‹ã€Œ" HIW
+                        "å¼“å¼©ç³»å…µæ³•" HIC "ã€ä¸­ã€Œ" HIW "é€£å°„" HIC "ã€çš„å¥§ç§˜ã€‚\n" NOR);
         }
 
         if (lvl > 180
          && !query("craft/crossbow/liannu", me) )
         {
                 set("craft/crossbow/liannu", 1, me);
-                tell_object(me, HIC "ÄãÍ¨ÏþÁË¡¸" HIW "±ø·¨" HIC "¡¹Ö®¡¸" HIW
-                        "¹­åóÏµ±ø·¨" HIC "¡¹ÖÐ¡¸" HIW "Á¬åó" HIC "¡¹µÄ°ÂÃØ¡£\n" NOR);
+                tell_object(me, HIC "ä½ é€šæ›‰äº†ã€Œ" HIW "å…µæ³•" HIC "ã€ä¹‹ã€Œ" HIW
+                        "å¼“å¼©ç³»å…µæ³•" HIC "ã€ä¸­ã€Œ" HIW "é€£å¼©" HIC "ã€çš„å¥§ç§˜ã€‚\n" NOR);
         }
 
         if (lvl > 190
          && !query("craft/cavalry/tupo", me) )
         {
                 set("craft/cavalry/tupo", 1, me);
-                tell_object(me, HIC "ÄãÍ¨ÏþÁË¡¸" HIW "±ø·¨" HIC "¡¹Ö®¡¸" HIW
-                        "Æï±øÏµ±ø·¨" HIC "¡¹ÖÐ¡¸" HIW "Í»ÆÆ" HIC "¡¹µÄ°ÂÃØ¡£\n" NOR);
+                tell_object(me, HIC "ä½ é€šæ›‰äº†ã€Œ" HIW "å…µæ³•" HIC "ã€ä¹‹ã€Œ" HIW
+                        "é¨Žå…µç³»å…µæ³•" HIC "ã€ä¸­ã€Œ" HIW "çªç ´" HIC "ã€çš„å¥§ç§˜ã€‚\n" NOR);
         }
 
         if (lvl > 200
          && !query("craft/cavalry/tujin", me) )
         {
                 set("craft/cavalry/tujin", 1, me);
-                tell_object(me, HIC "ÄãÍ¨ÏþÁË¡¸" HIW "±ø·¨" HIC "¡¹Ö®¡¸" HIW
-                        "Æï±øÏµ±ø·¨" HIC "¡¹ÖÐ¡¸" HIW "Í»½ø" HIC "¡¹µÄ°ÂÃØ¡£\n" NOR);
+                tell_object(me, HIC "ä½ é€šæ›‰äº†ã€Œ" HIW "å…µæ³•" HIC "ã€ä¹‹ã€Œ" HIW
+                        "é¨Žå…µç³»å…µæ³•" HIC "ã€ä¸­ã€Œ" HIW "çªé€²" HIC "ã€çš„å¥§ç§˜ã€‚\n" NOR);
         }
 
         if (lvl > 210
          && !query("craft/cavalry/tuji", me) )
         {
                 set("craft/cavalry/tuji", 1, me);
-                tell_object(me, HIC "ÄãÍ¨ÏþÁË¡¸" HIW "±ø·¨" HIC "¡¹Ö®¡¸" HIW
-                        "Æï±øÏµ±ø·¨" HIC "¡¹ÖÐ¡¸" HIW "Í»»÷" HIC "¡¹µÄ°ÂÃØ¡£\n" NOR);
+                tell_object(me, HIC "ä½ é€šæ›‰äº†ã€Œ" HIW "å…µæ³•" HIC "ã€ä¹‹ã€Œ" HIW
+                        "é¨Žå…µç³»å…µæ³•" HIC "ã€ä¸­ã€Œ" HIW "çªæ“Š" HIC "ã€çš„å¥§ç§˜ã€‚\n" NOR);
         }
 
         if (lvl > 220
          && !query("craft/siegecity/jinglan", me) )
         {
                 set("craft/siegecity/jinglan", 1, me);
-                tell_object(me, HIC "ÄãÍ¨ÏþÁË¡¸" HIW "±ø·¨" HIC "¡¹Ö®¡¸" HIW
-                        "¹¥³ÇÏµ±ø·¨" HIC "¡¹ÖÐ¡¸" HIW "¾®À»" HIC "¡¹µÄ°ÂÃØ¡£\n" NOR);
+                tell_object(me, HIC "ä½ é€šæ›‰äº†ã€Œ" HIW "å…µæ³•" HIC "ã€ä¹‹ã€Œ" HIW
+                        "æ”»åŸŽç³»å…µæ³•" HIC "ã€ä¸­ã€Œ" HIW "äº•é—Œ" HIC "ã€çš„å¥§ç§˜ã€‚\n" NOR);
         }
 
         if (lvl > 230
          && !query("craft/siegecity/chongche", me) )
         {
                 set("craft/siegecity/chongche", 1, me);
-                tell_object(me, HIC "ÄãÍ¨ÏþÁË¡¸" HIW "±ø·¨" HIC "¡¹Ö®¡¸" HIW
-                        "¹¥³ÇÏµ±ø·¨" HIC "¡¹ÖÐ¡¸" HIW "³å³µ" HIC "¡¹µÄ°ÂÃØ¡£\n" NOR);
+                tell_object(me, HIC "ä½ é€šæ›‰äº†ã€Œ" HIW "å…µæ³•" HIC "ã€ä¹‹ã€Œ" HIW
+                        "æ”»åŸŽç³»å…µæ³•" HIC "ã€ä¸­ã€Œ" HIW "æ²–è»Š" HIC "ã€çš„å¥§ç§˜ã€‚\n" NOR);
         }
 
         if (lvl > 240
          && !query("craft/siegecity/fashi", me) )
         {
                 set("craft/siegecity/fashi", 1, me);
-                tell_object(me, HIC "ÄãÍ¨ÏþÁË¡¸" HIW "±ø·¨" HIC "¡¹Ö®¡¸" HIW
-                        "¹¥³ÇÏµ±ø·¨" HIC "¡¹ÖÐ¡¸" HIW "·¢Ê¯" HIC "¡¹µÄ°ÂÃØ¡£\n" NOR);
+                tell_object(me, HIC "ä½ é€šæ›‰äº†ã€Œ" HIW "å…µæ³•" HIC "ã€ä¹‹ã€Œ" HIW
+                        "æ”»åŸŽç³»å…µæ³•" HIC "ã€ä¸­ã€Œ" HIW "ç™¼çŸ³" HIC "ã€çš„å¥§ç§˜ã€‚\n" NOR);
         }
 
         if (lvl > 250
          && !query("craft/siegecity/xiangbing", me) )
         {
                 set("craft/siegecity/xiangbing", 1, me);
-                tell_object(me, HIC "ÄãÍ¨ÏþÁË¡¸" HIW "±ø·¨" HIC "¡¹Ö®¡¸" HIW
-                        "¹¥³ÇÏµ±ø·¨" HIC "¡¹ÖÐ¡¸" HIW "Ïó±ø" HIC "¡¹µÄ°ÂÃØ¡£\n" NOR);
+                tell_object(me, HIC "ä½ é€šæ›‰äº†ã€Œ" HIW "å…µæ³•" HIC "ã€ä¹‹ã€Œ" HIW
+                        "æ”»åŸŽç³»å…µæ³•" HIC "ã€ä¸­ã€Œ" HIW "è±¡å…µ" HIC "ã€çš„å¥§ç§˜ã€‚\n" NOR);
         }
 
         if (lvl > 260
          && !query("craft/siegecity/luoshi", me) )
         {
                 set("craft/siegecity/luoshi", 1, me);
-                tell_object(me, HIC "ÄãÍ¨ÏþÁË¡¸" HIW "±ø·¨" HIC "¡¹Ö®¡¸" HIW
-                        "ÊØ³ÇÏµ±ø·¨" HIC "¡¹ÖÐ¡¸" HIW "ÂäÊ¯" HIC "¡¹µÄ°ÂÃØ¡£\n" NOR);
+                tell_object(me, HIC "ä½ é€šæ›‰äº†ã€Œ" HIW "å…µæ³•" HIC "ã€ä¹‹ã€Œ" HIW
+                        "å®ˆåŸŽç³»å…µæ³•" HIC "ã€ä¸­ã€Œ" HIW "è½çŸ³" HIC "ã€çš„å¥§ç§˜ã€‚\n" NOR);
         }
 
         if (lvl > 270
          && !query("craft/siegecity/shetai", me) )
         {
                 set("craft/siegecity/shetai", 1, me);
-                tell_object(me, HIC "ÄãÍ¨ÏþÁË¡¸" HIW "±ø·¨" HIC "¡¹Ö®¡¸" HIW
-                        "ÊØ³ÇÏµ±ø·¨" HIC "¡¹ÖÐ¡¸" HIW "ÉäÌ¨" HIC "¡¹µÄ°ÂÃØ¡£\n" NOR);
+                tell_object(me, HIC "ä½ é€šæ›‰äº†ã€Œ" HIW "å…µæ³•" HIC "ã€ä¹‹ã€Œ" HIW
+                        "å®ˆåŸŽç³»å…µæ³•" HIC "ã€ä¸­ã€Œ" HIW "å°„å°" HIC "ã€çš„å¥§ç§˜ã€‚\n" NOR);
         }
 
         if (lvl > 280
          && !query("craft/ruse/hunluan", me) )
         {
                 set("craft/ruse/hunluan", 1, me);
-                tell_object(me, HIC "ÄãÍ¨ÏþÁË¡¸" HIW "±ø·¨" HIC "¡¹Ö®¡¸" HIW
-                        "Ä±ÂÔÏµ±ø·¨" HIC "¡¹ÖÐ¡¸" HIW "»ìÂÒ" HIC "¡¹µÄ°ÂÃØ¡£\n" NOR);
+                tell_object(me, HIC "ä½ é€šæ›‰äº†ã€Œ" HIW "å…µæ³•" HIC "ã€ä¹‹ã€Œ" HIW
+                        "è¬€ç•¥ç³»å…µæ³•" HIC "ã€ä¸­ã€Œ" HIW "æ··äº‚" HIC "ã€çš„å¥§ç§˜ã€‚\n" NOR);
         }
 
         if (lvl > 290
          && !query("craft/ruse/xianjing", me) )
         {
                 set("craft/ruse/xianjing", 1, me);
-                tell_object(me, HIC "ÄãÍ¨ÏþÁË¡¸" HIW "±ø·¨" HIC "¡¹Ö®¡¸" HIW
-                        "Ä±ÂÔÏµ±ø·¨" HIC "¡¹ÖÐ¡¸" HIW "ÏÝÚå" HIC "¡¹µÄ°ÂÃØ¡£\n" NOR);
+                tell_object(me, HIC "ä½ é€šæ›‰äº†ã€Œ" HIW "å…µæ³•" HIC "ã€ä¹‹ã€Œ" HIW
+                        "è¬€ç•¥ç³»å…µæ³•" HIC "ã€ä¸­ã€Œ" HIW "é™·é˜±" HIC "ã€çš„å¥§ç§˜ã€‚\n" NOR);
         }
 
         if (lvl > 300
          && !query("craft/ruse/gongxin", me) )
         {
                 set("craft/ruse/gongxin", 1, me);
-                tell_object(me, HIC "ÄãÍ¨ÏþÁË¡¸" HIW "±ø·¨" HIC "¡¹Ö®¡¸" HIW
-                        "Ä±ÂÔÏµ±ø·¨" HIC "¡¹ÖÐ¡¸" HIW "¹¥ÐÄ" HIC "¡¹µÄ°ÂÃØ¡£\n" NOR);
+                tell_object(me, HIC "ä½ é€šæ›‰äº†ã€Œ" HIW "å…µæ³•" HIC "ã€ä¹‹ã€Œ" HIW
+                        "è¬€ç•¥ç³»å…µæ³•" HIC "ã€ä¸­ã€Œ" HIW "æ”»å¿ƒ" HIC "ã€çš„å¥§ç§˜ã€‚\n" NOR);
         }
 
         if (lvl > 310
          && !query("craft/ruse/huanshu", me) )
         {
                 set("craft/ruse/huanshu", 1, me);
-                tell_object(me, HIC "ÄãÍ¨ÏþÁË¡¸" HIW "±ø·¨" HIC "¡¹Ö®¡¸" HIW
-                        "Ä±ÂÔÏµ±ø·¨" HIC "¡¹ÖÐ¡¸" HIW "»ÃÊõ" HIC "¡¹µÄ°ÂÃØ¡£\n" NOR);
+                tell_object(me, HIC "ä½ é€šæ›‰äº†ã€Œ" HIW "å…µæ³•" HIC "ã€ä¹‹ã€Œ" HIW
+                        "è¬€ç•¥ç³»å…µæ³•" HIC "ã€ä¸­ã€Œ" HIW "å¹»è¡“" HIC "ã€çš„å¥§ç§˜ã€‚\n" NOR);
         }
         
         if (lvl > 320
          && !query("craft/brightness/yingzao", me) )
         {
                 set("craft/brightness/yingzao", 1, me);
-                tell_object(me, HIC "ÄãÍ¨ÏþÁË¡¸" HIW "±ø·¨" HIC "¡¹Ö®¡¸" HIW
-                        "ÖÇÂÔÏµ±ø·¨" HIC "¡¹ÖÐ¡¸" HIW "ÓªÔì" HIC "¡¹µÄ°ÂÃØ¡£\n" NOR);
+                tell_object(me, HIC "ä½ é€šæ›‰äº†ã€Œ" HIW "å…µæ³•" HIC "ã€ä¹‹ã€Œ" HIW
+                        "æ™ºç•¥ç³»å…µæ³•" HIC "ã€ä¸­ã€Œ" HIW "ç‡Ÿé€ " HIC "ã€çš„å¥§ç§˜ã€‚\n" NOR);
         }
         
         if (lvl > 330
          && !query("craft/brightness/poxian", me) )
         {
                 set("craft/brightness/poxian", 1, me);
-                tell_object(me, HIC "ÄãÍ¨ÏþÁË¡¸" HIW "±ø·¨" HIC "¡¹Ö®¡¸" HIW
-                        "ÖÇÂÔÏµ±ø·¨" HIC "¡¹ÖÐ¡¸" HIW "ÆÆÏÝ" HIC "¡¹µÄ°ÂÃØ¡£\n" NOR);
+                tell_object(me, HIC "ä½ é€šæ›‰äº†ã€Œ" HIW "å…µæ³•" HIC "ã€ä¹‹ã€Œ" HIW
+                        "æ™ºç•¥ç³»å…µæ³•" HIC "ã€ä¸­ã€Œ" HIW "ç ´é™·" HIC "ã€çš„å¥§ç§˜ã€‚\n" NOR);
         }
 
         if (lvl > 340
          && !query("craft/brightness/jiaoyu", me) )
         {
                 set("craft/brightness/jiaoyu", 1, me);
-                tell_object(me, HIC "ÄãÍ¨ÏþÁË¡¸" HIW "±ø·¨" HIC "¡¹Ö®¡¸" HIW
-                        "ÖÇÂÔÏµ±ø·¨" HIC "¡¹ÖÐ¡¸" HIW "½ÌÚÍ" HIC "¡¹µÄ°ÂÃØ¡£\n" NOR);
+                tell_object(me, HIC "ä½ é€šæ›‰äº†ã€Œ" HIW "å…µæ³•" HIC "ã€ä¹‹ã€Œ" HIW
+                        "æ™ºç•¥ç³»å…µæ³•" HIC "ã€ä¸­ã€Œ" HIW "æ•™è«­" HIC "ã€çš„å¥§ç§˜ã€‚\n" NOR);
         }
 
         if (lvl > 350
          && !query("craft/resource/ruma", me) )
         {
                 set("craft/resource/ruma", 1, me);
-                tell_object(me, HIC "ÄãÍ¨ÏþÁË¡¸" HIW "±ø·¨" HIC "¡¹Ö®¡¸" HIW
-                        "²ßÂÔÏµ±ø·¨" HIC "¡¹ÖÐ¡¸" HIW "ÈèÂî" HIC "¡¹µÄ°ÂÃØ¡£\n" NOR);
+                tell_object(me, HIC "ä½ é€šæ›‰äº†ã€Œ" HIW "å…µæ³•" HIC "ã€ä¹‹ã€Œ" HIW
+                        "ç­–ç•¥ç³»å…µæ³•" HIC "ã€ä¸­ã€Œ" HIW "è¾±ç½µ" HIC "ã€çš„å¥§ç§˜ã€‚\n" NOR);
         }
 
         if (lvl > 360
          && !query("craft/resource/guwu", me) )
         {
                 set("craft/resource/guwu", 1, me);
-                tell_object(me, HIC "ÄãÍ¨ÏþÁË¡¸" HIW "±ø·¨" HIC "¡¹Ö®¡¸" HIW
-                        "²ßÂÔÏµ±ø·¨" HIC "¡¹ÖÐ¡¸" HIW "¹ÄÎè" HIC "¡¹µÄ°ÂÃØ¡£\n" NOR);
+                tell_object(me, HIC "ä½ é€šæ›‰äº†ã€Œ" HIW "å…µæ³•" HIC "ã€ä¹‹ã€Œ" HIW
+                        "ç­–ç•¥ç³»å…µæ³•" HIC "ã€ä¸­ã€Œ" HIW "é¼“èˆž" HIC "ã€çš„å¥§ç§˜ã€‚\n" NOR);
         }
 
         if (lvl > 370
          && !query("craft/resource/zhiliao", me) )
         {
                 set("craft/resource/zhiliao", 1, me);
-                tell_object(me, HIC "ÄãÍ¨ÏþÁË¡¸" HIW "±ø·¨" HIC "¡¹Ö®¡¸" HIW
-                        "²ßÂÔÏµ±ø·¨" HIC "¡¹ÖÐ¡¸" HIW "ÖÎÁÆ" HIC "¡¹µÄ°ÂÃØ¡£\n" NOR);
+                tell_object(me, HIC "ä½ é€šæ›‰äº†ã€Œ" HIW "å…µæ³•" HIC "ã€ä¹‹ã€Œ" HIW
+                        "ç­–ç•¥ç³»å…µæ³•" HIC "ã€ä¸­ã€Œ" HIW "æ²»ç™‚" HIC "ã€çš„å¥§ç§˜ã€‚\n" NOR);
         }
 
         if (lvl > 380
          && !query("craft/resource/yaoshu", me) )
         {
                 set("craft/resource/yaoshu", 1, me);
-                tell_object(me, HIC "ÄãÍ¨ÏþÁË¡¸" HIW "±ø·¨" HIC "¡¹Ö®¡¸" HIW
-                        "²ßÂÔÏµ±ø·¨" HIC "¡¹ÖÐ¡¸" HIW "ÑýÊõ" HIC "¡¹µÄ°ÂÃØ¡£\n" NOR);
+                tell_object(me, HIC "ä½ é€šæ›‰äº†ã€Œ" HIW "å…µæ³•" HIC "ã€ä¹‹ã€Œ" HIW
+                        "ç­–ç•¥ç³»å…µæ³•" HIC "ã€ä¸­ã€Œ" HIW "å¦–è¡“" HIC "ã€çš„å¥§ç§˜ã€‚\n" NOR);
         }
 }
 

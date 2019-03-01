@@ -10,13 +10,13 @@ mixed ask_pfm();
 
 void create()
 {
-    set_name("ÕÔº×", ({"zhao he", "zhao", "he"}));
-    set("nickname", HIC "·ÉÌìÉñÄ§" NOR );
-    set("title", "ÈÕÔÂÉñ½Ì³¤ÀÏ");
-    set("gender", "ÄÐÐÔ");
+    set_name("è¶™é¶´", ({"zhao he", "zhao", "he"}));
+    set("nickname", HIC "é£›å¤©ç¥žé­”" NOR );
+    set("title", "æ—¥æœˆç¥žæ•™é•·è€");
+    set("gender", "ç”·æ€§");
     set("age", 42);
     set("shen_type", -1);
-    set("long", "ËûÊÇÈÕÔÂÉñ½Ì³¤ÀÏ¡£\n");
+    set("long", "ä»–æ˜¯æ—¥æœˆç¥žæ•™é•·è€ã€‚\n");
     set("attitude", "peaceful");
 
     set("per", 21);
@@ -57,11 +57,11 @@ void create()
     map_skill("sword", "riyue-jian");
     map_skill("parry", "tianmo-shou");
 
-    create_family("ÈÕÔÂÉñ½Ì", 2, "³¤ÀÏ");
+    create_family("æ—¥æœˆç¥žæ•™", 2, "é•·è€");
 
     set("inquiry", ([
-        "´ß»ê"  : (: ask_pfm :),
-        "¾øÕÐ"  : (: ask_pfm :),
+        "å‚¬é­‚"  : (: ask_pfm :),
+        "çµ•æ‹›"  : (: ask_pfm :),
     ]));
 
     set("master_ob",3);
@@ -77,12 +77,12 @@ void attempt_apprentice(object ob)
 
     if((int)ob->query_skill("riyue-xinfa", 1) < 120)
     {
-         command("say ±¾½ÌµÄÄÚ¹¦ÐÄ·¨Äã»¹Ã»Á·ºÃ£¬»¹Òª¶àÏÂ¿à¹¦²ÅÐÐ£¡");
+         command("say æœ¬æ•™çš„å…§åŠŸå¿ƒæ³•ä½ é‚„æ²’ç·´å¥½ï¼Œé‚„è¦å¤šä¸‹è‹¦åŠŸæ‰è¡Œï¼");
          return;
     }
 
     command("recruit "+query("id", ob));
-    set("title", HIM"ÈÕÔÂÉñ½Ì"HIC"·ÉÌì»¤·¨"NOR, ob);
+    set("title", HIM"æ—¥æœˆç¥žæ•™"HIC"é£›å¤©è­·æ³•"NOR, ob);
 }
 
 mixed ask_pfm()
@@ -90,22 +90,22 @@ mixed ask_pfm()
       object me = this_player();
 
       if( query("can_perform/tianmo-shou/cui", me) )
-              return "ÄãÊÇ²»ÊÇÏëºÍÎÒÇÐ´èÒ»ÏÂ£¿";
+              return "ä½ æ˜¯ä¸æ˜¯æƒ³å’Œæˆ‘åˆ‡ç£‹ä¸€ä¸‹ï¼Ÿ";
 
       if( query("family/family_name", me) != query("family/family_name") )
-              return "ÎÒÉñ½ÌÎä¹¦¶À²½ÎäÁÖ£¬ÕâÎ»" + RANK_D->query_respect(me) +
-                     "¼ÈÈ»ÏëÑ§£¬²»ÈçÈëÎÒÉñ½ÌÈçºÎ£¿";
+              return "æˆ‘ç¥žæ•™æ­¦åŠŸç¨æ­¥æ­¦æž—ï¼Œé€™ä½" + RANK_D->query_respect(me) +
+                     "æ—¢ç„¶æƒ³å­¸ï¼Œä¸å¦‚å…¥æˆ‘ç¥žæ•™å¦‚ä½•ï¼Ÿ";
 
       if (me->query_skill("tianmo-shou", 1) < 150)
-              return "ÄãµÄÌìÄ§ÊÖ»¹Á·²»µ½¼Ò£¬ÈÃÎÒÔõÃ´½ÌÄãÄØ£¡";
+              return "ä½ çš„å¤©é­”æ‰‹é‚„ç·´ä¸åˆ°å®¶ï¼Œè®“æˆ‘æ€Žéº¼æ•™ä½ å‘¢ï¼";
 
-      message_vision(HIC "$n" HIC "¶Ô$N" HIC "µãÁËµãÍ·£º×¢Òâ¿´ºÃÁË¡£\n" HIC
-                     "Ö»¼û$n" HIC "×ó¿çÒ»²½£¬ÓÒ¿çÒ»²½£¬Ë²¼ä±ãÀ´µ½$N" HIC
-                     "µÄÃæÇ°£¬¡°ºô¡±µØÅÄ³öÒ»ÕÆ¡£\n" HIC
-                     "$N" HIC "Ò»Àã£¬¶ÙÊ±»íÈ»¹áÍ¨¡£\n" NOR,
+      message_vision(HIC "$n" HIC "å°$N" HIC "é»žäº†é»žé ­ï¼šæ³¨æ„çœ‹å¥½äº†ã€‚\n" HIC
+                     "åªè¦‹$n" HIC "å·¦è·¨ä¸€æ­¥ï¼Œå³è·¨ä¸€æ­¥ï¼Œçž¬é–“ä¾¿ä¾†åˆ°$N" HIC
+                     "çš„é¢å‰ï¼Œâ€œå‘¼â€åœ°æ‹å‡ºä¸€æŽŒã€‚\n" HIC
+                     "$N" HIC "ä¸€æ¥žï¼Œé “æ™‚è±ç„¶è²«é€šã€‚\n" NOR,
                      me, this_object());
-      command("say ¿´¶®Ã»ÓÐ£¿");
-      tell_object(me, HIR "ÄãÑ§»áÁË¡¸´ß»ê¡¹ÕâÒ»ÕÐ¡£\n" NOR);
+      command("say çœ‹æ‡‚æ²’æœ‰ï¼Ÿ");
+      tell_object(me, HIR "ä½ å­¸æœƒäº†ã€Œå‚¬é­‚ã€é€™ä¸€æ‹›ã€‚\n" NOR);
       if (me->can_improve_skill("hand"))
             me->improve_skill("hand", 160000);
       set("can_perform/tianmo-shou/cui", 1, me);

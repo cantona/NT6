@@ -1,10 +1,10 @@
-// ailao.c °§ÀÎÉ½½£Òâ
+// ailao.c å“€ç‰¢å±±åŠæ„
 
 #include <ansi.h>
 
 inherit F_SSERVER;
 
-string name() { return "°§ÀÎÉ½½£Òâ"; }
+string name() { return "å“€ç‰¢å±±åŠæ„"; }
 
 int perform(object me, object target)
 {
@@ -16,32 +16,32 @@ int perform(object me, object target)
         if (!target
                 || !target->is_character()
                 || !me->is_fighting(target))
-                return notify_fail("Äã²»ÔÚÕ½¶·ÖĞ£¡\n");
+                return notify_fail("ä½ ä¸åœ¨æˆ°é¬¥ä¸­ï¼\n");
 
 //      if (target->is_busy())
-//              return notify_fail(target->name() + "Ä¿Ç°Õı×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É¢¦\n");
+//              return notify_fail(target->name() + "ç›®å‰æ­£è‡ªé¡§ä¸æš‡ï¼Œæ”¾è†½æ”»æ“Šå§â–¡\n");
 
         weapon=query_temp("weapon", me);
         if( !objectp(weapon) || query("skill_type", weapon) != "sword" )
-                return notify_fail("ÄãÊÖÖĞÎŞ½££¬ÈçºÎÊ¹µÃ³ö°§ÀÎÉ½½£Òâ£¿\n");
+                return notify_fail("ä½ æ‰‹ä¸­ç„¡åŠï¼Œå¦‚ä½•ä½¿å¾—å‡ºå“€ç‰¢å±±åŠæ„ï¼Ÿ\n");
 
         if (me->query_skill("kurong-changong", 1)<150)
-                return notify_fail("ÄãµÄÄÚ¹¦»ğºòÎ´µ½£¬ÎŞ·¨¼İÔ¦°§ÀÎÉ½½£Òâ£¡\n");
+                return notify_fail("ä½ çš„å…§åŠŸç«å€™æœªåˆ°ï¼Œç„¡æ³•é§•é¦­å“€ç‰¢å±±åŠæ„ï¼\n");
 
         if (me->query_skill("sword", 1) < 150)
-                return notify_fail("Äã½£·¨ĞŞÎª²»¹»£¬ÎŞ·¨Ê©Õ¹°§ÀÎÉ½½£Òâ£¡\n");
+                return notify_fail("ä½ åŠæ³•ä¿®ç‚ºä¸å¤ ï¼Œç„¡æ³•æ–½å±•å“€ç‰¢å±±åŠæ„ï¼\n");
 
         if (me->query_skill("duanjia-jian",1)<150)
-                return notify_fail("Äã¶Î¼Ò½£ĞŞÎª²»¹»£¬ÎŞ·¨Ê©Õ¹°§ÀÎÉ½½£Òâ£¡\n");
+                return notify_fail("ä½ æ®µå®¶åŠä¿®ç‚ºä¸å¤ ï¼Œç„¡æ³•æ–½å±•å“€ç‰¢å±±åŠæ„ï¼\n");
 
         if( me->query_skill_mapped("force") != "kurong-changong")
-                return notify_fail("ÄãËùÓÃµÄÄÚ¹¦Óë°§ÀÎÉ½½£ÒâÆøÂ·Ïàã££¡\n");
+                return notify_fail("ä½ æ‰€ç”¨çš„å…§åŠŸèˆ‡å“€ç‰¢å±±åŠæ„æ°£è·¯ç›¸æ‚–ï¼\n");
 
         if( query("neili", me) <= 500 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»Ê¹ÓÃ°§ÀÎÉ½½£Òâ£¡\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ä½¿ç”¨å“€ç‰¢å±±åŠæ„ï¼\n");
 
-        message_vision(HIR "\nÍ»È»¼ä$N½£·¨Í»±ä£¬½£Æø×İºá£¬ÉÏÁù½££¬ÏÂÁù½££¬Ç°Áù½££¬ºóÁù½££¬×óÁù½££¬\n\n"NOR, me, target);
-        message_vision(HIR "\nÓÒÁù½££¬Ê©Õ¹°§ÀÎÉ½½£Òâ¶Ô$nĞéĞéÊµÊµÁ¬´ÌÁËÈıÊ®Áù½££¡\n\n" NOR, me, target);
+        message_vision(HIR "\nçªç„¶é–“$NåŠæ³•çªè®Šï¼ŒåŠæ°£ç¸±æ©«ï¼Œä¸Šå…­åŠï¼Œä¸‹å…­åŠï¼Œå‰å…­åŠï¼Œå¾Œå…­åŠï¼Œå·¦å…­åŠï¼Œ\n\n"NOR, me, target);
+        message_vision(HIR "\nå³å…­åŠï¼Œæ–½å±•å“€ç‰¢å±±åŠæ„å°$nè™›è™›å¯¦å¯¦é€£åˆºäº†ä¸‰åå…­åŠï¼\n\n" NOR, me, target);
 
         if( query("combat_exp", me)*10/query("combat_exp", target)<12 )
                 a=3;

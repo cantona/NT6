@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "С·");
+        set("short", "小路");
         set("long", @LONG
-����һ�������ĵĻ���·��������ЩС���ݣ���������ġ�·��
-���˺��٣�����ɫ�Ҵ���ǰ��·��
+這裡一條靜悄悄的黃土路，兩旁有些小土屋，疏疏落落的。路上
+行人很少，都行色匆匆向前趕路。
 LONG );
         set("outdoors", "sanbuguan");
         set("exits", ([

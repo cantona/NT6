@@ -1,16 +1,16 @@
 // This program is a part of NITAN MudLIB
-// shentuo-zhang ÉñÍÕÑ©É½ÕÆ
+// shentuo-zhang ç¥žé§é›ªå±±æŽŒ
 
 #include <ansi.h>
 inherit SKILL;
 
 string *action_msg = ({
-        "$NË«±ÛÒ»Êæ£¬Ê¹³öÒ»ÕÐ¡¸Ã÷ÍÕÎ÷À´¡¹£¬ÉíÐÎÐý×ª£¬ÕÆÊÆÆ®ºö£¬»÷Ïò$nµÄ$l",
-        "$NÉíÐÎÏòºóÒ»´í£¬×óÕÆÒõÊÆ£¬ÓÒÕÆÑôÐÍ£¬Ê¹³öÒ»Ê½¡¸´óÄ®±ùÑï¡¹£¬ÅÄÏò$nµÄ$l",
-        "$Nµ¯ÍÈ·ÉÉí£¬²½·¨ÒõÑô»¥Ò×£¬ÈôÓÐÈôÎÞµÄÌßÏò$nµÄ$l£¬ÕýÊÇÒ»ÕÐ¡¸ÁéÍÕ¿¥×ã¡¹",
-        "$NÉíÐÎ·ÉÐý£¬Ò»Ê½¡¸ÍòÀï·ÉËª¡¹£¬ÕÆÓ°·×·É£¬ÕÆÉÏÄÚ¾¢ÒÑ°Ñ$nµÄÉÏÅÌÍ³Í³ÕÖ×¡",
-        "$NÉíÐÎ¼±×ª£¬°ë¿ÕÖÐÒ»ÕÐ¡¸ÉñÍÕ³åÏö¡¹£¬Í·ÏÂ½ÅÉÏ£¬É²ÄÇ¼äÊÖ½ÅÆë¹¥£¬»÷Ïò$nµÄ$l",
-        "$NÕÆÊÆÒ»»º£¬Ê¹³öÒ»Ê½¡¸Ñ©ËøÇ§É½¡¹£¬ÕÆÉÏÒõ¾¢ÈçÅ­ÌÎÐÚÓ¿£¬»º»ºÍÆÏò$nµÄ$l",
+        "$Né›™è‡‚ä¸€èˆ’ï¼Œä½¿å‡ºä¸€æ‹›ã€Œæ˜Žé§è¥¿ä¾†ã€ï¼Œèº«å½¢æ—‹è½‰ï¼ŒæŽŒå‹¢é£„å¿½ï¼Œæ“Šå‘$nçš„$l",
+        "$Nèº«å½¢å‘å¾Œä¸€éŒ¯ï¼Œå·¦æŽŒé™°å‹¢ï¼Œå³æŽŒé™½åž‹ï¼Œä½¿å‡ºä¸€å¼ã€Œå¤§æ¼ å†°æšã€ï¼Œæ‹å‘$nçš„$l",
+        "$Nå½ˆè…¿é£›èº«ï¼Œæ­¥æ³•é™°é™½äº’æ˜“ï¼Œè‹¥æœ‰è‹¥ç„¡çš„è¸¢å‘$nçš„$lï¼Œæ­£æ˜¯ä¸€æ‹›ã€Œéˆé§é§¿è¶³ã€",
+        "$Nèº«å½¢é£›æ—‹ï¼Œä¸€å¼ã€Œè¬è£¡é£›éœœã€ï¼ŒæŽŒå½±ç´›é£›ï¼ŒæŽŒä¸Šå…§å‹å·²æŠŠ$nçš„ä¸Šç›¤çµ±çµ±ç½©ä½",
+        "$Nèº«å½¢æ€¥è½‰ï¼ŒåŠç©ºä¸­ä¸€æ‹›ã€Œç¥žé§æ²–éœ„ã€ï¼Œé ­ä¸‹è…³ä¸Šï¼Œå‰Žé‚£é–“æ‰‹è…³é½Šæ”»ï¼Œæ“Šå‘$nçš„$l",
+        "$NæŽŒå‹¢ä¸€ç·©ï¼Œä½¿å‡ºä¸€å¼ã€Œé›ªéŽ–åƒå±±ã€ï¼ŒæŽŒä¸Šé™°å‹å¦‚æ€’æ¿¤æ´¶æ¹§ï¼Œç·©ç·©æŽ¨å‘$nçš„$l",
 });
 
 
@@ -21,10 +21,10 @@ int valid_enable(string usage) { return usage == "strike" ||  usage == "parry"; 
 int valid_learn(object me)
 {
         if( query_temp("weapon", me) || query_temp("secondary_weapon", me) )
-                return notify_fail("Á·ÉñÍÕÑ©É½ÕÆ±ØÐë¿ÕÊÖ¡£\n");
+                return notify_fail("ç·´ç¥žé§é›ªå±±æŽŒå¿…é ˆç©ºæ‰‹ã€‚\n");
 
         if( query("max_neili", me)<50 )
-                return notify_fail("ÄãµÄÄÚÁ¦Ì«Èõ£¬ÎÞ·¨Á·ÉñÍÕÑ©É½ÕÆ¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›å¤ªå¼±ï¼Œç„¡æ³•ç·´ç¥žé§é›ªå±±æŽŒã€‚\n");
         return 1;
 }
 
@@ -36,16 +36,16 @@ mapping query_action(object me, object weapon)
                 "attack": 50 + random(10),
                 "dodge" : 20 + random(10),
                 "parry" : 20 + random(10),
-                "damage_type" : random(2)?"ðöÉË":"ÄÚÉË",
+                "damage_type" : random(2)?"ç˜€å‚·":"å…§å‚·",
         ]);
 }
 
 int practice_skill(object me)
 {
         if( query("qi", me)<60 )
-                return notify_fail("ÄãµÄÌåÁ¦Ì«µÍÁË¡£\n");
+                return notify_fail("ä½ çš„é«”åŠ›å¤ªä½Žäº†ã€‚\n");
         if( query("neili", me)<60 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»Á·ÉñÍÕÑ©É½ÕÆ¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ç·´ç¥žé§é›ªå±±æŽŒã€‚\n");
         me->receive_damage("qi", 50);
         addn("neili", -50, me);
         return 1;

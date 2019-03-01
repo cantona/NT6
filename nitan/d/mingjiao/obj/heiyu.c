@@ -13,13 +13,13 @@ void init()
 
 void create()
 {
-        set_name(HIW "ºÚÓñ¶ÏĞø¸à" NOR, ({"heiyu duanxugao", "gao", "heiyu"}));
+        set_name(HIW "é»‘ç‰æ–·çºŒè†" NOR, ({"heiyu duanxugao", "gao", "heiyu"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "ºĞ");
+                set("unit", "ç›’");
                 set("heiyu", 3);
-                set("long", "Ò»ºĞÁÆÉËÊ¥Ò©ºÚÓñ¶ÏĞø¸à£¬ÃûËäºÚÓñ£¬ÊµÔòÑ©°×¡£\n");
+                set("long", "ä¸€ç›’ç™‚å‚·è–è—¥é»‘ç‰æ–·çºŒè†ï¼Œåé›–é»‘ç‰ï¼Œå¯¦å‰‡é›ªç™½ã€‚\n");
                 set("value", 100000);
         }
         setup();
@@ -33,14 +33,14 @@ int do_eat(string arg)
         ob = this_object();
 
         if (! id(arg))
-                return notify_fail("ÄãÒª·şÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦æœä»€éº¼ï¼Ÿ\n");
                 
         if (this_player()->is_busy() || this_player()->is_fighting())
-                return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ æ­£å¿™è‘—å‘¢ã€‚\n");
                 
         if( query("eff_qi", this_player()) == 
             this_player(query("max_qi", )) )
-                return notify_fail("ÄãÏÖÔÚ²»ĞèÒªÓÃºÚÓñ¶ÏĞø¸à¡£\n");
+                return notify_fail("ä½ ç¾åœ¨ä¸éœ€è¦ç”¨é»‘ç‰æ–·çºŒè†ã€‚\n");
 
         if( query("heiyu", ob)>0 )
         {      
@@ -49,7 +49,7 @@ int do_eat(string arg)
                 addn("neili",query("max_neili",  me)/10, me);
                 set("food", me->max_food_capacity(), me);
                 set("water", me->max_water_capacity(), me);
-                message_vision(HIW"$N°ÑºÚÓñ¶ÏĞø¸àÍ¿ÔÚÉË¿ÚÉÏ£¬Ö»¾õÉËÊÆ´óÎªºÃ×ª¡£\n"NOR, me);
+                message_vision(HIW"$NæŠŠé»‘ç‰æ–·çºŒè†å¡—åœ¨å‚·å£ä¸Šï¼Œåªè¦ºå‚·å‹¢å¤§ç‚ºå¥½è½‰ã€‚\n"NOR, me);
                 addn("heiyu", -1, ob);
                 this_player()->start_busy(3);      
                 return 1;
@@ -57,8 +57,8 @@ int do_eat(string arg)
         
         if( query("heiyu", ob)<1 )
         {
-                write("ºĞÖĞµÄºÚÓñ¶ÏĞø¸àÒÑ¾­ËùÊ£ÎŞ¼¸ÁË¡£\n");
-                set("long", "Ò»¸öÓÃÀ´Ê¢ÁÆÉËÊ¥Ò©ºÚÓñ¶ÏĞø¸àµÄÄ¾ºĞ¡£\n", ob);
+                write("ç›’ä¸­çš„é»‘ç‰æ–·çºŒè†å·²ç¶“æ‰€å‰©ç„¡å¹¾äº†ã€‚\n");
+                set("long", "ä¸€å€‹ç”¨ä¾†ç››ç™‚å‚·è–è—¥é»‘ç‰æ–·çºŒè†çš„æœ¨ç›’ã€‚\n", ob);
                 set("value", 5000, ob);
                 return 1;
         }

@@ -1,17 +1,17 @@
 inherit SKILL;
 
 mapping *action = ({
-([      "action" : "$N½«ÊÖÖĞ$wÒ»Ñï£¬Ò»ÕóÇå·çÏò$nµÄ$l·÷È¥",
+([      "action" : "$Nå°‡æ‰‹ä¸­$wä¸€æšï¼Œä¸€é™£æ¸…é¢¨å‘$nçš„$læ‹‚å»",
         "damage" : 180,
         "dodge" : -50,
         "parry" : -30,
-        "damage_type" : "¸îÉË"
+        "damage_type" : "å‰²å‚·"
 ]),
-([      "action" : "$NÒ»»Ó$w£¬Ò»Æ¬ÔÆÏ¼ÕÖÏò$nµÄ$l",
+([      "action" : "$Nä¸€æ®$wï¼Œä¸€ç‰‡é›²éœç½©å‘$nçš„$l",
         "damage" : 220,
         "dodge" : -80,
         "parry" : -50,
-        "damage_type" : "ÄÚÉË"
+        "damage_type" : "å…§å‚·"
 ])
 });
 
@@ -30,9 +30,9 @@ mapping query_action(object me, object weapon)
 int practice_skill(object me)
 {
         if ((int)me->query("qi") < 30)
-                return notify_fail("ÄãµÄÌåÁ¦Ì«µÍÁË¡£\n");
+                return notify_fail("ä½ çš„é«”åŠ›å¤ªä½äº†ã€‚\n");
         if ((int)me->query("neili") < 20)
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»Á·¾«Áéµ¶·¨¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ç·´ç²¾éˆåˆ€æ³•ã€‚\n");
         me->receive_damage("qi", 30);
         me->add("neili", -10);
         return 1;

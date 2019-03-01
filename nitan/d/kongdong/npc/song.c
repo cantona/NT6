@@ -3,12 +3,12 @@ inherit NPC;
 
 void create()
 {
-    set_name("ËÎ»¶³¼", ({ "song huanchen","chen","song" }) );
-    set("title","áÇá¼ÅÉ¶şÊ¦ĞÖ");
-    set("gender", "ÄĞĞÔ" );
+    set_name("å®‹æ­¡è‡£", ({ "song huanchen","chen","song" }) );
+    set("title","å´†å³’æ´¾äºŒå¸«å…„");
+    set("gender", "ç”·æ€§" );
     set("class","taoist");
     set("age",23);
-    create_family("áÇá¼ÅÉ", 2, "µÜ×Ó");
+    create_family("å´†å³’æ´¾", 2, "å¼Ÿå­");
     set("social_exp",2000);
     set("combat_exp",10000);
 	set_wugong("shizi-zhan", 50,50,1);

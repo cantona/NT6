@@ -6,11 +6,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("¸µºìÑ©", ({"fu hongxue", "fu", "hongxue"}));
-        set("gender", "ÄĞĞÔ");
+        set_name("å‚…ç´…é›ª", ({"fu hongxue", "fu", "hongxue"}));
+        set("gender", "ç”·æ€§");
         set("age", 26);
         set("shen_type", -1);
-        set("long", "Ò»ÉíºÜÆÕÍ¨µÄ×°Êø£¬ÈÃÈËºÜÄÑ°ÑËûºÍ´óÃû¶¦¶¦µÄ¸µºìÑ©ÁªÏµÔÚÒ»Æğ¡£\n");
+        set("long", "ä¸€èº«å¾ˆæ™®é€šçš„è£æŸï¼Œè®“äººå¾ˆé›£æŠŠä»–å’Œå¤§åé¼é¼çš„å‚…ç´…é›ªè¯ç³»åœ¨ä¸€èµ·ã€‚\n");
         set("attitude", "peaceful");
 
         set("per", 21);
@@ -60,7 +60,7 @@ void create()
 
         prepare_skill("strike", "moshen-zhangfa");
         
-        create_family("Ä§½Ì", 40, "µÜ×Ó");
+        create_family("é­”æ•™", 40, "å¼Ÿå­");
   
         set("chat_chance_combat", 120); 
         set("chat_msg_combat", ({
@@ -83,17 +83,17 @@ void create()
 
 void attempt_apprentice(object ob)
 {       
-        command("say ÎÒ²»ÊÕÍ½£¬Äã»¹ÊÇÁíÕÒËûÈË°É£¡");
+        command("say æˆ‘ä¸æ”¶å¾’ï¼Œä½ é‚„æ˜¯å¦æ‰¾ä»–äººå§ï¼");
 }
 
 int accept_ask(object me, string topic)
 {
         switch (topic)
         {
-        case "ÌìÑÄÃ÷ÔÂ" :
+        case "å¤©æ¶¯æ˜æœˆ" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/mingyue-blade/tianya",
-                           "name"    : "ÌìÑÄÃ÷ÔÂ",
+                           "name"    : "å¤©æ¶¯æ˜æœˆ",
                            "sk1"     : "mingyue-blade",
                            "lv1"     : 200,
                            "dodge"   : 200,
@@ -101,10 +101,10 @@ int accept_ask(object me, string topic)
                            "shen"    : -50000, ]));
                 break;
 
-        case "Õ¶¾÷" :
+        case "æ–¬è¨£" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/mingyue-blade/zhan",
-                           "name"    : "Õ¶¾÷",
+                           "name"    : "æ–¬è¨£",
                            "sk1"     : "mingyue-blade",
                            "lv1"     : 200,
                            "dodge"   : 200,
@@ -121,8 +121,8 @@ int recognize_apprentice(object ob, string skill)
 {
         if (ob->query_skill(skill, 1) >= 400)
         {
-                command("say ¹»ÁË£¡ÎÒ¾Í½ÌÄãµ½ÕâÀï°É£¬Îä¹¦»¹ÊÇ"
-                        "Òª¿¿×Ô¼º¶àÑĞ¾¿²ÅÊÇ£¡");
+                command("say å¤ äº†ï¼æˆ‘å°±æ•™ä½ åˆ°é€™è£¡å§ï¼Œæ­¦åŠŸé‚„æ˜¯"
+                        "è¦é è‡ªå·±å¤šç ”ç©¶æ‰æ˜¯ï¼");
                 return -1;
         }
                 
@@ -136,18 +136,18 @@ int recognize_apprentice(object ob, string skill)
 
         if (skill == "mingyue-blade")
         {
-                if( query("family/family_name", ob) != "Ä§½Ì" )
+                if( query("family/family_name", ob) != "é­”æ•™" )
                 {
-                        command("say ÄãºÍÎÒËØÎŞÔ¨Ô´£¬ÎÒÎªÊ²Ã´Òª½ÌÄãÎä¹¦£¿");
+                        command("say ä½ å’Œæˆ‘ç´ ç„¡æ·µæºï¼Œæˆ‘ç‚ºä»€éº¼è¦æ•™ä½ æ­¦åŠŸï¼Ÿ");
                         return -1;
                 } 
                                                
-                message_vision("$N¿´ÁË¿´$n£¬µãµãÍ·µÀ£ºÌìÑÄÃ÷ÔÂµ¶Ò²Ã»ÓĞÊ²Ã´ÄÑÑ§µÄ¡£\n",
+                message_vision("$Nçœ‹äº†çœ‹$nï¼Œé»é»é ­é“ï¼šå¤©æ¶¯æ˜æœˆåˆ€ä¹Ÿæ²’æœ‰ä»€éº¼é›£å­¸çš„ã€‚\n",
                                this_object(), ob);
                 set_temp("can_learn/fuhongxue/mingyue-blade", 1, ob);
                 return 1;
         }
 
-        command("say ÎÒÖ»¶®µÃÒ»µãÌìÑÄÃ÷ÔÂµ¶£¬Äã¿É²»ÒªÎªÄÑÎÒ¡£");
+        command("say æˆ‘åªæ‡‚å¾—ä¸€é»å¤©æ¶¯æ˜æœˆåˆ€ï¼Œä½ å¯ä¸è¦ç‚ºé›£æˆ‘ã€‚");
         return -1;
 }

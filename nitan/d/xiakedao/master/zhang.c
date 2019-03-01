@@ -1,17 +1,17 @@
-// zhang.c ÕÅÈı·á
+// zhang.c å¼µä¸‰è±
 
 inherit NPC;
 inherit F_MASTER;
 
 void create()
 {
-        set_name("ÕÅÈı·á", ({ "zhang-sanfeng", "zhang" }));
-        set("nickname", "åååİÕæÈË");
+        set_name("å¼µä¸‰è±", ({ "zhang-sanfeng", "zhang" }));
+        set("nickname", "é‚‹é¢çœŸäºº");
         set("long", 
-                "Ëû¾ÍÊÇÎäµ±ÅÉ¿ªÉ½±Ç×æ¡¢µ±½ñÎäÁÖµÄÌ©É½±±¶·ÕÅÈı·áÕæÈË¡£\n"
-                "Éí´©Ò»¼şÎÛ»àµÄ»ÒÉ«µÀÅÛ£¬²»ĞŞ±ß·ù¡£\n"
-                "Éí²Ä¸ß´ó£¬ÄêÂú°ÙËê£¬ÂúÁ³ºì¹â£¬ĞëÃ¼½Ô°×¡£\n");
-        set("gender", "ÄĞĞÔ");
+                "ä»–å°±æ˜¯æ­¦ç•¶æ´¾é–‹å±±é¼»ç¥–ã€ç•¶ä»Šæ­¦æ—çš„æ³°å±±åŒ—é¬¥å¼µä¸‰è±çœŸäººã€‚\n"
+                "èº«ç©¿ä¸€ä»¶æ±¡ç©¢çš„ç°è‰²é“è¢ï¼Œä¸ä¿®é‚Šå¹…ã€‚\n"
+                "èº«æé«˜å¤§ï¼Œå¹´æ»¿ç™¾æ­²ï¼Œæ»¿è‡‰ç´…å…‰ï¼Œé ˆçœ‰çš†ç™½ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 100);
         set("attitude", "friendly");
         set("shen_type", 1);
@@ -53,7 +53,7 @@ void create()
         map_skill("parry", "taiji-jian");
         map_skill("sword", "liangyi-jian");
 
-        create_family("Îäµ±ÅÉ", 1, "¿ªÉ½×æÊ¦");
+        create_family("æ­¦ç•¶æ´¾", 1, "é–‹å±±ç¥–å¸«");
         set("class", "taoist");
 
         setup();
@@ -78,7 +78,7 @@ void greeting(object ob)
         int i;
 
         obj = all_inventory(environment(me));
-        command("say ÕâÕĞºÃÏóÓ¦¸ÃÕâÑù£¬Ö±ÖĞÓĞÇú£¬ÇúÖĞÓĞÖ±¡£");
+        command("say é€™æ‹›å¥½è±¡æ‡‰è©²é€™æ¨£ï¼Œç›´ä¸­æœ‰æ›²ï¼Œæ›²ä¸­æœ‰ç›´ã€‚");
         for(i=0; i<sizeof(obj); i++)
         {
                 if( query("id", obj[i]) == "feng-qingyang" )

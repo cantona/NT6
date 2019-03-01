@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�㽫̨");
+        set("short", "點將台");
         set("long", @LONG
-����ʯ������ˮ��һ��ƽ̨����̨����������³���ڴ˵������
-�ġ��㽫̨�����㽫̨�ϲ಻Զ��һϵ�����Ĵ����ϣ�����˶�������
-�����Ͼ�˵�����������õġ�
+下了石階來到水邊一個平台，此台便是三國大將魯肅在此點兵發令
+的“點將台”。點將台南側不遠有一系鐵鏈的大鐵枷，這條碩大無朋的
+大鐵枷據說是攔江御敵用的。
 LONG );
         set("outdoors", "yueyang");
         set("no_clean_up", 0);

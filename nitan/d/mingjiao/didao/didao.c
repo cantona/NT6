@@ -1,15 +1,15 @@
 // Code of ShenZhou
-// Room: didao.c µØµÀÈë¿Ú
+// Room: didao.c åœ°é“å…¥å£
 // Zhangchi 3/00
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "µØµÀÈë¿Ú");
+        set("short", "åœ°é“å…¥å£");
         set("long", @LONG
-ÕâÀïÊÇºñÍÁÆìÍÚµÄµØµÀÈë¿Ú£¬Ò»×ùĞ¡ÍÁ¶ÑµÄºóÃæ£¬ÊÇÒ»¸öºÚÆáÆá
-µÄ¶´Ñ¨Í¨ÍùµØÏÂ¡£
+é€™è£¡æ˜¯åšåœŸæ——æŒ–çš„åœ°é“å…¥å£ï¼Œä¸€åº§å°åœŸå †çš„å¾Œé¢ï¼Œæ˜¯ä¸€å€‹é»‘æ¼†æ¼†
+çš„æ´ç©´é€šå¾€åœ°ä¸‹ã€‚
 LONG );
         set("exits", ([ /* sizeof() == 1 */
                 "down": "/d/mingjiao/didao/didao1",
@@ -24,9 +24,9 @@ LONG );
 
 int valid_leave(object me, string dir)
 {
-        if( (!query("family", me) || query("family/family_name", me) != "Ã÷½Ì") && 
+        if( (!query("family", me) || query("family/family_name", me) != "æ˜æ•™") && 
                 dir == "down")
-                return notify_fail("¼¸ÃûºñÍÁÆì×³ººµ²×¡Äã£¬ËµµÀ£ºÍâÈË²»µÃ½øÈëµØµÀ£¡\n");
+                return notify_fail("å¹¾ååšåœŸæ——å£¯æ¼¢æ“‹ä½ä½ ï¼Œèªªé“ï¼šå¤–äººä¸å¾—é€²å…¥åœ°é“ï¼\n");
         
         return ::valid_leave(me,dir);
 }

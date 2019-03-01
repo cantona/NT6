@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��ʯС��");
+        set("short", "碎石小徑");
         set("long", @LONG
-�̼ұ��㳡�����һ����ʯ������С������������ǰ���̼�
-���Ĵ������ڡ���ʱ���̼ұ������˹����ڴˡ�
+商家堡廣場後面的一條碎石舖砌的小徑，可以由它前往商家
+堡的大廳所在。不時有商家堡的下人過往于此。
 LONG);
         set("exits", ([
                 "north"  : __DIR__"shang_xiaojin2",

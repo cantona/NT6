@@ -3,7 +3,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-string name() { return HIM "¿ì½£¾÷" NOR; }
+string name() { return HIM "å¿«åŠè¨£" NOR; }
 
 inherit F_SSERVER;
 
@@ -18,27 +18,27 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(name() + "Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(name() + "åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if (! objectp(weapon = query_temp("weapon", me))
            || (string)query("skill_type", weapon) != "sword")
-                return notify_fail("ÄãËùÊ¹ÓÃµÄÎäÆ÷²»¶Ô£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ æ‰€ä½¿ç”¨çš„æ­¦å™¨ä¸å°ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if ((int)me->query_skill("xiaoyao-jian", 1) < 120)
-                return notify_fail("ÄãµÄåĞÒ£½£·¨²»¹»æµÊì£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„é€é™åŠæ³•ä¸å¤ å«»ç†Ÿï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (me->query_skill_mapped("sword") != "xiaoyao-jian")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢åĞÒ£½£·¨£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼é€é™åŠæ³•ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (query("neili", me) < 300)
-                return notify_fail("ÄãÄ¿Ç°µÄÕæÆø²»¹»£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ ç›®å‰çš„çœŸæ°£ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIW "\n$N" HIW "İëµÄÒ»ÉùÇåĞ¥£¬Ê©³ö¾øÑ§¡¸" HIM "¿ì½£¾÷"
-              HIW "¡¹£¬ÊÖÖĞ" + weapon->name() + HIW "ºôºô×÷Ïì¡£ö®Ê±¼ä"
-              "ÆæÃîµÄ½£ÕĞÁ¬ÃàÓ¿³ö¡£" NOR;
+        msg = HIW "\n$N" HIW "é©€çš„ä¸€è²æ¸…å˜¯ï¼Œæ–½å‡ºçµ•å­¸ã€Œ" HIM "å¿«åŠè¨£"
+              HIW "ã€ï¼Œæ‰‹ä¸­" + weapon->name() + HIW "å‘¼å‘¼ä½œéŸ¿ã€‚éœæ™‚é–“"
+              "å¥‡å¦™çš„åŠæ‹›é€£ç¶¿æ¹§å‡ºã€‚" NOR;
 
         attack_time = 4;
 

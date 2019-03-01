@@ -6,12 +6,12 @@ int do_zhan(string arg);
 
 void create()
 {
-        set("short", "ÃÜÊÒ");
+        set("short", "å¯†å®¤");
         set("long", @LONG
-ÕâÀïÊÇ¹ÅÄ¹ÖĞµÄÃÜÊÒ£¬ËÄÖÜÃÜ²»Í¸·ç£¬ÄãÖ»ÄÜ½è×ÅÇ½ÉÏ»è°µµÄµÆ
-¹âÀ´ÃãÇ¿·Ö±æ·½Ïò¡£Ç½ÊÇÓÃÕû¿éµÄÇàÊ¯ÆöºÏÆğÀ´µÄ£¬½ÓºÏµÄÉõÊÇÍêÃÀ£¬
-ÄãÄÑÒÔ´ÓÖĞÕÒ³öÒ»Ë¿·ìÏ¶¡£ÄãÕıÔÚĞÀÉÍ£¬Í»È»¼ä·¢¾õÇ½ÉÏËÆºõÓĞ¼¸¿é
-×© (brick)¸ß¸ßÍ¹Æğ£¬ÓëÖÜÎ§µÄ×©ºÜ²»ºÍĞ³¡£
+é€™è£¡æ˜¯å¤å¢“ä¸­çš„å¯†å®¤ï¼Œå››å‘¨å¯†ä¸é€é¢¨ï¼Œä½ åªèƒ½å€Ÿè‘—ç‰†ä¸Šæ˜æš—çš„ç‡ˆ
+å…‰ä¾†å‹‰å¼·åˆ†è¾¨æ–¹å‘ã€‚ç‰†æ˜¯ç”¨æ•´å¡Šçš„é’çŸ³ç Œåˆèµ·ä¾†çš„ï¼Œæ¥åˆçš„ç”šæ˜¯å®Œç¾ï¼Œ
+ä½ é›£ä»¥å¾ä¸­æ‰¾å‡ºä¸€çµ²ç¸«éš™ã€‚ä½ æ­£åœ¨æ¬£è³ï¼Œçªç„¶é–“ç™¼è¦ºç‰†ä¸Šä¼¼ä¹æœ‰å¹¾å¡Š
+ç£š (brick)é«˜é«˜å‡¸èµ·ï¼Œèˆ‡å‘¨åœçš„ç£šå¾ˆä¸å’Œè«§ã€‚
 LONG );
 
         set("exits", ([
@@ -19,7 +19,7 @@ LONG );
         ]));
 
         set("item_desc", ([
-        "brick": HIC "\n¼¸¿éÆÕÍ¨µÄÇà×©£¬¿´²»³öÓĞÊ²Ã´ÌØ±ğµÄ¡£\n" NOR,
+        "brick": HIC "\nå¹¾å¡Šæ™®é€šçš„é’ç£šï¼Œçœ‹ä¸å‡ºæœ‰ä»€éº¼ç‰¹åˆ¥çš„ã€‚\n" NOR,
         ]) );
 
         setup();
@@ -38,16 +38,16 @@ int do_ci(string arg)
         object weapon;
 
         if( !arg || arg != "brick" ) {
-                return notify_fail("ÄãÒª´ÌÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦åˆºä»€éº¼ï¼Ÿ\n");
         }
 
         if( !objectp(weapon=query_temp("weapon", me)) )
-                return notify_fail("Òª´ÌÇ½²»ÓÃ¼Ò»ï¿ÖÅÂ²»ĞĞ°É£¡\n");
+                return notify_fail("è¦åˆºç‰†ä¸ç”¨å®¶ä¼™ææ€•ä¸è¡Œå§ï¼\n");
 
-        message_vision(HIG "\n$N" HIG "°Î³ö±øÈĞ£¬ÏòÇà×©ÇáÇá´ÌÈ¥£¬Ö»ÌıµÃ¿Õ¿Õ×÷Éù£¬Çà×©"
-                       "µÄÁíÒ»Í··Â·ğÊÇ¿ÕµÄ¡£\n", this_player());
+        message_vision(HIG "\n$N" HIG "æ‹”å‡ºå…µåˆƒï¼Œå‘é’ç£šè¼•è¼•åˆºå»ï¼Œåªè½å¾—ç©ºç©ºä½œè²ï¼Œé’ç£š"
+                       "çš„å¦ä¸€é ­ä»¿ä½›æ˜¯ç©ºçš„ã€‚\n", this_player());
 
-        set_temp("tmarks/×©", 1, me);
+        set_temp("tmarks/ç£š", 1, me);
         return 1;
 }
 
@@ -55,28 +55,28 @@ int do_zhan(string arg)
 {
         object me=this_player();
 
-        if( !arg || arg != "brick" || query_temp("tmarks/×©", me)<1 ) {
-                return notify_fail("ÄãÒªÕ³×¡Ê²Ã´£¿\n");
+        if( !arg || arg != "brick" || query_temp("tmarks/ç£š", me)<1 ) {
+                return notify_fail("ä½ è¦ç²˜ä½ä»€éº¼ï¼Ÿ\n");
         }
 
-        message_sort(HIC "\n$N" HIC "Ë«ÊÖ½ôÌùÇà×©£¬Ê¹¸ö¡®Õ³¡¯×Ö¾÷£¬ÇáÇáÇÉÇÉ"
-                     "µØ½«Õâ¿éÇà×©Õ³ÁË³öÀ´¡£Èç´ËÃ»Õ³µ½¼¸¿é×©£¬Ç½±ÚÉÏ¾ÍÏÖ³öÁË"
-                     "Ò»¸ö´ó¶´¡£\n" NOR,this_player());
+        message_sort(HIC "\n$N" HIC "é›™æ‰‹ç·Šè²¼é’ç£šï¼Œä½¿å€‹â€˜ç²˜â€™å­—è¨£ï¼Œè¼•è¼•å·§å·§"
+                     "åœ°å°‡é€™å¡Šé’ç£šç²˜äº†å‡ºä¾†ã€‚å¦‚æ­¤æ²’ç²˜åˆ°å¹¾å¡Šç£šï¼Œç‰†å£ä¸Šå°±ç¾å‡ºäº†"
+                     "ä¸€å€‹å¤§æ´ã€‚\n" NOR,this_player());
 
         set("exits/down",__DIR__"houting");
 
         remove_call_out("close");
         call_out("close", 5, this_object());
 
-        set_temp("tmarks/×©", 0, me);
+        set_temp("tmarks/ç£š", 0, me);
         return 1;
 
 }
 
 void close(object room)
 {
-        message("vision", NOR + WHT"\n¹ı²»¶àÒ»»á¶ù£¬ÁºÉÏÂäÏÂ¼¸¿éÇà×©£¬ÓÖ"
-                "½«Ç½ÉÏµÄ¶´ÕÚ×¡ÁË¡£\n" NOR, room);
+        message("vision", NOR + WHT"\néä¸å¤šä¸€æœƒå…’ï¼Œæ¨‘ä¸Šè½ä¸‹å¹¾å¡Šé’ç£šï¼Œåˆ"
+                "å°‡ç‰†ä¸Šçš„æ´é®ä½äº†ã€‚\n" NOR, room);
 
         delete("exits/down", room);
 }

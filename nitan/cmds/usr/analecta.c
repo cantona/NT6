@@ -27,24 +27,24 @@ int main(object me, string arg)
         analectas = ANALECTA_D->query_year_analecta(year);
 
         info = HIC + LOCAL_MUD_NAME() + "(" + HIW + upper_case(INTERMUD_MUD_NAME) + 
-               HIC + ")ндубя║╪╞ё╨\n" NOR WHT "╘╓╘╓╘╓╘╓╘╓╘╓╘╓╘╓╘╓╘╓╘╓╘╓╘╓╘╓╘╓╘╓╘╓╘╓"
-               "╘╓╘╓╘╓╘╓╘╓╘╓╘╓╘╓╘╓╘╓╘╓╘╓╘╓╘╓╘╓╘╓╘╓╘╓\n" NOR;
+               HIC + ")Ф√┤Г╚═И│╦И⌡├О╪ \n" NOR WHT "Б■─Б■─Б■─Б■─Б■─Б■─Б■─Б■─Б■─Б■─Б■─Б■─Б■─Б■─Б■─Б■─Б■─Б■─"
+               "Б■─Б■─Б■─Б■─Б■─Б■─Б■─Б■─Б■─Б■─Б■─Б■─Б■─Б■─Б■─Б■─Б■─Б■─\n" NOR;
 
-        // тд╤авНпбндя║
+        // И√╠Х╝─Ф°─Ф√╟Ф√┤И│╦
         if (arg == "new" || arg && sscanf(arg, "new %d", year))
         {
                 analectas = ANALECTA_D->query_year_analecta(year);
                 if (! arrayp(analectas) || ! sizeof(analectas))
-                        info += CYN " ожтз " WHT + year + CYN " ц╩спхн╨нпб╣дндя║"
-                                "╧╘дЦтд╤а║ё\n";
+                        info += CYN " Г▐╬Е°╗ " WHT + year + CYN " Ф╡▓Ф°┴Д╩╩Д╫∙Ф√╟Г └Ф√┤И│╦"
+                                "Д╬⌡Д╫═И√╠Х╝─Ц─┌\n";
                 else
                 {
                         i=query("analecta_last_read/"+year, me);
                         analectas = sort_array(analectas, (: sort_analectas :));
                         analectas = filter_array(analectas, (: filter_analectas :), i);
                         if (! sizeof(analectas))
-                                info += CYN " ожтз " WHT + year + CYN " дЙц╩спхн╨н"
-                                        "пб╣дндя║╧╘дЦтд╤а║ё\n";
+                                info += CYN " Г▐╬Е°╗ " WHT + year + CYN " Е╧╢Ф╡▓Ф°┴Д╩╩Д╫∙"
+                                        "Ф√╟Г └Ф√┤И│╦Д╬⌡Д╫═И√╠Х╝─Ц─┌\n";
                         else
                                 info += read_analecta(year, analectas[0],
                                                       member_array(analectas[0], analectas) + 1,
@@ -52,21 +52,21 @@ int main(object me, string arg)
                 }
         }
         else
-        // лМ╪сндя║
+        // Ф╥╩Е┼═Ф√┤И│╦
         if (arg && sscanf(arg, "add %d from %s", i, name) == 2)
         {
                 if (! objectp(board = present(name, environment(me))))
-                        info += CYN " уБюОц╩сп " WHT + name + 
-                                CYN " уБ©ИаТят╟Е║ё\n" NOR;
+                        info += CYN " И─≥Хё║Ф╡▓Ф°┴ " WHT + name + 
+                                CYN " И─≥Е║┼Г∙≥Х╗─Ф²©Ц─┌\n" NOR;
                 else
                 if (! SECURITY_D->valid_grant(me, "(immortal)") 
                  && query("id", me) != query("banzhu", board) )
-                        info += CYN " дЦипнчх╗а╕лМ╪сндя║║ё\n" NOR;
+                        info += CYN " Д╫═Е╟ Г└║Ф╛┼Е┼⌡Ф╥╩Е┼═Ф√┤И│╦Ц─┌\n" NOR;
                 else
                 {
                         all_note=query("notes", board);
                         if (! arrayp(all_note) || i < 1 || i > sizeof(all_note))
-                                info += CYN " ц╩спуБуеаТят║ё\n" NOR;
+                                info += CYN " Ф╡▓Ф°┴И─≥Е╪╣Г∙≥Х╗─Ц─┌\n" NOR;
                         else
                         {
                                 i--;
@@ -80,37 +80,37 @@ int main(object me, string arg)
                                 analecta["board"] = board->name();
 
                                 ANALECTA_D->add_analecta(year, analecta);
-                                info += CYN " ря╬╜Ёи╧╕╣длМ╪сак" + board->name() +
-                                        "╣д " WHT + (i + 1) + CYN " ╨еаТят╫ЬхК"
-                                        "╠╬дЙ╤хндя║║ё\n" NOR;
+                                info += CYN " Е╥╡Г╤⌠Ф┬░Е┼÷Г └Ф╥╩Е┼═Д╨├" + board->name() +
+                                        "Г └ " WHT + (i + 1) + CYN " Х≥÷Г∙≥Х╗─И─╡Е┘╔"
+                                        "Ф°╛Е╧╢Е╨╕Ф√┤И│╦Ц─┌\n" NOR;
                         }
                 }
         }
-        // и╬ЁЩндя║
+        // Е┬╙И≥╓Ф√┤И│╦
         else
         if (arg && sscanf(arg, "del %d %d", year, i) == 2)
         {
                 if (! wizardp(me))
-                        info += CYN " дЦипнчх╗а╕и╬ЁЩндя║║ё\n" NOR;
+                        info += CYN " Д╫═Е╟ Г└║Ф╛┼Е┼⌡Е┬╙И≥╓Ф√┤И│╦Ц─┌\n" NOR;
                 else
                 if (! ANALECTA_D->delete_analecta(year, i))
-                        info += CYN " ц╩сп " WHT + year + CYN " уБ╦ЖдЙ╤х╣дндя║"
-                                "╩Р╦цдЙ╤хц╩сп " WHT + i + CYN " уБ╦ЖпР╨е╣дндя║"
-                                "║ё\n" NOR;
+                        info += CYN " Ф╡▓Ф°┴ " WHT + year + CYN " И─≥Е─▀Е╧╢Е╨╕Г └Ф√┤И│╦"
+                                "Ф┬√Х╘╡Е╧╢Е╨╕Ф╡▓Ф°┴ " WHT + i + CYN " И─≥Е─▀Е╨▐Х≥÷Г └Ф√┤И│╦"
+                                "Ц─┌\n" NOR;
                 else
-                        info += CYN " дЙ╤х " WHT + year + CYN " ╠Ю╨е " WHT + i +
-                                CYN " ╣дндя║ря╬╜╠╩Ёи╧╕и╬ЁЩ║ё\n" NOR;
+                        info += CYN " Е╧╢Е╨╕ " WHT + year + CYN " Г╥╗Х≥÷ " WHT + i +
+                                CYN " Г └Ф√┤И│╦Е╥╡Г╤⌠Х╒╚Ф┬░Е┼÷Е┬╙И≥╓Ц─┌\n" NOR;
         }
         else
-        // в╙╩╩╬и╟Ф╠╬ндя║
+        // Х╫┴Ф▐⌡Х┬┼Г┴┬Ф°╛Ф√┤И│╦
         if (arg && sscanf(arg, "convert %s", dir))
         {
                 if (! wizardp(me))
                         return 0;
 
                 if (file_size(dir) != -2)
-                        info += CYN " ц╩сп " WHT + dir + CYN " уБ╦Жд©б╪©и╧╘в╙╩╩"
-                                "║ё\n";
+                        info += CYN " Ф╡▓Ф°┴ " WHT + dir + CYN " И─≥Е─▀Г⌡╝И▄└Е▐╞Д╬⌡Х╫┴Ф▐⌡"
+                                "Ц─┌\n";
                 else
                 {
                         string subject, board_name;
@@ -140,29 +140,29 @@ int main(object me, string arg)
                                 rm(dir + all_analecta[i]);
                                 j++;
                         }
-                        info += CYN " д©б╪ " WHT + dir + CYN " об╣д╬и╟Ф╠╬ндя║йЩ"
-                                "╬щря╠╩Ёи╧╕в╙╩╩ак " WHT + j + CYN " ╦Ж║ё\n" NOR;
+                        info += CYN " Г⌡╝И▄└ " WHT + dir + CYN " Д╦▀Г └Х┬┼Г┴┬Ф°╛Ф√┤И│╦Ф∙╦"
+                                "Ф⌠ Е╥╡Х╒╚Ф┬░Е┼÷Х╫┴Ф▐⌡Д╨├ " WHT + j + CYN " Е─▀Ц─┌\n" NOR;
                 }
         }
         else
-        // ап╠М
+        // Е┬≈Х║╗
         if (! arg && sizeof(analectas))
         {
-                info += CYN "дЙ╤х " WHT + year + CYN " ╣дндя║спё╨\n\n" NOR;
+                info += CYN "Е╧╢Е╨╕ " WHT + year + CYN " Г └Ф√┤И│╦Ф°┴О╪ \n\n" NOR;
                 info += list_analectas(analectas, year, me);
         }
-        // тд╤аж╦╤╗дЙ╥щ╣дндуб
+        // И√╠Х╝─Ф▄┤Е╝ Е╧╢Д╩╫Г └Ф√┤Г╚═
         else
         if (arg && sscanf(arg, "%d %d", year, i) == 2)
         {
                 analectas = ANALECTA_D->query_year_analecta(year);
                 if (! arrayp(analectas) || ! sizeof(analectas))
-                        info += CYN " ц╩сп " WHT + year + CYN " уБ╦ЖдЙ"
-                                "╤х╣дндя║║ё\n" NOR;
+                        info += CYN " Ф╡▓Ф°┴ " WHT + year + CYN " И─≥Е─▀Е╧╢"
+                                "Е╨╕Г └Ф√┤И│╦Ц─┌\n" NOR;
                 else
                 if (sizeof(analectas) < i || i < 1)
-                        info += CYN " дЙ╤х " WHT + year + CYN " ц╩сп "
-                                WHT + i + CYN " уБ╦ЖпР╨е╣дндя║║ё\n" NOR;
+                        info += CYN " Е╧╢Е╨╕ " WHT + year + CYN " Ф╡▓Ф°┴ "
+                                WHT + i + CYN " И─≥Е─▀Е╨▐Х≥÷Г └Ф√┤И│╦Ц─┌\n" NOR;
 
                 else
                 {
@@ -170,12 +170,12 @@ int main(object me, string arg)
                         info += read_analecta(year, analectas[i - 1], i, me);
                 }
         }
-        // тд╤а╠╬дЙ╤хндуб╩РуъапЁЖфДкШдЙ╤хндуб
+        // И√╠Х╝─Ф°╛Е╧╢Е╨╕Ф√┤Г╚═Ф┬√Х─┘Е┬≈Е┤╨Е┘╤Д╩√Е╧╢Е╨╕Ф√┤Г╚═
         else
         if (arg && sscanf(arg, "%d", i))
         {
-                if (i < 1) info += CYN " ц╩сп " WHT + i + CYN " уБ╦Ж╠Ю"
-                                   "╨е╣дндя║║ё\n" NOR;
+                if (i < 1) info += CYN " Ф╡▓Ф°┴ " WHT + i + CYN " И─≥Е─▀Г╥╗"
+                                   "Х≥÷Г └Ф√┤И│╦Ц─┌\n" NOR;
                 else
                 {
                         year = localtime(time())[LT_YEAR];
@@ -183,7 +183,7 @@ int main(object me, string arg)
 
                         if (arrayp(analectas) && sizeof(analectas))
                         {
-                                info += CYN "дЙ╤х " WHT + i + CYN " ╣дндя║спё╨"
+                                info += CYN "Е╧╢Е╨╕ " WHT + i + CYN " Г └Ф√┤И│╦Ф°┴О╪ "
                                         "\n\n" NOR;
                                 info += list_analectas(analectas, i, me);
                         }
@@ -196,12 +196,12 @@ int main(object me, string arg)
                                         info += read_analecta(year, analectas[i - 1], i, me);
                                 }
 
-                                else info += CYN " ц╩сп " WHT + i + CYN " уБ╦ЖдЙ╤х╩Руъ"
-                                             "╠╬дЙуБ╦ЖпР╨е╣дндя║║ё\n" NOR;
+                                else info += CYN " Ф╡▓Ф°┴ " WHT + i + CYN " И─≥Е─▀Е╧╢Е╨╕Ф┬√Х─┘"
+                                             "Ф°╛Е╧╢И─≥Е─▀Е╨▐Х≥÷Г └Ф√┤И│╦Ц─┌\n" NOR;
                         }
                 }
         }
-        // апЁЖспндя║╣ддЙ╥щ
+        // Е┬≈Е┤╨Ф°┴Ф√┤И│╦Г └Е╧╢Д╩╫
         else
         if (! arrayp(analectas) || ! sizeof(analectas) || arg == "years")
         {
@@ -209,24 +209,24 @@ int main(object me, string arg)
                 // all_analecta -= ({ sprintf("%d", year) });
 
                 if (! sizeof(all_analecta))
-                        info += CYN " ожтз╩╧ц╩спхн╨нндуб╠╩йу╪╞║ё\n" NOR;
+                        info += CYN " Г▐╬Е°╗И┌└Ф╡▓Ф°┴Д╩╩Д╫∙Ф√┤Г╚═Х╒╚Ф■╤И⌡├Ц─┌\n" NOR;
                 else
                 {
-                        info += sort_string(CYN " ожтзсп " WHT +
-                                            implode(all_analecta, CYN "║╒" WHT) +
-                                            CYN " уБ " WHT + sizeof(all_analecta) +
-                                            CYN " дЙ╣дндя║╧╘тд╤а║ё\n" NOR, 86);
+                        info += sort_string(CYN " Г▐╬Е°╗Ф°┴ " WHT +
+                                            implode(all_analecta, CYN "Ц─│" WHT) +
+                                            CYN " И─≥ " WHT + sizeof(all_analecta) +
+                                            CYN " Е╧╢Г └Ф√┤И│╦Д╬⌡И√╠Х╝─Ц─┌\n" NOR, 86);
                 }
         }
         else return help(me);
 
-        info += NOR WHT "\n╘╓╘╓╘╓╘╓╘╓╘╓╘╓╘╓╘╓╘╓╘╓╘╓╘╓╘╓╘╓╘╓╘╓╘╓╘╓╘╓╘╓╘╓╘╓╘╓╘╓╘╓╘╓╘╓╘╓╘╓╘╓"
-                "╘╓╘╓╘╓╘╓╘╓" NOR;
+        info += NOR WHT "\nБ■─Б■─Б■─Б■─Б■─Б■─Б■─Б■─Б■─Б■─Б■─Б■─Б■─Б■─Б■─Б■─Б■─Б■─Б■─Б■─Б■─Б■─Б■─Б■─Б■─Б■─Б■─Б■─Б■─Б■─Б■─"
+                "Б■─Б■─Б■─Б■─Б■─" NOR;
         me->start_more(info);
         return 1;
 }
 
-// апЁЖндя║╠ЙлБ
+// Е┬≈Е┤╨Ф√┤И│╦Ф╗≥И║▄
 string list_analectas(mapping *analectas, int year, object me)
 {
         int i, last;
@@ -253,7 +253,7 @@ string list_analectas(mapping *analectas, int year, object me)
         return info;
 }
 
-// тд╤андя║
+// И√╠Х╝─Ф√┤И│╦
 string read_analecta(int year, mapping analecta, int i, object me)
 {
         string info;
@@ -265,13 +265,13 @@ string read_analecta(int year, mapping analecta, int i, object me)
                        analecta["author_name"] + "(" + analecta["author_id"] + ")",
                        TIME_D->replace_ctime(analecta["time"])[0..9]);
 
-        // нд╪Чдзхщм╗╧Щ read_file ╩Я╣ц
+        // Ф√┤Д╩╤Е┘╖Е╝╧И─ И│▌ read_file Г█╡Е╬≈
         content = read_file(analecta["file"], HEAD_LINES + 1,
                             analecta["lines"] - HEAD_LINES);
 
         if (! stringp(content) ||
             content == "")
-                info += CYN "╢кнднчхн╨ндзхщ║ё\n" NOR;
+                info += CYN "Ф╜╓Ф√┤Г└║Д╩╩Д╫∙Е┘╖Е╝╧Ц─┌\n" NOR;
         else
                 info += CYN + content + NOR;
 
@@ -284,27 +284,27 @@ string read_analecta(int year, mapping analecta, int i, object me)
 int help(object me)
 {
         write(@HELP
-ж╦аН╦Яй╫ : analecta [ [ дЙ╤х ] <пР╨е> ] |
-                    [ add <аТятпР╨е> [ from <аТят╟Е> ] ] |
-                    [ del <дЙ╤х> <пР╨е> ] |
-                    [ new [ дЙ╤х ] ] |
-                    [ convert <д©б╪> ] |
+Ф▄┤Д╩╓Ф═╪Е╪▐ : analecta [ [ Е╧╢Е╨╕ ] <Е╨▐Х≥÷> ] |
+                    [ add <Г∙≥Х╗─Е╨▐Х≥÷> [ from <Г∙≥Х╗─Ф²©> ] ] |
+                    [ del <Е╧╢Е╨╕> <Е╨▐Х≥÷> ] |
+                    [ new [ Е╧╢Е╨╕ ] ] |
+                    [ convert <Г⌡╝И▄└> ] |
                     [ years ]
 
-╠╬ж╦аНлА╧╘ндя║╣дтд╤а║╒тЖ╪с╨ми╬ЁЩ║ётд╤ай╠ё╛ЁЩ╠╬дЙндя║╡╩пХр╙
-ж╦╤╗дЙ╤хмБё╛фДкШ╣д╤╪р╙ж╦╤╗дЙ╤х║ё ╠ххГтд╤а 2000 дЙ╣з 3 ╨енд
-я║ё╛╪╢йДхК analecta 2000 3║ё й╧сц new ╡нйЩ©ирттд╤адЦипн╢тд
-╤а╣дпбндя║║ёй╧сц years ╡нйЩ©иртапЁЖд©г╟спндя║╣ддЙ╤х║ё
+Ф°╛Ф▄┤Д╩╓Ф▐░Д╬⌡Ф√┤И│╦Г └И√╠Х╝─Ц─│Е╒·Е┼═Е▓▄Е┬╙И≥╓Ц─┌И√╠Х╝─Ф≥┌О╪▄И≥╓Ф°╛Е╧╢Ф√┤И│╦Д╦█И°─Х╕│
+Ф▄┤Е╝ Е╧╢Е╨╕Е╓√О╪▄Е┘╤Д╩√Г └И┐╫Х╕│Ф▄┤Е╝ Е╧╢Е╨╕Ц─┌ Ф╞■Е╕┌И√╠Х╝─ 2000 Е╧╢Г╛╛ 3 Х≥÷Ф√┤
+И│╦О╪▄Е█ЁХ╪╦Е┘╔ analecta 2000 3Ц─┌ Д╫©Г■╗ new Е▐┐Ф∙╦Е▐╞Д╩╔И√╠Х╝─Д╫═Е╟ Ф°╙И√╠
+Х╝─Г └Ф√╟Ф√┤И│╦Ц─┌Д╫©Г■╗ years Е▐┐Ф∙╦Е▐╞Д╩╔Е┬≈Е┤╨Г⌡╝Е┴█Ф°┴Ф√┤И│╦Г └Е╧╢Е╨╕Ц─┌
 
-нвй╕©иртй╧сц new ╡нйЩю╢лМ╪сндя║ё╛del ╡нйЩю╢и╬ЁЩндя║║ё и╬ЁЩ
-ндя║пХр╙ж╦╤╗дЙ╤х╨мпР╨её╛лМ╪сндя║тР╠ьпКж╦╤╗кЫтз╥©╪Д╣даТят╟Е
-IDё╛хГё╨
-    ©му╩аТят╟Е(board) [ 4 уеаТят ]
-й╧сц analecta add 1 from boardё╛╬м©ирт╟я©му╩аТят╟Е╣д╣зр╩╨е
-аТятлМ╪с╣╫╠╬дЙ╤хндя║жп║ё
+Е╥╚Е╦╚Е▐╞Д╩╔Д╫©Г■╗ new Е▐┐Ф∙╦Д╬├Ф╥╩Е┼═Ф√┤И│╦О╪▄del Е▐┐Ф∙╦Д╬├Е┬╙И≥╓Ф√┤И│╦Ц─┌ Е┬╙И≥╓
+Ф√┤И│╦И°─Х╕│Ф▄┤Е╝ Е╧╢Е╨╕Е▓▄Е╨▐Х≥÷О╪▄Ф╥╩Е┼═Ф√┤И│╦Е┴┤Е©┘И═┬Ф▄┤Е╝ Ф┴─Е°╗Ф┬©И√⌠Г └Г∙≥Х╗─Ф²©
+IDО╪▄Е╕┌О╪ 
+    Е╝╒Фё╖Г∙≥Х╗─Ф²©(board) [ 4 Е╪╣Г∙≥Х╗─ ]
+Д╫©Г■╗ analecta add 1 from boardО╪▄Е╟╠Е▐╞Д╩╔Ф┼┼Е╝╒Фё╖Г∙≥Х╗─Ф²©Г └Г╛╛Д╦─Х≥÷
+Г∙≥Х╗─Ф╥╩Е┼═Е┬╟Ф°╛Е╧╢Е╨╕Ф√┤И│╦Д╦╜Ц─┌
 
-©иртй╧сц convert╡нйЩ╫╚ж╦╤╗д©б╪обкЫсп╣д╬и╟Ф╠╬ндя║йЩ╬щв╙╩╩Ёи
-пб╟Ф╠╬╣дйЩ╬щ║ё
+Е▐╞Д╩╔Д╫©Г■╗ convertЕ▐┐Ф∙╦Е╟┤Ф▄┤Е╝ Г⌡╝И▄└Д╦▀Ф┴─Ф°┴Г └Х┬┼Г┴┬Ф°╛Ф√┤И│╦Ф∙╦Ф⌠ Х╫┴Ф▐⌡Ф┬░
+Ф√╟Г┴┬Ф°╛Г └Ф∙╦Ф⌠ Ц─┌
 HELP);
     return 1;
 }

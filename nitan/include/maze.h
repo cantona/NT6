@@ -1,62 +1,62 @@
 // maze.h
 
-// ÃÔ¹¬·¿¼äÔ­ĞÍÎÄ¼ş
+// è¿·å®®æˆ¿é–“åŸå‹æ–‡ä»¶
 #define ROOM_FILE       "/inherit/room/maze"
 
-// ÃÔ¹¬³ö¿ÚÍ¨ÏòµÄ·¿¼ä
+// è¿·å®®å‡ºå£é€šå‘çš„æˆ¿é–“
 #define ROOM_EXIT_FILE  "/d/city/wumiao"
 
-// ÃÔ¹¬±¦ÏäµÄÎÄ¼ş
+// è¿·å®®å¯¶ç®±çš„æ–‡ä»¶
 #define BAOXIANG_OB     "/clone/misc/baoxiang"
 
-// ÃÔ¹¬ÊØ»¤½ø³ÌµÄĞÄÌø¼ä¸ô
-#define HEART_TIME 30           /* Îå·ÖÖÓ¼ì²éÒ»´Î       */
+// è¿·å®®å®ˆè­·é€²ç¨‹çš„å¿ƒè·³é–“éš”
+#define HEART_TIME 30           /* äº”åˆ†é˜æª¢æŸ¥ä¸€æ¬¡       */
 
-// ÃÔ¹¬µÄÉúÃüÖÜÆÚ
-#define MAZE_LIFT_CYCLE 1800    /* °ë¸öĞ¡Ê±             */
+// è¿·å®®çš„ç”Ÿå‘½å‘¨æœŸ
+#define MAZE_LIFT_CYCLE 1800    /* åŠå€‹å°æ™‚             */
 
-// ÃÔ¹¬µÄºê¶¨Òå
-#define LENGTH  8               /* ÃÔ¹¬ºáÏòµÄ·¿¼äÊıÁ¿   */
-#define HEIGHT  8               /* ÃÔ¹¬×İÏòµÄ·¿¼äÊıÁ¿   */
-#define BOX_NUM 4               /* ÃÔ¹¬±¦ÏäµÄÊıÁ¿       */
-#define XIANJING_NUM 3          /* ÃÔ¹¬ÏİÚåµÄÊıÁ¿       */
-#define NORTH   1               /* ³¯±±·½Ïò             */
-#define SOUTH   2               /* ³¯ÄÏ·½Ïò             */
-#define WEST    3               /* ³¯Î÷·½Ïò             */
-#define EAST    4               /* ³¯¶«·½Ïò             */
-#define IS_ROAD 1               /* ·¿¼äÎ»ÓÚÂ·ÏßÉÏ       */
-#define IS_ROOM 2               /* ·¿¼ä²»Î»ÓÚÂ·ÏßÉÏ     */
-#define CAN_WALK    1           /* Ö¸¶¨·½ÏòÓĞ³öÂ·       */
-#define IS_WALL 9               /* Ö¸¶¨·½ÏòÊÇÇ½±Ú       */
-#define NOT_DEFINED 0           /* ÉĞÎ´³õÊ¼»¯           */
-#define TO_NORTH    0           /* ÃÔ¹¬ÊÇÓÉÄÏÏò±±       */
-#define TO_SOUTH    1           /* ÃÔ¹¬ÊÇÓÉ±±ÏòÄÏ       */
-#define TO_WEST     2           /* ÃÔ¹¬ÊÇÓÉ¶«ÏòÎ÷       */
-#define TO_EAST     3           /* ÃÔ¹¬ÊÇÓÉÎ÷Ïò¶«       */
-#define MAP_COMM    1           /* ÃÔ¹¬µØÍ¼ÊÇÆÕÍ¨Ä£Ê½   */
-#define MAP_DEEP    2           /* ÃÔ¹¬µØÍ¼ÊÇÏêÏ¸Ä£Ê½   */
-#define MAP_NONE    3           /* ÃÔ¹¬µØÍ¼ÊÇ¹Ø±ÕÄ£Ê½   */
+// è¿·å®®çš„å®å®šç¾©
+#define LENGTH  8               /* è¿·å®®æ©«å‘çš„æˆ¿é–“æ•¸é‡   */
+#define HEIGHT  8               /* è¿·å®®ç¸±å‘çš„æˆ¿é–“æ•¸é‡   */
+#define BOX_NUM 4               /* è¿·å®®å¯¶ç®±çš„æ•¸é‡       */
+#define XIANJING_NUM 3          /* è¿·å®®é™·é˜±çš„æ•¸é‡       */
+#define NORTH   1               /* æœåŒ—æ–¹å‘             */
+#define SOUTH   2               /* æœå—æ–¹å‘             */
+#define WEST    3               /* æœè¥¿æ–¹å‘             */
+#define EAST    4               /* æœæ±æ–¹å‘             */
+#define IS_ROAD 1               /* æˆ¿é–“ä½äºè·¯ç·šä¸Š       */
+#define IS_ROOM 2               /* æˆ¿é–“ä¸ä½äºè·¯ç·šä¸Š     */
+#define CAN_WALK    1           /* æŒ‡å®šæ–¹å‘æœ‰å‡ºè·¯       */
+#define IS_WALL 9               /* æŒ‡å®šæ–¹å‘æ˜¯ç‰†å£       */
+#define NOT_DEFINED 0           /* å°šæœªåˆå§‹åŒ–           */
+#define TO_NORTH    0           /* è¿·å®®æ˜¯ç”±å—å‘åŒ—       */
+#define TO_SOUTH    1           /* è¿·å®®æ˜¯ç”±åŒ—å‘å—       */
+#define TO_WEST     2           /* è¿·å®®æ˜¯ç”±æ±å‘è¥¿       */
+#define TO_EAST     3           /* è¿·å®®æ˜¯ç”±è¥¿å‘æ±       */
+#define MAP_COMM    1           /* è¿·å®®åœ°åœ–æ˜¯æ™®é€šæ¨¡å¼   */
+#define MAP_DEEP    2           /* è¿·å®®åœ°åœ–æ˜¯è©³ç´°æ¨¡å¼   */
+#define MAP_NONE    3           /* è¿·å®®åœ°åœ–æ˜¯é—œé–‰æ¨¡å¼   */
 
-// ÃÔ¹¬µÄÏİÚåÀàĞÍ
-#define BUSY        1           /* ÈÃÍæ¼ÒBUSY           */
-#define TRIP        2           /* ÈÃÍæ¼ÒË¤µ½±ğµÄ·¿¼ä   */
-#define LOSTMAP     3           /* ÈÃÃÔ¹¬µØÍ¼Ê§Ğ§       */
-#define CHANGEMAP   4           /* ÈÃÃÔ¹¬µØÍ¼Ë¢ĞÂ       */
-#define WOUND       5           /* ÈÃÍæ¼ÒÊÜÉË           */
+// è¿·å®®çš„é™·é˜±é¡å‹
+#define BUSY        1           /* è®“ç©å®¶BUSY           */
+#define TRIP        2           /* è®“ç©å®¶æ‘”åˆ°åˆ¥çš„æˆ¿é–“   */
+#define LOSTMAP     3           /* è®“è¿·å®®åœ°åœ–å¤±æ•ˆ       */
+#define CHANGEMAP   4           /* è®“è¿·å®®åœ°åœ–åˆ·æ–°       */
+#define WOUND       5           /* è®“ç©å®¶å—å‚·           */
 
-// ÃÔ¹¬µÄ±¦ÏäÀàĞÍ
-#define SPECIAL_MAP 1           /* ÃÔ¹¬µØÍ¼±äÎªÏêÏ¸Ä£Ê½ */ 
-#define SPECIAL_DAN 2           /* ÏÉµ¤µÈÎïÆ·           */
-#define JINKUAI     3           /* ½ğ¿éµÈÎïÆ·           */
-#define GOLD        4           /* »Æ½ğ                 */
-#define OBJ         5           /* ÈÎÎñÎïÆ·             */
-#define SPECIAL_OBJ 6           /* ºÃµÄÈÎÎñÎïÆ·         */
-#define NPC_SKILL   7           /* ½µµÍÉ±ÊÖµÄÎä¹¦       */
+// è¿·å®®çš„å¯¶ç®±é¡å‹
+#define SPECIAL_MAP 1           /* è¿·å®®åœ°åœ–è®Šç‚ºè©³ç´°æ¨¡å¼ */ 
+#define SPECIAL_DAN 2           /* ä»™ä¸¹ç­‰ç‰©å“           */
+#define JINKUAI     3           /* é‡‘å¡Šç­‰ç‰©å“           */
+#define GOLD        4           /* é»ƒé‡‘                 */
+#define OBJ         5           /* ä»»å‹™ç‰©å“             */
+#define SPECIAL_OBJ 6           /* å¥½çš„ä»»å‹™ç‰©å“         */
+#define NPC_SKILL   7           /* é™ä½æ®ºæ‰‹çš„æ­¦åŠŸ       */
 
-void collect_all_maze_information();            /* ½«ËùÓĞµÄÃÔ¹¬·¿¼äÇåÀí     */
-void init_line(mapping maze);                   /* ³õÊ¼»¯ÃÔ¹¬µØÍ¼           */
-void init_road(object room, mapping maze);      /* ³õÊ¼»¯ÃÔ¹¬Â·Ïß           */
-void init_wall(object room, mapping maze);      /* ¸øÂ·ÏßÉÏµÄ·¿¼äÖÆÔì²íÂ·   */
-object *finish_room(object room, mapping maze); /* ½«´ôËÀµÄ·¿¼ä´òÍ¨         */
-void init_room_exits(mapping maze);             /* ½«·¿¼äµÄ³ö¿ÚË¢ĞÂ         */
-void init_special_room(mapping maze);           /* ¸øÃÔ¹¬³õÊ¼»¯±¦ÏäºÍÏİÚå   */
+void collect_all_maze_information();            /* å°‡æ‰€æœ‰çš„è¿·å®®æˆ¿é–“æ¸…ç†     */
+void init_line(mapping maze);                   /* åˆå§‹åŒ–è¿·å®®åœ°åœ–           */
+void init_road(object room, mapping maze);      /* åˆå§‹åŒ–è¿·å®®è·¯ç·š           */
+void init_wall(object room, mapping maze);      /* çµ¦è·¯ç·šä¸Šçš„æˆ¿é–“åˆ¶é€ å²”è·¯   */
+object *finish_room(object room, mapping maze); /* å°‡å‘†æ­»çš„æˆ¿é–“æ‰“é€š         */
+void init_room_exits(mapping maze);             /* å°‡æˆ¿é–“çš„å‡ºå£åˆ·æ–°         */
+void init_special_room(mapping maze);           /* çµ¦è¿·å®®åˆå§‹åŒ–å¯¶ç®±å’Œé™·é˜±   */

@@ -59,8 +59,8 @@ void debug_info(string arg)
 void create()
 {
         seteuid(getuid());
-        set("channel_id", "ÓÊ¼ş¾«Áé");
-        write("ÓÊ¼şÏµÍ³ÒÑ¾­Æô¶¯¡£\n");
+        set("channel_id", "éƒµä»¶ç²¾éˆ");
+        write("éƒµä»¶ç³»çµ±å·²ç¶“å•Ÿå‹•ã€‚\n");
 }
 
 int clean_up()
@@ -79,7 +79,7 @@ int queue_mail(object me, string mail_from, string mail_to, string topic, string
         int next_next;
 
         if (strlen(data) > 65536)
-                return notify_fail("Äã²»ÄÜ·¢ËÍ´óÓÚ64KµÄÓÊ¼ş¡£\n");
+                return notify_fail("ä½ ä¸èƒ½ç™¼é€å¤§äº64Kçš„éƒµä»¶ã€‚\n");
 
         log_file("mail", sprintf("%s %s try to send mail <%s> Size:%d\n",
                                  log_time(),(me?query("id", me):"SYSTEM"),
@@ -88,14 +88,14 @@ int queue_mail(object me, string mail_from, string mail_to, string topic, string
         // allocate a new mail buffer
         next_next = (next_mail + 1) % MAX_MAIL_IN_QUEUE;
         if (next_next == queue_pointer)
-                return notify_fail("ÓÊ¼ş¶ÓÁĞÒÑÂú£¬ÏÖÔÚÎŞ·¨·¢ËÍÓÊ¼ş¡£\n");
+                return notify_fail("éƒµä»¶éšŠåˆ—å·²æ»¿ï¼Œç¾åœ¨ç„¡æ³•ç™¼é€éƒµä»¶ã€‚\n");
 
         // queue this mail
         if (! mail_from || sscanf(mail_from, "%*s@%*s") != 2)
                 mail_from = "lonely-21@163.com";
 
         if (! mail_to || sscanf(mail_to, "%*s@%*s") != 2)
-                return notify_fail("ÎŞ·¨ÏòÕâ¸öµØÖ··¢ËÍÓÊ¼ş¡£\n");
+                return notify_fail("ç„¡æ³•å‘é€™å€‹åœ°å€ç™¼é€éƒµä»¶ã€‚\n");
 
         mail_queue[next_mail] = allocate(5);
         mail_queue[next_mail][MAIL_FROM] = mail_from;
@@ -157,7 +157,7 @@ private int trans_64_to_int(int b64)
     return 0;
 }
 
-// BASE64±àÂë
+// BASE64ç·¨ç¢¼
 string encode64(mixed src)
 {
         int temp;
@@ -169,14 +169,14 @@ string encode64(mixed src)
         if (! stringp(src) && ! bufferp(src))
                 error("encode64: expect buffer or string.\n");
 
-        // ±àÂë³¤¶ÈÒ»¶¨ÊÇ3µÄ±¶Êı
+        // ç·¨ç¢¼é•·åº¦ä¸€å®šæ˜¯3çš„å€æ•¸
         len = sizeof(src);
         while (len % 0x3) len++;
         buf = allocate_buffer(len);
         dst = allocate_buffer(len / 3 * 4);
         write_buffer(buf, 0, src);
 
-        // ¿ªÊ¼±àÂë
+        // é–‹å§‹ç·¨ç¢¼
         ret = "";
         i = 0;
         k = 0;
@@ -202,8 +202,8 @@ private int send_mail()
 
         mail = mail_queue[queue_pointer];
 
-        CHANNEL_D->do_channel(this_object(), "sys", "ÓÊ¼şÏµÍ³³¢ÊÔÏò<" +
-                              mail[MAIL_RECEIVER] + ">·¢ËÍÓÊ¼ş¡£");
+        CHANNEL_D->do_channel(this_object(), "sys", "éƒµä»¶ç³»çµ±å˜—è©¦å‘<" +
+                              mail[MAIL_RECEIVER] + ">ç™¼é€éƒµä»¶ã€‚");
         socket = socket_create(STREAM, "in_read_callback", "in_close_callback");
         if (socket < 0)
         {
@@ -237,17 +237,17 @@ private void read_callback(int fd, mixed message)
 
         mail = mail_queue[queue_pointer];
 
-        // SMTP¿Í»§¶Ë×Ô¶¯»ú
+        // SMTPå®¢æˆ¶ç«¯è‡ªå‹•æ©Ÿ
         switch (status)
         {
         default:
                 return;
 
             case STATUS_CONNECT_OK:
-                // Á¬½Ó³É¹¦
+                // é€£æ¥æˆåŠŸ
                     if (sscanf(message, "220%*s"))
                     {
-                        // ·¢ËÍHELOÃüÁî
+                        // ç™¼é€HELOå‘½ä»¤
                             status = STATUS_HELO_OK;
                             write_message(fd, "HELO " + "smtp");                       
                             return;
@@ -255,20 +255,20 @@ private void read_callback(int fd, mixed message)
                     break;
 
             case STATUS_HELO_OK:
-                // ³É¹¦½ÓÊÕµ½HELOÃüÁîµÄÏìÓ¦
+                // æˆåŠŸæ¥æ”¶åˆ°HELOå‘½ä»¤çš„éŸ¿æ‡‰
                     if (sscanf(message, "250%*s"))
                     {
                             /*
                         if( query("smtpauthuser", CONFIG_D) )
                         {
-                                // ÅäÖÃÎªĞèÒªÈÏÖ¤£º·¢ËÍÈÏÖ¤ÃüÁî
+                                // é…ç½®ç‚ºéœ€è¦èªè¨¼ï¼šç™¼é€èªè¨¼å‘½ä»¤
                                 status = STATUS_START_AUTH;
                                 write_message(fd, "AUTH LOGIN");
                                 return;
                         }
                         */                        
 
-                        // ÅäÖÃÎª²»ĞèÒªÈÏÖ¤£¬·¢ËÍMAILFROMÃüÁî
+                        // é…ç½®ç‚ºä¸éœ€è¦èªè¨¼ï¼Œç™¼é€MAILFROMå‘½ä»¤
                             status = STATUS_MAIL_FROM_OK;
                         write_message(fd, "MAIL FROM:<" + mail[MAIL_FROM] + ">");
                             return;
@@ -276,10 +276,10 @@ private void read_callback(int fd, mixed message)
                 break;
 
         case STATUS_START_AUTH:
-                // ³É¹¦½ÓÊÕµ½AUTHÃüÁîµÄÏìÓ¦
+                // æˆåŠŸæ¥æ”¶åˆ°AUTHå‘½ä»¤çš„éŸ¿æ‡‰
                 if (sscanf(message, "334%*s"))
                 {
-                        // ·¢ËÍÓÃ»§Ãû
+                        // ç™¼é€ç”¨æˆ¶å
                         status = STATUS_USERNAME_SENT;
                         write_message(fd, encode64("lonely"));
                         return;
@@ -287,10 +287,10 @@ private void read_callback(int fd, mixed message)
                 break;
 
         case STATUS_USERNAME_SENT:
-                // ³É¹¦½ÓÊÕµ½·¢ËÍÓÃ»§ÃûµÄÏìÓ¦
+                // æˆåŠŸæ¥æ”¶åˆ°ç™¼é€ç”¨æˆ¶åçš„éŸ¿æ‡‰
                 if (sscanf(message, "334%*s"))
                 {
-                        // ·¢ËÍ¿ÚÁî
+                        // ç™¼é€å£ä»¤
                         status = STATUS_PASSWORD_SENT;
                         write_message(fd, encode64("921121"));
                         return;
@@ -298,10 +298,10 @@ private void read_callback(int fd, mixed message)
                 break;
 
         case STATUS_PASSWORD_SENT:
-                // ³É¹¦½ÓÊÕµ½·¢ËÍ¿ÚÁîµÄÏìÓ¦
+                // æˆåŠŸæ¥æ”¶åˆ°ç™¼é€å£ä»¤çš„éŸ¿æ‡‰
                 if (sscanf(message, "235%*s"))
                 {
-                        // ·¢ËÍMAILFROMÃüÁî
+                        // ç™¼é€MAILFROMå‘½ä»¤
                         status = STATUS_MAIL_FROM_OK;
                         write_message(fd, "MAIL FROM:<" + mail[MAIL_FROM] + ">");
                             return;
@@ -309,10 +309,10 @@ private void read_callback(int fd, mixed message)
                 break;
 
             case STATUS_MAIL_FROM_OK:
-                // ³É¹¦½ÓÊÕµ½MAILFROMÃüÁîµÄÏìÓ¦
+                // æˆåŠŸæ¥æ”¶åˆ°MAILFROMå‘½ä»¤çš„éŸ¿æ‡‰
                     if (sscanf(message, "250%*s"))
                     {
-                        // ·¢ËÍRCPTTOÃüÁî
+                        // ç™¼é€RCPTTOå‘½ä»¤
                             status = STATUS_RCPT_TO_OK;
                         write_message(fd, "RCPT TO:<" + mail[MAIL_RECEIVER] + ">");
                             return;
@@ -320,10 +320,10 @@ private void read_callback(int fd, mixed message)
                     break;
 
             case STATUS_RCPT_TO_OK:
-                // ³É¹¦½ÓÊÕµ½RCPTTOÃüÁîµÄÏìÓ¦
+                // æˆåŠŸæ¥æ”¶åˆ°RCPTTOå‘½ä»¤çš„éŸ¿æ‡‰
                     if (sscanf(message, "250%*s"))
                     {
-                        // ·¢ËÍDATAÃüÁî
+                        // ç™¼é€DATAå‘½ä»¤
                             status = STATUS_DATA_OK;
                         write_message(fd, "DATA");
                             return;
@@ -331,10 +331,10 @@ private void read_callback(int fd, mixed message)
                     break;
 
             case STATUS_DATA_OK:
-                // ³É¹¦½ÓÊÕµ½DATAÃüÁîµÄÏìÓ¦
+                // æˆåŠŸæ¥æ”¶åˆ°DATAå‘½ä»¤çš„éŸ¿æ‡‰
                     if (sscanf(message, "354%*s"))
                     {
-                        // ·¢ËÍÊı¾İ
+                        // ç™¼é€æ•¸æ“š
                             status = STATUS_DATA_SENT;
                         write_message(fd, "Subject: " + mail[MAIL_TOPIC]);
                         write_message(fd, mail[MAIL_DATA] + "\r\n.");
@@ -343,16 +343,16 @@ private void read_callback(int fd, mixed message)
                     break;
 
         case STATUS_DATA_SENT:
-                // ³É¹¦½ÓÊÕµ½·¢ËÍÊı¾İµÄÏìÓ¦
+                // æˆåŠŸæ¥æ”¶åˆ°ç™¼é€æ•¸æ“šçš„éŸ¿æ‡‰
                 write_message(fd, "QUIT");
                     if (sscanf(message, "451%*s"))
                             log_file("mail", sprintf("%s Smtp Server error: %s.\n",
                                          log_time(), SMTP_SERVER));
                     else
                 {
-                        CHANNEL_D->do_channel(this_object(), "sys", "³É¹¦µÄ·¢ËÍÁË¼Ä¸ø<" +
+                        CHANNEL_D->do_channel(this_object(), "sys", "æˆåŠŸçš„ç™¼é€äº†å¯„çµ¦<" +
                                               mail[MAIL_RECEIVER] +
-                                              ">µÄÓÊ¼ş¡£");
+                                              ">çš„éƒµä»¶ã€‚");
                         // I will remove the mail in socket close call back fun
                         status = STATUS_FINISH;
                         return;
@@ -360,7 +360,7 @@ private void read_callback(int fd, mixed message)
                     break;
         }
 
-        // ·¢ËÍ¹ı³ÌÖĞ²úÉúÁË´íÎó
+        // ç™¼é€éç¨‹ä¸­ç”¢ç”Ÿäº†éŒ¯èª¤
         if (++(mail[MAIL_ERROR]) >= MAX_RETRY_COUNT)
         {
                 log_file("mail", sprintf("%s Can not send mail <%s> to %s.\n",

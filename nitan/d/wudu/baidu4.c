@@ -12,11 +12,11 @@ string* npcs = ({
 
 void create()
 {
-        set("short", "°Ù¶¾¿ß");
+        set("short", "ç™¾æ¯’çªŸ");
         set("long", @LONG
-ÕâÀïÊÇÒ»¸öÌìÈ»ÐÎ³ÉµÄÊ¯¶´£¬ÀïÃæÉîåä¹ã´ó¡£¶´¶¥Ðü¹Ò×ÅÐí¶àÖÓ
-ÈéÊ¯£¬²»Ê±´«À´¼¸ÉùµÎ´ðµÄË®Éù¡£×ßÔÚ¶´ÖÐ£¬¶´ÄÚÒõ°µ³±Êª£¬ÉíÅÔºö
-È»´«À´Ò»Õó¡°ßÐßÐ¡±µÄÉùÒô¡£
+é€™è£¡æ˜¯ä¸€å€‹å¤©ç„¶å½¢æˆçš„çŸ³æ´žï¼Œè£¡é¢æ·±é‚ƒå»£å¤§ã€‚æ´žé ‚æ‡¸æŽ›è‘—è¨±å¤šé˜
+ä¹³çŸ³ï¼Œä¸æ™‚å‚³ä¾†å¹¾è²æ»´ç­”çš„æ°´è²ã€‚èµ°åœ¨æ´žä¸­ï¼Œæ´žå…§é™°æš—æ½®æ¿•ï¼Œèº«æ—å¿½
+ç„¶å‚³ä¾†ä¸€é™£â€œâ–¡â–¡â€çš„è²éŸ³ã€‚
 LONG );
         set("exits", ([
                 "east" : __DIR__"baidu2",

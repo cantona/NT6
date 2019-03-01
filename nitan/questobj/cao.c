@@ -4,9 +4,9 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIG"Í¨Ìì²İ"NOR, ({"tongtian cao","cao"}));
+        set_name(HIG"é€šå¤©è‰"NOR, ({"tongtian cao","cao"}));
         set("taskobj", 1);
-        set("unit", "¸ù");
-        set("long", "ÕâÊÇÒ»Ö§±ÌÂÌĞ¡²İ£¬Ï¸Ï¸³¤³¤µÄ¡£\n");
+        set("unit", "æ ¹");
+        set("long", "é€™æ˜¯ä¸€æ”¯ç¢§ç¶ å°è‰ï¼Œç´°ç´°é•·é•·çš„ã€‚\n");
         setup();
 }

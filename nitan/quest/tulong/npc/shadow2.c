@@ -5,15 +5,15 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("Å·Ñô·æ--Ó°", ({ "ouyang feng-shadow", "shadow" }));
-        set("long", "ËûÊÇ°×ÍÕÉ½×¯Ö÷£¬ºÅ³Æ¡°Î÷¶¾¡±µÄÅ·Ñô·æ¡£\n"
-                   +"ÓÉÓÚÏ°Á·¡¸¾ÅÒõÕæ¾­¡¹×ß»ðÈëÄ§£¬ÒÑ±äµÃ¾«\n"
-                   +"Éñ´íÂÒ£¬ÕûÈÕÅûÍ·É¢·¢¡£²»¹ý£¬¿´À´Ò²²»ÊÇ\n"
-                   +"ÕæÈËÄØ¡£\n");
-        set("title", "°×ÍÕÉ½×¯Ö÷");
-        set("gender", "ÄÐÐÔ");
+        set_name("æ­é™½é‹’--å½±", ({ "ouyang feng-shadow", "shadow" }));
+        set("long", "ä»–æ˜¯ç™½é§å±±èŽŠä¸»ï¼Œè™Ÿç¨±â€œè¥¿æ¯’â€çš„æ­é™½é‹’ã€‚\n"
+                   +"ç”±äºŽç¿’ç·´ã€Œä¹é™°çœŸç¶“ã€èµ°ç«å…¥é­”ï¼Œå·²è®Šå¾—ç²¾\n"
+                   +"ç¥žéŒ¯äº‚ï¼Œæ•´æ—¥æŠ«é ­æ•£ç™¼ã€‚ä¸éŽï¼Œçœ‹ä¾†ä¹Ÿä¸æ˜¯\n"
+                   +"çœŸäººå‘¢ã€‚\n");
+        set("title", "ç™½é§å±±èŽŠä¸»");
+        set("gender", "ç”·æ€§");
         set("age", 53);
-        set("nickname", HIR "Î÷¶¾" NOR);
+        set("nickname", HIR "è¥¿æ¯’" NOR);
         set("shen_type",-1);
         set("shen", -150000);
         set("attitude", "peaceful");
@@ -62,7 +62,7 @@ void create()
                 (: perform_action, "staff.shoot" :), 
                 (: perform_action, "staff.shoot" :),         }) );
 
-        create_family("°×ÍÕÉ½ÅÉ",1, "¿ªÉ½×æÊ¦");
+        create_family("ç™½é§å±±æ´¾",1, "é–‹å±±ç¥–å¸«");
         setup();
     carry_object("/clone/weapon/gangzhang")->wield();
         carry_object("/clone/misc/cloth")->wear();
@@ -73,20 +73,20 @@ int accept_fight(object ob)
         ob=this_player();   
         if( !query("fighter", ob)){
         command("heihei");
-        command("say ºÃ£¬¾ÍÈÃÎÒ³¬¶ÈÄã°É£¡\n");
+        command("say å¥½ï¼Œå°±è®“æˆ‘è¶…åº¦ä½ å§ï¼\n");
         set("fighter", 1, ob);
-        set_temp("m_success/»ÃÓ°", 1, ob);
+        set_temp("m_success/å¹»å½±", 1, ob);
         remove_call_out("kill_ob");
         call_out("kill_ob", 1, ob);
         return 1;
         }
         else
-        write(query("name", ob)+"£¬ÄãÒÑ¾­ÉÏ¹ý³¡ÁË£¡\n");
+        write(query("name", ob)+"ï¼Œä½ å·²ç¶“ä¸ŠéŽå ´äº†ï¼\n");
      }
 void die()
 {
         object ob;
-        message_vision("\n$NÒ»»Î£¬±äÎªÒ»ÂÆÇáÑÌÏûÊ§ÁË¡£\n", this_object());
+        message_vision("\n$Nä¸€æ™ƒï¼Œè®Šç‚ºä¸€ç¸·è¼•ç…™æ¶ˆå¤±äº†ã€‚\n", this_object());
         ob = new("/quest/tulong/npc/shadow3");
         ob->move(environment(this_object()));
         destruct(this_object());

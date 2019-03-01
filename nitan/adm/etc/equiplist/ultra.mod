@@ -1,7 +1,7 @@
-// 自造装备的套装效果
+// 鑷�犺鍌欑殑濂楄鏁堟灉
 
 <1>
-<mod_name>$HIC$大道$NOR$</mod_name>
+<mod_name>$HIC$澶ч亾$NOR$</mod_name>
 <bas>5</bas>
 <num>12</num>
 <bas_prop>
@@ -22,7 +22,7 @@ reduce_damage:5
 </1>
 
 <2>
-<mod_name>$HIB$通玄$NOR$</mod_name>
+<mod_name>$HIB$閫氱巹$NOR$</mod_name>
 <bas>5</bas>
 <num>12</num>
 <bas_prop>
@@ -43,7 +43,7 @@ reduce_damage:10
 </2>
 
 <3>
-<mod_name>$HIM$鸿钧$NOR$</mod_name>
+<mod_name>$HIM$榇婚垶$NOR$</mod_name>
 <bas>5</bas>
 <num>12</num>
 <bas_prop>
@@ -64,7 +64,7 @@ reduce_damage:15
 </3>
 
 <4>
-<mod_name>$HIY$造化$NOR$</mod_name>
+<mod_name>$HIY$閫犲寲$NOR$</mod_name>
 <bas>5</bas>
 <num>12</num>
 <bas_prop>

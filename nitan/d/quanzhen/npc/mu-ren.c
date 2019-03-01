@@ -1,13 +1,13 @@
-// mu-ren.c Ä¾ÈË
+// mu-ren.c æœ¨äºº
 
 inherit NPC;
 
 void create()
 {
-        set_name("Ä¾ÈË", ({ "mu ren", "mu", "wood man", "wood" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("æœ¨äºº", ({ "mu ren", "mu", "wood man", "wood" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 30);
-        set("long", "Ò»¸öÁ·¹¦ÓÃµÄ±ÈÎäÄ¾ÈË£¬ÖÆ×÷¾«ÇÉ£¬ÈçÍ¬ÕæÈËÒ»°ã¡£\n");
+        set("long", "ä¸€å€‹ç·´åŠŸç”¨çš„æ¯”æ­¦æœ¨äººï¼Œåˆ¶ä½œç²¾å·§ï¼Œå¦‚åŒçœŸäººä¸€èˆ¬ã€‚\n");
         set("attitude", "heroism");
 
         set("no_get", "1");
@@ -51,15 +51,15 @@ int accept_fight(object ob)
         if (is_fighting()) return 0;
 
         if( query("damaged", me) )
-                return notify_fail("Õâ¸öÄ¾ÈËÒÑ¾­±»´ò»µÁË£¡\n");
+                return notify_fail("é€™å€‹æœ¨äººå·²ç¶“è¢«æ‰“å£äº†ï¼\n");
 
         if( random(query("fight_times", me)) >= 10){
                 set("damaged", 1, me);
-                return notify_fail("Õâ¸öÄ¾ÈËÒÑ¾­±»´ò»µÁË£¡\n");
+                return notify_fail("é€™å€‹æœ¨äººå·²ç¶“è¢«æ‰“å£äº†ï¼\n");
         }
 
         if( query("last_fighter", me) == query("id", ob) )
-                return notify_fail("Äã¸Õ¸úÕâ¸öÄ¾ÈËÁ·¹ı¹¦£¡\n");
+                return notify_fail("ä½ å‰›è·Ÿé€™å€‹æœ¨äººç·´éåŠŸï¼\n");
 
         set("last_fighter",query("id",  ob), me);
         addn("fight_times", 1, me);

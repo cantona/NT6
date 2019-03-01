@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÄÏÃÅ¶µ");
+        set("short", "å—é–€å…œ");
         set("long", @LONG
-ÄÏÃÅ¶µÖĞÑëÓĞÒ»Öê¾Ş´ó¹ÅéÅ£¬¸ù·±Ò¶Ã¯£¬Å¨ÒñÕÚ¸ÇÊ÷Ä¶£¬½«Õû¸ö½Ö
-¿ÚÕÚ±ÕÑÏÊµ²»Â©ÈÕ¹â¡£´óéÅÊ÷ÏÂÓĞÒ»Ğ¡¶´(dong)£¬Éî²Ø¸ùÏÂ¡£
+å—é–€å…œä¸­å¤®æœ‰ä¸€æ ªå·¨å¤§å¤æ¦•ï¼Œæ ¹ç¹è‘‰èŒ‚ï¼Œæ¿ƒè”­é®è“‹æ¨¹ç•ï¼Œå°‡æ•´å€‹è¡—
+å£é®é–‰åš´å¯¦ä¸æ¼æ—¥å…‰ã€‚å¤§æ¦•æ¨¹ä¸‹æœ‰ä¸€å°æ´(dong)ï¼Œæ·±è—æ ¹ä¸‹ã€‚
 LONG );
         set("exits", ([ /* sizeof() == 1 */
             "north"  : __DIR__"nandajie",
@@ -19,7 +19,7 @@ LONG );
                 __DIR__"npc/wu" : 1,
         ]));
         set("item_desc", ([
-            "dong"   : "Ò»¸öÉîåäÓÄ°µµÄ¶´Ñ¨¡£\n",
+            "dong"   : "ä¸€å€‹æ·±é‚ƒå¹½æš—çš„æ´ç©´ã€‚\n",
         ]));
         set("outdoors", "fuzhou");
         set("no_clean_up", 0);
@@ -43,17 +43,17 @@ int do_enter(string arg)
         if( !arg || arg=="" ) return 0;
         if( arg=="dong" )
         {
-           if( (fam=query("family", me)) && fam["family_name"] == "Ø¤°ï" )
+           if( (fam=query("family", me)) && fam["family_name"] == "ä¸å¹«" )
            {
                message("vision",
-                        me->name() + "ÔËÆğØ¤°ïËõ¹Ç¹¦£¬Ò»ÍäÑüÍù¶´Àï×êÁË½øÈ¥¡£\n",
+                        me->name() + "é‹èµ·ä¸å¹«ç¸®éª¨åŠŸï¼Œä¸€å½è…°å¾€æ´è£¡é‘½äº†é€²å»ã€‚\n",
                         environment(me), ({me}) );
                me->move("/d/gaibang/underfz");
                message("vision",
-                        me->name() + "´Ó¶´Àï×ßÁË½øÀ´¡£\n",
+                        me->name() + "å¾æ´è£¡èµ°äº†é€²ä¾†ã€‚\n",
                         environment(me), ({me}) );
                         return 1;
            }
-           else  return notify_fail("ÕâÃ´Ğ¡µÄ¶´£¬Äã×êµÃ½øÈ¥Âğ£¿\n");
+           else  return notify_fail("é€™éº¼å°çš„æ´ï¼Œä½ é‘½å¾—é€²å»å—ï¼Ÿ\n");
        }
 }

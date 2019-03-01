@@ -1,10 +1,10 @@
-// an.c Ì«¼«È­¡¸°´¡¹×Ö¾÷
+// an.c å¤ªæ¥µæ‹³ã€ŒæŒ‰ã€å­—è¨£
 
 #include <ansi.h>
 #include <combat.h>
 
 inherit F_SSERVER;
-string name() { return "°´×Ö¾÷"; }
+string name() { return "æŒ‰å­—è¨£"; }
 
 int perform(object me, object target)
 {
@@ -14,27 +14,27 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail("¡¸°´×Ö¾÷¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€ŒæŒ‰å­—è¨£ã€åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( objectp(query_temp("weapon", me)) )
-                return notify_fail("Äã±ØĞë¿ÕÊÖ²ÅÄÜÊ¹ÓÃ¡¸°´×Ö¾÷¡¹£¡\n");
+                return notify_fail("ä½ å¿…é ˆç©ºæ‰‹æ‰èƒ½ä½¿ç”¨ã€ŒæŒ‰å­—è¨£ã€ï¼\n");
 
         if ((int)me->query_skill("taiji-quan", 1) < 200)
-                return notify_fail("Äã¶ÔÌ«¼«È­ÀíµÄÀí½â»¹²»¹»£¬²»»áÊ¹ÓÃ¡¸°´×Ö¾÷¡¹¡£\n");
+                return notify_fail("ä½ å°å¤ªæ¥µæ‹³ç†çš„ç†è§£é‚„ä¸å¤ ï¼Œä¸æœƒä½¿ç”¨ã€ŒæŒ‰å­—è¨£ã€ã€‚\n");
 
         if( query("neili", me)<300 )
-                return notify_fail("ÄãÏÖÔÚÕæÆøÌ«Èõ£¬²»ÄÜÊ¹ÓÃ¡¸°´×Ö¾÷¡¹¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çœŸæ°£å¤ªå¼±ï¼Œä¸èƒ½ä½¿ç”¨ã€ŒæŒ‰å­—è¨£ã€ã€‚\n");
 
-        msg = HIG "$N" HIG "Ë«È­ÉÏÏÂ»Ó¶¯£¬Ê¹³öÌ«¼«È­¡¸°´×Ö¾÷¡¹£¬$n"
-              HIG "¸Ğµ½Ò»¹ÉÇ¿´óµÄ¾¢Á¦´ÓÍ·¶¥Ñ¹Âä¡£\n" NOR;
+        msg = HIG "$N" HIG "é›™æ‹³ä¸Šä¸‹æ®å‹•ï¼Œä½¿å‡ºå¤ªæ¥µæ‹³ã€ŒæŒ‰å­—è¨£ã€ï¼Œ$n"
+              HIG "æ„Ÿåˆ°ä¸€è‚¡å¼·å¤§çš„å‹åŠ›å¾é ­é ‚å£“è½ã€‚\n" NOR;
 
         addn("neili", -200, me);
 
         dp = (defense_power(target, "parry") + target->query_skill("force", 1)) / 3;
 
-        if( query("character", me) == "¹âÃ÷ÀÚÂä" ||
-            query("character", me) == "¹úÍÁÎŞË«" ||
-            query("character", me) == "½Æ÷ï¶à±ä" )
+        if( query("character", me) == "å…‰æ˜ç£Šè½" ||
+            query("character", me) == "åœ‹åœŸç„¡é›™" ||
+            query("character", me) == "ç‹¡é» å¤šè®Š" )
                acter = 3;
         else
                acter = 4;
@@ -63,14 +63,14 @@ int perform(object me, object target)
 
                 msg += COMBAT_D->do_damage(me, target, UNARMED_ATTACK,
                                            damage, 70,
-                                           HIY "$n" HIY "µÇ¸ĞºôÎü²»³©£¬ĞØÃÆÄÑµ±£¬"
-                                           HIY "ºíÍ·Ò»Ìğ£¬¿ñÅçÊı¿Ú"HIR"ÏÊÑª"HIY"£¡\n"
-                                           ":ÄÚÉË@?");
+                                           HIY "$n" HIY "ç™»æ„Ÿå‘¼å¸ä¸æš¢ï¼Œèƒ¸æ‚¶é›£ç•¶ï¼Œ"
+                                           HIY "å–‰é ­ä¸€ç”œï¼Œç‹‚å™´æ•¸å£"HIR"é®®è¡€"HIY"ï¼\n"
+                                           ":å…§å‚·@?");
         } else
         {
                 me->start_busy(3);
-                msg += HIY "$p" HIY "¼±ÔËÄÚ¹¦£¬¾Û¾¢ÓÚÍâ£¬Í¦ÉíÓ²½ÓÁË$P"
-                       HIY "ÕâÒ»ÕĞ£¬¡°Åé¡±µÄÒ»Éù¾ŞÏì£¬Ë«·½¸÷×ÔÕğÍËÊı²½£¡\n" NOR;
+                msg += HIY "$p" HIY "æ€¥é‹å…§åŠŸï¼Œèšå‹äºå¤–ï¼ŒæŒºèº«ç¡¬æ¥äº†$P"
+                       HIY "é€™ä¸€æ‹›ï¼Œâ€œç °â€çš„ä¸€è²å·¨éŸ¿ï¼Œé›™æ–¹å„è‡ªéœ‡é€€æ•¸æ­¥ï¼\n" NOR;
         }
         message_combatd(msg, me, target);
         return 1;

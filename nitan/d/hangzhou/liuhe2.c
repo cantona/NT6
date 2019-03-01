@@ -4,10 +4,10 @@
 inherit ROOM;
 void create()
 {
-        set("short", "ÁùºÍËş");
+        set("short", "å…­å’Œå¡”");
         set("long", @LONG
-ÕâÀïÊÇÁùºÍËşµÄ¶ş²ã¡£´°(window)ÍâÊÇÅ¨×±µ­Ä¨µÄÎ÷×Óºş£¬Ëş
-ÖĞÁáçç°Ë½Ç£¬Çà×©ÆöµØ£¬µñÀ¸·ÉéÜ¼äÕ³Á¬ÁËĞ©ĞíÖëÍø¡£
+é€™è£¡æ˜¯å…­å’Œå¡”çš„äºŒå±¤ã€‚çª—(window)å¤–æ˜¯æ¿ƒå¦æ·¡æŠ¹çš„è¥¿å­æ¹–ï¼Œå¡”
+ä¸­ç²ç“å…«è§’ï¼Œé’ç£šç Œåœ°ï¼Œé›•æ¬„é£›æªé–“ç²˜é€£äº†äº›è¨±è››ç¶²ã€‚
 LONG);
         set("exits", ([
             "down"  : __DIR__"liuhe1",
@@ -18,7 +18,7 @@ LONG);
             __DIR__"honghua/zhouyi" :1,
         ]));
         set("item_desc", ([
-            "window": "´Ó´°¿ÚÍû³öÈ¥£¬Ç®½­¶«È¥¡£½ü´¦Å©ÌïÖĞ£¬ÓĞÒ»Å©·òÕıºÉ³ú¸ûÔÅ¡£\n",
+            "window": "å¾çª—å£æœ›å‡ºå»ï¼ŒéŒ¢æ±Ÿæ±å»ã€‚è¿‘è™•è¾²ç”°ä¸­ï¼Œæœ‰ä¸€è¾²å¤«æ­£è·é‹¤è€•è€˜ã€‚\n",
         ]));
         set("no_clean_up", 0);
 	set("coor/x", 759);
@@ -30,10 +30,10 @@ int valid_leave(object me, string dir)
 {
         if (dir == "up" &&
             objectp(present("xin yan", environment(me)))) 
-            return notify_fail("ĞÄÑâ¹ş¹şÒ»Ğ¦£ºÕâÀï»¹Ã»´ò¹ıÄØ£¬¾ÍÏëÉÏÂ¥¡£\n");
+            return notify_fail("å¿ƒç¡¯å“ˆå“ˆä¸€ç¬‘ï¼šé€™è£¡é‚„æ²’æ‰“éå‘¢ï¼Œå°±æƒ³ä¸Šæ¨“ã€‚\n");
         if (dir == "up" &&
             objectp(present("zhou yi", environment(me))))
-            return notify_fail("ÖÜç²ÇÎÑÛÒ»µÉ£ºÃ»¿´¼û±¾¹ÃÄïÔÚÕâÀïÂğ£¿\n");
+            return notify_fail("å‘¨ç¶ºä¿çœ¼ä¸€çªï¼šæ²’çœ‹è¦‹æœ¬å§‘å¨˜åœ¨é€™è£¡å—ï¼Ÿ\n");
 
         return ::valid_leave(me, dir);
 }

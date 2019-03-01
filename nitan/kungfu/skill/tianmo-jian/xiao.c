@@ -1,10 +1,10 @@
-// moxiao.c Ä§Ğ¦
+// moxiao.c é­”ç¬‘
 
 #include <ansi.h>
 
 inherit F_SSERVER;
 
-string name() { return "Ä§Ğ¦"; }
+string name() { return "é­”ç¬‘"; }
 
 int perform(object me, object target)
 {
@@ -21,24 +21,24 @@ int perform(object me, object target)
         }
 
         if (! me->is_fighting(target))
-                return notify_fail("¡¸Ä§Ğ¦¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œé­”ç¬‘ã€åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         skill = me->query_skill("tianmo-jian", 1);
 
         if (skill < 150)
-                return notify_fail("ÄãµÄÌìÄ§½£·¨ĞŞÎªÓĞÏŞ£¬ÏÖÔÚ²»ÄÜÊ¹ÓÃ¡¸Ä§Ğ¦¡¹£¡\n");
+                return notify_fail("ä½ çš„å¤©é­”åŠæ³•ä¿®ç‚ºæœ‰é™ï¼Œç¾åœ¨ä¸èƒ½ä½¿ç”¨ã€Œé­”ç¬‘ã€ï¼\n");
 
         if( query("neili", me)<100 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬ÎŞ·¨ÔËÓÃ¡¸Ä§Ğ¦¡¹£¡\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼Œç„¡æ³•é‹ç”¨ã€Œé­”ç¬‘ã€ï¼\n");
 
         if( !objectp(weapon=query_temp("weapon", me)) ||
             query("skill_type", weapon) != "sword" )
-                return notify_fail("ÄãÖ»ÓĞ×°±¸½£²ÅÄÜÊ©Õ¹¡¸Ä§Ğ¦¡¹£¡\n");
+                return notify_fail("ä½ åªæœ‰è£å‚™åŠæ‰èƒ½æ–½å±•ã€Œé­”ç¬‘ã€ï¼\n");
 
-        msg = HIR "$N" HIR "Í»È»¼äÉíĞÎÁ¬×ª£¬¿ÚÖĞ·¢³öÕóÕóÆàÀ÷µÄ¹ÖĞ¦£¬$n"
-              HIR "Ö»¾õ¶úÖĞÓĞÈçÕë´Ì£¬²»½ûĞÄÂÒÉñÃÔ£¬¹¥ÊÆ¶Ù»º¡£\n$N"
-              HIR "İëµÄÆËµ½$n" HIR "½üÇ°£¬ÊÖÖĞµÄ" + weapon->name() +
-              HIR "Ò»Õñ£¬Ë²¼äÒÑÏò$p´Ì³öÊı½£¡£\n" NOR;
+        msg = HIR "$N" HIR "çªç„¶é–“èº«å½¢é€£è½‰ï¼Œå£ä¸­ç™¼å‡ºé™£é™£å‡„å²çš„æ€ªç¬‘ï¼Œ$n"
+              HIR "åªè¦ºè€³ä¸­æœ‰å¦‚é‡åˆºï¼Œä¸ç¦å¿ƒäº‚ç¥è¿·ï¼Œæ”»å‹¢é “ç·©ã€‚\n$N"
+              HIR "é©€çš„æ’²åˆ°$n" HIR "è¿‘å‰ï¼Œæ‰‹ä¸­çš„" + weapon->name() +
+              HIR "ä¸€æŒ¯ï¼Œç¬é–“å·²å‘$påˆºå‡ºæ•¸åŠã€‚\n" NOR;
 
         message_combatd(msg, me, target);
         count = skill / 2;

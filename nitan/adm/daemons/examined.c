@@ -14,7 +14,7 @@ void create()
 {
         seteuid(getuid());
         ::restore();
-        set("channel_id", "¼ì²é¾«Áé");
+        set("channel_id", "æª¢æŸ¥ç²¾éˆ");
         auto_examine = CONFIG_D->query_int("enable auto examine");
 }
 
@@ -104,18 +104,18 @@ int start_log_player(string id, string me)
 
         by = query("log_by/" + id);
         if (stringp(by) && (wiz_level(by) > wiz_level(me)))
-                return notify_fail("ÒÑ¾­ÓĞÈ¨ÏŞ±ÈÄã¸ßµÄÈË¼ÇÂ¼¸ÃÍæ¼ÒµÄÈÕÖ¾ÁË¡£\n");
+                return notify_fail("å·²ç¶“æœ‰æ¬Šé™æ¯”ä½ é«˜çš„äººè¨˜éŒ„è©²ç©å®¶çš„æ—¥å¿—äº†ã€‚\n");
 
         if (stringp(by) && by == me)
-                return notify_fail("ÄãÒÑ¾­¿ªÊ¼¼ÇÂ¼Õâ¸öÍæ¼ÒµÄÈÕÖ¾ÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“é–‹å§‹è¨˜éŒ„é€™å€‹ç©å®¶çš„æ—¥å¿—äº†ã€‚\n");
 
         ob = find_player(id);
         if (! by && ob && ob->is_loging_now() && wizhood(me) != "(admin)")
-                return notify_fail("EXAMINE DAEMON ÕıÔÚ¼ÇÂ¼Õâ¸öÍæ¼ÒµÄÈÕÖ¾£¬ÄãÎŞÈ¨¸ÉÉæ¡£\n");
+                return notify_fail("EXAMINE DAEMON æ­£åœ¨è¨˜éŒ„é€™å€‹ç©å®¶çš„æ—¥å¿—ï¼Œä½ ç„¡æ¬Šå¹¹æ¶‰ã€‚\n");
 
         if (wizhood(id) == "(admin)" &&
             (!this_player() || !query("env/admin", this_player())) )
-                return notify_fail("²»ÄÜ¼ÇÂ¼ admin µÄÈÕÖ¾¡£\n");
+                return notify_fail("ä¸èƒ½è¨˜éŒ„ admin çš„æ—¥å¿—ã€‚\n");
 
         set("log_by/" + id, me);
 
@@ -139,7 +139,7 @@ int end_log_player(string id, string euid)
         by = query("log_by/" + id);
 
         if (! by && (! ob || ! ob->is_loging_now()))
-                return notify_fail("ÏµÍ³ÏÖÔÚ²¢Ã»ÓĞ¼ÇÂ¼Õâ¸öÍæ¼ÒµÄÈÕÖ¾¡£\n");
+                return notify_fail("ç³»çµ±ç¾åœ¨ä¸¦æ²’æœ‰è¨˜éŒ„é€™å€‹ç©å®¶çš„æ—¥å¿—ã€‚\n");
 
         if (euid == ROOT_UID || wizhood(euid) == "(admin)" ||
             stringp(by) && (by == euid || wiz_level(by) <= wiz_level(euid)))
@@ -152,7 +152,7 @@ int end_log_player(string id, string euid)
                 return 1;
         }
 
-        return notify_fail("Äã²»ÊÇ ROOT »òÊÇ¿ªÊ¼¼ÇÂ¼ÈÕÖ¾µÄÎ×Ê¦£¬²»ÄÜÖĞÖ¹¼ÇÂ¼¡£\n");
+        return notify_fail("ä½ ä¸æ˜¯ ROOT æˆ–æ˜¯é–‹å§‹è¨˜éŒ„æ—¥å¿—çš„å·«å¸«ï¼Œä¸èƒ½ä¸­æ­¢è¨˜éŒ„ã€‚\n");
 }
 
 varargs mixed query(string idx, object ob)

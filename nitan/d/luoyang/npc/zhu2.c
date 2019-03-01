@@ -5,9 +5,9 @@ inherit F_DEALER;
 
 void create()
 {
-        set_name("ÖìÒû", ({ "zhu yin", "zhu", "yin" }));
-        set("gender", "ÄĞĞÔ");
-        set("title", "ÎäÆ÷µêÀÏ°å");
+        set_name("æœ±é£²", ({ "zhu yin", "zhu", "yin" }));
+        set("gender", "ç”·æ€§");
+        set("title", "æ­¦å™¨åº—è€æ¿");
         set("age", 45);
         set_skill("dodge", 80);
         set_skill("force", 80);

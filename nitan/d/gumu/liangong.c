@@ -1,15 +1,15 @@
-// liangong.c Á·¹¦ÊÒ
+// liangong.c ç·´åŠŸå®¤
 // Java Oct.10 1998
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "Á·¹¦ÊÒ");
+        set("short", "ç·´åŠŸå®¤");
         set("long", @LONG
-Õâ×ùÊ¯ÊÒÐÎ×´ÉõÊÇÆæÌØ£¬Ç°Õ­áá¿í£¬³ÉÎªÌÝÐÎ£¬¶«±ß°ëÔ²£¬Î÷±ßÈ´
-×÷Èý½ÇÐÎ×´£¬Ô­À´ÕâÊÇÒÔÇ°ÖØÑô×æÊ¦µÄÁ·¹¦ÊÒ£¬Ç°Õ­Á·ÕÆ£¬ºó¿íÊ¹È­£¬
-¶«Ô²ÑÐ½££¬Î÷½Ç·¢ïÚ¡£
+é€™åº§çŸ³å®¤å½¢ç‹€ç”šæ˜¯å¥‡ç‰¹ï¼Œå‰çª„å¾Œå¯¬ï¼Œæˆç‚ºæ¢¯å½¢ï¼Œæ±é‚ŠåŠåœ“ï¼Œè¥¿é‚Šå»
+ä½œä¸‰è§’å½¢ç‹€ï¼ŒåŽŸä¾†é€™æ˜¯ä»¥å‰é‡é™½ç¥–å¸«çš„ç·´åŠŸå®¤ï¼Œå‰çª„ç·´æŽŒï¼Œå¾Œå¯¬ä½¿æ‹³ï¼Œ
+æ±åœ“ç ”åŠï¼Œè¥¿è§’ç™¼é¢ã€‚
 LONG        );
         set("exits", ([
                 "northeast" : __DIR__"mudao03",

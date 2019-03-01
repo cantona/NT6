@@ -36,10 +36,10 @@ mapping BigWay=([
                 ]);
 
 void create() {
-     string *surname=({"Ä½Èİ","Î÷ÃÅ","¹«Ëï","ÉÏ¹Ù","ÄÏ¹¬","Å·Ñô","Ë¾Í½",});
+     string *surname=({"æ…•å®¹","è¥¿é–€","å…¬å­«","ä¸Šå®˜","å—å®®","æ­é™½","å¸å¾’",});
 
-     set_name(surname[random(sizeof(surname))]+"Ñ²²¶", ({ "xunpu","police"}) );
-     set("gender", "ÄĞĞÔ" );
+     set_name(surname[random(sizeof(surname))]+"å·¡æ•", ({ "xunpu","police"}) );
+     set("gender", "ç”·æ€§" );
      set("age", 25);
      set("str", 45);
      set("con", 50);
@@ -47,7 +47,7 @@ void create() {
      set("int", 20);
      set("per", 20);
      set("kar", 15);
-     set("long",@LONG Ñ²²¶¸ö¸öÉíÊÖ½Ã½¡£¬Ç¿µÁ¡¢É½ÔôºÍĞ¡ÍµÎŞ²»ÎÅ·çÉ¥µ¨¡£ 
+     set("long",@LONG å·¡æ•å€‹å€‹èº«æ‰‹çŸ¯å¥ï¼Œå¼·ç›œã€å±±è³Šå’Œå°å·ç„¡ä¸èé¢¨å–ªè†½ã€‚ 
 LONG );
      set("status","patrol");
      set("CatchWho",0);
@@ -55,16 +55,16 @@ LONG );
      set("attitude", "heroism");
      set("chat_chance_combat", 40);
      set("chat_msg_combat", ({
-                            "Ñ²²¶ËµµÀ£ºÄãÏë¸ÉÊ²Ã´? »¹²»¸úÎÒÈ¥¸®ÑÃÊÜÉó!?\n",
-                            "Ñ²²¶ËµµÀ£º´óµ¨! ¾ÓÈ»¸Òµ±½Ö¾Ü²¶! ÏëÔì·´£¿\n",
-                            "Ñ²²¶ÊÖÖĞµÄµ¶Ô½¿³Ô½¿ì£¬ÈÃÄãÓ¦½Ó²»Ï¾¡£\n",
-                            "Ñ²²¶ËµµÀ£º±ğºúÄÖÁË£¬»¹ÊÇ¹Ô¹ÔµÄ¸úÎÒ×ß°É¡£\n"
+                            "å·¡æ•èªªé“ï¼šä½ æƒ³å¹¹ä»€éº¼? é‚„ä¸è·Ÿæˆ‘å»åºœè¡™å—å¯©!?\n",
+                            "å·¡æ•èªªé“ï¼šå¤§è†½! å±…ç„¶æ•¢ç•¶è¡—æ‹’æ•! æƒ³é€ åï¼Ÿ\n",
+                            "å·¡æ•æ‰‹ä¸­çš„åˆ€è¶Šç è¶Šå¿«ï¼Œè®“ä½ æ‡‰æ¥ä¸æš‡ã€‚\n",
+                            "å·¡æ•èªªé“ï¼šåˆ¥èƒ¡é¬§äº†ï¼Œé‚„æ˜¯ä¹–ä¹–çš„è·Ÿæˆ‘èµ°å§ã€‚\n"
                             }) );
      set ("inquiry",([
-          "bribery":"ËµÄÄÀï»°À´£¬¸®Ì«Ò¯ÇåÆ¶Á®Õı£¬ÎÒÃÇ×÷ÊÖÏÂµÄÆñÄÜÈèÃ»ËûµÄÃûÉù£¿\n"+
-                    "ÊÕÆğÄãµÄÇ®°É£¡\n",
-          "salary" : "°¥£¬ÀÏÒ¯ÙºÒøÎ¢±¡£¬ÎÒÃÇµÄÄêâÃ×ÔÈ»¸üÉÙÁË......\n",
-          "money"  : "ËµÊµÔÚµÄ£¬ÎÒÒ²ÏëÒªÇ®¡£µ«ÒªÊÇÈÃÀÏÒ¯ÖªµÀÁËÎÒÊÕÊÜ»ßÂ¸(bribery)£¬\n²»ËÀÒ²µÃ°Ç²ãÆ¤¡£\n",
+          "bribery":"èªªå“ªè£¡è©±ä¾†ï¼Œåºœå¤ªçˆºæ¸…è²§å»‰æ­£ï¼Œæˆ‘å€‘ä½œæ‰‹ä¸‹çš„è±ˆèƒ½è¾±æ²’ä»–çš„åè²ï¼Ÿ\n"+
+                    "æ”¶èµ·ä½ çš„éŒ¢å§ï¼\n",
+          "salary" : "å“ï¼Œè€çˆºä¿¸éŠ€å¾®è–„ï¼Œæˆ‘å€‘çš„å¹´é¤‰è‡ªç„¶æ›´å°‘äº†......\n",
+          "money"  : "èªªå¯¦åœ¨çš„ï¼Œæˆ‘ä¹Ÿæƒ³è¦éŒ¢ã€‚ä½†è¦æ˜¯è®“è€çˆºçŸ¥é“äº†æˆ‘æ”¶å—è³„è³‚(bribery)ï¼Œ\nä¸æ­»ä¹Ÿå¾—æ‰’å±¤çš®ã€‚\n",
      ]));
      set ("chat_chance",99);
      set ("chat_msg", ({
@@ -102,18 +102,18 @@ void init()
             {
                 if( query("id", npc[i]) == "gangster" && !userp(npc[i]) )
                 {
-                        say(HIW "½ñ¶ùÊÇÊ²Ã´ÈÕ×Ó£¿\n"+"¾ÓÈ»"+
+                        say(HIW "ä»Šå…’æ˜¯ä»€éº¼æ—¥å­ï¼Ÿ\n"+"å±…ç„¶"+
                                 query("name", npc[i])+
-                               "Ò²¸ÒÔÚ´ó½ÖÉÏÁïßÕ£¡" NOR);
+                               "ä¹Ÿæ•¢åœ¨å¤§è¡—ä¸Šæºœå™ ï¼" NOR);
                         npc[i]->remove_all_enemy();
-                        say("È¥ËÀ°É£¡£¡\n");
+                        say("å»æ­»å§ï¼ï¼\n");
                         EMOTE_D->do_emote( npc[i],"fear");
                         kill_ob(npc[i]);
                         npc[i]->kill_ob(this_object());
                 }
-/*else if( query("title", npc[i]) == "Ò°ÑòÉ½Õ¯ÈıÕ¯Ö÷" && !userp(npc[i]) )
+/*else if( query("title", npc[i]) == "é‡ç¾Šå±±å¯¨ä¸‰å¯¨ä¸»" && !userp(npc[i]) )
                      {
-                        say(HIR "ºß£¬ÊÖÏÂ°Ü½«£¡×ÜÓĞÒ»ÌìÎÒÃÇÒªµ´Æ½Ò°ÑòÉ½Õ¯£¡\n" NOR);
+                        say(HIR "å“¼ï¼Œæ‰‹ä¸‹æ•—å°‡ï¼ç¸½æœ‰ä¸€å¤©æˆ‘å€‘è¦ç›ªå¹³é‡ç¾Šå±±å¯¨ï¼\n" NOR);
                         npc[i]->remove_all_enemy();
                         EMOTE_D->do_emote( npc[i],"fear");
                         kill_ob(npc[i]);
@@ -122,8 +122,8 @@ void init()
             }
             if( query("thief", you) && random(10)<7 )
             {
-               say(HIR"ÄÖÁË°ëÌìÔ­À´"+query("name", you)+
-                        "ÊÇ¸öÔô°¡! ÎÒ×ßÒ»ÌË°É!\n" NOR);
+               say(HIR"é¬§äº†åŠå¤©åŸä¾†"+query("name", you)+
+                        "æ˜¯å€‹è³Šå•Š! æˆ‘èµ°ä¸€è¶Ÿå§!\n" NOR);
                addn("crime_lv", THIEF, you);
                addn("thief", -1, you);
                if( !query("thief", you))delete("thief", you);
@@ -133,11 +133,11 @@ void init()
             else
             if (you->query_condition("killer")&&random(10)<9)
             {
-               message_vision("$N¶Ô×Å$nºÈµÀ£º¹âÌì»¯ÈÕÖ®ÏÂ£¬Äã¾ÓÈ»Ò²¸ÒĞĞĞ×É±ÈË£¿»¹²»ÓëÎÒ»ØÈ¥³Ô°å×Ó£¡\n"
-                +"Ëµ°Õ£¬$N½âÏÂÌúÁ´Ì×ÔÚ$nµÄ²±×ÓÉÏ¡£\n",this_object(),you);
+               message_vision("$Nå°è‘—$nå–é“ï¼šå…‰å¤©åŒ–æ—¥ä¹‹ä¸‹ï¼Œä½ å±…ç„¶ä¹Ÿæ•¢è¡Œå…‡æ®ºäººï¼Ÿé‚„ä¸èˆ‡æˆ‘å›å»åƒæ¿å­ï¼\n"
+                +"èªªç½·ï¼Œ$Nè§£ä¸‹éµéˆå¥—åœ¨$nçš„è„–å­ä¸Šã€‚\n",this_object(),you);
                         addn("crime_lv", ROBBER, you);
-//                        you->addn("marks/Ç¿µÁ",-1);
-//                        if (!you->query("marks/Ç¿µÁ")) you->delete("marks/Ç¿µÁ");
+//                        you->addn("marks/å¼·ç›œ",-1);
+//                        if (!you->query("marks/å¼·ç›œ")) you->delete("marks/å¼·ç›œ");
                 catchyou(you);
             }
        }
@@ -145,7 +145,7 @@ void init()
     else if (query("status")=="catching")
          {
                 catchyou(catchwho);
-                message_vision(HIR "Ö»¼û$NÍ»È»´ÓÑü¼ä½âÏÂÒ»ÌõÌúÁ´Ì×ÔÚ$nµÄ²±×ÓÉÏ¡£\n"NOR,
+                message_vision(HIR "åªè¦‹$Nçªç„¶å¾è…°é–“è§£ä¸‹ä¸€æ¢éµéˆå¥—åœ¨$nçš„è„–å­ä¸Šã€‚\n"NOR,
                              this_object(),catchwho);
          }
          else
@@ -161,7 +161,7 @@ void init()
                         write(query("id", oldman));
                         catchwho->move(start_room);
                         move(start_room);
-                        say("ÀÏÒ¯£¬ÈË·¸ÒÑ´øµ½£¬Ğ¡ÈËÑ²½ÖÈ¥ÁË¡£\n");
+                        say("è€çˆºï¼ŒäººçŠ¯å·²å¸¶åˆ°ï¼Œå°äººå·¡è¡—å»äº†ã€‚\n");
                         set("CatchWho",0);
                         direction=GO;
                         set("status","patrol");
@@ -203,7 +203,7 @@ void patrol()
             else if( query("status", this_object()) == "catching" )
                  {
                       catchyou(catchwho);
-                      message_vision(HIR "Ö»¼û$NÍ»È»´ÓÑü¼ä½âÏÂÒ»ÌõÌúÁ´Ì×ÔÚ$nµÄ²±×ÓÉÏ"NOR,
+                      message_vision(HIR "åªè¦‹$Nçªç„¶å¾è…°é–“è§£ä¸‹ä¸€æ¢éµéˆå¥—åœ¨$nçš„è„–å­ä¸Š"NOR,
                         this_object(),catchwho);
                  }
                  else
@@ -262,7 +262,7 @@ int do_go(string arg)
         object me;
         me=this_player();
         if( !query("being_caught", me))return 0;
-        tell_object(me, "ºÙºÙ, »¹ÏëÍùÄÄÌÓ?!\n");
+        tell_object(me, "å˜¿å˜¿, é‚„æƒ³å¾€å“ªé€ƒ?!\n");
         return 1;
 }
 
@@ -277,7 +277,7 @@ int do_quit(string arg)
             set("status","patrol");
             return 0;
         }
-        message_vision(HIR"$N½ô½ôÁà×Å$nµÄÒÂÁì, $nÎŞ·¨ÍË³ö!\n" NOR,this_object(),me);
+        message_vision(HIR"$Nç·Šç·Šæ‹è‘—$nçš„è¡£é ˜, $nç„¡æ³•é€€å‡º!\n" NOR,this_object(),me);
         return 1;
 }
 
@@ -301,7 +301,7 @@ void die()
                 set("persuer", 1, ob);
                 set("startroom", query("startroom"), ob);
                 ob->move(environment());
-                message_vision(HIR "´óµ¨¿ñÍ½£¬$N...¾ÓÈ»¸ÒÉ±Â¾¹«²î$n£¡Ğİ×ß£¬¿´µ¶£¡\n" NOR,killer,this_object());
+                message_vision(HIR "å¤§è†½ç‹‚å¾’ï¼Œ$N...å±…ç„¶æ•¢æ®ºæˆ®å…¬å·®$nï¼ä¼‘èµ°ï¼Œçœ‹åˆ€ï¼\n" NOR,killer,this_object());
                 ob->kill_ob(killer);
                 if (stringp(file=find_command("kill")))
                         {
@@ -323,18 +323,18 @@ int accept_bribery(string arg)
         if( !(query("being_caught", me)))return 0;
         if (!arg||sscanf(arg,"%s with %d %s",toid,amount,money)!=3) return 0;
         if (!objectp(present(toid,environment())))
-                return notify_fail("ÄãÒª»ßÂ¸Ë­£¿\n");
+                return notify_fail("ä½ è¦è³„è³‚èª°ï¼Ÿ\n");
         money_ob=present(money+"_money",this_player());
-        if (!money_ob) return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÖÖ»õ±Ò¡£\n");
-        if( amount < 1 ) return notify_fail("»õ±ÒÊ¹ÓÃÖÁÉÙÒªÒ»¸ö/Ã¿´Î¡£\n");
+        if (!money_ob) return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™ç¨®è²¨å¹£ã€‚\n");
+        if( amount < 1 ) return notify_fail("è²¨å¹£ä½¿ç”¨è‡³å°‘è¦ä¸€å€‹/æ¯æ¬¡ã€‚\n");
         if( (int)money_ob->query_amount() < amount )
-                return notify_fail("ÄãÉíÉÏÃ»ÓĞÄÇ¶à"+query("name", money_ob)+"¡£\n");
+                return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é‚£å¤š"+query("name", money_ob)+"ã€‚\n");
         bv1=query("base_value", money_ob);
-        if( !bv1 ) return notify_fail("ÕâÖÖ¶«Î÷²»ÖµÇ®¡£\n");
+        if( !bv1 ) return notify_fail("é€™ç¨®æ±è¥¿ä¸å€¼éŒ¢ã€‚\n");
         if (bv1*amount>=100000)
         {
-                write("ÕâÔõÃ´ºÃ?......ÒªÊÇÈÃÀÏÒ¯ÖªµÀÁË......\n");
-                write("Ê¢ÇéÄÑÈ´....ÎÒ¾ÍÊÕÏÂÁË..\n");
+                write("é€™æ€éº¼å¥½?......è¦æ˜¯è®“è€çˆºçŸ¥é“äº†......\n");
+                write("ç››æƒ…é›£å»....æˆ‘å°±æ”¶ä¸‹äº†..\n");
                 EMOTE_D->do_emote(this_object(),"grin",query("id", me));
                 ob=new(base_name(money_ob));
                 ob->move(this_object());
@@ -352,7 +352,7 @@ int accept_bribery(string arg)
         }
         else
         {
-                write("ÄãÕâÊÇÊ²Ã´ÒâË¼?......Ë­Ï¡º±ÄãµÄÇ®?!\n");
+                write("ä½ é€™æ˜¯ä»€éº¼æ„æ€?......èª°ç¨€ç½•ä½ çš„éŒ¢?!\n");
                 addn("crime_lv", 1, me);
         }
         return 1;

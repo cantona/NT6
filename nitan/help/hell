@@ -1,42 +1,42 @@
-$WHT$¡¾±¾ÓÎÏ·µÄËµÃ÷ÎÄ¼þ¡¿                                                   $NOR$
+$WHT$ã€æœ¬éŠæˆ²çš„èªªæ˜Žæ–‡ä»¶ã€‘                                                   $NOR$
 
-ÒÔÏÂÊÇËµÃ÷ÎÄ¼þ£¬Äã¿ÉÒÔÓÃ help <Ö÷Ìâ> µÃµ½¸ü½øÒ»²½µÄËµÃ÷¡£ Èç
-¹ûÄãÓÐÒÉÎÊ£¬¿ÉÒÔÏÈÔÄ¶Á³£¼ûÎÊÌâ½â´ð help faq À´»ñµÃÒ»Ð©ÐÅÏ¢¡£
-ÔÚÌáÎÊÖ®Ç°×îºÃÏÈÔÄ¶ÁÕâ·ÝÎÄ¼þ¡£
+ä»¥ä¸‹æ˜¯èªªæ˜Žæ–‡ä»¶ï¼Œä½ å¯ä»¥ç”¨ help <ä¸»é¡Œ> å¾—åˆ°æ›´é€²ä¸€æ­¥çš„èªªæ˜Žã€‚ å¦‚
+æžœä½ æœ‰ç–‘å•ï¼Œå¯ä»¥å…ˆé–±è®€å¸¸è¦‹å•é¡Œè§£ç­” help faq ä¾†ç²å¾—ä¸€äº›ä¿¡æ¯ã€‚
+åœ¨æå•ä¹‹å‰æœ€å¥½å…ˆé–±è®€é€™ä»½æ–‡ä»¶ã€‚
 
-$WHT$¡¾ÓÎÏ·¸Å¿ö¡¿                                                           $NOR$
-$HIC$¡¼feature    ¡½  ±¾ÄàÌ¶ÓëÆäËûÏÀ¿ÍÐÐÀàMUDµÄ²»Í¬Ö®´¦¡£$NOR$
-$HIC$¡¼skills     ¡½  ±¾ÄàÌ¶Îä¹¦µÄËµÃ÷£¬Á·¹¦ÕßÎñ±ØÏÈ¿´ÔÙÁ·¡£$NOR$
+$WHT$ã€éŠæˆ²æ¦‚æ³ã€‘                                                           $NOR$
+$HIC$â–¡feature    â–¡  æœ¬æ³¥æ½­èˆ‡å…¶ä»–ä¿ å®¢è¡Œé¡žMUDçš„ä¸åŒä¹‹è™•ã€‚$NOR$
+$HIC$â–¡skills     â–¡  æœ¬æ³¥æ½­æ­¦åŠŸçš„èªªæ˜Žï¼Œç·´åŠŸè€…å‹™å¿…å…ˆçœ‹å†ç·´ã€‚$NOR$
 
-$WHT$¡¾ÓÎÏ·½éÉÜ¡¿                                                           $NOR$
-¡¼intro      ¡½  ÄàÌ¶¼ò½é              ¡¼cmds       ¡½  ÄàÌ¶³£ÓÃÖ¸Áî
-¡¼maps       ¡½  ÄàÌ¶µØÍ¼²á            ¡¼newbie     ¡½  ÄàÌ¶ÐÂÊÖÖ¸ÄÏ
-¡¼rules      ¡½  Íæ¼Ò¹æÔò              ¡¼wiz_rules  ¡½  Î×Ê¦¹æÔò
-¡¼settings   ¡½  »·¾³±äÁ¿ÉèÖÃ          ¡¼channels   ¡½  ½»Á÷ºÍÁÄÌìÆµµÀ
-¡¼cmdaction  ¡½  Ã°ÏÕÃüÁîÏêÎö          ¡¼cmdsystem  ¡½  ÏµÍ³ÃüÁîÏêÎö
-¡¼cmdskill   ¡½  Îä¹¦ÃüÁîÏêÎö          ¡¼cmdspecial ¡½  ÌØÊâÃüÁîÏêÎö
-¡¼cmdtalk    ¡½  ÁÄÌìÃüÁîÏêÎö          ¡¼transport  ¡½  ½»Í¨¹¤¾ß
-¡¼quest      ¡½  ÈÎÎñËµÃ÷              ¡¼challenge  ¡½  ÌôÕ½ËµÃ÷
-¡¼weapon     ¡½  Á¶ÖÆÎäÆ÷·À¾ßËµÃ÷      ¡¼room       ¡½  ×¡·¿ÏµÍ³ËµÃ÷
-¡¼marry      ¡½  »éÒöËµÃ÷              ¡¼league.2   ¡½  ½áÒå¡¢ÁªÃËËµÃ÷
-¡¼work       ¡½  ¼òµ¥¹¤×÷ËµÃ÷          ¡¼product    ¡½  Éú²úÏµÍ³ËµÃ÷
-¡¼event      ¡½  ÌØÊâÊÂ¼þËµÃ÷          ¡¼backup     ¡½  ±¸·ÝÏµÍ³ËµÃ÷
-¡¼closed     ¡½  ±Õ¹ØËµÃ÷              ¡¼schedule   ¡½  ¼Æ»®ËµÃ÷
-¡¼poison     ¡½  ±¾ÄàÌ¶¶¾¹¦µÄËµÃ÷      ¡¼sites      ¡½  ±¾ÓÎÏ··ÖÕ¾µÄËµÃ÷
+$WHT$ã€éŠæˆ²ä»‹ç´¹ã€‘                                                           $NOR$
+â–¡intro      â–¡  æ³¥æ½­ç°¡ä»‹              â–¡cmds       â–¡  æ³¥æ½­å¸¸ç”¨æŒ‡ä»¤
+â–¡maps       â–¡  æ³¥æ½­åœ°åœ–å†Š            â–¡newbie     â–¡  æ³¥æ½­æ–°æ‰‹æŒ‡å—
+â–¡rules      â–¡  çŽ©å®¶è¦å‰‡              â–¡wiz_rules  â–¡  å·«å¸«è¦å‰‡
+â–¡settings   â–¡  ç’°å¢ƒè®Šé‡è¨­ç½®          â–¡channels   â–¡  äº¤æµå’ŒèŠå¤©é »é“
+â–¡cmdaction  â–¡  å†’éšªå‘½ä»¤è©³æž          â–¡cmdsystem  â–¡  ç³»çµ±å‘½ä»¤è©³æž
+â–¡cmdskill   â–¡  æ­¦åŠŸå‘½ä»¤è©³æž          â–¡cmdspecial â–¡  ç‰¹æ®Šå‘½ä»¤è©³æž
+â–¡cmdtalk    â–¡  èŠå¤©å‘½ä»¤è©³æž          â–¡transport  â–¡  äº¤é€šå·¥å…·
+â–¡quest      â–¡  ä»»å‹™èªªæ˜Ž              â–¡challenge  â–¡  æŒ‘æˆ°èªªæ˜Ž
+â–¡weapon     â–¡  ç…‰åˆ¶æ­¦å™¨é˜²å…·èªªæ˜Ž      â–¡room       â–¡  ä½æˆ¿ç³»çµ±èªªæ˜Ž
+â–¡marry      â–¡  å©šå§»èªªæ˜Ž              â–¡league.2   â–¡  çµç¾©ã€è¯ç›Ÿèªªæ˜Ž
+â–¡work       â–¡  ç°¡å–®å·¥ä½œèªªæ˜Ž          â–¡product    â–¡  ç”Ÿç”¢ç³»çµ±èªªæ˜Ž
+â–¡event      â–¡  ç‰¹æ®Šäº‹ä»¶èªªæ˜Ž          â–¡backup     â–¡  å‚™ä»½ç³»çµ±èªªæ˜Ž
+â–¡closed     â–¡  é–‰é—œèªªæ˜Ž              â–¡schedule   â–¡  è¨ˆåŠƒèªªæ˜Ž
+â–¡poison     â–¡  æœ¬æ³¥æ½­æ¯’åŠŸçš„èªªæ˜Ž      â–¡sites      â–¡  æœ¬éŠæˆ²åˆ†ç«™çš„èªªæ˜Ž
 
-$WHT$¡¾ÃÅÅÉ½éÉÜ¡¿                                                           $NOR$
-¡¼shaolin    ¡½  ÉÙÁÖÅÉ½éÉÜ            ¡¼wudang     ¡½  Îäµ±ÅÉ½éÉÜ
-¡¼emei       ¡½  ¶ëáÒÅÉ½éÉÜ            ¡¼huashan    ¡½  »ªÉ½ÅÉ½éÉÜ
-¡¼gaibang    ¡½  Ø¤°ï½éÉÜ              ¡¼taohua     ¡½  ÌÒ»¨µº½éÉÜ
-¡¼xingxiu    ¡½  ÐÇËÞÅÉ½éÉÜ            ¡¼xiaoyao    ¡½  åÐÒ£ÅÉ½éÉÜ
-¡¼gumu       ¡½  ¹ÅÄ¹ÅÉ½éÉÜ            ¡¼quanzhen   ¡½  È«ÕæÅÉ½éÉÜ
-¡¼shenlong   ¡½  ÉñÁú½Ì½éÉÜ            ¡¼mizong     ¡½  ÃÜ×Ú½éÉÜ
-¡¼xueshan    ¡½  Ñ©É½ÅÉ½éÉÜ            ¡¼xuedao     ¡½  Ñªµ¶ÅÉ½éÉÜ
-¡¼lingjiu    ¡½  ÁéðÕ¹¬½éÉÜ            ¡¼wuguan     ¡½  Îä¹Ý½éÉÜ
+$WHT$ã€é–€æ´¾ä»‹ç´¹ã€‘                                                           $NOR$
+â–¡shaolin    â–¡  å°‘æž—æ´¾ä»‹ç´¹            â–¡wudang     â–¡  æ­¦ç•¶æ´¾ä»‹ç´¹
+â–¡emei       â–¡  å³¨åµ‹æ´¾ä»‹ç´¹            â–¡huashan    â–¡  è¯å±±æ´¾ä»‹ç´¹
+â–¡gaibang    â–¡  ä¸å¹«ä»‹ç´¹              â–¡taohua     â–¡  æ¡ƒèŠ±å³¶ä»‹ç´¹
+â–¡xingxiu    â–¡  æ˜Ÿå®¿æ´¾ä»‹ç´¹            â–¡xiaoyao    â–¡  é€é™æ´¾ä»‹ç´¹
+â–¡gumu       â–¡  å¤å¢“æ´¾ä»‹ç´¹            â–¡quanzhen   â–¡  å…¨çœŸæ´¾ä»‹ç´¹
+â–¡shenlong   â–¡  ç¥žé¾æ•™ä»‹ç´¹            â–¡mizong     â–¡  å¯†å®—ä»‹ç´¹
+â–¡xueshan    â–¡  é›ªå±±æ´¾ä»‹ç´¹            â–¡xuedao     â–¡  è¡€åˆ€æ´¾ä»‹ç´¹
+â–¡lingjiu    â–¡  éˆé·²å®®ä»‹ç´¹            â–¡wuguan     â–¡  æ­¦é¤¨ä»‹ç´¹
 
-$WHT$¡¾ÊÀ¼Ò½éÉÜ¡¿                                                           $NOR$
-¡¼ouyang     ¡½  Å·ÑôÊÀ¼Ò½éÉÜ          ¡¼hu         ¡½  ¹ØÍâºú¼Ò½éÉÜ
-¡¼murong     ¡½  Ä½ÈÝÊÀ¼Ò½éÉÜ          ¡¼duan       ¡½  ¶ÎÊÏ»Ê×å½éÉÜ
+$WHT$ã€ä¸–å®¶ä»‹ç´¹ã€‘                                                           $NOR$
+â–¡ouyang     â–¡  æ­é™½ä¸–å®¶ä»‹ç´¹          â–¡hu         â–¡  é—œå¤–èƒ¡å®¶ä»‹ç´¹
+â–¡murong     â–¡  æ…•å®¹ä¸–å®¶ä»‹ç´¹          â–¡duan       â–¡  æ®µæ°çš‡æ—ä»‹ç´¹
 
-$WHT$¡¾¸½ÊôÓÎÏ·½éÉÜ¡¿                                                       $NOR$
-¡¼pig_cmds   ¡½  ¹°ÖíµÄÓÐ¹ØÃüÁî        ¡¼pig_rules  ¡½  ¹°Öí¹æÔò
+$WHT$ã€é™„å±¬éŠæˆ²ä»‹ç´¹ã€‘                                                       $NOR$
+â–¡pig_cmds   â–¡  æ‹±è±¬çš„æœ‰é—œå‘½ä»¤        â–¡pig_rules  â–¡  æ‹±è±¬è¦å‰‡

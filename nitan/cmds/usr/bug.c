@@ -12,13 +12,13 @@ inherit F_CLEAN_UP;
 
 string help = @HELP
 
-bug -a                          ĞÂÔö bug »Ø±¨
-bug -l                          ÁĞ³ö bug ×ÊÁÏ
-bug <±àºÅ>                      ¶ÁÈ¡ bug ÏêÏ¸ÄÚÈİ
-bug -r <±àºÅ>                   »ØÓ¦ bug ´¦ÀíÇéĞÎ       Î×Ê¦×¨ÓÃ
-bug -d <±àºÅ>[.<»Ø¸´±àºÅ>]      É¾³ı bug Ä³Æª»òÄ³Æª»Ø¸´ Î×Ê¦×¨ÓÃ
-bug                             ¶ÁÈ¡´íÎó»ØËİ            Î×Ê¦×¨ÓÃ
-bug [ID]                        ¶ÁÈ¡Ä³ÈËµÄ´íÎó»ØËİ      Î×Ê¦×¨ÓÃ
+bug -a                          æ–°å¢ bug å›å ±
+bug -l                          åˆ—å‡º bug è³‡æ–™
+bug <ç·¨è™Ÿ>                      è®€å– bug è©³ç´°å…§å®¹
+bug -r <ç·¨è™Ÿ>                   å›æ‡‰ bug è™•ç†æƒ…å½¢       å·«å¸«å°ˆç”¨
+bug -d <ç·¨è™Ÿ>[.<å›å¾©ç·¨è™Ÿ>]      åˆªé™¤ bug æŸç¯‡æˆ–æŸç¯‡å›å¾© å·«å¸«å°ˆç”¨
+bug                             è®€å–éŒ¯èª¤å›æº¯            å·«å¸«å°ˆç”¨
+bug [ID]                        è®€å–æŸäººçš„éŒ¯èª¤å›æº¯      å·«å¸«å°ˆç”¨
 
 HELP;
 
@@ -66,12 +66,12 @@ void edit_bug_content(object me, string title, string content)
         string number;
 
         if( time()-query_temp("bug_report", me)<PER_REPORT_TIME_LIMIT )
-                return tell_object(me, "Äã±ØĞëÔÙ¸ô "+(PER_REPORT_TIME_LIMIT + query_temp("bug_report", me) - time())+" Ãëºó²ÅÄÜÔÙ»Ø±¨Ò»´Î Bug¡£\n"NOR);
+                return tell_object(me, "ä½ å¿…é ˆå†éš” "+(PER_REPORT_TIME_LIMIT + query_temp("bug_report", me) - time())+" ç§’å¾Œæ‰èƒ½å†å›å ±ä¸€æ¬¡ Bugã€‚\n"NOR);
 
         number = BUG_D->add_bug(me, title, content);
 
-        tell_object(me, HIY"¸ĞĞ»ÄãµÄ Bug »Ø±¨Ê¹µÃÕâ¸öÊÀ½ç¸ü¼ÓÍêÃÀ¡£\n"NOR);
-        tell_object(me, HIY"\nÒÑ½«ÄãËù»Ø±¨µÄ Bug ´æÈë×ÊÁÏ¿âÖĞ£¬±àºÅÎª "+number+"£¬ÇëÀûÓÃ bug -l ËæÊ±×¢Òâ´¦Àí×´¿ö¡£\n"NOR);
+        tell_object(me, HIY"æ„Ÿè¬ä½ çš„ Bug å›å ±ä½¿å¾—é€™å€‹ä¸–ç•Œæ›´åŠ å®Œç¾ã€‚\n"NOR);
+        tell_object(me, HIY"\nå·²å°‡ä½ æ‰€å›å ±çš„ Bug å­˜å…¥è³‡æ–™åº«ä¸­ï¼Œç·¨è™Ÿç‚º "+number+"ï¼Œè«‹åˆ©ç”¨ bug -l éš¨æ™‚æ³¨æ„è™•ç†ç‹€æ³ã€‚\n"NOR);
 
         set_temp("bug_report", time(), me);
 
@@ -82,21 +82,21 @@ void input_bug_title(object me, string title)
 {
         if( !title || !title[0] )
         {
-                tell_object(me, "È¡Ïû Bug »Ø±¨ÊäÈë¡£\n");
+                tell_object(me, "å–æ¶ˆ Bug å›å ±è¼¸å…¥ã€‚\n");
                 return me->finish_input();
         }
 
         if( strlen(filter_color(title,1)) > 30 )
         {
-                tell_object(me, "»Ø±¨Ö÷Ìâ²»µÃ³¬¹ı 30 ¸ö×ÖÔª¡£\n");
+                tell_object(me, "å›å ±ä¸»é¡Œä¸å¾—è¶…é 30 å€‹å­—å…ƒã€‚\n");
                 return me->finish_input();
         }
 
         if( query_temp("big5", me) )
                 title = LANGUAGE_D->Big52GB(title);
 
-        tell_object(me, "ÄãËùÊäÈëµÄ Bug »Ø±¨Ö÷ÌâÎª£º¡°"+title+NOR+"¡±\n");
-        tell_object(me, HIY"ÇëÊäÈëÓû»Ø±¨µÄ Bug ÏêÏ¸ÄÚÈİ¡£\n"NOR);
+        tell_object(me, "ä½ æ‰€è¼¸å…¥çš„ Bug å›å ±ä¸»é¡Œç‚ºï¼šâ€œ"+title+NOR+"â€\n");
+        tell_object(me, HIY"è«‹è¼¸å…¥æ¬²å›å ±çš„ Bug è©³ç´°å…§å®¹ã€‚\n"NOR);
         me->edit( (: edit_bug_content, me, title :) );
 }
 
@@ -104,7 +104,7 @@ void edit_reply_content(object me, string number, string status, string content)
 {
         BUG_D->reply_bug(me, number, status, content);
 
-        tell_object(me, "»ØÓ¦±àºÅµÚ "+number+" ºÅ Bug Íê±Ï¡£\n");
+        tell_object(me, "å›æ‡‰ç·¨è™Ÿç¬¬ "+number+" è™Ÿ Bug å®Œç•¢ã€‚\n");
 
         me->finish_input();
 }
@@ -118,11 +118,11 @@ void confirm_input_reply(object me, string number, string status, string confirm
         {
                 case "yes":
                 case "y":
-                        tell_object(me, HIY"ÇëÊäÈë´¦ÀíÏêÏ¸ÄÚÈİ¡£\n"NOR);
+                        tell_object(me, HIY"è«‹è¼¸å…¥è™•ç†è©³ç´°å…§å®¹ã€‚\n"NOR);
                         me->edit( (: edit_reply_content, me, number, status :) );
                         return;
                 default:
-                        tell_object(me, HIY"²»ÊäÈë´¦ÀíÏêÏ¸ÄÚÈİ¡£\n"NOR);
+                        tell_object(me, HIY"ä¸è¼¸å…¥è™•ç†è©³ç´°å…§å®¹ã€‚\n"NOR);
                         BUG_D->reply_bug(me, number, status);
                         me->finish_input();
                         break;
@@ -136,16 +136,16 @@ void input_reply_status(object me, string number, string arg)
 
         switch(arg)
         {
-                case "1":       status = HIR"Î´´¦Àí"NOR;        break;
-                case "2":       status = HIY"´¦ÀíÖĞ"NOR;        break;
-                case "3":       status = HIC"ÒÑĞŞ¸´"NOR;        break;
-                case "4":       status = HIR"ÎŞ·¨ĞŞ¸´"NOR;      break;
-                case "5":       status = HIW"²»Ğè´¦Àí"NOR;      break;
-                case "6":       status = HIM"ĞèÔÙ»Ø±¨"NOR;      break;
-                default:        status = HIR"Î´´¦Àí"NOR;        break;
+                case "1":       status = HIR"æœªè™•ç†"NOR;        break;
+                case "2":       status = HIY"è™•ç†ä¸­"NOR;        break;
+                case "3":       status = HIC"å·²ä¿®å¾©"NOR;        break;
+                case "4":       status = HIR"ç„¡æ³•ä¿®å¾©"NOR;      break;
+                case "5":       status = HIW"ä¸éœ€è™•ç†"NOR;      break;
+                case "6":       status = HIM"éœ€å†å›å ±"NOR;      break;
+                default:        status = HIR"æœªè™•ç†"NOR;        break;
         }
 
-        tell_object(me, "ÊÇ·ñÊäÈë´¦ÀíÏêÏ¸ÄÚÈİ£¿(Yes/No):");
+        tell_object(me, "æ˜¯å¦è¼¸å…¥è™•ç†è©³ç´°å…§å®¹ï¼Ÿ(Yes/No):");
         input_to( (: confirm_input_reply, me, number, status :) );
 }
 
@@ -161,7 +161,7 @@ int main(object me, string arg)
                 if( !arg || !arg[0] )
                 {
                         if( !query_temp("bug_msg", me) )
-                                return notify_fail("ÄãÉíÉÏÃ»ÓĞ´íÎó»ØËİ×ÊÁÏ¡£\n");
+                                return notify_fail("ä½ èº«ä¸Šæ²’æœ‰éŒ¯èª¤å›æº¯è³‡æ–™ã€‚\n");
 
                         me->start_more(query_temp("bug_msg", me));
                         return 1;
@@ -169,17 +169,17 @@ int main(object me, string arg)
                 else if( ob = find_player(arg) )
                 {
                         if( !query_temp("bug_msg", ob) )
-                                return notify_fail(ob->query_idname()+"ÉíÉÏÃ»ÓĞ´íÎó»ØËİ×ÊÁÏ¡£\n");
+                                return notify_fail(ob->query_idname()+"èº«ä¸Šæ²’æœ‰éŒ¯èª¤å›æº¯è³‡æ–™ã€‚\n");
                         me->start_more(query_temp("bug_msg", ob));
                         return 1;
                 }
                 else if( sscanf(arg, "-r %s", number) )
                 {
                         if( !BUG_D->bug_exists(number) )
-                                return notify_fail("²¢Ã»ÓĞ±àºÅ "+number+" µÄ Bug ´æÔÚ¡£\n"NOR);
+                                return notify_fail("ä¸¦æ²’æœ‰ç·¨è™Ÿ "+number+" çš„ Bug å­˜åœ¨ã€‚\n"NOR);
 
                         data = restore_variable(read_file(DATA_PATH+number)); 
-                        tell_object(me, HIY"ÇëÊäÈëÄ¿Ç°´¦Àí×´¿ö±àºÅ£º\n[1]"HIR"Î´´¦Àí"NOR" [2]"HIY"´¦ÀíÖĞ"NOR" [3]"HIC"ÒÑĞŞ¸´"NOR" [4]"HIR"ÎŞ·¨ĞŞ¸´"NOR" [5]"HIW"²»Ğè´¦Àí"NOR" [6]"HIM"ĞèÔÙ»Ø±¨"NOR"\n");
+                        tell_object(me, HIY"è«‹è¼¸å…¥ç›®å‰è™•ç†ç‹€æ³ç·¨è™Ÿï¼š\n[1]"HIR"æœªè™•ç†"NOR" [2]"HIY"è™•ç†ä¸­"NOR" [3]"HIC"å·²ä¿®å¾©"NOR" [4]"HIR"ç„¡æ³•ä¿®å¾©"NOR" [5]"HIW"ä¸éœ€è™•ç†"NOR" [6]"HIM"éœ€å†å›å ±"NOR"\n");
                         tell_object(me, CYN+"\n"+data["content"]+"\n"+NOR+":"); 
                         input_to( (: input_reply_status, me, number :) );
                         return 1;
@@ -191,17 +191,17 @@ int main(object me, string arg)
                         sscanf(number, "%s.%d", number, reply);
 
                         if( !BUG_D->bug_exists(number) )
-                                return notify_fail("²¢Ã»ÓĞ±àºÅ "+number+" µÄ Bug ´æÔÚ¡£\n"NOR);
+                                return notify_fail("ä¸¦æ²’æœ‰ç·¨è™Ÿ "+number+" çš„ Bug å­˜åœ¨ã€‚\n"NOR);
 
                         if( reply > 0 )
                         {
                                 BUG_D->remove_bug(me, number, reply);
-                                tell_object(me, "É¾³ı±àºÅµÚ "+number+" ºÅ Bug µÄµÚ "+reply+" Æª»ØÓ¦¡£\n"NOR);
+                                tell_object(me, "åˆªé™¤ç·¨è™Ÿç¬¬ "+number+" è™Ÿ Bug çš„ç¬¬ "+reply+" ç¯‡å›æ‡‰ã€‚\n"NOR);
                         }
                         else
                         {
                                 BUG_D->remove_bug(me, number);
-                                tell_object(me, "É¾³ı±àºÅµÚ "+number+" ºÅ Bug µÄËùÓĞ×ÊÁÏ¡£\n"NOR);
+                                tell_object(me, "åˆªé™¤ç·¨è™Ÿç¬¬ "+number+" è™Ÿ Bug çš„æ‰€æœ‰è³‡æ–™ã€‚\n"NOR);
                         }
 
                         return 1;
@@ -218,15 +218,15 @@ int main(object me, string arg)
         }
         else if( arg == "-a" )
         {
-                tell_object(me, HIW"»¶Ó­Ê¹ÓÃ"WHT"³ô³æ(Bug)»Ø±¨ÏµÍ³\n"NOR HIG"»Ø±¨ Bug Ê±ÇëÏêÊö·¢ÉúÊ±¼ä¡¢ËùÔÚµÄÎ»ÖÃ¡¢ÏÂ´ï¹ıµÄÖ¸ÁîÓëÏµÍ³ÏÔÊ¾µÄÑ¶Ï¢\nÏêÏ¸µÄ×ÊÁÏ½«¿ÉÒÔ°ïÖúÎ×Ê¦¿ìËÙ½â¾öÄãÓöµ½µÄ Bug¡£\n"NOR);
-                tell_object(me, HIY"ÇëÊäÈëÓû»Ø±¨µÄ Bug Ö÷Ìâ(½öÖ÷Ìâ£¬·ÇÏêÏ¸ÄÚÈİ)£¬»òÖ±½Ó°´ Enter È¡ÏûÊäÈë¡£\n:"NOR);
+                tell_object(me, HIW"æ­¡è¿ä½¿ç”¨"WHT"è‡­èŸ²(Bug)å›å ±ç³»çµ±\n"NOR HIG"å›å ± Bug æ™‚è«‹è©³è¿°ç™¼ç”Ÿæ™‚é–“ã€æ‰€åœ¨çš„ä½ç½®ã€ä¸‹é”éçš„æŒ‡ä»¤èˆ‡ç³»çµ±é¡¯ç¤ºçš„è¨Šæ¯\nè©³ç´°çš„è³‡æ–™å°‡å¯ä»¥å¹«åŠ©å·«å¸«å¿«é€Ÿè§£æ±ºä½ é‡åˆ°çš„ Bugã€‚\n"NOR);
+                tell_object(me, HIY"è«‹è¼¸å…¥æ¬²å›å ±çš„ Bug ä¸»é¡Œ(åƒ…ä¸»é¡Œï¼Œéè©³ç´°å…§å®¹)ï¼Œæˆ–ç›´æ¥æŒ‰ Enter å–æ¶ˆè¼¸å…¥ã€‚\n:"NOR);
                 input_to( (: input_bug_title, me :) );
                 return 1;
         }
         else if( big_number_check(arg) )
         {
                 if( !BUG_D->bug_exists(arg) )
-                        return notify_fail("²¢Ã»ÓĞ±àºÅ "+arg+" µÄ Bug ´æÔÚ¡£\n"NOR);
+                        return notify_fail("ä¸¦æ²’æœ‰ç·¨è™Ÿ "+arg+" çš„ Bug å­˜åœ¨ã€‚\n"NOR);
 
                 tell_object(me, BUG_D->query_bug(arg));
                 return 1;

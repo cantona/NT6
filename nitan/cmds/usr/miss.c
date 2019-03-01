@@ -1,4 +1,4 @@
-// miss ×·Ñ°ÎïÆ·
+// miss è¿½å°‹ç‰©å“
 
 #include <ansi.h>
 #include <command.h>
@@ -9,27 +9,27 @@ int main(object me, string str)
 {
         object ob;
 
-        return notify_fail("¸Ã¹¦ÄÜÒÑ¾­¹Ø±Õ¡£\n");
+        return notify_fail("è©²åŠŸèƒ½å·²ç¶“é—œé–‰ã€‚\n");
         if( me->is_busy() || query("doing", me) )
-                return notify_fail("ÄãµÄ¶¯×÷»¹Ã»ÓĞÍê³É£¬²»ÄÜ×·Ñ°ÎïÆ·¡£\n"); 
+                return notify_fail("ä½ çš„å‹•ä½œé‚„æ²’æœ‰å®Œæˆï¼Œä¸èƒ½è¿½å°‹ç‰©å“ã€‚\n"); 
 
         if (me->is_fighting())
-                return notify_fail("ÄãÕıÔÚÕ½¶·ÄØ£¬»¹ÊÇ°²ĞÄÕ½¶·°É¡£\n"); 
+                return notify_fail("ä½ æ­£åœ¨æˆ°é¬¥å‘¢ï¼Œé‚„æ˜¯å®‰å¿ƒæˆ°é¬¥å§ã€‚\n"); 
 
         if (! str)
-                return notify_fail("ÄãÒª×·Ñ°Ê²Ã´ÎïÆ·£¿\n");
+                return notify_fail("ä½ è¦è¿½å°‹ä»€éº¼ç‰©å“ï¼Ÿ\n");
 
         if( !stringp(str=query("can_summon/"+str, me)) )
-                return notify_fail("Äã²»ÖªµÀÈçºÎ×·Ñ°Õâ¸öÎïÆ·¡£\n");
+                return notify_fail("ä½ ä¸çŸ¥é“å¦‚ä½•è¿½å°‹é€™å€‹ç‰©å“ã€‚\n");
 
         if (me->is_ghost())
-                return notify_fail("µÈÄã»¹ÁËÑôÔÙ×·Ñ°°É¡£\n");
+                return notify_fail("ç­‰ä½ é‚„äº†é™½å†è¿½å°‹å§ã€‚\n");
 
         if( query("no_magic", environment(me)) || query("maze", environment(me)) )
-                return notify_fail("ÄãÔÚÕâÀïÎŞ·¨¸ĞÓ¦µ½ÄãµÄÎïÆ·£¬²»¿ÉÒÔÊ©·¨×·Ñ°¡£\n");
+                return notify_fail("ä½ åœ¨é€™è£¡ç„¡æ³•æ„Ÿæ‡‰åˆ°ä½ çš„ç‰©å“ï¼Œä¸å¯ä»¥æ–½æ³•è¿½å°‹ã€‚\n");
 
         if (! objectp(ob = find_object(str)) || ! environment(ob))
-                return notify_fail("ÄãÇî¾¡¾«Á¦£¬Ò²ÎŞ·¨¸ĞÓ¦µ½Õâ¸öÎïÆ·¡£\n");
+                return notify_fail("ä½ çª®ç›¡ç²¾åŠ›ï¼Œä¹Ÿç„¡æ³•æ„Ÿæ‡‰åˆ°é€™å€‹ç‰©å“ã€‚\n");
 
         ob->receive_miss(me);
         return 1;
@@ -38,9 +38,9 @@ int main(object me, string str)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : miss <Á¶ÖÆÎïÆ·µÄID>
+æŒ‡ä»¤æ ¼å¼ : miss <ç…‰åˆ¶ç‰©å“çš„ID>
 
-´ËÖ¸Áî¿ÉÈÃÄã×·Ñ°ÄãÁ¶ÖÆµÄÎïÆ·£¬±ØĞëÓĞÒ»¶¨µÄ¾«Á¦²ÅÄÜ×öµ½¡£
+æ­¤æŒ‡ä»¤å¯è®“ä½ è¿½å°‹ä½ ç…‰åˆ¶çš„ç‰©å“ï¼Œå¿…é ˆæœ‰ä¸€å®šçš„ç²¾åŠ›æ‰èƒ½åšåˆ°ã€‚
 HELP
     );
     return 1;

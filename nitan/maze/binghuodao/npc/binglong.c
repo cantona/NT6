@@ -3,8 +3,8 @@ inherit __DIR__"bhd_npc.c";
 
 void create()
 {
-        set_name(HIW "冰龙" NOR, ({ "bing long", "bing", "long" }));
-        set("long", HIW "一只巨大的飞龙，在半空中盘旋，浑身北厚厚的冰层包裹，巨大的冰块从它身上脱离，飞落下来。\n" NOR);
+        set_name(HIW "鍐伴緧" NOR, ({ "bing long", "bing", "long" }));
+        set("long", HIW "涓�鍙法澶х殑椋涢緧锛屽湪鍗婄┖涓洡鏃嬶紝娓捐韩鍖楀帤鍘氱殑鍐板堡鍖呰９锛屽法澶х殑鍐板寰炲畠韬笂鑴洟锛岄钀戒笅渚嗐�俓n" NOR);
 
         set("age", 99999);
         set("str",500);
@@ -42,7 +42,7 @@ void create()
 
 void init()
 {
-        // 随机攻击玩家
+        // 闅ㄦ鏀绘搳鐜╁
         if (userp(this_player()) && random(2) == 1)
         {
                 kill_ob(this_player());

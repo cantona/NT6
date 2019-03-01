@@ -5,14 +5,14 @@ int exert(object me, object target)
         int n, q;
 
         if (me != target)
-                return notify_fail("你只能用内功调匀自己的气息。\n");
+                return notify_fail("浣犲彧鑳界敤鍏у姛瑾垮嫽鑷繁鐨勬埃鎭�俓n");
 
         if( query("neili", me)<20 )
-                return notify_fail("你的内力不够。\n");
+                return notify_fail("浣犵殑鍏у姏涓嶅銆俓n");
 
         q=query("eff_qi", me)-query("qi", me);
         if (q < 10)
-                return notify_fail("你现在气力充沛。\n");
+                return notify_fail("浣犵従鍦ㄦ埃鍔涘厖娌涖�俓n");
         n = 100 * q / me->query_skill("force");
         if( query("special_skill/self", me) )
                 n = n * 7 / 10;
@@ -34,7 +34,7 @@ int exert(object me, object target)
         if (q < 1) q = 1;
         me->receive_heal("qi", q);
         
-        message_vision("$N深深吸了几口气，脸色看起来好多了。\n", me);
+        message_vision("$N娣辨繁鍚镐簡骞惧彛姘ｏ紝鑷夎壊鐪嬭捣渚嗗ソ澶氫簡銆俓n", me);
 
         if( me->is_fighting() && !query("special_skill/self", me))me->start_busy(1);
         

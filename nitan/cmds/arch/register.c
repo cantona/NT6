@@ -48,25 +48,25 @@ int main(object me, string arg)
                 return 0;
 
         if (! arg || sscanf(arg, "%s %s", id, email) != 2)
-                return notify_fail("Ö¸Áî¸ñÊ½£ºregister <id> <email>\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šregister <id> <email>\n");
 
         if (wiz_level(me) < wiz_level(id))
-                return notify_fail("ÄãÃ»ÓĞÈ¨ÏŞÎª´ËÈË×¢²á¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¬Šé™ç‚ºæ­¤äººæ³¨å†Šã€‚\n");
 
         switch(register_user(query("id", me),id,email) )
         {
-        case 0:  return notify_fail("µÇ¼ÇÊ§°Ü¡£\n"); break;
-        default: return notify_fail("ÓÃ»§(" + id + ")ÒÑ¾­³É¹¦µØ±»ÄúµÇ¼ÇÁË¡£\n"); break;
+        case 0:  return notify_fail("ç™»è¨˜å¤±æ•—ã€‚\n"); break;
+        default: return notify_fail("ç”¨æˆ¶(" + id + ")å·²ç¶“æˆåŠŸåœ°è¢«æ‚¨ç™»è¨˜äº†ã€‚\n"); break;
         }
 }
 
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½£ºregister <id> <email>
+æŒ‡ä»¤æ ¼å¼ï¼šregister <id> <email>
 
-Õâ¸öÖ¸Áî¿ÉÒÔ¸ø»¹Ã»ÓĞµÇ¼Ç¹ıµÄÓÃ»§½øĞĞµÇ¼Ç£¬»òÕß¸øÒÑ¾­µÇ¼ÇµÄÓÃ
-»§Éè¶¨ĞÂµÄµÇ¼ÇÓÊÏä¡£
+é€™å€‹æŒ‡ä»¤å¯ä»¥çµ¦é‚„æ²’æœ‰ç™»è¨˜éçš„ç”¨æˆ¶é€²è¡Œç™»è¨˜ï¼Œæˆ–è€…çµ¦å·²ç¶“ç™»è¨˜çš„ç”¨
+æˆ¶è¨­å®šæ–°çš„ç™»è¨˜éƒµç®±ã€‚
 HELP );
         return 1;
 }

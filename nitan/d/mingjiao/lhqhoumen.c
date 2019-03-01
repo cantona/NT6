@@ -4,10 +4,10 @@ inherit ROOM;
 #include <ansi.h>
 void create()
 {
-        set("short", "ÁÒ»ğÆìºóÃÅ");
+        set("short", "çƒˆç«æ——å¾Œé–€");
         set("long", @LONG
-ÕâÀï¾ÍÊÇÁÒ»ğÆìµÄºóÃÅ£¬ºóÃæ¾ÍÊÇÃ÷½Ì×Ü¶æËùÔÚ£¬ÃÅÓîĞù´ó£¬½Ì
-ÖÚ³öÈë·×·×¡£ÓÉÓÚµØ´¦½ôÒª£¬ÕâÀïµÄ¹Ø·ÀÒ²ºÜÑÏÃÜ¡£
+é€™è£¡å°±æ˜¯çƒˆç«æ——çš„å¾Œé–€ï¼Œå¾Œé¢å°±æ˜¯æ˜æ•™ç¸½èˆµæ‰€åœ¨ï¼Œé–€å®‡è»’å¤§ï¼Œæ•™
+çœ¾å‡ºå…¥ç´›ç´›ã€‚ç”±äºåœ°è™•ç·Šè¦ï¼Œé€™è£¡çš„é—œé˜²ä¹Ÿå¾ˆåš´å¯†ã€‚
 LONG );
         set("exits", ([
                 "northup"   : __DIR__"zhandao1",
@@ -24,9 +24,9 @@ LONG );
 int valid_leave(object me, string dir)
 {
         me = this_player();
-        if( objectp(me) && (query("family/family_name", me) != "Ã÷½Ì") && 
+        if( objectp(me) && (query("family/family_name", me) != "æ˜æ•™") && 
             (dir=="northup") &&
             (objectp(present("tuoba", environment(me)))))
-            return notify_fail("ÍØ°ÏÀ¹×¡ÄãËµ£º´Ë´¦ÄËÃ÷½ÌÖØµØ£¬ÇëÖ¹²½¡£\n");
+            return notify_fail("æ‹“è·‹æ””ä½ä½ èªªï¼šæ­¤è™•ä¹ƒæ˜æ•™é‡åœ°ï¼Œè«‹æ­¢æ­¥ã€‚\n");
         return ::valid_leave(me, dir);
 }

@@ -1,11 +1,11 @@
-//²éÑ¯ÓÎÏ·½»·ÑÊ±¼äµÄÃüÁî£¬Ö±½Ó´ÓÊý¾Ý¿âÈ¡Êý¾Ý£¬Ó¦¸Ã½ûÖ¹Æµ·±¶ÁÈ¡
+//æŸ¥è©¢éŠæˆ²äº¤è²»æ™‚é–“çš„å‘½ä»¤ï¼Œç›´æŽ¥å¾žæ•¸æ“šåº«å–æ•¸æ“šï¼Œæ‡‰è©²ç¦æ­¢é »ç¹è®€å–
 //Write By JackyBoy@TOMUD 2001/5/15
 #include <ansi.h>
 
 inherit F_CLEAN_UP;
 
-string bar_string = "¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö";
-string blank_string = "¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ¡õ";
+string bar_string = "â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– ";
+string blank_string = "â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡";
 string status_color(int current, int max);
 string tribar_graph(int val, int eff, int max, string color);
 int buy_monfee();
@@ -20,13 +20,13 @@ int main(object me,string arg)
         if (! arg|| !wizardp(me))
         {
                 if( !wizardp(me) && query_temp("last_query_fee", me)>time()-60 )
-                        return notify_fail("Çë²»ÒªÆµ·±²éÑ¯½»·ÑÐÅÏ¢!\n");
+                        return notify_fail("è«‹ä¸è¦é »ç¹æŸ¥è©¢äº¤è²»ä¿¡æ¯!\n");
                 set_temp("last_query_fee", time(), me);
                 arg=query("id", me);
         }
         arg = lower_case(arg);
-        if(arg=="×ªÔÂ·Ñ" ||arg == "buy_monfee" ||arg == "½»ÔÂ·Ñ"  || 
-                arg=="½ÉÔÂ·Ñ" || arg=="buymonfee" ||arg=="buy monfee")
+        if(arg=="è½‰æœˆè²»" ||arg == "buy_monfee" ||arg == "äº¤æœˆè²»"  || 
+                arg=="ç¹³æœˆè²»" || arg=="buymonfee" ||arg=="buy monfee")
         {
                 buy_monfee();
                 return 1;
@@ -35,10 +35,10 @@ int main(object me,string arg)
                 me->save();
         seteuid(getuid(me));
         res=DATABASE_D->do_sql("select on_time,fee_time,subgy(f_dbase,'monfee') from users where id="+DB_STR(arg));
-        line=" Çë×¢Òâ£¬±¾ÃüÁî²»ÊÇ¼´Ê±ÃüÁî£¬¿ÉÄÜ»áÓëÄãÊµ¼ÊÇé¿öÉÔÓÐÆ«²î¡£\n";
-        line+= HIC"¡Ô"HIY"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"HIC"¡Ô\n"NOR+
-                        " ÓÃ»§ "+HIR+arg+NOR+" µÄ½»·Ñ¼°Ê¹ÓÃÇé¿öÈçÏÂ£º\n";
-        if(!res) line+="Î´·¢ÏÖÖ¸¶¨¶ÔÏó("+arg+")µÄÓÃ»§×ÊÁÏ£¡\n";
+        line=" è«‹æ³¨æ„ï¼Œæœ¬å‘½ä»¤ä¸æ˜¯å³æ™‚å‘½ä»¤ï¼Œå¯èƒ½æœƒèˆ‡ä½ å¯¦éš›æƒ…æ³ç¨æœ‰åå·®ã€‚\n";
+        line+= HIC"â‰¡"HIY"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"HIC"â‰¡\n"NOR+
+                        " ç”¨æˆ¶ "+HIR+arg+NOR+" çš„äº¤è²»åŠä½¿ç”¨æƒ…æ³å¦‚ä¸‹ï¼š\n";
+        if(!res) line+="æœªç™¼ç¾æŒ‡å®šå°è±¡("+arg+")çš„ç”¨æˆ¶è³‡æ–™ï¼\n";
         else
         {
                 int i,j;
@@ -48,24 +48,24 @@ int main(object me,string arg)
                 i=onl%3600;
                 onl/=3600;
                 j=i%60;
-                line += " ÀÛ¼Æ¹ºÂòÊ±¼ä£º "+HIY+fee+NOR+" Ð¡Ê±\n";
-                line += " ÀÛ¼ÆÊ¹ÓÃÊ±¼ä£º "+HIY+(onl)+NOR+" Ð¡Ê± ";
-                if(i) line+=HIY+(i/60)+NOR+" ·Ö ";
-                if(j) line+=(HIY+j)+NOR+" Ãë";
+                line += " ç´¯è¨ˆè³¼è²·æ™‚é–“ï¼š "+HIY+fee+NOR+" å°æ™‚\n";
+                line += " ç´¯è¨ˆä½¿ç”¨æ™‚é–“ï¼š "+HIY+(onl)+NOR+" å°æ™‚ ";
+                if(i) line+=HIY+(i/60)+NOR+" åˆ† ";
+                if(j) line+=(HIY+j)+NOR+" ç§’";
                 if(onl>=fee)
-                        line += "\n Äã¹ºÂòµÄÓÎÏ·Ê±¼äÒÑ¾­Ê¹ÓÃÍêÁË£¬ÇëÁªÏµTomudÐ¡×éhttp://www.tomud.com ¼ÌÐø¹ºÂòÓÎÏ·Ê±¼ä£¡\n";
+                        line += "\n ä½ è³¼è²·çš„éŠæˆ²æ™‚é–“å·²ç¶“ä½¿ç”¨å®Œäº†ï¼Œè«‹è¯ç³»Tomudå°çµ„http://www.tomud.com ç¹¼çºŒè³¼è²·éŠæˆ²æ™‚é–“ï¼\n";
                 else
-                        line += "\n Ê¹ÓÃÇé¿ö£º " + tribar_graph(onl, fee, fee, HIY) + "\n";
+                        line += "\n ä½¿ç”¨æƒ…æ³ï¼š " + tribar_graph(onl, fee, fee, HIY) + "\n";
                 sscanf(res[2],"%*s%d%*s",monfee);
                 if(monfee!=0)
-                        line += " ÄãµÄÔÂ·Ñµ½ÆÚÊ±¼äÎª£º"+CHINESE_D->cctime(monfee)+"\n Äã¿ÉÒÔÊ¹ÓÃÀ¨ºÅÄÚµÄÃüÁî{"+HIY+"fee ½»ÔÂ·Ñ"+NOR+"}À´Ôö¼Ó°üÔÂÊ±¼ä¡£\n";
+                        line += " ä½ çš„æœˆè²»åˆ°æœŸæ™‚é–“ç‚ºï¼š"+CHINESE_D->cctime(monfee)+"\n ä½ å¯ä»¥ä½¿ç”¨æ‹¬è™Ÿå…§çš„å‘½ä»¤{"+HIY+"fee äº¤æœˆè²»"+NOR+"}ä¾†å¢žåŠ åŒ…æœˆæ™‚é–“ã€‚\n";
                 else
-                        line += " Äã´ÓÎ´×ª¹ýÔÂ·Ñ£¡Äã¿ÉÒÔÊ¹ÓÃ{"+HIY+"fee ½»ÔÂ·Ñ"+NOR+"}ÃüÁî×ª»»Îª°üÔÂ¼Æ·Ñ·½Ê½¡£\n";
+                        line += " ä½ å¾žæœªè½‰éŽæœˆè²»ï¼ä½ å¯ä»¥ä½¿ç”¨{"+HIY+"fee äº¤æœˆè²»"+NOR+"}å‘½ä»¤è½‰æ›ç‚ºåŒ…æœˆè¨ˆè²»æ–¹å¼ã€‚\n";
                 if(fee==18)
-                        line+=ALERT("ÄãºÃ£¬Äã»¹Î´¶Ô´ËÈËÎï½ÇÉ«½øÐÐ×¢²á£¡Çë¼°Ê±½»·Ñ×¢²á¹ºÂòÊ±¼ä£¡$$Î´×¢²á¶øÇÒÁ¬Ðø "+
-                                UNREG_IDLE+" ÌìÎ´ÉÏÏßÕßÎÒÃÇ½«Çå³ýÆäµµ°¸!");
+                        line+=ALERT("ä½ å¥½ï¼Œä½ é‚„æœªå°æ­¤äººç‰©è§’è‰²é€²è¡Œæ³¨å†Šï¼è«‹åŠæ™‚äº¤è²»æ³¨å†Šè³¼è²·æ™‚é–“ï¼$$æœªæ³¨å†Šè€Œä¸”é€£çºŒ "+
+                                UNREG_IDLE+" å¤©æœªä¸Šç·šè€…æˆ‘å€‘å°‡æ¸…é™¤å…¶æª”æ¡ˆ!");
         }
-        line += HIC"¡Ô"HIY"©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"HIC"¡Ô\n"NOR;
+        line += HIC"â‰¡"HIY"â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"HIC"â‰¡\n"NOR;
         tell_object(me,line);
         return 1;
 }
@@ -91,24 +91,24 @@ string tribar_graph(int val, int eff, int max, string color)
                 + ((eff > val) ? blank_string[(val * 25 / max) * 2..(eff * 25 / max) * 2 - 1] : "") + NOR;
 }
 
-//Õâ¸öº¯ÊýÖ»¶Ôthis_player()½øÐÐ²Ù×÷£¡ËùÒÔÒ»¶¨Òª×¢Òâ²»ÒªÊÔÍ¼²Ù×÷ÆäËûÈË£¡
+//é€™å€‹å‡½æ•¸åªå°this_player()é€²è¡Œæ“ä½œï¼æ‰€ä»¥ä¸€å®šè¦æ³¨æ„ä¸è¦è©¦åœ–æ“ä½œå…¶ä»–äººï¼
 int buy_monfee()
 {
-        //×ö·ÀÖ¹Ë¢ÆÁÅÐ¶Ï£¬ÒòÎª¸Ã²Ù×÷Ö±½ÓÉæ¼°µ½Êý¾Ý¿â²Ù×÷
+        //åšé˜²æ­¢åˆ·å±åˆ¤æ–·ï¼Œå› ç‚ºè©²æ“ä½œç›´æŽ¥æ¶‰åŠåˆ°æ•¸æ“šåº«æ“ä½œ
         object me=this_player();
         me->save();
         if( !wizardp(me) && query_temp("last_query_fee", me)>time()-300 )
         {
-                write("Çë²»ÒªÆµ·±½øÐÐ×ª»»²Ù×÷£¬ÖÁÉÙ¼ä¸ôÎå·ÖÖÓ!\n");
+                write("è«‹ä¸è¦é »ç¹é€²è¡Œè½‰æ›æ“ä½œï¼Œè‡³å°‘é–“éš”äº”åˆ†é˜!\n");
                 return 1;
         }
         set_temp("last_query_fee", time(), me);
         if( query("doing", me) == "scheme" )
         {
-                write("¶Ô²»Æð£¬¼Æ»®Ê±²»ÄÜ½øÐÐÕâ¸ö²Ù×÷£¡");
+                write("å°ä¸èµ·ï¼Œè¨ˆåŠƒæ™‚ä¸èƒ½é€²è¡Œé€™å€‹æ“ä½œï¼");
                 return 1;
         }
-        write("ÇëÊäÈëÄãµÄ¹ÜÀíÃÜÂë£¬ÒÔÈ·ÈÏ´Ë´Î²Ù×÷£º");
+        write("è«‹è¼¸å…¥ä½ çš„ç®¡ç†å¯†ç¢¼ï¼Œä»¥ç¢ºèªæ­¤æ¬¡æ“ä½œï¼š");
         input_to("verify_pass",me,0);
         return 1;
 }
@@ -123,29 +123,29 @@ void verify_pass(string arg,object me,int c)
         objectlkob=query_temp("link_ob", me);
         if(!objectp(lkob))
         {
-                write(ALERT("¶Ô²»Æð£¬ÄãµÄÈËÎï½ÇÉ«×´Ì¬²»¶Ô£¬ÇëÏÈÕÒ¹ÜÀíÔ±À´´¦ÀíÒ»ÏÂ°É£¡"));
+                write(ALERT("å°ä¸èµ·ï¼Œä½ çš„äººç‰©è§’è‰²ç‹€æ…‹ä¸å°ï¼Œè«‹å…ˆæ‰¾ç®¡ç†å“¡ä¾†è™•ç†ä¸€ä¸‹å§ï¼"));
                 return ;
         }
         my_pass=query("ad_password", lkob);
         if(arg=="quit"||arg==""||arg=="exit")
         {
-                write("ÄãÍË³öÁË×ªÔÂ·ÑµÄ²Ù×÷£¡\n");
+                write("ä½ é€€å‡ºäº†è½‰æœˆè²»çš„æ“ä½œï¼\n");
                 return ;
         }
         if(crypt(arg, my_pass) != my_pass)
         {
                 if(c>2)
                 {
-                        write(ALERT("¶Ô²»Æð£¬ÇëÈ·¶¨ÄãÃ»¼Ç´í¹ÜÀíÃÜÂëÔÙÀ´ÊÔ°É£¡"));
+                        write(ALERT("å°ä¸èµ·ï¼Œè«‹ç¢ºå®šä½ æ²’è¨˜éŒ¯ç®¡ç†å¯†ç¢¼å†ä¾†è©¦å§ï¼"));
                         return ;
                 }
-                write(ALERT("¹ÜÀíÃÜÂë²»¶Ô£¡(Çë»Ø³µ»òÊäÈëexitÃüÁîÍË³ö×ªÔÂ·Ñ²Ù×÷)")+"\nÇëÊäÈëÄãµÄ¹ÜÀíÃÜÂëÒÔÑéÖ¤²Ù×÷£º");
+                write(ALERT("ç®¡ç†å¯†ç¢¼ä¸å°ï¼(è«‹å›žè»Šæˆ–è¼¸å…¥exitå‘½ä»¤é€€å‡ºè½‰æœˆè²»æ“ä½œ)")+"\nè«‹è¼¸å…¥ä½ çš„ç®¡ç†å¯†ç¢¼ä»¥é©—è¨¼æ“ä½œï¼š");
                 input_to("verify_pass",me,++c);
                 return ;
         }
         arg=m["id"];
         res=DATABASE_D->do_sql("select on_time,fee_time from users where id="+DB_STR(arg));
-        if(!res) write("²éÑ¯³ö´í£¬ÇëÑ¯ÎÊÓÎÏ·¹ÜÀíÔ±¡£\n");
+        if(!res) write("æŸ¥è©¢å‡ºéŒ¯ï¼Œè«‹è©¢å•éŠæˆ²ç®¡ç†å“¡ã€‚\n");
         else
         {
                 int i,j;
@@ -154,29 +154,29 @@ void verify_pass(string arg,object me,int c)
                 onl/=10;fee/=10;
                 i=m["monfee"]-time();
                 if(i<0) i=0;
-                i/=86400;//°üÔÂ»¹ÓÐ¶àÉÙÌì£¡
-                write("Äã½»¹ýµÄÓÎÏ·µãÊÇ"+fee+"¿ÉÓÃÊý"+(fee-onl/3600)+"\n");
+                i/=86400;//åŒ…æœˆé‚„æœ‰å¤šå°‘å¤©ï¼
+                write("ä½ äº¤éŽçš„éŠæˆ²é»žæ˜¯"+fee+"å¯ç”¨æ•¸"+(fee-onl/3600)+"\n");
                 if(fee - onl/3600 > 318 && i<120 )
                 {
                         sql=sprintf("update users set fee_time=fee_time-300,endrgt=now() where id="+DB_STR(arg));
                         if ((DATABASE_D->do_sqlexec(sql))<1)
                         {
-                                write("¿Û³ýµãÊýÊ§°Ü£¬Î´ÄÜ³É¹¦½ÉÄÉÔÂ·Ñ£¬Çë¾¡¿ìÁªÏµÓÎÏ·¹ÜÀíÔ±²éÃ÷Ô­Òò¡£\n");
+                                write("æ‰£é™¤é»žæ•¸å¤±æ•—ï¼Œæœªèƒ½æˆåŠŸç¹³ç´æœˆè²»ï¼Œè«‹ç›¡å¿«è¯ç³»éŠæˆ²ç®¡ç†å“¡æŸ¥æ˜ŽåŽŸå› ã€‚\n");
                                 return ;
                         }
                         else
                         {
-                                //¿Û³ýµãÊý³É¹¦                                
+                                //æ‰£é™¤é»žæ•¸æˆåŠŸ                                
                                 if(m["monfee"]>time())
-                                        m["monfee"]+=86400*30;//Èç¹û±¾À´ÊÇÔÂ·Ñ£¬ÔòÔÚÔÂ·ÑÉÏ¼Ó
+                                        m["monfee"]+=86400*30;//å¦‚æžœæœ¬ä¾†æ˜¯æœˆè²»ï¼Œå‰‡åœ¨æœˆè²»ä¸ŠåŠ 
                                 else
                                         m["monfee"]=time()+86400*30;
                                 me->save();
-                                //ÖØÐÂ´ÓÊý¾Ý¿âÈ¡£¬ÒÔÑéÖ¤ÊÇ·ñÕæµÄÒÑ¾­¸Ä±ä
+                                //é‡æ–°å¾žæ•¸æ“šåº«å–ï¼Œä»¥é©—è¨¼æ˜¯å¦çœŸçš„å·²ç¶“æ”¹è®Š
                                        res=DATABASE_D->do_sql("select fee_time from users where id="+DB_STR(arg));
                                        sscanf(res[0]+"0","%d",j);
-                                       write("300¸öÓÎÏ·µã¿Û³ý³É¹¦£¡ÏÖÔÚÄã½»¹ýµÄÓÎÏ·µãÊÇ"+j/10+"\n");
-                                       write("½ÉÔÂ·Ñ³É¹¦£¬ÔÂ·ÑÆÚÏÞÑÓ³¤µ½ "+CHINESE_D->cctime(m["monfee"])+"£¬»¹ÓÐ"+(i+30)+"Ìì ¡£\n");
+                                       write("300å€‹éŠæˆ²é»žæ‰£é™¤æˆåŠŸï¼ç¾åœ¨ä½ äº¤éŽçš„éŠæˆ²é»žæ˜¯"+j/10+"\n");
+                                       write("ç¹³æœˆè²»æˆåŠŸï¼Œæœˆè²»æœŸé™å»¶é•·åˆ° "+CHINESE_D->cctime(m["monfee"])+"ï¼Œé‚„æœ‰"+(i+30)+"å¤© ã€‚\n");
                                 sql=sprintf("insert into reg_log (id,add_hours,new_fee_time,time) values (%s,%d,%d,now())",DB_STR(arg),-300,j/10);
                                 if(DATABASE_D->do_sqlexec(sql) < 1)
                                         log_file("database",ctime(time())+":"+sql);
@@ -187,20 +187,20 @@ void verify_pass(string arg,object me,int c)
                 else
                 {
                         if(i>=120)
-                                write("¶Ô²»Æð£¬ÄãÄ¿Ç°ÒÑ¾­°üÁËÎå¸öÔÂ£¨Ê£Óà"+i+"Ìì£¡£©ÁË£¬¶ø°üÔÂ×î¶àÖ»ÄÜÎå¸öÔÂ£¡");
+                                write("å°ä¸èµ·ï¼Œä½ ç›®å‰å·²ç¶“åŒ…äº†äº”å€‹æœˆï¼ˆå‰©ä½™"+i+"å¤©ï¼ï¼‰äº†ï¼Œè€ŒåŒ…æœˆæœ€å¤šåªèƒ½äº”å€‹æœˆï¼");
                         else
-                                write("ÄãµÄµãÊýÒÑ¾­²»¹»½ÉÔÂ·ÑÁË¡£ÇëÈ·ÈÏ»¹ÓÐ318¸öÓÎÏ·µã¡£\n");
+                                write("ä½ çš„é»žæ•¸å·²ç¶“ä¸å¤ ç¹³æœˆè²»äº†ã€‚è«‹ç¢ºèªé‚„æœ‰318å€‹éŠæˆ²é»žã€‚\n");
                 }
         }
 }
 int help()
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : fee
-           fee <¶ÔÏóÃû³Æ>                   (Î×Ê¦×¨ÓÃ)
+æŒ‡ä»¤æ ¼å¼ : fee
+           fee <å°è±¡åç¨±>                   (å·«å¸«å°ˆç”¨)
 
-Õâ¸öÖ¸Áî¿ÉÒÔÏÔÊ¾Äã»òÖ¸¶¨¶ÔÏóµÄ½»·ÑÇé¿ö¡£
-½»·ÑµÈÐÅÏ¢Çë·ÃÎÊÖ÷Ò³ [http://www.tomud.com] ¡£
+é€™å€‹æŒ‡ä»¤å¯ä»¥é¡¯ç¤ºä½ æˆ–æŒ‡å®šå°è±¡çš„äº¤è²»æƒ…æ³ã€‚
+äº¤è²»ç­‰ä¿¡æ¯è«‹è¨ªå•ä¸»é  [http://www.tomud.com] ã€‚
 
 HELP );
     return 1;

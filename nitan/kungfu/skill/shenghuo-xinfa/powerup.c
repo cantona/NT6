@@ -9,17 +9,17 @@ int exert(object me, object target)
         int skill;
 
         if (target != me)
-                return notify_fail("你只能用圣火心法来提升自己的战斗力。\n");
+                return notify_fail("浣犲彧鑳界敤鑱栫伀蹇冩硶渚嗘彁鍗囪嚜宸辩殑鎴伴鍔涖�俓n");
 
         if ((int)query("neili", me) < 150)
-                return notify_fail("你的内力不够。\n");
+                return notify_fail("浣犵殑鍏у姏涓嶅銆俓n");
 
         if ((int)query_temp("powerup", me))
-                return notify_fail("你已经在运功中了。\n");
+                return notify_fail("浣犲凡缍撳湪閬嬪姛涓簡銆俓n");
 
         skill = me->query_skill("force");
         addn("neili", -150, me);
-        message_combatd(HIM "$N默运圣火心法，脸色先由黄翻紫，紧接着由紫翻蓝，再由蓝翻红，最后又恢复为黄色，甚为诡异。\n" NOR,me);
+        message_combatd(HIM "$N榛橀亱鑱栫伀蹇冩硶锛岃噳鑹插厛鐢遍粌缈荤传锛岀穵鎺ヨ憲鐢辩传缈昏棈锛屽啀鐢辫棈缈荤磪锛屾渶寰屽張鎭㈠京鐐洪粌鑹诧紝鐢氱偤瑭暟銆俓n" NOR,me);
         addn_temp("apply/attack", skill*2/5, me);
         addn_temp("apply/dodge", skill*2/5, me);
         addn_temp("apply/parry", skill*2/5, me);
@@ -38,6 +38,6 @@ void remove_effect(object me, int amount)
                 addn_temp("apply/dodge", -amount, me);
                 addn_temp("apply/parry", -amount, me);
                 delete_temp("powerup", me);
-                tell_object(me, "你的圣火心法运行完毕，长长地吐了口气，将内力收回丹田。\n");
+                tell_object(me, "浣犵殑鑱栫伀蹇冩硶閬嬭瀹岀暍锛岄暦闀峰湴鍚愪簡鍙ｆ埃锛屽皣鍏у姏鏀跺洖涓圭敯銆俓n");
         }
 }

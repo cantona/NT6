@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "´ò²ñ¹µ");
+        set("short", "æ‰“æŸ´æº");
         set("long", @LONG
-´ò²ñ¹µµØÊÆ²»ÈçÎÚÇÊÁëÄÇÑùÏÕÒª£¬±È½ÏÆ½Ì¹£¬¹ÙµÀÁ½±ßÈ«ÊÇÃÜÁÖ£¬
-Ê±³£ÓÐéÔ·ò¿³²ñµÄÉùÒô´ÓÁÖÖÐ´«³ö¡£
+æ‰“æŸ´æºåœ°å‹¢ä¸å¦‚çƒéž˜å¶ºé‚£æ¨£éšªè¦ï¼Œæ¯”è¼ƒå¹³å¦ï¼Œå®˜é“å…©é‚Šå…¨æ˜¯å¯†æž—ï¼Œ
+æ™‚å¸¸æœ‰æ¨µå¤«ç æŸ´çš„è²éŸ³å¾žæž—ä¸­å‚³å‡ºã€‚
 LONG );
         set("exits", ([
                 "southwest" : __DIR__"gulang",

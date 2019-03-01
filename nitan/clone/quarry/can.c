@@ -3,8 +3,8 @@ inherit QUARRY;
 
 void create()
 {
-        set_name(HIG "��" NOR, ({ "can"}));
-        set("long", HIG "һֻ��ͨ�Ĳϡ�\n" NOR);
+        set_name(HIG "蠶" NOR, ({ "can"}));
+        set("long", HIG "一只普通的蠶。\n" NOR);
 
         set("age", 3);
         set("str", 1);

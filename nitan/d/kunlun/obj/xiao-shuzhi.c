@@ -1,4 +1,4 @@
-// xiao-shuzhi.c Ğ¡Ê÷Ö¦
+// xiao-shuzhi.c å°æ¨¹æ
 
 #include <weapon.h>
 #include <ansi.h>
@@ -7,17 +7,17 @@ inherit SWORD;
 
 void create()
 {
-        set_name(HIY"Ğ¡Ê÷Ö¦"NOR,({ "xiao shuzhi", "shuzhi" }) );
+        set_name(HIY"å°æ¨¹æ"NOR,({ "xiao shuzhi", "shuzhi" }) );
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ö¦");
+                set("unit", "æ");
                 set("value", 0);
                 set("material", "bamboo");
-                set("long", "ÕâÊÇÒ»Ö¦Ğ¡Ê÷Ö¦¡£\n");
-                set("wield_msg", "$NÄÃ³öÒ»Ö¦$n£¬ÎÕÔÚÊÖÖĞ¡£\n");
-                set("unequip_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+                set("long", "é€™æ˜¯ä¸€æå°æ¨¹æã€‚\n");
+                set("wield_msg", "$Næ‹¿å‡ºä¸€æ$nï¼Œæ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unequip_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
         }
         init_sword(3);
         setup();

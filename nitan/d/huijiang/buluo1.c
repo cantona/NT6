@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�ز�����");
+        set("short", "回部部落");
         set("long", @LONG
-�˴����������֣�һ��б��ֱ�������ԭ�������ڴ����ڼ�������
-��֮�䣬���ߵ�һ���������ر�Ĵ�һ�㡣�ϱ�����С·ͨ������֮
-�С�
+此處三面是樹林，一面斜坡直連到大草原。你現在處身在幾個大帳
+篷之間，東邊的一個帳篷看來特別的大一點。南邊有條小路通向樹林之
+中。
 LONG);
         set("exits", ([ /* sizeof() == 4 */
                 "east"  : __DIR__"zhangpeng",

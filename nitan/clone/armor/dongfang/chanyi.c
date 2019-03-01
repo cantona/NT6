@@ -5,13 +5,13 @@ inherit SURCOAT;
 
 void create()
 {
-        set_name(HIG "²õÒíÅû·ç" NOR, ({ "chanyi pifeng", "chanyi", "pifeng" }) );
+        set_name(HIG "èŸ¬ç¿¼æŠ«é¢¨" NOR, ({ "chanyi pifeng", "chanyi", "pifeng" }) );
         set_weight(1);
-        set("long", HIG "¶«·½²»°ÜËù´©´÷µÄÅû·ç£¬±¡Èç²õÒí£¬Æ®ÒİÎŞ±È¡£\n" NOR);
+        set("long", HIG "æ±æ–¹ä¸æ•—æ‰€ç©¿æˆ´çš„æŠ«é¢¨ï¼Œè–„å¦‚èŸ¬ç¿¼ï¼Œé£„é€¸ç„¡æ¯”ã€‚\n" NOR);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼ş");
+                set("unit", "ä»¶");
                 set("material", "paper");
                 set("value", 3000000);
                 set("armor_prop/armor", 100);
@@ -20,7 +20,7 @@ void create()
                 set("armor_prop/str", 70);
                 set("armor_prop/damage", 8000);
                 set("armor_prop/dodge", 300);
-                set("special/desc", HIR "ÌáÉıÓĞĞ§Çá¹¦300¼¶¡£" NOR);
+                set("special/desc", HIR "æå‡æœ‰æ•ˆè¼•åŠŸ300ç´šã€‚" NOR);
                 set("limit", ([ 
                                         "exp" : 100000000,
                                         "scborn" : 1,

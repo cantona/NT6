@@ -6,20 +6,20 @@ inherit HEAD;
  
 void create()
 {
-        set_name(HIY "Ìì½µ¡¤ÀäÔÂ¹Ú" NOR, ({ "lengyue guan", "lengyue", "guan" }) );
+        set_name(HIY "å¤©é™ï¹’å†·æœˆå† " NOR, ({ "lengyue guan", "lengyue", "guan" }) );
         set_weight(100);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¶¥");
-                set("long", HIY "´«ËµÄËÔÂ¹¬±¦Îï£¬ÔÌº­×Å·Ç·²Ö®ÉñÁ¦¡£\n" NOR);
+                set("unit", "é ‚");
+                set("long", HIY "å‚³èªªä¹ƒæœˆå®®å¯¶ç‰©ï¼Œè˜Šæ¶µè‘—éå‡¡ä¹‹ç¥åŠ›ã€‚\n" NOR);
                 set("value", 1500000);
                 set("armor_prop/dex", 30);
                 set("armor_prop/str", 30);
                 set("armor_prop/con", 30);
                 set("armor_prop/damage", 3000);
                 set("armor_prop/blade", 150);
-                set("special/desc", "ÓĞĞ§µ¶·¨µÈ¼¶Ìá¸ß150¼¶¡£");
+                set("special/desc", "æœ‰æ•ˆåˆ€æ³•ç­‰ç´šæé«˜150ç´šã€‚");
                 set("limit", ([
                          "exp" : 100000000,
                          "scborn" : 1,

@@ -7,14 +7,14 @@ inherit STAFF;
 
 void create()
 {
-    set_name(YEL"´óÊ÷¸É"NOR, ({"shuzhi", "zhi", "branch"}));
+    set_name(YEL"å¤§æ¨¹å¹¹"NOR, ({"shuzhi", "zhi", "branch"}));
     set_weight(1000+random(2000)); 
     if( clonep() )
       set_default_object(__FILE__);
     else {
-      set("long", "ÕâÊÇÒ»¸ùÕÛ¶ÏµÄ´óÊ÷¸É¡£\n");
-        set("unit","¸ù");
-        set("wield_msg","$N¾ÙÆðÒ»¸ù´óÊ÷¸ÉÍÐÔÚÊÖÖÐ¡£\n");
+      set("long", "é€™æ˜¯ä¸€æ ¹æŠ˜æ–·çš„å¤§æ¨¹å¹¹ã€‚\n");
+        set("unit","æ ¹");
+        set("wield_msg","$Nèˆ‰èµ·ä¸€æ ¹å¤§æ¨¹å¹¹æ‰˜åœ¨æ‰‹ä¸­ã€‚\n");
         set("material", "wood");
     }
     init_staff(random(2));

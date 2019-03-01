@@ -3,13 +3,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIW "ýˆ½î" NOR, ({ "dragon vein", "vein" }));
+        set_name(HIW "â–¡ç­‹" NOR, ({ "dragon vein", "vein" }));
         set_weight(2000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "Ò»¸ùýˆ½î£¬ÉÁÉÁ·¢¹â¡£\n" NOR);
-                set("unit", "¸ù");
+                set("long", HIW "ä¸€æ ¹â–¡ç­‹ï¼Œé–ƒé–ƒç™¼å…‰ã€‚\n" NOR);
+                set("unit", "æ ¹");
                 set("value", 400000);
         }
         setup();

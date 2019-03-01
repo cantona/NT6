@@ -1,7 +1,7 @@
 /****************************
  * dtime.c                  *
- * ¿ØÖÆÎï¼þ¶¨Ê±³öÏÖÔÚ·¿¼äÀï *
- * ¶¨ÒåÎª£º F_DTIME         *
+ * æŽ§åˆ¶ç‰©ä»¶å®šæ™‚å‡ºç¾åœ¨æˆ¿é–“è£¡ *
+ * å®šç¾©ç‚ºï¼š F_DTIME         *
  *                          *
  * by Find.                 *
  ****************************/
@@ -33,13 +33,13 @@ nomask string query_disappear_msg()
                 return disappear_msg;
 
         if( this_object()->is_character() )
-                return sprintf("%s´Ò´ÒÃ¦Ã¦µÄ×ßÁË¡£\n",this_object()->name());
+                return sprintf("%såŒ†åŒ†å¿™å¿™çš„èµ°äº†ã€‚\n",this_object()->name());
         else
-                return sprintf("%sÂýÂýµÄÏûÊ§ÁË¡£\n",this_object()->name());
+                return sprintf("%sæ…¢æ…¢çš„æ¶ˆå¤±äº†ã€‚\n",this_object()->name());
 }
 
 /********************************************
- * Ê±¼äÉèÖÃ¸ñÊ½£º
+ * æ™‚é–“è¨­ç½®æ ¼å¼ï¼š
  *      mapping time = ([
  *              time_start1 : time_stop1,
  *              time_start2 : time_stop2,
@@ -51,7 +51,7 @@ nomask string query_disappear_msg()
 nomask void set_appear_time(mapping t)
 {
         if( !mapp(t) || !sizeof(t) )
-                error("F_DTIME: ÎÞÊ±¼ä¸ñÊ½ÉèÖÃ¡£\n");
+                error("F_DTIME: ç„¡æ™‚é–“æ ¼å¼è¨­ç½®ã€‚\n");
 
         foreach(string start, string stop in t) {
                 class time temp;
@@ -61,7 +61,7 @@ nomask void set_appear_time(mapping t)
 
                 if( !parse_string(start, ref temp->start_day, ref temp->start_sec)
                 ||  !parse_string(stop, ref temp->stop_day, ref temp->stop_sec) )
-                        error("F_DTIME: Ê±¼ä¸ñÊ½´íÎó¡£\n");
+                        error("F_DTIME: æ™‚é–“æ ¼å¼éŒ¯èª¤ã€‚\n");
 
                 if( abs(temp->start_day) > abs(temp->stop_day) ) {
                         n = temp->start_day;
@@ -85,7 +85,7 @@ nomask void set_appear_time(mapping t)
 
                 if( ((temp->start_day < 0) && (temp->stop_day >= 0))
                 ||  ((temp->start_day >= 0) && (temp->stop_day < 0)) )
-                        error("F_DTIME: Ê±¼ä¸ñÊ½´íÎó¡£\n");
+                        error("F_DTIME: æ™‚é–“æ ¼å¼éŒ¯èª¤ã€‚\n");
 
                 if( temp->stop_sec == 1 )
                         temp->stop_sec = 1440;
@@ -161,7 +161,7 @@ nomask int query_is_valid_time()
         int dm,d,s;
 
         if( !sizeof(dtime) )
-                error("F_DTIME: ÎÞÊ±¼ä¸ñÊ½ÉèÖÃ¡£\n");
+                error("F_DTIME: ç„¡æ™‚é–“æ ¼å¼è¨­ç½®ã€‚\n");
 
         dm = this_object()->query_day_in_month();
         d = this_object()->query_day();
@@ -198,7 +198,7 @@ nomask int query_lasting_time()
         int *days_per_month = ({ 31,28,31,30,31,30,31,31,30,31,30,30 });
 
         if( !sizeof(dtime) )
-                error("F_DTIME: ÎÞÊ±¼ä¸ñÊ½ÉèÖÃ¡£\n");
+                error("F_DTIME: ç„¡æ™‚é–“æ ¼å¼è¨­ç½®ã€‚\n");
 
         m = this_object()->query_month();
         md = this_object()->query_day_in_month();

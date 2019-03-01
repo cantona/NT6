@@ -7,11 +7,11 @@ int do_close(string arg);
 string look_gate();
 void create()
 {
-        set("short", "´óÔº");
+        set("short", "å¤§é™¢");
         set("long", @LONG
-ÕâÀï¾ÍÊÇÎÂÕ¬½øÃÅµÄÒ»¸ö´óÍ¥Ôº£¬µØÉÏÆÌ×ÅÒ»¿é¿éÆ½ÕûµÄ
-´óÀíÊ¯£¬¹â¿É¼øÈË¡£Ôº×ÓµÄÃæ»ıºÜ´ó£¬¿´µÃ³öÀ´Õâ¼ÒÖ÷ÈË¼Ò×Ê
-·áºñ¡£ÄÏÃæµÄ´óÃÅ(gate)½ôËø×Å¡£
+é€™è£¡å°±æ˜¯æº«å®…é€²é–€çš„ä¸€å€‹å¤§åº­é™¢ï¼Œåœ°ä¸Šèˆ–è‘—ä¸€å¡Šå¡Šå¹³æ•´çš„
+å¤§ç†çŸ³ï¼Œå…‰å¯é‘’äººã€‚é™¢å­çš„é¢ç©å¾ˆå¤§ï¼Œçœ‹å¾—å‡ºä¾†é€™å®¶ä¸»äººå®¶è³‡
+è±åšã€‚å—é¢çš„å¤§é–€(gate)ç·Šé–è‘—ã€‚
 LONG
         );
         set("no_clean_up", 0);
@@ -42,18 +42,18 @@ void close_gate()
         if(objectp(room))
         {
                 delete("exits/south");
-                        message("vision", "ÓĞÈË×ßÉÏÇ°À´°ÑÃÅ¹ØÉÏÁË¡£\n", this_object());
+                        message("vision", "æœ‰äººèµ°ä¸Šå‰ä¾†æŠŠé–€é—œä¸Šäº†ã€‚\n", this_object());
                 delete("exits/north", room);
-                message("vision", "Æ¹µØÒ»Éù£¬ÀïÃæÓĞÈË°Ñ´óÃÅ¹ØÉÏÁË¡£\n", room);
+                message("vision", "ä¹’åœ°ä¸€è²ï¼Œè£¡é¢æœ‰äººæŠŠå¤§é–€é—œä¸Šäº†ã€‚\n", room);
         }
 }
 int do_close(string arg)
 {
         if (!query("exits/south"))
-                return notify_fail("´óÃÅÒÑ¾­ÊÇ¹Ø×ÅµÄÁË¡£\n");
+                return notify_fail("å¤§é–€å·²ç¶“æ˜¯é—œè‘—çš„äº†ã€‚\n");
         if (!arg || (arg != "gate" && arg != "south"))
-                return notify_fail("ÄãÒª¹ØÊ²Ã´£¿\n");
-        message_vision("$NµãÁËµãÍ·¡£\n", this_player());
+                return notify_fail("ä½ è¦é—œä»€éº¼ï¼Ÿ\n");
+        message_vision("$Né»äº†é»é ­ã€‚\n", this_player());
         remove_call_out("close_gate");
         call_out("close_gate", 2);
         return 1;
@@ -62,17 +62,17 @@ int do_open(string arg)
 {
         object room;
         if (query("exits/south"))
-                return notify_fail("´óÃÅÒÑ¾­ÊÇ¿ª×ÅÁË¡£\n");
+                return notify_fail("å¤§é–€å·²ç¶“æ˜¯é–‹è‘—äº†ã€‚\n");
         if (!arg || (arg != "gate" && arg != "south"))
-                return notify_fail("ÄãÒª¿ªÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦é–‹ä»€éº¼ï¼Ÿ\n");
         if(!( room = find_object(__DIR__"gate")) )
                 room = load_object(__DIR__"gate");
         if(objectp(room))
         {
                 set("exits/south", __DIR__"gate");
-                message_vision("$NÓÃÁ¦°Ñ´óÃÅ´òÁË¿ªÀ´¡£\n", this_player());
+                message_vision("$Nç”¨åŠ›æŠŠå¤§é–€æ‰“äº†é–‹ä¾†ã€‚\n", this_player());
                 set("exits/north", __FILE__, room);
-                message("vision", "Ö¨µØÒ»Éù£¬ÀïÃæÓĞÈË°Ñ´óÃÅ´ò¿ªÁË¡£\n", room);
+                message("vision", "å±åœ°ä¸€è²ï¼Œè£¡é¢æœ‰äººæŠŠå¤§é–€æ‰“é–‹äº†ã€‚\n", room);
                 remove_call_out("close_gate");
                 call_out("close_gate", 10);
         }
@@ -80,7 +80,7 @@ int do_open(string arg)
 }
 string look_gate()
 {
-        return "Ò»µÀÈıÕÉÀ´¸ßµÄÖìºìÉ¼Ä¾°üÍ­´óÃÅ¡£\n";
+        return "ä¸€é“ä¸‰ä¸ˆä¾†é«˜çš„æœ±ç´…æ‰æœ¨åŒ…éŠ…å¤§é–€ã€‚\n";
 }
 int valid_leave(object me, string dir)
 {

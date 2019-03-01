@@ -8,9 +8,9 @@ int ask_me();
 
 void create()
 {
-        set_name("éÔ·ò", ({ "qiao fu", "qiao", "woodcutter" }));
-        set("long", "Ò»¸öÖĞÄêéÔ·ò£¬¿´ÆğÀ´ÆÕÆÕÍ¨Í¨£¬µ«ÑÛÖĞÒşÒşÉÁ¶¯×ÅÒ»¹É°ÔÆø¡£\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("æ¨µå¤«", ({ "qiao fu", "qiao", "woodcutter" }));
+        set("long", "ä¸€å€‹ä¸­å¹´æ¨µå¤«ï¼Œçœ‹èµ·ä¾†æ™®æ™®é€šé€šï¼Œä½†çœ¼ä¸­éš±éš±é–ƒå‹•è‘—ä¸€è‚¡éœ¸æ°£ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 35);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -40,7 +40,7 @@ void create()
         prepare_skill("finger", "sun-finger");
 
         set("inquiry", ([
-                "ÉÏÉ½" : "ÒªÏëÉÏÉ½£¬ÏÈ¹ıÁËÎÒÕâ¹ØÔÙËµ¡£\n",
+                "ä¸Šå±±" : "è¦æƒ³ä¸Šå±±ï¼Œå…ˆéäº†æˆ‘é€™é—œå†èªªã€‚\n",
         ]));
 
         setup();
@@ -78,7 +78,7 @@ int chat()
         if (me->is_fighting(ob)) {
                 if( objectp(weapon=query_temp("weapon", me))){
                         command("unwield axe");
-                        message_vision("éÔ·ò´óºÈÒ»Éù£¬Ïò$NÁ¬µãÁËÈıÖ¸¡£\n", ob);
+                        message_vision("æ¨µå¤«å¤§å–ä¸€è²ï¼Œå‘$Né€£é»äº†ä¸‰æŒ‡ã€‚\n", ob);
                         call_out("fast_hit", 1, me, ob, 0);
                         call_out("fast_hit", 2, me, ob, 0);
                         call_out("fast_hit", 3, me, ob, 1);
@@ -91,18 +91,18 @@ int chat()
         if (me->is_fighting()) return ::chat();
 
         if( query("qi", me)*2 <= query("max_qi", me)){
-                command("say "+"¹ûÈ»¸ßÃ÷¡£");
+                command("say "+"æœç„¶é«˜æ˜ã€‚");
                 command("thumb "+getuid(ob));
                 axx=new("/d/heizhao/obj/axe1.c");
                 axx->move(me);
                 command("give "+getuid(ob)+" axe");
-                message_vision("éÔ·ò×ªÉí´ó²½ÏÂÉ½¶øÈ¥£¬Ò»»á¶ù¾Í²»¼ûÁË\n",ob);
+                message_vision("æ¨µå¤«è½‰èº«å¤§æ­¥ä¸‹å±±è€Œå»ï¼Œä¸€æœƒå…’å°±ä¸è¦‹äº†\n",ob);
                 destruct(me);
                 return ::chat();
         }
         else {
                 if( query("qi", ob)*2 <= query("max_qi", ob)){
-                        message_vision("éÔ·ò²»Ğ¼µØ¶Ô$NÆ²ÁËÆ²×ì£º¡°¾ÍÕâµã¹¦·ò£¬»¹ÏëÉÏÉ½¼ûÎÒÊ¦¸µ£¿¹öÄãµÄ°É£¡¡±\n",ob);
+                        message_vision("æ¨µå¤«ä¸å±‘åœ°å°$Næ’‡äº†æ’‡å˜´ï¼šâ€œå°±é€™é»åŠŸå¤«ï¼Œé‚„æƒ³ä¸Šå±±è¦‹æˆ‘å¸«å‚…ï¼Ÿæ»¾ä½ çš„å§ï¼â€\n",ob);
                         ob->move("/d/heizhao/shanlu9");
                         set("combat_exp",10);
                         if (!present("axe", me)) {

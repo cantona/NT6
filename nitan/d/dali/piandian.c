@@ -4,10 +4,10 @@
 inherit ROOM;
 void create()
 {
-        set("short","ƫ��");
+        set("short","偏殿");
         set("long", @LONG
-�����Ǵ������ʹ���ƫ������ʵ۳�������Ӽ��ĸ��󳼣���
-�����Եÿտյ����ģ������ǳ��ȡ�
+這裡是大理國皇宮的偏殿，大理皇帝常在這裡接見心腹大臣，但
+現在顯得空空盪盪的，往西是長廊。
 LONG );
         set("exits",([ /* sizeof() == 1 */
             "west"  : "/d/dali/hualang",

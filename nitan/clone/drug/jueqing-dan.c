@@ -1,5 +1,5 @@
-//¾øÇéµ¤(Jueqing-dan)
-//ºÚ±ª(Blacko)2001/8/
+//çµ•æƒ…ä¸¹(Jueqing-dan)
+//é»‘è±¹(Blacko)2001/8/
 // update by jiuer -9/18/2001
 
 #include <ansi.h>
@@ -11,14 +11,14 @@ void init();
 
 void create()
 {
-        set_name(BLU"¾øÇéµ¤"NOR, ({"jueqing dan", "jueqing", "dan"}));
+        set_name(BLU"çµ•æƒ…ä¸¹"NOR, ({"jueqing dan", "jueqing", "dan"}));
         set_weight(50);
         if (clonep())
             set_default_object(__FILE__);
     else 
     {
-                set("unit", "Ã¶");
-        set("long", "Ò»Ã¶ËÄËÄ·½·½÷»×Ó°ãµÄµ¤Ò©£¬É«×÷ÉîºÚ£¬ĞÈ³ô´Ì±Ç¡£\n");
+                set("unit", "æš");
+        set("long", "ä¸€æšå››å››æ–¹æ–¹éª°å­èˆ¬çš„ä¸¹è—¥ï¼Œè‰²ä½œæ·±é»‘ï¼Œè…¥è‡­åˆºé¼»ã€‚\n");
                 set("value", 30000);
                 set("medicine", 1);
                 set("no_sell", 1);
@@ -36,7 +36,7 @@ int cure_ob(object me)
         
         if (me->query_condition("qh_poison") > 10)
         me->apply_condition("qh_poison", 0);
-        message_vision(HIG "$N³ÔÏÂÒ»Ã¶¾øÇéµ¤£¬Çê¿Ì¼ä±ã¾õÒ»¹ÉÁ¹ÒâÖ±Í¸µ¤Ìï¡£\n" NOR, me);
+        message_vision(HIG "$Nåƒä¸‹ä¸€æšçµ•æƒ…ä¸¹ï¼Œé ƒåˆ»é–“ä¾¿è¦ºä¸€è‚¡æ¶¼æ„ç›´é€ä¸¹ç”°ã€‚\n" NOR, me);
 
         destruct(this_object());
         return 1;

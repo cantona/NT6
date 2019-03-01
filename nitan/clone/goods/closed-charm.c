@@ -5,17 +5,17 @@ inherit ITEM;
 
 void create()
 {
-        set_name(YEL "±Õ¹Ø·û" NOR, ({ "closed charm", "charm" }) );
+        set_name(YEL "é–‰é—œç¬¦" NOR, ({ "closed charm", "charm" }) );
         set_weight(30);
 
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", YEL "·ÅÔÚÐÐÄÒÖÐ»áÈÃÈËÄÔ´ü¿ªÇÏ£¬¼Ó¿ì±Õ¹ØµÄËÙ¶È...¡£\n" NOR);
+                set("long", YEL "æ”¾åœ¨è¡Œå›Šä¸­æœƒè®“äººè…¦è¢‹é–‹ç«…ï¼ŒåŠ å¿«é–‰é—œçš„é€Ÿåº¦...ã€‚\n" NOR);
                 set("value", 1);
                 set("no_sell", 1);
                 set("autoload", 1);
-                set("unit", "ÕÅ");
+                set("unit", "å¼µ");
         }
 
         setup();

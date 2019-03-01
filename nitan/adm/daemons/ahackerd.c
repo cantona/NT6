@@ -1,7 +1,7 @@
 // ahackerd.c
 // by Find.
-// ·ÀÖ¹²ÂÃÜÂë. ·âÕËºÅ¹¦ÄÜÒ²ÔÚ´ËÊµÏÖ.
-// ´Ë¹¦ÄÜÒ²ÓĞ±×²¡£¬½¨ÒéÖ»¶ÔÎ×Ê¦ÕËºÅ²ÉÈ¡·À²Â±£»¤¡£
+// é˜²æ­¢çŒœå¯†ç¢¼. å°è³¬è™ŸåŠŸèƒ½ä¹Ÿåœ¨æ­¤å¯¦ç¾.
+// æ­¤åŠŸèƒ½ä¹Ÿæœ‰å¼Šç—…ï¼Œå»ºè­°åªå°å·«å¸«è³¬è™Ÿæ¡å–é˜²çŒœä¿è­·ã€‚
 
 #include <origin.h>
 
@@ -65,7 +65,7 @@ void passwd_mistake(string id,string ip)
         if(!sizeof(hacking) || member_array(id,hacking) == -1)
         {
                 being_hacking += ([ id : 1 ]);
-                log_file("hacking",sprintf("ÕËºÅ:%s ÃÜÂëÊäÈë²»ÕıÈ·.Ê±¼ä:%s À´×Ô:%s\n",
+                log_file("hacking",sprintf("è³¬è™Ÿ:%s å¯†ç¢¼è¼¸å…¥ä¸æ­£ç¢º.æ™‚é–“:%s ä¾†è‡ª:%s\n",
                         id,ctime(time()),ip));
                 save();
                 check_same_ip_number(ip);
@@ -77,10 +77,10 @@ void passwd_mistake(string id,string ip)
                 block_account(id);
                 map_delete(being_hacking,id);
                 save();
-                CHANNEL_D->do_channel(this_object(),"sys",sprintf("ÕËºÅ %s£ºÁ¬Ğø5´ÎÃÜÂëÊäÈë´íÎó£¬´ËÕËºÅ±»·âËøÓèÒÔ±£»¤¡£\n",
+                CHANNEL_D->do_channel(this_object(),"sys",sprintf("è³¬è™Ÿ %sï¼šé€£çºŒ5æ¬¡å¯†ç¢¼è¼¸å…¥éŒ¯èª¤ï¼Œæ­¤è³¬è™Ÿè¢«å°é–äºˆä»¥ä¿è­·ã€‚\n",
                         capitalize(id)));
-                log_file("hacking",sprintf("***ÕËºÅ:%s Á¬Ğø"+MAX_MISTAKE+"´ÎÃÜÂëÊäÈë²»ÕıÈ·±»»³ÒÉÊÜµ½¹¥»÷.\n"
-                        +"   ÓÚ %s ±»ÔİÊ±·âËøÓèÒÔ±£»¤.×îºóÒ»´Î¹¥»÷À´×Ô%s.\n",id,ctime(time()),ip));
+                log_file("hacking",sprintf("***è³¬è™Ÿ:%s é€£çºŒ"+MAX_MISTAKE+"æ¬¡å¯†ç¢¼è¼¸å…¥ä¸æ­£ç¢ºè¢«æ‡·ç–‘å—åˆ°æ”»æ“Š.\n"
+                        +"   äº %s è¢«æš«æ™‚å°é–äºˆä»¥ä¿è­·.æœ€å¾Œä¸€æ¬¡æ”»æ“Šä¾†è‡ª%s.\n",id,ctime(time()),ip));
                 check_same_ip_number(ip);
                 return;
         }
@@ -89,7 +89,7 @@ void passwd_mistake(string id,string ip)
         {
                 being_hacking[id] += 1;
                 save();
-                log_file("hacking",sprintf("ÕËºÅ:%s ÃÜÂëÊäÈë²»ÕıÈ·.Ê±¼ä:%s À´×Ô:%s\n",
+                log_file("hacking",sprintf("è³¬è™Ÿ:%s å¯†ç¢¼è¼¸å…¥ä¸æ­£ç¢º.æ™‚é–“:%s ä¾†è‡ª:%s\n",
                         id,ctime(time()),ip));
                 save();
                 check_same_ip_number(ip);
@@ -119,7 +119,7 @@ void success_login(string id)
         return;
 }
 
-// return 0:ÒÑ¾­±»·âËø 1:³É¹¦·âËø.
+// return 0:å·²ç¶“è¢«å°é– 1:æˆåŠŸå°é–.
 int block_account(string id)
 {
         string file;
@@ -142,7 +142,7 @@ int block_account(string id)
         }
 }
 
-// return 0:±¾ÉíÎ´±»·âËø 1: ³É¹¦½â³ı·âËø.
+// return 0:æœ¬èº«æœªè¢«å°é– 1: æˆåŠŸè§£é™¤å°é–.
 int unblock_account(string id)
 {
         string file;
@@ -183,7 +183,7 @@ string blocked_list()
                 return "";
 
         if(!sizeof(blocked_account))
-                return "Ä¿Ç°"+MUD_NAME+"Ã»ÓĞÈÎºÎÕËºÅ±»·âËø¡£\n";
+                return "ç›®å‰"+MUD_NAME+"æ²’æœ‰ä»»ä½•è³¬è™Ÿè¢«å°é–ã€‚\n";
         else
         {
                 for(i=0; i<sizeof(blocked_account); i++)
@@ -212,11 +212,11 @@ protected void check_same_ip_number(string ip)
         if(!sizeof(ids))
                 return;
         else
-                log_file("hacking",sprintf("\t¹¥»÷À´×ÔIPÓëÔÚÏßÈËÎï %s µÄIPµØÖ·ÏàÍ¬\n",
-                        implode(ids,"¡¢")));
+                log_file("hacking",sprintf("\tæ”»æ“Šä¾†è‡ªIPèˆ‡åœ¨ç·šäººç‰© %s çš„IPåœ°å€ç›¸åŒ\n",
+                        implode(ids,"ã€")));
 }
 
 string query_name()
 {
-        return "×¤ÊØ¾«Áé(AHACKER_D)";
+        return "é§å®ˆç²¾éˆ(AHACKER_D)";
 }

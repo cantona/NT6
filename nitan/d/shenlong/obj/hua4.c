@@ -6,12 +6,12 @@ inherit ITEM;
 
 void create()
 {
-	set_name(HIC "ôä´äÀ¼" NOR, ({"feicui lan", "feicui", "lan"}));
+	set_name(HIC "ç¿¡ç¿ è˜­" NOR, ({"feicui lan", "feicui", "lan"}));
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-        	set("unit", "¶ä");
-		set("long", "ÕâÊÇÒ»¶äÇ§ÄêÄÑµÃÒ»¼ûµÄôä´äÀ¼£¬¾İËµÄÜ½â°Ù¶¾¡£\n");
+        	set("unit", "æœµ");
+		set("long", "é€™æ˜¯ä¸€æœµåƒå¹´é›£å¾—ä¸€è¦‹çš„ç¿¡ç¿ è˜­ï¼Œæ“šèªªèƒ½è§£ç™¾æ¯’ã€‚\n");
         	set("value", 1000000);
 		set("only_do_effect", 1);
 	}
@@ -22,7 +22,7 @@ int do_effect(object me)
 {
         if( time()-query_temp("last_eat/feicui", me)<300 ) 
         {
-                write("Äã¸Õ·şÓÃ¹ıÒ©£¬ĞèÒ©ĞÔ·¢»ÓÍêĞ§ÓÃÒÔºó²ÅÄÜ¼ÌĞø·şÓÃ¡£\n"); 
+                write("ä½ å‰›æœç”¨éè—¥ï¼Œéœ€è—¥æ€§ç™¼æ®å®Œæ•ˆç”¨ä»¥å¾Œæ‰èƒ½ç¹¼çºŒæœç”¨ã€‚\n"); 
                 return 1; 
         }
 
@@ -32,9 +32,9 @@ set("eff_jing",query("max_jing",  me), 	me);
 set("jing",query("max_jing",  me), 	me);
 set("eff_qi",query("max_qi",  me), 	me);
 set("qi",query("max_qi",  me), 	me);
-        message_vision("$N°Ñ" + name() + "ÈÓ½ø×ìÀï£¬¼¸ÏÂ¾ÍÍÌÁËÏÂÈ¥¡£\n", me);
-	tell_object(me, HIG "\nÄãÖ»¾õÒ»¹ÉÇåÏãÇßÈëĞÄ·Î£¬¶ÙÊ±ÁéÌ¨Ò»Æ¬"
-		        "¿ÕÃ÷£¬ÉñÒâÇåË¬£¡\n" NOR);
+        message_vision("$NæŠŠ" + name() + "æ‰”é€²å˜´è£¡ï¼Œå¹¾ä¸‹å°±åäº†ä¸‹å»ã€‚\n", me);
+	tell_object(me, HIG "\nä½ åªè¦ºä¸€è‚¡æ¸…é¦™æ²å…¥å¿ƒè‚ºï¼Œé “æ™‚éˆå°ä¸€ç‰‡"
+		        "ç©ºæ˜ï¼Œç¥æ„æ¸…çˆ½ï¼\n" NOR);
 	destruct(this_object());
 	return 1;
 }

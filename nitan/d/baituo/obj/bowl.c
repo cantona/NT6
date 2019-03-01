@@ -3,20 +3,20 @@ inherit F_LIQUID;
 
 void create()
 {
-        set_name("º£¿Ú´óÍë", ({ "da wan", "wan", "bowl" }));
+        set_name("æµ·å£å¤§ç¢—", ({ "da wan", "wan", "bowl" }));
         set_weight(50);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ö»");
-                set("long", "ÕâÊÇÒ»Ö»¿ÉÊ¢Ë®µÄ´Ö´É´óÍë¡£\n");
+                set("unit", "åª");
+                set("long", "é€™æ˜¯ä¸€åªå¯ç››æ°´çš„ç²—ç“·å¤§ç¢—ã€‚\n");
                 set("value", 0);
                 set("max_liquid", 6);
         }
 
         set("liquid", ([
                 "type" : "water",
-                "name" : "ÇåË®",
+                "name" : "æ¸…æ°´",
                 "remaining"   : 10,
                 "drunk_apply" : 10,
         ]));

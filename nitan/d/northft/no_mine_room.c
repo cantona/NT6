@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "¿óÇø");
+	set("short", "ç¤¦å€");
 	set("long", @LONG
-ÕâÀïÊÇÒ»Æ¬¾Ş´óµÄ¿óÇø£¬·ÅÑÛÒ»ÍûËÄ´¦ÊÇ¾Ş´óµÄÑÒÊ¯£¬ºÜ¶à
-ÑÒÊ¯ÉÏ»¹ÁôÓĞ±»ÈËÇÃÔÒ¹ıµÄºÛ¼££¬µØÉÏ»¹É¢Âä×ÅÒ»Ğ©ËéÊ¯Í·¡£
+é€™è£¡æ˜¯ä¸€ç‰‡å·¨å¤§çš„ç¤¦å€ï¼Œæ”¾çœ¼ä¸€æœ›å››è™•æ˜¯å·¨å¤§çš„å·–çŸ³ï¼Œå¾ˆå¤š
+å·–çŸ³ä¸Šé‚„ç•™æœ‰è¢«äººæ•²ç ¸éçš„ç—•è·¡ï¼Œåœ°ä¸Šé‚„æ•£è½è‘—ä¸€äº›ç¢çŸ³é ­ã€‚
 LONG
 	);
 
@@ -21,9 +21,9 @@ int cmd_dig_function(object me, string arg)
 		return 0;
 
 	if( query("qi", me) <= 20 )
-		return notify_fail("ÄãÒÑ¾­ÀÛµÄÃ»ÓĞÒ»µãÁ¦ÆøÁË¡£\n");
+		return notify_fail("ä½ å·²ç¶“ç´¯çš„æ²’æœ‰ä¸€é»åŠ›æ°£äº†ã€‚\n");
 
-	message_vision("$NÂÕÆğÊÖÖĞµÄÊ®×Ö¸äºİºİµÄÔÒÁËÏÂÈ¥¡£\n", me);
+	message_vision("$Næ„èµ·æ‰‹ä¸­çš„åå­—é¬ç‹ ç‹ çš„ç ¸äº†ä¸‹å»ã€‚\n", me);
 	me->start_busy(10);
 	call_out("finish_dig", 3+random(3), me);
 	return 1;
@@ -40,7 +40,7 @@ protected void finish_dig(object me)
 
 	if( query("qi", me) <= 20 )
 	{
-		tell_object(me, "ÄãÒÑ¾­ÀÛµÄÃ»ÓĞÒ»µãÁ¦ÆøÁË¡£\n");
+		tell_object(me, "ä½ å·²ç¶“ç´¯çš„æ²’æœ‰ä¸€é»åŠ›æ°£äº†ã€‚\n");
 		return;
 	}
 
@@ -48,7 +48,7 @@ addn("qi", -20, 	me);
 
 	if((random(10) <= 3) || !objectp(stone = new(MINE_STONE)))
 	{
-		tell_object(me, "½á¹ûÊ²Ã´Ò²Ã»ÄÜÔÒÏÂÀ´¡£\n");
+		tell_object(me, "çµæœä»€éº¼ä¹Ÿæ²’èƒ½ç ¸ä¸‹ä¾†ã€‚\n");
 		return;
 	}
 
@@ -57,5 +57,5 @@ addn("qi", -20, 	me);
 		destruct(stone);
 		return;
 	}
-	message_vision(sprintf("$NÇÃÏÂÁËÒ»¿é%s¡£\n", stone->name()), me);
+	message_vision(sprintf("$Næ•²ä¸‹äº†ä¸€å¡Š%sã€‚\n", stone->name()), me);
 }

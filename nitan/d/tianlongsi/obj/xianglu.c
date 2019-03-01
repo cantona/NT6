@@ -4,14 +4,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name("ÏãÂ¯", ({ "xiang lu", "lu" }) );
+        set_name("é¦™çˆ", ({ "xiang lu", "lu" }) );
         set_weight(3000);
         set_max_encumbrance(5000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
-                set("long", "ÕâÊÇÒ»¸öÃíÀï³£¼ûµÄÏãÂ¯£¬ÓÃÀ´ÈÃÉÆÄÐÐÅÅ®ÃÇ²åÏã(pushin)½øÔ¸¡£\n");
+                set("unit", "å€‹");
+                set("long", "é€™æ˜¯ä¸€å€‹å»Ÿè£¡å¸¸è¦‹çš„é¦™çˆï¼Œç”¨ä¾†è®“å–„ç”·ä¿¡å¥³å€‘æ’é¦™(pushin)é€²é¡˜ã€‚\n");
                 set("value", 1000);
                 set("material", "gold");
                 set("no_get",1);
@@ -32,17 +32,17 @@ int do_pushin(string arg)
         
         me = this_player();
 
-        if(!arg&&arg!="xiang") return notify_fail("ÄãÒª²åÊ²Ã´¶«Î÷£¿\n");
+        if(!arg&&arg!="xiang") return notify_fail("ä½ è¦æ’ä»€éº¼æ±è¥¿ï¼Ÿ\n");
 
         // if( me->query_temp("marks/dian_temp") &&  random(2) == 1 )
         if( random(2) == 1 )
         {
                 ob=new("/d/tianlongsi/obj/box");
                 ob->move(me);
-                tell_object(me, "\nÄãºöÈ»¾õµÃÏãÔÚ²åÏÂÊ±±»Ê²Ã´µ²×¡ÁË£¡\nÄã°Ç¿ªÏã»Ò£¬·¢ÏÖÁËÒ»¸öºÐ×Ó¡£\n");
+                tell_object(me, "\nä½ å¿½ç„¶è¦ºå¾—é¦™åœ¨æ’ä¸‹æ™‚è¢«ä»€éº¼æ“‹ä½äº†ï¼\nä½ æ‰’é–‹é¦™ç°ï¼Œç™¼ç¾äº†ä¸€å€‹ç›’å­ã€‚\n");
                 return 1;
         }
         else
-                return notify_fail("Äã°ÑÒ»ÖùÏã²å½øÏãÂ¯£¬°ÝÁËÁ½°Ý¡£\n");
+                return notify_fail("ä½ æŠŠä¸€æŸ±é¦™æ’é€²é¦™çˆï¼Œæ‹œäº†å…©æ‹œã€‚\n");
         return 0;
 }

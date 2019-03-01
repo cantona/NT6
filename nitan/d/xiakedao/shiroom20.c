@@ -1,25 +1,25 @@
-// /d/xiakedao/shiroom20.c ���͵� ʯ��20
+// /d/xiakedao/shiroom20.c 俠客島 石室20
 
 inherit ROOM;
 
 int do_study(string arg);
 void create()
 {
-        set("short", "ʯ��");
+        set("short", "石室");
         set("long", @LONG
-������������������������ʵ����˱��ˣ������Բ�֮���ƺ�Ҫ
-վ�����ȡ���λ�������ڳ��л����ڹ������������߸����𡣼�����
-���߾�����ʯ��(wall)��������ɫ���š�
+進得門來，便覺陣陣有形無質的氣浪逼人，功力稍差之人似乎要
+站立不穩。幾位老者正在場中互較內功，身上衣衫高高蓬起。幾名旁
+觀者均背靠石壁(wall)而立，神色緊張。
 LONG );
         set("exits", ([
                 "east"  : __DIR__"shihole5",
         ]));
         set("item_desc", ([
                 "wall" : @WALL
-ǽ�����Ϸ����š��Ӻմ����ǡ��������֡��·�ͼ����Ϊ�򵥣�����
-һ�������ڿն���Զ��ȴ���ƻ���̫��֮�Ρ�һ��ע��д��ͼ����
-�У��ղ��ɾã��᲻���ء�ͼ����ע��������͡��������գ�������
-��Ȼ��
+牆的正上方刻著「□赫大樑城」幾個大字。下方圖案極為簡單，繪了
+一團烈燄騰空而起，遠觀卻又似混沌太極之形。一行注解寫在圖案正
+中：剛不可久，柔不可守。圖外亦注：《光武紀》：氣佳哉！鬱鬱蔥
+蔥然。
 WALL
         ]));
         set("objects", ([

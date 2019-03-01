@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-        set("short", "����ʯ");
+        set("short", "三島石");
         set("long", @LONG
-����ʯ�Ͽ̡���ħ�����֣��ഫΪ����ʦ���꽵ħ�����ʯ��
-�����ӽ�������ʯ��Ϊ������Ϊ���������ĵ�ʯ��ʯ�Ѵ���Ȼ����
-ʯ�ݡ�
+三島石上刻“降魔”二字，相傳為張天師當年降魔，因巨石當
+道，揮劍力劈，石裂為三，成為三塊相連的島石。石裂處自然生成
+石梯。
 LONG );
         set("outdoors","qingcheng");
         set("exits", ([

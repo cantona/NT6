@@ -2,15 +2,15 @@
 inherit TASK;
 void create()
 {
-    set_name(RED"Í¨¼©¸æÊ¾"NOR, ({ "tongji gaoshi", "gaoshi"}) );  
+    set_name(RED"é€šç·å‘Šç¤º"NOR, ({ "tongji gaoshi", "gaoshi"}) );  
     set_weight(10);  
     if( clonep() )  
             destruct(this_object());  
     else { 
-            set("unit", "ÕÅ");
+            set("unit", "å¼µ");
             set("material", "paper");  
-            set("long", "Ò»ÕÅÍ¨¼©¸æÊ¾¡£\n"); 
+            set("long", "ä¸€å¼µé€šç·å‘Šç¤ºã€‚\n"); 
        }
-       set("owner", "ÑÃÒÛ");  
+       set("owner", "è¡™å½¹");  
        setup();  
 }

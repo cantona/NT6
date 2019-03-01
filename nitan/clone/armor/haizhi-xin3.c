@@ -6,12 +6,12 @@ inherit NECK;
 
 void create()
 {
-        set_name(HIC "º£Ö®ÐÄ" NOR, ({ "haizhi xin3", "haizhi", "xin3" }));
+        set_name(HIC "æµ·ä¹‹å¿ƒ" NOR, ({ "haizhi xin3", "haizhi", "xin3" }));
         set_weight(500);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "´®");
+                set("unit", "ä¸²");
                 set("value", 200000);
                 set("material", "gold");
                 set("armor_prop/damage", 200);

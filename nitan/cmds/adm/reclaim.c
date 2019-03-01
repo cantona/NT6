@@ -15,7 +15,7 @@ int main(object me, string arg)
                 return 0;
 //#endif
 
-        write(sprintf("Ò»¹²Çå³ıÁË %d ¸ö±äÁ¿.\n",
+        write(sprintf("ä¸€å…±æ¸…é™¤äº† %d å€‹è®Šé‡.\n",
                       reclaim_objects()));
         return 1;
 }
@@ -23,9 +23,9 @@ int main(object me, string arg)
 int help()
 {
         write(@TEXT
-Ö¸Áî¸ñÊ½: reclaim
+æŒ‡ä»¤æ ¼å¼: reclaim
 
-²éÔÄËùÓĞµÄ¶ÔÏó£¬Çå³ıÄÇĞ©²»Ó¦¼ÌĞø±£´æÔÚÄÚ´æÖĞµÄ±äÁ¿¡£
+æŸ¥é–±æ‰€æœ‰çš„å°è±¡ï¼Œæ¸…é™¤é‚£äº›ä¸æ‡‰ç¹¼çºŒä¿å­˜åœ¨å…§å­˜ä¸­çš„è®Šé‡ã€‚
 TEXT );
         return 1;
 }

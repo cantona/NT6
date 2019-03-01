@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��ͬ��");
+        set("short", "胡同口");
         set("long", @LONG
-�����߾������������ϰ��յľ�ס����ֻ����ͬ����������ЩС���棬
-�����С�С�ӻ��̵ȡ�һЩ������������������
+往裡走就是洛陽城內老百姓的居住區。只見胡同口兩邊是有些小店面，
+有米行、小雜貨舖等。一些居民從這裡進進出出。
 LONG);
         set("outdoors", "luoyang");
         set("no_clean_up", 0);

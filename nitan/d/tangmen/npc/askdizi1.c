@@ -3,13 +3,13 @@ inherit NPC;
 
 void create()
 {       
-        string *order = ({"ÕÅ", "Íõ", "Àî", "ÕÔ", "Ëï", "Ğì", "Ö£", "ÖÜ", "Îâ",
-                "½¯", "Éò", "Ñî", "Ãç", "Òü", "½ğ", "Îº", "ÌÕ", "Óá", "Áø", "Öì"});
-        string *orderr = ({"°ü°ü", "±¦±¦", "¹Ô¹Ô", "Ğ¡Ğ¡", "ÀÚÀÚ",
-                "¼¦¼¦", "Ñ»Ñ»", "¹·¹·", "Ã¨Ã¨","ÇåÇå","Ã÷Ã÷","·É·É"});
+        string *order = ({"å¼µ", "ç‹", "æ", "è¶™", "å­«", "å¾", "é„­", "å‘¨", "å³",
+                "è”£", "æ²ˆ", "æ¥Š", "è‹—", "å°¹", "é‡‘", "é­", "é™¶", "ä¿", "æŸ³", "æœ±"});
+        string *orderr = ({"åŒ…åŒ…", "å¯¶å¯¶", "ä¹–ä¹–", "å°å°", "ç£Šç£Š",
+                "é›é›", "é´‰é´‰", "ç‹—ç‹—", "è²“è²“","æ¸…æ¸…","æ˜æ˜","é£›é£›"});
         set_name(order[random(20)]+orderr[random(8)], ({ "boy","nanhai" }) );
-        set("title", "ÎŞÖªÄĞº¢");
-        set("gender", "ÄĞĞÔ" );
+        set("title", "ç„¡çŸ¥ç”·å­©");
+        set("gender", "ç”·æ€§" );
         set("age",5+random(3));
         set("combat_exp", 100);
         set("attitude", "friendly");
@@ -40,31 +40,31 @@ int do_dating(string arg)
         string str=query("id", me);
        
         if (!arg || arg != "wenzi")
-             return notify_fail("ÄãÏë´òÌıÊ²Ã´£¬Äãµ¹ÊÇËµ°¡£¡\n");
+             return notify_fail("ä½ æƒ³æ‰“è½ä»€éº¼ï¼Œä½ å€’æ˜¯èªªå•Šï¼\n");
         
         if( query("dname") != query("id", me) )
-             return notify_fail("ÎÒ²»ÏëËµ£¬Äã²»ÒªÎÊ£¬ÎÊÁËÒ²°×ÎÊ£¡\n");     
+             return notify_fail("æˆ‘ä¸æƒ³èªªï¼Œä½ ä¸è¦å•ï¼Œå•äº†ä¹Ÿç™½å•ï¼\n");     
          
         if( !(query_temp("started", me)) )
-             return notify_fail("¹ØÓÚÄãµÄÎÊÌâ£¬ÎÒÒª¿¼ÂÇÒ»ÏÂ£¬ÄãÏÖÔÚÊÇ²»ÊÇ¾õµÃÓĞµãÈÈ°¡£¡\n");
+             return notify_fail("é—œäºä½ çš„å•é¡Œï¼Œæˆ‘è¦è€ƒæ…®ä¸€ä¸‹ï¼Œä½ ç¾åœ¨æ˜¯ä¸æ˜¯è¦ºå¾—æœ‰é»ç†±å•Šï¼\n");
         
         if( !(query_temp("asked", me)) )
            {
              command("ah");
-             command("say ÕÒÎÒ£¬ÄãËãÕÒ¶ÔÁË£¬²»Â÷ÄãËµ°É£¡ÎÒ¸Õ±»ÎÃ×Ó¶£¹ı£¬ÄãËµÎÒ»á²»»áÖªµÀ°¡£¡\n");
+             command("say æ‰¾æˆ‘ï¼Œä½ ç®—æ‰¾å°äº†ï¼Œä¸çä½ èªªå§ï¼æˆ‘å‰›è¢«èšŠå­å®éï¼Œä½ èªªæˆ‘æœƒä¸æœƒçŸ¥é“å•Šï¼\n");
              
              switch(random(2))
              {
                 case 0 : command("joke");break;
-                case 1 : set_temp("asked",1,me);tell_object(me,HIC"»°Òô¸ÕÂä£¬Ò»¸ö×İÉíÃ»ÓĞÓ°ÁË£¡\n"NOR); 
+                case 1 : set_temp("asked",1,me);tell_object(me,HIC"è©±éŸ³å‰›è½ï¼Œä¸€å€‹ç¸±èº«æ²’æœ‰å½±äº†ï¼\n"NOR); 
              destruct(ob);delete_temp("started", me);break;
                 default: return 1;
              }
             return 1;                       
             }  
-        tell_object(me,"»°»¹Ã»ËµÍê£¬¾ÍÌı¼û¡£¡£¡£¡£¡£¡£\n");       
-        tell_object(me,HIG"Ò»Õó¡°ÎËÎË¡±Éù£¬Ò»ÈºÎÃ×Ó´ÓÄãÉí±ß·É¹ı£¡\n"NOR);
-        tell_object(me,HIR"²»ÒªÓÌÔ¥ÁË£¬¿ìÈ¥×·°¡£¡\n"NOR);
+        tell_object(me,"è©±é‚„æ²’èªªå®Œï¼Œå°±è½è¦‹ã€‚ã€‚ã€‚ã€‚ã€‚ã€‚\n");       
+        tell_object(me,HIG"ä¸€é™£â€œå—¡å—¡â€è²ï¼Œä¸€ç¾¤èšŠå­å¾ä½ èº«é‚Šé£›éï¼\n"NOR);
+        tell_object(me,HIR"ä¸è¦çŒ¶è±«äº†ï¼Œå¿«å»è¿½å•Šï¼\n"NOR);
         return 1;
                 
 }

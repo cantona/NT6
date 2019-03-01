@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-        set("short","¹ó±öÊÒ");
+        set("short","è²´è³“å®¤");
         set("long",@LONG
-ÕâÊÇÒ»¼ä¹ó±öÊÒ£¬ÕâÀï´°Ã÷¼¸ÁÁ£¬ÓÃ¾ß¿¼¾¿¡£µ¥ÊÇ´°±ßÒ»¼Ü
-×ÏÖñÈíé½ÒÑÊÇ¼ÛÖµ²»·Æ¡£Æ¾´°Ì÷Íû£¬ÒþÒþÓÚµ­ÑÌÖ®ÖÐ¿É¼û²ÔÉ½µÄ
-Óñ¾Ö·å£¬Ö»¼ûÉ½ÊÆÇåÐã£¬´ä±ÌÓûµÎ£¬ÁîÈËÐÄ¿õÉñâù¡£
+é€™æ˜¯ä¸€é–“è²´è³“å®¤ï¼Œé€™è£¡çª—æ˜Žå¹¾äº®ï¼Œç”¨å…·è€ƒç©¶ã€‚å–®æ˜¯çª—é‚Šä¸€æž¶
+ç´«ç«¹è»Ÿæ¦»å·²æ˜¯åƒ¹å€¼ä¸è²ã€‚æ†‘çª—çœºæœ›ï¼Œéš±éš±äºŽæ·¡ç…™ä¹‹ä¸­å¯è¦‹è’¼å±±çš„
+çŽ‰å±€å³°ï¼Œåªè¦‹å±±å‹¢æ¸…ç§€ï¼Œç¿ ç¢§æ¬²æ»´ï¼Œä»¤äººå¿ƒæ› ç¥žæ€¡ã€‚
 LONG);
         set("objects", ([
            __DIR__"npc/shouling": 1,

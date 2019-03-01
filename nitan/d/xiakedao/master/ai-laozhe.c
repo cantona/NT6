@@ -5,11 +5,11 @@ inherit F_MASTER;
 #include <ansi.h>
 void create()
 {
-        set_name("°«ÀÏÕß", ({ "ai-laozhe", "ai" }));
-        set("title", HIG"»ªÉ½µÚÊ®¶ş´ú³¤ÀÏ"NOR);
+        set_name("çŸ®è€è€…", ({ "ai-laozhe", "ai" }));
+        set("title", HIG"è¯å±±ç¬¬åäºŒä»£é•·è€"NOR);
         set("long", 
-"Ëû¾ÍÊÇ»ªÉ½µÄ³¤ÀÏ°«ÀÏÕß¡£Ò»ÕÅÑÏËàÍşÑÏµÄÁ³£¬Íû¶øÉúÎ·¡£\n");
-        set("gender", "ÄĞĞÔ");
+"ä»–å°±æ˜¯è¯å±±çš„é•·è€çŸ®è€è€…ã€‚ä¸€å¼µåš´è‚…å¨åš´çš„è‡‰ï¼Œæœ›è€Œç”Ÿç•ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 66);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -52,7 +52,7 @@ void create()
         map_skill("sword", "huashan-sword");
         map_skill("strike", "hunyuan-zhang");
 
-        create_family("»ªÉ½ÅÉ", 12, "µÜ×Ó");
+        create_family("è¯å±±æ´¾", 12, "å¼Ÿå­");
 
         set("chat_chance_combat", 60);
         set("chat_msg_combat", ({

@@ -9,9 +9,9 @@
 #define HEAD_LINES              8
 #define MAX_CONTENT_LINES       4000
 
-// 文选排序
+// 鏂囬伕鎺掑簭
 int sort_analectas(mapping a1, mapping a2) { return (a1["add_time"] - a2["add_time"]); }
 
-// 筛选文选
+// 绡╅伕鏂囬伕
 int filter_analectas(mapping analecta, int time) { return (analecta["add_time"] > time); }
 

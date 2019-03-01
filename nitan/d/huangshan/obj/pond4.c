@@ -5,7 +5,7 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIW"�׳�"NOR, ({ "bai chi", "chi", "bai" }) );
+        set_name(HIW"白池"NOR, ({ "bai chi", "chi", "bai" }) );
         set_weight(500);
         set_max_encumbrance(80000);
         set("no_get", 1);
@@ -13,8 +13,8 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "��");
-                set("long", HIW"һ��ˮɫΪ�׵ĳ�̶��\n"NOR);
+                set("unit", "個");
+                set("long", HIW"一個水色為白的池潭。\n"NOR);
                 set("value", 1);
         }
 }

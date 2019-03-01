@@ -31,10 +31,10 @@ int main(object me, string arg, int recur_flag)
                 if (!sscanf(arg, "%*s.c"))
                         arg += ".c";
                 if (file_size(arg) > 0) {
-                        notify_fail("´¦ÀíÍê±Ï¡£\n");
+                        notify_fail("è™•ç†å®Œç•¢ã€‚\n");
                         return clearfile(me ,arg);
                 } else
-                        return notify_fail("Ã»ÓĞÕâ¸öÎÄ¼ş¡£\n");
+                        return notify_fail("æ²’æœ‰é€™å€‹æ–‡ä»¶ã€‚\n");
         }
 
         dir=resolve_path(query("cwd", me),arg);
@@ -46,9 +46,9 @@ int main(object me, string arg, int recur_flag)
 
         if (!sizeof(file)) {
                 if (file_size(dir) == -2)
-                        return notify_fail("Ä¿Â¼ÊÇ¿ÕµÄ¡£\n");
+                        return notify_fail("ç›®éŒ„æ˜¯ç©ºçš„ã€‚\n");
                 else
-                        return notify_fail("Ã»ÓĞÕâ¸öÄ¿Â¼¡£\n");
+                        return notify_fail("æ²’æœ‰é€™å€‹ç›®éŒ„ã€‚\n");
         }
 
         i = sizeof(file);
@@ -57,7 +57,7 @@ int main(object me, string arg, int recur_flag)
                         file[i][0] += "/";
         }
 
-        write("ÕıÔÚ´¦ÀíÄ¿Â¼£º" + dir + "\n");
+        write("æ­£åœ¨è™•ç†ç›®éŒ„ï¼š" + dir + "\n");
 
         if (sizeof(file)) {
                 for(i = 0,j = sizeof(file); i < j; i ++) {
@@ -97,7 +97,7 @@ int clearfile(object me, string file)
 
         reset_eval_cost();
 
-        write("\tÕıÔÚÕûÀíÎÄ¼ş" + file);
+        write("\tæ­£åœ¨æ•´ç†æ–‡ä»¶" + file);
         for (i = 0; i < sizeof(in_text); i ++) {
                 if (strsrch(in_text[i], "set(\"coor/") == -1) {
                         if (nullp(temp_text))
@@ -116,18 +116,18 @@ int clearfile(object me, string file)
 
         write_file(file, out_text, 1);
 
-        write("Íê±Ï¡£\n");
+        write("å®Œç•¢ã€‚\n");
         return 1;
 }
 
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½: clearcoor [-d | -s] [<Â·¾¶Ãû> | <ÎÄ¼şÃû>]
+æŒ‡ä»¤æ ¼å¼: clearcoor [-d | -s] [<è·¯å¾‘å> | <æ–‡ä»¶å>]
 
-Çå³ıÖ¸¶¨Ä¿Â¼ÏÂËùÓĞµÄÎÄ¼şµÄ¶àÓà×ø±ê£¬Èç¹û²»Ö¸¶¨
-Ä¿Â¼, ÔòÊ¹ÓÃµ±Ç°Ä¿Â¼¡£Èç¹û´ø²ÎÊı-d£¬ÔòÁ¬´ø´¦Àí
-×ÓÄ¿Â¼¡£Èç¹ûÖ¸¶¨²ÎÊı-s£¬ÔòÖ»´¦Àí¸ÃÎÄ¼ş¡£
+æ¸…é™¤æŒ‡å®šç›®éŒ„ä¸‹æ‰€æœ‰çš„æ–‡ä»¶çš„å¤šä½™åæ¨™ï¼Œå¦‚æœä¸æŒ‡å®š
+ç›®éŒ„, å‰‡ä½¿ç”¨ç•¶å‰ç›®éŒ„ã€‚å¦‚æœå¸¶åƒæ•¸-dï¼Œå‰‡é€£å¸¶è™•ç†
+å­ç›®éŒ„ã€‚å¦‚æœæŒ‡å®šåƒæ•¸-sï¼Œå‰‡åªè™•ç†è©²æ–‡ä»¶ã€‚
 
 HELP
 );

@@ -4,7 +4,7 @@
  * File   : network_d.c
  * Author : Clode@RevivalWorld
  * Date   : 2002-9-12
- * Note   : ÍøÂ·×ÊÑ¶¾«Áé
+ * Note   : ç¶²è·¯è³‡è¨Šç²¾éˆ
  * Update :
  *  o 2000-00-00  
  *
@@ -60,7 +60,7 @@ string query_network_packet_stats()
 {
 	mapping networkstats = network_stats();
 
-	return sprintf("ÒÑ½ÓÊÕ %s ·â°ü(%.2f/sec)£¬ÒÑ´«ËÍ %s ·â°ü(%.2f/sec)", NUMBER_D->number_symbol(networkstats["incoming packets total"]), to_float(networkstats["incoming packets total"])/uptime(), NUMBER_D->number_symbol(networkstats["outgoing packets total"]), to_float(networkstats["outgoing packets total"])/uptime());
+	return sprintf("å·²æ¥æ”¶ %s å°åŒ…(%.2f/sec)ï¼Œå·²å‚³é€ %s å°åŒ…(%.2f/sec)", NUMBER_D->number_symbol(networkstats["incoming packets total"]), to_float(networkstats["incoming packets total"])/uptime(), NUMBER_D->number_symbol(networkstats["outgoing packets total"]), to_float(networkstats["outgoing packets total"])/uptime());
 
 }
 
@@ -68,7 +68,7 @@ string query_network_volume_stats()
 {
 	mapping networkstats = network_stats();
 
-	return sprintf("ÒÑ½ÓÊÕ %s ×ÊÁÏ(%.3f KBytes/sec)£¬ÒÑ´«ËÍ %s ×ÊÁÏ(%.3f KBytes/sec)", dsize(networkstats["incoming volume total"]), to_float(networkstats["incoming volume total"])/1024./uptime(), dsize(networkstats["outgoing volume total"]), to_float(networkstats["outgoing volume total"])/1024./uptime());
+	return sprintf("å·²æ¥æ”¶ %s è³‡æ–™(%.3f KBytes/sec)ï¼Œå·²å‚³é€ %s è³‡æ–™(%.3f KBytes/sec)", dsize(networkstats["incoming volume total"]), to_float(networkstats["incoming volume total"])/1024./uptime(), dsize(networkstats["outgoing volume total"]), to_float(networkstats["outgoing volume total"])/1024./uptime());
 
 }
 
@@ -78,5 +78,5 @@ void create()
 }
 string query_name()
 {
-	return "ÍøÂ·×ÊÑ¶ÏµÍ³(NETWORK_D)";
+	return "ç¶²è·¯è³‡è¨Šç³»çµ±(NETWORK_D)";
 }

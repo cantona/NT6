@@ -4,14 +4,14 @@ inherit TESSERA;
 
 void create()
 {
-        set_name(YEL "÷è÷ë¡¤ÍÁ" NOR, ({"qi lin", "earth"}));
+        set_name(YEL "éº’éºŸï¹’åœŸ" NOR, ({"qi lin", "earth"}));
         set_weight(20);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", YEL "¿ÉÓÃÓÚÏâÇ¶10LV£¬ÊôĞÔÍÁ¡£\n" NOR);
+                set("long", YEL "å¯ç”¨äºé‘²åµŒ10LVï¼Œå±¬æ€§åœŸã€‚\n" NOR);
                 set("value", 100000);
-                set("unit", "¿é");
+                set("unit", "å¡Š");
                 set("no_identify", 1);
         }
         setup();

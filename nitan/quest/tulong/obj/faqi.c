@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£¨ÊÀ¼Í£©
+// ç¥è©±ä¸–ç•Œï¹’è¥¿éŠè¨˜ï¹’ç‰ˆæœ¬ï¼ˆä¸–ç´€ï¼‰
 /* <SecCrypt CPL V3R05> */
 
 //by night 
@@ -8,13 +8,13 @@ string test_name(string);
 inherit ITEM;
 
 string *names = ({
-  "·¨Áå",
-  "Ä¾Óã",
-  "¾­ÂÚ",
-  "ÂŞÒÂ",
-  "ìøÕÈ",
-  "ÄîÖé",
-  "ôÂôÄ",
+  "æ³•éˆ´",
+  "æœ¨é­š",
+  "ç¶“ç¶¸",
+  "ç¾…è¡£",
+  "ç¦ªæ–",
+  "å¿µç ",
+  "è¢ˆè£Ÿ",
 });
 
 string *ids = ({
@@ -28,13 +28,13 @@ string *ids = ({
 });
 
 string *units = ({
-  "¸ö",
-  "¸ö",
-  "ÅÌ",
-  "¼ş",
-  "¸ù",
-  "´®",
-  "¼ş",
+  "å€‹",
+  "å€‹",
+  "ç›¤",
+  "ä»¶",
+  "æ ¹",
+  "ä¸²",
+  "ä»¶",
 });
 
 void create()
@@ -45,9 +45,9 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {      
-                set("no_drop","ÕâÊÇ·ğ¼Ò·¨Æ÷£¬²»¿ÉËæ±ã¶ªÆú¡£\n");
+                set("no_drop","é€™æ˜¯ä½›å®¶æ³•å™¨ï¼Œä¸å¯éš¨ä¾¿ä¸Ÿæ£„ã€‚\n");
                 set("no_put",1);
-                set("long", "ÕâÊÇ·ğ¼Ò·¨Æ÷£¬Äã¿ÉÒÔÓÃËüÀ´²¼µÀ£¨budao£©¡£\n");
+                set("long", "é€™æ˜¯ä½›å®¶æ³•å™¨ï¼Œä½ å¯ä»¥ç”¨å®ƒä¾†å¸ƒé“ï¼ˆbudaoï¼‰ã€‚\n");
                 set("value", 0);
              }
         setup();
@@ -85,65 +85,65 @@ int do_budao(string arg)
 
         if( query_temp("obj/done", me) >= 1 )
         {
-          tell_object(me,"ÄãÒÑ¾­Íê³É²¼µÀÁË£¬»ØÈ¥±¨¸æ°É¡£\n");
+          tell_object(me,"ä½ å·²ç¶“å®Œæˆå¸ƒé“äº†ï¼Œå›å»å ±å‘Šå§ã€‚\n");
           return 1;
         }
         else
         if( query_temp("obj/budao", me)<1 )
         {
-          tell_object(me,"ÏÖÔÚºÃÏñÃ»ÓĞÂÖµ½ÄãÈ¥²¼µÀ£¿\n");
+          tell_object(me,"ç¾åœ¨å¥½åƒæ²’æœ‰è¼ªåˆ°ä½ å»å¸ƒé“ï¼Ÿ\n");
           return 1;
         }
         else
         if( query_temp("obj/where", me) != test_name(base_name(environment(me))) )
         {
-          tell_object(me,"Äã²¼µÀµÄµØ·½²»ÊÇÕâÀï°É£¿\n");
+          tell_object(me,"ä½ å¸ƒé“çš„åœ°æ–¹ä¸æ˜¯é€™è£¡å§ï¼Ÿ\n");
           return 1;
         }
         else
         if( query_temp("budao", environment(me)) >= 1 )
         {
-          tell_object(me,"Õâ¶ù²»¾ÃÇ°ÓĞÈËÀ´²¼¹ıµÀ£¬ÏÖÔÚ¿ÖÅÂÀ´µÃ²»ÊÇÊ±ºò¡£\n");
+          tell_object(me,"é€™å…’ä¸ä¹…å‰æœ‰äººä¾†å¸ƒéé“ï¼Œç¾åœ¨ææ€•ä¾†å¾—ä¸æ˜¯æ™‚å€™ã€‚\n");
           return 1;
         }
         else          
         if( (query("sen", me)<20) )
         {  
-          tell_object(me,"ÄãµÄ¾«Á¦²»ÄÜ¼¯ÖĞ£¬²»¿ÉÒÔ²¼µÀ£¡\n");
+          tell_object(me,"ä½ çš„ç²¾åŠ›ä¸èƒ½é›†ä¸­ï¼Œä¸å¯ä»¥å¸ƒé“ï¼\n");
           return 1;
         }
         else
         if( (query("kee", me)<30) )
         {
-          tell_object(me,"ÄãµÄÉíÌå×´Ì¬Ì«²î£¬²»ÄÜ´«¾­²¼µÀ£¡\n");
+          tell_object(me,"ä½ çš„èº«é«”ç‹€æ…‹å¤ªå·®ï¼Œä¸èƒ½å‚³ç¶“å¸ƒé“ï¼\n");
           return 1;
         }
         else          
         if (j == 0 || !me)
         {
-          tell_object(me,"Õâ¶ùÈË¶¼Ã»ÓĞ£¬²¼Ê²Ã´µÀ£¿\n");
+          tell_object(me,"é€™å…’äººéƒ½æ²’æœ‰ï¼Œå¸ƒä»€éº¼é“ï¼Ÿ\n");
           return 1;
         }
         else
         if (me->is_busy())
         {
-          tell_object(me,"ÄãÏÖÔÚÕıÃ¦×ÅÄØ£¬Ã»·¨²¼µÀ¡£\n");
+          tell_object(me,"ä½ ç¾åœ¨æ­£å¿™è‘—å‘¢ï¼Œæ²’æ³•å¸ƒé“ã€‚\n");
           return 1;
         }
         else
         if (!arg || arg == "" )
         { 
-          tell_object(me,"ÄãÒªÓÃÊ²Ã´µÀ¾ß½øĞĞ²¼µÀ£¿\n");
+          tell_object(me,"ä½ è¦ç”¨ä»€éº¼é“å…·é€²è¡Œå¸ƒé“ï¼Ÿ\n");
           return 1;
         }
         else
         if ( arg == "fa ling" || arg == "mu yu")
         {
-          if(!present(arg,me)) return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷¡£\n");        
+          if(!present(arg,me)) return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™æ¨£æ±è¥¿ã€‚\n");        
           if( nforce<30 || (query("force", me)<nforce) )
-            return notify_fail("³ªèóÇúĞèÒªÄÚÏ¢ÓÆ³¤£¬ÄãµÄÄÚÁ¦²»×ã£¬Á¦²»ÄÜ¼°¡£\n");
+            return notify_fail("å”±æ¢µæ›²éœ€è¦å…§æ¯æ‚ é•·ï¼Œä½ çš„å…§åŠ›ä¸è¶³ï¼ŒåŠ›ä¸èƒ½åŠã€‚\n");
           
-          message_vision(HIW"$NÇåÁËÇåÔë×Ó£¬·¨Ïñ×¯ÑÏ£¬Ò÷³öÒ»Çúèó³ª¡£\n"NOR,me);          
+          message_vision(HIW"$Næ¸…äº†æ¸…å™ªå­ï¼Œæ³•åƒèŠåš´ï¼ŒåŸå‡ºä¸€æ›²æ¢µå”±ã€‚\n"NOR,me);          
           me->start_busy(skl);
           addn("force", -nforce, me);
         remove_call_out ("reacting");
@@ -155,11 +155,11 @@ int do_budao(string arg)
         else
         if ( arg == "luo yi" || arg == "jia sha")
         {
-          if(!present(arg,me)) return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+          if(!present(arg,me)) return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™æ¨£æ±è¥¿ã€‚\n");
           if( nmana<30 || (query("mana", me)<nmana) )
-            return notify_fail("½²¾­±ØĞë·¨Á¦³äÓ¯£¬Äã·¨Á¦²»×ã£¬ÉñË¼ÄÑÒÔ¼¯ÖĞ¡£\n");
+            return notify_fail("è¬›ç¶“å¿…é ˆæ³•åŠ›å……ç›ˆï¼Œä½ æ³•åŠ›ä¸è¶³ï¼Œç¥æ€é›£ä»¥é›†ä¸­ã€‚\n");
             
-          message_vision(HIW"$N´¹Ä¿µÍÊ×£¬ºÏÊ²ÓÚĞØ£¬½²ÆğÁË¡¶·¨»ª¾­¡·¡£\n"NOR,me);          
+          message_vision(HIW"$Nå‚ç›®ä½é¦–ï¼Œåˆä»€äºèƒ¸ï¼Œè¬›èµ·äº†ã€Šæ³•è¯ç¶“ã€‹ã€‚\n"NOR,me);          
           me->start_busy(skl);
           addn("mana", -nmana, me);
         remove_call_out ("reacting");
@@ -171,11 +171,11 @@ int do_budao(string arg)
         else
         if ( arg == "chan zhang" || arg == "jing lun" || arg == "nian zhu")
         {
-          if(!present(arg,me)) return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷¡£\n");        
+          if(!present(arg,me)) return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™æ¨£æ±è¥¿ã€‚\n");        
           if( (nmana<30 || nforce<30) || (query("mana", me)<nmana) || (query("force", me)<nforce) )
-            return notify_fail("¿ªÉè¼ÀÌ³±ØĞëÄÚÁ¦·¨Á¦ÈÚ¶øÎªÒ»£¬ÌìµØ½»»ã£¬ÄãµÄ×´Ì¬»¹²»ÔÊĞí¡£\n");
+            return notify_fail("é–‹è¨­ç¥­å£‡å¿…é ˆå…§åŠ›æ³•åŠ›èè€Œç‚ºä¸€ï¼Œå¤©åœ°äº¤åŒ¯ï¼Œä½ çš„ç‹€æ…‹é‚„ä¸å…è¨±ã€‚\n");
 
-          message_vision(HIW"$N¿ªÉè¼ÀÌ³£¬ÆíÌìÄ¬µ»£¬Îª°ÙĞÕ½µ¸£¡£\n"NOR,me);          
+          message_vision(HIW"$Né–‹è¨­ç¥­å£‡ï¼Œç¥ˆå¤©é»˜ç¦±ï¼Œç‚ºç™¾å§“é™ç¦ã€‚\n"NOR,me);          
           me->start_busy(skl); 
           addn("mana", -nmana, me);
           addn("force", -nforce, me);
@@ -189,7 +189,7 @@ int do_budao(string arg)
 
 int fanchang(object me)
 {
-        message_vision(HIY"$NÉùÒô½¥Î¢£¬ÇúÒâ²»É¢£¬Î§¹ÛµÄÈºÖÚËÆºõÓĞËùÁìÎò¡£\n"NOR,me);
+        message_vision(HIY"$Nè²éŸ³æ¼¸å¾®ï¼Œæ›²æ„ä¸æ•£ï¼Œåœè§€çš„ç¾¤çœ¾ä¼¼ä¹æœ‰æ‰€é ˜æ‚Ÿã€‚\n"NOR,me);
         set_temp("obj/done", 1, me);
         set_temp("budao", 1, environment(me));
         return 1;
@@ -197,7 +197,7 @@ int fanchang(object me)
 
 int jiangjing(object me)
 {
-        message_vision(HIY"$NÉàÕÀÁ«»¨£¬Ìì»¨ÂÒ×¹¡£ÖÜÎ§µÄÈºÖÚÌıµÃßõßõ²»ÒÑ¡£\n"NOR,me);
+        message_vision(HIY"$NèˆŒç¶»è“®èŠ±ï¼Œå¤©èŠ±äº‚å¢œã€‚å‘¨åœçš„ç¾¤çœ¾è½å¾—å˜–å˜–ä¸å·²ã€‚\n"NOR,me);
         set_temp("obj/done", 1, me);
         set_temp("budao", 1, environment(me));
         return 1;
@@ -205,7 +205,7 @@ int jiangjing(object me)
 
 int kaitan(object me)
 {
-        message_vision(HIY"$N´È±¯ÆÕ¶É£¬±¦Ïñ×¯ÑÏ¡£ÖÜÎ§µÄÈºÖÚ¶¼¿´µÃÄ¿µÉ¿Ú´ô¡£\n"NOR,me);
+        message_vision(HIY"$Næ…ˆæ‚²æ™®æ¸¡ï¼Œå¯¶åƒèŠåš´ã€‚å‘¨åœçš„ç¾¤çœ¾éƒ½çœ‹å¾—ç›®çªå£å‘†ã€‚\n"NOR,me);
         set_temp("obj/done", 1, me);
         set_temp("budao", 1, environment(me));
         return 1;
@@ -227,13 +227,13 @@ int do_check(string arg)
         if(!arg) return 0;
         if( (arg == "faqi" || arg == "faqi") && query_temp("obj/budao", me)){
                 write(
-                        "ÕâÊÇÒ»¼ş·¨Æ÷£¬Äã²¼µÀµÄÄ¿µÄµØÊÇ£º"
-                        HIG"¡¸"+query_temp("obj/budaowhere", me)+"¡¹"NOR"¡£\n"NOR);
+                        "é€™æ˜¯ä¸€ä»¶æ³•å™¨ï¼Œä½ å¸ƒé“çš„ç›®çš„åœ°æ˜¯ï¼š"
+                        HIG"ã€Œ"+query_temp("obj/budaowhere", me)+"ã€"NOR"ã€‚\n"NOR);
         }
         else
         {
         if( (arg == "faqi" || arg == "faqi") && !query_temp("obj/budao", me) )
-        write("ÕâÊÇÒ»¼ş·¨Æ÷£¬ÒşÔÌÎŞÉÏ·¨Á¦¡£\n");
+        write("é€™æ˜¯ä¸€ä»¶æ³•å™¨ï¼Œéš±è˜Šç„¡ä¸Šæ³•åŠ›ã€‚\n");
          }
         return 1;
 }
@@ -244,7 +244,7 @@ void reacting (object me, string people, int j)
     return;
 
   if (j == 1)
-    message_vision (people+"¿´¼ûÓĞÈËÔÚ´Ë²¼µÀ£¬²»½ûÍ£ÁËÏÂÀ´£¬¿´¸ö¾¿¾¹¡£\n",me);
+    message_vision (people+"çœ‹è¦‹æœ‰äººåœ¨æ­¤å¸ƒé“ï¼Œä¸ç¦åœäº†ä¸‹ä¾†ï¼Œçœ‹å€‹ç©¶ç«Ÿã€‚\n",me);
   else
-    message_vision (people+"µÈÈË¼ûÓĞÈËÔÚ´Ë²¼µÀ£¬¶¼Î§ÁË¹ıÈ¥£¬¿´¸ö¾¿¾¹¡£\n",me);
+    message_vision (people+"ç­‰äººè¦‹æœ‰äººåœ¨æ­¤å¸ƒé“ï¼Œéƒ½åœäº†éå»ï¼Œçœ‹å€‹ç©¶ç«Ÿã€‚\n",me);
 }

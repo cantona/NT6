@@ -8,13 +8,13 @@ inherit NPC;
 void create()
 {
         if (random(2))
-                set_name(HIM "µûÏÉ" NOR, ({ "die xian", "die", "xian" }));
+                set_name(HIM "è¶ä»™" NOR, ({ "die xian", "die", "xian" }));
         else
-                set_name(HIM "²ÊµûÏÉ×Ó" NOR, ({ "caidie xianzi", "caidie", "xianzi" }));
+                set_name(HIM "å½©è¶ä»™å­" NOR, ({ "caidie xianzi", "caidie", "xianzi" }));
                 
-        set("long", HIM "Õâ±ãÊÇ´«ËµÖÐµÄµûÏÉ£¬Ò»Éí²ÊÒÂ´ò°ç£¬±³ÉÏ»¹ÓÐÒ»¶Ô²ÊÉ«µÄ³á°ò£¬ÑùÃ²±ÈÌìÏÉ¸üÊ¤Èý·Ö¡£\n" NOR);
+        set("long", HIM "é€™ä¾¿æ˜¯å‚³èªªä¸­çš„è¶ä»™ï¼Œä¸€èº«å½©è¡£æ‰“æ‰®ï¼ŒèƒŒä¸Šé‚„æœ‰ä¸€å°å½©è‰²çš„ç¿…è†€ï¼Œæ¨£è²Œæ¯”å¤©ä»™æ›´å‹ä¸‰åˆ†ã€‚\n" NOR);
 
-        set("gender", "Å®ÐÔ");
+        set("gender", "å¥³æ€§");
         set("age", 9999);
         set("attitude", "friendly");
         set("shen_type", 1);
@@ -44,8 +44,8 @@ void create()
         map_skill("unarmed", "yinyang-shiertian");
         
         set("inquiry", ([
-                "ºûµû±ê±¾"   :   "×öºÃµÄºûµû±ê±¾¶¼¶¼½»¸øÐ¡µûÏÉÁË£¬²»¹ýÎÒÕýÐèÒªÕâ¸ö£¬ÄÜ·ñ°ï°ïÃ¦¡£\n",
-                "ÅîÀ³ÏÉµº"               :   "Õâ²»ÊÇÄã¸ÃÀ´µÄµØ·½£¬ÎÒ¿´Äã»¹ÊÇ¿ì×ß°É¡£\n",
+                "è´è¶æ¨™æœ¬"   :   "åšå¥½çš„è´è¶æ¨™æœ¬éƒ½éƒ½äº¤çµ¦å°è¶ä»™äº†ï¼Œä¸éŽæˆ‘æ­£éœ€è¦é€™å€‹ï¼Œèƒ½å¦å¹«å¹«å¿™ã€‚\n",
+                "è“¬èŠä»™å³¶"               :   "é€™ä¸æ˜¯ä½ è©²ä¾†çš„åœ°æ–¹ï¼Œæˆ‘çœ‹ä½ é‚„æ˜¯å¿«èµ°å§ã€‚\n",
         ]));
         set("chat_chance_combat", 120);
         set("chat_msg_combat", ({
@@ -70,8 +70,8 @@ int accept_object(object me, object obj)
             base_name(obj) == "/d/penglai/obj/biaoben")
         {
                 command("nod");
-                message_vision(HIC "$N" HIC "½Ó¹ý" + obj->name() + HIC "£¬µÀ£ºÄ¿Ç°ÎÒÕýÐèÒªÕâ¸ö£¬Ð»Ð» ¡­¡­\n" NOR, this_object());
-                message_vision(NOR + CYN "\n$N" NOR "ÄÃ³öÊ®Á½°×Òø¸ø" + me->name() + NOR + CYN "¡£\n" NOR, this_object(), me);
+                message_vision(HIC "$N" HIC "æŽ¥éŽ" + obj->name() + HIC "ï¼Œé“ï¼šç›®å‰æˆ‘æ­£éœ€è¦é€™å€‹ï¼Œè¬è¬ â€¦â€¦\n" NOR, this_object());
+                message_vision(NOR + CYN "\n$N" NOR "æ‹¿å‡ºåå…©ç™½éŠ€çµ¦" + me->name() + NOR + CYN "ã€‚\n" NOR, this_object(), me);
                 ob = new("/clone/money/silver");
                 ob->set_amount(10);
                 ob->move(me, 1);

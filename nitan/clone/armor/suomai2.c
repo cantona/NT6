@@ -5,12 +5,12 @@ inherit WAIST;
 
 void create()
 {
-        set_name(HIY "ËøÂö" NOR, ({ "suo mai2", "suo", "mai2" }));
+        set_name(HIY "éŽ–è„ˆ" NOR, ({ "suo mai2", "suo", "mai2" }));
         set_weight(10);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ù");
+                set("unit", "æ ¹");
                 set("value", 400000);
                                 set("armor_prop/con", 22);
                 set("armor_prop/dex", -10);

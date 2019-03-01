@@ -13,7 +13,7 @@ int main(object me, string arg)
 
         seteuid(geteuid(me));
 
-        if (! arg) return notify_fail("Ö¸Áî¸ñÊ½ : more <µµÃû>|<Îï¼şÃû> \n");
+        if (! arg) return notify_fail("æŒ‡ä»¤æ ¼å¼ : more <æª”å>|<ç‰©ä»¶å> \n");
 
         if (sscanf(arg, "%s -n", file)) with_line_number = 0;
         else file = arg;
@@ -23,12 +23,12 @@ int main(object me, string arg)
         {
                 ob = present(arg, me);
                 if (! ob) ob = present(arg, environment(me));
-                if (! ob) return notify_fail("Ã»ÓĞÕâ¸öµµ°¸¡£\n");
+                if (! ob) return notify_fail("æ²’æœ‰é€™å€‹æª”æ¡ˆã€‚\n");
                 file = base_name(ob) + ".c";
         }
 
         if (! SECURITY_D->valid_read(file, me, "read_file"))
-                return notify_fail("Ã»ÓĞÕâ¸öµµ°¸¡£\n");
+                return notify_fail("æ²’æœ‰é€™å€‹æª”æ¡ˆã€‚\n");
 
         if (with_line_number)
                 me->start_more_file(file);
@@ -40,10 +40,10 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : more <µµ°¸Ãû> [-n]
+æŒ‡ä»¤æ ¼å¼ : more <æª”æ¡ˆå> [-n]
 
-Õâ¸öÖ¸ÁîÈÃÄã¿ÉÒÔÒÔ·ÖÒ³·½Ê½²éÔÄÒ»¸öÎÄ¼şµÄÄÚÈİ¡£Èç¹û´ø -n
-²ÎÊı£¬Ôò±íÊ¾²»ÏÔÊ¾ĞĞºÅ¡£
+é€™å€‹æŒ‡ä»¤è®“ä½ å¯ä»¥ä»¥åˆ†é æ–¹å¼æŸ¥é–±ä¸€å€‹æ–‡ä»¶çš„å…§å®¹ã€‚å¦‚æœå¸¶ -n
+åƒæ•¸ï¼Œå‰‡è¡¨ç¤ºä¸é¡¯ç¤ºè¡Œè™Ÿã€‚
 
 see also: cat
 HELP );

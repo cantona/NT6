@@ -5,11 +5,11 @@
 inherit ROOM;
 void create()
 {
-        set("short", "��ɽ");
+        set("short", "假山");
         set("long", @LONG
-�����˾����Ⱦ͵��������ɫ��ɽ�εض���ɽ�忡�Σ�ɽ���
-�أ�ɽ��Сͤ��ɽ�л���СԺ��ʯ�š�ʯ�ҵȣ����ư��硣Ϊ����ɽʯ
-�����ټ���
+穿過了九曲廊就到了這裡，黃色的山拔地而起，山峰俊俏，山間古
+柏，山頂小亭，山中還有小院、石橋、石室等，氣勢磅礡。為江南山石
+中所少見。
 LONG );
         set("exits",([
                 "east"      : __DIR__"qishi",

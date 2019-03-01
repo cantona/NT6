@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "�ɴ�");
+	set("short", "渡船");
         set("long", @LONG
-һҶС�ۣ����Ҳ�������ߡ��˸��ˡ�һ����ʮ�������������
-�ֳ���ݣ����ڴ�β�����س��Ŵ���
+一葉小舟，最多也就能載七、八個人。一名六十多歲的老艄公手
+持長竹篙，正在船尾吃力地撐著船。
 LONG );
 	set("no_clean_up", 0);
 	setup();

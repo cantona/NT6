@@ -1,15 +1,15 @@
-// fangzhenqiao.c ·ÃÕæÇÅ
+// fangzhenqiao.c è¨ªçœŸæ©‹
 // Winder Oct.10 1998
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "·ÃÕæÇÅ");
+        set("short", "è¨ªçœŸæ©‹");
         set("long", @LONG
-¿ç¹ýÊ¯½×£¬ÑÛÇ°ÊÇÒ»×ùÊ¯Í·Æö³ÉµÄÐ¡Ð¡¹°ÇÅ¡£ÇÅÉÏÀ¸¸ËÉÏµñÁúÃè
-·ï£¬èòèòÈçÉú¡£ÕâÀïµÄÉ½ÊÆ·Ç³£¶¸¾þ£¬ÍùÏÂÒ»¿´£¬ÐüÑÂ±ÚÁ¢£¬½ÅÏÂ°×
-ÔÆÆ®¹ý£¬Õæ²»ÖªÉíÔÚºÎ¾³¡£
+è·¨éŽçŸ³éšŽï¼Œçœ¼å‰æ˜¯ä¸€åº§çŸ³é ­ç Œæˆçš„å°å°æ‹±æ©‹ã€‚æ©‹ä¸Šæ¬„æ¡¿ä¸Šé›•é¾æ
+é³³ï¼Œæ ©æ ©å¦‚ç”Ÿã€‚é€™è£¡çš„å±±å‹¢éžå¸¸é™¡å³»ï¼Œå¾€ä¸‹ä¸€çœ‹ï¼Œæ‡¸å´–å£ç«‹ï¼Œè…³ä¸‹ç™½
+é›²é£„éŽï¼ŒçœŸä¸çŸ¥èº«åœ¨ä½•å¢ƒã€‚
 LONG
         );
         set("outdoors", "zhongnan");

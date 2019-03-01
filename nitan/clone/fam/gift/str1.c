@@ -3,19 +3,19 @@ inherit __DIR__"gift";
 
 void create()
 {
-        set_name(HIG "ÉñÁ¦Íè" NOR, ({ "shenli wan", "shenli", "wan" }));
+        set_name(HIG "ç¥åŠ›ä¸¸" NOR, ({ "shenli wan", "shenli", "wan" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIG "ÕâÊÇÒ»¿ÅÍ¨Ìå»ëÔ²µÄÒ©Íè£¬¾İËµ³ÔÁË¿ÉÒÔÔöÇ¿ëöÁ¦¡£\n" NOR);
-                set("base_unit", "¿Å");
+                set("long", HIG "é€™æ˜¯ä¸€é¡†é€šé«”æ¸¾åœ“çš„è—¥ä¸¸ï¼Œæ“šèªªåƒäº†å¯ä»¥å¢å¼·è†‚åŠ›ã€‚\n" NOR);
+                set("base_unit", "é¡†");
                 set("base_value", 10000);
                 set("base_weight", 50);
                 set("only_do_effect", 1);
                 set("gift_type", "str");
-                set("gift_name", "ÏÈÌìëöÁ¦");
+                set("gift_name", "å…ˆå¤©è†‚åŠ›");
                 set("gift_point", 40);
-                set("gift_msg", HIY "Í»È»¼äÄãÖ»¾õË«±Û¼¸ºõ±¬ÁÑ£¬³äÂúÁËÁ¦Á¿¡£\n" NOR);
+                set("gift_msg", HIY "çªç„¶é–“ä½ åªè¦ºé›™è‡‚å¹¾ä¹çˆ†è£‚ï¼Œå……æ»¿äº†åŠ›é‡ã€‚\n" NOR);
         }
         setup();
 }

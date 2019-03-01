@@ -1,4 +1,4 @@
-// tong.c Í¨»ÛÉñÑÛ
+// tong.c é€šæ…§ç¥çœ¼
 // Created by rcwiz for yhonline
 
 #include <ansi.h>
@@ -7,7 +7,7 @@ inherit F_CLEAN_UP;
 
 int is_scborn() { return 1; }
 
-string name() { return HIC "Í¨»ÛÉñÑÛ" NOR; }
+string name() { return HIC "é€šæ…§ç¥çœ¼" NOR; }
 
 int perform(object me, string skill, string arg)
 {
@@ -15,28 +15,28 @@ int perform(object me, string skill, string arg)
       
         object ob;
 
-        if (me->query("neili") < 500)return notify_fail("ÄãÄÚÁ¦²»×ã£¬Í¨»ÛÉñÑÛ£¡\n");
+        if (me->query("neili") < 500)return notify_fail("ä½ å…§åŠ›ä¸è¶³ï¼Œé€šæ…§ç¥çœ¼ï¼\n");
 
-        if (me->is_busy())return notify_fail("µÈÄãÃ¦ÍêÔÙËµ°É£¡\n");
+        if (me->is_busy())return notify_fail("ç­‰ä½ å¿™å®Œå†èªªå§ï¼\n");
                 
         if (! objectp(ob = present(arg, environment(me))))
-                return notify_fail("ÕâÀïÃ»ÓĞÕâ¸öÈË£¡¿ÉÄÜÊÇÄãµÄ¸ñÊ½ÓĞ´íÎó£¡\n"
-                                   "¸ñÊ½ £º special tong <¶ÔÏóid> \n");
+                return notify_fail("é€™è£¡æ²’æœ‰é€™å€‹äººï¼å¯èƒ½æ˜¯ä½ çš„æ ¼å¼æœ‰éŒ¯èª¤ï¼\n"
+                                   "æ ¼å¼ ï¼š special tong <å°è±¡id> \n");
 
         if (ob->query_temp("apply/invisible"))
-                return notify_fail("ÕâÀïÃ»ÓĞÕâ¸öÈË£¡¿ÉÄÜÊÇÄãµÄ¸ñÊ½ÓĞ´íÎó£¡\n"
-                                   "¸ñÊ½ £º special tong <¶ÔÏóid> \n");                
+                return notify_fail("é€™è£¡æ²’æœ‰é€™å€‹äººï¼å¯èƒ½æ˜¯ä½ çš„æ ¼å¼æœ‰éŒ¯èª¤ï¼\n"
+                                   "æ ¼å¼ ï¼š special tong <å°è±¡id> \n");                
 
         if (ob->query("special_skill/emperor"))
-                return notify_fail("´ËÈËÄËÕæÃüÌì×Ó£¬ÄãÎŞ·¨²é¿´µ½ËûµÄÇé¿ö¡£\n");
+                return notify_fail("æ­¤äººä¹ƒçœŸå‘½å¤©å­ï¼Œä½ ç„¡æ³•æŸ¥çœ‹åˆ°ä»–çš„æƒ…æ³ã€‚\n");
                 
         if (ob->query("special_skill/lonely"))
-                return notify_fail("´ËÈËÄËÌìÉ·¹ÂĞÇ£¬ÄãÎŞ·¨²é¿´µ½ËûµÄÇé¿ö¡£\n");
+                return notify_fail("æ­¤äººä¹ƒå¤©ç…å­¤æ˜Ÿï¼Œä½ ç„¡æ³•æŸ¥çœ‹åˆ°ä»–çš„æƒ…æ³ã€‚\n");
                                 
         if (ob->query("yanjiu_test"))
-                return notify_fail("´ËÈËÄËÌìÉ·¹ÂĞÇ£¬ÄãÎŞ·¨²é¿´µ½ËûµÄÇé¿ö¡£\n");        
+                return notify_fail("æ­¤äººä¹ƒå¤©ç…å­¤æ˜Ÿï¼Œä½ ç„¡æ³•æŸ¥çœ‹åˆ°ä»–çš„æƒ…æ³ã€‚\n");        
                                                    
-        write(HIW "ÄãÊ©Õ¹³öÍ¨»ÛÉñÑÛÖ®Êõ ¡­¡­\n" NOR, me);
+        write(HIW "ä½ æ–½å±•å‡ºé€šæ…§ç¥çœ¼ä¹‹è¡“ â€¦â€¦\n" NOR, me);
         
         me->add("neili", -500);
         me->start_busy(2);

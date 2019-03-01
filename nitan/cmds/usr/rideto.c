@@ -19,55 +19,55 @@ int main(object me, string arg)
         }
                 
         if (me->over_encumbranced())
-                return notify_fail("ÄãµÄ¸ººÉ¹ıÖØ£¬¶¯µ¯²»µÃ¡£\n");
+                return notify_fail("ä½ çš„è² è·éé‡ï¼Œå‹•å½ˆä¸å¾—ã€‚\n");
 
         if (me->query_encumbrance() < 0)
-                return notify_fail("ÄãµÄ¸ººÉ³öÏÖ¹ÊÕÏ£¬¶¯µ¯²»µÃ¡£\n");
+                return notify_fail("ä½ çš„è² è·å‡ºç¾æ•…éšœï¼Œå‹•å½ˆä¸å¾—ã€‚\n");
 
         if( query_temp("sleeped", me) )
-                return notify_fail("ÄãÏÖÔÚÕıÌÉ×ÅÄØ¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£èººè‘—å‘¢ã€‚\n");
 
         if (me->is_in_prison())
-                return notify_fail("ÄãÕıÔÚ×öÀÎÄØ£¬ÄãÏë¸ÉÊ²Ã´£¿£¡\n");
+                return notify_fail("ä½ æ­£åœ¨åšç‰¢å‘¢ï¼Œä½ æƒ³å¹¹ä»€éº¼ï¼Ÿï¼\n");
 
         if (me->is_fighting())
-                return notify_fail("ÄãÏÖÔÚÕıÔÚÕ½¶·£¡\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£åœ¨æˆ°é¬¥ï¼\n");
 
         if( me->is_ghost() )
-                return notify_fail("Äã»¹ÊÇµÈ»¹ÑôºóÔÙËµ°É¡£\n");
+                return notify_fail("ä½ é‚„æ˜¯ç­‰é‚„é™½å¾Œå†èªªå§ã€‚\n");
 
         if( me->is_busy() || query("doing", me) )
-                return notify_fail("ÄãµÄ¶¯×÷»¹Ã»ÓĞÍê³É£¬²»ÄÜÒÆ¶¯¡£\n");
+                return notify_fail("ä½ çš„å‹•ä½œé‚„æ²’æœ‰å®Œæˆï¼Œä¸èƒ½ç§»å‹•ã€‚\n");
 
         if( !objectp(riding=query_temp("is_riding", me)) )
-                return notify_fail("Äã»¹Ã»ÓĞ×øÆï£¡\n");
+                return notify_fail("ä½ é‚„æ²’æœ‰åé¨ï¼\n");
 
         if( !present(query("id", riding),me) )
-                return notify_fail("ÄãµÄ×øÆï²»ÔÚÄãÉí±ß£¡\n");
+                return notify_fail("ä½ çš„åé¨ä¸åœ¨ä½ èº«é‚Šï¼\n");
 
 /*
         if( !query("outdoors", environment(me)) )
-                return notify_fail("ÔÚ·¿¼äÀï²»ÄÜÂÒÅÜ£¡\n");
+                return notify_fail("åœ¨æˆ¿é–“è£¡ä¸èƒ½äº‚è·‘ï¼\n");
 */
-        // ÕÊÅñÖĞ²»ÄÜrideto
+        // å¸³ç¯·ä¸­ä¸èƒ½rideto
         env = environment(me);
         if( objectp(env) )
         {
                 if( base_name(env) == "/clone/fam/item/zhangpeng" || 
                         base_name(env) == "/clone/fam/item/zhangpeng2" )
                 {
-                        return notify_fail("´Ë´¦²»ÄÜÆïÂí£¡\n");
+                        return notify_fail("æ­¤è™•ä¸èƒ½é¨é¦¬ï¼\n");
                 }
         }
 
         if( query("no_rideto", env) )
-                return notify_fail("ÕâÀïÎŞ·¨ÆïÂí´©Ëó¡£\n");
+                return notify_fail("é€™è£¡ç„¡æ³•é¨é¦¬ç©¿æ¢­ã€‚\n");
                
         if( query("no_magic", env) || query("maze", env) )
-                return notify_fail("Äã·¢ÏÖÕâÀïÓĞµã¹Å¹Ö£¬ÄãµÄ×øÆïºÃÏó²»ÌıÄãµÄÖ¸»Ó£¡\n");
+                return notify_fail("ä½ ç™¼ç¾é€™è£¡æœ‰é»å¤æ€ªï¼Œä½ çš„åé¨å¥½è±¡ä¸è½ä½ çš„æŒ‡æ®ï¼\n");
 
         //if (me->query_condition("killer"))
-        //        return notify_fail("ÄãÓĞÃü°¸ÔÚÉíÄØ£¬Äã»¹ÊÇĞ¡ĞÄÎªÃî£¬²»ÒËÔÚ¹ÙµÀÉÏËÁÎŞ¼Éµ¬ĞĞ×ß£¡\n");
+        //        return notify_fail("ä½ æœ‰å‘½æ¡ˆåœ¨èº«å‘¢ï¼Œä½ é‚„æ˜¯å°å¿ƒç‚ºå¦™ï¼Œä¸å®œåœ¨å®˜é“ä¸Šè‚†ç„¡å¿Œæ†šè¡Œèµ°ï¼\n");
 
         if( objectp(riding=query_temp("is_riding", me)) )
         {           
@@ -75,16 +75,16 @@ int main(object me, string arg)
                 return 1;
         }
         
-        return notify_fail("Äã»¹ÊÇÏÈÕÒÆ¥×øÆïÔÙËµ°É¡£\n");
+        return notify_fail("ä½ é‚„æ˜¯å…ˆæ‰¾åŒ¹åé¨å†èªªå§ã€‚\n");
 }
 
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : rideto <µØµã>
+æŒ‡ä»¤æ ¼å¼ : rideto <åœ°é»>
 
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄãÆïÂíµ½Ö¸¶¨µØµã£¬Èç¹ûÖ¸¶¨²»´ø²ÎÊı¿ÉÒÔ
-²Î¿´ÄãËùÄÜµ½µÄµØ·½¡£
+é€™å€‹æŒ‡ä»¤å¯ä»¥è®“ä½ é¨é¦¬åˆ°æŒ‡å®šåœ°é»ï¼Œå¦‚æœæŒ‡å®šä¸å¸¶åƒæ•¸å¯ä»¥
+åƒçœ‹ä½ æ‰€èƒ½åˆ°çš„åœ°æ–¹ã€‚
 
 HELP );
         return 1;

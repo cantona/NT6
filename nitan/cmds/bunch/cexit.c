@@ -24,32 +24,32 @@ int main(object me, string arg)
 
 	if( !env = BUNCH_D->update_room(env) )
 	{
-		tell_object(me, "ÎŞ·¨Ä¿µÄÔØÈë·¿¼ä£¬ĞŞ¸ÄÊ§°Ü¡£\n");
+		tell_object(me, "ç„¡æ³•ç›®çš„è¼‰å…¥æˆ¿é–“ï¼Œä¿®æ”¹å¤±æ•—ã€‚\n");
 		return 1;
 	}
 	exits = env->query("exits");
 
 	if(!exits || !sizeof(exits))
 	{
-		write("Ä¿Ç°ÕâÀïÃ»ÓĞÈÎºÎ³ö¿Ú¡£\nÇëÊäÈëÒª¼ÓÈë³ö¿ÚµÄ·½Ïò(q ÍË³ö)£º");
+		write("ç›®å‰é€™è£¡æ²’æœ‰ä»»ä½•å‡ºå£ã€‚\nè«‹è¼¸å…¥è¦åŠ å…¥å‡ºå£çš„æ–¹å‘(q é€€å‡º)ï¼š");
 		input_to( (: get_add_dir :), me, env, exits);
 		return 1;
 	}
 
-	out = "Ä¿Ç°ÕâÀïÒÑ´æÔÚµÄ³ö¿Ú£º\n";
+	out = "ç›®å‰é€™è£¡å·²å­˜åœ¨çš„å‡ºå£ï¼š\n";
 
 	foreach(string dir, string dest in exits)
 	{
-		out += sprintf("  %s Í¨Íù %s\n", dir, explode(dest, "/")[<1]);
+		out += sprintf("  %s é€šå¾€ %s\n", dir, explode(dest, "/")[<1]);
 	}
 
-	out += "ÇëÑ¡ÔñÄãÒª½øĞĞµÄ²Ù×÷£º
-(1) É¾³ıÒ»¸öÒÑ´æÔÚµÄ³ö¿Ú¡£\n";
+	out += "è«‹é¸æ“‡ä½ è¦é€²è¡Œçš„æ“ä½œï¼š
+(1) åˆªé™¤ä¸€å€‹å·²å­˜åœ¨çš„å‡ºå£ã€‚\n";
 
 	if(sizeof(exits) >= max_exits)
-		out += "(q) ÍË³ö¡£\n";
+		out += "(q) é€€å‡ºã€‚\n";
 	else
-		out += "(2) ¼ÓÈëÒ»¸öĞÂ³ö¿Ú¡£\n(q) ÍË³ö¡£\n";
+		out += "(2) åŠ å…¥ä¸€å€‹æ–°å‡ºå£ã€‚\n(q) é€€å‡ºã€‚\n";
 
 	write(out);
 	input_to( (: decide_action_do :), me, env, exits );
@@ -69,31 +69,31 @@ protected void decide_action_do(string str, object who, object env, mapping exit
 		return;
 	}
 
-	if(sizeof(str) && (str[0] == '1'))	// É¾³ı
+	if(sizeof(str) && (str[0] == '1'))	// åˆªé™¤
 	{
-		tell_object(who, "ÇëÊäÈëÒªÉ¾³ı³ö¿ÚµÄ·½Ïò(q ÍË³ö)£º");
+		tell_object(who, "è«‹è¼¸å…¥è¦åˆªé™¤å‡ºå£çš„æ–¹å‘(q é€€å‡º)ï¼š");
 		input_to( (: get_del_dir :), who, env, exits);
 		return;
 	}
 
-	if(sizeof(str) && (str[0] == '2'))	// ¼ÓÈë
+	if(sizeof(str) && (str[0] == '2'))	// åŠ å…¥
 	{
 		if(mapp(exits) && (sizeof(exits) >= max_exits))
 		{
-			tell_object(who, sprintf("Ã¿¸ö·¿¼ä×î¶àÖ»ÄÜÓĞ%s¸ö³ö¿Ú¡£\n·Ç·¨²Ù×÷´íÎó¡£\n", chinese_number(max_exits)));
+			tell_object(who, sprintf("æ¯å€‹æˆ¿é–“æœ€å¤šåªèƒ½æœ‰%så€‹å‡ºå£ã€‚\néæ³•æ“ä½œéŒ¯èª¤ã€‚\n", chinese_number(max_exits)));
 			return;
 		}
-		tell_object(who, "ÇëÊäÈëÒª¼ÓÈë³ö¿ÚµÄ·½Ïò(q ÍË³ö)£º");
+		tell_object(who, "è«‹è¼¸å…¥è¦åŠ å…¥å‡ºå£çš„æ–¹å‘(q é€€å‡º)ï¼š");
 		input_to( (: get_add_dir :), who, env, exits);
 		return;
 	}
 
-	out = "ÇëÑ¡ÔñÄãÒª½øĞĞµÄ²Ù×÷£º\n(1) É¾³ıÒ»¸öÒÑ´æÔÚµÄ³ö¿Ú¡£\n";
+	out = "è«‹é¸æ“‡ä½ è¦é€²è¡Œçš„æ“ä½œï¼š\n(1) åˆªé™¤ä¸€å€‹å·²å­˜åœ¨çš„å‡ºå£ã€‚\n";
 
 	if(mapp(exits) && (sizeof(exits) >= max_exits))
-		out += "(q) ÍË³ö¡£\n";
+		out += "(q) é€€å‡ºã€‚\n";
 	else
-		out += "(2) ¼ÓÈëÒ»¸öĞÂ³ö¿Ú¡£\n(q) ÍË³ö¡£\n";
+		out += "(2) åŠ å…¥ä¸€å€‹æ–°å‡ºå£ã€‚\n(q) é€€å‡ºã€‚\n";
 
 	tell_object(who, out);
 	input_to( (: decide_action_do :), who, env, exits );
@@ -106,13 +106,13 @@ protected void get_del_dir(string str, object who, object env, mapping exits)
 
 	if(environment(who) != env)
 	{
-		tell_object(who, "ÄãµÄÎ»ÖÃ·¢ÉúÁË±ä»¯£¬ĞŞ¸Ä±»Í£Ö¹¡£\n");
+		tell_object(who, "ä½ çš„ä½ç½®ç™¼ç”Ÿäº†è®ŠåŒ–ï¼Œä¿®æ”¹è¢«åœæ­¢ã€‚\n");
 		return;
 	}
 
 	if(!stringp(str) || !sizeof(str))
 	{
-		tell_object(who, "ÇëÊäÈëÒªÉ¾³ı³ö¿ÚµÄ·½Ïò(q ÍË³ö)£º");
+		tell_object(who, "è«‹è¼¸å…¥è¦åˆªé™¤å‡ºå£çš„æ–¹å‘(q é€€å‡º)ï¼š");
 		input_to( (: get_del_dir :), who, env, exits);
 		return;
 	}
@@ -125,19 +125,19 @@ protected void get_del_dir(string str, object who, object env, mapping exits)
 
 	if(!mapp(exits) || !sizeof(exits))
 	{
-		tell_object(who, "³öÏÖÒì³£´íÎó¡£\nÉ¾³ıÊ§°Ü¡£\n");
+		tell_object(who, "å‡ºç¾ç•°å¸¸éŒ¯èª¤ã€‚\nåˆªé™¤å¤±æ•—ã€‚\n");
 		return;
 	}
 
 	if(undefinedp(exits[str]))
 	{
-		tell_object(who, sprintf("Ã»ÓĞ %s Õâ¸ö³ö¿Ú¡£\nÇëÊäÈëÒªÉ¾³ı³ö¿ÚµÄ·½Ïò(q ÍË³ö)£º", str));
+		tell_object(who, sprintf("æ²’æœ‰ %s é€™å€‹å‡ºå£ã€‚\nè«‹è¼¸å…¥è¦åˆªé™¤å‡ºå£çš„æ–¹å‘(q é€€å‡º)ï¼š", str));
 		input_to( (: get_del_dir :), who, env, exits);
 		return;
 	}
 
 	if(BUNCH_D->break_an_exit(who, env, str))
-		tell_object(who, "É¾³ı³ö¿Ú³É¹¦¡£\n");
+		tell_object(who, "åˆªé™¤å‡ºå£æˆåŠŸã€‚\n");
 }
 
 protected void get_add_dir(string str, object who, object env, mapping exits)
@@ -147,13 +147,13 @@ protected void get_add_dir(string str, object who, object env, mapping exits)
 
 	if(environment(who) != env)
 	{
-		tell_object(who, "ÄãµÄÎ»ÖÃ·¢ÉúÁË±ä»¯£¬ĞŞ¸Ä±»Í£Ö¹¡£\n");
+		tell_object(who, "ä½ çš„ä½ç½®ç™¼ç”Ÿäº†è®ŠåŒ–ï¼Œä¿®æ”¹è¢«åœæ­¢ã€‚\n");
 		return;
 	}
 
 	if(!stringp(str) || !sizeof(str))
 	{
-		tell_object(who, "ÇëÊäÈëÒª¼ÓÈë³ö¿ÚµÄ·½Ïò(q ÍË³ö)£º");
+		tell_object(who, "è«‹è¼¸å…¥è¦åŠ å…¥å‡ºå£çš„æ–¹å‘(q é€€å‡º)ï¼š");
 		input_to( (: get_add_dir :), who, env, exits);
 		return;
 	}
@@ -166,23 +166,23 @@ protected void get_add_dir(string str, object who, object env, mapping exits)
 
 	if(undefinedp(r_dir[str]))
 	{
-		tell_object(who, sprintf("·¿¼äµÄ³ö¿ÚÖ»ÄÜ´ÓÒÔÏÂ·½ÏòÖÖÑ¡Ôñ£º\n%s\nĞŞ¸ÄÊ§°Ü¡£\n",vdirs));
+		tell_object(who, sprintf("æˆ¿é–“çš„å‡ºå£åªèƒ½å¾ä»¥ä¸‹æ–¹å‘ç¨®é¸æ“‡ï¼š\n%s\nä¿®æ”¹å¤±æ•—ã€‚\n",vdirs));
 		return;
 	}
 
 	if(mapp(exits) && sizeof(exits) && !undefinedp(exits[str]))
 	{
-		tell_object(who, "´Ë³ö¿ÚÒÑ´æÔÚ¡£\nĞŞ¸ÄÊ§°Ü¡£\n");
+		tell_object(who, "æ­¤å‡ºå£å·²å­˜åœ¨ã€‚\nä¿®æ”¹å¤±æ•—ã€‚\n");
 		return;
 	}
 
 	if(mapp(exits) && (sizeof(exits) >= max_exits))
 	{
-		tell_object(who, sprintf("Ã¿¸ö·¿¼ä×î¶àÖ»ÄÜÓĞ%s¸ö³ö¿Ú¡£\n²Ù×÷Ê§°Ü¡£\n", chinese_number(max_exits)));
+		tell_object(who, sprintf("æ¯å€‹æˆ¿é–“æœ€å¤šåªèƒ½æœ‰%så€‹å‡ºå£ã€‚\næ“ä½œå¤±æ•—ã€‚\n", chinese_number(max_exits)));
 		return;
 	}
 
-	tell_object(who, "ÇëÈ·¶¨´Ë³ö¿ÚµÄÄ¿µÄ·¿¼äÃû(q ÍË³ö)£º");
+	tell_object(who, "è«‹ç¢ºå®šæ­¤å‡ºå£çš„ç›®çš„æˆ¿é–“å(q é€€å‡º)ï¼š");
 	input_to( (: do_add_exit :), who, env, exits, str);
 }
 
@@ -193,13 +193,13 @@ protected void do_add_exit(string str, object who, object env, mapping exits, st
 
 	if(environment(who) != env)
 	{
-		tell_object(who, "ÄãµÄÎ»ÖÃ·¢ÉúÁË±ä»¯£¬ĞŞ¸Ä±»Í£Ö¹¡£\n");
+		tell_object(who, "ä½ çš„ä½ç½®ç™¼ç”Ÿäº†è®ŠåŒ–ï¼Œä¿®æ”¹è¢«åœæ­¢ã€‚\n");
 		return;
 	}
 
 	if(!stringp(str) || !sizeof(str))
 	{
-		tell_object(who, "ÇëÈ·¶¨´Ë³ö¿ÚµÄÄ¿µÄ·¿¼äÃû(q ÍË³ö)£º");
+		tell_object(who, "è«‹ç¢ºå®šæ­¤å‡ºå£çš„ç›®çš„æˆ¿é–“å(q é€€å‡º)ï¼š");
 		input_to( (: do_add_exit :), who, env, exits, dir);
 		return;
 	}
@@ -212,10 +212,10 @@ protected void do_add_exit(string str, object who, object env, mapping exits, st
 
 	if(!regexp(str, "^[a-z0-9_]+$"))
 	{
-		tell_object(who, "·¿¼äÃûÀï°üº¬´íÎó×Ö·û¡£\nĞŞ¸ÄÊ§°Ü¡£\n");
+		tell_object(who, "æˆ¿é–“åè£¡åŒ…å«éŒ¯èª¤å­—ç¬¦ã€‚\nä¿®æ”¹å¤±æ•—ã€‚\n");
 		return;
 	}
 
 	if(BUNCH_D->add_one_exit(who, env, dir, str))
-		tell_object(who, "Ôö¼Ó³ö¿Ú³É¹¦¡£\n");
+		tell_object(who, "å¢åŠ å‡ºå£æˆåŠŸã€‚\n");
 }

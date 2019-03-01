@@ -14,26 +14,26 @@ int do_make(string arg)
         object obj=this_object();
      
         if(!arg || (arg!="huo yan" && arg != "huoyan" && arg != "huodui"))
-                return notify_fail("ÄãÒª×öÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦åšä»€éº¼ï¼Ÿ\n");
 
         if( !objectp(fire=present("fire",me)) && (query("neili", me)<500) )
-                return notify_fail("ÄãÉíÉÏÃ»ÓĞ»ğÖÖ£¬ÔõÃ´Éı»ğ£¿\n");
+                return notify_fail("ä½ èº«ä¸Šæ²’æœ‰ç«ç¨®ï¼Œæ€éº¼å‡ç«ï¼Ÿ\n");
         if(me->query_skill("poison", 1) < 60)
         {
-                message_vision("$N´ò×Å»ğÕÛ½«$nµãÈ¼£¬Ã°³öÒ»ÂÆÆæÒìµÄ¶¾ÑÌ£¡\n",me,this_object());
-                message_vision("$NÏÅÁËÒ»´óÌø£¬Á¬Ã¦½«$nºúÂÒÒ»ÈÓ£¬Ô¶Ô¶¶ãÁË¿ªÈ¥£¡\n",me,this_object());
+                message_vision("$Næ‰“è‘—ç«æŠ˜å°‡$né»ç‡ƒï¼Œå†’å‡ºä¸€ç¸·å¥‡ç•°çš„æ¯’ç…™ï¼\n",me,this_object());
+                message_vision("$Nåš‡äº†ä¸€å¤§è·³ï¼Œé€£å¿™å°‡$nèƒ¡äº‚ä¸€æ‰”ï¼Œé é èº²äº†é–‹å»ï¼\n",me,this_object());
 //                this_object()->add_amount(-1);
                 destruct(obj);
                 return 1;
         }
         if(present("huo yan", environment(me)))
-                return notify_fail("ÕâÀïÒÑ¾­ÓĞ»ğÑæÁË£¬»¹ÒªÉıÊ²Ã´»ğ£¿\n");
+                return notify_fail("é€™è£¡å·²ç¶“æœ‰ç«ç‡„äº†ï¼Œé‚„è¦å‡ä»€éº¼ç«ï¼Ÿ\n");
         if(!fire)
         {
                 addn("neili", -100, me);
-                message_vision(HIR"\n$N¿ÚÖĞÍÂ³öÒ»¿ÚÇàÑÌ£¬½«ÊÖÖĞ$n"HIR"ÓÃÄÚÁ¦Ò»´êÒ»Å×£¬ºäµØÒ»ÉùÈ¼ÆğÒ»¶ÑĞÜĞÜ»ğÑæ£¡\n\n"NOR, me, this_object());
+                message_vision(HIR"\n$Nå£ä¸­åå‡ºä¸€å£é’ç…™ï¼Œå°‡æ‰‹ä¸­$n"HIR"ç”¨å…§åŠ›ä¸€æ“ä¸€æ‹‹ï¼Œè½Ÿåœ°ä¸€è²ç‡ƒèµ·ä¸€å †ç†Šç†Šç«ç‡„ï¼\n\n"NOR, me, this_object());
         }
-        else message_vision( HIR"\n$N½«ÊÖÖĞ$n"HIR"ÓÃ»ğÖÖµãÈ¼£¬È»ºóÏòµØÏÂÊ¹¾¢Ò»ÈÓ£¬È¼ÆğÁËÒ»¶ÑĞÜĞÜ»ğÑæ£¡\n\n"NOR, me, this_object());    
+        else message_vision( HIR"\n$Nå°‡æ‰‹ä¸­$n"HIR"ç”¨ç«ç¨®é»ç‡ƒï¼Œç„¶å¾Œå‘åœ°ä¸‹ä½¿å‹ä¸€æ‰”ï¼Œç‡ƒèµ·äº†ä¸€å †ç†Šç†Šç«ç‡„ï¼\n\n"NOR, me, this_object());    
         new("/d/xingxiu/npc/obj/huoyan")->move(environment(me));
 //        this_object()->add_amount(-1);
         destruct(obj);
@@ -46,14 +46,14 @@ int do_tu(string arg)
         object ob;
            
         if( !arg || sscanf(arg, "%s on %s", me, what)!=2 || !id(me) )
-                return notify_fail("ÃüÁî¸ñÊ½: tu <Ò©> on <ÎäÆ÷>¡£\n");
+                return notify_fail("å‘½ä»¤æ ¼å¼: tu <è—¥> on <æ­¦å™¨>ã€‚\n");
 
         ob = present(what, this_player());
 
-        if( !ob ) return notify_fail("ÄãÉíÉÏÃ»ÓĞ" + what + "ÕâÑù¶«Î÷¡£\n");
-        if( !query("weapon_prop", ob))return notify_fail("Ö»ÄÜÍ¿ÔÚÎäÆ÷ÉÏ¡£\n");
+        if( !ob ) return notify_fail("ä½ èº«ä¸Šæ²’æœ‰" + what + "é€™æ¨£æ±è¥¿ã€‚\n");
+        if( !query("weapon_prop", ob))return notify_fail("åªèƒ½å¡—åœ¨æ­¦å™¨ä¸Šã€‚\n");
 
-        else return notify_fail("ÄãÒªÏÈ½«Ò©·ÛµãÈ¼²ÅĞĞ¡£\n");
+        else return notify_fail("ä½ è¦å…ˆå°‡è—¥ç²‰é»ç‡ƒæ‰è¡Œã€‚\n");
 
         return 0;        
 }
@@ -65,12 +65,12 @@ int do_dian(string arg)
         ob = this_object();
         me = this_player();
         if( !arg || arg != query("id", ob) )
-                return notify_fail("ÄãÒªµãÈ¼Ê²Ã´¶«Î÷£¿\n");
+                return notify_fail("ä½ è¦é»ç‡ƒä»€éº¼æ±è¥¿ï¼Ÿ\n");
 
         if(!objectp(ob1 = present("fire", me)))
-                return notify_fail("ÄãÏÈÒªÕÒ¸ö»ğÖÖ¡£\n");
+                return notify_fail("ä½ å…ˆè¦æ‰¾å€‹ç«ç¨®ã€‚\n");
 
-        message_vision("$N´ò×Å»ğÕÛ½«$nµãÈ¼£¬Ã°³öÒ»ÂÆÆæÒìµÄ¶¾ÑÌ£¡\n",me,ob);
+        message_vision("$Næ‰“è‘—ç«æŠ˜å°‡$né»ç‡ƒï¼Œå†’å‡ºä¸€ç¸·å¥‡ç•°çš„æ¯’ç…™ï¼\n",me,ob);
         if(me->query_skill("poison", 1) > 79)
         {
                 new(query("drug2", ob))->move(me);
@@ -80,7 +80,7 @@ int do_dian(string arg)
         }
         else
         {
-                message_vision("$NÏÅÁËÒ»´óÌø£¬Á¬Ã¦½«$nºúÂÒÒ»ÈÓ£¬Ô¶Ô¶¶ãÁË¿ªÈ¥£¡\n",me,ob);
+                message_vision("$Nåš‡äº†ä¸€å¤§è·³ï¼Œé€£å¿™å°‡$nèƒ¡äº‚ä¸€æ‰”ï¼Œé é èº²äº†é–‹å»ï¼\n",me,ob);
 //                ob->add_amount(-1);
         destruct(ob);
                 return 1;

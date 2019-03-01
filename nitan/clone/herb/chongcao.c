@@ -2,12 +2,12 @@
 
 void create()
 {
-        set_name(NOR + HIB "¶«³æÏÄ²İ" NOR, ({ "chong cao", "chong", "cao", "herb_chongcao" }));
+        set_name(NOR + HIB "æ±èŸ²å¤è‰" NOR, ({ "chong cao", "chong", "cao", "herb_chongcao" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", NOR + HIB "¶«Îª³æ£¬ÏÄÎª²İ¡£ÄËÊÇ¼«ÎªÃû¹óµÄÖĞÒ©Ò©²Ä¡£\n" NOR);
-                set("base_unit", "¸ù");
+                set("long", NOR + HIB "æ±ç‚ºèŸ²ï¼Œå¤ç‚ºè‰ã€‚ä¹ƒæ˜¯æ¥µç‚ºåè²´çš„ä¸­è—¥è—¥æã€‚\n" NOR);
+                set("base_unit", "æ ¹");
                 set("base_value", 10000);
                 set("base_weight", 85);
         }

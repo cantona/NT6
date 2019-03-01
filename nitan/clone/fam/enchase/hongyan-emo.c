@@ -3,19 +3,19 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIR "ºìÑÛ¶ñÄ§" NOR, ({"hongyan emo", "hongyan", "emo" }));
+        set_name(HIR "ç´…çœ¼æƒ¡é­”" NOR, ({"hongyan emo", "hongyan", "emo" }));
         set_weight(900);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIR "Ò»¿ÅÍ¨ºìµÄ±¦Ê¯£¬ÓÌÈç¶ñÄ§µÄÑÛÖé¡£\n" NOR);
-                set("unit", "¿é");
+                set("long", HIR "ä¸€é¡†é€šç´…çš„å¯¶çŸ³ï¼ŒçŒ¶å¦‚æƒ¡é­”çš„çœ¼ç ã€‚\n" NOR);
+                set("unit", "å¡Š");
                 set("value", 5000);
-                set("enchase/name", "ºìÑÛ¶ñÄ§");
+                set("enchase/name", "ç´…çœ¼æƒ¡é­”");
                 set("enchase/point", 1);
                 set("enchase/type", "all");
                                 set("enchase/cur_firm", 100);
-                                set("nine_object", 1); // ¾Å¿×ÏâÇ¶ÎïÆ·±ê¼Ç
+                                set("nine_object", 1); // ä¹å­”é‘²åµŒç‰©å“æ¨™è¨˜
                                 set("enchase/spe_data", ([]) );  
         }
         setup();

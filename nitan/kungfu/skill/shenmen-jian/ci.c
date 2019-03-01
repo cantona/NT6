@@ -3,7 +3,7 @@
 #include <ansi.h>
 inherit F_SSERVER;
 
-string name() { return "ÉñÃÅ´Ì"; }
+string name() { return "ç¥é–€åˆº"; }
 
 int perform(object me)
 {
@@ -13,7 +13,7 @@ int perform(object me)
 
         if( !objectp(weapon=query_temp("weapon", me)) ||
             query("skill_type", weapon) != "sword" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ã€‚\n");
 
         if (! target)
         {
@@ -24,20 +24,20 @@ int perform(object me)
         skill = me->query_skill("shenmen-jian", 1);
 
         if( !(me->is_fighting() ))
-                return notify_fail("ÉñÃÅ´ÌÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ç¥é–€åˆºåªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon2=query_temp("weapon", target)) )
-                return notify_fail("¶Ô·½Ã»ÓĞÊ¹ÓÃ±øÆ÷£¬ÄãÓÃÁËÉñÃÅ´ÌÒ²Ã»ÓÃ¡£\n");
+                return notify_fail("å°æ–¹æ²’æœ‰ä½¿ç”¨å…µå™¨ï¼Œä½ ç”¨äº†ç¥é–€åˆºä¹Ÿæ²’ç”¨ã€‚\n");
 
         if( skill < 160)
-                return notify_fail("ÄãµÄÉñÃÅÊ®Èı½£µÈ¼¶²»¹», ÎŞ·¨Ê©Õ¹ÉñÃÅ´Ì¡£\n");
+                return notify_fail("ä½ çš„ç¥é–€åä¸‰åŠç­‰ç´šä¸å¤ , ç„¡æ³•æ–½å±•ç¥é–€åˆºã€‚\n");
 
         if( query("neili", me)<200 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬ÎŞ·¨Ê©Õ¹ÉñÃÅ´Ì£¡\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ï¼Œç„¡æ³•æ–½å±•ç¥é–€åˆºï¼\n");
 
-        msg = HIY "Í»È»$N" HIY "Ò»ÉùÀäºß£¬ÊÖÖĞ" +weapon->name()+ NOR + HIY
-                  "ÖĞ¹¥Ö±½ø£¬Ö±´Ì$nÄÃ×ÅµÄ" +weapon2->name()+ NOR + HIY"µÄ"
-                  "ÊÖÍó¡£\n" NOR;
+        msg = HIY "çªç„¶$N" HIY "ä¸€è²å†·å“¼ï¼Œæ‰‹ä¸­" +weapon->name()+ NOR + HIY
+                  "ä¸­æ”»ç›´é€²ï¼Œç›´åˆº$næ‹¿è‘—çš„" +weapon2->name()+ NOR + HIY"çš„"
+                  "æ‰‹è…•ã€‚\n" NOR;
 
         message_combatd(msg, me, target);
 
@@ -47,8 +47,8 @@ int perform(object me)
         if( ap / 2 + random(ap) > dp )
         {
                 addn("neili", -120, me);
-                msg = HIR "$nÖ»¾õÊÖÍóÒ»Õó´ÌÍ´£¬ÊÖÖĞ" +weapon2->name()+ NOR + HIR
-                      "ÔÙÒ²×½ÄÃ²»×¡£¬ÍÑÊÖ¶ø·É£¡\n" NOR;
+                msg = HIR "$nåªè¦ºæ‰‹è…•ä¸€é™£åˆºç—›ï¼Œæ‰‹ä¸­" +weapon2->name()+ NOR + HIR
+                      "å†ä¹Ÿæ‰æ‹¿ä¸ä½ï¼Œè„«æ‰‹è€Œé£›ï¼\n" NOR;
                 me->start_busy(1 + random(2));
                 if (! target->is_busy())
                         target->start_busy(2);
@@ -57,8 +57,8 @@ int perform(object me)
         else
         {
                 addn("neili", -40, me);
-                msg = CYN "¿ÉÊÇ$n¿´ÆÆÁË$NµÄÆóÍ¼£¬½«ÊÖÖĞ±øÈĞ»ÓÎèµÃÃÜ²»Í¸·ç£¬µ²¿ªÁË$N" CYN
-                      "µÄ±øÆ÷¡£\n"NOR;
+                msg = CYN "å¯æ˜¯$nçœ‹ç ´äº†$Nçš„ä¼åœ–ï¼Œå°‡æ‰‹ä¸­å…µåˆƒæ®èˆå¾—å¯†ä¸é€é¢¨ï¼Œæ“‹é–‹äº†$N" CYN
+                      "çš„å…µå™¨ã€‚\n"NOR;
                 me->start_busy(3);
         }
         message_combatd(msg, me, target);

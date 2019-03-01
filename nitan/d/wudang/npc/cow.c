@@ -1,4 +1,4 @@
-// cow.c ´ó»ÆÅ£
+// cow.c å¤§é»ƒç‰›
 
 #include <command.h>
 #include <dbase.h>
@@ -9,9 +9,9 @@ inherit NPC;
 
 void create()
 {
-        set_name(HIW"´ó»ÆÅ£"NOR, ({ "cow" }));
-        set("long","Ò»Í·´ó»ÆÅ£¡£\n");
-        set("race", "¼ÒĞó");
+        set_name(HIW"å¤§é»ƒç‰›"NOR, ({ "cow" }));
+        set("long","ä¸€é ­å¤§é»ƒç‰›ã€‚\n");
+        set("race", "å®¶ç•œ");
         set("age", 5);
         set("int", 30);
         set("ridable", "1");
@@ -23,7 +23,7 @@ void create()
         set("combat_exp",50000);
         set("attitude", "peaceful");
 
-        set("limbs", ({ "Í·²¿", "¸¹²¿", "Î²°Í","ºóÍÈ","Ç°ÍÈ" }) );
+        set("limbs", ({ "é ­éƒ¨", "è…¹éƒ¨", "å°¾å·´","å¾Œè…¿","å‰è…¿" }) );
         set("verbs", ({ "bite","hoof" }) );
         set_temp("apply/attack", 50);
         set_temp("apply/armor", 15);

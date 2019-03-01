@@ -8,19 +8,19 @@
 inherit F_SAVE;
 inherit F_DBASE;
 
-// Í¬ÃËÉùÍû×î´óÊÇ10ÒÚ
+// åŒç›Ÿè²æœ›æœ€å¤§æ˜¯10å„„
 #define MAX_LEAGUE_FAME         1000000000
 
-// Ã¿¸öÍ¬ÃË×î¶àÓĞ100¸ö³ğÈË
+// æ¯å€‹åŒç›Ÿæœ€å¤šæœ‰100å€‹ä»‡äºº
 #define MAX_HATRED_PERSON       100
 
-// µ±³ğÈË³¬¹ıµÄÊ±ºòÃ¿´ÎÒÆ³ı¶àÉÙ¸ö
+// ç•¶ä»‡äººè¶…éçš„æ™‚å€™æ¯æ¬¡ç§»é™¤å¤šå°‘å€‹
 #define HATREDP_REMOVED         10
 
 mapping league_fame;
 mapping last_league_fame;
 
-// Í¬ÃË¶Ô³ğÈË³ğºŞ¶ÈµÄÅÅĞò
+// åŒç›Ÿå°ä»‡äººä»‡æ¨åº¦çš„æ’åº
 private int sort_hatred(string id1, string id2, mapping hatred);
 
 void create()
@@ -41,7 +41,7 @@ public void mud_shutdown()
         save();
 }
 
-// ĞÄÌø£ºÎ¬»¤Í¬ÃËµÄÍ¨³£ĞÅÏ¢
+// å¿ƒè·³ï¼šç¶­è­·åŒç›Ÿçš„é€šå¸¸ä¿¡æ¯
 private void heart_beat()
 {
         int t;
@@ -53,7 +53,7 @@ private void heart_beat()
         last = query("last_check");
         if ((t / 86400) != (last / 86400))
         {
-                // ÌìÊı·¢ÉúÁË±ä»¯£º¸´ÖÆÍ¬ÃËµÄÃûÍûĞÅÏ¢
+                // å¤©æ•¸ç™¼ç”Ÿäº†è®ŠåŒ–ï¼šå¾©åˆ¶åŒç›Ÿçš„åæœ›ä¿¡æ¯
                 all_fam = keys(league_fame) - ({ 0 });
                 last_league_fame = ([ ]);
 
@@ -62,13 +62,13 @@ private void heart_beat()
         }
         set("last_check", t);
 
-        // ±£´æÍ¬ÃËµÄ×îĞÂĞÅÏ¢
+        // ä¿å­˜åŒç›Ÿçš„æœ€æ–°ä¿¡æ¯
         save();
 }
 
-// ·µ»ØÍ¬ÃËÉùÍû£ºÈç¹û²ÎÊıÎª¿Õ£¬·µ»ØmappingÀàĞÍ£¬°üº¬ÁËËùÓĞÍ¬
-// ÃËµÄÉùÍû£»Èç¹û²ÎÊıÊÇÈËÎï£¬ Ôò·µ»Ø¸ÃÈËÎïËùÔÚµÄÄÇ¸öÍ¬ÃËµÄÉù
-// Íû£»Èç¹û²ÎÊıÊÇÍ¬ÃË£¬Ôò·µ»Ø¸ÃÍ¬ÃËµÄÉùÍû¡£
+// è¿”å›åŒç›Ÿè²æœ›ï¼šå¦‚æœåƒæ•¸ç‚ºç©ºï¼Œè¿”å›mappingé¡å‹ï¼ŒåŒ…å«äº†æ‰€æœ‰åŒ
+// ç›Ÿçš„è²æœ›ï¼›å¦‚æœåƒæ•¸æ˜¯äººç‰©ï¼Œ å‰‡è¿”å›è©²äººç‰©æ‰€åœ¨çš„é‚£å€‹åŒç›Ÿçš„è²
+// æœ›ï¼›å¦‚æœåƒæ•¸æ˜¯åŒç›Ÿï¼Œå‰‡è¿”å›è©²åŒç›Ÿçš„è²æœ›ã€‚
 public mixed query_league_fame(mixed ob)
 {
         string fname;
@@ -87,19 +87,19 @@ public mixed query_league_fame(mixed ob)
         return league_fame;
 }
 
-// ²éÑ¯×òÌìµÄÍ¬ÃËÃûÍûĞÅÏ¢
+// æŸ¥è©¢æ˜¨å¤©çš„åŒç›Ÿåæœ›ä¿¡æ¯
 public mapping query_all_last_league_fame()
 {
         if (! mapp(last_league_fame))
-                // Ã»ÓĞ×òÌìµÄĞÅÏ¢£¬·µ»Ø½ñÌìµÄ
+                // æ²’æœ‰æ˜¨å¤©çš„ä¿¡æ¯ï¼Œè¿”å›ä»Šå¤©çš„
                 return league_fame;
 
-        // ·µ»Ø×òÌìµÄÍ¬ÃËÉùÍûĞÅÏ¢
+        // è¿”å›æ˜¨å¤©çš„åŒç›Ÿè²æœ›ä¿¡æ¯
         return last_league_fame;
 }
 
-// ²éÑ¯Í¬ÃËµÄ³ğºŞĞÅÏ¢£ºÊäÈëµÄob¿ÉÒÔÊÇÍ¬ÃËµÄÃû×Ö£¬Ò²¿ÉÊÇÍ¬ÃË
-// ÖĞµÄÈËÎï¡£
+// æŸ¥è©¢åŒç›Ÿçš„ä»‡æ¨ä¿¡æ¯ï¼šè¼¸å…¥çš„obå¯ä»¥æ˜¯åŒç›Ÿçš„åå­—ï¼Œä¹Ÿå¯æ˜¯åŒç›Ÿ
+// ä¸­çš„äººç‰©ã€‚
 public mapping query_league_hatred(mixed ob)
 {
         mapping hatred;
@@ -119,8 +119,8 @@ public mapping query_league_hatred(mixed ob)
         return hatred;
 }
 
-// ±ä»¯Í¬ÃËÉùÍû£ºÊäÈëµÄob¿ÉÒÔÊÇÍ¬ÃËµÄÃû×Ö£¬Ò²¿ÉÊÇÍ¬ÃËÖĞµÄÈË
-// Îï¡£
+// è®ŠåŒ–åŒç›Ÿè²æœ›ï¼šè¼¸å…¥çš„obå¯ä»¥æ˜¯åŒç›Ÿçš„åå­—ï¼Œä¹Ÿå¯æ˜¯åŒç›Ÿä¸­çš„äºº
+// ç‰©ã€‚
 public void add_league_fame(mixed ob, int n)
 {
         int new_fame;
@@ -137,7 +137,7 @@ public void add_league_fame(mixed ob, int n)
         if (! stringp(fname) || undefinedp(query(fname + "/member")))
                 return;
 
-        // ¼ÆËãĞÂµÄÍ¬ÃËÉùÍû
+        // è¨ˆç®—æ–°çš„åŒç›Ÿè²æœ›
         new_fame = league_fame[fname] + n;
         if (new_fame < 0) new_fame = 0;
         if (new_fame > MAX_LEAGUE_FAME)
@@ -145,7 +145,7 @@ public void add_league_fame(mixed ob, int n)
         league_fame[fname] = new_fame;
 }
 
-// Í¬ÃË¼ä³ğÉ±
+// åŒç›Ÿé–“ä»‡æ®º
 public void league_kill(object killer, object victim)
 {
         int kexp;
@@ -157,25 +157,25 @@ public void league_kill(object killer, object victim)
         mapping hatred;
         mixed *d;
 
-        // Ö»ÓĞÍæ¼ÒÖ®¼äµÄ³ğÉ±²Å¼ÆËãÔÚÄÚ
+        // åªæœ‰ç©å®¶ä¹‹é–“çš„ä»‡æ®ºæ‰è¨ˆç®—åœ¨å…§
         if (! objectp(killer) || ! playerp(killer) ||
             ! objectp(victim) || ! playerp(victim))
                 return;
 
-        // Î×Ê¦Ö®¼äµÄ±È»®¿É²»ÄÜËãÊı
+        // å·«å¸«ä¹‹é–“çš„æ¯”åŠƒå¯ä¸èƒ½ç®—æ•¸
         if (wizardp(killer) || wizardp(victim))
                 return;
 
-        // ²é¿´ÕâÁ½¸öÍæ¼ÒËù´¦µÄ½áÒåÍ¬ÃË
+        // æŸ¥çœ‹é€™å…©å€‹ç©å®¶æ‰€è™•çš„çµç¾©åŒç›Ÿ
         kfam=query("league/league_name", killer);
         vfam=query("league/league_name", victim);
 
         if (killer->is_brother(victim) && killer->is_killing(query("id",victim))) 
-                // É±ËÀ½á°İĞÖµÜ£¬ÍşÍû½µµÍ10%
+                // æ®ºæ­»çµæ‹œå…„å¼Ÿï¼Œå¨æœ›é™ä½10%
                 addn("weiwang", -query("weiwang", killer)/10, killer);
 
         if (! stringp(kfam) && ! stringp(vfam))
-                // ¶¼²»ÔÚÍ¬ÃËÄÚ£¬²»±Ø¼ÌĞøÁË
+                // éƒ½ä¸åœ¨åŒç›Ÿå…§ï¼Œä¸å¿…ç¹¼çºŒäº†
                 return;
 
         kexp=query("combat_exp", killer);
@@ -184,10 +184,10 @@ public void league_kill(object killer, object victim)
         if (kfam == vfam)
         {
                 if( !killer->is_killing(query("id", victim)) )
-                        // Ê§ÊÖËùÉ±£¬²»ÓèÀí»á
+                        // å¤±æ‰‹æ‰€æ®ºï¼Œä¸äºˆç†æœƒ
                         return;
 
-                // ĞÖµÜ¼ä²ĞÉ±£¿²»ÓëÀí»á£¬Ö±½Ó¿Û³ıÁªÃËºÍ¸öÈË1/10ÍşÍû¡£
+                // å…„å¼Ÿé–“æ®˜æ®ºï¼Ÿä¸èˆ‡ç†æœƒï¼Œç›´æ¥æ‰£é™¤è¯ç›Ÿå’Œå€‹äºº1/10å¨æœ›ã€‚
                 add_league_fame(kfam, -league_fame[kfam] / 10);
                 addn("weiwang", -query("weiwang", killer)/10, killer);
                 return;
@@ -195,17 +195,17 @@ public void league_kill(object killer, object victim)
 
         if (kexp < vexp * 3 && vexp >= 100000)
         {
-                // É±ÊÖµÄ¾­Ñé²»ÊÇÔ¶Ô¶µÄ´óÓÚ¶Ô·½£¬²¢ÇÒ±»É±µÄ
-                // ÈËÓĞÒ»¶¨µÄ¾­Ñé£¬Õâ½«µ¼ÖÂÍ¬ÃËÉùÍûµÄ½µµÍ¡£
+                // æ®ºæ‰‹çš„ç¶“é©—ä¸æ˜¯é é çš„å¤§äºå°æ–¹ï¼Œä¸¦ä¸”è¢«æ®ºçš„
+                // äººæœ‰ä¸€å®šçš„ç¶“é©—ï¼Œé€™å°‡å°è‡´åŒç›Ÿè²æœ›çš„é™ä½ã€‚
                 fame_delta=vexp+query("score", killer)*2+
                              query("weiwang", killer)*10;
                 fame_delta /= 1000;
         } else
-                // ¶ÔÊÖ¾­ÑéÌ«ÉÙ£¬»òÊÇ²î¾àÌ«´ó£¬²»Ó°ÏìÉùÍû
+                // å°æ‰‹ç¶“é©—å¤ªå°‘ï¼Œæˆ–æ˜¯å·®è·å¤ªå¤§ï¼Œä¸å½±éŸ¿è²æœ›
                 fame_delta = 0;
 
-        // ²é¿´É±ÊÖËùÔÚµÄÍ¬ÃËÊÇ·ñ³ğºŞËÀÕß£ºÈç¹û³ğºŞ£¬ÔòÄÜ¹»
-        // ´ø¶¯ÉùÍûµÄ±ä»¯¡£
+        // æŸ¥çœ‹æ®ºæ‰‹æ‰€åœ¨çš„åŒç›Ÿæ˜¯å¦ä»‡æ¨æ­»è€…ï¼šå¦‚æœä»‡æ¨ï¼Œå‰‡èƒ½å¤ 
+        // å¸¶å‹•è²æœ›çš„è®ŠåŒ–ã€‚
         if (stringp(kfam))
         {
                 string path;
@@ -214,16 +214,16 @@ public void league_kill(object killer, object victim)
                 d = query(path);
                 if (arrayp(d) && sizeof(d) >= 2 && intp(d[1]))
                 {
-                        // ³ğºŞËÀÕß£¬Í¬ÃË»ñµÃ¶îÍâµÄÉùÍû
+                        // ä»‡æ¨æ­»è€…ï¼ŒåŒç›Ÿç²å¾—é¡å¤–çš„è²æœ›
                         if (d[1] > 2000)
                                 CHANNEL_D->do_channel(this_object(), "rumor",
-                                        "ÌıËµ" + killer->name(1) + "»÷±ĞÁË" +
-                                        victim->name(1) + "£¬Îª" +
-                                        kfam + "³öÁËÒ»¿Ú¶ñÆø¡£");
+                                        "è½èªª" + killer->name(1) + "æ“Šæ–ƒäº†" +
+                                        victim->name(1) + "ï¼Œç‚º" +
+                                        kfam + "å‡ºäº†ä¸€å£æƒ¡æ°£ã€‚");
                         fame_delta += d[1] / 3;
 
-                        // ¶Ô´ËÈËµÄ³ğºŞ½µµÍ(½µµÍµÄÒª±ÈÔö¼ÓµÄÒª¶à)£¬
-                        // ¾ßÌå¿ÉÒÔ¿´fame_delta Óë³ğºŞ¶È¹«Ë¾µÄ²îÒì
+                        // å°æ­¤äººçš„ä»‡æ¨é™ä½(é™ä½çš„è¦æ¯”å¢åŠ çš„è¦å¤š)ï¼Œ
+                        // å…·é«”å¯ä»¥çœ‹fame_delta èˆ‡ä»‡æ¨åº¦å…¬å¸çš„å·®ç•°
                         d[1] -= fame_delta;
                         if (d[1] <= 0)
                                 delete(path);
@@ -232,16 +232,16 @@ public void league_kill(object killer, object victim)
                 }
         }
 
-        // µ÷ÕûÁ½¸öÍ¬ÃËµÄÉùÍû
+        // èª¿æ•´å…©å€‹åŒç›Ÿçš„è²æœ›
         add_league_fame(killer,  fame_delta);
         add_league_fame(victim, -fame_delta);
 
-        // Í³¼Æ¸ÃÉ±ÊÖ¶Ô±¾ÃÅµÄ²Ğº¦³Ì¶È
+        // çµ±è¨ˆè©²æ®ºæ‰‹å°æœ¬é–€çš„æ®˜å®³ç¨‹åº¦
         if (! stringp(vfam))
                 return;
 
-        // ³ğºŞ³Ì¶ÈºÍÉùÍûµÄ±ä»¯¶¼ÊÇÔÚÒ»¸öÊıÁ¿¼¶ÉÏ(K¾­Ñé)£¬µ«
-        // ÊÇ³ğºŞ³Ì¶ÈµÍÓÚÉùÍûµÄ±ä»¯¡£
+        // ä»‡æ¨ç¨‹åº¦å’Œè²æœ›çš„è®ŠåŒ–éƒ½æ˜¯åœ¨ä¸€å€‹æ•¸é‡ç´šä¸Š(Kç¶“é©—)ï¼Œä½†
+        // æ˜¯ä»‡æ¨ç¨‹åº¦ä½äºè²æœ›çš„è®ŠåŒ–ã€‚
         vexp = vexp / 1000 + 1;
         if (vexp > 5000)
                 vexp = (vexp - 5000) / 16 + 2000;
@@ -257,13 +257,13 @@ public void league_kill(object killer, object victim)
                 return;
         }
 
-        // Ã¿¸öÍ¬ÃË×î¶à¼ÇÂ¼Èô¸É¸ö³ğÈË
+        // æ¯å€‹åŒç›Ÿæœ€å¤šè¨˜éŒ„è‹¥å¹¹å€‹ä»‡äºº
         if (! undefinedp(d = hatred[kid]))
         {
                 if (! arrayp(d) || sizeof(d) < 2 ||
                     ! intp(d[1]) || ! stringp(d[0]))
                 {
-                        // Õâ¸öIDµÄÊı¾İ³öÁË¹ÊÕÏ
+                        // é€™å€‹IDçš„æ•¸æ“šå‡ºäº†æ•…éšœ
                         d = 0;
                 }
         } else
@@ -272,8 +272,8 @@ public void league_kill(object killer, object victim)
                 string *ids;
                 int i;
 
-                // ¹ıÂËÈ¥µôÒ»Ğ©ÈË£¬ÎªÊ²Ã´²»È¥µôÒ»¸ö£¿ÕâÊÇÎª
-                // ÁË·ÀÖ¹¹ıÂËÆµ·±µÄ½øĞĞ¹ıÂË²Ù×÷¡£
+                // éæ¿¾å»æ‰ä¸€äº›äººï¼Œç‚ºä»€éº¼ä¸å»æ‰ä¸€å€‹ï¼Ÿé€™æ˜¯ç‚º
+                // äº†é˜²æ­¢éæ¿¾é »ç¹çš„é€²è¡Œéæ¿¾æ“ä½œã€‚
                 ids = sort_array(keys(hatred),
                                  (: sort_hatred :), hatred);
                 for (i = 0; i < sizeof(ids) && i < HATREDP_REMOVED; i++)
@@ -288,21 +288,21 @@ public void league_kill(object killer, object victim)
                 d[1] += vexp;
         }
 
-        // ¼ÇÂ¼Õâ¸öÈËµÄĞÅÏ¢
+        // è¨˜éŒ„é€™å€‹äººçš„ä¿¡æ¯
         hatred[kid] = d;
 }
 
-// È¥µôËùÓĞÍ¬ÃË¶ÔÄ³¸öÈËµÄ³ğºŞĞÅÏ¢
+// å»æ‰æ‰€æœ‰åŒç›Ÿå°æŸå€‹äººçš„ä»‡æ¨ä¿¡æ¯
 public void remove_hatred(string id)
 {
         mapping dbase, league, hatred;
         string fam;
 
         if (! mapp(dbase = query_entire_dbase()))
-                // ÏÖÔÚ»¹Ã»ÓĞ³ğºŞĞÅÏ¢
+                // ç¾åœ¨é‚„æ²’æœ‰ä»‡æ¨ä¿¡æ¯
                 return;
 
-        // ²éÔÄËùÓĞµÄÍ¬ÃË
+        // æŸ¥é–±æ‰€æœ‰çš„åŒç›Ÿ
         foreach (fam in keys(dbase))
         {
                 reset_eval_cost();
@@ -311,30 +311,30 @@ public void remove_hatred(string id)
                         continue;
 
                 if (mapp(hatred = league["hatred"]))
-                        // È¥µô¸ÃÍ¬ÃË¶ÔÄ³ÈËµÄ³ğºŞĞÅÏ¢
+                        // å»æ‰è©²åŒç›Ÿå°æŸäººçš„ä»‡æ¨ä¿¡æ¯
                         map_delete(hatred, id);
 
                 if (! mapp(hatred) || sizeof(hatred) < 1)
-                        // Õâ¸öÍ¬ÃËÒÑ¾­Ã»ÓĞ³ğºŞĞÅÏ¢
+                        // é€™å€‹åŒç›Ÿå·²ç¶“æ²’æœ‰ä»‡æ¨ä¿¡æ¯
                         map_delete(league, "hatred");
         }
 
         save();
 }
 
-// ²é¿´ÊÇ·ñ¿ÉÒÔ´´½¨Õâ¸öÍ¬ÃË
+// æŸ¥çœ‹æ˜¯å¦å¯ä»¥å‰µå»ºé€™å€‹åŒç›Ÿ
 public mixed valid_new_league(string fname)
 {
         if (query(fname + "/member"))
-                return "ÈË¼ÒÔç¾ÍÓĞ½ĞÕâ¸öµÄÀ²£¬Äã¾Í±ğ´ÕÈÈÄÖÁË¡£\n";
+                return "äººå®¶æ—©å°±æœ‰å«é€™å€‹çš„å•¦ï¼Œä½ å°±åˆ¥æ¹Šç†±é¬§äº†ã€‚\n";
 
         if (! undefinedp(FAMILY_D->query_family_fame(fname)))
-                return "½­ºşÉÍÒÑ¾­ÓĞ" + fname + "ÁË£¬Äã»¹Ïë×öÊ²Ã´£¿\n";
+                return "æ±Ÿæ¹–è³å·²ç¶“æœ‰" + fname + "äº†ï¼Œä½ é‚„æƒ³åšä»€éº¼ï¼Ÿ\n";
 
         return 0;
 }
 
-// ´´½¨Í¬ÃË
+// å‰µå»ºåŒç›Ÿ
 public void create_league(string fname, int base, object *obs)
 {
         mapping league;
@@ -359,35 +359,35 @@ public void create_league(string fname, int base, object *obs)
         }
 }
 
-// ½âÉ¢Í¬ÃË
+// è§£æ•£åŒç›Ÿ
 public void dismiss_league(string fname)
 {
         string *ids;
         string id;
 
-        // Çå³ıÃûÍûĞÅÏ¢
+        // æ¸…é™¤åæœ›ä¿¡æ¯
         map_delete(league_fame, fname);
         if (mapp(last_league_fame)) map_delete(last_league_fame, fname);
 
-        // Çå³ıÍ¬ÃËÖĞµÄËùÓĞÍæ¼ÒµÄÏà¹ØĞÅÏ¢
+        // æ¸…é™¤åŒç›Ÿä¸­çš„æ‰€æœ‰ç©å®¶çš„ç›¸é—œä¿¡æ¯
         ids = query(fname + "/member");
 
         if (arrayp(ids))
         {
-                // Í¬ÃËÖĞ»¹ÓĞÍæ¼Ò£¬Çå³ıËûÃÇµÄĞÅÏ¢
+                // åŒç›Ÿä¸­é‚„æœ‰ç©å®¶ï¼Œæ¸…é™¤ä»–å€‘çš„ä¿¡æ¯
                 foreach (id in ids)
                 {
-                        // ´¦ÀíÖĞ
+                        // è™•ç†ä¸­
                         reset_eval_cost();
                         UPDATE_D->clear_user_data(id, "league");
                 }
         }
 
-        // Çå³ıÍ¬ÃËµÄËùÓĞĞÅÏ¢
+        // æ¸…é™¤åŒç›Ÿçš„æ‰€æœ‰ä¿¡æ¯
         delete(fname);
 }
 
-// ²éÑ¯Í¬ÃËÖĞµÄµÜĞÖ
+// æŸ¥è©¢åŒç›Ÿä¸­çš„å¼Ÿå…„
 public string *query_members(mixed ob)
 {
         string *member;
@@ -407,7 +407,7 @@ public string *query_members(mixed ob)
         return member;
 }
 
-// ´ÓÍ¬ÃËÖĞÈ¥µôÒ»¸öÈË
+// å¾åŒç›Ÿä¸­å»æ‰ä¸€å€‹äºº
 public varargs void remove_member_from_league(mixed fname, string id)
 {
         mapping league;
@@ -433,19 +433,19 @@ public varargs void remove_member_from_league(mixed fname, string id)
         if (sizeof(member) < 1)
         {
                 CHANNEL_D->do_channel(this_object(), "rumor",
-                        "ÌıËµ" + fname + "ÈË²ÅµòÁã£¬ÎôÈÕºÃÓÑ¾¡½ÔÉ¢È¥£¬´Ó´Ë½­ºşÔÙÎŞ´Ë×ÖºÅÁË¡£");
+                        "è½èªª" + fname + "äººæ‰å‡‹é›¶ï¼Œæ˜”æ—¥å¥½å‹ç›¡çš†æ•£å»ï¼Œå¾æ­¤æ±Ÿæ¹–å†ç„¡æ­¤å­—è™Ÿäº†ã€‚");
 
-                // Çå³ıÃûÍûĞÅÏ¢
+                // æ¸…é™¤åæœ›ä¿¡æ¯
                 map_delete(league_fame, fname);
                 if (mapp(last_league_fame)) map_delete(last_league_fame, fname);
 
-                // Çå³ıÍ¬ÃËµÄĞÅÏ¢
+                // æ¸…é™¤åŒç›Ÿçš„ä¿¡æ¯
                 delete(fname);
         } else
                 league["member"] = member;
 }
 
-// ÔÚÍ¬ÃËÖĞÔö¼ÓÒ»¸öÈË
+// åœ¨åŒç›Ÿä¸­å¢åŠ ä¸€å€‹äºº
 public void add_member_into_league(string fname, string id)
 {
         string *member;
@@ -460,7 +460,7 @@ public void add_member_into_league(string fname, string id)
         set(fname + "/member", member);
 }
 
-// ÅÅĞò£ºÉıĞò
+// æ’åºï¼šå‡åº
 private int sort_hatred(string id1, string id2, mapping hatred)
 {
         mixed *d1, *d2;

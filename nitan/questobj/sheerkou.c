@@ -1,4 +1,4 @@
-// sheerkou.c Éß¶ù¿Ú
+// sheerkou.c è›‡å…’å£
 #include <ansi.h>
 inherit ITEM;
 
@@ -11,16 +11,16 @@ void init()
 
 void create()
 {
-        set_name(HIM"Éß¶ù¿Ú"NOR, ({ "sheer kou", "sk" }) );
+        set_name(HIM"è›‡å…’å£"NOR, ({ "sheer kou", "sk" }) );
         set_weight(600);
         set("taskobj", 1);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ö§");
+                set("unit", "æ”¯");
                 set("value", 0);
                 set("material", "steel");
-                set("long", "ÕâÊÇ´«ËµÖĞ¹ÅÀÏ¶øÉñÃØµÄ°µÆ÷--Éß¶ù¿Ú¡£\n");
+                set("long", "é€™æ˜¯å‚³èªªä¸­å¤è€è€Œç¥ç§˜çš„æš—å™¨--è›‡å…’å£ã€‚\n");
         }
         setup();
 }

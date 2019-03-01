@@ -2,21 +2,21 @@
 inherit __DIR__"pill";
 
 void create()
-{//6. Ç§ÄêÊ×ÎÚµ¤        WHT        49000                25000        150                ÓÉÇ§ÄêºÎÊ×ÎÚ»ìºÏÊıÖÖÕä¹óÒ©²ÄËùÁ¶ÖÆµÄÁéÒ©¡£
+{//6. åƒå¹´é¦–çƒä¸¹        WHT        49000                25000        150                ç”±åƒå¹´ä½•é¦–çƒæ··åˆæ•¸ç¨®çè²´è—¥ææ‰€ç…‰åˆ¶çš„éˆè—¥ã€‚
 
-        set_name(WHT "Ç§ÄêÊ×ÎÚµ¤" NOR, ({ "qiannian shouwudan","shouwu", "dan" }));
+        set_name(WHT "åƒå¹´é¦–çƒä¸¹" NOR, ({ "qiannian shouwudan","shouwu", "dan" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                                                                set("long", WHT "ÓÉÇ§ÄêºÎÊ×ÎÚ»ìºÏÊıÖÖÕä¹óÒ©²ÄËùÁ¶ÖÆµÄÁéÒ©¡£\n" NOR);
-                                                                set("unit", "¿Å");
+                                                                set("long", WHT "ç”±åƒå¹´ä½•é¦–çƒæ··åˆæ•¸ç¨®çè²´è—¥ææ‰€ç…‰åˆ¶çš„éˆè—¥ã€‚\n" NOR);
+                                                                set("unit", "é¡†");
                 set("value", 25000);
                 set("weight", 300);
                 set("pill_skill", "parry");
                 set("pill_point", 49000);
                 set("force_point", 150);
-                set("pill_msg1", HIR "ÄãÖ»¾õÒ»¹ÉÅ¯ÆøÉ¢²¼È«Éí£¬Ëµ²»³öµÄÊæ·şÊÜÓÃ¡£\n" NOR);
-                set("pill_msg2", HIY "ÄãÖ»¾õÒ»¹ÉÈÈÁ÷Ó¿ÉÏ£¬ÄÚÏ¢µÃµ½ÁËÍêÈ«µÄ²¹³ä¡£\n" NOR);
+                set("pill_msg1", HIR "ä½ åªè¦ºä¸€è‚¡æš–æ°£æ•£å¸ƒå…¨èº«ï¼Œèªªä¸å‡ºçš„èˆ’æœå—ç”¨ã€‚\n" NOR);
+                set("pill_msg2", HIY "ä½ åªè¦ºä¸€è‚¡ç†±æµæ¹§ä¸Šï¼Œå…§æ¯å¾—åˆ°äº†å®Œå…¨çš„è£œå……ã€‚\n" NOR);
         }
         setup();
 }

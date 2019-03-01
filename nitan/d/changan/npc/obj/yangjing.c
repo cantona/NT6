@@ -6,12 +6,12 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIG"Ñø¾«µ¤"NOR, ({"yangjing dan", "dan"}));
+        set_name(HIG"é¤Šç²¾ä¸¹"NOR, ({"yangjing dan", "dan"}));
         if (clonep())
                 set_default_object(__FILE__);
         else 
         {
-                set("unit", "Á£");
+                set("unit", "ç²’");
                 set("value", 2000);
         }
 
@@ -26,10 +26,10 @@ int init()
 int do_eat(string arg)
 {
         object me = this_player();
-        if (! id(arg)) return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+        if (! id(arg)) return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if (me->is_busy())
-                return notify_fail("±ğ¼±£¬ÂıÂı³Ô£¬Ğ¡ĞÄ±ğÒ­×ÅÁË¡£\n");
-                message_vision("$N³ÔÏÂÒ»Á£" + name() + "¡£\n", me);
+                return notify_fail("åˆ¥æ€¥ï¼Œæ…¢æ…¢åƒï¼Œå°å¿ƒåˆ¥å™è‘—äº†ã€‚\n");
+                message_vision("$Nåƒä¸‹ä¸€ç²’" + name() + "ã€‚\n", me);
 
         if( query("eff_jing", me)/query("max_jing", me)<0.9 )
         {

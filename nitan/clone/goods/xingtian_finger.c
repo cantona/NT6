@@ -6,15 +6,15 @@ inherit FINGER;
  
 void create()
 {
-        set_name(HBGRN "ĞÌÌìÄ§Ö¸" NOR, ({ "xingtian finger", "finger" }) );
+        set_name(HBGRN "åˆ‘å¤©é­”æŒ‡" NOR, ({ "xingtian finger", "finger" }) );
         set_weight(500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸±");
-                set("long", HIY "Õâ±ãÊÇĞÌÌìÊ¹ÓÃ¹ıµÄÖ¸Ì×£¬Í¨ÌåÑª¹âÌÏÌì¡£\n" NOR);
+                set("unit", "å‰¯");
+                set("long", HIY "é€™ä¾¿æ˜¯åˆ‘å¤©ä½¿ç”¨éçš„æŒ‡å¥—ï¼Œé€šé«”è¡€å…‰æ»”å¤©ã€‚\n" NOR);
                 set("value", 3000); 
-                set("no_sell", "ÕâÑù¶«Î÷²»ÄÜÂô¡£\n");
+                set("no_sell", "é€™æ¨£æ±è¥¿ä¸èƒ½è³£ã€‚\n");
                 set("rigidity",8000);   
                 set("material", "tian jing");
                 set("no_pawn", 1);
@@ -24,7 +24,7 @@ void create()
         
         set("mod_mark", "A2038");
         set("mod_level", "M2030");
-        set("mod_name", HBRED "ĞÌÌìÌ××°" NOR);
+        set("mod_name", HBRED "åˆ‘å¤©å¥—è£" NOR);
         set("quality_level", 3);
 
         setup();

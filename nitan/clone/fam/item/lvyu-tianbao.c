@@ -5,17 +5,17 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIG "ÂÌÓñÌì±¦" NOR, ({ "lvyu tianbao" }) );
+        set_name(HIG "ç¶ ç‰å¤©å¯¶" NOR, ({ "lvyu tianbao" }) );
         set_weight(1);
 
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIG "ÕâÊÇÒ»¿ÅÂÌÉ«±¦Ê¯£¬¾İËµÓµÓĞ×ÅÆæ»ÃµÄÁ¦Á¿¡£\n"
-                                                "ÊäÈëÖ¸Áî up9lv <ÄãµÄ±øÆ÷ID> ¿É½«ÄãµÄ±øÆ÷Éı¼¶Îª9¼¶±øÆ÷¡£\n" NOR);
+                set("long", HIG "é€™æ˜¯ä¸€é¡†ç¶ è‰²å¯¶çŸ³ï¼Œæ“šèªªæ“æœ‰è‘—å¥‡å¹»çš„åŠ›é‡ã€‚\n"
+                                                "è¼¸å…¥æŒ‡ä»¤ up9lv <ä½ çš„å…µå™¨ID> å¯å°‡ä½ çš„å…µå™¨å‡ç´šç‚º9ç´šå…µå™¨ã€‚\n" NOR);
                 set("value", 1);
                 set("no_sell", 1);
-                        set("unit", "¿é");
+                        set("unit", "å¡Š");
         }
 
         setup();
@@ -38,16 +38,16 @@ int do_up9lv(string arg)
 
                 me = this_player();
 
-                if (! arg)return notify_fail("Ö¸Áî¸ñÊ½: up9lv <Äã±øÆ÷µÄID>\n");
+                if (! arg)return notify_fail("æŒ‡ä»¤æ ¼å¼: up9lv <ä½ å…µå™¨çš„ID>\n");
 
                 if (! objectp(weapon = present(arg, me)))
-                        return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑùµÀ¾ß¡£\n");
+                        return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™æ¨£é“å…·ã€‚\n");
            
             if (! weapon->is_item_make())
-                        return notify_fail("ÎŞ·¨ÔÚ´ËµÀ¾ßÉÏÍê³É¡£\n");
+                        return notify_fail("ç„¡æ³•åœ¨æ­¤é“å…·ä¸Šå®Œæˆã€‚\n");
 
             if (weapon->weapon_level() >= 50000)
-                        return notify_fail("ÄãµÄ±øÆ÷ÒÑ¾­ÊÇ¾Å¼¶±øÆ÷ÁË£¬²»ĞèÒªÔÙÉı¼¶ÁË¡£\n");
+                        return notify_fail("ä½ çš„å…µå™¨å·²ç¶“æ˜¯ä¹ç´šå…µå™¨äº†ï¼Œä¸éœ€è¦å†å‡ç´šäº†ã€‚\n");
 
         // 
                 weapon->set("owner/combat", 6000000);
@@ -58,8 +58,8 @@ int do_up9lv(string arg)
 
                 weapon->save();
             
-        tell_object(me, HIC "Äã¸ĞÊÜ" + weapon->name() + HIC "·¢ÉúÁË"
-                    "²»¿ÉÑÔÓ÷µÄ±ä»¯¡£\n" NOR);
+        tell_object(me, HIC "ä½ æ„Ÿå—" + weapon->name() + HIC "ç™¼ç”Ÿäº†"
+                    "ä¸å¯è¨€å–»çš„è®ŠåŒ–ã€‚\n" NOR);
 
                 destruct(this_object());
                 return 1;

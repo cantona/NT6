@@ -3,10 +3,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÕıÌü");
+        set("short", "æ­£å»³");
         set("long", @LONG
-ÕâÀïÊÇ»Ø´ºÌÃµÄÕıÌü£¬¿í³¨µÄ·¿¼äÄÚ·Å×Å¼¸ÕÅ×ÀÒÎ£¬Ã¿Ìì¶¼ÓĞÒ©Íõ¹È
-µÄÒ½Ê¦ÔÚÕâÀï×øÌÃ£¬ÎªÈË¿´²¡ÁÆÉË¡£
+é€™è£¡æ˜¯å›æ˜¥å ‚çš„æ­£å»³ï¼Œå¯¬æ•çš„æˆ¿é–“å…§æ”¾è‘—å¹¾å¼µæ¡Œæ¤…ï¼Œæ¯å¤©éƒ½æœ‰è—¥ç‹è°·
+çš„é†«å¸«åœ¨é€™è£¡åå ‚ï¼Œç‚ºäººçœ‹ç—…ç™‚å‚·ã€‚
 LONG );
         set("no_fight", 1);
         set("exits", ([
@@ -21,7 +21,7 @@ LONG );
 
 void init()
 {
-        add_action("do_zhiliao", "zhiliao"); //ÁÆÉË
+        add_action("do_zhiliao", "zhiliao"); //ç™‚å‚·
 }
 
 int do_zhiliao(string arg)
@@ -31,40 +31,40 @@ int do_zhiliao(string arg)
         me=this_player();
         i=( 100 - (int)me->query_skill("medical",1) );
 
-        if( query("family/family_name", me) != "Ò©Íõ¹È" )
+        if( query("family/family_name", me) != "è—¥ç‹è°·" )
         {               
-                return notify_fail("Äã²»ÄÜÔÚÕâÀï¸øÈËÁÆÉË£¡\n");
+                return notify_fail("ä½ ä¸èƒ½åœ¨é€™è£¡çµ¦äººç™‚å‚·ï¼\n");
         }
 
         if( !arg )
-                return notify_fail("Ö¸Áî¸ñÊ½£ºzhiliao <ID> \n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šzhiliao <ID> \n");
 
         if(!objectp(ob = present(arg, environment(me))))
-                return notify_fail("ÕâÀïÃ»ÓĞÕâ¸öÈË£¡\n");
+                return notify_fail("é€™è£¡æ²’æœ‰é€™å€‹äººï¼\n");
 
         if( me->is_fighting() || me->is_busy() )
-                return notify_fail("ÄãÕıÃ¦×ÅÄØ£¡\n");
+                return notify_fail("ä½ æ­£å¿™è‘—å‘¢ï¼\n");
 
         if( ob->is_fighting() || ob->is_busy() )
-                return notify_fail("ËûÕıÃ¦×ÅÄØ£¡\n");
+                return notify_fail("ä»–æ­£å¿™è‘—å‘¢ï¼\n");
 
         if( me==ob )
-                return notify_fail("Äã²»ĞèÒªÔÚÕâÀï¸ø×Ô¼ºÁÆÉË£¡\n");
+                return notify_fail("ä½ ä¸éœ€è¦åœ¨é€™è£¡çµ¦è‡ªå·±ç™‚å‚·ï¼\n");
 
         obj=(query("max_qi", ob)-query("eff_qi", ob));
 
         if( !query_temp("heal", ob)){
-        message_vision ("$NµÃÏÈ½»Õï½ğ"+MONEY_D->price_str(obj*10)+"¸øÌÆ¶ï»¯¡£\n", ob);
+        message_vision ("$Nå¾—å…ˆäº¤è¨ºé‡‘"+MONEY_D->price_str(obj*10)+"çµ¦å”è¨›åŒ–ã€‚\n", ob);
                 return 1;
         }
 
         if( i<5 ) i=5;
         if( i>40 ) i=40;
         if( query("jingli", me) <= i )
-                return notify_fail("ÄãÌ«ÀÛÁË£¬ÏÈĞİÏ¢Ò»ÏÂ°É£¡\n");
+                return notify_fail("ä½ å¤ªç´¯äº†ï¼Œå…ˆä¼‘æ¯ä¸€ä¸‹å§ï¼\n");
 
-        message_vision ("$NÎª$n°ÑÁË°ÑÂö£¬ÄÃ³öÒ»¸ùÒøÕëÔÚ$nÑ¨Î»ÉÏÔúÁË¼¸ÏÂ¡£\n", me, ob);
-        message_vision(WHT"$NÍÂ³öÒ»¿ÚÓÙÑª£¬Á³É«¿´ÆğÀ´ºÃ¶àÁË¡£\n"NOR, ob);
+        message_vision ("$Nç‚º$næŠŠäº†æŠŠè„ˆï¼Œæ‹¿å‡ºä¸€æ ¹éŠ€é‡åœ¨$nç©´ä½ä¸Šç´®äº†å¹¾ä¸‹ã€‚\n", me, ob);
+        message_vision(WHT"$Nåå‡ºä¸€å£æ·¤è¡€ï¼Œè‡‰è‰²çœ‹èµ·ä¾†å¥½å¤šäº†ã€‚\n"NOR, ob);
 
         delete_temp("heal", ob);
         set("eff_qi",query("max_qi",  ob), ob);

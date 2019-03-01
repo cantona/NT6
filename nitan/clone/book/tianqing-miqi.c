@@ -4,16 +4,16 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIW "¡¸ÌìÇæÃØÆø¡¹" NOR, ({ "tianqing miqi", "tianqing", "miqi"}));
+        set_name(HIW "ã€Œå¤©æ“ç§˜æ°£ã€" NOR, ({ "tianqing miqi", "tianqing", "miqi"}));
         set_weight(500);
         if (clonep())
                set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
+                set("unit", "æœ¬");
                 set("material", "paper");
                 set("no_sell", 1);
-                set("long", HIY "\nÕâÊÇÒ»±¾ÓÃ±¡Ö½Ğ´³ÉµÄÊé£¬·âÆ¤ÉÏĞ´ÓĞ¡¸ÌìÇæÃØÆø¡¹ËÄ\n"
-                                "×Ö¡£Äã¿ÉÒÔÊÔ×Å¶Á¶Á(readtq)¿´¡£\n\n" NOR, );
+                set("long", HIY "\né€™æ˜¯ä¸€æœ¬ç”¨è–„ç´™å¯«æˆçš„æ›¸ï¼Œå°çš®ä¸Šå¯«æœ‰ã€Œå¤©æ“ç§˜æ°£ã€å››\n"
+                                "å­—ã€‚ä½ å¯ä»¥è©¦è‘—è®€è®€(readtq)çœ‹ã€‚\n\n" NOR, );
         }
 }
 
@@ -33,27 +33,27 @@ int do_du(string arg)
 
         if (me->is_busy())
         {
-                write("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+                write("ä½ ç¾åœ¨æ­£å¿™è‘—å‘¢ã€‚\n");
                 return 1;
         }
 
         if (me->is_fighting())
         {
-                write("ÄãÎŞ·¨ÔÚÕ½¶·ÖĞ×¨ĞÄÏÂÀ´ÑĞ¶ÁĞÂÖª£¡\n");
+                write("ä½ ç„¡æ³•åœ¨æˆ°é¬¥ä¸­å°ˆå¿ƒä¸‹ä¾†ç ”è®€æ–°çŸ¥ï¼\n");
                 return 1;
         }
 
         if (! me->query_skill("literate", 1))
         {
-                write("ÄãÊÇ¸öÎÄÃ¤£¬ÏÈÑ§µãÎÄ»¯(literate)°É¡£\n");
+                write("ä½ æ˜¯å€‹æ–‡ç›²ï¼Œå…ˆå­¸é»æ–‡åŒ–(literate)å§ã€‚\n");
                 return 1;
         }
 
-        msg = HIG "$N" HIG "·­¿´ÃØ¼®£¬×ĞÏ¸ÑĞ¾¿ÉÏÃæËù¼ÇÔØµÄÄÚÈİ£¬ö®ÄÇ¼äºöÓĞËùÎò¡­¡­\n" NOR;
+        msg = HIG "$N" HIG "ç¿»çœ‹ç§˜ç±ï¼Œä»”ç´°ç ”ç©¶ä¸Šé¢æ‰€è¨˜è¼‰çš„å…§å®¹ï¼Œéœé‚£é–“å¿½æœ‰æ‰€æ‚Ÿâ€¦â€¦\n" NOR;
         message_vision(msg, me); 
 
 
-        write(HIW "ÄãÑ§»áÁË¡¸" HIG "ÌìÇæÃØÆø" HIW "¡¹ÌØ¼¼¡£\n" NOR);
+        write(HIW "ä½ å­¸æœƒäº†ã€Œ" HIG "å¤©æ“ç§˜æ°£" HIW "ã€ç‰¹æŠ€ã€‚\n" NOR);
         me->set("special_skill/tianqing", 1);
         destruct(this_object());
         return 1;

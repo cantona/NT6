@@ -6,29 +6,29 @@ inherit "/inherit/condition/damo";
 
 string name() { return "damo_luanqi"; }
 
-string chinese_name() { return "ÂÒÆøÖ®ÈÅ"; }
+string chinese_name() { return "äº‚æ°£ä¹‹æ“¾"; }
 
 string update_msg_others()
 {
-        return HIM "$N" HIM "²ÒºßÁ½Éù£¬Õû¸öÈËÒ¡Ò¡»Î»Î£¬±ãËÆ"
-               "×í¾ÆÒ»°ã¡£\n" NOR;
+        return HIM "$N" HIM "æ…˜å“¼å…©è²ï¼Œæ•´å€‹äººæ–æ–æ™ƒæ™ƒï¼Œä¾¿ä¼¼"
+               "é†‰é…’ä¸€èˆ¬ã€‚\n" NOR;
 }
 
 string update_msg_self()
 {
-        return HIR "ºöÈ»¾õµÃÒ»ÕóÄÑÊÜ£¬ĞÄĞéÆø¶Ì£¬¿´À´ÊÇÊÜµ½´ï"
-               "Ä¦ÂÒÆø½£µÄ¸ÉÈÅ¡£\n" NOR;
+        return HIR "å¿½ç„¶è¦ºå¾—ä¸€é™£é›£å—ï¼Œå¿ƒè™›æ°£çŸ­ï¼Œçœ‹ä¾†æ˜¯å—åˆ°é”"
+               "æ‘©äº‚æ°£åŠçš„å¹¹æ“¾ã€‚\n" NOR;
 }
 
 string die_msg_others()
 {
-        return HIR "$N" HIR "µ¹ÔÚµØÉÏÉëÒ÷ÁË°ëÌì£¬×îºóÖÕÓÚ½¥"
-               "½¥Ã»ÓĞÁËÉùÒô¡£\n" NOR;
+        return HIR "$N" HIR "å€’åœ¨åœ°ä¸Šå‘»åŸäº†åŠå¤©ï¼Œæœ€å¾Œçµ‚äºæ¼¸"
+               "æ¼¸æ²’æœ‰äº†è²éŸ³ã€‚\n" NOR;
 }
 
 string die_reason()
 {
-        return "Æø¾¡ÉíÍöÁË";
+        return "æ°£ç›¡èº«äº¡äº†";
 }
 
 int qi_damage(object me, mapping cnd)

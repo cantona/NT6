@@ -1,12 +1,12 @@
 // This program is a part of NITAN MudLIB
-// wang.c ÌìÂŞµØÍø ¡¸ÌìÂŞµØÍø¡¹
+// wang.c å¤©ç¾…åœ°ç¶² ã€Œå¤©ç¾…åœ°ç¶²ã€
 
 #include <ansi.h>
 #include <combat.h>
 
 inherit F_SSERVER;
 
-string name() { return HIW "ÌìÂŞµØÍø" NOR; }
+string name() { return HIW "å¤©ç¾…åœ°ç¶²" NOR; }
 
 int perform(object me, object target)
 {
@@ -20,35 +20,35 @@ int perform(object me, object target)
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("¡¸ÌìÂŞµØÍø¡¹Ö»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œå¤©ç¾…åœ°ç¶²ã€åªèƒ½åœ¨æˆ°é¬¥ä¸­ä½¿ç”¨ã€‚\n");
 
         if((int)me->query_str() < 25)
-                return notify_fail("Äã±ÛÁ¦²»¹»,²»ÄÜÊ¹ÓÃÕâÒ»¾ø¼¼!\n");
+                return notify_fail("ä½ è‡‚åŠ›ä¸å¤ ,ä¸èƒ½ä½¿ç”¨é€™ä¸€çµ•æŠ€!\n");
 
         if((int)me->query_skill("yunv-xinfa",1) < 100)
-                return notify_fail("ÄãÓñÅ®ĞÄ¾­µÄ¹¦Á¦²»¹»²»ÄÜÊ¹ÓÃÌìÂŞµØÍø!\n");
+                return notify_fail("ä½ ç‰å¥³å¿ƒç¶“çš„åŠŸåŠ›ä¸å¤ ä¸èƒ½ä½¿ç”¨å¤©ç¾…åœ°ç¶²!\n");
 
         if((int)me->query_skill("strike") < 120)
-                return notify_fail("ÄãµÄÕÆ·¨ĞŞÎª²»¹»,Ä¿Ç°»¹²»ÄÜÊ¹ÓÃÌìÂŞµØÍø¾ø¼¼!\n");
+                return notify_fail("ä½ çš„æŒæ³•ä¿®ç‚ºä¸å¤ ,ç›®å‰é‚„ä¸èƒ½ä½¿ç”¨å¤©ç¾…åœ°ç¶²çµ•æŠ€!\n");
 
         if( query("neili", me)<300 )
-                return notify_fail("ÄãÄÚÁ¦ÏÖÔÚ²»¹», ²»ÄÜÊ¹ÓÃÌìÂŞµØÍø! \n");
+                return notify_fail("ä½ å…§åŠ›ç¾åœ¨ä¸å¤ , ä¸èƒ½ä½¿ç”¨å¤©ç¾…åœ°ç¶²! \n");
 
         if( target->is_busy() )
-                return notify_fail(target->name() + "Ä¿Ç°Õı×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É¢¦\n");
+                return notify_fail(target->name() + "ç›®å‰æ­£è‡ªé¡§ä¸æš‡ï¼Œæ”¾è†½æ”»æ“Šå§â–¡\n");
 
         if( query_temp("luowang", target) )
-                return notify_fail("¶ÔÊÖÒÑÔÚÄãµÄÌìÂŞµØÍøÊÆÖ®ÖĞ£¡\n");
+                return notify_fail("å°æ‰‹å·²åœ¨ä½ çš„å¤©ç¾…åœ°ç¶²å‹¢ä¹‹ä¸­ï¼\n");
 
-        msg = HIM "\nµ«¼û$NË«±Û·ÉÎè£¬³öÊÖµ²»÷»Ø±Û·´ÆË·¢ÕÆÆæ¿ì£¬µ«Ò»ÕĞÒ»Ê½ÇåÇå³ş³ş×Ô³É" +
-              "¶ÎÂä£¬Á½Ö»ÊÖÕÆÍğËÆ»¯³ÉÁËÇ§ÊÖÇ§ÕÆ£¡\n" NOR;
+        msg = HIM "\nä½†è¦‹$Né›™è‡‚é£›èˆï¼Œå‡ºæ‰‹æ“‹æ“Šå›è‡‚åæ’²ç™¼æŒå¥‡å¿«ï¼Œä½†ä¸€æ‹›ä¸€å¼æ¸…æ¸…æ¥šæ¥šè‡ªæˆ" +
+              "æ®µè½ï¼Œå…©åªæ‰‹æŒå®›ä¼¼åŒ–æˆäº†åƒæ‰‹åƒæŒï¼\n" NOR;
 
         ap = attack_power(me, "strike");
         dp = defense_power(target, "dodge");
 
         if (ap / 2 + random(ap) > dp)
         {
-                msg += CYN "\n$nĞÄÏÂ´óº§£¬·É¹ö·­ÆË£¬Ê¼ÖÕÌÓ²»³ö$NÖ»ÕÆËùÎ§×÷µÄÈ¦×Ó! \n" NOR;
+                msg += CYN "\n$nå¿ƒä¸‹å¤§é§­ï¼Œé£›æ»¾ç¿»æ’²ï¼Œå§‹çµ‚é€ƒä¸å‡º$NåªæŒæ‰€åœä½œçš„åœˆå­! \n" NOR;
 
                 target->start_busy( 3 + skill / 100 );
                 addn_temp("apply/defense", -skill/8, target);
@@ -61,7 +61,7 @@ int perform(object me, object target)
         }
         else
         {
-                msg += HIY "\n¿ÉÊÇ$pÆø¶¨ÉñÏÒ£¬¿´ÆÆÁË$PµÄÓÕ»ó£¬×İÉíÒ»Ô¾£¬ÌøÁË¿ªÈ¥¡£\n" NOR;
+                msg += HIY "\nå¯æ˜¯$pæ°£å®šç¥å¼¦ï¼Œçœ‹ç ´äº†$Pçš„èª˜æƒ‘ï¼Œç¸±èº«ä¸€èºï¼Œè·³äº†é–‹å»ã€‚\n" NOR;
                 me->start_busy(1+random(3));
                 addn("neili", -100, me);
                 return 1;
@@ -82,7 +82,7 @@ void checking(object me, object target, int skill)
                         delete_temp("luowang", target);
                         addn_temp("apply/defense", skill/8, target);
                         remove_call_out("remove_effect");
-                        message_combatd(HIG"ÂıÂıµÄ£¬$nÒÑ²»ËÆ³õ¼ûÊ±ÄÇÃ´²ïÒìÍò·Ö¡£\n\n"NOR,me,target);
+                        message_combatd(HIG"æ…¢æ…¢çš„ï¼Œ$nå·²ä¸ä¼¼åˆè¦‹æ™‚é‚£éº¼è©«ç•°è¬åˆ†ã€‚\n\n"NOR,me,target);
                         return ;
                 }
                 if( !me->is_fighting() )
@@ -90,18 +90,18 @@ void checking(object me, object target, int skill)
                         delete_temp("luowang", target);
                         addn_temp("apply/defense", skill/8, target);
                         remove_call_out("remove_effect");
-                        message_combatd(HIG"ÂıÂıµÄ£¬$nÒÑ²»ËÆ³õ¼ûÊ±ÄÇÃ´²ïÒìÍò·Ö¡£\n\n"NOR,me,target);
+                        message_combatd(HIG"æ…¢æ…¢çš„ï¼Œ$nå·²ä¸ä¼¼åˆè¦‹æ™‚é‚£éº¼è©«ç•°è¬åˆ†ã€‚\n\n"NOR,me,target);
                         return ;
                 }
 
                 if( me->query_skill_mapped("strike") != "tianluo-diwang"
                 ||  me->query_skill_prepared("strike") != "tianluo-diwang" )
                 {
-                        message_combatd(HIM"\n$NÖèÈ»±ä»»ÕĞÊı£¬²»ÄÜÔÙ¼ÌĞøÓÃÌìÂŞµØÍøÇ£ÖÆ¶ÔÊÖµÄ¹¥»÷£¡\n"NOR, me);
+                        message_combatd(HIM"\n$Né©Ÿç„¶è®Šæ›æ‹›æ•¸ï¼Œä¸èƒ½å†ç¹¼çºŒç”¨å¤©ç¾…åœ°ç¶²ç‰½åˆ¶å°æ‰‹çš„æ”»æ“Šï¼\n"NOR, me);
                         delete_temp("luowang", target);
                         addn_temp("apply/defense", skill/8, target);
                         remove_call_out("remove_effect");
-                        message_combatd(HIG"ÂıÂıµÄ£¬$nÒÑ²»ËÆ³õ¼ûÊ±ÄÇÃ´²ïÒìÍò·Ö¡£\n\n"NOR,me,target);
+                        message_combatd(HIG"æ…¢æ…¢çš„ï¼Œ$nå·²ä¸ä¼¼åˆè¦‹æ™‚é‚£éº¼è©«ç•°è¬åˆ†ã€‚\n\n"NOR,me,target);
                         return ;
                 }
 
@@ -121,6 +121,6 @@ int remove_effect(object me, object target, int skill)
         addn_temp("apply/defense", skill/8, target);
         set_temp("luowang_finished", 1, target);
 
-        message_combatd(HIG"ÂıÂıµÄ£¬$NÒÑ²»ËÆ³õ¼ûÊ±ÄÇÃ´²ïÒìÍò·Ö¡£\n\n"NOR, target);
+        message_combatd(HIG"æ…¢æ…¢çš„ï¼Œ$Nå·²ä¸ä¼¼åˆè¦‹æ™‚é‚£éº¼è©«ç•°è¬åˆ†ã€‚\n\n"NOR, target);
         return 1;
 }

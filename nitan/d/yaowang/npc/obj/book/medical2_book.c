@@ -2,25 +2,25 @@ inherit ITEM;
 
 void create()
 {
-       set_name("Ò½Ò©¸ß¼¶ÖªÊ¶", ({ "medicine book"}));
+       set_name("é†«è—¥é«˜ç´šçŸ¥è­˜", ({ "medicine book"}));
         set_weight(600);
         if( clonep() )
                 set_default_object(__FILE__);
         else
         {
-        set("unit", "±¾");
+        set("unit", "æœ¬");
         set("long",
-"Õâ±¾ÊéÉÏÃæÖ»ÓĞÒ»Ğ©×Ö¼£Ä£ºıµÄ×Ö¾ä£¬ËÆºõ\n"
-"Ğ´µÄÊÇÒ»Ğ©ÖÖÖ²»¨²İµÄ»ù±¾·¨ÃÅ¡£\n");
+"é€™æœ¬æ›¸ä¸Šé¢åªæœ‰ä¸€äº›å­—è·¡æ¨¡ç³Šçš„å­—å¥ï¼Œä¼¼ä¹\n"
+"å¯«çš„æ˜¯ä¸€äº›ç¨®æ¤èŠ±è‰çš„åŸºæœ¬æ³•é–€ã€‚\n");
         set("value", 800);
         set("material", "paper");
         set("skill", ([
-        "name":         "baicao-jue", // Îä¹¦Ãû³Æ,
-        "exp_required": 5000,    // ¶Á´ËÊéĞèÒªµÄ×îµÍ¾­Ñé.
-        "jing_cost":     30,      // ¶ÁÊé»¨µÄÉñ.
-        "difficulty":   25,      // ²Î¿´ /cmds/std/study.c
-        "max_skill":    100,      // ÄÜ¶Áµ½µÄ×î¸ßµÈ¼¶.
-        "min_skill":    10,      // ÄÜ¶Áµ½µÄ×î¸ßµÈ¼¶.
+        "name":         "baicao-jue", // æ­¦åŠŸåç¨±,
+        "exp_required": 5000,    // è®€æ­¤æ›¸éœ€è¦çš„æœ€ä½ç¶“é©—.
+        "jing_cost":     30,      // è®€æ›¸èŠ±çš„ç¥.
+        "difficulty":   25,      // åƒçœ‹ /cmds/std/study.c
+        "max_skill":    100,      // èƒ½è®€åˆ°çš„æœ€é«˜ç­‰ç´š.
+        "min_skill":    10,      // èƒ½è®€åˆ°çš„æœ€é«˜ç­‰ç´š.
 ]) );
         }
 }

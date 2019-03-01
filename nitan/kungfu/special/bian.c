@@ -1,4 +1,4 @@
-// bian.c ¹î±çÆæÑ§
+// bian.c è©­è¾¯å¥‡å­¸
 // Created by rcwiz for yhonline
 
 #include <ansi.h>
@@ -7,7 +7,7 @@ inherit F_CLEAN_UP;
 
 int is_scborn() { return 1; }
 
-string name() { return HIC "¹î±çÆæÑ§" NOR; }
+string name() { return HIC "è©­è¾¯å¥‡å­¸" NOR; }
 
 int perform(object me, string skill, string arg)
 {
@@ -16,32 +16,32 @@ int perform(object me, string skill, string arg)
         object ob;
 
         if (time() - me->query("special2/bian") < 600)
-                return notify_fail("Äã¸ÕÊ©Õ¹Íê¹î±çÆæÑ§£¬µÈÏÂÔÙËµ°É£¡\n");
+                return notify_fail("ä½ å‰›æ–½å±•å®Œè©­è¾¯å¥‡å­¸ï¼Œç­‰ä¸‹å†èªªå§ï¼\n");
 
-        if (me->is_busy())return notify_fail("µÈÄãÃ¦ÍêÔÙËµ°É£¡\n");
+        if (me->is_busy())return notify_fail("ç­‰ä½ å¿™å®Œå†èªªå§ï¼\n");
 
         if (! objectp(ob = present(arg, environment(me))))
-                return notify_fail("ÕâÀïÃ»ÓĞÕâ¸öÈË£¡¿ÉÄÜÊÇÄãµÄ¸ñÊ½ÓĞ´íÎó£¡\n"
-                                   "¸ñÊ½ £º special bian <¶ÔÏóid> \n");
+                return notify_fail("é€™è£¡æ²’æœ‰é€™å€‹äººï¼å¯èƒ½æ˜¯ä½ çš„æ ¼å¼æœ‰éŒ¯èª¤ï¼\n"
+                                   "æ ¼å¼ ï¼š special bian <å°è±¡id> \n");
 
 
-        if (! playerp(ob))return notify_fail("¹î±çÆæÑ§Ö»ÄÜ¶ÔÍ¬ÃÅÍæ¼ÒÊ¹ÓÃ£¡\n");
+        if (! playerp(ob))return notify_fail("è©­è¾¯å¥‡å­¸åªèƒ½å°åŒé–€ç©å®¶ä½¿ç”¨ï¼\n");
 
         if (ob->query("family/family_name") != me->query("family/family_name"))
-                return notify_fail("¹î±çÆæÑ§Ö»ÄÜ¶ÔÍ¬ÃÅÍæ¼ÒÊ¹ÓÃ£¡\n");
+                return notify_fail("è©­è¾¯å¥‡å­¸åªèƒ½å°åŒé–€ç©å®¶ä½¿ç”¨ï¼\n");
 
-        message_vision(HIM "$N" HIM "Ê©Õ¹³ö¹î±çÆæÑ§£¬¹î±çÖ®Éù²»¾øÓÚ¶ú ¡­¡­\n" NOR, me);
+        message_vision(HIM "$N" HIM "æ–½å±•å‡ºè©­è¾¯å¥‡å­¸ï¼Œè©­è¾¯ä¹‹è²ä¸çµ•äºè€³ â€¦â€¦\n" NOR, me);
 
         if (me->query("gongxian") > 100000000)
         {
-                tell_object(me, HIG "ÄãµÄÃÅÅÉ¹±ÒÑ¾­³¬¹ı¼«ÏŞ£¡\n");
+                tell_object(me, HIG "ä½ çš„é–€æ´¾è²¢å·²ç¶“è¶…éæ¥µé™ï¼\n");
                 return 1;
         }
         
         me->add("gongxian", 1000 + random(101));
         me->start_busy(2);
 
-        tell_object(me, HIG "ÄãµÄÃÅÅÉ¹±Ï×Ìá¸ßÁË£¡\n");
+        tell_object(me, HIG "ä½ çš„é–€æ´¾è²¢ç»æé«˜äº†ï¼\n");
 
         me->set("special2/bian", time());
 

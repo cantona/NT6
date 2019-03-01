@@ -1,11 +1,11 @@
 // This program is a part of NITAN MudLIB
-// xi.c ÎüÑªÇàòğ
+// xi.c å¸è¡€é’è 
 
 #include <ansi.h>
 
 inherit F_SSERVER;
 
-string name() { return "ÎüÑªÇàòğ"; }
+string name() { return "å¸è¡€é’è "; }
 
 int perform(object me)
 {
@@ -19,20 +19,20 @@ int perform(object me)
         skill = me->query_skill("hanbing-mianzhang", 1);
 
         if (! (me->is_fighting(target)))
-                return notify_fail("¡¸ÎüÑªÇàòğ¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œå¸è¡€é’è ã€åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if (objectp(weapon = query_temp("weapon", me)))
-                return notify_fail("ÄãÊ¹ÓÃÁËÎäÆ÷¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨äº†æ­¦å™¨ã€‚\n");
 
         if (skill < 60)
-                return notify_fail("ÄãµÄ¡¸º®±ùÃàÕÆ¡¹µÈ¼¶²»¹», ²»ÄÜÊ¹ÓÃ¡¸ÎüÑªÇàòğ¡¹£¡\n");
+                return notify_fail("ä½ çš„ã€Œå¯’å†°ç¶¿æŒã€ç­‰ç´šä¸å¤ , ä¸èƒ½ä½¿ç”¨ã€Œå¸è¡€é’è ã€ï¼\n");
 
         if (me->query_skill("dodge", 1) < 200)
-                return notify_fail("ÄãµÄÇá¹¦»ù´¡»¹Ã»ÓĞ´òºÃ£¬ÎŞ·¨ÔËÓÃ¡¸ÎüÑªÇàòğ¡¹£¡\n");
+                return notify_fail("ä½ çš„è¼•åŠŸåŸºç¤é‚„æ²’æœ‰æ‰“å¥½ï¼Œç„¡æ³•é‹ç”¨ã€Œå¸è¡€é’è ã€ï¼\n");
 
 
-        msg = HIR "$N" HIR "Í»È»ÈçÍ¬òùòğÒ»Ñù£¬Ù¿µÄÆÛ½ü$n"
-              HIR "µÄÉíÇ°£¬ÕÅ×ì±ãÏò$n" HIR "µÄÑÊºíÒ§È¥¡£\n" NOR;
+        msg = HIR "$N" HIR "çªç„¶å¦‚åŒè™è ä¸€æ¨£ï¼Œå€çš„æ¬ºè¿‘$n"
+              HIR "çš„èº«å‰ï¼Œå¼µå˜´ä¾¿å‘$n" HIR "çš„åš¥å–‰å’¬å»ã€‚\n" NOR;
         message_combatd(msg, me, target);
 
         ap = attack_power(me, "strike");
@@ -40,11 +40,11 @@ int perform(object me)
 
         if (ap / 2 + random(ap) > dp)
         {
-                message_combatd(HIR"½á¹ûÒ»ÏÂ×ÓÒ§ÔÚ$nµÄ¾±²à£¬ÃÍÎüÆğÀ´£¬Ò»¹ÉÏÊÑªµÇÊ±´Ó$NµÄÑÀ±ßÉø³ö£¬ÒõÉ­¿É²À¡£\n\n"NOR,me,target);
+                message_combatd(HIR"çµæœä¸€ä¸‹å­å’¬åœ¨$nçš„é ¸å´ï¼ŒçŒ›å¸èµ·ä¾†ï¼Œä¸€è‚¡é®®è¡€ç™»æ™‚å¾$Nçš„ç‰™é‚Šæ»²å‡ºï¼Œé™°æ£®å¯æ€–ã€‚\n\n"NOR,me,target);
 
                 if ( query("combat_exp", me) > random(query("combat_exp", target)*10) )
                 {
-                        message_vision(HIR"Ö»¼û$NµÄ¸¹²¿Î¢Î¢¹ÄÆğ£¬È»ºó·Å¿ª$n¡£ÔÙ¿´Ê±£¬$nÒÑ¾­Ñª±»Îü¸É£¬ÔçÒÑÆø¾ø¡£\n"NOR,me,target);
+                        message_vision(HIR"åªè¦‹$Nçš„è…¹éƒ¨å¾®å¾®é¼“èµ·ï¼Œç„¶å¾Œæ”¾é–‹$nã€‚å†çœ‹æ™‚ï¼Œ$nå·²ç¶“è¡€è¢«å¸å¹¹ï¼Œæ—©å·²æ°£çµ•ã€‚\n"NOR,me,target);
                         me->receive_curing("qi",query("max_qi", target)+100);
                         addn("qi",query("max_qi", target)+100, me);
                         target->receive_damage("qi", query("max_qi", target)+100, me);
@@ -53,7 +53,7 @@ int perform(object me)
                 }
                 else
                 {
-                        message_vision(HIW"$nÆ´ËÀÕõÔú£¬ÖÕÓÚÕõÍÑ$NµÄ¿ØÖÆ£¬µ«ÊÜÉË¼«ÖØ£¬ÏÊÑª´Ó¾±²¿ãéãéÁ÷³ö¡£\n"NOR,me,target);
+                        message_vision(HIW"$næ‹¼æ­»æ™ç´®ï¼Œçµ‚äºæ™è„«$Nçš„æ§åˆ¶ï¼Œä½†å—å‚·æ¥µé‡ï¼Œé®®è¡€å¾é ¸éƒ¨æ±©æ±©æµå‡ºã€‚\n"NOR,me,target);
                         me->receive_curing("qi",query("max_qi", target)/3);
                         addn("qi",query("max_qi", target)/3, me);
                         target->receive_wound("qi", query("max_qi", target)/3, me);
@@ -64,8 +64,8 @@ int perform(object me)
                 me->start_busy(1 + random(2));
         } else
         {
-                msg = CYN "Ö»¼û$n" CYN "²»»Å²»Ã¦£¬ÇáÇáÒ»ÉÁ£¬¶ã¹ıÁË$N"
-                      CYN "µÄÀû³İ£¡\n"NOR;
+                msg = CYN "åªè¦‹$n" CYN "ä¸æ…Œä¸å¿™ï¼Œè¼•è¼•ä¸€é–ƒï¼Œèº²éäº†$N"
+                      CYN "çš„åˆ©é½’ï¼\n"NOR;
                 addn("neili", -100, me);
                 me->start_busy(4);
         }

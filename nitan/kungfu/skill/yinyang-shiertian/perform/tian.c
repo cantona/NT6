@@ -5,23 +5,23 @@ inherit F_SSERVER;
 
 #include "/kungfu/skill/eff_msg.h";
 
-string name() { return HIY "Ê®¶şÖØÌì" NOR; }
+string name() { return HIY "åäºŒé‡å¤©" NOR; }
 
 
 
 ////////////////////////////////////////
-//1  ÅĞ¶ÏÄÚÁ¦
-//2  ÅĞ¶ÏÒôÂÉĞŞÑø
-//3  ÅĞ¶Ï·ğÑ§¼°µÀÑ§ĞŞÑø
-//4  ÅĞ¶Ï½­ºşÔÄÀú
-//5  ÅĞ¶ÏÏÈÌì±ÛÁ¦
-//6  ÅĞ¶ÏºóÌì±ÛÁ¦¼°unarmed
-//7  ÅĞ¶ÏÏÈÌìÎòĞÔ
-//8  ÅĞ¶ÏºóÌìÎòĞÔ¼°literate
-//9  ÅĞ¶ÏÏÈÌì¸ù¹Ç
-//10 ÅĞ¶ÏºóÌì¸ù¹Ç¼°force
-//11 ÅĞ¶ÏÏÈÌìÉí·¨
-//12 ÅĞ¶ÏºóÌìÉí·¨¼°dodge
+//1  åˆ¤æ–·å…§åŠ›
+//2  åˆ¤æ–·éŸ³å¾‹ä¿®é¤Š
+//3  åˆ¤æ–·ä½›å­¸åŠé“å­¸ä¿®é¤Š
+//4  åˆ¤æ–·æ±Ÿæ¹–é–±æ­·
+//5  åˆ¤æ–·å…ˆå¤©è‡‚åŠ›
+//6  åˆ¤æ–·å¾Œå¤©è‡‚åŠ›åŠunarmed
+//7  åˆ¤æ–·å…ˆå¤©æ‚Ÿæ€§
+//8  åˆ¤æ–·å¾Œå¤©æ‚Ÿæ€§åŠliterate
+//9  åˆ¤æ–·å…ˆå¤©æ ¹éª¨
+//10 åˆ¤æ–·å¾Œå¤©æ ¹éª¨åŠforce
+//11 åˆ¤æ–·å…ˆå¤©èº«æ³•
+//12 åˆ¤æ–·å¾Œå¤©èº«æ³•åŠdodge
 ///////////////////////////////////////
 
 string final(object me, object target, int damage);
@@ -38,32 +38,32 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(name()+ "Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(name()+ "åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if ((int)me->query_skill("force", 1) < 1200)
-                return notify_fail("ÄãÄÚ¹¦ĞŞÎª²»¹»£¬ÄÑÒÔÊ©Õ¹" +name()+ "¡£\n");
+                return notify_fail("ä½ å…§åŠŸä¿®ç‚ºä¸å¤ ï¼Œé›£ä»¥æ–½å±•" +name()+ "ã€‚\n");
 
         if( query("max_neili", me)<50000 )
-                return notify_fail("ÄãÄÚÁ¦ĞŞÎª²»¹»£¬ÄÑÒÔÊ©Õ¹" +name()+ "¡£\n");
+                return notify_fail("ä½ å…§åŠ›ä¿®ç‚ºä¸å¤ ï¼Œé›£ä»¥æ–½å±•" +name()+ "ã€‚\n");
 
         if( query("max_jingli", me)<10000 )
-                return notify_fail("Äã¾«Á¦ĞŞÎª²»¹»£¬ÄÑÒÔÊ©Õ¹" +name()+ "¡£\n");
+                return notify_fail("ä½ ç²¾åŠ›ä¿®ç‚ºä¸å¤ ï¼Œé›£ä»¥æ–½å±•" +name()+ "ã€‚\n");
 
         lvl = (int)me->query_skill("yinyang-shiertian", 1);
         if (lvl < 1200)
-                return notify_fail("ÄãÒõÑô¾Å×ªÊ®¶şÖØÌì»ğºò²»¹»£¬ÄÑÒÔÊ©Õ¹" +name()+ "¡£\n");
+                return notify_fail("ä½ é™°é™½ä¹è½‰åäºŒé‡å¤©ç«å€™ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" +name()+ "ã€‚\n");
 
         if( query("neili", me)<12000 )
-                return notify_fail("ÄãÏÖÔÚÕæÆø²»¹»£¬ÄÑÒÔÊ©Õ¹" +name()+ "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çœŸæ°£ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" +name()+ "ã€‚\n");
 
         if (me->query_skill("martial-cognize", 1) < 500)
-                return notify_fail("ÄãÎäÑ§ĞŞÑø²»×ã£¬ÄÑÒÔÊ©Õ¹" +name()+ "¡£\n");
+                return notify_fail("ä½ æ­¦å­¸ä¿®é¤Šä¸è¶³ï¼Œé›£ä»¥æ–½å±•" +name()+ "ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        message_combatd(HIM "\n$N" HIM "¿ÚÖĞÄ¬Äî£ºÌìµÀÎŞ³£¡£ĞÄÉñ³ÁÈëÊ®¶şÖØÌì¾³½ç£¬"
-                     "Á¬¿Õ¼äËÆºõÒ²Å¤ÇúÁËÆğÀ´¡£$n" HIM "´ó¾ªÊ§É«£¬·Â·ğÒÑÉíÔÚÒì½ç£¡\n" NOR, me, target);
+        message_combatd(HIM "\n$N" HIM "å£ä¸­é»˜å¿µï¼šå¤©é“ç„¡å¸¸ã€‚å¿ƒç¥æ²‰å…¥åäºŒé‡å¤©å¢ƒç•Œï¼Œ"
+                     "é€£ç©ºé–“ä¼¼ä¹ä¹Ÿæ‰­æ›²äº†èµ·ä¾†ã€‚$n" HIM "å¤§é©šå¤±è‰²ï¼Œä»¿ä½›å·²èº«åœ¨ç•°ç•Œï¼\n" NOR, me, target);
 
 
         ap = attack_power(me, "force");
@@ -82,9 +82,9 @@ int perform(object me, object target)
 
         dp = defense_power(target, "dodge") + target->query_skill("yinyang-shiertian", 1);
 
-        // µÚÒ»ÕĞ£¬ÅĞ¶Ï¶Ô·½ÄÚÁ¦
-        message_combatd(HIW "$N" HIW "Ë«±ÛÒ»Õğ£¬Ò»¹É»ëºñÖÁ¼«µÄÄÚ¾¢ĞÚÓ¿ÅìÅÈ£¬"
-                     "´ø×ÅÅÅÉ½µ¹º£Ö®ÊÆÏò$n" HIW "Ï¯¾í¶øÖÁ¡£\n" NOR, me, target);
+        // ç¬¬ä¸€æ‹›ï¼Œåˆ¤æ–·å°æ–¹å…§åŠ›
+        message_combatd(HIW "$N" HIW "é›™è‡‚ä¸€éœ‡ï¼Œä¸€è‚¡æ¸¾åšè‡³æ¥µçš„å…§å‹æ´¶æ¹§æ¾æ¹ƒï¼Œ"
+                     "å¸¶è‘—æ’å±±å€’æµ·ä¹‹å‹¢å‘$n" HIW "å¸­å·è€Œè‡³ã€‚\n" NOR, me, target);
 
         damage1 = 0;
 
@@ -92,9 +92,9 @@ int perform(object me, object target)
         {
                 if( query("max_neili", me)>query("max_neili", target)*2 )
                 {
-                        msg = HIW "$n" HIW "¾Ù±ÛÓûµ²,È»¶ø$N" HIW "»ëºñµÄÄÚÁ¦ÎŞ¿ÉµÖÓù£¬"
-                              "É²ÄÇ¼ä¾Í½«$n" HIW "È«Éí¹ÇÍ·Ñ¹Ëé¡£" NOR "( $n" RED "ÊÜÉË¹ıÖØ£¬ÒÑ"
-                              "¾­ÓĞÈç·çÖĞ²ĞÖò£¬ËæÊ±¶¼¿ÉÄÜ¶ÏÆø¡£" NOR ")\n";
+                        msg = HIW "$n" HIW "èˆ‰è‡‚æ¬²æ“‹,ç„¶è€Œ$N" HIW "æ¸¾åšçš„å…§åŠ›ç„¡å¯æŠµå¾¡ï¼Œ"
+                              "å‰é‚£é–“å°±å°‡$n" HIW "å…¨èº«éª¨é ­å£“ç¢ã€‚" NOR "( $n" RED "å—å‚·éé‡ï¼Œå·²"
+                              "ç¶“æœ‰å¦‚é¢¨ä¸­æ®˜ç‡­ï¼Œéš¨æ™‚éƒ½å¯èƒ½æ–·æ°£ã€‚" NOR ")\n";
                         damage1 = -1;
                         addn("neili", -2000, me);
                 } else
@@ -105,16 +105,16 @@ int perform(object me, object target)
                         target->receive_wound("jing", damage / 8, me);
                         p=query("qi", target)*100/query("max_qi", target);
 
-                        msg = HIY "$n" HIY "Ë¼ÂÇÎ´¶¨£¬$N" HIY "µÄÄÚ¾¢ÒÑÆÆÌå¶øÈë£¬"
-                              "$n" HIY "ÊÜ´ËÖØ»÷£¬ºí¿ÚÒ»Ìğ£¬Å»³öÊı¿Ú" HIR "ÏÊÑª" HIY "¡£\n" NOR;
+                        msg = HIY "$n" HIY "æ€æ…®æœªå®šï¼Œ$N" HIY "çš„å…§å‹å·²ç ´é«”è€Œå…¥ï¼Œ"
+                              "$n" HIY "å—æ­¤é‡æ“Šï¼Œå–‰å£ä¸€ç”œï¼Œå˜”å‡ºæ•¸å£" HIR "é®®è¡€" HIY "ã€‚\n" NOR;
                         msg += "( $n" + eff_status_msg(p) + " )\n";
 
                         addn("neili", -500, me);
                 }
         } else
         {
-                msg = CYN "$n" CYN "ÖªµÀ$NÕâÕĞÎŞ¿ÉµÖµ²£¬"
-                       CYN "µ±¼´·ÉÉíÔ¾ÆğÕÉĞí£¬¶ãÉÁ¿ªÀ´¡£\n" NOR;
+                msg = CYN "$n" CYN "çŸ¥é“$Né€™æ‹›ç„¡å¯æŠµæ“‹ï¼Œ"
+                       CYN "ç•¶å³é£›èº«èºèµ·ä¸ˆè¨±ï¼Œèº²é–ƒé–‹ä¾†ã€‚\n" NOR;
                 addn("neili", -200, me);
         }
         message_combatd(msg, me, target);
@@ -131,12 +131,12 @@ int perform(object me, object target)
                 return 1;
         }
 
-        // µÚ¶şÕĞ£¬ÅĞ¶Ï¶Ô·½ÒôÂÉĞŞÑø
+        // ç¬¬äºŒæ‹›ï¼Œåˆ¤æ–·å°æ–¹éŸ³å¾‹ä¿®é¤Š
         dp1 = target->query_skill("guzheng-jifa", 1) + target->query_skill("tanqin-jifa", 1) +
               target->query_skill("chuixiao-jifa", 1) + dp;
 
-        message_combatd(HIW "\n$N" HIW "Ò»ÉùÇåĞ¥£¬Æ¾½è»ëºñµÄÄÚÁ¦£¬Æ¾¿Õ´µ×àÆğÄªÃûµÄÇú×Ó,"
-                     HIW "»¶¿ìÖĞ´ø×ÅÒ»Ë¿µ­µ­µÄÓÇÉË£¬·Â·ğÓÖ»Øµ½ÁËÒ£Ô¶µÄÍ¯Äê¡£\n" NOR, me, target);
+        message_combatd(HIW "\n$N" HIW "ä¸€è²æ¸…å˜¯ï¼Œæ†‘å€Ÿæ¸¾åšçš„å…§åŠ›ï¼Œæ†‘ç©ºå¹å¥èµ·è«åçš„æ›²å­,"
+                     HIW "æ­¡å¿«ä¸­å¸¶è‘—ä¸€çµ²æ·¡æ·¡çš„æ†‚å‚·ï¼Œä»¿ä½›åˆå›åˆ°äº†é™é çš„ç«¥å¹´ã€‚\n" NOR, me, target);
 
         if (ap * 2 / 3 + random(ap) > dp1)
         {
@@ -146,21 +146,21 @@ int perform(object me, object target)
                 target->receive_wound("jing", damage / 2, me);
                 p=query("qi", target)*100/query("max_qi", target);
 
-                msg = HIY "$N" HIY "´µ×à¼äÏ¶»º²½¶øÉÏ£¬$n" HIY "È´ÈÔ³Á½şÔÚ»ØÒäÖ®ÖĞ£¬"
-                      HIY "$N" HIY "Ò»»÷µÃÊÖ¡£\n" NOR;
+                msg = HIY "$N" HIY "å¹å¥é–“éš™ç·©æ­¥è€Œä¸Šï¼Œ$n" HIY "å»ä»æ²‰æµ¸åœ¨å›æ†¶ä¹‹ä¸­ï¼Œ"
+                      HIY "$N" HIY "ä¸€æ“Šå¾—æ‰‹ã€‚\n" NOR;
                 msg += "( $n" + eff_status_msg(p) + " )\n";
         } else
         {
-                msg = CYN "ĞÒ¶ø$n" CYN "¾«Í¨ÒôÂÉ£¬ÑÏÕóÒÔ´ı£¬$N" CYN "ÎŞ´¦ÏÂÊÖ¡£\n" NOR;
+                msg = CYN "å¹¸è€Œ$n" CYN "ç²¾é€šéŸ³å¾‹ï¼Œåš´é™£ä»¥å¾…ï¼Œ$N" CYN "ç„¡è™•ä¸‹æ‰‹ã€‚\n" NOR;
         }
         message_combatd(msg, me, target);
 
-        // µÚÈıÕĞ£¬ÅĞ¶Ï¶Ô·½·ğÑ§¼°µÀÑ§ĞŞÑø
+        // ç¬¬ä¸‰æ‹›ï¼Œåˆ¤æ–·å°æ–¹ä½›å­¸åŠé“å­¸ä¿®é¤Š
         dp1 = target->query_skill("buddhism", 1) + target->query_skill("lamaism", 1) +
               target->query_skill("taoism", 1) + dp;
 
-        message_combatd(HIW "\n$NÓÃÄÚÁ¦½«Ò»¹É×íÈËµÄÓÄÏãÃÖÂş¿ªÀ´£¬±ãËÆÒ»¸öÎÂÈá"
-                     HIW "ÃÀÀöµÄÅ®×ÓÎÔÔÚÉí²àÒ»°ã\n" NOR, me, target);
+        message_combatd(HIW "\n$Nç”¨å…§åŠ›å°‡ä¸€è‚¡é†‰äººçš„å¹½é¦™å½Œæ¼«é–‹ä¾†ï¼Œä¾¿ä¼¼ä¸€å€‹æº«æŸ”"
+                     HIW "ç¾éº—çš„å¥³å­è‡¥åœ¨èº«å´ä¸€èˆ¬\n" NOR, me, target);
 
         if (ap * 2 / 3 + random(ap) > dp1)
         {
@@ -170,15 +170,15 @@ int perform(object me, object target)
                 target->receive_wound("jing", damage / 2, me);
                 p=query("qi", target)*100/query("max_qi", target);
 
-                msg = HIY "ö®Ê±¼ä$n" HIY "Ö»¸ĞĞÄÍ·¹öÈÈ£¬ºí¸ÉÉàÔï£¬Ëµ²»³öµÄÄÑÊÜ¡£\n" NOR;
+                msg = HIY "éœæ™‚é–“$n" HIY "åªæ„Ÿå¿ƒé ­æ»¾ç†±ï¼Œå–‰å¹¹èˆŒç‡¥ï¼Œèªªä¸å‡ºçš„é›£å—ã€‚\n" NOR;
                 msg += "( $n" + eff_status_msg(p) + " )\n";
         } else
         {
-                msg = CYN "$n" CYN "ÄıÉñÊØÒ»£¬Ë¿ºÁ²»ÎªËù¶¯¡£\n" NOR;
+                msg = CYN "$n" CYN "å‡ç¥å®ˆä¸€ï¼Œçµ²æ¯«ä¸ç‚ºæ‰€å‹•ã€‚\n" NOR;
         }
         message_combatd(msg, me, target);
 
-        // µÚËÄÕĞ£¬ÅĞ¶Ï¶Ô·½½­ºşÔÄÀú
+        // ç¬¬å››æ‹›ï¼Œåˆ¤æ–·å°æ–¹æ±Ÿæ¹–é–±æ­·
         dp1=query("score", target);
         dp1 /= 20000;
         if (dp1 > 10000)
@@ -192,8 +192,8 @@ int perform(object me, object target)
 
         dp1 += dp;
 
-        message_combatd(HIW "\n$NÒ¡ÉíÒ»»Î£¬¶ÙÊ±ÏÔÏÖÇ§°ÙÈËÓ°£¬$n"
-                     HIW "»·¹Ë×óÓÒ£¬²»Öª$N" HIW "ÕæÉíºÎÔÚ¡£\n" NOR, me, target);
+        message_combatd(HIW "\n$Næ–èº«ä¸€æ™ƒï¼Œé “æ™‚é¡¯ç¾åƒç™¾äººå½±ï¼Œ$n"
+                     HIW "ç’°é¡§å·¦å³ï¼Œä¸çŸ¥$N" HIW "çœŸèº«ä½•åœ¨ã€‚\n" NOR, me, target);
 
         if (ap * 2 / 3 + random(ap) > dp1)
         {
@@ -201,16 +201,16 @@ int perform(object me, object target)
                                           (: final, me, target, damage :));
         } else
         {
-                msg = CYN "$n" CYN "¼û¶àÊ¶¹ã£¬Î£¼±Ê±¿ÌÖÕÓÚ¿´Çå$N"
-                      CYN "ÕĞÊ½À´Â·£¬Á¬Ã¦·ÉÉí±Ü¿ª¡£\n" NOR;
+                msg = CYN "$n" CYN "è¦‹å¤šè­˜å»£ï¼Œå±æ€¥æ™‚åˆ»çµ‚äºçœ‹æ¸…$N"
+                      CYN "æ‹›å¼ä¾†è·¯ï¼Œé€£å¿™é£›èº«é¿é–‹ã€‚\n" NOR;
         }
         message_combatd(msg, me, target);
 
-        // µÚÎåÕĞ£¬ÅĞ¶Ï¶Ô·½ÏÈÌì±ÛÁ¦¼°»ù±¾ÕĞ¼Ü
+        // ç¬¬äº”æ‹›ï¼Œåˆ¤æ–·å°æ–¹å…ˆå¤©è‡‚åŠ›åŠåŸºæœ¬æ‹›æ¶
         dp1=query("str")*30+target->query_skill("parry", target)+dp;
 
-        message_combatd(HIW "\n$N" HIW "´óºÈÒ»Éù£¬Ò»ÕĞ¹¥Ïò$n" HIW "£¬ËäÈ»"
-                     "¼òµ¥Ã÷ÁË£¬È´ÓĞÊ¯ÆÆÌì¾ªÖ®ÊÆ£¡\n" NOR, me, target);
+        message_combatd(HIW "\n$N" HIW "å¤§å–ä¸€è²ï¼Œä¸€æ‹›æ”»å‘$n" HIW "ï¼Œé›–ç„¶"
+                     "ç°¡å–®æ˜äº†ï¼Œå»æœ‰çŸ³ç ´å¤©é©šä¹‹å‹¢ï¼\n" NOR, me, target);
 
         if (ap * 2 / 3 + random(ap) > dp1)
         {
@@ -220,8 +220,8 @@ int perform(object me, object target)
                 target->receive_wound("jing", damage / 8, me);
                 p=query("qi", target)*100/query("max_qi", target);
 
-                msg = HIY "$n" HIY "Ãæ¶ÔÍşÁ¦Èç´ËÇ¿´óµÄÒ»ÕĞ£¬¸ù±¾ÎŞ·¨ÕĞ¼Ü£¬±»ÖØÖØ»÷ÖĞ£¬\n"
-                      HIY "ÎåÔàÁù¸­·­ÌÚ²»Ğİ£¬¿ÚÖĞ" HIR "ÏÊÑª" HIY "Èç¼ı°ãÅç³ö£¡\n" NOR;
+                msg = HIY "$n" HIY "é¢å°å¨åŠ›å¦‚æ­¤å¼·å¤§çš„ä¸€æ‹›ï¼Œæ ¹æœ¬ç„¡æ³•æ‹›æ¶ï¼Œè¢«é‡é‡æ“Šä¸­ï¼Œ\n"
+                      HIY "äº”è‡Ÿå…­è…‘ç¿»é¨°ä¸ä¼‘ï¼Œå£ä¸­" HIR "é®®è¡€" HIY "å¦‚ç®­èˆ¬å™´å‡ºï¼\n" NOR;
                 msg += "( $n" + eff_status_msg(p) + " )\n";
 
                 if( objectp(weapon=query_temp("weapon", target) )
@@ -229,43 +229,43 @@ int perform(object me, object target)
                    && ap / 2 + random(ap) > dp1)
                 {
                         wp = weapon->name();
-                        msg += HIW "Ö»Ìı¡°ïÏ¡±µÄÒ»Éù´àÏì£¬$n" HIW "ÊÖ"
-                               "ÖĞµÄ" + wp + HIW "ÔÚ$N" HIW "ÄÚÁ¦¼¤µ´"
-                               "ÏÂÓ¦Éù¶øËé£¬ÍÑÊÖµøÂäÔÚµØÉÏ¡£\n" NOR;
+                        msg += HIW "åªè½â€œé˜â€çš„ä¸€è²è„†éŸ¿ï¼Œ$n" HIW "æ‰‹"
+                               "ä¸­çš„" + wp + HIW "åœ¨$N" HIW "å…§åŠ›æ¿€ç›ª"
+                               "ä¸‹æ‡‰è²è€Œç¢ï¼Œè„«æ‰‹è·Œè½åœ¨åœ°ä¸Šã€‚\n" NOR;
                         addn("neili", -150, me);
                         set("consistence", 0, weapon);
                         weapon->move(environment(target));
                 }
         } else
         {
-                msg = CYN "$n" CYN "¼ûÕâÕĞÀ´ÊÆĞ×ÃÍ£¬ÉíĞÎ¼²ÍË£¬Ë²¼äÆ®³öÈı"
-                      "ÕÉ£¬·½²Å¶ã¹ı$N" CYN "ÕâÕĞ¡£\n" NOR;
+                msg = CYN "$n" CYN "è¦‹é€™æ‹›ä¾†å‹¢å…‡çŒ›ï¼Œèº«å½¢ç–¾é€€ï¼Œç¬é–“é£„å‡ºä¸‰"
+                      "ä¸ˆï¼Œæ–¹æ‰èº²é$N" CYN "é€™æ‹›ã€‚\n" NOR;
         }
         message_combatd(msg, me, target);
 
-        // µÚÁùÕĞ£¬ÅĞ¶Ï¶Ô·½ºóÌì±ÛÁ¦¼°»ù±¾È­½Å
+        // ç¬¬å…­æ‹›ï¼Œåˆ¤æ–·å°æ–¹å¾Œå¤©è‡‚åŠ›åŠåŸºæœ¬æ‹³è…³
         dp1 = target->query_str() * 2 + target->query_skill("unarmed", 1) + dp;
 
-        message_combatd(HIW "\n$N" HIW "Ç°ÕĞÎ´Âä£¬ºóÕĞÓÖÆğ£¬ÍşÊÆÊ®×ãµÄÏò$n"
-                     HIW "µ±Ãæ»÷µ½£¡\n" NOR, me, target);
+        message_combatd(HIW "\n$N" HIW "å‰æ‹›æœªè½ï¼Œå¾Œæ‹›åˆèµ·ï¼Œå¨å‹¢åè¶³çš„å‘$n"
+                     HIW "ç•¶é¢æ“Šåˆ°ï¼\n" NOR, me, target);
 
         if (ap * 2 / 3 + random(ap) > dp1)
         {
                 addn("neili", -(lvl+random(lvl)), target);
                 msg = COMBAT_D->do_damage(me, target, UNARMED_ATTACK, damage, 80 + random(10),
-                                          HIY "Ö»Ìı$n" HIY "Ò»Éù²Ò½Ğ£¬±»$N" HIY "ÄÚ¾¢»÷ÖĞĞØÇ°£¬"
-                                          "¡°¿¦àê¿¦àê¡±¶ÏÁË¼¸¸ùÀß¹Ç¡£¡£\n" NOR, me , target);
+                                          HIY "åªè½$n" HIY "ä¸€è²æ…˜å«ï¼Œè¢«$N" HIY "å…§å‹æ“Šä¸­èƒ¸å‰ï¼Œ"
+                                          "â€œå–€åš“å–€åš“â€æ–·äº†å¹¾æ ¹è‚‹éª¨ã€‚ã€‚\n" NOR, me , target);
         } else
         {
-                msg = CYN "$n" CYN "Æø¹áË«±Û£¬ÄıÉñÒÔ¶Ô£¬¾¹½«$N" CYN "Ö®Á¦Ğ¶È¥¡£\n" NOR;
+                msg = CYN "$n" CYN "æ°£è²«é›™è‡‚ï¼Œå‡ç¥ä»¥å°ï¼Œç«Ÿå°‡$N" CYN "ä¹‹åŠ›å¸å»ã€‚\n" NOR;
         }
         message_combatd(msg, me, target);
 
-        // µÚÆßÕĞ£¬ÅĞ¶Ï¶Ô·½ÏÈÌìÎòĞÔ¼°»ù±¾ÕĞ¼Ü
+        // ç¬¬ä¸ƒæ‹›ï¼Œåˆ¤æ–·å°æ–¹å…ˆå¤©æ‚Ÿæ€§åŠåŸºæœ¬æ‹›æ¶
         dp=query("int")*30+target->query_skill("parry", target)+dp1;
 
-        message_combatd(HIW "\n$N" HIW "Ò»ÕĞ»÷Ïò$n" HIW "ÉíÇ°¿Õµ²£¬"
-                     "»ëºñµÄÄÚÁ¦¾¹È»ĞÎ³ÉÁËÒ»¸öĞıÎĞ¡£\n" NOR, me, target);
+        message_combatd(HIW "\n$N" HIW "ä¸€æ‹›æ“Šå‘$n" HIW "èº«å‰ç©ºæ“‹ï¼Œ"
+                     "æ¸¾åšçš„å…§åŠ›ç«Ÿç„¶å½¢æˆäº†ä¸€å€‹æ—‹æ¸¦ã€‚\n" NOR, me, target);
 
         if (ap * 2 / 3 + random(ap) > dp1)
         {
@@ -275,36 +275,36 @@ int perform(object me, object target)
                 target->receive_wound("jing", damage / 8, me);
                 p=query("qi", target)*100/query("max_qi", target);
 
-                msg = HIY "$n" HIY "Î´ÁÏµ½$N" HIW "´ËÕĞ¾¹»÷ÔÚ±Ø¾­Ö®Â·£¬"
-                      HIY "À´²»¼°±äÕĞ£¬Éí×ÓÒÑ¾­×²ÈëÄÚ¾¢ĞıÎĞÖ®ÖĞ£¡\n" NOR;
+                msg = HIY "$n" HIY "æœªæ–™åˆ°$N" HIW "æ­¤æ‹›ç«Ÿæ“Šåœ¨å¿…ç¶“ä¹‹è·¯ï¼Œ"
+                      HIY "ä¾†ä¸åŠè®Šæ‹›ï¼Œèº«å­å·²ç¶“æ’å…¥å…§å‹æ—‹æ¸¦ä¹‹ä¸­ï¼\n" NOR;
                 msg += "( $n" + eff_status_msg(p) + " )\n";
         } else
         {
-                msg = CYN "$n" CYN "¼±Ã¦±äÕĞ£¬ÃãÇ¿´ÓĞıÎĞÅÔ±ßÂÓ¹ı¡£\n" NOR;
+                msg = CYN "$n" CYN "æ€¥å¿™è®Šæ‹›ï¼Œå‹‰å¼·å¾æ—‹æ¸¦æ—é‚Šæ éã€‚\n" NOR;
         }
         message_combatd(msg, me, target);
 
-        // µÚ°ËÕĞ£¬ÅĞ¶Ï¶Ô·½ºóÌìÎòĞÔ¼°¶ÁÊéĞ´×Ö
+        // ç¬¬å…«æ‹›ï¼Œåˆ¤æ–·å°æ–¹å¾Œå¤©æ‚Ÿæ€§åŠè®€æ›¸å¯«å­—
         dp1 = target->query_int() * 2 + target->query_skill("literate", 1) + dp;
 
-        message_combatd(HIW "\n$N" HIW "Ë«ÊÖÆä³ö£¬ĞØ¸¹Ö®¼ä¾¹È»Â¶³öÒ»¸ö¼«´óµÄÆÆÕÀ£¡\n" NOR, me, target);
+        message_combatd(HIW "\n$N" HIW "é›™æ‰‹å…¶å‡ºï¼Œèƒ¸è…¹ä¹‹é–“ç«Ÿç„¶éœ²å‡ºä¸€å€‹æ¥µå¤§çš„ç ´ç¶»ï¼\n" NOR, me, target);
 
         if (ap * 2 / 3 + random(ap) > dp1)
         {
                 msg = COMBAT_D->do_damage(me, target, UNARMED_ATTACK, damage, 95 + random(10),
-                                          HIY "$n" HIY "Ò»ÉùÀäĞ¦£¬»÷Ïò$N" HIY "ĞØÇ°¡£"
-                                          "²»ÏëÕĞÊ½Î´µ½,$N" HIY "µÄÆÆÕÀÔçÒÑ²»ÊÇÆÆÕÀ£¡\n" NOR, me , target);
+                                          HIY "$n" HIY "ä¸€è²å†·ç¬‘ï¼Œæ“Šå‘$N" HIY "èƒ¸å‰ã€‚"
+                                          "ä¸æƒ³æ‹›å¼æœªåˆ°,$N" HIY "çš„ç ´ç¶»æ—©å·²ä¸æ˜¯ç ´ç¶»ï¼\n" NOR, me , target);
         } else
         {
-                msg = CYN "$n" CYN "¿´ÆÆ´ËÕĞÄËÊÇÓÕµĞ£¬ÄıÉñ·ÀÊØ£¬²¢²»³ö»÷¡£\n" NOR;
+                msg = CYN "$n" CYN "çœ‹ç ´æ­¤æ‹›ä¹ƒæ˜¯èª˜æ•µï¼Œå‡ç¥é˜²å®ˆï¼Œä¸¦ä¸å‡ºæ“Šã€‚\n" NOR;
         }
         message_combatd(msg, me, target);
 
-                // µÚ¾ÅÕĞ£¬ÅĞ¶Ï¶Ô·½ÏÈÌì¸ù¹Ç¼°»ù±¾ÕĞ¼Ü
+                // ç¬¬ä¹æ‹›ï¼Œåˆ¤æ–·å°æ–¹å…ˆå¤©æ ¹éª¨åŠåŸºæœ¬æ‹›æ¶
         dp1=query("con")*30+target->query_skill("parry", target)+dp;
 
-        message_combatd(HIW "\n$NÁ¬·¢ÊıÕĞ£¬²ã²ãµşµşµÄÄÚ¾¢±ãÈçÒ»¶ÂÎŞĞÎÆøÇ½£¬ÏòÇ°¼²³å¶ø"
-                     HIW "È¥¡£$n" HIW "Ö»¾õÎŞÂ·¿ÉÍË£¬ĞÄÖĞ´ó¾ª¡£\n" NOR, me, target);
+        message_combatd(HIW "\n$Né€£ç™¼æ•¸æ‹›ï¼Œå±¤å±¤ç–Šç–Šçš„å…§å‹ä¾¿å¦‚ä¸€å µç„¡å½¢æ°£ç‰†ï¼Œå‘å‰ç–¾æ²–è€Œ"
+                     HIW "å»ã€‚$n" HIW "åªè¦ºç„¡è·¯å¯é€€ï¼Œå¿ƒä¸­å¤§é©šã€‚\n" NOR, me, target);
 
         if (ap * 2 / 3 + random(ap) > dp1)
         {
@@ -314,8 +314,8 @@ int perform(object me, object target)
                 target->receive_wound("jing", damage / 8, me);
                 p=query("qi", target)*100/query("max_qi", target);
 
-                msg = HIY "$n»¹ÔÚË¼¿¼ÈçºÎÉÁ±Ü£¬ÈçÉ½°ãµÄÄÚ¾¢"
-                      HIY "ÒÑ¾­Ñ¹ÁË¹ıÀ´£¬ÖØÖØ»÷ÔÚ$n" HIY "µÄĞØ¿Ú¡£\n" NOR;
+                msg = HIY "$né‚„åœ¨æ€è€ƒå¦‚ä½•é–ƒé¿ï¼Œå¦‚å±±èˆ¬çš„å…§å‹"
+                      HIY "å·²ç¶“å£“äº†éä¾†ï¼Œé‡é‡æ“Šåœ¨$n" HIY "çš„èƒ¸å£ã€‚\n" NOR;
                 msg += "( $n" + eff_status_msg(p) + " )\n";
 
                 if( objectp(cloth=query_temp("armor/armor", target) )
@@ -323,44 +323,44 @@ int perform(object me, object target)
                    && ap / 2 + random(ap) > dp1)
                 {
                         cl = cloth->name();
-                        msg += HIW "Ö»Ìı¡°ºä¡±µÄÒ»ÉùÃÆÏì£¬$n" HIW "Éí"
-                               "×ÅµÄ" + cl + HIW "ÔÚ$N" HIW "ÄÚÁ¦¼¤µ´"
-                               "ÏÂÓ¦Éù¶øÁÑ£¬»¯³ÉÒ»¿é¿éËéÆ¬¡£\n" NOR;
+                        msg += HIW "åªè½â€œè½Ÿâ€çš„ä¸€è²æ‚¶éŸ¿ï¼Œ$n" HIW "èº«"
+                               "è‘—çš„" + cl + HIW "åœ¨$N" HIW "å…§åŠ›æ¿€ç›ª"
+                               "ä¸‹æ‡‰è²è€Œè£‚ï¼ŒåŒ–æˆä¸€å¡Šå¡Šç¢ç‰‡ã€‚\n" NOR;
                         addn("neili", -150, me);
                         set("consistence", 0, cloth);
                         cloth->move(environment(target));
                 }
         } else
         {
-                msg = CYN "$n" CYN "»áĞÄÒ»Ğ¦£¬Ò»ÕĞ»÷ÔÚÆøÇ½ÖĞĞÄ£¬¾¹½«´ËÕĞÆÆÈ¥¡£\n" NOR;
+                msg = CYN "$n" CYN "æœƒå¿ƒä¸€ç¬‘ï¼Œä¸€æ‹›æ“Šåœ¨æ°£ç‰†ä¸­å¿ƒï¼Œç«Ÿå°‡æ­¤æ‹›ç ´å»ã€‚\n" NOR;
         }
         message_combatd(msg, me, target);
 
-        // µÚÊ®ÕĞ£¬ÅĞ¶Ï¶Ô·½ºóÌì¸ù¹Ç¼°»ù±¾ÄÚ¹¦
+        // ç¬¬åæ‹›ï¼Œåˆ¤æ–·å°æ–¹å¾Œå¤©æ ¹éª¨åŠåŸºæœ¬å…§åŠŸ
         dp1 = target->query_con() * 2 + target->query_skill("force", 1) + dp;
 
-        message_combatd(HIW "\n$N" HIW "Ë«±Û¶¸È»±©³¤Êı³ß¡£Ö»ÌıÆÆ¿ÕÖ®ÉùÖèÏì£¬"
-                     HIW "Ë«ÕÆ»Ã³öÂşÌìÕÆÓ°£¬ÆÌÌì¸ÇµØÏò$n" HIW "¹¥È¥¡£\n" NOR, me, target);
+        message_combatd(HIW "\n$N" HIW "é›™è‡‚é™¡ç„¶æš´é•·æ•¸å°ºã€‚åªè½ç ´ç©ºä¹‹è²é©ŸéŸ¿ï¼Œ"
+                     HIW "é›™æŒå¹»å‡ºæ¼«å¤©æŒå½±ï¼Œèˆ–å¤©è“‹åœ°å‘$n" HIW "æ”»å»ã€‚\n" NOR, me, target);
 
         if (ap * 2 / 3 + random(ap) > dp1)
         {
                 target->receive_damage("jing", damage / 2, me);
                 target->receive_wound("jing", damage / 4, me);
                 msg = COMBAT_D->do_damage(me, target, UNARMED_ATTACK, damage, 80 + random(10),
-                             HIY "$n¶ãÉÁ²»¼°£¬±»$N" HIY "Ò»ÕĞ»÷·ÉÁË³öÈ¥¡£\n" NOR, me , target);
+                             HIY "$nèº²é–ƒä¸åŠï¼Œè¢«$N" HIY "ä¸€æ‹›æ“Šé£›äº†å‡ºå»ã€‚\n" NOR, me , target);
         } else
         {
-                msg = CYN "$n" CYN "Ãæ¶Ô$N" CYN "ÕâÅÅÉ½µ¹º£¹¥ÊÆ£¬ÍêÈ«"
-                                          CYN "ÎŞ·¨µÖµ²£¬Î¨ÓĞÍËºó¼¸²½£¬ÄıÉñÓ¦¶Ô¡£\n" NOR;
+                msg = CYN "$n" CYN "é¢å°$N" CYN "é€™æ’å±±å€’æµ·æ”»å‹¢ï¼Œå®Œå…¨"
+                                          CYN "ç„¡æ³•æŠµæ“‹ï¼Œå”¯æœ‰é€€å¾Œå¹¾æ­¥ï¼Œå‡ç¥æ‡‰å°ã€‚\n" NOR;
         }
 
         message_combatd(msg, me, target);
 
-        // µÚÊ®Ò»ÕĞ£¬ÅĞ¶Ï¶Ô·½ÏÈÌìÉí·¨¼°»ù±¾ÕĞ¼Ü
+        // ç¬¬åä¸€æ‹›ï¼Œåˆ¤æ–·å°æ–¹å…ˆå¤©èº«æ³•åŠåŸºæœ¬æ‹›æ¶
         dp1=query("dex")*30+target->query_skill("parry", target)+dp;
 
-        message_combatd(HIW "\n$N" HIW "ÉíÌåÃÍÈ»Ğı×ª²»¶¨£¬ĞıÆğÎŞÊıĞ¡ÆøĞı£¬"
-                     HIW "ÍğÈôÁ÷ĞÇ¸ÏÔÂ£¬Ïò$n" HIW "µçÉä¶øÈ¥¡£\n" NOR, me, target);
+        message_combatd(HIW "\n$N" HIW "èº«é«”çŒ›ç„¶æ—‹è½‰ä¸å®šï¼Œæ—‹èµ·ç„¡æ•¸å°æ°£æ—‹ï¼Œ"
+                     HIW "å®›è‹¥æµæ˜Ÿè¶•æœˆï¼Œå‘$n" HIW "é›»å°„è€Œå»ã€‚\n" NOR, me, target);
 
         if (ap * 2 / 3 + random(ap) > dp1)
         {
@@ -370,7 +370,7 @@ int perform(object me, object target)
                 target->receive_wound("jing", damage / 8, me);
                 p=query("qi", target)*100/query("max_qi", target);
 
-                msg = HIY "$n" HIY "ÌÚÅ²ÉÁ¶ã£¬½ß¾¡È«Á¦£¬Ò²Ã»°ì·¨¶ã¿ªÆøĞı£¬±»»÷ÁË¸öÕı×Å£¡\n" NOR;
+                msg = HIY "$n" HIY "é¨°æŒªé–ƒèº²ï¼Œç«­ç›¡å…¨åŠ›ï¼Œä¹Ÿæ²’è¾¦æ³•èº²é–‹æ°£æ—‹ï¼Œè¢«æ“Šäº†å€‹æ­£è‘—ï¼\n" NOR;
                 msg += "( $n" + eff_status_msg(p) + " )\n";
 
                 if( objectp(cloth=query_temp("armor/cloth", target) )
@@ -378,35 +378,35 @@ int perform(object me, object target)
                    && ap / 2 + random(ap) > dp1)
                 {
                         cl = cloth->name();
-                        msg += HIW "Ö»Ìı¡°ºä¡±µÄÒ»ÉùÃÆÏì£¬$n" HIW "Éí"
-                               "×ÅµÄ" + cl + HIW "ÔÚ$N" HIW "ÄÚÁ¦¼¤µ´"
-                               "ÏÂÓ¦Éù¶øËé£¬»¯³ÉÒ»¿é¿éËéÆ¬¡£\n" NOR;
+                        msg += HIW "åªè½â€œè½Ÿâ€çš„ä¸€è²æ‚¶éŸ¿ï¼Œ$n" HIW "èº«"
+                               "è‘—çš„" + cl + HIW "åœ¨$N" HIW "å…§åŠ›æ¿€ç›ª"
+                               "ä¸‹æ‡‰è²è€Œç¢ï¼ŒåŒ–æˆä¸€å¡Šå¡Šç¢ç‰‡ã€‚\n" NOR;
                         addn("neili", -150, me);
                         set("consistence", 0, cloth);
                         cloth->move(environment(target));
                 }
         } else
         {
-                msg = CYN "$n´ó³ÔÒ»¾ª£¬Á¬Ã¦ÍËºó£¬¾ÓÈ»"
-                      CYN "½ÄĞÒ¶ã¿ªÁËÕâÒ»ÕĞ£¡\n" NOR;
+                msg = CYN "$nå¤§åƒä¸€é©šï¼Œé€£å¿™é€€å¾Œï¼Œå±…ç„¶"
+                      CYN "åƒ¥å¹¸èº²é–‹äº†é€™ä¸€æ‹›ï¼\n" NOR;
         }
         message_combatd(msg, me, target);
 
-        // µÚÊ®¶şÕĞ£¬ÅĞ¶Ï¶Ô·½ºóÌìÉí·¨¼°»ù±¾Çá¹¦
+        // ç¬¬åäºŒæ‹›ï¼Œåˆ¤æ–·å°æ–¹å¾Œå¤©èº«æ³•åŠåŸºæœ¬è¼•åŠŸ
         dp1 = target->query_dex() * 2 + target->query_skill("dodge", 1) + dp;
 
-        message_combatd(HIW "\n$N½«Éí·¨·¢»Óµ½¼«ÖÁ£¬»Ã»¯³öÇ§ÍòÈËĞÎ£¬Ò»ÆğÆËÏò$n¡£\n" NOR, me, target);
+        message_combatd(HIW "\n$Nå°‡èº«æ³•ç™¼æ®åˆ°æ¥µè‡³ï¼Œå¹»åŒ–å‡ºåƒè¬äººå½¢ï¼Œä¸€èµ·æ’²å‘$nã€‚\n" NOR, me, target);
 
         if (ap * 2 / 3 + random(ap) > dp1)
         {
                 if (! target->is_busy())
                         target->start_busy(4 + random(lvl / 400));
                 msg = COMBAT_D->do_damage(me, target, UNARMED_ATTACK, damage, 80 + random(10),
-                                          HIY "$nÓÌÈçºÍÊıÊ®ÈËÕ½¶·£¬ÄÄÀï»¹ÄÜµÖµ²µÄ×¡£¬"
-                                          HIY "½ö½öÊıÏ¢Ö®¼ä£¬ÒÑ¾­ÉíÖĞÊıÕĞ£¡\n" NOR, me , target);
+                                          HIY "$nçŒ¶å¦‚å’Œæ•¸åäººæˆ°é¬¥ï¼Œå“ªè£¡é‚„èƒ½æŠµæ“‹çš„ä½ï¼Œ"
+                                          HIY "åƒ…åƒ…æ•¸æ¯ä¹‹é–“ï¼Œå·²ç¶“èº«ä¸­æ•¸æ‹›ï¼\n" NOR, me , target);
         } else
         {
-                msg = CYN "$nÔÚÉí±ß²¼ÏÂ²ã²ãÄÚ¾¢£¬½«$N" CYN "ÁèÀ÷µÄ¹¥ÊÆ¾¡ÊıµÖµ²¡£\n" NOR;
+                msg = CYN "$nåœ¨èº«é‚Šå¸ƒä¸‹å±¤å±¤å…§å‹ï¼Œå°‡$N" CYN "å‡Œå²çš„æ”»å‹¢ç›¡æ•¸æŠµæ“‹ã€‚\n" NOR;
         }
         message_combatd(msg, me, target);
 
@@ -424,8 +424,8 @@ string final(object me, object target, int ap)
         set_temp("no_perform", 1, target);
         remove_call_out("tian_end");
         call_out("tian_end", 10 + random(ap / 50), me, target);
-        return HIY "$n" HIY "Ë¿ºÁ²»¶®´ËÕĞ°ÂÃî£¬Ò»¸öÊèÉñ£¬µ¤ÌïÒÑÔâÖØ´´£¡\n" NOR +
-               WHT "$n" WHT "¸Ğµ½×ÔÉíµÄºöÊÓĞéÈõ£¬ºöÊÓÃ¦ÂÒ¡¢ºöÊÓ¾øÕĞÀä¶³ÄÜÁ¦±»·âÓ¡¡£\n" NOR;
+        return HIY "$n" HIY "çµ²æ¯«ä¸æ‡‚æ­¤æ‹›å¥§å¦™ï¼Œä¸€å€‹ç–ç¥ï¼Œä¸¹ç”°å·²é­é‡å‰µï¼\n" NOR +
+               WHT "$n" WHT "æ„Ÿåˆ°è‡ªèº«çš„å¿½è¦–è™›å¼±ï¼Œå¿½è¦–å¿™äº‚ã€å¿½è¦–çµ•æ‹›å†·å‡èƒ½åŠ›è¢«å°å°ã€‚\n" NOR;
 }
 
 void tian_end(object me, object target)
@@ -434,18 +434,18 @@ void tian_end(object me, object target)
         {
                 if (living(target))
                 {
-                        message_combatd(HIC "$N" HIC "ÉîÉîÎüÈëÒ»¿Ú"
-                                        "Æø£¬Á³É«ÓÉ°××ªºì£¬¿´ÆğÀ´ºÃ"
-                                        "¶àÁË¡£\n" NOR, target);
+                        message_combatd(HIC "$N" HIC "æ·±æ·±å¸å…¥ä¸€å£"
+                                        "æ°£ï¼Œè‡‰è‰²ç”±ç™½è½‰ç´…ï¼Œçœ‹èµ·ä¾†å¥½"
+                                        "å¤šäº†ã€‚\n" NOR, target);
 
-                        tell_object(target, HIY "Äã¸Ğµ½±»ÈÅÂÒµÄÕæÆø"
-                                            "ÂıÂıÆ½¾²ÁËÏÂÀ´¡£\n" NOR);
+                        tell_object(target, HIY "ä½ æ„Ÿåˆ°è¢«æ“¾äº‚çš„çœŸæ°£"
+                                            "æ…¢æ…¢å¹³éœäº†ä¸‹ä¾†ã€‚\n" NOR);
                 }
         addn_temp("apply/avoid_busy", 90, target);
         addn_temp("apply/reduce_busy", 36, target);
         addn_temp("apply/avoid_weak", 90, target);
         addn_temp("apply/avoid_locked", 90, target);
-        tell_object(target, HIR "ÄãµÄºöÊÓĞéÈõ£¬ºöÊÓÃ¦ÂÒ¡¢ºöÊÓ¾øÕĞÀä¶³ÄÜÁ¦ÖÕÓÚ½â³ı·âÓ¡¡£\n" NOR);
+        tell_object(target, HIR "ä½ çš„å¿½è¦–è™›å¼±ï¼Œå¿½è¦–å¿™äº‚ã€å¿½è¦–çµ•æ‹›å†·å‡èƒ½åŠ›çµ‚äºè§£é™¤å°å°ã€‚\n" NOR);
                 delete_temp("no_perform", target);
         }
         return;

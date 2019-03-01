@@ -4,18 +4,18 @@
 
 #include <ansi.h>
 inherit ROOM;
-#define QUESTDIR3 "quest/ÌìÁú°Ë²¿/Ïô·åÉíÊÀÆª/"
+#define QUESTDIR3 "quest/å¤©é¾å…«éƒ¨/è•­å³°èº«ä¸–ç¯‡/"
 
 void create()
 {
-        set("short", "¾ÛÏÍ×¯´óÃÅ");
+        set("short", "èšè³¢èŠå¤§é–€");
         set("long",
-"Äã×ßµ½Ò»×ù¸ßÕ¬´óÔºµÄÃÅ¿Ú£¬´óÃÅ¿ª×Å£¬ÃÅÇ°×óÓÒÓĞÁ½¸öÊ¯Ê¨×Ó£¬ËÄÎå¼¶\n"
-"ÇàÊ¯Ì¨½×ÉÏÊÇÁ½ÉÈ¶¤ÂúÍ­¶¤µÄ´óÃÅ¡£¿´µÃ³öÕâÀïÊÇÒ»´ó»§ÈË¼ÒµÄ×¡Ëù¡£ÃÅ¿ÚÕı\n"
-"ÖĞÑë¸ßĞü×ÅÒ»¿éºÚµ×½ğ×ÖµÄ´óØÒ£¬ØÒÉÏĞ´ÓĞÈı¸ö´ó×Ö£º"YEL"¡¾¾ÛÏÍ×¯¡¿"NOR"¡£\n"
+"ä½ èµ°åˆ°ä¸€åº§é«˜å®…å¤§é™¢çš„é–€å£ï¼Œå¤§é–€é–‹è‘—ï¼Œé–€å‰å·¦å³æœ‰å…©å€‹çŸ³ç…å­ï¼Œå››äº”ç´š\n"
+"é’çŸ³å°éšä¸Šæ˜¯å…©æ‰‡é‡˜æ»¿éŠ…é‡˜çš„å¤§é–€ã€‚çœ‹å¾—å‡ºé€™è£¡æ˜¯ä¸€å¤§æˆ¶äººå®¶çš„ä½æ‰€ã€‚é–€å£æ­£\n"
+"ä¸­å¤®é«˜æ‡¸è‘—ä¸€å¡Šé»‘åº•é‡‘å­—çš„å¤§åŒ¾ï¼ŒåŒ¾ä¸Šå¯«æœ‰ä¸‰å€‹å¤§å­—ï¼š"YEL"ã€èšè³¢èŠã€‘"NOR"ã€‚\n"
         );
 		set("quest",1);
-		set("outdoors", "ÄÏÑô");
+		set("outdoors", "å—é™½");
 		set("exits", ([
 			"southwest" : __DIR__"xiaolu3",
 				"north" : __DIR__"dating",
@@ -35,7 +35,7 @@ void init()
 		&& !me->query_temp(QUESTDIR3+"kill")
 		&& !me->query(QUESTDIR3+"over")){
 			me->start_busy(2);
-			//Íæ¼ÒÀë¿ªÕâÀï£¬Àë¿ªËãÊ§°Ü
+			//ç©å®¶é›¢é–‹é€™è£¡ï¼Œé›¢é–‹ç®—å¤±æ•—
 			obj=new(__DIR__"npc/guanjia");
 			if(!present("guan jia",this_object()))
 				obj->move(this_object());
@@ -51,20 +51,20 @@ int valid_leave(object me, string dir)
        room = load_object(__DIR__"dating");
 
    if(room && room->query("busy")&& dir == "north" )
-     return notify_fail(HIR"Äã·¢ÏÖ¾ÛÏÍ×¯ÄÚËÆºõ´«À´¼¤ÁÒµÄ´ò¶·Ö®Éù£¬»¹ÊÇ×ßÎªÉÏ²ß£¡\n"NOR);
+     return notify_fail(HIR"ä½ ç™¼ç¾èšè³¢èŠå…§ä¼¼ä¹å‚³ä¾†æ¿€çƒˆçš„æ‰“é¬¥ä¹‹è²ï¼Œé‚„æ˜¯èµ°ç‚ºä¸Šç­–ï¼\n"NOR);
    
    if (me->query(QUESTDIR3+"start") 
          && !me->query(QUESTDIR3+"over") 
          && dir == "north" 
          && present("guan jia", environment(me)))
-     return notify_fail(HIR"¹Ü¼ÒÀäĞ¦Ò»ÉùµÀ£ºÕâÎ»"+RANK_D->query_respect(me) +"Çë»Ø£¬ÕâÀï²»»¶Ó­Äã£¡\n"NOR);
+     return notify_fail(HIR"ç®¡å®¶å†·ç¬‘ä¸€è²é“ï¼šé€™ä½"+RANK_D->query_respect(me) +"è«‹å›ï¼Œé€™è£¡ä¸æ­¡è¿ä½ ï¼\n"NOR);
      if (me->query(QUESTDIR3+"start") 
          && !me->query(QUESTDIR3+"over") 
          && dir == "north" 
          && present("jia ding", environment(me)))
-     return notify_fail(HIG"¼Ò¶¡ÀäĞ¦Ò»ÉùµÀ£ºÕâÎ»"+RANK_D->query_respect(me) +"Çë»Ø£¬ÕâÀï²»»¶Ó­Äã£¡\n"NOR);
+     return notify_fail(HIG"å®¶ä¸å†·ç¬‘ä¸€è²é“ï¼šé€™ä½"+RANK_D->query_respect(me) +"è«‹å›ï¼Œé€™è£¡ä¸æ­¡è¿ä½ ï¼\n"NOR);
 
      if(dir == "north" &&(me->query_condition("killer")||	sizeof(filter_array(deep_inventory(me), (: userp :)))))
-		 return notify_fail(HIY"Í»È»´ÓÀïÃæ´«À´Ò»ÕóÀäĞ¦µÀ£ºÕâÎ»"+RANK_D->query_respect(me) +"Çë»Ø£¬ÕâÀï²»»¶Ó­Äã£¡\n"NOR);
+		 return notify_fail(HIY"çªç„¶å¾è£¡é¢å‚³ä¾†ä¸€é™£å†·ç¬‘é“ï¼šé€™ä½"+RANK_D->query_respect(me) +"è«‹å›ï¼Œé€™è£¡ä¸æ­¡è¿ä½ ï¼\n"NOR);
      return ::valid_leave(me, dir);
 }

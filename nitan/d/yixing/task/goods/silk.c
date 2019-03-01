@@ -7,13 +7,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(CYN"³ñ¶Ğ"NOR, ({ "silk" }) );
+        set_name(CYN"ç¶¢ç·"NOR, ({ "silk" }) );
         set_weight(300);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»Æ¥×ö¹¤¼«Æä¿¼¾¿µÄ³ñ¶Ğ¡£\n");
-                set("unit", "Æ¥");
+                set("long", "é€™æ˜¯ä¸€åŒ¹åšå·¥æ¥µå…¶è€ƒç©¶çš„ç¶¢ç·ã€‚\n");
+                set("unit", "åŒ¹");
                 set("value", 1000);
                 set("material", "silk");
         }

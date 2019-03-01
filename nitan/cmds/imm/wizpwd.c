@@ -18,7 +18,7 @@ int main(object me, string arg)
         if( !ob ) return 0;
         while(ob && ob->is_character())ob=query_temp("link_ob", ob);
 
-        write("ÎªÁË°²È«Æð¼û£¬ÇëÏÈÊäÈëÄúÔ­À´µÄÃÜÂë£º");
+        write("ç‚ºäº†å®‰å…¨èµ·è¦‹ï¼Œè«‹å…ˆè¼¸å…¥æ‚¨åŽŸä¾†çš„å¯†ç¢¼ï¼š");
         input_to("get_old_pass", 1, ob);
         return 1;
 }
@@ -32,17 +32,17 @@ protected void get_old_pass(string pass, object ob)
         if( query("wizpwd", ob) )
         {
             if(crypt(pass, old_pass)!=old_pass ) {
-                write("ÃÜÂë´íÎó£¡\n");
+                write("å¯†ç¢¼éŒ¯èª¤ï¼\n");
                 return;
             }
         }
-        write("ÇëÊäÈëÐÂµÄÃÜÂë£º");
+        write("è«‹è¼¸å…¥æ–°çš„å¯†ç¢¼ï¼š");
         input_to("get_new_pass", 1, ob );
 }
 
 protected void get_new_pass(string pass, object ob)
 {
-        write("\nÇëÔÙÊäÈëÒ»´ÎÐÂµÄÃÜÂë£º");
+        write("\nè«‹å†è¼¸å…¥ä¸€æ¬¡æ–°çš„å¯†ç¢¼ï¼š");
         input_to("confirm_new_pass", 1, ob, crypt(pass,0));
 }
 
@@ -50,26 +50,26 @@ protected void confirm_new_pass(string pass, object ob, string new_pass)
 {
         write("\n");
         if( crypt(pass, new_pass)!=new_pass ) {
-                write("¶Ô²»Æð£¬ÄúÊäÈëµÄÃÜÂë²¢²»ÏàÍ¬£¬¼ÌÐøÊ¹ÓÃÔ­À´µÄÃÜÂë¡£\n");
+                write("å°ä¸èµ·ï¼Œæ‚¨è¼¸å…¥çš„å¯†ç¢¼ä¸¦ä¸ç›¸åŒï¼Œç¹¼çºŒä½¿ç”¨åŽŸä¾†çš„å¯†ç¢¼ã€‚\n");
                 return;
         }
         seteuid(getuid());
         if( !set("wizpwd",new_pass,ob) ){
-                write("ÃÜÂë±ä¸üÊ§°Ü£¡\n");
+                write("å¯†ç¢¼è®Šæ›´å¤±æ•—ï¼\n");
                 return;
         }
          
         set("wizpwd", new_pass, ob);
         ob->save();
-        write("ÃÜÂë±ä¸ü³É¹¦¡£\n");
+        write("å¯†ç¢¼è®Šæ›´æˆåŠŸã€‚\n");
 }
 
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : passwd
+æŒ‡ä»¤æ ¼å¼ : passwd
  
-Õâ¸öÖ¸Áî¿ÉÒÔÐÞ¸ÄwizµÄµÚ¶þÖØÃÜÂë¡£
+é€™å€‹æŒ‡ä»¤å¯ä»¥ä¿®æ”¹wizçš„ç¬¬äºŒé‡å¯†ç¢¼ã€‚
  
 HELP
         );

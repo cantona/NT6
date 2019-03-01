@@ -10,10 +10,10 @@ inherit ROOM;
 
 void init_connections();
 
-// ��ͨҪ�㣬���н�ͨ��Ϣ������ MAP_D �У������������������
-// F_DBASE �е� trans �����У�ǰΪ��ȥ�ص㣬��Ϊ�۸�
+// 交通要點，所有交通信息保存在 MAP_D 中，本地連接情況保存在
+// F_DBASE 中的 trans 變量中，前為所去地點，後為價格。
 
-// ��ʾ���˿͵���Ϣ
+// 提示給顧客的信息
 string trans_prompt()
 {
         string msg;
@@ -22,9 +22,9 @@ string trans_prompt()
         mixed pos;
 
         if (! mapp(trans = query("trans")) || sizeof(trans) < 1)
-                return "��������ά���У���ʱ���ṩ��ͨ����\n";
+                return "本店正在維修中，暫時不提供交通服務。\n";
 
-        msg = "�������ڿ�ͨ��ȥ���µط���ͨ·��\n"
+        msg = "本店現在開通了去以下地方的通路：\n"
               "-----------------------------------\n";
         foreach (to in keys(trans))
         {
@@ -36,7 +36,7 @@ string trans_prompt()
                                MONEY_D->price_str(trans[to]));
         }
         msg += "-----------------------------------\n"
-               "��������(goto)������ȴ���\n����۸��Żݣ�ͯ�����ۡ�\n";
+               "即來即走(goto)，無需等待。\n本店價格優惠，童叟無欺。\n";
 
         return msg;
 }
@@ -47,7 +47,7 @@ void setup()
         init_connections();
 }
 
-// ��ʼ������
+// 初始化連接
 void init_connections()
 {
         mapping trans;
@@ -62,7 +62,7 @@ void init_connections()
                 if (stringp(pos[item]["room"]) &&
                     find_object(pos[item]["room"]) == this_object())
                 {
-                        // ȷ�����Լ���λ��
+                        // 確定了自己的位置
                         here = item;
                         break;
                 }
@@ -97,45 +97,45 @@ int do_goto(string arg)
         int pay;
 
         if (! arg)
-                return notify_fail("��Ҫȥ���\n");
+                return notify_fail("你要去哪裡？\n");
 
         if (undefinedp(pay = query("trans/" + arg)))
-                return notify_fail("���������(paizi)����������������ط���\n");
+                return notify_fail("看清楚牌子(paizi)，上面哪裡有這個地方？\n");
 
         me = this_player();
         if (me->is_busy())
-                return notify_fail("ʲô������æ������˵�ɡ�\n");
+                return notify_fail("什麼都等你忙完了再說吧。\n");
 
         if (me->query_condition("killer"))
-                return notify_fail("�������������أ��������޼ɵ����ڹٵ�������\n");
+                return notify_fail("你有命案在身呢，你想肆無忌憚的在官道上溜達？！\n");
 
         pos = MAP_D->query_trans_info(arg);
         if (! mapp(pos) || ! stringp(pos["name"]))
         {
-                write("������������BUG��BUG����\n");
+                write("馬夫大呼道：“BUG！BUG！”\n");
                 return 1;
         }
 
         if (! stringp(pos["room"]))
         {
-                write("������Ц�������Ǹ��ط�ȥ����Ŷ����\n");
+                write("馬夫大苦笑道：“那個地方去不了哦。”\n");
                 return 1;
         }
 
         if (wiz_level(me) > 0)
         {
-                write("����Ц������ԭ������ʦ�����㲻���ô����Ȼ��Ҫ��·���ǾͲ���Ǯ�ˡ���\n");
+                write("馬夫笑道：“原來是巫師啊，你不會飛麼？既然非要走路，那就不收錢了。”\n");
                 pay = 0;
         } else
-        if( query("family/family_name", me) == "���ϻ���" )
+        if( query("family/family_name", me) == "段氏皇族" )
         {
                 pay = 0;
-                write("����������ϣ��������������߰ɣ���������˼������Ǯ����\n");
+                write("馬夫道：“呦，是您啊，您就走吧，我怎好意思收您的錢。”\n");
         } else
         if( query("age", me) <= 14 )
         {
                 pay = 0;
-                write("�����ȵ�����СС��;ͳ����ˣ����ˣ��ҾͲ������Ǯ�ˡ���\n");
+                write("馬夫訝道：“小小年紀就出來了？算了，我就不收你的錢了。”\n");
         } else
         if (me->query_skill("higgling", 1) >= 30)
         {
@@ -143,42 +143,42 @@ int do_goto(string arg)
                 switch (random(5))
                 {
                 case 0:
-                        write("����������ҳ����չ���������ϣ����������ۿۣ�\n");
+                        write("你道：看在我常年照顧你生意份上，還不給點折扣？\n");
                         break;
 
                 case 1:
-                        write("����������ϰ�����ҵ����˰���\n");
+                        write("你道：你們老板可是我的熟人啊。\n");
                         break;
 
                 case 2:
-                        write("�������λ�ֵܺã��������ðɣ������ۿ���Σ�\n");
+                        write("你道：這位兄弟好，最近生意好吧，給點折扣如何？\n");
                         break;
 
                 case 3:
-                        write("�����̫���ˣ����˵㣬���˵��Ҿ����ˡ�\n");
+                        write("你道：太貴了，便宜點，便宜點我就走了。\n");
                         break;
 
                 case 4:
-                        write("����������Ǽ��£������и��ã����˵�ɡ�\n");
+                        write("你道：我這是急事，您就行個好，便宜點吧。\n");
                         break;
                 }
 
                 pay /= 10;
                 pay *= 10;
                 if (pay < 10) pay = 10;
-                write("�������ε������ðɣ��ðɣ��Ǿ�" + MONEY_D->price_str(pay) +
-                      "���ˡ���\n");
+                write("馬夫無奈道：“好吧，好吧，那就" + MONEY_D->price_str(pay) +
+                      "算了。”\n");
         }
 
         if (pay > 0)
         {
                 if (MONEY_D->player_pay(me, pay) != 1)
                         return 0;
-                message_vision("$N�����ʣ�������˵������ʲô��\n", me);
+                message_vision("$N付了帳，對馬夫說了兩句什麼。\n", me);
         }
 
-        message_vision("����һ���к���������һ���󳵣�$N"
-                       "���˳��ͳ����ˡ�\n", me);
+        message_vision("馬夫一聲招呼，開過來一輛大車，$N"
+                       "上了車就出發了。\n", me);
         cart = new("/clone/misc/trans_cart");
         obs = filter_array(all_inventory(),
                            (: $1 == $(me) || $1->query_leader() == $(me) &&
@@ -203,15 +203,15 @@ void arrival(object me, object cart, mapping pos)
                            (: $1 == $(me) || $1->query_leader() == $(me) &&
                                           ! playerp($1) &&
                                           ! $1->is_killing(query("id", $(me))) :));
-        tell_object(me, "�㵽��" + pos["name"] + "�����˳���\n");
+        tell_object(me, "你到了" + pos["name"] + "，下了車。\n");
         obs->move(pos["room"]);
-        message("vision", "֨ѽ֨ѽһ���󳵸��˹������漴�ͼ�" +
-                          me->name() + "����������\n",
+        message("vision", "吱呀吱呀一輛大車趕了過來，隨即就見" +
+                          me->name() + "跳了下來。\n",
                 environment(me), me);
 
         if (sizeof(obs = all_inventory(cart)) > 0)
         {
-                message("vision", "ֻ��ϡ�ﻩ��һ���죬�ӳ�������һ�Ѷ�������\n",
+                message("vision", "只聽稀裡嘩啦一陣響，從車上扔下一堆東西來。\n",
                         environment(me), me);
                 obs->move(pos["room"]);
         }

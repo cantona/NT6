@@ -5,13 +5,13 @@ inherit DAGGER;
  
 void create()
 {
-        set_name("Çà·ä¶¤", ({ "qingfeng ding", "qingfeng", "ding" }) );
+        set_name("é’èœ‚é‡˜", ({ "qingfeng ding", "qingfeng", "ding" }) );
         set_weight(1);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "¾«Ìú´òÖÆµÄ¶¤×´°µÆ÷¡£\n");
-                set("unit", "°Ñ");
+                set("long", "ç²¾éµæ‰“åˆ¶çš„é‡˜ç‹€æš—å™¨ã€‚\n");
+                set("unit", "æŠŠ");
                 set("value", 0);
                 set("damage", 5);        //Here the damage=int_throwing, added by King
         }

@@ -3,7 +3,7 @@
 
 inherit F_SSERVER;
 
-string name() { return HIY "ÎŞĞÎ»ÃÓ°" NOR; }
+string name() { return HIY "ç„¡å½¢å¹»å½±" NOR; }
 
 int perform(object me, object target)
 {
@@ -15,30 +15,30 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(name() + "Ö»ÄÜÔÚÕ½¶·ÖĞ¶Ô¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(name() + "åªèƒ½åœ¨æˆ°é¬¥ä¸­å°å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me)) ||
             query("skill_type", weapon) != "blade" )
-                return notify_fail("ÄãµÄÎäÆ÷²»¶Ô£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„æ­¦å™¨ä¸å°ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if ((int)me->query_skill("yanxing-dao", 1) < 60 )
-                return notify_fail("ÄãÑãĞĞµ¶·¨²»¹»æµÊì£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ é›è¡Œåˆ€æ³•ä¸å¤ å«»ç†Ÿï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if ((int)me->query_skill("force") < 120 )
-                return notify_fail(RED"ÄãÄÚ¹¦»ğºò²»¹»£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail(RED"ä½ å…§åŠŸç«å€™ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (me->query_skill_mapped("blade") != "yanxing-dao")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢ÑãĞĞµ¶·¨£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼é›è¡Œåˆ€æ³•ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if( query("neili", me)<80 )
-                return notify_fail(HIC"ÄãÏÖÔÚÕæÆø²»¹»£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail(HIC"ä½ ç¾åœ¨çœŸæ°£ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIC "$N" HIC "´óºÈÒ»Éù£¬È«³¡ËÄ´¦ÓÎ¶¯£¬$n"
-              HIC "Ö»¿´µ½$N" HIC "»¯×öÊıÍÅÉíÓ°£¬ÂşÌìµ¶"
-              HIC "¹âÏ¯¾í¶øÀ´£¡\n"NOR;
+        msg = HIC "$N" HIC "å¤§å–ä¸€è²ï¼Œå…¨å ´å››è™•éŠå‹•ï¼Œ$n"
+              HIC "åªçœ‹åˆ°$N" HIC "åŒ–åšæ•¸åœ˜èº«å½±ï¼Œæ¼«å¤©åˆ€"
+              HIC "å…‰å¸­å·è€Œä¾†ï¼\n"NOR;
         message_combatd(msg, me, target);
 
         for (i = 0; i < 5; i++)

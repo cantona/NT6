@@ -1,4 +1,4 @@
-// dahuandao.c  ´ó»·µ¶
+// dahuandao.c  å¤§ç’°åˆ€
 // Last Modified by winder on Jul. 12 2002
 
 #include <ansi.h>
@@ -7,17 +7,17 @@ inherit BLADE;
 
 void create()
 {
-        set_name(HIW"´ó»·µ¶"NOR, ({ "blade","dao" }));
+        set_name(HIW"å¤§ç’°åˆ€"NOR, ({ "blade","dao" }));
         set_weight(10000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "ÕâÊÇÒ»°ÑÃ÷»Î»ÎµÄ´ó»·µ¶£¬µ¶±³ÉÏ»¹ÓĞ¼¸¸öÔ²»·´©ÔÚÉÏÃæ£¬¡°»©ÀâÀâ¡±Ö±Ïì¡£\n");
+                set("unit", "æŠŠ");
+                set("long", "é€™æ˜¯ä¸€æŠŠæ˜æ™ƒæ™ƒçš„å¤§ç’°åˆ€ï¼Œåˆ€èƒŒä¸Šé‚„æœ‰å¹¾å€‹åœ“ç’°ç©¿åœ¨ä¸Šé¢ï¼Œâ€œå˜©æ£±æ£±â€ç›´éŸ¿ã€‚\n");
                 set("value", 1000);
                 set("material", "steel");
-                set("wield_msg", "$N¡¸»©ÀâÀâ¡¹µÄÒ»Éù¾ÙÆğÒ»°Ñ$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n·ÅÏÂ¡£\n");
+                set("wield_msg", "$Nã€Œå˜©æ£±æ£±ã€çš„ä¸€è²èˆ‰èµ·ä¸€æŠŠ$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°‡æ‰‹ä¸­çš„$næ”¾ä¸‹ã€‚\n");
         }
         init_blade(40);
         setup();

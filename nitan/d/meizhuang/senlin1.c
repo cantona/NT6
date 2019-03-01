@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��ľ԰");
+        set("short", "百木園");
         set("long", @LONG
-������÷ׯ�İ�ľ԰����һ�ߵ���������ߵ���һ�������޾�
-��Сɭ��һ��������������������������������кܶ�в�������
-�ֵ�������ľ��
+這裡是梅莊的百木園，你一走到這裡，就象走到了一個連綿無盡
+的小森林一樣，這裡無數的鬆樹，柏樹，白楊，還有很多叫不出來名
+字的異種苗木。
 LONG );
         set("exits", ([
             "south" : __DIR__"keting",

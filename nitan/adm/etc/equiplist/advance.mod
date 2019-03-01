@@ -1,15 +1,15 @@
 #modlist
 
 <M1000>
-<mod_name>$HIW$ÎÄÇúĞÇÑ§Ï°Ì××°(ÉÏ)$NOR$</mod_name>
+<mod_name>$HIW$æ–‡æ›²æ˜Ÿå­¸ç¿’å¥—è£(ä¸Š)$NOR$</mod_name>
 <mod_parts>
-A1000:$HIW$ÎÄÇúĞÇ¼×$NOR$
-A1001:$HIW$ÎÄÇúĞÇÅû·ç$NOR$
-A1002:$HIW$ÎÄÇúĞÇÊø´ø$NOR$
-A1003:$HIW$ÎÄÇúĞÇÍ·¿ø$NOR$
-A1004:$HIW$ÎÄÇúĞÇÑ¥$NOR$
-A1005:$HIW$ÎÄÇúĞÇ»¤Íó$NOR$
-A1006:$HIW$ÎÄÇúĞÇÕ½ÒÂ$NOR$
+A1000:$HIW$æ–‡æ›²æ˜Ÿç”²$NOR$
+A1001:$HIW$æ–‡æ›²æ˜ŸæŠ«é¢¨$NOR$
+A1002:$HIW$æ–‡æ›²æ˜ŸæŸå¸¶$NOR$
+A1003:$HIW$æ–‡æ›²æ˜Ÿé ­ç›”$NOR$
+A1004:$HIW$æ–‡æ›²æ˜Ÿé´$NOR$
+A1005:$HIW$æ–‡æ›²æ˜Ÿè­·è…•$NOR$
+A1006:$HIW$æ–‡æ›²æ˜Ÿæˆ°è¡£$NOR$
 </mod_parts>
 <bas>3</bas>
 <num>7</num>
@@ -27,15 +27,15 @@ int:120
 </M1000>
 
 
-#ÎÄÇúĞÇÌ××°²¿¼ş
+#æ–‡æ›²æ˜Ÿå¥—è£éƒ¨ä»¶
 <A1000>
 <type>armor/armor</type>
-<name>$HIW$ÎÄÇúĞÇ¼×$NOR$</name>
+<name>$HIW$æ–‡æ›²æ˜Ÿç”²$NOR$</name>
 <id>wisdom armor</id>
-<long>ÔÌº¬ÁËÎÄÇúĞÇµÄ¾«ÔªºÍÎŞÉÏÖÇ»Û(ÉÏ)¡£</long>
+<long>è˜Šå«äº†æ–‡æ›²æ˜Ÿçš„ç²¾å…ƒå’Œç„¡ä¸Šæ™ºæ…§(ä¸Š)ã€‚</long>
 <value>2000000</value>
 <mod_level>M1000</mod_level>
-<mod_name>$HIW$ÎÄÇúĞÇÑ§Ï°Ì××°(ÉÏ)$NOR$</mod_name>
+<mod_name>$HIW$æ–‡æ›²æ˜Ÿå­¸ç¿’å¥—è£(ä¸Š)$NOR$</mod_name>
 <require>
 level:10
 con:20
@@ -55,13 +55,13 @@ used:2
 <insert>
 [1]
 id:magic stone
-name:$HIM$ĞşÊ¯$NOR$
+name:$HIM$ç„çŸ³$NOR$
 apply_prop/armor1:30
 apply_prop/int:5
 [/1]
 [2]
 id:magic stone
-name:$HIM$ĞşÊ¯$NOR$
+name:$HIM$ç„çŸ³$NOR$
 apply_prop/study_effect:8
 apply_prop/practice_effect:8
 [/2]
@@ -70,12 +70,12 @@ apply_prop/practice_effect:8
 
 <A1001>
 <type>armor/surcoat</type>
-<name>$HIW$ÎÄÇúĞÇÅû·ç$NOR$</name>
+<name>$HIW$æ–‡æ›²æ˜ŸæŠ«é¢¨$NOR$</name>
 <id>wisdom surcoat</id>
-<long>ÔÌº¬ÁËÎÄÇúĞÇµÄ¾«ÔªºÍÎŞÉÏÖÇ»Û(ÉÏ)¡£</long>
+<long>è˜Šå«äº†æ–‡æ›²æ˜Ÿçš„ç²¾å…ƒå’Œç„¡ä¸Šæ™ºæ…§(ä¸Š)ã€‚</long>
 <value>2000000</value>
 <mod_level>M1000</mod_level>
-<mod_name>$HIW$ÎÄÇúĞÇÑ§Ï°Ì××°(ÉÏ)$NOR$</mod_name>
+<mod_name>$HIW$æ–‡æ›²æ˜Ÿå­¸ç¿’å¥—è£(ä¸Š)$NOR$</mod_name>
 <require>
 level:10
 con:20
@@ -95,13 +95,13 @@ used:2
 <insert>
 [1]
 id:magic stone
-name:$HIM$ĞşÊ¯$NOR$
+name:$HIM$ç„çŸ³$NOR$
 apply_prop/armor1:30
 apply_prop/int:5
 [/1]
 [2]
 id:magic stone
-name:$HIM$ĞşÊ¯$NOR$
+name:$HIM$ç„çŸ³$NOR$
 apply_prop/study_effect:8
 apply_prop/derive_effect:8
 [/2]
@@ -110,12 +110,12 @@ apply_prop/derive_effect:8
 
 <A1002>
 <type>armor/waist</type>
-<name>$HIW$ÎÄÇúĞÇÊø´ø$NOR$</name>
+<name>$HIW$æ–‡æ›²æ˜ŸæŸå¸¶$NOR$</name>
 <id>wisdom waist</id>
-<long>ÔÌº¬ÁËÎÄÇúĞÇµÄ¾«ÔªºÍÎŞÉÏÖÇ»Û(ÉÏ)¡£</long>
+<long>è˜Šå«äº†æ–‡æ›²æ˜Ÿçš„ç²¾å…ƒå’Œç„¡ä¸Šæ™ºæ…§(ä¸Š)ã€‚</long>
 <value>2000000</value>
 <mod_level>M1000</mod_level>
-<mod_name>$HIW$ÎÄÇúĞÇÑ§Ï°Ì××°(ÉÏ)$NOR$</mod_name>
+<mod_name>$HIW$æ–‡æ›²æ˜Ÿå­¸ç¿’å¥—è£(ä¸Š)$NOR$</mod_name>
 <require>
 level:10
 con:20
@@ -135,13 +135,13 @@ used:2
 <insert>
 [1]
 id:magic stone
-name:$HIM$ĞşÊ¯$NOR$
+name:$HIM$ç„çŸ³$NOR$
 apply_prop/armor1:30
 apply_prop/int:5
 [/1]
 [2]
 id:magic stone
-name:$HIM$ĞşÊ¯$NOR$
+name:$HIM$ç„çŸ³$NOR$
 apply_prop/learn_effect:8
 apply_prop/derive_effect:8
 [/2]
@@ -150,12 +150,12 @@ apply_prop/derive_effect:8
 
 <A1003>
 <type>armor/head</type>
-<name>$HIW$ÎÄÇúĞÇÍ·¿ø$NOR$</name>
+<name>$HIW$æ–‡æ›²æ˜Ÿé ­ç›”$NOR$</name>
 <id>wisdom head</id>
-<long>ÔÌº¬ÁËÎÄÇúĞÇµÄ¾«ÔªºÍÎŞÉÏÖÇ»Û(ÉÏ)¡£</long>
+<long>è˜Šå«äº†æ–‡æ›²æ˜Ÿçš„ç²¾å…ƒå’Œç„¡ä¸Šæ™ºæ…§(ä¸Š)ã€‚</long>
 <value>2000000</value>
 <mod_level>M1000</mod_level>
-<mod_name>$HIW$ÎÄÇúĞÇÑ§Ï°Ì××°(ÉÏ)$NOR$</mod_name>
+<mod_name>$HIW$æ–‡æ›²æ˜Ÿå­¸ç¿’å¥—è£(ä¸Š)$NOR$</mod_name>
 <require>
 level:10
 con:20
@@ -175,13 +175,13 @@ used:2
 <insert>
 [1]
 id:magic stone
-name:$HIM$ĞşÊ¯$NOR$
+name:$HIM$ç„çŸ³$NOR$
 apply_prop/armor1:30
 apply_prop/int:5
 [/1]
 [2]
 id:magic stone
-name:$HIM$ĞşÊ¯$NOR$
+name:$HIM$ç„çŸ³$NOR$
 apply_prop/learn_effect:8
 apply_prop/research_effect:8
 [/2]
@@ -190,12 +190,12 @@ apply_prop/research_effect:8
 
 <A1004>
 <type>armor/boots</type>
-<name>$HIW$ÎÄÇúĞÇÑ¥$NOR$</name>
+<name>$HIW$æ–‡æ›²æ˜Ÿé´$NOR$</name>
 <id>wisdom boots</id>
-<long>ÔÌº¬ÁËÎÄÇúĞÇµÄ¾«ÔªºÍÎŞÉÏÖÇ»Û(ÉÏ)¡£</long>
+<long>è˜Šå«äº†æ–‡æ›²æ˜Ÿçš„ç²¾å…ƒå’Œç„¡ä¸Šæ™ºæ…§(ä¸Š)ã€‚</long>
 <value>2000000</value>
 <mod_level>M1000</mod_level>
-<mod_name>$HIW$ÎÄÇúĞÇÑ§Ï°Ì××°(ÉÏ)$NOR$</mod_name>
+<mod_name>$HIW$æ–‡æ›²æ˜Ÿå­¸ç¿’å¥—è£(ä¸Š)$NOR$</mod_name>
 <require>
 level:10
 con:20
@@ -215,13 +215,13 @@ used:2
 <insert>
 [1]
 id:magic stone
-name:$HIM$ĞşÊ¯$NOR$
+name:$HIM$ç„çŸ³$NOR$
 apply_prop/armor1:30
 apply_prop/int:5
 [/1]
 [2]
 id:magic stone
-name:$HIM$ĞşÊ¯$NOR$
+name:$HIM$ç„çŸ³$NOR$
 apply_prop/learn_effect:8
 apply_prop/practice_effect:8
 [/2]
@@ -230,12 +230,12 @@ apply_prop/practice_effect:8
 
 <A1005>
 <type>armor/wrists</type>
-<name>$HIW$ÎÄÇúĞÇ»¤Íó$NOR$</name>
+<name>$HIW$æ–‡æ›²æ˜Ÿè­·è…•$NOR$</name>
 <id>wisdom wrists</id>
-<long>ÔÌº¬ÁËÎÄÇúĞÇµÄ¾«ÔªºÍÎŞÉÏÖÇ»Û(ÉÏ)¡£</long>
+<long>è˜Šå«äº†æ–‡æ›²æ˜Ÿçš„ç²¾å…ƒå’Œç„¡ä¸Šæ™ºæ…§(ä¸Š)ã€‚</long>
 <value>2000000</value>
 <mod_level>M1000</mod_level>
-<mod_name>$HIW$ÎÄÇúĞÇÑ§Ï°Ì××°(ÉÏ)$NOR$</mod_name>
+<mod_name>$HIW$æ–‡æ›²æ˜Ÿå­¸ç¿’å¥—è£(ä¸Š)$NOR$</mod_name>
 <require>
 level:10
 con:20
@@ -255,13 +255,13 @@ used:2
 <insert>
 [1]
 id:magic stone
-name:$HIM$ĞşÊ¯$NOR$
+name:$HIM$ç„çŸ³$NOR$
 apply_prop/armor1:30
 apply_prop/int:5
 [/1]
 [2]
 id:magic stone
-name:$HIM$ĞşÊ¯$NOR$
+name:$HIM$ç„çŸ³$NOR$
 apply_prop/study_effect:8
 apply_prop/practice_effect:8
 [/2]
@@ -270,12 +270,12 @@ apply_prop/practice_effect:8
 
 <A1006>
 <type>armor/cloth</type>
-<name>$HIW$ÎÄÇúĞÇÕ½ÒÂ$NOR$</name>
+<name>$HIW$æ–‡æ›²æ˜Ÿæˆ°è¡£$NOR$</name>
 <id>wisdom cloth</id>
-<long>Ò»¼şË¿ÖÊµÄÒÂ·ş¡£</long>
+<long>ä¸€ä»¶çµ²è³ªçš„è¡£æœã€‚</long>
 <value>2000000</value>
 <mod_level>M1000</mod_level>
-<mod_name>$HIW$ÎÄÇúĞÇÑ§Ï°Ì××°(ÉÏ)$NOR$</mod_name>
+<mod_name>$HIW$æ–‡æ›²æ˜Ÿå­¸ç¿’å¥—è£(ä¸Š)$NOR$</mod_name>
 <require>
 level:10
 con:20
@@ -295,13 +295,13 @@ used:2
 <insert>
 [1]
 id:magic stone
-name:$HIM$ĞşÊ¯$NOR$
+name:$HIM$ç„çŸ³$NOR$
 apply_prop/armor1:30
 apply_prop/int:5
 [/1]
 [2]
 id:magic stone
-name:$HIM$ĞşÊ¯$NOR$
+name:$HIM$ç„çŸ³$NOR$
 apply_prop/research_effect:8
 apply_prop/derive_effect:8
 [/2]

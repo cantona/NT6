@@ -5,14 +5,14 @@ inherit F_FOOD;
 
 void create()
 {
-   set_name("´ò¸â", ({"da gao","gao"}));
+   set_name("æ‰“ç³•", ({"da gao","gao"}));
         set_weight(100);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»¸ö¸ßÀöµÄ´ò¸â£¬¿´ÆğÀ´ºÜºÃ³Ô¡£\n");
+                set("long", "é€™æ˜¯ä¸€å€‹é«˜éº—çš„æ‰“ç³•ï¼Œçœ‹èµ·ä¾†å¾ˆå¥½åƒã€‚\n");
                 set("no_decay",1);
-                set("unit", "¸ö");
+                set("unit", "å€‹");
                 set("value", 100);
                 set("food_remaining", 30);
                 set("food_supply", 50);
@@ -21,7 +21,7 @@ void create()
 /*
 int is_get_of(object pal,object ob)
 {
-  if(pal->query("family/family_name")!="ŞÄ½£ÅÉ")
-  return notify_fail("Ö»ÓĞŞÄ½£ÅÉµÜ×Ó¿ÉÒÔ¼ñÕâÀïµÄ¶«Î÷£¡£¡\n");
+  if(pal->query("family/family_name")!="å¼ˆåŠæ´¾")
+  return notify_fail("åªæœ‰å¼ˆåŠæ´¾å¼Ÿå­å¯ä»¥æ’¿é€™è£¡çš„æ±è¥¿ï¼ï¼\n");
   return 1;
 */

@@ -10,11 +10,11 @@ int sort_by_id(mapping quest1, mapping quest2);
 
 void create()
 {
-        set("short", HIB"�ڰ׵�������̳"NOR);
+        set("short", HIB"黑白道長安分壇"NOR);
         set("long", @LONG
-������Ǻڰ���֯�ڰ׵��ĳ�����̳�ˡ�ǽ�������صĺڰ���ɫ��
-�������е�̨���ϰ���һ�ѽ�һ�ѵ������Կ����˴��ķ�̳���ض���
-��������ѧ֮�ˡ�ǽ�Ϲ���һ�����ӣ�paizi����
+這裡就是黑幫組織黑白道的長安分壇了。牆壁是奇特的黑白兩色。
+房間正中的台子上擺著一把劍一把刀，可以看出此處的分壇主必定是
+個痴迷武學之人。牆上掛著一個牌子（paizi）。
 LONG );
 
         set("objects", ([ 

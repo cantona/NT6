@@ -1,5 +1,5 @@
 // This program is a part of NITAN MudLIB
-// mang.c ½£Ã¢
+// mang.c åŠèŠ’
 
 
 #include <ansi.h>
@@ -7,19 +7,19 @@
 
 inherit F_SSERVER;
 
-string name() { return "½£Ã¢"; }
+string name() { return "åŠèŠ’"; }
 string *name1 = ({
-        "ÓñÌÃÑ¨",
-        "´óºáÑ¨",
-        "ÓÄÃÅÑ¨",
-        "ÕÂÃÅÑ¨",
-        "ÇçÃ÷Ñ¨",
-        "×Ï¹¬Ñ¨",
-        "·ç³ØÑ¨",
-        "°Ù»ãÑ¨",
-        "Ì«ÑôÑ¨",
-        "³¤Ç¿Ñ¨",
-        "ÁéÌ¨Ñ¨"
+        "ç‰å ‚ç©´",
+        "å¤§æ©«ç©´",
+        "å¹½é–€ç©´",
+        "ç« é–€ç©´",
+        "æ™´æ˜ç©´",
+        "ç´«å®®ç©´",
+        "é¢¨æ± ç©´",
+        "ç™¾åŒ¯ç©´",
+        "å¤ªé™½ç©´",
+        "é•·å¼·ç©´",
+        "éˆå°ç©´"
 });
 
 void check_fight(object me, object target, int amount);
@@ -33,48 +33,48 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! target->is_fighting(me))
-                return notify_fail("¡¸½£Ã¢¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€ŒåŠèŠ’ã€åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( query("qi", target) <= 50 )
-                return notify_fail("ÄãÏÖÔÚÃ»ÓĞ±ØÒªÓÃ¡¸½£Ã¢¡¹¹¥»÷µĞÈËÁË¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ²’æœ‰å¿…è¦ç”¨ã€ŒåŠèŠ’ã€æ”»æ“Šæ•µäººäº†ã€‚\n");
 
         if( !weapon || query("skill_type", weapon) != "sword"
         ||  me->query_skill_mapped("sword") != "huashan-sword")
-                return notify_fail("ÄãÏÖÔÚÎŞ·¨Ê¹ÓÃ¡¸½£Ã¢¡¹¹¥»÷µĞÈË¡£\n");
+                return notify_fail("ä½ ç¾åœ¨ç„¡æ³•ä½¿ç”¨ã€ŒåŠèŠ’ã€æ”»æ“Šæ•µäººã€‚\n");
 
         if( query_temp("perform", me) == 1 ||
             query_temp("perform2", me) == 1 ||
             query_temp("perform3", me) == 1 )
-                return notify_fail("ÄãÏÖÔÚÕıÓÃ×Å¡¸½£Ã¢¡¹ÄØ¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£ç”¨è‘—ã€ŒåŠèŠ’ã€å‘¢ã€‚\n");
 
         if ((int)me->query_skill("huashan-sword", 1) < 100 ||
             (int)me->query_skill("sword", 1) < 100 ||
             (int)me->query_str() < 25   ||
             (int)me->query_dex() < 25)
-                return notify_fail("ÄãÓĞµÄ¹¦·ò»¹²»¹»æµÊì£¬²»»áÊ¹ÓÃ¡¸½£Ã¢¡¹¡£\n");
+                return notify_fail("ä½ æœ‰çš„åŠŸå¤«é‚„ä¸å¤ å«»ç†Ÿï¼Œä¸æœƒä½¿ç”¨ã€ŒåŠèŠ’ã€ã€‚\n");
 
         if ((int)me->query_skill("zixia-shengong", 1) < 80)
-                return notify_fail("ÄãµÄ×ÏÏ¼Éñ¹¦ĞŞÎª²»¹»£¬ÎŞ·¨ÁìÎò¡¸½£Ã¢¡¹µÄ¾«Ëè¡£\n");
+                return notify_fail("ä½ çš„ç´«éœç¥åŠŸä¿®ç‚ºä¸å¤ ï¼Œç„¡æ³•é ˜æ‚Ÿã€ŒåŠèŠ’ã€çš„ç²¾é«“ã€‚\n");
 
 
         if( query("max_neili", me)<800 )
-                return notify_fail("ÄãµÄÄÚÁ¦Ì«Èõ£¬ÎŞ·¨Ê¹ÓÃ³ö¡¸½£Ã¢¡¹£¡\n");
+                return notify_fail("ä½ çš„å…§åŠ›å¤ªå¼±ï¼Œç„¡æ³•ä½¿ç”¨å‡ºã€ŒåŠèŠ’ã€ï¼\n");
 
         if( query("neili", me)<200 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¡\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼\n");
 
         name = name1[random(sizeof(name1))];
         name2=query("name", weapon);
 
-        msg = HIC "\n$NÓÒÊÖ½£·æÒ»×ª£¬ÊÖÖĞ" + name2 + HIC "Ö±¶·£¬¶ÙÊ±Ê¹$N" +
-              HIC "±»Ò»Æ¬½£»ÔËùÁıÕÖ£¬ÆäÖĞÒ»Ö§½£Ã¢±¼Ïò$n " HIC "µÄ" + name + "¡£\n" NOR;
+        msg = HIC "\n$Nå³æ‰‹åŠé‹’ä¸€è½‰ï¼Œæ‰‹ä¸­" + name2 + HIC "ç›´é¬¥ï¼Œé “æ™‚ä½¿$N" +
+              HIC "è¢«ä¸€ç‰‡åŠè¼æ‰€ç± ç½©ï¼Œå…¶ä¸­ä¸€æ”¯åŠèŠ’å¥”å‘$n " HIC "çš„" + name + "ã€‚\n" NOR;
 
         ap = attack_power(me, "sword");
         dp = defense_power(target, "dodge");
 
         if (ap / 2 + random(ap) > dp)
         {
-                msg += HIR "½á¹ûÒ»½£´ÌÖĞ£¬$nÖ»¾õµÃÈ«ÉíÆøÂöÍ¨µÀ×èÈû£¬ÕæÆøÁ¢ÊÜ¸ÉÄÓ£¡\n"NOR;
+                msg += HIR "çµæœä¸€åŠåˆºä¸­ï¼Œ$nåªè¦ºå¾—å…¨èº«æ°£è„ˆé€šé“é˜»å¡ï¼ŒçœŸæ°£ç«‹å—å¹¹æ’“ï¼\n"NOR;
                 if (! target->is_busy())
                         target->start_busy(2 + random(4));
                 addn("neili", -200, me);
@@ -93,7 +93,7 @@ int perform(object me, object target)
                 me->start_busy(2);
                 addn("neili", -100, me);
                 addn("neili", -100, target);
-                msg += HIY"\n$p´ó½ĞÒ»Éù²»ºÃ£¬È«ÉíÓÃÁ¦Ò»×İ£¬Ë³ÊÆÌøÁË¿ªÈ¥¡£\n" NOR;
+                msg += HIY"\n$på¤§å«ä¸€è²ä¸å¥½ï¼Œå…¨èº«ç”¨åŠ›ä¸€ç¸±ï¼Œé †å‹¢è·³äº†é–‹å»ã€‚\n" NOR;
         }
         message_combatd(msg, me, target);
         me->start_call_out((: call_other, __FILE__, "check_fight",
@@ -126,7 +126,7 @@ int perform2(object me, object target)
         }
 
         name = name1[random(sizeof(name1))];
-        msg = MAG "\n½Ó×Å$NÌ¤Ç°Ò»²½£¬" + name2 + "·¢³öµÄµÚ¶şÖ§½£Ã¢¸ô¿ÕµãÏò$nµÄ" + name + "£¬ÈÏÑ¨¾¹ÎŞÀåºÁÖ®²î£¡\n" NOR;
+        msg = MAG "\næ¥è‘—$Nè¸å‰ä¸€æ­¥ï¼Œ" + name2 + "ç™¼å‡ºçš„ç¬¬äºŒæ”¯åŠèŠ’éš”ç©ºé»å‘$nçš„" + name + "ï¼Œèªç©´ç«Ÿç„¡å˜æ¯«ä¹‹å·®ï¼\n" NOR;
 
         ap = attack_power(me, "sword");
         dp = defense_power(target, "parry");
@@ -139,8 +139,8 @@ int perform2(object me, object target)
                 addn("neili", -300, me);
 
                 msg += COMBAT_D->do_damage(me, target, WEAPON_ATTACK, damage, 50,
-                                           HIR "½á¹ûÖ»Ìı¼û$n" HIR "Ò»Éù²Òº¿£¬" + name2 + HIR "ÒÑÔÚ$pµÄ" + name +
-                                           HIR "¶Ô´©¶ø³ö£¬ÏÊÑª½¦µÃÂúµØ£¡£¡\n" NOR);
+                                           HIR "çµæœåªè½è¦‹$n" HIR "ä¸€è²æ…˜åšï¼Œ" + name2 + HIR "å·²åœ¨$pçš„" + name +
+                                           HIR "å°ç©¿è€Œå‡ºï¼Œé®®è¡€æ¿ºå¾—æ»¿åœ°ï¼ï¼\n" NOR);
 
                 if( !target->is_busy() )
                         target->start_busy(2);
@@ -157,7 +157,7 @@ int perform2(object me, object target)
         {       me->start_busy(3);
                 addn("neili", -100, me);
                 delete_temp("perform", me);
-                msg += HIY"¿ÉÊÇ$pÒ»¸öÇÉÔÆ·­Éí£¬Ô¶Ô¶µÄ¶ãÁË¿ªÈ¥¡£\n"NOR;
+                msg += HIY"å¯æ˜¯$pä¸€å€‹å·§é›²ç¿»èº«ï¼Œé é çš„èº²äº†é–‹å»ã€‚\n"NOR;
         }
         message_combatd(msg, me, target);
         me->start_call_out( (: call_other, __FILE__, "check_fight", me ,target :), 1);
@@ -187,7 +187,7 @@ int perform3(object me, object target)
         }
 
         name = name1[random(sizeof(name1))];
-        msg = HIW "\n½ô¸ú×Å$NÊÖÖĞ" + name2 + "·¢³öµÚÈıÖ§½£Ã¢£¬Ö»¼ûÒ»µÀ¹âÃ¢Ö±±¼$n£¬½£»ÔÉ¨Ïò$nµÄ" + name + "£¡\n" NOR;
+        msg = HIW "\nç·Šè·Ÿè‘—$Næ‰‹ä¸­" + name2 + "ç™¼å‡ºç¬¬ä¸‰æ”¯åŠèŠ’ï¼Œåªè¦‹ä¸€é“å…‰èŠ’ç›´å¥”$nï¼ŒåŠè¼æƒå‘$nçš„" + name + "ï¼\n" NOR;
 
         ap = attack_power(me, "sword");
         dp = defense_power(target, "force");
@@ -197,8 +197,8 @@ int perform3(object me, object target)
                 addn("neili", -200, me);
                 delete_temp("perform2", me);
 
-                msg += HIR "$nÖ»¾õÌåÄÚÆæ¾­°ËÂöÖĞÄÚÏ¢ÎªÖ®Ò»µ¡£¬È«ÉíÆøÁ¦¾¹È»Ìá²»ÆğÀ´ÁË£¡\n" NOR;
-                msg += HIW "$N³Ã$nÉíĞÎÒ»ÂıµÄµ±¶ù£¬Á¬»·Êı½£·ÜÁ¦»÷³ö£¬ÕıÊÇ½£×Ú¾ø¼¼" + HIR "¡°¶áÃüÈıÏÉ½£¡±£¡\n" NOR;
+                msg += HIR "$nåªè¦ºé«”å…§å¥‡ç¶“å…«è„ˆä¸­å…§æ¯ç‚ºä¹‹ä¸€æ€ ï¼Œå…¨èº«æ°£åŠ›ç«Ÿç„¶æä¸èµ·ä¾†äº†ï¼\n" NOR;
+                msg += HIW "$Nè¶$nèº«å½¢ä¸€æ…¢çš„ç•¶å…’ï¼Œé€£ç’°æ•¸åŠå¥®åŠ›æ“Šå‡ºï¼Œæ­£æ˜¯åŠå®—çµ•æŠ€" + HIR "â€œå¥ªå‘½ä¸‰ä»™åŠâ€ï¼\n" NOR;
                 message_combatd(msg, me, target);
                 addn("apply/attack", skill, me);
                 addn("apply/damage", skill, me);
@@ -221,7 +221,7 @@ int perform3(object me, object target)
                 addn("neili", -100, me);
                 delete_temp("perform2", me);
                 target->start_busy(1);
-                msg += HIY"\n$p´­Ï¢Î´¶¨£¬¼û$PÊÖÖĞ·¢³öµÄ½£Ã¢Èç¿ñ·ç°ãµãÀ´£¬Á¬Ã¦ÓÖÔ¾¿ªÊı³ß£¬ÀÇ±·µØ±Ü¿ª¡£\n" NOR;
+                msg += HIY"\n$på–˜æ¯æœªå®šï¼Œè¦‹$Pæ‰‹ä¸­ç™¼å‡ºçš„åŠèŠ’å¦‚ç‹‚é¢¨èˆ¬é»ä¾†ï¼Œé€£å¿™åˆèºé–‹æ•¸å°ºï¼Œç‹¼ç‹½åœ°é¿é–‹ã€‚\n" NOR;
                 message_combatd(msg, me, target);
         }
         me->start_call_out( (: call_other, __FILE__, "check_fight", me ,target :), 1);
@@ -232,7 +232,7 @@ void back(object me)
 {
         string msg;
         if (! me) return;
-        msg = HIW "\nÄãÉíĞÎÒ»ÊÕ£¬ÊÖÖĞ½£Ã¢½¥½¥ÏûÊ§¡£\n" NOR;
+        msg = HIW "\nä½ èº«å½¢ä¸€æ”¶ï¼Œæ‰‹ä¸­åŠèŠ’æ¼¸æ¼¸æ¶ˆå¤±ã€‚\n" NOR;
         tell_object(me, msg);
         delete_temp("perform", me);
         delete_temp("perform2", me);

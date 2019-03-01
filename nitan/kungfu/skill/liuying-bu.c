@@ -1,10 +1,10 @@
 inherit SKILL;
 
 string *dodge_msg = ({
-        "$nһʽ����ɽ��ˮ�������ӳ���һת��$Nֻ������ǰһ����ʧȥ��Ŀ�ꡣ\n",
-        "$nһʽ����ڤ���ġ���˫�ŵ�أ�����ͻȻ�θ�������������Ʈ����$N����\n",
-        "$nһʽ�����Ŀ��С�������һ�Σ���ʱ��������Ӱһ���ӳ�����$N����ǰ��\n",
-        "$nһʽ�����ڤ�ǡ������弱ת����Ϊһ���׹⣬��ò����ĳ�����$N����Χ��\n",
+        "$n一式「高山流水」，身子掣忽一轉，$N只覺的眼前一花，失去了目標。\n",
+        "$n一式「玄冥幽幽」，雙腳點地，身子突然拔高了丈許，緩緩飄落在$N身後。\n",
+        "$n一式「幽幽空行」，身行一晃，頓時無數條身影一下子出現在$N的面前。\n",
+        "$n一式「皓月冥星」，身體急轉，化為一道白光，虛幻不定的出現在$N的周圍。\n",
 });
 
 int valid_enable(string usage)
@@ -25,7 +25,7 @@ string query_dodge_msg(string limb)
 int practice_skill(object me)
 {
         if( query("qi", me)<45 )
-                return notify_fail("�������̫���ˣ���������Ӱ������\n");
+                return notify_fail("你的體力太差了，不能練流影步法。\n");
 
         me->receive_damage("qi", 35);
         return 1;

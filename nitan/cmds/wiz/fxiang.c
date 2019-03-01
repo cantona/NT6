@@ -24,7 +24,7 @@ int main(object me, string arg)
         i = sizeof(file);
         if (! i)
         {
-                write("Ä¿Ç°Ã»ÓĞÈÎºÎ±¦Ïä¡£\n");
+                write("ç›®å‰æ²’æœ‰ä»»ä½•å¯¶ç®±ã€‚\n");
                 return 1;
         }
 
@@ -33,14 +33,14 @@ int main(object me, string arg)
                 sscanf(arg, "%d", j);
                 j--;
                 if (j < 0 || j >= i)
-                        return notify_fail("Ã»ÓĞÕâ¸ö±¦Ïä¡£\n");
+                        return notify_fail("æ²’æœ‰é€™å€‹å¯¶ç®±ã€‚\n");
 
                 me->force_me("goto " + file[j]);
                 me->force_me("look baoxiang");
                 return 1; 
         }
 
-        msg = "Ä¿Ç°" + LOCAL_MUD_NAME() + "µÄ±¦ÏäÓĞÒÔÏÂÕâĞ©£º\n";
+        msg = "ç›®å‰" + LOCAL_MUD_NAME() + "çš„å¯¶ç®±æœ‰ä»¥ä¸‹é€™äº›ï¼š\n";
         for (j = 0; j < i; j++)
         {
                 msg += sprintf(HIY "%3d" NOR ". %10s", j + 1, xiang[j] );
@@ -51,7 +51,7 @@ int main(object me, string arg)
                         l = 0;
                 }
         }
-        msg += "ÓÃ fxiang n È¥¿´ÄãÏë¿´µÄ±¦Ïä¡£\n";
+        msg += "ç”¨ fxiang n å»çœ‹ä½ æƒ³çœ‹çš„å¯¶ç®±ã€‚\n";
         write(msg);
         return 1;
 }

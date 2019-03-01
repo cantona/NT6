@@ -7,7 +7,7 @@ int update_condition(object me, int duration)
 {
         if( duration<1 && query_temp("defend_quest", me) )
         {
-                tell_object(me, HIY "ÄãµÄÊØÎÀÃÅÅÉÈÎÎñ½áÊø¡£\n" NOR);
+                tell_object(me, HIY "ä½ çš„å®ˆè¡›é–€æ´¾ä»»å‹™çµæŸã€‚\n" NOR);
                 set_temp("defend_quest/finish", 1, me);
                 return 0;
         }

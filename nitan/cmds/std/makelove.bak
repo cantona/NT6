@@ -18,50 +18,50 @@ int main(object me, string arg)
 
         if( !(query("sleep_room", where) )
               || (query("no_sleep_room", where)) )
-                return notify_fail("ÕâÀï×ö°®¿É²»Ì«ºÃ£¬ÕÒ¸ö°²È«µãµÄµØ·½°É£¡\n");
+                return notify_fail("é€™è£¡åšæ„›å¯ä¸å¤ªå¥½ï¼Œæ‰¾å€‹å®‰å…¨é»çš„åœ°æ–¹å§ï¼\n");
 
         if (! arg || ! objectp(target = present(arg, where)))
-                return notify_fail("ÄãÏëºÍË­×ö°®£¿\n");
+                return notify_fail("ä½ æƒ³å’Œèª°åšæ„›ï¼Ÿ\n");
 
         if( !target->is_character() || query("not_living", target) )
-                return notify_fail("¿´Çå³şÁË£¬ÄÇ²»ÊÇ»îÈË£¡\n");
+                return notify_fail("çœ‹æ¸…æ¥šäº†ï¼Œé‚£ä¸æ˜¯æ´»äººï¼\n");
 
         if( !query("can_speak", target) )
-                return notify_fail("Äã·èÁË£¿ÏëºÍ" + target->name() + "ĞÔ½»£¿\n");
+                return notify_fail("ä½ ç˜‹äº†ï¼Ÿæƒ³å’Œ" + target->name() + "æ€§äº¤ï¼Ÿ\n");
 
         if (me == target)
-                return notify_fail("Äã×Ô¼ºÒªºÍ×Ô¼º...Äã»¹ÊÇ¿ì»Ø¼Ò×Ô¼ºÑĞ¾¿°É¡£\n");
+                return notify_fail("ä½ è‡ªå·±è¦å’Œè‡ªå·±...ä½ é‚„æ˜¯å¿«å›å®¶è‡ªå·±ç ”ç©¶å§ã€‚\n");
 
         if (me->is_busy())
-                return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ£¡\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£å¿™è‘—å‘¢ï¼\n");
 
         if (me->is_fighting())
-                return notify_fail("±ß¶¯ÊÖ±ß×ö°®£¿Äã¹ûÈ»ºÜÓĞ´´Òâ£¡\n");
+                return notify_fail("é‚Šå‹•æ‰‹é‚Šåšæ„›ï¼Ÿä½ æœç„¶å¾ˆæœ‰å‰µæ„ï¼\n");
 
         if (! userp(target))
-                return notify_fail(target->name() + "Ò»ÏÅ£¬Å­ÊÓ×ÅÄã¡£(»¹ÊÇ±ğÈÇÈË¼ÒÁË)\n");
+                return notify_fail(target->name() + "ä¸€åš‡ï¼Œæ€’è¦–è‘—ä½ ã€‚(é‚„æ˜¯åˆ¥æƒ¹äººå®¶äº†)\n");
 
-        if( query("gender", me) == "ÎŞĞÔ" )
-                return notify_fail("ÄãÕâÈË¶¼ÕâÄ£ÑùÁË»¹ÓĞĞËÖÂ£¿ÕæÊÇÉÙ¼û¡£\n");
+        if( query("gender", me) == "ç„¡æ€§" )
+                return notify_fail("ä½ é€™äººéƒ½é€™æ¨¡æ¨£äº†é‚„æœ‰èˆˆè‡´ï¼ŸçœŸæ˜¯å°‘è¦‹ã€‚\n");
 
         if( query("gender", me) == query("gender", target) )
-                return notify_fail("Í¬ĞÔÁµÃ´...»¹ÊÇ×Ô¼ººÃºÃÑĞ¾¿ÔõÃ´Åª°É£¬ÕâÌõÖ¸Áî²»Ì«ºÏÊÊ¡£\n");
+                return notify_fail("åŒæ€§æˆ€éº¼...é‚„æ˜¯è‡ªå·±å¥½å¥½ç ”ç©¶æ€éº¼å¼„å§ï¼Œé€™æ¢æŒ‡ä»¤ä¸å¤ªåˆé©ã€‚\n");
 
         if( query("age", me)<16 )
-                return notify_fail("Äã»¹Ã»ÓĞ·¢ÓıÍêÈ«£¬¾ÍÏëÕâÊÂ£¿\n");
+                return notify_fail("ä½ é‚„æ²’æœ‰ç™¼è‚²å®Œå…¨ï¼Œå°±æƒ³é€™äº‹ï¼Ÿ\n");
 
         if( query_temp("pending/makelove", me) == target )
-                return notify_fail("ÄãÒÑ¾­Ïò±ğÈËÌá³öÒªÇóÁË£¬¿ÉÊÇÈË¼Ò»¹Ã»ÓĞ´ğÓ¦Äã¡£\n");
+                return notify_fail("ä½ å·²ç¶“å‘åˆ¥äººæå‡ºè¦æ±‚äº†ï¼Œå¯æ˜¯äººå®¶é‚„æ²’æœ‰ç­”æ‡‰ä½ ã€‚\n");
 
         if( query("jing", me)*100/query("max_jing", me)<80 )
-                return notify_fail("ÄãµÄ¾«Éñ²»¼Ã£¬ÏÖÔÚÃ»ÓĞÁ¦ÆøºÍÈË¼Ò×ö°®¡£\n");
+                return notify_fail("ä½ çš„ç²¾ç¥ä¸æ¿Ÿï¼Œç¾åœ¨æ²’æœ‰åŠ›æ°£å’Œäººå®¶åšæ„›ã€‚\n");
 
         if( query("qi", me)*100/query("max_qi", me)<60 )
-                return notify_fail("ÄãµÄÌåÁ¦²»Ö§£¬ÏÖÔÚÃ»ÓĞÁ¦ÆøºÍÈË¼Ò×ö°®¡£\n");
+                return notify_fail("ä½ çš„é«”åŠ›ä¸æ”¯ï¼Œç¾åœ¨æ²’æœ‰åŠ›æ°£å’Œäººå®¶åšæ„›ã€‚\n");
 
-        if( query("gender", me) == "ÄĞĞÔ" && 
+        if( query("gender", me) == "ç”·æ€§" && 
             time()-query_temp("last_makelove", me)<120 )
-                return notify_fail("ÄãÏÖÔÚÊÇÓĞĞÄÎŞÁ¦£¬Ã»·¨ÔÙÀ´Ò»´Î¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ˜¯æœ‰å¿ƒç„¡åŠ›ï¼Œæ²’æ³•å†ä¾†ä¸€æ¬¡ã€‚\n");
 
         no_tell=query("env/no_tell", target);
         if (no_tell == "all" || no_tell == "ALL" ||
@@ -69,7 +69,7 @@ int main(object me, string arg)
         {
                 can_tell=query("env/can_tell", target);
                 if( !is_sub(query("id", me),can_tell) )
-                        return notify_fail("Õâ¸öÈË²»ÏëÌıÄãÂŞàÂÀ²¡£\n");
+                        return notify_fail("é€™å€‹äººä¸æƒ³è½ä½ ç¾…å—¦å•¦ã€‚\n");
         }
 
         if( query_temp("pending/makelove", target) == me )
@@ -80,16 +80,16 @@ int main(object me, string arg)
         }
 
         set_temp("pending/makelove", target, me);
-        message("vision", me->name() + "ÇÄÇÄµÄºÍ" + target->name() + "ËµÁË¼¸¾ä»°¡£\n",
+        message("vision", me->name() + "æ‚„æ‚„çš„å’Œ" + target->name() + "èªªäº†å¹¾å¥è©±ã€‚\n",
                 environment(me), ({ me, target }));
-        if( query("gender", me) == "ÄĞĞÔ" )
+        if( query("gender", me) == "ç”·æ€§" )
         {
                 me->force_me("tell"+query("id", target)+
-                             " ºÃ±¦±´£¬½ñÌì¾ÍºÍÎÒ»¶ÀÖÒ»´Î°É¡£");
+                             " å¥½å¯¶è²ï¼Œä»Šå¤©å°±å’Œæˆ‘æ­¡æ¨‚ä¸€æ¬¡å§ã€‚");
         } else
         {
                 me->force_me("tell"+query("id", target)+
-                            " ÄãÏÖÔÚÏëÒªÎÒÃ´£¿");
+                            " ä½ ç¾åœ¨æƒ³è¦æˆ‘éº¼ï¼Ÿ");
         }
 
         return 1;
@@ -108,7 +108,7 @@ void do_makelove(object me, object target)
         if( armor=query_temp("armor", target) && sizeof(armor) )
                 target->force_me("remove all");
 
-        if( query("gender", me) == "ÄĞĞÔ" )
+        if( query("gender", me) == "ç”·æ€§" )
         {
                 man = me;
                 woman = target;
@@ -118,24 +118,24 @@ void do_makelove(object me, object target)
                 woman = me;
         }
 
-        msg = "$NÇáÇáµÄÂ§×Å$n£¬Ë«ÊÖ´Ó$nµÄÁ³¼ÕÂıÂıµÄ¸§ÃşÏÂÈ¥Ö±ÖÁĞØÌÅ£¬Ö»¼û$p"
-              "²»ÓÉµÄ²ü¶¯ÁËÒ»ÏÂ£¬Ò»Ê±¼äÒâÂÒÇéÃÔ£¬Ë«ÊÖ½ô½ôµÄ±§×¡ÁË$N£¬°ÑÁ³Éî"
-              "ÉîµÄÂñÔÚ$NµÄ»³ÖĞ£¬Ä¥²Á×Å$PµÄĞØ¿Ú£¬ö®Ê±¼äÂúÌÃ´ºÒâ£¬½õĞåÒàÌí¹â"
-              "»ª£¬Á½ÈË½¥½¥µÄ½øÈëÁËÍüÎÒµÄ×´Ì¬¡£";
-        msg1 = replace_string(msg, "$N", "Äã");
+        msg = "$Nè¼•è¼•çš„æ‘Ÿè‘—$nï¼Œé›™æ‰‹å¾$nçš„è‡‰é °æ…¢æ…¢çš„æ’«æ‘¸ä¸‹å»ç›´è‡³èƒ¸è†›ï¼Œåªè¦‹$p"
+              "ä¸ç”±çš„é¡«å‹•äº†ä¸€ä¸‹ï¼Œä¸€æ™‚é–“æ„äº‚æƒ…è¿·ï¼Œé›™æ‰‹ç·Šç·Šçš„æŠ±ä½äº†$Nï¼ŒæŠŠè‡‰æ·±"
+              "æ·±çš„åŸ‹åœ¨$Nçš„æ‡·ä¸­ï¼Œç£¨æ“¦è‘—$Pçš„èƒ¸å£ï¼Œéœæ™‚é–“æ»¿å ‚æ˜¥æ„ï¼ŒéŒ¦ç¹¡äº¦æ·»å…‰"
+              "è¯ï¼Œå…©äººæ¼¸æ¼¸çš„é€²å…¥äº†å¿˜æˆ‘çš„ç‹€æ…‹ã€‚";
+        msg1 = replace_string(msg, "$N", "ä½ ");
         msg1 = replace_string(msg1, "$n", woman->name());
-        msg1 = replace_string(msg1, "$P", "Äã");
-        msg1 = replace_string(msg1, "$p", "Ëı");
+        msg1 = replace_string(msg1, "$P", "ä½ ");
+        msg1 = replace_string(msg1, "$p", "å¥¹");
 
         msg2 = replace_string(msg, "$N", man->name());
-        msg2 = replace_string(msg2, "$n", "Äã");
-        msg2 = replace_string(msg2, "$P", "Ëû");
-        msg2 = replace_string(msg2, "$p", "Äã");
+        msg2 = replace_string(msg2, "$n", "ä½ ");
+        msg2 = replace_string(msg2, "$P", "ä»–");
+        msg2 = replace_string(msg2, "$p", "ä½ ");
 
         msg = replace_string(msg, "$N", man->name());
         msg = replace_string(msg, "$n", woman->name());
-        msg = replace_string(msg, "$P", "Ëû");
-        msg = replace_string(msg, "$p", "Ëı");
+        msg = replace_string(msg, "$P", "ä»–");
+        msg = replace_string(msg, "$p", "å¥¹");
 
         msg1 = sort_string(msg1, 64);
         msg2 = sort_string(msg2, 64);
@@ -145,8 +145,8 @@ void do_makelove(object me, object target)
         message("vision", msg2, woman);
         message("vision", msg, environment(man), ({ man, woman }));
 
-        tell_object(man, HIR "\nÄãĞÄÇé¼¤µ´£¬ÈÈÑª·ĞÌÚ£¬Ò»Ê±²»ÄÜ×Ô¼º...\n" NOR);
-        tell_object(woman, HIR "\nÄãĞÄÉñÒ»µ´£¬ÒâÂÒÇéÃÔ£¬ÄÑÒÔ×Ô¼º...\n" NOR);
+        tell_object(man, HIR "\nä½ å¿ƒæƒ…æ¿€ç›ªï¼Œç†±è¡€æ²¸é¨°ï¼Œä¸€æ™‚ä¸èƒ½è‡ªå·±...\n" NOR);
+        tell_object(woman, HIR "\nä½ å¿ƒç¥ä¸€ç›ªï¼Œæ„äº‚æƒ…è¿·ï¼Œé›£ä»¥è‡ªå·±...\n" NOR);
 
         do_loving(man, woman, 15 + random(8));
         do_loving(woman, man, 15 + random(3));
@@ -156,7 +156,7 @@ void do_loving(object me, object target, int wakeup)
 {
         set_temp("sleeped", 1, me);
         set_temp("block_msg/all", 1, me);
-        me->disable_player(" <×ö°®ÖĞ>");
+        me->disable_player(" <åšæ„›ä¸­>");
         me->start_call_out(bind((: call_other, __FILE__, "do_over", me :), me), wakeup);
         set("no_get", 1, me);
         set("no_get_from", 1, me);
@@ -165,7 +165,7 @@ void do_loving(object me, object target, int wakeup)
         addn("sex/times", 1, me);
         if( query("sex/times", me) == 1 )
                 set("sex/first", target->name(1), me);
-        if( query("gender", me) == "ÄĞĞÔ" )
+        if( query("gender", me) == "ç”·æ€§" )
         {
                 set("jing", 20, me);
                 set("qi", 50, me);
@@ -184,18 +184,18 @@ void do_over(object me)
         set_temp("block_msg/all", 0, me);
         delete("no_get", me);
         delete("no_get_from", me);
-        message_vision("\n$NÉëÒ÷ÁËÒ»ÏÂ£¬ÂıÂıµÄÕö¿ªÁËÑÛ¾¦£¬ÇåĞÑ¹ıÀ´¡£\n",
+        message_vision("\n$Nå‘»åŸäº†ä¸€ä¸‹ï¼Œæ…¢æ…¢çš„çœé–‹äº†çœ¼ç›ï¼Œæ¸…é†’éä¾†ã€‚\n",
                        me);
 }
 
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : makelove <id>
+æŒ‡ä»¤æ ¼å¼ : makelove <id>
  
-Äã¿ÉÒÔÓÃÕâ¸öÖ¸ÁîÏëÄãÏ²»¶µÄÈËÌá³ö×ö°®µÄÒªÇó£¬µ±È»ÒªÔÚ°²È«µÄµØ
-·½¡£Èç¹û¶Ô·½¶ÔÄãÉèÖÃÁËno_tell µÄÑ¡Ïî£¬Äã¾ÍÎŞ·¨Ìá³öÕâ¸öÒªÇó¡£
-×ö°®ÒÔºó»á¼«´óµÄÏûºÄÄĞ·½µÄ¾«ºÍÆø¡£
+ä½ å¯ä»¥ç”¨é€™å€‹æŒ‡ä»¤æƒ³ä½ å–œæ­¡çš„äººæå‡ºåšæ„›çš„è¦æ±‚ï¼Œç•¶ç„¶è¦åœ¨å®‰å…¨çš„åœ°
+æ–¹ã€‚å¦‚æœå°æ–¹å°ä½ è¨­ç½®äº†no_tell çš„é¸é …ï¼Œä½ å°±ç„¡æ³•æå‡ºé€™å€‹è¦æ±‚ã€‚
+åšæ„›ä»¥å¾Œæœƒæ¥µå¤§çš„æ¶ˆè€—ç”·æ–¹çš„ç²¾å’Œæ°£ã€‚
 
 HELP );
         return 1;

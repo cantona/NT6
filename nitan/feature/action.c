@@ -10,7 +10,7 @@ nosave mixed busy, interrupt;
 nosave mapping override;
 nosave int perform_busy;
 
-// ¼¼ÄÜ¾øÕÐÀä¶³Ê±¼ä
+// æŠ€èƒ½çµ•æ‹›å†·å‡æ™‚é–“
 nomask void start_perform_busy(int new_busy)
 {
         object me, ob;
@@ -114,7 +114,7 @@ varargs void start_busy(mixed new_busy, mixed new_interrupt)
                 avd_busy = 0;
                 add_busy = 0;
 
-                // Õ½¶·×´Ì¬ÏÂÃ¦ÂÒ¼°»¯½âÃ¦ÂÒ²ÅÆð×÷ÓÃ
+                // æˆ°é¬¥ç‹€æ…‹ä¸‹å¿™äº‚åŠåŒ–è§£å¿™äº‚æ‰èµ·ä½œç”¨
                 if( me->is_fighting() && previous_object() &&
                     sscanf(base_name(previous_object()), "/kungfu/skill/%*s") ) {
                         avd_busy = query_temp("apply/avoid_busy")+query("ability1/avoid_busy");
@@ -147,7 +147,7 @@ varargs void start_busy(mixed new_busy, mixed new_interrupt)
                         new_busy = random(new_busy);
 
                 if( new_busy > 0 && playerp(me) &&
-                    random(10) < 4 && (query("character") == "½Æ÷ï¶à±ä" || query("character") == "¹úÊ¿ÎÞË«") )
+                    random(10) < 4 && (query("character") == "ç‹¡é» å¤šè®Š" || query("character") == "åœ‹å£«ç„¡é›™") )
                         new_busy--;
 
                 if( new_busy > 0 && playerp(me) && query("special_skill/taxue", me) )

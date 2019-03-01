@@ -19,11 +19,11 @@ void create()
    int i;
    object *ob;
    
-   set_name("ÄÃÇ®ÂòÃü",({ "shashou","sha" }) );
-   set("gender", "ÄĞĞÔ" );
-   set("nickname",HIR"ÄÃÈËÇ®²Æ£¬ÌæÈËÏûÔÖ"NOR);
+   set_name("æ‹¿éŒ¢è²·å‘½",({ "shashou","sha" }) );
+   set("gender", "ç”·æ€§" );
+   set("nickname",HIR"æ‹¿äººéŒ¢è²¡ï¼Œæ›¿äººæ¶ˆç½"NOR);
    set("age", 32);
-   set("long", "Õâ¾ÍÊÇÎäÁÖÖĞÎÅÃûÉ±ÊÖ¼¯ÍÅ´óÀÏ°å¡£\n");
+   set("long", "é€™å°±æ˜¯æ­¦æ—ä¸­èåæ®ºæ‰‹é›†åœ˜å¤§è€æ¿ã€‚\n");
        
    set("combat_exp", 10000000);
    set("str",30);
@@ -47,23 +47,23 @@ void create()
  
    set("inquiry",([
 
-	  "´ÌÉ±": "ºÃ°É£¬ÇëÓÃ cisha ÈËÎïid  À´¸æËßÎÒÉ±Ë­°É!\n",
+	  "åˆºæ®º": "å¥½å§ï¼Œè«‹ç”¨ cisha äººç‰©id  ä¾†å‘Šè¨´æˆ‘æ®ºèª°å§!\n",
         
 	
 	   ]));
-   set("vocation","É±ÊÖ");
+   set("vocation","æ®ºæ‰‹");
    set("vocation_skill","yingzi-jianfa");
    set_temp("apply/armor",100);
    setup();
    ob=children(__DIR__"obj/qingfeng-jian");
    for(i=0;i<sizeof(ob);i++)
      if(environment(ob[i])&&userp(environment(ob[i]))){
-     tell_object(environment(ob[i]),"ÄãÊÖÖĞµÄ"+ob[i]->query("name")+"±»ËüµÄÖ÷ÈËÊÕ»ØÈ¥ÁË£¡\n");
+     tell_object(environment(ob[i]),"ä½ æ‰‹ä¸­çš„"+ob[i]->query("name")+"è¢«å®ƒçš„ä¸»äººæ”¶å›å»äº†ï¼\n");
      if(ob[i]->query("equipped"))
       ob[i]->unequip();
      destruct(ob[i]);}
      else if(environment(ob[i])){
-     tell_object(environment(ob[i]),ob[i]->query("name")+"±»Ò»Õó·ç¾í×ßÁË¡£\n");
+     tell_object(environment(ob[i]),ob[i]->query("name")+"è¢«ä¸€é™£é¢¨å·èµ°äº†ã€‚\n");
      destruct(ob[i]);}
      else destruct(ob[i]);
    //carry_object(__DIR__"obj/qingfeng-jian")->wield();
@@ -83,36 +83,36 @@ int do_kill(string arg)
 	me=this_player();
 	ob=this_object();
 	usr=users();
-	if(!arg) return notify_fail("ÄãÈÃÎÒÈ¥É±Ë­£¿Ã÷ËµºÃÁË!\n");
+	if(!arg) return notify_fail("ä½ è®“æˆ‘å»æ®ºèª°ï¼Ÿæ˜èªªå¥½äº†!\n");
 	j=0;
-	if(me->query("id")==arg) return notify_fail("É±Äã×Ô¼º£¿¿ªÍæĞ¦°É£¿£¡\n");
+	if(me->query("id")==arg) return notify_fail("æ®ºä½ è‡ªå·±ï¼Ÿé–‹ç©ç¬‘å§ï¼Ÿï¼\n");
 	for(i=0;i<sizeof(usr);i++)
 	{
 	write("=====" + usr[i]->query("id")+ "=====\n");
 		//if(usr[i]->query("id")==arg)
 		//{ j=1;victim=usr[i];break;}
 	}
-	if(j==0) return notify_fail("¶÷£¿ÏÖÔÚµÄ½­ºşÖĞÓĞÕâ¸öÈËÂğ£¿ºÃºÃ¿´¿´!\n");
+	if(j==0) return notify_fail("æ©ï¼Ÿç¾åœ¨çš„æ±Ÿæ¹–ä¸­æœ‰é€™å€‹äººå—ï¼Ÿå¥½å¥½çœ‹çœ‹!\n");
 	if(victim->is_ghost())
-	return notify_fail("Õâ¸öÈËÒÑ¾­ËÀÁË£¬Äã»¹ÊÇ»ıµãÒõµÂ°É£¡\n");
+	return notify_fail("é€™å€‹äººå·²ç¶“æ­»äº†ï¼Œä½ é‚„æ˜¯ç©é»é™°å¾·å§ï¼\n");
 	vexp=victim->query("combat_exp");
 	gol=vexp/1000+random(vexp/1000);
-	if(gol<=0) return notify_fail("ºß£¬Îä¹¦ÕâÃ´µÍÎ¢µÄÈËÒ²ÖµµÃÎÒÀ´É±?\n");
-	tell_object(me,"Õâ´ÎĞĞ¶¯Òª»¨µôÄã"+chinese_number(gol)+"Á½»Æ½ğ!\n");
+	if(gol<=0) return notify_fail("å“¼ï¼Œæ­¦åŠŸé€™éº¼ä½å¾®çš„äººä¹Ÿå€¼å¾—æˆ‘ä¾†æ®º?\n");
+	tell_object(me,"é€™æ¬¡è¡Œå‹•è¦èŠ±æ‰ä½ "+chinese_number(gol)+"å…©é»ƒé‡‘!\n");
 	money=gol*10000;
 	switch(MONEY_D->player_pay(this_player(), money))
 	{
-	case 0: return notify_fail("ºß£¬ÕâÃ´µãÇ®£¬Ò²ÏëÀ´ÕÒÎÒ£¿\n");
-	case 2: return notify_fail("ÄúµÄÁãÇ®²»¹»ÁË£¬ÒøÆ±ÓÖÃ»ÈËÕÒµÃ¿ª¡£\n");
+	case 0: return notify_fail("å“¼ï¼Œé€™éº¼é»éŒ¢ï¼Œä¹Ÿæƒ³ä¾†æ‰¾æˆ‘ï¼Ÿ\n");
+	case 2: return notify_fail("æ‚¨çš„é›¶éŒ¢ä¸å¤ äº†ï¼ŒéŠ€ç¥¨åˆæ²’äººæ‰¾å¾—é–‹ã€‚\n");
 	default:
-	tell_object(me,"ÄÃÇ®ÂòÃüµãµãÍ·£¬µÀ£ºÊÕÈËÇ®²Æ£¬ÓëÈËÏûÔÖ£¬ÄãµÈ×ÅºÃÁË£¡\n");
+	tell_object(me,"æ‹¿éŒ¢è²·å‘½é»é»é ­ï¼Œé“ï¼šæ”¶äººéŒ¢è²¡ï¼Œèˆ‡äººæ¶ˆç½ï¼Œä½ ç­‰è‘—å¥½äº†ï¼\n");
 	if(victim->query("combat_exp")>500000)
 	ob->set("combat_exp",victim->query("combat_exp"));
-	if(!objectp(victim)) return notify_fail("°¥Ñ½£¬Õâ¸öÈËÍ»È»ÅÜÁË£¬ÏÂ´Î°É!\n");
+	if(!objectp(victim)) return notify_fail("å“å‘€ï¼Œé€™å€‹äººçªç„¶è·‘äº†ï¼Œä¸‹æ¬¡å§!\n");
 	victim->start_busy(2);
-	message_vision("$NÉíĞĞÒ»»Î£¬×Ù¼£²»¼û!\n",ob);
+	message_vision("$Nèº«è¡Œä¸€æ™ƒï¼Œè¹¤è·¡ä¸è¦‹!\n",ob);
 	ob->move(environment(victim));
-	message_vision(HIR"$N³å×Å$n½ĞµÀ£ºÓĞÈË¹ÍÎÒÀ´É±Äã£¬ÄãÈÏÃüºÃÁË!\n"NOR,ob,victim);
+	message_vision(HIR"$Næ²–è‘—$nå«é“ï¼šæœ‰äººé›‡æˆ‘ä¾†æ®ºä½ ï¼Œä½ èªå‘½å¥½äº†!\n"NOR,ob,victim);
 	ob->kill_ob(victim);
 log_file("killer_kill",sprintf("%s let yang kill %s\n",me->query("id"),victim->query("id")));
 	call_out("yang_go",180,ob);
@@ -126,7 +126,7 @@ void yang_go(object ob)
 	string *dir=({"/d/luoyang/shanlu1"});
 	if(!objectp(ob))
 	{ remove_call_out("yang_go");return;}
-	message_vision("$NËÄÏÂ¿´ÁË¿´£¬ÉíĞĞÒ»»Î£¬×Ù¼£²»¼û!\n",ob);
+	message_vision("$Nå››ä¸‹çœ‹äº†çœ‹ï¼Œèº«è¡Œä¸€æ™ƒï¼Œè¹¤è·¡ä¸è¦‹!\n",ob);
 	ob->move(dir[random(sizeof(dir))]);
 	remove_call_out("yang_go");return;
 }

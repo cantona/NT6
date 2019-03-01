@@ -43,7 +43,7 @@ int main(object me, string arg)
                 return help(me);
 
         if (! SECURITY_D->valid_grant(me, "(immortal)")) 
-                return notify_fail("¼øÓÚÍæ¼ÒÀûÓÃ´ËÖ¸Áî¸ÉÈÅ±ðÈË»úÆ÷ÈË£¬ÏÖ·â±ÕÕâ¸öÖ¸Áî¡£\n");
+                return notify_fail("é‘’äºŽçŽ©å®¶åˆ©ç”¨æ­¤æŒ‡ä»¤å¹¹æ“¾åˆ¥äººæ©Ÿå™¨äººï¼Œç¾å°é–‰é€™å€‹æŒ‡ä»¤ã€‚\n");
 
         if (sscanf(arg, "%s %s", verb, opp) != 2)
         {
@@ -52,10 +52,10 @@ int main(object me, string arg)
         }
 
         if (! valid_verb[verb])
-                return notify_fail("¶Ô²»Æð£¬²»ÄÜÊ¹ÓÃÕâÖÖ·½Ê½·¢²¼ÐÅÏ¢¡£\n");
+                return notify_fail("å°ä¸èµ·ï¼Œä¸èƒ½ä½¿ç”¨é€™ç¨®æ–¹å¼ç™¼å¸ƒä¿¡æ¯ã€‚\n");
 
         if ((valid_verb[verb] & NEED_OPP) && ! opp)
-                return notify_fail("Äã±ØÐëÖ¸Ã÷¶ÔÏó²ÅÄÜ·¢³öÐÅÏ¢¡£\n");
+                return notify_fail("ä½ å¿…é ˆæŒ‡æ˜Žå°è±¡æ‰èƒ½ç™¼å‡ºä¿¡æ¯ã€‚\n");
 
         me->edit(bind((: call_other, __FILE__, "done", me, verb, opp :), me));
         return 1;
@@ -80,7 +80,7 @@ void done(object me, string verb, string opp, string msg)
         m = strlen(msg);
         if (m > 8192 || m > 256 && (att & LIMIT_LONG))
         {
-                tell_object(me, "ÄãÅªµÃÕâÃ´³¤¸ÉÊ²Ã´°¡£¿\n");
+                tell_object(me, "ä½ å¼„å¾—é€™éº¼é•·å¹¹ä»€éº¼å•Šï¼Ÿ\n");
                 return;
         }
 
@@ -96,7 +96,7 @@ void done(object me, string verb, string opp, string msg)
                 addn("jing", -n, me);
         } else
         {
-                tell_object(me, "ÄãÄ¿Ç°µÄÄÚÁ¦ºÍ¾«²»ÔÊÐíÄãÕâÃ´×ö¡£\n");
+                tell_object(me, "ä½ ç›®å‰çš„å…§åŠ›å’Œç²¾ä¸å…è¨±ä½ é€™éº¼åšã€‚\n");
                 return;
         }
 
@@ -125,12 +125,12 @@ void done(object me, string verb, string opp, string msg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½£º to say | tell | chat | rumor ... [sb]
+æŒ‡ä»¤æ ¼å¼ï¼š to say | tell | chat | rumor ... [sb]
 
-Õâ¸öÖ¸ÁîÈÃÄã·¢²¼ÐÅÏ¢µÄÊ±ºò¿ÉÒÔ·¢²¼¶àÐÐ£¬µ«ÊÇÊ¹ÓÃ¶úÓï
-(whisper)·½Ê½¡£ Íæ¼Ò·¢²¼µÄÐÅÏ¢»áÔÚÃ¿ÐÐÇ°Ãæ×Ô¶¯¼ÓÉÏÒ»
-¸ö¿Õ¸ñ¡£¶ÔÓÚtellÃüÁî£¬±ØÐëÖ¸¶¨¶ÔÏó¡£ÁíÍâ×¢ÒâµÄÊÇ£ºÒ»
-´Î¿ÉÒÔÌùµÄÐÐÊýÊÜÍæ¼ÒÄÚÁ¦ºÍ¾«µÄÏÞÖÆ¡£
+é€™å€‹æŒ‡ä»¤è®“ä½ ç™¼å¸ƒä¿¡æ¯çš„æ™‚å€™å¯ä»¥ç™¼å¸ƒå¤šè¡Œï¼Œä½†æ˜¯ä½¿ç”¨è€³èªž
+(whisper)æ–¹å¼ã€‚ çŽ©å®¶ç™¼å¸ƒçš„ä¿¡æ¯æœƒåœ¨æ¯è¡Œå‰é¢è‡ªå‹•åŠ ä¸Šä¸€
+å€‹ç©ºæ ¼ã€‚å°äºŽtellå‘½ä»¤ï¼Œå¿…é ˆæŒ‡å®šå°è±¡ã€‚å¦å¤–æ³¨æ„çš„æ˜¯ï¼šä¸€
+æ¬¡å¯ä»¥è²¼çš„è¡Œæ•¸å—çŽ©å®¶å…§åŠ›å’Œç²¾çš„é™åˆ¶ã€‚
 HELP );
         return 1;
 }

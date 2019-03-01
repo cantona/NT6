@@ -5,7 +5,7 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIC"Çà³Ø"NOR, ({ "qing chi", "chi", "qing" }) );
+        set_name(HIC"é’æ± "NOR, ({ "qing chi", "chi", "qing" }) );
         set_weight(500);
         set_max_encumbrance(80000);
         set("no_get", 1);
@@ -13,8 +13,8 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
-                set("long", HIC"Ò»¸öË®É«ÎªÇàµÄ³ØÌ¶¡£\n"NOR);
+                set("unit", "å€‹");
+                set("long", HIC"ä¸€å€‹æ°´è‰²ç‚ºé’çš„æ± æ½­ã€‚\n"NOR);
                 set("value", 1);
         }
 }

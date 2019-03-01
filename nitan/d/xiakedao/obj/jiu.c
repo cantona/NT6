@@ -8,13 +8,13 @@ void init()
 
 void create()
 {
-        set_name(HIC "Ðþ" HIW "±ù" HIC "±Ì" HIR "»ð"
-                 HIC "¾Æ" NOR, ({ "xuanbing jiu", "xuanbing", "jiu" }));
+        set_name(HIC "çŽ„" HIW "å†°" HIC "ç¢§" HIR "ç«"
+                 HIC "é…’" NOR, ({ "xuanbing jiu", "xuanbing", "jiu" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "ºø");
-                set("long", HIC "ÕâÊÇÒ»ºøÕä¹óÖ®¼«µÄÐþ±ù±Ì»ð¾Æ¡£\n" NOR);
+                set("unit", "å£º");
+                set("long", HIC "é€™æ˜¯ä¸€å£ºçè²´ä¹‹æ¥µçš„çŽ„å†°ç¢§ç«é…’ã€‚\n" NOR);
                 set("value", 50000);
         }
         setup();
@@ -25,24 +25,24 @@ int do_drink(string arg)
         object me = this_player();
 
         if (! arg || ! id(arg))
-                return notify_fail("ÄãÒªºÈÊ²Ã´¶«Î÷£¿\n");
+                return notify_fail("ä½ è¦å–ä»€éº¼æ±è¥¿ï¼Ÿ\n");
 
         if (me->is_busy())
-                return notify_fail("¼±Ê²Ã´£¬Ð¡ÐÄ±ðÒ­×ÅÁË¡£\n");
+                return notify_fail("æ€¥ä»€éº¼ï¼Œå°å¿ƒåˆ¥å™Žè‘—äº†ã€‚\n");
 
-        message_vision(HIC "$N" HIC "Ò»ÑöÍ·£¬½«ÕûÆ¿" + name() +
-                       HIC "ºÈÁËÏÂÈ¥¡£\n" NOR, me);
+        message_vision(HIC "$N" HIC "ä¸€ä»°é ­ï¼Œå°‡æ•´ç“¶" + name() +
+                       HIC "å–äº†ä¸‹åŽ»ã€‚\n" NOR, me);
 
         if( !query("skybook/item/xuanbingjiu", me) )
         {
-                message_vision(HIB "Í»È»¼ä$N" HIB "Á³É«ºöµÄÒ»±ä£¬Àä²»¶¡´ò"
-                               "ÁË¼¸¸öº®Õ½¡£\n" NOR, me);
+                message_vision(HIB "çªç„¶é–“$N" HIB "è‡‰è‰²å¿½çš„ä¸€è®Šï¼Œå†·ä¸ä¸æ‰“"
+                               "äº†å¹¾å€‹å¯’æˆ°ã€‚\n" NOR, me);
                 me->apply_condition("xuanbing-jiu", 50 + random(50));
 
         } else
         {
-                message_vision(HIW "$N" HIW "Ò»Éù³¤Óõ£¬ÌåÄÚÒõÑôÕæÆøÏà»¥½»"
-                               "Ìæ£¬°×ÎíÕôÌÚ¶øÆð¡£\n" NOR, me);
+                message_vision(HIW "$N" HIW "ä¸€è²é•·åï¼Œé«”å…§é™°é™½çœŸæ°£ç›¸äº’äº¤"
+                               "æ›¿ï¼Œç™½éœ§è’¸é¨°è€Œèµ·ã€‚\n" NOR, me);
 
                 if (me->can_improve_skill("force"))
                         me->improve_skill("force", 100000);

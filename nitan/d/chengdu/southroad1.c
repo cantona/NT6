@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-        set("short", "�ϴ��");
+        set("short", "南大街");
         set("long", @LONG
-�������ϴ���ϣ����ż�ʵ����ʯ����档�����Ե����ֶ��ˡ�
-���������Ƕ���֣�����һֱ�߶����ϴ�֡����Ϸ������������֣�
-�����и��͵꣬���������� �����䡣
+你走在南大街上，踩著堅實的青石板地面。這裡顯得熱鬧多了。
+東北方向是東大街，往西一直走都是南大街。東南方向傳來陣陣喧鬧，
+那裡有個客店，杏簾分明： 錦城驛。
 LONG );
         set("outdoors", "chengdu");
         set("exits", ([

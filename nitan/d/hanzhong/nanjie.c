@@ -1,14 +1,14 @@
-// nanjie.c �Ͻ�
+// nanjie.c 南街
 // Winder Oct.10 1998
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "�Ͻ�");
+        set("short", "南街");
         set("long", @LONG
-�����Ǻ��е��Ͻ֣�˵�ǽ֣�������һ��С��ͬ���ѡ�·��һ��
-��Ҳû�С��ֵľ�ͷ��һ��С�š����������������Ǻ�����������ˡ�
+這裡是漢中的南街，說是街，不過是一條小胡同而已。路上一個
+人也沒有。街的盡頭有一扇小門。從這裡往北，就是漢中鎮的中心了。
 LONG
         );
         set("outdoors", "hanzhong");

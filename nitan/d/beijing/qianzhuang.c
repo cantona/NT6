@@ -2,18 +2,18 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����Ǯׯ");
+        set("short", "天下錢莊");
         set("long", @LONG
-����Ǯׯ�Ǿ���������һ��Ǯׯ���Ѿ��й��������ʷ�ˣ���
-���൱�ĺá�Ǯׯ�Ĵ���������һ���߸ߵĹ�̨��Ǯׯ���ϰ����ڹ�
-̨������������Ŀ����̨��ߵ�ǽ�Ϲ���һ������(paizi)��
+天下錢莊是京城裡最大的一所錢莊，已經有過百年的歷史了，信
+譽相當的好。錢莊的大門正對著一個高高的櫃台，錢莊的老板正在櫃
+台後面清理著帳目，櫃台左邊的牆上掛著一個牌子(paizi)。
 LONG );
         set("item_desc", ([
-        "paizi" : "\n��ׯ����Ϣ�����ٰٷ�֮һ��\n
-      ��Ǯ        deposit����cun\n
-      ȡǮ        withdraw����qu\n
-      Ǯ�Ҷһ�    convert����duihuan\n
-      ����        check����chazhang\n",
+        "paizi" : "\n本莊有利息，至少百分之一。\n
+      存錢        deposit或者cun\n
+      取錢        withdraw或者qu\n
+      錢幣兌換    convert或者duihuan\n
+      查帳        check或者chazhang\n",
         ]));
         set("exits", ([
                 "south" : "/d/beijing/di_5",

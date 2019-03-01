@@ -52,6 +52,6 @@ nomask varargs object compile_object(string file, int cloning)
 /*
 string query_name()
 {
-        return "虚拟物件系统(VIRTUAL_D)";
+        return "铏涙摤鐗╀欢绯荤当(VIRTUAL_D)";
 }
 */

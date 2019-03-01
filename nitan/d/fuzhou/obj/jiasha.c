@@ -11,15 +11,15 @@ void init()
 
 void create()
 {
-        set_name("ôÂôÄ", ({"jia sha", "jia", "sha"}));
+        set_name("è¢ˆè£Ÿ", ({"jia sha", "jia", "sha"}));
         set_weight(800);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¼ş¾ÉµÃÒÑ¾­¿´²»³öÑÕÉ«µÄôÂôÄ£¬ÉÏÃæÓĞºÃ¶à¿ßÁş¡£\n");
-                set("unit", "¼ş");
+                set("long", "ä¸€ä»¶èˆŠå¾—å·²ç¶“çœ‹ä¸å‡ºé¡è‰²çš„è¢ˆè£Ÿï¼Œä¸Šé¢æœ‰å¥½å¤šçªŸçª¿ã€‚\n");
+                set("unit", "ä»¶");
                 set("material", "cloth");
-                set("no_get", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄÇ¶ù¡£\n");
+                set("no_get", "é€™æ¨£æ±è¥¿ä¸èƒ½é›¢é–‹é‚£å…’ã€‚\n");
 
         }
         setup();
@@ -34,18 +34,18 @@ int do_move(string arg)
         if( query("passwd", this_player())){
                 if (!present("kuihua baodian",me)){
                 message_vision(
-"$NÇáÇáµØÅ²¶¯ôÂôÄ£¬¶¶ÆğÒ»Ğ©³¾ÍÁ...£¬Í»È»´ÓôÂôÄµÄ¿ßÁşÖĞ¹ö³öÒ»±¾Êéµ½$N»³ÖĞ¡£\n", this_player());
+"$Nè¼•è¼•åœ°æŒªå‹•è¢ˆè£Ÿï¼ŒæŠ–èµ·ä¸€äº›å¡µåœŸ...ï¼Œçªç„¶å¾è¢ˆè£Ÿçš„çªŸçª¿ä¸­æ»¾å‡ºä¸€æœ¬æ›¸åˆ°$Næ‡·ä¸­ã€‚\n", this_player());
                 book = new(BOOK_DIR"kuihua");
                 book->move(me);
                 return 1;
                 }
                 message_vision(
-"$NÇáÇáµØÅ²¶¯ôÂôÄ£¬¶¶ÆğÒ»Ğ©³¾ÍÁ£¬ÇºµÃ$NÖ±´òÅçÌç¡£\n", this_player());
+"$Nè¼•è¼•åœ°æŒªå‹•è¢ˆè£Ÿï¼ŒæŠ–èµ·ä¸€äº›å¡µåœŸï¼Œå—†å¾—$Nç›´æ‰“å™´åšã€‚\n", this_player());
                 return 1;
         }
         else {
                 message_vision(
-"$NÇáÇáµØÅ²¶¯ôÂôÄ£¬Í»È»´ÓôÂôÄµÄ¿ßÁşÖĞÃ°³öÒ»¹É¶¾Æø£¬×ê½ø$NµÄ±Ç×ÓÖĞ¡£\n", this_player());
+"$Nè¼•è¼•åœ°æŒªå‹•è¢ˆè£Ÿï¼Œçªç„¶å¾è¢ˆè£Ÿçš„çªŸçª¿ä¸­å†’å‡ºä¸€è‚¡æ¯’æ°£ï¼Œé‘½é€²$Nçš„é¼»å­ä¸­ã€‚\n", this_player());
                 me->die();
                 return 1;
         }

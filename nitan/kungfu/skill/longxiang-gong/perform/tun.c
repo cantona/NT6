@@ -3,7 +3,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-string name() { return  HIR "ÁúÍÌÊÆ" NOR; }
+string name() { return  HIR "é¾åå‹¢" NOR; }
 
 inherit F_SSERVER;
 
@@ -20,38 +20,38 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(name() + "Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(name() + "åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( query_temp("weapon", me) || query_temp("secondary_weapon", me) )
-                return notify_fail(name() + "Ö»ÄÜ¿ÕÊÖÊ©Õ¹¡£\n");
+                return notify_fail(name() + "åªèƒ½ç©ºæ‰‹æ–½å±•ã€‚\n");
 
         if( query_temp("long_tun", me) )
-                return notify_fail(name() + "ÎŞ·¨Á¬ĞøÊ©Õ¹¡£\n");
+                return notify_fail(name() + "ç„¡æ³•é€£çºŒæ–½å±•ã€‚\n");
 
         if ((int)me->query_skill("longxiang-gong", 1) < 180)
-                return notify_fail("ÄãµÄÁúÏó°ãÈô¹¦ĞŞÎª²»¹»£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„é¾è±¡èˆ¬è‹¥åŠŸä¿®ç‚ºä¸å¤ ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if( query("max_neili", me)<3000 )
-                return notify_fail("ÄãµÄÄÚÁ¦ĞŞÎª²»×ã£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¿®ç‚ºä¸è¶³ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (me->query_skill_mapped("unarmed") != "longxiang-gong")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢ÁúÏó°ãÈô¹¦ÎªÈ­½Å£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼é¾è±¡èˆ¬è‹¥åŠŸç‚ºæ‹³è…³ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (me->query_skill_mapped("force") != "longxiang-gong")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢ÁúÏó°ãÈô¹¦ÎªÄÚ¹¦£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼é¾è±¡èˆ¬è‹¥åŠŸç‚ºå…§åŠŸï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (me->query_skill_prepared("unarmed") != "longxiang-gong")
-                return notify_fail("ÄãÃ»ÓĞ×¼±¸Ê¹ÓÃÁúÏó°ãÈô¹¦£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æº–å‚™ä½¿ç”¨é¾è±¡èˆ¬è‹¥åŠŸï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if( query("neili", me)<500 )
-                return notify_fail("ÄãÏÖÔÚµÄÕæÆø²»×ã£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çš„çœŸæ°£ä¸è¶³ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIY "$N" HIY "Ë«±Û×óÓÒ·ÖÕÅ£¬ĞÎÈôÁú×ì£¬ËùÊ©ÕıÊÇÁúÏó°ãÈô¹¦¾øÑ§¡¸"
-              HIR "ÁúÍÌÊÆ" HIY "¡¹¡£ö®Ê±ºô\nĞ¥Éù´ó×÷£¬µ«¼ûÒ»¹ÉÅìÅÈÎŞ±ÈµÄî¸¾¢"
-              "ÖÁ$N" HIY "Ë«ÕÆ¼äÓ¿³ö£¬ÔÆ¹áÏò$n" HIY "¶øÈ¥¡£\n" NOR;
+        msg = HIY "$N" HIY "é›™è‡‚å·¦å³åˆ†å¼µï¼Œå½¢è‹¥é¾å˜´ï¼Œæ‰€æ–½æ­£æ˜¯é¾è±¡èˆ¬è‹¥åŠŸçµ•å­¸ã€Œ"
+              HIR "é¾åå‹¢" HIY "ã€ã€‚éœæ™‚å‘¼\nå˜¯è²å¤§ä½œï¼Œä½†è¦‹ä¸€è‚¡æ¾æ¹ƒç„¡æ¯”çš„ç½¡å‹"
+              "è‡³$N" HIY "é›™æŒé–“æ¹§å‡ºï¼Œé›²è²«å‘$n" HIY "è€Œå»ã€‚\n" NOR;
 
         set_temp("long_tun", 1, me);
         me->start_call_out((: call_other, __FILE__, "remove_effect", me :), 50);
@@ -66,9 +66,9 @@ int perform(object me, object target)
                 damage+= query("jiali", me);
 
                 msg += COMBAT_D->do_damage(me, target, UNARMED_ATTACK, damage, 65,
-                                               HIR "$n" HIR "Ò»Éù°§º¿£¬±»$N" HIR "µÄî¸"
-                                               "Æø»®ÖĞÆøÃÅ£¬ÕæÆøÔÚÌåÄÚËÄ´¦ÂÒ´Ü£¬²Ò²»¿°"
-                                               "ÑÔ¡£\n" NOR);
+                                               HIR "$n" HIR "ä¸€è²å“€åšï¼Œè¢«$N" HIR "çš„ç½¡"
+                                               "æ°£åŠƒä¸­æ°£é–€ï¼ŒçœŸæ°£åœ¨é«”å…§å››è™•äº‚ç«„ï¼Œæ…˜ä¸å ª"
+                                               "è¨€ã€‚\n" NOR);
 
                 me->start_busy(4);
                 addn("neili", -300, me);
@@ -76,8 +76,8 @@ int perform(object me, object target)
         {
                 me->start_busy(5);
                 addn("neili", -200, me);
-                msg += CYN "¿ÉÊÇ$p" CYN "¼û$P" CYN "´ËÕĞÀ´ÊÆ·Ç·²£¬¼±"
-                       "Ã¦ÏòºóºáÒÆÊı³ß£¬ÖÕÓÚ¶ã±Ü¿ªÀ´¡£\n" NOR;
+                msg += CYN "å¯æ˜¯$p" CYN "è¦‹$P" CYN "æ­¤æ‹›ä¾†å‹¢éå‡¡ï¼Œæ€¥"
+                       "å¿™å‘å¾Œæ©«ç§»æ•¸å°ºï¼Œçµ‚äºèº²é¿é–‹ä¾†ã€‚\n" NOR;
         }
         message_combatd(msg, me, target);
 
@@ -89,7 +89,7 @@ void remove_effect(object me)
         if( query_temp("long_tun", me) )
         {
                 delete_temp("long_tun", me);
-                tell_object(me, "Äã¾­¹ıµ÷ÆøÑøÏ¢£¬ÓÖ¿ÉÒÔ¼ÌĞøÊ©Õ¹" + name() + "ÁË¡£\n");
+                tell_object(me, "ä½ ç¶“éèª¿æ°£é¤Šæ¯ï¼Œåˆå¯ä»¥ç¹¼çºŒæ–½å±•" + name() + "äº†ã€‚\n");
         }
 }
 

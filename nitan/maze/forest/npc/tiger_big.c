@@ -3,13 +3,13 @@
 inherit NPC;
 void create()
 {
-        string *names = ({"°×¶îÃÍ»¢","µõ¾¦ÃÍ»¢"});
+        string *names = ({"ç™½é¡çŒ›è™","åŠç›çŒ›è™"});
         set_name( names[random(sizeof(names))], ({ "big tiger","tiger"}));
         set("vendetta_mark","tiger");
-        set("race", "Ò°ÊŞ");
-        set("gender", "ĞÛĞÔ");
+        set("race", "é‡ç¸");
+        set("gender", "é›„æ€§");
         set("age", 20);
-        set("long", "ÕâÊÇÒ»Ö»Ğ×ÃÍµÄÀÏ»¢¡£\n");
+        set("long", "é€™æ˜¯ä¸€åªå…‡çŒ›çš„è€è™ã€‚\n");
 
         set("str", 50);
         set("cor", 120);
@@ -21,7 +21,7 @@ void create()
         set("max_neili", 4000);
         set("attitude", "peaceful");
 
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "Ç°½Å", "áá½Å", "Î²°Í" }) );
+        set("limbs", ({ "é ­éƒ¨", "èº«é«”", "å‰è…³", "å¾Œè…³", "å°¾å·´" }) );
         set("verbs", ({ "bite", "claw" }) );
         set("combat_exp", 300000);
         set("bellicosity", 5 );
@@ -36,6 +36,6 @@ void create()
 
 varargs void start_busy(mixed new_busy, mixed new_interrupt)
 {
-        message_vision(HIY"\n$NÍ»È»·¢³öÒ»ÉùÏì³¹É½ÁÖµÄÅ­ºğ£¬$n¶ÙÊ±´ó¾ªÊ§É«£¡\n"NOR,this_object());
+        message_vision(HIY"\n$Nçªç„¶ç™¼å‡ºä¸€è²éŸ¿å¾¹å±±æ—çš„æ€’å¼ï¼Œ$né “æ™‚å¤§é©šå¤±è‰²ï¼\n"NOR,this_object());
         ::start_busy(1);
 }

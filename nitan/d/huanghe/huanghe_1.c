@@ -6,10 +6,10 @@
 inherit ROOM;
 void create()
 {
-        set("short", "�ƺ�");
+        set("short", "黃河");
         set("long", @LONG
-�ƺ����ɹŸ�ԭ�ϱ������ʣ���̫��ɽ������������תͷ���£�
-�γɽ��µķֽ硣������������и��ɿڡ�
+黃河沿蒙古高原南邊向東流淌，遇太行山脈的阻攔，便轉頭南下，
+形成晉陝的分界。東北方向好象有個渡口。
 LONG );
         set("exits", ([
                 "south"     : __DIR__"weifen",

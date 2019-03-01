@@ -3,16 +3,16 @@ inherit COMBINED_ITEM;
 
 void create()
 {
-        set_name(HIY "ÓÕ¶ü" NOR, ({ "you er","you", "er" }));
+        set_name(HIY "èª˜é¤Œ" NOR, ({ "you er","you", "er" }));
         set_weight(1000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇ×¨ÃÅÓÃÀ´ÒıÓÕ¸÷ÖÖÇİÊŞµÄ¡£ \n");
-                set("base_unit", "¿é"); 
+                set("long", "é€™æ˜¯å°ˆé–€ç”¨ä¾†å¼•èª˜å„ç¨®ç¦½ç¸çš„ã€‚ \n");
+                set("base_unit", "å¡Š"); 
                 set("base_weight", 30); 
                 set("base_value", 1000); 
-                set("no_sell", "ÕâÒ°ÊŞ³ÔµÄ¶«Î÷ÄãÒ²¸øÎÒ£¿"); 
+                set("no_sell", "é€™é‡ç¸åƒçš„æ±è¥¿ä½ ä¹Ÿçµ¦æˆ‘ï¼Ÿ"); 
                 set("lure", 1);
                 set("level", 10);
         }

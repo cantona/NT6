@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����ի");
+        set("short", "秋雨齋");
         set("long", @LONG
-����ի�߾�ɽ��֮�ϣ�����ʮ���ɾ���̫����ˮ���ˡ�����ɽׯ��
-������ʱ�⣬����ˮ��������˿�����µ��գ����������ߣ������ޱ�
-����Ӧʱ���������˼��ɾ���
+秋雨齋高居山崖之上，下面十數丈就是太湖的水面了。蔓陀山莊中
+秋賞月時光，借著水音，高揚絲竹，明月當空，萬頃如銀蛇，真是無邊
+景致應時來，恍若人間仙境。
 LONG );
         set("outdoors", "mantuo");
         set("no_clean_up", 0);

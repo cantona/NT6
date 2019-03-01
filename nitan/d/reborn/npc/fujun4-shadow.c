@@ -4,10 +4,10 @@ inherit NPC;
 
 void create()
 {
-        set_name(BLU "ºãÉ½¸®¾ı--»Ã" NOR, ({ "hengshan fujun-shadow", "shadow" }));
-        set("long", "Ëû¾ÍÊÇºãÉ½¸®¾ı¡£\n");
-        set("title", HIW "±±ÔÀ" NOR);
-        set("gender", "ÄĞĞÔ");
+        set_name(BLU "æ†å±±åºœå›--å¹»" NOR, ({ "hengshan fujun-shadow", "shadow" }));
+        set("long", "ä»–å°±æ˜¯æ†å±±åºœå›ã€‚\n");
+        set("title", HIW "åŒ—å²³" NOR);
+        set("gender", "ç”·æ€§");
         set("age", 50);
         set("str", 91);
         set("int", 39);

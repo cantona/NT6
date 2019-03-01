@@ -1,9 +1,9 @@
 // get.c
-// last updated by April 2001.09.27     ½ûÖ¹ÔÚË¯·¿ÀïÄÃË¯¾õÈËµÄ¶«Î÷
+// last updated by April 2001.09.27     ç¦æ­¢åœ¨ç¡æˆ¿è£¡æ‹¿ç¡è¦ºäººçš„æ±è¥¿
 // last updated by naihe 2002.09.25 
-// ¸÷ÎÄ¼ş¿ÉÊ¹ÓÃset("no_get","ĞÅÏ¢") ¸ñÊ½×Ô¶¨Òåno_getĞÅÏ¢£¬
-// Ê¹ÓÃ set("no_get","1") ¸ñÊ½½«Ê¹ÓÃÄ¬ÈÏĞÅÏ¢£ºÕâ¸ö¶«Î÷ÄÃ²»ÆğÀ´¡£
-// Ö®Ç°µÄÎï¼şÉè¶¨Îª set("no_get",1) µÄ£¬Ò²½«Ê¹ÓÃÄ¬ÈÏĞÅÏ¢¡£
+// å„æ–‡ä»¶å¯ä½¿ç”¨set("no_get","ä¿¡æ¯") æ ¼å¼è‡ªå®šç¾©no_getä¿¡æ¯ï¼Œ
+// ä½¿ç”¨ set("no_get","1") æ ¼å¼å°‡ä½¿ç”¨é»˜èªä¿¡æ¯ï¼šé€™å€‹æ±è¥¿æ‹¿ä¸èµ·ä¾†ã€‚
+// ä¹‹å‰çš„ç‰©ä»¶è¨­å®šç‚º set("no_get",1) çš„ï¼Œä¹Ÿå°‡ä½¿ç”¨é»˜èªä¿¡æ¯ã€‚
 
 #include <ansi.h>
 
@@ -19,37 +19,37 @@ int main(object me, string arg)
         object obj, *inv, env, obj2;
         int i, amount, newa;
 
-        if( !arg ) return notify_fail("ÄãÒª¼ñÆğÊ²Ã´¶«Î÷£¿\n");
+        if( !arg ) return notify_fail("ä½ è¦æ’¿èµ·ä»€éº¼æ±è¥¿ï¼Ÿ\n");
         if( me->is_busy() )
-                return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É£¡\n");
+                return notify_fail("ä½ ä¸Šä¸€å€‹å‹•ä½œé‚„æ²’æœ‰å®Œæˆï¼\n");
 
         // Check if a container is specified.
         if( sscanf(arg, "%s from %s", arg, from)==2 ) {
                 env = present(from, me);
                 if(!env) env = present(from, environment(me));
-                if(!env) return notify_fail("ÄãÕÒ²»µ½ " + from + " ÕâÑù¶«Î÷¡£\n");
+                if(!env) return notify_fail("ä½ æ‰¾ä¸åˆ° " + from + " é€™æ¨£æ±è¥¿ã€‚\n");
                 if(wizardp(me) && living(env) && (wiz_level(me) <= wiz_level(env))
                  && !query("ridable", env) && env->query_lord() != me )
-                        return notify_fail("ÄãµÄÎ×Ê¦µÈ¼¶±ØĞë±È¶Ô·½¸ß£¬²ÅÄÜËÑÉí¡£\n");
+                        return notify_fail("ä½ çš„å·«å¸«ç­‰ç´šå¿…é ˆæ¯”å°æ–¹é«˜ï¼Œæ‰èƒ½æœèº«ã€‚\n");
         } 
         else env = environment(me);
         
-        // ²»ÄÜÔÚË¯·¿ÀïÄÃË¯¾õÈËµÄ¶«Î÷
+        // ä¸èƒ½åœ¨ç¡æˆ¿è£¡æ‹¿ç¡è¦ºäººçš„æ±è¥¿
         if (!wizardp(me) && living(env) && env->query_lord() != me)
-                return notify_fail("¹âÌì»¯ÈÕµÄÏëÇÀ½Ù°¡£¿\n");
+                return notify_fail("å…‰å¤©åŒ–æ—¥çš„æƒ³æ¶åŠ«å•Šï¼Ÿ\n");
         else if( !wizardp(me) && query("no_get_from", env) )
-                return notify_fail("±ßÉÏÓĞÈË¿´×ÅÄØ£¬²»ÈçµÈÈË¼ÒĞÑÁËÇÀ½Ù°É£¡\n");
+                return notify_fail("é‚Šä¸Šæœ‰äººçœ‹è‘—å‘¢ï¼Œä¸å¦‚ç­‰äººå®¶é†’äº†æ¶åŠ«å§ï¼\n");
 
         // Check if a certain amount is specified.
         if(sscanf(arg, "%d %s", amount, item)==2) {
                 if( !objectp(obj = present(item, env)) )
-                        return notify_fail("ÕâÀïÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+                        return notify_fail("é€™è£¡æ²’æœ‰é€™æ¨£æ±è¥¿ã€‚\n");
                 if( !obj->query_amount() )
-                        return notify_fail( obj->name() + "²»ÄÜ±»·Ö¿ªÄÃ×ß¡£\n");
+                        return notify_fail( obj->name() + "ä¸èƒ½è¢«åˆ†é–‹æ‹¿èµ°ã€‚\n");
                 if( amount < 1 )
-                        return notify_fail("¶«Î÷µÄ¸öÊıÖÁÉÙÊÇÒ»¸ö¡£\n");
+                        return notify_fail("æ±è¥¿çš„å€‹æ•¸è‡³å°‘æ˜¯ä¸€å€‹ã€‚\n");
                 if( amount > obj->query_amount() )
-                        return notify_fail("ÕâÀïÃ»ÓĞÄÇÃ´¶àµÄ" + obj->name() + "¡£\n");
+                        return notify_fail("é€™è£¡æ²’æœ‰é‚£éº¼å¤šçš„" + obj->name() + "ã€‚\n");
                 else if( amount == (int)obj->query_amount() ) {
                         return do_get(me, obj);
                }else {
@@ -67,29 +67,29 @@ int main(object me, string arg)
 
         // Check if we are makeing a quick get.
         if(arg=="all") {
-                if( me->is_fighting() ) return notify_fail("Äã»¹ÔÚÕ½¶·ÖĞ£¡Ö»ÄÜÒ»´ÎÄÃÒ»Ñù¡£\n");
-                if( !env->query_max_encumbrance() )     return notify_fail("ÄÇ²»ÊÇÈİÆ÷¡£\n");
+                if( me->is_fighting() ) return notify_fail("ä½ é‚„åœ¨æˆ°é¬¥ä¸­ï¼åªèƒ½ä¸€æ¬¡æ‹¿ä¸€æ¨£ã€‚\n");
+                if( !env->query_max_encumbrance() )     return notify_fail("é‚£ä¸æ˜¯å®¹å™¨ã€‚\n");
 
                 inv = all_inventory(env);
                 if( !sizeof(inv) )
-                        return notify_fail("ÄÇÀïÃæÃ»ÓĞÈÎºÎ¶«Î÷¡£\n");
+                        return notify_fail("é‚£è£¡é¢æ²’æœ‰ä»»ä½•æ±è¥¿ã€‚\n");
 
                 for(i=0; i<sizeof(inv); i++) {
                         if( inv[i]->is_character() || query("no_get", inv[i]))continue;
                         do_get(me, inv[i]);
                 }
-                write("¼ñºÃÁË¡£\n");
+                write("æ’¿å¥½äº†ã€‚\n");
                 return 1;
         }
 
         if( !objectp(obj = present(arg, env)) || living(obj) )
-                return notify_fail("Äã¸½½üÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+                return notify_fail("ä½ é™„è¿‘æ²’æœ‰é€™æ¨£æ±è¥¿ã€‚\n");
 
-// ĞŞ¸ÄÒ»ÏÂÕâÀïµÄÃèÊö¡£
+// ä¿®æ”¹ä¸€ä¸‹é€™è£¡çš„æè¿°ã€‚
         if( query("no_get", obj) )
     {
         no_get_message=query("no_get", obj);
-        if(!stringp(no_get_message) || no_get_message=="1") return notify_fail("Õâ¸ö¶«Î÷ÄÃ²»ÆğÀ´¡£\n");
+        if(!stringp(no_get_message) || no_get_message=="1") return notify_fail("é€™å€‹æ±è¥¿æ‹¿ä¸èµ·ä¾†ã€‚\n");
         else return notify_fail(no_get_message+"\n");
     }
 
@@ -108,13 +108,13 @@ int do_get(object me, object obj)
         if( obj->is_character() ) {
                 if( living(obj) ) return 0;
                 //      if( !userp(obj) && !obj->is_corpse() )
-                //              return notify_fail("ÄãÖ»ÄÜ±³¸ºÆäËûÍæ¼ÒµÄÉíÌå¡£\n");
+                //              return notify_fail("ä½ åªèƒ½èƒŒè² å…¶ä»–ç©å®¶çš„èº«é«”ã€‚\n");
                 // If we try to save someone from combat, take the risk :P
         }
     else if( query("no_get", obj) )
     {
         no_get_message=query("no_get", obj);
-        if(!stringp(no_get_message) || no_get_message=="1") return notify_fail("Õâ¸ö¶«Î÷ÄÃ²»ÆğÀ´¡£\n");
+        if(!stringp(no_get_message) || no_get_message=="1") return notify_fail("é€™å€‹æ±è¥¿æ‹¿ä¸èµ·ä¾†ã€‚\n");
         else return notify_fail(no_get_message+"\n");
     }
 
@@ -123,14 +123,14 @@ int do_get(object me, object obj)
         if( obj->move(me) ) {
                 if( me->is_fighting() ) me->start_busy(1);
                 if( obj->is_character() )
-                        message_vision( "$N½«$n·öÁËÆğÀ´±³ÔÚ±³ÉÏ¡£\n", me, obj );
+                        message_vision( "$Nå°‡$næ‰¶äº†èµ·ä¾†èƒŒåœ¨èƒŒä¸Šã€‚\n", me, obj );
                 else
-                        message_vision( sprintf("$N%s%s%s$n¡£\n", 
-                                old_env==environment(me)? "¼ñÆğ":
+                        message_vision( sprintf("$N%s%s%s$nã€‚\n", 
+                                old_env==environment(me)? "æ’¿èµ·":
                                         (old_env->is_character() ?
-                                                "´Ó" + old_env->name() + "ÉíÉÏ" + (equipped? "³ıÏÂ" : "ËÑ³ö"):
-                                                "´Ó" + old_env->name() + "ÖĞÄÃ³ö"),
-                                obj->query_amount()? amt : "Ò»", 
+                                                "å¾" + old_env->name() + "èº«ä¸Š" + (equipped? "é™¤ä¸‹" : "æœå‡º"):
+                                                "å¾" + old_env->name() + "ä¸­æ‹¿å‡º"),
+                                obj->query_amount()? amt : "ä¸€", 
                                 obj->query_amount()?query("base_unit", obj):query("unit", obj)),me,obj);
                 return 1;
         }
@@ -140,9 +140,9 @@ int do_get(object me, object obj)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : get <ÎïÆ·Ãû³Æ> [from <ÈİÆ÷Ãû>]
+æŒ‡ä»¤æ ¼å¼ : get <ç‰©å“åç¨±> [from <å®¹å™¨å>]
  
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄã¼ñÆğµØÉÏ»òÈİÆ÷ÄÚµÄÄ³ÑùÎïÆ·.
+é€™å€‹æŒ‡ä»¤å¯ä»¥è®“ä½ æ’¿èµ·åœ°ä¸Šæˆ–å®¹å™¨å…§çš„æŸæ¨£ç‰©å“.
  
 HELP
     );

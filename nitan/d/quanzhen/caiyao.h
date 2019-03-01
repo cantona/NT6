@@ -1,4 +1,4 @@
-// caiyao.h  ²ÉÒ©
+// caiyao.h  æ¡è—¥
 // sdong 08/06/98
 
 #include <ansi.h>
@@ -51,32 +51,32 @@ int do_search(string arg)
         me = this_player();
 
         if( me->is_fighting() || me->is_busy() )
-                return notify_fail("ÄãÕıÃ¦×Å¡£\n");
+                return notify_fail("ä½ æ­£å¿™è‘—ã€‚\n");
 
         if( query_temp("herb/got", me) )
-                return notify_fail("ÕâÀïÒÑ¾­ÕÒ¹ıÁË£¬ÔÙÕÒÒ²ÕÒ²»³öÊ²Ã´ÁË£¡\n");
+                return notify_fail("é€™è£¡å·²ç¶“æ‰¾éäº†ï¼Œå†æ‰¾ä¹Ÿæ‰¾ä¸å‡ºä»€éº¼äº†ï¼\n");
 
         if( !present("yao chu", me) )
-                return notify_fail("ÄãÃ»ÓĞ¹¤¾ß£¬ÎŞ·¨²¦¿ª¹àÄ¾É½²İÑ°ÕÒ²İÒ©£¡\n");
+                return notify_fail("ä½ æ²’æœ‰å·¥å…·ï¼Œç„¡æ³•æ’¥é–‹çŒæœ¨å±±è‰å°‹æ‰¾è‰è—¥ï¼\n");
 
         if( query("jing", me)<30 )
-                return notify_fail("ÄãÌ«ÀÛÁË£¬ÏÈĞªÏ¢Ò»»á¶ù°É¡£\n");
+                return notify_fail("ä½ å¤ªç´¯äº†ï¼Œå…ˆæ­‡æ¯ä¸€æœƒå…’å§ã€‚\n");
 
         addn_temp("herb/times", 1, me);
         me->receive_damage("jing", 5);
         me->start_busy(1+random(2));
 
         if( query("count")<1 && query_temp("herb/times", me)>30 )
-                return notify_fail("Äã°ÑËÄÖÜµÄ¹àÄ¾ÔÓ²İ¶¼·­±éÁË£¬¿ÉÊÇÃ»·¢ÏÖÊ²Ã´£¬¿´À´ÕâÀïÃ»Ö¸ÍûÁË£¡\n");
+                return notify_fail("ä½ æŠŠå››å‘¨çš„çŒæœ¨é›œè‰éƒ½ç¿»éäº†ï¼Œå¯æ˜¯æ²’ç™¼ç¾ä»€éº¼ï¼Œçœ‹ä¾†é€™è£¡æ²’æŒ‡æœ›äº†ï¼\n");
 
-        message_vision("$NÓÃÒ©³ú²¦¶¯×ÅËÄÖÜµÄ¹àÄ¾ÔÓ²İ£¬×ĞÏ¸µØ¿´ÓĞÃ»ÓĞ²İÒ©£¡\n", me);
+        message_vision("$Nç”¨è—¥é‹¤æ’¥å‹•è‘—å››å‘¨çš„çŒæœ¨é›œè‰ï¼Œä»”ç´°åœ°çœ‹æœ‰æ²’æœ‰è‰è—¥ï¼\n", me);
 
         power=query_temp("herb/times", me)*(query("kar", me)+query("int", me)+query("str", me))/3;
         power *= query("count");
 
         if( power/2 + random(power/2) > 100 ) {
                 set_temp("herb/found", 1, me);
-                message_vision(HIG"\n$NÓÃÒ©³ú²»¶ÏµÄ²¦¶¯×ÅËÄÖÜµÄÉ½²İ£¬ºöÈ»·¢ÏÖÔÓ²İÖ®ÖĞÓĞÒ»ÖêÌØ±ğµÄ²İ£¡\n"NOR, me);
+                message_vision(HIG"\n$Nç”¨è—¥é‹¤ä¸æ–·çš„æ’¥å‹•è‘—å››å‘¨çš„å±±è‰ï¼Œå¿½ç„¶ç™¼ç¾é›œè‰ä¹‹ä¸­æœ‰ä¸€æ ªç‰¹åˆ¥çš„è‰ï¼\n"NOR, me);
                 return 1;
         }
 
@@ -85,7 +85,7 @@ int do_search(string arg)
           {
                 ob=new(beasts[random(sizeof(beasts))]);
                 ob->move(environment(me));
-                message_vision(HIR"Í»È»´Ó²İ´ÔÖĞ¾ªÆğÒ»Ö»$N£¬Ëü´ó¸ÅÊÜÁË¾ªÏÅ£¬·¢·èËÆµØÏò$n·¢Æğ½ø¹¥£¡\n"NOR, ob,me);
+                message_vision(HIR"çªç„¶å¾è‰å¢ä¸­é©šèµ·ä¸€åª$Nï¼Œå®ƒå¤§æ¦‚å—äº†é©šåš‡ï¼Œç™¼ç˜‹ä¼¼åœ°å‘$nç™¼èµ·é€²æ”»ï¼\n"NOR, ob,me);
 
                 if( query("id", ob) == "xiaobaozi")setup_ob(ob,me);
                 ob->kill_ob(me);
@@ -97,7 +97,7 @@ int do_search(string arg)
         /*
         if( random(101) == 50 && query("combat_exp", me)>10000 )
         {
-                message_vision(HIR"\n$NÒ»²»Ğ¡ĞÄÓÃÁ¦¹ıÃÍ£¬ºöÌı¸Â°ÍÒ»Éù£¬Ò©³ú¶ÏÎªÁ½½Ø£¡\n"NOR, me);
+                message_vision(HIR"\n$Nä¸€ä¸å°å¿ƒç”¨åŠ›éçŒ›ï¼Œå¿½è½å˜å·´ä¸€è²ï¼Œè—¥é‹¤æ–·ç‚ºå…©æˆªï¼\n"NOR, me);
                 ob = present("yao chu", me);
                 if(ob)destruct(ob);
         }*/
@@ -161,18 +161,18 @@ int do_dig(string arg)
         me = this_player();
 
         if( me->is_fighting() || me->is_busy() )
-                return notify_fail("ÄãÕıÃ¦×Å¡£\n");
+                return notify_fail("ä½ æ­£å¿™è‘—ã€‚\n");
         if( !(ob = present("yao chu", me)) )
-                return notify_fail("ÄãÃ»ÓĞÒ©³ú£¬ÔõÃ´ÍÚ£¿\n");
+                return notify_fail("ä½ æ²’æœ‰è—¥é‹¤ï¼Œæ€éº¼æŒ–ï¼Ÿ\n");
 
         if( query("jing", me)<25 )
-                return notify_fail("ÄãÌ«ÀÛÁË£¬ÏÈĞªÏ¢Ò»»á¶ù°É¡£\n");
+                return notify_fail("ä½ å¤ªç´¯äº†ï¼Œå…ˆæ­‡æ¯ä¸€æœƒå…’å§ã€‚\n");
 
         me->receive_damage("jing", 20);
         me->start_busy(1);
 
         if( !query_temp("herb/found", me)){
-                message_vision("$NÄÃ×ÅÒ©³úÊ¹¾¢µÄÍÚ×ÅÍÁ£¬ºöÌı¸Â°ÍÒ»Éù£¬Ò©³ú¶ÏÎªÁ½½Ø£¡\n", me);
+                message_vision("$Næ‹¿è‘—è—¥é‹¤ä½¿å‹çš„æŒ–è‘—åœŸï¼Œå¿½è½å˜å·´ä¸€è²ï¼Œè—¥é‹¤æ–·ç‚ºå…©æˆªï¼\n", me);
                 destruct(ob);
                 return 1;
         }
@@ -182,17 +182,17 @@ int do_dig(string arg)
         herb->move(me, 1);
         set("player",query("id",  me), herb);
 
-        message_vision(HIY"$NÓÃÒ©³úĞ¡ĞÄÒíÒíµÄ°Ñ$n"+HIY"´ÓÍÁÖĞÆğ³ö£¡\n"NOR, me,herb);
+        message_vision(HIY"$Nç”¨è—¥é‹¤å°å¿ƒç¿¼ç¿¼çš„æŠŠ$n"+HIY"å¾åœŸä¸­èµ·å‡ºï¼\n"NOR, me,herb);
         if( query_temp("qz/caiyao", me) )
         {
                 exp = 100 + random( 180 );
                 pot = exp/3;
 
                 GIFT_D->work_bonus(me, ([ "exp" : exp, "pot" : pot, "gongxian" : 5+random(6),
-                                          "prompt" : "ÄãÍ¨¹ıÍÚÒ©²Ä" ]));
+                                          "prompt" : "ä½ é€šéæŒ–è—¥æ" ]));
         }
 
-        message_vision(HIR"\n$NĞË·Ü¹ı¶È£¬°ÑÒ©³úÒ»Ë¦£¬ºöÌı¸Â°ÍÒ»Éù£¬Ò©³ú¶ÏÎªÁ½½Ø£¡\n"NOR, me);
+        message_vision(HIR"\n$Nèˆˆå¥®éåº¦ï¼ŒæŠŠè—¥é‹¤ä¸€ç”©ï¼Œå¿½è½å˜å·´ä¸€è²ï¼Œè—¥é‹¤æ–·ç‚ºå…©æˆªï¼\n"NOR, me);
         destruct(ob);
         delete_temp("herb/found", me);
         set_temp("herb/got", 1, me);

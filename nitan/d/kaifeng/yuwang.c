@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����̨");
+        set("short", "禹王台");
         set("long", @LONG
-����̨������Сɽ��֮�ϣ�����羰�������������ţ��Թ�����
-���������δ��Ǹߵ�ʤ�ء��ഫ����ʱ�ڣ�����ä����ʦ�����ڴ˴�
-����֣���������̨����
+禹王台建造于小山丘之上，這裡風景優美，環境幽雅，自古以來
+就是人們遊春登高的勝地。相傳春秋時期，晉國盲人樂師曠常在此吹
+奏古樂，故名『吹台』。
 LONG );
         set("objects", ([
                   __DIR__"npc/woman" : 1,

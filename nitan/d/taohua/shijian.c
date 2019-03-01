@@ -9,30 +9,30 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÊÔ½£Í¤");
+        set("short", "è©¦åŠäº­");
         set("long", @LONG
-Õâ×ùÐ¡Í¤¹ÂÁãÁãÁ¢ÓÚË®ÖÐ£¬Õû×ùÍ¤¾ùÒÔºìËÉ´î³É£¬ËÄÃæ³ØË®ÝÓ»Ø£¬Çå
-ÓÄ¹ÅÆÓ¼æ¶øÓÐÖ®¡£Í¤ÄÚ¹Ò×ÅÒ»¸±¶ÔÁª(duilian)£¬¾ùÒÔ¿ñ²ÝÐ´³É£¬×ÖÀïÐÐ
-¼ä´óÓÐ¸©Ñö×ÔµÃ£¬²»¿ÉÒ»ÊÀÖ®Òâ¡£
+é€™åº§å°äº­å­¤é›¶é›¶ç«‹äºŽæ°´ä¸­ï¼Œæ•´åº§äº­å‡ä»¥ç´…é¬†æ­æˆï¼Œå››é¢æ± æ°´ç¸ˆå›žï¼Œæ¸…
+å¹½å¤æ¨¸å…¼è€Œæœ‰ä¹‹ã€‚äº­å…§æŽ›è‘—ä¸€å‰¯å°è¯(duilian)ï¼Œå‡ä»¥ç‹‚è‰å¯«æˆï¼Œå­—è£¡è¡Œ
+é–“å¤§æœ‰ä¿¯ä»°è‡ªå¾—ï¼Œä¸å¯ä¸€ä¸–ä¹‹æ„ã€‚
 LONG );
 
         set("item_desc", ([
         "duilian" : " \n
-¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù
-¡ù¡ù    ÌÒ          ±Ì    ¡ù¡ù
-¡ù¡ù                      ¡ù¡ù
-¡ù¡ù    »¨          º£    ¡ù¡ù
-¡ù¡ù                      ¡ù¡ù
-¡ù¡ù    Ó°          ³±    ¡ù¡ù
-¡ù¡ù                      ¡ù¡ù
-¡ù¡ù    Âä          Éú    ¡ù¡ù
-¡ù¡ù                      ¡ù¡ù
-¡ù¡ù    ·É          °´    ¡ù¡ù
-¡ù¡ù                      ¡ù¡ù
-¡ù¡ù    Éñ          Óñ    ¡ù¡ù
-¡ù¡ù                      ¡ù¡ù
-¡ù¡ù    ½£          óï    ¡ù¡ù
-¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù
+â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»
+â€»â€»    æ¡ƒ          ç¢§    â€»â€»
+â€»â€»                      â€»â€»
+â€»â€»    èŠ±          æµ·    â€»â€»
+â€»â€»                      â€»â€»
+â€»â€»    å½±          æ½®    â€»â€»
+â€»â€»                      â€»â€»
+â€»â€»    è½          ç”Ÿ    â€»â€»
+â€»â€»                      â€»â€»
+â€»â€»    é£›          æŒ‰    â€»â€»
+â€»â€»                      â€»â€»
+â€»â€»    ç¥ž          çŽ‰    â€»â€»
+â€»â€»                      â€»â€»
+â€»â€»    åŠ          ç°«    â€»â€»
+â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»
 \n", 
         ]));
 
@@ -53,11 +53,11 @@ int do_jump(string arg)
         object me = this_player();
 
              if ( !arg || arg != "back" ) 
-             return notify_fail( "Ê²Ã´£¿\n");
+             return notify_fail( "ä»€éº¼ï¼Ÿ\n");
 
-        message_vision("$N×ÝÉíÌø»ØÌýÓãÊ¯¡£\n\n", me);
+        message_vision("$Nç¸±èº«è·³å›žè½é­šçŸ³ã€‚\n\n", me);
         me->move(__DIR__"tingyu");
-        message("vision", me->name() + "×ÝÉíÓÉÊÔ½£Í¤ÀïÌøÁË¹ýÀ´¡£\n",environment(me), ({me}) );
+        message("vision", me->name() + "ç¸±èº«ç”±è©¦åŠäº­è£¡è·³äº†éŽä¾†ã€‚\n",environment(me), ({me}) );
 
         return 1;
 }
@@ -72,52 +72,52 @@ int do_lian(string arg)
         seteuid(getuid());
 
         if( query_temp("cursed", me) )
-                return notify_fail("Ê²Ã´£¿\n");
+                return notify_fail("ä»€éº¼ï¼Ÿ\n");
 
         if (me->is_busy())
-                return notify_fail("ÄãÏÖÔÚÕýÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£å¿™è‘—å‘¢ã€‚\n");
 
         if( me->is_fighting() )
-                return notify_fail("ÄãÒÑ¾­ÔÚÕ½¶·ÖÐÁË£¬Ñ§Ò»µãÊµÕ½¾­Ñé°É¡£\n");
+                return notify_fail("ä½ å·²ç¶“åœ¨æˆ°é¬¥ä¸­äº†ï¼Œå­¸ä¸€é»žå¯¦æˆ°ç¶“é©—å§ã€‚\n");
 
         if( arg=="parry" )
-                return notify_fail("Äã²»ÄÜÍ¨¹ýÁ·Ï°ÕÐ¼ÜÀ´Ìá¸ßÕâÏî¼¼ÄÜ¡£\n");
+                return notify_fail("ä½ ä¸èƒ½é€šéŽç·´ç¿’æ‹›æž¶ä¾†æé«˜é€™é …æŠ€èƒ½ã€‚\n");
 
         if( !arg ) 
-                return notify_fail("ÄãÒª¸ÉÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦å¹¹ä»€éº¼ï¼Ÿ\n");
 
         if(sscanf(arg, "%s %d", skillarg, times)!=2 )
                 skillarg = arg;
         
-        if( skillarg != "sword" ) return notify_fail("Ê²Ã´£¿\n");
+        if( skillarg != "sword" ) return notify_fail("ä»€éº¼ï¼Ÿ\n");
         
         if( skillarg=="parry" )
-                return notify_fail("Äã²»ÄÜÍ¨¹ýÁ·Ï°ÕÐ¼ÜÀ´Ìá¸ßÕâÏî¼¼ÄÜ¡£\n");
+                return notify_fail("ä½ ä¸èƒ½é€šéŽç·´ç¿’æ‹›æž¶ä¾†æé«˜é€™é …æŠ€èƒ½ã€‚\n");
 
         if(!times || times == 0) {
                 times = 1;
                 multiple="";
         }
-        else        multiple="·´¸´";
+        else        multiple="åå¾©";
         shijian = times;
         
         if(!stringp(skillname = me->query_skill_mapped(skillarg)) )
-                return notify_fail("ÄãÖ»ÄÜÁ·Ï°ÓÃ enable Ö¸¶¨µÄÌØÊâ¼¼ÄÜ¡£\n");
+                return notify_fail("ä½ åªèƒ½ç·´ç¿’ç”¨ enable æŒ‡å®šçš„ç‰¹æ®ŠæŠ€èƒ½ã€‚\n");
 
         skill_basic = me->query_skill(skillarg, 1);
         skill = me->query_skill(skillname, 1);
 
         if( skill < 1 )
-                return notify_fail("ÄãºÃÏñ»¹Ã»ÓÐÑ§¹ýÕâÏî¼¼ÄÜ°É£¿×îºÃÏÈÈ¥Çë½Ì±ðÈË¡£\n");
+                return notify_fail("ä½ å¥½åƒé‚„æ²’æœ‰å­¸éŽé€™é …æŠ€èƒ½å§ï¼Ÿæœ€å¥½å…ˆåŽ»è«‹æ•™åˆ¥äººã€‚\n");
         if( skill_basic < 1 )
-                return notify_fail("Äã¶ÔÕâ·½ÃæµÄ¼¼ÄÜ»¹ÊÇÒ»ÇÏ²»Í¨£¬×îºÃ´ÓÏÈ´Ó»ù±¾Ñ§Æð¡£\n");
+                return notify_fail("ä½ å°é€™æ–¹é¢çš„æŠ€èƒ½é‚„æ˜¯ä¸€ç«…ä¸é€šï¼Œæœ€å¥½å¾žå…ˆå¾žåŸºæœ¬å­¸èµ·ã€‚\n");
         if( skill_basic/2 <= skill/3 )
-                return notify_fail("ÄãµÄ»ù±¾¹¦»ðºòÎ´µ½£¬±ØÐëÏÈ´òºÃ»ù´¡²ÅÄÜ¼ÌÐøÌá¸ß¡£\n");
+                return notify_fail("ä½ çš„åŸºæœ¬åŠŸç«å€™æœªåˆ°ï¼Œå¿…é ˆå…ˆæ‰“å¥½åŸºç¤Žæ‰èƒ½ç¹¼çºŒæé«˜ã€‚\n");
 
-        notify_fail("ÄãÏÖÔÚ²»ÄÜÁ·Ï°ÕâÏî¼¼ÄÜ¡£\n");
+        notify_fail("ä½ ç¾åœ¨ä¸èƒ½ç·´ç¿’é€™é …æŠ€èƒ½ã€‚\n");
         if( !SKILL_D(skillname)->valid_learn(me) ) return 0;
 
-        notify_fail("ÄãÊÔ×ÅÁ·Ï°" + to_chinese(skillname) + "£¬µ«ÊÇ²¢Ã»ÓÐÈÎºÎ½ø²½¡£\n");
+        notify_fail("ä½ è©¦è‘—ç·´ç¿’" + to_chinese(skillname) + "ï¼Œä½†æ˜¯ä¸¦æ²’æœ‰ä»»ä½•é€²æ­¥ã€‚\n");
 
         for(times; times > 0; times--) {
                 if( SKILL_D(skillname)->practice_skill(me) )
@@ -126,13 +126,13 @@ int do_lian(string arg)
         }
 
         if(skillzhao = SKILL_D(skillname)->query_skill_name(me->query_skill(skillname, 1))) {
-                message_vision( HIY"$N" + multiple + "Á·Ï°Öø" + to_chinese(skillname) + "ÖÐµÄ" 
-                                + skillzhao + "ÕâÒ»ÕÐ£¬¿´À´ÓÐÐ©½ø²½¡£\n"NOR, me);
+                message_vision( HIY"$N" + multiple + "ç·´ç¿’è‘—" + to_chinese(skillname) + "ä¸­çš„" 
+                                + skillzhao + "é€™ä¸€æ‹›ï¼Œçœ‹ä¾†æœ‰äº›é€²æ­¥ã€‚\n"NOR, me);
                 if( me->query_skill("bibo-shengong", 1) > 80 )
                         addn("shijian", shijian, me);
         } 
         else {
-                message_vision( HIY"$N" + multiple + "Á·Ï°Öø" + to_chinese(skillname) + "£¬¿´À´ÓÐÐ©½ø²½¡£\n"NOR, me);
+                message_vision( HIY"$N" + multiple + "ç·´ç¿’è‘—" + to_chinese(skillname) + "ï¼Œçœ‹ä¾†æœ‰äº›é€²æ­¥ã€‚\n"NOR, me);
                 if( me->query_skill("bibo-shengong", 1) > 80 )
                         addn("shijian", shijian, me);
         }

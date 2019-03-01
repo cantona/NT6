@@ -4,12 +4,12 @@ inherit ITEM;
 
 void create()
 {
-	set_name(HIR "÷è÷ëÔ¿³×" NOR, ({"qilin key", "key", "qilin"}));
+	set_name(HIR "éº’éºŸé‘°åŒ™" NOR, ({"qilin key", "key", "qilin"}));
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-        	set("unit", "°Ñ");
-		set("long", HIR "ÕâÊÇÒ»°ÑÍ¨Ìå»ğºìµÄÔ¿³×£¬²âÊÔÆÚ¼ä¿É´úÌæÕ¶ÑıÑ«ÕÂÀ´´ò¿ª»ğ÷è÷ë¶´µÄ·âÓ¡¡£\n");
+        	set("unit", "æŠŠ");
+		set("long", HIR "é€™æ˜¯ä¸€æŠŠé€šé«”ç«ç´…çš„é‘°åŒ™ï¼Œæ¸¬è©¦æœŸé–“å¯ä»£æ›¿æ–¬å¦–å‹›ç« ä¾†æ‰“é–‹ç«éº’éºŸæ´çš„å°å°ã€‚\n");
 		set("value", 1);
 	}
         setup();

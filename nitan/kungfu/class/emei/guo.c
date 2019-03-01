@@ -7,14 +7,14 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("¹ùÏå", ({ "guo xiang", "guo", "xiang"}));
+        set_name("éƒ­è¥„", ({ "guo xiang", "guo", "xiang"}));
         set("long", @LONG
-Ëý¾ÍÊÇ¶ëáÒÅÉµÄ¿ªÉ½×æÊ¦¹ùÏå£¬ÄË¡¸±±ÏÀ¡¹¹ù
-¾¸µÄ¶þÅ®¶ù£¬ÈË³Æ¡¸Ð¡¶«Ð°¡¹¡£
+å¥¹å°±æ˜¯å³¨åµ‹æ´¾çš„é–‹å±±ç¥–å¸«éƒ­è¥„ï¼Œä¹ƒã€ŒåŒ—ä¿ ã€éƒ­
+é–çš„äºŒå¥³å…’ï¼Œäººç¨±ã€Œå°æ±é‚ªã€ã€‚
 LONG);
-        set("title", "¶ëáÒÅÉ¿ªÉ½×æÊ¦");
-        set("nickname", HIY "Ð¡¶«Ð°" NOR);
-        set("gender", "Å®ÐÔ");
+        set("title", "å³¨åµ‹æ´¾é–‹å±±ç¥–å¸«");
+        set("nickname", HIY "å°æ±é‚ª" NOR);
+        set("gender", "å¥³æ€§");
         set("age", 21);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -69,17 +69,17 @@ LONG);
 
         prepare_skill("strike", "piaoxue-zhang");
 
-        create_family("¶ëáÒÅÉ", 0, "¿ªÉ½×æÊ¦");
+        create_family("å³¨åµ‹æ´¾", 0, "é–‹å±±ç¥–å¸«");
         set("chat_chance", 10);
         set("chat_msg", ({
-                "¹ùÏåµÍÉùÒ÷µÀ£º¡¸ÎÊÊÀ¼ä£¬ÇéÊÇºÎÎï£¬Ö±½ÌÉúËÀÏàÐí£¿¡¹\n",
-                "¹ùÏåµÍÉùÒ÷µÀ£º¡¸ÌìÄÏµØ±±Ë«·É¿Í£¬ÀÏ³á¼¸»Øº®Êî£¿¡¹\n",
-                "¹ùÏåµÍÉùÒ÷µÀ£º¡¸»¶ÀÖÈ¤£¬Àë±ð¿à£¬¾ÍÖÐ¸üÓÐ³Õ¶ùÅ®¡£¡¹\n",
-                "¹ùÏåµÍÉùÒ÷µÀ£º¡¸¾ýÓ¦ÓÐÓï£¬ÃìÍòÀï²ãÔÆ£¬Ç§É½ÄºÑ©£¬Ö»Ó°ÏòË­È¥£¿¡¹\n",
-                "¹ùÏåµÍÉùÒ÷µÀ£º¡¸ºá·ÚÂ·£¬¼ÅÄ¯µ±Äêóï¹Ä¡£»ÄÑÌÒÀ¾ÉÆ½³þ¡£¡¹\n",
-                "¹ùÏåµÍÉùÒ÷µÀ£º¡¸ÕÐ»êÐ©ºÎàµ¼°£¬É½¹í×ÔÌä·çÓê¡£¡¹\n",
-                "¹ùÏåµÍÉùÒ÷µÀ£º¡¸ÌìÒ²¶Ê£¬Î´ÐÅÓë£¬Ýº¶ùÑà×Ó¾ã»ÆÍÁ¡£¡¹\n",
-                "¹ùÏåµÍÉùÒ÷µÀ£º¡¸Ç§ÇïÍò¹Å£¬ÎªÁô´ýÉ§ÈË£¬¿ñ¸èÍ´Òû£¬À´·ÃÑãÇð´¦¡£¡¹\n",
+                "éƒ­è¥„ä½Žè²åŸé“ï¼šã€Œå•ä¸–é–“ï¼Œæƒ…æ˜¯ä½•ç‰©ï¼Œç›´æ•™ç”Ÿæ­»ç›¸è¨±ï¼Ÿã€\n",
+                "éƒ­è¥„ä½Žè²åŸé“ï¼šã€Œå¤©å—åœ°åŒ—é›™é£›å®¢ï¼Œè€ç¿…å¹¾å›žå¯’æš‘ï¼Ÿã€\n",
+                "éƒ­è¥„ä½Žè²åŸé“ï¼šã€Œæ­¡æ¨‚è¶£ï¼Œé›¢åˆ¥è‹¦ï¼Œå°±ä¸­æ›´æœ‰ç—´å…’å¥³ã€‚ã€\n",
+                "éƒ­è¥„ä½Žè²åŸé“ï¼šã€Œå›æ‡‰æœ‰èªžï¼Œæ¸ºè¬è£¡å±¤é›²ï¼Œåƒå±±æš®é›ªï¼Œåªå½±å‘èª°åŽ»ï¼Ÿã€\n",
+                "éƒ­è¥„ä½Žè²åŸé“ï¼šã€Œæ©«æ±¾è·¯ï¼Œå¯‚å¯žç•¶å¹´ç°«é¼“ã€‚è’ç…™ä¾èˆŠå¹³æ¥šã€‚ã€\n",
+                "éƒ­è¥„ä½Žè²åŸé“ï¼šã€Œæ‹›é­‚äº›ä½•å—ŸåŠï¼Œå±±é¬¼è‡ªå•¼é¢¨é›¨ã€‚ã€\n",
+                "éƒ­è¥„ä½Žè²åŸé“ï¼šã€Œå¤©ä¹Ÿå¦’ï¼Œæœªä¿¡èˆ‡ï¼Œé¶¯å…’ç‡•å­ä¿±é»ƒåœŸã€‚ã€\n",
+                "éƒ­è¥„ä½Žè²åŸé“ï¼šã€Œåƒç§‹è¬å¤ï¼Œç‚ºç•™å¾…é¨·äººï¼Œç‹‚æ­Œç—›é£²ï¼Œä¾†è¨ªé›ä¸˜è™•ã€‚ã€\n",
         }) );
         set("chat_chance_combat", 120);
         set("chat_msg_combat", ({
@@ -104,6 +104,6 @@ LONG);
 
 void attempt_apprentice(object ob)
 {
-        command("say ÎÒ²»ÊÕÍ½£¬Äã»¹ÊÇÕÒ±ðÈË°É¡£");
+        command("say æˆ‘ä¸æ”¶å¾’ï¼Œä½ é‚„æ˜¯æ‰¾åˆ¥äººå§ã€‚");
         return;
 }

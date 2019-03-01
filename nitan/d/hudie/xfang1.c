@@ -1,15 +1,15 @@
-// �᷿ xfang1.c
+// 廂房 xfang1.c
  
 #include <ansi.h>
 inherit ROOM;
 
 void create() 
 { 
-        set("short", "�᷿");
+        set("short", "廂房");
         set("long", @LONG
-������һ��ܴ���᷿��������Ȼ�Ƚϼ�ª������ʮ�ָɾ�����
-��ʮ�ֱ��£�����ǽ�ߵĵط�����һЩľ���������Ǹ���ҽ�Ĳ���ס
-���õġ�
+這裡是一間很大的廂房，陳設雖然比較簡陋，但是十分幹凈，擺
+放十分別致，靠近牆邊的地方放了一些木床，看來是給求醫的病人住
+宿用的。
 LONG );
 
         set("sleep_room", "1");

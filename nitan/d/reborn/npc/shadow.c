@@ -5,10 +5,10 @@ inherit NPC;
 
 void create()
 {
-        set_name(HIM "»ÃÏó" NOR, ({ "shadow" }));
-        set("gender", "ÄÐÐÔ" );
+        set_name(HIM "å¹»è±¡" NOR, ({ "shadow" }));
+        set("gender", "ç”·æ€§" );
         set("age", 30 + random(30));
-        set("long", "ÈçÃÎÈç»ÃÎÞ·¨ÈÃÈË¿´µÄÇå³þµÄÒ»¸öÈË¡£");
+        set("long", "å¦‚å¤¢å¦‚å¹»ç„¡æ³•è®“äººçœ‹çš„æ¸…æ¥šçš„ä¸€å€‹äººã€‚");
         set("attitude", "friendly");
         set_temp("apply/armor", 30);
         set_temp("apply/damage", 20);
@@ -27,7 +27,7 @@ void init()
         if (interactive(me) && visible(me) &&  
             ! is_fighting())  
         { 
-                ob->set_name((query("name", me)+"--»Ã"),({(query("id", me)+"-shadow")}));
+                ob->set_name((query("name", me)+"--å¹»"),({(query("id", me)+"-shadow")}));
                 NPC_D->copy_from_me(ob, me, 120); 
                 kill_ob(me); 
         } 

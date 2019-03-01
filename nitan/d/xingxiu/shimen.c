@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ʯ��");
+        set("short", "石門");
         set("long", @LONG
-����������ţ������ţ������������л�����û���׳��Ի�̨��
-ɽ�ڸ���ǧ�𣬲Դ����Ρ������ͱ��޾����м�һ��С·������һ����
-�ա�
+這裡兩峰對峙，形如門，故名。又因常有虎豹出沒，俗稱臥虎台。
+山壁高立千仞，蒼翠欲滴。四周峭壁無徑，中間一條小路。真是一座天
+險。
 LONG);
         set("outdoors", "silu");
         set("no_clean_up", 0);

@@ -1,4 +1,4 @@
-// Õì²ì
+// åµå¯Ÿ
 #include <mudlib.h>
 #include <daemons.h>
 #include <ansi.h>
@@ -22,19 +22,19 @@ void main(object ob)
 	p_name=this_body()->query_id()[0];
 
         if( !(CHAR_D->get_char(p_name,"skills")) ){       
-		write("Äã²»»áÕì²ìÖ®¼Æ¡£\n");
+		write("ä½ ä¸æœƒåµå¯Ÿä¹‹è¨ˆã€‚\n");
                 return;
 	}
 	if( !p_skill=CHAR_D->get_char(p_name,"skills")["scout"] ){       
-		write("Äã²»»áÕì²ìÖ®¼Æ¡£\n");
+		write("ä½ ä¸æœƒåµå¯Ÿä¹‹è¨ˆã€‚\n");
                 return;
         }
 	if( !p_id){
-		write("Ö»ÓÐÉíÔÚ¾üÖÐ²ÅÄÜÊ¹ÓÃÕì²ì¡£\n");
+		write("åªæœ‰èº«åœ¨è»ä¸­æ‰èƒ½ä½¿ç”¨åµå¯Ÿã€‚\n");
 		return;
 	};
 	if( ob->query_cur_mp()<60 ){
-                write("Äã¾«Éñ²»×ã£¬²»ÄÜÊ¹ÓÃÕâÖÖ¼ÆÄ±£¡\n");
+                write("ä½ ç²¾ç¥žä¸è¶³ï¼Œä¸èƒ½ä½¿ç”¨é€™ç¨®è¨ˆè¬€ï¼\n");
 		return;
 	}
 
@@ -48,11 +48,11 @@ void main(object ob)
 	if( !sizeof(troops) ) return;
 
 	disp=
-"ÒÔÏÂÊÇÄã²¿¶Ó·½Ô²"+chinese_number(size)+"Ö®ÄÚµÄ²¿¶ÓÇé¿ö¡£\n";
+"ä»¥ä¸‹æ˜¯ä½ éƒ¨éšŠæ–¹åœ“"+chinese_number(size)+"ä¹‹å…§çš„éƒ¨éšŠæƒ…æ³ã€‚\n";
 	disp+=
-"²¿¶Ó¡¡¡¡¡¡¡¡¡¡´úºÅ     Ö÷½«¡¡¡¡ ´ó½«Êý¡¡±øÊý¡¡ ±øÖÖ    Î»ÖÃ¡¡×´Ì¬\n";
+"éƒ¨éšŠã€€ã€€ã€€ã€€ã€€ä»£è™Ÿ     ä¸»å°‡ã€€ã€€ å¤§å°‡æ•¸ã€€å…µæ•¸ã€€ å…µç¨®    ä½ç½®ã€€ç‹€æ…‹\n";
 	disp+=
-"¡þ¡þ¡þ¡þ¡þ¡þ¡þ¡þ¡þ¡þ¡þ¡þ¡þ¡þ¡þ¡þ¡þ¡þ¡þ¡þ¡þ¡þ¡þ¡þ¡þ¡þ¡þ¡þ¡þ¡þ¡þ¡þ¡þ¡þ¡þ\n";
+"â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•\n";
 
 	for( i = 0; i < sizeof(troops); i++ ){
 		id = troops[i];
@@ -91,15 +91,15 @@ string get_conds(int t)
 	conditions = "";
 	conds = TROOP_D->get_troops(t, "conds");
 
-	if (!sizeof(conds))return "Õý³£";
+	if (!sizeof(conds))return "æ­£å¸¸";
 	cond = keys(conds);
 	for (i=0; i< sizeof(cond);i++){
 		if (cond[i]=="hide")
-			conditions +=" Òþ²Ø ";
+			conditions +=" éš±è— ";
 		if (cond[i]=="poison")
-			conditions +=" ÖÐ¶¾ ";
+			conditions +=" ä¸­æ¯’ ";
 		if (cond[i]=="confuse")
-			conditions +=" »ìÂÒ ";
+			conditions +=" æ··äº‚ ";
 	}
 	return conditions;
 }	

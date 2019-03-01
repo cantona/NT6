@@ -6,38 +6,38 @@
 inherit ITEM;
 
 mapping default_dirs = ([
-        "north"     : "±±Ãæ",
-        "south"     : "ÄÏÃæ",
-        "east"      : "¶«Ãæ",
-        "west"      : "Î÷Ãæ",
-        "northup"   : "±±±ß",
-        "southup"   : "ÄÏ±ß",
-        "eastup"    : "¶«±ß",
-        "westup"    : "Î÷±ß",
-        "northdown" : "±±±ß",
-        "southdown" : "ÄÏ±ß",
-        "eastdown"  : "¶«±ß",
-        "westdown"  : "Î÷±ß",
-        "northeast" : "¶«±±",
-        "northwest" : "Î÷±±",
-        "southeast" : "¶«ÄÏ",
-        "southwest" : "Î÷ÄÏ",
-        "up"        : "ÉÏÃæ",
-        "down"      : "ÏÂÃæ",
-        "enter"     : "ÀïÃæ",
-        "out"       : "ÍâÃæ",
+        "north"     : "åŒ—é¢",
+        "south"     : "å—é¢",
+        "east"      : "æ±é¢",
+        "west"      : "è¥¿é¢",
+        "northup"   : "åŒ—é‚Š",
+        "southup"   : "å—é‚Š",
+        "eastup"    : "æ±é‚Š",
+        "westup"    : "è¥¿é‚Š",
+        "northdown" : "åŒ—é‚Š",
+        "southdown" : "å—é‚Š",
+        "eastdown"  : "æ±é‚Š",
+        "westdown"  : "è¥¿é‚Š",
+        "northeast" : "æ±åŒ—",
+        "northwest" : "è¥¿åŒ—",
+        "southeast" : "æ±å—",
+        "southwest" : "è¥¿å—",
+        "up"        : "ä¸Šé¢",
+        "down"      : "ä¸‹é¢",
+        "enter"     : "è£¡é¢",
+        "out"       : "å¤–é¢",
 ]);
 
 void create()
 {       
         seteuid(getuid());
-        set_name(HIW "ïÚ³µ" NOR, ({ "biao che", "cart", "che" }));
+        set_name(HIW "é¢è»Š" NOR, ({ "biao che", "cart", "che" }));
         set_weight(300000);
         set("no_get", 1);
-        set("unit", "Á¾");
+        set("unit", "è¼›");
         set("value", 0);
         set("long", 
-                HIW "Ò»Á¾¸£ÍşïÚ¾ÖµÄïÚ³µ£¬Ò»¸ÉïÚÍ·Õı×¼±¸¸Ï³µ(drive)Æğ³ÌÄØ¡£" NOR); 
+                HIW "ä¸€è¼›ç¦å¨é¢å±€çš„é¢è»Šï¼Œä¸€å¹¹é¢é ­æ­£æº–å‚™è¶•è»Š(drive)èµ·ç¨‹å‘¢ã€‚" NOR); 
         set("no_clean_up",1);
         setup();
         call_out("destroy1", 2, this_object());
@@ -63,14 +63,14 @@ int destroy2(object ob)
         if (objectp(ob))
         {
                 /*
-                message("channel:rumor", MAG "¡¾ïÚ¾Ö´«ÎÅ¡¿ÓÉÓÚ" + query("owner_name") +
-                        "»¤ËÍµÄïÚ³µÎ´ÄÜÈçÆÚµÖ´ï£¬¸£ÍşïÚ¾ÖÒÑÅÉÈËÇ°È¥½Ó¹ÜïÚ³µ£¡\n" NOR, users());
+                message("channel:rumor", MAG "ã€é¢å±€å‚³èã€‘ç”±äº" + query("owner_name") +
+                        "è­·é€çš„é¢è»Šæœªèƒ½å¦‚æœŸæŠµé”ï¼Œç¦å¨é¢å±€å·²æ´¾äººå‰å»æ¥ç®¡é¢è»Šï¼\n" NOR, users());
                 */
                 tell_object(all_inventory(environment(ob)),
-                            HIW "ºöÈ»£¬Ô¶Ô¶×ßÀ´Ò»ÈºÈË£¬Ô­À´ÊÇ×ÜïÚÍ·ÅÉÈËÇ°À´ÁË£¬ÎªÊ×µÄïÚÊ¦\n" +
-                            "±ß×ß×ìÀï»¹±ßÂîµÀ£º¡°ËûÄÌÄÌµÄ£¡µÈÁËÕâÃ´¾ÃÒ²»¹Ã»µ½£¬×ÜïÚÍ·\n" +
-                            "»¹ÒÔÎªÈÃÈË¸ø½ÙÁË£¬º¦ÀÏ×Ó°×ÅÜÒ»ÌË£¡¡±ËµÍê£¬Ò»¸ÉÈËµÈÀ­ÆğïÚ\n" +
-                            "³µ£¬Ñï³¤¶øÈ¥£¡\n" NOR);
+                            HIW "å¿½ç„¶ï¼Œé é èµ°ä¾†ä¸€ç¾¤äººï¼ŒåŸä¾†æ˜¯ç¸½é¢é ­æ´¾äººå‰ä¾†äº†ï¼Œç‚ºé¦–çš„é¢å¸«\n" +
+                            "é‚Šèµ°å˜´è£¡é‚„é‚Šç½µé“ï¼šâ€œä»–å¥¶å¥¶çš„ï¼ç­‰äº†é€™éº¼ä¹…ä¹Ÿé‚„æ²’åˆ°ï¼Œç¸½é¢é ­\n" +
+                            "é‚„ä»¥ç‚ºè®“äººçµ¦åŠ«äº†ï¼Œå®³è€å­ç™½è·‘ä¸€è¶Ÿï¼â€èªªå®Œï¼Œä¸€å¹¹äººç­‰æ‹‰èµ·é¢\n" +
+                            "è»Šï¼Œæšé•·è€Œå»ï¼\n" NOR);
 
                 remove_call_out("destroy1");
                 remove_call_out("destroy2");
@@ -99,17 +99,17 @@ int do_gan(string arg)
         me = this_player();
         ob = this_object();
 
-        if (! arg) return notify_fail("ÄãÒª¸ÏÊ²Ã´£¿\n");
+        if (! arg) return notify_fail("ä½ è¦è¶•ä»€éº¼ï¼Ÿ\n");
 
         if( query("id", me) != query("owner", ob) )
-                return notify_fail("Äã¸ÏµÄ²»ÊÇ×Ô¼ºµÄïÚ³µ°É£¿\n"); 
+                return notify_fail("ä½ è¶•çš„ä¸æ˜¯è‡ªå·±çš„é¢è»Šå§ï¼Ÿ\n"); 
 
         if (sscanf(arg, "%s to %s", item, dir) != 2 
         ||  item != "biao che" && item != "che")
-                return notify_fail("Ö¸Áî£ºgan ïÚ³µ to ·½Ïò \n");        
+                return notify_fail("æŒ‡ä»¤ï¼šgan é¢è»Š to æ–¹å‘ \n");        
                         
         if (me->is_busy())
-                return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÁ¨¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£å¿™è‘—å“©ã€‚\n");
 
         flag = 0;
         killer = all_inventory(environment(me));
@@ -121,34 +121,34 @@ int do_gan(string arg)
         }
 
         if (flag)   
-                return notify_fail(CYN "Äã»¹ÊÇÏÈ°ÑÑÛÇ°µÄµĞÈË½â¾öÁËÔÙËµ°É£¡\n" NOR);
+                return notify_fail(CYN "ä½ é‚„æ˜¯å…ˆæŠŠçœ¼å‰çš„æ•µäººè§£æ±ºäº†å†èªªå§ï¼\n" NOR);
         
         env = environment(me);
-        if (! env) return notify_fail("ÄãÒªÈ¥ÄÇÀï£¿\n");
+        if (! env) return notify_fail("ä½ è¦å»é‚£è£¡ï¼Ÿ\n");
 
         if( !mapp(exit=query("exits", env)) || undefinedp(exit[dir]) )
-                return notify_fail("Õâ¸ö·½Ïò¹ı²»È¥¡£\n");
+                return notify_fail("é€™å€‹æ–¹å‘éä¸å»ã€‚\n");
         
         dest = exit[dir];
 
         if (! (obj = find_object(dest)))
                 call_other(dest, "???");
         if (! (obj = find_object(dest)))
-                return notify_fail("ÄÇÀïºÃÏó¹ı²»È¥¡£\n");
+                return notify_fail("é‚£è£¡å¥½è±¡éä¸å»ã€‚\n");
 
         if (! undefinedp(default_dirs[dir]))
                 target = default_dirs[dir];
         else
                 target=query("short", obj);
 
-        message_vision(HIG "$N¸Ï×ÅïÚ³µÍù" + target + "Ê»È¥¡£\n" NOR, me);  
+        message_vision(HIG "$Nè¶•è‘—é¢è»Šå¾€" + target + "é§›å»ã€‚\n" NOR, me);  
         
         if( file_name(obj) != query("file", ob) )
         {
                 if (ob->move(obj) && me->move(obj)) 
                 {
                         all_inventory(env)->follow_me(me, dir);
-                        message_vision(HIG "$N¸Ï×ÅïÚ³µÊ»ÁË¹ıÀ´¡£\n" NOR, me);
+                        message_vision(HIG "$Nè¶•è‘—é¢è»Šé§›äº†éä¾†ã€‚\n" NOR, me);
                         lvl = me->query_skill("driving"); 
                         if (random(lvl + 100) < 50) 
                         me->start_busy(random(2) + 2);
@@ -180,14 +180,14 @@ int do_gan(string arg)
                 reward_pot = reward_exp;
                 reward_score = reward_exp / 40;
                 /*
-                message("channel:rumor",HIM"¡¾ïÚ¾Ö´«ÎÅ¡¿"+query("name", me)+
-                        "ÔËËÍµÄïÚ³µÀú¾­Ç§ĞÁÍò¿à£¬ÖÕÓÚË³ÀûµÖ´ï£¡\n" NOR,
+                message("channel:rumor",HIM"ã€é¢å±€å‚³èã€‘"+query("name", me)+
+                        "é‹é€çš„é¢è»Šæ­·ç¶“åƒè¾›è¬è‹¦ï¼Œçµ‚äºé †åˆ©æŠµé”ï¼\n" NOR,
                         users());
                 */
-                tell_object(me, HIW "ÔÚ´Ë´ÎÔËïÚÖĞÄã»ñµÃÁË" +
-                            CHINESE_D->chinese_number(reward_exp) + "µãÊµÕ½¾­Ñé¡¢" +
-                            CHINESE_D->chinese_number(reward_pot) + "µãÇ±ÄÜ¼°\n" +
-                            CHINESE_D->chinese_number(reward_score) + "µã×ÛºÏÆÀ¼Û½±Àø£¡\n" NOR);
+                tell_object(me, HIW "åœ¨æ­¤æ¬¡é‹é¢ä¸­ä½ ç²å¾—äº†" +
+                            CHINESE_D->chinese_number(reward_exp) + "é»å¯¦æˆ°ç¶“é©—ã€" +
+                            CHINESE_D->chinese_number(reward_pot) + "é»æ½›èƒ½åŠ\n" +
+                            CHINESE_D->chinese_number(reward_score) + "é»ç¶œåˆè©•åƒ¹çå‹µï¼\n" NOR);
 
                 addn("quest_yunbiao/reward_exp", reward_exp, me);
                 addn("quest_yunbiao/reward_potential", reward_pot, me);
@@ -222,8 +222,8 @@ int destroy1(object ob)
                         delete_temp("apply/short", me);
                 }
 
-                message("channel:rumor", HIB "¡¾ïÚ¾Ö´«ÎÅ¡¿" + query("owner_name") +
-                        "»¤ËÍµÄïÚ³µÔÚ°ëÂ·ÈÃÈË¸ø½ÙÁË£¡\n" NOR, users());
+                message("channel:rumor", HIB "ã€é¢å±€å‚³èã€‘" + query("owner_name") +
+                        "è­·é€çš„é¢è»Šåœ¨åŠè·¯è®“äººçµ¦åŠ«äº†ï¼\n" NOR, users());
                 remove_call_out("destroy1");
                 remove_call_out("destroy2");
                 destruct(ob);

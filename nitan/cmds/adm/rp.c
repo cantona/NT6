@@ -75,7 +75,7 @@ int main(object me, string arg)
         seteuid(geteuid(me));
 
         if (! arg)
-                return notify_fail("Ö¸Áî¸ñÊ½£ºrpefun <Ä¿Â¼|ÎÄ¼şÃû>\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šrpefun <ç›®éŒ„|æ–‡ä»¶å>\n");
 
         if (file_size(arg) == -1)
                 arg = resolve_path(query("cwd", me), arg);
@@ -83,7 +83,7 @@ int main(object me, string arg)
         filename = arg;
 
         if (! SECURITY_D->valid_write(filename, me))
-                return notify_fail("Ã»ÓĞ×ã¹»µÄ¶ÁĞ´È¨ÏŞ¡£\n");
+                return notify_fail("æ²’æœ‰è¶³å¤ çš„è®€å¯«æ¬Šé™ã€‚\n");
 
         if (file_size(filename) > 0)
         {
@@ -92,7 +92,7 @@ int main(object me, string arg)
 
         if (file_size(filename) == -2 && filename[strlen(filename) - 1] != '/') filename += "/";
         if (file_size(filename) != -2)
-                return notify_fail("Ã»ÓĞÕâ¸öÎÄ¼ş»òÄ¿Â¼¡£\n");
+                return notify_fail("æ²’æœ‰é€™å€‹æ–‡ä»¶æˆ–ç›®éŒ„ã€‚\n");
 
         result = deep_file_list(filename);
 
@@ -110,7 +110,7 @@ int main(object me, string arg)
                                 n++;
                 }
         }
-        write("Ä¿Â¼" + filename + "×Ü¹²ÓĞ" + n + "¸öÎÄ¼ş±»³É¹¦×ª»»¡£\n" NOR);
+        write("ç›®éŒ„" + filename + "ç¸½å…±æœ‰" + n + "å€‹æ–‡ä»¶è¢«æˆåŠŸè½‰æ›ã€‚\n" NOR);
 
         return 1;
 }
@@ -192,7 +192,7 @@ int do_replace(string filename)
                 } else
                 if( sscanf(tmp1, "%s->addn(%s,%s);", who, index, value) == 3 )
                 {
-                        // if( who->addn(index) > n ) ¸ñÊ½Ã»ÓĞ×ö·ÖÎö
+                        // if( who->addn(index) > n ) æ ¼å¼æ²’æœ‰åšåˆ†æ
                         if( strsrch(who, "if") != -1 )
                         if( (idx = strsrch(who, ")", -1)) != -1 )  who = who[idx+1..];
                         if( (idx = strsrch(who, "else")) != -1 ) who = who[idx+4..];
@@ -831,12 +831,12 @@ int do_replace(string filename)
         rm(filename);
         if (write_file(filename, implode(lines, "\n")))
         {
-                write(HIW + filename + "Ìæ»»³É¹¦¡£\n");
+                write(HIW + filename + "æ›¿æ›æˆåŠŸã€‚\n");
                 return 1;
         }
         else
         {
-                write(HIR + filename + "Ìæ»»Ê§°Ü¡­¡­\n");
+                write(HIR + filename + "æ›¿æ›å¤±æ•—â€¦â€¦\n");
                 return 0;
         }
 }

@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�����");
+        set("short", "西大街");
         set("long", @LONG
-����Ǻܴ��ʮ�ֽֿڣ����������ڴ�֣�������һ����¥��¥
-ǰ�߸ߵĹ���һ�����ң�����������д�š�����ݡ�����������
-��������ͨ������㳡������ɴ�׻��š�
+這兒是很大的十字街口，北邊是西內大街，南面是一座彩樓，樓
+前高高的掛著一方大匾，上面用正楷寫著『聚義館』，落款『朱子柳
+』。東邊通向中央廣場，西面可達白虎門。
 LONG );
         set("outdoors", "xiangyang");
         set("no_clean_up", 0);

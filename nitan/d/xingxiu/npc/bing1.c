@@ -5,10 +5,10 @@
 inherit NPC;
 void create()
 {
-        set_name("±ß·À¹Ù±ø", ({ "guan bing", "bing" }));
+        set_name("é‚Šé˜²å®˜å…µ", ({ "guan bing", "bing" }));
         set("age", 32);
-        set("gender", "ÄĞĞÔ");
-        set("long", "ËûÊÇ¸ö³¤Äê×¤ÊØÕâÀïµÄ±ß·À±ø¡£\n");
+        set("gender", "ç”·æ€§");
+        set("long", "ä»–æ˜¯å€‹é•·å¹´é§å®ˆé€™è£¡çš„é‚Šé˜²å…µã€‚\n");
         set("attitude", "peaceful");
         set("str", 33);
         set("int", 16);
@@ -32,7 +32,7 @@ void create()
 
 int accept_fight(object me)
 {
-        command("say ´óÒ¯ÎÒÊØ±ß¹ØÀÛµÃÒªËÀ£¬Ã»¿ÕºÍ"+RANK_D->query_respect(me)+"¹ıÕĞÍæ¡£\n");
+        command("say å¤§çˆºæˆ‘å®ˆé‚Šé—œç´¯å¾—è¦æ­»ï¼Œæ²’ç©ºå’Œ"+RANK_D->query_respect(me)+"éæ‹›ç©ã€‚\n");
         return 0;
 }
 
@@ -54,28 +54,28 @@ void init()
         else if(random(50)<=1)
                 {
                         me=this_object();         
-                        command("say Õâ¸ö"+RANK_D->query_rude(ob)+"¸øÎÒÕ¾×¡£¬ÀıĞĞ¼ì²é£¡");
+                        command("say é€™å€‹"+RANK_D->query_rude(ob)+"çµ¦æˆ‘ç«™ä½ï¼Œä¾‹è¡Œæª¢æŸ¥ï¼");
                         if( query("guanbing", ob) )
                         {
                                 addn("guanbing", -1, ob);
-                                message_vision(HIY"$n¶Ô×Å$N¿´ÁË°ëÌì£¬×îºóÕĞÁËÕĞÊÖÈÃ$N¿ì×ß¡£\n"NOR, ob, me);
+                                message_vision(HIY"$nå°è‘—$Nçœ‹äº†åŠå¤©ï¼Œæœ€å¾Œæ‹›äº†æ‹›æ‰‹è®“$Nå¿«èµ°ã€‚\n"NOR, ob, me);
                                 return;
                         }
-                        message_vision(HIY"$n½«$NÀ¹×¡£¬ÔÚ$NÉíÉÏÃşË÷ÁË°ëÌì¡£\n"NOR, ob, me);
+                        message_vision(HIY"$nå°‡$Næ””ä½ï¼Œåœ¨$Nèº«ä¸Šæ‘¸ç´¢äº†åŠå¤©ã€‚\n"NOR, ob, me);
                         ob->start_busy(5);
                         if(money = present("gold_money", ob))
                         {
                                 money->move(me);
                                 addn("guanbing", 2, ob);
-                                tell_object(ob, HIR "½á¹ûÄã·¢ÏÖ±ß·À¹Ù±ø½«ÄãÉíÉÏµÄ»Æ½ğÄÃ×ßÁË£¡\n"NOR);
+                                tell_object(ob, HIR "çµæœä½ ç™¼ç¾é‚Šé˜²å®˜å…µå°‡ä½ èº«ä¸Šçš„é»ƒé‡‘æ‹¿èµ°äº†ï¼\n"NOR);
                         }
                         else if(money = present("silver_money", ob))
                                 {
                                         money->move(me);
                                         addn("guanbing", 1, ob);
-                                        tell_object(ob, HIR "½á¹ûÄã·¢ÏÖ±ß·À¹Ù±ø½«ÄãÉíÉÏµÄ°×ÒøÄÃ×ßÁË£¡\n"NOR);
+                                        tell_object(ob, HIR "çµæœä½ ç™¼ç¾é‚Šé˜²å®˜å…µå°‡ä½ èº«ä¸Šçš„ç™½éŠ€æ‹¿èµ°äº†ï¼\n"NOR);
                                 }
-                        else command("say ÄãÕâ¸öÇî¹âµ°£¬Á¬µãÓÍË®¶¼Ã»ÓĞ£¬¸øÎÒ¹ö£¡");
+                        else command("say ä½ é€™å€‹çª®å…‰è›‹ï¼Œé€£é»æ²¹æ°´éƒ½æ²’æœ‰ï¼Œçµ¦æˆ‘æ»¾ï¼");
                         command("kick"+query("id", ob));
                 }
 */

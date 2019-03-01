@@ -12,7 +12,7 @@ int update_condition(object me, int duration)
 
         if (duration == 1)
         {
-                message_vision("$N一个纵身没有影了！\n", me);
+                message_vision("$N涓�鍊嬬副韬矑鏈夊奖浜嗭紒\n", me);
                 me->apply_condition("tmjob1", 0);
                 destruct(me);
                 return 0;

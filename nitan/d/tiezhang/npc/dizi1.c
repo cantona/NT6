@@ -6,13 +6,13 @@ inherit NPC;
 
 void create()
 {
-        set_name("¾ŞÄ¾Æì½ÌÖÚ", ({"dizi"}));
+        set_name("å·¨æœ¨æ——æ•™çœ¾", ({"dizi"}));
        set("long",
-                "ËûÊÇÉí²Ä¸ß´ó£¬Á½±Û´Ö×³£¬°òÀ«ÑüÔ²¡£ËûÊÖ³Ö±ø\n"
-                "ÈĞ£¬Éí´©Ò»ÂÌÉ«Ê¥ÒÂ£¬ËÆºõÓĞÒ»ÉíÎäÒÕ¡£\n"
+                "ä»–æ˜¯èº«æé«˜å¤§ï¼Œå…©è‡‚ç²—å£¯ï¼Œè†€é—Šè…°åœ“ã€‚ä»–æ‰‹æŒå…µ\n"
+                "åˆƒï¼Œèº«ç©¿ä¸€ç¶ è‰²è–è¡£ï¼Œä¼¼ä¹æœ‰ä¸€èº«æ­¦è—ã€‚\n"
         );
 
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("attitude", "peaceful");
         
         set("age", 35);
@@ -57,16 +57,16 @@ void init()
         if (interactive(ob) 
          && !query("no_fight", environment(ob) )
         && !present("shenhuo ling", ob) 
-         && ((fam=query("family", ob)) && fam["family_name"] != "Ã÷½Ì") )
+         && ((fam=query("family", ob)) && fam["family_name"] != "æ˜æ•™") )
         {
                 if( !query_temp("warned", ob)){
-                        command("say ÄãÊÇË­£¿  ÔõÃ´´³µ½¹âÃ÷¶¥ÀïÀ´ÁË£¿£¡");
-                        command("say ¿ì¸øÎÒËÙËÙÀë¿ª£¬ÏÂ´Î¿´µ½¾ö²»ÇáÈÄ£¡");
+                        command("say ä½ æ˜¯èª°ï¼Ÿ  æ€éº¼é—–åˆ°å…‰æ˜é ‚è£¡ä¾†äº†ï¼Ÿï¼");
+                        command("say å¿«çµ¦æˆ‘é€Ÿé€Ÿé›¢é–‹ï¼Œä¸‹æ¬¡çœ‹åˆ°æ±ºä¸è¼•é¥’ï¼");
                         set_temp("warned", 1, ob);
                 }
                 else if( query_temp("stay", ob)<10)addn_temp("stay", 1, ob);
                 else {
-                        command("say ´óµ¨¿ñÍ½£¬¾¹¸Ò´³µ½Ã÷½ÌÀ´ÈöÒ°£¡£¡£¡\n");
+                        command("say å¤§è†½ç‹‚å¾’ï¼Œç«Ÿæ•¢é—–åˆ°æ˜æ•™ä¾†æ’’é‡ï¼ï¼ï¼\n");
                         remove_call_out("hiting_ob");
                              call_out("hiting_ob", 1, ob);
                 }
@@ -88,10 +88,10 @@ int moving_ob(object ob)
         if (!living(ob)){
         switch( random(3) ) {
         case 0:
-                     command("say ºß£¬¿´ÄãÒÔºó»¹¸Ò²»¸ÒÂÒ´³¹âÃ÷¶¥£¡£¡£¡");
+                     command("say å“¼ï¼Œçœ‹ä½ ä»¥å¾Œé‚„æ•¢ä¸æ•¢äº‚é—–å…‰æ˜é ‚ï¼ï¼ï¼");
         break;
         case 1:
-                command("say ½»¸øÀä´óÈË´¦Àí°É£¬¹ØËûÒ»Äê°ëÔÂµÄ¡£");
+                command("say äº¤çµ¦å†·å¤§äººè™•ç†å§ï¼Œé—œä»–ä¸€å¹´åŠæœˆçš„ã€‚");
         break;
         case 2:
                 command("nod");

@@ -1,5 +1,5 @@
 // Written by Lonely@nitan.org
-// ·ï»ËÄùÅÍ ×ªÊÀ¼¼ÄÜ
+// é³³å‡°æ¶…ç£ è½‰ä¸–æŠ€èƒ½
 
 #include <ansi.h>
 inherit F_CLEAN_UP;
@@ -12,46 +12,46 @@ int exert(object me, object target)
 
         /*
         if( userp(me) && !query("can_exert/linji-zhuang/niepan", me) ) 
-                return notify_fail("ÄãÎ´µÃ¸ßÈËÖ¸µã£¬²»Öª¸ÃÈçºÎÊ©Õ¹·ï»ËÄùÅÍ¡£\n");  
+                return notify_fail("ä½ æœªå¾—é«˜äººæŒ‡é»ï¼Œä¸çŸ¥è©²å¦‚ä½•æ–½å±•é³³å‡°æ¶…ç£ã€‚\n");  
 
-        if( query("family/family_name", me) != "¶ëáÒÅÉ" )
-                return notify_fail("Äã²»ÊÇÉÙÁÖµÜ×Ó£¬ÎŞ·¨Ê¹ÓÃ·ï»ËÄùÅÍ¡£\n");
+        if( query("family/family_name", me) != "å³¨åµ‹æ´¾" )
+                return notify_fail("ä½ ä¸æ˜¯å°‘æ—å¼Ÿå­ï¼Œç„¡æ³•ä½¿ç”¨é³³å‡°æ¶…ç£ã€‚\n");
         */
 
         if( !query("reborn/times", me) )
-                return notify_fail("ÄãÉĞÎ´×ªÊÀÖØÉú£¬ÎŞ·¨Ê¹ÓÃ·ï»ËÄùÅÍ£¡\n");
+                return notify_fail("ä½ å°šæœªè½‰ä¸–é‡ç”Ÿï¼Œç„¡æ³•ä½¿ç”¨é³³å‡°æ¶…ç£ï¼\n");
 
         skill = me->query_skill("linji-zhuang", 1);
         if( skill < 1000 )
-                return notify_fail("ÄãµÄÁÙ¼ÃÊ®¶ş×¯ĞŞÎª»¹²»¹»£¬ÎŞ·¨Ê¹ÓÃ·ï»ËÄùÅÍ£¡\n");
+                return notify_fail("ä½ çš„è‡¨æ¿ŸåäºŒèŠä¿®ç‚ºé‚„ä¸å¤ ï¼Œç„¡æ³•ä½¿ç”¨é³³å‡°æ¶…ç£ï¼\n");
 
         if( query("jingli", me)<1000 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ã€‚\n");
 
         if( query("neili", me)<2000 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ã€‚\n");
 
         if( objectp(target) && target != me ) {
                 if( !target->query_weak() )
-                        return notify_fail(target->name() + "²¢Ã»ÓĞ´¦ÓÚĞéÈõ×´Ì¬¡£\n");
+                        return notify_fail(target->name() + "ä¸¦æ²’æœ‰è™•äºè™›å¼±ç‹€æ…‹ã€‚\n");
 
                 addn("neili", -1000, me);
                 me->receive_damage("qi", 0);
                 target->clear_weak();
-                message_combatd(HIY "Ö»¼û$N" HIY "ÆÁÏ¢¾²Æø£¬Ë«ÕÆÌùÔÚ"+target->name()+"±³ºó£¬½»´íÔËĞĞ´óĞ¡¶ş×¯£¬Ö»¼û"+target->name()+"È«Éí±»×ÏÃ¢ÁıÕÖ¡£\n" NOR, me);
-                tell_object(target, HIG"\nÄã¸Ğ¾õÉíÌå×´Ì¬ÂıÂıµÄ¸´Ô­ÁË¡£¡£¡£\n\n" NOR);
-                tell_object(me, HIG"\nÄãÌæ"+target->name()+"Ïû³ıÁËĞéÈõ×´Ì¬¡£¡£¡£\n\n" NOR);
+                message_combatd(HIY "åªè¦‹$N" HIY "å±æ¯éœæ°£ï¼Œé›™æŒè²¼åœ¨"+target->name()+"èƒŒå¾Œï¼Œäº¤éŒ¯é‹è¡Œå¤§å°äºŒèŠï¼Œåªè¦‹"+target->name()+"å…¨èº«è¢«ç´«èŠ’ç± ç½©ã€‚\n" NOR, me);
+                tell_object(target, HIG"\nä½ æ„Ÿè¦ºèº«é«”ç‹€æ…‹æ…¢æ…¢çš„å¾©åŸäº†ã€‚ã€‚ã€‚\n\n" NOR);
+                tell_object(me, HIG"\nä½ æ›¿"+target->name()+"æ¶ˆé™¤äº†è™›å¼±ç‹€æ…‹ã€‚ã€‚ã€‚\n\n" NOR);
                 if( me->is_fighting() ) me->start_busy(3);
                 return 1;
         }
 
         if( query_temp("niepan", me) )
-                return notify_fail("ÄãÒÑ¾­ÔÚÔËÆğ·ï»ËÄùÅÍÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“åœ¨é‹èµ·é³³å‡°æ¶…ç£äº†ã€‚\n");
 
         addn("neili", -1000, me);
         me->receive_damage("qi", 0);
 
-        message_combatd(HIY "$N" HIY "ÉñÉ«ºö¶ø»¶Ì¾¡¢ºö¶øÓÇĞÄ¡¢×ªË²¼äÓÖ»¯×ö²»Ï²²»±¯Ö®×´£¬\nËæÖø$N" HIY "ÕÅ¿ªÑÛÉñ£¬Ò»ÂÅ¾«¹âÕ§ÏÖ¼°ÊÅ£¬$N"HIY"µÄÆøÏ°È´ÒÑÈ«È»²»Í¬¡£\n" NOR, me);
+        message_combatd(HIY "$N" HIY "ç¥è‰²å¿½è€Œæ­¡å˜†ã€å¿½è€Œæ†‚å¿ƒã€è½‰ç¬é–“åˆåŒ–åšä¸å–œä¸æ‚²ä¹‹ç‹€ï¼Œ\néš¨è‘—$N" HIY "å¼µé–‹çœ¼ç¥ï¼Œä¸€å±¢ç²¾å…‰ä¹ç¾åŠé€ï¼Œ$N"HIY"çš„æ°£ç¿’å»å·²å…¨ç„¶ä¸åŒã€‚\n" NOR, me);
 
         addn_temp("apply/avoid_busy", 100, me);
         addn_temp("apply/avoid_weak", 100, me);
@@ -72,6 +72,6 @@ void remove_effect(object me)
                 addn_temp("apply/avoid_weak", -100, me);
                 addn_temp("apply/reduce_damage", -70, me);
                 delete_temp("niepan", me);
-                tell_object(me, "ÄãµÄÁÙ¼Ã×¯ÔËĞĞÍê±Ï£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï¡£\n");
+                tell_object(me, "ä½ çš„è‡¨æ¿ŸèŠé‹è¡Œå®Œç•¢ï¼Œå°‡å…§åŠ›æ”¶å›ä¸¹ç”°ã€‚\n");
         }
 }

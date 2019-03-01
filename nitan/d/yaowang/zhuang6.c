@@ -2,9 +2,9 @@ inherit __DIR__"zhuang";
 
 void create()
 {
-        set("short", "÷��׮һ");
+        set("short", "梅花樁一");
         set("long", @LONG
-һ�˶�ߵ�÷��׮��������ȥ�������ľ�������
+一人多高的梅花樁，向下望去真讓人心驚膽顫。
 LONG
         );
 

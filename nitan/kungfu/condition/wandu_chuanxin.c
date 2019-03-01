@@ -6,16 +6,16 @@ inherit POISON;
 
 string name() { return "qianzhu_wandushou"; }
 
-string chinese_name() { return "´©ĞÄ¾ç¶¾"; }
+string chinese_name() { return "ç©¿å¿ƒåŠ‡æ¯’"; }
 
 string update_msg_others()
 {
-       return HIB "Ö»¼û$N" HIB "¶¾ÆøÉÏÓ¿£¬Á³¸¡ÏÖ³öÒ»²ãºÚÆø£¬²»×¡µÄ²ü¶¶¡£\n" NOR;
+       return HIB "åªè¦‹$N" HIB "æ¯’æ°£ä¸Šæ¹§ï¼Œè‡‰æµ®ç¾å‡ºä¸€å±¤é»‘æ°£ï¼Œä¸ä½çš„é¡«æŠ–ã€‚\n" NOR;
 }
 
 string update_msg_self()
 {
-        return HIB "ÄãÖ»¾õ¶¾Æø¹¥ĞÄ£¬Í·ÔÎÄ¿Ñ££¬Ò»ÕóËµ²»³öµÄ¶ñĞÄ¡£\n" NOR;
+        return HIB "ä½ åªè¦ºæ¯’æ°£æ”»å¿ƒï¼Œé ­æšˆç›®çœ©ï¼Œä¸€é™£èªªä¸å‡ºçš„æƒ¡å¿ƒã€‚\n" NOR;
 }
 
 int qi_damage(object me, mapping cnd)
@@ -27,10 +27,10 @@ int dispel(object me, object ob, int duration)
 {
         if (me != ob)
         {
-                tell_object(ob, "Äã·¢¾õ" + me->name() + "µÄÄÚÁ¦Ô´Ô´Ó¿½ø£¬Ê¹µ¤"
-                            "Ìï´¦È¼ÉÕµÃ¸üÎªÀ÷º¦£¬±ãÈçÉíÏİºéÂ¯£¬ÑÛÇ°µÇÊ±Ò»ºÚ¡£\n");
-                tell_object(me, "ÄãÊÔÍ¼°ïÖú" + ob->name() + "»¯½âÒìÖÖÕæÆø£¬È´"
-                            "·¢ÏÖ¶Ô·½ÕæÆø±ãËÆºéÂ¯±¬ÁÑ£¬²»ÓÉ´ó¾ª£¬Á¬Ã¦×¡ÊÖ¡£\n");
+                tell_object(ob, "ä½ ç™¼è¦º" + me->name() + "çš„å…§åŠ›æºæºæ¹§é€²ï¼Œä½¿ä¸¹"
+                            "ç”°è™•ç‡ƒç‡’å¾—æ›´ç‚ºå²å®³ï¼Œä¾¿å¦‚èº«é™·æ´ªçˆï¼Œçœ¼å‰ç™»æ™‚ä¸€é»‘ã€‚\n");
+                tell_object(me, "ä½ è©¦åœ–å¹«åŠ©" + ob->name() + "åŒ–è§£ç•°ç¨®çœŸæ°£ï¼Œå»"
+                            "ç™¼ç¾å°æ–¹çœŸæ°£ä¾¿ä¼¼æ´ªçˆçˆ†è£‚ï¼Œä¸ç”±å¤§é©šï¼Œé€£å¿™ä½æ‰‹ã€‚\n");
 
                 if (living(ob))
                         ob->unconcious();
@@ -39,7 +39,7 @@ int dispel(object me, object ob, int duration)
         }
 
 
-        tell_object(me, "Äã¾õµÃÈ«ÉíÕæÆøÓÌÈçºéÂ¯±¬ÁÑ£¬ÄÚÏ¢"
-                        "¸ù±¾ÎŞ·¨Äı¾Û¡£\n");
+        tell_object(me, "ä½ è¦ºå¾—å…¨èº«çœŸæ°£çŒ¶å¦‚æ´ªçˆçˆ†è£‚ï¼Œå…§æ¯"
+                        "æ ¹æœ¬ç„¡æ³•å‡èšã€‚\n");
         return -1;
 }

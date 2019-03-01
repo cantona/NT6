@@ -1,4 +1,4 @@
-// zhenwu.c Ì«¼«½£·¨¡¸ÕæÎä³ıĞ°¡¹
+// zhenwu.c å¤ªæ¥µåŠæ³•ã€ŒçœŸæ­¦é™¤é‚ªã€
 
 #include <ansi.h>
 #include <combat.h>
@@ -17,16 +17,16 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail("¡¸ÕæÎä³ıĞ°¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€ŒçœŸæ­¦é™¤é‚ªã€åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
                 
         if( !objectp(weapon=query_temp("weapon", me)) || 
             query("skill_type", weapon) != "sword" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ã€‚\n");
 
         if( query("neili", me)<200 )
-                return notify_fail("ÄãÏÖÔÚÕæÆø²»¹»£¬ÎŞ·¨Ê¹ÓÃ¡¸Á÷Ã¥·¢¶ñ¡¹¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çœŸæ°£ä¸å¤ ï¼Œç„¡æ³•ä½¿ç”¨ã€Œæµæ°“ç™¼æƒ¡ã€ã€‚\n");
 
-        msg = HIY "$N" HIY "Í»È»³é½£´ı²½£¬×óÊÖË£³öÒ»¸ö°×É«ÆøÍÅ£¬ß³ßåµÄÆøÍÅ¿´ÆğÀ´¾ÍÏñÒ»¸öÎŞ¼«ÅÌĞıÏò$n" HIY "¡£\n" NOR;
+        msg = HIY "$N" HIY "çªç„¶æŠ½åŠå¾…æ­¥ï¼Œå·¦æ‰‹è€å‡ºä¸€å€‹ç™½è‰²æ°£åœ˜ï¼Œå±â–¡çš„æ°£åœ˜çœ‹èµ·ä¾†å°±åƒä¸€å€‹ç„¡æ¥µç›¤æ—‹å‘$n" HIY "ã€‚\n" NOR;
 
         addn("neili", -50, me);
         ap = me->query_skill("sword", 1) / 2 +
@@ -41,8 +41,8 @@ int perform(object me, object target)
                                            (: final, me, target, damage :));
         } else
         {
-                msg += HIG "¿ÉÊÇ$p" HIG "¿´ÆÆÁË$P" HIG "µÄÆóÍ¼£¬Õò"
-                       "¶¨Óâºã£¬È«ÉñÓ¦¶Ô×ÔÈç¡£\n" NOR;
+                msg += HIG "å¯æ˜¯$p" HIG "çœ‹ç ´äº†$P" HIG "çš„ä¼åœ–ï¼Œé®"
+                       "å®šé€¾æ†ï¼Œå…¨ç¥æ‡‰å°è‡ªå¦‚ã€‚\n" NOR;
         }
         message_combatd(msg, me, target);
 
@@ -54,6 +54,6 @@ string final(object me, object target, int damage)
         target->receive_damage("jing", damage / 3, me);
         target->receive_wound("jing", damage / 6, me);
         return
-                HIR "$p" HIR "¾ª»ÅÊ§´ë£¬´ôÔÚµ±³¡£¬±»$P"
-                HIR "ÕâÒ»ÕÆ»÷ÖĞÒªº¦£¡ºóÃæËæÖ®¶øÀ´µÄÁ÷Ã¥½£ÓÖÖ±´ÌÏòĞØÇ°£¬¶ÙÊ±²»ÖªÈçºÎµÖµ²£¡\n" NOR;
+                HIR "$p" HIR "é©šæ…Œå¤±æªï¼Œå‘†åœ¨ç•¶å ´ï¼Œè¢«$P"
+                HIR "é€™ä¸€æŒæ“Šä¸­è¦å®³ï¼å¾Œé¢éš¨ä¹‹è€Œä¾†çš„æµæ°“åŠåˆç›´åˆºå‘èƒ¸å‰ï¼Œé “æ™‚ä¸çŸ¥å¦‚ä½•æŠµæ“‹ï¼\n" NOR;
 }

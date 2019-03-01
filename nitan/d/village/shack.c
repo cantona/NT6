@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��լ");
+        set("short", "民宅");
         set("long", @LONG
-����һ��ʮ�ּ�ª���ı�©���С���ӣ���������һ�������Ĵ�
-��û�У�ֻ��һ���Ű���������Щ�ɲݡ������ӵ�����һ����ƶ����
-������Ķ����졣
+這是一間十分簡陋，四壁漏風的小房子，屋子裡連一張象樣的床
+都沒有，只有一面門板上面舖著些幹草。這屋子的主人一定是貧困潦
+倒，窮的叮當響。
 LONG );
         set("exits", ([ /* sizeof() == 1 */
             "south" :__DIR__"wexit",

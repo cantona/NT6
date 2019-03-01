@@ -3,26 +3,26 @@
 
 inherit NPC;
 
-#define PLACE "sz"     //³¤°²
-#define TYPE  "good"    //°×µÀ
-#define WAIT_TIME 60    //Íê³É²»ÁËÈÎÎñµÄ·´Ê¡Ê±¼ä
+#define PLACE "sz"     //é•·å®‰
+#define TYPE  "good"    //ç™½é“
+#define WAIT_TIME 60    //å®Œæˆä¸äº†ä»»å‹™çš„åçœæ™‚é–“
 
 mapping bunch_good = ([
-        "bunch_name" : "×ÏÉÀ»á",
+        "bunch_name" : "ç´«è¡«æœƒ",
         "id"   : "zsh",
         "place": "sz",
-        "boss" : "ËÎ´óÏÈÉú",
+        "boss" : "å®‹å¤§å…ˆç”Ÿ",
         "type" : "good",
 ]);
 
 void create()
 {
-        set_name("ËÎ´óÏÈÉú", ({ "song xiansheng", "song" }));
-        set("gender", "ÄĞĞÔ");
+        set_name("å®‹å¤§å…ˆç”Ÿ", ({ "song xiansheng", "song" }));
+        set("gender", "ç”·æ€§");
         set("age", 46);
-        set("long", "Ëû¾ÍÊÇ¶¦¶¦´óÃûµÄ" + bunch_good["bunch_name"] + "µÄÖ÷¹Ü¡£\n");
-        set("nickname",HIY"ĞäÀïÇ¬À¤"NOR);
-        set("title","×ÏÉÀ»áÖ÷¹Ü");
+        set("long", "ä»–å°±æ˜¯é¼é¼å¤§åçš„" + bunch_good["bunch_name"] + "çš„ä¸»ç®¡ã€‚\n");
+        set("nickname",HIY"è¢–è£¡ä¹¾å¤"NOR);
+        set("title","ç´«è¡«æœƒä¸»ç®¡");
         set("per",28);
         set("combat_exp", 1000000);
         set("shen_type", 1);

@@ -3,17 +3,17 @@ inherit ITEM;
 
 void create()
 {
-        set_name(NOR + CYN "Ìú°ËØÔ" NOR, ({ "tie bagua", "tie", "bagua" }));
+        set_name(NOR + CYN "éµå…«å¦" NOR, ({ "tie bagua", "tie", "bagua" }));
         set_weight(2000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", NOR + CYN "ÕâÊÇÒ»¸öÉúÌúËùÖıµÄ°ËØÔÅÌ£¬ÅÌÉÏµñ"
-                            "ÂúÁËÌ«¼«°ËØÔ\nÎÆÑù£¬ÖÆ×÷µÃ·Ç³£¾«ÖÂ¡£·çË®Ê¦"
-                            "³£³£½è´ËÀ´¹Û²â·ç\nË®ºÍ²·ØÔ£¬Ò²¿ÉÒÔÓÃÀ´ÆÆ³ı"
-                            "(" HIW "break" NOR + CYN ")¸÷ÖÖÆæÃÅÕó·¨¡£\n"
+                set("long", NOR + CYN "é€™æ˜¯ä¸€å€‹ç”Ÿéµæ‰€é‘„çš„å…«å¦ç›¤ï¼Œç›¤ä¸Šé›•"
+                            "æ»¿äº†å¤ªæ¥µå…«å¦\nç´‹æ¨£ï¼Œåˆ¶ä½œå¾—éå¸¸ç²¾è‡´ã€‚é¢¨æ°´å¸«"
+                            "å¸¸å¸¸å€Ÿæ­¤ä¾†è§€æ¸¬é¢¨\næ°´å’Œåœå¦ï¼Œä¹Ÿå¯ä»¥ç”¨ä¾†ç ´é™¤"
+                            "(" HIW "break" NOR + CYN ")å„ç¨®å¥‡é–€é™£æ³•ã€‚\n"
                             NOR);
-                set("unit", "Ö»");
+                set("unit", "åª");
                 set("value", 300000);
                 set("no_sell", 1);
                 set("material", "steel");
@@ -39,18 +39,18 @@ int do_break(string arg)
         if (me->is_busy()
             || query_temp("pending/exercising", me )
             || query_temp("exit_blocked", me) )
-                return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£å¿™è‘—å‘¢ã€‚\n");
 
         if (skill < 1)
-                return notify_fail("Äã°ÑÌú°ËØÔ·­À´¸²È¥°ÚÅªÁË°ëÌì£¬È´"
-                                   "²»ÖªÈçºÎÏÂÊÖ¡£\n");
+                return notify_fail("ä½ æŠŠéµå…«å¦ç¿»ä¾†è¦†å»æ“ºå¼„äº†åŠå¤©ï¼Œå»"
+                                   "ä¸çŸ¥å¦‚ä½•ä¸‹æ‰‹ã€‚\n");
 
         if (skill < 80)
-                return notify_fail("Äã¶ÔÆæÃÅÎåĞĞµÄÑĞ¾¿²»¹»£¬ÉĞÇÒÎŞ·¨"
-                                   "ÆÆÕó¡£\n");
+                return notify_fail("ä½ å°å¥‡é–€äº”è¡Œçš„ç ”ç©¶ä¸å¤ ï¼Œå°šä¸”ç„¡æ³•"
+                                   "ç ´é™£ã€‚\n");
 
         if( !env || !query("th_buzhen", env) )
-                return notify_fail("ÕâÀï²¢Ã»ÓĞ±»²¼ÏÂÆæÃÅÕó·¨¡£\n");
+                return notify_fail("é€™è£¡ä¸¦æ²’æœ‰è¢«å¸ƒä¸‹å¥‡é–€é™£æ³•ã€‚\n");
 
         if( !objectp(owner=find_player(query("th_zhen_owner", env)) )
            || environment(owner) != env)
@@ -65,24 +65,24 @@ int do_break(string arg)
                 delete("th_pozhen", env);
                 delete("th_zhen_owner", env);
 
-                tell_object(env, HIM "\nÍ»È»¼ä×ÏÎí³¯ÖÜÎ§É¢È¥£¬ËÄÃæ¾°ÖÂ"
-                                 "ÃÍÈ»Ò»±ä¡£\n\n" NOR);
+                tell_object(env, HIM "\nçªç„¶é–“ç´«éœ§æœå‘¨åœæ•£å»ï¼Œå››é¢æ™¯è‡´"
+                                 "çŒ›ç„¶ä¸€è®Šã€‚\n\n" NOR);
                 return 1;
         }
 
         if( me != owner && query("max_jingli", me)<500 )
-                return notify_fail("ÄãµÄ¾«Á¦ĞŞÎª²»×ã£¬ÄÑÒÔÆÆÕó¡£\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›ä¿®ç‚ºä¸è¶³ï¼Œé›£ä»¥ç ´é™£ã€‚\n");
 
         if( me != owner && query("jingli", me)<300 )
-                return notify_fail("ÄãÄ¿Ç°µÄ¾«Á¦²»×ã£¬ÄÑÒÔÆÆÕó¡£\n");
+                return notify_fail("ä½ ç›®å‰çš„ç²¾åŠ›ä¸è¶³ï¼Œé›£ä»¥ç ´é™£ã€‚\n");
 
         if( me != owner && query("jing", me)<200 )
-                return notify_fail("ÄãÄ¿Ç°µÄ¾«Æø²»×ã£¬ÄÑÒÔÆÆÕó¡£\n");
+                return notify_fail("ä½ ç›®å‰çš„ç²¾æ°£ä¸è¶³ï¼Œé›£ä»¥ç ´é™£ã€‚\n");
 
         if( me != owner && skill<query("th_pozhen", env)*3/4 )
         {
-                message_vision(HIR "$N" HIR "×øÔÚµØÉÏÚ¤Ë¼¿àÏë£¬Í»È»Á³É«´ó"
-                               "±ä£¬Å»³öÒ»¿ÚÏÊÑª¡£\n" NOR, me);
+                message_vision(HIR "$N" HIR "ååœ¨åœ°ä¸Šå†¥æ€è‹¦æƒ³ï¼Œçªç„¶è‡‰è‰²å¤§"
+                               "è®Šï¼Œå˜”å‡ºä¸€å£é®®è¡€ã€‚\n" NOR, me);
                 me->receive_wound("jing", 100);
                 me->start_busy(3);
                 return 1;
@@ -90,16 +90,16 @@ int do_break(string arg)
 
         if (me == owner && environment(owner) == env)
         {
-                message_vision(HIW "Ö»¼û$N" HIW "ÅÛĞäÒ»·÷£¬×ÏÎí¶ÙÊ±³¯ËÄÃæ"
-                               "É¢È¥£¬ÖÜÎ§¾°ÖÂÓÖ»Ö¸´Èç³õ¡£\n" NOR, me);
+                message_vision(HIW "åªè¦‹$N" HIW "è¢è¢–ä¸€æ‹‚ï¼Œç´«éœ§é “æ™‚æœå››é¢"
+                               "æ•£å»ï¼Œå‘¨åœæ™¯è‡´åˆæ¢å¾©å¦‚åˆã€‚\n" NOR, me);
                 me->start_busy(2);
         } else
         {
-                message_sort(HIW "\n$N" HIW "ÄıË¼Æ¬¿Ì£¬Ğëô§ÒÑ½«Õó·¨µÄÖÖÖÖ"
-                             "Éú¿Ë±ä»¯È«ÅÌÁËÈ»ÓÚĞØ£¬²»½ûÑöÌìÒ»Éù³¤Ğ¦£¬ÅÛĞä"
-                             "Ò»·÷£¬ÂÓÈëÕóÖĞ¡£Ö»¼û$N" HIW "ÕÆÅü½ÅÌô£¬Ö±¼¤"
-                             "µÃÉ³Ê¯ËÄÆğ£¬²»Ò»¿ÌÕóÖĞÖ®Òõö²ìåÆøËÄ´¦·ÉÉ¢£¬Ïû"
-                             "ÊÅµÃÎŞÓ°ÎŞ×Ù¡£\n\n" NOR, me);
+                message_sort(HIW "\n$N" HIW "å‡æ€ç‰‡åˆ»ï¼Œé ˆè‡¾å·²å°‡é™£æ³•çš„ç¨®ç¨®"
+                             "ç”Ÿå…‹è®ŠåŒ–å…¨ç›¤äº†ç„¶äºèƒ¸ï¼Œä¸ç¦ä»°å¤©ä¸€è²é•·ç¬‘ï¼Œè¢è¢–"
+                             "ä¸€æ‹‚ï¼Œæ å…¥é™£ä¸­ã€‚åªè¦‹$N" HIW "æŒåŠˆè…³æŒ‘ï¼Œç›´æ¿€"
+                             "å¾—æ²™çŸ³å››èµ·ï¼Œä¸ä¸€åˆ»é™£ä¸­ä¹‹é™°éœ¾æˆ¾æ°£å››è™•é£›æ•£ï¼Œæ¶ˆ"
+                             "é€å¾—ç„¡å½±ç„¡è¹¤ã€‚\n\n" NOR, me);
                 me->receive_damage("jing", 100);
                 addn("jingli", -150, me);
                 me->start_busy(3);

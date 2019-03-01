@@ -1,4 +1,4 @@
-// xiandan.c œ…µ§
+// xiandan.c ‰ªô‰∏π
 
 #include <ansi.h>
 
@@ -6,31 +6,31 @@ inherit ITEM;
 
 void create()
 {
-        set_name(YEL "∫˝Õøµ§" NOR, ({ "hutu dan", "dan", "hutu" }) );
+        set_name(YEL "Á≥äÂ°ó‰∏π" NOR, ({ "hutu dan", "dan", "hutu" }) );
         set_weight(200);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "“ªø≈‘∞‘∞∫‹‘‡µƒµ§“©£¨æ›Àµ≥‘¡Àø…“‘ΩµµÕ÷«¡¶°£\n");
+                set("long", "‰∏ÄÈ°ÜÂúíÂúíÂæàËáüÁöÑ‰∏πËó•ÔºåÊìöË™™ÂêÉ‰∫ÜÂèØ‰ª•Èôç‰ΩéÊô∫Âäõ„ÄÇ\n");
                 set("value", 10000);
-                set("unit", "ø≈");
+                set("unit", "È°Ü");
                 set("only_do_effect", 1);
         }
 }
 
 int do_effect(object me)
 {
-        message_vision("$N“ª—ˆ≤±£¨ÕÃœ¬¡À“ªø≈" + this_object()->name() +
-                       "°£\n", me);
+        message_vision("$N‰∏Ä‰ª∞ËÑñÔºåÂêû‰∏ã‰∫Ü‰∏ÄÈ°Ü" + this_object()->name() +
+                       "„ÄÇ\n", me);
 
         if( query("gift/int/succeed", me)<1 )
         {
-                tell_object(me, "≤ªπ˝ƒ„æıµ√∫√œÒ√ª ≤√¥◊˜”√°£\n");
+                tell_object(me, "‰∏çÈÅé‰Ω†Ë¶∫ÂæóÂ•ΩÂÉèÊ≤í‰ªÄÈ∫º‰ΩúÁî®„ÄÇ\n");
         } else
         {
-                tell_object(me, HIG "“ªπ…ª»»›Î»ª¥”ƒ‘÷–…˝∆£¨"
-                            "ƒ„Õ∑Õ¥”˚¡—£¨«°‘⁄¥À ±“ªπ…ªÏ◊«÷Æ“‚"
-                            "”Õ»ª∂¯∆£¨∂Ÿ∏–ƒ‘◊”≤ª∫√ π¡À°£\n");
+                tell_object(me, HIG "‰∏ÄËÇ°ÁÅ´ÁÜ±È©ÄÁÑ∂ÂæûËÖ¶‰∏≠ÂçáËµ∑Ôºå"
+                            "‰Ω†È†≠ÁóõÊ¨≤Ë£ÇÔºåÊÅ∞Âú®Ê≠§ÊôÇ‰∏ÄËÇ°Ê∑∑ÊøÅ‰πãÊÑè"
+                            "Ê≤πÁÑ∂ËÄåËµ∑ÔºåÈ†ìÊÑüËÖ¶Â≠ê‰∏çÂ•Ω‰Ωø‰∫Ü„ÄÇ\n");
                 addn("int", -1, me);
                 addn("gift/int/succeed", -1, me);
                 if( query("gift/int/all", me)>0 )

@@ -2,13 +2,13 @@
 inherit ITEM;
 void create()
 {
-        set_name(HIY"ÂŞÅÌ"NOR, ({ "luo pan", "luo", "pan", "compass" }));
+        set_name(HIY"ç¾…ç›¤"NOR, ({ "luo pan", "luo", "pan", "compass" }));
         set("weight", 1000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ö»");
-                set("long", "Ò»Ö»¾«¹¤ÖÆÔìµÄÂŞÅÌ£¬¿ÉÒÔ¶¨Î»(dingwei)£¬ÊÇº½º£ÕßµÄ±Ø±¸ÎïÆ·¡£\n" NOR);
+                set("unit", "åª");
+                set("long", "ä¸€åªç²¾å·¥åˆ¶é€ çš„ç¾…ç›¤ï¼Œå¯ä»¥å®šä½(dingwei)ï¼Œæ˜¯èˆªæµ·è€…çš„å¿…å‚™ç‰©å“ã€‚\n" NOR);
                 set("value", 5000);
         }
         setup();
@@ -26,22 +26,22 @@ int do_dingwei()
     string msg;
     me = this_player();
     where = environment(me);
-    if( query("outdoors", where) != "´óº£" )
-        return notify_fail("ÄãÓÖÃ»³öº££¬ÓÃÂŞÅÌ¸ÉÂï£¿\n");
+    if( query("outdoors", where) != "å¤§æµ·" )
+        return notify_fail("ä½ åˆæ²’å‡ºæµ·ï¼Œç”¨ç¾…ç›¤å¹¹å˜›ï¼Ÿ\n");
     if( query("exits/out", where) || query("boat_of", where) )
-           return notify_fail("´¬»¹Ã»¿ªÄØ¡£\n");     
-    message_vision("$N½«$nÍĞÔÚÕÆĞÄ£¬×ĞÏ¸µØ²ì¿´×ÅÏÖÔÚµÄ·½Î»¡£\n",me,this_object());
-    msg = "\nÂŞÅÌÏÔÊ¾ÄãÏÖÔÚµÄÎ»ÓÚ»ÆµÀ´ø";
+           return notify_fail("èˆ¹é‚„æ²’é–‹å‘¢ã€‚\n");     
+    message_vision("$Nå°‡$næ‰˜åœ¨æŒå¿ƒï¼Œä»”ç´°åœ°å¯Ÿçœ‹è‘—ç¾åœ¨çš„æ–¹ä½ã€‚\n",me,this_object());
+    msg = "\nç¾…ç›¤é¡¯ç¤ºä½ ç¾åœ¨çš„ä½äºé»ƒé“å¸¶";
     stepe=query_temp("stepe", where);
     stepw=query_temp("stepw", where);
     steps=query_temp("steps", where);
     stepn=query_temp("stepn", where);
-    if(stepe) msg += "ÒÔ¶«"+chinese_number(stepe)+"¸ö¾àÀë";
-    if(stepw) msg += "ÒÔÎ÷"+chinese_number(stepw)+"¸ö¾àÀë";
-    if(steps) msg += "¡¢ÒÔÄÏ"+chinese_number(steps)+"¸ö¾àÀë";
-    if(stepn) msg += "¡¢ÒÔ±±"+chinese_number(stepn)+"¸ö¾àÀë";
-    if(!stepe && !stepw && !steps && !stepn) msg += "ÕıÖĞ";
-    msg += "µÄµØ·½¡£\n"; 
+    if(stepe) msg += "ä»¥æ±"+chinese_number(stepe)+"å€‹è·é›¢";
+    if(stepw) msg += "ä»¥è¥¿"+chinese_number(stepw)+"å€‹è·é›¢";
+    if(steps) msg += "ã€ä»¥å—"+chinese_number(steps)+"å€‹è·é›¢";
+    if(stepn) msg += "ã€ä»¥åŒ—"+chinese_number(stepn)+"å€‹è·é›¢";
+    if(!stepe && !stepw && !steps && !stepn) msg += "æ­£ä¸­";
+    msg += "çš„åœ°æ–¹ã€‚\n"; 
     write(msg);
     return 1;
 }

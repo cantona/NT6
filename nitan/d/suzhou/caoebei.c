@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�ܶ�");
+        set("short", "曹娥碑");
         set("long",@long
-�ഫ�ܶ��������ڴˣ��������������������Ա�(gravestone)�Լ�
-���¡�ʱ�������귽ʮ�����Ĳ��ӵ㣬һ�Ӷ��ͣ�����Ĺ�ࡣ
+相傳曹娥死後葬于此，上虞令命邯鄲淳作文鐫碑(gravestone)以記
+其事。時邯鄲淳年方十三，文不加點，一揮而就，立于墓側。
 long);
         set("outdoors", "suzhou");
         set("exits",([
@@ -17,8 +17,8 @@ long);
         ]));
         set("no_clean_up", 0);
         set("item_desc", ([
-                "gravestone" : "��������ķ紵���ܣ��������ּ����ɿ������Ǳ����С��ƾ��׸�����촾ʡ���ô�����֡�\n",
-                "bei" : "��������ķ紵���ܣ��������ּ����ɿ������Ǳ����С��ƾ��׸�����촾ʡ���ô�����֡�\n",
+                "gravestone" : "經過多年的風吹雨淋，碑上文字幾不可考，倒是背面有“黃絹幼婦外孫齏臼”這麼幾個字。\n",
+                "bei" : "經過多年的風吹雨淋，碑上文字幾不可考，倒是背面有“黃絹幼婦外孫齏臼”這麼幾個字。\n",
         ]) );
 	set("coor/x", 1030);
 	set("coor/y", -1100);

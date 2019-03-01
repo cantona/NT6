@@ -5,10 +5,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÓÎ·½ºÍÉĞ", ({"seng ren","seng"}));
-        set("long", "ËûÊÇÒ»Î»ÖĞÄêÓÎ·½ºÍÉĞ£¬¹ÇÊİÈç²ñ£¬ÉíÉÏµÄôÂôÄ´òÂúÁË²¹¶¡¡£\n");
+        set_name("éŠæ–¹å’Œå°š", ({"seng ren","seng"}));
+        set("long", "ä»–æ˜¯ä¸€ä½ä¸­å¹´éŠæ–¹å’Œå°šï¼Œéª¨ç˜¦å¦‚æŸ´ï¼Œèº«ä¸Šçš„è¢ˆè£Ÿæ‰“æ»¿äº†è£œä¸ã€‚\n");
 
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("attitude", "friendly");
         set("class", "bonze");
 
@@ -40,11 +40,11 @@ void create()
 
 int accept_object(object me, object obj)
 {
-        if( query("name", obj) == "½ğ¸Õ¾­" )
+        if( query("name", obj) == "é‡‘å‰›ç¶“" )
         {
                 command("smile");
-                command("say °¢åôÍÓ·ğ£¬¶àĞ»ÕâÎ»" + RANK_D->query_respect(me) + "ÁË £¡");
-                command("say Æ¶É®ÕıĞèÕâ±¾½ğ¸Õ¾­À´ÈşÕÕÊ¯ÆºÉÏµÄÔ­ÎÄ°¡ £¡");
+                command("say é˜¿å¼­é™€ä½›ï¼Œå¤šè¬é€™ä½" + RANK_D->query_respect(me) + "äº† ï¼");
+                command("say è²§åƒ§æ­£éœ€é€™æœ¬é‡‘å‰›ç¶“ä¾†ä¸‰ç…§çŸ³åªä¸Šçš„åŸæ–‡å•Š ï¼");
         }
 
         return 1;

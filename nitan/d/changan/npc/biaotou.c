@@ -4,9 +4,9 @@ inherit NPC;
 
 void create()
 {
-        string *surname=({"ÕÔ","Ç®","Ëï","Àî","ÖÜ","Îâ","Ö£","Íõ",});
-        set_name(surname[random(sizeof(surname))]+"ïÚÍ·", ({ "biaoshi", "biao"}) );
-        set("gender", "ÄĞĞÔ" );
+        string *surname=({"è¶™","éŒ¢","å­«","æ","å‘¨","å³","é„­","ç‹",});
+        set_name(surname[random(sizeof(surname))]+"é¢é ­", ({ "biaoshi", "biao"}) );
+        set("gender", "ç”·æ€§" );
         set("age", 25);
         set("str", 45);
         set("cor", 50);
@@ -14,7 +14,7 @@ void create()
         set("int", 20);
         set("per", 20);
         set("kar", 15);
-        set("long", "Ò»Î»ÑµÁ·ÓĞËØµÄïÚÍ·¡£\n");
+        set("long", "ä¸€ä½è¨“ç·´æœ‰ç´ çš„é¢é ­ã€‚\n");
         set("combat_exp", 70000);
         set("attitude", "heroism");
         set_skill("parry", 90);

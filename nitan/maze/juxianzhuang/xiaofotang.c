@@ -4,11 +4,11 @@ inherit  ROOM;
 
 void create()
 {
-        set("short",  "С����");
+        set("short",  "小佛堂");
         set("long",  @LONG
-�����ֵܲ��ǳ������ţ�ȴҲ�ڼ��и���һ��С���ã�����������
-������ι㿪Ӣ���磬���������Ŵ�ʦ�ʵ���ǰ�����ᣬ�����ݾ���
-�ˡ�
+遊氏兄弟並非出身佛門，卻也在家中蓋了一座小佛堂，供奉佛祖和菩
+薩。這次廣開英雄宴，少林寺玄寂大師率弟子前來赴會，正好暫居于
+此。
 LONG);
         set("exits",  ([  /*  sizeof()  ==  2  */
                 "west"  :  __DIR__"changlang3",

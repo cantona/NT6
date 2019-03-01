@@ -11,15 +11,15 @@ int exert(object me, object target)
         int skill, n;
 
         if (target != me)
-                notify_fail("ÄãÖ»ÄÜ¶Ô×Ô¼ºÓÃ["+WHT+"Ò×¾­×ªÂö"+NOR+"]À´ÌáÉı×ÔÒÑµÄÕ½¶·ºÍ·ÀÓùÁ¦¡£\n"NOR,);
+                notify_fail("ä½ åªèƒ½å°è‡ªå·±ç”¨["+WHT+"æ˜“ç¶“è½‰è„ˆ"+NOR+"]ä¾†æå‡è‡ªå·²çš„æˆ°é¬¥å’Œé˜²å¾¡åŠ›ã€‚\n"NOR,);
 
         if( query("neili", me)<500 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»!");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ !");
         if( userp(me) && !query("can_perform/jiuyin-hamagong/yijin", me) )
-                      return notify_fail("ÄãËùÊ¹ÓÃµÄÍâ¹¦ÖĞÃ»ÓĞÕâÖÖ¹¦ÄÜ¡£\n"); 
+                      return notify_fail("ä½ æ‰€ä½¿ç”¨çš„å¤–åŠŸä¸­æ²’æœ‰é€™ç¨®åŠŸèƒ½ã€‚\n"); 
 
         if( query_temp("yijin", me) )
-                return notify_fail("ÄãÒÑ¾­ÔÚÔË¹¦ÖĞÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“åœ¨é‹åŠŸä¸­äº†ã€‚\n");
 
         skill = me->query_skill("force");
         n = skill / 5;
@@ -27,8 +27,8 @@ int exert(object me, object target)
         addn("neili", -400, me);
         me->receive_damage("qi", 0);
 
-        message_combatd(HIY "$N" HIY "ÉîÉîÎüÁËÒ»¿ÚÆø¡£Í»È»Ë«ÕÆ³ÅµØ£¬Ë«½Å³¯ÉÏ£¬Ö»"
-                        "¼ûÈ«ÉíÒÂÎïÖğ½¥ÅòÕÇÆğÀ´£¬¿ÚÖĞ²»Í£ÍÜÎØ£¬Á³É«ºöºìºö×Ï£¡\n" NOR, me);
+        message_combatd(HIY "$N" HIY "æ·±æ·±å¸äº†ä¸€å£æ°£ã€‚çªç„¶é›™æŒæ’åœ°ï¼Œé›™è…³æœä¸Šï¼Œåª"
+                        "è¦‹å…¨èº«è¡£ç‰©é€æ¼¸è†¨æ¼²èµ·ä¾†ï¼Œå£ä¸­ä¸åœè›™å—šï¼Œè‡‰è‰²å¿½ç´…å¿½ç´«ï¼\n" NOR, me);
 
         addn_temp("apply/attack", skill/3, me);
         addn_temp("apply/defense", skill/3, me);
@@ -37,7 +37,7 @@ int exert(object me, object target)
         addn_temp("apply/armor", skill/3, me);
                 addn_temp("apply/damage", skill/2, me);
         addn_temp("apply/dispel_poison", skill/3, me);
-        addn_temp("apply/reduce_poison", 15, me);//Ìá¸ß15%µÄ¿¹¶¾
+        addn_temp("apply/reduce_poison", 15, me);//æé«˜15%çš„æŠ—æ¯’
 
         set_temp("yijin", skill, me);
 
@@ -64,7 +64,7 @@ void remove_effect(object me, int skill)
                 addn_temp("apply/dispel_poison", -(skill/3), me);
                 addn_temp("apply/reduce_poison", -15, me);
                 delete_temp("yijin", me);
-                tell_object(me, "ÄãµÄ["+HIR+"Ò×¾­×ªÂö"+NOR+"]ÔËĞĞÍê±Ï£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï¡£\n");
+                tell_object(me, "ä½ çš„["+HIR+"æ˜“ç¶“è½‰è„ˆ"+NOR+"]é‹è¡Œå®Œç•¢ï¼Œå°‡å…§åŠ›æ”¶å›ä¸¹ç”°ã€‚\n");
         }
 }
 

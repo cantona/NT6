@@ -3,7 +3,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-string name() { return HIW "ÉñÍşºÆµ´" NOR; }
+string name() { return HIW "ç¥å¨æµ©ç›ª" NOR; }
 
 inherit F_SSERVER;
 
@@ -18,35 +18,35 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(name() + "Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(name() + "åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( query_temp("weapon", me) || query_temp("secondary_weapon", me) )
-                return notify_fail(name() + "Ö»ÄÜ¿ÕÊÖÊ©Õ¹¡£\n");
+                return notify_fail(name() + "åªèƒ½ç©ºæ‰‹æ–½å±•ã€‚\n");
 
         if ((int)me->query_skill("xiantian-gong", 1) < 240)
-                return notify_fail("ÄãµÄÏÈÌì¹¦ĞŞÎª²»¹»£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„å…ˆå¤©åŠŸä¿®ç‚ºä¸å¤ ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if( query("max_neili", me)<4000 )
-                return notify_fail("ÄãµÄÄÚÁ¦ĞŞÎª²»×ã£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¿®ç‚ºä¸è¶³ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (me->query_skill_mapped("unarmed") != "xiantian-gong")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢ÏÈÌì¹¦ÎªÈ­½Å£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼å…ˆå¤©åŠŸç‚ºæ‹³è…³ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (me->query_skill_mapped("force") != "xiantian-gong")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢ÏÈÌì¹¦ÎªÄÚ¹¦£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼å…ˆå¤©åŠŸç‚ºå…§åŠŸï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (me->query_skill_prepared("unarmed") != "xiantian-gong")
-                return notify_fail("ÄãÃ»ÓĞ×¼±¸Ê¹ÓÃÏÈÌì¹¦£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æº–å‚™ä½¿ç”¨å…ˆå¤©åŠŸï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if( query("neili", me)<800 )
-                return notify_fail("ÄãÏÖÔÚµÄÕæÆø²»×ã£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çš„çœŸæ°£ä¸è¶³ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIW "Ö»¼û$N" HIW "Ë«Ä¿¾«¹âËÄÉä£¬Ë«ÕÆ¶¸È»Ò»Õñ£¬½«ÌåÄÚ»ıĞîµÄ"
-              "ÏÈÌìÕæÆøÔÆ¹áÍÆ³ö£¬¶ÙÊ±ºôĞ¥\nÉù´ó×÷£¬ÏÈÌì¾¢µÀ²ã²ãµşµş£¬ÍğÈç"
-              "ÌÎÀË°ãÓ¿Ïò$n" HIW "¡£\n" NOR;
+        msg = HIW "åªè¦‹$N" HIW "é›™ç›®ç²¾å…‰å››å°„ï¼Œé›™æŒé™¡ç„¶ä¸€æŒ¯ï¼Œå°‡é«”å…§ç©è“„çš„"
+              "å…ˆå¤©çœŸæ°£é›²è²«æ¨å‡ºï¼Œé “æ™‚å‘¼å˜¯\nè²å¤§ä½œï¼Œå…ˆå¤©å‹é“å±¤å±¤ç–Šç–Šï¼Œå®›å¦‚"
+              "æ¿¤æµªèˆ¬æ¹§å‘$n" HIW "ã€‚\n" NOR;
 
         ap = attack_power(me, "unarmed") + me->query_skill("force");
         dp = defense_power(target, "parry") + target->query_skill("force");
@@ -57,10 +57,10 @@ int perform(object me, object target)
                 if( query("max_neili", me)>query("max_neili", target)*2 )
                 {
                         me->start_busy(2);
-                        msg += HIR "±ãÔÚ$n" HIR "Î¢Î¢Ò»ã¶¼ä£¬$N" HIR "î¸·çÒÑÈ»"
-                               "¼°Ìå£¬$p" HIR "Ò»Éù°§º¿£¬È«Éí÷ÀÂç¾¡Êı¶ÏÁÑ¡£\n"
-                               NOR "( $n" RED "ÊÜÉË¹ıÖØ£¬ÒÑ¾­ÓĞÈç·çÖĞ²ĞÖò£¬Ëæ"
-                               "Ê±¶¼¿ÉÄÜ¶ÏÆø¡£" NOR ")\n";
+                        msg += HIR "ä¾¿åœ¨$n" HIR "å¾®å¾®ä¸€æ„£é–“ï¼Œ$N" HIR "ç½¡é¢¨å·²ç„¶"
+                               "åŠé«”ï¼Œ$p" HIR "ä¸€è²å“€åšï¼Œå…¨èº«éª¼çµ¡ç›¡æ•¸æ–·è£‚ã€‚\n"
+                               NOR "( $n" RED "å—å‚·éé‡ï¼Œå·²ç¶“æœ‰å¦‚é¢¨ä¸­æ®˜ç‡­ï¼Œéš¨"
+                               "æ™‚éƒ½å¯èƒ½æ–·æ°£ã€‚" NOR ")\n";
                         damage = -1;
                 } else
                 {
@@ -69,19 +69,19 @@ int perform(object me, object target)
                         damage+= query("jiali", me);
                         addn("neili", -400, me);
                         msg += COMBAT_D->do_damage(me, target, UNARMED_ATTACK,
-                                                   damage, 90, HIR "$N" HIR "µÄ"
-                                                   "î¸¾¢µÇÊ±Íß½âÁË$n" HIR "µÄ»¤"
-                                                   "ÌåÕæÆø£¬$p" HIR "ÕæÔªÊÜËğ£¬"
-                                                   "½ÓÁ¬Åç³öÊı¿ÚÏÊÑª¡£\n" NOR);
+                                                   damage, 90, HIR "$N" HIR "çš„"
+                                                   "ç½¡å‹ç™»æ™‚ç“¦è§£äº†$n" HIR "çš„è­·"
+                                                   "é«”çœŸæ°£ï¼Œ$p" HIR "çœŸå…ƒå—æï¼Œ"
+                                                   "æ¥é€£å™´å‡ºæ•¸å£é®®è¡€ã€‚\n" NOR);
 
                         if( objectp(weapon=query_temp("weapon", target) )
                             && query("stable", weapon)<100
                             && ap / 3 + random(ap) > dp)
                         {
                                 wp = weapon->name();
-                                msg += HIW "Ö»Ìı¡°ïÏ¡±µÄÒ»Éù´àÏì£¬$n" HIW "ÊÖ"
-                                       "ÖĞµÄ" + wp + HIW "ÔÚ$N" HIW "ÄÚÁ¦¼¤µ´"
-                                       "ÏÂÓ¦Éù¶øËé£¬ÍÑÊÖµøÂäÔÚµØÉÏ¡£\n" NOR;
+                                msg += HIW "åªè½â€œé˜â€çš„ä¸€è²è„†éŸ¿ï¼Œ$n" HIW "æ‰‹"
+                                       "ä¸­çš„" + wp + HIW "åœ¨$N" HIW "å…§åŠ›æ¿€ç›ª"
+                                       "ä¸‹æ‡‰è²è€Œç¢ï¼Œè„«æ‰‹è·Œè½åœ¨åœ°ä¸Šã€‚\n" NOR;
                                 addn("neili", -150, me);
                                 set("consistence", 0, weapon);
                                 weapon->move(environment(target));
@@ -91,9 +91,9 @@ int perform(object me, object target)
                             && ap / 3 + random(ap) > dp)
                         {
                                 cl = cloth->name();
-                                msg += HIW "Ö»Ìı¡°ºä¡±µÄÒ»ÉùÃÆÏì£¬$n" HIW "Éí"
-                                       "×ÅµÄ" + cl + HIW "ÔÚ$N" HIW "ÄÚÁ¦¼¤µ´"
-                                       "ÏÂÓ¦Éù¶øÁÑ£¬»¯³ÉÒ»¿é¿éËéÆ¬¡£\n" NOR;
+                                msg += HIW "åªè½â€œè½Ÿâ€çš„ä¸€è²æ‚¶éŸ¿ï¼Œ$n" HIW "èº«"
+                                       "è‘—çš„" + cl + HIW "åœ¨$N" HIW "å…§åŠ›æ¿€ç›ª"
+                                       "ä¸‹æ‡‰è²è€Œè£‚ï¼ŒåŒ–æˆä¸€å¡Šå¡Šç¢ç‰‡ã€‚\n" NOR;
                                 addn("neili", -150, me);
                                 set("consistence", 0, cloth);
                                 cloth->move(environment(target));
@@ -104,9 +104,9 @@ int perform(object me, object target)
                             && ap / 3 + random(ap) > dp)
                         {
                                 cl = cloth->name();
-                                msg += HIW "Ö»Ìı¡°ºä¡±µÄÒ»ÉùÃÆÏì£¬$n" HIW "Éí"
-                                       "×ÅµÄ" + cl + HIW "ÔÚ$N" HIW "ÄÚÁ¦¼¤µ´"
-                                       "ÏÂÓ¦Éù¶øËé£¬»¯³ÉÒ»¿é¿éËéÆ¬¡£\n" NOR;
+                                msg += HIW "åªè½â€œè½Ÿâ€çš„ä¸€è²æ‚¶éŸ¿ï¼Œ$n" HIW "èº«"
+                                       "è‘—çš„" + cl + HIW "åœ¨$N" HIW "å…§åŠ›æ¿€ç›ª"
+                                       "ä¸‹æ‡‰è²è€Œç¢ï¼ŒåŒ–æˆä¸€å¡Šå¡Šç¢ç‰‡ã€‚\n" NOR;
                                 addn("neili", -150, me);
                                 set("consistence", 0, cloth);
                                 cloth->move(environment(target));
@@ -116,8 +116,8 @@ int perform(object me, object target)
         {
                 me->start_busy(3);
                 addn("neili", -120, me);
-                msg += CYN "¿ÉÊÇ$p" CYN "ÖªµÀ$P" CYN "ÕâÕĞµÄÀ÷"
-                       "º¦£¬²»¸ÒÓ²½Ó£¬µ±¼´Ğ±Ô¾¶ã±Ü¿ªÀ´¡£\n" NOR;
+                msg += CYN "å¯æ˜¯$p" CYN "çŸ¥é“$P" CYN "é€™æ‹›çš„å²"
+                       "å®³ï¼Œä¸æ•¢ç¡¬æ¥ï¼Œç•¶å³æ–œèºèº²é¿é–‹ä¾†ã€‚\n" NOR;
         }
         message_combatd(msg, me, target);
 

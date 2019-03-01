@@ -2,15 +2,15 @@ inherit TASK;
 #include <ansi.h>
 void create()
 {
-    set_name( HIM"¿Í»§¶¨µ¥" NOR, ({ "dingdan" }) );
+    set_name( HIM"å®¢æˆ¶å®šå–®" NOR, ({ "dingdan" }) );
     set_weight(1);
     if( clonep() )
             destruct(this_object());
     else {
-            set("unit", "ÕÅ");
+            set("unit", "å¼µ");
             set("material", "paper");
-            set("long", "Ò»ÕÅÏêÏ¸µÄ¶¨µ¥£¬¼ÇÔØ×ÅÀö´ºÔºµÄÔ¤¶¨Çé¿ö¡£\n");
+            set("long", "ä¸€å¼µè©³ç´°çš„å®šå–®ï¼Œè¨˜è¼‰è‘—éº—æ˜¥é™¢çš„é å®šæƒ…æ³ã€‚\n");
         }
-    set("owner", "Î¤´º·¼");
+    set("owner", "éŸ‹æ˜¥èŠ³");
     setup(); 
 }

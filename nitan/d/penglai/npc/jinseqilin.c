@@ -5,8 +5,8 @@ int is_pld_npc(){return 1;}
 
 void create()
 {
-        set_name(HIY "金色麒麟" NOR, ({ "jinse qilin", "jinse", "qilin" }));
-        set("long", HIY "这是一只浑身长满了金毛的麒麟，金光射的你有些睁不开眼睛。\n" NOR);
+        set_name(HIY "閲戣壊楹掗簾" NOR, ({ "jinse qilin", "jinse", "qilin" }));
+        set("long", HIY "閫欐槸涓�鍙妇韬暦婊夸簡閲戞瘺鐨勯簰楹燂紝閲戝厜灏勭殑浣犳湁浜涚潨涓嶉枊鐪肩潧銆俓n" NOR);
 
         set("age", 190);
         set("str", 40);
@@ -50,7 +50,7 @@ void create()
 }
 void init()
 {
-        // 随机攻击玩家
+        // 闅ㄦ鏀绘搳鐜╁
         if (userp(this_player()) && random(5) == 1)
         {
                 kill_ob(this_player());

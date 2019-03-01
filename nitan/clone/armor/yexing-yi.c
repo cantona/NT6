@@ -8,18 +8,18 @@ inherit CLOTH;
 
 void create()
 {
-        set_name(HIB "Ò¹ĞĞÒÂ" NOR, ({ "yexing yi", "yexing", "yi" }) );
+        set_name(HIB "å¤œè¡Œè¡£" NOR, ({ "yexing yi", "yexing", "yi" }) );
         set_weight(3000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼ş");
-                set("long", HIB "Ò»¼şºÚÉ«µÄÒ¹ĞĞÒÂ£¬´©ÉÏËü¿ÉÒÔÈÃÄãÉí·¨¸üÇáÓ¯¡£\n" NOR);
+                set("unit", "ä»¶");
+                set("long", HIB "ä¸€ä»¶é»‘è‰²çš„å¤œè¡Œè¡£ï¼Œç©¿ä¸Šå®ƒå¯ä»¥è®“ä½ èº«æ³•æ›´è¼•ç›ˆã€‚\n" NOR);
                 set("material", "cloth");
                 set("value", 800000);
                 set("armor_prop/armor", 100);
                 set("armor_prop/dodge", 10);
-                set("special/desc", HIR "ÌáÉıÓĞĞ§Çá¹¦10¼¶¡£"); 
+                set("special/desc", HIR "æå‡æœ‰æ•ˆè¼•åŠŸ10ç´šã€‚"); 
                 set("limit", ([
                         "exp"  :  1200000,
                 ]));

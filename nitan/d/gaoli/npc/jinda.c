@@ -1,14 +1,14 @@
-// ´óÌÆË«Áú´«
+// å¤§å”é›™é¾å‚³
 //cui.c 
  
 inherit NPC;
 
 void create()
 {
-        set_name("½ğ´óÉÆÈË", ({ "jin dashanren", "jin", "dashanren" }));
+        set_name("é‡‘å¤§å–„äºº", ({ "jin dashanren", "jin", "dashanren" }));
         set("age", 50);
-        set("gender", "ÄĞĞÔ");
-        set("long","ÕâÊÇ¸ßÀöÓĞÃûµÄ´óÉÆÈË£¬µ«ÓĞÈËËµËûÊÇÒ»¸ö½­Ñó´óµÁ,/n");
+        set("gender", "ç”·æ€§");
+        set("long","é€™æ˜¯é«˜éº—æœ‰åçš„å¤§å–„äººï¼Œä½†æœ‰äººèªªä»–æ˜¯ä¸€å€‹æ±Ÿæ´‹å¤§ç›œ,/n");
         set("attitude", "peaceful");
    set("str", 20);
         set("combat_exp", 800000);

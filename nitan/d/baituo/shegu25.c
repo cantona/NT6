@@ -1,5 +1,5 @@
 // Code of ShenZhou
-// shegu.c Éß¹È
+// shegu.c è›‡è°·
 // maco 7/15/2000
 
 #include <ansi.h>
@@ -7,9 +7,9 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Éß¹ÈÊ÷ÁÖ");
+        set("short", "è›‡è°·æ¨¹æ—");
         set("long", @LONG
-ÕâÊÇ°×ÍÕÉ½µÄÉß¹ÈÖ®ÖĞ£¬ÁÖÄ¾´ĞÓô£¬ËÄÏÂÒ»Æ¬¾²Ú×¡£
+é€™æ˜¯ç™½é§å±±çš„è›‡è°·ä¹‹ä¸­ï¼Œæ—æœ¨è”¥é¬±ï¼Œå››ä¸‹ä¸€ç‰‡éœè¬ã€‚
 LONG );
 
         set("exits", ([ 

@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define LUO "¡¸" HIW "ÆÙÂä¾ÅÏö" NOR "¡¹"
+#define LUO "ã€Œ" HIW "ç€‘è½ä¹éœ„" NOR "ã€"
 
 inherit F_SSERVER;
 
@@ -13,34 +13,34 @@ int perform(object me, object target)
         int i;
 
         if( userp(me) && !query("can_perform/biyan-dao/luo", me) )
-                return notify_fail("ÄãËùÊ¹ÓÃµÄÍâ¹¦ÖĞÃ»ÓĞÕâÖÖ¹¦ÄÜ¡£\n");
+                return notify_fail("ä½ æ‰€ä½¿ç”¨çš„å¤–åŠŸä¸­æ²’æœ‰é€™ç¨®åŠŸèƒ½ã€‚\n");
 
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(LUO "Ö»ÄÜÔÚÕ½¶·ÖĞ¶Ô¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(LUO "åªèƒ½åœ¨æˆ°é¬¥ä¸­å°å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me)) || 
             query("skill_type", weapon) != "blade" )
-                return notify_fail("ÄãµÄÎäÆ÷²»¶Ô£¬ÄÑÒÔÊ©Õ¹" LUO "¡£\n");
+                return notify_fail("ä½ çš„æ­¦å™¨ä¸å°ï¼Œé›£ä»¥æ–½å±•" LUO "ã€‚\n");
 
         if ((int)me->query_skill("biyan-dao", 1) < 80 )
-                return notify_fail("Äã±ÌÑÌµ¶·¨²»¹»æµÊì£¬ÄÑÒÔÊ©Õ¹" LUO "¡£\n");
+                return notify_fail("ä½ ç¢§ç…™åˆ€æ³•ä¸å¤ å«»ç†Ÿï¼Œé›£ä»¥æ–½å±•" LUO "ã€‚\n");
 
         if ((int)me->query_skill("force") < 120 )
-                return notify_fail(RED"ÄãÄÚ¹¦»ğºò²»¹»£¬ÄÑÒÔÊ©Õ¹" LUO "¡£\n");
+                return notify_fail(RED"ä½ å…§åŠŸç«å€™ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" LUO "ã€‚\n");
 
         if (me->query_skill_mapped("blade") != "biyan-dao")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢±ÌÑÌµ¶·¨£¬ÄÑÒÔÊ©Õ¹" LUO "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼ç¢§ç…™åˆ€æ³•ï¼Œé›£ä»¥æ–½å±•" LUO "ã€‚\n");
 
         if( query("neili", me)<80 )
-                return notify_fail(HIC"ÄãÏÖÔÚÕæÆø²»¹»£¬ÄÑÒÔÊ©Õ¹" LUO "¡£\n");
+                return notify_fail(HIC"ä½ ç¾åœ¨çœŸæ°£ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" LUO "ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIW "$N" HIW "´óºÈÒ»Éù£¬ÊÖÖĞ" + weapon->name() + HIW
-              "Ò»Õñ£¬±ãÈç·ÉÆÙÒ»°ãÏò$n" HIW "Ï¯¾í¶øÈ¥£¡\n" NOR;
+        msg = HIW "$N" HIW "å¤§å–ä¸€è²ï¼Œæ‰‹ä¸­" + weapon->name() + HIW
+              "ä¸€æŒ¯ï¼Œä¾¿å¦‚é£›ç€‘ä¸€èˆ¬å‘$n" HIW "å¸­å·è€Œå»ï¼\n" NOR;
         message_combatd(msg, me, target);
 
         for (i = 0; i < 5; i++)

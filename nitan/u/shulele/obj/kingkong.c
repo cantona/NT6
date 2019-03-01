@@ -1,5 +1,5 @@
 // This program is a part of NITAN MudLIB
-// kingkong.c ´óÁ¦½ð¸Õ
+// kingkong.c å¤§åŠ›é‡‘å‰›
 // Created by Lonely@NITAN (04/05/2009)
 
 #include <ansi.h>
@@ -7,7 +7,7 @@
 inherit F_CLEAN_UP;
 inherit F_SSERVER;
 
-string name() { return HIR "´óÁ¦½ð¸Õ" NOR; }
+string name() { return HIR "å¤§åŠ›é‡‘å‰›" NOR; }
 
 int perform(object me, string skill)
 {
@@ -16,7 +16,7 @@ int perform(object me, string skill)
         int ap, dp;
 
         if( !query("reborn/times", me) )
-                return notify_fail("ÄãÉÐÎ´×ªÊÀÖØÉú£¬ÎÞ·¨Ê¹ÓÃ´Ë¼¼ÄÜ£¡\n");
+                return notify_fail("ä½ å°šæœªè½‰ä¸–é‡ç”Ÿï¼Œç„¡æ³•ä½¿ç”¨æ­¤æŠ€èƒ½ï¼\n");
 
         if( !target ) { 
                 me->clean_up_enemy(); 
@@ -25,29 +25,29 @@ int perform(object me, string skill)
 
         if( !target || !target->is_character() 
          || query("not_living", target) )
-                return notify_fail("Äã´òËã¶ÔË­Ê©Õ¹" + name() + "£¿\n");
+                return notify_fail("ä½ æ‰“ç®—å°èª°æ–½å±•" + name() + "ï¼Ÿ\n");
                 
         if( !me->is_fighting(target) ) 
-                return notify_fail(name() + "Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");      
+                return notify_fail(name() + "åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");      
 
         if( !query_temp("special_skill/immortal", target) )
-                return notify_fail("¶Ô·½²¢Ã»ÓÐÔËÆð²»ËÀ½ðÉíÑ½ £¿\n");
+                return notify_fail("å°æ–¹ä¸¦æ²’æœ‰é‹èµ·ä¸æ­»é‡‘èº«å‘€ ï¼Ÿ\n");
        
-        message_vision( HIR "$N" HIR "ÃæÉ«Í»È»±äµÃ³àºì£¬Ë«ÊÖ¹àÈë¾Þ´óÕæÁ¦£¬"
-                        HIR "ÖØÖØÒ»ÕÐÏ®Ïò$n¡£\n\n" NOR, me, target);
+        message_vision( HIR "$N" HIR "é¢è‰²çªç„¶è®Šå¾—èµ¤ç´…ï¼Œé›™æ‰‹çŒå…¥å·¨å¤§çœŸåŠ›ï¼Œ"
+                        HIR "é‡é‡ä¸€æ‹›è¥²å‘$nã€‚\n\n" NOR, me, target);
 
         ap = me->query_str(); 
         dp = target->query_con();
         if( ap / 2 + random(ap) > dp ) {
                 delete_temp("special_skill/immortal", target);
-                message_vision( CYN "Ö»Ìý$n" CYN "ÃÆºßÒ»Éù£¬"
-                                CYN "²»ËÀ½ðÉí¾¹±»$N" CYN "»÷À££¡\n\n" NOR, me, target );
+                message_vision( CYN "åªè½$n" CYN "æ‚¶å“¼ä¸€è²ï¼Œ"
+                                CYN "ä¸æ­»é‡‘èº«ç«Ÿè¢«$N" CYN "æ“Šæ½°ï¼\n\n" NOR, me, target );
 
-                tell_object( target, HIW "ÄãµÄ²»ËÀ½ðÉí±»" NOR + me->name() +
-                                    HIW "ÆÆ³ýÁË£¡\n\n" NOR );           
+                tell_object( target, HIW "ä½ çš„ä¸æ­»é‡‘èº«è¢«" NOR + me->name() +
+                                    HIW "ç ´é™¤äº†ï¼\n\n" NOR );           
         } else 
-                message_vision( HIY "Ö»¼û$n" HIY "Ó²ÉúÉú½ÓÏÂ$N" HIY "ÕâÒ»ÕÐ£¬"
-                                HIY "²»ËÀ½ðÉíË¿ºÁ²»ÎªËù¶¯£¡\n\n" NOR, me, target );
+                message_vision( HIY "åªè¦‹$n" HIY "ç¡¬ç”Ÿç”ŸæŽ¥ä¸‹$N" HIY "é€™ä¸€æ‹›ï¼Œ"
+                                HIY "ä¸æ­»é‡‘èº«çµ²æ¯«ä¸ç‚ºæ‰€å‹•ï¼\n\n" NOR, me, target );
 
         me->start_busy( 1 + random(2) );
         return 1;

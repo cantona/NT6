@@ -1,9 +1,9 @@
-// piaoyi.c Æ®Òİ²½·¨ ÁéÑàÆ®Òİ
+// piaoyi.c é£„é€¸æ­¥æ³• éˆç‡•é£„é€¸
 
 #include <ansi.h>
 #include <combat.h> 
 
-#define PIAOYI HIG "¡¸ÁéÑàÆ®Òİ¡¹" NOR 
+#define PIAOYI HIG "ã€Œéˆç‡•é£„é€¸ã€" NOR 
 
 inherit F_SSERVER;
 
@@ -16,12 +16,12 @@ int perform(object me, object target)
         int d_count, count, qi, maxqi, skill;
 
         if( query_temp("piaoyi", me) )
-                return notify_fail("ÄãÒÑ¾­ÔÚÔË¹¦ÖĞÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“åœ¨é‹åŠŸä¸­äº†ã€‚\n");
 
         if ( userp(me) 
          && me->query_skill("piaoyi-bu", 1) < 150
           && !query("can_perform/piaoyi-bu/piaoyi", me) )
-                return notify_fail( "ÄãËùÊ¹ÓÃµÄÍâ¹¦ÖĞÃ»ÓĞÕâÑùµÄ¹¦ÄÜ¡£\n");
+                return notify_fail( "ä½ æ‰€ä½¿ç”¨çš„å¤–åŠŸä¸­æ²’æœ‰é€™æ¨£çš„åŠŸèƒ½ã€‚\n");
 
         if (! target)
         {
@@ -30,22 +30,22 @@ int perform(object me, object target)
         }
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail( PIAOYI + "Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail( PIAOYI + "åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( query("neili", me)<500 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬ÎŞ·¨Ê©Õ¹" + PIAOYI + "£¡\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼Œç„¡æ³•æ–½å±•" + PIAOYI + "ï¼\n");
 
         if ((int)me->query_skill("force") < 150)
-                return notify_fail("ÄãµÄÄÚ¹¦ĞŞÎª²»¹»£¬²»ÄÜÊ¹ÓÃ" + PIAOYI + "£¡\n");
+                return notify_fail("ä½ çš„å…§åŠŸä¿®ç‚ºä¸å¤ ï¼Œä¸èƒ½ä½¿ç”¨" + PIAOYI + "ï¼\n");
 
         if ((int)me->query_skill("dodge") < 150)
-                return notify_fail("ÄãµÄ»ù±¾Çá¹¦»¹²»µ½¼Ò£¬ÎŞ·¨Ê¹ÓÃ" + PIAOYI + "£¡\n");
+                return notify_fail("ä½ çš„åŸºæœ¬è¼•åŠŸé‚„ä¸åˆ°å®¶ï¼Œç„¡æ³•ä½¿ç”¨" + PIAOYI + "ï¼\n");
 
         if (me->query_skill_mapped("dodge") != "piaoyi-bu") 
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢Æ®Òİ²½·¨£¬ÎŞ·¨Ê¹ÓÃ" + PIAOYI + "£¡\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼é£„é€¸æ­¥æ³•ï¼Œç„¡æ³•ä½¿ç”¨" + PIAOYI + "ï¼\n");
 
-        msg = HIG "$N" HIG "´ß¶¯×Ô¼ºµÄÕæÁ¦ÔË¾¢ÓÚË«ÍÈ£¬Ê¹³öÆ®Òİ²½·¨µÄ¾ø¼¼" + 
-              PIAOYI + HIG "£¬ÉíĞÎ¶ÙÊ±ÈçÁéÑàÒ»°ã£¡\n" NOR;
+        msg = HIG "$N" HIG "å‚¬å‹•è‡ªå·±çš„çœŸåŠ›é‹å‹äºé›™è…¿ï¼Œä½¿å‡ºé£„é€¸æ­¥æ³•çš„çµ•æŠ€" + 
+              PIAOYI + HIG "ï¼Œèº«å½¢é “æ™‚å¦‚éˆç‡•ä¸€èˆ¬ï¼\n" NOR;
         
         qi=query("qi", me);
         maxqi=query("max_qi", me);
@@ -64,9 +64,9 @@ int perform(object me, object target)
                 addn("neili", -500, me);
         } else
         {
-                msg = HIR "$N" HIR "È«Á¦´ß¶¯ÕæÁ¦£¬ÊÔÍ¼½«×Ô¼ºµÄÉíĞĞÒÆ¶¯Ìá¸ßµ½¼«ÏŞ"
-                      ", Ë«ÍÈ¹Ç÷ÀÒ»Õó±¬Ïì£¡\n" NOR;
-                msg = HIR "$N" HIR "·¢ÏÖ×Ô¼º´ß¶¯µÄÄÚÁ¦½«Ë«ÍÈµÄ¾­Âö¾¡ÊıÕğ¶Ï, ÔÙÒ²Õ¾Á¢²»×¡, Ò»Í·ÔÔµ¹ÔÚµØ£¡\n" NOR;
+                msg = HIR "$N" HIR "å…¨åŠ›å‚¬å‹•çœŸåŠ›ï¼Œè©¦åœ–å°‡è‡ªå·±çš„èº«è¡Œç§»å‹•æé«˜åˆ°æ¥µé™"
+                      ", é›™è…¿éª¨éª¼ä¸€é™£çˆ†éŸ¿ï¼\n" NOR;
+                msg = HIR "$N" HIR "ç™¼ç¾è‡ªå·±å‚¬å‹•çš„å…§åŠ›å°‡é›™è…¿çš„ç¶“è„ˆç›¡æ•¸éœ‡æ–·, å†ä¹Ÿç«™ç«‹ä¸ä½, ä¸€é ­æ ½å€’åœ¨åœ°ï¼\n" NOR;
                 message_combatd(msg, me, target);
                 set("neili", 0, me);
                 addn("max_neili", -10, me);
@@ -83,6 +83,6 @@ void remove_effect(object me, int aamount, int damount)
                 addn_temp("apply/dodge", -aamount, me);
                 addn_temp("apply/parry", damount, me);
                 delete_temp("piaoyi", me);
-                tell_object(me, HIG "ÄãµÄ" + PIAOYI + HIG "ÔË¹¦Íê±Ï£¬Ë«ÍÈÒ»ÕóËáÂé¡£\n");
+                tell_object(me, HIG "ä½ çš„" + PIAOYI + HIG "é‹åŠŸå®Œç•¢ï¼Œé›™è…¿ä¸€é™£é…¸éº»ã€‚\n");
         }
 }

@@ -3,7 +3,7 @@
 #include <ansi.h>
 inherit F_SSERVER;
 
-string name() { return "¸ÇÊÀÓ¢ĞÛ"; }
+string name() { return "è“‹ä¸–è‹±é›„"; }
 
 int perform(object me, object target)
 {
@@ -16,22 +16,22 @@ int perform(object me, object target)
         if( !target || !target->is_character() || target == me ||
             !me->is_fighting(target) ||
             !living(target) || query_temp("no_living", target) )
-                return notify_fail(name() + "Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(name() + "åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
-        if( query("gender", me) != "ÄĞĞÔ" && !wizardp(me) )
-                return notify_fail("ÏóÄãÕâ¸±ÄïÄïÇ»£¬Ò²ĞíÁ·¡°¾øÊÀ·ç×Ë¡±¿ÖÅÂ¸üºÏÊÊµã°É¡£\n");
+        if( query("gender", me) != "ç”·æ€§" && !wizardp(me) )
+                return notify_fail("è±¡ä½ é€™å‰¯å¨˜å¨˜è…”ï¼Œä¹Ÿè¨±ç·´â€œçµ•ä¸–é¢¨å§¿â€ææ€•æ›´åˆé©é»å§ã€‚\n");
 
         if( (int)me->query_skill("yingxiong-sanzhao", 1) < 150 )
-                return notify_fail("ÄãµÄÓ¢ĞÛÈıÕĞ²»¹»æµÊì£¬²»»áÊ¹ÓÃ"+name()+"¡£\n");
+                return notify_fail("ä½ çš„è‹±é›„ä¸‰æ‹›ä¸å¤ å«»ç†Ÿï¼Œä¸æœƒä½¿ç”¨"+name()+"ã€‚\n");
 
         if( (int)me->query_skill("force", 1) < 160 )
-                return notify_fail("ÄãµÄ»ù±¾ÄÚ¹¦²»¹»æµÊì£¬²»»áÊ¹ÓÃ"+name()+"¡£\n");
+                return notify_fail("ä½ çš„åŸºæœ¬å…§åŠŸä¸å¤ å«»ç†Ÿï¼Œä¸æœƒä½¿ç”¨"+name()+"ã€‚\n");
 
         if( query("neili", me)<300 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»×ã£¬¿ÖÅÂÃ»·¨³ÑÓ¢ĞÛÁË¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸è¶³ï¼Œææ€•æ²’æ³•é€è‹±é›„äº†ã€‚\n");
 
         if( query_temp("shenlong/yingxiong", me) )
-                return notify_fail("ÄãÒÑ¾­ÔÚ´ó°ÚÓ¢ĞÛµÄÆ×ÁË£¬»¹²»¹»°¡£¿\n");
+                return notify_fail("ä½ å·²ç¶“åœ¨å¤§æ“ºè‹±é›„çš„è­œäº†ï¼Œé‚„ä¸å¤ å•Šï¼Ÿ\n");
 
         level = me->query_skill("yingxiong-sanzhao", 1);
         addn("neili", -200, me);
@@ -41,7 +41,7 @@ int perform(object me, object target)
         dp = defense_power(target, "force");
         if( ap / 2 + random(ap) > dp )
         {
-                message_combatd(HIY"$N"HIY"Ô½¶·Ô½ÊÇĞ×ÃÍ£¬¼¤¶·ÖĞÑöÌì´óºğÒ»Éù£º¡°¸ÇÊÀÓ¢ĞÛ£¡£¡¡±£¬Ò»¹ÉºÀÆø×Ô$NĞÄÖĞÉıÆğ£¬¶ÙÊ±¸üÊÇĞ×º·ÆğÀ´¡£\n" NOR, me, target);
+                message_combatd(HIY"$N"HIY"è¶Šé¬¥è¶Šæ˜¯å…‡çŒ›ï¼Œæ¿€é¬¥ä¸­ä»°å¤©å¤§å¼ä¸€è²ï¼šâ€œè“‹ä¸–è‹±é›„ï¼ï¼â€ï¼Œä¸€è‚¡è±ªæ°£è‡ª$Nå¿ƒä¸­å‡èµ·ï¼Œé “æ™‚æ›´æ˜¯å…‡æ‚èµ·ä¾†ã€‚\n" NOR, me, target);
                 set_temp("shenlong/yingxiong", 1, me);
                 addn_temp("apply/attack", level, me);
                 addn_temp("apply/unarmed_damage", level, me);
@@ -51,7 +51,7 @@ int perform(object me, object target)
         }
         else
         {
-                message_combatd(HIG"¼¤¶·ÖĞµÄ$N³å×Å$n´óº°£º¡°¸ÇÊÀ¡£¡£¡£¡±£¬ÓïÒâÎ´ÁË£¬¾Í±»$nÆÈµÃÊÖÃ¦½ÅÂÒ¡£\n" NOR, me, target);
+                message_combatd(HIG"æ¿€é¬¥ä¸­çš„$Næ²–è‘—$nå¤§å–Šï¼šâ€œè“‹ä¸–ã€‚ã€‚ã€‚â€ï¼Œèªæ„æœªäº†ï¼Œå°±è¢«$nè¿«å¾—æ‰‹å¿™è…³äº‚ã€‚\n" NOR, me, target);
         }
         return 1;
 }
@@ -60,6 +60,6 @@ void remove_effect(object me, int level)
         delete_temp("shenlong/yingxiong", me);
         addn_temp("apply/attack", -level, me);
         addn_temp("apply/unarmed_damage", -level, me);
-        message_combatd(HIY"$NÍ»È»¸Ğµ½ĞÄµ×Ò»ÕóÊ§Âä£º¡°Àú´úÓ¢ĞÛ£¬¶¼¹é¹ÂÚ£¡£¡±Ò»Äî¼°´Ë£¬¶ÙÊ±ÒâĞËÏôÈ»¡£\n" NOR, me);
+        message_combatd(HIY"$Nçªç„¶æ„Ÿåˆ°å¿ƒåº•ä¸€é™£å¤±è½ï¼šâ€œæ­·ä»£è‹±é›„ï¼Œéƒ½æ­¸å­¤å¡šã€‚â€ä¸€å¿µåŠæ­¤ï¼Œé “æ™‚æ„èˆˆè•­ç„¶ã€‚\n" NOR, me);
 }
 

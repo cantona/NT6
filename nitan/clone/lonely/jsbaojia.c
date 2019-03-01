@@ -12,14 +12,14 @@ void start_borrowing()
 
 void create()
 {
-        set_name(CYN "ÕæË¿" HIY "±¦¼×" NOR,  ({ "bao jia", "jia", "armor" }));
+        set_name(CYN "çœŸçµ²" HIY "å¯¶ç”²" NOR,  ({ "bao jia", "jia", "armor" }));
         set_weight(6000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼ş");
-                set("long", "Ò»¼ûºÚ÷î÷îµÄ¼×£¬ºÁ²»ÆğÑÛ¡£\n");
-                set("no_sell", "ÕâÑù¶«Î÷ÄÜÖµÇ®Ã´¡£\n");
+                set("unit", "ä»¶");
+                set("long", "ä¸€è¦‹é»‘é»é»çš„ç”²ï¼Œæ¯«ä¸èµ·çœ¼ã€‚\n");
+                set("no_sell", "é€™æ¨£æ±è¥¿èƒ½å€¼éŒ¢éº¼ã€‚\n");
                 set("value", 100000);
                 set("material", "silk");
                 set("armor_prop/armor", 200);
@@ -58,11 +58,11 @@ void return_to_aobai()
                      call_out("return_to_aobai", 1); 
                      return; 
              } 
-             //ÊÇ·ñÓ¦¸ÃÖ´ĞĞunwield
-             message_vision("ºöÈ»$N¾õµÃÉíÉÏÉÙÁË¼şÊ²Ã´¶«Î÷ËÆµÄ¡£\n", me); 
+             //æ˜¯å¦æ‡‰è©²åŸ·è¡Œunwield
+             message_vision("å¿½ç„¶$Nè¦ºå¾—èº«ä¸Šå°‘äº†ä»¶ä»€éº¼æ±è¥¿ä¼¼çš„ã€‚\n", me); 
      } else 
      { 
-             message("vision", "ºöÈ»Ò»¸öÈË×ßÁË¹ıÀ´£¬¼ñÆğ"+name()+"£¬Ì¾ÁË¿ÚÆø£¬Ò¡Ò¡Í·×ßÁË¡£\n", me); 
+             message("vision", "å¿½ç„¶ä¸€å€‹äººèµ°äº†éä¾†ï¼Œæ’¿èµ·"+name()+"ï¼Œå˜†äº†å£æ°£ï¼Œæ–æ–é ­èµ°äº†ã€‚\n", me); 
      } 
 
         move("/clone/misc/void");

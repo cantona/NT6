@@ -2,12 +2,12 @@
 
 void create()
 {
-        set_name(YEL "Ä¾Ïã" NOR, ({ "mu xiang" }));
+        set_name(YEL "æœ¨é¦™" NOR, ({ "mu xiang" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("base_unit", "¸ù");
-                set("long", "ÖÕÄÏÉ½ÉÏµÄÆÕÍ¨Ò©²Ä¡£\n");
+                set("base_unit", "æ ¹");
+                set("long", "çµ‚å—å±±ä¸Šçš„æ™®é€šè—¥æã€‚\n");
                 set("base_value", 4000);
                 set("base_weight", 60);
                 set("cure_s", 1);

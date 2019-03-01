@@ -5,14 +5,14 @@ inherit F_CLEAN_UP;
 inherit POISON; 
 
 string name() { return "qs_poison"; } 
-string chinese_name() { return "ÆßÉËÈ­ÄÚÉË"; } 
+string chinese_name() { return "ä¸ƒå‚·æ‹³å…§å‚·"; } 
 
 string update_msg_others() 
 {
-       return HIW "$N" HIW "Í»È»½ÅÏÂÒ»»Î£¬ºÃÏóÊÇÊÜÁËÑÏÖØµÄÄÚÉË£¡\n" NOR; 
+       return HIW "$N" HIW "çªç„¶è…³ä¸‹ä¸€æ™ƒï¼Œå¥½è±¡æ˜¯å—äº†åš´é‡çš„å…§å‚·ï¼\n" NOR; 
 }
 
 string update_msg_self() 
 {
-       return HIW "Äã½ÅÏÂ»Ğã±£¬¾«Éñ²»ÄÜ¼¯ÖĞ£¬ºÃÏóÊÇÖĞÁËÒõ¶¾µÄÄÚÉË£¡\n" NOR; 
+       return HIW "ä½ è…³ä¸‹ææƒšï¼Œç²¾ç¥ä¸èƒ½é›†ä¸­ï¼Œå¥½è±¡æ˜¯ä¸­äº†é™°æ¯’çš„å…§å‚·ï¼\n" NOR; 
 }

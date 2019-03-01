@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-    set("short", "������");
+    set("short", "黃土地");
         set("long", @LONG
-����һƬ�����أ���ɳ���𣬽�â��գ���ǹ���գ�ɱ��ӯҰ��
-����С���Ӱ����Բ��һ���̴��������ޡ����˵أ����ܸо�����
-�̰��������ĸ��ܷ��顣
+這是一片黃土地，塵沙泛起，劍芒凌空，刀槍晃日，殺氣盈野，
+幾個小伙子膀大腰圓，一身短打，練功不掇。到此地，便能感覺到明
+教百年興旺的根柢非虛。
 LONG );
     set("exits", ([
         "northwest" : __DIR__"mjtianmen1",

@@ -4,12 +4,12 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIR "´ó»Øµ¤" NOR, ({"dahui dan", "dahui", "dan"}));
+        set_name(HIR "å¤§å›ä¸¹" NOR, ({"dahui dan", "dahui", "dan"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
-                set("long", HIR "Ò»¿ÅºÚÉ«µÄÒ©Íè¡£»Ö¸´600µãÆøÑªºÍ×î´óÆøÑª¡£\n" NOR);
+                set("unit", "é¡†");
+                set("long", HIR "ä¸€é¡†é»‘è‰²çš„è—¥ä¸¸ã€‚æ¢å¾©600é»æ°£è¡€å’Œæœ€å¤§æ°£è¡€ã€‚\n" NOR);
                 set("value", 10000);
                 set("only_do_effect", 1);
         }
@@ -21,12 +21,12 @@ int do_effect(object me)
 {
         if( time()-query_temp("last_eat", me)<2 )
         {
-                write("Äã¸Õ³Ô¹ıÒ©£¬Ò©Á¦»¹Ã»ÓĞÍêÈ«ÎüÊÕ¡£\n");
+                write("ä½ å‰›åƒéè—¥ï¼Œè—¥åŠ›é‚„æ²’æœ‰å®Œå…¨å¸æ”¶ã€‚\n");
                 return 1;
         }
         set_temp("last_eat", time(), me);
 
-        message_vision(HIR "$N" HIR "³ÔÏÂÒ»¿Å´ó»Øµ¤£¬Ö»¾õÊæÌ©Ö®¼«£¡\n" NOR, me);
+        message_vision(HIR "$N" HIR "åƒä¸‹ä¸€é¡†å¤§å›ä¸¹ï¼Œåªè¦ºèˆ’æ³°ä¹‹æ¥µï¼\n" NOR, me);
 
         if( query("max_qi", me)-query("eff_qi", me) <= 600 )
         {

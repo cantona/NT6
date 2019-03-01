@@ -10,18 +10,18 @@ int dispel(object me, object ob, int duration)
 
         if (me != ob)
         {
-                tell_object(ob, "Äã·¢¾õ" + me->name() + "µÄÄÚÁ¦Ô´Ô´Ó¿½ø£¬Ô­"
-                            "±¾ÎÉÂÒµÄÄÚÏ¢¸üÊÇÀ÷º¦£¬ÑÛÇ°µÇÊ±Ò»ºÚ¡£\n");
-                tell_object(me, "ÄãÊÔÍ¼°ïÖú" + ob->name() + "»¯½âÒìÖÖÕæÆø£¬"
-                            "È´ºöÈ»·¢ÏÖ×Ô¼ºµÄÄÚÁ¦Ô´Ô´¶øÊÅ£¬²»ÓÉ´ó¾ª£¬Á¬Ã¦×¡ÊÖ¡£\n");
+                tell_object(ob, "ä½ ç™¼è¦º" + me->name() + "çš„å…§åŠ›æºæºæ¹§é€²ï¼ŒåŸ"
+                            "æœ¬ç´Šäº‚çš„å…§æ¯æ›´æ˜¯å²å®³ï¼Œçœ¼å‰ç™»æ™‚ä¸€é»‘ã€‚\n");
+                tell_object(me, "ä½ è©¦åœ–å¹«åŠ©" + ob->name() + "åŒ–è§£ç•°ç¨®çœŸæ°£ï¼Œ"
+                            "å»å¿½ç„¶ç™¼ç¾è‡ªå·±çš„å…§åŠ›æºæºè€Œé€ï¼Œä¸ç”±å¤§é©šï¼Œé€£å¿™ä½æ‰‹ã€‚\n");
                 if (living(ob)) ob->unconcious();
                 return -1;
         }
 
         if (me->query_skill_mapped("force") != "yijinjing")
         {
-                tell_object(me, "Äã¾õµÃÒìÖÖÕæÆø×óÍ»ÓÒ³å£¬ÄÚÏ¢"
-                            "´óÂÒ£¬¸ù±¾ÎŞ·¨½«ÄÚÁ¦Äı¾ÛÆğÀ´¡£\n");
+                tell_object(me, "ä½ è¦ºå¾—ç•°ç¨®çœŸæ°£å·¦çªå³æ²–ï¼Œå…§æ¯"
+                            "å¤§äº‚ï¼Œæ ¹æœ¬ç„¡æ³•å°‡å…§åŠ›å‡èšèµ·ä¾†ã€‚\n");
                 return -1;
         }
 
@@ -32,7 +32,7 @@ int dispel(object me, object ob, int duration)
         else
                 me->apply_condition("xixing-fanshi", n);
 
-        tell_object(me, "ÄãÄ¬Ä¬µÄÔËÓÃÒ×½î¾­Éñ¹¦»¯½âÌåÄÚµÄÒìÖÖÕæÆø¡£\n");
+        tell_object(me, "ä½ é»˜é»˜çš„é‹ç”¨æ˜“ç­‹ç¶“ç¥åŠŸåŒ–è§£é«”å…§çš„ç•°ç¨®çœŸæ°£ã€‚\n");
 
         return 1;
 }
@@ -43,7 +43,7 @@ int update_condition(object me, int duration)
 
         if (! living(me) && (me->query("eff_qi") < 20 || me->query("eff_jing") < 10))
         {
-                me->set_temp("ÒòÎªĞŞÏ°ÎüĞÇ´ó·¨²»É÷£¬ÄÚÁ¦·´ÊÉÍÂÑªÉíÍöÁË");
+                me->set_temp("å› ç‚ºä¿®ç¿’å¸æ˜Ÿå¤§æ³•ä¸æ…ï¼Œå…§åŠ›åå™¬åè¡€èº«äº¡äº†");
                 me->die();
                 return 0;
         } else
@@ -52,9 +52,9 @@ int update_condition(object me, int duration)
                 me->receive_wound("jing", 10);
                 if (me->query("max_neili"))
                         me->add("max_neili", -1);
-                tell_object(me, HIR "Äã¾õµÃµ¤ÌïÄÚÏ¢ÎÉÂÒÖ®¼«£¬»ëÉíºöÀäºö"
-                                "ÈÈ£¬ËÄÖ«°ÙêàÄÚÁ¦¼¤µ´£¬¼¸ÓûÔÎØÊ¡£\n" NOR);
-                message("vision", me->name() + "Á³É«ºöÇàºöºì£¬ËÄÖ«²»×¡µÄ²ü¶¯¡£\n",
+                tell_object(me, HIR "ä½ è¦ºå¾—ä¸¹ç”°å…§æ¯ç´Šäº‚ä¹‹æ¥µï¼Œæ¸¾èº«å¿½å†·å¿½"
+                                "ç†±ï¼Œå››è‚¢ç™¾è³…å…§åŠ›æ¿€ç›ªï¼Œå¹¾æ¬²æšˆå¥ã€‚\n" NOR);
+                message("vision", me->name() + "è‡‰è‰²å¿½é’å¿½ç´…ï¼Œå››è‚¢ä¸ä½çš„é¡«å‹•ã€‚\n",
                         environment(me), me);
         }
 

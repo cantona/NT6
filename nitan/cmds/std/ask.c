@@ -7,12 +7,12 @@ inherit F_CLEAN_UP;
 string query_inquiry(object me, object ob);
 
 string *msg_dunno = ({
-        "$nÒ¡Ò¡Í·£¬ËµµÀ£ºÃ»ÌıËµ¹ı¡£\n",
-        "$nÒÉ»óµØ¿´×Å$N£¬Ò¡ÁËÒ¡Í·¡£\n",
-        "$nÕö´óÑÛ¾¦Íû×Å$N£¬ÏÔÈ»²»ÖªµÀ$PÔÚËµÊ²Ã´¡£\n",
-        "$nËÊÁËËÊ¼ç£¬ºÜ±§Ç¸µØËµ£ºÎŞ¿É·î¸æ¡£\n",
-        "$nËµµÀ£ºàÅ....ÕâÎÒ¿É²»Çå³ş£¬Äã×îºÃÎÊÎÊ±ğÈË°É¡£\n",
-        "$nÏëÁËÒ»»á¶ù£¬ËµµÀ£º¶Ô²»Æğ£¬ÄãÎÊµÄÊÂÎÒÊµÔÚÃ»ÓĞÓ¡Ïó¡£\n"
+        "$næ–æ–é ­ï¼Œèªªé“ï¼šæ²’è½èªªéã€‚\n",
+        "$nç–‘æƒ‘åœ°çœ‹è‘—$Nï¼Œæ–äº†æ–é ­ã€‚\n",
+        "$nçœå¤§çœ¼ç›æœ›è‘—$Nï¼Œé¡¯ç„¶ä¸çŸ¥é“$Påœ¨èªªä»€éº¼ã€‚\n",
+        "$nè³äº†è³è‚©ï¼Œå¾ˆæŠ±æ­‰åœ°èªªï¼šç„¡å¯å¥‰å‘Šã€‚\n",
+        "$nèªªé“ï¼šå—¯....é€™æˆ‘å¯ä¸æ¸…æ¥šï¼Œä½ æœ€å¥½å•å•åˆ¥äººå§ã€‚\n",
+        "$næƒ³äº†ä¸€æœƒå…’ï¼Œèªªé“ï¼šå°ä¸èµ·ï¼Œä½ å•çš„äº‹æˆ‘å¯¦åœ¨æ²’æœ‰å°è±¡ã€‚\n"
 });
 
 int main(object me, string arg)
@@ -27,11 +27,11 @@ int main(object me, string arg)
         seteuid(getuid());
 
         if (! arg)
-                return notify_fail("ÄãÒªÎÊË­Ê²Ã´ÊÂ£¿\n");
+                return notify_fail("ä½ è¦å•èª°ä»€éº¼äº‹ï¼Ÿ\n");
 
         if (sscanf(arg, "%s about %s", dest, topic) != 2 &&
             sscanf(arg, "%s %s", dest, topic) != 2)
-                return notify_fail("ÄãÒªÎÊË­Ê²Ã´ÊÂ£¿\n");
+                return notify_fail("ä½ è¦å•èª°ä»€éº¼äº‹ï¼Ÿ\n");
 
         if( topic == "quest_name" && query("quest/name", me) )
                 topic=query("quest/name", me);
@@ -45,12 +45,12 @@ int main(object me, string arg)
                         return 1;
                 }
 
-                write("Õâ¸öµØ·½²»ÄÜ½²»°¡£\n");
+                write("é€™å€‹åœ°æ–¹ä¸èƒ½è¬›è©±ã€‚\n");
                 return 1;
         }
 
         if (! objectp(ob = present(dest, env)))
-                return notify_fail("ÕâÀïÃ»ÓĞÕâ¸öÈË¡£\n");
+                return notify_fail("é€™è£¡æ²’æœ‰é€™å€‹äººã€‚\n");
 
         /*
         if (me->ban_say(1) && playerp(ob))
@@ -59,38 +59,38 @@ int main(object me, string arg)
 
         if (! ob->is_character())
         {
-                message_vision("$N¶Ô×Å$n×ÔÑÔ×ÔÓï....\n", me, ob);
+                message_vision("$Nå°è‘—$nè‡ªè¨€è‡ªèª....\n", me, ob);
                 return 1;
         }
 
         if (ob == me)
         {
-                message_vision("$N×Ô¼º×ÔÑÔ×ÔÓï¡£\n", me);
+                message_vision("$Nè‡ªå·±è‡ªè¨€è‡ªèªã€‚\n", me);
                 return 1;
         }
 
         if( query("jing", me)<30 && !playerp(ob) && !me->is_ghost() )
         {
-                write("ÄãÏÖÔÚµÄ¾«Éñ²»Ì«ºÃ£¬Ã»·¨ºÍ±ğÈËÌ×´É¡£\n");
+                write("ä½ ç¾åœ¨çš„ç²¾ç¥ä¸å¤ªå¥½ï¼Œæ²’æ³•å’Œåˆ¥äººå¥—ç“·ã€‚\n");
                 return 1;
         }
 
         if( !query("can_speak", ob) )
         {
-                message_vision(CYN "$N" CYN "Ïò$n" CYN 
-                               "´òÌıÓĞ¹Ø¡º" HIG + topic + NOR CYN "¡»"
-                               "µÄÏûÏ¢£¬µ«ÊÇ$pÏÔÈ»Ìı²»¶®ÈË»°¡£\n" NOR, me, ob);
+                message_vision(CYN "$N" CYN "å‘$n" CYN 
+                               "æ‰“è½æœ‰é—œã€" HIG + topic + NOR CYN "ã€"
+                               "çš„æ¶ˆæ¯ï¼Œä½†æ˜¯$pé¡¯ç„¶è½ä¸æ‡‚äººè©±ã€‚\n" NOR, me, ob);
                 return 1;
         }
 
         if (! INQUIRY_D->parse_inquiry(me, ob, topic))
         if( query("id", ob) != "you xun" )
-                message_vision(CYN "$N" CYN "Ïò$n" CYN "´òÌıÓĞ¹Ø¡º" HIG +
-                               topic + NOR CYN "¡»µÄÏûÏ¢¡£\n" NOR, me, ob);
+                message_vision(CYN "$N" CYN "å‘$n" CYN "æ‰“è½æœ‰é—œã€" HIG +
+                               topic + NOR CYN "ã€çš„æ¶ˆæ¯ã€‚\n" NOR, me, ob);
 
         if (! living(ob))
         {
-                message_vision("µ«ÊÇºÜÏÔÈ»µÄ£¬$nÏÖÔÚµÄ×´¿öÃ»ÓĞ°ì·¨¸ø$NÈÎºÎ´ğ¸²¡£\n",
+                message_vision("ä½†æ˜¯å¾ˆé¡¯ç„¶çš„ï¼Œ$nç¾åœ¨çš„ç‹€æ³æ²’æœ‰è¾¦æ³•çµ¦$Nä»»ä½•ç­”è¦†ã€‚\n",
                         me, ob);
                 return 1;
         }
@@ -111,8 +111,8 @@ int main(object me, string arg)
 
                 if (stringp(msg))
                 {
-                        // message_vision(CYN "$N¶Ô$nËµµÀ£º" + msg + "\n" NOR, ob, me);
-                        tell_object(me, CYN + ob->name() + CYN "¶ÔÄãËµµÀ£º" + msg + "\n" NOR);
+                        // message_vision(CYN "$Nå°$nèªªé“ï¼š" + msg + "\n" NOR, ob, me);
+                        tell_object(me, CYN + ob->name() + CYN "å°ä½ èªªé“ï¼š" + msg + "\n" NOR);
                         return 1;
                 }
         } else
@@ -126,7 +126,7 @@ int main(object me, string arg)
         return 1;
 }
 
-// ´Ó npc ÉíÉÏ¶ÁÈ¡ inquiry
+// å¾ npc èº«ä¸Šè®€å– inquiry
 string query_inquiry(object me, object ob)
 {
         int i = 0;
@@ -140,32 +140,32 @@ string query_inquiry(object me, object ob)
                 for (i = 0; i < sizeof(indexs); i++)
                 {
                         //str = indexs[i] + " " + str;
-                        str += HIY "µÚ"+chinese_number(i+1)+"Ìõ£º"HIG+indexs[i]+"\n" NOR;
+                        str += HIY "ç¬¬"+chinese_number(i+1)+"æ¢ï¼š"HIG+indexs[i]+"\n" NOR;
                 }
-                str = "ÓĞ¹ØÓÚ\n" + str + "\nÕâĞ©ÊÂÇé£¬ÄãÈôÏëÖªµÀµÄ»°¿ÉÒÔÎÊÎÒ£¡";
-                tell_room(environment(me), CYN + ob->name() + "ÔÚ" + me->name() + "¶ú±ßĞ¡ÉùµØËµÁËĞ©»°¡£\n" NOR, ({ me, ob }));
-                tell_object( me, GRN + ob->name() + "ÔÚÄãµÄ¶ú±ßÇÄÉùËµµÀ£º" + str + "\n" NOR);
+                str = "æœ‰é—œäº\n" + str + "\né€™äº›äº‹æƒ…ï¼Œä½ è‹¥æƒ³çŸ¥é“çš„è©±å¯ä»¥å•æˆ‘ï¼";
+                tell_room(environment(me), CYN + ob->name() + "åœ¨" + me->name() + "è€³é‚Šå°è²åœ°èªªäº†äº›è©±ã€‚\n" NOR, ({ me, ob }));
+                tell_object( me, GRN + ob->name() + "åœ¨ä½ çš„è€³é‚Šæ‚„è²èªªé“ï¼š" + str + "\n" NOR);
                 return "\n";
         }
-        tell_object( me, ob->name(1) + "¶ÔÄãËµµÀ£ºÊµÔÚÊÇ¶Ô²»Æğ£¬ÎÒÊ²Ã´Ò²²»ÖªµÀÑ½£¡\n");
+        tell_object( me, ob->name(1) + "å°ä½ èªªé“ï¼šå¯¦åœ¨æ˜¯å°ä¸èµ·ï¼Œæˆ‘ä»€éº¼ä¹Ÿä¸çŸ¥é“å‘€ï¼\n");
         return "\n";
 }
 
 int help(object me)
 {
         write( @HELP
-Ö¸Áî¸ñÊ½: ask <someone> about <something>
+æŒ‡ä»¤æ ¼å¼: ask <someone> about <something>
 
-Õâ¸öÖ¸ÁîÔÚ½âÃÕÊ±ºÜÖØÒª, Í¨³£±ØĞë½åÓÉ´ËÒ»Ö¸Áî²ÅÄÜ
-»ñµÃ½øÒ»²½µÄ×ÊÑ¶¡£
-Ô¤ÉèµÄÑ¯ÎÊÖ÷Ìâ:
+é€™å€‹æŒ‡ä»¤åœ¨è§£è¬æ™‚å¾ˆé‡è¦, é€šå¸¸å¿…é ˆè—‰ç”±æ­¤ä¸€æŒ‡ä»¤æ‰èƒ½
+ç²å¾—é€²ä¸€æ­¥çš„è³‡è¨Šã€‚
+é è¨­çš„è©¢å•ä¸»é¡Œ:
         here
         name
         all
         clue
         rumor
 
-ÆäÖĞµÄabout¿ÉÒÔÊ¡ÂÔ¡£
+å…¶ä¸­çš„aboutå¯ä»¥çœç•¥ã€‚
 HELP );
         return 1;
 }

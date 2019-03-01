@@ -3,13 +3,13 @@ inherit NPC;
 
 void create()
 {
-        set_name("·âÍòÀï", ({"feng wanli", "feng", "wanli"}));
-        set("nickname", HIR "·ç»ðÉñÁú" NOR);
-        set("long", "ËûÊÇÁèÏö³ÇµÚÁù´úµÜ×Ó·âÍòÀï£¬ÊÇµÚÁù´úµÜ×ÓÖÐ\n"
-                    "×îÎª³öÀà°ÎÝÍµÄÈËÎï¡£Æä½£·¨¸ÕÃÍÑ¸½Ý£¬Èç¿ñ·ç\n"
-                    "ËÆÁÒ»ð£¬Òò´ËµÃÁË¸ö·ç»ðÉñÁúµÄÍâºÅ¡£µ«²»ÖªÎª\n"
-                    "ºÎ£¬ËûÉÙÁËÒ»Ö»ÊÖ±Û,ÑÛÖÐÈ«ÊÇ·ßÅ­»ÚºÞÖ®É«¡£\n");
-        set("gender", "ÄÐÐÔ");
+        set_name("å°è¬è£¡", ({"feng wanli", "feng", "wanli"}));
+        set("nickname", HIR "é¢¨ç«ç¥žé¾" NOR);
+        set("long", "ä»–æ˜¯å‡Œéœ„åŸŽç¬¬å…­ä»£å¼Ÿå­å°è¬è£¡ï¼Œæ˜¯ç¬¬å…­ä»£å¼Ÿå­ä¸­\n"
+                    "æœ€ç‚ºå‡ºé¡žæ‹”èƒçš„äººç‰©ã€‚å…¶åŠæ³•å‰›çŒ›è¿…æ·ï¼Œå¦‚ç‹‚é¢¨\n"
+                    "ä¼¼çƒˆç«ï¼Œå› æ­¤å¾—äº†å€‹é¢¨ç«ç¥žé¾çš„å¤–è™Ÿã€‚ä½†ä¸çŸ¥ç‚º\n"
+                    "ä½•ï¼Œä»–å°‘äº†ä¸€åªæ‰‹è‡‚,çœ¼ä¸­å…¨æ˜¯æ†¤æ€’æ‚”æ¨ä¹‹è‰²ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 34);
         set("attitude", "friendly");
         set("shen_type", 1);
@@ -50,7 +50,7 @@ void create()
         prepare_skill("strike", "piaoxu-zhang");
         prepare_skill("cuff", "lingxiao-quan");
 
-        create_family("ÁèÏö³Ç", 6, "µÜ×Ó");
+        create_family("å‡Œéœ„åŸŽ", 6, "å¼Ÿå­");
 
         set("chat_chance_combat", 120);
         set("chat_msg_combat", ({
@@ -70,19 +70,19 @@ void create()
 
 void attempt_apprentice(object ob)
 {
-        command("say ÎÒ²»ÊÕÍ½£¬¿ì¸øÎÒ¹ö¿ª£¡");
+        command("say æˆ‘ä¸æ”¶å¾’ï¼Œå¿«çµ¦æˆ‘æ»¾é–‹ï¼");
 }
 
 int accept_fight(object who)
 {
-        command("say ±ðÒÔÎªÎÒÉÙÁËÒ»±Û±ãºÃÆÛ¸º£¬¸øÎÒ¹ö¿ª£¡");
+        command("say åˆ¥ä»¥ç‚ºæˆ‘å°‘äº†ä¸€è‡‚ä¾¿å¥½æ¬ºè² ï¼Œçµ¦æˆ‘æ»¾é–‹ï¼");
         return 0;
 }
 
 int accept_hit(object me)
 {
         object obj = this_object();
-        command("say ÎÞ³ÜÖ®Í½£¬±ðÒÔÎªÎÒÉÙÁËÒ»±Û±ãÄÜÈÎÈËÔ×¸î£¬ÊÜËÀ°É£¡\n");
+        command("say ç„¡æ¥ä¹‹å¾’ï¼Œåˆ¥ä»¥ç‚ºæˆ‘å°‘äº†ä¸€è‡‚ä¾¿èƒ½ä»»äººå®°å‰²ï¼Œå—æ­»å§ï¼\n");
         this_player()->kill_ob(obj);
         kill_ob(me);
         return 1;

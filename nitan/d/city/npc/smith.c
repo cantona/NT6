@@ -8,13 +8,13 @@ mixed  ask_back();
 
 void create()
 {
-        set_name("Ìú½³", ({ "tie jiang", "tie", "smith" }));
-        set("title", "Ìú½³ÆÌÀÏ°å");
+        set_name("éµåŒ ", ({ "tie jiang", "tie", "smith" }));
+        set("title", "éµåŒ èˆ–è€æ¿");
         set("shen_type", 1);
 
-        set("gender", "ÄÐÐÔ" );
+        set("gender", "ç”·æ€§" );
         set("age", 33);
-        set("long", "Ìú½³ÕýÓÃÌúÇ¯¼Ð×¡Ò»¿éºìÈÈµÄÌú¿é·Å½øÂ¯ÖÐ¡£\n");
+        set("long", "éµåŒ æ­£ç”¨éµé‰—å¤¾ä½ä¸€å¡Šç´…ç†±çš„éµå¡Šæ”¾é€²çˆä¸­ã€‚\n");
 
         set("combat_exp", 400);
         set("attitude", "friendly");
@@ -51,7 +51,7 @@ void create()
         }));
 
         set("inquiry", ([
-                "Ñªº£ÎÞ±ß" : (: ask_back :),
+                "è¡€æµ·ç„¡é‚Š" : (: ask_back :),
         ]));
 
         setup();
@@ -64,8 +64,8 @@ varargs int receive_damage(string type, int n, object who)
         if (! objectp(who) || ! interactive(who) || who == this_object())
                 return 0;
 
-        tell_object(who, HIR "Äã·¢ÏÖ" + name() +
-                    HIR "¹îÃØÒ»Ð¦£¬ºöÈ»¾õµÃÒ»ÕóÐÄ¼Â£¬ÉñÖÇÒ»Õó»Ðã±¡£\n" NOR);
+        tell_object(who, HIR "ä½ ç™¼ç¾" + name() +
+                    HIR "è©­ç§˜ä¸€ç¬‘ï¼Œå¿½ç„¶è¦ºå¾—ä¸€é™£å¿ƒæ‚¸ï¼Œç¥žæ™ºä¸€é™£ææƒšã€‚\n" NOR);
         return who->receive_damage(type, n, this_object());
 }
 
@@ -74,8 +74,8 @@ varargs int receive_wound(string type, int n, object who)
         if (! objectp(who) || ! interactive(who) || who == this_object())
                 return 0;
 
-        tell_object(who, RED "Äãºö¼û" + name() +
-                    RED "èîèî¹ÖÐ¦£¬Ö»¾õµÃ»ëÉí¶¼ÊÇÒ»Í´£¬Ö±Èë¹ÇËèÉî´¦¡£\n" NOR);
+        tell_object(who, RED "ä½ å¿½è¦‹" + name() +
+                    RED "æ¡€æ¡€æ€ªç¬‘ï¼Œåªè¦ºå¾—æ¸¾èº«éƒ½æ˜¯ä¸€ç—›ï¼Œç›´å…¥éª¨é«“æ·±è™•ã€‚\n" NOR);
         return who->receive_wound(type, n, this_object());
 }
 
@@ -84,22 +84,22 @@ mixed ask_back()
         object me;
 
         me = this_player();
-        if( query("family/family_name", me) != "Ñªµ¶ÃÅ" )
+        if( query("family/family_name", me) != "è¡€åˆ€é–€" )
         {
-                message_vision("$N×Ô¹Ë×ÔµÄ¸É»î£¬ºÃÏóÃ»ÓÐÌý¼û$nÔÚËµÊ²Ã´¡£\n",
+                message_vision("$Nè‡ªé¡§è‡ªçš„å¹¹æ´»ï¼Œå¥½è±¡æ²’æœ‰è½è¦‹$nåœ¨èªªä»€éº¼ã€‚\n",
                                this_object(), me);
                 return -1;
         }
 
-        message_vision("$NÃÍÈ»Ì§ÆðÍ·À´£¬ÉÏÉÏÏÂÏÂ´òÁ¿ÁËÒ»»á"
-                       "¶ù$n£¬ÑÛ½ÇÎ¢Î¢Ò»¶¯£¬\n·ÅÏÂÊÖÖÐµÄ»î"
-                       "¼Æ£¬µÍÉùµÀ£º¿ì¸úÎÒÀ´¡£\nËµ°Õ£¬$NÁì"
-                       "×Å$n¼±¼±Ã¦Ã¦µÄ³¯ºóÃæ×ßÈ¥¡£\n", this_object(), me);
-        tell_object(me, "Äã¸ú×Å" + name() + "¼±¼±µÄ×ß×Å£¬À´µ½ÁË"
-                    "Ò»´¦ÃØµÀ£¬" + name() + "Ö¸×ÅÇ°ÃæµÀ£º¡°Ò»Ö±×ß"
-                    "¾ÍÐÐÁË£¬È¥°É£¡¡±\n");
-        tell_object(me, HIW "Äã×ßÁËºÜ¾Ã£¬Ô½À´Ô½Àä£¬ºöÈ»ÑÛÇ°Ò»ÁÁ£¬"
-                    "ÄãÒÑ¾­¿´µ½ÁËÑô¹â£¬Ö»¼û¸½½üµÄ»ýÑ©Ó³µÃÑÛ»¨çÔÂÒ¡£\n" NOR);
+        message_vision("$NçŒ›ç„¶æŠ¬èµ·é ­ä¾†ï¼Œä¸Šä¸Šä¸‹ä¸‹æ‰“é‡äº†ä¸€æœƒ"
+                       "å…’$nï¼Œçœ¼è§’å¾®å¾®ä¸€å‹•ï¼Œ\næ”¾ä¸‹æ‰‹ä¸­çš„æ´»"
+                       "è¨ˆï¼Œä½Žè²é“ï¼šå¿«è·Ÿæˆ‘ä¾†ã€‚\nèªªç½·ï¼Œ$Né ˜"
+                       "è‘—$næ€¥æ€¥å¿™å¿™çš„æœå¾Œé¢èµ°åŽ»ã€‚\n", this_object(), me);
+        tell_object(me, "ä½ è·Ÿè‘—" + name() + "æ€¥æ€¥çš„èµ°è‘—ï¼Œä¾†åˆ°äº†"
+                    "ä¸€è™•ç§˜é“ï¼Œ" + name() + "æŒ‡è‘—å‰é¢é“ï¼šâ€œä¸€ç›´èµ°"
+                    "å°±è¡Œäº†ï¼ŒåŽ»å§ï¼â€\n");
+        tell_object(me, HIW "ä½ èµ°äº†å¾ˆä¹…ï¼Œè¶Šä¾†è¶Šå†·ï¼Œå¿½ç„¶çœ¼å‰ä¸€äº®ï¼Œ"
+                    "ä½ å·²ç¶“çœ‹åˆ°äº†é™½å…‰ï¼Œåªè¦‹é™„è¿‘çš„ç©é›ªæ˜ å¾—çœ¼èŠ±ç¹šäº‚ã€‚\n" NOR);
         me->move("/d/xuedao/sroad8");
         return -1;
 }

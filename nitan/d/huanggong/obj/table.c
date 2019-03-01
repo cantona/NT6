@@ -6,14 +6,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name("×À×Ó", ({ "zhuo zi", "table", "zhuo" }) );
+        set_name("æ¡Œå­", ({ "zhuo zi", "table", "zhuo" }) );
         set_weight(3000);
         set_max_encumbrance(5000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "ÕÅ");
-                set("long", "ÕâÊÇÒ»ÕÅºÜÆÕÍ¨µÄ×À×Ó¡£\n");
+                set("unit", "å¼µ");
+                set("long", "é€™æ˜¯ä¸€å¼µå¾ˆæ™®é€šçš„æ¡Œå­ã€‚\n");
                 set("value", 1000);
                 set("material", "wood");
                 set("no_get",1);

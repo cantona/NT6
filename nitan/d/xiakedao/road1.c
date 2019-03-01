@@ -1,13 +1,13 @@
-// /d/xiakedao/road1.c ���͵� ɽ·1
+// /d/xiakedao/road1.c 俠客島 山路1
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "ɽ·");
+        set("short", "山路");
         set("long", @LONG
-������ʯ�̳ɵ�С·�ϣ��Ų�ʮ����ݡ����Զ������֣�֦Ҷ��
-����գ��������ĺܲ������������ȸߴ����������ķ������һƬ��
+走在青石舖成的小路上，腳步十分輕捷。兩旁都是密林，枝葉遮
+天蔽日，陰沉沉的很不舒服。林中鳥雀嘰喳，與呼呼的風聲混成一片。
 LONG );
         set("outdoors", "xiakedao");
         set("exits", ([

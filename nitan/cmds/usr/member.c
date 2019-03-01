@@ -17,12 +17,12 @@ int main(object me, string arg)
 
         if( time()-query_temp("last_member", me)<3 && 
             arg != "?" && ! wizardp(me))
-                return notify_fail("ÏµÍ³Ã¦£¬ÇëÉÔºóÔÙÊÔ£¡\n");
+                return notify_fail("ç³»çµ±å¿™ï¼Œè«‹ç¨å¾Œå†è©¦ï¼\n");
 
         if (arg != "?" && ! wizardp(me))
                 set_temp("last_member", time(), me);
 
-        // ½öÔÊĞí·Ç»áÔ±Ê¹ÓÃmember ?, member ??, member stats, member show goodsÖ¸Áî
+        // åƒ…å…è¨±éæœƒå“¡ä½¿ç”¨member ?, member ??, member stats, member show goodsæŒ‡ä»¤
         if( !MEMBER_D->is_member(query("id", me)) )
         {
                 if (! arg)return help(me);
@@ -90,7 +90,7 @@ int main(object me, string arg)
         case "buy":
                 if (! GOODS_D->buy_goods(me, str2))
                 {
-                        write("¹ºÂòÊ§°Ü£¡\n");
+                        write("è³¼è²·å¤±æ•—ï¼\n");
                         return 1;
                 }
                 write("Successful!\n");
@@ -103,14 +103,14 @@ int main(object me, string arg)
                 me_id=query("id", me);
 
                 if (me_id == tar_id)
-                        return notify_fail("Äã°×³Õ°¡£¬¸ø×Ô¼º×ªÕÊ£¡\n");
+                        return notify_fail("ä½ ç™½ç—´å•Šï¼Œçµ¦è‡ªå·±è½‰å¸³ï¼\n");
 
                 if (amount < 1 || amount > 100000)
-                        return notify_fail("Ã¿´Î×ªÕÊµÄµ¥Î»±ØĞëÔÚ 1 ÖÁ 100000 Ö®¼ä£¡\n");
+                        return notify_fail("æ¯æ¬¡è½‰å¸³çš„å–®ä½å¿…é ˆåœ¨ 1 è‡³ 100000 ä¹‹é–“ï¼\n");
 
                 if (! MEMBER_D->db_transfer_member(me_id, tar_id, amount))
                 {
-                        write("×ªÕÊÊ§°Ü£¡\n");
+                        write("è½‰å¸³å¤±æ•—ï¼\n");
                         return 1;
                 }
                 write("Successful!\n");
@@ -123,13 +123,13 @@ int main(object me, string arg)
                 if (sscanf(str2, "%s %s", tar_id, info) != 2)
                         tar_id = str2;
 
-                // ¼ì²é¶Ô·½ÊÇ·ñÎª»áÔ±
+                // æª¢æŸ¥å°æ–¹æ˜¯å¦ç‚ºæœƒå“¡
                 if (! MEMBER_D->is_member(tar_id))
-                        return notify_fail("Ä¿±êÎª·Ç»áÔ±£¬ÎŞ·¨²éÑ¯£¡\n");
+                        return notify_fail("ç›®æ¨™ç‚ºéæœƒå“¡ï¼Œç„¡æ³•æŸ¥è©¢ï¼\n");
 
                 tar = UPDATE_D->global_find_player(tar_id);
                 if (! objectp(tar))
-                        return notify_fail("Ã»ÓĞÕâ¸öÍæ¼Ò£¡\n");
+                        return notify_fail("æ²’æœ‰é€™å€‹ç©å®¶ï¼\n");
 
                 if( !info ) info = "info";
                 MEMBER_D->show_member_info(tar, info);
@@ -144,7 +144,7 @@ int main(object me, string arg)
 
                 if (! MEMBER_D->db_remove_member(str2))
                 {
-                        write("É¾³ı»áÔ±Ê§°Ü£¡\n");
+                        write("åˆªé™¤æœƒå“¡å¤±æ•—ï¼\n");
                         return 1;
                 }
                 write("OK.\n");
@@ -159,21 +159,21 @@ int main(object me, string arg)
 
 int help (object me)
 {
-        write(WHT "¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
+        write(WHT "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
-" HIM "ÊäÈëÖ¸Áî£º member show info                     ÏÔÊ¾»áÔ±ÏµÍ³Ãæ°å½çÃæ
-ÊäÈëÖ¸Áî£º member show payinfo                  ÏÔÊ¾ÀúÊ·³äÖµ½»·ÑĞÅÏ¢
-ÊäÈëÖ¸Áî£º member show buyinfo                  ÏÔÊ¾ÀúÊ·¹ºÂòÎïÆ·ĞÅÏ¢
-ÊäÈëÖ¸Áî£º member show zhuaninfo                ÏÔÊ¾ÀúÊ·×ªÕÊ¼ÇÂ¼ĞÅÏ¢
-ÊäÈëÖ¸Áî£º member show goods                    ÏÔÊ¾ÍõÕßÉÌµê³öÊÛÎïÆ·
-ÊäÈëÖ¸Áî£º member check <id>                    Î×Ê¦Ö¸Áî¼ì²é»áÔ±ĞÅÏ¢
-ÊäÈëÖ¸Áî£º member stats                         ÁĞ³öËùÓĞ»áÔ±Ãûµ¥ĞÅÏ¢
-ÊäÈëÖ¸Áî£º member zhuan <amount> to <id>        ×ªÕÊÍõÕß±Ò¸øÆäËûµÄID
+" HIM "è¼¸å…¥æŒ‡ä»¤ï¼š member show info                     é¡¯ç¤ºæœƒå“¡ç³»çµ±é¢æ¿ç•Œé¢
+è¼¸å…¥æŒ‡ä»¤ï¼š member show payinfo                  é¡¯ç¤ºæ­·å²å……å€¼äº¤è²»ä¿¡æ¯
+è¼¸å…¥æŒ‡ä»¤ï¼š member show buyinfo                  é¡¯ç¤ºæ­·å²è³¼è²·ç‰©å“ä¿¡æ¯
+è¼¸å…¥æŒ‡ä»¤ï¼š member show zhuaninfo                é¡¯ç¤ºæ­·å²è½‰å¸³è¨˜éŒ„ä¿¡æ¯
+è¼¸å…¥æŒ‡ä»¤ï¼š member show goods                    é¡¯ç¤ºç‹è€…å•†åº—å‡ºå”®ç‰©å“
+è¼¸å…¥æŒ‡ä»¤ï¼š member check <id>                    å·«å¸«æŒ‡ä»¤æª¢æŸ¥æœƒå“¡ä¿¡æ¯
+è¼¸å…¥æŒ‡ä»¤ï¼š member stats                         åˆ—å‡ºæ‰€æœ‰æœƒå“¡åå–®ä¿¡æ¯
+è¼¸å…¥æŒ‡ä»¤ï¼š member zhuan <amount> to <id>        è½‰å¸³ç‹è€…å¹£çµ¦å…¶ä»–çš„ID
 
-" WHT "¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
-" HIC "ÌÔ±¦³åÖµÁ´½ÓµØÖ·:
+" WHT "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+" HIC "æ·˜å¯¶æ²–å€¼éˆæ¥åœ°å€:
 " HIR "http://shop33371514.taobao.com\n
-" HIG "Ïà¹Ø²Î¿¼ÎÄ¼ş£ºhelp ntstore, help member\n" NOR);
+" HIG "ç›¸é—œåƒè€ƒæ–‡ä»¶ï¼šhelp ntstore, help member\n" NOR);
 
         return 1;
 }

@@ -4,12 +4,12 @@ inherit NPC;
 
 void create()
 {
-        set_name("¿µÇ×Íõ", ({ "kang qinwang", "kang"}));
-        set("title", HIY "µ±³¯Ç×Íõ" NOR);
-        set("gender", "ÄĞĞÔ" );
+        set_name("åº·è¦ªç‹", ({ "kang qinwang", "kang"}));
+        set("title", HIY "ç•¶æœè¦ªç‹" NOR);
+        set("gender", "ç”·æ€§" );
         set("age", 42);
-        set("long", "\nÖ»¼ûËûÒ»Éí½õÒÂ£¬Ğ¦ÈİÂúÃæ£¬ÈÎË­¼ûÁËËû¶¼Éú²»ÆğÆøÀ´¡£\n"+
-                      "´ËÈËÉîÚÏÎª¹ÙÖ®µÀ£¬¼«ÉÆ²ìÑÔ¹ÛÉ«¡¢ÁïĞëÅÄÂí£¬ÆÄµÃ»ÊµÛ\n»¶ĞÄ¡£\n");
+        set("long", "\nåªè¦‹ä»–ä¸€èº«éŒ¦è¡£ï¼Œç¬‘å®¹æ»¿é¢ï¼Œä»»èª°è¦‹äº†ä»–éƒ½ç”Ÿä¸èµ·æ°£ä¾†ã€‚\n"+
+                      "æ­¤äººæ·±è«³ç‚ºå®˜ä¹‹é“ï¼Œæ¥µå–„å¯Ÿè¨€è§€è‰²ã€æºœé ˆæ‹é¦¬ï¼Œé —å¾—çš‡å¸\næ­¡å¿ƒã€‚\n");
         set("shen_type", 1);
         set("combat_exp", 50000);
         set("str", 17);
@@ -43,11 +43,11 @@ void greeting(object ob)
         if( query("meili", ob)<20 )
         {
                 if (userp(ob))
-                        message_vision("\n¿µÇ×ÍõÒ»¼û$N, ¶ÙÊ±²ªÈ»´óÅ­£¬½ĞµÀ£º¡°À´ÈË°¡£¡½«ÕâØË¸øÎÒÄÃÏÂ£¡¡±\n", ob);
+                        message_vision("\nåº·è¦ªç‹ä¸€è¦‹$N, é “æ™‚å‹ƒç„¶å¤§æ€’ï¼Œå«é“ï¼šâ€œä¾†äººå•Šï¼å°‡é€™å»çµ¦æˆ‘æ‹¿ä¸‹ï¼â€\n", ob);
 
                 if(! present("shi", environment(ob)))
                 {
-                        message_vision("µÇÊ±ÃÅÍâ³å½ø¼¸¸öÊÌÎÀ£¬»Óµ¶Ïò$NÖ±ÆË¹ıÀ´¡£\n",ob);
+                        message_vision("ç™»æ™‚é–€å¤–æ²–é€²å¹¾å€‹ä¾è¡›ï¼Œæ®åˆ€å‘$Nç›´æ’²éä¾†ã€‚\n",ob);
                         man = new("/d/beijing/npc/shiwei2.c");
                         man->move(environment(ob));
                         man = new("/d/beijing/npc/shiwei2.c");
@@ -61,19 +61,19 @@ void greeting(object ob)
         switch (random(5))
         {
                 case 0:
-                        message_vision("\n$N¸ÕÒ»½øÃÅ, ¿µÇ×Íõ±ãÇÀ×ÅÓ­ÁË³öÀ´£¬Ğ¦µÀ£º¡°ÕâÎ»" +
-                                       RANK_D->query_respect(ob) + "£¬Çë½øÇë½ø¡£\n", ob);
+                        message_vision("\n$Nå‰›ä¸€é€²é–€, åº·è¦ªç‹ä¾¿æ¶è‘—è¿äº†å‡ºä¾†ï¼Œç¬‘é“ï¼šâ€œé€™ä½" +
+                                       RANK_D->query_respect(ob) + "ï¼Œè«‹é€²è«‹é€²ã€‚\n", ob);
                         if( query("meili", ob)<100 )
                         {
                                 addn("meili", 10, ob);
-                                message_vision(HIC "$NµÄ÷ÈÁ¦ÖµÌá¸ßÁË£¡\n" NOR, ob);
-                                command("tell"+query("id", ob)+"ÄãÏÖÔÚµÄ÷ÈÁ¦ÖµÊÇ"+
-                                        chinese_number(query("meili", ob))+"µã");
+                                message_vision(HIC "$Nçš„é­…åŠ›å€¼æé«˜äº†ï¼\n" NOR, ob);
+                                command("tell"+query("id", ob)+"ä½ ç¾åœ¨çš„é­…åŠ›å€¼æ˜¯"+
+                                        chinese_number(query("meili", ob))+"é»");
                         }
                         break;
                 default:
-                        say("¿µÇ×ÍõĞ¦µÀ£º²»ÖªÕâÎ»" + RANK_D->query_respect(ob) +
-                            "£¬¹âÁÙº®ÉáÓĞºÎ¹ó¸É£¿\n");
+                        say("åº·è¦ªç‹ç¬‘é“ï¼šä¸çŸ¥é€™ä½" + RANK_D->query_respect(ob) +
+                            "ï¼Œå…‰è‡¨å¯’èˆæœ‰ä½•è²´å¹¹ï¼Ÿ\n");
                         break;
         }
 }

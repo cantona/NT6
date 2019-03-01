@@ -1,15 +1,15 @@
-// NPC :yu_guangbiao.c Óô¹â±ê
+// NPC :yu_guangbiao.c é¬±å…‰æ¨™
 // By River 98/12
 inherit NPC;
 #include <ansi.h>
 
-#define QUESTDIR1 "quest/ÌìÁú°Ë²¿/Áè²¨Î¢²½Æª/"
+#define QUESTDIR1 "quest/å¤©é¾å…«éƒ¨/å‡Œæ³¢å¾®æ­¥ç¯‡/"
 
 void create()
 {
-        set_name("Óô¹â±ê", ({ "yu guangbiao", "yu", "guangbiao"}));
-        set("title","ÎÞÁ¿½£¶«×ÚµÜ×Ó");              
-        set("gender", "ÄÐÐÔ" );
+        set_name("é¬±å…‰æ¨™", ({ "yu guangbiao", "yu", "guangbiao"}));
+        set("title","ç„¡é‡åŠæ±å®—å¼Ÿå­");              
+        set("gender", "ç”·æ€§" );
         set("age", 36);
         set("str", 27);
         set("con", 23);
@@ -26,7 +26,7 @@ void create()
         set("max_neili", 1000);      
         set("unique", 1);
         
-        set("long","ËûÊÇÎÞÁ¿½£¶«×ÚµÄµÜ×Ó¡£\n");
+        set("long","ä»–æ˜¯ç„¡é‡åŠæ±å®—çš„å¼Ÿå­ã€‚\n");
         set("combat_exp", 200000);
         set("shen", 800); 
 
@@ -54,15 +54,15 @@ void die()
 
         if(objectp(me)&& !present("wu guangsheng", environment(me))&& me->query(QUESTDIR1+"start")&& !me->query(QUESTDIR1+"wuliangover")&& !me->query_temp(QUESTDIR1+"jianying") || me->query_temp("marks/ljg/gotolqs")  )
 	{
-    tell_object(me,HIY"\nÕâ"+ob->name()+"ÑÛ¼û¾ÍÒªÉ¥Ãü£¬Í»È»¿ª¿ÚÏòÄãÇóÈÄ£¬¸æËßÄã¹ØÓÚºóÉ½½£Ó°µÄÃØÃÜ¡£\n"NOR);
-	  tell_room(environment(me),HIC"\nÖ»¼û£¬Óô¹â±êËÆºõÖØÉËÔÚÉí£¬Ïò"+me->query("name")+"ËÆºõÌÖ½Ì×ÅÊ²Ã´¡£\n"NOR, ({ me }));
+    tell_object(me,HIY"\né€™"+ob->name()+"çœ¼è¦‹å°±è¦å–ªå‘½ï¼Œçªç„¶é–‹å£å‘ä½ æ±‚é¥’ï¼Œå‘Šè¨´ä½ é—œäºŽå¾Œå±±åŠå½±çš„ç§˜å¯†ã€‚\n"NOR);
+	  tell_room(environment(me),HIC"\nåªè¦‹ï¼Œé¬±å…‰æ¨™ä¼¼ä¹Žé‡å‚·åœ¨èº«ï¼Œå‘"+me->query("name")+"ä¼¼ä¹Žè¨Žæ•™è‘—ä»€éº¼ã€‚\n"NOR, ({ me }));
 	  me->set_temp(QUESTDIR1+"jianying",1);
-    tell_object(me,HIY"\n°´"+ob->name()+"ËùËµ£¬ÕâºóÉ½Ò»¸öÇÍÑÂ±ß£¬Ò»¿é³£¼ûµ½±ÚÉÏ³£³öÏÖÎè½£µÄÈËÓ°£¬ÓÐÊ±ÊÇÄÐ×Ó£¬ÓÐÊ±ÊÇÅ®×Ó£¬\n"
-                       "ÓÐÊ±¸üÊÇÄÐÅ®¶ÔÊ¹£¬»¥Ïà»÷´Ì¡£Óñ±ÚÉÏËùÏÔÏÖµÄ½£·¨Ö®¾«£¬¾ÝËµ¼«Æä¸ßÃ÷£¬Ïà´«ÊÇÏÉÈËÊ¹½£¡£\n"NOR);
+    tell_object(me,HIY"\næŒ‰"+ob->name()+"æ‰€èªªï¼Œé€™å¾Œå±±ä¸€å€‹å³­å´–é‚Šï¼Œä¸€å¡Šå¸¸è¦‹åˆ°å£ä¸Šå¸¸å‡ºç¾èˆžåŠçš„äººå½±ï¼Œæœ‰æ™‚æ˜¯ç”·å­ï¼Œæœ‰æ™‚æ˜¯å¥³å­ï¼Œ\n"
+                       "æœ‰æ™‚æ›´æ˜¯ç”·å¥³å°ä½¿ï¼Œäº’ç›¸æ“Šåˆºã€‚çŽ‰å£ä¸Šæ‰€é¡¯ç¾çš„åŠæ³•ä¹‹ç²¾ï¼Œæ“šèªªæ¥µå…¶é«˜æ˜Žï¼Œç›¸å‚³æ˜¯ä»™äººä½¿åŠã€‚\n"NOR);
 
-    tell_object(me,HIC"\nÄãÌýÍê"+ob->name()+"Ö®ºó£¬ºÙºÙÁ½Éù£¬»¹ÊÇÊÖÏÂ²»ÁôÇéÃæ¡£\n"NOR);
-	  tell_room(environment(me),HIC"\nÓô¹â±êËµÍêºÜ¶àÖ®ºó£¬È»¶ø²»ÖªÎªºÎ£¬ËÆºõÆøÑªÒ»Õð£¬ºÃÏñÊ§È¥ÁËÊ²Ã´ËÆµÄ£¬ÂýÂýÎ®ÃÒµ¹µØ¡£\n"NOR, ({ me }));
-    message_vision(HIG"$nÑöÌì³¤Ì¾£¬ÎªÊ²Ã´°¡£¬ÎªÊ²Ã´£¬$N¾¹È»Èç´ËºÝÐÄ¡£\n"NOR, me, this_object());
+    tell_object(me,HIC"\nä½ è½å®Œ"+ob->name()+"ä¹‹å¾Œï¼Œå˜¿å˜¿å…©è²ï¼Œé‚„æ˜¯æ‰‹ä¸‹ä¸ç•™æƒ…é¢ã€‚\n"NOR);
+	  tell_room(environment(me),HIC"\né¬±å…‰æ¨™èªªå®Œå¾ˆå¤šä¹‹å¾Œï¼Œç„¶è€Œä¸çŸ¥ç‚ºä½•ï¼Œä¼¼ä¹Žæ°£è¡€ä¸€éœ‡ï¼Œå¥½åƒå¤±åŽ»äº†ä»€éº¼ä¼¼çš„ï¼Œæ…¢æ…¢èŽé¡å€’åœ°ã€‚\n"NOR, ({ me }));
+    message_vision(HIG"$nä»°å¤©é•·å˜†ï¼Œç‚ºä»€éº¼å•Šï¼Œç‚ºä»€éº¼ï¼Œ$Nç«Ÿç„¶å¦‚æ­¤ç‹ å¿ƒã€‚\n"NOR, me, this_object());
   }
   
   if( me->query_temp("marks/ljg/gotolqs") ) {

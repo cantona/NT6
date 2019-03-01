@@ -3,10 +3,10 @@ void create()
 {
         object item, con;
 
-        set("short", "Íò°²ËÂËÄÂ¥´óÌü");
+        set("short", "è¬å®‰å¯ºå››æ¨“å¤§å»³");
         set("long", @LONG
-ÕâÀïÊÇÍò°²ËÂËÄÂ¥µÄ´óÌü£¬Ïàµ±µÄ¿í³¨¡£Ò»¸öÃ÷ÑÞÉÙÅ®Õý×ùÖÐÌÃ£¬ÉÙÅ®Ç°·½
-ÓÐÒ»¿é¾Þ´óµÄºìÄ¾ÖÆÎäÆ÷¼Ü£¬×óÓÒÕ¾ÂúÁËÇ×±ø£¬ÅÅ³¡ºÜÊÇÆøÅÉ¡£
+é€™è£¡æ˜¯è¬å®‰å¯ºå››æ¨“çš„å¤§å»³ï¼Œç›¸ç•¶çš„å¯¬æ•žã€‚ä¸€å€‹æ˜Žè‰·å°‘å¥³æ­£åº§ä¸­å ‚ï¼Œå°‘å¥³å‰æ–¹
+æœ‰ä¸€å¡Šå·¨å¤§çš„ç´…æœ¨åˆ¶æ­¦å™¨æž¶ï¼Œå·¦å³ç«™æ»¿äº†è¦ªå…µï¼ŒæŽ’å ´å¾ˆæ˜¯æ°£æ´¾ã€‚
 LONG );
         set("exits", ([ 
                 "down" : "/d/tulong/yitian/was_lou3",

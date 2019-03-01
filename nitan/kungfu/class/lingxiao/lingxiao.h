@@ -2,24 +2,24 @@
 
 int permit_recruit(object ob)
 {
-        if( query("detach/ÁèÏö³Ç", ob) || query("betrayer/ÁèÏö³Ç", ob) )
+        if( query("detach/å‡Œéœ„åŸ", ob) || query("betrayer/å‡Œéœ„åŸ", ob) )
         {
-                command("say Äãµ±Äê¼ÈÈ»ÒÑ¾­Àë¿ªÁèÏö³Ç£¬ÏÖÔÚºÎ±ØÓÖÒª»ØÀ´£¿");
+                command("say ä½ ç•¶å¹´æ—¢ç„¶å·²ç¶“é›¢é–‹å‡Œéœ„åŸï¼Œç¾åœ¨ä½•å¿…åˆè¦å›ä¾†ï¼Ÿ");
                 return 0;
         }
 
         if( query("betrayer/times", ob) )
         {
-                command("say ÎÒÃÇÑ©É½ÁèÏö³Ç×îºİ¾ÍÊÇÄãÕâÑùµÄ±³ĞÅÆúÒåÖ®Í½£¡");
+                command("say æˆ‘å€‘é›ªå±±å‡Œéœ„åŸæœ€ç‹ å°±æ˜¯ä½ é€™æ¨£çš„èƒŒä¿¡æ£„ç¾©ä¹‹å¾’ï¼");
                 return 0;
         }
 
         if( query("family/family_name", ob) && 
-            query("family/family_name", ob) != "ÁèÏö³Ç" && 
-            query("family/family_name", ob) != "ĞşËØ×¯" && 
-            query("family/master_name", ob) != "Ê¯Çå" )
+            query("family/family_name", ob) != "å‡Œéœ„åŸ" && 
+            query("family/family_name", ob) != "ç„ç´ èŠ" && 
+            query("family/master_name", ob) != "çŸ³æ¸…" )
         {
-                command("say Äã¼ÈÈ»ÒÑ¾­ÓĞÁËÃûÊ¦Ö¸µã£¬»¹À´ÎÒÃÇÑ©É½½£ÅÉ¸ÉÂï£¿");
+                command("say ä½ æ—¢ç„¶å·²ç¶“æœ‰äº†åå¸«æŒ‡é»ï¼Œé‚„ä¾†æˆ‘å€‘é›ªå±±åŠæ´¾å¹¹å˜›ï¼Ÿ");
                 return 0;
         }
 

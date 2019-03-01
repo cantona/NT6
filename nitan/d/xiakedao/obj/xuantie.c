@@ -1,4 +1,4 @@
-// xuantie.c ĞşÌúÁî
+// xuantie.c ç„éµä»¤
 
 #include <armor.h>
 #include <ansi.h>
@@ -7,16 +7,16 @@ inherit NECK;
 
 void create()
 {
-        set_name(HIC "ĞşÌúÁî" NOR, ({ "xuantie ling", "ling" }));
-        set("long", "\nÕâÊÇÒ»¿é±ÌÂÌÉ«µÄÓñÅÆ£¬Ó¨½à¹âÂÌ£¬ÕæÊÇÒ»¿éºÃÓñ¡£\n"+
-         "ÕıÃæµñÁú¿Ì·ï£¬ÕıÖĞĞ´×ÅĞşÌúÁ½¸ö´ó×Ö¡£Õâ±ãÊÇ½­ºşÉÏ´«ËµµÄĞşÌúÁî¡£\n");
+        set_name(HIC "ç„éµä»¤" NOR, ({ "xuantie ling", "ling" }));
+        set("long", "\né€™æ˜¯ä¸€å¡Šç¢§ç¶ è‰²çš„ç‰ç‰Œï¼Œç‘©æ½”å…‰ç¶ ï¼ŒçœŸæ˜¯ä¸€å¡Šå¥½ç‰ã€‚\n"+
+         "æ­£é¢é›•é¾åˆ»é³³ï¼Œæ­£ä¸­å¯«è‘—ç„éµå…©å€‹å¤§å­—ã€‚é€™ä¾¿æ˜¯æ±Ÿæ¹–ä¸Šå‚³èªªçš„ç„éµä»¤ã€‚\n");
         set("weight", 300);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿é");
+                set("unit", "å¡Š");
                 set("value", 50000);
-                set("material", "Óñ");
+                set("material", "ç‰");
                 set("armor_prop/armor", 2);
                 set("female_only", 1);
         }

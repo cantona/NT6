@@ -1,6 +1,6 @@
 // cact.c
-// Ò»¸ö¶¯×÷º¯ÊıÖ»ÄÜÓÉÒ»¸öÎ¨Ò»µÄ¶¯´ÊÒıµ¼
-// Òª²»·ÖÎöÃüÁîÕóÁĞÌ«Âé·³£¬Ò²Ã»Ê²Ã´Êµ¼ÊÒâÒå¡£
+// ä¸€å€‹å‹•ä½œå‡½æ•¸åªèƒ½ç”±ä¸€å€‹å”¯ä¸€çš„å‹•è©å¼•å°
+// è¦ä¸åˆ†æå‘½ä»¤é™£åˆ—å¤ªéº»ç…©ï¼Œä¹Ÿæ²’ä»€éº¼å¯¦éš›æ„ç¾©ã€‚
 // by Find.
 
 #include <ansi.h>
@@ -50,21 +50,21 @@ int main(object me, string arg)
 
 	if(!n = sizeof(acts))
 	{
-		tell_object(me, "ÇëÉèÄãÒª¼ÓÈë¶¯×÷µÄ¶¯´Ê[3-10Ó¢ÎÄ×ÖÄ¸](q ÍË³ö)£º\n");
+		tell_object(me, "è«‹è¨­ä½ è¦åŠ å…¥å‹•ä½œçš„å‹•è©[3-10è‹±æ–‡å­—æ¯](q é€€å‡º)ï¼š\n");
 		input_to( (: set_action_verb :), me, env, acts);
 		return 1;
 	}
 
-	out = "Ä¿Ç°´ËµØÒÑ¾­¶¨ÒåµÄ¶¯×÷£º\n";
+	out = "ç›®å‰æ­¤åœ°å·²ç¶“å®šç¾©çš„å‹•ä½œï¼š\n";
 
 	out += list_msg(acts);
 
-	out += "ÇëÑ¡Ôñ²Ù×÷£º\n(1). É¾³ıÒ»¸ö¶¯×÷¡£\n";
+	out += "è«‹é¸æ“‡æ“ä½œï¼š\n(1). åˆªé™¤ä¸€å€‹å‹•ä½œã€‚\n";
 
 	if(n < max_action_per_room)
-		out += "(2). ¼ÓÈëÒ»¸ö¶¯×÷¡£\n(q). ÍË³ö£º";
+		out += "(2). åŠ å…¥ä¸€å€‹å‹•ä½œã€‚\n(q). é€€å‡ºï¼š";
 	else
-		out += "(q). ÍË³ö£º";
+		out += "(q). é€€å‡ºï¼š";
 
 	write(out);
 	input_to((: decide_action_do :), me, env, acts);
@@ -84,9 +84,9 @@ protected void decide_action_do(string str, object who, object env, mixed *acts)
 		return;
 	}
 
-	if(sizeof(str) && (str[0] == '1'))	// É¾³ı
+	if(sizeof(str) && (str[0] == '1'))	// åˆªé™¤
 	{
-		tell_object(who, "ÇëÊäÈëÓûÉ¾³ı¶¯×÷µÄ¶¯´Ê(q ÍË³ö)£º\n");
+		tell_object(who, "è«‹è¼¸å…¥æ¬²åˆªé™¤å‹•ä½œçš„å‹•è©(q é€€å‡º)ï¼š\n");
 		input_to( (: delete_action :), who, env, acts);
 		return;
 	}
@@ -95,29 +95,29 @@ protected void decide_action_do(string str, object who, object env, mixed *acts)
 	{
 		if(sizeof(acts) >= max_action_per_room)
 		{
-			tell_object(who, sprintf("ÕâÀïÒÑ¾­Éè¶¨ÁË%s¸ö¶¯×÷£¬²»ÄÜÔÙÉè¶¨ÁË¡£\n·Ç·¨²Ù×÷´íÎó¡£\n", chinese_number(max_action_per_room)));
+			tell_object(who, sprintf("é€™è£¡å·²ç¶“è¨­å®šäº†%så€‹å‹•ä½œï¼Œä¸èƒ½å†è¨­å®šäº†ã€‚\néæ³•æ“ä½œéŒ¯èª¤ã€‚\n", chinese_number(max_action_per_room)));
 			return;
 		}
-		tell_object(who, "ÇëÉèÄãÒª¼ÓÈë¶¯×÷µÄ¶¯´Ê[3-10Ó¢ÎÄ×ÖÄ¸](q ÍË³ö)£º\n");
+		tell_object(who, "è«‹è¨­ä½ è¦åŠ å…¥å‹•ä½œçš„å‹•è©[3-10è‹±æ–‡å­—æ¯](q é€€å‡º)ï¼š\n");
 		input_to( (: set_action_verb :), who, env, acts);
 		return;
 	}
 
-	out = "Ä¿Ç°´ËµØÒÑ¾­¶¨ÒåµÄ¶¯×÷£º\n";
+	out = "ç›®å‰æ­¤åœ°å·²ç¶“å®šç¾©çš„å‹•ä½œï¼š\n";
 
 	out += list_msg(acts);
 
-	out += "ÇëÑ¡Ôñ²Ù×÷£º\n(1). É¾³ıÒ»¸ö¶¯×÷¡£\n";
+	out += "è«‹é¸æ“‡æ“ä½œï¼š\n(1). åˆªé™¤ä¸€å€‹å‹•ä½œã€‚\n";
 
 	if(sizeof(acts) < max_action_per_room)
-		out += "(2). ¼ÓÈëÒ»¸ö¶¯×÷¡£\n(q). ÍË³ö£º";
+		out += "(2). åŠ å…¥ä¸€å€‹å‹•ä½œã€‚\n(q). é€€å‡ºï¼š";
 	else
-		out += "(q). ÍË³ö£º";
+		out += "(q). é€€å‡ºï¼š";
 
 	input_to((: decide_action_do :), who, env, acts);
 }
 
-// É¾³ı¶¯×÷
+// åˆªé™¤å‹•ä½œ
 protected void delete_action(string str, object who, object env, mixed *acts)
 {
 	string func, fname, content, f_sect, m_sect, e_sect, result, sf_sect, se_sect;
@@ -128,14 +128,14 @@ protected void delete_action(string str, object who, object env, mixed *acts)
 
 	if(!stringp(str) || !sizeof(str))
 	{
-		tell_object(who, "ÇëÊäÈëÓûÉ¾³ı¶¯×÷µÄ¶¯´Ê(q ÍË³ö)£º\n");
+		tell_object(who, "è«‹è¼¸å…¥æ¬²åˆªé™¤å‹•ä½œçš„å‹•è©(q é€€å‡º)ï¼š\n");
 		input_to( (: delete_action :), who, env, acts);
 		return;
 	}
 
 	if(!n = sizeof(acts))
 	{
-		tell_object(who, "´ËµØÃ»ÓĞ¶¨ÒåÈÎºÎ¶¯×÷¡£\nÒì³£´íÎó¡£\n");
+		tell_object(who, "æ­¤åœ°æ²’æœ‰å®šç¾©ä»»ä½•å‹•ä½œã€‚\nç•°å¸¸éŒ¯èª¤ã€‚\n");
 		return;
 	}
 
@@ -156,25 +156,25 @@ protected void delete_action(string str, object who, object env, mixed *acts)
 
 	if(!func)
 	{
-		tell_object(who, "´ËµØÃ»ÓĞ¶¨ÒåÕâ¸ö¶¯×÷¡£\n");
+		tell_object(who, "æ­¤åœ°æ²’æœ‰å®šç¾©é€™å€‹å‹•ä½œã€‚\n");
 		return;
 	}
 
 	if(environment(who) != env)
 	{
-		tell_object(who, "ÄãµÄÎ»ÖÃ·¢ÉúÁË±ä»¯£¬ĞŞ¸Ä±»Í£Ö¹¡£\n");
+		tell_object(who, "ä½ çš„ä½ç½®ç™¼ç”Ÿäº†è®ŠåŒ–ï¼Œä¿®æ”¹è¢«åœæ­¢ã€‚\n");
 		return;
 	}
 
 	if(!content = read_file(fname = base_name(env) +".c"))
 	{
-		tell_object(who, "ÎŞ·¨¶ÁÈëµµ°¸ÎÄ¼ş¡£\n");
+		tell_object(who, "ç„¡æ³•è®€å…¥æª”æ¡ˆæ–‡ä»¶ã€‚\n");
 		return;
 	}
 
 	if(!BUNCH_D->parse_function_body(ref content, "int", func, ref f_sect, ref m_sect, ref e_sect, 1))
 	{
-		tell_object(who, "ÎŞ·¨ÆÊÎöÄ¿µÄ·¿¼äµµ°¸£¬ĞŞ¸Ä±»Í£Ö¹¡£\n");
+		tell_object(who, "ç„¡æ³•å‰–æç›®çš„æˆ¿é–“æª”æ¡ˆï¼Œä¿®æ”¹è¢«åœæ­¢ã€‚\n");
 		return;
 	}
 
@@ -182,13 +182,13 @@ protected void delete_action(string str, object who, object env, mixed *acts)
 
 	if(!BUNCH_D->parse_function_body(ref content, "void", "init", ref f_sect, ref m_sect, ref e_sect, 0))
 	{
-		tell_object(who, "ÎŞ·¨ÆÊÎöÄ¿µÄ·¿¼äµµ°¸(2)£¬ĞŞ¸Ä±»Í£Ö¹¡£\n");
+		tell_object(who, "ç„¡æ³•å‰–æç›®çš„æˆ¿é–“æª”æ¡ˆ(2)ï¼Œä¿®æ”¹è¢«åœæ­¢ã€‚\n");
 		return;
 	}
 
 	if(!BUNCH_D->parse_set_value(ref m_sect, func, ref sf_sect, ref se_sect, "add_action"))
 	{
-		tell_object(who, "ÎŞ·¨ÆÊÎöÄ¿µÄ·¿¼äµµ°¸(3)£¬ĞŞ¸Ä±»Í£Ö¹¡£\n");
+		tell_object(who, "ç„¡æ³•å‰–æç›®çš„æˆ¿é–“æª”æ¡ˆ(3)ï¼Œä¿®æ”¹è¢«åœæ­¢ã€‚\n");
 		return;
 	}
 
@@ -197,7 +197,7 @@ protected void delete_action(string str, object who, object env, mixed *acts)
 		content = sprintf("%s\n%s\n", f_sect, e_sect);
 		if(!BUNCH_D->parse_function_body(ref content, "void", "init", ref f_sect, ref m_sect, ref e_sect, 1))
 		{
-			tell_object(who, "ÎŞ·¨ÆÊÎöÄ¿µÄ·¿¼äµµ°¸(2)£¬ĞŞ¸Ä±»Í£Ö¹¡£\n");
+			tell_object(who, "ç„¡æ³•å‰–æç›®çš„æˆ¿é–“æª”æ¡ˆ(2)ï¼Œä¿®æ”¹è¢«åœæ­¢ã€‚\n");
 			return;
 		}
 
@@ -210,7 +210,7 @@ protected void delete_action(string str, object who, object env, mixed *acts)
 
 	if(!BUNCH_D->parse_set_value(ref content, sprintf("%s_action_func", str), ref f_sect, ref e_sect))
 	{
-		tell_object(who, "ÎŞ·¨ÆÊÎöÄ¿µÄ·¿¼äµµ°¸(4)£¬ĞŞ¸Ä±»Í£Ö¹¡£\n");
+		tell_object(who, "ç„¡æ³•å‰–æç›®çš„æˆ¿é–“æª”æ¡ˆ(4)ï¼Œä¿®æ”¹è¢«åœæ­¢ã€‚\n");
 		return;
 	}
 
@@ -218,20 +218,20 @@ protected void delete_action(string str, object who, object env, mixed *acts)
 
 	if(!write_file(fname, result, 1))
 	{
-		tell_object(who, "ÎŞ·¨Ğ´ÈëÎÄ¼şÄÚÈİ£¬ĞŞ¸ÄÊ§°Ü¡£\n");
+		tell_object(who, "ç„¡æ³•å¯«å…¥æ–‡ä»¶å…§å®¹ï¼Œä¿®æ”¹å¤±æ•—ã€‚\n");
 		return;
 	}
 
 	if( !BUNCH_D->update_room(env) )
 	{
-		tell_object(who, "ÎŞ·¨ÔØÈë·¿¼ä£¬ĞŞ¸ÄÊ§°Ü¡£\n");
+		tell_object(who, "ç„¡æ³•è¼‰å…¥æˆ¿é–“ï¼Œä¿®æ”¹å¤±æ•—ã€‚\n");
 		return;
 	}
 
-	tell_object(who, "É¾³ı³É¹¦¡£\n");
+	tell_object(who, "åˆªé™¤æˆåŠŸã€‚\n");
 }
 
-// Ôö¼Ó move Àà¶¯×÷
+// å¢åŠ  move é¡å‹•ä½œ
 protected void set_action_verb(string str, object who, object env, mixed *acts)
 {
 	if(!who || !env)
@@ -239,13 +239,13 @@ protected void set_action_verb(string str, object who, object env, mixed *acts)
 
 	if(!stringp(str) || !sizeof(str))
 	{
-		tell_object(who, "ÇëÉèÄãÒª¼ÓÈë¶¯×÷µÄ¶¯´Ê[3-10Ó¢ÎÄ×ÖÄ¸](q ÍË³ö)£º\n");
+		tell_object(who, "è«‹è¨­ä½ è¦åŠ å…¥å‹•ä½œçš„å‹•è©[3-10è‹±æ–‡å­—æ¯](q é€€å‡º)ï¼š\n");
 		input_to( (: set_action_verb :), who, env, acts);
 	}
 
 	if(!regexp(str, "^[a-z]+$"))
 	{
-		tell_object(who, "¶¯×÷µÄ¶¯´ÊÖ»ÄÜÓÃĞ¡Ğ´Ó¢ÎÄ×ÖÄ¸¡£\n²Ù×÷±»ÖÕÖ¹¡£\n");
+		tell_object(who, "å‹•ä½œçš„å‹•è©åªèƒ½ç”¨å°å¯«è‹±æ–‡å­—æ¯ã€‚\næ“ä½œè¢«çµ‚æ­¢ã€‚\n");
 		return;
 	}
 
@@ -257,7 +257,7 @@ protected void set_action_verb(string str, object who, object env, mixed *acts)
 
 	if((sizeof(str) < 3) || (sizeof(str) > 10))
 	{
-		tell_object(who, "¶¯×÷µÄ¶¯´ÊÖ»ÄÜ3-10¸öÓ¢ÎÄ×ÖÄ¸¡£\n²Ù×÷±»ÖÕÖ¹¡£\n");
+		tell_object(who, "å‹•ä½œçš„å‹•è©åªèƒ½3-10å€‹è‹±æ–‡å­—æ¯ã€‚\næ“ä½œè¢«çµ‚æ­¢ã€‚\n");
 		return;
 	}
 
@@ -266,16 +266,16 @@ protected void set_action_verb(string str, object who, object env, mixed *acts)
 		for(int i=0;i<sizeof(acts);i++)
 			if(acts[i][0] == str)
 			{
-				tell_object(who, "Õâ¸ö¶¯´ÊÒÑ¾­ÔÚÕâÀï´æÔÚÁË¡£\n·Ç·¨²Ù×÷¡£\n");
+				tell_object(who, "é€™å€‹å‹•è©å·²ç¶“åœ¨é€™è£¡å­˜åœ¨äº†ã€‚\néæ³•æ“ä½œã€‚\n");
 				return;
 			}
 	}
 
-	tell_object(who, "¿ÉÉè¶¨µÄ¶¯×÷ÀàĞÍ£º
-  1. ÒÆ¶¯Àà¶¯×÷¡£
-  2. ¿ª³ö¿ÚÀà¶¯×÷
-  3. ·¢ÏÖÎïÆ·Àà¶¯×÷
-ÇëÑ¡Ôñ(q ÍË³ö)£º\n");
+	tell_object(who, "å¯è¨­å®šçš„å‹•ä½œé¡å‹ï¼š
+  1. ç§»å‹•é¡å‹•ä½œã€‚
+  2. é–‹å‡ºå£é¡å‹•ä½œ
+  3. ç™¼ç¾ç‰©å“é¡å‹•ä½œ
+è«‹é¸æ“‡(q é€€å‡º)ï¼š\n");
 
 	input_to((: select_action_class :), who, env, str);
 }
@@ -296,67 +296,67 @@ protected void select_action_class(string str, object who, object env, string ve
 
 	if(!id = who->query_banghui_id())
 	{
-		tell_object(who, "ÄãµÄ°ïÅÉ¼ÇÂ¼´íÂÒ¡£\nĞŞ¸ÄÊ§°Ü¡£\n");
+		tell_object(who, "ä½ çš„å¹«æ´¾è¨˜éŒ„éŒ¯äº‚ã€‚\nä¿®æ”¹å¤±æ•—ã€‚\n");
 		return;
 	}
 
-	if(sizeof(str) && (str[0] == '1'))	// ÒÆ¶¯Àà
+	if(sizeof(str) && (str[0] == '1'))	// ç§»å‹•é¡
 	{
 		mapping exits;
 
 		if(!env = BUNCH_D->update_room(env))
 		{
-			tell_object(who, "ÎŞ·¨ÔØÈëµ±Ç°·¿¼ä¡£\n²Ù×÷Ê§°Ü¡£\n");
+			tell_object(who, "ç„¡æ³•è¼‰å…¥ç•¶å‰æˆ¿é–“ã€‚\næ“ä½œå¤±æ•—ã€‚\n");
 			return;
 		}
 
 		if(!mapp(exits = env->query("exits")) || !sizeof(exits))
 		{
-			tell_object(who, "µ±Ç°·¿¼äÃ»ÓĞ³ö¿ÚÁ¬ÏòÆäËûµÄ·¿¼ä¡£\nÃ»ÓĞ¿ÉÉè¶¨ÒÆ¶¯µÄ³ö¿Ú¡£\n");
+			tell_object(who, "ç•¶å‰æˆ¿é–“æ²’æœ‰å‡ºå£é€£å‘å…¶ä»–çš„æˆ¿é–“ã€‚\næ²’æœ‰å¯è¨­å®šç§»å‹•çš„å‡ºå£ã€‚\n");
 			return;
 		}
 		actarg = allocate_mapping(8);
 		actarg["action_class"] = "move";
 		actarg["banghui_id"] = id;
-		tell_object(who, "¶Ô¿ÉÒÔÊ¹ÓÃ´Ë¶¯×÷ÈËµÄÏŞÖÆ£º
-  1. Ö»ÓĞ±¾°ïÅÉµÄÈË¿ÉÒÔ¡£
-  2. ÈÎºÎÈË¶¼¿ÉÒÔ¡£
-ÇëÑ¡Ôñ(q ÍË³ö)£º
+		tell_object(who, "å°å¯ä»¥ä½¿ç”¨æ­¤å‹•ä½œäººçš„é™åˆ¶ï¼š
+  1. åªæœ‰æœ¬å¹«æ´¾çš„äººå¯ä»¥ã€‚
+  2. ä»»ä½•äººéƒ½å¯ä»¥ã€‚
+è«‹é¸æ“‡(q é€€å‡º)ï¼š
 ");
 		input_to((: move_get_limit :), who, env, verb, actarg, exits);
 		return;
 	}
 
-	if(sizeof(str) && (str[0] == '2'))	// ¿ª³ö¿Ú
+	if(sizeof(str) && (str[0] == '2'))	// é–‹å‡ºå£
 	{
 		mapping exits;
 
 		if(!env = BUNCH_D->update_room(env))
 		{
-			tell_object(who, "ÎŞ·¨ÔØÈëµ±Ç°·¿¼ä¡£\n²Ù×÷Ê§°Ü¡£\n");
+			tell_object(who, "ç„¡æ³•è¼‰å…¥ç•¶å‰æˆ¿é–“ã€‚\næ“ä½œå¤±æ•—ã€‚\n");
 			return;
 		}
 
 		if(!mapp(exits = env->query("exits")) || !sizeof(exits))
 		{
-			tell_object(who, "µ±Ç°·¿¼äÃ»ÓĞ³ö¿ÚÁ¬ÏòÆäËûµÄ·¿¼ä¡£\nÃ»ÓĞ¿ÉÉè¶¨ÒÆ¶¯µÄ³ö¿Ú¡£\n");
+			tell_object(who, "ç•¶å‰æˆ¿é–“æ²’æœ‰å‡ºå£é€£å‘å…¶ä»–çš„æˆ¿é–“ã€‚\næ²’æœ‰å¯è¨­å®šç§»å‹•çš„å‡ºå£ã€‚\n");
 			return;
 		}
-		tell_object(who, "Ä¿Ç°²»ĞĞ¡£\n");
+		tell_object(who, "ç›®å‰ä¸è¡Œã€‚\n");
 		return;
 	}
 
-	if(sizeof(str) && (str[0] == '3'))	// ÕÒµ½ÎïÆ·
+	if(sizeof(str) && (str[0] == '3'))	// æ‰¾åˆ°ç‰©å“
 	{
-		tell_object(who, "Ä¿Ç°²»ĞĞ¡£\n");
+		tell_object(who, "ç›®å‰ä¸è¡Œã€‚\n");
 		return;
 	}
 
-	tell_object(who, "¿ÉÉè¶¨µÄ¶¯×÷ÀàĞÍ£º
-  1. ÒÆ¶¯Àà¶¯×÷¡£
-  2. ¿ª³ö¿ÚÀà¶¯×÷
-  3. ·¢ÏÖÎïÆ·Àà¶¯×÷
-ÇëÑ¡Ôñ(q ÍË³ö)£º\n");
+	tell_object(who, "å¯è¨­å®šçš„å‹•ä½œé¡å‹ï¼š
+  1. ç§»å‹•é¡å‹•ä½œã€‚
+  2. é–‹å‡ºå£é¡å‹•ä½œ
+  3. ç™¼ç¾ç‰©å“é¡å‹•ä½œ
+è«‹é¸æ“‡(q é€€å‡º)ï¼š\n");
 
 	input_to((: select_action_class :), who, env, str);
 }
@@ -375,8 +375,8 @@ protected void move_get_limit(string str, object who, object env, string verb, m
 	if(sizeof(str) && (str[0] == '1'))
 	{
 		actarg["player_limit"] = 1;
-		tell_object(who, "ÇëÉè¶¨´Ë¶¯×÷±ØĞëµÄ²ÎÊı£º
-( 0 Ã»ÓĞ²ÎÊı, q ÍË³ö)
+		tell_object(who, "è«‹è¨­å®šæ­¤å‹•ä½œå¿…é ˆçš„åƒæ•¸ï¼š
+( 0 æ²’æœ‰åƒæ•¸, q é€€å‡º)
 ");
 		input_to((: move_get_arg :), who, env, verb, actarg, exits);
 		return;
@@ -385,17 +385,17 @@ protected void move_get_limit(string str, object who, object env, string verb, m
 	if(sizeof(str) && (str[0] == '2'))
 	{
 		actarg["player_limit"] = 2;
-		tell_object(who, "ÇëÉè¶¨´Ë¶¯×÷±ØĞëµÄ²ÎÊı£º
-( 0 Ã»ÓĞ²ÎÊı, q ÍË³ö)
+		tell_object(who, "è«‹è¨­å®šæ­¤å‹•ä½œå¿…é ˆçš„åƒæ•¸ï¼š
+( 0 æ²’æœ‰åƒæ•¸, q é€€å‡º)
 ");
 		input_to((: move_get_arg :), who, env, verb, actarg, exits);
 		return;
 	}
 
-	tell_object(who, "¶Ô¿ÉÒÔÊ¹ÓÃ´Ë¶¯×÷ÈËµÄÏŞÖÆ£º
-  1. Ö»ÓĞ±¾°ïÅÉµÄÈË¿ÉÒÔ¡£
-  2. ÈÎºÎÈË¶¼¿ÉÒÔ¡£
-ÇëÑ¡Ôñ(q ÍË³ö)£º
+	tell_object(who, "å°å¯ä»¥ä½¿ç”¨æ­¤å‹•ä½œäººçš„é™åˆ¶ï¼š
+  1. åªæœ‰æœ¬å¹«æ´¾çš„äººå¯ä»¥ã€‚
+  2. ä»»ä½•äººéƒ½å¯ä»¥ã€‚
+è«‹é¸æ“‡(q é€€å‡º)ï¼š
 ");
 	input_to((: move_get_limit :), who, env, verb, actarg, exits);
 }
@@ -413,7 +413,7 @@ protected void move_get_arg(string str, object who, object env, string verb, map
 
 	if(sizeof(str) && (str[0] == '0'))
 	{
-		string out = "Ä¿Ç°ÕâÀïµÄ³ö¿Ú£º\n";
+		string out = "ç›®å‰é€™è£¡çš„å‡ºå£ï¼š\n";
 		actarg["action_arg"] = 0;
 		actarg["fail_msg"] = 0;
 
@@ -421,9 +421,9 @@ protected void move_get_arg(string str, object who, object env, string verb, map
 		{
 			if(!stringp(dest) || !sizeof(dest))
 				continue;
-			out += sprintf("  %s Í¨Íù %s\n", dir, explode(dest,"/")[<1]);
+			out += sprintf("  %s é€šå¾€ %s\n", dir, explode(dest,"/")[<1]);
 		}
-		out += "ÇëÑ¡Ôñ´Ë¶¯×÷Ä¿µÄµØÎªÄÄ¸ö³ö¿ÚµÄÄ¿µÄµØ£¿(q ÍË³ö)£º\n";
+		out += "è«‹é¸æ“‡æ­¤å‹•ä½œç›®çš„åœ°ç‚ºå“ªå€‹å‡ºå£çš„ç›®çš„åœ°ï¼Ÿ(q é€€å‡º)ï¼š\n";
 		tell_object(who, out);
 		input_to((: move_get_dest :), who, env, verb, actarg, exits);
 		return;
@@ -437,15 +437,15 @@ protected void move_get_arg(string str, object who, object env, string verb, map
 
 	if(!stringp(str) || !sizeof(str))
 	{
-		tell_object(who, "ÇëÉè¶¨´Ë¶¯×÷±ØĞëµÄ²ÎÊı£º
-( 0 Ã»ÓĞ²ÎÊı, q ÍË³ö)
+		tell_object(who, "è«‹è¨­å®šæ­¤å‹•ä½œå¿…é ˆçš„åƒæ•¸ï¼š
+( 0 æ²’æœ‰åƒæ•¸, q é€€å‡º)
 ");
 		input_to((: move_get_arg :), who, env, verb, actarg, exits);
 		return;
 	}
 
 	actarg["action_arg"] = str;
-	tell_object(who, "ÇëÉè¶¨Ã»ÓĞÊ¹ÓÃÕıÈ·µÄ²ÎÊıµÄ´íÎóÌáÊ¾ĞÅÏ¢[×î¶à15¸öºº×Ö]\nÇëÊäÈë(q ÍË³ö)£º\n");
+	tell_object(who, "è«‹è¨­å®šæ²’æœ‰ä½¿ç”¨æ­£ç¢ºçš„åƒæ•¸çš„éŒ¯èª¤æç¤ºä¿¡æ¯[æœ€å¤š15å€‹æ¼¢å­—]\nè«‹è¼¸å…¥(q é€€å‡º)ï¼š\n");
 	input_to((: move_get_fail_msg :), who, env, verb, actarg, exits);
 }
 
@@ -464,20 +464,20 @@ protected void move_get_fail_msg(string str, object who, object env, string verb
 
 	if(!stringp(str) || !sizeof(str) || (sizeof(str) > 30))
 	{
-		tell_object(who, "ÇëÉè¶¨Ã»ÓĞÊ¹ÓÃÕıÈ·µÄ²ÎÊıµÄ´íÎóÌáÊ¾ĞÅÏ¢[×î¶à15¸öºº×Ö]\nÇëÊäÈë(q ÍË³ö)£º\n");
+		tell_object(who, "è«‹è¨­å®šæ²’æœ‰ä½¿ç”¨æ­£ç¢ºçš„åƒæ•¸çš„éŒ¯èª¤æç¤ºä¿¡æ¯[æœ€å¤š15å€‹æ¼¢å­—]\nè«‹è¼¸å…¥(q é€€å‡º)ï¼š\n");
 		input_to((: move_get_fail_msg :), who, env, verb, actarg, exits);
 		return;
 	}
 
 	actarg["fail_msg"] = str[<1]=='\n'?str:str+"\n";
-	out = "Ä¿Ç°ÕâÀïµÄ³ö¿Ú£º\n";
+	out = "ç›®å‰é€™è£¡çš„å‡ºå£ï¼š\n";
 	foreach(string dir, string dest in exits)
 	{
 		if(!stringp(dest) || !sizeof(dest))
 			continue;
-		out += sprintf("  %s Í¨Íù %s\n", dir, explode(dest,"/")[<1]);
+		out += sprintf("  %s é€šå¾€ %s\n", dir, explode(dest,"/")[<1]);
 	}
-	out += "ÇëÑ¡Ôñ´Ë¶¯×÷Ä¿µÄµØÎªÄÄ¸ö³ö¿ÚµÄÄ¿µÄµØ£¿(q ÍË³ö)£º\n";
+	out += "è«‹é¸æ“‡æ­¤å‹•ä½œç›®çš„åœ°ç‚ºå“ªå€‹å‡ºå£çš„ç›®çš„åœ°ï¼Ÿ(q é€€å‡º)ï¼š\n";
 	tell_object(who, out);
 	input_to((: move_get_dest :), who, env, verb, actarg, exits);
 }
@@ -497,14 +497,14 @@ protected void move_get_dest(string str, object who, object env, string verb, ma
 	{
 		string out;
 
-		out = "Ä¿Ç°ÕâÀïµÄ³ö¿Ú£º\n";
+		out = "ç›®å‰é€™è£¡çš„å‡ºå£ï¼š\n";
 		foreach(string dir, string dest in exits)
 		{
 			if(!stringp(dest) || !sizeof(dest))
 				continue;
-			out += sprintf("  %s Í¨Íù %s\n", dir, explode(dest,"/")[<1]);
+			out += sprintf("  %s é€šå¾€ %s\n", dir, explode(dest,"/")[<1]);
 		}
-		out += "ÇëÑ¡Ôñ´Ë¶¯×÷Ä¿µÄµØÎªÄÄ¸ö³ö¿ÚµÄÄ¿µÄµØ£¿(q ÍË³ö)£º\n";
+		out += "è«‹é¸æ“‡æ­¤å‹•ä½œç›®çš„åœ°ç‚ºå“ªå€‹å‡ºå£çš„ç›®çš„åœ°ï¼Ÿ(q é€€å‡º)ï¼š\n";
 		tell_object(who, out);
 		input_to((: move_get_dest :), who, env, verb, actarg, exits);
 		return;
@@ -512,18 +512,18 @@ protected void move_get_dest(string str, object who, object env, string verb, ma
 
 	if(undefinedp(exits[str]))
 	{
-		tell_object(who, "Ã»ÓĞÕâ¸ö³ö¿Ú¡£\n²Ù×÷Ê§°Ü¡£\n");
+		tell_object(who, "æ²’æœ‰é€™å€‹å‡ºå£ã€‚\næ“ä½œå¤±æ•—ã€‚\n");
 		return;
 	}
 
 	if(!in_same_dir(base_name(env), exits[str]))
 	{
-		tell_object(who, "ÄãÃ»ÓĞĞŞ¸ÄÄ¿µÄµµ°¸µÄÈ¨Àû¡£\nĞŞ¸ÄÊ§°Ü¡£\n");
+		tell_object(who, "ä½ æ²’æœ‰ä¿®æ”¹ç›®çš„æª”æ¡ˆçš„æ¬Šåˆ©ã€‚\nä¿®æ”¹å¤±æ•—ã€‚\n");
 		return;
 	}
 
 	actarg["move_dest"] = exits[str];
-	tell_object(who, "ÇëÉè¶¨¶¯×÷ÈËÀë¿ªÕâ¸ö·¿¼äµÄĞÅÏ¢['$N' ´ú±í¶¯×÷ÈË](q ÍË³ö)£º\n");
+	tell_object(who, "è«‹è¨­å®šå‹•ä½œäººé›¢é–‹é€™å€‹æˆ¿é–“çš„ä¿¡æ¯['$N' ä»£è¡¨å‹•ä½œäºº](q é€€å‡º)ï¼š\n");
 
 	input_to((: move_get_here_msg :), who, env, verb, actarg, exits, str);
 }
@@ -541,7 +541,7 @@ protected void move_get_here_msg(string str, object who, object env, string verb
 
 	if(!stringp(str) || (sizeof(str) < 10))
 	{
-		tell_object(who, "<ÏÔÊ¾ĞÅÏ¢ÖÁÉÙÒªÓĞ 5 ¸öºº×Ö³¤>\nÇëÉè¶¨¶¯×÷ÈËÀë¿ªÕâ¸ö·¿¼äµÄĞÅÏ¢['$N' ´ú±í¶¯×÷ÈË](q ÍË³ö)£º\n");
+		tell_object(who, "<é¡¯ç¤ºä¿¡æ¯è‡³å°‘è¦æœ‰ 5 å€‹æ¼¢å­—é•·>\nè«‹è¨­å®šå‹•ä½œäººé›¢é–‹é€™å€‹æˆ¿é–“çš„ä¿¡æ¯['$N' ä»£è¡¨å‹•ä½œäºº](q é€€å‡º)ï¼š\n");
 		input_to((: move_get_here_msg :), who, env, verb, actarg, exits, dir);
 		return;
 	}
@@ -549,14 +549,14 @@ protected void move_get_here_msg(string str, object who, object env, string verb
 
 	if(sizeof(str) > 50)
 	{
-		tell_object(who, "<ÏÔÊ¾ĞÅÏ¢²»ÄÜ³¬¹ı 25 ¸öºº×Ö³¤>\nÇëÉè¶¨¶¯×÷ÈËÀë¿ªÕâ¸ö·¿¼äµÄĞÅÏ¢['$N' ´ú±í¶¯×÷ÈË](q ÍË³ö)£º\n");
+		tell_object(who, "<é¡¯ç¤ºä¿¡æ¯ä¸èƒ½è¶…é 25 å€‹æ¼¢å­—é•·>\nè«‹è¨­å®šå‹•ä½œäººé›¢é–‹é€™å€‹æˆ¿é–“çš„ä¿¡æ¯['$N' ä»£è¡¨å‹•ä½œäºº](q é€€å‡º)ï¼š\n");
 		input_to((: move_get_here_msg :), who, env, verb, actarg, exits, dir);
 		return;
 	}
 
 	actarg["here_msg"] = str[<1]=='\n'?str:str+"\n";
 
-	tell_object(who, "ÇëÉè¶¨¶¯×÷ÈËµ½´ïÄ¿µÄ·¿¼äµÄĞÅÏ¢['$N' ´ú±í¶¯×÷ÈË](q ÍË³ö)£º\n");
+	tell_object(who, "è«‹è¨­å®šå‹•ä½œäººåˆ°é”ç›®çš„æˆ¿é–“çš„ä¿¡æ¯['$N' ä»£è¡¨å‹•ä½œäºº](q é€€å‡º)ï¼š\n");
 
 	input_to((: move_get_dest_msg :), who, env, verb, actarg, exits, dir);
 }
@@ -576,7 +576,7 @@ protected void move_get_dest_msg(string str, object who, object env, string verb
 
 	if(!stringp(str) || (sizeof(str) < 10))
 	{
-		tell_object(who, "<ÏÔÊ¾ĞÅÏ¢ÖÁÉÙÒªÓĞ 5 ¸öºº×Ö³¤>\nÇëÉè¶¨¶¯×÷ÈËµ½´ïÄ¿µÄ·¿¼äµÄĞÅÏ¢['$N' ´ú±í¶¯×÷ÈË](q ÍË³ö)£º\n");
+		tell_object(who, "<é¡¯ç¤ºä¿¡æ¯è‡³å°‘è¦æœ‰ 5 å€‹æ¼¢å­—é•·>\nè«‹è¨­å®šå‹•ä½œäººåˆ°é”ç›®çš„æˆ¿é–“çš„ä¿¡æ¯['$N' ä»£è¡¨å‹•ä½œäºº](q é€€å‡º)ï¼š\n");
 		input_to((: move_get_here_msg :), who, env, verb, actarg, exits, dir);
 		return;
 	}
@@ -584,7 +584,7 @@ protected void move_get_dest_msg(string str, object who, object env, string verb
 
 	if(sizeof(str) > 50)
 	{
-		tell_object(who, "<ÏÔÊ¾ĞÅÏ¢²»ÄÜ³¬¹ı 25 ¸öºº×Ö³¤>\nÇëÉè¶¨¶¯×÷ÈËµ½´ïÄ¿µÄ·¿¼äµÄĞÅÏ¢['$N' ´ú±í¶¯×÷ÈË](q ÍË³ö)£º\n");
+		tell_object(who, "<é¡¯ç¤ºä¿¡æ¯ä¸èƒ½è¶…é 25 å€‹æ¼¢å­—é•·>\nè«‹è¨­å®šå‹•ä½œäººåˆ°é”ç›®çš„æˆ¿é–“çš„ä¿¡æ¯['$N' ä»£è¡¨å‹•ä½œäºº](q é€€å‡º)ï¼š\n");
 		input_to((: move_get_here_msg :), who, env, verb, actarg, exits, dir);
 		return;
 	}
@@ -593,7 +593,7 @@ protected void move_get_dest_msg(string str, object who, object env, string verb
 
 	if(environment(who) != env)
 	{
-		tell_object(who, "ÄãµÄÎ»ÖÃ·¢ÉúÁË±ä»¯£¬²Ù×÷ÖÕÖ¹¡£\n");
+		tell_object(who, "ä½ çš„ä½ç½®ç™¼ç”Ÿäº†è®ŠåŒ–ï¼Œæ“ä½œçµ‚æ­¢ã€‚\n");
 		return;
 	}
 
@@ -603,7 +603,7 @@ protected void move_get_dest_msg(string str, object who, object env, string verb
 	object me = this_player();
 	mapping act_arg;
 	if(!mapp(act_arg = query(\"%s_action_func\")) || !sizeof(act_arg))
-		return notify_fail(\"³öÏÖ´íÎó¡£\n\");
+		return notify_fail(\"å‡ºç¾éŒ¯èª¤ã€‚\n\");
 	if( (act_arg[\"player_limit\"] == 1)
 	&& (me->query_banghui_id() != act_arg[\"banghui_id\"]) )
 		return 0;
@@ -614,14 +614,14 @@ protected void move_get_dest_msg(string str, object who, object env, string verb
 	}
 	message_vision(act_arg[\"here_msg\"], me);
 	if(!me->move(act_arg[\"move_dest\"]))
-		return notify_fail(\"¹ı²»È¥¡£\n\");
+		return notify_fail(\"éä¸å»ã€‚\n\");
 	message_vision(act_arg[\"dest_msg\"], me);
 	return 1;
 }", verb, verb);
 
 	if(!content = read_file(fname = base_name(env) + ".c"))
 	{
-		tell_object(who, "ÎŞ·¨¶ÁÈ¡µµ°¸ÄÚÈİ¡£\n²Ù×÷Ê§°Ü¡£\n");
+		tell_object(who, "ç„¡æ³•è®€å–æª”æ¡ˆå…§å®¹ã€‚\næ“ä½œå¤±æ•—ã€‚\n");
 		return;
 	}
 
@@ -629,7 +629,7 @@ protected void move_get_dest_msg(string str, object who, object env, string verb
 	{
 		if(!BUNCH_D->parse_function_body(ref content, "void", "create", ref f_sect, ref m_sect, ref e_sect, 0))
 		{
-			tell_object(who, "ÎŞ·¨ÆÊÎöÎÄ¼şÄÚÈİ£¬ĞŞ¸ÄÊ§°Ü¡£\n");
+			tell_object(who, "ç„¡æ³•å‰–ææ–‡ä»¶å…§å®¹ï¼Œä¿®æ”¹å¤±æ•—ã€‚\n");
 			return;
 		}
 
@@ -641,7 +641,7 @@ protected void move_get_dest_msg(string str, object who, object env, string verb
 		content = sprintf("%s\n%s\n%s\n%s\n", f_sect, adac_str, m_sect, e_sect);
 		if(!BUNCH_D->parse_function_body(ref content, "void", "create", ref f_sect, ref m_sect, ref e_sect, 0))
 		{
-			tell_object(who, "ÎŞ·¨ÆÊÎöÎÄ¼şÄÚÈİ£¬ĞŞ¸ÄÊ§°Ü¡£\n");
+			tell_object(who, "ç„¡æ³•å‰–ææ–‡ä»¶å…§å®¹ï¼Œä¿®æ”¹å¤±æ•—ã€‚\n");
 			return;
 		}
 		result = sprintf("// Room: %s\n\n%s\n\tset(\"%s_action_func\", %O);\n%s\n%s\n%s\n",
@@ -650,18 +650,18 @@ protected void move_get_dest_msg(string str, object who, object env, string verb
 
 	if(!write_file(fname, result, 1))
 	{
-		tell_object(who, "ÎŞ·¨Ğ´ÈëÎÄ¼şÄÚÈİ£¬ĞŞ¸ÄÊ§°Ü¡£\n");
+		tell_object(who, "ç„¡æ³•å¯«å…¥æ–‡ä»¶å…§å®¹ï¼Œä¿®æ”¹å¤±æ•—ã€‚\n");
 		return;
 	}
 
 	if( !env = BUNCH_D->update_room(env) )
 	{
-		tell_object(who, "ÎŞ·¨ÔØÈë·¿¼ä£¬ĞŞ¸ÄÊ§°Ü¡£\n");
+		tell_object(who, "ç„¡æ³•è¼‰å…¥æˆ¿é–“ï¼Œä¿®æ”¹å¤±æ•—ã€‚\n");
 		return;
 	}
 
 	if(BUNCH_D->break_an_exit(who, env, dir))
-		tell_object(who, "¶¯×÷¼ÓÈë³É¹¦¡£\n");
+		tell_object(who, "å‹•ä½œåŠ å…¥æˆåŠŸã€‚\n");
 }
 
-// ¿ª³ö¿ÚÀà¶¯×÷
+// é–‹å‡ºå£é¡å‹•ä½œ

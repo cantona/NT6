@@ -16,9 +16,9 @@ int main(object me, string arg)
         {
                 whistle=query("can_whistle", me);
                 if (! mapp(whistle) || ! sizeof(whistle))
-                        return notify_fail("ÄãÒªÕÙ»½Ê²Ã´£¿\n");
+                        return notify_fail("ä½ è¦å¬å–šä»€éº¼ï¼Ÿ\n");
                 ks = keys(whistle);
-                msg = "ÄãÏÖÔÚ¿ÉÒÔÕÙ»½µÄÄ§»ÃÊŞÓĞ\n";
+                msg = "ä½ ç¾åœ¨å¯ä»¥å¬å–šçš„é­”å¹»ç¸æœ‰\n";
                 for( i=0; i<sizeof(ks); i++ )
                 {
                         if( sscanf(whistle[ks[i]], "/data/beast/%*s") )
@@ -26,40 +26,40 @@ int main(object me, string arg)
                                 delete("can_whistle/" + ks[i], me);
                                 continue;
                         }
-                        msg += sprintf(HIW "Ä§»ÃÊŞ´úÂë£º%-15s    Ä§»ÃÊŞÃû×Ö£º%-20s\n"NOR,ks[i],whistle[ks[i]]->name());
+                        msg += sprintf(HIW "é­”å¹»ç¸ä»£ç¢¼ï¼š%-15s    é­”å¹»ç¸åå­—ï¼š%-20s\n"NOR,ks[i],whistle[ks[i]]->name());
                 }
                 write(msg);
                 return 1;
         }
                         
         if( me->is_busy() || query("doing", me) )
-                return notify_fail("ÄãÏÖÔÚÕıÃ¦ÄØ£¬µÈÄãÓĞ¿ÕÁËÔÙËµ°É¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£å¿™å‘¢ï¼Œç­‰ä½ æœ‰ç©ºäº†å†èªªå§ã€‚\n");
  
         if (me->is_in_prison())   
-                return notify_fail("ÄãÕıÔÚ×öÀÎÄØ£¬ÄãÏë¸ÉÊ²Ã´£¿£¡\n"); 
+                return notify_fail("ä½ æ­£åœ¨åšç‰¢å‘¢ï¼Œä½ æƒ³å¹¹ä»€éº¼ï¼Ÿï¼\n"); 
                                
         if (me->is_ghost())
-                return notify_fail("µÈÄã»¹ÁËÑôÔÙÕÙ»½°É¡£\n");
+                return notify_fail("ç­‰ä½ é‚„äº†é™½å†å¬å–šå§ã€‚\n");
 
         if( !stringp(file=query("can_whistle/"+arg, me)) )
-                return notify_fail("Äã²»ÖªµÀÈçºÎÕÙ»½Õâ¸öÄ§»ÃÊŞ¡£\n");
+                return notify_fail("ä½ ä¸çŸ¥é“å¦‚ä½•å¬å–šé€™å€‹é­”å¹»ç¸ã€‚\n");
 
         if (file_size(file + ".c") < 0)
-                return notify_fail("Äã²»ÖªµÀÈçºÎÕÙ»½Õâ¸öÄ§»ÃÊŞ¡£\n");
+                return notify_fail("ä½ ä¸çŸ¥é“å¦‚ä½•å¬å–šé€™å€‹é­”å¹»ç¸ã€‚\n");
         
         if( query("warcraft/status", me) == "died" )
-                return notify_fail("ÄãµÄÄ§»ÃÊŞÒÑ¾­ËÀÍö£¬Çëµ½ÕÅÌìÊ¦ÄÇÀïÈÃËüÏÈ¸´»î¡£\n");
+                return notify_fail("ä½ çš„é­”å¹»ç¸å·²ç¶“æ­»äº¡ï¼Œè«‹åˆ°å¼µå¤©å¸«é‚£è£¡è®“å®ƒå…ˆå¾©æ´»ã€‚\n");
 
         if( query("no_magic", environment(me)) || query("no_fly", environment(me)) )
-                return notify_fail("Äã·¢ÏÖÕâÀïÓĞµã¹Å¹Ö£¬ÄãµÄÄ§»ÃÊŞºÃÏó²»ÄÜ½øÀ´£¡\n");    
+                return notify_fail("ä½ ç™¼ç¾é€™è£¡æœ‰é»å¤æ€ªï¼Œä½ çš„é­”å¹»ç¸å¥½è±¡ä¸èƒ½é€²ä¾†ï¼\n");    
          
         call_other(file, "???");
         ob = find_object(file);
 
         if (! ob || ! ob->receive_whistle(me))
         {
-                message_vision(HIM "$N" HIM "´µÁËÒ»Éù¿ÚÉÚ¡£\n"
-                               "È»¶øÊ²Ã´Ò²Ã»ÓĞ·¢Éú :)\n", me);
+                message_vision(HIM "$N" HIM "å¹äº†ä¸€è²å£å“¨ã€‚\n"
+                               "ç„¶è€Œä»€éº¼ä¹Ÿæ²’æœ‰ç™¼ç”Ÿ :)\n", me);
         }
         
         if (! ob) return 1;
@@ -75,9 +75,9 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : whistle <Ä§»ÃÊŞID>
+æŒ‡ä»¤æ ¼å¼ : whistle <é­”å¹»ç¸ID>
 
-´ËÖ¸Áî¿ÉÈÃÄã°ÑÄãµÄÄ§»ÃÊŞºô»½¹ıÀ´£¬µ±È»ÄãµÃÓĞÒ»¶¨µÄ¾«Á¦Ê©Õ¹²ÅĞĞ¡£
+æ­¤æŒ‡ä»¤å¯è®“ä½ æŠŠä½ çš„é­”å¹»ç¸å‘¼å–šéä¾†ï¼Œç•¶ç„¶ä½ å¾—æœ‰ä¸€å®šçš„ç²¾åŠ›æ–½å±•æ‰è¡Œã€‚
 HELP );
         return 1;
 }

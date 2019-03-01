@@ -7,9 +7,9 @@ inherit F_DEALER;
 
 void create()
 {
-        set_name("³ÂÓĞµÂ", ({ "chen youde", "chen" }));
-        set("long", "³ÂÓĞµÂÊÇÑïÖİÎä¹İ¹İ³¤¡£\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("é™³æœ‰å¾·", ({ "chen youde", "chen" }));
+        set("long", "é™³æœ‰å¾·æ˜¯æšå·æ­¦é¤¨é¤¨é•·ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 45);
         set_skill("dodge", 80);
         set_skill("force", 80);
@@ -63,20 +63,20 @@ int accept_object(object who, object ob)
 {
         if( query("combat_exp", who) >= 3500 )
         {
-                message_vision("³ÂÓĞµÂÍû×Å$NËµ£ºÄãµÄÎä¹¦Ó¦¸Ã"
-                               "ÀúÁ·½­ºş²ÅÄÜÔÙ³¤½ø£¬²»ÄÜÂñÃ»ÔÚÕâÀïÁË¡£\n", who);
+                message_vision("é™³æœ‰å¾·æœ›è‘—$Nèªªï¼šä½ çš„æ­¦åŠŸæ‡‰è©²"
+                               "æ­·ç·´æ±Ÿæ¹–æ‰èƒ½å†é•·é€²ï¼Œä¸èƒ½åŸ‹æ²’åœ¨é€™è£¡äº†ã€‚\n", who);
                 return 0;
         }
 
         if( query("money_id", ob) && ob->value() >= 500 )
         {
                 set_temp("marks/yangzhou_paied", 1, who);
-                message_vision("³ÂÓĞµÂ¶Ô$NËµ£ººÃ£¡ÕâÎ»" + RANK_D->query_respect(who) +
-                               "ÏëÑ§Ê²Ã´ÄØ£¿\n" , who);
+                message_vision("é™³æœ‰å¾·å°$Nèªªï¼šå¥½ï¼é€™ä½" + RANK_D->query_respect(who) +
+                               "æƒ³å­¸ä»€éº¼å‘¢ï¼Ÿ\n" , who);
                 return 1;
         } else
-                message_vision("³ÂÓĞµÂÖåÃ¼¶Ô$NËµ£ºÇ®ÎÒ²»ÔÚºõ"
-                               "¡£¿ÉÄãÒ²¸øµÄÒ²Ì«ÉÙÁËµã¶ù°É£¿\n", who);
+                message_vision("é™³æœ‰å¾·çšºçœ‰å°$Nèªªï¼šéŒ¢æˆ‘ä¸åœ¨ä¹"
+                               "ã€‚å¯ä½ ä¹Ÿçµ¦çš„ä¹Ÿå¤ªå°‘äº†é»å…’å§ï¼Ÿ\n", who);
         return 0;
 }
 

@@ -1,4 +1,4 @@
-// shoutao.c  ÊÖÌ×
+// shoutao.c  æ‰‹å¥—
 
 #include <armor.h>
 #include <ansi.h>
@@ -7,13 +7,13 @@ inherit HANDS;
 
 void create()
 {
-        set_name(HIW "ÌúÊÖÌ×" NOR, ({ "tie shoutao", "tie", "shoutao" }) );
+        set_name(HIW "éµæ‰‹å¥—" NOR, ({ "tie shoutao", "tie", "shoutao" }) );
         set_weight(500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ë«");
-                set("long", HIW "ÕâÊÇÒ»Ë«¸ÖÌúÖıÔìµÄÊÖÌ×£¬ÉÏÃæËÆºõÓĞÓ²Îï¿Ì¹ıµÄºÛ¼£¡£\n" NOR);
+                set("unit", "é›™");
+                set("long", HIW "é€™æ˜¯ä¸€é›™é‹¼éµé‘„é€ çš„æ‰‹å¥—ï¼Œä¸Šé¢ä¼¼ä¹æœ‰ç¡¬ç‰©åˆ»éçš„ç—•è·¡ã€‚\n" NOR);
                 set("value", 350000);
                 set("material", "tie");
                 set("armor_prop/armor", 200);

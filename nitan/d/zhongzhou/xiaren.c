@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "���᷿");
+        set("short", "西廂房");
         set("long", @LONG
-������̫ү���﹩���˾�ס�ĵط�������ûʲô������ֻ
-��һ�����Ӻͼ�����ʡ��ݽǵ��������һ��ѵ��·����м�
-��Ѿ��û�������廨��
+這是縣太爺府裡供下人居住的地方。屋內沒什麼東西，只
+有一張桌子和幾張竹凳。屋角的盆裡放著一大堆的衣服。有幾
+個丫鬟沒事正在繡花。
 LONG);
         set("exits", ([
                 "east" : __DIR__"huayuan",

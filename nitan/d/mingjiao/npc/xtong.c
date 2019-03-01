@@ -2,9 +2,9 @@ inherit NPC;
 string ask_tea();
 void create()
 {
-        set_name("Ğ¡ÊÌÍ¯",({"xiao shitong","xiao","shitong"}));
-               set("long", "ËûÊÇÒ»ÃûÊ®À´Ëê´óµÄĞ¡ÊÌÍ¯£¬³¤µÃÃ¼ÇåÄ¿Ğã¡£\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("å°ä¾ç«¥",({"xiao shitong","xiao","shitong"}));
+               set("long", "ä»–æ˜¯ä¸€ååä¾†æ­²å¤§çš„å°ä¾ç«¥ï¼Œé•·å¾—çœ‰æ¸…ç›®ç§€ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 10+random(6));
         set("attitude", "friendly");
         set("str", 20);

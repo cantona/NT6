@@ -6,14 +6,14 @@ int is_magic_item() { return 1; }
 
 void create()
 {
-        set_name(HIW "À¥ÂØ¾µ" NOR, ({ "kunlun jing", "kunlun", "jing" }) );
+        set_name(HIW "æ˜†ä¾–é¡" NOR, ({ "kunlun jing", "kunlun", "jing" }) );
         set_weight(100);
         if (clonep())
                 set_default_object(__FILE__);
         else
         {
-                set("unit", "Ãæ");
-                set("long", HIW "ÕâÊÇÒ»ÃæÍ¨ÌåÒø¹âµÄ¾µ×Ó£¬¾İËµÓµÓĞÆÆ¿ªÌ«ĞéµÄÄÜÁ¦¡£\n" NOR);
+                set("unit", "é¢");
+                set("long", HIW "é€™æ˜¯ä¸€é¢é€šé«”éŠ€å…‰çš„é¡å­ï¼Œæ“šèªªæ“æœ‰ç ´é–‹å¤ªè™›çš„èƒ½åŠ›ã€‚\n" NOR);
         }
 
         setup();

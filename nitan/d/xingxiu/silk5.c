@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Ë¿³ñÖ®Â·");
+        set("short", "çµ²ç¶¢ä¹‹è·¯");
         set("long", @LONG
-ÕâÊÇÒ»ÌõÖĞÔ­ºÍÎ÷ÓòÖ®¼äµÄÉÌµÀ¡£Î÷ÃæÊÇÒ»ÍûÎŞ¼ÊµÄ´óÉ³Ä®£¬´«Ëµ
-ÄÇÀï³£ÓĞµÁ·Ë³öÃ»¡£Î÷±±ÔòÍ¨ÏòÒ»Æ¬Á¬ÃàµÄÉ½Âö£¬¶«Ãæ¾ÍÊÇÍ¨ÏòÖĞÔ­µÄ
-Â·¡£Â·±ßÓĞÒ»¿éÊ¯±®(shibei)¡£
+é€™æ˜¯ä¸€æ¢ä¸­åŸå’Œè¥¿åŸŸä¹‹é–“çš„å•†é“ã€‚è¥¿é¢æ˜¯ä¸€æœ›ç„¡éš›çš„å¤§æ²™æ¼ ï¼Œå‚³èªª
+é‚£è£¡å¸¸æœ‰ç›œåŒªå‡ºæ²’ã€‚è¥¿åŒ—å‰‡é€šå‘ä¸€ç‰‡é€£ç¶¿çš„å±±è„ˆï¼Œæ±é¢å°±æ˜¯é€šå‘ä¸­åŸçš„
+è·¯ã€‚è·¯é‚Šæœ‰ä¸€å¡ŠçŸ³ç¢‘(shibei)ã€‚
 LONG );
         set("outdoors", "xiyu");
         set("exits", ([
@@ -22,7 +22,7 @@ LONG );
                 __DIR__"npc/trader" : 1,
         ]));
         set("item_desc", ([
-                "shibei" : "±±ÖÁÎ÷Óò£¬¶«´ïÖĞÔ­¡£Ë­ÈôÎ÷ĞĞ£¬¸ñÉ±ÎğÂÛ¡£°×ÍÕÉ½Ö÷ÈËÆô¡£\n",
+                "shibei" : "åŒ—è‡³è¥¿åŸŸï¼Œæ±é”ä¸­åŸã€‚èª°è‹¥è¥¿è¡Œï¼Œæ ¼æ®ºå‹¿è«–ã€‚ç™½é§å±±ä¸»äººå•Ÿã€‚\n",
         ]));
         set("coor/x", -24000);
         set("coor/y", 1000);
@@ -44,13 +44,13 @@ int valid_leave(object me, string dir)
         return ::valid_leave(me, dir);
         if( query_temp("wait_target", me) && 
                 objectp(present("anran zi", environment(me))))
-                return notify_fail("÷öÈ»×ÓÉÁÉíÀ¹ÔÚÄãÃæÇ°£¬ºÈµÀ£ºÁÙÕóÏëÁï£¿¸øÎÒ¹ö»ØÀ´£¡\n");
+                return notify_fail("é»¯ç„¶å­é–ƒèº«æ””åœ¨ä½ é¢å‰ï¼Œå–é“ï¼šè‡¨é™£æƒ³æºœï¼Ÿçµ¦æˆ‘æ»¾å›ä¾†ï¼\n");
         if( query_temp("xx_rob", me) && 
                 objectp(ob = present("hubiao biaoshi", environment(me))) &&
                 query("target", ob) == me )
-                return notify_fail("»¤ïÚïÚÊ¦ÉÁÉíÀ¹×¡ÄãµÄÈ¥Â·£¬¿´À´ÊÇÏë°ÑÄã¸ø·ÏÁË£¡\n");  
+                return notify_fail("è­·é¢é¢å¸«é–ƒèº«æ””ä½ä½ çš„å»è·¯ï¼Œçœ‹ä¾†æ˜¯æƒ³æŠŠä½ çµ¦å»¢äº†ï¼\n");  
         if( query_temp("xx_rob", me) && objectp(present("shangdui",environment(me))) )
-                return notify_fail("ÉÌ¶ÓÔÚÕâÀïÄØ£¬¿ìÇÀ(qiang)°¡£¡\n");  
+                return notify_fail("å•†éšŠåœ¨é€™è£¡å‘¢ï¼Œå¿«æ¶(qiang)å•Šï¼\n");  
         return ::valid_leave(me, dir);
 }
 
@@ -62,14 +62,14 @@ int do_push(string arg)
         if( !arg || arg=="" ) return 0;
         if( arg=="shibei" )
         {
-                if( (fam=query("family", me)) && fam["family_name"] == "Ø¤°ï" )
+                if( (fam=query("family", me)) && fam["family_name"] == "ä¸å¹«" )
                 {
-                        message_vision("$NÍÆ¿ªÊ¯±®£¬Ö»¼ûÄàÉ³·×·×µøÂä£¬µØÃæÉÏÂ¶³öÒ»¸öĞ¡¶´¡£\n", me);
-                        message("vision", me->name() + "ÔËÆğØ¤°ïËõ¹Ç¹¦£¬Ò»ÍäÑüÍù¶´Àï×êÁË½øÈ¥¡£\n", environment(me), ({me}) );
+                        message_vision("$Næ¨é–‹çŸ³ç¢‘ï¼Œåªè¦‹æ³¥æ²™ç´›ç´›è·Œè½ï¼Œåœ°é¢ä¸Šéœ²å‡ºä¸€å€‹å°æ´ã€‚\n", me);
+                        message("vision", me->name() + "é‹èµ·ä¸å¹«ç¸®éª¨åŠŸï¼Œä¸€å½è…°å¾€æ´è£¡é‘½äº†é€²å»ã€‚\n", environment(me), ({me}) );
                         me->move("/d/gaibang/underxx");
-                        message("vision", me->name() + "´Ó¶´Àï×ßÁË½øÀ´¡£\n", environment(me), ({me}) );
+                        message("vision", me->name() + "å¾æ´è£¡èµ°äº†é€²ä¾†ã€‚\n", environment(me), ({me}) );
                         return 1;
                 }
-                else return notify_fail("ÕâÃ´Ğ¡µÄ¶´£¬Äã×êµÃ½øÈ¥Âğ£¿\n");
+                else return notify_fail("é€™éº¼å°çš„æ´ï¼Œä½ é‘½å¾—é€²å»å—ï¼Ÿ\n");
         }
 }        

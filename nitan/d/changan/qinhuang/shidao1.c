@@ -3,11 +3,11 @@ inherit ROOM;
 int do_zuan(string arg);
 void create()
 {
-    set("short", "Ê¯µÀ");
+    set("short", "çŸ³é“");
         set("long", @LONG
-´ËÂ·ÓÖÊÇÁíÒ»·¬¾°Ïó£¬Á½ÅÔËÉ°ØÏàÑÚ£¬ËÄ¶ÔÊ¯ÎÌÖÙ±³¿¿ËÉÁÖ£¬Ïë
-²»µ½ÔÚ×ÅµØÏÂ¶´Ñ¨ÖÐÒ²ÓÐÈç´ËºÆ´óµÄËÉÁÖ£¬Òª²»ÊÇ¹âÏß°µÁËµã£¬¸ù±¾
-¿´²»³öºÍµØÃæÓÐÊ²Ã´Çø±ð¡£
+æ­¤è·¯åˆæ˜¯å¦ä¸€ç•ªæ™¯è±¡ï¼Œå…©æ—é¬†æŸç›¸æŽ©ï¼Œå››å°çŸ³ç¿ä»²èƒŒé é¬†æž—ï¼Œæƒ³
+ä¸åˆ°åœ¨è‘—åœ°ä¸‹æ´žç©´ä¸­ä¹Ÿæœ‰å¦‚æ­¤æµ©å¤§çš„é¬†æž—ï¼Œè¦ä¸æ˜¯å…‰ç·šæš—äº†é»žï¼Œæ ¹æœ¬
+çœ‹ä¸å‡ºå’Œåœ°é¢æœ‰ä»€éº¼å€åˆ¥ã€‚
 LONG );
     set("exits", ([
        "south" :__DIR__"shidao",
@@ -24,11 +24,11 @@ int do_zuan(string arg)
         ob = this_player();
         room=load_object("/d/changan/qinhuang/songlin.c");
         if( !arg || arg=="" ) return 0;
-        if( arg=="ËÉÁÖ" ) {
-                message_vision("$N×³ÁË×³µ¨£¬Ò»Í·×ê½øÁËËÉÁÖÀï¡£\n", ob);
+        if( arg=="é¬†æž—" ) {
+                message_vision("$Nå£¯äº†å£¯è†½ï¼Œä¸€é ­é‘½é€²äº†é¬†æž—è£¡ã€‚\n", ob);
         ob->move(room);
-        write("Äã»ØÍ·¿´ÁË¿´£¬ÒÑ¾­Ã»ÓÐÍËÂ·ÁË¡£\n");
-        tell_object(ob, "ÄãÔÚËÉÁÖÀï×ßÁËºÜ¾ÃºÜ¾Ã.......\n") ;
+        write("ä½ å›žé ­çœ‹äº†çœ‹ï¼Œå·²ç¶“æ²’æœ‰é€€è·¯äº†ã€‚\n");
+        tell_object(ob, "ä½ åœ¨é¬†æž—è£¡èµ°äº†å¾ˆä¹…å¾ˆä¹….......\n") ;
         call_out("songlin", 20 , ob );
         return 1;
         }
@@ -36,7 +36,7 @@ int do_zuan(string arg)
 void songlin(object ob)
 {
         if(!ob) return;
-        tell_object(ob, "ÄãÀÛÁË¸ö°ëËÀ£¬ÖÕÓÚ×ß³öÁËÕâÆ¬ËÉÁÖ¡£\n");
+        tell_object(ob, "ä½ ç´¯äº†å€‹åŠæ­»ï¼Œçµ‚äºŽèµ°å‡ºäº†é€™ç‰‡é¬†æž—ã€‚\n");
         ob->move("/d/changan/qinhuang/dadian.c");
         set("food", 1, ob);
         set("water", 1, ob);

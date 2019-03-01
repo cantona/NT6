@@ -7,12 +7,12 @@ inherit F_SSERVER;
 
 #include "/kungfu/skill/eff_msg.h";
 
-string name() { return "´Ì¼çÊ½"; }
+string name() { return "åˆºè‚©å¼"; }
 
 string *limbs = ({
-        "Í·²¿", "¾±²¿", "ÐØ¿Ú", "ºóÐÄ", "×ó¼ç", "ÓÒ¼ç", "×ó±Û",
-        "ÓÒ±Û", "×óÊÖ", "ÓÒÊÖ", "Ñü¼ä", "Ð¡¸¹", "×óÍÈ", "ÓÒÍÈ",
-        "×ó½Å", "ÓÒ½Å", "×ó¶ú", "ÓÒ¶ú", "×óÁ³", "ÓÒÁ³",
+        "é ­éƒ¨", "é ¸éƒ¨", "èƒ¸å£", "å¾Œå¿ƒ", "å·¦è‚©", "å³è‚©", "å·¦è‡‚",
+        "å³è‡‚", "å·¦æ‰‹", "å³æ‰‹", "è…°é–“", "å°è…¹", "å·¦è…¿", "å³è…¿",
+        "å·¦è…³", "å³è…³", "å·¦è€³", "å³è€³", "å·¦è‡‰", "å³è‡‰",
 });
 
 void remove_effect(object target);
@@ -34,30 +34,30 @@ int perform(object me, object target)
                 target = offensive_target(me);
 
         if( !target || !me->is_fighting(target) )
-                return notify_fail("¡¸"HIM"´Ì¼çÊ½"NOR"¡¹Ö»ÄÜÔÚÕ½¶·ÖÐ¶Ô¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œ"HIM"åˆºè‚©å¼"NOR"ã€åªèƒ½åœ¨æˆ°é¬¥ä¸­å°å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if (!weapon
                  || query("skill_type", weapon) != "sword"
                 || me->query_skill_mapped("sword") != "liancheng-jianfa")
-                return notify_fail("ÄãÊÖÀïÃ»ÓÐ½££¬ÎÞ·¨Ê¹ÓÃ¡¸"HIM"´Ì¼çÊ½"NOR"¡¹£¡\n");
+                return notify_fail("ä½ æ‰‹è£¡æ²’æœ‰åŠï¼Œç„¡æ³•ä½¿ç”¨ã€Œ"HIM"åˆºè‚©å¼"NOR"ã€ï¼\n");
 
         if( (int)me->query_skill("liancheng-jianfa",1) < 150 )
-                return notify_fail("ÄãµÄÁ¬³Ç½£·¨²»¹»æµÊì£¬²»ÄÜÊ¹ÓÃ¡¸"HIM"´Ì¼çÊ½"NOR"¡¹£¡\n");
+                return notify_fail("ä½ çš„é€£åŸŽåŠæ³•ä¸å¤ å«»ç†Ÿï¼Œä¸èƒ½ä½¿ç”¨ã€Œ"HIM"åˆºè‚©å¼"NOR"ã€ï¼\n");
 
         if( (int)me->query_skill("sword",1) < 150 )
-                return notify_fail("ÄãµÄ»ù±¾½£·¨µÈ¼¶²»¹»£¬²»ÄÜÊ¹ÓÃ¡¸"HIM"´Ì¼çÊ½"NOR"¡¹£¡\n");
+                return notify_fail("ä½ çš„åŸºæœ¬åŠæ³•ç­‰ç´šä¸å¤ ï¼Œä¸èƒ½ä½¿ç”¨ã€Œ"HIM"åˆºè‚©å¼"NOR"ã€ï¼\n");
 
         if( (int)me->query_skill("force", 1) < 150 )
-                return notify_fail("ÄãµÄÄÚ¹¦µÈ¼¶²»¹»£¬²»ÄÜÊ¹ÓÃ¡¸"HIM"´Ì¼çÊ½"NOR"¡¹£¡\n");
+                return notify_fail("ä½ çš„å…§åŠŸç­‰ç´šä¸å¤ ï¼Œä¸èƒ½ä½¿ç”¨ã€Œ"HIM"åˆºè‚©å¼"NOR"ã€ï¼\n");
 
         if( query("max_neili", me)<1500 )
-                return notify_fail("ÄãµÄÄÚÁ¦Ì«Èõ£¬²»ÄÜÊ¹ÓÃ¡¸"HIM"´Ì¼çÊ½"NOR"¡¹£¡\n");
+                return notify_fail("ä½ çš„å…§åŠ›å¤ªå¼±ï¼Œä¸èƒ½ä½¿ç”¨ã€Œ"HIM"åˆºè‚©å¼"NOR"ã€ï¼\n");
 
         if( query("neili", me)<700 )
-                return notify_fail("ÄãµÄÄÚÁ¦Ì«ÉÙÁË£¬ÎÞ·¨Ê¹ÓÃ³ö£¡\n");
+                return notify_fail("ä½ çš„å…§åŠ›å¤ªå°‘äº†ï¼Œç„¡æ³•ä½¿ç”¨å‡ºï¼\n");
 
-        msg = WHT "\n$NÉí×ÓÒ»»Î£¬³éÆð"+weapon->name()+WHT"£¬ÓÌÈç¼²·çÖèÓê°ãÒ»ÕóÃÍ¹¥£¬$nµ²µÃ¼¸ÕÐ£¬·¢½£»Ø¹¥£¬\n"
-              "$NÍ»È»¼ä"+weapon->name()+WHT"¶¶¶¯£¬ß²µÄÒ»ÉùÇáÏì£¬´Ó²»¿ÉË¼ÒéµÄ½Ç¶È´ÌÏòÁË$nµÄ¼çÍ·\n"NOR;
+        msg = WHT "\n$Nèº«å­ä¸€æ™ƒï¼ŒæŠ½èµ·"+weapon->name()+WHT"ï¼ŒçŒ¶å¦‚ç–¾é¢¨é©Ÿé›¨èˆ¬ä¸€é™£çŒ›æ”»ï¼Œ$næ“‹å¾—å¹¾æ‹›ï¼Œç™¼åŠå›žæ”»ï¼Œ\n"
+              "$Nçªç„¶é–“"+weapon->name()+WHT"æŠ–å‹•ï¼Œâ–¡çš„ä¸€è²è¼•éŸ¿ï¼Œå¾žä¸å¯æ€è­°çš„è§’åº¦åˆºå‘äº†$nçš„è‚©é ­\n"NOR;
 
         msg = replace_string( msg, "song", songs[random(sizeof(songs))] );
 
@@ -81,7 +81,7 @@ int perform(object me, object target)
                 target->receive_damage("qi", damage, me);
                 target->receive_wound("qi", damage/2, me);
                 p=query("qi", target)*100/query("max_qi", target);
-                msg += COMBAT_D->damage_msg(damage, "´ÌÉË");
+                msg += COMBAT_D->damage_msg(damage, "åˆºå‚·");
                 msg += "( $n"+eff_status_msg(p)+" )\n";
                 msg=replace_string(msg,"$w",query("name", weapon));
                 msg = replace_string( msg, "$l", limbs[random(sizeof(limbs))] );
@@ -89,8 +89,8 @@ int perform(object me, object target)
 
         message_combatd(msg, me, target);
 
-        msg = HIB "\n$nºá½£µ²Â·£¬¼û$N"+weapon->name()+HIB"Í£ÖÍ²»Ç°£¬µ±¼´Õñ½£·´´Ì¡£ÄÇÖª$n½£¼âÖ»Ò»¶¶¼ä£¬"
-              "$NµÄ"+weapon->name()+HIB"Èç¶¾Éß±©Æð£¬ÏòÇ°Ò»Ì½£¬ÒÑµãÖÐÁË$n¼çÍ·¡££¡\n"NOR;
+        msg = HIB "\n$næ©«åŠæ“‹è·¯ï¼Œè¦‹$N"+weapon->name()+HIB"åœæ»¯ä¸å‰ï¼Œç•¶å³æŒ¯åŠååˆºã€‚é‚£çŸ¥$nåŠå°–åªä¸€æŠ–é–“ï¼Œ"
+              "$Nçš„"+weapon->name()+HIB"å¦‚æ¯’è›‡æš´èµ·ï¼Œå‘å‰ä¸€æŽ¢ï¼Œå·²é»žä¸­äº†$nè‚©é ­ã€‚ï¼\n"NOR;
 
         ap = attack_power(me, "sword");
         dp = defense_power(target, "parry");
@@ -110,15 +110,15 @@ int perform(object me, object target)
                 target->receive_damage("qi", damage, me);
                 target->receive_wound("qi", damage/2, me);
                 p=query("qi", target)*100/query("max_qi", target);
-                msg += COMBAT_D->damage_msg(damage, "´ÌÉË");
+                msg += COMBAT_D->damage_msg(damage, "åˆºå‚·");
                 msg += "( $n"+eff_status_msg(p)+" )\n";
                 msg=replace_string(msg,"$w",query("name", weapon));
                 msg = replace_string( msg, "$l", limbs[random(sizeof(limbs))] );
         }
         message_combatd(msg, me, target);
 
-        msg = YEL "\n$N"+weapon->name()+YEL"×óÒ»´Ì£¬ÓÒÒ»´Á£¬Ã¿Ò»½£¶¼´ÓÎÞ±È¹ÖÒìµÄ·½Î»´Ì³ö£¬"
-              "µãÏò$nµÄ¼ç²¿£¬$nÖ»ÒªÒ»³ö½£Ïà¹¥£¬Á¢Ê±±ã¿Éºó·¢ÏÈÖÁ£¬´ÌÖÐ$nµÄ¼çÍ·¡£\n"NOR;
+        msg = YEL "\n$N"+weapon->name()+YEL"å·¦ä¸€åˆºï¼Œå³ä¸€æˆ³ï¼Œæ¯ä¸€åŠéƒ½å¾žç„¡æ¯”æ€ªç•°çš„æ–¹ä½åˆºå‡ºï¼Œ"
+              "é»žå‘$nçš„è‚©éƒ¨ï¼Œ$nåªè¦ä¸€å‡ºåŠç›¸æ”»ï¼Œç«‹æ™‚ä¾¿å¯å¾Œç™¼å…ˆè‡³ï¼Œåˆºä¸­$nçš„è‚©é ­ã€‚\n"NOR;
 
         ap = attack_power(me, "sword");
         dp = defense_power(target, "force");
@@ -139,7 +139,7 @@ int perform(object me, object target)
                 target->receive_damage("qi", damage, me);
                 target->receive_wound("qi", damage/2, me);
                 p=query("qi", target)*100/query("max_qi", target);
-                msg += COMBAT_D->damage_msg(damage, "´ÌÉË");
+                msg += COMBAT_D->damage_msg(damage, "åˆºå‚·");
                 msg += "( $n"+eff_status_msg(p)+" )\n";
                 msg=replace_string(msg,"$w",query("name", weapon));
                 msg = replace_string( msg, "$l", limbs[random(sizeof(limbs))] );

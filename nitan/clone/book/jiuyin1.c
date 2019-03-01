@@ -3,15 +3,15 @@ inherit F_UNIQUE;
  
 void create()
 {
-        set_name("¡¸¾ÅÒõÕæ¾­¡¹ÉÏ²á", ({ "jiuyin zhenjing1","zhenjing1", }));
+        set_name("ã€Œä¹é™°çœŸç¶“ã€ä¸Šå†Š", ({ "jiuyin zhenjing1","zhenjing1", }));
         set_weight(500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
+                set("unit", "æœ¬");
                 set("long",
-        "ÕâÊÇÒ»±¾ÓÃ±¡¾îĞ´³ÉµÄÊé¡£ÉÏÊé£º¡°¾ÅÒõÕæ¾­(ÉÏ)¡±¡£\n"
-        "ÊéÆ¤·º»Æ£¬¿´À´ÒÑ¾­±£´æºÜ¾ÃÁË¡£\n",
+        "é€™æ˜¯ä¸€æœ¬ç”¨è–„çµ¹å¯«æˆçš„æ›¸ã€‚ä¸Šæ›¸ï¼šâ€œä¹é™°çœŸç¶“(ä¸Š)â€ã€‚\n"
+        "æ›¸çš®æ³›é»ƒï¼Œçœ‹ä¾†å·²ç¶“ä¿å­˜å¾ˆä¹…äº†ã€‚\n",
 
         );
                 set("value", 0);

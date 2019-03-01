@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�����");
+        set("short", "東大街");
         set("long", @LONG
-�����ڶ�����ϣ����ż�ʵ����ʯ����档���߲�Զ�Ƕ����ţ�
-���������سǹٱ���ߺ���������������ʵĶ�����������һ�𡣱���
-��һ��СС���ӻ��̡�
+你走在東大街上，踩著堅實的青石板地面。東邊不遠是東城門，
+可以聽到守城官兵的吆喝聲，與西邊朗朗的讀書聲混雜在一起。北邊
+是一家小小的雜貨舖。
 LONG );
         set("outdoors", "jingzhou");
         set("exits", ([

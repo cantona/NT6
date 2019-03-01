@@ -8,16 +8,16 @@ int get_score(object ob);
 
 void create()
 {
-        set_name(GRN "Ó¢ÐÛ±Ú" NOR, ({ "heros wall", "heros", "wall" }));
+        set_name(GRN "è‹±é›„å£" NOR, ({ "heros wall", "heros", "wall" }));
         set_weight(500000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", GRN "\nÕâÊÇÒ»ÃæÓÉÕû¿éÄ«Óñµñ×Á¶ø³ÉµÄÓ¢ÐÛ±Ú¡£ÉÏÃæ"
-                            "¿Ì×Åµ±½ñÎäÁÖÖÐ\nÎä¹¦×îÎª¸ßÇ¿µÄÊ®Î»Ó¢ÐÛÈËÎï£¬Äã"
-                            "¿ÉÒÔÍ¨¹ý(view)À´²éÔÄÅÅÃû¡£\n" NOR);
-                set("no_get", "ºÃ¼Ò»ï£¬Á¬Ç½¶¼Ïë¿¹ÆðÀ´¡£\n");
-                set("unit", "Ãæ");
+                set("long", GRN "\né€™æ˜¯ä¸€é¢ç”±æ•´å¡Šå¢¨çŽ‰é›•ç¢è€Œæˆçš„è‹±é›„å£ã€‚ä¸Šé¢"
+                            "åˆ»è‘—ç•¶ä»Šæ­¦æž—ä¸­\næ­¦åŠŸæœ€ç‚ºé«˜å¼·çš„åä½è‹±é›„äººç‰©ï¼Œä½ "
+                            "å¯ä»¥é€šéŽ(view)ä¾†æŸ¥é–±æŽ’åã€‚\n" NOR);
+                set("no_get", "å¥½å®¶ä¼™ï¼Œé€£ç‰†éƒ½æƒ³æŠ—èµ·ä¾†ã€‚\n");
+                set("unit", "é¢");
                 set("value", 1000000);
                 set("material", "stone");
         }
@@ -39,42 +39,42 @@ int do_view(string arg)
         me = this_player();
 
         if (arg != "heros wall" && arg != "heros" && arg != "wall")
-                return notify_fail("Äã´òËãÔÄ¶ÁÊ²Ã´£¿\n");
+                return notify_fail("ä½ æ‰“ç®—é–±è®€ä»€éº¼ï¼Ÿ\n");
 
-        // ·ÀÖ¹ÏµÍ³×ÊÔ´ÏûºÄ¹ý´ó£¬ÏÞÊ±ä¯ÀÀ¡£
+        // é˜²æ­¢ç³»çµ±è³‡æºæ¶ˆè€—éŽå¤§ï¼Œé™æ™‚ç€è¦½ã€‚
         if (! wizardp(me) && time() - me->query_temp("last_view") < 100)
-                return notify_fail(HIW "\nÍ»È»¼äÓ¢ÐÛ±ÚÉÏÒ»µÀ¹â»ªÉÁ¹ý£¬Ê¹Äã"
-                                   "ÄÑÒÔ±æÇå±ÚÉÏµÄ×Ö¼£¡£\n" NOR);
+                return notify_fail(HIW "\nçªç„¶é–“è‹±é›„å£ä¸Šä¸€é“å…‰è¯é–ƒéŽï¼Œä½¿ä½ "
+                                   "é›£ä»¥è¾¨æ¸…å£ä¸Šçš„å­—è·¡ã€‚\n" NOR);
 
         ob = filter_array(objects(), (: userp($1) && ! wizardp($1) :));
 
         list = sort_array(ob, (: top_list :));
 
-        msg =  HIW "\n            ©³©¥©¥¡º" HIG " Ó¢ ÐÛ ±Ú " HIW "¡»©¥©¥©·\n";
-        msg += "©³©¥©¥©¥©Ó©¥©ß©¥©¥©¥©¥©¥©¥©¥©¥©Ó©¥©¥©ß©¥©Ó©¥©¥©¥©¥©·\n";
-        msg += "©§ " HIG "ÅÅÃû" HIW " ©¦    " HIG "ÐÕ        ÊÏ" HIW
-               "    ©¦ " HIG "ÃÅ  ÅÉ" HIW " ©¦ " HIG "ÆÀ  ¼Û" HIW " ©§\n";
-        msg += "©Ä©¤©¤©¤©Ø©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©Ø©¤©¤©¤©¤©Ø©¤©¤©¤©¤©Ì\n";
+        msg =  HIW "\n            â–¡â–¡â–¡ã€Ž" HIG " è‹± é›„ å£ " HIW "ã€â–¡â–¡â–¡\n";
+        msg += "â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡\n";
+        msg += "â–¡ " HIG "æŽ’å" HIW " â”‚    " HIG "å§“        æ°" HIW
+               "    â”‚ " HIG "é–€  æ´¾" HIW " â”‚ " HIG "è©•  åƒ¹" HIW " â–¡\n";
+        msg += "â–¡â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”´â”€â”€â”€â”€â–¡\n";
 
         for (i = 0; i < 10; i++)
         {
                 if (i >= sizeof(list))
                 {
-                        msg += HIW "©§ÔÝÊ±¿ÕÈ±¡£ \n" NOR;
+                        msg += HIW "â–¡æš«æ™‚ç©ºç¼ºã€‚ \n" NOR;
                         continue;
                 }
-                msg += sprintf(HIW "©§" HIG "  %-5s %-22s%-10s %5d  " HIW "©§\n" NOR,
+                msg += sprintf(HIW "â–¡" HIG "  %-5s %-22s%-10s %5d  " HIW "â–¡\n" NOR,
                         chinese_number(i + 1),
                         list[i]->query("name") + "(" +
                         capitalize(list[i]->query("id")) + ")",
                         list[i]->query("family") ?
-                        list[i]->query("family/family_name") : "½­ºþÀËÈË",
+                        list[i]->query("family/family_name") : "æ±Ÿæ¹–æµªäºº",
                         get_score(list[i]));
         }
-        msg += HIW "©»©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¿\n" NOR;
-        msg += HIG + NATURE_D->game_time() + "¼Ç¡£\n" NOR;
-        msg += WHT "Ó¢ÐÛ±ÚÏÂÃæÓÐÒ»ÐÐÐ¡×Ö¿Ì×Å£º" + me->query("name") + "£¬Ä¿Ç°ÆÀ¼Û£º" +
-               get_score(me) + "¡£\n\n" NOR;
+        msg += HIW "â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡\n" NOR;
+        msg += HIG + NATURE_D->game_time() + "è¨˜ã€‚\n" NOR;
+        msg += WHT "è‹±é›„å£ä¸‹é¢æœ‰ä¸€è¡Œå°å­—åˆ»è‘—ï¼š" + me->query("name") + "ï¼Œç›®å‰è©•åƒ¹ï¼š" +
+               get_score(me) + "ã€‚\n\n" NOR;
 
         write(msg);
         me->set_temp("last_view", time());

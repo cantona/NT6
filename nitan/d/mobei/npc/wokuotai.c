@@ -4,9 +4,9 @@
 inherit NPC;
 void create()
 {
-        set_name("ÎÑÀ«Ì¨",({"wo kuotai","wo","kuotai"}));
-        set("gender","ÄĞĞÔ");
-        set("long","ÌúÄ¾ÕæµÄÈı¶ù×Ó£¬ËûÎªÈË¿íºñ£¬ÉõµÃÈËĞÄ¡£\n");
+        set_name("çª©é—Šå°",({"wo kuotai","wo","kuotai"}));
+        set("gender","ç”·æ€§");
+        set("long","éµæœ¨çœŸçš„ä¸‰å…’å­ï¼Œä»–ç‚ºäººå¯¬åšï¼Œç”šå¾—äººå¿ƒã€‚\n");
         set("combat_exp",150000);
         set("age",29);
         set("qi",1200);

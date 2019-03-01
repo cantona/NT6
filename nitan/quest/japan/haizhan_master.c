@@ -1,16 +1,16 @@
 // /job/japan/haizhan_master.c
 // by akuma 10:57 AM 11/30/2003
-// source by naihe  2003-06-19  ÓÚÃ¯Ãû
+// source by naihe  2003-06-19  äºèŒ‚å
 
 #include <ansi.h>
 inherit ITEM;
 
-#define B1                "¼ªÒ°µÄ½¢Æì"                // ½ğ½£  - YEL, HIY
-#define B2                "µĞ½¢µÄÖ÷ÅÚ"                // ±¦Ïä  - MAG, HIM
-#define B3                "ÂÖ»úÓÍÏä"                // »Ê¹Ú  - YEL, HIY
-#define B4                "µĞ¾ü¹ÙµÄÍ·¿ø"                // ÏîÁ´  - CYN, HIC
+#define B1                "å‰é‡çš„è‰¦æ——"                // é‡‘åŠ  - YEL, HIY
+#define B2                "æ•µè‰¦çš„ä¸»ç‚®"                // å¯¶ç®±  - MAG, HIM
+#define B3                "è¼ªæ©Ÿæ²¹ç®±"                // çš‡å†   - YEL, HIY
+#define B4                "æ•µè»å®˜çš„é ­ç›”"                // é …éˆ  - CYN, HIC
 
-string game_now = "µÈ´ıÖ¸Ê¾ÃüÁî¡­¡­";
+string game_now = "ç­‰å¾…æŒ‡ç¤ºå‘½ä»¤â€¦â€¦";
 string att_now = "not_ok";
 int target_hp, target_damage;
 string pic_me, pic_target;
@@ -35,16 +35,16 @@ int finded_baowu( int which, string name )
         addn("be_finded", 1);
         set("b" + which, HIW + query("b" + which) );
         map();
-        write(HIC"Ì«ĞÒÔËÁË£¬ÖÕÓÚÕÒµ½ÁË" + name + "¡£\n"NOR);
+        write(HIC"å¤ªå¹¸é‹äº†ï¼Œçµ‚äºæ‰¾åˆ°äº†" + name + "ã€‚\n"NOR);
 
         if ( query("be_finded") == 4 ) {
-                message_vision("$N³É¹¦µØÕÒµ½È«²¿ËÄ¼şÕ½ÀûÆ·£¬»ñµÃÁ½°ÙÁ¿»Æ½ğµÄ½±Àø¡£\n", me);
+                message_vision("$NæˆåŠŸåœ°æ‰¾åˆ°å…¨éƒ¨å››ä»¶æˆ°åˆ©å“ï¼Œç²å¾—å…©ç™¾é‡é»ƒé‡‘çš„çå‹µã€‚\n", me);
                 addn("balance", 2000000, me);
         }
         return 1;
 }
 
-object get_me()                // »ñµÃ¡°me¡±
+object get_me()                // ç²å¾—â€œmeâ€
 {
         object me;
 
@@ -55,7 +55,7 @@ object get_me()                // »ñµÃ¡°me¡±
         return me;
 }
 
-int damage( int type )  // »ñµÃ¹¥»÷Á¦¶Î 6-11
+int damage( int type )  // ç²å¾—æ”»æ“ŠåŠ›æ®µ 6-11
 {
         if ( !type || type < 1 || type > 5 ) type = 1;
 
@@ -84,18 +84,18 @@ void del_me()
 
 void create()
 {
-        set_name(HIY"¾­Î³ÒÇ"NOR, ({"jingwei yi","yi"}));
+        set_name(HIY"ç¶“ç·¯å„€"NOR, ({"jingwei yi","yi"}));
         set_weight(1);
         if ( clonep() )
                 set_default_object(__FILE__);
         else {
                 set("long", @LONG
-¿ØÖÆÕ½´¬µÄÖ÷Òª¹¤¾ß£¬ÓĞÁËËü²Å¿ÉÒÔ½øĞĞ¼×Îçº£Õ½Õ½³¡¡£
+æ§åˆ¶æˆ°èˆ¹çš„ä¸»è¦å·¥å…·ï¼Œæœ‰äº†å®ƒæ‰å¯ä»¥é€²è¡Œç”²åˆæµ·æˆ°æˆ°å ´ã€‚
 
-²éÑ¯Õ½¶·×´Ì¬£¬ÊäÈë£º combat check
-ÍË³öÕ½¶·×´Ì¬£¬ÊäÈë£º combat over
+æŸ¥è©¢æˆ°é¬¥ç‹€æ…‹ï¼Œè¼¸å…¥ï¼š combat check
+é€€å‡ºæˆ°é¬¥ç‹€æ…‹ï¼Œè¼¸å…¥ï¼š combat over
 LONG);
-                set("unit", "¾ß");
+                set("unit", "å…·");
                 set("value", 0);
         }
         set("no_get", 1);
@@ -121,47 +121,47 @@ void new_game(object me)
         set("owner_id", getuid(me));
         set("owner_name",query("name", me));
 
-        new_game_set( random(3) + 3, "µºÓì" );
-        new_game_set( 2, "ÍûÔ¶¾µ" );
-        new_game_set( 2, "±¨¾¯Ì½Ë÷ÒÇ" );
-        new_game_set( 2, "Ñ°±¦Í¼" );
-        new_game_set( 1, "²¹¸ø´¬" );
-        new_game_set( 5, "µÇÂ½Í§" );
-        new_game_set( 12, "ÅÚÍ§" );
-        new_game_set( 8, "ÇıÖğ½¢" );
-        new_game_set( 8, "Ñ²Ñó½¢" );
-        new_game_set( 5, "Ç±Í§" );
-        new_game_set( 2, "¼ªÒ°ºÅ" );
+        new_game_set( random(3) + 3, "å³¶å¶¼" );
+        new_game_set( 2, "æœ›é é¡" );
+        new_game_set( 2, "å ±è­¦æ¢ç´¢å„€" );
+        new_game_set( 2, "å°‹å¯¶åœ–" );
+        new_game_set( 1, "è£œçµ¦èˆ¹" );
+        new_game_set( 5, "ç™»é™¸è‰‡" );
+        new_game_set( 12, "ç‚®è‰‡" );
+        new_game_set( 8, "é©…é€è‰¦" );
+        new_game_set( 8, "å·¡æ´‹è‰¦" );
+        new_game_set( 5, "æ½›è‰‡" );
+        new_game_set( 2, "å‰é‡è™Ÿ" );
 
         new_game_set( 1, B1);
         new_game_set( 1, B2);
         new_game_set( 1, B3);
         new_game_set( 1, B4);
 
-        new_game_set( 1, "µ±Ç°Æì½¢Î»ÖÃ");
+        new_game_set( 1, "ç•¶å‰æ——è‰¦ä½ç½®");
 
-        set("att_Èâ²«", 999999);
-        set("att_¹­¼ı", 40);
-        set("att_Ê¯ÅÚ", 10);
-        set("att_»ğÅÚ", 5);
-        set("att_È¼ÉÕµ¯", 3);
-        set("att_ÓãÀ×", 2);
+        set("att_è‚‰æ", 999999);
+        set("att_å¼“ç®­", 40);
+        set("att_çŸ³ç‚®", 10);
+        set("att_ç«ç‚®", 5);
+        set("att_ç‡ƒç‡’å½ˆ", 3);
+        set("att_é­šé›·", 2);
         set("hp", 150);
 
         set_temp("haizai_cond", "waiting_go", me);
-        write("\n============ ÉèÖÃ³É¹¦£¡ÕıÔÚ½øÈëÓÎÏ·¡­¡­ ============\n");
+        write("\n============ è¨­ç½®æˆåŠŸï¼æ­£åœ¨é€²å…¥éŠæˆ²â€¦â€¦ ============\n");
 
-        set("b1", YEL"¼ªÒ°µÄ½¢Æì"NOR);
-        set("b2", YEL"µĞ½¢µÄÖ÷ÅÚ"NOR);
-        set("b3", YEL"ÂÖ»úÓÍÏä"NOR);
-        set("b4", CYN"µĞ¾ü¹ÙµÄÍ·¿ø"NOR);
+        set("b1", YEL"å‰é‡çš„è‰¦æ——"NOR);
+        set("b2", YEL"æ•µè‰¦çš„ä¸»ç‚®"NOR);
+        set("b3", YEL"è¼ªæ©Ÿæ²¹ç®±"NOR);
+        set("b4", CYN"æ•µè»å®˜çš„é ­ç›”"NOR);
 
         call_out("game_start", 1);
 }
 
 void new_game_set( int amount, string mark )
 {
-        int x, y;        // ÕâÀïµÄ x, y £¬ xÊÇÊúÊıµÚ¼¸ºá£¬yÊÇºáÊıµÚ¼¸¸ö¡£
+        int x, y;        // é€™è£¡çš„ x, y ï¼Œ xæ˜¯è±æ•¸ç¬¬å¹¾æ©«ï¼Œyæ˜¯æ©«æ•¸ç¬¬å¹¾å€‹ã€‚
 
         while ( amount-- ) {
                 x = 1 + random(100);
@@ -172,11 +172,11 @@ void new_game_set( int amount, string mark )
                         continue;
                 }
                 set( "aaa(" + x + "," + y + ")" , mark );
-                if ( mark == "µ±Ç°Æì½¢Î»ÖÃ" ) {
+                if ( mark == "ç•¶å‰æ——è‰¦ä½ç½®" ) {
                         set("now_x", x);
                         set("now_y", y);
                 }
-                if ( mark == "µºÓì" )
+                if ( mark == "å³¶å¶¼" )
                         set("island(" + x + "," + y + ")", "new" );
         }
 }
@@ -188,13 +188,13 @@ void game_start()
         if ( !me ) return del_me();
 
         set_temp("haizhan_cond", "ok", me);
-        message_vision("$N½øÈë½øÈëº£Õ½Õ½³¡£¬×óÓÒ±±ÑóË®Ê¦Ïà»¥Ğ­Ó¦\n", me);
+        message_vision("$Né€²å…¥é€²å…¥æµ·æˆ°æˆ°å ´ï¼Œå·¦å³åŒ—æ´‹æ°´å¸«ç›¸äº’å”æ‡‰\n", me);
 
-        write("\nÕ½¶·Ä¿±ê£ºÏûÃğÈÕ±¾Ë®Ê¦Æì½¢¡£\n");
+        write("\næˆ°é¬¥ç›®æ¨™ï¼šæ¶ˆæ»…æ—¥æœ¬æ°´å¸«æ——è‰¦ã€‚\n");
         map();
 }
 ////////////////////////////////////
-/////////  Íæ¼Ò²Ù×÷º¯Êı  ///////////
+/////////  ç©å®¶æ“ä½œå‡½æ•¸  ///////////
 ////////////////////////////////////
 int do_game(string arg)
 {
@@ -215,9 +215,9 @@ int do_game(string arg)
         }
         if ( arg == "over" ) {
                 delete_temp("haizhan_cond", me);
-                message_vision("$NÖĞÍ¾ÍË³öº£Õ½¡£\n", me);
+                message_vision("$Nä¸­é€”é€€å‡ºæµ·æˆ°ã€‚\n", me);
                 exp = 1000 + random(1000);
-                write(HIR"\nÓÉì¶ÁÙÕóÍÑÌÓ£¬ËğÊ§¾­ÑéÖµ" + exp + "µã¡£\n"NOR);
+                write(HIR"\nç”±æ–¼è‡¨é™£è„«é€ƒï¼Œæå¤±ç¶“é©—å€¼" + exp + "é»ã€‚\n"NOR);
                 addn("combat_exp", -exp, me);
                 remove_call_out("del_me");
                 call_out("del_me", 1);
@@ -238,7 +238,7 @@ int do_go(string arg)
         if ( !who || who != me ) return 0;
         if ( member_array( arg , dirs ) == -1 ) return 0;
 
-        if( query_temp("haizhan_cond", me) != "ok")return notify_fail("ÏÖÔÚ²»ĞíÒÆ¶¯¡£ÕıÔÚ£º"+game_now+"¡£\n");
+        if( query_temp("haizhan_cond", me) != "ok")return notify_fail("ç¾åœ¨ä¸è¨±ç§»å‹•ã€‚æ­£åœ¨ï¼š"+game_now+"ã€‚\n");
 
         x = query("now_x");
         y = query("now_y");
@@ -256,52 +256,52 @@ int do_go(string arg)
                 case "southwest" : x++; y--; break;
                 case "southeast" : x++; y++; break;
         }
-        if ( x < 1 || y < 1 || x > 12 || y > 18 ) return notify_fail("Õâ¸ö·½ÏòÒÑ¾­ÎŞ·¨Ç°½øÁË£¡\n");
+        if ( x < 1 || y < 1 || x > 12 || y > 18 ) return notify_fail("é€™å€‹æ–¹å‘å·²ç¶“ç„¡æ³•å‰é€²äº†ï¼\n");
 
         set("be_finded(" + old_x + "," + old_y + ")", 1); 
 
         if ( query( "island(" + old_x + "," + old_y + ")" ) == "new" || query( "island(" + old_x + "," + old_y + ")" ) == "old" ) {
                 set("island(" + old_x + "," + old_y + ")", "old");
-                set("aaa("+old_x+","+old_y+")", "¾ÉµÄµºÓì");
+                set("aaa("+old_x+","+old_y+")", "èˆŠçš„å³¶å¶¼");
         }
         if ( !query( "island(" + old_x + "," + old_y + ")" ) ) delete("aaa(" + old_x + "," + old_y + ")" );
 
         here = query( "aaa(" + x + "," + y + ")" );
 
-        set("aaa(" +x+ "," +y+ ")", "µ±Ç°Æì½¢Î»ÖÃ");
+        set("aaa(" +x+ "," +y+ ")", "ç•¶å‰æ——è‰¦ä½ç½®");
         set("now_x", x);
         set("now_y", y);
 
-        // ¸÷ÀàÅĞ¶Ï£¡£¡£¡
-        if ( here == "µºÓì" ) {
-                addn("att_¹­¼ı", 10);
-                addn("att_Ê¯ÅÚ", 4);
-                addn("att_»ğÅÚ", 2);
-                addn("att_È¼ÉÕµ¯", 1);
-                addn("att_ÓãÀ×", 1);
+        // å„é¡åˆ¤æ–·ï¼ï¼ï¼
+        if ( here == "å³¶å¶¼" ) {
+                addn("att_å¼“ç®­", 10);
+                addn("att_çŸ³ç‚®", 4);
+                addn("att_ç«ç‚®", 2);
+                addn("att_ç‡ƒç‡’å½ˆ", 1);
+                addn("att_é­šé›·", 1);
                 addn("hp", 20 + random(11));
                 map();
-                write(HIG"·¢ÏÖµºÓì£¡µÃµ½ÁËµ¯Ò©²¹¸øºÍ´¬Ö»ĞŞÀí¡£\n"NOR);
+                write(HIG"ç™¼ç¾å³¶å¶¼ï¼å¾—åˆ°äº†å½ˆè—¥è£œçµ¦å’Œèˆ¹åªä¿®ç†ã€‚\n"NOR);
                 if ( random(100) > 80 ) {
-                        write(HIG"Í»È»£¬Ò»ÃûÈÕ±¾ÎäÊ¿´ÓµºÉÏÒş±Î´¦³åÉÏÁËÄãµÄ×ø´¬¡­¡­\n"NOR);
+                        write(HIG"çªç„¶ï¼Œä¸€åæ—¥æœ¬æ­¦å£«å¾å³¶ä¸Šéš±è”½è™•æ²–ä¸Šäº†ä½ çš„åèˆ¹â€¦â€¦\n"NOR);
                         obj = new(__DIR__"killer3");
                         set("target",query("id",  me), obj);
                         obj->move(environment(me));
                 }
                 return 1;
         }
-        if ( here == "µÇÂ½Í§" ) {
-                write(HIG"Í»È»£¬Ò»ÃûÈÕ±¾ÎäÊ¿´ÓµÇÂ½Í§³åÉÏÁËÄãµÄ×ø´¬¡­¡­\n"NOR);
+        if ( here == "ç™»é™¸è‰‡" ) {
+                write(HIG"çªç„¶ï¼Œä¸€åæ—¥æœ¬æ­¦å£«å¾ç™»é™¸è‰‡æ²–ä¸Šäº†ä½ çš„åèˆ¹â€¦â€¦\n"NOR);
                 obj = new(__DIR__"killer3");
                 map();
                 set("target",query("id",  me), obj);
                 obj->move(environment(me));
                 return 1;
         }
-        if ( here == "²¹¸ø´¬" ) {
+        if ( here == "è£œçµ¦èˆ¹" ) {
                 addn("hp", 30 + random(21));
                 map();
-                write(HIC"·¢ÏÖĞŞ²¹²ÄÁÏ£¡´¬Ö»µÃµ½ÁËĞŞÀí¡£\n"NOR);
+                write(HIC"ç™¼ç¾ä¿®è£œææ–™ï¼èˆ¹åªå¾—åˆ°äº†ä¿®ç†ã€‚\n"NOR);
                 return 1;
         }
         if ( here == B1 ) return finded_baowu( 1, B1 );
@@ -312,18 +312,18 @@ int do_go(string arg)
 
         if ( here == B4 ) return finded_baowu( 4, B4 );
 
-        if ( here == "ÍûÔ¶¾µ" ) {
-                game_now = "ÁËÍûÖĞ £¨Ö¸Áî£º liaowang x y£©";
+        if ( here == "æœ›é é¡" ) {
+                game_now = "äº†æœ›ä¸­ ï¼ˆæŒ‡ä»¤ï¼š liaowang x yï¼‰";
                 map();
-                write(HIM"·¢ÏÖÁËÍûÔ¶¾µ£¡ÊäÈë (liaowang x y) Ö¸Áî²é¿´¸ÃµãÖÜ±ßº£ÓòµÄÇéĞÎ£¡ \n"NOR);
+                write(HIM"ç™¼ç¾äº†æœ›é é¡ï¼è¼¸å…¥ (liaowang x y) æŒ‡ä»¤æŸ¥çœ‹è©²é»å‘¨é‚Šæµ·åŸŸçš„æƒ…å½¢ï¼ \n"NOR);
                 set_temp("haizhan_cond", "wangyuanjing", me);
                 return 1;
         }
-        if ( here == "±¨¾¯Ì½Ë÷ÒÇ" ) {
+        if ( here == "å ±è­¦æ¢ç´¢å„€" ) {
                 map();
-                write(HIM"·¢ÏÖÁË±¨¾¯Ì½Ë÷ÒÇ£¡\n"NOR);
+                write(HIM"ç™¼ç¾äº†å ±è­¦æ¢ç´¢å„€ï¼\n"NOR);
 
-                msg = HIM"\n±¨¾¯ÒÇÌ½Ë÷ÖĞ¡­¡­×Ô¶¯Ì½Ë÷ " + x + "," + y + " ÇøÓòµÄÇé¿ö¡£\n\n";
+                msg = HIM"\nå ±è­¦å„€æ¢ç´¢ä¸­â€¦â€¦è‡ªå‹•æ¢ç´¢ " + x + "," + y + " å€åŸŸçš„æƒ…æ³ã€‚\n\n";
                 msg += get_msg( x - 1, y - 1, "bjy" );
                 msg += get_msg( x - 1, y, "bjy" );
                 msg += get_msg( x - 1, y + 1, "bjy" );
@@ -333,36 +333,36 @@ int do_go(string arg)
                 msg +=  get_msg( x + 1, y - 1, "bjy" );
                 msg +=  get_msg( x + 1, y, "bjy" );
                 msg +=  get_msg( x + 1, y + 1, "bjy" );
-                msg += "\nÌ½Ë÷Î£ÏÕÇøÓò±¨¾¯Íê±Ï¡£\n\n"NOR;
+                msg += "\næ¢ç´¢å±éšªå€åŸŸå ±è­¦å®Œç•¢ã€‚\n\n"NOR;
                 write( msg );
                 return 1;
         }
-        if ( here == "Ñ°±¦Í¼" ) {
+        if ( here == "å°‹å¯¶åœ–" ) {
                 map();
-                write(HIC"·¢ÏÖÁËÒ»ÕÅÑ°±¦Í¼¡£\n"NOR);
+                write(HIC"ç™¼ç¾äº†ä¸€å¼µå°‹å¯¶åœ–ã€‚\n"NOR);
                 xunbaotu();
                 return 1;
         }
-        if ( here == "ÅÚÍ§" || here == "ÇıÖğ½¢" || here == "Ñ²Ñó½¢" || here == "Ç±Í§" || here == "¼ªÒ°ºÅ" ) {
-                game_now = "Óë " + here + " Õ½¶·ÖĞ£¡ µÈ´ıµĞÈË¹¥»÷";
+        if ( here == "ç‚®è‰‡" || here == "é©…é€è‰¦" || here == "å·¡æ´‹è‰¦" || here == "æ½›è‰‡" || here == "å‰é‡è™Ÿ" ) {
+                game_now = "èˆ‡ " + here + " æˆ°é¬¥ä¸­ï¼ ç­‰å¾…æ•µäººæ”»æ“Š";
                 set_temp("haizhan_cond", "fighting", me);
                 att_now = "not_ok";
                 map();
-                write(HIR"Ôã¸â¡­¡­ÔâÓöÁË " + here + "¡£½øÈë½ô¼±Õ½¶·×´Ì¬£¡\n"NOR);
+                write(HIR"ç³Ÿç³•â€¦â€¦é­é‡äº† " + here + "ã€‚é€²å…¥ç·Šæ€¥æˆ°é¬¥ç‹€æ…‹ï¼\n"NOR);
                 set("who_name", here);
                 remove_call_out("fight_start");
                 call_out("fight_start", 1, here);
                 return 1;
         }
         map();
-        write(HIW"½¢¶ÓÔÚº£ÖĞĞĞÊ¹£¬ÉĞÎ´·¢ÏÖµĞÇé¡­¡­\n"NOR);
+        write(HIW"è‰¦éšŠåœ¨æµ·ä¸­è¡Œä½¿ï¼Œå°šæœªç™¼ç¾æ•µæƒ…â€¦â€¦\n"NOR);
         return 1;
 }
 
 void map()
 {
         int x, y, temp = 0;
-        string the_map = HIC"  -- "HIR"HP£º" + query("hp") + "  Õ½ÀûÆ·£º" + query("be_finded") + NOR"\n    ", temp_map, temp2;
+        string the_map = HIC"  -- "HIR"HPï¼š" + query("hp") + "  æˆ°åˆ©å“ï¼š" + query("be_finded") + NOR"\n    ", temp_map, temp2;
 
         for ( x = 1; x < 103; x++ ) {
                 for( y = 1; y < 40; y++ ) {
@@ -372,13 +372,13 @@ void map()
                         }
                         temp2 = "(" + x + "," + y + ")";
 
-                        if ( query( "be_finded" + temp2) ) temp_map = HIC"¡õ"NOR;
-                        else if ( query("weixian" + temp2) ) temp_map = HIR"¡ö"NOR;
-                        else temp_map = HIC"¡ö"NOR;
+                        if ( query( "be_finded" + temp2) ) temp_map = HIC"â–¡"NOR;
+                        else if ( query("weixian" + temp2) ) temp_map = HIR"â– "NOR;
+                        else temp_map = HIC"â– "NOR;
 
-                        if ( query( "aaa" + temp2 ) == "µºÓì" ) temp_map = HIG"¡ø"NOR;
-                        if ( query( "aaa" + temp2 ) == "¾ÉµÄµºÓì" ) temp_map = HIG"¡÷"NOR;
-                        if ( query( "aaa" + temp2 ) == "µ±Ç°Æì½¢Î»ÖÃ" ) temp_map = BLINK+HIY"¡Õ"NOR;
+                        if ( query( "aaa" + temp2 ) == "å³¶å¶¼" ) temp_map = HIG"â–²"NOR;
+                        if ( query( "aaa" + temp2 ) == "èˆŠçš„å³¶å¶¼" ) temp_map = HIG"â–³"NOR;
+                        if ( query( "aaa" + temp2 ) == "ç•¶å‰æ——è‰¦ä½ç½®" ) temp_map = BLINK+HIY"â–¡"NOR;
 
                         the_map += temp_map;
                         temp++;
@@ -388,11 +388,11 @@ void map()
 
         the_map += sprintf( "      %s  %s  %s  %s  \n", query("b1"), query("b2"), query("b3"), query("b4") );
 
-        the_map += sprintf(HIW"  Èâ²«£º¡Ş  ¹­¼ı£º%d  Ê¯ÅÚ£º%d  »ğÅÚ£º%d   È¼ÉÕµ¯£º%d  ÓãÀ×£º%d\n"NOR,
-                query("att_¹­¼ı"), query("att_Ê¯ÅÚ"), query("att_»ğÅÚ"), query("att_È¼ÉÕµ¯"), query("att_ÓãÀ×") );
+        the_map += sprintf(HIW"  è‚‰æï¼šâˆ  å¼“ç®­ï¼š%d  çŸ³ç‚®ï¼š%d  ç«ç‚®ï¼š%d   ç‡ƒç‡’å½ˆï¼š%d  é­šé›·ï¼š%d\n"NOR,
+                query("att_å¼“ç®­"), query("att_çŸ³ç‚®"), query("att_ç«ç‚®"), query("att_ç‡ƒç‡’å½ˆ"), query("att_é­šé›·") );
 
         write( HIY"================================================\n"NOR + the_map +
-                HIY"================================================\n"NOR"µ±Ç°Î»ÖÃ£º(" + query("now_x") + "," + query("now_y") + ")  ÏÖÔÚ£º " +
+                HIY"================================================\n"NOR"ç•¶å‰ä½ç½®ï¼š(" + query("now_x") + "," + query("now_y") + ")  ç¾åœ¨ï¼š " +
                 game_now + " \n");
 }
 
@@ -406,7 +406,7 @@ void check_hp()
 
         if ( query("hp") > 0 ) return;
 
-        the_map = HIR"\n  -- Ê§°Ü½á¹û¹«²¼(¹²Ñ°µÃ" + query("be_finded") + "¼şÕ½ÀûÆ·)\n\n        "NOR;
+        the_map = HIR"\n  -- å¤±æ•—çµæœå…¬å¸ƒ(å…±å°‹å¾—" + query("be_finded") + "ä»¶æˆ°åˆ©å“)\n\n        "NOR;
 
         for( x = 1; x < 11; x++ ) {
                 for ( y = 1; y < 17; y++ ) {
@@ -415,27 +415,27 @@ void check_hp()
                                 the_map += "\n        ";
                         }
                         temp2 = query("aaa("+x+","+y+")");
-                        temp_map = HIC"¡õ"NOR;
+                        temp_map = HIC"â–¡"NOR;
 
-                        if ( temp2 == "ÅÜ´¬" ) temp_map = HIR"ÅÜ"NOR;
-                        if ( temp2 == "Ñ²Ñó½¢" ) temp_map = HIR"Ñ²"NOR;
-                        if ( temp2 == "ÇıÖğ½¢" ) temp_map = HIR"Çı"NOR;
-                        if ( temp2 == "Ç±Í§" ) temp_map = HIR"Ç±"NOR;
-                        if ( temp2 == "¼ªÒ°ºÅ" ) temp_map = HIR"Ö÷"NOR;
+                        if ( temp2 == "è·‘èˆ¹" ) temp_map = HIR"è·‘"NOR;
+                        if ( temp2 == "å·¡æ´‹è‰¦" ) temp_map = HIR"å·¡"NOR;
+                        if ( temp2 == "é©…é€è‰¦" ) temp_map = HIR"é©…"NOR;
+                        if ( temp2 == "æ½›è‰‡" ) temp_map = HIR"æ½›"NOR;
+                        if ( temp2 == "å‰é‡è™Ÿ" ) temp_map = HIR"ä¸»"NOR;
 
 
 
-                        if ( temp2 == "µºÓì" ) temp_map = HIG"¡ø"NOR;
-                        if ( temp2 == "¾ÉµÄµºÓì" ) temp_map = HIG"¡÷"NOR;
-                        if ( temp2 == "µ±Ç°Æì½¢Î»ÖÃ" ) temp_map = BLINK+HIB"¡Õ"NOR;
+                        if ( temp2 == "å³¶å¶¼" ) temp_map = HIG"â–²"NOR;
+                        if ( temp2 == "èˆŠçš„å³¶å¶¼" ) temp_map = HIG"â–³"NOR;
+                        if ( temp2 == "ç•¶å‰æ——è‰¦ä½ç½®" ) temp_map = BLINK+HIB"â–¡"NOR;
 
                         if ( temp2 == B1 || temp2 == B2 || temp2 == B3 || temp2 == B4 )
-                                temp_map = HIY"Æ·"NOR;
+                                temp_map = HIY"å“"NOR;
 
-                        if ( temp2 == "ÍûÔ¶¾µ" ) temp_map = HIM"Íû"NOR;
-                        if ( temp2 == "±¨¾¯Ì½Ë÷ÒÇ" ) temp_map = HIM"¾¯"NOR;
-                        if ( temp2 == "²¹¸ø´¬" ) temp_map = HIM"²¹"NOR;
-                        if ( temp2 == "Ñ°±¦Í¼" ) temp_map = HIM"Í¼"NOR;
+                        if ( temp2 == "æœ›é é¡" ) temp_map = HIM"æœ›"NOR;
+                        if ( temp2 == "å ±è­¦æ¢ç´¢å„€" ) temp_map = HIM"è­¦"NOR;
+                        if ( temp2 == "è£œçµ¦èˆ¹" ) temp_map = HIM"è£œ"NOR;
+                        if ( temp2 == "å°‹å¯¶åœ–" ) temp_map = HIM"åœ–"NOR;
 
                         the_map += temp_map;
                         temp++;
@@ -445,15 +445,15 @@ void check_hp()
 
         write( the_map );
         delete_temp("haizhan_cond", me);
-        game_now = "ÒÑ¾­ÃğÍö¡£";
+        game_now = "å·²ç¶“æ»…äº¡ã€‚";
 
-        message_vision("$NµÄ×ø½¢±»»÷³Á¡£\n", me);
+        message_vision("$Nçš„åè‰¦è¢«æ“Šæ²‰ã€‚\n", me);
         if ( random( (int)me->query_skill("swimming", 1) ) < 80 ) {
-                set_temp("last_damage_from", "×ø½¢±»»÷³Á£¬ÑÍ", me);
+                set_temp("last_damage_from", "åè‰¦è¢«æ“Šæ²‰ï¼Œæ·¹", me);
                 me->die();
         }
         else {
-                tell_object(me, CYN"Äã·ÜÁ¦Ïò°¶±ßÓÎÈ¥£¬ËäÈ»¸ù±¾¾Í¿´²»¼û°¶ÔÚÄÄÀï¡­¡­\n"NOR);
+                tell_object(me, CYN"ä½ å¥®åŠ›å‘å²¸é‚ŠéŠå»ï¼Œé›–ç„¶æ ¹æœ¬å°±çœ‹ä¸è¦‹å²¸åœ¨å“ªè£¡â€¦â€¦\n"NOR);
                 me->unconcious();
         }
         remove_call_out("game_over_over");
@@ -463,7 +463,7 @@ void check_hp()
 
 void game_over_over()
 {
-        write(HIR"Õ½Õù½áÊøÁË¡­¡­\n"NOR);
+        write(HIR"æˆ°çˆ­çµæŸäº†â€¦â€¦\n"NOR);
         remove_call_out("del_me");
         call_out("del_me", 1);
         return;
@@ -481,12 +481,12 @@ int do_liaowang( string arg )
 
         if( query_temp("haizhan_cond", me) != "wangyuanjing")return 0;
 
-        if ( !arg || sscanf( arg, "%d %d", x, y ) != 2 ) return notify_fail("ÇëÊäÈëÕıÈ·×ø±ê£¡x -> Êú×ÅÊıµÚ¼¸ºá  y -> ºá×ÅÊıµÚ¼¸¸ö\n");
+        if ( !arg || sscanf( arg, "%d %d", x, y ) != 2 ) return notify_fail("è«‹è¼¸å…¥æ­£ç¢ºåæ¨™ï¼x -> è±è‘—æ•¸ç¬¬å¹¾æ©«  y -> æ©«è‘—æ•¸ç¬¬å¹¾å€‹\n");
 
-        if ( x < 1 || x > 10 || y < 1 || y > 16 ) return notify_fail("ÇëÊäÈëÕıÈ·×ø±ê£¡x -> Êú×ÅÊıµÚ¼¸ºá  y -> ºá×ÅÊıµÚ¼¸¸ö\n");
+        if ( x < 1 || x > 10 || y < 1 || y > 16 ) return notify_fail("è«‹è¼¸å…¥æ­£ç¢ºåæ¨™ï¼x -> è±è‘—æ•¸ç¬¬å¹¾æ©«  y -> æ©«è‘—æ•¸ç¬¬å¹¾å€‹\n");
 
 
-        msg = HIM"ÁËÍûÖĞ¡­¡­Äã¾ö¶¨²é¿´ " + x + "," + y + " ÇøÓòµÄÇé¿ö¡£\n\n";
+        msg = HIM"äº†æœ›ä¸­â€¦â€¦ä½ æ±ºå®šæŸ¥çœ‹ " + x + "," + y + " å€åŸŸçš„æƒ…æ³ã€‚\n\n";
 
         msg += get_msg( x-1,y-1, "wyj" );
         msg += get_msg( x-1,y,   "wyj" );
@@ -498,11 +498,11 @@ int do_liaowang( string arg )
         msg +=  get_msg( x+1,y,   "wyj" );
         msg +=  get_msg( x+1,y+1, "wyj" );
 
-        msg += "\n²é¿´Íê±Ï¡£\n"NOR;
+        msg += "\næŸ¥çœ‹å®Œç•¢ã€‚\n"NOR;
 
         write( msg );
         set_temp("haizhan_cond", "ok", me);
-        game_now = "µÈ´ıÒÆ¶¯ÃüÁî";
+        game_now = "ç­‰å¾…ç§»å‹•å‘½ä»¤";
         return 1;
 }
 
@@ -518,10 +518,10 @@ string get_msg( int x, int y, string type )
                 if( type == "wyj" ) return "(" + x + "," + y + ") -----------\n";
                 return "";
         }
-        if ( msg == "ÅÚÍ§" || msg == "ÇıÖğ½¢" || msg == "Ñ²Ñó½¢" || msg == "Ç±Í§" || msg == "¼ªÒ°ºÅ" ) {
+        if ( msg == "ç‚®è‰‡" || msg == "é©…é€è‰¦" || msg == "å·¡æ´‹è‰¦" || msg == "æ½›è‰‡" || msg == "å‰é‡è™Ÿ" ) {
                 set("weixian(" + x + "," + y + ")", 1);
                 if( type == "wyj" ) return "(" + x + "," + y + ") " + msg + "\n";
-                return "("+x+","+y+") ÓĞÎ£ÏÕÇ±·ü£¡\n";
+                return "("+x+","+y+") æœ‰å±éšªæ½›ä¼ï¼\n";
         }
         if ( type == "wyj" ) return "(" + x + "," + y + ") " + msg + "\n";
         else return "";
@@ -536,7 +536,7 @@ void xunbaotu()
                 for ( y = 1; y < 17; y++ ) {
                         msg = query("aaa(" +x+ "," +y+ ")" );
                         if ( msg == B1 || msg == B2 || msg == B3 || msg == B4 ) {
-                                write( HIM"(" + x + "," + y + ")    ¸Ã´¦²ØÓĞÕ½ÀûÆ·\n"NOR);
+                                write( HIM"(" + x + "," + y + ")    è©²è™•è—æœ‰æˆ°åˆ©å“\n"NOR);
                                 return;
                         }
                 }
@@ -546,15 +546,15 @@ void xunbaotu()
 void fight_start( string who )
 {
         switch ( who ) {
-                case "ÅÚÍ§": pic_target = "¡Õ"; target_damage = 1; break;
-                case "ÇıÖğ½¢": pic_target = "¡Õ"; target_damage = 2; break;
-                case "Ñ²Ñó½¢": pic_target = "¡Ø"; target_damage = 4; break;
-                case "Ç±Í§": pic_target = "¡ù"; target_damage = 6; break;
-                case "¼ªÒ°ºÅ": pic_target = "¡Ó"; target_damage = 10; break;
+                case "ç‚®è‰‡": pic_target = "â–¡"; target_damage = 1; break;
+                case "é©…é€è‰¦": pic_target = "â–¡"; target_damage = 2; break;
+                case "å·¡æ´‹è‰¦": pic_target = "â–¡"; target_damage = 4; break;
+                case "æ½›è‰‡": pic_target = "â€»"; target_damage = 6; break;
+                case "å‰é‡è™Ÿ": pic_target = "âˆ®"; target_damage = 10; break;
         }
-        if ( who == "¼ªÒ°ºÅ" ) target_hp = 110 + random(31);
+        if ( who == "å‰é‡è™Ÿ" ) target_hp = 110 + random(31);
         else target_hp = 70 + random(31);
-        pic_me = "¡Õ";
+        pic_me = "â–¡";
 
         remove_call_out("be_attack");
         call_out("be_attack", 1);
@@ -569,12 +569,12 @@ void be_attack()
         addn("hp", -damage);
 
         pic1 = HIR + pic_target + " " + query("who_name") + "("+ target_hp + ")"NOR;
-        pic2 = sprintf("    "HIG"(%|4d)º½º£Õß "HIR"¡è"NOR, query("hp"), pic_me);
+        pic2 = sprintf("    "HIG"(%|4d)èˆªæµ·è€… "HIR"â–¡"NOR, query("hp"), pic_me);
 
-        write( sprintf("\n                     _ _ _ _ _ _ _ _ _ _       ATTACK£¡\n            "HIR"-%-2d"NOR"    /                     `"HIY"¡è"NOR +
-                "\n%s                        %s\n¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö\n\n", damage, pic2,  pic1));
+        write( sprintf("\n                     _ _ _ _ _ _ _ _ _ _       ATTACKï¼\n            "HIR"-%-2d"NOR"    /                     `"HIY"â–¡"NOR +
+                "\n%s                        %s\nâ‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’\n\n", damage, pic2,  pic1));
 
-        write(HIY"ÄãµÄ×ø´¬ÊÜµ½ÁË" + query("who_name") +  "µÄ¹¥»÷£¬´¬Ö»Ëğ»µ" + damage + "¡£\n"NOR);
+        write(HIY"ä½ çš„åèˆ¹å—åˆ°äº†" + query("who_name") +  "çš„æ”»æ“Šï¼Œèˆ¹åªæå£" + damage + "ã€‚\n"NOR);
         check_hp();
         call_out("can_att", 1);
 }
@@ -583,10 +583,10 @@ void can_att()
 {
         if ( query("hp") < 1 ) return;
 
-        write(HIY"ÂÖµ½Äã¹¥»÷ÁË¡£(fire ·½Ê½)\n"NOR);
-        write( sprintf(HIG"ÎäÆ÷Ê£Óà£º    Èâ²«£ºÎŞÏŞ    ¹­¼ı£º%d    Ê¯ÅÚ£º%d    »ğÅÚ£º%d    È¼ÉÕµ¯£º%d    ÓãÀ×£º%d\n"NOR,
-                query("att_¹­¼ı"), query("att_Ê¯ÅÚ"), query("att_»ğÅÚ"), query("att_È¼ÉÕµ¯"), query("att_ÓãÀ×") ) );
-        game_now = "Óë " + query("who_name") + " Õ½¶·ÖĞ¡£µÈ´ı¹¥»÷Ö¸Áî¡­¡­";
+        write(HIY"è¼ªåˆ°ä½ æ”»æ“Šäº†ã€‚(fire æ–¹å¼)\n"NOR);
+        write( sprintf(HIG"æ­¦å™¨å‰©ä½™ï¼š    è‚‰æï¼šç„¡é™    å¼“ç®­ï¼š%d    çŸ³ç‚®ï¼š%d    ç«ç‚®ï¼š%d    ç‡ƒç‡’å½ˆï¼š%d    é­šé›·ï¼š%d\n"NOR,
+                query("att_å¼“ç®­"), query("att_çŸ³ç‚®"), query("att_ç«ç‚®"), query("att_ç‡ƒç‡’å½ˆ"), query("att_é­šé›·") ) );
+        game_now = "èˆ‡ " + query("who_name") + " æˆ°é¬¥ä¸­ã€‚ç­‰å¾…æ”»æ“ŠæŒ‡ä»¤â€¦â€¦";
         att_now = "ok";
 }
 
@@ -599,72 +599,72 @@ int do_attack(string arg)
         who = get_me();
         if ( !who || who != me ) return 0;
 
-        if ( att_now != "ok" ) return notify_fail("ÏÖÔÚ²¢²»ÊÇÄã¹¥»÷µÄÊ±ºò¡£\n");
+        if ( att_now != "ok" ) return notify_fail("ç¾åœ¨ä¸¦ä¸æ˜¯ä½ æ”»æ“Šçš„æ™‚å€™ã€‚\n");
 
-        if ( !arg || ( arg != "Èâ²«" && arg != "¹­¼ı" && arg != "Ê¯ÅÚ" && arg != "»ğÅÚ" && arg != "È¼ÉÕµ¯" && arg != "ÓãÀ×" ) )
-                return notify_fail("ÄãÑ¡ÔñµÄÎäÆ÷²»¶Ô¡£\n");
+        if ( !arg || ( arg != "è‚‰æ" && arg != "å¼“ç®­" && arg != "çŸ³ç‚®" && arg != "ç«ç‚®" && arg != "ç‡ƒç‡’å½ˆ" && arg != "é­šé›·" ) )
+                return notify_fail("ä½ é¸æ“‡çš„æ­¦å™¨ä¸å°ã€‚\n");
 
-        if ( query("att_"+ arg ) < 1 ) return notify_fail("ÕâÖÖÎäÆ÷ÒÑ¾­Ã»ÓĞÁË¡£\n");
+        if ( query("att_"+ arg ) < 1 ) return notify_fail("é€™ç¨®æ­¦å™¨å·²ç¶“æ²’æœ‰äº†ã€‚\n");
         addn( "att_"+ arg , -1 );
 
         temp = arg;
         switch ( arg ) {
-                case "Èâ²«":
+                case "è‚‰æ":
                         miss = 5;
                         damage = damage(1);
                         break;
-                case "¹­¼ı":
+                case "å¼“ç®­":
                         miss = 10;
-                        if ( target_name == "ÅÚÍ§" ) damage = damage(5);
-                        if ( target_name == "ÇıÖğ½¢" ) damage = damage(4);
-                        if ( target_name == "Ñ²Ñó½¢" ) damage = damage(3);
-                        if ( target_name == "Ç±Í§" ) damage = damage(2);
-                        if ( target_name == "¼ªÒ°ºÅ" ) damage = damage(1);
+                        if ( target_name == "ç‚®è‰‡" ) damage = damage(5);
+                        if ( target_name == "é©…é€è‰¦" ) damage = damage(4);
+                        if ( target_name == "å·¡æ´‹è‰¦" ) damage = damage(3);
+                        if ( target_name == "æ½›è‰‡" ) damage = damage(2);
+                        if ( target_name == "å‰é‡è™Ÿ" ) damage = damage(1);
                         break;
-                case "Ê¯ÅÚ":
+                case "çŸ³ç‚®":
                         miss = 15;
-                        if ( target_name == "ÅÚÍ§" ) damage = damage(4);
-                        if ( target_name == "ÇıÖğ½¢" ) damage = damage(1);
-                        if ( target_name == "Ñ²Ñó½¢" ) damage = damage(5);
-                        if ( target_name == "Ç±Í§" ) damage = damage(3);
-                        if ( target_name == "¼ªÒ°ºÅ" ) damage = damage(2);
+                        if ( target_name == "ç‚®è‰‡" ) damage = damage(4);
+                        if ( target_name == "é©…é€è‰¦" ) damage = damage(1);
+                        if ( target_name == "å·¡æ´‹è‰¦" ) damage = damage(5);
+                        if ( target_name == "æ½›è‰‡" ) damage = damage(3);
+                        if ( target_name == "å‰é‡è™Ÿ" ) damage = damage(2);
                         break;
-                case "»ğÅÚ":
+                case "ç«ç‚®":
                         miss = 20;
-                        if ( target_name == "ÅÚÍ§" ) damage = damage(2);
-                        if ( target_name == "ÇıÖğ½¢" ) damage = damage(3);
-                        if ( target_name == "Ñ²Ñó½¢" ) damage = damage(5);
-                        if ( target_name == "Ç±Í§" ) damage = damage(1);
-                        if ( target_name == "¼ªÒ°ºÅ" ) damage = damage(4);
+                        if ( target_name == "ç‚®è‰‡" ) damage = damage(2);
+                        if ( target_name == "é©…é€è‰¦" ) damage = damage(3);
+                        if ( target_name == "å·¡æ´‹è‰¦" ) damage = damage(5);
+                        if ( target_name == "æ½›è‰‡" ) damage = damage(1);
+                        if ( target_name == "å‰é‡è™Ÿ" ) damage = damage(4);
                         break;
-                case "È¼ÉÕµ¯":
+                case "ç‡ƒç‡’å½ˆ":
                         miss = 30;
-                        if ( target_name == "ÅÚÍ§" ) damage = damage(1);
-                        if ( target_name == "ÇıÖğ½¢" ) damage = damage(5);
-                        if ( target_name == "Ñ²Ñó½¢" ) damage = damage(2);
-                        if ( target_name == "Ç±Í§" ) damage = damage(4);
-                        if ( target_name == "¼ªÒ°ºÅ" ) damage = damage(3);
+                        if ( target_name == "ç‚®è‰‡" ) damage = damage(1);
+                        if ( target_name == "é©…é€è‰¦" ) damage = damage(5);
+                        if ( target_name == "å·¡æ´‹è‰¦" ) damage = damage(2);
+                        if ( target_name == "æ½›è‰‡" ) damage = damage(4);
+                        if ( target_name == "å‰é‡è™Ÿ" ) damage = damage(3);
                         break;
-                case "ÓãÀ×":
+                case "é­šé›·":
                         miss = 20;
-                        if ( target_name == "ÅÚÍ§" ) damage = damage(3);
-                        if ( target_name == "ÇıÖğ½¢" ) damage = damage(2);
-                        if ( target_name == "Ñ²Ñó½¢" ) damage = damage(1);
-                        if ( target_name == "Ç±Í§" ) damage = damage(4);
-                        if ( target_name == "¼ªÒ°ºÅ" ) damage = damage(5);
+                        if ( target_name == "ç‚®è‰‡" ) damage = damage(3);
+                        if ( target_name == "é©…é€è‰¦" ) damage = damage(2);
+                        if ( target_name == "å·¡æ´‹è‰¦" ) damage = damage(1);
+                        if ( target_name == "æ½›è‰‡" ) damage = damage(4);
+                        if ( target_name == "å‰é‡è™Ÿ" ) damage = damage(5);
                         break;
         }
-        pic1 = HIR"¡è" + " " + query("who_name") + "("+ target_hp + ")"NOR;
-        pic2 = sprintf("    "HIG"(%|4d)º½º£Õß %s"NOR, query("hp"), pic_me);
+        pic1 = HIR"â–¡" + " " + query("who_name") + "("+ target_hp + ")"NOR;
+        pic2 = sprintf("    "HIG"(%|4d)èˆªæµ·è€… %s"NOR, query("hp"), pic_me);
 
-        write( sprintf("\n       %|8s£¡    _ _ _ _ _ _ _ _ _ _\n                   "HIY"¡è"NOR"                     \\    "HIR"-%d"NOR +
-                "\n%s                        %s\n¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö¡Ö\n\n", temp, damage, pic2,  pic1));
+        write( sprintf("\n       %|8sï¼    _ _ _ _ _ _ _ _ _ _\n                   "HIY"â–¡"NOR"                     \\    "HIR"-%d"NOR +
+                "\n%s                        %s\nâ‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’â‰’\n\n", temp, damage, pic2,  pic1));
         if ( random(100) > miss ) {
                 target_hp -= damage;
-                write(HIY"Ê¹ÓÃ" + temp + "¶Ô" + query("who_name") + "½øĞĞ¹¥»÷£¡Ëğº¦¶Ô·½" + damage + "¡£\n"NOR);
+                write(HIY"ä½¿ç”¨" + temp + "å°" + query("who_name") + "é€²è¡Œæ”»æ“Šï¼æå®³å°æ–¹" + damage + "ã€‚\n"NOR);
         }
         else {
-                write(HIY"È»¶ø²¢Ã»ÓĞ´òÖĞ" + query("who_name") + "¡£\n"NOR);
+                write(HIY"ç„¶è€Œä¸¦æ²’æœ‰æ‰“ä¸­" + query("who_name") + "ã€‚\n"NOR);
         }
         att_now = "not_ok";
         remove_call_out("target_check_hp");
@@ -686,41 +686,41 @@ void target_check_hp()
         }
         if ( target_hp < 1 ) {
                 addn("sunk_enemy", 1);
-                if ( query("who_name") == "¼ªÒ°ºÅ" ) {
-                        tell_object(me, "Äã³É¹¦µØ½«ÈÕ±¾º£¾üÆì½¢»÷³Á£¬Íê³ÉÈÎÎñ¡£\n");
+                if ( query("who_name") == "å‰é‡è™Ÿ" ) {
+                        tell_object(me, "ä½ æˆåŠŸåœ°å°‡æ—¥æœ¬æµ·è»æ——è‰¦æ“Šæ²‰ï¼Œå®Œæˆä»»å‹™ã€‚\n");
                         reward=TASK_D->get_reward(me,5000,3,1000+random(500),query("job/fleet", me));
                         exp = reward["exp_reward"];
                         pot = reward["pot_reward"];
                         addn("combat_exp", exp, me);
                         addn("potential", pot, me);
                         addn("job/jiawu", 1, me);
-                        tell_object(me, "Äã±»½±ÀøÁË" + exp + "µã¾­ÑéÖµ£¬" + pot + "µãÇ±ÄÜ¡£\n");
-                        msg="¡¾ÏĞÁÄ¡¿±±ÑóË®Ê¦(beiyangshuishi)£º"+query("name", me)+HIC"³É¹¦µØ»÷³ÁÁËÈÕ±¾º£¾üÆì½¢©¤©¤¼ªÒ°ºÅ¡£\n";
+                        tell_object(me, "ä½ è¢«çå‹µäº†" + exp + "é»ç¶“é©—å€¼ï¼Œ" + pot + "é»æ½›èƒ½ã€‚\n");
+                        msg="ã€é–’èŠã€‘åŒ—æ´‹æ°´å¸«(beiyangshuishi)ï¼š"+query("name", me)+HIC"æˆåŠŸåœ°æ“Šæ²‰äº†æ—¥æœ¬æµ·è»æ——è‰¦â”€â”€å‰é‡è™Ÿã€‚\n";
                         message("channel:chat", HIC + msg + NOR, users());
                         remove_call_out("del_me");
                         call_out("del_me", 1);
                         return;
                 }
                 if ( query("sunk_enemy") > 10 ) {
-                        tell_object(me, "Äã³É¹¦µØ»÷³ÁÊıËÒµĞ½¢£¬¿ÉÒÔ·µĞĞÁË¡£\n");
+                        tell_object(me, "ä½ æˆåŠŸåœ°æ“Šæ²‰æ•¸è‰˜æ•µè‰¦ï¼Œå¯ä»¥è¿”è¡Œäº†ã€‚\n");
                         reward=TASK_D->get_reward(me,1500,3,500+random(500),query("job/jiawu", me));
                         exp = reward["exp_reward"];
                         pot = reward["pot_reward"];
                         addn("combat_exp", exp, me);
                         addn("potential", pot, me);
                         addn("job/jiawu", 1, me);
-                        tell_object(me, "Äã±»½±ÀøÁË" + exp + "µã¾­ÑéÖµ£¬" + pot + "µãÇ±ÄÜ¡£\n");
-                        msg="¡¾ÏĞÁÄ¡¿±±ÑóË®Ê¦(beiyangshuishi)£º"+query("name", me)+HIC"³É¹¦µØ»÷³ÁÁËÈÕ±¾º£¾üÆì½¢µÄ¹¥»÷¡£\n";
+                        tell_object(me, "ä½ è¢«çå‹µäº†" + exp + "é»ç¶“é©—å€¼ï¼Œ" + pot + "é»æ½›èƒ½ã€‚\n");
+                        msg="ã€é–’èŠã€‘åŒ—æ´‹æ°´å¸«(beiyangshuishi)ï¼š"+query("name", me)+HIC"æˆåŠŸåœ°æ“Šæ²‰äº†æ—¥æœ¬æµ·è»æ——è‰¦çš„æ”»æ“Šã€‚\n";
                         message("channel:chat", HIC + msg + NOR, users());
                         remove_call_out("del_me");
                         call_out("del_me", 1);
                         return;
                 }
-                game_now = "µÈ´ıÒÆ¶¯ÃüÁî";
+                game_now = "ç­‰å¾…ç§»å‹•å‘½ä»¤";
                 addn("hp", 1 + (random(5)) );
                 if( query("hp") > 120 ) set("hp", 120);
                 map();
-                write(HIG"\nÄã´ò°ÜÁË " + query("who_name") + " £¡»ñµÃÁËÉÙÁ¿µÄ²¹¸ø¡£¼ÌĞø³ö·¢°É£¡\n\n"NOR);
+                write(HIG"\nä½ æ‰“æ•—äº† " + query("who_name") + " ï¼ç²å¾—äº†å°‘é‡çš„è£œçµ¦ã€‚ç¹¼çºŒå‡ºç™¼å§ï¼\n\n"NOR);
                 set_temp("haizhan_cond", "ok", me);
                 return;
         }

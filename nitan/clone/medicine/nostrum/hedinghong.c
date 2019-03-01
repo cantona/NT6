@@ -4,12 +4,12 @@ inherit ITEM;
 
 void create()
 {
-        set_name(RED"º×¶¥ºì"NOR, ({"heding hong", "hong"}));
+        set_name(RED"é¶´é ‚ç´…"NOR, ({"heding hong", "hong"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»Æ¿¾ç¶¾µÄ¶¾Ò©, Èç¹ûÓÃÀ´Á¶°µÆ÷ÓĞ¼ûÑª·âºíÖ®Ğ§. \n");
-                set("unit", "Æ¿");
+                set("long", "ä¸€ç“¶åŠ‡æ¯’çš„æ¯’è—¥, å¦‚æœç”¨ä¾†ç…‰æš—å™¨æœ‰è¦‹è¡€å°å–‰ä¹‹æ•ˆ. \n");
+                set("unit", "ç“¶");
                 set("value", 20000);
         }
         set("pour_type", "1");
@@ -26,14 +26,14 @@ int do_drink(string arg)
 {
         object me = this_player();
 
-        if(!id(arg)) return notify_fail("ÄãÒªºÈÊ²Ã´£¿\n");
+        if(!id(arg)) return notify_fail("ä½ è¦å–ä»€éº¼ï¼Ÿ\n");
         if(!present(this_object(), this_player()))
-                return notify_fail("ÄãÒªºÈÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦å–ä»€éº¼ï¼Ÿ\n");
         if( me->is_busy() )
-                return notify_fail("±ğ¼±£¬ÂıÂıºÈ£¬Ğ¡ĞÄ±ğÇº×ÅÁË¡£\n");
+                return notify_fail("åˆ¥æ€¥ï¼Œæ…¢æ…¢å–ï¼Œå°å¿ƒåˆ¥å—†è‘—äº†ã€‚\n");
 
-        message_vision("$NÑöÍ·¹¾à½¹¾à½¹àÏÂÒ»Æ¿" + name() + "¡£\n", me);
-        set_temp("die_reason", "ºÈÏÂº×¶¥ºì£¬×ÔÉ±ÉíÍöÁË", me);
+        message_vision("$Nä»°é ­å’•å˜Ÿå’•å˜ŸçŒä¸‹ä¸€ç“¶" + name() + "ã€‚\n", me);
+        set_temp("die_reason", "å–ä¸‹é¶´é ‚ç´…ï¼Œè‡ªæ®ºèº«äº¡äº†", me);
         me->die();
         destruct(this_object());
         return 1;

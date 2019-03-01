@@ -5,13 +5,13 @@ inherit F_FOOD;
 
 void create()
 {
-        set_name(YEL "»¨ÖÖ" NOR, ({"hua zhong", "zhong"}));
+        set_name(YEL "èŠ±ç¨®" NOR, ({"hua zhong", "zhong"}));
         set_weight(100);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»Ã¶ÎŞ·¨È·¶¨Æ·ÖÖµÄ»¨ÖÖ¡£\n");
-                set("unit", "Ö»");
+                set("long", "ä¸€æšç„¡æ³•ç¢ºå®šå“ç¨®çš„èŠ±ç¨®ã€‚\n");
+                set("unit", "åª");
                 set("value", 20);
                 set("food_remaining", 1);
                 set("food_supply", 10);
@@ -32,12 +32,12 @@ int do_zhonghua()
 
         if( query_temp("zhonghua", me) == 1 )
         {
-                tell_object(me,HIR "ÖÖ×ÓÒÑ¾­²¦ÏÂÁË£¬ÏÖÔÚ¸ÃÅàÓı(peiyu)»¨ÖÖ¡£\n" NOR);
+                tell_object(me,HIR "ç¨®å­å·²ç¶“æ’¥ä¸‹äº†ï¼Œç¾åœ¨è©²åŸ¹è‚²(peiyu)èŠ±ç¨®ã€‚\n" NOR);
                 return 1;
         }
 
-        message_vision("$NÓÃÊÖÔÚµØÉÏÍÚÁËÒ»¸ö¿Ó£¬°Ñ»¨ÖÖ·ÅÁË½øÈ¥¡£\n", me);
-        tell_object(me, HIR "ÖÖ×ÓÒÑ¾­²¦ÏÂÁË£¬ÏÖÔÚ¸ÃÅàÓı(peiyu)»¨ÖÖ¡£\n" NOR);
+        message_vision("$Nç”¨æ‰‹åœ¨åœ°ä¸ŠæŒ–äº†ä¸€å€‹å‘ï¼ŒæŠŠèŠ±ç¨®æ”¾äº†é€²å»ã€‚\n", me);
+        tell_object(me, HIR "ç¨®å­å·²ç¶“æ’¥ä¸‹äº†ï¼Œç¾åœ¨è©²åŸ¹è‚²(peiyu)èŠ±ç¨®ã€‚\n" NOR);
         addn_temp("zhonghua", 1, me);
         destruct(ob);
         addn("jing", -50, me);

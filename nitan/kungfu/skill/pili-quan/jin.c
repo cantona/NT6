@@ -1,11 +1,11 @@
-// ×ÏÀ×¾¢
+// ç´«é›·å‹
 
 #include <ansi.h>
 #include <combat.h>
 
 inherit F_SSERVER;
 
-string name() { return MAG "×ÏÀ×¾¢" NOR; }
+string name() { return MAG "ç´«é›·å‹" NOR; }
 
 int perform(object me, object target)
 {
@@ -21,22 +21,22 @@ int perform(object me, object target)
         }
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(name() + "Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(name() + "åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if ((int)me->query_skill("pili-quan", 1) < 40)
-                return notify_fail("ÄãµÄÅùö¨ÉñÈ­²»¹»æµÊì£¬ÎŞ·¨Ê©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„éœ¹é‚ç¥æ‹³ä¸å¤ å«»ç†Ÿï¼Œç„¡æ³•æ–½å±•" + name() + "ã€‚\n");
 
         if( query("neili", me)<200 )
-                return notify_fail("ÄãÏÖÔÚÕæÆø²»¹»£¬ÎŞ·¨Ê©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çœŸæ°£ä¸å¤ ï¼Œç„¡æ³•æ–½å±•" + name() + "ã€‚\n");
 
         if (me->query_skill_prepared("cuff") != "pili-quan")
-                return notify_fail("ÄãÃ»ÓĞ×¼±¸Ê¹ÓÃÅùö¨ÉñÈ­£¬ÎŞ·¨Ê©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æº–å‚™ä½¿ç”¨éœ¹é‚ç¥æ‹³ï¼Œç„¡æ³•æ–½å±•" + name() + "ã€‚\n");
 
         if (! living(target))
-              return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+              return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIY "$N" HIY "ÉíĞĞÒ»×ª£¬ÔËÁ¦ÓëË«È­£¬Ê©³ö¾øÕĞ¡¸" HIW "×ÏÀ×¾¢" HIY "¡¹£¬Ë«È­Ñ¸ÃÍÎŞ±È"
-              "µÄÏ®Ïò$n" HIY "¡£\n" NOR;
+        msg = HIY "$N" HIY "èº«è¡Œä¸€è½‰ï¼Œé‹åŠ›èˆ‡é›™æ‹³ï¼Œæ–½å‡ºçµ•æ‹›ã€Œ" HIW "ç´«é›·å‹" HIY "ã€ï¼Œé›™æ‹³è¿…çŒ›ç„¡æ¯”"
+              "çš„è¥²å‘$n" HIY "ã€‚\n" NOR;
 
         ap = attack_power(me, "cuff");
         dp = defense_power(target, "parry");
@@ -46,13 +46,13 @@ int perform(object me, object target)
 
                 addn("neili", -120, me);
                 msg += COMBAT_D->do_damage(me, target, UNARMED_ATTACK, damage, 55,
-                                           HIR "Ö»¼û$P" HIR "ÕâÒ»È­°Ñ$p" HIR
-                                           "·ÉÁË³öÈ¥£¬ÖØÖØµÄË¤ÔÚµØÉÏ£¬ÍÂÑª²»Ö¹£¡\n" NOR);
+                                           HIR "åªè¦‹$P" HIR "é€™ä¸€æ‹³æŠŠ$p" HIR
+                                           "é£›äº†å‡ºå»ï¼Œé‡é‡çš„æ‘”åœ¨åœ°ä¸Šï¼Œåè¡€ä¸æ­¢ï¼\n" NOR);
                 me->start_busy(2);
         } else
         {
-                msg += HIC "¿ÉÊÇ$p" HIC "·ÜÁ¦ÕĞ¼Ü£¬Ó²ÉúÉúµÄµ²¿ªÁË$P"
-                       HIC "ÕâÒ»ÕĞ¡£\n"NOR;
+                msg += HIC "å¯æ˜¯$p" HIC "å¥®åŠ›æ‹›æ¶ï¼Œç¡¬ç”Ÿç”Ÿçš„æ“‹é–‹äº†$P"
+                       HIC "é€™ä¸€æ‹›ã€‚\n"NOR;
                 addn("neili", -80, me);
                 me->start_busy(3);
         }

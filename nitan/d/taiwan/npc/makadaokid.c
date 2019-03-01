@@ -1,4 +1,4 @@
-// makadaokid.c Âí¿¨µÀ×åĞ¡º¢
+// makadaokid.c é¦¬å¡é“æ—å°å­©
 // Last Modifyed by Ahda on Jan. 4 2002
 
 inherit NPC;
@@ -8,8 +8,8 @@ void create()
         int age;
         age = 5 + random(10);
         
-        set_name("Âí¿¨µÀ×åĞ¡º¢", ({ "makadao kid", "kid" , "xiaohai", }));
-        set("gender", "ÄĞĞÔ");
+        set_name("é¦¬å¡é“æ—å°å­©", ({ "makadao kid", "kid" , "xiaohai", }));
+        set("gender", "ç”·æ€§");
         set("age", age);
 
 //        set_skill("unarmed", 20);

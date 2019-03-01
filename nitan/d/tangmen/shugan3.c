@@ -1,4 +1,4 @@
-//shugan3.c                ËÄ´¨ÌÆÃÅ¡ªÁÑĞÇÑÂ¹ÅÊ÷
+//shugan3.c                å››å·å”é–€â”€è£‚æ˜Ÿå´–å¤æ¨¹
 
 #include <ansi.h>
 #include <room.h>
@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "²ÎÌì¹ÅÊ÷");
+        set("short", "åƒå¤©å¤æ¨¹");
         set("long",
-      "ÕâÊÇÍòÄê¹ÅËÉµÄÊ÷¶¥¡£µ±Äê×æÊ¦Ò¯£¿£¿£¿ÔøÔÚÕâÀïÈÕ¹ÛÔÆ¶¯£¬Ò¹¹ÛĞÇ\n" 
-      "±ä£¬×îÖÕÎò³öÁË£¿£¿£¿£¿µÄÌÆÃÅ¾øÑ§£¬Òò´ËºÜ¶àµÜ×Ó³£³£ÔÚÕâÀïÈÕÒ¹¾²×ø¡£\n" 
+      "é€™æ˜¯è¬å¹´å¤é¬†çš„æ¨¹é ‚ã€‚ç•¶å¹´ç¥–å¸«çˆºï¼Ÿï¼Ÿï¼Ÿæ›¾åœ¨é€™è£¡æ—¥è§€é›²å‹•ï¼Œå¤œè§€æ˜Ÿ\n" 
+      "è®Šï¼Œæœ€çµ‚æ‚Ÿå‡ºäº†ï¼Ÿï¼Ÿï¼Ÿï¼Ÿçš„å”é–€çµ•å­¸ï¼Œå› æ­¤å¾ˆå¤šå¼Ÿå­å¸¸å¸¸åœ¨é€™è£¡æ—¥å¤œéœåã€‚\n" 
       ); 
         set("area", "tangmen");
         setup();
@@ -29,11 +29,11 @@ int do_climb(string arg)
 
         if ( arg && arg=="up" )
         {
-                message_vision(HIC "$NÅÊ×Å·±Ã¯µÄÊ÷Ö¦Ò»²½²½ÅÀÁËÉÏÈ¥¡£\n" NOR, ob);
+                message_vision(HIC "$Næ”€è‘—ç¹èŒ‚çš„æ¨¹æä¸€æ­¥æ­¥çˆ¬äº†ä¸Šå»ã€‚\n" NOR, ob);
 
                 if ( (int)ob->query_skill("dodge", 1) < 51 && (int)ob->query_skill("finger", 1) < 51 )
                 {
-                        message_vision(HIR "$N½ÅÏÂÒ»»¬£¬ÊÖÉÏÃ»×¥½ô£¬ÑöÌìË¤ÁËÏÂÀ´¡£\n" NOR, ob);
+                        message_vision(HIR "$Nè…³ä¸‹ä¸€æ»‘ï¼Œæ‰‹ä¸Šæ²’æŠ“ç·Šï¼Œä»°å¤©æ‘”äº†ä¸‹ä¾†ã€‚\n" NOR, ob);
                         addn("qi", -10, ob);
                         return 1;
                 }
@@ -44,10 +44,10 @@ int do_climb(string arg)
         else
                 if ( arg && arg=="down" )
                 {
-                        message_vision(HIC "$NÅÊ×Å·±Ã¯µÄÊ÷Ö¦Ğ¡ĞÄÒíÒíµÄÅÀÁËÏÂÈ¥¡£\n" NOR, ob);
+                        message_vision(HIC "$Næ”€è‘—ç¹èŒ‚çš„æ¨¹æå°å¿ƒç¿¼ç¿¼çš„çˆ¬äº†ä¸‹å»ã€‚\n" NOR, ob);
                         ob->move(__DIR__"shugan2");
                         return 1;
                 }
                 else
-                        return notify_fail("ÄãÒªÏòÄÄÀïÅÀ£¿\n");
+                        return notify_fail("ä½ è¦å‘å“ªè£¡çˆ¬ï¼Ÿ\n");
 }

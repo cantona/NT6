@@ -4,20 +4,20 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Î÷Àé¾Ó");
+        set("short", "è¥¿ç±¬å±…");
         set("long",@LONG
-ÕâÀïËÆºõÊÇÒ»´¦¾ÓËù£¬²»Ô¶´¦ÓÐÒ»´¦Ã©ÎÝ£¬ËÄÖÜÓÃÀé°ÊÎ§×¡¡£  
-·ÅÑÛÔ¶Íû£¬É½Ó°Æð·ü£¬ÎíÆøÕóÕó£¬ÁîÈËÎÞÏÞåÚË¼¡£     
+é€™è£¡ä¼¼ä¹Žæ˜¯ä¸€è™•å±…æ‰€ï¼Œä¸é è™•æœ‰ä¸€è™•èŒ…å±‹ï¼Œå››å‘¨ç”¨ç±¬ç¬†åœä½ã€‚  
+æ”¾çœ¼é æœ›ï¼Œå±±å½±èµ·ä¼ï¼Œéœ§æ°£é™£é™£ï¼Œä»¤äººç„¡é™éæ€ã€‚     
 LONG);
 
         set("exits", ([
                 "northeast"        : __DIR__"caijuyuan2",
                 "southeast"        : __DIR__"caijuyuan3",
         ]));
-        set("no_rideto", 1);         // ÉèÖÃ²»ÄÜÆïÂíµ½ÆäËûµØ·½
-        set("no_flyto", 1);          // ÉèÖÃ²»ÄÜ´ÓÆðÀ´µØ·½ÆïÂíÀ´ÕâÀï
-        set("no_die", 1);            // ËÀÍöºóÒÆ¶¯µ½±âÈµ¾Ó
-        set("penglai", 1);           // ±íÊ¾ÔÚÅîÀ³µº
+        set("no_rideto", 1);         // è¨­ç½®ä¸èƒ½é¨Žé¦¬åˆ°å…¶ä»–åœ°æ–¹
+        set("no_flyto", 1);          // è¨­ç½®ä¸èƒ½å¾žèµ·ä¾†åœ°æ–¹é¨Žé¦¬ä¾†é€™è£¡
+        set("no_die", 1);            // æ­»äº¡å¾Œç§»å‹•åˆ°æ‰éµ²å±…
+        set("penglai", 1);           // è¡¨ç¤ºåœ¨è“¬èŠå³¶
 
         setup();
 }
@@ -29,14 +29,14 @@ void init ()
                 if (! this_player()->query("penglai/go_quest/ok"))
                 {
                         this_player()->start_busy(3);
-                        tell_object(this_player(), NOR + WHT "Äãµ½ÁË´Ë´¦£¬ËÄÖÜÏÉÆøçÔÈÆÁîÄãÒ»Ê±¼äÄÑÒÔ±æ±ð·½Ïò¡£\n" NOR);
+                        tell_object(this_player(), NOR + WHT "ä½ åˆ°äº†æ­¤è™•ï¼Œå››å‘¨ä»™æ°£ç¹šç¹žä»¤ä½ ä¸€æ™‚é–“é›£ä»¥è¾¨åˆ¥æ–¹å‘ã€‚\n" NOR);
                 }
                 else
                 {
                         if (random(2))
                         {
                                 this_player()->start_busy(1);
-                                tell_object(this_player(), NOR + WHT "Äãµ½ÁË´Ë´¦£¬ËÄÖÜÏÉÆøçÔÈÆÁîÄãÒ»Ê±¼äÄÑÒÔ±æ±ð·½Ïò¡£\n" NOR);                
+                                tell_object(this_player(), NOR + WHT "ä½ åˆ°äº†æ­¤è™•ï¼Œå››å‘¨ä»™æ°£ç¹šç¹žä»¤ä½ ä¸€æ™‚é–“é›£ä»¥è¾¨åˆ¥æ–¹å‘ã€‚\n" NOR);                
                         }
                 }
         }

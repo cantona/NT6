@@ -1,22 +1,22 @@
 // This program is a part of NITAN MudLIB
-// stealth.c ÏÉÒþÃÔ×Ù
+// stealth.c ä»™éš±è¿·è¹¤
 // Created by Lonely 04/05/2009
 
 #include <ansi.h>
 
 inherit F_CLEAN_UP;
 
-string name() { return HIK "ÏÉÒþÃÔ×Ù" NOR; }
+string name() { return HIK "ä»™éš±è¿·è¹¤" NOR; }
 
 int perform(object me, string skill)
 {
         if( !query("reborn/times", me) )
-                return notify_fail("ÄãÉÐÎ´×ªÊÀÖØÉú£¬ÎÞ·¨Ê¹ÓÃ´Ë¼¼ÄÜ£¡\n");
+                return notify_fail("ä½ å°šæœªè½‰ä¸–é‡ç”Ÿï¼Œç„¡æ³•ä½¿ç”¨æ­¤æŠ€èƒ½ï¼\n");
             
         if( time()-query("special/stealth", me)<21600 )
-                return notify_fail("ÄãÒª¹ýÐ©Ê±ºò²ÅÄÜÔÙÓÃ´Ë¼¼ÄÜ£¡\n");
+                return notify_fail("ä½ è¦éŽäº›æ™‚å€™æ‰èƒ½å†ç”¨æ­¤æŠ€èƒ½ï¼\n");
 
-        message_vision(HIK "$N" HIK "Ê©Õ¹³öÏÉÒþÃÔ×Ù£¬ÉíÓ°Ô½À´Ô½µ­£¬½¥½¥ÒþÉí²»¼ûÁË¡£\n" NOR, me);
+        message_vision(HIK "$N" HIK "æ–½å±•å‡ºä»™éš±è¿·è¹¤ï¼Œèº«å½±è¶Šä¾†è¶Šæ·¡ï¼Œæ¼¸æ¼¸éš±èº«ä¸è¦‹äº†ã€‚\n" NOR, me);
 
         set_temp("apply/shade_vision", 1, me);
         set("special/stealth", time(), me);
@@ -32,6 +32,6 @@ int perform(object me, string skill)
 void remove_effect(object me)
 {
         delete_temp("apply/shade_vision", me);
-        tell_object(me, "ÄãÊ©Õ¹ÍêÏÉÒþÃÔ×Ù£¬ËÉÁËÒ»¿ÚÆø¡£\n");
-        message_vision(HIK "$N" HIK "µÄÉíÐÎÖð½¥ÏÔÂ¶³öÀ´£¬±äµÄÇåÎú¿É¼û¡£\n" NOR, me);
+        tell_object(me, "ä½ æ–½å±•å®Œä»™éš±è¿·è¹¤ï¼Œé¬†äº†ä¸€å£æ°£ã€‚\n");
+        message_vision(HIK "$N" HIK "çš„èº«å½¢é€æ¼¸é¡¯éœ²å‡ºä¾†ï¼Œè®Šçš„æ¸…æ™°å¯è¦‹ã€‚\n" NOR, me);
 }

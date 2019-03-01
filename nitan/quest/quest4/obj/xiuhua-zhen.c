@@ -4,18 +4,18 @@ inherit SWORD;
 
 void create()
 {
-        set_name(HIW"Ğå»¨Õë"NOR, ({ "xiuhua zhen", "zhen" }));
+        set_name(HIW"ç¹¡èŠ±é‡"NOR, ({ "xiuhua zhen", "zhen" }));
         set_weight(5000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ã¶");
-                set("long", "ÕâÊÇÒ»Ã¶Ğå»¨Õë£¬Ç§½ğĞ¡½ãÃÇÊÖÖĞµÄÑ°³£Ö®Îï¡£\n");
+                set("unit", "æš");
+                set("long", "é€™æ˜¯ä¸€æšç¹¡èŠ±é‡ï¼Œåƒé‡‘å°å§å€‘æ‰‹ä¸­çš„å°‹å¸¸ä¹‹ç‰©ã€‚\n");
                 set("value", 100);
                 set("rigidity", 100); 
                 set("material", "steel");
-                set("wield_msg", "$NåüÃÄµÄ´ÓËæÉíºÉ°üÖĞÈ¡³öÒ»Ã¶$nÄóÔÚÊÖÖ¸¼ä¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$nÊÕ»ØÑü¼äºÉ°üÖĞ¡£\n");
+                set("wield_msg", "$Nå«µåªšçš„å¾éš¨èº«è·åŒ…ä¸­å–å‡ºä¸€æš$næåœ¨æ‰‹æŒ‡é–“ã€‚\n");
+                set("unwield_msg", "$Nå°‡æ‰‹ä¸­çš„$næ”¶å›è…°é–“è·åŒ…ä¸­ã€‚\n");
         }
         init_sword(40);
         setup();

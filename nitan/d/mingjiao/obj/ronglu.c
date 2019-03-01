@@ -1,5 +1,5 @@
 // Code of JHSH
-// ronglu.c ÈÛÂ¯
+// ronglu.c ç†”çˆ
 
 #include <ansi.h>
 inherit ITEM;
@@ -10,13 +10,13 @@ int check_busy(object me);
 
 void create()
 {
-        set_name(HIR"ÈÛÂ¯"NOR, ({ "rong lu", "lu" }) );
+        set_name(HIR"ç†”çˆ"NOR, ({ "rong lu", "lu" }) );
         set_weight(9000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇ×ù´óÈÛÂ¯£¬ÀïÃæÁÒ»ğÈ¼ÉÕ£¬ÊÇÓÃÀ´´òÔì»ğÇ¹µÄ¡£\n");
-                set("unit", "×ù");
+                set("long", "é€™æ˜¯åº§å¤§ç†”çˆï¼Œè£¡é¢çƒˆç«ç‡ƒç‡’ï¼Œæ˜¯ç”¨ä¾†æ‰“é€ ç«æ§çš„ã€‚\n");
+                set("unit", "åº§");
                 set("value", 1);
                 set("no_get", 1);
         }
@@ -37,23 +37,23 @@ int do_fang(string arg)
         ob = this_object();
         
         if( me->is_busy() || query_temp("pending/job_busy", me) )
-                return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ æ­£å¿™è‘—å‘¢ã€‚\n");
 
         if (!arg || sscanf(arg, "%s in %s", item, target) != 2 )
-            return notify_fail("ÄãÒª½«Ê²Ã´¶«Î÷·Å½øÄÄÀï£¿\n");
+            return notify_fail("ä½ è¦å°‡ä»€éº¼æ±è¥¿æ”¾é€²å“ªè£¡ï¼Ÿ\n");
 
-        if (item != "¾«Ìú" || target != "ÈÛÂ¯")
-                return notify_fail("ÄãÒª½«Ê²Ã´¶«Î÷·Å½øÄÄÀï£¿\n");
+        if (item != "ç²¾éµ" || target != "ç†”çˆ")
+                return notify_fail("ä½ è¦å°‡ä»€éº¼æ±è¥¿æ”¾é€²å“ªè£¡ï¼Ÿ\n");
 
         if ( !jingtie=present("jing tie",me) )
-                return notify_fail("ÄãÉíÉÏ²¢Ã»ÓĞ¾«Ìú¡£\n");
+                return notify_fail("ä½ èº«ä¸Šä¸¦æ²’æœ‰ç²¾éµã€‚\n");
 
         if (query_temp("in_use"))
-                return notify_fail("Õâ¸ö»ğÂ¯ÒÑ¾­ÓĞÈËÔÚÓÃÁË£¡\n");
+                return notify_fail("é€™å€‹ç«çˆå·²ç¶“æœ‰äººåœ¨ç”¨äº†ï¼\n");
 
-        message_vision("$N°ÑÒ»"+query("unit", jingtie)+query("name", jingtie)+"·Å½øÈÛÂ¯¡£\n",me);
+        message_vision("$NæŠŠä¸€"+query("unit", jingtie)+query("name", jingtie)+"æ”¾é€²ç†”çˆã€‚\n",me);
         destruct(jingtie);
-        message_vision(HIR"$N·Å½øÈ¼ÁÏ£¬À­Æğ·çÏä£¬Çê¿Ì¼ä¾ÍÉúÆğÒ»Â¯ĞÜĞÜ´ó»ğ£¡\n"NOR,me);
+        message_vision(HIR"$Næ”¾é€²ç‡ƒæ–™ï¼Œæ‹‰èµ·é¢¨ç®±ï¼Œé ƒåˆ»é–“å°±ç”Ÿèµ·ä¸€çˆç†Šç†Šå¤§ç«ï¼\n"NOR,me);
         
         set_temp("in_use",1);
         set_temp("pending/job_busy", 1, me);
@@ -69,10 +69,10 @@ int do_fang(string arg)
 void burning(object me, int stage)
 {
         string *burning_msg=({
-                HIC"Â¯»ğÓÉºìÂıÂı±äÇà¡£\n"NOR,
-                HIW"Â¯»ğÓÉÇà½¥½¥×ª°×¡£\n"NOR,
-                HIW"¾«Ìú"+HIR"ÒÑ¾­¿ªÊ¼ÈÜ»¯ÁË¡£\n"NOR,
-                HIW"¾«Ìú"+HIR"ÒÑ¾­È«²¿ÈÜ»¯ÁË£¬¿ÉÒÔµ¹½øÄ£×ÓÁË¡£\n"NOR,
+                HIC"çˆç«ç”±ç´…æ…¢æ…¢è®Šé’ã€‚\n"NOR,
+                HIW"çˆç«ç”±é’æ¼¸æ¼¸è½‰ç™½ã€‚\n"NOR,
+                HIW"ç²¾éµ"+HIR"å·²ç¶“é–‹å§‹æº¶åŒ–äº†ã€‚\n"NOR,
+                HIW"ç²¾éµ"+HIR"å·²ç¶“å…¨éƒ¨æº¶åŒ–äº†ï¼Œå¯ä»¥å€’é€²æ¨¡å­äº†ã€‚\n"NOR,
         });
 
         message_vision(burning_msg[stage],me);
@@ -100,27 +100,27 @@ int do_pour(string arg)
 
 
         if( me->is_busy() || query_temp("pending/job_busy", me) )
-                return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ æ­£å¿™è‘—å‘¢ã€‚\n");
 
         if (!arg || sscanf(arg, "%s in %s", item, target) != 2 )
-            return notify_fail("ÄãÒª½«Ê²Ã´¶«Î÷µ¹½øÄÄÀï£¿\n");
+            return notify_fail("ä½ è¦å°‡ä»€éº¼æ±è¥¿å€’é€²å“ªè£¡ï¼Ÿ\n");
 
-        if (item != "ÌúË®" || target != "»ğÇ¹Ä£×Ó")
-                return notify_fail("ÄãÒª½«Ê²Ã´¶«Î÷·Å½øÄÄÀï£¿\n");
+        if (item != "éµæ°´" || target != "ç«æ§æ¨¡å­")
+                return notify_fail("ä½ è¦å°‡ä»€éº¼æ±è¥¿æ”¾é€²å“ªè£¡ï¼Ÿ\n");
 
         if (!present("huoqiang muzi",environment(this_object())) )
-                return notify_fail("ÕâÀïÃ»ÓĞ»ğÇ¹Ä£×Ó¡£\n");
+                return notify_fail("é€™è£¡æ²’æœ‰ç«æ§æ¨¡å­ã€‚\n");
 
         if( !query_temp("pouring", me) )
-                return notify_fail("ºÃÏó»¹Ã»ÂÖµ½Äã°É¡£\n");
+                return notify_fail("å¥½è±¡é‚„æ²’è¼ªåˆ°ä½ å§ã€‚\n");
 
         if( query("jing", me)<100 || query("qi", me)<100 )
-                return notify_fail(RED"ÄãÒÑ¾­¾«Æ£Á¦½ßÁË£¡\n"NOR);
+                return notify_fail(RED"ä½ å·²ç¶“ç²¾ç–²åŠ›ç«­äº†ï¼\n"NOR);
 
-        message_vision("$NÓÃÍÁÉ×°ÑÈÜ»¯µÄÌúË®Ğ¡ĞÄÒíÒíµÄ´ÓÂ¯×ÓÀïÊ¢³öÀ´£¬ÂıÂıµÄµ¹½ø»ğÇ¹Ä£×ÓÀï¡£\n",me);
+        message_vision("$Nç”¨åœŸå‹ºæŠŠæº¶åŒ–çš„éµæ°´å°å¿ƒç¿¼ç¿¼çš„å¾çˆå­è£¡ç››å‡ºä¾†ï¼Œæ…¢æ…¢çš„å€’é€²ç«æ§æ¨¡å­è£¡ã€‚\n",me);
         if (random(10) > 3)
         {
-                message_vision("Ôã¸â£¡$NÒ»²»Ğ¡ĞÄ£¬¼¸µÎÌúË®½¦µ½ÁË½ÅÉÏ£¬Í´µÃ$NÍÛÍÛ´ó½Ğ!\n",me);
+                message_vision("ç³Ÿç³•ï¼$Nä¸€ä¸å°å¿ƒï¼Œå¹¾æ»´éµæ°´æ¿ºåˆ°äº†è…³ä¸Šï¼Œç—›å¾—$Nå“‡å“‡å¤§å«!\n",me);
                 me->receive_wound("qi",100);
                 busy_time=3;
         }
@@ -144,27 +144,27 @@ int add_xiaohuang(string arg)
         object me=this_player();
 
         if( me->is_busy() || query_temp("pending/job_busy", me) )
-                return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ æ­£å¿™è‘—å‘¢ã€‚\n");
 
         if (!arg || sscanf(arg, "%s in %s", item, target) != 2 )
-            return notify_fail("ÄãÒª½«Ê²Ã´¶«Î÷·Å½øÄÄÀï£¿\n");
+            return notify_fail("ä½ è¦å°‡ä»€éº¼æ±è¥¿æ”¾é€²å“ªè£¡ï¼Ÿ\n");
 
-        if (item != "Ïõ»Ç" || target != "»ğÇ¹Ä£×Ó")
-                return notify_fail("ÄãÒª½«Ê²Ã´¶«Î÷·Å½øÄÄÀï£¿\n");
+        if (item != "ç¡ç£º" || target != "ç«æ§æ¨¡å­")
+                return notify_fail("ä½ è¦å°‡ä»€éº¼æ±è¥¿æ”¾é€²å“ªè£¡ï¼Ÿ\n");
 
         if (!(xiaohuang=present("xiaohuang shi",me)) )
-                return notify_fail("ÄãÉíÉÏ²¢Ã»ÓĞÏõ»ÇÊ¯¡£\n");
+                return notify_fail("ä½ èº«ä¸Šä¸¦æ²’æœ‰ç¡ç£ºçŸ³ã€‚\n");
 
         if (!present("huoqiang muzi",environment(this_object())) )
-                return notify_fail("ÕâÀïÃ»ÓĞ»ğÇ¹Ä£×Ó¡£\n");
+                return notify_fail("é€™è£¡æ²’æœ‰ç«æ§æ¨¡å­ã€‚\n");
 
         if( !query_temp("pouring", me) )
-                return notify_fail("ºÃÏó»¹Ã»ÂÖµ½Äã°É¡£\n");
+                return notify_fail("å¥½è±¡é‚„æ²’è¼ªåˆ°ä½ å§ã€‚\n");
 
         if( query("qi", me)<50 || query("jing", me)<50 )
-                return notify_fail(RED"ÄãÒÑ¾­¾«Æ£Á¦½ßÁË£¡\n"NOR);
+                return notify_fail(RED"ä½ å·²ç¶“ç²¾ç–²åŠ›ç«­äº†ï¼\n"NOR);
 
-        message_vision("$NÍù»ğÇ¹Ä£×ÓÀïÌíÁËÒ»Ğ©Ïõ»Ç¡£\n",me);
+        message_vision("$Nå¾€ç«æ§æ¨¡å­è£¡æ·»äº†ä¸€äº›ç¡ç£ºã€‚\n",me);
         destruct(xiaohuang);
 
         addn("jing", -30, me);
@@ -182,8 +182,8 @@ void job_done(object me)
 {
         object huoqiang;
 
-        message_vision("$N½Ò¿ªÄ£×Ó£¬¿´À´ÌúË®ÒÑ¾­Äı¹Ì¡£$N½½ÉÏÒ»ÅèÀäË®£¬"+
-                        "Ö»ÌıßêßêÉùÏì£¬Ò»Õó´Ì±ÇµÄÅ¨ÑÌ¹ıºó£¬»ğÇ¹ÒÑ¾­ÖÆ³É¡£\n",me);
+        message_vision("$Næ­é–‹æ¨¡å­ï¼Œçœ‹ä¾†éµæ°´å·²ç¶“å‡å›ºã€‚$Næ¾†ä¸Šä¸€ç›†å†·æ°´ï¼Œ"+
+                        "åªè½å“§å“§è²éŸ¿ï¼Œä¸€é™£åˆºé¼»çš„æ¿ƒç…™éå¾Œï¼Œç«æ§å·²ç¶“åˆ¶æˆã€‚\n",me);
         huoqiang=new(OBJ_PATH"/huoqiang");
         huoqiang->move(me);
         remove_action("add_xiaohuang","add");

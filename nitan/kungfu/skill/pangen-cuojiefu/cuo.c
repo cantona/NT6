@@ -3,7 +3,7 @@
 
 inherit F_SSERVER;
 
-string name() { return HIR "´í×Ö¾÷" NOR; }
+string name() { return HIR "éŒ¯å­—è¨£" NOR; }
 
 int perform(object me, object target)
 {
@@ -15,35 +15,35 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(name() + "Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(name() + "åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me)) ||
             query("skill_type", weapon) != "hammer" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (target->is_busy())
-                return notify_fail(target->name() + "Ä¿Ç°Õý×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É¡£\n");
+                return notify_fail(target->name() + "ç›®å‰æ­£è‡ªé¡§ä¸æš‡ï¼Œæ”¾è†½æ”»æ“Šå§ã€‚\n");
 
         if ((level = me->query_skill("pangen-cuojiefu", 1)) < 100)
-                return notify_fail("ÄãÅÌ¸ù´í½Ú¸«²»¹»æµÊì£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ ç›¤æ ¹éŒ¯ç¯€æ–§ä¸å¤ å«»ç†Ÿï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if ((int)me->query_skill("force") < 120)
-                return notify_fail("ÄãµÄÄÚ¹¦»ðºò²»¹»£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸç«å€™ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if( query("max_neili", me)<800 )
-                return notify_fail("ÄãµÄÄÚÁ¦ÐÞÎª²»¹»£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¿®ç‚ºä¸å¤ ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if( query("neili", me)<100 )
-                return notify_fail("ÄãÏÖÔÚÕæÆø²»¹»£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çœŸæ°£ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (me->query_skill_mapped("hammer") != "pangen-cuojiefu")
-                return notify_fail("ÄãÃ»ÓÐ¼¤·¢ÅÌ¸ù´í½Ú¸«£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼ç›¤æ ¹éŒ¯ç¯€æ–§ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIR "$N" HIR "¸ß¾ÙÊÖÖÐ" + weapon->name() + HIR "£¬¶¸È»Ò»Éù¶ÏºÈ£¬³¯×Å$n"
-              HIR "ÃÍ»ÓÊý¸«£¬ÆøÊÆÈçºç¡£\n" NOR;
+        msg = HIR "$N" HIR "é«˜èˆ‰æ‰‹ä¸­" + weapon->name() + HIR "ï¼Œé™¡ç„¶ä¸€è²æ–·å–ï¼Œæœè‘—$n"
+              HIR "çŒ›æ®æ•¸æ–§ï¼Œæ°£å‹¢å¦‚è™¹ã€‚\n" NOR;
 
         addn("neili", -30, me);
 
@@ -52,13 +52,13 @@ int perform(object me, object target)
 
         if (ap / 2 + random(ap) > dp)
         {
-                msg += HIR "$p" HIR "¼û$P" HIR "À´ÊÆÐÚÓ¿£¬²»µÃ²»ÖÐÍ¾"
-                       "±äÕÐ£¬ÕâÒ»ÏÂµÇÊ±±ãÊ§ÁËÏÈ»ú£¡\n" NOR;
+                msg += HIR "$p" HIR "è¦‹$P" HIR "ä¾†å‹¢æ´¶æ¹§ï¼Œä¸å¾—ä¸ä¸­é€”"
+                       "è®Šæ‹›ï¼Œé€™ä¸€ä¸‹ç™»æ™‚ä¾¿å¤±äº†å…ˆæ©Ÿï¼\n" NOR;
                 target->start_busy(level / 18 + 1);
         } else
         {
-                msg += CYN "¿ÉÊÇ$p" CYN "¿´ÆÆ$P" CYN "ÕÐÊ½µÄÀ´Â·£¬Ð±"
-                       "Ð±Ìø¿ª£¬Ê¹ÕâÕÐÎ´Æðµ½Ë¿ºÁ×÷ÓÃ¡£\n" NOR;
+                msg += CYN "å¯æ˜¯$p" CYN "çœ‹ç ´$P" CYN "æ‹›å¼çš„ä¾†è·¯ï¼Œæ–œ"
+                       "æ–œè·³é–‹ï¼Œä½¿é€™æ‹›æœªèµ·åˆ°çµ²æ¯«ä½œç”¨ã€‚\n" NOR;
                 me->start_busy(2);
         }
         message_combatd(msg, me, target);

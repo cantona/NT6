@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "������");
+        set("short", "暢音閣");
         set("long", @LONG
-���ǹ�������Ϸ̨, ÿ����ںͻ�������, �ۻʺ����������￴
-Ϸ. ƽ����ż��̫��Ҳ��������ϼ����ӿ���.
+這是宮內最大的戲台, 每逢年節和皇上生日, 帝皇後妃都來這裡看
+戲. 平日裡偶爾太後也會來這點上幾折子看看.
 LONG
         );
         set("exits", ([

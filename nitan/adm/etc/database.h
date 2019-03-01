@@ -1,10 +1,10 @@
 // database.h
 
-// ÊÇ·ñ²ÉÓÃÓÀ¾ÃÁ¬½Ó
+// æ˜¯å¦æ¡ç”¨æ°¸ä¹…é€£æ¥
 #define STATIC_LINK
-// ÊÇ·ñµ÷ÊÔ×´Ì¬
+// æ˜¯å¦èª¿è©¦ç‹€æ…‹
 // #define DEBUG
-// ÊÇ·ñÔÊĞí·ÖÕ¾ĞÂÍæ¼Ò×¢²á
+// æ˜¯å¦å…è¨±åˆ†ç«™æ–°ç©å®¶æ³¨å†Š
 // #define REFUSE_NEW_PLAYER
 
 protected mapping all_others_db = ([
@@ -12,7 +12,7 @@ protected mapping all_others_db = ([
 ]);
 
 protected mapping stations = ([
-        "113.31.21.157" : "¡¶ÄàÌ¶¡¤ÍõÕß¹éÀ´¡·",
+        "113.31.21.157" : "ã€Šæ³¥æ½­ï¹’ç‹è€…æ­¸ä¾†ã€‹",
 ]);
 
 #ifndef DATABASE
@@ -28,5 +28,5 @@ nosave string ITEM_TABLE             = "items";
 nosave string MEMBER_TABLE           = "members";
 nosave string CARD_TABLE             = "cards";
 
-// ²ÉÓÃµÄ¼ÓÃÜËã·¨
+// æ¡ç”¨çš„åŠ å¯†ç®—æ³•
 nosave string DB_CRYPT               = "PASSWORD";

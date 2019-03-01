@@ -4,13 +4,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIW"¾«Ìú"NOR, ({ "jing tie", "tie" }) );
+        set_name(HIW"ç²¾éµ"NOR, ({ "jing tie", "tie" }) );
         set_weight(40000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»¿éÓÃÎÚ½ğ¿óÊ¯´òÁ¶³öÀ´µÄ¾«Ìú£¬ÊÇÖÆÔì±øÆ÷µÄºÃ²ÄÁÏ¡£\n");
-                set("unit", "¿é");
+                set("long", "é€™æ˜¯ä¸€å¡Šç”¨çƒé‡‘ç¤¦çŸ³æ‰“ç…‰å‡ºä¾†çš„ç²¾éµï¼Œæ˜¯åˆ¶é€ å…µå™¨çš„å¥½ææ–™ã€‚\n");
+                set("unit", "å¡Š");
 //                set("no_drop",1);
 
         }

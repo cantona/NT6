@@ -8,12 +8,12 @@ void init();
 
 void create()
 {
-        set_name(HIW "ĞÒ¸£É¢" NOR, ({"xingfu san", "san"}));
+        set_name(HIW "å¹¸ç¦æ•£" NOR, ({"xingfu san", "san"}));
         set_weight(20);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Á£");
+                set("unit", "ç²’");
                 set("value", 50);
                 set("medicine", 1);
                 set("no_sell", 1);
@@ -30,7 +30,7 @@ void create()
 int do_effect(object me)
 {
         addn("shenzhou/pts", 40, me);
-        message_vision(HIG "$N·şÏÂÁËÒ»Ğ©ĞÒ¸£É¢£¬ËùÓĞ·ŞÔ¹Çê¿ÌÒ»±Ê¹´Ïú! \n" NOR, me); 
+        message_vision(HIG "$Næœä¸‹äº†ä¸€äº›å¹¸ç¦æ•£ï¼Œæ‰€æœ‰å¿¿æ€¨é ƒåˆ»ä¸€ç­†å‹¾éŠ·! \n" NOR, me); 
 
         destruct(this_object());
         return 1;

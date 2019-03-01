@@ -9,13 +9,13 @@ void setup() {}
 
 void create()
 {
-        set_name(HIM "ÃÅÉñ" NOR, ({ "men shen", "menshen" }));
+        set_name(HIM "é–€ç¥ž" NOR, ({ "men shen", "menshen" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»ÕÅ»­µÄÎåÑÕÁùÉ«µÄÃÅÉñ£¬³£³£"
-                            "±»ÈËÌùÔÚÃÅÉÏÓÃÀ´Çý³ýÑýÐ°¡£\n");
-                set("unit", "ÕÅ");
+                set("long", "é€™æ˜¯ä¸€å¼µç•«çš„äº”é¡å…­è‰²çš„é–€ç¥žï¼Œå¸¸å¸¸"
+                            "è¢«äººè²¼åœ¨é–€ä¸Šç”¨ä¾†é©…é™¤å¦–é‚ªã€‚\n");
+                set("unit", "å¼µ");
         }
 
         set("no_get", 1);
@@ -41,18 +41,18 @@ void init()
         if (! interactive(me) || wizardp(me) || env->welcome(me))
                 return;
 
-        message_vision("ÃÅÉñ´óºÈÒ»Éù£º¡°ºÎ·½ÑýÄõ£¬Ò²"
-                       "¸ÒÀ´´Ë£¿¡±Ëµ°ÕÊÖÖÐÍ­´¸Ò»µ´£¬"
-                       "½«$NÒ»´¸´òµÃ·ÉÁË³öÈ¥£¡\n", me);
+        message_vision("é–€ç¥žå¤§å–ä¸€è²ï¼šâ€œä½•æ–¹å¦–å­½ï¼Œä¹Ÿ"
+                       "æ•¢ä¾†æ­¤ï¼Ÿâ€èªªç½·æ‰‹ä¸­éŠ…éŒ˜ä¸€ç›ªï¼Œ"
+                       "å°‡$Nä¸€éŒ˜æ‰“å¾—é£›äº†å‡ºåŽ»ï¼\n", me);
         
         if( query("id", me) != "rcwiz" )
                  me->move(query("startroom", env));
 
-        else message_vision(HIC "ÃÅÉñ¼û´³ÁË»ö£¬ÍËÔÚÒ»±ßÔÙÒ²²»¸ÒËµÊ²Ã´ÁË£¡\n" NOR, me);
+        else message_vision(HIC "é–€ç¥žè¦‹é—–äº†ç¦ï¼Œé€€åœ¨ä¸€é‚Šå†ä¹Ÿä¸æ•¢èªªä»€éº¼äº†ï¼\n" NOR, me);
         me->start_busy(3);
     
         if( query("id", me) != "rcwiz" )
-                message("vision", "Ö»Ìý¡°Åî¡±Ò»Éù£¬" + me->name() +
-                        "·ÉÁË³öÀ´£¬ÉíÉÏÇàÒ»¿é¶ù×ÏÒ»¿é¶ùµÄ¡£\n",
+                message("vision", "åªè½â€œè“¬â€ä¸€è²ï¼Œ" + me->name() +
+                        "é£›äº†å‡ºä¾†ï¼Œèº«ä¸Šé’ä¸€å¡Šå…’ç´«ä¸€å¡Šå…’çš„ã€‚\n",
                         environment(me), ({ me }));
 }

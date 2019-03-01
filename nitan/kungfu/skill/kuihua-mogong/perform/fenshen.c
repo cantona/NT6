@@ -1,7 +1,7 @@
 #include <combat.h>
 #include  <ansi.h>
 
-#define HUI "¡¸" WHT "·ÖÉí" HIW "»¯Ó°" NOR "¡¹"
+#define HUI "ã€Œ" WHT "åˆ†èº«" HIW "åŒ–å½±" NOR "ã€"
 
 inherit F_SSERVER;
 
@@ -12,30 +12,30 @@ int perform(object me, object target)
         object env;
 
         if( userp(me) && !query("can_perform/kuihua-mogong/fenshen", me) )
-                return notify_fail("ÄãËùÊ¹ÓÃµÄÍâ¹¦ÖĞÃ»ÓĞÕâÖÖ¹¦ÄÜ¡£\n");
+                return notify_fail("ä½ æ‰€ä½¿ç”¨çš„å¤–åŠŸä¸­æ²’æœ‰é€™ç¨®åŠŸèƒ½ã€‚\n");
 
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(HUI "Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(HUI "åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if ((int)me->query_skill("kuihua-mogong", 1) < 460)
-                return notify_fail("Äã¿û»¨Ä§¹¦ĞŞÎª²»¹»£¬ÄÑÒÔÊ©Õ¹" HUI "¡£\n");
+                return notify_fail("ä½ è‘µèŠ±é­”åŠŸä¿®ç‚ºä¸å¤ ï¼Œé›£ä»¥æ–½å±•" HUI "ã€‚\n");
 
         if( query("max_neili", me)<6000 )
-                return notify_fail("ÄãÄÚÁ¦ĞŞÎª²»¹»£¬ÄÑÒÔÊ©Õ¹" HUI "¡£\n");
+                return notify_fail("ä½ å…§åŠ›ä¿®ç‚ºä¸å¤ ï¼Œé›£ä»¥æ–½å±•" HUI "ã€‚\n");
 
           if( query("jingli", me)<1000 )
-                return notify_fail("Äã¾«Á¦²»×ã£¬ÄÑÒÔÊ©Õ¹" HUI "¡£\n");
+                return notify_fail("ä½ ç²¾åŠ›ä¸è¶³ï¼Œé›£ä»¥æ–½å±•" HUI "ã€‚\n");
 
         if( query("neili", me)<1000 )
-                return notify_fail("ÄãÄÚÁ¦²»×ã£¬ÄÑÒÔÊ©Õ¹" HUI "¡£\n");
+                return notify_fail("ä½ å…§åŠ›ä¸è¶³ï¼Œé›£ä»¥æ–½å±•" HUI "ã€‚\n");
         
         if (me->is_busy())
-                return notify_fail("ÄãÏÖÔÚÕıÃ¦£¡\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£å¿™ï¼\n");
 
         if( query_temp("hiding_kuihua", me) )
-                return notify_fail("ÄãÕıÔÚÔË¹¦ÖĞ£¡\n");
+                return notify_fail("ä½ æ­£åœ¨é‹åŠŸä¸­ï¼\n");
 
         ap=me->query_skill("dodge")+query("dex", me);
         dp=target->query_skill("dodge")+query("dex", target);
@@ -46,18 +46,18 @@ int perform(object me, object target)
          addn("neili", -800, me);
          addn("jingli", -400, me);
 
-        message_sort(HIY "\n$NÀäĞ¦Ò»Éù£¬Ê©Õ¹³ö¡¶¿û»¨±¦µä¡·¼ÇÔØÖ®¾øÑ§" + HUI + HIY + 
-                     "£¬É²ÄÇ¼ä£¬" + env->short() + HIY + "»Ã»¯³öÎŞÊı$NµÄÉíÓ°¡£\n" NOR, me);
+        message_sort(HIY "\n$Nå†·ç¬‘ä¸€è²ï¼Œæ–½å±•å‡ºã€Šè‘µèŠ±å¯¶å…¸ã€‹è¨˜è¼‰ä¹‹çµ•å­¸" + HUI + HIY + 
+                     "ï¼Œå‰é‚£é–“ï¼Œ" + env->short() + HIY + "å¹»åŒ–å‡ºç„¡æ•¸$Nçš„èº«å½±ã€‚\n" NOR, me);
         
         if (target->query_skill("count") > 100 && random(2))
         {
-                message_sort(HIC "\n$NÊ©Õ¹³öÒõÑô°ËØÔµÄ¾øÑ§£¬½«$nµÄ" + HUI + HIC "»¯½â¡£\n" NOR, target, me);
+                message_sort(HIC "\n$Næ–½å±•å‡ºé™°é™½å…«å¦çš„çµ•å­¸ï¼Œå°‡$nçš„" + HUI + HIC "åŒ–è§£ã€‚\n" NOR, target, me);
                 return 1;
         }
 
         if (ap / 2 + random(ap) > dp)
         {
-                message_sort(HIG "\n$N¶Ù¾õÑÛ»¨çÔÂÒ£¬Ê§È¥ÁË·½Ïò£¡\n" NOR, target);
+                message_sort(HIG "\n$Né “è¦ºçœ¼èŠ±ç¹šäº‚ï¼Œå¤±å»äº†æ–¹å‘ï¼\n" NOR, target);
                 target->remove_enemy(me);
                 set_temp("hiding_kuihua", 1, me);
                 addn("jingli", -200, me);
@@ -66,7 +66,7 @@ int perform(object me, object target)
         }
         else
         {
-                message_sort(HIM "\n$N¸Ï½ôÊÕÉã×¡ĞÄÉñ£¬Ğ¡ĞÄµÄÒÆ¶¯×Å½Å²½£¬½«$nÕâÕĞ»¯½â¡£\n" NOR, target, me);
+                message_sort(HIM "\n$Nè¶•ç·Šæ”¶æ”ä½å¿ƒç¥ï¼Œå°å¿ƒçš„ç§»å‹•è‘—è…³æ­¥ï¼Œå°‡$né€™æ‹›åŒ–è§£ã€‚\n" NOR, target, me);
         }
                 
         return 1;
@@ -79,7 +79,7 @@ void del_hiding(object me)
 
         delete_temp("hiding_kuihua", me);
 
-        tell_object(me, HIG "Äã·ÖÉí»¯Ó°ÊõÊ©Õ¹Íê±Ï£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï¡£\n");
+        tell_object(me, HIG "ä½ åˆ†èº«åŒ–å½±è¡“æ–½å±•å®Œç•¢ï¼Œå°‡å…§åŠ›æ”¶å›ä¸¹ç”°ã€‚\n");
 
         return;
 }

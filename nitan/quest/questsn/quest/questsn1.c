@@ -10,12 +10,12 @@ mapping query_quest()
                 questsn = QUESTSN_D("1find")->query_questsn();
         else
         questsn = QUESTSN_D("1kill")->query_questsn();
-        if (questsn["type"] == "Ñ°") 
+        if (questsn["type"] == "å°‹") 
         {
                 if (random(5) == 3)
                 {
-                        questsn["type"] = "ËÍ";
-                        questsn["name"] = "»ØÖ´";
+                        questsn["type"] = "é€";
+                        questsn["name"] = "å›åŸ·";
                 }
         } 
         return questsn;

@@ -1,14 +1,14 @@
-// hua2.c ÎŞÃû»¨
+// hua2.c ç„¡åèŠ±
 inherit ITEM;
 
 void create()
 {
-	set_name("ÎŞÃû»¨", ({ "wuming hua", "wuming", "hua" }));
+	set_name("ç„¡åèŠ±", ({ "wuming hua", "wuming", "hua" }));
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "¶ä");
-		set("long", "ÕâÊÇÒ»¶äÎŞÃûĞ¡»¨£¬»¨ÈïËäĞ¡£¬È´Ê®·ÖÃÀÀö¡£\n");
+		set("unit", "æœµ");
+		set("long", "é€™æ˜¯ä¸€æœµç„¡åå°èŠ±ï¼ŒèŠ±è•Šé›–å°ï¼Œå»ååˆ†ç¾éº—ã€‚\n");
 		set("only_do_effect", 1);
 	}
 	setup();
@@ -16,7 +16,7 @@ void create()
 
 int do_effect(object me)
 {
-        message_vision("$N°Ñ" + name() + "ÈÓ½ø×ìÀï£¬¼¸ÏÂ¾ÍÍÌÁËÏÂÈ¥¡£\n", me);
+        message_vision("$NæŠŠ" + name() + "æ‰”é€²å˜´è£¡ï¼Œå¹¾ä¸‹å°±åäº†ä¸‹å»ã€‚\n", me);
 	destruct(this_object());
 	return 1;
 }

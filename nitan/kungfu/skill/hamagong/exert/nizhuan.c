@@ -14,29 +14,29 @@ int exert(object me, object target)
         string msg;
 
         if( userp(me) && !query("reborn/times", me) )
-                return notify_fail("ÄãËùÊ¹ÓÃµÄÄÚ¹¦ÖĞÃ»ÓĞÕâÖÖ¹¦ÄÜ¡£\n");
+                return notify_fail("ä½ æ‰€ä½¿ç”¨çš„å…§åŠŸä¸­æ²’æœ‰é€™ç¨®åŠŸèƒ½ã€‚\n");
 
         /*
-        if( query("family/family_name", me) != "Å·ÑôÊÀ¼Ò" )
-                return notify_fail("Äã²»ÊÇÅ·ÑôÊÀ¼ÒµÜ×Ó£¬ÎŞ·¨Ê¹ÓÃÄæ×ª¾ÅÒõ¡£\n");
+        if( query("family/family_name", me) != "æ­é™½ä¸–å®¶" )
+                return notify_fail("ä½ ä¸æ˜¯æ­é™½ä¸–å®¶å¼Ÿå­ï¼Œç„¡æ³•ä½¿ç”¨é€†è½‰ä¹é™°ã€‚\n");
         */
 
         if((int)me->query_skill("hamagong", 1) < 1000)
-                return notify_fail("ÄãµÄ¸òó¡¹¦²»¹»æµÊì£¬²»»áÄæ×ª¾ÅÒõ¡£\n");
+                return notify_fail("ä½ çš„è›¤èŸ†åŠŸä¸å¤ å«»ç†Ÿï¼Œä¸æœƒé€†è½‰ä¹é™°ã€‚\n");
 
         if( query("neili", me)<500 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ã€‚\n");
 
         if( query("jingli", me)<500 )
-                return notify_fail("ÄãµÄ¾«Á¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤ ã€‚\n");
 
         if( query_temp("hmg_nizhuan", me) )
-                return notify_fail("ÄãÒÑ¾­ÄæÔËÁË¾ÅÒõ¡£\n");
+                return notify_fail("ä½ å·²ç¶“é€†é‹äº†ä¹é™°ã€‚\n");
 
         skill = me->query_skill("hamagong", 1);
-        msg = HIB "$N" HIB "Ë«ÊÖ³ÅµØ£¬¿ÚÖĞ·¢³öÒ»Á¬´ÜµÍºíÉù£¬Ò»¹É¹ÉÄÚ¾¢²ª·¢Ê¹$N" HIB "Ë«×ãÀëµØ£¬³ÊÍ·ÏÂ×ãÉÏÖ®ÊÆ¡£¡£\n" NOR;
+        msg = HIB "$N" HIB "é›™æ‰‹æ’åœ°ï¼Œå£ä¸­ç™¼å‡ºä¸€é€£ç«„ä½å–‰è²ï¼Œä¸€è‚¡è‚¡å…§å‹å‹ƒç™¼ä½¿$N" HIB "é›™è¶³é›¢åœ°ï¼Œå‘ˆé ­ä¸‹è¶³ä¸Šä¹‹å‹¢ã€‚ã€‚\n" NOR;
         message_combatd(msg, me);
-        tell_object(me, HIW "Äã¸Ğ¾õÌåÄÚ¸òó¡¹¦Ëæ¾ÅÒõÄæ×ª£¬ºÃÏñÓĞ¹É¾Ş´óµÄÁ¦Á¿Òª±À·¢³öÀ´Ò»Ñù¡£\n" NOR);
+        tell_object(me, HIW "ä½ æ„Ÿè¦ºé«”å…§è›¤èŸ†åŠŸéš¨ä¹é™°é€†è½‰ï¼Œå¥½åƒæœ‰è‚¡å·¨å¤§çš„åŠ›é‡è¦å´©ç™¼å‡ºä¾†ä¸€æ¨£ã€‚\n" NOR);
 
         addn_temp("apply/ap_power", 50, me);
         addn_temp("apply/add_damage", 50, me);
@@ -64,5 +64,5 @@ void remove_effect(object me, int amount)
         addn_temp("apply/avoid_xuruo", -50, me);
         delete_temp("hmg_nizhuan", me);
 
-        tell_object(me, HIW "ÄãÄæ×ª¾ÅÒõÔË¹¦¹ı¾Ã£¬¾­ÂöÓÖ½¥½¥¸´Ô­¡£\n" NOR);
+        tell_object(me, HIW "ä½ é€†è½‰ä¹é™°é‹åŠŸéä¹…ï¼Œç¶“è„ˆåˆæ¼¸æ¼¸å¾©åŸã€‚\n" NOR);
 }

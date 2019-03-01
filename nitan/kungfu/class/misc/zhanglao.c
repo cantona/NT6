@@ -1,4 +1,4 @@
-// zhanglao.c ³¤ÀÏ
+// zhanglao.c é•·è€
 
 #include <ansi.h>
 
@@ -6,9 +6,9 @@ inherit "/inherit/char/punisher";
 
 void create()
 {
-        set_name("³¤ÀÏ", ({ "zhang lao", "zhang", "lao" }));
-        set("long",  "ÈÕÔÂÉñ½Ì¿ªÉ½±Ç×æ·½À°ÊÖÏÂµÚÒ»ÌùÉíÊÌÎÀ£¬ÎŞÈËÖªÏşÆäÕæÊµĞÕÃû¡£\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("é•·è€", ({ "zhang lao", "zhang", "lao" }));
+        set("long",  "æ—¥æœˆç¥æ•™é–‹å±±é¼»ç¥–æ–¹è‡˜æ‰‹ä¸‹ç¬¬ä¸€è²¼èº«ä¾è¡›ï¼Œç„¡äººçŸ¥æ›‰å…¶çœŸå¯¦å§“åã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 145);
         set("attitude", "peaceful");
         set("shen_type", 0);
@@ -50,7 +50,7 @@ void create()
     prepare_skill("cuff", "xuwu-piaomiao");
     prepare_skill("hand", "huanmo-longtianwu");
 
-    create_family("ÈÕÔÂÉñ½Ì", 0, "»¤½Ì³¤ÀÏ");
+    create_family("æ—¥æœˆç¥æ•™", 0, "è­·æ•™é•·è€");
 
     setup();
 

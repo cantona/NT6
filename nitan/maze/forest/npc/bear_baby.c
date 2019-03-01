@@ -2,13 +2,13 @@ inherit NPC;
 
 void create()
 {
-        string *names = ({"Ğ¡×ØĞÜ","Ğ¡ºÚĞÜ","Ğ¡°×ĞÜ"});
+        string *names = ({"å°æ£•ç†Š","å°é»‘ç†Š","å°ç™½ç†Š"});
         set_name( names[random(sizeof(names))], ({ "baby bear","bear"}));
         set("vendetta_mark","bear");
-        set("race", "Ò°ÊŞ");
-        set("gender", "ĞÛĞÔ");
+        set("race", "é‡ç¸");
+        set("gender", "é›„æ€§");
         set("age", 20);
-        set("long", "ÕâÊÇÒ»Ö»¿É°®µÄĞ¡ĞÜ¡£\n");
+        set("long", "é€™æ˜¯ä¸€åªå¯æ„›çš„å°ç†Šã€‚\n");
 
         set("str", 50);
         set("dex", 20);
@@ -23,10 +23,10 @@ void create()
 /*
         set("chat_chance", 2);
         set("chat_msg", ({
-                "Ğ¡ĞÜ¹°ÁË¹°ÄãµÄ½Å¡£\n"
+                "å°ç†Šæ‹±äº†æ‹±ä½ çš„è…³ã€‚\n"
         }) );
 */
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "Ç°½Å", "áá½Å", "Î²°Í" }) );
+        set("limbs", ({ "é ­éƒ¨", "èº«é«”", "å‰è…³", "å¾Œè…³", "å°¾å·´" }) );
         set("verbs", ({ "bite", "claw" }) );
 
         set_temp("apply/attack", 30);

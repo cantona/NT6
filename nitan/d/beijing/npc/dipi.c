@@ -2,11 +2,11 @@ inherit BUNCHER;
 
 void create()
 {
-        set_name("µØÆ¦", ({ "di pi", "di", "pi" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("åœ°ç—", ({ "di pi", "di", "pi" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 22);
         set("long",
-                "Ò»¸ö¾©³ÇÀïµÄ»ì»ì¡£\n");
+                "ä¸€å€‹äº¬åŸè£¡çš„æ··æ··ã€‚\n");
         set("shen_type", -1);
         set("combat_exp", 10000);
        set("str", 10);
@@ -18,7 +18,7 @@ void create()
        set_skill("unarmed",20);
        set("chat_chance", 1);
        set("chat_msg", ({
-                "µØÆ¦ÎŞÁÄµÄÉìÁËÀÁÑü¡£\n",
+                "åœ°ç—ç„¡èŠçš„ä¼¸äº†æ‡¶è…°ã€‚\n",
         }) );       
 
         setup();

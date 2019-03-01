@@ -1,5 +1,5 @@
 // This program is a part of NT MudLIB
-// ½Ì»áÍæ¼ÒÊìÏ¤ÓÎÏ·
+// æ•™æœƒçŽ©å®¶ç†Ÿæ‚‰éŠæˆ²
 
 #include <ansi.h>
 
@@ -10,365 +10,365 @@ inherit F_DBASE;
 string *keys_gift_list;
 
 mapping gift_name = ([
-        "exp"         :  "¾­Ñé",
-        "pot"         :  "Ç±ÄÜ",
-        "mar"         :  "Ìå»á",
-        "neili"       :  "ÄÚÁ¦",
-        "jingli"      :  "¾«Á¦",
-        "gold"        :  "»Æ½ð£¨´æÒøÐÐ)",
-        "gongxian"    :  "ÃÅÅÉ¹±Ï×",
-        "fuzhong"     :  "¸ºÖØ",
-        "riding"      :  "ÆïÊõ",
-        "training"    :  "Ô¦ÊÞÊõ",     
-        "hunting"     :  "á÷ÁÔ¼¼ÇÉ",
-        "weiwang"     :  "ÍþÍû",
-        "score"       :  "ÔÄÀú",
-        "tianfu"      :  "ÏÈÌìÌì¸³",
-        "horse"       :  "ÆïÂí¼ÇÂ¼µã",
-        "quitsave"    :  "ÏÂÏß±£´æËùÓÐÎïÆ·",
+        "exp"         :  "ç¶“é©—",
+        "pot"         :  "æ½›èƒ½",
+        "mar"         :  "é«”æœƒ",
+        "neili"       :  "å…§åŠ›",
+        "jingli"      :  "ç²¾åŠ›",
+        "gold"        :  "é»ƒé‡‘ï¼ˆå­˜éŠ€è¡Œ)",
+        "gongxian"    :  "é–€æ´¾è²¢ç»",
+        "fuzhong"     :  "è² é‡",
+        "riding"      :  "é¨Žè¡“",
+        "training"    :  "é¦­ç¸è¡“",     
+        "hunting"     :  "ç‹©çµæŠ€å·§",
+        "weiwang"     :  "å¨æœ›",
+        "score"       :  "é–±æ­·",
+        "tianfu"      :  "å…ˆå¤©å¤©è³¦",
+        "horse"       :  "é¨Žé¦¬è¨˜éŒ„é»ž",
+        "quitsave"    :  "ä¸‹ç·šä¿å­˜æ‰€æœ‰ç‰©å“",
 ]);
 
 mapping gift_list = ([
 
-        "1"   :   ([ "´ï³ÉÌõ¼þ" : "ÁË½âÈçºÎ¿ªÊ¼ÍæÓÎÏ·",
-                     "Ìõ¼þ±êÊ¶" : "newbie_mygift/help",
-                     "Ìõ¼þÊýÖµ" : 1,
-                     "Ìõ¼þÃèÊö" : "ÊäÈëÖ¸Áî help start ²é¿´Ïà¹Ø×ÊÑ¶",
-                     "½±ÀøÃèÊö" : "/clone/goods/zhufu_cloth:1,neili:1000",
-                     "ÏÂ¸ö½±Àø" : "2", ]),
+        "1"   :   ([ "é”æˆæ¢ä»¶" : "äº†è§£å¦‚ä½•é–‹å§‹çŽ©éŠæˆ²",
+                     "æ¢ä»¶æ¨™è­˜" : "newbie_mygift/help",
+                     "æ¢ä»¶æ•¸å€¼" : 1,
+                     "æ¢ä»¶æè¿°" : "è¼¸å…¥æŒ‡ä»¤ help start æŸ¥çœ‹ç›¸é—œè³‡è¨Š",
+                     "çŽå‹µæè¿°" : "/clone/goods/zhufu_cloth:1,neili:1000",
+                     "ä¸‹å€‹çŽå‹µ" : "2", ]),
 
-        "2"   :   ([ "´ï³ÉÌõ¼þ" : "²é¿´×Ô¼ºµÄ·½Î»",
-                     "Ìõ¼þ±êÊ¶" : "newbie_mygift/map",
-                     "Ìõ¼þÊýÖµ" : 1,    
-                     "Ìõ¼þÃèÊö" : "ÊäÈëÖ¸Áî map ²é¿´×Ô¼ºËùÔÚ·½Î»\n"
-                                  HIR "              ÌáÊ¾£ºµØÍ¼ÖÐÀ¶É«µ×É«Î»ÖÃÎªÄãµ±Ç°ËùÔÚÎ»ÖÃ¡£" NOR,
-                     "½±ÀøÃèÊö" : "/clone/goods/zhufu_boots:1,jingli:1000",
-                     "ÏÂ¸ö½±Àø" : "3", ]),
+        "2"   :   ([ "é”æˆæ¢ä»¶" : "æŸ¥çœ‹è‡ªå·±çš„æ–¹ä½",
+                     "æ¢ä»¶æ¨™è­˜" : "newbie_mygift/map",
+                     "æ¢ä»¶æ•¸å€¼" : 1,    
+                     "æ¢ä»¶æè¿°" : "è¼¸å…¥æŒ‡ä»¤ map æŸ¥çœ‹è‡ªå·±æ‰€åœ¨æ–¹ä½\n"
+                                  HIR "              æç¤ºï¼šåœ°åœ–ä¸­è—è‰²åº•è‰²ä½ç½®ç‚ºä½ ç•¶å‰æ‰€åœ¨ä½ç½®ã€‚" NOR,
+                     "çŽå‹µæè¿°" : "/clone/goods/zhufu_boots:1,jingli:1000",
+                     "ä¸‹å€‹çŽå‹µ" : "3", ]),
 
-        "3"   :   ([ "´ï³ÉÌõ¼þ" : "ÔÚÏß2·ÖÖÓ",
-                     "Ìõ¼þ±êÊ¶" : "mud_age",
-                     "Ìõ¼þÊýÖµ" : 120,
-                     "Ìõ¼þÃèÊö" : "ÔÚÏß´ïµ½Á½·ÖÖÓ",
-                     "½±ÀøÃèÊö" : "/clone/goods/zhufu_armor:1,/clone/gift/xiandan:8",
-                     "ÏÂ¸ö½±Àø" : "4", ]),
+        "3"   :   ([ "é”æˆæ¢ä»¶" : "åœ¨ç·š2åˆ†é˜",
+                     "æ¢ä»¶æ¨™è­˜" : "mud_age",
+                     "æ¢ä»¶æ•¸å€¼" : 120,
+                     "æ¢ä»¶æè¿°" : "åœ¨ç·šé”åˆ°å…©åˆ†é˜",
+                     "çŽå‹µæè¿°" : "/clone/goods/zhufu_armor:1,/clone/gift/xiandan:8",
+                     "ä¸‹å€‹çŽå‹µ" : "4", ]),
                      
-        "4"   :   ([ "´ï³ÉÌõ¼þ" : "²é¿´ÐÂÎÅ",
-                     "Ìõ¼þ±êÊ¶" : "newbie_mygift/news",
-                     "Ìõ¼þÊýÖµ" : 1,    
-                     "Ìõ¼þÃèÊö" : "ÊäÈëÖ¸Áî news ²é¿´ÓÎÏ·ÐÂÎÅ",
-                     "½±ÀøÃèÊö" : "/clone/goods/zhufu_head:1,/clone/gift/xisuidan:8",
-                     "ÏÂ¸ö½±Àø" : "5", ]),
+        "4"   :   ([ "é”æˆæ¢ä»¶" : "æŸ¥çœ‹æ–°èž",
+                     "æ¢ä»¶æ¨™è­˜" : "newbie_mygift/news",
+                     "æ¢ä»¶æ•¸å€¼" : 1,    
+                     "æ¢ä»¶æè¿°" : "è¼¸å…¥æŒ‡ä»¤ news æŸ¥çœ‹éŠæˆ²æ–°èž",
+                     "çŽå‹µæè¿°" : "/clone/goods/zhufu_head:1,/clone/gift/xisuidan:8",
+                     "ä¸‹å€‹çŽå‹µ" : "5", ]),
 
-        "5"   :   ([ "´ï³ÉÌõ¼þ" : "ÔÄ¶ÁÎÄÑ¡",
-                     "Ìõ¼þ±êÊ¶" : "newbie_mygift/wenxuan",
-                     "Ìõ¼þÊýÖµ" : 1,
-                     "Ìõ¼þÃèÊö" : "ÊäÈëÖ¸Áî wenxuan ÏÔÊ¾Äê¶ÈÎÄÑ¡ÐÅÏ¢",
-                     "½±ÀøÃèÊö" : "/clone/goods/zhufu_waist:1,/clone/gift/shenliwan:8",
-                     "ÏÂ¸ö½±Àø" : "6", ]),
+        "5"   :   ([ "é”æˆæ¢ä»¶" : "é–±è®€æ–‡é¸",
+                     "æ¢ä»¶æ¨™è­˜" : "newbie_mygift/wenxuan",
+                     "æ¢ä»¶æ•¸å€¼" : 1,
+                     "æ¢ä»¶æè¿°" : "è¼¸å…¥æŒ‡ä»¤ wenxuan é¡¯ç¤ºå¹´åº¦æ–‡é¸ä¿¡æ¯",
+                     "çŽå‹µæè¿°" : "/clone/goods/zhufu_waist:1,/clone/gift/shenliwan:8",
+                     "ä¸‹å€‹çŽå‹µ" : "6", ]),
                      
-        "6"   :   ([ "´ï³ÉÌõ¼þ" : "²é¿´ msg ¹¦ÄÜ",
-                     "Ìõ¼þ±êÊ¶" : "newbie_mygift/msg",
-                     "Ìõ¼þÊýÖµ" : 1,
-                     "Ìõ¼þÃèÊö" : "ÊäÈëÖ¸Áî msg ÏÔÊ¾×î½üÊÕµ½µÄÐÅÏ¢",
-                     "½±ÀøÃèÊö" : "/clone/goods/zhufu_wrists:1,/clone/gift/unknowdan:8",
-                     "ÏÂ¸ö½±Àø" : "7", ]),
+        "6"   :   ([ "é”æˆæ¢ä»¶" : "æŸ¥çœ‹ msg åŠŸèƒ½",
+                     "æ¢ä»¶æ¨™è­˜" : "newbie_mygift/msg",
+                     "æ¢ä»¶æ•¸å€¼" : 1,
+                     "æ¢ä»¶æè¿°" : "è¼¸å…¥æŒ‡ä»¤ msg é¡¯ç¤ºæœ€è¿‘æ”¶åˆ°çš„ä¿¡æ¯",
+                     "çŽå‹µæè¿°" : "/clone/goods/zhufu_wrists:1,/clone/gift/unknowdan:8",
+                     "ä¸‹å€‹çŽå‹µ" : "7", ]),
 
-        "7"   :   ([ "´ï³ÉÌõ¼þ" : "²éÑ¯ÐÂÊÖµ¼Ê¦",
-                     "Ìõ¼þ±êÊ¶" : "newbie_mygift/who",
-                     "Ìõ¼þÊýÖµ" : 1,
-                     "Ìõ¼þÃèÊö" : "ÊäÈëÖ¸Áî who -v ÏÔÊ¾ËùÓÐµÄÐÂÊÖµ¼Ê¦",
-                     "½±ÀøÃèÊö" : "/clone/goods/zhufu_surcoat:1,/clone/item/magicfruit:8",
-                     "ÏÂ¸ö½±Àø" : "8", ]),
+        "7"   :   ([ "é”æˆæ¢ä»¶" : "æŸ¥è©¢æ–°æ‰‹å°Žå¸«",
+                     "æ¢ä»¶æ¨™è­˜" : "newbie_mygift/who",
+                     "æ¢ä»¶æ•¸å€¼" : 1,
+                     "æ¢ä»¶æè¿°" : "è¼¸å…¥æŒ‡ä»¤ who -v é¡¯ç¤ºæ‰€æœ‰çš„æ–°æ‰‹å°Žå¸«",
+                     "çŽå‹µæè¿°" : "/clone/goods/zhufu_surcoat:1,/clone/item/magicfruit:8",
+                     "ä¸‹å€‹çŽå‹µ" : "8", ]),
                      
-        "8"   :   ([ "´ï³ÉÌõ¼þ" : "²éÑ¯ËùÓÐµÄ¸½¼ÓÊôÐÔ",
-                     "Ìõ¼þ±êÊ¶" : "newbie_mygift/istat",
-                     "Ìõ¼þÊýÖµ" : 1,
-                     "Ìõ¼þÃèÊö" : "ÊäÈëÖ¸Áî istat ÏÔÊ¾ËùÓÐµÄ¸½¼ÓÊôÐÔ",
-                     "½±ÀøÃèÊö" : "/clone/goods/zhufu_sword:1,quitsave:8035200,exp:100000,pot:50000",
-                     "ÏÂ¸ö½±Àø" : "9", ]),
+        "8"   :   ([ "é”æˆæ¢ä»¶" : "æŸ¥è©¢æ‰€æœ‰çš„é™„åŠ å±¬æ€§",
+                     "æ¢ä»¶æ¨™è­˜" : "newbie_mygift/istat",
+                     "æ¢ä»¶æ•¸å€¼" : 1,
+                     "æ¢ä»¶æè¿°" : "è¼¸å…¥æŒ‡ä»¤ istat é¡¯ç¤ºæ‰€æœ‰çš„é™„åŠ å±¬æ€§",
+                     "çŽå‹µæè¿°" : "/clone/goods/zhufu_sword:1,quitsave:8035200,exp:100000,pot:50000",
+                     "ä¸‹å€‹çŽå‹µ" : "9", ]),
                      
-        "9"   :   ([ "´ï³ÉÌõ¼þ" : "ÁË½âÄÜÁ¦µã×÷ÓÃ",
-                     "Ìõ¼þ±êÊ¶" : "newbie_mygift/ability",
-                     "Ìõ¼þÊýÖµ" : 1,
-                     "Ìõ¼þÃèÊö" : "ÊäÈëÖ¸Áî help ability ÁË½âÄÜÁ¦µã×÷ÓÃ",
-                     "½±ÀøÃèÊö" : "/clone/goods/zhufu_blade:1,tianfu:4,/adm/npc/obj/gift:1",
-                     "ÏÂ¸ö½±Àø" : "10", ]),
+        "9"   :   ([ "é”æˆæ¢ä»¶" : "äº†è§£èƒ½åŠ›é»žä½œç”¨",
+                     "æ¢ä»¶æ¨™è­˜" : "newbie_mygift/ability",
+                     "æ¢ä»¶æ•¸å€¼" : 1,
+                     "æ¢ä»¶æè¿°" : "è¼¸å…¥æŒ‡ä»¤ help ability äº†è§£èƒ½åŠ›é»žä½œç”¨",
+                     "çŽå‹µæè¿°" : "/clone/goods/zhufu_blade:1,tianfu:4,/adm/npc/obj/gift:1",
+                     "ä¸‹å€‹çŽå‹µ" : "10", ]),
                                           
-        "10"  :   ([ "´ï³ÉÌõ¼þ" : "´³µ´½­ºþ",
-                     "Ìõ¼þ±êÊ¶" : "newbie_quest_completed/can_out",
-                     "Ìõ¼þÊýÖµ" : 1,    
-                     "Ìõ¼þÃèÊö" : "´Ó¹Å´åÀë¿ª£¨Íê³ÉËùÓÐ¹Å´åÈÎÎñ²¢Àë¿ª£©\n" 
-                                  HIR "              ÌáÊ¾£º¸ù¾Ýµ¼Ê¦--ÀÏ´å³¤µÄÌáÊ¾ÏÈÍê³É¹Å´åÈÎÎñºó²ÅÄÜ³ö´å¡£\n"
-                                      "              ÔÚÊÀ½çÖ®Ê÷ÊäÈëÖ¸Áî" HIY "ask lao ³ö´å" HIR "£¬¸ù¾ÝÌáÊ¾Íê³ÉÈÎÎñ²ÅÄÜ³ö´å¡£\n" NOR,
-                     "½±ÀøÃèÊö" : "/clone/goods/dizangshi:1,pot:50000,riding:100,training:100,fuzhong:1",
-                     "ÏÂ¸ö½±Àø" : "12", ]),
+        "10"  :   ([ "é”æˆæ¢ä»¶" : "é—–ç›ªæ±Ÿæ¹–",
+                     "æ¢ä»¶æ¨™è­˜" : "newbie_quest_completed/can_out",
+                     "æ¢ä»¶æ•¸å€¼" : 1,    
+                     "æ¢ä»¶æè¿°" : "å¾žå¤æ‘é›¢é–‹ï¼ˆå®Œæˆæ‰€æœ‰å¤æ‘ä»»å‹™ä¸¦é›¢é–‹ï¼‰\n" 
+                                  HIR "              æç¤ºï¼šæ ¹æ“šå°Žå¸«--è€æ‘é•·çš„æç¤ºå…ˆå®Œæˆå¤æ‘ä»»å‹™å¾Œæ‰èƒ½å‡ºæ‘ã€‚\n"
+                                      "              åœ¨ä¸–ç•Œä¹‹æ¨¹è¼¸å…¥æŒ‡ä»¤" HIY "ask lao å‡ºæ‘" HIR "ï¼Œæ ¹æ“šæç¤ºå®Œæˆä»»å‹™æ‰èƒ½å‡ºæ‘ã€‚\n" NOR,
+                     "çŽå‹µæè¿°" : "/clone/goods/dizangshi:1,pot:50000,riding:100,training:100,fuzhong:1",
+                     "ä¸‹å€‹çŽå‹µ" : "12", ]),
                      
-        "12"  :   ([ "´ï³ÉÌõ¼þ" : "ÖÆÔìÈçÒâÇ¬À¤´ü",
-                     "Ìõ¼þ±êÊ¶" : "can_summon/qiankun",
-                     "Ìõ¼þÊýÖµ" : 1,    
-                     "Ìõ¼þÃèÊö" : "ÖÆÔìÈçÒâÇ¬À¤´ü\n" 
-                                  HIR "              ÌáÊ¾£ºÔÚÑïÖÝ³Ç×íÏÉÂ¥ÕÒµ½¿ñ·ç£¬ask kuang about all£¬ÖÆ×÷ÈçÒâÇ¬À¤´ü¡£\n" NOR,
-                     "½±ÀøÃèÊö" : "/clone/fam/gift/int3:3,gold:2",
-                     "ÏÂ¸ö½±Àø" : "14", ]),
+        "12"  :   ([ "é”æˆæ¢ä»¶" : "åˆ¶é€ å¦‚æ„ä¹¾å¤è¢‹",
+                     "æ¢ä»¶æ¨™è­˜" : "can_summon/qiankun",
+                     "æ¢ä»¶æ•¸å€¼" : 1,    
+                     "æ¢ä»¶æè¿°" : "åˆ¶é€ å¦‚æ„ä¹¾å¤è¢‹\n" 
+                                  HIR "              æç¤ºï¼šåœ¨æšå·žåŸŽé†‰ä»™æ¨“æ‰¾åˆ°ç‹‚é¢¨ï¼Œask kuang about allï¼Œåˆ¶ä½œå¦‚æ„ä¹¾å¤è¢‹ã€‚\n" NOR,
+                     "çŽå‹µæè¿°" : "/clone/fam/gift/int3:3,gold:2",
+                     "ä¸‹å€‹çŽå‹µ" : "14", ]),
 
-        "14"  :   ([ "´ï³ÉÌõ¼þ" : "ÓëÄ§»ÃÊÞÇ©¶©ÑªÖ®ÃËÔ¼",
-                     //"Ìõ¼þ±êÊ¶" : "newbie_mygift/warcraft",
-                     "Ìõ¼þ±êÊ¶" : "can_whistle",
-                     "Ìõ¼þÊýÖµ" : 1,    
-                     "Ìõ¼þÃèÊö" : "ÓëÄ§»ÃÊÞÇ©¶©ÑªÖ®ÃËÔ¼\n" 
-                                  HIR "              ÌáÊ¾£ºÔÚÑïÖÝ³Ç×íÏÉÂ¥ÕÒµ½¿ñ·ç£¬´òÌýÄ§»ÃÊÞµÄÊÂ¡£\n" NOR,
-                     "½±ÀøÃèÊö" : "/clone/fam/gift/str3:3,horse:1",
-                     "ÏÂ¸ö½±Àø" : "16", ]),
+        "14"  :   ([ "é”æˆæ¢ä»¶" : "èˆ‡é­”å¹»ç¸ç°½è¨‚è¡€ä¹‹ç›Ÿç´„",
+                     //"æ¢ä»¶æ¨™è­˜" : "newbie_mygift/warcraft",
+                     "æ¢ä»¶æ¨™è­˜" : "can_whistle",
+                     "æ¢ä»¶æ•¸å€¼" : 1,    
+                     "æ¢ä»¶æè¿°" : "èˆ‡é­”å¹»ç¸ç°½è¨‚è¡€ä¹‹ç›Ÿç´„\n" 
+                                  HIR "              æç¤ºï¼šåœ¨æšå·žåŸŽé†‰ä»™æ¨“æ‰¾åˆ°ç‹‚é¢¨ï¼Œæ‰“è½é­”å¹»ç¸çš„äº‹ã€‚\n" NOR,
+                     "çŽå‹µæè¿°" : "/clone/fam/gift/str3:3,horse:1",
+                     "ä¸‹å€‹çŽå‹µ" : "16", ]),
                      
-        "16"  :   ([ "´ï³ÉÌõ¼þ" : "ÀûÓÃ×øÆïË²¼äµ½´ï±±¾©",  
-                     "Ìõ¼þ±êÊ¶" : "newbie_mygift/rideto",
-                     "Ìõ¼þÊýÖµ" : 1,
-                     "Ìõ¼þÃèÊö" : "ÀûÓÃ×øÆïË²¼ä´ïµ½±±¾©\n" 
-                                  HIR "              ÌáÊ¾£ºride Ä§»ÃÊÞ£¬Ê¹ÓÃÖ¸Áî"HIY" rideto beijing " NOR,
-                     "½±ÀøÃèÊö" : "/clone/fam/gift/con3:3",
-                     "ÏÂ¸ö½±Àø" : "18", ]),
+        "16"  :   ([ "é”æˆæ¢ä»¶" : "åˆ©ç”¨åé¨Žçž¬é–“åˆ°é”åŒ—äº¬",  
+                     "æ¢ä»¶æ¨™è­˜" : "newbie_mygift/rideto",
+                     "æ¢ä»¶æ•¸å€¼" : 1,
+                     "æ¢ä»¶æè¿°" : "åˆ©ç”¨åé¨Žçž¬é–“é”åˆ°åŒ—äº¬\n" 
+                                  HIR "              æç¤ºï¼šride é­”å¹»ç¸ï¼Œä½¿ç”¨æŒ‡ä»¤"HIY" rideto beijing " NOR,
+                     "çŽå‹µæè¿°" : "/clone/fam/gift/con3:3",
+                     "ä¸‹å€‹çŽå‹µ" : "18", ]),
 
-        "18"  :   ([ "´ï³ÉÌõ¼þ" : "Ê¹ÓÃ recall back »Øµ½ÑïÖÝ",  
-                     "Ìõ¼þ±êÊ¶" : "newbie_mygift/recall",
-                     "Ìõ¼þÊýÖµ" : 1,
-                     "Ìõ¼þÃèÊö" : "Ê¹ÓÃÖ¸Áî recall back »Øµ½ÑïÖÝ¿Íµê\n",
-                     "½±ÀøÃèÊö" : "/clone/fam/gift/dex3:3",
-                     "ÏÂ¸ö½±Àø" : "20", ]),
+        "18"  :   ([ "é”æˆæ¢ä»¶" : "ä½¿ç”¨ recall back å›žåˆ°æšå·ž",  
+                     "æ¢ä»¶æ¨™è­˜" : "newbie_mygift/recall",
+                     "æ¢ä»¶æ•¸å€¼" : 1,
+                     "æ¢ä»¶æè¿°" : "ä½¿ç”¨æŒ‡ä»¤ recall back å›žåˆ°æšå·žå®¢åº—\n",
+                     "çŽå‹µæè¿°" : "/clone/fam/gift/dex3:3",
+                     "ä¸‹å€‹çŽå‹µ" : "20", ]),
                      
-        "20"  :   ([ "´ï³ÉÌõ¼þ" : "ÁË½â bug »Ø±¨",  
-                     "Ìõ¼þ±êÊ¶" : "newbie_mygift/bug",
-                     "Ìõ¼þÊýÖµ" : 1,
-                     "Ìõ¼þÃèÊö" : "Ê¹ÓÃÖ¸Áî help bug ÁË½âbug»Ø±¨\n",
-                     "½±ÀøÃèÊö" : "/clone/goods/study-emblem:1",
-                     "ÏÂ¸ö½±Àø" : "25", ]),     
+        "20"  :   ([ "é”æˆæ¢ä»¶" : "äº†è§£ bug å›žå ±",  
+                     "æ¢ä»¶æ¨™è­˜" : "newbie_mygift/bug",
+                     "æ¢ä»¶æ•¸å€¼" : 1,
+                     "æ¢ä»¶æè¿°" : "ä½¿ç”¨æŒ‡ä»¤ help bug äº†è§£bugå›žå ±\n",
+                     "çŽå‹µæè¿°" : "/clone/goods/study-emblem:1",
+                     "ä¸‹å€‹çŽå‹µ" : "25", ]),     
 
-        "25"   :   ([ "´ï³ÉÌõ¼þ" : "Ê¹ÓÃ do ´®Á¬Ö¸Áî",
-                     "Ìõ¼þ±êÊ¶" : "newbie_mygift/do",
-                     "Ìõ¼þÊýÖµ" : 1,
-                     "Ìõ¼þÃèÊö" : "ÊäÈë do <´®Á¬Ö¸Áî>\n"
-                                  HIR "              ÌáÊ¾£ºÊäÈë"HIY"help do2"HIR"²é¿´°ïÖú£¬È»ºóÊ¹ÓÃÖ¸Áî"HIY" do w,w »ò do 2 w " NOR,
-                     "½±ÀøÃèÊö" : "/clone/goods/bigu-fu:1",
-                     "ÏÂ¸ö½±Àø" : "30", ]),
+        "25"   :   ([ "é”æˆæ¢ä»¶" : "ä½¿ç”¨ do ä¸²é€£æŒ‡ä»¤",
+                     "æ¢ä»¶æ¨™è­˜" : "newbie_mygift/do",
+                     "æ¢ä»¶æ•¸å€¼" : 1,
+                     "æ¢ä»¶æè¿°" : "è¼¸å…¥ do <ä¸²é€£æŒ‡ä»¤>\n"
+                                  HIR "              æç¤ºï¼šè¼¸å…¥"HIY"help do2"HIR"æŸ¥çœ‹å¹«åŠ©ï¼Œç„¶å¾Œä½¿ç”¨æŒ‡ä»¤"HIY" do w,w æˆ– do 2 w " NOR,
+                     "çŽå‹µæè¿°" : "/clone/goods/bigu-fu:1",
+                     "ä¸‹å€‹çŽå‹µ" : "30", ]),
 
-        "30"  :   ([ "´ï³ÉÌõ¼þ" : "Ê¹ÓÃ´¢Îï¹ñ",
-                     "Ìõ¼þ±êÊ¶" : "newbie_mygift/cangku",
-                     "Ìõ¼þÊýÖµ" : 1,
-                     "Ìõ¼þÃèÊö" : "µ½ÑïÖÝÇ®×¯µÄ´¢Îï¹ñ¿´¿´°É£¬ÁË½âÏÂÔõÃ´Ê¹ÓÃ´¢Îï¹ñ\n" 
-                                  HIR "              ÌáÊ¾£ºÑïÖÝÇ®×¯£¬ÊäÈëÖ¸Áî"HIY"cw help"HIR"²é¿´¼´¿É¡£" NOR,
-                     "½±ÀøÃèÊö" : "/clone/armor/jinsi-shoutao2:1",
-                     "ÏÂ¸ö½±Àø" : "35", ]),
+        "30"  :   ([ "é”æˆæ¢ä»¶" : "ä½¿ç”¨å„²ç‰©æ«ƒ",
+                     "æ¢ä»¶æ¨™è­˜" : "newbie_mygift/cangku",
+                     "æ¢ä»¶æ•¸å€¼" : 1,
+                     "æ¢ä»¶æè¿°" : "åˆ°æšå·žéŒ¢èŽŠçš„å„²ç‰©æ«ƒçœ‹çœ‹å§ï¼Œäº†è§£ä¸‹æ€Žéº¼ä½¿ç”¨å„²ç‰©æ«ƒ\n" 
+                                  HIR "              æç¤ºï¼šæšå·žéŒ¢èŽŠï¼Œè¼¸å…¥æŒ‡ä»¤"HIY"cw help"HIR"æŸ¥çœ‹å³å¯ã€‚" NOR,
+                     "çŽå‹µæè¿°" : "/clone/armor/jinsi-shoutao2:1",
+                     "ä¸‹å€‹çŽå‹µ" : "35", ]),
                                                   
-        "35"  :   ([ "´ï³ÉÌõ¼þ" : "°ÝÊ¦³É¹¦",
-                     "Ìõ¼þ±êÊ¶" : "family/family_name",
-                     "Ìõ¼þÊýÖµ" : 1,
-                     "Ìõ¼þÃèÊö" : "¼ÓÈëÒ»¸öÏ²»¶µÄÃÅÅÉ,\n" 
-                                  HIR "              ÌáÊ¾£ºÓÐ¹ØÃÅÅÉÏêÇé²Î¼û help family" NOR,
-                     "½±ÀøÃèÊö" : "gongxian:10000,score:3000,weiwang:50",
-                     "ÏÂ¸ö½±Àø" : "40", ]),
+        "35"  :   ([ "é”æˆæ¢ä»¶" : "æ‹œå¸«æˆåŠŸ",
+                     "æ¢ä»¶æ¨™è­˜" : "family/family_name",
+                     "æ¢ä»¶æ•¸å€¼" : 1,
+                     "æ¢ä»¶æè¿°" : "åŠ å…¥ä¸€å€‹å–œæ­¡çš„é–€æ´¾,\n" 
+                                  HIR "              æç¤ºï¼šæœ‰é—œé–€æ´¾è©³æƒ…åƒè¦‹ help family" NOR,
+                     "çŽå‹µæè¿°" : "gongxian:10000,score:3000,weiwang:50",
+                     "ä¸‹å€‹çŽå‹µ" : "40", ]),
 
-        "40"  :   ([ "´ï³ÉÌõ¼þ" : "²éÑ¯¼¼ÄÜ¾øÕÐ",
-                     "Ìõ¼þ±êÊ¶" : "newbie_mygift/skill",
-                     "Ìõ¼þÊýÖµ" : 1,
-                     "Ìõ¼þÃèÊö" : "ÊäÈëÖ¸Áî skill lonely-sword ÏÔÊ¾¶À¹Â¾Å½£¾øÕÐÐÅÏ¢",
-                     "½±ÀøÃèÊö" : "neili:1000,gongxian:5000",
-                     "ÏÂ¸ö½±Àø" : "45", ]),
+        "40"  :   ([ "é”æˆæ¢ä»¶" : "æŸ¥è©¢æŠ€èƒ½çµ•æ‹›",
+                     "æ¢ä»¶æ¨™è­˜" : "newbie_mygift/skill",
+                     "æ¢ä»¶æ•¸å€¼" : 1,
+                     "æ¢ä»¶æè¿°" : "è¼¸å…¥æŒ‡ä»¤ skill lonely-sword é¡¯ç¤ºç¨å­¤ä¹åŠçµ•æ‹›ä¿¡æ¯",
+                     "çŽå‹µæè¿°" : "neili:1000,gongxian:5000",
+                     "ä¸‹å€‹çŽå‹µ" : "45", ]),
                      
-        "45"  :   ([ "´ï³ÉÌõ¼þ" : "Ôì·Ãº£¹ê",
-                     "Ìõ¼þ±êÊ¶" : "newbie_mygift/haigui",
-                     "Ìõ¼þÊýÖµ" : 1,
-                     "Ìõ¼þÃèÊö" : "Ôì·ÃÒ»ÏÂÐÂÊÖÁ·¹¦·¨±¦º£¹ê\n" 
-                                  HIR "              ÌáÊ¾£ºÊäÈë"HIY"rideto"HIR"²é¿´ÆïÂí¿Éµ½´ïµØ·½£¬È»ºó"HIY"do rideto nanhai,n,e"HIR"Ç°Íù¡£" NOR,
-                     "½±ÀøÃèÊö" : "neili:1000,gongxian:2000",
-                     "ÏÂ¸ö½±Àø" : "50", ]),
+        "45"  :   ([ "é”æˆæ¢ä»¶" : "é€ è¨ªæµ·é¾œ",
+                     "æ¢ä»¶æ¨™è­˜" : "newbie_mygift/haigui",
+                     "æ¢ä»¶æ•¸å€¼" : 1,
+                     "æ¢ä»¶æè¿°" : "é€ è¨ªä¸€ä¸‹æ–°æ‰‹ç·´åŠŸæ³•å¯¶æµ·é¾œ\n" 
+                                  HIR "              æç¤ºï¼šè¼¸å…¥"HIY"rideto"HIR"æŸ¥çœ‹é¨Žé¦¬å¯åˆ°é”åœ°æ–¹ï¼Œç„¶å¾Œ"HIY"do rideto nanhai,n,e"HIR"å‰å¾€ã€‚" NOR,
+                     "çŽå‹µæè¿°" : "neili:1000,gongxian:2000",
+                     "ä¸‹å€‹çŽå‹µ" : "50", ]),
 
-        "50"  :   ([ "´ï³ÉÌõ¼þ" : "Ôì·ÃÉñµñ",
-                     "Ìõ¼þ±êÊ¶" : "newbie_mygift/shendiao",
-                     "Ìõ¼þÊýÖµ" : 1,
-                     "Ìõ¼þÃèÊö" : "Ôì·ÃÐÂÈËÁ·¹¦·¨±¦Éñµñ\n" 
-                                  HIR "              ÌáÊ¾£ºÊäÈë"HIY"rideto"HIR"²é¿´ÆïÂí¿Éµ½´ïµØ·½£¬È»ºó"HIY"rideto shendiao"HIR"Ç°Íù¡£" NOR,
-                     "½±ÀøÃèÊö" : "neili:1500,jingli:1000,gongxian:2000",
-                     "ÏÂ¸ö½±Àø" : "55", ]),
+        "50"  :   ([ "é”æˆæ¢ä»¶" : "é€ è¨ªç¥žé›•",
+                     "æ¢ä»¶æ¨™è­˜" : "newbie_mygift/shendiao",
+                     "æ¢ä»¶æ•¸å€¼" : 1,
+                     "æ¢ä»¶æè¿°" : "é€ è¨ªæ–°äººç·´åŠŸæ³•å¯¶ç¥žé›•\n" 
+                                  HIR "              æç¤ºï¼šè¼¸å…¥"HIY"rideto"HIR"æŸ¥çœ‹é¨Žé¦¬å¯åˆ°é”åœ°æ–¹ï¼Œç„¶å¾Œ"HIY"rideto shendiao"HIR"å‰å¾€ã€‚" NOR,
+                     "çŽå‹µæè¿°" : "neili:1500,jingli:1000,gongxian:2000",
+                     "ä¸‹å€‹çŽå‹µ" : "55", ]),
 
-        "55"  :   ([ "´ï³ÉÌõ¼þ" : "¼ÓÈë°ïÅÉ",
-                     "Ìõ¼þ±êÊ¶" : "bunch",
-                     "Ìõ¼þÊýÖµ" : 1,
-                     "Ìõ¼þÃèÊö" : "¼ÓÈëÈÎÒâ°ïÅÉ\n" 
-                                  HIR "              ÌáÊ¾£º¿ÉÒÔÔÚÁÄÌìÆµµÀ"HIY"chat ÏëËµµÄ»°"HIR"ÕÒÈËÈë°ï£¬ÏêÇé²é¿´ help bunch.2\n"
-                                      "                    Èç¹ûÃ»ÓÐÍæ¼Ò°ïÅÉ¿ÉÒÔ²Î¼Ónpc°ïÅÉ£¬ÏêÇé²é¿´help bunch_quest" NOR,
-                     "½±ÀøÃèÊö" : "pot:20000,weiwang:5000,neili:500,jingli:500",
-                     "ÏÂ¸ö½±Àø" : "60", ]),
+        "55"  :   ([ "é”æˆæ¢ä»¶" : "åŠ å…¥å¹«æ´¾",
+                     "æ¢ä»¶æ¨™è­˜" : "bunch",
+                     "æ¢ä»¶æ•¸å€¼" : 1,
+                     "æ¢ä»¶æè¿°" : "åŠ å…¥ä»»æ„å¹«æ´¾\n" 
+                                  HIR "              æç¤ºï¼šå¯ä»¥åœ¨èŠå¤©é »é“"HIY"chat æƒ³èªªçš„è©±"HIR"æ‰¾äººå…¥å¹«ï¼Œè©³æƒ…æŸ¥çœ‹ help bunch.2\n"
+                                      "                    å¦‚æžœæ²’æœ‰çŽ©å®¶å¹«æ´¾å¯ä»¥åƒåŠ npcå¹«æ´¾ï¼Œè©³æƒ…æŸ¥çœ‹help bunch_quest" NOR,
+                     "çŽå‹µæè¿°" : "pot:20000,weiwang:5000,neili:500,jingli:500",
+                     "ä¸‹å€‹çŽå‹µ" : "60", ]),
 
-        "60"  :   ([ "´ï³ÉÌõ¼þ" : "Íê³É°ïÅÉÈÎÎñ",
-                     "Ìõ¼þ±êÊ¶" : "bunch_quest",
-                     "Ìõ¼þÊýÖµ" : 1,
-                     "Ìõ¼þÃèÊö" : "Íê³ÉËùÔÚµÄ°ïÅÉ·¢²¼µÄ°ïÅÉÈÎÎñ\n" 
-                                  HIR "              ÌáÊ¾£ºÓÐ¹Ø°ïÅÉÈÎÎñÏêÇé²Î¼û help bunch_quest" NOR,
-                     "½±ÀøÃèÊö" : "exp:20000,weiwang:2000,neili:500,jingli:500",
-                     "ÏÂ¸ö½±Àø" : "65", ]),
+        "60"  :   ([ "é”æˆæ¢ä»¶" : "å®Œæˆå¹«æ´¾ä»»å‹™",
+                     "æ¢ä»¶æ¨™è­˜" : "bunch_quest",
+                     "æ¢ä»¶æ•¸å€¼" : 1,
+                     "æ¢ä»¶æè¿°" : "å®Œæˆæ‰€åœ¨çš„å¹«æ´¾ç™¼å¸ƒçš„å¹«æ´¾ä»»å‹™\n" 
+                                  HIR "              æç¤ºï¼šæœ‰é—œå¹«æ´¾ä»»å‹™è©³æƒ…åƒè¦‹ help bunch_quest" NOR,
+                     "çŽå‹µæè¿°" : "exp:20000,weiwang:2000,neili:500,jingli:500",
+                     "ä¸‹å€‹çŽå‹µ" : "65", ]),
                                           
-        "65"  :   ([ "´ï³ÉÌõ¼þ" : "Íê³ÉÊ¦ÃÅÈÎÎñ",
-                     "Ìõ¼þ±êÊ¶" : "quest_count",
-                     "Ìõ¼þÊýÖµ" : 1,
-                     "Ìõ¼þÃèÊö" : "ÕÒµ½ÃÅÅÉÕÆÃÅ»òÈÎÎñ·¢²¼Ê¦¸µÁìÈ¡Ê¦ÃÅÈÎÎñ²¢Íê³É\n" 
-                                  HIR "              ÌáÊ¾£ºÓÐ¹ØÊ¦ÃÅÈÎÎñµÄÏêÇé²Î¼û help quest" NOR,
-                     "½±ÀøÃèÊö" : "exp:10000,pot:10000,gongxian:5000",
-                     "ÏÂ¸ö½±Àø" : "70", ]),
+        "65"  :   ([ "é”æˆæ¢ä»¶" : "å®Œæˆå¸«é–€ä»»å‹™",
+                     "æ¢ä»¶æ¨™è­˜" : "quest_count",
+                     "æ¢ä»¶æ•¸å€¼" : 1,
+                     "æ¢ä»¶æè¿°" : "æ‰¾åˆ°é–€æ´¾æŽŒé–€æˆ–ä»»å‹™ç™¼å¸ƒå¸«å‚…é ˜å–å¸«é–€ä»»å‹™ä¸¦å®Œæˆ\n" 
+                                  HIR "              æç¤ºï¼šæœ‰é—œå¸«é–€ä»»å‹™çš„è©³æƒ…åƒè¦‹ help quest" NOR,
+                     "çŽå‹µæè¿°" : "exp:10000,pot:10000,gongxian:5000",
+                     "ä¸‹å€‹çŽå‹µ" : "70", ]),
 
-        "70"  :   ([ "´ï³ÉÌõ¼þ" : "Ñ°ÕÒµÛÍõ·ûÍ¼",
-                     "Ìõ¼þ±êÊ¶" : "quest_tuteng",
-                     "Ìõ¼þÊýÖµ" : 1,
-                     "Ìõ¼þÃèÊö" : "µ½ÄÏÏÍ´¦´òÌýÑ°ÕÒµÛÍõ·ûÍ¼\n"
-                                  HIR "              ÌáÊ¾£ºÓÐ¹ØÑ°ÕÒµÛÍõ·ûÍ¼ÈÎÎñµÄÏêÇé²Î¼û help tuteng" NOR,
-                     "½±ÀøÃèÊö" : "exp:10000,pot:10000,mar:10000",
-                     "ÏÂ¸ö½±Àø" : "75", ]), 
+        "70"  :   ([ "é”æˆæ¢ä»¶" : "å°‹æ‰¾å¸çŽ‹ç¬¦åœ–",
+                     "æ¢ä»¶æ¨™è­˜" : "quest_tuteng",
+                     "æ¢ä»¶æ•¸å€¼" : 1,
+                     "æ¢ä»¶æè¿°" : "åˆ°å—è³¢è™•æ‰“è½å°‹æ‰¾å¸çŽ‹ç¬¦åœ–\n"
+                                  HIR "              æç¤ºï¼šæœ‰é—œå°‹æ‰¾å¸çŽ‹ç¬¦åœ–ä»»å‹™çš„è©³æƒ…åƒè¦‹ help tuteng" NOR,
+                     "çŽå‹µæè¿°" : "exp:10000,pot:10000,mar:10000",
+                     "ä¸‹å€‹çŽå‹µ" : "75", ]), 
 
-        "75"  :   ([ "´ï³ÉÌõ¼þ" : "½øÈë¡¾Ô­Ê¼É­ÁÖ¡¿¸±±¾",
-                     "Ìõ¼þ±êÊ¶" : "newbie_mygift/fuben",
-                     "Ìõ¼þÊýÖµ" : 1,
-                     "Ìõ¼þÃèÊö" : "½øÈë¡¾Ô­Ê¼É­ÁÖ¡¿¸±±¾£¬´Ó¸±±¾ÖÐ×ß³ö\n" 
-                                  HIR "              ÌáÊ¾£ºÆïÂíµ½À¥Ã÷£¬ÕÒµ½ÕÓÔó±ßÔµÊäÈë"HIY"enter door"HIR"½øÈë¸±±¾¡£" NOR,
-                     "½±ÀøÃèÊö" : "exp:20000,pot:20000",
-                     "ÏÂ¸ö½±Àø" : "80", ]),
+        "75"  :   ([ "é”æˆæ¢ä»¶" : "é€²å…¥ã€åŽŸå§‹æ£®æž—ã€‘å‰¯æœ¬",
+                     "æ¢ä»¶æ¨™è­˜" : "newbie_mygift/fuben",
+                     "æ¢ä»¶æ•¸å€¼" : 1,
+                     "æ¢ä»¶æè¿°" : "é€²å…¥ã€åŽŸå§‹æ£®æž—ã€‘å‰¯æœ¬ï¼Œå¾žå‰¯æœ¬ä¸­èµ°å‡º\n" 
+                                  HIR "              æç¤ºï¼šé¨Žé¦¬åˆ°æ˜†æ˜Žï¼Œæ‰¾åˆ°æ²¼æ¾¤é‚Šç·£è¼¸å…¥"HIY"enter door"HIR"é€²å…¥å‰¯æœ¬ã€‚" NOR,
+                     "çŽå‹µæè¿°" : "exp:20000,pot:20000",
+                     "ä¸‹å€‹çŽå‹µ" : "80", ]),
                      
-        "80"  :   ([ "´ï³ÉÌõ¼þ" : "Ôì·Ã¸É½«¡¢ÄªÐ°",
-                     "Ìõ¼þ±êÊ¶" : "newbie_mygift/ganjiang",
-                     "Ìõ¼þÊýÖµ" : 1,
-                     "Ìõ¼þÃèÊö" : "°Ý·ÃÒ»ÏÂ¸É½«ÄªÐ°°É£¬ÒÔºó»¹µÃ¾­³£µ½ÕâÀï¸ÄÔì±øÆ÷\n" 
-                                  HIR "              ÌáÊ¾£ºÊäÈë"HIY"rideto"HIR"²é¿´ÆïÂí¿Éµ½´ïµØ·½£¬È»ºó"HIY"rideto ganjiang"HIR"Ç°Íù¡£" NOR,
-                     "½±ÀøÃèÊö" : "exp:20000,pot:20000,/clone/money/gold:1",
-                     "ÏÂ¸ö½±Àø" : "85", ]),
+        "80"  :   ([ "é”æˆæ¢ä»¶" : "é€ è¨ªå¹¹å°‡ã€èŽ«é‚ª",
+                     "æ¢ä»¶æ¨™è­˜" : "newbie_mygift/ganjiang",
+                     "æ¢ä»¶æ•¸å€¼" : 1,
+                     "æ¢ä»¶æè¿°" : "æ‹œè¨ªä¸€ä¸‹å¹¹å°‡èŽ«é‚ªå§ï¼Œä»¥å¾Œé‚„å¾—ç¶“å¸¸åˆ°é€™è£¡æ”¹é€ å…µå™¨\n" 
+                                  HIR "              æç¤ºï¼šè¼¸å…¥"HIY"rideto"HIR"æŸ¥çœ‹é¨Žé¦¬å¯åˆ°é”åœ°æ–¹ï¼Œç„¶å¾Œ"HIY"rideto ganjiang"HIR"å‰å¾€ã€‚" NOR,
+                     "çŽå‹µæè¿°" : "exp:20000,pot:20000,/clone/money/gold:1",
+                     "ä¸‹å€‹çŽå‹µ" : "85", ]),
 
-        "85"  :   ([ "´ï³ÉÌõ¼þ" : "×°±¸Ç©Ãû",
-                     "Ìõ¼þ±êÊ¶" : "newbie_mygift/makeweapon",
-                     "Ìõ¼þÊýÖµ" : 1,
-                     "Ìõ¼þÃèÊö" : "ÊÇÊ±ºòÓµÓÐÒ»°ÑÊôÓÚ×Ô¼ºµÄ×°±¸ÁË£¬×°±¸Ç©ÃûËµÃ÷²Î¼ûhelp weapon", 
-                     "½±ÀøÃèÊö" : "/clone/armor/shuijing-guan:1",
-                     "ÏÂ¸ö½±Àø" : "90", ]),
+        "85"  :   ([ "é”æˆæ¢ä»¶" : "è£å‚™ç°½å",
+                     "æ¢ä»¶æ¨™è­˜" : "newbie_mygift/makeweapon",
+                     "æ¢ä»¶æ•¸å€¼" : 1,
+                     "æ¢ä»¶æè¿°" : "æ˜¯æ™‚å€™æ“æœ‰ä¸€æŠŠå±¬äºŽè‡ªå·±çš„è£å‚™äº†ï¼Œè£å‚™ç°½åèªªæ˜Žåƒè¦‹help weapon", 
+                     "çŽå‹µæè¿°" : "/clone/armor/shuijing-guan:1",
+                     "ä¸‹å€‹çŽå‹µ" : "90", ]),
 
-        "90"  :   ([ "´ï³ÉÌõ¼þ" : "ÕÒÕÅÌìÊ¦¿ª¹â",
-                     "Ìõ¼þ±êÊ¶" : "newbie_mygift/kaiguang",
-                     "Ìõ¼þÊýÖµ" : 1,
-                     "Ìõ¼þÃèÊö" : "½«¸ÕÇ©ÃûµÄ×°±¸¿ª¹â°É£¬ÕâÑùËæÊ±¿ÉÒÔÕÙ»½(summon)»ØÀ´\n" 
-                                  HIR "              ÌáÊ¾£º¸É½«¸½½üÕÒµ½ÕÅÌìÊ¦£¬Ê¹ÓÃÖ¸Áî"HIY"show <ÎäÆ÷ID>"HIR"£¬°´\n"
-                                      "                    ÕÕºóÐøÌáÊ¾²Ù×÷¼´¿É½øÐÐ¿ª¹â¡£" NOR,
-                     "½±ÀøÃèÊö" : "/clone/armor/zhanyao-xunzhang:1",
-                     "ÏÂ¸ö½±Àø" : "95", ]),
+        "90"  :   ([ "é”æˆæ¢ä»¶" : "æ‰¾å¼µå¤©å¸«é–‹å…‰",
+                     "æ¢ä»¶æ¨™è­˜" : "newbie_mygift/kaiguang",
+                     "æ¢ä»¶æ•¸å€¼" : 1,
+                     "æ¢ä»¶æè¿°" : "å°‡å‰›ç°½åçš„è£å‚™é–‹å…‰å§ï¼Œé€™æ¨£éš¨æ™‚å¯ä»¥å¬å–š(summon)å›žä¾†\n" 
+                                  HIR "              æç¤ºï¼šå¹¹å°‡é™„è¿‘æ‰¾åˆ°å¼µå¤©å¸«ï¼Œä½¿ç”¨æŒ‡ä»¤"HIY"show <æ­¦å™¨ID>"HIR"ï¼ŒæŒ‰\n"
+                                      "                    ç…§å¾ŒçºŒæç¤ºæ“ä½œå³å¯é€²è¡Œé–‹å…‰ã€‚" NOR,
+                     "çŽå‹µæè¿°" : "/clone/armor/zhanyao-xunzhang:1",
+                     "ä¸‹å€‹çŽå‹µ" : "95", ]),
 
-        "95"  :  ([ "´ï³ÉÌõ¼þ" : "²©Ñ§¶à²Å£¨Ò»£©",
-                     "Ìõ¼þ±êÊ¶" : "newbie_mygift/certosina",
-                     "Ìõ¼þÊýÖµ" : 1,
-                     "Ìõ¼þÃèÊö" : "Ñ§Ï°ÏâÇ¶¼¼ÒÕµ½Ò»°Ù¼¶\n" 
-                                  HIR "              ÌáÊ¾£ºµ½Â³°à´¦Ñ§Ï°£¬Ö¸Áî"HIY"xue lu ban certosina"HIR"Ñ§Ï°¡£" NOR,
-                     "½±ÀøÃèÊö" : "/clone/armor/moling-zhiyi:1,/clone/armor/sheyao-ring:1",
-                     "ÏÂ¸ö½±Àø" : "100", ]),
+        "95"  :  ([ "é”æˆæ¢ä»¶" : "åšå­¸å¤šæ‰ï¼ˆä¸€ï¼‰",
+                     "æ¢ä»¶æ¨™è­˜" : "newbie_mygift/certosina",
+                     "æ¢ä»¶æ•¸å€¼" : 1,
+                     "æ¢ä»¶æè¿°" : "å­¸ç¿’é‘²åµŒæŠ€è—åˆ°ä¸€ç™¾ç´š\n" 
+                                  HIR "              æç¤ºï¼šåˆ°é­¯ç­è™•å­¸ç¿’ï¼ŒæŒ‡ä»¤"HIY"xue lu ban certosina"HIR"å­¸ç¿’ã€‚" NOR,
+                     "çŽå‹µæè¿°" : "/clone/armor/moling-zhiyi:1,/clone/armor/sheyao-ring:1",
+                     "ä¸‹å€‹çŽå‹µ" : "100", ]),
 
-        "100"  :  ([ "´ï³ÉÌõ¼þ" : "×°±¸¿ª¿×",
-                     "Ìõ¼þ±êÊ¶" : "newbie_mygift/notch",
-                     "Ìõ¼þÊýÖµ" : 1,
-                     "Ìõ¼þÃèÊö" : "½«×°±¸½øÐÐ¿ª¿×£¬¿ª¿×ºó¿ÉÒÔÏâÇ¶±¦Ê¯\n" 
-                                  HIR "              ÌáÊ¾£º¸É½«´¦notch <×°±¸>£¬¿ª¿×ÐèÒªµÄ·ûÎÄÏêÇé²Î¼û help rune" NOR,
-                     "½±ÀøÃèÊö" : "exp:1000000,pot:1000000,/clone/armor/wushi-pifeng:1",
-                     "ÏÂ¸ö½±Àø" : "110", ]),
+        "100"  :  ([ "é”æˆæ¢ä»¶" : "è£å‚™é–‹å­”",
+                     "æ¢ä»¶æ¨™è­˜" : "newbie_mygift/notch",
+                     "æ¢ä»¶æ•¸å€¼" : 1,
+                     "æ¢ä»¶æè¿°" : "å°‡è£å‚™é€²è¡Œé–‹å­”ï¼Œé–‹å­”å¾Œå¯ä»¥é‘²åµŒå¯¶çŸ³\n" 
+                                  HIR "              æç¤ºï¼šå¹¹å°‡è™•notch <è£å‚™>ï¼Œé–‹å­”éœ€è¦çš„ç¬¦æ–‡è©³æƒ…åƒè¦‹ help rune" NOR,
+                     "çŽå‹µæè¿°" : "exp:1000000,pot:1000000,/clone/armor/wushi-pifeng:1",
+                     "ä¸‹å€‹çŽå‹µ" : "110", ]),
                                           
-        "110"  :   ([ "´ï³ÉÌõ¼þ" : "ºÏ³ÉÈÎÒâÎïÆ·",
-                     "Ìõ¼þ±êÊ¶" : "newbie_mygift/combine",
-                     "Ìõ¼þÊýÖµ" : 1,
-                     "Ìõ¼þÃèÊö" : "²é¿´ÎïÆ·ºÏ³É¹«Ê½£¬ºÏ³É³öÒ»¸öÈÎÒâÎïÆ·\n" 
-                                  HIR "              ÌáÊ¾£ºÓÐ¹ØºÏ³ÉÎïÆ·µÄÏêÇé²Î¼û help combine" NOR,
-                     "½±ÀøÃèÊö" : "exp:10000,pot:10000,gongxian:5000",
-                     "ÏÂ¸ö½±Àø" : "120", ]),
+        "110"  :   ([ "é”æˆæ¢ä»¶" : "åˆæˆä»»æ„ç‰©å“",
+                     "æ¢ä»¶æ¨™è­˜" : "newbie_mygift/combine",
+                     "æ¢ä»¶æ•¸å€¼" : 1,
+                     "æ¢ä»¶æè¿°" : "æŸ¥çœ‹ç‰©å“åˆæˆå…¬å¼ï¼Œåˆæˆå‡ºä¸€å€‹ä»»æ„ç‰©å“\n" 
+                                  HIR "              æç¤ºï¼šæœ‰é—œåˆæˆç‰©å“çš„è©³æƒ…åƒè¦‹ help combine" NOR,
+                     "çŽå‹µæè¿°" : "exp:10000,pot:10000,gongxian:5000",
+                     "ä¸‹å€‹çŽå‹µ" : "120", ]),
 
-        "120"  :  ([ "´ï³ÉÌõ¼þ" : "³ÉÎªÒ»Æ·Á¶Ò©Ê¦",
-                     "Ìõ¼þ±êÊ¶" : "is_alchemy",
-                     "Ìõ¼þÊýÖµ" : 1,
-                     "Ìõ¼þÃèÊö" : "ÌáÉýÁ¶µ¤Êõµ½300¼¶\n" 
-                                  HIR "              ÌáÊ¾£ºÁ¶µ¤Êõµ½300¼¶ºó£¬µ½Æ½Ò»Ö¸ÄÇÀï¼ø¶¨Á¶Ò©Ê¦Æ·¼¶¡£" NOR,
-                     "½±ÀøÃèÊö" : "exp:100000,pot:100000,/clone/armor/shuijing-guan:1",
-                     "ÏÂ¸ö½±Àø" : "130", ]),
+        "120"  :  ([ "é”æˆæ¢ä»¶" : "æˆç‚ºä¸€å“ç…‰è—¥å¸«",
+                     "æ¢ä»¶æ¨™è­˜" : "is_alchemy",
+                     "æ¢ä»¶æ•¸å€¼" : 1,
+                     "æ¢ä»¶æè¿°" : "æå‡ç…‰ä¸¹è¡“åˆ°300ç´š\n" 
+                                  HIR "              æç¤ºï¼šç…‰ä¸¹è¡“åˆ°300ç´šå¾Œï¼Œåˆ°å¹³ä¸€æŒ‡é‚£è£¡é‘’å®šç…‰è—¥å¸«å“ç´šã€‚" NOR,
+                     "çŽå‹µæè¿°" : "exp:100000,pot:100000,/clone/armor/shuijing-guan:1",
+                     "ä¸‹å€‹çŽå‹µ" : "130", ]),
 
-        "130"  :  ([ "´ï³ÉÌõ¼þ" : "ÎäÑ§×ÚÊ¦",
-                     "Ìõ¼þ±êÊ¶" : "opinion/ultra",
-                     "Ìõ¼þÊýÖµ" : 1,
-                     "Ìõ¼þÃèÊö" : "ÌôÕ½³ÉÎªÎäÑ§´ó×ÚÊ¦£¬ËµÃ÷¿É²Î¼ûhelp feature\n" 
-                                  HIR "              ÌáÊ¾£ºÆïÂíÒÀ´ÎÔì·ÃËÄ´ó×ÚÊ¦£¬Ê¹ÓÃÖ¸Áî"HIY"ask <×ÚÊ¦NPC ID> about ÆÀ¼Û"HIR"ºó£¬¸ù¾ÝÌáÊ¾\n"
-                                      "                    ÔÙÊäÈëÖ¸Áî"HIY"fight <×ÚÊ¦NPC ID>"HIR"½øÐÐÌôÕ½¡£" NOR,
-                     "½±ÀøÃèÊö" : "exp:2000000,pot:2000000,mar:2000000",
-                     "ÏÂ¸ö½±Àø" : "140", ]),
+        "130"  :  ([ "é”æˆæ¢ä»¶" : "æ­¦å­¸å®—å¸«",
+                     "æ¢ä»¶æ¨™è­˜" : "opinion/ultra",
+                     "æ¢ä»¶æ•¸å€¼" : 1,
+                     "æ¢ä»¶æè¿°" : "æŒ‘æˆ°æˆç‚ºæ­¦å­¸å¤§å®—å¸«ï¼Œèªªæ˜Žå¯åƒè¦‹help feature\n" 
+                                  HIR "              æç¤ºï¼šé¨Žé¦¬ä¾æ¬¡é€ è¨ªå››å¤§å®—å¸«ï¼Œä½¿ç”¨æŒ‡ä»¤"HIY"ask <å®—å¸«NPC ID> about è©•åƒ¹"HIR"å¾Œï¼Œæ ¹æ“šæç¤º\n"
+                                      "                    å†è¼¸å…¥æŒ‡ä»¤"HIY"fight <å®—å¸«NPC ID>"HIR"é€²è¡ŒæŒ‘æˆ°ã€‚" NOR,
+                     "çŽå‹µæè¿°" : "exp:2000000,pot:2000000,mar:2000000",
+                     "ä¸‹å€‹çŽå‹µ" : "140", ]),
                      
-        "140"  :  ([ "´ï³ÉÌõ¼þ" : "²©Ñ§¶à²Å£¨¶þ£©",
-                     "Ìõ¼þ±êÊ¶" : "newbie_mygift/jingluoxue",
-                     "Ìõ¼þÊýÖµ" : 1,
-                     "Ìõ¼þÃèÊö" : "Ñ§Ï°¾­ÂçÑ§µ½Ò»°Ù¼¶",
-                     "½±ÀøÃèÊö" : "pot:5000000,neili:500,jingli:500,gold:500",
-                     "ÏÂ¸ö½±Àø" : "150", ]),
+        "140"  :  ([ "é”æˆæ¢ä»¶" : "åšå­¸å¤šæ‰ï¼ˆäºŒï¼‰",
+                     "æ¢ä»¶æ¨™è­˜" : "newbie_mygift/jingluoxue",
+                     "æ¢ä»¶æ•¸å€¼" : 1,
+                     "æ¢ä»¶æè¿°" : "å­¸ç¿’ç¶“çµ¡å­¸åˆ°ä¸€ç™¾ç´š",
+                     "çŽå‹µæè¿°" : "pot:5000000,neili:500,jingli:500,gold:500",
+                     "ä¸‹å€‹çŽå‹µ" : "150", ]),
 
-        "150"  :  ([ "´ï³ÉÌõ¼þ" : "´òÍ¨ÒõõÎÂö",
-                     "Ìõ¼þ±êÊ¶" : "newbie_mygift/yinqiaomai",
-                     "Ìõ¼þÊýÖµ" : 1,
-                     "Ìõ¼þÃèÊö" : "¹ºÂòÒõõÎÂöËùÓÐÍ­ÈË£¬´òÍ¨µÚÒ»ÌõÐ¡ÖÜÌì¾­Âö--ÒõõÎÂö\n" 
-                                  HIR "              ÌáÊ¾£ºÔÚÓ¢ÐÛÉÌµê¹ºÂòÒõõÎÂöËùÓÐÍ­ÈË£¬ÏêÇé²Î¼û help chongxue" NOR,
-                     "½±ÀøÃèÊö" : "/clone/goods/tianshi-charm:1",
-                     "ÏÂ¸ö½±Àø" : "160", ]),
+        "150"  :  ([ "é”æˆæ¢ä»¶" : "æ‰“é€šé™°è¹ºè„ˆ",
+                     "æ¢ä»¶æ¨™è­˜" : "newbie_mygift/yinqiaomai",
+                     "æ¢ä»¶æ•¸å€¼" : 1,
+                     "æ¢ä»¶æè¿°" : "è³¼è²·é™°è¹ºè„ˆæ‰€æœ‰éŠ…äººï¼Œæ‰“é€šç¬¬ä¸€æ¢å°å‘¨å¤©ç¶“è„ˆ--é™°è¹ºè„ˆ\n" 
+                                  HIR "              æç¤ºï¼šåœ¨è‹±é›„å•†åº—è³¼è²·é™°è¹ºè„ˆæ‰€æœ‰éŠ…äººï¼Œè©³æƒ…åƒè¦‹ help chongxue" NOR,
+                     "çŽå‹µæè¿°" : "/clone/goods/tianshi-charm:1",
+                     "ä¸‹å€‹çŽå‹µ" : "160", ]),
                                           
-        "160"  :  ([ "´ï³ÉÌõ¼þ" : "´òÍ¨´óÐ¡ÖÜÌì¾­Âö",
-                     "Ìõ¼þ±êÊ¶" : "breakup",
-                     "Ìõ¼þÊýÖµ" : 1,
-                     "Ìõ¼þÃèÊö" : "³åÑ¨´òÍ¨´óÐ¡ÖÜÌì¾­Âö£¬ÄãµÄÄÜÁ¦½«¸ü´óÌáÉý¡£\n" 
-                                  HIR "              ÌáÊ¾£º±Õ¹ØËµÃ÷¿É²Î¼û help zhoutian" NOR,
-                     "½±ÀøÃèÊö" : "mar:3000000,neili:1000,jingli:1000",
-                     "ÏÂ¸ö½±Àø" : "170", ]),
+        "160"  :  ([ "é”æˆæ¢ä»¶" : "æ‰“é€šå¤§å°å‘¨å¤©ç¶“è„ˆ",
+                     "æ¢ä»¶æ¨™è­˜" : "breakup",
+                     "æ¢ä»¶æ•¸å€¼" : 1,
+                     "æ¢ä»¶æè¿°" : "æ²–ç©´æ‰“é€šå¤§å°å‘¨å¤©ç¶“è„ˆï¼Œä½ çš„èƒ½åŠ›å°‡æ›´å¤§æå‡ã€‚\n" 
+                                  HIR "              æç¤ºï¼šé–‰é—œèªªæ˜Žå¯åƒè¦‹ help zhoutian" NOR,
+                     "çŽå‹µæè¿°" : "mar:3000000,neili:1000,jingli:1000",
+                     "ä¸‹å€‹çŽå‹µ" : "170", ]),
                      
-        "170"  :  ([ "´ï³ÉÌõ¼þ" : "×°±¸Ç¿»¯",
-                     "Ìõ¼þ±êÊ¶" : "newbie_mygift/qianghua",
-                     "Ìõ¼þÊýÖµ" : 1,
-                     "Ìõ¼þÃèÊö" : "½«×°±¸½øÐÐÇ¿»¯£¬Ç¿»¯ºóµÄ×°±¸ÊôÐÔ´ó·ù¶ÈÌáÉý\n" 
-                                  HIR "              ÌáÊ¾£º¸É½«´¦ÏÈshou <×°±¸>£¬¿´ÍêÒªÇóºóqianghua <×°±¸>£¬Ç¿»¯×°±¸ÏêÇé²Î¼û help qianghua" NOR,
-                     "½±ÀøÃèÊö" : "pot:3000000,neili:1000,jingli:1000",
-                     "ÏÂ¸ö½±Àø" : "180", ]),
+        "170"  :  ([ "é”æˆæ¢ä»¶" : "è£å‚™å¼·åŒ–",
+                     "æ¢ä»¶æ¨™è­˜" : "newbie_mygift/qianghua",
+                     "æ¢ä»¶æ•¸å€¼" : 1,
+                     "æ¢ä»¶æè¿°" : "å°‡è£å‚™é€²è¡Œå¼·åŒ–ï¼Œå¼·åŒ–å¾Œçš„è£å‚™å±¬æ€§å¤§å¹…åº¦æå‡\n" 
+                                  HIR "              æç¤ºï¼šå¹¹å°‡è™•å…ˆshou <è£å‚™>ï¼Œçœ‹å®Œè¦æ±‚å¾Œqianghua <è£å‚™>ï¼Œå¼·åŒ–è£å‚™è©³æƒ…åƒè¦‹ help qianghua" NOR,
+                     "çŽå‹µæè¿°" : "pot:3000000,neili:1000,jingli:1000",
+                     "ä¸‹å€‹çŽå‹µ" : "180", ]),
 
-        "180"  :  ([ "´ï³ÉÌõ¼þ" : "×°±¸ÂÌ»¯",
-                     "Ìõ¼þ±êÊ¶" : "newbie_mygift/dosuit",
-                     "Ìõ¼þÊýÖµ" : 1,
-                     "Ìõ¼þÃèÊö" : "½«×°±¸½øÐÐÂÌ»¯£¬ÂÌ»¯ºóµÄ×°±¸×é³ÉÌ××°£¬ÓµÓÐ¼«Æ·ÊôÐÔ\n" 
-                                  HIR "              ÌáÊ¾£ºÏÈ¸ø¸É½«ÍõÕßÖ®ÐÄ£¬È»ºódosuit <×°±¸>£¬ÂÌ»¯×°±¸ÏêÇé²Î¼û help suit" NOR,
-                     "½±ÀøÃèÊö" : "exp:5000000,pot:5000000,mar:5000000,/clone/armor/yecha1:1",
-                     "ÏÂ¸ö½±Àø" : "190", ]),
+        "180"  :  ([ "é”æˆæ¢ä»¶" : "è£å‚™ç¶ åŒ–",
+                     "æ¢ä»¶æ¨™è­˜" : "newbie_mygift/dosuit",
+                     "æ¢ä»¶æ•¸å€¼" : 1,
+                     "æ¢ä»¶æè¿°" : "å°‡è£å‚™é€²è¡Œç¶ åŒ–ï¼Œç¶ åŒ–å¾Œçš„è£å‚™çµ„æˆå¥—è£ï¼Œæ“æœ‰æ¥µå“å±¬æ€§\n" 
+                                  HIR "              æç¤ºï¼šå…ˆçµ¦å¹¹å°‡çŽ‹è€…ä¹‹å¿ƒï¼Œç„¶å¾Œdosuit <è£å‚™>ï¼Œç¶ åŒ–è£å‚™è©³æƒ…åƒè¦‹ help suit" NOR,
+                     "çŽå‹µæè¿°" : "exp:5000000,pot:5000000,mar:5000000,/clone/armor/yecha1:1",
+                     "ä¸‹å€‹çŽå‹µ" : "190", ]),
         /*
-        "170"  :  ([ "´ï³ÉÌõ¼þ" : "ÐÞÁ¶ÔªÓ¤³öÊÀ",
-                     "Ìõ¼þ±êÊ¶" : "animaout",
-                     "Ìõ¼þÊýÖµ" : 1,
-                     "Ìõ¼þÃèÊö" : "ÌáÉýÄãµÄÄÜÁ¦£¬±Õ¹ØÐÞÁ¶ÔªÓ¤³öÊÀ\n" 
-                                  HIR "              ÌáÊ¾£º±Õ¹ØËµÃ÷¿É²Î¼û help closed" NOR,
-                     "½±ÀøÃèÊö" : "pot:3000000,neili:1000,jingli:1000",
-                     "ÏÂ¸ö½±Àø" : "180", ]),
+        "170"  :  ([ "é”æˆæ¢ä»¶" : "ä¿®ç…‰å…ƒå¬°å‡ºä¸–",
+                     "æ¢ä»¶æ¨™è­˜" : "animaout",
+                     "æ¢ä»¶æ•¸å€¼" : 1,
+                     "æ¢ä»¶æè¿°" : "æå‡ä½ çš„èƒ½åŠ›ï¼Œé–‰é—œä¿®ç…‰å…ƒå¬°å‡ºä¸–\n" 
+                                  HIR "              æç¤ºï¼šé–‰é—œèªªæ˜Žå¯åƒè¦‹ help closed" NOR,
+                     "çŽå‹µæè¿°" : "pot:3000000,neili:1000,jingli:1000",
+                     "ä¸‹å€‹çŽå‹µ" : "180", ]),
             
-        "180"  :  ([ "´ï³ÉÌõ¼þ" : "´òÍ¨ÉúËÀÐþ¹Ø",
-                     "Ìõ¼þ±êÊ¶" : "death",
-                     "Ìõ¼þÊýÖµ" : 1,
-                     "Ìõ¼þÃèÊö" : "ÌáÉýÄãµÄÄÜÁ¦£¬±Õ¹Ø´òÍ¨ÉúËÀÐþ¹Ø\n" 
-                                  HIR "              ÌáÊ¾£º±Õ¹ØËµÃ÷¿É²Î¼û help closed" NOR,
-                     "½±ÀøÃèÊö" : "exp:5000000,pot:5000000,mar:5000000,/clone/armor/yecha1:1",
-                     "ÏÂ¸ö½±Àø" : "190", ]),                 
+        "180"  :  ([ "é”æˆæ¢ä»¶" : "æ‰“é€šç”Ÿæ­»çŽ„é—œ",
+                     "æ¢ä»¶æ¨™è­˜" : "death",
+                     "æ¢ä»¶æ•¸å€¼" : 1,
+                     "æ¢ä»¶æè¿°" : "æå‡ä½ çš„èƒ½åŠ›ï¼Œé–‰é—œæ‰“é€šç”Ÿæ­»çŽ„é—œ\n" 
+                                  HIR "              æç¤ºï¼šé–‰é—œèªªæ˜Žå¯åƒè¦‹ help closed" NOR,
+                     "çŽå‹µæè¿°" : "exp:5000000,pot:5000000,mar:5000000,/clone/armor/yecha1:1",
+                     "ä¸‹å€‹çŽå‹µ" : "190", ]),                 
         */
-        "190"  :  ([ "´ï³ÉÌõ¼þ" : "×ªÊÀÖØÉú",
-                     "Ìõ¼þ±êÊ¶" : "reborn/times",
-                     "Ìõ¼þÊýÖµ" : 1,
-                     "Ìõ¼þÃèÊö" : "ÎäÑ§ÎÞÖ¹¾³£¬Î¨×ªÊÀÖØÉúÍ»ÆÆÆ¿¾±\n" 
-                                  HIR "              ÌáÊ¾£º×ªÊÀËµÃ÷¿É²Î¼û help reborn" NOR,
-                     "½±ÀøÃèÊö" : "exp:10000000,pot:10000000,mar:10000000",
-                     "ÏÂ¸ö½±Àø" : "200", ]),
+        "190"  :  ([ "é”æˆæ¢ä»¶" : "è½‰ä¸–é‡ç”Ÿ",
+                     "æ¢ä»¶æ¨™è­˜" : "reborn/times",
+                     "æ¢ä»¶æ•¸å€¼" : 1,
+                     "æ¢ä»¶æè¿°" : "æ­¦å­¸ç„¡æ­¢å¢ƒï¼Œå”¯è½‰ä¸–é‡ç”Ÿçªç ´ç“¶é ¸\n" 
+                                  HIR "              æç¤ºï¼šè½‰ä¸–èªªæ˜Žå¯åƒè¦‹ help reborn" NOR,
+                     "çŽå‹µæè¿°" : "exp:10000000,pot:10000000,mar:10000000",
+                     "ä¸‹å€‹çŽå‹µ" : "200", ]),
 
-        "200"  :  ([ "´ï³ÉÌõ¼þ" : "µÈ´ýÏÂÒ»¸öÌôÕ½", // Õâ¸ö°æ±¾¿ª·¢ÖÁ´Ë£¬ºóÐø¿ª·¢Ôò´ÓÕâÀï¿ªÊ¼
-                     "Ìõ¼þ±êÊ¶" : "newbie_mygift/waitfor_next1",
-                     "Ìõ¼þÊýÖµ" : 1,
-                     "Ìõ¼þÃèÊö" : "µÈ´ýÏÂÒ»¸öÌôÕ½°É£¬¾´ÇëÁôÒâºóÐøÌôÕ½ÄÚÈÝ£¡\n" 
-                                  HIR "              ÌáÊ¾£ºÈÎÎñ¸æÒ»¶ÎÂä£¬ÇëÁôÒâºóÐøÈÎÎñµÄÍ¨¸æ£¡" NOR,
-                     "½±ÀøÃèÊö" : "pot:10000000",
-                     "ÏÂ¸ö½±Àø" : "210", ]),
+        "200"  :  ([ "é”æˆæ¢ä»¶" : "ç­‰å¾…ä¸‹ä¸€å€‹æŒ‘æˆ°", // é€™å€‹ç‰ˆæœ¬é–‹ç™¼è‡³æ­¤ï¼Œå¾ŒçºŒé–‹ç™¼å‰‡å¾žé€™è£¡é–‹å§‹
+                     "æ¢ä»¶æ¨™è­˜" : "newbie_mygift/waitfor_next1",
+                     "æ¢ä»¶æ•¸å€¼" : 1,
+                     "æ¢ä»¶æè¿°" : "ç­‰å¾…ä¸‹ä¸€å€‹æŒ‘æˆ°å§ï¼Œæ•¬è«‹ç•™æ„å¾ŒçºŒæŒ‘æˆ°å…§å®¹ï¼\n" 
+                                  HIR "              æç¤ºï¼šä»»å‹™å‘Šä¸€æ®µè½ï¼Œè«‹ç•™æ„å¾ŒçºŒä»»å‹™çš„é€šå‘Šï¼" NOR,
+                     "çŽå‹µæè¿°" : "pot:10000000",
+                     "ä¸‹å€‹çŽå‹µ" : "210", ]),
 ]);
 
 
-// Íâ²¿µ÷ÓÃ£¬ÓÃÓÚÅÐ¶ÏÊÇ·ñÓÐÖ¸¶¨ÈÎÎñÇÒ´¥·¢ÁËÍê³ÉÈÎÎñÌõ¼þ¼ì²â
+// å¤–éƒ¨èª¿ç”¨ï¼Œç”¨äºŽåˆ¤æ–·æ˜¯å¦æœ‰æŒ‡å®šä»»å‹™ä¸”è§¸ç™¼äº†å®Œæˆä»»å‹™æ¢ä»¶æª¢æ¸¬
 public void check_mygift(object me, string quest_flag)
 {
         string nquest;
@@ -376,12 +376,12 @@ public void check_mygift(object me, string quest_flag)
         if( !nquest = query("newbie_mygift/cur_quest_number", me) )
                 return ;
         
-        if( gift_list[nquest]["Ìõ¼þ±êÊ¶"] == quest_flag )
+        if( gift_list[nquest]["æ¢ä»¶æ¨™è­˜"] == quest_flag )
         {
-                if( gift_list[nquest]["Ìõ¼þÊýÖµ"] > 1 )
-                        addn(gift_list[nquest]["Ìõ¼þ±êÊ¶"], 1, me);
+                if( gift_list[nquest]["æ¢ä»¶æ•¸å€¼"] > 1 )
+                        addn(gift_list[nquest]["æ¢ä»¶æ¨™è­˜"], 1, me);
                 else
-                        set(gift_list[nquest]["Ìõ¼þ±êÊ¶"], 1, me);
+                        set(gift_list[nquest]["æ¢ä»¶æ¨™è­˜"], 1, me);
                 
                 me->save();
         }
@@ -391,14 +391,14 @@ public void check_mygift(object me, string quest_flag)
 void create()
 {
         seteuid(getuid());
-        set("channel_id", "ÐÂÈË½±Àø¾«Áé");   
+        set("channel_id", "æ–°äººçŽå‹µç²¾éˆ");   
         set("no_clean_up", 1);
-        CHANNEL_D->do_channel(this_object(), "sys", "ÐÂÈË½±ÀøÏµÍ³ÒÑ¾­Æô¶¯¡£");
+        CHANNEL_D->do_channel(this_object(), "sys", "æ–°äººçŽå‹µç³»çµ±å·²ç¶“å•Ÿå‹•ã€‚");
 
         keys_gift_list = keys(gift_list);
 }
 
-// ÅÐ¶Ï×Ö·û´®ÊÇ·ñÊÇÎïÆ·½±Àø
+// åˆ¤æ–·å­—ç¬¦ä¸²æ˜¯å¦æ˜¯ç‰©å“çŽå‹µ
 int is_obgift(string arg)
 {
         if( strsrch(arg, "/") == -1 )
@@ -407,7 +407,7 @@ int is_obgift(string arg)
         return 1;
 }
 
-// ·µ»Ø exp:3334 ¸ñÊ½µÄ½±ÀøÃèÊö
+// è¿”å›ž exp:3334 æ ¼å¼çš„çŽå‹µæè¿°
 string sub_gift_desc(string arg)
 {
         string sdesc, sgift;
@@ -417,7 +417,7 @@ string sub_gift_desc(string arg)
         sscanf(arg, "%s:%d", sgift, ncount);
         
         sdesc = "";
-        // ÅÐ¶ÏÊÇ·ñÊÇÎïÆ·
+        // åˆ¤æ–·æ˜¯å¦æ˜¯ç‰©å“
         if( is_obgift(sgift) )
         {
                 if( !objectp(ob = find_object(sgift)) )
@@ -430,13 +430,13 @@ string sub_gift_desc(string arg)
         else
         {
                 sdesc = gift_name[sgift] + "+" + 
-                        (ncount >= 10000 ? sprintf("%dÍò", ncount / 10000):sprintf("%d", ncount));
+                        (ncount >= 10000 ? sprintf("%dè¬", ncount / 10000):sprintf("%d", ncount));
         }       
         
         return sdesc;
 }
 
-// ¸ñÊ½»¯ºóµÄ½±ÀøÃèÊö
+// æ ¼å¼åŒ–å¾Œçš„çŽå‹µæè¿°
 // exp:10000000_pot:10000000_mar:10000000_/clone/armor/zhanyao-xunzhang:1
 string gift_desc(string arg)
 {
@@ -446,12 +446,12 @@ string gift_desc(string arg)
         
         sdesc = "";
         
-        // ÅÐ¶ÏÊÇ·ñÊÇµ¥¸ö½±Àø
+        // åˆ¤æ–·æ˜¯å¦æ˜¯å–®å€‹çŽå‹µ
         if( strsrch(arg, ",") == -1 )
         {       
                 sdesc = sub_gift_desc(arg);
         }
-        else // ¶à¸ö½±Àø
+        else // å¤šå€‹çŽå‹µ
         {
                 keys_list = explode(arg, ",");
                 
@@ -459,37 +459,37 @@ string gift_desc(string arg)
                 {
                         sdesc += sub_gift_desc(keys_list[i]);
                         if( i < sizeof(keys_list) - 1 )
-                                sdesc += "¡¢";
+                                sdesc += "ã€";
                 }
         }
         
         return sdesc;
 }
 
-// ÏÔÊ¾ÈÎÎñÃèÊö
+// é¡¯ç¤ºä»»å‹™æè¿°
 string mygift_string(mapping mygift_map)
 {
         string squest, sgift_desc;
         
         squest = HIC + LINE + "\n";
         
-        squest += "¡¾ÈÎÎñÃû³Æ¡¿£º" + mygift_map["´ï³ÉÌõ¼þ"] + "\n";
-        squest += "¡¾´ï³ÉÌõ¼þ¡¿£º" + mygift_map["Ìõ¼þÃèÊö"] + "\n";
-        squest += HIY "¡¾ÈÎÎñ½±Àø¡¿£º" + gift_desc(mygift_map["½±ÀøÃèÊö"]) + "\n";
+        squest += "ã€ä»»å‹™åç¨±ã€‘ï¼š" + mygift_map["é”æˆæ¢ä»¶"] + "\n";
+        squest += "ã€é”æˆæ¢ä»¶ã€‘ï¼š" + mygift_map["æ¢ä»¶æè¿°"] + "\n";
+        squest += HIY "ã€ä»»å‹™çŽå‹µã€‘ï¼š" + gift_desc(mygift_map["çŽå‹µæè¿°"]) + "\n";
         squest += HIC + LINE + "\n" NOR;
         
         return squest;
 }
 
-// ·ÖÅÉÒ»¸öÈÎÎñ
+// åˆ†æ´¾ä¸€å€‹ä»»å‹™
 void give_mygift(object me, string s)
 {
         string squest;
         
         set("newbie_mygift/cur_quest_number", s, me);
         
-        // ÌáÊ¾
-        squest = HIR "¡¾Äã»ñµÃÐÂµÄ¸¨ÖúÈÎÎñ¡¿ Ö¸Áî " HIY "mygift" HIR" ²é¿´µ±Ç°¸¨ÖúÈÎÎñ" + BLINK + HIC "    ÐÂÈÎÎñ" + NOR "\n" ;
+        // æç¤º
+        squest = HIR "ã€ä½ ç²å¾—æ–°çš„è¼”åŠ©ä»»å‹™ã€‘ æŒ‡ä»¤ " HIY "mygift" HIR" æŸ¥çœ‹ç•¶å‰è¼”åŠ©ä»»å‹™" + BLINK + HIC "    æ–°ä»»å‹™" + NOR "\n" ;
         squest += mygift_string(gift_list[s]);
         
         tell_object(me, squest);
@@ -498,7 +498,7 @@ void give_mygift(object me, string s)
 }
 
 
-// ¸øÓè½±Àø×Ó¹¦ÄÜµ÷ÓÃ
+// çµ¦äºˆçŽå‹µå­åŠŸèƒ½èª¿ç”¨
 string sub_gift_send(object me, string arg)
 {
         string sdesc, sgift;
@@ -508,7 +508,7 @@ string sub_gift_send(object me, string arg)
         sscanf(arg, "%s:%d", sgift, ncount);
         
         sdesc = "";
-        // ÅÐ¶ÏÊÇ·ñÊÇÎïÆ·
+        // åˆ¤æ–·æ˜¯å¦æ˜¯ç‰©å“
         if( is_obgift(sgift) )
         {
                 if( !objectp(ob = find_object(sgift)) )
@@ -516,18 +516,18 @@ string sub_gift_send(object me, string arg)
 
                 if( !ob )
                 {
-                        write(HIR + sgift + "¶ÁÈ¡´íÎó£¡\n");
-                        log_file("mygiftd", "À´×Ômygiftd£º" + sgift + "ÎïÆ·´íÎó£¡\n");
+                        write(HIR + sgift + "è®€å–éŒ¯èª¤ï¼\n");
+                        log_file("mygiftd", "ä¾†è‡ªmygiftdï¼š" + sgift + "ç‰©å“éŒ¯èª¤ï¼\n");
                         return;
                 }
                 
-                // ¸øÓèÎïÆ·¡£¡£¡£
-                // ²»ÄÜ·Ö¿ªÊ¹ÓÃµÄÎïÆ·µ¥¶À´¦Àí
+                // çµ¦äºˆç‰©å“ã€‚ã€‚ã€‚
+                // ä¸èƒ½åˆ†é–‹ä½¿ç”¨çš„ç‰©å“å–®ç¨è™•ç†
                 ob = new(sgift);
                 if( !objectp(ob) )
                 {
-                        write(HIR + sgift + "¶ÁÈ¡´íÎó-2£¡\n");
-                        log_file("mygiftd", "À´×Ômygiftd£º" + sgift + "¸´ÖÆÎïÆ·´íÎó£¡\n");
+                        write(HIR + sgift + "è®€å–éŒ¯èª¤-2ï¼\n");
+                        log_file("mygiftd", "ä¾†è‡ªmygiftdï¼š" + sgift + "å¾©åˆ¶ç‰©å“éŒ¯èª¤ï¼\n");
                         return;                 
                 }
                 if( !ob->query_amount() )
@@ -555,11 +555,11 @@ string sub_gift_send(object me, string arg)
                 }
                 
                 
-                sdesc = HIY "-»ñµÃÎïÆ·£º" +  filter_color(ob->name()) + "x" + sprintf("%d",ncount) + "\n" NOR;
+                sdesc = HIY "-ç²å¾—ç‰©å“ï¼š" +  filter_color(ob->name()) + "x" + sprintf("%d",ncount) + "\n" NOR;
         }
         else
         {
-                // ½±Àø¡£¡£¡£
+                // çŽå‹µã€‚ã€‚ã€‚
                 switch(sgift)
                 {
                         case "exp":
@@ -636,18 +636,18 @@ string sub_gift_send(object me, string arg)
                         break;
                         
                         default:
-                                write("ÀàÐÍ´íÎó¡£\n");
+                                write("é¡žåž‹éŒ¯èª¤ã€‚\n");
                                 return;
                         break;
                 }
                 
-                sdesc = HIY "-»ñµÃ½±Àø" + gift_name[sgift] + "+" + sprintf("%d",ncount) + "\n" NOR;
+                sdesc = HIY "-ç²å¾—çŽå‹µ" + gift_name[sgift] + "+" + sprintf("%d",ncount) + "\n" NOR;
         }
         
         return sdesc;
 }
 
-// ¸øÓè½±Àø
+// çµ¦äºˆçŽå‹µ
 void give_gift(object me, string arg)
 {
         int i, count;
@@ -658,12 +658,12 @@ void give_gift(object me, string arg)
         set("newbie_mygift/is_running_gift_list_send", 1, me);
 
         sdesc = "";
-        // ÅÐ¶ÏÊÇ·ñÊÇµ¥¸ö½±Àø
+        // åˆ¤æ–·æ˜¯å¦æ˜¯å–®å€‹çŽå‹µ
         if( strsrch(arg, ",") == -1 )
         {       
                 sdesc += sub_gift_send(me, arg);
         }
-        else // ¶à¸ö½±Àø
+        else // å¤šå€‹çŽå‹µ
         {
                 keys_list = explode(arg, ",");
                 
@@ -681,7 +681,7 @@ void give_gift(object me, string arg)
         return;
 }
 
-// /cmds/usr/mygift µ÷ÓÃ 
+// /cmds/usr/mygift èª¿ç”¨ 
 int mygift(object me, string arg)
 {
         string squest, nquest;
@@ -690,17 +690,17 @@ int mygift(object me, string arg)
         
         int i;
         
-        // ÏÔÊ¾µ±Ç°ÈÎÎñ
+        // é¡¯ç¤ºç•¶å‰ä»»å‹™
         if( !objectp(me) )return 0;
                 
         if( !arg )
         {
                 if( !nquest=query("newbie_mygift/cur_quest_number", me) )
-                        return notify_fail("Äãµ±Ç°Ã»ÓÐ¸¨ÖúÈÎÎñÐÅÏ¢£¡\n");
+                        return notify_fail("ä½ ç•¶å‰æ²’æœ‰è¼”åŠ©ä»»å‹™ä¿¡æ¯ï¼\n");
                 
                 squest = mygift_string(gift_list[nquest]);
         
-                squest = HIG "¡¾µ±Ç°¸¨ÖúÈÎÎñÈçÏÂ¡¿\n" + squest; 
+                squest = HIG "ã€ç•¶å‰è¼”åŠ©ä»»å‹™å¦‚ä¸‹ã€‘\n" + squest; 
                 
                 me->start_more(squest);
                 
@@ -711,8 +711,8 @@ int mygift(object me, string arg)
         {
                 if( !wizardp(me) ) return 0;
                 
-                // ÏÔÊ¾ËùÓÐ½±ÀøÈÎÎñµÄÏêÏ¸ÄÚÈÝ£¬Ö÷ÒªÓÃÓÚÐ£Ñé
-                squest = "¡¾Ð£ÑéËùÓÐÈÎÎñ¡¿\n";
+                // é¡¯ç¤ºæ‰€æœ‰çŽå‹µä»»å‹™çš„è©³ç´°å…§å®¹ï¼Œä¸»è¦ç”¨äºŽæ ¡é©—
+                squest = "ã€æ ¡é©—æ‰€æœ‰ä»»å‹™ã€‘\n";
 
                 for( i = 0; i < sizeof(keys_gift_list); i ++ )
                 {
@@ -727,12 +727,12 @@ int mygift(object me, string arg)
         {
                 if( !wizardp(me) ) return 0;
                 
-                // ÊÖ¶¯¸øÍæ¼Ò·ÖÅÉÖ¸¶¨±àºÅµÄÈÎÎñ
+                // æ‰‹å‹•çµ¦çŽ©å®¶åˆ†æ´¾æŒ‡å®šç·¨è™Ÿçš„ä»»å‹™
                 if( !objectp(ob = find_player(splayer)) )
-                        return notify_fail("Ä¿±êÍæ¼Ò²»ÔÚÏß£¡\n");
+                        return notify_fail("ç›®æ¨™çŽ©å®¶ä¸åœ¨ç·šï¼\n");
                 
                 if( member_array(nquest, keys_gift_list) == -1 )
-                        return notify_fail("Ã»ÓÐÖ¸¶¨±àºÅµÄÈÎÎñ£¬Ê¹ÓÃ mygift list ²é¿´ËùÓÐÈÎÎñÁÐ±í¡£\n");
+                        return notify_fail("æ²’æœ‰æŒ‡å®šç·¨è™Ÿçš„ä»»å‹™ï¼Œä½¿ç”¨ mygift list æŸ¥çœ‹æ‰€æœ‰ä»»å‹™åˆ—è¡¨ã€‚\n");
                 
                 give_mygift(ob, nquest);
                 
@@ -745,7 +745,7 @@ int mygift(object me, string arg)
         
 }
 
-// Íâ²¿µ÷ÓÃ£¬¼ì²éµ±Ç°ÊÇ·ñ´æÔÚÒÑ¾­Íê³ÉµÄÈÎÎñ£¬À´×ÔÍæ¼ÒÐÄÌøµ÷ÓÃ
+// å¤–éƒ¨èª¿ç”¨ï¼Œæª¢æŸ¥ç•¶å‰æ˜¯å¦å­˜åœ¨å·²ç¶“å®Œæˆçš„ä»»å‹™ï¼Œä¾†è‡ªçŽ©å®¶å¿ƒè·³èª¿ç”¨
 public void check_curgift(object me)
 {
         mapping tmap;
@@ -756,21 +756,21 @@ public void check_curgift(object me)
         if( !query("newbie_mygift/cur_quest_number", me) )
                 return;
 
-        // ÕýÔÚ´¦Àí½±ÀøÖÐÔò·µ»Ø
+        // æ­£åœ¨è™•ç†çŽå‹µä¸­å‰‡è¿”å›ž
         if( query("newbie_mygift/is_running_gift_list_send", me) ) return ;
         
-        // ÅÐ¶ÏÊÇ·ñÍê³É
+        // åˆ¤æ–·æ˜¯å¦å®Œæˆ
         nquest=query("newbie_mygift/cur_quest_number", me);
         tmap = gift_list[nquest];
         
-        if( !intp(query(tmap["Ìõ¼þ±êÊ¶"], me)) || query(tmap["Ìõ¼þ±êÊ¶"], me) >= tmap["Ìõ¼þÊýÖµ"] )
+        if( !intp(query(tmap["æ¢ä»¶æ¨™è­˜"], me)) || query(tmap["æ¢ä»¶æ¨™è­˜"], me) >= tmap["æ¢ä»¶æ•¸å€¼"] )
         {
-                // ·¢·Å½±Àø
-                write(HIG + "¡¾" + tmap["´ï³ÉÌõ¼þ"]+ "¡¿" BLINK + HIM "ÈÎÎñ´ï³É£º\n" NOR);
-                give_gift(me, tmap["½±ÀøÃèÊö"]);
+                // ç™¼æ”¾çŽå‹µ
+                write(HIG + "ã€" + tmap["é”æˆæ¢ä»¶"]+ "ã€‘" BLINK + HIM "ä»»å‹™é”æˆï¼š\n" NOR);
+                give_gift(me, tmap["çŽå‹µæè¿°"]);
 
-                // ¸øÓèÏÂÒ»¸öÈÎÎñ
-                give_mygift(me, tmap["ÏÂ¸ö½±Àø"]);
+                // çµ¦äºˆä¸‹ä¸€å€‹ä»»å‹™
+                give_mygift(me, tmap["ä¸‹å€‹çŽå‹µ"]);
         }
         
         return;

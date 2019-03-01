@@ -1,6 +1,6 @@
 // xiaoxiazi.c
-// Î´µ÷ÊÔÍê¡£ ĞèÒªhave_marriedÕâ¸ö±ê¼Ç
-// »¹ÊÇµÈ½á»é×öºÃ°É¡£
+// æœªèª¿è©¦å®Œã€‚ éœ€è¦have_marriedé€™å€‹æ¨™è¨˜
+// é‚„æ˜¯ç­‰çµå©šåšå¥½å§ã€‚
 
 inherit ITEM;
 inherit F_UNIQUE;
@@ -10,18 +10,18 @@ int halt_opening();
 
 void create()
 {
-    set_name( "Ğ¡Ï»×Ó", ({ "xiao xiazi", "xiazi", "box" }) );
+    set_name( "å°åŒ£å­", ({ "xiao xiazi", "xiazi", "box" }) );
     set_weight( 2000 );
     if ( clonep() )
         set_default_object( __FILE__ );
     else
     {
         set( "long", @LONG
-Õâ¸öÏ»×ÓËäĞ¡£¬È´ÈëÊÖºÜ³Á£¬²»ÖªµÀÊÇÊ²Ã´²ÄÁÏÖÆ³ÉµÄ¡£Ï»×Ó±íÃæÉÏ¿Ì×ÅÒ»Ğ©Éñ
-ÃØµÄ»¨ÎÆ£¬ÒşÒş·º×ÅÈáºÍµÄºì¹â£¬¿´ÉÏÈ¥ÓĞĞ©ÆæÒì¡£
+é€™å€‹åŒ£å­é›–å°ï¼Œå»å…¥æ‰‹å¾ˆæ²‰ï¼Œä¸çŸ¥é“æ˜¯ä»€éº¼ææ–™åˆ¶æˆçš„ã€‚åŒ£å­è¡¨é¢ä¸Šåˆ»è‘—ä¸€äº›ç¥
+ç§˜çš„èŠ±ç´‹ï¼Œéš±éš±æ³›è‘—æŸ”å’Œçš„ç´…å…‰ï¼Œçœ‹ä¸Šå»æœ‰äº›å¥‡ç•°ã€‚
 LONG
         );
-        set( "unit", "¸ö" );
+        set( "unit", "å€‹" );
         set( "value", 40 );
     }
     setup();
@@ -36,17 +36,17 @@ int do_open_box( string arg )
 {
     object me = this_player();
 
-    // ¼Æ»® : Èç¹ûÊÇ½á»éµÄÒ»¶ÔºÏ×÷´ò¿ªÕâ¸öÏ»×Ó£¬ÄÜµÃµ½»¤»¨Áå¡£
-    // Ã»ÓĞ½á»é¸ù±¾´ò²»¿ª¡£
+    // è¨ˆåŠƒ : å¦‚æœæ˜¯çµå©šçš„ä¸€å°åˆä½œæ‰“é–‹é€™å€‹åŒ£å­ï¼Œèƒ½å¾—åˆ°è­·èŠ±éˆ´ã€‚
+    // æ²’æœ‰çµå©šæ ¹æœ¬æ‰“ä¸é–‹ã€‚
 
     if ( !arg ) return 0;
     if ( !me->can_act() ) return 0;
     if ( !this_object()->id( arg ) ) return 0;
 
-    if ( query ( "opened" ) ) return notify_fail( "Õâ¸öÏ»×ÓÒÑ¾­´ò¿ªÁË¡£" );
+    if ( query ( "opened" ) ) return notify_fail( "é€™å€‹åŒ£å­å·²ç¶“æ‰“é–‹äº†ã€‚" );
 
     if( !query("have_married", me) )
-        return notify_fail( "ÄãÊÔÍ¼´ò¿ªÕâ¸öÏ»×Ó£¬µ±ÄãµÄÊÖÒ»´¥µ½Ï»×Ó£¬¸Ğ¾õµ½Ò»¹ÉÆæÒìµÄÁ¦Á¿½«ÄãµÄÊÖÍÆ¿ª¡£\n" );
+        return notify_fail( "ä½ è©¦åœ–æ‰“é–‹é€™å€‹åŒ£å­ï¼Œç•¶ä½ çš„æ‰‹ä¸€è§¸åˆ°åŒ£å­ï¼Œæ„Ÿè¦ºåˆ°ä¸€è‚¡å¥‡ç•°çš„åŠ›é‡å°‡ä½ çš„æ‰‹æ¨é–‹ã€‚\n" );
     else
     {
         set_temp("open_box_mark", 51, me);
@@ -70,16 +70,16 @@ int opening()
 
     if ( mark > 50 )
     {
-        message_vision( "$NÉìÊÖ°´ÔÚÏ»×ÓÉÏ¡£\n", me );
-        write ( "ÄãÍ»È»¸Ğµ½Ï»×ÓÀïÓĞÒ»ÖÖÆæÒìµÄÁ¦Á¿ÎüÒı×ÅÄãµÄÊÖÕÆ¡£\n" );
+        message_vision( "$Nä¼¸æ‰‹æŒ‰åœ¨åŒ£å­ä¸Šã€‚\n", me );
+        write ( "ä½ çªç„¶æ„Ÿåˆ°åŒ£å­è£¡æœ‰ä¸€ç¨®å¥‡ç•°çš„åŠ›é‡å¸å¼•è‘—ä½ çš„æ‰‹æŒã€‚\n" );
         addn_temp("open_box_mark", -10, me);
         return 1;
     }
 
     if ( mark < 10 ) 
     {
-        // ºÜÒÅº¶ÁË£¬Ê±¼ä¹ıÁË¡£
-        message_vision( "Ê±¼ä¹ıÁË", me );
+        // å¾ˆéºæ†¾äº†ï¼Œæ™‚é–“éäº†ã€‚
+        message_vision( "æ™‚é–“éäº†", me );
         delete_temp("open_box_mark", me);
         remove_call_out( "del_temp" );
         call_out( "del_temp" , 1 );
@@ -89,16 +89,16 @@ int opening()
     addn_temp("open_box_mark", -10, me);
     if ( !query_temp( "both_open" ) )
     {
-        // ½Ó×Å°´×ÅÕâ¸öÏ»×Ó°É¡£
-        message_vision( "»¹°´×Å", me );
+        // æ¥è‘—æŒ‰è‘—é€™å€‹åŒ£å­å§ã€‚
+        message_vision( "é‚„æŒ‰è‘—", me );
         return 1;
     }
-    // ¸ÃºÏ×÷´ò¿ªÕâ¸öÏ»×ÓÁË¡£
+    // è©²åˆä½œæ‰“é–‹é€™å€‹åŒ£å­äº†ã€‚
     else if( query_temp("open_box") != query("have_married", me )
         && query_temp( "open_box" ) != me)
     {
-        // ²»ÊÇÒ»¶Ô·òÆŞ£¬È´ÍıÍ¼´ò¿ªÕâ¸öÏ»×Ó£¬¸ÃÔõÃ´´¦ÀíÄØ£¿
-        // Ò»¶¨Òª¸ø³Í·££¡grin
+        // ä¸æ˜¯ä¸€å°å¤«å¦»ï¼Œå»å¦„åœ–æ‰“é–‹é€™å€‹åŒ£å­ï¼Œè©²æ€éº¼è™•ç†å‘¢ï¼Ÿ
+        // ä¸€å®šè¦çµ¦æ‡²ç½°ï¼grin
         message_vision( "", me );
         delete_temp("open_box_mark", me);
         remove_call_out( "del_temp" );
@@ -107,9 +107,9 @@ int opening()
     }
     else
     {
-        // ¹ş¹ş£¬ÖÕÓÚÊÇÒ»¶Ô·òÆŞÔÚ¿ªÕâ¸öÏ»×ÓÁË¡£:-)
+        // å“ˆå“ˆï¼Œçµ‚äºæ˜¯ä¸€å°å¤«å¦»åœ¨é–‹é€™å€‹åŒ£å­äº†ã€‚:-)
         message_vision( "", me );
-        // newÒ»Ë«»¤»¨Áå£¬·òÆŞÁ©Ò»ÈËÒ»¸ö¡£
+        // newä¸€é›™è­·èŠ±éˆ´ï¼Œå¤«å¦»å€†ä¸€äººä¸€å€‹ã€‚
         ob = new( __DIR__"huhua_ling" );
         ob->move(me);
         delete_temp("open_box_mark", me);
@@ -123,7 +123,7 @@ int opening()
 int halt_opening()
 {
     object me = this_player();
-    write( "Äã·ÅÆú¿ªÆôÕâ¸öÏ»×ÓµÄÆóÍ¼ÁË¡£\n" );
+    write( "ä½ æ”¾æ£„é–‹å•Ÿé€™å€‹åŒ£å­çš„ä¼åœ–äº†ã€‚\n" );
     delete_temp("open_box_mark", me);
     remove_call_out( "del_temp" );
     call_out( "del_temp" , 1 );

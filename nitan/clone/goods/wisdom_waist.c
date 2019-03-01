@@ -4,14 +4,14 @@ inherit WAIST;
 
 void create()
 {
-        set_name(HIG "ÎÄÇúĞÇÊø´ø" NOR, ({ "wisdom waist", "waist", }));  
+        set_name(HIG "æ–‡æ›²æ˜ŸæŸå¸¶" NOR, ({ "wisdom waist", "waist", }));  
 
         if (clonep())
                 set_default_object(__FILE__);
         else
         {
-                set("long", "ÔÌº¬ÁËÎÄÇúĞÇµÄ¾«ÔªºÍÎŞÉÏÖÇ»Û(Éñ)¡£\n"); 
-                set("unit", "¼ş");
+                set("long", "è˜Šå«äº†æ–‡æ›²æ˜Ÿçš„ç²¾å…ƒå’Œç„¡ä¸Šæ™ºæ…§(ç¥)ã€‚\n"); 
+                set("unit", "ä»¶");
                 set("value", 2000000);
                 set("material", "cloth");
                 set("armor_prop/armor", 10);
@@ -19,7 +19,7 @@ void create()
         set("auto_load", 1); 
         set("mod_mark", "A2002");  
         set("mod_level", "M2000");  
-        set("mod_name", HBGRN"ÎÄÇúĞÇÑ§Ï°Ì××°(Éñ)"NOR); 
+        set("mod_name", HBGRN"æ–‡æ›²æ˜Ÿå­¸ç¿’å¥—è£(ç¥)"NOR); 
         set("enchase", ([ 
                 "flute" : 2,
                 "used"  : 2,
@@ -34,7 +34,7 @@ void create()
         set("insert", ([ /* sizeof() == 1 */
                 "1" : ([ /* sizeof() == 3 */
                         "id" : "magic stone",
-                        "name" : HIM"ĞşÊ¯"NOR,
+                        "name" : HIM"ç„çŸ³"NOR,
                         "apply_prop" : ([ /* sizeof() == 2 */
                                 "armor1" : 30,
                                 "int" : 8,
@@ -42,7 +42,7 @@ void create()
                 ]),
                 "2" : ([ /* sizeof() == 3 */
                         "id" : "magic stone",
-                        "name" : HIM"ĞşÊ¯"NOR,
+                        "name" : HIM"ç„çŸ³"NOR,
                         "apply_prop" : ([ /* sizeof() == 2 */
                                 "learn_effect" : 10,
                                 "derive_effect" : 10,

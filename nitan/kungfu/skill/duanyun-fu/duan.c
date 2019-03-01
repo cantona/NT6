@@ -1,4 +1,4 @@
-//duan.c -¶áÃüÈı¸«Ö®¡¸¶ÏÔÆÕ¶¡¹
+//duan.c -å¥ªå‘½ä¸‰æ–§ä¹‹ã€Œæ–·é›²æ–¬ã€
 // Modified by Venus Oct.1997
 #include <ansi.h>
 #include <combat.h>
@@ -10,14 +10,14 @@ int perform(object me, object target)
     string msg;
     if( !target ) target = offensive_target(me);
     if( !target||!target->is_character()||!me->is_fighting(target) )
-    return notify_fail("ÄãÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡¸¶ÏÔÆÕ¶¡¹¡£\n");
+    return notify_fail("ä½ åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€Œæ–·é›²æ–¬ã€ã€‚\n");
     if( (int)me->query_skill("duanyun-fu",1) < 70)
-    return notify_fail("ÄãÄ¿Ç°¹¦Á¦»¹Ê¹²»³ö¡¸¶ÏÔÆÕ¶¡¹¡£\n");
+    return notify_fail("ä½ ç›®å‰åŠŸåŠ›é‚„ä½¿ä¸å‡ºã€Œæ–·é›²æ–¬ã€ã€‚\n");
     if( query("neili", me)<200 )
-    return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+    return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ã€‚\n");
     addn("neili", -60, me);
-msg = HIC"$NÍ»È»±©ºÈÒ»Éù£¬½«ÊÖÖĞ¾Ş¸«Ğ±ÏòÉÏ¾ÙÆğ£¬È»ºóÔÚ°ë¿ÕÖĞ»®³öÒ»
-µÀÔ²»¡£¬Ëæ¼´¾¶Ö±Ğ±ÏÂÕ¶Ïò$n£¡ÕâÒ»Ë²¼ä£¬$nÖ»¾õµÃºôÎü¶¼Í£Ö¹ÁË£¡\n"NOR;
+msg = HIC"$Nçªç„¶æš´å–ä¸€è²ï¼Œå°‡æ‰‹ä¸­å·¨æ–§æ–œå‘ä¸Šèˆ‰èµ·ï¼Œç„¶å¾Œåœ¨åŠç©ºä¸­åŠƒå‡ºä¸€
+é“åœ“å¼§ï¼Œéš¨å³å¾‘ç›´æ–œä¸‹æ–¬å‘$nï¼é€™ä¸€ç¬é–“ï¼Œ$nåªè¦ºå¾—å‘¼å¸éƒ½åœæ­¢äº†ï¼\n"NOR;
     me->start_busy(1);
 
     if( random(query("combat_exp", me)/100)>
@@ -30,12 +30,12 @@ msg = HIC"$NÍ»È»±©ºÈÒ»Éù£¬½«ÊÖÖĞ¾Ş¸«Ğ±ÏòÉÏ¾ÙÆğ£¬È»ºóÔÚ°ë¿ÕÖĞ»®³öÒ»
     target->receive_damage("qi", damage);
     target->receive_wound("qi", damage/2);
    msg += RED
-"Ö»¼û$n±»$NÒ»¸«¿³ÖĞ£¬ĞØÇ°ÁÑ¿ªÒ»µÀÉîÉîµÄÉË¿Ú£¬ÑªÈç¼ı°ãÅçÉä¶ø³ö£¡\n"NOR;
+"åªè¦‹$nè¢«$Nä¸€æ–§ç ä¸­ï¼Œèƒ¸å‰è£‚é–‹ä¸€é“æ·±æ·±çš„å‚·å£ï¼Œè¡€å¦‚ç®­èˆ¬å™´å°„è€Œå‡ºï¼\n"NOR;
         message_combatd(msg, me, target);
         COMBAT_D->report_status(target);
 
     } else {
-    msg += HIC "¿ÉÊÇ$p¼±Ã¦³éÉí¶ã¿ª£¬$PÕâÕĞÃ»ÓĞµÃ³Ñ¡£\n" NOR;
+    msg += HIC "å¯æ˜¯$pæ€¥å¿™æŠ½èº«èº²é–‹ï¼Œ$Pé€™æ‹›æ²’æœ‰å¾—é€ã€‚\n" NOR;
     message_combatd(msg, me, target);
     }
     return 1;

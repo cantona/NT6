@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����");
+        set("short", "天風榭");
         set("long", @LONG
-���鿽�������ɽ���ϣ������ο̵Ĵ��ȣ���ʱ��������ˬ���ˣ�
-��Ϊ��硣
+天風榭建在蔓陀山峰上，四面鏤刻的窗廊，四時風來，涼爽宜人，
+號為天風。
 LONG );
         set("outdoors", "mantuo");
         set("no_clean_up", 0);

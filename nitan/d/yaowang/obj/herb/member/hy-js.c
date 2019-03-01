@@ -2,12 +2,12 @@
 
 void create()
 {
-        set_name(HIC "½ğË¿»¹Ñô" NOR, ({ "hy-js", "herb_hy_js" }));
+        set_name(HIC "é‡‘çµ²é‚„é™½" NOR, ({ "hy-js", "herb_hy_js" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "½ğ·¢¼ë¿ÆÖ²Îï¸ßÉ½½ğ·¢ŞºµÄÈ«²İ¡£ÒòÆäÖ²ÎïÌåÔç»Æ×ØÉ«£¬ĞÎÈç½ğË¿£¬¹ÊµÃ´ËÃû¡£¡£\n" NOR);
-                set("base_unit", "¿Å");
+                set("long", HIW "é‡‘ç™¼ç¹­ç§‘æ¤ç‰©é«˜å±±é‡‘ç™¼è˜šçš„å…¨è‰ã€‚å› å…¶æ¤ç‰©é«”æ—©é»ƒæ£•è‰²ï¼Œå½¢å¦‚é‡‘çµ²ï¼Œæ•…å¾—æ­¤åã€‚ã€‚\n" NOR);
+                set("base_unit", "é¡†");
                 set("base_value", 20000);
                 set("base_weight", 100);
         }

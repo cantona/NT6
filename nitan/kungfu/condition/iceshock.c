@@ -8,14 +8,14 @@ inherit POISON;
 
 string name() { return "iceshock"; }
 
-string chinese_name() { return "寒毒"; }
+string chinese_name() { return "瀵掓瘨"; }
 
 string update_msg_others()
 {
-       return HIR "$N忽然打了一个哆嗦。\n" NOR;
+       return HIR "$N蹇界劧鎵撲簡涓�鍊嬪搯鍡︺�俓n" NOR;
 }
 
 string update_msg_self()
 {
-        return HIB "你觉得就像掉到了冰窖里一样，看来是寒毒发作了！\n" NOR;
+        return HIB "浣犺寰楀氨鍍忔帀鍒颁簡鍐扮獤瑁′竴妯ｏ紝鐪嬩締鏄瘨姣掔櫦浣滀簡锛乗n" NOR;
 }

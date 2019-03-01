@@ -4,10 +4,10 @@ inherit NPC;
 
 void create()
 {
-        set_name(HIY "»ÆµÛ" NOR, ({ "huang di", "huang", "di"}));
-        set("long", HIY "    ´ËÈËÉí´©»ÆÉ«ÁúÅÛ£¬ÆøÓîÐù°º£¬ÄËÔ¶¹Å´«ËµÖÐµÄÑ×µÛ¡£\n" NOR);
+        set_name(HIY "é»ƒå¸" NOR, ({ "huang di", "huang", "di"}));
+        set("long", HIY "    æ­¤äººèº«ç©¿é»ƒè‰²é¾è¢ï¼Œæ°£å®‡è»’æ˜‚ï¼Œä¹ƒé å¤å‚³èªªä¸­çš„ç‚Žå¸ã€‚\n" NOR);
 
-        set("gender", "ÄÐÐÔ");
+        set("gender", "ç”·æ€§");
         set("age", 40);
         set("attitude", "friendly");
         set("shen_type", 1);
@@ -82,7 +82,7 @@ void die()
                          if (arrayp(ob->query_team()))
                          {
                                  command("heng");
-                                 command("say Ê¤Ö®²»Îä£¡");
+                                 command("say å‹ä¹‹ä¸æ­¦ï¼");
                                  set("qi", 500000);
                                  set("jing", 500000);
                                   set("neili", 35000);
@@ -100,7 +100,7 @@ void die()
              if (ob->query("sky12/floor") == 10)
              {
                       ob->set("sky12/floor", 11);
-                 command("say ºóÉú¿ÉÎ·°¡£¡");
+                 command("say å¾Œç”Ÿå¯ç•å•Šï¼");
              }
         }
 
@@ -116,7 +116,7 @@ void die()
         return;
 }
 
-// ÆøÑªÐ¡ÓÚ1000ÔòËÀÍö£¬±ÜÃâËûÈËÐ­Öú°ïÃ¦×ªÊÀ
+// æ°£è¡€å°äºŽ1000å‰‡æ­»äº¡ï¼Œé¿å…ä»–äººå”åŠ©å¹«å¿™è½‰ä¸–
 void heart_beat()
 {
         if (this_object()->query("qi") < 1000 || this_object()->query("eff_qi") < 1000)

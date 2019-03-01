@@ -1,4 +1,4 @@
-// hunyuan-yiqi.c ÉÙÁÖ »ìÔªÒ»Æø¹¦
+// hunyuan-yiqi.c å°‘æ— æ··å…ƒä¸€æ°£åŠŸ
 
 #include <ansi.h>;
 inherit FORCE;
@@ -42,32 +42,32 @@ int valid_learn(object me)
         ns=query("guilty", me);
 
         if ((int)me->query_skill("force", 1) < 10)
-                return notify_fail("ÄãµÄ»ù±¾ÄÚ¹¦»ğºò»¹²»¹»¡£\n");
+                return notify_fail("ä½ çš„åŸºæœ¬å…§åŠŸç«å€™é‚„ä¸å¤ ã€‚\n");
 
         if( query("couple/have_couple", me) )
-                return notify_fail("Äã³¾ÔµÎ´ÁË£¬ÎŞ·¨ÔÙÑ§Ï°»ìÔªÒ»Æø¹¦£¡\n");
+                return notify_fail("ä½ å¡µç·£æœªäº†ï¼Œç„¡æ³•å†å­¸ç¿’æ··å…ƒä¸€æ°£åŠŸï¼\n");
 
         if( query("sex/number", me) )
-                return notify_fail("ÄãÒÑ¾­ÆÆÁËÉ«½ä£¬ÎŞ·¨ÔÙÑ§Ï°»ìÔªÒ»Æø¹¦£¡\n");
+                return notify_fail("ä½ å·²ç¶“ç ´äº†è‰²æˆ’ï¼Œç„¡æ³•å†å­¸ç¿’æ··å…ƒä¸€æ°£åŠŸï¼\n");
 
-        if( query("gender", me) != "ÄĞĞÔ" )
-                return notify_fail("Äã·ÇÍ¯ÄĞÖ®Ìå£¬²»ÄÜÁ·Ï°»ìÔªÒ»Æø¹¦¡£\n");
+        if( query("gender", me) != "ç”·æ€§" )
+                return notify_fail("ä½ éç«¥ç”·ä¹‹é«”ï¼Œä¸èƒ½ç·´ç¿’æ··å…ƒä¸€æ°£åŠŸã€‚\n");
 
         if ( nb < 100 && nb <= nh )
-                return notify_fail("ÄãµÄìø×ÚĞÄ·¨ĞŞÎª²»¹»£¬ÎŞ·¨Áì»á¸ü¸ßÉîµÄ»ìÔªÒ»Æø¹¦¡£\n");
+                return notify_fail("ä½ çš„ç¦ªå®—å¿ƒæ³•ä¿®ç‚ºä¸å¤ ï¼Œç„¡æ³•é ˜æœƒæ›´é«˜æ·±çš„æ··å…ƒä¸€æ°£åŠŸã€‚\n");
 
         if ( nf < 10)
-                return notify_fail("ÄãµÄ»ù±¾ÄÚ¹¦»ğºò»¹²»¹»£¬ÎŞ·¨Áì»á»ìÔªÒ»Æø¹¦¡£\n");
+                return notify_fail("ä½ çš„åŸºæœ¬å…§åŠŸç«å€™é‚„ä¸å¤ ï¼Œç„¡æ³•é ˜æœƒæ··å…ƒä¸€æ°£åŠŸã€‚\n");
 
         if ( ns > 0 )
-                return notify_fail("ÄãÂÅ·¸É®¼ÒÊı½ä£¬ÎŞ·¨Áì»á¸ü¸ßÉîµÄ»ìÔªÒ»Æø¹¦¡£\n");
+                return notify_fail("ä½ å±¢çŠ¯åƒ§å®¶æ•¸æˆ’ï¼Œç„¡æ³•é ˜æœƒæ›´é«˜æ·±çš„æ··å…ƒä¸€æ°£åŠŸã€‚\n");
 
         return ::valid_learn(me);
 }
 
 int practice_skill(object me)
 {
-        return notify_fail("»ìÔªÒ»Æø¹¦Ö»ÄÜÓÃÑ§(learn)µÄÀ´Ôö¼ÓÊìÁ·¶È¡£\n");
+        return notify_fail("æ··å…ƒä¸€æ°£åŠŸåªèƒ½ç”¨å­¸(learn)çš„ä¾†å¢åŠ ç†Ÿç·´åº¦ã€‚\n");
 }
 
 string exert_function_file(string func)
@@ -77,16 +77,16 @@ string exert_function_file(string func)
 
 int help(object me)
 {
-        write(HIC"\n»ìÔªÒ»Æø¹¦£º"NOR"\n");
+        write(HIC"\næ··å…ƒä¸€æ°£åŠŸï¼š"NOR"\n");
         write(@HELP
 
-    »ìÔªÒ»Æø¹¦ÎªÉÙÁÖÅÉ±¾ÃÅÄÚ¹¦¡£
+    æ··å…ƒä¸€æ°£åŠŸç‚ºå°‘æ—æ´¾æœ¬é–€å…§åŠŸã€‚
 
-        Ñ§Ï°ÒªÇó£º
-                »ù±¾ÄÚ¹¦10¼¶
-                ²»ÄÜÆÆÉ«½äµÄÍ¯ÄĞÖ®Éí
-                ìø×ÚĞÄ·¨ĞŞÎª²»µÍÓÚ»ìÔªÒ»Æø¹¦
-                ²»·¸ÆäËü½äÂÉ
+        å­¸ç¿’è¦æ±‚ï¼š
+                åŸºæœ¬å…§åŠŸ10ç´š
+                ä¸èƒ½ç ´è‰²æˆ’çš„ç«¥ç”·ä¹‹èº«
+                ç¦ªå®—å¿ƒæ³•ä¿®ç‚ºä¸ä½äºæ··å…ƒä¸€æ°£åŠŸ
+                ä¸çŠ¯å…¶å®ƒæˆ’å¾‹
 HELP
         );
         return 1;

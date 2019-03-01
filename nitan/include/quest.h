@@ -1,35 +1,35 @@
 // quest.h
 
-// QUEST»ù´¡¶ÔÏó
+// QUESTåŸºç¤å°è±¡
 #define QUEST_OB                "/inherit/misc/quest"
 
-// ÈÎÎñ¶ÔÏóµÄº¯Êı
+// ä»»å‹™å°è±¡çš„å‡½æ•¸
 varargs string name();
 varargs string query_introduce(object knower, object who);
 varargs int    can_know_by(object knower);
 varargs int    can_rumor_by(object knower);
 
-// ¹¦ÄÜº¯Êı
+// åŠŸèƒ½å‡½æ•¸
 varargs void   set_information(string key, string info);
 varargs void   set_name(string name);
 
-// ×´Ì¬»úº¯Êı
+// ç‹€æ…‹æ©Ÿå‡½æ•¸
 string  query_status();
 void    change_status(string new_state);
 
-// ÈÎÎñ¶ÔÏóµÄÏµÍ³×´Ì¬
-#define QUEST_CREATE            "created" /* ÈÎÎñ´´½¨     */
-#define QUEST_READY             "ready"   /* ÈÎÎñ¾ÍĞ÷     */
-#define QUEST_FINISH            "finish"  /* ÈÎÎñÍê³É     */
-#define QUEST_ERROR             "error"   /* ÈÎÎñ´íÎó×´Ì¬ */
+// ä»»å‹™å°è±¡çš„ç³»çµ±ç‹€æ…‹
+#define QUEST_CREATE            "created" /* ä»»å‹™å‰µå»º     */
+#define QUEST_READY             "ready"   /* ä»»å‹™å°±ç·’     */
+#define QUEST_FINISH            "finish"  /* ä»»å‹™å®Œæˆ     */
+#define QUEST_ERROR             "error"   /* ä»»å‹™éŒ¯èª¤ç‹€æ…‹ */
 
-// ÈÎÎñ¶ÔÏóµÄÏµÍ³ÊÂ¼ş
-#define QUEST_TIMEOUT           "timeout" /* ÈÎÎñ³¬Ê±     */
+// ä»»å‹™å°è±¡çš„ç³»çµ±äº‹ä»¶
+#define QUEST_TIMEOUT           "timeout" /* ä»»å‹™è¶…æ™‚     */
 
-// ÔÚ´´½¨×´Ì¬×î³¤µÄÍ£ÁôÊ±¼ä
+// åœ¨å‰µå»ºç‹€æ…‹æœ€é•·çš„åœç•™æ™‚é–“
 #define QUEST_CREATE_PERIOD     30
 
-// ÔÚ½áÊø×´Ì¬×î³¤µÄÍ£ÁôÊ±¼ä
+// åœ¨çµæŸç‹€æ…‹æœ€é•·çš„åœç•™æ™‚é–“
 #define QUEST_FINISH_PERIOD     30
 
 void    register_information();

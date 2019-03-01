@@ -4,9 +4,9 @@
 inherit ROOM;
 void create()
 {
-        set("short", "树林");
+        set("short", "妯规灄");
         set("long", @LONG
-丛林中一片黑暗，你瞪大眼睛，只发现到处都是树。你迷路了！
+鍙㈡灄涓竴鐗囬粦鏆楋紝浣犵灙澶х溂鐫涳紝鍙櫦鐝惧埌铏曢兘鏄ü銆備綘杩疯矾浜嗭紒
 LONG);
         set("exits", ([ 
                 "south":__DIR__"tree",

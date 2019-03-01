@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��Ϫ");
+        set("short", "瀘溪");
         set("long", @LONG
-������������һ��С����Ȼ�˵صش�ƫƧ��������������������Ȼ��
-�ࡣ������һ�乩����Ϣ����С�͵ꡣ���Ϸ���ʮ�ﴦ�����Ǵ˴�������
-��צɽ��
+這裡是湘西的一個小鎮。雖然此地地處偏僻，但這裡來往的行人仍然很
+多。西面是一間供人休息打尖的小客店。西南方四十裡處，就是此處有名的
+猴爪山。
 LONG        );
         set("outdoors", "tiezhang");
         set("exits", ([ /* sizeof() == 3 */

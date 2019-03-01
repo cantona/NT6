@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-        set("short","Ë¾ÂíÌÃ");
+        set("short","å¸é¦¬å ‚");
         set("long", @LONG
-ÕâÀïÊÇ´óÀí¹úË¾ÂíÌÃ¡£´óÀí¶«±±Ç¿ËÎ£¬Î÷±±ÍÂÞ¬£¬ÀúÄêÀ´±ß½®Äþ
-¾¸£¬½ÔË¾ÂíÀÍ¶ÙÖ®¹¦¡£¸ÇÍÂÞ¬´¹ÏÑ´óÀíÒÑ¾Ã£¬Ã¿Ã¿Ç¿´ÇÐ²ÆÈ£¬´óÀí²»
-µÃ²»ÖØ±øÓÚÎ÷±±¡£
+é€™è£¡æ˜¯å¤§ç†åœ‹å¸é¦¬å ‚ã€‚å¤§ç†æ±åŒ—å¼·å®‹ï¼Œè¥¿åŒ—åè•ƒï¼Œæ­·å¹´ä¾†é‚Šç–†å¯§
+é–ï¼Œçš†å¸é¦¬å‹žé “ä¹‹åŠŸã€‚è“‹åè•ƒåž‚æ¶Žå¤§ç†å·²ä¹…ï¼Œæ¯æ¯å¼·è¾­è„…è¿«ï¼Œå¤§ç†ä¸
+å¾—ä¸é‡å…µäºŽè¥¿åŒ—ã€‚
 LONG );
         set("objects", ([
             CLASS_D("dali")+"/fanye" : 1,

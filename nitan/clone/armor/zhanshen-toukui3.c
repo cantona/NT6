@@ -1,4 +1,4 @@
-// toukui.c Í·¿ø
+// toukui.c é ­ç›”
  
 #include <armor.h>
 #include <ansi.h>
@@ -7,14 +7,14 @@ inherit HEAD;
  
 void create()
 {
-        set_name(HIM "Õ½ÉñÍ·¿ø" NOR, ({ "zhanshen toukui3", "zhanshen", "toukui3" }) );
+        set_name(HIM "æˆ°ç¥é ­ç›”" NOR, ({ "zhanshen toukui3", "zhanshen", "toukui3" }) );
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
                 set("material", "steel");
-                set("unit", "¶¥");
-                set("long", HIM "ÕâÊÇÒ»¶¥ÌúÖÆµÄÍ·¿ø£¬ÓÃÒÔ±£»¤Í·²¿¡£\n" NOR);
+                set("unit", "é ‚");
+                set("long", HIM "é€™æ˜¯ä¸€é ‚éµåˆ¶çš„é ­ç›”ï¼Œç”¨ä»¥ä¿è­·é ­éƒ¨ã€‚\n" NOR);
                 set("value", 1500000);
                 set("armor_prop/armor", 300);
         }

@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create()
 { 
-        set("short", HIG"Ê÷ÁÖ"NOR);
+        set("short", HIG"æ¨¹æ—"NOR);
         set("long", @LONG
-ºöÈ»¾°É«Ò»×ª£¬Ç°Ãæ±ä³ÉÁËÒ»Æ¬ÓÄÉîµÄÊ÷ÁÖ¡£Äã¿´¿´ÁË¿´ËÄÖÜ£¬
-¾õµÃÖÜÎ§ÓĞĞ©µØ·½²»Ì«¶ÔÍ·£¬µ«ÊÇÈ´ËµÉÏ²»ÉÏÀ´¡£Ê÷ÁÖÀïÃæËÆºõÓĞĞ©
-ÉùÒô´«À´¡£µ½µ×Òª²»Òª½øÈ¥ÄØ£¿Äã²»ÓÉ³ì³ùÆğÀ´¡£
+å¿½ç„¶æ™¯è‰²ä¸€è½‰ï¼Œå‰é¢è®Šæˆäº†ä¸€ç‰‡å¹½æ·±çš„æ¨¹æ—ã€‚ä½ çœ‹çœ‹äº†çœ‹å››å‘¨ï¼Œ
+è¦ºå¾—å‘¨åœæœ‰äº›åœ°æ–¹ä¸å¤ªå°é ­ï¼Œä½†æ˜¯å»èªªä¸Šä¸ä¸Šä¾†ã€‚æ¨¹æ—è£¡é¢ä¼¼ä¹æœ‰äº›
+è²éŸ³å‚³ä¾†ã€‚åˆ°åº•è¦ä¸è¦é€²å»å‘¢ï¼Ÿä½ ä¸ç”±èºŠèº‡èµ·ä¾†ã€‚
 LONG );
         set("outdoors", "yangzhou");
         set("exits", ([
@@ -31,6 +31,6 @@ LONG );
 int valid_leave(object me, string dir)
 {
     if (! userp(me) && objectp(present("shou wei", environment(me))) && dir == "north")
-        return notify_fail("NPC²»½øÈ¥¡£\n");
+        return notify_fail("NPCä¸é€²å»ã€‚\n");
     return ::valid_leave(me, dir);
 }

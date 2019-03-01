@@ -4,38 +4,38 @@
 #include <ansi.h>
 inherit NPC;
 
-string comeon = HIC"ÄãºöÈ»¿´¼ûÒ»¸öÃîÁäÉÙÅ®ÔÚ²Ý´ÔÖÐÉëÒ÷²»Ö¹£¬Äã¿ì²½×ß½ü£¬ÉÏÇ°²ì¿´£¬" +
-                   "²»ÁÏÉÙÅ®ÝëµÄÔÚÄãÑÛÇ°ÏûÊ§¡£\n" +
-                HIB"ÖÜÎ§¾°ÎïÉ²ÄÇ¼äºöµØ±äµÄ¹îÒìÄª²â¡£\n"NOR; 
+string comeon = HIC"ä½ å¿½ç„¶çœ‹è¦‹ä¸€å€‹å¦™é½¡å°‘å¥³åœ¨è‰å¢ä¸­å‘»åŸä¸æ­¢ï¼Œä½ å¿«æ­¥èµ°è¿‘ï¼Œä¸Šå‰å¯Ÿçœ‹ï¼Œ" +
+                   "ä¸æ–™å°‘å¥³é©€çš„åœ¨ä½ çœ¼å‰æ¶ˆå¤±ã€‚\n" +
+                HIB"å‘¨åœæ™¯ç‰©å‰Žé‚£é–“å¿½åœ°è®Šçš„è©­ç•°èŽ«æ¸¬ã€‚\n"NOR; 
 
 string *stya = ({ 
-HIB"ÖÜÎ§²»¼û»îÎï£¬È´ÌýµÃÅ®×ÓµÄæÒÐ¦Éù´ÓËÄÃæ°Ë·½´«À´£¬$NµÄÉñÖ¾ÓÐÐ©ÃÔºý¡£\n"NOR, 
-HIB"Ò»ÕóºìÑÌÅçµ½ÃæÇ°£¬$N²»ÓÉÎüÁËÒ»¿Ú£¬Ö»¾õÎåÔàÁù¸­ÓÌÈçÅ­º£¹ÂÖÛ°ã·­¹ö²»Ö¹£¬Ëµ²»³öÀ´µÄÄÑÊÜ¡£\n"NOR, 
-HIB"$NÍ»¾õ²±¾±ÉÏËÆÓÐÉàÍ·ÔÚÇáÇáóÂÌò£¬ÆæÑ÷ÄÑÈÌ£¬ÐÄÖÐ´óº§¡£\n"NOR, 
-HIB"$N¸Ðµ½Ò»Ë«Äå»¬µÄË«ÊÖÔÚÉíÉÏ¸§Ãþ£¬´ó¾ªÊ§É«£¬Á¬Ã¦ºóÍËÊý²½¡£\n"NOR
+HIB"å‘¨åœä¸è¦‹æ´»ç‰©ï¼Œå»è½å¾—å¥³å­çš„å¬‰ç¬‘è²å¾žå››é¢å…«æ–¹å‚³ä¾†ï¼Œ$Nçš„ç¥žå¿—æœ‰äº›è¿·ç³Šã€‚\n"NOR, 
+HIB"ä¸€é™£ç´…ç…™å™´åˆ°é¢å‰ï¼Œ$Nä¸ç”±å¸äº†ä¸€å£ï¼Œåªè¦ºäº”è‡Ÿå…­è…‘çŒ¶å¦‚æ€’æµ·å­¤èˆŸèˆ¬ç¿»æ»¾ä¸æ­¢ï¼Œèªªä¸å‡ºä¾†çš„é›£å—ã€‚\n"NOR, 
+HIB"$Nçªè¦ºè„–é ¸ä¸Šä¼¼æœ‰èˆŒé ­åœ¨è¼•è¼•èˆèˆ”ï¼Œå¥‡ç™¢é›£å¿ï¼Œå¿ƒä¸­å¤§é§­ã€‚\n"NOR, 
+HIB"$Næ„Ÿåˆ°ä¸€é›™è†©æ»‘çš„é›™æ‰‹åœ¨èº«ä¸Šæ’«æ‘¸ï¼Œå¤§é©šå¤±è‰²ï¼Œé€£å¿™å¾Œé€€æ•¸æ­¥ã€‚\n"NOR
 }); 
 
 string *styb = ({
-HIC"$N¶Ô$n´óºÈµÀ£º¡°º¦ÈË¾«£¬½ñÈÕ×²µ½±¾µÀÒ¯ÊÖÀï£¬ÈÃÄãÓÀ²»µÃ³¬Éú£¡¡±\n"NOR,
-HIC"$N½«ÊÖÖÐ"HIY"·ûÖ½"HIC"ÅÄ³ö£¬Ò»µÀÇ¿¹âÉäÏò$n¡£\n"NOR,
-HIY"$N¶¶¶¯ÊÖÖÐµÄ"HIM"ÌÒÄ¾½£"HIY"£¬·¢³öÒ«ÑÛµÄ¹âÃ¢£¬µÀµÀ½ð¹âÏò$n´ÌÈ¥¡£\n"NOR
+HIC"$Nå°$nå¤§å–é“ï¼šâ€œå®³äººç²¾ï¼Œä»Šæ—¥æ’žåˆ°æœ¬é“çˆºæ‰‹è£¡ï¼Œè®“ä½ æ°¸ä¸å¾—è¶…ç”Ÿï¼â€\n"NOR,
+HIC"$Nå°‡æ‰‹ä¸­"HIY"ç¬¦ç´™"HIC"æ‹å‡ºï¼Œä¸€é“å¼·å…‰å°„å‘$nã€‚\n"NOR,
+HIY"$NæŠ–å‹•æ‰‹ä¸­çš„"HIM"æ¡ƒæœ¨åŠ"HIY"ï¼Œç™¼å‡ºè€€çœ¼çš„å…‰èŠ’ï¼Œé“é“é‡‘å…‰å‘$nåˆºåŽ»ã€‚\n"NOR
 });
 
 void check_time();
 
 void create()
 {
-    set_name("ºüÀê¾«", ({ "fox ghost", "ghost" }));
-    set("gender", "Å®ÐÔ");
-    set("race", "ÑýÄ§");
+    set_name("ç‹è²ç²¾", ({ "fox ghost", "ghost" }));
+    set("gender", "å¥³æ€§");
+    set("race", "å¦–é­”");
     set("age", 200);
     set("per", 30);
     set("long",
-        "Ò»¸öÓÉÇ§ÄêºüÀêÐÞÁ¶¶ø³ÉµÄ¾«Áé¡£³£³£±ä³ÉÃÀÃ²ÉÙÅ®º¦ÈË¡£\n");
+        "ä¸€å€‹ç”±åƒå¹´ç‹è²ä¿®ç…‰è€Œæˆçš„ç²¾éˆã€‚å¸¸å¸¸è®Šæˆç¾Žè²Œå°‘å¥³å®³äººã€‚\n");
     set("combat_exp", 50000);
     set("shen_type", -1);
     set("attitude", "peaceful");
-    set("limbs", ({ "ÑÀ³Ý", "ÊÖ×¦" }) );
+    set("limbs", ({ "ç‰™é½’", "æ‰‹çˆª" }) );
     set("verbs", ({ "bite", "claw" }) );
     set("env/invisible", 1);
     set("water", 200);

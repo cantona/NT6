@@ -88,7 +88,7 @@ string prompt()
                 if( !query_temp("tomud") )
                         p = HIG "> " NOR;
                 else
-                        p = HIG "<ÓĞĞÅÏ¢>" NOR;
+                        p = HIG "<æœ‰ä¿¡æ¯>" NOR;
         } else {
                 if( !query_temp("tomud") )
                         p = HIY "> " NOR;
@@ -113,7 +113,7 @@ string prompt()
                         p = HIG + sprintf("%d/%d/%d", query("jing"), query("qi"), query("neili")) + p;
                 else {
                         my = this_object()->query_entire_dbase();
-                        p = TMI("statu " + sprintf("¾«%dÆø%d¾«Á¦%dÄÚÁ¦%dÊ³%dË®%dÇ±ÄÜ%d¾­Ñé%d",
+                        p = TMI("statu " + sprintf("ç²¾%dæ°£%dç²¾åŠ›%då…§åŠ›%dé£Ÿ%dæ°´%dæ½›èƒ½%dç¶“é©—%d",
                                 my["jing"], my["qi"], my["jingli"], my["neili"],
                                 my["food"], my["water"], my["potential"] - my["learned_points"],
                                 my["combat_exp"]) + p);
@@ -162,13 +162,13 @@ void receive_message(string msgclass, string msg)
 
                                 if( query_temp("tomud") ) { 
                                         if( !query("chann/" + msgclass)) 
-                                                msg = PTEXT(msg);  // Ä¬ÈÏÍù¹«¹²´°¿ÚÈÓÆµµÀĞÅÏ¢
+                                                msg = PTEXT(msg);  // é»˜èªå¾€å…¬å…±çª—å£æ‰”é »é“ä¿¡æ¯
                                 }
                                 break;
                         case "outdoor":
                                 if( !environment() || !query("outdoors", environment()) ) {
                                         if( query("env/look_window"))
-                                                msg = HIG "¡¾´°Íâ¾°Ïó¡¿" +
+                                                msg = HIG "ã€çª—å¤–æ™¯è±¡ã€‘" +
                                                       NOR + msg;
                                         else
                                                 return;
@@ -216,7 +216,7 @@ void receive_message(string msgclass, string msg)
 }
 
 //
-// ËùÓĞÑ¶Ï¢Êä³öµÄÎ¨Ò»Í¨µÀ, Ö§Ô® client µÄÑ¶Ï¢Àà±ğ·ÖÀà
+// æ‰€æœ‰è¨Šæ¯è¼¸å‡ºçš„å”¯ä¸€é€šé“, æ”¯æ´ client çš„è¨Šæ¯é¡åˆ¥åˆ†é¡
 //
 /*
 nomask varargs void catch_tell(string msg, string classes)
@@ -241,7 +241,7 @@ nomask varargs void catch_tell(string msg, string classes)
         {
                 if( query_temp("tomud") )
                         if( !query("chann/" + classes))
-                                msg = PTEXT(msg);  // Ä¬ÈÏÍù¹«¹²´°¿ÚÈÓÆµµÀĞÅÏ¢
+                                msg = PTEXT(msg);  // é»˜èªå¾€å…¬å…±çª—å£æ‰”é »é“ä¿¡æ¯
         }
 
         if( query_temp("block_msg/all")
@@ -297,7 +297,7 @@ void write_prompt()
 {
         string str;
         if( sizeof(msg_buffer) ) {
-                receive(BOLD "[ÊäÈëÊ±Ôİ´æÑ¶Ï¢]\n" NOR);
+                receive(BOLD "[è¼¸å…¥æ™‚æš«å­˜è¨Šæ¯]\n" NOR);
                 for( int i = 0; i < sizeof(msg_buffer); i++ )
                         receive(msg_buffer[i]);
                 msg_buffer = ({});
@@ -306,7 +306,7 @@ void write_prompt()
                 return;
         str = prompt();
         if( this_object()->is_attach_system() )
-                receive(HIR "Ö´ĞĞÖĞ" HIY "> " NOR);
+                receive(HIR "åŸ·è¡Œä¸­" HIY "> " NOR);
         else if( str ) {
                 if( !this_object()->query_temp("tomud") )
                         receive(ESC "[256D" + str);

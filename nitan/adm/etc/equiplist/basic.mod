@@ -1,7 +1,7 @@
 #modlist
 
 <M0000>
-<name>$WHT$ндгЗпгя╖о╟лвв╟(╥╡)</name>
+<name>$WHT$Ф√┤Ф⌡╡Ф≤÷Е╜╦Г©▓Е╔≈Хё²(Е┤║)</name>
 <file>
 A0000
 A0001
@@ -21,7 +21,7 @@ derive_effect:180
 </M0000>
 
 <M0001>
-<name>$WHT$у╫иЯлвв╟(╥╡)</name>
+<name>$WHT$Ф┬╟Г╔·Е╔≈Хё²(Е┤║)</name>
 <file>
 A1010
 A1011
@@ -39,7 +39,7 @@ max_jing:3000
 </M0001>
 
 <M0002>
-<name>$WHT$ел╧елвв╟(╥╡)</name>
+<name>$WHT$Г⌡╓Е▐╓Е╔≈Хё²(Е┤║)</name>
 <file>
 A1020
 A1021
@@ -61,9 +61,9 @@ max_jing:3000
 
 <A0000>
 <type>armor/armor</type>
-<name>$WHT$ндгЗпг╪в</name>
+<name>$WHT$Ф√┤Ф⌡╡Ф≤÷Г■╡</name>
 <id>wisdom armor</id>
-<long>тл╨╛акндгЗпг╣д╬╚т╙╨мнчиожг╩ш(╥╡)║ё</long>
+<long>Х≤┼Е░╚Д╨├Ф√┤Ф⌡╡Ф≤÷Г └Г╡╬Е┘┐Е▓▄Г└║Д╦┼Ф≥╨Ф┘╖(Е┤║)Ц─┌</long>
 <value>10000000</value>
 <mod>M0000</mod>
 <enchase>
@@ -76,9 +76,9 @@ apply_prop/int:3
 
 <A0001>
 <type>armor/surcoat</type>
-<name>$WHT$ндгЗпгеШ╥Г</name>
+<name>$WHT$Ф√┤Ф⌡╡Ф≤÷Ф┼╚И╒╗</name>
 <id>wisdom surcoat</id>
-<long>тл╨╛акндгЗпг╣д╬╚т╙╨мнчиожг╩ш(╥╡)║ё</long>
+<long>Х≤┼Е░╚Д╨├Ф√┤Ф⌡╡Ф≤÷Г └Г╡╬Е┘┐Е▓▄Г└║Д╦┼Ф≥╨Ф┘╖(Е┤║)Ц─┌</long>
 <value>10000000</value>
 <mod>M0000</mod>
 <enchase>
@@ -91,9 +91,9 @@ apply_prop/int:3
 
 <A0002>
 <type>armor/wrists</type>
-<name>$WHT$ндгЗпг╩╓мС</name>
+<name>$WHT$Ф√┤Ф⌡╡Ф≤÷Х╜╥Х┘∙</name>
 <id>wisdom wrists</id>
-<long>тл╨╛акндгЗпг╣д╬╚т╙╨мнчиожг╩ш(╥╡)║ё</long>
+<long>Х≤┼Е░╚Д╨├Ф√┤Ф⌡╡Ф≤÷Г └Г╡╬Е┘┐Е▓▄Г└║Д╦┼Ф≥╨Ф┘╖(Е┤║)Ц─┌</long>
 <value>10000000</value>
 <mod>M0000</mod>
 <enchase>
@@ -106,9 +106,9 @@ apply_prop/int:3
 
 <A0003>
 <type>armor/waist</type>
-<name>$WHT$ндгЗпгйЬ╢Ь</name>
+<name>$WHT$Ф√┤Ф⌡╡Ф≤÷Ф²÷Е╦╤</name>
 <id>wisdom waist</id>
-<long>тл╨╛акндгЗпг╣д╬╚т╙╨мнчиожг╩ш(╥╡)║ё</long>
+<long>Х≤┼Е░╚Д╨├Ф√┤Ф⌡╡Ф≤÷Г └Г╡╬Е┘┐Е▓▄Г└║Д╦┼Ф≥╨Ф┘╖(Е┤║)Ц─┌</long>
 <value>10000000</value>
 <mod>M0000</mod>
 <enchase>
@@ -121,9 +121,9 @@ apply_prop/int:3
 
 <A0004>
 <type>armor/head</type>
-<name>$WHT$ндгЗпгм╥©Ь</name>
+<name>$WHT$Ф√┤Ф⌡╡Ф≤÷И═╜Г⌡■</name>
 <id>wisdom head</id>
-<long>тл╨╛акндгЗпг╣д╬╚т╙╨мнчиожг╩ш(╥╡)║ё</long>
+<long>Х≤┼Е░╚Д╨├Ф√┤Ф⌡╡Ф≤÷Г └Г╡╬Е┘┐Е▓▄Г└║Д╦┼Ф≥╨Ф┘╖(Е┤║)Ц─┌</long>
 <value>10000000</value>
 <mod>M0000</mod>
 <enchase>
@@ -136,9 +136,9 @@ apply_prop/int:3
 
 <A0005>
 <type>armor/boots</type>
-<name>$WHT$ндгЗпгя╔</name>
+<name>$WHT$Ф√┤Ф⌡╡Ф≤÷И²╢</name>
 <id>wisdom boots</id>
-<long>тл╨╛акндгЗпг╣д╬╚т╙╨мнчиожг╩ш(╥╡)║ё</long>
+<long>Х≤┼Е░╚Д╨├Ф√┤Ф⌡╡Ф≤÷Г └Г╡╬Е┘┐Е▓▄Г└║Д╦┼Ф≥╨Ф┘╖(Е┤║)Ц─┌</long>
 <value>10000000</value>
 <mod>M0000</mod>
 <enchase>

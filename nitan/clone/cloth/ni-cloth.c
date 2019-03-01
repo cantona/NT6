@@ -7,9 +7,9 @@
 inherit CLOTH;
 
 string* clothname = ({
-        HIB"Çà²¼ç»ÒÂ"NOR,
-        HIC"»Ò²¼ç»ÒÂ"NOR,
-        HIY"´Ö²¼ç»ÒÂ"NOR,
+        HIB"é’å¸ƒç·‡è¡£"NOR,
+        HIC"ç°å¸ƒç·‡è¡£"NOR,
+        HIY"ç²—å¸ƒç·‡è¡£"NOR,
 });
 string* clothid = ({
         "zi yi",
@@ -17,9 +17,9 @@ string* clothid = ({
         "zi yi",
 });
 string* clothlong = ({
-        "ÕâÊÇÒ»¼ş³ö¼ÒÈË´©µÄÇà²¼ç»ÒÂ¡£\n",
-        "ÕâÊÇÒ»¼ş³ö¼ÒÈË´©µÄ»Ò²¼ç»ÒÂ¡£\n",
-        "ÕâÊÇÒ»¼ş³ö¼ÒÈË´©µÄ´Ö²¼ç»ÒÂ¡£\n",
+        "é€™æ˜¯ä¸€ä»¶å‡ºå®¶äººç©¿çš„é’å¸ƒç·‡è¡£ã€‚\n",
+        "é€™æ˜¯ä¸€ä»¶å‡ºå®¶äººç©¿çš„ç°å¸ƒç·‡è¡£ã€‚\n",
+        "é€™æ˜¯ä¸€ä»¶å‡ºå®¶äººç©¿çš„ç²—å¸ƒç·‡è¡£ã€‚\n",
 });
 
 void create()
@@ -33,7 +33,7 @@ void create()
                 set_default_object(__FILE__);
         else {
         //        set("long", clothlong[i]);
-                set("unit", "¼ş");
+                set("unit", "ä»¶");
                 set("value", 0);
                 set("material", "cloth");
                 set("armor_prop/armor", 2);

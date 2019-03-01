@@ -8,12 +8,12 @@ inherit ARMOR;
 
 void create()
 {
-        set_name("½ðË¿¼×", ({ "jin" }) );
+        set_name("é‡‘çµ²ç”²", ({ "jin" }) );
         set_weight(8000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼þ");
+                set("unit", "ä»¶");
                 set("material", "cloth");
                 set("armor_prop/armor", 8);
         }

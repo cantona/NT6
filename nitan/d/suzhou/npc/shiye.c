@@ -1,4 +1,4 @@
-// shiye.c Öª¸®Ê¦Ò¯
+// shiye.c çŸ¥åºœå¸«çˆº
 
 inherit NPC;
 
@@ -6,9 +6,9 @@ string ask_me();
 
 void create()
 {
-        set_name("ÕçÓÐÇì", ({ "zhen youqing", "zhen" }));
-        set("title", "Öª¸®Ê¦Ò¯");
-        set("gender", "ÄÐÐÔ");
+        set_name("ç”„æœ‰æ…¶", ({ "zhen youqing", "zhen" }));
+        set("title", "çŸ¥åºœå¸«çˆº");
+        set("gender", "ç”·æ€§");
         set("age", 57);
 
         set("combat_exp", 30000);

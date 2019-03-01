@@ -1,4 +1,4 @@
-//��Է
+//棋苑
 
 #include <ansi.h>
 inherit  ROOM;
@@ -7,11 +7,11 @@ string look_string();
 
 void  create  ()
 {
-    set  ("short",  "��Է");
+    set  ("short",  "棋苑");
         set("long", @LONG
-��Է�����ĸ���䣬����̸���ܵĺõط���������ϱ���������
-�������һ�����ң���ÿ�����ҵ����ⶼ����[1��33m����������[2��37��0m�����ӣ�
-�ڷ�������������ϻ�����һ������ָ��(help)��
+棋苑共分四個大間，是手談休棲的好地方。這裡的南北和西三個
+方向各有一間棋室，在每個棋室的門外都貼著[1；33m請勿打擾棋局[2；37；0m的牌子，
+在房間中央的柱子上還貼著一張下棋指南(help)。
 LONG );
 
   set("no_dazuo",1);set("no_kill",1);set("no_fight",1);
@@ -37,24 +37,24 @@ LONG );
 
 string look_string()
 {
-        string  msg  =  "��ӭ����Է�����壡\n"  +
+        string  msg  =  "歡迎到棋苑來下棋！\n"  +
 "
-��������������Χ��������壬����������Ĳ��裺
-һ�����Һö��֣�Ȼ��ֱ���  sit black  ��  sit white  ������
-����ʹ�� new ��ʼһ���µ���֣�new [-5] [-b(numbers)] [-h(numbers)]
-    ���� -5  �����������壬��ѡ��Ϊ��Χ�壻
-      �� -b  ָ���������̵Ĵ�С��
-         -h  ָ�����ӵ���Ŀ��
-�������磺
-����Χ�� new
-    �þ���Χ�壺new -h9
-    ʮ���ʮ��������壺new -5 -b15
-����ʹ�� play ��������
-    ���� play d4 �ȵȡ�
-�ġ�ʹ�� refresh �ۿ����̡�
-�塢ʹ�� leave �뿪���̡�
-����ʹ�� pass �������䡣
-�ߡ�ʹ�� undo ���塣Ŀǰֻ�ṩ������Ļ��幦�ܡ�
+在這裡您可以下圍棋或五子棋，以下是下棋的步驟：
+一、先找好對手，然後分別用  sit black  和  sit white  入座；
+二、使用 new 開始一盤新的棋局：new [-5] [-b(numbers)] [-h(numbers)]
+    其中 -5  代表下五子棋，不選即為下圍棋；
+      　 -b  指定所用棋盤的大小；
+         -h  指定讓子的數目；
+　　例如：
+　　圍棋 new
+    讓九子圍棋：new -h9
+    十五乘十五的五子棋：new -5 -b15
+三、使用 play 輪流走棋
+    例如 play d4 等等。
+四、使用 refresh 觀看棋盤。
+五、使用 leave 離開棋盤。
+六、使用 pass 棄子認輸。
+七、使用 undo 悔棋。目前只提供五子棋的悔棋功能。
 
 ";
         return  msg;
@@ -71,7 +71,7 @@ int valid_leave(object me, string dir)
                 if( !( room = find_object(exit[dir])) )
                        room = load_object(exit[dir]);
                 if( query_temp("action", room) == 1 )
-                       return notify_fail("�Ǽ������Ѿ����˿�ʼ�����ˣ��������\n");
+                       return notify_fail("那間棋室已經有人開始下棋了，請勿打擾\n");
                 }
 
         return ::valid_leave(me, dir);

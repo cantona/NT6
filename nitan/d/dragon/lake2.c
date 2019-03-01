@@ -2,11 +2,11 @@ inherit ROOM;
 #include <ansi.h> 
 void create()
 {
-        set("short", "ÈıÇåºş");
+        set("short", "ä¸‰æ¸…æ¹–");
         set("long",
-"[1;32mºşË®Çå³ºÍ¸Ã÷£¬²»Ê±¿ÉÒÔ¿´µ½¼¸Î²ÓãÌøÉÏË®Ãæ¡£ºşË®¾¡Í·ÊÇ\n"
-"Ò»¸ö´óÆÙ²¼¡£ÔÚÕâÀï¿ÉÒÔÌıµ½ÆÙ²¼´ÓÉ½ÉÏÖ±³å¶øÏÂ£¬·¢³öµÄºäºäÀ×Éù¡£ºş\n"
-"±ßÒ»¿é¾ŞÊ¯£¬ÉÏĞ´£¢ÈıÇåºş£¢¡£ÕâÀï·ç·Ç³£´ó£¬´µµÃÈËµÃÒÂÉÀÁÔÁÔ×öÏì¡£\n"
+"[1;32mæ¹–æ°´æ¸…æ¾ˆé€æ˜ï¼Œä¸æ™‚å¯ä»¥çœ‹åˆ°å¹¾å°¾é­šè·³ä¸Šæ°´é¢ã€‚æ¹–æ°´ç›¡é ­æ˜¯\n"
+"ä¸€å€‹å¤§ç€‘å¸ƒã€‚åœ¨é€™è£¡å¯ä»¥è½åˆ°ç€‘å¸ƒå¾å±±ä¸Šç›´æ²–è€Œä¸‹ï¼Œç™¼å‡ºçš„è½Ÿè½Ÿé›·è²ã€‚æ¹–\n"
+"é‚Šä¸€å¡Šå·¨çŸ³ï¼Œä¸Šå¯«ã€ä¸‰æ¸…æ¹–ã€ã€‚é€™è£¡é¢¨éå¸¸å¤§ï¼Œå¹å¾—äººå¾—è¡£è¡«çµçµåšéŸ¿ã€‚\n"
 );
    set("exits", ([ 
       "northeast" : __DIR__"lake1",
@@ -22,16 +22,16 @@ void kite_notify(object obj, int i)
    int j;
         
    me = this_player();
-   message_vision("Í»È»Ò»ÕóÎ¢·ç·÷¹ı"+obj->name()+"»º»ºµÄÉıÁËÆğÀ´£¬Ô½À´Ô½¸ß¡£\n\n" , me);
+   message_vision("çªç„¶ä¸€é™£å¾®é¢¨æ‹‚é"+obj->name()+"ç·©ç·©çš„å‡äº†èµ·ä¾†ï¼Œè¶Šä¾†è¶Šé«˜ã€‚\n\n" , me);
    switch( random(2) ) {
    case 0:
-      tell_object(me, me->name()+"ÊÖÖĞµÄ"+obj->name()+"Ô½·ÉÔ½¸ß¡£ \n");
-      message_vision("Ö»ÌıÒ»ÕóÇåÔÃµÄÉÚÒô´Ó¸ß¿Õ´«¹ı£¡ \n", me);
+      tell_object(me, me->name()+"æ‰‹ä¸­çš„"+obj->name()+"è¶Šé£›è¶Šé«˜ã€‚ \n");
+      message_vision("åªè½ä¸€é™£æ¸…æ‚…çš„å“¨éŸ³å¾é«˜ç©ºå‚³éï¼ \n", me);
       call_out("boat_come", 2, me);
    break;
    case 1:
-      message_vision("Ò»Õó¾¢·ç´µ¹ı£¬$NÊÖÖĞµÄÏß¶ÏÁË£¬"+obj->name() 
-+"Ô½À´Ô½¸ß£¬ÂıÂıµÄ²»¼ûÁË¡£ \n",me);
+      message_vision("ä¸€é™£å‹é¢¨å¹éï¼Œ$Næ‰‹ä¸­çš„ç·šæ–·äº†ï¼Œ"+obj->name() 
++"è¶Šä¾†è¶Šé«˜ï¼Œæ…¢æ…¢çš„ä¸è¦‹äº†ã€‚ \n",me);
       destruct(obj);
       break;
    }
@@ -51,11 +51,11 @@ void boat_come(object me)
    for(i=0; i<sizeof(inv); i++) {
       ob = inv[i];
       if(living(ob)){
-         message("vision","°ëÉÎ£¬ºşÉÏ»¹ÊÇÃ»ÓĞË¿ºÁ¶¯¾²¡£\n",this_object()); 
+         message("vision","åŠæ™Œï¼Œæ¹–ä¸Šé‚„æ˜¯æ²’æœ‰çµ²æ¯«å‹•éœã€‚\n",this_object()); 
          return;
       }
    }
-   message("vision","¹ıÁË°ëÉÎ£¬Ò»Ò¶Ğ¡ÖÛ»º»ºµØ´ÓÎíÖĞµ´³ö£¬¿¿µ½ÁËºş±ß¡£\n",this_object()); 
+   message("vision","éäº†åŠæ™Œï¼Œä¸€è‘‰å°èˆŸç·©ç·©åœ°å¾éœ§ä¸­ç›ªå‡ºï¼Œé åˆ°äº†æ¹–é‚Šã€‚\n",this_object()); 
     set("exits/up", __DIR__"lake2", boat);
   set("exits/down",__DIR__"boat");
    call_out("boat_leave",10,boat);
@@ -66,8 +66,8 @@ void boat_leave(object boat)
 {
         if (query("exits/down")) delete("exits/down");
         if( query("exits/up", boat))delete("exits/up", boat);
-        message("vision","Ò»ÕóÎ¢·ç·÷¹ı£¬Ğ¡´¬µ´ÀëÁË°¶±ß¡£\n",this_object()); 
-        message("vision","Ò»ÕóÎ¢·ç·÷¹ı£¬Ğ¡´¬µ´ÀëÁË°¶±ß¡£\n",boat); 
+        message("vision","ä¸€é™£å¾®é¢¨æ‹‚éï¼Œå°èˆ¹ç›ªé›¢äº†å²¸é‚Šã€‚\n",this_object()); 
+        message("vision","ä¸€é™£å¾®é¢¨æ‹‚éï¼Œå°èˆ¹ç›ªé›¢äº†å²¸é‚Šã€‚\n",boat); 
         return;
 }
 
@@ -84,7 +84,7 @@ int valid_leave(object me, string dir)
             for(i=0; i<sizeof(inv); i++) {
                ob = inv[i];
                if(living(ob)){
-                  tell_object(me, "´¬Ì«Ğ¡ÁË£¬Ö»ÄÜ³Ë×øÒ»¸öÈË¡£\n");      
+                  tell_object(me, "èˆ¹å¤ªå°äº†ï¼Œåªèƒ½ä¹˜åä¸€å€‹äººã€‚\n");      
                   return notify_fail("");
                }
            }

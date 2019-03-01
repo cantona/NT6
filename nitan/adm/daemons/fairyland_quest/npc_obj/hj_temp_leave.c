@@ -1,20 +1,20 @@
-// ÅäºÏ qxd Ê¹ÓÃ£¬Íæ¼ÒÔİÊ±Àë¿ªÊ±¿ÉÒÔ±£»¤Æä½ÇÉ«µÄ°²È«(Ğ¯´ø´ËÎï¼ş)
+// é…åˆ qxd ä½¿ç”¨ï¼Œç©å®¶æš«æ™‚é›¢é–‹æ™‚å¯ä»¥ä¿è­·å…¶è§’è‰²çš„å®‰å…¨(æ”œå¸¶æ­¤ç‰©ä»¶)
 // naihe 05-9-4 13:48
-// naihe 05-9-12 9:22 ĞŞÕıBUG£¬ÈôÖ¸Áî quit Ê±£¬Ôò quit.
+// naihe 05-9-12 9:22 ä¿®æ­£BUGï¼Œè‹¥æŒ‡ä»¤ quit æ™‚ï¼Œå‰‡ quit.
 
 #include <ansi.h>
 inherit ITEM;
 
 void create()
 {
-    set_name( "»Ã¾³Îï¼ş¡¤ÁÙÊ±Àë¿ªÊ±ÓÃ", ({ "hj temp leave obj" }) );
+    set_name( "å¹»å¢ƒç‰©ä»¶ï¹’è‡¨æ™‚é›¢é–‹æ™‚ç”¨", ({ "hj temp leave obj" }) );
     set_weight(1);
     if (clonep())
         set_default_object(__FILE__);
     else
     {
-        set("long", "Íæ¼ÒĞ¯´øÊ±¼´½ûÖ¹ÆäÒ»ÇĞÖ¸Áî¡£\n");
-        set("unit", "¸ö");
+        set("long", "ç©å®¶æ”œå¸¶æ™‚å³ç¦æ­¢å…¶ä¸€åˆ‡æŒ‡ä»¤ã€‚\n");
+        set("unit", "å€‹");
         set("value", 0);
     }
     set("hj_game/obj","hj leave obj");
@@ -28,18 +28,18 @@ void init()
     )
     {
         mapping find_name = ([
-            "feng" : HIW"·çÖ®¹ú¶È"NOR,
-            "yu"   : HIM"ÓêÖ®¹ú¶È"NOR,
-            "lei"  : HIC"À×Ö®¹ú¶È"NOR,
-            "dian" : HIG"µçÖ®¹ú¶È"NOR,
+            "feng" : HIW"é¢¨ä¹‹åœ‹åº¦"NOR,
+            "yu"   : HIM"é›¨ä¹‹åœ‹åº¦"NOR,
+            "lei"  : HIC"é›·ä¹‹åœ‹åº¦"NOR,
+            "dian" : HIG"é›»ä¹‹åœ‹åº¦"NOR,
         ]);
-        set_temp( "apply/short", ({ sprintf( HIR"<ÔİÊ±Àë¿ªÓÎÏ·> "NOR"%s %s(%s)"NOR,
+        set_temp( "apply/short", ({ sprintf( HIR"<æš«æ™‚é›¢é–‹éŠæˆ²> "NOR"%s %s(%s)"NOR,
             find_name[ query_temp( "hj_game_find", me) ],
             query("name", me), capitalize(query("id", me)) ), }), me
         );
         set_temp("hj_apply_short", 1, me);
-        message_vision( "\n$NÔİÊ±Àë¿ªÁË»Ã¾³ÓÎÏ·£¬ÏµÍ³½«±£»¤$NµÄ½ÇÉ«°²È«¡£\n\n", me );
-        tell_object( me, "\n\n                  ·µ»ØÓÎÏ·ÇëÊäÈë \"back\" \n\n\n" );
+        message_vision( "\n$Næš«æ™‚é›¢é–‹äº†å¹»å¢ƒéŠæˆ²ï¼Œç³»çµ±å°‡ä¿è­·$Nçš„è§’è‰²å®‰å…¨ã€‚\n\n", me );
+        tell_object( me, "\n\n                  è¿”å›éŠæˆ²è«‹è¼¸å…¥ \"back\" \n\n\n" );
         // add_action( "filter_cmds", "", 1 );
         add_action( "filter_cmds", "");
     }
@@ -55,20 +55,20 @@ int filter_cmds(string arg)
     if( query_verb() == "back" )
     {
         mapping find_name = ([
-            "feng" : HIW"·çÖ®¹ú¶È"NOR,
-            "yu"   : HIM"ÓêÖ®¹ú¶È"NOR,
-            "lei"  : HIC"À×Ö®¹ú¶È"NOR,
-            "dian" : HIG"µçÖ®¹ú¶È"NOR,
+            "feng" : HIW"é¢¨ä¹‹åœ‹åº¦"NOR,
+            "yu"   : HIM"é›¨ä¹‹åœ‹åº¦"NOR,
+            "lei"  : HIC"é›·ä¹‹åœ‹åº¦"NOR,
+            "dian" : HIG"é›»ä¹‹åœ‹åº¦"NOR,
         ]);
         set_temp( "apply/short", ({ sprintf( "%s %s(%s)"NOR,
             find_name[ query_temp( "hj_game_find", me) ],
             query("name", me), capitalize(query("id", me)) ), }), me
         );
         set_temp("hj_apply_short", 1, me);
-        message_vision( "\n$N·µ»ØÁË»Ã¾³ÓÎÏ·¡£\n\n", me );
+        message_vision( "\n$Nè¿”å›äº†å¹»å¢ƒéŠæˆ²ã€‚\n\n", me );
         destruct( this_object() );
         return 1;
     }
-    tell_object( me, "ÄãÏÖÔÚÔİÊ±Àë¿ª»Ã¾³ÓÎÏ·¡£ÈôĞè·µ»ØÓÎÏ·£¬ÇëÊäÈë \"back\" \n" );
+    tell_object( me, "ä½ ç¾åœ¨æš«æ™‚é›¢é–‹å¹»å¢ƒéŠæˆ²ã€‚è‹¥éœ€è¿”å›éŠæˆ²ï¼Œè«‹è¼¸å…¥ \"back\" \n" );
     return 1;
 }

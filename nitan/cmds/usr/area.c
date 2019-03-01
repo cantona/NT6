@@ -46,7 +46,7 @@ int main(object me, string arg)
 
         }
 
-        write("ÎŞĞ§µÄ²ÎÊı¡£\n");
+        write("ç„¡æ•ˆçš„åƒæ•¸ã€‚\n");
         return 1;
 }
 
@@ -68,22 +68,22 @@ mixed select_bunch(object me, string arg)
 
                 if (! stringp(fam) && objectp(ob = UPDATE_D->global_find_player(arg)))
                 {
-                        // Ã»ÓĞ arg Õâ¸öÍ¬ÃË£¬²é¿´ÊÇ·ñÓĞ¸ÃÍæ¼Ò
+                        // æ²’æœ‰ arg é€™å€‹åŒç›Ÿï¼ŒæŸ¥çœ‹æ˜¯å¦æœ‰è©²ç©å®¶
                         fam=query("bunch/bunch_name", ob);
                         UPDATE_D->global_destruct_player(ob);
                         if (! stringp(fam))
-                                return notify_fail("ÕâÈËÏÖÔÚÃ»ÓĞ¼ÓÈëÈÎºÎ°ïÅÉ¡£\n");
+                                return notify_fail("é€™äººç¾åœ¨æ²’æœ‰åŠ å…¥ä»»ä½•å¹«æ´¾ã€‚\n");
                 }
 
                 if (! stringp(fam))
-                        return notify_fail("Ã»ÓĞÕâ¸öÍæ¼Ò£¬²»ÄÜ²éÔÄÏà¹ØµÄÍ¬ÃË¡£\n");
+                        return notify_fail("æ²’æœ‰é€™å€‹ç©å®¶ï¼Œä¸èƒ½æŸ¥é–±ç›¸é—œçš„åŒç›Ÿã€‚\n");
         }
 
         if (! fam)
         {
                 // select my league
                 if( !stringp(fam=query("bunch/bunch_name", me)) )
-                        return notify_fail("ÄãÏÖÔÚ»¹Ã»ÓĞ¼ÓÈëÈÎºÎ°ïÅÉÄØ¡£\n");
+                        return notify_fail("ä½ ç¾åœ¨é‚„æ²’æœ‰åŠ å…¥ä»»ä½•å¹«æ´¾å‘¢ã€‚\n");
         }
 
         return fam;
@@ -100,26 +100,26 @@ int do_area_kaifa(object me, string arg)
         object npc;
 
         if( !stringp(fam=query("bunch/bunch_name", me)) )
-                return notify_fail("ÄãÃ»ÓĞ¼ÓÈëÈÎºÎ°ï»á£¬ÎŞ·¨¿ª·¢°ï»áËùÊôµØÅÌ¡£\n");
+                return notify_fail("ä½ æ²’æœ‰åŠ å…¥ä»»ä½•å¹«æœƒï¼Œç„¡æ³•é–‹ç™¼å¹«æœƒæ‰€å±¬åœ°ç›¤ã€‚\n");
 
         if (! arrayp(member = BUNCH_D->query_bunch_areas(fam)))
         {
-                write("ÏÖÔÚ°ïÅÉ" + fam + "Ã»ÓĞÈÎºÎµØÅÌ¡£\n");
+                write("ç¾åœ¨å¹«æ´¾" + fam + "æ²’æœ‰ä»»ä½•åœ°ç›¤ã€‚\n");
                 return 1;
         }
 
         member -= ({ 0 });
 
         if (sizeof(member) < 1)
-                return notify_fail(fam + "ÏÖÔÚÃ»ÓĞÈÎºÎµØÅÌ¡£\n");
+                return notify_fail(fam + "ç¾åœ¨æ²’æœ‰ä»»ä½•åœ°ç›¤ã€‚\n");
 
         if (! wizardp(me))
         {
                 if( query("jing", me)<50 )
-                        return notify_fail("ÄãÏÖÔÚ¾«Éñ²»¼Ã£¬ÎŞ·¨´òÌıÕâĞ©ÏûÏ¢¡£\n");
+                        return notify_fail("ä½ ç¾åœ¨ç²¾ç¥ä¸æ¿Ÿï¼Œç„¡æ³•æ‰“è½é€™äº›æ¶ˆæ¯ã€‚\n");
 
                 if (me->is_busy())
-                        return notify_fail("ÄãÏÖÔÚÕıÃ¦£¬Ã»ÓĞÊ±¼ä´òÌıÕâĞ©ÏûÏ¢¡£\n");
+                        return notify_fail("ä½ ç¾åœ¨æ­£å¿™ï¼Œæ²’æœ‰æ™‚é–“æ‰“è½é€™äº›æ¶ˆæ¯ã€‚\n");
 
                 me->receive_damage("jing", 50);
                 me->start_busy(3);
@@ -128,9 +128,9 @@ int do_area_kaifa(object me, string arg)
         if (! arg)
         {
                 msg = sprintf(HIC "\n%-18s%-28s%-8s%-8s%-18s\n" NOR,
-                                "µØÅÌÃû³Æ", "×¤ÊØ°ïÖÚ", "¿ª·¢¶È", "ÖÒ³Ï¶È", "ÉÏÔÂÊÕÈë");
+                                "åœ°ç›¤åç¨±", "é§å®ˆå¹«çœ¾", "é–‹ç™¼åº¦", "å¿ èª åº¦", "ä¸Šæœˆæ”¶å…¥");
 
-                msg += HIY "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n" NOR;
+                msg += HIY "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n" NOR;
 
                 j = 0;
                 foreach (area in member)
@@ -145,14 +145,14 @@ int do_area_kaifa(object me, string arg)
                                         data["npc_name"] + "(" + data["npc_id"] + ")",
                                         data["kaifa"] + "%",
                                         data["zhongcheng"] + "%",
-                                        data["last_money"] / 100 + " Á½");
+                                        data["last_money"] / 100 + " å…©");
                 }
 
                 if (j < 1)
-                        return notify_fail(arg + "ÏÖÔÚÃ»ÓĞÈÎºÎµØÅÌ¡£\n");
+                        return notify_fail(arg + "ç¾åœ¨æ²’æœ‰ä»»ä½•åœ°ç›¤ã€‚\n");
 
-                msg += "\nÄ¿Ç°" + HIM + fam + NOR + "¹²ÓĞ" + HIM + chinese_number(j) + NOR + "´¦µØÅÌ¡£\n";
-                msg += HIY "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n" NOR;
+                msg += "\nç›®å‰" + HIM + fam + NOR + "å…±æœ‰" + HIM + chinese_number(j) + NOR + "è™•åœ°ç›¤ã€‚\n";
+                msg += HIY "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n" NOR;
 
                 write(msg);
                 return 1;
@@ -161,29 +161,29 @@ int do_area_kaifa(object me, string arg)
         area = base_name(environment(me));
 
         if (arg != environment(me)->short())
-                return notify_fail("Äã±ØĞëµ½ÊµµØ²ÅÄÜ½øĞĞµØÅÌ¿ª·¢£¡\n");
+                return notify_fail("ä½ å¿…é ˆåˆ°å¯¦åœ°æ‰èƒ½é€²è¡Œåœ°ç›¤é–‹ç™¼ï¼\n");
 
         if (BUNCH_D->query_area_info(area, "bunch_name") != fam)
-                return notify_fail("ÕâÀï²»ÊôÓÚÄãµÄ°ïÅÉµØÅÌ£¬Äã·ÑÊ²Ã´¾¢°¡£¡\n");
+                return notify_fail("é€™è£¡ä¸å±¬äºä½ çš„å¹«æ´¾åœ°ç›¤ï¼Œä½ è²»ä»€éº¼å‹å•Šï¼\n");
 
         if (BUNCH_D->query_area_info(area, "npc_id"))
                 npc = present(BUNCH_D->query_area_info(area, "npc_id"), environment(me));
 
         if (! objectp(npc))
-                return notify_fail("¸ºÔğ" + arg + "µØÅÌ¿ª·¢µÄ£Î£Ğ£Ã²¢Î´¾ÍÎ»£¬ÎŞ·¨½øĞĞ¿ª·¢£¡\n");
+                return notify_fail("è² è²¬" + arg + "åœ°ç›¤é–‹ç™¼çš„ï¼®ï¼°ï¼£ä¸¦æœªå°±ä½ï¼Œç„¡æ³•é€²è¡Œé–‹ç™¼ï¼\n");
 
         data = BUNCH_D->query_all_areas();
         kaifa = data[area]["kaifa"];
 
         if (kaifa >= 100)
-                return notify_fail(arg + "µÄ¿ª·¢¶ÈÒÑ´ïµ½×î´ó£¬²»ĞèÔÙ¿ª·¢¡£\n");
+                return notify_fail(arg + "çš„é–‹ç™¼åº¦å·²é”åˆ°æœ€å¤§ï¼Œä¸éœ€å†é–‹ç™¼ã€‚\n");
 
         money = kaifa * 10000;
 
         if( query("balance", me)<money )
         {
-                return notify_fail("ÄãÕÊÉÏµÄÇ®²»¹»£¬¿ª·¢" + arg + "ÖÁÉÙÒª" +
-                                   MONEY_D->money_str(money) + "£¡\n");
+                return notify_fail("ä½ å¸³ä¸Šçš„éŒ¢ä¸å¤ ï¼Œé–‹ç™¼" + arg + "è‡³å°‘è¦" +
+                                   MONEY_D->money_str(money) + "ï¼\n");
         }
 
         addn("balance", -money, me);
@@ -191,7 +191,7 @@ int do_area_kaifa(object me, string arg)
 
         BUNCH_D->add_area_info(area, "kaifa", 1);
 
-        write("Äã»¨·ÑÁË" + MONEY_D->money_str(money) + "½«µØÅÌ" + arg + "µÄ¿ª·¢¶ÈÉÏÉıÁËÒ»µã£¡\n");
+        write("ä½ èŠ±è²»äº†" + MONEY_D->money_str(money) + "å°‡åœ°ç›¤" + arg + "çš„é–‹ç™¼åº¦ä¸Šå‡äº†ä¸€é»ï¼\n");
         return 1;
 }
 
@@ -209,26 +209,26 @@ int do_area_tisheng(object me, string arg)
         int j;
 
         if( !stringp(bunch=query("bunch/bunch_name", me)) )
-                return notify_fail("ÄãÃ»ÓĞ²Î¼ÓÈÎºÎ°ï»á£¬ÎŞ·¨ÌáÉıÈÎºÎ£Î£Ğ£Ã¡£\n");
+                return notify_fail("ä½ æ²’æœ‰åƒåŠ ä»»ä½•å¹«æœƒï¼Œç„¡æ³•æå‡ä»»ä½•ï¼®ï¼°ï¼£ã€‚\n");
 
         if (! arrayp(member = BUNCH_D->query_bunch_areas(bunch)))
         {
-                write("ÏÖÔÚ°ïÅÉ" + bunch + "Ã»ÓĞÈÎºÎµØÅÌ×¤ÊØ°ïÖÚ£¬ÄãÏëÌáÉıË­µÄÖÒ³Ï¶ÈÄØ¡£\n");
+                write("ç¾åœ¨å¹«æ´¾" + bunch + "æ²’æœ‰ä»»ä½•åœ°ç›¤é§å®ˆå¹«çœ¾ï¼Œä½ æƒ³æå‡èª°çš„å¿ èª åº¦å‘¢ã€‚\n");
                 return 1;
         }
 
         member -= ({ 0 });
 
         if (sizeof(member) < 1)
-                return notify_fail(bunch + "ÏÖÔÚÃ»ÓĞÈÎºÎµØÅÌ×¤ÊØ°ïÖÚ£¬ÄãÏëÌáÉıË­µÄÖÒ³Ï¶ÈÄØ¡£\n");
+                return notify_fail(bunch + "ç¾åœ¨æ²’æœ‰ä»»ä½•åœ°ç›¤é§å®ˆå¹«çœ¾ï¼Œä½ æƒ³æå‡èª°çš„å¿ èª åº¦å‘¢ã€‚\n");
 
         if (! wizardp(me))
         {
                 if( query("jing", me)<50 )
-                        return notify_fail("ÄãÏÖÔÚ¾«Éñ²»¼Ã£¬ÎŞ·¨´òÌıÕâĞ©ÏûÏ¢¡£\n");
+                        return notify_fail("ä½ ç¾åœ¨ç²¾ç¥ä¸æ¿Ÿï¼Œç„¡æ³•æ‰“è½é€™äº›æ¶ˆæ¯ã€‚\n");
 
                 if (me->is_busy() || me->is_fighting())
-                        return notify_fail("ÄãÏÖÔÚÕıÃ¦£¬Ã»ÓĞÊ±¼ä´òÌıÕâĞ©ÏûÏ¢¡£\n");
+                        return notify_fail("ä½ ç¾åœ¨æ­£å¿™ï¼Œæ²’æœ‰æ™‚é–“æ‰“è½é€™äº›æ¶ˆæ¯ã€‚\n");
 
                 me->receive_damage("jing", 50);
                 me->start_busy(3);
@@ -237,9 +237,9 @@ int do_area_tisheng(object me, string arg)
         if (! arg)
         {
                 msg = sprintf(HIC "\n%-18s%-28s%-8s%-8s%-18s\n" NOR,
-                                "µØÅÌÃû³Æ", "×¤ÊØ°ïÖÚ", "¿ª·¢¶È", "ÖÒ³Ï¶È", "ÉÏÔÂÊÕÈë");
+                                "åœ°ç›¤åç¨±", "é§å®ˆå¹«çœ¾", "é–‹ç™¼åº¦", "å¿ èª åº¦", "ä¸Šæœˆæ”¶å…¥");
 
-                msg += HIY "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n" NOR;
+                msg += HIY "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n" NOR;
 
                 j = 0;
                 foreach (area in member)
@@ -254,61 +254,61 @@ int do_area_tisheng(object me, string arg)
                                         data["npc_name"] + "(" + data["npc_id"] + ")",
                                         data["kaifa"] + "%",
                                         data["zhongcheng"] + "%",
-                                        data["last_money"] / 100 + " Á½");
+                                        data["last_money"] / 100 + " å…©");
                 }
 
                 if (j < 1)
-                        return notify_fail(arg + "ÏÖÔÚÃ»ÓĞÈÎºÎµØÅÌ×¤ÊØ°ïÖÚ¡£\n");
+                        return notify_fail(arg + "ç¾åœ¨æ²’æœ‰ä»»ä½•åœ°ç›¤é§å®ˆå¹«çœ¾ã€‚\n");
 
-                msg += "\nÄ¿Ç°" + HIM + bunch + NOR + "¹²ÓĞ" + HIM + chinese_number(j) + NOR + "´¦µØÅÌ×¤ÊØ°ïÖÚ¡£\n";
-                msg += HIY "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n" NOR;
+                msg += "\nç›®å‰" + HIM + bunch + NOR + "å…±æœ‰" + HIM + chinese_number(j) + NOR + "è™•åœ°ç›¤é§å®ˆå¹«çœ¾ã€‚\n";
+                msg += HIY "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n" NOR;
 
                 write(msg);
                 return 1;
         }
 
         if (sscanf(arg, "%d %s", amount, someone) != 2)
-                return notify_fail("ÃüÁî´íÎó£¬Çë²é¿´´ËÃüÁî¡£\n");
+                return notify_fail("å‘½ä»¤éŒ¯èª¤ï¼Œè«‹æŸ¥çœ‹æ­¤å‘½ä»¤ã€‚\n");
 
         if (amount < 0 || amount > 10)
-                return notify_fail("Ã¿´ÎÌáÉıµÄÖµ²»ÄÜĞ¡ÓÚÁãÒ²²»ÄÜ´óÓÚÊ®µã¡£\n");
+                return notify_fail("æ¯æ¬¡æå‡çš„å€¼ä¸èƒ½å°äºé›¶ä¹Ÿä¸èƒ½å¤§äºåé»ã€‚\n");
 
         if (! ob = present(someone, environment(me)))
-                return notify_fail("Õâ¶ùÃ»ÓĞÕâÃ´¸öÈË¡£\n");
+                return notify_fail("é€™å…’æ²’æœ‰é€™éº¼å€‹äººã€‚\n");
 
         if (! ob->is_character())
-                return notify_fail("¿´Çå³ş£¬Ëü²»ÊÇÉúÎï¡£\n");
+                return notify_fail("çœ‹æ¸…æ¥šï¼Œå®ƒä¸æ˜¯ç”Ÿç‰©ã€‚\n");
 
         if (userp(ob))
-                return notify_fail("ÄãÖ»ÄÜÌáÉı±¾°ï£Î£Ğ£Ã°ïÖÚµÄ¼¼ÄÜ¡£\n");
+                return notify_fail("ä½ åªèƒ½æå‡æœ¬å¹«ï¼®ï¼°ï¼£å¹«çœ¾çš„æŠ€èƒ½ã€‚\n");
 
         if (! living(ob))
-                return notify_fail("ÄãµÃÏÈ°Ñ"+query("name", ob)+"ÅªĞÑÔÙËµ¡£\n");
+                return notify_fail("ä½ å¾—å…ˆæŠŠ"+query("name", ob)+"å¼„é†’å†èªªã€‚\n");
 
         if (ob->is_fighting() || ob->is_busy())
-                return notify_fail(query("name", ob)+"ÕıÃ¦×ÅÄØ¡£\n");
+                return notify_fail(query("name", ob)+"æ­£å¿™è‘—å‘¢ã€‚\n");
 
         if( bunch != query("bunch/bunch_name", ob) )
-                return notify_fail("ÄãÖ»ÄÜÌáÉı±¾°ï»áÄÚµÄ£Î£Ğ£Ã°ïÖÚ¡£\n");
+                return notify_fail("ä½ åªèƒ½æå‡æœ¬å¹«æœƒå…§çš„ï¼®ï¼°ï¼£å¹«çœ¾ã€‚\n");
 
         if (! ob->is_bunch_npc())
-                return notify_fail(query("name", ob)+"ËÆºõÏÖÔÚ²»½ÓÊÜÄãµÄÌáÉıÃüÁî¡£\n");
+                return notify_fail(query("name", ob)+"ä¼¼ä¹ç¾åœ¨ä¸æ¥å—ä½ çš„æå‡å‘½ä»¤ã€‚\n");
 
         area = base_name(environment(ob));
 
         if (BUNCH_D->query_area_info(area, "bunch_name") != bunch ||
             BUNCH_D->query_area_info(area,"npc_id") != query("id", ob) )
-                return notify_fail(query("name", ob)+"ËÆºõÏÖÔÚ²»½ÓÊÜÄãµÄÌáÉıÃüÁî¡£\n");
+                return notify_fail(query("name", ob)+"ä¼¼ä¹ç¾åœ¨ä¸æ¥å—ä½ çš„æå‡å‘½ä»¤ã€‚\n");
 
         if ((int)BUNCH_D->query_area_info(area, "zhongcheng") >=
             query("bunch/max_zhongcheng", ob) )
-                return notify_fail(query("name", ob)+"µÄÖÒ³Ï¶ÈÒÑ¾­´ïµ½×î´ó£¬²»ĞèÒª½øĞĞÌáÉıÁË¡£\n");
+                return notify_fail(query("name", ob)+"çš„å¿ èª åº¦å·²ç¶“é”åˆ°æœ€å¤§ï¼Œä¸éœ€è¦é€²è¡Œæå‡äº†ã€‚\n");
 
         money = amount * 10000;
 
         if( query("balance", me)<money )
-                return notify_fail("ÄãÕÊÉÏµÄÇ®²»¹»£¬"+query("name", ob)+
-                                   "µÄÖÒ³Ï¶ÈÃ¿ÌáÉıÒ»µãĞèÒªÒ»Á½»Æ½ğ£¡\n");
+                return notify_fail("ä½ å¸³ä¸Šçš„éŒ¢ä¸å¤ ï¼Œ"+query("name", ob)+
+                                   "çš„å¿ èª åº¦æ¯æå‡ä¸€é»éœ€è¦ä¸€å…©é»ƒé‡‘ï¼\n");
 
         addn("balance", -money, me);
         me->save();
@@ -323,7 +323,7 @@ int do_area_tisheng(object me, string arg)
                 addn("bunch/zhongcheng", amount, ob);
         }
 
-        write("Äã»¨ÁË"+money/10000+"Á½»Æ½ğ£¬½«"+query("name", ob)+"µÄÖÒ³Ï¶ÈÌáÉıÁË"+amount+"µã£¡\n");
+        write("ä½ èŠ±äº†"+money/10000+"å…©é»ƒé‡‘ï¼Œå°‡"+query("name", ob)+"çš„å¿ èª åº¦æå‡äº†"+amount+"é»ï¼\n");
 
         return 1;
 }
@@ -338,22 +338,22 @@ int show_area_all(object me, string arg)
 
         if (! mapp(all_areas = BUNCH_D->query_all_areas()))
         {
-                write("ÏÖÔÚÄàÌ¶Ã»ÓĞÈÎºÎµØÅÌ¿É±»°ïÅÉÀûÓÃ¡£\n");
+                write("ç¾åœ¨æ³¥æ½­æ²’æœ‰ä»»ä½•åœ°ç›¤å¯è¢«å¹«æ´¾åˆ©ç”¨ã€‚\n");
                 return 1;
         }
 
         areas = keys(all_areas);
 
         if (sizeof(areas) < 1)
-                return notify_fail("ÄàÌ¶ÏÖÔÚÃ»ÓĞÈÎºÎµØÅÌ¿É±»°ïÅÉÀûÓÃ¡£\n");
+                return notify_fail("æ³¥æ½­ç¾åœ¨æ²’æœ‰ä»»ä½•åœ°ç›¤å¯è¢«å¹«æ´¾åˆ©ç”¨ã€‚\n");
 
         if (! wizardp(me))
         {
                 if( query("jing", me)<50 )
-                        return notify_fail("ÄãÏÖÔÚ¾«Éñ²»¼Ã£¬ÎŞ·¨´òÌıÕâĞ©ÏûÏ¢¡£\n");
+                        return notify_fail("ä½ ç¾åœ¨ç²¾ç¥ä¸æ¿Ÿï¼Œç„¡æ³•æ‰“è½é€™äº›æ¶ˆæ¯ã€‚\n");
 
                 if (me->is_busy())
-                        return notify_fail("ÄãÏÖÔÚÕıÃ¦£¬Ã»ÓĞÊ±¼ä´òÌıÕâĞ©ÏûÏ¢¡£\n");
+                        return notify_fail("ä½ ç¾åœ¨æ­£å¿™ï¼Œæ²’æœ‰æ™‚é–“æ‰“è½é€™äº›æ¶ˆæ¯ã€‚\n");
 
                 me->receive_damage("jing", 50);
                 me->start_busy(3);
@@ -361,9 +361,9 @@ int show_area_all(object me, string arg)
 
         areas = sort_array(areas, (: sort_areas :), all_areas);
         msg = sprintf(HIC "\n%-18s%-28s%-14s%-10s\n" NOR,
-                      "µØÅÌÃû³Æ", "×¤ÊØ°ïÖÚ", "ËùÊô°ïÅÉ", "×Ê½ğ(»Æ½ğ)");
+                      "åœ°ç›¤åç¨±", "é§å®ˆå¹«çœ¾", "æ‰€å±¬å¹«æ´¾", "è³‡é‡‘(é»ƒé‡‘)");
 
-        msg += HIY "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n" NOR;
+        msg += HIY "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n" NOR;
 
         j = 0;
         foreach (area in areas)
@@ -376,15 +376,15 @@ int show_area_all(object me, string arg)
                 msg += sprintf(HIC "%-18s%-28s%-16s%6d\n" NOR,
                                data["area_name"],
                                data["npc_name"] + "(" + data["npc_id"] + ")",
-                               stringp(data["bunch_name"]) ? data["bunch_name"] : "¶À Á¢ ÖĞ",
+                               stringp(data["bunch_name"]) ? data["bunch_name"] : "ç¨ ç«‹ ä¸­",
                                data["money"] / 10000);
         }
 
         if (j < 1)
-                return notify_fail("ÏÖÔÚÄàÌ¶Ã»ÓĞÈÎºÎµØÅÌ¿É±»°ïÅÉÀûÓÃ¡£\n");
+                return notify_fail("ç¾åœ¨æ³¥æ½­æ²’æœ‰ä»»ä½•åœ°ç›¤å¯è¢«å¹«æ´¾åˆ©ç”¨ã€‚\n");
 
-        msg += "\nÄ¿Ç°ÄàÌ¶¹²ÓĞ" + HIM + chinese_number(j) + NOR + "´¦µØÅÌ¡£\n";
-        msg += HIY "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n" NOR;
+        msg += "\nç›®å‰æ³¥æ½­å…±æœ‰" + HIM + chinese_number(j) + NOR + "è™•åœ°ç›¤ã€‚\n";
+        msg += HIY "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n" NOR;
 
         write(msg);
         return 1;
@@ -393,13 +393,13 @@ int show_area_all(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½: area kaifa [µØÅÌÃû] | tisheng [µØÅÌ°ïÖÚID] | all
+æŒ‡ä»¤æ ¼å¼: area kaifa [åœ°ç›¤å] | tisheng [åœ°ç›¤å¹«çœ¾ID] | all
 
-²é¿´Ä¿Ç°ÄãËùÔÚ°ïÅÉµØÅÌµÄ¸÷ÖÖĞÅÏ¢£¬ÆäÖĞ£º
+æŸ¥çœ‹ç›®å‰ä½ æ‰€åœ¨å¹«æ´¾åœ°ç›¤çš„å„ç¨®ä¿¡æ¯ï¼Œå…¶ä¸­ï¼š
 
-kaifa   £º¿ª·¢°ï»áÖĞµØÅÌ£¬Ôö¼Ó°ï»áÊÕÈë¡£
-tisheng £ºÌáÉıËùÊô°ï»áÖĞ×¤ÊØµØÅÌNPCµÄÖÒ³Ï¶È¡£
-all     : ²é¿´ËùÓĞµÄµØÅÌĞÅÏ¢¡£
+kaifa   ï¼šé–‹ç™¼å¹«æœƒä¸­åœ°ç›¤ï¼Œå¢åŠ å¹«æœƒæ”¶å…¥ã€‚
+tisheng ï¼šæå‡æ‰€å±¬å¹«æœƒä¸­é§å®ˆåœ°ç›¤NPCçš„å¿ èª åº¦ã€‚
+all     : æŸ¥çœ‹æ‰€æœ‰çš„åœ°ç›¤ä¿¡æ¯ã€‚
 
 see also: bunch
 HELP );

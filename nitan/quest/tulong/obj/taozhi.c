@@ -5,18 +5,18 @@ inherit SWORD;
 
 void create()
 {
-        set_name("ÌÒÖ¦" , ({ "taozhi"}) );
+        set_name("æ¡ƒæ" , ({ "taozhi"}) );
         set_weight(50);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ö¦");
-                set("long", "ÌÒÖ¦ÉÏ¿ªÂúÁË·ÛºìÉ«µÄ»¨¶ä!\n");
+                set("unit", "æ");
+                set("long", "æ¡ƒæä¸Šé–‹æ»¿äº†ç²‰ç´…è‰²çš„èŠ±æœµ!\n");
                 set("value", 5);
                 set("rigidity", 5);
                 set("material", "wood");
-                set("wield_msg", "$NÄÃ³öÒ»Ö¦¿ªÂúÁË·ÛºìÉ«»¨¶äµÄ$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+                set("wield_msg", "$Næ‹¿å‡ºä¸€æé–‹æ»¿äº†ç²‰ç´…è‰²èŠ±æœµçš„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
         }
 
         init_sword(5);

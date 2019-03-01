@@ -1,17 +1,17 @@
-// mi.c ÃÛ
+// mi.c èœœ
 inherit ITEM;
 void create()
 {
-        set_name("·äÃÛ", ({"mi"}));
+        set_name("èœ‚èœœ", ({"mi"}));
         set_weight(400);
         if (clonep())
                 set_default_object(__FILE__);
         else
         {
-                set("long", "Ò»¹ŞÓñ·äµÄ·äÃÛ£¬É¢·¢³öÓÕÈËµÄÏãÎ¶¡£\n");
-                set("unit", "¹Ş");
+                set("long", "ä¸€ç½ç‰èœ‚çš„èœ‚èœœï¼Œæ•£ç™¼å‡ºèª˜äººçš„é¦™å‘³ã€‚\n");
+                set("unit", "ç½");
                 set("value",0);
-                set("no_give", "ÕâÑù¶«Î÷»¹ÊÇ²»Òª¸ø±ğÈËµÄºÃ¡£\n");
-                set("no_put",  "Ñ½£¬Ğ¡ĞÄÈöÁË¡£\n"); 
+                set("no_give", "é€™æ¨£æ±è¥¿é‚„æ˜¯ä¸è¦çµ¦åˆ¥äººçš„å¥½ã€‚\n");
+                set("no_put",  "å‘€ï¼Œå°å¿ƒæ’’äº†ã€‚\n"); 
         }
 }

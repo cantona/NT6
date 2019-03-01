@@ -1,14 +1,14 @@
-// aman.c °¢Âü
+// aman.c é˜¿æ›¼
 
 inherit NPC;
 
 void create()
 {
-        set_name("°¢Âü", ({ "a man", "man"}));
-        set("gender", "Å®ĞÔ");
+        set_name("é˜¿æ›¼", ({ "a man", "man"}));
+        set("gender", "å¥³æ€§");
         set("age", 18);
         set("long", 
-"Ò»¸ö½¿ÃÀµÄ¹şÈø¿Ë¹ÃÄï£¬ËÕÆÕµÄÇéÂÂ¡£\n");
+"ä¸€å€‹å¬Œç¾çš„å“ˆè–©å…‹å§‘å¨˜ï¼Œè˜‡æ™®çš„æƒ…ä¾¶ã€‚\n");
         set("combat_exp", 2000);
         set("shen_type", 1);
 

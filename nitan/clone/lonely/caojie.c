@@ -5,17 +5,17 @@ inherit BOOTS;
 
 void create()
 {
-        set_name(HIG "Éñ²İ½á" NOR, ({ "shen caojie", "shen", "caojie" }));
+        set_name(HIG "ç¥è‰çµ" NOR, ({ "shen caojie", "shen", "caojie" }));
         set_weight(100);
         if (clonep())
                 destruct(this_object());
         else {
-                set("unit", "¶Ô");
-                set("long", HIG "µ±Äê´ïÄ¦×æÊ¦Ò»Î­¶É½­Ê±Ëù´©µÄ²İĞ¬¡£\n" NOR);
-                set("wear_msg", HIG "$N" HIG "½«Ò»¶ÔÉñ²İ½á°óÓÚ×ã¼ä¡£\n" NOR);
-                set("remove_msg", HIG "$N" HIG "½«Éñ²İ½á´Ó×ã¼äÈ¡ÏÂ£¬·Å»Ø°ü"
-                                  "ÄÒ¡£\n" NOR);
-                set("no_sell", "ÕâÊÇÉ¶£¿ÊÇÎÚÀ­²İÃ´£¿");
+                set("unit", "å°");
+                set("long", HIG "ç•¶å¹´é”æ‘©ç¥–å¸«ä¸€è‘¦æ¸¡æ±Ÿæ™‚æ‰€ç©¿çš„è‰é‹ã€‚\n" NOR);
+                set("wear_msg", HIG "$N" HIG "å°‡ä¸€å°ç¥è‰çµç¶äºè¶³é–“ã€‚\n" NOR);
+                set("remove_msg", HIG "$N" HIG "å°‡ç¥è‰çµå¾è¶³é–“å–ä¸‹ï¼Œæ”¾å›åŒ…"
+                                  "å›Šã€‚\n" NOR);
+                set("no_sell", "é€™æ˜¯å•¥ï¼Ÿæ˜¯çƒæ‹‰è‰éº¼ï¼Ÿ");
                 set("value", 100000);
                 set("material", "silk");
                 set("armor_type", "feet");

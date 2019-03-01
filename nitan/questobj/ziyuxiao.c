@@ -1,5 +1,5 @@
 // Last Modified by winder on Nov. 17 2000
-// ziyuxiao.c ×ÏÓñóï
+// ziyuxiao.c ç´«ç‰ç°«
 #include <weapon.h>
 #include <ansi.h>
 
@@ -7,21 +7,21 @@ inherit SWORD;
 
 void create()
 {
-        set_name(MAG"×ÏÓñóï"NOR,({"ziyu xiao","xiao"}));
+        set_name(MAG"ç´«ç‰ç°«"NOR,({"ziyu xiao","xiao"}));
         set_weight(1000);
         set("taskobj", 1);
         if (clonep())
                 set_default_object(__FILE__);
         else{
-                set("unit","Ö§");
+                set("unit","æ”¯");
                 set("value",0);
                 set("material","gem");
                 set("unique", 3);
                 set("wield_neili", 50);
                 set("wield_maxneili", 500);
-                set("long","ÕâÊÇÒ»Ö§¾§Ó¨ÌŞÍ¸µÄÓÃº±¼ûµÄ"MAG"×ÏÓñ"NOR"×öµÄóï£¬¿´ÆğÀ´Ê®·ÖÕä¹ó¡£\n");
-                set("wield_msg","$NÉìÊÖÇáÇáÒ»ÕĞ£¬Ò»Ö§$nÒÑ³öÏÖÔÚ$NÊÖÖĞ¡£\n");
-                set("unwield_msg","$NÒ»ÉùÇåĞ¥£¬½«$n²å»ØÑü¼ä¡£\n");
+                set("long","é€™æ˜¯ä¸€æ”¯æ™¶ç‘©å‰”é€çš„ç”¨ç½•è¦‹çš„"MAG"ç´«ç‰"NOR"åšçš„ç°«ï¼Œçœ‹èµ·ä¾†ååˆ†çè²´ã€‚\n");
+                set("wield_msg","$Nä¼¸æ‰‹è¼•è¼•ä¸€æ‹›ï¼Œä¸€æ”¯$nå·²å‡ºç¾åœ¨$Næ‰‹ä¸­ã€‚\n");
+                set("unwield_msg","$Nä¸€è²æ¸…å˜¯ï¼Œå°‡$næ’å›è…°é–“ã€‚\n");
         }
         setup();
 }

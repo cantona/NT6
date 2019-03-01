@@ -10,19 +10,19 @@ int main(object me, string arg)
                 return 0;
 
         if( stringp(query("family/family_name", me)) && 
-            (query("family/family_name", me) == "ÉÙÁÖÅÉ" || 
-            query("family/family_name", me) == "¶ëáÒÅÉ") )
+            (query("family/family_name", me) == "å°‘æ—æ´¾" || 
+            query("family/family_name", me) == "å³¨åµ‹æ´¾") )
         {
-                write("ÄãÃ»ÓĞÙ÷¸æÊ¦³¤£¬Ôõ¸ÒÉÃ×Ô»¹Ë×£¿\n");
+                write("ä½ æ²’æœ‰ç¨Ÿå‘Šå¸«é•·ï¼Œæ€æ•¢æ“…è‡ªé‚„ä¿—ï¼Ÿ\n");
                 return 1;
         }
 
         if( query_temp("pending/secularize", me) )
         {
                 CHANNEL_D->do_channel(this_object(), "rumor",
-                        "ÌıËµ" + me->name(1) + "Ñá¾ëÁËÇåÆ¶¿İÔïµÄÉú»î£¬¾ö¶¨»¹Ë×¡£");
+                        "è½èªª" + me->name(1) + "å­å€¦äº†æ¸…è²§æ¯ç‡¥çš„ç”Ÿæ´»ï¼Œæ±ºå®šé‚„ä¿—ã€‚");
                 delete("class", me);
-                write("ÄãÃşÁËÃşÄÔ´ü£¬Ì¾ÁË¿ÚÆø£¬¾ö¶¨»Ø³¾ÊÀºÃºÃÏíÊÜÏíÊÜ¡£\n");
+                write("ä½ æ‘¸äº†æ‘¸è…¦è¢‹ï¼Œå˜†äº†å£æ°£ï¼Œæ±ºå®šå›å¡µä¸–å¥½å¥½äº«å—äº«å—ã€‚\n");
 
                 if( stringp(query("purename", me)) )
                         me->set_name();
@@ -30,16 +30,16 @@ int main(object me, string arg)
         }
 
         set_temp("pending/secularize", 1, me);
-        write(YEL "Äã¾ö¶¨Òª»¹Ë×Âğ£¿Õâ¿ÉÊÇ´óÊÂ£¬Èç¹ûÄãÏÂÁË¾öĞÄ£¬ÄÇ¾ÍÔÙÊäÈëÒ»´ÎÕâ¸öÃüÁî¡£\n" NOR);
+        write(YEL "ä½ æ±ºå®šè¦é‚„ä¿—å—ï¼Ÿé€™å¯æ˜¯å¤§äº‹ï¼Œå¦‚æœä½ ä¸‹äº†æ±ºå¿ƒï¼Œé‚£å°±å†è¼¸å…¥ä¸€æ¬¡é€™å€‹å‘½ä»¤ã€‚\n" NOR);
         return 1;
 }
 
 int help (object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½: secularize|huansu
+æŒ‡ä»¤æ ¼å¼: secularize|huansu
  
-Õâ¸öÖ¸ÁîÈÃÄã·ÅÆúÎŞÁÄµÄ³ö¼ÒÉú»î¡£
+é€™å€‹æŒ‡ä»¤è®“ä½ æ”¾æ£„ç„¡èŠçš„å‡ºå®¶ç”Ÿæ´»ã€‚
 
 HELP );
         return 1;

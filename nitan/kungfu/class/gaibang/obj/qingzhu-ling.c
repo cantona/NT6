@@ -1,18 +1,18 @@
-// qing-zhuling.c ÇàÖñÁî
+// qing-zhuling.c é’ç«¹ä»¤
 // Modified by Venus Nov.1997
 #include <ansi.h>
 inherit ITEM;
 void create()
 {
-        set_name(HIG"ÇàÖñÁî"NOR, ({"qingzhu ling", "ling"}));
+        set_name(HIG"é’ç«¹ä»¤"NOR, ({"qingzhu ling", "ling"}));
         set_weight(500);
         if( clonep() )
                 set_default_object(__FILE__);
         else
         {
-                set("unit", "Ãæ");
-                set("long","ÕâÊÇÒ»¿éÓÃÇàÖñ×ö³ÉµÄÁîÅÆ,ÓÉ¾Å´ü³¤ÀÏ¼ò³¤ÀÏÇ©·¢,Æ¾´ËÅÆ
-µÜ×Ó¿É×ÔÓÉÏòÍ¬ÃÅ´óÊ¦ĞÖÌôÕ½¡£\n");
+                set("unit", "é¢");
+                set("long","é€™æ˜¯ä¸€å¡Šç”¨é’ç«¹åšæˆçš„ä»¤ç‰Œ,ç”±ä¹è¢‹é•·è€ç°¡é•·è€ç°½ç™¼,æ†‘æ­¤ç‰Œ
+å¼Ÿå­å¯è‡ªç”±å‘åŒé–€å¤§å¸«å…„æŒ‘æˆ°ã€‚\n");
                 set("value", 0);
                 set("material", "steel");
         }

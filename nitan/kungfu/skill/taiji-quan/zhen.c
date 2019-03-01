@@ -1,9 +1,9 @@
-// zhen.c Ì«¼«È­¡¸Õğ¡¹×Ö¾÷
+// zhen.c å¤ªæ¥µæ‹³ã€Œéœ‡ã€å­—è¨£
 
 #include <ansi.h>
 #include <combat.h>
 
-string name() { return "Õğ×Ö¾÷"; }
+string name() { return "éœ‡å­—è¨£"; }
 
 inherit F_SSERVER;
 
@@ -17,23 +17,23 @@ int perform(object me, object target)
         if(! target) target = offensive_target(me);
 
         if(! target || ! target->is_character() || ! me->is_fighting())
-                return notify_fail("¡¸" + name() + "¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œ" + name() + "ã€åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( objectp(query_temp("weapon", me)) )
-                return notify_fail("Äã±ØĞë¿ÕÊÖ²ÅÄÜÊ¹ÓÃ¡¸" + name() + "¡¹¡£\n");
+                return notify_fail("ä½ å¿…é ˆç©ºæ‰‹æ‰èƒ½ä½¿ç”¨ã€Œ" + name() + "ã€ã€‚\n");
 
         if((int)me->query_skill("taiji-quan", 1) < 180)
-                return notify_fail("ÄãµÄÌ«¼«È­²»¹»æµÊì£¬²»»áÊ¹ÓÃ¡¸" + name() + "¡¹¡£\n");
+                return notify_fail("ä½ çš„å¤ªæ¥µæ‹³ä¸å¤ å«»ç†Ÿï¼Œä¸æœƒä½¿ç”¨ã€Œ" + name() + "ã€ã€‚\n");
 
         if((int)me->query_skill("force", 1) < 200)
-                return notify_fail("ÄãµÄÄÚ¹¦²»¹»¸ß£¬²»ÄÜÓÃÀ´·´ÕğÉËµĞ¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸä¸å¤ é«˜ï¼Œä¸èƒ½ç”¨ä¾†åéœ‡å‚·æ•µã€‚\n");
 
         if( query("neili", me)<1000 )
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ£¬ÕğÒ²Õğ²»ÉËµĞÈË¡£\n");
+                return notify_fail("ä½ ç¾åœ¨å…§åŠ›å¤ªå¼±ï¼Œéœ‡ä¹Ÿéœ‡ä¸å‚·æ•µäººã€‚\n");
 
-        msg = HIY "$N" HIY "Ä¬ÔËÉñ¹¦£¬ÕæÆøÁ÷×ª£¬Ë«ÊÖ×óÓÒÁ¬»­£¬Ò»¸öÔ²È¦ÒÑ½«$n"
-              HIY "Ì××¡£¬\nÌ«¼«È­ÖĞµÄ¡¸" HIW + name() + HIY "¡¹ĞÅÊÖÊ¹³ö£¬Ò»µÀ"
-              HIY "»ëºñµÄÄÚÁ¦Ïò$n" HIY "ÍÆÈ¥£¡\n" NOR;
+        msg = HIY "$N" HIY "é»˜é‹ç¥åŠŸï¼ŒçœŸæ°£æµè½‰ï¼Œé›™æ‰‹å·¦å³é€£ç•«ï¼Œä¸€å€‹åœ“åœˆå·²å°‡$n"
+              HIY "å¥—ä½ï¼Œ\nå¤ªæ¥µæ‹³ä¸­çš„ã€Œ" HIW + name() + HIY "ã€ä¿¡æ‰‹ä½¿å‡ºï¼Œä¸€é“"
+              HIY "æ¸¾åšçš„å…§åŠ›å‘$n" HIY "æ¨å»ï¼\n" NOR;
 
         ap = attack_power(me, "cuff") + me->query_skill("force");
         dp = defense_power(target, "parry") + target->query_skill("force");
@@ -46,8 +46,8 @@ int perform(object me, object target)
                         damage+= query("jiali", me);
 
                         msg += COMBAT_D->do_damage(me, target, UNARMED_ATTACK, damage, 60,
-                                                   HIC "\nÑÛ¼û$P" HIC "¾ÍÒª½«$pÕğµ¹£¬Í»È»£¬$n"
-                                                   HIC "ÔËÆğÈ«ÉíÄÚÁ¦£¬Ç¿ÈÌÌÛÍ´Ó²½ÓÁË$PÒ»ÕĞ¡£\n" NOR);
+                                                   HIC "\nçœ¼è¦‹$P" HIC "å°±è¦å°‡$péœ‡å€’ï¼Œçªç„¶ï¼Œ$n"
+                                                   HIC "é‹èµ·å…¨èº«å…§åŠ›ï¼Œå¼·å¿ç–¼ç—›ç¡¬æ¥äº†$Pä¸€æ‹›ã€‚\n" NOR);
                         if (! target->is_busy())
                                 target->start_busy(3);
                         me->start_busy(3);
@@ -60,9 +60,9 @@ int perform(object me, object target)
                         damage+= query("jiali", me);
 
                         msg += COMBAT_D->do_damage(me, target, UNARMED_ATTACK, damage, 300,
-                                                   HIC "\nÑÛ¼û$n" HIC "±»$PµÄÄÚÁ¦Ñ¹µÃÍ¸²»¹ıÆğÀ´£¬Ö»ÌıµÃ$N"
-                                                   HIC "¡°Åé¡±µÄÒ»Éù»÷ÖĞ$n" HIC "£¬$pÈ«Éí¹Ç÷À±ãËÆÉ¢ÁË"
-                                                   HIC "¼ÜÒ»°ãµ¹ÁËÏÂÈ¥¡£\n" NOR);
+                                                   HIC "\nçœ¼è¦‹$n" HIC "è¢«$Pçš„å…§åŠ›å£“å¾—é€ä¸éèµ·ä¾†ï¼Œåªè½å¾—$N"
+                                                   HIC "â€œç °â€çš„ä¸€è²æ“Šä¸­$n" HIC "ï¼Œ$på…¨èº«éª¨éª¼ä¾¿ä¼¼æ•£äº†"
+                                                   HIC "æ¶ä¸€èˆ¬å€’äº†ä¸‹å»ã€‚\n" NOR);
                         me->start_busy(2);
                         if( !target->is_busy() )
                                 target->start_busy(3);
@@ -71,7 +71,7 @@ int perform(object me, object target)
         }
         else
         {
-                msg += HIG "\n¿É$p¾¹ËæÊÖ±ã°Ñ$P»ã¾ÛÈ«Éí¹¦Á¦µÄÕĞÊı¼Ü¿ª£¬ÏÅµÃ$PÊÖ×ãÎŞ´ë£¡\n" NOR;
+                msg += HIG "\nå¯$pç«Ÿéš¨æ‰‹ä¾¿æŠŠ$PåŒ¯èšå…¨èº«åŠŸåŠ›çš„æ‹›æ•¸æ¶é–‹ï¼Œåš‡å¾—$Pæ‰‹è¶³ç„¡æªï¼\n" NOR;
                 addn("neili", -100, me);
                 me->start_busy(3);
         }

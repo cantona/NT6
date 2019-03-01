@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "������");
+        set("short", "東安坊");
         set("long", @LONG
-֣����̨ʱ����̨�帮�Գ�Ƕһ��Ϊ���ģ����нֻ���Ϊ�ķ���̨
-�������Ա���֣������֮�ķ����������˳�Ƕ�Ƕ���һ����
+鄭經治台時，在台灣府以赤嵌一帶為中心，將市街劃分為四坊，台
+灣歸清後，仍保留鄭氏設置之四坊，東安坊乃赤嵌城東部一坊。
 LONG );
         set("exits", ([
                 "west" : __DIR__"chiqian",

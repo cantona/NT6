@@ -1,4 +1,4 @@
-//houshan.c                ËÄ´¨ÌÆÃÅ¡ªºóÉ½
+//houshan.c                å››å·å”é–€â”€å¾Œå±±
 
 #include <ansi.h>
 #include <room.h>
@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ºóÉ½");
+        set("short", "å¾Œå±±");
         set("long",
-"ÕâÀïÊÇÁ«ÔÆ¸óºóÉ½¡£ÕâÀïÒõÉ­¿Ö²À£¬ËÄÖÜÃÜÁÖ´ÔÉú£¬Á¬ÈÕ¹âÒ²±»ÕÚ×¡\n"
-"£¬µØÉÏÊ÷Ó°°ß²µ£¬ÁÖÖÐºÃÏóÓÐÎÞÊýÐ×ºÝµÄÄ¿¹â×¢ÊÓ×ÅÄã£¬¿ÉÄÜËæÊ±»áÆËÉÏ\n"
-"À´É±ËÀÄã£¬¸Ï¿ìÀë¿ªÕâÀï°É£¡\n"
+"é€™è£¡æ˜¯è“®é›²é–£å¾Œå±±ã€‚é€™è£¡é™°æ£®ææ€–ï¼Œå››å‘¨å¯†æž—å¢ç”Ÿï¼Œé€£æ—¥å…‰ä¹Ÿè¢«é®ä½\n"
+"ï¼Œåœ°ä¸Šæ¨¹å½±æ–‘é§ï¼Œæž—ä¸­å¥½è±¡æœ‰ç„¡æ•¸å…‡ç‹ çš„ç›®å…‰æ³¨è¦–è‘—ä½ ï¼Œå¯èƒ½éš¨æ™‚æœƒæ’²ä¸Š\n"
+"ä¾†æ®ºæ­»ä½ ï¼Œè¶•å¿«é›¢é–‹é€™è£¡å§ï¼\n"
 );
         set("exits", ([
                         "northdown" : __DIR__"shanshi1",

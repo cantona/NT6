@@ -4,12 +4,12 @@ inherit "/maze/necropolis/necropolis_npc";
 void do_summon();
 void create()
 {
-        string *names = ({"½©Ê¬Íõ"}); 
+        string *names = ({"åƒµå±ç‹"}); 
         // set_name( names[random(sizeof(names))], ({ "lord zombie","zombie"}));
         set_name( names[random(sizeof(names))], ({ "lord zombie" }));
         set("vendetta_mark","zombie");
-        set("long", "ÕâÊÇÒ»¸ö¸¯ÀÃµÄ½©Ê¬¡£\n");
-        set("title", HIB "(¹íÆø)" NOR); 
+        set("long", "é€™æ˜¯ä¸€å€‹è…çˆ›çš„åƒµå±ã€‚\n");
+        set("title", HIB "(é¬¼æ°£)" NOR); 
 
         set("str", 50);
         set("con", 120);
@@ -24,7 +24,7 @@ void create()
         set("chat_chance", 1);
         //set("chat_chance", 2);
         //set("chat_msg", ({
-        //                "÷¼÷Ã¿Õ¶´µÄÑÛ¿ôÀïÉÁË¸×Å¿ÉÅÂµÄÓ«¹â¡£\n"
+        //                "éª·é«ç©ºæ´çš„çœ¼çœ¶è£¡é–ƒçˆè‘—å¯æ€•çš„ç†’å…‰ã€‚\n"
         //}) ); 
 
         set("chat_chance_combat", 50);
@@ -34,7 +34,7 @@ void create()
 
         set("combat_exp", 300000000);
         set("bellicosity", 1000000 );
-        set("death_msg",RED"\n$N»¯×÷ÁËÒ»Ì²ÑªË®¡£\n\n"NOR);
+        set("death_msg",RED"\n$NåŒ–ä½œäº†ä¸€ç˜è¡€æ°´ã€‚\n\n"NOR);
 
         set_skill("force", 220);
         set_skill("dodge", 220);
@@ -69,7 +69,7 @@ void do_summon() {
    object zombie,me,enemy, *enemies;
         me = this_object();
         
-        message_vision(HIM "\n$NàÀàÀ¸Éº¿£¬ÖÜÎ§µÄ½©Ê¬Ó¦Éù¶øÀ´¡£\n" NOR, me); 
+        message_vision(HIM "\n$Nâ–¡â–¡å¹¹åšï¼Œå‘¨åœçš„åƒµå±æ‡‰è²è€Œä¾†ã€‚\n" NOR, me); 
         seteuid(getuid());   
         if(random(2))
                 zombie = new(__DIR__"zombie_blood");
@@ -81,13 +81,13 @@ void do_summon() {
                         zombie->kill_ob(enemy);
                         enemy->kill_ob(zombie);
         } 
-  message_vision( "\n\n$N¶ñºİºİµØÆËÁËÉÏÀ´¡£\n" , zombie);
+  message_vision( "\n\n$Næƒ¡ç‹ ç‹ åœ°æ’²äº†ä¸Šä¾†ã€‚\n" , zombie);
         call_out("leave",10+random(10),zombie);
   start_busy(3);
 }
 
 void leave(object zombie){
         if (! zombie) return;
-                message_vision("\n$NÏûÊ§ÁË¡£\n",zombie);
+                message_vision("\n$Næ¶ˆå¤±äº†ã€‚\n",zombie);
                 destruct(zombie);
 }

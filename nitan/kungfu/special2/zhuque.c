@@ -1,4 +1,4 @@
-// zhuque.c ÖìÈ¸ÖØÉú
+// zhuque.c æœ±é›€é‡ç”Ÿ
 // Created by rcwiz for yhonline
 
 #include <ansi.h>
@@ -7,13 +7,13 @@ inherit F_CLEAN_UP;
 
 int is_scborn() { return 1; }
 
-string name() { return HIR "ÖìÈ¸ÖØÉú" NOR; }
+string name() { return HIR "æœ±é›€é‡ç”Ÿ" NOR; }
 
 int perform(object me, string skill)
 {
-        return notify_fail(HIR "»ñµÃÁÒ»ð·ï»Ë°ãµÄÌåÆÇ£¬ ËÀÍöºóÓÐ40%¼¸ÂÊ²»ËðÊ§¼¼\n"
-                           "ÄÜ²¢ÇÒÔÚÔÎµ¹µÄÊ±ºòÓÐ50% ¼¸ÂÊ»ñµÃÌåÄÚÇ±Á¦µÄË²¼ä±¬·¢£¬\n"
-                           "ÆøÑª¼°¾«Á¦¿ÉË²¼ä×Ô¶¯»Ö¸´60%£¬¶ã±ÜÔÎµ¹£¬ÌØ±ðÔÚÕ½¶·ÖÐ\n"
-                           "¿É½µµÍÒòÎªÔÎµ¹¶øËÀÍöµÄ¿ÉÄÜ¡££¨Èç´òÍ¨ÉúËÀÐþ¹ØºóËÀÍö²»\n"
-                           "¶ªÊ§¼¼ÄÜµÄ¼¸ÂÊ½«¸ù¾ÝÉúËÀÐþ¹ØµÄÐ§¹ûÀÛ»ý£©\n" NOR);
+        return notify_fail(HIR "ç²å¾—çƒˆç«é³³å‡°èˆ¬çš„é«”é­„ï¼Œ æ­»äº¡å¾Œæœ‰40%å¹¾çŽ‡ä¸æå¤±æŠ€\n"
+                           "èƒ½ä¸¦ä¸”åœ¨æšˆå€’çš„æ™‚å€™æœ‰50% å¹¾çŽ‡ç²å¾—é«”å…§æ½›åŠ›çš„çž¬é–“çˆ†ç™¼ï¼Œ\n"
+                           "æ°£è¡€åŠç²¾åŠ›å¯çž¬é–“è‡ªå‹•æ¢å¾©60%ï¼Œèº²é¿æšˆå€’ï¼Œç‰¹åˆ¥åœ¨æˆ°é¬¥ä¸­\n"
+                           "å¯é™ä½Žå› ç‚ºæšˆå€’è€Œæ­»äº¡çš„å¯èƒ½ã€‚ï¼ˆå¦‚æ‰“é€šç”Ÿæ­»çŽ„é—œå¾Œæ­»äº¡ä¸\n"
+                           "ä¸Ÿå¤±æŠ€èƒ½çš„å¹¾çŽ‡å°‡æ ¹æ“šç”Ÿæ­»çŽ„é—œçš„æ•ˆæžœç´¯ç©ï¼‰\n" NOR);
 }

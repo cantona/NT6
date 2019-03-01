@@ -10,23 +10,23 @@ int perform(object me, object target)
         int i, skill;
  
         if (! me->is_fighting())
-                return notify_fail("Îå»¢¶ÏÃÅµ¶¡¸¶Ï¡¹×Ö¾öÖ»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ¡£\n");
+                return notify_fail("äº”è™æ–·é–€åˆ€ã€Œæ–·ã€å­—æ±ºåªèƒ½åœ¨æˆ°é¬¥ä¸­ä½¿ç”¨ã€‚\n");
                 
         if( query_temp("perform", me) )
-                return notify_fail("ÄãÉÏÒ»ÕĞÎ´Ê¹Íê£¡\n");
+                return notify_fail("ä½ ä¸Šä¸€æ‹›æœªä½¿å®Œï¼\n");
                 
         if( !objectp(weapon=query_temp("weapon", me) )
          || query("skill_type", weapon) != "blade" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ã€‚\n");
                 
         if( query("neili", me)<200 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¡\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼\n");
                 
         if ((int)me->query_skill("blade") < 60 ||
             me->query_skill_mapped("blade") != "wuhu-duanmendao")
-                return notify_fail("ÄãµÄ¡¸Îå»¢¶ÏÃÅµ¶¡¹»¹²»µ½¼Ò£¬ÎŞ·¨Ê¹ÓÃ¡¸¶Ï¡¹×Ö¾ö£¡\n");
+                return notify_fail("ä½ çš„ã€Œäº”è™æ–·é–€åˆ€ã€é‚„ä¸åˆ°å®¶ï¼Œç„¡æ³•ä½¿ç”¨ã€Œæ–·ã€å­—æ±ºï¼\n");
                 
-        msg = HIY "$NÃÍÈ»·üµØ£¬Ê¹³ö¡¸Îå»¢¶ÏÃÅµ¶¡¹¶Ï×Ö¾ö£¬¶ÙÊ±ÎåµÀ°×¹âÖ±ÏòÇ°¹öÈ¥£¡\n" NOR;
+        msg = HIY "$NçŒ›ç„¶ä¼åœ°ï¼Œä½¿å‡ºã€Œäº”è™æ–·é–€åˆ€ã€æ–·å­—æ±ºï¼Œé “æ™‚äº”é“ç™½å…‰ç›´å‘å‰æ»¾å»ï¼\n" NOR;
         message_combatd(msg, me);
         me->clean_up_enemy();
         ob = me->select_opponent();
@@ -38,7 +38,7 @@ int perform(object me, object target)
         for(i = 0; i < 5; i++)
         if( me->is_fighting(ob) && ob->is_fighting(me) && query("eff_qi", ob)>0 )
         {
-              set_temp("action_msg", "½ô½Ó×Å", me);
+              set_temp("action_msg", "ç·Šæ¥è‘—", me);
               if( !query("equipped", weapon))break;
               
               COMBAT_D->do_attack(me, ob,weapon, 0);

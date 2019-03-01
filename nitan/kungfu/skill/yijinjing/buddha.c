@@ -1,5 +1,5 @@
 // This program is a part of NT MudLIB
-// ·ğ¹âÆÕÕÕ ×ªÊÀ¼¼ÄÜ
+// ä½›å…‰æ™®ç…§ è½‰ä¸–æŠ€èƒ½
 // buddha.c
 
 #include <ansi.h>
@@ -12,43 +12,43 @@ int exert(object me, object target)
         int skill;
 
         if( userp(me) && !query("can_exert/yijinjing/buddha", me) ) 
-                return notify_fail("ÄãÎ´µÃ¸ßÈËÖ¸µã£¬²»Öª¸ÃÈçºÎÊ©Õ¹·ğ¹âÆÕÕÕ¡£\n");  
+                return notify_fail("ä½ æœªå¾—é«˜äººæŒ‡é»ï¼Œä¸çŸ¥è©²å¦‚ä½•æ–½å±•ä½›å…‰æ™®ç…§ã€‚\n");  
         /*
-        if( query("family/family_name", me) != "ÉÙÁÖÅÉ" )
-                return notify_fail("Äã²»ÊÇÉÙÁÖµÜ×Ó£¬ÎŞ·¨Ê¹ÓÃ·ğ¹âÆÕÕÕ¡£\n");
+        if( query("family/family_name", me) != "å°‘æ—æ´¾" )
+                return notify_fail("ä½ ä¸æ˜¯å°‘æ—å¼Ÿå­ï¼Œç„¡æ³•ä½¿ç”¨ä½›å…‰æ™®ç…§ã€‚\n");
         */
 
         if( !query("reborn/times", me) )
-                return notify_fail("ÄãÉĞÎ´×ªÊÀÖØÉú£¬ÎŞ·¨Ê¹ÓÃ·ğ¹âÆÕÕÕ£¡\n");
+                return notify_fail("ä½ å°šæœªè½‰ä¸–é‡ç”Ÿï¼Œç„¡æ³•ä½¿ç”¨ä½›å…‰æ™®ç…§ï¼\n");
 
         if( target != me )
-                return notify_fail("ÄãÖ»ÄÜÓÃÒ×½î¾­À´¼¤·¢·ğ¹âÆÕÕÕ¡£\n");
+                return notify_fail("ä½ åªèƒ½ç”¨æ˜“ç­‹ç¶“ä¾†æ¿€ç™¼ä½›å…‰æ™®ç…§ã€‚\n");
 
         if( (skill = me->query_skill("yijinjing", 1)) < 1000 )
-                return notify_fail("ÄãµÄÒ×½î¾­Éñ¹¦Ã»ÓĞÑ§³É£¬ÎŞ·¨Ê¹ÓÃ·ğ¹âÆÕÕÕ£¡\n");
+                return notify_fail("ä½ çš„æ˜“ç­‹ç¶“ç¥åŠŸæ²’æœ‰å­¸æˆï¼Œç„¡æ³•ä½¿ç”¨ä½›å…‰æ™®ç…§ï¼\n");
 
         if( me->query_skill("jingang-buhuaiti", 1) < 1000 )
-                return notify_fail("ÄãµÄ½ğ¸Õ²»»µÌåÉñ¹¦ĞŞÎª²»¹»£¬ÎŞ·¨Ê¹ÓÃ·ğ¹âÆÕÕÕ£¡\n");
+                return notify_fail("ä½ çš„é‡‘å‰›ä¸å£é«”ç¥åŠŸä¿®ç‚ºä¸å¤ ï¼Œç„¡æ³•ä½¿ç”¨ä½›å…‰æ™®ç…§ï¼\n");
 
         if( me->query_skill("buddhism", 1) < 1000 )
-                return notify_fail("Äã¶Ôìø×ÚĞÄ·¨µÄ²ÎÎò»¹²»¹»£¬ÎŞ·¨Ê¹ÓÃ·ğ¹âÆÕÕÕ£¡\n");
+                return notify_fail("ä½ å°ç¦ªå®—å¿ƒæ³•çš„åƒæ‚Ÿé‚„ä¸å¤ ï¼Œç„¡æ³•ä½¿ç”¨ä½›å…‰æ™®ç…§ï¼\n");
 
         if( me->query_skill_mapped("parry") != "jingang-buhuaiti" )
-                return notify_fail("Äã±ØĞë¼¤·¢½ğ¸Õ²»»µÌå£¬²ÅÄÜÊ¹ÓÃ·ğ¹âÆÕÕÕ£¡\n");
+                return notify_fail("ä½ å¿…é ˆæ¿€ç™¼é‡‘å‰›ä¸å£é«”ï¼Œæ‰èƒ½ä½¿ç”¨ä½›å…‰æ™®ç…§ï¼\n");
 
         if( query_temp("buddha", me) )
-                return notify_fail("ÄãÒÑ¾­ÔÚÔËÆğ·ğ¹âÆÕÕÕÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“åœ¨é‹èµ·ä½›å…‰æ™®ç…§äº†ã€‚\n");
 
         if( query("jingli", me)<2000 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ã€‚\n");
 
         if( query("neili", me)<5000 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ã€‚\n");
 
         addn("neili", -1000, me);
         me->receive_damage("qi", 0);
 
-        message_combatd(HIY "Ö»Ìı$N" HIY "¸ßºô·ğºÅ£¬ÔËÆğ·ğ¹âÆÕÕÕ£¬ö®ÄÇ¼äÈ«Éí¾¹ÓÌÈç¶Æ½ğÒ»°ã£¬·¢³ö²Ó²Ó½ğ¹â¡£\n" NOR, me);
+        message_combatd(HIY "åªè½$N" HIY "é«˜å‘¼ä½›è™Ÿï¼Œé‹èµ·ä½›å…‰æ™®ç…§ï¼Œéœé‚£é–“å…¨èº«ç«ŸçŒ¶å¦‚éé‡‘ä¸€èˆ¬ï¼Œç™¼å‡ºç‡¦ç‡¦é‡‘å…‰ã€‚\n" NOR, me);
 
         addn_temp("apply/avoid_busy", 90, me);
         addn_temp("apply/avoid_weak", 90, me);
@@ -69,6 +69,6 @@ void remove_effect(object me)
                 addn_temp("apply/avoid_weak", -90, me);
                 addn_temp("apply/reduce_damage", -90, me);
                 delete_temp("buddha", me);
-                tell_object(me, "ÄãÔËĞĞÍê±Ï£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï£¬·ğ¹âÏûÊ§¡£\n");
+                tell_object(me, "ä½ é‹è¡Œå®Œç•¢ï¼Œå°‡å…§åŠ›æ”¶å›ä¸¹ç”°ï¼Œä½›å…‰æ¶ˆå¤±ã€‚\n");
         }
 }

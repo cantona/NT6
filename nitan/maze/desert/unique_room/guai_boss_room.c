@@ -3,9 +3,9 @@ inherit ROOM;
 
 void create()
 {
-        set("short",HIC"ÔôµÁÎÑµã"NOR);
+        set("short",HIC"è³Šç›œçª©é»"NOR);
         set("long",@LONG
-ºÃ¶àÔôµÁ°¡£¡
+å¥½å¤šè³Šç›œå•Šï¼
 LONG);
 
         set("maze", 1);

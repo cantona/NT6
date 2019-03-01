@@ -1,5 +1,5 @@
 
-// Ãæ¾ß£ºÎªÒş²ØÉí·İËùÅå´ø
+// é¢å…·ï¼šç‚ºéš±è—èº«ä»½æ‰€ä½©å¸¶
 
 #include <armor.h>
 #include <ansi.h>
@@ -9,27 +9,27 @@ inherit MYMASK;
 void create()
 {
         string *sname = ({
-                "ÌìÉ·¹ÂĞÇ",
-                "ÎŞÃû¹ÂĞÇ",
-                "ÙíÊÀ¹ÂĞÇ",
-                "ÁùµÀ¹ÂĞÇ",
-                "ÌìÃü¹ÂĞÇ",
-                "Ò¹Ó°¹ÂĞÇ",                
+                "å¤©ç…å­¤æ˜Ÿ",
+                "ç„¡åå­¤æ˜Ÿ",
+                "å¤™ä¸–å­¤æ˜Ÿ",
+                "å…­é“å­¤æ˜Ÿ",
+                "å¤©å‘½å­¤æ˜Ÿ",
+                "å¤œå½±å­¤æ˜Ÿ",                
         });
 
-        set_name(HIW "¹ÂĞÇÃæ¾ß" NOR, ({ "guxing mianju", "guxing", "mianju" }) );
+        set_name(HIW "å­¤æ˜Ÿé¢å…·" NOR, ({ "guxing mianju", "guxing", "mianju" }) );
         set_weight(100);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
                 set("material", "tian jing");
-                set("unit", "Ö»");
-                set("long", HIW "ÕâÊÇÒ»Ö»Ãæ¾ß£¬Ãæ¾ßÉÏ»æ×ÅÒ»¿ÅÆæÌØµÄĞÇĞÎÍ¼°¸¡£´÷ÉÏºó±ãÃ»ÈËÖªµÀÄãµÄÕæÊµÉí·İÁË¡£\n" NOR);
+                set("unit", "åª");
+                set("long", HIW "é€™æ˜¯ä¸€åªé¢å…·ï¼Œé¢å…·ä¸Šç¹ªè‘—ä¸€é¡†å¥‡ç‰¹çš„æ˜Ÿå½¢åœ–æ¡ˆã€‚æˆ´ä¸Šå¾Œä¾¿æ²’äººçŸ¥é“ä½ çš„çœŸå¯¦èº«ä»½äº†ã€‚\n" NOR);
                 set("value", 1000000);
                 /*
                 set("armor_prop/mask_name", sname[random(sizeof(sname))]);
                 set("armor_prop/mask_id",  ({ "masker guxing", "masker", "guxing"}) );
-                set("armor_prop/mask_long", "´ËÈËÅå´ø×Å¹ÂĞÇÃæ¾ß£¬ÄÑÒÔ¿´³öÆäÕæÊµÉí·İ¡£\n");
+                set("armor_prop/mask_long", "æ­¤äººä½©å¸¶è‘—å­¤æ˜Ÿé¢å…·ï¼Œé›£ä»¥çœ‹å‡ºå…¶çœŸå¯¦èº«ä»½ã€‚\n");
                 set("armor_prop/mask_flag", 1);
                 */
         }
@@ -47,7 +47,7 @@ int do_exit()
 {
         if (this_player()->query_temp("apply/mask_flag"))
         {
-                return notify_fail("ÇëÈ¡ÏÂÃæ¾ßºóÔÙ½øĞĞ¸Ã²Ù×÷¡£\n");
+                return notify_fail("è«‹å–ä¸‹é¢å…·å¾Œå†é€²è¡Œè©²æ“ä½œã€‚\n");
         }
 }
 

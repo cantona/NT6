@@ -12,18 +12,18 @@ int exert(object me, object target)
 
         if( query("neili", me)<600
         ||  (int)me->query_skill("bibo-shengong", 1) < 50)
-                return notify_fail("Äã¹Ä×ãÕæÆø¡¸ß÷¡¹µÄ½ĞÁËÒ»Éù, ½á¹ûÏÅ×ßÁË¼¸Ö»ÀÏÊó¡£\n");
+                return notify_fail("ä½ é¼“è¶³çœŸæ°£ã€Œå–µã€çš„å«äº†ä¸€è², çµæœåš‡èµ°äº†å¹¾åªè€é¼ ã€‚\n");
                 
         skill = me->query_skill("force", 1) / 4 + me->query_skill("bibo-shengong", 1);
         addn("neili", -150, me);
         me->receive_damage("qi", 10);
         
         if( query("no_fight", environment(me)) )
-                return notify_fail("ÕâÀï²»ÄÜ¹¥»÷±ğÈË! \n");
+                return notify_fail("é€™è£¡ä¸èƒ½æ”»æ“Šåˆ¥äºº! \n");
 
         me->start_busy(5);
-        message_combatd(HIY "$N" HIY "ÆøÄıµ¤Ìï£¬ÔË¼¯È«ÉíÄÚÁ¦Ò÷³ö" 
-                        "Ò»Çú¡¸±Ìº£Éú³±¡¹Ô¶Ô¶µÄ´«ÁË¿ªÈ¥£¬¼¤µ´²»Ö¹£¡\n" NOR, me); 
+        message_combatd(HIY "$N" HIY "æ°£å‡ä¸¹ç”°ï¼Œé‹é›†å…¨èº«å…§åŠ›åŸå‡º" 
+                        "ä¸€æ›²ã€Œç¢§æµ·ç”Ÿæ½®ã€é é çš„å‚³äº†é–‹å»ï¼Œæ¿€ç›ªä¸æ­¢ï¼\n" NOR, me); 
         
         ob = all_inventory(environment(me));
         for (i = 0; i < sizeof(ob); i++) 
@@ -50,8 +50,8 @@ int exert(object me, object target)
                         ob[i]->receive_damage("jing", damage * 2, me );
                         if( query("neili", ob[i])<skill*2 )
                                 ob[i]->receive_wound("jing", damage, me);
-                        tell_object(ob[i], "ÄãÖ»¾õµÃÑÛÇ°Ò»Æ¬Ä£ºı£¬ëüëÊ" 
-                                    "ÖĞËÆºõÎŞÊıÅÅÉ½¾ŞÀËÏòÄã´òÀ´......\n"); 
+                        tell_object(ob[i], "ä½ åªè¦ºå¾—çœ¼å‰ä¸€ç‰‡æ¨¡ç³Šï¼Œæœ¦æœ§" 
+                                    "ä¸­ä¼¼ä¹ç„¡æ•¸æ’å±±å·¨æµªå‘ä½ æ‰“ä¾†......\n"); 
                 }
         }
         return 1;

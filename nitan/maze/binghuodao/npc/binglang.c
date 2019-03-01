@@ -3,8 +3,8 @@ inherit __DIR__"bhd_npc.c";
 
 void create()
 {
-        set_name(HIW "冰狼" NOR, ({ "bing lang", "bing", "lang" }));
-        set("long", HIW "浑身被冰雪包裹的巨狼，在冰峰谷的进化了数万年，似乎已经拥有无穷的力量。\n" NOR);
+        set_name(HIW "鍐扮嫾" NOR, ({ "bing lang", "bing", "lang" }));
+        set("long", HIW "娓捐韩琚啺闆寘瑁圭殑宸ㄧ嫾锛屽湪鍐板嘲璋风殑閫插寲浜嗘暩钀勾锛屼技涔庡凡缍撴搧鏈夌劇绐殑鍔涢噺銆俓n" NOR);
 
         set("age", 99999);
         set("str",121);
@@ -42,7 +42,7 @@ void create()
 
 void init()
 {
-        // 随机攻击玩家
+        // 闅ㄦ鏀绘搳鐜╁
         if (userp(this_player()) && random(2) == 1)
         {
                 kill_ob(this_player());

@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "С��");
+        set("short", "小巷");
         set("long", @LONG
-����һ�������ֺڵ����ӣ�ɢ����һ������ˮ��ζ����ʳ�﷢ù
-��ζ���������ֳ���
+這是一條又深又黑的巷子，散發出一陣陣污水的味道和食物發霉
+的味道，又臟又臭。
 LONG );
         set("outdoors", "jingzhou");
         set("exits", ([

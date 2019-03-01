@@ -5,11 +5,11 @@ int is_chat_room() { return 1; }
 
 void create()
 {
-        set("short", "ÎäÃí");
+        set("short", "æ­¦å»Ÿ");
         set("long", @LONG
-ÕâÀïÊÇÑïÖÝÔÀÍõÃíµÄÕýµî£¬ÄÚÓÐÔÀ·ÉÏñ£¬ÏñÉÏ·½Ðü¹ÒÔÀ·ÉÊÖÊé¡º
-»¹ÎÒºÓÉ½¡»µÄºáØÒ¡£µîÁ½²à±ÚÉÏÇ¶×Å¡º¾«ÖÒ±¨¹ú¡»ËÄ¸ö´ó×Ö¡£ÎäÈËµ½
-´Ë£¬¶¼·ÅÏÂÎäÆ÷£¬±Ï¹§±Ï¾´µØÉÏÏãÀñ°Ý¡£ÅÔ±ßËÆºõÓÐÒ»µÀ²àÃÅ¡£
+é€™è£¡æ˜¯æšå·žå²³çŽ‹å»Ÿçš„æ­£æ®¿ï¼Œå…§æœ‰å²³é£›åƒï¼Œåƒä¸Šæ–¹æ‡¸æŽ›å²³é£›æ‰‹æ›¸ã€Ž
+é‚„æˆ‘æ²³å±±ã€çš„æ©«åŒ¾ã€‚æ®¿å…©å´å£ä¸ŠåµŒè‘—ã€Žç²¾å¿ å ±åœ‹ã€å››å€‹å¤§å­—ã€‚æ­¦äººåˆ°
+æ­¤ï¼Œéƒ½æ”¾ä¸‹æ­¦å™¨ï¼Œç•¢æ­ç•¢æ•¬åœ°ä¸Šé¦™ç¦®æ‹œã€‚æ—é‚Šä¼¼ä¹Žæœ‰ä¸€é“å´é–€ã€‚
 LONG );
 	set("no_fight", 1);
 	set("no_steal", 1);
@@ -26,7 +26,7 @@ LONG );
 		"up"   : __DIR__"wumiao2",
                 "northwest": "/d/wizard/guest_room",     
 	]));
-        create_door("northwest", "ÖñÃÅ", "southeast", DOOR_CLOSED);
+        create_door("northwest", "ç«¹é–€", "southeast", DOOR_CLOSED);
 	set("coor/x", -10);
 	set("coor/y", 20);
 	set("coor/z", 0);

@@ -4,9 +4,9 @@ inherit NPC;
 
 void create()
 {
-        set_name("»¤Ôº", ({ "hu yuan", "yuan", }));
+        set_name("è­·é™¢", ({ "hu yuan", "yuan", }));
 
-        set("gender", "ÄÐÐÔ");
+        set("gender", "ç”·æ€§");
         set("attitude", "friendly");
 
         set("age", 30);

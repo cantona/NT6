@@ -5,18 +5,18 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIW "¡¶°Ù¼ÒĞÕ¡·" NOR, ({ "baijia xing" }) );
+        set_name(HIW "ã€Šç™¾å®¶å§“ã€‹" NOR, ({ "baijia xing" }) );
         set_weight(100);
 
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "ÕâÊÇÒ»±¾¡¶°Ù¼ÒĞÕ¡·²á×Ó£¬ÀïÃæ¼ÇÔØ×Å¸÷ÖÖĞÕÊÏ¼°ÆğÔ´¡£\n"
-                                                "Ê¹ÓÃºó¿ÉĞŞ¸ÄÄúµÄĞÕÃû£¬Ö¸Áî£ºrename ĞÕ Ãû ¼´¿É¡£\n" 
-                                                                "ÏÂÏß¶ªÊ§:·ñ\n" NOR);
+                set("long", HIW "é€™æ˜¯ä¸€æœ¬ã€Šç™¾å®¶å§“ã€‹å†Šå­ï¼Œè£¡é¢è¨˜è¼‰è‘—å„ç¨®å§“æ°åŠèµ·æºã€‚\n"
+                                                "ä½¿ç”¨å¾Œå¯ä¿®æ”¹æ‚¨çš„å§“åï¼ŒæŒ‡ä»¤ï¼šrename å§“ å å³å¯ã€‚\n" 
+                                                                "ä¸‹ç·šä¸Ÿå¤±:å¦\n" NOR);
                 set("value", 1);
                 set("no_sell", 1);
-                        set("unit", "±¾");
+                        set("unit", "æœ¬");
         }
 
         setup();
@@ -38,10 +38,10 @@ int do_rename(string arg)
 
                 me = this_player();
 
-                if (! arg)return notify_fail("Ö¸Áî¸ñÊ½: rename ĞÕ Ãû\n");
+                if (! arg)return notify_fail("æŒ‡ä»¤æ ¼å¼: rename å§“ å\n");
 
                 if (sscanf(arg, "%s %s", surname, purename) != 2)
-                                return notify_fail("Ö¸Áî¸ñÊ½: rename ĞÕ Ãû\n");
+                                return notify_fail("æŒ‡ä»¤æ ¼å¼: rename å§“ å\n");
 
                 new_name = surname + purename;
 
@@ -56,7 +56,7 @@ int do_rename(string arg)
                 }
                 else
                 {        
-                        write(HIG "ĞŞ¸ÄĞÕÃû³É¹¦!\n" NOR);
+                        write(HIG "ä¿®æ”¹å§“åæˆåŠŸ!\n" NOR);
                         me->set("surname", surname);
                         me->set("purename", purename);
                 }

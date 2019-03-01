@@ -1,4 +1,4 @@
-// gui.c ¹í÷ÈÉí·¨
+// gui.c é¬¼é­…èº«æ³•
 
 #include <ansi.h>
 
@@ -12,19 +12,19 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail("¹í÷ÈÉí·¨Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("é¬¼é­…èº«æ³•åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if (target->is_busy())
-                return notify_fail(target->name() + "Ä¿Ç°Õı×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É£¡\n");
+                return notify_fail(target->name() + "ç›®å‰æ­£è‡ªé¡§ä¸æš‡ï¼Œæ”¾è†½æ”»æ“Šå§ï¼\n");
                 
         if ((int)me->query_skill("kuihua-mogong", 1) < 100)
-                return notify_fail("ÄãµÄ¿û»¨Ä§¹¦²»¹»Éîºñ£¬²»»áÊ¹ÓÃ¹í÷ÈÉí·¨¡£\n");
+                return notify_fail("ä½ çš„è‘µèŠ±é­”åŠŸä¸å¤ æ·±åšï¼Œä¸æœƒä½¿ç”¨é¬¼é­…èº«æ³•ã€‚\n");
 
        if (! living(target))
-              return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+              return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIR "$N" HIR "Éí×Óºö½øºöÍË£¬ÉíĞÎ¹îÃØÒì³££¬ÔÚ$n"
-              HIR "Éí±ßÆ®ºö²»¶¨¡£\n" NOR;
+        msg = HIR "$N" HIR "èº«å­å¿½é€²å¿½é€€ï¼Œèº«å½¢è©­ç§˜ç•°å¸¸ï¼Œåœ¨$n"
+              HIR "èº«é‚Šé£„å¿½ä¸å®šã€‚\n" NOR;
 
         ap = me->query_skill("kuihua-mogong", 1) * 3 / 2 +
              me->query_skill("martial-cognize", 1);
@@ -33,12 +33,12 @@ int perform(object me, object target)
 
         if (ap + random(ap) > dp)
         {
-                msg += HIR "½á¹û$p" HIR "Ö»ÄÜ½ôÊØÃÅ»§£¬²»¸ÒÍı×Ô³ö»÷£¡\n" NOR;
+                msg += HIR "çµæœ$p" HIR "åªèƒ½ç·Šå®ˆé–€æˆ¶ï¼Œä¸æ•¢å¦„è‡ªå‡ºæ“Šï¼\n" NOR;
                 target->start_busy(ap / 45 + 2);
         } else
         {
-                msg += CYN "¿ÉÊÇ$p" CYN "¿´ÆÆÁË$P" CYN "µÄÉí·¨£¬²¢Ã»"
-                       "ÓĞÊÜµ½ÈÎºÎÓ°Ïì¡£\n" NOR;
+                msg += CYN "å¯æ˜¯$p" CYN "çœ‹ç ´äº†$P" CYN "çš„èº«æ³•ï¼Œä¸¦æ²’"
+                       "æœ‰å—åˆ°ä»»ä½•å½±éŸ¿ã€‚\n" NOR;
                 me->start_busy(1);
         }
         message_combatd(msg, me, target);

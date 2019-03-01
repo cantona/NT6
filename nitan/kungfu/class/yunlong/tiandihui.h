@@ -11,20 +11,20 @@ int do_join(string arg)
         ob = this_player () ;
 
         if (! arg || arg != "tiandihui")
-                return notify_fail("ÄãÒª¼ÓÈëÊ²Ã´×éÖ¯£¿\n"); 
+                return notify_fail("ä½ è¦åŠ å…¥ä»€éº¼çµ„ç¹”ï¼Ÿ\n"); 
 
         if( query("weiwang", ob)<20 )
         {
-                message_vision(HIR "$N" HIR "¶Ô$n" HIR "µÀ£ºÏëÈë»á£¿ÄãµÄ½­ºş"
-                               "ÍşÍûÌ«µÍ£¬ÌìµØ»á¶¼ÊÇ¸Ò×÷¸ÒÎªµÄºÃºº£¡\n" NOR,
+                message_vision(HIR "$N" HIR "å°$n" HIR "é“ï¼šæƒ³å…¥æœƒï¼Ÿä½ çš„æ±Ÿæ¹–"
+                               "å¨æœ›å¤ªä½ï¼Œå¤©åœ°æœƒéƒ½æ˜¯æ•¢ä½œæ•¢ç‚ºçš„å¥½æ¼¢ï¼\n" NOR,
                                me, ob);
                 return 1;
         }
 
         if( query("shen", ob)<0 )
         {
-                message_vision(HIR "$N" HIR "¶Ô$n" HIR "´óÅ­µÀ£º»¹ÏëÈë»á£¿"
-                               "Ò»¿´Äã¾ÍÊÇ¸ö´óºº¼é! \n"NOR, me, ob);
+                message_vision(HIR "$N" HIR "å°$n" HIR "å¤§æ€’é“ï¼šé‚„æƒ³å…¥æœƒï¼Ÿ"
+                               "ä¸€çœ‹ä½ å°±æ˜¯å€‹å¤§æ¼¢å§¦! \n"NOR, me, ob);
                 set_leader(this_player());
                 remove_call_out("kill_ob");
                 me->kill_ob(ob); 
@@ -32,48 +32,48 @@ int do_join(string arg)
         }
 
         if( query("party", ob) && 
-            query("party/party_name", ob) != "ÌìµØ»á" )
+            query("party/party_name", ob) != "å¤©åœ°æœƒ" )
         {
-                message_vision("$NÒ¡Ò¡Í·£¬¶Ô$nËµµÀ£ºÄãÒÑ¾­¼ÓÈëÆäËû°ï"
-                               "»áÁË£¬²»ÄÜÔÙÈëÎÒÌìµØ»á¡£\n", me, ob);
+                message_vision("$Næ–æ–é ­ï¼Œå°$nèªªé“ï¼šä½ å·²ç¶“åŠ å…¥å…¶ä»–å¹«"
+                               "æœƒäº†ï¼Œä¸èƒ½å†å…¥æˆ‘å¤©åœ°æœƒã€‚\n", me, ob);
                 return 1;
         }
 
-        if( query("party/party_name", ob) == "ÌìµØ»á" )
+        if( query("party/party_name", ob) == "å¤©åœ°æœƒ" )
         {
-                message_vision("$NÒ¡Ò¡Í·£¬¶Ô$nËµµÀ£ºÄãÒÑ¾­ÊÇÎÒ"
-                               "ÌìµØ»áµÄÈËÁË¡£\n",me,ob);
+                message_vision("$Næ–æ–é ­ï¼Œå°$nèªªé“ï¼šä½ å·²ç¶“æ˜¯æˆ‘"
+                               "å¤©åœ°æœƒçš„äººäº†ã€‚\n",me,ob);
                 return 1;
         }
 
         switch (random(10))
         {
-                case 0 : tang=HIG"ÇàÄ¾ÌÃ"; break;
-                case 1 : tang=HIG"³à»ğÌÃ"; break;  //¹ÅÖÁÖĞ
-                case 2 : tang=HIW"Î÷½ğÌÃ"; break;
-                case 3 : tang=BLU"ĞşË®ÌÃ"; break;
-                case 4 : tang=YEL"»ÆÍÁÌÃ"; break;
-                case 5 : tang=HIG"Á«»¨ÌÃ"; break;  //²ÌµÂÖÒ
-                case 6 : tang=HIG"ºéË³ÌÃ"; break;  //·½´óºé
-                case 7 : tang=HIW"¼ÒºóÌÃ"; break;  //Âí³¬ĞË
-                case 8 : tang=BLU"²ÎÌ«ÌÃ"; break;
-                default: tang=YEL"ºê»¯ÌÃ"; break;  //Àî
+                case 0 : tang=HIG"é’æœ¨å ‚"; break;
+                case 1 : tang=HIG"èµ¤ç«å ‚"; break;  //å¤è‡³ä¸­
+                case 2 : tang=HIW"è¥¿é‡‘å ‚"; break;
+                case 3 : tang=BLU"ç„æ°´å ‚"; break;
+                case 4 : tang=YEL"é»ƒåœŸå ‚"; break;
+                case 5 : tang=HIG"è“®èŠ±å ‚"; break;  //è”¡å¾·å¿ 
+                case 6 : tang=HIG"æ´ªé †å ‚"; break;  //æ–¹å¤§æ´ª
+                case 7 : tang=HIW"å®¶å¾Œå ‚"; break;  //é¦¬è¶…èˆˆ
+                case 8 : tang=BLU"åƒå¤ªå ‚"; break;
+                default: tang=YEL"å®åŒ–å ‚"; break;  //æ
         }
         party = allocate_mapping(5);
-        party["party_name"] = "ÌìµØ»á";
-        party["rank"] = tang + NOR"»áÖÚ";
+        party["party_name"] = "å¤©åœ°æœƒ";
+        party["rank"] = tang + NOR"æœƒçœ¾";
         party["level"] = 1;
         party["tasks"] = 0;
         party["enter_time"] = time();
         set("party", party, ob);
 
         command("smile");
-        message_vision("$N¶Ô$nËµµÀ£ºÄã¾ÍÔİÊ±ÔÚ" + tang + NOR +
-                       "Ğ§Á¦°É£¡\n", me, ob);
+        message_vision("$Nå°$nèªªé“ï¼šä½ å°±æš«æ™‚åœ¨" + tang + NOR +
+                       "æ•ˆåŠ›å§ï¼\n", me, ob);
         if( query("weiwang", ob)<50 )
         {
                 set("weiwang", 50, ob);
-                message_vision(HIC "$NµÄ½­ºşÍşÍûÌá¸ßÁË£¡\n" NOR, this_player());
+                message_vision(HIC "$Nçš„æ±Ÿæ¹–å¨æœ›æé«˜äº†ï¼\n" NOR, this_player());
                 return 1;        
         }
         return 1;

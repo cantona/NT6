@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "¶«³Ç");
+        set("short", "æ±åŸŽ");
         set("long", @LONG
-ÕâÀïÊÇÓÃ»ÆÍÁÆÌ¾ÍµÄ½ÖµÀ£¬½ÖÉÏµÄÐÐÈË²»¶à£¬¿´ÆðÀ´ºÜÀäÇå¡£Å¼¶ûÓÐ¼¸
-¸öÉí×ÅÒìÓò·þÊÎµÄÐÐÈË×ß¹ý£¬¿´ÆðÀ´ÊÇÂú×å£¬ÏÊ×æµÄ¾ÓÃñ¡£Î÷Ãæ´«À´àÐÔÓµÄ
-½ÐÂôÉù¡£ÄÏÃæÊÇÒ»ÅÅ»ÆÄàÀÝ³ÉµÄÍÁ·¿£¬ÀïÃæÓÐæÒÐ¦µÄÉùÒô¡£
+é€™è£¡æ˜¯ç”¨é»ƒåœŸèˆ–å°±çš„è¡—é“ï¼Œè¡—ä¸Šçš„è¡Œäººä¸å¤šï¼Œçœ‹èµ·ä¾†å¾ˆå†·æ¸…ã€‚å¶çˆ¾æœ‰å¹¾
+å€‹èº«è‘—ç•°åŸŸæœé£¾çš„è¡Œäººèµ°éŽï¼Œçœ‹èµ·ä¾†æ˜¯æ»¿æ—ï¼Œé®®ç¥–çš„å±…æ°‘ã€‚è¥¿é¢å‚³ä¾†å˜ˆé›œçš„
+å«è³£è²ã€‚å—é¢æ˜¯ä¸€æŽ’é»ƒæ³¥å£˜æˆçš„åœŸæˆ¿ï¼Œè£¡é¢æœ‰å¬‰ç¬‘çš„è²éŸ³ã€‚
 LONG );
         set("exits", ([
                 "west"      : __DIR__"jishi",
@@ -31,7 +31,7 @@ int valid_leave(object me, string dir)
         {
                 me->receive_damage("qi",30);
                 me->receive_wound("qi",30);
-        tell_object(me,"Ò»¹É´Ì¹ÇµÄº®·ç´µ¹ý£¬ÄãÖ»¾õµÃ»ëÉíµÄÑªÒº¶¼¿ì±»¶³×¡ÁË£¡\n");
+        tell_object(me,"ä¸€è‚¡åˆºéª¨çš„å¯’é¢¨å¹éŽï¼Œä½ åªè¦ºå¾—æ¸¾èº«çš„è¡€æ¶²éƒ½å¿«è¢«å‡ä½äº†ï¼\n");
         }
         return 1;
 }

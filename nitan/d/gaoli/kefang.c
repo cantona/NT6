@@ -1,14 +1,14 @@
 // /d/gaoli/jefang
-// Room in ����
+// Room in 高麗
 inherit ROOM;
 
 void create()
 {
-        set("short", "�ͷ�");
+        set("short", "客房");
         set("long", @LONG
-����һ��ܴ�Ŀͷ�������ʮ�ֻ�������ǽ���˼��Ŵ󴲣�������
-���Ŵ���˯�����㣬�����Ӷ��Ǻ����Ĵ������������Ŵ��ǿյģ���
-������ŵ����˹�ȥ��
+這是一間很大的客房，陳設十分華麗。靠牆放了幾張大床，客人們
+蓋著大被子睡的正香，滿屋子都是呼呼的打酣聲。西邊有張床是空的，你
+躡手躡腳地走了過去。
 LONG
         );
 

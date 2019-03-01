@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��ľ�����");
+        set("short", "巨木旗大門");
         set("long", @LONG
-���������̾�ľ��Ĵ��ţ�ׯ�Ϲ��ӣ���ǰ�Բ��������������졣
-���̵Ĵ��ų����ţ��ƺ��������к����������������ȥ��ֻ��һƬ
-�Դ�����֡�
+這裡是明教巨木旗的大門，莊嚴古樸，門前對插四面鑲綠遊龍旗。
+碧綠的大門敞開著，似乎看不出有何設防。從門裡望進去，只有一片
+蒼翠的樹林。
 LONG );
         set("exits", ([
                 "enter"  : __DIR__"jmqshulin1",

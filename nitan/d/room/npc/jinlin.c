@@ -6,25 +6,25 @@ inherit NPC;
 
 void create()
 {
-        set_name("½ğÁÙ", ({ "jinlin", "jin" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("é‡‘è‡¨", ({ "jinlin", "jin" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 18);
-        set("long", "ÕâÊÇÒ»Î»´¹÷ØÍ¯×Ó£¬ÊÇÂ³°àÊÖÏÂÎåĞĞÍ¯×ÓÖ®Ò»¡£\n");
-        set("title", HIC "ÄÏ·½±û¶¡" NOR CYN "¡ò" HIR "»ğ" NOR);
-        set("nickname", HIY "ÎåĞĞÍ¯×Ó" NOR);
+        set("long", "é€™æ˜¯ä¸€ä½å‚é««ç«¥å­ï¼Œæ˜¯é­¯ç­æ‰‹ä¸‹äº”è¡Œç«¥å­ä¹‹ä¸€ã€‚\n");
+        set("title", HIC "å—æ–¹ä¸™ä¸" NOR CYN "â—" HIR "ç«" NOR);
+        set("nickname", HIY "äº”è¡Œç«¥å­" NOR);
         set("attitude", "friendly");
         setup();
 }
 
 int accept_object(object who, object ob)
 {
-        command("say ±ß¶ùÈ¥£¡¶«Î÷²»Òª¸øÎÒ¡£");
+        command("say é‚Šå…’å»ï¼æ±è¥¿ä¸è¦çµ¦æˆ‘ã€‚");
         return 0;
 }
 
 int accept_ask()
 {
-        message_vision("$N°ë´ğ²»ÀíµÄËµ£ºÓĞÉ¶ÊÂÎÊÎÒÊ¦¸µÈ¥£¬±ğ·³ÎÒ¡£\n",
+        message_vision("$NåŠç­”ä¸ç†çš„èªªï¼šæœ‰å•¥äº‹å•æˆ‘å¸«å‚…å»ï¼Œåˆ¥ç…©æˆ‘ã€‚\n",
                        this_object());
         return 1;
 }

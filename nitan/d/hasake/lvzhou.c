@@ -1,4 +1,4 @@
-// блжч
+// Г╤═Ф╢╡
 
 #include <ansi.h>
 
@@ -6,9 +6,9 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "╩ь╫╝блжч" NOR);
+        set("short", "Е⌡·Г√├Г╤═Ф╢╡" NOR);
         set("long", @LONG
-тз╦Й╠з╣д╬║м╥ЁЖожакр╩╦Жблжч║ёуБюОсп©зк╝╬╝ё╛©ийгря╬╜╦и╨так║ё
+Е°╗Ф┬┬Её│Г └Г⌡║И═╜Е┤╨Г▐╬Д╨├Д╦─Е─▀Г╤═Ф╢╡Ц─┌И─≥Хё║Ф°┴Е▐ёФ╟╢Д╨∙О╪▄Е▐╞Ф≤╞Е╥╡Г╤⌠Е╧╧Ф╤╦Д╨├Ц─┌
 LONG);
         set("no_sleep_room", 1);
         set("valid_startroom", 1);
@@ -38,19 +38,19 @@ void init()
        switch(random(4)) {
        case 0 :
                set_temp("gc1_n", 1, me);
-               tell_object(me, HIC "м╩х╩╢сйж╬НиоотЁЖр╩лУж╦оР╠╠цФ╣до╦оъю╢║ё\n" NOR);          
+               tell_object(me, HIC "Г╙│Г└╤Е╬·Ф┴▀Г╣╧Д╦┼И║╞Е┤╨Д╦─Ф╒²Ф▄┤Е░▒Е▄≈И²╒Г └Г╢╟Г╥ Д╬├Ц─┌\n" NOR);          
                break;
        case 1 :
                set_temp("gc1_s", 1, me);
-               tell_object(me, HIC "м╩х╩╢сйж╬НиоотЁЖр╩лУж╦оРдоцФ╣до╦оъю╢║ё\n" NOR);
+               tell_object(me, HIC "Г╙│Г└╤Е╬·Ф┴▀Г╣╧Д╦┼И║╞Е┤╨Д╦─Ф╒²Ф▄┤Е░▒Е█≈И²╒Г └Г╢╟Г╥ Д╬├Ц─┌\n" NOR);
                break;
        case 2 :
                set_temp("gc1_e", 1, me);
-               tell_object(me, HIC "м╩х╩╢сйж╬НиоотЁЖр╩лУж╦оР╤╚цФ╣до╦оъю╢║ё\n" NOR);
+               tell_object(me, HIC "Г╙│Г└╤Е╬·Ф┴▀Г╣╧Д╦┼И║╞Е┤╨Д╦─Ф╒²Ф▄┤Е░▒Ф²╠И²╒Г └Г╢╟Г╥ Д╬├Ц─┌\n" NOR);
                break;
        case 3 :
                set_temp("gc1_w", 1, me);
-               tell_object(me, HIC "м╩х╩╢сйж╬НиоотЁЖр╩лУж╦оРнВцФ╣до╦оъю╢║ё\n" NOR);
+               tell_object(me, HIC "Г╙│Г└╤Е╬·Ф┴▀Г╣╧Д╦┼И║╞Е┤╨Д╦─Ф╒²Ф▄┤Е░▒Х╔©И²╒Г └Г╢╟Г╥ Д╬├Ц─┌\n" NOR);
                break;
        }
     }             

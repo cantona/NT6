@@ -3,13 +3,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIR "»ğ·ï»ËÖ®½î" NOR, ({ "phoenix vein", "vein" }));
+        set_name(HIR "ç«é³³å‡°ä¹‹ç­‹" NOR, ({ "phoenix vein", "vein" }));
         set_weight(4000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIR "Ò»¸ù»ğ·ï»ËµÄ½î£¬¾§Ó¨Í¸ÁÁ¡£\n" NOR);
-                set("unit", "¸ù");
+                set("long", HIR "ä¸€æ ¹ç«é³³å‡°çš„ç­‹ï¼Œæ™¶ç‘©é€äº®ã€‚\n" NOR);
+                set("unit", "æ ¹");
                 set("value", 500000);
         }
         setup();

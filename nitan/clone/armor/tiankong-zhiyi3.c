@@ -6,20 +6,20 @@ inherit SURCOAT;
 
 void create()
 {
-        set_name(HIW "Ìì¿ÕÖ®Òí" NOR, ({ "tiankong zhiyi3", "tiankong", "zhiyi3" }) );
+        set_name(HIW "å¤©ç©ºä¹‹ç¿¼" NOR, ({ "tiankong zhiyi3", "tiankong", "zhiyi3" }) );
         set_weight(2000);
-        set("long", HIW "ÕâÊÇÒ»¼ş°×É«µÄÅû·ç£¬ÉÏ»æÀ¶Ìì°×ÔÆ£¬Æ®ÒİÖ®¼«¡£\n" NOR);
+        set("long", HIW "é€™æ˜¯ä¸€ä»¶ç™½è‰²çš„æŠ«é¢¨ï¼Œä¸Šç¹ªè—å¤©ç™½é›²ï¼Œé£„é€¸ä¹‹æ¥µã€‚\n" NOR);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼ş");
+                set("unit", "ä»¶");
                 set("material", "steel");
                                 set("value", 3000000);
                 set("armor_prop/armor", 200);
                                 set("armor_prop/dex", 10);
                                 set("armor_prop/int", 3);
                                 set("armor_prop/dodge", 40);
-                                set("special/desc", HIR "ÌáÉıÓĞĞ§Çá¹¦40¼¶¡£");
+                                set("special/desc", HIR "æå‡æœ‰æ•ˆè¼•åŠŸ40ç´šã€‚");
                                 set("limit", ([ 
                                         "exp" : 18000000,
                                         "scborn" : 1,

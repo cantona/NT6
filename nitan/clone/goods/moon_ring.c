@@ -1,5 +1,5 @@
 // This program is a part of NT MudLIB
-// moon.c ÔÂÆÇ
+// moon.c æœˆé­„
 
 #include <ansi.h>
 
@@ -7,14 +7,14 @@ inherit TESSERA;
 
 void create()
 {
-        set_name(WHT "ÔÂÆÇ" NOR, ({ "moon soul", "moon" }) );
+        set_name(WHT "æœˆé­„" NOR, ({ "moon soul", "moon" }) );
         set_weight(1);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", WHT "Ì«ÒõÕæ»ğÄı¾Û¶ø³É£¬ÔÂ°×É«£¬ÄÜÉãĞÄ¶¨Éñ£¬°ÙĞ°²»ÇÖ¡£¡£\n" NOR);
+                set("long", WHT "å¤ªé™°çœŸç«å‡èšè€Œæˆï¼Œæœˆç™½è‰²ï¼Œèƒ½æ”å¿ƒå®šç¥ï¼Œç™¾é‚ªä¸ä¾µã€‚ã€‚\n" NOR);
                 set("value", 50000);
-                set("unit", "¿é");
+                set("unit", "å¡Š");
                 set("can_enchant", "armor");
                 set("auto_load", 1);
         }

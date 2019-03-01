@@ -9,12 +9,12 @@ inherit "/inherit/char/punisher";
 void create()
 {
         seteuid(getuid());
-        set_name("Ñô¶¥Ìì", ({ "yang dingtian", "yang", "dingtian" }));
+        set_name("é™½é ‚å¤©", ({ "yang dingtian", "yang", "dingtian" }));
         set("long", @LONG
-Ã÷½ÌÈıÊ®Èı´ú½ÌÖ÷£¬Ò»ÉíÎä¹¦·Ç³£ÁËµÃ¡£
+æ˜æ•™ä¸‰åä¸‰ä»£æ•™ä¸»ï¼Œä¸€èº«æ­¦åŠŸéå¸¸äº†å¾—ã€‚
 LONG );
-        set("title",HIG "Ã÷½Ì" HIM " ½ÌÖ÷" NOR);
-        set("gender", "ÄĞĞÔ");
+        set("title",HIG "æ˜æ•™" HIM " æ•™ä¸»" NOR);
+        set("gender", "ç”·æ€§");
         set("age", 20);
         set("no_get", 1);
         set("shen_type",1);
@@ -79,7 +79,7 @@ LONG );
         
         prepare_skill("cuff", "qishang-quan");
 
-        create_family("Ã÷½Ì", 33, "½ÌÖ÷");
+        create_family("æ˜æ•™", 33, "æ•™ä¸»");
 
 
         set("chat_chance_combat", 120); 

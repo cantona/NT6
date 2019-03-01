@@ -1,16 +1,16 @@
-// sanhuang.c  Èı»Æ±¦À°µ¤   by sinb
+// sanhuang.c  ä¸‰é»ƒå¯¶è‡˜ä¸¹   by sinb
 
 #include <ansi.h>
 #include "medicine.h"
 
 void create()
 {
-        set_name(HIY "Èı»Æ" HIR"±¦À°µ¤" NOR, ({"baola dan", "dan"}));
+        set_name(HIY "ä¸‰é»ƒ" HIR"å¯¶è‡˜ä¸¹" NOR, ({"baola dan", "dan"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»¿Å»Æ»ÆµÄÒ©Íè£¬ÊÇÎäµ±ÅÉµÄÁÆÉËÊ¥Ò©£¬Õä¹óÎŞ±È¡£\n");
-                set("base_unit", "¿Å");
+                set("long", "é€™æ˜¯ä¸€é¡†é»ƒé»ƒçš„è—¥ä¸¸ï¼Œæ˜¯æ­¦ç•¶æ´¾çš„ç™‚å‚·è–è—¥ï¼Œçè²´ç„¡æ¯”ã€‚\n");
+                set("base_unit", "é¡†");
                 set("base_value", 50000);
                 set("base_weight", 80);
                 set("only_do_effect", 1);
@@ -44,15 +44,15 @@ int do_effect(object me)
 
         if( time()-query_temp("last_eat/sanhuang", me)<120 )
         {
-                write("Äã¸Õ·şÓÃ¹ıÒ©£¬ĞèÒ©ĞÔ·¢»ÓÍêĞ§ÓÃÒÔºó²ÅÄÜ¼ÌĞø·şÓÃ¡£\n");
+                write("ä½ å‰›æœç”¨éè—¥ï¼Œéœ€è—¥æ€§ç™¼æ®å®Œæ•ˆç”¨ä»¥å¾Œæ‰èƒ½ç¹¼çºŒæœç”¨ã€‚\n");
                 return 1;
         }
 
         set_temp("last_eat/sanhuang", time(), me);
 
-        message_vision(YEL "$N" YEL "³ÔÏÂÒ»Á£" + name() +
-                       YEL "£¬Í·ÉÏ"MAG"×ÏÆø"YEL"ë³ëµÉıÆğ¡£\n", me);
-        tell_object(me, YEL "²»Ò»»á¶ùÄãÖ»¾õµÃ¾«Éñ±¥Âú£¬ÉñÆøÍê×ã£¬ÄÚÁ¦³äÅæÖ®¼«¡£\n" NOR);
+        message_vision(YEL "$N" YEL "åƒä¸‹ä¸€ç²’" + name() +
+                       YEL "ï¼Œé ­ä¸Š"MAG"ç´«æ°£"YEL"æ°¤æ°³å‡èµ·ã€‚\n", me);
+        tell_object(me, YEL "ä¸ä¸€æœƒå…’ä½ åªè¦ºå¾—ç²¾ç¥é£½æ»¿ï¼Œç¥æ°£å®Œè¶³ï¼Œå…§åŠ›å……æ²›ä¹‹æ¥µã€‚\n" NOR);
 
         my = me->query_entire_dbase();
         my["eff_jing"] = my["max_jing"];

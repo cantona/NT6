@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è©±ä¸–ç•Œï¹’è¥¿éŠè¨˜ï¹’ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // by mon@xyj 10/2/97
@@ -35,7 +35,7 @@ void incoming_request(mapping info)
      svcs=(mapping)DNS_MASTER->query_svc();
 
      msg=info["MSG"];
-     set("channel_id", "ÍøÂ·¶¯×÷¾«Áé");
+     set("channel_id", "ç¶²è·¯å‹•ä½œç²¾éˆ");
                 CHANNEL_D->do_channel(this_object(), lower_case(info["CHANNEL"]),
                   replace_string(msg, "$N", info["CNAME"]), 1);
 

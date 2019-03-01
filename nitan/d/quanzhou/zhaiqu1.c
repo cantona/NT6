@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "լ��");
+        set("short", "宅區");
         set("long", @LONG
-����Ȫ�ݾ�����������С���ݺᣬ��ͨ�˴һʽ��ʯ�����ݣ���
-����ǽ�������Գƣ�����������ɫ����ν�������У�С�����硣������
-��ϷԺ���ϱ�Ҳ��һ��Ƭլ����
+這是泉州居民區。區內小巷縱橫，四通八達。一式的石砌矮屋，紅
+頂青牆，方正對稱，極具閩南特色，可謂錯致落有，小巧玲瓏。西邊是
+間戲院，南邊也是一大片宅區。
 LONG );
         set("outdoors", "quanzhou");
         set("no_clean_up", 0);

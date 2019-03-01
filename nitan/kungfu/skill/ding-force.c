@@ -1,4 +1,4 @@
-// ding-force.c Ğ¡¶¡Æø¹¦
+// ding-force.c å°ä¸æ°£åŠŸ
 
 inherit FORCE;
 
@@ -16,14 +16,14 @@ int valid_enable(string usage) { return usage == "force"; }
 
 int valid_learn(object me)
 {
-        if( query("gender", me) == "ÎŞĞÔ" && me->query_skill("ding-force",1)>49 )
-                return notify_fail("¹«¹«ÎŞ¸ùÎŞĞÔ£¬Ğ¡¶¡Æø¹¦ÔÙÄÑ¸üÉÏÒ»²ãÂ¥¡£\n");
+        if( query("gender", me) == "ç„¡æ€§" && me->query_skill("ding-force",1)>49 )
+                return notify_fail("å…¬å…¬ç„¡æ ¹ç„¡æ€§ï¼Œå°ä¸æ°£åŠŸå†é›£æ›´ä¸Šä¸€å±¤æ¨“ã€‚\n");
         return 1;
 }
 
 int practice_skill(object me)
 {
-        return notify_fail("Ğ¡¶¡Æø¹¦Ö»ÄÜ¸úĞ¡¶¡Ñ§À´Ôö¼ÓÊìÁ·¶È¡£\n");
+        return notify_fail("å°ä¸æ°£åŠŸåªèƒ½è·Ÿå°ä¸å­¸ä¾†å¢åŠ ç†Ÿç·´åº¦ã€‚\n");
 }
 
 string exert_function_file(string func)

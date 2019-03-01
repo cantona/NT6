@@ -7,14 +7,14 @@ inherit ITEM;
 void create()
 {
         string *colors = ({ HIW, HIR, HIY, HIC, HIM, HIG });
-        set_name(colors[random(sizeof(colors))] + "ÌÇ¹û" NOR, ({ "sugar", "tang" }) );
+        set_name(colors[random(sizeof(colors))] + "ç³–æœ" NOR, ({ "sugar", "tang" }) );
         set_weight(10);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»¿ÅÌÇ£¬ÌğÌğµÄ¡£\n" NOR);
+                set("long", "é€™æ˜¯ä¸€é¡†ç³–ï¼Œç”œç”œçš„ã€‚\n" NOR);
                 set("value", 0);
-                set("unit", "¿Å");
+                set("unit", "é¡†");
                 set("only_do_effect", 1);
         }
         setup();
@@ -22,7 +22,7 @@ void create()
 
 int do_effect(object me)
 {
-        message_vision("$NÍÌÏÂÒ»¿Å$n£¬ÌòÁËÌò×ì½Ç£¬àÅ£¬ºÃÌğ°¡¡£\n",
+        message_vision("$Nåä¸‹ä¸€é¡†$nï¼Œèˆ”äº†èˆ”å˜´è§’ï¼Œå—¯ï¼Œå¥½ç”œå•Šã€‚\n",
                        me, this_object());
         destruct(this_object());
         return 1;

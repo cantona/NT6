@@ -1,5 +1,5 @@
 // Code of ShenZhou
-// xueteng.c ´óÑªÌÙ
+// xueteng.c å¤§è¡€ç±
 
 #include <ansi.h>
 
@@ -10,13 +10,13 @@ void init();
 
 void create()
 {
-        set_name( GRN "´óÑªÌÙ" NOR , ({"da xueteng", "xueteng"}));
+        set_name( GRN "å¤§è¡€ç±" NOR , ({"da xueteng", "xueteng"}));
         set_weight(100);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Ã");
-                set("long", "ÕâÊÇÒ»¿ÃÄÏÚ¯ÌØ²úµÄ´óÑªÌÙ£¬¿´ÆğÀ´ÊÇºÚºõºõµÄ¿İÄ¾£¬µ«ÓĞ²¹ÑªÕñÆøµÄÉñĞ§¡£\n");
+                set("unit", "æ£µ");
+                set("long", "é€™æ˜¯ä¸€æ£µå—è©˜ç‰¹ç”¢çš„å¤§è¡€ç±ï¼Œçœ‹èµ·ä¾†æ˜¯é»‘ä¹ä¹çš„æ¯æœ¨ï¼Œä½†æœ‰è£œè¡€æŒ¯æ°£çš„ç¥æ•ˆã€‚\n");
                 set("value", 10000);
                 set("no_sell", 1);
                 set("medicine", 1);
@@ -30,7 +30,7 @@ int cure_ob(object me)
                 addn("max_neili", -1, me);
                 set("neili", 0, me);
                 me->apply_condition("bonze_drug", 30);
-        message_vision(HIR "$N³ÔÏÂÒ»¿Å´óÑªÌÙ£¬Ö»¾õµÃ¸Î³¦´ç¶Ï£¬ÎåÔàÓûÁÑ£¬Ô­À´·şÊ³Ì«¶àÒ©Îï£¬Ò©Ğ§ÊÊµÃÆä·´£¡\n" NOR, this_player());
+        message_vision(HIR "$Nåƒä¸‹ä¸€é¡†å¤§è¡€ç±ï¼Œåªè¦ºå¾—è‚è…¸å¯¸æ–·ï¼Œäº”è‡Ÿæ¬²è£‚ï¼ŒåŸä¾†æœé£Ÿå¤ªå¤šè—¥ç‰©ï¼Œè—¥æ•ˆé©å¾—å…¶åï¼\n" NOR, this_player());
                 destruct(this_object());
         }
         
@@ -38,7 +38,7 @@ int cure_ob(object me)
         addn("max_neili", 1, me);
         set("neili",query("max_neili",  me), me);
         me->apply_condition("bonze_drug", me->query_condition("bonze_drug")+20);
-        message_vision(HIY "$N³ÔÏÂÒ»¿Ã´óÑªÌÙ£¬¶ÙÊ±ÑªÆø·­Ó¿ÑªÂöÅòÕÍ£¬ÆøÁ¦´ó³¤¡£\n" NOR, me);
+        message_vision(HIY "$Nåƒä¸‹ä¸€æ£µå¤§è¡€ç±ï¼Œé “æ™‚è¡€æ°£ç¿»æ¹§è¡€è„ˆè†¨è„¹ï¼Œæ°£åŠ›å¤§é•·ã€‚\n" NOR, me);
 
         destruct(this_object());
         return 1;

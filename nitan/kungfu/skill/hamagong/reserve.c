@@ -1,4 +1,4 @@
-// reserve.c ¸òó¡¹¦¾­Âöµ¹×ª
+// reserve.c è›¤èŸ†åŠŸç¶“è„ˆå€’è½‰
 
 #include <ansi.h>
 
@@ -13,17 +13,17 @@ int exert(object me, object target)
         string msg;
 
         if ((int)me->query_skill("hamagong", 1) < 80)
-                return notify_fail("ÄãµÄ¸òó¡¹¦²»¹»æµÊì£¬²»»á¾­Âöµ¹×ª¡£\n");
+                return notify_fail("ä½ çš„è›¤èŸ†åŠŸä¸å¤ å«»ç†Ÿï¼Œä¸æœƒç¶“è„ˆå€’è½‰ã€‚\n");
 
         if( query("neili", me)<200 )
-                return notify_fail("ÄãÏÖÔÚµÄÕæÆø²»¹»¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çš„çœŸæ°£ä¸å¤ ã€‚\n");
 
         if( query_temp("hmg_dzjm", me) )
-                return notify_fail("ÄãÒÑ¾­µ¹×ª¾­ÂöÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“å€’è½‰ç¶“è„ˆäº†ã€‚\n");
 
         skill = me->query_skill("hamagong", 1);
-        msg = HIB "$N" HIB "ºöµØË«ÊÖ³ÅµØµ¹Á¢£¬ÄæÔË¾­Âö£¬¶ÙÊ±"
-              "ÄÚÏ¢°µÉú£¬·ÀÓùÁ¦´óÔö¡£\n" NOR;
+        msg = HIB "$N" HIB "å¿½åœ°é›™æ‰‹æ’åœ°å€’ç«‹ï¼Œé€†é‹ç¶“è„ˆï¼Œé “æ™‚"
+              "å…§æ¯æš—ç”Ÿï¼Œé˜²å¾¡åŠ›å¤§å¢ã€‚\n" NOR;
         message_combatd(msg, me);
 
         addn_temp("apply/dodge", skill/2, me);
@@ -43,6 +43,6 @@ void remove_effect(object me, int amount)
         {
                 addn_temp("apply/dodge", -amount, me);
                 delete_temp("hmg_dzjm", me);
-                tell_object(me, "ÄãË«ÊÖÒ»³Å£¬Ò»Ô¾¶øÆğ£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï¡£\n");
+                tell_object(me, "ä½ é›™æ‰‹ä¸€æ’ï¼Œä¸€èºè€Œèµ·ï¼Œå°‡å…§åŠ›æ”¶å›ä¸¹ç”°ã€‚\n");
         }
 }

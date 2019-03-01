@@ -1,4 +1,4 @@
-// king-of-dragon.c µÛÍõÉñ¹¦
+// king-of-dragon.c å¸ç‹ç¥åŠŸ
 // Last Modified by winder on Mar. 10 2000
 
 #include <ansi.h>
@@ -10,22 +10,22 @@ int learn_bonus() { return 0; }
 int practice_bonus() { return 0; }
 int success() { return 10; }
 int power_point() { return 1; }
-string river_go_msg() {return HIW"$NÎ¢Î¢Ò»Ğ¦£¬ĞÅÖ¸ÕÙÀ´Ò»¶äÏéÔÆ¡£½ô½Ó×Å$N·ÉÉí¶øÉÏ£¬°×ÔÆÆ®Æ®£¬Íù¶Ô°¶¶øÈ¥¡£\n";}
-string river_come_msg() {return HIW"Ö»¼û$NÉí×Å»Æ½ğÕ½¼×£¬½ÅÌ¤ÆßÉ«ÏéÔÆ£¬ºá¶ÉË®Ãæ¶øÀ´¡£\n";}
+string river_go_msg() {return HIW"$Nå¾®å¾®ä¸€ç¬‘ï¼Œä¿¡æŒ‡å¬ä¾†ä¸€æœµç¥¥é›²ã€‚ç·Šæ¥è‘—$Né£›èº«è€Œä¸Šï¼Œç™½é›²é£„é£„ï¼Œå¾€å°å²¸è€Œå»ã€‚\n";}
+string river_come_msg() {return HIW"åªè¦‹$Nèº«è‘—é»ƒé‡‘æˆ°ç”²ï¼Œè…³è¸ä¸ƒè‰²ç¥¥é›²ï¼Œæ©«æ¸¡æ°´é¢è€Œä¾†ã€‚\n";}
 
 string *dodge_msg = ({
-        HIY "$n¶Ë×øÎ¢Ğ¦£¬ºö¶øÁ³ÏÖ×¯ÑÏÖ®É«£¬$NÁ¢¿ÌÙéÙëÔÚµØ£¬ò¯³ÏÄ¤°İ¡£\n" NOR ,
-        HIY "$n¾ÙÊÖÇá°Ú£¬$NÁ¢¿ÌÍ·ÔÎÄÔÕÇ£¬Ò»Í·ÔÔµ¹ÔÚµØ¡£\n" NOR ,
+        HIY "$nç«¯åå¾®ç¬‘ï¼Œå¿½è€Œè‡‰ç¾èŠåš´ä¹‹è‰²ï¼Œ$Nç«‹åˆ»åŒåŒåœ¨åœ°ï¼Œè™”èª è†œæ‹œã€‚\n" NOR ,
+        HIY "$nèˆ‰æ‰‹è¼•æ“ºï¼Œ$Nç«‹åˆ»é ­æšˆè…¦æ¼²ï¼Œä¸€é ­æ ½å€’åœ¨åœ°ã€‚\n" NOR ,
 });
 
 mapping *action = ({
-([        "action": HIR "$NÄé»¨Î¢Ğ¦£¬ÖÜÉíÓ¿ÆğÒ»Æ¬ÏéÔÆÕÖÏò$n" NOR ,
+([        "action": HIR "$Næ‹ˆèŠ±å¾®ç¬‘ï¼Œå‘¨èº«æ¹§èµ·ä¸€ç‰‡ç¥¥é›²ç½©å‘$n" NOR ,
         "force" : 0,
         "dodge" : 0,
         "damage": 0,
         "lvl" : 0,
-        "skill_name" : "¾ıÁÙÌìÏÂ",
-        "damage_type": "Ê¥¹âÖ®ãå"
+        "skill_name" : "å›è‡¨å¤©ä¸‹",
+        "damage_type": "è–å…‰ä¹‹æ²"
 ]),
 });
 
@@ -53,7 +53,7 @@ string query_dodge_msg(string limb)
 int valid_learn(object me)
 {        
         if ( ! wizardp(me))
-        return notify_fail("£ÛµÛÍõÉñ¹¦£İÉñ¹¦Ö»ÄÜÓÉÎ×Ê¦Ñ§Ï°¡£\n");
+        return notify_fail("ï¹å¸ç‹ç¥åŠŸï¹ç¥åŠŸåªèƒ½ç”±å·«å¸«å­¸ç¿’ã€‚\n");
 }
 
 string exert_function_file(string func)
@@ -67,13 +67,13 @@ mixed hit_ob(object me, object victim, int damage_bonus)
 
 int help(object me)
 {
-        write(HIC"\nµÛÍõÉñ¹¦£º"NOR"\n");
+        write(HIC"\nå¸ç‹ç¥åŠŸï¼š"NOR"\n");
         write(@HELP
 
-    Î×Ê¦ÄÚ¹¦¡£
+    å·«å¸«å…§åŠŸã€‚
 
-        Ñ§Ï°ÒªÇó£º
-                Î×Ê¦
+        å­¸ç¿’è¦æ±‚ï¼š
+                å·«å¸«
 HELP
         );
         return 1;

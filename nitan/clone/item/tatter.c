@@ -3,13 +3,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(WHT "ÑòÆ¤ËéÆ¬" NOR, ({ "sheepskin tatter", "tatter" }));
+        set_name(WHT "ç¾Šçš®ç¢ç‰‡" NOR, ({ "sheepskin tatter", "tatter" }));
         set_weight(3000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", WHT "ÕâÊÇÒ»¿é·Ç³£¹ÅÀÏµÄÑòÆ¤ËéÆ¬£¬ÉÏÃæ»æÓĞ²ĞÈ±²»È«µÄÏóĞÎÎÄ×ÖÍ¼Ñù¡£\n" NOR);
-                set("unit", "Ã¶");
+                set("long", WHT "é€™æ˜¯ä¸€å¡Šéå¸¸å¤è€çš„ç¾Šçš®ç¢ç‰‡ï¼Œä¸Šé¢ç¹ªæœ‰æ®˜ç¼ºä¸å…¨çš„è±¡å½¢æ–‡å­—åœ–æ¨£ã€‚\n" NOR);
+                set("unit", "æš");
                 set("value", 500000);
         }
         setup();

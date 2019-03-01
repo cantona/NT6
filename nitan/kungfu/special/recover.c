@@ -1,24 +1,24 @@
 // This program is a part of NITAN MudLIB
-// recover.c 破元大法
+// recover.c 鐮村厓澶ф硶
 // Created by Lonely 04/05/2009
 
 #include <ansi.h>
 
 inherit F_CLEAN_UP;
 
-string name() { return HIM "破元大法" NOR; }
+string name() { return HIM "鐮村厓澶ф硶" NOR; }
 
 int perform(object me, string skill)
 {
         mapping my;
 
         if( !query("reborn/times", me) )
-                return notify_fail("你尚未转世重生，无法使用此技能！\n");
+                return notify_fail("浣犲皻鏈綁涓栭噸鐢燂紝鐒℃硶浣跨敤姝ゆ妧鑳斤紒\n");
             
         if( time()-query("special/recover", me)<1440 )
-                return notify_fail("破元大法一天只能施展一次！\n");
+                return notify_fail("鐮村厓澶ф硶涓�澶╁彧鑳芥柦灞曚竴娆★紒\n");
 
-        message_vision(HIC "$N" HIC "施展出破元大法，真气突破奇经八脉，恢复所有状态！\n" NOR, me);
+        message_vision(HIC "$N" HIC "鏂藉睍鍑虹牬鍏冨ぇ娉曪紝鐪熸埃绐佺牬濂囩稉鍏剤锛屾仮寰╂墍鏈夌媭鎱嬶紒\n" NOR, me);
        
         set("special/recover", time(), me);
         

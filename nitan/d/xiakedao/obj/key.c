@@ -4,10 +4,10 @@ inherit ITEM;
 
 void create()
 {
-        set_name("Ô¿³×", ({"key", "yaoshi"}));
+        set_name("é‘°åŒ™", ({"key", "yaoshi"}));
         set("long",
-                "ÕâÊÇÒ»°ÑºÜÆÕÍ¨µÄÔ¿³×¡£\n");
-        set("unit", "°Ñ");
+                "é€™æ˜¯ä¸€æŠŠå¾ˆæ™®é€šçš„é‘°åŒ™ã€‚\n");
+        set("unit", "æŠŠ");
         set("weight", 10);
         set_temp("times", 3);
         set("no_drop", 1);

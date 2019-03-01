@@ -1,19 +1,19 @@
 // workd.c
 
 /********************************************************
-  ¹¤×÷¹ÜÀíÊØ»¤
+  å·¥ä½œç®¡ç†å®ˆè­·
 
-¾ø´úË«½¾Ê¹ÓÃÀàËÆÓÚ QUEST_D µÄ¹¤×÷¹ÜÀí»úÖÆ£¬ËùÓÐµÄ¼òµ¥¹¤×÷
-²¢²»±£´æÔÚÇëÇó»òÕßÖ´ÐÐ¾ßÌå¹¤×÷µÄ npc »òÕß·¿¼äÉÏ£¬¶øÊÇ±£´æ
-ÔÚ /adm/daemons/work/ Ä¿Â¼ÏÂÒÔ¸Ã¹¤×÷Ó¢ÎÄÃüÃûµÄ³ÌÐòÖÐ£¬ ±È
-Èç¿ÍÕ»¹¤×÷¼´Îª /adm/daemons/work/kezhan.c¡£ÕâÑù¿ÉÒÔ·½±ãÈ«
-¾ÖµÄ¹ÜÀí¡¢ÐÞ¸ÄºÍ¼ò»¯µ÷ÓÃ(±ÈÈçÍ¬Àà¹¤×÷¾Í²»Òª¸´ÖÆÒ»´Î´úÂë)¡£
+çµ•ä»£é›™é©•ä½¿ç”¨é¡žä¼¼äºŽ QUEST_D çš„å·¥ä½œç®¡ç†æ©Ÿåˆ¶ï¼Œæ‰€æœ‰çš„ç°¡å–®å·¥ä½œ
+ä¸¦ä¸ä¿å­˜åœ¨è«‹æ±‚æˆ–è€…åŸ·è¡Œå…·é«”å·¥ä½œçš„ npc æˆ–è€…æˆ¿é–“ä¸Šï¼Œè€Œæ˜¯ä¿å­˜
+åœ¨ /adm/daemons/work/ ç›®éŒ„ä¸‹ä»¥è©²å·¥ä½œè‹±æ–‡å‘½åçš„ç¨‹åºä¸­ï¼Œ æ¯”
+å¦‚å®¢æ£§å·¥ä½œå³ç‚º /adm/daemons/work/kezhan.cã€‚é€™æ¨£å¯ä»¥æ–¹ä¾¿å…¨
+å±€çš„ç®¡ç†ã€ä¿®æ”¹å’Œç°¡åŒ–èª¿ç”¨(æ¯”å¦‚åŒé¡žå·¥ä½œå°±ä¸è¦å¾©åˆ¶ä¸€æ¬¡ä»£ç¢¼)ã€‚
 
-ÏµÍ³(globals.h)Ìá¹©µÄºê¶¨Òå£º
+ç³»çµ±(globals.h)æä¾›çš„å®å®šç¾©ï¼š
 
 #define WORK_DIR     "/adm/daemons/work/"
 
-WORK_D Ìá¹©µÄ²Ù×÷ API£º
+WORK_D æä¾›çš„æ“ä½œ APIï¼š
 
 int    request_work(object who, object ob, string name);
 string assign_work(object who, string name);
@@ -21,7 +21,7 @@ int    query_work(object who, string name);
 int    start_work(object who, string name);
 int    finish_work(object who, object ob, string name, mixed m);
 
-WORK_OB ±ØÐëÌá¹©µÄ½Ó¿Ú£º
+WORK_OB å¿…é ˆæä¾›çš„æŽ¥å£ï¼š
 
 int    request_work(object me, object ob);
 int    query_work(object who);
@@ -107,16 +107,16 @@ public string query_all_work()
 
         wlist = get_dir(WORK_DIR + "*.c");
         if (! arrayp(wlist) || ! sizeof(wlist))
-                return "Ä¿Ç°ÏµÍ³ÖÐÃ»ÓÐÈÎºÎ¹¤×÷¡£\n";
+                return "ç›®å‰ç³»çµ±ä¸­æ²’æœ‰ä»»ä½•å·¥ä½œã€‚\n";
 
-        info = HIC "Ä¿Ç°ÏµÍ³ÖÐÓÐ " HIW + sizeof(wlist) + HIC " Ïî¹¤×÷£º\n" NOR
-               HIW "©¤¹¤×÷©¤©¤½±Àø©¤©¤©¤ÈËÊý©¤©¤×îµÍ¾­Ñé©¤©¤×î¸ß¾­Ñé©¤\n" NOR;
+        info = HIC "ç›®å‰ç³»çµ±ä¸­æœ‰ " HIW + sizeof(wlist) + HIC " é …å·¥ä½œï¼š\n" NOR
+               HIW "â”€å·¥ä½œâ”€â”€çŽå‹µâ”€â”€â”€äººæ•¸â”€â”€æœ€ä½Žç¶“é©—â”€â”€æœ€é«˜ç¶“é©—â”€\n" NOR;
         foreach(work in wlist)
         {
                 winfo = (WORK_DIR + work + ".c")->query_info();
                 info += sprintf(WHT "%-10s" CYN " %-10d %-10d %-10d %-10d\n" NOR,
                                 winfo[0], winfo[1], winfo[2], winfo[3], winfo[4]);
         }
-        info += HIW "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤" NOR;
+        info += HIW "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€" NOR;
         return info;
 }

@@ -6,17 +6,17 @@ inherit MI_QIN;
 
 void create()
 {
-        set_name(HIC "ÖÙÄáÊ½ÇÙ¡¤ËÎ³¯" NOR, ({ "zhongni qin", "zhongni", "qin" }));
+        set_name(HIC "ä»²å°¼å¼ç´ï¹’å®‹æœ" NOR, ({ "zhongni qin", "zhongni", "qin" }));
         set_weight(500);
 
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
+                set("unit", "æŠŠ");
                              
-                set("long", HIC "´ËÇÙÌå±âÉí±¡£¬ÇÙÌå¹ÖÒì£¬ÇÙéôÓÒÃæ´¹ÏÂÉî\n"
-                                "ÉàÂŞººÍÈ£¬ÆáÉ«ÁÁÂÌ£¬Î¢·ºÂÌ¹â£¬ÖÙÄáÊ½ÇÙ\n"
-                                "ÎªÔª³¯Ö÷Á÷¡£\n" NOR);
+                set("long", HIC "æ­¤ç´é«”æ‰èº«è–„ï¼Œç´é«”æ€ªç•°ï¼Œç´è»«å³é¢å‚ä¸‹æ·±\n"
+                                "èˆŒç¾…æ¼¢è…¿ï¼Œæ¼†è‰²äº®ç¶ ï¼Œå¾®æ³›ç¶ å…‰ï¼Œä»²å°¼å¼ç´\n"
+                                "ç‚ºå…ƒæœä¸»æµã€‚\n" NOR);
                 set("value", 200000);
                 set("material", "wood");
              }

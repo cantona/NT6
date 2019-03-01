@@ -6,15 +6,15 @@ inherit POISON;
 
 string name() { return "sha_poison"; }
 
-string chinese_name() { return "砂毒"; }
+string chinese_name() { return "鐮傛瘨"; }
 
 string update_msg_others()
 {
-       return HIR "$N" HIR "脸色霎地变的煞白，全身不停的颤抖。\n" NOR;
+       return HIR "$N" HIR "鑷夎壊闇庡湴璁婄殑鐓炵櫧锛屽叏韬笉鍋滅殑椤姈銆俓n" NOR;
 }
 
 string update_msg_self()
 {
-        return HIR "你只觉毒气攻心，顿时感到一股莫名的恶心，全身瘫软无力！\n" NOR;
+        return HIR "浣犲彧瑕烘瘨姘ｆ敾蹇冿紝闋撴檪鎰熷埌涓�鑲¤帿鍚嶇殑鎯″績锛屽叏韬櫛杌熺劇鍔涳紒\n" NOR;
 }
 

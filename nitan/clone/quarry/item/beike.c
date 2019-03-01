@@ -4,13 +4,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIC "º£±´¿Ç" NOR, ({ "haibei ke", "haibei", "ke" }));
+        set_name(HIC "æµ·è²æ®¼" NOR, ({ "haibei ke", "haibei", "ke" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIC "Ò»¿é¾Ş´óµÄº£±´¿Ç£¬ËÆºõ¿ÉÕÒ¹¤½³×ö³ÉÊÎÆ·¡£\n" NOR);
-                set("base_unit", "¿é");
-                set("unit", "¿é");
+                set("long", HIC "ä¸€å¡Šå·¨å¤§çš„æµ·è²æ®¼ï¼Œä¼¼ä¹å¯æ‰¾å·¥åŒ åšæˆé£¾å“ã€‚\n" NOR);
+                set("base_unit", "å¡Š");
+                set("unit", "å¡Š");
                 set("base_value", 10000);
                 set("base_weight", 600);
         }

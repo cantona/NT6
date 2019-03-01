@@ -1,5 +1,5 @@
 // This program is a part of NT MudLIB
-// fang.c ·½±ÌÁÕ
+// fang.c æ–¹ç¢§ç³
 
 #include <ansi.h>
 #include "emei.h"
@@ -9,10 +9,10 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("·½±ÌÁÕ", ({ "fang bilin","fang","bilin"}));
+        set_name("æ–¹ç¢§ç³", ({ "fang bilin","fang","bilin"}));
         set("long",
-                "ËıÊÇ¶ëáÒÅÉµÄµÚËÄ´úË×¼ÒµÜ×Ó¡£\n");
-        set("gender", "Å®ĞÔ");
+                "å¥¹æ˜¯å³¨åµ‹æ´¾çš„ç¬¬å››ä»£ä¿—å®¶å¼Ÿå­ã€‚\n");
+        set("gender", "å¥³æ€§");
         set("age", 20);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -58,11 +58,11 @@ void create()
         map_skill("parry","yanxing-dao");
 
         set("inquiry", ([
-                "³ö¼Ò"     : "ÄãÈ¥±¾É½µÄâÖÌÃÀïÕÒÎÒ¾²×Ö±²Ê¦½ã°É¡£ËıÃÇÔÚ¸£ÊÙâÖ¡¢Ç§·ğâÖ¡¢\nÍòÄêâÖ¡¢ÍòĞĞâÖºÍÎÔÔÆâÖĞŞĞĞ¡£\n",
-                "Ãğ¾øÊ¦Ì«" : "ËıÊÇ±¾ÅÉÕÆÃÅÈË£¬ÔÚ»ª²ØâÖĞŞĞĞ¡£\n",
+                "å‡ºå®¶"     : "ä½ å»æœ¬å±±çš„åºµå ‚è£¡æ‰¾æˆ‘éœå­—è¼©å¸«å§å§ã€‚å¥¹å€‘åœ¨ç¦å£½åºµã€åƒä½›åºµã€\nè¬å¹´åºµã€è¬è¡Œåºµå’Œè‡¥é›²åºµä¿®è¡Œã€‚\n",
+                "æ»…çµ•å¸«å¤ª" : "å¥¹æ˜¯æœ¬æ´¾æŒé–€äººï¼Œåœ¨è¯è—åºµä¿®è¡Œã€‚\n",
         ]));
 
-        create_family("¶ëáÒÅÉ", 4, "µÜ×Ó");
+        create_family("å³¨åµ‹æ´¾", 4, "å¼Ÿå­");
 
         set("master_ob", 2);
         setup();
@@ -76,6 +76,6 @@ void attempt_apprentice(object ob)
         if (! permit_recruit(ob))
                 return;
 
-        command("say ºÃ°É£¬ÎÒ¾ÍÊÕÏÂÄãÁË¡£");
+        command("say å¥½å§ï¼Œæˆ‘å°±æ”¶ä¸‹ä½ äº†ã€‚");
         command("recruit "+query("id", ob));
 }

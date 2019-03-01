@@ -10,18 +10,18 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("ÇåÎŞ±ÈÇğ", ({
+        set_name("æ¸…ç„¡æ¯”ä¸˜", ({
                 "qingwu biqiu",
                 "qingwu",
                 "biqiu",
         }));
         set("long",
-                "ËûÊÇÒ»Î»Ìå¸ñÇ¿½¡µÄ×³ÄêÉ®ÈË£¬ËûÉíµÃ»¢±³ĞÜÑü£¬È«ÉíËÆºõÔÌº¬\n"
-                "×ÅÎŞÇî¾¢Á¦¡£ËûÉí´©Ò»Ï®°×²¼ºÚ±ßôÂôÄ£¬ËÆºõÉí»³ÎäÒÕ¡£\n"
+                "ä»–æ˜¯ä¸€ä½é«”æ ¼å¼·å¥çš„å£¯å¹´åƒ§äººï¼Œä»–èº«å¾—è™èƒŒç†Šè…°ï¼Œå…¨èº«ä¼¼ä¹è˜Šå«\n"
+                "è‘—ç„¡çª®å‹åŠ›ã€‚ä»–èº«ç©¿ä¸€è¥²ç™½å¸ƒé»‘é‚Šè¢ˆè£Ÿï¼Œä¼¼ä¹èº«æ‡·æ­¦è—ã€‚\n"
         );
 
 
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("attitude", "friendly");
         set("class", "bonze");
 
@@ -54,7 +54,7 @@ void create()
         map_skill("blade", "cibei-dao");
         map_skill("parry", "cibei-dao");
 
-        create_family("ÉÙÁÖÅÉ", 40, "µÜ×Ó");
+        create_family("å°‘æ—æ´¾", 40, "å¼Ÿå­");
 
         set("master_ob",1);
         setup();
@@ -65,9 +65,9 @@ void create()
 
 void attempt_apprentice(object ob)
 {
-        if( query("gender", ob) != "ÄĞĞÔ" )
+        if( query("gender", ob) != "ç”·æ€§" )
         {
-                command ("say °¢ÃÖÍÓ·ğ£¡Å®Ê©Ö÷Ñ½£¬Æ¶É®¿É²»¸Ò¿ªÕâµÈÍæĞ¦°¡¡£");
+                command ("say é˜¿å½Œé™€ä½›ï¼å¥³æ–½ä¸»å‘€ï¼Œè²§åƒ§å¯ä¸æ•¢é–‹é€™ç­‰ç©ç¬‘å•Šã€‚");
                 return;
         }
         
@@ -76,8 +76,8 @@ void attempt_apprentice(object ob)
 
         if( query("class", ob) != "bonze" )
         {
-                command ("say °¢ÃÖÍÓ·ğ£¡Æ¶É®¾ÍÊÕÏÂÄã×ö¡ºË×¼ÒµÜ×Ó¡»ÁË¡£");
+                command ("say é˜¿å½Œé™€ä½›ï¼è²§åƒ§å°±æ”¶ä¸‹ä½ åšã€ä¿—å®¶å¼Ÿå­ã€äº†ã€‚");
         }
-        command("say °¢ÃÖÍÓ·ğ£¬ÉÆÔÕ£¡ÉÆÔÕ£¡");
+        command("say é˜¿å½Œé™€ä½›ï¼Œå–„å“‰ï¼å–„å“‰ï¼");
         command("recruit "+query("id", ob));
 }

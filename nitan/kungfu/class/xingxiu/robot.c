@@ -8,13 +8,13 @@ void no_answer(object user, object asker);
 int do_anwser(string arg, object obj, object asker);
 
 mapping colors = ([
-        "ºì" : RED,
-        "°×" : WHT,
-        "ÂÌ" : GRN,
-        "À¶" : BLU,
-        "µå" : CYN,
-        "×Ï" : MAG,
-        "»Æ" : YEL,
+        "ç´…" : RED,
+        "ç™½" : WHT,
+        "ç¶ " : GRN,
+        "è—" : BLU,
+        "é›" : CYN,
+        "ç´«" : MAG,
+        "é»ƒ" : YEL,
         ]);
 
 void create()
@@ -26,22 +26,22 @@ string make_msg(mapping num, string question)
 {
         int q, q_size, i1 = random(2), i2 = random(2), i3 = random(2), i4 = random(2), i5 = random(2);
         int *i_num = ({i1, i2, i3, i4, i5});
-        string msg = "¿´Í¼»Ø´ğÎÊÌâ£º\n";
+        string msg = "çœ‹åœ–å›ç­”å•é¡Œï¼š\n";
         while (sizeof(question)<14) {
                 q_size = sizeof(question);
                 q = random(8);
-                question = question[0..q*2+1]+"¡¡"+question[(q+1)*2..q_size];
-                msg = msg[0..q*2+1]+"¡¡"+msg[(q+1)*2..(sizeof(msg)-1)];
-                if(random(3)==2) msg = "¡¡" + msg;
-                if(random(3)==0) msg = "¡¡¡¡" + msg;
+                question = question[0..q*2+1]+"ã€€"+question[(q+1)*2..q_size];
+                msg = msg[0..q*2+1]+"ã€€"+msg[(q+1)*2..(sizeof(msg)-1)];
+                if(random(3)==2) msg = "ã€€" + msg;
+                if(random(3)==0) msg = "ã€€ã€€" + msg;
         }
-                msg = msg + "\n¡¡¡¡";
+                msg = msg + "\nã€€ã€€";
         for (int i =0; i < 8; i++) {
                 for (int j = 1; j <= 5; j++ )
                 {
-                        msg += sprintf("%s%s%s", num["color"+j], numbers[atoi(num["num"+j])][i], (i_num[j-1])?"¡¡":"");
+                        msg += sprintf("%s%s%s", num["color"+j], numbers[atoi(num["num"+j])][i], (i_num[j-1])?"ã€€":"");
                 }
-                msg += NOR + question[i*2..(i*2+1)] + "\n¡¡¡¡";
+                msg += NOR + question[i*2..(i*2+1)] + "\nã€€ã€€";
         }
         return msg;
 }
@@ -57,13 +57,13 @@ void make_question(object user, object asker)
         string question, *color_name, *color, c_name, colorx;
         mapping num = ([]);
         if( stringp(query("robot_answer", user))){
-                tell_object(user, "Äã»¹ÊÇ»Ø´ğ¸Õ²ÅµÄÎÊÌâÔÙËµ°É¡£\n");
+                tell_object(user, "ä½ é‚„æ˜¯å›ç­”å‰›æ‰çš„å•é¡Œå†èªªå§ã€‚\n");
                 return;
         }
         switch (random(6))
         {
         case 5: i = random(10), j = random(10), k = random(10), p = random(5), q = random(5), z = random(2);
-                question = "³öÏÖ×î¶àµÄ";
+                question = "å‡ºç¾æœ€å¤šçš„";
                 while(j == i) j = random(10);
                 while(k == i || k == j) k = random(10);
                 while(q == p) q = random(5);
@@ -79,7 +79,7 @@ void make_question(object user, object asker)
                 set("num", num, this_object());
                 break;
         case 1: i = random(10), j = random(10), p = random(5), q = random(5);
-                question = "³öÏÖ×î¶àµÄ";
+                question = "å‡ºç¾æœ€å¤šçš„";
                while(j == i) j = random(10);
                 while(q == p) q = random(5);
                 num["num" + (p + 1)] = "" + j;
@@ -94,7 +94,7 @@ void make_question(object user, object asker)
                 answer = i;
                 break;
         case 2: i = random(10), j = random(10), p = random(5);
-                question = "³öÏÖ×î¶àµÄ";
+                question = "å‡ºç¾æœ€å¤šçš„";
                 while(j == i) j = random(10);
                 num["num" + (p + 1)] = "" + j;
                 for (int o = 1 ;o <= 5 ;o++ )
@@ -106,7 +106,7 @@ void make_question(object user, object asker)
                 answer = i;
                 break;
         case 0: i = random(10), j = random(10), p = random(5);
-                question = "³öÏÖ×îÉÙµÄ";
+                question = "å‡ºç¾æœ€å°‘çš„";
                 while(j == i) j = random(10);
                 num["num" + (p + 1)] = "" + j;
                 for (int o = 1 ;o <= 5 ;o++ )
@@ -118,7 +118,7 @@ void make_question(object user, object asker)
                 answer = j;
                 break;
         case 4: i = random(10), j = random(10), p = random(5);
-                question = "³öÏÖ×îÉÙµÄ";
+                question = "å‡ºç¾æœ€å°‘çš„";
                 while(j == i) j = random(10);
                 num["num" + (p + 1)] = "" + j;
                 for (int o = 1 ;o <= 5 ;o++ )
@@ -135,7 +135,7 @@ void make_question(object user, object asker)
                 c_name = color_name[random(color_num)];
                 num["num" + (p + 1)] = "" + i;
                 num["color" + (p + 1)] = colors[c_name];
-                question = c_name + "É«µÄ";
+                question = c_name + "è‰²çš„";
                 for (int o = 1 ;o <=5 ;o++ )
                 {
                         colorx = color[random(color_num)];
@@ -150,7 +150,7 @@ void make_question(object user, object asker)
                 break;
         }
         set("robot_answer", ""+answer, user);
-        tell_object(user, question + "\n" + "ÄãÓĞÈı·ÖÖÓ»Ø´ğÕâ¸öÎÊÌâ£¬»Ø´ğÎÊÌâÊ¹ÓÃÖ¸Áîanswer\n¡¡¡¡¸ñÊ½£ºanswer [Êı×Ö]\n");
+        tell_object(user, question + "\n" + "ä½ æœ‰ä¸‰åˆ†é˜å›ç­”é€™å€‹å•é¡Œï¼Œå›ç­”å•é¡Œä½¿ç”¨æŒ‡ä»¤answer\nã€€ã€€æ ¼å¼ï¼šanswer [æ•¸å­—]\n");
         remove_call_out("no_answer");
         call_out("no_answer", 180, user, asker);
         return;
@@ -161,24 +161,24 @@ int do_answer(string arg, object user, object asker)
         int number;
         if( !stringp(query("robot_answer", user)))return 0;
         if(!arg || sscanf(arg, "%d", number) != 1) {
-                tell_object(user, "¸ñÊ½£ºanswer [Êı×Ö]\n");
+                tell_object(user, "æ ¼å¼ï¼šanswer [æ•¸å­—]\n");
                 return 1;
         }
         if( arg != query("robot_answer", user)){
                 addn("be_robot", 1, user);
-                tell_object(user,"»Ø´ğ´íÎó£¡ÄãÒÑ¾­´íÁË"+chinese_number(query("be_robot", user))+"´ÎÁË¡£\n");
+                tell_object(user,"å›ç­”éŒ¯èª¤ï¼ä½ å·²ç¶“éŒ¯äº†"+chinese_number(query("be_robot", user))+"æ¬¡äº†ã€‚\n");
                 if( query("be_robot", user) >= 3){
-                        tell_object(user, "ÄãÏÖÔÚ±»»³ÒÉ¿ÉÄÜÎª»úÆ÷ÈË¡£\n");
+                        tell_object(user, "ä½ ç¾åœ¨è¢«æ‡·ç–‘å¯èƒ½ç‚ºæ©Ÿå™¨äººã€‚\n");
                 delete("be_robot", user);
                 delete("robot_answer", user);
                         return -1;
                 }
-                tell_object(user, "ÏÖÔÚÖØĞÂ³öÌâ¡£\n");
+                tell_object(user, "ç¾åœ¨é‡æ–°å‡ºé¡Œã€‚\n");
                 delete("robot_answer", user);
                 make_question(user, asker);
                 return 1;
         }
-        tell_object(user, "»Ø´ğÕıÈ·¡£\n");
+        tell_object(user, "å›ç­”æ­£ç¢ºã€‚\n");
         user->move(query("left_place", user));
         remove_call_out("no_answer");
         delete("left_place", user);

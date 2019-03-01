@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ɽ·");
+        set("short", "山路");
         set("long", @LONG
-�����ں�ɽɽ·�ϣ�����ɽ����䣬�������ϪȪ���٣�����
-���ƣ��������ش�졣�����������������ˣ��߸ߴ������������ľ�
-�Ǻ�ɽ���֮һ��ܽ�ط塣
+你走在衡山山路上，四望山峰錯落，林壑幽深，溪泉飛瀑，雲霧
+繚繞，不覺心胸大快。東北方就是南天門了，高高矗立在西北方的就
+是衡山五峰之一的芙蓉峰。
 LONG );
         set("exits", ([ 
                 "northeast"  : __DIR__"nantian",

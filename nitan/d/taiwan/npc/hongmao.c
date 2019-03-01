@@ -6,12 +6,12 @@ inherit NPC;
 
 void create()
 {
-        set_name("ºìÃ«¹í", ({ "hongmao gui", "gui"}));
-        set("gender", "ÄÐÐÔ");
+        set_name("ç´…æ¯›é¬¼", ({ "hongmao gui", "gui"}));
+        set("gender", "ç”·æ€§");
         set("age", random(10) + 30);
         set("str", 25);
         set("dex", 16);
-        set("long","ÈëÇÖÎÒÌì³¯±¦µºÌ¨ÍåµÄºÉÀ¼ºìÃ«¹í¡£ËûÊÖÉÏ¶Ë×ÅÒ»Ö§»ðÇ¹£¬Ç¹¿Ú»¹Ã°×ÅÇàÑÌ¡£\n");
+        set("long","å…¥ä¾µæˆ‘å¤©æœå¯¶å³¶å°ç£çš„è·è˜­ç´…æ¯›é¬¼ã€‚ä»–æ‰‹ä¸Šç«¯è‘—ä¸€æ”¯ç«æ§ï¼Œæ§å£é‚„å†’è‘—é’ç…™ã€‚\n");
         set("combat_exp", 25000);
         set("shen_type", 1);
         set("attitude", "peaceful");
@@ -41,7 +41,7 @@ void init()
 void greeting(object ob)
 {
         if( environment(ob) != environment() ) return;
-        say("ºìÃ«¹íÌ§ÊÖ¾ÍÊÇÒ»Ç¹£ºÅé£¡Ç¹¿ÚÒ»ÍÅ»ðÑæÅç³ö¡£\n");
+        say("ç´…æ¯›é¬¼æŠ¬æ‰‹å°±æ˜¯ä¸€æ§ï¼šç °ï¼æ§å£ä¸€åœ˜ç«ç‡„å™´å‡ºã€‚\n");
         ob->receive_damage("qi",50);
         ob->receive_wound("qi",50);
 }

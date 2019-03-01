@@ -2,12 +2,12 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�ĺ�Ǯׯ");
+        set("short", "四海錢莊");
         set("long", @LONG
-�ĺ�Ǯׯ������������Ǯׯ��Ҳ�Ƿǳ����������ֺš��ϰ�������
-����һ�޼֣��춥���˺�ѩԴ����ɽ�����ϣ����Ǯׯ������үү��үү
-��үү��үү�Ǳ���ʼ����һֱ��������������ǳ��ã���ȫ������
-���зֵꡣ�����е���Ʊͨ��ȫ����Ǯׯ���ſڹ���һ������(paizi)��
+四海錢莊乃洛陽城最大的錢莊。也是非常有名的老字號。老板正是中
+國第一巨賈，紅頂商人胡雪源，乃山西人氏，這家錢莊從他的爺爺的爺爺
+的爺爺的爺爺那輩開始辦起，一直傳到他手裡，聲譽非常好，在全國各地
+都有分店。它發行的銀票通行全國。錢莊的門口掛有一塊牌子(paizi)。
 LONG);
         set("no_clean_up", 0);
         set("exits", ([
@@ -15,11 +15,11 @@ LONG);
         ]));
         set("item_desc", ([
                 "paizi" : @TEXT
-     ��Ǯׯ�ṩ���·���
-      ��Ǯ        deposit����cun
-      ȡǮ        withdraw����qu
-      Ǯ�Ҷһ�    convert����duihuan
-      ����        check����chazhang
+     本錢莊提供以下服務：
+      存錢        deposit或者cun
+      取錢        withdraw或者qu
+      錢幣兌換    convert或者duihuan
+      查帳        check或者chazhang
 TEXT
         ]) );
 

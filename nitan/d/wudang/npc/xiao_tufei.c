@@ -4,10 +4,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("Ğ¡ÍÁ·Ë", ({"xiao tufei", "tufei"}));
-        set("gender", "ÄĞĞÔ" );
+        set_name("å°åœŸåŒª", ({"xiao tufei", "tufei"}));
+        set("gender", "ç”·æ€§" );
         set("age", 22);
-        set("long", "ÕâÊÇ¸öµ¨´ó°üÌìµÄĞ¡ÍÁ·Ë£¬É±ÈËÔ½»ò»õ£¬ÎŞ¶ñ²»×ö¡£\n");
+        set("long", "é€™æ˜¯å€‹è†½å¤§åŒ…å¤©çš„å°åœŸåŒªï¼Œæ®ºäººè¶Šæˆ–è²¨ï¼Œç„¡æƒ¡ä¸åšã€‚\n");
 
         set_temp("apply/attack", 15);
         set_temp("apply/defense", 15);

@@ -5,20 +5,20 @@ inherit ROOM;
 
 void create()
 {
-        set("short","Ë®ÔÆÊ¤¸Å");
+        set("short","æ°´é›²å‹æ¦‚");
         set("long",@LONG
-Ë®ÔÆÊ¤¸ÅÎ»ÓÚ³¤´ºÇÅÎ÷£¬Á«»¨ÇÅ¶«£¬ÎôÎªÇå»ÆÂÄåß±ðÊû£¬Îª»ÆÔ°µÄ
-±±°ë²¿·Ö¡£ÃæÄÏÈýéº£¬ÖÐ¼äÐüËïéóÇàÌâÐ´µÄ¡°Ë®ÔÆÊ¤¸Å¡±ØÒ£¬ÍâÖùÐü¹Ò
-Àî°×¡¢¶Å¸¦Ê«¾ä¼¯Áª(lian)¡£ÍâÀÈÉèÄ¾°å×øÀ¸¡£
+æ°´é›²å‹æ¦‚ä½äºŽé•·æ˜¥æ©‹è¥¿ï¼Œè“®èŠ±æ©‹æ±ï¼Œæ˜”ç‚ºæ¸…é»ƒå±¥æš¹åˆ¥å¢…ï¼Œç‚ºé»ƒåœ’çš„
+åŒ—åŠéƒ¨åˆ†ã€‚é¢å—ä¸‰æ¥¹ï¼Œä¸­é–“æ‡¸å­«è»¼é’é¡Œå¯«çš„â€œæ°´é›²å‹æ¦‚â€åŒ¾ï¼Œå¤–æŸ±æ‡¸æŽ›
+æŽç™½ã€æœç”«è©©å¥é›†è¯(lian)ã€‚å¤–å»Šè¨­æœ¨æ¿åæ¬„ã€‚
 LONG );
         set("outdoors", "shouxihu");
         set("item_desc", ([
                 "lian" : HIG"
-        ÌÒ        Ò°
-        »¨        Öñ
-        ·É        ÉÏ
-        ÂÌ        Çà
-        Ë®        Ïö
+        æ¡ƒ        é‡Ž
+        èŠ±        ç«¹
+        é£›        ä¸Š
+        ç¶         é’
+        æ°´        éœ„
 \n"NOR,
         ]));
 

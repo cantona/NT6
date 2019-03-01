@@ -1,4 +1,4 @@
-// xiandan.c ÏÉµ¤
+// xiandan.c ä»™ä¸¹
 
 #include <ansi.h>
 
@@ -6,38 +6,38 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIY "ÏÉµ¤" NOR, ({ "xian dan", "dan", "xiandan" }) );
+        set_name(HIY "ä»™ä¸¹" NOR, ({ "xian dan", "dan", "xiandan" }) );
         set_weight(200);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¿ÅÔ°Ô°µÄÏÉµ¤£¬¾İËµ³ÔÁË¿ÉÒÔÔöÇ¿ÖÇÁ¦¡£"
-                    "Ôö¼ÓÏÈÌìÊôĞÔÖÁÎåµã\n");
+                set("long", "ä¸€é¡†åœ’åœ’çš„ä»™ä¸¹ï¼Œæ“šèªªåƒäº†å¯ä»¥å¢å¼·æ™ºåŠ›ã€‚"
+                    "å¢åŠ å…ˆå¤©å±¬æ€§è‡³äº”é»\n");
                 set("value", 10000);
-                set("unit", "¿Å");
+                set("unit", "é¡†");
                 set("only_do_effect", 1);
         }
 }
 
 int do_effect(object me)
 {
-        message_vision("$NÒ»Ñö²±£¬ÍÌÏÂÁËÒ»¿Å" + this_object()->name() +
-                       "¡£\n", me);
+        message_vision("$Nä¸€ä»°è„–ï¼Œåä¸‹äº†ä¸€é¡†" + this_object()->name() +
+                       "ã€‚\n", me);
         if( query("gift/xiandan", me) >= 5 || 
             query("gift/int/succeed", me) >= 5 )
         {
-                message_vision("$NºöÈ»¡°ÍÛÍÛ¡±£¬ÍÂÁËÒ»µØ¡£\n", me);
-                tell_object(me, "Äã¾õµÃ×ìÀï·Ç³£µÄ¿à¡£\n");
+                message_vision("$Nå¿½ç„¶â€œå“‡å“‡â€ï¼Œåäº†ä¸€åœ°ã€‚\n", me);
+                tell_object(me, "ä½ è¦ºå¾—å˜´è£¡éå¸¸çš„è‹¦ã€‚\n");
         } else
         if (random(5) == 0)
         {
                 addn("gift/int/fail", 1, me);
-                tell_object(me, "²»¹ıÄã¾õµÃºÃÏñÃ»Ê²Ã´×÷ÓÃ¡£\n");
+                tell_object(me, "ä¸éä½ è¦ºå¾—å¥½åƒæ²’ä»€éº¼ä½œç”¨ã€‚\n");
         } else
         {
-                tell_object(me, HIG "Ò»¹É»ğÈÈİëÈ»´ÓÄÔÖĞÉıÆğ£¬"
-                            "ÄãÍ·Í´ÓûÁÑ£¬Ç¡ÔÚ´ËÊ±Ò»¹ÉÇåÁ¹Ö®Òâ"
-                            "ÓÍÈ»¶øÆğ£¬¶Ù¸ĞÊæÌ©ÎŞ±È¡£\n");
+                tell_object(me, HIG "ä¸€è‚¡ç«ç†±é©€ç„¶å¾è…¦ä¸­å‡èµ·ï¼Œ"
+                            "ä½ é ­ç—›æ¬²è£‚ï¼Œæ°åœ¨æ­¤æ™‚ä¸€è‚¡æ¸…æ¶¼ä¹‹æ„"
+                            "æ²¹ç„¶è€Œèµ·ï¼Œé “æ„Ÿèˆ’æ³°ç„¡æ¯”ã€‚\n");
                 addn("int", 1, me);
                 addn("gift/int/succeed", 1, me);
         }

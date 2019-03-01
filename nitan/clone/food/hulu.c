@@ -1,4 +1,4 @@
-// Éñ»°ÊÀ½ç¡¤Î÷ÓÎ¼Ç¡¤°æ±¾£´£®£µ£°
+// ç¥è©±ä¸–ç•Œï¹’è¥¿éŠè¨˜ï¹’ç‰ˆæœ¬ï¼”ï¼ï¼•ï¼
 /* <SecCrypt CPL V3R05> */
  
 // hulu.c 
@@ -8,13 +8,13 @@ inherit F_LIQUID;
 
 void create()
 {
-   set_name("ºùÂ«", ({"hulu", "hu"}));
+   set_name("è‘«è˜†", ({"hulu", "hu"}));
    set_weight(700);
    if (clonep())
      set_default_object(__FILE__);
    else {
-     set("long", "Ò»¸öÓÃºùÂ«ÖÆ³ÉµÄË®ºø¡£\n");
-     set("unit", "¸ö");
+     set("long", "ä¸€å€‹ç”¨è‘«è˜†åˆ¶æˆçš„æ°´å£ºã€‚\n");
+     set("unit", "å€‹");
      set("value", 100);
      set("max_liquid", 10);
    }
@@ -23,7 +23,7 @@ void create()
    // we set it to contain water at the beginning
    set("liquid", ([
      "type": "water",
-     "name": "ÇåË®",
+     "name": "æ¸…æ°´",
      "remaining": 10,
      "drunk_supply": 10,
    ]));

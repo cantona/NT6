@@ -26,24 +26,24 @@ int main(object me, string arg)
         if (sscanf(arg, "%s from %s to %s", stats, who, target) == 3)
         {
                 if (! objectp(tob = present(target, environment(me))))
-                        return notify_fail("ÄãÑÛÇ°Ã»ÓĞ " + target + " Õâ¸öÎï¼ş¡£\n");
+                        return notify_fail("ä½ çœ¼å‰æ²’æœ‰ " + target + " é€™å€‹ç‰©ä»¶ã€‚\n");
         } else
                 tob = me;
 
         if (wiz_level(me) <= wiz_level(tob) && me != tob)
-                return notify_fail("ÄãÖ»ÄÜ¸øÈ¨ÏŞ±È×Ô¼ºµÍµÄÈË¸´ÖÆ×´Ì¬¡£\n");
+                return notify_fail("ä½ åªèƒ½çµ¦æ¬Šé™æ¯”è‡ªå·±ä½çš„äººå¾©åˆ¶ç‹€æ…‹ã€‚\n");
 
         if (who == "me")
                 ob = me;
         else
         if (! objectp(ob = present(who, environment(me))))
-                return notify_fail("ÄãÑÛÇ°Ã»ÓĞ " + who + " Õâ¸öÎï¼ş¡£\n");
+                return notify_fail("ä½ çœ¼å‰æ²’æœ‰ " + who + " é€™å€‹ç‰©ä»¶ã€‚\n");
 
         if (! is_root(me) && playerp(tob) && ! wizardp(tob))
-                return notify_fail("Ö»ÓĞÌìÉñ²ÅÄÜ¸øÆÕÍ¨Íæ¼Ò¸´ÖÆ×´Ì¬¡£\n");
+                return notify_fail("åªæœ‰å¤©ç¥æ‰èƒ½çµ¦æ™®é€šç©å®¶å¾©åˆ¶ç‹€æ…‹ã€‚\n");
 
         if (ob == tob)
-                return notify_fail("²»ĞèÒª¸´ÖÆ°É¡£\n");
+                return notify_fail("ä¸éœ€è¦å¾©åˆ¶å§ã€‚\n");
 
         if (me != tob)
                 log_file("static/copystats", sprintf("%s %s copy %s(%s)'s stats to %s(%s).\n",
@@ -51,8 +51,8 @@ int main(object me, string arg)
                                                      ob->name(1),query("id", ob),
                                                      tob->name(1), tob->query("id")));
         copy_stats(tob, ob, stats);
-        message_vision(HIM + me->name(1) + HIM "¿ÚÖĞÄîÄîÓĞ´Ê£¬Ö»¼ûÒ»µÀºì¹âÁıÕÖÁË$N"
-                       HIM "ºÍ$n" HIM "¡£\n" NOR, tob, ob);
+        message_vision(HIM + me->name(1) + HIM "å£ä¸­å¿µå¿µæœ‰è©ï¼Œåªè¦‹ä¸€é“ç´…å…‰ç± ç½©äº†$N"
+                       HIM "å’Œ$n" HIM "ã€‚\n" NOR, tob, ob);
         return 1;
 }
 
@@ -73,11 +73,11 @@ protected int copy_stats(object me, object ob, string stats)
 int help()
 {
         write(@TEXT
-Ö¸Áî¸ñÊ½£ºcopystats <stats> from <¶ÔÏó> [to <Ä¿µÄ¶ÔÏó>]
+æŒ‡ä»¤æ ¼å¼ï¼šcopystats <stats> from <å°è±¡> [to <ç›®çš„å°è±¡>]
 
-Õâ¸öÖ¸ÁîÈÃÄã¸´ÖÆ¶ÔÏóµÄ×´Ì¬¡£
+é€™å€‹æŒ‡ä»¤è®“ä½ å¾©åˆ¶å°è±¡çš„ç‹€æ…‹ã€‚
 
-¸ÃÃüÁîÔÚ¿ÉÒÔ±»ÊÚÈ¨Ê¹ÓÃµÄĞÅÏ¢°üÀ¨£ºme¡¢wizard¡¢all¡£
+è©²å‘½ä»¤åœ¨å¯ä»¥è¢«æˆæ¬Šä½¿ç”¨çš„ä¿¡æ¯åŒ…æ‹¬ï¼šmeã€wizardã€allã€‚
 TEXT );
         return 1 ;
 }

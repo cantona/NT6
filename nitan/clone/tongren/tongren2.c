@@ -5,15 +5,15 @@
 int query_tongren() { return 2; }
 void create()
 {
-        set_name(YEL "ÎŞÃû´óÍ­ÈË" NOR, ({ "wuming tongren", "wuming", "tongren" }));
+        set_name(YEL "ç„¡åå¤§éŠ…äºº" NOR, ({ "wuming tongren", "wuming", "tongren" }));
         set_weight(50);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
-                set("base_unit", "¸ö"); 
-                set("long", YEL "ÕâÊÇÒ»¸öÆÆ¾ÉµÄÍ­ÈË£¬ÉÏÃæ»æÖÆÁËÒ»Ğ©Í¼°¸£¬µ«ÊÇÒÑ¾­ÎŞ·¨±çÊ¶¡£\n" NOR);
-                //set("long", NOR + YEL "ÕâÀïÊÇÒ»¸ö³åÑ¨Í­ÈË£¬ÉÏÃæ¿ÌÓĞ¾­ÂçÑ¨Î»Í¼£¬¿ÉÏ°µÃ¾­ÂçÑ§¡£\n" NOR);
+                set("unit", "å€‹");
+                set("base_unit", "å€‹"); 
+                set("long", YEL "é€™æ˜¯ä¸€å€‹ç ´èˆŠçš„éŠ…äººï¼Œä¸Šé¢ç¹ªåˆ¶äº†ä¸€äº›åœ–æ¡ˆï¼Œä½†æ˜¯å·²ç¶“ç„¡æ³•è¾¯è­˜ã€‚\n" NOR);
+                //set("long", NOR + YEL "é€™è£¡æ˜¯ä¸€å€‹æ²–ç©´éŠ…äººï¼Œä¸Šé¢åˆ»æœ‰ç¶“çµ¡ç©´ä½åœ–ï¼Œå¯ç¿’å¾—ç¶“çµ¡å­¸ã€‚\n" NOR);
                 set("value", 10000);
                 set("material", "steal");
                 set("no_identify", 1);

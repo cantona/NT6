@@ -58,17 +58,17 @@ string resolvePath(string path, int op)
         string tmp;
         int    i;
 
-        if( path == "/" ) // ¶ÔÕâ¸öÇé¿öÌØÊâ´¦Àí
+        if( path == "/" ) // å°é€™å€‹æƒ…æ³ç‰¹æ®Šè™•ç†
                 return (op) ? "/" : "*";
 
         dn = explode(path, "/");
-        if( op ) { // opÎª·Ç0±íÊ¾ĞèÒª·µ»ØÂ·¾¶
+        if( op ) { // opç‚ºé0è¡¨ç¤ºéœ€è¦è¿”å›è·¯å¾‘
                 // dn = dn - ({dn[sizeof(dn) - 1]});
                 // tmp = implode(dn, "/") + "/";
-                // ÉÏÃæµÄ³ÌĞò²»ºÃ£¬²»ÄÜ¶ÔÍ¬ÃûÂ·¾¶ÕıÈ·´¦Àí£¬±ÈÈç²»ÄÜÔÚ/log/logÎÄ¼şÀïËÑË÷
+                // ä¸Šé¢çš„ç¨‹åºä¸å¥½ï¼Œä¸èƒ½å°åŒåè·¯å¾‘æ­£ç¢ºè™•ç†ï¼Œæ¯”å¦‚ä¸èƒ½åœ¨/log/logæ–‡ä»¶è£¡æœç´¢
                 tmp = "/";
                 for (i = 0; i < sizeof(dn) - 1; i++) {
-                        // write("ºÏ²¢" + dn[i] + "\n");
+                        // write("åˆä¸¦" + dn[i] + "\n");
                         tmp += dn[i] + "/";
                 }
                 return tmp;

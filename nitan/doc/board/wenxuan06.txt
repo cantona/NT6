@@ -1,287 +1,287 @@
-��������һ�١���ѡ֮��    ���Ƿǳɰ�תͷ�ա�����̶���ۣ�
+「俠客行一百」文選之六    《是非成敗轉頭空》（泥潭雜論）
 
 
-��Ž�......                               ��С��-waiter(Fri Nov 20)
+●九劍......                               店小二-waiter(Fri Nov 20)
 ----------------------------------------------------------------------
-�Ž�����ǿ, ���Ҵ����˽����Ķ���, ������Ҫ�е�.
-Ŀǰ�Ž��������������, δ������pk, �������ʱ��������, Ҳ����
-6M�˰�, ����˭PK? �Ž������ƶԺ��������Ҳ����Щ����ƽ, �Ҿ���
-�����ȽϺ�, �������²�һ�·���ӵ����߼�¼, ����������೤ʱ��
-(�ȷ�5Сʱ?), ��ȡ��������ʸ�, ����Ϊ������ɱ��ʧȥλ��, ��
-��ʱ���Ի����������������. ���õ�����. ���?
+九劍不僅強, 而且代表了劍道的頂峰, 限制是要有的.
+目前九劍的老玩家上線少, 未便是怕pk, 如果從那時練到現在, 也該有
+6M了吧, 還怕誰PK? 九劍的限制對後來的玩家也許有些不公平, 我覺得
+這樣比較好, 隔幾個月差一下風弟子的上線記錄, 如果不超過多長時間
+(比方5小時?), 就取消風弟子資格, 但因為不是因被殺而失去位置, 他
+隨時可以回來從新爭作風弟子. 不用等三年. 如何?
 
-���ھŽ�������ǿ��, qinqin˵�Ž��ķ���������������, ����Ϊqinqin
-��ϼ����, ����ʱ��Щ���ɶ���powerup��powerup����̫ǿ, ����qinqin
-��ռ����. ��ʵ�Ž���perform�ɹ��ʼ���, ������������. ���ǾŽ���
-�Ƶ��Կ��ԶԲ��õ��Ķ�������˺�, �ƺ�̫���˵�. �����ǲ��ǳ�����
-��, ������ʲô, �������ʲô?
+至于九劍本身的強弱, qinqin說九劍的防御功擊力都不弱, 但因為qinqin
+紫霞功低, 而那時有些門派多重powerup或powerup本身太強, 所以qinqin
+不佔優勢. 其實九劍的perform成功率極高, 還可以破內力. 倒是九劍的
+破刀試可以對不拿刀的對手造成傷害, 似乎太神了點. 建議是不是除破氣
+外, 對手用什麼, 你才能破什麼?
 
-��ʵ�Ҿ���, �����mud��, ����powerup����ɶ�, һ��powerup�൱��
-���پ���Ͷ��ټ�����, ������ﶼ����, �Դ����ֵ� exert powerup
-���ܺ�jingang,zuida����, �����������ֵ��Ӷ�ѡ��jingang+duida, ��
+其實我覺得, 在這個mud裡, 多重powerup才最可惡, 一個powerup相當于
+多少經驗和多少級功夫, 大家心裡都有數, 自從少林的 exert powerup
+不能和jingang,zuida連用, 幾乎所有少林弟子都選用jingang+duida, 而
 
-����exert powerup, Ҳ���Ƕ���powerup��һ��powerupǿ�ܶ�.
-����˵��ɽ��������, �Ҳ�̫ͬ��, �����200����ϼ, �����ɵ�3250,
-��ʹ���ǲ��, ������1100û�����, ���⻪ɽ���г����ͳ����ķ���
-, ����Ŀǰ��û����, ����help huashan��֪����.
+不用exert powerup, 也就是多重powerup比一個powerup強很多.
+至于說華山弟子氣短, 我不太同意, 如果有200級紫霞, 內力可到3250,
+即使根骨差點, 氣超過1100沒問題吧, 另外華山還有長精和長氣的法門
+, 可能目前還沒加上, 看看help huashan就知道了.
 
 
-��about waiter's post                        ������-raul(Fri Nov 20)
+●about waiter's post                        唐三藏-raul(Fri Nov 20)
 ----------------------------------------------------------------------
-�Ž�����ǿ, ���Ҵ����˽����Ķ���, ������Ҫ�е�.
+九劍不僅強, 而且代表了劍道的頂峰, 限制是要有的.
 
-��ӹ��С˵����ô˵�ģ�����mud �������û���ֳ�����
-�Ƚϸ����ɵ�ǿ������ȻӦ����exp �����char֮��ȡ�Ҫ����
-exp ����Զ��char ֮��Ⱦ�û�������ˣ�����6m exp,��Ҫ˵��
-9-jian,������Ź��򶼺�����la
+金庸的小說是這麼說的，但在mud 的設計裡沒體現出來。
+比較各門派的強弱，當然應該在exp 相近的char之間比。要是在
+exp 相差很遠的char 之間比就沒有意義了，練到6m exp,不要說用
+9-jian,隨便用門功夫都很厲害la
 
-����double powerup,����ͬwaiter �������jingang zuida nuoyi
-�Ѿ����ڹ��е�powerup �����ˣ��ٿ���double ,������ɺ���ȡʤ��
+對于double powerup,我讚同waiter 的意見，jingang zuida nuoyi
+已經比內功中的powerup 厲害了，再可以double ,別的門派很難取勝。
 
-��mingjiao ��shaolin ������Ŀǰ�����������ɣ���Ϊ������
-��shaolin ��ʦ�����ϸ񣬲��ܽ�飬��Ҫ������ͺ¿��wuwu
+但mingjiao 和shaolin 都不是目前人數最多的門派，因為這兩派
+中shaolin 拜師條件嚴格，不能結婚，還要被人罵禿驢。wuwu
 
-mingjiao ���ص�������������̫�ѣ���Ϊ����Ҫbili �ͣ�����sougu
-��chan ������û�ã�7-cuff �ļ���perform ���ڹ�Ҫ�󳬸ߡ�
-nuoyi ������Ҫ��̫�ߡ�
+mingjiao 的特點是新人練起來太難，因為練功要bili 低，所以sougu
+的chan 基本上沒用，7-cuff 的幾個perform 對內功要求超高。
+nuoyi 對內力要求太高。
 
 tell skills begin fight muren
 tell swords begin fight muren
-���������飬�������biwu,shaolin mingjiao ����û����Χ��
-�⵹���������书�����ٳɵĵ�����
+所以少年組，青年組的biwu,shaolin mingjiao 從來沒有入圍。
+這倒符合正派武功難以速成的道理。
 
-��shaolin mingjiao �����ɺ�xingxiu, xiaoyao lingjiu
-��char �Ͳ���һ���ˡ�
+但shaolin mingjiao 的練成後，xingxiu, xiaoyao lingjiu
+的char 就不堪一擊了。
 
-shaolin mingjiao ���ǹ��ϵ����ɣ����ɵļ�������ĸĶ���̫�á�
-һ��mud ��Ҫ���������ɣ��е������Ѿ����е�����������ǿ�����
-������һ�����Ǿ�û��˼�ˡ�
+shaolin mingjiao 都是古老的門派，各派的技能做大的改動不太好。
+一個mud 需要多樣的門派，有的易練難精，有的難練但威力強，如果
+各門派一樣，那就沒意思了。
 
-�����ҽ��鲻ȡ��double powerup,����ǿ��Ҫ�������������ڹ���
-�������������������ȵȡ�
+所以我建議不取消double powerup,但加強需要的條件，比如內功的
+級別，消耗內力的數量等等。
 
-����shaolin mingjiao ������ô��������������ô��࣬����������
-��ͬexp ��ռ�����Ϸ磬�Ժ�˭����shaolin mingjiao ?
-��Ҷ�ȥ�����������ˡ�
+否則shaolin mingjiao 費了那麼大力氣，吃了那麼多苦，比其他門派
+相同exp 的佔不了上風，以後誰還來shaolin mingjiao ?
+大家都去好練的門派了。
 
-��hmm.                                     ��С��-waiter(Fri Nov 20)
+●hmm.                                     店小二-waiter(Fri Nov 20)
 ----------------------------------------------------------------------
-�Ž�ǿ��ǿ, Ŀǰû�����, ��Ҳ�����Ҳ��.
+九劍強不強, 目前沒玩家試, 大家不討論也罷.
 
-shaolin mingjiao �Ѳ�����? ����yijinjing�ܶ���201, mingjiao
-jiuyang-shengong �ܶ���101, nuoyi�ܶ���250. nuoyi�������Ѿ�
+shaolin mingjiao 難不難練? 少林yijinjing能讀到201, mingjiao
+jiuyang-shengong 能讀到101, nuoyi能讀到250. nuoyi讀起來費勁
 lazy
 zzz
-����������2Kʱ, �ߴ�ľ�˱߶�, Ҳ������
-��һֱ��Ϊ, ǿ�ɵ�ǿ�������ܸ�ʦ��ѧ��������ڹ�, ����������
-������powerupЧ���Ǻ��ڹ��ȼ��ҹ���, ����������ѧ��250���ڹ�
-, �䵱Ҳ����200. ��Щ������Ȼͨ���ڹ��⹦ȡʤ.  ����800k����
-�����ڹ����ܵ�201, �����ĸ����ɵ���ѧ�õ�?
-��ͬ���shaolin, mingjiao, wudang��Ϊǿ��, �⼫����. ��������
-����ǿ�ù��ݾͺ�˵������, ��������2M����ҹ�������������ң4M
-����Ҹ�, �ǲ���̫˵������.
+但當內力過2K時, 邊打木人邊讀, 也不算難
+我一直以為, 強派的強處在于能跟師傅學到更深的內功, 而攻擊防御
+力乃至powerup效果是和內功等級掛勾的, 少林明教能學到250級內功
+, 武當也超過200. 這些門派自然通過內功外功取勝.  少林800k弟子
+特殊內功就能到201, 其他哪個門派弟子學得到?
+我同意把shaolin, mingjiao, wudang設為強派, 這極合理. 但比其它
+門派強得過份就很說不過了, 少林明教2M的玩家攻擊防御力比逍遙4M
+的玩家高, 是不是太說不過了.
 
-һֱ����, ���ָ��ֲ���, luoyz, jintian, geng, yanpotian, skills...
-����ң����superkc, û�п���ĸ��ְ�.
-��ôΪʲôһֱ��ң����ڶ���? ��ʵ���������˲�С˵��Ӱ��,
-�ҵĵ�һ��char������ң��, ���ſ�����ң��char��exp, ��������Ը
-�����ܸߵ�, luoyz �� xixihaha ���� 100k, ��������, ����kud��
-140K, Ҳ������. ��ң�����������������, ������Ķ���ʵ��̫��,
-����, �ܴ�����������Ļ�����. �Ҳ���������ң, ˵��Щ��ϣ��
-xkx100��Ҫ��Щ�����Ǹ����˵�, ��Щ�Ǹ�����ҵ�, ����̫��ͽ�
-������.
-˵��double powerup������, �Ҿ��ú�����, ��2M��char, force 250
-sp force 200 ����, ����3K���Ǻ��ѵİ�, ����2M�ĸ��ֶ����,
-double powerup���۶����, �ܲ���Ҫ��̫��. ��������2M��ѡ��
-��������������5.5M��ȫ��sp skills lvl ����370��xem����, һ��
-����? Ҫ֪��exp��skills��ȫ���Լ�����, double powerup ȴ����
-�Լ�����.
-��ʵ��Ҳ����ǿ��Ҫ��ȥ��double powerup, wiz д����������,
-�ҽ��鲻Ҫʹ����Ч��̫ǿ��, zuida,jingang,nuoyi,��ü�ķ���ׯ
-xianglong-dafa,�����л�ɽ��..., ������ͬ����֤shaolin mingjiao
-������.
-raul �Ǽ�������˵�Լ�������ǿ�ɵ�, ��ǰ�����ֵ��Ӵ󶼲���ô̹��...
+一直以來, 少林高手不少, luoyz, jintian, geng, yanpotian, skills...
+但逍遙除了superkc, 沒有可提的高手吧.
+那麼為什麼一直逍遙玩家眾多呢? 其實是受天龍八部小說的影響,
+我的第一個char就是逍遙的, 不信看看逍遙的char們exp, 很少有人願
+練到很高的, luoyz 練 xixihaha 不到 100k, 就送人了, 我練kud到
+140K, 也放棄了. 逍遙最易吸引新來的玩家, 但好玩的東西實在太少,
+又弱, 很打擊新生力量的積極性. 我不會再練逍遙, 說這些是希望
+xkx100不要有些門派是給新人的, 有些是給老玩家的, 區別太大就降
+魅力了.
+說到double powerup的條件, 我覺得很難設, 對2M的char, force 250
+sp force 200 左右, 內力3K不是很難的吧, 現在2M的高手多的是,
+double powerup無論多苛刻, 總不能要求太高. 現在少林2M的選手
+攻擊防御力比我5.5M多全部sp skills lvl 超過370的xem還高, 一定
+合理? 要知道exp和skills是全靠自己練的, double powerup 卻不用
+自己費事.
+其實我也不是強烈要求去掉double powerup, wiz 寫出來不容易,
+我建議不要使它們效果太強烈, zuida,jingang,nuoyi,峨眉的風雲莊
+xianglong-dafa,好象還有華山的..., 這樣還同樣保証shaolin mingjiao
+的優勢.
+raul 是幾個月來說自己門派是強派的, 以前的少林弟子大都不這麼坦白...
 
-��˵������.                                ��С��-waiter(Fri Nov 20)
+●說到難練.                                店小二-waiter(Fri Nov 20)
 ----------------------------------------------------------------------
-���������Ѷ�, ���½�û���ֱȶ�ü������. �ټ�ׯ�ȼ����ܸ���
-��˷�(mahayana), ��ݾ��ֱ���NPCһ��Ҫѧ���ڷ�. 100K
-��ǰ, ��Ҳ����ʲô, mahayana �ܶ���101, ���Ժ��Ҫ��ѧmahayana
-��ѧlinji-zhuang, ������ѧ��200��Ҫ���?
+提起練功難都, 我致今沒發現比峨眉難練的. 臨濟莊等級不能高于
+大乘佛法(mahayana), 想拜靜字輩的NPC一定要學禪宗佛法. 100K
+以前, 倒也不覺什麼, mahayana 能讀到101, 但以後就要先學mahayana
+後學linji-zhuang, 兩個都學到200級要多久?
 
-��������, 100�༶��mahayana һ��������10k����,
-3.1Mǰ, xem����ȫ���������ľ��. ���ھ����þ�����ȴ�ľ����
-������ʡ������������, ��Ҳ�Ե�����.
+所到靜坐, 100多級的mahayana 一天能坐出10k經驗,
+3.1M前, xem幾乎全部經驗得自木人. 現在靜坐得經驗雖比打木人慢
+但可以省出內力練功夫, 倒也自得其樂.
 
-��������ֻΪ���ǿ, ������Ȥ��������, �п����������, ����bug
-����, ��Ȥȴ���Ǵ�ľ���ܱȵ�. ��Solarking���Ǻ���ʱ, wuxiangxinmo
-�ʹ�������, ���ڰ�����ľ���ø���, ������Ҳ����ȥ. ��ν���и���
-�淨, ���и�����Ȥ.
+有人練功只為最後強, 有人樂趣在練功中, 有空想個新練法, 或找bug
+玩玩, 樂趣卻不是打木人能比的. 在Solarking還是孩子時, wuxiangxinmo
+就大名鼎鼎, 現在把明教木人讓給他, 恐怕他也懶得去. 所謂各有各的
+玩法, 個有各的樂趣.
 
-��about shaolin                            ������-raul(Fri Nov 20)
+●about shaolin                            唐三藏-raul(Fri Nov 20)
 ----------------------------------------------------------------------
-��û����mingjiao,����shaolin �Ѿ�����Ϥ�ˣ��������Ժ÷�
-ÿ��һ��mud ��ȥ���ֵ����У�����ʱ��Ҳ�ܳ��ˡ�
+我沒練過mingjiao,但對shaolin 已經很熟悉了，由于天性好佛，
+每到一個mud 都去少林當和尚，練功時間也很長了。
 
-��һ��char �����ѵľ���ǰ800k,�����ͣ����̣�Ҫѧ��ʲô����
-��ʲô�����ѣ�800k �Ժ�ͺܷ����ˡ��ҵ�skills 40 ������
-850k,����1300,Ȼ���ֻ��˺ü�����xkx �ѻ������ܼ���ȥ��
+練一個char 最困難的就是前800k,內力低，氣短，要學點什麼，練
+點什麼很困難，800k 以後就很方便了。我的skills 40 歲練到
+850k,內力1300,然後又花了好幾年在xkx 把基本技能加上去，
 
-�������ɵ�romario ����30 ���ܵ�800k,���޿���ʲô�ط�����Ϳ���
-maxsuck,���ҿ�duanlian own_sword ���Կ���du shu,think wall
-������shaolin ��yijinjing ������damo ѧ��250,����damo ��Ҫ����
->40,������������ֻ�ܶ���120,char  ����������Ҫ��28����ʱ��ѡ
-skills �����ٺܿ������£���robot ѡ�˽���5 hour.
+而星宿派的romario 不到30 就能到800k,星宿快在什麼地方？快就快在
+maxsuck,而且靠duanlian own_sword 可以快速du shu,think wall
+不錯，shaolin 的yijinjing 可以向damo 學到250,可是damo 需要悟性
+>40,根據現在論語只能讀到120,char  的先天悟性要》28，當時我選
+skills 在網速很快的情況下，用robot 選了將近5 hour.
 
-bai damo ����һ��������ɱ����=0 ��sigh ,��������Ҫɱ�ˣ�û�и���
-char ��������������char ȥbai damo���ҵ�swords �����뵱����char
-���ģ��ҿ�bujinyun ��raul ����ң����������ڶ���һ����bai ����
+bai damo 的另一個條件是殺人數=0 ，sigh ,練功難免要殺人，沒有輔助
+char 根本不可能練出char 去bai damo。我的swords 本來想當輔助char
+練的，幸虧bujinyun 把raul 借給我，否則我現在都不一定能bai 得了
 damo
 tell skills begin fight muren
 tell swords begin fight muren
 
-�ڹ�ǿ����������һ�㣬powerup ��������һ�㣬�͹���������û�й�
-ϵ��wudang �������taiji-shengong 200,200 ����ֻ���Լ��о���
+內功強除了內力高一點，powerup 的威力大一點，和攻擊防御了沒有關
+系，wudang 張三風的taiji-shengong 200,200 以上只能自己研究，
 
-����800k exp ��һ��ƽ��㣬800k ��ǰ��shaolin mingjiao ����
-xiaoyao xingxiu �Ķ��֣�800k �Ժ�Ϳྡ������
+所以800k exp 是一個平衡點，800k 以前，shaolin mingjiao 不是
+xiaoyao xingxiu 的對手，800k 以後就苦盡甘來。
 
-bai damo �����ֵ��ӵ�������룬Ҫʵ����һ���룬Ҫ��ѡchar ��ʼ
-���һ�Ҫ�г��˵����ˣ���bai dami ǰ��ÿ����yangzhou ��ϣ����
-Ҫ����ɱ��npc,����������ɱ�ң���������ɱ����˵�䲻�´��Ц��
-�Ļ����ҵ�skills exp 10k ��ʼ��shailin ��muren,��850k ȥxkd
-��ڣ��м�û�ҳ������ţ����·���ɱ����
+bai damo 是少林弟子的最高夢想，要實現這一夢想，要從選char 開始
+而且還要有超人的幸運，我bai dami 前，每次來yangzhou 都希望不
+要碰上殺人npc,到不是怕他殺我，而是怕我殺他，說句不怕大家笑話
+的話，我的skills exp 10k 開始在shailin 打muren,到850k 去xkd
+面壁，中間沒敢出過寺門，生怕犯了殺孽。
 
-������shaolin ,Ҫ�͵���࣬�̵ü�į����ʮ�����쿴�ɹ�������
-��Ҫ��Ľ����neili �ߣ����������࣬һ��perform ������������
+所以來shaolin ,要耐的清苦，忍得寂寞，把十丈軟紅看成過眼雲煙
+不要羨慕別人neili 高，攻擊次數多，一下perform 砍掉多少氣。
 
-����ν  �����죬���ǵأ������Ǹ�ǽ��ǰ���Ƿ��ã����ؾ�������֮�С�
+正所謂  上是天，下是地，左右是高牆，前後是佛堂，寶藏就在真如之中。
 
 
-���ˮ!!��ˮ!!!!                            ������-getman(Thu Nov 26)
+●灌水!!灌水!!!!                            扛東東-getman(Thu Nov 26)
 ----------------------------------------------------------------------
 Title : Chat in 5 miao
-��һ������ط����Լ�����,Ȼ����˸�����..
-���ָ����˵��"��������Ĺ���ֻ�������������㶼Ҫ�������Ƥ��"
-��С��˵���� ��ĲŰݷ�����...
-��С������˵����������һֻ��ľ�ϡ�
-���˵����why?
-���˵����although i dunno why, anyway, getman is a big papaya
-����Ŵ�����ֵص����㣬�������ֿ��죬������Ц������
-��С��˵���� Ҫ�Ǳ�ɱ, �������治��.
-���������������Ц������
-������ŵ�С�����˵�ͷ��
-�������ҡ���㣬������һЩ�����̶ܴ�!
-������...
-�������۾��������˹�����
-��̾�˿�����
-    ��ʵ����Ϊ����ݻ�ɽ�������mud���ҵ�һ��mud��mask Ҳ�ǵ�һ��
-char�������Ļ�֪��ʲô��ֻ�ǻ�ɽ���ң�����Ⱥ���˾��գ����װݰ��ˡ�
-�浽���ڣ��������˵��
-    ���еȼ�Ҳ��250 or above ����ȴ�������150��skill�����Ǿ���Ϊ
-�Ҳ��ѹ��� *sigh �е�ʱ������ʦ��ü��ˣ���ʦҲ��˵����ѧ���ˣ���
-ѧ���˶���ǡ�
-    ������������ֺܺ�ڵĸо���ֻ�������ڹ������������ҵĵ�һ��
-��ɫ��ʵ���ǡ�����
-    ����ΪMask ���Ľ�һ���µ�ҹ�������ְ��ֺޡ�
-    �����ܸ�����ʶ����ô����������ѡ���ʦ�ֺã�ʵ�������Ը��ᡣ
-    Ҫ����Ϊ�����ɽ��һ����ǰ�Ҿ�suicide -f �ˡ�
-��̾�˿�����
-����ŷ�����̾�˿�����
+你一聲不響地縫起自己的嘴,然後打了個死結..
+楊過指著你說："你這個吝嗇鬼，只怕鐵公雞遇到你都要被你扒了皮！"
+店小二說道： 最笨的才拜風清楊...
+店小二對你說道：你真是一只大笨木瓜。
+楊過說道：why?
+楊過說道：although i dunno why, anyway, getman is a big papaya
+楊過張大眼奇怪地瞪著你，慢慢地咧開嘴，捧腹大笑起來。
+店小二說道： 要是被殺, 連劍都玩不成.
+楊過「哈哈哈」大笑幾聲。
+楊過對著店小二點了點頭。
+楊過猛力搖著你，你聽到一些聲音很刺耳!
+。。。...
+你揉揉眼睛，清醒了過來。
+你嘆了口氣。
+    其實你以為我想拜華山？玩這個mud是我第一個mud，mask 也是第一個
+char。當初哪會知道什麼？只是華山好找，岳不群是人就收，容易拜罷了。
+玩到現在，天天給人說。
+    所有等級也都250 or above 攻防卻不如別人150的skill。你們就以為
+我不難過？ *sigh 有的時候求巫師求得急了，巫師也會說不想學算了，想
+學的人多的是。
+    我聽了真的有種很後悔的感覺。只是特殊內功，還有這是我的第一個
+角色。實在是。。。
+    想想為Mask 熬的近一個月的夜，唉，又愛又恨。
+    不過很高興認識了這麼多這裡的朋友。巫師又好，實在是難以割舍。
+    要不，為這個華山。一個月前我就suicide -f 了。
+你嘆了口氣。
+你對著風清揚嘆了口氣。
 * die
 * corpse
 
-��̫���Ҷ���˵                              ��С��-waiter(Thu Nov 26)
+●太子我對泥說                              店小二-waiter(Thu Nov 26)
 ----------------------------------------------------------------------
-��ֻ��˵�����ͼ�������Ķ�ľ��, ��û˵��ɽ��. ���������ɽ,
-��ѡ����, �������ٺͷ�����, ��ò�����ڧ. �ҿ�û��˵��ɽ������
-�򲻹���������һ����. ������������, ��ɽ�����˭. Ҫ������dsds
-��qinqin��ô����ɽ��.
+我只是說不欣賞擠風清楊的獨木橋, 可沒說華山弱. 如果我練華山,
+首選劍宗, 夠料了再和風商量, 免得參與內訌. 我可沒聽說華山二百五
+打不過其他門派一百五. 除了少林明教, 華山不輸給誰. 要不當年dsds
+和qinqin怎麼挑華山練.
 
-��ѧ�Ž���Ҫ����ɱʦ��, ��Ҫ����ʦ��. haha
+想學九劍就要考慮殺師兄, 又要防這師弟. haha
 
-������ʿ, Ը���Ϲ�. ����Թɶ?
+二桃三士, 願者上鉤. 還抱怨啥?
 
-���С�� �е���                             ������-raul(Thu Nov 26)
+●店小二 有道理                             唐三藏-raul(Thu Nov 26)
 ----------------------------------------------------------------------
 claw
 claw waiter
-waiter ˵��û����bai feng û��˼͸�ˡ��Ȳ�˵9-jian
-������Σ�ֻҪһ�����Ͱ׷��ˡ�
+waiter 說的沒錯，bai feng 沒意思透了。先不說9-jian
+威力如何，只要一死，就白費了。
 
-��bai feng �͵����ʦ�֣�����ʦ�ܣ�ʦ�ֵܱ�pker ��Σ��
-�����������뷢���������
+想bai feng 就得算計師兄，防備師弟，師兄弟比pker 還危險
+這樣的門派想發揚光大可能嗎？
 
-huanshan �Ѿ�����һ�ν���֮���ˣ�ʲôʱ������һ����ڧ��
-���ǵ��ſ����֡�
+huanshan 已經出過一次劍氣之爭了，什麼時候再來一次內訌？
+我們等著看熱鬧。
 grin
 
-�����л�Ҫ˵....                           ��С��-waiter(Sun Nov 29)
+●我有話要說....                           店小二-waiter(Sun Nov 29)
 ----------------------------------------------------------------------
-    �������˱�ʾ����xem's skills and their lvl������. ���뼰����
-ǰxqing(����Ǳ𴦵�wiz��)����` Ϊʲôskills lvl��ô����, �ǲ���
-call��? ' (��ʱ��Ϊ�ʵ���waiter��skills, ��û����, �����������ʵ�
-һ����XEM). ������������, ˵�����˻���xem's skills����ʦ��æ�ӵ�,
-�Һ��ջ�. �¹����Լ�û��ϵ, ���漰mud������, �Ҳ��Ĳ�����һ��. ��
-���mud��, ������BUG����wuxiang��һ, ��ǰ��ľ���ҵ�һ, cuhk����ʶ
-��ֻǰÿСʱ�򲻵�2K, ����һ�Ȳ�����, �����Ҹ�������δ�ľ��, ��
-������cuhk���1M. ������fandog, princess, sexydog�����Ѷ�ͨ����Ϥ
-����δ�ľ�˻���, �����ǽ�һ������, ���Ǵ�ľ���þ���Խ��Խ��, fandog
-�Ѵ�ľ�˵ľ������ܽ���һ��, �̻��˺����ĺܶ���, mask��Ϊ��һ��char
-�ܴ�1.9M, ���в���fandog�Ĺ���, sunf�ڿ͵�ļ�ƪpostsʵ�ǹ�������.
-��Ϊ�Һܾò���ľ����, �������Ҵ�ľ��, δ���ܱȴ�ҿ�. mud���˴���,
-ѧϰ��ϰ����Ҳ����Ҫ��һ��. �������������������ˮƽ���������ܱ�, ��
-��cuhk��ȫ��xkd�γ�, 200�༶9claw��������,luoyz, geng, xkx�ȵ���Щ��
-��Ҳ���Ұ�����. lamababay�����Ĵ󲿷ֳ������Ҹ���. ������׷������,
-����xem��1.5M�Ժ���ּ���һֱ��ͷ����.��xemֹͣ��ľ��ʱ, �Ѿ�û�е�
-��250���Ĺ���(ȫ���ڴ�ľ���ڼ����͵�).
-    �Ժ�ص�emeiɽ, �þ����þ����Ǳ��, ʡ��������������, ����xem��
-����һֱ��׷exp limit. ��Ϊ�������ÿ�, �����Ǿ�����Щ, ��ʱ���й���
-������exp limit, �����޹�����.
-    �Ҿ������Ը�������, �ҵ����������м�ʮ��. ����Ϊ, ����mud�ĸ���
-����������, ��Ӧ��bug, ��mud�Ľ��������, ���ͨ����bug���һ������,
-ֻҪ������, �ǿ��Ե�, ��ʦͨ������ܷ��ָ��������, ��һ������mud.
-��ľ������ɸ��ֵ����ſγ�, ���滹��������Ҫ��. ��ʹ������ʦ, �˽�
-mud��ȫ���ڲ��ļ�, Ҳδ��ͳ�Ϊ��������, ҲΪ�ؾ��ܷ���bug, �����
-bug(Ҳ����mud�ڲ�����ì�ܵĵط�)��������ĳЩ��������²�����, һ���
-���Բ�һ���ܷ���.
-    ��mud�������, �ȴ�ľ�˹�Ȼ��һ����, ������Щ�ط�����Ҫ�ǻ�, ��
-����������ĳ���泬ǿ, �ͻ���, �ǲ��ǵ�.
-    ��ʵ��, �Һ��������ʦ��������������, Ҳ��ϲ�������Ҷ��ҵ���
-����������ɹ�, ��ȥ��������̨���mud, û������������ܸɸ����Ƶ���
-ʦ��, ����������, ������Ϊ�Լ�̰��, ��Ҫ�Ǿ����������պ�, �ʺ��Լ�.
-��ʱ��ϲ������, ˵˵��ɫ�Ļ�, ���Ӳ�����, Ҳ����ţ. ���������˴�����
-�����ο�, ���úܺ�Ц, ��mud�ﴵţ, ����;����İ���˴�ţûʲô������.
-hmm, ��Զ��.
+    昨天有人表示懷疑xem's skills and their lvl的來歷. 又想及數天
+前xqing(大概是別處的wiz吧)問我` 為什麼skills lvl那麼整齊, 是不是
+call的? ' (當時以為問的是waiter的skills, 就沒介意, 現在想起來問的
+一定是XEM). 幾件事連起來, 說明有人懷疑xem's skills是巫師幫忙加的,
+我很惱火. 事關我自己沒關系, 但涉及mud的聲譽, 我不的不聲明一下. 在
+這個mud裡, 解謎找BUG當以wuxiang第一, 從前打木人我第一, cuhk在認識
+我只前每小時打不到2K, 以至一度不練了, 後來我告訴他如何打木人, 並
+幫他把cuhk打過1M. 後來的fandog, princess, sexydog等朋友都通過我悉
+曉如何從木人獲利, 經他們進一步嘗試, 他們打木人拿經驗越來越快, fandog
+把打木人的經驗又總結了一下, 教會了後來的很多人, mask作為第一個char
+能打到1.9M, 其中不無fandog的功勞, sunf在客店的幾篇posts實是功德無量.
+因為我很久不打木人了, 現在讓我打木人, 未必能比大家快. mud除了打經驗,
+學習練習功夫也是重要的一關. 我自信至今我練功夫的水平依舊無人能比, 當
+初cuhk的全部xkd課程, 200多級9claw是我練的,luoyz, geng, xkx等的又些功
+夫也是我幫練的. lamababay練功的大部分程序是我給的. 我練功追求完美,
+所以xem在1.5M以後各種技能一直齊頭並進.當xem停止打木人時, 已經沒有低
+于250級的功夫(全是在打木人期間練就的).
+    以後回到emei山, 用靜坐拿經驗和潛能, 省出內力來練功夫, 所以xem的
+功夫一直緊追exp limit. 因為技能練得快, 靜坐那經驗慢些, 有時所有功夫
+都到了exp limit, 以至無功可練.
+    我經常嘗試各種練法, 我的練功程序有幾十個. 我認為, 利用mud的各種
+規律來練功, 不應算bug, 在mud的建設過程中, 玩家通過找bug獲得一點利益,
+只要不過分, 是可以的, 巫師通過玩家能發現更多的問題, 進一步完善mud.
+打木人是想成高手的入門課程, 後面還有許多事要做. 即使做過巫師, 了解
+mud的全部內部文件, 也未便就成為練功高手, 也為必就能發現bug, 大多數
+bug(也就是mud內部自相矛盾的地方)往往是在某些極限情況下才顯現, 一般的
+測試不一定能發現.
+    在mud裡比練功, 比打木人固然是一方面, 但另有些地方更需要智慧, 如
+果見別人在某方面超強, 就懷疑, 是不智的.
+    老實講, 我很討厭別處巫師來這裡妄加評論, 也不喜歡別的玩家對我的練
+功結果疑神疑鬼, 我去過北美和台灣的mud, 沒見過比這裡更能幹更和善的巫
+師了, 我在這裡玩, 除了因為自己貪玩, 主要是覺得這裡氣氛好, 適合自己.
+有時我喜歡聊天, 說說粉色的話, 但從不骯臟, 也不吹牛. 我聽過有人吹練的
+如何如何快, 覺得很好笑, 在mud裡吹牛, 與旅途中向陌生人吹牛沒什麼大區別.
+hmm, 扯遠了.
 
-    �Ҳ����ٽ����ҹ��������, ��Щ����Ҳ���ὲ��ȥ. ���˻��ɺ���. ��
-����Ƣ�������.
+    我不會再解釋我功夫的來歷, 有些練法也不會講出去. 隨人懷疑好了. 好
+在我脾氣還算好.
 
 
-���ҵĹ۵�                                ����-hah(Sun Nov 29)
+●我的觀點                                靈靈-hah(Sun Nov 29)
 ----------------------------------------------------------------------
-��Ҳ����xem��skills������ʦcall�ģ���Ϊһ��xkx100������ң����Ҿ���
-�����ʸ�˵��仰��ÿ�����ϣ���xem����������ͷ�������Ҵ�û�м�������
-�������xem��ôͶ��ģ������������µ�һ�ˣ�������û��ҪҪ����ʦcall
-����skills..�Ҿ��������MUD�У�����������������Ҫ�ģ�������Ҫ������
-һ�����Ѻõ����磬�������ͷ�������ԣ������MUD���������ջ�����
-����char,,������������ʶ�˺ܶ�ĺ����ѡ�������
+我也相信xem的skills不是巫師call的，作為一個xkx100的老玩家，，我覺的
+我有資格說這句話，每天晚上，，xem都在網上埋頭苦練，我從沒有見過其他
+玩家有象xem這麼投入的，，早已是天下第一了，跟本就沒必要要求巫師call
+他的skills..我覺的在這個MUD中，，練功並不是最重要的，，最重要的是有
+一個很友好的世界，大家在裡頭暢所欲言，在這個MUD中我最大的收獲不是我
+練的char,,而是在裡面認識了很多的好朋友。。。。
  
-��δ�˵���Ը                               ̫��-mask(Sat Nov 28)
+●未了的心願                               太子-mask(Sat Nov 28)
 ----------------------------------------------------------------------
-ֻ��ԧ�첻���ɡ�
-��mud������ˡ�����Ľ������Ǻο������ȸ��������˶ʼ�!��Ȼ��ø�
-���ˡ�������л��ʦ����лһ�������ģ���ӥ������֮��������С���������
-���ˣ������أ������ơ�ΤС��������
-�������ˣ������������Ѹ��ҵİ�����лл���ǡ�kiss all .heihei
-ֻ��ϧ���ǹ����
-һ�����ź�!
+只羨鴛鴦不羨仙。
+玩mud快半年了。最羨慕的玩家是何苦和天堂雀。苦得讓人妒忌!自然甜得更
+讓人。。。感謝巫師。感謝一刀，花心，孤鷹，疾風之鈴音，店小二，楊過，
+高興，唐三藏，步擎雲、韋小寶。。。
+數不清了，許多許多朋友給我的幫助。謝謝你們。kiss all .heihei
+只可惜還是光棍！
+一生的遺憾!
 sigh
-����12.5�ľۻ��ұ��Ǽ���ȥ�ġ�ֻ��ϧ�ҵ�һ���ر��Ů���������ա�����
-�ߣ�Ҳ���߲����ˡ�
-����Ĳ�����ɫ���ѡ���Ҫ������שͷ�� fear
+另外12.5的聚會我本是極想去的。只可惜我的一個特別的女的朋友生日。不讓
+走，也許走不成了。
+我真的不是重色輕友。不要給我扔磚頭！ fear
 hehe
 slap mask
-�ҡ���������
+我。。。唉。
 
 

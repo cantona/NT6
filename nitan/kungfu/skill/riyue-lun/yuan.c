@@ -3,7 +3,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-string name() { return HIY "Ô²ÂúÊÆ" NOR; }
+string name() { return HIY "åœ“æ»¿å‹¢" NOR; }
 
 inherit F_SSERVER;
 
@@ -16,35 +16,35 @@ int perform(object me)
         int skill;
 
         if( query_temp("yuan_man", me) )
-                return notify_fail("ÄãÏÖÔÚÕıÔÚÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£åœ¨æ–½å±•" + name() + "ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me) )
             || query("skill_type", weapon) != "hammer" )
-                return notify_fail("ÄãËùÊ¹ÓÃµÄÎäÆ÷²»¶Ô£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ æ‰€ä½¿ç”¨çš„æ­¦å™¨ä¸å°ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (me->query_skill_mapped("hammer") != "riyue-lun")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢ÈÕÔÂÂÖ·¨£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼æ—¥æœˆè¼ªæ³•ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (me->query_skill_mapped("force") != "longxiang-gong")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢ÁúÏó°ãÈô¹¦£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼é¾è±¡èˆ¬è‹¥åŠŸï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if ((int)me->query_skill("riyue-lun", 1) < 120)
-                return notify_fail("ÄãµÄÈÕÔÂÂÖ·¨»ğºò²»×ã£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„æ—¥æœˆè¼ªæ³•ç«å€™ä¸è¶³ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if ((int)me->query_skill("force") < 180)
-                return notify_fail("ÄãµÄÄÚ¹¦»ğºò²»×ã£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸç«å€™ä¸è¶³ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if( query("max_neili", me)<1500 )
-                return notify_fail("ÄãµÄÄÚÁ¦ĞŞÎª²»×ã£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¿®ç‚ºä¸è¶³ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if( query("neili", me)<300 )
-                return notify_fail("ÄãÏÖÔÚµÄÕæÆø²»×ã£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çš„çœŸæ°£ä¸è¶³ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         wp = weapon->name();
 
-        message_combatd(HIY "$N" HIY "ÍÂÆøÑïÉù£¬Ê©³öÈÕÔÂÂÖ·¨¡¸" HIW "Ô²ÂúÊÆ"
-                        HIY "¡¹£¬ÊÖÖĞ" + wp + HIY "ÔË×ªÈç·É£¬Ñ¸ËÙ»¤×¡ÖÜÉíÒª"
-                        "º¦¡£\n" NOR, me);
+        message_combatd(HIY "$N" HIY "åæ°£æšè²ï¼Œæ–½å‡ºæ—¥æœˆè¼ªæ³•ã€Œ" HIW "åœ“æ»¿å‹¢"
+                        HIY "ã€ï¼Œæ‰‹ä¸­" + wp + HIY "é‹è½‰å¦‚é£›ï¼Œè¿…é€Ÿè­·ä½å‘¨èº«è¦"
+                        "å®³ã€‚\n" NOR, me);
 
         skill = me->query_skill("riyue-lun", 1);
 
@@ -67,7 +67,7 @@ void remove_effect(object me, int amount)
         {
                 addn_temp("apply/defense", -amount, me);
                 delete_temp("yuan_man", me);
-                tell_object(me, "ÄãµÄ" + name() + "ÔËĞĞÍê±Ï£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï¡£\n");
+                tell_object(me, "ä½ çš„" + name() + "é‹è¡Œå®Œç•¢ï¼Œå°‡å…§åŠ›æ”¶å›ä¸¹ç”°ã€‚\n");
         }
 }
 

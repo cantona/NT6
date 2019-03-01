@@ -1,13 +1,13 @@
-// ´óÌÆË«Áú´«
+// å¤§å”é›™é¾å‚³
 //jiaotou.c 
  
 inherit NPC;
 
 void create()
 {
-        set_name("½ÌÍ·", ({ "jiaotou" }));
+        set_name("æ•™é ­", ({ "jiaotou" }));
         set("age", 28+random(10));
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("attitude", "peaceful");
    set("str", 20);
         set("combat_exp", 18000);

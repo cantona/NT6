@@ -1,4 +1,4 @@
-// shanshen.c ÀÏÉ½Èş
+// shanshen.c è€å±±ä¸‰
 
 inherit ITEM;
 
@@ -12,12 +12,12 @@ void init()
 
 void create()
 {
-        set_name("ÀÏÉ½Èş", ({"laoshan shen", "shen"}));
+        set_name("è€å±±ä¸‰", ({"laoshan shen", "shen"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Öê");
-                set("long", "ÕâÊÇÒ»ÖêÕ´ÂúÉ½ÄàµÄ³¤°×ÀÏÉ½Èş¡£\n");
+                set("unit", "æ ª");
+                set("long", "é€™æ˜¯ä¸€æ ªæ²¾æ»¿å±±æ³¥çš„é•·ç™½è€å±±ä¸‰ã€‚\n");
                 set("value", 10000);
         }
         setup();
@@ -26,12 +26,12 @@ void create()
 int do_eat(string arg)
 {
         if (!id(arg))
-        return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+        return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
 
         addn("eff_qi", 200, this_player());
 //        this_player()->addn("max_qi", 100);
 
-        message_vision("$N³ÔÏÂÒ»ÖêÀÏÉ½Èş£¬Ö»¾õµÃ»ëÉíÒ»¹ÉÈÈÆø¶µµ×Ã°ÁËÉÏÀ´ !\n", this_player());
+        message_vision("$Nåƒä¸‹ä¸€æ ªè€å±±ä¸‰ï¼Œåªè¦ºå¾—æ¸¾èº«ä¸€è‚¡ç†±æ°£å…œåº•å†’äº†ä¸Šä¾† !\n", this_player());
         destruct(this_object());
         return 1;
 }

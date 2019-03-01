@@ -16,15 +16,15 @@ int main(object me, string arg)
         string reply_out;
 
         if (! arg || arg == "")
-                return notify_fail("ÄãÒª»Ø´ğÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦å›ç­”ä»€éº¼ï¼Ÿ\n");
 
         if( !stringp(target=query_temp("reply", me)) )
-                return notify_fail("¸Õ²ÅÃ»ÓĞÈËºÍÄãËµ¹ı»°¡£\n");
+                return notify_fail("å‰›æ‰æ²’æœ‰äººå’Œä½ èªªéè©±ã€‚\n");
 
         if (sscanf(target, "%s@%s", target, mud) == 2)
         {
                 GTELL->send_gtell(lower_case(mud), lower_case(target), me, arg);
-                write("ÍøÂ·Ñ¶Ï¢ÒÑËÍ³ö£¬¿ÉÄÜÒªÉÔºò²ÅÄÜµÃµ½»ØÓ¦¡£\n");
+                write("ç¶²è·¯è¨Šæ¯å·²é€å‡ºï¼Œå¯èƒ½è¦ç¨å€™æ‰èƒ½å¾—åˆ°å›æ‡‰ã€‚\n");
                 return 1;
         }
 
@@ -33,7 +33,7 @@ int main(object me, string arg)
         {
                 if (MESSAGE_D->send_msg_to(me, target, arg))
                         return 1;
-                return notify_fail("¸Õ²ÅºÍÄãËµ»°µÄÈËÏÖÔÚÒÑ¾­Àë¿ªÓÎÏ·ÁË¡£\n");
+                return notify_fail("å‰›æ‰å’Œä½ èªªè©±çš„äººç¾åœ¨å·²ç¶“é›¢é–‹éŠæˆ²äº†ã€‚\n");
         }
 
         no_tell=query("env/no_tell", obj);
@@ -42,33 +42,33 @@ int main(object me, string arg)
         {
                 can_tell=query("env/can_tell", obj);
                 if( !is_sub(query("id", me),can_tell) )
-                        return notify_fail("Õâ¸öÈË²»ÏëÌıÄãÂŞàÂÀ²¡£\n");
+                        return notify_fail("é€™å€‹äººä¸æƒ³è½ä½ ç¾…å—¦å•¦ã€‚\n");
         }
 
         if (playerp(obj) && obj->is_net_dead())
-                return notify_fail("Õâ¸öÈËÏÖÔÚ²»ÔÚÏßÉÏ£¬Ìı²»µ½ÄãµÄ»°¡£\n");
+                return notify_fail("é€™å€‹äººç¾åœ¨ä¸åœ¨ç·šä¸Šï¼Œè½ä¸åˆ°ä½ çš„è©±ã€‚\n");
 
         if (! living(obj))
-                return notify_fail("ÕâÈËÏÖÔÚ¿ÖÅÂÌı²»µ½ÄãËµµÄ»°ÁË...\n");
+                return notify_fail("é€™äººç¾åœ¨ææ€•è½ä¸åˆ°ä½ èªªçš„è©±äº†...\n");
 
-        reply_out = sprintf(HIG "%s»Ø´ğÄã£º%s\n" NOR,
+        reply_out = sprintf(HIG "%så›ç­”ä½ ï¼š%s\n" NOR,
                             me->name(1)+HIG"("+query("id", me)+")",arg);
         if( !TELL_CMD->notice_user(me->name(1),query("id", me),obj,reply_out) )
                 return 1;
 
-        // ³É¹¦µÄ»Ø´ğÁË
-        write(HIG"Äã»Ø´ğ"+obj->name(1)+HIG+"("+query("id", obj)+
-              ")£º" + arg + "\n" NOR);
+        // æˆåŠŸçš„å›ç­”äº†
+        write(HIG"ä½ å›ç­”"+obj->name(1)+HIG+"("+query("id", obj)+
+              ")ï¼š" + arg + "\n" NOR);
 
-        me->add_msg_log("reply", "Äã»Ø´ğ" + obj->query_idname()+"£º"HIG + arg + NOR"\n" NOR);
-        obj->add_msg_log("reply", sprintf("%s»Ø´ğÄã£º"HIG"%s"NOR"\n" NOR,me->query_idname(), arg));
+        me->add_msg_log("reply", "ä½ å›ç­”" + obj->query_idname()+"ï¼š"HIG + arg + NOR"\n" NOR);
+        obj->add_msg_log("reply", sprintf("%så›ç­”ä½ ï¼š"HIG"%s"NOR"\n" NOR,me->query_idname(), arg));
         if (query_idle(obj) >= 120)
-                write(YEL "¿ÉÊÇ" + obj->name(1) +
-                      YEL "ÒÑ¾­ÔÚÖíÈ¦ÖĞ·¢´ôÓĞ" + chinese_number(query_idle(obj) / 60) +
-                      "·ÖÖÓÁË£¬¿ÖÅÂÃ»·¨Ìıµ½ÄãµÄ»°¡£\n");
+                write(YEL "å¯æ˜¯" + obj->name(1) +
+                      YEL "å·²ç¶“åœ¨è±¬åœˆä¸­ç™¼å‘†æœ‰" + chinese_number(query_idle(obj) / 60) +
+                      "åˆ†é˜äº†ï¼Œææ€•æ²’æ³•è½åˆ°ä½ çš„è©±ã€‚\n");
 
-        // Èç¹ûÑ¡ÔñµÄ²»ÊÇÈ«×èÈû(2)£¬Ôò×Ô¶¯ºöÂÔÕâÌõĞÅÏ¢£¬ÏÔÊ¾
-        // ÏÂÒ»ÌõĞÅÏ¢¡£
+        // å¦‚æœé¸æ“‡çš„ä¸æ˜¯å…¨é˜»å¡(2)ï¼Œå‰‡è‡ªå‹•å¿½ç•¥é€™æ¢ä¿¡æ¯ï¼Œé¡¯ç¤º
+        // ä¸‹ä¸€æ¢ä¿¡æ¯ã€‚
         if( query("env/jam_talk", me) != 2 )
                 SKIP_CMD->main(me, "");
 
@@ -78,15 +78,15 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½£ºreply <Ñ¶Ï¢>
+æŒ‡ä»¤æ ¼å¼ï¼šreply <è¨Šæ¯>
 
-Äã¿ÉÒÔÓÃÕâ¸öÖ¸ÁîºÍ¸Õ²ÅÓÃ tell ºÍÄãËµ»°µÄÊ¹ÓÃÕßËµ»°¡£ÔÚ¶àÈËºÍ
-Äã½»Ì¸µÄÊ±ºò£¬Õâ¸öÃüÁîÍ¨³£²»»áÄÇÃ´ºÃÓÃ£¬ÒòÎªÓĞ¿ÉÄÜÔÚÄã reply
-µÄÊ±ºòÓÖÓĞÈËÏòÄã·¢ËÍĞÅÏ¢¶øµ¼ÖÂÄãÓ¦´ğ´íÎó£¬ÔÚÕâÖÖÇé¿öÏÂÄã¿ÉÒÔ
-ÉèÖÃ²ÎÊıjam_talk£¬Ñ¡Ôñ×èÈûÊ½½»Ì¸¡£µ±ÄãµÄÌáÊ¾·û >  µÄÑÕÉ«±ä³É
-ÂÌÉ«µÄÊ±ºò£¬ÒâÎ¶ÄãÏÖÔÚÕıÊÕµ½ÆäËûÈË·¢ËÍ¸øÄãµÄ½»Ì¸ĞÅÏ¢¡£
+ä½ å¯ä»¥ç”¨é€™å€‹æŒ‡ä»¤å’Œå‰›æ‰ç”¨ tell å’Œä½ èªªè©±çš„ä½¿ç”¨è€…èªªè©±ã€‚åœ¨å¤šäººå’Œ
+ä½ äº¤è«‡çš„æ™‚å€™ï¼Œé€™å€‹å‘½ä»¤é€šå¸¸ä¸æœƒé‚£éº¼å¥½ç”¨ï¼Œå› ç‚ºæœ‰å¯èƒ½åœ¨ä½  reply
+çš„æ™‚å€™åˆæœ‰äººå‘ä½ ç™¼é€ä¿¡æ¯è€Œå°è‡´ä½ æ‡‰ç­”éŒ¯èª¤ï¼Œåœ¨é€™ç¨®æƒ…æ³ä¸‹ä½ å¯ä»¥
+è¨­ç½®åƒæ•¸jam_talkï¼Œé¸æ“‡é˜»å¡å¼äº¤è«‡ã€‚ç•¶ä½ çš„æç¤ºç¬¦ >  çš„é¡è‰²è®Šæˆ
+ç¶ è‰²çš„æ™‚å€™ï¼Œæ„å‘³ä½ ç¾åœ¨æ­£æ”¶åˆ°å…¶ä»–äººç™¼é€çµ¦ä½ çš„äº¤è«‡ä¿¡æ¯ã€‚
 
-see also : tell¡¢skip
+see also : tellã€skip
 HELP );
         return 1;
 }

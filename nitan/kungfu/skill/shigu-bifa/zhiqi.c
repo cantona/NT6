@@ -1,4 +1,4 @@
-// poqizhen.c ÆÆÆøÕë
+// poqizhen.c ç ´æ°£é‡
  
 #include <ansi.h>
  
@@ -16,19 +16,19 @@ int perform(object me)
         skill = me->query_skill("shigu-bifa",1);
 
         if( !(me->is_fighting() ))
-                return notify_fail("¡¸ÖÆÆø¡¹Ö»ÄÜÔÚÕ½¶·ÖĞÓÃÔÚ¶ÔÊÖÉíÉÏ¡£\n");
+                return notify_fail("ã€Œåˆ¶æ°£ã€åªèƒ½åœ¨æˆ°é¬¥ä¸­ç”¨åœ¨å°æ‰‹èº«ä¸Šã€‚\n");
  
         if( !objectp(weapon=query_temp("weapon", me) )
          || query("skill_type", weapon) != "dagger" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ã€‚\n");
 
         if( skill < 80)
-                return notify_fail("ÄãµÄ×ÓÄ¸Õë·¨²»¹»´¿Êì, ²»ÄÜÊ¹ÓÃ¡¸¡¹£¡\n");
+                return notify_fail("ä½ çš„å­æ¯é‡æ³•ä¸å¤ ç´”ç†Ÿ, ä¸èƒ½ä½¿ç”¨ã€Œã€ï¼\n");
 
         if( query("neili", me)<150 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬ÎŞ·¨ÔËÓÃ¡¸ÖÆÆø¡¹£¡\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ï¼Œç„¡æ³•é‹ç”¨ã€Œåˆ¶æ°£ã€ï¼\n");
  
-        msg = HIR "$N´ó±ÊÒ»Æğ£¬Ïò$nµ¤ÌïÁ¬µãÈıµã£¬ÕıÊÇÄÇ¡°Åá¡±×ÖµÄÆğÊ×Èı±Ê£¬×ÔÉÏ¶øÏÂµÄ»®½«ÏÂÀ´¡£\n";
+        msg = HIR "$Nå¤§ç­†ä¸€èµ·ï¼Œå‘$nä¸¹ç”°é€£é»ä¸‰é»ï¼Œæ­£æ˜¯é‚£â€œè£´â€å­—çš„èµ·é¦–ä¸‰ç­†ï¼Œè‡ªä¸Šè€Œä¸‹çš„åŠƒå°‡ä¸‹ä¾†ã€‚\n";
         message_vision(msg, me, target);
  
         ap = me->query_skill("dagger") + skill;
@@ -39,8 +39,8 @@ int perform(object me)
         {
                 if(userp(me))
                         addn("neili", -100, me);
-                msg = HIR"$N±Ê¼âË¿ºÁ²»²îµÄµãÖĞ¶Ô·½Òªº¦, $n¶ÙÊ±¾õµÃµ¤ÌïÉÏÒ»Õó´ÌÍ´£¬\n";
-                msg += HIR"È«ÉíÕæÆø¿ñĞ¹¶ø³ö£¡\n" NOR;
+                msg = HIR"$Nç­†å°–çµ²æ¯«ä¸å·®çš„é»ä¸­å°æ–¹è¦å®³, $né “æ™‚è¦ºå¾—ä¸¹ç”°ä¸Šä¸€é™£åˆºç—›ï¼Œ\n";
+                msg += HIR"å…¨èº«çœŸæ°£ç‹‚æ³„è€Œå‡ºï¼\n" NOR;
 
                 neili_wound = 1000 + random(skill);
                 if( neili_wound>query("neili", target) )
@@ -54,13 +54,13 @@ int perform(object me)
                 addn("neili", -neili_wound, target);
                 addn("qi", -qi_wound, target);
                 addn("eff_qi", -qi_wound, target);
-                target->start_busy(3);me->start_perform( 4+random(3), "¡¸ÖÆÆø¡¹");
+                target->start_busy(3);me->start_perform( 4+random(3), "ã€Œåˆ¶æ°£ã€");
 }
         else
         {
                 if(userp(me))
                         addn("neili", -80, me);
-                msg = HIW"¿ÉÊÇ$nË²¼ä·´Ó¦¹ıÀ´£¬ÌÚÅ²ÌøÔ¾£¬¶ã¹ıÁËÕâ´ÎÖØ´´¡£\n"NOR;
+                msg = HIW"å¯æ˜¯$nç¬é–“åæ‡‰éä¾†ï¼Œé¨°æŒªè·³èºï¼Œèº²éäº†é€™æ¬¡é‡å‰µã€‚\n"NOR;
                 me->start_busy(2);
         }
         message_vision(msg, me, target);

@@ -1,4 +1,4 @@
-// weapon: ·¨Áå
+// weapon: æ³•éˆ´
 
 #include <weapon.h>
  
@@ -6,17 +6,17 @@ inherit HAMMER;
  
 void create()
 {
-        set_name("·¨Áå", ({ "fa ling","fa","ling" }) );           
+        set_name("æ³•éˆ´", ({ "fa ling","fa","ling" }) );           
         set_weight(500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸±");                                
+                set("unit", "å‰¯");                                
                 set("value", 10);
                 set("material", "iron");                             
-                set("long", "ÕâÊÇÒ»¸±·¨Áå£¬Ò¡ÆğÀ´¶£¶£îõîõÂÒÏì¡£\n");
-                set("wield_msg", "$N´ÓÑü¼ä³é³öÒ»¸±$n£¬ÎÕÔÚÊÖÀï¡£\n");
-                set("unequip_msg", "$N½«$nÊÕÆğÀ´£¬¹Ò»ØÑü¼ä¡£\n");
+                set("long", "é€™æ˜¯ä¸€å‰¯æ³•éˆ´ï¼Œæ–èµ·ä¾†å®å®éºéºäº‚éŸ¿ã€‚\n");
+                set("wield_msg", "$Nå¾è…°é–“æŠ½å‡ºä¸€å‰¯$nï¼Œæ¡åœ¨æ‰‹è£¡ã€‚\n");
+                set("unequip_msg", "$Nå°‡$næ”¶èµ·ä¾†ï¼Œæ›å›è…°é–“ã€‚\n");
         }
         init_hammer(1);
         setup();

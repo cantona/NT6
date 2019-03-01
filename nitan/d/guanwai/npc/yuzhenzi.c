@@ -7,12 +7,12 @@ inherit F_UNIQUE;
 
 void create()
 {
-        set_name("ÓñÕæ×Ó", ({ "yuzhen zi", "yuzhen" }));
-        set("gender", "ÄĞĞÔ");
-        set("title", "Ìú½£ÃÅÕÆÃÅÈË");
-        set("nickname", HIC"»¤¹úÕæÈË"NOR);
+        set_name("ç‰çœŸå­", ({ "yuzhen zi", "yuzhen" }));
+        set("gender", "ç”·æ€§");
+        set("title", "éµåŠé–€æŒé–€äºº");
+        set("nickname", HIC"è­·åœ‹çœŸäºº"NOR);
         set("age", 44);
-        set("long", "ÕâÊÇÒ»Î»ÆÄÓĞÏÉ·çµÀ¹ÇµÄäìÈ÷È«Õæ£¬ÊÖÎÕ³¤½££¬Ä¿ÊÓÇ°·½¡£\n");
+        set("long", "é€™æ˜¯ä¸€ä½é —æœ‰ä»™é¢¨é“éª¨çš„ç€Ÿæ´’å…¨çœŸï¼Œæ‰‹æ¡é•·åŠï¼Œç›®è¦–å‰æ–¹ã€‚\n");
 
         set("str", 25);
         set("int", 27);

@@ -1,17 +1,17 @@
-// haibaorou.c º£±ªÈâ
+// haibaorou.c æµ·è±¹è‚‰
 
 inherit ITEM;
 inherit F_FOOD;
 
 void create()
 {
-        set_name("º£±ªÈâ", ({"haibao rou", "rou"}));
+        set_name("æµ·è±¹è‚‰", ({"haibao rou", "rou"}));
         set_weight(300);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¿éÏÊÑªÁÜÀì·ÊÄÛµÄº£±ªÈâ¡£\n");
-                set("unit", "¿é");
+                set("long", "ä¸€å¡Šé®®è¡€æ·‹æ¼“è‚¥å«©çš„æµ·è±¹è‚‰ã€‚\n");
+                set("unit", "å¡Š");
                 set("value", 200);
                 set("food_remaining", 5);
                 set("food_supply", 100);

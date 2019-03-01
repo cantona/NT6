@@ -5,10 +5,10 @@ inherit  ROOM;
 
 void  create  ()
 {
-        set("short",  "�Ͻ�ɿ�");
+        set("short",  "孟津渡口");
         set("long",  @LONG
-���������ǽ����Ͻ�ɿڣ���ǰ���ǻƺӣ��������죬������ϡϡ
-���䳤�˲���«έ����ͷ��������һ�����񴬡�
+這是洛陽城郊的孟津渡口，眼前就是黃河，濁浪濤天，近岸邊稀稀
+落落長了不少蘆葦。碼頭上正泊著一艘烏篷船。
 LONG);
         set("exits",  ([  /*  sizeof()  ==  2  */
                 "east"      : __DIR__"futusi",

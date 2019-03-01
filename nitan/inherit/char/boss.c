@@ -38,7 +38,7 @@ varargs void die(object killer)
                 return;
         }
 
-        if( time() < query_temp("end_time", me) ) // Ê±¼äÃ»ÓĞµ½£¬ËÀÍö²»ÁË
+        if( time() < query_temp("end_time", me) ) // æ™‚é–“æ²’æœ‰åˆ°ï¼Œæ­»äº¡ä¸äº†
         {
                 addn("jing", query("max_jing") / 10);
                 if( query("jing") > query("max_jing") ) set("jing", query("max_jing"));
@@ -48,7 +48,7 @@ varargs void die(object killer)
                 if( query("qi") > query("max_qi") ) set("qi", query("max_qi"));
                 addn("eff_qi", query("max_qi") / 10);
                 if( query("eff_qi") > query("max_qi") ) set("eff_qi", query("max_qi"));
-                message_vision(HIR "\n$N" HIR "´óºÈÒ»Éù£¬ÔËÓÃÃØ·¨£¬ÆøÑªÓĞËù»ØÉı£¡\n\n" NOR, me);
+                message_vision(HIR "\n$N" HIR "å¤§å–ä¸€è²ï¼Œé‹ç”¨ç§˜æ³•ï¼Œæ°£è¡€æœ‰æ‰€å›å‡ï¼\n\n" NOR, me);
                 return;
         }
 
@@ -63,10 +63,10 @@ varargs void die(object killer)
                         message_vision(death_msg, me);
         }
         else
-                message_vision(NOR "\n$NÆËÔÚµØÉÏÕõÔúÁË¼¸ÏÂ£¬ÍÈÒ»Éì£¬¿ÚÖĞÅç³ö¼¸¿Ú" 
-                               HIR "ÏÊÑª" NOR "£¬ËÀÁË£¡\n\n" NOR, me); 
+                message_vision(NOR "\n$Næ’²åœ¨åœ°ä¸Šæ™ç´®äº†å¹¾ä¸‹ï¼Œè…¿ä¸€ä¼¸ï¼Œå£ä¸­å™´å‡ºå¹¾å£" 
+                               HIR "é®®è¡€" NOR "ï¼Œæ­»äº†ï¼\n\n" NOR, me); 
 
-        // ÒÔÏÂ²¿·Ö×ªÒÆµ½equipmentd.cÖĞ´¦Àí,ÒòÉæ¼°µ½¶¯Ì¬ÎïÆ·
+        // ä»¥ä¸‹éƒ¨åˆ†è½‰ç§»åˆ°equipmentd.cä¸­è™•ç†,å› æ¶‰åŠåˆ°å‹•æ…‹ç‰©å“
         if( mapp(drops = query("drops")) ) {
                 EQUIPMENT_D->killer_reward(killer,this_object(),drops);
                 /*
@@ -113,7 +113,7 @@ varargs void die(object killer)
                 obs = pointerp(killer->query_team()) ?
                                 killer->query_team() : ({ killer });
                 obs = filter_array(obs, (: environment($1) == $(env) :));
-                // Èç¹û¶Ó³¤²»ÔÚ£¬ÔòÕâ¸ö¶Ó³ÉÔ±ÎŞÈÎºÎ½±Àø
+                // å¦‚æœéšŠé•·ä¸åœ¨ï¼Œå‰‡é€™å€‹éšŠæˆå“¡ç„¡ä»»ä½•çå‹µ
                 if( killer->query_team() && (!objectp(killer->query_team_leader()) || environment(killer->query_team_leader()) != env) )
                         obs = ({ });
 
@@ -133,7 +133,7 @@ varargs void die(object killer)
                                 else if( query("level", user) <= fuben_level+30 ) percent = 50;
                                 */
                                 else {
-                                        tell_object(user, ((killer == user)?"Äú":killer->name())+"É±ËÀ"+query("name")+"£¬µ«Äú¾­ÑéÓëBOSSµÄË®Æ½Ïà²î¹ı´ó£¬Ã»ÓĞ½±Àø¡£\n");
+                                        tell_object(user, ((killer == user)?"æ‚¨":killer->name())+"æ®ºæ­»"+query("name")+"ï¼Œä½†æ‚¨ç¶“é©—èˆ‡BOSSçš„æ°´å¹³ç›¸å·®éå¤§ï¼Œæ²’æœ‰çå‹µã€‚\n");
                                         continue;
                                 }
                                 rewards["percent"] = percent;
@@ -142,7 +142,7 @@ varargs void die(object killer)
                         else
                         {
                                 if( query("combat_exp", user) > query("combat_exp")*2 ) {
-                                        tell_object(user, ((killer == user)?"Äú":killer->name())+"É±ËÀ"+query("name")+"£¬µ«Äú¾­ÑéÓëBOSSµÄË®Æ½Ïà²î¹ı´ó£¬Ã»ÓĞ½±Àø¡£\n");
+                                        tell_object(user, ((killer == user)?"æ‚¨":killer->name())+"æ®ºæ­»"+query("name")+"ï¼Œä½†æ‚¨ç¶“é©—èˆ‡BOSSçš„æ°´å¹³ç›¸å·®éå¤§ï¼Œæ²’æœ‰çå‹µã€‚\n");
                                         continue;
                                 }
                         }

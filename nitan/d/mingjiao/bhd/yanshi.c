@@ -1,4 +1,4 @@
-// yanshi.c ��ʯ
+// yanshi.c 巖石
 // snowman 16.12.98
 // Modify By River@SJ 99.06
 #include <ansi.h>
@@ -6,14 +6,14 @@ inherit ROOM;
 string sea();
 void create()
 {
-	set("short", HIW"��ʯ"NOR);
+	set("short", HIW"巖石"NOR);
         set("long", @LONG
-����һ��¶��ˮ�����ʯ�������ǻ�������ΧһƬ���̣�ԭ����
-����һ������ĵ��졣�����������Ǽ�ʯ��᾵�ɽ�壬�濪������Ī
-����״������ȴ��һƬ��������ͷ��ƽҰ���˻�ɽ������󺣶��ɡ�
-�˴��䴦����������ɽ���겻�𣬵��������ͳ���ɽ��������һ��
-���ơ�����������һɽ����һɽ������ñ�����̡���������һƬƬ��
-��Ұ����ʯ���ϲ��Ǻ���(sea�����м��鸡��������Ư����
+這是一塊露出水面的巖石。但見那火柱的周圍一片青綠，原來這
+裡是一個極大的島嶼。島嶼西部都是尖石嶙峋的山峰，奇開怪樣，莫
+可名狀，島東卻是一片望不到盡頭的平野，乃火山灰傾入大海而成。
+此處雖處北極，但火山萬年不滅，島上氣侯便和長白山、黑龍江一帶
+相似。島的西部有一山頂有一山頂正在帽出黑煙。往北便是一片片大
+綠野。巖石的南部是海邊(sea），有幾塊浮基正向南漂流。
 LONG );
         set("item_desc", ([
 		"sea" : (: sea :),
@@ -21,7 +21,7 @@ LONG );
 	set("exits",([
 		"north" : __DIR__"pingyan1",
 	]));
-	set("outdoors", "����");
+	set("outdoors", "冰火島");
 	setup();
 }
 
@@ -47,9 +47,9 @@ int do_enter()
              inv = all_inventory(sea);
              for(i= 0;i< sizeof(inv);i++){
                    if(inv[i]->query("boat_of") == base_name(this_object())){
-                          message_vision("$N�����һ���ĵ��ϸߣ����¾ʹ����˷�����\n\n", me);
+                          message_vision("$N象猴子一樣蹦得老高，兩下就竄上了帆船。\n\n", me);
                           me->move(inv[i]);
-                          message("vision",me->name()+"�����һ������������\n",environment(me), ({me}) );
+                          message("vision",me->name()+"象猴子一樣蹦了上來。\n",environment(me), ({me}) );
                           return 1;
                    }
              }
@@ -63,13 +63,13 @@ int do_push(string arg)
         object me, ob;
         me = this_player();
 
-        if(!query("boat")) return notify_fail("��ʲô��\n");
-        if( arg=="chuan" || arg=="��" ) {
-            if(me->is_busy()) return notify_fail("����æ���ء�\n");
-            if(query("boat_on_sea")) return notify_fail("�������ҷ����أ���������ȥһ�ң����ǻ���ײ�ġ�\n");
+        if(!query("boat")) return notify_fail("推什麼？\n");
+        if( arg=="chuan" || arg=="船" ) {
+            if(me->is_busy()) return notify_fail("你正忙著呢。\n");
+            if(query("boat_on_sea")) return notify_fail("岸邊有艘帆船呢，你再推下去一艘，它們會相撞的。\n");
             me->start_busy(5);
             add("boat", -1);
-            message_vision("$Nʹ�����̵ľ������������Ƴɵķ����ƽ��˴󺣡�\n\n", me);
+            message_vision("$N使出吃奶的勁，將用樹幹制成的帆船推進了大海。\n\n", me);
             EMOTE_D->do_emote(me,"touch", me->query("id"));
             me->add("jingli", -50);
             ob=new("/clone/misc/boat");
@@ -91,23 +91,23 @@ int do_make(string arg)
         weapon = me->query_temp("weapon");
         i = query("make_times");
 
-        if( arg=="chuan" || arg=="��" ) {
-            if(me->is_busy()) return notify_fail("����æ���ء�\n");
+        if( arg=="chuan" || arg=="船" ) {
+            if(me->is_busy()) return notify_fail("你正忙著呢。\n");
             me->start_busy(5);
             if(!objectp(ob = present("shu gan", environment(me)))
                && !objectp(ob = present("shu gan", me)))
-                     return notify_fail("��Ҫ��ʲô�����촬��\n");
+                     return notify_fail("你要用什麼材料造船？\n");
             switch(i){
-                case 0: if(!weapon || weapon->query("flag")!=4) return notify_fail("����Ҫһ�������Ĺ��ߣ������ʿ����ɡ�\n");
-                        msg = "$N�������ʿ������ţ������������������ε�������\n"; 
+                case 0: if(!weapon || weapon->query("flag")!=4) return notify_fail("你需要一件鋒利的工具，才能剖開樹幹。\n");
+                        msg = "$N將樹幹剖開，並排，再用籐條將它們牢牢地困緊。\n"; 
                         add("make_times", 1); break;
-                case 1: msg = "$N�������ϵ���Ƥ������������������������������˷���\n"; 
+                case 1: msg = "$N將樹幹上的樹皮撥下來，打緊，再用騰條穿孔做成了帆。\n"; 
                         add("make_times", 1); break;
-                case 2: msg = "$N�������Ϳգ���ĥ��һ����Ȼ�����ͳ���ľͷ�����˽�������þߡ�\n"; 
+                case 2: msg = "$N將樹幹掏空，打磨了一翻，然後用掏出的木頭做成了漿，舵等用具。\n"; 
                         add("make_times", 1); break;
-                case 3: msg = "$N��һ��������Բ��ϸ����ϸ���˳ߴ磬��������Φ�ˡ�\n"; 
+                case 3: msg = "$N將一根樹幹削圓削細，仔細量了尺寸，做成了主桅桿。\n"; 
                         add("make_times", 1); break;
-                case 4: msg = "$N����֧���ּӹ�����Φ��һ���������������ˡ�\n";
+                case 4: msg = "$N將帆支起，又加固了主桅，一條船總算是做好了。\n";
                         delete("make_times");
                         add("boat", 1);
                         break;
@@ -118,7 +118,7 @@ int do_make(string arg)
             message_vision(msg, me);
             return 1;
         }
-        else return notify_fail("��Ҫ��ʲô��\n");
+        else return notify_fail("你要做什麼？\n");
 }       
 
 string sea()
@@ -127,14 +127,14 @@ string sea()
        int boat;
        boat=query("boat_on_sea");
     
-       msg = "\n����һƬ����һ���޼ʣ������������ĸ�����\n";
+       msg = "\n那是一片汪洋，一望無際，海中有無數的浮冰。\n";
        if(boat)
-          msg += "����ͣ����һֻ��ª�ķ��������沨����ҡ����������Ϳ�����ȥ(enter)��\n";        
-          msg += "�������ƽ̹�����������Ǹ��ܺõĹ�����\n";
+          msg += "岸邊停放著一只簡陋的帆船，正隨波左右搖動。從這裡就可以上去(enter)。\n";        
+          msg += "這裡寬闊平坦，看來可以是個很好的工場。\n";
        if(query("make_times") >= 1){ 
-            if(query("make_times") >= 4) msg += "��һֻ�þ��������Ƴɵļ�ª�����Ĵ��壬�����ǿ�Ҫ����ˡ�\n";
-            else msg += "һ�Է��м������������ɣ��Ѿ����ʿ��������롣\n";  
+            if(query("make_times") >= 4) msg += "有一只用巨樹樹幹制成的簡陋帆船的船體，看來是快要完成了。\n";
+            else msg += "一旁放有幾根巨樹的樹幹，已經被剖開成了兩半。\n";  
        }
-       if(query("boat")) msg += "���߷����þ��������Ƴɵļ�ª���������ʹ���ƣ����԰�����(tui)��ˮȥ��\n";
+       if(query("boat")) msg += "岸邊放有用巨樹樹幹制成的簡陋帆船，如果使勁推，可以把它推(tui)下水去。\n";
        return msg;       
 }

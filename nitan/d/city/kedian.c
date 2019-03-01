@@ -5,22 +5,22 @@ inherit CREATE_CHAT_ROOM;
 
 void create()
 {
-	set("short", "¿Íµê");
+	set("short", "å®¢åº—");
         set("long", @LONG
-ÕâÊÇÒ»¼Ò¼ÛÇ®µÍÁ®µÄ¿ÍÕ»£¬ÉúÒâÈ´ÊÇ·Ç³£ÐËÂ¡¡£ÍâµØÓÎ¿Í¶àÑ¡Ôñ
-ÔÚÕâÀïÂä½Å£¬Äã¿ÉÒÔÔÚÕâÀï´òÌýµ½¸÷µØµÄ·çÍÁÈËÇé¡£µêÐ¡¶þÀïÀïÍâÍâ
-Ã¦µÃÍÅÍÅ×ª£¬½Ó´ý×ÅÄÏÇ»±±µ÷µÄ¿ÍÈË¡£¿ÍµêµÄÖ÷ÈË´Ó²»Â¶Ãæ£¬Ëû¾¿¾¹
-ÊÇË­£¬ÓÐ¸÷ÖÖ¸÷ÑùµÄ²Â²â¡£¿ÍµêµÄÎ÷Ç½ÉÏ¹Ò×ÅÒ»¸öÅÆ×Ó(paizi)¡£
+é€™æ˜¯ä¸€å®¶åƒ¹éŒ¢ä½Žå»‰çš„å®¢æ£§ï¼Œç”Ÿæ„å»æ˜¯éžå¸¸èˆˆéš†ã€‚å¤–åœ°éŠå®¢å¤šé¸æ“‡
+åœ¨é€™è£¡è½è…³ï¼Œä½ å¯ä»¥åœ¨é€™è£¡æ‰“è½åˆ°å„åœ°çš„é¢¨åœŸäººæƒ…ã€‚åº—å°äºŒè£¡è£¡å¤–å¤–
+å¿™å¾—åœ˜åœ˜è½‰ï¼ŒæŽ¥å¾…è‘—å—è…”åŒ—èª¿çš„å®¢äººã€‚å®¢åº—çš„ä¸»äººå¾žä¸éœ²é¢ï¼Œä»–ç©¶ç«Ÿ
+æ˜¯èª°ï¼Œæœ‰å„ç¨®å„æ¨£çš„çŒœæ¸¬ã€‚å®¢åº—çš„è¥¿ç‰†ä¸ŠæŽ›è‘—ä¸€å€‹ç‰Œå­(paizi)ã€‚
 LONG );
 	set("no_fight", 1);
 	set("valid_startroom", 1);
         set("no_sleep_room",1);
 	set("item_desc", ([
-		"paizi" : WHT "\n\n        ¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n"
-                              "        ¡ù                              ¡ù\n"
-                              "        ¡ù    " NOR + HIW "Â¥ÉÏÑÅ·¿£¬Ã¿Ò¹Ê®Á½°×Òø¡£" NOR + WHT "  ¡ù\n"
-                              "        ¡ù                              ¡ù\n"
-                              "        ¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n\n\n" NOR,
+		"paizi" : WHT "\n\n        â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»\n"
+                              "        â€»                              â€»\n"
+                              "        â€»    " NOR + HIW "æ¨“ä¸Šé›…æˆ¿ï¼Œæ¯å¤œåå…©ç™½éŠ€ã€‚" NOR + WHT "  â€»\n"
+                              "        â€»                              â€»\n"
+                              "        â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»\n\n\n" NOR,
 	]));
 	set("objects", ([
                 __DIR__"npc/fuxinglaoren" : 1,
@@ -55,10 +55,10 @@ int valid_leave(object me, string dir)
 {
 
 	if( !query_temp("rent_paid", me) && dir == "up" )
-	        return notify_fail(CYN "µêÐ¡¶þÒ»ÏÂµ²ÔÚÂ¥ÌÝÇ°£¬°×ÑÛÒ»·­£ºÔõ÷á×Å£¬Ïë°××¡°¡£¿\n" NOR);
+	        return notify_fail(CYN "åº—å°äºŒä¸€ä¸‹æ“‹åœ¨æ¨“æ¢¯å‰ï¼Œç™½çœ¼ä¸€ç¿»ï¼šæ€Žéº¼è‘—ï¼Œæƒ³ç™½ä½å•Šï¼Ÿ\n" NOR);
 
 	if( query_temp("rent_paid", me) && dir == "west" )
-	        return notify_fail(CYN "µêÐ¡¶þÅÜµ½ÃÅ±ßÀ¹×¡£º¿Í¹ÙÒÑ¾­¸¶ÁËÒø×Ó£¬Ôõ÷á²»×¡µê¾Í×ßÁËÄØ£¡\n" NOR);
+	        return notify_fail(CYN "åº—å°äºŒè·‘åˆ°é–€é‚Šæ””ä½ï¼šå®¢å®˜å·²ç¶“ä»˜äº†éŠ€å­ï¼Œæ€Žéº¼ä¸ä½åº—å°±èµ°äº†å‘¢ï¼\n" NOR);
 
 	return ::valid_leave(me, dir);
 }

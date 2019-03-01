@@ -4,15 +4,15 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "Á·Îä³¡");
+	set("short", "ç·´æ­¦å ´");
 	set("long", @LONG
-ÕâÊÇÒ»¸ö±ÈÎ÷Ãæ¸üÎª¿í´óµÄÁ·Îä³¡£¬Ðí¶àÊÖÖ´¶Ì½£µÄÉÙÄêÉÙÅ®ÔÚÕâÀï
-Á·¹¦¡£ÓÐµÄÒ²ÔÚÒ»ÅÔ¹Û¿´£¬ËÆºõÔÚ´§Ä¦Ê²Ã´¡£
+é€™æ˜¯ä¸€å€‹æ¯”è¥¿é¢æ›´ç‚ºå¯¬å¤§çš„ç·´æ­¦å ´ï¼Œè¨±å¤šæ‰‹åŸ·çŸ­åŠçš„å°‘å¹´å°‘å¥³åœ¨é€™è£¡
+ç·´åŠŸã€‚æœ‰çš„ä¹Ÿåœ¨ä¸€æ—è§€çœ‹ï¼Œä¼¼ä¹Žåœ¨æ£æ‘©ä»€éº¼ã€‚
 LONG );
 	set("exits", ([
 		"west" : __DIR__"wuchang",
 	]));
-        set("for_family", "ÉñÁú½Ì");
+        set("for_family", "ç¥žé¾æ•™");
         setup();
 	replace_program(ROOM);
 }

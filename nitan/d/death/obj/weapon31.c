@@ -5,16 +5,16 @@ inherit WHIP;
 
 void create()
 {
-        set_name(HIW "Ğş±ùË÷" NOR, ({ "xuanbing suo", "xuanbing", "suo", "whip" }) );
+        set_name(HIW "ç„å†°ç´¢" NOR, ({ "xuanbing suo", "xuanbing", "suo", "whip" }) );
         set_weight(4000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ù");
+                set("unit", "æ ¹");
                 set("value", 1200000);
                 set("material", "steel");
-                set("long", HIW "\nĞş±ùË÷ÄË¾Åñ·ÆßÓüÉñ±øÖ®Ò»¡£\n" NOR);
-                set("wield_msg", HIR "$NÇáÇá¶¶³ö$n" HIR "£¬É²Ê±À×ÉùºäÃù£¬Ò»¹ÉÉ±ÆøÖ±Äô¾ÅÏö¡£\n" );
+                set("long", HIW "\nç„å†°ç´¢ä¹ƒä¹ç©¹ä¸ƒç„ç¥å…µä¹‹ä¸€ã€‚\n" NOR);
+                set("wield_msg", HIR "$Nè¼•è¼•æŠ–å‡º$n" HIR "ï¼Œå‰æ™‚é›·è²è½Ÿé³´ï¼Œä¸€è‚¡æ®ºæ°£ç›´è¶ä¹éœ„ã€‚\n" );
         }
         init_whip(110);
         setup();

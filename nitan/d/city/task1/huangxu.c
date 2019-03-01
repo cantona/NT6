@@ -1,13 +1,13 @@
-// huangxu.c »ÆĞëµÀÈË
+// huangxu.c é»ƒé ˆé“äºº
 
 #include <ansi.h>
 inherit NPC;
 
 void create()
 {
-        set_name("»ÆĞëµÀÈË", ({ "huangxu  daoren"}));
-        set("long", "Îäµ±µÄÅÑÍ½£¬ÎªÈË¼éÕ©£¬³£³£¸ÉĞ©»µÊÂ¡£\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("é»ƒé ˆé“äºº", ({ "huangxu  daoren"}));
+        set("long", "æ­¦ç•¶çš„å›å¾’ï¼Œç‚ºäººå§¦è©ï¼Œå¸¸å¸¸å¹¹äº›å£äº‹ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 35);
         set("attitude", "peaceful");
         set("str", 25);

@@ -3,7 +3,7 @@
 
 inherit F_SSERVER;
 
-string name() { return HIR "¾øÉ±" NOR; }
+string name() { return HIR "çµ•æ®º" NOR; }
 
 string final(object me, object targer, int lvl);
 
@@ -17,28 +17,28 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(name() + "Ö»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ¡£\n");
+                return notify_fail(name() + "åªèƒ½åœ¨æˆ°é¬¥ä¸­ä½¿ç”¨ã€‚\n");
 
         if ((int)me->query_skill("yinfeng-dao", 1) < 140)
-                return notify_fail("ÄãµÄÒõ·çµ¶»¹²»¹»æµÊì£¬ÎŞ·¨Ê©Õ¹" + name() + "¾ø¼¼£¡\n");
+                return notify_fail("ä½ çš„é™°é¢¨åˆ€é‚„ä¸å¤ å«»ç†Ÿï¼Œç„¡æ³•æ–½å±•" + name() + "çµ•æŠ€ï¼\n");
 
         if ((int)me->query_skill("force") < 260)
-                return notify_fail("ÄãÄÚ¹¦»ğºò²»¹»£¬ÄÑÒÔÊ©Õ¹" + name() + "¾ø¼¼£¡\n");
+                return notify_fail("ä½ å…§åŠŸç«å€™ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" + name() + "çµ•æŠ€ï¼\n");
 
         if ((int)query("max_neili", me) < 2400)
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬ÎŞ·¨Ê©Õ¹" + name() + "¾ø¼¼£¡£¡\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼Œç„¡æ³•æ–½å±•" + name() + "çµ•æŠ€ï¼ï¼\n");
 
         if ((int)query("neili", me) < 400)
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬ÎŞ·¨Ê©Õ¹" + name() + "¾ø¼¼£¡£¡\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼Œç„¡æ³•æ–½å±•" + name() + "çµ•æŠ€ï¼ï¼\n");
 
         if (me->query_skill_mapped("strike") != "yinfeng-dao")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢Òõ·çµ¶£¬ÎŞ·¨Ê¹ÓÃ" + name() + "¾ø¼¼£¡\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼é™°é¢¨åˆ€ï¼Œç„¡æ³•ä½¿ç”¨" + name() + "çµ•æŠ€ï¼\n");
 
        if (! living(target))
-              return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+              return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIW "$N" HIW "Ê¹³öÒõ·çµ¶¡¸" HIR "¾ø É±" HIW"¡¹¾ø¼¼£¬ÕÆ¾¢»Ã³öÒ»Æ¬Æ¬ÇĞ¹Çº®"
-              "ÆøÈçì«·ç°ã¹üÏò$nÈ«Éí£¡\n" NOR;
+        msg = HIW "$N" HIW "ä½¿å‡ºé™°é¢¨åˆ€ã€Œ" HIR "çµ• æ®º" HIW"ã€çµ•æŠ€ï¼ŒæŒå‹å¹»å‡ºä¸€ç‰‡ç‰‡åˆ‡éª¨å¯’"
+              "æ°£å¦‚é¢¶é¢¨èˆ¬è£¹å‘$nå…¨èº«ï¼\n" NOR;
 
         lvl = me->query_skill("yinfeng-dao", 1);
 
@@ -56,7 +56,7 @@ int perform(object me, object target)
                 me->start_busy(1);
         } else
         {
-                msg += CYN "¿ÉÊÇ$n¼±Ã¦ÍËÉÁ£¬Á¬Ïû´ø´ò¶ã¿ªÁËÕâÒ»»÷¡£\n" NOR;
+                msg += CYN "å¯æ˜¯$næ€¥å¿™é€€é–ƒï¼Œé€£æ¶ˆå¸¶æ‰“èº²é–‹äº†é€™ä¸€æ“Šã€‚\n" NOR;
                 me->start_busy(3);
                 addn("neili", -150, me);
         }
@@ -72,5 +72,5 @@ string final(object me, object target, int lvl)
                           "id"       : query("id", me),
                           "duration" : lvl / 50 + random(lvl / 20) ]));
 
-       return HIR "½á¹ûÖ»Ìı$nÒ»Éù²Òº¿£¬È«Éí¼¸´¦ÒªÑ¨Í¬Ê±±»Òõ·çº®¾¢¿³ÖĞ£¬ÌÛÈô¹Î¹Ç£¬ÏÊÑª¿ñĞ¹¶ø³ö£¡\n" NOR;
+       return HIR "çµæœåªè½$nä¸€è²æ…˜åšï¼Œå…¨èº«å¹¾è™•è¦ç©´åŒæ™‚è¢«é™°é¢¨å¯’å‹ç ä¸­ï¼Œç–¼è‹¥åˆ®éª¨ï¼Œé®®è¡€ç‹‚æ³„è€Œå‡ºï¼\n" NOR;
 }

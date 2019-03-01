@@ -2,16 +2,16 @@
 inherit ITEM;
 void create()
 {
-        set_name(HIC "°ÙÆÇÏÉµ¤" NOR, ({"baipoxiandan"}));
+        set_name(HIC "ç™¾é­„ä»™ä¸¹" NOR, ({"baipoxiandan"}));
         set_weight(1);
         if (clonep())
                 set_default_object(__FILE__);
         else {  
-        	set("long", HIC "°ÙÆÇÏÉµ¤ÄËÒ»°ÙÌõ»êÆÇ¾Û¼¯¶ø³ÉµÄÄÚµ¤£¡\n" + 
-        	                "·şÊ³(fushi baipoxiandan)ºó¿ÉÓÀ¾ÃÌáÉı»ù±¾Çá¹¦1¼¶¡£\n" HIR
-        	                "ÓµÓĞÕß£ºmeiyu\n" NOR);
-                set("unit", "¿Å");
-                set("owner", "meiyu"); // °ó¶¨ÓµÓĞÕß
+        	set("long", HIC "ç™¾é­„ä»™ä¸¹ä¹ƒä¸€ç™¾æ¢é­‚é­„èšé›†è€Œæˆçš„å…§ä¸¹ï¼\n" + 
+        	                "æœé£Ÿ(fushi baipoxiandan)å¾Œå¯æ°¸ä¹…æå‡åŸºæœ¬è¼•åŠŸ1ç´šã€‚\n" HIR
+        	                "æ“æœ‰è€…ï¼šmeiyu\n" NOR);
+                set("unit", "é¡†");
+                set("owner", "meiyu"); // ç¶å®šæ“æœ‰è€…
 	        set("no_drop", 1);set("no_give", 1);set("no_store", 1);set("no_sell", 1);
         }
         setup();
@@ -29,19 +29,19 @@ int do_use(string arg)
 	me = this_player();
 
 	if (! arg || arg != query("id"))
-		return notify_fail("ÄãÒª·şÊ³Ê²Ã´£¿\n");
+		return notify_fail("ä½ è¦æœé£Ÿä»€éº¼ï¼Ÿ\n");
 
 	if (! objectp(ob = present(arg, me)))
-		return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâ¸ö¶«Î÷£¡\n");
+		return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™å€‹æ±è¥¿ï¼\n");
 		
 	if (ob->query("owner") != me->query("id"))
-		return notify_fail(ob->name() + NOR "ÒÑ¾­ÓÚÆäËûÍæ¼Ò°ó¶¨£¡\n");
+		return notify_fail(ob->name() + NOR "å·²ç¶“äºå…¶ä»–ç©å®¶ç¶å®šï¼\n");
 	
 	me->set_skill("dodge", me->query_skill("dodge", 1) + 1);
 	
-	tell_object(me, HIG "¹§Ï²£¡Äã·şÏÂ" + ob->name() + HIG "ºó£¬»ù±¾Çá¹¦ÌáÉı1¼¶£¡\n");
+	tell_object(me, HIG "æ­å–œï¼ä½ æœä¸‹" + ob->name() + HIG "å¾Œï¼ŒåŸºæœ¬è¼•åŠŸæå‡1ç´šï¼\n");
 	
-	log_file("super/"+ filter_color(query("name")) , me->query("id") + " at " + ctime(time()) + " Ê¹ÓÃ" + ob->name() + "¡£\n");
+	log_file("super/"+ filter_color(query("name")) , me->query("id") + " at " + ctime(time()) + " ä½¿ç”¨" + ob->name() + "ã€‚\n");
 	
 	me->save();
 	

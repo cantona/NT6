@@ -23,7 +23,7 @@ int filter_listener(object ob)
 void create()
 {
         ::create();
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("age", 30 + random(30));
         set("long", "");
         set("attitude", "friendly");
@@ -77,13 +77,13 @@ void set_from_me(object me)
 
 int accept_fight(object ob)
 {
-        command("say ÎÒ¿ÉÃ»ĞËÈ¤ÅãÄãÍæ£¬¿ì¸øÎÒ¹ö¿ª¡£");
+        command("say æˆ‘å¯æ²’èˆˆè¶£é™ªä½ ç©ï¼Œå¿«çµ¦æˆ‘æ»¾é–‹ã€‚");
         return 0;
 }
 
 int accept_hit(object ob)
 {
-        command("say µÈÎÒ°ìÍêÕıÊÂÔÙÀ´ÊÕÊ°Äã£¡");
+        command("say ç­‰æˆ‘è¾¦å®Œæ­£äº‹å†ä¾†æ”¶æ‹¾ä½ ï¼");
         return 0;
 }
 
@@ -98,30 +98,30 @@ int accept_kill(object ob)
 
         fam_info = query("fam_info");
 
-        // ¼ì²éÊÇ·ñ´¦ÓÚÕıÔÚ¹¥´ò×´Ì¬
+        // æª¢æŸ¥æ˜¯å¦è™•äºæ­£åœ¨æ”»æ‰“ç‹€æ…‹
         if ("/adm/daemons/story/familywar"->query_status() != ATTACKING)
         {
                 if( query("family/family_name", ob) == fam_info["family"] )
                 {
-                      command("say ºß£¡ÎÒÄ¿Ç°ÓĞÒªÊÂÒª°ì£¬µÈÏÂÔÙÀ´È¡ÄãĞÔÃü¡£");
-                      return notify_fail("¿´À´£¬±ğÈË²»Ğ¼ÓëÄã½»ÊÖ¡£\n");
+                      command("say å“¼ï¼æˆ‘ç›®å‰æœ‰è¦äº‹è¦è¾¦ï¼Œç­‰ä¸‹å†ä¾†å–ä½ æ€§å‘½ã€‚");
+                      return notify_fail("çœ‹ä¾†ï¼Œåˆ¥äººä¸å±‘èˆ‡ä½ äº¤æ‰‹ã€‚\n");
                 }
                 else 
                 {
                       command("heng");
-                      return notify_fail("¿´À´£¬±ğÈË²»Ğ¼ÓëÄã½»ÊÖ¡£\n");
+                      return notify_fail("çœ‹ä¾†ï¼Œåˆ¥äººä¸å±‘èˆ‡ä½ äº¤æ‰‹ã€‚\n");
                 }
         }
         else
-        {       // Ö»½ÓÊÜ×é¶ÓµÄÍæ¼Ò
+        {       // åªæ¥å—çµ„éšŠçš„ç©å®¶
                 if (! pointerp(t = ob->query_team()) || ! sizeof(t) || sizeof(t) < 2)
                 {
-                      command("say ÎÒ´Ó²»ºÍµ¥Ç¹Æ¥ÂíµÄÈË½»ÊÖ¡£");
-                      return notify_fail("¿´À´£¬±ğÈË²»Ğ¼ÓëÄã½»ÊÖ¡£\n");
+                      command("say æˆ‘å¾ä¸å’Œå–®æ§åŒ¹é¦¬çš„äººäº¤æ‰‹ã€‚");
+                      return notify_fail("çœ‹ä¾†ï¼Œåˆ¥äººä¸å±‘èˆ‡ä½ äº¤æ‰‹ã€‚\n");
                 }
 
-                message_vision(HIW "$N" HIW "´óÉù½ĞµÀ£º¡°ĞÖµÜÃÇ£¬´ó¼ÒÒ»ÆğÉÏ°¡£¬É±ÁË$n" HIW "Õâ" +
-                               RANK_D->query_rude(this_object()) + "£¡¡±\n" NOR, ob, this_object());
+                message_vision(HIW "$N" HIW "å¤§è²å«é“ï¼šâ€œå…„å¼Ÿå€‘ï¼Œå¤§å®¶ä¸€èµ·ä¸Šå•Šï¼Œæ®ºäº†$n" HIW "é€™" +
+                               RANK_D->query_rude(this_object()) + "ï¼â€\n" NOR, ob, this_object());
 
                 foreach(killer in t)
                 {
@@ -151,28 +151,28 @@ int accept_kill(object ob)
 
 int accept_ansuan(object ob)
 {
-        return notify_fail("ÄÇÈË¾¯ÌèĞÔºÃ¸ß£¬ÄãÄÑÒÔÏÂÊÖ¡£\n");
+        return notify_fail("é‚£äººè­¦æƒ•æ€§å¥½é«˜ï¼Œä½ é›£ä»¥ä¸‹æ‰‹ã€‚\n");
 }
 
 int accept_touxi(object ob)
 {
-        return notify_fail("ÄÇÈË¾¯ÌèĞÔºÃ¸ß£¬ÄãÄÑÒÔÏÂÊÖ¡£\n");
+        return notify_fail("é‚£äººè­¦æƒ•æ€§å¥½é«˜ï¼Œä½ é›£ä»¥ä¸‹æ‰‹ã€‚\n");
 }
 
 void die(object killer)
 {
-        object dob;             // ´òÔÎÕâ¸öNPCµÄÈË
-        int n;                  // ¿ÉÒÔ½±ÀøµÄÈËµÄÊıÄ¿
-        int exp;                // ĞèÒª¹Ï·ÖµÄ¾­Ñé
-        int pot;                // ĞèÒª¹Ï·ÖµÄÇ±ÄÜ
-        int weiwang;            // ĞèÒª¹Ï·ÖµÄÍşÍû
-        int score;              // ĞèÒª¹Ï·ÖµÄÔÄÀú
+        object dob;             // æ‰“æšˆé€™å€‹NPCçš„äºº
+        int n;                  // å¯ä»¥çå‹µçš„äººçš„æ•¸ç›®
+        int exp;                // éœ€è¦ç“œåˆ†çš„ç¶“é©—
+        int pot;                // éœ€è¦ç“œåˆ†çš„æ½›èƒ½
+        int weiwang;            // éœ€è¦ç“œåˆ†çš„å¨æœ›
+        int score;              // éœ€è¦ç“œåˆ†çš„é–±æ­·
         int gongxian;           //
-        object *t;              // É±ËÀÎÒµÄÈËµÄ¶ÓÎéÁĞ±í
+        object *t;              // æ®ºæ­»æˆ‘çš„äººçš„éšŠä¼åˆ—è¡¨
         object tob;
         int i;
 
-        // ÕÒµ½É±ÁËÎÒ(NPC)»òÊÇ´òÔÎÎÒµÄÈË
+        // æ‰¾åˆ°æ®ºäº†æˆ‘(NPC)æˆ–æ˜¯æ‰“æšˆæˆ‘çš„äºº
         if (! objectp(dob = killer))
                 dob = query_defeated_by();
 
@@ -220,15 +220,15 @@ void die(object killer)
                                             "weiwang"  : weiwang + ((tob == dob) ? 1000 : 0),
                                             "score"    : score + ((tob == dob) ? 1000 : 0),
                                             "gongxian" : (n < 4 ? gongxian / 3 : gongxian), 
-                                            "prompt"  : (pointerp(t) ? "ÄãµÄ¶ÓÎé»÷±Ğ" + name() + "Ö®ºó" :
-                                                        "»÷±Ğ" + name() + "Ö®ºó") ]));
+                                            "prompt"  : (pointerp(t) ? "ä½ çš„éšŠä¼æ“Šæ–ƒ" + name() + "ä¹‹å¾Œ" :
+                                                        "æ“Šæ–ƒ" + name() + "ä¹‹å¾Œ") ]));
 
 
                       }
               }
 
         }
-        // Õı³£ËÀÍö
+        // æ­£å¸¸æ­»äº¡
         ::die();
 
         return;
@@ -244,9 +244,9 @@ void random_move()
         if (time() > query_temp("dest_time") ||
             "/adm/daemons/story/familywar"->query_status() == OVER)
         {
-                message_vision("$N¼±¼±Ã¦Ã¦µÄ×ßÁË¡£\n", this_object());
+                message_vision("$Næ€¥æ€¥å¿™å¿™çš„èµ°äº†ã€‚\n", this_object());
                 CHANNEL_D->do_channel(this_object(), "rumor",
-                                      sprintf("ÌıËµ%sÔÚ¹¥´ò%sÖ®ºó£¬´Ó´ËÏúÉùÄä¼££¬±»½­ºşÖĞÈËËùÒÅÍü¡£",
+                                      sprintf("è½èªª%såœ¨æ”»æ‰“%sä¹‹å¾Œï¼Œå¾æ­¤éŠ·è²åŒ¿è·¡ï¼Œè¢«æ±Ÿæ¹–ä¸­äººæ‰€éºå¿˜ã€‚",
                                               name(), fam_info["family"]));
                 log_file("static/killed_die", sprintf("%s %s(%s) vanished because timeout(%d:%d).\n",
                                                       log_time(), name(), query("id"),
@@ -261,18 +261,18 @@ void random_move()
                 listeners = filter_array(users(), (: filter_listener :));
 
                 if (query("is_leader") && random(3) == 0)
-                         message_vision(HIW "$N" HIW "ËµµÀ£º¡°µÜĞÖÃÇ£¬²»Òª×Å¼±£¬µÈÏÂÔÛÃÇ¹¥Èë" + 
-                                        fam_info["family"] + "£¬´ó¿ªÉ±½ä~£¡¡±\n" NOR, this_object());
+                         message_vision(HIW "$N" HIW "èªªé“ï¼šâ€œå¼Ÿå…„å€‘ï¼Œä¸è¦è‘—æ€¥ï¼Œç­‰ä¸‹å’±å€‘æ”»å…¥" + 
+                                        fam_info["family"] + "ï¼Œå¤§é–‹æ®ºæˆ’~ï¼â€\n" NOR, this_object());
                 else if (random(10) == 0)
-                         message_vision(HIC "$N" HIC "ÈÂÈÂµÀ£º¡°ÔõÃ´Ê×Áì»¹²»ÏÂÁî¹¥´ò" + 
-                                        fam_info["family"] + "ÎÒ¶¼µÈµÃ²»ÄÍ·³ÁË£¡¡±\n" NOR, this_object());                
+                         message_vision(HIC "$N" HIC "åš·åš·é“ï¼šâ€œæ€éº¼é¦–é ˜é‚„ä¸ä¸‹ä»¤æ”»æ‰“" + 
+                                        fam_info["family"] + "æˆ‘éƒ½ç­‰å¾—ä¸è€ç…©äº†ï¼â€\n" NOR, this_object());                
    
                 return;
         }
         fam_info = query("fam_info");
         route = fam_info["route_list"];
 
-        // ÒÑ¾­×ßµ½ÖÕµã
+        // å·²ç¶“èµ°åˆ°çµ‚é»
         if (query("move") >= sizeof(route))
         {
 
@@ -282,8 +282,8 @@ void random_move()
                       {
 
                              CHANNEL_D->do_channel(this_object(), "rumor", 
-                                        "ÌıËµÉñÃØ×éÖ¯¹¥µ½" + fam_info["family"] + "µÄ" + fam_info["tar_room_nm"] + 
-                                        "£¬" + fam_info["family"] + "×Ô´ËÔªÆø´óÉË¡£\n");
+                                        "è½èªªç¥ç§˜çµ„ç¹”æ”»åˆ°" + fam_info["family"] + "çš„" + fam_info["tar_room_nm"] + 
+                                        "ï¼Œ" + fam_info["family"] + "è‡ªæ­¤å…ƒæ°£å¤§å‚·ã€‚\n");
 
                              "/adm/daemons/story/familywar"->change_status(OVER);
                       }
@@ -292,10 +292,10 @@ void random_move()
                return;
         }
 
-        // °´ÕÕÂ·ÓÉÁĞ±íÒÆ¶¯
+        // æŒ‰ç…§è·¯ç”±åˆ—è¡¨ç§»å‹•
         if (stringp(dir = route[query("move")]))
         {
-              command("say ĞÖµÜÃÇ³å°¡£¬É±µÃËûÃÇÂä»¨Á÷Ë®£¬Æ¬¼×²»Áô£¡");
+              command("say å…„å¼Ÿå€‘æ²–å•Šï¼Œæ®ºå¾—ä»–å€‘è½èŠ±æµæ°´ï¼Œç‰‡ç”²ä¸ç•™ï¼");
               if (GO_CMD->main(this_object(), dir))addn("move", 1);
 
               else if (stringp(fam_info["spe_cmds"]))

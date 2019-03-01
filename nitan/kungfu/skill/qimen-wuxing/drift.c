@@ -7,27 +7,27 @@ int conjure(object me, object target)
         object ob;
         int i;
 
-        if ( !query("reborn/times", me) ) return notify_fail("Äã»¹Ã»ÓĞÕÆÎÕÆæÃÅ¶İ¼×¡£\n");
+        if ( !query("reborn/times", me) ) return notify_fail("ä½ é‚„æ²’æœ‰æŒæ¡å¥‡é–€éç”²ã€‚\n");
 
-        if ( !wizardp(me) && me->query_family() != "ÌÒ»¨µº" && member_array("ÌÒ»¨µº", query("reborn/fams", me)) == -1 )
-                return notify_fail("Ö»ÓĞÌÒ»¨µºµÄÍæ¼Ò²ÅÄÜÁìÎòÆæÃÅ¶İ¼×¡£\n");
+        if ( !wizardp(me) && me->query_family() != "æ¡ƒèŠ±å³¶" && member_array("æ¡ƒèŠ±å³¶", query("reborn/fams", me)) == -1 )
+                return notify_fail("åªæœ‰æ¡ƒèŠ±å³¶çš„ç©å®¶æ‰èƒ½é ˜æ‚Ÿå¥‡é–€éç”²ã€‚\n");
 
-        if ( me->is_fighting() ) return notify_fail("Õ½¶·ÖĞÄãÃ»ÓĞÊ±¼ä´ò¶´,ºÇºÇ£¡\n");
+        if ( me->is_fighting() ) return notify_fail("æˆ°é¬¥ä¸­ä½ æ²’æœ‰æ™‚é–“æ‰“æ´,å‘µå‘µï¼\n");
           
-        if ( !query("outdoors", environment(me)) ) return notify_fail("àÔ£¡àÔ£¡àÔ£¡ÕâÀïµÄµØ°å£¬ËÆºõºÃÓ²Ó´£¡\n");
+        if ( !query("outdoors", environment(me)) ) return notify_fail("â–¡ï¼â–¡ï¼â–¡ï¼é€™è£¡çš„åœ°æ¿ï¼Œä¼¼ä¹å¥½ç¡¬å–²ï¼\n");
 
         ob = first_inventory(me);
         while ( ob )
         {
                 if (ob->is_character() && !ob->is_corpse() )
-                        return notify_fail(ob->name()+"²»ÄÜºÍÄãÒ»Æğ×ê¶´£¡\n");
+                        return notify_fail(ob->name()+"ä¸èƒ½å’Œä½ ä¸€èµ·é‘½æ´ï¼\n");
                 ob = next_inventory(ob);
         }
-        if ( query("jing", me) < 30 ) return notify_fail("ÄãµÄ¾«Á¦²»¹»£¡\n");
-        if ( target ) return notify_fail("ÆæÃÅ¶İÊõÖ»ÄÜ×Ô¼ºÊ¹ÓÃ£¡\n");
+        if ( query("jing", me) < 30 ) return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤ ï¼\n");
+        if ( target ) return notify_fail("å¥‡é–€éè¡“åªèƒ½è‡ªå·±ä½¿ç”¨ï¼\n");
 
-        if ( virtualp(environment(me)) ) return notify_fail("ÕâÀïÎŞ·¨Ê¹ÓÃÉñÍ¨!\n");
-        write("ÄãÒª×êµ½ÄÄÒ»¸öÈËÉí±ß£¿");
+        if ( virtualp(environment(me)) ) return notify_fail("é€™è£¡ç„¡æ³•ä½¿ç”¨ç¥é€š!\n");
+        write("ä½ è¦é‘½åˆ°å“ªä¸€å€‹äººèº«é‚Šï¼Ÿ");
         input_to( (: call_other, __FILE__, "select_target", me :));
         return 1;
 }
@@ -40,38 +40,38 @@ void select_target(object me, string name)
         
         if ( !name || name=="" ) 
         {
-                write("ÖĞÖ¹Ê©·¨¡£\n");
+                write("ä¸­æ­¢æ–½æ³•ã€‚\n");
                 return;
         }
         ob = find_player(name);
         if ( !ob || !me->visible(ob) || wizardp(ob) ) ob = find_living(name);
         if ( !ob || !me->visible(ob) || !living(ob) || wizardp(ob) ) 
         {
-                write("ÄãÎŞ·¨¸ĞÊÜµ½Õâ¸öÈËµÄ¾«Á¦ ....\n");
+                write("ä½ ç„¡æ³•æ„Ÿå—åˆ°é€™å€‹äººçš„ç²¾åŠ› ....\n");
                 return;
         }
         if ( !objectp(env=environment(ob)) )
         {
-                write("ÄãÎŞ·¨¸ĞÊÜµ½Õâ¸öÈËµÄ¾«Á¦ ....\n");
+                write("ä½ ç„¡æ³•æ„Ÿå—åˆ°é€™å€‹äººçš„ç²¾åŠ› ....\n");
                 return;
         }
         if ( random(query("jing",me))<30 )
         {
-                write("ÄãÎŞ·¨¸Ğ¾õµ½¶Ô·½µÄ´æÔÚ\n");
+                write("ä½ ç„¡æ³•æ„Ÿè¦ºåˆ°å°æ–¹çš„å­˜åœ¨\n");
                 return;
         }
         /*
-        if ( query("quest/quest_type",me)=="É±"
+        if ( query("quest/quest_type",me)=="æ®º"
                 && (string)query("quest/quest",me)==ob->short()
                 && query("quest/task_time",me)<time() )
         {
-                write("ÄãÎŞ·¨¸ĞÊÜµ½Õâ¸öÈËµÄ¾«Á¦ ....\n");
+                write("ä½ ç„¡æ³•æ„Ÿå—åˆ°é€™å€‹äººçš„ç²¾åŠ› ....\n");
                 return;
         }
         */
         if ( me->is_fighting() ) 
         {
-                write("Õ½¶·ÖĞÄãÃ»ÓĞÊ±¼ä´ò¶´,ºÇºÇ£¡\n");
+                write("æˆ°é¬¥ä¸­ä½ æ²’æœ‰æ™‚é–“æ‰“æ´,å‘µå‘µï¼\n");
                 return;
         } 
 
@@ -80,9 +80,9 @@ void select_target(object me, string name)
                 || !random(3)
                 || time() - query_temp("do_flee",me) < 2 ) 
         {
-                message_vision( HIY "$N·É¿ìµØÔÚµØÉÏ°ÇÁË¸ö¶´£¬×êÁË½øÈ¥ ....\n" NOR, me);
-                write("ßËßË¼¸Éù£¬ÄãÍÚµ½¼¸¿é´óÊ¯Í·£¬ÍÛ£¬Ã»ÃÅ£¡\n");
-                message( "vision",HIY+me->name()+"Ò»Á³Æø¼±°Ü»µ£¬»ÒÍ·»ÒÁ³µØ´Ó¶´ÀïÓÖ×êÁË»ØÀ´¡£\n" NOR, environment(me),({me}));
+                message_vision( HIY "$Né£›å¿«åœ°åœ¨åœ°ä¸Šæ‰’äº†å€‹æ´ï¼Œé‘½äº†é€²å» ....\n" NOR, me);
+                write("å’šå’šå¹¾è²ï¼Œä½ æŒ–åˆ°å¹¾å¡Šå¤§çŸ³é ­ï¼Œå“‡ï¼Œæ²’é–€ï¼\n");
+                message( "vision",HIY+me->name()+"ä¸€è‡‰æ°£æ€¥æ•—å£ï¼Œç°é ­ç°è‡‰åœ°å¾æ´è£¡åˆé‘½äº†å›ä¾†ã€‚\n" NOR, environment(me),({me}));
                 return;
         }
         set_temp("do_flee",time(),me);
@@ -90,15 +90,15 @@ void select_target(object me, string name)
                 || query("no_fight", environment(ob)) 
                 || random(me->query_skill("qimen-wuxing",1)) < 30 ) 
         {
-                write("ÄãÊÖÖ¸¶¼Ä¥ÆÆÁË£¬²ÅÍÚ³ö¸öÀÏÊó¶´£¬MY GOD£¬ÔõÃ´×êÑ½£¡\n");
-                message( "vision",HIY+me->name()+"Ê¹¾¢°ÑÁ³ÍùÍÁÀï²äÁË¼¸ÏÂ£¬ÕæÎŞÁÄ¡£\n" NOR, environment(me),({me}));
+                write("ä½ æ‰‹æŒ‡éƒ½ç£¨ç ´äº†ï¼Œæ‰æŒ–å‡ºå€‹è€é¼ æ´ï¼ŒMY GODï¼Œæ€éº¼é‘½å‘€ï¼\n");
+                message( "vision",HIY+me->name()+"ä½¿å‹æŠŠè‡‰å¾€åœŸè£¡è¹­äº†å¹¾ä¸‹ï¼ŒçœŸç„¡èŠã€‚\n" NOR, environment(me),({me}));
                 return;
         }
         exits=query("exits", environment(ob));
         if (!mapp(exits) || !sizeof(exits) )
         {
-                write("ÄãÍÚµ½Ò»¶ÂÊ¯Ç½£¬²»µÃ²»ÍËÁË»ØÀ´£¡\n");
-                message( "vision",HIY+me->name()+"Ò»Á³Æø¼±°Ü»µ£¬»ÒÍ·»ÒÁ³µØ´Ó¶´ÀïÓÖ×êÁË»ØÀ´¡£\n" NOR, environment(me),({me}));
+                write("ä½ æŒ–åˆ°ä¸€å µçŸ³ç‰†ï¼Œä¸å¾—ä¸é€€äº†å›ä¾†ï¼\n");
+                message( "vision",HIY+me->name()+"ä¸€è‡‰æ°£æ€¥æ•—å£ï¼Œç°é ­ç°è‡‰åœ°å¾æ´è£¡åˆé‘½äº†å›ä¾†ã€‚\n" NOR, environment(me),({me}));
                 return;
         }
         if ( domain_file(base_name(environment(ob)))=="shaolin" 
@@ -107,62 +107,62 @@ void select_target(object me, string name)
                 || domain_file(base_name(environment(ob)))=="shenlong" 
                 || domain_file(base_name(environment(ob)))=="wizard" 
                 || domain_file(base_name(environment(ob)))=="death" ){
-                write("ÄÇÀï·ğÆøºÃÖØ£¬·ÇµÀÊõËùÄÜ¼°£¡\n");
-                message( "vision",HIY+me->name()+"Ò»Á³Æø¼±°Ü»µ£¬»ÒÍ·»ÒÁ³µØ´Ó¶´ÀïÓÖ×êÁË»ØÀ´¡£\n" NOR, environment(me),({me}));           
+                write("é‚£è£¡ä½›æ°£å¥½é‡ï¼Œéé“è¡“æ‰€èƒ½åŠï¼\n");
+                message( "vision",HIY+me->name()+"ä¸€è‡‰æ°£æ€¥æ•—å£ï¼Œç°é ­ç°è‡‰åœ°å¾æ´è£¡åˆé‘½äº†å›ä¾†ã€‚\n" NOR, environment(me),({me}));           
                 return;         
         }               
 
         if ( domain_file(base_name(environment(ob)))=="taohua" || domain_file(base_name(environment(ob)))=="binghuo"){
-                write("¹§Ï²Äã£¬ÄãÍÚµ½ÁËÈªË®Á¨£¡\n");
-                message( "vision",HIY+me->name()+"´Ó¿ÚÁËÍÂ³ö¼¸¿ÚË®´ó½Ğ£ººÃÏÌÑ½£¡\n" NOR, environment(me),({me}));
+                write("æ­å–œä½ ï¼Œä½ æŒ–åˆ°äº†æ³‰æ°´å“©ï¼\n");
+                message( "vision",HIY+me->name()+"å¾å£äº†åå‡ºå¹¾å£æ°´å¤§å«ï¼šå¥½å’¸å‘€ï¼\n" NOR, environment(me),({me}));
                 return;
         }
 
         if ( domain_file(base_name(environment(ob)))=="xiakedao" ){
-                write("¹§Ï²Äã£¬ÄãÍÚµ½ÁËÃ©¿ÓÁ¨£¡\n");
-                message( "vision",HIY+me->name()+"´Ó¿ÚÁËÍÂ³ö¼¸¿Ú´ó·à´ó½Ğ£ººÃ³ôÑ½£¡ºÃ³ôÑ½£¡\n" NOR, environment(me),({me}));
+                write("æ­å–œä½ ï¼Œä½ æŒ–åˆ°äº†èŒ…å‘å“©ï¼\n");
+                message( "vision",HIY+me->name()+"å¾å£äº†åå‡ºå¹¾å£å¤§ç³å¤§å«ï¼šå¥½è‡­å‘€ï¼å¥½è‡­å‘€ï¼\n" NOR, environment(me),({me}));
                 return;
         }
 
         if ( domain_file(base_name(environment(ob)))=="gaochang" ) {
-                write("ÄÇÀïÌ«Ò£Ô¶ÁË¡£\n");
+                write("é‚£è£¡å¤ªé™é äº†ã€‚\n");
                 message( 
-                        "vision",HIY+me->name()+"Ò»Á³Æø¼±°Ü»µ£¬»ÒÍ·»ÒÁ³µØ´Ó¶´ÀïÓÖ×êÁË»ØÀ´¡£\n" NOR, environment(me),({me}));
+                        "vision",HIY+me->name()+"ä¸€è‡‰æ°£æ€¥æ•—å£ï¼Œç°é ­ç°è‡‰åœ°å¾æ´è£¡åˆé‘½äº†å›ä¾†ã€‚\n" NOR, environment(me),({me}));
                 return;
         }
 
         if ( sscanf(base_name(environment(ob)), "/data/%*s") ){
-                write(HIM "ÄÇÀïÊÇÈË¼ÒµÄË½Õ¬£¬Ïë½øÈ¥Íµ¶«Î÷°¡?\n" NOR);
-                message( "vision",HIY+me->name()+"Ò»Á³Æø¼±°Ü»µ£¬»ÒÍ·»ÒÁ³µØ´Ó¶´ÀïÓÖ×êÁË»ØÀ´¡£\n" NOR, environment(me),({me}));
+                write(HIM "é‚£è£¡æ˜¯äººå®¶çš„ç§å®…ï¼Œæƒ³é€²å»å·æ±è¥¿å•Š?\n" NOR);
+                message( "vision",HIY+me->name()+"ä¸€è‡‰æ°£æ€¥æ•—å£ï¼Œç°é ­ç°è‡‰åœ°å¾æ´è£¡åˆé‘½äº†å›ä¾†ã€‚\n" NOR, environment(me),({me}));
         }
 
         if ( !environment(ob) || wizardp(ob) ){
-                 message_vision( HIY "$N·É¿ìµØÔÚµØÉÏ°ÇÁË¸ö¶´£¬×êÁË½øÈ¥ ....\n" NOR, me);
-                write("ÄãÔÚµØµ××êÁË°ëÌì£¬·¢ÏÖ"+ob->name()+"ËÆºõÔÚÌìÉÏ ....\n");
-                message( "vision",HIY+me->name()+"Ò»Á³Æø¼±°Ü»µ£¬»ÒÍ·»ÒÁ³µØ´Ó¶´ÀïÓÖ×êÁË»ØÀ´¡£\n" NOR, environment(me),({me}));
+                 message_vision( HIY "$Né£›å¿«åœ°åœ¨åœ°ä¸Šæ‰’äº†å€‹æ´ï¼Œé‘½äº†é€²å» ....\n" NOR, me);
+                write("ä½ åœ¨åœ°åº•é‘½äº†åŠå¤©ï¼Œç™¼ç¾"+ob->name()+"ä¼¼ä¹åœ¨å¤©ä¸Š ....\n");
+                message( "vision",HIY+me->name()+"ä¸€è‡‰æ°£æ€¥æ•—å£ï¼Œç°é ­ç°è‡‰åœ°å¾æ´è£¡åˆé‘½äº†å›ä¾†ã€‚\n" NOR, environment(me),({me}));
                 return;
         }
         
         /*
         if( userp(ob) )
         {
-                message_vision( HIY "$N·É¿ìµØÔÚµØÉÏ°ÇÁË¸ö¶´£¬×êÁË½øÈ¥ ....\n" NOR, me);
-                write("ÄãÔÚµØµ××êÁË°ëÌì£¬·¢ÏÖËÆºõ²»×Å±ß¼Ê ....\n");
-                message( "vision",HIY+me->name()+"Ò»Á³Æø¼±°Ü»µ£¬»ÒÍ·»ÒÁ³µØ´Ó¶´ÀïÓÖ×êÁË»ØÀ´¡£\n" NOR, environment(me),({me}));
+                message_vision( HIY "$Né£›å¿«åœ°åœ¨åœ°ä¸Šæ‰’äº†å€‹æ´ï¼Œé‘½äº†é€²å» ....\n" NOR, me);
+                write("ä½ åœ¨åœ°åº•é‘½äº†åŠå¤©ï¼Œç™¼ç¾ä¼¼ä¹ä¸è‘—é‚Šéš› ....\n");
+                message( "vision",HIY+me->name()+"ä¸€è‡‰æ°£æ€¥æ•—å£ï¼Œç°é ­ç°è‡‰åœ°å¾æ´è£¡åˆé‘½äº†å›ä¾†ã€‚\n" NOR, environment(me),({me}));
                 return;
         }
         */
-        message_vision( HIY "$N·É¿ìµØÔÚµØÉÏ°ÇÁË¸ö¶´£¬×êÁË½øÈ¥ ....\n" NOR, me);
-        message( "vision", HIY "\nºÜ¿ì£¬¶´¿ÚÓÖ·âÁËÆğÀ´£¬" + me->name() + "²»¼ûÁË£¡\n\n" NOR, environment(me), ({ me }) );
+        message_vision( HIY "$Né£›å¿«åœ°åœ¨åœ°ä¸Šæ‰’äº†å€‹æ´ï¼Œé‘½äº†é€²å» ....\n" NOR, me);
+        message( "vision", HIY "\nå¾ˆå¿«ï¼Œæ´å£åˆå°äº†èµ·ä¾†ï¼Œ" + me->name() + "ä¸è¦‹äº†ï¼\n\n" NOR, environment(me), ({ me }) );
 
 
         if( file_size(file_name(environment(ob))+".c")<=0 )
         {
-                write(HIY"µ«ÊÇ£¬ºÜ¿ìµØÄã·¢ÏÖÄÇÀïËÆºõ²¢²»´æÔÚ£¬ÓÚÊÇÓÖ»ÒÍ·ÍÁÁ³µØÍËÁË»ØÀ´¡£\n"NOR);        
+                write(HIY"ä½†æ˜¯ï¼Œå¾ˆå¿«åœ°ä½ ç™¼ç¾é‚£è£¡ä¼¼ä¹ä¸¦ä¸å­˜åœ¨ï¼Œäºæ˜¯åˆç°é ­åœŸè‡‰åœ°é€€äº†å›ä¾†ã€‚\n"NOR);        
                 return;
         } else 
                 me->move(environment(ob));
-        message( "vision", HIY "\nÒ»¸öºÚÓ°Í»È»´ÓµØÏÂÃ°ÁË³öÀ´£¬ÅçÁËÄãÂúÁ³µÄ»Ò£¡\n\n" NOR,
+        message( "vision", HIY "\nä¸€å€‹é»‘å½±çªç„¶å¾åœ°ä¸‹å†’äº†å‡ºä¾†ï¼Œå™´äº†ä½ æ»¿è‡‰çš„ç°ï¼\n\n" NOR,
                 environment(ob), ({ me }) );
         
         /*

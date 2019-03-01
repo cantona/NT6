@@ -12,7 +12,7 @@ int main(object me, string arg)
         object ob, *inv;
         int i, count;
 
-        if (! arg) return notify_fail("ÄãÒª´©´÷Ê²Ã´£¿\n");
+        if (! arg) return notify_fail("ä½ è¦ç©¿æˆ´ä»€éº¼ï¼Ÿ\n");
 
         if (arg == "all")
         {
@@ -23,14 +23,14 @@ int main(object me, string arg)
                         if (do_wear(me, inv[i])) count++;
                 }
                 if (! count)
-                        write("ÄãÊ²Ã´¶¼Ã»ÓĞ´©ÉÏ¡£\n");
+                        write("ä½ ä»€éº¼éƒ½æ²’æœ‰ç©¿ä¸Šã€‚\n");
                 else
-                        write("Äã´©ºÃÁË¡£\n");
+                        write("ä½ ç©¿å¥½äº†ã€‚\n");
                 return 1;
         }
 
         if (! objectp(ob = present(arg, me)))
-                return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+                return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™æ¨£æ±è¥¿ã€‚\n");
 
         if( query("equipped", ob) )
         {
@@ -46,7 +46,7 @@ int main(object me, string arg)
                         }
                 }
                 if (! count)
-                        return notify_fail("ÄãÒÑ¾­×°±¸ÖøÁË¡£\n");
+                        return notify_fail("ä½ å·²ç¶“è£å‚™è‘—äº†ã€‚\n");
 
                 return 1;
         }
@@ -63,12 +63,12 @@ int do_wear(object me, object ob)
         if( notice=query_temp("no_wear", ob) )
         {
                 if (stringp(notice)) write(notice);
-                return notify_fail("»¹ÊÇÊÔÊÔ±ğµÄ°É£¡\n");
+                return notify_fail("é‚„æ˜¯è©¦è©¦åˆ¥çš„å§ï¼\n");
         }
 
         if( query("female_only", ob) && 
-            query("gender", me) == "ÄĞĞÔ" )
-                return notify_fail("ÕâÊÇÅ®ÈËµÄÒÂÉÀ£¬ÄãÒ»¸ö´óÄĞÈËÒ²Ïë´©£¬ĞßÒ²²»Ğß£¿\n");
+            query("gender", me) == "ç”·æ€§" )
+                return notify_fail("é€™æ˜¯å¥³äººçš„è¡£è¡«ï¼Œä½ ä¸€å€‹å¤§ç”·äººä¹Ÿæƒ³ç©¿ï¼Œç¾ä¹Ÿä¸ç¾ï¼Ÿ\n");
 
         switch (ob->wear())
         {
@@ -87,19 +87,19 @@ int do_wear(object me, object ob)
                                 case "cloth":
                                 case "armor":
                                 case "boots":
-                                        str=YEL"$N´©ÉÏÒ»"+query("unit", ob)+"$n"YEL"¡£\n"NOR;
+                                        str=YEL"$Nç©¿ä¸Šä¸€"+query("unit", ob)+"$n"YEL"ã€‚\n"NOR;
                                         break;
                                 case "head":
                                 case "neck":
                                 case "wrists":
                                 case "hands":
-                                        str=YEL"$N´÷ÉÏÒ»"+query("unit", ob)+"$n"YEL"¡£\n"NOR;
+                                        str=YEL"$Næˆ´ä¸Šä¸€"+query("unit", ob)+"$n"YEL"ã€‚\n"NOR;
                                         break;
                                 case "waist":
-                                        str=YEL"$N½«Ò»"+query("unit", ob)+"$n"YEL"°óÔÚÑü¼ä¡£\n"NOR;
+                                        str=YEL"$Nå°‡ä¸€"+query("unit", ob)+"$n"YEL"ç¶åœ¨è…°é–“ã€‚\n"NOR;
                                         break;
                                 default:
-                                        str = YEL "$N×°±¸$n" YEL "¡£\n" NOR;
+                                        str = YEL "$Nè£å‚™$n" YEL "ã€‚\n" NOR;
                         }
                 if( query_temp("daub", ob) && 
                     query("armor_type", ob) != "hands" )
@@ -115,9 +115,9 @@ int do_wear(object me, object ob)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½£ºwear <×°±¸Ãû³Æ>
+æŒ‡ä»¤æ ¼å¼ï¼šwear <è£å‚™åç¨±>
  
-Õâ¸öÖ¸ÁîÈÃÄã×°±¸Ä³¼ş·À¾ß¡£
+é€™å€‹æŒ‡ä»¤è®“ä½ è£å‚™æŸä»¶é˜²å…·ã€‚
  
 HELP );
         return 1;

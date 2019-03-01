@@ -4,8 +4,8 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÈºÓñÂ¥±£ïÚ", ({ "bao biao","baobiao" }));
-        set("gender", "ÄĞĞÔ");
+        set_name("ç¾¤ç‰æ¨“ä¿é¢", ({ "bao biao","baobiao" }));
+        set("gender", "ç”·æ€§");
         set("age", random(10) + 20);
         set("str", 25);
         set("con", 25);
@@ -13,7 +13,7 @@ void create()
         set("dex", 25);
         set("int", 25);
         set("shen_type", -1);
-        set("long", "ËûÉ±ÆøÌÚÌÚ£¬¸ºÔğÈºÓñÂ¥ËùÓĞÅ®ÈËµÄ°²È«¡£\n");
+        set("long", "ä»–æ®ºæ°£é¨°é¨°ï¼Œè² è²¬ç¾¤ç‰æ¨“æ‰€æœ‰å¥³äººçš„å®‰å…¨ã€‚\n");
         set("combat_exp", 100000);
         set("class", "fighter");
         set("attitude", "herosim");
@@ -37,7 +37,7 @@ void create()
 
 int accept_fight(object me)
 {
-        message_vision("ÈºÓñÂ¥±£ïÚ¶Ô$NºÈµÀ£ºÊÇ²»ÊÇÏëËÀ°¡£¡\n\n", me);
+        message_vision("ç¾¤ç‰æ¨“ä¿é¢å°$Nå–é“ï¼šæ˜¯ä¸æ˜¯æƒ³æ­»å•Šï¼\n\n", me);
         return 0;
 }
 
@@ -57,8 +57,8 @@ void leave()
         addn("time", 1, this_object());
         if( query("time", this_object()) >= 3 )
         {
-                message("vision", name() + "ºÙºÙÒ»Ğ¦:¡°ÀÏ×ÓÒª»ØÈ¥"
-                        "Ë¯¾õÁË£¬ÔÙÓĞÈËÀ´ÈºÓñÂ¥ÄÖÊÂ¾Í½ĞÎÒ£¡¡±\n",
+                message("vision", name() + "å˜¿å˜¿ä¸€ç¬‘:â€œè€å­è¦å›å»"
+                        "ç¡è¦ºäº†ï¼Œå†æœ‰äººä¾†ç¾¤ç‰æ¨“é¬§äº‹å°±å«æˆ‘ï¼â€\n",
                         environment());
                 destruct(this_object());
         }

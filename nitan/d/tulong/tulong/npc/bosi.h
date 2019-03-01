@@ -10,8 +10,8 @@ void init()
         if( query_temp("have_yitianjian", me )
            || present("yitian jian", me))
         {
-                command("say ß×£¿ÒĞÌì½£ÔõÃ´»áÔÚÄãÊÖÀï£¬¿´À´"
-                        "Õâ´ÎÖĞÔ­Ö®ĞĞÃ»°×ÅÜÁË£¡");
+                command("say å’¦ï¼Ÿå€šå¤©åŠæ€éº¼æœƒåœ¨ä½ æ‰‹è£¡ï¼Œçœ‹ä¾†"
+                        "é€™æ¬¡ä¸­åŸä¹‹è¡Œæ²’ç™½è·‘äº†ï¼");
                 this_object()->kill_ob(me);
                 return;
         }
@@ -19,16 +19,16 @@ void init()
         if( query_temp("have_tulongdao", me )
            || present("tulong dao", me))
         {
-                command("say ºß£¬°ÑÍÀÁúµ¶½»³öÀ´£¬ÎÒÃÇÒÑ¾­ÊØ"
-                        "ºî¶àÊ±ÁË£¡");
+                command("say å“¼ï¼ŒæŠŠå± é¾åˆ€äº¤å‡ºä¾†ï¼Œæˆ‘å€‘å·²ç¶“å®ˆ"
+                        "ä¾¯å¤šæ™‚äº†ï¼");
                 this_object()->kill_ob(me);
                 return;
         }
 
         if (present("shenghuo ling", me))
         {
-                command("say ß×£¿ÄãÔõÃ´»áÄÃ×ÅÓĞÎÒ½ÌµÄÊ¥»ğÁî"
-                        "£¬¿ì»¹¸øÎÒ£¡");
+                command("say å’¦ï¼Ÿä½ æ€éº¼æœƒæ‹¿è‘—æœ‰æˆ‘æ•™çš„è–ç«ä»¤"
+                        "ï¼Œå¿«é‚„çµ¦æˆ‘ï¼");
                 this_object()->kill_ob(me);
                 return;
         }
@@ -38,15 +38,15 @@ int recognize_apprentice(object me, string skill)
 {
         if( query("shen", me)>1000 )
         {
-                command("say ß´Á¨¹ÅÀ­£¬»¨²»Â³Â³£¬ÄãÕâÈË¿´ÉÏ"
-                        "È¥²»ÏóÊÇºÃÈË£¬¿ª¹ö¡£");
+                command("say å˜°å“©å¤æ‹‰ï¼ŒèŠ±ä¸é­¯é­¯ï¼Œä½ é€™äººçœ‹ä¸Š"
+                        "å»ä¸è±¡æ˜¯å¥½äººï¼Œé–‹æ»¾ã€‚");
                 return -1;
         }
 
         if (skill != "sanscrit")
         {
-                command("say ½ÌÄãµãÎÒÔÚÓ¡¶ÈÑ§µÄÒ»µã¶«Î÷£¬Äã"
-                        "»¹²»Öª×ã°¡£¿");
+                command("say æ•™ä½ é»æˆ‘åœ¨å°åº¦å­¸çš„ä¸€é»æ±è¥¿ï¼Œä½ "
+                        "é‚„ä¸çŸ¥è¶³å•Šï¼Ÿ");
                 return -1;
         }
         return 1;

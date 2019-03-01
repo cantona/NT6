@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����������");
+        set("short", "獨尊廳大門");
         set("long", @LONG
-�����ͨ�����չ����������Ĵ��š��������Ҹ���һͷʯ���
-���գ��ߴ��������࣬��๾�צ���񿥷Ƿ����ƺ���ʱҪ�ڿն�ȥ��
+這就是通向「靈鷲宮」獨尊廳的大門。大門左右各有一頭石雕的
+猛鷲，高達三丈有余，尖喙巨爪，神駿非凡，似乎隨時要騰空而去。
 LONG );
         set("outdoors", "lingjiu");
         set("exits", ([

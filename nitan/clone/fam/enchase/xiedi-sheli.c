@@ -3,19 +3,19 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIM "Ğ°µÛÉáÀû" NOR, ({"xiedi sheli", "xiedi", "sheli" }));
+        set_name(HIM "é‚ªå¸èˆåˆ©" NOR, ({"xiedi sheli", "xiedi", "sheli" }));
         set_weight(900);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIM "´«ËµÄËĞ°µÛò¿ÓÈËù»¯£¬É¢·Å×ÅÎå²Ê¹âÃ¢¡£\n" NOR);
-                set("unit", "¿Å");
+                set("long", HIM "å‚³èªªä¹ƒé‚ªå¸èš©å°¤æ‰€åŒ–ï¼Œæ•£æ”¾è‘—äº”å½©å…‰èŠ’ã€‚\n" NOR);
+                set("unit", "é¡†");
                 set("value", 5000);
-                set("enchase/name", "Ğ°µÛÉáÀû");
+                set("enchase/name", "é‚ªå¸èˆåˆ©");
                 set("enchase/point", 1);
                   set("enchase/type", "def");
                                 set("enchase/cur_firm", 100);
-                                set("nine_object", 1); // ¾Å¿×ÏâÇ¶ÎïÆ·±ê¼Ç
+                                set("nine_object", 1); // ä¹å­”é‘²åµŒç‰©å“æ¨™è¨˜
                                 set("enchase/spe_data", ([]) );  
         }
         setup();

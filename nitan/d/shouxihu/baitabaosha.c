@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short","������ɲ");
+        set("short","白塔寶剎");
         set("long",@LONG
-Բ׶�ΰ�����ɲ���ɷ��ʮ����������ɣ��㼶�߶��ɣ���������
-ɲ���������α��ǣ��Ƕ����ҷ��壬ÿ�������������󡣱���Ϊ��ͭ
-ӧ�磬�����̽��ͭ�пպ�«�α�����������������
+圓錐形白塔寶剎，由佛教十三層相輪組成，層級高二丈，徑丈許，
+剎端置六角形寶蓋，角端懸掛風鈴，每當風起，鈴聲陣陣。寶蓋為青銅
+纓絡，上托鎏金黃銅中空葫蘆形寶頂，寶頂高丈許。
 LONG );
         set("outdoors", "shouxihu");
         set("exits", ([

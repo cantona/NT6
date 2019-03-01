@@ -4,11 +4,11 @@ inherit NPC;
 int summons();
 void create()
 {
-        set_name("ÈÕ¹â¾«Áé", ({ "spirit" }) );
+        set_name("æ—¥å…‰ç²¾éˆ", ({ "spirit" }) );
         set("age", 20);
-        set("gender", "ÄÐÐÔ"); 
+        set("gender", "ç”·æ€§"); 
         set("long", 
-"ÈÕ¹â¾«Áé£¬ÔÚÈÕ¹âÖÐµ®ÉúµÄ¾«Áé£¬¿´ÉÏÈ¥ÏóÒ»ÍÅ¹âÓ°¡£\n");
+"æ—¥å…‰ç²¾éˆï¼Œåœ¨æ—¥å…‰ä¸­èª•ç”Ÿçš„ç²¾éˆï¼Œçœ‹ä¸ŠåŽ»è±¡ä¸€åœ˜å…‰å½±ã€‚\n");
         set("attitude", "peaceful");
         set("str", 20);
         set("int", 20);
@@ -45,7 +45,7 @@ int summons()
 {
         object ob;
   object me = this_object ();
-        message_vision(HIY"$NË«ÊÖ½áÓ¡£¬à«à«µØÄîÁË¼¸¾äÖäÓï¡£\n"NOR, me);
+        message_vision(HIY"$Né›™æ‰‹çµå°ï¼Œå–ƒå–ƒåœ°å¿µäº†å¹¾å¥å’’èªžã€‚\n"NOR, me);
         ob = new("/quest/tulong/npc/spirit");
         ob->move(environment(me));
         ob->invocation(me); 

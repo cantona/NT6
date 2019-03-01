@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��ôկ");
+        set("short", "楊麼寨");
         set("long", @LONG
-��ôկ����ɽ���ഫ�����γ��궴ͥ��ũ�������������ô��Ӫ��
-��ַ��ɽկ�������ɣ�կդ���ڣ������������Ӣ�������������绢��
-���ƺ;��춯�ص�ҵ����
+楊麼寨在西山，相傳是南宋初年洞庭湖農民起義軍領袖楊麼兵營的
+遺址。山寨三關依舊，寨柵仍在，當可想見當初英雄們氣吞萬裡如虎的
+氣勢和驚天動地的業績。
 LONG );
         set("outdoors", "dongting");
         set("no_clean_up", 0);

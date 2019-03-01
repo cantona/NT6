@@ -1,4 +1,4 @@
-// tianhua.c Ìì»¨ÂÒ×¹
+// tianhua.c å¤©èŠ±äº‚å¢œ
 
 #include <ansi.h>
 
@@ -13,37 +13,37 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail("Ìì»¨ÂÒ×¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("å¤©èŠ±äº‚å¢œåªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me)) )
-                return notify_fail("Äã±ØĞëÊÖ³Ö±øÈĞ²ÅÄÜÊ©Õ¹Ìì»¨ÂÒ×¹£¡\n");
+                return notify_fail("ä½ å¿…é ˆæ‰‹æŒå…µåˆƒæ‰èƒ½æ–½å±•å¤©èŠ±äº‚å¢œï¼\n");
 
         if (target->is_busy())
-                return notify_fail(target->name() + "Ä¿Ç°Õı×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É£¡\n");
+                return notify_fail(target->name() + "ç›®å‰æ­£è‡ªé¡§ä¸æš‡ï¼Œæ”¾è†½æ”»æ“Šå§ï¼\n");
 
         if ((int)me->query_skill("never-defeated", 1) < 100)
-                return notify_fail("ÄãµÄ²»°ÜÉñ¹¦²»¹»Éîºñ£¬²»»áÊ¹ÓÃÌì»¨ÂÒ×¹¡£\n");
+                return notify_fail("ä½ çš„ä¸æ•—ç¥åŠŸä¸å¤ æ·±åšï¼Œä¸æœƒä½¿ç”¨å¤©èŠ±äº‚å¢œã€‚\n");
 
         if (me->query_skill_mapped("sword") != "never-defeated") 
-                return notify_fail("ÄãÏÖÔÚÃ»ÓĞ¼¤·¢²»°ÜÉñ¹¦Îª½£·¨£¬ÄÑÒÔÊ©Õ¹Ìì»¨ÂÒ×¹¡£\n"); 
+                return notify_fail("ä½ ç¾åœ¨æ²’æœ‰æ¿€ç™¼ä¸æ•—ç¥åŠŸç‚ºåŠæ³•ï¼Œé›£ä»¥æ–½å±•å¤©èŠ±äº‚å¢œã€‚\n"); 
                 
        if (! living(target))
-              return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+              return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIC "$N" HIC "ÊÖÖĞµÄ" + weapon->name() + HIC
-              "Ò»¹´Ò»»®£¬¼òµ¥Ã÷ÁËµÄÑ¹Ïò$n" HIC "£¡\n" NOR;
+        msg = HIC "$N" HIC "æ‰‹ä¸­çš„" + weapon->name() + HIC
+              "ä¸€å‹¾ä¸€åŠƒï¼Œç°¡å–®æ˜äº†çš„å£“å‘$n" HIC "ï¼\n" NOR;
 
         ap = attack_power(me, "sword");
         dp = defense_power(target, "parry");
 
         if (ap / 2 + random(ap) > dp)
         {
-                msg += HIR "½á¹û$p" HIR "±»$P" HIR "±ÆµÃÊ©Õ¹²»¿ª°ëµãÕĞÊ½£¡\n" NOR;
+                msg += HIR "çµæœ$p" HIR "è¢«$P" HIR "é€¼å¾—æ–½å±•ä¸é–‹åŠé»æ‹›å¼ï¼\n" NOR;
                 target->start_busy(ap / 80 + 2);
         } else
         {
-                msg += CYN "¿ÉÊÇ$p" CYN "¿´ÆÆÁË$P" CYN "µÄÕĞÊı£¬"
-                       "Õò¶¨×ÔÈô£¬Ó¦¶Ô×ÔÈç¡£\n" NOR;
+                msg += CYN "å¯æ˜¯$p" CYN "çœ‹ç ´äº†$P" CYN "çš„æ‹›æ•¸ï¼Œ"
+                       "é®å®šè‡ªè‹¥ï¼Œæ‡‰å°è‡ªå¦‚ã€‚\n" NOR;
                 me->start_busy(1);
         }
         message_combatd(msg, me, target);

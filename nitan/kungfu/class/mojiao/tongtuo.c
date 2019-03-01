@@ -9,12 +9,12 @@ inherit F_QUESTER;
 
 void create()
 {
-        set_name("Í­ÍÕ", ({"tong tuo", "tong", "tuo"}));
-        set("title", "Ä§½Ì³¤ÀÏ");
-        set("gender", "ÄÐÐÔ");
+        set_name("éŠ…é§", ({"tong tuo", "tong", "tuo"}));
+        set("title", "é­”æ•™é•·è€");
+        set("gender", "ç”·æ€§");
         set("age", 52);
         set("shen_type", -1);
-        set("long", "Éí²Ä¸ß³ö±ðÈËÁ½¸öÍ·£¬¿í³ö±ðÈËÒ»±¶¡£Éí×ÅÍ­¼×£¬Õû¸öÈË²»Íþ¶øÅ­¡£\n");
+        set("long", "èº«æé«˜å‡ºåˆ¥äººå…©å€‹é ­ï¼Œå¯¬å‡ºåˆ¥äººä¸€å€ã€‚èº«è‘—éŠ…ç”²ï¼Œæ•´å€‹äººä¸å¨è€Œæ€’ã€‚\n");
         set("attitude", "peaceful");
 
         set("per", 21);
@@ -66,7 +66,7 @@ void create()
 
         prepare_skill("cuff", "nuquan");
         
-        create_family("Ä§½Ì", 40, "³¤ÀÏ");
+        create_family("é­”æ•™", 40, "é•·è€");
   
         set("chat_chance_combat", 120); 
         set("chat_msg_combat", ({
@@ -92,7 +92,7 @@ void attempt_apprentice(object ob)
 
         if ((int)ob->query_skill("moshen-xinfa", 1) < 120) 
         {
-                command("say ±¾½ÌµÄÄÚ¹¦ÐÄ·¨Äã»¹Ã»Á·ºÃ£¬»¹Òª¶àÏÂ¿à¹¦²ÅÐÐ£¡");
+                command("say æœ¬æ•™çš„å…§åŠŸå¿ƒæ³•ä½ é‚„æ²’ç·´å¥½ï¼Œé‚„è¦å¤šä¸‹è‹¦åŠŸæ‰è¡Œï¼");
                 return;
         }
         
@@ -103,16 +103,16 @@ int accept_ask(object me, string topic)
 {
         switch (topic)
         {
-        case "ÀúÁ·" :
-        case "ÀúÁ¶" :
-        case "¶ÍÁ¶" :
+        case "æ­·ç·´" :
+        case "æ­·ç…‰" :
+        case "é›ç…‰" :
                 return QUEST_D->accept_ask(this_object(), me, topic);
                 break;
 
-        case "Ò»Å­É±·ð" :
+        case "ä¸€æ€’æ®ºä½›" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/nuquan/nu",
-                           "name"    : "Ò»Å­É±·ð",
+                           "name"    : "ä¸€æ€’æ®ºä½›",
                            "sk1"     : "nuquan",
                            "lv1"     : 200,
                            "dodge"   : 200,
@@ -120,10 +120,10 @@ int accept_ask(object me, string topic)
                            "shen"    : -50000, ]));
                 break;
 
-        case "ÎÞ·¨ÎÞÌì" :
+        case "ç„¡æ³•ç„¡å¤©" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/moshen-zhenshen/wu",
-                           "name"    : "ÎÞ·¨ÎÞÌì",
+                           "name"    : "ç„¡æ³•ç„¡å¤©",
                            "sk1"     : "moshen-zhenshen",
                            "lv1"     : 200,
                            "dodge"   : 200,

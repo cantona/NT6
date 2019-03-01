@@ -17,9 +17,9 @@ string extra_long()
 {
         string str;
 
-        str  = sprintf( "\nÎïÆ·ÊôĞÔ : ÈÎÎñÎïÆ·£¬ÖØÁ¿%d¿Ë£¬ÏÂÏß%s¶ªÊ§\n",
+        str  = sprintf( "\nç‰©å“å±¬æ€§ : ä»»å‹™ç‰©å“ï¼Œé‡é‡%då…‹ï¼Œä¸‹ç·š%sä¸Ÿå¤±\n",
                         this_object()->query_weight(),
-                        (this_object()->query_autoload() || query("auto_load")) ? "²»" : "" );
+                        (this_object()->query_autoload() || query("auto_load")) ? "ä¸" : "" );
 
         return str;
 }

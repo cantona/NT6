@@ -2,10 +2,10 @@ inherit NPC;
 
 void create()
 {
-   set_name("Á÷Ã¥Í·×Ó",({ "liu mang","liu","mang" }) );
-        set("gender", "ÄĞĞÔ" );
+   set_name("æµæ°“é ­å­",({ "liu mang","liu","mang" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 22);
-   set("long", "ÕâÊÇÒ»¸ö°²ÄÏ³ÇÄÚµÄÁ÷Ã¥Í·×Ó¡£\n");
+   set("long", "é€™æ˜¯ä¸€å€‹å®‰å—åŸå…§çš„æµæ°“é ­å­ã€‚\n");
        
    set("combat_exp", 70000);
    set("str", 23);
@@ -13,8 +13,8 @@ void create()
    set("attitude", "peaceful");
    set("chat_chance",50);
    set("chat_msg",({
-           "Á÷Ã¥Í·ËµµÀ£ºÕâÀï¾ÍÊÇÎÒÃÇËµÁËËã£¡\n",
-           "Á÷Ã¥Í·ÂîµÀ£º¶¼¸øÎÒÉÁ¿ª£¬¿´Ê²Ã´¿´£¡\n",
+           "æµæ°“é ­èªªé“ï¼šé€™è£¡å°±æ˜¯æˆ‘å€‘èªªäº†ç®—ï¼\n",
+           "æµæ°“é ­ç½µé“ï¼šéƒ½çµ¦æˆ‘é–ƒé–‹ï¼Œçœ‹ä»€éº¼çœ‹ï¼\n",
    }));
    setup();
    carry_object(__DIR__"obj/cloth")->wear();

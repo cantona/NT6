@@ -4,9 +4,9 @@ inherit NPC;
 
 void create()
 {
-        set_name("°ßð¯",({ "ban jiu", "bird" }) );
-        set("race", "·ÉÇÝ");
-        set("gender", "ÐÛÐÔ" );
+        set_name("æ–‘é³©",({ "ban jiu", "bird" }) );
+        set("race", "é£›ç¦½");
+        set("gender", "é›„æ€§" );
         set("age", 13);
         set_temp("apply/defense", 10);
         set("combat_exp", 100);

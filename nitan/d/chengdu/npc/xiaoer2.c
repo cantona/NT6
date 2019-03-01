@@ -1,18 +1,18 @@
-// xiaoer2.c ¾ÆµêÐ¡¶þ
+// xiaoer2.c é…’åº—å°äºŒ
 
 inherit KNOWER;
 inherit F_DEALER;
 
 void create()
 {
-        set_name("µêÐ¡¶þ", ({ "xiao er", "xiao", "waiter" }) );
-        set("gender", "ÄÐÐÔ" );
+        set_name("åº—å°äºŒ", ({ "xiao er", "xiao", "waiter" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 22);
         set("long",
-                "ÕâÎ»µêÐ¡¶þÕýÐ¦ßäßäµØÃ¦Öø£¬»¹²»Ê±ÄÃÆð¹ÒÔÚ²±×ÓÉÏµÄÄ¨²¼²ÁÁ³¡£\n");
+                "é€™ä½åº—å°äºŒæ­£ç¬‘å’ªå’ªåœ°å¿™è‘—ï¼Œé‚„ä¸æ™‚æ‹¿èµ·æŽ›åœ¨è„–å­ä¸Šçš„æŠ¹å¸ƒæ“¦è‡‰ã€‚\n");
         set("combat_exp", 100);
         set("attitude", "friendly");
-        set("rank_info/respect", "Ð¡¶þ¸ç");
+        set("rank_info/respect", "å°äºŒå“¥");
         set("no_get", "1");
         set("vendor_goods", ({
                 __DIR__"obj/jitui",
@@ -45,12 +45,12 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
         switch( random(2) ) {
                 case 0:
-                        say( "µêÐ¡¶þÐ¦ßäßäµØËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-                                + "£¬½øÀ´ºÈ±­²è£¬ÐªÐªÍÈ°É¡£\n");
+                        say( "åº—å°äºŒç¬‘å’ªå’ªåœ°èªªé“ï¼šé€™ä½" + RANK_D->query_respect(ob)
+                                + "ï¼Œé€²ä¾†å–æ¯èŒ¶ï¼Œæ­‡æ­‡è…¿å§ã€‚\n");
                         break;
                 case 1:
-                        say( "µêÐ¡¶þÓÃ²±×ÓÉÏµÄÃ«½íÄ¨ÁËÄ¨ÊÖ£¬ËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-                                + "£¬Çë½øÇë½ø¡£\n");
+                        say( "åº—å°äºŒç”¨è„–å­ä¸Šçš„æ¯›å·¾æŠ¹äº†æŠ¹æ‰‹ï¼Œèªªé“ï¼šé€™ä½" + RANK_D->query_respect(ob)
+                                + "ï¼Œè«‹é€²è«‹é€²ã€‚\n");
                         break;
         }
 }

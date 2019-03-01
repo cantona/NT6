@@ -1,17 +1,17 @@
-// piaoyi-shenfa.c Ʈ������
+// piaoyi-shenfa.c 飄翼身法
 // by Lonely
 
 inherit SKILL;
 
 string *dodge_msg = ({
-        "$n������Ȼ������󻬳����࣬��������������ס�Կ�Ѹ���ڵ��ַ���󳶶�һ�㡣\n",
-        "$n˫ϥ�����������䣬��Ȼ����������֮��Ӳ�ֹ�ֺͽ�ʬ���졣\n",
-        "����$n����̧�ţ�ͻȻ֮�䵹�����࣬һת������������֮�⡣\n",
-        "ֻ���ú���һ����$n���ӱ�ֱ������з���ֱ������ߣ��������һ�С�\n",
-        "$n��Ȼ���ΰ����ڿ��м�����������ת�ĸ�Ȧ�ӣ���ת���ߣ�һ��ת����������֮�⡣\n",
-        "$n����Ȧ�ӣ���ת�������������㣬�ڼ䲻�ݷ�֮�ʶ�������С�\n",
-        "$n���һ�����������ܣ����ʹ������������б�ɶ��ϣ���ʱ�Ķ������һ�С�\n",
-        "$n����һ�����̣���һ������һ������תһȦ����תһȦ�������˿�ȥ��\n"
+        "$n身子猛然貼地向後滑出丈余，好似有人用繩縛住以快迅無綸的手法向後扯動一般。\n",
+        "$n雙膝不曲，腰不彎，陡然滑出，身子之僵硬怪詭，又和僵屍無異。\n",
+        "不見$n提足抬腳，突然之間倒退丈余，一轉身。已在數丈之外。\n",
+        "只聽得呼的一聲，$n身子筆直的向空中飛起，直至丈余高，躲過了這一招。\n",
+        "$n陡然身形拔起，在空中急速盤旋，連轉四個圈子，癒轉癒高，一個轉折落在數丈之外。\n",
+        "$n繞著圈子，東轉西閃，滑如遊魚，在間不容發之際躲過了這招。\n",
+        "$n大吃一驚，不及趨避，足尖使勁，拔身急起，斜飛而上，及時的躲過了這一招。\n",
+        "$n有如一溜輕煙，左一閃，右一趨，正轉一圈，反轉一圈，已閃了開去。\n"
 });
 
 int valid_enable(string usage) { return usage == "dodge"; }
@@ -26,9 +26,9 @@ string query_dodge_msg(object me)
 int practice_skill(object me)
 {
         if( query("qi", me)<40 )
-                return notify_fail("�������̫���ˣ�������Ʈ��������\n");
+                return notify_fail("你的體力太差了，不能練飄翼身法。\n");
         if( query("neili", me)<30 )
-                return notify_fail("�������������\n");
+                return notify_fail("你的內力不夠。\n");
         me->receive_damage("qi", 30);
         addn("neili", -20, me);
         return 1;

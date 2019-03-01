@@ -6,19 +6,19 @@ inherit BLADE;
 
 void create()
 {
-         set_name(HIG"Ğ¡Â¥Ò»Ò¹Ìı´ºÓê"NOR, ({ "springrain blade", "blade" }) );
+         set_name(HIG"å°æ¨“ä¸€å¤œè½æ˜¥é›¨"NOR, ({ "springrain blade", "blade" }) );
          set_weight(4000);
          if( clonep() )
                  set_default_object(__FILE__);
          else {
-                 set("unit", "±ú");
+                 set("unit", "æŸ„");
                  set("value", 500);
                  set("material", "iron");
                  set("long",
-                        "£¢Ğ¡Â¥Ò»Ò¹Ìı´ºÓê£¢ÓÖÃû£¢Ğ¡Â¥ÌıÓê£¢¡£ÊÇÎ÷·½Éñ½ÌÁ½´óÕÆÃÅĞÅÎïÖ®Ò»¡£\n"
-                        "´Ëµ¶¼«Ğ°£¬ÓÖÏ÷ÌúÈçÄà¡£\n");
-                 set("wield_msg", "$N³é³öÒ»°ÑÃ÷»Î»ÎµÄ$nÎÕÔÚÊÖÖĞ¡£\n");
-                 set("unequip_msg", "$N½«ÊÖÖĞµÄ$n²åÈëÑü¼äµÄµ¶ÇÊ¡£\n");
+                        "ã€å°æ¨“ä¸€å¤œè½æ˜¥é›¨ã€åˆåã€å°æ¨“è½é›¨ã€ã€‚æ˜¯è¥¿æ–¹ç¥æ•™å…©å¤§æŒé–€ä¿¡ç‰©ä¹‹ä¸€ã€‚\n"
+                        "æ­¤åˆ€æ¥µé‚ªï¼Œåˆå‰Šéµå¦‚æ³¥ã€‚\n");
+                 set("wield_msg", "$NæŠ½å‡ºä¸€æŠŠæ˜æ™ƒæ™ƒçš„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                 set("unequip_msg", "$Nå°‡æ‰‹ä¸­çš„$næ’å…¥è…°é–“çš„åˆ€é˜ã€‚\n");
          }
          init_blade(300);
          setup();

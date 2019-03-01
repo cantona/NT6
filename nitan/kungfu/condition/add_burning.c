@@ -10,12 +10,12 @@ int update_condition(object me, int duration)
 {
 	if( !living(me) )
 	{
-	        set_temp("die_reason", "灼伤而死", me);
-		message("vision", me->name() + "浑身颤抖，痛苦地哼了一声。\n", environment(me), me);
+	        set_temp("die_reason", "鐏煎偡鑰屾", me);
+		message("vision", me->name() + "娓捐韩椤姈锛岀棝鑻﹀湴鍝间簡涓�鑱层�俓n", environment(me), me);
 	}
 	else
 	{
-		tell_object(me, HIR "你只觉自己被置于火山之中，身体开始自燃，气血和内力开始不停的下降。！\n" NOR );
+		tell_object(me, HIR "浣犲彧瑕鸿嚜宸辫缃簬鐏北涔嬩腑锛岃韩楂旈枊濮嬭嚜鐕冿紝姘ｈ鍜屽収鍔涢枊濮嬩笉鍋滅殑涓嬮檷銆傦紒\n" NOR );
 	}
 	
 	me->receive_damage("qi", 2000);

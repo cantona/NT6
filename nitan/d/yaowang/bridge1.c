@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "С����");
+        set("short", "小竹橋");
         set("long", @LONG
-����һ������С�ţ��峺���׵�Ϫˮ�������������԰���һ
-���������ɵ���ʣ���ֻС����������質����������������һ
-�ֳ�Ȼ���׵ĸо���
+這是一座青竹小橋，清澈見底的溪水從橋下流過，對岸是一
+排竹子紮成的籬笆，兩只小鳥落在上面歌唱，來到這裡讓人有一
+種超然脫俗的感覺。
 LONG
         );
         set("exits", ([ /* sizeof() == 2 */

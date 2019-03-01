@@ -1,5 +1,5 @@
 // Code of ShenZhou
-// shegu.c �߹�
+// shegu.c 蛇谷
 // maco 7/15/2000
 
 #include <ansi.h>
@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�߹��µ�");
+        set("short", "蛇谷坡地");
         set("long", @LONG
-�����Ѿ����߹ȵ���һ�ˣ�ɽ������ϴ����ϱ���һƬ���֣�
-����������ʯ��᾵�ɽ�¡�
+這裡已經是蛇谷的另一端，山勢起伏較大，西南邊是一片樹林，
+往北則是亂石嶙峋的山崖。
 LONG );
 
         set("exits", ([ 

@@ -4,15 +4,15 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÀÇ", ({ "wolf2", "lang" }) );
-        set("race", "Ò°ÊŞ");
+        set_name("ç‹¼", ({ "wolf2", "lang" }) );
+        set("race", "é‡ç¸");
         set("age", 5);
-        set("long", "Ò»Æ¥°ºÊ×Ö±Á¢£¬Á½ÑÛ·Å×ÅÂÌ¹âµÄÀÇ¡£\n");
+        set("long", "ä¸€åŒ¹æ˜‚é¦–ç›´ç«‹ï¼Œå…©çœ¼æ”¾è‘—ç¶ å…‰çš„ç‹¼ã€‚\n");
         set("attitude", "aggressive");
 
         set("str", 26);
         set("cor", 30);
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "ÍÈ²¿", "Î²°Í",}) );
+        set("limbs", ({ "é ­éƒ¨", "èº«é«”", "è…¿éƒ¨", "å°¾å·´",}) );
         set("verbs", ({ "bite" }) );
 
         set("combat_exp", 5000);

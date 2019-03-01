@@ -4,10 +4,10 @@
 inherit ROOM;
 void create()
 {
-        set("short","�軨ɽ��");
+        set("short","茶花山南");
         set("long", @LONG
-����ǲ軨ɽ�����棬��Ȼ�д����Ĳ軨ʢ���š�����Ȼ����ɽ
-�ϵ�Ʒ�ֺ��ˣ����Ƿ�Ʒ��
+這兒是茶花山的南面，仍然有大量的茶花盛開著。但顯然不如山
+上的品種好了，都是凡品。
 LONG );
         set("outdoors", "dalic");
         set("exits",([ /* sizeof() == 1 */

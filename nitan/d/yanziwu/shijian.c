@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�Խ�̨");
+        set("short", "試劍台");
         set("long", @LONG
-��ʯ����Χ�ɵ�һ��ʯ̨��Ľ�����ҵĵ��Ӿ����ڴ���ϰ�似��
-̨�Ƿ��ŵ�ǹ��ꪵ�ʮ�˰������ ��������һЩ������Ϊ�����ľ�ˡ�
-��������Ľ�ݼҵ��ӿ������еĵط���
+玉石欄桿圍成的一座石台，慕容世家的弟子經常在此練習武技，
+台角放著刀槍劍戟等十八般兵器。 場中立著一些制作極為精妙的木人。
+東邊則是慕容家弟子苦心修行的地方。
 LONG );
         set("outdoors", "yanziwu");
         set("exits", ([
@@ -22,7 +22,7 @@ LONG );
                 "/clone/weapon/zhujian.c" : 1,
                 "/clone/weapon/bian.c"    : 1,
         ]));
-        set("for_family", "Ľ������");
+        set("for_family", "慕容世家");
 
         setup();
 }

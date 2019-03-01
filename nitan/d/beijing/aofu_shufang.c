@@ -7,11 +7,11 @@ int valid_leave();
 
 void create()
 {
-        set("short", "÷¡°ÝÊé·¿");
+        set("short", "é°²æ‹œæ›¸æˆ¿");
         set("long", @LONG
-ÕâÀïÊÇ÷¡°ÝÊé·¿£¬È´Ã»ÓÐÒ»±¾Êé¡£¸÷ÖÖ¹ÅÍæÁÕÀÅÂúÄ¿£¬ÉÌ
-ÖÜÇàÍ­¡¢ººÍßµ±¡¢ÌÆÈý²Ê£¬ÕäÖé±¦Ê¯£¬Ó¦ÓÐ¾¡ÓÐ£¬Ö»ÒªÓµÓÐÆä
-ÖÐÒ»¼þ£¬¾Í¹»Äã³ÔÒ»±²×ÓÁË¡£±±ÃæÇ½ÉÏÓÐÒ»¸±»­(hua)¡£
+é€™è£¡æ˜¯é°²æ‹œæ›¸æˆ¿ï¼Œå»æ²’æœ‰ä¸€æœ¬æ›¸ã€‚å„ç¨®å¤çŽ©ç³ç…æ»¿ç›®ï¼Œå•†
+å‘¨é’éŠ…ã€æ¼¢ç“¦ç•¶ã€å”ä¸‰å½©ï¼Œçç å¯¶çŸ³ï¼Œæ‡‰æœ‰ç›¡æœ‰ï¼Œåªè¦æ“æœ‰å…¶
+ä¸­ä¸€ä»¶ï¼Œå°±å¤ ä½ åƒä¸€è¼©å­äº†ã€‚åŒ—é¢ç‰†ä¸Šæœ‰ä¸€å‰¯ç•«(hua)ã€‚
 LONG);
 
         set("exits", ([
@@ -40,12 +40,12 @@ string look_hua()
         object me = this_player();
 
         if (query("score", me) < 3000)
-                return WHT "\nÕâÊÇÒ»·ù³Â¾ÉµÄ»­¾í£¬Ã»ÓÐ"
-                       "Ê²Ã´²»Í¬¡£\n" NOR;
+                return WHT "\né€™æ˜¯ä¸€å¹…é™³èˆŠçš„ç•«å·ï¼Œæ²’æœ‰"
+                       "ä»€éº¼ä¸åŒã€‚\n" NOR;
 
-        set_temp("marks/»­1", 1, me);
-        return WHT "\nÕâÊÇÒ»·ù³Â¾ÉµÄ»­¾í£¬»­ÖÐÒ»´¦Î¢Î¢"
-               "Â¡Æð£¬ÄãÈÌ²»×¡±ãÏëÏÆ¿ª¿´¿´¡£\n" NOR;
+        set_temp("marks/ç•«1", 1, me);
+        return WHT "\né€™æ˜¯ä¸€å¹…é™³èˆŠçš„ç•«å·ï¼Œç•«ä¸­ä¸€è™•å¾®å¾®"
+               "éš†èµ·ï¼Œä½ å¿ä¸ä½ä¾¿æƒ³æŽ€é–‹çœ‹çœ‹ã€‚\n" NOR;
 }
 
 int do_xian(string arg)
@@ -55,12 +55,12 @@ int do_xian(string arg)
         if (! arg || arg != "hua")
                 return 0;
 
-        if( !query_temp("marks/»­1", me) )
+        if( !query_temp("marks/ç•«1", me) )
                 return 0;
 
-        write(HIC "\nÄãÏÆ¿ª»­¾í£¬·¢ÏÖºóÃæ¾¹Òþ²Ø×ÅÒ»¸ö°Ñ"
-              "ÊÖ£¬ËÆºõ¿ÉÒÔ×ª¶¯¡£\n" NOR);
-        set_temp("marks/»­2", 1, me);
+        write(HIC "\nä½ æŽ€é–‹ç•«å·ï¼Œç™¼ç¾å¾Œé¢ç«Ÿéš±è—è‘—ä¸€å€‹æŠŠ"
+              "æ‰‹ï¼Œä¼¼ä¹Žå¯ä»¥è½‰å‹•ã€‚\n" NOR);
+        set_temp("marks/ç•«2", 1, me);
         return 1;
 }
 
@@ -71,14 +71,14 @@ int do_turn(string arg)
         if (! arg || arg != "bashou")
                 return 0;
 
-        if( !query_temp("marks/»­2", me) )
+        if( !query_temp("marks/ç•«2", me) )
                 return 0;
 
         if (query("exits/down"))
-                return notify_fail("ÄãÀ­ÁËÀ­°ÑÊÖ£¬µ«ËÆºõÃ»Ê²Ã´×÷ÓÃ¡£\n");
+                return notify_fail("ä½ æ‹‰äº†æ‹‰æŠŠæ‰‹ï¼Œä½†ä¼¼ä¹Žæ²’ä»€éº¼ä½œç”¨ã€‚\n");
 
-        message_vision(HIY "\n$N" HIY "À­ÁËÀ­°ÑÊÖ£¬µØÃæºöÈ»¡¸¿¦"
-                       "¿¦¿¦¡¹ÏÖ³öÒ»¸ö¶´¿Ú¡£\n\n" NOR, me);
+        message_vision(HIY "\n$N" HIY "æ‹‰äº†æ‹‰æŠŠæ‰‹ï¼Œåœ°é¢å¿½ç„¶ã€Œå–€"
+                       "å–€å–€ã€ç¾å‡ºä¸€å€‹æ´žå£ã€‚\n\n" NOR, me);
         set("exits/down", __DIR__"aofu_mishi");
         remove_call_out("close");
         call_out("close", 8, this_object());
@@ -88,14 +88,14 @@ int do_turn(string arg)
 
 void close(object room)
 {
-        message("vision", WHT "µØÃæºöÈ»¡¸¿¦¿¦¿¦¡¹Ëõ»ØÔ­µØ£¬°ÑÃÜµÀµÄÈë¿Úµ²"
-                          "×¡ÁË¡£\n" NOR, room);
+        message("vision", WHT "åœ°é¢å¿½ç„¶ã€Œå–€å–€å–€ã€ç¸®å›žåŽŸåœ°ï¼ŒæŠŠå¯†é“çš„å…¥å£æ“‹"
+                          "ä½äº†ã€‚\n" NOR, room);
         delete("exits/down", room);
 }
 
 int valid_leave(object me, string dir)
 {
-        delete_temp("marks/»­1", me);
-        delete_temp("marks/»­2", me);
+        delete_temp("marks/ç•«1", me);
+        delete_temp("marks/ç•«2", me);
         return ::valid_leave(me, dir);
 }

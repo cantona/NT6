@@ -31,12 +31,12 @@ int main(object me, string arg)
         seteuid(getuid(me));
 
         if (! arg)
-                return notify_fail("Ö¸Áî¸ñÊ½ : query all | <Îï¼şÖ®Ãû³Æ»òµµÃû>\n" );
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ : query all | <ç‰©ä»¶ä¹‹åç¨±æˆ–æª”å>\n" );
         target = arg;
 
         if (target == "all" || target == "ALL")
         {
-                write(sprintf("Ä¿Ç°Êı¾İ¿âÖĞ±£´æµÄÊı¾İÓĞ£º%d Ïî¡£\n",
+                write(sprintf("ç›®å‰æ•¸æ“šåº«ä¸­ä¿å­˜çš„æ•¸æ“šæœ‰ï¼š%d é …ã€‚\n",
                               sizeof(DBASE_D->query_save_dbase())));
                 return 1;
         }
@@ -63,7 +63,7 @@ int main(object me, string arg)
                                                 ffile += ({ "/data/item/cruise/" + flist[i] });
                                 }
                         }
-                        write(sprintf("ÂşÓÎ°üµÄÊı¾İÖĞº¬ÓĞ×Ö·û(%s)µÄÎï¼şÈçÏÂ£º\n%O\n", arg2, ffile));
+                        write(sprintf("æ¼«éŠåŒ…çš„æ•¸æ“šä¸­å«æœ‰å­—ç¬¦(%s)çš„ç‰©ä»¶å¦‚ä¸‹ï¼š\n%O\n", arg2, ffile));
                         return 1;
                 }
         }
@@ -75,9 +75,9 @@ int main(object me, string arg)
 
         result = DBASE_D->query_object_data(obj);
         if (undefinedp(result))
-                write("¸ÃÎï¼şÔÚÊı¾İ¿âÖĞÃ»ÓĞÈÎºÎ¼ÇÂ¼¡£\n");
+                write("è©²ç‰©ä»¶åœ¨æ•¸æ“šåº«ä¸­æ²’æœ‰ä»»ä½•è¨˜éŒ„ã€‚\n");
         else
-                write(sprintf("¸ÃÎï¼ş(%O)±£´æµÄÊı¾İ£º\n%O\n", obj, result));
+                write(sprintf("è©²ç‰©ä»¶(%O)ä¿å­˜çš„æ•¸æ“šï¼š\n%O\n", obj, result));
 
         return 1;
 }
@@ -85,11 +85,11 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : query all | <Îï¼şÖ®Ãû³Æ»òµµÃû>
+æŒ‡ä»¤æ ¼å¼ : query all | <ç‰©ä»¶ä¹‹åç¨±æˆ–æª”å>
 
-ÀûÓÃ´ËÒ»Ö¸Áî¿ÉÒÔ²éÑ¯Ò»¸öÎï¼ş(object)±£´æÔÚÊı¾İ¿âÖĞµÄ¼ÇÂ¼¡£
+åˆ©ç”¨æ­¤ä¸€æŒ‡ä»¤å¯ä»¥æŸ¥è©¢ä¸€å€‹ç‰©ä»¶(object)ä¿å­˜åœ¨æ•¸æ“šåº«ä¸­çš„è¨˜éŒ„ã€‚
 
-²Î¿¼×ÊÁÏ£ºclear
+åƒè€ƒè³‡æ–™ï¼šclear
 HELP
     );
     return 1;

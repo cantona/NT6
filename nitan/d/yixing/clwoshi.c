@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÎÔÊÒ");
+        set("short", "è‡¥å®¤");
         set("long", @LONG
-ÊÒÄÚ³ÂÉèÉõÊÇÉÝ»ª£¬¼«´óµÄ´²±ßÓÐÕÅÖìÆáÊé×À£¬×ÀÅÔÁ½ÕÅÒÎ×Ó£¬ÉÏ
-ÆÌ½õµæ¡£´²Ç°ÂÞÕÊµÍ´¹£¬ÒþÔ¼¿´¼û´²ÉÏËÆºõÎÞÈË¡£´°Ç°µÄÏãÂ¯ÖÐÇàÑÌôÁ
-ôÁ£¬ÄãÖ»¾õÖÃÉíÓÚÒ»¸öÏãÅçÅç£¬ÈíÃàÃàµÄÉñÏÉ¶´¸®¡£
+å®¤å…§é™³è¨­ç”šæ˜¯å¥¢è¯ï¼Œæ¥µå¤§çš„åºŠé‚Šæœ‰å¼µæœ±æ¼†æ›¸æ¡Œï¼Œæ¡Œæ—å…©å¼µæ¤…å­ï¼Œä¸Š
+èˆ–éŒ¦å¢Šã€‚åºŠå‰ç¾…å¸³ä½Žåž‚ï¼Œéš±ç´„çœ‹è¦‹åºŠä¸Šä¼¼ä¹Žç„¡äººã€‚çª—å‰çš„é¦™çˆä¸­é’ç…™è£Š
+è£Šï¼Œä½ åªè¦ºç½®èº«äºŽä¸€å€‹é¦™å™´å™´ï¼Œè»Ÿç¶¿ç¶¿çš„ç¥žä»™æ´žåºœã€‚
 LONG );
         set("exits", ([
                 "south" : __DIR__"clxiaoting",

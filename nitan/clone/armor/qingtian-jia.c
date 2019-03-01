@@ -6,17 +6,17 @@ inherit ARMOR;
 
 void create()
 {
-        set_name(HIC "ÇàÌì¼×" NOR, ({ "qingtian jia" }) );
+        set_name(HIC "é’å¤©ç”²" NOR, ({ "qingtian jia" }) );
         set_weight(1000);
-                set("long", HIW "ÕâÊÇÒ»ÕÅÆÕÆÕÍ¨Í¨µÄ»¤¼×£¬»¤¼×ÖÜÎ§É¢·¢³öµ­µ­µÄÎíÆø½«ÆäÖÜÉíÁýÕÖ"
-                        "Ê²Ã´Ò²¿´²»Çå¡£\n" HIC
-                    HIC "ÓÐÐ§ÕÐ¼ÜÐÞÕý£º+ 100        ÓÐÐ§Çá¹¦ÐÞÕý£º+ 100\n" NOR
-                    HIC "¿¹¶¾Ð§¹ûÐÞÕý£º+ 30%        ·ÀÓùÐ§¹ûµÈ¼¶£º  300\n" NOR
-                    HIC "¿¹¶¾»Ø±ÜÐÞÕý£º+ 30%\n" NOR);
+                set("long", HIW "é€™æ˜¯ä¸€å¼µæ™®æ™®é€šé€šçš„è­·ç”²ï¼Œè­·ç”²å‘¨åœæ•£ç™¼å‡ºæ·¡æ·¡çš„éœ§æ°£å°‡å…¶å‘¨èº«ç± ç½©"
+                        "ä»€éº¼ä¹Ÿçœ‹ä¸æ¸…ã€‚\n" HIC
+                    HIC "æœ‰æ•ˆæ‹›æž¶ä¿®æ­£ï¼š+ 100        æœ‰æ•ˆè¼•åŠŸä¿®æ­£ï¼š+ 100\n" NOR
+                    HIC "æŠ—æ¯’æ•ˆæžœä¿®æ­£ï¼š+ 30%        é˜²å¾¡æ•ˆæžœç­‰ç´šï¼š  300\n" NOR
+                    HIC "æŠ—æ¯’å›žé¿ä¿®æ­£ï¼š+ 30%\n" NOR);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼þ");
+                set("unit", "ä»¶");
                 set("material", "steel");
                                 set("value", 800000);
                 set("armor_prop/armor", 300);
@@ -26,9 +26,9 @@ void create()
                                 set("armor_prop/avoid_poison", 30);
                 }
                 set("material", "tian jing");
-                set("wear_msg", HIC "ÇàÌì¼×ÆÆ¿Õ¶øÏì£¬ÕóÕóÎíÆøËæÖ®¶ø³ö£¬È´ÔçÒÑÓë$N" HIC "ºÏ¶øÎªÒ»¡£[2;37;0m\n" NOR);
-                set("remove_msg", HIC "$N" HIC "ÑöÌì³¤Ð¥£¬ÇàÌì¼×¶£ßÊ×öÏì£¬É²ÄÇ¼äÖÜÎ§ÎíÆø½¥É¢£¬µ«ÇàÌì¼×ÔçÒÑ"
-                                                        "ÏûÊ§ÓÚÌì¼Ê¡£\n" NOR);
+                set("wear_msg", HIC "é’å¤©ç”²ç ´ç©ºè€ŒéŸ¿ï¼Œé™£é™£éœ§æ°£éš¨ä¹‹è€Œå‡ºï¼Œå»æ—©å·²èˆ‡$N" HIC "åˆè€Œç‚ºä¸€ã€‚[2;37;0m\n" NOR);
+                set("remove_msg", HIC "$N" HIC "ä»°å¤©é•·å˜¯ï¼Œé’å¤©ç”²å®å‘¤åšéŸ¿ï¼Œå‰Žé‚£é–“å‘¨åœéœ§æ°£æ¼¸æ•£ï¼Œä½†é’å¤©ç”²æ—©å·²"
+                                                        "æ¶ˆå¤±äºŽå¤©éš›ã€‚\n" NOR);
 
         setup();
 }
@@ -64,20 +64,20 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
                 switch (random(4))
                 {
                 case 0:
-                        result += (["msg" : HIR "$n" HIR "ÇáÇáÒ»Ì¾£¬ÉíÉÏ" HIC "ÇàÌì¼×" HIR "¶£ßÊ"
-                                            "×öÏì£¬$N" HIR "Ö»¾õÐÄÍ·Ò»ÕóÆà¿à¡£ÕâÒ»ÕÐ¾ÓÈ»´ò²»ÏÂÈ¥¡£\n" NOR]);
+                        result += (["msg" : HIR "$n" HIR "è¼•è¼•ä¸€å˜†ï¼Œèº«ä¸Š" HIC "é’å¤©ç”²" HIR "å®å‘¤"
+                                            "åšéŸ¿ï¼Œ$N" HIR "åªè¦ºå¿ƒé ­ä¸€é™£å‡„è‹¦ã€‚é€™ä¸€æ‹›å±…ç„¶æ‰“ä¸ä¸‹åŽ»ã€‚\n" NOR]);
                         break;
                 case 1:
-                        result += (["msg" : HIM "Ö»¼û$n" HIM "ÉíÉÏ" HIC "ÇàÌì¼×" HIM "Ò»²ü£¬ÓÐ"
-                                            "ÈôÁúÒ÷¡£" HIM "$N" HIM "ÄãÖ»¸ÐÍ·ÔÎÄ¿Ñ££¬¾ÓÈ»Ò»ÕÐ´òÔÚ¿Õ´¦¡£\n" NOR]);
+                        result += (["msg" : HIM "åªè¦‹$n" HIM "èº«ä¸Š" HIC "é’å¤©ç”²" HIM "ä¸€é¡«ï¼Œæœ‰"
+                                            "è‹¥é¾åŸã€‚" HIM "$N" HIM "ä½ åªæ„Ÿé ­æšˆç›®çœ©ï¼Œå±…ç„¶ä¸€æ‹›æ‰“åœ¨ç©ºè™•ã€‚\n" NOR]);
                         break;
                 case 2:
-                        result += (["msg" : HIW "$N" HIW "Ò»ÕÐ´òÖÐ$n" HIW "£¬¶Ù¾õºÁ²»ÊÜÁ¦¡£¶¨¾¦Ò»¿´£¬Ô­À´ÊÇ"
-                                            "µÄ" HIC "ÇàÌì¼×" HIW "»Ã»¯³öÀ´µÄ»ÃÏó¡£\n" NOR]);
+                        result += (["msg" : HIW "$N" HIW "ä¸€æ‹›æ‰“ä¸­$n" HIW "ï¼Œé “è¦ºæ¯«ä¸å—åŠ›ã€‚å®šç›ä¸€çœ‹ï¼ŒåŽŸä¾†æ˜¯"
+                                            "çš„" HIC "é’å¤©ç”²" HIW "å¹»åŒ–å‡ºä¾†çš„å¹»è±¡ã€‚\n" NOR]);
                         break;
                 default:
-                        result += (["msg" : HIY "$n" HIY "ÉíÉÏ" HIC "ÇàÌì¼×" HIY "Ò»Õó½ð¹âÉÁ¹ý£¬$N" HIY "ÕâÒ»"
-                                            "ÕÐ±»½ð¹âÀÎÀÎµ²×¡£¬ÉË²»ÁË$n" HIY "·ÖºÁ¡£\n" NOR]);
+                        result += (["msg" : HIY "$n" HIY "èº«ä¸Š" HIC "é’å¤©ç”²" HIY "ä¸€é™£é‡‘å…‰é–ƒéŽï¼Œ$N" HIY "é€™ä¸€"
+                                            "æ‹›è¢«é‡‘å…‰ç‰¢ç‰¢æ“‹ä½ï¼Œå‚·ä¸äº†$n" HIY "åˆ†æ¯«ã€‚\n" NOR]);
                         break;
                 }
                 return result;

@@ -7,10 +7,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("竹叶青蛇", ({ "qing she", "she" }) );
-        set("race", "爬蛇");
+        set_name("绔硅憠闈掕泧", ({ "qing she", "she" }) );
+        set("race", "鐖泧");
         set("age", 2);
-        set("long", "一只让人看了起鸡皮疙瘩的竹叶青蛇。\n");
+        set("long", "涓�鍙畵浜虹湅浜嗚捣闆炵毊鐤欑槱鐨勭钁夐潚铔囥�俓n");
         set("attitude", "peaceful");
         set("str", 20);
         set("cor", 20);
@@ -41,7 +41,7 @@ void init()
 void die()
 {
         object ob;
-        message_vision("$N倒在地上，死了！\n", this_object());
+        message_vision("$N鍊掑湪鍦颁笂锛屾浜嗭紒\n", this_object());
         ob = new("/d/baituo/obj/qingdan");
         ob->move(environment(this_object()));
         destruct(this_object());
@@ -54,6 +54,6 @@ int hit_ob(object me, object ob, int damage)
                 (int)ob->query_condition("snake_poison") < 10 )
         {
                 ob->apply_condition("snake_poison", 20);
-                tell_object(ob, HIG "你觉得被咬中的地方一阵麻木！\n" NOR );
+                tell_object(ob, HIG "浣犺寰楄鍜腑鐨勫湴鏂逛竴闄ｉ夯鏈紒\n" NOR );
         }
 }

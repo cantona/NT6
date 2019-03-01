@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��Ժ");
+        set("short", "後院");
         set("long", @LONG
-�������̼ұ��ĺ�Ժ����Ժ��������������ȫ������ɳʯ
-�������ϱ���һ����ľ�����ȣ�ͨ���������ڡ���߲�ʱ������
-���˱ǵķ����㣬ԭ�������ǳ������ڡ�
+這裡是商家堡的後院，後院並不大，整個地面全部是用沙石
+舖砌。南邊是一條紅木制走廊，通往大廳所在。左邊不時傳來陣
+陣撲鼻的飯菜香，原來那裡是廚房所在。
 LONG);
         set("exits", ([
                 "north"  : __DIR__"shang_lianwun",

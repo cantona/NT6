@@ -5,12 +5,12 @@ void setup()
 {}
 void create()
 {
-        set_name(HIC"��ʬ��"NOR, ({"dust"}));
+        set_name(HIC"化屍粉"NOR, ({"dust"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "��");
-                set("long", "����һ���û�ʬ�𼣵Ļ�ʬ�ۣ�ֻҪһ����Ϳ��Ի�ȥ(dissolve)һ��ʬ�壡\n");
+                set("unit", "包");
+                set("long", "這是一包用毀屍滅跡的化屍粉，只要一丁點就可以化去(dissolve)一具屍體！\n");
                 set("value", 50);
         }
         set("pour_type", "1");
@@ -27,17 +27,17 @@ int do_dissolve(string arg)
 {
         object ob, me = this_player();
 
-        if( !arg ) return notify_fail("��Ҫ�û�ʬ���ܽ�ʲô������\n");
+        if( !arg ) return notify_fail("你要用化屍粉溶解什麼東西？\n");
         if(!present(this_object(), me)) return 0;
-        if( me->is_busy() ) return notify_fail("����æ���������ء�\n");
+        if( me->is_busy() ) return notify_fail("你正忙著其它事呢。\n");
 
         if( !objectp(ob = present(arg, environment(me))) )
-                return notify_fail("����û������������\n");
+                return notify_fail("這裡沒有這樣東西。\n");
         if( !ob->is_corpse() )
-                return notify_fail("��ʬ��ֻ�������ܽ�ʬ�塣\n");
+                return notify_fail("化屍粉只能用來溶解屍體。\n");
         message_vision(
-                "$N��ָ������һ�㻯ʬ����$n�ϣ�ֻ����һ�����͡��������\n"
-                "һ�ɿ��µĶ����$nֻʣ��һ̲��ˮ��\n", me, ob);
+                "$N用指甲挑了一點化屍粉在$n上，只聽見一陣「嗤嗤」聲響帶著\n"
+                "一股可怕的惡臭，$n只剩下一灘黃水。\n", me, ob);
         destruct(ob);
         return 1;
 }

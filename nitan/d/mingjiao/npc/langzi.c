@@ -1,9 +1,9 @@
 inherit NPC;
 void create()
 {
-         set_name("½­ºşÀË×Ó", ({ "jianghu langzi", "langzi" }));
-        set("long", "Ò»ÃûÂúÁ³±ëº´Ö®É«µÄ½­ºşºÀ¿Í¡£\n");
-        set("gender", "ÄĞĞÔ");
+         set_name("æ±Ÿæ¹–æµªå­", ({ "jianghu langzi", "langzi" }));
+        set("long", "ä¸€åæ»¿è‡‰å½ªæä¹‹è‰²çš„æ±Ÿæ¹–è±ªå®¢ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 30);
         set("attitude", "heroism");
         set("shen_type", 1);

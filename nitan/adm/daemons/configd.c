@@ -9,8 +9,8 @@ inherit F_DBASE;
 
 #define CONFIG_FILE     CONFIG_DIR "config"
 
-// ÅäÖÃÎÄ¼şÖĞ²ÎÊıµÄ¸ñÊ½ÊÇ£º  arg : value
-// Èç¹ûÒÔ#´òÍ·±íÊ¾×¢ÊÍ£¬&´òÍ·±íÊ¾ÊÇÏµÍ³×¢ÊÍµÄ¡£
+// é…ç½®æ–‡ä»¶ä¸­åƒæ•¸çš„æ ¼å¼æ˜¯ï¼š  arg : value
+// å¦‚æœä»¥#æ‰“é ­è¡¨ç¤ºæ³¨é‡‹ï¼Œ&æ‰“é ­è¡¨ç¤ºæ˜¯ç³»çµ±æ³¨é‡‹çš„ã€‚
 
 void load_config();
 
@@ -34,7 +34,7 @@ void load_config()
         file = read_file(CONFIG_FILE);
         if (! stringp(file)) return;
 
-        // È¥µô"\r"±£Ö¤ºÍMSDOSµÄÎÄ¼ş¸ñÊ½¼æÈİ
+        // å»æ‰"\r"ä¿è¨¼å’ŒMSDOSçš„æ–‡ä»¶æ ¼å¼å…¼å®¹
         file = replace_string(file, "\r", "");
 
         sys_del = 0;
@@ -43,33 +43,33 @@ void load_config()
         {
                 if (sys_del)
                 {
-                        // ÉÏÒ»¸ö²ÎÊıÊÇ±»ÏµÍ³×¢ÊÍµôµÄ
+                        // ä¸Šä¸€å€‹åƒæ•¸æ˜¯è¢«ç³»çµ±æ³¨é‡‹æ‰çš„
                         last_remember = 0;
                         sys_del = 0;
                 }
 
-                // È¥µôĞĞÊ×µÄ¿Õ¸ñ
+                // å»æ‰è¡Œé¦–çš„ç©ºæ ¼
                 while (strlen(line) && line[0] == ' ') line = line[1..<1];
                 if (line[0] == '#')
                 {
-                        // ×¢ÊÍ
+                        // æ³¨é‡‹
                         last_remember = line;
                         continue;
                 }
 
                 if (line[0] == '&')
                 {
-                        // ±»ÏµÍ³×¢ÊÍµÄ
+                        // è¢«ç³»çµ±æ³¨é‡‹çš„
                         line = line[1..<1];
                         while (strlen(line) && line[0] == ' ') line = line[1..<1];
                         sys_del = 1;
                 }
 
-                // È¥µô#ÒÔºóËùÓĞµÄ×Ö·û
+                // å»æ‰#ä»¥å¾Œæ‰€æœ‰çš„å­—ç¬¦
                 len = strsrch(line, '#');
                 if (len != -1)
                 {
-                        // ¼ÇÂ¼Î²×¢
+                        // è¨˜éŒ„å°¾æ³¨
                         affix = line[len..<1];
                         line = line[0..len - 1];
                 } else
@@ -78,14 +78,14 @@ void load_config()
                 if (! strlen(line))
                         continue;
 
-                // ¼ì²é¸ÃĞĞ
+                // æª¢æŸ¥è©²è¡Œ
                 if (sscanf(line, "%s:%s", arg, value) != 2)
                 {
                         log_file("config", sprintf("syntax error: <%s>\n", line));
                         continue;
                 }
 
-                // È¥µôargÄ©Î²µÄ¿Õ¸ñ
+                // å»æ‰argæœ«å°¾çš„ç©ºæ ¼
                 while ((len = strlen(arg)) > 0 && arg[len - 1] == ' ')
                         arg = arg[0..<2];
 
@@ -96,47 +96,47 @@ void load_config()
                         continue;
                 }
 
-                // È¥µôvalue´òÍ·µÄ¿Õ¸ñ
+                // å»æ‰valueæ‰“é ­çš„ç©ºæ ¼
                 while (strlen(value) && value[0] == ' ')
                         value = value[1..<1];
 
-                // È¥µôvalueÄ©Î²µÄ¿Õ¸ñ
+                // å»æ‰valueæœ«å°¾çš„ç©ºæ ¼
                 while ((len = strlen(value)) > 0 && value[len - 1] == ' ')
                         value = value[0..<2];
 
                 if (! sys_del)
                 {
-                        // ÏµÍ³Ã»ÓĞ×¢ÊÍÕâ¸ö²ÎÊı
+                        // ç³»çµ±æ²’æœ‰æ³¨é‡‹é€™å€‹åƒæ•¸
                         set(arg, value);
                         sys_del = 0;
                 }
 
                 if (stringp(last_remember))
                 {
-                        // Èç¹ûÓĞ×¢ÊÍ£¬Ôò¼ÓÉÏ
+                        // å¦‚æœæœ‰æ³¨é‡‹ï¼Œå‰‡åŠ ä¸Š
                         set_temp("remember/" + arg, last_remember);
                         last_remember = 0;
                 }
 
                 if (stringp(affix))
                 {
-                        // Èç¹ûÓĞÎ²×¢£¬Ôò¼ÓÉÏ
+                        // å¦‚æœæœ‰å°¾æ³¨ï¼Œå‰‡åŠ ä¸Š
                         set_temp("affix/" + arg, affix);
                         affix = 0;
                 }
         }
 }
 
-// ·µ»ØÕûÊı²ÎÊı
+// è¿”å›æ•´æ•¸åƒæ•¸
 int query_int(string index)
 {
         mixed result;
 
         if (! intp(result = query(index)))
         {
-                // ²»ÊÇINTÀàĞÍµÄÖµ
+                // ä¸æ˜¯INTé¡å‹çš„å€¼
                 if (stringp(result))
-                        // ÊÇ×Ö·û´®Âğ£¿Èç¹ûÊÇÔòÈ¡Öµ
+                        // æ˜¯å­—ç¬¦ä¸²å—ï¼Ÿå¦‚æœæ˜¯å‰‡å–å€¼
                         sscanf(result, "%d", result);
                 else
                         result = 0;
@@ -146,7 +146,7 @@ int query_int(string index)
         return result;
 }
 
-// ·µ»Ø×Ö·û´®²ÎÊı
+// è¿”å›å­—ç¬¦ä¸²åƒæ•¸
 string query_string(string index)
 {
         string result;
@@ -157,17 +157,17 @@ string query_string(string index)
         return result;
 }
 
-// ·µ»Ø²ÎÊıµÄ×¢ÊÍ
+// è¿”å›åƒæ•¸çš„æ³¨é‡‹
 string query_remember(string index)
 {
         return query_temp("remember/" + index);
 }
 
-// ·µ»Ø²ÎÊıµÄÎ²×¢
+// è¿”å›åƒæ•¸çš„å°¾æ³¨
 string query_affix(string index)
 {
         return query_temp("affix/" + index);
 }
 
-// ·µ»ØÅäÖÃÎÄ¼şµÄÃû×Ö
+// è¿”å›é…ç½®æ–‡ä»¶çš„åå­—
 string query_config_file_name() { return CONFIG_FILE; }

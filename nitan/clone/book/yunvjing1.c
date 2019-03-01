@@ -1,4 +1,4 @@
-// yunvjing1.c ÓñÅ®ĞÄ¾­ÉÏ
+// yunvjing1.c ç‰å¥³å¿ƒç¶“ä¸Š
 
 #include <ansi.h>
 inherit ITEM;
@@ -6,18 +6,18 @@ inherit F_UNIQUE;
 
 void create()
 {
-        set_name(HIM "ÓñÅ®ĞÄ¾­ÉÏ²á" NOR, ({ "jing1", }));
+        set_name(HIM "ç‰å¥³å¿ƒç¶“ä¸Šå†Š" NOR, ({ "jing1", }));
         set_weight(500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-            set("unit", "±¾");
-            set("long", "ÕâÊÇÒ»±¾Ğ´ÔÚ±¡¾îÉÏµÄÊé¡£·âÃæÉÏĞ´×Å ÓñÅ®ĞÄ¾­¡¸ÉÏ¡¹¡£\n");
+            set("unit", "æœ¬");
+            set("long", "é€™æ˜¯ä¸€æœ¬å¯«åœ¨è–„çµ¹ä¸Šçš„æ›¸ã€‚å°é¢ä¸Šå¯«è‘— ç‰å¥³å¿ƒç¶“ã€Œä¸Šã€ã€‚\n");
                 set("value", 0);
                 set("material", "silk");
                 set("skill", ([
                         "name":       "yunv-xinfa",
-	    	            "family_name" : "¹ÅÄ¹ÅÉ",
+	    	            "family_name" : "å¤å¢“æ´¾",
                         "exp_required" : 30000,
                         "jing_cost":  40,
                         "difficulty": 30,

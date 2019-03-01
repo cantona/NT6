@@ -4,17 +4,17 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Ê¯¶´");
+        set("short", "çŸ³æ´");
         set("long", @LONG
-ÕâÊÇÒ»¸öÊ¯¶´£¬ËÄÖÜÊÇ¹â»¬µÄÊ¯±Ú£¬Ê¯¶´ÄÚ¸É¸É¾»¾»£¬Ò»³¾²»
-È¾¡£Á½ÅÔµã×Å»ğ°Ñ£¬·Ç³£Ã÷ÁÁ¡£ÄÏÃæÓĞÒ»ÉÈĞéÑÚµÄÊ¯ÃÅ(door)¡£
+é€™æ˜¯ä¸€å€‹çŸ³æ´ï¼Œå››å‘¨æ˜¯å…‰æ»‘çš„çŸ³å£ï¼ŒçŸ³æ´å…§å¹¹å¹¹å‡ˆå‡ˆï¼Œä¸€å¡µä¸
+æŸ“ã€‚å…©æ—é»è‘—ç«æŠŠï¼Œéå¸¸æ˜äº®ã€‚å—é¢æœ‰ä¸€æ‰‡è™›æ©çš„çŸ³é–€(door)ã€‚
 LONG );
         set("exits", ([
                 "east" : __DIR__"shidong7",
                "south" : __DIR__"road5"
         ]));
         set("item_desc", ([
-                "door" : "ÕâÊÇÒ»ÉÈ¼«ºñµÄÊ¯ÃÅ¡£\n"
+                "door" : "é€™æ˜¯ä¸€æ‰‡æ¥µåšçš„çŸ³é–€ã€‚\n"
         ]));
         set("objects", ([
                 __DIR__"npc/dizi" : 1,
@@ -29,6 +29,6 @@ int valid_leave(object me, string dir)
 {
         if (!wizardp(me) && objectp(present("di zi", environment(me))) &&
                 dir == "south")
-                return notify_fail("ÏÀ¿ÍµºµÜ×ÓÀ¹×¡ÄãËµ£ºÕâÊÇ±¾µº½ûµØ£¬Çë»Ø°É¡£\n");
+                return notify_fail("ä¿ å®¢å³¶å¼Ÿå­æ””ä½ä½ èªªï¼šé€™æ˜¯æœ¬å³¶ç¦åœ°ï¼Œè«‹å›å§ã€‚\n");
         return ::valid_leave(me, dir);
 }

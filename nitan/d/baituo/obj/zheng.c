@@ -8,14 +8,14 @@ inherit MI_ZHENG;
 
 void create()
 {
-        set_name("¹Åóİ", ({ "gu zheng", "gu", "zheng" }));
+        set_name("å¤ç®", ({ "gu zheng", "gu", "zheng" }));
         set_weight(300);
 
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ì¨");
-                set("long", YEL "ÕâÊÇÒ»Ì¨¿´ÉÏÈ¥ÓĞĞ©³Â¾ÉµÄ¹Åóİ¡£\n" NOR);
+                set("unit", "å°");
+                set("long", YEL "é€™æ˜¯ä¸€å°çœ‹ä¸Šå»æœ‰äº›é™³èˆŠçš„å¤ç®ã€‚\n" NOR);
                 set("value", 50);
                 set("material", "wood");
         }

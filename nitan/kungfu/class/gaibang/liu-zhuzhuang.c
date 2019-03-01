@@ -7,11 +7,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÁõÖñ×¯", ({"liu zhuzhuang", "liu", "zhuzhuang"}));
-        set("gender", "ÄÐÐÔ");
+        set_name("åŠ‰ç«¹èŽŠ", ({"liu zhuzhuang", "liu", "zhuzhuang"}));
+        set("gender", "ç”·æ€§");
         set("age", 35);
-        set("long", "ÕâÊÇÎ»ÎäÒÕ¾«Ç¿µÄØ¤°ïÎå´üµÜ×Ó¡£\n");
-        set("title", "Ø¤°ïÎå´üµÜ×Ó");
+        set("long", "é€™æ˜¯ä½æ­¦è—ç²¾å¼·çš„ä¸å¹«äº”è¢‹å¼Ÿå­ã€‚\n");
+        set("title", "ä¸å¹«äº”è¢‹å¼Ÿå­");
         set("attitude", "peaceful");
         set("class", "beggar");
          set("beggarlvl", 7);
@@ -51,10 +51,10 @@ void create()
         map_skill("parry", "suohou-hand");
         map_skill("dodge", "xiaoyaoyou");
 
-        //set("party/party_name", HIC"Ø¤°ï"NOR);
-        //set("party/rank", GRN"´óÖÇ·Ö¶æ"HIY"Îå´üµÜ×Ó"NOR);
+        //set("party/party_name", HIC"ä¸å¹«"NOR);
+        //set("party/rank", GRN"å¤§æ™ºåˆ†èˆµ"HIY"äº”è¢‹å¼Ÿå­"NOR);
         //set("party/level", 5);
-        create_family("Ø¤°ï", 20, "µÜ×Ó");
+        create_family("ä¸å¹«", 20, "å¼Ÿå­");
         setup();
 
         carry_object(WEAPON_DIR"gangdao")->wield();

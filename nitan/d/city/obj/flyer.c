@@ -1,17 +1,17 @@
-// fxq.c ·ÉÐÐÆå
+// fxq.c é£›è¡Œæ£‹
 
 #include <ansi.h>
 inherit ITEM;
 
 int has_start;
-mixed wake_point;                        // ³ö»úµãÊý
-int cur_player;                                // µ±Ç°µÄÍæ¼ÒID
-int cur_se;                                        // µ±Ç°É«×ÓÊýÄ¿
-mixed *cur_qi;                                // µ±Ç°ÒÆ¶¯µÄÆå×Ó
-mixed shadow_qi;                        // µ±Ç°ÒÆ¶¯µÄÆå×ÓµÄÓ°×Ó
-int has_jump;                                // Ôø¾­ÌøÔ¾¹ý
+mixed wake_point;                        // å‡ºæ©Ÿé»žæ•¸
+int cur_player;                                // ç•¶å‰çš„çŽ©å®¶ID
+int cur_se;                                        // ç•¶å‰è‰²å­æ•¸ç›®
+mixed *cur_qi;                                // ç•¶å‰ç§»å‹•çš„æ£‹å­
+mixed shadow_qi;                        // ç•¶å‰ç§»å‹•çš„æ£‹å­çš„å½±å­
+int has_jump;                                // æ›¾ç¶“è·³èºéŽ
 
-mixed player;                                // 2 or 4¸öÍæ¼Ò [{ id,id,id,id }]
+mixed player;                                // 2 or 4å€‹çŽ©å®¶ [{ id,id,id,id }]
 
 #define QI_SLEEP        0
 #define QI_WAIT                1
@@ -26,30 +26,30 @@ mixed player;                                // 2 or 4¸öÍæ¼Ò [{ id,id,id,id }]
 #define QI_PLAYER        3
 #define QI_ID                4
 #define QI_MAX                5
-mixed qizi;                                        // Æå×Ó
-                                                        // ({Æå×Ó×´Ì¬£¬Æå×ÓÎ»ÖÃX£¬Æå×ÓÎ»ÖÃY,player,qi_id})
+mixed qizi;                                        // æ£‹å­
+                                                        // ({æ£‹å­ç‹€æ…‹ï¼Œæ£‹å­ä½ç½®Xï¼Œæ£‹å­ä½ç½®Y,player,qi_id})
 
-mixed player_start =                // Íæ¼ÒµÄÆðµã
+mixed player_start =                // çŽ©å®¶çš„èµ·é»ž
 ({
         ({14,10}),({4,14}),({0,4}),({10,0})
 });
-mixed player_ready =                // Íæ¼ÒµÄ³ö»úÎ»ÖÃ
+mixed player_ready =                // çŽ©å®¶çš„å‡ºæ©Ÿä½ç½®
 ({
         ({ ({14,12}),({13,12}),({12,12}),({11,12}) }),
         ({ ({2,14}),({2,13}),({2,12}),({2,11}) }),
         ({ ({0,2}),({1,2}),({2,2}),({3,2}) }),
         ({ ({12,0}),({12,1}),({12,2}),({12,3}) }),
 });
-mixed super_hit =                        // ³¬¼¶ÌøÔ¾µÄ¹¥»÷µã
+mixed super_hit =                        // è¶…ç´šè·³èºçš„æ”»æ“Šé»ž
 ({
         ({3,7}),({7,3}),({11,7}),({7,11})
 });
 
 
-mixed qi_view =                                        // Íæ¼ÒµÄÆå×ÓµÄÍâ¹Û
+mixed qi_view =                                        // çŽ©å®¶çš„æ£‹å­çš„å¤–è§€
 ({
-        ({"£±","£²","£³","£´"}),        // ÆäËûÈË¿´µÄÆå×Ó
-        ({"£Á","£Â","£Ã","£Ä"}),        // µ±Ç°»î¶¯µÄÆå×Ó
+        ({"ï¼‘","ï¼’","ï¼“","ï¼”"}),        // å…¶ä»–äººçœ‹çš„æ£‹å­
+        ({"ï¼¡","ï¼¢","ï¼£","ï¼¤"}),        // ç•¶å‰æ´»å‹•çš„æ£‹å­
 });
 
 mixed clr =
@@ -61,18 +61,18 @@ mixed bkclr =
         "",HBRED,HBMAG,HBBLU,HBGRN
 });
 
-#define P_LEFT        1                        // Â·¾¶
+#define P_LEFT        1                        // è·¯å¾‘
 #define P_RIGHT        2
 #define P_UP        4
 #define P_DOWN        8
 
 #define B_NORMAL        0
-#define B_GATE                1                // Íê³ÉµÄµÀÃÅ
-#define B_ROAD                2                // Íê³ÉµÄµÀ
-#define B_SJUMP                3                // ³¬¼¶ÌøÔ¾
-#define B_END                4                // ½áÊø
-#define B_STOP                5                // Í£»ú³¡
-#define B_READY                6                // ³ö»ú³¡
+#define B_GATE                1                // å®Œæˆçš„é“é–€
+#define B_ROAD                2                // å®Œæˆçš„é“
+#define B_SJUMP                3                // è¶…ç´šè·³èº
+#define B_END                4                // çµæŸ
+#define B_STOP                5                // åœæ©Ÿå ´
+#define B_READY                6                // å‡ºæ©Ÿå ´
 
 #define BD_COLOR        0
 #define BD_PATH                1
@@ -80,7 +80,7 @@ mixed bkclr =
 #define BD_PLAYER        3
 #define BD_QI                4
 
-mixed board =                                // ({ÊôÐÔ£¬Â·¾¶£¬±êÖ¾£¬Íæ¼ÒºÅ£¬Æå×ÓºÅ})
+mixed board =                                // ({å±¬æ€§ï¼Œè·¯å¾‘ï¼Œæ¨™å¿—ï¼ŒçŽ©å®¶è™Ÿï¼Œæ£‹å­è™Ÿ})
 ({
 ({ ({3,0,5,0,0 }),({3,0,5,0,0 }),      0       ,      0       ,({1,2,0,0,0 }),({2,2,0,0,0 }),({3,2,0,0,0 }),({4,2,1,0,0 }),({1,2,0,0,0 }),({2,2,0,0,0 }),({3,8,0,0,0 }),      0       ,({4,0,6,0,0 }),({4,0,5,0,0 }),({4,0,5,0,0 }),}),
 ({ ({3,0,5,0,0 }),({3,0,5,0,0 }),      0       ,      0       ,({4,4,0,0,0 }),      0       ,      0       ,({4,8,2,0,0 }),      0       ,      0       ,({4,8,0,0,0 }),      0       ,({4,0,6,0,0 }),({4,0,5,0,0 }),({4,0,5,0,0 }),}),
@@ -99,68 +99,68 @@ mixed board =                                // ({ÊôÐÔ£¬Â·¾¶£¬±êÖ¾£¬Íæ¼ÒºÅ£¬Æå×Ó
 ({ ({2,0,5,0,0 }),({2,0,5,0,0 }),({2,0,6,0,0 }),      0       ,({1,4,0,0,0 }),({4,1,0,0,0 }),({3,1,0,0,0 }),({2,1,1,0,0 }),({1,1,0,0,0 }),({4,1,0,0,0 }),({3,1,0,0,0 }),      0       ,      0       ,({1,0,5,0,0 }),({1,0,5,0,0 }),}),
 });
 
-mixed board_view =                                // ÆåÅÌÊÓÍ¼ ºì»ÆÀ¶ÂÌ
+mixed board_view =                                // æ£‹ç›¤è¦–åœ– ç´…é»ƒè—ç¶ 
 ({
-        ({ HBWHT HIB "¡ñ" NOR,HBWHT HIB "¡ñ" NOR,"¡¡","¡¡"    ,HIR "¡ñ" NOR,HIY "¡ñ" NOR,HIB "¡ñ" NOR,HIG "¡ô" NOR,HIR "¡ñ" NOR,HIY "¡ñ" NOR,HIB "¡ñ" NOR,    "¡û","¡¡",HBWHT HIG "¡ñ" NOR,HBWHT HIG "¡ñ" NOR, }),
-        ({ HBWHT HIB "¡ñ" NOR,HBWHT HIB "¡ñ" NOR,"¡¡","¡¡"    ,HIG "¡ñ" NOR,    "¡¡"    ,    "¡¡"    ,HIG "¡ñ" NOR,    "¡¡"    ,    "¡¡"    ,HIG "¡ñ" NOR,    "¡¡","¡¡",HBWHT HIG "¡ñ" NOR,HBWHT HIG "¡ñ" NOR, }),
-        ({     "¡¡"    ,    "¡¡"    ,    "¡¡"    ,    "¡¡"    ,HIB "¡ñ" NOR,    "¡¡"    ,    "¡¡"    ,HIG "¡ñ" NOR,    "¡¡"    ,    "¡¡"    ,HIR "¡ñ" NOR,    "¡¡"    ,    "¡¡"    ,    "¡¡"    ,    "¡¡"    , }),
-        ({     "¡ý"    ,    "¡¡"    ,    "¡¡"    ,    "¡¡"    ,HIY "¡ï" NOR,HIY "¡ú" NOR,HIY "¡ú" NOR,HIG "¡ñ" NOR,HIY "¡ú" NOR,HIY "¡ú" NOR,HIY "¡ñ" NOR,    "¡¡"    ,    "¡¡"    ,    "¡¡"    ,    "¡¡"    , }),
-        ({ HIY "¡ñ" NOR,HIB "¡ñ" NOR,HIG "¡ñ" NOR,HIR "¡ñ" NOR,    "¡¡"    ,    "¡¡"    ,    "¡¡"    ,HIG "¡ñ" NOR,    "¡¡"    ,    "¡¡"    ,    "¡¡"    ,HIB "¡ï" NOR,HIG "¡ñ" NOR,HIR "¡ñ" NOR,HIY "¡ñ" NOR, }),
-        ({ HIR "¡ñ" NOR,    "¡¡"    ,    "¡¡"    ,HIR "¡ü" NOR,    "¡¡"    ,    "¡¡"    ,    "¡¡"    ,HIG "¡ñ" NOR,    "¡¡"    ,    "¡¡"    ,    "¡¡"    ,HIB "¡ý" NOR,    "¡¡"    ,    "¡¡"    ,HIB "¡ñ" NOR, }),
-        ({ HIG "¡ñ" NOR,    "¡¡"    ,    "¡¡"    ,HIR "¡ü" NOR,    "¡¡"    ,    "¡¡"    ,    "¡¡"    ,HIG "¡ò" NOR,    "¡¡"    ,    "¡¡"    ,    "¡¡"    ,HIB "¡ý" NOR,    "¡¡"    ,    "¡¡"    ,HIG "¡ñ" NOR, }),
-        ({ HIB "¡ô" NOR,HIB "¡ñ" NOR,HIB "¡ñ" NOR,HIB "¡ñ" NOR,HIB "¡ñ" NOR,HIB "¡ñ" NOR,HIB "¡ò" NOR,HIC "¡ù" NOR,HIR "¡ò" NOR,HIR "¡ñ" NOR,HIR "¡ñ" NOR,HIR "¡ñ" NOR,HIR "¡ñ" NOR,HIR "¡ñ" NOR,HIR "¡ô" NOR, }),
-        ({ HIY "¡ñ" NOR,    "¡¡"    ,    "¡¡"    ,HIR "¡ü" NOR,    "¡¡"    ,    "¡¡"    ,    "¡¡"    ,HIY "¡ò" NOR,    "¡¡"    ,    "¡¡"    ,    "¡¡"    ,HIB "¡ý" NOR,    "¡¡"    ,    "¡¡"    ,HIY "¡ñ" NOR, }),
-        ({ HIR "¡ñ" NOR,    "¡¡"    ,    "¡¡"    ,HIR "¡ü" NOR,    "¡¡"    ,    "¡¡"    ,    "¡¡"    ,HIY "¡ñ" NOR,    "¡¡"    ,    "¡¡"    ,    "¡¡"    ,HIB "¡ý" NOR,    "¡¡"    ,    "¡¡"    ,HIB "¡ñ" NOR, }),
-        ({ HIG "¡ñ" NOR,HIB "¡ñ" NOR,HIY "¡ñ" NOR,HIR "¡ï" NOR,    "¡¡"    ,    "¡¡"    ,    "¡¡"    ,HIY "¡ñ" NOR,    "¡¡"    ,    "¡¡"    ,    "¡¡"    ,HIB "¡ñ" NOR,HIY "¡ñ" NOR,HIR "¡ñ" NOR,HIG "¡ñ" NOR, }),
-        ({     "¡¡"    ,    "¡¡"    ,    "¡¡"    ,    "¡¡"    ,HIG "¡ñ" NOR,HIG "¡û" NOR,HIG "¡û" NOR,HIY "¡ñ" NOR,HIG "¡û" NOR,HIG "¡û" NOR,HIG "¡ï" NOR,    "¡¡"    ,    "¡¡"    ,    "¡¡"    ,    "¡ü"    , }),
-        ({     "¡¡"    ,    "¡¡"    ,    "¡¡"    ,    "¡¡"    ,HIB "¡ñ" NOR,    "¡¡"    ,    "¡¡"    ,HIY "¡ñ" NOR,    "¡¡"    ,    "¡¡"    ,HIR "¡ñ" NOR,    "¡¡"    ,    "¡¡"    ,    "¡¡"    ,    "¡¡"    , }),
-        ({ HBWHT HIY "¡ñ" NOR,HBWHT HIY "¡ñ" NOR,"¡¡","¡¡"    ,HIY "¡ñ" NOR,    "¡¡"    ,    "¡¡"    ,HIY "¡ñ" NOR,    "¡¡"    ,    "¡¡"    ,HIY "¡ñ" NOR,    "¡¡" ,"¡¡",HBWHT HIR "¡ñ" NOR,HBWHT HIR "¡ñ" NOR, }),
-        ({ HBWHT HIY "¡ñ" NOR,HBWHT HIY "¡ñ" NOR,"¡¡","¡ú"    ,HIR "¡ñ" NOR,HIG "¡ñ" NOR,HIB "¡ñ" NOR,HIY "¡ô" NOR,HIR "¡ñ" NOR,HIG "¡ñ" NOR,HIB "¡ñ" NOR,    "¡¡" ,"¡¡",HBWHT HIR "¡ñ" NOR,HBWHT HIR "¡ñ" NOR, }),
+        ({ HBWHT HIB "â—" NOR,HBWHT HIB "â—" NOR,"ã€€","ã€€"    ,HIR "â—" NOR,HIY "â—" NOR,HIB "â—" NOR,HIG "â—†" NOR,HIR "â—" NOR,HIY "â—" NOR,HIB "â—" NOR,    "â†","ã€€",HBWHT HIG "â—" NOR,HBWHT HIG "â—" NOR, }),
+        ({ HBWHT HIB "â—" NOR,HBWHT HIB "â—" NOR,"ã€€","ã€€"    ,HIG "â—" NOR,    "ã€€"    ,    "ã€€"    ,HIG "â—" NOR,    "ã€€"    ,    "ã€€"    ,HIG "â—" NOR,    "ã€€","ã€€",HBWHT HIG "â—" NOR,HBWHT HIG "â—" NOR, }),
+        ({     "ã€€"    ,    "ã€€"    ,    "ã€€"    ,    "ã€€"    ,HIB "â—" NOR,    "ã€€"    ,    "ã€€"    ,HIG "â—" NOR,    "ã€€"    ,    "ã€€"    ,HIR "â—" NOR,    "ã€€"    ,    "ã€€"    ,    "ã€€"    ,    "ã€€"    , }),
+        ({     "â†“"    ,    "ã€€"    ,    "ã€€"    ,    "ã€€"    ,HIY "â˜…" NOR,HIY "â†’" NOR,HIY "â†’" NOR,HIG "â—" NOR,HIY "â†’" NOR,HIY "â†’" NOR,HIY "â—" NOR,    "ã€€"    ,    "ã€€"    ,    "ã€€"    ,    "ã€€"    , }),
+        ({ HIY "â—" NOR,HIB "â—" NOR,HIG "â—" NOR,HIR "â—" NOR,    "ã€€"    ,    "ã€€"    ,    "ã€€"    ,HIG "â—" NOR,    "ã€€"    ,    "ã€€"    ,    "ã€€"    ,HIB "â˜…" NOR,HIG "â—" NOR,HIR "â—" NOR,HIY "â—" NOR, }),
+        ({ HIR "â—" NOR,    "ã€€"    ,    "ã€€"    ,HIR "â†‘" NOR,    "ã€€"    ,    "ã€€"    ,    "ã€€"    ,HIG "â—" NOR,    "ã€€"    ,    "ã€€"    ,    "ã€€"    ,HIB "â†“" NOR,    "ã€€"    ,    "ã€€"    ,HIB "â—" NOR, }),
+        ({ HIG "â—" NOR,    "ã€€"    ,    "ã€€"    ,HIR "â†‘" NOR,    "ã€€"    ,    "ã€€"    ,    "ã€€"    ,HIG "â—Ž" NOR,    "ã€€"    ,    "ã€€"    ,    "ã€€"    ,HIB "â†“" NOR,    "ã€€"    ,    "ã€€"    ,HIG "â—" NOR, }),
+        ({ HIB "â—†" NOR,HIB "â—" NOR,HIB "â—" NOR,HIB "â—" NOR,HIB "â—" NOR,HIB "â—" NOR,HIB "â—Ž" NOR,HIC "â€»" NOR,HIR "â—Ž" NOR,HIR "â—" NOR,HIR "â—" NOR,HIR "â—" NOR,HIR "â—" NOR,HIR "â—" NOR,HIR "â—†" NOR, }),
+        ({ HIY "â—" NOR,    "ã€€"    ,    "ã€€"    ,HIR "â†‘" NOR,    "ã€€"    ,    "ã€€"    ,    "ã€€"    ,HIY "â—Ž" NOR,    "ã€€"    ,    "ã€€"    ,    "ã€€"    ,HIB "â†“" NOR,    "ã€€"    ,    "ã€€"    ,HIY "â—" NOR, }),
+        ({ HIR "â—" NOR,    "ã€€"    ,    "ã€€"    ,HIR "â†‘" NOR,    "ã€€"    ,    "ã€€"    ,    "ã€€"    ,HIY "â—" NOR,    "ã€€"    ,    "ã€€"    ,    "ã€€"    ,HIB "â†“" NOR,    "ã€€"    ,    "ã€€"    ,HIB "â—" NOR, }),
+        ({ HIG "â—" NOR,HIB "â—" NOR,HIY "â—" NOR,HIR "â˜…" NOR,    "ã€€"    ,    "ã€€"    ,    "ã€€"    ,HIY "â—" NOR,    "ã€€"    ,    "ã€€"    ,    "ã€€"    ,HIB "â—" NOR,HIY "â—" NOR,HIR "â—" NOR,HIG "â—" NOR, }),
+        ({     "ã€€"    ,    "ã€€"    ,    "ã€€"    ,    "ã€€"    ,HIG "â—" NOR,HIG "â†" NOR,HIG "â†" NOR,HIY "â—" NOR,HIG "â†" NOR,HIG "â†" NOR,HIG "â˜…" NOR,    "ã€€"    ,    "ã€€"    ,    "ã€€"    ,    "â†‘"    , }),
+        ({     "ã€€"    ,    "ã€€"    ,    "ã€€"    ,    "ã€€"    ,HIB "â—" NOR,    "ã€€"    ,    "ã€€"    ,HIY "â—" NOR,    "ã€€"    ,    "ã€€"    ,HIR "â—" NOR,    "ã€€"    ,    "ã€€"    ,    "ã€€"    ,    "ã€€"    , }),
+        ({ HBWHT HIY "â—" NOR,HBWHT HIY "â—" NOR,"ã€€","ã€€"    ,HIY "â—" NOR,    "ã€€"    ,    "ã€€"    ,HIY "â—" NOR,    "ã€€"    ,    "ã€€"    ,HIY "â—" NOR,    "ã€€" ,"ã€€",HBWHT HIR "â—" NOR,HBWHT HIR "â—" NOR, }),
+        ({ HBWHT HIY "â—" NOR,HBWHT HIY "â—" NOR,"ã€€","â†’"    ,HIR "â—" NOR,HIG "â—" NOR,HIB "â—" NOR,HIY "â—†" NOR,HIR "â—" NOR,HIG "â—" NOR,HIB "â—" NOR,    "ã€€" ,"ã€€",HBWHT HIR "â—" NOR,HBWHT HIR "â—" NOR, }),
 });
 
 mixed toss_text = ({
         ({"","","","",""}),
         ({
-            "©³©¥©¥©¥©´",
-        "©¦      ©¦",
-        "©¦  ¡ñ  ©¦",
-        "©¦      ©¦",
-                "©º©¥©¥©¥©¿",
+            "â–¡â–¡â–¡â–¡â”",
+        "â”‚      â”‚",
+        "â”‚  â—  â”‚",
+        "â”‚      â”‚",
+                "â–¡â–¡â–¡â–¡â–¡",
         }),
         ({
-                "©³©¥©¥©¥©´",
-        "©¦  ¡ñ  ©¦",
-        "©¦      ©¦",
-        "©¦  ¡ñ  ©¦",
-                "©º©¥©¥©¥©¿",
+                "â–¡â–¡â–¡â–¡â”",
+        "â”‚  â—  â”‚",
+        "â”‚      â”‚",
+        "â”‚  â—  â”‚",
+                "â–¡â–¡â–¡â–¡â–¡",
         }),
         ({
-                "©³©¥©¥©¥©´",
-                "©¦¡ñ¡¡¡¡©¦",
-        "©¦¡¡¡ñ¡¡©¦",
-        "©¦¡¡¡¡¡ñ©¦",
-                "©º©¥©¥©¥©¿",
+                "â–¡â–¡â–¡â–¡â”",
+                "â”‚â—ã€€ã€€â”‚",
+        "â”‚ã€€â—ã€€â”‚",
+        "â”‚ã€€ã€€â—â”‚",
+                "â–¡â–¡â–¡â–¡â–¡",
         }),
         ({
-                "©³©¥©¥©¥©´",
-        "©¦¡ñ¡¡¡ñ©¦",
-        "©¦¡¡¡¡¡¡©¦",
-        "©¦¡ñ¡¡¡ñ©¦",
-                "©º©¥©¥©¥©¿",
+                "â–¡â–¡â–¡â–¡â”",
+        "â”‚â—ã€€â—â”‚",
+        "â”‚ã€€ã€€ã€€â”‚",
+        "â”‚â—ã€€â—â”‚",
+                "â–¡â–¡â–¡â–¡â–¡",
         }),
         ({
-                "©³©¥©¥©¥©´",
-        "©¦¡ñ¡¡¡ñ©¦",
-        "©¦¡¡¡ñ¡¡©¦",
-        "©¦¡ñ¡¡¡ñ©¦",
-                "©º©¥©¥©¥©¿",
+                "â–¡â–¡â–¡â–¡â”",
+        "â”‚â—ã€€â—â”‚",
+        "â”‚ã€€â—ã€€â”‚",
+        "â”‚â—ã€€â—â”‚",
+                "â–¡â–¡â–¡â–¡â–¡",
         }),
         ({
-                "©³©¥©¥©¥©´",
-        "©¦¡ñ¡¡¡ñ©¦",
-        "©¦¡ñ¡¡¡ñ©¦",
-        "©¦¡ñ¡¡¡ñ©¦",
-                "©º©¥©¥©¥©¿",
+                "â–¡â–¡â–¡â–¡â”",
+        "â”‚â—ã€€â—â”‚",
+        "â”‚â—ã€€â—â”‚",
+        "â”‚â—ã€€â—â”‚",
+                "â–¡â–¡â–¡â–¡â–¡",
         })
 });
 
@@ -193,12 +193,12 @@ int reset_game(int all)
         cur_player = 0;
         if(all)player = ({0,0,0,0});
         if(all)wake_point = ({6});
-        qizi = allocate(4);                                        // 4¸±Æå×Ó
+        qizi = allocate(4);                                        // 4å‰¯æ£‹å­
         for(i=0;i<4;i++)
         {
-                qizi[i] = allocate(4);                        // 4¸öÆå×Ó/1¸±
+                qizi[i] = allocate(4);                        // 4å€‹æ£‹å­/1å‰¯
                 for(j=0;j<4;j++)
-                        qizi[i][j] = ({0,0,0,i+1,j+1});        // 5¸ö×´Ì¬/1¸öÆå×Ó
+                        qizi[i][j] = ({0,0,0,i+1,j+1});        // 5å€‹ç‹€æ…‹/1å€‹æ£‹å­
         }
 
         for(i=0;i<15;i++)
@@ -331,17 +331,17 @@ void shadow_it(mixed* qi)
                 shadow_qi[i] = qi[i];
 }
 
-// ¿ªÊ¼¹¹ÔìÎïÌå
+// é–‹å§‹æ§‹é€ ç‰©é«”
 void create()
 {
-        set_name("·ÉÐÐÆå", ({ "flywar board","board","fly"}) );
+        set_name("é£›è¡Œæ£‹", ({ "flywar board","board","fly"}) );
         set_weight(1);
         if( clonep() )
                 set_default_object(__FILE__);
         else
         {
-                set("unit", "¸±");
-                set("long", "ÕâÊÇÒ»¸±·ÉÐÐÆåÅÌ£¬ÉÏÃæ°Ú·Å×Å²»ÉÙÐ¡Ð¡Õ½»ú¡£\n");
+                set("unit", "å‰¯");
+                set("long", "é€™æ˜¯ä¸€å‰¯é£›è¡Œæ£‹ç›¤ï¼Œä¸Šé¢æ“ºæ”¾è‘—ä¸å°‘å°å°æˆ°æ©Ÿã€‚\n");
                 set("value", 1);
                 set("no_get", 1);
                 set("material", "paper");
@@ -391,8 +391,8 @@ string build_qi(object who)
                                         q = qi[QI_ID];
 
                                         if(qi==shadow_qi)
-                                                t = "£Ó";
-                                        else if(player[num-1]==id && cur_player==num) // ×Ô¼ºµÄÆå×Ó
+                                                t = "ï¼³";
+                                        else if(player[num-1]==id && cur_player==num) // è‡ªå·±çš„æ£‹å­
                                                 t = clr[num]+qi_view[1][q-1];
                                         else
                                                 t = clr[num]+qi_view[0][num-1];
@@ -400,7 +400,7 @@ string build_qi(object who)
                                         switch(qi[0])
                                         {
                                         case QI_END:
-                                                cell = sprintf("%s%s" NOR,clr[num],"¡þ");
+                                                cell = sprintf("%s%s" NOR,clr[num],"â•");
                                                 break;
                                         case QI_WAIT:
                                                 if(qi != shadow_qi)
@@ -440,17 +440,17 @@ string build_qi(object who)
 
 void init()
 {
-//        add_action("do_help","helpqi");                        // °ïÖú
+//        add_action("do_help","helpqi");                        // å¹«åŠ©
         
-        add_action("do_reset","reset");                        // ÖØÖÃÓÎÏ·
-        add_action("do_start","start");                        // ÖØÐÂ¿ªÊ¼
-        add_action("do_join","join");                        // ¼ÓÈëÓÎÏ·
+        add_action("do_reset","reset");                        // é‡ç½®éŠæˆ²
+        add_action("do_start","start");                        // é‡æ–°é–‹å§‹
+        add_action("do_join","join");                        // åŠ å…¥éŠæˆ²
 
-        add_action("do_toss","toss");                        // Ò¡É«×Ó
-        add_action("do_view","view");                        // ²é¿´Çé¿ö
-        add_action("do_move","move");                        // ÒÆ¶¯
+        add_action("do_toss","toss");                        // æ–è‰²å­
+        add_action("do_view","view");                        // æŸ¥çœ‹æƒ…æ³
+        add_action("do_move","move");                        // ç§»å‹•
 
-        add_action("do_next","next");                        // ´ß´Ù
+        add_action("do_next","next");                        // å‚¬ä¿ƒ
 }
 
 void show_se(int se)
@@ -467,30 +467,30 @@ int do_next(string arg)
         if(me)
         {
                 if(!is_playing(me))
-                        return notify_fail("Äã¶¼²»Íæ°¡£¡\n");
+                        return notify_fail("ä½ éƒ½ä¸çŽ©å•Šï¼\n");
 
                 if(!has_start)
-                        return notify_fail("»¹Ã»ÓÐ¿ªÊ¼ÁË¡£\n");
+                        return notify_fail("é‚„æ²’æœ‰é–‹å§‹äº†ã€‚\n");
                 if(!cur_player)
-                        return notify_fail("£¿£¿£¿£¿\n");
+                        return notify_fail("ï¼Ÿï¼Ÿï¼Ÿï¼Ÿ\n");
 
                 ob = get_cur_player();
                 
                 if(ob==0)
                 {
-                        msg(0,0,"ÓÐÍæ¼ÒÈ±³¡ÁË£¬ÇëÖØÐÂ¿ªÊ¼ÓÎÏ·(reset qi)¡£\n");
+                        msg(0,0,"æœ‰çŽ©å®¶ç¼ºå ´äº†ï¼Œè«‹é‡æ–°é–‹å§‹éŠæˆ²(reset qi)ã€‚\n");
                         return 1;
                 }
 
                 if(me!=ob)
-                        msg(me,ob,"$N¶Ô$nËµµÀ£ºµ½ÄãÁË¡£\n");
+                        msg(me,ob,"$Nå°$nèªªé“ï¼šåˆ°ä½ äº†ã€‚\n");
                 else
-                        msg(me,0,"$N¶Ô×Ô¼ºËµµÀ£ºµ½ÎÒÀ²£¡\n");
+                        msg(me,0,"$Nå°è‡ªå·±èªªé“ï¼šåˆ°æˆ‘å•¦ï¼\n");
         }
         else
         {
                 ob = get_cur_player();
-                msg(0,ob,"µ½$nÁË¡£\n");
+                msg(0,ob,"åˆ°$näº†ã€‚\n");
         }
         return 1;
 }
@@ -518,7 +518,7 @@ void next_one()
                         if(qizi[cp-1][i][QI_FLAG] != QI_END)
                         {
                                 if(cp == cur_player)
-                                        msg(get_cur_player(),0,"$NÍ¶µ½Áùµã£¬½±ÀøÒ»´Î¡£\n");
+                                        msg(get_cur_player(),0,"$NæŠ•åˆ°å…­é»žï¼ŒçŽå‹µä¸€æ¬¡ã€‚\n");
                                 else
                                 {
                                         cur_player = cp;
@@ -552,7 +552,7 @@ int toss(object who,int se)
                                 if(cmd1)
                                         cmd1 = sprintf("%s|%c",cmd1,'a'+i);
                                 else
-                                        cmd1 = sprintf("³ö»ú move %c",'a'+i);
+                                        cmd1 = sprintf("å‡ºæ©Ÿ move %c",'a'+i);
                                 c = 1;
                         }
                         break;
@@ -562,18 +562,18 @@ int toss(object who,int se)
                         if(cmd2)
                                 cmd2 = sprintf("%s|%c",cmd2,'a'+i);
                         else
-                                cmd2 = sprintf("ÒÆ¶¯ move %c",'a'+i);
+                                cmd2 = sprintf("ç§»å‹• move %c",'a'+i);
                         c = 1;
                         break;
                 case QI_END:
                         break;
                 default:
-                        msg(0,0,"\n´íÎó·É»ú×´Ì¬£¡£¡£¡\n");
+                        msg(0,0,"\néŒ¯èª¤é£›æ©Ÿç‹€æ…‹ï¼ï¼ï¼\n");
                         break;
                 }
         }
 
-        cmd = sprintf("%dµã\n",se);
+        cmd = sprintf("%dé»ž\n",se);
         if(cmd1)cmd = sprintf("%s%s\n",cmd,cmd1);
         if(cmd2)cmd = sprintf("%s%s\n",cmd,cmd2);
 
@@ -595,15 +595,15 @@ int do_toss(string arg)
         me = this_player();
 
         if(!(pid = is_playing(me)))
-                return notify_fail("Äã¶¼²»Íæ°¡£¡\n");
+                return notify_fail("ä½ éƒ½ä¸çŽ©å•Šï¼\n");
         if(!has_start)
-                return notify_fail("ÓÎÏ·»¹Ã»ÓÐ¿ªÊ¼ÁË¡£\n");
+                return notify_fail("éŠæˆ²é‚„æ²’æœ‰é–‹å§‹äº†ã€‚\n");
         if(cur_se)
-                return notify_fail("²»ÊÇÍ¶É«×ÓµÄÊ±ºò¡£\n");
+                return notify_fail("ä¸æ˜¯æŠ•è‰²å­çš„æ™‚å€™ã€‚\n");
         if( !cur_player || query("id", me) != player[cur_player-1] )
-                return notify_fail("»¹Ã»ÓÐ¿ªÊ¼µ½ÄãÁË¡£\n");
+                return notify_fail("é‚„æ²’æœ‰é–‹å§‹åˆ°ä½ äº†ã€‚\n");
 
-        msg(me,0,"$NÄÃÆðÉ«×ÓÔÚÊÖÖÐÒ¡ÁËÁ½Ò¡¡£\n");
+        msg(me,0,"$Næ‹¿èµ·è‰²å­åœ¨æ‰‹ä¸­æ–äº†å…©æ–ã€‚\n");
         se = random(6)+1;
         show_se(se);
 
@@ -638,11 +638,11 @@ int do_reset(string arg)
                 for(i=0;i<sizeof(idx);i++)
                 {
                         if(get_player(player[i]))
-                                return notify_fail("Äã¶¼²»Íæ°¡£¡\n");
+                                return notify_fail("ä½ éƒ½ä¸çŽ©å•Šï¼\n");
                 }
         }
         reset_game(1);
-        msg(this_player(),0,"$NÖØÖÃÁËÓÎÏ·¡£\n");
+        msg(this_player(),0,"$Né‡ç½®äº†éŠæˆ²ã€‚\n");
         return 1;
 }
 
@@ -651,7 +651,7 @@ int do_start(string arg)
         int i,c;
 
         if(!is_playing(this_player()))
-                return notify_fail("Äã¶¼²»Íæ°¡£¡\n");
+                return notify_fail("ä½ éƒ½ä¸çŽ©å•Šï¼\n");
 
         for(i=0;i<sizeof(player);i++)
                 if(!player[i])break;
@@ -665,7 +665,7 @@ int do_start(string arg)
         case 4:
                 break;
         default:
-                return notify_fail("ÓÎÏ·ÈËÊýÖ»ÄÜÊÇ2ÈË »òÕß 4ÈË¡£\n");
+                return notify_fail("éŠæˆ²äººæ•¸åªèƒ½æ˜¯2äºº æˆ–è€… 4äººã€‚\n");
                 break;
         }
         
@@ -673,8 +673,8 @@ int do_start(string arg)
         has_start = 1;
         cur_player = 1;
 
-        msg(this_player(),0,"$N¿ªÊ¼ÓÎÏ·ÁË\n");
-        msg(get_cur_player(),0,"$NÊ×ÏÈÍ¶É«¡£\n");
+        msg(this_player(),0,"$Né–‹å§‹éŠæˆ²äº†\n");
+        msg(get_cur_player(),0,"$Né¦–å…ˆæŠ•è‰²ã€‚\n");
                 
         return 1;
 }
@@ -692,22 +692,22 @@ int do_join(string arg)
 
         me = this_player();
         if(has_start)
-                return notify_fail("ÓÎÏ·ÒÑ¾­¿ªÊ¼£¬²»ÄÜ¼ÓÈëÁË£¬ÇëÊ¹ÓÃ(reset)ÃüÁîÖØÖÃ¡£\n");
+                return notify_fail("éŠæˆ²å·²ç¶“é–‹å§‹ï¼Œä¸èƒ½åŠ å…¥äº†ï¼Œè«‹ä½¿ç”¨(reset)å‘½ä»¤é‡ç½®ã€‚\n");
         if(is_playing(me))
-                return notify_fail("ÄãÒÑ¾­²Î¼ÓÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“åƒåŠ äº†ã€‚\n");
 
         for(i=0;i<sizeof(player);i++)
         {
                 if(!player[i])
                 {
                         player[i]=query("id", me);
-                        msg(me,0,"$N¼ÓÈëÓÎÏ·ÁË¡£\n");
+                        msg(me,0,"$NåŠ å…¥éŠæˆ²äº†ã€‚\n");
                         if(i==3)
-                                msg(0,0,"ÇëÊ¹ÓÃ(start)ÃüÁî¿ªÊ¼ÓÎÏ·¡£\n");
+                                msg(0,0,"è«‹ä½¿ç”¨(start)å‘½ä»¤é–‹å§‹éŠæˆ²ã€‚\n");
                         return 1;
                 }
         }
-        return notify_fail("ÈËÊýÒÑÂú\n");
+        return notify_fail("äººæ•¸å·²æ»¿\n");
 }
 
 void show_qi()
@@ -757,11 +757,11 @@ int reach(mixed* qi)
 
         if(ge[BD_PLAYER])
         {
-                // ÓÐÆäËûÆå×Ó?
+                // æœ‰å…¶ä»–æ£‹å­?
                 if(ge[BD_PLAYER] == qi[QI_PLAYER])
                 {
-                        // ×Ô¼º£¬½±ÀøÒ»²½
-                        msg(get_cur_player(),0,"$NºÍ×Ô¼ºµÄ·É»úÏàÓö£¬Ç°½øÒ»²½¡£\n");
+                        // è‡ªå·±ï¼ŒçŽå‹µä¸€æ­¥
+                        msg(get_cur_player(),0,"$Nå’Œè‡ªå·±çš„é£›æ©Ÿç›¸é‡ï¼Œå‰é€²ä¸€æ­¥ã€‚\n");
                         call_out("jump_to",0,qi,1);
                         return 1;
                 }
@@ -769,7 +769,7 @@ int reach(mixed* qi)
                 {
                         // hit it
                         qi2 = ge2qi(ge);
-                        msg(get_cur_player(),qi2player(qi2),BLINK HIR "\n$N»÷»ÙÁË$nµÄ·É»ú£¡£¡£¡\n\n" NOR);
+                        msg(get_cur_player(),qi2player(qi2),BLINK HIR "\n$Næ“Šæ¯€äº†$nçš„é£›æ©Ÿï¼ï¼ï¼\n\n" NOR);
                         return_base(qi2[QI_PLAYER],qi2[QI_ID]);
                 }
         }
@@ -780,28 +780,28 @@ int reach(mixed* qi)
                 case B_NORMAL:
                         if(qi[QI_PLAYER] == ge[BD_COLOR] && !has_jump)
                         {
-                                msg(get_cur_player(),0,"$NµÄ·É»ú½øÐÐÌøÔ¾...\n");
+                                msg(get_cur_player(),0,"$Nçš„é£›æ©Ÿé€²è¡Œè·³èº...\n");
                                 call_out("jump_to",0,qi,4);
                                 return 1;
                         }
                         break;
-                case B_SJUMP:                // ³¬¼¶ÌøÔ¾
+                case B_SJUMP:                // è¶…ç´šè·³èº
                         if(qi[QI_PLAYER] == ge[BD_COLOR] && !has_jump)
                         {
-                                msg(get_cur_player(),0,HIY "\n$NµÄ·É»ú½øÐÐ³¬¼¶ÌøÔ¾£¡\n");
+                                msg(get_cur_player(),0,HIY "\n$Nçš„é£›æ©Ÿé€²è¡Œè¶…ç´šè·³èºï¼\n");
 
                                 qi2 = ge2qi(ge);
                                 if(qi2)
                                 {
-                                        msg(get_cur_player(),qi2player(qi2),BLINK HIR "\n$N»÷»ÙÁË$nµÄ·É»ú£¡£¡£¡\n\n" NOR);
+                                        msg(get_cur_player(),qi2player(qi2),BLINK HIR "\n$Næ“Šæ¯€äº†$nçš„é£›æ©Ÿï¼ï¼ï¼\n\n" NOR);
                                         return_base(qi2[QI_PLAYER],qi2[QI_ID]);
                                 }
                                 call_out("jump_to",0,qi,12);
                                 return 1;
                         }
                         break;
-                case B_END:                        // ½áÊø
-                        msg(get_cur_player(),0,"$NµÄÒ»¼Ü·É»úµ½ÖÕµãÁË¡£\n");
+                case B_END:                        // çµæŸ
+                        msg(get_cur_player(),0,"$Nçš„ä¸€æž¶é£›æ©Ÿåˆ°çµ‚é»žäº†ã€‚\n");
                         return_base(qi[QI_PLAYER],qi[QI_ID]);
                         qi[QI_FLAG] = QI_END;
                         if(check_finish())
@@ -855,7 +855,7 @@ int move_qi(mixed* qi,int pt)
         {
         case QI_SLEEP:
                 if(member_array(pt,wake_point)==-1)
-                        return notify_fail("²»ÄÜÒÆ¶¯¸ÃÆå×Ó¡£\n");
+                        return notify_fail("ä¸èƒ½ç§»å‹•è©²æ£‹å­ã€‚\n");
                 qi[QI_FLAG] = QI_WAIT;
                 pick_out(qi);
                 q = qi[QI_PLAYER];
@@ -872,7 +872,7 @@ int move_qi(mixed* qi,int pt)
                 }
                 put_down(qi);
 
-                msg(get_cur_player(),0,"$N×¼±¸³ö¶¯Ò»¼Ü·É»ú¡£\n");
+                msg(get_cur_player(),0,"$Næº–å‚™å‡ºå‹•ä¸€æž¶é£›æ©Ÿã€‚\n");
                 next_one();
                 return 1;
         case QI_WAIT:
@@ -977,9 +977,9 @@ int move_qi(mixed* qi,int pt)
                 }
                 break;
         case QI_END:
-                return notify_fail("²»ÄÜÒÆ¶¯¸ÃÆå×Ó¡£\n");
+                return notify_fail("ä¸èƒ½ç§»å‹•è©²æ£‹å­ã€‚\n");
         default:
-                msg(0,0,"\n´íÎó·É»ú×´Ì¬£¡£¡£¡\n");
+                msg(0,0,"\néŒ¯èª¤é£›æ©Ÿç‹€æ…‹ï¼ï¼ï¼\n");
                 break;
         }
         return 1;
@@ -995,16 +995,16 @@ int do_move(string arg)
         me = this_player();
 
         if(!(pid = is_playing(me)))
-                return notify_fail("Äã¶¼²»Íæ°¡£¡\n");
+                return notify_fail("ä½ éƒ½ä¸çŽ©å•Šï¼\n");
         if(!has_start)
-                return notify_fail("ÓÎÏ·»¹Ã»ÓÐ¿ªÊ¼ÁË¡£\n");
+                return notify_fail("éŠæˆ²é‚„æ²’æœ‰é–‹å§‹äº†ã€‚\n");
         if(!cur_se)
-                return notify_fail("ÊÇÍ¶É«×ÓµÄÊ±ºò¡£\n");
+                return notify_fail("æ˜¯æŠ•è‰²å­çš„æ™‚å€™ã€‚\n");
         if( !cur_player || query("id", me) != player[cur_player-1] )
-                return notify_fail("»¹Ã»ÓÐ¿ªÊ¼µ½ÄãÁË¡£\n");
+                return notify_fail("é‚„æ²’æœ‰é–‹å§‹åˆ°ä½ äº†ã€‚\n");
 
         if(!arg)
-                return notify_fail("ÄãÒªÒÆ¶¯ÄÄ¸öÆå×Ó°¡(a|b|c|d)£¿\n");
+                return notify_fail("ä½ è¦ç§»å‹•å“ªå€‹æ£‹å­å•Š(a|b|c|d)ï¼Ÿ\n");
 
         w = 0;
         if(arg=="a")
@@ -1017,7 +1017,7 @@ int do_move(string arg)
                 w = 4;
 
         if(!w)
-                return notify_fail("ÄãÒªÒÆ¶¯ÄÄ¸öÆå×Ó°¡(a|b|c|d)\n");
+                return notify_fail("ä½ è¦ç§»å‹•å“ªå€‹æ£‹å­å•Š(a|b|c|d)\n");
 
         qi = qizi[cur_player-1][w-1];
         cur_qi = qi;
@@ -1035,23 +1035,23 @@ mixed t(int x,int y)
 int do_help(string arg)
 {
         this_player()->start_more( @HELP
-·ÉÐÐÆåÊ¹ÓÃ·½·¨:
-¡ª¡ª[¿ªÊ¼ÓÎÏ·]¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
-°ïÖúÃüÁî£ºhelpqi
-¼ÓÈëÓÎÏ·£ºjoin¡¡¡¡¡¡¡¡¡¡
-¿ªÊ¼ÓÎÏ·£ºstart
-ÖØÖÃÓÎÏ·£ºreset qi
+é£›è¡Œæ£‹ä½¿ç”¨æ–¹æ³•:
+â”€â”€[é–‹å§‹éŠæˆ²]â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+å¹«åŠ©å‘½ä»¤ï¼šhelpqi
+åŠ å…¥éŠæˆ²ï¼šjoinã€€ã€€ã€€ã€€ã€€
+é–‹å§‹éŠæˆ²ï¼šstart
+é‡ç½®éŠæˆ²ï¼šreset qi
 
-¡ª¡ª[ÓÎÏ·ÃüÁî]¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
-¡¡Ò¡É«×Ó£ºtoss
-²é¿´Çé¿ö£ºview
-ÒÆ¶¯Æå×Ó£ºmove a|b|c|d
-´ß´ÙÍæ¼Ò£ºnext
+â”€â”€[éŠæˆ²å‘½ä»¤]â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+ã€€æ–è‰²å­ï¼štoss
+æŸ¥çœ‹æƒ…æ³ï¼šview
+ç§»å‹•æ£‹å­ï¼šmove a|b|c|d
+å‚¬ä¿ƒçŽ©å®¶ï¼šnext
 
-¡ª¡ª[ÓÎÏ·¹æÔò]¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
-ÆÕÍ¨µÄ·ÉÐÐÆå¡£
+â”€â”€[éŠæˆ²è¦å‰‡]â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+æ™®é€šçš„é£›è¡Œæ£‹ã€‚
 
-¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 HELP
         );
         return 1;

@@ -2,10 +2,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("ïÚÊ¦", ({ "biao shi", "bian"}) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("é¢å¸«", ({ "biao shi", "bian"}) );
+        set("gender", "ç”·æ€§" );
         set("age", 32);
-        set("long", "ÕâÊÇÒ»Î»¸ß´ïÁù³ßµÄïÚÊ¦¡£\n");
+        set("long", "é€™æ˜¯ä¸€ä½é«˜é”å…­å°ºçš„é¢å¸«ã€‚\n");
         set("combat_exp", 200000);
         set("attitude", "friendly");
         set_skill("force", 100);

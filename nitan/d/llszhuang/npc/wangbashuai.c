@@ -2,14 +2,14 @@
 inherit NPC;
 void create()
 {
-        set_name("Íõ°ËË¥", ({ "wang bashuai","wang","bashuai"}) );
+        set_name("ç‹å…«è¡°", ({ "wang bashuai","wang","bashuai"}) );
         set("long",@LONG
-ÕâÈË¹´±ÇÉîÄ¿£¬Æ¤°ü¹ÇµÄÁ³Ïñ¹í¶ø²»ËÆÈË£¬ÅäºÏ×ÅËÆÈô´ÓµØÓüÀïÅÀ³öÀ´
-µÄÄ§Ó¥£¬½ÌÈË¸Ğµ½²»º®¶øÀõ¡£
+é€™äººå‹¾é¼»æ·±ç›®ï¼Œçš®åŒ…éª¨çš„è‡‰åƒé¬¼è€Œä¸ä¼¼äººï¼Œé…åˆè‘—ä¼¼è‹¥å¾åœ°ç„è£¡çˆ¬å‡ºä¾†
+çš„é­”é·¹ï¼Œæ•™äººæ„Ÿåˆ°ä¸å¯’è€Œæ —ã€‚
 LONG
          );
-        set("title",CYN"Éñ¼ı°ËĞÛ"NOR);
-       set("nickname","¹íÉñ¼ı");
+        set("title",CYN"ç¥ç®­å…«é›„"NOR);
+       set("nickname","é¬¼ç¥ç®­");
         set("max_jing", 6000);
         set("max_qi", 8000);                    
         set("max_sen", 6000);
@@ -23,7 +23,7 @@ LONG
         set_skill("dodge", 500);
         set_skill("parry", 500);
         set_skill("sword",520);
-        set_skill("force",800); //·ÀÖ¹±ğÈËÀ´µ¯Ö¸
+        set_skill("force",800); //é˜²æ­¢åˆ¥äººä¾†å½ˆæŒ‡
         set_skill("hamagong",500);
         set_skill("tiyunzong",500);
         map_skill("sword","pixie-jian");

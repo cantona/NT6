@@ -2,15 +2,15 @@
 inherit TASK; 
 void create() 
 { 
-        set_name( RED "³àÁúÁî" NOR, ({ "chilong ling" }) ); 
+        set_name( RED "èµ¤é¾ä»¤" NOR, ({ "chilong ling" }) ); 
         set_weight(50); 
         if( clonep() ) 
                 destruct(this_object()); 
         else { 
-                set("unit", "°Ñ"); 
+                set("unit", "æŠŠ"); 
                 set("material", "iron"); 
-                set("long", "Õâ¾ÍÊÇÃûÕğ½­ºşµÄ³àÁúÁî£¬ÁîÅÆÒşÒşÍ¸³öÑªºìÉ«µÄ¹âÃ¢£¬¿´ÉÏÈ¥É·ÊÇÏÅÈË¡£\n"); 
+                set("long", "é€™å°±æ˜¯åéœ‡æ±Ÿæ¹–çš„èµ¤é¾ä»¤ï¼Œä»¤ç‰Œéš±éš±é€å‡ºè¡€ç´…è‰²çš„å…‰èŠ’ï¼Œçœ‹ä¸Šå»ç…æ˜¯åš‡äººã€‚\n"); 
         } 
-        set("owner", "ÎŞ¸ùµÀ³¤"); 
+        set("owner", "ç„¡æ ¹é“é•·"); 
         setup(); 
 } 

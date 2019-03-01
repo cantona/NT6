@@ -14,9 +14,9 @@ void death_msg();
 void create()
 {
         object ob1,ob2;
-        set_name("¹«ËïÖ¹", ({ "gongsun zhi", "gongsun", "zhi" }));
-        set("nickname", HIR "ÒõÑôÈĞ" NOR);
-        set("gender", "ÄĞĞÔ");
+        set_name("å…¬å­«æ­¢", ({ "gongsun zhi", "gongsun", "zhi" }));
+        set("nickname", HIR "é™°é™½åˆƒ" NOR);
+        set("gender", "ç”·æ€§");
         set("attitude", "peaceful");
         set("shen_type", 0);
         set("age", 40);
@@ -71,7 +71,7 @@ void create()
 
         prepare_skill("strike", "jueqing-zhang");
 
-        create_family("¾øÇé¹È", 4, "¹ÈÖ÷");
+        create_family("çµ•æƒ…è°·", 4, "è°·ä¸»");
 
         set("chat_chance", 30);
         set("chat_msg", ({ (: random_move :) }));
@@ -102,8 +102,8 @@ void create()
         ]));
 
         set("drops", ([
-                "RA&RANDOM40"    :       100,   // µÍ¼¶ÆÕÍ¨×°±¸
-                "RA&RANDOM50"    :       40,    // µÍ¼¶ÆÕÍ¨×°±¸
+                "RA&RANDOM40"    :       100,   // ä½ç´šæ™®é€šè£å‚™
+                "RA&RANDOM50"    :       40,    // ä½ç´šæ™®é€šè£å‚™
                 "FI&/clone/goods/enchant-scroll" :   20,
                 "FI&/clone/goods/sun"    :   20,
                 "FI&/clone/goods/moon"   :   20,
@@ -169,7 +169,7 @@ mixed hit_ob(object me, object ob, int damage_bouns)
 {
         ob->start_busy(5 + random(6));
         me->receive_wound("qi", 3500 + random(3500), ob);
-        return HIY "$N" HIY "´óºÈÒ»Éù£¬Æ´ËÀ·´¿¹£¬¾¹±ÆµÃ$n" HIY "ÊÖÃ¦½ÅÂÒ¡£\n" NOR;
+        return HIY "$N" HIY "å¤§å–ä¸€è²ï¼Œæ‹¼æ­»åæŠ—ï¼Œç«Ÿé€¼å¾—$n" HIY "æ‰‹å¿™è…³äº‚ã€‚\n" NOR;
 }
 
 void heart_beat()
@@ -187,10 +187,10 @@ void random_move()
         if (time() - query_temp("born_time") > 1800)
         {
                 env = environment(this_object());
-                message_vision("$N¼±¼±Ã¦Ã¦µÄ×ßÁË¡£\n", this_object());
+                message_vision("$Næ€¥æ€¥å¿™å¿™çš„èµ°äº†ã€‚\n", this_object());
 
-                CHANNEL_D->channel_broadcast("mess", env->short() + HIW "(" + LOOK_CMD->locate(base_name(env)) + ")Ò»´ø³öÏÖµÄ" +
-                        HIR + this_object()->short() + HIG "ÏûÊ§ÁË¡£\n" NOR);
+                CHANNEL_D->channel_broadcast("mess", env->short() + HIW "(" + LOOK_CMD->locate(base_name(env)) + ")ä¸€å¸¶å‡ºç¾çš„" +
+                        HIR + this_object()->short() + HIG "æ¶ˆå¤±äº†ã€‚\n" NOR);
 
                 destruct(this_object());
                 return;
@@ -201,7 +201,7 @@ void random_move()
 void death_msg()
 {
         command("chat* heng");
-        command("chat ¸ÒÀ´ÎÒ¾øÇéÉ½×¯ÈöÒ°£¬×ß×ÅÇÆ£¡");
+        command("chat æ•¢ä¾†æˆ‘çµ•æƒ…å±±èŠæ’’é‡ï¼Œèµ°è‘—ç§ï¼");
 }
 
 void die(object killer)
@@ -214,7 +214,7 @@ void die(object killer)
                 return;
         }
 
-        if( time() < query_temp("end_time") ) // Ê±¼äÃ»ÓĞµ½£¬ËÀÍö²»ÁË
+        if( time() < query_temp("end_time") ) // æ™‚é–“æ²’æœ‰åˆ°ï¼Œæ­»äº¡ä¸äº†
         {
                 addn("jing", query("max_jing") / 10);
                 if( query("jing") > query("max_jing") ) set("jing", query("max_jing"));
@@ -224,18 +224,18 @@ void die(object killer)
                 if( query("qi") > query("max_qi") ) set("qi", query("max_qi"));
                 addn("eff_qi", query("max_qi") / 10);
                 if( query("eff_qi") > query("max_qi") ) set("eff_qi", query("max_qi"));
-                message_vision(HIR "\n$N" HIR "´óºÈÒ»Éù£¬ÔËÓÃÃØ·¨£¬ÆøÑªÓĞËù»ØÉı£¡\n\n" NOR, this_object());
+                message_vision(HIR "\n$N" HIR "å¤§å–ä¸€è²ï¼Œé‹ç”¨ç§˜æ³•ï¼Œæ°£è¡€æœ‰æ‰€å›å‡ï¼\n\n" NOR, this_object());
                 return;
         }
 
         if (! objectp(killer))
                 killer = query_last_damage_from();
 
-        // Õ½Ê¤½ğÂÖ»ñÈ¡Ğ¡ÁúÅ®ÏßË÷
+        // æˆ°å‹é‡‘è¼ªç²å–å°é¾å¥³ç·šç´¢
         if (query("can_perform/surge-force/quest/step", killer) == 2)
         {
-                tell_object(killer, HIM "\nÕıÔÚÕâÊ±£¬ÄãÊÕµ½Ñî¹ıÍĞÈË´øÀ´µÄ¿ÚĞÅ£ºÁú¶ùÒÑÓëÎÒ»áÃæ£¬µ«\n"
-                                    "ÉíÖĞÇé»¨¾ç¶¾£¬Çë¾¡¿ìÕÒµ½½â¶¾ÁéÒ©£¡\n\n" NOR);
+                tell_object(killer, HIM "\næ­£åœ¨é€™æ™‚ï¼Œä½ æ”¶åˆ°æ¥Šéæ‰˜äººå¸¶ä¾†çš„å£ä¿¡ï¼šé¾å…’å·²èˆ‡æˆ‘æœƒé¢ï¼Œä½†\n"
+                                    "èº«ä¸­æƒ…èŠ±åŠ‡æ¯’ï¼Œè«‹ç›¡å¿«æ‰¾åˆ°è§£æ¯’éˆè—¥ï¼\n\n" NOR);
                 set("can_perform/surge-force/quest/step", 3, killer);
                 killer->save();
         }
@@ -245,9 +245,9 @@ void die(object killer)
                 object dan;
                 dan = new("/clone/fam/quest/jueqing-dan");
 
-                message_vision(HIR "¶£~~Ò»Éù£¬´Ó$N" HIR "µô³öÒ»¿Å¾øÇéµ¤£¬$n" HIR
-                                   "¸Ï½ô¼ğÁËÆğÀ´¡£\n" NOR, this_object(), killer);
-                tell_object(killer, BLINK + HIG "ÄãµÃµ½ÁË" + dan->name() + BLINK + HIG "¡£\n" NOR);
+                message_vision(HIR "å®~~ä¸€è²ï¼Œå¾$N" HIR "æ‰å‡ºä¸€é¡†çµ•æƒ…ä¸¹ï¼Œ$n" HIR
+                                   "è¶•ç·Šæ€äº†èµ·ä¾†ã€‚\n" NOR, this_object(), killer);
+                tell_object(killer, BLINK + HIG "ä½ å¾—åˆ°äº†" + dan->name() + BLINK + HIG "ã€‚\n" NOR);
                 dan->move(killer, 1);
                 set("can_perform/surge-force/quest/jueqing-dan", 1, killer);
         }

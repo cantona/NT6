@@ -6,14 +6,14 @@ inherit NECK;
 
 void create()
 {
-   set_name(HIG"ôä´äÏîÁ´"NOR, ({ "necklace"}) );
+   set_name(HIG"ç¿¡ç¿ é …éˆ"NOR, ({ "necklace"}) );
    set_weight(1000);
    if( clonep() )
      set_default_object(__FILE__);
    else {
-     set("long","ÕâÊÇÒ»´®Ãû¹óµÄôä´äÏîÁ´¡£\n");
-     set("material", "ôä´ä");
-     set("unit", "´®");
+     set("long","é€™æ˜¯ä¸€ä¸²åè²´çš„ç¿¡ç¿ é …éˆã€‚\n");
+     set("material", "ç¿¡ç¿ ");
+     set("unit", "ä¸²");
      set("value", 1000);
      set("armor_prop/armor",10);
      set("armor_prop/dodge",2);

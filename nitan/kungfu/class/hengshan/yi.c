@@ -11,11 +11,11 @@ string ask_for_join();
 string ask_me();
 void create()
 {
-        set_name("¶¨ÒİÊ¦Ì«", ({ "dingyi shitai", "shitai", "dingyi" }) );
+        set_name("å®šé€¸å¸«å¤ª", ({ "dingyi shitai", "shitai", "dingyi" }) );
         set("long",
-        "ËıÊÇºãÉ½ÅÉµÄ¶¨ÒİÊ¦Ì«£¬ĞÔ¸ñ¸ÕÃÍ£¬ÎªÈËÕıÖ±£¬ÓĞ½íàş²»ÈÃĞëÃ¼Ö®·ç¡£\n"
-        "ËıÑÛÖĞ¾«¹âËÄÉä£¬¾øÎŞ°ëµãÀÏÌ¬¡£\n");
-        set("gender", "Å®ĞÔ");
+        "å¥¹æ˜¯æ†å±±æ´¾çš„å®šé€¸å¸«å¤ªï¼Œæ€§æ ¼å‰›çŒ›ï¼Œç‚ºäººæ­£ç›´ï¼Œæœ‰å·¾å¹—ä¸è®“é ˆçœ‰ä¹‹é¢¨ã€‚\n"
+        "å¥¹çœ¼ä¸­ç²¾å…‰å››å°„ï¼Œçµ•ç„¡åŠé»è€æ…‹ã€‚\n");
+        set("gender", "å¥³æ€§");
         set("class", "bonze");
         set("age", 45);
         set("attitude", "peaceful");
@@ -25,12 +25,12 @@ void create()
         set("dex", 30);
         set("int", 28);
         set("inquiry",([
-                "Ìê¶È"  : (: ask_for_join :),
-                "³ö¼Ò"  : (: ask_for_join :),
+                "å‰ƒåº¦"  : (: ask_for_join :),
+                "å‡ºå®¶"  : (: ask_for_join :),
                 "join"  : (: ask_for_join :),
-                "ÃØ¼®"  : (: ask_me :),
-                "ÊÖ·¨¾«Òª" : (: ask_me :),
-                "»¹Ë×"  : "ºãÉ½µÜ×Ó£¬²»ÄÜ»¹Ë×¡£",
+                "ç§˜ç±"  : (: ask_me :),
+                "æ‰‹æ³•ç²¾è¦" : (: ask_me :),
+                "é‚„ä¿—"  : "æ†å±±å¼Ÿå­ï¼Œä¸èƒ½é‚„ä¿—ã€‚",
         ]));
         set("env/wimpy", 60);
 
@@ -93,7 +93,7 @@ void create()
         map_skill("parry", "hengshan-jian");
         map_skill("dodge", "lingxu-bu");
 
-        create_family("ºãÉ½ÅÉ", 13, "µÜ×Ó");
+        create_family("æ†å±±æ´¾", 13, "å¼Ÿå­");
         setup();
 
         carry_object("/clone/weapon/changjian")->wield();
@@ -114,27 +114,27 @@ void attempt_apprentice(object ob)
 
         if( query("class", ob) != "bonze" )
         {
-                command ("say °¢ÃÖÍÓ·ğ£¡Æ¶Äá²»ÊÕË×¼ÒµÜ×Ó¡£");
+                command ("say é˜¿å½Œé™€ä½›ï¼è²§å°¼ä¸æ”¶ä¿—å®¶å¼Ÿå­ã€‚");
                 return;
         }
 
         if ((int)ob->query_skill("baiyun-xinfa",1) < 90 )
         {
-                command("say ÄãµÄ±¾ÃÅÄÚ¹¦ĞÄ·¨»ğºò²»×ã,ÄÑÒÔÁìÂÔ¸ü¸ßÉîµÄÎä¹¦¡£");
+                command("say ä½ çš„æœ¬é–€å…§åŠŸå¿ƒæ³•ç«å€™ä¸è¶³,é›£ä»¥é ˜ç•¥æ›´é«˜æ·±çš„æ­¦åŠŸã€‚");
                 return;
         }
         if( query("shen", ob)<100000 )
         {
-                command( "say ÄãÈôÄÜ¶àÎªÏÀÒåÖ®¾Ù£¬µ±ÄÜ³ĞÎÒÒÂ²§¡£\n");
+                command( "say ä½ è‹¥èƒ½å¤šç‚ºä¿ ç¾©ä¹‹èˆ‰ï¼Œç•¶èƒ½æ‰¿æˆ‘è¡£ç µã€‚\n");
                 return;
         }
 
-        command("say °¢ÃÖÍÓ·ğ£¬ÉÆÔÕ£¡ÉÆÔÕ£¡ºÃ°É£¬ÎÒ¾ÍÊÕÏÂÄãÁË¡£");
-        command("say Ï£ÍûÄãÄÜÅ¬Á¦ĞĞÉÆ£¬¼Ã¶ÈÖÚÉú£¬ÒÔ¹â´óÎÒºãÉ½ÅÉ¡£");
+        command("say é˜¿å½Œé™€ä½›ï¼Œå–„å“‰ï¼å–„å“‰ï¼å¥½å§ï¼Œæˆ‘å°±æ”¶ä¸‹ä½ äº†ã€‚");
+        command("say å¸Œæœ›ä½ èƒ½åŠªåŠ›è¡Œå–„ï¼Œæ¿Ÿåº¦çœ¾ç”Ÿï¼Œä»¥å…‰å¤§æˆ‘æ†å±±æ´¾ã€‚");
         command("recruit "+query("id", ob));
         name=query("name", ob);
-        new_name = "ÒÇ" + name[2..3];
-        command("say ´Ó½ñÒÔºóÄãµÄ·¨Ãû½Ğ×ö" + new_name + "¡£");
+        new_name = "å„€" + name[2..3];
+        command("say å¾ä»Šä»¥å¾Œä½ çš„æ³•åå«åš" + new_name + "ã€‚");
         set("name", new_name, ob);
 }
 
@@ -142,14 +142,14 @@ string ask_me()
 {
         object ob;
 
-        if( query("family/family_name", this_player()) != "ºãÉ½ÅÉ" )
+        if( query("family/family_name", this_player()) != "æ†å±±æ´¾" )
                 return RANK_D->query_respect(this_player()) +
-                "Óë±¾ÅÉºÁÎŞ¹Ï¸ğ£¬ÎÒÅÉµÄÎä¹¦µä¼®¿É²»ÄÜ½»¸øÄã¡£";
+                "èˆ‡æœ¬æ´¾æ¯«ç„¡ç“œè‘›ï¼Œæˆ‘æ´¾çš„æ­¦åŠŸå…¸ç±å¯ä¸èƒ½äº¤çµ¦ä½ ã€‚";
         if (query("book_count") < 1)
-                return "ÄãÀ´ÍíÁË£¬±¾ÅÉµÄÃØ¼®²»ÔÚ´Ë´¦¡£";
+                return "ä½ ä¾†æ™šäº†ï¼Œæœ¬æ´¾çš„ç§˜ç±ä¸åœ¨æ­¤è™•ã€‚";
         addn("book_count", -1);
         ob = new("/clone/book/basic_hand_book");
         ob->move(this_player());
-        command("rumor"+query("name", this_player())+"ÄÃµ½ÊÖ·¨¾«ÒªÀ²¡£\n");
-        return "ºÃ°É£¬Õâ±¾¡¸ÊÖ·¨¾«Òª¡¹ÄãÄÃ»ØÈ¥ºÃºÃ×êÑĞ¡£";
+        command("rumor"+query("name", this_player())+"æ‹¿åˆ°æ‰‹æ³•ç²¾è¦å•¦ã€‚\n");
+        return "å¥½å§ï¼Œé€™æœ¬ã€Œæ‰‹æ³•ç²¾è¦ã€ä½ æ‹¿å›å»å¥½å¥½é‘½ç ”ã€‚";
 }

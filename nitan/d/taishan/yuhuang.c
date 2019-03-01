@@ -1,21 +1,21 @@
 // Room: /d/taishan/yuhuang.c
 // Last Modified by Winder on Aug. 25 2001
-// Modified by Zeratul Jan 11 2001 ½­ºþÔÄÀúµÍÓÚ10000²»ÄÜ¼ûÃËÖ÷
+// Modified by Zeratul Jan 11 2001 æ±Ÿæ¹–é–±æ­·ä½ŽäºŽ10000ä¸èƒ½è¦‹ç›Ÿä¸»
 
 #include <ansi.h>;
 inherit ROOM;
 
 void create()
 {
-        set("short", "Óñ»ÊÃí");
+        set("short", "çŽ‰çš‡å»Ÿ");
         set("long", @LONG
-Óñ»ÊÃíÊÇ´¦ÔÚÌ©É½¾ø¶¥µÄÃí¹Û£¬¹Å³ÆÌ«Çå¹¬¡¢ÓñµÛ¹Û£¬ÓÉÉ½ÃÅ¡¢Óñ
-»Êµî¡¢¹ÛÈÕÍ¤¡¢ÍûºÓÍ¤¡¢¶«Î÷µÀ·¿×é³É¡£É½ÃÅ¶îÊé¡°ë·ÐÞÓñ»Ê¶¥¡±¡£Õý
-µîÄÚìëÃ÷´úÍ­ÖýÓñ»Ê´óµÛÏñ¡£ÉñíèÉÏØÒ¶î¡°²ñÍûÒÅ·ç¡±¡£Ô¶¹ÅµÛÍõ¶àÔÚ
-´ËìÜ²ñ¼ÀÌì£¬ÍûìëÉ½´¨ÖîÉñ¡£¹ÛÇ°Îª¹ÅµÇ·âÌ¨£¬Àú´ú»ÊµÛ·âìøµÄÒÇÊ½¶¼
-ÊÇÔÚÕâÀï¾ÙÐÐ¡£Ì¨ÏÂÓÐÒ»ÎÞ×Ö±®£¬¾ÝËµÊÇººÎäµÛËùÁ¢¡£
-¡¡¡¡¶«ÄÏÊ¯Æº¿í³¨£¬ÃûÆ½¶¥·å£¬ÉÏ½¨Ç¬À¤Í¤£¬ÉÏ¿Ì¡°¿××ÓÐ¡ÌìÏÂ´¦¡±¡£
-ÕýÖÐÍùÉÏ±ãÊÇÎäÁÖÃËÖ÷ËùÔÚÖ®´¦¡ª·âìøÌ¨¡£
+çŽ‰çš‡å»Ÿæ˜¯è™•åœ¨æ³°å±±çµ•é ‚çš„å»Ÿè§€ï¼Œå¤ç¨±å¤ªæ¸…å®®ã€çŽ‰å¸è§€ï¼Œç”±å±±é–€ã€çŽ‰
+çš‡æ®¿ã€è§€æ—¥äº­ã€æœ›æ²³äº­ã€æ±è¥¿é“æˆ¿çµ„æˆã€‚å±±é–€é¡æ›¸â€œæ••ä¿®çŽ‰çš‡é ‚â€ã€‚æ­£
+æ®¿å…§ç¥€æ˜Žä»£éŠ…é‘„çŽ‰çš‡å¤§å¸åƒã€‚ç¥žé¾•ä¸ŠåŒ¾é¡â€œæŸ´æœ›éºé¢¨â€ã€‚é å¤å¸çŽ‹å¤šåœ¨
+æ­¤ç‡”æŸ´ç¥­å¤©ï¼Œæœ›ç¥€å±±å·è«¸ç¥žã€‚è§€å‰ç‚ºå¤ç™»å°å°ï¼Œæ­·ä»£çš‡å¸å°ç¦ªçš„å„€å¼éƒ½
+æ˜¯åœ¨é€™è£¡èˆ‰è¡Œã€‚å°ä¸‹æœ‰ä¸€ç„¡å­—ç¢‘ï¼Œæ“šèªªæ˜¯æ¼¢æ­¦å¸æ‰€ç«‹ã€‚
+ã€€ã€€æ±å—çŸ³åªå¯¬æ•žï¼Œåå¹³é ‚å³°ï¼Œä¸Šå»ºä¹¾å¤äº­ï¼Œä¸Šåˆ»â€œå­”å­å°å¤©ä¸‹è™•â€ã€‚
+æ­£ä¸­å¾€ä¸Šä¾¿æ˜¯æ­¦æž—ç›Ÿä¸»æ‰€åœ¨ä¹‹è™•â”€å°ç¦ªå°ã€‚
 LONG );
         set("exits", ([
                 "southdown" : __DIR__"nantian",
@@ -55,23 +55,23 @@ int valid_leave(object me, string dir)
         if( dir == "up" )
         { 
                 if( userp(me) && query("score", me)<10000 )
-                        return notify_fail( "ÃËÖ÷ÊÇ²»»á¼ûÄãÕâÖÖÐ¡ÈËÎïµÄ£¬»¹ÊÇ»ØÈ¥°É¡£\n" );
+                        return notify_fail( "ç›Ÿä¸»æ˜¯ä¸æœƒè¦‹ä½ é€™ç¨®å°äººç‰©çš„ï¼Œé‚„æ˜¯å›žåŽ»å§ã€‚\n" );
                 if( present("jiang baisheng", environment(me)) &&
                         query("id", me) != mengzhu && 
                         query("id", me) != shangshan && 
                         query("id", me) != fae )
-                        return notify_fail("½­°ÙÊ¤ÉìÊÖÀ¹×¡ÄãËµµÀ£ºÃËÖ÷ºÜÃ¦£¬ÏÖÔÚ²»¼ûÍâ¿Í£¬ÄãÏÂÉ½È¥°É£¡\n");
+                        return notify_fail("æ±Ÿç™¾å‹ä¼¸æ‰‹æ””ä½ä½ èªªé“ï¼šç›Ÿä¸»å¾ˆå¿™ï¼Œç¾åœ¨ä¸è¦‹å¤–å®¢ï¼Œä½ ä¸‹å±±åŽ»å§ï¼\n");
                 else if( query("id", me) == mengzhu )
                 {
-                        message_vision(HIY "\n½­°ÙÊ¤³Ï»Ì³Ï¿ÖµÄÏò$N¹òµ¹¿ÄÍ·£¬´óÉùº°µÀ£ºÃËÖ÷ÍòËê£¬ÍòËê£¬ÍòÍòËê£¡\n" NOR, me);
+                        message_vision(HIY "\næ±Ÿç™¾å‹èª æƒ¶èª æçš„å‘$Nè·ªå€’ç£•é ­ï¼Œå¤§è²å–Šé“ï¼šç›Ÿä¸»è¬æ­²ï¼Œè¬æ­²ï¼Œè¬è¬æ­²ï¼\n" NOR, me);
                 }        
                 else if( query("id", me) == shangshan )
                 {
-                        message_vision(HIY "\n½­°ÙÊ¤±Ï¹§±Ï¾´µÄÏò$N°Ýµ¹º°µÀ£ºÉÍÉÆÊ¹ÕßÄúºÃ£¡ ÊôÏÂ½­°ÙÊ¤²Î¼û´óÈË£¡\n" NOR, me);
+                        message_vision(HIY "\næ±Ÿç™¾å‹ç•¢æ­ç•¢æ•¬çš„å‘$Næ‹œå€’å–Šé“ï¼šè³žå–„ä½¿è€…æ‚¨å¥½ï¼ å±¬ä¸‹æ±Ÿç™¾å‹åƒè¦‹å¤§äººï¼\n" NOR, me);
                 }        
                 else if( query("id", me) == fae )
                 {
-                        message_vision(HIY "\n½­°ÙÊ¤±Ï¹§±Ï¾´µÄÏò$N°Ýµ¹º°µÀ£º·£¶ñÊ¹ÕßÄúºÃ£¡ ÊôÏÂ½­°ÙÊ¤²Î¼û´óÈË£¡\n" NOR, me);
+                        message_vision(HIY "\næ±Ÿç™¾å‹ç•¢æ­ç•¢æ•¬çš„å‘$Næ‹œå€’å–Šé“ï¼šç½°æƒ¡ä½¿è€…æ‚¨å¥½ï¼ å±¬ä¸‹æ±Ÿç™¾å‹åƒè¦‹å¤§äººï¼\n" NOR, me);
                 }        
         }
 

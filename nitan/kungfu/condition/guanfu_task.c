@@ -10,7 +10,7 @@ int update_condition(object me, int duration)
 
         if (duration < 1) {
                 me->clear_condition("guanfu_task");
-                tell_object(me, HIY"Ô¶´¦´«À´ÈýÉùÏì¼ý£¬Ä¿±êËÆºõ½«ÒªÀë¿ªÖÐÔ­Ò»´ø£¬ÄãÈÎÎñÊ§°Ü¡£\n" NOR);
+                tell_object(me, HIY"é è™•å‚³ä¾†ä¸‰è²éŸ¿ç®­ï¼Œç›®æ¨™ä¼¼ä¹Žå°‡è¦é›¢é–‹ä¸­åŽŸä¸€å¸¶ï¼Œä½ ä»»å‹™å¤±æ•—ã€‚\n" NOR);
                 delete_temp("guanfu_target", me);
                 delete_temp("guanfu_time", me);
                 delete_temp("guanfu_target", me);
@@ -24,7 +24,7 @@ int update_condition(object me, int duration)
                 if(objectp(wenshu = present("wenshu", me)))
                 {
                         destruct(wenshu);
-                        tell_object(me, HIY"ÄãÊÖÒ»¶¶£¬Ò»ÕÅº£²¶ÎÄÊéÆ®µ½µØÉÏ£¬±»·ç´ø×ßÁË¡£\n" NOR);
+                        tell_object(me, HIY"ä½ æ‰‹ä¸€æŠ–ï¼Œä¸€å¼µæµ·æ•æ–‡æ›¸é£„åˆ°åœ°ä¸Šï¼Œè¢«é¢¨å¸¶èµ°äº†ã€‚\n" NOR);
                 }
                 return 0;
         }

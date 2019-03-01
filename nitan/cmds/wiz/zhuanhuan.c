@@ -16,7 +16,7 @@ int main(object me, string arg)
                 return 0;
 
         if( !arg || sscanf(arg, "%s to %s", srcfile, dstfile)!=2 )
-                return notify_fail("Ö¸Áî¸ñÊ½£ºaconvert <Ô­ÎÄ¼ş> to <Ä¿±êÎÄ¼ş>\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šaconvert <åŸæ–‡ä»¶> to <ç›®æ¨™æ–‡ä»¶>\n");
         seteuid(geteuid(me));
         srcfile=resolve_path(query("cwd", me),srcfile);
         dstfile=resolve_path(query("cwd", me),dstfile);
@@ -27,10 +27,10 @@ int main(object me, string arg)
         }
 
         if (file_size(dstfile)!=-1)
-                return notify_fail("Ä¿±êÎÄ¼ş£º"+dstfile+" ÒÑ¾­´æÔÚ£¬Äã²»ÄÜ¸²¸ÇËü£¡\n");
+                return notify_fail("ç›®æ¨™æ–‡ä»¶ï¼š"+dstfile+" å·²ç¶“å­˜åœ¨ï¼Œä½ ä¸èƒ½è¦†è“‹å®ƒï¼\n");
 
         if (file_size(srcfile)==-1)
-                return notify_fail("Ô­ÎÄ¼ş£º"+srcfile+" ²»´æÔÚ£¡\n");
+                return notify_fail("åŸæ–‡ä»¶ï¼š"+srcfile+" ä¸å­˜åœ¨ï¼\n");
 
         field = explode(read_file(srcfile), "\n");
 
@@ -38,9 +38,9 @@ int main(object me, string arg)
                 field[i] = replace_color(field[i], 1);
                 field[i] = field[i] + "\n";
                 if( !write_file(dstfile, field[i], 0) )
-                        return notify_fail("Ğ´ÎÄ¼ş "+dstfile+" Ê§°Ü£¡Çë¼ì²éÄúµÄÈ¨ÏŞ¡£\n");
+                        return notify_fail("å¯«æ–‡ä»¶ "+dstfile+" å¤±æ•—ï¼è«‹æª¢æŸ¥æ‚¨çš„æ¬Šé™ã€‚\n");
         }
-        write("convert file£º"+srcfile+" to "+dstfile+"\n",me);
+        write("convert fileï¼š"+srcfile+" to "+dstfile+"\n",me);
         return 1;
 }
 
@@ -89,9 +89,9 @@ string replace_color(string arg,int flag)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : zhuanhuan <Ô­ÎÄ¼ş> to <Ä¿±êÎÄ¼ş>
+æŒ‡ä»¤æ ¼å¼ : zhuanhuan <åŸæ–‡ä»¶> to <ç›®æ¨™æ–‡ä»¶>
 
-    ÓÃÍ¾ : ×ª»»ÎÄ±¾ÎÄ¼şÀïµÄansiÑÕÉ«´úÂë¡£
+    ç”¨é€” : è½‰æ›æ–‡æœ¬æ–‡ä»¶è£¡çš„ansié¡è‰²ä»£ç¢¼ã€‚
 HELP
         );
         return 1;

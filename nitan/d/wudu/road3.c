@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�������");
+        set("short", "黃土大道");
         set("long", @LONG
-����һ�����ϵĻ��������Զ����Լ����һƬ���̵�ɽ�͡�·��
-������ϡ����������·Խ��Խխ����Щ�ط���������һƬƬ���Ӳݡ�
-�����ƺ���һ����·��
+這是一條向南的黃土大道，遠處隱約看見一片翠綠的山巒。路上
+行人逐漸稀少起來，大路越走越窄，有些地方竟長出了一片片的雜草。
+東邊似乎有一條岔路。
 LONG);
         set("outdoors", "wudujiao");
 

@@ -4,15 +4,15 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÑÃÃÅºóÔº");
+        set("short", "è¡™é–€å¾Œé™¢");
         set("long", @LONG
-ÕâÀïÊÇÑÃÃÅµÄºóÔº£¬´òÉ¨µÃ·Ç³£¸É¾»£¬ËÄÖÜÊÇ¹ıÈËµÄÎ§Ç½£¬Ôº×Ó
-ÀïÖÖÁË²»ÉÙµÄ¸÷ÖÖÆæ»¨Òì²İ£¬ÓÈÒÔ¸÷É«¾Õ»¨Îª¶à¡£ÔºÎ÷ÊÇÑ¾÷ßµÄ·¿¼ä£¬
-¶«²àÓĞÒ»ÉÈÃÅ(men)¡£
+é€™è£¡æ˜¯è¡™é–€çš„å¾Œé™¢ï¼Œæ‰“æƒå¾—éå¸¸å¹¹å‡ˆï¼Œå››å‘¨æ˜¯éäººçš„åœç‰†ï¼Œé™¢å­
+è£¡ç¨®äº†ä¸å°‘çš„å„ç¨®å¥‡èŠ±ç•°è‰ï¼Œå°¤ä»¥å„è‰²èŠèŠ±ç‚ºå¤šã€‚é™¢è¥¿æ˜¯ä¸«é¬Ÿçš„æˆ¿é–“ï¼Œ
+æ±å´æœ‰ä¸€æ‰‡é–€(men)ã€‚
 LONG );
         set("region", "jingzhou");
         set("item_desc", ([
-                "men" : "ÕâÉÈÃÅºó±ãÊÇÁèĞ¡½ãµÄ¹ë·¿¡£\n",
+                "men" : "é€™æ‰‡é–€å¾Œä¾¿æ˜¯å‡Œå°å§çš„é–¨æˆ¿ã€‚\n",
         ]));
 
         set("exits", ([ /* sizeof() == 2 */
@@ -46,13 +46,13 @@ int do_unlock(string arg)
 {
         object ob;
         if (query("exits/east"))
-                return notify_fail("ÕâÉÈÃÅÒÑ¾­ÊÇ´ò¿ªµÄ¡£\n");
+                return notify_fail("é€™æ‰‡é–€å·²ç¶“æ˜¯æ‰“é–‹çš„ã€‚\n");
         if (!arg || (arg != "men" && arg != "east"))
-                return notify_fail("ÄãÒª´ò¿ªÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦æ‰“é–‹ä»€éº¼ï¼Ÿ\n");
         if (!(ob = present("guifang key", this_player())))
-                return notify_fail("Äã²»»áÇËËø¡£\n");
+                return notify_fail("ä½ ä¸æœƒæ’¬é–ã€‚\n");
         set("exits/east", __DIR__"dongxiang");
-        message_vision("$NÓÃÒ»°ÑÔ¿³×´ò¿ª·¿ÃÅ£¬¿ÉÊÇÔ¿³×È´¶ÏÁË¡£\n", this_player());
+        message_vision("$Nç”¨ä¸€æŠŠé‘°åŒ™æ‰“é–‹æˆ¿é–€ï¼Œå¯æ˜¯é‘°åŒ™å»æ–·äº†ã€‚\n", this_player());
         destruct(ob);
         return 1;
 }
@@ -61,6 +61,6 @@ int valid_leave(object me, string dir)
 {
         if (!wizardp(me) && objectp(present("guan jia", environment(me))) &&
                 (dir == "west" || dir =="east"))
-                return notify_fail("¹Ü¼Òµ²×¡ÁËÄã£ºÇëÎğÈëÄÚÕ¬¡£\n");
+                return notify_fail("ç®¡å®¶æ“‹ä½äº†ä½ ï¼šè«‹å‹¿å…¥å…§å®…ã€‚\n");
         return ::valid_leave(me, dir);
 }

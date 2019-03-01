@@ -1,4 +1,4 @@
-// tianchang-zhangpu.c Ìì³¤ÕÆ·¨Æ×
+// tianchang-zhangpu.c å¤©é•·æŒæ³•è­œ
 // By sir 5/20/2001
 
 #include <ansi.h>
@@ -7,20 +7,20 @@ inherit F_UNIQUE;
 
 void create()
 {
-        set_name(HIW"Ìì³¤ÕÆ·¨Æ×" NOR, ({ "tianchang zhangpu","zhangpu", }));
+        set_name(HIW"å¤©é•·æŒæ³•è­œ" NOR, ({ "tianchang zhangpu","zhangpu", }));
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-             set("unit", "±¾");
+             set("unit", "æœ¬");
              set("long",
-        "ÕâÊÇÒ»±¾ºÜÆÆ¾ÉµÄĞ¡²á£¬ÉÏÃæºÃÏó»¹ÓĞÒ»Ğ©Ğ¡ÈË»ÓÎèÈ­½ÅµÄÍ¼ĞÎ¡£\n",
+        "é€™æ˜¯ä¸€æœ¬å¾ˆç ´èˆŠçš„å°å†Šï¼Œä¸Šé¢å¥½è±¡é‚„æœ‰ä¸€äº›å°äººæ®èˆæ‹³è…³çš„åœ–å½¢ã€‚\n",
          );
          set("value", 0);
          set("material", "paper");
          set("skill", ([
                         "name":       "tianchang-zhang",
-                        "family_name" : "¹ØÍâºú¼Ò", 
+                        "family_name" : "é—œå¤–èƒ¡å®¶", 
                         "exp_required" : 10000,
                         "jing_cost":  30,
                         "difficulty": 20,

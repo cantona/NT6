@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��ʯ��");
+        set("short", "青石道");
         set("long", @LONG
-����ͨ������ɽ�Ͼ���ͤ����ʯС����С�����߲������࣬������
-�ˣ����Ǹ��������ڡ���ɽ�£���ͥ��ˮ��ӵ��ɽ�����һƬ����ɫ��
-�����ˡ�
+這是通往酒香山上酒香亭的青石小道。小道兩邊茶樹連綿，竹響隨
+人，真是個清幽所在。望山下，洞庭湖水簇擁君山，青碧一片，景色甚
+是怡人。
 LONG );
         set("outdoors", "dongting");
         set("no_clean_up", 0);

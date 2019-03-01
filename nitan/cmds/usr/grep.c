@@ -15,18 +15,18 @@ string resolvePath(string path,int op)
         string *dn;
         string tmp;
         int i;
-        if(path=="/")//¶ÔÕâ¸öÇé¿öÌØÊâ´¦Àí
+        if(path=="/")//å°é€™å€‹æƒ…æ³ç‰¹æ®Šè™•ç†
                 return (op)?"/":"*";
         dn=explode(path,"/");
-        if(op)//opÎª·Ç0±íÊ¾ĞèÒª·µ»ØÂ·¾¶
+        if(op)//opç‚ºé0è¡¨ç¤ºéœ€è¦è¿”å›è·¯å¾‘
         {
                 //dn=dn-({dn[sizeof(dn)-1]});
                 //tmp=implode(dn,"/")+"/";
-                //ÉÏÃæµÄ³ÌĞò²»ºÃ£¬²»ÄÜ¶ÔÍ¬ÃûÂ·¾¶ÕıÈ·´¦Àí£¬±ÈÈç²»ÄÜÔÚ/log/logÎÄ¼şÀïËÑË÷
+                //ä¸Šé¢çš„ç¨‹åºä¸å¥½ï¼Œä¸èƒ½å°åŒåè·¯å¾‘æ­£ç¢ºè™•ç†ï¼Œæ¯”å¦‚ä¸èƒ½åœ¨/log/logæ–‡ä»¶è£¡æœç´¢
                 tmp="/";
                 for(i=0;i<sizeof(dn)-1;i++)
                 {
-                        //write("ºÏ²¢"+dn[i]+"\n");
+                        //write("åˆä¸¦"+dn[i]+"\n");
                         tmp+=dn[i]+"/";
                 }
                 return tmp;
@@ -45,7 +45,7 @@ int main(object me, string arg)
         if (!arg) return help();
         
         if( !wizardp(me) && time()-query_temp("last_grep", me)<30 )
-                return notify_fail("ÏµÍ³Æø´­ĞêµØÌ¾µÀ£ºÂıÂıÀ´ ....\n");   
+                return notify_fail("ç³»çµ±æ°£å–˜å™“åœ°å˜†é“ï¼šæ…¢æ…¢ä¾† ....\n");   
 
         if (sscanf(arg,"%s %s",path,pattern)!=2)
                     return help();
@@ -57,27 +57,27 @@ int main(object me, string arg)
         
         if (path == "news" || path == "all")
         {
-                write("ÕıÔÚĞÂÎÅÏµÍ³ÖĞËÑË÷£¬ÇëÉÔºó ¡­¡­\n");
+                write("æ­£åœ¨æ–°èç³»çµ±ä¸­æœç´¢ï¼Œè«‹ç¨å¾Œ â€¦â€¦\n");
                 NEWS_D->do_search(me, "document " + pattern);
                 if (path == "news")
                 {
-                        write("Îª½ÚÔ¼ÏµÍ³×ÊÔ´£¬ÔÚ30ÃëÄÚÖ»ÄÜ½øĞĞËÑË÷Ò»´Î¡£\n");
+                        write("ç‚ºç¯€ç´„ç³»çµ±è³‡æºï¼Œåœ¨30ç§’å…§åªèƒ½é€²è¡Œæœç´¢ä¸€æ¬¡ã€‚\n");
                         return 1;
                 }
                 write("\n\n");
         }
 
-            level=1;//´ø-d²ÎÊıÄ¬ÈÏ¼¶±ğÎªËùÓĞ¼¶        
+            level=1;//å¸¶-dåƒæ•¸é»˜èªç´šåˆ¥ç‚ºæ‰€æœ‰ç´š        
         path="/help";
-        result="ÒÔÏÂhelp°ïÖúÖĞ°üº¬ÄãËùÒªËÑË÷µÄÄÚÈİ£º\n";
+        result="ä»¥ä¸‹helpå¹«åŠ©ä¸­åŒ…å«ä½ æ‰€è¦æœç´¢çš„å…§å®¹ï¼š\n";
         
-        write("ÕıÔÚ°ïÖúÏµÍ³ÖĞËÑË÷£¬ÇëÉÔºó ¡­¡­\n");
+        write("æ­£åœ¨å¹«åŠ©ç³»çµ±ä¸­æœç´¢ï¼Œè«‹ç¨å¾Œ â€¦â€¦\n");
         wild=resolvePath(path,0);
         path=resolvePath(path,1);
 
         do_grep(path,wild,level);
         write(result+"\n");
-        write("Îª½ÚÔ¼ÏµÍ³×ÊÔ´£¬ÔÚ30ÃëÄÚÖ»ÄÜ½øĞĞËÑË÷Ò»´Î¡£\n");
+        write("ç‚ºç¯€ç´„ç³»çµ±è³‡æºï¼Œåœ¨30ç§’å…§åªèƒ½é€²è¡Œæœç´¢ä¸€æ¬¡ã€‚\n");
         return 1;
 }
 
@@ -85,12 +85,12 @@ int do_grep(string path,string wild,int level)
 {
         //int i;string *fs;
         string sbuffer,file;
-        reset_eval_cost();//ÖØĞÂÉèÖÃÊ£ÓàÖ´ĞĞÊ±¼ä£¬±ØĞëÉèÖÃ£¡
+        reset_eval_cost();//é‡æ–°è¨­ç½®å‰©ä½™åŸ·è¡Œæ™‚é–“ï¼Œå¿…é ˆè¨­ç½®ï¼
         if( query("env/debug", this_player()) )
-                write("¿ªÊ¼ËÑË÷"+path+wild+"\n");
+                write("é–‹å§‹æœç´¢"+path+wild+"\n");
         if(level<0)
         {
-                //write("¼¶±ğÏŞÖÆ£¬²»ÄÜÔÙ½øÈëËÑË÷¡£\n");
+                //write("ç´šåˆ¥é™åˆ¶ï¼Œä¸èƒ½å†é€²å…¥æœç´¢ã€‚\n");
                 return 0;
         }
         //for(i=0;i<(sizeof(fs=get_dir(path+wild))-1);i++)
@@ -98,30 +98,30 @@ int do_grep(string path,string wild,int level)
         
         foreach(file in get_dir(path+wild))
         {
-                //write("¼ì²é£º"+path+file+"\n");
-                //write("file_size·µ»Ø£º"+file_size(path+file)+"\n");
+                //write("æª¢æŸ¥ï¼š"+path+file+"\n");
+                //write("file_sizeè¿”å›ï¼š"+file_size(path+file)+"\n");
                 if(file=="."||file=="..")
                         continue;
                 
                 switch(file_size(path+file))
                 {
                         case -1:
-                                //ÎŞ·¨¶ÁÈ¡¸ÃÄ¿Â¼£¬Ìø¹ı
+                                //ç„¡æ³•è®€å–è©²ç›®éŒ„ï¼Œè·³é
                                 break;
                         case -2:
                                 if(file!="."&&file!="..")
                                         do_grep(path+file+"/","*",level-1);
                                 break;
                         default:
-                                //write("¼ì²éÎÄ¼ş£º"+path+file+"\n");
+                                //write("æª¢æŸ¥æ–‡ä»¶ï¼š"+path+file+"\n");
                                 if(!sbuffer=read_file(path+file))
-                                //¶ÔÌ«´óµÄÎÄ¼ş¶ÁÈ¡¿ÉÄÜÒªÊ§°Ü£¡¶øÇÒ²»ÄÜÊÔÍ¼¶ÁÈ¡¶ş½øÖÆÎÄ¼ş£¬ÒòÎªº¬ÓĞ\0!
+                                //å°å¤ªå¤§çš„æ–‡ä»¶è®€å–å¯èƒ½è¦å¤±æ•—ï¼è€Œä¸”ä¸èƒ½è©¦åœ–è®€å–äºŒé€²åˆ¶æ–‡ä»¶ï¼Œå› ç‚ºå«æœ‰\0!
                                 {
-                                        write("¶ÁÎÄ¼ş"+path+file+"³ö´í£¡\n");
+                                        write("è®€æ–‡ä»¶"+path+file+"å‡ºéŒ¯ï¼\n");
                                         return 0;
                                 }
                                 if(strsrch(sbuffer,pattern)!=-1)
-                                        result=result+file + "\n";//Ó¦¸ÃÊÇ¼ÇÂ¼ÏÂÀ´£¬×îºóÔÙÊä³ö 
+                                        result=result+file + "\n";//æ‡‰è©²æ˜¯è¨˜éŒ„ä¸‹ä¾†ï¼Œæœ€å¾Œå†è¼¸å‡º 
                         /*
                                 if(strsrch(read_file(path+file),pattern)!=-1)
                                         write(path+file+"\n");
@@ -136,17 +136,17 @@ int do_grep(string path,string wild,int level)
 int help()
 {
         write(@HELP
-Ö¸Áî¸ñÊ½£ºgrep <help/news/all> ²éÕÒÄÚÈİ
+æŒ‡ä»¤æ ¼å¼ï¼šgrep <help/news/all> æŸ¥æ‰¾å…§å®¹
 
-¸ÃÖ¸Áî¹¦ÄÜÏàµ±Ç¿´ó£¬ÓÃÓÚÔÚÏàÓ¦µØ·½»òÈ«¾ÖËÑË÷Ö¸¶¨²éÕÒµÄÄÚÈİ¡£
+è©²æŒ‡ä»¤åŠŸèƒ½ç›¸ç•¶å¼·å¤§ï¼Œç”¨äºåœ¨ç›¸æ‡‰åœ°æ–¹æˆ–å…¨å±€æœç´¢æŒ‡å®šæŸ¥æ‰¾çš„å…§å®¹ã€‚
 
-help:   ÔÚËùÓĞhelpÎÄ¼şÖĞËÑË÷¡£
-news:   ÔÚËùÓĞµÄĞÂÎÅÖĞËÑË÷¡£
-all:    ÔÚËùÓĞhelpÎÄ¼şºÍĞÂÎÅÖĞËÑË÷¡£
+help:   åœ¨æ‰€æœ‰helpæ–‡ä»¶ä¸­æœç´¢ã€‚
+news:   åœ¨æ‰€æœ‰çš„æ–°èä¸­æœç´¢ã€‚
+all:    åœ¨æ‰€æœ‰helpæ–‡ä»¶å’Œæ–°èä¸­æœç´¢ã€‚
 ex:
-        grep help »ªÉ½ÅÉ
+        grep help è¯å±±æ´¾
 ps:
-        ÔÚËùÓĞµÄhelpÎÄ¼şÖĞ²éÕÒ°üº¬×Ö·û´®¡°»ªÉ½ÅÉ¡±µÄÏà¹ØÎÄ¼ş¡£
+        åœ¨æ‰€æœ‰çš„helpæ–‡ä»¶ä¸­æŸ¥æ‰¾åŒ…å«å­—ç¬¦ä¸²â€œè¯å±±æ´¾â€çš„ç›¸é—œæ–‡ä»¶ã€‚
 
 HELP
     );

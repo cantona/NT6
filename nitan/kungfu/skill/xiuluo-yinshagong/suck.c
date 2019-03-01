@@ -22,32 +22,32 @@ int exert(object me, object target)
         }
 
         if (! target)
-                return notify_fail("ÄãÒªÈ¡ÄÄÖ»³æµÄ¶¾ÒºÁ·Ò©£¿\n");
+                return notify_fail("ä½ è¦å–å“ªåªèŸ²çš„æ¯’æ¶²ç·´è—¥ï¼Ÿ\n");
 
         if (! target->is_worm())
-                return notify_fail("¿´Çå³şĞ©£¬ÄÇ¿É²»ÊÇ¶¾³æ¡£\n");
+                return notify_fail("çœ‹æ¸…æ¥šäº›ï¼Œé‚£å¯ä¸æ˜¯æ¯’èŸ²ã€‚\n");
 
         if (living(target))
-                return notify_fail("ÄÇÖ»³æ»¹¾«Éñ×ÅÄØ£¬ÄãÕÒËÀ°¡¡£\n");
+                return notify_fail("é‚£åªèŸ²é‚„ç²¾ç¥è‘—å‘¢ï¼Œä½ æ‰¾æ­»å•Šã€‚\n");
 
         if ((int)me->query_skill("wudu-qishu", 1) < 100)
-                return notify_fail("ÄãµÄÎå¶¾ÆæÊõ²»¹»æµÊì£¬²»ÄÜÁ¶ÖÆ¶¾Ò©¡£\n");
+                return notify_fail("ä½ çš„äº”æ¯’å¥‡è¡“ä¸å¤ å«»ç†Ÿï¼Œä¸èƒ½ç…‰åˆ¶æ¯’è—¥ã€‚\n");
 
         if ((int)me->query_skill("xiuluo-yinshagong", 1) < 100)
-                return notify_fail("ÄãĞŞÂŞÒõÉ·¹¦ĞŞÎª²»¹»£¬²»ÄÜÁ¶ÖÆ¶¾Ò©¡£\n");
+                return notify_fail("ä½ ä¿®ç¾…é™°ç…åŠŸä¿®ç‚ºä¸å¤ ï¼Œä¸èƒ½ç…‰åˆ¶æ¯’è—¥ã€‚\n");
 
         if( query("neili", me)<200 )
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦²»×ã£¬ÄÑÒÔÁ¶ÖÆ¶¾Ò©¡£\n");
+                return notify_fail("ä½ ç¾åœ¨å…§åŠ›ä¸è¶³ï¼Œé›£ä»¥ç…‰åˆ¶æ¯’è—¥ã€‚\n");
 
         addn("neili", -50, me);
         me->start_busy(random(3));
 
-        msg = HIR "\n$N" HIR "Éì³öÊ³Ö¸£¬µãÔÚ" + target->name() +
-              HIR "¸¹²¿£¬Ä¬ÔËÄÚÁ¦ÆÈ³ö¶¾ÒºÁ·Ò©¡£\n" NOR;
+        msg = HIR "\n$N" HIR "ä¼¸å‡ºé£ŸæŒ‡ï¼Œé»åœ¨" + target->name() +
+              HIR "è…¹éƒ¨ï¼Œé»˜é‹å…§åŠ›è¿«å‡ºæ¯’æ¶²ç·´è—¥ã€‚\n" NOR;
 
         p=query("worm_poison", target);
         if (! mapp(p))
-                return notify_fail("¿´À´ÄãÊÇÅª²»³öÊ²Ã´¶¾ÒºÀ´ÁË¡£\n" NOR);
+                return notify_fail("çœ‹ä¾†ä½ æ˜¯å¼„ä¸å‡ºä»€éº¼æ¯’æ¶²ä¾†äº†ã€‚\n" NOR);
 
         lvl = (int)me->query_skill("poison", 1) / 3 +
               (int)me->query_skill("wudu-qishu", 1) / 3 +
@@ -63,24 +63,24 @@ int exert(object me, object target)
 
         if (! amount)
         {
-                msg += WHT "$N" WHT "¼·ÁË°ëÌì£¬½á¹ûÉ¶Ò²Ã»ÓĞ¼·³öÀ´£¬ËãÊÇ"
-                       "°×Ã¦»îÁË¡£\n\n" NOR;
+                msg += WHT "$N" WHT "æ“ äº†åŠå¤©ï¼Œçµæœå•¥ä¹Ÿæ²’æœ‰æ“ å‡ºä¾†ï¼Œç®—æ˜¯"
+                       "ç™½å¿™æ´»äº†ã€‚\n\n" NOR;
                 message_vision(msg, me);
                 return 1;
         }
 
         if (amount < lvl)
         {
-                msg += WHT "$N" WHT "¼·ÁËÒ»µã¶¾Òº³öÀ´¡£\n" NOR;
+                msg += WHT "$N" WHT "æ“ äº†ä¸€é»æ¯’æ¶²å‡ºä¾†ã€‚\n" NOR;
                 message_vision(msg, me);
-                tell_object(me, HIY "¿ÉÏ§Õâµã¶¾ÒºÁ¬Á¶Ò»¿Å¶¾Ò©¶¼²»¹»¡£\n\n" NOR);
+                tell_object(me, HIY "å¯æƒœé€™é»æ¯’æ¶²é€£ç…‰ä¸€é¡†æ¯’è—¥éƒ½ä¸å¤ ã€‚\n\n" NOR);
                 return 1;
         }
 
-        msg += HIW "$N" HIW "½«" + target->name() + HIW "µÄ¶¾Òº±Æ³ö£¬ÔÚ"
-               "ÄÚÁ¦µÄ×÷ÓÃÏÂ»¯³ÉÁËÒ»¿Å¾§Ó¨ÌŞÍ¸µÄÒ©Íè¡£\n" NOR;
+        msg += HIW "$N" HIW "å°‡" + target->name() + HIW "çš„æ¯’æ¶²é€¼å‡ºï¼Œåœ¨"
+               "å…§åŠ›çš„ä½œç”¨ä¸‹åŒ–æˆäº†ä¸€é¡†æ™¶ç‘©å‰”é€çš„è—¥ä¸¸ã€‚\n" NOR;
         message_vision(msg, me);
-        tell_object(me, HIC "ÄãÁ¶ÖÆÁËÒ»¿Å³æ¶¾Ò©Íè¡£\n\n" NOR);
+        tell_object(me, HIC "ä½ ç…‰åˆ¶äº†ä¸€é¡†èŸ²æ¯’è—¥ä¸¸ã€‚\n\n" NOR);
 
         exp = lvl / 4;
         me->improve_skill("poison", 2 + random(exp));
@@ -94,7 +94,7 @@ int exert(object me, object target)
         ob->set("poison",([
                 "level" : lvl,
                 "id":query("id", me),
-                "name"  : "³æ¶¾",
+                "name"  : "èŸ²æ¯’",
                 "duration" : 10,
         ]));
         ob->move(me, 1);

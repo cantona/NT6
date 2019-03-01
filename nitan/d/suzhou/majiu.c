@@ -6,12 +6,12 @@ inherit TRANS_ROOM;
 
 void create()
 {
-        set("short","����");
+        set("short","馬廄");
         set("long",@LONG
-���Ǳ���ֵ����ǣ����깩Ӧ���ʲ��ϡ�������紾�ӣ������ǻ�
-����ǣ�����Ǻ����տ���������ι�����㣬��ϴˢ�ø�Ǭ������һֱ��
-�򵽿�����·�����������µ���ľ���϶���һ����ľ��(paizi)��
-    �����жѷ������Ѳ��ϣ�������һ����ۡ�
+這是北大街的馬廄，常年供應新鮮草料。蘇州民風淳樸，馬夫們會
+把馬牽到馬廄好生照看，將它們喂飽飲足，再洗刷得幹乾凈凈，一直伺
+候到客人上路。馬廄雨檐下的爛木柱上釘著一塊破木牌(paizi)。
+    馬廄中堆放著幾堆草料，正中有一口泔槽。
 LONG);
         set("outdoors", "suzhou");
         set("no_fight", "1");
@@ -25,9 +25,9 @@ LONG);
         ]));
         set("item_desc", ([
                 "paizi": @TEXT
-������ֻҪ������һ�����������Ϳ��Թ͵�һƥ���ˡ�
+客人們只要給馬夫一兩白銀的租金就可以雇到一匹馬了。
 
-ǰ��      ���ݳ�:  rideyz
+前往      揚州城:  rideyz
 
 TEXT]));
         set("exits",([ /* sizeof() == 1 */

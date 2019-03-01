@@ -3,11 +3,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "������");
+        set("short", "百曲湖");
         set("long", @LONG
-����һ��֧���ڶ��С�ӣ����涼����Ҷ�����˽�������Ҷ�봬
-�������ɳɳ����������һƬ�ž���������磬���ŵ����Ļ��㣬��
-�������룺  "��������һ���ӣ�Ҳ���ۣ�"
+這是一個支流眾多的小河，四面都是菱葉。除了槳聲和菱葉與船
+身相擦的沙沙輕聲，四下一片寂靜，湖上清風，夾著淡淡的花香，你
+不禁心想：  "就算這樣一輩子，也好哇！"
 LONG );
         set("outdoors", "yanziwu");
         set("objects",([

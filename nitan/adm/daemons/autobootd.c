@@ -26,7 +26,7 @@ void create()
 
         seteuid(ROOT_UID);
 
-        CHANNEL_D->channel_broadcast("sys", "×Ô¶¯ÖØÆğÏµÍ³ÒÑ¾­Æô¶¯¡£\n");
+        CHANNEL_D->channel_broadcast("sys", "è‡ªå‹•é‡èµ·ç³»çµ±å·²ç¶“å•Ÿå‹•ã€‚\n");
 
 #ifdef REBOOT_TIME
         local = localtime(time());
@@ -48,8 +48,8 @@ void reboot_mud()
         last = query_time();
 
         if (last > 0 && last < 10)
-                message_system(LOCAL_MUD_NAME() + "½«ÔÚ" +
-                               chinese_number(last) + "·ÖÖÓÒÔºóÖØĞÂÆô¶¯£¬Çë×¥½ôÊ±¼ä´¦ÀíÄãµÄÈËÎï¡£");
+                message_system(LOCAL_MUD_NAME() + "å°‡åœ¨" +
+                               chinese_number(last) + "åˆ†é˜ä»¥å¾Œé‡æ–°å•Ÿå‹•ï¼Œè«‹æŠ“ç·Šæ™‚é–“è™•ç†ä½ çš„äººç‰©ã€‚");
 
         if (last > 0)
         {
@@ -61,9 +61,9 @@ void reboot_mud()
         // do reboot_mud
         seteuid(getuid());
 
-        message_system("ÓÎÏ·ÖØĞÂÆô¶¯£¬ÇëÉÔºòÒ»·ÖÖÓÔÙ login ¡£\n");
+        message_system("éŠæˆ²é‡æ–°å•Ÿå‹•ï¼Œè«‹ç¨å€™ä¸€åˆ†é˜å† login ã€‚\n");
 
-        // ±£´æËùÓĞµÄÊØ»¤½ø³ÌµÄÊı¾İ
+        // ä¿å­˜æ‰€æœ‰çš„å®ˆè­·é€²ç¨‹çš„æ•¸æ“š
         reset_eval_cost();
         if (find_object(DNS_MASTER)) DNS_MASTER->send_shutdown();
         if (find_object(NAME_D))     NAME_D->mud_shutdown();
@@ -94,5 +94,5 @@ void reboot_mud()
 
 string query_name()
 {
-        return "ÖØÆğ¾«Áé(AUTOBOOT_D)";
+        return "é‡èµ·ç²¾éˆ(AUTOBOOT_D)";
 }

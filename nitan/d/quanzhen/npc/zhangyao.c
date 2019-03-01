@@ -1,17 +1,17 @@
-// zhangyao.c ÕÆÒ©µÀ³¤
+// zhangyao.c æŒè—¥é“é•·
 
 #include <ansi.h>
 inherit NPC;
 
 void create()
 {
-        set_name("ÕÆÒ©µÀ³¤", ({"zhangyao"}));
-        set("gender", "ÄĞĞÔ");
+        set_name("æŒè—¥é“é•·", ({"zhangyao"}));
+        set("gender", "ç”·æ€§");
         set("age", 28);
         set("class", "quanzhen");
         set("long",
-                "ÕâÊÇÈ«Õæ½ÌÖĞµÄÕÆ¹ÜËùÓĞÒ©ÎïµÄµÀÈË¡£ËûÄê¼Í²»´ó£¬µ«¿´ÆğÀ´\n"
-                "ÏÔµÃÉÙÄêÀÏ³É¡£\n");
+                "é€™æ˜¯å…¨çœŸæ•™ä¸­çš„æŒç®¡æ‰€æœ‰è—¥ç‰©çš„é“äººã€‚ä»–å¹´ç´€ä¸å¤§ï¼Œä½†çœ‹èµ·ä¾†\n"
+                "é¡¯å¾—å°‘å¹´è€æˆã€‚\n");
         set("attitude", "friendly");
         set("shen_type",1);
         set("str", 21);
@@ -32,17 +32,17 @@ void create()
 
         set_skill("array", 30);
         set_skill("force", 60);
-        set_skill("xiantian-gong", 50);    //ÏÈÌìÆø¹¦
+        set_skill("xiantian-gong", 50);    //å…ˆå¤©æ°£åŠŸ
         set_skill("sword", 60);
-        set_skill("quanzhen-jian", 60);  //È«Õæ½£
+        set_skill("quanzhen-jian", 60);  //å…¨çœŸåŠ
         set_skill("dodge", 50);
-        set_skill("jinyan-gong", 50);   //½ğÑã¹¦
+        set_skill("jinyan-gong", 50);   //é‡‘é›åŠŸ
         set_skill("parry", 60);
         set_skill("unarmed", 60);
         set_skill("strike", 60);
-        set_skill("haotian-zhang", 50);    //ê»ÌìÕÆ
+        set_skill("haotian-zhang", 50);    //æ˜Šå¤©æŒ
         set_skill("cuff", 60);
-        set_skill("chunyang-quan", 50);    //´¿ÑôÈ­
+        set_skill("chunyang-quan", 50);    //ç´”é™½æ‹³
         set_skill("literate", 50);
         set_skill("taoism", 40);
 
@@ -55,10 +55,10 @@ void create()
         prepare_skill("cuff", "chunyang-quan");
         prepare_skill("strike", "haotian-zhang");
 
-        create_family("È«Õæ½Ì", 4, "µÜ×Ó");
+        create_family("å…¨çœŸæ•™", 4, "å¼Ÿå­");
 
         set("inquiry", ([
-                "È«Õæ½Ì" :  "ÎÒÈ«Õæ½ÌÊÇÌìÏÂµÀ¼ÒĞşÃÅÕı×Ú¡£\n",
+                "å…¨çœŸæ•™" :  "æˆ‘å…¨çœŸæ•™æ˜¯å¤©ä¸‹é“å®¶ç„é–€æ­£å®—ã€‚\n",
         ]) );
 
         setup();
@@ -74,16 +74,16 @@ int accept_object(object who, object ob)
 
         if( !who || environment(who) != environment() ) return 0;
         if ( !objectp(ob) ) return 0;
-        if ( !present(ob, who) ) return notify_fail("ÄãÃ»ÓĞÕâ¼ş¶«Î÷¡£\n");
+        if ( !present(ob, who) ) return notify_fail("ä½ æ²’æœ‰é€™ä»¶æ±è¥¿ã€‚\n");
 
-        if( query("name", ob) != HIB"ÎÚ¹ê¼×"NOR
+        if( query("name", ob) != HIB"çƒé¾œç”²"NOR
                  && query("id", ob) != "fuling" )
-                    return notify_fail("ÕÆÒ©µÀ³¤Ò¡Í·µÀ£ºÕâ²»ÊÇÅäÒ©µÄ²ÄÁÏ¡£\n");
+                    return notify_fail("æŒè—¥é“é•·æ–é ­é“ï¼šé€™ä¸æ˜¯é…è—¥çš„ææ–™ã€‚\n");
 
-        if( query("name", ob) == HIB"ÎÚ¹ê¼×"NOR )
+        if( query("name", ob) == HIB"çƒé¾œç”²"NOR )
         {
                 if(query_temp("fuling")) {
-                        write(MAG"ÕÆÒ©µÀ³¤´óÏ²£¬¹ê¼×ºÍÜòÜß¶¼ÓĞÁË£¬Õâ¸±¹êÜß¸à¿ÉÁ¶³ÉÁË¡£\n"NOR);
+                        write(MAG"æŒè—¥é“é•·å¤§å–œï¼Œé¾œç”²å’ŒèŒ¯è‹“éƒ½æœ‰äº†ï¼Œé€™å‰¯é¾œè‹“è†å¯ç…‰æˆäº†ã€‚\n"NOR);
                         obj=new("/clone/medicine/nostrum/guilinggao");
                         obj->move(who);
                         delete_temp("guijia");
@@ -97,12 +97,12 @@ int accept_object(object who, object ob)
                 }
                 else {
                         if(query_temp("guijia")) {
-                                write(YEL"ÕÆÒ©µÀ³¤Ò¡ÁËÒ¡Í·µÀ£º¡°¹ê¼×ÎÒÒÑ¾­ÓĞÁË¡£¡±\n"NOR);
+                                write(YEL"æŒè—¥é“é•·æ–äº†æ–é ­é“ï¼šâ€œé¾œç”²æˆ‘å·²ç¶“æœ‰äº†ã€‚â€\n"NOR);
                                 return 0;
                         }
                         else {
                                 set_temp("guijia",1);
-                                write(WHT"ÕÆÒ©µÀ³¤Ğ¦µÀ£º¹ê¼×ÓĞÁË£¬¾ÍÈ±ÜòÜßÁË¡£\n"NOR);
+                                write(WHT"æŒè—¥é“é•·ç¬‘é“ï¼šé¾œç”²æœ‰äº†ï¼Œå°±ç¼ºèŒ¯è‹“äº†ã€‚\n"NOR);
                                 if(!(obj2=present("gui jia", this_player())))
                                 destruct(obj2);
                                 remove_call_out("destroying");
@@ -114,7 +114,7 @@ int accept_object(object who, object ob)
         if( query("id", ob) == "fuling" )
         {
                 if(query_temp("guijia")) {
-                        write(MAG"ÕÆÒ©µÀ³¤´óÏ²£¬¹ê¼×ºÍÜòÜß¶¼ÓĞÁË£¬Õâ¸±¹êÜß¸à¿ÉÁ¶³ÉÁË¡£\n"NOR);
+                        write(MAG"æŒè—¥é“é•·å¤§å–œï¼Œé¾œç”²å’ŒèŒ¯è‹“éƒ½æœ‰äº†ï¼Œé€™å‰¯é¾œè‹“è†å¯ç…‰æˆäº†ã€‚\n"NOR);
                         obj=new("/clone/medicine/nostrum/guilinggao");
                         obj->move(who);
                         delete_temp("guijia");
@@ -127,12 +127,12 @@ int accept_object(object who, object ob)
                 }
                 else {
                         if(query_temp("fuling")) {
-                                write(YEL"ÕÆÒ©µÀ³¤Ò¡ÁËÒ¡Í·µÀ£º¡°ÜòÜßÎÒÒÑ¾­ÓĞÁË¡£¡±\n"NOR);
+                                write(YEL"æŒè—¥é“é•·æ–äº†æ–é ­é“ï¼šâ€œèŒ¯è‹“æˆ‘å·²ç¶“æœ‰äº†ã€‚â€\n"NOR);
                                 return 0;
                         }
                         else {
                                 set_temp("fuling",1);
-                                write(WHT"ÕÆÒ©µÀ³¤Ğ¦µÀ£ºÜòÜßÓĞÁË£¬¾ÍÈ±¹ê¼×ÁË¡£\n"NOR);
+                                write(WHT"æŒè—¥é“é•·ç¬‘é“ï¼šèŒ¯è‹“æœ‰äº†ï¼Œå°±ç¼ºé¾œç”²äº†ã€‚\n"NOR);
                                 if(!(obj2=present("fuling", this_player())))
                                 destruct(obj2);
                                 remove_call_out("destroying");
@@ -151,5 +151,5 @@ void destroying(object me, object obj)
 }
 void attempt_apprentice(object ob)
 {
-        command("say ÎÒ²»ÊÕµÜ×Ó£¬ÄãÈ¥ÕÒ±ğµÄµÀ³¤°É¡£");
+        command("say æˆ‘ä¸æ”¶å¼Ÿå­ï¼Œä½ å»æ‰¾åˆ¥çš„é“é•·å§ã€‚");
 }

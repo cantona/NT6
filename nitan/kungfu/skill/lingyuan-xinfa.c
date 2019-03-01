@@ -1,4 +1,4 @@
-// lingyuan-xinfa.c 灵元心法
+// lingyuan-xinfa.c 闈堝厓蹇冩硶
 // written by deaner
 // Modified by Venus Oct.1997
 
@@ -13,7 +13,7 @@ int valid_learn(object me)
 
 int practice_skill(object me)
 {
-    return notify_fail("灵元心法只能用学习的来增加熟练度。\n");
+    return notify_fail("闈堝厓蹇冩硶鍙兘鐢ㄥ缈掔殑渚嗗鍔犵啛绶村害銆俓n");
 }
 
 string exert_function_file(string func)

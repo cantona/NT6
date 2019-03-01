@@ -4,13 +4,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name("Ó¥×¦ÊÖ·¨", ({ "yingzhua shoufa", "shoufa", "book" }));
+        set_name("é·¹çˆªæ‰‹æ³•", ({ "yingzhua shoufa", "shoufa", "book" }));
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
-                set("long","ÕâÊÇÒ»±¾½²Êö»ù±¾ÊÖ·¨ÒªÁìµÄÊé¼®¡£\n");
+                set("unit", "æœ¬");
+                set("long","é€™æ˜¯ä¸€æœ¬è¬›è¿°åŸºæœ¬æ‰‹æ³•è¦é ˜çš„æ›¸ç±ã€‚\n");
                 set("value", 100);
                 set("material", "paper");
                 set("unique", 1);

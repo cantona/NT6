@@ -4,8 +4,8 @@ inherit NPC;
 
 void create()
 {
-        set_name("Ë®Ê¦±øÊ¿",({ "shuishi bingshi","bingshi" }) );
-        set("gender", "ÄÐÐÔ" );
+        set_name("æ°´å¸«å…µå£«",({ "shuishi bingshi","bingshi" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 12);
         set("combat_exp", 20000);
         set("shen", 100);

@@ -4,10 +4,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("öèÓã", ({ "sha yu", "sha" }) );
-        set("race", "ÓÎÓã");
+        set_name("é¯Šé­š", ({ "sha yu", "sha" }) );
+        set("race", "éŠé­š");
         set("age", 20);
-        set("long", "Ò»Ö»Éú»îÔÚ±ùº£µÄ¾Þ´ó¾¨öè¡£\n");
+        set("long", "ä¸€åªç”Ÿæ´»åœ¨å†°æµ·çš„å·¨å¤§é¯¨é¯Šã€‚\n");
         set("attitude", "friendly");
         set("shen_type", 0);
 
@@ -23,7 +23,7 @@ void create()
 void die()
 {
         object ob, corpse;
-        message_vision("$NÈ«ÉíÒ»Õó¾çÁÒµÄÅ¤Çú£¬ÖÕÓÚ°²¾²ÁËÏÂÀ´£¬·­°×ÑÛËÀÁË¡£\n", this_object());
+        message_vision("$Nå…¨èº«ä¸€é™£åŠ‡çƒˆçš„æ‰­æ›²ï¼Œçµ‚äºŽå®‰éœäº†ä¸‹ä¾†ï¼Œç¿»ç™½çœ¼æ­»äº†ã€‚\n", this_object());
         if( objectp(corpse = CHAR_D->make_corpse(this_object())) )
                 ob = new("/clone/medicine/vegetable/shadan");
         ob->move(corpse);

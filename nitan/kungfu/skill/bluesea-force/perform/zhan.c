@@ -1,4 +1,4 @@
-// zhan.c Õ¶ÏÉ¾ö
+// zhan.c æ–¬ä»™æ±º
  
 #include <ansi.h>
 #include <combat.h>
@@ -18,19 +18,19 @@ int perform(object me, object target)
         }
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail("Õ¶ÏÉ¾öÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("æ–¬ä»™æ±ºåªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
  
         if (me->query_skill("bluesea-force", 1) < 120)
-                return notify_fail("ÄãµÄÄÏº£Ğş¹¦»¹²»¹»æµÊì£¬²»ÄÜÊ¹ÓÃÕ¶ÏÉ¾ö£¡\n");
+                return notify_fail("ä½ çš„å—æµ·ç„åŠŸé‚„ä¸å¤ å«»ç†Ÿï¼Œä¸èƒ½ä½¿ç”¨æ–¬ä»™æ±ºï¼\n");
 
         if( query("neili", me)<200 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬²»ÄÜÊ¹ÓÃÕ¶ÏÉ¾ö£¡\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ï¼Œä¸èƒ½ä½¿ç”¨æ–¬ä»™æ±ºï¼\n");
  
        if (! living(target))
-              return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+              return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIC "$N" HIC "ÃæÈİËàÄÂ£¬Ù¿µÄÒ»ÕÆÅÄ³ö£¬ĞéĞéÊµ"
-              "ÊµµÄ¹¥Ïò$n" HIC "£¬±ä»¯ÁîÈËÄÑÒÔ×½Ãş¡£\n" NOR;
+        msg = HIC "$N" HIC "é¢å®¹è‚…ç©†ï¼Œå€çš„ä¸€æŒæ‹å‡ºï¼Œè™›è™›å¯¦"
+              "å¯¦çš„æ”»å‘$n" HIC "ï¼Œè®ŠåŒ–ä»¤äººé›£ä»¥æ‰æ‘¸ã€‚\n" NOR;
  
         ap = attack_power(me, "force") + me->query_con();
         dp = defense_power(target, "parry") + target->query_str();
@@ -39,15 +39,15 @@ int perform(object me, object target)
         addn("neili", -50, me);
         if (ap / 2 + random(ap) < dp)
         {
-                msg += HIG "È»¶ø$n" HIG "¿´ÆÆÁË$N" HIG
-                       "µÄÕÆÊÆ£¬²»»Å²»Ã¦µÄ¶ã¹ıÁËÕâÒ»»÷£¡\n" NOR;
+                msg += HIG "ç„¶è€Œ$n" HIG "çœ‹ç ´äº†$N" HIG
+                       "çš„æŒå‹¢ï¼Œä¸æ…Œä¸å¿™çš„èº²éäº†é€™ä¸€æ“Šï¼\n" NOR;
         } else
         {
                 addn("neili", -75, me);
                 damage = damage_power(me, "force");
                 msg += COMBAT_D->do_damage(me, target, REMOTE_ATTACK, damage, 100,
-                                           HIR "$n" HIR "ÉÔÒ»ÓÌÔ¥£¬±»ÕâÒ»ÕÆ»÷ÁË"
-                                           "¸öÕıÖĞ£¡½ÓÁ¬ÍËÁË¼¸²½£¬ÍÂÁËÒ»µØµÄÑª¡£\n" NOR);
+                                           HIR "$n" HIR "ç¨ä¸€çŒ¶è±«ï¼Œè¢«é€™ä¸€æŒæ“Šäº†"
+                                           "å€‹æ­£ä¸­ï¼æ¥é€£é€€äº†å¹¾æ­¥ï¼Œåäº†ä¸€åœ°çš„è¡€ã€‚\n" NOR);
         }
 
         message_combatd(msg, me, target);

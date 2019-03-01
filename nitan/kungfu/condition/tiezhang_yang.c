@@ -6,15 +6,15 @@ inherit POISON;
 
 string name() { return "tiezhang_yang"; }
 
-string chinese_name() { return "ÌúÕÆ´¿Ñô¾¢"; }
+string chinese_name() { return "éµæŒç´”é™½å‹"; }
 
 string update_msg_others()
 {
-        return RED "Ö»Ìı$N" RED "ÃÆºßÒ»Éù£¬Ë«Ä¿Í¹³ö£¬×ì½ÇÉø³ö¼¸Ë¿ÏÊÑª¡£\n" NOR;
+        return RED "åªè½$N" RED "æ‚¶å“¼ä¸€è²ï¼Œé›™ç›®å‡¸å‡ºï¼Œå˜´è§’æ»²å‡ºå¹¾çµ²é®®è¡€ã€‚\n" NOR;
 }
 
 string update_msg_self()
 {
-        return RED "ÄãÖ»¾õµ¤Ìï´¦ÓĞÈç»ğ·Ù£¬±ãËÆÓĞÇ§Íò¸ÖÕëÒ»ÆëÔúÈëÌåÄÚ¡£\n" NOR;
+        return RED "ä½ åªè¦ºä¸¹ç”°è™•æœ‰å¦‚ç«ç„šï¼Œä¾¿ä¼¼æœ‰åƒè¬é‹¼é‡ä¸€é½Šç´®å…¥é«”å…§ã€‚\n" NOR;
 }
 

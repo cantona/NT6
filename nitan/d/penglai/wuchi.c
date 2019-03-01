@@ -4,21 +4,21 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Îí³Ø");
+        set("short", "éœ§æ± ");
         set("long",@LONG
-ÕâµºÉÏµÄÏÉÆøµÄÔ´Í·¾¹ÊÇÕâÎí³Ø£¬µ«¼û³ØÖĞ²»¶ÏÓ¿³ö°×É«µÄÎí
-Æø£¬È»ºóÕâĞ©ÎíÆøÎüÊÕÁËµºÉÏµÄÁéÆø»¯ÎªÏÉÆøÏòËÄÖÜÃÖÂş¡£¿´×ÅÕó
-ÕóÏÉÆøÆ®Æğ£¬Äã½û²»×¡ÏëÎü£¨xi£©ÉÏÒ»¿Ú¡£
+é€™å³¶ä¸Šçš„ä»™æ°£çš„æºé ­ç«Ÿæ˜¯é€™éœ§æ± ï¼Œä½†è¦‹æ± ä¸­ä¸æ–·æ¹§å‡ºç™½è‰²çš„éœ§
+æ°£ï¼Œç„¶å¾Œé€™äº›éœ§æ°£å¸æ”¶äº†å³¶ä¸Šçš„éˆæ°£åŒ–ç‚ºä»™æ°£å‘å››å‘¨å½Œæ¼«ã€‚çœ‹è‘—é™£
+é™£ä»™æ°£é£„èµ·ï¼Œä½ ç¦ä¸ä½æƒ³å¸ï¼ˆxiï¼‰ä¸Šä¸€å£ã€‚
 LONG);
 
         set("exits", ([
                 "west"   : __DIR__"xianqimen",
                 "east"   : __DIR__"tianxiandao1",
         ]));
-        set("no_rideto", 1);         // ÉèÖÃ²»ÄÜÆïÂíµ½ÆäËûµØ·½
-        set("no_flyto", 1);          // ÉèÖÃ²»ÄÜ´ÓÆğÀ´µØ·½ÆïÂíÀ´ÕâÀï
-        set("no_die", 1);            // ËÀÍöºóÒÆ¶¯µ½±âÈµ¾Ó
-        set("penglai", 1);           // ±íÊ¾ÔÚÅîÀ³µº
+        set("no_rideto", 1);         // è¨­ç½®ä¸èƒ½é¨é¦¬åˆ°å…¶ä»–åœ°æ–¹
+        set("no_flyto", 1);          // è¨­ç½®ä¸èƒ½å¾èµ·ä¾†åœ°æ–¹é¨é¦¬ä¾†é€™è£¡
+        set("no_die", 1);            // æ­»äº¡å¾Œç§»å‹•åˆ°æ‰éµ²å±…
+        set("penglai", 1);           // è¡¨ç¤ºåœ¨è“¬èŠå³¶
 
         setup();
 }
@@ -30,14 +30,14 @@ void init ()
                 if (! this_player()->query("penglai/go_quest/ok"))
                 {
                         this_player()->start_busy(3);
-                        tell_object(this_player(), NOR + WHT "Äãµ½ÁË´Ë´¦£¬ËÄÖÜÏÉÆøçÔÈÆÁîÄãÒ»Ê±¼äÄÑÒÔ±æ±ğ·½Ïò¡£\n" NOR);
+                        tell_object(this_player(), NOR + WHT "ä½ åˆ°äº†æ­¤è™•ï¼Œå››å‘¨ä»™æ°£ç¹šç¹ä»¤ä½ ä¸€æ™‚é–“é›£ä»¥è¾¨åˆ¥æ–¹å‘ã€‚\n" NOR);
                 }
                 else
                 {
                         if (random(2))
                         {
                                 this_player()->start_busy(1);
-                                tell_object(this_player(), NOR + WHT "Äãµ½ÁË´Ë´¦£¬ËÄÖÜÏÉÆøçÔÈÆÁîÄãÒ»Ê±¼äÄÑÒÔ±æ±ğ·½Ïò¡£\n" NOR);                
+                                tell_object(this_player(), NOR + WHT "ä½ åˆ°äº†æ­¤è™•ï¼Œå››å‘¨ä»™æ°£ç¹šç¹ä»¤ä½ ä¸€æ™‚é–“é›£ä»¥è¾¨åˆ¥æ–¹å‘ã€‚\n" NOR);                
                         }
                 }
         }
@@ -49,13 +49,13 @@ int do_xi()
         
         if (! me->query("penglai/wuchi_quest/ok"))
         {
-                message_vision(HIM "$N" HIM "ÉîÉîµØÎüÁËÒ»¿ÚÎí³ØÖĞµÄÏÉÆø ¡­¡­\n" NOR, me);
-                tell_object(me, HIG "¹§Ï²Äã£¬ÄãµÄÁé»ÛÔö¼ÓÁË¡£\n" NOR);
+                message_vision(HIM "$N" HIM "æ·±æ·±åœ°å¸äº†ä¸€å£éœ§æ± ä¸­çš„ä»™æ°£ â€¦â€¦\n" NOR, me);
+                tell_object(me, HIG "æ­å–œä½ ï¼Œä½ çš„éˆæ…§å¢åŠ äº†ã€‚\n" NOR);
                 me->set("penglai/wuchi_quest/ok", 1);
                 me->add("magic_points", 5000);
                 me->save();
                 return 1;
         }
-        tell_object(me, HIC "ÄãÎüÁËÒ»¿Ú³ØÖĞÏÉÆø£¬¾õµÃÊæÌ©ÎŞ±È¡£\n" NOR);
+        tell_object(me, HIC "ä½ å¸äº†ä¸€å£æ± ä¸­ä»™æ°£ï¼Œè¦ºå¾—èˆ’æ³°ç„¡æ¯”ã€‚\n" NOR);
         return 1;
 }

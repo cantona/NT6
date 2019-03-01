@@ -28,7 +28,7 @@ int query_weak() { return weak; }
 int clear_weak()
 {
         if( weak )
-                tell_object(this_object(), HIG"\nÄã¸Ğ¾õÉíÌå×´Ì¬ÂıÂıµÄ¸´Ô­ÁË¡£¡£¡£\n\n" NOR);
+                tell_object(this_object(), HIG"\nä½ æ„Ÿè¦ºèº«é«”ç‹€æ…‹æ…¢æ…¢çš„å¾©åŸäº†ã€‚ã€‚ã€‚\n\n" NOR);
         weak = 0;
 }
 
@@ -54,9 +54,9 @@ varargs int set_weak(int n, int flag)
                 if( n > 1 ) n -= random(n);
         if( intp(n) && (n >= 0) ) {
                 if( !flag && weak && !n )
-                        tell_object(this_object(), HIG "\nÄã¸Ğ¾õÉíÌå×´Ì¬ÂıÂıµÄ¸´Ô­ÁË¡£¡£¡£\n\n" NOR);
+                        tell_object(this_object(), HIG "\nä½ æ„Ÿè¦ºèº«é«”ç‹€æ…‹æ…¢æ…¢çš„å¾©åŸäº†ã€‚ã€‚ã€‚\n\n" NOR);
                 else if( !flag && !weak && n )
-                        tell_object(this_object(), RED "\nÄã¸Ğ¾õÉíÌå·Ç³£µÄĞéÈõ£¬Ò»µãÁ¦ÆøÒ²Ê¹²»³öÀ´ÁË¡£¡£¡£\n\n" NOR);
+                        tell_object(this_object(), RED "\nä½ æ„Ÿè¦ºèº«é«”éå¸¸çš„è™›å¼±ï¼Œä¸€é»åŠ›æ°£ä¹Ÿä½¿ä¸å‡ºä¾†äº†ã€‚ã€‚ã€‚\n\n" NOR);
 
                 if( !n ) {
                         weak = n;
@@ -76,9 +76,9 @@ varargs int receive_damage(string type, int damage, object who)
         function f;
         int r;
 
-        if( damage < 0 ) error("F_DAMAGE: ÉËº¦ÖµÎª¸ºÖµ¡£\n");
+        if( damage < 0 ) error("F_DAMAGE: å‚·å®³å€¼ç‚ºè² å€¼ã€‚\n");
         if( type!="jing" && type!="qi" )
-                error("F_DAMAGE: ÉËº¦ÖÖÀà´íÎó( Ö»ÄÜÊÇ jing, qi ÆäÖĞÖ®Ò» )¡£\n");
+                error("F_DAMAGE: å‚·å®³ç¨®é¡éŒ¯èª¤( åªèƒ½æ˜¯ jing, qi å…¶ä¸­ä¹‹ä¸€ )ã€‚\n");
 
         if( query("master_ob", this_object()) == 5 ) return 0;
         if( objectp(who) ) {
@@ -87,7 +87,7 @@ varargs int receive_damage(string type, int damage, object who)
                         last_damage_from = who;
                         set_temp("last_damage_from", who);
                 }
-                // ×°±¸ÏµÍ³¸½¼ÓÊôĞÔ
+                // è£å‚™ç³»çµ±é™„åŠ å±¬æ€§
                 if( n = (query_temp("apply/add_damage", who) + query("ability1/add_damage", who)) )
                 {
                         n = n * (100 - query("reborn/times")*10)/100;
@@ -98,9 +98,9 @@ varargs int receive_damage(string type, int damage, object who)
                         this_object()->affect_by("poison", 
                                 ([ "level" : 8000, 
                                    "id":query("id", who), 
-                                   "name" : "±ù²Ïº®¶¾", 
+                                   "name" : "å†°è ¶å¯’æ¯’", 
                                    "duration" : 200 ])); 
-                        tell_object(this_object(), HIG "ÄãÖĞÁË±ù²Ïº®¹¦µÄ±ù²Ïº®¶¾¡£\n"); 
+                        tell_object(this_object(), HIG "ä½ ä¸­äº†å†°è ¶å¯’åŠŸçš„å†°è ¶å¯’æ¯’ã€‚\n"); 
                 }
                 if( playerp(who) && playerp(this_object()) &&
                     this_object()->is_fighting(who) ) {
@@ -123,7 +123,7 @@ varargs int receive_damage(string type, int damage, object who)
                         if( random(100) < n && random(100) > avoid ) set_weak(5, 0);
                 }
                 */
-                // ³ğºŞÏµÍ³
+                // ä»‡æ¨ç³»çµ±
                 if( !userp(this_object()) ) {
                         add_hatred(who, damage);
                 }
@@ -139,13 +139,13 @@ varargs int receive_damage(string type, int damage, object who)
                 r = 0;
         if( r ) return 0;
         
-        // ÊÜËğµÄÉúÃü×ª»»ÎªÄÚÁ¦
+        // å—æçš„ç”Ÿå‘½è½‰æ›ç‚ºå…§åŠ›
         if( random(100) < 30 && (n = query_temp("apply/qi_vs_neili")) )
         {
                 addn("neili", damage * n / 100);
                 if( query("neili") > query("max_neili") )
                         set("neili", query("max_neili"));
-                message_vision(HIR "\nÍ»È»¼ä£¬$NÈ«ÉíÀ¶¹â±¬ÏÖ£¬ÊÜËğµÄÆøÑª×ª»»ÎªÄÚÁ¦£¡\n", this_object());
+                message_vision(HIR "\nçªç„¶é–“ï¼Œ$Nå…¨èº«è—å…‰çˆ†ç¾ï¼Œå—æçš„æ°£è¡€è½‰æ›ç‚ºå…§åŠ›ï¼\n", this_object());
         }
                         
         val = (int)query(type) - damage;
@@ -160,9 +160,9 @@ varargs int receive_wound(string type, int damage, object who)
         int val, n;
         int avoid;
 
-        if( damage < 0 ) error("F_DAMAGE: ÉËº¦ÖµÎª¸ºÖµ¡£\n");
+        if( damage < 0 ) error("F_DAMAGE: å‚·å®³å€¼ç‚ºè² å€¼ã€‚\n");
         if( type!="jing" && type!="qi" )
-                error("F_DAMAGE: ÉËº¦ÖÖÀà´íÎó( Ö»ÄÜÊÇ jing, qi ÆäÖĞÖ®Ò» )¡£\n");
+                error("F_DAMAGE: å‚·å®³ç¨®é¡éŒ¯èª¤( åªèƒ½æ˜¯ jing, qi å…¶ä¸­ä¹‹ä¸€ )ã€‚\n");
 
         if( query("master_ob", this_object()) == 5 ) return 0;
         if( objectp(who) ) {
@@ -181,9 +181,9 @@ varargs int receive_wound(string type, int damage, object who)
                         this_object()->affect_by("poison", 
                                 ([ "level" : 8000, 
                                    "id":query("id", who), 
-                                   "name" : "±ù²Ïº®¶¾", 
+                                   "name" : "å†°è ¶å¯’æ¯’", 
                                    "duration" : 200 ])); 
-                        tell_object(this_object(), HIG "ÄãÖĞÁË±ù²Ïº®¹¦µÄ±ù²Ïº®¶¾¡£\n"); 
+                        tell_object(this_object(), HIG "ä½ ä¸­äº†å†°è ¶å¯’åŠŸçš„å†°è ¶å¯’æ¯’ã€‚\n"); 
                 }
                 if( playerp(who) && playerp(this_object()) &&
                     this_object()->is_fighting(who) ) {
@@ -206,7 +206,7 @@ varargs int receive_wound(string type, int damage, object who)
                         if( random(100) < n && random(100) > avoid ) set_weak(5, 0);
                 }
                 /*
-                // ³ğºŞÏµÍ³
+                // ä»‡æ¨ç³»çµ±
                 if( !userp(this_object()) ) {
                         add_hatred(who, damage);
                 }
@@ -231,9 +231,9 @@ int receive_heal(string type, int heal)
 {
         int val;
 
-        if( heal < 0 ) error("F_DAMAGE: »Ö¸´ÖµÎª¸ºÖµ¡£\n");
+        if( heal < 0 ) error("F_DAMAGE: æ¢å¾©å€¼ç‚ºè² å€¼ã€‚\n");
         if( type!="jing" && type!="qi" )
-                error("F_DAMAGE: »Ö¸´ÖÖÀà´íÎó( Ö»ÄÜÊÇ jing, qi ÆäÖĞÖ®Ò» )¡£\n");
+                error("F_DAMAGE: æ¢å¾©ç¨®é¡éŒ¯èª¤( åªèƒ½æ˜¯ jing, qi å…¶ä¸­ä¹‹ä¸€ )ã€‚\n");
 
         val = (int)query(type) + heal;
         if( val > (int)query("eff_" + type) ) set(type, (int)query("eff_" + type));
@@ -245,9 +245,9 @@ int receive_curing(string type, int heal)
 {
         int max, val;
 
-        if( heal < 0 ) error("F_DAMAGE: »Ö¸´ÖµÎª¸ºÖµ¡£\n");
+        if( heal < 0 ) error("F_DAMAGE: æ¢å¾©å€¼ç‚ºè² å€¼ã€‚\n");
         if( type!="jing" && type!="qi" )
-                error("F_DAMAGE: »Ö¸´ÖÖÀà´íÎó( Ö»ÄÜÊÇ jing, qi ÆäÖĞÖ®Ò» )¡£\n");
+                error("F_DAMAGE: æ¢å¾©ç¨®é¡éŒ¯èª¤( åªèƒ½æ˜¯ jing, qi å…¶ä¸­ä¹‹ä¸€ )ã€‚\n");
 
         val = (int)query("eff_" + type);
         max = (int)query("max_" + type);
@@ -266,11 +266,11 @@ varargs int receive_full(string type, int heal, object who)
         int num, i;
         object *enemy;
 
-        if( heal < 0 ) error("F_DAMAGE: »Ö¸´ÖµÎª¸ºÖµ¡£\n");
+        if( heal < 0 ) error("F_DAMAGE: æ¢å¾©å€¼ç‚ºè² å€¼ã€‚\n");
         if( type!="jing" && type!="qie" )
-                error("F_DAMAGE: »Ö¸´ÖÖÀà´íÎó( Ö»ÄÜÊÇ jing, qi ÆäÖĞÖ®Ò» )¡£\n");
+                error("F_DAMAGE: æ¢å¾©ç¨®é¡éŒ¯èª¤( åªèƒ½æ˜¯ jing, qi å…¶ä¸­ä¹‹ä¸€ )ã€‚\n");
 
-        // ³ğºŞÏµÍ³
+        // ä»‡æ¨ç³»çµ±
         if( objectp(who) )
         {
                 enemy = this_object()->query_enemy();
@@ -359,8 +359,8 @@ varargs void unconcious(object defeater)
         if( !living(me) ) return;
         if( wizardp(me) && query("env/immortal") ) return;
 
-        // ÖìÈ¸ÖØÉúĞ§¹û 50%¼¸ÂÊ Ë²¼ä±¬·¢»Ö¸´ÆøÑª¾«Á¦µ½60%
-        // Èç³¬¹ı60%Ôò²»»Ö¸´
+        // æœ±é›€é‡ç”Ÿæ•ˆæœ 50%å¹¾ç‡ ç¬é–“çˆ†ç™¼æ¢å¾©æ°£è¡€ç²¾åŠ›åˆ°60%
+        // å¦‚è¶…é60%å‰‡ä¸æ¢å¾©
         if( query("special_skill/zhuque", me) && random(10) < 5)
         {
                 if( query("qi", me) < query("max_qi", me) * 3 / 5)
@@ -371,7 +371,7 @@ varargs void unconcious(object defeater)
                 if( query("jingli", me) < query("max_jingli", me) * 3 / 5)
                         set("jingli", query("max_jingli", me) * 3 / 5, me);
 
-                message_vision(HIR "\nÍ»È»¼ä£¬$NÉíºóºì¹â±¬ÏÖ£¬ÓÌÈç´«ËµÖĞµÄ·ï»Ë°ãÃÀÃî£¡\n" NOR, me);
+                message_vision(HIR "\nçªç„¶é–“ï¼Œ$Nèº«å¾Œç´…å…‰çˆ†ç¾ï¼ŒçŒ¶å¦‚å‚³èªªä¸­çš„é³³å‡°èˆ¬ç¾å¦™ï¼\n" NOR, me);
                 return;
         }
 
@@ -395,7 +395,7 @@ varargs void unconcious(object defeater)
                 set("qi",query("max_qi"));
                 set("eff_jing",query("max_jing"));
                 set("jing",query("max_jing"));
-                message_vision(HIY "\nÍ»È»¼ä£¬$NÈ«ÉíÉ¢·¢³öÒ»Õó½ğ¹â£¬ÈçÍ¬Ô¡ÑªÖØÉúÒ»°ã¡£\n" NOR, me); 
+                message_vision(HIY "\nçªç„¶é–“ï¼Œ$Nå…¨èº«æ•£ç™¼å‡ºä¸€é™£é‡‘å…‰ï¼Œå¦‚åŒæµ´è¡€é‡ç”Ÿä¸€èˆ¬ã€‚\n" NOR, me); 
                 COMBAT_D->report_status(this_object());
                 return;
         }
@@ -417,7 +417,7 @@ varargs void unconcious(object defeater)
         defeated_by_who = last_damage_name;
         if( defeated_by = last_damage_from ) {
                 object *dp;
-                // Èç¹û´ËÈËÓĞÖ÷£¬ÔòËãÖ÷ÈË´òÔÎµÄ
+                // å¦‚æœæ­¤äººæœ‰ä¸»ï¼Œå‰‡ç®—ä¸»äººæ‰“æšˆçš„
                 if( objectp(query_temp("owner", defeated_by)) ) {
                         defeated_by = query_temp("owner", defeated_by);
                         defeated_by_who = defeated_by->name(1);
@@ -429,7 +429,7 @@ varargs void unconcious(object defeater)
                 if( query("qi") < 0 || query("jing") < 0 )
                         COMBAT_D->winner_reward(defeated_by, me);
 
-                // Èç¹û¶Ô·½ÓĞÒâÉ±º¦ÎÒ£¬ÔòÎÒ·ßÅ­£¬²¢ÇÒ¶Ô·½ÀÛ»ıÉ±Æø¡£
+                // å¦‚æœå°æ–¹æœ‰æ„æ®ºå®³æˆ‘ï¼Œå‰‡æˆ‘æ†¤æ€’ï¼Œä¸¦ä¸”å°æ–¹ç´¯ç©æ®ºæ°£ã€‚
                 if( playerp(me) && defeated_by->is_want_kill(query("id")) ) {
                         defeated_by->record_dp(me);
                         me->craze_of_defeated(query("id", defeated_by));
@@ -442,13 +442,13 @@ varargs void unconcious(object defeater)
         }
         me->remove_all_enemy(0);
         me->clear_written();
-        message("system", HIR "\nÄãµÄÑÛÇ°Ò»ºÚ£¬½ÓÖøÊ²Ã´Ò²²»ÖªµÀÁË....\n\n" NOR,
+        message("system", HIR "\nä½ çš„çœ¼å‰ä¸€é»‘ï¼Œæ¥è‘—ä»€éº¼ä¹Ÿä¸çŸ¥é“äº†....\n\n" NOR,
                 me);
-        me->disable_player(" <»èÃÔ²»ĞÑ>");
+        me->disable_player(" <æ˜è¿·ä¸é†’>");
         delete_temp("sleeped");
         if( objectp(riding = query_temp("is_riding")) ) {
                 object follower;
-                message_vision("$NÒ»Í·´Ó$nÉÏÃæÔÔÁËÏÂÀ´£¡\n",
+                message_vision("$Nä¸€é ­å¾$nä¸Šé¢æ ½äº†ä¸‹ä¾†ï¼\n",
                               me, riding);
                 delete_temp("is_riding");
                 delete_temp("is_rided_by", riding);
@@ -458,7 +458,7 @@ varargs void unconcious(object defeater)
                 {
                         delete_temp("is_riding_follow", follower);
                         delete_temp("is_rided_follow", riding);
-                        message_vision("$N´Ó$nÉÏ·ÉÉíÌøÏÂ¡£\n", follower, riding);
+                        message_vision("$Nå¾$nä¸Šé£›èº«è·³ä¸‹ã€‚\n", follower, riding);
                 }
         }
         set("jing", 0);
@@ -499,15 +499,15 @@ varargs void revive(int quiet)
                 defeated_by = 0;
                 defeated_by_who = 0;
                 COMBAT_D->announce(this_object(), "revive");
-                message("vision", HIY "\nÂıÂıµØÄãÖÕÓÚÓÖÓĞÁËÖª¾õ....\n\n" NOR, me);
-                // ²»ÄÜ°Ñ npc °á½ø°²È«Çø¡£
+                message("vision", HIY "\næ…¢æ…¢åœ°ä½ çµ‚äºåˆæœ‰äº†çŸ¥è¦º....\n\n" NOR, me);
+                // ä¸èƒ½æŠŠ npc æ¬é€²å®‰å…¨å€ã€‚
                 if( !userp(this_object()) && query("no_fight", env) &&
                     stringp(room = query("startroom")) && base_name(env) != room ) {
                         ob = find_object(room);
                         if( ob ) this_object()->return_home(ob);
                         else {
                                 tell_object(environment(), this_object()->name()+
-                                        "´Ò´ÒÃ¦Ã¦µÄ×ßÁË¡£\n");
+                                        "åŒ†åŒ†å¿™å¿™çš„èµ°äº†ã€‚\n");
                                 destruct(this_object());
                                 return;
                         }
@@ -540,8 +540,8 @@ varargs void die(object killer)
         delete_temp("sleeped");
         delete("last_sleep");
 
-        // ÖìÈ¸ÖØÉúĞ§¹û 50%¼¸ÂÊ Ë²¼ä±¬·¢»Ö¸´ÆøÑª¾«Á¦µ½60%
-        // Èç³¬¹ı60%Ôò²»»Ö¸´
+        // æœ±é›€é‡ç”Ÿæ•ˆæœ 50%å¹¾ç‡ ç¬é–“çˆ†ç™¼æ¢å¾©æ°£è¡€ç²¾åŠ›åˆ°60%
+        // å¦‚è¶…é60%å‰‡ä¸æ¢å¾©
         if( query("special_skill/zhuque", me) && random(10) < 5)
         {
                 if( query("qi", me) < query("max_qi", me) * 3 / 5)
@@ -552,7 +552,7 @@ varargs void die(object killer)
                 if( query("jingli", me) < query("max_jingli", me) * 3 / 5)
                         set("jingli", query("max_jingli", me) * 3 / 5, me);
 
-                message_vision(HIR "\nÍ»È»¼ä£¬$NÉíºóºì¹â±¬ÏÖ£¬ÓÌÈç´«ËµÖĞµÄ·ï»Ë°ãÃÀÃî£¡\n" NOR, me);
+                message_vision(HIR "\nçªç„¶é–“ï¼Œ$Nèº«å¾Œç´…å…‰çˆ†ç¾ï¼ŒçŒ¶å¦‚å‚³èªªä¸­çš„é³³å‡°èˆ¬ç¾å¦™ï¼\n" NOR, me);
                 return;
         }
         
@@ -580,7 +580,7 @@ varargs void die(object killer)
                 set("qi",query("max_qi"));
                 set("eff_jing",query("max_jing"));
                 set("jing",query("max_jing"));
-                message_vision(HIY "\nÍ»È»¼ä£¬$NÈ«ÉíÉ¢·¢³öÒ»Õó½ğ¹â£¬ÈçÍ¬Ô¡ÑªÖØÉúÒ»°ã¡£\n" NOR, me); 
+                message_vision(HIY "\nçªç„¶é–“ï¼Œ$Nå…¨èº«æ•£ç™¼å‡ºä¸€é™£é‡‘å…‰ï¼Œå¦‚åŒæµ´è¡€é‡ç”Ÿä¸€èˆ¬ã€‚\n" NOR, me); 
                 COMBAT_D->report_status(this_object());
                 return;
         }
@@ -632,7 +632,7 @@ varargs void die(object killer)
                 COMBAT_D->winner_reward(killer, me);
         if( objectp(riding = query_temp("is_riding")) ) {
                 object follower;
-                message_vision("$NÒ»Í·´Ó$nÉÏÃæÔÔÁËÏÂÀ´£¡\n",
+                message_vision("$Nä¸€é ­å¾$nä¸Šé¢æ ½äº†ä¸‹ä¾†ï¼\n",
                                me, riding);
                 delete_temp("is_riding");
                 delete_temp("is_rided_by", riding);
@@ -641,7 +641,7 @@ varargs void die(object killer)
                 {
                         delete_temp("is_riding_follow", follower);
                         delete_temp("is_rided_follow", riding);
-                        message_vision("$N´Ó$nÉÏ·ÉÉíÌøÏÂ¡£\n", follower, riding);
+                        message_vision("$Nå¾$nä¸Šé£›èº«è·³ä¸‹ã€‚\n", follower, riding);
                 }
         }
         // Check how am I to die
@@ -652,25 +652,25 @@ varargs void die(object killer)
                     (dob_name != killer_name || dob != killer) ) {
                         if( dob && playerp(dob) && dob->is_want_kill(query("id")) ) {
                                 if( !dob->query_condition("killer") ) {
-                                        follow_msg = "ÌıËµ¹Ù¸®·¢ÏÂº£²¶ÎÄÊé£¬¼©ÄÃÉ±ÈËÕØÊÂĞ×ÊÖ" +
-                                                     dob->name(1) + "¡£";
+                                        follow_msg = "è½èªªå®˜åºœç™¼ä¸‹æµ·æ•æ–‡æ›¸ï¼Œç·æ‹¿æ®ºäººè‚‡äº‹å…‡æ‰‹" +
+                                                     dob->name(1) + "ã€‚";
                                         dob->apply_condition("killer", 500);
                                 } else {
-                                        follow_msg = "ÌıËµ¹Ù¸®¼Ó½ô×½ÄÃÀÛ·¸ÖØ°¸µÄÕØÊÂ±©Í½" +
-                                                     dob->name(1) + "¡£";
+                                        follow_msg = "è½èªªå®˜åºœåŠ ç·Šæ‰æ‹¿ç´¯çŠ¯é‡æ¡ˆçš„è‚‡äº‹æš´å¾’" +
+                                                     dob->name(1) + "ã€‚";
                                         dob->apply_condition("killer", 800 +
                                                      (int)dob->query_condition("killer"));
                                 }
                                 set("combat/pktime", time(), dob);
                         }
                         // set the die reason
-                        set_temp("die_reason", "±»" +
-                                 dob_name + "´òÔÎÒÔºó£¬±»" +
-                                 (dob_name == killer_name ? "ÁíÒ»¸ö" : "") +
-                                 killer_name + "³Ã»úÉ±µôÁË");
+                        set_temp("die_reason", "è¢«" +
+                                 dob_name + "æ‰“æšˆä»¥å¾Œï¼Œè¢«" +
+                                 (dob_name == killer_name ? "å¦ä¸€å€‹" : "") +
+                                 killer_name + "è¶æ©Ÿæ®ºæ‰äº†");
                 } else if( playerp(me) && killer_name && !killer ) {
-                        set_temp("die_reason", "±»" + killer_name +
-                                               HIM "É±º¦ÁË");
+                        set_temp("die_reason", "è¢«" + killer_name +
+                                               HIM "æ®ºå®³äº†");
                 }
         }
         if( COMBAT_D->player_escape(killer, this_object()) ) {
@@ -793,7 +793,7 @@ int heal_up()
         // For Business.
         if( playerp(me) )
         {
-                // Õ½Éñ¸½Ìå
+                // æˆ°ç¥é™„é«”
                 n = query_temp("apply/full_self", me) + query("ability1/full_self", me);
                 if( n > 90 ) n = 90;
                 if( !me->is_busy() && n > random(100) && random(10) < 5 )
@@ -815,7 +815,7 @@ int heal_up()
                         }
 
                         if( flag )
-                        tell_object(me, HIR "ÄãÈ«Éíºì¹â±¬ÏÖ£¬ÓÌÈçÕ½Éñ¸½Ìå°ã»Ö¸´ÁËÆøÑªºÍÄÚÁ¦£¡\n" NOR);
+                        tell_object(me, HIR "ä½ å…¨èº«ç´…å…‰çˆ†ç¾ï¼ŒçŒ¶å¦‚æˆ°ç¥é™„é«”èˆ¬æ¢å¾©äº†æ°£è¡€å’Œå…§åŠ›ï¼\n" NOR);
                 }
                 
                 if( query("reborn/times") && me->query_skill_mapped("force") == "xiantian-gong" )
@@ -823,7 +823,7 @@ int heal_up()
                         if( query("neili") < query("max_neili") * 70 / 100 )
                         {
                                 set("neili", query("max_neili"));
-                                tell_object(me, HIC "ÄãÏÈÌì¹¦ÔË×ª£¬¶ÙÊ±ÕæÆøÁ÷¶¯ÉúÉú²»Ï¢£¬ÓÃÖ®²»Ğª¡£\n" NOR);
+                                tell_object(me, HIC "ä½ å…ˆå¤©åŠŸé‹è½‰ï¼Œé “æ™‚çœŸæ°£æµå‹•ç”Ÿç”Ÿä¸æ¯ï¼Œç”¨ä¹‹ä¸æ­‡ã€‚\n" NOR);
                         }
                 }
                 if( query("reborn/times") && (me->query_skill_mapped("force") == "taiji-shengong"
@@ -837,7 +837,7 @@ int heal_up()
                                 if( query("eff_qi") > query("max_qi") ) set("eff_qi",query("max_qi", me), me);
                                 addn("qi", count, me);
                                 if( query("qi") > query("max_qi") ) set("qi",query("max_qi", me), me);
-                                tell_object(me, HIC "ÄãÌåÄÚÒõÑôÌ«¼«ÔË×ª£¬¶ÙÊ±»¯ÒõÑôÓãÖ®Á¦ÖÎÓú×ÔÉíÊÜÉËÑªÆø¡£\n" NOR);
+                                tell_object(me, HIC "ä½ é«”å…§é™°é™½å¤ªæ¥µé‹è½‰ï¼Œé “æ™‚åŒ–é™°é™½é­šä¹‹åŠ›æ²»ç™’è‡ªèº«å—å‚·è¡€æ°£ã€‚\n" NOR);
                         }
                 }
                 me->update_all_wares();
@@ -868,7 +868,7 @@ int heal_up()
                 if( (guard = query_temp("guardfor")) &&
                     (!objectp(guard) || ! guard->is_character()) ) {
                         if( my["jing"] * 100 / my["max_jing"] < 50 ) {
-                                tell_object(me, "Äã¾õµÃÌ«ÀÛÁË£¬ĞèÒª·ÅËÉ·ÅËÉÁË¡£\n");
+                                tell_object(me, "ä½ è¦ºå¾—å¤ªç´¯äº†ï¼Œéœ€è¦æ”¾é¬†æ”¾é¬†äº†ã€‚\n");
                                 command("guard cancel");
                                 return update_flag;
                         }
@@ -876,16 +876,16 @@ int heal_up()
                         my["jing"] -= 30 + random(20);
                         switch (random(8))
                         {
-                        case 0: message_vision("$N½ôÕÅµÄ¶¢×ÅËÄÖÜÀ´ÍùµÄĞĞÈË¡£\n", me);
+                        case 0: message_vision("$Nç·Šå¼µçš„ç›¯è‘—å››å‘¨ä¾†å¾€çš„è¡Œäººã€‚\n", me);
                                 break;
 
-                        case 1: message_vision("$N´òÁË¸ö¹şÇ·£¬Ëæ¼´Õñ×÷¾«Éñ¼ÌĞø¹Û²ì¸½½üÇé¿ö¡£\n", me);
+                        case 1: message_vision("$Næ‰“äº†å€‹å“ˆæ¬ ï¼Œéš¨å³æŒ¯ä½œç²¾ç¥ç¹¼çºŒè§€å¯Ÿé™„è¿‘æƒ…æ³ã€‚\n", me);
                                 break;
 
-                        case 2: message_vision("$N×ó³ò³ò£¬ÓÒ¿´¿´£¬²»·Å¹ıÒ»¸ö¿ÉÒÉµÄÈËÎï¡£\n", me);
+                        case 2: message_vision("$Nå·¦ç…ç…ï¼Œå³çœ‹çœ‹ï¼Œä¸æ”¾éä¸€å€‹å¯ç–‘çš„äººç‰©ã€‚\n", me);
                                 break;
 
-                        case 3: message_vision("$N´òÆğ¾«ÉñÏ¸Ï¸µÄ¹Û²ìÖÜÎ§¡£\n", me);
+                        case 3: message_vision("$Næ‰“èµ·ç²¾ç¥ç´°ç´°çš„è§€å¯Ÿå‘¨åœã€‚\n", me);
                                 break;
                         }
                         update_flag++;
@@ -899,7 +899,7 @@ int heal_up()
                         my["jing"] = my["eff_jing"];
                         if( my["eff_jing"] < my["max_jing"] ) {
                                 my["eff_jing"] ++;
-                                // ×°±¸ÏµÍ³¸½¼ÓÊôĞÔ
+                                // è£å‚™ç³»çµ±é™„åŠ å±¬æ€§
                                 if( q = (query_temp("apply/ref_jing") + query("ability1/ref_jing")) ) {
                                         my["eff_jing"] += q;
                                 }
@@ -915,7 +915,7 @@ int heal_up()
                         my["qi"] = my["eff_qi"];
                         if( my["eff_qi"] < my["max_qi"] ) {
                                 my["eff_qi"] ++;
-                                // ×°±¸ÏµÍ³
+                                // è£å‚™ç³»çµ±
                                 if( q = (query_temp("apply/ref_qi") + query("ability1/ref_qi")) ) {
                                         my["eff_qi"] += q;
                                 }
@@ -992,7 +992,7 @@ object query_max_hatred()
         }
 }
 
-// ²éÑ¯Ä³Ò»¶ÔÊÖµÄ³ğºŞ
+// æŸ¥è©¢æŸä¸€å°æ‰‹çš„ä»‡æ¨
 int query_hatred(object enemy)
 {
         if (mapp(hatred_list))
@@ -1003,7 +1003,7 @@ int query_hatred(object enemy)
 
 }
 
-// Ôö¼Ó³ğºŞ
+// å¢åŠ ä»‡æ¨
 int add_hatred(object who, int amount)
 {
 
@@ -1016,7 +1016,7 @@ int add_hatred(object who, int amount)
         return 1;
 }
 
-// ÒÆ³ı³ğºŞ
+// ç§»é™¤ä»‡æ¨
 void remove_hatred()
 {
         hatred_list = ([]);
@@ -1039,7 +1039,7 @@ mapping query_combine_damage_list()
         for( i=0;i<n;i++ ) 
         {
                 if( !objectp(a[i]) ) continue;
-                if( b[i] ) continue; // ¶ÓÎéÖĞ³ÉÔ±Í³¼Æ¹ı
+                if( b[i] ) continue; // éšŠä¼ä¸­æˆå“¡çµ±è¨ˆé
 
                 list[a[i]] = hatred_list[a[i]];
 

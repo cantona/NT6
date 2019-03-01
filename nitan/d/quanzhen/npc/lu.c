@@ -1,4 +1,4 @@
-// lu.c Â¹ÇåóÆ
+// lu.c é¹¿æ¸…ç¯¤
 
 inherit NPC;
 //inherit F_MASTER;
@@ -7,12 +7,12 @@ inherit NPC;
 
 void create()
 {
-        set_name("Â¹ÇåóÆ", ({"lu qingdu", "lu"}));
-        set("gender", "ÄĞĞÔ");
+        set_name("é¹¿æ¸…ç¯¤", ({"lu qingdu", "lu"}));
+        set("gender", "ç”·æ€§");
         set("age", 24);
         set("class", "quanzhen");
         set("long",
-                "ËûÊÇÒ»Î»Ìå¸ñÇ¿½¡µÄÇàÄêµÀÊ¿£¬ËÆºõÉí»³ÎäÒÕ¡£\n");
+                "ä»–æ˜¯ä¸€ä½é«”æ ¼å¼·å¥çš„é’å¹´é“å£«ï¼Œä¼¼ä¹èº«æ‡·æ­¦è—ã€‚\n");
         set("attitude", "friendly");
         set("shen_type",1);
         set("str", 26);
@@ -47,17 +47,17 @@ void create()
 
         set_skill("array", 20);
         set_skill("force", 40);
-        set_skill("xiantian-gong", 40);    //ÏÈÌìÆø¹¦
+        set_skill("xiantian-gong", 40);    //å…ˆå¤©æ°£åŠŸ
         set_skill("sword", 40);
-        set_skill("quanzhen-jian",60);  //È«Õæ½£
+        set_skill("quanzhen-jian",60);  //å…¨çœŸåŠ
         set_skill("dodge", 40);
-        set_skill("jinyan-gong", 60);   //½ğÑã¹¦
+        set_skill("jinyan-gong", 60);   //é‡‘é›åŠŸ
         set_skill("parry", 40);
         set_skill("strike",40);
         set_skill("unarmed",40);
-        set_skill("haotian-zhang", 60);    //ê»ÌìÕÆ
+        set_skill("haotian-zhang", 60);    //æ˜Šå¤©æŒ
         set_skill("cuff", 40);
-        set_skill("chunyang-quan", 60);    //´¿ÑôÈ­
+        set_skill("chunyang-quan", 60);    //ç´”é™½æ‹³
         set_skill("literate", 40);
         set_skill("taoism", 40);
 
@@ -70,11 +70,11 @@ void create()
         prepare_skill("cuff", "chunyang-quan");
         prepare_skill("strike", "haotian-zhang");
 
-        create_family("È«Õæ½Ì", 4, "µÜ×Ó");
+        create_family("å…¨çœŸæ•™", 4, "å¼Ÿå­");
 
         set("inquiry", ([
-                "È«Õæ½Ì" :  "ÎÒÈ«Õæ½ÌÊÇÌìÏÂµÀ¼ÒĞşÃÅÕı×Ú¡£\n",
-                //"³ö¼Ò"   :  (: ask_for_join() :),
+                "å…¨çœŸæ•™" :  "æˆ‘å…¨çœŸæ•™æ˜¯å¤©ä¸‹é“å®¶ç„é–€æ­£å®—ã€‚\n",
+                //"å‡ºå®¶"   :  (: ask_for_join() :),
         ]) );
 
         setup();

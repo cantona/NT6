@@ -14,23 +14,23 @@ int main(object me, string arg)
         seteuid(getuid());
 
         if (me->is_busy())
-                return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£å¿™è‘—å‘¢ã€‚\n");
 
         if( query("no_fight", environment(me)) )
-                return notify_fail("ÄãÔÚÕâÀïÑİÁ·Ò²²»ÅÂ³³µ½±ğÈË£¿\n");
+                return notify_fail("ä½ åœ¨é€™è£¡æ¼”ç·´ä¹Ÿä¸æ€•åµåˆ°åˆ¥äººï¼Ÿ\n");
 
         if (! arg)
-                return notify_fail("ÄãÏëÑİÁ·Ê²Ã´£¿\n");
+                return notify_fail("ä½ æƒ³æ¼”ç·´ä»€éº¼ï¼Ÿ\n");
 
         if (file_size(SKILL_D(arg) + ".c") <= 0)
-                return notify_fail("Ã»ÌıËµ¹ıÓĞÕâÖÖÎä¹¦¡£\n");
+                return notify_fail("æ²’è½èªªéæœ‰é€™ç¨®æ­¦åŠŸã€‚\n");
                
         if (! mapp(SKILL_D(arg)->query_sub_skills()))
-                return notify_fail("ÕâÖÖÎä¹¦ÎŞĞèÑİÁ·£¬»¹ÊÇÇÚ¼ÓÁ·Ï°°É¡£\n");
+                return notify_fail("é€™ç¨®æ­¦åŠŸç„¡éœ€æ¼”ç·´ï¼Œé‚„æ˜¯å‹¤åŠ ç·´ç¿’å§ã€‚\n");
 
         if ((int) me->query_skill(arg, 1) > 0)
-                return notify_fail("ÄãÒÑ¾­»á" + to_chinese(arg) +
-                                   "ÁË£¬²»±ØÔÙÑİÁ·ÁË£¬»¹ÊÇ¶àÁ·Ï°°É¡£\n");
+                return notify_fail("ä½ å·²ç¶“æœƒ" + to_chinese(arg) +
+                                   "äº†ï¼Œä¸å¿…å†æ¼”ç·´äº†ï¼Œé‚„æ˜¯å¤šç·´ç¿’å§ã€‚\n");
 
         if (! SKILL_D(arg)->get_ready(me))
                 return 1;
@@ -39,7 +39,7 @@ int main(object me, string arg)
         set_temp("pending/practicing_skill", arg, me);
         me->start_busy((: practicing :), (: halt_practice :));
 
-        write("Äã¿ªÊ¼ÑİÁ·" + to_chinese(arg) + "¡£\n");
+        write("ä½ é–‹å§‹æ¼”ç·´" + to_chinese(arg) + "ã€‚\n");
         return 1;
 }
 
@@ -70,58 +70,58 @@ int practicing(object me)
                 sub_skill = skill_names[step - 1];
                 if (! me->query_skill(sub_skill, 1))
                 {
-                        write("ÄãÕıÓû¼ÌĞøÑİÁ·£¬Í»È»Ò»Àã£¬Õâ²Å·¢ÏÖ×Ô¼º²»»áÔËÓÃ" +
+                        write("ä½ æ­£æ¬²ç¹¼çºŒæ¼”ç·´ï¼Œçªç„¶ä¸€æ¥ï¼Œé€™æ‰ç™¼ç¾è‡ªå·±ä¸æœƒé‹ç”¨" +
                               to_chinese(sub_skill) + "\n");
                         return 0;
                 }
                 if (file_size(SKILL_D(sub_skill) + ".c") <= 0)
                 {
-                        write("àÅ¡¢ÔõÃ´»ØÊÂ£¿ÔõÃ´" + to_chinese(sub_skill) +
-                              "ÕâÖÖÎä¹¦ºÃÏñÊ§´«ÁË£¿\n");
+                        write("å—¯ã€æ€éº¼å›äº‹ï¼Ÿæ€éº¼" + to_chinese(sub_skill) +
+                              "é€™ç¨®æ­¦åŠŸå¥½åƒå¤±å‚³äº†ï¼Ÿ\n");
                         return 0;
                 }
                 action=SKILL_D(sub_skill)->query_action(me,query_temp("weapon", me));
                 action_msg = action["action"];
-                action_msg = replace_string(action_msg, "$n", "Ğé¿Õ");
-                action_msg = replace_string(action_msg, "$l", "ÎŞ¾¡´¦");
+                action_msg = replace_string(action_msg, "$n", "è™›ç©º");
+                action_msg = replace_string(action_msg, "$l", "ç„¡ç›¡è™•");
                 cost = action["force"] * 8 / sizeof(sub_skills);
                 if( query("neili", me)<cost )
                 {
-                        write("Äã¸ÕÓû³öÕĞ£¬ºöÈ»¼äµ¤ÌïÕæÆø²»¼Ì£¬ÄÑÒÔÊ©Îª¡£\n");
+                        write("ä½ å‰›æ¬²å‡ºæ‹›ï¼Œå¿½ç„¶é–“ä¸¹ç”°çœŸæ°£ä¸ç¹¼ï¼Œé›£ä»¥æ–½ç‚ºã€‚\n");
                         return 0;
                 }
                 addn("neili", -cost, me);
                 cost = action["force"] / 10;
                 if( query("qi", me)<cost )
                 {
-                        write("Äã¾õµÃÆøÁ¦²»¼Ó£¬Æ£±¹²»¿°£¬ÎŞ·¨ÔÙ³öÕĞ¡£\n");
+                        write("ä½ è¦ºå¾—æ°£åŠ›ä¸åŠ ï¼Œç–²æ†Šä¸å ªï¼Œç„¡æ³•å†å‡ºæ‹›ã€‚\n");
                         return 0;
                 }
                 addn("qi", -cost, me);
                 cost=action["force"]*8/query("int", me)/sizeof(sub_skills);
                 if( query("jing", me)<cost )
                 {
-                        write("Ò»Õó·³¶ñÓ¿ÉÏĞÄÍ·£¬Äã¼¸ÓûÅ»ÍÂ¡£\n");
+                        write("ä¸€é™£ç…©æƒ¡æ¹§ä¸Šå¿ƒé ­ï¼Œä½ å¹¾æ¬²å˜”åã€‚\n");
                         return 0;
                 }
                 addn("jing", -cost, me);
 
                 message_vision(color_msg[random(sizeof(color_msg))] + action_msg +
-                               "¡£\n\n" NOR, me);
+                               "ã€‚\n\n" NOR, me);
                 if (me->query_skillo(sub_skill, 1) <
                     (int) sub_skills[sub_skill])
                 {
-                        write("ÄãÑİÁ·Íê" + to_chinese(sub_skill) + "ÕâÒ»ÕĞ£¬"
-                              "¾õµÃÓĞĞ©ÃÔÃ££¬Ò»Ê±ÎŞ·¨¼ÌĞøÑİÁ·ÏÂÈ¥¡£\n");
+                        write("ä½ æ¼”ç·´å®Œ" + to_chinese(sub_skill) + "é€™ä¸€æ‹›ï¼Œ"
+                              "è¦ºå¾—æœ‰äº›è¿·èŒ«ï¼Œä¸€æ™‚ç„¡æ³•ç¹¼çºŒæ¼”ç·´ä¸‹å»ã€‚\n");
                         return 0;
                 }
         } else
         {
-                message_vision("$N»º»ºµÄÊÕ×¡²½·¥£¬ËÆÓĞËùË¼¡£\n", me);
+                message_vision("$Nç·©ç·©çš„æ”¶ä½æ­¥ä¼ï¼Œä¼¼æœ‰æ‰€æ€ã€‚\n", me);
                 set_temp("pending/practice", 0, me);
                 if (SKILL_D(skill)->get_finish(me))
                 {
-                        write("¹§Ï²ÄãÁ·³É" + to_chinese(skill) + "£¡\n");
+                        write("æ­å–œä½ ç·´æˆ" + to_chinese(skill) + "ï¼\n");
                         lvl = 0;
                         for (i = 0; i < sizeof(sub_skills); i++)
                         {
@@ -141,7 +141,7 @@ int practicing(object me)
 
 int halt_practice(object me)
 {
-        write("ÄãÊÕ×¡ÒâÄî£¬²»ÔÙ¼ÌĞøÑİÁ·¡£\n");
+        write("ä½ æ”¶ä½æ„å¿µï¼Œä¸å†ç¹¼çºŒæ¼”ç·´ã€‚\n");
         set_temp("pending/practice", 0, me);
         set_temp("pending/practicing_skill", 0, me);
         return 1;
@@ -150,12 +150,12 @@ int halt_practice(object me)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : yanlian <¼¼ÄÜ>
+æŒ‡ä»¤æ ¼å¼ : yanlian <æŠ€èƒ½>
 
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄã½«Ä³Ğ©Îä¹¦ºÏ¶øÎªÒ»£¬³ÉÎªÒ»ÖÖÇ¿´óµÃ¶àµÄĞÂ¼¼ÄÜ¡£±ÈÈçÁù
-ÂöÉñ½£¡£µ±Äã°ÑÁùÂö½£·¨Ò»Ò»Ñ§È«ºó£¬Äã¾Í¿ÉÒÔÑİÁ·ÁùÂöÉñ½£(six-finger)£¬
-Ò»µ©³É¹¦£¬Äã½«ÁìÎòµ½Ò»ÖÖÈ«ĞÂµÄ¼¼ÄÜ¡£ÑİÁ·½«ºÄ·Ñ¾«¡¢Æø¡¢ÄÚÁ¦¡¢Ç±ÄÜ¡£Èç
-¹ûÒòÎªÕâĞ©ÒòËØ²»ÄÜÂú×ã£¬ÑİÁ·½«Ê§°Ü¡£
+é€™å€‹æŒ‡ä»¤å¯ä»¥è®“ä½ å°‡æŸäº›æ­¦åŠŸåˆè€Œç‚ºä¸€ï¼Œæˆç‚ºä¸€ç¨®å¼·å¤§å¾—å¤šçš„æ–°æŠ€èƒ½ã€‚æ¯”å¦‚å…­
+è„ˆç¥åŠã€‚ç•¶ä½ æŠŠå…­è„ˆåŠæ³•ä¸€ä¸€å­¸å…¨å¾Œï¼Œä½ å°±å¯ä»¥æ¼”ç·´å…­è„ˆç¥åŠ(six-finger)ï¼Œ
+ä¸€æ—¦æˆåŠŸï¼Œä½ å°‡é ˜æ‚Ÿåˆ°ä¸€ç¨®å…¨æ–°çš„æŠ€èƒ½ã€‚æ¼”ç·´å°‡è€—è²»ç²¾ã€æ°£ã€å…§åŠ›ã€æ½›èƒ½ã€‚å¦‚
+æœå› ç‚ºé€™äº›å› ç´ ä¸èƒ½æ»¿è¶³ï¼Œæ¼”ç·´å°‡å¤±æ•—ã€‚
 HELP
         );
         return 1;

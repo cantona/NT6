@@ -8,11 +8,11 @@ mixed ask_skill1();
 
 void create()
 {
-        set_name("Öìµ¤³¼", ({ "zhu danchen", "zhu", "danchen" }));
-        set("title", "´óÀí¹ú»¤ÎÀ" );
-        set("nickname", CYN "±ÊÑâÉú" NOR);
-        set("long", "ËûÊÇ´óÀí¹úËÄ´ó»¤ÎÀÖ®Ò»¡£Ò»¸±ÊéÉúËáÁïÁïµÄ´ò°çĞĞÍ·¡£\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("æœ±ä¸¹è‡£", ({ "zhu danchen", "zhu", "danchen" }));
+        set("title", "å¤§ç†åœ‹è­·è¡›" );
+        set("nickname", CYN "ç­†ç¡¯ç”Ÿ" NOR);
+        set("long", "ä»–æ˜¯å¤§ç†åœ‹å››å¤§è­·è¡›ä¹‹ä¸€ã€‚ä¸€å‰¯æ›¸ç”Ÿé…¸æºœæºœçš„æ‰“æ‰®è¡Œé ­ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 40);
         set("class", "officer");
         set("attitude", "friendly");
@@ -55,10 +55,10 @@ void create()
         prepare_skill("strike", "wuluo-zhang");
 
         set("inquiry", ([
-                "Í¸¹Ç¶¤"   : (: ask_skill1 :),
+                "é€éª¨é‡˜"   : (: ask_skill1 :),
         ]));
 
-        create_family("¶ÎÊÏ»Ê×å", 15, "¼Ò³¼");
+        create_family("æ®µæ°çš‡æ—", 15, "å®¶è‡£");
 
         set("chat_chance_combat", 120);
         set("chat_msg_combat", ({
@@ -88,31 +88,31 @@ void attempt_apprentice(object ob)
                 return;
 
         command("smile");
-        command("say ÊÀ×ÓµîÏÂºÎĞèÈç´Ë£¬Ö»ÒªÓĞÊÂ·Ô¸ÀÔÚÏÂÒ»Éù±ãÊÇ¡£");
-        command("say ÈôÊÀ×Ó²»ÏÓÆú£¬ÎÒÕâÀïµ¹ÊÇÓĞÒ»Ì×±Ê·¨¿ÉÒÔ´«ÊÚÓèÄã¡£");
+        command("say ä¸–å­æ®¿ä¸‹ä½•éœ€å¦‚æ­¤ï¼Œåªè¦æœ‰äº‹å©å’åœ¨ä¸‹ä¸€è²ä¾¿æ˜¯ã€‚");
+        command("say è‹¥ä¸–å­ä¸å«Œæ£„ï¼Œæˆ‘é€™è£¡å€’æ˜¯æœ‰ä¸€å¥—ç­†æ³•å¯ä»¥å‚³æˆäºˆä½ ã€‚");
 
         return;
 }
 
 int recognize_apprentice(object ob, string skill)
 {
-        if( query("family/family_name", ob) != "¶ÎÊÏ»Ê×å" )
+        if( query("family/family_name", ob) != "æ®µæ°çš‡æ—" )
         {
                 command("sneer");
-                command("say ÎÒÓë¸óÏÂËØ²»ÏàÊ¶£¬²»Öª¸óÏÂ´Ë»°´ÓºÎËµÆğ£¿");
+                command("say æˆ‘èˆ‡é–£ä¸‹ç´ ä¸ç›¸è­˜ï¼Œä¸çŸ¥é–£ä¸‹æ­¤è©±å¾ä½•èªªèµ·ï¼Ÿ");
                 return -1;
         }
 
         if (skill != "qingliang-daxuefa" && skill != "dagger")
         {
-                command("say ÖìÄ³ÉúÆ½Ö»¶Ô±Ê·¨Ò»ÏîÓĞËùÑĞ¾¿£¬ÆäËü¹¦·òËùÖªÉõÇ³¡£");
+                command("say æœ±æŸç”Ÿå¹³åªå°ç­†æ³•ä¸€é …æœ‰æ‰€ç ”ç©¶ï¼Œå…¶å®ƒåŠŸå¤«æ‰€çŸ¥ç”šæ·ºã€‚");
                 return -1;
         }
 
         if( !query_temp("can_learn/zhudanchen", ob) )
         {
                 command("hehe");
-                command("say ¼ÈÈ»ÊÀ×ÓÓĞĞÄÏ°Îä£¬ÔÚÏÂÀíµ±½ß¾¡ËùÄÜ´«ÊÚ¡£");
+                command("say æ—¢ç„¶ä¸–å­æœ‰å¿ƒç¿’æ­¦ï¼Œåœ¨ä¸‹ç†ç•¶ç«­ç›¡æ‰€èƒ½å‚³æˆã€‚");
                 set_temp("can_learn/zhudanchen", 1, ob);
         }
         return 1;
@@ -124,34 +124,34 @@ mixed ask_skill1()
 
         me = this_player();
         if( query("can_perform/qingliang-daxuefa/ding", me) )
-                return "ÎÒ²»ÊÇÒÑ¾­½Ì¸øÄãÁËÂğ£¿";
+                return "æˆ‘ä¸æ˜¯å·²ç¶“æ•™çµ¦ä½ äº†å—ï¼Ÿ";
 
         if( query("family/family_name", me) != query("family/family_name") )
-                return RANK_D->query_respect(me) + "ºÍÎÒËØÎŞ¹Ï¸ğ£¬ºÎ³ö´ËÑÔ£¿";
+                return RANK_D->query_respect(me) + "å’Œæˆ‘ç´ ç„¡ç“œè‘›ï¼Œä½•å‡ºæ­¤è¨€ï¼Ÿ";
 
         if (me->query_skill("qingliang-daxuefa", 1) < 1)
-                return "ÄãÁ¬ÎÒÇåÁ¹´òÑ¨·¨¶¼Î´Ñ§£¬ÔõÃ´À´¾øÕĞÒ»Ëµ£¿";
+                return "ä½ é€£æˆ‘æ¸…æ¶¼æ‰“ç©´æ³•éƒ½æœªå­¸ï¼Œæ€éº¼ä¾†çµ•æ‹›ä¸€èªªï¼Ÿ";
 
         if( query("family/gongji", me)<400 )
-                return "Ë¡ÔÚÏÂÎŞÀñ£¬ÍõÒ¯·Ô¸À¹ı£¬²»µÃ´«¹¦¸øÎŞ¹¦×ÓµÜ¡£";
+                return "æ•åœ¨ä¸‹ç„¡ç¦®ï¼Œç‹çˆºå©å’éï¼Œä¸å¾—å‚³åŠŸçµ¦ç„¡åŠŸå­å¼Ÿã€‚";
 
         if (me->query_skill("force") < 150)
-                return "ÄãµÄÄÚ¹¦ĞŞÎªÌ«²î£¬Ñ§²»ÁËÕâÒ»ÕĞ¡£";
+                return "ä½ çš„å…§åŠŸä¿®ç‚ºå¤ªå·®ï¼Œå­¸ä¸äº†é€™ä¸€æ‹›ã€‚";
 
         if( query("max_neili", me)<1200 )
-                return "ÄãµÄÄÚÁ¦ĞŞÎªÌ«²î£¬Ñ§²»ÁËÕâÒ»ÕĞ¡£";
+                return "ä½ çš„å…§åŠ›ä¿®ç‚ºå¤ªå·®ï¼Œå­¸ä¸äº†é€™ä¸€æ‹›ã€‚";
 
         if (me->query_skill("qingliang-daxuefa", 1) < 100)
-                return "ÄãÇåÁ¹´òÑ¨·¨µÄ»ğºò»¹²»¹»£¬»ØÈ¥Á·Á·ÔÙÀ´°É¡£";
+                return "ä½ æ¸…æ¶¼æ‰“ç©´æ³•çš„ç«å€™é‚„ä¸å¤ ï¼Œå›å»ç·´ç·´å†ä¾†å§ã€‚";
 
-        message_sort(HIY "\n$n" HIY "Î¢Î¢Ò»Ğ¦£¬ÉìÊÖ½«$N" HIY "ÕĞµ½ÉíÇ°£¬µÍ"
-                     "ÉùÔÚ$N" HIY "¶úÅÔàÖ¹¾ÁË°ëÌì¡£È»ºóÓÖ°Î³öÑü¼äÌúÉÈ·­×ªÊı"
-                     "ÏÂ£¬Ğ±´Ì¶ø³ö¡£ËÆºõÊÇÒ»ÖÖÆÄÎª¶ÀÌØµÄ´òÑ¨·¨¡£\n\n" NOR,
+        message_sort(HIY "\n$n" HIY "å¾®å¾®ä¸€ç¬‘ï¼Œä¼¸æ‰‹å°‡$N" HIY "æ‹›åˆ°èº«å‰ï¼Œä½"
+                     "è²åœ¨$N" HIY "è€³æ—å˜€å’•äº†åŠå¤©ã€‚ç„¶å¾Œåˆæ‹”å‡ºè…°é–“éµæ‰‡ç¿»è½‰æ•¸"
+                     "ä¸‹ï¼Œæ–œåˆºè€Œå‡ºã€‚ä¼¼ä¹æ˜¯ä¸€ç¨®é —ç‚ºç¨ç‰¹çš„æ‰“ç©´æ³•ã€‚\n\n" NOR,
                      me, this_object());
 
         command("smile");
-        command("say ÕâÕĞ²¢²»ÄÑÁ·£¬ÒÀÊÀ×ÓµÄÎòĞÔºÜ¿ì¾Í¿ÉÒÔÊìÁ·ÔËÓÃÁË¡£");
-        tell_object(me, HIC "ÄãÑ§»áÁË¡¸Í¸¹Ç¶¤¡¹¡£\n" NOR);
+        command("say é€™æ‹›ä¸¦ä¸é›£ç·´ï¼Œä¾ä¸–å­çš„æ‚Ÿæ€§å¾ˆå¿«å°±å¯ä»¥ç†Ÿç·´é‹ç”¨äº†ã€‚");
+        tell_object(me, HIC "ä½ å­¸æœƒäº†ã€Œé€éª¨é‡˜ã€ã€‚\n" NOR);
         if (me->can_improve_skill("dagger"))
                 me->improve_skill("dagger", 1500000);
         if (me->can_improve_skill("qingliang-daxuefa"))
@@ -174,13 +174,13 @@ int accept_object(object who, object ob)
 
         if( query("dushu", who) + 1 < 1 )
         {
-                say(this_object()->name()+"Ğ¦µÀ£º¡°ÕâÔõÃ´ºÃÒâË¼£¬ÄúÉÏ´Î¸øµÄÇ®»¹Ã»¶ÁÍêÄØ£¡¡±\n");
+                say(this_object()->name()+"ç¬‘é“ï¼šâ€œé€™æ€éº¼å¥½æ„æ€ï¼Œæ‚¨ä¸Šæ¬¡çµ¦çš„éŒ¢é‚„æ²’è®€å®Œå‘¢ï¼â€\n");
                 return 0;
         }
 
         if( ob->value()/15 + query("dushu", who) < 0 )
         {
-                say(this_object()->name()+"ÊÜ³èÈô¾ªµØËµ£º¡°ÕâÃ´¶àÇ®ÎÒ¿É²»¸ÒÊÕÑ½£¡¡±\n");
+                say(this_object()->name()+"å—å¯µè‹¥é©šåœ°èªªï¼šâ€œé€™éº¼å¤šéŒ¢æˆ‘å¯ä¸æ•¢æ”¶å‘€ï¼â€\n");
                 return 0;
         }
 
@@ -188,13 +188,13 @@ int accept_object(object who, object ob)
         {
                 if( ob->value() >= learn )
                 {
-                        say(this_object()->name()+"µãÁËµãÍ·£¬ËµµÀ£ºÅ¶£¬ÏñÄãÕâ÷áÓĞĞÄµÄÑ§Éú»¹ÕæÊÇ²»¶à¼û£¬ºÃºÃÅ¬Á¦\n¿ÉÒÔÏòÎÒÇë½Ì¶ÁÊéĞ´×Ö(literate)µÄÈÎºÎÎÊÌâ¡£\n");
+                        say(this_object()->name()+"é»äº†é»é ­ï¼Œèªªé“ï¼šå“¦ï¼Œåƒä½ é€™éº¼æœ‰å¿ƒçš„å­¸ç”Ÿé‚„çœŸæ˜¯ä¸å¤šè¦‹ï¼Œå¥½å¥½åŠªåŠ›\nå¯ä»¥å‘æˆ‘è«‹æ•™è®€æ›¸å¯«å­—(literate)çš„ä»»ä½•å•é¡Œã€‚\n");
                         set("dushu", ob->value()/15, who);
                         return 1;
                 }
                 else
                 {
-                        say(this_object()->name()+"ËµµÀ£ºÄãµÄ³ÏÒâ²»¹»£¬ÕâÇ®»¹ÊÇÄÃ»ØÈ¥°É¡£\n");
+                        say(this_object()->name()+"èªªé“ï¼šä½ çš„èª æ„ä¸å¤ ï¼Œé€™éŒ¢é‚„æ˜¯æ‹¿å›å»å§ã€‚\n");
                         return 0;
                 }
         }
@@ -202,13 +202,13 @@ int accept_object(object who, object ob)
         {
                 if( ob->value() >= learn )
                 {
-                        say(this_object()->name()+"µãÁËµãÍ·£¬ËµµÀ£ºÅ¶£¬ÏñÄãÕâ÷áÓĞĞÄµÄÑ§Éú»¹ÕæÊÇ²»¶à¼û£¬ºÃºÃÅ¬Á¦½«À´±Ø¶¨Ç°Í¾ÎŞÁ¿£¬Ğ»ÁË¡£\n");
+                        say(this_object()->name()+"é»äº†é»é ­ï¼Œèªªé“ï¼šå“¦ï¼Œåƒä½ é€™éº¼æœ‰å¿ƒçš„å­¸ç”Ÿé‚„çœŸæ˜¯ä¸å¤šè¦‹ï¼Œå¥½å¥½åŠªåŠ›å°‡ä¾†å¿…å®šå‰é€”ç„¡é‡ï¼Œè¬äº†ã€‚\n");
                         addn("dushu", ob->value()/15, who);
                         return 1;
                 }
                 else
                 {
-                        say(this_object()->name()+"ËµµÀ£ºÄãµÄ³ÏÒâ²»¹»£¬ÕâÇ®»¹ÊÇÄÃ»ØÈ¥°É¡£\n");
+                        say(this_object()->name()+"èªªé“ï¼šä½ çš„èª æ„ä¸å¤ ï¼Œé€™éŒ¢é‚„æ˜¯æ‹¿å›å»å§ã€‚\n");
                         return 0;
                 }
         }
@@ -229,19 +229,19 @@ int do_learn(string arg)
         ob = this_object();
 
         if (me->is_busy())
-                return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£å¿™è‘—å‘¢ã€‚\n");
 
         if(!arg || arg=="?" || arg=="/?")
-                return notify_fail("Ö¸Áî¸ñÊ½£ºlearn <Ä³ÈË> [about] <¼¼ÄÜ> <´ÎÊı>\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šlearn <æŸäºº> [about] <æŠ€èƒ½> <æ¬¡æ•¸>\n");
 
         /*
         if ((sscanf(arg, "%s about %s %d", teacher,skill,times)!=3 ))
         if ((sscanf(arg, "%s %s %d", teacher, skill,times)!=3 ))
-                return notify_fail("Ö¸Áî¸ñÊ½£ºlearn <Ä³ÈË> [about] <¼¼ÄÜ> <´ÎÊı>\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šlearn <æŸäºº> [about] <æŠ€èƒ½> <æ¬¡æ•¸>\n");
         */
 
         if( (i = sizeof(args = explode(arg, " "))) < 2 )
-                return notify_fail("Ö¸Áî¸ñÊ½£ºlearn|xue <Ä³ÈË> <¼¼ÄÜ> <´ÎÊı>\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šlearn|xue <æŸäºº> <æŠ€èƒ½> <æ¬¡æ•¸>\n");
 
         i--;
         if( i >= 2 && sscanf(args[i], "%d", times) && times )
@@ -257,7 +257,7 @@ int do_learn(string arg)
                 return 0;
 
         if( me->is_fighting() )
-                return notify_fail("ÁÙÕóÄ¥Ç¹£¿À´²»¼°À²¡£\n");
+                return notify_fail("è‡¨é™£ç£¨æ§ï¼Ÿä¾†ä¸åŠå•¦ã€‚\n");
 
         c = 200 + query_temp("apply/learn_times", me);
         if( present("learn emblem", me) )
@@ -270,21 +270,21 @@ int do_learn(string arg)
                 c += 1000;
 
         if( times < 1 || times > c ) {
-                write("Ñ§Ï°´ÎÊı×îÉÙÒ»´Î£¬×î¶àÒ²²»ÄÜ³¬¹ı" + chinese_number(c) +"´Î¡£\n");
+                write("å­¸ç¿’æ¬¡æ•¸æœ€å°‘ä¸€æ¬¡ï¼Œæœ€å¤šä¹Ÿä¸èƒ½è¶…é" + chinese_number(c) +"æ¬¡ã€‚\n");
                 return 1;
         }
 
         if ((int)times<1) {
-                write("ÄãÒªÑ§¼¸´Î£¿\n");
+                write("ä½ è¦å­¸å¹¾æ¬¡ï¼Ÿ\n");
                 return 1;
         }
 
         if( !living(ob) )
-                return notify_fail("àÅ....ÄãµÃÏÈ°Ñ" + ob->name() + "ÅªĞÑÔÙËµ¡£\n");
+                return notify_fail("å—¯....ä½ å¾—å…ˆæŠŠ" + ob->name() + "å¼„é†’å†èªªã€‚\n");
 
         if (me->query_skill("literate",1) >=ob->query_skill("literate", 1) && query("dushu",me))
         {
-                command("say àÅ...."+me->name()+"£¬ÄãÑ§Ï°ºÜÓÃ¹¦£¬µ«ÎÒÖ»ÄÜ½ÌÄãµ½ÕâÁË¡£Ììµ×ÏÂÒÑ¾­ÎŞÈË¿ÉÒÔ½ÌÄãÁË¡£\n");
+                command("say å—¯...."+me->name()+"ï¼Œä½ å­¸ç¿’å¾ˆç”¨åŠŸï¼Œä½†æˆ‘åªèƒ½æ•™ä½ åˆ°é€™äº†ã€‚å¤©åº•ä¸‹å·²ç¶“ç„¡äººå¯ä»¥æ•™ä½ äº†ã€‚\n");
                 return 1;
         }
 
@@ -292,57 +292,57 @@ int do_learn(string arg)
 
         if( !query("dushu", me) )
         {
-                command("say ß×£¿"+me->name()+"£¬ÎÒ²»¼ÇµÃÊÕ¹ıÄãÕâ¸öÑ§Éú°¡....\n");
+                command("say å’¦ï¼Ÿ"+me->name()+"ï¼Œæˆ‘ä¸è¨˜å¾—æ”¶éä½ é€™å€‹å­¸ç”Ÿå•Š....\n");
                 return 1;
         }
 
         if( query("dushu", me)<times ) {
-                command("say ß×£¿"+me->name()+"£¬Äã½»µÄÇ®ÒÑ¾­²»¹»Ñ§ÕâÃ´¶à´ÎÁË°¡....\n");
+                command("say å’¦ï¼Ÿ"+me->name()+"ï¼Œä½ äº¤çš„éŒ¢å·²ç¶“ä¸å¤ å­¸é€™éº¼å¤šæ¬¡äº†å•Š....\n");
                 return 1;
         }
 
         if (!learn)     learn=10;
         if (skill!="literate") {
-                write("ÕâÏî¼¼ÄÜÄã¿ÖÅÂ±ØĞëÕÒ±ğÈËÑ§ÁË¡£\n");
+                write("é€™é …æŠ€èƒ½ä½ ææ€•å¿…é ˆæ‰¾åˆ¥äººå­¸äº†ã€‚\n");
                 return 1;
         }
         if (! room=find_object(query("startroom",ob)))
                 room=load_object(query("startroom",ob));
         if (room!=environment()){
-                command("say ÎÒ³öÀ´°ìµãÊÂ£¬µÈÎÒ»ØÈ¥ÔÙËµ°É£¡");
+                command("say æˆ‘å‡ºä¾†è¾¦é»äº‹ï¼Œç­‰æˆ‘å›å»å†èªªå§ï¼");
                 return 1;
         }
         /*
         if (ob->query("jing<30"))
         {
                  ob->set("env/no_teach",1);
-                command("say ÎÒ½ñÌìÀÛÁË£¬ÎÒÒªÈ¥ĞİÏ¢ÁË£¡");
+                command("say æˆ‘ä»Šå¤©ç´¯äº†ï¼Œæˆ‘è¦å»ä¼‘æ¯äº†ï¼");
                 return 1;
         }
         */
         my_skill = me->query_skill(skill, 1);
         master_skill = ob->query_skill(skill, 1);
         if( my_skill >= master_skill ) {
-                write("ÕâÏî¼¼ÄÜÄãµÄ³Ì¶ÈÒÑ¾­²»ÊäÄãÊ¦¸¸ÁË¡£\n");
+                write("é€™é …æŠ€èƒ½ä½ çš„ç¨‹åº¦å·²ç¶“ä¸è¼¸ä½ å¸«çˆ¶äº†ã€‚\n");
                 return 1;
         }
 
         if( (query("level", me) < 60 && my_skill > 10000) ||
             (query("level", me) < 80 && my_skill > 20000) ||
             (query("level", me) < 100 && my_skill > 30000) ) {
-                write("ÕâÏî¼¼ÄÜÄãµÄ³Ì¶ÈÒÑ¾­´ïµ½·â¶¥ÉÏÏŞÁË¡£\n");
+                write("é€™é …æŠ€èƒ½ä½ çš„ç¨‹åº¦å·²ç¶“é”åˆ°å°é ‚ä¸Šé™äº†ã€‚\n");
                 return 1;
         }
 
         if( (query("potential", me) - query("learned_points",me)) < times )
-                return notify_fail("ÄãµÄÇ±ÄÜ²»¹»Ñ§Ï°ÕâÃ´¶à´ÎÁË¡£\n");
+                return notify_fail("ä½ çš„æ½›èƒ½ä¸å¤ å­¸ç¿’é€™éº¼å¤šæ¬¡äº†ã€‚\n");
 
         gin_cost = 150 / (int)me->query_int() + 1;
         if( !my_skill ) {
                 gin_cost *= 2;
                 me->set_skill(skill,0);
         }
-        printf("ÄãÏò%sÇë½ÌÓĞ¹Ø¡¸%s¡¹µÄÒÉÎÊ¡£\n", ob->name(), to_chinese(skill));
+        printf("ä½ å‘%sè«‹æ•™æœ‰é—œã€Œ%sã€çš„ç–‘å•ã€‚\n", ob->name(), to_chinese(skill));
 
         t1 = query("jing",me) / gin_cost;
         t2 = times - t1;
@@ -364,7 +364,7 @@ int do_learn(string arg)
                         t3 = (int)query("neili",me) / neili_cost;
                         t4 = t1 + t3;
                         if( t4 == 0 ) {
-                                write("È»¶øÄã½ñÌìÌ«ÀÛÁË£¬ÎŞ·¨ÔÙ½øĞĞÈÎºÎÑ§Ï°ÁË¡£\n");
+                                write("ç„¶è€Œä½ ä»Šå¤©å¤ªç´¯äº†ï¼Œç„¡æ³•å†é€²è¡Œä»»ä½•å­¸ç¿’äº†ã€‚\n");
                                 return 1;
                         }
 
@@ -408,14 +408,14 @@ int do_learn(string arg)
         if( query("special_skill/wisdom",me) )
                 rand += rand * 50 / 100;
 
-        printf("ÄãÌıÁË%sµÄÖ¸µ¼£¬ËÆºõÓĞĞ©ĞÄµÃ¡£\n", ob->name());
+        printf("ä½ è½äº†%sçš„æŒ‡å°ï¼Œä¼¼ä¹æœ‰äº›å¿ƒå¾—ã€‚\n", ob->name());
         addn("learned_points", t4, me);
         // me->improve_skill(skill, t4*grade * (10 + random((int)me->query_int() - 9)));
         me->improve_skill(skill, t4*grade*rand);
 
         if( t4 > 0 && t4 < times )
-                write("µ«ÊÇÄã½ñÌìÌ«ÀÛÁË£¬Ñ§Ï°ÁË" + chinese_number(t4) +
-                      "´ÎÒÔºóÖ»ºÃÏÈÍ£ÏÂÀ´¡£\n");
+                write("ä½†æ˜¯ä½ ä»Šå¤©å¤ªç´¯äº†ï¼Œå­¸ç¿’äº†" + chinese_number(t4) +
+                      "æ¬¡ä»¥å¾Œåªå¥½å…ˆåœä¸‹ä¾†ã€‚\n");
 
         addn("dushu", -t4, me);
         return 1;

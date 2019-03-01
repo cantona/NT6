@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��ׯ��Ժ");
+        set("short", "劉莊側院");
         set("long", @LONG
-��������ׯ�Աߵ�Ժ�ӣ����ߵ����ﲻ����Щ���棬��Ȼ���˼�
-������������֮�˲��õ�����ľ�ˣ��Ա��м�����Ժ�Ҷ�ģ��������
-��һ��ָ�ֻ��ŵĲ�֪����˵Щʲô��
+這裡是劉莊旁邊的院子，你走到這裡不禁有些驚奇，居然擺了幾
+個江湖上練武之人才用的練功木人，旁邊有幾個護院家丁模樣的人坐
+在一旁指手畫腳的不知道在說些什麼。
 LONG);
         set("exits", ([
             "south" : __DIR__"liuzhuang",

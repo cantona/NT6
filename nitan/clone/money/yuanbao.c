@@ -4,15 +4,15 @@ inherit MONEY;
 
 void create()
 {
-        set_name(HIY "½ðÔª±¦" NOR, ({"yuanbao", "yuanbao_money"}));
+        set_name(HIY "é‡‘å…ƒå¯¶" NOR, ({"yuanbao", "yuanbao_money"}));
         if( clonep() )
                 set_default_object(__FILE__);
         else {
                 set("money_id", "yuanbao");
-                set("long", HIY "Ò»¿é½ð»ÆÉ«µÄÔª±¦£¬ÉÁÉÁ·¢ÁÁ£¬ÄÃÔÚÊÖÀï³ÁµéµéµÄ¡£\n" NOR);
-                set("unit", "Ð©");
+                set("long", HIY "ä¸€å¡Šé‡‘é»ƒè‰²çš„å…ƒå¯¶ï¼Œé–ƒé–ƒç™¼äº®ï¼Œæ‹¿åœ¨æ‰‹è£¡æ²‰ç”¸ç”¸çš„ã€‚\n" NOR);
+                set("unit", "äº›");
                 set("base_value", 1000000);
-                set("base_unit", "¿é");
+                set("base_unit", "å¡Š");
                 set("base_weight", 1);
         }
         set_amount(1);

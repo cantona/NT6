@@ -6,15 +6,15 @@ inherit MI_XIAO;
 
 void create()
 {
-        set_name(HIG "±ÌÓñ¶´Ïô¡¤ÓÄÀ¼" NOR, ({ "youlan xiao", "youlan", "xiao" }));
+        set_name(HIG "ç¢§ç‰æ´è•­ï¹’å¹½è˜­" NOR, ({ "youlan xiao", "youlan", "xiao" }));
         set_weight(600);
 
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", HIG "Ò»°Ñ±ÌÓñËùÖÆµÄ¶´Ïô£¬ÒşÒş·º³öÂÌ"
-                                "¹â¡£ÉÏ¿Ì¡¸" HIM "ÓÄÀ¼" HIG "¡¹¡£\n" NOR);
+                set("unit", "æŠŠ");
+                set("long", HIG "ä¸€æŠŠç¢§ç‰æ‰€åˆ¶çš„æ´è•­ï¼Œéš±éš±æ³›å‡ºç¶ "
+                                "å…‰ã€‚ä¸Šåˆ»ã€Œ" HIM "å¹½è˜­" HIG "ã€ã€‚\n" NOR);
                 set("value", 5000000);
                 set("material", "stone");
         }

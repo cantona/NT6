@@ -4,14 +4,14 @@ inherit KNOWER;
 
 void create()
 {
-        set_name("��С��", ({ "xiao er", "xiao", "waiter" }) );
-        set("gender", "����" );
+        set_name("店小二", ({ "xiao er", "xiao", "waiter" }) );
+        set("gender", "男性" );
         set("age", 22);
         set("long",
-                "��λ��С����Ц�����æ��������ʱ������ڲ����ϵ�Ĩ��������\n");
+                "這位店小二正笑咪咪地忙著，還不時拿起掛在脖子上的抹布擦臉。\n");
         set("combat_exp", 100);
         set("attitude", "friendly");
-        set("rank_info/respect", "С����");
+        set("rank_info/respect", "小二哥");
         setup();
 }
 
@@ -31,12 +31,12 @@ void greeting(object ob)
         if (! ob || environment(ob) != environment()) return;
         switch (random(2)) {
                 case 0:
-                        say( "��С��Ц�����˵������λ" + RANK_D->query_respect(ob)
-                                + "�������ȱ��裬ЪЪ�Ȱɡ�\n");
+                        say( "店小二笑咪咪地說道：這位" + RANK_D->query_respect(ob)
+                                + "，進來喝杯茶，歇歇腿吧。\n");
                         break;
                 case 1:
-                        say( "��С���ò����ϵ�ë��Ĩ��Ĩ�֣�˵������λ" + RANK_D->query_respect(ob)
-                                + "����������\n");
+                        say( "店小二用脖子上的毛巾抹了抹手，說道：這位" + RANK_D->query_respect(ob)
+                                + "，請進請進。\n");
                         break;
         }
 }
@@ -46,7 +46,7 @@ int accept_object(object who, object ob)
         
         if( query("money_id", ob) && ob->value() >= 500 )
         {
-                tell_object(who, "С��һ������˵������л���ϣ��͹�����¥ЪϢ��\n");
+                tell_object(who, "小二一哈腰，說道：多謝您老，客官請上樓歇息。\n");
 
                 set_temp("rent_paid", 1, who);
 

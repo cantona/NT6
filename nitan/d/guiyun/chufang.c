@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����");
+        set("short", "廚房");
         set("long", @LONG
-���ǹ���ׯ�ĳ�������Ӧ������ÿ�յķ�ʳ�����г������˺͵�
-�ϵ�ζ����������ʦ����æµ�š�ż������Щ�Բ������ʳ������ʱʣ
-�µ������������
+這是歸雲莊的廚房，供應弟子們每日的飯食。屋中充斥著青菜和調
+料的味道。幾個廚師正在忙碌著。偶爾會有些吃不完的主食和做菜時剩
+下的豬肉留在這裡。
 LONG );
         set("exits", ([
                 "west" : __DIR__"fanting",

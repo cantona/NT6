@@ -1,4 +1,4 @@
-// changmao.c ³¤Ã¬
+// changmao.c é•·çŸ›
 // Last Modifyed by Ahda on Jan. 4 2002
 
 #include <weapon.h>
@@ -6,18 +6,18 @@ inherit SPEAR;
 
 void create()
 {
-        set_name("³¤Ã¬", ({ "changmao" }));
+        set_name("é•·çŸ›", ({ "changmao" }));
         set_weight(2000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸Ë");
-                set("long", "ÕâÊÇÒ»¸ùÓÃÄ¾Í·Ï÷¼âµÄ³¤Ã¬¡£\n");
+                set("unit", "æ¡¿");
+                set("long", "é€™æ˜¯ä¸€æ ¹ç”¨æœ¨é ­å‰Šå°–çš„é•·çŸ›ã€‚\n");
                 set("value", 0);
                 set("rigidity",50);
                 set("material", "bamboo");
-                set("wield_msg", "$N³¸³öÒ»¸Ë$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n·´±ğÉíºó¡£\n");
+                set("wield_msg", "$Næ£å‡ºä¸€æ¡¿$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°‡æ‰‹ä¸­çš„$nååˆ¥èº«å¾Œã€‚\n");
         }
         init_spear(25);
         setup();

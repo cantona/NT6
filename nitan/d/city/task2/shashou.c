@@ -1,4 +1,4 @@
-// shashou.c É±ÊÖ
+// shashou.c æ®ºæ‰‹
 #include <ansi.h>;
 #include "init.h";
 inherit NPC;
@@ -10,29 +10,29 @@ void create()
         {
                 case 0:
                         name = NAMES_D->man_name();
-                        set("gender", "ÄĞĞÔ");
+                        set("gender", "ç”·æ€§");
                         break;
                 case 1:
                         name = NAMES_D->woman_name();
-                        set("gender", "Å®ĞÔ");
+                        set("gender", "å¥³æ€§");
                         break;
                 default:
                         name = NAMES_D->jap_name();
-                        set("gender", "ÄĞĞÔ");
+                        set("gender", "ç”·æ€§");
                         break;
         }
         set_name(name["name"],({name["id"]}));
-        set("title","Ò»Æ·ÌÃÉ±ÊÖ");
+        set("title","ä¸€å“å ‚æ®ºæ‰‹");
         set("long",
-                "ÕâÊÇÒ»Î»ÂúÉíºÚÒÂµÄÈË£¬¸úÆÕÍ¨ÈËÍêÈ«Ã»Ê²Ã´Á½Ñù¡£\n");
+                "é€™æ˜¯ä¸€ä½æ»¿èº«é»‘è¡£çš„äººï¼Œè·Ÿæ™®é€šäººå®Œå…¨æ²’ä»€éº¼å…©æ¨£ã€‚\n");
         set("age", 20 + random(25) );
         set("attitude", "heroism");
-        set("str", 20 + random(11));        // ëöÁ¦
-        set("per", 20 + random(11));        // ÈİÃ²
-        set("int", 20 + random(11));        // ÎòĞÔ
-        set("con", 20 + random(11));        // ¸ù¹Ç
-        set("dex", 100 + random(11));         // Éí·¨
-        set("kar", 20 + random(11));        // ¸£Ôµ
+        set("str", 20 + random(11));        // è†‚åŠ›
+        set("per", 20 + random(11));        // å®¹è²Œ
+        set("int", 20 + random(11));        // æ‚Ÿæ€§
+        set("con", 20 + random(11));        // æ ¹éª¨
+        set("dex", 100 + random(11));         // èº«æ³•
+        set("kar", 20 + random(11));        // ç¦ç·£
         set("shen", -10);
         set("demogorgon",1);
         set("no_suck",1);

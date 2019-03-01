@@ -4,13 +4,13 @@
 
 #include <ansi.h>
 inherit ROOM;
-#define MST        __DIR__"haizhan_master"                // ¾­Î³ÒÇ£¬ÓÎÏ·Ö¸ÁîÖ÷Ö§³Ö
+#define MST        __DIR__"haizhan_master"                // ç¶“ç·¯å„€ï¼ŒéŠæˆ²æŒ‡ä»¤ä¸»æ”¯æŒ
 
 void create()
 {
-        set("short", "´óº£ÖĞ");
+        set("short", "å¤§æµ·ä¸­");
         set("long", @LONG
-Ã£Ã£´óº£Ö®ÖĞ£¬×óÓÒ½¢¶Ó¸úËæºÆºÆµ´µ´³åÏòÈÕ±¾½¢¶Ó¡£
+èŒ«èŒ«å¤§æµ·ä¹‹ä¸­ï¼Œå·¦å³è‰¦éšŠè·Ÿéš¨æµ©æµ©ç›ªç›ªæ²–å‘æ—¥æœ¬è‰¦éšŠã€‚
 LONG);
         set("no_steal", "1");
         set("no_sleep_room", "1");
@@ -28,13 +28,13 @@ int do_game(string arg)
 {
         object me = this_player(), mst_obj;
 
-        if ( !arg || arg != "¿ªÊ¼" ) return 0;        // "game over" µÈ²Ù×÷£¬ÓÉ MST Îï¼ş½øĞĞ¡£
+        if ( !arg || arg != "é–‹å§‹" ) return 0;        // "game over" ç­‰æ“ä½œï¼Œç”± MST ç‰©ä»¶é€²è¡Œã€‚
 
-        if( !query_temp("job/fleet", me))return notify_fail("ÄãÕıÔÚÊ¹Èë»Æº£º£Õ½Çø¡£\n");
+        if( !query_temp("job/fleet", me))return notify_fail("ä½ æ­£åœ¨ä½¿å…¥é»ƒæµ·æµ·æˆ°å€ã€‚\n");
 
-        if ( file_size( MST + ".c" ) < 1 ) return notify_fail("º£Õ½ÔİÍ££¬ÀÏ·ğÒ¯½ĞĞªÁË¡£\n");
+        if ( file_size( MST + ".c" ) < 1 ) return notify_fail("æµ·æˆ°æš«åœï¼Œè€ä½›çˆºå«æ­‡äº†ã€‚\n");
 
-        write("\nÄã´øÕâ½¢¶ÓÂıÂıµØÊ»Èë»Æº£Õ½Çø¡­¡­\n\n");
+        write("\nä½ å¸¶é€™è‰¦éšŠæ…¢æ…¢åœ°é§›å…¥é»ƒæµ·æˆ°å€â€¦â€¦\n\n");
         mst_obj = new( MST );
         mst_obj->new_game(me);
         mst_obj->move(me);
@@ -43,13 +43,13 @@ int do_game(string arg)
 
 int valid_leave(object me, string dir)
 {
-        if( query_temp("job/haizhan", me))return notify_fail("Õ½ÊÂÒÑ¾­¿ªÊ¼£¬²»ÄÜÁÙÕóÍÑÌÓ¡£\n");
+        if( query_temp("job/haizhan", me))return notify_fail("æˆ°äº‹å·²ç¶“é–‹å§‹ï¼Œä¸èƒ½è‡¨é™£è„«é€ƒã€‚\n");
 
         return ::valid_leave(me, dir);
 }
 
 int do_quit()
 {
-        write("ÕâÀï²»ÄÜÍË³öÓÎÏ·¡£\n");
+        write("é€™è£¡ä¸èƒ½é€€å‡ºéŠæˆ²ã€‚\n");
         return 1;
 }

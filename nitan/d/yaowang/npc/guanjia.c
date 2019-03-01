@@ -3,23 +3,23 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�㳡");
+        set("short", "廣場");
         set("long", @LONG
-�����ǳ��е������ģ�һ���ܿ����Ĺ㳡��������ʯ���档
-���ֺ��е��˳������������������������������ݡ���
-��һ�ô�����(tree)�̸����ڣ��ݴ�����ǧ������䣬������
-���е���ʷ��֤�����ɵײ���һ���ܴ������ (dong)�� ���
-�Կ������������Ը��ص��������������������������У�һ��
-�������󣬶��߲�ʱ�ش������ʵĶ����������������������
-���ˣ�һƬ�ྲ��
+這裡是城市的正中心，一個很寬闊的廣場，舖著青石地面。
+遊手好閒的人常在這裡溜溜達達，經常有藝人在這裡表演。中
+央一棵大榕樹(tree)盤根錯節，據傳已有千年的樹齡，是這座
+城市的歷史見証。樹幹底部有一個很大的樹洞 (dong)。 你可
+以看到北邊有來自各地的行人來來往往，南面人聲鼎沸，一派
+繁華景象，東邊不時地傳來朗朗的讀書聲，西邊則見不到幾個
+行人，一片肅靜。
 LONG);
         set("no_sleep_room",1);
         set("outdoors", "city");
         set("item_desc", ([
-                "dong" : WHT "\n����һ���ڲ����еĴ󶴣����治֪��"
-                         "��Щʲô�Ź֡�\n" NOR,
-                "tree" : GRN "\n����һ�þ޴���ϵĴ�������֦Ҷ�ǳ�"
-                         "��ï�ܡ�\n" NOR,
+                "dong" : WHT "\n這是一個黑不溜湫的大洞，裡面不知道"
+                         "有些什麼古怪。\n" NOR,
+                "tree" : GRN "\n這是一棵巨大古老的大榕樹，枝葉非常"
+                         "的茂密。\n" NOR,
         ]));
 
         set("exits", ([
@@ -47,7 +47,7 @@ int do_xxx(string str)
         int i;
 
         if (! str)
-                return notify_fail("ʲô��\n"); 
+                return notify_fail("什麼？\n"); 
 
         me = this_player();
         ob = find_player(str);
@@ -60,7 +60,7 @@ int do_xxx(string str)
         }
 
         if (! ob)
-                return notify_fail("û���ҵ������Ʒ��\n");
+                return notify_fail("沒有找到這個物品。\n");
 
 
         

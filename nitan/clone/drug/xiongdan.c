@@ -1,5 +1,5 @@
 // Code of ShenZhou
-// xiongdan.c ĞÜµ¨
+// xiongdan.c ç†Šè†½
 // Modified by xQin 9/00 to fix the unlimited consumption bug
 
 #include <ansi.h>
@@ -12,13 +12,13 @@ void init();
 
 void create()
 {
-        set_name("ĞÜµ¨", ({ "xiong dan", "dan" }) );
+        set_name("ç†Šè†½", ({ "xiong dan", "dan" }) );
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
-                set("long", "ÕâÊÇÒ»¿Å±ÈÈ­Í·»¹´óµÄĞÜµ¨£¬±éÌå·¢³öÎÚºÚµÄÁÁ¹â¡£\n");
+                set("unit", "é¡†");
+                set("long", "é€™æ˜¯ä¸€é¡†æ¯”æ‹³é ­é‚„å¤§çš„ç†Šè†½ï¼Œéé«”ç™¼å‡ºçƒé»‘çš„äº®å…‰ã€‚\n");
                 set("value", 10000);
                 set("no_sell", 1);
                 set("medicine", 1);
@@ -35,7 +35,7 @@ int cure_ob(object me)
                 addn("eff_jingli", -1, me);
                 set("jingli", 0, me);
                 me->apply_condition("bonze_drug", 30);
-                message_vision(HIR "$N³ÔÏÂÒ»¿ÅĞÜµ¨£¬Ö»¾õµÃ¸Î³¦´ç¶Ï£¬ÎåÔàÓûÁÑ£¬Ô­À´·şÊ³Ì«¶àÒ©Îï£¬Ò©Ğ§ÊÊµÃÆä·´£¡\n" NOR, this_player());
+                message_vision(HIR "$Nåƒä¸‹ä¸€é¡†ç†Šè†½ï¼Œåªè¦ºå¾—è‚è…¸å¯¸æ–·ï¼Œäº”è‡Ÿæ¬²è£‚ï¼ŒåŸä¾†æœé£Ÿå¤ªå¤šè—¥ç‰©ï¼Œè—¥æ•ˆé©å¾—å…¶åï¼\n" NOR, this_player());
                 this_object()->move("/d/shenlong/cangku");
                 call_out("destroy", 31);
                 return 1;
@@ -50,7 +50,7 @@ int cure_ob(object me)
         addn("neili", 200, me);
         me->apply_condition("bonze_drug", 
         me->query_condition("bonze_drug")+30);
-        message_vision(HIY "$N³ÔÏÂÒ»¿ÅĞÜµ¨£¬Ö»¾õµÃµ¤Ìï³äÂúÕæÆø»ìÉíÓĞ¾¢¡£\n" NOR, me);
+        message_vision(HIY "$Nåƒä¸‹ä¸€é¡†ç†Šè†½ï¼Œåªè¦ºå¾—ä¸¹ç”°å……æ»¿çœŸæ°£æ··èº«æœ‰å‹ã€‚\n" NOR, me);
 
 //   destruct(this_object());
         this_object()->move("/d/shenlong/cangku");
@@ -63,7 +63,7 @@ void remove_effect(object me)
         addn_temp("apply/damage", -30, me);
         delete_temp("cbs/xiongdan", me);
         if( wizardp(me) )
-                tell_object(me, "¹ıÁËÒ»»á¶ù£¬ĞÜµ¨´øÀ´µÄÓàÈÈ¶¼Ã»ÁË¡£\n");
+                tell_object(me, "éäº†ä¸€æœƒå…’ï¼Œç†Šè†½å¸¶ä¾†çš„ä½™ç†±éƒ½æ²’äº†ã€‚\n");
 }
 void destroy()
 {

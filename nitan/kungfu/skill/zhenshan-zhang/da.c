@@ -4,7 +4,7 @@
 #include <combat.h>
 
 inherit F_SSERVER;
-string name() { return "¸ôÉ½´òÅ£"; }
+string name() { return "éš”å±±æ‰“ç‰›"; }
 
 int perform(object me, object target)
 {
@@ -14,22 +14,22 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail("¸ôÉ½´òÅ£Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("éš”å±±æ‰“ç‰›åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( objectp(query_temp("weapon", me)) )
-                return notify_fail("Äã±ØĞë¿ÕÊÖ²ÅÄÜÊ¹ÓÃ¸ôÉ½´òÅ££¡\n");
+                return notify_fail("ä½ å¿…é ˆç©ºæ‰‹æ‰èƒ½ä½¿ç”¨éš”å±±æ‰“ç‰›ï¼\n");
 
         if ((int)me->query_skill("zhenshan-zhang", 1) < 60)
-                return notify_fail("ÄãµÄÕğÉ½ÕÆ²»¹»æµÊì£¬²»»áÊ¹ÓÃ¸ôÉ½´òÅ£¡£\n");
+                return notify_fail("ä½ çš„éœ‡å±±æŒä¸å¤ å«»ç†Ÿï¼Œä¸æœƒä½¿ç”¨éš”å±±æ‰“ç‰›ã€‚\n");
 
         if( query("max_neili", me)<500 )
-                return notify_fail("ÄãµÄÄÚ¹¦ĞŞÎª²»×ã£¬ÎŞ·¨Ê©Õ¹¸ôÉ½´òÅ£¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸä¿®ç‚ºä¸è¶³ï¼Œç„¡æ³•æ–½å±•éš”å±±æ‰“ç‰›ã€‚\n");
 
         if( query("neili", me)<150 )
-                return notify_fail("ÄãÏÖÔÚÕæÆøÌ«Èõ£¬ÎŞ·¨Ê©Õ¹¸ôÉ½´òÅ£¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çœŸæ°£å¤ªå¼±ï¼Œç„¡æ³•æ–½å±•éš”å±±æ‰“ç‰›ã€‚\n");
 
-        msg = WHT "$N" WHT "½Å¶×Âí²½£¬ÉîÎüÒ»¿ÚÆø£¬Ê¹³ö¸ôÉ½´òÅ££¬Ë«ÕÆ¶Ô×¼$n"
-              WHT "Æ½Æ½ÍÆ³ö¡£\n" NOR;
+        msg = WHT "$N" WHT "è…³è¹²é¦¬æ­¥ï¼Œæ·±å¸ä¸€å£æ°£ï¼Œä½¿å‡ºéš”å±±æ‰“ç‰›ï¼Œé›™æŒå°æº–$n"
+              WHT "å¹³å¹³æ¨å‡ºã€‚\n" NOR;
         addn("neili", -100, me);
 
         ap = attack_power(me, "strike");
@@ -41,18 +41,18 @@ int perform(object me, object target)
 
                 msg += COMBAT_D->do_damage(me, target, UNARMED_ATTACK,
                                            damage, 50,
-                                           HIR "$n" HIR "¼ûÊÆÁ¬Ã¦ÏòºóÒ»×İ£¬½á¹ûÖ»¸Ğ"
-                                           "ĞØ¿ÚÒ»Õğ£¬¶ÙÊ±Á½¶úºäÃù£¬Ô­±»$N" HIR
-                                           "µÄÄÚ¾¢ËùÉË£¡\n"
-                                           ":ÄÚÉË@?");
+                                           HIR "$n" HIR "è¦‹å‹¢é€£å¿™å‘å¾Œä¸€ç¸±ï¼Œçµæœåªæ„Ÿ"
+                                           "èƒ¸å£ä¸€éœ‡ï¼Œé “æ™‚å…©è€³è½Ÿé³´ï¼ŒåŸè¢«$N" HIR
+                                           "çš„å…§å‹æ‰€å‚·ï¼\n"
+                                           ":å…§å‚·@?");
                 if (! target->is_busy())
                         target->start_busy(3 + random(2));
                 me->start_busy(2);
         } else
         {
                 me->start_busy(2);
-                msg += CYN "¿ÉÊÇ$p" CYN "¿´ÆÆÁË$P"
-                       CYN "µÄÆóÍ¼£¬²¢Ã»ÓĞÉÏµ±¡£\n" NOR;
+                msg += CYN "å¯æ˜¯$p" CYN "çœ‹ç ´äº†$P"
+                       CYN "çš„ä¼åœ–ï¼Œä¸¦æ²’æœ‰ä¸Šç•¶ã€‚\n" NOR;
         }
         message_combatd(msg, me, target);
         return 1;

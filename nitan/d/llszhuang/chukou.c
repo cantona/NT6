@@ -5,13 +5,13 @@
 inherit ROOM;
 void create()
 {
-        set("short", "Ä¹ÁÖ");
+        set("short", "å¢“æ—");
   set("long",
-"ÕâÀïÊÇÉ¥ÉúÔÚÉ½×¯ÀïµÄ½­ºşÏÀ¿ÍµÄÄ¹ÁÖ,Ò»¿é¿éÄ¹±®(mubei)Á¢ÔÚÂ·±ß\n"
-".\nËÆºõÊÇÔÚ¸æËßÀ´ÕâÀïµÄÈËRED~~~Ç§ÍòÒªĞ¡ĞÄ°¡!~~~NOR\n"
+"é€™è£¡æ˜¯å–ªç”Ÿåœ¨å±±èŠè£¡çš„æ±Ÿæ¹–ä¿ å®¢çš„å¢“æ—,ä¸€å¡Šå¡Šå¢“ç¢‘(mubei)ç«‹åœ¨è·¯é‚Š\n"
+".\nä¼¼ä¹æ˜¯åœ¨å‘Šè¨´ä¾†é€™è£¡çš„äººRED~~~åƒè¬è¦å°å¿ƒå•Š!~~~NOR\n"
 );
         set("item_desc", ([
-            "mubei": HIG "\nÉÏÃæĞ´×Å--¸Ï¿ì×ß°É,ÕâÀï²»ÊÇ¾ÃÁôÖ®µØ°¡!(leave here)\n" NOR,
+            "mubei": HIG "\nä¸Šé¢å¯«è‘—--è¶•å¿«èµ°å§,é€™è£¡ä¸æ˜¯ä¹…ç•™ä¹‹åœ°å•Š!(leave here)\n" NOR,
     ]));
         set("no_fight",1);
         set("no_die",1);
@@ -30,14 +30,14 @@ int do_leave(string arg)
         me = this_player();
         inv = all_inventory(me);
     if ( !arg || arg !="here" )
-        return notify_fail("ÄãÕæµÄÒª×ß?ÊÇleave here \n");
+        return notify_fail("ä½ çœŸçš„è¦èµ°?æ˜¯leave here \n");
 
         for( i=0;i<sizeof(inv);i++)
 {
                 if( inv[i]->is_character() )
-                   return notify_fail("Äã²»ÄÜ±³×ÅÈË½øÈ¥!\n");
+                   return notify_fail("ä½ ä¸èƒ½èƒŒè‘—äººé€²å»!\n");
 }
-       write(YEL"ÄãÖÕÓÚÀë¿ªÁËÕâ¹íµØ·½!\n"NOR);
+       write(YEL"ä½ çµ‚äºé›¢é–‹äº†é€™é¬¼åœ°æ–¹!\n"NOR);
         me->move("/d/city/wumiao");
         return 1;
 }

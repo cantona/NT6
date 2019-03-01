@@ -30,7 +30,7 @@ nomask void add_encumbrance(int w)
 void over_encumbrance()
 {
         if( !interactive(this_object()) )return;
-        tell_object(this_object(), "ÄãµÄ¸ººÉ¹ıÖØÁË£¡\n");
+        tell_object(this_object(), "ä½ çš„è² è·éé‡äº†ï¼\n");
 }
 
 nomask int query_weight() { return weight; }
@@ -68,7 +68,7 @@ varargs int move(mixed dest, int raw)
         // If we are equipped, unequip first.
         if( !(is_char = me->is_character()) &&
             query("equipped") && !me->unequip() )
-                return notify_fail("ÄãÃ»ÓĞ°ì·¨È¡ÏÂÕâÑù¶«Î÷¡£\n");
+                return notify_fail("ä½ æ²’æœ‰è¾¦æ³•å–ä¸‹é€™æ¨£æ±è¥¿ã€‚\n");
 
         // Find the destination ob for moving.
         if( objectp(dest))
@@ -82,7 +82,7 @@ varargs int move(mixed dest, int raw)
 
         if( !is_char && query("bind_owner", me) && base_name(ob) != VOID_OB &&
             (!userp(ob) || query("bind_owner", me) != query("id", ob)) ) {
-                write(sprintf("%sÒÑ¾­°ó¶¨£¬ÎŞ·¨ÒÆ¶¯¡£\n",
+                write(sprintf("%så·²ç¶“ç¶å®šï¼Œç„¡æ³•ç§»å‹•ã€‚\n",
                               me->name()));
                 return 0;
         }
@@ -94,27 +94,27 @@ varargs int move(mixed dest, int raw)
         // Since the player can carry the bag, we assume he can carry the this
         // object in the bag and encumbrance checking is unessessary.
         // ----------------------
-        // ¼ì²éÄ¿±êÊÇ·ñÄÜ¹»°üÈİ×¡¸ÃÎïÆ·
-        // ÔÚ¼ì²éÇ°£¬ÎÒÃÇÏÈ¼ì²éÊÇ·ñÄ¿±êOBJÊÇ¸ÃÎï¼şµÄ»·¾³£¨»òÕßÊÇËüµÄ»·¾³µÄ»·¾³£©£¬Èç¹ûÊÇ£¬ÄÇ¾ÍºÃÏóÊÇ
-        // ´ÓÒ»¸öÍæ¼ÒÉíÉÏ±³×ÅµÄ°üÀïÈ¡³öÒ»¸öÎïÆ·£¬¼ÈÈ»Íæ¼Ò¿ÉÒÔ±³ÆğÕâ¸ö°ü£¬ÄÇÃ´ÎÒÃÇ¿ÉÒÔÏëµ±È»µÄÈÏÎªËûÒ²
-        // ¿ÉÒÔ±³ÆğÕâ¸öOBJ²¢ÇÒ³¬ÖØ¼ì²éÊÇ²»±ØÒªµÄ¡£ By JackyBoy@TOMUD 2001/5/6
+        // æª¢æŸ¥ç›®æ¨™æ˜¯å¦èƒ½å¤ åŒ…å®¹ä½è©²ç‰©å“
+        // åœ¨æª¢æŸ¥å‰ï¼Œæˆ‘å€‘å…ˆæª¢æŸ¥æ˜¯å¦ç›®æ¨™OBJæ˜¯è©²ç‰©ä»¶çš„ç’°å¢ƒï¼ˆæˆ–è€…æ˜¯å®ƒçš„ç’°å¢ƒçš„ç’°å¢ƒï¼‰ï¼Œå¦‚æœæ˜¯ï¼Œé‚£å°±å¥½è±¡æ˜¯
+        // å¾ä¸€å€‹ç©å®¶èº«ä¸ŠèƒŒè‘—çš„åŒ…è£¡å–å‡ºä¸€å€‹ç‰©å“ï¼Œæ—¢ç„¶ç©å®¶å¯ä»¥èƒŒèµ·é€™å€‹åŒ…ï¼Œé‚£éº¼æˆ‘å€‘å¯ä»¥æƒ³ç•¶ç„¶çš„èªç‚ºä»–ä¹Ÿ
+        // å¯ä»¥èƒŒèµ·é€™å€‹OBJä¸¦ä¸”è¶…é‡æª¢æŸ¥æ˜¯ä¸å¿…è¦çš„ã€‚ By JackyBoy@TOMUD 2001/5/6
         env = me;
         while( env = environment(env) )
                 if( env == ob ) break;
         if( !env && (int) ob->query_encumbrance() + weight() >
             (int) ob->query_max_encumbrance() ) {
                 if( raw && environment(ob) && !query("bindable", me) ) {
-                        message_vision("ÓÉÓÚ$n¶ÔÓÚ$N¶øÑÔÊÇÔÚ"
-                                       "ÊÇÌ«ÖØÁË£¬Ö»ºÃÏÈÈÓÔÚÒ»ÅÔ¡£\n",
+                        message_vision("ç”±äº$nå°äº$Nè€Œè¨€æ˜¯åœ¨"
+                                       "æ˜¯å¤ªé‡äº†ï¼Œåªå¥½å…ˆæ‰”åœ¨ä¸€æ—ã€‚\n",
                                        ob, this_object());
                         ob = environment(ob);
                 } else if( ob == this_player() ) {
                         return notify_fail(this_object()->name() +
-                                           "¶ÔÄã¶øÑÔÌ«ÖØÁË¡£\n");
+                                           "å°ä½ è€Œè¨€å¤ªé‡äº†ã€‚\n");
                 } else {
                         return notify_fail(this_object()->name() +
-                                           "¶Ô" + ob->name() +
-                                           "¶øÑÔÌ«ÖØÁË¡£\n");
+                                           "å°" + ob->name() +
+                                           "è€Œè¨€å¤ªé‡äº†ã€‚\n");
                 }
         }
 
@@ -124,8 +124,8 @@ varargs int move(mixed dest, int raw)
         if( env ) {
                 if( env != ob && magic_move && userp(env) ) {
                         if( env->visible(me) )
-                                tell_object(env, HIM "ÄãºöÈ»¾õµÃÉíÉÏºÃÏñÇáÁËÒ»"
-                                                 "Ğ©¡£\n" NOR);
+                                tell_object(env, HIM "ä½ å¿½ç„¶è¦ºå¾—èº«ä¸Šå¥½åƒè¼•äº†ä¸€"
+                                                 "äº›ã€‚\n" NOR);
                         if( userp(me) ) {
                                 addn_temp("person_in_you", -1, env);
                                 if( query_temp("person_in_you", env) <= 0)
@@ -173,8 +173,8 @@ varargs int move(mixed dest, int raw)
         // Enter environment
         if( magic_move && userp(ob) ) {
                 if( ob->visible(this_object()) )
-                        tell_object(ob, HIM "ÄãºöÈ»¾õµÃÉíÉÏºÃÏñÖØÁËÒ»"
-                                         "Ğ©¡£\n" NOR);
+                        tell_object(ob, HIM "ä½ å¿½ç„¶è¦ºå¾—èº«ä¸Šå¥½åƒé‡äº†ä¸€"
+                                         "äº›ã€‚\n" NOR);
                 if( userp(this_object()) )
                         addn_temp("person_in_you", 1, ob);
         }
@@ -185,7 +185,7 @@ varargs int move(mixed dest, int raw)
                 if( env ) {
                         env->add_encumbrance(-weight());
                         if( userp(env) && query_temp("tomud", env) )
-                                tell_object(env, REM1(this_object())); //Èç¹ûÊÇ´ÓÍæ¼ÒÉíÉÏÒÆ¶¯×ß£¬ÔòÓ¦¸ÃÊÇREM1
+                                tell_object(env, REM1(this_object())); //å¦‚æœæ˜¯å¾ç©å®¶èº«ä¸Šç§»å‹•èµ°ï¼Œå‰‡æ‡‰è©²æ˜¯REM1
                         else if( !living(env) ) {
                                 users = filter_array(all_inventory(env),
                                                      (: (userp($1) && query_temp("tomud", $1)) :)) -
@@ -195,15 +195,15 @@ varargs int move(mixed dest, int raw)
                                         tell_object(user, REM0(this_object()));
 
                                 // tell_room(env,REM0(this_object()),this_object() );
-                                // Èç¹ûÊÇ´Ó·¿¼äÀïÒÆ¶¯×ß£¬ÔòÓ¦¸ÃÊÇREM0
+                                // å¦‚æœæ˜¯å¾æˆ¿é–“è£¡ç§»å‹•èµ°ï¼Œå‰‡æ‡‰è©²æ˜¯REM0
                         }
-                        // else log_file("move.log",ctime(time())+"£º²»ÖªµÀÈçºÎÏÔÊ¾REMÏûÏ¢---"+base_name(env)+"\n");
+                        // else log_file("move.log",ctime(time())+"ï¼šä¸çŸ¥é“å¦‚ä½•é¡¯ç¤ºREMæ¶ˆæ¯---"+base_name(env)+"\n");
                 }
                 if( ob ) {
                         ob->add_encumbrance(weight());
                         if( (userp(ob)|| interactive(ob)) && query_temp("tomud", ob) )
                                 tell_object(ob, ADD1(this_object()) );
-                                // Èç¹ûÊÇÒÆ¶¯µ½Íæ¼ÒÉíÉÏ£¬ÔòÓ¦¸ÃÊÇADD1
+                                // å¦‚æœæ˜¯ç§»å‹•åˆ°ç©å®¶èº«ä¸Šï¼Œå‰‡æ‡‰è©²æ˜¯ADD1
                         else if( !ob->is_character() ) {
                                 users = filter_array(all_inventory(ob),
                                                      (: (userp($1) && query_temp("tomud", $1)) :)) -
@@ -212,20 +212,20 @@ varargs int move(mixed dest, int raw)
                                 foreach( user in users )
                                         tell_object(user, ADD0(this_object()));
                                 // tell_room(ob, ADD0(this_object()),this_object() );
-                                // Èç¹ûÊÇÒÆ¶¯µ½·¿¼äÀï£¬ÔòÓ¦¸ÃÊÇADD0
+                                // å¦‚æœæ˜¯ç§»å‹•åˆ°æˆ¿é–“è£¡ï¼Œå‰‡æ‡‰è©²æ˜¯ADD0
                         }
                 }
         }
         // Move & run INIT function
         move_object(ob);
 
-        // bindable == 2 Ê°È¡°ó¶¨
+        // bindable == 2 æ‹¾å–ç¶å®š
         if( me && !is_char && query("bindable", me) &&
             query("bindable", me) == 2 && userp(ob) ) {
                 set("bind_owner", query("id", ob), me);
                 set("set_data", 1, me);
-                tell_object(ob, HIM "ÄãÄÚĞÄÉî´¦ÒşÒşÔ¼Ô¼µÄ¸ĞÓ¦µ½" + me->name() +
-                                HIM "ÓëÄãÈÚÎªÒ»Ìå¡£\n" NOR);
+                tell_object(ob, HIM "ä½ å…§å¿ƒæ·±è™•éš±éš±ç´„ç´„çš„æ„Ÿæ‡‰åˆ°" + me->name() +
+                                HIM "èˆ‡ä½ èç‚ºä¸€é«”ã€‚\n" NOR);
         }
 
 
@@ -256,13 +256,13 @@ void remove(string euid)
                         log_file("destruct", sprintf("%s attempt to destruct user object %s (%s)\n",
                                  euid, query("id"),
                                  ctime(time())));
-                        error("Äã(" + euid + ")²»ÄÜ´İ»ÙÆäËûµÄÊ¹ÓÃÕß¡£\n");
+                        error("ä½ (" + euid + ")ä¸èƒ½æ‘§æ¯€å…¶ä»–çš„ä½¿ç”¨è€…ã€‚\n");
                 }
                 log_file("destruct", sprintf("%s in %O destruct on %s.\n",
                                              query("id", me),
                                              environment(me),
                                              ctime(time())));
-                error("Ö»ÓĞROOT²ÅÄÜ´İ»ÙÍæ¼Ò¡£\n");
+                error("åªæœ‰ROOTæ‰èƒ½æ‘§æ¯€ç©å®¶ã€‚\n");
         } else if( query("equipped", me) ) {
                 // Failed to unequip, only log but continue
                 if( !me->unequip() )
@@ -283,7 +283,7 @@ void remove(string euid)
 
                 //Add By JackyBoy@TOMUD      2001/5/27
                 if( userp(ob) && query_temp("tomud", ob) )
-                        tell_object(ob, REM1(me) ); //Èç¹ûÊÇ´ÓÍæ¼ÒÉíÉÏÒÆ¶¯×ß£¬ÔòÓ¦¸ÃÊÇREM1
+                        tell_object(ob, REM1(me) ); //å¦‚æœæ˜¯å¾ç©å®¶èº«ä¸Šç§»å‹•èµ°ï¼Œå‰‡æ‡‰è©²æ˜¯REM1
                 else if( !living(ob) && !ob->is_character() ) {
                         users = filter_array(all_inventory(ob),
                                             (: (userp($1) && query_temp("tomud", $1)) :)) -
@@ -291,12 +291,12 @@ void remove(string euid)
                         if( sizeof(users) > 0 )
                         foreach( user in users )
                                 tell_object(user, REM0(me));
-                        // tell_room(ob, REM0(me), me );//Èç¹ûÊÇ´Ó·¿¼äÀïÒÆ¶¯×ß£¬ÔòÓ¦¸ÃÊÇREM0
+                        // tell_room(ob, REM0(me), me );//å¦‚æœæ˜¯å¾æˆ¿é–“è£¡ç§»å‹•èµ°ï¼Œå‰‡æ‡‰è©²æ˜¯REM0
                 }
 
                 if( is_magic_move() && userp(ob) ) {
                         if( ob->visible(this_object()) )
-                                tell_object(ob, HIM "ÄãºöÈ»¾õµÃÉíÉÏºÃÏñÇáÁËÒ»Ğ©¡£\n" NOR);
+                                tell_object(ob, HIM "ä½ å¿½ç„¶è¦ºå¾—èº«ä¸Šå¥½åƒè¼•äº†ä¸€äº›ã€‚\n" NOR);
 
                         if( userp(me) ) {
                                 // One user enter another user
@@ -322,7 +322,7 @@ void remove(string euid)
 void move_or_destruct(object dest)
 {
         if( userp(this_object()) ) {
-                tell_object(this_object(), "Ò»ÕóÊ±¿ÕµÄÅ¤Çú½«Äã´«ËÍµ½ÁíÒ»¸öµØ·½....\n");
+                tell_object(this_object(), "ä¸€é™£æ™‚ç©ºçš„æ‰­æ›²å°‡ä½ å‚³é€åˆ°å¦ä¸€å€‹åœ°æ–¹....\n");
                 move(VOID_OB);
         } else if( this_object()->is_ob_saved() )
                 this_object()->save();

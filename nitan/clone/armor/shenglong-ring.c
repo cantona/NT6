@@ -6,13 +6,13 @@ inherit RINGS;
 
 void create()
 {
-        set_name(HIY "Ê¥ÁúÖ®Èª" NOR, ({ "shenglong ring", "shenglong", "ring" }));
+        set_name(HIY "è–é¾ä¹‹æ³‰" NOR, ({ "shenglong ring", "shenglong", "ring" }));
         set_weight(500);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
-                set("long", HIY "Ê¥ÁúÖ®ÈªÄË¹ÅÀÏÉñÊŞÊ¥ÁúÖ®»¯Éí£¬ÏóÕ÷×Å¡¸ÄÜÁ¿¡¹£¡\n" NOR);
+                set("unit", "å€‹");
+                set("long", HIY "è–é¾ä¹‹æ³‰ä¹ƒå¤è€ç¥ç¸è–é¾ä¹‹åŒ–èº«ï¼Œè±¡å¾è‘—ã€Œèƒ½é‡ã€ï¼\n" NOR);
                 set("value", 200000);
                 set("material", "gold");
                 set("armor_prop/con", 20);

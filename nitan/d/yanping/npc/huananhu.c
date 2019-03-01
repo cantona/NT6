@@ -5,11 +5,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("»ªÄÏ»¢", ({ "huanan hu", "tiger","hu" }) );
-        set("race", "×ßÊÞ");
+        set_name("è¯å—è™Ž", ({ "huanan hu", "tiger","hu" }) );
+        set("race", "èµ°ç¸");
         set("age", 20);
         set("long", @LONG
-Ò»Ö»½Ã½¡Çá¿ìµÄÃÍ»¢£¬ÐÛÎ°¼«ÁË¡£
+ä¸€åªçŸ¯å¥è¼•å¿«çš„çŒ›è™Žï¼Œé›„å‰æ¥µäº†ã€‚
 
 
     ("`-''-/").___..--''"`-.
@@ -34,8 +34,8 @@ LONG);
         setup();
         set("chat_chance", 10);
         set("chat_msg", ({
-                "ÀÏ»¢ÔÚ¿£Ñ²£¬ÏÅµÃÄã´óÆø¶¼²»¸Ò³ö¡£\n",
-                "ÀÏ»¢ÑöÌì³¤Ð¥£¬ÉùÕðÉ½¹È£¬»ÆÒ¶·××¹¡£\n",
+                "è€è™Žåœ¨æ¿¬å·¡ï¼Œåš‡å¾—ä½ å¤§æ°£éƒ½ä¸æ•¢å‡ºã€‚\n",
+                "è€è™Žä»°å¤©é•·å˜¯ï¼Œè²éœ‡å±±è°·ï¼Œé»ƒè‘‰ç´›å¢œã€‚\n",
         }) );
 }
 
@@ -57,10 +57,10 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
         if( ob->query_dex()<20 && !query_temp("owner", this_object()) )
         {
-                message_vision( "Ö»¼û·¢ÆðÒ»Õó¿ñ·ç¡£
-Ö»ÌýµÃÂÒÊ÷±³ááÆËµØÒ»ÉùÏì£¬Ìø³öÒ»Ö»µõ¾¦°×¶î´ó³æÀ´¡£
-ÄÇ´ó³æÓÖ¶ö£¬ÓÖ¿Ê£¬°ÑÁ½Ö»×¦ÔÚµØÉÏÂÔ°´Ò»°´£¬ºÍÉíÍûÄãÒ»ÆË£¬´Ó°ë¿ÕÀïß¥½«ÏÂÀ´¡£\n",ob);
-                message_vision("$NÕâÒ»ÏÂÃ»ÓÐ¶ã¿ª£¬Îª»¢ËùÉËÔÎÁË¹ýÈ¥¡£\n\n",ob);
+                message_vision( "åªè¦‹ç™¼èµ·ä¸€é™£ç‹‚é¢¨ã€‚
+åªè½å¾—äº‚æ¨¹èƒŒå¾Œæ’²åœ°ä¸€è²éŸ¿ï¼Œè·³å‡ºä¸€åªåŠç›ç™½é¡å¤§èŸ²ä¾†ã€‚
+é‚£å¤§èŸ²åˆé¤“ï¼Œåˆæ¸´ï¼ŒæŠŠå…©åªçˆªåœ¨åœ°ä¸Šç•¥æŒ‰ä¸€æŒ‰ï¼Œå’Œèº«æœ›ä½ ä¸€æ’²ï¼Œå¾žåŠç©ºè£¡æ”›å°‡ä¸‹ä¾†ã€‚\n",ob);
+                message_vision("$Né€™ä¸€ä¸‹æ²’æœ‰èº²é–‹ï¼Œç‚ºè™Žæ‰€å‚·æšˆäº†éŽåŽ»ã€‚\n\n",ob);
                 ob->receive_wound("qi",20);
                 ob->start_busy(2);
                 this_object()->kill_ob(ob);
@@ -70,7 +70,7 @@ void greeting(object ob)
 void die()
 {
         object ob, corpse;
-        message_vision("$N·¢³öÕðÌì¶¯µØµÄÒ»Éù³¤Ð¥£¬ºäµØµ¹ÔÚµØÉÏ£¬ËÀÁË£¡\n", this_object());
+        message_vision("$Nç™¼å‡ºéœ‡å¤©å‹•åœ°çš„ä¸€è²é•·å˜¯ï¼Œè½Ÿåœ°å€’åœ¨åœ°ä¸Šï¼Œæ­»äº†ï¼\n", this_object());
         if( objectp(corpse = CHAR_D->make_corpse(this_object())) )
         ob = new("/clone/medicine/vegetable/hugu");
         ob->move(corpse);

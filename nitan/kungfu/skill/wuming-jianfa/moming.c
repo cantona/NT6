@@ -1,11 +1,11 @@
-// ½£¶¯ÄªÃû
+// åŠå‹•è«å
 
 #include <ansi.h>
 #include <combat.h>
 
 inherit F_SSERVER;
 
-string name() { return "½£¶¯ÄªÃû"; }
+string name() { return "åŠå‹•è«å"; }
 int perform(object me, object target)
 {
         object weapon, ob;
@@ -21,17 +21,17 @@ int perform(object me, object target)
                 target = me->select_opponent(); 
         }
         if (! target || ! me->is_fighting(target)) 
-                return notify_fail("ÄãÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¾øÕĞ¡¸½£¶¯ÄªÃû¡¹¡£\n"); 
-        if( !objectp(weapon=query_temp("weapon", me)))return notify_fail("Äã±ØĞëÊ¹ÓÃÎäÆ÷²ÅÄÜÊ¹ÓÃ¡¸½£¶¯ÄªÃû¡¹£¡\n");
-        //if ( base_name(weapon)!="/clone/weapon/yuenv" ) return notify_fail("Äã±ØĞëÊÖ³ÖÔ½Å®³¯Ñô½£²ÅÄÜÊ¹ÓÃ¡¸½£¶¯ÄªÃû¡¹£¡\n");
-        if ( (int)me->query_str() < 35 ) return notify_fail("ÄãµÄ±ÛÁ¦²»¹», »¹²»ÄÜÊ¹ÓÃÕâÏî¾ø¼¼! \n");
-        if ( (int)me->query_skill("sword",1) < 600 ) return notify_fail("ÄãµÄ»ù±¾½£·¨µÄ»ğºò»¹²»µ½¼Ò, ²»ÄÜÊ¹ÓÃÕâÒ»¾ø¼¼ !\n");
-        if ( (int)me->query_skill("wuming-jianfa", 1) < 500 ) return notify_fail("ÄãµÄÎŞÃû½£·¨µÄ»ğºò»¹²»µ½¼Ò, ²»ÄÜÊ¹ÓÃÕâÒ»¾ø¼¼ !\n");
-        if( query("neili", me)<50000)return notify_fail("ÄãµÄÕæÆø²»¹»£¡\n");
-        if( query("max_neili", me)<50000)return notify_fail("ÄãµÄÄÚÁ¦ĞŞÎª²»¹»£¡\n");
-        if ( me->is_busy() ) return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É£¡\n");
+                return notify_fail("ä½ åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨çµ•æ‹›ã€ŒåŠå‹•è«åã€ã€‚\n"); 
+        if( !objectp(weapon=query_temp("weapon", me)))return notify_fail("ä½ å¿…é ˆä½¿ç”¨æ­¦å™¨æ‰èƒ½ä½¿ç”¨ã€ŒåŠå‹•è«åã€ï¼\n");
+        //if ( base_name(weapon)!="/clone/weapon/yuenv" ) return notify_fail("ä½ å¿…é ˆæ‰‹æŒè¶Šå¥³æœé™½åŠæ‰èƒ½ä½¿ç”¨ã€ŒåŠå‹•è«åã€ï¼\n");
+        if ( (int)me->query_str() < 35 ) return notify_fail("ä½ çš„è‡‚åŠ›ä¸å¤ , é‚„ä¸èƒ½ä½¿ç”¨é€™é …çµ•æŠ€! \n");
+        if ( (int)me->query_skill("sword",1) < 600 ) return notify_fail("ä½ çš„åŸºæœ¬åŠæ³•çš„ç«å€™é‚„ä¸åˆ°å®¶, ä¸èƒ½ä½¿ç”¨é€™ä¸€çµ•æŠ€ !\n");
+        if ( (int)me->query_skill("wuming-jianfa", 1) < 500 ) return notify_fail("ä½ çš„ç„¡ååŠæ³•çš„ç«å€™é‚„ä¸åˆ°å®¶, ä¸èƒ½ä½¿ç”¨é€™ä¸€çµ•æŠ€ !\n");
+        if( query("neili", me)<50000)return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼\n");
+        if( query("max_neili", me)<50000)return notify_fail("ä½ çš„å…§åŠ›ä¿®ç‚ºä¸å¤ ï¼\n");
+        if ( me->is_busy() ) return notify_fail("ä½ ä¸Šä¸€å€‹å‹•ä½œé‚„æ²’æœ‰å®Œæˆï¼\n");
 
-        msg = MAG "\n$NÁ³ÏÖÓÄË¼,ÍùÊÂÈç³±Ó¿ÉÏĞÄÍ·,ÊÖÖĞ½£Íû¿ÕĞ±Ö¸Ò»¹ÉÔ¹Æø´Ó½£¼âÉ¢·¢ÃÖÂş¿ªÀ´£¡\n" NOR;
+        msg = MAG "\n$Nè‡‰ç¾å¹½æ€,å¾€äº‹å¦‚æ½®æ¹§ä¸Šå¿ƒé ­,æ‰‹ä¸­åŠæœ›ç©ºæ–œæŒ‡ä¸€è‚¡æ€¨æ°£å¾åŠå°–æ•£ç™¼å½Œæ¼«é–‹ä¾†ï¼\n" NOR;
         message_combatd(msg, me);
         ob = target;
         addn_temp("apply/str", i, me);

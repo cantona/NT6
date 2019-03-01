@@ -1,5 +1,5 @@
 // Code of ShenZhou
-// shegu.c �߹�
+// shegu.c 蛇谷
 // maco 7/15/2000
 
 #include <ansi.h>
@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ˮ��");
+        set("short", "水池");
         set("long", @LONG
-һ̶�峺�ĳ�ˮ�����߹�ɽ´�����ˮ������ɣ��ǹ��ж����
-��ҪˮԴ������������޶���������ˮ��
+一潭清澈的池水，由蛇谷山麓間的流水積蓄而成，是谷中動物的
+重要水源，許多飛禽走獸都在這裡飲水。
 LONG );
 
         set("exits", ([ 

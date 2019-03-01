@@ -6,18 +6,18 @@ inherit EARRING;
 
 void create()
 {
-        set_name(HIR "×Ï½ð»¨¶ú»·" NOR, ({ "zijinhua erhuan2", "zijinhua", "erhuan2" }));
+        set_name(HIR "ç´«é‡‘èŠ±è€³ç’°" NOR, ({ "zijinhua erhuan2", "zijinhua", "erhuan2" }));
         set_weight(100);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸±");
+                set("unit", "å‰¯");
                 set("value", 200000);
                 set("material", "silver");
                 set("armor_prop/armor", 1);
                 set("armor_prop/dex", 8);
                 set("limit", ([
-                        "sex" : 1, // 1 ÎªÅ®ÐÔ
+                        "sex" : 1, // 1 ç‚ºå¥³æ€§
                 ]));
         }
         setup();

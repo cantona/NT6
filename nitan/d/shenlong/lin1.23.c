@@ -2,9 +2,9 @@ inherit DEMONROOM;
 
 void create()
 {
-        set("short", "�����Ҷ����·��");
+        set("short", "神秘巖洞結冰路面");
         set("long",@LONG
-�������������ϲ��Ҷ������ڴ˴�·�治֪�ι��Ѿ����˱���
+這是神龍島東南部巖洞，走在此處路面不知何故已經結了冰。
 LONG);
 
 	set("exits", ([

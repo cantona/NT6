@@ -4,10 +4,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÃÅÎÀ", ({ "men wei", "wei"}));
+        set_name("é–€è¡›", ({ "men wei", "wei"}));
         set("long", 
-        "ËûÊÇÌÆÃÅÊÀ¼ÒµÄÃÅÎÀ£¬¶Ô±£»¤ÌÆÃÅÊÀ¼Ò¿ÉÎ½ÖÒÕê²»¶ş¡£\n");
-        set("gender", "ÄĞĞÔ");
+        "ä»–æ˜¯å”é–€ä¸–å®¶çš„é–€è¡›ï¼Œå°ä¿è­·å”é–€ä¸–å®¶å¯è¬‚å¿ è²ä¸äºŒã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 35);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -24,7 +24,7 @@ void create()
         set_skill("sword", 500);
         set_skill("blade", 300);    
         set_skill("strike", 300);
-        create_family("ÌÆÃÅÊÀ¼Ò", 10, "¼Ò¶¡");
+        create_family("å”é–€ä¸–å®¶", 10, "å®¶ä¸");
 
         setup();
         carry_object("/clone/misc/cloth")->wear();

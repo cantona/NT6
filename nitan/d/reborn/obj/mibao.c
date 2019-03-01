@@ -7,13 +7,13 @@ int is_magic_item() { return 1; }
 
 void create()
 {
-        set_name(HIM "ÃÜ±¦ÆæÕä" NOR, ({ "mibao qizhen" }) );
+        set_name(HIM "å¯†å¯¶å¥‡ç" NOR, ({ "mibao qizhen" }) );
         set_weight(100);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "·İ");
-                set("long", HIM "ÕâÊÇÒ»¼şÃÜ±¦ÆæÕä¡£\n" NOR);
+                set("unit", "ä»½");
+                set("long", HIM "é€™æ˜¯ä¸€ä»¶å¯†å¯¶å¥‡çã€‚\n" NOR);
 
         }
         setup();

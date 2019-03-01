@@ -1,5 +1,5 @@
-// shechang.c Éß³¡
-// °×ÍÕµÜ×ÓÓÃÒÔÅàÑøĞÂÉßµÄµØ·½¡£
+// shechang.c è›‡å ´
+// ç™½é§å¼Ÿå­ç”¨ä»¥åŸ¹é¤Šæ–°è›‡çš„åœ°æ–¹ã€‚
 // maco 4/15/2000
 
 #include <ansi.h>
@@ -13,12 +13,12 @@ int do_count();
 
 void create()
 {
-        set("short", "Éß³¡");
+        set("short", "è›‡å ´");
         set("long", @LONG
-ÕâÊÇÅ·ÑôÊÀ¼ÒËù½¨µÄÉß³¡£¬´ÓÉß¹È²¶×½À´µÄ¶¾Éß¶¼ÔÚ´ËËÇÑø£¬ËÄ
-ÖÜÎ§ÒÔÕÉĞíÀ´¸ßµÄ»ÒÉ«Ô²Ç½£¬Ç½½ÅÆö³ÉÔ²»¡ĞÎ£¬¹â»¬ÎŞ·ì¡£³¡Àï½¨ÁË
-Ğí¶àÉßÎÑ£¬ÓÉÅ·ÑôÊÀ¼ÒÖĞµÄÉßÅ«¸ºÔğ¹ÜÀí£¬Ğí¶à¾ç¶¾µÄ¹ÖÉß¾ÍÊÇÔÚ´Ë
-ÔÓ½»¶øµÃ¡£
+é€™æ˜¯æ­é™½ä¸–å®¶æ‰€å»ºçš„è›‡å ´ï¼Œå¾è›‡è°·æ•æ‰ä¾†çš„æ¯’è›‡éƒ½åœ¨æ­¤é£¼é¤Šï¼Œå››
+å‘¨åœä»¥ä¸ˆè¨±ä¾†é«˜çš„ç°è‰²åœ“ç‰†ï¼Œç‰†è…³ç Œæˆåœ“å¼§å½¢ï¼Œå…‰æ»‘ç„¡ç¸«ã€‚å ´è£¡å»ºäº†
+è¨±å¤šè›‡çª©ï¼Œç”±æ­é™½ä¸–å®¶ä¸­çš„è›‡å¥´è² è²¬ç®¡ç†ï¼Œè¨±å¤šåŠ‡æ¯’çš„æ€ªè›‡å°±æ˜¯åœ¨æ­¤
+é›œäº¤è€Œå¾—ã€‚
 LONG );
 
         set("exits", ([
@@ -48,17 +48,17 @@ int do_manage()
         object me = this_player();
         int asp;
 
-        if( query("family/family_name", me) != "Å·ÑôÊÀ¼Ò" )
-                return notify_fail("¹Ü±ğÈË¼ÒµÄÏĞÊÂ¸ÉÂï£¿\n");
+        if( query("family/family_name", me) != "æ­é™½ä¸–å®¶" )
+                return notify_fail("ç®¡åˆ¥äººå®¶çš„é–’äº‹å¹¹å˜›ï¼Ÿ\n");
 
-        if( query("family/master_name", me) != "Å·Ñô·æ" )
-                return notify_fail("Äã»¹Ã»ÓĞ×Ê¸ñÑøÓı×Ô¼ºµÄÉßÈº¡£\n");
+        if( query("family/master_name", me) != "æ­é™½é‹’" )
+                return notify_fail("ä½ é‚„æ²’æœ‰è³‡æ ¼é¤Šè‚²è‡ªå·±çš„è›‡ç¾¤ã€‚\n");
 
         if( (int)me->query_skill("poison", 1) < 100 )
-                return notify_fail("Äã¶Ô¶¾¼¼ÁË½â²»¹»Í¸³¹£¬»¹Ã»ÓĞ°ì·¨ÅàÑø¶¾Éß¡£\n");
+                return notify_fail("ä½ å°æ¯’æŠ€äº†è§£ä¸å¤ é€å¾¹ï¼Œé‚„æ²’æœ‰è¾¦æ³•åŸ¹é¤Šæ¯’è›‡ã€‚\n");
 
         if( query("baituo/new_breed_time", me) )
-                return notify_fail("ÏÈµÈÉÏ»ØÅàÑø¹ÖÉßµÄ³É¹û³öÀ´°É¡£\n");
+                return notify_fail("å…ˆç­‰ä¸Šå›åŸ¹é¤Šæ€ªè›‡çš„æˆæœå‡ºä¾†å§ã€‚\n");
 
         MANAGE = 1;
         asp = do_count();
@@ -67,8 +67,8 @@ int do_manage()
         if(! asp || asp == 0 )
                 return notify_fail("");
 
-        message_vision("\n$N½«ÉßÈº¸Ï½øÉßÎÑ£¬·Ô¸ÀÉßÅ«ºÃºÃÅàÓı¡£\n", me);
-        if( wizardp(me) ) write("ÕâĞ©ÉßÅàÓı³öµÄÉßÖÖ£¬Ô¤ÆÚ¿ÉÓµÓĞ"+asp+"µÄ¶¾ĞÔ¡£\n");
+        message_vision("\n$Nå°‡è›‡ç¾¤è¶•é€²è›‡çª©ï¼Œå©å’è›‡å¥´å¥½å¥½åŸ¹è‚²ã€‚\n", me);
+        if( wizardp(me) ) write("é€™äº›è›‡åŸ¹è‚²å‡ºçš„è›‡ç¨®ï¼Œé æœŸå¯æ“æœ‰"+asp+"çš„æ¯’æ€§ã€‚\n");
 
         set("baituo/new_breed", asp, me);
         set("baituo/new_breed_time", time(), me);
@@ -89,15 +89,15 @@ int do_count()
         obj = this_object();
         inv = all_inventory(obj);
 
-        if( query("family/family_name", me) != "Å·ÑôÊÀ¼Ò" )
-                return notify_fail("¹Ü±ğÈË¼ÒµÄÏĞÊÂ¸ÉÂï£¿\n");
+        if( query("family/family_name", me) != "æ­é™½ä¸–å®¶" )
+                return notify_fail("ç®¡åˆ¥äººå®¶çš„é–’äº‹å¹¹å˜›ï¼Ÿ\n");
 
         if( (wizardp(me) && query("env/snake_test", me) == "YES") || query_temp("test", me) )
                 flag = 1;
 
         inv = map_array(inv, "snake_list", this_object() );
 
-        str = sprintf("¡¶Éß³¡¹ÜÀí¡·\n%s\n", implode(inv, "") );
+        str = sprintf("ã€Šè›‡å ´ç®¡ç†ã€‹\n%s\n", implode(inv, "") );
 
         if(flag) write(str);
 
@@ -109,26 +109,26 @@ int do_count()
                 names -= ({ 0 });
 
                 if( !sizeof(names) || sizeof(names)==0 ) {
-                write("ÏÖÔÚÉß³¡ÀïÃæ¾ÍÃ»ÓĞÄã²¶À´µÄÉßÑ½¡£\n");
+                write("ç¾åœ¨è›‡å ´è£¡é¢å°±æ²’æœ‰ä½ æ•ä¾†çš„è›‡å‘€ã€‚\n");
                 return notify_fail("");
                 }
 
                 else if( sizeof(names)==1 )
-                        str += "Éß³¡ÀïÎ¨Ò»ÓÉÄã²¶×½µ½µÄÉßÖÖÊÇ" + names[0] + NOR + "¡£\n";
+                        str += "è›‡å ´è£¡å”¯ä¸€ç”±ä½ æ•æ‰åˆ°çš„è›‡ç¨®æ˜¯" + names[0] + NOR + "ã€‚\n";
 
-                else str += sprintf("Éß³¡ÀïÓÉÄã²¶×½µ½µÄÉßÓĞ%sÖÖ£¬·Ö±ğÊÇ%sºÍ%s¡£\n",
+                else str += sprintf("è›‡å ´è£¡ç”±ä½ æ•æ‰åˆ°çš„è›‡æœ‰%sç¨®ï¼Œåˆ†åˆ¥æ˜¯%så’Œ%sã€‚\n",
                         chinese_number(sizeof(names)),
-                        implode(names[0..sizeof(names)-2], "¡¢"),
+                        implode(names[0..sizeof(names)-2], "ã€"),
                         names[sizeof(names)-1]);
 
-                //¼ÆËãÃ¿ÖÖÉßµÄÊıÁ¿
+                //è¨ˆç®—æ¯ç¨®è›‡çš„æ•¸é‡
                 for (i = 0; i < sizeof(names); i++) {
                         num = query("snakes/"+names[i]);
                         sort = atoi(query("snakes_poison/"+names[i]));
                         per = 110-num*5;
                         sort2 = sort*per/100;
 
-                        if(flag) printf("%s×Ü¹²ÓĞ%sÌõ£¬Éß¶¾×ÜÖµ%d£¬³ËÒÔ%d%%Ö®ááµÈì¶%d¡£\n",
+                        if(flag) printf("%sç¸½å…±æœ‰%sæ¢ï¼Œè›‡æ¯’ç¸½å€¼%dï¼Œä¹˜ä»¥%d%%ä¹‹å¾Œç­‰æ–¼%dã€‚\n",
                         names[i], chinese_number(num), sort, per, sort*per/100 );
 
                         THE_POISON += sort2;
@@ -137,36 +137,36 @@ int do_count()
                 average = THE_POISON / AMOUNT;
 
                 if(flag)
-                str += sprintf("¹²ÓĞ%sÌõÉß£¬Éß¶¾×ÜºÍ£º%d Éß¶¾Æ½¾ùÖµ£º%d¡£\n"NOR,
+                str += sprintf("å…±æœ‰%sæ¢è›‡ï¼Œè›‡æ¯’ç¸½å’Œï¼š%d è›‡æ¯’å¹³å‡å€¼ï¼š%dã€‚\n"NOR,
                 chinese_number(AMOUNT), THE_POISON, average);
 
 
                 if ( MANAGE == 0 ) write(str);
         }
         else {
-                write("ÏÖÔÚÉß³¡ÀïÃæÃ»ÓĞÄã²¶À´µÄÉß¡£\n");
+                write("ç¾åœ¨è›‡å ´è£¡é¢æ²’æœ‰ä½ æ•ä¾†çš„è›‡ã€‚\n");
                 return notify_fail("");
         }
 
         if(average < 100) {
-                write("ÕâĞ©ÉßÖÖ·±Ö³³öÀ´µÄÉß£¬¶¾ĞÔ»òĞí±¡ÈõÁËµã¡£\n");
+                write("é€™äº›è›‡ç¨®ç¹æ®–å‡ºä¾†çš„è›‡ï¼Œæ¯’æ€§æˆ–è¨±è–„å¼±äº†é»ã€‚\n");
                 return notify_fail("");
         }
 
         if ( sizeof(names) < 3 ) {
-                write("ÒªÅàÓı¹ÖÉß£¬ÆğÂëÒªÈ¡ÈıÖÖ²»Í¬µÄÉßÀ´·±Ö³¡£\n");
+                write("è¦åŸ¹è‚²æ€ªè›‡ï¼Œèµ·ç¢¼è¦å–ä¸‰ç¨®ä¸åŒçš„è›‡ä¾†ç¹æ®–ã€‚\n");
                 return notify_fail("");
         }
-        else if ( MANAGE == 1 ) {  //ÓÉmanageÖ¸Áî¶ÁÈ¡Ê±£¬Ò»±ß¼ÆËãÒ»±ßÈÃÉßÏûÊ§
+        else if ( MANAGE == 1 ) {  //ç”±manageæŒ‡ä»¤è®€å–æ™‚ï¼Œä¸€é‚Šè¨ˆç®—ä¸€é‚Šè®“è›‡æ¶ˆå¤±
                 inv = all_inventory(obj);
                 for (i = 0; i < sizeof(inv); i++)
-                if( query("race", inv[i]) == "ÉßÀà"
+                if( query("race", inv[i]) == "è›‡é¡"
                  && query("caught", inv[i]) == query("id", me))destruct(inv[i]);
         }
 
         if( MANAGE == 0 && average>query("baituo/breed", me )
          && query("baituo/breed", me)>100 )
-                write(HIB"Äã°µ×ÔË¼Á¿£ºÈôÊÇÓÃÕâĞ©Éß£¬Ò²Ğí¿ÉÒÔÅàÑø³ö¶¾ĞÔ¸üÊ¤ÒÔÍùµÄ¹ÖÉß¡£\n"NOR);
+                write(HIB"ä½ æš—è‡ªæ€é‡ï¼šè‹¥æ˜¯ç”¨é€™äº›è›‡ï¼Œä¹Ÿè¨±å¯ä»¥åŸ¹é¤Šå‡ºæ¯’æ€§æ›´å‹ä»¥å¾€çš„æ€ªè›‡ã€‚\n"NOR);
 
         THE_POISON = 0;
         AMOUNT = 0;
@@ -184,9 +184,9 @@ string snake_list(object obj, int flag)
 
         sp=query("sk_poison", obj)*2;
 
-        if( query("race", obj) == "ÉßÀà"
+        if( query("race", obj) == "è›‡é¡"
          && query("caught", obj) == query("id", this_player())){
-                str = sprintf("%-24s£º ¾­Ñé£º%-10d  Éß¶¾£º%3s  \n" NOR,
+                str = sprintf("%-24sï¼š ç¶“é©—ï¼š%-10d  è›‡æ¯’ï¼š%3s  \n" NOR,
                 obj->name()+"("+query("id", obj)+")",query("combat_exp", obj),sp);
 
                 AMOUNT += 1;
@@ -231,17 +231,17 @@ int do_return(string arg)
         if( !arg || arg=="" ) return 0;
 
         if( !objectp(snake = present(arg, me)) && !objectp(snake = present(arg, environment(me))))
-                return notify_fail("ÄãÒªÈÃÄÄÌõÉß»ØÉßÎÑ£¿\n" );
+                return notify_fail("ä½ è¦è®“å“ªæ¢è›‡å›è›‡çª©ï¼Ÿ\n" );
 
-        if( query("race", snake) != "ÉßÀà" )
-                return notify_fail(snake->name()+"ÊÇ"+query("race", snake)+"£¬¿É²»ÊÇÉßÀà£¡\n");
+        if( query("race", snake) != "è›‡é¡" )
+                return notify_fail(snake->name()+"æ˜¯"+query("race", snake)+"ï¼Œå¯ä¸æ˜¯è›‡é¡ï¼\n");
 
         if( query("who_breed", snake) != query("id", me) )
-                return notify_fail("ÕâÌõ"+snake->name()+"²»ÊÇÄãÅàÑø³öÀ´µÄ¡£\n" );
+                return notify_fail("é€™æ¢"+snake->name()+"ä¸æ˜¯ä½ åŸ¹é¤Šå‡ºä¾†çš„ã€‚\n" );
 
-        message_vision("$N½«$n¸Ï»ØÁËÉßÎÑÀï¡£\n", me, snake);
+        message_vision("$Nå°‡$nè¶•å›äº†è›‡çª©è£¡ã€‚\n", me, snake);
 
-        if(snake->name() == "Ğ¡¹ÖÉß")
+        if(snake->name() == "å°æ€ªè›‡")
         addn("baituo/snake_amount", 1, me);
 
         destruct(snake);

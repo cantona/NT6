@@ -4,11 +4,11 @@ inherit NPC;
 void do_summon();
 void create()
 {
-        string *names = ({"ÓÄÁéÀÇÍõ"});
+        string *names = ({"å¹½éˆç‹¼ç‹"});
         set_name( names[random(sizeof(names))], ({ "wolf king","wolf"}));
         set("vendetta_mark","wolf");
-        set("race", "Ò°ÊŞ");
-        set("gender", "ĞÛĞÔ");
+        set("race", "é‡ç¸");
+        set("gender", "é›„æ€§");
         set("age", 1000);
         set("long", "\n");
 
@@ -27,7 +27,7 @@ void create()
                                 (: do_summon() :),
                     }) );
 
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "Ç°½Å", "áá½Å", "Î²°Í" }) );
+        set("limbs", ({ "é ­éƒ¨", "èº«é«”", "å‰è…³", "å¾Œè…³", "å°¾å·´" }) );
         set("verbs", ({ "bite", "claw" }) );
         set("combat_exp", 400000);
         set("bellicosity", 5 );
@@ -44,7 +44,7 @@ mixed hit_ob(object me, object victim, int damage_bonus)
 {
         victim->receive_damage("qi",60+random(60), me);
         victim->receive_wound("qi",30+random(30), me);
-        message_combatd(HIW"\n$N"+HIW"·æÀûµÄ×¦×ÓÔÚ$n"+HIW"ÉíÉÏÁôÏÂÒ»µÀÑªÁÜÁÜµÄÉË¿Ú£¡"NOR,me,victim);
+        message_combatd(HIW"\n$N"+HIW"é‹’åˆ©çš„çˆªå­åœ¨$n"+HIW"èº«ä¸Šç•™ä¸‹ä¸€é“è¡€æ·‹æ·‹çš„å‚·å£ï¼"NOR,me,victim);
         return;
 }
 
@@ -52,7 +52,7 @@ void do_summon() {
         object wolf,me,enemy,enemies;
         me = this_object();
 
-        message_vision(HIB "\n$NÑöÌìÀÇº¿¡°ÎØ¡«à»¡«¡«£¬ÎØ¡«à»¡±£¬¶ÙÊ±ÂşÉ½±éÒ°ÈºÀÇÆëÏø¡£\n" NOR, me);
+        message_vision(HIB "\n$Nä»°å¤©ç‹¼åšâ€œå—šï½å—·ï½ï½ï¼Œå—šï½å—·â€ï¼Œé “æ™‚æ¼«å±±éé‡ç¾¤ç‹¼é½Šå“®ã€‚\n" NOR, me);
         seteuid(getuid());
         enemies = me->query_enemy();
         if( !sizeof(enemies) ) return;
@@ -63,13 +63,13 @@ void do_summon() {
                 wolf->kill_ob(enemy);
                 enemy->kill_ob(wolf);
         }
-        message_vision( "\n\n$N¶ñºİºİµØÆËÁËÉÏÀ´¡£\n" , wolf);
+        message_vision( "\n\n$Næƒ¡ç‹ ç‹ åœ°æ’²äº†ä¸Šä¾†ã€‚\n" , wolf);
         call_out("leave", 20+random(10), wolf);
         start_busy(2);
 }
 
 void leave(object wolf){
         if (! wolf) return;
-        message_combatd("\n$NÍ»È»ÏûÊ§ÁË¡£\n",wolf);
+        message_combatd("\n$Nçªç„¶æ¶ˆå¤±äº†ã€‚\n",wolf);
         destruct(wolf);
 }

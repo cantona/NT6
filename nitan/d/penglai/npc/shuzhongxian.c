@@ -14,11 +14,11 @@ string ask_nanti6();
 
 void create()
 {
-        set_name(HIW "ÊéÖĞÏÉ" NOR, ({ "shuzhong xian", "shuzhong", "xian" }));
+        set_name(HIW "æ›¸ä¸­ä»™" NOR, ({ "shuzhong xian", "shuzhong", "xian" }));
                 
-        set("long", HIW "ÕâÎ»ÏÉÈËÄË´óÃû¶¦¶¦µÄÊéÖĞÏÉ£¬¾İËµÌìÉÏµØÏÂÖ®ÊÂËûÎŞËù²»Öª£¬ÉñÍ¨¹ã´ó¡£\n" NOR);
+        set("long", HIW "é€™ä½ä»™äººä¹ƒå¤§åé¼é¼çš„æ›¸ä¸­ä»™ï¼Œæ“šèªªå¤©ä¸Šåœ°ä¸‹ä¹‹äº‹ä»–ç„¡æ‰€ä¸çŸ¥ï¼Œç¥é€šå»£å¤§ã€‚\n" NOR);
 
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("age", 9999);
         set("attitude", "friendly");
         set("shen_type", 1);
@@ -48,18 +48,18 @@ void create()
         map_skill("unarmed", "yinyang-shiertian");
         
         set("inquiry", ([
-                "ÈçºÎ²»±»ÏÉÆøÀ§ÈÅ"       :   "ÕâÏÉÆøµÄÀ§ÈÅ¶ÔÓÚÄãÃÇ·²ÈËÀ´ËµÊÇÎŞ¿É±ÜÃâµÄ£¬²»¹ıÖ»ÒªÄãÄÜ»Ø´ğÎÒµÄ¼¸¸öÄÑÌâ£¬\n"
-                                             "±¾ÏÉÈËµ½ÊÇ¿ÉÒÔ½ÌÄãÈçºÎ¼õÉÙÏÉÆø¶ÔÄãµÄÀ§ÈÅ¡£\n",
-                "ÄÑÌâ"                   :   "ÎÒÕâÀï×Ü¹²ÓĞÁùµÀÄÑÌâ£¬Èç¹ûÄãÄÜ°´Ë³ĞòÖğÒ»½â¾ö£¬ÎÒ±ã½ÌÄãÈçºÎ¼õÉÙ±»ÏÉÆøÀ§ÈÅµÄ·½·¨¡£\n",                            
-                "½â¾öÄÑÌâ"               :   "ÄãÏëºÃÁË¾ÍÔÚÕâÀïÕÒÎÒ°É£¬°´ÕÕË³ĞòÈçµÚÒ»µÀÌâÄã¾Í ask xian about ÄÑÌâÒ» ¡£\n",
-                "ÈçºÎ´ğ¸´"               :   "Ã¿µÀÌâÄ¿¶¼ÊÇÒ»Ê×Ê«µÄÒ»²¿·Ö£¬´ğ°¸ÊÇÒ»ÑùÎïÆ·£¬ÄãÕÒµ½Õâ¸öÎïÆ·½»¸øÎÒ¾ÍĞĞÁË¡£\n",
-                "ÅîÀ³ÏÉµº"               :   "Õâ²»ÊÇÄã¸ÃÀ´µÄµØ·½£¬ÎÒ¿´Äã»¹ÊÇ¿ì×ß°É¡£\n",
-                "ÄÑÌâÒ»"                 :   (: ask_nanti1 :),
-                "ÄÑÌâ¶ş"                 :   (: ask_nanti2 :),
-                "ÄÑÌâÈı"                 :   (: ask_nanti3 :),
-                "ÄÑÌâËÄ"                 :   (: ask_nanti4 :),
-                "ÄÑÌâÎå"                 :   (: ask_nanti5 :),
-                "ÄÑÌâÁù"                 :   (: ask_nanti6 :),
+                "å¦‚ä½•ä¸è¢«ä»™æ°£å›°æ“¾"       :   "é€™ä»™æ°£çš„å›°æ“¾å°äºä½ å€‘å‡¡äººä¾†èªªæ˜¯ç„¡å¯é¿å…çš„ï¼Œä¸éåªè¦ä½ èƒ½å›ç­”æˆ‘çš„å¹¾å€‹é›£é¡Œï¼Œ\n"
+                                             "æœ¬ä»™äººåˆ°æ˜¯å¯ä»¥æ•™ä½ å¦‚ä½•æ¸›å°‘ä»™æ°£å°ä½ çš„å›°æ“¾ã€‚\n",
+                "é›£é¡Œ"                   :   "æˆ‘é€™è£¡ç¸½å…±æœ‰å…­é“é›£é¡Œï¼Œå¦‚æœä½ èƒ½æŒ‰é †åºé€ä¸€è§£æ±ºï¼Œæˆ‘ä¾¿æ•™ä½ å¦‚ä½•æ¸›å°‘è¢«ä»™æ°£å›°æ“¾çš„æ–¹æ³•ã€‚\n",                            
+                "è§£æ±ºé›£é¡Œ"               :   "ä½ æƒ³å¥½äº†å°±åœ¨é€™è£¡æ‰¾æˆ‘å§ï¼ŒæŒ‰ç…§é †åºå¦‚ç¬¬ä¸€é“é¡Œä½ å°± ask xian about é›£é¡Œä¸€ ã€‚\n",
+                "å¦‚ä½•ç­”å¾©"               :   "æ¯é“é¡Œç›®éƒ½æ˜¯ä¸€é¦–è©©çš„ä¸€éƒ¨åˆ†ï¼Œç­”æ¡ˆæ˜¯ä¸€æ¨£ç‰©å“ï¼Œä½ æ‰¾åˆ°é€™å€‹ç‰©å“äº¤çµ¦æˆ‘å°±è¡Œäº†ã€‚\n",
+                "è“¬èŠä»™å³¶"               :   "é€™ä¸æ˜¯ä½ è©²ä¾†çš„åœ°æ–¹ï¼Œæˆ‘çœ‹ä½ é‚„æ˜¯å¿«èµ°å§ã€‚\n",
+                "é›£é¡Œä¸€"                 :   (: ask_nanti1 :),
+                "é›£é¡ŒäºŒ"                 :   (: ask_nanti2 :),
+                "é›£é¡Œä¸‰"                 :   (: ask_nanti3 :),
+                "é›£é¡Œå››"                 :   (: ask_nanti4 :),
+                "é›£é¡Œäº”"                 :   (: ask_nanti5 :),
+                "é›£é¡Œå…­"                 :   (: ask_nanti6 :),
         ]));
         set("chat_chance_combat", 120);
         set("chat_msg_combat", ({
@@ -77,19 +77,19 @@ string ask_nanti1()
         string str;
         
         me = this_player();
-        str = HIC "¡°ÓÆÈ»¼ûÄÏÉ½¡£¡±" NOR;
+        str = HIC "â€œæ‚ ç„¶è¦‹å—å±±ã€‚â€" NOR;
         
         if (me->query("penglai/go_quest/ok"))
-                return "ÎÒµÄÁùµÀÄÑÌâÄã¶¼½â¾öÁË£¬²»´í£¬²»´í¡£";
+                return "æˆ‘çš„å…­é“é›£é¡Œä½ éƒ½è§£æ±ºäº†ï¼Œä¸éŒ¯ï¼Œä¸éŒ¯ã€‚";
                 
         if (me->query("penglai/go_quest/step") > 1)
-                return "ÕâµÀÄÑÌâÄãÒÑ¾­½â´ğ¹ıÁË¡£";        
+                return "é€™é“é›£é¡Œä½ å·²ç¶“è§£ç­”éäº†ã€‚";        
         
-        tell_object(me, HIG "ÌâÄ¿ÊÇ£º" + str + HIG "\n " NOR);
+        tell_object(me, HIG "é¡Œç›®æ˜¯ï¼š" + str + HIG "\n " NOR);
         me->set("penglai/go_quest/step", 1);
         me->save();
         
-        return "ÎÒµÈÄãµÄºÃÏûÏ¢ÁË¡£";
+        return "æˆ‘ç­‰ä½ çš„å¥½æ¶ˆæ¯äº†ã€‚";
 }
 
 string ask_nanti2()
@@ -98,22 +98,22 @@ string ask_nanti2()
         string str;
         
         me = this_player();
-        str = HIC "¡°±Ì²İÉúÔÚÓÄ¹ÈÖĞ£¬ãåÈÕÔ¡Â¶×Ë´ÓÈİ¡£¡±\n¡°Ìì´ÍÉñÏã×ÔÓÆÔ¶£¬ÒıÀ´ºûµûÅªÇå·ç¡£¡±" NOR;
+        str = HIC "â€œç¢§è‰ç”Ÿåœ¨å¹½è°·ä¸­ï¼Œæ²æ—¥æµ´éœ²å§¿å¾å®¹ã€‚â€\nâ€œå¤©è³œç¥é¦™è‡ªæ‚ é ï¼Œå¼•ä¾†è´è¶å¼„æ¸…é¢¨ã€‚â€" NOR;
         
         if (me->query("penglai/go_quest/ok"))
-                return "ÎÒµÄÁùµÀÄÑÌâÄã¶¼½â¾öÁË£¬²»´í£¬²»´í¡£";
+                return "æˆ‘çš„å…­é“é›£é¡Œä½ éƒ½è§£æ±ºäº†ï¼Œä¸éŒ¯ï¼Œä¸éŒ¯ã€‚";
                 
         if (me->query("penglai/go_quest/step") > 2)
-                return "ÕâµÀÄÑÌâÄãÒÑ¾­½â´ğ¹ıÁË¡£";        
+                return "é€™é“é›£é¡Œä½ å·²ç¶“è§£ç­”éäº†ã€‚";        
         
         if (me->query("penglai/go_quest/step") < 2)
-                return "Äã»¹ÊÇÏÈ½â´ğÇ°ÃæµÄÄÑÌâ°É¡£";
+                return "ä½ é‚„æ˜¯å…ˆè§£ç­”å‰é¢çš„é›£é¡Œå§ã€‚";
                         
-        tell_object(me, HIG "ÌâÄ¿ÊÇ£º\n" + str + HIG "\n " NOR);
+        tell_object(me, HIG "é¡Œç›®æ˜¯ï¼š\n" + str + HIG "\n " NOR);
         me->set("penglai/go_quest/step", 2);
         me->save();
         
-        return "ÎÒµÈÄãµÄºÃÏûÏ¢ÁË¡£";
+        return "æˆ‘ç­‰ä½ çš„å¥½æ¶ˆæ¯äº†ã€‚";
 }
 
 string ask_nanti3()
@@ -122,22 +122,22 @@ string ask_nanti3()
         string str;
         
         me = this_player();
-        str = HIC "¡°²ÊÒÂÌìÊÚ¸¡ÉúÃÎ£¬·Û³á·çÁ¯ÀË¿ÍÊ«¡£¡±\n¡°¶À²½Ñ°»¨»¨Ğ»Ôç£¬ÏàË¼¼ÄÔÂÔÂÄÑÖª¡£¡±" NOR;
+        str = HIC "â€œå½©è¡£å¤©æˆæµ®ç”Ÿå¤¢ï¼Œç²‰ç¿…é¢¨æ†æµªå®¢è©©ã€‚â€\nâ€œç¨æ­¥å°‹èŠ±èŠ±è¬æ—©ï¼Œç›¸æ€å¯„æœˆæœˆé›£çŸ¥ã€‚â€" NOR;
         
         if (me->query("penglai/go_quest/ok"))
-                return "ÎÒµÄÁùµÀÄÑÌâÄã¶¼½â¾öÁË£¬²»´í£¬²»´í¡£";
+                return "æˆ‘çš„å…­é“é›£é¡Œä½ éƒ½è§£æ±ºäº†ï¼Œä¸éŒ¯ï¼Œä¸éŒ¯ã€‚";
                 
         if (me->query("penglai/go_quest/step") > 3)
-                return "ÕâµÀÄÑÌâÄãÒÑ¾­½â´ğ¹ıÁË¡£";        
+                return "é€™é“é›£é¡Œä½ å·²ç¶“è§£ç­”éäº†ã€‚";        
         
         if (me->query("penglai/go_quest/step") < 3)
-                return "Äã»¹ÊÇÏÈ½â´ğÇ°ÃæµÄÄÑÌâ°É¡£";
+                return "ä½ é‚„æ˜¯å…ˆè§£ç­”å‰é¢çš„é›£é¡Œå§ã€‚";
                         
-        tell_object(me, HIG "ÌâÄ¿ÊÇ£º\n" + str + HIG "\n " NOR);
+        tell_object(me, HIG "é¡Œç›®æ˜¯ï¼š\n" + str + HIG "\n " NOR);
         me->set("penglai/go_quest/step", 3);
         me->save();
 
-        return "ÎÒµÈÄãµÄºÃÏûÏ¢ÁË¡£";
+        return "æˆ‘ç­‰ä½ çš„å¥½æ¶ˆæ¯äº†ã€‚";
 }
 
 string ask_nanti4()
@@ -146,22 +146,22 @@ string ask_nanti4()
         string str;
         
         me = this_player();
-        str = HIC "¡°Èô·ÇÒ»·¬º®³º¹Ç¡£¡±\n" NOR;
+        str = HIC "â€œè‹¥éä¸€ç•ªå¯’æ¾ˆéª¨ã€‚â€\n" NOR;
         
         if (me->query("penglai/go_quest/ok"))
-                return "ÎÒµÄÁùµÀÄÑÌâÄã¶¼½â¾öÁË£¬²»´í£¬²»´í¡£";
+                return "æˆ‘çš„å…­é“é›£é¡Œä½ éƒ½è§£æ±ºäº†ï¼Œä¸éŒ¯ï¼Œä¸éŒ¯ã€‚";
                 
         if (me->query("penglai/go_quest/step") > 4)
-                return "ÕâµÀÄÑÌâÄãÒÑ¾­½â´ğ¹ıÁË¡£";        
+                return "é€™é“é›£é¡Œä½ å·²ç¶“è§£ç­”éäº†ã€‚";        
         
         if (me->query("penglai/go_quest/step") < 4)
-                return "Äã»¹ÊÇÏÈ½â´ğÇ°ÃæµÄÄÑÌâ°É¡£";
+                return "ä½ é‚„æ˜¯å…ˆè§£ç­”å‰é¢çš„é›£é¡Œå§ã€‚";
                         
-        tell_object(me, HIG "ÌâÄ¿ÊÇ£º\n" + str + HIG "\n " NOR);
+        tell_object(me, HIG "é¡Œç›®æ˜¯ï¼š\n" + str + HIG "\n " NOR);
         me->set("penglai/go_quest/step", 4);
         me->save();
 
-        return "ÎÒµÈÄãµÄºÃÏûÏ¢ÁË¡£";
+        return "æˆ‘ç­‰ä½ çš„å¥½æ¶ˆæ¯äº†ã€‚";
 }
 
 string ask_nanti5()
@@ -170,22 +170,22 @@ string ask_nanti5()
         string str;
         
         me = this_player();
-        str = HIC "¡°³¤Öç·çÀ×¾ª»¢±ª£¬°ë¿ÕÁÛ¼×ÎèòÔÁú¡£¡±" NOR;
+        str = HIC "â€œé•·æ™é¢¨é›·é©šè™è±¹ï¼ŒåŠç©ºé±—ç”²èˆè›Ÿé¾ã€‚â€" NOR;
         
         if (me->query("penglai/go_quest/ok"))
-                return "ÎÒµÄÁùµÀÄÑÌâÄã¶¼½â¾öÁË£¬²»´í£¬²»´í¡£";
+                return "æˆ‘çš„å…­é“é›£é¡Œä½ éƒ½è§£æ±ºäº†ï¼Œä¸éŒ¯ï¼Œä¸éŒ¯ã€‚";
                 
         if (me->query("penglai/go_quest/step") > 5)
-                return "ÕâµÀÄÑÌâÄãÒÑ¾­½â´ğ¹ıÁË¡£";        
+                return "é€™é“é›£é¡Œä½ å·²ç¶“è§£ç­”éäº†ã€‚";        
         
         if (me->query("penglai/go_quest/step") < 5)
-                return "Äã»¹ÊÇÏÈ½â´ğÇ°ÃæµÄÄÑÌâ°É¡£";
+                return "ä½ é‚„æ˜¯å…ˆè§£ç­”å‰é¢çš„é›£é¡Œå§ã€‚";
                         
-        tell_object(me, HIG "ÌâÄ¿ÊÇ£º\n" + str + HIG "\n " NOR);
+        tell_object(me, HIG "é¡Œç›®æ˜¯ï¼š\n" + str + HIG "\n " NOR);
         me->set("penglai/go_quest/step", 5);
         me->save();
 
-        return "ÎÒµÈÄãµÄºÃÏûÏ¢ÁË¡£";
+        return "æˆ‘ç­‰ä½ çš„å¥½æ¶ˆæ¯äº†ã€‚";
 }
 
 string ask_nanti6()
@@ -194,128 +194,128 @@ string ask_nanti6()
         string str;
         
         me = this_player();
-        str = HIC "¡°È°¾ıÄªàµÌ¾£¬¾«Éñ¿ÉÊ¤±ø£»¡±\n¡°³äÈûÌìºÍµØ£¬»³±§ÀËÓëĞÇ¡£¡±" NOR;
+        str = HIC "â€œå‹¸å›è«å—Ÿå˜†ï¼Œç²¾ç¥å¯å‹å…µï¼›â€\nâ€œå……å¡å¤©å’Œåœ°ï¼Œæ‡·æŠ±æµªèˆ‡æ˜Ÿã€‚â€" NOR;
         
         if (me->query("penglai/go_quest/ok"))
-                return "ÎÒµÄÁùµÀÄÑÌâÄã¶¼½â¾öÁË£¬²»´í£¬²»´í¡£";
+                return "æˆ‘çš„å…­é“é›£é¡Œä½ éƒ½è§£æ±ºäº†ï¼Œä¸éŒ¯ï¼Œä¸éŒ¯ã€‚";
                 
         if (me->query("penglai/go_quest/step") > 6)
-                return "ÕâµÀÄÑÌâÄãÒÑ¾­½â´ğ¹ıÁË¡£";        
+                return "é€™é“é›£é¡Œä½ å·²ç¶“è§£ç­”éäº†ã€‚";        
         
         if (me->query("penglai/go_quest/step") < 6)
-                return "Äã»¹ÊÇÏÈ½â´ğÇ°ÃæµÄÄÑÌâ°É¡£";
+                return "ä½ é‚„æ˜¯å…ˆè§£ç­”å‰é¢çš„é›£é¡Œå§ã€‚";
                         
-        tell_object(me, HIG "ÌâÄ¿ÊÇ£º\n" + str + HIG "\n " NOR);
+        tell_object(me, HIG "é¡Œç›®æ˜¯ï¼š\n" + str + HIG "\n " NOR);
         me->set("penglai/go_quest/step", 6);
         me->save();
 
-        return "ÎÒµÈÄãµÄºÃÏûÏ¢ÁË¡£";
+        return "æˆ‘ç­‰ä½ çš„å¥½æ¶ˆæ¯äº†ã€‚";
 }
 int accept_object(object me, object obj)
 {                        
         
         if (me->query("penglai/go_quest/ok"))
         {
-                command("say ¸óÏÂÖÇ»Û³¬Èº£¬Åå·şÅå·ş¡£");
+                command("say é–£ä¸‹æ™ºæ…§è¶…ç¾¤ï¼Œä½©æœä½©æœã€‚");
                 return 0;
         }
         
         switch(me->query("penglai/go_quest/step"))
         {
-                // ¾Õ»¨
+                // èŠèŠ±
                 case 1:
                         if (obj->query("id") == "penglai juhua" &&
                                 base_name(obj) == "/d/penglai/obj/juhua")
                             {
                                     command("nod");
-                                    command("say ºÜºÃ£¬ºÜºÃ£¬Äã¿ÉÒÔ¿ªÊ¼½â´ğÏÂÒ»µÀÄÑÌâÁË¡£");
+                                    command("say å¾ˆå¥½ï¼Œå¾ˆå¥½ï¼Œä½ å¯ä»¥é–‹å§‹è§£ç­”ä¸‹ä¸€é“é›£é¡Œäº†ã€‚");
                                     destruct(obj);
                                     me->set("penglai/go_quest/step", 2);
                                     me->save();
                                     return 1;
                             }
-                            command("say ±¾ÏÉÈË´Ó²»ÂÒÊÕ±ğÈË¶«Î÷¡£");
+                            command("say æœ¬ä»™äººå¾ä¸äº‚æ”¶åˆ¥äººæ±è¥¿ã€‚");
                             return 0;
                         break;
-                // À¼²İ        
+                // è˜­è‰        
                 case 2:
                         if (obj->query("id") == "penglai lancao" &&
                                 base_name(obj) == "/d/penglai/obj/lancao")
                             {
                                     command("nod");
-                                    command("say ºÜºÃ£¬ºÜºÃ£¬Äã¿ÉÒÔ¿ªÊ¼½â´ğÏÂÒ»µÀÄÑÌâÁË¡£");
+                                    command("say å¾ˆå¥½ï¼Œå¾ˆå¥½ï¼Œä½ å¯ä»¥é–‹å§‹è§£ç­”ä¸‹ä¸€é“é›£é¡Œäº†ã€‚");
                                     destruct(obj);
                                     me->set("penglai/go_quest/step", 3);
                                     me->save();
                                     return 1;
                             }
-                            command("say ±¾ÏÉÈË´Ó²»ÂÒÊÕ±ğÈË¶«Î÷¡£");
+                            command("say æœ¬ä»™äººå¾ä¸äº‚æ”¶åˆ¥äººæ±è¥¿ã€‚");
                             return 0;                
                         break;                
-                // ºûµû±ê±¾
+                // è´è¶æ¨™æœ¬
                 case 3:
                         if (obj->query("id") == "hudie biaoben" &&
                                 base_name(obj) == "/d/penglai/obj/biaoben")
                             {
                                     command("nod");
-                                    command("say ºÜºÃ£¬ºÜºÃ£¬Äã¿ÉÒÔ¿ªÊ¼½â´ğÏÂÒ»µÀÄÑÌâÁË¡£");
+                                    command("say å¾ˆå¥½ï¼Œå¾ˆå¥½ï¼Œä½ å¯ä»¥é–‹å§‹è§£ç­”ä¸‹ä¸€é“é›£é¡Œäº†ã€‚");
                                     destruct(obj);
                                     me->set("penglai/go_quest/step", 4);
                                     me->save();
                                     return 1;
                             }
-                            command("say ±¾ÏÉÈË´Ó²»ÂÒÊÕ±ğÈË¶«Î÷¡£");
+                            command("say æœ¬ä»™äººå¾ä¸äº‚æ”¶åˆ¥äººæ±è¥¿ã€‚");
                             return 0;                
                         break;                
-                // Ã·»¨
+                // æ¢…èŠ±
                 case 4:
                         if (obj->query("id") == "penglai meihua" &&
                                 base_name(obj) == "/d/penglai/obj/meihua")
                             {
                                     command("nod");
-                                    command("say ºÜºÃ£¬ºÜºÃ£¬Äã¿ÉÒÔ¿ªÊ¼½â´ğÏÂÒ»µÀÄÑÌâÁË¡£");
+                                    command("say å¾ˆå¥½ï¼Œå¾ˆå¥½ï¼Œä½ å¯ä»¥é–‹å§‹è§£ç­”ä¸‹ä¸€é“é›£é¡Œäº†ã€‚");
                                     destruct(obj);
                                     me->set("penglai/go_quest/step", 5);
                                     me->save();
                                     return 1;
                             }
-                            command("say ±¾ÏÉÈË´Ó²»ÂÒÊÕ±ğÈË¶«Î÷¡£");
+                            command("say æœ¬ä»™äººå¾ä¸äº‚æ”¶åˆ¥äººæ±è¥¿ã€‚");
                             return 0;                
                         break;                
-                // ËÉÒ¶
+                // é¬†è‘‰
                 case 5:
                         if (obj->query("id") == "penglai songye" &&
                                 base_name(obj) == "/d/penglai/obj/songye")
                             {
                                     command("nod");
-                                    command("say ºÜºÃ£¬ºÜºÃ£¬Äã¿ÉÒÔ¿ªÊ¼½â´ğÏÂÒ»µÀÄÑÌâÁË¡£");
+                                    command("say å¾ˆå¥½ï¼Œå¾ˆå¥½ï¼Œä½ å¯ä»¥é–‹å§‹è§£ç­”ä¸‹ä¸€é“é›£é¡Œäº†ã€‚");
                                     destruct(obj);
                                     me->set("penglai/go_quest/step", 6);
                                     me->save();
                                     return 1;
                             }
-                            command("say ±¾ÏÉÈË´Ó²»ÂÒÊÕ±ğÈË¶«Î÷¡£");
+                            command("say æœ¬ä»™äººå¾ä¸äº‚æ”¶åˆ¥äººæ±è¥¿ã€‚");
                             return 0;                
                         break;                
-                // ÖñÒ¶
+                // ç«¹è‘‰
                 case 6:
                         if (obj->query("id") == "penglai zhuye" &&
                                 base_name(obj) == "/d/penglai/obj/zhuye")
                             {
                                     command("nod");
-                                    command("say ºÜºÃ£¬ºÜºÃ£¬¸óÏÂÖÇ»Û³¬Èº£¬½«ÀÏÏÉÄÑÌâÖğÒ»½â´ğ¡£");
+                                    command("say å¾ˆå¥½ï¼Œå¾ˆå¥½ï¼Œé–£ä¸‹æ™ºæ…§è¶…ç¾¤ï¼Œå°‡è€ä»™é›£é¡Œé€ä¸€è§£ç­”ã€‚");
                                     destruct(obj);
-                                    command("say ±¾ÏÉÈË±ã½ÌÄãÈçºÎ¼õÉÙÏÉÆøµÄÀ§ÈÅ£¬Äã¿É¼ÇºÃÁË ¡­¡­");
-                                    tell_object(me, HIG "¹§Ï²Äã£¬ÒÑ¾­Ñ§»áÁËÈçºÎ¼õÉÙµºÉÏÏÉÆø¶ÔÄãµÄÀ§ÈÅ¡£\n" NOR);
+                                    command("say æœ¬ä»™äººä¾¿æ•™ä½ å¦‚ä½•æ¸›å°‘ä»™æ°£çš„å›°æ“¾ï¼Œä½ å¯è¨˜å¥½äº† â€¦â€¦");
+                                    tell_object(me, HIG "æ­å–œä½ ï¼Œå·²ç¶“å­¸æœƒäº†å¦‚ä½•æ¸›å°‘å³¶ä¸Šä»™æ°£å°ä½ çš„å›°æ“¾ã€‚\n" NOR);
                                     me->set("penglai/go_quest/ok", 1);
                                     me->save();
                                     return 1;
                             }
-                            command("say ±¾ÏÉÈË´Ó²»ÂÒÊÕ±ğÈË¶«Î÷¡£");
+                            command("say æœ¬ä»™äººå¾ä¸äº‚æ”¶åˆ¥äººæ±è¥¿ã€‚");
                             return 0;                
                         break;        
                 default :
-                        command("say ±¾ÏÉÈË´Ó²»ÂÒÊÕ±ğÈË¶«Î÷¡£");
+                        command("say æœ¬ä»™äººå¾ä¸äº‚æ”¶åˆ¥äººæ±è¥¿ã€‚");
                         return 0;
                         break;                        
         }

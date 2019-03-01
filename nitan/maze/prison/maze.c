@@ -8,10 +8,10 @@ inherit VRM_SERVER;
 
 void create() 
 { 
-        // ÃÔ¹¬·¿¼äËù¼Ì³ÐµÄÎï¼þµÄµµ°¸Ãû³Æ¡£ 
+        // è¿·å®®æˆ¿é–“æ‰€ç¹¼æ‰¿çš„ç‰©ä»¶çš„æª”æ¡ˆåç¨±ã€‚ 
         set_inherit_room( ROOM );  
                         
-        //ÃÔ¹¬·¿¼äÀïµÄ¹ÖÎï¡£ 
+        //è¿·å®®æˆ¿é–“è£¡çš„æ€ªç‰©ã€‚ 
         set_maze_npcs( ([
                 "/maze/prison/npc/qiutu1": 1 + random(2),
                 "/maze/prison/npc/qiutu2": 1 + random(2),
@@ -20,65 +20,65 @@ void create()
         ]) );                   
 
         set_exit_npcs( "/maze/prison/npc/laotou" );
-        //²»ËãËÀÍö              
+        //ä¸ç®—æ­»äº¡              
         //set_no_death_room(1);
         
-        //ÃÔ¹¬µÄµ¥±ß³¤ 
+        //è¿·å®®çš„å–®é‚Šé•· 
         set_maze_long(8); 
                         
-        //Èë¿Ú·½Ïò(³ö¿ÚÔÚ¶ÔÃæ) 
+        //å…¥å£æ–¹å‘(å‡ºå£åœ¨å°é¢) 
         set_entry_dir("north"); 
                         
-        //Èë¿ÚÓëÇøÓòµÄÁ¬½Ó·½Ïò 
+        //å…¥å£èˆ‡å€åŸŸçš„é€£æŽ¥æ–¹å‘ 
         set_link_entry_dir("north"); 
                         
-        //Èë¿ÚÓëÇøÓòµÄÁ¬½Óµµ°¸Ãû 
+        //å…¥å£èˆ‡å€åŸŸçš„é€£æŽ¥æª”æ¡ˆå 
         set_link_entry_room(__DIR__"enter"); 
                         
-        //³ö¿ÚÓëÇøÓòµÄÁ¬½Ó·½Ïò 
+        //å‡ºå£èˆ‡å€åŸŸçš„é€£æŽ¥æ–¹å‘ 
         set_link_exit_dir("south"); 
                         
-        //³ö¿ÚÓëÇøÓòµÄÁ¬½Óµµ°¸Ãû 
+        //å‡ºå£èˆ‡å€åŸŸçš„é€£æŽ¥æª”æ¡ˆå 
         set_link_exit_room(__DIR__"out"); 
                         
-        //ÒÔÏÂÊÇÈë¿Ú×ø±ê
+        //ä»¥ä¸‹æ˜¯å…¥å£åæ¨™
         //set_link_entry_room_x(ENTER_ROOM_X);
         //set_link_entry_room_y(ENTER_ROOM_Y);
         //set_link_entry_room_z(ENTER_ROOM_Z);
                         
-        //ÆÕÍ¨·¿¼äÃèÊö
-        set_maze_room_short(RED "ÌìÀÎ" NOR);
+        //æ™®é€šæˆ¿é–“æè¿°
+        set_maze_room_short(RED "å¤©ç‰¢" NOR);
                         
         set_maze_room_desc(@LONG
-ÕâÀïºÚ³Á³ÁµÄ£¬¼´ÎÞÒ»Ë¿¹âÁÁ£¬Ò²ÎÞ°ë·ÖÉùÏ¢¡£ºÚ°µÖÐÒÀÏ¡¿ÉÒÔ
-¿´µ½Éí±ßËÆºõÓÐ¼¸¸öÈËÓ°£¬¿´µ½Äã×ª¹ýÍ·È¥£¬ËûÃÇÁ¢¿ÌÆÁ×¡ºôÎü£¬½ô
-ÕÅµØµÉ×ÅÄã¡£ËÄ±ÚÃþÉÏÈ¥±ùÁ¹£¬ÇÒ¼«Ó²£¬ËÆºõ¶¼ÊÇ¸ÖÌúÖý³É¡£½Å±ßÓÐ
-Ò»¶Ñ¶«Î÷ÌßÉÏÈ¥¿ËØÝØÝµØÉ¢ÁË¿ªÀ´£¬Ï¸¿´È´ÊÇÒ»¾ß°×µÃ·¢ÁÁµÄ¿Ý¹Ç¡£
+é€™è£¡é»‘æ²‰æ²‰çš„ï¼Œå³ç„¡ä¸€çµ²å…‰äº®ï¼Œä¹Ÿç„¡åŠåˆ†è²æ¯ã€‚é»‘æš—ä¸­ä¾ç¨€å¯ä»¥
+çœ‹åˆ°èº«é‚Šä¼¼ä¹Žæœ‰å¹¾å€‹äººå½±ï¼Œçœ‹åˆ°ä½ è½‰éŽé ­åŽ»ï¼Œä»–å€‘ç«‹åˆ»å±ä½å‘¼å¸ï¼Œç·Š
+å¼µåœ°çžªè‘—ä½ ã€‚å››å£æ‘¸ä¸ŠåŽ»å†°æ¶¼ï¼Œä¸”æ¥µç¡¬ï¼Œä¼¼ä¹Žéƒ½æ˜¯é‹¼éµé‘„æˆã€‚è…³é‚Šæœ‰
+ä¸€å †æ±è¥¿è¸¢ä¸ŠåŽ»å…‹å‰Œå‰Œåœ°æ•£äº†é–‹ä¾†ï¼Œç´°çœ‹å»æ˜¯ä¸€å…·ç™½å¾—ç™¼äº®çš„æž¯éª¨ã€‚
 LONG); 
                         
-        //Èë¿Ú·¿¼ä¶ÌÃèÊö 
-        set_entry_short(HIR "ÌìÀÎÈë¿Ú" NOR); 
+        //å…¥å£æˆ¿é–“çŸ­æè¿° 
+        set_entry_short(HIR "å¤©ç‰¢å…¥å£" NOR); 
                         
-        //Èë¿Ú·¿¼äÃèÊö 
+        //å…¥å£æˆ¿é–“æè¿° 
         set_entry_desc(@LONG
-ÕâÀïºÚ³Á³ÁµÄ£¬¼´ÎÞÒ»Ë¿¹âÁÁ£¬Ò²ÎÞ°ë·ÖÉùÏ¢¡£ºÚ°µÖÐÒÀÏ¡¿ÉÒÔ
-¿´µ½Éí±ßËÆºõÓÐ¼¸¸öÈËÓ°£¬¿´µ½Äã×ª¹ýÍ·È¥£¬ËûÃÇÁ¢¿ÌÆÁ×¡ºôÎü£¬½ô
-ÕÅµØµÉ×ÅÄã¡£ËÄ±ÚÃþÉÏÈ¥±ùÁ¹£¬ÇÒ¼«Ó²£¬ËÆºõ¶¼ÊÇ¸ÖÌúÖý³É¡£½Å±ßÓÐ
-Ò»¶Ñ¶«Î÷ÌßÉÏÈ¥¿ËØÝØÝµØÉ¢ÁË¿ªÀ´£¬Ï¸¿´È´ÊÇÒ»¾ß°×µÃ·¢ÁÁµÄ¿Ý¹Ç¡£
+é€™è£¡é»‘æ²‰æ²‰çš„ï¼Œå³ç„¡ä¸€çµ²å…‰äº®ï¼Œä¹Ÿç„¡åŠåˆ†è²æ¯ã€‚é»‘æš—ä¸­ä¾ç¨€å¯ä»¥
+çœ‹åˆ°èº«é‚Šä¼¼ä¹Žæœ‰å¹¾å€‹äººå½±ï¼Œçœ‹åˆ°ä½ è½‰éŽé ­åŽ»ï¼Œä»–å€‘ç«‹åˆ»å±ä½å‘¼å¸ï¼Œç·Š
+å¼µåœ°çžªè‘—ä½ ã€‚å››å£æ‘¸ä¸ŠåŽ»å†°æ¶¼ï¼Œä¸”æ¥µç¡¬ï¼Œä¼¼ä¹Žéƒ½æ˜¯é‹¼éµé‘„æˆã€‚è…³é‚Šæœ‰
+ä¸€å †æ±è¥¿è¸¢ä¸ŠåŽ»å…‹å‰Œå‰Œåœ°æ•£äº†é–‹ä¾†ï¼Œç´°çœ‹å»æ˜¯ä¸€å…·ç™½å¾—ç™¼äº®çš„æž¯éª¨ã€‚
 LONG); 
                         
-        //³ö¿Ú·¿¼ä¶ÌÃèÊö 
-        set_exit_short(HIW "ÌìÀÎ³ö¿Ú" NOR); 
+        //å‡ºå£æˆ¿é–“çŸ­æè¿° 
+        set_exit_short(HIW "å¤©ç‰¢å‡ºå£" NOR); 
                         
-        //³ö¿Ú·¿¼äÃèÊö 
+        //å‡ºå£æˆ¿é–“æè¿° 
         set_exit_desc(@LONG
-ÕâÀïºÚ³Á³ÁµÄ£¬¼´ÎÞÒ»Ë¿¹âÁÁ£¬Ò²ÎÞ°ë·ÖÉùÏ¢¡£ºÚ°µÖÐÒÀÏ¡¿ÉÒÔ
-¿´µ½Éí±ßËÆºõÓÐ¼¸¸öÈËÓ°£¬¿´µ½Äã×ª¹ýÍ·È¥£¬ËûÃÇÁ¢¿ÌÆÁ×¡ºôÎü£¬½ô
-ÕÅµØµÉ×ÅÄã¡£ËÄ±ÚÃþÉÏÈ¥±ùÁ¹£¬ÇÒ¼«Ó²£¬ËÆºõ¶¼ÊÇ¸ÖÌúÖý³É¡£½Å±ßÓÐ
-Ò»¶Ñ¶«Î÷ÌßÉÏÈ¥¿ËØÝØÝµØÉ¢ÁË¿ªÀ´£¬Ï¸¿´È´ÊÇÒ»¾ß°×µÃ·¢ÁÁµÄ¿Ý¹Ç¡£
+é€™è£¡é»‘æ²‰æ²‰çš„ï¼Œå³ç„¡ä¸€çµ²å…‰äº®ï¼Œä¹Ÿç„¡åŠåˆ†è²æ¯ã€‚é»‘æš—ä¸­ä¾ç¨€å¯ä»¥
+çœ‹åˆ°èº«é‚Šä¼¼ä¹Žæœ‰å¹¾å€‹äººå½±ï¼Œçœ‹åˆ°ä½ è½‰éŽé ­åŽ»ï¼Œä»–å€‘ç«‹åˆ»å±ä½å‘¼å¸ï¼Œç·Š
+å¼µåœ°çžªè‘—ä½ ã€‚å››å£æ‘¸ä¸ŠåŽ»å†°æ¶¼ï¼Œä¸”æ¥µç¡¬ï¼Œä¼¼ä¹Žéƒ½æ˜¯é‹¼éµé‘„æˆã€‚è…³é‚Šæœ‰
+ä¸€å †æ±è¥¿è¸¢ä¸ŠåŽ»å…‹å‰Œå‰Œåœ°æ•£äº†é–‹ä¾†ï¼Œç´°çœ‹å»æ˜¯ä¸€å…·ç™½å¾—ç™¼äº®çš„æž¯éª¨ã€‚
 LONG); 
 
-        // ÃÔ¹¬·¿¼äÊÇ·ñÎª»§Íâ·¿¼ä£¿ 
+        // è¿·å®®æˆ¿é–“æ˜¯å¦ç‚ºæˆ¶å¤–æˆ¿é–“ï¼Ÿ 
         // set_outdoors(1); 
         
 } 

@@ -8,12 +8,12 @@ int do_qiao(string arg);
 
 void create ()
 {
-        set ("short", "É½µÀ");
+        set ("short", "å±±é“");
         set ("long", @LONG
-ÕâÀïÊÇºóÉ½Ò»Ìõ»è°µµÄÉ½µÀ¡£É½µÀµÄÁ½ÅÔÒÑ²»Ïó¸Õ²ÅÄÇÃ´Ê÷Ä¾·±
-Ã¯£¬·´¶øÊÇ¹âÍºÍºµÄÃ»ÓĞÒ»¿ÃÖ²Îï£¬ÕâÀïµÄÉ½Ê¯¾¹·¢³öÉîÉîµÄ³àºìÉ«
-¹âÔó£¬²»ÖªÓë´¦±ğµÄÊ¯Í·ÓĞÊ²Ã´²»Í¬£¬¿ÕÆøÖĞÆ®ÕâÒ»¹ÉĞÈëıµÄÆøÎ¶£¬
-¿ÉÄÜÓĞ¶¾ÎïÇ±·üÔÚ¸½½ü£¬Àë¿ªÕâÀï°É¡£
+é€™è£¡æ˜¯å¾Œå±±ä¸€æ¢æ˜æš—çš„å±±é“ã€‚å±±é“çš„å…©æ—å·²ä¸è±¡å‰›æ‰é‚£éº¼æ¨¹æœ¨ç¹
+èŒ‚ï¼Œåè€Œæ˜¯å…‰ç¦¿ç¦¿çš„æ²’æœ‰ä¸€æ£µæ¤ç‰©ï¼Œé€™è£¡çš„å±±çŸ³ç«Ÿç™¼å‡ºæ·±æ·±çš„èµ¤ç´…è‰²
+å…‰æ¾¤ï¼Œä¸çŸ¥èˆ‡è™•åˆ¥çš„çŸ³é ­æœ‰ä»€éº¼ä¸åŒï¼Œç©ºæ°£ä¸­é£„é€™ä¸€è‚¡è…¥è‡Šçš„æ°£å‘³ï¼Œ
+å¯èƒ½æœ‰æ¯’ç‰©æ½›ä¼åœ¨é™„è¿‘ï¼Œé›¢é–‹é€™è£¡å§ã€‚
 LONG);
         set("area","tangmen");
         set("outdoors", "tangmen");
@@ -42,24 +42,24 @@ int do_qiao(string arg)
         jingli_cost = (-1) * (10 + random(15));
 
         if ( !arg || ( arg != "shi" ) )
-                return notify_fail("ÄãÏë¸ÉÊ²Ã´£¿\n");
+                return notify_fail("ä½ æƒ³å¹¹ä»€éº¼ï¼Ÿ\n");
 
         if( !(query_temp("biao", me)) )
-                        return notify_fail("ÄãÃ»ÊÂ×öÂğ£¿ÂÒÇÃÊ²Ã´Ñ½£¡\n");
+                        return notify_fail("ä½ æ²’äº‹åšå—ï¼Ÿäº‚æ•²ä»€éº¼å‘€ï¼\n");
         if( !weapon || (query("id", weapon) != "hammer") )
-                return notify_fail("ÄãÊÖÉÏÃ»ÓĞÌú´¸£¬ÄÑµÀÓÃÊÖ£¿\n");
+                return notify_fail("ä½ æ‰‹ä¸Šæ²’æœ‰éµéŒ˜ï¼Œé›£é“ç”¨æ‰‹ï¼Ÿ\n");
         if( query_temp("find", me) )
-                return notify_fail("ÄãÒÑ¾­ÕÒµ½Ò»¿é¾«Ìú¿óÊ¯ÁË£¬Ã»ÓĞÁ¦ÆøÔÙ´øÒ»¿é£¡\n");
+                return notify_fail("ä½ å·²ç¶“æ‰¾åˆ°ä¸€å¡Šç²¾éµç¤¦çŸ³äº†ï¼Œæ²’æœ‰åŠ›æ°£å†å¸¶ä¸€å¡Šï¼\n");
 
         if( query("jingli", me) <= (-jingli_cost) )
-                return notify_fail("ÄãÌ«Æ£ÀÍÁË£¬Ã»ÓĞ¾«Á¦ÔÙ¼ÌĞøÇÃÔäÁË¡£\n");
+                return notify_fail("ä½ å¤ªç–²å‹äº†ï¼Œæ²’æœ‰ç²¾åŠ›å†ç¹¼çºŒæ•²é‘¿äº†ã€‚\n");
 
         if ( (int)query("shi") >= 1 )
         {
-                message_vision(YEL"$NÑïÆğÊÖÖĞµÄÌú´¸ÖØÖØµÄÔÒÔÚµÀÅÔµÄÉ½Ê¯ÉÏ¡£\n"NOR, me);
+                message_vision(YEL"$Næšèµ·æ‰‹ä¸­çš„éµéŒ˜é‡é‡çš„ç ¸åœ¨é“æ—çš„å±±çŸ³ä¸Šã€‚\n"NOR, me);
                 if( random(1+query("kar", me)-10) >= 3 )
                 {
-                        message_vision(HIG"$NÌıµ½É½Ê¯·¢³öÇå´àµÄËéÁÑÉù£¬ÖÕÓÚ¸øÄãÇÃÏÂÀ´ÁËÒ»´ó¿é£¡\n$NµÍÍ·¸ÕÒª±§Æğ¿óÊ¯£¬Í»È»Ò»Ö»¶¾Ğ«´ÓÊ¯ºóÅÀÁË³öÀ´£¡\n"NOR, me);
+                        message_vision(HIG"$Nè½åˆ°å±±çŸ³ç™¼å‡ºæ¸…è„†çš„ç¢è£‚è²ï¼Œçµ‚äºçµ¦ä½ æ•²ä¸‹ä¾†äº†ä¸€å¤§å¡Šï¼\n$Nä½é ­å‰›è¦æŠ±èµ·ç¤¦çŸ³ï¼Œçªç„¶ä¸€åªæ¯’è å¾çŸ³å¾Œçˆ¬äº†å‡ºä¾†ï¼\n"NOR, me);
                         enemy = new(__DIR__"npc/xiezi");
                         enemy->move(this_object());
                         new(__DIR__"obj/kuangshi")->move(this_object());
@@ -72,7 +72,7 @@ int do_qiao(string arg)
                 addn("shi",-1);
         }
         else
-                return notify_fail("É½µÀ±ßµÄÉ½Ê¯¶¼±»ÔÒËéÁË£¬Ã»ÓĞ¿ÉÒÔÓÃµÄÁË¡£\n");
+                return notify_fail("å±±é“é‚Šçš„å±±çŸ³éƒ½è¢«ç ¸ç¢äº†ï¼Œæ²’æœ‰å¯ä»¥ç”¨çš„äº†ã€‚\n");
 
         return 1;
 }
@@ -89,7 +89,7 @@ int valid_leave(object me, string dir)
         else 
                 true = 0;
         if ( ( (dir == "southeast") || (dir == "northup") ) && objectp( present("kuang shi", me))  && true && living(ob))
-                return notify_fail("¶¾Ğ«µ²×¡ÁËÄãÀë¿ªµÄµÀÂ·£¬¿´À´Ö»ÓĞÉ±ÁËËü²ÅÄÜ×ßÁË£¡\n");
+                return notify_fail("æ¯’è æ“‹ä½äº†ä½ é›¢é–‹çš„é“è·¯ï¼Œçœ‹ä¾†åªæœ‰æ®ºäº†å®ƒæ‰èƒ½èµ°äº†ï¼\n");
         else
                 return ::valid_leave(me, dir);
 }

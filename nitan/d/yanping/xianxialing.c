@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÏÉÏ¼Áë");
+        set("short", "ä»™éœžå¶º");
         set("long", @LONG
-ÕâÀï¾ÍÊÇÃöÕã·ÖË®µÄÏÉÏ¼Áë¡£ÏòÑôµÄÆÂÃæÓôÓô´Ð´Ð£¬³¤ÂúÁË³¤³¤µÄ
-ÂíÎ²ËÉ¡£ÑØÍ¾µÄÉ½Â·Ê®·ÖÄÑÐÐ£¬À´ÍùµÄ¿ÚÒôÒ²½¥½¥´øÓÐÃöÒô£¬Ô½À´Ô½ÄÑ
-ÒÔ±çÊ¶ÁË¡£
+é€™è£¡å°±æ˜¯é–©æµ™åˆ†æ°´çš„ä»™éœžå¶ºã€‚å‘é™½çš„å¡é¢é¬±é¬±è”¥è”¥ï¼Œé•·æ»¿äº†é•·é•·çš„
+é¦¬å°¾é¬†ã€‚æ²¿é€”çš„å±±è·¯ååˆ†é›£è¡Œï¼Œä¾†å¾€çš„å£éŸ³ä¹Ÿæ¼¸æ¼¸å¸¶æœ‰é–©éŸ³ï¼Œè¶Šä¾†è¶Šé›£
+ä»¥è¾¯è­˜äº†ã€‚
 LONG );
         set("exits", ([
                 "northdown" : "/d/jiaxing/jnroad4",

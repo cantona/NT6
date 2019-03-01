@@ -29,8 +29,8 @@ protected string *update_file(string file)
 
 // Function name:       epilog
 // Return:              List of files to preload
-// ³õÊ¼»¯×÷Òµ Initialization
-// Èô driver ²ÎÊıÎª -e , flag Îª·ÇÁãÖµ
+// åˆå§‹åŒ–ä½œæ¥­ Initialization
+// è‹¥ driver åƒæ•¸ç‚º -e , flag ç‚ºéé›¶å€¼
 
 string *epilog(int flag)
 {
@@ -43,8 +43,8 @@ string *epilog(int flag)
 
         if( flag )
         {
-                printf("Çı¶¯³ÌÊ½È¡ÏûÔ¤ÏÈÔØÈë³ÌĞò¡£\n");
-                log_file("preload/preload","Çı¶¯³ÌÊ½È¡ÏûÔ¤ÏÈÔØÈë³ÌĞò¡£\n");
+                printf("é©…å‹•ç¨‹å¼å–æ¶ˆé å…ˆè¼‰å…¥ç¨‹åºã€‚\n");
+                log_file("preload/preload","é©…å‹•ç¨‹å¼å–æ¶ˆé å…ˆè¼‰å…¥ç¨‹åºã€‚\n");
                 return allocate(0);
         }
 
@@ -52,7 +52,7 @@ string *epilog(int flag)
 }
 
 // preload an object
-// Ô¤ÏÈÔØÈëÎï¼ş
+// é å…ˆè¼‰å…¥ç‰©ä»¶
 void preload(string file)
 {
         mixed err;
@@ -61,5 +61,5 @@ void preload(string file)
                 return;
 
         if( err = catch(load_object(file)) )
-                log_file("static/preload",sprintf("ÔØÈë %s Ê±·¢Éú´íÎó: %O\n", file, err));
+                log_file("static/preload",sprintf("è¼‰å…¥ %s æ™‚ç™¼ç”ŸéŒ¯èª¤: %O\n", file, err));
 }

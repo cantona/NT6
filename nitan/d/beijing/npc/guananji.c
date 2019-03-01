@@ -6,16 +6,16 @@ int ask_weiwang();
 
 void create()
 {
-        set_name("�ذ���", ({ "guan anji", "guan" }));
-        set("title", HIR "��ػ�"HIG"��ľ��"NOR"����");
-        set("title", HIR "��ػ�"HIG"��ľ��"NOR"����"); 
-        set("nick", HIW "�ط���" NOR);
+        set_name("關安基", ({ "guan anji", "guan" }));
+        set("title", HIR "天地會"HIG"青木堂"NOR"會眾");
+        set("title", HIR "天地會"HIG"青木堂"NOR"會眾"); 
+        set("nick", HIW "關夫子" NOR);
         set("shen_type", 1);
 
-        set("gender", "����");
+        set("gender", "男性");
         set("age", 35);
         set("long",
-                "\nֻ���������ĺ���Ʈ����ǰ��ģ���������ϡ�����˳ƹط��ӡ�\n");
+                "\n只見他長長的胡子飄在胸前，模樣甚是威嚴。因此人稱關夫子。\n");
 
         set_skill("unarmed", 60);
         set_skill("dodge", 70);
@@ -38,17 +38,17 @@ void create()
         set("attitude", "friendly");
         set("chat_chance", 1);
         set("chat_msg", ({
-        "�ذ�����Ȼ˵�����õ�����˭���������ֲ�����˵����\n",
-        "�ذ�����Ȼ˵�������ҵ�Ƣ������ã���ҿ�ҪС���ˡ�\n",
+        "關安基忽然說：本堂的香主誰來當，還輪不到我說話。\n",
+        "關安基忽然說：唉，我的脾氣不大好，大家可要小心了。\n",
         }));
         set("inquiry", ([
-                "�½���" :  "\n����ܶ����ɲ����װ���\n",
-                "��ػ�" :  "\nֻҪ��Ӣ�ۺú���������������ػ�(join tiandihui)��\n",
-                "����" :  "\nֻҪ��������ػᣬ��ҾͿ���һ���ิ����\n",
-                "���" :  "\nֻҪ��������ػᣬ��ҾͿ���һ���ิ����\n",
-                "���帴��" : "ȥ���׳��͹ײĵ���ϸ���ưɣ�\n",
-                "����" :  (: ask_weiwang :),
-                "��������" : (: ask_weiwang :),
+                "陳近南" :  "\n想見總舵主可不容易啊。\n",
+                "天地會" :  "\n只要是英雄好漢，都可以入我天地會(join tiandihui)。\n",
+                "加入" :  "\n只要入了我天地會，大家就可以一起反青復明。\n",
+                "入會" :  "\n只要入了我天地會，大家就可以一起反青復明。\n",
+                "反清復明" : "去屠宰場和棺材店仔細瞧瞧吧！\n",
+                "威望" :  (: ask_weiwang :),
+                "江湖威望" : (: ask_weiwang :),
        ]) );
 
         setup();
@@ -64,16 +64,16 @@ add_action("do_join","join");
 
 void die()
 {
-message_vision("\n$N��ŭ��������ҿ����ӣ��ֵ��ǻ����ұ���ģ���˵�굹�����ˡ�\n", this_object());
+message_vision("\n$N大怒道：“你敢砍老子！兄弟們會替我報仇的！”說完倒地死了。\n", this_object());
 ::die();
 }
 
 int ask_weiwang()
 {
-command("tell"+query("id", this_player())+"�����ڵĽ���������"+(query("weiwang", this_player())));
-say("\n�ذ���˵�����������ֵ�ܸߣ���Щ�˼����㲻������ɱ�㣬��������书�����㱦����\n"
-+"�����㻹���Լ����ᣬ�������ȥ����Ŀ�꣬����ȥǮׯȡǮҲ������Ϣ ����������\n");
-say("�ذ�����˵��ɱĳЩ���˻��ĳЩ���˿�����߽���������\n");
+command("tell"+query("id", this_player())+"你現在的江湖威望是"+(query("weiwang", this_player())));
+say("\n關安基說：如果你威望值很高，有些人見了你不但不會殺你，還會教你武功，送你寶貝。\n"
++"而且你還可以加入幫會，率領會眾去攻打目標，就連去錢莊取錢也會有利息 。。。。。\n");
+say("關安基又說：殺某些壞人或救某些好人可以提高江湖威望。\n");
 return 1;
 }
 #include "/kungfu/class/yunlong/tiandihui.h";

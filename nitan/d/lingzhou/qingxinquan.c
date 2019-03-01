@@ -6,11 +6,11 @@
 inherit ROOM;
 void create()
 {
-        set("short", "����Ȫ");
+        set("short", "清新泉");
         set("long", @LONG
-����ɽ�е�һ����Ȫ��λ���ֳ������ɽ���ϣ���Χ�Ǵ��̵�������
-������ɽȪˮ��Ȫ�ۻ�����ӿ�����۳�һ��С̶��С̶ˮ���������ɽ
-�£��Ա�һ��С·ͨ��ɽ�¡�
+這是山中的一口清泉，位于林場北面的山坡上，周圍是翠綠的鬆樹，
+潺潺的山泉水從泉眼緩緩的湧出，聚成一個小潭，小潭水又溢出流向山
+下，旁邊一條小路通向山下。
 LONG );
         set("exits", ([
                 "southeast" : __DIR__"kongdi",

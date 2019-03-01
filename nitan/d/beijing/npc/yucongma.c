@@ -4,12 +4,12 @@ inherit F_UNIQUE;
 #include <ansi.h>
 void create()
 {
-        set_name(HIC "ÓñæõÂí" NOR, ({ "yu cong ma","yu","ma"}));
-        set("race", "×ßĞó");
-        set("gender", "ĞÛĞÔ");
+        set_name(HIC "ç‰é©„é¦¬" NOR, ({ "yu cong ma","yu","ma"}));
+        set("race", "èµ°ç•œ");
+        set("gender", "é›„æ€§");
         set("age", 2+random(3));
-        set("long", "ÕâÊÇÒ»Æ¥Óñæõ±¦Âí£¬ÈÕĞĞÇ§Àï£¬Ò¹ĞĞ°Ë°Ù¡£\n");
-//                "Íæ¼Ò¿ÉÒÔÆïÉÏËüÈ¥ÈÎºÎµØ·½(ride/down)¡£\n"
+        set("long", "é€™æ˜¯ä¸€åŒ¹ç‰é©„å¯¶é¦¬ï¼Œæ—¥è¡Œåƒè£¡ï¼Œå¤œè¡Œå…«ç™¾ã€‚\n");
+//                "ç©å®¶å¯ä»¥é¨ä¸Šå®ƒå»ä»»ä½•åœ°æ–¹(ride/down)ã€‚\n"
         set("int", 30);
         set("qi", 300);
         set("max_qi", 300);
@@ -36,7 +36,7 @@ void init()
 }
 void destme()
 {
-        message_vision("$N³¤Ë»Ò»Éù£¬µôÍ·»Ø±±¾©¿µÇ×Íõ¸®È¥ÁË¡£\n",this_object());
+        message_vision("$Né•·å˜¶ä¸€è²ï¼Œæ‰é ­å›åŒ—äº¬åº·è¦ªç‹åºœå»äº†ã€‚\n",this_object());
         destruct(this_object());
 }                    
 
@@ -46,7 +46,7 @@ int do_ride ( )
         object ob = this_player () ;
         if( query("meili", ob)<20 )
         {
-                message_vision("$NÒ»Ô¾Éí¿çÉÏÁËÓñæõÂí¡£Ö»¼ûÓñæõÂíÑöÌì³¤Ğ¥£¬Í»È»ÃÍÈ»Ò»µß......\n"HIR"°Ñ$NºİºİË¤ÔÚÁËµØÉÏ£¬½á¹û$NÊÜÁËµãÇáÉË¡£\n" NOR,ob);
+                message_vision("$Nä¸€èºèº«è·¨ä¸Šäº†ç‰é©„é¦¬ã€‚åªè¦‹ç‰é©„é¦¬ä»°å¤©é•·å˜¯ï¼Œçªç„¶çŒ›ç„¶ä¸€é¡›......\n"HIR"æŠŠ$Nç‹ ç‹ æ‘”åœ¨äº†åœ°ä¸Šï¼Œçµæœ$Nå—äº†é»è¼•å‚·ã€‚\n" NOR,ob);
                 ob -> receive_damage ("qi",50) ;
                 ob -> receive_wound  ("qi",50) ;
                 remove_call_out("kill_ob");
@@ -55,24 +55,24 @@ int do_ride ( )
         }
         if( objectp(query("rider"))) 
         {
-                return notify_fail("ÏÖÔÚÂíÉÏÒÑ¾­ÓĞÈËÁË£¡\n" ) ;
+                return notify_fail("ç¾åœ¨é¦¬ä¸Šå·²ç¶“æœ‰äººäº†ï¼\n" ) ;
         }
         else
         {    
                 set_temp("onhorse", 1, ob);
                 set("rider", this_player(), this_object());
-                message_vision("$NÒ»Ô¾Éí¿çÉÏÁËÓñæõÂí¡£\n" , ob );
+                message_vision("$Nä¸€èºèº«è·¨ä¸Šäº†ç‰é©„é¦¬ã€‚\n" , ob );
                 this_object()->set_leader(this_player());
                 command("follow"+query("id", ob));
-                write("ÇëÊäÈëÒªÈ¥µÄµØÃû, Ê¾Àı(go baituo):\n"+
-                "         beijing:  ±±¾©³Ç\n"+
-                "         yangzhou: ÑïÖİ³Ç\n"+
-                "         shaolin:  ÉÙÁÖËÂ\n"+
-                "         taohua:   ÌÒ»¨µº\n"+
-                "         baituo:   °×ÍÓÉ½\n"+
-                "         xingxiu:  ĞÇËŞº£\n"+
-                "         xueshan:  Ñ©É½ËÂ\n"+
-                "         huashan:  »ª  É½\n");
+                write("è«‹è¼¸å…¥è¦å»çš„åœ°å, ç¤ºä¾‹(go baituo):\n"+
+                "         beijing:  åŒ—äº¬åŸ\n"+
+                "         yangzhou: æšå·åŸ\n"+
+                "         shaolin:  å°‘æ—å¯º\n"+
+                "         taohua:   æ¡ƒèŠ±å³¶\n"+
+                "         baituo:   ç™½é™€å±±\n"+
+                "         xingxiu:  æ˜Ÿå®¿æµ·\n"+
+                "         xueshan:  é›ªå±±å¯º\n"+
+                "         huashan:  è¯  å±±\n");
                 return 1; 
         }
 }
@@ -81,10 +81,10 @@ int do_down()
 {
         object ob = this_player () ;
 
-        if(!objectp(query("rider"))) return notify_fail("ÂíÉÏÃ»ÈË¡£\n");
+        if(!objectp(query("rider"))) return notify_fail("é¦¬ä¸Šæ²’äººã€‚\n");
         if( query_temp("onhorse", ob) )
         {
-                message_vision("\n$NÉíĞĞÒ»×ª£¬Ô¾ÏÂÂíÀ´£¬×ËÌ¬Ê®·ÖÓÅÃÀ¡£\n", ob);
+                message_vision("\n$Nèº«è¡Œä¸€è½‰ï¼Œèºä¸‹é¦¬ä¾†ï¼Œå§¿æ…‹ååˆ†å„ªç¾ã€‚\n", ob);
                 delete("rider");
                 command("follow none");
                 delete_temp("onhorse", ob);
@@ -93,7 +93,7 @@ int do_down()
                 switch(random(3))
                 {
                         case 0: 
-                                message_vision("\n$NÒ»°Ñ°ÑÂíÉÏµÄÈËÀ­ÏÂÀ´£¬Ïë×Ô¼ºÌøÉÏÈ¥¡£\n" , ob );
+                                message_vision("\n$Nä¸€æŠŠæŠŠé¦¬ä¸Šçš„äººæ‹‰ä¸‹ä¾†ï¼Œæƒ³è‡ªå·±è·³ä¸Šå»ã€‚\n" , ob );
                                 command("follow none");
                                 delete_temp("onhorse", query("rider"));
                                 delete("rider");
@@ -101,7 +101,7 @@ int do_down()
                                 break;
                         case 1: 
                         case 2:
-                                message_vision("\n$NÏë°ÑÂíÉÏµÄÈËÀ­ÏÂÂíÀ´£¬µ«Ã»ÓĞ³É¹¦¡£\n" , ob );
+                                message_vision("\n$Næƒ³æŠŠé¦¬ä¸Šçš„äººæ‹‰ä¸‹é¦¬ä¾†ï¼Œä½†æ²’æœ‰æˆåŠŸã€‚\n" , ob );
         }          
         return 1;
 }
@@ -110,9 +110,9 @@ int do_go ( string arg )
 {
     object ob ;
     ob = this_player () ;
-    if( !arg || arg=="" )  return notify_fail("ÄãÒªÈ¥ÄÄ¶ù£¿\n");
-    if( !query_temp("onhorse", ob))return notify_fail("Äã»¹Ã»ÉÏÂí¡£\n");
-    message_vision("\nÖ»¼û$NÆïÁ½ÍÈÒ»¼Ğ£¬ÓñæõÂíÏòÇ°¼±³Û¶øÈ¥¡£\n" , ob );
+    if( !arg || arg=="" )  return notify_fail("ä½ è¦å»å“ªå…’ï¼Ÿ\n");
+    if( !query_temp("onhorse", ob))return notify_fail("ä½ é‚„æ²’ä¸Šé¦¬ã€‚\n");
+    message_vision("\nåªè¦‹$Né¨å…©è…¿ä¸€å¤¾ï¼Œç‰é©„é¦¬å‘å‰æ€¥é¦³è€Œå»ã€‚\n" , ob );
     switch (arg)
     {
          case "baituo": 
@@ -148,15 +148,15 @@ int do_go ( string arg )
                call_out("yangzhou", 10, ob);
                return 1 ;
     }
-    return notify_fail("Ã»ÓĞÕâ¸öµØ·½\n");
+    return notify_fail("æ²’æœ‰é€™å€‹åœ°æ–¹\n");
 }
 
 void baituo(object ob)
 {
     ob->move("/d/baituo/damen");
     this_object()->move("/d/baituo/damen");
-    message_vision("\nÖ»¼û$NÆï×ÅÓñæõÂí¼±±¼¶øÀ´¡£\n" , ob );
-    message_vision("\n±¼µ½½üÇ°£¬$NÉíĞĞÒ»×ª£¬Ô¾ÏÂÂíÀ´£¬×ËÌ¬Ê®·ÖÓÅÃÀ¡£\n" , ob );
+    message_vision("\nåªè¦‹$Né¨è‘—ç‰é©„é¦¬æ€¥å¥”è€Œä¾†ã€‚\n" , ob );
+    message_vision("\nå¥”åˆ°è¿‘å‰ï¼Œ$Nèº«è¡Œä¸€è½‰ï¼Œèºä¸‹é¦¬ä¾†ï¼Œå§¿æ…‹ååˆ†å„ªç¾ã€‚\n" , ob );
     delete("rider");
     delete_temp("onhorse", ob);
     command("follow none");
@@ -165,8 +165,8 @@ void xueshan(object ob)
 {
     ob->move("/d/xueshan/shenghu") ;
     this_object()->move("/d/xueshan/shenghu");
-    message_vision("\nÖ»¼û$NÆï×ÅÓñæõÂí¼±±¼¶øÀ´¡£\n" , ob );
-    message_vision("\n±¼µ½½üÇ°£¬$NÉíĞĞÒ»×ª£¬Ô¾ÏÂÂíÀ´£¬×ËÌ¬Ê®·ÖÓÅÃÀ¡£\n" , ob );
+    message_vision("\nåªè¦‹$Né¨è‘—ç‰é©„é¦¬æ€¥å¥”è€Œä¾†ã€‚\n" , ob );
+    message_vision("\nå¥”åˆ°è¿‘å‰ï¼Œ$Nèº«è¡Œä¸€è½‰ï¼Œèºä¸‹é¦¬ä¾†ï¼Œå§¿æ…‹ååˆ†å„ªç¾ã€‚\n" , ob );
     delete("rider");
     delete_temp("onhorse", ob);
     command("follow none");
@@ -175,8 +175,8 @@ void taohua(object ob)
 {
     ob->move("/d/guiyun/qianyuan") ;
     this_object()->move("/d/guiyun/qianyuan");
-    message_vision("\nÖ»¼û$NÆï×ÅÓñæõÂí¼±±¼¶øÀ´¡£\n" , ob );
-    message_vision("\n±¼µ½½üÇ°£¬$NÉíĞĞÒ»×ª£¬Ô¾ÏÂÂíÀ´£¬×ËÌ¬Ê®·ÖÓÅÃÀ¡£\n" , ob );
+    message_vision("\nåªè¦‹$Né¨è‘—ç‰é©„é¦¬æ€¥å¥”è€Œä¾†ã€‚\n" , ob );
+    message_vision("\nå¥”åˆ°è¿‘å‰ï¼Œ$Nèº«è¡Œä¸€è½‰ï¼Œèºä¸‹é¦¬ä¾†ï¼Œå§¿æ…‹ååˆ†å„ªç¾ã€‚\n" , ob );
     delete("rider");
     delete_temp("onhorse", ob);
     command("follow none");
@@ -185,8 +185,8 @@ void huashan(object ob)
 {
     ob->move("/d/huashan/path1") ;
     this_object()->move("/d/huashan/path1") ;
-    message_vision("\nÖ»¼û$NÆï×ÅÓñæõÂí¼±±¼¶øÀ´¡£\n" , ob );
-    message_vision("\n±¼µ½½üÇ°£¬$NÉíĞĞÒ»×ª£¬Ô¾ÏÂÂíÀ´£¬×ËÌ¬Ê®·ÖÓÅÃÀ¡£\n" , ob );
+    message_vision("\nåªè¦‹$Né¨è‘—ç‰é©„é¦¬æ€¥å¥”è€Œä¾†ã€‚\n" , ob );
+    message_vision("\nå¥”åˆ°è¿‘å‰ï¼Œ$Nèº«è¡Œä¸€è½‰ï¼Œèºä¸‹é¦¬ä¾†ï¼Œå§¿æ…‹ååˆ†å„ªç¾ã€‚\n" , ob );
     delete("rider");
     delete_temp("onhorse", ob);
     command("follow none");
@@ -195,8 +195,8 @@ void beijing(object ob)
 {
     ob->move("/d/beijing/tian_anm") ;
     this_object()->move("/d/beijing/tian_anm") ;
-    message_vision("\nÖ»¼û$NÆï×ÅÓñæõÂí¼±±¼¶øÀ´¡£\n" , ob );
-    message_vision("\n±¼µ½½üÇ°£¬$NÉíĞĞÒ»×ª£¬Ô¾ÏÂÂíÀ´£¬×ËÌ¬Ê®·ÖÓÅÃÀ¡£\n" , ob );
+    message_vision("\nåªè¦‹$Né¨è‘—ç‰é©„é¦¬æ€¥å¥”è€Œä¾†ã€‚\n" , ob );
+    message_vision("\nå¥”åˆ°è¿‘å‰ï¼Œ$Nèº«è¡Œä¸€è½‰ï¼Œèºä¸‹é¦¬ä¾†ï¼Œå§¿æ…‹ååˆ†å„ªç¾ã€‚\n" , ob );
     delete("rider");
     delete_temp("onhorse", ob);
     command("follow none");
@@ -205,8 +205,8 @@ void xingxiu(object ob)
 {
     ob->move("/d/xingxiu/xxroad2") ;
     this_object()->move("/d/xingxiu/xxroad2") ;
-    message_vision("\nÖ»¼û$NÆï×ÅÓñæõÂí¼±±¼¶øÀ´¡£\n" , ob );
-    message_vision("\n±¼µ½½üÇ°£¬$NÉíĞĞÒ»×ª£¬Ô¾ÏÂÂíÀ´£¬×ËÌ¬Ê®·ÖÓÅÃÀ¡£\n" , ob );
+    message_vision("\nåªè¦‹$Né¨è‘—ç‰é©„é¦¬æ€¥å¥”è€Œä¾†ã€‚\n" , ob );
+    message_vision("\nå¥”åˆ°è¿‘å‰ï¼Œ$Nèº«è¡Œä¸€è½‰ï¼Œèºä¸‹é¦¬ä¾†ï¼Œå§¿æ…‹ååˆ†å„ªç¾ã€‚\n" , ob );
     delete("rider");
     delete_temp("onhorse", ob);
     command("follow none");
@@ -215,8 +215,8 @@ void shaolin(object ob)
 {
     ob->move("/d/shaolin/shanmen") ;
     this_object()->move("/d/shaolin/shanmen") ;
-    message_vision("\nÖ»¼û$NÆï×ÅÓñæõÂí¼±±¼¶øÀ´¡£\n" , ob );
-    message_vision("\n±¼µ½½üÇ°£¬$NÉíĞĞÒ»×ª£¬Ô¾ÏÂÂíÀ´£¬×ËÌ¬Ê®·ÖÓÅÃÀ¡£\n" , ob );
+    message_vision("\nåªè¦‹$Né¨è‘—ç‰é©„é¦¬æ€¥å¥”è€Œä¾†ã€‚\n" , ob );
+    message_vision("\nå¥”åˆ°è¿‘å‰ï¼Œ$Nèº«è¡Œä¸€è½‰ï¼Œèºä¸‹é¦¬ä¾†ï¼Œå§¿æ…‹ååˆ†å„ªç¾ã€‚\n" , ob );
     delete("rider");
     delete_temp("onhorse", ob);
     command("follow none");
@@ -225,8 +225,8 @@ void yangzhou(object ob)
 {
     ob->move("/d/beijing/guangchang") ;
     this_object()->move("/d/city/guangchang") ;
-    message_vision("\nÖ»¼û$NÆï×ÅÓñæõÂí¼±±¼¶øÀ´¡£\n" , ob );
-    message_vision("\n±¼µ½½üÇ°£¬$NÉíĞĞÒ»×ª£¬Ô¾ÏÂÂíÀ´£¬×ËÌ¬Ê®·ÖÓÅÃÀ¡£\n" , ob );
+    message_vision("\nåªè¦‹$Né¨è‘—ç‰é©„é¦¬æ€¥å¥”è€Œä¾†ã€‚\n" , ob );
+    message_vision("\nå¥”åˆ°è¿‘å‰ï¼Œ$Nèº«è¡Œä¸€è½‰ï¼Œèºä¸‹é¦¬ä¾†ï¼Œå§¿æ…‹ååˆ†å„ªç¾ã€‚\n" , ob );
     delete("rider");
     delete_temp("onhorse", ob);
     command("follow none");

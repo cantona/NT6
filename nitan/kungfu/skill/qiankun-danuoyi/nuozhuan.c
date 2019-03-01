@@ -2,7 +2,7 @@
 
 #include <ansi.h>
 
-string name() { return MAG "Å²×ªÇ¬À¤" NOR; }
+string name() { return MAG "æŒªè½‰ä¹¾å¤" NOR; }
 
 void remove_effect(object me);
 
@@ -12,24 +12,24 @@ int perform(object me, object target)
         int level;
 
         if( !query("reborn/times", me) )
-                return notify_fail("ÄãÉĞÎ´×ªÊÀÖØÉú£¬ÎŞ·¨Ê©Õ¹" + name() + "¡£\n" NOR);
+                return notify_fail("ä½ å°šæœªè½‰ä¸–é‡ç”Ÿï¼Œç„¡æ³•æ–½å±•" + name() + "ã€‚\n" NOR);
 
         if( (level = me->query_skill("qiankun-danuoyi", 1)) < 1000 )
-                return notify_fail("ÄãµÄÇ¬À¤´óÅ²ÒÆ»¹²»¹»ÊìÁ·£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n" NOR);
+                return notify_fail("ä½ çš„ä¹¾å¤å¤§æŒªç§»é‚„ä¸å¤ ç†Ÿç·´ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n" NOR);
 
         if( (int)query("jingli", me) < 2000 )
-                return notify_fail("ÄãÏÖÔÚÕæÆø²»×ã£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n" NOR);
+                return notify_fail("ä½ ç¾åœ¨çœŸæ°£ä¸è¶³ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n" NOR);
 
         if( (int)query("neili", me) < 5000 )
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦²»¹»£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n" NOR);
+                return notify_fail("ä½ ç¾åœ¨å…§åŠ›ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n" NOR);
 
         if (query_temp("nuozhuan", me))
-                return notify_fail("ÄãÒÑ¾­ÔËÆğ" + name() + "¡£\n" NOR);
+                return notify_fail("ä½ å·²ç¶“é‹èµ·" + name() + "ã€‚\n" NOR);
 
         addn("neili", -1000, me);
         me->receive_damage("qi", 0);
         set_temp("nuozhuan", 1, me);
-        msg = MAG "\n$N" MAG "ÌáÆğÕæÆø£¬Ä¬Äî" + name() + "ĞÄ·¨£¬ĞÄÖĞĞ¶Á¦²ğÕĞµÄ·¨ÃÅÒÑ´ï·¢ºõ×ÔÈ»Ö®¾³¡£\n" NOR;
+        msg = MAG "\n$N" MAG "æèµ·çœŸæ°£ï¼Œé»˜å¿µ" + name() + "å¿ƒæ³•ï¼Œå¿ƒä¸­å¸åŠ›æ‹†æ‹›çš„æ³•é–€å·²é”ç™¼ä¹è‡ªç„¶ä¹‹å¢ƒã€‚\n" NOR;
 
         message_combatd(msg, me);
 
@@ -45,6 +45,6 @@ void remove_effect(object me)
         if ((int)query_temp("nuozhuan", me))
         {
                 delete_temp("nuozhuan", me);
-                tell_object(me, "ÄãµÄ¡¸Å²×ªÇ¬À¤¡¹ÔË¹¦Íê±Ï£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï¡£\n");
+                tell_object(me, "ä½ çš„ã€ŒæŒªè½‰ä¹¾å¤ã€é‹åŠŸå®Œç•¢ï¼Œå°‡å…§åŠ›æ”¶å›ä¸¹ç”°ã€‚\n");
         }
 }

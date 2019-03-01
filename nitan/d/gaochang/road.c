@@ -6,12 +6,12 @@ inherit ROOM;
 
 void create ()
 {
-        set ("short", "ɳ��С·");
+        set ("short", "沙丘小路");
         set ("long",
-"ע�⣺�ɴ˴��򱱣�������߲��Թ����򣬲�֪�߷���û������׼
-��������뿼������Ƿ�Ҫ���С�
+"注意：由此處向北！將進入高昌迷宮地域，不知走法和沒有作好準
+備的玩家請考慮清楚是否還要向北行。
               
-                    "HIR"��   ��   ��   ��\n\n\n"NOR
+                    "HIR"高   昌   迷   宮\n\n\n"NOR
 
 );
 

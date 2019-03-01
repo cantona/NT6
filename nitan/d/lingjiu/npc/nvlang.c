@@ -1,4 +1,4 @@
-// /NPC ÃÉÃæÅ®ÀÉ
+// /NPC è’™é¢å¥³éƒ
 
 #include <ansi.h>
 
@@ -6,12 +6,12 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÃÉÃæÅ®ÀÉ", ({ "nv lang", "nv"}));
+        set_name("è’™é¢å¥³éƒ", ({ "nv lang", "nv"}));
         set("long",
-            "ÕâÊÇ¸öÉí²Ä½¿ºÃµÄÅ®ÀÉ, ÇáÉ´ÕÚÃæ,\n"
-            "Ò»Ë«ĞãÄ¿ÖĞÍ¸³öÒ»Ë¿É±Æø¡£\n"
+            "é€™æ˜¯å€‹èº«æå¬Œå¥½çš„å¥³éƒ, è¼•ç´—é®é¢,\n"
+            "ä¸€é›™ç§€ç›®ä¸­é€å‡ºä¸€çµ²æ®ºæ°£ã€‚\n"
            );
-        set("gender", "Å®ĞÔ");
+        set("gender", "å¥³æ€§");
         set("age", 20);
         set("shen_type",0);
         set("attitude", "peaceful");
@@ -57,7 +57,7 @@ void create()
         set_temp("apply/armor", 150);
         set_temp("apply/defense", 150);
 
-        create_family("ÁéğÕ¹¬",3,"µÜ×Ó");
+        create_family("éˆé·²å®®",3,"å¼Ÿå­");
         setup();
 
         carry_object("/d/lingjiu/obj/qingyi")->wear();

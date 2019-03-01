@@ -4,16 +4,16 @@ inherit NPC;
 
 void create()
 {
-        set_name("¶¾Éß", ({ "snake", "she" }) );
-        set("race", "Ò°ÊÞ");
+        set_name("æ¯’è›‡", ({ "snake", "she" }) );
+        set("race", "é‡Žç¸");
         set("age", 4);
-        set("long", "Ò»Ö»ÓÐ×ÅÈý½ÇÐÎÄÔ´üµÄÉß£¬Î²°ÍÉ³É³×öÏì¡£\n");
+        set("long", "ä¸€åªæœ‰è‘—ä¸‰è§’å½¢è…¦è¢‹çš„è›‡ï¼Œå°¾å·´æ²™æ²™åšéŸ¿ã€‚\n");
         set("attitude", "peaceful");
 
         set("str", 26);
         set("cor", 30);
 
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "Æß´ç", "Î²°Í" }) );
+        set("limbs", ({ "é ­éƒ¨", "èº«é«”", "ä¸ƒå¯¸", "å°¾å·´" }) );
         set("verbs", ({ "bite" }) );
 
         set("combat_exp", 1000);
@@ -38,7 +38,7 @@ void init()
 void die()
 {
         object ob;
-        message_vision("$NÅ¾µÄÒ»Éù¶Ï³ÉÁ½½Ø£¡$NËÀÁË¡£\n", this_object());
+        message_vision("$Nå•ªçš„ä¸€è²æ–·æˆå…©æˆªï¼$Næ­»äº†ã€‚\n", this_object());
 //      ob = new(__DIR__"obj/shedan");
 //      ob->move(environment(this_object()));
         destruct(this_object());

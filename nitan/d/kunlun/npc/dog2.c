@@ -5,10 +5,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("Æ½¿Ü½«¾ü", ({ "dog"}) );
-        set("race", "×ßÊÞ");
+        set_name("å¹³å¯‡å°‡è»", ({ "dog"}) );
+        set("race", "èµ°ç¸");
         set("age", 4);
-        set("long", "Ò»Ö»°ºÊ×Í¦ÐØ£¬ÍÂ×Å³¤ÉàÍ·µÄ´ó¶ñ¹·¡£\n");
+        set("long", "ä¸€åªæ˜‚é¦–æŒºèƒ¸ï¼Œåè‘—é•·èˆŒé ­çš„å¤§æƒ¡ç‹—ã€‚\n");
         set("attitude", "peaceful");
         
         set("str", 26);
@@ -37,7 +37,7 @@ void init()
 void die()
 {
         object ob;
-        message_vision("$N²Òº¿Ò»Éù£¬ËÀÁË£¡\n", this_object());
+        message_vision("$Næ…˜åšŽä¸€è²ï¼Œæ­»äº†ï¼\n", this_object());
         ob = new(__DIR__"obj/goupi");
         ob->move(environment(this_object()));
         destruct(this_object());

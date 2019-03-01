@@ -1,4 +1,4 @@
-// stock.c ¼ÒĞó
+// stock.c å®¶ç•œ
 
 #ifndef __LIVESTOCK__
 #define __LIVESTOCK__
@@ -11,19 +11,19 @@ inherit F_DBASE;
 
 mapping *combat_action = ({
 ([
-        "action":                "$NÓÃºóÍÈÍù$nµÄ$lÓÃÁ¦Ò»µÅ",
+        "action":                "$Nç”¨å¾Œè…¿å¾€$nçš„$lç”¨åŠ›ä¸€è¹¬",
         "damage":                30,
-        "damage_type":        "ğöÉË",
+        "damage_type":        "ç˜€å‚·",
 ]),
 ([
-        "action":                "$NµÍÏÂÍ·Íù$nµÄ$lÃÍµØÒ»×²",
+        "action":                "$Nä½ä¸‹é ­å¾€$nçš„$lçŒ›åœ°ä¸€æ’",
         "damage":                30,
-        "damage_type":        "ğöÉË",
+        "damage_type":        "ç˜€å‚·",
 ]),
 ([
-        "action":                "$NÌ§ÆğÇ°ÍÈÍù$nµÄ$lºİºİµØÒ»Ìß",
+        "action":                "$NæŠ¬èµ·å‰è…¿å¾€$nçš„$lç‹ ç‹ åœ°ä¸€è¸¢",
         "damage":                20,
-        "damage_type":        "ğöÉË",
+        "damage_type":        "ç˜€å‚·",
 ]),  
 });
 
@@ -32,17 +32,17 @@ void create()
         seteuid(getuid());
         set("attitude", "friendly");
         set("limbs", ({
-                "Í·²¿",        "¾±²¿",        "ĞØ²¿",        "ºó±³",        "¸¹²¿",        
-                "Ç°ÍÈ",        "ºóÍÈ", "Ç°Ìã",        "ºóÌã", "Î²°Í"
+                "é ­éƒ¨",        "é ¸éƒ¨",        "èƒ¸éƒ¨",        "å¾ŒèƒŒ",        "è…¹éƒ¨",        
+                "å‰è…¿",        "å¾Œè…¿", "å‰è¹„",        "å¾Œè¹„", "å°¾å·´"
         }) );
 
-        set("dead_message",       "\n$N±¯Ë»Ò»Éù£¬µ¹µØÕõÔúÁË¼¸ÏÂ²»¶¯ÁË¡£\n\n"       );
-        set("unconcious_message", "\n$N³¤Éù±¯Ë»£¬Æ¹µØÒ»ÉùË¤µ¹ÔÚµØÉÏ¡£\n\n"         );
-        set("revive_message",     "\n$NÂıÂı¶¯µ¯ÁËÒ»ÏÂ£¬µÍË»Ò»Éù£¬Õ¾Á¢ÆğÀ´¡£\n\n"   );
-        set("leave_msg",          "³ÛÈ¥"                                   );
-        set("arrive_msg",         "Ğ¡²½ÅÜÁË¹ıÀ´£¬ÌãÉùÓĞ½Ú×àµØÌ¤»÷×ÅµØÃæ"       );
-        set("fleeout_message",    "±¯Ë»×ÅÂä»Ä¶øÌÓ"                     );
-        set("fleein_message",     "Ò¡Ò¡°Ú°ÚµØÅÜÁË¹ıÀ´£¬±Ç¿×ÀïºôºôµØÅç×Å°×Æø"   );
+        set("dead_message",       "\n$Næ‚²å˜¶ä¸€è²ï¼Œå€’åœ°æ™ç´®äº†å¹¾ä¸‹ä¸å‹•äº†ã€‚\n\n"       );
+        set("unconcious_message", "\n$Né•·è²æ‚²å˜¶ï¼Œä¹’åœ°ä¸€è²æ‘”å€’åœ¨åœ°ä¸Šã€‚\n\n"         );
+        set("revive_message",     "\n$Næ…¢æ…¢å‹•å½ˆäº†ä¸€ä¸‹ï¼Œä½å˜¶ä¸€è²ï¼Œç«™ç«‹èµ·ä¾†ã€‚\n\n"   );
+        set("leave_msg",          "é¦³å»"                                   );
+        set("arrive_msg",         "å°æ­¥è·‘äº†éä¾†ï¼Œè¹„è²æœ‰ç¯€å¥åœ°è¸æ“Šè‘—åœ°é¢"       );
+        set("fleeout_message",    "æ‚²å˜¶è‘—è½è’è€Œé€ƒ"                     );
+        set("fleein_message",     "æ–æ–æ“ºæ“ºåœ°è·‘äº†éä¾†ï¼Œé¼»å­”è£¡å‘¼å‘¼åœ°å™´è‘—ç™½æ°£"   );
 }
 
 void setup_stock(object ob)
@@ -54,9 +54,9 @@ void setup_stock(object ob)
         ob->set_default_action(__FILE__, "query_action");
 	set("default_actions", (: call_other, __FILE__, "query_action" :), ob);
 
-        my["unit"] = "Ö»";
+        my["unit"] = "åª";
         
-        if( undefinedp(my["gender"]) ) my["gender"] = "ĞÛĞÔ";
+        if( undefinedp(my["gender"]) ) my["gender"] = "é›„æ€§";
         if( undefinedp(my["age"]) ) my["age"] = random(30) + 5;
 
         if( undefinedp(my["str"]) ) my["str"] = random(30) + 5;

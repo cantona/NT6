@@ -1,5 +1,5 @@
 // This program is a part of NITAN MudLIB
-// shield.c 易筋锻骨
+// shield.c 鏄撶瓔閸涢
 
 #include <ansi.h>
 
@@ -12,22 +12,22 @@ int exert(object me, object target)
         int skill;
 
         if (target != me)
-                return notify_fail("你只能用易筋锻骨来提升自己的防御力。\n");
+                return notify_fail("浣犲彧鑳界敤鏄撶瓔閸涢渚嗘彁鍗囪嚜宸辩殑闃插尽鍔涖�俓n");
 
         if( query("neili", me)<100 )
-                return notify_fail("你的内力不够。\n");
+                return notify_fail("浣犵殑鍏у姏涓嶅銆俓n");
 
         if ((int)me->query_skill("yijin-duangu", 1) < 50)
-                return notify_fail("你的易筋锻骨修为不够。\n");
+                return notify_fail("浣犵殑鏄撶瓔閸涢淇偤涓嶅銆俓n");
 
         if( query_temp("shield", me) )
-                return notify_fail("你已经在运功中了。\n");
+                return notify_fail("浣犲凡缍撳湪閬嬪姛涓簡銆俓n");
 
         skill = me->query_skill("force");
         addn("neili", -100, me);
         me->receive_damage("qi", 0);
 
-        message_combatd(HIW "$N暗自凝神，提运九阴真气，劲气逼人！\n" NOR, me);
+        message_combatd(HIW "$N鏆楄嚜鍑濈锛屾彁閬嬩節闄扮湡姘ｏ紝鍕佹埃閫间汉锛乗n" NOR, me);
 
         addn_temp("apply/armor", skill/2, me);
         set_temp("shield", 1, me);
@@ -45,6 +45,6 @@ void remove_effect(object me, int amount)
         {
                 addn_temp("apply/armor", -amount, me);
                 delete_temp("shield", me);
-                tell_object(me, "你的易筋锻骨运行完毕，将内力收回丹田。\n");
+                tell_object(me, "浣犵殑鏄撶瓔閸涢閬嬭瀹岀暍锛屽皣鍏у姏鏀跺洖涓圭敯銆俓n");
         }
 }

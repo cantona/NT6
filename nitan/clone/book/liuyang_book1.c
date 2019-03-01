@@ -2,13 +2,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name( "ÌìÉ½ÁùÑôÕÆ·¨Í¼ÉÏ²á", ({ "zhangfa tu1", "tu1" }));
+        set_name( "å¤©å±±å…­é™½æŒæ³•åœ–ä¸Šå†Š", ({ "zhangfa tu1", "tu1" }));
         set_weight(200);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
-                set("long", "ÕâÊÇÁùÑôÕÆ·¨ÉÏ²á£¬ÉÏÃæ»­×ÅÒ»Ğ©·×·±¸´ÔÓµÄÕĞÊ½¼°ĞŞÁ··¨ÃÅ¡£\n");
+                set("unit", "æœ¬");
+                set("long", "é€™æ˜¯å…­é™½æŒæ³•ä¸Šå†Šï¼Œä¸Šé¢ç•«è‘—ä¸€äº›ç´›ç¹å¾©é›œçš„æ‹›å¼åŠä¿®ç·´æ³•é–€ã€‚\n");
                 set("value", 500);
                 set("no_put", 1);
                 set("material", "paper");
@@ -19,7 +19,7 @@ void create()
                         "difficulty":        20,        // the base int to learn this skill
                         "max_skill":        49,        // the maximum level you can learn
                         "min_skill":        10,        // the maximum level you can learn
-                        "family_name":        "ÁéğÕ¹¬",
+                        "family_name":        "éˆé·²å®®",
                 ]) );
         }
 }

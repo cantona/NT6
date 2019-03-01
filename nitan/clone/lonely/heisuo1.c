@@ -5,20 +5,20 @@ inherit WHIP;
 
 void create()
 {
-        set_name(NOR + WHT "ºÚË÷" NOR, ({  "hei suo", "hei", "suo", "whip" }));
+        set_name(NOR + WHT "é»‘ç´¢" NOR, ({  "hei suo", "hei", "suo", "whip" }));
         set_weight(1000);
         if (clonep())
                 destruct(this_object());
         else {
-                set("long", NOR + WHT "ÕâÊÇÒ»¸ùÆáºÚµÄ³¤±Ş£¬ºÁ²»ÆğÑÛ£¬µ«ÊÇÈëÊÖ"
-                            "³ÁÖØ£¬ÇÒ\n²»Ê§ÈáÈÍ£¬ÊµÔÚÊÇÇ§´¸°ÙÁ¶Ö®Îï¡£\n" NOR);
-                set("long", WHT "Ò»Ö§Í¨ÌåÆáºÚµÄ³¤±Ş£¬¿´ÉÏÈ¥µ¹ÊÇºÜ¼áÈÍ¡£\n" NOR);
-                set("unit", "¸ù");
+                set("long", NOR + WHT "é€™æ˜¯ä¸€æ ¹æ¼†é»‘çš„é•·é­ï¼Œæ¯«ä¸èµ·çœ¼ï¼Œä½†æ˜¯å…¥æ‰‹"
+                            "æ²‰é‡ï¼Œä¸”\nä¸å¤±æŸ”éŸŒï¼Œå¯¦åœ¨æ˜¯åƒéŒ˜ç™¾ç…‰ä¹‹ç‰©ã€‚\n" NOR);
+                set("long", WHT "ä¸€æ”¯é€šé«”æ¼†é»‘çš„é•·é­ï¼Œçœ‹ä¸Šå»å€’æ˜¯å¾ˆå …éŸŒã€‚\n" NOR);
+                set("unit", "æ ¹");
                 set("value", 800000);
-                set("no_sell", "ÕâÊÇÉ¶ÆÆÍæÒÕ£¬ÉÏµõÓÃµÄ£¿");
+                set("no_sell", "é€™æ˜¯å•¥ç ´ç©è—ï¼Œä¸ŠåŠç”¨çš„ï¼Ÿ");
                 set("material", "steel");
-                set("wield_msg", WHT "$N" WHT "Ò»ÉìÊÖ£¬ÇÄÎŞÉùÏ¢µÄ½«ºÚË÷ÎÕÔÚÊÖÖĞ¡£\n" NOR);
-                set("unwield_msg", WHT "$N" WHT "½«ÊÖÖĞµÄºÚË÷¾íÆğ£¬·Å»ØÑü¼ä¡£\n" NOR);
+                set("wield_msg", WHT "$N" WHT "ä¸€ä¼¸æ‰‹ï¼Œæ‚„ç„¡è²æ¯çš„å°‡é»‘ç´¢æ¡åœ¨æ‰‹ä¸­ã€‚\n" NOR);
+                set("unwield_msg", WHT "$N" WHT "å°‡æ‰‹ä¸­çš„é»‘ç´¢å·èµ·ï¼Œæ”¾å›è…°é–“ã€‚\n" NOR);
                 set("stable", 100);
         }
         init_whip(120);

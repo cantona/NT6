@@ -1,16 +1,16 @@
-// /d/quanzhen/shulin3.c ����
+// /d/quanzhen/shulin3.c 樹林
 // Java Oct.10 1998
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "����");
+        set("short", "樹林");
         set("long", @LONG
-��λ������ɽ���һ��Ƭ���֣�������Ϊï�ܡ�������䣬ֻ��
-�ý���ɳɳ����Ҷ�������ܻ�谵���ģ���ʱ�����չ⴩��Ũ�ܵ�֦
-ͷ��Ͷ����¡�ż��Զ�������޺�����������һ�����ظС��������ϡ�
-�Ͷ�����һ��С����
+這位于終南山間的一大片樹林，生得頗為茂密。走在其間，只聽
+得腳下沙沙的落葉聲，四周昏昏暗暗的，不時幾道日光穿過濃密的枝
+頭，投射而下。偶爾遠處幾聲獸吼聲，更添了一分神秘感。往北、南、
+和東各有一條小徑。
 LONG
         );
         set("outdoors", "zhongnan");

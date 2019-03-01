@@ -6,13 +6,13 @@ inherit NPC;
 
 void create()
 {
-        set_name("ĞĞÕß", ({"xingzhe","walker",}));
-        set("title", "ÉÙÁÖÅÉµÜ×Ó");
+        set_name("è¡Œè€…", ({"xingzhe","walker",}));
+        set("title", "å°‘æ—æ´¾å¼Ÿå­");
         set("long",
-                "ËûÊÇÒ»Î»ÔÆÓÎËÄ·½µÄĞĞÕß£¬·çËªÂúÃæ£¬ĞĞÉ«´Ò´Ò£¬ËÆºõÕıÔÚ°ìÒ»¼ş¼±ÊÂ¡£\n"
+                "ä»–æ˜¯ä¸€ä½é›²éŠå››æ–¹çš„è¡Œè€…ï¼Œé¢¨éœœæ»¿é¢ï¼Œè¡Œè‰²åŒ†åŒ†ï¼Œä¼¼ä¹æ­£åœ¨è¾¦ä¸€ä»¶æ€¥äº‹ã€‚\n"
         );
 
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("attitude", "heroism");
         set("class", "bonze");
 
@@ -51,7 +51,7 @@ void create()
         map_skill("blade", "cibei-dao");
         map_skill("parry", "cibei-dao");
 
-        create_family("ÉÙÁÖÅÉ", 0, "µÜ×Ó");
+        create_family("å°‘æ—æ´¾", 0, "å¼Ÿå­");
 
         setup();
         carry_object("/d/city/obj/gangdao")->wield();
@@ -67,7 +67,7 @@ int random_move()
 
         where = environment();
 
-        command("say Ê¦¸¸½ĞÎÒÔÚ´Ë°ìÒ»¼ş´óÊÂ¡£");
+        command("say å¸«çˆ¶å«æˆ‘åœ¨æ­¤è¾¦ä¸€ä»¶å¤§äº‹ã€‚");
         
         /* trapped */
         if( !mapp(exits=query("exits", where)) )

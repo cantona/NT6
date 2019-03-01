@@ -2,15 +2,15 @@
 inherit SKILL;
 
 mapping *action = ({
-([        "action" : HIR "$N" HIR "¿Ù¶¯°â»ú£¬ÊÖÖĞ$w" HIR "¶ÙÊ±Åç³öÒ»¹É»ğÉà£¬ÉäÏò$n"
-                   HIR "µÄ$l" HIR,
+([        "action" : HIR "$N" HIR "æ‘³å‹•æ‰³æ©Ÿï¼Œæ‰‹ä¸­$w" HIR "é “æ™‚å™´å‡ºä¸€è‚¡ç«èˆŒï¼Œå°„å‘$n"
+                   HIR "çš„$l" HIR,
         "force"  : 999,
         "attack" : 999,
         "dodge"  : 999,
         "parry"  : 999,
         "damage" : 999,
         "lvl"    : 0,
-        "damage_type" : "Ç¹ÉË"
+        "damage_type" : "æ§å‚·"
 ]),
 });
 
@@ -19,7 +19,7 @@ int valid_enable(string usage) { return usage == "hammer"; }
 int valid_learn(object me)
 {
         if (! wizardp(me))
-                return notify_fail("ÄãÎŞ·¨Ñ§Ï°Ç¹Ğµ¼¼Êõ¡£\n");
+                return notify_fail("ä½ ç„¡æ³•å­¸ç¿’æ§æ¢°æŠ€è¡“ã€‚\n");
 
         return 1;
 }
@@ -27,10 +27,10 @@ int valid_learn(object me)
 int practice_skill(object me)
 {
         if (! wizardp(me))
-                return notify_fail("ÄãÎŞ·¨Ñ§Ï°Ç¹Ğµ¼¼Êõ¡£\n");
+                return notify_fail("ä½ ç„¡æ³•å­¸ç¿’æ§æ¢°æŠ€è¡“ã€‚\n");
 
         if( query("qi", me)<10 )
-                return notify_fail("ÄãµÄÌåÁ¦Ì«µÍÁË¡£\n");
+                return notify_fail("ä½ çš„é«”åŠ›å¤ªä½äº†ã€‚\n");
 
         me->receive_damage("qi", 1);
         return 1;
@@ -49,8 +49,8 @@ mapping query_action(object me, object weapon)
 mixed hit_ob(object me, object victim, int damage_bonus)
 {
         victim->receive_wound("qi", damage_bonus * 3, me);
-        return HIR "Ö»Ìı¡°ºä¡±µÄÒ»Éù¾ŞÏì£¬Ò»ÍÅ»ğÑæÒÑ´©Í¸$n"
-               HIR "µÄĞØÌÅ£¬ÏÊÑª¶ÙÊ±¿ñÓ¿¶ø³ö¡£\n" NOR;
+        return HIR "åªè½â€œè½Ÿâ€çš„ä¸€è²å·¨éŸ¿ï¼Œä¸€åœ˜ç«ç‡„å·²ç©¿é€$n"
+               HIR "çš„èƒ¸è†›ï¼Œé®®è¡€é “æ™‚ç‹‚æ¹§è€Œå‡ºã€‚\n" NOR;
 
 }
 

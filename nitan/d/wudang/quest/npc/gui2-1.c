@@ -4,33 +4,33 @@
 #include <ansi.h>
 inherit NPC;
 
-string comeon = HIW"ͻȻ��е�һ��ʮ��ǿ�ҵ�Թ��ֱ��������\n"NOR;
+string comeon = HIW"突然你感到一股十分強烈的怨氣直沖雲霄。\n"NOR;
 
 string *stya = ({ 
-HIB"һ��̶��ĳ�Х������$N�е����������쳣���ܡ�\n"NOR, 
-HIB"$N����һ����ҵĳ�̾���ٸ������쳣���̲�ס���һ��"HIR"��Ѫ"HIB"��\n"NOR
+HIB"一陣刺耳的長嘯傳來，$N感到心神不寧，異常難受。\n"NOR, 
+HIB"$N聽到一聲凄慘的長嘆，頓感胸悶異常，忍不住噴出一口"HIR"鮮血"HIB"。\n"NOR
 }); 
 
 string *styb = ({
-HIC"$N��$n�ȵ���������ү���ճ������㣬����Ͷ̥ת�������ٺ��ˣ���\n"NOR,
-HIY"$N�Ӷ����е�"HIM"��ľ��"HIY"����ʱ��ؼ�������죬Թ��������\n"NOR
+HIC"$N對$n喝道：“本道爺今日超渡于你，早日投胎轉世，勿再害人！”\n"NOR,
+HIY"$N揮動手中的"HIM"桃木劍"HIY"，霎時天地間清風徐徐，怨氣漸消。\n"NOR
 });
 
 void check_time();
 
 void create()
 {
-    set_name("ԩ��", ({ "wrong ghost", "ghost" }));
-    set("gender", "Ů��");
-    set("race", "��ħ");
+    set_name("冤魂", ({ "wrong ghost", "ghost" }));
+    set("gender", "女性");
+    set("race", "妖魔");
     set("age", 200);
     set("per", 20);
     set("long",
-        "һ����ԩ�����������󼴱��ԩ�꣬�����Ʒ������������޹������顣\n");
+        "一個含冤而死的人死後即變成冤魂，很難制服，常常攻擊無辜的生靈。\n");
     set("combat_exp", 100000);
     set("shen_type", -1);
     set("attitude", "peaceful");
-    set("limbs", ({ "����", "��צ" }) );
+    set("limbs", ({ "牙齒", "手爪" }) );
     set("verbs", ({ "bite", "claw" }) );
     set("env/invisible", 1);
     set("water", 200);

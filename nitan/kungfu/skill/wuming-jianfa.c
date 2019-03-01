@@ -1,56 +1,56 @@
-// ÎŞÃû½£·¨
+// ç„¡ååŠæ³•
 
 #include <ansi.h>
 inherit SKILL;
 
 mapping *action = ({
-([      "action":HIB"\n$NÄ¬Äî ¡ÖÓÄ¡Ö,½£Æø×İºáÖ±Ö±Ö¸Ïò$nµÄ$l"NOR,
+([      "action":HIB"\n$Né»˜å¿µ â‰’å¹½â‰’,åŠæ°£ç¸±æ©«ç›´ç›´æŒ‡å‘$nçš„$l"NOR,
         "force" : 160,
         "lvl" : 0,
-"skill_name" : "¡ïÓÄ¡ï×Ö¾÷",
-        "damage_type":        "´ÌÉË"
+"skill_name" : "â˜…å¹½â˜…å­—è¨£",
+        "damage_type":        "åˆºå‚·"
 ]),
-([      "action":HIR"\n$NÄ¬Äî ¡ÖºŞ¡Ö,½£Æø×İºáÖ±Ö±Ö¸Ïò$nµÄ$l"NOR,
+([      "action":HIR"\n$Né»˜å¿µ â‰’æ¨â‰’,åŠæ°£ç¸±æ©«ç›´ç›´æŒ‡å‘$nçš„$l"NOR,
         "force" : 240,
         "lvl" : 50,
-"skill_name" : "¡ïºŞ¡ï×Ö¾÷",
-        "damage_type":        "´ÌÉË"
+"skill_name" : "â˜…æ¨â˜…å­—è¨£",
+        "damage_type":        "åˆºå‚·"
 ]),
-([      "action":HIY"\n$NÄ¬Äî ¡ÖÔ¹¡Ö,½£Æø×İºáÖ±Ö±Ö¸Ïò$nµÄ$l"NOR,
+([      "action":HIY"\n$Né»˜å¿µ â‰’æ€¨â‰’,åŠæ°£ç¸±æ©«ç›´ç›´æŒ‡å‘$nçš„$l"NOR,
         "force" : 280,
         "lvl" : 75,
-"skill_name" : "¡ïÔ¹¡ï×Ö¾÷",
-        "damage_type":        "´ÌÉË"
+"skill_name" : "â˜…æ€¨â˜…å­—è¨£",
+        "damage_type":        "åˆºå‚·"
 ]),
-([      "action":HIM"\n$NÄ¬Äî ¡Ö°®¡Ö,½£Æø×İºáÖ±Ö±Ö¸Ïò$nµÄ$l"NOR,
+([      "action":HIM"\n$Né»˜å¿µ â‰’æ„›â‰’,åŠæ°£ç¸±æ©«ç›´ç›´æŒ‡å‘$nçš„$l"NOR,
         "force" : 320,
         "lvl" : 120,
-"skill_name" : "¡ï°®¡ï×Ö¾÷",
-        "damage_type":        "´ÌÉË"
+"skill_name" : "â˜…æ„›â˜…å­—è¨£",
+        "damage_type":        "åˆºå‚·"
 ]),
-([      "action":HIC"\n$NÄ¬Äî ¡ÖË¼¡Ö,½£Æø×İºáÖ±Ö±Ö¸Ïò$nµÄ$l"NOR,
+([      "action":HIC"\n$Né»˜å¿µ â‰’æ€â‰’,åŠæ°£ç¸±æ©«ç›´ç›´æŒ‡å‘$nçš„$l"NOR,
         "force" : 380,
         "lvl" : 230,
-"skill_name" : "¡ïË¼¡ï×Ö¾÷",
-        "damage_type":        "´ÌÉË"
+"skill_name" : "â˜…æ€â˜…å­—è¨£",
+        "damage_type":        "åˆºå‚·"
 ]),
-([      "action":HIG"\n$NÄ¬Äî ¡ÖÇé¡Ö,½£Æø×İºáÖ±Ö±Ö¸Ïò$nµÄ$l"NOR,
+([      "action":HIG"\n$Né»˜å¿µ â‰’æƒ…â‰’,åŠæ°£ç¸±æ©«ç›´ç›´æŒ‡å‘$nçš„$l"NOR,
         "force" : 420,
         "lvl" : 250,
-"skill_name" : "¡ïÇé¡ï×Ö¾÷",
-        "damage_type":        "´ÌÉË"
+"skill_name" : "â˜…æƒ…â˜…å­—è¨£",
+        "damage_type":        "åˆºå‚·"
 ]),
-([      "action":CYN"\n$NÄ¬Äî ¡Ö¶÷¡Ö,½£Æø×İºáÖ±Ö±Ö¸Ïò$nµÄ$l"NOR,
+([      "action":CYN"\n$Né»˜å¿µ â‰’æ©â‰’,åŠæ°£ç¸±æ©«ç›´ç›´æŒ‡å‘$nçš„$l"NOR,
         "force" : 450,
         "lvl" : 330,
-"skill_name" : "¡ï¶÷¡ï×Ö¾÷",
-        "damage_type":        "´ÌÉË"
+"skill_name" : "â˜…æ©â˜…å­—è¨£",
+        "damage_type":        "åˆºå‚·"
 ]),
-([      "action":HIR"\n$NÄ¬Äî ¡Ö³ğ¡Ö,½£Æø×İºáÖ±Ö±Ö¸Ïò$nµÄ$l"NOR,
+([      "action":HIR"\n$Né»˜å¿µ â‰’ä»‡â‰’,åŠæ°£ç¸±æ©«ç›´ç›´æŒ‡å‘$nçš„$l"NOR,
         "force" : 480,
         "lvl" : 380,
-"skill_name" : "¡ï³ğ¡ï×Ö¾÷",
-        "damage_type":        "ÄÚÉË"
+"skill_name" : "â˜…ä»‡â˜…å­—è¨£",
+        "damage_type":        "å…§å‚·"
 ]),
 });
 
@@ -59,11 +59,11 @@ int valid_enable(string usage) { return usage == "sword" || usage == "parry"; }
 int valid_learn(object me)
 {
         if( query("max_neili", me)<100 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ã€‚\n");
 //           if ((int)me->query_skill("wudu-shengong", 1) < 20)
-//                  return notify_fail("ÄãµÄÎå¶¾Éñ¹¦»ğºòÌ«Ç³¡£\n");
+//                  return notify_fail("ä½ çš„äº”æ¯’ç¥åŠŸç«å€™å¤ªæ·ºã€‚\n");
         if ((int)me->query_skill("force", 1) < 20)
-                return notify_fail("ÄãµÄ»ù±¾ÄÚ¹¦»ğºòÌ«Ç³¡£\n");
+                return notify_fail("ä½ çš„åŸºæœ¬å…§åŠŸç«å€™å¤ªæ·ºã€‚\n");
         return 1;
 }
 
@@ -95,15 +95,15 @@ int practice_skill(object me)
 {
         object weapon;
 
-        return notify_fail("ÎŞÃû½£·¨²©´ó¾«Éî£¬ÎŞ·¨¿¿×ÅÆÕÍ¨µÄÁ·Ï°ÌáÉı¡£\n");
+        return notify_fail("ç„¡ååŠæ³•åšå¤§ç²¾æ·±ï¼Œç„¡æ³•é è‘—æ™®é€šçš„ç·´ç¿’æå‡ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me) )
          || query("skill_type", weapon) != "sword" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ã€‚\n");
         if((int)me->query_skill("wuming-jianfa",1) < 300)
-                return notify_fail("ÄãÊÔ×ÅÁ·Ï°ÎŞÃû½£·¨,µ«ÊÇÃ»ÓĞÈÎºÎ½ø²½¡£\n");
+                return notify_fail("ä½ è©¦è‘—ç·´ç¿’ç„¡ååŠæ³•,ä½†æ˜¯æ²’æœ‰ä»»ä½•é€²æ­¥ã€‚\n");
         if( query("qi", me)<40 )
-                return notify_fail("ÄãµÄÌåÁ¦²»¹»Á·ÎŞÃû½£·¨¡£\n");
+                return notify_fail("ä½ çš„é«”åŠ›ä¸å¤ ç·´ç„¡ååŠæ³•ã€‚\n");
         me->receive_damage("qi", 20);
         return 1;
 }
@@ -113,7 +113,7 @@ mixed hit_ob(object me, object victim, int damage_bonus, int factor)
                 victim->receive_wound("qi", damage_bonus/ 3 );
         }
 /*
-  if( query("family/family_name", victim) != "Îå¶¾½Ì" && me->query_skill("wudu-shengong",1)>80){
+  if( query("family/family_name", victim) != "äº”æ¯’æ•™" && me->query_skill("wudu-shengong",1)>80){
          switch( random(5) ) {
                 case 0:
             victim->apply_condition("snake_poison", (me->query_skill("wudu-shengong"))/10 +
@@ -136,7 +136,7 @@ mixed hit_ob(object me, object victim, int damage_bonus, int factor)
                         victim->query_condition("chanchu_poison"));
                         break;
         }
-        return HIR "$nÖ»¾õµÃÉË´¦Ò»Õó·¢Âé£¬ËÆºõÖĞ¶¾ÁË¡£\n" NOR;
+        return HIR "$nåªè¦ºå¾—å‚·è™•ä¸€é™£ç™¼éº»ï¼Œä¼¼ä¹ä¸­æ¯’äº†ã€‚\n" NOR;
 */
    }
 string perform_action_file(string action)
@@ -156,12 +156,12 @@ void skill_improved(object me)
         {
                 if( me->add("can_perform/wuming-jianfa/moming",random(i))<100 )
                 {
-                        tell_object(me, HIC "Äã¶ÔÎŞÃû½£·¨¡¸" HIW "½£¶¯ÄªÃû"
-                                        HIC "¡¹ÓĞÁËĞÂµÄÁìÎò¡£\n" NOR);
+                        tell_object(me, HIC "ä½ å°ç„¡ååŠæ³•ã€Œ" HIW "åŠå‹•è«å"
+                                        HIC "ã€æœ‰äº†æ–°çš„é ˜æ‚Ÿã€‚\n" NOR);
                 } else
                 {
-                        tell_object(me, HIC "ÄãÍ¨ÏşÁËÎŞÃû½£·¨¡¸" HIW "½£"
-                                        "¶¯ÄªÃû" HIC "¡¹µÄ°ÂÃØ¡£\n" NOR);
+                        tell_object(me, HIC "ä½ é€šæ›‰äº†ç„¡ååŠæ³•ã€Œ" HIW "åŠ"
+                                        "å‹•è«å" HIC "ã€çš„å¥§ç§˜ã€‚\n" NOR);
                         me->improve_skill("martial-cognize", 1500000);
                         me->improve_skill("martial-cognize", 1500000);
                         me->improve_skill("martial-cognize", 1500000);

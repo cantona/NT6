@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Ⱥ��¥��¥");
+        set("short", "群玉樓二樓");
         set("long", @LONG
-Ⱥ��¥��¥������һ������ߵ�С¥��������ĳһλ�����ͬ��
-������֮���������ѱ�Ⱥ��¥���ؽ����¡�ֻ��һ������ȭ�����
-����Ů�˵Ľ�Ц����ʱ�Ĵӷ����д�����
+群玉樓二樓。這是一座三層高的小樓，本來是某一位大亨陪同夫
+人賞月之處，現在已被群玉樓用重金買下。只聽一聲聲劃拳行令，加
+雜著女人的嬌笑，不時的從房間中傳出。
 LONG );
         set("exits", ([ /* sizeof() == 6 */
                 "north" : "/d/changan/qunyuys1",

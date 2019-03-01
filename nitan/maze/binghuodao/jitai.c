@@ -12,17 +12,17 @@ mapping data = ([]);
 
 void create()
 {
-        set("short", HIY "¼ÀÌ¨" NOR);
+        set("short", HIY "ç¥­å°" NOR);
         set("long",@LONG
-ÄãÕ¾ÔÚ¼ÀÌ¨ÉÏ£¬¸Ğ¾õ½ÅÏÂÒì³£±ùÀä¡£¼ÀÌ¨ÉÏÔÓÂÒ²»¿°£¬Õı
-ÖĞ²å×ÅÒ»Ãæ¼ÀÆì£¨jiqi£©£¬ÉÏÃæËÆºõÒÑ¾­È¾ÂúÁËÏÊÑª¡£ÕâÀïËÆ
-ºõ·¢Éú¹ı¼¤ÁÒµÄ´ò¶·£¬²»ÖªµÀÊÇÎªÁËÕù¶áÊ²Ã´¡£Äã²»ÓÉË¼Ğ÷Íò
-Ç§£¬¡°³¾¹é³¾£¬ÍÁ¹éÍÁ ¡­¡­ ÊÀÈË¾¿¾¹ÎªÁËÄÄ°ã£¿¡±
+ä½ ç«™åœ¨ç¥­å°ä¸Šï¼Œæ„Ÿè¦ºè…³ä¸‹ç•°å¸¸å†°å†·ã€‚ç¥­å°ä¸Šé›œäº‚ä¸å ªï¼Œæ­£
+ä¸­æ’è‘—ä¸€é¢ç¥­æ——ï¼ˆjiqiï¼‰ï¼Œä¸Šé¢ä¼¼ä¹å·²ç¶“æŸ“æ»¿äº†é®®è¡€ã€‚é€™è£¡ä¼¼
+ä¹ç™¼ç”Ÿéæ¿€çƒˆçš„æ‰“é¬¥ï¼Œä¸çŸ¥é“æ˜¯ç‚ºäº†çˆ­å¥ªä»€éº¼ã€‚ä½ ä¸ç”±æ€ç·’è¬
+åƒï¼Œâ€œå¡µæ­¸å¡µï¼ŒåœŸæ­¸åœŸ â€¦â€¦ ä¸–äººç©¶ç«Ÿç‚ºäº†å“ªèˆ¬ï¼Ÿâ€
 LONG);
 
-        set("no_rideto", 1);         // ÉèÖÃ²»ÄÜÆïÂíµ½ÆäËûµØ·½
-        set("no_flyto", 1);          // ÉèÖÃ²»ÄÜ´ÓÆğÀ´µØ·½ÆïÂíÀ´ÕâÀï
-        set("binghuo", 1);           // ±íÊ¾ÔÚ±ù»ğµº
+        set("no_rideto", 1);         // è¨­ç½®ä¸èƒ½é¨é¦¬åˆ°å…¶ä»–åœ°æ–¹
+        set("no_flyto", 1);          // è¨­ç½®ä¸èƒ½å¾èµ·ä¾†åœ°æ–¹é¨é¦¬ä¾†é€™è£¡
+        set("binghuo", 1);           // è¡¨ç¤ºåœ¨å†°ç«å³¶
         
         set("no_die", 1);
 
@@ -51,10 +51,10 @@ string show_jiqi()
         string  team_name;
         
         if( !sizeof(data) )
-                return HIG "ÏÖÔÚ»¹Ã»ÓĞ°ïÅÉ¶áÈ¡¼ÀÆì£¬¸Ï½ô¶áÈ¡(duoqu jiqi)°É¡£\n" NOR;
+                return HIG "ç¾åœ¨é‚„æ²’æœ‰å¹«æ´¾å¥ªå–ç¥­æ——ï¼Œè¶•ç·Šå¥ªå–(duoqu jiqi)å§ã€‚\n" NOR;
 
-        str = HIG "ÏÖÔÚ¼ÀÆì¶áÈ¡µÄÇé¿öÈçÏÂ£º\n" NOR;
-        str += sprintf(HIC "%-20s%-20s\n" NOR, "°ïÅÉ", "¶áÆìÊ±³¤");
+        str = HIG "ç¾åœ¨ç¥­æ——å¥ªå–çš„æƒ…æ³å¦‚ä¸‹ï¼š\n" NOR;
+        str += sprintf(HIC "%-20s%-20s\n" NOR, "å¹«æ´¾", "å¥ªæ——æ™‚é•·");
         str += HIC "-------------------------------\n" NOR;
         key = keys(data);
         
@@ -65,12 +65,12 @@ string show_jiqi()
         if( objectp(ob = query("jiqi_owner")) )
         {
                 team_name = query("bunch/bunch_name", ob);
-                str += HIC "ÏÖÔÚ¼ÀÆìÕı±»" HIY +"¡¾" + team_name + "¡¿µÄ" + ob->name() +
-                       HIY "(" + query("id", ob) + ")" HIC + "¶áÈ¡ÖĞ£¡\n" NOR;
+                str += HIC "ç¾åœ¨ç¥­æ——æ­£è¢«" HIY +"ã€" + team_name + "ã€‘çš„" + ob->name() +
+                       HIY "(" + query("id", ob) + ")" HIC + "å¥ªå–ä¸­ï¼\n" NOR;
         }
         else
         {
-                str += HIG "ÏÖÔÚ¼ÀÆìÃ»ÓĞ±»¶áÈ¡£¬¸Ï½ô¶áÈ¡£¨duoqu jiqi£©°É£¡\n" NOR;
+                str += HIG "ç¾åœ¨ç¥­æ——æ²’æœ‰è¢«å¥ªå–ï¼Œè¶•ç·Šå¥ªå–ï¼ˆduoqu jiqiï¼‰å§ï¼\n" NOR;
         }
         return str;
 }
@@ -80,7 +80,7 @@ void init()
         add_action("do_duoqu", "duoqu");
 }
 
-// ¶áÈ¡ÆìÖÄ
+// å¥ªå–æ——å¹Ÿ
 int do_duoqu(string arg)
 {
         object me = this_player();
@@ -88,48 +88,48 @@ int do_duoqu(string arg)
         string team_name;
 
         if( !arg || arg != "jiqi" )
-                return notify_fail("ÄãÒª¶áÈ¡Ê²Ã´£¿\n");
+                return notify_fail("ä½ è¦å¥ªå–ä»€éº¼ï¼Ÿ\n");
 
         if( time() - query_temp("last_do_duoqu", me) < 10 )
-                return notify_fail("Äã¾àÀëÉÏ´Î¶áÆì³¢ÊÔÊ±¼ä²»×ã10Ãë£¬²»ÄÜÁ¬Ğø³¢ÊÔ£¡\n");
+                return notify_fail("ä½ è·é›¢ä¸Šæ¬¡å¥ªæ——å˜—è©¦æ™‚é–“ä¸è¶³10ç§’ï¼Œä¸èƒ½é€£çºŒå˜—è©¦ï¼\n");
 
-        // ÓĞÈË¶áÈ¡Ê±²»ÄÜ¶áÈ¡
+        // æœ‰äººå¥ªå–æ™‚ä¸èƒ½å¥ªå–
         if( objectp(ob = query("jiqi_owner")) )
         {
                 me->set_temp("last_do_duoqu", time());
-                return notify_fail(HIR "¼ÀÆìÕı±»" + HIY + ob->name() + HIY "(" + query("id", ob) + ")" HIR "¶áÈ¡ÖĞ£¡\n" NOR);
+                return notify_fail(HIR "ç¥­æ——æ­£è¢«" + HIY + ob->name() + HIY "(" + query("id", ob) + ")" HIR "å¥ªå–ä¸­ï¼\n" NOR);
         }
         
-        // ÎŞ°ïÅÉÈËÊ¿²»ÄÜ¶áÈ¡
+        // ç„¡å¹«æ´¾äººå£«ä¸èƒ½å¥ªå–
         if( !query("bunch/bunch_name", me) )
         {
                 me->move("/d/city/wumiao");
-                tell_object(me, "Äã»¹ÊÇÏÈ¼Ó¸ö°ïÅÉ°É£¡\n");
+                tell_object(me, "ä½ é‚„æ˜¯å…ˆåŠ å€‹å¹«æ´¾å§ï¼\n");
                 return 1;
         }
 
-        // ·Ç°ïÕ½ÆÚ¼ä²»ÄÜ¶áÈ¡
+        // éå¹«æˆ°æœŸé–“ä¸èƒ½å¥ªå–
         if (! BUNCH_D->is_battle_start() && ! TEST_FLAG)
-                return notify_fail("ÏÖÔÚ²»´¦ÓÚ°ïÕ½ÆÚ¼ä£¬Äã¶áÈ¡¼ÀÆì¸ÉÊ²Ã´£¡\n");
+                return notify_fail("ç¾åœ¨ä¸è™•äºå¹«æˆ°æœŸé–“ï¼Œä½ å¥ªå–ç¥­æ——å¹¹ä»€éº¼ï¼\n");
         
-        // ¶áÈ¡
+        // å¥ªå–
         set("jiqi_owner", me);
         team_name = query("bunch/bunch_name", me);
         if( !undefinedp(data[team_name]) )
         {
-                write(HIG "Äã¶áÈ¡ÁË¼ÀÆì£¬ÄãµÄ¶ÓÎé×Ü¹²¶áÈ¡¼ÀÆìÊ±¼äÎª£º" HIY + time_period(data[team_name]) + HIG "¡£\n" NOR);
-                tell_room(this_object(), HIG + me->name() + HIG "¶áÈ¡ÁË¼ÀÆì£¬ÆäËùÔÚ°ïÅÉ¡¾" + team_name +
-                          "¡¿×Ü¹²¶áÈ¡¼ÀÆìÊ±¼äÎª£º" HIY + time_period(data[team_name]) + HIG "¡£\n" NOR, ({ me }));
+                write(HIG "ä½ å¥ªå–äº†ç¥­æ——ï¼Œä½ çš„éšŠä¼ç¸½å…±å¥ªå–ç¥­æ——æ™‚é–“ç‚ºï¼š" HIY + time_period(data[team_name]) + HIG "ã€‚\n" NOR);
+                tell_room(this_object(), HIG + me->name() + HIG "å¥ªå–äº†ç¥­æ——ï¼Œå…¶æ‰€åœ¨å¹«æ´¾ã€" + team_name +
+                          "ã€‘ç¸½å…±å¥ªå–ç¥­æ——æ™‚é–“ç‚ºï¼š" HIY + time_period(data[team_name]) + HIG "ã€‚\n" NOR, ({ me }));
         }
         else
         {
-                write(HIG "Äã¶áÈ¡ÁË¼ÀÆì£¬¿ªÊ¼Í³¼Æ¼ÇÊ±¡£¡£¡£\n" NOR);
-                tell_room(this_object(), HIG + me->name() + HIG "¶áÈ¡ÁË¼ÀÆì£¬ÆäËùÔÚ°ïÅÉ¡¾" + team_name + "¡¿¡£\n" NOR, ({ me }));
+                write(HIG "ä½ å¥ªå–äº†ç¥­æ——ï¼Œé–‹å§‹çµ±è¨ˆè¨˜æ™‚ã€‚ã€‚ã€‚\n" NOR);
+                tell_room(this_object(), HIG + me->name() + HIG "å¥ªå–äº†ç¥­æ——ï¼Œå…¶æ‰€åœ¨å¹«æ´¾ã€" + team_name + "ã€‘ã€‚\n" NOR, ({ me }));
         }
         
-        // CHANNEL_DÍ¨¸æ
-        CHANNEL_D->channel_broadcast("war",HIG+me->name()+HIG"³É¹¦¶áÈ¡¼ÀÆì£¬ÆäËùÔÚ°ïÅÉ¡¾"+query("bunch/bunch_name", me)+
-                                     "¡¿ÔİÊ±È¡µÃ¼ÀÆì¿ØÖÆÈ¨¡£\n" NOR);
+        // CHANNEL_Dé€šå‘Š
+        CHANNEL_D->channel_broadcast("war",HIG+me->name()+HIG"æˆåŠŸå¥ªå–ç¥­æ——ï¼Œå…¶æ‰€åœ¨å¹«æ´¾ã€"+query("bunch/bunch_name", me)+
+                                     "ã€‘æš«æ™‚å–å¾—ç¥­æ——æ§åˆ¶æ¬Šã€‚\n" NOR);
 
         return 1;
 }
@@ -144,7 +144,7 @@ void heart_beat()
 
         reset_eval_cost();
         
-        // ·Ç°ïÕ½ÆÚ¼ä£¬Çå³ıÖ®Ç°µÄ¼ÇÂ¼
+        // éå¹«æˆ°æœŸé–“ï¼Œæ¸…é™¤ä¹‹å‰çš„è¨˜éŒ„
         if( !BUNCH_D->is_battle_start() && !TEST_FLAG )
         {
                 if (query("jiqi_owner"))delete("jiqi_owner");
@@ -160,13 +160,13 @@ void heart_beat()
                 return;
         }
         
-        BUNCH_D->add_bonus_score(me, 1);  // Ìá¸ß¸öÈË°ïÅÉ¹±Ï×¶È
+        BUNCH_D->add_bonus_score(me, 1);  // æé«˜å€‹äººå¹«æ´¾è²¢ç»åº¦
         
-        // ÎŞ°ïÅÉ
+        // ç„¡å¹«æ´¾
         team_name=query("bunch/bunch_name", me);
         if (! team_name)return;
 
-        // ÀÛ¼Æ¶áÆìÊ±¼ä
+        // ç´¯è¨ˆå¥ªæ——æ™‚é–“
         if( undefinedp(data[team_name]) )
                 data[team_name] = 1;
         else
@@ -183,7 +183,7 @@ void heart_beat()
         if( time >= 540 )
         {
                 if( !(time % 10) )
-                        CHANNEL_D->channel_broadcast("war", HIR"°ïÅÉ¡¾"+team_name+HIR"¡¿×Ü¹²¶áÈ¡"+query("short")+"¼ÀÆìÊ±¼äÎª£º" HIY +time_period(time) + HIR "£¬¼´½«»ñµÃ×îÖÕÊ¤Àû..."NOR);
+                        CHANNEL_D->channel_broadcast("war", HIR"å¹«æ´¾ã€"+team_name+HIR"ã€‘ç¸½å…±å¥ªå–"+query("short")+"ç¥­æ——æ™‚é–“ç‚ºï¼š" HIY +time_period(time) + HIR "ï¼Œå³å°‡ç²å¾—æœ€çµ‚å‹åˆ©..."NOR);
         }
         return;
 }       

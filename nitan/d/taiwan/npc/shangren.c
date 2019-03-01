@@ -1,4 +1,4 @@
-// shangren.c ÉÌÈË
+// shangren.c å•†äºº
 // Last Modifyed by Ahda on Jan. 4 2002
 
 inherit NPC;
@@ -8,8 +8,8 @@ void create()
         int age;
         age = 20 + random(40);
         
-        set_name("ÉÌÈË", ({ "shangren", "shang", "ren", "man", }));
-        set("gender", "ÄĞĞÔ");
+        set_name("å•†äºº", ({ "shangren", "shang", "ren", "man", }));
+        set("gender", "ç”·æ€§");
         set("age", age);
 
         set_skill("unarmed", 10);

@@ -9,12 +9,12 @@ string look_hua();
 
 void create()
 {
-        set("short", "½£ÊÒ");
+        set("short", "åŠå®¤");
         set("long", @LONG
-Ö»¼ûÊÒÖĞµÄ±ÚÉÏ¡¢×ÀÉÏ¡¢¼ÜÉÏ¡¢°ÚÂúÁË¸÷Àà±øÈĞ£¬Ê½Ñù·±
-¶à£¬Ê®Ö®°Ë¾Å¶¼ÊÇ¹Å½££¬»ò³¤ÓâÆß³ß£¬»ò¶Ì½öÊı´ç£¬ÓĞµÄÌú°ß
-²µ£¬ÓĞµÄº®¹â±ÆÈË£¬Ö±¿´µÃÈËÑÛ¹âÁÃÂÒ¡£²»Ô¶´¦µÄÇ½±ÚÉÏ¹Ò×Å
-ÓĞÒ»¸±¹Å»­(hua)¡£
+åªè¦‹å®¤ä¸­çš„å£ä¸Šã€æ¡Œä¸Šã€æ¶ä¸Šã€æ“ºæ»¿äº†å„é¡å…µåˆƒï¼Œå¼æ¨£ç¹
+å¤šï¼Œåä¹‹å…«ä¹éƒ½æ˜¯å¤åŠï¼Œæˆ–é•·é€¾ä¸ƒå°ºï¼Œæˆ–çŸ­åƒ…æ•¸å¯¸ï¼Œæœ‰çš„éµæ–‘
+é§ï¼Œæœ‰çš„å¯’å…‰é€¼äººï¼Œç›´çœ‹å¾—äººçœ¼å…‰æ’©äº‚ã€‚ä¸é è™•çš„ç‰†å£ä¸Šæ›è‘—
+æœ‰ä¸€å‰¯å¤ç•«(hua)ã€‚
 LONG);
         set("item_desc", ([
                "hua" : ( : look_hua :),
@@ -36,10 +36,10 @@ string look_hua()
       if (! ob = find_object(__DIR__"jianshi"))
               ob = load_object(__DIR__"jianshi");
 
-      if( !query_temp("marks/À­", ob) )
-              return HIW "¹Å»­ÒÑ¾­ÆÆ¾É²»¿°£¬»­ÖĞÒ»¶ÔÄĞÅ®¸÷³ÖÒ»±úÎŞ·æÖ®½£¡£\n" NOR;
+      if( !query_temp("marks/æ‹‰", ob) )
+              return HIW "å¤ç•«å·²ç¶“ç ´èˆŠä¸å ªï¼Œç•«ä¸­ä¸€å°ç”·å¥³å„æŒä¸€æŸ„ç„¡é‹’ä¹‹åŠã€‚\n" NOR;
 
-      msg = HIY "»­ÒÑ±»ÈËËºÆÆ¡£" NOR;
+      msg = HIY "ç•«å·²è¢«äººæ’•ç ´ã€‚" NOR;
 
       junzi = find_object(JUNZI);
       shunv = find_object(SHUNV);
@@ -50,16 +50,16 @@ string look_hua()
 
       if (! environment(junzi) && ! environment(shunv))    
       { 
-              msg += HIY "µ«¼û»­ºóÓĞ¶ş±úÎŞ·æÖ®½££¬¿´ÉÏÈ¥ÏñÊÇÒ»¶Ô¡£\n" NOR;
+              msg += HIY "ä½†è¦‹ç•«å¾Œæœ‰äºŒæŸ„ç„¡é‹’ä¹‹åŠï¼Œçœ‹ä¸Šå»åƒæ˜¯ä¸€å°ã€‚\n" NOR;
               return msg;          
       } else
       if (! environment(junzi) || ! environment(shunv))
       {
-              msg += HIY "µ«¼û»­ºóÓĞÒ»±úÌú¿Ú°ß²µ£¬º®¹â±ÆÈËµÄ±¦½£¡£\n" NOR;
+              msg += HIY "ä½†è¦‹ç•«å¾Œæœ‰ä¸€æŸ„éµå£æ–‘é§ï¼Œå¯’å…‰é€¼äººçš„å¯¶åŠã€‚\n" NOR;
               return msg;
       }
 
-      msg += HIY "»­ºó¿Õ¿ÕÈçÒ²£¬Ê²Ã´¶¼Ã»ÓĞ¡£\n" NOR;
+      msg += HIY "ç•«å¾Œç©ºç©ºå¦‚ä¹Ÿï¼Œä»€éº¼éƒ½æ²’æœ‰ã€‚\n" NOR;
       return msg;
 }
 
@@ -75,20 +75,20 @@ int do_pull(string arg)
         object ob;
 
         if (! arg || arg != "hua")
-                return notify_fail("ÄãÒª×öÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦åšä»€éº¼ï¼Ÿ\n");
 
         if (! ob = find_object(__DIR__"jianshi"))
                 ob = load_object(__DIR__"jianshi");
 
-        if( query_temp("marks/À­", ob) )
+        if( query_temp("marks/æ‹‰", ob) )
         {
-                write("»­ÒÑ¾­±»À­ÆÆÁË¡£\n");
+                write("ç•«å·²ç¶“è¢«æ‹‰ç ´äº†ã€‚\n");
                 return 1;
         }
 
-        message_vision(HIG "Ö»Ìı¼û¡°ßÇàê¡±Ò»Éù£¬$N " HIG "½«Ç½ÉÏµÄ»­"
-                       "À­ÆÆÁË¡£\n" NOR, me);
-        set_temp("marks/À­", 1, ob);
+        message_vision(HIG "åªè½è¦‹â€œâ–¡åš“â€ä¸€è²ï¼Œ$N " HIG "å°‡ç‰†ä¸Šçš„ç•«"
+                       "æ‹‰ç ´äº†ã€‚\n" NOR, me);
+        set_temp("marks/æ‹‰", 1, ob);
 
         return 1;
 }
@@ -104,11 +104,11 @@ int do_pick(string arg)
                 ob = load_object(__DIR__"jianshi");
 
         if (! arg || (arg != "junzi jian" && arg != "shunv jian" ))
-                return notify_fail("ÄãÒªÄÃÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦æ‹¿ä»€éº¼ï¼Ÿ\n");
         
-        if( query_temp("marks/¾ı", ob) && query_temp("marks/Å®", ob )
-             || !query_temp("marks/À­", ob) )
-                return notify_fail("ÄãÒªÄÃÊ²Ã´£¿\n");
+        if( query_temp("marks/å›", ob) && query_temp("marks/å¥³", ob )
+             || !query_temp("marks/æ‹‰", ob) )
+                return notify_fail("ä½ è¦æ‹¿ä»€éº¼ï¼Ÿ\n");
 
         junzi = find_object(JUNZI);
         shunv = find_object(SHUNV);
@@ -121,21 +121,21 @@ int do_pick(string arg)
                  if (! environment(junzi))
                  {
                          junzi->move(me, 1);
-                         message_vision(HIC "$N" HIC "½«Ç½ÉÏµÄ¡¸¾ı×Ó½£¡¹"
-                                        "È¡ÁËÏÂÀ´¡£\n" NOR, me);
+                         message_vision(HIC "$N" HIC "å°‡ç‰†ä¸Šçš„ã€Œå›å­åŠã€"
+                                        "å–äº†ä¸‹ä¾†ã€‚\n" NOR, me);
                          return 1;
                  } else
-                         return notify_fail(NOR + YEL "¾ı×Ó½£ÒÑ±»ÄÃ×ß¡£\n" NOR);
+                         return notify_fail(NOR + YEL "å›å­åŠå·²è¢«æ‹¿èµ°ã€‚\n" NOR);
         }   
 
         if (! environment(shunv))
         {
                 shunv->move(me, 1);
-                message_vision(HIC "$N" HIC "½«Ç½ÉÏµÄ¡¸ÊçÅ®½£¡¹"
-                               "È¡ÁËÏÂÀ´¡£\n" NOR, me);
+                message_vision(HIC "$N" HIC "å°‡ç‰†ä¸Šçš„ã€Œæ·‘å¥³åŠã€"
+                               "å–äº†ä¸‹ä¾†ã€‚\n" NOR, me);
                 return 1;
         } else
-                return notify_fail(NOR + YEL "ÊçÅ®½£ÒÑ±»ÄÃ×ß¡£\n" NOR);        
+                return notify_fail(NOR + YEL "æ·‘å¥³åŠå·²è¢«æ‹¿èµ°ã€‚\n" NOR);        
 
         return 1;
 }

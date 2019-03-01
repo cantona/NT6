@@ -1,5 +1,5 @@
 // Code of ShenZhou
-// shegu.c �߹�
+// shegu.c 蛇谷
 // maco 7/15/2000
 
 #include <ansi.h>
@@ -8,10 +8,10 @@ string look_crack();
 
 void create()
 {
-        set("short", "�߹�����");
+        set("short", "蛇谷樹林");
         set("long", @LONG
-���ǰ���ɽ�߹��е�һ�����֣��Ӳݴ�������ľ֦��ï�ܣ��İ�
-��ɭ����ľ�̸����ڣ���Щ��������ѷ�(crack)������ϸ���������
+這是白駝山蛇谷中的一處密林，雜草叢生，樹木枝椏茂密，幽暗
+陰森，古木盤根錯節，有些樹根間的裂縫(crack)中響著細碎的聲音。
 LONG );
 
         set("exits", ([

@@ -6,7 +6,7 @@
 inherit F_DBASE;
 inherit F_CLEAN_UP;
 
-// ¶¨ÒåÌá¹©¸øÍâ²¿µ÷ÓÃµÄ½Ó¿Úº¯Êı
+// å®šç¾©æä¾›çµ¦å¤–éƒ¨èª¿ç”¨çš„æ¥å£å‡½æ•¸
 varargs public void bonus(object who, mapping b, int flag);
 varargs public void freequest_bonus(object who);
 varargs public void gift_bonus(object who, mapping b);
@@ -23,7 +23,7 @@ public void delay_battle_bonus(object who, mapping b);
 void create()
 {
         seteuid(getuid());
-        set("channel_id", "½±Àø¾«Áé");
+        set("channel_id", "çå‹µç²¾éˆ");
 }
 
 // override set function
@@ -38,11 +38,11 @@ varargs mixed set(string idx, mixed para, object who)
                         old_lvl = query("level", who);
                         if( !old_lvl || old_lvl < 1 ) old_lvl = 1;
 
-                        // µÈ¼¶·âÓ¡
+                        // ç­‰ç´šå°å°
                         if( !UPDATE_D->can_improve_level(old_lvl) &&
                             para > to_int(pow(old_lvl, 3.0)*10000) )
                         {
-                                //tell_object(ob, HIR "ÓÉÓÚÄã´¦ÓÚµÈ¼¶·âÓ¡ÖĞ£¬ÄãµÄÊµÕ½¾­ÑéÎŞ·¨ÌáÉı£¡\n" NOR);
+                                //tell_object(ob, HIR "ç”±äºä½ è™•äºç­‰ç´šå°å°ä¸­ï¼Œä½ çš„å¯¦æˆ°ç¶“é©—ç„¡æ³•æå‡ï¼\n" NOR);
                                 return;
                         }
 
@@ -65,12 +65,12 @@ varargs mixed set(string idx, mixed para, object who)
                                 addn("potential", 200 * n, who);
                                 addn("magic_points", 20 * n, who);
 
-                                tell_object(who, HIY "Ö»¼ûÒ»µÀºì¹â·É½øÄãµÄÌåÄÚ£¬ÄãµÄÈËÎïµÈ¼¶ÌáÉıÁË£¡\n" +
-                                        "´Ë´ÎÉı¼¶£¬Äã»ñµÃÁË" + chinese_number(4 * n) +
-                                        "µãÄÜÁ¦µã¡¢" + chinese_number(200 * n) +
-                                        "µãÇ±ÄÜ¡¢" + chinese_number(20 * n) +
-                                        "µãÊµÕ½Ìå»á¡¢" + chinese_number(20 * n) +
-                                        "µãÁé»Û£¡\n" NOR);
+                                tell_object(who, HIY "åªè¦‹ä¸€é“ç´…å…‰é£›é€²ä½ çš„é«”å…§ï¼Œä½ çš„äººç‰©ç­‰ç´šæå‡äº†ï¼\n" +
+                                        "æ­¤æ¬¡å‡ç´šï¼Œä½ ç²å¾—äº†" + chinese_number(4 * n) +
+                                        "é»èƒ½åŠ›é»ã€" + chinese_number(200 * n) +
+                                        "é»æ½›èƒ½ã€" + chinese_number(20 * n) +
+                                        "é»å¯¦æˆ°é«”æœƒã€" + chinese_number(20 * n) +
+                                        "é»éˆæ…§ï¼\n" NOR);
 
                                 UPDATE_D->improve_valid_level(who, now_lvl); 
                         }
@@ -105,7 +105,7 @@ varargs mixed set(string idx, mixed para, object who)
                                 addn("yuanshen/damage", n, who);
                                 addn("yuanshen/armor", n, who);
 
-                                tell_object(who, HIY "Ö»¼ûÒ»µÀºì¹â·É½øÄãµÄÌåÄÚ£¬ÄãµÄÔªÉñµÈ¼¶ÌáÉıÁË£¡\n" NOR);
+                                tell_object(who, HIY "åªè¦‹ä¸€é“ç´…å…‰é£›é€²ä½ çš„é«”å…§ï¼Œä½ çš„å…ƒç¥ç­‰ç´šæå‡äº†ï¼\n" NOR);
                         }
                 }
         }
@@ -148,12 +148,12 @@ varargs mixed add(string prop, mixed data, object who)
                 return efun::addn(prop, data, who);
 }
 
-// ÑÓ³Ù½±Àø£ºÒòÎªÓĞÊ±¸ø³ö½±ÀøµÄÊ±ºòÓ¦¸ÃÊÇÔÚÄ³Ğ©ÊÂ¼ş·¢ÉúÒÔºó£¬
-// µ«ÊÇÔÚ¸ÃÊÂ¼ş·¢ÉúÊ±¸øÓë½±Àø¸üÒ×ÓÚÊéĞ´³ÌĞò£¬ËùÒÔ½±ÀøÉú³ÉµÄ
-// µØ·½ÔÚÊÂ¼şÕıÔÚ·¢ÉúµÄÊ±ºò£¬µ«ÊÇÒªÈÃÍæ¼Ò¿´ÆğÀ´ÊÇÔÚÊÂ¼ş·¢Éú
-// ÒÔºó¡£±ÈÈçÉ±ÈË£¬ÈËËÀÍöµÄÊ±ºò¸øÓë½±ÀøÊÇÈİÒ××öµÄ£¬µ«ÊÇÎÒÏ£
-// ÍûÍæ¼ÒÔÚ¿´µ½NPC µÄËÀÍöĞÅÏ¢ÒÔºó²Å¿´µ½½±ÀøµÄĞÅÏ¢£¬ÕâÊ±ºò¾Í
-// ÓÃdelay_bonusÁË¡£
+// å»¶é²çå‹µï¼šå› ç‚ºæœ‰æ™‚çµ¦å‡ºçå‹µçš„æ™‚å€™æ‡‰è©²æ˜¯åœ¨æŸäº›äº‹ä»¶ç™¼ç”Ÿä»¥å¾Œï¼Œ
+// ä½†æ˜¯åœ¨è©²äº‹ä»¶ç™¼ç”Ÿæ™‚çµ¦èˆ‡çå‹µæ›´æ˜“äºæ›¸å¯«ç¨‹åºï¼Œæ‰€ä»¥çå‹µç”Ÿæˆçš„
+// åœ°æ–¹åœ¨äº‹ä»¶æ­£åœ¨ç™¼ç”Ÿçš„æ™‚å€™ï¼Œä½†æ˜¯è¦è®“ç©å®¶çœ‹èµ·ä¾†æ˜¯åœ¨äº‹ä»¶ç™¼ç”Ÿ
+// ä»¥å¾Œã€‚æ¯”å¦‚æ®ºäººï¼Œäººæ­»äº¡çš„æ™‚å€™çµ¦èˆ‡çå‹µæ˜¯å®¹æ˜“åšçš„ï¼Œä½†æ˜¯æˆ‘å¸Œ
+// æœ›ç©å®¶åœ¨çœ‹åˆ°NPC çš„æ­»äº¡ä¿¡æ¯ä»¥å¾Œæ‰çœ‹åˆ°çå‹µçš„ä¿¡æ¯ï¼Œé€™æ™‚å€™å°±
+// ç”¨delay_bonusäº†ã€‚
 
 public void delay_bonus(object who, mapping b)
 {
@@ -199,7 +199,7 @@ public void delay_boss_bonus(object who, mapping b)
 
 void special_bonus(object me, object who, mixed arg)
 {
-        // Ëæ»ú½±Àø
+        // éš¨æ©Ÿçå‹µ
         string *ob_list = ({
                 "/clone/gift/xiandan",
                 "/clone/gift/shenliwan",
@@ -221,8 +221,8 @@ void special_bonus(object me, object who, mixed arg)
         object ob;
 
         /*
-        message_vision("$n¶Ô$NÎ¢Î¢Ò»Ğ¦£¬µÀ£º¸ÉµÃ²»Àµ£¬ĞÁ¿à"
-                       "ÁË£¬ÕıºÃÎÒÕâÀïÓĞµã¶«Î÷£¬Äã¾ÍÄÃÈ¥°É¡£\n",
+        message_vision("$nå°$Nå¾®å¾®ä¸€ç¬‘ï¼Œé“ï¼šå¹¹å¾—ä¸è³´ï¼Œè¾›è‹¦"
+                       "äº†ï¼Œæ­£å¥½æˆ‘é€™è£¡æœ‰é»æ±è¥¿ï¼Œä½ å°±æ‹¿å»å§ã€‚\n",
                        who, me);
         */
 
@@ -231,32 +231,32 @@ void special_bonus(object me, object who, mixed arg)
         else
                 ob = new(ob_list[random(sizeof(ob_list))]);
         ob->move(who, 1);
-        tell_object(who, HIM "Äã»ñµÃÁËÒ»" + query("unit", ob) + ob->name() +
-                        HIM "¡£\n" NOR);
+        tell_object(who, HIM "ä½ ç²å¾—äº†ä¸€" + query("unit", ob) + ob->name() +
+                        HIM "ã€‚\n" NOR);
 }
 
-// ÃÅÅÉÈÎÎñµÄ½±Àø
+// é–€æ´¾ä»»å‹™çš„çå‹µ
 varargs public void bonus(object who, mapping b, int flag)
 {
-        int exp;                // ½±ÀøµÄ¾­Ñé
-        int pot;                // ½±ÀøµÄÇ±ÄÜ
-        int mar;                // ½±ÀøµÄÊµÕ½Ìå»á
-        int shen;               // ½±ÀøµÄÉñ
-        int score;              // ½±ÀøµÄ½­ºşÔÄÀú
-        int weiwang;            // ½±ÀøµÄ½­ºşÍşÍû
-        int gongxian;           // ½±ÀøµÄÃÅÅÉ¹±Ï×
+        int exp;                // çå‹µçš„ç¶“é©—
+        int pot;                // çå‹µçš„æ½›èƒ½
+        int mar;                // çå‹µçš„å¯¦æˆ°é«”æœƒ
+        int shen;               // çå‹µçš„ç¥
+        int score;              // çå‹µçš„æ±Ÿæ¹–é–±æ­·
+        int weiwang;            // çå‹µçš„æ±Ÿæ¹–å¨æœ›
+        int gongxian;           // çå‹µçš„é–€æ´¾è²¢ç»
         int gold;
-        int pot_limit;          // Ç±ÄÜµÄ½çÏŞ
-        int mar_limit;          // ÊµÕ½Ìå»áµÄ½çÏŞ
-        int percent;            // ½±ÀøµÄÓĞĞ§°Ù·Ö±È
-        string msg;             // ½±ÀøµÄÃèÊöĞÅÏ¢
+        int pot_limit;          // æ½›èƒ½çš„ç•Œé™
+        int mar_limit;          // å¯¦æˆ°é«”æœƒçš„ç•Œé™
+        int percent;            // çå‹µçš„æœ‰æ•ˆç™¾åˆ†æ¯”
+        string msg;             // çå‹µçš„æè¿°ä¿¡æ¯
         int yuanshen_exp;
         int warcraft_exp;
         object ob;
         int rate;
         int quest_times = "/adm/daemons/actiond"->query_action("quest_reward");
 
-        // »ñµÃ½±ÀøµÄ°Ù·Ö±È
+        // ç²å¾—çå‹µçš„ç™¾åˆ†æ¯”
         percent = b["percent"];
         if (percent < 1 || percent > 100)
                 percent = 100;
@@ -272,7 +272,7 @@ varargs public void bonus(object who, mapping b, int flag)
         gongxian = b["gongxian"] * percent / 100;
         gold = b["gold"] * percent / 100;
 
-        // Íæ¼Ò¾­ÑéÌ«¸ß£¬Ï÷Èõ½±Àø¡£
+        // ç©å®¶ç¶“é©—å¤ªé«˜ï¼Œå‰Šå¼±çå‹µã€‚
         /*
         if( query("combat_exp", who) >= 2160000000 )
         {
@@ -332,7 +332,7 @@ varargs public void bonus(object who, mapping b, int flag)
         if( quest_times=query_temp("apply/add_mar", who) )
                 mar += mar*random(quest_times)/100;
                                                         
-        // °ïÅÉÈÙÓşµã
+        // å¹«æ´¾æ¦®è­½é»
         if( who->query_bunch() && BUNCH_D->query_bunch_efficient(who->query_bunch(), "exp") )
                 exp *= 2;        
         if( who->query_bunch() && BUNCH_D->query_bunch_efficient(who->query_bunch(), "pot") )
@@ -365,7 +365,7 @@ varargs public void bonus(object who, mapping b, int flag)
                         mar = 1;
         }
 
-        // Ä§»ÃÊŞ
+        // é­”å¹»ç¸
         if( exp > 100 && intp(rate = query("env/share_exp", who)) &&
             query("warcraft/file", who) && objectp(ob=find_object(query("warcraft/file", who))) )
         {
@@ -376,7 +376,7 @@ varargs public void bonus(object who, mapping b, int flag)
                 exp -= warcraft_exp;
         }
 
-        // ÔªÉñ
+        // å…ƒç¥
         if( exp > 100 && query("yuanshen", who) )
         {
                 yuanshen_exp = exp / 4 + 1;
@@ -384,33 +384,33 @@ varargs public void bonus(object who, mapping b, int flag)
                 exp -= yuanshen_exp;
         }
 
-        // Éú³ÉÌáÊ¾ĞÅÏ¢
+        // ç”Ÿæˆæç¤ºä¿¡æ¯
         if (stringp(msg = b["prompt"]))
-                msg = HIG + msg + HIG "£¬Äã»ñµÃÁË";
+                msg = HIG + msg + HIG "ï¼Œä½ ç²å¾—äº†";
         else
-                msg = HIG "Í¨¹ıÕâ´Î¶ÍÁ¶£¬Äã»ñµÃÁË";
+                msg = HIG "é€šéé€™æ¬¡é›ç…‰ï¼Œä½ ç²å¾—äº†";
 
-        if (exp > 0) msg += chinese_number(exp) + "µã¾­Ñé¡¢";
-        if (pot > 0) msg += chinese_number(pot) + "µãÇ±ÄÜ¡¢";
-        if (mar > 0) msg += chinese_number(mar) + "µãÊµÕ½Ìå»á¡¢";
-        if (shen > 0) msg += chinese_number(shen) + "µãÕıÉñ¡¢";
-        if (shen < 0) msg += chinese_number(-shen) + "µã¸ºÉñ¡¢";
-        if (score > 0) msg += chinese_number(score) + "µã½­ºşÔÄÀú¡¢";
-        if (weiwang > 0) msg += chinese_number(weiwang) + "µãÍşÍû¡¢";
-        if (gongxian > 0) msg += chinese_number(gongxian) + "µãÃÅÅÉ¹¦¼¨¡¢";
-        if (gold > 0) msg += chinese_number(gold) + "Á½»Æ½ğ¡¢";
+        if (exp > 0) msg += chinese_number(exp) + "é»ç¶“é©—ã€";
+        if (pot > 0) msg += chinese_number(pot) + "é»æ½›èƒ½ã€";
+        if (mar > 0) msg += chinese_number(mar) + "é»å¯¦æˆ°é«”æœƒã€";
+        if (shen > 0) msg += chinese_number(shen) + "é»æ­£ç¥ã€";
+        if (shen < 0) msg += chinese_number(-shen) + "é»è² ç¥ã€";
+        if (score > 0) msg += chinese_number(score) + "é»æ±Ÿæ¹–é–±æ­·ã€";
+        if (weiwang > 0) msg += chinese_number(weiwang) + "é»å¨æœ›ã€";
+        if (gongxian > 0) msg += chinese_number(gongxian) + "é»é–€æ´¾åŠŸç¸¾ã€";
+        if (gold > 0) msg += chinese_number(gold) + "å…©é»ƒé‡‘ã€";
 
         if( ob )
 	{
-	        msg += ob->name() + "»ñµÃ¾­Ñé" + chinese_number(warcraft_exp) + "µã¡¢";
+	        msg += ob->name() + "ç²å¾—ç¶“é©—" + chinese_number(warcraft_exp) + "é»ã€";
         }
 
         if( query("yuanshen", who) )
 	{
-	        msg += "ÔªÉñ»ñµÃ¾­Ñé" + chinese_number(yuanshen_exp) + "µã¡¢";
+	        msg += "å…ƒç¥ç²å¾—ç¶“é©—" + chinese_number(yuanshen_exp) + "é»ã€";
         }
 
-        msg += "ÄÜÁ¦µÃµ½ÁËÌáÉı¡£\n" NOR;
+        msg += "èƒ½åŠ›å¾—åˆ°äº†æå‡ã€‚\n" NOR;
         tell_object(who, sort_msg(msg));
 
         // bonus
@@ -424,28 +424,28 @@ varargs public void bonus(object who, mapping b, int flag)
         addn("balance", gold*10000, who);
 }
 
-// ÆÕÍ¨¹¤×÷ÈÎÎñµÄ½±Àø
-varargs public void work_bonus(object who, mapping b, int flag, string type/*ÈÎÎñÀàĞÍ,Îª»î¶¯¾«ÁéÔ¤Áô½Ó¿Ú*/)
+// æ™®é€šå·¥ä½œä»»å‹™çš„çå‹µ
+varargs public void work_bonus(object who, mapping b, int flag, string type/*ä»»å‹™é¡å‹,ç‚ºæ´»å‹•ç²¾éˆé ç•™æ¥å£*/)
 {
-        int exp;                // ½±ÀøµÄ¾­Ñé
-        int pot;                // ½±ÀøµÄÇ±ÄÜ
-        int mar;                // ½±ÀøµÄÊµÕ½Ìå»á
-        int shen;               // ½±ÀøµÄÉñ
-        int score;              // ½±ÀøµÄ½­ºşÔÄÀú
-        int weiwang;            // ½±ÀøµÄ½­ºşÍşÍû
-        int gongxian;           // ½±ÀøµÄÃÅÅÉ¹±Ï×
+        int exp;                // çå‹µçš„ç¶“é©—
+        int pot;                // çå‹µçš„æ½›èƒ½
+        int mar;                // çå‹µçš„å¯¦æˆ°é«”æœƒ
+        int shen;               // çå‹µçš„ç¥
+        int score;              // çå‹µçš„æ±Ÿæ¹–é–±æ­·
+        int weiwang;            // çå‹µçš„æ±Ÿæ¹–å¨æœ›
+        int gongxian;           // çå‹µçš„é–€æ´¾è²¢ç»
         int gold;
-        int pot_limit;          // Ç±ÄÜµÄ½çÏŞ
-        int mar_limit;          // ÊµÕ½Ìå»áµÄ½çÏŞ
-        int percent;            // ½±ÀøµÄÓĞĞ§°Ù·Ö±È
-        string msg;             // ½±ÀøµÄÃèÊöĞÅÏ¢
+        int pot_limit;          // æ½›èƒ½çš„ç•Œé™
+        int mar_limit;          // å¯¦æˆ°é«”æœƒçš„ç•Œé™
+        int percent;            // çå‹µçš„æœ‰æ•ˆç™¾åˆ†æ¯”
+        string msg;             // çå‹µçš„æè¿°ä¿¡æ¯
         int yuanshen_exp;
         int warcraft_exp;
         object ob;
         int rate;
         int quest_times = "/adm/daemons/actiond"->query_action("work_reward");
 
-        // »ñµÃ½±ÀøµÄ°Ù·Ö±È
+        // ç²å¾—çå‹µçš„ç™¾åˆ†æ¯”
         percent = b["percent"];
         if (percent < 1 || percent > 100)
                 percent = 100;
@@ -461,7 +461,7 @@ varargs public void work_bonus(object who, mapping b, int flag, string type/*ÈÎÎ
         gongxian = b["gongxian"] * percent / 100;
         gold = b["gold"] * percent / 100;
 
-        // Íæ¼Ò¾­ÑéÌ«¸ß£¬Ï÷Èõ½±Àø¡£
+        // ç©å®¶ç¶“é©—å¤ªé«˜ï¼Œå‰Šå¼±çå‹µã€‚
         /*
         if( query("combat_exp", who) >= 2160000000 )
         {
@@ -521,7 +521,7 @@ varargs public void work_bonus(object who, mapping b, int flag, string type/*ÈÎÎ
         if( quest_times=query_temp("apply/add_mar", who) )
                 mar += mar*random(quest_times)/100;
         
-        // °ïÅÉÈÙÓşµã
+        // å¹«æ´¾æ¦®è­½é»
         if( who->query_bunch() && BUNCH_D->query_bunch_efficient(who->query_bunch(), "exp") )
                 exp *= 2;        
         if( who->query_bunch() && BUNCH_D->query_bunch_efficient(who->query_bunch(), "pot") )
@@ -555,7 +555,7 @@ varargs public void work_bonus(object who, mapping b, int flag, string type/*ÈÎÎ
         }
         */
 
-        // Ä§»ÃÊŞ
+        // é­”å¹»ç¸
         if( exp > 100 && intp(rate = query("env/share_exp", who)) &&
             query("warcraft/file", who) && objectp(ob=find_object(query("warcraft/file", who))) )
         {
@@ -573,33 +573,33 @@ varargs public void work_bonus(object who, mapping b, int flag, string type/*ÈÎÎ
                 exp -= yuanshen_exp;
         }
 
-        // Éú³ÉÌáÊ¾ĞÅÏ¢
+        // ç”Ÿæˆæç¤ºä¿¡æ¯
         if (stringp(msg = b["prompt"]))
-                msg = HIC "\n" + msg + HIC "£¬Äã»ñµÃÁË";
+                msg = HIC "\n" + msg + HIC "ï¼Œä½ ç²å¾—äº†";
         else
-                msg = HIC "\nÍ¨¹ıÕâ´Î¶ÍÁ¶£¬Äã»ñµÃÁË";
+                msg = HIC "\né€šéé€™æ¬¡é›ç…‰ï¼Œä½ ç²å¾—äº†";
 
-        if (exp > 0) msg += chinese_number(exp) + "µã¾­Ñé¡¢";
-        if (pot > 0) msg += chinese_number(pot) + "µãÇ±ÄÜ¡¢";
-        if (mar > 0) msg += chinese_number(mar) + "µãÊµÕ½Ìå»á¡¢";
-        if (shen > 0) msg += chinese_number(shen) + "µãÕıÉñ¡¢";
-        if (shen < 0) msg += chinese_number(-shen) + "µã¸ºÉñ¡¢";
-        if (score > 0) msg += chinese_number(score) + "µã½­ºşÔÄÀú¡¢";
-        if (weiwang > 0) msg += chinese_number(weiwang) + "µãÍşÍû¡¢";
-        if (gongxian > 0) msg += chinese_number(gongxian) + "µãÃÅÅÉ¹¦¼¨¡¢";
-        if (gold > 0) msg += chinese_number(gold) + "Á½»Æ½ğ¡¢";
+        if (exp > 0) msg += chinese_number(exp) + "é»ç¶“é©—ã€";
+        if (pot > 0) msg += chinese_number(pot) + "é»æ½›èƒ½ã€";
+        if (mar > 0) msg += chinese_number(mar) + "é»å¯¦æˆ°é«”æœƒã€";
+        if (shen > 0) msg += chinese_number(shen) + "é»æ­£ç¥ã€";
+        if (shen < 0) msg += chinese_number(-shen) + "é»è² ç¥ã€";
+        if (score > 0) msg += chinese_number(score) + "é»æ±Ÿæ¹–é–±æ­·ã€";
+        if (weiwang > 0) msg += chinese_number(weiwang) + "é»å¨æœ›ã€";
+        if (gongxian > 0) msg += chinese_number(gongxian) + "é»é–€æ´¾åŠŸç¸¾ã€";
+        if (gold > 0) msg += chinese_number(gold) + "å…©é»ƒé‡‘ã€";
 
         if( ob )
 	{
-	        msg += ob->name() + "»ñµÃ¾­Ñé" + chinese_number(warcraft_exp) + "µã¡¢";
+	        msg += ob->name() + "ç²å¾—ç¶“é©—" + chinese_number(warcraft_exp) + "é»ã€";
         }
 
         if( query("yuanshen", who) )
 	{
-	        msg += "ÔªÉñ»ñµÃ¾­Ñé" + chinese_number(yuanshen_exp) + "µã¡¢";
+	        msg += "å…ƒç¥ç²å¾—ç¶“é©—" + chinese_number(yuanshen_exp) + "é»ã€";
         }
 
-        msg += "ÄÜÁ¦µÃµ½ÁËÌáÉı¡£\n\n" NOR;
+        msg += "èƒ½åŠ›å¾—åˆ°äº†æå‡ã€‚\n\n" NOR;
         tell_object(who, sort_msg(msg));
 
         // bonus
@@ -613,15 +613,15 @@ varargs public void work_bonus(object who, mapping b, int flag, string type/*ÈÎÎ
         addn("balance", gold*10000, who);
 }
 
-// ÖĞ¶ÏĞÔÖÊ×ÔÓÉÈÎÎñµÄ½±Àø
+// ä¸­æ–·æ€§è³ªè‡ªç”±ä»»å‹™çš„çå‹µ
 varargs public void freequest_bonus(object who)
 {
         object gift;
-        int quest;              // µ±Ç°ÈÎÎñÊıÁ¿
-        int exp;                // ½±ÀøµÄ¾­Ñé
-        int pot;                // ½±ÀøµÄÇ±ÄÜ
-        int mar;                // ½±ÀøµÄÊµÕ½Ìå»á
-        string msg;             // ½±ÀøµÄÃèÊöĞÅÏ¢
+        int quest;              // ç•¶å‰ä»»å‹™æ•¸é‡
+        int exp;                // çå‹µçš„ç¶“é©—
+        int pot;                // çå‹µçš„æ½›èƒ½
+        int mar;                // çå‹µçš„å¯¦æˆ°é«”æœƒ
+        string msg;             // çå‹µçš„æè¿°ä¿¡æ¯
         int yuanshen_exp;
         int warcraft_exp;
         object ob;
@@ -632,8 +632,8 @@ varargs public void freequest_bonus(object who)
         quest *= 10;
         exp = quest + random(quest) + 5000;
 
-        // ÒòÎª»ñµÃ½±Àø½Ï¶àÇÒÎŞ·¨ÀÛ¼°ÖĞ¶ÏÈÎÎñ£¬ËùÒÔÔİÊ±²»×ö
-        // ÉÏÏŞµÄÏŞÖÆ¡£
+        // å› ç‚ºç²å¾—çå‹µè¼ƒå¤šä¸”ç„¡æ³•ç´¯åŠä¸­æ–·ä»»å‹™ï¼Œæ‰€ä»¥æš«æ™‚ä¸åš
+        // ä¸Šé™çš„é™åˆ¶ã€‚
         pot = exp / 3;
         mar = random(quest / 2) + 500;
 
@@ -675,7 +675,7 @@ varargs public void freequest_bonus(object who)
         if( quest_times=query_temp("apply/add_mar", who) )
                 mar += mar*random(quest_times)/100;
 
-        // °ïÅÉÈÙÓşµã
+        // å¹«æ´¾æ¦®è­½é»
         if( who->query_bunch() && BUNCH_D->query_bunch_efficient(who->query_bunch(), "exp") )
                 exp *= 2;        
         if( who->query_bunch() && BUNCH_D->query_bunch_efficient(who->query_bunch(), "pot") )
@@ -690,7 +690,7 @@ varargs public void freequest_bonus(object who)
         if( who->query_family() && FAMILY_D->query_family_efficient(who->query_family(), "mar") )
                 mar *= 2;   
                              
-        // Ä§»ÃÊŞ
+        // é­”å¹»ç¸
         if( exp > 100 && intp(rate = query("env/share_exp", who)) &&
             query("warcraft/file", who) && objectp(ob=find_object(query("warcraft/file", who))) )
         {
@@ -708,23 +708,23 @@ varargs public void freequest_bonus(object who)
                 exp -= yuanshen_exp;
         }
 
-        msg = HIC "\nÄãÔÚÕâ´ÎµÄÀúÁ·¹ı³ÌÖĞ£¬¶ÔÎäÑ§ËÆºõÓÖ"
-              "ÓĞÁËĞÂµÄÍ»ÆÆ¡£Äã»ñµÃÁË" +
-              chinese_number(exp) + "µã¾­Ñé¡¢" +
-              chinese_number(pot) + "µãÇ±ÄÜ¡¢" +
-              chinese_number(mar) + "µãÊµÕ½Ìå»á¡¢";
+        msg = HIC "\nä½ åœ¨é€™æ¬¡çš„æ­·ç·´éç¨‹ä¸­ï¼Œå°æ­¦å­¸ä¼¼ä¹åˆ"
+              "æœ‰äº†æ–°çš„çªç ´ã€‚ä½ ç²å¾—äº†" +
+              chinese_number(exp) + "é»ç¶“é©—ã€" +
+              chinese_number(pot) + "é»æ½›èƒ½ã€" +
+              chinese_number(mar) + "é»å¯¦æˆ°é«”æœƒã€";
 
         if( ob )
 	{
-	        msg += ob->name() + "»ñµÃ¾­Ñé" + chinese_number(warcraft_exp) + "µã¡¢";
+	        msg += ob->name() + "ç²å¾—ç¶“é©—" + chinese_number(warcraft_exp) + "é»ã€";
         }
 
         if( query("yuanshen", who) )
 	{
-	        msg += "ÔªÉñ»ñµÃ¾­Ñé" + chinese_number(yuanshen_exp) + "µã¡£";
+	        msg += "å…ƒç¥ç²å¾—ç¶“é©—" + chinese_number(yuanshen_exp) + "é»ã€‚";
         }
 
-        msg += "ÄÜÁ¦µÃµ½ÁËÌáÉı¡£\n" NOR;
+        msg += "èƒ½åŠ›å¾—åˆ°äº†æå‡ã€‚\n" NOR;
         tell_object(who, sort_msg(msg));
 
         // bonus
@@ -736,43 +736,43 @@ varargs public void freequest_bonus(object who)
         if (query("quest/freequest", who) < 1)
         {
                 delete("quest", who);
-                message_sort(HIW "\nÕıÔÚÕâÊ±£¬Ö»¼ûÒ»Î»" +
+                message_sort(HIW "\næ­£åœ¨é€™æ™‚ï¼Œåªè¦‹ä¸€ä½" +
                              query("family/family_name", who)+
-                             "µÜ×Ó¼±¼±Ã¦Ã¦¸Ïµ½$N" HIW "Éí±ß£¬Ëµ"
-                             "µÀ£º¡°Ô­À´ÄãÔÚÕâÀï°¡£¬Ê¦¸µÕıµ½´¦ÅÉ"
-                             "ÈËÕÒÄãÄØ¡£ÌıËµÓĞÒª½ôÊÂ½»¸øÄã°ì£¬Äã"
-                             "¸Ï¿ì»ØÈ¥°É£¡Õâ¸ö°ü¹üÊÇÊ¦¸µÈÃÎÒ×ª½»"
-                             "¸øÄãµÄ¡£¡±\n" NOR, who);
+                             "å¼Ÿå­æ€¥æ€¥å¿™å¿™è¶•åˆ°$N" HIW "èº«é‚Šï¼Œèªª"
+                             "é“ï¼šâ€œåŸä¾†ä½ åœ¨é€™è£¡å•Šï¼Œå¸«å‚…æ­£åˆ°è™•æ´¾"
+                             "äººæ‰¾ä½ å‘¢ã€‚è½èªªæœ‰è¦ç·Šäº‹äº¤çµ¦ä½ è¾¦ï¼Œä½ "
+                             "è¶•å¿«å›å»å§ï¼é€™å€‹åŒ…è£¹æ˜¯å¸«å‚…è®“æˆ‘è½‰äº¤"
+                             "çµ¦ä½ çš„ã€‚â€\n" NOR, who);
 
                 message_sort("\n"+query("family/family_name", who)+
-                             "µÜ×ÓÄÃ³öÒ»¸ö°ü¹üµİ¸ø$N¡£\n\n" +
+                             "å¼Ÿå­æ‹¿å‡ºä¸€å€‹åŒ…è£¹éçµ¦$Nã€‚\n\n" +
                              query("family/family_name", who)+
-                             "µÜ×Ó¼±¼±Ã¦Ã¦µØÀë¿ªÁË¡£\n" NOR, who);
+                             "å¼Ÿå­æ€¥æ€¥å¿™å¿™åœ°é›¢é–‹äº†ã€‚\n" NOR, who);
 
                 gift = new("/clone/misc/bag");
                 gift->move(who, 1);
         }
 }
 
-// ÌØÊâÊÂ¼şµÄ½±Àø
+// ç‰¹æ®Šäº‹ä»¶çš„çå‹µ
 varargs public void gift_bonus(object who, mapping b)
 {
-        int exp;                // ½±ÀøµÄ¾­Ñé
-        int pot;                // ½±ÀøµÄÇ±ÄÜ
-        int mar;                // ½±ÀøµÄÊµÕ½Ìå»á
-        int score;              // ½±ÀøµÄ½­ºşÔÄÀú
-        int weiwang;            // ½±ÀøµÄ½­ºşÍşÍû
-        int gongxian;           // ½±ÀøµÄÃÅÅÉ¹±Ï×
-        int percent;            // ½±ÀøµÄÓĞĞ§°Ù·Ö±È
-        string msg;             // ½±ÀøµÄÃèÊöĞÅÏ¢
-        string temp;            // ½ø³Ì¼ÇÂ¼ĞÅÏ¢
+        int exp;                // çå‹µçš„ç¶“é©—
+        int pot;                // çå‹µçš„æ½›èƒ½
+        int mar;                // çå‹µçš„å¯¦æˆ°é«”æœƒ
+        int score;              // çå‹µçš„æ±Ÿæ¹–é–±æ­·
+        int weiwang;            // çå‹µçš„æ±Ÿæ¹–å¨æœ›
+        int gongxian;           // çå‹µçš„é–€æ´¾è²¢ç»
+        int percent;            // çå‹µçš„æœ‰æ•ˆç™¾åˆ†æ¯”
+        string msg;             // çå‹µçš„æè¿°ä¿¡æ¯
+        string temp;            // é€²ç¨‹è¨˜éŒ„ä¿¡æ¯
         int quest_times;
         int yuanshen_exp;
         int warcraft_exp;
         object ob;
         int rate;
 
-        // »ñµÃ½±ÀøµÄ°Ù·Ö±È
+        // ç²å¾—çå‹µçš„ç™¾åˆ†æ¯”
         percent = b["percent"];
 
         if (percent < 1 || percent > 100)
@@ -780,7 +780,7 @@ varargs public void gift_bonus(object who, mapping b)
         
         if( query("reborn/times", who) ) percent /= 2;
         
-        // ½ø³Ì¼ÇÂ¼£¬Õë¶ÔµÚÒ»´ÎÍê³ÉÓĞ½±ÀøµÄÇé½Ú
+        // é€²ç¨‹è¨˜éŒ„ï¼Œé‡å°ç¬¬ä¸€æ¬¡å®Œæˆæœ‰çå‹µçš„æƒ…ç¯€
         temp = b["temp"];
 
         exp = b["exp"] * percent / 100;
@@ -821,7 +821,7 @@ varargs public void gift_bonus(object who, mapping b)
         if( quest_times=query_temp("apply/add_mar", who) )
                 mar += mar*random(quest_times)/100;
 
-        // °ïÅÉÈÙÓşµã
+        // å¹«æ´¾æ¦®è­½é»
         if( who->query_bunch() && BUNCH_D->query_bunch_efficient(who->query_bunch(), "exp") )
                 exp *= 2;        
         if( who->query_bunch() && BUNCH_D->query_bunch_efficient(who->query_bunch(), "pot") )
@@ -835,7 +835,7 @@ varargs public void gift_bonus(object who, mapping b)
                 pot *= 2;
         if( who->query_family() && FAMILY_D->query_family_efficient(who->query_family(), "mar") )
                 mar *= 2;                
-       // Ä§»ÃÊŞ
+       // é­”å¹»ç¸
         if( exp > 100 && intp(rate = query("env/share_exp", who)) &&
             query("warcraft/file", who) && objectp(ob=find_object(query("warcraft/file", who))) )
         {
@@ -853,43 +853,43 @@ varargs public void gift_bonus(object who, mapping b)
                 exp -= yuanshen_exp;
         }
 
-        // Éú³ÉÒ¥ÑÔĞÅÏ¢
+        // ç”Ÿæˆè¬ è¨€ä¿¡æ¯
         if (stringp(msg = b["rumor"]))
         {
-                shout(HIR "¡¾ÎäÁÖ´«ÎÅ¡¿" NOR + WHT "ÌıËµ" +
+                shout(HIR "ã€æ­¦æ—å‚³èã€‘" NOR + WHT "è½èªª" +
                       who->name()+WHT"["+query("id", who)+
-                      WHT "]" + msg + WHT "¡£\n" NOR);
+                      WHT "]" + msg + WHT "ã€‚\n" NOR);
         }
 
         if( !stringp(temp) || !query(temp, who) )
         {
-                // Éú³ÉÌáÊ¾ĞÅÏ¢
+                // ç”Ÿæˆæç¤ºä¿¡æ¯
                 if (stringp(msg = b["prompt"]))
-                        msg = HIW "\n" + msg + HIW "£¬Äã»ñµÃÁË";
+                        msg = HIW "\n" + msg + HIW "ï¼Œä½ ç²å¾—äº†";
                 else
-                        msg = HIW "\nÍ¨¹ı´Ë´Î¾­Àú£¬Äã»ñµÃÁË";
+                        msg = HIW "\né€šéæ­¤æ¬¡ç¶“æ­·ï¼Œä½ ç²å¾—äº†";
 
-                // ¼ÇÂ¼ÏÂ½ø³Ì
+                // è¨˜éŒ„ä¸‹é€²ç¨‹
                 if (stringp(temp))
                         addn(temp, 1, who);
 
-                if (exp > 0) msg += chinese_number(exp) + "µã¾­Ñé¡¢";
-                if (pot > 0) msg += chinese_number(pot) + "µãÇ±ÄÜ¡¢";
-                if (mar > 0) msg += chinese_number(mar) + "µãÊµÕ½Ìå»á¡¢";
-                if (score > 0) msg += chinese_number(score) + "µã½­ºşÔÄÀú¡¢";
-                if (weiwang > 0) msg += chinese_number(weiwang) + "µã½­ºşÍşÍû¡¢";
-                if (gongxian > 0) msg += chinese_number(gongxian) + "µãÃÅÅÉ¹¦¼¨¡¢";
+                if (exp > 0) msg += chinese_number(exp) + "é»ç¶“é©—ã€";
+                if (pot > 0) msg += chinese_number(pot) + "é»æ½›èƒ½ã€";
+                if (mar > 0) msg += chinese_number(mar) + "é»å¯¦æˆ°é«”æœƒã€";
+                if (score > 0) msg += chinese_number(score) + "é»æ±Ÿæ¹–é–±æ­·ã€";
+                if (weiwang > 0) msg += chinese_number(weiwang) + "é»æ±Ÿæ¹–å¨æœ›ã€";
+                if (gongxian > 0) msg += chinese_number(gongxian) + "é»é–€æ´¾åŠŸç¸¾ã€";
 
                 if( ob )
 	        {
-	                msg += ob->name() + "»ñµÃ¾­Ñé" + chinese_number(warcraft_exp) + "µã¡¢";
+	                msg += ob->name() + "ç²å¾—ç¶“é©—" + chinese_number(warcraft_exp) + "é»ã€";
                 }
 
                 if( query("yuanshen", who) )
 	        {
-	                msg += "ÔªÉñ»ñµÃ¾­Ñé" + chinese_number(yuanshen_exp) + "µã¡¢";
+	                msg += "å…ƒç¥ç²å¾—ç¶“é©—" + chinese_number(yuanshen_exp) + "é»ã€";
                 }
-                msg += "ÄÜÁ¦µÃµ½ÁËÌáÉı¡£\n" NOR;
+                msg += "èƒ½åŠ›å¾—åˆ°äº†æå‡ã€‚\n" NOR;
                 tell_object(who, sort_msg(msg));
 
                 // bonus
@@ -904,30 +904,30 @@ varargs public void gift_bonus(object who, mapping b)
 
 varargs public void war_bonus(object who, mapping b)
 {
-        int exp;                // ½±ÀøµÄ¾­Ñé
-        int pot;                // ½±ÀøµÄÇ±ÄÜ
-        int mar;                // ½±ÀøµÄÊµÕ½Ìå»á
-        int shen;               // ½±ÀøµÄÉñ
-        int score;              // ½±ÀøµÄ½­ºşÔÄÀú
-        int weiwang;            // ½±ÀøµÄ½­ºşÍşÍû
-        int gongxian;           // ½±ÀøµÄÃÅÅÉ¹±Ï×
+        int exp;                // çå‹µçš„ç¶“é©—
+        int pot;                // çå‹µçš„æ½›èƒ½
+        int mar;                // çå‹µçš„å¯¦æˆ°é«”æœƒ
+        int shen;               // çå‹µçš„ç¥
+        int score;              // çå‹µçš„æ±Ÿæ¹–é–±æ­·
+        int weiwang;            // çå‹µçš„æ±Ÿæ¹–å¨æœ›
+        int gongxian;           // çå‹µçš„é–€æ´¾è²¢ç»
         int gold;
-        int pot_limit;          // Ç±ÄÜµÄ½çÏŞ
-        int mar_limit;          // ÊµÕ½Ìå»áµÄ½çÏŞ
-        int percent;            // ½±ÀøµÄÓĞĞ§°Ù·Ö±È
-        string msg;             // ½±ÀøµÄÃèÊöĞÅÏ¢
+        int pot_limit;          // æ½›èƒ½çš„ç•Œé™
+        int mar_limit;          // å¯¦æˆ°é«”æœƒçš„ç•Œé™
+        int percent;            // çå‹µçš„æœ‰æ•ˆç™¾åˆ†æ¯”
+        string msg;             // çå‹µçš„æè¿°ä¿¡æ¯
         int yuanshen_exp;
         int warcraft_exp;
         object ob;
         int rate;
         int quest_times = ACTION_D->query_action("battle_reward");
 
-        // »ñµÃ½±ÀøµÄ°Ù·Ö±È
+        // ç²å¾—çå‹µçš„ç™¾åˆ†æ¯”
         percent = b["percent"];
         if (percent < 1 || percent > 100)
                 percent = 100;
         
-        // ×ªÊÀºó½±Àø´ó·ù¶È½µµÍ£¬×ªÊÀ½±Àø¸ßÊÇÎªÁËĞÂÈËÊÊÓ¦ÕâÀï
+        // è½‰ä¸–å¾Œçå‹µå¤§å¹…åº¦é™ä½ï¼Œè½‰ä¸–çå‹µé«˜æ˜¯ç‚ºäº†æ–°äººé©æ‡‰é€™è£¡
         if( query("reborn/times", who) ) percent /= 4; 
         
         exp = b["exp"] * percent / 100;
@@ -939,7 +939,7 @@ varargs public void war_bonus(object who, mapping b)
         gongxian = b["gongxian"] * percent / 100;
         gold = b["gold"] * percent / 100;
 
-        // Íæ¼Ò¾­ÑéÌ«¸ß£¬Ï÷Èõ½±Àø¡£
+        // ç©å®¶ç¶“é©—å¤ªé«˜ï¼Œå‰Šå¼±çå‹µã€‚
         /*
         if( query("combat_exp", who) >= 2160000000 )
         {
@@ -999,7 +999,7 @@ varargs public void war_bonus(object who, mapping b)
         if( quest_times=query_temp("apply/add_mar", who) )
                 mar += mar*random(quest_times)/100;
 
-        // °ïÅÉÈÙÓşµã
+        // å¹«æ´¾æ¦®è­½é»
         if( who->query_bunch() && BUNCH_D->query_bunch_efficient(who->query_bunch(), "exp") )
                 exp *= 2;        
         if( who->query_bunch() && BUNCH_D->query_bunch_efficient(who->query_bunch(), "pot") )
@@ -1014,7 +1014,7 @@ varargs public void war_bonus(object who, mapping b)
         if( who->query_family() && FAMILY_D->query_family_efficient(who->query_family(), "mar") )
                 mar *= 2;
                                 
-        // Ä§»ÃÊŞ
+        // é­”å¹»ç¸
         if( exp > 100 && intp(rate = query("env/share_exp", who)) &&
             query("warcraft/file", who) && objectp(ob=find_object(query("warcraft/file", who))) )
         {
@@ -1032,33 +1032,33 @@ varargs public void war_bonus(object who, mapping b)
                 exp -= yuanshen_exp;
         }
 
-        // Éú³ÉÌáÊ¾ĞÅÏ¢
+        // ç”Ÿæˆæç¤ºä¿¡æ¯
         if (stringp(msg = b["prompt"]))
-                msg = HIG + msg + HIG "£¬Äã»ñµÃÁË";
+                msg = HIG + msg + HIG "ï¼Œä½ ç²å¾—äº†";
         else
-                msg = HIG "Í¨¹ıÕâ´Î¶ÍÁ¶£¬Äã»ñµÃÁË";
+                msg = HIG "é€šéé€™æ¬¡é›ç…‰ï¼Œä½ ç²å¾—äº†";
 
-        if (exp > 0) msg += chinese_number(exp) + "µã¾­Ñé¡¢";
-        if (pot > 0) msg += chinese_number(pot) + "µãÇ±ÄÜ¡¢";
-        if (mar > 0) msg += chinese_number(mar) + "µãÊµÕ½Ìå»á¡¢";
-        if (shen > 0) msg += chinese_number(shen) + "µãÕıÉñ¡¢";
-        if (shen < 0) msg += chinese_number(-shen) + "µã¸ºÉñ¡¢";
-        if (score > 0) msg += chinese_number(score) + "µã½­ºşÔÄÀú¡¢";
-        if (weiwang > 0) msg += chinese_number(weiwang) + "µãÍşÍû¡¢";
-        if (gongxian > 0) msg += chinese_number(gongxian) + "µãÃÅÅÉ¹¦¼¨¡¢";
-        if (gold > 0) msg += chinese_number(gold) + "Á½»Æ½ğ¡¢";
+        if (exp > 0) msg += chinese_number(exp) + "é»ç¶“é©—ã€";
+        if (pot > 0) msg += chinese_number(pot) + "é»æ½›èƒ½ã€";
+        if (mar > 0) msg += chinese_number(mar) + "é»å¯¦æˆ°é«”æœƒã€";
+        if (shen > 0) msg += chinese_number(shen) + "é»æ­£ç¥ã€";
+        if (shen < 0) msg += chinese_number(-shen) + "é»è² ç¥ã€";
+        if (score > 0) msg += chinese_number(score) + "é»æ±Ÿæ¹–é–±æ­·ã€";
+        if (weiwang > 0) msg += chinese_number(weiwang) + "é»å¨æœ›ã€";
+        if (gongxian > 0) msg += chinese_number(gongxian) + "é»é–€æ´¾åŠŸç¸¾ã€";
+        if (gold > 0) msg += chinese_number(gold) + "å…©é»ƒé‡‘ã€";
 
         if( ob )
 	{
-	        msg += ob->name() + "»ñµÃ¾­Ñé" + chinese_number(warcraft_exp) + "µã¡¢";
+	        msg += ob->name() + "ç²å¾—ç¶“é©—" + chinese_number(warcraft_exp) + "é»ã€";
         }
 
         if( query("yuanshen", who) )
         {
-	        msg += "ÔªÉñ»ñµÃ¾­Ñé" + chinese_number(yuanshen_exp) + "µã¡¢";
+	        msg += "å…ƒç¥ç²å¾—ç¶“é©—" + chinese_number(yuanshen_exp) + "é»ã€";
         }
 
-        msg += "ÄÜÁ¦µÃµ½ÁËÌáÉı¡£\n" NOR;
+        msg += "èƒ½åŠ›å¾—åˆ°äº†æå‡ã€‚\n" NOR;
         tell_object(who, sort_msg(msg));
 
         // bonus
@@ -1072,28 +1072,28 @@ varargs public void war_bonus(object who, mapping b)
         addn("balance", gold*10000, who);
 }
 
-// BOSSÈÎÎñµÄ½±Àø
+// BOSSä»»å‹™çš„çå‹µ
 varargs public void boss_bonus(object who, mapping b, int flag)
 {
-        int exp;                // ½±ÀøµÄ¾­Ñé
-        int pot;                // ½±ÀøµÄÇ±ÄÜ
-        int mar;                // ½±ÀøµÄÊµÕ½Ìå»á
-        int shen;               // ½±ÀøµÄÉñ
-        int score;              // ½±ÀøµÄ½­ºşÔÄÀú
-        int weiwang;            // ½±ÀøµÄ½­ºşÍşÍû
-        int gongxian;           // ½±ÀøµÄÃÅÅÉ¹±Ï×
+        int exp;                // çå‹µçš„ç¶“é©—
+        int pot;                // çå‹µçš„æ½›èƒ½
+        int mar;                // çå‹µçš„å¯¦æˆ°é«”æœƒ
+        int shen;               // çå‹µçš„ç¥
+        int score;              // çå‹µçš„æ±Ÿæ¹–é–±æ­·
+        int weiwang;            // çå‹µçš„æ±Ÿæ¹–å¨æœ›
+        int gongxian;           // çå‹µçš„é–€æ´¾è²¢ç»
         int gold;
-        int pot_limit;          // Ç±ÄÜµÄ½çÏŞ
-        int mar_limit;          // ÊµÕ½Ìå»áµÄ½çÏŞ
-        int percent;            // ½±ÀøµÄÓĞĞ§°Ù·Ö±È
-        string msg;             // ½±ÀøµÄÃèÊöĞÅÏ¢
+        int pot_limit;          // æ½›èƒ½çš„ç•Œé™
+        int mar_limit;          // å¯¦æˆ°é«”æœƒçš„ç•Œé™
+        int percent;            // çå‹µçš„æœ‰æ•ˆç™¾åˆ†æ¯”
+        string msg;             // çå‹µçš„æè¿°ä¿¡æ¯
         int yuanshen_exp;
         int warcraft_exp;
         object ob;
         int rate;
         int quest_times = "/adm/daemons/actiond"->query_action("boss_reward");
 
-        // »ñµÃ½±ÀøµÄ°Ù·Ö±È
+        // ç²å¾—çå‹µçš„ç™¾åˆ†æ¯”
         percent = b["percent"];
         if (percent < 1 || percent > 100)
                 percent = 100;
@@ -1109,7 +1109,7 @@ varargs public void boss_bonus(object who, mapping b, int flag)
         gongxian = b["gongxian"] * percent / 100;
         gold = b["gold"] * percent / 100;
 
-        // Íæ¼Ò¾­ÑéÌ«¸ß£¬Ï÷Èõ½±Àø¡£
+        // ç©å®¶ç¶“é©—å¤ªé«˜ï¼Œå‰Šå¼±çå‹µã€‚
         /*
         if( query("combat_exp", who) >= 2160000000 )
         {
@@ -1169,7 +1169,7 @@ varargs public void boss_bonus(object who, mapping b, int flag)
         if( quest_times=query_temp("apply/add_mar", who) )
                 mar += mar*random(quest_times)/100;
         
-        // °ïÅÉÈÙÓşµã
+        // å¹«æ´¾æ¦®è­½é»
         if( who->query_bunch() && BUNCH_D->query_bunch_efficient(who->query_bunch(), "exp") )
                 exp *= 2;        
         if( who->query_bunch() && BUNCH_D->query_bunch_efficient(who->query_bunch(), "pot") )
@@ -1202,7 +1202,7 @@ varargs public void boss_bonus(object who, mapping b, int flag)
                         mar = 1;
         }
 
-        // Ä§»ÃÊŞ
+        // é­”å¹»ç¸
         if( exp > 100 && intp(rate = query("env/share_exp", who)) &&
             query("warcraft/file", who) && objectp(ob=find_object(query("warcraft/file", who))) )
         {
@@ -1220,33 +1220,33 @@ varargs public void boss_bonus(object who, mapping b, int flag)
                 exp -= yuanshen_exp;
         }
 
-        // Éú³ÉÌáÊ¾ĞÅÏ¢
+        // ç”Ÿæˆæç¤ºä¿¡æ¯
         if (stringp(msg = b["prompt"]))
-                msg = HIG + msg + HIG "£¬Äã»ñµÃÁË";
+                msg = HIG + msg + HIG "ï¼Œä½ ç²å¾—äº†";
         else
-                msg = HIG "Í¨¹ıÕâ´Î¶ÍÁ¶£¬Äã»ñµÃÁË";
+                msg = HIG "é€šéé€™æ¬¡é›ç…‰ï¼Œä½ ç²å¾—äº†";
 
-        if (exp > 0) msg += chinese_number(exp) + "µã¾­Ñé¡¢";
-        if (pot > 0) msg += chinese_number(pot) + "µãÇ±ÄÜ¡¢";
-        if (mar > 0) msg += chinese_number(mar) + "µãÊµÕ½Ìå»á¡¢";
-        if (shen > 0) msg += chinese_number(shen) + "µãÕıÉñ¡¢";
-        if (shen < 0) msg += chinese_number(-shen) + "µã¸ºÉñ¡¢";
-        if (score > 0) msg += chinese_number(score) + "µã½­ºşÔÄÀú¡¢";
-        if (weiwang > 0) msg += chinese_number(weiwang) + "µãÍşÍû¡¢";
-        if (gongxian > 0) msg += chinese_number(gongxian) + "µãÃÅÅÉ¹¦¼¨¡¢";
-        if (gold > 0) msg += chinese_number(gold) + "Á½»Æ½ğ¡¢";
+        if (exp > 0) msg += chinese_number(exp) + "é»ç¶“é©—ã€";
+        if (pot > 0) msg += chinese_number(pot) + "é»æ½›èƒ½ã€";
+        if (mar > 0) msg += chinese_number(mar) + "é»å¯¦æˆ°é«”æœƒã€";
+        if (shen > 0) msg += chinese_number(shen) + "é»æ­£ç¥ã€";
+        if (shen < 0) msg += chinese_number(-shen) + "é»è² ç¥ã€";
+        if (score > 0) msg += chinese_number(score) + "é»æ±Ÿæ¹–é–±æ­·ã€";
+        if (weiwang > 0) msg += chinese_number(weiwang) + "é»å¨æœ›ã€";
+        if (gongxian > 0) msg += chinese_number(gongxian) + "é»é–€æ´¾åŠŸç¸¾ã€";
+        if (gold > 0) msg += chinese_number(gold) + "å…©é»ƒé‡‘ã€";
 
         if( ob )
 	{
-	        msg += ob->name() + "»ñµÃ¾­Ñé" + chinese_number(warcraft_exp) + "µã¡¢";
+	        msg += ob->name() + "ç²å¾—ç¶“é©—" + chinese_number(warcraft_exp) + "é»ã€";
         }
 
         if( query("yuanshen", who) )
         {
-	        msg += "ÔªÉñ»ñµÃ¾­Ñé" + chinese_number(yuanshen_exp) + "µã¡¢";
+	        msg += "å…ƒç¥ç²å¾—ç¶“é©—" + chinese_number(yuanshen_exp) + "é»ã€";
         }
 
-        msg += "ÄÜÁ¦µÃµ½ÁËÌáÉı¡£\n" NOR;
+        msg += "èƒ½åŠ›å¾—åˆ°äº†æå‡ã€‚\n" NOR;
         tell_object(who, sort_msg(msg));
 
         // bonus
@@ -1260,28 +1260,28 @@ varargs public void boss_bonus(object who, mapping b, int flag)
         addn("balance", gold*10000, who);
 }
 
-// ¸±±¾ÈÎÎñµÄ½±Àø
+// å‰¯æœ¬ä»»å‹™çš„çå‹µ
 varargs public void fuben_bonus(object who, mapping b, int flag)
 {
-        int exp;                // ½±ÀøµÄ¾­Ñé
-        int pot;                // ½±ÀøµÄÇ±ÄÜ
-        int mar;                // ½±ÀøµÄÊµÕ½Ìå»á
-        int shen;               // ½±ÀøµÄÉñ
-        int score;              // ½±ÀøµÄ½­ºşÔÄÀú
-        int weiwang;            // ½±ÀøµÄ½­ºşÍşÍû
-        int gongxian;           // ½±ÀøµÄÃÅÅÉ¹±Ï×
+        int exp;                // çå‹µçš„ç¶“é©—
+        int pot;                // çå‹µçš„æ½›èƒ½
+        int mar;                // çå‹µçš„å¯¦æˆ°é«”æœƒ
+        int shen;               // çå‹µçš„ç¥
+        int score;              // çå‹µçš„æ±Ÿæ¹–é–±æ­·
+        int weiwang;            // çå‹µçš„æ±Ÿæ¹–å¨æœ›
+        int gongxian;           // çå‹µçš„é–€æ´¾è²¢ç»
         int gold;
-        int pot_limit;          // Ç±ÄÜµÄ½çÏŞ
-        int mar_limit;          // ÊµÕ½Ìå»áµÄ½çÏŞ
-        int percent;            // ½±ÀøµÄÓĞĞ§°Ù·Ö±È
-        string msg;             // ½±ÀøµÄÃèÊöĞÅÏ¢
+        int pot_limit;          // æ½›èƒ½çš„ç•Œé™
+        int mar_limit;          // å¯¦æˆ°é«”æœƒçš„ç•Œé™
+        int percent;            // çå‹µçš„æœ‰æ•ˆç™¾åˆ†æ¯”
+        string msg;             // çå‹µçš„æè¿°ä¿¡æ¯
         int yuanshen_exp;
         int warcraft_exp;
         object ob;
         int rate;
         int quest_times = "/adm/daemons/actiond"->query_action("fuben_reward");
 
-        // »ñµÃ½±ÀøµÄ°Ù·Ö±È
+        // ç²å¾—çå‹µçš„ç™¾åˆ†æ¯”
         percent = b["percent"];
         if (percent < 1 || percent > 100)
                 percent = 100;
@@ -1297,7 +1297,7 @@ varargs public void fuben_bonus(object who, mapping b, int flag)
         gongxian = b["gongxian"] * percent / 100;
         gold = b["gold"] * percent / 100;
 
-        // Íæ¼Ò¾­ÑéÌ«¸ß£¬Ï÷Èõ½±Àø¡£
+        // ç©å®¶ç¶“é©—å¤ªé«˜ï¼Œå‰Šå¼±çå‹µã€‚
         /*
         if( query("combat_exp", who) >= 2160000000 )
         {
@@ -1357,7 +1357,7 @@ varargs public void fuben_bonus(object who, mapping b, int flag)
         if( quest_times=query_temp("apply/add_mar", who) )
                 mar += mar*random(quest_times)/100;
 
-        // °ïÅÉÈÙÓşµã
+        // å¹«æ´¾æ¦®è­½é»
         if( who->query_bunch() && BUNCH_D->query_bunch_efficient(who->query_bunch(), "exp") )
                 exp *= 2;        
         if( who->query_bunch() && BUNCH_D->query_bunch_efficient(who->query_bunch(), "pot") )
@@ -1390,7 +1390,7 @@ varargs public void fuben_bonus(object who, mapping b, int flag)
                         mar = 1;
         }
 
-        // Ä§»ÃÊŞ
+        // é­”å¹»ç¸
         if( exp > 100 && intp(rate = query("env/share_exp", who)) &&
             query("warcraft/file", who) && objectp(ob=find_object(query("warcraft/file", who))) )
         {
@@ -1408,33 +1408,33 @@ varargs public void fuben_bonus(object who, mapping b, int flag)
                 exp -= yuanshen_exp;
         }
 
-        // Éú³ÉÌáÊ¾ĞÅÏ¢
+        // ç”Ÿæˆæç¤ºä¿¡æ¯
         if (stringp(msg = b["prompt"]))
-                msg = HIG + msg + HIG "£¬Äã»ñµÃÁË";
+                msg = HIG + msg + HIG "ï¼Œä½ ç²å¾—äº†";
         else
-                msg = HIG "Í¨¹ıÕâ´Î¶ÍÁ¶£¬Äã»ñµÃÁË";
+                msg = HIG "é€šéé€™æ¬¡é›ç…‰ï¼Œä½ ç²å¾—äº†";
 
-        if (exp > 0) msg += chinese_number(exp) + "µã¾­Ñé¡¢";
-        if (pot > 0) msg += chinese_number(pot) + "µãÇ±ÄÜ¡¢";
-        if (mar > 0) msg += chinese_number(mar) + "µãÊµÕ½Ìå»á¡¢";
-        if (shen > 0) msg += chinese_number(shen) + "µãÕıÉñ¡¢";
-        if (shen < 0) msg += chinese_number(-shen) + "µã¸ºÉñ¡¢";
-        if (score > 0) msg += chinese_number(score) + "µã½­ºşÔÄÀú¡¢";
-        if (weiwang > 0) msg += chinese_number(weiwang) + "µãÍşÍû¡¢";
-        if (gongxian > 0) msg += chinese_number(gongxian) + "µãÃÅÅÉ¹¦¼¨¡¢";
-        if (gold > 0) msg += chinese_number(gold) + "Á½»Æ½ğ¡¢";
+        if (exp > 0) msg += chinese_number(exp) + "é»ç¶“é©—ã€";
+        if (pot > 0) msg += chinese_number(pot) + "é»æ½›èƒ½ã€";
+        if (mar > 0) msg += chinese_number(mar) + "é»å¯¦æˆ°é«”æœƒã€";
+        if (shen > 0) msg += chinese_number(shen) + "é»æ­£ç¥ã€";
+        if (shen < 0) msg += chinese_number(-shen) + "é»è² ç¥ã€";
+        if (score > 0) msg += chinese_number(score) + "é»æ±Ÿæ¹–é–±æ­·ã€";
+        if (weiwang > 0) msg += chinese_number(weiwang) + "é»å¨æœ›ã€";
+        if (gongxian > 0) msg += chinese_number(gongxian) + "é»é–€æ´¾åŠŸç¸¾ã€";
+        if (gold > 0) msg += chinese_number(gold) + "å…©é»ƒé‡‘ã€";
 
         if( ob )
 	{
-	        msg += ob->name() + "»ñµÃ¾­Ñé" + chinese_number(warcraft_exp) + "µã¡¢";
+	        msg += ob->name() + "ç²å¾—ç¶“é©—" + chinese_number(warcraft_exp) + "é»ã€";
         }
 
         if( query("yuanshen", who) )
         {
-	        msg += "ÔªÉñ»ñµÃ¾­Ñé" + chinese_number(yuanshen_exp) + "µã¡¢";
+	        msg += "å…ƒç¥ç²å¾—ç¶“é©—" + chinese_number(yuanshen_exp) + "é»ã€";
         }
 
-        msg += "ÄÜÁ¦µÃµ½ÁËÌáÉı¡£\n" NOR;
+        msg += "èƒ½åŠ›å¾—åˆ°äº†æå‡ã€‚\n" NOR;
         tell_object(who, sort_msg(msg));
 
         // bonus
@@ -1450,25 +1450,25 @@ varargs public void fuben_bonus(object who, mapping b, int flag)
 
 varargs public void battle_bonus(object who, mapping b)
 {
-        int exp;                // ½±ÀøµÄ¾­Ñé
-        int pot;                // ½±ÀøµÄÇ±ÄÜ
-        int mar;                // ½±ÀøµÄÊµÕ½Ìå»á
-        int shen;               // ½±ÀøµÄÉñ
-        int score;              // ½±ÀøµÄ½­ºşÔÄÀú
-        int weiwang;            // ½±ÀøµÄ½­ºşÍşÍû
-        int gongxian;           // ½±ÀøµÄÃÅÅÉ¹±Ï×
+        int exp;                // çå‹µçš„ç¶“é©—
+        int pot;                // çå‹µçš„æ½›èƒ½
+        int mar;                // çå‹µçš„å¯¦æˆ°é«”æœƒ
+        int shen;               // çå‹µçš„ç¥
+        int score;              // çå‹µçš„æ±Ÿæ¹–é–±æ­·
+        int weiwang;            // çå‹µçš„æ±Ÿæ¹–å¨æœ›
+        int gongxian;           // çå‹µçš„é–€æ´¾è²¢ç»
         int gold;
-        int pot_limit;          // Ç±ÄÜµÄ½çÏŞ
-        int mar_limit;          // ÊµÕ½Ìå»áµÄ½çÏŞ
-        int percent;            // ½±ÀøµÄÓĞĞ§°Ù·Ö±È
-        string msg;             // ½±ÀøµÄÃèÊöĞÅÏ¢
+        int pot_limit;          // æ½›èƒ½çš„ç•Œé™
+        int mar_limit;          // å¯¦æˆ°é«”æœƒçš„ç•Œé™
+        int percent;            // çå‹µçš„æœ‰æ•ˆç™¾åˆ†æ¯”
+        string msg;             // çå‹µçš„æè¿°ä¿¡æ¯
         int yuanshen_exp;
         int warcraft_exp;
         object ob;
         int rate;
         int quest_times = ACTION_D->query_action("battle_reward");
 
-        // »ñµÃ½±ÀøµÄ°Ù·Ö±È
+        // ç²å¾—çå‹µçš„ç™¾åˆ†æ¯”
         percent = b["percent"];
         if (percent < 1 || percent > 100)
                 percent = 100;
@@ -1484,7 +1484,7 @@ varargs public void battle_bonus(object who, mapping b)
         gongxian = b["gongxian"] * percent / 100;
         gold = b["gold"] * percent / 100;
 
-        // Íæ¼Ò¾­ÑéÌ«¸ß£¬Ï÷Èõ½±Àø¡£
+        // ç©å®¶ç¶“é©—å¤ªé«˜ï¼Œå‰Šå¼±çå‹µã€‚
         /*
         if( query("combat_exp", who) >= 2160000000 )
         {
@@ -1544,7 +1544,7 @@ varargs public void battle_bonus(object who, mapping b)
         if( quest_times=query_temp("apply/add_mar", who) )
                 mar += mar*random(quest_times)/100;
 
-        // °ïÅÉÈÙÓşµã
+        // å¹«æ´¾æ¦®è­½é»
         if( who->query_bunch() && BUNCH_D->query_bunch_efficient(who->query_bunch(), "exp") )
                 exp *= 2;        
         if( who->query_bunch() && BUNCH_D->query_bunch_efficient(who->query_bunch(), "pot") )
@@ -1558,7 +1558,7 @@ varargs public void battle_bonus(object who, mapping b)
                 pot *= 2;
         if( who->query_family() && FAMILY_D->query_family_efficient(who->query_family(), "mar") )
                 mar *= 2;                
-        // Ä§»ÃÊŞ
+        // é­”å¹»ç¸
         if( exp > 100 && intp(rate = query("env/share_exp", who)) &&
             query("warcraft/file", who) && objectp(ob=find_object(query("warcraft/file", who))) )
         {
@@ -1576,33 +1576,33 @@ varargs public void battle_bonus(object who, mapping b)
                 exp -= yuanshen_exp;
         }
 
-        // Éú³ÉÌáÊ¾ĞÅÏ¢
+        // ç”Ÿæˆæç¤ºä¿¡æ¯
         if (stringp(msg = b["prompt"]))
-                msg = HIG + msg + HIG "£¬Äã»ñµÃÁË";
+                msg = HIG + msg + HIG "ï¼Œä½ ç²å¾—äº†";
         else
-                msg = HIG "Í¨¹ıÕâ´Î¶ÍÁ¶£¬Äã»ñµÃÁË";
+                msg = HIG "é€šéé€™æ¬¡é›ç…‰ï¼Œä½ ç²å¾—äº†";
 
-        if (exp > 0) msg += chinese_number(exp) + "µã¾­Ñé¡¢";
-        if (pot > 0) msg += chinese_number(pot) + "µãÇ±ÄÜ¡¢";
-        if (mar > 0) msg += chinese_number(mar) + "µãÊµÕ½Ìå»á¡¢";
-        if (shen > 0) msg += chinese_number(shen) + "µãÕıÉñ¡¢";
-        if (shen < 0) msg += chinese_number(-shen) + "µã¸ºÉñ¡¢";
-        if (score > 0) msg += chinese_number(score) + "µã½­ºşÔÄÀú¡¢";
-        if (weiwang > 0) msg += chinese_number(weiwang) + "µãÍşÍû¡¢";
-        if (gongxian > 0) msg += chinese_number(gongxian) + "µãÃÅÅÉ¹¦¼¨¡¢";
-        if (gold > 0) msg += chinese_number(gold) + "Á½»Æ½ğ¡¢";
+        if (exp > 0) msg += chinese_number(exp) + "é»ç¶“é©—ã€";
+        if (pot > 0) msg += chinese_number(pot) + "é»æ½›èƒ½ã€";
+        if (mar > 0) msg += chinese_number(mar) + "é»å¯¦æˆ°é«”æœƒã€";
+        if (shen > 0) msg += chinese_number(shen) + "é»æ­£ç¥ã€";
+        if (shen < 0) msg += chinese_number(-shen) + "é»è² ç¥ã€";
+        if (score > 0) msg += chinese_number(score) + "é»æ±Ÿæ¹–é–±æ­·ã€";
+        if (weiwang > 0) msg += chinese_number(weiwang) + "é»å¨æœ›ã€";
+        if (gongxian > 0) msg += chinese_number(gongxian) + "é»é–€æ´¾åŠŸç¸¾ã€";
+        if (gold > 0) msg += chinese_number(gold) + "å…©é»ƒé‡‘ã€";
 
         if( ob )
 	{
-	        msg += ob->name() + "»ñµÃ¾­Ñé" + chinese_number(warcraft_exp) + "µã¡¢";
+	        msg += ob->name() + "ç²å¾—ç¶“é©—" + chinese_number(warcraft_exp) + "é»ã€";
         }
 
         if( query("yuanshen", who) )
         {
-	        msg += "ÔªÉñ»ñµÃ¾­Ñé" + chinese_number(yuanshen_exp) + "µã¡¢";
+	        msg += "å…ƒç¥ç²å¾—ç¶“é©—" + chinese_number(yuanshen_exp) + "é»ã€";
         }
 
-        msg += "ÄÜÁ¦µÃµ½ÁËÌáÉı¡£\n" NOR;
+        msg += "èƒ½åŠ›å¾—åˆ°äº†æå‡ã€‚\n" NOR;
         tell_object(who, sort_msg(msg));
 
         // bonus
@@ -1616,21 +1616,21 @@ varargs public void battle_bonus(object who, mapping b)
         addn("balance", gold*10000, who);
 }
 
-// »î¶¯µÄ½±Àø
+// æ´»å‹•çš„çå‹µ
 varargs public void event_bonus(object who, mapping b, int flag)
 {
-        int exp;                // ½±ÀøµÄ¾­Ñé
-        int pot;                // ½±ÀøµÄÇ±ÄÜ
-        int mar;                // ½±ÀøµÄÊµÕ½Ìå»á
-        int shen;               // ½±ÀøµÄÉñ
-        int score;              // ½±ÀøµÄ½­ºşÔÄÀú
-        int weiwang;            // ½±ÀøµÄ½­ºşÍşÍû
-        int gongxian;           // ½±ÀøµÄÃÅÅÉ¹±Ï×
+        int exp;                // çå‹µçš„ç¶“é©—
+        int pot;                // çå‹µçš„æ½›èƒ½
+        int mar;                // çå‹µçš„å¯¦æˆ°é«”æœƒ
+        int shen;               // çå‹µçš„ç¥
+        int score;              // çå‹µçš„æ±Ÿæ¹–é–±æ­·
+        int weiwang;            // çå‹µçš„æ±Ÿæ¹–å¨æœ›
+        int gongxian;           // çå‹µçš„é–€æ´¾è²¢ç»
         int gold;
-        int pot_limit;          // Ç±ÄÜµÄ½çÏŞ
-        int mar_limit;          // ÊµÕ½Ìå»áµÄ½çÏŞ
-        int percent;            // ½±ÀøµÄÓĞĞ§°Ù·Ö±È
-        string msg;             // ½±ÀøµÄÃèÊöĞÅÏ¢
+        int pot_limit;          // æ½›èƒ½çš„ç•Œé™
+        int mar_limit;          // å¯¦æˆ°é«”æœƒçš„ç•Œé™
+        int percent;            // çå‹µçš„æœ‰æ•ˆç™¾åˆ†æ¯”
+        string msg;             // çå‹µçš„æè¿°ä¿¡æ¯
         int yuanshen_exp;
         int warcraft_exp;
         object ob;
@@ -1638,7 +1638,7 @@ varargs public void event_bonus(object who, mapping b, int flag)
         int quest_times;
         int event;
 
-        // »ñµÃ½±ÀøµÄ°Ù·Ö±È
+        // ç²å¾—çå‹µçš„ç™¾åˆ†æ¯”
         percent = b["percent"];
         if (percent < 1 || percent > 100)
                 percent = 100;
@@ -1654,7 +1654,7 @@ varargs public void event_bonus(object who, mapping b, int flag)
         gongxian = b["gongxian"] * percent / 100;
         gold = b["gold"] * percent / 100;
 
-        // Íæ¼Ò¾­ÑéÌ«¸ß£¬Ï÷Èõ½±Àø¡£
+        // ç©å®¶ç¶“é©—å¤ªé«˜ï¼Œå‰Šå¼±çå‹µã€‚
         /*
         if( query("combat_exp", who) >= 2160000000 )
         {
@@ -1714,7 +1714,7 @@ varargs public void event_bonus(object who, mapping b, int flag)
         if( quest_times=query_temp("apply/add_mar", who) )
                 mar += mar*random(quest_times)/100;
                                                         
-        // °ïÅÉÈÙÓşµã
+        // å¹«æ´¾æ¦®è­½é»
         if( who->query_bunch() && BUNCH_D->query_bunch_efficient(who->query_bunch(), "exp") )
                 exp *= 2;        
         if( who->query_bunch() && BUNCH_D->query_bunch_efficient(who->query_bunch(), "pot") )
@@ -1747,7 +1747,7 @@ varargs public void event_bonus(object who, mapping b, int flag)
                         mar = 1;
         }
 
-        // Ä§»ÃÊŞ
+        // é­”å¹»ç¸
         if( exp > 100 && intp(rate = query("env/share_exp", who)) &&
             query("warcraft/file", who) && objectp(ob=find_object(query("warcraft/file", who))) )
         {
@@ -1758,7 +1758,7 @@ varargs public void event_bonus(object who, mapping b, int flag)
                 exp -= warcraft_exp;
         }
 
-        // ÔªÉñ
+        // å…ƒç¥
         if( exp > 100 && query("yuanshen", who) )
         {
                 yuanshen_exp = exp / 4 + 1;
@@ -1766,33 +1766,33 @@ varargs public void event_bonus(object who, mapping b, int flag)
                 exp -= yuanshen_exp;
         }
 
-        // Éú³ÉÌáÊ¾ĞÅÏ¢
+        // ç”Ÿæˆæç¤ºä¿¡æ¯
         if (stringp(msg = b["prompt"]))
-                msg = HIG + msg + HIG "£¬Äã»ñµÃÁË";
+                msg = HIG + msg + HIG "ï¼Œä½ ç²å¾—äº†";
         else
-                msg = HIG "Í¨¹ıÕâ´Î¶ÍÁ¶£¬Äã»ñµÃÁË";
+                msg = HIG "é€šéé€™æ¬¡é›ç…‰ï¼Œä½ ç²å¾—äº†";
 
-        if (exp > 0) msg += chinese_number(exp) + "µã¾­Ñé¡¢";
-        if (pot > 0) msg += chinese_number(pot) + "µãÇ±ÄÜ¡¢";
-        if (mar > 0) msg += chinese_number(mar) + "µãÊµÕ½Ìå»á¡¢";
-        if (shen > 0) msg += chinese_number(shen) + "µãÕıÉñ¡¢";
-        if (shen < 0) msg += chinese_number(-shen) + "µã¸ºÉñ¡¢";
-        if (score > 0) msg += chinese_number(score) + "µã½­ºşÔÄÀú¡¢";
-        if (weiwang > 0) msg += chinese_number(weiwang) + "µãÍşÍû¡¢";
-        if (gongxian > 0) msg += chinese_number(gongxian) + "µãÃÅÅÉ¹¦¼¨¡¢";
-        if (gold > 0) msg += chinese_number(gold) + "Á½»Æ½ğ¡¢";
+        if (exp > 0) msg += chinese_number(exp) + "é»ç¶“é©—ã€";
+        if (pot > 0) msg += chinese_number(pot) + "é»æ½›èƒ½ã€";
+        if (mar > 0) msg += chinese_number(mar) + "é»å¯¦æˆ°é«”æœƒã€";
+        if (shen > 0) msg += chinese_number(shen) + "é»æ­£ç¥ã€";
+        if (shen < 0) msg += chinese_number(-shen) + "é»è² ç¥ã€";
+        if (score > 0) msg += chinese_number(score) + "é»æ±Ÿæ¹–é–±æ­·ã€";
+        if (weiwang > 0) msg += chinese_number(weiwang) + "é»å¨æœ›ã€";
+        if (gongxian > 0) msg += chinese_number(gongxian) + "é»é–€æ´¾åŠŸç¸¾ã€";
+        if (gold > 0) msg += chinese_number(gold) + "å…©é»ƒé‡‘ã€";
 
         if( ob )
 	{
-	        msg += ob->name() + "»ñµÃ¾­Ñé" + chinese_number(warcraft_exp) + "µã¡¢";
+	        msg += ob->name() + "ç²å¾—ç¶“é©—" + chinese_number(warcraft_exp) + "é»ã€";
         }
 
         if( query("yuanshen", who) )
 	{
-	        msg += "ÔªÉñ»ñµÃ¾­Ñé" + chinese_number(yuanshen_exp) + "µã¡¢";
+	        msg += "å…ƒç¥ç²å¾—ç¶“é©—" + chinese_number(yuanshen_exp) + "é»ã€";
         }
 
-        msg += "ÄÜÁ¦µÃµ½ÁËÌáÉı¡£\n" NOR;
+        msg += "èƒ½åŠ›å¾—åˆ°äº†æå‡ã€‚\n" NOR;
         tell_object(who, sort_msg(msg));
 
         // bonus

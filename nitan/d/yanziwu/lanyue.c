@@ -8,18 +8,18 @@ int end_whisper(object me);
 
 void create()
 {
-        set("short", "À¿ÔÂ¾Ó");
+        set("short", "æ”¬æœˆå±…");
         set("long", @LONG
-ÕâÊÇÄ½ÈÝ¹«×ÓµÄÎÔÊÒ£¬·¿ÖÐ³ÂÉèÆÕÍ¨£¬ÊÕÊ°µÃÆÄÎªÕû½à£¬ÎÝ½ÇÒ»
-¼ÜÃ¯À¼Åè¾°(penjing)³¤µÃºÜÊÇÍúÊ¢¡£ÍíÉÏÔÂ¹â´Ó´°»§Éä½øÀ´£¬ÂúÊÒÒø
-¹â£¬ÊÇÑà×ÓÎëµÄÒ»´óÃÀ¾°¡£
+é€™æ˜¯æ…•å®¹å…¬å­çš„è‡¥å®¤ï¼Œæˆ¿ä¸­é™³è¨­æ™®é€šï¼Œæ”¶æ‹¾å¾—é —ç‚ºæ•´æ½”ï¼Œå±‹è§’ä¸€
+æž¶èŒ‚è˜­ç›†æ™¯(penjing)é•·å¾—å¾ˆæ˜¯æ—ºç››ã€‚æ™šä¸Šæœˆå…‰å¾žçª—æˆ¶å°„é€²ä¾†ï¼Œæ»¿å®¤éŠ€
+å…‰ï¼Œæ˜¯ç‡•å­å¡¢çš„ä¸€å¤§ç¾Žæ™¯ã€‚
 LONG );
         set("exits", ([
             "west": __DIR__"shuwu",
         ]));
 
         set("item_desc", ([
-            "penjing" : HIW "ÕâÅè¾°ËÆºõºÜÆ½³££¬¶ÀÓÐÆä±ßÑØÌØ±ð¹â»¬¡£\n" NOR,
+            "penjing" : HIW "é€™ç›†æ™¯ä¼¼ä¹Žå¾ˆå¹³å¸¸ï¼Œç¨æœ‰å…¶é‚Šæ²¿ç‰¹åˆ¥å…‰æ»‘ã€‚\n" NOR,
         ]));
 
         setup();
@@ -37,13 +37,13 @@ int do_knock(string arg)
         me=this_player();
 
         if (!arg || (arg!="penjing" ) )
-                 return  notify_fail("ÄãÒªÇÃÊ²Ã´£¿\n");
+                 return  notify_fail("ä½ è¦æ•²ä»€éº¼ï¼Ÿ\n");
 
         if( query_temp("marks/pen", me) )
-                 return notify_fail("±ðÇÃÁË£¡\n");
+                 return notify_fail("åˆ¥æ•²äº†ï¼\n");
 
         set_temp("marks/pen", 1, me);
-        write(HIC "ÄãÔÚÅè¾°ÉÏÇÃÁË¼¸ÏÂ...\n" NOR, me);
+        write(HIC "ä½ åœ¨ç›†æ™¯ä¸Šæ•²äº†å¹¾ä¸‹...\n" NOR, me);
         remove_call_out("check_pass");
         call_out("check_pass", 4, me);
 
@@ -52,8 +52,8 @@ int do_knock(string arg)
 
 int check_pass(object me)
 {
-       write(HIC "²»Ò»»á¶ù£¬Ö»Ìý²»Ô¶´¦ÒþÔ¼´«À´Ò»ÕóËµ»°Éù£º¡°È÷¹úÃÎÓï¡­¡±\n" NOR);
-       write(HIY "ÄãÏëÁËÏë£¬¾õµÃÏñÊÇÒ»¾ä°µÓï£¬ÄãºÜÏë»Ø´ð(whisper)µ«ÓÖ²»ÖªµÀËµÐ©Ê²Ã´£¡\n" NOR);
+       write(HIC "ä¸ä¸€æœƒå…’ï¼Œåªè½ä¸é è™•éš±ç´„å‚³ä¾†ä¸€é™£èªªè©±è²ï¼šâ€œæ´’åœ‹å¤¢èªžâ€¦â€\n" NOR);
+       write(HIY "ä½ æƒ³äº†æƒ³ï¼Œè¦ºå¾—åƒæ˜¯ä¸€å¥æš—èªžï¼Œä½ å¾ˆæƒ³å›žç­”(whisper)ä½†åˆä¸çŸ¥é“èªªäº›ä»€éº¼ï¼\n" NOR);
        set_temp("can_whisper", 1, me);
        remove_call_out("end_whisper");
        call_out("end_whisper", 9, me);
@@ -63,7 +63,7 @@ int check_pass(object me)
 int end_whisper(object me)
 {
       if (! me) return 0;
-      write(HIM "¹ýÁËÁ¼¾Ã£¬Ö»Ìý¼ûÒ»Õó²»ÄÍ·³µÄÉùÒô´«À´£º¡°ËãÁË£¬Ã»ÊÂ±ðÔÚÕâÀ´µ·ÂÒ¡£¡±\n" NOR);
+      write(HIM "éŽäº†è‰¯ä¹…ï¼Œåªè½è¦‹ä¸€é™£ä¸è€ç…©çš„è²éŸ³å‚³ä¾†ï¼šâ€œç®—äº†ï¼Œæ²’äº‹åˆ¥åœ¨é€™ä¾†æ—äº‚ã€‚â€\n" NOR);
       delete_temp("marks/pen", me);
       delete_temp("can_whisper", me);
       return 1;
@@ -74,17 +74,17 @@ int do_say(string arg)
      object me = this_player();
      
      if( !arg || !query_temp("can_whisper", me) )
-              return notify_fail("Äã×ÔÑÔ×ÔÓï²»ÖªµÀÔÚËµÊ²Ã´£¡\n");
+              return notify_fail("ä½ è‡ªè¨€è‡ªèªžä¸çŸ¥é“åœ¨èªªä»€éº¼ï¼\n");
 
-     if(arg != "¹â¸´´óÑà")
+     if(arg != "å…‰å¾©å¤§ç‡•")
      {
-              write(HIG "ÄãÇÄÇÄµØËµµÀ£º¡°" + arg + "¡±£¬È´Ã»Ê²Ã´·´Ó¦¡£\n");
+              write(HIG "ä½ æ‚„æ‚„åœ°èªªé“ï¼šâ€œ" + arg + "â€ï¼Œå»æ²’ä»€éº¼åæ‡‰ã€‚\n");
               return 1;
      }
  
-     write(HIG "ÄãÇÄÇÄµØËµµÀ£º¡°¹â¸´´óÑà¡±¡­¡­\n" NOR);
-     write(HIC "ÀïÃæµÄÈËÐ¦ÁËÐ¦ËµµÀ£º¡°¼ÈÈ»ÊÇÖ÷ÈËµÄ·Ô¸À£¬ÄÇÄã¾Í½øÀ´°É£¡¡±\n");
-     write(HIY "ºöÈ»£¬ºäºä¼¸Éù¹ýºó£¬»¨ÅèºóÂ¶³öÒ»ÌõÂ·À´£¬Äã¸ÏÃ¦Ë³×Å×ßÁËÏÂÈ¥¡­¡­\n");
+     write(HIG "ä½ æ‚„æ‚„åœ°èªªé“ï¼šâ€œå…‰å¾©å¤§ç‡•â€â€¦â€¦\n" NOR);
+     write(HIC "è£¡é¢çš„äººç¬‘äº†ç¬‘èªªé“ï¼šâ€œæ—¢ç„¶æ˜¯ä¸»äººçš„å©å’ï¼Œé‚£ä½ å°±é€²ä¾†å§ï¼â€\n");
+     write(HIY "å¿½ç„¶ï¼Œè½Ÿè½Ÿå¹¾è²éŽå¾Œï¼ŒèŠ±ç›†å¾Œéœ²å‡ºä¸€æ¢è·¯ä¾†ï¼Œä½ è¶•å¿™é †è‘—èµ°äº†ä¸‹åŽ»â€¦â€¦\n");
      me->move(__DIR__"huanshi");
      delete_temp("can_whisper", me);
      return 1;

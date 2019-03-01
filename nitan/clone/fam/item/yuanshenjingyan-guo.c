@@ -6,14 +6,14 @@ int do_use(string arg);
 
 void create()
 {
-        set_name(HIR "ÔªÉñ¾­Ñé¹û" NOR, ({"yuanshen guo", "yuanshen", "guo"}));
+        set_name(HIR "å…ƒç¥žç¶“é©—æžœ" NOR, ({"yuanshen guo", "yuanshen", "guo"}));
         set_weight(1);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIR "\nÕâÊÇÒ»¿Å»ðºìÉ«µÄÏÉ¹û£¬¾ÝËµ·þÓÃºóÄÜÔöÇ¿ÔªÉñ¾­Ñé¡£\n"
-                                      "*·þÓÃ(eatysg yuanshen guo)ºó£¬ÔªÉñ¿É»ñµÃ20Íò¾­Ñé¡£\n" NOR);
-                set("unit", "¿Å");
+                set("long", HIR "\né€™æ˜¯ä¸€é¡†ç«ç´…è‰²çš„ä»™æžœï¼Œæ“šèªªæœç”¨å¾Œèƒ½å¢žå¼·å…ƒç¥žç¶“é©—ã€‚\n"
+                                      "*æœç”¨(eatysg yuanshen guo)å¾Œï¼Œå…ƒç¥žå¯ç²å¾—20è¬ç¶“é©—ã€‚\n" NOR);
+                set("unit", "é¡†");
                 set("value", 1);
         }
 }
@@ -37,14 +37,14 @@ int do_use(string arg)
         exp = 200000;
         
         if (environment(this_object()) != me)
-                return notify_fail("ÄãÉíÉÏÃ»ÓÐÕâ¸öÎïÆ·£¡\n");
+                return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™å€‹ç‰©å“ï¼\n");
 
         if (! me->query("thborn") ||
             ! me->query("yuanshen/status"))
-                return notify_fail("Äã»¹Ã»ÓÐ»ñµÃÔªÉñ£¡\n");
+                return notify_fail("ä½ é‚„æ²’æœ‰ç²å¾—å…ƒç¥žï¼\n");
         
         if (me->query("yuanshen/exp4") >= 1600000000)
-                return notify_fail("ÄãµÄÔªÉñ¾­Ñé¹ý¸ß£¬²»ÄÜÔÙÊ¹ÓÃ¾­Ñé¹ûÁË£¡\n");
+                return notify_fail("ä½ çš„å…ƒç¥žç¶“é©—éŽé«˜ï¼Œä¸èƒ½å†ä½¿ç”¨ç¶“é©—æžœäº†ï¼\n");
 
         if (me->query("yuanshen/exp") >= 2000000000)
         {
@@ -54,7 +54,7 @@ int do_use(string arg)
                         {
                                 if (me->query("yuanshen/exp4") >= 1600000000)
                                 {
-                                        // ²»×ö´¦Àí
+                                        // ä¸åšè™•ç†
                                 }
                                 else
                                 {
@@ -78,7 +78,7 @@ int do_use(string arg)
 
         me->save();
 
-        tell_object(me, HIG "Äã·þÏÂÔªÉñ¾­Ñé¹û£¬ÔªÉí¾­ÑéÔö¼Ó£º" + sprintf("%d", exp) + "µã¡£\n");
+        tell_object(me, HIG "ä½ æœä¸‹å…ƒç¥žç¶“é©—æžœï¼Œå…ƒèº«ç¶“é©—å¢žåŠ ï¼š" + sprintf("%d", exp) + "é»žã€‚\n");
         
         log_file("yuanshen-guo", me->query("id") + " at " + ctime(time()) + " use yuanshen guo.\n");
         

@@ -1,13 +1,13 @@
-// liumang.c Á÷Ã¥
+// liumang.c æµæ°“
 
 inherit NPC;
 
 void create()
 {
-        set_name("Á÷Ã¥", ({ "liu mang", "liu" }));
-        set("gender", "ÄĞĞÔ");
+        set_name("æµæ°“", ({ "liu mang", "liu" }));
+        set("gender", "ç”·æ€§");
         set("age", 19);
-        set("long","ËûÊÇÒ»¸ö³ÉÌìÓÎÊÖºÃÏĞµÄÁ÷Ã¥£¬³¤µÃµ¹ÊÇ°×°×ÅÖÅÖµÄ£¬Ò²ĞíÒÔÇ°ÓĞ¹ıÇ®¡£\n");
+        set("long","ä»–æ˜¯ä¸€å€‹æˆå¤©éŠæ‰‹å¥½é–’çš„æµæ°“ï¼Œé•·å¾—å€’æ˜¯ç™½ç™½èƒ–èƒ–çš„ï¼Œä¹Ÿè¨±ä»¥å‰æœ‰ééŒ¢ã€‚\n");
         set("combat_exp", 1000);
         set("shen_type", -1);
         set("attitude", "peaceful");

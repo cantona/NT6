@@ -6,13 +6,13 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "���̷�");
+        set("short", "涵碧峰");
         set("long", @LONG
-���̷�ʵ������һ��˶�������̫��ʯ�壬���������࣬��Ϊ�ر���
-����̦������ͨ����̣��ʶ����������̡����ݴ�˵�����ǻ�ʯ��������
-����Ʒ�����������������µ����Ʒ��ʨ�ӷ����й�֮���޲�����ԭַ��
-�����ݣ����ҩʦ���˷���ԭ�����ݣ���ҩʦ�ŷ�ټ����������֮������
-������ʹ���˲�����Ƨ������֮�С�
+涵碧峰實際上是一塊碩大無朋的太湖石峰，高四丈有余，因為特別適
+合青苔生長，通體碧綠，故而得名“涵碧”。據傳說，這是花石綱遺物中
+的上品，比起蘇州名聞天下的瑞雲峰和獅子峰來有過之而無不及，原址本
+在蘇州，因黃藥師夫人馮氏原籍蘇州，黃藥師才費偌大心力，將之移往桃
+花島，使夫人不致有僻處海外之感。
 LONG );
         set("exits", ([
                 "south" : __DIR__"songlin3",
@@ -38,11 +38,11 @@ LONG );
 int valid_leave(object me, string dir)
 {
 
-        if( (query("family/master_name", me) != "��Ӣ" )
-         && (query("family/master_name", me) != "��ҩʦ" )
+        if( (query("family/master_name", me) != "程英" )
+         && (query("family/master_name", me) != "黃藥師" )
          && (!query_temp("shagu_pass", me) )
         && present("sha gu", this_object()) )
-        return notify_fail("\nɵ��ɵЦ�˼������쿪˫��һ����˵����Ҫ��ȥ��������һ����ɣ������˶������ң������ˣ�\n");
+        return notify_fail("\n傻姑傻笑了幾聲，伸開雙手一攔，說到：要進去先陪我玩一會兒吧，這裡人都不理我，悶死了！\n");
 
         return ::valid_leave(me, dir);
 }

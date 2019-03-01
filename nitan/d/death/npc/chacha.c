@@ -7,23 +7,23 @@
 inherit NPC;
 
 string *death_msg = ({
-        HIW "�й���������۹ⶢ���㣬����Ҫ�������һ���Ƶġ�\n\n" NOR,
-        HIW "�йٶ���˵����ι�������ˣ�\n\n" NOR,
-        HIW "�й١��ߡ���һ�����������ͳ�һ�����ʲ�Ķ�����������\n\n" NOR,
-        HIW "�йٺ��ϲ��ӣ�˵�����ţ�������δ������ô�ܵ��������ˣ�\n\n" NOR,
-        HIW "�й�ɦ��ɦͷ��̾�������˰��ˣ��㻹�ǻ�����ɡ�\n\n"
-                "һ�������Ũ��ͻȻ���֣��ܿ�ذ�Χ���㡣\n\n" NOR,
+        HIW "判官用奇異的眼光盯著你，好像要看穿你的一切似的。\n\n" NOR,
+        HIW "判官對你說道：喂！該你了！\n\n" NOR,
+        HIW "判官「哼」的一聲，從袖中掏出一本像帳冊的東西翻看著。\n\n" NOR,
+        HIW "判官合上冊子，說道：嗯，你陽壽未盡，怎麼跑到這裡來了？\n\n" NOR,
+        HIW "判官搔了搔頭，嘆道：罷了罷了，你還是回陽間吧。\n\n"
+                "一股陰冷的濃霧突然出現，很快地包圍了你。\n\n" NOR,
 });
 
 void create()
 {
-        set_name(YEL "�й�" NOR, ({ "pan guan","guan" }) );
+        set_name(YEL "判官" NOR, ({ "pan guan","guan" }) );
         set("long", @LONG
-������˾��ִ�ƹܴ��ڹ�����ʩ����֮�٣��������ż�������������������
+地獄陰司中執掌管帶眾鬼，以施獎懲之官，手中拿著記載人壽命的生死簿。
 LONG);
-        set("gender","����");
+        set("gender","男性");
         set("str",1000);
-        set("title",HIW "���˾" NOR);                        
+        set("title",HIW "查察司" NOR);                        
         set("attitude", "peaceful");
         set("age", 1000);
         set("combat_exp", 100000000);
@@ -44,7 +44,7 @@ void init()
                 return;
         if(!ob->is_ghost() && !wizardp(ob)) 
         {
-                command("say ι��������������ʲ�᣿");
+                command("say 喂！陽人來陰間做什麼？");
                 kill_ob(ob);
                 ob->fight_ob(this_object());
                 return;
@@ -78,7 +78,7 @@ void death_stage(object ob, int stage)
                 if(sizeof(obs))
                 {
                         command("hmm");
-                        tell_object(ob,HIW"�й�˵��������������Ķ����ǲ��ܴ�������ģ�����Ҫ�������ϵĶ�������������\n"NOR);
+                        tell_object(ob,HIW"判官說道：“不過陰間的東西是不能帶到陽間的，你先要把你身上的東西放下來。”\n"NOR);
                         return;
                 }
                 else
@@ -100,6 +100,6 @@ void death_stage(object ob, int stage)
    else
       ob->move(REVIVE_ROOM);
         message("vision",
-                "���Ȼ����ǰ�����һ����Ӱ����������Ӱ�ֺ����Ѿ�������\n"
-                "�ܾ��ˣ�ֻ����һֱû������\n", environment(ob), ob);
+                "你忽然發現前面多了一個人影，不過那人影又好像已經在那裡\n"
+                "很久了，只是你一直沒發覺。\n", environment(ob), ob);
 }

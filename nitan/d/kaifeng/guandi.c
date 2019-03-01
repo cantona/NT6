@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�ص���");
+        set("short", "關帝廟");
         set("long", @LONG
-�ص���ǰһ���ϴ������¯����Ϊ����ү�������š�����������
-����Э����Ҫ��һ�¹ص�ү������ϣ����������е�ʤ���ˣ�Ҳ��Ҫ
-�����������㡣�Ͼ��ص��ֱ���Ϊ��ʥ��
+關帝廟前一個老大的鐵香爐，因為關老爺忠義守信。所以商人們
+訂了協議總要拜一下關帝爺。許多希望能在武舉中得勝的人，也都要
+到這廟來燒香。畢竟關帝又被稱為武聖。
 LONG );
         set("objects", ([
                   __DIR__"npc/obj/guanyu" : 1,

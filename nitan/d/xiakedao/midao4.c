@@ -1,19 +1,19 @@
-// midao4.c ÃÜµÀ
+// midao4.c å¯†é“
 
 inherit ROOM;
 
 int do_break(string arg);
 void create()
 {
-        set("short", "ÃÜµÀ");
+        set("short", "å¯†é“");
         set("long", @LONG
-ÕâÊÇÒ»ÌõºÜ³¤µÄÃØÃÜÍ¨µÀ£¬ËÄÖÜÊÇ¼áÓ²µÄÊ¯±Ú£¬ÄãÊ²Ã´Ò²¿´²»
-¼û£¬Ö»ÄÜÃşË÷Ç°½ø¡£Í»È»Äã×ßµ½ÁËÂ·µÄ¾¡Í·£¬ÕâÊÇ¸öËÀÂ·£¬Äã»¹ÊÇ
-»ØÈ¥°É¡£
+é€™æ˜¯ä¸€æ¢å¾ˆé•·çš„ç§˜å¯†é€šé“ï¼Œå››å‘¨æ˜¯å …ç¡¬çš„çŸ³å£ï¼Œä½ ä»€éº¼ä¹Ÿçœ‹ä¸
+è¦‹ï¼Œåªèƒ½æ‘¸ç´¢å‰é€²ã€‚çªç„¶ä½ èµ°åˆ°äº†è·¯çš„ç›¡é ­ï¼Œé€™æ˜¯å€‹æ­»è·¯ï¼Œä½ é‚„æ˜¯
+å›å»å§ã€‚
 LONG );
         set("item_desc",([
-            "shibi" : "°¦!Ê¯±ÚÓĞÊ²Ã´¿É¿´µÄ£¬²»¹ıÕâ²àµÄÊ¯±ÚºÍÆäËûµÄ²»Í¬È´ÊÇÕæµÄ¡£
-Ñ½£¬ËüÊÇÒ»¸öÊ¯ÃÅ(men)ÍÛ!\n",
+            "shibi" : "å”‰!çŸ³å£æœ‰ä»€éº¼å¯çœ‹çš„ï¼Œä¸éé€™å´çš„çŸ³å£å’Œå…¶ä»–çš„ä¸åŒå»æ˜¯çœŸçš„ã€‚
+å‘€ï¼Œå®ƒæ˜¯ä¸€å€‹çŸ³é–€(men)å“‡!\n",
         ]));
         set("exits", ([
                 "east" : __DIR__"midao3",
@@ -35,13 +35,13 @@ int do_break(string arg)
         n=query("neili", this_player());
         if( !arg || arg!="men")
         {
-            write("²»ÒªËæÒâ´òÆÆ±ğÈËµÄ¶«Î÷¡£\n");
+            write("ä¸è¦éš¨æ„æ‰“ç ´åˆ¥äººçš„æ±è¥¿ã€‚\n");
             return 1;
         }
-        message_vision("$NÔÚÊ¯ÃÅÇ°Õ¾¶¨£¬ÉîÎüÒ»¿ÚÆø£¬Á½ÕÆÍ¬Ê±ÅÄ³ö¡£\n", this_player());
+        message_vision("$Nåœ¨çŸ³é–€å‰ç«™å®šï¼Œæ·±å¸ä¸€å£æ°£ï¼Œå…©æŒåŒæ™‚æ‹å‡ºã€‚\n", this_player());
         if (n >200)
         {
-            message_vision("$Nµ¤ÌïÒ»ÔËÆø£¬ÃÍµÄÒ»ÅÄ£¬Ê¯ÃÅÂıÂıµÄ¿ªÁË¡£\n", this_player());
+            message_vision("$Nä¸¹ç”°ä¸€é‹æ°£ï¼ŒçŒ›çš„ä¸€æ‹ï¼ŒçŸ³é–€æ…¢æ…¢çš„é–‹äº†ã€‚\n", this_player());
             set("exits/west",__DIR__"midao5");
             set("neili", n-200, this_player());
             remove_call_out("close");
@@ -49,7 +49,7 @@ int do_break(string arg)
         }
         else
         {
-            message_vision("$Nµ¤ÌïÒ»ÔËÆø£¬ÃÍµÄÒ»ÅÄ£¬Ê¯ÃÅÈ´Ë¿ºÁÃ»¶¯¡£\n", this_player());
+            message_vision("$Nä¸¹ç”°ä¸€é‹æ°£ï¼ŒçŒ›çš„ä¸€æ‹ï¼ŒçŸ³é–€å»çµ²æ¯«æ²’å‹•ã€‚\n", this_player());
             set("neili", 0, this_player());
         }
         return 1;
@@ -57,6 +57,6 @@ int do_break(string arg)
 
 void close(object room)
 {
-        message("vision","Ê¯ÃÅ×Ô¶¯µÄºÏÉÏÁË¡£\n", room);
+        message("vision","çŸ³é–€è‡ªå‹•çš„åˆä¸Šäº†ã€‚\n", room);
         delete("exits/west", room);
 }

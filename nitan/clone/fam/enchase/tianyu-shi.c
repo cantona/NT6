@@ -3,15 +3,15 @@ inherit ITEM;
 
 void create()
 {
-        set_name(NOR + MAG "ÌìÓğÆæÊ¯" NOR, ({"tianyu shi", "tianyu", "shi"}));
+        set_name(NOR + MAG "å¤©ç¾½å¥‡çŸ³" NOR, ({"tianyu shi", "tianyu", "shi"}));
         set_weight(300);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", NOR + MAG "Ò»¿éÖÜÉí·º×Å×Ï¹âµÄÊ¯Í·£¬ËÆºõÔÌ²Ø×Å²»Ñ°³£µÄÁ¦Á¿¡£\n" NOR);
-                set("unit", "¿é");
+                set("long", NOR + MAG "ä¸€å¡Šå‘¨èº«æ³›è‘—ç´«å…‰çš„çŸ³é ­ï¼Œä¼¼ä¹è˜Šè—è‘—ä¸å°‹å¸¸çš„åŠ›é‡ã€‚\n" NOR);
+                set("unit", "å¡Š");
                 set("value", 5000);
-                set("enchase/name", "ÌìÓğÆæÊ¯");
+                set("enchase/name", "å¤©ç¾½å¥‡çŸ³");
                 set("enchase/point", 30);
                 set("enchase/type", "all");
                 set("enchase/cur_firm", 90);

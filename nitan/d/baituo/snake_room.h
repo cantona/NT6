@@ -1,5 +1,5 @@
 // Code of JHSH
-// snake_room.h Éß¹ÈÖÐÓÐÉßµÄ·¿¼ä
+// snake_room.h è›‡è°·ä¸­æœ‰è›‡çš„æˆ¿é–“
 
 void check_snake(object, string);
 void smoke_snake(object, object, string);
@@ -24,24 +24,24 @@ void init()
 string look_bush()
 {
         string desc;
-        if(!query("searched/bush")) desc = "Ò»´¦µÍ°«µÄ¹àÄ¾´Ô¡£\n";
-        else desc = "Ò»´¦µÍ°«µÄ¹àÄ¾´Ô£¬µØÉÏÓÐÐ©¶ÏÕÛµôÂäµÄÖ¦Ò¶¡£\n";        
+        if(!query("searched/bush")) desc = "ä¸€è™•ä½ŽçŸ®çš„çŒæœ¨å¢ã€‚\n";
+        else desc = "ä¸€è™•ä½ŽçŸ®çš„çŒæœ¨å¢ï¼Œåœ°ä¸Šæœ‰äº›æ–·æŠ˜æŽ‰è½çš„æžè‘‰ã€‚\n";        
         return desc;
 }
 
 string look_crack()
 {
         string desc;
-        if(!query("searched/crack")) desc = "Ê÷¸ù¼äµÄÁÑ·ì£¬ÅÔ±ßÉú×Å´Ô´ÔÂÒ²Ý¡£\n";
-        else desc = "Ê÷¸ù¼äµÄÁÑ·ì£¬¸½½üµÄÔÓ²Ýµ¹ÏòÁ½±ß£¬ËÆºõ±»²¦¶¯¹ý¡£\n";        
+        if(!query("searched/crack")) desc = "æ¨¹æ ¹é–“çš„è£‚ç¸«ï¼Œæ—é‚Šç”Ÿè‘—å¢å¢äº‚è‰ã€‚\n";
+        else desc = "æ¨¹æ ¹é–“çš„è£‚ç¸«ï¼Œé™„è¿‘çš„é›œè‰å€’å‘å…©é‚Šï¼Œä¼¼ä¹Žè¢«æ’¥å‹•éŽã€‚\n";        
         return desc;
 }
 
 string look_cave()
 {
         string desc;
-        if(!query("searched/cave")) desc = "É½±ÚÏÂµÄÒ»¸öÐ¡¶´£¬¶´¿ÚÍÁµØÃ»Ê²Ã´É°ÍÁ£¬ÆÄÎª¹â»¬¡£\n";
-        else desc = "É½±ÚÏÂµÄÒ»¸öÐ¡¶´£¬¶´¿ÚÍÁµØÓÐÐ©Ö¦Ò¶ÉÕÊ£µÄ»Ò½ý¡£\n";        
+        if(!query("searched/cave")) desc = "å±±å£ä¸‹çš„ä¸€å€‹å°æ´žï¼Œæ´žå£åœŸåœ°æ²’ä»€éº¼ç ‚åœŸï¼Œé —ç‚ºå…‰æ»‘ã€‚\n";
+        else desc = "å±±å£ä¸‹çš„ä¸€å€‹å°æ´žï¼Œæ´žå£åœŸåœ°æœ‰äº›æžè‘‰ç‡’å‰©çš„ç°ç‡¼ã€‚\n";        
         return desc;
 }
 
@@ -55,39 +55,39 @@ int do_search(string arg)
         weapon=query_temp("weapon", me);
 
         if( me->is_busy() || query_temp("pending/exercising", me) )
-                return notify_fail("ÄãÏÖÔÚÕýÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£å¿™è‘—å‘¢ã€‚\n");
 
         if( !objectp(weapon) || (query("skill_type", weapon) != "staff"
          && query("skill_type", weapon) != "club"
          && query("skill_type", weapon) != "stick") )
-                return notify_fail("¿ÕÊÖÑ°ÉßÌ«Î£ÏÕÁË£¬ÏÈÄÃµã³ÃÊÖµÄ¹¤¾ß°É¡£\n");
+                return notify_fail("ç©ºæ‰‹å°‹è›‡å¤ªå±éšªäº†ï¼Œå…ˆæ‹¿é»žè¶æ‰‹çš„å·¥å…·å§ã€‚\n");
 
 
         if(arg == "grass" && query("grass") ) {
-                place = "²Ý´Ô";
-                message_vision("$NÓÃ"+weapon->name()+"²¦¶¯¸½½üµÄ²Ý´Ô¡£\n", me);
+                place = "è‰å¢";
+                message_vision("$Nç”¨"+weapon->name()+"æ’¥å‹•é™„è¿‘çš„è‰å¢ã€‚\n", me);
                 addn("jingli", -20, me);
                 set("searched/grass", 1);
         }
         
         else if(arg == "bush" && query("bush") ) {
-                place = "Ê÷´Ô";
-                message_vision("$N»Ó×Å"+weapon->name()+"£¬´ò¶¯ËÄÖÜµÄÊ÷´ÔÖ¦Ò¶£¬·¢³öÉ³É³µÄÇáÏì¡£\n", me);
+                place = "æ¨¹å¢";
+                message_vision("$Næ®è‘—"+weapon->name()+"ï¼Œæ‰“å‹•å››å‘¨çš„æ¨¹å¢æžè‘‰ï¼Œç™¼å‡ºæ²™æ²™çš„è¼•éŸ¿ã€‚\n", me);
                 addn("jingli", -40, me);
                 set("searched/bush", 1);
         }
         else if(arg == "crack" && query("crack") ) {
-                place = "Ê÷¸ùÁÑ·ì";
-                message_vision("$NÓÃ"+weapon->name()+"ÔÚÊ÷¸ùµÄÁÑ·ì´¦ÇÃÁËÇÃ¡£\n", me);
+                place = "æ¨¹æ ¹è£‚ç¸«";
+                message_vision("$Nç”¨"+weapon->name()+"åœ¨æ¨¹æ ¹çš„è£‚ç¸«è™•æ•²äº†æ•²ã€‚\n", me);
                 addn("jingli", -10, me);
         }
 
         else if(arg == "cave" && query("cave") ) {
-                place = "¶´";
-                message_vision("$NÓÃ"+weapon->name()+"ÔÚ¶´¿ÚµØÃæ¡uÍÐ¡¢ÍÐ¡vµØÇáÇÃ×Å¡£\n", me);
+                place = "æ´ž";
+                message_vision("$Nç”¨"+weapon->name()+"åœ¨æ´žå£åœ°é¢â–¡æ‰˜ã€æ‰˜â–¡åœ°è¼•æ•²è‘—ã€‚\n", me);
                 addn("jingli", -10, me);
         }
-        else return notify_fail("ÄãÒªËÑË÷ÄÄ¸öµØ·½£¿\n");
+        else return notify_fail("ä½ è¦æœç´¢å“ªå€‹åœ°æ–¹ï¼Ÿ\n");
 
         addn_temp("search/"+place, 1, me);
         me->start_busy(1);
@@ -98,7 +98,7 @@ int do_search(string arg)
         if(query("hide_snake") > 0) {
                 check_snake(me, place);
         }
-        else return notify_fail("ÕÒÁËÕâ÷á¾Ã£¬Äã¾õµÃ"+place+"ÖÐÓ¦¸ÃÊÇ²»»á²Ø×ÅÉßÁË¡£\n");
+        else return notify_fail("æ‰¾äº†é€™éº¼ä¹…ï¼Œä½ è¦ºå¾—"+place+"ä¸­æ‡‰è©²æ˜¯ä¸æœƒè—è‘—è›‡äº†ã€‚\n");
 
         return 1;
 }
@@ -113,8 +113,8 @@ void check_snake(object me, string place)
         addn("hide_snake", -1, here);
         set("last_search", time(), here);
 
-        if( place == "²Ý´Ô" || place == "Ê÷´Ô" ) {
-                if( place == "Ê÷´Ô" ) {
+        if( place == "è‰å¢" || place == "æ¨¹å¢" ) {
+                if( place == "æ¨¹å¢" ) {
                         i = random(4) + 1;
                         set("searched/bush", 1);
                         }
@@ -126,10 +126,10 @@ void check_snake(object me, string place)
                 set("frightened", 1, snake);
                 snake->set_kind(i);
                 snake->move(here);
-                message_vision(HIR"ºöÌý"+place+"ÖÐóùóùÏì¶¯£¬Ò»Ìõ"+snake->name()+"´ÜÁË³öÀ´£¡\n"NOR, me);
+                message_vision(HIR"å¿½è½"+place+"ä¸­ç°Œç°ŒéŸ¿å‹•ï¼Œä¸€æ¢"+snake->name()+"ç«„äº†å‡ºä¾†ï¼\n"NOR, me);
                 snake->kill_ob(me);
         }
-        else message_vision(place+"ÖÐ´«³öÒ»ÕóÏ¸Î¢µÄÉùÏì£¬ËÆºõÓÐÊ²÷á¶«Î÷£¬µ«ÊÇÃ»ÓÐ³öÀ´¡£\n"NOR, me);
+        else message_vision(place+"ä¸­å‚³å‡ºä¸€é™£ç´°å¾®çš„è²éŸ¿ï¼Œä¼¼ä¹Žæœ‰ä»€éº¼æ±è¥¿ï¼Œä½†æ˜¯æ²’æœ‰å‡ºä¾†ã€‚\n"NOR, me);
 
         delete_temp("search/"+place, me);
 
@@ -144,7 +144,7 @@ int do_use(string arg)
         if (!present("fire", me))  return 0;
 
         if( arg=="fire" ) 
-        write("Äã½«»ðÕÛµãÈ¼¡£\n");
+        write("ä½ å°‡ç«æŠ˜é»žç‡ƒã€‚\n");
         return 1;
 }
 
@@ -158,29 +158,29 @@ int do_burn(string arg)
         if (!present("fire", me))  return 0;
 
         if( me->is_busy() || query_temp("pending/exercising", me) )
-                return notify_fail("ÄãÏÖÔÚÕýÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£å¿™è‘—å‘¢ã€‚\n");
 
         if( !objectp(branch = present(arg, me))  && !objectp(branch = present(arg, environment(me)))  )
-                return notify_fail("ÄãÒªÉÕÊ²÷á£¿\n");
+                return notify_fail("ä½ è¦ç‡’ä»€éº¼ï¼Ÿ\n");
 
         if( query("id", branch) != "shuzhi" )
-                return notify_fail("Èç¹ûÄãÏëÑ¬Éß£¬ÕÒÐ©Ê÷Ö¦Ö®ÀàµÄ¶«Î÷À´ÉÕ°É¡£\n");
+                return notify_fail("å¦‚æžœä½ æƒ³ç†è›‡ï¼Œæ‰¾äº›æ¨¹æžä¹‹é¡žçš„æ±è¥¿ä¾†ç‡’å§ã€‚\n");
 
         if( query("burning", branch) )
-                return notify_fail("Ê÷Ö¦ÒÑ¾­µãÈ¼ÁË¡£\n");
+                return notify_fail("æ¨¹æžå·²ç¶“é»žç‡ƒäº†ã€‚\n");
 
         if( query("crack") ) {
-                place = "Ê÷¸ùÁÑ·ì";
-                if(!query("searched/crack")) message_vision("$N½«Ê÷¸ùÇ°µÄÔÓ²Ý²¦¿ª¡£\n", me);
+                place = "æ¨¹æ ¹è£‚ç¸«";
+                if(!query("searched/crack")) message_vision("$Nå°‡æ¨¹æ ¹å‰çš„é›œè‰æ’¥é–‹ã€‚\n", me);
         }
-        else if( query("cave") ) place = "¶´";
-        else return notify_fail("ÔÚÕâÀïÉÕÊ÷Ö¦Ò²Ã»Ê²÷áÓÃ¡£\n");
+        else if( query("cave") ) place = "æ´ž";
+        else return notify_fail("åœ¨é€™è£¡ç‡’æ¨¹æžä¹Ÿæ²’ä»€éº¼ç”¨ã€‚\n");
 
-        message_vision(HIR"$N½«"+branch->name()+HIR"¶ÑÔÚ"+place+"Ç°£¬ÓÃ»ðÕÛµãÈ¼¡£\n"NOR, me);
-        message_vision(WHT"Ò»¹ÉÅ¨ÑÌÂýÂýÓ¿Èë"+place+"Àï........\n\n"NOR, me);
+        message_vision(HIR"$Nå°‡"+branch->name()+HIR"å †åœ¨"+place+"å‰ï¼Œç”¨ç«æŠ˜é»žç‡ƒã€‚\n"NOR, me);
+        message_vision(WHT"ä¸€è‚¡æ¿ƒç…™æ…¢æ…¢æ¹§å…¥"+place+"è£¡........\n\n"NOR, me);
         
-        set("name", "µãÈ¼µÄ"+branch->name(), branch);
-        set("long",query("long",  branch)+"ÏÖÔÚÕýÈ¼ÉÕ×Å£¬Ã°³öÅ¨Å¨µÄÑÌÎí¡£\n", branch);
+        set("name", "é»žç‡ƒçš„"+branch->name(), branch);
+        set("long",query("long",  branch)+"ç¾åœ¨æ­£ç‡ƒç‡’è‘—ï¼Œå†’å‡ºæ¿ƒæ¿ƒçš„ç…™éœ§ã€‚\n", branch);
         set("burning", 1, branch);
         set("no_get", 1, branch);
         branch->move(this_object());
@@ -200,7 +200,7 @@ void smoke_snake(object me, object branch, string place)
         here = this_object();
 
         if(query("hide_snake") < 1 ) {
-                message_vision("ÑÌÑ¬ÁËÀÏ°ëÌì£¬Ê÷Ö¦¶¼ÉÕ³É»ÒÁË£¬"+place+"ÀïÈ´Ò»µã¶¯¾²Ò²Ã»ÓÐ¡£\n", me);
+                message_vision("ç…™ç†äº†è€åŠå¤©ï¼Œæ¨¹æžéƒ½ç‡’æˆç°äº†ï¼Œ"+place+"è£¡å»ä¸€é»žå‹•éœä¹Ÿæ²’æœ‰ã€‚\n", me);
                 destruct(branch);
                 return;
         }
@@ -208,7 +208,7 @@ void smoke_snake(object me, object branch, string place)
         addn("hide_snake", -1);
         set("last_search", time(), here);
 
-        if( place == "Ê÷¸ùÁÑ·ì" ) {
+        if( place == "æ¨¹æ ¹è£‚ç¸«" ) {
                 i = random(5) + 3;
                 set("searched/crack", 1);
         }
@@ -221,7 +221,7 @@ void smoke_snake(object me, object branch, string place)
         set("frightened", 1, snake);
         snake->set_kind(i);
         snake->move(here);
-        message_vision(HIR"ºöÌýÒ»Õóì¬ì¬ÒìÉù£¬Ò»Ìõ$NÈÌ²»×¡ÑÌÑ¬£¬´Ó"+place+"ÖÐ´ÜÁË³öÀ´£¡\n"NOR, snake);
+        message_vision(HIR"å¿½è½ä¸€é™£é¢¼é¢¼ç•°è²ï¼Œä¸€æ¢$Nå¿ä¸ä½ç…™ç†ï¼Œå¾ž"+place+"ä¸­ç«„äº†å‡ºä¾†ï¼\n"NOR, snake);
         if(environment(me) == this_object())
         snake->kill_ob(me);
 

@@ -1,15 +1,15 @@
-// baishulin2.c °ØÊ÷ÁÖ
+// baishulin2.c æŸæ¨¹æž—
 // Winder Oct.10 1998
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "°ØÊ÷ÁÖ");
+        set("short", "æŸæ¨¹æž—");
         set("long", @LONG
-Äã×ß½øÁË°ØÊ÷ÁÖµÄÉî´¦£¬½ÅÏÂ²È×ÅºñºñµÄÂäÒ¶£¬ËÉËÉÈíÈí¡£ÕâÀï
-µÄ¹âÏß·Ç³£Òõ°µ£¬Äã¼¸ºõÊ²Ã´¶¼¿´²»ÇåÁË¡£Í»È»Ò»Ö»ËÉÊó´ÓÄãÑÛÇ°µÄ
-Ê÷Ö¦ÉÏÃÍµØÌøÁË¹ýÈ¥£¬ÏÅÁËÄãÒ»Ìø¡£
+ä½ èµ°é€²äº†æŸæ¨¹æž—çš„æ·±è™•ï¼Œè…³ä¸‹è¸©è‘—åŽšåŽšçš„è½è‘‰ï¼Œé¬†é¬†è»Ÿè»Ÿã€‚é€™è£¡
+çš„å…‰ç·šéžå¸¸é™°æš—ï¼Œä½ å¹¾ä¹Žä»€éº¼éƒ½çœ‹ä¸æ¸…äº†ã€‚çªç„¶ä¸€åªé¬†é¼ å¾žä½ çœ¼å‰çš„
+æ¨¹æžä¸ŠçŒ›åœ°è·³äº†éŽåŽ»ï¼Œåš‡äº†ä½ ä¸€è·³ã€‚
 LONG
         );
         set("outdoors", "zhongnan");

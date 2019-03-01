@@ -3,12 +3,12 @@ inherit TRANS_ROOM;
 
 void create()
 {
-        set("short", "Âí¾Ç");
+        set("short", "é¦¬å»„");
         set("long", @LONG
-ÕâÀïÊÇ³¤°²³ÇµÄÂí¾Ç£¬³£Äê¹©Ó¦ÐÂÏÊ²ÝÁÏ¡£³¤°²ÃñÖÚ¸»Ô£À´ÍùÉÌ
-¼ÖÉõ¶à£¬Òò´ËÂí·òÃÇ¶ÔÂíºÃÉúÕÕ¿´£¬½«ËüÃÇÎ¹±¥Òû×ãÔÙÏ´Ë¢µÃ¸ÉÇ¬¾»
-¾»£¬Ò»Ö±ËÅºòµ½¿ÍÈËÉÏÂ·¡£Âí¾ÇÓêéÜÏÂµÄÀÃÄ¾ÖùÉÏ¶¤×Å¿éÆÆÄ¾ÅÆ (pa
-izi)¡£Âí¾ÇÖÐ¶Ñ·ÅÖø¼¸¶Ñ²ÝÁÏ¡£
+é€™è£¡æ˜¯é•·å®‰åŸŽçš„é¦¬å»„ï¼Œå¸¸å¹´ä¾›æ‡‰æ–°é®®è‰æ–™ã€‚é•·å®‰æ°‘çœ¾å¯Œè£•ä¾†å¾€å•†
+è³ˆç”šå¤šï¼Œå› æ­¤é¦¬å¤«å€‘å°é¦¬å¥½ç”Ÿç…§çœ‹ï¼Œå°‡å®ƒå€‘å–‚é£½é£²è¶³å†æ´—åˆ·å¾—å¹¹ä¹¾å‡ˆ
+å‡ˆï¼Œä¸€ç›´ä¼ºå€™åˆ°å®¢äººä¸Šè·¯ã€‚é¦¬å»„é›¨æªä¸‹çš„çˆ›æœ¨æŸ±ä¸Šé‡˜è‘—å¡Šç ´æœ¨ç‰Œ (pa
+izi)ã€‚é¦¬å»„ä¸­å †æ”¾è‘—å¹¾å †è‰æ–™ã€‚
 LONG );
         set("outdoors", "changan");
         set("no_fight", 1);

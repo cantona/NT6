@@ -1,10 +1,10 @@
-// xingyun.c ÐÇÔÆÃÜ²¼
+// xingyun.c æ˜Ÿé›²å¯†å¸ƒ
 
 #include <ansi.h>
 
 inherit F_SSERVER;
 
-string name() { return "ÐÇÔÆÃÜ²¼"; }
+string name() { return "æ˜Ÿé›²å¯†å¸ƒ"; }
 
 int perform(object me, object target)
 {
@@ -15,27 +15,27 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail("ÄãÖ»ÄÜÔÚÕ½¶·ÖÐ¶Ô¶ÔÊÖÊ¹ÓÃ°µÆ÷¡£\n");
+                return notify_fail("ä½ åªèƒ½åœ¨æˆ°é¬¥ä¸­å°å°æ‰‹ä½¿ç”¨æš—å™¨ã€‚\n");
 
         if( !objectp(weapon=query_temp("handing", me)) ||
             query("skill_type", weapon) != "throwing" )
-                return notify_fail("ÄãÏÖÔÚÊÖÖÐ²¢Ã»ÓÐÄÃ×Å°µÆ÷¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ‰‹ä¸­ä¸¦æ²’æœ‰æ‹¿è‘—æš—å™¨ã€‚\n");
 
         if (weapon->query_amount() < 10)
-                return notify_fail("ÄãÖÁÉÙÒªÓÐÊ®Ã¶°µÆ÷²ÅÄÜÊ©Õ¹ÐÇÔÆÃÜ²¼¡£\n");
+                return notify_fail("ä½ è‡³å°‘è¦æœ‰åæžšæš—å™¨æ‰èƒ½æ–½å±•æ˜Ÿé›²å¯†å¸ƒã€‚\n");
 
         if ((me->query_skill("xinghui-canlan", 1)) < 120)
-                return notify_fail("ÄãµÄÐÇ»Ô²ÓÀÃ²»¹»æµÊì£¬»¹ÎÞ·¨Ê¹³öÐÇÔÆÃÜ²¼¾ø¼¼¡£\n");
+                return notify_fail("ä½ çš„æ˜Ÿè¼ç‡¦çˆ›ä¸å¤ å«»ç†Ÿï¼Œé‚„ç„¡æ³•ä½¿å‡ºæ˜Ÿé›²å¯†å¸ƒçµ•æŠ€ã€‚\n");
 
         if( query("neili", me)<120 )
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦²»×ã£¬ÎÞ·¨Ê©Õ¹ÐÇÔÆÃÜ²¼¡£\n");
+                return notify_fail("ä½ ç¾åœ¨å…§åŠ›ä¸è¶³ï¼Œç„¡æ³•æ–½å±•æ˜Ÿé›²å¯†å¸ƒã€‚\n");
 
         addn("neili", -80, me);
         weapon->add_amount(-10);
 
-        msg= HIW "$N" HIW "·ÉÉíÔ¾Æð£¬×óÊÖÒ»ÕÅ£¬¶ÙÊ±Ò»Æ¬ÐÇ¹âµãµã"
-             HIW "ÈçÒ¹ÓêÁ÷ÐÇÒ»°ãÖ±Ïò$n"
-             HIW "ÉäÈ¥£¡\n" NOR;
+        msg= HIW "$N" HIW "é£›èº«èºèµ·ï¼Œå·¦æ‰‹ä¸€å¼µï¼Œé “æ™‚ä¸€ç‰‡æ˜Ÿå…‰é»žé»ž"
+             HIW "å¦‚å¤œé›¨æµæ˜Ÿä¸€èˆ¬ç›´å‘$n"
+             HIW "å°„åŽ»ï¼\n" NOR;
 
         me->start_busy(2);
         ap = attack_power(me, "throwing");
@@ -47,9 +47,9 @@ int perform(object me, object target)
                 if (random(ap) > dp)  n += 1 + random(2);
                 if (random(ap / 2) > dp)  n += 1 + random(2);
                 if (random(ap / 4) > dp)  n += 1 + random(2);
-                msg += HIR "½á¹û$p" HIR "Ò»Éù²Òº¿£¬Á¬ÖÐÁË$P" HIR "·¢³öµÄ" HIR +
+                msg += HIR "çµæžœ$p" HIR "ä¸€è²æ…˜åšŽï¼Œé€£ä¸­äº†$P" HIR "ç™¼å‡ºçš„" HIR +
                        chinese_number(n)+query("base_unit", weapon)+
-                       weapon->name() + HIR "¡£\n" NOR;
+                       weapon->name() + HIR "ã€‚\n" NOR;
                 target->receive_wound("qi", damage/2, me);
                 while (n--)
                 {
@@ -62,8 +62,8 @@ int perform(object me, object target)
                 message_combatd(msg, me, target);
         } else
         {
-                msg += HIG "¿ÉÊÇ$p" HIG "×ÝÉíÔ¾Æð£¬¶ã¹ýÁË$P" HIG "ÂþÌìÉä³öµÄ" +
-                       weapon->name() + HIG "¡£\n" NOR;
+                msg += HIG "å¯æ˜¯$p" HIG "ç¸±èº«èºèµ·ï¼Œèº²éŽäº†$P" HIG "æ¼«å¤©å°„å‡ºçš„" +
+                       weapon->name() + HIG "ã€‚\n" NOR;
                 message_combatd(msg, me, target);
         }
 

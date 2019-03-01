@@ -6,17 +6,17 @@ int permit_recruit(object ob)
 
     me = this_object();
 
-    if( query("name", ob) == "¶«·½²»°Ü" || 
-        query("name", ob) == "ÈÎÎÒĞĞ" )
+    if( query("name", ob) == "æ±æ–¹ä¸æ•—" || 
+        query("name", ob) == "ä»»æˆ‘è¡Œ" )
     {
-        message_vision("$N²ªÈ»´óÅ­£ººß£¡ÄãÒ²¸Ò³ÆÎÒµÄ»äºÅ£¿\n",me);
+        message_vision("$Nå‹ƒç„¶å¤§æ€’ï¼šå“¼ï¼ä½ ä¹Ÿæ•¢ç¨±æˆ‘çš„è«±è™Ÿï¼Ÿ\n",me);
         return 0;
     }
 
-    if( query("detach/ÈÕÔÂÉñ½Ì", ob) || 
+    if( query("detach/æ—¥æœˆç¥æ•™", ob) || 
         query("betrayer/times", ob) )
     {
-        message_vision("$N´óÅ­µÀ£ºÎÒÈÕÔÂÉñ½ÌÆñÄÜÓÉÄãÒªÀ´±ãÀ´£¬Òª×ß±ã×ß£¿\n",me);
+        message_vision("$Nå¤§æ€’é“ï¼šæˆ‘æ—¥æœˆç¥æ•™è±ˆèƒ½ç”±ä½ è¦ä¾†ä¾¿ä¾†ï¼Œè¦èµ°ä¾¿èµ°ï¼Ÿ\n",me);
         return 0;
     }
 

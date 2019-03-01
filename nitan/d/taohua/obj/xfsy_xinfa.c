@@ -3,14 +3,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name("Ğı·çÉ¨Ò¶ÍÈĞÄ·¨", ({"xin fa", "book", "fa"}));
+        set_name("æ—‹é¢¨æƒè‘‰è…¿å¿ƒæ³•", ({"xin fa", "book", "fa"}));
         set_weight(100);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "ÕÅ");
+                set("unit", "å¼µ");
                 set("long",
-"Ò»ÕÅ±¡Ö½£¬ÉÏÃæÃÜÃÜÂéÂéĞ´ÂúÁËÓ¬Í·Ğ¡¿¬¡£\n");
+"ä¸€å¼µè–„ç´™ï¼Œä¸Šé¢å¯†å¯†éº»éº»å¯«æ»¿äº†è …é ­å°æ¥·ã€‚\n");
                 set("material", "paper");
                 set("skill", ([
                         "name": "unarmed", // name of the skill

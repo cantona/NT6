@@ -10,16 +10,16 @@ int do_zuan(string arg);
 
 void create()
 {
-        set("short", "°µÊÒ");
+        set("short", "æš—å®¤");
         set("long", @LONG
-ÕâÊÇÔÚ¸ß²ı×îÉî´¦µÄÒ»¸ö°µÊÒ£¬Ê²Ã´Ò²¿´²»Çå¡£
+é€™æ˜¯åœ¨é«˜æ˜Œæœ€æ·±è™•çš„ä¸€å€‹æš—å®¤ï¼Œä»€éº¼ä¹Ÿçœ‹ä¸æ¸…ã€‚
 LONG );
         set("exits", ([
                 "out" : __DIR__"mishi2",
         ]));
         set("no_clean_up", 0);
                 set("item_desc", ([
-                                "hole" : "Ò»¸ö²»ÖªÉîÇ³µÄÊ¯¶´£¬²»Öª¸Ã²»¸ÃËÑÒ»ËÑ¿´¡£\n"
+                                "hole" : "ä¸€å€‹ä¸çŸ¥æ·±æ·ºçš„çŸ³æ´ï¼Œä¸çŸ¥è©²ä¸è©²æœä¸€æœçœ‹ã€‚\n"
         ]));
         set("count",1);
         setup();
@@ -39,7 +39,7 @@ int do_use(string arg)
         if( !arg || arg=="" ) return 0;
         if (!present("fire", me))  return 0;
         if( arg=="fire" ) {
-             message_vision("$NµãÈ¼ÁË»ğÕÛ£¬·¢ÏÖÇ½±ÚÉÏÓĞÒ»Ğ¡¶´(hole)£¬ËÆºõÓĞÊ²Ã´¶«Î÷ÔÚÀïÃæ¡£\n",me);
+             message_vision("$Né»ç‡ƒäº†ç«æŠ˜ï¼Œç™¼ç¾ç‰†å£ä¸Šæœ‰ä¸€å°æ´(hole)ï¼Œä¼¼ä¹æœ‰ä»€éº¼æ±è¥¿åœ¨è£¡é¢ã€‚\n",me);
          set_temp("marks/fire", 1, me);
          return 1;
        }
@@ -55,14 +55,14 @@ int do_search(string arg)
 
                         if( !query_temp("marks/fire", me) )
                         return 0;
-                        if (!arg || (arg!="hole" && arg!="Ğ¡¶´"))
-                        return notify_fail("ÄãÒªËÑÄÄÀï£¿\n");
+                        if (!arg || (arg!="hole" && arg!="å°æ´"))
+                        return notify_fail("ä½ è¦æœå“ªè£¡ï¼Ÿ\n");
                         if (query("count")<1)
                                 {
-                                        return notify_fail("¶´ÀïÃæÊ²Ã´Ò²Ã»ÓĞÁË¡£\n");
+                                        return notify_fail("æ´è£¡é¢ä»€éº¼ä¹Ÿæ²’æœ‰äº†ã€‚\n");
                                         }
                         if( query("cor", me)<25 )
-                                        return notify_fail("Äã¸ÕÏëÉìÊÖ£¬ºöÈ»ÓĞµãº¦ÅÂ£¬ÏëÁËÏë»¹ÊÇËãÁË¡£\n");
+                                        return notify_fail("ä½ å‰›æƒ³ä¼¸æ‰‹ï¼Œå¿½ç„¶æœ‰é»å®³æ€•ï¼Œæƒ³äº†æƒ³é‚„æ˜¯ç®—äº†ã€‚\n");
                         addn("count",-1);
       book=new(THE_BOOK);
       if (book->violate_unique())
@@ -72,22 +72,22 @@ int do_search(string arg)
         }
                         if (random(4)>0 && book)
                                 {
-                                        message_vision("$NÍù¶´ÀïÃşÁËÃş£¬Ãş³öÒ»±¾¹ÅÊéÀ´¡£\n",me);
-                                         message("channel:rumor",MAG"¡¾Ò¥ÑÔ¡¿Ä³ÈË£º"+query("name", me)+"ÄÃµ½Ò»±¾"+query("name", book)+"À²¡£\n"NOR,users());
+                                        message_vision("$Nå¾€æ´è£¡æ‘¸äº†æ‘¸ï¼Œæ‘¸å‡ºä¸€æœ¬å¤æ›¸ä¾†ã€‚\n",me);
+                                         message("channel:rumor",MAG"ã€è¬ è¨€ã€‘æŸäººï¼š"+query("name", me)+"æ‹¿åˆ°ä¸€æœ¬"+query("name", book)+"å•¦ã€‚\n"NOR,users());
                                         book->move(me);
                                 }
                         else if(random(4)>1)
                                 {
                                         ob=new("clone/money/gold");
                                         ob->set_amount(random(30));
-                                        message_vision("$NÍù¶´ÀïÃşÁËÃş£¬Ãş³öÁËÒ»Ğ©»Æ½ğ¡£\n",me);
+                                        message_vision("$Nå¾€æ´è£¡æ‘¸äº†æ‘¸ï¼Œæ‘¸å‡ºäº†ä¸€äº›é»ƒé‡‘ã€‚\n",me);
                                         ob->move(me);
                                         }
                         else 
                                 {
                                         ob=new("clone/money/silver");
                                         ob->set_amount(random(30));
-                                        message_vision("$NÍù¶´ÀïÃşÁËÃş£¬Ãş³öÁËÒ»Ğ©°×Òø¡£\n",me);
+                                        message_vision("$Nå¾€æ´è£¡æ‘¸äº†æ‘¸ï¼Œæ‘¸å‡ºäº†ä¸€äº›ç™½éŠ€ã€‚\n",me);
                                         ob->move(me);
                                         }
                         

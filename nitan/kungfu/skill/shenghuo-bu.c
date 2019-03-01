@@ -1,9 +1,9 @@
 inherit SKILL;
 
 string *dodge_msg = ({
-        "$n���μ�ת���ܹ���$N�Ĺ��ơ�\n",
-        "����$n�εض��𣬶����$N��һ�С�\n",
-        "$n�����ұܣ���������$N��һ�С�\n",
+        "$n身形急轉，避過了$N的攻勢。\n",
+        "可是$n拔地而起，躲過了$N這一招。\n",
+        "$n作閃右避，總算躲過了$N這一招。\n",
 });
 
 int valid_enable(string usage) { return (usage == "dodge") || (usage == "move"); }
@@ -18,7 +18,7 @@ string query_dodge_msg(string limb)
 int practice_skill(object me)
 {
         if( (int)query("qi", me) < 50 )
-                return notify_fail("�������̫���ˣ��޷���ϰʥ�𲽷���\n");
+                return notify_fail("你的體力太差了，無法練習聖火步法。\n");
 
         me->receive_damage("qi", 40);
         return 1;

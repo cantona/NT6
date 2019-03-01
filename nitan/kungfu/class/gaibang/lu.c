@@ -1,5 +1,5 @@
 // This program is a part of NT MudLIB
-// lu.c Â³ÓĞ½Å
+// lu.c é­¯æœ‰è…³
 
 #include <ansi.h>
 #include "gaibang.h"
@@ -13,15 +13,15 @@ inherit F_GUARDER;
 
 void create()
 {
-        set_name("Â³ÓĞ½Å", ({ "lu youjiao", "lu", "youjiao" }));
+        set_name("é­¯æœ‰è…³", ({ "lu youjiao", "lu", "youjiao" }));
         set("long", @LONG
-Â³ÓĞ½ÅËäÈ»Îä¹¦Ëã²»µÃ¶¥¼â¸ßÊÖ£¬¿ÉÊÇÔÚ½­ºş
-ÉÏÈ´ÆÄÓĞÉùÍû¡£ÒòÎªËûÔÚØ¤°ïÖĞÓĞÈÊÓĞÒå£¬ĞĞ
-ÊÂ¹âÃ÷ÀÚÂä£¬ÉîµÃºéÆß¹«µÄÆ÷ÖØ¡£
+é­¯æœ‰è…³é›–ç„¶æ­¦åŠŸç®—ä¸å¾—é ‚å°–é«˜æ‰‹ï¼Œå¯æ˜¯åœ¨æ±Ÿæ¹–
+ä¸Šå»é —æœ‰è²æœ›ã€‚å› ç‚ºä»–åœ¨ä¸å¹«ä¸­æœ‰ä»æœ‰ç¾©ï¼Œè¡Œ
+äº‹å…‰æ˜ç£Šè½ï¼Œæ·±å¾—æ´ªä¸ƒå…¬çš„å™¨é‡ã€‚
 LONG);
-        set("nickname", HIG "ÕÆ°ôÁúÍ·" NOR);
-        set("title", "Ø¤°ï¾Å´ü³¤ÀÏ");
-        set("gender", "ÄĞĞÔ");
+        set("nickname", HIG "æŒæ£’é¾é ­" NOR);
+        set("title", "ä¸å¹«ä¹è¢‹é•·è€");
+        set("gender", "ç”·æ€§");
         set("age", 48);
         set("attitude", "peaceful");
         set("class", "beggar");
@@ -68,10 +68,10 @@ LONG);
         set_skill("martial-cognize", 240);
 
         set("no_teach", ([
-                "dagou-bang"      : "´ò¹·°ô·¨ÏòÀ´Ö»ÓĞ¼ÌÎ»°ïÖ÷ÄÜ¹»Ñ§Ï°£¬ÒªÑ§È¥ÕÒ°ïÖ÷¡£",
-                "zhenjing-baili"  : "ÕâÌ×ÕÆ·¨ÄËÊÇºéÀÏ°ïÖ÷Ëù´Í£¬ÎÒ²»ÄÜÇáÒ×´«ÊÚ¡£",
-                "qianlong-wuyong" : "ÕâÌ×ÕÆ·¨ÄËÊÇºéÀÏ°ïÖ÷Ëù´Í£¬ÎÒ²»ÄÜÇáÒ×´«ÊÚ¡£",
-                "hongjian-yulu"   : "ÕâÌ×ÕÆ·¨ÄËÊÇºéÀÏ°ïÖ÷Ëù´Í£¬ÎÒ²»ÄÜÇáÒ×´«ÊÚ¡£",
+                "dagou-bang"      : "æ‰“ç‹—æ£’æ³•å‘ä¾†åªæœ‰ç¹¼ä½å¹«ä¸»èƒ½å¤ å­¸ç¿’ï¼Œè¦å­¸å»æ‰¾å¹«ä¸»ã€‚",
+                "zhenjing-baili"  : "é€™å¥—æŒæ³•ä¹ƒæ˜¯æ´ªè€å¹«ä¸»æ‰€è³œï¼Œæˆ‘ä¸èƒ½è¼•æ˜“å‚³æˆã€‚",
+                "qianlong-wuyong" : "é€™å¥—æŒæ³•ä¹ƒæ˜¯æ´ªè€å¹«ä¸»æ‰€è³œï¼Œæˆ‘ä¸èƒ½è¼•æ˜“å‚³æˆã€‚",
+                "hongjian-yulu"   : "é€™å¥—æŒæ³•ä¹ƒæ˜¯æ´ªè€å¹«ä¸»æ‰€è³œï¼Œæˆ‘ä¸èƒ½è¼•æ˜“å‚³æˆã€‚",
         ]));
 
         map_skill("force", "huntian-qigong");
@@ -85,7 +85,7 @@ LONG);
 
         prepare_skill("strike", "xiaoyaoyou");
 
-        create_family("Ø¤°ï", 18, "³¤ÀÏ");
+        create_family("ä¸å¹«", 18, "é•·è€");
 
         set("coagents", ({
                 ([ "startroom" : "/d/city/gbxiaowu",
@@ -124,29 +124,29 @@ void attempt_apprentice(object ob)
 
         if( query("combat_exp", ob)<150000 )
         {
-                command("say ÄãµÄ½­ºş¾­Ñé²»¹»£¬»¹ÊÇÏÈÏò¸÷Î»³¤ÀÏÑ§Ï°°É¡£");
+                command("say ä½ çš„æ±Ÿæ¹–ç¶“é©—ä¸å¤ ï¼Œé‚„æ˜¯å…ˆå‘å„ä½é•·è€å­¸ç¿’å§ã€‚");
                 return;
         }
 
         if( query("shen", ob)<20000 )
         {
-                command("say ÄãÉíÎªØ¤°ïµÜ×Ó£¬¾¹È»²»×öºÃÊÂ£¿");
+                command("say ä½ èº«ç‚ºä¸å¹«å¼Ÿå­ï¼Œç«Ÿç„¶ä¸åšå¥½äº‹ï¼Ÿ");
                 return;
         }
 
         if( query("family/beggarlvl", ob)<4 )
         {
-                command("say ÄãÔÚ±¾°ïµÄµØÎ»Ì«µÍ£¬»¹ÊÇÏÈÏò¸÷Î»³¤ÀÏÑ§Ï°°É¡£");
+                command("say ä½ åœ¨æœ¬å¹«çš„åœ°ä½å¤ªä½ï¼Œé‚„æ˜¯å…ˆå‘å„ä½é•·è€å­¸ç¿’å§ã€‚");
                 return;
         }
 
         if (ob->query_skill("force") < 120)
         {
-                command("say ÄãµÄÄÚ¹¦»ğºò»¹²»¹»£¬»¹ÊÇÏÈÏò¸÷Î»³¤ÀÏÑ§Ï°°É¡£");
+                command("say ä½ çš„å…§åŠŸç«å€™é‚„ä¸å¤ ï¼Œé‚„æ˜¯å…ˆå‘å„ä½é•·è€å­¸ç¿’å§ã€‚");
                 return;
         }
         command("nod");
-        command("say ÒÔºóÄã¾Í¸ú×ÅÎÒ°É£¬¿É±ğ¸øÎÒÉúÊÂ¡£");
+        command("say ä»¥å¾Œä½ å°±è·Ÿè‘—æˆ‘å§ï¼Œå¯åˆ¥çµ¦æˆ‘ç”Ÿäº‹ã€‚");
         command("recruit "+query("id", ob));
 
         if( query("class", ob) != "beggar" )
@@ -163,16 +163,16 @@ int accept_ask(object me, string topic)
 {
         switch (topic)
         {
-        case "ÀúÁ·" :
-        case "ÀúÁ¶" :
-        case "¶ÍÁ¶" :
+        case "æ­·ç·´" :
+        case "æ­·ç…‰" :
+        case "é›ç…‰" :
                 return QUEST_D->accept_ask(this_object(), me, topic);
                 break;
 
-        case "²øÉí¾ö" :
+        case "çºèº«æ±º" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/shexing-diaoshou/chan",
-                           "name"    : "²øÉí¾ö",
+                           "name"    : "çºèº«æ±º",
                            "sk1"     : "shexing-diaoshou",
                            "lv1"     : 100,
                            "sk2"     : "hand",

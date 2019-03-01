@@ -1,4 +1,4 @@
-// luan.c ÂÒµ¶¾÷
+// luan.c äº‚åˆ€è¨£
 
 #include <ansi.h>
 
@@ -17,27 +17,27 @@ int perform(object me, object target)
         }
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail("¡¸ÂÒµ¶¾÷¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œäº‚åˆ€è¨£ã€åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
  
         if( !objectp(weapon=query_temp("weapon", me)) || 
             query("skill_type", weapon) != "blade" )
-                return notify_fail("±ØĞëÄÃµ¶²ÅÄÜÊ©Õ¹¡¸ÂÒµ¶¾÷¡¹£¡\n");
+                return notify_fail("å¿…é ˆæ‹¿åˆ€æ‰èƒ½æ–½å±•ã€Œäº‚åˆ€è¨£ã€ï¼\n");
 
         if( query("neili", me)<100 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬ÎŞ·¨Ê©Õ¹¡¸ÂÒµ¶¾÷¡¹£¡\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼Œç„¡æ³•æ–½å±•ã€Œäº‚åˆ€è¨£ã€ï¼\n");
 
         if ((int)me->query_skill("force") < 100)
-                return notify_fail("ÄãµÄÄÚ¹¦»ğºò²»¹»£¬ÄÑÒÔÊ©Õ¹¡¸ÂÒµ¶¾÷¡¹£¡\n");
+                return notify_fail("ä½ çš„å…§åŠŸç«å€™ä¸å¤ ï¼Œé›£ä»¥æ–½å±•ã€Œäº‚åˆ€è¨£ã€ï¼\n");
 
         if ((int)me->query_skill("dongyang-dao", 1) < 80)
-                return notify_fail("ÄãµÄ¶«Ñóµ¶·¨»¹²»µ½¼Ò£¬ÎŞ·¨Ê¹ÓÃÂÒµ¶¾÷£¡\n");
+                return notify_fail("ä½ çš„æ±æ´‹åˆ€æ³•é‚„ä¸åˆ°å®¶ï¼Œç„¡æ³•ä½¿ç”¨äº‚åˆ€è¨£ï¼\n");
 
        if (! living(target))
-              return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+              return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIY "\n$N" HIY "ºÙºÙÒ»ÉùÀäĞ¦£¬ÊÖÖĞµÄ" + weapon->name() +
-              HIY "×óÍ»ÓÒÉì£¬µ¶µ¶¶¼´ÓÒâÏë²»µ½µÄµØ·½¿³Ïò$n"
-              HIY "£¡\n" NOR;
+        msg = HIY "\n$N" HIY "å˜¿å˜¿ä¸€è²å†·ç¬‘ï¼Œæ‰‹ä¸­çš„" + weapon->name() +
+              HIY "å·¦çªå³ä¼¸ï¼Œåˆ€åˆ€éƒ½å¾æ„æƒ³ä¸åˆ°çš„åœ°æ–¹ç å‘$n"
+              HIY "ï¼\n" NOR;
         message_combatd(msg, me, target);
         addn("neili", -100, me);
 

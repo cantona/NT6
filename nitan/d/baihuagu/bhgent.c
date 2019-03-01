@@ -5,10 +5,10 @@
 inherit ROOM;
 void create()
 {
-        set("short", HIW"ããѩ��");
+        set("short", HIW"茫茫雪地");
         set("long",
-HIW"�����ǰ�ãã��һƬѩ�أ�" NOR"Զ��ɽ����͵��֡�ǰ������ԼԼ
-������һ��ɽ�ȡ�������Ʈ���������󻹼�������Ļ�����\n"
+HIW"這裡是白茫茫的一片雪地，" NOR"遠處山峰層巒迭嶂。前面隱隱約約
+好象有一個山谷。陣陣花香飄過來，好象還夾雜著鳥的歡唱。\n"
         );
         set("outdoors", "baihuagu");
         set("exits", ([ 

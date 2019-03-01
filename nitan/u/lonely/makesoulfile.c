@@ -1,17 +1,17 @@
 
 mapping soul_list = ([
-        "weapon"        :"武器",
-        "head"          :"头盔",
-        "neck"          :"项链",
-        "cloth"         :"战衣",
-        "armor"         :"护甲",
-        "surcoat"       :"披风",
-        "waist"         :"腰带",
-        "wrists"        :"护腕",
-        "hands"         :"铁掌",
-        "boots"         :"战靴",
-        "finger"        :"指套",
-        "rings"         :"戒指",
+        "weapon"        :"姝﹀櫒",
+        "head"          :"闋洈",
+        "neck"          :"闋呴張",
+        "cloth"         :"鎴拌。",
+        "armor"         :"璀风敳",
+        "surcoat"       :"鎶ⅷ",
+        "waist"         :"鑵板付",
+        "wrists"        :"璀疯厱",
+        "hands"         :"閻垫帉",
+        "boots"         :"鎴伴澊",
+        "finger"        :"鎸囧",
+        "rings"         :"鎴掓寚",
 ]);
         
 void create_soul_file()

@@ -1,5 +1,5 @@
 // This program is a part of NITAN MudLIB
-// shield.c 护体神功
+// shield.c 璀烽珨绁炲姛
 
 #include <ansi.h>
 
@@ -12,19 +12,19 @@ int exert(object me, object target)
         int skill;
 
         if( target != me ) 
-                return notify_fail("你只能用小无相功来运护体神功。\n");
+                return notify_fail("浣犲彧鑳界敤灏忕劇鐩稿姛渚嗛亱璀烽珨绁炲姛銆俓n");
 
         if( query("neili", me)<100 )
-                return notify_fail("你的内力不够。\n");
+                return notify_fail("浣犵殑鍏у姏涓嶅銆俓n");
         if( query_temp("shield", me) )
-                return notify_fail("你已经在运功\中了。\n");
+                return notify_fail("浣犲凡缍撳湪閬嬪姛\涓簡銆俓n");
 
         skill = me->query_skill("force");
         addn("neili", -100, me);
         me->receive_damage("qi", 0);
 
         message_combatd(
-        MAG "$N长吸一口气，运起护体神功，身上衣衫缓缓涨起。ⅵ\n" NOR, me);
+        MAG "$N闀峰惛涓�鍙ｆ埃锛岄亱璧疯楂旂鍔燂紝韬笂琛ｈ～绶╃珐婕茶捣銆傗枴\n" NOR, me);
 
         addn_temp("apply/armor", skill/2, me);
         // me->addn_temp("apply/defense",  skill / 2);
@@ -42,5 +42,5 @@ void remove_effect(object me, int amount)
         addn_temp("apply/armor", -amount, me);
         // me->addn_temp("apply/defense", - amount);
         delete_temp("shield", me);
-        tell_object(me, "你的护体神功运行完毕，将内力收回丹田。\n");
+        tell_object(me, "浣犵殑璀烽珨绁炲姛閬嬭瀹岀暍锛屽皣鍏у姏鏀跺洖涓圭敯銆俓n");
 }

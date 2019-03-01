@@ -16,18 +16,18 @@ int exert(object me)
         skill = me->query_skill("busi-shenlong",1) + me->query_skill("force",1);
 
         if( !me->is_fighting() )
-                return notify_fail("¡¸Öä·¨¡¹Ö»ÄÜÔÚÕ½¶·ÖÐÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œå’’æ³•ã€åªèƒ½åœ¨æˆ°é¬¥ä¸­ä½¿ç”¨ã€‚\n");
         if( me->is_busy() )
-                return notify_fail("ÄãÕýÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ æ­£å¿™è‘—å‘¢ã€‚\n");
         if( (int)me->query_skill("busi-shenlong", 1) < 200)
-                return notify_fail(HIM "ÄãµÄ²»ËÀÉñÁúÐÄ·¨ÐÞÎª²»×ã£¬»¹ÎÞ·¨ÓÃÄÚÁ¦Äî³öÕæÑÔ! \n" NOR);
+                return notify_fail(HIM "ä½ çš„ä¸æ­»ç¥žé¾å¿ƒæ³•ä¿®ç‚ºä¸è¶³ï¼Œé‚„ç„¡æ³•ç”¨å…§åŠ›å¿µå‡ºçœŸè¨€! \n" NOR);
         if( query("neili", me)<1000 || query("max_neili", me)<2000 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬ÎÞ·¨Äî³öÕæÑÔ¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ï¼Œç„¡æ³•å¿µå‡ºçœŸè¨€ã€‚\n");
 
-        message_vision(HIR "\n$NÍ»È»ÏòºóÒ»Ô¾£¬Ë«±ÛÏòÉÏÉìÕ¹£¬¿ÚÖÐà«à«ÓÐ´Ê......\n
-                       ÍòÄê²»ÀÏ!ÓÀÏíÏÉ¸£!ÊÙÓëÌìÆë!ÎÄÎäÈÊÊ¥£¡\n
-                       ÍòÄê²»ÀÏ!ÓÀÏíÏÉ¸£!ÊÙÓëÌìÆë!ÎÄÎäÈÊÊ¥£¡\n
-                       ÍòÄê²»ÀÏ!ÓÀÏíÏÉ¸£!ÊÙÓëÌìÆë!ÎÄÎäÈÊÊ¥£¡\n\n" NOR, me);
+        message_vision(HIR "\n$Nçªç„¶å‘å¾Œä¸€èºï¼Œé›™è‡‚å‘ä¸Šä¼¸å±•ï¼Œå£ä¸­å–ƒå–ƒæœ‰è©ž......\n
+                       è¬å¹´ä¸è€!æ°¸äº«ä»™ç¦!å£½èˆ‡å¤©é½Š!æ–‡æ­¦ä»è–ï¼\n
+                       è¬å¹´ä¸è€!æ°¸äº«ä»™ç¦!å£½èˆ‡å¤©é½Š!æ–‡æ­¦ä»è–ï¼\n
+                       è¬å¹´ä¸è€!æ°¸äº«ä»™ç¦!å£½èˆ‡å¤©é½Š!æ–‡æ­¦ä»è–ï¼\n\n" NOR, me);
 
         ap=query("combat_exp", me)/1000+skill*5;
         if(living(target))
@@ -38,7 +38,7 @@ int exert(object me)
         {
                 if(userp(me))
                         addn("neili", -500, me);
-                msg = HIM "$nÌýµ½$N¿ÚÖÐµÄÖäÓï£¬Í»¸ÐÉñ¾­´íÂÒ£¬È«ÉíÊ§È¥Öª¾õÒ»°ã£¡\n"NOR;
+                msg = HIM "$nè½åˆ°$Nå£ä¸­çš„å’’èªžï¼Œçªæ„Ÿç¥žç¶“éŒ¯äº‚ï¼Œå…¨èº«å¤±åŽ»çŸ¥è¦ºä¸€èˆ¬ï¼\n"NOR;
                 attack_decrease=query("apply/attack", target)/6;
                 dodge_decrease=query("apply/defense", target)/6;
                 addn_temp("apply/attack", -attack_decrease, target);
@@ -52,7 +52,7 @@ int exert(object me)
         {
                 if(userp(me))
                         addn("neili", -500, me);
-                msg = HIR "$nÌýµ½$N¿ÚÖÐµÄÖäÓï£¬Í»¸Ð¾«Éñ»Ðã±£¬ÊÖ½Å¶ÙÊ±²»ÌýÊ¹»½£¡\n"NOR;
+                msg = HIR "$nè½åˆ°$Nå£ä¸­çš„å’’èªžï¼Œçªæ„Ÿç²¾ç¥žææƒšï¼Œæ‰‹è…³é “æ™‚ä¸è½ä½¿å–šï¼\n"NOR;
                 attack_decrease=query("apply/attack", target)/9;
                 dodge_decrease=query("apply/defense", target)/9;
                 addn_temp("apply/attack", -attack_decrease, target);
@@ -63,7 +63,7 @@ int exert(object me)
         }
         else
         {
-                msg = CYN "$nÑÛ¹Û±Ç£¬±Ç¹ÛÐÄ£¬±§ÔªÊØÒ»£¬ÖÕÓÚÍÑÀëÁËÐ°Öä¿ØÖÆ£¡\n"NOR;
+                msg = CYN "$nçœ¼è§€é¼»ï¼Œé¼»è§€å¿ƒï¼ŒæŠ±å…ƒå®ˆä¸€ï¼Œçµ‚äºŽè„«é›¢äº†é‚ªå’’æŽ§åˆ¶ï¼\n"NOR;
                 if(userp(me))
                         addn("neili", -400, me);
                 me->start_busy(2);

@@ -6,8 +6,8 @@ inherit NPC;
 
 void create()
 {
-        set_name(HIG "ÇàÃæÊŞ" NOR, ({ "qingmian shou", "qingmian", "shou" }));
-        set("long", HIG "ÕâÊÇÒ»Ö»ÇàÃæâ²ÑÀµÄ¾ŞÊŞ£¬ÄË¾Æ½£ÏÉµÄ×øÆï£¬¿´Ñù×ÓÊÇ´ÓÅîÀ³ÏÉµºÌÓ³öÀ´µÄ¡£\n" NOR);
+        set_name(HIG "é’é¢ç¸" NOR, ({ "qingmian shou", "qingmian", "shou" }));
+        set("long", HIG "é€™æ˜¯ä¸€åªé’é¢ç ç‰™çš„å·¨ç¸ï¼Œä¹ƒé…’åŠä»™çš„åé¨ï¼Œçœ‹æ¨£å­æ˜¯å¾è“¬èŠä»™å³¶é€ƒå‡ºä¾†çš„ã€‚\n" NOR);
 
         set("age", 190);
         set("str", 40);
@@ -55,7 +55,7 @@ mixed hit_ob(object me, object ob, int damage_bouns)
 {
         ob->start_busy(2 + random(3));
         me->receive_wound("qi", 200 + random(100), ob);
-        return HIY "$N" HIY "´óºÈÒ»Éù£¬Æ´ËÀ·´¿¹£¬¾¹±ÆµÃ$n" HIY "ÊÖÃ¦½ÅÂÒ¡£\n" NOR;
+        return HIY "$N" HIY "å¤§å–ä¸€è²ï¼Œæ‹¼æ­»åæŠ—ï¼Œç«Ÿé€¼å¾—$n" HIY "æ‰‹å¿™è…³äº‚ã€‚\n" NOR;
 }
 
 void heart_beat()
@@ -69,7 +69,7 @@ void heart_beat()
 void unconcious()
 {
         
-        // ·ÀÖ¹Ö±½Ócall_die()
+        // é˜²æ­¢ç›´æ¥call_die()
         if (query("qi") > 300000)
         {
                 revive();
@@ -81,22 +81,22 @@ void unconcious()
 
 void die(object killer)
 {
-        object dob;             // ´òÔÎÕâ¸öNPCµÄÈË
-        int n;                  // ¿ÉÒÔ½±ÀøµÄÈËµÄÊıÄ¿
-        int exp;                // ĞèÒª¹Ï·ÖµÄ¾­Ñé
-        int pot;                // ĞèÒª¹Ï·ÖµÄÇ±ÄÜ
-        int weiwang;            // ĞèÒª¹Ï·ÖµÄÍşÍû
-        int gongxian;           // ¹±Ï×
-        int tihui;              // Ìå»á
-        int score;              // ĞèÒª¹Ï·ÖµÄÔÄÀú
-        object *t;              // É±ËÀÎÒµÄÈËµÄ¶ÓÎéÁĞ±í
+        object dob;             // æ‰“æšˆé€™å€‹NPCçš„äºº
+        int n;                  // å¯ä»¥çå‹µçš„äººçš„æ•¸ç›®
+        int exp;                // éœ€è¦ç“œåˆ†çš„ç¶“é©—
+        int pot;                // éœ€è¦ç“œåˆ†çš„æ½›èƒ½
+        int weiwang;            // éœ€è¦ç“œåˆ†çš„å¨æœ›
+        int gongxian;           // è²¢ç»
+        int tihui;              // é«”æœƒ
+        int score;              // éœ€è¦ç“œåˆ†çš„é–±æ­·
+        object *t;              // æ®ºæ­»æˆ‘çš„äººçš„éšŠä¼åˆ—è¡¨
         object tob;
         int ysg;
         int i;
         object *inv;
         
-        // ¶¨Òå½±ÀøÎïÆ·ÁĞ±í
-        // ¼¸ÂÊ  MAX_POINT ·ÖÖ® X
+        // å®šç¾©çå‹µç‰©å“åˆ—è¡¨
+        // å¹¾ç‡  MAX_POINT åˆ†ä¹‹ X
         mixed oblist = ([
                 "/clone/fam/gift/str4" :1,
                 "/clone/fam/gift/con4" :1,                        
@@ -111,14 +111,14 @@ void die(object killer)
                 string s_gift, *key_s_gift;
                 int gift_point;
                 /*
-                // ·ÀÖ¹Ö±½Ócall_die()
+                // é˜²æ­¢ç›´æ¥call_die()
                 if (query("qi") > 100000)
                 {
                         revive();
                         return;
                 }
 */
-                // ÕÒµ½É±ÁËÎÒ(NPC)»òÊÇ´òÔÎÎÒµÄÈË
+                // æ‰¾åˆ°æ®ºäº†æˆ‘(NPC)æˆ–æ˜¯æ‰“æšˆæˆ‘çš„äºº
                 if (! objectp(dob = killer))
                 dob = query_last_damage_from();
 
@@ -165,7 +165,7 @@ void die(object killer)
                                                                 ([ "exp"      : exp + ((tob == dob) ? 5000 : 0),
                                                                    "pot"      : pot + ((tob == dob) ? 5000 : 0),
                                                                    "mar"      : tihui + ((tob == dob) ? 1000 : 0),
-                                                                   "prompt"   : "ÄãµÄ¶ÓÎé´ò°Ü" + name() + "Ö®ºó"]), 999);
+                                                                   "prompt"   : "ä½ çš„éšŠä¼æ‰“æ•—" + name() + "ä¹‹å¾Œ"]), 999);
         
                                         }
                                 }
@@ -177,41 +177,41 @@ void die(object killer)
                                                  ([ "exp"      : exp,
                                                         "pot"      : pot,
                                                         "mar"    : tihui,
-                                                        "prompt"   : "ÄãÔÚ´ò°Ü" + name() + "Ö®ºó"]), 999);
+                                                        "prompt"   : "ä½ åœ¨æ‰“æ•—" + name() + "ä¹‹å¾Œ"]), 999);
                         }
         
                 }
                 
-                message_vision(HIG "\nÇàÃæÊŞÒ»Éù¹Ö½Ğ£¬Ì±µ¹ÔÚµØ£¬»¯×÷Ò»Ì²ÂÌÉ«µÄÒºÌå ...\n" NOR, this_object());
+                message_vision(HIG "\né’é¢ç¸ä¸€è²æ€ªå«ï¼Œç™±å€’åœ¨åœ°ï¼ŒåŒ–ä½œä¸€ç˜ç¶ è‰²çš„æ¶²é«” ...\n" NOR, this_object());
 
-                // Ò»¶¨¼¸ÂÊµôÎïÆ·ÔÚÉ±ÎÒµÄÈËÉíÉÏdob
+                // ä¸€å®šå¹¾ç‡æ‰ç‰©å“åœ¨æ®ºæˆ‘çš„äººèº«ä¸Šdob
                 if (objectp(dob) && environment(dob) == environment(this_object()))
                 {
                         key_s_gift = keys(oblist);
                         s_gift = key_s_gift[random(sizeof(key_s_gift))];
                         gift_point = oblist[s_gift];
         
-                        // ÅĞ¶Ï¼¸ÂÊ
+                        // åˆ¤æ–·å¹¾ç‡
                         if (MEMBER_D->is_valib_member(dob->query("id")) 
                             && random(MAX_POINT / ITEM_D->gift_point()) < gift_point)
                         {
-                                // »ñµÃÎïÆ·--±¬³öÎïÆ·Ö±½Ó·ÅÔÚdobÉíÉÏ
+                                // ç²å¾—ç‰©å“--çˆ†å‡ºç‰©å“ç›´æ¥æ”¾åœ¨dobèº«ä¸Š
                                 gift_ob = new(s_gift);
                                 if (objectp(gift_ob))
                                 {
-                                        message_vision(HIR "¶£~~Ò»Éù£¬´Ó$N" HIR "µô³öÒ»Ñù¶«Î÷£¬$n" HIR 
-                                                       "¸Ï½ô¼ğÁËÆğÀ´¡£\n" NOR, this_object(), dob);
-                                        tell_object(dob, BLINK + HIG "ÄãµÃµ½ÁË" + gift_ob->name() + BLINK + HIG "¡£\n" NOR);
+                                        message_vision(HIR "å®~~ä¸€è²ï¼Œå¾$N" HIR "æ‰å‡ºä¸€æ¨£æ±è¥¿ï¼Œ$n" HIR 
+                                                       "è¶•ç·Šæ€äº†èµ·ä¾†ã€‚\n" NOR, this_object(), dob);
+                                        tell_object(dob, BLINK + HIG "ä½ å¾—åˆ°äº†" + gift_ob->name() + BLINK + HIG "ã€‚\n" NOR);
                                         gift_ob->move(dob, 1);
                                 }
-                                else // ¼ÍÂ¼Ö® 
+                                else // ç´€éŒ„ä¹‹ 
                                 {
                                         log_file("killed-gift-none", s_gift + "\n");
                                 }
                         }
                 }
 
-                // µô³ö½ğÇ®¼°ÆäËûÎïÆ·
+                // æ‰å‡ºé‡‘éŒ¢åŠå…¶ä»–ç‰©å“
                 if (1)
                 {
                         inv = all_inventory(this_object());

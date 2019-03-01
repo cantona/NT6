@@ -1,49 +1,49 @@
-��̶����ָ����ϸ��˵���£�
+泥潭常用指令詳細解說如下：
 
 
-    ����Ϸ����ҿ���ʹ�������ָ�ϵͳָ�����ָ�
-ð��ָ��书ָ���Լ�����ָ�����ָ���ǣͣգ�һ�㶼��
-��ָ�����Ӣ�ı�ʾ�������ڱ�ʾ���õ�������д��
+    本遊戲的玩家可以使用五大類指令：系統指令、聊天指令、
+冒險指令、武功指令以及特殊指令。基本指令是ＭＵＤ一般都有
+的指令，故用英文表示。括號內表示可用的命令縮寫。
 
 
 
-$HIY$��Ǯׯ��ָ�$NOR$
+$HIY$【錢莊用指令】$NOR$
 
     $HIC$check$NOR$
-    ָ���ʽ��check��check�������
-    ���������ǲ��ˣ�ؤ����ӿ�����������˵Ĺ���
+    指令格式：check或check〈人物〉。
+    在銀行中是查賬，丐幫弟子可以有它察別人的功夫。
 
     $HIC$withdraw(qu)$NOR$
-    ָ���ʽ��withdraw ���� �����ࡣ
-    ȡ����磺withdraw 1 silver��
-    ȡ��������Ҫ��ȡ�ٷ�֮ʮ�������ѡ������ط�ȴ��һ����
+    指令格式：withdraw 數量 貨幣類。
+    取款，例如：withdraw 1 silver。
+    取款在揚州要收取百分之十的手續費。其它地方卻不一定。
 
     $HIC$deposit(cun)$NOR$
-    ָ���ʽ��deposite ��
-    �����磺deposite 10 silver��������������ѡ�
+    指令格式：deposite 。
+    存款，例如：deposite 10 silver。存款免收手續費。
 
     $HIC$convert(duihuan)$NOR$
-    ָ���ʽ��convert ���� �ɻ��� to �»��ҡ�
-    �һ����ң����磺convert 300 silver to gold��
+    指令格式：convert 數量 舊貨幣 to 新貨幣。
+    兌換貨幣，例如：convert 300 silver to gold。
 
 
-$HIY$��������ָ�$NOR$
+$HIY$【店舖用指令】$NOR$
 
     $HIC$list$NOR$
-    ָ���ʽ��list�����̵��в���ʲô��Ʒ��
+    指令格式：list。在商店中查有什麼物品。
 
     $HIC$buy$NOR$
-    ָ���ʽ��buy �������� from �������������ָ�����㹺
-��������Ҫ�Ķ�����
+    指令格式：buy 〈物名〉 from 〈人名〉。這個指令讓你購
+買你所需要的東西。
 
     $HIC$sell$NOR$
-    ָ���ʽ��sell ����������sell �������� to ����������
-    �����㲻Ҫ�Ķ�����
+    指令格式：sell 〈物名〉或sell 〈物名〉 to 〈人名〉。
+    賣掉你不要的東西。
 
     $HIC$value$NOR$
-    ָ���ʽ��value ���������� 
-    ����Ʒ���ۡ�
+    指令格式：value 〈物名〉。 
+    給物品估價。
 
     $HIC$redeem$NOR$
-    ָ���ʽ��redeem �����������
-    �����������
+    指令格式：redeem 〈玩家名〉。
+    把人贖出來。

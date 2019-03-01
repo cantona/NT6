@@ -6,10 +6,10 @@ int  accept_object(object who, object ob);
 
 void create()
 {
-        set_name("ÆÍÈË", ({"pu ren"}) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("åƒ•äºº", ({"pu ren"}) );
+        set("gender", "ç”·æ€§" );
         set("age", 20 + random(20));
-        set("long", "ÕâÊÇÒ»¸öÆÍÈË£¬³¤µÃÖÒºñÀÏÊµ¡£");
+        set("long", "é€™æ˜¯ä¸€å€‹åƒ•äººï¼Œé•·å¾—å¿ åšè€å¯¦ã€‚");
         set("attitude", "friendly");
 
         setup();
@@ -24,13 +24,13 @@ int accept_object(object who, object ob)
 
         if (is_owner(who))
         {
-                message_vision(name() + "¶Ô$NÊ©ÁËÒ»Àñ¡£\n", who);
+                message_vision(name() + "å°$Næ–½äº†ä¸€ç¦®ã€‚\n", who);
                 destruct(ob);
                 return 1;
         }
 
         destruct(ob);
-        message_vision(name() + "¶Ô$NµãÍ·¹şÑüµÀ£º¡°¶àĞ»ÕâÎ»" +
-                       RANK_D->query_respect(who) + "À²£¡¡±\n", who);
+        message_vision(name() + "å°$Né»é ­å“ˆè…°é“ï¼šâ€œå¤šè¬é€™ä½" +
+                       RANK_D->query_respect(who) + "å•¦ï¼â€\n", who);
         return 1;
 }

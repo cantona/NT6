@@ -6,9 +6,9 @@ inherit NPC;
 
 void create()
 {
-        set_name(HIG "±Ìº£ÉñÁú" NOR, ({ "bihao shenlong", "bihai", "shenlong" }) );
-        set("title", HIC "Áú×å" NOR);
-        set("gender", "ÄĞĞÔ");
+        set_name(HIG "ç¢§æµ·ç¥é¾" NOR, ({ "bihao shenlong", "bihai", "shenlong" }) );
+        set("title", HIC "é¾æ—" NOR);
+        set("gender", "ç”·æ€§");
         set("age", 23);
         set("combat_exp", 10000000);
         set("shen_type", 0);
@@ -54,8 +54,8 @@ void fight_ob(object ob)
         if (is_fighting(ob))
                 return;
 
-        message_vision(HIC "$N" HIC "Ğ¥½ĞÒ»Éù£¬»ëÉíÔÆÆø´óÊ¢£¬"
-                       "ÎíÆøÃÖÂş¡£\n" NOR, this_object(), ob);
+        message_vision(HIC "$N" HIC "å˜¯å«ä¸€è²ï¼Œæ¸¾èº«é›²æ°£å¤§ç››ï¼Œ"
+                       "éœ§æ°£å½Œæ¼«ã€‚\n" NOR, this_object(), ob);
 
         ::fight_ob(ob);
         if (! is_killing(ob->query("id")))
@@ -64,7 +64,7 @@ void fight_ob(object ob)
 
 int accept_fight(object ob)
 {
-        message_vision("$NÎ¢Ò»Ò¡Í·£¬ÂÔÒ»°ÚÎ²£¬É¨ÁËÉÏÀ´¡£\n",
+        message_vision("$Nå¾®ä¸€æ–é ­ï¼Œç•¥ä¸€æ“ºå°¾ï¼Œæƒäº†ä¸Šä¾†ã€‚\n",
                        this_object(), ob);
         kill_ob(ob);
         return -1;
@@ -84,8 +84,8 @@ mixed hit_ob(object me, object ob, int damage_bouns)
 {
         ob->receive_wound("qi", 200 + random(200), me);
 
-        return HIY "$N" HIY "ÖÜÎ§ÑÌÎíçÔÈÆ£¬¹â»ªËÄÉä£¬µÇÊ±Áî$n"
-               HIY "ĞÄÁ¦ÊÜËğ¡£\n" NOR;
+        return HIY "$N" HIY "å‘¨åœç…™éœ§ç¹šç¹ï¼Œå…‰è¯å››å°„ï¼Œç™»æ™‚ä»¤$n"
+               HIY "å¿ƒåŠ›å—æã€‚\n" NOR;
 }
 
 void unconcious()
@@ -97,7 +97,7 @@ void random_move()
 {
         if (! this_object()->is_fighting() && this_object()->query_temp("no_fighting_times") > 1)
         {
-                message_vision(HIC "$N»¯×÷Ò»µÀÇáÑÌ£¬ÏûÊ§ÁË¡£\n" NOR, this_object());
+                message_vision(HIC "$NåŒ–ä½œä¸€é“è¼•ç…™ï¼Œæ¶ˆå¤±äº†ã€‚\n" NOR, this_object());
 
                 destruct(this_object());
                 return;

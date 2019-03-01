@@ -1,4 +1,4 @@
-// baihong-jian.c °×ºç½£
+// baihong-jian.c ç™½è™¹åŠ
 
 #include <weapon.h>
 
@@ -6,13 +6,13 @@ inherit SWORD;
 // inherit F_UNIQUE;
 void create()
 {
-        set_name("°×ºç½£", ({ "baihong jian", "baihong", "sword" }) );
+        set_name("ç™½è™¹åŠ", ({ "baihong jian", "baihong", "sword" }) );
         set_weight(10000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long","ÕâÊÇ°ÑÓÖ±¡ÓÖÇáµÄÈí½££¬½£ÉíÉÏÒşÒşµÄÍ¸³ö°×¹â£¬µ±Õæ·æÀûÎŞ±È¡£\n");
+                set("unit", "æŠŠ");
+                set("long","é€™æ˜¯æŠŠåˆè–„åˆè¼•çš„è»ŸåŠï¼ŒåŠèº«ä¸Šéš±éš±çš„é€å‡ºç™½å…‰ï¼Œç•¶çœŸé‹’åˆ©ç„¡æ¯”ã€‚\n");
                 set("value", 3000);
                 // set("unique", 1);
                 set("rigidity", 3);
@@ -23,8 +23,8 @@ void create()
                 set("wield_maxneili", 900);
                 set("wield_str", 22);
                 set("treasure",1);
-                set("wield_msg", "Ö»Ìı¼û¡¸ÎË¡¹µØÒ»Éù£¬°×¹â¶ÙÏÖ£¬$N½«Ñü¼ä½âÏÂµÄ$n¶¶µÃ±ÊÖ±¡£\n");
-                set("unequip_msg", "$N½«ÊÖÖĞµÄ$n¾íÈëÑü¼ä¡£\n");
+                set("wield_msg", "åªè½è¦‹ã€Œå—¡ã€åœ°ä¸€è²ï¼Œç™½å…‰é “ç¾ï¼Œ$Nå°‡è…°é–“è§£ä¸‹çš„$næŠ–å¾—ç­†ç›´ã€‚\n");
+                set("unequip_msg", "$Nå°‡æ‰‹ä¸­çš„$nå·å…¥è…°é–“ã€‚\n");
         }
         init_sword(70);
         setup();

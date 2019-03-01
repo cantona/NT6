@@ -7,12 +7,12 @@ void init();
 
 void create()
 {
-        set_name("����", ( { "shizhe", "zhe" }) );
-        set("title", "���͵����ӵ���");
-        set("gender", "����" );
+        set_name("侍者", ( { "shizhe", "zhe" }) );
+        set("title", "俠客島打雜弟子");
+        set("gender", "男性" );
         set("age", 30);
         set("long",
-              "���Ǹ����Ż��µ���ʮ���꺺�ӣ�����վ�������ޱ��顣\n"
+              "這是個身著黃衣的三十幾歲漢子，垂手站立，面無表情。\n"
              );
         set("attitude", "friendly");
         set("shen_type", 1);
@@ -39,12 +39,12 @@ void create()
         set_temp("apply/damage", 40);
         set_temp("apply/armor", 40);
 
-        create_family("���͵�", 2, "����");
+        create_family("俠客島", 2, "弟子");
 
         set("inquiry", ([
-            "here" : "������������е������ˣ�С�������������ô�ã������е�����Ҳ���������\n",
-            "cha"  : "�����Դ�����������С�����ڲ����뿪�˵أ�\n",
-            "yezi" : "�����Դ�����������С�����ڲ����뿪�˵أ�\n",
+            "here" : "這裡就是俠客行的中心了，小人在這服侍了這麼久，對其中的秘密也不大清楚。\n",
+            "cha"  : "請你稍待，島主嚴令小人現在不得離開此地！\n",
+            "yezi" : "請你稍待，島主嚴令小人現在不得離開此地！\n",
         ]));
 
         setup();
@@ -67,11 +67,11 @@ void greeting(object ob)
 {
 
         if( !ob || environment(ob) != environment() ) return;
-        say("��������˵������λ" + RANK_D->query_respect(ob)
-           + "�����Ҳ���������������ܵİɡ��������������\n"
-           + "�������ģ���Χ���ж�ʮ�ļ�ʯ�ң����������ȥ�ۿ�����һ��\n"
-           + "ҪС�����⣬ǧ�򲻿�çײ���¡����ҿɹ�Ӧ��ʳ���������Ǿ�\n"
-           + "����ȥΪ�á�\n"
+        say("黃衣侍者說道：這位" + RANK_D->query_respect(ob)
+           + "想必你也是來參悟武林秘密的吧。這裡就是俠客行\n"
+           + "的正中心，周圍共有二十四間石室，你可隨意來去觀看。但一切\n"
+           + "要小心在意，千萬不可莽撞行事。本室可供應飲食，不過還是盡\n"
+           + "早離去為好。\n"
              );
         return;
 }
@@ -82,10 +82,10 @@ int accept_object(object who, object ob)
 
         if( query("money_id", ob) && ob->value() >= 5000 )
         {command("say " + RANK_D->query_respect(who) +
-                "��˹ŵ��ȳ��������������գ���������������˵�ģ�" +
-                "����ʵ�ڲ����ļ������ȡ���������Ž�ȥ����ǽ���ϵ�" +
-                "�ǰ�ľ��ȡ�£��������ϣ������кô�������ǧ������" +
-                "���ˣ��������Ҷ���ɱ��֮�����м��мǣ�����" );
+                "如此古道熱腸，兼又身懷絕藝，本來島主不讓我說的，" +
+                "但我實在不忍心見死不救。你從西北門進去，把牆壁上的" +
+                "那把木刀取下，拿在手上，對你有好處。但你千萬別告訴" +
+                "別人，否則你我都有殺身之禍，切記切記！！！" );
         }
         return 1;
 
@@ -94,12 +94,12 @@ void die()
 {
         object room;
 
-        say("���ɱ�ң����ӵ�����Ҳ����Ź��㡣\n");
-        message_vision("$N�Һ�һ�������ˣ�\n", this_object());
+        say("你敢殺我，老子到陰間也不會放過你。\n");
+        message_vision("$N慘嚎一聲，死了！\n", this_object());
 
         room = environment(this_object());
-message("vision", "������������ˤ����һ�ԣ���ʱ��ŷ��ָղ���վ�ĵط��е���֡�\n"
-        "�ذ�������ʯ����ɣ��ƺ��Ǹ���.���滹��һԿ�׿�(kong) \n", room);
+message("vision", "由于侍者死了摔倒在一旁，這時你才發現剛才他站的地方有點奇怪。\n"
+        "地板由兩塊石板組成，似乎是個門.上面還有一鑰匙孔(kong) \n", room);
 
         ::die();
 }

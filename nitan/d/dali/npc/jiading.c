@@ -1,4 +1,4 @@
-// jiading.c ¼Ò¶¡
+// jiading.c å®¶ä¸
 
 #include <ansi.h>
 inherit NPC;
@@ -8,10 +8,10 @@ string clear_title(string arg);
 int ask_me();
 void create()
 {
-        set_name("¼Ò¶¡", ({ "jia ding", "ding" }));
-        set("title", "´óÀíÕòÄÏÍõ¸®");
-        set("long", "ËûÊÇ´óÀí¹úÕòÄÏÍõ¸®µÄ¼Ò¶¡¡£\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("å®¶ä¸", ({ "jia ding", "ding" }));
+        set("title", "å¤§ç†é®å—ç‹åºœ");
+        set("long", "ä»–æ˜¯å¤§ç†åœ‹é®å—ç‹åºœçš„å®¶ä¸ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 40);
         set("attitude", "friendly");
         set("shen_type", 1);
@@ -46,7 +46,7 @@ void create()
         map_skill("parry", "jinyu-quan");
 
         set("inquiry", ([
-                "Ö¸µãÎä¹¦" : (: ask_me :),
+                "æŒ‡é»æ­¦åŠŸ" : (: ask_me :),
         ]));
         setup();
         carry_object("/clone/misc/cloth")->wear();
@@ -62,20 +62,20 @@ int ask_me()
         ob = this_player();
         if ((int)ob->query_skill("kurong-changong",1) < 30)
         {
-                command("say ÄãÏëµ±¼Ò³¼£¬ÔÙÁ·¼¸Äê¹¦·òÈ¥¡£\n");
+                command("say ä½ æƒ³ç•¶å®¶è‡£ï¼Œå†ç·´å¹¾å¹´åŠŸå¤«å»ã€‚\n");
                 return 1;
         }
         oldtitle=query("title", ob);
-        if ((strsrch(oldtitle, "´óÀíÕòÄÏÍõ¸®¼Ò¶¡") >= 0) ||
-           (strsrch(oldtitle, "´óÀíÕòÄÏÍõ¸®æ¾Å®") >= 0)) 
+        if ((strsrch(oldtitle, "å¤§ç†é®å—ç‹åºœå®¶ä¸") >= 0) ||
+           (strsrch(oldtitle, "å¤§ç†é®å—ç‹åºœå©¢å¥³") >= 0)) 
         {
                 set_temp("fight_ok", 1, ob);
-                command("say ºÃ£¬¼ÈÈ»Èç´ËÏëÇĞ´è£¬ÄÇ¾Í¿´ÄãµÄ±¾ÊÂÈçºÎÁË¡£\n");
+                command("say å¥½ï¼Œæ—¢ç„¶å¦‚æ­¤æƒ³åˆ‡ç£‹ï¼Œé‚£å°±çœ‹ä½ çš„æœ¬äº‹å¦‚ä½•äº†ã€‚\n");
                 return 1;
         }
         else
         {
-                command("say Ö»ÓĞ¼Ò¶¡»òæ¾Å®²ÅÄÜÉı¼Ò³¼¡£\n");
+                command("say åªæœ‰å®¶ä¸æˆ–å©¢å¥³æ‰èƒ½å‡å®¶è‡£ã€‚\n");
                 return 1;
         }
 }
@@ -109,15 +109,15 @@ int checking(object me, object ob)
 
         if( (query("qi", me)*100/my_max_qi) <= 50 )
         {
-                command("say Çà³öì¶À¶Ê¤ì¶À¶£¬²»À¢ÊÇ´óÀí¶Î¼ÒµÄºÃµÜ×Ó ! ¹§Ï²ÄãÁË !\n");
-                command("say ÄãµÄÒÑ¾­¿ÉÒÔÊ¤ÈÎ´óÀí¼Ò³¼ !\n");
-                upgrade_title(ob, "´óÀíÕòÄÏÍõ¸®¼Ò³¼");
+                command("say é’å‡ºæ–¼è—å‹æ–¼è—ï¼Œä¸æ„§æ˜¯å¤§ç†æ®µå®¶çš„å¥½å¼Ÿå­ ! æ­å–œä½ äº† !\n");
+                command("say ä½ çš„å·²ç¶“å¯ä»¥å‹ä»»å¤§ç†å®¶è‡£ !\n");
+                upgrade_title(ob, "å¤§ç†é®å—ç‹åºœå®¶è‡£");
                 return 1;
         }
         if( (query("qi", ob)*100/his_max_qi)<50 )
         {
-                command("say ¿´À´" + RANK_D->query_respect(ob) + 
-                        "»¹µÃ¶à¼ÓÁ·Ï°£¬·½ÄÜÔÚ´óÀí¶Î¼ÒÖî¶àµÜ×ÓÖĞ³öÈËÍ·µØ !\n");
+                command("say çœ‹ä¾†" + RANK_D->query_respect(ob) + 
+                        "é‚„å¾—å¤šåŠ ç·´ç¿’ï¼Œæ–¹èƒ½åœ¨å¤§ç†æ®µå®¶è«¸å¤šå¼Ÿå­ä¸­å‡ºäººé ­åœ° !\n");
                 return 1;
         }
         return 1;  
@@ -130,11 +130,11 @@ void upgrade_title(object ob,string arg)
 }
 string clear_title(string arg)
 {
-        if( (strsrch(arg, "´óÀíÕòÄÏÍõ¸®¼Ò¶¡") >= 0) ||
-            (strsrch(arg, "´óÀíÕòÄÏÍõ¸®æ¾Å®") >= 0))
+        if( (strsrch(arg, "å¤§ç†é®å—ç‹åºœå®¶ä¸") >= 0) ||
+            (strsrch(arg, "å¤§ç†é®å—ç‹åºœå©¢å¥³") >= 0))
         {
-                arg = replace_string(arg, "´óÀíÕòÄÏÍõ¸®æ¾Å®","");
-                arg = replace_string(arg, "´óÀíÕòÄÏÍõ¸®¼Ò¶¡","");
+                arg = replace_string(arg, "å¤§ç†é®å—ç‹åºœå©¢å¥³","");
+                arg = replace_string(arg, "å¤§ç†é®å—ç‹åºœå®¶ä¸","");
         }
         return arg;
 }

@@ -20,31 +20,31 @@ int dispel(object me, object ob, int duration)
         {
                 if (me == ob)
                 {
-                        tell_object(me, "ÄãµÄÄÚ¹¦»ðºòÉÐÓÐÇ·È±£¬ÎÞ·¨Çý³ý" + cname +"¡£\n");
+                        tell_object(me, "ä½ çš„å…§åŠŸç«å€™å°šæœ‰æ¬ ç¼ºï¼Œç„¡æ³•é©…é™¤" + cname +"ã€‚\n");
                         return -1;
                 } else
                 {
-                        tell_object(me, "ÄãµÄÄÚ¹¦»ðºòÉÐÓÐÇ·È±£¬ÎÞ·¨°ïÖú" + ob->name() + "Çý³ý" + cname + "¡£\n");
+                        tell_object(me, "ä½ çš„å…§åŠŸç«å€™å°šæœ‰æ¬ ç¼ºï¼Œç„¡æ³•å¹«åŠ©" + ob->name() + "é©…é™¤" + cname + "ã€‚\n");
                         return -1;
                 }
         }
 
         if (query("neili", me) < need_neili)
         {
-                tell_object(me, "ÄãµÄÄÚÁ¦ÏÖÔÚ²»×ã£¬ÎÞ·¨Ê©Õ¹ÒÔÇý³ý" + cname + "¡£\n");
+                tell_object(me, "ä½ çš„å…§åŠ›ç¾åœ¨ä¸è¶³ï¼Œç„¡æ³•æ–½å±•ä»¥é©…é™¤" + cname + "ã€‚\n");
                 return -1;
         }
         addn("neili", -need_neili, me);
 
         if (me == ob)
         {
-                tell_object(me, "µ÷Ï¢ÒÔºó£¬ÄãÊæ·þ¶àÁË£¬¸Ð¾õ" + cname + "±»Ïû³ýÁË¡£\n");
+                tell_object(me, "èª¿æ¯ä»¥å¾Œï¼Œä½ èˆ’æœå¤šäº†ï¼Œæ„Ÿè¦º" + cname + "è¢«æ¶ˆé™¤äº†ã€‚\n");
         } else
         {
-                tell_object(me, "Äã½«ÄÚÁ¦»º»ºµÄÊäÈëµ½" + ob->name() + "¾­Âö£¬" +
-                            ob->name() + "¾«ÉñÒ»Õñ¡£\n");
-                tell_object(ob, "Äã¾õµÃ" + me->name() +
-                            "½«ÄÚÁ¦ÊäÈëÄãµÄÆæ¾­°ËÂö£¬ÄãÊæ·þ¶àÁË£¬¸Ð¾õ" + cname + "±»Ïû³ýÁË¡£\n");
+                tell_object(me, "ä½ å°‡å…§åŠ›ç·©ç·©çš„è¼¸å…¥åˆ°" + ob->name() + "ç¶“è„ˆï¼Œ" +
+                            ob->name() + "ç²¾ç¥žä¸€æŒ¯ã€‚\n");
+                tell_object(ob, "ä½ è¦ºå¾—" + me->name() +
+                            "å°‡å…§åŠ›è¼¸å…¥ä½ çš„å¥‡ç¶“å…«è„ˆï¼Œä½ èˆ’æœå¤šäº†ï¼Œæ„Ÿè¦º" + cname + "è¢«æ¶ˆé™¤äº†ã€‚\n");
         }
 
         ob->clear_condition(this_object()->name());

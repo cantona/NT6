@@ -4,16 +4,16 @@ inherit BLADE;
 
 void create()
 {
-        set_name(NOR + HIC "°µÔÂµ¶" NOR, ({ "anyue dao", "anyue", "dao" }));
+        set_name(NOR + HIC "æš—æœˆåˆ€" NOR, ({ "anyue dao", "anyue", "dao" }));
         set_weight(100);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
+                set("unit", "æŸ„");
                 set("value", 2000);
                 set("material", "steel");
-                set("wield_msg", "$N¡¸à§¡¹µÄÒ»Éù³é³öÒ»°Ñ$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²å»Øµ¶ÇÊ¡£\n");
+                set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€è²æŠ½å‡ºä¸€æŠŠ$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°‡æ‰‹ä¸­çš„$næ’å›åˆ€é˜ã€‚\n");
         }
         init_blade(500);
         setup();

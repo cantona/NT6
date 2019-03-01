@@ -1,8 +1,8 @@
 <W1000>
 <type>weapon/sword</type>
-<name>ÐþÌú½£</name> 
+<name>çŽ„éµåŠ</name> 
 <id>xuantie jian</id>
-<long>ÐþÌúËùÖýÖØ½££¬ÍêÈ«¿¿Á¦Á¿À´·¢»Ó´Î½£µÄ³¬·²¹¥»÷Á¦¡£</long>
+<long>çŽ„éµæ‰€é‘„é‡åŠï¼Œå®Œå…¨é åŠ›é‡ä¾†ç™¼æ®æ¬¡åŠçš„è¶…å‡¡æ”»æ“ŠåŠ›ã€‚</long>
 <weight>8000</weight>
 <value>50000</value>
 <level>5</level>
@@ -19,9 +19,9 @@ flute:7
 
 <W1001>
 <type>weapon/sword</type>
-<name>ÁúÈª½£</name> 
+<name>é¾æ³‰åŠ</name> 
 <id>longquan jian</id>
-<long>Å·Ò±×ÓÎª³þÍõ¾«ÐÄËùÖý£¬Ï÷ÌúÈçÄà£¬·ç´µ¶Ï·¢£¬¶øÓÖÄÜÉìÄÜÇú£¬¿ÉÎè¿É´Ì¡£</long>
+<long>æ­å†¶å­ç‚ºæ¥šçŽ‹ç²¾å¿ƒæ‰€é‘„ï¼Œå‰Šéµå¦‚æ³¥ï¼Œé¢¨å¹æ–·ç™¼ï¼Œè€Œåˆèƒ½ä¼¸èƒ½æ›²ï¼Œå¯èˆžå¯åˆºã€‚</long>
 <weight>5000</weight>
 <value>100000</value>
 <level>9</level>
@@ -39,9 +39,9 @@ apply_prop/speed:20
 
 <W1002>
 <type>weapon/sword</type>
-<name>¾ÞãÚ</name> 
+<name>å·¨é—•</name> 
 <id>ju que</id>
-<long>ÎôÈÕÖøÃûÖý½£Ê¦Å·Ò±×Ó´òÔìµÄÎå½£Ö®Ò» ¡£</long>
+<long>æ˜”æ—¥è‘—åé‘„åŠå¸«æ­å†¶å­æ‰“é€ çš„äº”åŠä¹‹ä¸€ ã€‚</long>
 <weight>5000</weight>
 <value>100000</value>
 <level>9</level>

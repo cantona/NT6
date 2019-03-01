@@ -1,4 +1,4 @@
-// houtang1.c ����һ��
+// houtang1.c 後堂一進
 // Winder Oct.10 1998
 
 #include <ansi.h>
@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����һ��");
+        set("short", "後堂一進");
         set("long", @LONG
-�����Ǻ��õ�һ������ƽ��ȫ��̵�����Ϣ�ĵط�������ȫ���
-���ڹ��յ��ӣ����аڷŵ�����Ҳ�������ӣ��Ե�������Ѿ���ӵ��
-�ˡ�
+這裡是後堂的一進，是平常全真教弟子休息的地方。由于全真教
+現在廣收弟子，堂中擺放的桌椅也不斷增加，顯得這個堂已經很擁擠
+了。
 LONG
         );
         set("no_clean_up", 0);

@@ -5,13 +5,13 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("»ÔÔÂÊ¹", ({ "huiyue shi", "huiyue", "shi" }));
-        set("long", "Ò»¸öÈıÊ®¶àËêµÄÖĞÄêÄĞ×Ó£¬×°ÊøÆæÒì£¬²»Í¬\n"
-                    "ÆÕÍ¨µÄÖĞÍÁÈËÊ¿¡£Õâ±ãÊÇ²¨Ë¹Ã÷½Ì×Ü½Ì½ÌÖ÷\n"
-                    "×ùÏÂµÄ»ÔÔÂÊ¹¡£\n");
-        set("title", HIB "²¨Ë¹×Ü½Ì½ÌÖ÷×ùÏÂ" NOR);
-        set("nickname", HIY "ÔÆ·çÔÂÈıÊ¹" NOR);
-        set("gender", "ÄĞĞÔ");
+        set_name("è¼æœˆä½¿", ({ "huiyue shi", "huiyue", "shi" }));
+        set("long", "ä¸€å€‹ä¸‰åå¤šæ­²çš„ä¸­å¹´ç”·å­ï¼Œè£æŸå¥‡ç•°ï¼Œä¸åŒ\n"
+                    "æ™®é€šçš„ä¸­åœŸäººå£«ã€‚é€™ä¾¿æ˜¯æ³¢æ–¯æ˜æ•™ç¸½æ•™æ•™ä¸»\n"
+                    "åº§ä¸‹çš„è¼æœˆä½¿ã€‚\n");
+        set("title", HIB "æ³¢æ–¯ç¸½æ•™æ•™ä¸»åº§ä¸‹" NOR);
+        set("nickname", HIY "é›²é¢¨æœˆä¸‰ä½¿" NOR);
+        set("gender", "ç”·æ€§");
         set("age", 38);
         set("attitude", "friendly");
         set("shen_type", 1);
@@ -61,7 +61,7 @@ void create()
         prepare_skill("strike", "yinfeng-dao");
         prepare_skill("finger", "tougu-zhen");
 
-        create_family("²¨Ë¹Ã÷½Ì×Ü¶æ", 32, "µÜ×Ó");
+        create_family("æ³¢æ–¯æ˜æ•™ç¸½èˆµ", 32, "å¼Ÿå­");
 
         setup();
         carry_object("/d/tulong/yitian/npc/obj/jiaofu")->wear();
@@ -77,21 +77,21 @@ void init()
 
         if (living(this_object()) && present("yitian sword", me))
         {
-                command("say ß×£¿ÒĞÌì½£ÔõÃ´»áÔÚÄãÊÖÀï£¬¿´À´Õâ´ÎÖĞÔ­Ö®ĞĞÃ»°×ÅÜÁË£¡");
+                command("say å’¦ï¼Ÿå€šå¤©åŠæ€éº¼æœƒåœ¨ä½ æ‰‹è£¡ï¼Œçœ‹ä¾†é€™æ¬¡ä¸­åŸä¹‹è¡Œæ²’ç™½è·‘äº†ï¼");
                 kill_ob(me);
                 return;
         }
 
         if (living(this_object()) && present("tulong blade", me))
         {
-                command("say ºß£¬°ÑÍÀÁúµ¶½»³öÀ´£¬ÎÒÃÇÒÑ¾­ÊØºî¶àÊ±ÁË£¡");
+                command("say å“¼ï¼ŒæŠŠå± é¾åˆ€äº¤å‡ºä¾†ï¼Œæˆ‘å€‘å·²ç¶“å®ˆä¾¯å¤šæ™‚äº†ï¼");
                 kill_ob(me);
                 return;
         }
 
         if (living(this_object()) && present("shenghuo ling", me))
         {
-                command("say ß×£¿ÄãÔõÃ´»áÄÃ×ÅÎÒ½ÌµÄÊ¥»ğÁî£¿ËÀ°É£¡");
+                command("say å’¦ï¼Ÿä½ æ€éº¼æœƒæ‹¿è‘—æˆ‘æ•™çš„è–ç«ä»¤ï¼Ÿæ­»å§ï¼");
                 kill_ob(me);
                 return;
         }

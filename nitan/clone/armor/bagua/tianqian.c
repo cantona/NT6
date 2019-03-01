@@ -6,16 +6,16 @@ inherit HEAD;
 
 void create()
 {
-        set_name(HIY "°ËØÔÌìÇ¬¹Ú" NOR, ({ "tianqian guan", "tianqian", "guan" }));
+        set_name(HIY "å…«å¦å¤©ä¹¾å† " NOR, ({ "tianqian guan", "tianqian", "guan" }));
         set_weight(100);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIY"Ñ×»Æ·çÓêÊ®Äê¼ÍÄîÌ××°Ö®£º°ËØÔÌìÇ¬¹Ú\n" NOR);
-                set("unit", "¶¥");
+                set("long", HIY"ç‚é»ƒé¢¨é›¨åå¹´ç´€å¿µå¥—è£ä¹‹ï¼šå…«å¦å¤©ä¹¾å† \n" NOR);
+                set("unit", "é ‚");
                 set("value", 100);
                 set("armor_prop/int", 10);
-                set("armor_prop/T_bagua", 1); // Ì××°¼ÆÊı±êÖ¾
+                set("armor_prop/T_bagua", 1); // å¥—è£è¨ˆæ•¸æ¨™å¿—
         }
         setup();
 }

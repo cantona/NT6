@@ -7,30 +7,30 @@ inherit NPC;
 inherit F_DEALER;
 void create()
 {
-        set_name( YEL "�׽���" NOR, ({ "kong jinjin","kong","jinjin" }) );
-        set("gender", "����" );
-        set("title", "�׼�ͷ�����ϰ�");
+        set_name( YEL "孔進金" NOR, ({ "kong jinjin","kong","jinjin" }) );
+        set("gender", "男性" );
+        set("title", "孔家頭巾舖老板");
         set("age", 47);
         set("long", @LONG
-�׽�����ϰ忪�����ͷ�����Ѿ��кü����ˣ����ܴ�ҵĺ���������
-����ҲԽ��Խ�󣬿�����ȴ�����帣����Ȼ����վ��̨���к����⡣��
-����ʡ�������ֿ��Լ��ӻ���ǣ�������û��͵���Ļ��ᡣ
+孔進金孔老板開了這家頭巾舖已經有好幾年了，頗受大家的好評，他的
+生意也越做越大，可是他卻不享清福，仍然親自站櫃台，招呼生意。這
+樣既省了人手又可以監視伙計們，讓他們沒有偷懶的機會。
 LONG
     );
         set("attitude", "friendly");
-        set("rank_info/respect", "�ϸ�");
-        set("rank_info/rude","�����˵�");
+        set("rank_info/respect", "老哥");
+        set("rank_info/rude","老王八蛋");
         set("combat_exp",100);
         set("inquiry", ([
-                "ͷ��":"����һ�����������۹��������Ҫ����ô�����ۼҵ�ͷ���أ�\n",
-                "here":"��Ӵ���͹٣�����ͷ�������ݰɣ��ú�תת�ɡ�\n",
+                "頭巾":"哎，一看您就是有眼光的主兒，要不怎麼想買咱家的頭巾呢？\n",
+                "here":"哎喲，客官，您是頭回來揚州吧？好好轉轉吧。\n",
         ]) );
         set("chat_chance", 40);
         set("chat_msg", ({
-                "���ϰ����Ӵ���͹٣�һ��������������ˣ������˴�����ɫͷ������ˡ�\n",
-                "���ϰ�����͹٣�����˵û�У������Ķ���ү��Ǯ��ͨ�˵�������������\n",
-                "���ϰ���������͹٣�ѡһ��ϲ����ͷ���ɣ��Ҹ��������������ô����\n",
-                "���ϰ�����Ǻǣ��͹٣���Ҫ�ǲ������Ͷ࿴����ɫ���������æ���ء�\n",
+                "孔老板道：喲，客官，一看您就是練武的人，練武人戴塊青色頭巾最好了。\n",
+                "孔老板道：客官，您聽說沒有，大理的段王爺出錢開通了到大理的馬車。\n",
+                "孔老板道：來，客官，選一塊喜歡的頭巾吧，我給您打個九五折怎麼樣？\n",
+                "孔老板道：呵呵，客官，您要是不買您就多看看貨色，我這兒還忙著呢。\n",
         }));
         set("vendor_goods", ({
                 HEAD_DIR+"damao",
@@ -64,6 +64,6 @@ void init()
 void greeting(object ob)
 {
         if( !ob || environment(ob) != environment() ) return;
-        message_vision( "���ϰ�����˽�������æߺ�ȣ�����һ�ƣ���һ�����ۼҵ�ͷ���治������\n",ob);
+        message_vision( "孔老板見有人進來，連忙吆喝：“瞧一瞧，看一看，咱家的頭巾真不賴！”\n",ob);
         return;
 }

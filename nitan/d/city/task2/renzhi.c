@@ -1,6 +1,6 @@
-// /d/npc/renzhi.c ÈËÖÊ
+// /d/npc/renzhi.c äººè³ª
 //modified by sega 1/10/99
-//ĞŞ¸ÄÁË½±ÀøµÄÉÏÏŞ
+//ä¿®æ”¹äº†çå‹µçš„ä¸Šé™
 #include <ansi.h>
 #define lay_exp 20
 #define lay_pot 5
@@ -17,15 +17,15 @@
 
 inherit NPC;
 string * des_str=({
-        "ÕâÊÇÒ»Î»ºÚÉ´ÃÉÃæµÄÈË£¬¿´²»³öÓĞ¶à´óËêÊı¡£\n",
-        "ËûÕû¸öÈË¶¼±»¹üÔÚÒ»¼ş³¤´óµÄºÚÒÂÀï£¬Ä¬Ä¬Õ¾ÔÚÄÇÀïÒ»ÑÔ²»·¢¡£\n",
-        "Ò»Î»Î¢Î¢·¢ÅÖµÄÈË£¬ÂúÁ³¶Ñ×ÅĞ¦¡£\n",
-        "ËûµÄÃ¼Í·¶¼ËøÔÚÒ»Æğ£¬ËÆºõ¶ÔÊ²Ã´ÊÂºÜµ£ĞÄµÄÑù×Ó¡£\n",
-        "Õâ¸öÈËâ«â«ËöËöµØÕ¾ÔÚÄÇÀï£¬ºÃÏóÓĞÊ²Ã´»°ÓÖ²»¸ÒËµËÆµÄ¡£\n",
-        "Ò»Î»¿´ÆğÀ´ÉñÉñÃØÃØµÄÈË£¬¿ÉÊÇ×ÜÈÃÈË¾õµÃÓĞµã¹ÖÒìµÄÑù×Ó¡£\n",
-        "Õâ¸öÈËÕ¾ÔÚÄÇÀïºÃÏó²»Í£µØÔÚ·¢¶¶£¬Ò²ĞíÊÇº¦ÅÂÊ²Ã´¡£\n",
-        "ËûÂúÁ³µÄÖåÎÆ£¬¿´ÆğÀ´ºÃÏóËêÊıºÜ´ó£¬²»¹ı×ĞÏ¸Ò»¿´£¬ÓÖºÃÏó²¢Ã»ÓĞÊµ¼ÊÄÇÃ´´ó¡£\n",
-        "Ëû´©×ÅÒ»¼ş±¾À´ÖÊµØºÜºÃµÄÒÂ·ş£¬¿ÉÊÇÏÖÔÚÒÂ·şÉÏÕ´ÂúÁË³¾ÍÁºÍÑª¼£¡£\n",
+        "é€™æ˜¯ä¸€ä½é»‘ç´—è’™é¢çš„äººï¼Œçœ‹ä¸å‡ºæœ‰å¤šå¤§æ­²æ•¸ã€‚\n",
+        "ä»–æ•´å€‹äººéƒ½è¢«è£¹åœ¨ä¸€ä»¶é•·å¤§çš„é»‘è¡£è£¡ï¼Œé»˜é»˜ç«™åœ¨é‚£è£¡ä¸€è¨€ä¸ç™¼ã€‚\n",
+        "ä¸€ä½å¾®å¾®ç™¼èƒ–çš„äººï¼Œæ»¿è‡‰å †è‘—ç¬‘ã€‚\n",
+        "ä»–çš„çœ‰é ­éƒ½é–åœ¨ä¸€èµ·ï¼Œä¼¼ä¹å°ä»€éº¼äº‹å¾ˆæ“”å¿ƒçš„æ¨£å­ã€‚\n",
+        "é€™å€‹äººçŒ¥çŒ¥ç‘£ç‘£åœ°ç«™åœ¨é‚£è£¡ï¼Œå¥½è±¡æœ‰ä»€éº¼è©±åˆä¸æ•¢èªªä¼¼çš„ã€‚\n",
+        "ä¸€ä½çœ‹èµ·ä¾†ç¥ç¥ç§˜ç§˜çš„äººï¼Œå¯æ˜¯ç¸½è®“äººè¦ºå¾—æœ‰é»æ€ªç•°çš„æ¨£å­ã€‚\n",
+        "é€™å€‹äººç«™åœ¨é‚£è£¡å¥½è±¡ä¸åœåœ°åœ¨ç™¼æŠ–ï¼Œä¹Ÿè¨±æ˜¯å®³æ€•ä»€éº¼ã€‚\n",
+        "ä»–æ»¿è‡‰çš„çšºç´‹ï¼Œçœ‹èµ·ä¾†å¥½è±¡æ­²æ•¸å¾ˆå¤§ï¼Œä¸éä»”ç´°ä¸€çœ‹ï¼Œåˆå¥½è±¡ä¸¦æ²’æœ‰å¯¦éš›é‚£éº¼å¤§ã€‚\n",
+        "ä»–ç©¿è‘—ä¸€ä»¶æœ¬ä¾†è³ªåœ°å¾ˆå¥½çš„è¡£æœï¼Œå¯æ˜¯ç¾åœ¨è¡£æœä¸Šæ²¾æ»¿äº†å¡µåœŸå’Œè¡€è·¡ã€‚\n",
 });
 
 string * random_act = ({
@@ -36,7 +36,7 @@ string * random_act = ({
         "dazuo 120",
         "sigh",
         "sigh1",
-        "say ÄãÒª°ÑÎÒ´øµ½ÄÄÀïÈ¥°¡£¿",
+        "say ä½ è¦æŠŠæˆ‘å¸¶åˆ°å“ªè£¡å»å•Šï¼Ÿ",
         "remove all",
         "remove all",
         "remove all",
@@ -44,14 +44,14 @@ string * random_act = ({
 });
 
 string * escape_msg = ({
-        "$NÍ»È»¾ª¿ÖµØµÀ£º¡°°¥Ñ½£¬É±ÊÖÀ´ÁË£¬ÎÒ´ÓÕâÌõÂ·ÏÈÅÜÁË¡£¡±\n",
-        "$NÍ»È»¾ª¿ÖµØÖ¸×ÅÄã£¬ĞªË¹µ×ÀïµØ´óº°ÆğÀ´£º¡°É±ÊÖ£¡Äã¾ÍÊÇÉ±ÊÖ£¡Äã¾ÍÊÇÅÉÀ´É±ÎÒµÄÉ±ÊÖ£¡¡±Ã»µÈË­·´Ó¦¹ıÀ´£¬$N×ªÉí´óÅÜÆğÀ´¡£\n",
-        "$NÇÓÇÓµØËÄ´¦¿´ÁË¿´£¬Í»È»½ĞÁËÆğÀ´£º¡°ÕâµØ·½Èç´ËÆ«Æ§£¬ÔõÃ´ÄÜ¶à´ôÄØ£¬ÎÒÏÈ×ß°É¡£¡±\n",
-        "$NÒ»»ØÍ·£¬ËÆºõ¿´¼ûÔ¶´¦ÓĞÊ²Ã´¶«Î÷ÂÓ¹ı£¬¾ªµÃ×ªÉí¾ÍÅÜ¡£\n",
-        "ºöÈ»Ìıµ½$NÒ»Éù²Ò½Ğ£¬ºÃÏó±»²È×¡ÁËÎ²°ÍµÄÍÃ×ÓÒ»Ñù×ªÉíÌÓÁË¿ªÈ¥¡£\n",
-        "$NÍ»È»»ĞÈ»°ãµÀ£º¡°Å¶£¬ÕâµØ·½ÎÒÒÔÇ°À´¹ı£¬¸Ã´ÓÕâÌõÂ·×ß¡£Ëµ°Õ£¬×ªÉí¾Í×ß¡£¡±\n"
+        "$Nçªç„¶é©šæåœ°é“ï¼šâ€œå“å‘€ï¼Œæ®ºæ‰‹ä¾†äº†ï¼Œæˆ‘å¾é€™æ¢è·¯å…ˆè·‘äº†ã€‚â€\n",
+        "$Nçªç„¶é©šæåœ°æŒ‡è‘—ä½ ï¼Œæ­‡æ–¯åº•è£¡åœ°å¤§å–Šèµ·ä¾†ï¼šâ€œæ®ºæ‰‹ï¼ä½ å°±æ˜¯æ®ºæ‰‹ï¼ä½ å°±æ˜¯æ´¾ä¾†æ®ºæˆ‘çš„æ®ºæ‰‹ï¼â€æ²’ç­‰èª°åæ‡‰éä¾†ï¼Œ$Nè½‰èº«å¤§è·‘èµ·ä¾†ã€‚\n",
+        "$Næ€¯æ€¯åœ°å››è™•çœ‹äº†çœ‹ï¼Œçªç„¶å«äº†èµ·ä¾†ï¼šâ€œé€™åœ°æ–¹å¦‚æ­¤ååƒ»ï¼Œæ€éº¼èƒ½å¤šå‘†å‘¢ï¼Œæˆ‘å…ˆèµ°å§ã€‚â€\n",
+        "$Nä¸€å›é ­ï¼Œä¼¼ä¹çœ‹è¦‹é è™•æœ‰ä»€éº¼æ±è¥¿æ éï¼Œé©šå¾—è½‰èº«å°±è·‘ã€‚\n",
+        "å¿½ç„¶è½åˆ°$Nä¸€è²æ…˜å«ï¼Œå¥½è±¡è¢«è¸©ä½äº†å°¾å·´çš„å…”å­ä¸€æ¨£è½‰èº«é€ƒäº†é–‹å»ã€‚\n",
+        "$Nçªç„¶æç„¶èˆ¬é“ï¼šâ€œå“¦ï¼Œé€™åœ°æ–¹æˆ‘ä»¥å‰ä¾†éï¼Œè©²å¾é€™æ¢è·¯èµ°ã€‚èªªç½·ï¼Œè½‰èº«å°±èµ°ã€‚â€\n"
 ,
-        "$NİëµØÈöÍÈ¾ÍÅÜ£¬ÔõÃ´º°ËûÒ²²»»ØÍ·£¬Ò»ÁïÑÌµØÏûÊ§ÁË¡£\n",
+        "$Né©€åœ°æ’’è…¿å°±è·‘ï¼Œæ€éº¼å–Šä»–ä¹Ÿä¸å›é ­ï¼Œä¸€æºœç…™åœ°æ¶ˆå¤±äº†ã€‚\n",
 });
 
 string status_color(int current, int max);
@@ -62,12 +62,12 @@ void create()
         if (random(2) == 0)
         {
                 name = NAMES_D->random_name(1);
-                set("gender", "Å®ĞÔ");
+                set("gender", "å¥³æ€§");
         }
         else
         {
                 name = NAMES_D->random_name(0);
-                set("gender", "ÄĞĞÔ");
+                set("gender", "ç”·æ€§");
         }
         set_name(name["name"],({"ren zhi", "rz"}));
 
@@ -77,7 +77,7 @@ void create()
         set("combat_exp", 500 + random(5000));
         set("attitude", "friendly");
         set("inquiry", ([
-                "name" : "ÎÒµÄĞÕÃûÊÇ²»ÄÜ¶ÔÈËÂÒ½²µÄ¡£\n",
+                "name" : "æˆ‘çš„å§“åæ˜¯ä¸èƒ½å°äººäº‚è¬›çš„ã€‚\n",
         ]));
 
         set("env/wimpy",50);
@@ -131,9 +131,9 @@ int do_baohu(string arg)
         object me = this_player();
 
         if( query("leader_name") != query("id", me) )
-                return notify_fail("ÄãÃ»ÓĞ¸ºÔğ±£»¤¸ÃÈËÖÊµÄÒåÎñ£¡\n"); 
+                return notify_fail("ä½ æ²’æœ‰è² è²¬ä¿è­·è©²äººè³ªçš„ç¾©å‹™ï¼\n"); 
         set("gurader_name",query("id", me));
-        tell_object(me,HIR"×¢Òâ£ºÄãÏÖÔÚ¿ªÊ¼¶ÔÈËÖÊ½øĞĞ±£ÎÀ£¬ÈÎºÎÕë¶ÔÈËÖÊµÄ¹¥»÷¶¼½«×Ô¶¯×ªÒÆµ½ÄãÉíÉÏ£¡\n"NOR);
+        tell_object(me,HIR"æ³¨æ„ï¼šä½ ç¾åœ¨é–‹å§‹å°äººè³ªé€²è¡Œä¿è¡›ï¼Œä»»ä½•é‡å°äººè³ªçš„æ”»æ“Šéƒ½å°‡è‡ªå‹•è½‰ç§»åˆ°ä½ èº«ä¸Šï¼\n"NOR);
         return 1;
 }
 
@@ -149,12 +149,12 @@ int do_hp(string arg)
         my = ob->query_entire_dbase();
 
         if( query("id", me) == query("leader_name")){
-                tell_object(me,sprintf("%sµÄ½¡¿µÇé¿öÈçÏÂ£º\n",my["name"]));
-                msg = sprintf(" ¾«  £º %s%4d/ %4d %s(%3d%%)\n" NOR ,
+                tell_object(me,sprintf("%sçš„å¥åº·æƒ…æ³å¦‚ä¸‹ï¼š\n",my["name"]));
+                msg = sprintf(" ç²¾  ï¼š %s%4d/ %4d %s(%3d%%)\n" NOR ,
                         status_color(my["jing"], my["eff_jing"]), my["jing"], my["eff_jing"],
                         status_color(my["eff_jing"], my["max_jing"]), my["eff_jing"] * 100 / my["max_jing"]);
                 tell_object(me,msg);
-                msg = sprintf(" Æø  £º %s%4d/ %4d %s(%3d%%)\n" NOR ,
+                msg = sprintf(" æ°£  ï¼š %s%4d/ %4d %s(%3d%%)\n" NOR ,
 status_color(my["qi"], my["eff_qi"]), my["qi"], my["eff_qi"],
 status_color(my["eff_qi"], my["max_qi"]), my["eff_qi"] * 100 / my["max_qi"]);
                 tell_object(me,msg);
@@ -176,7 +176,7 @@ int do_hit(string arg)
         {
                 if (userp(me) )
                 {
-                        tell_object(me,HIW"Íæ¼Ò²»ÄÜ¹¥»÷ÎŞ±£»¤µÄÈËÖÊ£¡\n"NOR);
+                        tell_object(me,HIW"ç©å®¶ä¸èƒ½æ”»æ“Šç„¡ä¿è­·çš„äººè³ªï¼\n"NOR);
                         return 1;
                 }
                 else
@@ -184,13 +184,13 @@ int do_hit(string arg)
         }
         if (me == gurad_ob)
         {
-                tell_object(me,HIR"ß×£¿Äã²»ÊÇËûµÄ±£»¤ÕßÂğ?\n"NOR);
+                tell_object(me,HIR"å’¦ï¼Ÿä½ ä¸æ˜¯ä»–çš„ä¿è­·è€…å—?\n"NOR);
                 return 1;
         }
         else
         {
-                tell_object(me,HIR"ÈËÖÊÕıÊÜµ½"+query("name", gurad_ob)+"µÄ±£»¤£¬ÈË¼Ò¼ÓÈëÕ½¶·¶ÔÄã·¢Æğ¹¥»÷£¡\n"NOR);
-                tell_object(gurad_ob,HIR"ÈËÖÊÊÜµ½"+query("name", me)+"¹¥»÷£¬ÄãÍ¦Éí¼ÓÈëÕ½¶·£¡\n"NOR);
+                tell_object(me,HIR"äººè³ªæ­£å—åˆ°"+query("name", gurad_ob)+"çš„ä¿è­·ï¼Œäººå®¶åŠ å…¥æˆ°é¬¥å°ä½ ç™¼èµ·æ”»æ“Šï¼\n"NOR);
+                tell_object(gurad_ob,HIR"äººè³ªå—åˆ°"+query("name", me)+"æ”»æ“Šï¼Œä½ æŒºèº«åŠ å…¥æˆ°é¬¥ï¼\n"NOR);
                 me -> fight_ob(gurad_ob);                
                 gurad_ob -> fight_ob(me);
                 return 1;
@@ -209,7 +209,7 @@ environment()) )
         {
                 if (userp(me) )
                 {
-                        tell_object(me,HIW"Íæ¼Ò²»ÄÜ¹¥»÷ÎŞ±£»¤µÄÈËÖÊ£¡\n"NOR);
+                        tell_object(me,HIW"ç©å®¶ä¸èƒ½æ”»æ“Šç„¡ä¿è­·çš„äººè³ªï¼\n"NOR);
                         return 1;
                 }
                 else return 0;
@@ -219,13 +219,13 @@ environment()) )
                 return 0;
         if (me == gurad_ob)
         {
-                tell_object(me,HIR"Äã²»ÏëÍê³ÉÄãµÄÈÎÎñÁËÂğ£¿\n"NOR);
+                tell_object(me,HIR"ä½ ä¸æƒ³å®Œæˆä½ çš„ä»»å‹™äº†å—ï¼Ÿ\n"NOR);
                 return 1;
         }
         else
         {
-                tell_object(me,HIR"ÈËÖÊÕıÊÜµ½"+query("name", gurad_ob)+"µÄ±£»¤£¬ÈË¼Ò¼ÓÈëÕ½¶·µÖÓùÄãµÄ¹¥»÷£¡\n"NOR);
-                tell_object(gurad_ob,HIR+query("name", me)+"×¼±¸É±ËÀÈËÖÊ£¬ÄãÍ¦Éí¼ÓÈëÕ½¶·£¡\n"NOR);
+                tell_object(me,HIR"äººè³ªæ­£å—åˆ°"+query("name", gurad_ob)+"çš„ä¿è­·ï¼Œäººå®¶åŠ å…¥æˆ°é¬¥æŠµå¾¡ä½ çš„æ”»æ“Šï¼\n"NOR);
+                tell_object(gurad_ob,HIR+query("name", me)+"æº–å‚™æ®ºæ­»äººè³ªï¼Œä½ æŒºèº«åŠ å…¥æˆ°é¬¥ï¼\n"NOR);
                 me -> kill_ob(gurad_ob);                
                 gurad_ob -> fight_ob(me);
                 return 1;
@@ -244,7 +244,7 @@ int do_touxi(string arg)
         {
                 if (userp(me) )
                 {
-                        tell_object(me,HIW"Íæ¼Ò²»ÄÜ¹¥»÷ÎŞ±£»¤µÄÈËÖÊ£¡\n"NOR);
+                        tell_object(me,HIW"ç©å®¶ä¸èƒ½æ”»æ“Šç„¡ä¿è­·çš„äººè³ªï¼\n"NOR);
                         return 1;
                 }
                 else return 0;
@@ -255,13 +255,13 @@ int do_touxi(string arg)
         if (me == gurad_ob)
         {
                 command("papa"+query("id", me));
-                tell_object(me,HIR"Äã²»ÄÜÍµÏ®ÈËÖÊ¡£\n"NOR);
+                tell_object(me,HIR"ä½ ä¸èƒ½å·è¥²äººè³ªã€‚\n"NOR);
                 return 1;
         }
         else
         {
-                tell_object(me,HIR"ÈËÖÊÕıÊÜµ½"+query("name", gurad_ob)+"µÄ±£»¤£¬ÈË¼Ò¼ÓÈëÕ½¶·µÖÓùÄãµÄ¹¥»÷£¡\n"NOR);
-                tell_object(gurad_ob,HIR+query("name", me)+"×¼±¸¶ÔÈËÖÊ½øĞĞÍµÏ®£¬ÄãÍ¦Éí¼ÓÈëÕ½¶·£¡\n"NOR);
+                tell_object(me,HIR"äººè³ªæ­£å—åˆ°"+query("name", gurad_ob)+"çš„ä¿è­·ï¼Œäººå®¶åŠ å…¥æˆ°é¬¥æŠµå¾¡ä½ çš„æ”»æ“Šï¼\n"NOR);
+                tell_object(gurad_ob,HIR+query("name", me)+"æº–å‚™å°äººè³ªé€²è¡Œå·è¥²ï¼Œä½ æŒºèº«åŠ å…¥æˆ°é¬¥ï¼\n"NOR);
                 me -> kill_ob(gurad_ob);
                 gurad_ob -> fight_ob(me);
                 return 1;
@@ -278,7 +278,7 @@ int do_steal(string arg)
 
         if( who == query("id", ob) || who == "rz" )
         {
-                message("vision",HIW"Íæ¼Ò²»ÄÜÍµÈËÖÊÉíÉÏµÄ¶«Î÷£¡\n"NOR,me);
+                message("vision",HIW"ç©å®¶ä¸èƒ½å·äººè³ªèº«ä¸Šçš„æ±è¥¿ï¼\n"NOR,me);
                 return 1;
         }
         return 0;
@@ -295,34 +295,34 @@ int do_order(string arg)
         string ss_name;
 
         if( query("leader_name") != query("id", me) )
-                return notify_fail("ÓÉÓÚÄã²»ÊÇ¸ÃÈÎÎñµÄ½ÓÊÕÕß£¬ÈËÖÊ²»»áÌıÄãµÄÖ¸»Ó£¡\n");
+                return notify_fail("ç”±äºä½ ä¸æ˜¯è©²ä»»å‹™çš„æ¥æ”¶è€…ï¼Œäººè³ªä¸æœƒè½ä½ çš„æŒ‡æ®ï¼\n");
         if (!arg || sscanf(arg, "%s %s",act,sth) != 2)
-                return notify_fail("Ö¸Áî¸ñÊ½£ºorder <¶¯×÷´Ê> <¾ßÌå¶¯×÷ÃèÊö>\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šorder <å‹•ä½œè©> <å…·é«”å‹•ä½œæè¿°>\n");
 
         if (query("qi") < 50)
-                return notify_fail("Ä¿Ç°ÈËÖÊÃ»ÓĞÁ¦ÆøÖ´ĞĞ¸ÃÏî¶¯×÷£¡\n");
+                return notify_fail("ç›®å‰äººè³ªæ²’æœ‰åŠ›æ°£åŸ·è¡Œè©²é …å‹•ä½œï¼\n");
 
-        if ( act!="go" && act!="ask chuanfu about ³öº£" && act!="get" && act!="give" && act!="drink" && act!="wear" && act!="remove" && act!="zou" && act!="wield" && act!="unwield" && act!="enter" && act!="eat" )
-                return notify_fail("Ä¿Ç°ÔİÊ±²»Ö§³Ö¸ÃÏî¶¯×÷Ö¸Áî£¡\n");
+        if ( act!="go" && act!="ask chuanfu about å‡ºæµ·" && act!="get" && act!="give" && act!="drink" && act!="wear" && act!="remove" && act!="zou" && act!="wield" && act!="unwield" && act!="enter" && act!="eat" )
+                return notify_fail("ç›®å‰æš«æ™‚ä¸æ”¯æŒè©²é …å‹•ä½œæŒ‡ä»¤ï¼\n");
 
         if ( me->is_busy() || me->is_fighting())
-                    return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
+                    return notify_fail("ä½ æ­£å¿™è‘—å‘¢ã€‚\n");
 
         if (act == "go")
         {
                 if (this_object()->is_busy() )
-                        return notify_fail(HIY"ÈËÖÊÒªĞİÏ¢Ò»»á¶ùÔÙÉÏÂ·¡£\n"NOR);
+                        return notify_fail(HIY"äººè³ªè¦ä¼‘æ¯ä¸€æœƒå…’å†ä¸Šè·¯ã€‚\n"NOR);
                 dest = sprintf( "exits/%s",sth);
                 if( !dest_add=query(dest, environment()) )
-                        return notify_fail("Õâ¸ö·½ÏòÃ»ÓĞ³öÂ·¡£\n");
+                        return notify_fail("é€™å€‹æ–¹å‘æ²’æœ‰å‡ºè·¯ã€‚\n");
                 if( !query("no_fight", environment(this_object())) )
                         addn("total_steps",1);
                 if (dest_add == query("dest_add") )
                 {
-                //Ä¿µÄµØµ½´ï
-                        message_vision(YEL"$N³¤³öÁËÒ»¿ÚÆøµÀ£º°¥£¬ÖÕÓÚµ½ÁË¡£²»ÖªµÀ´ÓÄÄÀïÃ°³öÀ´Ò»Á¾Âí³µ½«$N½ÓÉÏÁË³µ£¬È»ºóÑï³¾¶øÈ¥¡£\n"NOR,this_object(),me);
-                        tell_object(me,HIW"¹§Ï²Äã³É¹¦½«ÈËÖÊËÍµ½Ä¿µÄµØ£¬Íê³ÉÁËÕâÏîÈÎÎñ£¡\n"NOR);
-                        message("channel:chat",HIM"¡¾Ò¥ÑÔ¡¿ÌıËµ"+query("name", me)+"³É¹¦½«ÈËÖÊ»¤ËÍµ½Ä¿µÄµØÁË£¡\n"NOR,users());
+                //ç›®çš„åœ°åˆ°é”
+                        message_vision(YEL"$Né•·å‡ºäº†ä¸€å£æ°£é“ï¼šå“ï¼Œçµ‚äºåˆ°äº†ã€‚ä¸çŸ¥é“å¾å“ªè£¡å†’å‡ºä¾†ä¸€è¼›é¦¬è»Šå°‡$Næ¥ä¸Šäº†è»Šï¼Œç„¶å¾Œæšå¡µè€Œå»ã€‚\n"NOR,this_object(),me);
+                        tell_object(me,HIW"æ­å–œä½ æˆåŠŸå°‡äººè³ªé€åˆ°ç›®çš„åœ°ï¼Œå®Œæˆäº†é€™é …ä»»å‹™ï¼\n"NOR);
+                        message("channel:chat",HIM"ã€è¬ è¨€ã€‘è½èªª"+query("name", me)+"æˆåŠŸå°‡äººè³ªè­·é€åˆ°ç›®çš„åœ°äº†ï¼\n"NOR,users());
              
                         i = 0;
                         give_exp = lay_exp * query("total_steps");
@@ -338,9 +338,9 @@ int do_order(string arg)
                         if(give_exp > 8000) give_exp = 6000 + random(2000);
                         if(give_pot > 2000 ) give_pot = 1800 + random(400);
                         if(give_score > 1500 ) give_score = 1000 + random(500);
-                        log_file("mission/ms_renzhi",sprintf("%20s×ö±£»¤ÈËÖÊÈÎÎñ£¬µÃµ½£º%4iµãEXPºÍ%4iµãÇ±ÄÜ¡£\n",
+                        log_file("mission/ms_renzhi",sprintf("%20såšä¿è­·äººè³ªä»»å‹™ï¼Œå¾—åˆ°ï¼š%4ié»EXPå’Œ%4ié»æ½›èƒ½ã€‚\n",
        query("name", me)+"("+getuid(me)+")",give_exp,give_pot));
-                        tell_object(me,HIW + sprintf("Äã±»½±ÀøÁË£¡µÃµ½%sµã¾­ÑéºÍ%sµãÇ±ÄÜ£¬%sµã½­ºşÔÄÀú¡£\n", chinese_number(give_exp), chinese_number(give_pot), chinese_number(give_score) ) + NOR);
+                        tell_object(me,HIW + sprintf("ä½ è¢«çå‹µäº†ï¼å¾—åˆ°%sé»ç¶“é©—å’Œ%sé»æ½›èƒ½ï¼Œ%sé»æ±Ÿæ¹–é–±æ­·ã€‚\n", chinese_number(give_exp), chinese_number(give_pot), chinese_number(give_score) ) + NOR);
                         addn("combat_exp", give_exp, me);
                         addn("potential", give_pot, me);
                         addn("score", give_score, me);
@@ -386,12 +386,12 @@ int do_give(string arg)
         if ( sscanf(arg,"%s to %s",o_name,p_name) !=2 ) return 0;
         if ( p_name != "rz") return 0;
         if (! ob = present(o_name,me))
-                return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+                return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™æ¨£æ±è¥¿ã€‚\n");
         if( query("no_drop", ob) )
-                return notify_fail("ÕâÑù¶«Î÷²»ÄÜËæ±ã¸øÈË¡£\n");
+                return notify_fail("é€™æ¨£æ±è¥¿ä¸èƒ½éš¨ä¾¿çµ¦äººã€‚\n");
 
         ob -> move(this_object());
-        message("vision",sprintf("%s¸ø%sÒ»%s%s¡£\n",me->name(),
+        message("vision",sprintf("%sçµ¦%sä¸€%s%sã€‚\n",me->name(),
                 this_object()->name(),query("unit", ob),ob->name()),me);
         return 1;
 
@@ -404,7 +404,7 @@ int active_died()
 
         if (! me = find_player(query("leader_name")) ) return 1;
         else {
-                tell_object(me,HIB"ÈËÖÊËÀÁË£¬ÄãµÄÈÎÎñÊ§°ÜÁË£¡\n"NOR);
+                tell_object(me,HIB"äººè³ªæ­»äº†ï¼Œä½ çš„ä»»å‹™å¤±æ•—äº†ï¼\n"NOR);
                 if (ml = present("mi ling",me) )
                         destruct(ml);
                 return 1;
@@ -477,7 +477,7 @@ void do_check1()
 
         if( query("qi", ob)<10 )
         {
-                message_vision(HIR"$NÒ»Éù²Ò½Ğ£¬ºäµØÒ»Éùµ¹ÔÚµØÉÏ¡£\n"NOR,ob);
+                message_vision(HIR"$Nä¸€è²æ…˜å«ï¼Œè½Ÿåœ°ä¸€è²å€’åœ¨åœ°ä¸Šã€‚\n"NOR,ob);
                 ob -> receive_damage("qi",100);
                 ob -> receive_wound("qi",100);
                 ob -> die();
@@ -491,7 +491,7 @@ void do_check1()
                 }
                 else
                 {
-                        message_vision(HIR"$NÔÚ»èÃÔÖĞÍ»È»¼±´ÙµØÉëÒ÷ÁËÒ»Éù£¬È»ºó¾ÍÔÙÃ»ÓĞÉùÒôÁË¡£\n"NOR,ob);
+                        message_vision(HIR"$Nåœ¨æ˜è¿·ä¸­çªç„¶æ€¥ä¿ƒåœ°å‘»åŸäº†ä¸€è²ï¼Œç„¶å¾Œå°±å†æ²’æœ‰è²éŸ³äº†ã€‚\n"NOR,ob);
                         ob -> die();
                 }
         }

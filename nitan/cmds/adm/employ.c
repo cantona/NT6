@@ -15,22 +15,22 @@ int main(object me, string arg)
         string *tlist;
 
         mapping job = ([
-                       "ĞÂÊÖµ¼Ê¦"  :  "teacher.c",
-                       "Ö÷Ò³Î¬»¤"  :  "webmaster.c",
-                       "ÓÎÏ·Ğû´«"  :  "presell.c",
+                       "æ–°æ‰‹å°å¸«"  :  "teacher.c",
+                       "ä¸»é ç¶­è­·"  :  "webmaster.c",
+                       "éŠæˆ²å®£å‚³"  :  "presell.c",
         ]);
 
         if (! SECURITY_D->valid_grant(me, "(admin)"))
                 return 0;
 
         if (! arg || sscanf(arg, "%s %s", arg, new_status) != 2)
-                return notify_fail("Ö¸Áî¸ñÊ½£ºemploy <Ê¹ÓÃÕß> <Ö°Î»>\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šemploy <ä½¿ç”¨è€…> <è·ä½>\n");
 
-        if (new_status != "ĞÂÊÖµ¼Ê¦" &&
-            new_status != "Ö÷Ò³Î¬»¤" &&
-            new_status != "ÓÎÏ·Ğû´«" &&
-            new_status != "È¡Ïû¹ÍÓ¶" )
-                return notify_fail("Ã»ÓĞÕâÖÖÖ°Î»¡£\n");
+        if (new_status != "æ–°æ‰‹å°å¸«" &&
+            new_status != "ä¸»é ç¶­è­·" &&
+            new_status != "éŠæˆ²å®£å‚³" &&
+            new_status != "å–æ¶ˆé›‡å‚­" )
+                return notify_fail("æ²’æœ‰é€™ç¨®è·ä½ã€‚\n");
 
 /*
         if (! objectp(ob = present(arg, environment(me))) ||
@@ -38,28 +38,28 @@ int main(object me, string arg)
 */
         ob = UPDATE_D->global_find_player(arg); 
         if (! objectp(ob)) 
-                return notify_fail("ÄãÖ»ÄÜ¸Ä±äÊ¹ÓÃÕßµÄÖ°Î»¡£\n");
+                return notify_fail("ä½ åªèƒ½æ”¹è®Šä½¿ç”¨è€…çš„è·ä½ã€‚\n");
 
         if( query("viremploy/job", ob) == new_status )
         {
                 UPDATE_D->global_destruct_player(ob, 1); 
-                return notify_fail("¸ÃÍæ¼ÒÒÑ¾­µ£ÈÎ¸ÃÖ°Î»¡£\n");
+                return notify_fail("è©²ç©å®¶å·²ç¶“æ“”ä»»è©²è·ä½ã€‚\n");
         }
 
-        if (new_status == "È¡Ïû¹ÍÓ¶")
+        if (new_status == "å–æ¶ˆé›‡å‚­")
         {
                   if( !mapp(query("viremploy", ob)) )
                   {
                         UPDATE_D->global_destruct_player(ob, 1); 
-                           return notify_fail("¸ÃÍæ¼ÒÃ»ÓĞµ£ÈÎÈÎºÎÖ°Î»¡£\n");
+                           return notify_fail("è©²ç©å®¶æ²’æœ‰æ“”ä»»ä»»ä½•è·ä½ã€‚\n");
                   }
 
                   CHANNEL_D->do_channel(this_object(), "rumor",
-                             ob->name()+"("+query("id", ob)+")Ëùµ£ÈÎ"
-                             "µÄÖ°Î»£º"+query("viremploy/job", ob)+"±»È¡ÏûÁË£¡\n");
+                             ob->name()+"("+query("id", ob)+")æ‰€æ“”ä»»"
+                             "çš„è·ä½ï¼š"+query("viremploy/job", ob)+"è¢«å–æ¶ˆäº†ï¼\n");
 
-                // ĞÂÊÖµ¼Ê¦ĞèÒªÒÆ³ı¼ÇÂ¼
-                if( query("viremploy/job", ob) == "ĞÂÊÖµ¼Ê¦" )
+                // æ–°æ‰‹å°å¸«éœ€è¦ç§»é™¤è¨˜éŒ„
+                if( query("viremploy/job", ob) == "æ–°æ‰‹å°å¸«" )
                 {
                         tlist = DB_D->query_data("virlist/teacher");
                         if (sizeof(tlist))
@@ -75,7 +75,7 @@ int main(object me, string arg)
                 delete("viremploy", ob);
                 delete("flowers", ob);
                 SECURITY_D->remove_grant(query("id", ob),"home");
-                tell_object(ob, HIG + me->name(1) + "ÊÕ»ØÁËÄã home µÄÈ¨ÏŞ¡£\n" NOR);
+                tell_object(ob, HIG + me->name(1) + "æ”¶å›äº†ä½  home çš„æ¬Šé™ã€‚\n" NOR);
                 ob->save();
                 UPDATE_D->global_destruct_player(ob, 1); 
 
@@ -83,14 +83,14 @@ int main(object me, string arg)
         }
 
         CHANNEL_D->do_channel(this_object(), "rumor",
-                             ob->name()+"("+query("id", ob)+")±»ÈÎÃüÎª"+HIG+
-                             new_status + NOR + "¡£\n");
+                             ob->name()+"("+query("id", ob)+")è¢«ä»»å‘½ç‚º"+HIG+
+                             new_status + NOR + "ã€‚\n");
 
         set("viremploy/job", new_status, ob);
         delete("flowers", ob);
 
-        // ĞÂÊÖµ¼Ê¦ĞèÒª¼ÇÂ¼
-        if (new_status == "ĞÂÊÖµ¼Ê¦")
+        // æ–°æ‰‹å°å¸«éœ€è¦è¨˜éŒ„
+        if (new_status == "æ–°æ‰‹å°å¸«")
         {
                 tlist = DB_D->query_data("virlist/teacher");
                 if (sizeof(tlist))
@@ -106,7 +106,7 @@ int main(object me, string arg)
 
         set("viremploy/workroom", job[new_status], ob);
         SECURITY_D->grant(query("id", ob),"home");
-        tell_object(ob, HIG + me->name(1) + "ÊÚÓèÁËÄã home µÄÈ¨ÏŞ¡£\n" NOR);
+        tell_object(ob, HIG + me->name(1) + "æˆäºˆäº†ä½  home çš„æ¬Šé™ã€‚\n" NOR);
 
         ob->save();
         UPDATE_D->global_destruct_player(ob, 1); 
@@ -117,13 +117,13 @@ int main(object me, string arg)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : employ <Ä³ÈË> (È¨ÏŞµÈ¼¶)
+æŒ‡ä»¤æ ¼å¼ : employ <æŸäºº> (æ¬Šé™ç­‰ç´š)
 
-ÓÃÀ´ÌáÉıÈ¨ÏŞµÈ¼¶, [Ö÷Ò³Î¬»¤¡¢ÓÎÏ·Ğû´«¡¢ĞÂÊÖµ¼Ê¦¡¢Î×Ê¦ÖúÀí]
+ç”¨ä¾†æå‡æ¬Šé™ç­‰ç´š, [ä¸»é ç¶­è­·ã€éŠæˆ²å®£å‚³ã€æ–°æ‰‹å°å¸«ã€å·«å¸«åŠ©ç†]
 
-           employ <Ä³ÈË> È¡Ïû¹ÍÓ¶
+           employ <æŸäºº> å–æ¶ˆé›‡å‚­
 
-È¡Ïû¸ÃĞéÄâ¹¤×÷ÈËÔ±µÄÖ°Î»¡£
+å–æ¶ˆè©²è™›æ“¬å·¥ä½œäººå“¡çš„è·ä½ã€‚
 
 HELP );
     return 1;

@@ -12,26 +12,26 @@ void load_welcome();
 void load_banned_names();
 void load_banned_ids();
 
-void add_site(string pattern);                  // ban Ò»¸ö²»»¶Ó­µÄ ip µØÖ·
-void remove_site(string pattern);               // ½â·âÒ»¸ö ip µØÖ·
-void add_welcome_user(string user_id);          // Ôö¼ÓÒ»¸ö welcome ÓÃ»§(id)
-void remove_welcome_user(string user_id);       // É¾³ıÒ»¸ö welcome ÓÃ»§(id)
-void remove_netclub(string netline);            // ÒÆÈ¥Ò»ÌõÍø°ÉÏß
-void open_club_line(object user);               // ÓÉ welcome ÓÃ»§×Ô¼º´ò¿ªÍø°ÉµØÖ·
+void add_site(string pattern);                  // ban ä¸€å€‹ä¸æ­¡è¿çš„ ip åœ°å€
+void remove_site(string pattern);               // è§£å°ä¸€å€‹ ip åœ°å€
+void add_welcome_user(string user_id);          // å¢åŠ ä¸€å€‹ welcome ç”¨æˆ¶(id)
+void remove_welcome_user(string user_id);       // åˆªé™¤ä¸€å€‹ welcome ç”¨æˆ¶(id)
+void remove_netclub(string netline);            // ç§»å»ä¸€æ¢ç¶²å§ç·š
+void open_club_line(object user);               // ç”± welcome ç”¨æˆ¶è‡ªå·±æ‰“é–‹ç¶²å§åœ°å€
 
-// ÊôÓÚ welcome µÄÓÃ»§²»ÊÜ ban µÄÓ°Ïì£¬¶øÇÒ¿ÉÒÔ¿ª·ÅÕâ¸ùÏßÉÏ¶à¸ö ip µØÖ·
-string list_welcome_users();                    // welcome usersÁĞ±í
-string list_sites();                            // ±» ban µÄ ip ÁĞ±í
+// å±¬äº welcome çš„ç”¨æˆ¶ä¸å— ban çš„å½±éŸ¿ï¼Œè€Œä¸”å¯ä»¥é–‹æ”¾é€™æ ¹ç·šä¸Šå¤šå€‹ ip åœ°å€
+string list_welcome_users();                    // welcome usersåˆ—è¡¨
+string list_sites();                            // è¢« ban çš„ ip åˆ—è¡¨
 
-int is_banned(string site);                     // ÅĞ¶ÏÊÇ·ñÒ»¸ö ban µÄ ip (logind.cµ÷ÓÃ)
-int is_netclub(string netline);                 // ÅĞ¶ÏÊÇ·ñÒ»¸öÍø°ÉÏßµÄÓÃ»§(logind.cµ÷ÓÃ)
-int is_welcome(string user_id);                 // ÅĞ¶ÏÊÇ·ñÒ»¸ö welcome µÄÓÃ»§(logind.cµ÷ÓÃ)
+int is_banned(string site);                     // åˆ¤æ–·æ˜¯å¦ä¸€å€‹ ban çš„ ip (logind.cèª¿ç”¨)
+int is_netclub(string netline);                 // åˆ¤æ–·æ˜¯å¦ä¸€å€‹ç¶²å§ç·šçš„ç”¨æˆ¶(logind.cèª¿ç”¨)
+int is_welcome(string user_id);                 // åˆ¤æ–·æ˜¯å¦ä¸€å€‹ welcome çš„ç”¨æˆ¶(logind.cèª¿ç”¨)
 
 string *Sites;
 string *Netclubs;
 string *Welcomes;
-string *Banned_IDs;                             //  ban id ±í
-string *Banned_Names;                           //  ban ÖĞÎÄÃû±í
+string *Banned_IDs;                             //  ban id è¡¨
+string *Banned_Names;                           //  ban ä¸­æ–‡åè¡¨
 
 void create()
 {
@@ -164,7 +164,7 @@ int is_banned(string site)
                 return 1;
 
         /*
-        // ½ûÖ¹Ê¹ÓÃĞéÄâ ip »ò route
+        // ç¦æ­¢ä½¿ç”¨è™›æ“¬ ip æˆ– route
         if (tmp4 == "0" || tmp4 == "255")
                 return 1;
         */
@@ -183,67 +183,67 @@ void add_site(string site)
 
         if (! site)  return;
 
-        // ½ûÖ¹µØÖ·
+        // ç¦æ­¢åœ°å€
         if (sscanf(site, "%s.%s.%s.%s", tmp1, tmp2, tmp3, tmp4) == 4)
         {
                 if (is_banned(site))
                 {
-                        write (RED + site + "ÒÑ¾­±»½ûÖ¹!\n" NOR);
+                        write (RED + site + "å·²ç¶“è¢«ç¦æ­¢!\n" NOR);
                         return;
                 }
                 if (tmp1 == "*")
                 {
-                        write (RED + site + "µÄ IP ·¶Î§Ì«´óÁË!\n" NOR);
+                        write (RED + site + "çš„ IP èŒƒåœå¤ªå¤§äº†!\n" NOR);
                         return;
                 }
                 Sites += ({site});
                 write_file(BANNED_SITES, Sites[sizeof(Sites)-1] + "\n", 0);
-                write (RED "\n½ûÖ¹µØÖ·" + site + "...OK£¡\n" NOR);
+                write (RED "\nç¦æ­¢åœ°å€" + site + "...OKï¼\n" NOR);
                 Netclubs -= ({ site });
                 return;
         }
 
-        // ½ûÖ¹Ê¹ÓÃÖĞÎÄÃû
+        // ç¦æ­¢ä½¿ç”¨ä¸­æ–‡å
         if (is_chinese(site))
         {
                 if (member_array(site, Banned_Names) != -1)
                 {
-                        write (RED + site + "ÒÑ¾­±»½ûÖ¹£¡\n" NOR);
+                        write (RED + site + "å·²ç¶“è¢«ç¦æ­¢ï¼\n" NOR);
                         return;
                 }
                 for (i = 0; i < sizeof(Banned_Names); i++)
                 if (strsrch(site, Banned_Names[i]) != -1)
                 {
-                        write (RED + site + "ÒÑ¾­±»½ûÖ¹£¡\n" NOR);
+                        write (RED + site + "å·²ç¶“è¢«ç¦æ­¢ï¼\n" NOR);
                         return;
                 }
                 Banned_Names+= ({site});
                 write_file(BANNED_NAMES, Banned_Names[sizeof(Banned_Names)-1] + "\n", 0);
-                write (RED "\n½ûÖ¹Ê¹ÓÃÖĞÎÄÃû" + site + "...OK£¡\n" NOR);
+                write (RED "\nç¦æ­¢ä½¿ç”¨ä¸­æ–‡å" + site + "...OKï¼\n" NOR);
                 return;
         }
 
         i = strlen(site);
         if ((strlen(site) < 3) || (strlen(site) > 12))
         {
-                write("Ó¢ÎÄÃû×Ö±ØĞëÊÇ 3 µ½ 12 ¸öÓ¢ÎÄ×ÖÄ¸¡£\n");
+                write("è‹±æ–‡åå­—å¿…é ˆæ˜¯ 3 åˆ° 12 å€‹è‹±æ–‡å­—æ¯ã€‚\n");
                 return;
         }
         while (i--)
         if (site[i] < 'a' || site[i] > 'z')
         {
-                write("Ö»ÄÜÓÃÓ¢ÎÄ×ÖÄ¸¡£\n");
+                write("åªèƒ½ç”¨è‹±æ–‡å­—æ¯ã€‚\n");
                 return;
         }
         if (member_array(site, Banned_IDs) != -1)
         {
-                write(site + "ÔÚÁĞ±íÖĞÒÑ¾­´æÔÚ¡£\n");
+                write(site + "åœ¨åˆ—è¡¨ä¸­å·²ç¶“å­˜åœ¨ã€‚\n");
                 return;
         }
 
         Banned_IDs += ({ site });
         write_file(BANNED_IDS, Banned_IDs[sizeof(Banned_IDs)-1] + "\n", 0);
-        write (BOLD "\nÔö¼Ó" + HIY + site + HIW + "µ½ÁĞ±í...OK£¡\n" NOR);
+        write (BOLD "\nå¢åŠ " + HIY + site + HIW + "åˆ°åˆ—è¡¨...OKï¼\n" NOR);
 }
 
 
@@ -255,33 +255,33 @@ void remove_site(string site)
 
         if (! site)  return;
 
-        // ½â³ı½ûÖ¹µØÖ·
+        // è§£é™¤ç¦æ­¢åœ°å€
         if (sscanf(site, "%s.%s.%s.%s", tmp1, tmp2, tmp3, tmp4) == 4)
         {
                 if (! is_banned(site))
                 {
-                        write ("\nÕâ¸öµØÖ·²¢Î´±»½ûÖ¹!\n");
+                        write ("\né€™å€‹åœ°å€ä¸¦æœªè¢«ç¦æ­¢!\n");
                         return;
                 }
                 for (i = 0; i < sizeof(Sites); i++)
                 if (sizeof(regexp(line, Sites[i])) == 1)
                         Sites -= ({ Sites[i] });
                 write_file(BANNED_SITES, implode(Sites, "\n") + "\n", 1);
-                write (BOLD "\n½â½ûµØÖ·" + site + "...OK£¡\n" NOR);
+                write (BOLD "\nè§£ç¦åœ°å€" + site + "...OKï¼\n" NOR);
                 return;
         }
 
-        // ½â³ı½ûÖ¹Ê¹ÓÃµÄÖĞÎÄÃû
+        // è§£é™¤ç¦æ­¢ä½¿ç”¨çš„ä¸­æ–‡å
         if (is_chinese(site))
         {
                 if (member_array(site, Banned_Names) == -1)
                 {
-                        write (RED + site + "Ã»±»½ûÖ¹Ê¹ÓÃ!\n" NOR);
+                        write (RED + site + "æ²’è¢«ç¦æ­¢ä½¿ç”¨!\n" NOR);
                 } else
                 {
                         Banned_Names-= ({site});
                         write_file(BANNED_NAMES, implode(Banned_Names, "\n") + "\n", 1);
-                        write (RED "\n½â½ûÖĞÎÄÃû" + site + "...OK£¡\n" NOR);
+                        write (RED "\nè§£ç¦ä¸­æ–‡å" + site + "...OKï¼\n" NOR);
                         return;
                 }
                 for (i = 0; i < sizeof(Banned_Names); i++)
@@ -289,32 +289,32 @@ void remove_site(string site)
                 {
                         Banned_Names -= ({site});
                         write_file(BANNED_NAMES, implode(Banned_Names, "\n") + "\n", 1);
-                        write (RED "\n½â½ûÖĞÎÄÃû" + site + "...OK£¡\n" NOR);
+                        write (RED "\nè§£ç¦ä¸­æ–‡å" + site + "...OKï¼\n" NOR);
                         return;
                 }
-                write (HIY + site + HIW + "Ã»±»½ûÖ¹£¡\n" NOR);
+                write (HIY + site + HIW + "æ²’è¢«ç¦æ­¢ï¼\n" NOR);
                 return;
         }
         i = strlen(site);
         if ((strlen(site) < 3) || (strlen(site) > 12))
         {
-                write("Ó¢ÎÄÃû×Ö±ØĞëÊÇ 3 µ½ 12 ¸öÓ¢ÎÄ×ÖÄ¸¡£\n");
+                write("è‹±æ–‡åå­—å¿…é ˆæ˜¯ 3 åˆ° 12 å€‹è‹±æ–‡å­—æ¯ã€‚\n");
                 return;
         }
         while(i--)
         if (site[i] < 'a' || site[i] > 'z')
         {
-                write("Ö»ÄÜÓÃÓ¢ÎÄ×ÖÄ¸¡£\n");
+                write("åªèƒ½ç”¨è‹±æ–‡å­—æ¯ã€‚\n");
                 return;
         }
         if (member_array(site, Banned_IDs) != -1)
         {
                 Banned_IDs -= ({ site });
                 write_file(BANNED_IDS, implode(Banned_IDs, "\n") + "\n", 1);
-                write (BOLD "\n½â³ıÊ¹ÓÃÓ¢ÎÄÃû" + HIY + site + HIW + "µÄÏŞÖÆ!\n" NOR);
+                write (BOLD "\nè§£é™¤ä½¿ç”¨è‹±æ–‡å" + HIY + site + HIW + "çš„é™åˆ¶!\n" NOR);
                 return;
         }
-        write (HIY + site + HIW + "Ã»±»½ûÖ¹!\n" NOR);
+        write (HIY + site + HIW + "æ²’è¢«ç¦æ­¢!\n" NOR);
 }
 
 
@@ -334,13 +334,13 @@ void add_welcome_user(string user_id)
 {
         if (is_welcome(user_id))
         {
-                write("Õâ¸ö id ÒÑ¾­ÁĞÈëÁË welcome player £¡\n");
+                write("é€™å€‹ id å·²ç¶“åˆ—å…¥äº† welcome player ï¼\n");
                 return;
         }
         Welcomes += ({ user_id });
         write_file(WELCOME, Welcomes[sizeof(Welcomes)-1] + "\n", 0);
         /*
-        write (BOLD "\nÔö¼Ó welcome user " + HIY + user_id + HIW + "...OK£¡\n" NOR);
+        write (BOLD "\nå¢åŠ  welcome user " + HIY + user_id + HIW + "...OKï¼\n" NOR);
         write (list_welcome_users());
         */
 }
@@ -349,20 +349,20 @@ void remove_welcome_user(string user_id)
 {
         if (! is_welcome(user_id))
         {
-                write("Õâ¸ö id ²¢Î´ÁĞÈëÁË welcome player £¡\n");
+                write("é€™å€‹ id ä¸¦æœªåˆ—å…¥äº† welcome player ï¼\n");
                 return;
         }
         Welcomes -= ({ user_id });
         write_file(WELCOME, implode(Welcomes,"\n") + "\n", 1);
-        write (BOLD "\nÉ¾³ı welcome user " + HIY + user_id + HIW + "...OK£¡\n" NOR);
+        write (BOLD "\nåˆªé™¤ welcome user " + HIY + user_id + HIW + "...OKï¼\n" NOR);
         write (list_welcome_users());
 }
 
 string list_welcome_users()
 {
         if (! sizeof(Welcomes))
-                return (BOLD "ÏÖÔÚ»¹Ã»ÓĞ Welcome user ¡£\n" NOR);
-        return sprintf(HIY + MUD_NAME + "µÄ Welcome users ÈçÏÂ£º\n" +
+                return (BOLD "ç¾åœ¨é‚„æ²’æœ‰ Welcome user ã€‚\n" NOR);
+        return sprintf(HIY + MUD_NAME + "çš„ Welcome users å¦‚ä¸‹ï¼š\n" +
                        HIC + "  %s\n" NOR, implode(Welcomes, "\n  "));
 }
 
@@ -370,10 +370,10 @@ void list_netclubs()
 {
         if (! sizeof(Netclubs))
         {
-                write(BOLD "ÏÖÔÚÃ»ÓĞ¿ª·ÅµÄÍø°ÉµØÖ·!\n" NOR);
+                write(BOLD "ç¾åœ¨æ²’æœ‰é–‹æ”¾çš„ç¶²å§åœ°å€!\n" NOR);
                 return;
         }
-        printf(HIY "\nÏÖÔÚÔÊĞí¶àÈËÍ¬Ê±½øÈë" + MUD_NAME + "µÄipµØÖ·ÈçÏÂ£º\n" +
+        printf(HIY "\nç¾åœ¨å…è¨±å¤šäººåŒæ™‚é€²å…¥" + MUD_NAME + "çš„ipåœ°å€å¦‚ä¸‹ï¼š\n" +
                HIC + "  %s\n" NOR, implode(Netclubs, "\n  "));
 }
 
@@ -403,10 +403,10 @@ void remove_netclub(string netline)
         if (sizeof(regexp(line, Netclubs[i])) == 1)
         {
                 Netclubs -= ({ Netclubs[i] });
-                write (HIR "\nÉ¾³ıÍø°ÉµØÖ·" + netline + "...OK£¡\n" NOR);
+                write (HIR "\nåˆªé™¤ç¶²å§åœ°å€" + netline + "...OKï¼\n" NOR);
                 return;
         }
-        write ("\nÕâ¸öµØÖ·²¢²»ÊÇÍø°ÉÏß!\n");
+        write ("\né€™å€‹åœ°å€ä¸¦ä¸æ˜¯ç¶²å§ç·š!\n");
 }
 
 void open_club_line(object user)
@@ -425,34 +425,34 @@ void open_club_line(object user)
         if (! wizardp(user) && ! is_welcome(query("id", user)))
 #endif
         {
-                write("ÄãÎ´ÁĞÈë welcome player £¬ÇëÏòÎ×Ê¦ÉêÇë£¡\n");
-                write("\nÉêÇë·½Ê½£ºÍ¨¹ımsg mailĞ´ĞÅ¸øarchÒÔÉÏ¼¶±ğµÄÎ×Ê¦£¬Í¨¹ıºó\n"
-                      "Î×Ê¦»á»ØĞÅÍ¨ÖªÄã,ÒÔºóÓÃÕâ¸ö id ÉÏÀ´´ò¿ªÄãµÄÍø°ÉÏß¼´¿É£¬\n"
-                      "Çë×¢Òâ¶½´ÙÄãËùÔÚÍø°ÉµÄÍæ¼Ò×ñÊØÓÎÏ·¹æÔò¡£Ğ»Ğ»ºÏ×÷£¡\n\n");
+                write("ä½ æœªåˆ—å…¥ welcome player ï¼Œè«‹å‘å·«å¸«ç”³è«‹ï¼\n");
+                write("\nç”³è«‹æ–¹å¼ï¼šé€šémsg mailå¯«ä¿¡çµ¦archä»¥ä¸Šç´šåˆ¥çš„å·«å¸«ï¼Œé€šéå¾Œ\n"
+                      "å·«å¸«æœƒå›ä¿¡é€šçŸ¥ä½ ,ä»¥å¾Œç”¨é€™å€‹ id ä¸Šä¾†æ‰“é–‹ä½ çš„ç¶²å§ç·šå³å¯ï¼Œ\n"
+                      "è«‹æ³¨æ„ç£ä¿ƒä½ æ‰€åœ¨ç¶²å§çš„ç©å®¶éµå®ˆéŠæˆ²è¦å‰‡ã€‚è¬è¬åˆä½œï¼\n\n");
                 return;
         }
         for (i = 0; i < sizeof(Netclubs); i++)
         if (Netclubs[i] && sizeof(regexp(line, Netclubs[i])) == 1)
         {
-                write (HIY + netline + "Íø°ÉÏßÒÑ¾­´ò¿ª£¡\n" NOR);
+                write (HIY + netline + "ç¶²å§ç·šå·²ç¶“æ‰“é–‹ï¼\n" NOR);
                 return;
         }
         if (netline == "127.0.0.1")
         {
-                write (HIY "ÄãÏÖÔÚËùÕ¼ÓÃµÄÊÇÍø¹Ø£¡\n" NOR);
+                write (HIY "ä½ ç¾åœ¨æ‰€ä½”ç”¨çš„æ˜¯ç¶²é—œï¼\n" NOR);
                 remove_welcome_user(query("id", user));
                 return;
         }
         Netclubs += ({ netline });
-        write (BOLD "\n´ò¿ªÍø°ÉµØÖ·" + netline + "...OK£¡\n" NOR);
+        write (BOLD "\næ‰“é–‹ç¶²å§åœ°å€" + netline + "...OKï¼\n" NOR);
 }
 string list_sites()
 {
         int flag;
-        string msg = HIC "\nÏÖÔÚ±»½ûÖ¹½øÈë" + MUD_NAME + "µÄ ip µØÖ·ÈçÏÂ£º\n" + HIR;
+        string msg = HIC "\nç¾åœ¨è¢«ç¦æ­¢é€²å…¥" + MUD_NAME + "çš„ ip åœ°å€å¦‚ä¸‹ï¼š\n" + HIR;
 
         if (! sizeof(Sites))
-                return (BOLD "ÏÖÔÚÃ»ÓĞ±»½ûÖ¹µÄµØÖ·£¡\n" NOR);
+                return (BOLD "ç¾åœ¨æ²’æœ‰è¢«ç¦æ­¢çš„åœ°å€ï¼\n" NOR);
         flag = 0;
         foreach (string str in sort_array(Sites, 1))
         {
@@ -478,10 +478,10 @@ int vaild_allow_address(object ob)
         if (! sizeof(address))
         {
                 set_temp("no_allow_ip", 1, ob);
-                // write(HIY "\n¾¯¸æ£ºÄãÎ´Éè¶¨×Ô¼ºµÄµÇÂ¼µØÖ··¶Î§¡£ÇëÓÃ allowip Ö¸ÁîÉèÖÃ¡£\n" NOR);
+                // write(HIY "\nè­¦å‘Šï¼šä½ æœªè¨­å®šè‡ªå·±çš„ç™»éŒ„åœ°å€èŒƒåœã€‚è«‹ç”¨ allowip æŒ‡ä»¤è¨­ç½®ã€‚\n" NOR);
                 if (is_welcome(query("id", ob)) && ! is_netclub(query_ip_number(ob)))
                 {
-                        open_club_line(ob);    // ²¢×Ô¶¯¿ª·ÅÍø°ÉÏŞÖÆ
+                        open_club_line(ob);    // ä¸¦è‡ªå‹•é–‹æ”¾ç¶²å§é™åˆ¶
                         log_file("static/open_netclub",
                                  sprintf("user %s open ip address %s limit in %s.\n",
                                          query("id", ob),query_ip_number(ob),ctime(time())));
@@ -494,15 +494,15 @@ int vaild_allow_address(object ob)
         {
                 if( is_welcome(query("id", ob)) && !is_netclub(query_ip_number(ob)) )
                 {
-                        open_club_line(ob);    // ²¢×Ô¶¯¿ª·ÅÍø°ÉÏŞÖÆ
+                        open_club_line(ob);    // ä¸¦è‡ªå‹•é–‹æ”¾ç¶²å§é™åˆ¶
                         log_file("static/open_netclub",
                                  sprintf("user %s open ip address %s limit in %s.\n",
                                          query("id", ob),query_ip_number(ob),ctime(time())));
                 }
                 return 1;
         }
-        write(HIR "\nÑÏÖØ¾¯¸æ£ºÄã²»ÔÚ×Ô¼ºËùÉè¶¨µÄµÇÂ¼µØÖ··¶Î§ÄÚ¡£\n" NOR);
-        log_file("static/ALLOW_IP", sprintf("%s(%s)ÓÚ%sÊÔÍ¼´Ó%sµÇÂ¼¡£\n",
+        write(HIR "\nåš´é‡è­¦å‘Šï¼šä½ ä¸åœ¨è‡ªå·±æ‰€è¨­å®šçš„ç™»éŒ„åœ°å€èŒƒåœå…§ã€‚\n" NOR);
+        log_file("static/ALLOW_IP", sprintf("%s(%s)äº%sè©¦åœ–å¾%sç™»éŒ„ã€‚\n",
                  query("name", ob),query("id", ob),ctime(time()),query_ip_number(ob)));
         return 0;
 }

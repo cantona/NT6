@@ -1,26 +1,26 @@
-è������xkx100    ����--���� combatd.c   ����è-zhouyi(Tue Jan 26)
+貓兒點評xkx100    總論--詳析 combatd.c   神算貓-zhouyi(Tue Jan 26)
 ----------------------------------------------------------------------
-    ��xkxһ���mud��,��muren �ķ�����ʮ����Ҫ�ġ�fandog ��post
-��˵��Ҫ��muren ���Լ�ǿһ�㡱�Ƿǳ���ȷ�ģ���ǿ���٣����ǿ����
-����ļ��ɾͺܶ��ˡ�
-    exp ��pot ����ô���ģ�
-    muren ��һ�����ر��npc,��fight muren ʱ��muren �͸������״
-̬����ʱ����fight muren ʱ��Ĺ�������FAP,��������FDP��hit muren
-ʱ��Ĺ�������HAP,��������HDP��
-    ����FAP>HDP,��ô����ÿ�㿪muren һ�ι�����
-                        ���ܣ�exp add 1,dodge add 1��
-                      ��ÿ��muren һ�ι�����
-                        ���ܣ�exp add 1,parry add 1��
-    ����FDP>HAP,��ô����ÿ����muren һ�Σ����� (exp add 1,pot add 1)
+    在xkx一類的mud中,打muren 的方法是十分重要的。fandog 的post
+裡說“要讓muren 比自己強一點”是非常正確的，但強多少，如何強，這
+裡面的技巧就很多了。
+    exp 和pot 是怎麼來的？
+    muren 是一個很特別的npc,你fight muren 時，muren 就復制你的狀
+態，這時假設fight muren 時你的攻擊力是FAP,躲閃力是FDP；hit muren
+時你的攻擊力是HAP,躲閃力是HDP：
+    假如FAP>HDP,那麼，你每躲開muren 一次攻擊，
+                        可能（exp add 1,dodge add 1）
+                      你每格開muren 一次攻擊，
+                        可能（exp add 1,parry add 1）
+    假如FDP>HAP,那麼，你每命中muren 一次，可能 (exp add 1,pot add 1)
 
-    ���涼�С����ܡ�����������Ժ���������йأ�����Խ�ߣ�������Խ��
-���ͣ���/max�����йأ����Դ��hit muren ʱһ��Ҫ�����Լ��ľ�=max����
+    上面都有“可能”，這個可能性和你的悟性有關，悟性越高，可能性越大，
+還和（精/max精）有關，所以大家hit muren 時一定要保持自己的精=max精。
 
-    AP �� DP����μ���ģ�
-    ��һ���˵Ĺ�����Ч���ܵȼ�Ϊlvl,����Ϊstr,����Ϊdex,����Ϊexp,
-              dodge��Ч���ܵȼ�Ϊlvl2
+    AP 和 DP是如何計算的？
+    設一個人的攻擊有效技能等級為lvl,臂力為str,身法為dex,經驗為exp,
+              dodge有效技能等級為lvl2
 
-    ��ôif lvl=0
+    那麼if lvl=0
            ap=exp/2
         else
            ap=[exp+(lvl^3)/3]*str/30
@@ -32,10 +32,10 @@
           dp=[exp+(lvl2^3)/3]*dex/30
         endif
 
-    ���ˣ���muren ʱ���fight muren ��Ҿ��и������ļ��㹫ʽ�ˣ�����
-Ϸ�����˻�䣬�������ͬ�����ѡ�츳�����ʺ�fight muren�ļ��ܴ�Ҿ�
-���ʼ����ˡ����ﻹ�кܶ�С�Ĺؼ������ţ���Һܿ�������򵽵ġ�hehe
+    至此，打muren 時如何fight muren 大家就有個定量的計算公式了，至于
+戲法人人會變，各有巧妙不同，如何選天賦，練適合fight muren的技能大家就
+見仁見智了。這裡還有很多小的關鍵的竅門，大家很快就能領悟到的。hehe
 
-    ֻҪϸ�ĵ���muren ��״̬���츳Ҳ���ʣ�3k exp �Ϳ���ȥ��muren,
-��5��muren Ӧ��С��100 exp 10 pot/min.
+    只要細心調節muren 的狀態，天賦也合適，3k exp 就可以去打muren,
+打5個muren 應不小于100 exp 10 pot/min.
 

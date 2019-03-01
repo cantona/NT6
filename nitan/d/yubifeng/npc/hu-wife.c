@@ -4,8 +4,8 @@ inherit NPC;
 
 void create()
 {
-        set_name("ºú·òÈË", ({"hu furen", "huren", "wife"}));
-        set("gender", "Å®ÐÔ");
+        set_name("èƒ¡å¤«äºº", ({"hu furen", "huren", "wife"}));
+        set("gender", "å¥³æ€§");
         set("age", 25);
         set("attitude", "peaceful");
         set("no_get", "1");
@@ -24,13 +24,13 @@ void create()
         set("combat_exp", 190000);
         set("score", 20000);
          
-        set_skill("force", 110);             // »ù±¾ÄÚ¹¦
-        set_skill("hujia-daofa", 150);       // ºú¼Òµ¶·¨        
-        set_skill("blade", 120);             // »ù±¾µ¶·¨
-        set_skill("hunyuan-yiqi", 120);      // »ìÔªÒ»Æø¹¦
-        set_skill("dodge", 120);             // »ù±¾¶ãÉÁ
-        set_skill("shaolin-shenfa", 120);    // ºú¼ÒÉí·¨
-        set_skill("parry", 120);             // »ù±¾ÕÐ¼Ü
+        set_skill("force", 110);             // åŸºæœ¬å…§åŠŸ
+        set_skill("hujia-daofa", 150);       // èƒ¡å®¶åˆ€æ³•        
+        set_skill("blade", 120);             // åŸºæœ¬åˆ€æ³•
+        set_skill("hunyuan-yiqi", 120);      // æ··å…ƒä¸€æ°£åŠŸ
+        set_skill("dodge", 120);             // åŸºæœ¬èº²é–ƒ
+        set_skill("shaolin-shenfa", 120);    // èƒ¡å®¶èº«æ³•
+        set_skill("parry", 120);             // åŸºæœ¬æ‹›æž¶
                 
         map_skill("force", "hunyuan-yiqi");
         map_skill("blade", "hujia-daofa");

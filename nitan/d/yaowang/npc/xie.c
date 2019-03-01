@@ -3,16 +3,16 @@ inherit NPC;
 
 void create()
 {
-        set_name(YEL"Ð«×Ó"NOR, ({ "xie zi", "xie" }) );
-        set("race", "Ò°ÊÞ");
+        set_name(YEL"è å­"NOR, ({ "xie zi", "xie" }) );
+        set("race", "é‡Žç¸");
         set("age", 2);
-        set("long", "Ò»Ö»°ÍÕÆ´óµÄ¶¾Ð«£¬Î²°Í¸ß¸ßµØÇÌ×Å¡£\n");
+        set("long", "ä¸€åªå·´æŽŒå¤§çš„æ¯’è ï¼Œå°¾å·´é«˜é«˜åœ°ç¿¹è‘—ã€‚\n");
         set("attitude", "peaceful");
  
         set("str", 30);
         set("cor", 26);
 
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "Î²°Í", "Ç¯×Ó" }) );
+        set("limbs", ({ "é ­éƒ¨", "èº«é«”", "å°¾å·´", "é‰—å­" }) );
         set("verbs", ({ "bite" }) );
  
         set("combat_exp", 3000);
@@ -29,7 +29,7 @@ void create()
 void die()
 {
         object ob1;
-        message_vision(HIR"$NÉíÌå½©Ó²£¬¶¯ÁËÁ½ÏÂÍÈ£¬$NËÀÁË¡£\n"NOR, this_object());
+        message_vision(HIR"$Nèº«é«”åƒµç¡¬ï¼Œå‹•äº†å…©ä¸‹è…¿ï¼Œ$Næ­»äº†ã€‚\n"NOR, this_object());
         if(random(10)>8)
         {
         ob1 = new(__DIR__"obj/xiedu");

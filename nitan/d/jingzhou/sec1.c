@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��Ĺ�ڲ�");
+        set("short", "墳墓內部");
         set("long", @LONG
-�����ż�����ǰ�ߣ�Զ���ƺ�������֨֨�Ľ��������в��Ǻ���
-�С����ڹ���̫����ֻ�ܿ���ģģ�����Ķ�����
+你試著繼續往前走，遠處似乎有老鼠吱吱的叫聲，但有不是很真
+切。由于光線太暗你只能看到模模糊糊的東西。
 LONG );
         set("exits", ([
                 "south" : __DIR__"sec2",

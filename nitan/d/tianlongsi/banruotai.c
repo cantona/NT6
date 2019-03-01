@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "°ãÈôÌ¨");
+        set("short", "èˆ¬è‹¥å°");
         set("long", @LONG
-ÕâÊÇ¸öÆÕÍ¨µÄÊ¯Ì¨£¬Ïà´«µ±Äê·ğ×æÔø½µÁÙ´ËÌ¨´«·¨¡£ÔÙÍùÄÏÈ¥¾Í
-ÊÇ±¾ËÂÖØµØ¡ª¡ªÄ²ÄáÌÃ¡£½­ºşÖĞ´«ÑÔÌìÁúËÂµÄÕòËÂÖ®±¦¡ª¡ªÁùÂöÉñ½£
-Æ×¾Í²ØÓÚ´ËÖĞ¡£
+é€™æ˜¯å€‹æ™®é€šçš„çŸ³å°ï¼Œç›¸å‚³ç•¶å¹´ä½›ç¥–æ›¾é™è‡¨æ­¤å°å‚³æ³•ã€‚å†å¾€å—å»å°±
+æ˜¯æœ¬å¯ºé‡åœ°â”€â”€ç‰Ÿå°¼å ‚ã€‚æ±Ÿæ¹–ä¸­å‚³è¨€å¤©é¾å¯ºçš„é®å¯ºä¹‹å¯¶â”€â”€å…­è„ˆç¥åŠ
+è­œå°±è—äºæ­¤ä¸­ã€‚
 LONG );
         set("exits", ([
                 "south" : __DIR__"munitang",
@@ -18,8 +18,8 @@ LONG );
 string long()
 {
         if (! stringp(query("exits/south")))
-                return query("long") + "    Ææ¹ÖµÄÊÇ´óÃÅ½ô"
-                       "±Õ£¬²»ÖªµÀÀïÃæÔõÃ´»ØÊÂ¡£\n";
+                return query("long") + "    å¥‡æ€ªçš„æ˜¯å¤§é–€ç·Š"
+                       "é–‰ï¼Œä¸çŸ¥é“è£¡é¢æ€éº¼å›äº‹ã€‚\n";
 
         return query("long");
 }
@@ -27,7 +27,7 @@ string long()
 int valid_leave(object me, string dir)
 {
         if (me->query_condition("killer") && dir == "south")
-                return notify_fail("ÄÇÀïPKER²»ÄÜ½øÈ¥¡£\n");
+                return notify_fail("é‚£è£¡PKERä¸èƒ½é€²å»ã€‚\n");
 
         return ::valid_leave(me, dir);
 }

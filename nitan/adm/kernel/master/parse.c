@@ -1,6 +1,6 @@
 // This program is a part of NT MudLIB
 
-// ÕÒ³öÄÄ¸ö×ÖÖ¸ËùÓĞµÄ¶«Î÷
+// æ‰¾å‡ºå“ªå€‹å­—æŒ‡æ‰€æœ‰çš„æ±è¥¿
 string parse_command_all_word() {}
-// ÕÒ³öÄÄĞ©×ÖÊÇ½éÏµ´Ê
+// æ‰¾å‡ºå“ªäº›å­—æ˜¯ä»‹ç³»è©
 string *parse_command_prepos_list() {}

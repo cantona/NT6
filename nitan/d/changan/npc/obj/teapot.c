@@ -5,19 +5,19 @@ inherit F_LIQUID;
 
 void create()
 {
-        set_name("²èºø", ({ "tea pot", "pot" }));
+        set_name("èŒ¶å£º", ({ "tea pot", "pot" }));
         set_weight(500);
         if (clonep())
                 set_default_object(__FILE__);
         else 
         {
-                set("long", "Ò»¸ö²è¹İÂôµÄ²èºø£¬´ó¸Å×°µÃ¼¸ÉıË®¡£\n");
-                set("unit", "¸ö");
+                set("long", "ä¸€å€‹èŒ¶é¤¨è³£çš„èŒ¶å£ºï¼Œå¤§æ¦‚è£å¾—å¹¾å‡æ°´ã€‚\n");
+                set("unit", "å€‹");
                 set("value", 30);
                 set("max_liquid", 10);
         }
         set("liquid", ([
-                "name": "²èË®",
+                "name": "èŒ¶æ°´",
                 "remaining": 10,
         ]));
 }

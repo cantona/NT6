@@ -1,4 +1,4 @@
-// laonu.c ÀÏÅ«
+// laonu.c è€å¥´
 
 #include <ansi.h>
 
@@ -6,9 +6,9 @@ inherit "/inherit/char/punisher";
 
 void create()
 {
-        set_name("ºúÒ»µ¶", ({ "hu yidao", "hu" }));
-        set("long",  "ÕâÊÇÒ»¸öØâº·´ÖáîµÄ±±·½´óºº£¬Ë«ÑÛ¾¼¾¼ÓĞÉñ¡£\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("èƒ¡ä¸€åˆ€", ({ "hu yidao", "hu" }));
+        set("long",  "é€™æ˜¯ä¸€å€‹å‰½æ‚ç²—ç·çš„åŒ—æ–¹å¤§æ¼¢ï¼Œé›™çœ¼ç‚¯ç‚¯æœ‰ç¥ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 58);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -25,19 +25,19 @@ void create()
         set("combat_exp", 25000000);
         set("score", 10000000);
 
-        set_skill("force", 2100);            // »ù±¾ÄÚ¹¦
-        set_skill("lengyue-shengong", 2100); // ÀäÔÂÉñ¹¦
-        set_skill("blade", 2400);            // »ù±¾µ¶·¨
-        set_skill("hujia-daofa", 2400);      // ºú¼Òµ¶·¨
-        set_skill("dodge", 2400);            // »ù±¾¶ãÉÁ
-        set_skill("taxue-wuhen", 2400);      // Ì¤Ñ©ÎŞºÛ
-        set_skill("parry", 2200);            // »ù±¾ÕĞ¼Ü
-        set_skill("throwing", 2400);         // »ù±¾°µÆ÷
-        set_skill("mantian-xing", 2400);     // ÂúÌìĞÇ
-        set_skill("strike", 1800);           // »ù±¾ÕÆ·¨
-        set_skill("tianchang-zhang", 1800);  // Ìì³¤ÕÆ·¨
-        set_skill("cuff", 1800);             // »ù±¾È­·¨
-        set_skill("hujia-quan", 1800);       // ºú¼ÒÈ­·¨
+        set_skill("force", 2100);            // åŸºæœ¬å…§åŠŸ
+        set_skill("lengyue-shengong", 2100); // å†·æœˆç¥åŠŸ
+        set_skill("blade", 2400);            // åŸºæœ¬åˆ€æ³•
+        set_skill("hujia-daofa", 2400);      // èƒ¡å®¶åˆ€æ³•
+        set_skill("dodge", 2400);            // åŸºæœ¬èº²é–ƒ
+        set_skill("taxue-wuhen", 2400);      // è¸é›ªç„¡ç—•
+        set_skill("parry", 2200);            // åŸºæœ¬æ‹›æ¶
+        set_skill("throwing", 2400);         // åŸºæœ¬æš—å™¨
+        set_skill("mantian-xing", 2400);     // æ»¿å¤©æ˜Ÿ
+        set_skill("strike", 1800);           // åŸºæœ¬æŒæ³•
+        set_skill("tianchang-zhang", 1800);  // å¤©é•·æŒæ³•
+        set_skill("cuff", 1800);             // åŸºæœ¬æ‹³æ³•
+        set_skill("hujia-quan", 1800);       // èƒ¡å®¶æ‹³æ³•
 
         map_skill("force", "lengyue-shengong");
         map_skill("blade", "hujia-daofa");
@@ -50,7 +50,7 @@ void create()
         prepare_skill("strike", "tianchang-zhang");
         prepare_skill("cuff",   "hujia-quan");
 
-        create_family("¹ØÍâºú¼Ò", 0, "ÀÏ×¯Ö÷");
+        create_family("é—œå¤–èƒ¡å®¶", 0, "è€èŠä¸»");
 
         set("chat_chance_combat", 120);
         set("chat_msg_combat", ({

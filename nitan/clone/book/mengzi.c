@@ -4,17 +4,17 @@ inherit BOOK;
 
 void create()
 {
-        set_name(WHT "¡¸ÃÏ×Ó¡¹" NOR, ({ "mengzi book", "shu", "mengzi", "book" }));
+        set_name(WHT "ã€Œå­Ÿå­ã€" NOR, ({ "mengzi book", "shu", "mengzi", "book" }));
         set_weight(300);
 
         if (clonep())
                 set_default_object(__FILE__);
         else
         {
-                set("unit", "±¾");
-                set("long", WHT "Õâ±¾Êé¼ÇÔØÁËµ±ÄêÃÏ×ÓĞí¶àÑÔĞĞÕÜÂÛ£¬ÊÇÈå¼Ò¾­µäÊé¼®¡£\n" NOR);
+                set("unit", "æœ¬");
+                set("long", WHT "é€™æœ¬æ›¸è¨˜è¼‰äº†ç•¶å¹´å­Ÿå­è¨±å¤šè¨€è¡Œå“²è«–ï¼Œæ˜¯å„’å®¶ç¶“å…¸æ›¸ç±ã€‚\n" NOR);
                 set("value", 100);
-                set("no_sell", "Õâ¡­ÕâÖµÊ²Ã´Ç®£¿\n");
+                set("no_sell", "é€™â€¦é€™å€¼ä»€éº¼éŒ¢ï¼Ÿ\n");
                 set("material", "paper");
                 set("skill", ([
                         "name" : "literate",

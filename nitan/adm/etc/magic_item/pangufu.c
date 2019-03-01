@@ -1,4 +1,4 @@
-// ÉÏ¹ÅÊ®´óÉñÆ÷Ö® ÅÌ¹Å¸« 
+// ä¸Šå¤åå¤§ç¥å™¨ä¹‹ ç›¤å¤æ–§ 
 // Create by Rcwiz for Hero.cn 2003/08
 
 #include <ansi.h>
@@ -10,20 +10,20 @@ int is_magic_item() { return 1; }
 
 void create()
 {
-        set_name(NOR + WHT + "ÅÌ¹Å¸«" NOR, ({ "pangu fu", "pangu", "fu" }) );
+        set_name(NOR + WHT + "ç›¤å¤æ–§" NOR, ({ "pangu fu", "pangu", "fu" }) );
         set_weight(800);
         if (clonep())
                 set_default_object(__FILE__);
         else
         {
-                set("unit", "°Ñ");
-                set("long", NOR + WHT "ÕâÊÇÒ»°Ñ¾Ş´óµÄ¸«Í·£¬ÖÜÉí·º×ÅÑ£Ä¿µÄ¹â»ª£¬¾İËµ\n"
-                                      "´Ë¸«ÄËÅÌ¹Å¿ªÌì±ÙµØÊ±±Ù¿ª»ìãçÌìµØÊ±ËùÓÃ¡£\n"
-                                      "¿ÉÓÃÖ®À´±Ù¿ª(pi)Ì«Ğé£¬½øÈëÌ«Ğé¾³½ç¡£\n" NOR);
+                set("unit", "æŠŠ");
+                set("long", NOR + WHT "é€™æ˜¯ä¸€æŠŠå·¨å¤§çš„æ–§é ­ï¼Œå‘¨èº«æ³›è‘—çœ©ç›®çš„å…‰è¯ï¼Œæ“šèªª\n"
+                                      "æ­¤æ–§ä¹ƒç›¤å¤é–‹å¤©è¾Ÿåœ°æ™‚è¾Ÿé–‹æ··æ²Œå¤©åœ°æ™‚æ‰€ç”¨ã€‚\n"
+                                      "å¯ç”¨ä¹‹ä¾†è¾Ÿé–‹(pi)å¤ªè™›ï¼Œé€²å…¥å¤ªè™›å¢ƒç•Œã€‚\n" NOR);
                 set("material", "steel");
-                set("wield_msg", NOR + WHT "$N" NOR + WHT "½«ÅÌ¹Å¸«ÎÕÔÚÊÖÖĞ£¬ÓÌÈç"
-                                           "ÅÌ¹ÅÔÙÏÖ£¬Íş·çÁİÁİ¡£\n" NOR);
-                set("unwield_msg", NOR + WHT "$N" NOR + WHT "½«ÊÖÖĞÅÌ¹Å¸«ÊÕ»Ø¡£\n" NOR);
+                set("wield_msg", NOR + WHT "$N" NOR + WHT "å°‡ç›¤å¤æ–§æ¡åœ¨æ‰‹ä¸­ï¼ŒçŒ¶å¦‚"
+                                           "ç›¤å¤å†ç¾ï¼Œå¨é¢¨å‡œå‡œã€‚\n" NOR);
+                set("unwield_msg", NOR + WHT "$N" NOR + WHT "å°‡æ‰‹ä¸­ç›¤å¤æ–§æ”¶å›ã€‚\n" NOR);
                 set("stable", 100);
 
         }
@@ -45,14 +45,14 @@ int do_pi(string arg)
         if(! objectp(present("pangu fu", me)))return 0;
         
         if (me->is_fighting() || me->is_busy())
-                 return notify_fail("ÄãÕıÃ¦ÄØ£¡\n");
+                 return notify_fail("ä½ æ­£å¿™å‘¢ï¼\n");
         
         if (! environment(me)->query("outdoors"))
-                 return notify_fail("ÄãµÃÏÈµ½»§ÍâÈ¥¡£\n");
+                 return notify_fail("ä½ å¾—å…ˆåˆ°æˆ¶å¤–å»ã€‚\n");
                  
-        message_sort(NOR + WHT + "\n$N" NOR + WHT "Ë«ÊÖ»ÓÎè×ÅÊÖÖĞµÄÅÌ¹Å¾Ş¸«£¬ÓÃÁ¦ÅüÏÂ£¬"
-                     "É²ÄÇ¼äÌì¿ÕÖĞÂ¶³öÒ»µÀÁÑºÛ£¬ÅÌ¹Å¸«»¯×öÒ»µÀÆæÒìµÄ¹âÃ¢½«$N" NOR + WHT +
-                     "¾í½øÌ«ĞéÖ®ÖĞ¡£\n" NOR, me);
+        message_sort(NOR + WHT + "\n$N" NOR + WHT "é›™æ‰‹æ®èˆè‘—æ‰‹ä¸­çš„ç›¤å¤å·¨æ–§ï¼Œç”¨åŠ›åŠˆä¸‹ï¼Œ"
+                     "å‰é‚£é–“å¤©ç©ºä¸­éœ²å‡ºä¸€é“è£‚ç—•ï¼Œç›¤å¤æ–§åŒ–åšä¸€é“å¥‡ç•°çš„å…‰èŠ’å°‡$N" NOR + WHT +
+                     "å·é€²å¤ªè™›ä¹‹ä¸­ã€‚\n" NOR, me);
                 
         me->move("/kungfu/class/sky/taixu");
         destruct(this_object());

@@ -1,5 +1,5 @@
 // jiexue.c
-// ³å¿ª·â±ÕµÄÑ¨µÀ
+// æ²–é–‹å°é–‰çš„ç©´é“
 
 #include <ansi.h>
 
@@ -11,24 +11,24 @@ int main(object me, string arg)
          object ob;
 
          if (me->is_busy() || me->is_fighting())
-                 return notify_fail("µÈÄãÃ¦ÍêÔÙËµ°É£¡\n");
+                 return notify_fail("ç­‰ä½ å¿™å®Œå†èªªå§ï¼\n");
 
          force = me->query_skill("force");
 
          if (1)
          {
                 if (! me->query_temp("fengxue"))
-                      return notify_fail("ÄãÑ¨µÀ²¢Ã»ÓĞ·â±Õ°¡¡£\n");
+                      return notify_fail("ä½ ç©´é“ä¸¦æ²’æœ‰å°é–‰å•Šã€‚\n");
           
                 if (force < 300)
-                      return notify_fail("ÄãÄÚ¹¦ĞŞÎª²»×ã£¬ÎŞ·¨½«·â±ÕµÄÑ¨µÀ³å¿ª¡£\n");
+                      return notify_fail("ä½ å…§åŠŸä¿®ç‚ºä¸è¶³ï¼Œç„¡æ³•å°‡å°é–‰çš„ç©´é“æ²–é–‹ã€‚\n");
 
                 if (me->query("max_neili") < 2000)
-                      return notify_fail("ÄãÄÚÁ¦ĞŞÎª²»×ã£¬ÎŞ·¨½«·â±ÕµÄÑ¨µÀ³å¿ª¡£\n");
+                      return notify_fail("ä½ å…§åŠ›ä¿®ç‚ºä¸è¶³ï¼Œç„¡æ³•å°‡å°é–‰çš„ç©´é“æ²–é–‹ã€‚\n");
 
-                message_vision(HIW "$N" HIW "°µÔËÄÚ¹¦£¬Ò»¹ÉÕæÆøÁ÷ÖÁÈ«Éí¸÷´¦¡£\n" NOR, me);
+                message_vision(HIW "$N" HIW "æš—é‹å…§åŠŸï¼Œä¸€è‚¡çœŸæ°£æµè‡³å…¨èº«å„è™•ã€‚\n" NOR, me);
 
-                write(HIG "ÄãÖÜÉí±»·â±ÕµÄÑ¨µÀÒÑ±»³å¿ª¡£\n" NOR);
+                write(HIG "ä½ å‘¨èº«è¢«å°é–‰çš„ç©´é“å·²è¢«æ²–é–‹ã€‚\n" NOR);
 
                 me->delete_temp("fengxue");
                 me->set_temp("last_fengxue", time());
@@ -41,9 +41,9 @@ int main(object me, string arg)
 int help(object me)
 {
   write(@HELP
-Ö¸Áî¸ñÊ½ : chongxue
+æŒ‡ä»¤æ ¼å¼ : chongxue
 
-¸ÃÖ¸Áî¿ÉÒÔ½«±»·â±ÕµÄÑ¨µÀ³å¿ª¡£
+è©²æŒ‡ä»¤å¯ä»¥å°‡è¢«å°é–‰çš„ç©´é“æ²–é–‹ã€‚
 HELP
 );
     return 1;

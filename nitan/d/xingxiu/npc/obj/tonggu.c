@@ -5,13 +5,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name("Í­¹Ä", ({ "tonggu" }) );
+        set_name("éŠ…é¼“", ({ "tonggu" }) );
         set_weight(5000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ö»");
-                set("long", "ÕâÊÇÒ»Ö»½ğ¹âÉÁÁÁµÄÍ­¹Ä¡£\n");
+                set("unit", "åª");
+                set("long", "é€™æ˜¯ä¸€åªé‡‘å…‰é–ƒäº®çš„éŠ…é¼“ã€‚\n");
                 set("value", 70);
         }
         setup();

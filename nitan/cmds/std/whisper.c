@@ -16,15 +16,15 @@ int main(object me, string arg)
         object ob;
 
         if (! arg)
-                return notify_fail("ÄãÒª¶ÔË­¶úÓïĞ©Ê²Ã´£¿\n");
+                return notify_fail("ä½ è¦å°èª°è€³èªäº›ä»€éº¼ï¼Ÿ\n");
 
         if (sscanf(arg, "%s about %s", dest, msg) != 2)
                 if (sscanf(arg, "%s %s", dest, msg) != 2)
-                        return notify_fail("ÄãÒª¶ÔË­¶úÓïĞ©Ê²Ã´£¿\n");
+                        return notify_fail("ä½ è¦å°èª°è€³èªäº›ä»€éº¼ï¼Ÿ\n");
 
         ob = present(dest, environment(me));
         if (! ob || ! ob->is_character())
-                return notify_fail("ÄãÒª¶ÔË­¶úÓï£¿\n");
+                return notify_fail("ä½ è¦å°èª°è€³èªï¼Ÿ\n");
 
         if (me->ban_say(1))
                 return 0;
@@ -32,24 +32,24 @@ int main(object me, string arg)
         if( query("doing", me) == "scheme" )
         {
                 if( query("jing", me)<100 )
-                        return notify_fail("ÄãÏÖÔÚµÄ¾«Éñ²»¼Ã£¬µÈÒ»»á¶ù°É¡£\n");
+                        return notify_fail("ä½ ç¾åœ¨çš„ç²¾ç¥ä¸æ¿Ÿï¼Œç­‰ä¸€æœƒå…’å§ã€‚\n");
                 addn("jing", -50, me);
         }
 
-        write(WHT "ÄãÔÚ" + ob->name() + WHT "µÄ¶ú±ßÇÄÉùËµµÀ£º" +
+        write(WHT "ä½ åœ¨" + ob->name() + WHT "çš„è€³é‚Šæ‚„è²èªªé“ï¼š" +
               msg + "\n" NOR);
-        tell_room(environment(me), me->name() + "ÔÚ" + ob->name()
-                + "¶ú±ßĞ¡ÉùµØËµÁËĞ©»°¡£\n", ({ me, ob }));
+        tell_room(environment(me), me->name() + "åœ¨" + ob->name()
+                + "è€³é‚Šå°è²åœ°èªªäº†äº›è©±ã€‚\n", ({ me, ob }));
         if (! userp(ob)) 
         {
               r = 0;
-              if( query("bunch_quest", me) && query("bunch_quest/type", me) == "´«¿ÚĞÅ" )
+              if( query("bunch_quest", me) && query("bunch_quest/type", me) == "å‚³å£ä¿¡" )
                       r = reply_whisper(me, ob, msg);
               if (! r)
-                      if( (query("quest_dg", me) && query("quest_dg", me)["type"] == "´«") || 
-                          (query("quest_kh", me) && query("quest_kh", me)["type"] == "´«") || 
-                          (query("quest_hs", me) && query("quest_hs", me)["type"] == "´«") || 
-                          (query("quest_sn", me) && query("quest_sn", me)["type"] == "´«") )
+                      if( (query("quest_dg", me) && query("quest_dg", me)["type"] == "å‚³") || 
+                          (query("quest_kh", me) && query("quest_kh", me)["type"] == "å‚³") || 
+                          (query("quest_hs", me) && query("quest_hs", me)["type"] == "å‚³") || 
+                          (query("quest_sn", me) && query("quest_sn", me)["type"] == "å‚³") )
                               r = ultra_whisper(me, ob, msg);
 
               if (! r)
@@ -57,7 +57,7 @@ int main(object me, string arg)
        }
         else
                 tell_object(ob, WHT + me->name() +
-                                WHT "ÔÚÄãµÄ¶ú±ßÇÄÉùËµµÀ£º" + msg + "\n" NOR);
+                                WHT "åœ¨ä½ çš„è€³é‚Šæ‚„è²èªªé“ï¼š" + msg + "\n" NOR);
         return 1;
 }
 
@@ -72,19 +72,19 @@ int reply_whisper(object me, object who, string msg)
 
         bunch_quest=query("bunch_quest", me);
 
-        //´«´íÈËÁË
+        //å‚³éŒ¯äººäº†
         if (bunch_quest["target"] != base_name(who))
                 return 0;
 
-        //´«´í»°ÁË
+        //å‚³éŒ¯è©±äº†
         if (msg != bunch_quest["send_msg"])
                 return 0;
 
-        message_sort("$NÃæÉ«ÄıÖØ£¬Ò»±ßÌı×ÅÒ»±ß¶Ô$nÊ¹¾¢µÄµãÍ·£º¡°ÕâÎ»" +
+        message_sort("$Né¢è‰²å‡é‡ï¼Œä¸€é‚Šè½è‘—ä¸€é‚Šå°$nä½¿å‹çš„é»é ­ï¼šâ€œé€™ä½" +
                      RANK_D->query_respect(me) +
-                     "£¬¶àĞ»Äã°Ñ»°´øµ½£¡¡±\n", who, me);
+                     "ï¼Œå¤šè¬ä½ æŠŠè©±å¸¶åˆ°ï¼â€\n", who, me);
 
-        // ½±Àø
+        // çå‹µ
         addn("total_hatred", -2, me);
         if (query("total_hatred", me) < 0) set("total_hatred",0, me);
 
@@ -99,8 +99,8 @@ int reply_whisper(object me, object who, string msg)
                "pot" : pot,
                "score" : score,
                "weiwang" : weiwang,
-               "prompt": "ÔÚ°Ñ¿ÚĞÅ´«¸ø" + who->name() +
-                         HIG "µÄ¹ı³ÌÖĞ£¬¾­¹ı¶ÍÁ¶" ]);
+               "prompt": "åœ¨æŠŠå£ä¿¡å‚³çµ¦" + who->name() +
+                         HIG "çš„éç¨‹ä¸­ï¼Œç¶“éé›ç…‰" ]);
 
         GIFT_D->delay_bonus(me, b);
 
@@ -126,57 +126,57 @@ int ultra_whisper(object me, object who, string msg)
         mixed money = 0;
 
         quest=query("quest_dg", me);
-        the_quest = "¶À¹ÂÇó°Ü";
-        if (!quest || quest["type"] != "´«")
+        the_quest = "ç¨å­¤æ±‚æ•—";
+        if (!quest || quest["type"] != "å‚³")
         {
                 quest=query("quest_kh", me);
-                the_quest = "¿û»¨Ì«¼à";
+                the_quest = "è‘µèŠ±å¤ªç›£";
         }
-        if (!quest || quest["type"] != "´«")
+        if (!quest || quest["type"] != "å‚³")
         {
                 quest=query("quest_hs", me);
-                the_quest = "»ÆÉÑ";
+                the_quest = "é»ƒè£³";
         }
-        if (!quest || quest["type"] != "´«")
+        if (!quest || quest["type"] != "å‚³")
         {
                 quest=query("quest_sn", me);
-                the_quest = "ÄÏº£ÉñÄá";
+                the_quest = "å—æµ·ç¥å°¼";
         }
 
         if (!quest) return 0;
 
         if (userp(who)) return 0;
 
-        //´«´íÈËÁË
+        //å‚³éŒ¯äººäº†
         if (quest["name"] != who->name(1))
                 return 0;
 
-        //´«´í»°ÁË
+        //å‚³éŒ¯è©±äº†
         if (msg != quest["answer"])
                 return 0;
 
-        message_sort("$NÃæÉ«ÄıÖØ£¬Ò»±ßÌı×ÅÒ»±ß¶Ô$nÊ¹¾¢µÄµãÍ·£º¡°ÕâÎ»" +
+        message_sort("$Né¢è‰²å‡é‡ï¼Œä¸€é‚Šè½è‘—ä¸€é‚Šå°$nä½¿å‹çš„é»é ­ï¼šâ€œé€™ä½" +
                      RANK_D->query_respect(me) +
-                     "£¬¶àĞ»Äã°Ñ¿ÚÁî´øµ½£¡¡±\n", who, me);
+                     "ï¼Œå¤šè¬ä½ æŠŠå£ä»¤å¸¶åˆ°ï¼â€\n", who, me);
 
-        // ½±Àø
+        // çå‹µ
         level = quest["level"]+1;
-        if (the_quest == "¶À¹ÂÇó°Ü")
+        if (the_quest == "ç¨å­¤æ±‚æ•—")
         {
                 if( (i=query("questdg_times", me))<8)i=15-i;
                 else i = 1;
         }
-        if (the_quest == "¿û»¨Ì«¼à")
+        if (the_quest == "è‘µèŠ±å¤ªç›£")
         {
                 if( (i=query("questkh_times", me))<15)i=15-i;
                 else i = 1;
         }
-        if (the_quest == "ÄÏº£ÉñÄá")
+        if (the_quest == "å—æµ·ç¥å°¼")
         {
                 if( (i=query("questsn_times", me))<15)i=15-i;
                 else i = 1;
         }
-        if (the_quest == "»ÆÉÑ")
+        if (the_quest == "é»ƒè£³")
         {
                 if( (i=query("quesths_times", me))<15)i=15-i;
                 else i = 1;
@@ -193,7 +193,7 @@ int ultra_whisper(object me, object who, string msg)
         GIFT_D->bonus(me, ([ "exp" : exp, "pot" : pot, "mar" : mar,
                               "weiwang" : weiwang, "score" : score ]), 1);
 
-        if (the_quest == "¶À¹ÂÇó°Ü")
+        if (the_quest == "ç¨å­¤æ±‚æ•—")
         {
                 addn("questdg_times", 1, me);
                 quest_count=query("questdg_times", me)%500;
@@ -219,7 +219,7 @@ int ultra_whisper(object me, object who, string msg)
 #endif
                 delete("quest_dg", me);
         }
-        if (the_quest == "¿û»¨Ì«¼à")
+        if (the_quest == "è‘µèŠ±å¤ªç›£")
         {
                 addn("questkh_times", 1, me);
                 quest_count=query("questkh_times", me)%500;
@@ -244,7 +244,7 @@ int ultra_whisper(object me, object who, string msg)
 #endif
                 delete("quest_kh", me);
         }
-        if (the_quest == "»ÆÉÑ")
+        if (the_quest == "é»ƒè£³")
         {
                 addn("quesths_times", 1, me);
                 quest_count=query("quesths_times", me)%500;
@@ -270,7 +270,7 @@ int ultra_whisper(object me, object who, string msg)
 #endif
                 delete("quest_hs", me);
         }
-        if (the_quest == "ÄÏº£ÉñÄá")
+        if (the_quest == "å—æµ·ç¥å°¼")
         {
                 addn("questsn_times", 1, me);
                 quest_count=query("questsn_times", me)%500;
@@ -345,8 +345,8 @@ protected void special_bonus(object me, mixed arg)
         else
                 ob = new(ob_list[random(sizeof(ob_list))]);
         ob->move(me, 1);
-        tell_object(me,HIM"Äã»ñµÃÁËÒ»"+query("unit", ob)+ob->name()+
-                        HIM "¡£\n" NOR);
+        tell_object(me,HIM"ä½ ç²å¾—äº†ä¸€"+query("unit", ob)+ob->name()+
+                        HIM "ã€‚\n" NOR);
 }
 
 void money_bonus(object me, mixed arg)
@@ -367,17 +367,17 @@ void money_bonus(object me, mixed arg)
 
         ob->move(me,1);
 
-        tell_object(me,HIM"Äã»ñµÃÁËÒ»"+query("unit", ob)+ob->name()+
-                        HIM "¡£\n" NOR);
+        tell_object(me,HIM"ä½ ç²å¾—äº†ä¸€"+query("unit", ob)+ob->name()+
+                        HIM "ã€‚\n" NOR);
 }
 
 int help(object me)
 {
         write( @TEXT
-Ö¸Áî¸ñÊ½£ºwhisper <Ä³ÈË> about <Ñ¶Ï¢>
+æŒ‡ä»¤æ ¼å¼ï¼šwhisper <æŸäºº> about <è¨Šæ¯>
 
-Õâ¸öÖ¸Áî¿ÉÒÔÓÃÀ´ºÍÍ¬Ò»·¿¼äÖĞµÄÈË¶úÓï£¬°üÀ¨ NPC ÔÚÄÚ¡£
-ÆäÖĞµÄabout¿ÉÒÔÊ¡ÂÔ¡£
+é€™å€‹æŒ‡ä»¤å¯ä»¥ç”¨ä¾†å’ŒåŒä¸€æˆ¿é–“ä¸­çš„äººè€³èªï¼ŒåŒ…æ‹¬ NPC åœ¨å…§ã€‚
+å…¶ä¸­çš„aboutå¯ä»¥çœç•¥ã€‚
 TEXT );
         return 1;
 }

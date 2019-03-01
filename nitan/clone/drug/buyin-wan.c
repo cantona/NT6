@@ -11,17 +11,17 @@ void init()
 }
 void create()
 {
-        set_name(HIW"²¹ÒõÍè"NOR, ({"buyin wan","wan"}));
+        set_name(HIW"è£œé™°ä¸¸"NOR, ({"buyin wan","wan"}));
         set_weight(5);
         if (clonep())
                 set_default_object(__FILE__);
         else 
         {
-                set("unit", "Á£");
-                set("long","ÕâÊÇÒ»Á£²¹ÒõÍè£¬×Ì²¹ÒõÈáÖ®ÆøÓĞÆæĞ§£¬²»¹ı³£ÈË·şÊ³¿ÖÓĞÒì³£ ¡£\n");
+                set("unit", "ç²’");
+                set("long","é€™æ˜¯ä¸€ç²’è£œé™°ä¸¸ï¼Œæ»‹è£œé™°æŸ”ä¹‹æ°£æœ‰å¥‡æ•ˆï¼Œä¸éå¸¸äººæœé£Ÿææœ‰ç•°å¸¸ ã€‚\n");
                 set("value", 0);
                 set("no_sell", 1);
-                set("no_drop","ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
+                set("no_drop","é€™æ¨£æ±è¥¿ä¸èƒ½é›¢é–‹ä½ ã€‚\n");
                 set("value", 2000);
                 set("medicine", 1);
 
@@ -38,10 +38,10 @@ int do_eat(string arg)
         skill=me->query_skill("pixie-jian", 1);
 
         if (!id(arg))
-        return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+        return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if(skill<200)
         {
-        message_vision(HIR"$N³ÔÏÂÒ»Á£²¹ÒõÍè£¬Ö»¾õµÃ»ëÉíÒ»Õó±ùÁ¹£¬Ò»¹ÉÒõº®Ö®ÆøÖ®µ¤Ìï´®ÏòÈ«Éí£¬É²ÄÇ¼äĞÄÉñÊ§Ê×£¬¾­ÂöÊÜËğ!\n"NOR, this_player());
+        message_vision(HIR"$Nåƒä¸‹ä¸€ç²’è£œé™°ä¸¸ï¼Œåªè¦ºå¾—æ¸¾èº«ä¸€é™£å†°æ¶¼ï¼Œä¸€è‚¡é™°å¯’ä¹‹æ°£ä¹‹ä¸¹ç”°ä¸²å‘å…¨èº«ï¼Œå‰é‚£é–“å¿ƒç¥å¤±é¦–ï¼Œç¶“è„ˆå—æ!\n"NOR, this_player());
         if( query("max_jingli", me)>50 )
         {
         addn("eff_jingli", -20, me);
@@ -64,8 +64,8 @@ int do_eat(string arg)
                         if( query("pixie/buyin-wan/lvl", me) >= skill && query("pixie/buyin-wan/lvl", me)>0 )
 
                         {
-                                message_vision(HIG"$N³ÔÏÂÒ»Á£²¹ÒõÍè£¬Ö»¾õµÃ»ëÉíÒ»Õó±ùÁ¹£¬Ò»¹ÉÒõº®Ö®ÆøÖ®µ¤Ìï´®ÏòÈ«Éí£¬É²ÄÇ¼äÑôÆøÈñ¼õ£¬ÒõÆø¶¸Ôö¡£\n"NOR, this_player());
-                                message_vision(HIR"²»ÁÏÒÔÇ°µÄÒ©Á¦ËÆºõ²¢Î´ÏûÊ§£¬Á¬Ğø·şÓÃĞ§¹ûÊÊµÄÆä·´¡£$NÉ²ÄÇ¼äĞÄÉñÊ§Ê×£¬¾­ÂöÊÜËğ¡£\n"NOR, this_player());
+                                message_vision(HIG"$Nåƒä¸‹ä¸€ç²’è£œé™°ä¸¸ï¼Œåªè¦ºå¾—æ¸¾èº«ä¸€é™£å†°æ¶¼ï¼Œä¸€è‚¡é™°å¯’ä¹‹æ°£ä¹‹ä¸¹ç”°ä¸²å‘å…¨èº«ï¼Œå‰é‚£é–“é™½æ°£éŠ³æ¸›ï¼Œé™°æ°£é™¡å¢ã€‚\n"NOR, this_player());
+                                message_vision(HIR"ä¸æ–™ä»¥å‰çš„è—¥åŠ›ä¼¼ä¹ä¸¦æœªæ¶ˆå¤±ï¼Œé€£çºŒæœç”¨æ•ˆæœé©çš„å…¶åã€‚$Nå‰é‚£é–“å¿ƒç¥å¤±é¦–ï¼Œç¶“è„ˆå—æã€‚\n"NOR, this_player());
         if( query("max_jingli", me)>50 )
         {
         addn("eff_jingli", -20, me);
@@ -76,7 +76,7 @@ int do_eat(string arg)
                         else
                         {
                         
-                                message_vision(HIG"$N³ÔÏÂÒ»Á£²¹ÒõÍè£¬Ö»¾õµÃ»ëÉíÒ»Õó±ùÁ¹£¬Ò»¹ÉÒõº®Ö®ÆøÖ®µ¤Ìï´®ÏòÈ«Éí£¬É²ÄÇ¼äÑôÆøÈñ¼õ£¬ÒõÆø¶¸Ôö¡£\n"NOR, this_player());
+                                message_vision(HIG"$Nåƒä¸‹ä¸€ç²’è£œé™°ä¸¸ï¼Œåªè¦ºå¾—æ¸¾èº«ä¸€é™£å†°æ¶¼ï¼Œä¸€è‚¡é™°å¯’ä¹‹æ°£ä¹‹ä¸¹ç”°ä¸²å‘å…¨èº«ï¼Œå‰é‚£é–“é™½æ°£éŠ³æ¸›ï¼Œé™°æ°£é™¡å¢ã€‚\n"NOR, this_player());
                                 addn("eff_jingli", 5+random(2), me);
                                 addn("max_jingli", 5+random(2), me);
                                 set("pixie/buyin-wan/lvl", skill, me);
@@ -85,8 +85,8 @@ int do_eat(string arg)
                 }
                 else
                 {
-                message_vision(HIG"$N³ÔÏÂÒ»Á£²¹ÒõÍè£¬Ö»¾õµÃ»ëÉíÒ»Õó±ùÁ¹£¬Ò»¹ÉÒõº®Ö®ÆøÖ®µ¤Ìï´®ÏòÈ«Éí£¬É²ÄÇ¼äÑôÆøÈñ¼õ£¬ÒõÆø¶¸Ôö¡£\n"NOR, this_player());
-                message_vision(HIR"²»ÁÏ´ËÒ©¼ÁÁ¿ÓëÄãÉíÌå²»·û£¬É²ÄÇ¼ä$NĞÄÉñÊ§Ê×£¬¾­ÂöÊÜËğ¡£\n"NOR, this_player());
+                message_vision(HIG"$Nåƒä¸‹ä¸€ç²’è£œé™°ä¸¸ï¼Œåªè¦ºå¾—æ¸¾èº«ä¸€é™£å†°æ¶¼ï¼Œä¸€è‚¡é™°å¯’ä¹‹æ°£ä¹‹ä¸¹ç”°ä¸²å‘å…¨èº«ï¼Œå‰é‚£é–“é™½æ°£éŠ³æ¸›ï¼Œé™°æ°£é™¡å¢ã€‚\n"NOR, this_player());
+                message_vision(HIR"ä¸æ–™æ­¤è—¥åŠ‘é‡èˆ‡ä½ èº«é«”ä¸ç¬¦ï¼Œå‰é‚£é–“$Nå¿ƒç¥å¤±é¦–ï¼Œç¶“è„ˆå—æã€‚\n"NOR, this_player());
                 addn("max_jingli", -20, me);
                 me->unconcious();
         

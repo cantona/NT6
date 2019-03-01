@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Ñ©É½Ğ±ÆÂ");
+        set("short", "é›ªå±±æ–œå¡");
         set("long", @LONG
-ÄãÊÖ½Å×ÅµØ£¬ÑØ×ÅÑ©É½Ğ±ÆÂ£¬Ò»²½Ò»²½Ïò×ÅÓĞÑôãäÖ®´¦ÅÀÈ¥£¬µ«´Ë
-ÇÍ±Ú±¾¾Í¼«¶¸£¬¼ÓÉÏ¶³½á±ùÑ©£¬¸üÊÇ»¬ÁïÎŞ±È£¬Ò»²»Ğ¡ĞÄÔò»á»¬µø¡£
+ä½ æ‰‹è…³è‘—åœ°ï¼Œæ²¿è‘—é›ªå±±æ–œå¡ï¼Œä¸€æ­¥ä¸€æ­¥å‘è‘—æœ‰é™½æ²…ä¹‹è™•çˆ¬å»ï¼Œä½†æ­¤
+å³­å£æœ¬å°±æ¥µé™¡ï¼ŒåŠ ä¸Šå‡çµå†°é›ªï¼Œæ›´æ˜¯æ»‘æºœç„¡æ¯”ï¼Œä¸€ä¸å°å¿ƒå‰‡æœƒæ»‘è·Œã€‚
 LONG);
         set("exits",([
                 "east" : __DIR__"pingtai",
@@ -31,10 +31,10 @@ int do_pa(string arg)
         if (!(arg||arg=="east"||arg=="west")) return 0;
         if (arg=="west")
         {
-                message("vision",me->name()+"ÏòÎ÷±ßÅÀÈ¥¡£\n",environment(me),me);
-                write("ÄãÏòÎ÷ÃæÅÀÈ¥¡£\n");
+                message("vision",me->name()+"å‘è¥¿é‚Šçˆ¬å»ã€‚\n",environment(me),me);
+                write("ä½ å‘è¥¿é¢çˆ¬å»ã€‚\n");
                 me->move(__DIR__"xsxiepo1");
-                message("vision",me->name()+"ÅÀÁË¹ıÀ´¡£\n",environment(me),me);
+                message("vision",me->name()+"çˆ¬äº†éä¾†ã€‚\n",environment(me),me);
                 return 1;
         }
         return 1;

@@ -3,11 +3,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short","���¾�");
+        set("short","威德居");
         set("long",@LONG
-���ǰ����ڵ����ң��Ҿ����Σ�����������ν��̻Իͣ���
-�������������ڰ������Ѳ�֪ȥ��ֻʣ����һ����ң�������
-����ҭҭ�ؿޡ�
+這是白自在的寢室，家具屋飾，極盡豪華，謂金碧輝煌，桂
+殿蘭宮。但現在白自在已不知去向，只剩他的一個妾室，還在這
+裡抽抽噎噎地哭。
 LONG);
         set("exits",([
             "south"  : __DIR__"book",   

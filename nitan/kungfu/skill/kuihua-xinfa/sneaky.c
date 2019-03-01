@@ -5,15 +5,15 @@ int exert(object me, object target)
 {
     int skill;
     if( target != me ) 
-        return notify_fail("¿û»¨ÐÄ·¨Ö»ÄÜ¶Ô×Ô¼ºÊ¹ÓÃ¡£\n");
+        return notify_fail("è‘µèŠ±å¿ƒæ³•åªèƒ½å°è‡ªå·±ä½¿ç”¨ã€‚\n");
     if( query("neili", me)<1000 )
-        return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+        return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ã€‚\n");
     if( query_temp("apply/shade_vision", me) )
-        return notify_fail("ÄãÒÑ¾­ÔÚÔË¹¦ÖÐÁË¡£\n");
+        return notify_fail("ä½ å·²ç¶“åœ¨é‹åŠŸä¸­äº†ã€‚\n");
     skill = me->query_skill("kuihua-xinfa",1);
-        if (skill<90) return notify_fail("ÄãµÄ¿û»¨ÐÄ·¨»¹²»¹»æµÊì¡£\n");
-    message_vision( HIW "$NÎ¢Ò»ÄýÉñ£¬ÔËÆð¿û»¨ÐÄ·¨£¬Õû¸öÈËÈçÍ¬±»ÑÌÎíÁýÕÖÒ»°ã£¬Æ¯ºö²»¶¨¡£\n"
-    "¹í÷ÈÖÁ¼«¡£\n" NOR, me);
+        if (skill<90) return notify_fail("ä½ çš„è‘µèŠ±å¿ƒæ³•é‚„ä¸å¤ å«»ç†Ÿã€‚\n");
+    message_vision( HIW "$Nå¾®ä¸€å‡ç¥žï¼Œé‹èµ·è‘µèŠ±å¿ƒæ³•ï¼Œæ•´å€‹äººå¦‚åŒè¢«ç…™éœ§ç± ç½©ä¸€èˆ¬ï¼Œæ¼‚å¿½ä¸å®šã€‚\n"
+    "é¬¼é­…è‡³æ¥µã€‚\n" NOR, me);
     addn("neili", -300, me);
     set_temp("apply/shade_vision", 1, me);
 me->start_call_out( (: call_other, __FILE__, "remove_effect", me, skill :), skill/200);
@@ -26,7 +26,7 @@ void remove_effect(object me, int amount)
 {
     if (!me)    return;
     delete_temp("apply/shade_vision", me);
-    message_vision( BOLD "$NµÄ¿û»¨ÐÄ·¨ÔËÐÐÍê±Ï£¬È«ÉíºöµÄÒ»¶Ù£¬ÏÖ³öÕû¸öÉíÐÎ¡£\n" NOR, me);
+    message_vision( BOLD "$Nçš„è‘µèŠ±å¿ƒæ³•é‹è¡Œå®Œç•¢ï¼Œå…¨èº«å¿½çš„ä¸€é “ï¼Œç¾å‡ºæ•´å€‹èº«å½¢ã€‚\n" NOR, me);
 }
 void reset() { }
 int clean_up() { return 1; }

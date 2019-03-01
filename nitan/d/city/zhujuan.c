@@ -9,14 +9,14 @@ int is_chat_room() { return 1; }
 
 void create()
 {
-        set("short", "ÖíÈ¦");
+        set("short", "è±¬åœˆ");
         set("long", @LONG
-ÕâÀïÊÇÒ»¸ö³ôºæºæµÄÖíÈ¦£¬À¸ÉÏ¹Ò×ÅÒ»¸öÅÆ×Ó(paizi)¡£
+é€™è£¡æ˜¯ä¸€å€‹è‡­çƒ˜çƒ˜çš„è±¬åœˆï¼Œæ¬„ä¸Šæ›è‘—ä¸€å€‹ç‰Œå­(paizi)ã€‚
 LONG );
         set("no_fight", 1);
         set("no_sleep_room",1);
         set("item_desc", ([
-                "paizi" : "´ó¼ÒÒ»Æğ·¢´ô£¬°ÑÄàÌ¶±ä³ÉÖíµÄÊÀ½ç¡£\n",
+                "paizi" : "å¤§å®¶ä¸€èµ·ç™¼å‘†ï¼ŒæŠŠæ³¥æ½­è®Šæˆè±¬çš„ä¸–ç•Œã€‚\n",
         ]));
         set("exits", ([
                 "up"   : "/d/city/kedian",

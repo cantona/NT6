@@ -1,4 +1,4 @@
-// ding.c È«Õæ½£-¶¨ÑôÕë
+// ding.c å…¨çœŸåŠ-å®šé™½é‡
 
 #include <ansi.h>
 
@@ -12,23 +12,23 @@ int perform(object me, object target)
         if( !target ) target = offensive_target(me);
 
         if( !target || !target->is_character() || !me->is_fighting(target) )
-                return notify_fail("¶¨ÑôÕëÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("å®šé™½é‡åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me) )
          || query("skill_type", weapon) != "sword" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ã€‚\n");
 
         if( (int)me->query_skill("quanzhen-jianfa", 1) < 40 )
-                return notify_fail("ÄãµÄÈ«Õæ½£·¨²»¹»æµÊì£¬²»ÄÜÊ¹ÓÃ¶¨ÑôÕë¡£\n");
+                return notify_fail("ä½ çš„å…¨çœŸåŠæ³•ä¸å¤ å«»ç†Ÿï¼Œä¸èƒ½ä½¿ç”¨å®šé™½é‡ã€‚\n");
 
         if( (int)me->query_skill("quanzhen-xinfa", 1) < 40 &&
             (int)me->query_skill("yunv-xinfa", 1) < 40 )
-                return notify_fail("ÄãµÄ±¾ÃÅÄÚ¹¦²»¹»æµÊì£¬²»ÄÜÊ¹ÓÃ¶¨ÑôÕë¡£\n");
+                return notify_fail("ä½ çš„æœ¬é–€å…§åŠŸä¸å¤ å«»ç†Ÿï¼Œä¸èƒ½ä½¿ç”¨å®šé™½é‡ã€‚\n");
 
         if( query("neili", me)<150 )
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ£¬²»ÄÜÊ¹ÓÃ¶¨ÑôÕë¡£\n");
+                return notify_fail("ä½ ç¾åœ¨å…§åŠ›å¤ªå¼±ï¼Œä¸èƒ½ä½¿ç”¨å®šé™½é‡ã€‚\n");
 
-        msg = HIC "$N½ÅÏÂ×ó¹­ÓÒ¼ı£¬ÉñÆøÍê×ãÈçÀ×öªÎåÔÀ£¬Ò»Ê½¡¸¶¨ÑôÕë¡¹Ğ±Ğ±´Ì³ö¡£\n"NOR;
+        msg = HIC "$Nè…³ä¸‹å·¦å¼“å³ç®­ï¼Œç¥æ°£å®Œè¶³å¦‚é›·éœ†äº”å²³ï¼Œä¸€å¼ã€Œå®šé™½é‡ã€æ–œæ–œåˆºå‡ºã€‚\n"NOR;
 
         //if( !target->is_killing(me) ) target->kill_ob(me);
 
@@ -37,7 +37,7 @@ int perform(object me, object target)
                 me->start_busy(2);
 
                 damage = (int)me->query_skill("quanzhen-jianfa", 1) + (int)me->query_skill("force",1);
-                //(È«Õæ½£·¨¼¶±ğ+»ù±¾ÄÚ¹¦)
+                //(å…¨çœŸåŠæ³•ç´šåˆ¥+åŸºæœ¬å…§åŠŸ)
 
                 damage = damage/2 + random(damage/2);
 
@@ -45,13 +45,13 @@ int perform(object me, object target)
                 target->start_busy(4);
                 addn("neili", -100, me);
 
-                msg += HIR"$n¿´µ½$NÕâÆø°ÎÇ§¾ûµÄÒ»»÷£¬¾¹²»ÖªÈçºÎÕĞ¼Ü£¡\n"NOR;
+                msg += HIR"$nçœ‹åˆ°$Né€™æ°£æ‹”åƒéˆçš„ä¸€æ“Šï¼Œç«Ÿä¸çŸ¥å¦‚ä½•æ‹›æ¶ï¼\n"NOR;
 
         }
         else
         {
                 me->start_busy(3);
-                msg += CYN"¿ÉÊÇ$p¿´ÆÆÁË$PµÄÆóÍ¼£¬Ğ±Ô¾±Ü¿ª¡£\n"NOR;
+                msg += CYN"å¯æ˜¯$pçœ‹ç ´äº†$Pçš„ä¼åœ–ï¼Œæ–œèºé¿é–‹ã€‚\n"NOR;
         }
         message_vision(msg, me, target);
 

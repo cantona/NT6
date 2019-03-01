@@ -5,10 +5,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÄÁÑòÅ®", ({ "muyang nu", "nu", "muyang" }));
-        set("gender", "Å®ĞÔ");
+        set_name("ç‰§ç¾Šå¥³", ({ "muyang nu", "nu", "muyang" }));
+        set("gender", "å¥³æ€§");
         set("age", 18 + random(5));
-        set("long", "Ò»¸öÎ¬Îá¶û×åÅ®º¢¡£\n");
+        set("long", "ä¸€å€‹ç¶­å¾çˆ¾æ—å¥³å­©ã€‚\n");
         set("attitude", "friendly");
         set("env/wimpy", 80);
         set("combat_exp", 500);
@@ -21,8 +21,8 @@ void create()
         set_temp("apply/attack", 10);
         set_temp("apply/defense", 10);
         set("inquiry", ([
-               "ĞÇËŞÅÉ" : "ËûÃÇ¶ãÔÚĞÇËŞº£¡£",
-               "ĞÇËŞº£" : "ĞÇËŞº£¾ÍÊÇ±±±ß·½Ô²¼¸°ÙÀïµÄºş²´ºÍÕÓÔóµØ¡£\n",
+               "æ˜Ÿå®¿æ´¾" : "ä»–å€‘èº²åœ¨æ˜Ÿå®¿æµ·ã€‚",
+               "æ˜Ÿå®¿æµ·" : "æ˜Ÿå®¿æµ·å°±æ˜¯åŒ—é‚Šæ–¹åœ“å¹¾ç™¾è£¡çš„æ¹–æ³Šå’Œæ²¼æ¾¤åœ°ã€‚\n",
         ]) );
 
         setup();

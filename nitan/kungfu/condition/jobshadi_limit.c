@@ -17,14 +17,14 @@ int update_condition(object me, int duration)
         if( query_temp("guo_shoucheng/where", me) != room
          && !query_temp("guo_shoucheng/job_over", me) )
         {
-                message_vision(HIY "Ò»¸öËÎ±øÅÜ¹ıÀ´¶Ô$NËµµÀ£º½ĞÄãÊØ³Ç£¬ÄãÈ´µ½´¦ÏĞ¹ä£¬ÎÒÈ¥±¨¸æ¹ù´óÈË£¡\n" NOR, me);
+                message_vision(HIY "ä¸€å€‹å®‹å…µè·‘éä¾†å°$Nèªªé“ï¼šå«ä½ å®ˆåŸï¼Œä½ å»åˆ°è™•é–’é€›ï¼Œæˆ‘å»å ±å‘Šéƒ­å¤§äººï¼\n" NOR, me);
                 set_temp("guo_shoucheng/failed", 1, me);
                 me->apply_condition("jobshadi_limit", 0);  
         }
 
         if( query_temp("guo_shoucheng/start_job", me )
          && query_temp("guo_shoucheng/where", me) == room )
-         message_vision(HIY"$NÕıÕ¾ÔÚ³ÇÇ½ÉÏÃÜÇĞ×¢ÊÓ×Å³ÇÏÂ"HIR"ÃÉ¹Å±ø"HIY"µÄÒ»¾ÙÒ»¶¯¡£\n"NOR,me);
+         message_vision(HIY"$Næ­£ç«™åœ¨åŸç‰†ä¸Šå¯†åˆ‡æ³¨è¦–è‘—åŸä¸‹"HIR"è’™å¤å…µ"HIY"çš„ä¸€èˆ‰ä¸€å‹•ã€‚\n"NOR,me);
 
         if (me->is_ghost())
         {
@@ -35,9 +35,9 @@ int update_condition(object me, int duration)
 
         if( duration == 1 && query_temp("guo_shoucheng/where", me) == room )
         {
-                message_vision(HIW "ÕâÊ±´ÓÃÉ¹Å¾üÓª´«À´ÕóÕóÕ½¹ÄÉùÒô£¬¹¥³ÇµÄÃÉ¹Å´ó¾üºöÈ»¿ªÊ¼³·ÍËÁË£¡\n" NOR, me);   
+                message_vision(HIW "é€™æ™‚å¾è’™å¤è»ç‡Ÿå‚³ä¾†é™£é™£æˆ°é¼“è²éŸ³ï¼Œæ”»åŸçš„è’™å¤å¤§è»å¿½ç„¶é–‹å§‹æ’¤é€€äº†ï¼\n" NOR, me);   
 
-                message_vision(CYN "\nÒ»¸öÊØ³ÇËÎ±øÅÜ¹ıÀ´ËµµÀ£ºÃÉ¹Å÷°×ÓÔİÊ±±»»÷ÍËÁË£¬$N¿ÉÒÔ»ØÈ¥¸´ÃüÁË£¡\n" NOR, me);
+                message_vision(CYN "\nä¸€å€‹å®ˆåŸå®‹å…µè·‘éä¾†èªªé“ï¼šè’™å¤é¼å­æš«æ™‚è¢«æ“Šé€€äº†ï¼Œ$Nå¯ä»¥å›å»å¾©å‘½äº†ï¼\n" NOR, me);
                 if( query_temp("guo_shoucheng/start_job", me) )
                         set_temp("guo_shoucheng/job_over", 1, me);
                 delete_temp("guo_shoucheng/start_job", me);

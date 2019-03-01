@@ -1,4 +1,4 @@
-// contruction.c ÍÁÄ¾»ú¹Ø
+// contruction.c åœŸæœ¨æ©Ÿé—œ
 // Last Modified by winder on Jun. 10 2000
 
 #include <ansi.h>;
@@ -19,26 +19,26 @@ int valid_learn(object me)
         lvl = (int)me->query_skill("construction", 1);
 
         if( lvl>29 && query("kar", me)<27 )
-                return notify_fail("ÏÞÓÚÌì×Ê£¬ÄãÖ»ÄÜÐÞÏ°Õâ¸ö³Ì¶ÈÁË¡£\n");
+                return notify_fail("é™äºŽå¤©è³‡ï¼Œä½ åªèƒ½ä¿®ç¿’é€™å€‹ç¨‹åº¦äº†ã€‚\n");
         else return 1;
 }
 
 int practice_skill(object me)
 {
-        return notify_fail("ÍÁÄ¾»ú¹ØÖ»ÄÜ¿¿Ñ§Ï°À´Ìá¸ß¡£\n");
+        return notify_fail("åœŸæœ¨æ©Ÿé—œåªèƒ½é å­¸ç¿’ä¾†æé«˜ã€‚\n");
 }
 int help(object me)
 {
-        write(HIC"\nÍÁÄ¾»ú¹Ø£º"NOR"\n");
+        write(HIC"\nåœŸæœ¨æ©Ÿé—œï¼š"NOR"\n");
         write(@HELP
 
-    åÐÒ£ÅÉ×æÊ¦åÐÒ£×ÓÑ§¾¿ÌìÈË£¬ÐØÖÐËùÑ§°üÂÞÍòÏó¡£Ëû¹²´«ÏÂÆß
-ÃÅ¾øÒÕ£ºÈÆÁºÇÙÒÕ (luteplaying)¡¢ÎÆèÒÊÖÌ¸ (goplaying)¡¢ÆÃÄ«
-µ¤Çà(painting)¡¢¼ÃÊÀÖ®Êõ(medicine)¡¢ÍÁÄ¾»ú¹Ø(construction)¡¢
-Ô°ÒÕÝª»¨(horticulture)¡¢ÀæÔ°¾ÉÒÕ(dramaturgy)¡£
+    é€é™æ´¾ç¥–å¸«é€é™å­å­¸ç©¶å¤©äººï¼Œèƒ¸ä¸­æ‰€å­¸åŒ…ç¾…è¬è±¡ã€‚ä»–å…±å‚³ä¸‹ä¸ƒ
+é–€çµ•è—ï¼šç¹žæ¨‘ç´è— (luteplaying)ã€ç´‹æž°æ‰‹è«‡ (goplaying)ã€æ½‘å¢¨
+ä¸¹é’(painting)ã€æ¿Ÿä¸–ä¹‹è¡“(medicine)ã€åœŸæœ¨æ©Ÿé—œ(construction)ã€
+åœ’è—è’”èŠ±(horticulture)ã€æ¢¨åœ’èˆŠè—(dramaturgy)ã€‚
 
-        Ñ§Ï°ÒªÇó£º
-                ÎÞ¡£µ«Ìì¸³²ÅÆøÏÞÖÆÁË¶Ô¸ü¸ßÉî¾³½çµÄÅ¬Á¦
+        å­¸ç¿’è¦æ±‚ï¼š
+                ç„¡ã€‚ä½†å¤©è³¦æ‰æ°£é™åˆ¶äº†å°æ›´é«˜æ·±å¢ƒç•Œçš„åŠªåŠ›
 HELP
         );
         return 1;

@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ҩ����Ժ");
+        set("short", "藥舖內院");
         set("long", @LONG
-�������ҩ����Ժ����һ�߽����;���һ�����ˡ�ֻ��ʮ
-��ֻ¯�Ӷ��ڰ�ҩ���м���ҩ�̵Ļ����æµ�š���Ҫ��ҩ��
-����Ҫ����ҩ���ѷŽ�ҩ���
+這裡就是藥舖內院，你一走進來就覺得一股熱浪。只見十
+幾只爐子都在熬藥，有幾個藥舖的伙計在忙碌著。你要熬藥的
+話就要依著藥方把放進藥罐裡。
 LONG);
         set("exits", ([
                 "north" : __DIR__"yaopu",

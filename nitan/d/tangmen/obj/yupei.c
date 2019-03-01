@@ -3,14 +3,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name("ÓñÅå", ({"yu pei", "yu","pei"}));
+        set_name("ç‰ä½©", ({"yu pei", "yu","pei"}));
         set_weight(500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿é");
+                set("unit", "å¡Š");
                 set("long",
-"ÕâÊÇÒ»¿é¾«ÃÀµÄÀ¶ÌïÓñ£¬ÈëÊÖÎÂÈóÎŞ±È¡£\n");
+"é€™æ˜¯ä¸€å¡Šç²¾ç¾çš„è—ç”°ç‰ï¼Œå…¥æ‰‹æº«æ½¤ç„¡æ¯”ã€‚\n");
         set("value", 80000);
                 set("material", "stone");
         }

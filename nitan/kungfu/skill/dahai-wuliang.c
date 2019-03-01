@@ -21,17 +21,17 @@ int query_neili_improve(object me)
 int valid_learn(object me)
 {
         if ((int)me->query_skill("force", 1) < 50)
-                return notify_fail("ÄãµÄ»ù±¾ÄÚ¹¦»ğºò»¹²»¹»¡£\n");
+                return notify_fail("ä½ çš„åŸºæœ¬å…§åŠŸç«å€™é‚„ä¸å¤ ã€‚\n");
 
-        if( query("gender", me) == "ÎŞĞÔ" && me->query_skill("dahai-wuliang",1)>49 )
-                return notify_fail("ÄãÎŞ¸ùÎŞĞÔ£¬ÒõÑô²»µ÷£¬ÄÑÒÔÁì»á¸ßÉîµÄ´óº£ÎŞÁ¿¡£\n");
+        if( query("gender", me) == "ç„¡æ€§" && me->query_skill("dahai-wuliang",1)>49 )
+                return notify_fail("ä½ ç„¡æ ¹ç„¡æ€§ï¼Œé™°é™½ä¸èª¿ï¼Œé›£ä»¥é ˜æœƒé«˜æ·±çš„å¤§æµ·ç„¡é‡ã€‚\n");
 
         return ::valid_learn(me);
 }
 
 int practice_skill(object me)
 {
-        return notify_fail("´óº£ÎŞÁ¿Ö»ÄÜÓÃÑ§(learn)µÄÀ´Ôö¼ÓÊìÁ·¶È¡£\n");
+        return notify_fail("å¤§æµ·ç„¡é‡åªèƒ½ç”¨å­¸(learn)çš„ä¾†å¢åŠ ç†Ÿç·´åº¦ã€‚\n");
 }
 
 string exert_function_file(string func)

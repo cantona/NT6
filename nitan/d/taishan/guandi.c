@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�ص���");
+        set("short", "關帝廟");
         set("long", @LONG
-һ���ŷ�ǰ·���ǹص�����������ʱ��������������ʱɽ����
-�̳��ڴ˾ۻ���룬��񣬹�����ɽ����ݡ�����Ժ�йŰ�һ�꣬ǽ
-�����顰���ص�һ����
+一天門坊前路西是關帝廟，祀三國時蜀漢名將關羽。明清時山西鹽
+商常在此聚會祭祀，奉福神，故又名山西會館。廟東院有古柏一株，牆
+外碣書“漢柏第一”。
 LONG );
         set("exits", ([
                 "northeast" : __DIR__"yitian",

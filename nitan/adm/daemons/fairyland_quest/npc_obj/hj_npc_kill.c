@@ -1,8 +1,8 @@
-//                ±ê×¼ÃèÊö³¤¶ÈÊ¾Àı                                   |
-// »Ã¾³ÄÚÈËÎï  É±Â¾ĞÍ £¨²¢ÇÒ»áĞ¯´øÍæ¼Ò±ØĞëÑ°ÕÒµÄ±¦Îï£©
-// by naihe  2002-10-27  ÓÚÃ¯Ãû
-// naihe 05-9-4 15:43 ÓÅ»¯Ò»ÏÂ£¬Í¬Ê±Ôö¼Ó2¸öÀàĞÍ
-// naihe 05-9-5 11:02 ÔÙ´ÎÓÅ»¯
+//                æ¨™æº–æè¿°é•·åº¦ç¤ºä¾‹                                   |
+// å¹»å¢ƒå…§äººç‰©  æ®ºæˆ®å‹ ï¼ˆä¸¦ä¸”æœƒæ”œå¸¶ç©å®¶å¿…é ˆå°‹æ‰¾çš„å¯¶ç‰©ï¼‰
+// by naihe  2002-10-27  äºèŒ‚å
+// naihe 05-9-4 15:43 å„ªåŒ–ä¸€ä¸‹ï¼ŒåŒæ™‚å¢åŠ 2å€‹é¡å‹
+// naihe 05-9-5 11:02 å†æ¬¡å„ªåŒ–
 
 #include <ansi.h>
 
@@ -13,165 +13,165 @@ inherit NPC;
 #include "hj_settings/get_hj_dir.h"
 #include "hj_settings/hj_msg.h"
 
-#define     NPC_NORMAL_SIZE         6       // ÆÕÍ¨NPCµÄ·¶Î§£¬´Ó 0~ SIZE-1
-#define     NPC_ZUREN_INDEX         5       // ×åÈËNPCµÄË÷ÒıºÅ
-#define     NPC_ZUZHANG_INDEX       6       // ×å³¤NPCµÄË÷ÒıºÅ
-#define     NPC_YL_WUSHI_INDEX      10      // ÓÄÁé -- ÎäÊ¿
-#define     NPC_YL_CIKE_INDEX       7       // ÓÄÁé -- ´Ì¿Í
-#define     NPC_YL_SHASHEN_INDEX    8       // ÓÄÁé -- É±Éñ
-#define     NPC_YL_YINSHI_INDEX     9       // ÓÄÁé -- ÒşÊ¿
+#define     NPC_NORMAL_SIZE         6       // æ™®é€šNPCçš„èŒƒåœï¼Œå¾ 0~ SIZE-1
+#define     NPC_ZUREN_INDEX         5       // æ—äººNPCçš„ç´¢å¼•è™Ÿ
+#define     NPC_ZUZHANG_INDEX       6       // æ—é•·NPCçš„ç´¢å¼•è™Ÿ
+#define     NPC_YL_WUSHI_INDEX      10      // å¹½éˆ -- æ­¦å£«
+#define     NPC_YL_CIKE_INDEX       7       // å¹½éˆ -- åˆºå®¢
+#define     NPC_YL_SHASHEN_INDEX    8       // å¹½éˆ -- æ®ºç¥
+#define     NPC_YL_YINSHI_INDEX     9       // å¹½éˆ -- éš±å£«
 
 void checking();
 void npc_dead_reward();
 void npc_dead_reward_wushi();
 void npc_dead_reward_sp( int total_reward );
 
-// µÚÒ»¸ö²ÎÊıÖ¸¶¨¡°×å¡±£¬ µÚ¶ş¸ö²ÎÊıÖ¸¶¨¼¶±ğ¡£
+// ç¬¬ä¸€å€‹åƒæ•¸æŒ‡å®šâ€œæ—â€ï¼Œ ç¬¬äºŒå€‹åƒæ•¸æŒ‡å®šç´šåˆ¥ã€‚
 varargs void setme( int npc_class, int npc_level )
 {
     int std_power, std_busy, std_hpmax;
     mapping *npc_info, *npc_info2, info;
     string id, *class_list;
     int i;
-    // npc ±ê×¼ĞÅÏ¢ -----------------------------------------------------
+    // npc æ¨™æº–ä¿¡æ¯ -----------------------------------------------------
     npc_info2 = ({
-        ([ "name":"Ğ¡Í·Áì",
+        ([ "name":"å°é ­é ˜",
             "id":({ "tou ling", "ling", }),
             "auto_kill": 1,
-            "peaceful": (5+random(15)), // Ô½´óÔ½²»°®Ö÷¶¯¹¥»÷
+            "peaceful": (5+random(15)), // è¶Šå¤§è¶Šä¸æ„›ä¸»å‹•æ”»æ“Š
         ]),
-        ([ "name":"Á¦Ê¿",
+        ([ "name":"åŠ›å£«",
             "id":({ "li shi", "shi", }),
             "auto_kill": 1,
-            "peaceful": (5+random(15)), // Ô½´óÔ½²»°®Ö÷¶¯¹¥»÷
+            "peaceful": (5+random(15)), // è¶Šå¤§è¶Šä¸æ„›ä¸»å‹•æ”»æ“Š
         ]),
-        ([ "name":"×³ºº",
+        ([ "name":"å£¯æ¼¢",
             "id":({ "zhuang han", "han", }),
             "auto_kill": 1,
-            "peaceful": (5+random(15)), // Ô½´óÔ½²»°®Ö÷¶¯¹¥»÷
+            "peaceful": (5+random(15)), // è¶Šå¤§è¶Šä¸æ„›ä¸»å‹•æ”»æ“Š
         ]),
-        ([ "name":"Ğ×Í½",
+        ([ "name":"å…‡å¾’",
             "id":({ "xiong tu", "tu", }),
             "auto_kill": 1,
-            "peaceful": (5+random(15)), // Ô½´óÔ½²»°®Ö÷¶¯¹¥»÷
+            "peaceful": (5+random(15)), // è¶Šå¤§è¶Šä¸æ„›ä¸»å‹•æ”»æ“Š
         ]),
-        ([ "name":"·¨Ê¦",
+        ([ "name":"æ³•å¸«",
             "id":({ "fa shi", "shi", }),
             "auto_kill": 1,
-            "hit_suck": 1,  // ¹¥»÷»áÎüÈ¡ hp
-            "peaceful": (5+random(15)), // Ô½´óÔ½²»°®Ö÷¶¯¹¥»÷
+            "hit_suck": 1,  // æ”»æ“Šæœƒå¸å– hp
+            "peaceful": (5+random(15)), // è¶Šå¤§è¶Šä¸æ„›ä¸»å‹•æ”»æ“Š
         ]),
-        ([ "name":"×åÈË",
+        ([ "name":"æ—äºº",
             "id":({ "zu ren", "ren", }),
             "auto_kill": 1,
-            "peaceful": (5+random(15)), // Ô½´óÔ½²»°®Ö÷¶¯¹¥»÷
+            "peaceful": (5+random(15)), // è¶Šå¤§è¶Šä¸æ„›ä¸»å‹•æ”»æ“Š
         ]),
-        ([ "name":HIY"×å³¤",
+        ([ "name":HIY"æ—é•·",
             "id":({ "zu zhang", "zhang", }),
             "auto_kill": 1,
-            "peaceful": (5+random(15)), // Ô½´óÔ½²»°®Ö÷¶¯¹¥»÷
+            "peaceful": (5+random(15)), // è¶Šå¤§è¶Šä¸æ„›ä¸»å‹•æ”»æ“Š
         ]),
-        ([ "special_name": HIB"ÓÄÁé×å"HIY"´Ì¿Í"NOR,
-            "special_long" : "ÕâÊÇÒ»¸öÓÄÁé×åµÄ´Ì¿Í£¬¿´ÆğÀ´ÉíÊÖÃô½İ£¬½Ã½¡¹ıÈË¡£\n",
+        ([ "special_name": HIB"å¹½éˆæ—"HIY"åˆºå®¢"NOR,
+            "special_long" : "é€™æ˜¯ä¸€å€‹å¹½éˆæ—çš„åˆºå®¢ï¼Œçœ‹èµ·ä¾†èº«æ‰‹æ•æ·ï¼ŒçŸ¯å¥éäººã€‚\n",
             "id":({ "youling cike", "cike", }),
             "auto_kill": 1,
-            "peaceful": 3, // Ô½´óÔ½²»°®Ö÷¶¯¹¥»÷
-            //"hit_busy": 1, // ¹¥»÷»áÔì³ÉÃ¦Ê±
-            "dead_reward_score" : 150,    // NPCËÀÍöÊ±»á¸øÓè½±Àø
-            "max_busy_limit" : 3,  // ±¾NPC×î´óÖ»ÄÜ½ÓÊÜµÄ busy time£¬³¬¹ıÊ±»áÇ¿ÖÆ»Ö¸´×ÔÓÉ
-            "del_msg" : "$NºöµØ·¢³öÒ»ÕóÆàÀ÷³¤Ğ¥£¬Ëæºó¡¸àØ¡¹µØÒ»ÉùÏûÊ§²»¼ûÁË¡£\n",
+            "peaceful": 3, // è¶Šå¤§è¶Šä¸æ„›ä¸»å‹•æ”»æ“Š
+            //"hit_busy": 1, // æ”»æ“Šæœƒé€ æˆå¿™æ™‚
+            "dead_reward_score" : 150,    // NPCæ­»äº¡æ™‚æœƒçµ¦äºˆçå‹µ
+            "max_busy_limit" : 3,  // æœ¬NPCæœ€å¤§åªèƒ½æ¥å—çš„ busy timeï¼Œè¶…éæ™‚æœƒå¼·åˆ¶æ¢å¾©è‡ªç”±
+            "del_msg" : "$Nå¿½åœ°ç™¼å‡ºä¸€é™£å‡„å²é•·å˜¯ï¼Œéš¨å¾Œã€Œâ–¡ã€åœ°ä¸€è²æ¶ˆå¤±ä¸è¦‹äº†ã€‚\n",
         ]),
 
-        ([ "special_name": HIB"ÓÄÁé×å"HIR"É±Éñ"NOR,
-            "special_long" : "ÕâÊÇÒ»¸öÓÄÁé×åµÄÉ±Éñ£¬È«ÉíÉ¢·¢¾ªÈËµÄÉ±Æø£¡\n",
+        ([ "special_name": HIB"å¹½éˆæ—"HIR"æ®ºç¥"NOR,
+            "special_long" : "é€™æ˜¯ä¸€å€‹å¹½éˆæ—çš„æ®ºç¥ï¼Œå…¨èº«æ•£ç™¼é©šäººçš„æ®ºæ°£ï¼\n",
             "id":({ "youling shashen", "shashen", }),
             "auto_kill": 1,
-            "peaceful": 3, // Ô½´óÔ½²»°®Ö÷¶¯¹¥»÷
-            "hit_busy": 1, // ¹¥»÷»áÔì³ÉÃ¦Ê±
-            "dead_reward_score" : 1500,    // NPCËÀÍöÊ±»á¸øÓè½±Àø
-            "del_msg" : "$NºöµØ·¢³öÒ»ÕóÆàÀ÷³¤Ğ¥£¬Ëæºó¡¸àØ¡¹µØÒ»ÉùÏûÊ§²»¼ûÁË¡£\n",
+            "peaceful": 3, // è¶Šå¤§è¶Šä¸æ„›ä¸»å‹•æ”»æ“Š
+            "hit_busy": 1, // æ”»æ“Šæœƒé€ æˆå¿™æ™‚
+            "dead_reward_score" : 1500,    // NPCæ­»äº¡æ™‚æœƒçµ¦äºˆçå‹µ
+            "del_msg" : "$Nå¿½åœ°ç™¼å‡ºä¸€é™£å‡„å²é•·å˜¯ï¼Œéš¨å¾Œã€Œâ–¡ã€åœ°ä¸€è²æ¶ˆå¤±ä¸è¦‹äº†ã€‚\n",
         ]),
-        ([ "special_name":HIB"ÓÄÁé×å"HIM"ÒşÊ¿"NOR,
-            "special_long" : "ÕâÊÇÒ»¸öÓÄÁé×åµÄÒşÊ¿£¬È«ÉíÉ¢·¢×ÅÒ»¹ÉÄªÃûµÄÑ¹ÆÈÖ®Æø£¬ÈÃÈË²»¸Ò¿¿½ü¡£\n",
+        ([ "special_name":HIB"å¹½éˆæ—"HIM"éš±å£«"NOR,
+            "special_long" : "é€™æ˜¯ä¸€å€‹å¹½éˆæ—çš„éš±å£«ï¼Œå…¨èº«æ•£ç™¼è‘—ä¸€è‚¡è«åçš„å£“è¿«ä¹‹æ°£ï¼Œè®“äººä¸æ•¢é è¿‘ã€‚\n",
             "id":({ "youling yinshi", "yinshi", }),
-            "hit_busy": 1, // ¹¥»÷»áÔì³ÉÃ¦Ê±
-            "dead_reward_score" : 800,    // NPCËÀÍöÊ±»á¸øÓè½±Àø
-            "del_msg" : "$NºöµØ·¢³öÒ»ÕóÆàÀ÷³¤Ğ¥£¬Ëæºó¡¸àØ¡¹µØÒ»ÉùÏûÊ§²»¼ûÁË¡£\n",
+            "hit_busy": 1, // æ”»æ“Šæœƒé€ æˆå¿™æ™‚
+            "dead_reward_score" : 800,    // NPCæ­»äº¡æ™‚æœƒçµ¦äºˆçå‹µ
+            "del_msg" : "$Nå¿½åœ°ç™¼å‡ºä¸€é™£å‡„å²é•·å˜¯ï¼Œéš¨å¾Œã€Œâ–¡ã€åœ°ä¸€è²æ¶ˆå¤±ä¸è¦‹äº†ã€‚\n",
         ]),
-        ([ "special_name": HIB"ÓÄÁé×åÎäÊ¿"NOR,
-            "special_long" : "ÕâÊÇÒ»¸öÓÄÁé×åµÄÎäÊ¿£¬ÒõÉ­¹îÒì¡£\n",
+        ([ "special_name": HIB"å¹½éˆæ—æ­¦å£«"NOR,
+            "special_long" : "é€™æ˜¯ä¸€å€‹å¹½éˆæ—çš„æ­¦å£«ï¼Œé™°æ£®è©­ç•°ã€‚\n",
             "id":({ "youling wushi", "wushi", "shi", }),
-            "hit_busy": 1, // ¹¥»÷»áÔì³ÉÃ¦Ê±
-            "del_msg" : "$NºöÈ»·¢³öÒ»Õó´Ì¶úµÄèÉ½ĞÉù£¬Ë²Ê±¼äÉíÓ°ëüëÊ£¬ÏûÊ§²»¼ûÁË£¡\n",
+            "hit_busy": 1, // æ”»æ“Šæœƒé€ æˆå¿™æ™‚
+            "del_msg" : "$Nå¿½ç„¶ç™¼å‡ºä¸€é™£åˆºè€³çš„æ¢Ÿå«è²ï¼Œç¬æ™‚é–“èº«å½±æœ¦æœ§ï¼Œæ¶ˆå¤±ä¸è¦‹äº†ï¼\n",
         ]),
     });
-    // npc Õ½¶·Ïà¹ØĞÅÏ¢ -----------------------------------------------------
+    // npc æˆ°é¬¥ç›¸é—œä¿¡æ¯ -----------------------------------------------------
     std_power = 15 + random( 6 );
     std_busy = 3 + random( 6 );
     std_hpmax = 50 + random( 251 );
     npc_info = ({
-        ([ "power": std_power * 2,  "busy": std_busy,    "hpmax": 400+random(201) ]),  // Ğ¡Í·Áì    0
-        ([ "power": std_power *3/2, "busy": std_busy,    "hpmax": std_hpmax       ]),  // Á¦Ê¿      1
-        ([ "power": std_power,      "busy": std_busy,    "hpmax": 300+random(201) ]),  // ×³ºº      2
-        ([ "power": std_power,      "busy": 2+random(3), "hpmax": std_hpmax       ]),  // Ğ×Í½      3
-        ([ "power": std_power,      "busy": 2+random(2), "hpmax": 80+random(71)   ]),  // ·¨Ê¦      4
-        ([ "power": std_power,      "busy": std_busy,    "hpmax": std_hpmax       ]),  // ×åÈË      5
-        ([ "power": std_power * 3,  "busy": 3+random(4), "hpmax": 800+random(701) ]),  // ×å³¤      6
-        ([ "power": std_power / 2,  "busy": 1,           "hpmax": 1500+random(501) ]), // ÓÄÁé´Ì¿Í  7
-        ([ "power": std_power * 2,  "busy": 1+random(2), "hpmax": 8000+random(3001) ]),// ÓÄÁéÉ±Éñ  8
-        ([ "power": std_power * 3,  "busy": 2+random(3), "hpmax": 3000+random(1001) ]),// ÓÄÁéÒşÊ¿  9
-        ([ "power": 10+random(21),  "busy": 2+random(2), "hpmax": 400+random(201) ]),  // ÓÄÁéÎäÊ¿  10
+        ([ "power": std_power * 2,  "busy": std_busy,    "hpmax": 400+random(201) ]),  // å°é ­é ˜    0
+        ([ "power": std_power *3/2, "busy": std_busy,    "hpmax": std_hpmax       ]),  // åŠ›å£«      1
+        ([ "power": std_power,      "busy": std_busy,    "hpmax": 300+random(201) ]),  // å£¯æ¼¢      2
+        ([ "power": std_power,      "busy": 2+random(3), "hpmax": std_hpmax       ]),  // å…‡å¾’      3
+        ([ "power": std_power,      "busy": 2+random(2), "hpmax": 80+random(71)   ]),  // æ³•å¸«      4
+        ([ "power": std_power,      "busy": std_busy,    "hpmax": std_hpmax       ]),  // æ—äºº      5
+        ([ "power": std_power * 3,  "busy": 3+random(4), "hpmax": 800+random(701) ]),  // æ—é•·      6
+        ([ "power": std_power / 2,  "busy": 1,           "hpmax": 1500+random(501) ]), // å¹½éˆåˆºå®¢  7
+        ([ "power": std_power * 2,  "busy": 1+random(2), "hpmax": 8000+random(3001) ]),// å¹½éˆæ®ºç¥  8
+        ([ "power": std_power * 3,  "busy": 2+random(3), "hpmax": 3000+random(1001) ]),// å¹½éˆéš±å£«  9
+        ([ "power": 10+random(21),  "busy": 2+random(2), "hpmax": 400+random(201) ]),  // å¹½éˆæ­¦å£«  10
     });
-    // ¸üĞÂ´Ë´¦ÉèÖÃÊ±£¬ĞèÒª¼ÆËãÕıÈ·µÄÖµ£¬²¢¸üĞÂ help ÎÄ¼ş¡£
+    // æ›´æ–°æ­¤è™•è¨­ç½®æ™‚ï¼Œéœ€è¦è¨ˆç®—æ­£ç¢ºçš„å€¼ï¼Œä¸¦æ›´æ–° help æ–‡ä»¶ã€‚
     // ---------------------------------------------------------------------------
     class_list = ({
-        YEL"ÂùÒ°×å",
-        YEL"ÃÍÁ¦×å",
-        YEL"°«Ñı×å",
-        YEL"É½¹Ö×å",
-        YEL"¾ŞÈË×å",
+        YEL"è »é‡æ—",
+        YEL"çŒ›åŠ›æ—",
+        YEL"çŸ®å¦–æ—",
+        YEL"å±±æ€ªæ—",
+        YEL"å·¨äººæ—",
     });
     i = sizeof( npc_info2 );
-    if( npc_class == 88 )  // Ö¸¶¨¡°×å¡±ÎªÈÎÎñNPC  (½öÓÉ hj_room1.c Àïµ÷ÓÃ)
+    if( npc_class == 88 )  // æŒ‡å®šâ€œæ—â€ç‚ºä»»å‹™NPC  (åƒ…ç”± hj_room1.c è£¡èª¿ç”¨)
     {
         npc_class = -1;
-        npc_level = NPC_YL_WUSHI_INDEX;    // ÔòÖ¸¶¨Îª ÓÄÁéÎäÊ¿
+        npc_level = NPC_YL_WUSHI_INDEX;    // å‰‡æŒ‡å®šç‚º å¹½éˆæ­¦å£«
         set("job_npc", 1 );
     }
-    else if( npc_class == 99 ) // Ö¸¶¨¡°×å¡±ÎªËæ»ú
+    else if( npc_class == 99 ) // æŒ‡å®šâ€œæ—â€ç‚ºéš¨æ©Ÿ
     {
-        npc_class = random(5);  // ÄÇÃ´¾ÍËæ»ú
+        npc_class = random(5);  // é‚£éº¼å°±éš¨æ©Ÿ
     }
-    else if( npc_class < 0 || npc_class > 4 )   // Êı¾İ´íÎóµÄ»°
+    else if( npc_class < 0 || npc_class > 4 )   // æ•¸æ“šéŒ¯èª¤çš„è©±
     {
-        npc_class = random(5);  // ÄÇÃ´Ò²Ëæ»ú
+        npc_class = random(5);  // é‚£éº¼ä¹Ÿéš¨æ©Ÿ
     }
-    // ok. Ñ¡Ôñ  lv
-    if( npc_class != -1 )  // ²»ÊÇÖ¸¶¨ÈÎÎñNPCµÄ»°£¬²Å¼ÌĞø´¦Àí
+    // ok. é¸æ“‡  lv
+    if( npc_class != -1 )  // ä¸æ˜¯æŒ‡å®šä»»å‹™NPCçš„è©±ï¼Œæ‰ç¹¼çºŒè™•ç†
     {
-        // Ê¡ÂÔ²ÎÊı»òÓĞÎóÊ±£¬Ëæ»ú³öÏÖ
+        // çœç•¥åƒæ•¸æˆ–æœ‰èª¤æ™‚ï¼Œéš¨æ©Ÿå‡ºç¾
         if( npc_level < 1 || npc_level > i )
         {
-            npc_level = random( NPC_NORMAL_SIZE );    // Ëæ»ú»ñµÃÒ»¸ö¡°Õı³£ÀàĞÍNPC¡±
+            npc_level = random( NPC_NORMAL_SIZE );    // éš¨æ©Ÿç²å¾—ä¸€å€‹â€œæ­£å¸¸é¡å‹NPCâ€
             if( !query("take_gem_npc") && random( 300 ) == 88 )
-                npc_level = NPC_YL_SHASHEN_INDEX;     // ºÜĞ¡»úÂÊ³öÏÖÉ±Éñ
+                npc_level = NPC_YL_SHASHEN_INDEX;     // å¾ˆå°æ©Ÿç‡å‡ºç¾æ®ºç¥
             else if( !query("take_gem_npc") && random(200) == 88 )
-                npc_level = NPC_YL_YINSHI_INDEX;      // ½ÏĞ¡»úÂÊ³öÏÖÒşÊ¿
+                npc_level = NPC_YL_YINSHI_INDEX;      // è¼ƒå°æ©Ÿç‡å‡ºç¾éš±å£«
             else if( !query("take_gem_npc") && random(100) == 88 )
-                npc_level = NPC_YL_CIKE_INDEX;        // ÆÕÍ¨»úÂÊ³öÏÖ´Ì¿Í
+                npc_level = NPC_YL_CIKE_INDEX;        // æ™®é€šæ©Ÿç‡å‡ºç¾åˆºå®¢
             else if( random(20) == 8 )
-                npc_level = NPC_ZUZHANG_INDEX;        // ½ÏÈİÒ×³öÏÖ¸÷×å×å³¤
+                npc_level = NPC_ZUZHANG_INDEX;        // è¼ƒå®¹æ˜“å‡ºç¾å„æ—æ—é•·
         }
         else
-            npc_level --;  // ·ñÔòÎªÖ¸¶¨µÄ¼õ1 (´«Èë1Ê±ÒâË¼ÊÇÊı×éµÄ0ºÅ)
+            npc_level --;  // å¦å‰‡ç‚ºæŒ‡å®šçš„æ¸›1 (å‚³å…¥1æ™‚æ„æ€æ˜¯æ•¸çµ„çš„0è™Ÿ)
     }
-    // ·ÀÖ¹ÒâÍâ
+    // é˜²æ­¢æ„å¤–
     if( npc_level < 0 || npc_level > sizeof(npc_info2) )
     {
-        npc_level = NPC_ZUREN_INDEX;  // ·¢ÏÖÊı¾İÓĞÎóÊ±£¬Ç¿ÖÆ¸ÄÎª×åÈË
+        npc_level = NPC_ZUREN_INDEX;  // ç™¼ç¾æ•¸æ“šæœ‰èª¤æ™‚ï¼Œå¼·åˆ¶æ”¹ç‚ºæ—äºº
         delete( "job_npc" );
     }
-    // ÉèÖÃ»ù±¾Ãû×Ö¡¢ID¼°ÃèÊö¡£
+    // è¨­ç½®åŸºæœ¬åå­—ã€IDåŠæè¿°ã€‚
     info = npc_info2[ npc_level ];
     if( info["special_name"] )
     {
@@ -187,7 +187,7 @@ varargs void setme( int npc_class, int npc_level )
     }
     else
     {
-        set( "long", "ÕâÊÇÒ»¸ö"+class_list[ npc_class ]+NOR"µÄ×åÃñ£¬Ê®·ÖºÃÕ½£¬¿ÉÒÔËµÊÇĞ×²Ğ³ÉĞÔ¡£\n");
+        set( "long", "é€™æ˜¯ä¸€å€‹"+class_list[ npc_class ]+NOR"çš„æ—æ°‘ï¼Œååˆ†å¥½æˆ°ï¼Œå¯ä»¥èªªæ˜¯å…‡æ®˜æˆæ€§ã€‚\n");
     }
     set("auto_kill", info[ "auto_kill" ] );
     set("peaceful", info[ "peaceful"] );
@@ -201,9 +201,9 @@ varargs void setme( int npc_class, int npc_level )
     set( "npc_level", npc_level );
 
     set("hj_game/npc","kill");
-    // ÉèÖÃÕ½¶·Ïà¹ØµÄÊıÖµ¡£
+    // è¨­ç½®æˆ°é¬¥ç›¸é—œçš„æ•¸å€¼ã€‚
     info = npc_info[ npc_level ];
-    // Èç¹ûÊÇ´ø±¦ npc £¬²¢ÇÒÓÖ²»ÊÇ×å³¤£¬ÄÇÃ´ÉèÖÃÎªĞ¡Í·ÁìµÄÄÜÁ¦(Íâ±í¿´ÆğÀ´ÈÔÊÇ×åÈË¡¢Á¦Ê¿Ö®Àà)¡£
+    // å¦‚æœæ˜¯å¸¶å¯¶ npc ï¼Œä¸¦ä¸”åˆä¸æ˜¯æ—é•·ï¼Œé‚£éº¼è¨­ç½®ç‚ºå°é ­é ˜çš„èƒ½åŠ›(å¤–è¡¨çœ‹èµ·ä¾†ä»æ˜¯æ—äººã€åŠ›å£«ä¹‹é¡)ã€‚
     if( query("id") != "zu zhang" && query("take_gem_npc") )
         info = npc_info[ 0 ];
     set( "mepower", info[ "power" ] );
@@ -211,39 +211,39 @@ varargs void setme( int npc_class, int npc_level )
     set_temp( "hj_hp_max", info[ "hpmax" ] );
     set_temp( "hj_hp",     info[ "hpmax" ] );
     set( "attack_busy", 0 );
-    set("msg","Ö»ÌıµÃÒ»ÕóÏìÉù´«À´£¬ÅÔ±ß×ß¹ıÀ´Ò»¸öÃæÄ¿ÕøÄüµÄ¼Ò»ï£¡\n");
-    set("gender","ÄĞĞÔ");
+    set("msg","åªè½å¾—ä¸€é™£éŸ¿è²å‚³ä¾†ï¼Œæ—é‚Šèµ°éä¾†ä¸€å€‹é¢ç›®çŒ™ç°çš„å®¶ä¼™ï¼\n");
+    set("gender","ç”·æ€§");
     set("age",30+random(30));
     set("no_refresh",1);
     set("life_remain", query("delete_time_max") );
-    // ·Ç³Ö±¦ÕßÊ±£¬×å³¤Í£ÁôÊ±¼äÑÓ³¤Ò»±¶¡£É±Éñ¡¢ÒşÊ¿¸ü³¤¡£
+    // éæŒå¯¶è€…æ™‚ï¼Œæ—é•·åœç•™æ™‚é–“å»¶é•·ä¸€å€ã€‚æ®ºç¥ã€éš±å£«æ›´é•·ã€‚
     id = query("id");
     if( !query("take_gem_npc") )
     {
         if( id == "zu zhang" )
             set("life_remain", query("delete_time_max") * 2 );
-        else if( query("dead_reward_score" ) )  // Èç¹ûÊÇÓĞ½±Àø»ı·ÖµÄÀàĞÍ£¬ÔòÊ¹Ö®´æ»îÊ±¼ä¼Ó³¤
-            set("life_remain", query("delete_time_max") * 8 );  // ÎªÁËÎ¬³Ö¸ü¾Ã
+        else if( query("dead_reward_score" ) )  // å¦‚æœæ˜¯æœ‰çå‹µç©åˆ†çš„é¡å‹ï¼Œå‰‡ä½¿ä¹‹å­˜æ´»æ™‚é–“åŠ é•·
+            set("life_remain", query("delete_time_max") * 8 );  // ç‚ºäº†ç¶­æŒæ›´ä¹…
     }
-    // Ç¿ÖÆÉ¾³ı auto kill ±ê¼Ç¡£
+    // å¼·åˆ¶åˆªé™¤ auto kill æ¨™è¨˜ã€‚
     if( query( "take_gem_npc" ) || id == "youling wushi" || id == "youling yinshi" )
         delete( "auto_kill" );
     remove_call_out("checking");
     remove_call_out("delete_me");
     call_out("checking", 3 );
     if( id == "youling yinshi" || id == "youling shashen" )
-        hj_shout( HIM"¡¼»Ã¾³´«ÎÅ¡½ÌıËµ"+query("name")+HIM"ÔÚ»Ã¾³ÃÜÁÖÖĞ³öÏÖÁË£¡\n"NOR );
+        hj_shout( HIM"â–¡å¹»å¢ƒå‚³èâ–¡è½èªª"+query("name")+HIM"åœ¨å¹»å¢ƒå¯†æ—ä¸­å‡ºç¾äº†ï¼\n"NOR );
 }
 
 void create()
 {
     set("delete_time_max",300+random(180) );
-    // Ã¿¸öNPC³ö³¡Ê±¼ä×î¶à 8 ·ÖÖÓ(ÈôÊÇÍæ¼Ò±¦ÎïÄ¿±ê£¬ÔòÒÔ fyld_npc.h ÀïÉèÖÃÎª×¼¡£
+    // æ¯å€‹NPCå‡ºå ´æ™‚é–“æœ€å¤š 8 åˆ†é˜(è‹¥æ˜¯ç©å®¶å¯¶ç‰©ç›®æ¨™ï¼Œå‰‡ä»¥ fyld_npc.h è£¡è¨­ç½®ç‚ºæº–ã€‚
     setme( 99 );
     setup();
 }
 
-// ×Ô»Ù³ÌĞò
+// è‡ªæ¯€ç¨‹åº
 void delete_me()
 {
     object ob = this_object();
@@ -258,8 +258,8 @@ void delete_me()
     if( stringp( query("del_msg") ) )
         message_vision( query("del_msg"), ob );
     else
-        message_vision( "Ö»ÌıµÃÒ»Éù¹Ö½Ğ£¬$N¡¸àØ¡¹µØÒ»ÉùÏûÊ§²»¼ûÁË¡£\n", ob);
-    // ÕâÁ½¸öÌØ±ğµÄ NPC ÒªÍ¨¸æÒ»ÏÂ¡£ÓÄÁé´Ì¿Í²»±ØÍ¨¸æ£»ÓÄÁéÎäÊ¿ÊÇ JOB NPC£¬Ò²²»±Ø¡£
+        message_vision( "åªè½å¾—ä¸€è²æ€ªå«ï¼Œ$Nã€Œâ–¡ã€åœ°ä¸€è²æ¶ˆå¤±ä¸è¦‹äº†ã€‚\n", ob);
+    // é€™å…©å€‹ç‰¹åˆ¥çš„ NPC è¦é€šå‘Šä¸€ä¸‹ã€‚å¹½éˆåˆºå®¢ä¸å¿…é€šå‘Šï¼›å¹½éˆæ­¦å£«æ˜¯ JOB NPCï¼Œä¹Ÿä¸å¿…ã€‚
     if( query("id") == "youling yinshi" || query("id") == "youling shashen" )
     {
         if( query("hp") < 1 )
@@ -269,18 +269,18 @@ void delete_me()
                 object who;
                 who = find_player( query("killme_by") );
                 if( objectp(who) && environment(who) == environment(ob) )
-                    hj_shout(HIM"¡¼»Ã¾³´«ÎÅ¡½ÌıËµ"+query("name")+HIM"±»"+query("name", who)+HIM"É±ËÀÁË£¡\n"NOR);
+                    hj_shout(HIM"â–¡å¹»å¢ƒå‚³èâ–¡è½èªª"+query("name")+HIM"è¢«"+query("name", who)+HIM"æ®ºæ­»äº†ï¼\n"NOR);
                 else
-                    hj_shout( HIM"¡¼»Ã¾³´«ÎÅ¡½ÌıËµ"+query("name")+HIM"±»É±ËÀÁË£¡\n"NOR );
+                    hj_shout( HIM"â–¡å¹»å¢ƒå‚³èâ–¡è½èªª"+query("name")+HIM"è¢«æ®ºæ­»äº†ï¼\n"NOR );
             }
         }
         else
-            hj_shout( HIM"¡¼»Ã¾³´«ÎÅ¡½ÌıËµ"+query("name")+HIM"Àë¿ªÁË»Ã¾³ÃÜÁÖ¡£\n"NOR );
+            hj_shout( HIM"â–¡å¹»å¢ƒå‚³èâ–¡è½èªª"+query("name")+HIM"é›¢é–‹äº†å¹»å¢ƒå¯†æ—ã€‚\n"NOR );
     }
     destruct(this_object());
 }
 
-// ¡°ĞÄÌø¡±¼ì²â
+// â€œå¿ƒè·³â€æª¢æ¸¬
 void checking()
 {
     object ob,*inv,temp,my_host,qxd;
@@ -304,13 +304,13 @@ void checking()
             return;
         }
     }
-    // ËÀÍöÊ±£¬½øĞĞ½±Àø¡£
+    // æ­»äº¡æ™‚ï¼Œé€²è¡Œçå‹µã€‚
     if( query_temp("hj_hp") < 1 )
     {
         npc_dead_reward();
         return;
     }
-    // ·ñÔòÊ±¼äµ½ÁË£¬Ö÷¶¯Àë¿ª¡£Ã»ÓĞÈÎºÎ½±Àø¡£
+    // å¦å‰‡æ™‚é–“åˆ°äº†ï¼Œä¸»å‹•é›¢é–‹ã€‚æ²’æœ‰ä»»ä½•çå‹µã€‚
     if( query("life_remain") < 1 )
     {
         remove_call_out("delete_me");
@@ -318,14 +318,14 @@ void checking()
         return;
     }
     ob = this_object();
-    // Èç¹ûÉèÖÃÃ¦Ê±ÏŞÖÆ£¬²¢ÇÒÏÖÔÚµÄÃ¦Ê±±ÈÏŞÖÆµÄÒª¸ß£¬ÄÇÃ´Ç¿ÖÆ»Ö¸´
+    // å¦‚æœè¨­ç½®å¿™æ™‚é™åˆ¶ï¼Œä¸¦ä¸”ç¾åœ¨çš„å¿™æ™‚æ¯”é™åˆ¶çš„è¦é«˜ï¼Œé‚£éº¼å¼·åˆ¶æ¢å¾©
     if( (ppp=query("max_busy_limit")) > 0 && ppp < query_busy() )
     {
         start_busy( ppp );
-        message_vision( "\n$NºöµØÊ¹¾¢Ò»Õõ£¬ÉíÌåËÆºõ»Ö¸´ÁË×ÔÓÉ£¡\n\n", ob );
+        message_vision( "\n$Nå¿½åœ°ä½¿å‹ä¸€æ™ï¼Œèº«é«”ä¼¼ä¹æ¢å¾©äº†è‡ªç”±ï¼\n\n", ob );
     }
-    // ±¾NPCÈÔÔÚÉú£¬ÏÂÃæ¿ªÊ¼½øÈë¹¥»÷³ÌĞò¡£
-    // ¹¥»÷µÈ´ıÊ±¼äÈÔÎ´µ½£¬»òÅ¼¶ûµÃµ½Ğ¡¼¸ÂÊµÄËæ»úÊı£¬Ìø¹ı¡£
+    // æœ¬NPCä»åœ¨ç”Ÿï¼Œä¸‹é¢é–‹å§‹é€²å…¥æ”»æ“Šç¨‹åºã€‚
+    // æ”»æ“Šç­‰å¾…æ™‚é–“ä»æœªåˆ°ï¼Œæˆ–å¶çˆ¾å¾—åˆ°å°å¹¾ç‡çš„éš¨æ©Ÿæ•¸ï¼Œè·³éã€‚
     addn("attack_busy", -1 );
     if( query("attack_busy") < 0 )
         set("attack_busy", 0 );
@@ -336,52 +336,52 @@ void checking()
         call_out("checking",1 );
         return;
     }
-    // ºÃ£¬¿ªÊ¼¹¥»÷
-    // Èç¹ûÓĞ killme_by ±ê¼Ç£¬¼´¹¥»÷¸ÃÈË
+    // å¥½ï¼Œé–‹å§‹æ”»æ“Š
+    // å¦‚æœæœ‰ killme_by æ¨™è¨˜ï¼Œå³æ”»æ“Šè©²äºº
     id = query("id");
     if( query("killme_by") )
     {
         target = present( query("killme_by"), environment(ob) );
-        // Ä¿±ê²»ÔÚ±¾µØÁË£¬½øÈë¿ÕÏĞ×´Ì¬
+        // ç›®æ¨™ä¸åœ¨æœ¬åœ°äº†ï¼Œé€²å…¥ç©ºé–’ç‹€æ…‹
         if(!target)
         {
             delete("killme_by");
             delete("start_kill_msg");
-            set_leader( 0 );  // Í£Ö¹¸úËæ
+            set_leader( 0 );  // åœæ­¢è·Ÿéš¨
         }
-        // Ä¿±ê´æÔÚ±¾µØ£¬´ò£¡
+        // ç›®æ¨™å­˜åœ¨æœ¬åœ°ï¼Œæ‰“ï¼
         else 
         {
-            // Èç¹ûÆä²»Ğ¯´øÉñÈËÁîÒÔ¼°ÁÙÊ±Àë¿ªÆ÷£¬Á¢¿ÌÊµĞĞ¸úËæ£¬²¢ÇÒ¿ª´ò£¡
+            // å¦‚æœå…¶ä¸æ”œå¸¶ç¥äººä»¤ä»¥åŠè‡¨æ™‚é›¢é–‹å™¨ï¼Œç«‹åˆ»å¯¦è¡Œè·Ÿéš¨ï¼Œä¸¦ä¸”é–‹æ‰“ï¼
             if( !present("shenren ling",target) && !present( "hj temp leave obj", target ) )
             {
                 set_leader( target );
-                // Èç¹ûÊÇµÚÒ»ÂÖ¿ª´ò£¬À´¸öÍ¨Öª
+                // å¦‚æœæ˜¯ç¬¬ä¸€è¼ªé–‹æ‰“ï¼Œä¾†å€‹é€šçŸ¥
                 if( !query("start_kill_msg") )
                 {
                     set("start_kill_msg", 1);
-                    message_vision( HIR"\n¿´À´$n"HIR"ÏëÒªÉ±ËÀ$N"HIR"£¡\n\n"NOR, target, this_object() );
+                    message_vision( HIR"\nçœ‹ä¾†$n"HIR"æƒ³è¦æ®ºæ­»$N"HIR"ï¼\n\n"NOR, target, this_object() );
                 }
-                // ÉèÖÃ¹¥»÷µÈ´ıÊ±¼ä
+                // è¨­ç½®æ”»æ“Šç­‰å¾…æ™‚é–“
                 set("attack_busy", query("att_busy") );
-                // µ÷ÓÃ¹¥»÷º¯Êı¡£
+                // èª¿ç”¨æ”»æ“Šå‡½æ•¸ã€‚
                 call_out( "att_target",1, target );
             }
         }
     }
-    // ·ñÔò£¬¿ÉÄÜ½øĞĞÖ÷¶¯¹¥»÷¡£
-    else if( query("auto_kill") )   // ¿´´Ë npc ÊÇ·ñ»á×Ô¶¯ kill
+    // å¦å‰‡ï¼Œå¯èƒ½é€²è¡Œä¸»å‹•æ”»æ“Šã€‚
+    else if( query("auto_kill") )   // çœ‹æ­¤ npc æ˜¯å¦æœƒè‡ªå‹• kill
     {
         inv = all_inventory(environment(ob));
         ppp = query( "peaceful" );
         if( ppp < 2 )
             ppp = 2;
-        // Öğ¸ö¹ıÂË
+        // é€å€‹éæ¿¾
         for( i=sizeof(inv)-1; i>=0; i-- )
         {
-            if( random(ppp) )  // ºÍÆ½¶È¸ßµÄ¾Í²»ÀíÕâ¸ö¶«Î÷(²»¹ÜËüÊÇ²»ÊÇÄÜ´òµÄ¶«Î÷)
+            if( random(ppp) )  // å’Œå¹³åº¦é«˜çš„å°±ä¸ç†é€™å€‹æ±è¥¿(ä¸ç®¡å®ƒæ˜¯ä¸æ˜¯èƒ½æ‰“çš„æ±è¥¿)
                 continue;
-            // ¶ÔÆäÖ´ĞĞÅĞ¶¨£¬×¼±¸¿ª´ò
+            // å°å…¶åŸ·è¡Œåˆ¤å®šï¼Œæº–å‚™é–‹æ‰“
             temp = inv[i];
             if( !temp->is_character()
                || query("hj_game/npc", temp )
@@ -389,32 +389,32 @@ void checking()
                || query_temp("huanjing", temp) != "start"
             )
                 continue;
-            // ÎŞµÆÕß²»´ò£¨´òÁËÒ²°×´ò£©
+            // ç„¡ç‡ˆè€…ä¸æ‰“ï¼ˆæ‰“äº†ä¹Ÿç™½æ‰“ï¼‰
             if(!(qxd = present("qixing deng",temp)) )
                 continue;
-            // Ğ¯´øÉñÈËÁî¡¢»òĞ¯´øÁÙÊ±Àë¿ªÆ÷(ÁÙÊ±Àë¿ªÓÎÏ·)Õß£¬²»»á±»¹¥»÷¡£
+            // æ”œå¸¶ç¥äººä»¤ã€æˆ–æ”œå¸¶è‡¨æ™‚é›¢é–‹å™¨(è‡¨æ™‚é›¢é–‹éŠæˆ²)è€…ï¼Œä¸æœƒè¢«æ”»æ“Šã€‚
             if( present("shenren ling",temp) || present( "hj temp leave obj", temp ) )
                 continue;
-            // »¹ÓĞ4¸öÒÔÉÏµÄµÆÁÁ×ÅÊ±£¬×å³¤²»»áÖ÷¶¯½øĞĞ¹¥»÷¡£
+            // é‚„æœ‰4å€‹ä»¥ä¸Šçš„ç‡ˆäº®è‘—æ™‚ï¼Œæ—é•·ä¸æœƒä¸»å‹•é€²è¡Œæ”»æ“Šã€‚
             if( id == "zu zhang" && query("last_deng", qxd)>4 )
                 continue;
-            // »¹ÓĞ6¸öÒÔÉÏµÄµÆÁÁ×ÅÊ±£¬Ğ¡Í·Áì²»»áÖ÷¶¯½øĞĞ¹¥»÷¡£
+            // é‚„æœ‰6å€‹ä»¥ä¸Šçš„ç‡ˆäº®è‘—æ™‚ï¼Œå°é ­é ˜ä¸æœƒä¸»å‹•é€²è¡Œæ”»æ“Šã€‚
             if( id == "tou ling" && query("last_deng", qxd)>6 )
                 continue;
-            // ÄÇÃ´£¬¿ªÊ¼¹¥»÷Ä¿±ê£¡
+            // é‚£éº¼ï¼Œé–‹å§‹æ”»æ“Šç›®æ¨™ï¼
             set_leader( temp );
             set("killme_by",query("id", temp));
-            message_vision( HIR"\n¿´À´$n"HIR"ÏëÒªÉ±ËÀ$N"HIR"£¡\n\n"NOR,
+            message_vision( HIR"\nçœ‹ä¾†$n"HIR"æƒ³è¦æ®ºæ­»$N"HIR"ï¼\n\n"NOR,
                     temp, this_object() );
             set("start_kill_msg", 1);
             set("attack_busy", query("att_busy") );
             call_out("att_target",1, temp );
             break;
-            // ²âÊÔÓÃ£¬ÇëĞ¡ĞÄ    tell_object(find_player("naihe"),"³é²»ÖĞ kill "+temp->query("id")+" .\n");
+            // æ¸¬è©¦ç”¨ï¼Œè«‹å°å¿ƒ    tell_object(find_player("naihe"),"æŠ½ä¸ä¸­ kill "+temp->query("id")+" .\n");
         }
     }
-    i = 0;  // ×÷ÎªÊÇ·ñ random_move µÄ±ê¼Ç
-    // ÓÄÁéÎäÊ¿¡¢»òÕß´øÓĞÌØÊâ½±ÀøµÄNPC£¬²»Òªµ½´¦ÂÒ×ß
+    i = 0;  // ä½œç‚ºæ˜¯å¦ random_move çš„æ¨™è¨˜
+    // å¹½éˆæ­¦å£«ã€æˆ–è€…å¸¶æœ‰ç‰¹æ®Šçå‹µçš„NPCï¼Œä¸è¦åˆ°è™•äº‚èµ°
     if( id == "youling wushi" || query( "dead_reward_score" ) )
     {
         if( !random(50) )
@@ -448,64 +448,64 @@ void att_target( object target )
     {
         delete("killme_by");
         delete("start_kill_msg");
-        set_leader( 0 );  // Í£Ö¹¸úËæ
+        set_leader( 0 );  // åœæ­¢è·Ÿéš¨
         return;
     }
     switch( random(12) )
     {
-    case 0 .. 3 : temp_msg=NOR+CYN"ºİºİµØ»Ó³öÒ»È­£¬°Ñ$N"NOR+CYN"´ò¸öÕıÖĞ£¡";break;
-    case 4 .. 7 : temp_msg=NOR+CYN"ºİºİµØÌß³öÒ»½Å£¬$N"NOR+CYN"¶ãÉÁ²»¼°£¬³Ô¸öÕı×Å£¡"; break;
+    case 0 .. 3 : temp_msg=NOR+CYN"ç‹ ç‹ åœ°æ®å‡ºä¸€æ‹³ï¼ŒæŠŠ$N"NOR+CYN"æ‰“å€‹æ­£ä¸­ï¼";break;
+    case 4 .. 7 : temp_msg=NOR+CYN"ç‹ ç‹ åœ°è¸¢å‡ºä¸€è…³ï¼Œ$N"NOR+CYN"èº²é–ƒä¸åŠï¼Œåƒå€‹æ­£è‘—ï¼"; break;
 
-    case 8: temp_msg=NOR+CYN"¿ÚÖĞ¡¸àÀàÀ¡¹¹Ö½Ğ£¬Ë«ÊÖÂÒ»Ó£¬È´Ò²ÈÃ$N"NOR+CYN"ÖĞÁËÕĞ£¡";
+    case 8: temp_msg=NOR+CYN"å£ä¸­ã€Œâ–¡â–¡ã€æ€ªå«ï¼Œé›™æ‰‹äº‚æ®ï¼Œå»ä¹Ÿè®“$N"NOR+CYN"ä¸­äº†æ‹›ï¼";
         power -= ( power /3 ); break;
-    case 9:    temp_msg=NOR+CYN"ÊÖ½ÅÂÒ»Ó£¬ÍêÈ«²»³ÉÕÂ·¨£¬È´Ò²ÈÃ$N"NOR+CYN"ÖĞÁËÕĞ£¡";
+    case 9:    temp_msg=NOR+CYN"æ‰‹è…³äº‚æ®ï¼Œå®Œå…¨ä¸æˆç« æ³•ï¼Œå»ä¹Ÿè®“$N"NOR+CYN"ä¸­äº†æ‹›ï¼";
         power -= ( power /3 ); break;
-    case 10:temp_msg=NOR+CYN"Ê¹¾¡ÁËÁ¦ÆøÏò×Å$N"NOR+CYN"Ò»×²£¬°Ñ$N"NOR+CYN"×²µÃ·ÉÁË¿ªÈ¥£¡";
+    case 10:temp_msg=NOR+CYN"ä½¿ç›¡äº†åŠ›æ°£å‘è‘—$N"NOR+CYN"ä¸€æ’ï¼ŒæŠŠ$N"NOR+CYN"æ’å¾—é£›äº†é–‹å»ï¼";
         power += ( power / 2 ); break;
-    case 11: temp_msg=NOR+CYN"Ïò×Å$N"NOR+CYN"Ò»×¥£¡$N"NOR+CYN"ÉÁÉí¶ã¹ı£¬Ö»ÊÜÁËµãÇáÉË¡£";
+    case 11: temp_msg=NOR+CYN"å‘è‘—$N"NOR+CYN"ä¸€æŠ“ï¼$N"NOR+CYN"é–ƒèº«èº²éï¼Œåªå—äº†é»è¼•å‚·ã€‚";
         power = power / 5 + random( power / 5 );
         if( power < 1 ) power = 1;
         break;
     }
-    // ·¨Ê¦¹¥»÷µÄÃèÊöÒà²»ÏàÍ¬¡£
+    // æ³•å¸«æ”»æ“Šçš„æè¿°äº¦ä¸ç›¸åŒã€‚
     if( (id=query("id")) == "fa shi" )
     {
         power = query("mepower") * 4 / 5 + random( query("mepower") / 5 ) + 1;
-        message_vision( sprintf( HIY"\n$n"HIY"¶Ô×Å$N"HIY"Ö¸ÊÖ»®½ÅµØÊ©×Å·¨£¬$N"HIY
-            + "¾¹¾õÈ«ÉíÆøÏ¢ÇãĞ¹¶ø³ö£¡½á¹ûÔì³É "HIR"%d"HIY" µãµÄÉËº¦¡£\n"NOR, power ),
+        message_vision( sprintf( HIY"\n$n"HIY"å°è‘—$N"HIY"æŒ‡æ‰‹åŠƒè…³åœ°æ–½è‘—æ³•ï¼Œ$N"HIY
+            + "ç«Ÿè¦ºå…¨èº«æ°£æ¯å‚¾æ³„è€Œå‡ºï¼çµæœé€ æˆ "HIR"%d"HIY" é»çš„å‚·å®³ã€‚\n"NOR, power ),
             target, this_object()
         );
     }
     else
-        message_vision( sprintf( CYN"\n$n%s"NOR+CYN"½á¹ûÔì³É "HIR"%d"NOR+CYN" µãµÄÉËº¦¡£\n"NOR,
+        message_vision( sprintf( CYN"\n$n%s"NOR+CYN"çµæœé€ æˆ "HIR"%d"NOR+CYN" é»çš„å‚·å®³ã€‚\n"NOR,
             temp_msg, power), target, this_object()
         );
     addn_temp("hj_hp", -power, target);
-    // ÓÄÁé×å»áÈÃ¶Ô·½Ôö¼ÓÃ¦Ê±£¡£¡£¡
+    // å¹½éˆæ—æœƒè®“å°æ–¹å¢åŠ å¿™æ™‚ï¼ï¼ï¼
     if( query( "hit_busy" ) )
     {
-        // ¶á»êÖ®¼¼ÌØÊâ¼¼ÄÜÌåÏÖÖ®Ò»£¬ÓĞĞ§µÖ¿¹À´×ÔNPCµÄ¶á»êÀà¹¥»÷µÄÃ¦Ê±Ğ§¹û
+        // å¥ªé­‚ä¹‹æŠ€ç‰¹æ®ŠæŠ€èƒ½é«”ç¾ä¹‹ä¸€ï¼Œæœ‰æ•ˆæŠµæŠ—ä¾†è‡ªNPCçš„å¥ªé­‚é¡æ”»æ“Šçš„å¿™æ™‚æ•ˆæœ
         if( !query_temp("hj_special/sh", target) && target->query_busy()<3 && !random(5) )
         {
             target->start_busy( target->query_busy() + 5 );
-            message_vision( HIB"$N"HIB"Ö»¾õµÃÒ»ÕóÂéÄ¾Ö®¸ĞÈçµç°ã´«±éÈ«Éí£¬¶ÙÊ±¶¯µ¯²»µÃ£¡\n"NOR, target );
+            message_vision( HIB"$N"HIB"åªè¦ºå¾—ä¸€é™£éº»æœ¨ä¹‹æ„Ÿå¦‚é›»èˆ¬å‚³éå…¨èº«ï¼Œé “æ™‚å‹•å½ˆä¸å¾—ï¼\n"NOR, target );
         }
     }
-    // ¸÷×åµÄ·¨Ê¦»áÎüÈ¡¶Ô·½µÄ hp.
+    // å„æ—çš„æ³•å¸«æœƒå¸å–å°æ–¹çš„ hp.
     if( query( "hit_suck" ) )
     {
         if( !random(2) && query_temp("hj_hp") < (query_temp("hj_hp_max") *9 / 10 ) )
         {
-            message_vision( "Ö»¼û$n´óÎüÁËÒ»¿Ú´Ó$NÉíÉÏËùĞ¹Â©µÄÕæÆø£¡$nµÄÆøÏ¢»Ö¸´ÁËĞí¶à¡£\n", target, this_object() );
+            message_vision( "åªè¦‹$nå¤§å¸äº†ä¸€å£å¾$Nèº«ä¸Šæ‰€æ³„æ¼çš„çœŸæ°£ï¼$nçš„æ°£æ¯æ¢å¾©äº†è¨±å¤šã€‚\n", target, this_object() );
             addn_temp("hj_hp", power * 2 + random( power * 2 ) );
         }
     }
-    // È¡Ïû¹ÖÎï¹¥»÷Ê±¼õÉÙ·ÖÊıµÄÉèÖÃ
+    // å–æ¶ˆæ€ªç‰©æ”»æ“Šæ™‚æ¸›å°‘åˆ†æ•¸çš„è¨­ç½®
     //    target->addn_temp("hj_score",-random(power/3) );
     //    if( target->query_temp("hj_score") < 1 )
     //    target->set_temp("hj_score", 1);
     color_name=get_health_desc(query_temp("hj_hp", target),query_temp("hj_hp_max", target));
-    message_vision(NOR"£¨ $N"+color_name+""NOR" £©\n"NOR,target);
+    message_vision(NOR"ï¼ˆ $N"+color_name+""NOR" ï¼‰\n"NOR,target);
 }
 
 void hj_get_attack( object ob )
@@ -516,35 +516,35 @@ void hj_get_attack( object ob )
 }
 
 // =================================================================
-// ========================== NPC ËÀÍö½±Àø =========================
+// ========================== NPC æ­»äº¡çå‹µ =========================
 // =================================================================
 void npc_dead_reward()
 {
     string id = query("id");
     object temp, me, ob = this_object();
 
-    // ±¾Îï¼şÎŞ env »ò hp »¹ÓĞ(´íÎóµÄµ÷ÓÃ), ÎŞÈÎºÎ½±Àø¡£
+    // æœ¬ç‰©ä»¶ç„¡ env æˆ– hp é‚„æœ‰(éŒ¯èª¤çš„èª¿ç”¨), ç„¡ä»»ä½•çå‹µã€‚
     if( !environment(ob) || query_temp("hj_hp") > 0 )
     {
         destruct( ob );
         return;
     }
-    // ¸øÒ»µãµãĞ¡µÄ¸ÅÂÊ£¬ÈÃNPC¿ÉÄÜ¶îÍâµÄĞ¯´ø±¦Îï¡£
+    // çµ¦ä¸€é»é»å°çš„æ¦‚ç‡ï¼Œè®“NPCå¯èƒ½é¡å¤–çš„æ”œå¸¶å¯¶ç‰©ã€‚
     if( random(200) == 88 )
         set("take_gem_npc", "yes" );
-    // Èç¹ûÊÇ³Ö±¦NPC£¬¾ø¶ÔµôÏÂ±¦Îï¡£
+    // å¦‚æœæ˜¯æŒå¯¶NPCï¼Œçµ•å°æ‰ä¸‹å¯¶ç‰©ã€‚
     if( query("take_gem_npc") =="yes" )
     {
         temp = new(__DIR__"hj_obj_gem");
-        temp -> setme( query("npc_class") );    // Èç¹û class ³¬³öÔÊĞí·¶Î§£¬Ôò»áËæ»úÉèÖÃ±¦Îï
+        temp -> setme( query("npc_class") );    // å¦‚æœ class è¶…å‡ºå…è¨±èŒƒåœï¼Œå‰‡æœƒéš¨æ©Ÿè¨­ç½®å¯¶ç‰©
     }
-    // ·ñÔòÈç¹ûÊÇ×å³¤£¬µôÏÂ±¾×åµÄÈ¨ÕÈ¡£¼ÓÈëËæ»úÊı£¬·ñÔòJOB±äµÃÏàµ±µÄÈİÒ×ÁË¡£
+    // å¦å‰‡å¦‚æœæ˜¯æ—é•·ï¼Œæ‰ä¸‹æœ¬æ—çš„æ¬Šæ–ã€‚åŠ å…¥éš¨æ©Ÿæ•¸ï¼Œå¦å‰‡JOBè®Šå¾—ç›¸ç•¶çš„å®¹æ˜“äº†ã€‚
     else if( id == "zu zhang" && random(3) )
     {
         temp = new( __DIR__"hj_obj_gem_qz" );
-        temp -> setme( query("npc_class") );    // Èç¹û class ³¬³öÔÊĞí·¶Î§£¬Ôò»áËæ»úÉèÖÃÈ¨ÕÈ
+        temp -> setme( query("npc_class") );    // å¦‚æœ class è¶…å‡ºå…è¨±èŒƒåœï¼Œå‰‡æœƒéš¨æ©Ÿè¨­ç½®æ¬Šæ–
     }
-    // ·ñÔòÈç¹û²»ÊÇÓÄÁéÎäÊ¿¡¢²¢ÇÒ²»ÊÇÓĞÌØÊâ½±ÀøµÄ£¬¾ÍÓĞ»ú»áµôÏÂ¼¼ÄÜÊ¯»ò¹ûÆ·»ò¹ºÎï±¦Ê¯¡£
+    // å¦å‰‡å¦‚æœä¸æ˜¯å¹½éˆæ­¦å£«ã€ä¸¦ä¸”ä¸æ˜¯æœ‰ç‰¹æ®Šçå‹µçš„ï¼Œå°±æœ‰æ©Ÿæœƒæ‰ä¸‹æŠ€èƒ½çŸ³æˆ–æœå“æˆ–è³¼ç‰©å¯¶çŸ³ã€‚
     else if( !random(3) && id != "youling wushi" && !query("dead_reward_score") )
     {
         if( random(3) )
@@ -556,16 +556,16 @@ void npc_dead_reward()
     }
     if( temp )
     {
-        message_vision("$NÉíÉÏÍ»È»µôÏÂÒ»"+query("unit", temp)+"$n£¡\n",ob,temp);
+        message_vision("$Nèº«ä¸Šçªç„¶æ‰ä¸‹ä¸€"+query("unit", temp)+"$nï¼\n",ob,temp);
         temp->move(environment(ob));
     }
-    // ½øĞĞÌØÊâµÄ½±Àø¡£ÓÄÁéÎäÊ¿ÊÇÈÎÎñNPC£¬ÌØ±ğ½±Àø
+    // é€²è¡Œç‰¹æ®Šçš„çå‹µã€‚å¹½éˆæ­¦å£«æ˜¯ä»»å‹™NPCï¼Œç‰¹åˆ¥çå‹µ
     if( id == "youling wushi" )
         npc_dead_reward_wushi();
-    // ·ñÔò£¬Èç¹ûÓĞ¡°½±Àø»ı·Ö¡±µÄÉèÖÃ£¬ÔòÊ¹ÓÃÔ¤¶¨µÄ·½Ê½½±Àø»ı·Ö¡£
+    // å¦å‰‡ï¼Œå¦‚æœæœ‰â€œçå‹µç©åˆ†â€çš„è¨­ç½®ï¼Œå‰‡ä½¿ç”¨é å®šçš„æ–¹å¼çå‹µç©åˆ†ã€‚
     else if( query("dead_reward_score") )
         npc_dead_reward_sp( query("dead_reward_score") );
-    // ¸øÉ±ËÀ±¾NPCµÄÍæ¼Ò¼Ó¸ö¼ÇÂ¼
+    // çµ¦æ®ºæ­»æœ¬NPCçš„ç©å®¶åŠ å€‹è¨˜éŒ„
     if( stringp( query( "killme_by" ) ) )
     {
         me = find_player( query("killme_by") );
@@ -578,11 +578,11 @@ void npc_dead_reward()
 // =================================================================    
 
 
-// ÓÄÁéÎäÊ¿ËÀÍöºó¸øÓè½±Àø¡£
-// (1) query("job_master_obj")  object ĞÍ£¬JOBÊÇÊôÓÚ´ËÈËµÄ
-// (2) query("job_award_score") int ĞÍ£¬½±ÀøµÄµÃ·Ö
-// (3) query("job_award_skills") int ĞÍ£¬½±ÀøµÄ¼¼ÄÜ
-// query("killme_by")  ×îºóÒ»»÷
+// å¹½éˆæ­¦å£«æ­»äº¡å¾Œçµ¦äºˆçå‹µã€‚
+// (1) query("job_master_obj")  object å‹ï¼ŒJOBæ˜¯å±¬äºæ­¤äººçš„
+// (2) query("job_award_score") int å‹ï¼Œçå‹µçš„å¾—åˆ†
+// (3) query("job_award_skills") int å‹ï¼Œçå‹µçš„æŠ€èƒ½
+// query("killme_by")  æœ€å¾Œä¸€æ“Š
 void npc_dead_reward_wushi()
 {
     object me, ob = this_object();
@@ -602,41 +602,41 @@ void npc_dead_reward_wushi()
     )
         return;
 
-    // ËùÓĞÌõ¼şOK£¬¿ªÊ¼½±ÀøÍæ¼Ò
-    message_vision(CYN"$N"NOR+CYN"ÏûÃğÁË±»×Ô¼º·Å³öÀ´µÄÓÄÁé×åÎäÊ¿£¬ĞÄÖĞ´óÎ¿¡£\n"NOR, me);
-    // ÏÈ½±ÀøµÃ·Ö
+    // æ‰€æœ‰æ¢ä»¶OKï¼Œé–‹å§‹çå‹µç©å®¶
+    message_vision(CYN"$N"NOR+CYN"æ¶ˆæ»…äº†è¢«è‡ªå·±æ”¾å‡ºä¾†çš„å¹½éˆæ—æ­¦å£«ï¼Œå¿ƒä¸­å¤§æ…°ã€‚\n"NOR, me);
+    // å…ˆçå‹µå¾—åˆ†
     addn_temp("hj_score", query("job_award_score"), me);
-    tell_object( me, HIR"ÓÎÏ·ÌáÊ¾£ºÄãµÄµÃ·ÖÔö¼ÓÁË "+ query("job_award_score")+ " µã£¡\n"NOR);
-    // ÔÙ½±Àø¼¼ÄÜ£¬Èç¹ûÓĞµÄ»°
+    tell_object( me, HIR"éŠæˆ²æç¤ºï¼šä½ çš„å¾—åˆ†å¢åŠ äº† "+ query("job_award_score")+ " é»ï¼\n"NOR);
+    // å†çå‹µæŠ€èƒ½ï¼Œå¦‚æœæœ‰çš„è©±
     if( query("job_award_skills") )
     {
         sks=query_temp("hj_game_skills", me);
         if( sizeof( sks ) )
         {
             sks_list = keys( sks );
-            // »ñÈ¡ÁËËæ»úµÄ¼¼ÄÜ ID
+            // ç²å–äº†éš¨æ©Ÿçš„æŠ€èƒ½ ID
             sks_id = sks_list[ random(sizeof(sks_list)) ];
-            // »¹µÃÊı¾İÎŞÎó²ÅĞĞ
+            // é‚„å¾—æ•¸æ“šç„¡èª¤æ‰è¡Œ
             if( query_temp("hj_game_damages/"+sks_id, me) )
             {
                 addn_temp("hj_game_damages/"+sks_id, query("job_award_skills"), me);
-                tell_object( me, sprintf( HIR"ÓÎÏ·ÌáÊ¾£ºÄãµÄ¡¸%s¡¹ÌáÉıÁË %d ¼¶£¡\n"NOR,
+                tell_object( me, sprintf( HIR"éŠæˆ²æç¤ºï¼šä½ çš„ã€Œ%sã€æå‡äº† %d ç´šï¼\n"NOR,
                     query_temp("hj_game_skills/"+sks_id, me),
                     query("job_award_skills"))
                 );
                 if( query_temp("hj_game_damages/"+sks_id, me)>99 )
                 {
                     set_temp("hj_game_damages/"+sks_id, 99, me);
-                    tell_object( me, HIR"¸Ã¼¼ÄÜÒÑ¾­´ïµ½ÉÏÏŞÁË¡£\n"NOR );
+                    tell_object( me, HIR"è©²æŠ€èƒ½å·²ç¶“é”åˆ°ä¸Šé™äº†ã€‚\n"NOR );
                 }
             }
         }
     }
-    // Èç¹ûÓĞÁ¦Á¿½±ÀøµÄ»°
+    // å¦‚æœæœ‰åŠ›é‡çå‹µçš„è©±
     if( query("job_award_power") > 0 )
     {
         addn_temp("hj_game_mepower", query("job_award_power"), me);
-        tell_object( me, sprintf( HIR"ÓÎÏ·ÌáÊ¾£ºÄãµÄÁ¦Á¿ÔöÇ¿ÁË %d µã£¡\n"NOR,
+        tell_object( me, sprintf( HIR"éŠæˆ²æç¤ºï¼šä½ çš„åŠ›é‡å¢å¼·äº† %d é»ï¼\n"NOR,
             query("job_award_power"))
         );
     }
@@ -645,7 +645,7 @@ void npc_dead_reward_wushi()
 // =================================================================
 
 
-// ÌØÊâµÄ½±Àø¡£Ö÷ÒªÊÇ¸ø youling shashen »ò youling yinshi »ò youling cike Ê¹ÓÃ¡£
+// ç‰¹æ®Šçš„çå‹µã€‚ä¸»è¦æ˜¯çµ¦ youling shashen æˆ– youling yinshi æˆ– youling cike ä½¿ç”¨ã€‚
 void npc_dead_reward_sp( int total_reward )
 {
     mixed ls;
@@ -678,22 +678,22 @@ void npc_dead_reward_sp( int total_reward )
            || !query("room_mark", environment(usr) )
         )
             continue;
-        tell_object( usr, HIG"\nÄã" + (ls[id] >= total_hit ? "¶À" : "ºÏÖÚÈËÖ®")
-            + "Á¦É±ËÀÁË"+query("name")+HIG"£¬¸Ğµ½×ÔÉíĞŞÎª´óÓĞ³¤½ø¡£\n"NOR );
+        tell_object( usr, HIG"\nä½ " + (ls[id] >= total_hit ? "ç¨" : "åˆçœ¾äººä¹‹")
+            + "åŠ›æ®ºæ­»äº†"+query("name")+HIG"ï¼Œæ„Ÿåˆ°è‡ªèº«ä¿®ç‚ºå¤§æœ‰é•·é€²ã€‚\n"NOR );
         percent = ls[id] * 100 / total_hit;
         reward = total_reward / 100 * percent;
-        // ²»ÔÚÍ¬Ò»µØ·½Ê±£¬µÃ·Ö¼õ°ë¡£
+        // ä¸åœ¨åŒä¸€åœ°æ–¹æ™‚ï¼Œå¾—åˆ†æ¸›åŠã€‚
         if( environment(usr) != environment(ob) )
             reward /= 2;
         if( reward < 1 )
             reward = 1;
-        tell_object( usr, HIR"ÓÎÏ·ÌáÊ¾£ºÄãµÄµÃ·ÖÔö¼ÓÁË "+reward+" µã£¡\n"NOR);
+        tell_object( usr, HIR"éŠæˆ²æç¤ºï¼šä½ çš„å¾—åˆ†å¢åŠ äº† "+reward+" é»ï¼\n"NOR);
         addn_temp("hj_score", reward, usr);
         if( query("killme_by") == query("id", usr) )
         {
-            tell_object( usr, HIG"É±ËÀ"+query("name")+HIG"µÄ×îºóÒ»»÷ÊÇÄãÔì³ÉµÄ£¡ÄãµÃµ½ÁË¸ü¶àµÄ½±Àø¡£\n"NOR );
+            tell_object( usr, HIG"æ®ºæ­»"+query("name")+HIG"çš„æœ€å¾Œä¸€æ“Šæ˜¯ä½ é€ æˆçš„ï¼ä½ å¾—åˆ°äº†æ›´å¤šçš„çå‹µã€‚\n"NOR );
             reward = total_reward / 10;
-            tell_object( usr, HIR"ÓÎÏ·ÌáÊ¾£ºÄãµÄµÃ·ÖÔö¼ÓÁË "+reward+" µã£¡\n"NOR);
+            tell_object( usr, HIR"éŠæˆ²æç¤ºï¼šä½ çš„å¾—åˆ†å¢åŠ äº† "+reward+" é»ï¼\n"NOR);
             addn_temp("hj_score", reward, usr);
         }
     }

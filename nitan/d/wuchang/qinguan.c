@@ -4,17 +4,17 @@ inherit ROOM;
 
 void create ()
 {
-        set ("short", "�ٹ�");
+        set ("short", "琴館");
         set ("long", @LONG
-����һ�����ܸ��ʡ�����������ͤ�ӣ��Ҷ����⡰��ɽ��ˮ���ĸ�
-���֡�ͤ����һ�ֻ�(zihua)��
+這是一座飛檐高聳、畫棟雕樑的亭子，匾額上題“高山流水”四個
+大字。亭中懸一字畫(zihua)。
 LONG);
         set("item_desc", ([
-                "zihua" : "������ϻ����ǲ�����ˤ��л֪�����Ĺ��¡����л������ľ�ʫ��
-                    ˤ�����ٷ�β��
-                    ���ڲ��ڶ�˭��
-                    �������������
-                    ����֪��������\n"
+                "zihua" : "這幅畫上畫的是伯牙“摔琴謝知音”的故事。畫中還題有四句詩：
+                    摔碎瑤琴鳳尾寒
+                    子期不在對誰彈
+                    春風滿面皆朋友
+                    欲覓知音難上難\n"
         ]));
         set("exits", ([
                 "south" : __DIR__"qintai",

@@ -5,13 +5,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIY "ÌïÆßöèµ¨É¢" NOR, ({"tianqi san", "san"}));
+        set_name(HIY "ç”°ä¸ƒé¯Šè†½æ•£" NOR, ({"tianqi san", "san"}));
         set_weight(10);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°ü");
-                set("long", "£ºÕâÊÇÒ»°üÌïÆßöèµ¨É¢£¬¿É½â»¯Ê¬·Û¶¾¡£\n");
+                set("unit", "åŒ…");
+                set("long", "ï¼šé€™æ˜¯ä¸€åŒ…ç”°ä¸ƒé¯Šè†½æ•£ï¼Œå¯è§£åŒ–å±ç²‰æ¯’ã€‚\n");
                 set("value", 10000);
                 set("only_do_effect", 1);
         }
@@ -21,20 +21,20 @@ int do_effect(object me)
 {
    if (!me->query_condition("hsf_poison"))
    {
-      tell_object(me, "ÄãÓÖÃ»ÖĞ»¯Ê¬·Û¶¾£¬ÂÒ³ÔÒ©¸ÉÂï£¿\n");
+      tell_object(me, "ä½ åˆæ²’ä¸­åŒ–å±ç²‰æ¯’ï¼Œäº‚åƒè—¥å¹¹å˜›ï¼Ÿ\n");
       return 1;
    }
 
-   message_vision("$N³ÔÏÂÒ»°ü" + name() + "¡£\n", me);
-   tell_object(me, "Äã¾õµÃ×ìÀï·Ç³£µÄ¿à¡£\n");
+   message_vision("$Nåƒä¸‹ä¸€åŒ…" + name() + "ã€‚\n", me);
+   tell_object(me, "ä½ è¦ºå¾—å˜´è£¡éå¸¸çš„è‹¦ã€‚\n");
 
    if ((int)me->query_condition("hsf_poison") < 100) {
       me->clear_condition("hsf_poison");
-      tell_object(me, "Äã¾õµÃÉË¿Ú²»ÔÙÌÛÍ´£¬»¯Ê¬·Û¶¾ÒÑ¾­½â³ıÁË¡£\n");
+      tell_object(me, "ä½ è¦ºå¾—å‚·å£ä¸å†ç–¼ç—›ï¼ŒåŒ–å±ç²‰æ¯’å·²ç¶“è§£é™¤äº†ã€‚\n");
    } else if ((int)me->query_condition("hsf_poison") >= 100)
    {
       me->apply_condition("hsf_poison",(int)me->query_condition("hsf_poison")-90);
-      tell_object(me, "Äã¾õµÃºÃÊÜÁËÒ»µã£¬²»¹ı»¯Ê¬·Û¶¾»¹Ã»ÓĞÍêÈ«Ïû³ı¡£\n");
+      tell_object(me, "ä½ è¦ºå¾—å¥½å—äº†ä¸€é»ï¼Œä¸éåŒ–å±ç²‰æ¯’é‚„æ²’æœ‰å®Œå…¨æ¶ˆé™¤ã€‚\n");
    }
 
    destruct(this_object());

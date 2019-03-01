@@ -10,9 +10,9 @@ void seek_ob(object me);
 
 void create()
 {                            
-        set_name("ÃÉ¹Å¼ıÊÖ",({ "menggu jianshou","jianshou" }) );
-        set("gender", "ÄĞĞÔ" );
-        set("long","ÕâÊÇÒ»ÃûÃÉ¹ÅÉñ¼ıÊÖ£¬Õı¾¯ÌèµØ¼àÊÓ×ÅÏåÑô³ÇµÄÇé¿ö¡£\n");
+        set_name("è’™å¤ç®­æ‰‹",({ "menggu jianshou","jianshou" }) );
+        set("gender", "ç”·æ€§" );
+        set("long","é€™æ˜¯ä¸€åè’™å¤ç¥ç®­æ‰‹ï¼Œæ­£è­¦æƒ•åœ°ç›£è¦–è‘—è¥„é™½åŸçš„æƒ…æ³ã€‚\n");
 
         set("int", 30);
         set("str", 30+random(10));
@@ -151,7 +151,7 @@ void seek_ob(object me)
                         if( query("qi", me)>num*400 && query("jing", me)>num*100 )
                         {
                                 tell_object(all_inventory(room),
-                                        HIB "Äã¾õµÃÒ»¹ÉÃÍÁÒµÄÎ£»ú´Ó"HIR"¶«Ãæ"HIW+chinese_number(step)+"¼ıµØ"HIB"Íâ´«À´£¡\n"NOR);  
+                                        HIB "ä½ è¦ºå¾—ä¸€è‚¡çŒ›çƒˆçš„å±æ©Ÿå¾"HIR"æ±é¢"HIW+chinese_number(step)+"ç®­åœ°"HIB"å¤–å‚³ä¾†ï¼\n"NOR);  
                                 for (i = 0; i < num; i++)
                                         bow->do_shoot(query("killer", me),me,bow,room,"west",step);
                                 if (num > 4) num = 4;
@@ -159,7 +159,7 @@ void seek_ob(object me)
                                         me->start_busy(num * 2);
                         } else
                                 tell_object(all_inventory(room),
-                                        HIB"Äã¾õµÃºÃÏóÓĞÈËÔÚ"HIR"¶«Ãæ"HIW+chinese_number(step)+"¼ıµØ"HIB"Íâ³¯ÄãÕâ±ß¿úÊÓÁËÒ»ÑÛ£¡\n"NOR);
+                                        HIB"ä½ è¦ºå¾—å¥½è±¡æœ‰äººåœ¨"HIR"æ±é¢"HIW+chinese_number(step)+"ç®­åœ°"HIB"å¤–æœä½ é€™é‚Šçªºè¦–äº†ä¸€çœ¼ï¼\n"NOR);
                 }
         }
         remove_call_out("seek_ob"); 
@@ -183,7 +183,7 @@ void die()
                         addn_temp("guo_shoucheng/killed_mgb", query_str()/5, ob);
                 else
                         addn_temp("guo_shoucheng/killed_mgb", 1, ob);
-                tell_object(ob, RED "Ò»ÃûÃÉ¹Å¹­¼ıÊÖÓÖÉ¥ÃüÓÚÄãµÄÀû¼ıÖ®ÏÂ£¡\n" NOR);
+                tell_object(ob, RED "ä¸€åè’™å¤å¼“ç®­æ‰‹åˆå–ªå‘½äºä½ çš„åˆ©ç®­ä¹‹ä¸‹ï¼\n" NOR);
         }
         destruct(this_object());
         return;

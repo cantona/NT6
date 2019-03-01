@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short","����С��");
+        set("short","琴韻小築");
         set("long", @LONG
-����һ��С������ķ��ᣬ��Ϊ���š���Χϡϡ����������С
-���ݣ�������һ����֪��С�����ǰ뵺�ϡ�
+這是一間小巧玲瓏的房舍，頗為精雅。周圍稀稀落落的四五間小
+房屋，建造在一個不知是小島還是半島上。
 LONG );
         set("exits", ([
                 "westdown"  : __DIR__"muti",

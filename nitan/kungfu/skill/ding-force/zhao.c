@@ -1,6 +1,6 @@
 //Cracked by Roath
 // zhao.c for ding-force
-// ½ğÖÓÕÖ
+// é‡‘é˜ç½©
 
 #include <ansi.h>
 
@@ -11,9 +11,9 @@ int exert(object me, object target)
         object ob;
 
         if( !me->is_fighting() )
-                return notify_fail("µÈ¸úÈË´ò¼ÜÊ±ÔÙÓÃ°É£¡\n");
+                return notify_fail("ç­‰è·Ÿäººæ‰“æ¶æ™‚å†ç”¨å§ï¼\n");
         if( query_temp("huti", me) )
-                return notify_fail("ÄãÒÑ¾­ÔËÆğ½ğÖÓÕÖ»¤Ìå¹¦ÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“é‹èµ·é‡‘é˜ç½©è­·é«”åŠŸäº†ã€‚\n");
 
         lv = (int)me->query_skill("ding-force", 1);
         dur=query("neili", me);
@@ -22,12 +22,12 @@ int exert(object me, object target)
         {
                 drop = 200 * 150 / lv;
                 dur = (dur - drop)/drop;
-                str = HIR + me->name() + "ÆïÂí¶×ñÉ£¬Æø´æµ¤Ìï£¬±©ºÈÒ»Éù£ºÀ´£¡\n"
-                + HIG + "Ò»µÀ½ğ¹â·ÉÀ´£¬°ë¿ÕÖĞÍ»È»ÂäÏÂÒ»Ö»»Æ½ğ´óÖÓ°Ñ" +
-                me->name() + "ÕÖÔÚÀïÃæ¡£\n" + NOR;
+                str = HIR + me->name() + "é¨é¦¬è¹²è¥ ï¼Œæ°£å­˜ä¸¹ç”°ï¼Œæš´å–ä¸€è²ï¼šä¾†ï¼\n"
+                + HIG + "ä¸€é“é‡‘å…‰é£›ä¾†ï¼ŒåŠç©ºä¸­çªç„¶è½ä¸‹ä¸€åªé»ƒé‡‘å¤§é˜æŠŠ" +
+                me->name() + "ç½©åœ¨è£¡é¢ã€‚\n" + NOR;
         }
         if (dur < 1)
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»ÔËÓÃ½ğÖÓÕÖ¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ é‹ç”¨é‡‘é˜ç½©ã€‚\n");
 
         seteuid(geteuid(me));
         /*
@@ -39,7 +39,7 @@ int exert(object me, object target)
         addn("neili", -drop, me);
         me->apply_condition("zhao", dur);
         set_temp("huti", 1, me);
-        write(HIG + "ÄãÔËÆğ½ğÖÓÕÖ»¤Ìå¹¦¡£\n" + NOR);
+        write(HIG + "ä½ é‹èµ·é‡‘é˜ç½©è­·é«”åŠŸã€‚\n" + NOR);
         message("vision", str, environment(me), me);
         return 1;
 }

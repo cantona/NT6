@@ -3,18 +3,18 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIG "Ê¥ÁúÖ®ÑÛ" NOR, ({"shenglong zhiyan1", "zhiyan1" }));
+        set_name(HIG "è–é¾ä¹‹çœ¼" NOR, ({"shenglong zhiyan1", "zhiyan1" }));
         set_weight(2000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
+                set("unit", "é¡†");
                 set("value", 500000);
-                set("enchase/name", "Ê¥ÁúÖ®ÑÛ");
+                set("enchase/name", "è–é¾ä¹‹çœ¼");
                 set("enchase/point", 1);
                 set("enchase/type", "neck");
                                 set("enchase/cur_firm", 90);
-                                //set("nine_object", 1); // ¾Å¿×ÏâÇ¶ÎïÆ·±ê¼Ç
+                                //set("nine_object", 1); // ä¹å­”é‘²åµŒç‰©å“æ¨™è¨˜
                                 set("enchase/spe_data", ([]) );  
         }
         setup();

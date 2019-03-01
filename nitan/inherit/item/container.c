@@ -8,12 +8,12 @@ string extra_long()
 {
         string str;
 
-        str  = sprintf("\nÎïÆ·ÊôĞÔ : ÈİÆ÷£¬ÏÂÏß%s¶ªÊ§\n", 
-                       (this_object()->query_autoload() || query("autoload")) ? "²»" : "" );      
-        str += sprintf("Èİ    Á¿ : %d\n", this_object()->query_max_encumbrance());
-        str += sprintf("ÏŞ    ÖÆ : %s\n", this_object()->no_limit_amount() ? "·ñ" : "ÊÇ");
-        //str += sprintf("Ê¹ÓÃ·½·¨ : ÊäÈëÖ¸Áî put <id> in %s ·ÅÈë¡£\n", query("id"));
-        //str += sprintf("                  ÊäÈëÖ¸Áî get <id> from %s È¡³ö¡£\n", query("id"));
+        str  = sprintf("\nç‰©å“å±¬æ€§ : å®¹å™¨ï¼Œä¸‹ç·š%sä¸Ÿå¤±\n", 
+                       (this_object()->query_autoload() || query("autoload")) ? "ä¸" : "" );      
+        str += sprintf("å®¹    é‡ : %d\n", this_object()->query_max_encumbrance());
+        str += sprintf("é™    åˆ¶ : %s\n", this_object()->no_limit_amount() ? "å¦" : "æ˜¯");
+        //str += sprintf("ä½¿ç”¨æ–¹æ³• : è¼¸å…¥æŒ‡ä»¤ put <id> in %s æ”¾å…¥ã€‚\n", query("id"));
+        //str += sprintf("                  è¼¸å…¥æŒ‡ä»¤ get <id> from %s å–å‡ºã€‚\n", query("id"));
 
         return str;
 }

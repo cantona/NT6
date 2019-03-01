@@ -1,18 +1,18 @@
-// houyuan.c ²ÆÖ÷ºóÔº
+// houyuan.c è²¡ä¸»å¾Œé™¢
 
 #include <room.h>
 inherit ROOM;
 
 void create()
 {
-	set("short", "²ÆÖ÷ºóÔº");
+	set("short", "è²¡ä¸»å¾Œé™¢");
         set("long", @LONG
-ÕâÀïÊÇ²ÆÖ÷ºóÔº£¬¸÷ÖÖ¹ÅÍæÁÕÀÅÂúÄ¿£¬ÉÌÖÜÇàÍ­¡¢ººÍßµ±¡¢ÌÆÈı
-²Ê¡­¡­£¬Ó¦ÓĞ¾¡ÓĞ£¬Ö»ÒªÓµÓĞÒ»¼ş£¬¾Í¹»Äã³ÔÒ»±²×ÓÁË¡£´ŞÔ±ÍâÕı×ø
-ÔÚÁğÁ§é½ÉÏ£¬ÂıÓÆÓÆµØºÈ×Å²ÎÌÀ¡£¶«²àÓĞÒ»ÉÈÃÅ(men)¡£
+é€™è£¡æ˜¯è²¡ä¸»å¾Œé™¢ï¼Œå„ç¨®å¤ç©ç³ç…æ»¿ç›®ï¼Œå•†å‘¨é’éŠ…ã€æ¼¢ç“¦ç•¶ã€å”ä¸‰
+å½©â€¦â€¦ï¼Œæ‡‰æœ‰ç›¡æœ‰ï¼Œåªè¦æ“æœ‰ä¸€ä»¶ï¼Œå°±å¤ ä½ åƒä¸€è¼©å­äº†ã€‚å´”å“¡å¤–æ­£å
+åœ¨ç‰ç’ƒæ¦»ä¸Šï¼Œæ…¢æ‚ æ‚ åœ°å–è‘—åƒæ¹¯ã€‚æ±å´æœ‰ä¸€æ‰‡é–€(men)ã€‚
 LONG );
 	set("item_desc", ([
-		"men" : "ÕâÉÈÃÅËÆºõÍ¨ÏòÒ»¼äÃÜÊÒ¡£\n",
+		"men" : "é€™æ‰‡é–€ä¼¼ä¹é€šå‘ä¸€é–“å¯†å®¤ã€‚\n",
 	]));
 	set("exits", ([
 //		"east" : "/d/city/dongxiang",
@@ -39,13 +39,13 @@ int do_unlock(string arg)
 {
 	object ob;
 	if (query("exits/east"))
-		return notify_fail("ÕâÉÈÃÅÒÑ¾­ÊÇ´ò¿ªµÄ¡£\n");
+		return notify_fail("é€™æ‰‡é–€å·²ç¶“æ˜¯æ‰“é–‹çš„ã€‚\n");
 	if (!arg || (arg != "men" && arg != "east"))
-		return notify_fail("ÄãÒª´ò¿ªÊ²Ã´£¿\n");
+		return notify_fail("ä½ è¦æ‰“é–‹ä»€éº¼ï¼Ÿ\n");
 	if (!(ob = present("laofang key", this_player())))
-		return notify_fail("Äã²»»áÇËËø¡£\n");
+		return notify_fail("ä½ ä¸æœƒæ’¬é–ã€‚\n");
 	set("exits/east", "/d/city/dongxiang");
-	message_vision("$NÓÃÒ»°ÑÔ¿³×´ò¿ªÁËÃØÃÅ£¬¿ÉÊÇÔ¿³×È´¶ÏÁË¡£\n", this_player());
+	message_vision("$Nç”¨ä¸€æŠŠé‘°åŒ™æ‰“é–‹äº†ç§˜é–€ï¼Œå¯æ˜¯é‘°åŒ™å»æ–·äº†ã€‚\n", this_player());
 	destruct(ob);
 	return 1;
 }
@@ -54,6 +54,6 @@ int valid_leave(object me, string dir)
 {
 	if (!wizardp(me) && objectp(present("cui yuanwai", environment(me))) && 
                      dir == "west" && living(present("cui yuanwai", environment(me))))
-		return notify_fail("´ŞÔ±Íâµ²×¡ÁËÄã¡£\n");
+		return notify_fail("å´”å“¡å¤–æ“‹ä½äº†ä½ ã€‚\n");
 	return ::valid_leave(me, dir);
 }

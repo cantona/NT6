@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÉßÉá");
+        set("short", "è›‡èˆ");
         set("long", @LONG
-ÕâÊÇÅ·ÑôÊÀ¼ÒµÄÉßÉá£¬ÎİÀïµ½´¦¶¼ÊÇ¶¾Éß£¬Ç½ÉÏÓĞÒ»ÕÅ¡¸Éß¾­¡¹
-(shejing)£¬½ÇÂä°ÚÁËÒ»¶Ñ²¶ÉßÓÃµÄÖñÂ¨(zhulou)¡£
+é€™æ˜¯æ­é™½ä¸–å®¶çš„è›‡èˆï¼Œå±‹è£¡åˆ°è™•éƒ½æ˜¯æ¯’è›‡ï¼Œç‰†ä¸Šæœ‰ä¸€å¼µã€Œè›‡ç¶“ã€
+(shejing)ï¼Œè§’è½æ“ºäº†ä¸€å †æ•è›‡ç”¨çš„ç«¹ç°(zhulou)ã€‚
 LONG );
         set("exits", ([ 
                 "north" : __DIR__"road2",
@@ -16,9 +16,9 @@ LONG );
         ]));
         set("item_desc", ([
                 "shejing" : 
-                "Å·ÑôÊÀ¼ÒÑµÉßÃÜ·¨£ºµ±Ô¦ÊŞÊõ´ïµ½ÈıÊ®¼¶ÒÔÉÏ£¬¿É³¢ÊÔ½«¶¾Éß±ä(bian)³ÉÉßÕÈ£¬\n"
-                "ÉßÕÈÄËÊÇÅ·ÑôÊÀ¼ÒµÄ¶ÀÃÅ±øÆ÷¡£Ò²¿ÉÒÔ°ÑÉßÕÈ±ä»Ø¶¾Éß£¬ÇıÊ¹º¦ÈË¡£\n",
-                "zhulou" : "Ò»¶Ñ²¶ÉßÓÃµÄÖñÂ¨£¬Å·ÑôÊÀ¼ÒµÄÈËÏëÒª²¶ÉßÊ±£¬¿ÉÒÔÀ´ÕâÀïÄÃ(take)¡£\n",
+                "æ­é™½ä¸–å®¶è¨“è›‡å¯†æ³•ï¼šç•¶é¦­ç¸è¡“é”åˆ°ä¸‰åç´šä»¥ä¸Šï¼Œå¯å˜—è©¦å°‡æ¯’è›‡è®Š(bian)æˆè›‡æ–ï¼Œ\n"
+                "è›‡æ–ä¹ƒæ˜¯æ­é™½ä¸–å®¶çš„ç¨é–€å…µå™¨ã€‚ä¹Ÿå¯ä»¥æŠŠè›‡æ–è®Šå›æ¯’è›‡ï¼Œé©…ä½¿å®³äººã€‚\n",
+                "zhulou" : "ä¸€å †æ•è›‡ç”¨çš„ç«¹ç°ï¼Œæ­é™½ä¸–å®¶çš„äººæƒ³è¦æ•è›‡æ™‚ï¼Œå¯ä»¥ä¾†é€™è£¡æ‹¿(take)ã€‚\n",
         ]));
         set("objects", ([ 
                 __DIR__"npc/snake" : 3,
@@ -46,26 +46,26 @@ int do_lingwu(string arg)
         check = level*level*level;
 
         if (!arg || arg!="shejing") 
-                return notify_fail("ÄãÒªÁìÎòÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦é ˜æ‚Ÿä»€éº¼ï¼Ÿ\n");
         
-        if( !query("family", me) || query("family/family_name", me) != "Å·ÑôÊÀ¼Ò" )
-                return notify_fail("ÄãÊÇÎ´Èë°×ÍÕ£¬ÄÑÎò°×ÍÕÉß¾­¡£\n");
+        if( !query("family", me) || query("family/family_name", me) != "æ­é™½ä¸–å®¶" )
+                return notify_fail("ä½ æ˜¯æœªå…¥ç™½é§ï¼Œé›£æ‚Ÿç™½é§è›‡ç¶“ã€‚\n");
 
         if ( level < 30) 
-                return notify_fail("¾­ÖĞËùÑÔ¶ÔÄã¹ıÓÚ¸ßÉî£¬ÄãÎŞ·¨ÁìÎò¡£\n");
+                return notify_fail("ç¶“ä¸­æ‰€è¨€å°ä½ éäºé«˜æ·±ï¼Œä½ ç„¡æ³•é ˜æ‚Ÿã€‚\n");
 
         if ( level > 100) 
-                return notify_fail("¾­ÖĞËùÑÔ¶ÔÄãÌ«Ç³£¬Ã»ÓĞÈÎºÎ°ïÖú¡£\n");
+                return notify_fail("ç¶“ä¸­æ‰€è¨€å°ä½ å¤ªæ·ºï¼Œæ²’æœ‰ä»»ä½•å¹«åŠ©ã€‚\n");
 
         if( check>query("combat_exp", me)*10 )
-                return notify_fail("ÄãÊµÕ½¾­Ñé²»×ã£¬ÎŞ·¨ÁìÎò¡£\n");
+                return notify_fail("ä½ å¯¦æˆ°ç¶“é©—ä¸è¶³ï¼Œç„¡æ³•é ˜æ‚Ÿã€‚\n");
 
         if( query("jing", me)<30 )
-                return notify_fail("Äã¾«ÉñÎŞ·¨¼¯ÖĞ¡£\n");
+                return notify_fail("ä½ ç²¾ç¥ç„¡æ³•é›†ä¸­ã€‚\n");
 
         me->receive_damage("jing", 20);
         me->improve_skill("poison",query("int", me));
-        write("Äã×êÑĞÉß¾­£¬ÁìÎòÁËÊ©¶¾µÄ·¨ÃÅ¡£\n");
+        write("ä½ é‘½ç ”è›‡ç¶“ï¼Œé ˜æ‚Ÿäº†æ–½æ¯’çš„æ³•é–€ã€‚\n");
         return 1;
 }
 
@@ -73,22 +73,22 @@ int do_take(string arg)
 {
         object me = this_player(), obj, fire;
 
-      if( query("family/family_name", me) != "Å·ÑôÊÀ¼Ò")return notify_fail("Äã²»ÊÇÅ·ÑôÊÀ¼ÒµÄÂÒÄÃÊ²Ã´£¿\n");
+      if( query("family/family_name", me) != "æ­é™½ä¸–å®¶")return notify_fail("ä½ ä¸æ˜¯æ­é™½ä¸–å®¶çš„äº‚æ‹¿ä»€éº¼ï¼Ÿ\n");
 
         if (!arg && arg != "zhulou" && arg != "basket" ) 
-                return notify_fail("ÄãÒªÄÃÊ²÷á£¿\n");
+                return notify_fail("ä½ è¦æ‹¿ä»€éº¼ï¼Ÿ\n");
 
         if( time()-query_temp("zhulou_last_taked", me)<180 )
-            return notify_fail("ÄãÒÑ¾­ÄÃ¹ı¸öÖñÂ¨ÁË£¬µÈ»áÔÙÀ´ÄÃ°É¡£\n");
+            return notify_fail("ä½ å·²ç¶“æ‹¿éå€‹ç«¹ç°äº†ï¼Œç­‰æœƒå†ä¾†æ‹¿å§ã€‚\n");
 
         obj = new(__DIR__"obj/zhulou");
         obj->move(me);
         set("keeper",query("id",  me), obj);
         obj->set("long",
-                "Ò»¸öÖñÌõ±à³ÉµÄÂ¨×Ó£¬ÊÇÅ·ÑôÊÀ¼ÒµÄÈË×¨ÃÅÓÃÀ´²¶(catch)ÉßµÄ¡£\n"
-                "Â¨×ÓÍâ±ßÌùÁËÒ»ÕÅĞ¡Ö½Æ¬£¬ÉÏÃæĞ´×Å¡u"+me->name()+"¡v¡£\n"
+                "ä¸€å€‹ç«¹æ¢ç·¨æˆçš„ç°å­ï¼Œæ˜¯æ­é™½ä¸–å®¶çš„äººå°ˆé–€ç”¨ä¾†æ•(catch)è›‡çš„ã€‚\n"
+                "ç°å­å¤–é‚Šè²¼äº†ä¸€å¼µå°ç´™ç‰‡ï¼Œä¸Šé¢å¯«è‘—â–¡"+me->name()+"â–¡ã€‚\n"
         );
-        message_vision("$NÔÚÉßÉá½ÇÂäÕÒ³öÁËÒ»¸öÖñÂ¨¡£\n", me );
+        message_vision("$Nåœ¨è›‡èˆè§’è½æ‰¾å‡ºäº†ä¸€å€‹ç«¹ç°ã€‚\n", me );
         set_temp("zhulou_last_taked", time(), me);
         fire = new("/d/xingxiu/obj/fire");
         fire->move(obj);

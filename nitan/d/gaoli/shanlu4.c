@@ -1,13 +1,13 @@
 // /d/gaoli/xuanwumen
-// Room in ����
+// Room in 高麗
 inherit ROOM;
 
 void create()
 {
-        set("short", "ɽ·");
+        set("short", "山路");
         set("long", @LONG
-������һ��ɽ·�������ɽ·������ۣ������ҵ���·��һ��С�ģ�
-�Ϳ��ܹ�����ȥ������ȥ�����Կ��������ǵ�ȫò��
+這裡是一條山路。這裡的山路崎嶇曲折，很難找到出路。一不小心，
+就可能滾落下去。向東望去，可以看到高麗城的全貌。
 LONG
         );
 

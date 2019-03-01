@@ -8,11 +8,11 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("¼Ö²¼", ({ "jia bu", "jia", "bu"}) );
-        set("gender", "ÄÐÐÔ" );
+        set_name("è³ˆå¸ƒ", ({ "jia bu", "jia", "bu"}) );
+        set("gender", "ç”·æ€§" );
         set("age", 45);
-        set("title", "ÈÕÔÂÉñ½ÌÇàÁúÌÃ³¤ÀÏ");
-        set("long", "ËûÀ¯»ÆÊÝÁ³£¬Á½±ßÌ«ÑôÑ¨¸ß¸ß¹ÄÆð£¬±ãÈç²ØÁËÒ»Ã¶ºËÌÒËÆµÄ¡£\n");
+        set("title", "æ—¥æœˆç¥žæ•™é’é¾å ‚é•·è€");
+        set("long", "ä»–è Ÿé»ƒç˜¦è‡‰ï¼Œå…©é‚Šå¤ªé™½ç©´é«˜é«˜é¼“èµ·ï¼Œä¾¿å¦‚è—äº†ä¸€æžšæ ¸æ¡ƒä¼¼çš„ã€‚\n");
         set("attitude", "friendly");
         set("shen_type", -1);
 
@@ -53,11 +53,11 @@ void create()
         map_skill("parry", "tianmo-zhang");
         map_skill("strike", "tianmo-zhang");
 
-        create_family("ÈÕÔÂÉñ½Ì",2,"µÜ×Ó ÇàÁúÌÃ³¤ÀÏ");
+        create_family("æ—¥æœˆç¥žæ•™",2,"å¼Ÿå­ é’é¾å ‚é•·è€");
 
         set("chat_chance", 1);
         set("chat_msg", ({
-               "¼Ö²¼Ì¾µÀ: ¡°ÈÁÍâ±ØÏÈ°²ÄÚ£¬ÌÃÖÐÁîÅÆ±»µÁÈôÊÇ±»½ÌÖ÷ÖªµÀ£¬ÎÒÃüÐÝÒÓ¡£¡±\n"
+               "è³ˆå¸ƒå˜†é“: â€œæ”˜å¤–å¿…å…ˆå®‰å…§ï¼Œå ‚ä¸­ä»¤ç‰Œè¢«ç›œè‹¥æ˜¯è¢«æ•™ä¸»çŸ¥é“ï¼Œæˆ‘å‘½ä¼‘çŸ£ã€‚â€\n"
         }) );
         set("master_ob",2);
         setup();
@@ -71,10 +71,10 @@ void attempt_apprentice(object ob)
 
     if((int)ob->query_skill("riyue-xinfa", 1) < 80)
     {
-         command("say ÄãµÄÄÚ¹¦ÐÄ·¨ÉÐÇ·»ðºò£¬¶àÁ·Á·È¥°É£¡");
+         command("say ä½ çš„å…§åŠŸå¿ƒæ³•å°šæ¬ ç«å€™ï¼Œå¤šç·´ç·´åŽ»å§ï¼");
          return;
     }
 
     command("recruit "+query("id", ob));
-    set("title", HIM"ÈÕÔÂÉñ½Ì"HIC"ÇàÁúÌÃ½ÌÖÚ"NOR, ob);
+    set("title", HIM"æ—¥æœˆç¥žæ•™"HIC"é’é¾å ‚æ•™çœ¾"NOR, ob);
 }

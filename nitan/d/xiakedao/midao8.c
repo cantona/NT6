@@ -1,13 +1,13 @@
-// midao8.c �ܵ�
+// midao8.c 密道
 
 #include <ansi.h>
 inherit ROOM;
 
 void create()
 {
-        set("short", "�ܵ�");
+        set("short", "密道");
         set("long", @LONG
-����һ���������ܵ��������ʯ�����ǻҳ�������ܾ�û�������ˡ�
+這是一條長長的密道，地面和石壁滿是灰塵，好象很久沒人來過了。
 LONG );
         set("exits", ([
                 "southdown" : __DIR__"midao7"
@@ -26,9 +26,9 @@ void init()
         {
                 me->receive_damage("qi", 50);
                 me->receive_wound("qi",  50);
-                message_vision(HIR"$Nһ��С�Ĳȵ����ϵ�һ����Ŧ��... ��...��\n"NOR, me);
+                message_vision(HIR"$N一不小心踩到地上的一個暗紐，... 啊...！\n"NOR, me);
                 me->move(__DIR__"road3");
-                tell_object(me, HIR"���ɽ�Ϲ���������ֻ���û����޴����ۣ������˼����ˡ�\n"NOR);
-                message("vision",HIR"ֻ��"+query("name", me)+"��ɽ�Ϲ�µµ�ع������������ڵ��ϰ�������������\n"NOR,environment(me),me);
+                tell_object(me, HIR"你從山上滾了下來，只覺得渾身無處不疼，還受了幾處傷。\n"NOR);
+                message("vision",HIR"只見"+query("name", me)+"從山上骨碌碌地滾了下來，躺在地上半天爬不起來！\n"NOR,environment(me),me);
         }
 }

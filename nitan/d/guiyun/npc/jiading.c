@@ -1,13 +1,13 @@
-// jiading.c ¼Ò¶¡
+// jiading.c å®¶ä¸
 
 inherit NPC;
 
 void create()
 {
-        set_name("¼Ò¶¡", ({ "jia ding", "jia", "ding" }));
-        set("gender", "ÄĞĞÔ");
+        set_name("å®¶ä¸", ({ "jia ding", "jia", "ding" }));
+        set("gender", "ç”·æ€§");
         set("age", 35);
-        set("long", "¹éÔÆ×¯¼Ò¶¡¡£\n");
+        set("long", "æ­¸é›²èŠå®¶ä¸ã€‚\n");
         set("combat_exp", 40000);
         set_skill("dodge", 50);
         set_skill("unarmed", 50);
@@ -26,7 +26,7 @@ int accept_object(object who, object ob)
         {
                 command("bow"+query("id", this_player()));
                 set_temp("marks/guiyun", 1, this_player());
-                write("¼Ò¶¡ËµµÀ£º" + RANK_D->query_respect(ob) + "Ô­À´ÊÇÉÙ×¯Ö÷µÄÅóÓÑ£¬¿ì¿ìÇë½ø¡£\n");
+                write("å®¶ä¸èªªé“ï¼š" + RANK_D->query_respect(ob) + "åŸä¾†æ˜¯å°‘èŠä¸»çš„æœ‹å‹ï¼Œå¿«å¿«è«‹é€²ã€‚\n");
                 return 1;
         }
         return 0;

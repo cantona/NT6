@@ -12,42 +12,42 @@ int exert(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! objectp(target) || target == me)
-                return notify_fail("ÄãÒªÎüÈ¡Ë­µÄ¾«Ôª£¿\n");
+                return notify_fail("ä½ è¦å¸å–èª°çš„ç²¾å…ƒï¼Ÿ\n");
 
         if( query("id", target) == "muren" )
-                return notify_fail("ÄãÒªÎüÈ¡Ë­µÄ¾«Ôª£¿\n");
+                return notify_fail("ä½ è¦å¸å–èª°çš„ç²¾å…ƒï¼Ÿ\n");
 
-        if( query("race", target) != "ÈËÀà" )
-                return notify_fail("¸ã´íÁË£¡Ö»ÓĞÈË²ÅÄÜÓĞ¾«Ôª£¡\n");
+        if( query("race", target) != "äººé¡" )
+                return notify_fail("æéŒ¯äº†ï¼åªæœ‰äººæ‰èƒ½æœ‰ç²¾å…ƒï¼\n");
 
-        if (me->is_busy()) return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
+        if (me->is_busy()) return notify_fail("ä½ æ­£å¿™è‘—å‘¢ã€‚\n");
 
         if( query_temp("sucked", me) )
-                return notify_fail("Äã¸Õ¸ÕÎüÈ¡¹ı¾«Á¦£¡\n");
+                return notify_fail("ä½ å‰›å‰›å¸å–éç²¾åŠ›ï¼\n");
 
         if( objectp(query_temp("weapon", me)) )
-                return notify_fail("Äã±ØĞë¿ÕÊÖ²ÅÄÜÊ©ÓÃ»¯¹¦´ó·¨ÎüÈË¾«Ôª£¡\n");
+                return notify_fail("ä½ å¿…é ˆç©ºæ‰‹æ‰èƒ½æ–½ç”¨åŒ–åŠŸå¤§æ³•å¸äººç²¾å…ƒï¼\n");
 
         if ((int)me->query_skill("huagong-dafa", 1) < 90)
-                return notify_fail("ÄãµÄ»¯¹¦´ó·¨¹¦Á¦²»¹»£¬²»ÄÜÎüÈ¡¶Ô·½µÄ¾«Ôª£¡\n");
+                return notify_fail("ä½ çš„åŒ–åŠŸå¤§æ³•åŠŸåŠ›ä¸å¤ ï¼Œä¸èƒ½å¸å–å°æ–¹çš„ç²¾å…ƒï¼\n");
 
         if( query("jingli", me)<5 )
-                return notify_fail("ÄãµÄ¾«Á¦²»¹»£¬²»ÄÜÊ¹ÓÃ»¯¹¦´ó·¨¡£\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤ ï¼Œä¸èƒ½ä½¿ç”¨åŒ–åŠŸå¤§æ³•ã€‚\n");
 
         if( query("max_jingli", me)*2>me->query_current_jingli_limit()*3 )
-                return notify_fail("ÄãµÄ¾«Á¦ĞŞÎªËÆºõÒÑ¾­´ïµ½ÁËÆ¿¾±£¬ÔÙÎüÈ¡Ò²ÊÇÍ½ÀÍ¡£\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›ä¿®ç‚ºä¼¼ä¹å·²ç¶“é”åˆ°äº†ç“¶é ¸ï¼Œå†å¸å–ä¹Ÿæ˜¯å¾’å‹ã€‚\n");
 
         if( me->query_skill("huagong-dafa",1)<query("max_jingli", me)/200 )
-                return notify_fail("ÄãµÄ»¯¹¦´ó·¨Ì«µÍÁË£¬ÔÙÎüÈ¡Ò²ÊÇÍ½ÀÍ¡£\n");
+                return notify_fail("ä½ çš„åŒ–åŠŸå¤§æ³•å¤ªä½äº†ï¼Œå†å¸å–ä¹Ÿæ˜¯å¾’å‹ã€‚\n");
 
         if( query("max_jingli", target) <= 100 || query("no_suck", target) )
-                return notify_fail(target->name() + "ÒÑ¾­¾«Ôª»ÁÉ¢£¬ÄãÒÑ¾­ÎŞ·¨´ÓËûÌåÄÚÎüÈ¡ÈÎºÎ¾«ÔªÁË£¡\n");
+                return notify_fail(target->name() + "å·²ç¶“ç²¾å…ƒæ¸™æ•£ï¼Œä½ å·²ç¶“ç„¡æ³•å¾ä»–é«”å…§å¸å–ä»»ä½•ç²¾å…ƒäº†ï¼\n");
 
         if( query("max_jingli", target)<query("max_jingli", me)/10 )
-                return notify_fail(target->name() + "µÄ¾«Á¦ĞŞÎªÔ¶²»ÈçÄã£¬ÄãÎŞ·¨´ÓËûÌåÄÚÎüÈ¡¾«Ôª£¡\n");
+                return notify_fail(target->name() + "çš„ç²¾åŠ›ä¿®ç‚ºé ä¸å¦‚ä½ ï¼Œä½ ç„¡æ³•å¾ä»–é«”å…§å¸å–ç²¾å…ƒï¼\n");
 
         message_combatd(
-                HIY "$NÈ«Éí¹Ç½Ú±¬Ïì£¬Ë«±Û±©³¤Êı³ß£¬ÕÆÔµÃÍµØÏò$nµÄÌìÁéÅÄÁËÏÂÈ¥£¡\n\n" NOR,
+                HIY "$Nå…¨èº«éª¨ç¯€çˆ†éŸ¿ï¼Œé›™è‡‚æš´é•·æ•¸å°ºï¼ŒæŒç·£çŒ›åœ°å‘$nçš„å¤©éˆæ‹äº†ä¸‹å»ï¼\n\n" NOR,
                 me, target );
 
         if (living(target))
@@ -68,8 +68,8 @@ int exert(object me, object target)
 
         if (dp / 2 + random(dp) < sp || ! living(target))
         {
-                tell_object(target, HIR "ÄãÖ»¾õÌì¶¥¹ÇÁÑ£¬¾«ÔªÈçºéË®°ã×Ô»á×ÚÑ¨±¼ÌÚ¶ø³ö£¡\n" NOR);
-                tell_object(me, HIG "Äã¾õµÃ" + target->name() + "µÄ¾«Ôª×ÔÊÖÕÆÔ´Ô´²»¾øµØÁ÷ÁË½øÀ´¡£\n" NOR);
+                tell_object(target, HIR "ä½ åªè¦ºå¤©é ‚éª¨è£‚ï¼Œç²¾å…ƒå¦‚æ´ªæ°´èˆ¬è‡ªæœƒå®—ç©´å¥”é¨°è€Œå‡ºï¼\n" NOR);
+                tell_object(me, HIG "ä½ è¦ºå¾—" + target->name() + "çš„ç²¾å…ƒè‡ªæ‰‹æŒæºæºä¸çµ•åœ°æµäº†é€²ä¾†ã€‚\n" NOR);
 
                 suck = 100 + (me->query_skill("huagong-dafa", 1) - 90) / 2;
 
@@ -88,7 +88,7 @@ int exert(object me, object target)
         }
         else
         {
-                message_combatd(HIY "¿ÉÊÇ$p¿´ÆÆÁË$PµÄÆóÍ¼£¬ÄÚÁ¦ÃÍµØÒ»Õğ£¬½èÊÆÁïÁË¿ªÈ¥¡£\n" NOR, me, target);
+                message_combatd(HIY "å¯æ˜¯$pçœ‹ç ´äº†$Pçš„ä¼åœ–ï¼Œå…§åŠ›çŒ›åœ°ä¸€éœ‡ï¼Œå€Ÿå‹¢æºœäº†é–‹å»ã€‚\n" NOR, me, target);
                 me->start_busy(2 + random(5));
                 // remove_call_out("del_sucked");
                 call_out("del_sucked", 15, me);

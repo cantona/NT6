@@ -1,12 +1,12 @@
-// ´óÌÆË«Áú´«
+// å¤§å”é›™é¾å‚³
 
 inherit NPC;
 
 void create()
 {
   
-  set_name("ÀÏÑ§¾¿", ({"lao xuejiu", "xuejiu"}));
-  set("gender", "ÄĞĞÔ");
+  set_name("è€å­¸ç©¶", ({"lao xuejiu", "xuejiu"}));
+  set("gender", "ç”·æ€§");
   set("combat_exp", 3000);
   set("age", 38);
   set("per", 29);

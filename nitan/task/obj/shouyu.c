@@ -2,15 +2,15 @@
 inherit TASK;
 void create()
 {
-        set_name(HIG"·½ÕÉÊÖÚÍ"NOR,({ "shouyu" }) );
+        set_name(HIG"æ–¹ä¸ˆæ‰‹è«­"NOR,({ "shouyu" }) );
         set_weight(100);
         if( clonep() )
                 destruct(this_object());
         else {
-                set("unit", "Ö½");
+                set("unit", "ç´™");
                 set("material", "paper");
-                set("long", "ÕâÊÇÒ»ÕÅ¿Õ°×µÄ·½ÕÉ×¨ÓÃÊÖÚÍ¼ã¡£\n");
+                set("long", "é€™æ˜¯ä¸€å¼µç©ºç™½çš„æ–¹ä¸ˆå°ˆç”¨æ‰‹è«­ç®‹ã€‚\n");
         }
-        set("owner", "Ğş´È´óÊ¦");
+        set("owner", "ç„æ…ˆå¤§å¸«");
         setup();
 }  

@@ -1,4 +1,4 @@
-// taxue-wuhen.c ̤ѩ�޺�
+// taxue-wuhen.c 踏雪無痕
 
 #include <ansi.h>;
 #include <combat.h>
@@ -7,15 +7,15 @@ string type() { return "martial"; }
 string martialtype() { return "dodge"; }
 
 string *dodge_msg = ({
-"$nһʽ"YEL"������ƽɳ��"NOR"���������٣�������ǰ�߳���������Ȼ�����������ɵ�����һ�ԡ�\n",
-"$nһʽ"HIW"����������"NOR"��������Ծ�������һ��һת����Ʈ��������֮�⡣\n",
-"$nһʽ"HIY"���������ڡ�"NOR"��������������������ĥ��������֮��ת��ж����$N��һ�С�\n",
-"$nһʽ"HIB"�����ɵ��ҡ�"NOR"��ֻ��$n���Ӻ�����˫��������һ�ţ����ӽ��Ƶ��������$N���Ѵ�$n���š�\n",
-"$nһʽ"HIW"����ѩ��̲��"NOR"���ݸ߷��ͣ���������������Ʈ��������$N������룬ֻ�û������ء�\n",
-"$nһʽ"HIW"����˿���꡹"NOR"��ͻȻ����һ�У���Ȼ�����ܾ��˵Ĵ򷨣���$N��æ���Ұ�ȫ������\n",
-"$nһʽ"HIM"��������ѩ��"NOR"�����в��ܣ�ֻ΢΢һ������$N���籩�������Ľ����㼴��ա�\n",
-"$nһʽ"HIY"������ǱԾ��"NOR"����Ȼ�����ΰ���ֱ��������ֱ��ӥ��������������ƮƮ������������֮�⡣\n",
-"$nһʽ"HIW"��̤ѩ�޺ۡ�"NOR"�����μ�����ת�����¾ͻ�������֮�⡣\n",
+"$n一式"YEL"「雁落平沙」"NOR"，變招奇速，右足向前踢出，身子已然騰起，輕輕巧巧地落在一旁。\n",
+"$n一式"HIW"「玉龍飛起」"NOR"，縱身高躍，半空中一折一轉，已飄身在數丈之外。\n",
+"$n一式"HIY"「夏日消融」"NOR"，兩足足跟不動，足尖左磨，身子隨之右轉，卸開了$N這一招。\n",
+"$n一式"HIB"「枯鬆倒掛」"NOR"，只見$n身子後仰，雙掌往地下一撐，身子借勢倒射而出，$N便已打$n不著。\n",
+"$n一式"HIW"「晴雪飛灘」"NOR"，縱高伏低，東奔西閃，身形飄忽不定，$N手無足措，只得回招自守。\n",
+"$n一式"HIW"「冰絲帶雨」"NOR"，突然反手一招，竟然是兩敗俱傷的打法，趁$N手忙腳亂安全脫身。\n",
+"$n一式"HIM"「寒江釣雪」"NOR"，不招不架，只微微一側身，$N猶如暴風驟雨般的進攻便即落空。\n",
+"$n一式"HIY"「魚龍潛躍」"NOR"，陡然間身形拔起，直沖雲霄，直如鷹隼，幾個盤旋，飄飄盪盪落在數丈之外。\n",
+"$n一式"HIW"「踏雪無痕」"NOR"，身形急速旋轉，幾下就劃到數丈之外。\n",
 });
 
 int valid_enable(string usage) { return (usage=="dodge") || (usage=="move"); }
@@ -26,7 +26,7 @@ int valid_learn(object me)
 int practice_skill(object me)
 {
         if( query("qi", me)<20 || query("neili", me)<4 )
-                return notify_fail("�������̫���ˣ�������̤ѩ�޺ۡ�\n");
+                return notify_fail("你的體力太差了，不能練踏雪無痕。\n");
         me->receive_damage("qi", 20);
         addn("neili", -4, me);
         return 1;
@@ -72,26 +72,26 @@ mixed valid_damage(object me, object victim, int damage, object weapon)
         dp /= 100;
 
         if ( random(ap+dp) > ap ) {
-                result =  "$n����һ������һ�ߣ�����������״��$N��ͷһ����һʱ�е���æ���ң�\n";
-                result += "$n���л��ɳã����̶�$N�������ƣ�\n" ;
+                result =  "$n身形一晃閃過一邊，手做擲暗器狀，$N心頭一驚，一時有點手忙腳亂！\n";
+                result += "$n見有機可趁，立刻對$N發動攻勢！\n" ;
 
                 return ([ "msg" : result, "damage" : -damage ]);
         }
          else if ( random(ap+dp) > ap ) {
-                result = HIW "ֻ��$n��������,�Լ�������������Ӱ������裬����������״��$N��ͷһ����һʱ�е���æ���ң�\n" NOR;
-                result += "$n׽��ʱ�������̶�$N�������ƣ�\n" ;
+                result = HIW "只見$n舉重若輕,以極巧妙身法，身影滿天飛舞，手做擲暗器狀，$N心頭一驚，一時有點手忙腳亂！\n" NOR;
+                result += "$n捉緊時機，立刻對$N發動攻勢！\n" ;
                 COMBAT_D->do_attack(victim,me,query_temp("weapon", victim));
                 addn("jingli", random(-20), victim);
 
                 return ([ "msg" : result, "damage" : -damage ]);
         }
         else if ( random(ap+2*dp) > ap ) {
-                result = "$n����һ������һ�ߣ���Ȼ���׵رܿ���$N�Ĺ�����\n" ;
+                result = "$n身形一晃閃過一邊，已然輕易地避開了$N的攻擊。\n" ;
 
                 return ([ "msg" : result, "damage" : -damage ]);
         }
         else if ( random(ap+3*dp) > ap ) {
-                result = "$n����һ������һ�ߣ�$Nֻ��������������ȫ�ޡ�\n";
+                result = "$n身形一晃閃過一邊，$N只覺得用力處力道全無。\n";
 
                 return ([ "msg" : result, "damage" : -damage ]);
         }

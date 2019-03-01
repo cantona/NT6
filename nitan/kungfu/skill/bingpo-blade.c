@@ -6,13 +6,13 @@ inherit SKILL;
 
 
 string *action_msg = ({
-        "$N�ḧ���е�$w��ͻȻ��ֻ������һ������������һ���������̹ǵĺ�����ȻϮ����$n��$l",
-        "ֻ��$N����$w�����μ��壬������$n����֮�ʣ�ͻȻ����һ����$n����б������",
-        "$Nб�����𣬴���һƬƥ��Ҳ�Ƶĵ������$n��$l",
-        "$NͻȻһ���߳������е�$w����һ�������Բ���������ĵ����ס��$n��ͷ�����ж���$n�ĺ���",
-        "ֻ��$N��ɫһ����һ�С�ǧ����⡹ʹ������ü�ݵ��Ÿ���\n$n������ѪҺ���Ʊ����޾��ĵ��ƶ�ס��������Ҳ�·�Ҫ�����ȥ",
-        "$N���ƽ�������$w�ϴ����ĺ���ȴԽ��ԽŨ��������ʱ��\n$n����ͷһ����һ������⻹Ҫ�����ĺ����Ѵ�����$n$l",
-        "$NҲ�������߶�ʮһ���߾�$w�����ؾ���һ����$nӭ��ն�£�\n��Ȼֻ��һ�������µĵ���ȴ����Ų����ĺ���������$n��һ����·",
+        "$N輕撫手中的$w，突然間只見刀光一閃，再閃，又一閃！三道刺骨的寒氣已然襲上了$n的$l",
+        "只見$N倒提$w，身形急沖，就在與$n錯身之際，突然反手一刀從$n後腦斜劈而下",
+        "$N斜身飛起，帶出一片匹練也似的刀光卷向$n的$l",
+        "$N突然一腳踢出，手中的$w劃出一道輕妙的圓弧，淡淡的刀光封住了$n的頭臉，切斷了$n的呼吸",
+        "只見$N臉色一寒，一招「千裡冰封」使出，從眉捷到腳跟，\n$n周身的血液都似被這無盡的刀勢凍住，而生命也仿佛要離體而去",
+        "$N刀勢漸慢，而$w上帶出的寒氣卻越來越濃。就在這時，\n$n的心頭一緊，一道比針尖還要銳利的寒氣已刺上了$n$l",
+        "$N也不管三七二十一，高舉$w呼！地就是一刀向$n迎面斬下！\n雖然只有一刀，可怕的刀勢卻似萬古不化的寒冰封死了$n的一切退路",
 });
 
 
@@ -21,12 +21,12 @@ int valid_learn(object me)
         object ob;
 
         if( query("max_neili", me)<100 )
-                return notify_fail("�������������û�а취�����Ǻ���������Щ���������ɡ�\n");
+                return notify_fail("你的內力不夠，沒有辦法練冰魄寒刀，多練些內力再來吧。\n");
 
         if( !(ob=query_temp("weapon", me) )
          || query("skill_type", ob) != "blade"
          || query("material", ob) != "ice" )
-                return notify_fail("���������һ�ѱ����ĵ����������Ǻ�����\n");
+                return notify_fail("你必須先找一把冰做的刀才能練冰魄寒刀。\n");
 
         return 1;
 }
@@ -43,7 +43,7 @@ mapping query_action(object me, object weapon)
                 "damage": 260 + random(30),
                 "dodge" : -60 + random(10),
                 "parry" : -60 + random(10),
-                "damage_type" : random(2) ? "����" : "����",
+                "damage_type" : random(2) ? "挫傷" : "割傷",
         ]);
 }
 
@@ -51,11 +51,11 @@ int practice_skill(object me)
 {
         if( query("qi", me)<110
              || query("neili", me)<110 )
-                return notify_fail("�����������������û�а취��ϰ���Ǻ�����\n");
+                return notify_fail("你的內力或氣不夠，沒有辦法練習冰魄寒刀。\n");
 
         me->receive_damage("qi", 100);
         addn("neili", -100, me);
-        write("�㰴����ѧ����һ����Ǻ�����\n");
+        write("你按著所學練了一遍冰魄寒刀。\n");
         return 1;
 }
 
@@ -74,24 +74,24 @@ mixed hit_ob(object me, object victim, int damage_bonus)
         if (((int)me->query_skill("blade", 1)/2) > random((int)victim->query_skill("force", 1)))
         {
                 victim->receive_wound("qi", (300-damage_bonus));
-                msg = HIW "$NĬ�������������Ǻ����к����Ƴ���$nһ�����죬�ѱ����ˣ�\n\n"NOR;
+                msg = HIW "$N默運真氣，將冰魄寒刀中寒氣逼出，$n一個不察，已被凍傷！\n\n"NOR;
                 message_combatd(msg, me, victim);
 
         }
         switch(random(3)) {
         case 0:
                 victim->receive_damage("qi",damage_bonus/3*2);
-                msg = "ֻ��һ˿����������Ϣ���굽$n���ڣ�\n";
+                msg = "只見一絲寒氣無聲無息地鑽到$n體內！\n";
                 break;
 
         case 1:
                 victim->receive_damage("qi",damage_bonus/2);
-                msg = "$N��ʹ��������$n���˿�������һ��ǳǳ�İ�ӡ��\n";
+                msg = "$N暗使巧力，在$n的傷口上留下一道淺淺的白印！\n";
                 break;
 
         case 2:
                 victim->receive_damage("qi",damage_bonus);
-                msg = "$nͻȻ���������溮����...\n";
+                msg = "$n突然覺得體內奇寒難忍...\n";
                 break;
         }
 

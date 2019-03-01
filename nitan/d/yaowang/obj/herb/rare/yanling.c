@@ -2,12 +2,12 @@
 
 void create()
 {
-        set_name(NOR + MAG "Í·¶¥Ò»¿ÅÖé" NOR, ({ "trillium tschonoskii", "herb" }));
+        set_name(NOR + MAG "é ­é ‚ä¸€é¡†ç " NOR, ({ "trillium tschonoskii", "herb" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", NOR + WHT "Ö²ÎïÑÓÁä²İ(Trillium tschonoskii)µÄ¸ù¾¥»ò³ÉÊì¹ûÊµ¡£ÒòÕâÖÖÖ²ÎïÓĞ3Æ¬Ò¶ÂÖÉúÓÚ¾¥µÄ¶¥¶Ë£¬»¨µ¥ÉúÓÚÂÖÉúÒ¶Ö®ÉÏ£¬¿ª»¨ºó½á³öÔ²ÇòĞÎµÄ¹ûÊµ£¬³ÉÊìºóºÚ×ÏÉ« ......\n" NOR);
-                set("base_unit", "¿Å");
+                set("long", NOR + WHT "æ¤ç‰©å»¶é½¡è‰(Trillium tschonoskii)çš„æ ¹è–æˆ–æˆç†Ÿæœå¯¦ã€‚å› é€™ç¨®æ¤ç‰©æœ‰3ç‰‡è‘‰è¼ªç”Ÿäºè–çš„é ‚ç«¯ï¼ŒèŠ±å–®ç”Ÿäºè¼ªç”Ÿè‘‰ä¹‹ä¸Šï¼Œé–‹èŠ±å¾Œçµå‡ºåœ“çƒå½¢çš„æœå¯¦ï¼Œæˆç†Ÿå¾Œé»‘ç´«è‰² ......\n" NOR);
+                set("base_unit", "é¡†");
                 set("base_value", 300000);
                 set("base_weight", 20);
         }

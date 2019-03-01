@@ -1,4 +1,4 @@
-// huxiao.c »¢Ğ¥É½ÁÖ
+// huxiao.c è™å˜¯å±±æ—
 // gladiator
 
 #include <ansi.h>
@@ -15,34 +15,34 @@ int perform(object me, object target)
         extra = me->query_skill("huzhua-claw",1) + me->query_skill("claw", 1);    
         
         if( userp(me) && !query("can_perform/huzhua-claw/huxiao", me) )
-                return notify_fail("Äã»¹²»»áÊ¹ÓÃ¡¸»¢Ğ¥É½ÁÖ¡¹¡£\n");            
+                return notify_fail("ä½ é‚„ä¸æœƒä½¿ç”¨ã€Œè™å˜¯å±±æ—ã€ã€‚\n");            
         
         if( !target ) target = offensive_target(me);
 
         if( !target || !me->is_fighting(target) )
-                return notify_fail("¡¸»¢Ğ¥É½ÁÖ¡¹Ö»ÄÜÔÚÕ½¶·ÖĞ¶Ô¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œè™å˜¯å±±æ—ã€åªèƒ½åœ¨æˆ°é¬¥ä¸­å°å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( objectp(query_temp("weapon", me)) )
-                return notify_fail("Ê¹ÓÃ¡¸»¢Ğ¥É½ÁÖ¡¹Ê±Ë«ÊÖ±ØĞë¿Õ×Å£¡\n");
+                return notify_fail("ä½¿ç”¨ã€Œè™å˜¯å±±æ—ã€æ™‚é›™æ‰‹å¿…é ˆç©ºè‘—ï¼\n");
 
         if( (int)me->query_skill("huzhua-claw", 1) < 120 )
-                return notify_fail("ÄãµÄ»¢×¦ÇÜÄÃÊÖ²»¹»æµÊì£¬²»»áÊ¹ÓÃ¡¸»¢Ğ¥É½ÁÖ¡¹¡£\n");
+                return notify_fail("ä½ çš„è™çˆªæ“’æ‹¿æ‰‹ä¸å¤ å«»ç†Ÿï¼Œä¸æœƒä½¿ç”¨ã€Œè™å˜¯å±±æ—ã€ã€‚\n");
 
         if( (int)me->query_skill("shaolin-xinfa", 1) < 120 )
-                return notify_fail("ÄãµÄÄÚ¹¦µÈ¼¶²»¹»£¬²»ÄÜÊ¹ÓÃ¡¸»¢Ğ¥É½ÁÖ¡¹¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸç­‰ç´šä¸å¤ ï¼Œä¸èƒ½ä½¿ç”¨ã€Œè™å˜¯å±±æ—ã€ã€‚\n");
 
         if( (int)me->query_dex() < 27 )
-                return notify_fail("ÄãµÄÉí·¨²»¹»Ç¿£¬²»ÄÜÊ¹ÓÃ¡¸»¢Ğ¥É½ÁÖ¡¹¡£\n");
+                return notify_fail("ä½ çš„èº«æ³•ä¸å¤ å¼·ï¼Œä¸èƒ½ä½¿ç”¨ã€Œè™å˜¯å±±æ—ã€ã€‚\n");
 
         if (me->query_skill_prepared("claw") != "huzhua-claw"
         || me->query_skill_mapped("claw") != "huzhua-claw")
-                return notify_fail("ÄãÏÖÔÚÎŞ·¨Ê¹ÓÃ¡¸»¢Ğ¥É½ÁÖ¡¹½øĞĞ¹¥»÷¡£\n");                                                                                 
+                return notify_fail("ä½ ç¾åœ¨ç„¡æ³•ä½¿ç”¨ã€Œè™å˜¯å±±æ—ã€é€²è¡Œæ”»æ“Šã€‚\n");                                                                                 
       
 
         if( query("neili", me)<600 )
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ£¬²»ÄÜÊ¹ÓÃ¡¸»¢Ğ¥É½ÁÖ¡¹¡£\n");
+                return notify_fail("ä½ ç¾åœ¨å…§åŠ›å¤ªå¼±ï¼Œä¸èƒ½ä½¿ç”¨ã€Œè™å˜¯å±±æ—ã€ã€‚\n");
 
-        msg = HIR "$N³¤Ğ¥Ò»Éù£¬½«ÄÚÁ¦¾ÛÓÚÊÖĞÄ£¬ÈçÃÍ»¢ÏÂÉ½Ò»°ãÆËÏò$n£¡\n" NOR;
+        msg = HIR "$Né•·å˜¯ä¸€è²ï¼Œå°‡å…§åŠ›èšäºæ‰‹å¿ƒï¼Œå¦‚çŒ›è™ä¸‹å±±ä¸€èˆ¬æ’²å‘$nï¼\n" NOR;
 
         message_vision(msg, me, target); 
 

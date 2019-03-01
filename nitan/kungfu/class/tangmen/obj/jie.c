@@ -4,14 +4,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIG "ĞÄÓĞÇ§Ç§½á" NOR, ({"qianqian jie"}));
+        set_name(HIG "å¿ƒæœ‰åƒåƒçµ" NOR, ({"qianqian jie"}));
         set_weight(50);
         if (clonep())
                 set_default_object(__FILE__);
         else
         {
-                set("long", "ÕâÊÇÒ»Ã¶ËÄ´¨ÌÆÃÅÃØÖÆµÄ°µÆ÷ĞÄÓĞÇ§Ç§½á£¬Ò»Ìõ·ÉË÷£¬ÓĞÎŞÊı¸ö½á£¬ÍşÁ¦ÎŞ±È¡£\n");
-                set("unit", "Ìõ");
+                set("long", "é€™æ˜¯ä¸€æšå››å·å”é–€ç§˜åˆ¶çš„æš—å™¨å¿ƒæœ‰åƒåƒçµï¼Œä¸€æ¢é£›ç´¢ï¼Œæœ‰ç„¡æ•¸å€‹çµï¼Œå¨åŠ›ç„¡æ¯”ã€‚\n");
+                set("unit", "æ¢");
                 set("value", 21);
         }
         setup();

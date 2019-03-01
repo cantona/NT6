@@ -6,7 +6,7 @@
 #pragma save_binary
 #include <ansi.h>
 
-#define SYNTAX  "Ö¸Áî¸ñÊ½£ºpurge [<Î´ÉÏÏßÌìÊı>] | <Ê¹ÓÃÕßĞÕÃû> because <Ô­Òò>\n"
+#define SYNTAX  "æŒ‡ä»¤æ ¼å¼ï¼špurge [<æœªä¸Šç·šå¤©æ•¸>] | <ä½¿ç”¨è€…å§“å> because <åŸå› >\n"
 
 inherit F_CLEAN_UP;
 
@@ -31,21 +31,21 @@ int main(object me, string arg)
                 return notify_fail(SYNTAX);
 
         if (wiz_level(me) <= wiz_level(name) && ! is_root(me))
-                return notify_fail("ÄãÃ»ÓĞÈ¨ÏŞÉ¾³ıÕâ¸öÈËÎï¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¬Šé™åˆªé™¤é€™å€‹äººç‰©ã€‚\n");
 
         seteuid(getuid());
         if (file_size(DATA_DIR + "login/" + name[0..0] + "/" + name + __SAVE_EXTENSION__) < 0)
-                return notify_fail("Ã»ÓĞÕâÎ»Ê¹ÓÃÕß¡£\n");
+                return notify_fail("æ²’æœ‰é€™ä½ä½¿ç”¨è€…ã€‚\n");
 
         if (ob = find_player(name))
-                CHANNEL_D->do_channel(this_object(), "rumor", "Ê¹ÓÃÕß" +
-                                      query("name", ob)+"±»"+
-                                      query("name", me)+"É¾³ıÁË¡£");
+                CHANNEL_D->do_channel(this_object(), "rumor", "ä½¿ç”¨è€…" +
+                                      query("name", ob)+"è¢«"+
+                                      query("name", me)+"åˆªé™¤äº†ã€‚");
 
         // remove the user from disk
         UPDATE_D->remove_user(name, 1);
 
-        tell_object(me, "Ê¹ÓÃÕß " + capitalize(name) + " É¾³ıµôÁË¡£\n");
+        tell_object(me, "ä½¿ç”¨è€… " + capitalize(name) + " åˆªé™¤æ‰äº†ã€‚\n");
         log_file("static/purge", sprintf("%s %s purged %s because %s.\n",
                  log_time(), geteuid(this_player(1)), name, reason));
 
@@ -61,11 +61,11 @@ protected int do_purge_players(object me, int day)
         
         seteuid(getuid());
         
-        if (day < 1) return notify_fail("Äú»¹ÊÇÊÖÏÂÁôÇé¡£±ğÁ¬ËûÃÇ¶¼É±ÁË¡£\n");
+        if (day < 1) return notify_fail("æ‚¨é‚„æ˜¯æ‰‹ä¸‹ç•™æƒ…ã€‚åˆ¥é€£ä»–å€‘éƒ½æ®ºäº†ã€‚\n");
         
-        message_system(sprintf("ÏµÍ³¿ªÊ¼ÕûÀíÍæ¼Ò´¢´æµµÖĞ£¬²¢Çå³ı³¬¹ı %d Ìì²»ÉÏÏßµÄÊ¹ÓÃÕß...", day));
-        write(HIG "ÏÖÔÚÏµÍ³½«¼ì²éËùÓĞÍæ¼Ò£¬ÉÔºó»ã±¨¡£\n"
-              HIG "½ø¶È£º" + process_bar(0) + "\n");
+        message_system(sprintf("ç³»çµ±é–‹å§‹æ•´ç†ç©å®¶å„²å­˜æª”ä¸­ï¼Œä¸¦æ¸…é™¤è¶…é %d å¤©ä¸ä¸Šç·šçš„ä½¿ç”¨è€…...", day));
+        write(HIG "ç¾åœ¨ç³»çµ±å°‡æª¢æŸ¥æ‰€æœ‰ç©å®¶ï¼Œç¨å¾ŒåŒ¯å ±ã€‚\n"
+              HIG "é€²åº¦ï¼š" + process_bar(0) + "\n");
         
         if (me)
         {
@@ -92,7 +92,7 @@ protected int do_purge_players(object me, int day)
                                           
                                 if (! arrayp(info) || sizeof(info) < 3)
                                         continue;
-                                        // ¿ÉÄÜÃ»ÓĞÕâ¸öÎÄ¼ş
+                                        // å¯èƒ½æ²’æœ‰é€™å€‹æ–‡ä»¶
                                 
                                 if ((time()-(int)info[1]) / 86400 >= day && ! objectp(find_player(name))) 
                                 {
@@ -107,19 +107,19 @@ protected int do_purge_players(object me, int day)
                 }
                 ppl_cnt += j;
                 message("system", ESC + "[1A" + ESC + "[256D"
-                                  HIG "½ø¶È£º" + process_bar((i + 1) * 100 / sizeof(dir)) +
-                                   "\n" + (me ? HIR "Ö´ĞĞÖĞ" NOR "> " : ""),
+                                  HIG "é€²åº¦ï¼š" + process_bar((i + 1) * 100 / sizeof(dir)) +
+                                   "\n" + (me ? HIR "åŸ·è¡Œä¸­" NOR "> " : ""),
                                    me ? me : filter_array(all_interactive(), (: wizardp :)));
         }
-        message_system("ÏµÍ³ÕûÀíÅúÁ¿µµ°¸´¦ÀíÍê±Ï£¬Çë¼ÌĞøÓÎÏ·¡£\n" ESC + "[K");  
+        message_system("ç³»çµ±æ•´ç†æ‰¹é‡æª”æ¡ˆè™•ç†å®Œç•¢ï¼Œè«‹ç¹¼çºŒéŠæˆ²ã€‚\n" ESC + "[K");  
         if (me)
         {
                 me->detach_system();
         }
         
-        write(HIG "Ô­À´×Ü¹²ÓĞ " + ppl_cnt + " Î»Ê¹ÓÃÕß¡£\n" NOR);
-        write(HIG "ÓĞ " + count + " ¸ö³¬¹ı " + day + " ÌìÎ´ÉÏÏßµÄÊ¹ÓÃÕß±»Çå³ıµôÁË¡£\n" NOR);
-        write(HIG "ÏÖÔÚ×Ü¹²ÓĞ " + (ppl_cnt - count) + " Î»Ê¹ÓÃÕß¡£\n" NOR);
+        write(HIG "åŸä¾†ç¸½å…±æœ‰ " + ppl_cnt + " ä½ä½¿ç”¨è€…ã€‚\n" NOR);
+        write(HIG "æœ‰ " + count + " å€‹è¶…é " + day + " å¤©æœªä¸Šç·šçš„ä½¿ç”¨è€…è¢«æ¸…é™¤æ‰äº†ã€‚\n" NOR);
+        write(HIG "ç¾åœ¨ç¸½å…±æœ‰ " + (ppl_cnt - count) + " ä½ä½¿ç”¨è€…ã€‚\n" NOR);
         
         return 1;
 
@@ -128,9 +128,9 @@ protected int do_purge_players(object me, int day)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½£ºpurge [<Î´ÉÏÏßÌìÊı>] | <Ê¹ÓÃÕßĞÕÃû> because <Ô­Òò>
+æŒ‡ä»¤æ ¼å¼ï¼špurge [<æœªä¸Šç·šå¤©æ•¸>] | <ä½¿ç”¨è€…å§“å> because <åŸå› >
 
-Çå³ıÒ»¸öÊ¹ÓÃÕß»òÇå³ı³¬¹ıÒ»¶¨ÌìÊı²»ÔøÉÏÏßµØÊ¹ÓÃÕß¡£
+æ¸…é™¤ä¸€å€‹ä½¿ç”¨è€…æˆ–æ¸…é™¤è¶…éä¸€å®šå¤©æ•¸ä¸æ›¾ä¸Šç·šåœ°ä½¿ç”¨è€…ã€‚
 HELP );
     return 1;
 }

@@ -4,18 +4,18 @@ inherit HAMMER;
 
 void create()
 {
-        set_name( HIY  "ÈÕÔÂ½ğÂÖ" NOR,({ "riyue jinlun" ,"lun" ,"jinlun" }));
+        set_name( HIY  "æ—¥æœˆé‡‘è¼ª" NOR,({ "riyue jinlun" ,"lun" ,"jinlun" }));
         set_weight(5000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
+                set("unit", "æŠŠ");
                 set("unique", 1);
-                set("long",HIY"ÕâÊÇÒ»±ú½ğ¹âÉÁÉÁµÄ·¨ÂÖ¡£\n" NOR);
+                set("long",HIY"é€™æ˜¯ä¸€æŸ„é‡‘å…‰é–ƒé–ƒçš„æ³•è¼ªã€‚\n" NOR);
                 set("value", 10000);
                 set("material", "gold");
-                set("wield_msg", "$N¡¸à§¡¹µÄÒ»Éù³é³öÒ»±ú$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg","$N½«ÊÖÖĞµÄ$n·Å»ØÑü¼ä¡£\n");
+                set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€è²æŠ½å‡ºä¸€æŸ„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg","$Nå°‡æ‰‹ä¸­çš„$næ”¾å›è…°é–“ã€‚\n");
         }
         init_hammer(200);
         setup();

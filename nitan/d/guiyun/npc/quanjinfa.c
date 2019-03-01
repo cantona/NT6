@@ -5,12 +5,12 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("È«½ð·¢", ({ "quan jinfa", "quan" }));
-        set("title", "½­ÄÏÆßÏÀ");
-        set("nickname", HIC"ÄÖÊÐÏÀÒþ"NOR);
-        set("long", "ÄÇÈËÎå¶ÌÉí²Ä£¬Í·´÷Ð¡Õ±Ã±£¬°×¾»ÃæÆ¤£¬ÊÖÀïÌáÁËÒ»¸Ë³Ó£¬Ò»
-¸öÖñÂ¨£¬ËÆÊÇ¸öÐ¡ÉÌ··¡£\n");
-        set("gender", "ÄÐÐÔ");
+        set_name("å…¨é‡‘ç™¼", ({ "quan jinfa", "quan" }));
+        set("title", "æ±Ÿå—ä¸ƒä¿ ");
+        set("nickname", HIC"é¬§å¸‚ä¿ éš±"NOR);
+        set("long", "é‚£äººäº”çŸ­èº«æï¼Œé ­æˆ´å°æ°ˆå¸½ï¼Œç™½å‡ˆé¢çš®ï¼Œæ‰‹è£¡æäº†ä¸€æ¡¿ç§¤ï¼Œä¸€
+å€‹ç«¹ç°ï¼Œä¼¼æ˜¯å€‹å°å•†è²©ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 25);
         set("attitude", "peaceful");
         set("class", "fighter");
@@ -45,17 +45,17 @@ void create()
         map_skill("parry", "zhongping-qiang");
 
         set("inquiry", ([
-                "¹ù¾¸" : "¾¸¶ùÊÇÎÒÃÇµÄ¹ÔÍ½¶ù£¡\n",
-                "½­ÄÏÆßÏÀ" : "ÆßÏÀ¿É²»¸Òµ±£¬ÎÒÃÇÆßÐÖÃÃ½­ºþÉÏÓÐ¸ö·ËºÅ½Ð½­ÄÏÆß¹Ö£¡\n",
-                "½­ÄÏÆß¹Ö" : "Æß¹ÖÒ²ÊÇÄã½ÐµÄ£¿£¡\n",
-                "Çð´¦»ú" : "ÇðµÀ³¤ºÀÏÀÕÌÒå£¬ÊÇÌõºº×Ó£¡\n",
-                "¿ÂÕò¶ñ" : "ÄÇÊÇÎÒ´ó¸ç¡£\n",
-                "Öì´Ï"   : "ÄÇÊÇÎÒ¶þ¸ç¡£\n",
-                "º«±¦¾Ô"   : "ÄÇÊÇÎÒÈý¸ç¡£\n",
-                "ÄÏÏ£ÈÊ"   : "ÄÇÊÇÎÒËÄ¸ç¡£\n",
-                "ÕÅ°¢Éú"   : "ÄÇÊÇÎÒÎå¸ç¡£\n",
-                "È«½ð·¢"   : "¾ÍÊÇÎÒÁË¡£\n",
-                "º«Ð¡Ó¨"   : "ÄÇÊÇÎÒÆßÃÃ¡£\n",
+                "éƒ­é–" : "é–å…’æ˜¯æˆ‘å€‘çš„ä¹–å¾’å…’ï¼\n",
+                "æ±Ÿå—ä¸ƒä¿ " : "ä¸ƒä¿ å¯ä¸æ•¢ç•¶ï¼Œæˆ‘å€‘ä¸ƒå…„å¦¹æ±Ÿæ¹–ä¸Šæœ‰å€‹åŒªè™Ÿå«æ±Ÿå—ä¸ƒæ€ªï¼\n",
+                "æ±Ÿå—ä¸ƒæ€ª" : "ä¸ƒæ€ªä¹Ÿæ˜¯ä½ å«çš„ï¼Ÿï¼\n",
+                "ä¸˜è™•æ©Ÿ" : "ä¸˜é“é•·è±ªä¿ ä»—ç¾©ï¼Œæ˜¯æ¢æ¼¢å­ï¼\n",
+                "æŸ¯éŽ®æƒ¡" : "é‚£æ˜¯æˆ‘å¤§å“¥ã€‚\n",
+                "æœ±è°"   : "é‚£æ˜¯æˆ‘äºŒå“¥ã€‚\n",
+                "éŸ“å¯¶é§’"   : "é‚£æ˜¯æˆ‘ä¸‰å“¥ã€‚\n",
+                "å—å¸Œä»"   : "é‚£æ˜¯æˆ‘å››å“¥ã€‚\n",
+                "å¼µé˜¿ç”Ÿ"   : "é‚£æ˜¯æˆ‘äº”å“¥ã€‚\n",
+                "å…¨é‡‘ç™¼"   : "å°±æ˜¯æˆ‘äº†ã€‚\n",
+                "éŸ“å°ç‘©"   : "é‚£æ˜¯æˆ‘ä¸ƒå¦¹ã€‚\n",
         ]));
 
         setup();

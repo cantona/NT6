@@ -10,14 +10,14 @@ void death_msg();
 
 void create()
 {
-        set_name("Ğ¡ÁúÅ®", ({ "xiao longnv",}));
-        set("title", HIR "À§ÓÚÇé»¨¹ÈµÄ" NOR);
-        set("gender", "Å®ĞÔ");
+        set_name("å°é¾å¥³", ({ "xiao longnv",}));
+        set("title", HIR "å›°äºæƒ…èŠ±è°·çš„" NOR);
+        set("gender", "å¥³æ€§");
         set("age", 22);
         set("long", @LONG
-ËıÒ»Éú°®´©°×ÒÂ£¬µ±ÕæÈç·ç·÷ÓñÊ÷£¬Ñ©¹üÇí°ú£¬
-¼æÖ®ÉúĞÔÇåÀä£¬Êµµ±µÃÆğ¡°Àä½şÈÜÈÜÔÂ¡±µÄĞÎ
-Èİ¡£
+å¥¹ä¸€ç”Ÿæ„›ç©¿ç™½è¡£ï¼Œç•¶çœŸå¦‚é¢¨æ‹‚ç‰æ¨¹ï¼Œé›ªè£¹ç“Šè‹ï¼Œ
+å…¼ä¹‹ç”Ÿæ€§æ¸…å†·ï¼Œå¯¦ç•¶å¾—èµ·â€œå†·æµ¸æº¶æº¶æœˆâ€çš„å½¢
+å®¹ã€‚
 LONG);
         set("attitude", "friendly");
         set("str", 21);
@@ -103,8 +103,8 @@ LONG);
         ]));
 
         set("drops", ([
-                "RA&RANDOM40"    :       100,   // µÍ¼¶ÆÕÍ¨×°±¸
-                "RA&RANDOM50"    :       40,    // µÍ¼¶ÆÕÍ¨×°±¸
+                "RA&RANDOM40"    :       100,   // ä½ç´šæ™®é€šè£å‚™
+                "RA&RANDOM50"    :       40,    // ä½ç´šæ™®é€šè£å‚™
                 "FI&/clone/goods/enchant-scroll" :   20,
                 "FI&/clone/goods/sun"    :   20,
                 "FI&/clone/goods/moon"   :   20,
@@ -141,7 +141,7 @@ mixed hit_ob(object me, object ob, int damage_bouns)
 {
 	ob->start_busy(5 + random(6));
 	me->receive_wound("qi", 900 + random(900), ob);
-        return HIY "$N" HIY "½¿ºÈÒ»Éù£¬·ÜÁ¦·´¿¹£¬¾¹±ÆµÃ$n" HIY "ÊÖÃ¦½ÅÂÒ¡£\n" NOR;
+        return HIY "$N" HIY "å¬Œå–ä¸€è²ï¼Œå¥®åŠ›åæŠ—ï¼Œç«Ÿé€¼å¾—$n" HIY "æ‰‹å¿™è…³äº‚ã€‚\n" NOR;
 }
 
 void heart_beat()
@@ -159,11 +159,11 @@ void random_move()
         if (time() - query_temp("born_time") > 1800)
         {
                 env = environment(this_object());
-                message_vision("$N¼±¼±Ã¦Ã¦µÄ×ßÁË¡£\n", this_object());
+                message_vision("$Næ€¥æ€¥å¿™å¿™çš„èµ°äº†ã€‚\n", this_object());
 
-                CHANNEL_D->channel_broadcast("mess", "ÌıËµ" +
-                        env->short() + HIW "(" + LOOK_CMD->locate(base_name(env)) + ")Ò»´ø³öÏÖµÄ" +
-                        HIR + this_object()->short() + HIG "ÏûÊ§ÁË¡£\n" NOR);
+                CHANNEL_D->channel_broadcast("mess", "è½èªª" +
+                        env->short() + HIW "(" + LOOK_CMD->locate(base_name(env)) + ")ä¸€å¸¶å‡ºç¾çš„" +
+                        HIR + this_object()->short() + HIG "æ¶ˆå¤±äº†ã€‚\n" NOR);
 
                 destruct(this_object());
                 return;
@@ -174,5 +174,5 @@ void random_move()
 void death_msg()
 {
         command("chat* protect1");
-        CHANNEL_D->channel_broadcast("rumor", "ÌıËµ" + name() + HIM "±»Éñµñ¾È×ß ¡­¡­" NOR);
+        CHANNEL_D->channel_broadcast("rumor", "è½èªª" + name() + HIM "è¢«ç¥é›•æ•‘èµ° â€¦â€¦" NOR);
 }

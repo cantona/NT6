@@ -6,12 +6,12 @@ inherit NPC;
 
 void create()
 {
-        set_name("´º»¨", ({"chun hua"}));
-        set("gender", "Å®ĞÔ");
+        set_name("æ˜¥èŠ±", ({"chun hua"}));
+        set("gender", "å¥³æ€§");
         set("age", 18);
         set("shen_type", -1);
-        set("long", "ÇàÇàµÄÊÌÅ®£¬Ê®Æß°ËµÄÄê¼Í£¬Êµ¼ÊÉÏÊÇÄ§½ÌÌìÃÀ¹¬Ö÷ÅÉÔÚÇàÇàÉí±ßµÄÎÔµ×¡£\n"
-                    "´º»¨Ğ¦µÄÊ±ºò£¬¾ÍÏñÊÇ²ÓÀÃµÄ´º»¨¡£\n");
+        set("long", "é’é’çš„ä¾å¥³ï¼Œåä¸ƒå…«çš„å¹´ç´€ï¼Œå¯¦éš›ä¸Šæ˜¯é­”æ•™å¤©ç¾å®®ä¸»æ´¾åœ¨é’é’èº«é‚Šçš„è‡¥åº•ã€‚\n"
+                    "æ˜¥èŠ±ç¬‘çš„æ™‚å€™ï¼Œå°±åƒæ˜¯ç‡¦çˆ›çš„æ˜¥èŠ±ã€‚\n");
         set("attitude", "peaceful");
 
         set("per", 26);
@@ -56,7 +56,7 @@ void create()
 
         prepare_skill("strike", "moshen-zhangfa");
         
-        create_family("Ä§½Ì", 42, "µÜ×Ó");
+        create_family("é­”æ•™", 42, "å¼Ÿå­");
 
         set_temp("apply/attack", 180);
         set_temp("apply/damage", 180);

@@ -1,31 +1,31 @@
 // This program is a part of NITAN MudLIB
 // templated.c
 
-// Ä£°å¾«Áé¹¤×÷µÄÁ÷³Ì£º
+// æ¨¡æ¿ç²¾éˆå·¥ä½œçš„æµç¨‹ï¼š
 
-// Ò»¡¢´´½¨Îï¼ş·½Ê½
-//  1¡¢»ñµÃÄ£°å»ù×¼ÎÄ¼şÃû£¬´´½¨»ù×¼Îï¼ş¡£
-//  2¡¢»ñµÃÄ£°åÎÄ¼ş½«Òª´¦ÀíµÄ DBASE µÄ¸ñÊ½¡£
-//  3¡¢»ñµÃÎï¼şµÄËùÓĞÊı¾İ£¬¸ù¾İ´«ÈëµÄ²ÎÊı(arg)ÕÒµ½±¾´ÎÎï¼şµÄÊı¾İ¡£
-//  4¡¢Èç¹ûÓĞ×¨ÃÅµÄ»ù×¼Îï¼ş£¬Ôò´´½¨×¨ÃÅµÄ¡£
-//  5¡¢Éè¶¨ DBASE(m[DBASE_KEY1] = DBASE VALUE)¡£
-//  6¡¢ºô½Ğ»ù×¼Îï¼şÖĞµÄº¯Êı(call_other(ob, "function", argument))¡£
-//  7¡¢·µ»Ø¸ÃÎï¼ş¡£
+// ä¸€ã€å‰µå»ºç‰©ä»¶æ–¹å¼
+//  1ã€ç²å¾—æ¨¡æ¿åŸºæº–æ–‡ä»¶åï¼Œå‰µå»ºåŸºæº–ç‰©ä»¶ã€‚
+//  2ã€ç²å¾—æ¨¡æ¿æ–‡ä»¶å°‡è¦è™•ç†çš„ DBASE çš„æ ¼å¼ã€‚
+//  3ã€ç²å¾—ç‰©ä»¶çš„æ‰€æœ‰æ•¸æ“šï¼Œæ ¹æ“šå‚³å…¥çš„åƒæ•¸(arg)æ‰¾åˆ°æœ¬æ¬¡ç‰©ä»¶çš„æ•¸æ“šã€‚
+//  4ã€å¦‚æœæœ‰å°ˆé–€çš„åŸºæº–ç‰©ä»¶ï¼Œå‰‡å‰µå»ºå°ˆé–€çš„ã€‚
+//  5ã€è¨­å®š DBASE(m[DBASE_KEY1] = DBASE VALUE)ã€‚
+//  6ã€å‘¼å«åŸºæº–ç‰©ä»¶ä¸­çš„å‡½æ•¸(call_other(ob, "function", argument))ã€‚
+//  7ã€è¿”å›è©²ç‰©ä»¶ã€‚
 
-// Ä£°åÎÄ¼ş×¼±¸µÄÊı¾İ½á¹¹£º
+// æ¨¡æ¿æ–‡ä»¶æº–å‚™çš„æ•¸æ“šçµæ§‹ï¼š
 // mixed *dbase_format = ({ DBASE_KEY1, DBASE_KEY2, });
 // mapping object_data = ({ "arg1" : ({ ({ DBASE_VALUE1, DBASE_VALUE2, }),
 //                         ([ "function1" : ({ argument1, }) ]), }) });
-// »òÏÂÃæ½á¹¹
+// æˆ–ä¸‹é¢çµæ§‹
 // mapping object_data = ({ "arg1" : ({ ([ DBASE_KEY1 : DBASE_VALUE1, DBASE_KEY2 : DBASE_VALUE2, ]),
 //                         ([ "function1" : ({ argument1, }) ]), , "extra_base_file", }) });
 
-// Ä£°åÎï¼şÌá¹©µÄ½Ó¿Úº¯Êı£º
-// query_base_file()       - »ù×¼Îï¼şÃû
-// query_dbase_format()    - dbase ¸ñÊ½
-// query_function_format() - function ¸ñÊ½
-// query_entire_data()     - ËùÓĞÊı¾İ
-// query_template_data()   - Ö¸¶¨µÄÊı¾İ
+// æ¨¡æ¿ç‰©ä»¶æä¾›çš„æ¥å£å‡½æ•¸ï¼š
+// query_base_file()       - åŸºæº–ç‰©ä»¶å
+// query_dbase_format()    - dbase æ ¼å¼
+// query_function_format() - function æ ¼å¼
+// query_entire_data()     - æ‰€æœ‰æ•¸æ“š
+// query_template_data()   - æŒ‡å®šçš„æ•¸æ“š
 
 #include <ansi.h>
 #include <template.h>
@@ -49,22 +49,22 @@
 #define monitor(x)
 #endif
 
-// ´´½¨Îï¼ş
+// å‰µå»ºç‰©ä»¶
 varargs object create_object(string file, string arg, mapping dbase_data,
                              int model, mapping function_data)
 {
-        object  tob;     // Ä£°åÎï¼ş
-        object  ob;      // ´´½¨µÄÎï¼ş
+        object  tob;     // æ¨¡æ¿ç‰©ä»¶
+        object  ob;      // å‰µå»ºçš„ç‰©ä»¶
 
-        string  template;// Ä£°åÎÄ¼şÃû
-        string  type;    // ËùÊôÀàĞÍ
+        string  template;// æ¨¡æ¿æ–‡ä»¶å
+        string  type;    // æ‰€å±¬é¡å‹
 
-        int     full;    // ÊÇ·ñÔÚ data ÖĞÖ¸¶¨ key ºÍ value
-        mixed   format;  // dbase¡¢function ¸ñÊ½
-        mixed   data;    // Êı¾İ
-        mixed   key;     // Êı¾İ(mapping)ÖĞµÄÒ»¸ö key
-        mapping dbase;   // Îï¼şµÄ dbase
-        int     i, max;  // ¼ÆÊıÆ÷
+        int     full;    // æ˜¯å¦åœ¨ data ä¸­æŒ‡å®š key å’Œ value
+        mixed   format;  // dbaseã€function æ ¼å¼
+        mixed   data;    // æ•¸æ“š
+        mixed   key;     // æ•¸æ“š(mapping)ä¸­çš„ä¸€å€‹ key
+        mapping dbase;   // ç‰©ä»¶çš„ dbase
+        int     i, max;  // è¨ˆæ•¸å™¨
         object  shadow_ob;
 
         if( file[<2..<1] != FILE_EXTENSION )
@@ -78,7 +78,7 @@ varargs object create_object(string file, string arg, mapping dbase_data,
                 return 0;
 
         if( !sscanf(file, TEMPLATE_DIR "%s.c", template) ) {
-                // ·ÇÄ£°åÎÄ¼ş´´ÔìÎï¼ş
+                // éæ¨¡æ¿æ–‡ä»¶å‰µé€ ç‰©ä»¶
                 if( !objectp(ob = new(file)) )
                         return 0;
 
@@ -103,7 +103,7 @@ varargs object create_object(string file, string arg, mapping dbase_data,
                         dbase["set_data"] = 1;
                 }
 
-                // ÉèÖÃÃû³Æ
+                // è¨­ç½®åç¨±
                 if( member_array(F_NAME, deep_inherit_list(ob)) != -1 ) {
                         if( !undefinedp(dbase_data["name"]) )
                                 ob->set_name(dbase_data["name"], ({ arg }));
@@ -123,34 +123,34 @@ varargs object create_object(string file, string arg, mapping dbase_data,
                 return ob;
         }
 
-        // Ä£°åÎÄ¼ş´´ÔìÎï¼ş
+        // æ¨¡æ¿æ–‡ä»¶å‰µé€ ç‰©ä»¶
         if( !arrayp(data = tob->query_template_data(arg)) || !sizeof(data) )
                 return 0;
 
-        // ÊÇ·ñÓĞ×¨ÃÅµÄ»ù×¼ÎÄ¼ş£¿
+        // æ˜¯å¦æœ‰å°ˆé–€çš„åŸºæº–æ–‡ä»¶ï¼Ÿ
         if( sizeof(data) > EXTRA_BASE_DATA )
                 file = data[EXTRA_BASE_DATA];
 
         if( sizeof(data) <= EXTRA_BASE_DATA || file_size(file) <= 0 ) {
-                // ÓĞÎŞ»ù×¼Îï¼şÎÄ¼ş
+                // æœ‰ç„¡åŸºæº–ç‰©ä»¶æ–‡ä»¶
                 if( !stringp(file = tob->query_base_file()))
                         return 0;
         }
 
-        // ¸ù¾İ»ù×¼ÎÄ¼ş´´½¨µÄÎï¼şÄÜ·ñ¼ÓÔØ£¿
+        // æ ¹æ“šåŸºæº–æ–‡ä»¶å‰µå»ºçš„ç‰©ä»¶èƒ½å¦åŠ è¼‰ï¼Ÿ
         if( !objectp(ob = new(file)) )
                 return 0;
 
-        // ÅäÖÃ dbase Êı¾İ
+        // é…ç½® dbase æ•¸æ“š
         if( !arrayp(format = tob->query_dbase_format()) || !sizeof(format) )
                 full = 1;
         else    full = 0;
 
-        // ½«Ä£°åÖĞµÄ dbase Êı¾İ×ªÈëÎï¼şÖĞ
+        // å°‡æ¨¡æ¿ä¸­çš„ dbase æ•¸æ“šè½‰å…¥ç‰©ä»¶ä¸­
         dbase = ob->query_entire_dbase();
         switch (full)
         {
-        // ²ÉÓÃÈ«¸ñÊ½Ä£Ê½
+        // æ¡ç”¨å…¨æ ¼å¼æ¨¡å¼
         case 1:
                 if( !mapp(data[DBASE_DATA]) ||
                     !sizeof(data[DBASE_DATA]) )
@@ -161,13 +161,13 @@ varargs object create_object(string file, string arg, mapping dbase_data,
                         dbase[key] = data[DBASE_DATA][key];
 
                 break;
-        // ²ÉÓÃ¸ñÊ½¶ÔÓ¦Ä£Ê½
+        // æ¡ç”¨æ ¼å¼å°æ‡‰æ¨¡å¼
         default:
                 if( !arrayp(format) )
                         return 0;
 
-                // Èç¹û¸ñÊ½ÖĞÖ»ÓĞÒ»Ïî£¬¶øÊı¾İÓÖ²»ÊÇÊı×éĞÍµÄ£¬
-                // ÔòÖ±½Ó°Ñ dbase ÖĞµÄÄÇÎ¨Ò»µÄ¸ñÊ½ÉèÎªÊı¾İ¡£
+                // å¦‚æœæ ¼å¼ä¸­åªæœ‰ä¸€é …ï¼Œè€Œæ•¸æ“šåˆä¸æ˜¯æ•¸çµ„å‹çš„ï¼Œ
+                // å‰‡ç›´æ¥æŠŠ dbase ä¸­çš„é‚£å”¯ä¸€çš„æ ¼å¼è¨­ç‚ºæ•¸æ“šã€‚
                 max = sizeof(format);
                 if( max == 1 && !arrayp(data[DBASE_DATA]) )
                         dbase[format[0]] = data[DBASE_DATA];
@@ -179,7 +179,7 @@ varargs object create_object(string file, string arg, mapping dbase_data,
                 break;
         }
 
-        // ´¦ÀíÍâ²¿´«ÈëµÄ dbase_data Êı¾İ
+        // è™•ç†å¤–éƒ¨å‚³å…¥çš„ dbase_data æ•¸æ“š
         if( sizeof(dbase_data) ) {
                 format = keys(dbase_data);
                 foreach( key in format ) {
@@ -201,7 +201,7 @@ varargs object create_object(string file, string arg, mapping dbase_data,
         }
 
         if( member_array(F_NAME, deep_inherit_list(ob)) != -1 ) {
-                // ÉèÖÃÃû³Æ
+                // è¨­ç½®åç¨±
                 if( !undefinedp(dbase_data["name"]) ) {
                         i = strsrch(template, "/") + 1;
                         type = template[i..<1];
@@ -213,41 +213,41 @@ varargs object create_object(string file, string arg, mapping dbase_data,
                 dbase["set_data"] = 1;
         }
 
-        // ÊÇ·ñÔ¤±¸ÁË function (Ä£°åÊı¾İµÄµÚ¶şÏî)µÄ¸ñÊ½£¿
-        // ÈôÎŞ£¬Ôò²ÉÓÃÈ«¸ñÊ½Ä£Ê½£¬¼´Ä£°åÊı¾İµÄÊ×ÏîÎª
-        // mapping¡£·ñÔò¾Í²ÉÓÃ array ¸ñÊ½¡£
+        // æ˜¯å¦é å‚™äº† function (æ¨¡æ¿æ•¸æ“šçš„ç¬¬äºŒé …)çš„æ ¼å¼ï¼Ÿ
+        // è‹¥ç„¡ï¼Œå‰‡æ¡ç”¨å…¨æ ¼å¼æ¨¡å¼ï¼Œå³æ¨¡æ¿æ•¸æ“šçš„é¦–é …ç‚º
+        // mappingã€‚å¦å‰‡å°±æ¡ç”¨ array æ ¼å¼ã€‚
         if( !arrayp(format = tob->query_function_format()) || !sizeof(format) )
                 full = 1;
         else
                 full = 0;
 
-        // ºô½Ğº¯ÊıÊı¾İ
-        // ¶ÔÎï¼şºô½ĞÄ£°åÖĞÖ¸¶¨µÄº¯Êı
+        // å‘¼å«å‡½æ•¸æ•¸æ“š
+        // å°ç‰©ä»¶å‘¼å«æ¨¡æ¿ä¸­æŒ‡å®šçš„å‡½æ•¸
         if( sizeof(data) > FUNCTION_DATA &&
            // (mapp(data[FUNCTION_DATA]) || arrayp(data[FUNCTION_DATA])) &&
            sizeof(data[FUNCTION_DATA]) ) {
-                // Ê¹ÓÃÈ«¸ñÊ½Ä£Ê½
+                // ä½¿ç”¨å…¨æ ¼å¼æ¨¡å¼
                 if( full ) {
                         format = keys(data[FUNCTION_DATA]);
 
                         foreach( key in format ) {
-                                monitor(sprintf("create_objectÖ´ĞĞ%O->%s(%O)", ob, key,
+                                monitor(sprintf("create_objectåŸ·è¡Œ%O->%s(%O)", ob, key,
                                                 data[FUNCTION_DATA][key]));
                                 call_other(ob, key, data[FUNCTION_DATA][key]);
                         }
-                } else { // Ê¹ÓÃ¸ñÊ½¶ÔÓ¦Ä£Ê½
+                } else { // ä½¿ç”¨æ ¼å¼å°æ‡‰æ¨¡å¼
                         if( !arrayp(format) )
                                 return 0;
 
-                        // Èç¹û¸ñÊ½ÖĞÖ»ÓĞÒ»Ïî£¬¶øÊı¾İÓÖ²»ÊÇÊı×éĞÍµÄ£¬
-                        // ÔòÖ±½ÓÒÔÕâÒ»ÏîÎª²ÎÊıºô½ĞÄÇ¸öº¯Êı¡£
+                        // å¦‚æœæ ¼å¼ä¸­åªæœ‰ä¸€é …ï¼Œè€Œæ•¸æ“šåˆä¸æ˜¯æ•¸çµ„å‹çš„ï¼Œ
+                        // å‰‡ç›´æ¥ä»¥é€™ä¸€é …ç‚ºåƒæ•¸å‘¼å«é‚£å€‹å‡½æ•¸ã€‚
                         if( sizeof(format) == 1 && !arrayp(data[FUNCTION_DATA]) )
                                 call_other(ob, format[0], data[FUNCTION_DATA]);
                         else {
                                 max = sizeof(format);
 
                                 for( i = 0; i < max; i++ ) {
-                                        // ÈôÕâ¸öº¯ÊıÎŞĞë²ÎÊı
+                                        // è‹¥é€™å€‹å‡½æ•¸ç„¡é ˆåƒæ•¸
                                         if( undefinedp(data[DBASE_DATA][i]) )
                                                 call_other(ob, format[i]);
                                         else
@@ -257,7 +257,7 @@ varargs object create_object(string file, string arg, mapping dbase_data,
                 }
         }
 
-        // ´¦ÀíÍâ²¿´«ÈëµÄ function_data Êı¾İ
+        // è™•ç†å¤–éƒ¨å‚³å…¥çš„ function_data æ•¸æ“š
         if( sizeof(function_data) ) {
                 dbase["function"] = function_data;
                 format = keys(function_data);
@@ -299,45 +299,45 @@ protected string prop_segment(mapping p, string path)
         return buf;
 }
 
-// ±àÒëÎªÎÄ¼ş
+// ç·¨è­¯ç‚ºæ–‡ä»¶
 varargs string create_file(string tfile, string arg, mapping dbase_data,
                            int model, mapping function_data)
 {
-        string  bfile;          // »ù×¼Îï¼şÎÄ¼şÃû
-        string  cfile;          // ´ı±àÒëµÄÎÄ¼şÃû
-        string  type;           // Îï¼şÀàĞÍ
+        string  bfile;          // åŸºæº–ç‰©ä»¶æ–‡ä»¶å
+        string  cfile;          // å¾…ç·¨è­¯çš„æ–‡ä»¶å
+        string  type;           // ç‰©ä»¶é¡å‹
         string  name;
 
-        string  template;       // Ä£°åÎÄ¼şÃû
-        string *content;        // ±àÒëµÄÎÄ¼şÄÚÈİ
-        string  content_str;    // ±àÒëµÄÎÄ¼şÄÚÈİ
-        string  content_line;   // ±àÒëÖĞÒ»ĞĞµÄÄÚÈİ
+        string  template;       // æ¨¡æ¿æ–‡ä»¶å
+        string *content;        // ç·¨è­¯çš„æ–‡ä»¶å…§å®¹
+        string  content_str;    // ç·¨è­¯çš„æ–‡ä»¶å…§å®¹
+        string  content_line;   // ç·¨è­¯ä¸­ä¸€è¡Œçš„å…§å®¹
 
-        int     i;              // ¼ÆÊıÆ÷
-        int     n;              // ÎÄ¼şĞĞÊı
+        int     i;              // è¨ˆæ•¸å™¨
+        int     n;              // æ–‡ä»¶è¡Œæ•¸
         int     l;
-        int     j;              // ¼ÆÊıÆ÷
-        int     k;              // dbase / º¯ÊıÊıÄ¿
-        string  t;              // µ±Ç°Ê±¼ä
+        int     j;              // è¨ˆæ•¸å™¨
+        int     k;              // dbase / å‡½æ•¸æ•¸ç›®
+        string  t;              // ç•¶å‰æ™‚é–“
 
-        int     comment_on;     // ÕıÔÚÊéĞ´×¢ÊÍ
-        int     dbase_on;       // ÕıÔÚÊéĞ´ dbase Êı¾İ
-        int     function_on;    // ÕıÔÚÊéĞ´º¯ÊıÊı¾İ
+        int     comment_on;     // æ­£åœ¨æ›¸å¯«æ³¨é‡‹
+        int     dbase_on;       // æ­£åœ¨æ›¸å¯« dbase æ•¸æ“š
+        int     function_on;    // æ­£åœ¨æ›¸å¯«å‡½æ•¸æ•¸æ“š
 
-        object  tob;            // Ä£°åÎï¼ş
+        object  tob;            // æ¨¡æ¿ç‰©ä»¶
         object  ob;
 
-        int     full_dbase;     // ÊÇ·ñÍêÕû dbase ¸ñÊ½
-        int     full_function;  // ÊÇ·ñÍêÕûº¯Êı¸ñÊ½
+        int     full_dbase;     // æ˜¯å¦å®Œæ•´ dbase æ ¼å¼
+        int     full_function;  // æ˜¯å¦å®Œæ•´å‡½æ•¸æ ¼å¼
 
-        string *dbase_format;   // dbase ¸ñÊ½
-        string *function_format;// º¯Êı¸ñÊ½
+        string *dbase_format;   // dbase æ ¼å¼
+        string *function_format;// å‡½æ•¸æ ¼å¼
         string  temp_str1;
         string  temp_str2;
 
-        mixed   data;           // Ä£°åÊı¾İ
-        mixed   format;         // dbase¡¢function ¸ñÊ½
-        mixed   key;            // Êı¾İ(mapping)ÖĞµÄÒ»¸ö key
+        mixed   data;           // æ¨¡æ¿æ•¸æ“š
+        mixed   format;         // dbaseã€function æ ¼å¼
+        mixed   key;            // æ•¸æ“š(mapping)ä¸­çš„ä¸€å€‹ key
         mixed   dbase;
 
         if( tfile[<2..<1] != FILE_EXTENSION )
@@ -366,9 +366,9 @@ varargs string create_file(string tfile, string arg, mapping dbase_data,
                         map_delete(dbase_data, "shadow_ob");
 
                 while( 1 ) {
-                        // Éú³É´ı±àÒëµÄÎÄ¼şÃû
+                        // ç”Ÿæˆå¾…ç·¨è­¯çš„æ–‡ä»¶å
                         cfile = sprintf("%sunknow/%s-%d.c", TEMPLATE_DATA, arg, time() + random(99999999));
-                        // ½«¿Õ¸ñÌæ»»Îª "_"
+                        // å°‡ç©ºæ ¼æ›¿æ›ç‚º "_"
                         cfile = replace_string(cfile, " ", CONNECT_CHAR);
                         if( file_size(cfile) == -1 )
                                 break;
@@ -384,7 +384,7 @@ varargs string create_file(string tfile, string arg, mapping dbase_data,
                 content_str = "";
 
                 for( i = 0; i < n; i++ ) {
-                        // ÕÒµ½´¦ÀíÍâ²¿´«Èë dbase_data Êı¾İµÄÎ»ÖÃ
+                        // æ‰¾åˆ°è™•ç†å¤–éƒ¨å‚³å…¥ dbase_data æ•¸æ“šçš„ä½ç½®
                         temp_str1 = content[i];
                         temp_str1 = replace_string(temp_str1, " ", "");
 
@@ -395,7 +395,7 @@ varargs string create_file(string tfile, string arg, mapping dbase_data,
                                 content[i] = sprintf("\tset_name(\"%s\", ({ \"%s\" }));",
                                                      name, arg);
 
-                        // ´¦ÀíÍâ²¿´«Èë dbase_data ºÍÎÄ¼ş±¾ÉíÓĞÖØµş²¿·Ö
+                        // è™•ç†å¤–éƒ¨å‚³å…¥ dbase_data å’Œæ–‡ä»¶æœ¬èº«æœ‰é‡ç–Šéƒ¨åˆ†
                         if( sizeof(dbase_data) ) {
                                 format = keys(dbase_data);
                                 foreach (key in format)
@@ -412,7 +412,7 @@ varargs string create_file(string tfile, string arg, mapping dbase_data,
                                                 else
                                                         dbase = dbase_data[key];
                                         }
-                                        // ÕâÀïÓĞ¸öÅÅ°æµÄÎÊÌâ
+                                        // é€™è£¡æœ‰å€‹æ’ç‰ˆçš„å•é¡Œ
                                         content[i] = sprintf("\tset\(\"%s\", %O\);",
                                                              key, dbase);
                                                              
@@ -461,13 +461,13 @@ varargs string create_file(string tfile, string arg, mapping dbase_data,
                 content_line = sprintf("// %s.c\n", replace_string(arg, " ", CONNECT_CHAR));
                 content_line += sprintf("// Create by TEMPLATE_D. %s.", t);
 
-                // Ğ´ÈëÒ»ĞĞ
+                // å¯«å…¥ä¸€è¡Œ
                 content_str += content_line + "\n";
 
                 for( i = 0; i < j; i++ )
                         content_str += content[i] + "\n";
 
-                // ´¦ÀíÍâ²¿´«Èë dbase_data Êı¾İ
+                // è™•ç†å¤–éƒ¨å‚³å…¥ dbase_data æ•¸æ“š
                 content_str += prop_segment(dbase_data, "");
                 /*
                 if( sizeof(dbase_data) ) {
@@ -481,35 +481,35 @@ varargs string create_file(string tfile, string arg, mapping dbase_data,
                 for( i = j; i < n; i++ )
                         content_str += content[i] + "\n";
 
-                // ¿Éreceive_summon½Ó¿Ú
+                // å¯receive_summonæ¥å£
                 content_str += @SUMMON
 int receive_summon(object me)
 {
         return ITEM_D->receive_summon(me, this_object());
 }
 
-// Òş²ØÎïÆ·
+// éš±è—ç‰©å“
 int hide_anywhere(object me)
 {
         return ITEM_D->hide_anywhere(me, this_object());
 }
 
 SUMMON;
-                // Éú³ÉÎÄ¼ş
+                // ç”Ÿæˆæ–‡ä»¶
                 write_file(cfile, content_str, 1);
 
-                // ·µ»ØÎÄ¼ş
+                // è¿”å›æ–‡ä»¶
                 return cfile;
         }
 
-        // Ä£°åÊı¾İÊÇ·ñ·ûºÏ¸ñÊ½£¿
+        // æ¨¡æ¿æ•¸æ“šæ˜¯å¦ç¬¦åˆæ ¼å¼ï¼Ÿ
         if( !arrayp(data = tob->query_template_data(arg)) || !sizeof(data))
                 return 0;
 
-        // ÊÇ·ñÓĞ×¨ÃÅµÄ»ù×¼ÎÄ¼ş£¿
+        // æ˜¯å¦æœ‰å°ˆé–€çš„åŸºæº–æ–‡ä»¶ï¼Ÿ
         if( sizeof(data) > EXTRA_BASE_DATA)
                 bfile = data[EXTRA_BASE_DATA];
-        // ·ñÔòÊ¹ÓÃÔ¤ÉèµÄ»ù×¼ÎÄ¼ş
+        // å¦å‰‡ä½¿ç”¨é è¨­çš„åŸºæº–æ–‡ä»¶
         else
                 bfile = tob->query_base_file();
 
@@ -528,31 +528,31 @@ SUMMON;
 
         while(1)
         {
-                // Éú³É´ı±àÒëµÄÎÄ¼şÃû
+                // ç”Ÿæˆå¾…ç·¨è­¯çš„æ–‡ä»¶å
                 cfile = sprintf("%s%s/%s-%d.c", TEMPLATE_DATA, template, arg, time() + random(99999999));
-                // ½«¿Õ¸ñÌæ»»Îª "_"
+                // å°‡ç©ºæ ¼æ›¿æ›ç‚º "_"
                 cfile = replace_string(cfile, " ", CONNECT_CHAR);
                 if( file_size(cfile) == -1)
                         break;
         }
 
-        // ×¼±¸±àÒëËùĞèÊı¾İ
+        // æº–å‚™ç·¨è­¯æ‰€éœ€æ•¸æ“š
 
-        // ÊÇ·ñÔ¤±¸ÁË dbase (Ä£°åÊı¾İµÄµÚÒ»Ïî)µÄ¸ñÊ½£¿
+        // æ˜¯å¦é å‚™äº† dbase (æ¨¡æ¿æ•¸æ“šçš„ç¬¬ä¸€é …)çš„æ ¼å¼ï¼Ÿ
         if( !arrayp(dbase_format = tob->query_dbase_format()) ||
             !sizeof(dbase_format))
                 full_dbase = 1;
         else
                 full_dbase = 0;
 
-        // ÊÇ·ñÔ¤±¸ÁËº¯Êı(Ä£°åÊı¾İµÄµÚ¶şÏî)µÄ¸ñÊ½£¿
+        // æ˜¯å¦é å‚™äº†å‡½æ•¸(æ¨¡æ¿æ•¸æ“šçš„ç¬¬äºŒé …)çš„æ ¼å¼ï¼Ÿ
         if( !arrayp(function_format = tob->query_function_format()) ||
             !sizeof(function_format))
                 full_function = 1;
         else
                 full_function = 0;
 
-        // ¿ªÊ¼±àÒë
+        // é–‹å§‹ç·¨è­¯
 
         assure_file(cfile);
 
@@ -569,14 +569,14 @@ SUMMON;
 
         for (i = 0; i < n; i++)
         {
-                // ÊéĞ´×¢ÊÍ
+                // æ›¸å¯«æ³¨é‡‹
                 if( strsrch(content[i], COMMENT_ENTRY) != -1 && !comment_on)
                 {
                         comment_on = 1;
                         content_line = sprintf("// %s.c\n", replace_string(arg, " ", CONNECT_CHAR));
                         content_line += sprintf("// Create by TEMPLATE_D. %s.", t);
 
-                        // Ğ´ÈëÒ»ĞĞ
+                        // å¯«å…¥ä¸€è¡Œ
                         content_str += content_line + "\n";
                         continue;
                 }
@@ -589,12 +589,12 @@ SUMMON;
                         continue;
                 }
 
-                // ÊéĞ´ dbase Êı¾İ
+                // æ›¸å¯« dbase æ•¸æ“š
                 if( strsrch(content[i], DBASE_ENTRY) != -1)
                 {
                         dbase_on = 1;
 
-                        // Ê¹ÓÃ¸ñÊ½¶ÔÓ¦Ä£Ê½
+                        // ä½¿ç”¨æ ¼å¼å°æ‡‰æ¨¡å¼
                         if( !full_dbase)
                         {
                                 if( !arrayp(dbase_format))
@@ -652,7 +652,7 @@ SUMMON;
                                         }
                                 }
                         } else
-                        // Ê¹ÓÃÈ«¸ñÊ½Ä£Ê½
+                        // ä½¿ç”¨å…¨æ ¼å¼æ¨¡å¼
                         {
                                 if( !mapp(data[DBASE_DATA]) || !sizeof(data[DBASE_DATA]))
                                         continue;
@@ -704,12 +704,12 @@ SUMMON;
                         continue;
                 }
 
-                // ÊéĞ´º¯ÊıÊı¾İ
+                // æ›¸å¯«å‡½æ•¸æ•¸æ“š
                 if( strsrch(content[i], FUNCTION_ENTRY) != -1)
                 {
                         function_on = 1;
 
-                        // Ê¹ÓÃ¸ñÊ½¶ÔÓ¦Ä£Ê½
+                        // ä½¿ç”¨æ ¼å¼å°æ‡‰æ¨¡å¼
                         if( !full_function)
                         {
                                 k = sizeof(function_format);
@@ -728,7 +728,7 @@ SUMMON;
                                         content_str += content_line + "\n";
                                 }
                         } else
-                        // Ê¹ÓÃÈ«¸ñÊ½Ä£Ê½
+                        // ä½¿ç”¨å…¨æ ¼å¼æ¨¡å¼
                         {
                                 if( !mapp(data[FUNCTION_DATA]) || !sizeof(data[FUNCTION_DATA]))
                                         continue;
@@ -765,49 +765,49 @@ SUMMON;
                         continue;
                 }
 
-                // ¼ì²éÊéĞ´½áÊø±êÖ¾
+                // æª¢æŸ¥æ›¸å¯«çµæŸæ¨™å¿—
 
-                // ÊéĞ´×¢ÊÍ½áÊø
+                // æ›¸å¯«æ³¨é‡‹çµæŸ
                 if( strsrch(content[i], COMMENT_EXIT) != -1)
                 {
                         comment_on = 0;
                         continue;
                 }
 
-                // ÊéĞ´Ãû³Æ½áÊø
+                // æ›¸å¯«åç¨±çµæŸ
                 if( strsrch(content[i], NAME_EXIT) != -1)
                         continue;
 
-                // ÊéĞ´ dbase ½áÊø
+                // æ›¸å¯« dbase çµæŸ
                 if( strsrch(content[i], DBASE_EXIT) != -1)
                 {
                         dbase_on = 0;
                         continue;
                 }
 
-                // ÊéĞ´º¯Êı½áÊø
+                // æ›¸å¯«å‡½æ•¸çµæŸ
                 if( strsrch(content[i], FUNCTION_EXIT) != -1)
                 {
                         function_on = 0;
                         continue;
                 }
 
-                // ÈôÕıÔÚÊéĞ´×¢ÊÍ£¬ºöÂÔ
+                // è‹¥æ­£åœ¨æ›¸å¯«æ³¨é‡‹ï¼Œå¿½ç•¥
                 if( comment_on) continue;
 
-                // ÈôÕıÔÚÊéĞ´ dbase£¬ºöÂÔ
+                // è‹¥æ­£åœ¨æ›¸å¯« dbaseï¼Œå¿½ç•¥
                 if( dbase_on) continue;
 
-                // ÈôÕıÔÚÊéĞ´º¯Êı£¬ºöÂÔ
+                // è‹¥æ­£åœ¨æ›¸å¯«å‡½æ•¸ï¼Œå¿½ç•¥
                 if( function_on) continue;
 
-                // ·ñÔòÖ±½ÓÌí¼ÓÕâÒ»ĞĞ
+                // å¦å‰‡ç›´æ¥æ·»åŠ é€™ä¸€è¡Œ
                 content_str += content[i] + "\n";
         }
 
-        // Éú³ÉÎÄ¼ş
+        // ç”Ÿæˆæ–‡ä»¶
         write_file(cfile, content_str, 1);
 
-        // ·µ»ØÎÄ¼ş
+        // è¿”å›æ–‡ä»¶
         return cfile;
 }

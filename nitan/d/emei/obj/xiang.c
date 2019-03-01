@@ -3,16 +3,16 @@ inherit ITEM;
 
 void create()
 {
-        set_name(YEL "ÆÕÏÍÆĞÈøÏñ" NOR, ({ "xiang" }));
+        set_name(YEL "æ™®è³¢è©è–©åƒ" NOR, ({ "xiang" }));
         set_weight(500000);
         set_max_encumbrance(800);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "×ù");
-                set("long", YEL "ÕâÊÇÒ»×ğÆÕÏÍÆĞÈøÏñ£¬×ø°Ë±¦Á«»¨£¬ÉñÊ¥×¯ÑÏ¡£"
-                            "²»¹ıÕâ×ğÆĞÈø\nÏñ¿´ÆğÀ´ËÆºõÔøÓĞ±»ÒÆ¶¯(move)¹ıµÄ"
-                            "ºÛ¼£¡£\n" NOR);
+                set("unit", "åº§");
+                set("long", YEL "é€™æ˜¯ä¸€å°Šæ™®è³¢è©è–©åƒï¼Œåå…«å¯¶è“®èŠ±ï¼Œç¥è–èŠåš´ã€‚"
+                            "ä¸éé€™å°Šè©è–©\nåƒçœ‹èµ·ä¾†ä¼¼ä¹æ›¾æœ‰è¢«ç§»å‹•(move)éçš„"
+                            "ç—•è·¡ã€‚\n" NOR);
                 set("value", 50);
         }
 }

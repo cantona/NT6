@@ -4,11 +4,11 @@ inherit  ROOM;
 
 void  create  ()
 {
-        set("short",  "±õºÓ´ó½ÖÎ÷");
+        set("short",  "æ¿±æ²³å¤§è¡—è¥¿");
         set("long",  @LONG
-ÕâÊÇÒ»Ìõ¿íÀ«µÄÇàÊ¯°å½ÖµÀ£¬Ïò¶«Î÷Á½Í·ÑÓÉì¡£Á½ÅÔÂ·Ê÷³ÉÒñ£¬ÐÐ
-ÈËÏ¡ÉÙ£¬¾²ÇÄÇÄµØºÜÊÇÀäÇå¡£ÄÏÃæÍ¨Íù¹±Ôº£¬±±ÃæÊÇÒ»Æ¬Ê÷ÁÖ£¬Ê÷ÁÖºó
-ÒþÔ¼¿É¼ûÒ»×ùËÂÔº¡£
+é€™æ˜¯ä¸€æ¢å¯¬é—Šçš„é’çŸ³æ¿è¡—é“ï¼Œå‘æ±è¥¿å…©é ­å»¶ä¼¸ã€‚å…©æ—è·¯æ¨¹æˆè”­ï¼Œè¡Œ
+äººç¨€å°‘ï¼Œéœæ‚„æ‚„åœ°å¾ˆæ˜¯å†·æ¸…ã€‚å—é¢é€šå¾€è²¢é™¢ï¼ŒåŒ—é¢æ˜¯ä¸€ç‰‡æ¨¹æž—ï¼Œæ¨¹æž—å¾Œ
+éš±ç´„å¯è¦‹ä¸€åº§å¯ºé™¢ã€‚
 LONG);
         set("exits",  ([  /*  sizeof()  ==  2  */
                 "north" : __DIR__"jintian",

@@ -3,14 +3,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIG "¡¸ÍüÇéÌìÊé¡¹" NOR, ({ "wangqing tianshu", "wangqing", "tianshu" }));
+        set_name(HIG "ã€Œå¿˜æƒ…å¤©æ›¸ã€" NOR, ({ "wangqing tianshu", "wangqing", "tianshu" }));
         set_weight(3000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIG "´«ËµÖĞµÄÆæÊé£¬¿ÉÍüÈ´³¾ÊÀ¼äËùÓĞ·³ÄÕ¡£\n" NOR);
+                set("long", HIG "å‚³èªªä¸­çš„å¥‡æ›¸ï¼Œå¯å¿˜å»å¡µä¸–é–“æ‰€æœ‰ç…©æƒ±ã€‚\n" NOR);
                 set("value", 500000);
-                set("unit", "±¾");
+                set("unit", "æœ¬");
         }
 }
 
@@ -24,27 +24,27 @@ int do_read(string arg)
         object me = this_player();
 
         if (me->is_busy())
-                return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£å¿™è‘—å‘¢ã€‚\n");
 
         if (me->is_fighting())
-                return notify_fail("Õ½¶·ÖĞÎŞ·¨ÑĞ¶Á¡£\n");
+                return notify_fail("æˆ°é¬¥ä¸­ç„¡æ³•ç ”è®€ã€‚\n");
 
         if (arg && id(arg))
         {
                 if( query("skybook/guard/death", me) >= 1
                     || query("combat_exp", me)>2500000 )
-                        return notify_fail(HIW "\nÄãÇáÇá·­¿ªÊéÒ³£¬Í»È»¼äÒ»µÀÇ¿"
-                                           "¹âÉäÀ´£¬Ê²Ã´¶¼¿´²»Çå³ş¡£\n" NOR);
+                        return notify_fail(HIW "\nä½ è¼•è¼•ç¿»é–‹æ›¸é ï¼Œçªç„¶é–“ä¸€é“å¼·"
+                                           "å…‰å°„ä¾†ï¼Œä»€éº¼éƒ½çœ‹ä¸æ¸…æ¥šã€‚\n" NOR);
 
-                log_file("static/using", sprintf("%s(%s) use ÍüÇéÌìÊé at %s.\n",
+                log_file("static/using", sprintf("%s(%s) use å¿˜æƒ…å¤©æ›¸ at %s.\n",
                                                  me->name(1),query("id", me),
                                                  ctime(time())));
 
-                message_vision(HIY "$N" HIY "ÇáÇá·­¿ª" + query("name") + HIY "Êé"
-                               "Ò³£¬ö®Ê±¼äÒ»µÀ¹â»ªÉÁ¹ı$P" HIY "µÄÃæÅÓ¡£\n" NOR, me);
+                message_vision(HIY "$N" HIY "è¼•è¼•ç¿»é–‹" + query("name") + HIY "æ›¸"
+                               "é ï¼Œéœæ™‚é–“ä¸€é“å…‰è¯é–ƒé$P" HIY "çš„é¢é¾ã€‚\n" NOR, me);
 
-                tell_object(me, HIC "Ú¤Ú¤ÖĞÄãËÆºõÊÜµ½ÁËÄ³ÖÖµÄÆôµÏ£¬ÍùÈÕµÄÒ»ÇĞ·³"
-                                "ÄÕ½¥½¥ÏûÊÅ´ù¾¡¡£\n" NOR);
+                tell_object(me, HIC "å†¥å†¥ä¸­ä½ ä¼¼ä¹å—åˆ°äº†æŸç¨®çš„å•Ÿè¿ªï¼Œå¾€æ—¥çš„ä¸€åˆ‡ç…©"
+                                "æƒ±æ¼¸æ¼¸æ¶ˆé€æ®†ç›¡ã€‚\n" NOR);
 
                 addn("skybook/guard/death", 1, me);
                 me->start_busy(10);

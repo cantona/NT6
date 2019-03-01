@@ -3,11 +3,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�ּ�С��");
+        set("short", "林間小道");
         set("long", @LONG
-������һ����Ϊ�������ּ�С���ϣ���������ɭɭ�������֡���
-�ϲ�Զ��ɵ�����������µ�һ���÷����õĴ��ţ����ﲻʱ�з���
-�õĵ����߶���
+你走在一條頗為陰暗的林間小道上，兩旁是陰森森的密樹林。向
+南不遠便可到達日月神教下第一大堂風雷堂的大門，這裡不時有風雷
+堂的弟子走動。
 LONG );
         set("outdoors", "heimuya");
         set("exits", ([

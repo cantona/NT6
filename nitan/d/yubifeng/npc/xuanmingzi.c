@@ -1,13 +1,13 @@
-// xuanmingzi.c ĞşÚ¤×Ó
+// xuanmingzi.c ç„å†¥å­
 
 #include <ansi.h>
 inherit NPC;
 
 void create()
 {
-        set_name("ĞşÚ¤×Ó", ({ "xuanming zi", "xuanming", "zi" }) );
-        set("gender", "ÄĞĞÔ");
-        set("title", "Çà²ØÅÉ");
+        set_name("ç„å†¥å­", ({ "xuanming zi", "xuanming", "zi" }) );
+        set("gender", "ç”·æ€§");
+        set("title", "é’è—æ´¾");
         set("class", "taoist");
         set("age", 43);
         set("attitude", "friendly");

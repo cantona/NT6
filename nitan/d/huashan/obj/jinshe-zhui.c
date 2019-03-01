@@ -7,16 +7,16 @@ inherit THROWING;
  
 void create()
 {
-        set_name(YEL"½ğÉß×¶"NOR, ({ "jinshe zhui", "zhui" }) );
+        set_name(YEL"é‡‘è›‡éŒ"NOR, ({ "jinshe zhui", "zhui" }) );
         if( clonep() )
                 set_default_object(__FILE__);
         else {
                 set("long", 
-"½ğÉß×¶ÊÇ»Æ½ğËùÖı£¬²ÓÀÃÉú¹â¡£³¤Ô¼¶ş´ç°Ë·Ö£¬´ò³É°ºÊ×ÍÂÉàµÄÉß
-ĞÎ£¬ÉßÉà¼â¶Ë·Ö³ÉË«²æ£¬Ã¿Ò»²æ¶¼ÊÇÒ»¸öµ¹´Ì¡£\n");
-                set("unit", "°Ñ");
+"é‡‘è›‡éŒæ˜¯é»ƒé‡‘æ‰€é‘„ï¼Œç‡¦çˆ›ç”Ÿå…‰ã€‚é•·ç´„äºŒå¯¸å…«åˆ†ï¼Œæ‰“æˆæ˜‚é¦–åèˆŒçš„è›‡
+å½¢ï¼Œè›‡èˆŒå°–ç«¯åˆ†æˆé›™å‰ï¼Œæ¯ä¸€å‰éƒ½æ˜¯ä¸€å€‹å€’åˆºã€‚\n");
+                set("unit", "æŠŠ");
                 set("value", 0);
-                set("base_unit", "Ã¶");
+                set("base_unit", "æš");
                 set("base_weight", 10);
                 set("base_value", 0);
         }

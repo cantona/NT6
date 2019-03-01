@@ -6,17 +6,17 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "±øÆ÷¿â");
+	set("short", "å…µå™¨åº«");
         set("long", @LONG
-ÕâÀïÊÇ±øÆ÷¿â£¬µ½´¦Òø¹âÉÁÉÁ£¬ÈÃÈËÑÛ»¨çÔÂÒ¡£±¦µ¶¡¢±¦½£¡¢½ð
-¹¿°ô£¬´óµ¶¡¢³¤½£¡¢ÉÚ°ô£¬¶Ìµ¶¡¢¶Ì½£¡¢¶Ì¹÷£¬¸÷É«¸÷ÑùµÄ±øÆ÷Ó¦ÓÐ
-¾¡ÓÐ£¬ÄãÒ»Ê±²»ÖªµÀÌôÊ²Ã´ºÃ¡£
+é€™è£¡æ˜¯å…µå™¨åº«ï¼Œåˆ°è™•éŠ€å…‰é–ƒé–ƒï¼Œè®“äººçœ¼èŠ±ç¹šäº‚ã€‚å¯¶åˆ€ã€å¯¶åŠã€é‡‘
+ç®æ£’ï¼Œå¤§åˆ€ã€é•·åŠã€å“¨æ£’ï¼ŒçŸ­åˆ€ã€çŸ­åŠã€çŸ­æ£ï¼Œå„è‰²å„æ¨£çš„å…µå™¨æ‡‰æœ‰
+ç›¡æœ‰ï¼Œä½ ä¸€æ™‚ä¸çŸ¥é“æŒ‘ä»€éº¼å¥½ã€‚
 LONG );
 	set("exits", ([
 		"north" : "/d/city/bingyin",
 	]));
 	set("no_clean_up", 0);
-	create_door("north", "ÌúÃÅ", "south", DOOR_CLOSED);
+	create_door("north", "éµé–€", "south", DOOR_CLOSED);
 	set("coor/x", -10);
 	set("coor/y", -30);
 	set("coor/z", 0);

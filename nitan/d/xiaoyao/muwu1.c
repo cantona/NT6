@@ -6,11 +6,11 @@ int do_move(string arg);
 
 void create()
 {
-        set("short", "ľ��");
+        set("short", "木屋");
         set("long", @LONG
-������һ�䲻���ľͷ���ӣ�������ȸ��С�������ȫ��������ֻ
-����������ذ���һ�����Ӻͼ���С�ʣ���ǽ����һ�������(gui)��
-����Ҳ���Ե���ôС��
+這裡是一間不大的木頭屋子，但是麻雀雖小，五臟俱全，屋子中只
+是疏疏落落地擺著一張桌子和幾張小凳，靠牆放著一個大櫃子(gui)，
+所以也不顯得怎麼小。
 LONG );
         set("exits", ([
                 "north" : __DIR__"xiaodao5",
@@ -19,7 +19,7 @@ LONG );
                 CLASS_D("xiaoyao")+"/kanggl": 1,
         ]));
         set("item_desc", ([
-                "gui"   : "һ��ͦ�ƾɵĸ߹�\n",
+                "gui"   : "一座挺破舊的高櫃。\n",
         ]));
         set("coor/x", 80);
         set("coor/y", -520);
@@ -37,11 +37,11 @@ int do_move(string arg)
         object me = this_player();
 
         if(!arg || arg!="gui") return 0;
-        if (me->is_busy() || me->is_fighting()) return notify_fail("����æ���ء�\n");
+        if (me->is_busy() || me->is_fighting()) return notify_fail("你正忙著呢。\n");
         if(me->query_skill("construction", 1) < 10)
-                return notify_fail("�����ľ���ػ��������죬û���򿪸߹���ء�\n");
-        message_vision("$N�����Ѹ߹��ƿ����������澹Ȼ��һ������ͨ����\n",me);
+                return notify_fail("你的土木機關還不夠精熟，沒法打開高櫃機關。\n");
+        message_vision("$N用力把高櫃移開，發現裡面竟然有一條秘密通道！\n",me);
         me->move(__DIR__"midao3");
-        tell_object(me,"������һ���¡¡���������㶨��һ�����Լ��Ѿ�����������ͨ�����ˡ�\n");
+        tell_object(me,"接著是一陣轟隆隆的響聲，你定神一看，自己已經處身在秘密通道中了。\n");
         return 1; 
 }

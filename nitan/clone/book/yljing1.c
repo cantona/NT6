@@ -1,16 +1,16 @@
-// yljing1.c ÔÆÁú¾­
+// yljing1.c é›²é¾ç¶“
 
 inherit ITEM;
 
 void create()
 {
-        set_name( "ÔÆÁú¾­¡¸ÉÏ¾í¡¹", ({ "jing", "yunlong jing" }));
+        set_name( "é›²é¾ç¶“ã€Œä¸Šå·ã€", ({ "jing", "yunlong jing" }));
         set_weight(200);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
-                set("long", "ÕâÊÇÒ»²áÔÆÁú¾­¡¸ÉÏ¾í¡¹£¬·âÆ¤ÉÏÒ»Ìõ³¤ÁúÔÚÔÆÖĞÈôÒşÈôÏÖ¡£\n");
+                set("unit", "æœ¬");
+                set("long", "é€™æ˜¯ä¸€å†Šé›²é¾ç¶“ã€Œä¸Šå·ã€ï¼Œå°çš®ä¸Šä¸€æ¢é•·é¾åœ¨é›²ä¸­è‹¥éš±è‹¥ç¾ã€‚\n");
                 set("value", 500);
                 set("material", "paper");
                 set("skill", ([

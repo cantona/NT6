@@ -3,18 +3,18 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIB "ºÚË®¾§" NOR, ({"hei shuijing"}));
+        set_name(HIB "é»‘æ°´æ™¶" NOR, ({"hei shuijing"}));
         set_weight(2000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Á£");
+                set("unit", "ç²’");
                 set("value", 500000);
-                set("enchase/name", "ºÚË®¾§");
+                set("enchase/name", "é»‘æ°´æ™¶");
                 set("enchase/point", 1);
                 set("enchase/type", "wrists");
                                 set("enchase/cur_firm", 90);
-                                set("nine_object", 1); // ¾Å¿×ÏâÇ¶ÎïÆ·±ê¼Ç
+                                set("nine_object", 1); // ä¹å­”é‘²åµŒç‰©å“æ¨™è¨˜
                                 set("enchase/spe_data", ([]) );  
         }
         setup();

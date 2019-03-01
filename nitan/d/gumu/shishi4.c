@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 { 
-        set("short",HIB"Ê¯ÊÒ"NOR);
+        set("short",HIB"çŸ³å®¤"NOR);
         set("long", @LONG
-¹ÅÄ¹ÖĞÒõ³ÁµÄÊ¯ÊÒ£¬Ö»Ìı¼ûÔ¶Ô¶´«À´Äã½Å²½µÄ»ØÒô£¬¿Õµ´µ´µÄ¸Ğ¾õ
-Ê¹ÄãĞÄÖĞÖ»ÓĞ¿Ö¾å£¬ÉõÖÁÍü¼Ç¹Â¶À¡£Äã²»ÖªÉí´¦ºÎµØ£¬ËÄÖÜÈç´ËÆáºÚÒ»
-Æ¬£¬Ö»ÄÜ¿¿ÃşË÷Ç°ĞĞ¡£
+å¤å¢“ä¸­é™°æ²‰çš„çŸ³å®¤ï¼Œåªè½è¦‹é é å‚³ä¾†ä½ è…³æ­¥çš„å›éŸ³ï¼Œç©ºç›ªç›ªçš„æ„Ÿè¦º
+ä½¿ä½ å¿ƒä¸­åªæœ‰ææ‡¼ï¼Œç”šè‡³å¿˜è¨˜å­¤ç¨ã€‚ä½ ä¸çŸ¥èº«è™•ä½•åœ°ï¼Œå››å‘¨å¦‚æ­¤æ¼†é»‘ä¸€
+ç‰‡ï¼Œåªèƒ½é æ‘¸ç´¢å‰è¡Œã€‚
 LONG        );
         set("exits", ([
                 "east"  : __DIR__"shishi"+(1+random(3)),
@@ -31,8 +31,8 @@ void init()
         if( userp(me) && query("jing", me)<200 )
         {
                 me->move(__DIR__"shishi0"); 
-                message("vision", me->name()+"»è»è³Á³ÁµØ×ßÁË¹ıÀ´¡£\n",environment(me), ({me}));
-                write(HIR"ÄãÂıÂı·¢ÏÖ×Ô¼ºÌåÁ¦²»Ö§.....\n"NOR);
+                message("vision", me->name()+"æ˜æ˜æ²‰æ²‰åœ°èµ°äº†éä¾†ã€‚\n",environment(me), ({me}));
+                write(HIR"ä½ æ…¢æ…¢ç™¼ç¾è‡ªå·±é«”åŠ›ä¸æ”¯.....\n"NOR);
                 me->unconcious();
         }
         if( !query_temp("steps", me) && userp(me) )
@@ -51,7 +51,7 @@ int valid_leave(object me, string dir)
                 delete_temp("step", me);
                 delete_temp("steps", me);
                 me->start_busy(2);
-                return notify_fail("ÄãÀÛµÃ°ëËÀ£¬ÖÕì¶·¢ÏÖÇ°·½ÓĞÒ»µÀ¹âÁÁ¡£\n");
+                return notify_fail("ä½ ç´¯å¾—åŠæ­»ï¼Œçµ‚æ–¼ç™¼ç¾å‰æ–¹æœ‰ä¸€é“å…‰äº®ã€‚\n");
         }
         return ::valid_leave(me,dir);
 }

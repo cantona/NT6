@@ -16,24 +16,24 @@ int main(object me, string arg)
         string item;
 
         if (! arg)
-                return notify_fail("ÄãÒª¶ªÏÂÊ²Ã´¶«Î÷£¿\n");
+                return notify_fail("ä½ è¦ä¸Ÿä¸‹ä»€éº¼æ±è¥¿ï¼Ÿ\n");
 
         if (sscanf(arg, "%d %s", amount, item) == 2)
         {
                 if (! objectp(obj = present(item, me)))
-                        return notify_fail("ÄãÉíÉÏÃ»ÓÐÕâÑù¶«Î÷¡£\n");
+                        return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™æ¨£æ±è¥¿ã€‚\n");
 
                 if( info=query("no_drop", obj) )
-                        return notify_fail(stringp(info) ? info : "ÕâÑù¶«Î÷²»ÄÜ¶ªÆú¡£\n");
+                        return notify_fail(stringp(info) ? info : "é€™æ¨£æ±è¥¿ä¸èƒ½ä¸Ÿæ£„ã€‚\n");
 
                 if (! obj->query_amount())
-                        return notify_fail( obj->name() + "²»ÄÜ±»·Ö¿ª¶ªÆú¡£\n");
+                        return notify_fail( obj->name() + "ä¸èƒ½è¢«åˆ†é–‹ä¸Ÿæ£„ã€‚\n");
 
                 if (amount < 1)
-                        return notify_fail("¶«Î÷µÄÊýÁ¿ÖÁÉÙÊÇÒ»¸ö¡£\n");
+                        return notify_fail("æ±è¥¿çš„æ•¸é‡è‡³å°‘æ˜¯ä¸€å€‹ã€‚\n");
 
                 if (amount > obj->query_amount())
-                        return notify_fail("ÄãÃ»ÓÐÄÇÃ´¶àµÄ" + obj->name() + "¡£\n");
+                        return notify_fail("ä½ æ²’æœ‰é‚£éº¼å¤šçš„" + obj->name() + "ã€‚\n");
                 else if (amount == (int)obj->query_amount())
                         return do_drop(me, obj, 0);
                 else
@@ -61,18 +61,18 @@ int main(object me, string arg)
 
                 if (! amount)
                 {
-                        write("ÄãÊ²Ã´¶¼Ã»ÓÐ¶ªµô¡£\n");
+                        write("ä½ ä»€éº¼éƒ½æ²’æœ‰ä¸ŸæŽ‰ã€‚\n");
                         return 1;
                 }
 
-                message("vision", me->name() + "¶ªÏÂÁËÒ»¶Ñ¶«Î÷¡£\n",
+                message("vision", me->name() + "ä¸Ÿä¸‹äº†ä¸€å †æ±è¥¿ã€‚\n",
                         environment(me), ({ me }));
-                write("¶ªÍêÁË¡£\n");
+                write("ä¸Ÿå®Œäº†ã€‚\n");
                 return 1;
         }
 
         if (! objectp(obj = present(arg, me)))
-                return notify_fail("ÄãÉíÉÏÃ»ÓÐÕâÑù¶«Î÷¡£\n");
+                return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™æ¨£æ±è¥¿ã€‚\n");
 
         do_drop(me, obj, 0);
         return 1;
@@ -85,7 +85,7 @@ int do_drop(object me, object obj, int raw)
 
         if( obj == (riding=query_temp("is_riding", me)) )
         {
-                message_vision("$N´Ó$n±³ÉÏ·ÉÉíÌøÏÂ¡£\n", me, riding);
+                message_vision("$Nå¾ž$nèƒŒä¸Šé£›èº«è·³ä¸‹ã€‚\n", me, riding);
                 delete_temp("is_riding", me);
                 delete_temp("is_rided_by", obj);
                 obj->move(environment(me));
@@ -93,19 +93,19 @@ int do_drop(object me, object obj, int raw)
         }
 
         if( no_drop=query("no_drop", obj) )
-                return notify_fail(stringp(no_drop) ? no_drop : "ÕâÑù¶«Î÷²»ÄÜËæÒâ¶ªÆú¡£\n");
+                return notify_fail(stringp(no_drop) ? no_drop : "é€™æ¨£æ±è¥¿ä¸èƒ½éš¨æ„ä¸Ÿæ£„ã€‚\n");
 
         if( no_drop=query("no_drop", environment(me)) )
-                return notify_fail(stringp(no_drop) ? no_drop : "ÕâÀï¶«Î÷¶ªÆúÏÂÈ¥Ò²¿´²»¼û¡£\n");
+                return notify_fail(stringp(no_drop) ? no_drop : "é€™è£¡æ±è¥¿ä¸Ÿæ£„ä¸‹åŽ»ä¹Ÿçœ‹ä¸è¦‹ã€‚\n");
 
         switch(query("equipped", obj) )
         {
         case "worn":
-                tell_object(me, obj->name() + "±ØÐëÍÑÏÂÀ´²ÅÄÜ¶ªµô¡£\n");
+                tell_object(me, obj->name() + "å¿…é ˆè„«ä¸‹ä¾†æ‰èƒ½ä¸ŸæŽ‰ã€‚\n");
                 return 0;
 
         case "wielded":
-                tell_object(me, obj->name() + "±ØÐë½â³ý×°±¸²ÅÄÜ¶ªµô¡£\n");
+                tell_object(me, obj->name() + "å¿…é ˆè§£é™¤è£å‚™æ‰èƒ½ä¸ŸæŽ‰ã€‚\n");
                 return 0;
         }
 
@@ -114,26 +114,26 @@ int do_drop(object me, object obj, int raw)
             sizeof(filter_array(all_inventory(environment(me)),
                                 (: ! $1->is_character() :))) > MAX_ITEM_IN_ROOM)
         {
-                tell_object(me, "ÕâÀï¶«Î÷Ì«¶àÁË£¬ÄãÂÒ¶ª¿ÖÅÂ" + obj->name() + "¾ÍÕÒ²»µ½ÁË¡£\n");
+                tell_object(me, "é€™è£¡æ±è¥¿å¤ªå¤šäº†ï¼Œä½ äº‚ä¸Ÿææ€•" + obj->name() + "å°±æ‰¾ä¸åˆ°äº†ã€‚\n");
                 return 0;
         }
 
         if (obj->move(environment(me)))
         {
                 if (obj->is_character() && obj->query_weight() > 20000)
-                        message_vision("$N½«$n´Ó±³ÉÏ·ÅÁËÏÂÀ´£¬ÌÉÔÚµØÉÏ¡£\n", me, obj);
+                        message_vision("$Nå°‡$nå¾žèƒŒä¸Šæ”¾äº†ä¸‹ä¾†ï¼Œèººåœ¨åœ°ä¸Šã€‚\n", me, obj);
                 else
                 {
                         if (! raw)
-                                message_vision(sprintf("$N¶ªÏÂÒ»%s$n¡£\n",
+                                message_vision(sprintf("$Nä¸Ÿä¸‹ä¸€%s$nã€‚\n",
                                                        query("unit", obj)),me,obj);
                         else
-                                write("Äã¶ªÏÂÁËÒ»"+query("unit", obj)+
+                                write("ä½ ä¸Ÿä¸‹äº†ä¸€"+query("unit", obj)+
                                       obj->name() + "\n");
 
                         if( !obj->is_character() && !query("value", obj) && !obj->value() )
                         {
-                                write("ÒòÎªÕâÑù¶«Î÷²¢²»ÖµÇ®£¬ËùÒÔÈËÃÇ²¢²»»á×¢Òâµ½ËüµÄ´æÔÚ¡£\n");
+                                write("å› ç‚ºé€™æ¨£æ±è¥¿ä¸¦ä¸å€¼éŒ¢ï¼Œæ‰€ä»¥äººå€‘ä¸¦ä¸æœƒæ³¨æ„åˆ°å®ƒçš„å­˜åœ¨ã€‚\n");
                                 destruct(obj);
                         }
                 }
@@ -146,9 +146,9 @@ int do_drop(object me, object obj, int raw)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : drop <ÎïÆ·Ãû³Æ> | all
+æŒ‡ä»¤æ ¼å¼ : drop <ç‰©å“åç¨±> | all
  
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄã¶ªÏÂÄãËùÐ¯´øµÄÎïÆ·.
+é€™å€‹æŒ‡ä»¤å¯ä»¥è®“ä½ ä¸Ÿä¸‹ä½ æ‰€æ”œå¸¶çš„ç‰©å“.
  
 HELP );
         return 1;

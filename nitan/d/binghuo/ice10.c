@@ -6,18 +6,18 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "±ùÉ½");
+        set("short", "å†°å±±");
         set("long", @LONG
-ÑÛÇ°Òø¹âÉÁË¸£¬´ó±ùÉ½ÔÚÔÂ¹âÏÂ·¢³öÇà×ÏÉ«µÄ¹âÃ¢£¬ÏÔµÃÓÖÊÇÆæ
-Àö£¬ÓÖÊÇ¿É²À¡£ÄãÕ¾ÔÚ±ùÉ½Ö®²àµÄÒ»¿éÀâ½ÇÉÏ£¬Ò»ÑÛÍûÈ¥£¬Õâ×ù±ùÉ½
-ÓÐÂ½µØÉÏÒ»¸öÐ¡É½Çð´óÐ¡£¬ºá¹ã¶þÊ®ÓàÕÉ£¬×Ý³¤°Ë¾ÅÕÉ£¬±ÈÔ­À´µÄ×ù
-´¬¿í³¨µÃ¶àÁË¡£Ô¶½ü¶¼ÊÇ´ó´óÐ¡Ð¡µÄ±ùÉ½(ice)¡£
+çœ¼å‰éŠ€å…‰é–ƒçˆï¼Œå¤§å†°å±±åœ¨æœˆå…‰ä¸‹ç™¼å‡ºé’ç´«è‰²çš„å…‰èŠ’ï¼Œé¡¯å¾—åˆæ˜¯å¥‡
+éº—ï¼Œåˆæ˜¯å¯æ€–ã€‚ä½ ç«™åœ¨å†°å±±ä¹‹å´çš„ä¸€å¡Šæ£±è§’ä¸Šï¼Œä¸€çœ¼æœ›åŽ»ï¼Œé€™åº§å†°å±±
+æœ‰é™¸åœ°ä¸Šä¸€å€‹å°å±±ä¸˜å¤§å°ï¼Œæ©«å»£äºŒåä½™ä¸ˆï¼Œç¸±é•·å…«ä¹ä¸ˆï¼Œæ¯”åŽŸä¾†çš„åº§
+èˆ¹å¯¬æ•žå¾—å¤šäº†ã€‚é è¿‘éƒ½æ˜¯å¤§å¤§å°å°çš„å†°å±±(ice)ã€‚
 LONG );
         set("no_sleep_room",1);
         set("outdoors", "binghuo");
         set("no_clean_up", 0);
         set("item_desc", ([
-                "ice" : "ÄÇÊÇÓÖÒ»×ù±ùÉ½£¬ºÃÏóÏà¾à²»Ô¶Ò®¡£ºÎ²»Ìø¹ýÈ¥¿´¿´£¿\n",
+                "ice" : "é‚£æ˜¯åˆä¸€åº§å†°å±±ï¼Œå¥½è±¡ç›¸è·ä¸é è€¶ã€‚ä½•ä¸è·³éŽåŽ»çœ‹çœ‹ï¼Ÿ\n",
         ]));
         set("exits", ([
                 "east"  : __FILE__,
@@ -42,36 +42,36 @@ int do_jump(string arg)
         object me = this_player();
         if ((!arg) || (arg != "east" && arg != "west" && arg != "south" && arg != "north"))
         {
-                return notify_fail("¶«Î÷ÄÏ±±¶¼ÓÐ±ùÉ½£¬ÄãÍùÄÄÌø£¿\n");
+                return notify_fail("æ±è¥¿å—åŒ—éƒ½æœ‰å†°å±±ï¼Œä½ å¾€å“ªè·³ï¼Ÿ\n");
         }
         else
         {
                 switch (random(5))
                 {
                         case 0:
-tell_object(me , BLU"±ùÉ½Ïò±±Æ®¸¡ÁË¡£°×ÌìÒø±ù·´ÉäÑô¹â£¬ÖËµÃÈËÆ¤·ôÒ²½¹ÁË£¬ÑÛ
-Ä¿¸üÊÇºìÖ×·¢Í´¡£\n" NOR) ;
+tell_object(me , BLU"å†°å±±å‘åŒ—é£„æµ®äº†ã€‚ç™½å¤©éŠ€å†°åå°„é™½å…‰ï¼Œç‚™å¾—äººçš®è†šä¹Ÿç„¦äº†ï¼Œçœ¼
+ç›®æ›´æ˜¯ç´…è…«ç™¼ç—›ã€‚\n" NOR) ;
                                 break;
                         case 1:
-tell_object(me , BLU"±ùÉ½Ïò±±Æ®¸¡ÁË¡£ËµÒ²Ææ¹Ö£¬Ô½ÊÇ±±ÐÐ£¬°×ÌìÔ½³¤£¬µ½ºóÀ´Ã¿
-Ìì¼¸ºõÓÐÊ®Ò»¸öÊ±³½ÊÇ°×ÈÕ£¬ºÚÒ¹È´ÊÇÒ»»Î¼´¹ý¡£\n" NOR) ;
+tell_object(me , BLU"å†°å±±å‘åŒ—é£„æµ®äº†ã€‚èªªä¹Ÿå¥‡æ€ªï¼Œè¶Šæ˜¯åŒ—è¡Œï¼Œç™½å¤©è¶Šé•·ï¼Œåˆ°å¾Œä¾†æ¯
+å¤©å¹¾ä¹Žæœ‰åä¸€å€‹æ™‚è¾°æ˜¯ç™½æ—¥ï¼Œé»‘å¤œå»æ˜¯ä¸€æ™ƒå³éŽã€‚\n" NOR) ;
                                 break;
                         case 2:
 tell_object(me , BLU
-"±ãÔÚ´ËÊ±£¬ÑÛÇ°Ò»"WHT"ÁÁ"BLU"£¬±±·½Ó³³öÒ»Æ¬ÆæÒìÄª¿ÉÃû×´µÄ¹â²Ê£¬ÎÞ
-ÊýÆæÀö¾øÂ×µÄ¹âÉ«£¬ÔÚºÚ°µÖÐºöÉìºöËõ£¬´óÆ¬"YEL"³È»Æ"BLU"Ö®ÖÐ¼Ð×ÅË¿
-Ë¿"MAG"µ­×Ï"BLU"£¬ºö¶ø"MAG"×ÏÉ«"BLU"ÓúÉîÓú³¤£¬"MAG"×ÏÉ«"BLU"Ö®ÖÐ£¬±ÅÉä³öÒ»ÌõÌõ"HIY"½ð¹â"BLU"¡¢
-"HIB"À¶¹â"BLU"¡¢"HIG"ÂÌ¹â"BLU"¡¢"HIR"ºì¹â"BLU"¡£\n" NOR) ;
+"ä¾¿åœ¨æ­¤æ™‚ï¼Œçœ¼å‰ä¸€"WHT"äº®"BLU"ï¼ŒåŒ—æ–¹æ˜ å‡ºä¸€ç‰‡å¥‡ç•°èŽ«å¯åç‹€çš„å…‰å½©ï¼Œç„¡
+æ•¸å¥‡éº—çµ•å€«çš„å…‰è‰²ï¼Œåœ¨é»‘æš—ä¸­å¿½ä¼¸å¿½ç¸®ï¼Œå¤§ç‰‡"YEL"æ©™é»ƒ"BLU"ä¹‹ä¸­å¤¾è‘—çµ²
+çµ²"MAG"æ·¡ç´«"BLU"ï¼Œå¿½è€Œ"MAG"ç´«è‰²"BLU"ç™’æ·±ç™’é•·ï¼Œ"MAG"ç´«è‰²"BLU"ä¹‹ä¸­ï¼Œè¿¸å°„å‡ºä¸€æ¢æ¢"HIY"é‡‘å…‰"BLU"ã€
+"HIB"è—å…‰"BLU"ã€"HIG"ç¶ å…‰"BLU"ã€"HIR"ç´…å…‰"BLU"ã€‚\n" NOR) ;
                                 break;
                         case 3:
-tell_object(me , BLU"ÄãÑÛÍûÎ÷Ìì£¬ÑªºìµÄÏ¦ÑôÈÔÎ´ÂäÈëº£Ãæ¡£Ô­À´µØ½ü±±¼«£¬ÌìÊ±
-´ó±ä£¬ÕâÐ©µØ·½°ëÄêÖÐ°×ÈÕ²»¾¡£¬ÁíÍâ°ëÄêÈ´ÊÇ³¤Ò¹ÂþÂþ£¬ÖÖ
-ÖÖ¹ÖÒì£¬ÍðÈôµ½ÁËÊÀ½çµÄ¾¡Í·¡£\n" NOR) ;
+tell_object(me , BLU"ä½ çœ¼æœ›è¥¿å¤©ï¼Œè¡€ç´…çš„å¤•é™½ä»æœªè½å…¥æµ·é¢ã€‚åŽŸä¾†åœ°è¿‘åŒ—æ¥µï¼Œå¤©æ™‚
+å¤§è®Šï¼Œé€™äº›åœ°æ–¹åŠå¹´ä¸­ç™½æ—¥ä¸ç›¡ï¼Œå¦å¤–åŠå¹´å»æ˜¯é•·å¤œæ¼«æ¼«ï¼Œç¨®
+ç¨®æ€ªç•°ï¼Œå®›è‹¥åˆ°äº†ä¸–ç•Œçš„ç›¡é ­ã€‚\n" NOR) ;
                                 break;
                         case 4:
-tell_object(me , BLU"ºö¼ûµ½Õý±±·½Ò»ÂÆºÚÑÌ³åÌì¶øÆð£¬ÄãµÇÊ±ÏÅµÃÁ³¶¼°×ÁË£¬µ«ºÚ
-ÑÌÔ½À´Ô½¸ß£¬µ½ºóÀ´¾¹ÒþÒþ¼ûÑÌÖÐ¼ÐÓÐ»ð¹â¡£Äã²üÉùµÀ£º¡°Õâ
-¡­¡­ÕâÊÇµØÓüÃÅ£¡¡±\n" NOR) ;
+tell_object(me , BLU"å¿½è¦‹åˆ°æ­£åŒ—æ–¹ä¸€ç¸·é»‘ç…™æ²–å¤©è€Œèµ·ï¼Œä½ ç™»æ™‚åš‡å¾—è‡‰éƒ½ç™½äº†ï¼Œä½†é»‘
+ç…™è¶Šä¾†è¶Šé«˜ï¼Œåˆ°å¾Œä¾†ç«Ÿéš±éš±è¦‹ç…™ä¸­å¤¾æœ‰ç«å…‰ã€‚ä½ é¡«è²é“ï¼šâ€œé€™
+â€¦â€¦é€™æ˜¯åœ°ç„é–€ï¼â€\n" NOR) ;
                                 break;
                 }
                 if (arg == "north")
@@ -84,6 +84,6 @@ tell_object(me , BLU"ºö¼ûµ½Õý±±·½Ò»ÂÆºÚÑÌ³åÌì¶øÆð£¬ÄãµÇÊ±ÏÅµÃÁ³¶¼°×ÁË£¬µ«ºÚ
 int valid_leave(object me, string dir)
 {
         tell_object(me , 
-"ÄãÔÚ±ùÉ½ÉÏ×ßÀ´×ßÈ¥¡£\n" NOR) ;
+"ä½ åœ¨å†°å±±ä¸Šèµ°ä¾†èµ°åŽ»ã€‚\n" NOR) ;
         return ::valid_leave(me, dir);
 }

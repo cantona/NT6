@@ -1,5 +1,5 @@
 // This program is a part of NITAN MudLIB
-// shield.c °Ë»ÄÁùºÏÎ¨ÎÒ¶À×ğ»¤ÌåÉñ¹¦
+// shield.c å…«è’å…­åˆå”¯æˆ‘ç¨å°Šè­·é«”ç¥åŠŸ
 
 #include <ansi.h>
 
@@ -12,23 +12,23 @@ int exert(object me, object target)
         int skill;
 
         if (target != me)
-                return notify_fail("ÄãÖ»ÄÜÓÃ°Ë»ÄÁùºÏÎ¨ÎÒ¶À×ğÀ´ÌáÉı×Ô¼ºµÄ·ÀÓùÁ¦¡£\n");
+                return notify_fail("ä½ åªèƒ½ç”¨å…«è’å…­åˆå”¯æˆ‘ç¨å°Šä¾†æå‡è‡ªå·±çš„é˜²å¾¡åŠ›ã€‚\n");
 
         if( query("neili", me)<100 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ã€‚\n");
 
         if ((int)me->query_skill("bahuang-gong", 1) < 50)
-                return notify_fail("ÄãµÄ°Ë»ÄÁùºÏÎ¨ÎÒ¶À×ğĞŞÎª²»¹»¡£\n");
+                return notify_fail("ä½ çš„å…«è’å…­åˆå”¯æˆ‘ç¨å°Šä¿®ç‚ºä¸å¤ ã€‚\n");
 
         if( query_temp("shield", me) )
-                return notify_fail("ÄãÒÑ¾­ÔÚÔË¹¦ÖĞÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“åœ¨é‹åŠŸä¸­äº†ã€‚\n");
 
         skill = me->query_skill("force");
         addn("neili", -100, me);
         me->receive_damage("qi", 0);
 
-        message_combatd(HIW "$N" HIW "Éí×ÓÒ»»Î£¬ÒÂĞäÒ»²¨²¨µÄ"
-                        "²»×¡¼¤µ´£¬¾¢Æø±ÆÈË£¡\n" NOR, me);
+        message_combatd(HIW "$N" HIW "èº«å­ä¸€æ™ƒï¼Œè¡£è¢–ä¸€æ³¢æ³¢çš„"
+                        "ä¸ä½æ¿€ç›ªï¼Œå‹æ°£é€¼äººï¼\n" NOR, me);
 
         addn_temp("apply/armor", skill/2, me);
         set_temp("shield", 1, me);
@@ -46,6 +46,6 @@ void remove_effect(object me, int amount)
         {
                 addn_temp("apply/armor", -amount, me);
                 delete_temp("shield", me);
-                tell_object(me, "ÄãµÄ°Ë»ÄÁùºÏÎ¨ÎÒ¶À×ğÔËĞĞÍê±Ï£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï¡£\n");
+                tell_object(me, "ä½ çš„å…«è’å…­åˆå”¯æˆ‘ç¨å°Šé‹è¡Œå®Œç•¢ï¼Œå°‡å…§åŠ›æ”¶å›ä¸¹ç”°ã€‚\n");
         }
 }

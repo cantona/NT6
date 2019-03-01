@@ -1,5 +1,5 @@
  //ruanweijia.c
- //ÌÒ»¨µº±¦Îï-Èíâ¬¼×
+ //æ¡ƒèŠ±å³¶å¯¶ç‰©-è»Ÿâ–¡ç”²
  //PLZW 2003-12-22
  
 #include <ansi.h>
@@ -9,18 +9,18 @@ inherit CLOTH;
 
 void create()
 {
-        set_name(NOR + CYN "Èíâ¬¼×" NOR, ({ "ruanwei jia", "ruanwei", "jia" }));
+        set_name(NOR + CYN "è»Ÿâ–¡ç”²" NOR, ({ "ruanwei jia", "ruanwei", "jia" }));
         set_weight(8000);
         if (clonep())
                 destruct(this_object());
         else {
-                set("unit", "¼þ");
+                set("unit", "ä»¶");
                 set("long", NOR + CYN "
-ÕâÊÇÒ»¼þºÚ÷î÷îµÄÈí¼×£¬´Ö¿´ÏÂºÁ²»ÆðÑÛ¡£Õâ±ãÊÇÌÒ»¨µºÖÁ±¦
-Èíâ¬¼×£¬Ö»¼ûÕû¸ö¼×ÉíÎÚºÚÁÁÔó£¬×ÅÊÖÈáÈí£¬È´ÓÖÊÇ¼áÓ²Ê¤Ìú£¬
-±¦¼×ÍâÎ§»¹ÉúÂúÁËµ¹´Ì£¬¼âÀûÎÞ±È¡£\n" NOR);
+é€™æ˜¯ä¸€ä»¶é»‘é»é»çš„è»Ÿç”²ï¼Œç²—çœ‹ä¸‹æ¯«ä¸èµ·çœ¼ã€‚é€™ä¾¿æ˜¯æ¡ƒèŠ±å³¶è‡³å¯¶
+è»Ÿâ–¡ç”²ï¼Œåªè¦‹æ•´å€‹ç”²èº«çƒé»‘äº®æ¾¤ï¼Œè‘—æ‰‹æŸ”è»Ÿï¼Œå»åˆæ˜¯å …ç¡¬å‹éµï¼Œ
+å¯¶ç”²å¤–åœé‚„ç”Ÿæ»¿äº†å€’åˆºï¼Œå°–åˆ©ç„¡æ¯”ã€‚\n" NOR);
                 set("value", 100000);
-                set("no_sell", "ÕâÊÇÉ¶£¿ºÚ²»ÁïÇïµÄ¡£");
+                set("no_sell", "é€™æ˜¯å•¥ï¼Ÿé»‘ä¸æºœç§‹çš„ã€‚");
                 set("material", "cloth");
                 set("armor_prop/armor", 150);
                 set("stable", 100);
@@ -39,8 +39,8 @@ mixed valid_damage(object ob, object me, int damage)
                 ob->receive_wound("qi", damage * 2 / 3, me);
 
                 return ([ "damage" : -damage,
-                          "msg" : HIR "$N" HIR "Ò»ÕÐ¸Õ´¥¼°$n" HIR "ÉíÌå£¬ºö¾õ"
-                                  "ÕÆÐÄÒ»Õó´ÌÍ´£¬´ó¾ªÖ®ÏÂÁ¬Ã¦ËõÊÖ¡£\n" NOR ]);
+                          "msg" : HIR "$N" HIR "ä¸€æ‹›å‰›è§¸åŠ$n" HIR "èº«é«”ï¼Œå¿½è¦º"
+                                  "æŽŒå¿ƒä¸€é™£åˆºç—›ï¼Œå¤§é©šä¹‹ä¸‹é€£å¿™ç¸®æ‰‹ã€‚\n" NOR ]);
         }
 }
 
@@ -69,13 +69,13 @@ void return_to_huang()
                       return; 
               } 
 
-              message_vision("ºöÈ»Ò»¸öÌÒ»¨µÜ×Ó×ßÁË¹ýÀ´£¬¿´µ½$N£¬Ã¦ÕÐºôµÀ£º¡°»ÆµºÖ÷ÈÃÎÒÀ´ÕÒÄãÄÃ»Ø" 
-                             "Èíâ¬¼×£¬ÄãÏÖÔÚ²»ÓÃÁËÃ´£¿¡±\n" 
-                             "$NµÀ£º¡°ºÃÁË£¬ºÃÁË£¬Äã¾ÍÄÃ»ØÈ¥°É¡£¡±\n" 
-                             "$N½«Èíâ¬¼×ÍÑÏÂ½»¸øÌÒ»¨µÜ×Ó´ø×ß¡£\n", me); 
+              message_vision("å¿½ç„¶ä¸€å€‹æ¡ƒèŠ±å¼Ÿå­èµ°äº†éŽä¾†ï¼Œçœ‹åˆ°$Nï¼Œå¿™æ‹›å‘¼é“ï¼šâ€œé»ƒå³¶ä¸»è®“æˆ‘ä¾†æ‰¾ä½ æ‹¿å›ž" 
+                             "è»Ÿâ–¡ç”²ï¼Œä½ ç¾åœ¨ä¸ç”¨äº†éº¼ï¼Ÿâ€\n" 
+                             "$Né“ï¼šâ€œå¥½äº†ï¼Œå¥½äº†ï¼Œä½ å°±æ‹¿å›žåŽ»å§ã€‚â€\n" 
+                             "$Nå°‡è»Ÿâ–¡ç”²è„«ä¸‹äº¤çµ¦æ¡ƒèŠ±å¼Ÿå­å¸¶èµ°ã€‚\n", me); 
       } else 
       { 
-              message("visoin", "ºöÈ»Ò»¸öÌÒ»¨µÜ×Ó×ßÁË¹ýÀ´£¬¼ñÆðÈíâ¬¼×£¬Ì¾ÁË¿ÚÆø£¬Ò¡Ò¡Í·×ßÁË¡£\n", 
+              message("visoin", "å¿½ç„¶ä¸€å€‹æ¡ƒèŠ±å¼Ÿå­èµ°äº†éŽä¾†ï¼Œæ’¿èµ·è»Ÿâ–¡ç”²ï¼Œå˜†äº†å£æ°£ï¼Œæ–æ–é ­èµ°äº†ã€‚\n", 
                       me); 
       } 
 

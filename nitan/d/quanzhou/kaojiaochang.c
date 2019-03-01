@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "���̳�");
+        set("short", "考教場");
         set("long", @LONG
-��������ݵĿ��̳��������������������ӵ��ڴ�ϰ�䣬ȭ��
-���ߣ��赶Ū����ˣǹ�Ӱ��ĺò����֡��������̳�������ݵ�ǰ����
+這裡是武館的考教場，面積甚大。有許多武館子弟在此習武，拳打
+腳踢，舞刀弄劍，耍槍揮棒的好不熱鬧。穿過考教場便是武館的前廳。
 LONG );
         set("outdoors", "quanzhou");
         set("exits", ([

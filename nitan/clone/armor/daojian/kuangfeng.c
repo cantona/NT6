@@ -5,18 +5,18 @@ inherit BOOTS;
 
 void create()
 {
-        set_name( HIW "Ìì½µ¡¤¿ñ·çÑ¥" NOR, ({ "kuangfeng xue" }) );
+        set_name( HIW "å¤©é™ï¹’ç‹‚é¢¨é´" NOR, ({ "kuangfeng xue" }) );
         set_weight(10);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ë«");
-                set("long", HIW "ÕâÊÇÒ»Ë«Î÷ÓòÒøºüÖ®Æ¤ÖÆ³ÉµÄÑ¥×Ó£¬¾İËµ´©ÉÏºóĞĞ×ßÈç¿ñ·ç¡£\n");
+                set("unit", "é›™");
+                set("long", HIW "é€™æ˜¯ä¸€é›™è¥¿åŸŸéŠ€ç‹ä¹‹çš®åˆ¶æˆçš„é´å­ï¼Œæ“šèªªç©¿ä¸Šå¾Œè¡Œèµ°å¦‚ç‹‚é¢¨ã€‚\n");
                 set("value", 2000000);
                 
-                set("armor_prop/dex", 60); //ºóÌìÉí·¨+60
+                set("armor_prop/dex", 60); //å¾Œå¤©èº«æ³•+60
                 set("armor_prop/dodge", 100);
-                set("special/desc", "ÓĞĞ§Çá¹¦µÈ¼¶Ìá¸ß100¼¶¡£");
+                set("special/desc", "æœ‰æ•ˆè¼•åŠŸç­‰ç´šæé«˜100ç´šã€‚");
                 set("material", "boots");
                 set("limit", ([
                          "exp" : 100000000,

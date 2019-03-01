@@ -3,10 +3,10 @@ inherit ROOM;
 
 void create()
 {
-          set("short", "°ÙÕÉ½§");
+          set("short", "ç™¾ä¸ˆæ¾—");
         set("long", @LONG
-É½µÀµ½´ËÍ»È»ÏûÊ§£¬ÔÚÄãÃæÇ°ÊÇÒ»ÌõÉ½½§£¬É½½§Ö®ÖĞÔÆÎíçÔÈÆ£¬
-Äã¸ù±¾ÎŞ·¨¿´Çå¶ÔÃæ¡£Ò»ÌõÌúË÷(tiesuo)ÉîÈëÔÆÖĞ£¬ÅÔ±ßÓĞÒ»¿éÊ¯±®¡£
+å±±é“åˆ°æ­¤çªç„¶æ¶ˆå¤±ï¼Œåœ¨ä½ é¢å‰æ˜¯ä¸€æ¢å±±æ¾—ï¼Œå±±æ¾—ä¹‹ä¸­é›²éœ§ç¹šç¹ï¼Œ
+ä½ æ ¹æœ¬ç„¡æ³•çœ‹æ¸…å°é¢ã€‚ä¸€æ¢éµç´¢(tiesuo)æ·±å…¥é›²ä¸­ï¼Œæ—é‚Šæœ‰ä¸€å¡ŠçŸ³ç¢‘ã€‚
 LONG );
           set("outdoors", "lingjiu");
           set("exits",([
@@ -16,8 +16,8 @@ LONG );
                 CLASS_D("lingjiu") + "/yupopo" : 1,
           ]));
           set("item_desc",([
-                      "tiesuo" : YEL "ÕâÌõÌúË÷ÊÇÍ¨Íù¶ÔÃæµÄ½ÓÌìÇÅ£¬Äã"
-                           "Ò²Ğí¿ÉÒÔ×ß(zou)¹ıÈ¥¡£\n" NOR,
+                      "tiesuo" : YEL "é€™æ¢éµç´¢æ˜¯é€šå¾€å°é¢çš„æ¥å¤©æ©‹ï¼Œä½ "
+                           "ä¹Ÿè¨±å¯ä»¥èµ°(zou)éå»ã€‚\n" NOR,
           ]));
           setup();
 }
@@ -32,18 +32,18 @@ int do_zou(string arg)
         object me = this_player(), room;
 
         if (! arg || arg != "tiesuo")
-                return notify_fail("ÄãÒª×ßÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦èµ°ä»€éº¼ï¼Ÿ\n");
 
         if (! (room = find_object(__DIR__"xianchou")))
                 room = load_object(__DIR__"xianchou");
 
         if (! objectp(room))
-                return notify_fail(HIW "Äã´ó½ĞµÀ£ºBUG£¡BUG£¡\n" NOR);
+                return notify_fail(HIW "ä½ å¤§å«é“ï¼šBUGï¼BUGï¼\n" NOR);
 
-        message_vision(HIW "\nÖ»¼û$N" HIW "ÇáÇáÔ¾ÉÏÌúË÷£¬Æ®È»¶ø"
-                       "È¥¡£\n" NOR, me);
+        message_vision(HIW "\nåªè¦‹$N" HIW "è¼•è¼•èºä¸Šéµç´¢ï¼Œé£„ç„¶è€Œ"
+                       "å»ã€‚\n" NOR, me);
         me->move(room);
-        message_vision(HIW "$N" HIW "´ÓÌúË÷ÉÏÆ®È»¶øÏÂ£¬À´µ½ÕâçÎ"
-                       "ç¿·å¾ø¶¥¡£\n" NOR, me);
+        message_vision(HIW "$N" HIW "å¾éµç´¢ä¸Šé£„ç„¶è€Œä¸‹ï¼Œä¾†åˆ°é€™ç¸¹"
+                       "ç·²å³°çµ•é ‚ã€‚\n" NOR, me);
         return 1;
 }

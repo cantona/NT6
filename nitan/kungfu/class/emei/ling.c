@@ -1,5 +1,5 @@
 // This program is a part of NT MudLIB
-// ling.c ÕÔÁéÖé
+// ling.c è¶™éˆç 
 
 inherit NPC;
 inherit F_MASTER;
@@ -9,10 +9,10 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("ÕÔÁéÖé", ({ "zhao lingzhu","zhao","lingzhu"}));
+        set_name("è¶™éˆç ", ({ "zhao lingzhu","zhao","lingzhu"}));
         set("long",
-                "ËıÊÇ¶ëáÒÅÉµÄµÚËÄ´úË×¼ÒµÜ×Ó¡£\n");
-        set("gender", "Å®ĞÔ");
+                "å¥¹æ˜¯å³¨åµ‹æ´¾çš„ç¬¬å››ä»£ä¿—å®¶å¼Ÿå­ã€‚\n");
+        set("gender", "å¥³æ€§");
         set("age", 22);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -55,7 +55,7 @@ void create()
         map_skill("strike","jinding-zhang");
         map_skill("blade","yanxing-dao");
         map_skill("parry","yanxing-dao");
-        create_family("¶ëáÒÅÉ", 4, "µÜ×Ó");
+        create_family("å³¨åµ‹æ´¾", 4, "å¼Ÿå­");
 
         set("master_ob", 2);
         setup();
@@ -69,6 +69,6 @@ void attempt_apprentice(object ob)
         if (! permit_recruit(ob))
                 return;
 
-        command("say ºÃ°É£¬ÎÒ¾ÍÊÕÏÂÄãÁË¡£");
+        command("say å¥½å§ï¼Œæˆ‘å°±æ”¶ä¸‹ä½ äº†ã€‚");
         command("recruit "+query("id", ob));
 }

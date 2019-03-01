@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "������");
+        set("short", "方廣寺");
         set("long", @LONG
-��������������֮�¡��������а˸�ɽͷ�����������꣬����
-�¾ͽ������������ĵ�һƬƽ���ϡ��������ţ��С����η����£���
-֪����֮�֮˵���ʡ�������֮�Ϊ��ɽ���ľ�֮һ��
+方廣寺在蓮花峰之下。蓮花峰有八個山頭，猶如金蓮瓣瓣，方廣
+寺就建在這蓮花中心的一片平地上。深邃幽雅，有「不遊方廣寺，不
+知南岳之深」之說，故「方廣寺之深」為衡山大四絕之一。
 LONG );
         set("exits", ([
                 "southdown"  : __DIR__"shanjian",

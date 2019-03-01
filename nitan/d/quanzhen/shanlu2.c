@@ -1,14 +1,14 @@
-// shanlu2.c ɽ·
+// shanlu2.c 山路
 // Winder Oct.10 1998
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "ɽ·");
+        set("short", "山路");
         set("long", @LONG
-ǰ�������һ����ɽ�ȣ��ߵ������ľ����Щ��ȫ���ǰ�����
-������һ��������ɽ·��������ɽ�䣬Ҫ��ҹ�ﻹ�濴��������
+前面好象有一個大山谷，走到這裡，樹木多了些，全都是柏樹。
+西面是一條彎曲的山路，隱藏在山間，要在夜裡還真看不出來。
 LONG
         );
         set("outdoors", "zhongnan");

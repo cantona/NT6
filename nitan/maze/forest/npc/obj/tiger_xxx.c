@@ -4,12 +4,12 @@ inherit COMBINED_ITEM;
 
 void create()
 {
-        set_name("»¢±Þ", ({"tiger xxx"}) );
+        set_name("è™Žéž­", ({"tiger xxx"}) );
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", NOR + YEL "»¢±Þ¡£\n" NOR);
-                set("base_unit", "¸ù");
+                set("long", NOR + YEL "è™Žéž­ã€‚\n" NOR);
+                set("base_unit", "æ ¹");
                 set("base_value", 8000);
                 set("base_weight", 500);
         }

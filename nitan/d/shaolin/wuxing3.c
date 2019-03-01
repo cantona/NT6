@@ -9,13 +9,13 @@ string* dirs = ({"east", "south", "west", "north"});
 
 void create()
 {
-        set("short", HIR "ÎåĞĞ¶´" NOR);
+        set("short", HIR "äº”è¡Œæ´" NOR);
         set("long", @LONG
-[1£»31mÕâÊÇÎåĞĞ¶´¡£½øÀ´¶Ù¾õÒ»¹ÉÈÈÀËÆËÃæ¶øÀ´£¬³åµÃÄã²îµãÔÎÁË¹ıÈ¥¡£
-ËÄÖÜÒ»Æ¬Í¨ºì£¬µØÃæÉÏÃ°×ÅË¿Ë¿°×Æø£¬½Åµ×¾çÁÒµÄÖËÍ´Ê¹Äã¼¸ºõÁ¢½Å
-²»×¡¡£ÈÈ·ç´ø×ÅÂ¡Â¡¾ŞÏì³å»÷×Å¶ú¹Ä£¬ÁîÄã¾õµÃÖÃÉíºéÂ¯Ö®ÖĞ£¬È«Éí
-µÄË®·Ö¶¼ÔÚ±»Ò»µÎµÎµØ¿¾¸É¡£Ç½½ÇÉÏ¼¸¾ß¿İ²ñ°ãµÄ¸ÉÊ¬¾ÍÖ¤Ã÷ÁËÕâÒ»
-µã¡£[2£»37£»0m
+[1ï¼›31mé€™æ˜¯äº”è¡Œæ´ã€‚é€²ä¾†é “è¦ºä¸€è‚¡ç†±æµªæ’²é¢è€Œä¾†ï¼Œæ²–å¾—ä½ å·®é»æšˆäº†éå»ã€‚
+å››å‘¨ä¸€ç‰‡é€šç´…ï¼Œåœ°é¢ä¸Šå†’è‘—çµ²çµ²ç™½æ°£ï¼Œè…³åº•åŠ‡çƒˆçš„ç‚™ç—›ä½¿ä½ å¹¾ä¹ç«‹è…³
+ä¸ä½ã€‚ç†±é¢¨å¸¶è‘—éš†éš†å·¨éŸ¿æ²–æ“Šè‘—è€³é¼“ï¼Œä»¤ä½ è¦ºå¾—ç½®èº«æ´ªçˆä¹‹ä¸­ï¼Œå…¨èº«
+çš„æ°´åˆ†éƒ½åœ¨è¢«ä¸€æ»´æ»´åœ°çƒ¤å¹¹ã€‚ç‰†è§’ä¸Šå¹¾å…·æ¯æŸ´èˆ¬çš„å¹¹å±å°±è¨¼æ˜äº†é€™ä¸€
+é»ã€‚[2ï¼›37ï¼›0m
 LONG );
         set("exits", ([
                 "east" : __DIR__"wuxing1",
@@ -31,11 +31,11 @@ int check_out(object me)
 {
         int metal, wood, water, fire, earth;
 
-        metal=query_temp("wuxing/½ğ", me);
-        wood=query_temp("wuxing/Ä¾", me);
-        water=query_temp("wuxing/Ë®", me);
-        fire=query_temp("wuxing/»ğ", me);
-        earth=query_temp("wuxing/ÍÁ", me);
+        metal=query_temp("wuxing/é‡‘", me);
+        wood=query_temp("wuxing/æœ¨", me);
+        water=query_temp("wuxing/æ°´", me);
+        fire=query_temp("wuxing/ç«", me);
+        earth=query_temp("wuxing/åœŸ", me);
 
         if ( metal > 0 &&
                 metal == wood && metal == water &&
@@ -56,22 +56,22 @@ int valid_leave(object me, string dir)
         {
                 if (dir == "north")
                 {
-//                        write("*»ğÉúÍÁ*\n");
-                        count=query_temp("wuxing/ÍÁ", me);
+//                        write("*ç«ç”ŸåœŸ*\n");
+                        count=query_temp("wuxing/åœŸ", me);
                         count++;
-                        set_temp("wuxing/ÍÁ", count, me);
+                        set_temp("wuxing/åœŸ", count, me);
                         if (check_out(me))
                         {
-                                write("ÄãË³ÀûµØ×ß³öÁËÎåĞĞÃÔ¹¬¡£\n");
+                                write("ä½ é †åˆ©åœ°èµ°å‡ºäº†äº”è¡Œè¿·å®®ã€‚\n");
                                 return 1;
                         }
                 }
                 else if (dir == "west")
                 {
-//                        write("*»ğ¿Ë½ğ*\n");
+//                        write("*ç«å…‹é‡‘*\n");
                         delete_temp("wuxing", me);
                         me->move(__DIR__"jianyu1");
-                        write("Äãµô½ø»ú¹Ø£¬ÂäÈëÉ®¼à¡£\n");
+                        write("ä½ æ‰é€²æ©Ÿé—œï¼Œè½å…¥åƒ§ç›£ã€‚\n");
                         return 1;
                 }
         }

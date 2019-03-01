@@ -27,13 +27,13 @@ nosave string *no_busy_cmds = ({
         "tell","reply","say",
 });
 
-// ×îºóµÄÊäÈëÃüÁî(ÒÑ¾­¾­¹ıALIAS´¦Àí)
+// æœ€å¾Œçš„è¼¸å…¥å‘½ä»¤(å·²ç¶“ç¶“éALIASè™•ç†)
 string query_last_input() { return last_input; }
 
-// ×îºóµÄÊäÈëÔ­Ê¼×Ö·û´®(ÒÑ¾­¾­¹ıÃüÁîÈ·ÈÏ£º/»ò//´òÍ·)
+// æœ€å¾Œçš„è¼¸å…¥åŸå§‹å­—ç¬¦ä¸²(å·²ç¶“ç¶“éå‘½ä»¤ç¢ºèªï¼š/æˆ–//æ‰“é ­)
 string query_orginal_input() { return orginal_input; }
 
-// ÊÇ·ñÊÇ¿ØÖÆÃüÁî(ÒÔ/»ò//´òÍ·)
+// æ˜¯å¦æ˜¯æ§åˆ¶å‘½ä»¤(ä»¥/æˆ–//æ‰“é ­)
 int is_direct_command() { return direct_command; }
 
 string process_input(string str);
@@ -54,7 +54,7 @@ nomask string process_history(int i)
         int size = sizeof(command_history);
         string cmd;
         
-        // Ë³ĞòÓÉºóÍùÇ°
+        // é †åºç”±å¾Œå¾€å‰
         if( i < 0 )
         {
                 i = -i;
@@ -62,12 +62,12 @@ nomask string process_history(int i)
                 else if( i > size ) i = size;
                 cmd = (string)command_history[<i][HISTORY_CMD];
         }
-        // Ë³ĞòÓÉÇ°Íùºó
+        // é †åºç”±å‰å¾€å¾Œ
         else if( i > 0 )
         {
                 if( i > total_command_count || i < 1 || i <= total_command_count - HISTORY_BUFFER_SIZE )
                 {
-                        tell(this_object(), "Ö¸ÁîÀú³Ì·¶Î§´íÎó¡£\n");
+                        tell(this_object(), "æŒ‡ä»¤æ­·ç¨‹èŒƒåœéŒ¯èª¤ã€‚\n");
                         return 0;
                 }
                 if( total_command_count >= HISTORY_BUFFER_SIZE )
@@ -83,7 +83,7 @@ nomask string process_history(int i)
                 }
                 else
                 {
-                        tell(this_object(), pnoun(2, this_object()) + "ÉĞÎ´ÏÂ´ïÈÎºÎÖ¸Áî¡£\n");
+                        tell(this_object(), pnoun(2, this_object()) + "å°šæœªä¸‹é”ä»»ä½•æŒ‡ä»¤ã€‚\n");
                         return 0;
                 }
         }
@@ -108,7 +108,7 @@ nomask string process_input_basic_parse(string cmd) /* Return 0 if break command
                                 cmd = "chat "+ cmd[1..];
                         break;
                 case '!':
-                        // Ö¸ÁîÀú³Ì
+                        // æŒ‡ä»¤æ­·ç¨‹
                         {
                                 int i;
                                 sscanf(cmd, "!%d", i);
@@ -142,10 +142,10 @@ nomask void process_input_event()
 
                         chinese_time = time_period(time - wait_time);
 
-                        tell_object(usr, HIY "ÄãµÈÁË" + chinese_time + "ºó£¬" + this_idname + HIY "ÖÕÓÚ»ØÉñÁË¡£\n" +
-                                         (wait_msg ? "\nÁôÑÔ£º" + wait_msg : "") + "\n\a" NOR);
-                        msg += HIY + usr->query_idname(1) + HIY "»¨ÁË" + chinese_time + "µÈ×ÅÄã»ØÉñ¡£\n" +
-                                         (wait_msg ? "\nÁôÑÔ£º" + wait_msg : "") + "\n\a" NOR;
+                        tell_object(usr, HIY "ä½ ç­‰äº†" + chinese_time + "å¾Œï¼Œ" + this_idname + HIY "çµ‚äºå›ç¥äº†ã€‚\n" +
+                                         (wait_msg ? "\nç•™è¨€ï¼š" + wait_msg : "") + "\n\a" NOR);
+                        msg += HIY + usr->query_idname(1) + HIY "èŠ±äº†" + chinese_time + "ç­‰è‘—ä½ å›ç¥ã€‚\n" +
+                                         (wait_msg ? "\nç•™è¨€ï¼š" + wait_msg : "") + "\n\a" NOR;
                 }
                 //call_out((: tell(this_object(), $(msg)) :), 0);
                 tell_object(me, msg);
@@ -173,7 +173,7 @@ nomask int process_input_do(string verb, string args)
 
                         if( !strsrch(action, "do ") )
                         {
-                                tell_object(this_object(), "Ö¸Áî do ÖĞ²»ÄÜÔÙÓĞ do µÄÖ¸Áî¡£\n");
+                                tell_object(this_object(), "æŒ‡ä»¤ do ä¸­ä¸èƒ½å†æœ‰ do çš„æŒ‡ä»¤ã€‚\n");
                                 return 1;
                         }
 
@@ -181,16 +181,16 @@ nomask int process_input_do(string verb, string args)
                         {
                                 if( total_cmds > MAX_DO_COMMANDS && !wizardp(this_object()) )
                                 {
-                                        tell_object(this_object(), "Äã²»ÄÜÒ»´ÎÏÂ³¬¹ı "+MAX_DO_COMMANDS+" ¸öÖ¸Áî¡£\n");
+                                        tell_object(this_object(), "ä½ ä¸èƒ½ä¸€æ¬¡ä¸‹è¶…é "+MAX_DO_COMMANDS+" å€‹æŒ‡ä»¤ã€‚\n");
                                         return 1;
                                 }
-                                // ±ØĞëcommand£¬·ñÔòadd_actionÖĞquery_verb³öÎÊÌâ by Lonely
+                                // å¿…é ˆcommandï¼Œå¦å‰‡add_actionä¸­query_verbå‡ºå•é¡Œ by Lonely
                                 command(process_input(action));
                         }
                 }
         }
         else
-                tell_object(this_object(), "ÇëÊäÈëÒªÁ¬ĞøÏÂ´ïµÄÖ¸Áî¡£\n");
+                tell_object(this_object(), "è«‹è¼¸å…¥è¦é€£çºŒä¸‹é”çš„æŒ‡ä»¤ã€‚\n");
 
         return 1;
 }
@@ -203,7 +203,7 @@ string process_input(string str)
         int i, j;
 
         me = this_object();
-        notify_fail("Ê²Ã´£¿\n"); 
+        notify_fail("ä»€éº¼ï¼Ÿ\n"); 
         clear_written();
         
         if( !living(me) || query_temp("disable_input") ) return "";
@@ -212,11 +212,11 @@ string process_input(string str)
 
         if( query_temp("dizziness", me) )
         {
-                tell_object(me, "ÄãÄ¿Ç°´¦ÓÚÑ£ÔÎ×´Ì¬£¬ÎŞ·¨½øĞĞÈÎºÎ¶¯×÷¡£\n");
+                tell_object(me, "ä½ ç›®å‰è™•äºçœ©æšˆç‹€æ…‹ï¼Œç„¡æ³•é€²è¡Œä»»ä½•å‹•ä½œã€‚\n");
                 return "";
         }
 
-        // ÈÎºÎÒ»¸öÖ¸ÁîÊäÈëºóµÄ´¥·¢
+        // ä»»ä½•ä¸€å€‹æŒ‡ä»¤è¼¸å…¥å¾Œçš„è§¸ç™¼
         process_input_event();
 
         /*
@@ -226,7 +226,7 @@ string process_input(string str)
         }
         */
 
-        // ¼ÇÂ¼×îÔ­Ê¼µÄÊäÈë
+        // è¨˜éŒ„æœ€åŸå§‹çš„è¼¸å…¥
         if( str[0] == '/' ) {
                 direct_command = 1;
                 if (str[1] == '/') str = str[2..<1]; else
@@ -238,15 +238,15 @@ string process_input(string str)
         // attach system ?
         if( me->is_attach_system() ) {
                 me->detach_system();
-                tell_object(me, HIR "ÓÃ»§ÖÕÖ¹ÁËµ±Ç°Ö´ĞĞµÄ½ø³Ì¡£\n" NOR);
+                tell_object(me, HIR "ç”¨æˆ¶çµ‚æ­¢äº†ç•¶å‰åŸ·è¡Œçš„é€²ç¨‹ã€‚\n" NOR);
         }
 
         if( str == "" ) return str;
 
         if( me->reject_command() ) {
-                tell_object(me, RED "\n\n¸ß´¦²»Ê¤º®Í»È»ÔÚÒ»ÕóÑÌÎíÖĞ³öÏÖ¡£\n\n\n\n¸ß´¦²»Ê¤º®ºÈµÀ£ºÄãË¢ÆÁ¹ı¿ì£¬½ÓÏÂÀ´Ê®ÃëÄÚÏµÍ³²»ÔÙ½ÓÊÜÄãµÄÖ¸Áî£¡\n\n" NOR);
+                tell_object(me, RED "\n\né«˜è™•ä¸å‹å¯’çªç„¶åœ¨ä¸€é™£ç…™éœ§ä¸­å‡ºç¾ã€‚\n\n\n\né«˜è™•ä¸å‹å¯’å–é“ï¼šä½ åˆ·å±éå¿«ï¼Œæ¥ä¸‹ä¾†åç§’å…§ç³»çµ±ä¸å†æ¥å—ä½ çš„æŒ‡ä»¤ï¼\n\n" NOR);
                 set_temp("command_delay", time()+10);
-                message_vision("$NÍ»È»Ò»ÕóÍ·ÔÎÄ¿Ñ££¬ÉµÉµµÄÕ¾ÔÚÕâ²»¶¯ÁË¡£\n", me);
+                message_vision("$Nçªç„¶ä¸€é™£é ­æšˆç›®çœ©ï¼Œå‚»å‚»çš„ç«™åœ¨é€™ä¸å‹•äº†ã€‚\n", me);
         }
 
         if( query_temp("big5") )
@@ -256,7 +256,7 @@ string process_input(string str)
         //str = remove_fringe_blanks(str);
         str = remove_leadspace(str);
         
-        // »ù±¾Óï·¨´¦Àí
+        // åŸºæœ¬èªæ³•è™•ç†
         str = process_input_basic_parse(str);
 
         if( mapp(alias) ) {
@@ -286,7 +286,7 @@ string process_input(string str)
                 command_history[last_cmd] = str;
         }
         */
-        // ¼ÇÂ¼Ö¸ÁîÀú³Ì
+        // è¨˜éŒ„æŒ‡ä»¤æ­·ç¨‹
         if( sizeof(command_history) >= HISTORY_BUFFER_SIZE )
                 command_history = command_history[1..] + ({ ({ str, time() }) });
         else
@@ -294,12 +294,12 @@ string process_input(string str)
 
         total_command_count++;
  
-         // ´¦ÀíÖ¸Áî
+         // è™•ç†æŒ‡ä»¤
         if( sscanf(str, "%s %s", verb, doargs) != 2 ) verb = str;
 
         if( !doargs || !doargs[0] ) doargs = 0;
 
-        // ´¦ÀíÁ¬ĞøÖ¸Áî
+        // è™•ç†é€£çºŒæŒ‡ä»¤
         if( process_input_do(verb, doargs) ) return "";
 
 
@@ -342,7 +342,7 @@ int set_alias(string verb, string replace)
         } else {
                 if( !mapp(alias) ) alias = ([ verb:replace ]);
                 else if( sizeof(alias) > MAX_ALIASES )
-                        return notify_fail("ÄúÉè¶¨µÄ alias Ì«¶àÁË£¬ÇëÏÈÉ¾µôÒ»Ğ©²»³£ÓÃµÄ¡£\n");
+                        return notify_fail("æ‚¨è¨­å®šçš„ alias å¤ªå¤šäº†ï¼Œè«‹å…ˆåˆªæ‰ä¸€äº›ä¸å¸¸ç”¨çš„ã€‚\n");
                 else alias[verb] = replace;
                 return 1;
         }

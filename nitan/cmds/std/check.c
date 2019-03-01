@@ -28,42 +28,42 @@ int main(object me, string arg)
                 }
         }
 
-        if( query("family/family_name", me) != "Ø¤°ï" )
-                return notify_fail("Ö»ÓĞÆòØ¤²ÅÄÜ´òÌ½±ğÈËµÄ¼¼ÄÜ£¡\n");
+        if( query("family/family_name", me) != "ä¸å¹«" )
+                return notify_fail("åªæœ‰ä¹ä¸æ‰èƒ½æ‰“æ¢åˆ¥äººçš„æŠ€èƒ½ï¼\n");
 
         if (! objectp(man))
-                return notify_fail("ÖÜÎ§Ã»ÈËÄÜ°ïÄãÈ¥ÁË½â±ğÈËµÄ¼¼ÄÜ£¡\n");
+                return notify_fail("å‘¨åœæ²’äººèƒ½å¹«ä½ å»äº†è§£åˆ¥äººçš„æŠ€èƒ½ï¼\n");
 
         if ((sklvl = me->query_skill("checking", 1)) < 10)
-                return notify_fail("ÄãµÄ´òÌ½±¾ÁìÉĞÎ´´¿Êì£¬ÎŞ·¨"
-                                   "ÁË½â±ğÈËµÄ¼¼ÄÜ£¡\n");
+                return notify_fail("ä½ çš„æ‰“æ¢æœ¬é ˜å°šæœªç´”ç†Ÿï¼Œç„¡æ³•"
+                                   "äº†è§£åˆ¥äººçš„æŠ€èƒ½ï¼\n");
 
         if (! arg)
-                return notify_fail("ÄãÒª´òÌıË­µÄ¼¼ÄÜ£¿\n");
+                return notify_fail("ä½ è¦æ‰“è½èª°çš„æŠ€èƒ½ï¼Ÿ\n");
 
         if (present(arg, environment(me)))
-                return notify_fail("ÄãÒª´òÌıµÄÈË¾ÍÔÚ±ßÉÏ£¬ÔÚÕâÀï"
-                                   "ÎÊ²»´óÍ×µ±°É£¿\n");
+                return notify_fail("ä½ è¦æ‰“è½çš„äººå°±åœ¨é‚Šä¸Šï¼Œåœ¨é€™è£¡"
+                                   "å•ä¸å¤§å¦¥ç•¶å§ï¼Ÿ\n");
 
         ob = find_player(arg);
         if (! ob) ob = find_living(arg);
-        if (! ob || ! me->visible(ob)) return notify_fail("ÄãÒª´òÌıË­µÄ¼¼ÄÜ£¿\n");
+        if (! ob || ! me->visible(ob)) return notify_fail("ä½ è¦æ‰“è½èª°çš„æŠ€èƒ½ï¼Ÿ\n");
 
         if (ob == me)
-                return notify_fail("ÄãÃ»Õâ÷á±¿°É£¬Òª±ğÈË"
-                                   "¸æËßÄã×Ô¼ºµÄ¼¼ÄÜ£¿\n");
+                return notify_fail("ä½ æ²’é€™éº¼ç¬¨å§ï¼Œè¦åˆ¥äºº"
+                                   "å‘Šè¨´ä½ è‡ªå·±çš„æŠ€èƒ½ï¼Ÿ\n");
 
         cost=query("max_jing", me)/(sklvl/10)-10;
         if (cost < 40) cost = 30 + random(10);
 
         if( query("jing", me) <= cost )
-                return notify_fail("ÏÖÔÚÄãÌ«ÀÛÁË£¬ÎŞ·¨È¥´òÌı±ğÈËµÄ¼¼ÄÜ¡£\n");
+                return notify_fail("ç¾åœ¨ä½ å¤ªç´¯äº†ï¼Œç„¡æ³•å»æ‰“è½åˆ¥äººçš„æŠ€èƒ½ã€‚\n");
         me->receive_damage("jing", cost);
 
-        tell_object(me, "Äã×ßÉÏÇ°È¥£¬Ğ¡ĞÄÒíÒíµØÏò" + man->name() +
-                        "´òÌı¹ØÓÚ" + ob->name() + "µÄÇé¿ö ...\n");
-        message("vision", "Ö»¼û" + me->name() + "Åã×ÅĞ¦Á³¸ú" +
-                          man->name() + "Ëµ×Å»°£¬ºÃÏóÔÚ´òÌıĞ©Ê²Ã´¡£\n", 
+        tell_object(me, "ä½ èµ°ä¸Šå‰å»ï¼Œå°å¿ƒç¿¼ç¿¼åœ°å‘" + man->name() +
+                        "æ‰“è½é—œäº" + ob->name() + "çš„æƒ…æ³ ...\n");
+        message("vision", "åªè¦‹" + me->name() + "é™ªè‘—ç¬‘è‡‰è·Ÿ" +
+                          man->name() + "èªªè‘—è©±ï¼Œå¥½è±¡åœ¨æ‰“è½äº›ä»€éº¼ã€‚\n", 
                 environment(me), ({ me, man }) );
 
         sp = me->query_skill("checking") * 10 + 
@@ -71,19 +71,19 @@ int main(object me, string arg)
         dp=query("jing", ob)*2;
         
         if (random(sp) < random(dp))
-                return notify_fail(man->name() + "Ò¡ÁËÒ¡Í·£¬ËµµÀ£ºÕâÊÂ"
-                                   "ÎÒ¿É²»Çå³ş£¬" + RANK_D->query_respect(me) +
-                                   "»¹ÊÇÈ¥Ïò±ğÈË´òÌıÒ»ÏÂ°É£¡\n");
+                return notify_fail(man->name() + "æ–äº†æ–é ­ï¼Œèªªé“ï¼šé€™äº‹"
+                                   "æˆ‘å¯ä¸æ¸…æ¥šï¼Œ" + RANK_D->query_respect(me) +
+                                   "é‚„æ˜¯å»å‘åˆ¥äººæ‰“è½ä¸€ä¸‹å§ï¼\n");
 
         skl = ob->query_skills();
         if (! sizeof(skl))
         {
-                write(man->name() + "¸æËßÄã£º " + ob->name() +
-                      "Ä¿Ç°²¢Ã»ÓĞÑ§»áÈÎºÎ¼¼ÄÜ¡£\n");
+                write(man->name() + "å‘Šè¨´ä½ ï¼š " + ob->name() +
+                      "ç›®å‰ä¸¦æ²’æœ‰å­¸æœƒä»»ä½•æŠ€èƒ½ã€‚\n");
                 return 1;
         }
-        write(man->name() + "¸æËßÄã£º " + ob->name() +
-              "Ä¿Ç°ËùÑ§¹ıµÄ¼¼ÄÜ£º\n\n");
+        write(man->name() + "å‘Šè¨´ä½ ï¼š " + ob->name() +
+              "ç›®å‰æ‰€å­¸éçš„æŠ€èƒ½ï¼š\n\n");
         sname  = sort_array(keys(skl), (: strcmp :));
         
         map = ob->query_skill_map();
@@ -95,13 +95,13 @@ int main(object me, string arg)
         
         i = random(sizeof(skl));
 
-        // Õâ¸öÊÇ´òÌıµ½µÄ¼¼ÄÜµÄ¾«È·¶È
+        // é€™å€‹æ˜¯æ‰“è½åˆ°çš„æŠ€èƒ½çš„ç²¾ç¢ºåº¦
         precise = 6000 / sklvl;
         if( precise < 1 ) precise = 1;
 
         write(sprintf("%s%s%-40s" NOR " - %3d\n", 
                 (lrn[sname[i]] >= (skl[sname[i]] + 1) * (skl[sname[i]] + 1)) ? HIM : "",
-                (member_array(sname[i], mapped) == -1? "  " : "¡õ"),
+                (member_array(sname[i], mapped) == -1? "  " : "â–¡"),
                 to_chinese(sname[i]) + " (" + sname[i] + ")",
                 (skl[sname[i]] + precise / 2) / precise * precise));
 
@@ -113,14 +113,14 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : check|dating [<Ä³ÈË>]
+æŒ‡ä»¤æ ¼å¼ : check|dating [<æŸäºº>]
 
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄã´òÌı±ğÈËËùÑ§¹ıµÄ¼¼ÄÜ¡£
+é€™å€‹æŒ‡ä»¤å¯ä»¥è®“ä½ æ‰“è½åˆ¥äººæ‰€å­¸éçš„æŠ€èƒ½ã€‚
 
-ÄãÒ²¿ÉÒÔÖ¸¶¨Ò»¸öºÍÄãÓĞÊ¦Í½¹ØÏµµÄ¶ÔÏó£¬ÓÃ skills|cha ¿ÉÒÔ²éÖª¶Ô·½µÄ¼¼ÄÜ×´¿ö¡£
+ä½ ä¹Ÿå¯ä»¥æŒ‡å®šä¸€å€‹å’Œä½ æœ‰å¸«å¾’é—œç³»çš„å°è±¡ï¼Œç”¨ skills|cha å¯ä»¥æŸ¥çŸ¥å°æ–¹çš„æŠ€èƒ½ç‹€æ³ã€‚
 
-´ËÃüÁîÎªØ¤°ïµÜ×Ó×¨ÓÃ£¬²¢ĞèÑ§Ï°ÏàÓ¦µÄ¼¼ÄÜ¡£Èç¹û¼¼ÄÜ²»¸ß£¬ÄÇÃ´
-´òÌı³öÀ´µÄ¿ÉÄÜ»áÓĞÒ»Ğ©³öÈë¡£
+æ­¤å‘½ä»¤ç‚ºä¸å¹«å¼Ÿå­å°ˆç”¨ï¼Œä¸¦éœ€å­¸ç¿’ç›¸æ‡‰çš„æŠ€èƒ½ã€‚å¦‚æœæŠ€èƒ½ä¸é«˜ï¼Œé‚£éº¼
+æ‰“è½å‡ºä¾†çš„å¯èƒ½æœƒæœ‰ä¸€äº›å‡ºå…¥ã€‚
 
 HELP );
     return 1;

@@ -1,12 +1,12 @@
-// emperor.c  ÕæÃüÌì×Ó
+// emperor.c  çœŸå‘½å¤©å­
 
 #include <ansi.h>
 
 inherit F_CLEAN_UP;
 
-string name() { return HIY "ÕæÃüÌì×Ó" NOR; }
+string name() { return HIY "çœŸå‘½å¤©å­" NOR; }
 
 int perform(object me, string skill)
 {
-        return notify_fail("ÕæÃüÌì×ÓÕâÏî¼¼ÄÜ²»ÐèÒªÔËÓÃ¡£\n");
+        return notify_fail("çœŸå‘½å¤©å­é€™é …æŠ€èƒ½ä¸éœ€è¦é‹ç”¨ã€‚\n");
 }

@@ -4,16 +4,16 @@ inherit NPC;
 
 void create()
 {
-        set_name("ºûµû", ({"hudie"}) );
-        set("race", "À¥³æ");
-        set("subrace", "·É³æ");
+        set_name("è´è¶", ({"hudie"}) );
+        set("race", "æ˜†èŸ²");
+        set("subrace", "é£›èŸ²");
         set("age", 8);
-        set("long", "ÕâÊÇÒ»Ö»ÔÚ»¨¼äôæôæ·ÉÎèµÄºûµû£¬ËÆºõ²»ÅÂÈËÄØ¡£\n");
+        set("long", "é€™æ˜¯ä¸€åªåœ¨èŠ±é–“ç¿©ç¿©é£›èˆžçš„è´è¶ï¼Œä¼¼ä¹Žä¸æ€•äººå‘¢ã€‚\n");
 
         set("str", 20);
         set("dex", 50);
 
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "³á°ò", "Î²°Í" }) );
+        set("limbs", ({ "é ­éƒ¨", "èº«é«”", "ç¿…è†€", "å°¾å·´" }) );
         set("verbs", ({ "bite", "poke" }) );
 
         set_temp("apply/attack", 33);
@@ -22,7 +22,7 @@ void create()
         set("chat_chance", 5);
         set("chat_msg", ({
                 (: this_object(), "random_move" :),
-        "ºûµû·É¹ýÀ´£¬ÈÆ×ÅÄãµÄÉíÌå·ÉÎèÆðÀ´¡£µÈÄãÉì³öÊÖÀ´Ïë×¥×¡ËüÊ±£¬ËüÓÖ·É×ßÁË¡£\n",
+        "è´è¶é£›éŽä¾†ï¼Œç¹žè‘—ä½ çš„èº«é«”é£›èˆžèµ·ä¾†ã€‚ç­‰ä½ ä¼¸å‡ºæ‰‹ä¾†æƒ³æŠ“ä½å®ƒæ™‚ï¼Œå®ƒåˆé£›èµ°äº†ã€‚\n",
          }) );
 
         setup();

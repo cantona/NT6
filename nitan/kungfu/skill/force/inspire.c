@@ -7,36 +7,36 @@ int exert(object me, object target)
         string force;
 
         if( !query("breakup", me) )
-                return notify_fail("Äã»¹Ã»ÓĞÁìÎòÀûÓÃÕæÆø¼¤Àø¾«ÉñµÄ¾÷ÇÏ¡£\n");
+                return notify_fail("ä½ é‚„æ²’æœ‰é ˜æ‚Ÿåˆ©ç”¨çœŸæ°£æ¿€å‹µç²¾ç¥çš„è¨£ç«…ã€‚\n");
 
         if (me->is_fighting())
-                return notify_fail("ÏÖÔÚÄãÕıÔÚÕ½¶·ÖĞ£¿»¹ÊÇµÈ´òÍêÁËÔÙËµ°É£¡\n");
+                return notify_fail("ç¾åœ¨ä½ æ­£åœ¨æˆ°é¬¥ä¸­ï¼Ÿé‚„æ˜¯ç­‰æ‰“å®Œäº†å†èªªå§ï¼\n");
 
         force = me->query_skill_mapped("force");
         if (! stringp(force))
-                return notify_fail("ÏÈ¼¤·¢ÄãµÄÌØÊâÄÚ¹¦¡£\n");
+                return notify_fail("å…ˆæ¿€ç™¼ä½ çš„ç‰¹æ®Šå…§åŠŸã€‚\n");
 
         if ((int)me->query_skill(force, 1) < 200)
-                return notify_fail("ÄãµÄ" + to_chinese(force) + "ĞŞÎª»¹²»¹»¡£\n");
+                return notify_fail("ä½ çš„" + to_chinese(force) + "ä¿®ç‚ºé‚„ä¸å¤ ã€‚\n");
 
         if( query("eff_jing", me) >= query("max_jing", me) )
-                return notify_fail("ÄãÏÖÔÚ¾«Éñ±¥Âú£¬ÓĞÊ²Ã´ºÃ¼¤ÀøµÄ£¿\n");
+                return notify_fail("ä½ ç¾åœ¨ç²¾ç¥é£½æ»¿ï¼Œæœ‰ä»€éº¼å¥½æ¿€å‹µçš„ï¼Ÿ\n");
 
         if( query("neili", me)<200 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ã€‚\n");
 
         if( query("eff_jing", me)<query("max_jing", me)/3 )
-                return notify_fail("ÄãµÄ¾«ËğÉËÌ«ÖØ£¬ÏÖÔÚÄÑÒÔÕñ·Ü×Ô¼º¡£\n");
+                return notify_fail("ä½ çš„ç²¾æå‚·å¤ªé‡ï¼Œç¾åœ¨é›£ä»¥æŒ¯å¥®è‡ªå·±ã€‚\n");
 
-        message_vision(HIW "$N" HIW "ÅÌÏ¥×øÏÂ£¬±ÕÄ¿Ú¤Éñ£¬»º»ºµÄºôÎüÍÂÄÉ¡£\n" NOR, me);
+        message_vision(HIW "$N" HIW "ç›¤è†åä¸‹ï¼Œé–‰ç›®å†¥ç¥ï¼Œç·©ç·©çš„å‘¼å¸åç´ã€‚\n" NOR, me);
         set_temp("pending/inspiring", 1, me);
-        me->set_short_desc("Õı×øÔÚµØÏÂÔË¹¦ÁÆÉË¡£");
+        me->set_short_desc("æ­£ååœ¨åœ°ä¸‹é‹åŠŸç™‚å‚·ã€‚");
         me->start_busy((:call_other, __FILE__, "inspiring" :),
                        (:call_other, __FILE__, "halt_inspiring" :));
         return 1;
 }
 
-// Õñ·ÜÖĞ
+// æŒ¯å¥®ä¸­
 int inspiring(object me)
 {
         string force;
@@ -45,23 +45,23 @@ int inspiring(object me)
         force = me->query_skill_mapped("force");
         if (! stringp(force))
         {
-                // Ã»ÓĞÌØÊâÄÚ¹¦ÁË£¿
-                tell_object(me, "ÄãÒ»Ê±ÄÑÒÔ¶¨¶áÈçºÎÔËÓÃÄÚÁ¦£¬Ö»ºÃÏÈÔİÍ£ÁÆÉË¡£\n");
+                // æ²’æœ‰ç‰¹æ®Šå…§åŠŸäº†ï¼Ÿ
+                tell_object(me, "ä½ ä¸€æ™‚é›£ä»¥å®šå¥ªå¦‚ä½•é‹ç”¨å…§åŠ›ï¼Œåªå¥½å…ˆæš«åœç™‚å‚·ã€‚\n");
                 set_temp("pending/inspiring", 0, me);
                 me->set_short_desc(0);
-                message_vision("$NÌ¾ÁË¿ÚÆø£¬Ò¡Ò¡»Î»ÎµÄÕ¾ÁËÆğÀ´¡£\n", me);
+                message_vision("$Nå˜†äº†å£æ°£ï¼Œæ–æ–æ™ƒæ™ƒçš„ç«™äº†èµ·ä¾†ã€‚\n", me);
                 return 0;
         }
 
         if( query("eff_jing", me)<query("max_jing", me) )
         {
-                // ĞèÒª¼ÌĞøÁÆÉË
+                // éœ€è¦ç¹¼çºŒç™‚å‚·
                 if( query("neili", me)<100 )
                 {
-                        tell_object(me, "Äã¾õµÃÕæÆø²»¼Ã£¬ÄÑÒÔÔÚ¾­ÂöÖĞ¼ÌĞøÔË×ªÕñ·Ü¡£\n");
+                        tell_object(me, "ä½ è¦ºå¾—çœŸæ°£ä¸æ¿Ÿï¼Œé›£ä»¥åœ¨ç¶“è„ˆä¸­ç¹¼çºŒé‹è½‰æŒ¯å¥®ã€‚\n");
                         set_temp("pending/healing", 0, me);
                         me->set_short_desc(0);
-                        message_vision("$NÌ¾ÁË¿ÚÆø£¬Ò¡Ò¡»Î»ÎµÄÕ¾ÁËÆğÀ´¡£\n", me);
+                        message_vision("$Nå˜†äº†å£æ°£ï¼Œæ–æ–æ™ƒæ™ƒçš„ç«™äº†èµ·ä¾†ã€‚\n", me);
                         return 0;
                 }
 
@@ -71,35 +71,35 @@ int inspiring(object me)
                 switch (random(10))
                 {
                 case 0:
-                        tell_object(me, "ÄãÔËÓÃ" + to_chinese(force) + "ÑØ×Å"
-                                    "Öî´óÑ¨ÂıÂıÔË×ª£¬Õñ·Ü¾«Éñ¡£\n");
+                        tell_object(me, "ä½ é‹ç”¨" + to_chinese(force) + "æ²¿è‘—"
+                                    "è«¸å¤§ç©´æ…¢æ…¢é‹è½‰ï¼ŒæŒ¯å¥®ç²¾ç¥ã€‚\n");
                         break;
                 case 1:
-                        tell_object(me, "Äã½«ÄÚÁ¦ÄÉÈëµ¤Ìï£¬ÔÙÉÏĞĞ³å¶¥£¬Í¸Äà¹¬"
-                                    "£¬¶Ù¾õ¾«ÉñË¬¿ì¡£\n");
+                        tell_object(me, "ä½ å°‡å…§åŠ›ç´å…¥ä¸¹ç”°ï¼Œå†ä¸Šè¡Œæ²–é ‚ï¼Œé€æ³¥å®®"
+                                    "ï¼Œé “è¦ºç²¾ç¥çˆ½å¿«ã€‚\n");
                         break;
                 case 2:
-                        tell_object(me, "ÄãÔË×ªÄÚÁ¦£¬»º»ººôÎüÍÂÄÉ£¬¶îÍ·ÉÏÉø³ö"
-                                        "µãµãº¹Öé£¬Ëæ¼´»¯×÷°×ÎíÕôÌÚ¶øÆğ¡£\n");
+                        tell_object(me, "ä½ é‹è½‰å…§åŠ›ï¼Œç·©ç·©å‘¼å¸åç´ï¼Œé¡é ­ä¸Šæ»²å‡º"
+                                        "é»é»æ±—ç ï¼Œéš¨å³åŒ–ä½œç™½éœ§è’¸é¨°è€Œèµ·ã€‚\n");
                         break;
                 }
 
                 return 1;
         }
 
-        // »Ö¸´Íê±Ï
+        // æ¢å¾©å®Œç•¢
         set_temp("pending/exercise", 0, me);
         me->set_short_desc(0);
-        message_vision(HIY "$N" HIY "»º»ºÕö¿ªË«Ä¿£¬¾«¹âËÄÉä£¬ÉñÇåÒâË¬¡£\n" NOR,
+        message_vision(HIY "$N" HIY "ç·©ç·©çœé–‹é›™ç›®ï¼Œç²¾å…‰å››å°„ï¼Œç¥æ¸…æ„çˆ½ã€‚\n" NOR,
                        me);
         return 0;
 }
 
-// Í£Ö¹ÁÆÉË
+// åœæ­¢ç™‚å‚·
 int halt_inspiring(object me)
 {
-        tell_object(me, "Äã½«ÕæÆøÊÕ»Øµ¤Ìï£¬Î¢Î¢´­Ï¢£¬Õ¾ÁËÆğÀ´¡£\n");
-        tell_room(environment(me), me->name() + "ÃÍµÄÎüÒ»¿ÚÆø£¬Í»È»Õ¾ÁËÆğÀ´¡£\n", me);
+        tell_object(me, "ä½ å°‡çœŸæ°£æ”¶å›ä¸¹ç”°ï¼Œå¾®å¾®å–˜æ¯ï¼Œç«™äº†èµ·ä¾†ã€‚\n");
+        tell_room(environment(me), me->name() + "çŒ›çš„å¸ä¸€å£æ°£ï¼Œçªç„¶ç«™äº†èµ·ä¾†ã€‚\n", me);
         set_temp("pending/inspiring", 0, me);
         me->set_short_desc(0);
         return 1;

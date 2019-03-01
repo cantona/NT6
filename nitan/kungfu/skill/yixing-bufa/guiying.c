@@ -4,7 +4,7 @@
 #include <combat.h>
 inherit F_SSERVER;
 
-string name() { return "ÎŞĞÎ¹íÓ°"; }
+string name() { return "ç„¡å½¢é¬¼å½±"; }
 
 int perform(object me, object target)
 {
@@ -14,32 +14,32 @@ int perform(object me, object target)
         if( !target ) target = offensive_target(me);
 
         if( !target || !me->is_fighting(target) )
-                return notify_fail("¡¸ÎŞĞÎ¹íÓ°¡¹Ö»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œç„¡å½¢é¬¼å½±ã€åªèƒ½åœ¨æˆ°é¬¥ä¸­ä½¿ç”¨ã€‚\n");
 
         if ((int)me->query_skill("yixing-bufa", 1) < 100 )
-                return notify_fail("ÄãµÄÒâĞÎ²½·¨µÈ¼¶²»¹»£¬²»ÄÜÊ¹³ö¡¸ÎŞĞÎ¹íÓ°¡¹£¡\n");
+                return notify_fail("ä½ çš„æ„å½¢æ­¥æ³•ç­‰ç´šä¸å¤ ï¼Œä¸èƒ½ä½¿å‡ºã€Œç„¡å½¢é¬¼å½±ã€ï¼\n");
 
         if ((int)me->query_skill("dodge", 1) < 100 )
-                return notify_fail("ÄãµÄ»ù±¾Çá¹¦¼«²»¹»æµÊì£¬²»ÄÜÊ¹³ö¡¸ÎŞĞÎ¹íÓ°¡¹£¡\n");
+                return notify_fail("ä½ çš„åŸºæœ¬è¼•åŠŸæ¥µä¸å¤ å«»ç†Ÿï¼Œä¸èƒ½ä½¿å‡ºã€Œç„¡å½¢é¬¼å½±ã€ï¼\n");
 
         if ( me->query_skill_mapped("dodge") != "yixing-bufa"
              || me->query_skill_mapped("force") != "busi-shenlong")
-                return notify_fail("ÄãÏÖÔÚÎŞ·¨Ê¹³ö¡¸ÎŞĞÎ¹íÓ°¡¹½øĞĞÇ£ÖÆ£¡\n");
+                return notify_fail("ä½ ç¾åœ¨ç„¡æ³•ä½¿å‡ºã€Œç„¡å½¢é¬¼å½±ã€é€²è¡Œç‰½åˆ¶ï¼\n");
 
         if( query("neili", me)<300 )
-                return notify_fail("ÄãÏÖÔÚÕæÆøÌ«Èõ£¬²»ÄÜÊ¹³ö¡¸ÎŞĞÎ¹íÓ°¡¹£¡\n");
+                return notify_fail("ä½ ç¾åœ¨çœŸæ°£å¤ªå¼±ï¼Œä¸èƒ½ä½¿å‡ºã€Œç„¡å½¢é¬¼å½±ã€ï¼\n");
 
         if( query("neili", me)<1000 )
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ£¬²»ÄÜÊ¹³ö¡¸ÎŞĞÎ¹íÓ°¡¹£¡\n");
+                return notify_fail("ä½ ç¾åœ¨å…§åŠ›å¤ªå¼±ï¼Œä¸èƒ½ä½¿å‡ºã€Œç„¡å½¢é¬¼å½±ã€ï¼\n");
 
         if( target->is_busy() )
-                return notify_fail("¶ÔÊÖÒÑ¾­ÊÖÃ¦½ÅÂÒÁË,¿ìµã¹¥»÷°É£¡\n");
+                return notify_fail("å°æ‰‹å·²ç¶“æ‰‹å¿™è…³äº‚äº†,å¿«é»æ”»æ“Šå§ï¼\n");
 
         if( query_temp("guiying", me) )
-                return notify_fail("ÄãÒÑ¾­Ê¹³ö¡¸ÎŞĞÎ¹íÓ°¡¹²½·¨£¡\n");
+                return notify_fail("ä½ å·²ç¶“ä½¿å‡ºã€Œç„¡å½¢é¬¼å½±ã€æ­¥æ³•ï¼\n");
 
-        message_combatd(HIB"$NÇ°ºóÓÎ×ß£¬ÉíĞÎÉÁ¶¯£¬½ÅÌ¤ÒâĞÎ²½·¨£¬»¯³öÊı¸öÉíĞÎ¡£\n"
-                "$n±»´Ë¡¸ÎŞĞÎ¹íÓ°¡¹ËùÃÔ»ó£¬ÊÖ×ãÎŞ´ë£¬²»ÖªÄÄ¸ö$NÊÇÕæ£¬ÄÄ¸öÊÇ¼Ù¡£\n"NOR, me, target);
+        message_combatd(HIB"$Nå‰å¾ŒéŠèµ°ï¼Œèº«å½¢é–ƒå‹•ï¼Œè…³è¸æ„å½¢æ­¥æ³•ï¼ŒåŒ–å‡ºæ•¸å€‹èº«å½¢ã€‚\n"
+                "$nè¢«æ­¤ã€Œç„¡å½¢é¬¼å½±ã€æ‰€è¿·æƒ‘ï¼Œæ‰‹è¶³ç„¡æªï¼Œä¸çŸ¥å“ªå€‹$Næ˜¯çœŸï¼Œå“ªå€‹æ˜¯å‡ã€‚\n"NOR, me, target);
         target->start_busy(4);
         me->start_busy(1);
         addn("neili", -200, me);
@@ -51,7 +51,7 @@ int perform(object me, object target)
 
 void remove_effect(object me)
 {
-        message_combatd(HIB"$N³¤ÓõÒ»Éù£¬·ÅÂı²½·¨£¬·ÖÉíÁ¢¼´ÏûÊ§²»¼û£¡\n"NOR, me);
+        message_combatd(HIB"$Né•·åä¸€è²ï¼Œæ”¾æ…¢æ­¥æ³•ï¼Œåˆ†èº«ç«‹å³æ¶ˆå¤±ä¸è¦‹ï¼\n"NOR, me);
         delete_temp("guiying", me);
         return;
 }

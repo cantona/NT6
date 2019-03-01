@@ -13,7 +13,7 @@ int main(object me, string arg)
 
         if (! arg) return 0;
         if (wiz_level(me) < wiz_level(arg))
-                return notify_fail("Äã²»ÄÜ×°ÔØÎ×Ê¦¼¶±ð±ÈÄã¸ßµÄÍæ¼Ò¡£\n");
+                return notify_fail("ä½ ä¸èƒ½è£è¼‰å·«å¸«ç´šåˆ¥æ¯”ä½ é«˜çš„çŽ©å®¶ã€‚\n");
 
         where = environment(me);
 
@@ -27,13 +27,13 @@ int main(object me, string arg)
         if (! user->restore())
         {
                 destruct(user);
-                return notify_fail("Ã»ÓÐÕâ¸öÍæ¼Ò¡£\n");
+                return notify_fail("æ²’æœ‰é€™å€‹çŽ©å®¶ã€‚\n");
         }
         user->setup();
         
         if( !stringp(msg=query("env/msg_clone", me)) )
         if( query("outdoors", where) || query("exits", where) )
-                msg = HIM"$NÌÍ³öÒ»íÈÄà°Í£¬ÍÂÁËÁ½¿Ú¿ÚË®,Äó°¡Äó¡£¡£¡£ÄóÁË°ëÌìÄó³öÒ»¸ö$n¡£\n"NOR;
+                msg = HIM"$NæŽå‡ºä¸€ç £æ³¥å·´ï¼Œåäº†å…©å£å£æ°´,æå•Šæã€‚ã€‚ã€‚æäº†åŠå¤©æå‡ºä¸€å€‹$nã€‚\n"NOR;
 
         message_vision(msg + "\n", me, user);
         user->move(where);

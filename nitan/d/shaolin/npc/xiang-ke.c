@@ -1,4 +1,4 @@
-// xiang-ke.c ½øÏã¿Í
+// xiang-ke.c é€²é¦™å®¢
 
 inherit NPC;
 
@@ -8,8 +8,8 @@ void create()
 
         value = random(10);
 
-        set_name("½øÏã¿Í", ({ "jingxiang ke", "ke", "guest" }));
-        set("gender", "ÄÐÐÔ");
+        set_name("é€²é¦™å®¢", ({ "jingxiang ke", "ke", "guest" }));
+        set("gender", "ç”·æ€§");
         set("age", 14 + value * 3 );
 
         set("combat_exp", 500 + 5 * value);

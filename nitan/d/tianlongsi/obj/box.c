@@ -4,13 +4,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name("½õºĞ", ({ "jin he", "he" }) );
+        set_name("éŒ¦ç›’", ({ "jin he", "he" }) );
         set_weight(3000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
-                set("long", "ÕâÊÇ×°ÉáÀû×ÓµÄºĞ×Ó,ÄãËÆºõÓ¦¸Ã½»»¹Ê§Ö÷¡£\n");
+                set("unit", "å€‹");
+                set("long", "é€™æ˜¯è£èˆåˆ©å­çš„ç›’å­,ä½ ä¼¼ä¹æ‡‰è©²äº¤é‚„å¤±ä¸»ã€‚\n");
                 set("value", 1000);
                 set("no_sell", 1);
                 set("material", "wood");
@@ -29,9 +29,9 @@ int do_open(string arg)
         
         me = this_player();
 
-        if(!arg&&arg!="he") return notify_fail("ÄãÒª´ò¿ªÊ²Ã´¶«Î÷£¿\n");
-        message_vision("$N´ò¿ªºĞ×Ó£¬Ö»¼ûÁ½Ö§¶¾¼ı·ÉÉä¶ø³ö£¬²ÁÉí¶ø¹ı£¡\n",me);
-        message_vision("Ò»¸öºÚÓ°Í»È»³öÏÖ£¬´Ó$NÊÖÖĞÒ»°ÑÇÀ¹ı½õºĞ£¬·ÉÉí¶øÈ¥£¡\n",me);
+        if(!arg&&arg!="he") return notify_fail("ä½ è¦æ‰“é–‹ä»€éº¼æ±è¥¿ï¼Ÿ\n");
+        message_vision("$Næ‰“é–‹ç›’å­ï¼Œåªè¦‹å…©æ”¯æ¯’ç®­é£›å°„è€Œå‡ºï¼Œæ“¦èº«è€Œéï¼\n",me);
+        message_vision("ä¸€å€‹é»‘å½±çªç„¶å‡ºç¾ï¼Œå¾$Næ‰‹ä¸­ä¸€æŠŠæ¶ééŒ¦ç›’ï¼Œé£›èº«è€Œå»ï¼\n",me);
         destruct(this_object());
         return 1;
 }

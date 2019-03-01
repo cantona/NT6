@@ -8,14 +8,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name("²¼´ü", ({"bu dai", "dai"}));
+        set_name("å¸ƒè¢‹", ({"bu dai", "dai"}));
         set_weight(2000);
         set_max_encumbrance(3000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»¸öÆÆ¾ÉµÄ²¼´ü¡£\n");
-                set("unit", "¸ö");
+                set("long", "é€™æ˜¯ä¸€å€‹ç ´èˆŠçš„å¸ƒè¢‹ã€‚\n");
+                set("unit", "å€‹");
                 set("no_get", 1);
                 set("no_steal", 1);
                 set("no_give", 1);
@@ -39,7 +39,7 @@ int do_put(string arg)
         if (!arg) return 0;
         if (sscanf(arg,"%s in dai",str) == 1 || sscanf(arg,"%s in bu dai",str) == 1) {
                 if (str != "shihui")
-                        return notify_fail("ÕâÑù¶«Î÷·Å²»½øÈ¥¡£\n");
+                        return notify_fail("é€™æ¨£æ±è¥¿æ”¾ä¸é€²åŽ»ã€‚\n");
         }
         return 0;
 }
@@ -52,33 +52,33 @@ int do_sa(string arg)
 	string msg;
 	
 	if (!(ob1 = present("shihui", ob)))
-		return notify_fail("´üÀïÓÖÃ»Ê¯»Ò£¬ÄãÈöÉ¶£¿£¡\n");
+		return notify_fail("è¢‹è£¡åˆæ²’çŸ³ç°ï¼Œä½ æ’’å•¥ï¼Ÿï¼\n");
 
 	if (!arg)
-		return notify_fail("ÄãÏëÒªÓÃÊ¯»Ò·Û¸ÉÊ²Ã´?\n");
+		return notify_fail("ä½ æƒ³è¦ç”¨çŸ³ç°ç²‰å¹¹ä»€éº¼?\n");
 
 	if (arg = "shi song"
 	 && ob2 = present("shi song",environment(me))
 	 && ob3 = present("mao shiba",environment(me))) {
 		if (!me->query_temp("mao18/passed4"))
-			return notify_fail("ÈË¼Ò´ò¼ÜÄØ£¬ÄãÏ¹²óºÍÉ¶£¡\n");
-		msg = HIW"$N³Ã$n²»±¸£¬´Ó²¼´üÖÐÌÍ³öÊ¯»Ò·Û£¬ÃÍµÄÈöÏò$nµÄÑÛ¾¦£¡\n"NOR;
+			return notify_fail("äººå®¶æ‰“æž¶å‘¢ï¼Œä½ çžŽæ”™å’Œå•¥ï¼\n");
+		msg = HIW"$Nè¶$nä¸å‚™ï¼Œå¾žå¸ƒè¢‹ä¸­æŽå‡ºçŸ³ç°ç²‰ï¼ŒçŒ›çš„æ’’å‘$nçš„çœ¼ç›ï¼\n"NOR;
 		destruct(ob1);
 		call_out("do_attack", 1, me, ob2, ob3, msg);
 		return 1;
 	}
 	else
-		return notify_fail("Ê¯»Ò·ÛÈçºÎÄÜ¹»È¥¹¥»÷ÈË¼Ò£¿£¡\n");
+		return notify_fail("çŸ³ç°ç²‰å¦‚ä½•èƒ½å¤ åŽ»æ”»æ“Šäººå®¶ï¼Ÿï¼\n");
 }
 
 int do_attack(object me, object ob2, object ob3, string msg)
 {
           ob2 = present("shi song",environment(me));
 	if (random(me->query_str()) > 20 && !me->query("fail")) {
-		msg += RED"$nÄ¼µØ°×Ó°»Î¶¯£¬ÎÞÊý·ÛÄ©³å½øÑÛÀï£¬±ÇÀï£¬¿ÚÀï£¬Ò»Ê±ÆøÎªÖ®ÖÏ£¬¸ú×ÅË«\n"+
-			"ÑÛ¾çÍ´£¬ÓÌËÆÍòÃ¶¸ÖÕëÍ¬Ê±´ÌÒ»°ã£¬´ýÓûÕÅ¿Ú´ó½Ð£¬Âú×ì·ÛÄ©£¬Á¬ºíÍ·àÉ×¡ÁË£¬\n"+
-			"ÔÙÒ²½Ð²»³öÉùÀ´¡£\n"NOR;
-		msg += CYN"$NËæÊÖ¼ñÆðµØÉÏµ¥µ¶£¬Ë³ÊÖ²åÈëÁË$n¶ÇÖÐ¡£\n"NOR;
+		msg += RED"$nå‹Ÿåœ°ç™½å½±æ™ƒå‹•ï¼Œç„¡æ•¸ç²‰æœ«æ²–é€²çœ¼è£¡ï¼Œé¼»è£¡ï¼Œå£è£¡ï¼Œä¸€æ™‚æ°£ç‚ºä¹‹çª’ï¼Œè·Ÿè‘—é›™\n"+
+			"çœ¼åŠ‡ç—›ï¼ŒçŒ¶ä¼¼è¬æžšé‹¼é‡åŒæ™‚åˆºä¸€èˆ¬ï¼Œå¾…æ¬²å¼µå£å¤§å«ï¼Œæ»¿å˜´ç²‰æœ«ï¼Œé€£å–‰é ­å—Œä½äº†ï¼Œ\n"+
+			"å†ä¹Ÿå«ä¸å‡ºè²ä¾†ã€‚\n"NOR;
+		msg += CYN"$Néš¨æ‰‹æ’¿èµ·åœ°ä¸Šå–®åˆ€ï¼Œé †æ‰‹æ’å…¥äº†$nè‚šä¸­ã€‚\n"NOR;
 		message_vision(msg, me, ob2);
 		ob2->die();
 		me->delete_temp("mao18/passed4");
@@ -88,10 +88,10 @@ int do_attack(object me, object ob2, object ob3, string msg)
 		return 1;
 	}
 	else {
-		log_file("quest/wuhu",sprintf("%8s%-18s´ÓÃ©Ê®°Ë´¦Ñ§µÃÎå»¢¶ÏÃÅµ¶£¬Ê§°Ü£¬¸££º%d¡£\n",
+		log_file("quest/wuhu",sprintf("%8s%-18så¾žèŒ…åå…«è™•å­¸å¾—äº”è™Žæ–·é–€åˆ€ï¼Œå¤±æ•—ï¼Œç¦ï¼š%dã€‚\n",
 			me->name(1), "("+capitalize(me->query("id"))+")", me->query("kar") ), me);
 		me->set("mao18/fail", 1);
-		msg += HIR"Ë­ÖªÈ´ÈöÁË¸ö¿Õ£¬×Ô¼ºÒ²Ë¤ÁËÒ»½»¡£\n"NOR;
+		msg += HIR"èª°çŸ¥å»æ’’äº†å€‹ç©ºï¼Œè‡ªå·±ä¹Ÿæ‘”äº†ä¸€äº¤ã€‚\n"NOR;
 		message_vision(msg, me, ob2);
 		return 1;
 	}
@@ -101,14 +101,14 @@ int do_finish(object me, object ob)
 {
 	object ob1;
 	
-	tell_object(me,HIY"Ã©Ê®°ËµÀ£º¡°ÄãÎªÊ²Ã´ÓÃÊ¯»ÒÈöÔÚÄÇÊ·ËÉµÄÑÛÀï£¿¡±ÉùÒôÑÏÀ÷£¬ÉñÌ¬¸üÊÇÐ×¶ñ¡£\n\n"+
-			"    ÄãÐÄÖÐÊ®·Öº¦ÅÂ£¬µ±ÏÂÃ©Ê®°Ë±ã½«ÈöÊ¯»Ò¡¢ÏÂÃÉº¹Ò©µÈÕâÐ©½­ºþÈËËù²»³ÝµÄ±°±ÉÊÖ¶Î\n"+
-			"¸æËßÁËÄã¡£ËæºóÓÖËµ£º¡°ÎÒÕâÀïÓÐÒ»±¾ÎÒÅÉµ¶·¨µÄÃØ¼®£¬ÄãÄÃÈ¥×ÔÐÐºÃºÃ×êÑÐ¡£Ö»ÒªÄãÄÜ\n"+
-			"ÇÚÑ§¿àÁ·£¬½«À´Î´Ê¼²»ÄÜÁ·³ÉÒ»ÉíºÃÎäÒÕ¡£ÔÛÃÇºó»áÓÐÆÚÁË£¡¡±ËµÍê×ªÉíÀëÈ¥ÁË¡£\n"NOR);
+	tell_object(me,HIY"èŒ…åå…«é“ï¼šâ€œä½ ç‚ºä»€éº¼ç”¨çŸ³ç°æ’’åœ¨é‚£å²é¬†çš„çœ¼è£¡ï¼Ÿâ€è²éŸ³åš´åŽ²ï¼Œç¥žæ…‹æ›´æ˜¯å…‡æƒ¡ã€‚\n\n"+
+			"    ä½ å¿ƒä¸­ååˆ†å®³æ€•ï¼Œç•¶ä¸‹èŒ…åå…«ä¾¿å°‡æ’’çŸ³ç°ã€ä¸‹è’™æ±—è—¥ç­‰é€™äº›æ±Ÿæ¹–äººæ‰€ä¸é½’çš„å‘é„™æ‰‹æ®µ\n"+
+			"å‘Šè¨´äº†ä½ ã€‚éš¨å¾Œåˆèªªï¼šâ€œæˆ‘é€™è£¡æœ‰ä¸€æœ¬æˆ‘æ´¾åˆ€æ³•çš„ç§˜ç±ï¼Œä½ æ‹¿åŽ»è‡ªè¡Œå¥½å¥½é‘½ç ”ã€‚åªè¦ä½ èƒ½\n"+
+			"å‹¤å­¸è‹¦ç·´ï¼Œå°‡ä¾†æœªå§‹ä¸èƒ½ç·´æˆä¸€èº«å¥½æ­¦è—ã€‚å’±å€‘å¾Œæœƒæœ‰æœŸäº†ï¼â€èªªå®Œè½‰èº«é›¢åŽ»äº†ã€‚\n"NOR);
 	ob1 = new(SHU);
 	ob1->move(me);
 	ob1->set_temp("mao18/book",me->query("id"));
-	log_file("quest/wuhu",sprintf("%8s%-18s´ÓÃ©Ê®°Ë´¦Ñ§µÃÎå»¢¶ÏÃÅµ¶£¬¸££º%d¡£\n",
+	log_file("quest/wuhu",sprintf("%8s%-18så¾žèŒ…åå…«è™•å­¸å¾—äº”è™Žæ–·é–€åˆ€ï¼Œç¦ï¼š%dã€‚\n",
 		me->name(1), "("+capitalize(me->query("id"))+")", me->query("kar") ), me);
 	if (ob) destruct(ob);
 	return 1;

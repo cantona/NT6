@@ -1,42 +1,42 @@
-//                ±ê×¼ÃèÊö³¤¶ÈÊ¾Àý                                   |
-// ¡°»Ã¾³¡±Ñ°±¦ÏµÁÐÖ÷ÌâÖ®Ö÷¿ØµØµã
+//                æ¨™æº–æè¿°é•·åº¦ç¤ºä¾‹                                   |
+// â€œå¹»å¢ƒâ€å°‹å¯¶ç³»åˆ—ä¸»é¡Œä¹‹ä¸»æŽ§åœ°é»ž
 // by naihe  2002-10-22
-// Î×Ê¦¿ÉÓÃ <mewiz> Ö¸Áî½øÐÐÒ»Ð©ÓÎÏ·Ïà¹ØµÄ²Ù×÷¡£¾ßÌåÇëÊäÈë <mewiz> ²éÑ¯¡£
-// Ç¿ÖÆÇå³ýËùÓÐ »Ã¾³ ·¿¼äÄÚ´æÔÚÖ®ËùÓÐÎïÆ·£¨³ýÁËÍæ¼ÒÖ®ÍâµÄÒ»ÇÐ£¬¶¼½«É¾³ý£©
-//   Ö¸Áî £º <mewiz del_all>   Çë½÷É÷Ê¹ÓÃ£¡£¡£¡
-// ¸ü¸ÄÁËÒ»ÏÂÁ÷³Ì  naihe 8:35 03-11-3
+// å·«å¸«å¯ç”¨ <mewiz> æŒ‡ä»¤é€²è¡Œä¸€äº›éŠæˆ²ç›¸é—œçš„æ“ä½œã€‚å…·é«”è«‹è¼¸å…¥ <mewiz> æŸ¥è©¢ã€‚
+// å¼·åˆ¶æ¸…é™¤æ‰€æœ‰ å¹»å¢ƒ æˆ¿é–“å…§å­˜åœ¨ä¹‹æ‰€æœ‰ç‰©å“ï¼ˆé™¤äº†çŽ©å®¶ä¹‹å¤–çš„ä¸€åˆ‡ï¼Œéƒ½å°‡åˆªé™¤ï¼‰
+//   æŒ‡ä»¤ ï¼š <mewiz del_all>   è«‹è¬¹æ…Žä½¿ç”¨ï¼ï¼ï¼
+// æ›´æ”¹äº†ä¸€ä¸‹æµç¨‹  naihe 8:35 03-11-3
 
-// naihe 05-9-7 10:35  V1.7 ¼ÌÐø¸üÐÂ
+// naihe 05-9-7 10:35  V1.7 ç¹¼çºŒæ›´æ–°
 
 #include <ansi.h>
 inherit ROOM;
 
 #include    "npc_obj/hj_settings/obj_list.h"
-// µÀ¾ß¼°NPCÁÐ±í
+// é“å…·åŠNPCåˆ—è¡¨
 
 #include    "npc_obj/hj_settings/room_amount_hj.h"
-// Ëæ»ú·¢·ÅÎïÆ·Ê±£¬ÐèÒªÓÃµ½ÕâÀïÃæÒ»¸ö±äÁ¿ »Ã¾³×Ü·¿¼äÊý HJ_ROOM_AMOUNT
+// éš¨æ©Ÿç™¼æ”¾ç‰©å“æ™‚ï¼Œéœ€è¦ç”¨åˆ°é€™è£¡é¢ä¸€å€‹è®Šé‡ å¹»å¢ƒç¸½æˆ¿é–“æ•¸ HJ_ROOM_AMOUNT
 
 int is_gameing = 0;
-// ÓÎÏ·µ±Ç°×´Ì¬£¬¼´¡°Î´Æô¶¯¡±
+// éŠæˆ²ç•¶å‰ç‹€æ…‹ï¼Œå³â€œæœªå•Ÿå‹•â€
 
 #define        KILL_NPC_DISPERSION_TIME     60
 #define        KILL_NPC_AMOUNT_MIN          3
 #define        KILL_NPC_AMOUNT_RANDOM       6
-// ÕâÈý¸öÁ¿¾ö¶¨ÏµÍ³ÔÚÃ¿¸ô TIME ÃëÖÓ£¬ÏòÓÎÏ·ÄÚ¼ÓÈë  MIN + random( RANDOM ) ¸ö
-// É±Â¾ÐÍµÄNPC¡£
-// ÏÖÔÚµÄÉèÖÃÊÇ 3 ·ÖÖÓ 1-3 ¸ö¡£ 15:18 03-10-18
+// é€™ä¸‰å€‹é‡æ±ºå®šç³»çµ±åœ¨æ¯éš” TIME ç§’é˜ï¼Œå‘éŠæˆ²å…§åŠ å…¥  MIN + random( RANDOM ) å€‹
+// æ®ºæˆ®åž‹çš„NPCã€‚
+// ç¾åœ¨çš„è¨­ç½®æ˜¯ 3 åˆ†é˜ 1-3 å€‹ã€‚ 15:18 03-10-18
 
 
 #define        QUEST_NPC_DISPERSION_TIME    300
-// ¶àÉÙÊ±¼ä¾Í¸øÓÎÏ·ÖÐ·¢·ÅÒ»¸ö¶îÍâµÄ "quest" ÀàNPC£¬
-// ¼´ÀÏÈË¡¢º¢Í¯¡¢ÉÌÈË¡¢²Ø½£Éú¼°Öé±¦¿ÍµÈ
+// å¤šå°‘æ™‚é–“å°±çµ¦éŠæˆ²ä¸­ç™¼æ”¾ä¸€å€‹é¡å¤–çš„ "quest" é¡žNPCï¼Œ
+// å³è€äººã€å­©ç«¥ã€å•†äººã€è—åŠç”ŸåŠç å¯¶å®¢ç­‰
 
 #define        ROUND_DISPERSION_TIME        900
-// Ã¿¸ôÒ»¶ÎÊ±¼äÃ»ÓÐÐÂÍæ¼Ò½øÈë hj£¬ÄÇÃ´ÓÐ±ØÒª²¹³äÒ»Ð©ÎïÆ·ÒÔ·ÀÖ¹Àä³¡¡£
+// æ¯éš”ä¸€æ®µæ™‚é–“æ²’æœ‰æ–°çŽ©å®¶é€²å…¥ hjï¼Œé‚£éº¼æœ‰å¿…è¦è£œå……ä¸€äº›ç‰©å“ä»¥é˜²æ­¢å†·å ´ã€‚
 #define        ROUND_DISPERSION_AMOUNT_MIN      30
 #define        ROUND_DISPERSION_AMOUNT_RANDOM   10
-// ²¹³äµÄÊýÁ¿·¶Î§ÊÇ MIN + random( RANDOM )
+// è£œå……çš„æ•¸é‡èŒƒåœæ˜¯ MIN + random( RANDOM )
 
 
 int dispersion( object me );
@@ -52,15 +52,15 @@ void c_msg( string msg )
     naihe = find_player( "naihe" );
     if( !naihe || !userp(naihe) || query("env/no_hj_wizmsg", naihe) )
         CHANNEL_D->do_channel( this_object(), "sys", YEL+ msg + NOR);
-    else tell_object( naihe, HIR"¡¼»Ã¾³ÏµÍ³Í¨Öª¡½£º"+msg + "\n"NOR );
+    else tell_object( naihe, HIR"â–¡å¹»å¢ƒç³»çµ±é€šçŸ¥â–¡ï¼š"+msg + "\n"NOR );
 }
 
 void create()
 {
-    set("short",MAG"Ðé¿ÕÖ®¾³"NOR);
+    set("short",MAG"è™›ç©ºä¹‹å¢ƒ"NOR);
     set("long","
 
-      Äã ½« ½ø Èë µÄ ÊÇ »Ã ¾³ ¡­¡­ ½ø Èë(enter) °É¡­¡­
+      ä½  å°‡ é€² å…¥ çš„ æ˜¯ å¹» å¢ƒ â€¦â€¦ é€² å…¥(enter) å§â€¦â€¦
 
 \n");
 
@@ -73,7 +73,7 @@ void create()
         "enter":__DIR__"room_readygo_hj",
     ]));
 
-    set("channel_id", HIY"¡ù»Ã¾³Ö÷¿ØÖÐÐÄ¡ù"NOR);
+    set("channel_id", HIY"â€»å¹»å¢ƒä¸»æŽ§ä¸­å¿ƒâ€»"NOR);
     setup();
 }
 
@@ -85,7 +85,7 @@ void init()
 
 int do_nocmds()
 {
-    write("ÕâÀï½ûÖ¹Ê¹ÓÃÕâ¸öÖ¸Áî¡£\n");
+    write("é€™è£¡ç¦æ­¢ä½¿ç”¨é€™å€‹æŒ‡ä»¤ã€‚\n");
     return 1;
 }
 
@@ -100,32 +100,32 @@ int valid_leave(object me, string dir)
     if(dir == "enter")
     {
         if( !userp(me) )
-            return notify_fail("ÖíÍ·²»µÃÈëÄÚ¡£\n");
+            return notify_fail("è±¬é ­ä¸å¾—å…¥å…§ã€‚\n");
 
         //if( !me->query_temp("enter_hj") )
-            //return notify_fail("Çë´Ó»Ã¾³ÕýÃÅ½øÈëÕâÀï£¬²Å¿ÉÒÔ¼ÌÐø½øÈëÏÂÒ»¸öµØ·½£¡\n");
+            //return notify_fail("è«‹å¾žå¹»å¢ƒæ­£é–€é€²å…¥é€™è£¡ï¼Œæ‰å¯ä»¥ç¹¼çºŒé€²å…¥ä¸‹ä¸€å€‹åœ°æ–¹ï¼\n");
 
-        // ÔÊÐí½øÈë
-        // Èç¹ûÓÎÏ·Î´Æô¶¯£¬Æô¶¯Ëü£¬²¢·¢·ÅÎï¼þ
+        // å…è¨±é€²å…¥
+        // å¦‚æžœéŠæˆ²æœªå•Ÿå‹•ï¼Œå•Ÿå‹•å®ƒï¼Œä¸¦ç™¼æ”¾ç‰©ä»¶
         if( !is_gameing )
         {
             remove_call_out("start_game");
             call_out("start_game",1);
         }
-        // ÎÞÂÛÈçºÎ£¬Ã¿¸ôÒ»¶ÎÊ±¼ä¾ÍÖØÐÂ·¢·ÅÒ»´ÎÓÎÏ·ÈËÎï»òÎïÆ·£¬Ð¡Á¿
-        // µ«ÈôÓÐÐÂÍæ¼Ò½øÈë£¬Õâ¸ö¼ÆÊ±»áÖØÐÂ¿ªÊ¼
-        // ²¢ÇÒ¸Ãº¯Êý»áÅÐ¶Ï£¬Èôµ÷ÓÃÊ±ÒÑÊÇ·ÇÓÎÏ·×´Ì¬(!is_gameing)£¬Ôò²»²Ù×÷¡£
+        // ç„¡è«–å¦‚ä½•ï¼Œæ¯éš”ä¸€æ®µæ™‚é–“å°±é‡æ–°ç™¼æ”¾ä¸€æ¬¡éŠæˆ²äººç‰©æˆ–ç‰©å“ï¼Œå°é‡
+        // ä½†è‹¥æœ‰æ–°çŽ©å®¶é€²å…¥ï¼Œé€™å€‹è¨ˆæ™‚æœƒé‡æ–°é–‹å§‹
+        // ä¸¦ä¸”è©²å‡½æ•¸æœƒåˆ¤æ–·ï¼Œè‹¥èª¿ç”¨æ™‚å·²æ˜¯éžéŠæˆ²ç‹€æ…‹(!is_gameing)ï¼Œå‰‡ä¸æ“ä½œã€‚
         remove_call_out("dispersion_again");
         call_out("dispersion_again", ROUND_DISPERSION_TIME );
 
-        // 1¸ö°ëÐ¡Ê±ºó£¬ÓÎÏ·ÉèÖÃÎª¡°¹Ø±ÕÖÐ¡±£¬Í¬Ê±ÇåÀíËùÓÐ³¡ÄÚÎïÆ·
-        // µ«ÈôÓÐÐÂÍæ¼Ò½øÈë£¬Õâ¸ö¼ÆÊ±»áÖØÐÂ¿ªÊ¼
+        // 1å€‹åŠå°æ™‚å¾Œï¼ŒéŠæˆ²è¨­ç½®ç‚ºâ€œé—œé–‰ä¸­â€ï¼ŒåŒæ™‚æ¸…ç†æ‰€æœ‰å ´å…§ç‰©å“
+        // ä½†è‹¥æœ‰æ–°çŽ©å®¶é€²å…¥ï¼Œé€™å€‹è¨ˆæ™‚æœƒé‡æ–°é–‹å§‹
         remove_call_out("reset_game");
         call_out("reset_game",6600);
 
-        // ÃâµÃÔì³ÉÊ²Ã´Îó»á
+        // å…å¾—é€ æˆä»€éº¼èª¤æœƒ
         if( !is_gameing )
-            return notify_fail("ÇëÉÔµÈÊýÃë£¬»Ã¾³ÓÎÏ·ÕýÔÚÆô¶¯ÖÐ¡­¡­\n");
+            return notify_fail("è«‹ç¨ç­‰æ•¸ç§’ï¼Œå¹»å¢ƒéŠæˆ²æ­£åœ¨å•Ÿå‹•ä¸­â€¦â€¦\n");
     }
         return ::valid_leave(me, dir);
 }
@@ -138,13 +138,13 @@ int dispersion( object me )
     if( !me || !wizardp(me) ) return 0;
     if( !is_gameing )
     {
-        tell_object(me, "ÓÎÏ·×´Ì¬²¢²»ÊÇ Æô¶¯ÖÐ £¬ÇëÎðËæÒâÅÉ·¢Îï¼þ¡£\n");
+        tell_object(me, "éŠæˆ²ç‹€æ…‹ä¸¦ä¸æ˜¯ å•Ÿå‹•ä¸­ ï¼Œè«‹å‹¿éš¨æ„æ´¾ç™¼ç‰©ä»¶ã€‚\n");
         return 1;
     }
 
     times = 50 + random(11);
-    tell_object( me, "Ok. ÒÑÖ´ÐÐº¯Êý£¬ÇëÁôÒâ sys ÐÅÏ¢¡£\n");
-    CHANNEL_D->do_channel(me,"sys",sprintf("%sÊÖ¶¯Ö´ÐÐ»Ã¾³ÓÎÏ·Ö÷¿ØÖÐÐÄÅÉ·¢Ëæ»úÎï¼þº¯Êý(%d¸öÎï¼þ)¡£",query("id", me),times));
+    tell_object( me, "Ok. å·²åŸ·è¡Œå‡½æ•¸ï¼Œè«‹ç•™æ„ sys ä¿¡æ¯ã€‚\n");
+    CHANNEL_D->do_channel(me,"sys",sprintf("%sæ‰‹å‹•åŸ·è¡Œå¹»å¢ƒéŠæˆ²ä¸»æŽ§ä¸­å¿ƒæ´¾ç™¼éš¨æ©Ÿç‰©ä»¶å‡½æ•¸(%då€‹ç‰©ä»¶)ã€‚",query("id", me),times));
     random_dispersion_to_hj( obj_list_all, times );
     return 1;
 }
@@ -154,8 +154,8 @@ int del_all( object me )
 {
     if( !me || !wizardp(me) ) return 0;
 
-    tell_object( me, "Ok. ÒÑÖ´ÐÐº¯Êý£¬ÇëÁôÒâ sys ÐÅÏ¢¡£\n");
-    CHANNEL_D->do_channel(me,"sys",sprintf("%sÊÖ¶¯Ö´ÐÐ»Ã¾³ÓÎÏ·Ö÷¿ØÖÐÐÄµÄÇ¿ÖÆÇå³ýËùÓÐ¾³ÄÚÎï¼þº¯Êý¡£",query("id", me)));
+    tell_object( me, "Ok. å·²åŸ·è¡Œå‡½æ•¸ï¼Œè«‹ç•™æ„ sys ä¿¡æ¯ã€‚\n");
+    CHANNEL_D->do_channel(me,"sys",sprintf("%sæ‰‹å‹•åŸ·è¡Œå¹»å¢ƒéŠæˆ²ä¸»æŽ§ä¸­å¿ƒçš„å¼·åˆ¶æ¸…é™¤æ‰€æœ‰å¢ƒå…§ç‰©ä»¶å‡½æ•¸ã€‚",query("id", me)));
     clean_hj();
     return 1;
 }
@@ -167,14 +167,14 @@ int do_mewiz(string arg)
     if( !arg )
     {
         write("
-¿ÉÊ¹ÓÃÖ®Ç¿ÖÆÖ¸Áî£º
+å¯ä½¿ç”¨ä¹‹å¼·åˆ¶æŒ‡ä»¤ï¼š
 
-<mewiz dispersion>      Ëæ»úÅÉ·¢ 50 -60 ¸öËæ»úÎïÆ·ÖÁËùÓÐËæ»ú·¿¼äÀï
-                            ±¾Ö¸ÁîÖ»ÄÜÔÚ is_gameing ×´Ì¬(ÓÎÏ·Æô¶¯ÖÐ) ²Å¿ÉÒÔÊ¹ÓÃ¡£
-<mewiz del_all>         Ç¿ÖÆÇå³ýËùÓÐ »Ã¾³ ËùÓÐ·¿¼äÄÚ´æÔÚµÄÎï¼þ£¨Íæ¼Ò³ýÍâ£©
-                            ±¾Ö¸Áî½«Ö±½Ó¸ü¸ÄÓÎÏ·×´Ì¬Îª !is_gameing ¡£
+<mewiz dispersion>      éš¨æ©Ÿæ´¾ç™¼ 50 -60 å€‹éš¨æ©Ÿç‰©å“è‡³æ‰€æœ‰éš¨æ©Ÿæˆ¿é–“è£¡
+                            æœ¬æŒ‡ä»¤åªèƒ½åœ¨ is_gameing ç‹€æ…‹(éŠæˆ²å•Ÿå‹•ä¸­) æ‰å¯ä»¥ä½¿ç”¨ã€‚
+<mewiz del_all>         å¼·åˆ¶æ¸…é™¤æ‰€æœ‰ å¹»å¢ƒ æ‰€æœ‰æˆ¿é–“å…§å­˜åœ¨çš„ç‰©ä»¶ï¼ˆçŽ©å®¶é™¤å¤–ï¼‰
+                            æœ¬æŒ‡ä»¤å°‡ç›´æŽ¥æ›´æ”¹éŠæˆ²ç‹€æ…‹ç‚º !is_gameing ã€‚
 
-Îñ±Ø½÷É÷Ê¹ÓÃ£¡\n");
+å‹™å¿…è¬¹æ…Žä½¿ç”¨ï¼\n");
         return 1;
     }
 
@@ -184,13 +184,13 @@ int do_mewiz(string arg)
     if( arg == "del_all" )
         return del_all(me);
 
-    write("Ö¸ÁîÓÐÎó¡£ÇëÖ±½ÓÊäÈë <mewiz> Ö¸Áî×÷²éÑ¯¡£\n");
+    write("æŒ‡ä»¤æœ‰èª¤ã€‚è«‹ç›´æŽ¥è¼¸å…¥ <mewiz> æŒ‡ä»¤ä½œæŸ¥è©¢ã€‚\n");
     return 1;
 }
 
 
-// ÎªÁË±ÜÃâÍæ¼ÒÔÚÁÖÄÚÓÎÏ·¹ý¾Ã£¬¶«Î÷¼ð¹âNPCÉ±¹âJOB×ö¹â¶ø²úÉúÀä³¡£¬
-// ¼ÓÈëÕâ¸öº¯Êý£¬Ò»¶¨Ê±¼äºó½«»áÖØÐÂ±äµÃÈÈÄÖÆðÀ´
+// ç‚ºäº†é¿å…çŽ©å®¶åœ¨æž—å…§éŠæˆ²éŽä¹…ï¼Œæ±è¥¿æ€å…‰NPCæ®ºå…‰JOBåšå…‰è€Œç”¢ç”Ÿå†·å ´ï¼Œ
+// åŠ å…¥é€™å€‹å‡½æ•¸ï¼Œä¸€å®šæ™‚é–“å¾Œå°‡æœƒé‡æ–°è®Šå¾—ç†±é¬§èµ·ä¾†
 void dispersion_again()
 {
     int times;
@@ -198,35 +198,35 @@ void dispersion_again()
     remove_call_out("dispersion_again");
     if( !is_gameing )
         return;
-    // Èç¹ûÒÑÊÇ·ÇÆô¶¯×´Ì¬£¬¾Í±ðÀí
+    // å¦‚æžœå·²æ˜¯éžå•Ÿå‹•ç‹€æ…‹ï¼Œå°±åˆ¥ç†
     times = ROUND_DISPERSION_AMOUNT_MIN + random( ROUND_DISPERSION_AMOUNT_RANDOM );
-    c_msg( "»Ã¾³ÓÎÏ·ÒÑÓÐ "+(ROUND_DISPERSION_TIME/60)+" ·ÖÖÓÎÞÐÂÍæ¼Ò½øÈë£¬ÕýÔÚ¸ø¾³ÄÚµØµã²¹³ä¸÷ÀàµÀ¾ß»òÈËÎï(¹²"+times+"¼þ)¡£");
+    c_msg( "å¹»å¢ƒéŠæˆ²å·²æœ‰ "+(ROUND_DISPERSION_TIME/60)+" åˆ†é˜ç„¡æ–°çŽ©å®¶é€²å…¥ï¼Œæ­£åœ¨çµ¦å¢ƒå…§åœ°é»žè£œå……å„é¡žé“å…·æˆ–äººç‰©(å…±"+times+"ä»¶)ã€‚");
     random_dispersion_to_hj( obj_list_all, times);
-    call_out("dispersion_again", ROUND_DISPERSION_TIME );  // Ò»¶¨Ê±¼äºóÓÖÀ´
+    call_out("dispersion_again", ROUND_DISPERSION_TIME );  // ä¸€å®šæ™‚é–“å¾Œåˆä¾†
 }
 
-// ÓÎÏ·Æô¶¯
+// éŠæˆ²å•Ÿå‹•
 void start_game()
 {
     int times;
 
     if( is_gameing ) return;
-    // Èç¹ûÒÑÔÚÆô¶¯£¬²»Àí¡£²»¹ýÕâ¸öÇé¿ö³ý·ÇÓÐÈË×÷±×£¬·ñÔòÀíÂÛÉÏ²»»á·¢Éú
+    // å¦‚æžœå·²åœ¨å•Ÿå‹•ï¼Œä¸ç†ã€‚ä¸éŽé€™å€‹æƒ…æ³é™¤éžæœ‰äººä½œå¼Šï¼Œå¦å‰‡ç†è«–ä¸Šä¸æœƒç™¼ç”Ÿ
 
     times = 50+random(21);
 
-    c_msg( "»Ã¾³ÓÎÏ·×Ô¶¯Æô¶¯£¡ÕýÔÚÇå³ý²ÐÓà¾³ÄÚÎï¼þ¡­¡­" );
+    c_msg( "å¹»å¢ƒéŠæˆ²è‡ªå‹•å•Ÿå‹•ï¼æ­£åœ¨æ¸…é™¤æ®˜ä½™å¢ƒå…§ç‰©ä»¶â€¦â€¦" );
     remove_call_out("clean_hj");
     clean_hj();
-    c_msg( "»Ã¾³ÓÎÏ·×Ô¶¯Æô¶¯£¡ÕýÔÚ¸ø¾³ÄÚµØµã·¢·Å¸÷ÀàµÀ¾ß»òÈËÎï(¹²"+times+"¼þ)¡­¡­");
+    c_msg( "å¹»å¢ƒéŠæˆ²è‡ªå‹•å•Ÿå‹•ï¼æ­£åœ¨çµ¦å¢ƒå…§åœ°é»žç™¼æ”¾å„é¡žé“å…·æˆ–äººç‰©(å…±"+times+"ä»¶)â€¦â€¦");
     random_dispersion_to_hj( obj_list_all, times);
     is_gameing = 1;
 
-    // ¿ªÊ¼²»¶ÏµØ·¢·ÅÉ±Â¾ÐÍNPC
+    // é–‹å§‹ä¸æ–·åœ°ç™¼æ”¾æ®ºæˆ®åž‹NPC
     remove_call_out("random_dispersion_killer");
     call_out("random_dispersion_killer", 1);
 
-    // ¿ªÊ¼²»¶ÏµØ·¢·Å¡°ÌØ±ð¡±ÀàÐÍµÄNPC
+    // é–‹å§‹ä¸æ–·åœ°ç™¼æ”¾â€œç‰¹åˆ¥â€é¡žåž‹çš„NPC
     remove_call_out("random_dispersion_questnpc");
     call_out("random_dispersion_questnpc", 1);
 
@@ -237,12 +237,12 @@ void start_game()
 
 void reset_game()
 {
-    c_msg( "»Ã¾³ÓÎÏ·ÒÑ¾­100·ÖÖÓÎÞÈË½øÈëÁË£¬½«×Ô¶¯ÇåÀí¾³ÄÚËùÓÐÎï¼þ£¬²¢»Ö¸´ÓÎÏ·Îª¡°Î´Æô¶¯¡±¡£" );
+    c_msg( "å¹»å¢ƒéŠæˆ²å·²ç¶“100åˆ†é˜ç„¡äººé€²å…¥äº†ï¼Œå°‡è‡ªå‹•æ¸…ç†å¢ƒå…§æ‰€æœ‰ç‰©ä»¶ï¼Œä¸¦æ¢å¾©éŠæˆ²ç‚ºâ€œæœªå•Ÿå‹•â€ã€‚" );
     clean_hj();
 }
 
 
-// Õâ¸öº¯ÊýÓÃÓÚ²»¶ÏµØÍù»Ã¾³ÀïÌí¼Ó quest ÐÍ npc
+// é€™å€‹å‡½æ•¸ç”¨äºŽä¸æ–·åœ°å¾€å¹»å¢ƒè£¡æ·»åŠ  quest åž‹ npc
 void random_dispersion_questnpc()
 {
     if( !is_gameing ) return;
@@ -253,7 +253,7 @@ void random_dispersion_questnpc()
 }
 
 
-// Õâ¸öº¯ÊýÓÃÓÚ²»¶ÏµØÍù»Ã¾³ÀïÌí¼ÓÉ±Â¾ÐÍNPC
+// é€™å€‹å‡½æ•¸ç”¨äºŽä¸æ–·åœ°å¾€å¹»å¢ƒè£¡æ·»åŠ æ®ºæˆ®åž‹NPC
 void random_dispersion_killer()
 {
     if( !is_gameing ) return;
@@ -264,8 +264,8 @@ void random_dispersion_killer()
     call_out("random_dispersion_killer", KILL_NPC_DISPERSION_TIME );
 }
 
-// ´Ëº¯Êý·¢·ÅËæ»úÎï¼þ£¬´«ÈëÁ½¸ö²ÎÊý£¬·Ö±ðÊÇ Îï¼þÁÐ±í ¼° ´ÎÊý(Îï¼þ¸öÊý)
-// Ö´ÐÐ´Ëº¯ÊýÊ±£¬²»»á×Ô¶¯½øÐÐ¡°Çå³ý¡±¡£ÇëÎðËæÒâµ÷ÓÃ
+// æ­¤å‡½æ•¸ç™¼æ”¾éš¨æ©Ÿç‰©ä»¶ï¼Œå‚³å…¥å…©å€‹åƒæ•¸ï¼Œåˆ†åˆ¥æ˜¯ ç‰©ä»¶åˆ—è¡¨ åŠ æ¬¡æ•¸(ç‰©ä»¶å€‹æ•¸)
+// åŸ·è¡Œæ­¤å‡½æ•¸æ™‚ï¼Œä¸æœƒè‡ªå‹•é€²è¡Œâ€œæ¸…é™¤â€ã€‚è«‹å‹¿éš¨æ„èª¿ç”¨
 void random_dispersion_to_hj( string *dis_list, int times )
 {
     int i;
@@ -281,20 +281,20 @@ void random_dispersion_to_hj( string *dis_list, int times )
         rs = find_object( r );
         if( !rs ) rs = load_object( r );
 
-        // ÕâÀï²»½øÐÐ file_size µÄÅÐ¶Ï¡£
+        // é€™è£¡ä¸é€²è¡Œ file_size çš„åˆ¤æ–·ã€‚
         obj=new( dis_list[random(sizeof(dis_list))] );
         obj->move(rs);
         if( query("msg", obj))msg=query("msg", obj);
-        else msg="ºöÈ»Ò»Ð¡ÕóÇáÑÌÂÓ¹ý¡­¡­ÕâÀïËÆºõ¶àÁËÒ»Ð©Ê²Ã´¡£\n";
+        else msg="å¿½ç„¶ä¸€å°é™£è¼•ç…™æŽ éŽâ€¦â€¦é€™è£¡ä¼¼ä¹Žå¤šäº†ä¸€äº›ä»€éº¼ã€‚\n";
         tell_room( r ,msg);
     }
 
-    if( times < 10 ) return; // ÃâµÃÁ¬ killer µÄ·¢·ÅÒ²²»Í£µØ±¨
+    if( times < 10 ) return; // å…å¾—é€£ killer çš„ç™¼æ”¾ä¹Ÿä¸åœåœ°å ±
 
-    c_msg( "»Ã¾³ÓÎÏ·Ëæ»ú·¢·ÅÎï¼þÍê±Ï£¬¹²·¢·Å "+times+" ¼þ¸÷Ê½ÎïÆ·»òNPC¡£" );
+    c_msg( "å¹»å¢ƒéŠæˆ²éš¨æ©Ÿç™¼æ”¾ç‰©ä»¶å®Œç•¢ï¼Œå…±ç™¼æ”¾ "+times+" ä»¶å„å¼ç‰©å“æˆ–NPCã€‚" );
 }
 
-// ´Ëº¯ÊýÇå³ý»Ã¾³ÊÀ½ç¡£
+// æ­¤å‡½æ•¸æ¸…é™¤å¹»å¢ƒä¸–ç•Œã€‚
 void clean_hj()
 {
     int i,j, c1, c2;
@@ -302,7 +302,7 @@ void clean_hj()
     object ob;
 
     is_gameing = 0;
-    // Ö±½Ó»Ö¸´ÓÎÏ·×´Ì¬Îª ¡°Î´Æô¶¯¡±
+    // ç›´æŽ¥æ¢å¾©éŠæˆ²ç‹€æ…‹ç‚º â€œæœªå•Ÿå‹•â€
     for( i = 1; i <= HJ_ROOM_AMOUNT; i++ )
     {
         ob = find_object(__DIR__"hj_room"+i);
@@ -311,7 +311,7 @@ void clean_hj()
         destruct( ob );
         c1 ++;
     }
-    // É¾³ýÆäËüÎï¼þ
+    // åˆªé™¤å…¶å®ƒç‰©ä»¶
     files = get_dir( __DIR__"npc_obj/");
     foreach( f in files )
     {
@@ -324,5 +324,5 @@ void clean_hj()
             c2 ++;
         }
     }
-    c_msg( "»Ã¾³ÓÎÏ·ÊÀ½çÇå³ý£¬¹²ÇåÀí "+c1+" ¸öÒÑÔØÈëÄÚ´æµÄ·¿¼ä£»"+c2+" ¸öÓÎÏ·²Î¿¼Îï¼þ¡£ÓÎÏ·»Ö¸´Îª¡°Î´Æô¶¯¡±×´Ì¬¡£" );
+    c_msg( "å¹»å¢ƒéŠæˆ²ä¸–ç•Œæ¸…é™¤ï¼Œå…±æ¸…ç† "+c1+" å€‹å·²è¼‰å…¥å…§å­˜çš„æˆ¿é–“ï¼›"+c2+" å€‹éŠæˆ²åƒè€ƒç‰©ä»¶ã€‚éŠæˆ²æ¢å¾©ç‚ºâ€œæœªå•Ÿå‹•â€ç‹€æ…‹ã€‚" );
 }

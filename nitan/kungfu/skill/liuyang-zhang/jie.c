@@ -1,10 +1,10 @@
 // This program is a part of NITAN MudLIB
-// jie.c ½âÉúËÀ·û
+// jie.c è§£ç”Ÿæ­»ç¬¦
 
 #include <ansi.h>
 inherit F_SSERVER;
 
-string name() { return "½âÉúËÀ·û"; }
+string name() { return "è§£ç”Ÿæ­»ç¬¦"; }
 
 int perform(object me, object target)
 {
@@ -14,25 +14,25 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! target->is_character())
-                return notify_fail("ÄãÒª½âË­µÄÉúËÀ·û£¿\n");
+                return notify_fail("ä½ è¦è§£èª°çš„ç”Ÿæ­»ç¬¦ï¼Ÿ\n");
 
         if (((int)me->query_skill("bahuang-gong", 1) < 40 ) &&
             ((int)me->query_skill("beiming-shengong", 1) < 40 ))
-                return notify_fail("ÄãµÄ±¾ÃÅÄÚ¹¦²»¹»æµÊì£¬²»ÄÜ½âÉúËÀ·û¡£\n");
+                return notify_fail("ä½ çš„æœ¬é–€å…§åŠŸä¸å¤ å«»ç†Ÿï¼Œä¸èƒ½è§£ç”Ÿæ­»ç¬¦ã€‚\n");
 
         if ((int)me->query_skill("liuyang-zhang", 1) < 150)
-                return notify_fail("ÄãµÄÌìÉ½ÁùÑôÕÆ²»¹»æµÊì£¬²»ÄÜ½âÉúËÀ·û¡£\n");
+                return notify_fail("ä½ çš„å¤©å±±å…­é™½æŽŒä¸å¤ å«»ç†Ÿï¼Œä¸èƒ½è§£ç”Ÿæ­»ç¬¦ã€‚\n");
 
         if (! objectp(obj = present("jiudai", me)))
-                return notify_fail("ÄãÉíÉÏÃ»ÓÐ¾Æ´ü£¬ÎÞ·¨»¯±ù½â¶¾¡£\n");
+                return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é…’è¢‹ï¼Œç„¡æ³•åŒ–å†°è§£æ¯’ã€‚\n");
 
         if( query("neili", me)<200 )
-                return notify_fail("ÄãÕæÆø²»×ã¡£\n");
+                return notify_fail("ä½ çœŸæ°£ä¸è¶³ã€‚\n");
 
         if (! target->query_condition("ss_poison"))
-                return notify_fail("Ä¿±êÃ»ÓÐÖÐÉúËÀ·û¡£\n");
+                return notify_fail("ç›®æ¨™æ²’æœ‰ä¸­ç”Ÿæ­»ç¬¦ã€‚\n");
 
-        message_combatd(HIY CYN "\n$NÃæÉ«Í»Àä£¬ÉíÐÐ¼²×ªÁ¬ÐøÅÄÏò$n°Ë°ËÁùÊ®ËÄÕÆ£¬½â¿ªÁË$nµÄÉúËÀ·û¶¾¡£\n" NOR, me, target);
+        message_combatd(HIY CYN "\n$Né¢è‰²çªå†·ï¼Œèº«è¡Œç–¾è½‰é€£çºŒæ‹å‘$nå…«å…«å…­åå››æŽŒï¼Œè§£é–‹äº†$nçš„ç”Ÿæ­»ç¬¦æ¯’ã€‚\n" NOR, me, target);
         addn("neili", -200, me);
         me->start_busy(2);
         target->clear_condition("ss_poison");

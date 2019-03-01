@@ -8,11 +8,11 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("ÉÏ¹ÙÔÆ", ({ "shangguan yun","shangguan","yun"}) );
-        set("gender", "ÄÐÐÔ" );
+        set_name("ä¸Šå®˜é›²", ({ "shangguan yun","shangguan","yun"}) );
+        set("gender", "ç”·æ€§" );
         set("age", 40);
-        set("title" , "ÈÕÔÂÉñ½Ì°×»¢ÌÃ³¤ÀÏ");
-        set("long", "Ëû³¤ÊÖ³¤½Å, Ë«Ä¿¾«¹â²ÓÈ», ÈôÓÐÍþÊÆ¡£\n");
+        set("title" , "æ—¥æœˆç¥žæ•™ç™½è™Žå ‚é•·è€");
+        set("long", "ä»–é•·æ‰‹é•·è…³, é›™ç›®ç²¾å…‰ç‡¦ç„¶, è‹¥æœ‰å¨å‹¢ã€‚\n");
         set("attitude", "friendly");
         set("shen_type", -1);
 
@@ -56,7 +56,7 @@ void create()
         prepare_skill("hand", "huanmo-longtianwu");
         prepare_skill("cuff", "xuwu-piaomiao");
 
-        create_family("ÈÕÔÂÉñ½Ì",2,"µÜ×Ó °×»¢ÌÃ³¤ÀÏ");
+        create_family("æ—¥æœˆç¥žæ•™",2,"å¼Ÿå­ ç™½è™Žå ‚é•·è€");
 
         set("master_ob",2);
         setup();
@@ -72,10 +72,10 @@ void attempt_apprentice(object ob)
 
     if((int)ob->query_skill("riyue-xinfa", 1) < 80)
     {
-         command("say ÄãµÄÄÚ¹¦ÐÄ·¨ÉÐÇ·»ðºò£¬¶àÁ·Á·È¥°É£¡");
+         command("say ä½ çš„å…§åŠŸå¿ƒæ³•å°šæ¬ ç«å€™ï¼Œå¤šç·´ç·´åŽ»å§ï¼");
          return;
     }
 
     command("recruit "+query("id", ob));
-    set("title", HIM"ÈÕÔÂÉñ½Ì"HIW"°×»¢ÌÃ½ÌÖÚ"NOR, ob);
+    set("title", HIM"æ—¥æœˆç¥žæ•™"HIW"ç™½è™Žå ‚æ•™çœ¾"NOR, ob);
 }

@@ -1,15 +1,15 @@
-// vendor_pass.c ÉÌÒµÖ´ÕÕ
+// vendor_pass.c å•†æ¥­åŸ·ç…§
 
 #include <ansi.h>
 inherit ITEM;
 
 void create()
 {
-        set_name("ÉÌÒµÖ´ÕÕ", ({ "shangye zhizhao", "zhizhao" }) );
+        set_name("å•†æ¥­åŸ·ç…§", ({ "shangye zhizhao", "zhizhao" }) );
         set_weight(1);
         if( clonep() )
-        set("long", "Ò»ÕÅºìµ×½ğ±ßÌû×Ó£¬ÉÏÃæĞ´×ÅËÄ¸ö½ğ²Ó²ÓµÄ´ó×Ö£ºÉÌÒµÖ´ÕÕ£¬×óÏÂ½ÇÊÇ»ÆÕæµÄÇ×±ÊÇ©Ãû¡£\n");
-        set("unit", "·İ");
+        set("long", "ä¸€å¼µç´…åº•é‡‘é‚Šå¸–å­ï¼Œä¸Šé¢å¯«è‘—å››å€‹é‡‘ç‡¦ç‡¦çš„å¤§å­—ï¼šå•†æ¥­åŸ·ç…§ï¼Œå·¦ä¸‹è§’æ˜¯é»ƒçœŸçš„è¦ªç­†ç°½åã€‚\n");
+        set("unit", "ä»½");
         set("value", 0);
         set("material", "paper");
         set("no_get",1);
@@ -32,12 +32,12 @@ int do_bantan()
         obj = this_object();
         me = this_player();
 
-        if( !query("is_vendor", me))return notify_fail("ÄãÓÖ²»ÊÇÉÌÈË£¬Ï¹ÕÛÌÚÊ²Ã´°¡£¡\n");
-        if (!present("shangye zhizhao",me)) return notify_fail("ÄãµÄÉÌÒµÖ´ÕÕ²»ÔÚÉíÉÏ£¬ÄÑµÀÏëÎŞÖ¤°áÌ¯£¿\n");
-        if( query_temp("on_bantan", me))return notify_fail("ÄãÒÑ¾­Õ¼ÁËÒ»¸öÌ¯Î»£¬»¹ÏëÔõµÄ£¿\n");
+        if( !query("is_vendor", me))return notify_fail("ä½ åˆä¸æ˜¯å•†äººï¼ŒçæŠ˜é¨°ä»€éº¼å•Šï¼\n");
+        if (!present("shangye zhizhao",me)) return notify_fail("ä½ çš„å•†æ¥­åŸ·ç…§ä¸åœ¨èº«ä¸Šï¼Œé›£é“æƒ³ç„¡è¨¼æ¬æ”¤ï¼Ÿ\n");
+        if( query_temp("on_bantan", me))return notify_fail("ä½ å·²ç¶“ä½”äº†ä¸€å€‹æ”¤ä½ï¼Œé‚„æƒ³æ€çš„ï¼Ÿ\n");
 
-        message_vision(HIW "$NÕÒÁËÒ»¿é¿ÕµØ£¬Ò»Æ¨¹É×øÁËÏÂÀ´£¬ËæºóÌÍ³öÒ»¿é²¼Ì¯¿ªÔÚµØ¡£\n" +NOR,me);
-        tell_object(me,HIW "ÏÖÔÚÄã¿ÉÒÔ°ÚÉÏ(stock)»õÎïÁË£¬ÄãÒ²¿ÉÒÔÊÕÆğ(unstock)Ä³ÖÖ»õÎï¡£\n");
+        message_vision(HIW "$Næ‰¾äº†ä¸€å¡Šç©ºåœ°ï¼Œä¸€å±è‚¡åäº†ä¸‹ä¾†ï¼Œéš¨å¾Œæå‡ºä¸€å¡Šå¸ƒæ”¤é–‹åœ¨åœ°ã€‚\n" +NOR,me);
+        tell_object(me,HIW "ç¾åœ¨ä½ å¯ä»¥æ“ºä¸Š(stock)è²¨ç‰©äº†ï¼Œä½ ä¹Ÿå¯ä»¥æ”¶èµ·(unstock)æŸç¨®è²¨ç‰©ã€‚\n");
         set_temp("on_bantan", 1, me);
         delete("vendor_goods", me);
         return 1;
@@ -49,11 +49,11 @@ int do_shoutan()
         obj = this_object();
         me = this_player();
 
-        if( !query("is_vendor", me))return notify_fail("ÄãÓÖ²»ÊÇÉÌÈË£¬Ï¹ÕÛÌÚÊ²Ã´°¡£¡\n");
-        if (!present("shangye zhizhao",me)) return notify_fail("ÄãµÄÉÌÒµÖ´ÕÕ²»ÔÚÉíÉÏ£¬ÇëÍËÏßºóÖØĞÂÁ¬Ïß²¢ÉêÇëÒ»¸öĞÂµÄ¡£\n");
-        if( !query_temp("on_bantan", me))return notify_fail("Äã²¢Ã»ÓĞ°ÚÌ¯£¬ÄÄÀïÀ´µÄÌ¯×Ó¸øÄãÊÕ°¡£¿\n");
+        if( !query("is_vendor", me))return notify_fail("ä½ åˆä¸æ˜¯å•†äººï¼ŒçæŠ˜é¨°ä»€éº¼å•Šï¼\n");
+        if (!present("shangye zhizhao",me)) return notify_fail("ä½ çš„å•†æ¥­åŸ·ç…§ä¸åœ¨èº«ä¸Šï¼Œè«‹é€€ç·šå¾Œé‡æ–°é€£ç·šä¸¦ç”³è«‹ä¸€å€‹æ–°çš„ã€‚\n");
+        if( !query_temp("on_bantan", me))return notify_fail("ä½ ä¸¦æ²’æœ‰æ“ºæ”¤ï¼Œå“ªè£¡ä¾†çš„æ”¤å­çµ¦ä½ æ”¶å•Šï¼Ÿ\n");
 
-        message_vision(HIW "$NÌáÆğÌ¯²¼µÄËÄ¸ö½Ç£¬°Ñ»õÎïÒ»¹ÉÄÔµÄÊÕÁËÆğÀ´£¬Õ¾ÆğÉíÀ´¡£\n" +NOR,me);
+        message_vision(HIW "$Næèµ·æ”¤å¸ƒçš„å››å€‹è§’ï¼ŒæŠŠè²¨ç‰©ä¸€è‚¡è…¦çš„æ”¶äº†èµ·ä¾†ï¼Œç«™èµ·èº«ä¾†ã€‚\n" +NOR,me);
         delete_temp("on_bantan", me);
         delete("vendor_goods", me);
         return 1;
@@ -67,10 +67,10 @@ int do_stock(string arg)
         string beishu,*args;
         
         me = this_player();
-        if( !query("is_vendor", me))return notify_fail("ÄãÓÖ²»ÊÇÉÌÈË£¬Ï¹ÕÛÌÚÊ²Ã´°¡£¡\n");
-        if (!present("shangye zhizhao",me)) return notify_fail("ÄãµÄÉÌÒµÖ´ÕÕ²»ÔÚÉíÉÏ£¬ÇëÍËÏßºóÖØĞÂÁ¬Ïß²¢ÉêÇëÒ»¸öĞÂµÄ¡£\n");
-        if( !query_temp("on_bantan", me))return notify_fail("Äã±ØĞëÊ×ÏÈ°ÚÒ»¸öÌ¯Î»(baitan)²ÅÄÜ·Å»õÎï£¡\n");
-        if (!arg) return notify_fail("stock <»õÎï> n (ÆäÖĞn¿ÉÒÔÊÇ1¡¢2¡¢3¡¢4¡¢5£¬±íÊ¾¸Ã»õÎïÔ­¼ÛÖµµÄn±¶£¬È±Ê¡µÄ»°±íÊ¾°ë¼Û)\n");
+        if( !query("is_vendor", me))return notify_fail("ä½ åˆä¸æ˜¯å•†äººï¼ŒçæŠ˜é¨°ä»€éº¼å•Šï¼\n");
+        if (!present("shangye zhizhao",me)) return notify_fail("ä½ çš„å•†æ¥­åŸ·ç…§ä¸åœ¨èº«ä¸Šï¼Œè«‹é€€ç·šå¾Œé‡æ–°é€£ç·šä¸¦ç”³è«‹ä¸€å€‹æ–°çš„ã€‚\n");
+        if( !query_temp("on_bantan", me))return notify_fail("ä½ å¿…é ˆé¦–å…ˆæ“ºä¸€å€‹æ”¤ä½(baitan)æ‰èƒ½æ”¾è²¨ç‰©ï¼\n");
+        if (!arg) return notify_fail("stock <è²¨ç‰©> n (å…¶ä¸­nå¯ä»¥æ˜¯1ã€2ã€3ã€4ã€5ï¼Œè¡¨ç¤ºè©²è²¨ç‰©åŸåƒ¹å€¼çš„nå€ï¼Œç¼ºçœçš„è©±è¡¨ç¤ºåŠåƒ¹)\n");
 
         i = sizeof(args = explode(arg, " "));
 
@@ -79,32 +79,32 @@ int do_stock(string arg)
                 amount = 0;
         else arg = replace_string(arg," "+amount,"");
 
-        if (!(goods = present(arg,me)) || !objectp(goods)) return notify_fail("ÄãÉíÉÏ²¢Ã»ÓĞÕâ¸ö»õÎï°¡£¡\n");
-        if (goods->is_character()) return notify_fail("Äã²»ÄÜ··ÂôÈË¿Ú£¡\n");
-        if( query("money_id", goods))return notify_fail("Äã·èÁË£¿Ç®Ò²ÄÃÀ´³öÊÛ£¿\n");
+        if (!(goods = present(arg,me)) || !objectp(goods)) return notify_fail("ä½ èº«ä¸Šä¸¦æ²’æœ‰é€™å€‹è²¨ç‰©å•Šï¼\n");
+        if (goods->is_character()) return notify_fail("ä½ ä¸èƒ½è²©è³£äººå£ï¼\n");
+        if( query("money_id", goods))return notify_fail("ä½ ç˜‹äº†ï¼ŸéŒ¢ä¹Ÿæ‹¿ä¾†å‡ºå”®ï¼Ÿ\n");
 
-        if( sizeof(query("vendor_goods", me)) >= 18)return notify_fail("ÄãÒ»´ÎÖ»ÄÜ°ÚÉÏÊ®°ËÖÖ»õÎï£¬ÇëÊ×ÏÈÊÕÆğ¼¸ÖÖ»õÎïÔÙ°ÚÉÏÕâÖÖ»õÎï¡£\n");
-        if (amount>5) return notify_fail("Äã×î¶àÒÔÔ­¼ÛÎå±¶³öÊÛ£¬²»ÒªÌ«ĞÄºÚÀ²£¡\n");
+        if( sizeof(query("vendor_goods", me)) >= 18)return notify_fail("ä½ ä¸€æ¬¡åªèƒ½æ“ºä¸Šåå…«ç¨®è²¨ç‰©ï¼Œè«‹é¦–å…ˆæ”¶èµ·å¹¾ç¨®è²¨ç‰©å†æ“ºä¸Šé€™ç¨®è²¨ç‰©ã€‚\n");
+        if (amount>5) return notify_fail("ä½ æœ€å¤šä»¥åŸåƒ¹äº”å€å‡ºå”®ï¼Œä¸è¦å¤ªå¿ƒé»‘å•¦ï¼\n");
 
         value=query("base_value", goods);
         if( !value)value=query("value", goods);
         if (amount)
         { 
                 value = amount * value;
-                beishu = (string)amount + "±¶¼Û";
+                beishu = (string)amount + "å€åƒ¹";
         }
         else
         {
                 value = value/2;
-                beishu = "°ë¼Û";
+                beishu = "åŠåƒ¹";
         }
-        if (!value) return notify_fail("ÕâÖÖ²»ÖµÇ®µÄÀÃ»õÄãÒ²Ïë°ÚÉÏ£¿Ì«Ã»ÓĞÉÌÒµµÀµÂÀ²£¡\n");
+        if (!value) return notify_fail("é€™ç¨®ä¸å€¼éŒ¢çš„çˆ›è²¨ä½ ä¹Ÿæƒ³æ“ºä¸Šï¼Ÿå¤ªæ²’æœ‰å•†æ¥­é“å¾·å•¦ï¼\n");
 
         all_goods=query("vendor_goods", me);
         if (!all_goods) all_goods = ([ ]);
         all_goods[base_name(goods)] = value;
         set("vendor_goods", all_goods, me);
-        message_vision(HIW "$N½«"+ NOR + goods->name(1) + HIW +"±êÉÏ" + HIY + beishu + HIW"°ÚÉÏÌ¯×Ó¿ªÊ¼³öÊÛ¡£\n"NOR,me);
+        message_vision(HIW "$Nå°‡"+ NOR + goods->name(1) + HIW +"æ¨™ä¸Š" + HIY + beishu + HIW"æ“ºä¸Šæ”¤å­é–‹å§‹å‡ºå”®ã€‚\n"NOR,me);
         return 1;
 }
 
@@ -116,14 +116,14 @@ int do_unstock(string arg)
         string *goods_key,beishu;
         
         me = this_player();
-        if( !query("is_vendor", me))return notify_fail("ÄãÓÖ²»ÊÇÉÌÈË£¬Ï¹ÕÛÌÚÊ²Ã´°¡£¡\n");
-        if (!present("shangye zhizhao",me)) return notify_fail("ÄãµÄÉÌÒµÖ´ÕÕ²»ÔÚÉíÉÏ£¬ÇëÍËÏßºóÖØĞÂÁ¬Ïß²¢ÉêÇëÒ»¸öĞÂµÄ¡£\n");
-        if( !query_temp("on_bantan", me))return notify_fail("ÄãÁ¬Ì¯×Ó¶¼Ã»ÓĞ°á£¬»¹ÏëÊÕÆğ»õÎï£¿\n");
-        if (!arg) return notify_fail("unstock <»õÎï>\n");
+        if( !query("is_vendor", me))return notify_fail("ä½ åˆä¸æ˜¯å•†äººï¼ŒçæŠ˜é¨°ä»€éº¼å•Šï¼\n");
+        if (!present("shangye zhizhao",me)) return notify_fail("ä½ çš„å•†æ¥­åŸ·ç…§ä¸åœ¨èº«ä¸Šï¼Œè«‹é€€ç·šå¾Œé‡æ–°é€£ç·šä¸¦ç”³è«‹ä¸€å€‹æ–°çš„ã€‚\n");
+        if( !query_temp("on_bantan", me))return notify_fail("ä½ é€£æ”¤å­éƒ½æ²’æœ‰æ¬ï¼Œé‚„æƒ³æ”¶èµ·è²¨ç‰©ï¼Ÿ\n");
+        if (!arg) return notify_fail("unstock <è²¨ç‰©>\n");
 
-        if (!(goods = present(arg,me))) return notify_fail("ÄãÏÖÔÚ²¢Ã»ÓĞÕâ¸ö»õÎï£¡\n");
+        if (!(goods = present(arg,me))) return notify_fail("ä½ ç¾åœ¨ä¸¦æ²’æœ‰é€™å€‹è²¨ç‰©ï¼\n");
         all_goods=query("vendor_goods", me);
-        if (!all_goods) return notify_fail("ÄãÏÖÔÚ»¹Ã»ÓĞ°ÚÉÏÈÎºÎ»õÎï£¡\n");
+        if (!all_goods) return notify_fail("ä½ ç¾åœ¨é‚„æ²’æœ‰æ“ºä¸Šä»»ä½•è²¨ç‰©ï¼\n");
 
         goods_key = keys(all_goods);
         for (i = 0;i < sizeof(goods_key);i++)
@@ -134,8 +134,8 @@ int do_unstock(string arg)
         if (have_it) 
         {
                 map_delete(all_goods,base_name(goods));
-                message_vision(HIW "$N½«" + NOR + goods->name(1) + HIW + "´ÓÌ¯×ÓÉÏÊÕÆğ²»ÂôÁË¡£\n",me);
-        } else return notify_fail("ÄãÃ»ÓĞ°ÑÕâÑù»õÎï°ÚÉÏÌ¯×Ó³öÊÛ°¡¡£\n");
+                message_vision(HIW "$Nå°‡" + NOR + goods->name(1) + HIW + "å¾æ”¤å­ä¸Šæ”¶èµ·ä¸è³£äº†ã€‚\n",me);
+        } else return notify_fail("ä½ æ²’æœ‰æŠŠé€™æ¨£è²¨ç‰©æ“ºä¸Šæ”¤å­å‡ºå”®å•Šã€‚\n");
 
         set("vendor_goods", all_goods, me);
         return 1;

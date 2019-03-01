@@ -4,11 +4,11 @@ inherit NPC;
 
 void create ()
 {
-        set_name("ÍòÕğÉ½", ({"wan zhenshan","wan"}));
-        set("nickname", HIR"ÎåÔÆÊÖ"NOR);
+        set_name("è¬éœ‡å±±", ({"wan zhenshan","wan"}));
+        set("nickname", HIR"äº”é›²æ‰‹"NOR);
         set("long", "
-Ò»Î»ÉíĞÎ¿ıÎàµÄÀÏÕß£¬¾«ÉñÛÇîå£¬²½ÂÄ³ÁÎÈ£¬Ë¿ºÁ²»¼û²ÔÀÏÖ®Ì¬¡£\n");
-        set("gender", "ÄĞĞÔ");
+ä¸€ä½èº«å½¢é­æ¢§çš„è€è€…ï¼Œç²¾ç¥çŸé‘ ï¼Œæ­¥å±¥æ²‰ç©©ï¼Œçµ²æ¯«ä¸è¦‹è’¼è€ä¹‹æ…‹ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 50);
         set("combat_exp", 1000000);
         set("str", 25);

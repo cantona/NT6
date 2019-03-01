@@ -1,4 +1,4 @@
-// ÉÏ¹ÅÊ®´óÉñÆ÷Ö® áÇá¼Ó¡
+// ä¸Šå¤åå¤§ç¥å™¨ä¹‹ å´†å³’å°
 // Create by Rcwiz for Hero.cn 2003/09
 
 #include <ansi.h>
@@ -9,16 +9,16 @@ int is_magic_item() { return 1; }
 
 void create()
 {
-        set_name(HIR "áÇá¼Ó¡" NOR, ({ "kongtong yin", "kongtong", "yin" }) );
+        set_name(HIR "å´†å³’å°" NOR, ({ "kongtong yin", "kongtong", "yin" }) );
         set_weight(100);
         if (clonep())
                 set_default_object(__FILE__);
         else
         {
-                set("unit", "¸ö");
-                set("long", HIR "ÕâÊÇÉÏ¹ÅÉñÆ÷Ö®Ò»µÄáÇá¼Ó¡£¬ÓµÓĞ×ÅÊ¹ÈË²»ÀÏµÄÉñÁ¦¡£\n"
-                                "Ê¹ÓÃ(use)ºóËæ»ú¼õÒ»ËêÄêÁä»ò¼ÓÒ»µãÈİÃ²£¬µ±ÈİÃ²´ïµ½\n"
-                                "ÈıÊ®ºóÔò¼õÄêÁä¡£\n" NOR);
+                set("unit", "å€‹");
+                set("long", HIR "é€™æ˜¯ä¸Šå¤ç¥å™¨ä¹‹ä¸€çš„å´†å³’å°ï¼Œæ“æœ‰è‘—ä½¿äººä¸è€çš„ç¥åŠ›ã€‚\n"
+                                "ä½¿ç”¨(use)å¾Œéš¨æ©Ÿæ¸›ä¸€æ­²å¹´é½¡æˆ–åŠ ä¸€é»å®¹è²Œï¼Œç•¶å®¹è²Œé”åˆ°\n"
+                                "ä¸‰åå¾Œå‰‡æ¸›å¹´é½¡ã€‚\n" NOR);
         }
         setup();
 }
@@ -37,14 +37,14 @@ int do_use(string arg)
         if(! objectp(present("kongtong yin", me)))return 0;
         
         if (me->is_fighting() || me->is_busy())
-                 return notify_fail("ÄãÕıÃ¦ÄØ£¡\n");
+                 return notify_fail("ä½ æ­£å¿™å‘¢ï¼\n");
                          
-        message_sort(HIR "\n$N" HIR "ÍĞÆğÊÖÖĞµÄáÇá¼Ó¡£¬Ò»µÀ½ğ¹â½«$P" HIR "ÁıÕÖ ¡­¡­\n" NOR, me);
+        message_sort(HIR "\n$N" HIR "æ‰˜èµ·æ‰‹ä¸­çš„å´†å³’å°ï¼Œä¸€é“é‡‘å…‰å°‡$P" HIR "ç± ç½© â€¦â€¦\n" NOR, me);
                         
         if (me->query("per") >= 30)
         {
                me->add("mud_age", -86400);
-               write(HIW "Äã¿´ÆğÀ´¸ü¼ÓÄêÇ×ÁË¡£\n");
+               write(HIW "ä½ çœ‹èµ·ä¾†æ›´åŠ å¹´è¦ªäº†ã€‚\n");
         }
         else 
         {
@@ -52,12 +52,12 @@ int do_use(string arg)
                 {
                         case 0:
                            me->add("mud_age", -86400);
-                           write(HIW "Äã¿´ÆğÀ´¸ü¼ÓÄêÇ×ÁË¡£\n" NOR);
+                           write(HIW "ä½ çœ‹èµ·ä¾†æ›´åŠ å¹´è¦ªäº†ã€‚\n" NOR);
                            break;
                            
                         case 1:
                            me->add("per", 1);
-                           write(HIG "Äã¿´ÆğÀ´¸ü¼ÓÈİ¹â»À·¢ÁË£¡\n" NOR);
+                           write(HIG "ä½ çœ‹èµ·ä¾†æ›´åŠ å®¹å…‰ç…¥ç™¼äº†ï¼\n" NOR);
                            break;
                            
                         default: break;

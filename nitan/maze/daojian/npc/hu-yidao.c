@@ -9,12 +9,12 @@ void check_friend();
 
 void create()
 {
-        set_name(HIM "ºúÒ»µ¶" NOR, ({ "hu yidao"}) );
-        set("title", HIR "¿õÊÀ¾øµ¶" NOR);
-        set("long", HIC "ÕâÊÇÒ»¸öØâº·´ÖáîµÄ±±·½´óºº£¬Ë«ÑÛ¾¼¾¼ÓĞÉñ¡£\n"
-                        "¾İËµËûµÄµ¶·¨µ±ÊÀÎŞË«¡£\n" NOR);
+        set_name(HIM "èƒ¡ä¸€åˆ€" NOR, ({ "hu yidao"}) );
+        set("title", HIR "æ› ä¸–çµ•åˆ€" NOR);
+        set("long", HIC "é€™æ˜¯ä¸€å€‹å‰½æ‚ç²—ç·çš„åŒ—æ–¹å¤§æ¼¢ï¼Œé›™çœ¼ç‚¯ç‚¯æœ‰ç¥ã€‚\n"
+                        "æ“šèªªä»–çš„åˆ€æ³•ç•¶ä¸–ç„¡é›™ã€‚\n" NOR);
 
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("age", 39);
 
         set("str", 500);
@@ -28,8 +28,8 @@ void create()
         set_temp("apply/unarmed_damage", 100000);
         set_temp("apply/damage", 100000);
         set_temp("apply/armor", 60000);
-        set_temp("apply/qy", 50);  // ÆøÔË
-        set_temp("apply/fy", 50);  // ¸£Ôµ
+        set_temp("apply/qy", 50);  // æ°£é‹
+        set_temp("apply/fy", 50);  // ç¦ç·£
 
         set("reborn/times", 1);
 
@@ -73,7 +73,7 @@ void create()
 
         set_skill("jingluo-xue", 4000);
 
-        set("no_nuoyi", 1); // ²»±»Å²ÒÆÓ°Ïì
+        set("no_nuoyi", 1); // ä¸è¢«æŒªç§»å½±éŸ¿
 
         map_skill("parry", "qiankun-danuoyi");
         map_skill("force", "yinyang-shiertian");
@@ -96,7 +96,7 @@ void create()
               //
               (: command("perform sword.ben twice") :),
               (: command("perform sword.ben and sword.tian") :),
-              // ÒõÑô12t
+              // é™°é™½12t
               (: command("perform finger.tian twice") :),
               (: command("perform finger.zhen and finger.jiu") :),
 
@@ -109,11 +109,11 @@ void create()
 
         }));
 
-        set("my_life", 1); // µ±ÆøÑªµÍÓÚ10%µÄÊ±ºò²¹ÂúÒ»´Î£¬ÉèÖÃ¸Ã²ÎÊıÎª0
+        set("my_life", 1); // ç•¶æ°£è¡€ä½äº10%çš„æ™‚å€™è£œæ»¿ä¸€æ¬¡ï¼Œè¨­ç½®è©²åƒæ•¸ç‚º0
 
         //set("auto_perform", 1);
         //set("clear_fuben", 1);
-        set("end_time", 1800);  // ±ØĞëÕ½¶·²»ÉÙÓÚ1800ÃëºóËÀÍö
+        set("end_time", 1800);  // å¿…é ˆæˆ°é¬¥ä¸å°‘äº1800ç§’å¾Œæ­»äº¡
         set("rewards", ([
                 "exp"   : 30000,
                 "pot"   : 10000,
@@ -142,10 +142,10 @@ void create()
 
         setup();
 
-        // ÒÂ·ş
+        // è¡£æœ
         carry_object("/clone/cloth/bupao")->wear();
 
-        // ÎäÆ÷
+        // æ­¦å™¨
         carry_object("/clone/weapon/anyue-dao")->wield();
 }
 
@@ -154,7 +154,7 @@ void heart_beat()
         object ob;
 
         if( !clonep(this_object()) ) return;
-        // ½â³ı²»ÄÜperform yunµÄÏŞÖÆ
+        // è§£é™¤ä¸èƒ½perform yunçš„é™åˆ¶
         if (random(3) == 1)
         {
                 delete_temp("no_perform");
@@ -163,7 +163,7 @@ void heart_beat()
 
         if (random(2) == 1)check_weapon();
 
-        // ¼ì²éÍ¬°éµÄ×´Ì¬
+        // æª¢æŸ¥åŒä¼´çš„ç‹€æ…‹
         check_friend();
 
         return ::heart_beat();
@@ -186,13 +186,13 @@ void check_friend()
         me->clean_up_enemy();
         ob->clean_up_enemy();
 
-        // ÎÒºÍÍ¬°é²»ÄÜ×ÔÏà²ĞÉ±
+        // æˆ‘å’ŒåŒä¼´ä¸èƒ½è‡ªç›¸æ®˜æ®º
         me->remove_enemy(ob);
         me->remove_killer(ob);
         ob->remove_enemy(me);
         ob->remove_killer(me);
 
-        // Èç¹ûÎ´ÔÚÕ½¶·ÖĞ£¬²é¿´Í¬°éÊÇ·ñÔÚÕ½¶·ÖĞ£¬Èç¹ûÔÚµÄ»°£¬Ö÷¶¯¹¥»÷Í¬°éµÄµĞÈË
+        // å¦‚æœæœªåœ¨æˆ°é¬¥ä¸­ï¼ŒæŸ¥çœ‹åŒä¼´æ˜¯å¦åœ¨æˆ°é¬¥ä¸­ï¼Œå¦‚æœåœ¨çš„è©±ï¼Œä¸»å‹•æ”»æ“ŠåŒä¼´çš„æ•µäºº
         if (! me->is_fighting() && ob->is_fighting())
         {
                 ob->clean_up_enemy();
@@ -201,7 +201,7 @@ void check_friend()
                 if (me->is_busy()) me->interrupt_busy(me);
                 if (sizeof(obs))
                 {
-                        message_vision(HIG "\n$N" HIG "´ó½ĞÒ»Éù£º¡°ÃçĞÖ£¬Ğ¡ĞÄ£¬Ò»µ¶À´Ò²£¡¡±\n\n" NOR, me);
+                        message_vision(HIG "\n$N" HIG "å¤§å«ä¸€è²ï¼šâ€œè‹—å…„ï¼Œå°å¿ƒï¼Œä¸€åˆ€ä¾†ä¹Ÿï¼â€\n\n" NOR, me);
                         for(i = 0; i < sizeof(obs); i ++)
                         {
                                 me->kill_ob(obs[i]);
@@ -209,7 +209,7 @@ void check_friend()
                 }
         }
 
-        // Èç¹ûÍ¬°éµÄHPĞ¡ÓÚ20%,ÇÒÎÒµÄHP´óÓÚ60%Ôò±£»¤¶Ô·½
+        // å¦‚æœåŒä¼´çš„HPå°äº20%,ä¸”æˆ‘çš„HPå¤§äº60%å‰‡ä¿è­·å°æ–¹
         if( query("eff_qi", ob) <= query("max_qi", ob)/10 && 
             query("eff_qi", me) >= query("max_qi", me)/5*3 )
         {
@@ -220,14 +220,14 @@ void check_friend()
         }
 }
 
-// ¼ì²éÎäÆ÷
+// æª¢æŸ¥æ­¦å™¨
 void check_weapon()
 {
         object me, ob;
 
         me = this_object();
 
-        // Í¬Ê±²¹³äÄÚÁ¦
+        // åŒæ™‚è£œå……å…§åŠ›
         set("neili", query("max_neili"));
 
         if (me->is_busy())me->interrupt_busy(me, 1000);
@@ -272,7 +272,7 @@ void check_weapon()
                 me->clear_condition();
         }
 
-        // ºÜĞ¡¼¸ÂÊ»Ö¸´ÆøÑª
+        // å¾ˆå°å¹¾ç‡æ¢å¾©æ°£è¡€
         if (random(1000) == 1)
         {
                 if (query("eff_qi") < query("max_qi") / 3) addn("eff_qi", query("max_qi") / 5);
@@ -311,7 +311,7 @@ void new_life()
 {
         object me = this_object();
 
-        full_self(); // ²¹ÂúÆøÑª
+        full_self(); // è£œæ»¿æ°£è¡€
 
         delete_temp("no_perform");
         delete_temp("no_exert");
@@ -324,11 +324,11 @@ void new_life()
         set_temp("apply/unarmed_damage", 150000);
         set_temp("apply/damage", 150000);
         set_temp("apply/armor", 100000);
-        set_temp("apply/qy", 70);  // ÆøÔË
-        set_temp("apply/fy", 70);  // ¸£Ôµ
+        set_temp("apply/qy", 70);  // æ°£é‹
+        set_temp("apply/fy", 70);  // ç¦ç·£
         delete("my_life", me);
 
-        message_vision(HIG "\n$N" HIG "´óºÈÒ»Éù£¬Ä¿¹â¶ÙÊ±³äÂúÉ±Òâ£¡\n\n" NOR, me);
+        message_vision(HIG "\n$N" HIG "å¤§å–ä¸€è²ï¼Œç›®å…‰é “æ™‚å……æ»¿æ®ºæ„ï¼\n\n" NOR, me);
 
         return;
 }
@@ -343,7 +343,7 @@ int receive_damage(string type, int damage, object who)
 
         if( query("qi", me)<query("max_qi", me)/10 )
         {
-                new_life(); // ÖØÉúÒ»´Î
+                new_life(); // é‡ç”Ÿä¸€æ¬¡
                 return 0;
         }
 
@@ -360,14 +360,14 @@ varargs void die(object killer)
                 return;
         }
 
-        // Èç¹û»¹Î´ÖØÉú£¬ÔòÖØÉúÒ»´Î
+        // å¦‚æœé‚„æœªé‡ç”Ÿï¼Œå‰‡é‡ç”Ÿä¸€æ¬¡
         if (query("my_life"))
         {
                 new_life();
                 return;
         }
 
-        if( time() < query_temp("end_time") ) // Ê±¼äÃ»ÓĞµ½£¬ËÀÍö²»ÁË
+        if( time() < query_temp("end_time") ) // æ™‚é–“æ²’æœ‰åˆ°ï¼Œæ­»äº¡ä¸äº†
         {
                 addn("jing", query("max_jing") / 10);
                 if( query("jing") > query("max_jing") ) set("jing", query("max_jing"));
@@ -377,14 +377,14 @@ varargs void die(object killer)
                 if( query("qi") > query("max_qi") ) set("qi", query("max_qi"));
                 addn("eff_qi", query("max_qi") / 10);
                 if( query("eff_qi") > query("max_qi") ) set("eff_qi", query("max_qi"));
-                message_vision(HIR "\n$N" HIR "´óºÈÒ»Éù£¬ÔËÓÃÃØ·¨£¬ÆøÑªÓĞËù»ØÉı£¡\n\n" NOR, this_object());
+                message_vision(HIR "\n$N" HIR "å¤§å–ä¸€è²ï¼Œé‹ç”¨ç§˜æ³•ï¼Œæ°£è¡€æœ‰æ‰€å›å‡ï¼\n\n" NOR, this_object());
                 return;
         }
 
         if( !objectp(present("miao renfeng", environment(this_object()))) )
                 set("clear_fuben", 1);
 
-        message_vision(HIR "\n$N" HIR "³¤Ì¾Ò»Éù£¬ÏûÊ§ÔÚÉ½ÁÖÖ®ÖĞ ¡­¡­\n\n" NOR, this_object());
+        message_vision(HIR "\n$N" HIR "é•·å˜†ä¸€è²ï¼Œæ¶ˆå¤±åœ¨å±±æ—ä¹‹ä¸­ â€¦â€¦\n\n" NOR, this_object());
 
         return ::die(killer);
 }

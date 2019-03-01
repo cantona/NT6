@@ -4,13 +4,13 @@ inherit EQUIP_SOUL;
 
 void create()
 {
-        set_name(HIM "սѥ֮��" NOR, ({"boots soul4", "boots", "soul4"}));
+        set_name(HIM "戰靴之魂" NOR, ({"boots soul4", "boots", "soul4"}));
         set_weight(100);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIM "����һ��սѥ֮�ꡣ\n" NOR);
-                set("unit", "��");
+                set("long", HIM "這是一個戰靴之魂。\n" NOR);
+                set("unit", "個");
                 set("value", 200000);
                 set("no_sell", 1);
         }

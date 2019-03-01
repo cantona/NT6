@@ -3,19 +3,19 @@ inherit ROOM;
 
 void create()
 {
-        set("short", HIG "ÊÀ½çÖ®Ê÷" NOR);
+        set("short", HIG "ä¸–ç•Œä¹‹æ¨¹" NOR);
         set("long", @LONG
-ÕâÀïÊÇ¹Å´åµÄÕýÖÐÐÄ£¬Ò»¸öºÜ¿íÀ«µÄ¹ã³¡£¬ÉÏÃæÆÌ×ÅÇàÊ¯µØÃæ¡£ÖÐ
-ÑëÒ»¿Ã´óÊ÷(tree)ÅÌ¸ù´í½Ú£¬ÒÑ¾­¿´²»³öËü¾¿¾¹ÓÐ×Å¶à´óµÄÊ÷ÁäÁË£¬Ëü
-¾ÍÊÇ´«ËµÖÐµÄÊÀ½çÖ®Ê÷¡ª¡ª´«Ëµ¾ÍÊÇËü´øÀ´ÁËÕû¸öÊÀ½çµÄÂÌÉ«£¬ÊÇ×ÔÈ»
-Ö®×æ¡£Ê÷ÏÂÕ¾×ÅÒ»¸öÀÏÕß£¬ÕýÄÍÐÄµØ¸¨µ¼×ÅÐÂÊÖ¡£
+é€™è£¡æ˜¯å¤æ‘çš„æ­£ä¸­å¿ƒï¼Œä¸€å€‹å¾ˆå¯¬é—Šçš„å»£å ´ï¼Œä¸Šé¢èˆ–è‘—é’çŸ³åœ°é¢ã€‚ä¸­
+å¤®ä¸€æ£µå¤§æ¨¹(tree)ç›¤æ ¹éŒ¯ç¯€ï¼Œå·²ç¶“çœ‹ä¸å‡ºå®ƒç©¶ç«Ÿæœ‰è‘—å¤šå¤§çš„æ¨¹é½¡äº†ï¼Œå®ƒ
+å°±æ˜¯å‚³èªªä¸­çš„ä¸–ç•Œä¹‹æ¨¹â”€â”€å‚³èªªå°±æ˜¯å®ƒå¸¶ä¾†äº†æ•´å€‹ä¸–ç•Œçš„ç¶ è‰²ï¼Œæ˜¯è‡ªç„¶
+ä¹‹ç¥–ã€‚æ¨¹ä¸‹ç«™è‘—ä¸€å€‹è€è€…ï¼Œæ­£è€å¿ƒåœ°è¼”å°Žè‘—æ–°æ‰‹ã€‚
 
-==== Èç¹ûÄãÐèÒª°ïÖúÇëÊäÈëÖ¸Áî ask lao about here ====
+==== å¦‚æžœä½ éœ€è¦å¹«åŠ©è«‹è¼¸å…¥æŒ‡ä»¤ ask lao about here ====
 
 LONG);
         set("item_desc", ([
-                 "tree" : GRN "\nÕâÊÇÒ»¿Ã¾Þ´ó¹ÅÀÏµÄ´óÊ÷£¬Ö¦Ò¶·Ç³£"
-                         "µÄÃ¯ÃÜ¡£\n" NOR,
+                 "tree" : GRN "\né€™æ˜¯ä¸€æ£µå·¨å¤§å¤è€çš„å¤§æ¨¹ï¼Œæžè‘‰éžå¸¸"
+                         "çš„èŒ‚å¯†ã€‚\n" NOR,
         ]));
 
         set("objects", ([

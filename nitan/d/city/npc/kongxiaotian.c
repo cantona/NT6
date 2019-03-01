@@ -1,15 +1,15 @@
-//Npc : kongxiaotian.c ¿×Ğ¡Ìì
+//Npc : kongxiaotian.c å­”å°å¤©
 
 inherit NPC;
 #include "kid.h"
 
 void create()
 {
-        set_name("¿×Ğ¡Ìì",({ "kong xiaotian", "xiao hai", "kid"}) );
-        set("title", "Ñ§Í¯");
-        set("gender", "ÄĞĞÔ" );
+        set_name("å­”å°å¤©",({ "kong xiaotian", "xiao hai", "kid"}) );
+        set("title", "å­¸ç«¥");
+        set("gender", "ç”·æ€§" );
         set("age", 13);
-        set("long", "ÕâÊÇ¸öÒ»¸ö×ÊÕşÊéÔºµÄÑ§Í¯£¬ÕıÔÚºÍÍ¬°éÍæË£¡£\n");
+        set("long", "é€™æ˜¯å€‹ä¸€å€‹è³‡æ”¿æ›¸é™¢çš„å­¸ç«¥ï¼Œæ­£åœ¨å’ŒåŒä¼´ç©è€ã€‚\n");
         set("combat_exp", 3);
     set("positive_score", 10);
         set("str", 12);
@@ -18,15 +18,15 @@ void create()
         set("per", 24);
         set("chat_chance", 3);
         set("chat_msg", ({
-                "¿×Ğ¡ÌìµÀ£ºÎÒÃÇÀÏ´ó¾ÓÈ»Ï²»¶ÉÏÁË¹ËÔÂ¶ùÁË£¬ÕæÊÇÆæ¹ÖÁË£¡\n",
-        "¿×Ğ¡ÌìµÀ£ºÏë²»ÏëÎÒ¸æËßÄãÒ»¸öÃØÃÜÄØ£¿\n",
-        "¿×Ğ¡ÌìµÀ£ºÎÒÃÇµÄÀÏÊ¦Ò²Í¦¿ÉÁ¯µÄ£¬°¦¡«¡«¡«¡«£¡\n"
+                "å­”å°å¤©é“ï¼šæˆ‘å€‘è€å¤§å±…ç„¶å–œæ­¡ä¸Šäº†é¡§æœˆå…’äº†ï¼ŒçœŸæ˜¯å¥‡æ€ªäº†ï¼\n",
+        "å­”å°å¤©é“ï¼šæƒ³ä¸æƒ³æˆ‘å‘Šè¨´ä½ ä¸€å€‹ç§˜å¯†å‘¢ï¼Ÿ\n",
+        "å­”å°å¤©é“ï¼šæˆ‘å€‘çš„è€å¸«ä¹ŸæŒºå¯æ†çš„ï¼Œå”‰ï½ï½ï½ï½ï¼\n"
     }));
     set("inquiry", ([
-        "ÃØÃÜ" : (: ask_secret :),
-        "secret" : "ÎÒ²»¶®ÑóÎÄµÄ¡£\n",
+        "ç§˜å¯†" : (: ask_secret :),
+        "secret" : "æˆ‘ä¸æ‡‚æ´‹æ–‡çš„ã€‚\n",
     ]));
-    set("papa_name", "¿×ÍòÇæ" );
+    set("papa_name", "å­”è¬æ“" );
         set("attitude", "peaceful");
         setup();
         carry_object(__DIR__"obj/xiaogua")->wear();

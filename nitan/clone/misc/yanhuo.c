@@ -1,4 +1,4 @@
-//yanhuo.c Ñæ»ð
+//yanhuo.c ç‡„ç«
 
 inherit ITEM;
 #include <ansi.h>
@@ -6,9 +6,9 @@ int fire(object me, object ob);
 
 void create()
 {
-    set_name(HIM "ÑÌ»¨" NOR, ({"yan hua","yanhua"}));
-    set("unit", "¸ö");
-    set("long", "ÕâÊÇ»¹Î´µãÈ¼µÄÑÌ»¨¡£\n");
+    set_name(HIM "ç…™èŠ±" NOR, ({"yan hua","yanhua"}));
+    set("unit", "å€‹");
+    set("long", "é€™æ˜¯é‚„æœªé»žç‡ƒçš„ç…™èŠ±ã€‚\n");
     set("value",1000000);
     setup();
 }
@@ -17,18 +17,18 @@ int fire(object me, object ob)
 {
     object obj=this_object();
 
-    message_vision("$NÓÃ" + ob->name() + "µãÈ¼ÁË" + name() +"¡£\n", me);
+    message_vision("$Nç”¨" + ob->name() + "é»žç‡ƒäº†" + name() +"ã€‚\n", me);
 
-    message_vision("Ò»µÀ»ð¹â³åÌì¶øÆð£¬¡°Åé¡±µÄÒ»ÉùÉ¢¿ª£¬»¯×÷ÂúÌìÃÀÀöµÄÍ¼°¸....\n",me,ob);
+    message_vision("ä¸€é“ç«å…‰æ²–å¤©è€Œèµ·ï¼Œâ€œç °â€çš„ä¸€è²æ•£é–‹ï¼ŒåŒ–ä½œæ»¿å¤©ç¾Žéº—çš„åœ–æ¡ˆ....\n",me,ob);
     switch(random(15))
     {
         case 0:
         tell_room(environment(me),BLINK+HIM@TEXT
 
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡|Û|¨K ©I¨ ¡¼ILOVEYOU¡½¨©I ¨L |ÓÀ|
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡|Š…|¡Ö¡ñ ¡î¨W¨T¨T¨j¨T¨T¨Z¡î ¡ð¡Ö|ßh|
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡|Ö®| /¨€\¨q¨m¨r¤Ì¡¬¤á¨q¨m¨r/¨€\ |²»|
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡|ÐÄ|¡ï¡Ç¡ù¨v¨u ¤¡¦·¤ó ¨v¨u¡ù¡Ç¡ï|×ƒ|
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€|â–¡|â–¡ â–¡â–¡ â–¡ILOVEYOUâ–¡â–¡â–¡ â–¡ |æ°¸|
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€|â–¡|â‰’â— â˜†â–¡â–¡â–¡â–¡â–¡â–¡â–¡â˜† â—‹â‰’|â–¡|
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€|ä¹‹| /â–¡\â–¡â–¡â–¡â–¡âˆ¥â–¡â–¡â–¡â–¡/â–¡\ |ä¸|
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€|å¿ƒ|â˜…Î â€»â–¡â–¡ â–¡Î¨â–¡ â–¡â–¡â€»Î â˜…|â–¡|
 
 TEXT NOR);
         break;
@@ -36,14 +36,14 @@ TEXT NOR);
         case 1:
         tell_room(environment(me),BLINK+HIY@TEXT
 
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡\\\|///
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡\\¡¡.-.-¡¡//
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡.¡¡¡¡¡¡¡¡¡¡¡¡(¡¡.@.@¡¡)
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡+-------oOOo-----(_)-----oOOo---------+
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡|¡¡¡¡¡¡ ¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡|
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡|¡¡    ¡¡×£   Äã   ¿ì  ÀÖ£¡£¡£¡ ¡¡  ¡¡|
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡|¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ ¡¡¡¡|
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡+---------------------Oooo------------+
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€\\\|///
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€\\ã€€.-.-ã€€//
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€.ã€€ã€€ã€€ã€€ã€€ã€€(ã€€.@.@ã€€)
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€+-------oOOo-----(_)-----oOOo---------+
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€|ã€€ã€€ã€€ ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€|
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€|ã€€    ã€€ç¥   ä½    å¿«  æ¨‚ï¼ï¼ï¼ ã€€  ã€€|
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€|ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ ã€€ã€€|
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€+---------------------Oooo------------+
 
 TEXT NOR);
         break;
@@ -51,10 +51,10 @@ TEXT NOR);
         case 2:
         tell_room(environment(me),BLINK+HIC@TEXT
 
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¦à¦à¦ào¦Ï¦¯¥ß ¨u¨v¨u¨v ¥ß¦¯¦Ïo¦à¦à¦à
-  ¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡²ÔÆµ­©Š¡³  ¨v·â¨v¨u  ¡²©ŠÐÄÈç¡³
-  ¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡²©Š·çÇá¡³  ¨u¨vÐÄ¨v  ¡²Ö¹Ë®©Š¡³
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡    ¦á¦á¨q¡î¨s¨v¨u¨v¨u¨t¡î¨r
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â–¡â–¡â–¡oÎ¿ÎŸâ–¡ â–¡â–¡â–¡â–¡ â–¡ÎŸÎ¿oâ–¡â–¡â–¡
+  ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€”é›²æ·¡â–¡ã€•  â–¡å°â–¡â–¡  ã€”â–¡å¿ƒå¦‚ã€•
+  ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€”â–¡é¢¨è¼•ã€•  â–¡â–¡å¿ƒâ–¡  ã€”æ­¢æ°´â–¡ã€•
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€    â–¡â–¡â–¡â˜†â–¡â–¡â–¡â–¡â–¡â–¡â˜†â–¡
 
 TEXT NOR);
         break;
@@ -62,10 +62,10 @@ TEXT NOR);
         case 3:
         tell_room(environment(me),BLINK+HIG@TEXT
 
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¦à¦à¦ào¦Ï¦¯¥ß©³ÓÀ©·¥ß¦¯¦Ïo¦à¦à¦à
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡²ÛŠ…©Š¡³ oOÌì¨Ußh¨UµØ0o ¡²ÓÀ²»..¡³
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡²..Ò»Éú¡³ 0ožé¨UÛ¨U×Co0 ¡²©Šáá»Ú¡³
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡  ¦á¦á¦á¨q¡î¨s ©»Š…©¿ ¨t¡î¨r
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â–¡â–¡â–¡oÎ¿ÎŸâ–¡â–¡æ°¸â–¡â–¡ÎŸÎ¿oâ–¡â–¡â–¡
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€”â–¡â–¡â–¡ã€• oOå¤©â–¡â–¡â–¡åœ°0o ã€”æ°¸ä¸..ã€•
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€”..ä¸€ç”Ÿã€• 0oâ–¡â–¡â–¡â–¡â–¡o0 ã€”â–¡å¾Œæ‚”ã€•
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€  â–¡â–¡â–¡â–¡â˜†â–¡ â–¡â–¡â–¡ â–¡â˜†â–¡
 
 TEXT NOR);
         break;
@@ -73,10 +73,10 @@ TEXT NOR);
         case 4:
         tell_room(environment(me),BLINK+HIR@TEXT
 
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¨¨Ž¨¨Ž ÎÒ¬FÔÚ×î  ¨W¨T¨T¨j¨T¨T¨Z
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¨€¨€¨€¨€ ´óµÄîŠÍû¨q¨m¨rÎÒ¡¬ºÃ¨q¨m¨r
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¨¨€¨€¨ ¾ÍÊÇÏëŠ… ¨v¨u ÊÇ¡¬Û ¨v¨u
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡  ¨¨   ÅãÖøÎÒ!!    ¡ïºÃÛŠ…¡ï
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â–¡â–¡â–¡â–¡ æˆ‘â–¡åœ¨æœ€  â–¡â–¡â–¡â–¡â–¡â–¡â–¡
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â–¡â–¡â–¡â–¡ å¤§çš„â–¡æœ›â–¡â–¡â–¡æˆ‘âˆ¥å¥½â–¡â–¡â–¡
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â–¡â–¡â–¡â–¡ å°±æ˜¯æƒ³â–¡ â–¡â–¡ æ˜¯âˆ¥â–¡ â–¡â–¡
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€  â–¡â–¡   é™ªè‘—æˆ‘!!    â˜…å¥½â–¡â–¡â˜…
 
 TEXT NOR);
         break;
@@ -84,14 +84,14 @@ TEXT NOR);
         case 5:
         tell_room(environment(me),BLINK+HIC@TEXT
 
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡::¡à¡ï¡ß**¡î£®¡à¡ï¡ß**¡î£®
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡  ¨€¨€¨€¨€¨€£®¡î£®¡ß¡ï¡ß¡à¡î£®
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡  ¨€Ìï¨€Ìï¨€£®*¡î£®¡à¡ï¡ß£®
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡  ¨€Ìï¨€Ìï¨€£®¡ï¡ß¡à¡î£®¡ï¡ß¡à£®
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡  ¨€Ìï¨€Ìï¨€£®Í¬Ò»¸öÐÇ¿ÕÏÂ¡ï..**£®
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡  ¨€Ìï¨€Ìï¨€£®ÍûÖøÌì¿ÕµÄÐÇÐÇÓê**¡î£®
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡  ¨€¨€¨€¨€¨€£®
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¨¨€¨€¡õ¨€¨€¨Ž£®~~~~~*^_^* 
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€::âˆ´â˜…âˆµ**â˜†ï¼Žâˆ´â˜…âˆµ**â˜†ï¼Ž
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€  â–¡â–¡â–¡â–¡â–¡ï¼Žâ˜†ï¼Žâˆµâ˜…âˆµâˆ´â˜†ï¼Ž
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€  â–¡ç”°â–¡ç”°â–¡ï¼Ž*â˜†ï¼Žâˆ´â˜…âˆµï¼Ž
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€  â–¡ç”°â–¡ç”°â–¡ï¼Žâ˜…âˆµâˆ´â˜†ï¼Žâ˜…âˆµâˆ´ï¼Ž
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€  â–¡ç”°â–¡ç”°â–¡ï¼ŽåŒä¸€å€‹æ˜Ÿç©ºä¸‹â˜…..**ï¼Ž
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€  â–¡ç”°â–¡ç”°â–¡ï¼Žæœ›è‘—å¤©ç©ºçš„æ˜Ÿæ˜Ÿé›¨**â˜†ï¼Ž
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€  â–¡â–¡â–¡â–¡â–¡ï¼Ž
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â–¡â–¡â–¡â–¡â–¡â–¡â–¡ï¼Ž~~~~~*^_^* 
 
 TEXT NOR);
         break;
@@ -100,12 +100,12 @@ TEXT NOR);
         tell_room(environment(me),BLINK+HIM@TEXT
 
 
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡         ¡ï¡ï ¡ï¡ï       ¡ï¡ï  ¡ï¡ï
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ø    ¡ï ¡î¡î¡ï¡î¡î¡ï  ¡ï¡î¡î¡ï¡î¡î ¡ï    
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡þ¡ú   
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ø       ¡ï  ¡î ¡ï      ¡ï  .¡î  ¡ï
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡           ¡ï  ¡ï          ¡ï  ¡ï
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡             ¡ï              ¡ï
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€         â˜…â˜… â˜…â˜…       â˜…â˜…  â˜…â˜…
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â–²    â˜… â˜†â˜†â˜…â˜†â˜†â˜…  â˜…â˜†â˜†â˜…â˜†â˜† â˜…    
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â– â•â†’   
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â–²       â˜…  â˜† â˜…      â˜…  .â˜†  â˜…
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€           â˜…  â˜…          â˜…  â˜…
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€             â˜…              â˜…
 
 TEXT NOR);
         break;
@@ -126,13 +126,13 @@ TEXT NOR);
         case 8:
         tell_room(environment(me),BLINK+HIB@TEXT
 
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¼ÇµÃÎÒÃÇµÄÐÇ¿ÕÂð£¿ºÃÃÀ£¡
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡   . ¡î   .   ?  .  ?     .  ? .
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡  ¡¡     **    .   ?       ©–    ? 
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ ¡¡¡¡¡¡¡¡ ? ***N   .       ? £ï    ?  . 
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ ¡¡¡¡  ¡¡? *i****     ?  .  o    ?       ?
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡    ¡¡¡¡¡¡X***J***         £ß£ß§±   £Ü £¯£Ü
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡   ¡¡¡¡¡¡**X*****o*     £¯£Ü¡¡§¸£Ü 
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€è¨˜å¾—æˆ‘å€‘çš„æ˜Ÿç©ºå—Žï¼Ÿå¥½ç¾Žï¼
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€   . â˜†   .   ?  .  ?     .  ? .
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€  ã€€     **    .   ?       â–¡    ? 
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ ã€€ã€€ã€€ã€€ ? ***N   .       ? ï½    ?  . 
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ ã€€ã€€  ã€€? *i****     ?  .  o    ?       ?
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€    ã€€ã€€ã€€X***J***         â•´â•´â–¡   ï¼¼ ï¼ï¼¼
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€   ã€€ã€€ã€€**X*****o*     ï¼ï¼¼ã€€â–¡ï¼¼ 
 
 TEXT NOR);
         break;
@@ -140,13 +140,13 @@ TEXT NOR);
         case 9:
         tell_room(environment(me),BLINK+HIB@TEXT
 
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡à¡ã¡ï£®¡î¡ã £®¡ï¡¤¡ã¡à¡ã¡ï£®¡ã £®¡¤¡£¡à¡ã
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡î £®¡¤¡ã¡à¡ã ¡î£®£®¡¤¡ã¡à¡ã£®¡î¡ã¡ï¡ã¡à¡ã
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ã¡à ÄÇÅÂÐÇ¼ÊÎÞÛó ¡î¡ã £®¡¤¡ï¡ã¡à¡ã£®¡ã¡ã
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡à¡ã£®¡ã¡ï £®¡¤¡ã¡à¡ã£®¡ã¡à¡ã£®¡ï¡î¡ã £®¡¤
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ã£®¡î¡ã £®¡ï¡¤ÎÒÒ²Òª×·µ½Äã ¡ã£®¡ã¡ã£®¡ï
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡£®¡¤¡ã¡à¡ï¡ã£®¡ã¡à¡ã£®¡î¡ã £®¡¤¡ã¡à¡ã£®¡ã
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡£®¡¤¡ã¡à¡ã¡ï£®¡ã£®¡à¡¤¡ã¡ã²¢ÓÀÔ¶°®Äã¡à¡î¡ã
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€âˆ´Â°â˜…ï¼Žâ˜†Â° ï¼Žâ˜…ï¹’Â°âˆ´Â°â˜…ï¼ŽÂ° ï¼Žï¹’ã€‚âˆ´Â°
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â˜† ï¼Žï¹’Â°âˆ´Â° â˜†ï¼Žï¼Žï¹’Â°âˆ´Â°ï¼Žâ˜†Â°â˜…Â°âˆ´Â°
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€Â°âˆ´ é‚£æ€•æ˜Ÿéš›ç„¡åž  â˜†Â° ï¼Žï¹’â˜…Â°âˆ´Â°ï¼ŽÂ°Â°
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€âˆ´Â°ï¼ŽÂ°â˜… ï¼Žï¹’Â°âˆ´Â°ï¼ŽÂ°âˆ´Â°ï¼Žâ˜…â˜†Â° ï¼Žï¹’
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€Â°ï¼Žâ˜†Â° ï¼Žâ˜…ï¹’æˆ‘ä¹Ÿè¦è¿½åˆ°ä½  Â°ï¼ŽÂ°Â°ï¼Žâ˜…
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ï¼Žï¹’Â°âˆ´â˜…Â°ï¼ŽÂ°âˆ´Â°ï¼Žâ˜†Â° ï¼Žï¹’Â°âˆ´Â°ï¼ŽÂ°
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ï¼Žï¹’Â°âˆ´Â°â˜…ï¼ŽÂ°ï¼Žâˆ´ï¹’Â°Â°ä¸¦æ°¸é æ„›ä½ âˆ´â˜†Â°
 
 TEXT NOR);
         break;
@@ -154,15 +154,15 @@ TEXT NOR);
         case 10:
         tell_room(environment(me),BLINK+HIY@TEXT
 
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡    ¡î¡î ¡î¡î  ¡î¡î ¡î¡î
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡  ¡ï¡ï       ¡ï      ¡ï¡ï
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ ¡î¡î     ×£Äã¿ìÀÖ    ¡î¡î
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡  ¡ï¡ï               ¡ï¡ï
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡   ¡î¡î             ¡î¡î
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡     ¡ï¡ï         ¡ï¡ï
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡       ¡î¡î     ¡î¡î
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡         ¡ï¡ï  ¡ï¡ï
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡            ¡î¡î
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€    â˜†â˜† â˜†â˜†  â˜†â˜† â˜†â˜†
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€  â˜…â˜…       â˜…      â˜…â˜…
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ â˜†â˜†     ç¥ä½ å¿«æ¨‚    â˜†â˜†
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€  â˜…â˜…               â˜…â˜…
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€   â˜†â˜†             â˜†â˜†
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€     â˜…â˜…         â˜…â˜…
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€       â˜†â˜†     â˜†â˜†
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€         â˜…â˜…  â˜…â˜…
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€            â˜†â˜†
 
 TEXT NOR);
         break;
@@ -170,11 +170,11 @@ TEXT NOR);
         case 11:
         tell_room(environment(me),BLINK+HIC@TEXT
 
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¨€¨¡î¨¨¡î¨¨€ ËÍÐÇÐÇÇ§°Ù¿Å...
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¨€¡î¡î¡î¡î¡î¡î¨€ 
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¨€¨Ž¡î¡î¡î¡î¨¨€ ÉúÃü»îµÄ¾«²Ê²ÓÀÃ...
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¨€¨€¨Ž¡î¡î¨¨€¨€ 
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¨€¨€¨€¨Ž¨¨€¨€¨€ Ô¸Äã¿ìÀÖ  ^_^
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â–¡â–¡â˜†â–¡â–¡â˜†â–¡â–¡ é€æ˜Ÿæ˜Ÿåƒç™¾é¡†...
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â–¡â˜†â˜†â˜†â˜†â˜†â˜†â–¡ 
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â–¡â–¡â˜†â˜†â˜†â˜†â–¡â–¡ ç”Ÿå‘½æ´»çš„ç²¾å½©ç‡¦çˆ›...
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â–¡â–¡â–¡â˜†â˜†â–¡â–¡â–¡ 
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡ é¡˜ä½ å¿«æ¨‚  ^_^
 
 TEXT NOR);
         break;
@@ -182,13 +182,13 @@ TEXT NOR);
         case 12:
         tell_room(environment(me),BLINK+HIG@TEXT
 
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡@* .¡î / £ª/¡¡.¡¡/ * . ¡î/ £ª¡£
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡   ¨¨Ž¡£       ¨¨Ž¡£
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡  ¨¡ï¨Ž¡£     ¨¡ï¨Ž¡£
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ ¨¡ö¡ö¨Ž¡£   ¨¡ö¡ö¨Ž¡£
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¨¡ö¡ö¡ö¨Ž¡£ ¨¡ö¡ö¡ö¨Ž¡£
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¦ñ¦ñ||¦ñ¦ñ !!¦ñ¦ñ||¦ñ¦ñ
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡Ô¸ÄúÓÐ¿ìÀÖµÄÃ¿Ò»Ìì
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€@* .â˜† / ï¼Š/ã€€.ã€€/ * . â˜†/ ï¼Šã€‚
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€   â–¡â–¡ã€‚       â–¡â–¡ã€‚
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€  â–¡â˜…â–¡ã€‚     â–¡â˜…â–¡ã€‚
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ â–¡â– â– â–¡ã€‚   â–¡â– â– â–¡ã€‚
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â–¡â– â– â– â–¡ã€‚ â–¡â– â– â– â–¡ã€‚
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â–¡â–¡||â–¡â–¡ !!â–¡â–¡||â–¡â–¡
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€é¡˜æ‚¨æœ‰å¿«æ¨‚çš„æ¯ä¸€å¤©
 
 TEXT NOR);
         break;
@@ -196,17 +196,17 @@ TEXT NOR);
         case 13:
         tell_room(environment(me),BLINK+HIW@TEXT
 
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡::.--.-.::
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡:( (    ):::::  ¶«±ßÈÕ³öÎ÷±ßÓê 
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡(_,  \ ) ,_)::  µÀÊÇÎÞÇçÈ´ÓÐÇé       |
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡:::-'--`--:::::::: ~~|     ,       \ _ /
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡::::::::::::::::::: ,|`-._/|   -==  (_)  ==-
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡::::::::^^::::::::.' |   /||\      /   \
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡::::::^^::::::::.'   | ./ ||`\       |
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡:::::::::::::::/ `-. |/._ ||  \
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡::::::::::::::|      ||   ||   \
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ ~~=~_~^~ =~ \~~~~~~~'~~~~'~~~~/~~`` ~=~^~
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡~^^~~-=~^~ ^ `--------------'~^~=~^~_~^=~^~
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€::.--.-.::
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€:( (    ):::::  æ±é‚Šæ—¥å‡ºè¥¿é‚Šé›¨ 
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€(_,  \ ) ,_)::  é“æ˜¯ç„¡æ™´å»æœ‰æƒ…       |
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€:::-'--`--:::::::: ~~|     ,       \ _ /
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€::::::::::::::::::: ,|`-._/|   -==  (_)  ==-
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€::::::::^^::::::::.' |   /||\      /   \
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€::::::^^::::::::.'   | ./ ||`\       |
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€:::::::::::::::/ `-. |/._ ||  \
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€::::::::::::::|      ||   ||   \
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ ~~=~_~^~ =~ \~~~~~~~'~~~~'~~~~/~~`` ~=~^~
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€~^^~~-=~^~ ^ `--------------'~^~=~^~_~^=~^~
 
 TEXT NOR);
         break;
@@ -214,11 +214,11 @@ TEXT NOR);
         case 14:
         tell_room(environment(me),BLINK+HIW@TEXT
 
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ï¡¡¡¡ ¨¨Ž¡¡
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¨¨¨Ž¡¡¡¡¡¡¡î¡¡
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ /¡ð\ ¡ñ¡¡¡¡¡¡ ¨¨¨Ž¨Ž¡¡¡¡¡¡ ©°©¤©¤©¤©¤©´¡¡
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ /¡ö\/¡ö\¡¡¡¡¨¨¨¨Ž¨Ž¨Ž¡¡¡¡ ©¦Á½ÇéÏàÔÃ©¦¡¡
-¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ ¨n¨T¨n¡¡ <|¡¡||¡¡¡¡¨T¨n¨T¨n¨T¨n¨T¨n¡¡©¸©Ð©¤©¤©Ð©¼
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â˜…ã€€ã€€ â–¡â–¡ã€€
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â–¡â–¡â–¡ã€€ã€€ã€€â˜†ã€€
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ /â—‹\ â—ã€€ã€€ã€€ â–¡â–¡â–¡â–¡ã€€ã€€ã€€ â”Œâ”€â”€â”€â”€â”ã€€
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ /â– \/â– \ã€€ã€€â–¡â–¡â–¡â–¡â–¡â–¡ã€€ã€€ â”‚å…©æƒ…ç›¸æ‚…â”‚ã€€
+ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ â–¡â–¡â–¡ã€€ <|ã€€||ã€€ã€€â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡ã€€â””â”¬â”€â”€â”¬â”˜
 
 TEXT NOR);
         break;

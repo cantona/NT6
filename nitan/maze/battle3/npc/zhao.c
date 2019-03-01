@@ -6,12 +6,12 @@ int add_degree(object ob);
 
 void create()
 {
-        set_name(HIY"ÕÔÒ»ÈÊ"NOR, ({"zhao yiren", "zhao", "yiren"}));
-        set("nickname", HIR"±ø²¿ÉÐÊé"NOR);
-        set("gender", "ÄÐÐÔ");
+        set_name(HIY"è¶™ä¸€ä»"NOR, ({"zhao yiren", "zhao", "yiren"}));
+        set("nickname", HIR"å…µéƒ¨å°šæ›¸"NOR);
+        set("gender", "ç”·æ€§");
         set("age", 41);
         set("long", 
-         "Ëû¾ÍÊÇµ±½ñ±ø²¿´ó´óÓÐÃûµÄÉÐÊéÕÔÒ»ÈÊ£¬ÔÚ³¯ÖÐ¼«ÓÐÈ¨ÊÆ¡£\n"
+         "ä»–å°±æ˜¯ç•¶ä»Šå…µéƒ¨å¤§å¤§æœ‰åçš„å°šæ›¸è¶™ä¸€ä»ï¼Œåœ¨æœä¸­æ¥µæœ‰æ¬Šå‹¢ã€‚\n"
         );
 
         set("attitude", "friendly");
@@ -24,11 +24,11 @@ void create()
         set("chat_chance", 5);
 
         set("chat_msg", ({
-        "ÕÔÒ»ÈÊÌ¾ÁË¿ÚÆøµÀ£º×î½üÔõÃ´Ã»Ê²Ã´ÈËÀ´ËÍÀñÁË£¬¿´À´µÃÏëÏë°ì·¨ÁË¡£\n",
+        "è¶™ä¸€ä»å˜†äº†å£æ°£é“ï¼šæœ€è¿‘æ€Žéº¼æ²’ä»€éº¼äººä¾†é€ç¦®äº†ï¼Œçœ‹ä¾†å¾—æƒ³æƒ³è¾¦æ³•äº†ã€‚\n",
         }));
 
         set("inquiry", ([
-        "¹¦Ãû" : "ÒªÇóÈ¡¹¦Ãû£¬ºÃ°¡£¬¿ÉÊÇÀÏ·ò½üÀ´ÉíÌå²»ÊÊ£¬Õâ¸ö¡£¡£¡£", 
+        "åŠŸå" : "è¦æ±‚å–åŠŸåï¼Œå¥½å•Šï¼Œå¯æ˜¯è€å¤«è¿‘ä¾†èº«é«”ä¸é©ï¼Œé€™å€‹ã€‚ã€‚ã€‚", 
         ]));
 
         setup();
@@ -39,26 +39,26 @@ int add_degree(object ob)
 {
         string degree,old_degree;
 
-        degree=HIR "Ìá¶½" NOR;
+        degree=HIR "æç£" NOR;
         if( query("degree", ob))old_degree=query("degree", ob);
         else old_degree="";
 
-        message("channel:rumor",MAG"¡¾´óËÎ¾©³Ç¡¿"HIY"·îÌì³ÐÃü£¬»ÊµÛÚ¯Ô»£º"
-        +"²ß·â"+old_degree+""+HIW+query("name", ob )
-        +HIY" Îª´óËÎ "NOR+degree+HIY"£¬ÇÕ´Ë£¡\n"NOR,users());
+        message("channel:rumor",MAG"ã€å¤§å®‹äº¬åŸŽã€‘"HIY"å¥‰å¤©æ‰¿å‘½ï¼Œçš‡å¸è©˜æ›°ï¼š"
+        +"ç­–å°"+old_degree+""+HIW+query("name", ob )
+        +HIY" ç‚ºå¤§å®‹ "NOR+degree+HIY"ï¼Œæ¬½æ­¤ï¼\n"NOR,users());
         delete_temp("degree_jungong", ob);
 
         if( query("degree", ob) )
         {
          if( query("degree_ask", ob) )
-         degree=HIM"¡î"NOR+clear_degree(query("degree", ob) )
-              +HIM " ¡î " NOR+degree+HIM " ¡î "NOR;
+         degree=HIM"â˜†"NOR+clear_degree(query("degree", ob) )
+              +HIM " â˜† " NOR+degree+HIM " â˜† "NOR;
           else
-         degree=HIM"¡î"NOR+clear_degree(query("degree", ob) )
-              +degree+HIM " ¡î " NOR;
+         degree=HIM"â˜†"NOR+clear_degree(query("degree", ob) )
+              +degree+HIM " â˜† " NOR;
         } else
-         degree=HIM " ¡î " NOR+degree
-              +HIM " ¡î " NOR;               
+         degree=HIM " â˜† " NOR+degree
+              +HIM " â˜† " NOR;               
 
         set("degree_jungong", 8, ob);
         set("degree", degree, ob);
@@ -68,25 +68,25 @@ int add_degree(object ob)
 
 string clear_degree(string arg)
 {
-        if ((strsrch(arg, BLU "Ê¿×ä" NOR) >= 0) ||
-            (strsrch(arg, BLU "ÓÎ»÷" NOR) >= 0) ||
-            (strsrch(arg, HIC "²Î½«" NOR) >= 0) ||
-            (strsrch(arg, HIC "ñÔ½«" NOR) >= 0) ||
-            (strsrch(arg, HIY "×ô½«" NOR) >= 0) ||
-            (strsrch(arg, HIY "¸±½«" NOR) >= 0) ||
-            (strsrch(arg, HIR "½«¾ü" NOR) >= 0) ||
-            (strsrch(arg, HIR "Ìá¶½" NOR) >= 0) ||
-            (strsrch(arg, HIM " ¡î " NOR) >= 0))
+        if ((strsrch(arg, BLU "å£«å’" NOR) >= 0) ||
+            (strsrch(arg, BLU "éŠæ“Š" NOR) >= 0) ||
+            (strsrch(arg, HIC "åƒå°‡" NOR) >= 0) ||
+            (strsrch(arg, HIC "è£¨å°‡" NOR) >= 0) ||
+            (strsrch(arg, HIY "ä½å°‡" NOR) >= 0) ||
+            (strsrch(arg, HIY "å‰¯å°‡" NOR) >= 0) ||
+            (strsrch(arg, HIR "å°‡è»" NOR) >= 0) ||
+            (strsrch(arg, HIR "æç£" NOR) >= 0) ||
+            (strsrch(arg, HIM " â˜† " NOR) >= 0))
         {
-                arg = replace_string(arg, BLU "Ê¿×ä" NOR,"");
-                arg = replace_string(arg, BLU "ÓÎ»÷" NOR,""); 
-                arg = replace_string(arg, HIC "²Î½«" NOR,"");
-                arg = replace_string(arg, HIC "ñÔ½«" NOR,"");   
-                arg = replace_string(arg, HIY "×ô½«" NOR,"");
-                arg = replace_string(arg, HIY "¸±½«" NOR,"");   
-                arg = replace_string(arg, HIR "½«¾ü" NOR,"");
-                arg = replace_string(arg, HIR "Ìá¶½" NOR,"");   
-                arg = replace_string(arg, HIM " ¡î " NOR,"");
+                arg = replace_string(arg, BLU "å£«å’" NOR,"");
+                arg = replace_string(arg, BLU "éŠæ“Š" NOR,""); 
+                arg = replace_string(arg, HIC "åƒå°‡" NOR,"");
+                arg = replace_string(arg, HIC "è£¨å°‡" NOR,"");   
+                arg = replace_string(arg, HIY "ä½å°‡" NOR,"");
+                arg = replace_string(arg, HIY "å‰¯å°‡" NOR,"");   
+                arg = replace_string(arg, HIR "å°‡è»" NOR,"");
+                arg = replace_string(arg, HIR "æç£" NOR,"");   
+                arg = replace_string(arg, HIM " â˜† " NOR,"");
         }
         return arg;
 }
@@ -95,25 +95,25 @@ int accept_object(object who, object ob)
 {
         if( query("degree_jungong", who) >= 8 || query("guo_shoucheng/reward", who) >= 8100 )
         {
-         message_vision("$NÒ»Á³·ß¿®£ºÄãÎÒÍ¬³¯Îª¹Ù£¬ÈçºÎÊ¹ÕâÖÖ²»ÈÊ²»Òå"
-                        +"Ö®¾Ù£¿À´Ñ½£¬°Ñ"+query("name", who )
-                        +"¸øÎÒºä³öÈ¥£¡£¡\n"+"$n±»Ò»Èº¼Ò½«Á¬ÍÆ´ø´òµØºä"
-                        +"³öÁËÉÐÊé¸®£¡£¡\n"NOR,this_object(),who);
+         message_vision("$Nä¸€è‡‰æ†¤æ…¨ï¼šä½ æˆ‘åŒæœç‚ºå®˜ï¼Œå¦‚ä½•ä½¿é€™ç¨®ä¸ä»ä¸ç¾©"
+                        +"ä¹‹èˆ‰ï¼Ÿä¾†å‘€ï¼ŒæŠŠ"+query("name", who )
+                        +"çµ¦æˆ‘è½Ÿå‡ºåŽ»ï¼ï¼\n"+"$nè¢«ä¸€ç¾¤å®¶å°‡é€£æŽ¨å¸¶æ‰“åœ°è½Ÿ"
+                        +"å‡ºäº†å°šæ›¸åºœï¼ï¼\n"NOR,this_object(),who);
          who->move("/maze/battle3/ydmen");
          return 0;
         }
 
         if( query("money_id", ob) && ob->value() >= 10000000 )
         {
-          message_vision(HIW"$NÒ»ÕÅÁ³¶ÙÊ±Ð¦ÑÕ´ó¿ª£ºÇëÉÔºî£¬ÀÏ·òÎªÄã½ø¹¬"
-          +"×ß×ß¡£\n", this_object());
+          message_vision(HIW"$Nä¸€å¼µè‡‰é “æ™‚ç¬‘é¡å¤§é–‹ï¼šè«‹ç¨ä¾¯ï¼Œè€å¤«ç‚ºä½ é€²å®®"
+          +"èµ°èµ°ã€‚\n", this_object());
           this_object()->move("/maze/battle3/cddian");
           call_out("add_degree",10,who);
           return 1;
         } else
         {
-          message_vision(HIY"$N´óÅ­£º¸øÎÒ¹ö³öÈ¥£¡$n±»Ò»Èº¼Ò½«Á¬ÍÆ´ø´òµØ"
-           +"ºä³öÁËÉÐÊé¸®£¡£¡\n"NOR, this_object(),who);
+          message_vision(HIY"$Nå¤§æ€’ï¼šçµ¦æˆ‘æ»¾å‡ºåŽ»ï¼$nè¢«ä¸€ç¾¤å®¶å°‡é€£æŽ¨å¸¶æ‰“åœ°"
+           +"è½Ÿå‡ºäº†å°šæ›¸åºœï¼ï¼\n"NOR, this_object(),who);
           who->move("/maze/battle3/ydmen");
           return 0;
         }

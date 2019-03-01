@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create ()
 {
-        set ("short", "ˮ����");
+        set ("short", "水果店");
         set("long", @LONG
-������Ψһ��һ��ˮ���ꡣ�����������һ���ŵ���𣬿�����
-��ʽ������ˮ���������ˮ��Ϊ�˱������ʣ�����ÿ��ӳ���Ĺ�԰
-�ÿ쳵�����ġ�ˮ����Ů�ϰ���������������к��ſ��ˡ�
+長安城唯一的一家水果店。店裡面擺滿了一排排的竹筐，筐裡有
+各式各樣的水果。這兒的水果為了保持新鮮，都是每天從城外的果園
+用快車運來的。水果店女老板張蘭香正熱情的招呼著客人。
 LONG );
         set("exits", ([
                 "north"   : "/d/changan/qixiang2",

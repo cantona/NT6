@@ -1,42 +1,42 @@
-©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤
-                      ¡¾ÏÀ¿ÍÐÐÒ»°ÙÂé½«Íæ·¨¡¿
-©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+                      ã€ä¿ å®¢è¡Œä¸€ç™¾éº»å°‡çŽ©æ³•ã€‘
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
-    Âé½«ÓÎÏ·ÔÚÑïÖÝ»´Ñï¶Ä³¡ºÍ³¤°²ÀÖ·»ËÄÂ¥µÄ·½³ÇÉ³³¡¡£
+    éº»å°‡éŠæˆ²åœ¨æšå·žæ·®æšè³­å ´å’Œé•·å®‰æ¨‚åŠå››æ¨“çš„æ–¹åŸŽæ²™å ´ã€‚
 
-    ÔÚÕâÀïÄú¿ÉÒÔ×Ô¼ºÍæÂé½«£¬Ò²¿ÉºÍÅóÓÑ(ÈËÊýËÄÈËÒÔÏÂ¾ù¿É)Ò»ÆðÍæ¡£µ±
-È»Ö»ÓÐËÄ¸öÍæ¼ÒÒ»ÆðÍæ²Å»á¼ÇÂ¼³É¼¨¡£
+    åœ¨é€™è£¡æ‚¨å¯ä»¥è‡ªå·±çŽ©éº»å°‡ï¼Œä¹Ÿå¯å’Œæœ‹å‹(äººæ•¸å››äººä»¥ä¸‹å‡å¯)ä¸€èµ·çŽ©ã€‚ç•¶
+ç„¶åªæœ‰å››å€‹çŽ©å®¶ä¸€èµ·çŽ©æ‰æœƒè¨˜éŒ„æˆç¸¾ã€‚
 
-  Ö¸  Áî        Àý          ×Ó              Ëµ    Ã÷
-©°©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©´
-©¦sit          ----------                    ×øÏÂÈë¾Ö ©¦
-©¦look  l mj»ò.¿´×Ô¼ºÅÆ,l 1p»ò.1¿´Íæ¼Ò1µÄÅÆ           ©¦
-©¦      l all»ò..¿´È«²¿,l end¿´Á÷¾Öl dump¡£    ¿´ÅÆ   ©¦
-©¦mo           ----------                      ÃþÅÆ   ©¦
-©¦da             da <´úÂë>¡£                   ´òÅÆ   ©¦
-©¦chi           chi <´úÂë1> <´úÂë2>¡£          ³ÔÅÆ   ©¦
-©¦peng          ----------                     ÅöÅÆ   ©¦
-©¦gang          gang »ò gang <´úÂë>(°µ¸ÜÓÃ)¡£  ¸ÜÅÆ   ©¦
-©¦hu                                           ºúÅÆ   ©¦
-©¦setmj          Çë¿´×ÀÃæ¡£                  Éè¶¨²ÎÊý ©¦
-©¦start        ----------                    ÅÆ¾Ö¿ªÊ¼ ©¦
-©¦restart   restart »ò restart mj¡£          ÖØÐÂ¿ªÊ¼ ©¦
-©¦top   top aip,top -p,top -w,top -h,top -d           ©¦
-©¦      top -l¿´È«²¿,-lw,-lh,-ld¡£            ²é×ÊÁÏ  ©¦
-©¸©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¼
+  æŒ‡  ä»¤        ä¾‹          å­              èªª    æ˜Ž
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚sit          ----------                    åä¸‹å…¥å±€ â”‚
+â”‚look  l mjæˆ–.çœ‹è‡ªå·±ç‰Œ,l 1pæˆ–.1çœ‹çŽ©å®¶1çš„ç‰Œ           â”‚
+â”‚      l allæˆ–..çœ‹å…¨éƒ¨,l endçœ‹æµå±€l dumpã€‚    çœ‹ç‰Œ   â”‚
+â”‚mo           ----------                      æ‘¸ç‰Œ   â”‚
+â”‚da             da <ä»£ç¢¼>ã€‚                   æ‰“ç‰Œ   â”‚
+â”‚chi           chi <ä»£ç¢¼1> <ä»£ç¢¼2>ã€‚          åƒç‰Œ   â”‚
+â”‚peng          ----------                     ç¢°ç‰Œ   â”‚
+â”‚gang          gang æˆ– gang <ä»£ç¢¼>(æš—æ§“ç”¨)ã€‚  æ§“ç‰Œ   â”‚
+â”‚hu                                           èƒ¡ç‰Œ   â”‚
+â”‚setmj          è«‹çœ‹æ¡Œé¢ã€‚                  è¨­å®šåƒæ•¸ â”‚
+â”‚start        ----------                    ç‰Œå±€é–‹å§‹ â”‚
+â”‚restart   restart æˆ– restart mjã€‚          é‡æ–°é–‹å§‹ â”‚
+â”‚top   top aip,top -p,top -w,top -h,top -d           â”‚
+â”‚      top -lçœ‹å…¨éƒ¨,-lw,-lh,-ldã€‚            æŸ¥è³‡æ–™  â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
 
-                       »ù  ±¾  Éè  ¶¨
+                       åŸº  æœ¬  è¨­  å®š
 
-            setmj ¿ÉÓÃµÄÓÐ×Ô¶¯ºú¡¢¸Ü ¡¢Åö¡¢Ìý¡¢ÏÔÊ½·½·¨¡£
+            setmj å¯ç”¨çš„æœ‰è‡ªå‹•èƒ¡ã€æ§“ ã€ç¢°ã€è½ã€é¡¯å¼æ–¹æ³•ã€‚
 --------------------------------------------------------------------
-Àý×Ó1: setmj peng 1w    Éè¶¨»á×Ô¶¯Åö1w µ±±ðÈË´ò³öÒ»ÍòÊ±»á×Ô¶¯ÅöÒ»Íò¡£
-       setmj gang 1w    Éè¶¨»á×Ô¶¯¸Ü1w µ±±ðÈË´ò³öÒ»ÍòÊ±»á×Ô¶¯¸ÜÒ»Íò¡£
-       setmj ting 1w    Éè¶¨»á×Ô¶¯Ìý1w µ±±ðÈË´ò³öÒ»ÍòÊ±»á×Ô¶¯ºúÒ»Íò¡£
-Àý×Ó2: setmj show ´úÂë  Éè¶¨ÎªÖ»ÏÔÊ¾´úÂë¡£
-       setmj show color Éè¶¨Îª²ÊÉ«ÏÔÊ¾¡£
-Àý×Ó3: setmj ting none  È¡Ïû»á×Ô¶¯ºúÅÆÉè¶¨¡£
-       setmj gang none  È¡Ïû»á×Ô¶¯¸ÜÅÆÉè¶¨¡£
-       setmj peng none  È¡Ïû»á×Ô¶¯ÅöÅÆÉè¶¨¡£
-Àý×Ó4: setmj auto ting  Éè¶¨×Ô¶¯ÌýÅÆ¡£
+ä¾‹å­1: setmj peng 1w    è¨­å®šæœƒè‡ªå‹•ç¢°1w ç•¶åˆ¥äººæ‰“å‡ºä¸€è¬æ™‚æœƒè‡ªå‹•ç¢°ä¸€è¬ã€‚
+       setmj gang 1w    è¨­å®šæœƒè‡ªå‹•æ§“1w ç•¶åˆ¥äººæ‰“å‡ºä¸€è¬æ™‚æœƒè‡ªå‹•æ§“ä¸€è¬ã€‚
+       setmj ting 1w    è¨­å®šæœƒè‡ªå‹•è½1w ç•¶åˆ¥äººæ‰“å‡ºä¸€è¬æ™‚æœƒè‡ªå‹•èƒ¡ä¸€è¬ã€‚
+ä¾‹å­2: setmj show ä»£ç¢¼  è¨­å®šç‚ºåªé¡¯ç¤ºä»£ç¢¼ã€‚
+       setmj show color è¨­å®šç‚ºå½©è‰²é¡¯ç¤ºã€‚
+ä¾‹å­3: setmj ting none  å–æ¶ˆæœƒè‡ªå‹•èƒ¡ç‰Œè¨­å®šã€‚
+       setmj gang none  å–æ¶ˆæœƒè‡ªå‹•æ§“ç‰Œè¨­å®šã€‚
+       setmj peng none  å–æ¶ˆæœƒè‡ªå‹•ç¢°ç‰Œè¨­å®šã€‚
+ä¾‹å­4: setmj auto ting  è¨­å®šè‡ªå‹•è½ç‰Œã€‚
 --------------------------------------------------------------------
 

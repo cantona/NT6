@@ -2,12 +2,12 @@
 
 void create()
 {
-        set_name(HIR "Áú¹ÇÉì½î" NOR, ({ "longgu shenjin", "Smilax riparia var. acuminata", "herb_lgjin" }));
+        set_name(HIR "é¾éª¨ä¼¸ç­‹" NOR, ({ "longgu shenjin", "Smilax riparia var. acuminata", "herb_lgjin" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "°ÙºÏ¿Æ(İÃİÖ¿Æ)Ö²Îï¼âÒ¶Å£Î²²Ë(Smilax riparia var. acuminata)µÄ¸ù¾¥¡£ÒòÆäĞÎÂÔËÆÁú¹Ç£¬¼áÓ²£¬ÓÖÓĞÊæ½î»îÂçµÄ¹¦Ğ§£¬¹ÊµÃ´ËÃû¡£\n" NOR);
-                set("base_unit", "Öê");
+                set("long", HIW "ç™¾åˆç§‘(èâ–¡ç§‘)æ¤ç‰©å°–è‘‰ç‰›å°¾èœ(Smilax riparia var. acuminata)çš„æ ¹è–ã€‚å› å…¶å½¢ç•¥ä¼¼é¾éª¨ï¼Œå …ç¡¬ï¼Œåˆæœ‰èˆ’ç­‹æ´»çµ¡çš„åŠŸæ•ˆï¼Œæ•…å¾—æ­¤åã€‚\n" NOR);
+                set("base_unit", "æ ª");
                 set("base_value", 50000);
                 set("base_weight", 100);
         }

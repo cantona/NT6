@@ -1,4 +1,4 @@
-// familyd.c ±£´æËùÓĞµÄÃÅÅÉĞÅÏ¢
+// familyd.c ä¿å­˜æ‰€æœ‰çš„é–€æ´¾ä¿¡æ¯
 
 #include <ansi.h>
 
@@ -8,63 +8,63 @@
 inherit F_SAVE;
 inherit F_DBASE;
 
-// ÃÅÅÉÉùÍû×î´óÊÇ10ÒÚ
+// é–€æ´¾è²æœ›æœ€å¤§æ˜¯10å„„
 #define MAX_FAMILY_FAME         1000000000
 
-// Ã¿¸öÃÅÅÉ×î¶àÓĞ100¸ö³ğÈË
+// æ¯å€‹é–€æ´¾æœ€å¤šæœ‰100å€‹ä»‡äºº
 #define MAX_HATRED_PERSON       100
 
-// µ±³ğÈË³¬¹ıµÄÊ±ºòÃ¿´ÎÒÆ³ı¶àÉÙ¸ö
+// ç•¶ä»‡äººè¶…éçš„æ™‚å€™æ¯æ¬¡ç§»é™¤å¤šå°‘å€‹
 #define HATREDP_REMOVED         10
 
 mapping family_fame = ([
-        "ÉÙÁÖËÂ"   : 10000000,
-        "Îäµ±ÅÉ"   : 8000000,
-        "Ø¤°ï"     : 7000000,
-        "È«Õæ½Ì"   : 5000000,
-        "»ªÉ½ÅÉ"   : 4500000,
-        "¶ÎÊÏ»Ê×å" : 4000000,
-        "Ä½ÈİÊÀ¼Ò" : 4000000,
-        "Ñ©É½ËÂ"   : 3500000,
-        "ÁéğÕ¹¬"   : 3500000,
-        "¶ëáÒÅÉ"   : 3000000,
-        "ÌÒ»¨µº"   : 2500000,
-        "ÉñÁú½Ì"   : 2000000,
-        "¹ÅÄ¹ÅÉ"   : 1500000,
-        "ĞÇËŞÅÉ"   : 1200000,
-        "åĞÒ£ÅÉ"   : 1000000,
-        "Ñªµ¶ÃÅ"   : 800000,
-        "»ªÉ½½£×Ú" : 600000,
-        "Å·ÑôÊÀ¼Ò" : 500000,
-        "¹ØÍâºú¼Ò" : 400000,
+        "å°‘æ—å¯º"   : 10000000,
+        "æ­¦ç•¶æ´¾"   : 8000000,
+        "ä¸å¹«"     : 7000000,
+        "å…¨çœŸæ•™"   : 5000000,
+        "è¯å±±æ´¾"   : 4500000,
+        "æ®µæ°çš‡æ—" : 4000000,
+        "æ…•å®¹ä¸–å®¶" : 4000000,
+        "é›ªå±±å¯º"   : 3500000,
+        "éˆé·²å®®"   : 3500000,
+        "å³¨åµ‹æ´¾"   : 3000000,
+        "æ¡ƒèŠ±å³¶"   : 2500000,
+        "ç¥é¾æ•™"   : 2000000,
+        "å¤å¢“æ´¾"   : 1500000,
+        "æ˜Ÿå®¿æ´¾"   : 1200000,
+        "é€é™æ´¾"   : 1000000,
+        "è¡€åˆ€é–€"   : 800000,
+        "è¯å±±åŠå®—" : 600000,
+        "æ­é™½ä¸–å®¶" : 500000,
+        "é—œå¤–èƒ¡å®¶" : 400000,
 ]);
 
-// ÃÅÅÉID¶ÔÓ¦µÄÃÅÅÉÃû×Ö
+// é–€æ´¾IDå°æ‡‰çš„é–€æ´¾åå­—
 nosave mapping family_name = ([
-        "shaolin"  : "ÉÙÁÖËÂ",
-        "wudang"   : "Îäµ±ÅÉ",
-        "gaibang"  : "Ø¤°ï",
-        "quanzhen" : "È«Õæ½Ì",
-        "huashan"  : "»ªÉ½ÅÉ",
-        "duan"     : "¶ÎÊÏ»Ê×å",
-        "murong"   : "Ä½ÈİÊÀ¼Ò",
-        "xueshan"  : "Ñ©É½ËÂ",
-        "lingjiu"  : "ÁéğÕ¹¬",
-        "emei"     : "¶ëáÒÅÉ",
-        "taohua"   : "ÌÒ»¨µº",
-        "shenlong" : "ÉñÁú½Ì",
-        "gumu"     : "¹ÅÄ¹ÅÉ",
-        "xingxiu"  : "ĞÇËŞÅÉ",
-        "xiaoyao"  : "åĞÒ£ÅÉ",
-        "xuedao"   : "Ñªµ¶ÃÅ",
-        "jianzong" : "»ªÉ½½£×Ú",
-        "ouyang"   : "Å·ÑôÊÀ¼Ò",
-        "hu"       : "¹ØÍâºú¼Ò",
+        "shaolin"  : "å°‘æ—å¯º",
+        "wudang"   : "æ­¦ç•¶æ´¾",
+        "gaibang"  : "ä¸å¹«",
+        "quanzhen" : "å…¨çœŸæ•™",
+        "huashan"  : "è¯å±±æ´¾",
+        "duan"     : "æ®µæ°çš‡æ—",
+        "murong"   : "æ…•å®¹ä¸–å®¶",
+        "xueshan"  : "é›ªå±±å¯º",
+        "lingjiu"  : "éˆé·²å®®",
+        "emei"     : "å³¨åµ‹æ´¾",
+        "taohua"   : "æ¡ƒèŠ±å³¶",
+        "shenlong" : "ç¥é¾æ•™",
+        "gumu"     : "å¤å¢“æ´¾",
+        "xingxiu"  : "æ˜Ÿå®¿æ´¾",
+        "xiaoyao"  : "é€é™æ´¾",
+        "xuedao"   : "è¡€åˆ€é–€",
+        "jianzong" : "è¯å±±åŠå®—",
+        "ouyang"   : "æ­é™½ä¸–å®¶",
+        "hu"       : "é—œå¤–èƒ¡å®¶",
 ]);
 
 mapping last_family_fame;
 
-// ÃÅÅÉ¶Ô³ğÈË³ğºŞ¶ÈµÄÅÅĞò
+// é–€æ´¾å°ä»‡äººä»‡æ¨åº¦çš„æ’åº
 private int sort_hatred(string id1, string id2, mapping hatred);
 
 void create()
@@ -84,7 +84,7 @@ public void mud_shutdown()
         save();
 }
 
-// ĞÄÌø£ºÎ¬»¤ÃÅÅÉµÄÍ¨³£ĞÅÏ¢
+// å¿ƒè·³ï¼šç¶­è­·é–€æ´¾çš„é€šå¸¸ä¿¡æ¯
 private void heart_beat()
 {
         int t;
@@ -96,7 +96,7 @@ private void heart_beat()
         last = query("last_check");
         if ((t / 86400) != (last / 86400))
         {
-                // ÌìÊı·¢ÉúÁË±ä»¯£º¸´ÖÆÃÅÅÉµÄÃûÍûĞÅÏ¢
+                // å¤©æ•¸ç™¼ç”Ÿäº†è®ŠåŒ–ï¼šå¾©åˆ¶é–€æ´¾çš„åæœ›ä¿¡æ¯
                 all_fam = keys(family_fame) - ({ 0 });
                 last_family_fame = family_fame;
                 family_fame = ([ ]);
@@ -106,13 +106,13 @@ private void heart_beat()
         }
         set("last_check", t);
 
-        // ±£´æÃÅÅÉµÄ×îĞÂĞÅÏ¢
+        // ä¿å­˜é–€æ´¾çš„æœ€æ–°ä¿¡æ¯
         save();
 }
 
-// ·µ»ØÃÅÅÉÉùÍû£ºÈç¹û²ÎÊıÎª¿Õ£¬·µ»ØmappingÀàĞÍ£¬°üº¬ÁËËùÓĞÃÅ
-// ÅÉµÄÉùÍû£»Èç¹û²ÎÊıÊÇÈËÎï£¬ Ôò·µ»Ø¸ÃÈËÎïËùÔÚµÄÄÇ¸öÃÅÅÉµÄÉù
-// Íû£»Èç¹û²ÎÊıÊÇÃÅÅÉ£¬Ôò·µ»Ø¸ÃÃÅÅÉµÄÉùÍû¡£
+// è¿”å›é–€æ´¾è²æœ›ï¼šå¦‚æœåƒæ•¸ç‚ºç©ºï¼Œè¿”å›mappingé¡å‹ï¼ŒåŒ…å«äº†æ‰€æœ‰é–€
+// æ´¾çš„è²æœ›ï¼›å¦‚æœåƒæ•¸æ˜¯äººç‰©ï¼Œ å‰‡è¿”å›è©²äººç‰©æ‰€åœ¨çš„é‚£å€‹é–€æ´¾çš„è²
+// æœ›ï¼›å¦‚æœåƒæ•¸æ˜¯é–€æ´¾ï¼Œå‰‡è¿”å›è©²é–€æ´¾çš„è²æœ›ã€‚
 public mixed query_family_fame(mixed ob)
 {
         string fname;
@@ -131,19 +131,19 @@ public mixed query_family_fame(mixed ob)
         return family_fame;
 }
 
-// ²éÑ¯×òÌìµÄÃÅÅÉÃûÍûĞÅÏ¢
+// æŸ¥è©¢æ˜¨å¤©çš„é–€æ´¾åæœ›ä¿¡æ¯
 public mapping query_all_last_family_fame()
 {
         if (! mapp(last_family_fame))
-                // Ã»ÓĞ×òÌìµÄĞÅÏ¢£¬·µ»Ø½ñÌìµÄ
+                // æ²’æœ‰æ˜¨å¤©çš„ä¿¡æ¯ï¼Œè¿”å›ä»Šå¤©çš„
                 return family_fame;
 
-        // ·µ»Ø×òÌìµÄÃÅÅÉÉùÍûĞÅÏ¢
+        // è¿”å›æ˜¨å¤©çš„é–€æ´¾è²æœ›ä¿¡æ¯
         return last_family_fame;
 }
 
-// ²éÑ¯ÃÅÅÉµÄ³ğºŞĞÅÏ¢£ºÊäÈëµÄob¿ÉÒÔÊÇÃÅÅÉµÄÃû×Ö£¬Ò²¿ÉÊÇÃÅÅÉ
-// ÖĞµÄÈËÎï¡£
+// æŸ¥è©¢é–€æ´¾çš„ä»‡æ¨ä¿¡æ¯ï¼šè¼¸å…¥çš„obå¯ä»¥æ˜¯é–€æ´¾çš„åå­—ï¼Œä¹Ÿå¯æ˜¯é–€æ´¾
+// ä¸­çš„äººç‰©ã€‚
 public mapping query_family_hatred(mixed ob)
 {
         mapping hatred;
@@ -163,8 +163,8 @@ public mapping query_family_hatred(mixed ob)
         return hatred;
 }
 
-// ±ä»¯ÃÅÅÉÉùÍû£ºÊäÈëµÄob¿ÉÒÔÊÇÃÅÅÉµÄÃû×Ö£¬Ò²¿ÉÊÇÃÅÅÉÖĞµÄÈË
-// Îï¡£
+// è®ŠåŒ–é–€æ´¾è²æœ›ï¼šè¼¸å…¥çš„obå¯ä»¥æ˜¯é–€æ´¾çš„åå­—ï¼Œä¹Ÿå¯æ˜¯é–€æ´¾ä¸­çš„äºº
+// ç‰©ã€‚
 public void add_family_fame(mixed ob, int n)
 {
         int new_fame;
@@ -181,7 +181,7 @@ public void add_family_fame(mixed ob, int n)
         if (! stringp(fname) || undefinedp(family_fame[fname]))
                 return;
 
-        // ¼ÆËãĞÂµÄÃÅÅÉÉùÍû
+        // è¨ˆç®—æ–°çš„é–€æ´¾è²æœ›
         new_fame = family_fame[fname] + n;
         if (new_fame < 0) new_fame = 0;
         if (new_fame > MAX_FAMILY_FAME)
@@ -189,7 +189,7 @@ public void add_family_fame(mixed ob, int n)
         family_fame[fname] = new_fame;
 }
 
-// ÃÅÅÉ¼ä³ğÉ±
+// é–€æ´¾é–“ä»‡æ®º
 public void family_kill(object killer, object victim)
 {
         int kexp;
@@ -201,12 +201,12 @@ public void family_kill(object killer, object victim)
         mapping hatred;
         mixed *d;
 
-        // Ö»ÓĞÍæ¼ÒÖ®¼äµÄ³ğÉ±²Å¼ÆËãÔÚÄÚ
+        // åªæœ‰ç©å®¶ä¹‹é–“çš„ä»‡æ®ºæ‰è¨ˆç®—åœ¨å…§
         if (! objectp(killer) || ! playerp(killer) ||
             ! objectp(victim) || ! playerp(victim))
                 return;
 
-        // Î×Ê¦Ö®¼äµÄ±È»®¿É²»ÄÜËãÊı
+        // å·«å¸«ä¹‹é–“çš„æ¯”åŠƒå¯ä¸èƒ½ç®—æ•¸
         if (wizardp(killer) || wizardp(victim))
                 return;
 
@@ -217,23 +217,23 @@ public void family_kill(object killer, object victim)
 
         if (stringp(kfam) && kfam == vfam)
         {
-                // Í¬ÃÅ²ĞÉ±£¿
+                // åŒé–€æ®˜æ®ºï¼Ÿ
                 return;
         }
 
         if (kexp < vexp * 3 && vexp >= 100000)
         {
-                // É±ÊÖµÄ¾­Ñé²»ÊÇÔ¶Ô¶µÄ´óÓÚ¶Ô·½£¬²¢ÇÒ±»É±µÄ
-                // ÈËÓĞÒ»¶¨µÄ¾­Ñé£¬Õâ½«µ¼ÖÂÃÅÅÉÉùÍûµÄ½µµÍ¡£
+                // æ®ºæ‰‹çš„ç¶“é©—ä¸æ˜¯é é çš„å¤§äºå°æ–¹ï¼Œä¸¦ä¸”è¢«æ®ºçš„
+                // äººæœ‰ä¸€å®šçš„ç¶“é©—ï¼Œé€™å°‡å°è‡´é–€æ´¾è²æœ›çš„é™ä½ã€‚
                 fame_delta = vexp + query("score", killer) * 2 +
                              query("weiwang", killer)*10;
                 fame_delta /= 1000;
         } else
-                // ¶ÔÊÖ¾­ÑéÌ«ÉÙ£¬»òÊÇ²î¾àÌ«´ó£¬²»Ó°ÏìÉùÍû
+                // å°æ‰‹ç¶“é©—å¤ªå°‘ï¼Œæˆ–æ˜¯å·®è·å¤ªå¤§ï¼Œä¸å½±éŸ¿è²æœ›
                 fame_delta = 0;
 
-        // ²é¿´É±ÊÖËùÔÚµÄÃÅÅÉÊÇ·ñ³ğºŞËÀÕß£ºÈç¹û³ğºŞ£¬ÔòÄÜ¹»
-        // ´ø¶¯ÉùÍûµÄ±ä»¯¡£
+        // æŸ¥çœ‹æ®ºæ‰‹æ‰€åœ¨çš„é–€æ´¾æ˜¯å¦ä»‡æ¨æ­»è€…ï¼šå¦‚æœä»‡æ¨ï¼Œå‰‡èƒ½å¤ 
+        // å¸¶å‹•è²æœ›çš„è®ŠåŒ–ã€‚
         if (stringp(kfam))
         {
                 string path;
@@ -242,16 +242,16 @@ public void family_kill(object killer, object victim)
                 d = query(path);
                 if (arrayp(d) && sizeof(d) >= 2 && intp(d[1]))
                 {
-                        // ³ğºŞËÀÕß£¬ÃÅÅÉ»ñµÃ¶îÍâµÄÉùÍû
+                        // ä»‡æ¨æ­»è€…ï¼Œé–€æ´¾ç²å¾—é¡å¤–çš„è²æœ›
                         if (d[1] > 2000)
                                 CHANNEL_D->do_channel(this_object(), "rumor",
-                                        "ÌıËµ" + killer->name(1) + "»÷±ĞÁË" +
-                                        victim->name(1) + "£¬Îª" +
-                                        kfam + "ÌÖ»ØÁË¹«µÀ¡£");
+                                        "è½èªª" + killer->name(1) + "æ“Šæ–ƒäº†" +
+                                        victim->name(1) + "ï¼Œç‚º" +
+                                        kfam + "è¨å›äº†å…¬é“ã€‚");
                         fame_delta += d[1] / 3;
 
-                        // ¶Ô´ËÈËµÄ³ğºŞ½µµÍ(½µµÍµÄÒª±ÈÔö¼ÓµÄÒª¶à)£¬
-                        // ¾ßÌå¿ÉÒÔ¿´fame_delta Óë³ğºŞ¶È¹«Ë¾µÄ²îÒì
+                        // å°æ­¤äººçš„ä»‡æ¨é™ä½(é™ä½çš„è¦æ¯”å¢åŠ çš„è¦å¤š)ï¼Œ
+                        // å…·é«”å¯ä»¥çœ‹fame_delta èˆ‡ä»‡æ¨åº¦å…¬å¸çš„å·®ç•°
                         d[1] -= fame_delta;
                         if (d[1] <= 0)
                                 delete(path);
@@ -260,16 +260,16 @@ public void family_kill(object killer, object victim)
                 }
         }
 
-        // µ÷ÕûÁ½¸öÃÅÅÉµÄÉùÍû
+        // èª¿æ•´å…©å€‹é–€æ´¾çš„è²æœ›
         add_family_fame(killer,  fame_delta);
         add_family_fame(victim, -fame_delta);
 
-        // Í³¼Æ¸ÃÉ±ÊÖ¶Ô±¾ÃÅµÄ²Ğº¦³Ì¶È
+        // çµ±è¨ˆè©²æ®ºæ‰‹å°æœ¬é–€çš„æ®˜å®³ç¨‹åº¦
         if (! stringp(vfam))
                 return;
 
-        // ³ğºŞ³Ì¶ÈºÍÉùÍûµÄ±ä»¯¶¼ÊÇÔÚÒ»¸öÊıÁ¿¼¶ÉÏ(K¾­Ñé)£¬µ«
-        // ÊÇ³ğºŞ³Ì¶ÈµÍÓÚÉùÍûµÄ±ä»¯¡£
+        // ä»‡æ¨ç¨‹åº¦å’Œè²æœ›çš„è®ŠåŒ–éƒ½æ˜¯åœ¨ä¸€å€‹æ•¸é‡ç´šä¸Š(Kç¶“é©—)ï¼Œä½†
+        // æ˜¯ä»‡æ¨ç¨‹åº¦ä½äºè²æœ›çš„è®ŠåŒ–ã€‚
         vexp = vexp / 1000 + 1;
         if (vexp > 5000)
                 vexp = (vexp - 5000) / 16 + 2000;
@@ -285,13 +285,13 @@ public void family_kill(object killer, object victim)
                 return;
         }
 
-        // Ã¿¸öÃÅÅÉ×î¶à¼ÇÂ¼Èô¸É¸ö³ğÈË
+        // æ¯å€‹é–€æ´¾æœ€å¤šè¨˜éŒ„è‹¥å¹¹å€‹ä»‡äºº
         if (! undefinedp(d = hatred[kid]))
         {
                 if (! arrayp(d) || sizeof(d) < 2 ||
                     ! intp(d[1]) || ! stringp(d[0]))
                 {
-                        // Õâ¸öIDµÄÊı¾İ³öÁË¹ÊÕÏ
+                        // é€™å€‹IDçš„æ•¸æ“šå‡ºäº†æ•…éšœ
                         d = 0;
                 }
         } else
@@ -300,8 +300,8 @@ public void family_kill(object killer, object victim)
                 string *ids;
                 int i;
 
-                // ¹ıÂËÈ¥µôÒ»Ğ©ÈË£¬ÎªÊ²Ã´²»È¥µôÒ»¸ö£¿ÕâÊÇÎª
-                // ÁË·ÀÖ¹¹ıÂËÆµ·±µÄ½øĞĞ¹ıÂË²Ù×÷¡£
+                // éæ¿¾å»æ‰ä¸€äº›äººï¼Œç‚ºä»€éº¼ä¸å»æ‰ä¸€å€‹ï¼Ÿé€™æ˜¯ç‚º
+                // äº†é˜²æ­¢éæ¿¾é »ç¹çš„é€²è¡Œéæ¿¾æ“ä½œã€‚
                 ids = sort_array(keys(hatred),
                                  (: sort_hatred :), hatred);
                 for (i = 0; i < sizeof(ids) && i < HATREDP_REMOVED; i++)
@@ -316,34 +316,34 @@ public void family_kill(object killer, object victim)
                 d[1] += vexp;
         }
 
-        // ¼ÇÂ¼Õâ¸öÈËµÄĞÅÏ¢
+        // è¨˜éŒ„é€™å€‹äººçš„ä¿¡æ¯
         hatred[kid] = d;
 }
 
-// È¥µôËùÓĞÃÅÅÉ¶ÔÄ³¸öÈËµÄ³ğºŞĞÅÏ¢
+// å»æ‰æ‰€æœ‰é–€æ´¾å°æŸå€‹äººçš„ä»‡æ¨ä¿¡æ¯
 public void remove_hatred(string id)
 {
         mapping all_hatred, hatred;
         string fam;
 
         if (! mapp(all_hatred = query("hatred")))
-                // ÏÖÔÚ»¹Ã»ÓĞ³ğºŞĞÅÏ¢
+                // ç¾åœ¨é‚„æ²’æœ‰ä»‡æ¨ä¿¡æ¯
                 return;
 
-        // ²éÔÄËùÓĞµÄÃÅÅÉ
+        // æŸ¥é–±æ‰€æœ‰çš„é–€æ´¾
         foreach (fam in keys(all_hatred))
         {
                 if (mapp(hatred = all_hatred[fam]))
-                        // È¥µô¸ÃÃÅÅÉ¶ÔÄ³ÈËµÄ³ğºŞĞÅÏ¢
+                        // å»æ‰è©²é–€æ´¾å°æŸäººçš„ä»‡æ¨ä¿¡æ¯
                         map_delete(hatred, id);
 
                 if (! mapp(hatred) || ! sizeof(hatred))
-                        // Õâ¸öÃÅÅÉÒÑ¾­Ã»ÓĞ³ğºŞĞÅÏ¢
+                        // é€™å€‹é–€æ´¾å·²ç¶“æ²’æœ‰ä»‡æ¨ä¿¡æ¯
                         map_delete(all_hatred, fam);
         }
 }
 
-// ÅÅĞò£ºÉıĞò
+// æ’åºï¼šå‡åº
 private int sort_hatred(string id1, string id2, mapping hatred)
 {
         mixed *d1, *d2;
@@ -371,7 +371,7 @@ public mapping query_all_family_name()
         return family_name;
 }
 
-// Íâ²¿µ÷ÓÃ¸ßĞ§Á·¹¦
+// å¤–éƒ¨èª¿ç”¨é«˜æ•ˆç·´åŠŸ
 int query_family_efficient(string fname, string arg)
 {
         if( !fname ) return 0;

@@ -1,16 +1,16 @@
-//»ÆÁºÕí (½øÈëÃÎ¾³ËùÓÃµÄµÀ¾ß)
+//é»ƒæ¨‘æ• (é€²å…¥å¤¢å¢ƒæ‰€ç”¨çš„é“å…·)
 #include <ansi.h>
 
 inherit ITEM;
 
 void create()
 {
-        set_name(YEL "»ÆÁºÕí" NOR, ({ "huangliang zhen", "zhen" }));
+        set_name(YEL "é»ƒæ¨‘æ•" NOR, ({ "huangliang zhen", "zhen" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "¾İËµ´ø×ÅÕâ¸öÕíÍ·Ë¯¾õ(dream)¿ÉÒÔ½øÈëÃÎ¾³¡£\n" NOR);
-                set("unit", "¸ö");
+                set("long", HIW "æ“šèªªå¸¶è‘—é€™å€‹æ•é ­ç¡è¦º(dream)å¯ä»¥é€²å…¥å¤¢å¢ƒã€‚\n" NOR);
+                set("unit", "å€‹");
                 set("value", 10);
                 set("weight", 10);                
              }
@@ -28,7 +28,7 @@ int have_dream()
 
    if( !query("sleep_room", environment(me)) )
    {
-      write("ÕâÀï²»ÄÜË¯¾õ£¬ÄãÔõÃ´×öÃÎÑ½£¡\n");
+      write("é€™è£¡ä¸èƒ½ç¡è¦ºï¼Œä½ æ€éº¼åšå¤¢å‘€ï¼\n");
       return 1;
    }
 
@@ -36,15 +36,15 @@ int have_dream()
    { 
       if (ob->is_character()) 
       {   
-         write("ÄãÉíÉÏ´ø×Å¸ö´ó»îÎïÔõÃ´×öÃÎÑ½?\n"); 
+         write("ä½ èº«ä¸Šå¸¶è‘—å€‹å¤§æ´»ç‰©æ€éº¼åšå¤¢å‘€?\n"); 
          return 1;
       }
    }
-   message_vision("\n$Nµ¹Í·Íù´²ÉÏÒ»ÌÉ£¬ºôºô´óË¯ÆğÀ´¡£\n\n", me);
-   message_vision("Ë¯×ÅË¯×Å£¬$NµÄÉíÌåºöÈ»±äµÃÇáÆ®Æ®µØ·É×ßÁË¡£\n\n", me);
+   message_vision("\n$Nå€’é ­å¾€åºŠä¸Šä¸€èººï¼Œå‘¼å‘¼å¤§ç¡èµ·ä¾†ã€‚\n\n", me);
+   message_vision("ç¡è‘—ç¡è‘—ï¼Œ$Nçš„èº«é«”å¿½ç„¶è®Šå¾—è¼•é£„é£„åœ°é£›èµ°äº†ã€‚\n\n", me);
    set_temp("dream_place", environment(me), me);
    me->move("/d/reborn/dream");
-   message_vision(HIG"Ò»Ë²¼ä$N¾¹Æ®µ½ÁËÃÎ¾³Àï¡£\n\n"NOR, me);
+   message_vision(HIG"ä¸€ç¬é–“$Nç«Ÿé£„åˆ°äº†å¤¢å¢ƒè£¡ã€‚\n\n"NOR, me);
    destruct(this_object());
    return 1;
 }

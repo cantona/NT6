@@ -6,8 +6,8 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÏÉÍ¯", ({ "xian tong", "xian", "tong" }));
-        set("gender", "Å®ÐÔ");
+        set_name("ä»™ç«¥", ({ "xian tong", "xian", "tong" }));
+        set("gender", "å¥³æ€§");
         set("age", 20);
         set("max_qi", 99999);
         set("qi", 99999);

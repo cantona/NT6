@@ -10,15 +10,15 @@ inherit TESSERA;
 void create()
 {
 //**    set_name("$name", ({ "$id", }));                        /* NAME_ENTRY */
-        set_name(HIY "»Æ±¦Ê¯" NOR, ({ "topaz" }) );           /* NAME_EXIT  */
+        set_name(HIY "é»ƒå¯¶çŸ³" NOR, ({ "topaz" }) );           /* NAME_EXIT  */
         set_weight(20);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
 //**            set("$dbase_key", "$dbase_value\n");            /* DBASE_ENTRY */
-                set("long", HIY "Ò»¿Å»ÆÉ«µÄ±¦Ê¯¡£\n" NOR);  /* DBASE_EXIT  */
+                set("long", HIY "ä¸€é¡†é»ƒè‰²çš„å¯¶çŸ³ã€‚\n" NOR);  /* DBASE_EXIT  */
                 set("value", 50000);
-                set("unit", "¿Å");
+                set("unit", "é¡†");
                 set("level", 2);
                 set("material", "topaz");
                 set("can_be_enchased", 1);

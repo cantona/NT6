@@ -1,15 +1,15 @@
 
 /*
- * Îï¼ş£º ³ÇÊĞ¾«Áé(City Maker) V1.0
- * ×÷Õß£º ±ùºÓ (Glacier@£ÛÑ©Óò£®ºÚ³±£İ)
- * ÈÕÆÚ£º 2001/01/11
- * ±¸×¢£º ES_Base_Code
- * ĞŞ¸Ä£º ¹¦ÄÜÄ£¿éĞŞ¸Ä³ÉÏòµ¼·½Ê½£¬¼ÓÈëµØÍ¼µµ´íÎóÅĞ¶Ï¡£
- *        ÈÎºÎÊ±ºòÊäÈëµã "."£¬¶¼¿ÉÒÔ·ÅÆú±à¼­¡£
+ * ç‰©ä»¶ï¼š åŸå¸‚ç²¾éˆ(City Maker) V1.0
+ * ä½œè€…ï¼š å†°æ²³ (Glacier@ï¹é›ªåŸŸï¼é»‘æ½®ï¹)
+ * æ—¥æœŸï¼š 2001/01/11
+ * å‚™æ³¨ï¼š ES_Base_Code
+ * ä¿®æ”¹ï¼š åŠŸèƒ½æ¨¡å¡Šä¿®æ”¹æˆå‘å°æ–¹å¼ï¼ŒåŠ å…¥åœ°åœ–æª”éŒ¯èª¤åˆ¤æ–·ã€‚
+ *        ä»»ä½•æ™‚å€™è¼¸å…¥é» "."ï¼Œéƒ½å¯ä»¥æ”¾æ£„ç·¨è¼¯ã€‚
  *                            Glacier -- 2001.2.20
  *
- * ĞŞ¸Ä£º ¼ÓÈë×Ô¼ºÉè¶¨ÎÄ¼şÃû¹¦ÄÜ¡£ÎÄ¼şÃûµ¼³ö¸ñÊ½Îª£º³ÇÊĞÃû_·¿¼äÃû.c
- *        ÆäÖĞ³ÇÊĞÃûÎªµØÍ¼ÎÄ¼şµÄÃû³Æ£¬·¿¼äÃûÔÚµØÍ¼ÎÄ¼şµÚÒ»ĞĞÉè¶¨¡£
+ * ä¿®æ”¹ï¼š åŠ å…¥è‡ªå·±è¨­å®šæ–‡ä»¶ååŠŸèƒ½ã€‚æ–‡ä»¶åå°å‡ºæ ¼å¼ç‚ºï¼šåŸå¸‚å_æˆ¿é–“å.c
+ *        å…¶ä¸­åŸå¸‚åç‚ºåœ°åœ–æ–‡ä»¶çš„åç¨±ï¼Œæˆ¿é–“ååœ¨åœ°åœ–æ–‡ä»¶ç¬¬ä¸€è¡Œè¨­å®šã€‚
  *                            Lonely -- 2001.3.12 
  */
 #pragma save_binary
@@ -32,12 +32,12 @@ int save_file(string yn, string file_name, string file);
 int confirm_make(string yn);
 void create()
 {
-        set_name("³ÇÊĞ¾«Áé V1.1", ({ "citymaker", "maker" }) );
+        set_name("åŸå¸‚ç²¾éˆ V1.1", ({ "citymaker", "maker" }) );
         set_weight(2000);
-        set("unit", "¸ö" );
+        set("unit", "å€‹" );
         set("long", @LONG
-    Õâ¸öÊÇÒ»¸ö·½±ãÎ×Ê¦¹¤×÷µÄ¹¤¾ß£¬¿ÉÒÔ¿ìËÙ½¨Á¢ÍêÕûµÄÇøÓò½á¹¹¡£
-ÇëÊ¹ÓÃ help citymaker »ñµÃÏêÏ¸°ïÖú¡£
+    é€™å€‹æ˜¯ä¸€å€‹æ–¹ä¾¿å·«å¸«å·¥ä½œçš„å·¥å…·ï¼Œå¯ä»¥å¿«é€Ÿå»ºç«‹å®Œæ•´çš„å€åŸŸçµæ§‹ã€‚
+è«‹ä½¿ç”¨ help citymaker ç²å¾—è©³ç´°å¹«åŠ©ã€‚
 LONG
         );
         setup();
@@ -60,7 +60,7 @@ int process_map(string file)
         if(file_size(file)>0)
         {
             input=read_file(file);
-//´¦Àí line
+//è™•ç† line
             line=explode(input,"\n");
             icons1=explode(line[0]," ");
             for(i=0;i<sizeof(icons1);i++)
@@ -68,8 +68,8 @@ int process_map(string file)
                 j=i+1;
                 if (strsrch(icons1[i],"\t")!=-1 || strsrch(icons1[i],".")==-1)
                 {
-                write("[ Citymaker ]£º·¿¼ä±êÊ¶Î»´íÎó£¬Çë¼ì²éµØÍ¼µÚÒ»ĞĞ±êÊ¶Î»[ "+ j +" == "+icons1[i]+" ]´¦¡£\n");
-                write("[ Citymaker ]£ºº¬ÓĞÖÆ±í·û»òÕß<·¿¼ä±êÊ¶.·¿¼äÃû³Æ>Ö®¼ä²»º¬·Ö¸î·û\".\"¡£\n");
+                write("[ Citymaker ]ï¼šæˆ¿é–“æ¨™è­˜ä½éŒ¯èª¤ï¼Œè«‹æª¢æŸ¥åœ°åœ–ç¬¬ä¸€è¡Œæ¨™è­˜ä½[ "+ j +" == "+icons1[i]+" ]è™•ã€‚\n");
+                write("[ Citymaker ]ï¼šå«æœ‰åˆ¶è¡¨ç¬¦æˆ–è€…<æˆ¿é–“æ¨™è­˜.æˆ¿é–“åç¨±>ä¹‹é–“ä¸å«åˆ†å‰²ç¬¦\".\"ã€‚\n");
                 return 0;
                 }            
             }
@@ -85,7 +85,7 @@ int process_map(string file)
                 room_short[icons[i][0]] = icons[i][1];
                 room_filename[icons[i][0]] = icons[i][2];
             }
-//´¦Àí mapping room_short
+//è™•ç† mapping room_short
             _Trow=sizeof(line);
             _Mrow=_Trow-1;
             _size=_Trow;
@@ -95,14 +95,14 @@ int process_map(string file)
                 if (_Mcol<_Tcol) {_Mcol=_Tcol;}
             }
             if (_size<_Mcol) {_size=_Mcol;}
-//´¦Àí³É¾ØÕó
+//è™•ç†æˆçŸ©é™£
             for(i=1;i<(sizeof(line));i++)
             {
                 j=i+1;
                 if (strsrch(line[i],"\t")!=-1)
                 {
-                write("[ Citymaker ]£º·¿¼ä±êÊ¶Î»´íÎó£¬Çë¼ì²éµØÍ¼µÚ["+j+"]ĞĞ[ "+line[i]+" ]´¦¡£\n");
-                write("[ Citymaker ]£ºº¬ÓĞÖÆ±í·û¡£\n");
+                write("[ Citymaker ]ï¼šæˆ¿é–“æ¨™è­˜ä½éŒ¯èª¤ï¼Œè«‹æª¢æŸ¥åœ°åœ–ç¬¬["+j+"]è¡Œ[ "+line[i]+" ]è™•ã€‚\n");
+                write("[ Citymaker ]ï¼šå«æœ‰åˆ¶è¡¨ç¬¦ã€‚\n");
                 return 0;
                 }               
                 for (_Tcol=sizeof(line[i]);_Tcol<_Mcol;_Tcol++)
@@ -111,7 +111,7 @@ int process_map(string file)
                  }
             }
                 maps = allocate(_size);
-//´¦Àí maps
+//è™•ç† maps
                 for(v=1;v<(sizeof(line));v++)
             {
             maps[v-1]=allocate(_size);
@@ -129,7 +129,7 @@ int makeroom(int _row, int _col)
         string file_name,file,*exit_key,room;
         mapping exit=([]);
         room=maps[_row][_col];
-                write("[ Citymaker ]£ºroom("+_row+","+_col+") == "+room+" ");
+                write("[ Citymaker ]ï¼šroom("+_row+","+_col+") == "+room+" ");
   if (_row>1)                       {if (maps[_row-1][_col] == "|"   && maps[_row-2][_col]!=" ")     {exit["north"]=room_filename[maps[_row-2][_col]];}}
   if (_row>1 && _col<_Mcol-1)       {if (maps[_row-1][_col+1] == "/" && maps[_row-2][_col+2]!=" ")   {exit["northeast"]=room_filename[maps[_row-2][_col+2]];}}
   if (_col<_Mcol-1)                 {if (maps[_row][_col+1] == "-"   && maps[_row][_col+2]!=" ")     {exit["east"]=room_filename[maps[_row][_col+2]];}}
@@ -140,11 +140,11 @@ int makeroom(int _row, int _col)
   if (_row>1 && _col>1)             {if (maps[_row-1][_col-1] == "\\"&& maps[_row-2][_col-2]!=" ")   {exit["northwest"]=room_filename[maps[_row-2][_col-2]];}}
   //file_name=current_path++"_"+room_filename[maps[_row][_col]]+".c";
   file_name=current_path+room_filename[maps[_row][_col]]+".c";
-  file=sprintf("/*\n * ÎÄ¼ş    : %s (%s)\n",room_short[maps[_row][_col]],room_filename[maps[_row][_col]]);
-        file+=sprintf(" * ×÷Õß    : %s(%s@%s)\n * ´´½¨    : %s\n",this_player()->query("name"),this_player()->query("id"),MUD_NAME,ctime(time()));
+  file=sprintf("/*\n * æ–‡ä»¶    : %s (%s)\n",room_short[maps[_row][_col]],room_filename[maps[_row][_col]]);
+        file+=sprintf(" * ä½œè€…    : %s(%s@%s)\n * å‰µå»º    : %s\n",this_player()->query("name"),this_player()->query("id"),MUD_NAME,ctime(time()));
         file+=@FILE_HEAD
- * ¹¤¾ß    : Build with Citymaker@Glacier
- * ĞŞ¸Ä    : Changed By Lonely@ÄàÌ¶
+ * å·¥å…·    : Build with Citymaker@Glacier
+ * ä¿®æ”¹    : Changed By Lonely@æ³¥æ½­
  */
 #include <ansi.h>
 inherit ROOM;
@@ -155,7 +155,7 @@ FILE_HEAD
         file+=sprintf("\tset(\"short\", \"%s\");\n",room_short[maps[_row][_col]]);
 file+=@FILE_LONG
         set("long", @LONG
-Ò¹.²´.ÇØ.»´.¾Ó.Ë­.¼Ò£¿
+å¤œ.æ³Š.ç§¦.æ·®.å±….èª°.å®¶ï¼Ÿ
 
 LONG
 );
@@ -198,11 +198,11 @@ int do_makecity(string arg)
 {
         int _row,_col;
         string file,room;
-        if (!arg) return notify_fail ("[ Citymaker ]£ºmakecity <µØÍ¼µµ°¸Ãû>\n");
+        if (!arg) return notify_fail ("[ Citymaker ]ï¼šmakecity <åœ°åœ–æª”æ¡ˆå>\n");
         if (strsrch(arg,".")!=-1 || strsrch(arg," ")!=-1) 
         {
-        write("[ Citymaker ]£º´íÎóµØÍ¼µµÃû£¬µØÍ¼µµÖĞ²»ÔÊĞí³öÏÖ\".\"»òÕß\" \"£¬\n ");
-        write("              ÇëÖ±½ÓÊ¹ÓÃÄãÏë½¨Á¢µÄ³ÇÊĞÃûÎªµØÍ¼µµÃû¡£\n");
+        write("[ Citymaker ]ï¼šéŒ¯èª¤åœ°åœ–æª”åï¼Œåœ°åœ–æª”ä¸­ä¸å…è¨±å‡ºç¾\".\"æˆ–è€…\" \"ï¼Œ\n ");
+        write("              è«‹ç›´æ¥ä½¿ç”¨ä½ æƒ³å»ºç«‹çš„åŸå¸‚åç‚ºåœ°åœ–æª”åã€‚\n");
         return 1;
         }
         else
@@ -212,7 +212,7 @@ int do_makecity(string arg)
                 file=resolve_path(this_player()->query("cwd"), arg);
                 if(process_map(file))
                 {
-                        write("[ Citymaker ]£ºÕıÔÚÔØÈëµØÍ¼µµ[ "+file+" ]...\n");
+                        write("[ Citymaker ]ï¼šæ­£åœ¨è¼‰å…¥åœ°åœ–æª”[ "+file+" ]...\n");
 #ifdef _check_map
                         for(_row=0;_row<sizeof(maps);_row++)
                         {
@@ -233,16 +233,16 @@ int do_makecity(string arg)
                                 }
                          write("\n");
                         }
-                        write("[ Citymaker ]£º_Mrow = "+_Mrow+" _Mcol = "+_Mcol+"\n");
+                        write("[ Citymaker ]ï¼š_Mrow = "+_Mrow+" _Mcol = "+_Mcol+"\n");
 #endif
-                        write("[ Citymaker ]£ºµØÍ¼µµ[ "+file+" ]ÔØÈëÍê³É!!\n");
+                        write("[ Citymaker ]ï¼šåœ°åœ–æª”[ "+file+" ]è¼‰å…¥å®Œæˆ!!\n");
                 }
                 else
                 {
-                        return notify_fail("[ Citymaker ]£ºµØÍ¼µµ[ "+file+" ]ÔØÈëÊ§°Ü¡£\n");
+                        return notify_fail("[ Citymaker ]ï¼šåœ°åœ–æª”[ "+file+" ]è¼‰å…¥å¤±æ•—ã€‚\n");
                 }
         }       
-          write("[ Citymaker ]£ºÇëÉè¶¨´æ´¢µµ°¸Ä¿Â¼(Ä¬ÈÏÎªµ±Ç°Ä¿Â¼)£º");
+          write("[ Citymaker ]ï¼šè«‹è¨­å®šå­˜å„²æª”æ¡ˆç›®éŒ„(é»˜èªç‚ºç•¶å‰ç›®éŒ„)ï¼š");
           input_to ( "set_path" );
 
         return 1;
@@ -253,25 +253,25 @@ int save_file(string yn, string file_name, string file)
         if( strlen(yn)<1 || yn[0]!='y' ) return 1;
         
       if(file_name[0..2]!="/u/") return 0;
-//Ö»ÔÊĞíÔÚ/u/Ä¿Â¼ÏÂÃæ½¨Á¢ÎÄ¼ş
+//åªå…è¨±åœ¨/u/ç›®éŒ„ä¸‹é¢å»ºç«‹æ–‡ä»¶
         rm(file_name);
-        write(" ½¨Á¢ " + file_name + "....");
+        write(" å»ºç«‹ " + file_name + "....");
         
         if( write_file(file_name, file,1)==1 ) {
                 write("OK!\n");
                 return 1;
         } else
-                write("ÄãÃ»ÓĞĞ´ÈëÕâ¸öµµ°¸(" + file_name + ")µÄÈ¨Àû¡£\n");
+                write("ä½ æ²’æœ‰å¯«å…¥é€™å€‹æª”æ¡ˆ(" + file_name + ")çš„æ¬Šåˆ©ã€‚\n");
                 return 0;
 }
 
 int set_path(string arg)
 {
         string dir;
-        if (arg == ".") { write ("[ Citymaker ]£º·ÅÆú±¾´Î²Ù×÷¡£\n"); return 1; }
+        if (arg == ".") { write ("[ Citymaker ]ï¼šæ”¾æ£„æœ¬æ¬¡æ“ä½œã€‚\n"); return 1; }
         if (strsrch(arg," ")!=-1) 
         {
-        write("[ Citymaker ]£º´íÎóµÄÂ·¾¶£¬ÇëÉè¶¨´æ´¢µµ°¸Ä¿Â¼(Ä¬ÈÏÎªµ±Ç°Ä¿Â¼)£º");
+        write("[ Citymaker ]ï¼šéŒ¯èª¤çš„è·¯å¾‘ï¼Œè«‹è¨­å®šå­˜å„²æª”æ¡ˆç›®éŒ„(é»˜èªç‚ºç•¶å‰ç›®éŒ„)ï¼š");
         input_to ( "set_path" );        
         return 1;
         }
@@ -280,20 +280,20 @@ int set_path(string arg)
                 if(dir = this_player()->query("cwd"))
                 {
                         current_path=dir;
-                        write("[ Citymaker ]£º×Ô¶¯Éè¶¨´æ´¢µµ°¸Ä¿Â¼Îªµ±Ç°Ä¿Â¼[ "+current_path+" ]¡£\n");
-                        write("[ Citymaker ]£ºÇëÉè¶¨»§Íâ·¿¼äÀàĞÍ(ÀıÈç£ºc,g ÔòµØÍ¼Îª c¡¢g µÄ·¿¼ä½«±»Éè¶¨Îª»§Íâ)£º");
+                        write("[ Citymaker ]ï¼šè‡ªå‹•è¨­å®šå­˜å„²æª”æ¡ˆç›®éŒ„ç‚ºç•¶å‰ç›®éŒ„[ "+current_path+" ]ã€‚\n");
+                        write("[ Citymaker ]ï¼šè«‹è¨­å®šæˆ¶å¤–æˆ¿é–“é¡å‹(ä¾‹å¦‚ï¼šc,g å‰‡åœ°åœ–ç‚º cã€g çš„æˆ¿é–“å°‡è¢«è¨­å®šç‚ºæˆ¶å¤–)ï¼š");
                         input_to("set_outdoors_room");
                         return 1;
-                } else return notify_fail("[ Citymaker ]£ºÎŞ·¨×Ô¶¯Éè¶¨Ä¿Â¼£¬·ÅÆú²Ù×÷¡£\n");
+                } else return notify_fail("[ Citymaker ]ï¼šç„¡æ³•è‡ªå‹•è¨­å®šç›®éŒ„ï¼Œæ”¾æ£„æ“ä½œã€‚\n");
         }
         else
         {
                 dir = resolve_path(this_player()->query("cwd"), arg);
-                if(file_size(dir)!=-2) { write("[ Citymaker ]£ºÃ»ÓĞÕâ¸öÄ¿Â¼£¬·ÅÆú²Ù×÷¡£\n"); return 1; }                 
+                if(file_size(dir)!=-2) { write("[ Citymaker ]ï¼šæ²’æœ‰é€™å€‹ç›®éŒ„ï¼Œæ”¾æ£„æ“ä½œã€‚\n"); return 1; }                 
                 if(dir[strlen(dir)-1]!='/') dir += "/";
                 current_path=dir;
-                write("[ Citymaker ]£ºÉè¶¨´æ´¢µµ°¸Ä¿Â¼Îª[ "+current_path+" ]¡£\n");
-                write("[ Citymaker ]£ºÇëÉè¶¨»§Íâ·¿¼äÀàĞÍ(ÀıÈç£ºc,g ÔòµØÍ¼Îª c¡¢g µÄ·¿¼ä½«±»Éè¶¨Îª»§Íâ)£º");
+                write("[ Citymaker ]ï¼šè¨­å®šå­˜å„²æª”æ¡ˆç›®éŒ„ç‚º[ "+current_path+" ]ã€‚\n");
+                write("[ Citymaker ]ï¼šè«‹è¨­å®šæˆ¶å¤–æˆ¿é–“é¡å‹(ä¾‹å¦‚ï¼šc,g å‰‡åœ°åœ–ç‚º cã€g çš„æˆ¿é–“å°‡è¢«è¨­å®šç‚ºæˆ¶å¤–)ï¼š");
                 input_to("set_outdoors_room");                
         }
                 return 1;        
@@ -303,11 +303,11 @@ int set_outdoors_room(string arg)
         int  i;
         string *tmp,test,argt;
         argt=lower_case(arg);
-        if (arg == ".") { write ("[ Citymaker ]£º·ÅÆú±¾´Î²Ù×÷¡£\n"); return 1; }     
+        if (arg == ".") { write ("[ Citymaker ]ï¼šæ”¾æ£„æœ¬æ¬¡æ“ä½œã€‚\n"); return 1; }     
         if (strsrch(argt," ")!=-1 )
         {
-        write("[ Citymaker ]£º»§Íâ·¿¼äÀàĞÍÉè¶¨´íÎó£¬²»ÔÊĞí³öÏÖ\" \"¡£\n");
-        write("[ Citymaker ]£ºÇëÉè¶¨»§Íâ·¿¼äÀàĞÍ(ÀıÈç£ºc,g ÔòµØÍ¼Îª c¡¢g µÄ·¿¼ä½«±»Éè¶¨Îª»§Íâ)£º");      
+        write("[ Citymaker ]ï¼šæˆ¶å¤–æˆ¿é–“é¡å‹è¨­å®šéŒ¯èª¤ï¼Œä¸å…è¨±å‡ºç¾\" \"ã€‚\n");
+        write("[ Citymaker ]ï¼šè«‹è¨­å®šæˆ¶å¤–æˆ¿é–“é¡å‹(ä¾‹å¦‚ï¼šc,g å‰‡åœ°åœ–ç‚º cã€g çš„æˆ¿é–“å°‡è¢«è¨­å®šç‚ºæˆ¶å¤–)ï¼š");      
         input_to ( "set_outdoors_room" );       
         return 1;
         }
@@ -316,23 +316,23 @@ int set_outdoors_room(string arg)
         {
         test=tmp[i];
         if (strlen(test)>1) {
-                write("[ Citymaker ]£º»§Íâ·¿¼äÉè¶¨´íÎó£¬·¿¼ä±êÊ¶³¤¶ÈÓ¦Îªµ¥¸ö×Ö·û¡£\n");
-                write("[ Citymaker ]£ºÇëÉè¶¨»§Íâ·¿¼äÀàĞÍ(ÀıÈç£ºc,g ÔòµØÍ¼Îª c¡¢g µÄ·¿¼ä½«±»Éè¶¨Îª»§Íâ)£º");
+                write("[ Citymaker ]ï¼šæˆ¶å¤–æˆ¿é–“è¨­å®šéŒ¯èª¤ï¼Œæˆ¿é–“æ¨™è­˜é•·åº¦æ‡‰ç‚ºå–®å€‹å­—ç¬¦ã€‚\n");
+                write("[ Citymaker ]ï¼šè«‹è¨­å®šæˆ¶å¤–æˆ¿é–“é¡å‹(ä¾‹å¦‚ï¼šc,g å‰‡åœ°åœ–ç‚º cã€g çš„æˆ¿é–“å°‡è¢«è¨­å®šç‚ºæˆ¶å¤–)ï¼š");
                 input_to ( "set_outdoors_room" );       
                 return 1;               
                 }
         }
         if(!arg) 
         {
-        write ("[ Citymaker ]£ºÉè¶¨ËùÓĞ·¿¼äÎª»§Íâ...OK¡£\n");
+        write ("[ Citymaker ]ï¼šè¨­å®šæ‰€æœ‰æˆ¿é–“ç‚ºæˆ¶å¤–...OKã€‚\n");
         }
         outdoors_room=(explode(lower_case(arg),","));
         for (i=0;i<sizeof(outdoors_room);i++)
         {
         outdoors=outdoors_room[i];
-        write("[ Citymaker ]£ºÉè¶¨·¿¼ä[ "+outdoors+" ]Îª»§Íâ...OK¡£\n");
+        write("[ Citymaker ]ï¼šè¨­å®šæˆ¿é–“[ "+outdoors+" ]ç‚ºæˆ¶å¤–...OKã€‚\n");
         }
-        write("[ Citymaker ]£ºÉè¶¨Íê³É£¬Citymaker ½«»áÉú³É³ÇÊĞµµ°¸£¬ÇëÈ·ÈÏ(y/n)£º");
+        write("[ Citymaker ]ï¼šè¨­å®šå®Œæˆï¼ŒCitymaker å°‡æœƒç”ŸæˆåŸå¸‚æª”æ¡ˆï¼Œè«‹ç¢ºèª(y/n)ï¼š");
         input_to("confirm_make");   
         return 1;
 }
@@ -342,12 +342,12 @@ int confirm_make(string arg)
         int count=0;
         if( arg=="" ) 
         {
-        write("[ Citymaker ]£ºĞèÒªÈ·ÈÏ£¬ÄúÈ·¶¨Âğ(y/n)£¿");
+        write("[ Citymaker ]ï¼šéœ€è¦ç¢ºèªï¼Œæ‚¨ç¢ºå®šå—(y/n)ï¼Ÿ");
         input_to("confirm_make");
         return 1;
         }       
-        if( arg[0]!='y' && arg[0]!='Y' ) {write ("[ Citymaker ]£º·ÅÆú±¾´Î²Ù×÷¡£\n"); return 1;}
-        write("[ Citymaker ]£ºÕıÔÚ½¨Á¢³ÇÊĞ ... ...\n");    
+        if( arg[0]!='y' && arg[0]!='Y' ) {write ("[ Citymaker ]ï¼šæ”¾æ£„æœ¬æ¬¡æ“ä½œã€‚\n"); return 1;}
+        write("[ Citymaker ]ï¼šæ­£åœ¨å»ºç«‹åŸå¸‚ ... ...\n");    
         for(_row=0;_row<sizeof(maps);_row++)
         {
         for(_col=0;_col<sizeof(maps[_row]);_col++)
@@ -363,7 +363,7 @@ int confirm_make(string arg)
                 }
                 }
         }
-        write("[ Citymaker ]£º²Ù×÷±¨¸æ£¬¹²¼Æ[ " + count +" ]¸ö·¿¼ä£¡\n");   
+        write("[ Citymaker ]ï¼šæ“ä½œå ±å‘Šï¼Œå…±è¨ˆ[ " + count +" ]å€‹æˆ¿é–“ï¼\n");   
         return 1;
 }
 
@@ -372,16 +372,16 @@ int do_help(string arg)
         if(arg=="citymaker" ||arg== "maker")
         {
                 write(@HELP_LONG
-³ÇÊĞ¾«Áé V1.1 ( 2001.2)            - By Glacier@£ÛÑ©Óò£®ºÚ³±£İ
+åŸå¸‚ç²¾éˆ V1.1 ( 2001.2)            - By Glacier@ï¹é›ªåŸŸï¼é»‘æ½®ï¹
                                      Email:wizard@game.com.cn
                                      
-Õâ¸öÊÇÒ»¸öÎª·½±ãÎ×Ê¦¹¤×÷µÄ³ÇÊĞ¹¤¾ß£¬¿ÉÒÔ¿ìËÙ½¨Á¢ÍêÕûµÄÇøÓò½á¹¹¡£
+é€™å€‹æ˜¯ä¸€å€‹ç‚ºæ–¹ä¾¿å·«å¸«å·¥ä½œçš„åŸå¸‚å·¥å…·ï¼Œå¯ä»¥å¿«é€Ÿå»ºç«‹å®Œæ•´çš„å€åŸŸçµæ§‹ã€‚
 
-1.±à¼­µØÍ¼µµ, ·¶ÀıÈçÏÂ£º
+1.ç·¨è¼¯åœ°åœ–æª”, èŒƒä¾‹å¦‚ä¸‹ï¼š
 -----------------------------------------------------------------
-a.¿Í·¿.kefang b.Ïá·¿.xiangfang c.×ßÀÈ.zoulang d.´óÌü.dating
-e.³ø·¿.chufang f.»¨Ô°.huayuan g.´óÃÅ.damen h.ÄÚÊÒ.neishi
-(×¢Òâ£ºÉÏÁ½ĞĞÓ¦ºÏ²¢ÎªÒ»ĞĞ£¬ÓÉÓÚ¹ı¿í£¬ÎªÁË±ãÓÚÏÔÊ¾£¬ËùÒÔÔÚÕâÀï·ÖÎªÁ½ĞĞ)
+a.å®¢æˆ¿.kefang b.å»‚æˆ¿.xiangfang c.èµ°å»Š.zoulang d.å¤§å»³.dating
+e.å»šæˆ¿.chufang f.èŠ±åœ’.huayuan g.å¤§é–€.damen h.å…§å®¤.neishi
+(æ³¨æ„ï¼šä¸Šå…©è¡Œæ‡‰åˆä¸¦ç‚ºä¸€è¡Œï¼Œç”±äºéå¯¬ï¼Œç‚ºäº†ä¾¿äºé¡¯ç¤ºï¼Œæ‰€ä»¥åœ¨é€™è£¡åˆ†ç‚ºå…©è¡Œ)
   g   b
   |  / \
 b-c-b   b
@@ -390,25 +390,24 @@ a-d-a b
   |
 h-f-e
 ------------------------------------------------------------------
-µØÍ¼ËµÃ÷£º   ±¾µØÍ¼µµËù¼Ó±ß¿ò(---)£¬Îª½âÊÍµØÍ¼ËùÓÃ£¬Êµ¼ÊµØÍ¼ÖĞÃ»ÓĞ¡£
-             µØÍ¼µÚÒ»ĞĞÎªÍ¼Àı£¬²ÉÓÃ<·¿¼ä±êÊ¶.·¿¼äÃû³Æ.·¿¼äÎÄ¼şÃû>µÄ
-             ·½Ê½£¬¼´a´ú±í¿Í·¿£¬µØÍ¼ÖĞËùÓĞa¾ù±»´¦Àí³É¿Í·¿¡£ ·¿¼ä±ê
-             Ê¶¡¢·¿¼äÃû³ÆºÍ·¿¼äÎÄ¼şÃûÖ®¼äÓÃ£¢.£¢·Ö¸î¡£
-             ÓÃ£¢-¡¢\¡¢/¡¢|£¢À´±íÊ¾³£ÓÃµÄµÄ°ËÖĞÍ¨Â·(²»¿¼ÂÇµØĞÎ)¼´£º
-             west¡¢east¡¢northwest¡¢southeast¡¢northeast¡¢southwest
-             north¡¢south¡£
-×¢ÒâÊÂÏî£º   ËùÓĞ·¿¼ä¾ùÓ¦ÔÚµÚÒ»ĞĞÓĞÍ¼ÀıËµÃ÷£¬·ñÔò½«ÎŞ·¨Õı³£Éú³É·¿¼ä¡£
-             µØÍ¼ÖĞËùÓĞ×Ö·û¾ùÎª°ë½Ç×Ö·û£¬Ö»ÔÊĞí³öÏÖ¿Õ¸ñ£¢ £¢£¬²»ÔÊĞí
-             ³öÏÖÖÆ±í·û \t ¡£Îª±ÜÃâ³ö´íÇëÑÏ¸ñ°´Ôì±¾µØÍ¼µµ½¨Á¢¡£
-2. Ö¸Áî¸ñÊ½£ºmake <µØÍ¼µµ>  ( ×îºÃ°Ñ³ÇÊĞÃû×÷ÎªµØÍ¼µµÃû³Æ£¬ ÕâÊÇÒòÎª
-             Citymaker ÔÚÉèÖÃoutdoors·¿¼äµÄÊ±ºòÊ¹ÓÃµØÍ¼µµÃû×÷Îª·¿¼ä
-             µÄËùÊô³ÇÊĞ¡£)
-3. Citymaker ĞèÒªÉè¶¨´æ·Åµµ°¸µÄÂ·¾¶£º <Ä¿Â¼Ãû> (Ä¬ÈÏÎªµ±Ç°ËùÔÚÄ¿Â¼)¡£
-4. Citymaker ĞèÒªÉè¶¨»§ÍâµÄ·¿¼ä£º<»§Íâ·¿¼ä±êÊ¶,»§Íâ·¿¼ä±êÊ¶,...
-             ËùÉè¶¨µÄ·¿¼ä½«±»Éè¶¨Îª»§Íâ(Ä¬ÈÏÎªÊÒÄÚ)¡£       
-5. Èç¹ûÒÔÉÏÉè¶¨ÎŞÎó£¬È·ÈÏºó Citymaker »áÅúÁ¿Éú³É³ÇÊĞµµ°¸¡£(È·ÈÏºó±¾³
-             Ğò½«Ö±½Ó¸ÄĞ´ÖØÃûÎÄ¼ş£¬ËùÒÔÇë×¢ÒâÄãËùÕßÉèÖÃµÄ´æ´¢Ä¿Â¼¡£
-6. ±¾³ÌĞò»¶Ó­ĞŞ¸Ä£¬µ«Çë±£ÁôÔ­×÷ÕßÃû¡£       
+åœ°åœ–èªªæ˜ï¼š   æœ¬åœ°åœ–æª”æ‰€åŠ é‚Šæ¡†(---)ï¼Œç‚ºè§£é‡‹åœ°åœ–æ‰€ç”¨ï¼Œå¯¦éš›åœ°åœ–ä¸­æ²’æœ‰ã€‚
+             åœ°åœ–ç¬¬ä¸€è¡Œç‚ºåœ–ä¾‹ï¼Œæ¡ç”¨<æˆ¿é–“æ¨™è­˜.æˆ¿é–“åç¨±.æˆ¿é–“æ–‡ä»¶å>çš„
+             æ–¹å¼ï¼Œå³aä»£è¡¨å®¢æˆ¿ï¼Œåœ°åœ–ä¸­æ‰€æœ‰aå‡è¢«è™•ç†æˆå®¢æˆ¿ã€‚ æˆ¿é–“æ¨™
+             è­˜ã€æˆ¿é–“åç¨±å’Œæˆ¿é–“æ–‡ä»¶åä¹‹é–“ç”¨ã€.ã€åˆ†å‰²ã€‚
+             ç”¨ã€-ã€\ã€/ã€|ã€ä¾†è¡¨ç¤ºå¸¸ç”¨çš„çš„å…«ä¸­é€šè·¯(ä¸è€ƒæ…®åœ°å½¢)å³ï¼š
+             westã€eastã€northwestã€southeastã€northeastã€southwest
+             northã€southã€‚
+æ³¨æ„äº‹é …ï¼š   æ‰€æœ‰æˆ¿é–“å‡æ‡‰åœ¨ç¬¬ä¸€è¡Œæœ‰åœ–ä¾‹èªªæ˜ï¼Œå¦å‰‡å°‡ç„¡æ³•æ­£å¸¸ç”Ÿæˆæˆ¿é–“ã€‚
+             åœ°åœ–ä¸­æ‰€æœ‰å­—ç¬¦å‡ç‚ºåŠè§’å­—ç¬¦ï¼Œåªå…è¨±å‡ºç¾ç©ºæ ¼ã€ ã€ï¼Œä¸å…è¨±
+             å‡ºç¾åˆ¶è¡¨ç¬¦ \t ã€‚ç‚ºé¿å…å‡ºéŒ¯è«‹åš´æ ¼æŒ‰é€ æœ¬åœ°åœ–æª”å»ºç«‹ã€‚
+2. æŒ‡ä»¤æ ¼å¼ï¼šmake <åœ°åœ–æª”>  ( æœ€å¥½æŠŠåŸå¸‚åä½œç‚ºåœ°åœ–æª”åç¨±ï¼Œ é€™æ˜¯å› ç‚º
+             Citymaker åœ¨è¨­ç½®outdoorsæˆ¿é–“çš„æ™‚å€™ä½¿ç”¨åœ°åœ–æª”åä½œç‚ºæˆ¿é–“
+             çš„æ‰€å±¬åŸå¸‚ã€‚)
+3. Citymaker éœ€è¦è¨­å®šå­˜æ”¾æª”æ¡ˆçš„è·¯å¾‘ï¼š <ç›®éŒ„å> (é»˜èªç‚ºç•¶å‰æ‰€åœ¨ç›®éŒ„)ã€‚
+4. Citymaker éœ€è¦è¨­å®šæˆ¶å¤–çš„æˆ¿é–“ï¼š<æˆ¶å¤–æˆ¿é–“æ¨™è­˜,æˆ¶å¤–æˆ¿é–“æ¨™è­˜,...
+             æ‰€è¨­å®šçš„æˆ¿é–“å°‡è¢«è¨­å®šç‚ºæˆ¶å¤–(é»˜èªç‚ºå®¤å…§)ã€‚       
+5. å¦‚æœä»¥ä¸Šè¨­å®šç„¡èª¤ï¼Œç¢ºèªå¾Œ Citymaker æœƒæ‰¹é‡ç”ŸæˆåŸå¸‚æª”æ¡ˆã€‚(ç¢ºèªå¾Œæœ¬â–¡             åºå°‡ç›´æ¥æ”¹å¯«é‡åæ–‡ä»¶ï¼Œæ‰€ä»¥è«‹æ³¨æ„ä½ æ‰€è€…è¨­ç½®çš„å­˜å„²ç›®éŒ„ã€‚
+6. æœ¬ç¨‹åºæ­¡è¿ä¿®æ”¹ï¼Œä½†è«‹ä¿ç•™åŸä½œè€…åã€‚       
 
 HELP_LONG);
                 return 1;

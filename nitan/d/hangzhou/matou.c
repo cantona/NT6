@@ -7,19 +7,19 @@ int do_go(string);
 inherit ROOM;
 
 mapping *sign=({
-        ([        "name" : "ËÕÖİ",
+        ([        "name" : "è˜‡å·",
                 "id"   : "sz",
                 "file" : "/d/suzhou/szyunhe",
                 "value": 100,
                 "time" : 10
         ]),
-        ([        "name" : "ÑïÖİ",
+        ([        "name" : "æšå·",
                 "id"   : "yz",
                 "file" : "/d/city/matou",
                 "value": 200,
                 "time" : 20
         ]),
-        ([        "name" : "±±¾©",
+        ([        "name" : "åŒ—äº¬",
                 "id"   : "bj",
                 "file" : "/d/beijing/matou",
                 "value": 300,
@@ -29,14 +29,14 @@ mapping *sign=({
 
 void create()
 {
-        set("short", "ÁÙ°²ÂëÍ·");
+        set("short", "è‡¨å®‰ç¢¼é ­");
         set("long", @long
-ÕâÀïÊÇ¹ÅÀÏµÄÔËºÓµÄÖÕµã£¬ÔËºÓ×ÔÑàÉ½½ÅÏÂµÄµÛ¶¼ÄÏÏÂ£¬ºá´©ÖĞ¹ú
-µÄ»ª±±´óÆ½Ô­£¬Á¬Ãàº£ºÓ¡¢»ÆºÓ¡¢»´ºÓ¡¢³¤½­ºÍÇ®ÌÁ½­Îå´óË®Ïµ£¬Ö¹ÓÚ
-ºÅ³ÆÌìÌÃºÍÓãÃ×Ö®ÏçµÄº¼Öİ³Ç¡£ÔËºÓÖĞÂúÊÇÀ´À´ÍùÍùµÄéÉÓ°£¬½­ÄÏµÄ·á
-ºñµÄ²ú³ö¾­´Ë¹ú¼ÒÃüÂö£¬Ô´Ô´±±ÉÏ¡£
-    Äã×ß½øÂëÍ·£¬¾Í¿´¼ûÒ»Î»ÀÏ´¬·òÕ¾ÔÚ´¬±ß£¬ÊÖÉÏ¸ß¾Ù×ÅÒ»¸öĞ´Âú×Ö
-µÄÄ¾ÅÆ(sign)¡£
+é€™è£¡æ˜¯å¤è€çš„é‹æ²³çš„çµ‚é»ï¼Œé‹æ²³è‡ªç‡•å±±è…³ä¸‹çš„å¸éƒ½å—ä¸‹ï¼Œæ©«ç©¿ä¸­åœ‹
+çš„è¯åŒ—å¤§å¹³åŸï¼Œé€£ç¶¿æµ·æ²³ã€é»ƒæ²³ã€æ·®æ²³ã€é•·æ±Ÿå’ŒéŒ¢å¡˜æ±Ÿäº”å¤§æ°´ç³»ï¼Œæ­¢äº
+è™Ÿç¨±å¤©å ‚å’Œé­šç±³ä¹‹é„‰çš„æ­å·åŸã€‚é‹æ²³ä¸­æ»¿æ˜¯ä¾†ä¾†å¾€å¾€çš„æª£å½±ï¼Œæ±Ÿå—çš„è±
+åšçš„ç”¢å‡ºç¶“æ­¤åœ‹å®¶å‘½è„ˆï¼ŒæºæºåŒ—ä¸Šã€‚
+    ä½ èµ°é€²ç¢¼é ­ï¼Œå°±çœ‹è¦‹ä¸€ä½è€èˆ¹å¤«ç«™åœ¨èˆ¹é‚Šï¼Œæ‰‹ä¸Šé«˜èˆ‰è‘—ä¸€å€‹å¯«æ»¿å­—
+çš„æœ¨ç‰Œ(sign)ã€‚
 long);
         set("exits",([
                 "southwest" : __DIR__"road9",
@@ -59,7 +59,7 @@ void init()
 
 string look_sign()
 {
-        string str="ÓÉ´ËÈ¥(qu)µ½ÏÂÁĞÂëÍ·£º\n";
+        string str="ç”±æ­¤å»(qu)åˆ°ä¸‹åˆ—ç¢¼é ­ï¼š\n";
         int i=sizeof(sign);
 
         while (i--)
@@ -77,9 +77,9 @@ void do_move(object ob, int i)
 //        ob->enable_player();
         delete_temp("noliving", ob);
         delete_temp("block_msg/all", ob);
-        tell_object(ob, "ÖÕµãÕ¾µ½ÁË¡£\n");
+        tell_object(ob, "çµ‚é»ç«™åˆ°äº†ã€‚\n");
         ob->move(sign[i]["file"]);
-        tell_room(environment(ob), ob->name() + "´Ó´¬ÉÏ×ßÁËÏÂÀ´¡£\n", ({ob}));
+        tell_room(environment(ob), ob->name() + "å¾èˆ¹ä¸Šèµ°äº†ä¸‹ä¾†ã€‚\n", ({ob}));
 }
 
 int do_go(string arg)
@@ -89,7 +89,7 @@ int do_go(string arg)
 
         if (!arg) return 0;
         if (ob->is_busy() || ob->is_fighting())
-                return notify_fail("ÄãÕıÃ¦×ÅÄØ£¡\n");
+                return notify_fail("ä½ æ­£å¿™è‘—å‘¢ï¼\n");
         while(i--)
         {
                 if (arg == sign[i]["id"])
@@ -97,12 +97,12 @@ int do_go(string arg)
                         switch (MONEY_D->player_pay(ob, sign[i]["value"]))
                         {
                                 case 0:
-                                        return notify_fail("Çî¹âµ°£¬Ò»±ß´ô×ÅÈ¥£¡\n");
+                                        return notify_fail("çª®å…‰è›‹ï¼Œä¸€é‚Šå‘†è‘—å»ï¼\n");
                                 case 2:
-                                        return notify_fail("ÓĞÁãÇ®Âğ£¿\n");
+                                        return notify_fail("æœ‰é›¶éŒ¢å—ï¼Ÿ\n");
                         }
-                        message_vision("$NµÇÉÏÁËÈ¥" + sign[i]["name"] + "µÄ´¬¡£\n", ob);
-//                        ob->disable_player("<ÂÃÍ¾ÖĞ>");
+                        message_vision("$Nç™»ä¸Šäº†å»" + sign[i]["name"] + "çš„èˆ¹ã€‚\n", ob);
+//                        ob->disable_player("<æ—…é€”ä¸­>");
                         set_temp("noliving/journey", 1, ob);
                         set_temp("block_msg/all", 1, ob);
                         ob->move("/d/suzhou/onroad");
@@ -110,5 +110,5 @@ int do_go(string arg)
                         return 1;
                 }
         }
-        return notify_fail("ÄãÒªÈ¥ÄÄÀï£¿\n");
+        return notify_fail("ä½ è¦å»å“ªè£¡ï¼Ÿ\n");
 }

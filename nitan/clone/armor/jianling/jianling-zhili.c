@@ -5,14 +5,14 @@ inherit MYHEART2;
 
 void create()
 {
-        set_name(HIG "½£ÁéÖ®Á¦" NOR, ({ "jianling zhili", "zhili"}) );
+        set_name(HIG "åŠéˆä¹‹åŠ›" NOR, ({ "jianling zhili", "zhili"}) );
         set_weight(1);
         if( clonep())
                 set_default_object(__FILE__);
         else {
                 set("material", "paper");
-                set("unit", "ÕÅ");
-                set("long", HIG "ÕâÊÇÒ»ÕÅµ­À¶É«µÄ»¤·û£¬ÆäÍâĞÎÓĞÈçºûµû³á°òÒ»°ã¡£\n" NOR);
+                set("unit", "å¼µ");
+                set("long", HIG "é€™æ˜¯ä¸€å¼µæ·¡è—è‰²çš„è­·ç¬¦ï¼Œå…¶å¤–å½¢æœ‰å¦‚è´è¶ç¿…è†€ä¸€èˆ¬ã€‚\n" NOR);
                 set("value", 10000000);
                 set("limit", ([
                         "exp"    :   50000000,
@@ -22,13 +22,13 @@ void create()
                 set("armor_prop/fy", 3);
 
                 set("armor_prop/T_jianling", 1);
-                set("special/desc", "¡¾½£ÁéÌ××°¡¿²¿¼şÖ®Ò»£¨½£ÁéÖ®Å­¡¢½£ÁéÖ®ºÛ¡¢½£ÁéÖ®Á¦¡¢½£ÁéÖ®»ê£©¡£\n"
-                                    "                  ¹ØÓÚ½£ÁéÌ××°µÄ´«Ëµ²Î¼û help boss\n");
+                set("special/desc", "ã€åŠéˆå¥—è£ã€‘éƒ¨ä»¶ä¹‹ä¸€ï¼ˆåŠéˆä¹‹æ€’ã€åŠéˆä¹‹ç—•ã€åŠéˆä¹‹åŠ›ã€åŠéˆä¹‹é­‚ï¼‰ã€‚\n"
+                                    "                  é—œäºåŠéˆå¥—è£çš„å‚³èªªåƒè¦‹ help boss\n");
 
                 set("limit", ([
                          "exp" : 100000000,
                          "thborn" : 1,
-                         "jianling": 1, // equip.cÀïÏŞÖÆ£¬±ØĞëÒªµ÷Õû³É¹¦½£Áé1´Îºó²ÅÄÜ×°±¸
+                         "jianling": 1, // equip.cè£¡é™åˆ¶ï¼Œå¿…é ˆè¦èª¿æ•´æˆåŠŸåŠéˆ1æ¬¡å¾Œæ‰èƒ½è£å‚™
                 ]));
         }
         setup();

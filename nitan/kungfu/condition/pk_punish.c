@@ -4,9 +4,9 @@ int update_condition(object me, int duration)
 {
         if (duration < 1)
         {
-                tell_object(me, "Äã½û±ÕÍê±Ï£¬¿ÉÒÔÀë¿ªÁË£¡\n");
+                tell_object(me, "ä½ ç¦é–‰å®Œç•¢ï¼Œå¯ä»¥é›¢é–‹äº†ï¼\n");
                 CHANNEL_D->do_channel(this_object(), "rumor",
-                        "ÒòÎª" + me->name(1) + "³ÏÐÄ»Ú¹ý£¬±»½â³ý½û±ÕÁË¡£");
+                        "å› ç‚º" + me->name(1) + "èª å¿ƒæ‚”éŽï¼Œè¢«è§£é™¤ç¦é–‰äº†ã€‚");
                 return 0;
         }
         me->apply_condition("pk_punish", duration - 1);

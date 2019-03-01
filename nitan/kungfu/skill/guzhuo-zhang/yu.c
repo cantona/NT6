@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define YU "¡¸" HIR "´óÖÇÈôÓŞ" NOR "¡¹"
+#define YU "ã€Œ" HIR "å¤§æ™ºè‹¥æ„š" NOR "ã€"
 
 inherit F_SSERVER;
 
@@ -12,39 +12,39 @@ int perform(object me, object target)
         int ap, dp;
 
         if( userp(me) && !query("can_perform/guzhuo-zhang/yu", me) )
-                return notify_fail("ÄãËùÊ¹ÓÃµÄÍâ¹¦ÖĞÃ»ÓĞÕâÖÖ¹¦ÄÜ¡£\n");
+                return notify_fail("ä½ æ‰€ä½¿ç”¨çš„å¤–åŠŸä¸­æ²’æœ‰é€™ç¨®åŠŸèƒ½ã€‚\n");
 
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(YU "Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(YU "åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( query_temp("weapon", me) || query_temp("secondary_weapon", me) )
-                return notify_fail(YU "Ö»ÄÜ¿ÕÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(YU "åªèƒ½ç©ºæ‰‹ä½¿ç”¨ã€‚\n");
 
         if ((int)me->query_skill("force") < 260)
-                return notify_fail("ÄãÄÚ¹¦ĞŞÎª²»¹»£¬ÄÑÒÔÊ©Õ¹" YU "¡£\n");
+                return notify_fail("ä½ å…§åŠŸä¿®ç‚ºä¸å¤ ï¼Œé›£ä»¥æ–½å±•" YU "ã€‚\n");
 
         if( query("max_neili", me)<2800 )
-                return notify_fail("ÄãÄÚÁ¦ĞŞÎª²»¹»£¬ÄÑÒÔÊ©Õ¹" YU "¡£\n");
+                return notify_fail("ä½ å…§åŠ›ä¿®ç‚ºä¸å¤ ï¼Œé›£ä»¥æ–½å±•" YU "ã€‚\n");
 
         if ((int)me->query_skill("guzhuo-zhang", 1) < 180)
-                return notify_fail("Äã¹Å×¾ÕÆ·¨»ğºò²»¹»£¬ÄÑÒÔÊ©Õ¹" YU "¡£\n");
+                return notify_fail("ä½ å¤æ‹™æŒæ³•ç«å€™ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" YU "ã€‚\n");
 
         if (me->query_skill_mapped("strike") != "guzhuo-zhang")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢¹Å×¾ÕÆ·¨£¬ÄÑÒÔÊ©Õ¹" YU "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼å¤æ‹™æŒæ³•ï¼Œé›£ä»¥æ–½å±•" YU "ã€‚\n");
 
         if (me->query_skill_prepared("strike") != "guzhuo-zhang")
-                return notify_fail("ÄãÃ»ÓĞ×¼±¸¹Å×¾ÕÆ·¨£¬ÄÑÒÔÊ©Õ¹" YU "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æº–å‚™å¤æ‹™æŒæ³•ï¼Œé›£ä»¥æ–½å±•" YU "ã€‚\n");
 
         if( query("neili", me)<600 )
-                return notify_fail("ÄãÏÖÔÚÕæÆø²»¹»£¬ÄÑÒÔÊ©Õ¹" YU "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çœŸæ°£ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" YU "ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIR "$N" HIR "ÌåÄÚÕæÆø±Å·¢£¬´óºÈÒ»Éù£¬Ë«ÕÆÏò$n" HIR "Æ½Æ½ÍÆ"
-              "È¥£¬ÕĞÊıÆÓÊµÎŞ»ª£¬ºÁÎŞ°ëµã»¨ÇÉ¿ÉÑÔ¡£\n" NOR;  
+        msg = HIR "$N" HIR "é«”å…§çœŸæ°£è¿¸ç™¼ï¼Œå¤§å–ä¸€è²ï¼Œé›™æŒå‘$n" HIR "å¹³å¹³æ¨"
+              "å»ï¼Œæ‹›æ•¸æ¨¸å¯¦ç„¡è¯ï¼Œæ¯«ç„¡åŠé»èŠ±å·§å¯è¨€ã€‚\n" NOR;  
 
         ap=me->query_skill("strike")+query("int", me)*10;
         dp=target->query_skill("force")+query("int", target)*10;
@@ -56,13 +56,13 @@ int perform(object me, object target)
                 damage = ap + random(ap / 2);
                 addn("neili", -300, me);
                 msg += COMBAT_D->do_damage(me, target, UNARMED_ATTACK, damage, 40,
-                                           HIR "$n" HIR "¿±ÆÆ²»Í¸ÕÆÖĞĞéÊµ£¬$N" HIR
-                                           "Ë«ÕÆÕıÖĞ$p" HIR "Ç°ĞØ£¬¡°¿¦àê¿¦àê¡±½Ó"
-                                           "Á¬¶ÏÁËÊı¸ùÀß¹Ç¡£\n" NOR);
+                                           HIR "$n" HIR "å‹˜ç ´ä¸é€æŒä¸­è™›å¯¦ï¼Œ$N" HIR
+                                           "é›™æŒæ­£ä¸­$p" HIR "å‰èƒ¸ï¼Œâ€œå–€åš“å–€åš“â€æ¥"
+                                           "é€£æ–·äº†æ•¸æ ¹è‚‹éª¨ã€‚\n" NOR);
         } else
         {
-                msg += CYN "$n" CYN "¼û$N" CYN "ÕâÕÆÀ´ÊÆ·Ç·²£¬²»¸Ò"
-                       "ÇáÒ×ÕĞ¼Ü£¬µ±¼´·ÉÉí×İÔ¾ÉÁ¿ª¡£\n" NOR;
+                msg += CYN "$n" CYN "è¦‹$N" CYN "é€™æŒä¾†å‹¢éå‡¡ï¼Œä¸æ•¢"
+                       "è¼•æ˜“æ‹›æ¶ï¼Œç•¶å³é£›èº«ç¸±èºé–ƒé–‹ã€‚\n" NOR;
         }
         message_combatd(msg, me, target);
 

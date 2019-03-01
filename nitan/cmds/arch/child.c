@@ -12,7 +12,7 @@ int main(object me, string arg)
                 return 0;
 
         if( !arg)arg=query("cwf", me);
-        if (! arg) return notify_fail("ÄãÒª²é¿´ÄÄ¸öÎÄ¼ş£¿\n");
+        if (! arg) return notify_fail("ä½ è¦æŸ¥çœ‹å“ªå€‹æ–‡ä»¶ï¼Ÿ\n");
   
         if (sscanf(arg, "%s %s", option, str) != 2 || option != "-r")
         str = arg; 
@@ -22,7 +22,7 @@ int main(object me, string arg)
                 set("cwf", str, me);
       
         if (file_size(str) < 0)
-                       return  notify_fail("Ã»ÓĞÕâ¸öÎÄ¼ş£º"  +  str  +  ")\n");
+                       return  notify_fail("æ²’æœ‰é€™å€‹æ–‡ä»¶ï¼š"  +  str  +  ")\n");
 
         list = children(str);
         number=sizeof(list);
@@ -47,7 +47,7 @@ int main(object me, string arg)
                                 if (option == "-r" && ! living(where))
                                 {
                                         destruct(list[i]);
-                                        write ("ÒÑ¾­Çå³ı¡£\n");
+                                        write ("å·²ç¶“æ¸…é™¤ã€‚\n");
                                 }
                         } else
                         {
@@ -57,17 +57,17 @@ int main(object me, string arg)
                         }
                 }
         } else
-                write("Ã»ÓĞÕÒµ½ÈÎºÎÅÉÉúÎï¼ş¡£\n");
+                write("æ²’æœ‰æ‰¾åˆ°ä»»ä½•æ´¾ç”Ÿç‰©ä»¶ã€‚\n");
         return  1;
 }
 
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½: child [-r] filename
+æŒ‡ä»¤æ ¼å¼: child [-r] filename
 
-ÁĞ³öÒ»¸öÎÄµµËùÓĞ¸±±¾¡£
-Èç¹ûÓÃ-r²ÎÊı£¬ÔòÏú»ÙËùÓĞ²»ÔÚ»îÎïÉíÉÏµÄ¸ÃÎÄµµ¸±±¾¡£
+åˆ—å‡ºä¸€å€‹æ–‡æª”æ‰€æœ‰å‰¯æœ¬ã€‚
+å¦‚æœç”¨-råƒæ•¸ï¼Œå‰‡éŠ·æ¯€æ‰€æœ‰ä¸åœ¨æ´»ç‰©èº«ä¸Šçš„è©²æ–‡æª”å‰¯æœ¬ã€‚
 
 HELP );
         return 1;

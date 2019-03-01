@@ -1,18 +1,18 @@
-// zhang.c ÄàÈËÕÅ
+// zhang.c æ³¥äººå¼µ
 
 inherit NPC;
 inherit F_DEALER;
 
 void create()
 {
-        set_name("ÄàÈËÕÅ", ({ "niren zhang", "zhang" }));
-        set("title", "ÄàÈËÆÌÀÏ°å");
+        set_name("æ³¥äººå¼µ", ({ "niren zhang", "zhang" }));
+        set("title", "æ³¥äººèˆ–è€æ¿");
         set("shen_type", 1);
 
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("age", 45);
         set("long",
-"ÄàÈËÕÅµÄÀÏ°Ö½ĞÄàÈËÕÅ£¬ËûÒ¯Ò¯Ò²½ĞÄàÈËÕÅ£¬·´ÕıËûÊÇ×æ´«µÄÄàÈËÊÖÒÕ£¬Ô¶½üÎÅÃû¡£\n");
+"æ³¥äººå¼µçš„è€çˆ¸å«æ³¥äººå¼µï¼Œä»–çˆºçˆºä¹Ÿå«æ³¥äººå¼µï¼Œåæ­£ä»–æ˜¯ç¥–å‚³çš„æ³¥äººæ‰‹è—ï¼Œé è¿‘èåã€‚\n");
         set_skill("unarmed", 50);
         set_skill("dodge", 50);
         set_temp("apply/damage", 15);

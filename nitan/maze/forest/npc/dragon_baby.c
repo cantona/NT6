@@ -6,13 +6,13 @@ inherit NPC;
 void do_attack();
 void create()
 {
-        set_name("Ð¡Áú", ({ "dragon baby", "dragon" }) );
+        set_name("å°é¾", ({ "dragon baby", "dragon" }) );
         set("vendetta_mark","dragon");
-        set("race", "Ò°ÊÞ");
-        set("gender", "ÐÛÐÔ");
+        set("race", "é‡Žç¸");
+        set("gender", "é›„æ€§");
         set("age", 50);
 
-        set("long", "ÅÖºôºôµÄÐ¡Áú¡£\n");
+        set("long", "èƒ–å‘¼å‘¼çš„å°é¾ã€‚\n");
 
         set("str", 60+random(20));
         set("con", 52);
@@ -27,7 +27,7 @@ void create()
         set("neili", 10000);
         set("max_neili", 10000);
         set("attitude", "peacefull");
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "Î²°Í" }) );
+        set("limbs", ({ "é ­éƒ¨", "èº«é«”", "å°¾å·´" }) );
         set("verbs", ({ "bite", "claw" }) );
         set("chat_chance_combat", 80);
         set("chat_msg_combat", ({
@@ -54,7 +54,7 @@ void do_attack()
         enemy = enemies[random(sizeof(enemies))];
         addn_temp("apply/attack",50);
         addn_temp("apply/damage",50);
-        msg = HIM"$NÍ»È»Ò»×ªÉí£¬ÁúÎ²³¯$nÉ¨À´£¡\n"NOR;
+        msg = HIM"$Nçªç„¶ä¸€è½‰èº«ï¼Œé¾å°¾æœ$næŽƒä¾†ï¼\n"NOR;
         message_combatd(msg, this_object(), enemy);
         COMBAT_D->do_attack(this_object(),enemy, 0, 0);
         addn_temp("apply/attack",-50);

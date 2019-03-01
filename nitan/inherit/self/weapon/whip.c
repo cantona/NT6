@@ -1,6 +1,6 @@
 // whip.c
-// ×ÔÔìÎïÆ· (by Find.)
-// Ã»ÓĞ°²È«ÎÊÌâµ«Ì«Âé·³
+// è‡ªé€ ç‰©å“ (by Find.)
+// æ²’æœ‰å®‰å…¨å•é¡Œä½†å¤ªéº»ç…©
 
 #include <mine_def.h>
 #include <weapon.h>
@@ -11,7 +11,7 @@ inherit WHIP;
 
 protected int weapon_attr_flag, require_res;
 
-string query_selling_msg() { return "×ÔÔì±øÆ÷"; }
+string query_selling_msg() { return "è‡ªé€ å…µå™¨"; }
 
 int query_weapon_attr() { return weapon_attr_flag; }
 int set_weapon_attr(int n)
@@ -86,7 +86,7 @@ nomask mixed set(string prop, mixed data)
 
 protected void create(class weapon_args arg)
 {
-        set("unit", "Ìõ");
+        set("unit", "æ¢");
         if( clonep() )
                 set_default_object(__FILE__);
 
@@ -112,13 +112,13 @@ protected void create(class weapon_args arg)
 
         else
         {
-                set_name( "Æ¤±Ş", ({ "whip" }) );
+                set_name( "çš®é­", ({ "whip" }) );
                 set_weight(3000);
-                set("long", "ÕâÊÇÒ»Ìõ¿´ÆğÏàµ±ÆÕÍ¨µÄÆ¤±Ş¡£\n");
+                set("long", "é€™æ˜¯ä¸€æ¢çœ‹èµ·ç›¸ç•¶æ™®é€šçš„çš®é­ã€‚\n");
                 set("value", 500);
                 set("material", "skin");
-                set("wield_msg", "$N´ÓÑü¼äÃş³öÒ»Ìõ$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$nÊøÔÚÑü¼ä¡£\n");
+                set("wield_msg", "$Nå¾è…°é–“æ‘¸å‡ºä¸€æ¢$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°‡æ‰‹ä¸­çš„$næŸåœ¨è…°é–“ã€‚\n");
                 init_whip(20);
         }
 

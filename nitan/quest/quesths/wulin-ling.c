@@ -2,13 +2,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name( "ÎäÁÖÁî", ({ "wulin ling", "ling"}) );
+        set_name( "æ­¦æ—ä»¤", ({ "wulin ling", "ling"}) );
         set_weight(100);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿é");
-                set("long", "ÕâÊÇÒ»¿éÎäÁÖÍ¬ÃËÊ¹ÓÃµÄÌúÁî£¬¼ûÁîÈç¼ûÃËÖ÷¡£ ÓÉ»ÆÉÑÇ©·¢£¬´¦ÀíÎäÁÖÍ¬ÃËÒ»Ó¦ÊÂÎñ¡£\n");
+                set("unit", "å¡Š");
+                set("long", "é€™æ˜¯ä¸€å¡Šæ­¦æ—åŒç›Ÿä½¿ç”¨çš„éµä»¤ï¼Œè¦‹ä»¤å¦‚è¦‹ç›Ÿä¸»ã€‚ ç”±é»ƒè£³ç°½ç™¼ï¼Œè™•ç†æ­¦æ—åŒç›Ÿä¸€æ‡‰äº‹å‹™ã€‚\n");
                 set("value", 0);
                 set("material", "iron");
         }
@@ -26,27 +26,27 @@ int do_chushi(string arg)
         mapping quest;
         me = this_player();
         if( !quest=query("quest_hs", me) )
-            return notify_fail("ÄãÃ»ÓĞ½Óµ½Õ÷ÊÕµÄÈÎÎñ£¬ÔÚÕâÀïÓÃÓ¢ĞÛÁî»Î°¡»ÎµÄ¸ÉÉ¶£¿\n");
-        if (!arg) return notify_fail("ÄãÒªÏòË­³öÊ¾ÎäÁÖÁî£¿");
+            return notify_fail("ä½ æ²’æœ‰æ¥åˆ°å¾æ”¶çš„ä»»å‹™ï¼Œåœ¨é€™è£¡ç”¨è‹±é›„ä»¤æ™ƒå•Šæ™ƒçš„å¹¹å•¥ï¼Ÿ\n");
+        if (!arg) return notify_fail("ä½ è¦å‘èª°å‡ºç¤ºæ­¦æ—ä»¤ï¼Ÿ");
         if (! objectp(who = present(arg, environment(me))))
-            return notify_fail("ÕâÀïÃ»ÓĞÕâ¸öÈË¡£\n");
+            return notify_fail("é€™è£¡æ²’æœ‰é€™å€‹äººã€‚\n");
         if( query_temp("quester", who) != query("id", me) || quest["target"] != query("id", who) )
-            return notify_fail("Äã²»ÒªÕÌ×ÅÎäÁÖÍ¬ÃËµÄÃûÉùµ½´¦ÕĞÒ¡×²Æ­£¡\n");
-        message_vision("$N¸ß¾ÙÎäÁÖÁî£¬¶Ô×Å$n´óÉùËµ£º¡°ÄãÕâ¸ö¼Ò»ï£¬×¼±¸¶ã×ÅÎäÁÖÃËÖ÷¶à¾Ã£¿\n"
-                       "ºÃÔÚ½ñÌìÈÃÎÒÕÒµ½ÁËÄã£¡»Æ´óÈËÈÃÎÒÀ´ÊÕÈ¡"+quest["name"]+"£¬Äã¾Í¹Ô¹ÔµÄ½»³öÀ´°É£¡\n",me,who);
-        message_vision("$N¼ûµ½$nÊÖÖĞµÄÎäÁÖÁî£¬²»ÓÉÒ»Éù³¤Ì¾£º¡°¶ãÁËÕâÃ´¾Ã£¬»¹ÊÇ¸øÄãÃÇÕÒµ½ÁË£¬Ò²°ÕÒ²°Õ£¡\n"
-                       "ÄãÒªµÄ¶«Î÷ÎÒÕâÀïÓĞ£¬¾Í½»¸øÄãÁË¡£\n",who,me);
+            return notify_fail("ä½ ä¸è¦ä»—è‘—æ­¦æ—åŒç›Ÿçš„åè²åˆ°è™•æ‹›æ–æ’é¨™ï¼\n");
+        message_vision("$Né«˜èˆ‰æ­¦æ—ä»¤ï¼Œå°è‘—$nå¤§è²èªªï¼šâ€œä½ é€™å€‹å®¶ä¼™ï¼Œæº–å‚™èº²è‘—æ­¦æ—ç›Ÿä¸»å¤šä¹…ï¼Ÿ\n"
+                       "å¥½åœ¨ä»Šå¤©è®“æˆ‘æ‰¾åˆ°äº†ä½ ï¼é»ƒå¤§äººè®“æˆ‘ä¾†æ”¶å–"+quest["name"]+"ï¼Œä½ å°±ä¹–ä¹–çš„äº¤å‡ºä¾†å§ï¼\n",me,who);
+        message_vision("$Nè¦‹åˆ°$næ‰‹ä¸­çš„æ­¦æ—ä»¤ï¼Œä¸ç”±ä¸€è²é•·å˜†ï¼šâ€œèº²äº†é€™éº¼ä¹…ï¼Œé‚„æ˜¯çµ¦ä½ å€‘æ‰¾åˆ°äº†ï¼Œä¹Ÿç½·ä¹Ÿç½·ï¼\n"
+                       "ä½ è¦çš„æ±è¥¿æˆ‘é€™è£¡æœ‰ï¼Œå°±äº¤çµ¦ä½ äº†ã€‚\n",who,me);
         thing = new(quest["object"]);
         set_temp("zheng",query("id",  me), thing);
         if (!thing->move(me))
         {
                 thing->move(environment(me));
-            message_vision("$N½«"+thing->name(1)+"·ÅÔÚµØÉÏ¡£\n",who);
+            message_vision("$Nå°‡"+thing->name(1)+"æ”¾åœ¨åœ°ä¸Šã€‚\n",who);
         }
         else
-            message_vision("$N½«"+thing->name(1)+"½»¸øÁË$n¡£\n",who,me);
+            message_vision("$Nå°‡"+thing->name(1)+"äº¤çµ¦äº†$nã€‚\n",who,me);
 
-        message_vision("$N»ÓÁË»ÓÊÖ£¬×ªÉíÀë¿ªÁË¡£\n",who);
+        message_vision("$Næ®äº†æ®æ‰‹ï¼Œè½‰èº«é›¢é–‹äº†ã€‚\n",who);
         destruct(who);
         return 1;
 }

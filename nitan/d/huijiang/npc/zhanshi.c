@@ -4,8 +4,8 @@
 inherit NPC;
 void create()
 {
-        set_name("»Ø×åÕ½Ê¿",({"zhan shi"}));
-        set("gender","ÄĞĞÔ");
+        set_name("å›æ—æˆ°å£«",({"zhan shi"}));
+        set("gender","ç”·æ€§");
         set("combat_exp",4000+random(500000));
    
         set("age",19+random(30));

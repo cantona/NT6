@@ -16,35 +16,35 @@ int main(object me, string arg)
 
         if (wizardp(me) && stringp(arg) &&
             objectp(ob = find_player(arg)))
-                // ²é¿´ÆäËûÍæ¼ÒµÄÌØÊâ¼¼ÄÜ
+                // æŸ¥çœ‹å…¶ä»–ç©å®¶çš„ç‰¹æ®ŠæŠ€èƒ½
                 arg = 0;
         else
                 ob = me;
 
-        pro = (ob == me) ? "Äã" : ob->name(1);
+        pro = (ob == me) ? "ä½ " : ob->name(1);
 
         if( !query("born", ob) )
-                return notify_fail(pro + "»¹Ã»ÓĞ³öÉúÄÅ£¬»áÊ²Ã´ÌØ¼¼£¿\n");
+                return notify_fail(pro + "é‚„æ²’æœ‰å‡ºç”Ÿå¶ï¼Œæœƒä»€éº¼ç‰¹æŠ€ï¼Ÿ\n");
 
         if( !mapp(ss=query("special_skill", ob)) || 
             ! sizeof(ss))
-                return notify_fail(pro + "ÏÖÔÚºÃÏñÊ²Ã´ÌØ¼¼¶¼²»»áÅ¶¡£\n");
+                return notify_fail(pro + "ç¾åœ¨å¥½åƒä»€éº¼ç‰¹æŠ€éƒ½ä¸æœƒå“¦ã€‚\n");
 
         if (arg && (ob == me))
         {
-                // ÓĞ²ÎÊı£¬ÔËÓÃÌØ¼¼¡£
+                // æœ‰åƒæ•¸ï¼Œé‹ç”¨ç‰¹æŠ€ã€‚
                 if (me->is_busy())
-                        return notify_fail("ÄãÏÖÔÚÃ¦×ÅÄØ£¬²»ÄÜÊ¹ÓÃÌØ¼¼¡£\n");
+                        return notify_fail("ä½ ç¾åœ¨å¿™è‘—å‘¢ï¼Œä¸èƒ½ä½¿ç”¨ç‰¹æŠ€ã€‚\n");
 
                 if (sscanf(arg, "%s %s", skill, arg) != 2)
                         skill = arg;
 
                 if( !query("special_skill/"+skill, me) )
-                        return notify_fail("Äã²»»áÕâÖÖÌØ¼¼°¡£¡\n");
+                        return notify_fail("ä½ ä¸æœƒé€™ç¨®ç‰¹æŠ€å•Šï¼\n");
 
                 if (file_size(SPECIAL_D(skill) + ".c") < 0 
                     && file_size("/kungfu/special2/" + skill + ".c") < 0)
-                        return notify_fail("ºÃÏñÃ»ÓĞÕâÖÖÌØ¼¼...\n");
+                        return notify_fail("å¥½åƒæ²’æœ‰é€™ç¨®ç‰¹æŠ€...\n");
 
                 if (file_size("/kungfu/special2/" + skill + ".c") != -1)
                           return ("/kungfu/special2/" + skill)->perform(me, skill, arg);
@@ -52,17 +52,17 @@ int main(object me, string arg)
                 return SPECIAL_D(skill)->perform(me, skill, arg);
         }
 
-        msg = pro + "ÏÖÔÚ»áÒÔÏÂÕâĞ©ÌØ¼¼£º\n";
+        msg = pro + "ç¾åœ¨æœƒä»¥ä¸‹é€™äº›ç‰¹æŠ€ï¼š\n";
         i = 1;
         foreach (skill in keys(ss))
         {
                 if (file_size(SPECIAL_D(skill) + ".c") < 0
                     && file_size("/kungfu/special2/" + skill + ".c") < 0)
                 {
-                        write("²»´æÔÚ¼¼ÄÜ£º" + skill + "\n");
+                        write("ä¸å­˜åœ¨æŠ€èƒ½ï¼š" + skill + "\n");
                         continue;
                 }
-                // Èç¹û´óÓÚ7¸öÔòÃ¿ĞĞÏÔÊ¾ËÄ¸ö                                
+                // å¦‚æœå¤§äº7å€‹å‰‡æ¯è¡Œé¡¯ç¤ºå››å€‹                                
                 if (file_size("/kungfu/special2/" + skill + ".c") != -1)
                 {
                         if( sizeof(query("special_skill", ob)) >= 7 )
@@ -101,12 +101,12 @@ int main(object me, string arg)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : special <skill> | <Íæ¼ÒID>
+æŒ‡ä»¤æ ¼å¼ : special <skill> | <ç©å®¶ID>
 
-Ê¹ÓÃÕâÌõÃüÁî¿ÉÒÔ²é¿´ÄãµÄÌØ¼¼£¬Èç¹ûÒªÔËÓÃÄãµÄÌØ¼¼£¬Ôò¿ÉÒÔ¼ÓÉÏ
-²ÎÊıÖ¸ÃûÊ¹ÓÃÊ²Ã´ÌØ¼¼¡£±ÈÈç£ºspecial hatred£¬ÔËÓÃÉ±Æø¡£
+ä½¿ç”¨é€™æ¢å‘½ä»¤å¯ä»¥æŸ¥çœ‹ä½ çš„ç‰¹æŠ€ï¼Œå¦‚æœè¦é‹ç”¨ä½ çš„ç‰¹æŠ€ï¼Œå‰‡å¯ä»¥åŠ ä¸Š
+åƒæ•¸æŒ‡åä½¿ç”¨ä»€éº¼ç‰¹æŠ€ã€‚æ¯”å¦‚ï¼šspecial hatredï¼Œé‹ç”¨æ®ºæ°£ã€‚
 
-Î×Ê¦¿ÉÒÔ²é¿´ÆäËûÍæ¼ÒËù»áµÄÌØÊâ¼¼ÄÜ¡£
+å·«å¸«å¯ä»¥æŸ¥çœ‹å…¶ä»–ç©å®¶æ‰€æœƒçš„ç‰¹æ®ŠæŠ€èƒ½ã€‚
 
 HELP );
     return 1;

@@ -7,13 +7,13 @@ inherit NPC;
 
 void create()
 {   
-        set_name(YEL "½­Ç§Àï" NOR, ({ "jiang qianli","jiang" }) );
-        set("gender", "ÄÐÐÔ");
-        set("title", "½­ÊÏÆáÆ÷×÷·»Ö÷");
+        set_name(YEL "æ±Ÿåƒè£¡" NOR, ({ "jiang qianli","jiang" }) );
+        set("gender", "ç”·æ€§");
+        set("title", "æ±Ÿæ°æ¼†å™¨ä½œåŠä¸»");
         set("age", 38);
         set("long", @LONG
-ËûÊÇÑïÖÝ³ÇÀï×îºÃµÄÆáÆ÷ÊÖ¹¤ÒÕÈË£¬ÖÐµÈÉí²Ä£¬ËÄ·½Á³£¬¿´ÉÏÈ¥Ò»ÍÅºÍÆø¡£
-Ö»ÓÐÁ½ÊÖµÄÊÖÖ¸ÏËÏ¸ÐÞ³¤ÏÔ³öËûÊÇ¸öÊÖ¹¤ÒÕÈË¡£
+ä»–æ˜¯æšå·žåŸŽè£¡æœ€å¥½çš„æ¼†å™¨æ‰‹å·¥è—äººï¼Œä¸­ç­‰èº«æï¼Œå››æ–¹è‡‰ï¼Œçœ‹ä¸ŠåŽ»ä¸€åœ˜å’Œæ°£ã€‚
+åªæœ‰å…©æ‰‹çš„æ‰‹æŒ‡çº–ç´°ä¿®é•·é¡¯å‡ºä»–æ˜¯å€‹æ‰‹å·¥è—äººã€‚
 LONG
         );
         set("attitude", "peaceful");
@@ -28,11 +28,11 @@ LONG
         set("score", 9000);
 
         set("inquiry", ([
-                "½­Ç§Àï" : "½­Ç§Àï¾ÍÊÇÎÒ¡£±¾ÈËÐÕ½­ÃûÇ§Àï£¬±í×ÖÇïË®¡£\n",
-                "ÆáÉ³Ñâ" : "´ËÑâÄËÊÇÏÈ×æ½ß¾¡ÐÄË¼Ëù´´£¬Àú¾­Ê®Äê²Å¾¡ÉÆ¾¡ÃÀ¡£",
-                "ÂÝîä±­" : "³ÐÃÉÅóÓÑÅõ³¡£¬ËÍÁËÒ»Ê×Ê«£º\n"+
-                        "                        ÂÝîä×±³Éôä´ä¹â£¬×ÏÏ¼Çï³ºæÄÖÝÏã\n"+
-                        "                        ÐÎÉñ¾ãÃÀÕæÍ¨Ì«£¬¼ÙÃÂÈÔÆÚµ½ÃÎÏç\n",
+                "æ±Ÿåƒè£¡" : "æ±Ÿåƒè£¡å°±æ˜¯æˆ‘ã€‚æœ¬äººå§“æ±Ÿååƒè£¡ï¼Œè¡¨å­—ç§‹æ°´ã€‚\n",
+                "æ¼†æ²™ç¡¯" : "æ­¤ç¡¯ä¹ƒæ˜¯å…ˆç¥–ç«­ç›¡å¿ƒæ€æ‰€å‰µï¼Œæ­·ç¶“åå¹´æ‰ç›¡å–„ç›¡ç¾Žã€‚",
+                "èžºéˆ¿æ¯" : "æ‰¿è’™æœ‹å‹æ§å ´ï¼Œé€äº†ä¸€é¦–è©©ï¼š\n"+
+                        "                        èžºéˆ¿å¦æˆç¿¡ç¿ å…‰ï¼Œç´«éœžç§‹æ¾ˆå©ºå·žé¦™\n"+
+                        "                        å½¢ç¥žä¿±ç¾ŽçœŸé€šå¤ªï¼Œå‡å¯ä»æœŸåˆ°å¤¢é„‰\n",
         ]) );
 
 

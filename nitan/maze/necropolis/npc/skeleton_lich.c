@@ -4,12 +4,12 @@ inherit "/maze/necropolis/necropolis_npc";
 void do_bone_spirit();
 void create()
 {
-        string *names = ({"Î×Ñý"}); 
+        string *names = ({"å·«å¦–"}); 
         // set_name( names[random(sizeof(names))], ({ "skeleton lich","skeleton"}));
         set_name( names[random(sizeof(names))], ({ "skeleton lich" }));
         set("vendetta_mark","skeleton");
-        set("long", "ÕâÊÇÒ»Ö»¹ÇÍ·¼Ü×Ó¡£\n");
-        set("title", HIB "(¹íÆø)" NOR); 
+        set("long", "é€™æ˜¯ä¸€åªéª¨é ­æž¶å­ã€‚\n");
+        set("title", HIB "(é¬¼æ°£)" NOR); 
 
         set("str", 50);
         set("con", 120);
@@ -25,7 +25,7 @@ void create()
 /*
         set("chat_chance", 1);
         set("chat_msg", ({
-                "÷¼÷Ã¿Õ¶´µÄÑÛ¿ôÀïÉÁË¸×Å¿ÉÅÂµÄÓ«¹â¡£\n"
+                "éª·é«ç©ºæ´žçš„çœ¼çœ¶è£¡é–ƒçˆè‘—å¯æ€•çš„ç†’å…‰ã€‚\n"
         }) ); 
 */
 
@@ -33,7 +33,7 @@ void create()
         set("chat_msg_combat", ({
                 (: do_bone_spirit() :),
         }) ); 
-        set("death_msg",BLU"\n$NÉ¢³ÉÁËÒ»¶ÑËé¹ÇÍ·¡£\n\n"NOR);
+        set("death_msg",BLU"\n$Næ•£æˆäº†ä¸€å †ç¢Žéª¨é ­ã€‚\n\n"NOR);
         set("combat_exp", 200000000);
         set("bellicosity", 5 );
 
@@ -63,7 +63,7 @@ void do_bone_spirit() {
         int i,no_busy;
         if (! this_object()) return;
 
-        message_vision(BLU"\n$NÉ³ÑÆµÄÉùÒôÄîËÐ×ÅÖäÓï£¬ÖÜÉíÄý¾ÛÁËÒ»¸ö¸öÉ¢·¢×ÅËÀÍöÆøÏ¢µÄ¹âÇò£¡\n\n"NOR,this_object());
+        message_vision(BLU"\n$Næ²™å•žçš„è²éŸ³å¿µèª¦è‘—å’’èªžï¼Œå‘¨èº«å‡èšäº†ä¸€å€‹å€‹æ•£ç™¼è‘—æ­»äº¡æ°£æ¯çš„å…‰çƒï¼\n\n"NOR,this_object());
         enemies = query_enemy();
         foreach(enemy in enemies) {
                 if(!enemy)
@@ -76,18 +76,18 @@ void do_bone_spirit() {
                 switch (i)
                 {
                 case(0):
-                        message_vision(RED"Ò»¸öºìÉ«¹âÇò»÷ÖÐ$N±¬Õ¨¿ªÀ´£¡\n"NOR,enemy);
+                        message_vision(RED"ä¸€å€‹ç´…è‰²å…‰çƒæ“Šä¸­$Nçˆ†ç‚¸é–‹ä¾†ï¼\n"NOR,enemy);
                         enemy->receive_damage("qi",4000+random(4000),this_object());
                         COMBAT_D->report_status(enemy);
                         break;
                 case(1):
-                        message_vision(GRN"Ò»¸öÂÌÉ«¹âÇòÎ§ÈÆ$N×ªÁËÒ»È¦£¡\n"NOR,enemy);
-                        message_vision(GRN"$NÉñÖ¾±äµÃÄ£ºýÆðÀ´......\n"NOR,enemy);
+                        message_vision(GRN"ä¸€å€‹ç¶ è‰²å…‰çƒåœç¹ž$Nè½‰äº†ä¸€åœˆï¼\n"NOR,enemy);
+                        message_vision(GRN"$Nç¥žå¿—è®Šå¾—æ¨¡ç³Šèµ·ä¾†......\n"NOR,enemy);
                         if(!enemy->is_busy())
                                 enemy->start_busy(3);
                         break;
                 case(2):
-                        message_vision(BLU"Ò»¸öºÚÉ«¹âÇòÇÄÎÞÉùÏ¢µÄäÎÃðÔÚ$NµÄÃ¼ÐÄ´¦£¡"NOR,enemy);
+                        message_vision(BLU"ä¸€å€‹é»‘è‰²å…‰çƒæ‚„ç„¡è²æ¯çš„æ¹®æ»…åœ¨$Nçš„çœ‰å¿ƒè™•ï¼"NOR,enemy);
                         enemy->unconcious();
                         break;
                 }

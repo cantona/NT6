@@ -8,14 +8,14 @@ inherit BOOTS;
 
 void create()
 {
-        set_name(YEL "�廨СЬ" NOR, ({ "shoes" }) );
+        set_name(YEL "繡花小鞋" NOR, ({ "shoes" }) );
         set_weight(900);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "һ˫С�ɾ��µ��廨Ь��  \n");
+                set("long", "一雙小巧精致的繡花鞋。  \n");
                 set("material", "cloth");
-                set("unit", "˫");
+                set("unit", "雙");
 //                set("value", 300);
                 set("armor_prop/armor", 1 );
                 set("female_only", 1);

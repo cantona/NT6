@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short","×ßÀÈ");
+        set("short","èµ°å»Š");
         set("long",@LONG
-ÕâÊÇÁ¬½ÓÖÐÌüÓëºóÌüµÄ×ßÀÈ¡£³¤³¤µÄ×ßÀÈÇúÇúÕÛÕÛ£¬µñÀ¸»­Öù£¬²Ê
-»æïÎ¿Õ£¬ÂúÄ¿ÂÌÒâ£¬Á½ÅÔÖÖÂúÁË»¨Ê÷¡£±±±ßÓÐÒ»¼ä¿Í·¿¡£
+é€™æ˜¯é€£æŽ¥ä¸­å»³èˆ‡å¾Œå»³çš„èµ°å»Šã€‚é•·é•·çš„èµ°å»Šæ›²æ›²æŠ˜æŠ˜ï¼Œé›•æ¬„ç•«æŸ±ï¼Œå½©
+ç¹ªé¤ç©ºï¼Œæ»¿ç›®ç¶ æ„ï¼Œå…©æ—ç¨®æ»¿äº†èŠ±æ¨¹ã€‚åŒ—é‚Šæœ‰ä¸€é–“å®¢æˆ¿ã€‚
 LONG );
         set("exits",([
                 "east"  : __DIR__"zoulang1",

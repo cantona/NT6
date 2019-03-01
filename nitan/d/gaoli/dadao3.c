@@ -1,13 +1,13 @@
-// Room in ¸ßÀö
+// Room in é«˜éº—
 inherit ROOM;
 void create()        
 {
-        set("short", "ÇàÊ¯´óµÀ");
+        set("short", "é’çŸ³å¤§é“");
         set("long", @LONG
         
-Äã×ßÔÚÒ»ÌõÇàÊ¯´óµÀÉÏ£¬ÒòÎªÕ½ÕùµÄÔ­Òò£¬Ô½ÏòÇ°×ßÐÐÈËÔ½À´Ô½ÉÙ£¬
-²»Ê±ÓÐÈËÆï×ÅÂí´Ò´Ò¶ø¹ý¡£´óµÀÍù¶«½øÈëÐÂÂÞ¾³ÄÚ¡£±±±ßÍ¨Ïò¸ßÀö³Ç,
-Î÷±±ÓÐÒ»ÌõÍÁÂ·Í¨ÏòÒ»×ù×¯Ô°¡£
+ä½ èµ°åœ¨ä¸€æ¢é’çŸ³å¤§é“ä¸Šï¼Œå› ç‚ºæˆ°çˆ­çš„åŽŸå› ï¼Œè¶Šå‘å‰èµ°è¡Œäººè¶Šä¾†è¶Šå°‘ï¼Œ
+ä¸æ™‚æœ‰äººé¨Žè‘—é¦¬åŒ†åŒ†è€ŒéŽã€‚å¤§é“å¾€æ±é€²å…¥æ–°ç¾…å¢ƒå…§ã€‚åŒ—é‚Šé€šå‘é«˜éº—åŸŽ,
+è¥¿åŒ—æœ‰ä¸€æ¢åœŸè·¯é€šå‘ä¸€åº§èŽŠåœ’ã€‚
 LONG
         );
 set("outdoors", "gaoli");

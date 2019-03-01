@@ -5,13 +5,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name("ÌÒÊ÷Ö¦", ({ "trunk" }));
+        set_name("æ¡ƒæ¨¹æž", ({ "trunk" }));
         set_weight(1200);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ù");
-                set("long", "ÕâÊÇÒ»¸ù´ÓÌÒÊ÷ÉÏ¿³ÏÂÀ´µÄÊ÷Ö¦£¬¿ÉÒÔ°ÑËüÏ÷³ÉÌÒÄ¾½£¡£\n");
+                set("unit", "æ ¹");
+                set("long", "é€™æ˜¯ä¸€æ ¹å¾žæ¡ƒæ¨¹ä¸Šç ä¸‹ä¾†çš„æ¨¹æžï¼Œå¯ä»¥æŠŠå®ƒå‰Šæˆæ¡ƒæœ¨åŠã€‚\n");
                 set("value", 0);
                 set("material", "bamboo");
         }
@@ -34,17 +34,17 @@ int do_make(string arg)
         me = this_player();
         weapon=query_temp("weapon", me);
         if (! arg || ! id(arg))
-             return notify_fail("ÄãÒªÓÃÊ²Ã´×ö½££¿\n");
+             return notify_fail("ä½ è¦ç”¨ä»€éº¼åšåŠï¼Ÿ\n");
 
         if (! objectp(weapon))
-             return notify_fail("Äã²»ÓÃ¹¤¾ß¾ÍÄÜ×ö½££¿\n");
+             return notify_fail("ä½ ä¸ç”¨å·¥å…·å°±èƒ½åšåŠï¼Ÿ\n");
 
         if( query("skill_type", weapon) != "dagger" )
-             return notify_fail(weapon->name()+"ÓÃÆðÀ´ºÃÏñ²»Ì«Ë³ÊÖ¡£\n");
+             return notify_fail(weapon->name()+"ç”¨èµ·ä¾†å¥½åƒä¸å¤ªé †æ‰‹ã€‚\n");
 
         where = environment(me);
-        message_vision("$N¾ÙÆðÊÖÖÐµÄ" + weapon->name() +
-                       "£¬¼¸ÏÂ¾Í°ÑÌÒÊ÷Ö¦Ï÷³ÉÁËÒ»°Ñ½££¬²¢¿ÌÉÏÁËÒ»Ð©Çý¹íµÄ·ûºÅ¡£\n", me);
+        message_vision("$Nèˆ‰èµ·æ‰‹ä¸­çš„" + weapon->name() +
+                       "ï¼Œå¹¾ä¸‹å°±æŠŠæ¡ƒæ¨¹æžå‰Šæˆäº†ä¸€æŠŠåŠï¼Œä¸¦åˆ»ä¸Šäº†ä¸€äº›é©…é¬¼çš„ç¬¦è™Ÿã€‚\n", me);
         sword = new("/d/wudang/quest/obj/ghost_sword");
         sword->move(me);
         destruct(this_object()); 

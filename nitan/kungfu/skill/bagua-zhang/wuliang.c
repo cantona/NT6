@@ -1,4 +1,4 @@
-// wuliang.c °ËØÔÕÆ¡¸Ç¬À¤ÎŞÁ¿¡¹
+// wuliang.c å…«å¦æŒã€Œä¹¾å¤ç„¡é‡ã€
 // Create for Haiyan 2002
 
 #include <ansi.h>
@@ -15,34 +15,34 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail("¡¸Ç¬À¤ÎŞÁ¿¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œä¹¾å¤ç„¡é‡ã€åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if (me->query_skill_mapped("strike") != "bagua-zhang") 
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢°ËØÔÕÆ£¬ÎŞ·¨Ê©Õ¹¡¸Ç¬À¤ÎŞÁ¿¡¹¡£\n"); 
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼å…«å¦æŒï¼Œç„¡æ³•æ–½å±•ã€Œä¹¾å¤ç„¡é‡ã€ã€‚\n"); 
 
         if ((int)me->query_skill("bagua-zhang", 1) < 120)
-                return notify_fail("ÄãµÄ°ËØÔÕÆ²»¹»æµÊì£¬²»»áÊ¹ÓÃ¡¸Ç¬À¤ÎŞÁ¿¡¹¡£\n");
+                return notify_fail("ä½ çš„å…«å¦æŒä¸å¤ å«»ç†Ÿï¼Œä¸æœƒä½¿ç”¨ã€Œä¹¾å¤ç„¡é‡ã€ã€‚\n");
 
         if( query_temp("weapon", me) || query_temp("secondary_weapon", me) )
-                return notify_fail("¡¸Ç¬À¤ÎŞÁ¿¡¹Ö»ÄÜ¿ÕÊÖÊ©Õ¹¡£\n");  
+                return notify_fail("ã€Œä¹¾å¤ç„¡é‡ã€åªèƒ½ç©ºæ‰‹æ–½å±•ã€‚\n");  
 
         if (! me->query_skill_prepare() || me->query_skill_prepare() && 
             me->query_skill_prepared("strike") != "bagua-zhang") 
-                return notify_fail("ÄãÏÖÔÚÃ»ÓĞ×¼±¸Ê¹ÓÃ°ËØÔÕÆ£¬ÎŞ·¨Ê¹ÓÃ¡¸Ç¬À¤ÎŞÁ¿¡¹£¡\n"); 
+                return notify_fail("ä½ ç¾åœ¨æ²’æœ‰æº–å‚™ä½¿ç”¨å…«å¦æŒï¼Œç„¡æ³•ä½¿ç”¨ã€Œä¹¾å¤ç„¡é‡ã€ï¼\n"); 
 
         if( query("neili", me)<350 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬ÎŞ·¨Ê¹ÓÃ¡¸Ç¬À¤ÎŞÁ¿¡¹¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼Œç„¡æ³•ä½¿ç”¨ã€Œä¹¾å¤ç„¡é‡ã€ã€‚\n");
 
-        msg = HIY "$N" HIY "ÕÆ·¨ºöÈ»±ä¿ì£¬Ê¹³ö°ËØÔÕÆ·¨¡¸Ç¬À¤ÎŞÁ¿¡¹£¬½ÅÏÂÑØ°ËØÔ·½Î»¼²×ß£¬Ë«ÕÆĞéĞéÊµÊµµØÅÄÏò$n¡£\n" NOR;
+        msg = HIY "$N" HIY "æŒæ³•å¿½ç„¶è®Šå¿«ï¼Œä½¿å‡ºå…«å¦æŒæ³•ã€Œä¹¾å¤ç„¡é‡ã€ï¼Œè…³ä¸‹æ²¿å…«å¦æ–¹ä½ç–¾èµ°ï¼Œé›™æŒè™›è™›å¯¦å¯¦åœ°æ‹å‘$nã€‚\n" NOR;
 
         dp = (target->query_skill("force", 1) + 
              target->query_skill("parry", 1) +
              target->query_skill("martial-cognize", 1)) / 3 +
              target->query_skill("count", 1); 
 
-        if( query("character", me) == "¹âÃ÷ÀÚÂä" || 
-            query("character", me) == "¹úÍÁÎŞË«" || 
-            query("character", me) == "½Æ÷ï¶à±ä" )
+        if( query("character", me) == "å…‰æ˜ç£Šè½" || 
+            query("character", me) == "åœ‹åœŸç„¡é›™" || 
+            query("character", me) == "ç‹¡é» å¤šè®Š" )
              acter = 3;
         else
              acter = 4;
@@ -54,17 +54,17 @@ int perform(object me, object target)
 
         if ( ap / 2 + random(ap) > dp )
         {
-                msg += HIR "$n" HIR "±»$N" HIR
-                       "ÕâÒ»±ä»¯¹¥ÁË¸ö´ëÊÖ²»¼°£¬¡°àØàØàØ¡±Á¬ÖĞÊıÕÆ£¬" HIR
-                       "Åç³ö¼¸¿ÚÏÊÑª£¬Á³É«±äµÃÉ·°×£¡\n" NOR;
+                msg += HIR "$n" HIR "è¢«$N" HIR
+                       "é€™ä¸€è®ŠåŒ–æ”»äº†å€‹æªæ‰‹ä¸åŠï¼Œâ€œâ–¡â–¡â–¡â€é€£ä¸­æ•¸æŒï¼Œ" HIR
+                       "å™´å‡ºå¹¾å£é®®è¡€ï¼Œè‡‰è‰²è®Šå¾—ç…ç™½ï¼\n" NOR;
                 count = ap / 28; 
                 bsy = 2;
                 lvl = me->query_skill("bagua-zhang", 1) / 60;
                 addn_temp("apply/attack", count, me);
         } else
         {
-                msg += HIC "$n" HIC "¼û$N" HIC "ºöÈ»±äÕĞ£¬²»¸Ò´óÒâ£¬Á¬Ã¦ÆÁÏ¢ÄıÆø£¬Ğ¡ĞÄÓ¦¶Ô£¬½«$N"
-                       HIC "µÄÕĞÊ½¾¡Êı²ğ½â¡£\n" NOR;
+                msg += HIC "$n" HIC "è¦‹$N" HIC "å¿½ç„¶è®Šæ‹›ï¼Œä¸æ•¢å¤§æ„ï¼Œé€£å¿™å±æ¯å‡æ°£ï¼Œå°å¿ƒæ‡‰å°ï¼Œå°‡$N"
+                       HIC "çš„æ‹›å¼ç›¡æ•¸æ‹†è§£ã€‚\n" NOR;
                 count = 0;
                 lvl = 0;
                 bsy = 5;

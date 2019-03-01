@@ -16,32 +16,32 @@ int perform(object me, object target)
         lev2 = (int)me->query_skill("finger", 1)/4;
     
         if( userp(me) && !query("can_perform/mohe-zhi/mohe", me) )
-                return notify_fail("ÄãËùÊ¹ÓÃµÄÍâ¹¦ÖÐÃ»ÓÐÕâÑùµÄ¹¦ÄÜ¡£\n");
+                return notify_fail("ä½ æ‰€ä½¿ç”¨çš„å¤–åŠŸä¸­æ²’æœ‰é€™æ¨£çš„åŠŸèƒ½ã€‚\n");
                     
         if( !target ) target = offensive_target(me);
 
         if( !target || !me->is_fighting(target) )
-                return notify_fail("¡¸Ä¦Ú­²Îìø¡¹Ö»ÄÜÔÚÕ½¶·ÖÐÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œæ‘©è¨¶åƒç¦ªã€åªèƒ½åœ¨æˆ°é¬¥ä¸­ä½¿ç”¨ã€‚\n");
 
         if( query_temp("weapon", me) )
-                return notify_fail("ÄãÄÃ×ÅÎäÆ÷ÔõÃ´ÄÜÊ¹ÓÃ¡¸Ä¦Ú­²Îìø¡¹£¡\n");   
+                return notify_fail("ä½ æ‹¿è‘—æ­¦å™¨æ€Žéº¼èƒ½ä½¿ç”¨ã€Œæ‘©è¨¶åƒç¦ªã€ï¼\n");   
 
         if( (int)me->query_skill("mohe-zhi", 1) < 80 )
-                return notify_fail("ÄãµÄÄ¦Ú­Ö¸»¹²»¹»æµÊì£¬Ê¹²»³ö¡¸Ä¦Ú­²Îìø¡¹¾ø¼¼¡£\n");
+                return notify_fail("ä½ çš„æ‘©è¨¶æŒ‡é‚„ä¸å¤ å«»ç†Ÿï¼Œä½¿ä¸å‡ºã€Œæ‘©è¨¶åƒç¦ªã€çµ•æŠ€ã€‚\n");
 
         if((int)me->query_skill("force") < 80 ) 
-                return notify_fail("ÄãµÄÄÚ¹¦ÐÞÎª»¹²»¹»£¬Ê¹²»³ö¡¸Ä¦Ú­²Îìø¡¹¾ø¼¼¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸä¿®ç‚ºé‚„ä¸å¤ ï¼Œä½¿ä¸å‡ºã€Œæ‘©è¨¶åƒç¦ªã€çµ•æŠ€ã€‚\n");
 
         if ( me->query_skill_mapped("finger") != "mohe-zhi" )
-                return notify_fail("ÄãÏÖÔÚÎÞ·¨Ê¹ÓÃ¡¸Ä¦Ú­²Îìø¡¹£¡\n"); 
+                return notify_fail("ä½ ç¾åœ¨ç„¡æ³•ä½¿ç”¨ã€Œæ‘©è¨¶åƒç¦ªã€ï¼\n"); 
 
         if( query("max_neili", me)<(me->query_skill("force")+1000) )
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ£¬Ê¹²»³ö¡¸Ä¦Ú­²Îìø¡¹¡£\n");      
+                return notify_fail("ä½ ç¾åœ¨å…§åŠ›å¤ªå¼±ï¼Œä½¿ä¸å‡ºã€Œæ‘©è¨¶åƒç¦ªã€ã€‚\n");      
 
         if( query("neili", me)<800 )
-                return notify_fail("ÄãÏÖÔÚÕæÆøÌ«Èõ£¬Ê¹²»³ö¡¸Ä¦Ú­²Îìø¡¹¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çœŸæ°£å¤ªå¼±ï¼Œä½¿ä¸å‡ºã€Œæ‘©è¨¶åƒç¦ªã€ã€‚\n");
 
-        msg = HIY "\n$N²»¶¯ÉùÉ«£¬ÒÂÐäÇá°Ú£¬¼¸ÂÆÖ¸·çÎÞÉùÎÞÏ¢µ¯³ö¡£\n" NOR;
+        msg = HIY "\n$Nä¸å‹•è²è‰²ï¼Œè¡£è¢–è¼•æ“ºï¼Œå¹¾ç¸·æŒ‡é¢¨ç„¡è²ç„¡æ¯å½ˆå‡ºã€‚\n" NOR;
         message_vision(msg, me, target); 
         
         addn_temp("apply/finger", lev, me);

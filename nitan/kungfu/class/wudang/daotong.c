@@ -1,12 +1,12 @@
-// daotong.c µÀÍ¯
+// daotong.c é“ç«¥
 
 inherit NPC;
 
 void create()
 {
-        set_name("µÀÍ¯", ({ "daotong", "dao", "tong" }));
-        set("long", "ËûÊÇÎäµ±É½µÄĞ¡µÀÍ¯¡£\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("é“ç«¥", ({ "daotong", "dao", "tong" }));
+        set("long", "ä»–æ˜¯æ­¦ç•¶å±±çš„å°é“ç«¥ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 16);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -35,7 +35,7 @@ void create()
         set_temp("apply/attack", 15);
         set_temp("apply/defense", 15);
         set_temp("apply/damage", 5);
-        create_family("Îäµ±ÅÉ", 5, "µÜ×Ó");
+        create_family("æ­¦ç•¶æ´¾", 5, "å¼Ÿå­");
 
         setup();
         carry_object(CLOTH_DIR"dao-cloth")->wear();

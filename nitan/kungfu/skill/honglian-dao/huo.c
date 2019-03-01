@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define HUO "¡¸" HIR "Á÷ĞÇ»ğÓê" NOR "¡¹"
+#define HUO "ã€Œ" HIR "æµæ˜Ÿç«é›¨" NOR "ã€"
 
 inherit F_SSERVER;
 
@@ -12,37 +12,37 @@ int perform(object me, object target)
         int i;
 
         if( userp(me) && !query("can_perform/honglian-dao/huo", me) )
-                return notify_fail("ÄãËùÊ¹ÓÃµÄÍâ¹¦ÖĞÃ»ÓĞÕâÖÖ¹¦ÄÜ¡£\n");
+                return notify_fail("ä½ æ‰€ä½¿ç”¨çš„å¤–åŠŸä¸­æ²’æœ‰é€™ç¨®åŠŸèƒ½ã€‚\n");
 
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(HUO "Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(HUO "åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me)) || 
             query("skill_type", weapon) != "blade" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô£¬ÄÑÒÔÊ©Õ¹" HUO "¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ï¼Œé›£ä»¥æ–½å±•" HUO "ã€‚\n");
 
         if ((int)me->query_skill("force") < 120 )
-                return notify_fail("ÄãµÄÄÚ¹¦»ğºò²»¹»£¬ÄÑÒÔÊ©Õ¹" HUO "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸç«å€™ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" HUO "ã€‚\n");
 
         if ((int)me->query_skill("honglian-dao", 1) < 80)
-                return notify_fail("ÄãºìÁ«µ¶·¨²»¹»æµÊì£¬ÄÑÒÔÊ©Õ¹" HUO "¡£\n");
+                return notify_fail("ä½ ç´…è“®åˆ€æ³•ä¸å¤ å«»ç†Ÿï¼Œé›£ä»¥æ–½å±•" HUO "ã€‚\n");
 
         if( query("max_neili", me)<800 )
-                return notify_fail("ÄãµÄÄÚÁ¦ĞŞÎª²»¹»£¬ÄÑÒÔÊ©Õ¹" HUO "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¿®ç‚ºä¸å¤ ï¼Œé›£ä»¥æ–½å±•" HUO "ã€‚\n");
 
         if( query("neili", me)<100 )
-                return notify_fail("ÄãÏÖÔÚÕæÆø²»¹»£¬ÄÑÒÔÊ©Õ¹" HUO "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çœŸæ°£ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" HUO "ã€‚\n");
 
         if (me->query_skill_mapped("blade") != "honglian-dao")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢ºìÁ«µ¶·¨£¬ÄÑÒÔÊ©Õ¹" HUO "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼ç´…è“®åˆ€æ³•ï¼Œé›£ä»¥æ–½å±•" HUO "ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIR "$N" HIR "Ê©³öºìÁ«µ¶·¨¾ø¼¼£¬ÊÖÖĞ" + weapon->name() +
-              HIR "ÔË×ªÈç·É£¬¼¤Æğ²ã²ãÈÈÀËÏ¯¾í$n" HIR "ÖÜÉí£¡\n" NOR;
+        msg = HIR "$N" HIR "æ–½å‡ºç´…è“®åˆ€æ³•çµ•æŠ€ï¼Œæ‰‹ä¸­" + weapon->name() +
+              HIR "é‹è½‰å¦‚é£›ï¼Œæ¿€èµ·å±¤å±¤ç†±æµªå¸­å·$n" HIR "å‘¨èº«ï¼\n" NOR;
         message_combatd(msg, me, target);
 
         addn("neili", -80, me);

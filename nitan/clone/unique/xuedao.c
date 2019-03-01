@@ -1,5 +1,5 @@
 //Cracked by Kafei
-// xuedao.c  Ñªµ¶
+// xuedao.c  è¡€åˆ€
 //updated by weer@1.NT
 
 #include <weapon.h>
@@ -9,20 +9,20 @@ inherit BLADE;
 
 void create()
 {
-        set_name(RED"Ñªµ¶"NOR, ({ "xue dao", "dao" }));
+        set_name(RED"è¡€åˆ€"NOR, ({ "xue dao", "dao" }));
         set_weight(7000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", RED"Ò»±ú³¤³¤µÄÃåµ¶£¬µ¶Éí²»×¡²ü¶¯£¬ÍğÈç»îÉßÒ»°ã¡£Òı¹âÍûÈ¥£¬µ¶ÈĞÉÏÒ»Æ¬°µ
-ºìÖ®É«¡£\n" NOR);
+                set("unit", "æŠŠ");
+                set("long", RED"ä¸€æŸ„é•·é•·çš„ç·¬åˆ€ï¼Œåˆ€èº«ä¸ä½é¡«å‹•ï¼Œå®›å¦‚æ´»è›‡ä¸€èˆ¬ã€‚å¼•å…‰æœ›å»ï¼Œåˆ€åˆƒä¸Šä¸€ç‰‡æš—
+ç´…ä¹‹è‰²ã€‚\n" NOR);
                 set("value", 7000000);
                 set("material", "steel");
                 set("rigidity", 200);
                 set("replica_ob","/d/shaolin/obj/jiedao");
-                set("wield_msg", RED "Ö»Ìı¡¸à§¡¹µÄÒ»Éù£¬Ñªµ¶ÍÑÇÊ·É³ö£¬$NÊÖÖĞËÆÊÇÎÕ×¡Ò»Ìõ³àÉß·º×Åºì¹â£¬ÃÖÂş×ÅÒ»Æ¬ÑªÆø¡£\n" NOR);
-                set("unwield_msg", RED " Éß½øµ¶ÇÊ¡£\n" NOR);
+                set("wield_msg", RED "åªè½ã€Œå”°ã€çš„ä¸€è²ï¼Œè¡€åˆ€è„«é˜é£›å‡ºï¼Œ$Næ‰‹ä¸­ä¼¼æ˜¯æ¡ä½ä¸€æ¢èµ¤è›‡æ³›è‘—ç´…å…‰ï¼Œå½Œæ¼«è‘—ä¸€ç‰‡è¡€æ°£ã€‚\n" NOR);
+                set("unwield_msg", RED " è›‡é€²åˆ€é˜ã€‚\n" NOR);
                 set("clone_ob", "/clone/weapon/xuedao");
         }
 //      ::create();
@@ -44,7 +44,7 @@ int do_lian(string arg)
 
         if( !objectp(weapon=query_temp("weapon", me) )
          || query("skill_type", weapon) != "blade" )
-        return notify_fail( "ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+        return notify_fail( "ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ã€‚\n");
 
         if ( weapon != this_object() ) return 0;
         
@@ -68,9 +68,9 @@ int do_lian(string arg)
         if( me->query_skill("xuedao-daofa",1) > 200 ) 
         me->receive_damage("jingli", 15);
         me->receive_damage("qi", 5);
-                tell_object(me,"ÄãµÄÑªµ¶µ¶·¨½ø²½ÁË£¡\n", me);
+                tell_object(me,"ä½ çš„è¡€åˆ€åˆ€æ³•é€²æ­¥äº†ï¼\n", me);
         return 1;
         }
         else
-        return notify_fail("Ñªµ¶º®Æø±ÆÈË£¬ÄãÁ·µÃÃ»Ê²Ã´½øÕ¹¡£\n");
+        return notify_fail("è¡€åˆ€å¯’æ°£é€¼äººï¼Œä½ ç·´å¾—æ²’ä»€éº¼é€²å±•ã€‚\n");
 }

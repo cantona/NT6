@@ -1,4 +1,4 @@
-// ÉÏ¹ÅÊ®´óÉñÆ÷Ö® ÉñÅ©¶¦
+// ä¸Šå¤åå¤§ç¥žå™¨ä¹‹ ç¥žè¾²é¼Ž
 // Create by Rcwiz for Hero.cn 2003/09
 
 #include <ansi.h>
@@ -7,7 +7,7 @@ inherit ITEM;
 
 int is_magic_item() { return 1; }
 
-// Á¶ÖÆµÄµ¤Ò©
+// ç…‰åˆ¶çš„ä¸¹è—¥
 string *gifts = ({
         "/clone/fam/pill/neili1",
         "/clone/fam/pill/neili2",
@@ -95,17 +95,17 @@ string *gifts = ({
 
 void create()
 {
-        set_name(HIG "ÉñÅ©¶¦" NOR, ({ "shennong ding", "shennong", "ding" }) );
+        set_name(HIG "ç¥žè¾²é¼Ž" NOR, ({ "shennong ding", "shennong", "ding" }) );
         set_weight(400);
         if (clonep())
                 set_default_object(__FILE__);
         else
         {
-                set("unit", "¸ö");
-                set("long", HIG "ÕâÊÇÒ»¸ö¾ßÓÐÉñÆæ×÷ÓÃµÄ¶¦£¬¾ÝËµÉÏ¹ÅÉñÅ©³¢°Ù²ÝÁ¶ÆæÒ©£¬ËùÓÃ"
-                                "Ö®Á¶ÖÆÆ÷¾ß¾ÍÊÇÕâ¸öÉñÅ©¶¦¡£\n"
-                                "Äã¿ÉÒÔÓÃËüÀ´Á¶ÖÆ(lianzhi)³öÉñÆæµÄµ¤Ò©£¬Ê¹ÓÃliandan ? "
-                                "²é¿´¿ÉÊ¹ÓÃ´ÎÊý¡£\nÁ¶ÖÆµ¤Ò©ÐèÒªÁ¶µ¤ÊõÒ»°Ù¼¶¡£\n" NOR);
+                set("unit", "å€‹");
+                set("long", HIG "é€™æ˜¯ä¸€å€‹å…·æœ‰ç¥žå¥‡ä½œç”¨çš„é¼Žï¼Œæ“šèªªä¸Šå¤ç¥žè¾²å˜—ç™¾è‰ç…‰å¥‡è—¥ï¼Œæ‰€ç”¨"
+                                "ä¹‹ç…‰åˆ¶å™¨å…·å°±æ˜¯é€™å€‹ç¥žè¾²é¼Žã€‚\n"
+                                "ä½ å¯ä»¥ç”¨å®ƒä¾†ç…‰åˆ¶(lianzhi)å‡ºç¥žå¥‡çš„ä¸¹è—¥ï¼Œä½¿ç”¨liandan ? "
+                                "æŸ¥çœ‹å¯ä½¿ç”¨æ¬¡æ•¸ã€‚\nç…‰åˆ¶ä¸¹è—¥éœ€è¦ç…‰ä¸¹è¡“ä¸€ç™¾ç´šã€‚\n" NOR);
         }
 
         setup();
@@ -128,24 +128,24 @@ int do_lianzhi(string arg)
 
         if (arg == "?")
         {
-                 write(HIG "Ê¹ÓÃ´ÎÊý " + this_object()->query("count") + "/5\n" NOR);
+                 write(HIG "ä½¿ç”¨æ¬¡æ•¸ " + this_object()->query("count") + "/5\n" NOR);
                  return 1;
         }
         if (me->is_fighting() || me->is_busy())
-                 return notify_fail("ÄãÕýÃ¦ÄØ£¡\n");          
+                 return notify_fail("ä½ æ­£å¿™å‘¢ï¼\n");          
 
-        message_sort(HIG "\n$N" HIG "½«ÉñÅ©¶¦·ÅÔÚµØÉÏ£¬ËæÊÖÈÔ½øÈ¥Ò»Ð©Ò©²Ä£¬½¥½¥µØ£¬¶¦ÖÐÕó"
-                         "ÕóÇàÑÌÃ°³ö£¬¹â»ªÍòµÀ ¡­¡­\n" NOR, me);
+        message_sort(HIG "\n$N" HIG "å°‡ç¥žè¾²é¼Žæ”¾åœ¨åœ°ä¸Šï¼Œéš¨æ‰‹ä»é€²åŽ»ä¸€äº›è—¥æï¼Œæ¼¸æ¼¸åœ°ï¼Œé¼Žä¸­é™£"
+                         "é™£é’ç…™å†’å‡ºï¼Œå…‰è¯è¬é“ â€¦â€¦\n" NOR, me);
 
         gift = gifts[random(sizeof(gifts))];
         ob = new(gift);
         if (! objectp(ob))
         {
-                write(HIR "Îï¼þ " + gift + " ¸´ÖÆ³ö´í£¡\n" NOR);
+                write(HIR "ç‰©ä»¶ " + gift + " å¾©åˆ¶å‡ºéŒ¯ï¼\n" NOR);
         }
         else
         {
-                write(HIG "ÄãÁ¶ÖÆ³öÁË " + ob->name() + HIG + " ¡£\n" NOR);
+                write(HIG "ä½ ç…‰åˆ¶å‡ºäº† " + ob->name() + HIG + " ã€‚\n" NOR);
                 ob->move(me, 1);
         }
              
@@ -153,7 +153,7 @@ int do_lianzhi(string arg)
         this_object()->add("count", 1);
         if (this_object()->query("count") >= 5)
         {
-                write(HIW "Ö»ÌýµÃÒ»ÕóÆÆËéµÄÉùÒô£¬ÉñÅ©¶¦ÒÑËð»µÁË¡£\n" NOR);
+                write(HIW "åªè½å¾—ä¸€é™£ç ´ç¢Žçš„è²éŸ³ï¼Œç¥žè¾²é¼Žå·²æå£žäº†ã€‚\n" NOR);
                 destruct(this_object());                        
         }
         

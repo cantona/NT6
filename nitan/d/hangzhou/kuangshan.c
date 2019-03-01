@@ -7,12 +7,12 @@ inherit PRODUCING_ROOM;
 
 void create()
 {
-        set("short", "ͭ��ɽ");
+        set("short", "銅礦山");
         set("long", @LONG
-������ɽ�ţ�ɽ�����Ѳ������ͣ��ܶ�ط��ڿ���һЩ���ڣ���
-���˳������롢�����������ڰ���һЩ�������㿴���������Ų���ʯ
-ͷ����ɫ��Ө�������Ǳ�ʯһ�㣬�ƺ��ʵز��Ǻܴ�����Щ�ط�����
-�׻��������ʡ�
+這裡是山腳，山坡蜿蜒並不陡峭，很多地方挖開了一些洞口，不
+少人出出入入、來來往往，在搬運一些東西。你看到地上有著不少石
+頭，藍色晶瑩，好像是寶石一般，似乎質地不是很純，有些地方泛著
+白花花的雜質。
 LONG );
         set("exits", ([
                 "west" : __DIR__"kslu2",
@@ -24,7 +24,7 @@ LONG );
 
         set("no_fight", 1);
 
-        set("product/cuprum_ore", ([ "name" : "ͭ��ʯ",
+        set("product/cuprum_ore", ([ "name" : "銅礦石",
                                      "rate" : 100,
                                      "max"  : 10000, ]));
 

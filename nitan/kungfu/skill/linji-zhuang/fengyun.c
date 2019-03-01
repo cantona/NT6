@@ -7,24 +7,24 @@ int exert(object me, object target)
 {
         int level = me->query_skill("linji-zhuang", 1);
 
-        if (level < 120) return notify_fail("ÄãµÄÁÙ¼ÃÊ®¶þ×¯ÐÞÎª»¹²»¹»¡£\n");
+        if (level < 120) return notify_fail("ä½ çš„è‡¨æ¿ŸåäºŒèŽŠä¿®ç‚ºé‚„ä¸å¤ ã€‚\n");
 
         if( query("max_neili", me)<5*level )
-                return notify_fail("ÄãµÄÄÚÁ¦»¹²»¹»Ç¿¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›é‚„ä¸å¤ å¼·ã€‚\n");
 
         if( query("neili", me)<4*level )
-                return notify_fail("ÄãµÄÕæÆø²»¹»¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ã€‚\n");
 
         if( query("eff_qi", me)<query("max_qi", me)/2 )
-                return notify_fail("ÄãÒÑ¾­ÊÜÉË¹ýÖØ£¬Ö»ÅÂÒ»ÔËÕæÆø±ãÓÐÉúÃüÎ£ÏÕ£¡\n");
+                return notify_fail("ä½ å·²ç¶“å—å‚·éŽé‡ï¼Œåªæ€•ä¸€é‹çœŸæ°£ä¾¿æœ‰ç”Ÿå‘½å±éšªï¼\n");
 
         if( query_temp("linji/fengyun", me) )
-                return notify_fail("Äã´ËÊ±ËÄÖ«°Ùº¡ÕæÆø¹Äµ´£¬²»±ØÔÙ´ÎÔË¹¦¡£\n");
+                return notify_fail("ä½ æ­¤æ™‚å››è‚¢ç™¾éª¸çœŸæ°£é¼“ç›ªï¼Œä¸å¿…å†æ¬¡é‹åŠŸã€‚\n");
 
         set_temp("linji/fengyun", 1, me);
-        write( HIY "Äã°µÔË·çÔÆÁ½×¯£¬ÐÄË¼¸¡ÔÆÆ®¿ÕÖ®ÓÆÏÐ»ºÂý£¬Ä¬Ïë¿ñ·çµ´µØÖ®Ñ¸ËÙ½ô¼±£¬\nÒ»¹Éµ¤ÌïÈÈÆø·Ö×¢ËÄÖ«°Ùº¡£¬µ«¾õÉíÊÖÃô½ÝÁËÐí¶à¡£\n" NOR);
+        write( HIY "ä½ æš—é‹é¢¨é›²å…©èŽŠï¼Œå¿ƒæ€æµ®é›²é£„ç©ºä¹‹æ‚ é–’ç·©æ…¢ï¼Œé»˜æƒ³ç‹‚é¢¨ç›ªåœ°ä¹‹è¿…é€Ÿç·Šæ€¥ï¼Œ\nä¸€è‚¡ä¸¹ç”°ç†±æ°£åˆ†æ³¨å››è‚¢ç™¾éª¸ï¼Œä½†è¦ºèº«æ‰‹æ•æ·äº†è¨±å¤šã€‚\n" NOR);
         message("vision",
-                HIY + "Ö»¼û" + me->name() + "Î¢±ÕË«ÑÛ£¬ÉíÅÔÄýÆðÒ»È¦°×Îí£¬Ë²Ï¢¼äÒ»¹ÉÐý·ç¾í¹ý£¬"+me->name()+"ÉíÐÎÓÖ¸´ÇåÎú¡£\n" NOR,
+                HIY + "åªè¦‹" + me->name() + "å¾®é–‰é›™çœ¼ï¼Œèº«æ—å‡èµ·ä¸€åœˆç™½éœ§ï¼Œçž¬æ¯é–“ä¸€è‚¡æ—‹é¢¨å·éŽï¼Œ"+me->name()+"èº«å½¢åˆå¾©æ¸…æ™°ã€‚\n" NOR,
                 environment(me), me);
 
         addn("neili", -level, me);
@@ -47,5 +47,5 @@ void recover(object me, int level)
         addn_temp("apply/defense", -level*5, me);
         delete_temp("linji/fengyun", me);
 
-        tell_object(me, HIG"Äã·çÔÆÐÐ¹¦ÒÑ¾Ã£¬ÂÔ¾õ²½ÂÄ³ÁÖØÁËÒ»Ð©¡£\n"NOR);
+        tell_object(me, HIG"ä½ é¢¨é›²è¡ŒåŠŸå·²ä¹…ï¼Œç•¥è¦ºæ­¥å±¥æ²‰é‡äº†ä¸€äº›ã€‚\n"NOR);
 }

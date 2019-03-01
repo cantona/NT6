@@ -5,13 +5,13 @@ void big_blowing();
 
 void create()
 {
-        set_name(HIR"»ğ÷è÷ë"NOR, ({ "huo qilin", "qilin" }) );
-        set("race", "Ò°ÊŞ");
-        set("gender", "ĞÛĞÔ");
+        set_name(HIR"ç«éº’éºŸ"NOR, ({ "huo qilin", "qilin" }) );
+        set("race", "é‡ç¸");
+        set("gender", "é›„æ€§");
         set("age", 200);
         set("long", 
-"ÕâÊÇÒ»ÌõÈ«Éí³àºì£¬ÎüÌìµØÖ®¼äµÄ»ğÆø¶ø³¤´óµÄ»ğ÷è÷ë£¡
-ËüÈ«ÉíÉ¢·¢×Å³àºìÉ«µÄ»ğÑæ¡£\n");
+"é€™æ˜¯ä¸€æ¢å…¨èº«èµ¤ç´…ï¼Œå¸å¤©åœ°ä¹‹é–“çš„ç«æ°£è€Œé•·å¤§çš„ç«éº’éºŸï¼
+å®ƒå…¨èº«æ•£ç™¼è‘—èµ¤ç´…è‰²çš„ç«ç‡„ã€‚\n");
         
         set("str", 100);
         set("con", 100);
@@ -25,7 +25,7 @@ void create()
         set("max_jing", 50000);
         set("max_neili", 50000);
         set("attitude", "aggressive");
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "Î²°Í" }) );
+        set("limbs", ({ "é ­éƒ¨", "èº«é«”", "å°¾å·´" }) );
         set("verbs", ({ "bite", "claw" }) );
 
         set("chat_chance_combat", 80); 
@@ -48,8 +48,8 @@ void big_blowing()
      ob = this_object();        
      me = this_player();
 
-     tell_room(environment(ob),HIR "\n\n»ğ÷è÷ëÍ»È»ÍÂ³öÒ»¹É³ã¿É·Ù½ğµÄ»ğÑæ£¬"
-                  "Õû¸öÌìµØËÆºõ¶¼±»ÉÕ×ÅÁË£¡£¡£¡\n\n"NOR);
+     tell_room(environment(ob),HIR "\n\nç«éº’éºŸçªç„¶åå‡ºä¸€è‚¡ç†¾å¯ç„šé‡‘çš„ç«ç‡„ï¼Œ"
+                  "æ•´å€‹å¤©åœ°ä¼¼ä¹éƒ½è¢«ç‡’è‘—äº†ï¼ï¼ï¼\n\n"NOR);
 
 
      inv = all_inventory(environment(ob));
@@ -58,7 +58,7 @@ void big_blowing()
      {
                 dam = random(500) + 100;               
                 inv[i]->receive_wound("qi",dam);
-                tell_object(inv[i], HBRED"Äã±»»ğÑæÉÕ×Å£¬¶Ù¾õÆøÑª´óÊÜËğÉË£¡\n\n"NOR);
+                tell_object(inv[i], HBRED"ä½ è¢«ç«ç‡„ç‡’è‘—ï¼Œé “è¦ºæ°£è¡€å¤§å—æå‚·ï¼\n\n"NOR);
      } 
 }
 
@@ -72,7 +72,7 @@ void init()
         if (! interactive(me = this_player())) 
                return; 
 
-       // ×Ô¶¯¹¥»÷Íæ¼Ò                
+       // è‡ªå‹•æ”»æ“Šç©å®¶                
        kill_ob(me); 
 } 
 void die()
@@ -82,7 +82,7 @@ void die()
         int exp, userexp;
 
         ob = this_object();
-        message_vision(HIR"\n$N" HIG"ÕõÔúÁË¼¸ÏÂ£¬·¢³öÒ»Éù²Ò½Ğ£¬±ã²»ÔÙ¶¯µ¯ÁË¡£\n"NOR, ob);
+        message_vision(HIR"\n$N" HIG"æ™ç´®äº†å¹¾ä¸‹ï¼Œç™¼å‡ºä¸€è²æ…˜å«ï¼Œä¾¿ä¸å†å‹•å½ˆäº†ã€‚\n"NOR, ob);
 
         if(objectp(killer = ob->query_last_damage_from()) &&
            ! killer->query("reborn_start/qilindong/qilin") )
@@ -92,15 +92,15 @@ void die()
                 obj = new(__DIR__"obj/qilin");
                 obj ->move(killer, 1);
                
-                message_vision(HIC "\n\nÒ»ÍÅ»ğÑæÃÍµØÉıÌÚ£¬Ò»¸öÉùÒô¶Ô$NËµµÀ£º"
-                               "Ğ»Ğ»ÄãÉ±ËÀ»ğ÷è÷ë£¬Äã½«µÃµ½÷è÷ë±Û×÷Îª½±Àø£¡\n\n" NOR, killer); 
-                message_vision(HIY"Ö»¼û$N" HIY"ÂıÂıÏûÊ§£¬Ö»Ê£ÏÂÁËÒ»Ö»÷è÷ëµÄÇ°±Û¡£\n"
-                               "\n$nËæ¼´½«÷è÷ë±Û¼ñÁËÆğÀ´¡£\n\n"NOR, ob, killer);            
+                message_vision(HIC "\n\nä¸€åœ˜ç«ç‡„çŒ›åœ°å‡é¨°ï¼Œä¸€å€‹è²éŸ³å°$Nèªªé“ï¼š"
+                               "è¬è¬ä½ æ®ºæ­»ç«éº’éºŸï¼Œä½ å°‡å¾—åˆ°éº’éºŸè‡‚ä½œç‚ºçå‹µï¼\n\n" NOR, killer); 
+                message_vision(HIY"åªè¦‹$N" HIY"æ…¢æ…¢æ¶ˆå¤±ï¼Œåªå‰©ä¸‹äº†ä¸€åªéº’éºŸçš„å‰è‡‚ã€‚\n"
+                               "\n$néš¨å³å°‡éº’éºŸè‡‚æ’¿äº†èµ·ä¾†ã€‚\n\n"NOR, ob, killer);            
                 killer->set("reborn_start/qilindong/qilin",1);
                 killer->add("combat_exp",exp);
                 killer->add("potential",20000);                       
-                message("vison", HBMAG"¡¾×ªÊÀ´«ÎÅ¡¿£º¾İËµ" + killer->query("name") +
-                                "³É¹¦µØÉ±ËÀÁË»ğ÷è÷ë£¬µÃµ½±¦Îï÷è÷ë±Û!\n"NOR, users());
+                message("vison", HBMAG"ã€è½‰ä¸–å‚³èã€‘ï¼šæ“šèªª" + killer->query("name") +
+                                "æˆåŠŸåœ°æ®ºæ­»äº†ç«éº’éºŸï¼Œå¾—åˆ°å¯¶ç‰©éº’éºŸè‡‚!\n"NOR, users());
         }              
         destruct(ob);
 } 

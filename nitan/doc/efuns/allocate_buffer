@@ -1,21 +1,21 @@
         allocate_buffer(3)      MudOS v21c2             (5 Sep 1994)
 
-        Ãû³Æ:
-                allocate_buffer() - ÅäÖÃ¼ÇÒäÌå¸øÒ»¸öÔİ´æÇø (buffer).
-        Óï·¨:
+        åç¨±:
+                allocate_buffer() - é…ç½®è¨˜æ†¶é«”çµ¦ä¸€å€‹æš«å­˜å€ (buffer).
+        èªæ³•:
                 buffer allocate_buffer( int size );
 
-                Ôİ´æÇø allocate_buffer( ÕûÊı size );
-        ÓÃ·¨:
-                ÅäÖÃÒ»¿éÓĞ size ¸öÔªËØ (elements) µÄÔİ´æÇø. ÔªËØ
-                µÄÊıÄ¿±ØĞë´óì¶ 0, ¶øÇÒ²»¿É³¬¹ıÏµÍ³Éè¶¨µÄÉÏÏŞÖµ 
-                (Í¨³£ÊÇ 10000 ×óÓÒ) . ËùÓĞÕóÁĞÔªËØµÄ³õÊ¼Öµ
-                (initialized) ¾ùÎª 0.
-        ²Î¿¼:
+                æš«å­˜å€ allocate_buffer( æ•´æ•¸ size );
+        ç”¨æ³•:
+                é…ç½®ä¸€å¡Šæœ‰ size å€‹å…ƒç´  (elements) çš„æš«å­˜å€. å…ƒç´ 
+                çš„æ•¸ç›®å¿…é ˆå¤§æ–¼ 0, è€Œä¸”ä¸å¯è¶…éç³»çµ±è¨­å®šçš„ä¸Šé™å€¼ 
+                (é€šå¸¸æ˜¯ 10000 å·¦å³) . æ‰€æœ‰é™£åˆ—å…ƒç´ çš„åˆå§‹å€¼
+                (initialized) å‡ç‚º 0.
+        åƒè€ƒ:
                 bufferp(3), read_buffer(3), write_buffer(3), sizeof(3),
                 to_int(3)
-        Ô­Öø:
+        åŸè‘—:
                 Truilkan
-        ·­Òë:
+        ç¿»è­¯:
                 Spock @ FF      96.Oct.12.              (printed 3/16/95)
 

@@ -4,17 +4,17 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "Á·Îä³¡");
+	set("short", "ç·´æ­¦å ´");
 	set("long", @LONG
-ÕâÊÇÒ»¸ö±È±±Ãæ¸üÎª¿í´óµÄÁ·Îä³¡£¬Ðí¶àÊÖÖ´¶Ì½£µÄÉÙÄêÉÙÅ®ÔÚ
-ÕâÀïÁ·¹¦¡£²»Í¬ÓÚ±±ÃæµÄÊÇÕâÀïµÄÀÏÕßºÜÉÙ£¬¼¸ºõ¶¼ÊÇÒ»Ð©ÄêÇáÈËÔÚ
-Á·Ï°Îä¹¦¡£ÓÐÒ»Ð©ÔòÔÚÇÔÇÔË½Óï£¬²»ÖªµÀÔÚ¸ÉÐ©Ê²Ã´¡£Ò»Ö±Ïò±±×ß´©
-Ô½Õû¸öÁ·¹¦³¡¾Íµ½×ßÀÈÁË¡£
+é€™æ˜¯ä¸€å€‹æ¯”åŒ—é¢æ›´ç‚ºå¯¬å¤§çš„ç·´æ­¦å ´ï¼Œè¨±å¤šæ‰‹åŸ·çŸ­åŠçš„å°‘å¹´å°‘å¥³åœ¨
+é€™è£¡ç·´åŠŸã€‚ä¸åŒäºŽåŒ—é¢çš„æ˜¯é€™è£¡çš„è€è€…å¾ˆå°‘ï¼Œå¹¾ä¹Žéƒ½æ˜¯ä¸€äº›å¹´è¼•äººåœ¨
+ç·´ç¿’æ­¦åŠŸã€‚æœ‰ä¸€äº›å‰‡åœ¨ç«Šç«Šç§èªžï¼Œä¸çŸ¥é“åœ¨å¹¹äº›ä»€éº¼ã€‚ä¸€ç›´å‘åŒ—èµ°ç©¿
+è¶Šæ•´å€‹ç·´åŠŸå ´å°±åˆ°èµ°å»Šäº†ã€‚
 LONG );
 	set("exits", ([
 		"north" : __DIR__"wuchang",
 	]));
-        set("for_family", "ÉñÁú½Ì");
+        set("for_family", "ç¥žé¾æ•™");
         setup();
 	replace_program(ROOM);
 }

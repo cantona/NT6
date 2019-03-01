@@ -10,18 +10,18 @@ void delete_served(object me);
 
 void create()
 {
-        set("short", "²è·¿");
+        set("short", "èŒ¶æˆ¿");
         set("long", @LONG
-ÕâÊÇ¹éÔÆ×¯µÜ×ÓÃÇºÈ²èĞİÏ¢µÄµØ·½£¬ÂúÎİµÄ²èÏã£¬ÇßÈËĞÄÆ¢¡£ÎİÀï
-°Ú×Å¼¸ÕÅ×À×Ó(table)ºÍÒÎ×Ó(chair)£¬×ø×Å¼¸¸öÕıÔÚºÈ²èÁÄÌìµÄÄĞÅ®µÜ
-×Ó¡£ÎİÖĞÓĞ¼¸¸öÑ¾÷ßÕıÔÚÃ¦×ÅÎª´ó¼ÒÉÏ²è¡£
+é€™æ˜¯æ­¸é›²èŠå¼Ÿå­å€‘å–èŒ¶ä¼‘æ¯çš„åœ°æ–¹ï¼Œæ»¿å±‹çš„èŒ¶é¦™ï¼Œæ²äººå¿ƒè„¾ã€‚å±‹è£¡
+æ“ºè‘—å¹¾å¼µæ¡Œå­(table)å’Œæ¤…å­(chair)ï¼Œåè‘—å¹¾å€‹æ­£åœ¨å–èŒ¶èŠå¤©çš„ç”·å¥³å¼Ÿ
+å­ã€‚å±‹ä¸­æœ‰å¹¾å€‹ä¸«é¬Ÿæ­£åœ¨å¿™è‘—ç‚ºå¤§å®¶ä¸ŠèŒ¶ã€‚
 LONG );
         set("exits", ([
                 "east" : __DIR__"fanting",
         ]));
         set("item_desc", ([
-                "table" : "µäÑÅµÄÌÒÄ¾Ğ¡×À£¬ÉÏÃæ·Å×ÅË®¹ûÅÌºÍÒû²èÆ÷¾ß¡£\n",
-                "chair" : "ÖñÖÆµÄ×øÒÎ£¬¿´ÉÏÈ¥ÓĞĞ©Ò¡Ò¡»Î»Î¡£\n",
+                "table" : "å…¸é›…çš„æ¡ƒæœ¨å°æ¡Œï¼Œä¸Šé¢æ”¾è‘—æ°´æœç›¤å’Œé£²èŒ¶å™¨å…·ã€‚\n",
+                "chair" : "ç«¹åˆ¶çš„åæ¤…ï¼Œçœ‹ä¸Šå»æœ‰äº›æ–æ–æ™ƒæ™ƒã€‚\n",
         ]));
         set("no_fight", 1);
         set("coor/x", 240);
@@ -41,7 +41,7 @@ void init()
 int serve_tea(object me)
 {
         if (!present(me, this_object())) return 0;
-        message_vision("Ñ¾÷ß×ß¹ıÀ´£¬¸ø$N¶ËÀ´ÁËÒ»±­ÜÔÀò»¨²è¡£\n", me);
+        message_vision("ä¸«é¬Ÿèµ°éä¾†ï¼Œçµ¦$Nç«¯ä¾†äº†ä¸€æ¯èŒ‰è‰èŠ±èŒ¶ã€‚\n", me);
         
         new(__DIR__"obj/huacha")->move(me);
 
@@ -60,20 +60,20 @@ int do_sit(string arg)
         object me = this_player();
 
         if (me->is_busy() || me->is_fighting())
-                return notify_fail("ÄãÕıÃ¦×ÅÄØ£¡\n");
+                return notify_fail("ä½ æ­£å¿™è‘—å‘¢ï¼\n");
         if (arg == "table" || arg == "zhuozi")
-                return notify_fail("ÄãÒª×øÔÚ×À×ÓÉÏ£¿ÄÇÏÈ°ÑÄã¼·³öÖ­ÔÙ¶ËÉÏÀ´°É¡£\n");        
+                return notify_fail("ä½ è¦ååœ¨æ¡Œå­ä¸Šï¼Ÿé‚£å…ˆæŠŠä½ æ“ å‡ºæ±å†ç«¯ä¸Šä¾†å§ã€‚\n");        
 
         if ( !arg || (arg != "chair" && arg != "yizi") )
-                return notify_fail("ÄãÒª×øÔÚµØ°åÉÏ£¿ÓĞ¸öĞÔ£¡¿ÉÏ§µÄÊÇÕâ»áÓ°Ïì¹éÔÆ×¯µÄĞÎÏó¡£\n");        
+                return notify_fail("ä½ è¦ååœ¨åœ°æ¿ä¸Šï¼Ÿæœ‰å€‹æ€§ï¼å¯æƒœçš„æ˜¯é€™æœƒå½±éŸ¿æ­¸é›²èŠçš„å½¢è±¡ã€‚\n");        
         
         if( query_temp("marks/sit", me) )
-                return notify_fail("ÄãÒÑ¾­×øÔÚ×ùÎ»ÉÏÁË¡£\n");        
+                return notify_fail("ä½ å·²ç¶“ååœ¨åº§ä½ä¸Šäº†ã€‚\n");        
                         
-        message_vision("$NÕÒÁË¸ö¿ÕÎ»×ùÏÂ£¬µÈ×ÅÉÏ²è¡£\n", me);        
+        message_vision("$Næ‰¾äº†å€‹ç©ºä½åº§ä¸‹ï¼Œç­‰è‘—ä¸ŠèŒ¶ã€‚\n", me);        
         if( query_temp("marks/tea_served", me)){
-                message_vision("Ñ¾÷ß×ß¹ıÀ´¶Ô$NËµ£ººÈ±¥ÁËµÄ¾Í³öÈ¥°É£¬±ğÕ¼×ÅµØ·½£¡\n", me);
-                message_vision("$N·¢¾õÖÚÈËµÄÑÛ¹â¶¼ÔÚ¶¢×Å×Ô¼º£¬Ã¦Õ¾ÆğÉíÀ´£¬ŞÏŞÎµØËµ£ºÎÒÖ»ÊÇÊÔÊÔÕâÒÎ×Ó½áÊµ²»½áÊµ¡£\n", me);
+                message_vision("ä¸«é¬Ÿèµ°éä¾†å°$Nèªªï¼šå–é£½äº†çš„å°±å‡ºå»å§ï¼Œåˆ¥ä½”è‘—åœ°æ–¹ï¼\n", me);
+                message_vision("$Nç™¼è¦ºçœ¾äººçš„çœ¼å…‰éƒ½åœ¨ç›¯è‘—è‡ªå·±ï¼Œå¿™ç«™èµ·èº«ä¾†ï¼Œå°·å°¬åœ°èªªï¼šæˆ‘åªæ˜¯è©¦è©¦é€™æ¤…å­çµå¯¦ä¸çµå¯¦ã€‚\n", me);
                 return notify_fail("");
         }
         set_temp("marks/sit", 1, me);
@@ -87,9 +87,9 @@ int do_stand()
         object me = this_player();
 
         if( !query_temp("marks/sit", me) )
-                return notify_fail("ÄãÒÑ¾­Õ¾×ÅÁË£¬ÊÇ²»ÊÇÕ¾¾ÃÁËÓĞµã·¢»è°¡£¿\n");        
+                return notify_fail("ä½ å·²ç¶“ç«™è‘—äº†ï¼Œæ˜¯ä¸æ˜¯ç«™ä¹…äº†æœ‰é»ç™¼æ˜å•Šï¼Ÿ\n");        
                         
-        message_vision("$NÅÄÅÄÆ¨¹É£¬Õ¾ÁËÆğÀ´¡£\n", me);        
+        message_vision("$Næ‹æ‹å±è‚¡ï¼Œç«™äº†èµ·ä¾†ã€‚\n", me);        
         delete_temp("marks/sit", me);
         return 1;
 }
@@ -97,11 +97,11 @@ int do_stand()
 int valid_leave(object me, string dir)
 {
         if( query_temp("marks/sit", me) )
-                return notify_fail("Äã´òËãÁ¬ÒÎ×ÓÒ²°á³öÈ¥£¿\n");        
+                return notify_fail("ä½ æ‰“ç®—é€£æ¤…å­ä¹Ÿæ¬å‡ºå»ï¼Ÿ\n");        
 
         if (dir == "east" && present("moli huacha", me))
 //        if (random(3)) 
-                return notify_fail("Ñ¾÷ßÅÜ¹ıÀ´Ëµ£ºÃ»ºÈÍêµÄÒ²±ğ´ø×ß°¡£¬¿¼ÂÇÒ»ÏÂ±ğÈËÂï¡£\n");
+                return notify_fail("ä¸«é¬Ÿè·‘éä¾†èªªï¼šæ²’å–å®Œçš„ä¹Ÿåˆ¥å¸¶èµ°å•Šï¼Œè€ƒæ…®ä¸€ä¸‹åˆ¥äººå˜›ã€‚\n");
         
         return ::valid_leave(me, dir);
 }

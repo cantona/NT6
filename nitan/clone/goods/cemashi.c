@@ -5,18 +5,18 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIG "²áÂíÊ¯" NOR, ({ "cema shi", "cema", "shi", "stone" }) );
+        set_name(HIG "å†Šé¦¬çŸ³" NOR, ({ "cema shi", "cema", "shi", "stone" }) );
         set_weight(100);
 
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIG "Ò»¿é¹â»¬ÈçÓñµÄÊ¯Í·£¬ÒşÔ¼¿É¼ûÆäÖĞÏâÓĞÒ»Æ¥¿¥Âí£¬ÄËÌìÈ»ĞÎ³É¡£\n"
-                            "Ê¹ÓÃ loghorse ÃüÁî¿ÉÊ¹ÄãÔö¼ÓÒ»ÌõÆïÂí¼ÇÂ¼µã¡£\n" 
-                            "Èç¹ûÔİÊ±²»Ê¹ÓÃ£¬×îºÃ½«²áÂíÊ¯´æÈë²Ö¿â£¬ÒÔÃâ¶ªÊ§¡£\n" NOR);
+                set("long", HIG "ä¸€å¡Šå…‰æ»‘å¦‚ç‰çš„çŸ³é ­ï¼Œéš±ç´„å¯è¦‹å…¶ä¸­é‘²æœ‰ä¸€åŒ¹é§¿é¦¬ï¼Œä¹ƒå¤©ç„¶å½¢æˆã€‚\n"
+                            "ä½¿ç”¨ loghorse å‘½ä»¤å¯ä½¿ä½ å¢åŠ ä¸€æ¢é¨é¦¬è¨˜éŒ„é»ã€‚\n" 
+                            "å¦‚æœæš«æ™‚ä¸ä½¿ç”¨ï¼Œæœ€å¥½å°‡å†Šé¦¬çŸ³å­˜å…¥å€‰åº«ï¼Œä»¥å…ä¸Ÿå¤±ã€‚\n" NOR);
                 set("value", 1);
                 set("no_sell", 1);
-                set("unit", "¿é");
+                set("unit", "å¡Š");
                 set("auto_load", 1);
         }
 
@@ -34,10 +34,10 @@ int do_changing(string arg)
         me = this_player();
 
         if( query("horse/stone", me) >= 5 )
-                return notify_fail("ÄãÖ»ÄÜÍ¨¹ı²áÂíÊ¯×î¶àÔö¼Óµ½ÎåÌõÆïÂí¼ÇÂ¼µã¡£\n");
+                return notify_fail("ä½ åªèƒ½é€šéå†Šé¦¬çŸ³æœ€å¤šå¢åŠ åˆ°äº”æ¢é¨é¦¬è¨˜éŒ„é»ã€‚\n");
 
         addn("horse/stone", 1, me);
-        write(HIM "²áÂíÊ¯Ê¹ÓÃ³É¹¦£¬ÄãµÄÆïÂí¼ÇÂ¼µãÔö¼ÓÁË£¡\n" NOR);
+        write(HIM "å†Šé¦¬çŸ³ä½¿ç”¨æˆåŠŸï¼Œä½ çš„é¨é¦¬è¨˜éŒ„é»å¢åŠ äº†ï¼\n" NOR);
         me->save();
         destruct(this_object());
 

@@ -4,14 +4,14 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÍêÑÕ¿µ", ({"wanyan kang", "kang", "wanyan"}));
-        set("gender", "ÄĞĞÔ");
-        set("title", "´ó½ğ¹úĞ¡ÍõÒ¯");
+        set_name("å®Œé¡åº·", ({"wanyan kang", "kang", "wanyan"}));
+        set("gender", "ç”·æ€§");
+        set("title", "å¤§é‡‘åœ‹å°ç‹çˆº");
         set("age", 24);
         set("class", "fighter");
         set("long",
-                "Ëû±¾ÃûÑî¿µ¡£ËæÄ¸°üÏ§Èõ¼ŞÍêÑÕºéÁÒºó£¬³ÉÁËĞ¡Íõ×Ó£¬
-Ì°Í¼¸»¹ó£¬ÖÁËÀ²»¸Ä¡£\n");
+                "ä»–æœ¬åæ¥Šåº·ã€‚éš¨æ¯åŒ…æƒœå¼±å«å®Œé¡æ´ªçƒˆå¾Œï¼Œæˆäº†å°ç‹å­ï¼Œ
+è²ªåœ–å¯Œè²´ï¼Œè‡³æ­»ä¸æ”¹ã€‚\n");
         set("attitude", "friendly");
         set("shen_type",1);
         set("str", 26);
@@ -39,17 +39,17 @@ void create()
         set("score", 100000);
 
         set_skill("force", 40);
-        set_skill("xiantian-gong", 40);    //ÏÈÌìÆø¹¦
+        set_skill("xiantian-gong", 40);    //å…ˆå¤©æ°£åŠŸ
         set_skill("sword", 40);
-        set_skill("quanzhen-jian",40);  //È«Õæ½£
+        set_skill("quanzhen-jian",40);  //å…¨çœŸåŠ
         set_skill("dodge", 40);
-        set_skill("jinyan-gong", 40);   //½ğÑã¹¦
+        set_skill("jinyan-gong", 40);   //é‡‘é›åŠŸ
         set_skill("parry", 40);
         set_skill("strike",40);
         set_skill("unarmed",40);
-        set_skill("haotian-zhang", 40);    //ê»ÌìÕÆ
+        set_skill("haotian-zhang", 40);    //æ˜Šå¤©æŒ
         set_skill("claw",40);
-        set_skill("jiuyin-baiguzhao", 40);    //ê»ÌìÕÆ
+        set_skill("jiuyin-baiguzhao", 40);    //æ˜Šå¤©æŒ
         set_skill("literate",40);
         set_skill("taoism",40);
 
@@ -61,10 +61,10 @@ void create()
         map_skill("claw", "jiuyin-baiguzhao");
         prepare_skill("claw", "jiuyin-baiguzhao");
 
-        create_family("È«Õæ½Ì", 3, "µÜ×Ó");
+        create_family("å…¨çœŸæ•™", 3, "å¼Ÿå­");
 
         set("inquiry", ([
-                "È«Õæ½Ì" :  "ÎÒÈ«Õæ½ÌÊÇÌìÏÂµÀ¼ÒĞşÃÅÕı×Ú¡£\n",
+                "å…¨çœŸæ•™" :  "æˆ‘å…¨çœŸæ•™æ˜¯å¤©ä¸‹é“å®¶ç„é–€æ­£å®—ã€‚\n",
         ]) );
 
         setup();

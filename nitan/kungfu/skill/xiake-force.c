@@ -1,4 +1,4 @@
-// xiake-force.c ÏÀ¿ÍµºÄÚ¹¦
+// xiake-force.c ä¿ å®¢å³¶å…§åŠŸ
 
 inherit FORCE;
 
@@ -11,7 +11,7 @@ int valid_learn(object me)
 
 int practice_skill(object me)
 {
-        return notify_fail("ÏÀ¿ÍµºÄÚ¹¦Ö»ÄÜÓÃÑ§(learn)µÄÀ´Ôö¼ÓÊìÁ·¶È¡£\n");
+        return notify_fail("ä¿ å®¢å³¶å…§åŠŸåªèƒ½ç”¨å­¸(learn)çš„ä¾†å¢åŠ ç†Ÿç·´åº¦ã€‚\n");
 }
 
 string exert_function_file(string func)

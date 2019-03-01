@@ -1,15 +1,15 @@
-// shanshen.c ÀÏÉ½²Î
+// shanshen.c è€å±±åƒ
 
 inherit ITEM;
 
 void create()
 {
-        set_name("ÀÏÉ½²Î", ({"laoshan shen", "shen"}));
+        set_name("è€å±±åƒ", ({"laoshan shen", "shen"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Öê");
-                set("long", "ÕâÊÇÒ»ÖêÕ´ÂúÉ½ÄàµÄÀÏÉ½²Î¡£\n");
+                set("unit", "æ ª");
+                set("long", "é€™æ˜¯ä¸€æ ªæ²¾æ»¿å±±æ³¥çš„è€å±±åƒã€‚\n");
                 set("value", 10000);
                 set("only_do_effect", 1);
         }
@@ -19,11 +19,11 @@ void create()
 int do_effect(object me)
 {
         if( query("eff_qi", me)>query("max_qi", me)-20 )
-                return notify_fail("ÄãÏÖÔÚÃ»ÓĞ±ØÒª·şÓÃÕâÖ§ÀÏÉ½²Î¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ²’æœ‰å¿…è¦æœç”¨é€™æ”¯è€å±±åƒã€‚\n");
 
         addn("eff_qi", 200, me);
 
-        message_vision("$N³ÔÏÂÒ»ÖêÀÏÉ½²Î£¬Ö»¾õµÃ»ëÉíÒ»¹ÉÈÈÆø¶µµ×Ã°ÁËÉÏÀ´ !\n", this_player());
+        message_vision("$Nåƒä¸‹ä¸€æ ªè€å±±åƒï¼Œåªè¦ºå¾—æ¸¾èº«ä¸€è‚¡ç†±æ°£å…œåº•å†’äº†ä¸Šä¾† !\n", this_player());
         destruct(this_object());
         return 1;
 }

@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ʯϿ��");
+        set("short", "石峽子");
         set("long", @LONG
-ʯϿ������ǰ�Ļƺӹʵ������ڱ���Ǵ��СС�Ķ���ʯ������
-�����ɸߵĸ��£�ǧ�����֣�������˵�����µĲ�ɣ��Ҫ�������õĻ�
-�����������𵽷ǳ�Ư�����ǳ������껨ʯ��
+石峽子是以前的黃河故道，現在遍地是大大小小的鵝卵石，兩邊
+是數丈高的高坡，千溝萬壑，向你訴說著世事的滄桑。要是運氣好的話
+你可以在這裡揀到非常漂亮、非常珍貴的雨花石。
 LONG );
         set("exits", ([
                 "southwest" : __DIR__"tumenzi",

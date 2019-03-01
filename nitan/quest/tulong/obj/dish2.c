@@ -4,13 +4,13 @@ inherit F_FOOD;
 
 void create()
 {
-        set_name(HIG"Ëêº®ÈıÓÑ"NOR, ({"dish"}));
+        set_name(HIG"æ­²å¯’ä¸‰å‹"NOR, ({"dish"}));
         set_weight(80);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "ËÉÈÊ¼ÓÉÏËáÃ·¡¢ÖñËñ×ö³É£¬Ò»µú±ğ³öĞÄ²ÃµÄĞ¡²Ë¡£\n");
-                set("unit", "µú");
+                set("long", "é¬†ä»åŠ ä¸Šé…¸æ¢…ã€ç«¹ç­åšæˆï¼Œä¸€ç¢Ÿåˆ¥å‡ºå¿ƒè£çš„å°èœã€‚\n");
+                set("unit", "ç¢Ÿ");
                 set("value", 120);
                 set("food_remaining", 10);
                 set("food_supply", 30);

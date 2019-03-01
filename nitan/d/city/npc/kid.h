@@ -1,5 +1,5 @@
 string *food_name = ({
-"ôä´äÉÕÂô", "Ñ¼²Ë°ü×Ó", "Ç§²ãÓÍ¸â", "Ö¥Âé°ü×Ó", 
+"ç¿¡ç¿ ç‡’è³£", "é´¨èœåŒ…å­", "åƒå±¤æ²¹ç³•", "èŠéº»åŒ…å­", 
 });
 
 string ask_secret()
@@ -8,9 +8,9 @@ string ask_secret()
     command( "en" );
     command( "think" );
     command("tell"+query("id", this_player())+
-        " Äã°ïÎÒÂò¸ö" + food );
+        " ä½ å¹«æˆ‘è²·å€‹" + food );
     set_temp("kid_ask/"+query("id"), food, this_player());
-    return "ÔõÃ´Ñù£¿°ïÎÒÂòÁË£¬ÎÒ¾Í¸æËßÄã£¡\n";
+    return "æ€éº¼æ¨£ï¼Ÿå¹«æˆ‘è²·äº†ï¼Œæˆ‘å°±å‘Šè¨´ä½ ï¼\n";
 }
 
 int accept_object( object me, object ob)
@@ -20,8 +20,8 @@ int accept_object( object me, object ob)
     if ( food && food == ob->name() )
     {
         command( "grin " + id );
-        command( "tell " + id + " ÎÒµÄÃØÃÜÊÇ£ºÎÒÀÏ°Ö½Ğ" 
-        + query( "papa_name" ) + "¡£" );
+        command( "tell " + id + " æˆ‘çš„ç§˜å¯†æ˜¯ï¼šæˆ‘è€çˆ¸å«" 
+        + query( "papa_name" ) + "ã€‚" );
         command( "laugh1 " + id );
         delete_temp("kid_ask/"+query("id"), me);
         return 1;

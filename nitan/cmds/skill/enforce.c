@@ -8,13 +8,13 @@ int main(object me, string arg)
         int max;
 
         if( !arg || (arg!="none" && arg!="max" && !sscanf(arg, "%d", pts)) )
-                return notify_fail("Ö¸Áî¸ñÊ½£ºenforce|jiali <Ê¹³ö¼¸³ÉÄÚÁ¦ÉËµĞ>|none|max\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šenforce|jiali <ä½¿å‡ºå¹¾æˆå…§åŠ›å‚·æ•µ>|none|max\n");
 
         if( !me->query_skill_mapped("force") )
-                return notify_fail("Äã±ØĞëÏÈ enable Ò»ÖÖÄÚ¹¦¡£\n");
+                return notify_fail("ä½ å¿…é ˆå…ˆ enable ä¸€ç¨®å…§åŠŸã€‚\n");
 
         max = (int)me->query_skill("force") / 2;
-        // ¿ñ±©Ö®Á¦Ôö¼Ó¼ÓÁ¦ÉÏÏŞ 
+        // ç‹‚æš´ä¹‹åŠ›å¢åŠ åŠ åŠ›ä¸Šé™ 
         if (query("special_skill/might", me)) 
                 max += max * 20 / 100;
 
@@ -31,7 +31,7 @@ int main(object me, string arg)
                 set("jiali", max, me);
         else {
                 if( pts < 0 || pts > max )
-                        return notify_fail("ÄãÖ»ÄÜÓÃ none ±íÊ¾²»ÔËÄÚÁ¦£¬»òÊı×Ö±íÊ¾Ã¿Ò»»÷ÓÃ¼¸µãÄÚÁ¦¡£\n");
+                        return notify_fail("ä½ åªèƒ½ç”¨ none è¡¨ç¤ºä¸é‹å…§åŠ›ï¼Œæˆ–æ•¸å­—è¡¨ç¤ºæ¯ä¸€æ“Šç”¨å¹¾é»å…§åŠ›ã€‚\n");
                 set("jiali", pts, me);
         }
 
@@ -42,12 +42,12 @@ int main(object me, string arg)
 int help (object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½: enforce|jiali <Ê¹³ö¼¸µãÄÚÁ¦ÉËµĞ>|none|max
+æŒ‡ä»¤æ ¼å¼: enforce|jiali <ä½¿å‡ºå¹¾é»å…§åŠ›å‚·æ•µ>|none|max
 
-Õâ¸öÖ¸ÁîÈÃÄãÖ¸¶¨Ã¿´Î»÷ÖĞµĞÈËÊ±£¬Òª·¢³ö¼¸µãÄÚÁ¦ÉËµĞ¡£
+é€™å€‹æŒ‡ä»¤è®“ä½ æŒ‡å®šæ¯æ¬¡æ“Šä¸­æ•µäººæ™‚ï¼Œè¦ç™¼å‡ºå¹¾é»å…§åŠ›å‚·æ•µã€‚
 
-enforce none Ôò±íÊ¾Äã²»Ê¹ÓÃÄÚÁ¦¡£
-enforce max Ôò±íÊ¾ÄãÊ¹ÓÃ×î´óÄÚÁ¦¡£
+enforce none å‰‡è¡¨ç¤ºä½ ä¸ä½¿ç”¨å…§åŠ›ã€‚
+enforce max å‰‡è¡¨ç¤ºä½ ä½¿ç”¨æœ€å¤§å…§åŠ›ã€‚
 
 See Also: enable
 HELP );

@@ -1,18 +1,18 @@
-// wood.c Ä¾Áé
+// wood.c æœ¨éˆ
 
 #include <ansi.h>
 inherit ITEM;
 
 void create()
 {
-        set_name(HIG "Ä¾Áé" NOR, ({ "mu ling", "wood" }) );
+        set_name(HIG "æœ¨éˆ" NOR, ({ "mu ling", "wood" }) );
         set_weight(30);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", HIG "ÕâÊÇÒ»Æ¬Ä¾Áé£¬À´×Ô¶«º£·öÉ£Ö®Ê÷£¬ÉÏ¹ÅÉñÈËËùÆÜ£¬Ã¿Ç§Äê¶øÓĞÄ¾ÁéÉú£¬É«Çà£¬´¥Ö®ÈôÎŞÎï¡£\n" NOR);
+                set("long", HIG "é€™æ˜¯ä¸€ç‰‡æœ¨éˆï¼Œä¾†è‡ªæ±æµ·æ‰¶æ¡‘ä¹‹æ¨¹ï¼Œä¸Šå¤ç¥äººæ‰€æ£²ï¼Œæ¯åƒå¹´è€Œæœ‰æœ¨éˆç”Ÿï¼Œè‰²é’ï¼Œè§¸ä¹‹è‹¥ç„¡ç‰©ã€‚\n" NOR);
                 set("value", 2000);
-                set("unit", "Æ¬");
+                set("unit", "ç‰‡");
                 set("magic/element", "wood");
         }
         setup();

@@ -15,10 +15,10 @@ int main(object me, string arg)
                 return 0;
         
         if (! arg || sscanf(arg, "%s %d", target, money) != 2)
-                return notify_fail("指令格式：recharge <id> <amount>。\n");
+                return notify_fail("鎸囦护鏍煎紡锛歳echarge <id> <amount>銆俓n");
         
         if (! objectp(ob = UPDATE_D->global_find_player(target)))
-                return notify_fail("没有这个人！\n");
+                return notify_fail("娌掓湁閫欏�嬩汉锛乗n");
                 
         if (MEMBER_D->is_member(target))
                 MEMBER_D->db_pay_member(target, money);
@@ -27,7 +27,7 @@ int main(object me, string arg)
                 
         flower = money / 100;
         addn("flowers/amount", flower, ob);
-        if( ob ) tell_object(ob, HIC "你获得了 " + flower + " 张新手导师评价票。\n" NOR);
+        if( ob ) tell_object(ob, HIC "浣犵嵅寰椾簡 " + flower + " 寮垫柊鎵嬪皫甯⿻鍍圭エ銆俓n" NOR);
 
         log_file("static/recharge",sprintf("%s %s have recharge %s %d $NT\n",TIME_D->replace_ctime(time()),query("id", me),target,money));
         

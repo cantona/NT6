@@ -5,12 +5,12 @@ inherit ROOM;
 #include <ansi.h>;
 void create()
 {
-        set("short", "»ÝÉ½É½¶¥");
+        set("short", "æƒ å±±å±±é ‚");
         set("long", @LONG
-µÇÉÏ»ÝÉ½É½¶¥£¬µ«¼ûÂúÉ½ÇàËÉ´ÂÔ¼£¬ÂÌÊ÷²Ô´ä£¬ËÂÔºÊ¯Ëþ£¬Î¡È»
-ËÊÁ¢¡£´Ó´Ë¿ÉÔ¶Ì÷ÎÞÎýÈ«³ÇºÍºÆÃìÌ«ºþ¡£´ËÉ½Ô­ÃûÎýÉ½£¬É½²úÎý¿ó£¬
-µ½ºº´ú²É¾¡¡£ÓÖÓÐÈËÍÚµ½Ò»Ê¯±®£¬ÉÏÊé£ºÓÐÎý±ø£¬ÌìÏÂÕù¡£ÎÞÎýÄþ£¬
-ÌìÏÂÇå¡£ËìÃüÃû´Ë³ÇÎÞÎý¡£
+ç™»ä¸Šæƒ å±±å±±é ‚ï¼Œä½†è¦‹æ»¿å±±é’é¬†ç¶½ç´„ï¼Œç¶ æ¨¹è’¼ç¿ ï¼Œå¯ºé™¢çŸ³å¡”ï¼Œå·ç„¶
+è³ç«‹ã€‚å¾žæ­¤å¯é çœºç„¡éŒ«å…¨åŸŽå’Œæµ©æ¸ºå¤ªæ¹–ã€‚æ­¤å±±åŽŸåéŒ«å±±ï¼Œå±±ç”¢éŒ«ç¤¦ï¼Œ
+åˆ°æ¼¢ä»£æŽ¡ç›¡ã€‚åˆæœ‰äººæŒ–åˆ°ä¸€çŸ³ç¢‘ï¼Œä¸Šæ›¸ï¼šæœ‰éŒ«å…µï¼Œå¤©ä¸‹çˆ­ã€‚ç„¡éŒ«å¯§ï¼Œ
+å¤©ä¸‹æ¸…ã€‚é‚å‘½åæ­¤åŸŽç„¡éŒ«ã€‚
 LONG );
         set("outdoors", "wuxi");
         set("no_clean_up", 0);

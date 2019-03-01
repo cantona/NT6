@@ -11,9 +11,9 @@ int main(object me, object env,string arg)
         if( file_size(dir)==-2 && dir[strlen(dir)-1] != '/' ) dir += "/";
         file = get_dir(dir, -1);
         if( !sizeof(file) ){
-        if (file_size(dir) == -2) return notify_fail("Ä¿Â¼ÊÇ¿ÕµÄ¡£\n");
+        if (file_size(dir) == -2) return notify_fail("ç›®éŒ„æ˜¯ç©ºçš„ã€‚\n");
         else
-                return notify_fail("Ã»ÓĞÈÎºÎÄ¿Â¼¡£\n");
+                return notify_fail("æ²’æœ‰ä»»ä½•ç›®éŒ„ã€‚\n");
         }
         i = sizeof(file);
         while(i--) {
@@ -28,9 +28,9 @@ int main(object me, object env,string arg)
         file2 = resolve_path(file[i][0]);
         ii = sizeof(file[i][0]);
         if (!SKILL_D(file2[0..ii-3])->editor()){str+=sprintf(HIR"");iii++;}
-            str+=sprintf("¨X¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨[\n");
-        str += sprintf("¨U%-26s%4s%26s¨U\n¨U¼¼ÄÜÀàĞÍ£º%-16sËùÊôÃÅÅÉ£º¡¡%18s¨U\n¨UÓĞĞ§Öµ£º%4d¡¡Ñ§Ï°Öµ£º%4d¡¡Á·Ï°Öµ£º%4d¡¡¶ÁÊéÖµ£º%4d¡¡¨U\n",
-                to_chinese(file2[0..ii-3]),"£½£½",file2[0..ii-3],
+            str+=sprintf("â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡\n");
+        str += sprintf("â–¡%-26s%4s%26sâ–¡\nâ–¡æŠ€èƒ½é¡å‹ï¼š%-16sæ‰€å±¬é–€æ´¾ï¼šã€€%18sâ–¡\nâ–¡æœ‰æ•ˆå€¼ï¼š%4dã€€å­¸ç¿’å€¼ï¼š%4dã€€ç·´ç¿’å€¼ï¼š%4dã€€è®€æ›¸å€¼ï¼š%4dã€€â–¡\n",
+                to_chinese(file2[0..ii-3]),"ï¼ï¼",file2[0..ii-3],
 SKILL_D(file2[0..ii-3])->type(),
 SKILL_D(file2[0..ii-3])->family_skills(),
 SKILL_D(file2[0..ii-3])->enable_factor(),
@@ -38,20 +38,20 @@ SKILL_D(file2[0..ii-3])->learn_bonus(),
 SKILL_D(file2[0..ii-3])->practice_bonus(),
 SKILL_D(file2[0..ii-3])->study_bonus()
 );      
-            str+=sprintf("¨^¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨T¨a"NOR"\n");
-        str+=sprintf("Î´Íê³ÉÊıÄ¿ÓĞ%d\n",iii);
+            str+=sprintf("â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡"NOR"\n");
+        str+=sprintf("æœªå®Œæˆæ•¸ç›®æœ‰%d\n",iii);
         }
-    if (!k)  write("Ã»ÓĞÕâ¸öÄ¿Â¼¡£\n");
+    if (!k)  write("æ²’æœ‰é€™å€‹ç›®éŒ„ã€‚\n");
     else    
-        write("Ä¿Â¼£º" + dir + "\n");
+        write("ç›®éŒ„ï¼š" + dir + "\n");
         me->start_more(str);
-    }else write("    Ã»ÓĞÈÎºÎµµ°¸¡£\n");    
+    }else write("    æ²’æœ‰ä»»ä½•æª”æ¡ˆã€‚\n");    
     return 1;   
 }
 int help(object me)
 {
     write(@HELP
-ÕâÖ¸ÁîÊÇÓÃÀ´²é¿´ËùÓĞ¼¼ÄÜµÄÉèÖÃ£¬Î×Ê¦×¨ÓÃ¡£
+é€™æŒ‡ä»¤æ˜¯ç”¨ä¾†æŸ¥çœ‹æ‰€æœ‰æŠ€èƒ½çš„è¨­ç½®ï¼Œå·«å¸«å°ˆç”¨ã€‚
 HELP
     );
     return 1;

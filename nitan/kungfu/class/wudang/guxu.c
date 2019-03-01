@@ -1,4 +1,4 @@
-// guxu.c ¹ÈĞé
+// guxu.c è°·è™›
 
 #include <ansi.h>
 #include "wudang.h"
@@ -10,9 +10,9 @@ string ask_me();
 
 void create()
 {
-        set_name("¹ÈĞéµÀ³¤", ({ "guxu daozhang", "guxu", "daozhang" }));
-        set("long","Ëû¾ÍÊÇÓáá·ÑÒµÄµÜ×Ó¹ÈĞéµÀ³¤¡£\nËû½ñÄêËÄÊ®Ëê£¬Ö÷¹ÜÎäµ±ÅÉµÄË×ÊÂ¡£\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("è°·è™›é“é•·", ({ "guxu daozhang", "guxu", "daozhang" }));
+        set("long","ä»–å°±æ˜¯ä¿å²±å·–çš„å¼Ÿå­è°·è™›é“é•·ã€‚\nä»–ä»Šå¹´å››åæ­²ï¼Œä¸»ç®¡æ­¦ç•¶æ´¾çš„ä¿—äº‹ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 40);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -52,9 +52,9 @@ void create()
         prepare_skill("strike", "wudang-zhang");
 
         set("env/wimpy", 60);
-        create_family("Îäµ±ÅÉ", 3, "µÜ×Ó");
+        create_family("æ­¦ç•¶æ´¾", 3, "å¼Ÿå­");
         set("inquiry", ([
-                "µÀµÂ¾­" : (: ask_me :),
+                "é“å¾·ç¶“" : (: ask_me :),
                 "jing"   : (: ask_me :),
                 "book"   : (: ask_me :),
         ]));
@@ -74,9 +74,9 @@ void init()
 
         ::init();
 
-        if( query("family/family_name", me) == "Îäµ±ÅÉ" && 
+        if( query("family/family_name", me) == "æ­¦ç•¶æ´¾" && 
                 query("wudang/offerring", me)>query("age", me)*2 )
-                set_temp("mark/¹ÈĞé", 1, me);
+                set_temp("mark/è°·è™›", 1, me);
 }
 */
 
@@ -87,12 +87,12 @@ void attempt_apprentice(object ob)
 
         if( query("shen", ob)<0 )
         {
-                command("say ÎÒÎäµ±ÄËÊÇÌÃÌÃÃûÃÅÕıÅÉ£¬¶ÔµÜ×ÓÒªÇó¼«ÑÏ¡£");
-                command("say ÔÚµÂĞĞ·½Ãæ£¬" + RANK_D->query_respect(ob) +
-                        "ÊÇ·ñ»¹×öµÃ²»¹»£¿");
+                command("say æˆ‘æ­¦ç•¶ä¹ƒæ˜¯å ‚å ‚åé–€æ­£æ´¾ï¼Œå°å¼Ÿå­è¦æ±‚æ¥µåš´ã€‚");
+                command("say åœ¨å¾·è¡Œæ–¹é¢ï¼Œ" + RANK_D->query_respect(ob) +
+                        "æ˜¯å¦é‚„åšå¾—ä¸å¤ ï¼Ÿ");
                 return;
         }
-        command("say ºÃ°É£¬Æ¶µÀ¾ÍÊÕÏÂÄãÁË¡£¼´ÈëÎäµ±ÃÅÀ´£¬ÎğÍüĞĞÉÆ£¡");
+        command("say å¥½å§ï¼Œè²§é“å°±æ”¶ä¸‹ä½ äº†ã€‚å³å…¥æ­¦ç•¶é–€ä¾†ï¼Œå‹¿å¿˜è¡Œå–„ï¼");
         command("recruit "+query("id", ob));
 }
 
@@ -102,14 +102,14 @@ string ask_me()
         object ob;
 
         if( !(fam=query("family", this_player())) || 
-                fam["family_name"] != "Îäµ±ÅÉ")
-                return RANK_D->query_respect(this_player()) +"Óë±¾ÅÉËØÎŞÀ´Íù£¬²»Öª´Ë»°´ÓºÎÌ¸Æğ£¿";
+                fam["family_name"] != "æ­¦ç•¶æ´¾")
+                return RANK_D->query_respect(this_player()) +"èˆ‡æœ¬æ´¾ç´ ç„¡ä¾†å¾€ï¼Œä¸çŸ¥æ­¤è©±å¾ä½•è«‡èµ·ï¼Ÿ";
         if (query("book_count") < 1)
-                return "ÄãÀ´ÍíÁË£¬±¾ÅÉµÄµÀµÂÕæ¾­²»ÔÚ´Ë´¦¡£";
+                return "ä½ ä¾†æ™šäº†ï¼Œæœ¬æ´¾çš„é“å¾·çœŸç¶“ä¸åœ¨æ­¤è™•ã€‚";
         addn("book_count", -1);
         ob = new(BOOK_DIR"daodejing-ii");
         ob->move(this_player());
-        return "ºÃ°É£¬Õâ±¾¡¸µÀµÂ¾­¡¹ÄãÄÃ»ØÈ¥ºÃºÃ×êÑĞ¡£";
+        return "å¥½å§ï¼Œé€™æœ¬ã€Œé“å¾·ç¶“ã€ä½ æ‹¿å›å»å¥½å¥½é‘½ç ”ã€‚";
 }
 
 void reset()

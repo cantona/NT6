@@ -3,11 +3,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("¿³²ñµÀÊ¿", ({ "kanchai daoshi","daoshi" }) );
-        set("title","áÇá¼µÜ×Ó");
-        set("gender", "ÄĞĞÔ" );
+        set_name("ç æŸ´é“å£«", ({ "kanchai daoshi","daoshi" }) );
+        set("title","å´†å³’å¼Ÿå­");
+        set("gender", "ç”·æ€§" );
         set("age",24);
-	create_family("áÇá¼ÅÉ", 2, "µÜ×Ó");
+	create_family("å´†å³’æ´¾", 2, "å¼Ÿå­");
 	set_xiuwei("staff",200);
 	set_xiuwei("dodge",300);
         set_wugong("dodge",20,20,1);

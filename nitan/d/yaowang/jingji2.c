@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "������");
+        set("short", "荊棘叢");
         set("long", @LONG
-������һƬï�ܵľ����ԣ��м�����ԼԼ��һ��С��������
-����һЩ��֪����С����������������һ�ִ̱ǵ�ζ����
+這裡是一片茂密的荊棘叢，中間隱隱約約有一條小道，叢中
+開著一些不知名的小花，空氣中彌漫著一種刺鼻的味道。
 LONG
         );
         set("exits", ([ /* sizeof() == 2 */

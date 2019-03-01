@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�ؾ�¥");
+        set("short", "藏經樓");
         set("long", @LONG
-�ؾ�¥��һ������С¥����¥�ж��Ƿ�Ҿ��䣬����ϡ�ٵĶ���
-̴ľ��ʢ���ˡ��ղ���¥�ϣ�����ר��ְ˾�������ۿ�ȥ�������Ǹ�
-�͵���ܣ�
+藏經樓是一棟兩層小樓，閣樓中都是佛家經典，名貴稀少的都用
+檀木盒盛放了。收藏在樓上，派有專人職司。你滿眼看去，到處是高
+低的書架，
 LONG );
         set("objects", ([
                   __DIR__"npc/zhifa" : 1,

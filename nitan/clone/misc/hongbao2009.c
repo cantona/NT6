@@ -4,20 +4,20 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIR "Å£Æø³åÌìÐÂÄêºì°ü" NOR, ({ "hongbao2009"}) );
+        set_name(HIR "ç‰›æ°£æ²–å¤©æ–°å¹´ç´…åŒ…" NOR, ({ "hongbao2009"}) );
         set_weight(100);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIR "ÕâÒ»ÊÇ¸öÐÂÄêºì°ü£¬ÉÏÃæÓÃ½ðÉ«µÄ×ÖÌåÐ´×Å" HIY "¡¸Å£Äê¿ìÀÖ£¬Å£Æø³åÌì¡¹" HIR " £¡\n"
-                                "²ð¿ª(chai)ºì°ü¿ÉÒÔ»ñµÃÐÂÄêÑ¹ËêÇ®¼°Ð¡Ð¡µÄ¾­ÑéÇ±ÄÜ½±Àø¡£²¢ÓÐ»ú»á»ñµÃËæ»úÎïÆ·Ò»¼þ¡£\n"
-                                "*ÇëÓÚ2009Äê3ÔÂ1ÈÕÇ°Ê¹ÓÃºì°ü£¬¹ýÆÚÔòÊ¹ÓÃÎÞÐ§£¡£¡£¡\n\n" NOR);
+                set("long", HIR "é€™ä¸€æ˜¯å€‹æ–°å¹´ç´…åŒ…ï¼Œä¸Šé¢ç”¨é‡‘è‰²çš„å­—é«”å¯«è‘—" HIY "ã€Œç‰›å¹´å¿«æ¨‚ï¼Œç‰›æ°£æ²–å¤©ã€" HIR " ï¼\n"
+                                "æ‹†é–‹(chai)ç´…åŒ…å¯ä»¥ç²å¾—æ–°å¹´å£“æ­²éŒ¢åŠå°å°çš„ç¶“é©—æ½›èƒ½çŽå‹µã€‚ä¸¦æœ‰æ©Ÿæœƒç²å¾—éš¨æ©Ÿç‰©å“ä¸€ä»¶ã€‚\n"
+                                "*è«‹äºŽ2009å¹´3æœˆ1æ—¥å‰ä½¿ç”¨ç´…åŒ…ï¼ŒéŽæœŸå‰‡ä½¿ç”¨ç„¡æ•ˆï¼ï¼ï¼\n\n" NOR);
                 set("value", 0);
                 set("no_give", 1);
                 set("no_sell", 1);
                 set("no_store", 1);
                 set("no_drop", 1);
-                set("unit", "¸ö"); 
+                set("unit", "å€‹"); 
         }
 }
 
@@ -52,46 +52,46 @@ int do_chai(string arg)
                 "/clone/armor/shuixian-erhuan",
         });
 
-        // ÐÂÊÖ´åµÄÄÃ²»µ½
+        // æ–°æ‰‹æ‘çš„æ‹¿ä¸åˆ°
         if (! objectp(me))return 0;
 
         if (! arg || arg != "hongbao2009")
-                return notify_fail("ÄãÒª²ð¿ªÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦æ‹†é–‹ä»€éº¼ï¼Ÿ\n");
 
         if (environment(this_object()) != me)
-                return notify_fail("ÄãÉíÉÏÃ»ÓÐÕâÑù¶«Î÷Ñ½¡£\n");
+                return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™æ¨£æ±è¥¿å‘€ã€‚\n");
 
         i = 12009;
         exp = 102009;
         pot = 102009;
 
-        message_vision(HIR "$NÒ»ÕóÐË·Ü£¬¸Ï½ô½«ºì°ü²ð¿ª£¬ÓÃÎÞ±ÈÆÚ´ýµØÑÛÉñ³¯ºì°üÄÚÒ»Íû£¬É²ÄÇ¼ä£¬Ò»Õó¹â»·"
-                       "½«$NÁýÕÖ ¡­¡­\n" NOR, me);
+        message_vision(HIR "$Nä¸€é™£èˆˆå¥®ï¼Œè¶•ç·Šå°‡ç´…åŒ…æ‹†é–‹ï¼Œç”¨ç„¡æ¯”æœŸå¾…åœ°çœ¼ç¥žæœç´…åŒ…å…§ä¸€æœ›ï¼Œå‰Žé‚£é–“ï¼Œä¸€é™£å…‰ç’°"
+                       "å°‡$Nç± ç½© â€¦â€¦\n" NOR, me);
 
-        tell_object(me, HIG "¹§Ï²Äã£¬»ñµÃÁË" HIY + chinese_number(exp) + HIG "µãÊµÕ½¾­Ñé¡¢" HIY + chinese_number(pot) + 
-                        HIG "µãÇ±ÄÜ¼°" HIY + chinese_number(i) + HIG "Á½»Æ½ð£¨YSG£©¡£\nÑ×»Æ×£Äú¡¸Å£Äê¿ìÀÖ£¬Å£Æø³åÌì¡¹£¡\n" NOR);
+        tell_object(me, HIG "æ­å–œä½ ï¼Œç²å¾—äº†" HIY + chinese_number(exp) + HIG "é»žå¯¦æˆ°ç¶“é©—ã€" HIY + chinese_number(pot) + 
+                        HIG "é»žæ½›èƒ½åŠ" HIY + chinese_number(i) + HIG "å…©é»ƒé‡‘ï¼ˆYSGï¼‰ã€‚\nç‚Žé»ƒç¥æ‚¨ã€Œç‰›å¹´å¿«æ¨‚ï¼Œç‰›æ°£æ²–å¤©ã€ï¼\n" NOR);
 
         me->add("stocks/balance", i);
         me->add("combat_exp", exp);
         me->add("potential", pot);
 
-        // 10%»úÂÊ»ñÈ¡Ëæ»úÎïÆ·Ò»¼þ
+        // 10%æ©ŸçŽ‡ç²å–éš¨æ©Ÿç‰©å“ä¸€ä»¶
         if (random(10) == 1)
         {
                 obgift = new(oblist[random(sizeof(oblist))]);
                 if (obgift)
                 {
-                        tell_object(HIY "¹§Ï²Äã£¬´Óºì°üÖÐ»ñµÃ" + obgift->name() + HIY "£¬¹§Ï²¹§Ï²£¡¡£\n" NOR);
-                        CHANNEL_D->do_channel(this_object(), "rumor", "ÌýËµ" + me->name() + "¿ªÆôÐÂÄêºì°ü»ñµÃËæ"
-                                                                    "»úÎïÆ·" + obgift->name() + HIM "½±Àø£¡\n");  
+                        tell_object(HIY "æ­å–œä½ ï¼Œå¾žç´…åŒ…ä¸­ç²å¾—" + obgift->name() + HIY "ï¼Œæ­å–œæ­å–œï¼ã€‚\n" NOR);
+                        CHANNEL_D->do_channel(this_object(), "rumor", "è½èªª" + me->name() + "é–‹å•Ÿæ–°å¹´ç´…åŒ…ç²å¾—éš¨"
+                                                                    "æ©Ÿç‰©å“" + obgift->name() + HIM "çŽå‹µï¼\n");  
                         obgift->move(me, 1);
-                        log_file("hongbao2009", HIY + me->query("id") + "´Óºì°üÖÐ»ñµÃ " + obgift->name() + "¡£\n" NOR);
+                        log_file("hongbao2009", HIY + me->query("id") + "å¾žç´…åŒ…ä¸­ç²å¾— " + obgift->name() + "ã€‚\n" NOR);
                 }
         }
 
         me->save();
 
-        log_file("hongbao2009", me->query("id") + " ÓÚ " + ctime(time()) + " ´ò¿ªºì°ü¡£(/clone/misc/hongbao2009) \n");
+        log_file("hongbao2009", me->query("id") + " äºŽ " + ctime(time()) + " æ‰“é–‹ç´…åŒ…ã€‚(/clone/misc/hongbao2009) \n");
 
         destruct(this_object());
         return 1;

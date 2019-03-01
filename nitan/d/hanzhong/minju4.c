@@ -1,15 +1,15 @@
-// minju4.c Ãñ¾Ó
+// minju4.c æ°‘å±…
 // Winder Oct.10 1998
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "Ãñ¾Ó");
+        set("short", "æ°‘å±…");
         set("long", @LONG
-Õâ¼äÎÝ×ÓÄãÒ»½øÀ´¾Í¿´¼ûÎÝ½Ç´ó´üÐ¡´üµØ¶ÑÂúÁËÁ¸Ê³£¬¿´µÃ³öÀ´½ñ
-ÄêµÄÊÕ³ÉÈ·Êµ²»´í¡£ÎÝÄÚ×ø×ÅÒ»Î»´åÃñ£¬ÕýÐ¦ÎûÎûµØ¿´×Å×Ô¼ºµÄ»ýÁ¸£¬
-Ò²ÐíÕýÔÚÅÌËãÕâ¸ö¶¬ÌìÓÖ²»³îÁË¡£
+é€™é–“å±‹å­ä½ ä¸€é€²ä¾†å°±çœ‹è¦‹å±‹è§’å¤§è¢‹å°è¢‹åœ°å †æ»¿äº†ç³§é£Ÿï¼Œçœ‹å¾—å‡ºä¾†ä»Š
+å¹´çš„æ”¶æˆç¢ºå¯¦ä¸éŒ¯ã€‚å±‹å…§åè‘—ä¸€ä½æ‘æ°‘ï¼Œæ­£ç¬‘å˜»å˜»åœ°çœ‹è‘—è‡ªå·±çš„ç©ç³§ï¼Œ
+ä¹Ÿè¨±æ­£åœ¨ç›¤ç®—é€™å€‹å†¬å¤©åˆä¸æ„äº†ã€‚
 LONG
         );
         set("exits", ([

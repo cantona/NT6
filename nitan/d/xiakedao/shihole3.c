@@ -1,15 +1,15 @@
-// /d/xiakedao/shihole3.c ���͵� ʯ��3
+// /d/xiakedao/shihole3.c 俠客島 石洞3
 
 inherit ROOM;
 
 int do_learn(string arg);
 void create()
 {
-        set("short", "ʯ��");
+        set("short", "石洞");
         set("long", @LONG
-ӭ��ɼ��ĸ�������֡�ˮ��к�ء����������ϡ����г����ݻ���
-��׵Ĵ���ʯש�����������ˡ�������¯�������ƣ������Ů������
-������ϡ�Ǻ�����լһ�㡣
+迎面可見四個行書大字「水銀瀉地」，極具神韻。洞中陳設奢華，
+潔白的大理石磚，漢白玉欄桿。幾個香爐煙霧繚繞，白衣婢女垂手侍
+立，依稀是豪門內宅一般。
 LONG );
         set("exits", ([
                 "out"   : __DIR__"shihole2",

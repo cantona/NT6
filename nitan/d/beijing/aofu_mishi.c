@@ -14,10 +14,10 @@ void create()
         ob2 = find_object(BAOJIA);
         if (! ob2) ob2 = load_object(BAOJIA);
 
-        set("short","÷¡¸®ÃÜÊÒ");
+        set("short","é°²åºœå¯†å®¤");
         set("long", @LONG
-ÕâÀïÊÇ÷¡°Ý¸®µÄÃÜÊÒ£¬µ«ÊÇÕâÀïËÆºõÒ²Ã»ÓÐÕä²ØÊ²Ã´ÌØ±ð
-µÄ±¦±´¡£ÖÜÎ§ºÚÆáÆáµÄ£¬ÆÄÎªÒõÉ­¿Ö²À¡£
+é€™è£¡æ˜¯é°²æ‹œåºœçš„å¯†å®¤ï¼Œä½†æ˜¯é€™è£¡ä¼¼ä¹Žä¹Ÿæ²’æœ‰çè—ä»€éº¼ç‰¹åˆ¥
+çš„å¯¶è²ã€‚å‘¨åœé»‘æ¼†æ¼†çš„ï¼Œé —ç‚ºé™°æ£®ææ€–ã€‚
 LONG);
         set("exits", ([
                 "up" :  __DIR__"aofu_shufang",

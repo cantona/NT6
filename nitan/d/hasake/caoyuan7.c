@@ -1,11 +1,11 @@
-// caoyuan7.c ²ÝÔ­
+// caoyuan7.c è‰åŽŸ
 inherit ROOM;
 void create()
 {
-        set("short", "´ó²ÝÔ­");
+        set("short", "å¤§è‰åŽŸ");
         set("long", @LONG
-Äã×ß½øÁËÕâ±éÃàÃà²»¾øµÄ´ó²ÝÔ­£¬½ÅÏÂÊÇ´çºñµÄÇà²Ý£¬ÈíÃàÃàµÄ»¹Õæ
-²»ºÃ×ß£¬¿´À´ÂòÆ¥ÂíÀ´´ú²½µ½ÊÇµÄºÃÖ÷Òâ¡£
+ä½ èµ°é€²äº†é€™éç¶¿ç¶¿ä¸çµ•çš„å¤§è‰åŽŸï¼Œè…³ä¸‹æ˜¯å¯¸åŽšçš„é’è‰ï¼Œè»Ÿç¶¿ç¶¿çš„é‚„çœŸ
+ä¸å¥½èµ°ï¼Œçœ‹ä¾†è²·åŒ¹é¦¬ä¾†ä»£æ­¥åˆ°æ˜¯çš„å¥½ä¸»æ„ã€‚
 LONG);
         set("exits", ([
             "south" : __DIR__"caoyuana",

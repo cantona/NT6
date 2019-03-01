@@ -8,15 +8,15 @@ inherit POISON;
 
 string name() { return "sanyin"; }
 
-string chinese_name() { return "ÈıÒõòÚò¼×¦Ö®¶¾"; }
+string chinese_name() { return "ä¸‰é™°èœˆèš£çˆªä¹‹æ¯’"; }
 
 string update_msg_others()
 {
-       return "$NÍ»È»»ëÉí²»×¡µÄ¶¶¶¯£¬¿´ÉÏÈ¥Ê®·ÖÍ´¿à¡£\n";
+       return "$Nçªç„¶æ¸¾èº«ä¸ä½çš„æŠ–å‹•ï¼Œçœ‹ä¸Šå»ååˆ†ç—›è‹¦ã€‚\n";
 }
 
 string update_msg_self()
 {
-        return HIB "ºöÈ»Äã¾õµÃËÄÖ«°ÙêàÊÇËÆºõÓĞÎŞÊıĞ¡³æÔÚÓÎ×ß£¬ÂéÑ÷ÄÑÈÌ£¡\n" NOR;
+        return HIB "å¿½ç„¶ä½ è¦ºå¾—å››è‚¢ç™¾è³…æ˜¯ä¼¼ä¹æœ‰ç„¡æ•¸å°èŸ²åœ¨éŠèµ°ï¼Œéº»ç™¢é›£å¿ï¼\n" NOR;
 }
 

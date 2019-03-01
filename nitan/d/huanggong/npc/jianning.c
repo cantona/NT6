@@ -6,15 +6,15 @@ inherit F_UNIQUE;
 
 void create()
 {
-        set_name(HIG"½¨Äş¹«Ö÷"NOR,({"jianning gongzhu","jianning","gongzhu"}));
-        set("gender", "Å®ĞÔ");
+        set_name(HIG"å»ºå¯§å…¬ä¸»"NOR,({"jianning gongzhu","jianning","gongzhu"}));
+        set("gender", "å¥³æ€§");
         set("age", 16);
         set("str", 25);
         set("dex", 20);
         set("int", 28);
         set("con", 28);
         set("per", 28);
-        set("long", "ËıÒ»ÕÅ¹Ï×ÓÁ³¶ù£¬±¡±¡µÄ×ì´½£¬Ã¼Ä¿Áé¶¯£¬ÆÄÓĞÓ¢Æø¡£\n");
+        set("long", "å¥¹ä¸€å¼µç“œå­è‡‰å…’ï¼Œè–„è–„çš„å˜´å”‡ï¼Œçœ‰ç›®éˆå‹•ï¼Œé —æœ‰è‹±æ°£ã€‚\n");
 
         set("combat_exp", 5000);
         set("score", 200);

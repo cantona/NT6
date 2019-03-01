@@ -23,18 +23,18 @@ int valid_learn(object me)
         int lvl = (int)me->query_skill("tianhuan-shenjue", 1);
 
         if ((int)me->query_skill("force", 1) < 50)
-                return notify_fail("ÄãµÄ»ù±¾ÄÚ¹¦»ğºò»¹²»¹»¡£\n");
+                return notify_fail("ä½ çš„åŸºæœ¬å…§åŠŸç«å€™é‚„ä¸å¤ ã€‚\n");
 
-        // ÒòÎªÊÇÈÕÔÂÉñ½ÌµÄÄÚ¹¦£¬ËùÒÔ¶ÔÎŞĞÔµÄÑ§Ï°ÏŞÖÆ·Å¿í
-        if( query("gender", me) == "ÎŞĞÔ" && lvl>99 )
-                return notify_fail("ÄãÎŞ¸ùÎŞĞÔ£¬ÒõÑô²»µ÷£¬ÄÑÒÔÁì»á¸ßÉîµÄÌìå¾Éñ¾÷¡£\n");
+        // å› ç‚ºæ˜¯æ—¥æœˆç¥æ•™çš„å…§åŠŸï¼Œæ‰€ä»¥å°ç„¡æ€§çš„å­¸ç¿’é™åˆ¶æ”¾å¯¬
+        if( query("gender", me) == "ç„¡æ€§" && lvl>99 )
+                return notify_fail("ä½ ç„¡æ ¹ç„¡æ€§ï¼Œé™°é™½ä¸èª¿ï¼Œé›£ä»¥é ˜æœƒé«˜æ·±çš„å¤©å¯°ç¥è¨£ã€‚\n");
 
         return ::valid_learn(me);
 }
 
 int practice_skill(object me)
 {
-        return notify_fail("Ììå¾Éñ¾÷Ö»ÄÜÓÃÑ§(learn)µÄÀ´Ôö¼ÓÊìÁ·¶È¡£\n");
+        return notify_fail("å¤©å¯°ç¥è¨£åªèƒ½ç”¨å­¸(learn)çš„ä¾†å¢åŠ ç†Ÿç·´åº¦ã€‚\n");
 }
 
 string exert_function_file(string func)

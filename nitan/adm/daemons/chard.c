@@ -23,37 +23,37 @@ void setup_char(object ob)
 
         if( !stringp(race=query("race", ob)) )
         {
-                race = "ÈËÀà";
-                set("race", "ÈËÀà", ob);
+                race = "äººé¡";
+                set("race", "äººé¡", ob);
         }
 
         switch(race)
         {
-        case "ÈËÀà":
+        case "äººé¡":
                 HUMAN_RACE->setup_human(ob);
                 break;
-        case "ÑıÄ§":
+        case "å¦–é­”":
                 MONSTER_RACE->setup_monster(ob);
                 break;
-        case "Ò°ÊŞ":
-        case "×ßÊŞ":
+        case "é‡ç¸":
+        case "èµ°ç¸":
                 BEAST_RACE->setup_beast(ob);
                 break;
-        case "¼ÒĞó":
-        case "×ßĞó":
+        case "å®¶ç•œ":
+        case "èµ°ç•œ":
                 STOCK_RACE->setup_stock(ob);
                 break;
-        case "·ÉÇİ":
+        case "é£›ç¦½":
                 BIRD_RACE->setup_bird(ob);
                 break;
-        case "ÓÎÓã":
+        case "éŠé­š":
                 FISH_RACE->setup_fish(ob);
                 break;
-        case "ÉßÀà":
-        case "ÅÀÉß":
+        case "è›‡é¡":
+        case "çˆ¬è›‡":
                 SNAKE_RACE->setup_snake(ob);
                 break;
-        case "À¥³æ":
+        case "æ˜†èŸ²":
                 INSECT_RACE->setup_insect(ob);
                 break;
         default:

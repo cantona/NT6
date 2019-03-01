@@ -1,4 +1,4 @@
-// chengzi18po.c ³Ç×ÖÊ®°ËÆÆ
+// chengzi18po.c åŸå­—åå…«ç ´
 // Last Modified by winder on Mar. 10 2000
 
 #include <ansi.h>;
@@ -16,20 +16,20 @@ int valid_learn(object me)
 {
         if(me->query_skill("qingming-xuangong", 1) + random(5) <
                 me->query_skill("chengzi18po", 1))
-                return notify_fail("ÄãµÄ±¾ÃÅÄÚ¹¦Î´µ½»ğºò£¬ÎŞ·¨¼ÌĞøĞŞÏ°³Ç×ÖÊ®°ËÆÆ¡£\n");
+                return notify_fail("ä½ çš„æœ¬é–€å…§åŠŸæœªåˆ°ç«å€™ï¼Œç„¡æ³•ç¹¼çºŒä¿®ç¿’åŸå­—åå…«ç ´ã€‚\n");
         return 1;
 }
 
 int help(object me)
 {
-        write(HIC"\n³Ç×ÖÊ®°ËÆÆ£º"NOR"\n");
+        write(HIC"\nåŸå­—åå…«ç ´ï¼š"NOR"\n");
         write(@HELP
 
-    ¡°³Ç×ÖÊ®°ËÆÆ¡±Óë¡°Çà×Ö¾Å´ò¡±²¢ÁĞÎªÇà³ÇÕòÉ½Îä¹¦£¬ÅäÌ×±ø
-Æ÷ÊÇÀ×¹«ºä¡£
+    â€œåŸå­—åå…«ç ´â€èˆ‡â€œé’å­—ä¹æ‰“â€ä¸¦åˆ—ç‚ºé’åŸé®å±±æ­¦åŠŸï¼Œé…å¥—å…µ
+å™¨æ˜¯é›·å…¬è½Ÿã€‚
 
-        Ñ§Ï°ÒªÇó£º
-                ÏàÓ¦¼¶±ğµÄÇàÚ¤Ğş¹¦
+        å­¸ç¿’è¦æ±‚ï¼š
+                ç›¸æ‡‰ç´šåˆ¥çš„é’å†¥ç„åŠŸ
 HELP
         );
         return 1;

@@ -2,11 +2,11 @@
 inherit ROOM;
 void create()
 {
-    set("short", "ʯ��");
+    set("short", "石道");
         set("long", @LONG
-ʯ�����Ե�ʯ����ԭ�������ۻʵ�ʨ�ӣ���������置�������
-���գ�Ȼ��������֮�׵����룬���������书��ʢ���������ֵ�ս����
-��������ͷţβ���������ǵ���ޡ�
+石道兩旁的石獸由原本代表帝皇的獅子，變成了象徵疆域廣闊的
+駱駝，然後是四靈之首的麒麟，再是喻意武功昌盛、南征北討的戰馬，
+跟著是羊頭牛尾，頂生獨角的獬獸。
 LONG );
     set("exits", ([
        "north" :__DIR__"shidao1",

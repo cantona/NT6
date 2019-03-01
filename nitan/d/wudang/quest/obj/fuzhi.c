@@ -5,16 +5,16 @@ inherit ITEM;
 
 void create() 
 { 
-     set_name( HIY"·ûÖ½"NOR, ({ "fu zhi" })); 
+     set_name( HIY"ç¬¦ç´™"NOR, ({ "fu zhi" })); 
      set_weight(20); 
      if( clonep() ) 
          set_default_object(__FILE__); 
      else
      { 
-         set("unit", "ÕÅ"); 
+         set("unit", "å¼µ"); 
          set("no_put", 1);
          set("no_sell", 1);
-         set("long", "ÕâÊÇÒ»ÕÅµÀÊ¿ÃÇÓÃÀ´ÇıÄ§×½¹íµÄ·ûÖ½£¬ÉÏÃæ»­×ÅÒ»Ğ©Ææ¹ÖµÄºìÉ«·ûºÅ¡£\n"); 
+         set("long", "é€™æ˜¯ä¸€å¼µé“å£«å€‘ç”¨ä¾†é©…é­”æ‰é¬¼çš„ç¬¦ç´™ï¼Œä¸Šé¢ç•«è‘—ä¸€äº›å¥‡æ€ªçš„ç´…è‰²ç¬¦è™Ÿã€‚\n"); 
      } 
      setup(); 
 } 

@@ -5,20 +5,20 @@ inherit HEAD;
 
 void create()
 {
-        set_name(HIG"´äÓð"NOR, ({"cui yu", "yu"}));
+        set_name(HIG"ç¿ ç¾½"NOR, ({"cui yu", "yu"}));
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ö§");
+                set("unit", "æ”¯");
                 set("long", 
-"Ò»Ö§´äÂÌµÄÓðÃ«¡£\n");
+"ä¸€æ”¯ç¿ ç¶ çš„ç¾½æ¯›ã€‚\n");
                 set("value", 800);
                 set("material", "plant");
                 set_weight(10);
                 set("armor_prop/armor", 10);
                 set("armor_prop/per", 3);
-                set("wear_msg", "$NÇáÇáµØ°ÑÒ»¶ä$n´÷ÔÚÍ·ÉÏ¡£\n");
-                set("unequip_msg", "$NÇáÇáµØ°Ñ$n´ÓÍ·ÉÏÕªÁËÏÂÀ´¡£\n");
+                set("wear_msg", "$Nè¼•è¼•åœ°æŠŠä¸€æœµ$næˆ´åœ¨é ­ä¸Šã€‚\n");
+                set("unequip_msg", "$Nè¼•è¼•åœ°æŠŠ$nå¾žé ­ä¸Šæ‘˜äº†ä¸‹ä¾†ã€‚\n");
         }
         setup();
 }

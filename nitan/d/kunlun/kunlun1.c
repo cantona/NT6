@@ -1,11 +1,11 @@
 inherit ROOM;
 void create()
 {
-        set("short", "����ɽ´");
+        set("short", "昆侖山麓");
         set("long", @LONG
-��һ����ľ������ɽʯ��ᾣ��������ǲ��㣬ɽ�ϻ�ѩ���񣬵�
-·��᫣��������Ƿ�����ת������ɽ�£�����һ�������֡���������
-�����������������֦�½��ᡣ
+這一帶樹木叢生，山石嶙峋，行走甚是不便，山上積雪更厚，道
+路崎嶇，行走自是費力。轉過兩個山坡，進了一座大鬆林。林中鬆樹
+都是數百年的老樹，枝柯交橫。
 LONG );
         set("no_new_clean_up", 0);
         set("outdoors", "kunlun");

@@ -1,19 +1,19 @@
 // Copyright (C) 2003, by Lonely. All rights reserved.
 // This software can not be used, copied, or modified 
 // in any form without the written permission from authors.
-// pi.c ñÔ½« ĞşÎäÄÚÃÅ
+// pi.c è£¨å°‡ ç„æ­¦å…§é–€
 
 #include <ansi.h>
 inherit NPC;
 
 void create()
 {
-        set_name("ñÔ½«", ({ "pi jiang", "pi", "jiang" }));
-        set("gender", "ÄĞĞÔ");
+        set_name("è£¨å°‡", ({ "pi jiang", "pi", "jiang" }));
+        set("gender", "ç”·æ€§");
         set("age", random(10) + 30);
         set("str", 25);
         set("dex", 16);
-        set("long", "ÕâÊÇÒ»¸ö´óËÎÄêÇá½«Áì£¬ÂúÁ³Õ÷³¾¡£\n");
+        set("long", "é€™æ˜¯ä¸€å€‹å¤§å®‹å¹´è¼•å°‡é ˜ï¼Œæ»¿è‡‰å¾å¡µã€‚\n");
         set("combat_exp", 45000);
         set("shen_type", 1);
         set("attitude", "peaceful");
@@ -56,12 +56,12 @@ void greeting(object ob)
                 return;
 
         if( query_temp("guo_shoucheng/start_job", ob) == 1 )
-                say("ñÔ½«ÖåÁËÖåÃ¼£ºÕâÎ»" + RANK_D->query_respect(ob) + "£¬Äã»¹ÊÇ°²ĞÄÊØ³Ç°É¡£\n");
+                say("è£¨å°‡çšºäº†çšºçœ‰ï¼šé€™ä½" + RANK_D->query_respect(ob) + "ï¼Œä½ é‚„æ˜¯å®‰å¿ƒå®ˆåŸå§ã€‚\n");
         else 
         if( query_temp("guo_shoucheng/mark_shadi", ob) == 2
          && !query_temp("guo_shoucheng/job_over", ob) )
         {
-                say("ñÔ½«¹°ÊÖËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob) + "£¬ÄãÀ´µÃÕıÊÇÊ±ºò£¬ÃÉ¹Å÷°×ÓÒÑ¾­¿ì¹¥ÉÏ³ÇÁË¡£\n");
+                say("è£¨å°‡æ‹±æ‰‹èªªé“ï¼šé€™ä½" + RANK_D->query_respect(ob) + "ï¼Œä½ ä¾†å¾—æ­£æ˜¯æ™‚å€™ï¼Œè’™å¤é¼å­å·²ç¶“å¿«æ”»ä¸ŠåŸäº†ã€‚\n");
                 
                 set("env/combatd", 4, ob);
                 ob->apply_condition("jobshadi_limit", 10 + random(5));
@@ -72,7 +72,7 @@ void greeting(object ob)
         } else
         if( query_temp("guo_shoucheng/job_over", ob) )
         {
-                say("ñÔ½«¹°ÊÖËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob) + "£¬ÄãÒÑ¾­¿ÉÒÔ»ØÈ¥¸´ÃüÁË¡£\n");
+                say("è£¨å°‡æ‹±æ‰‹èªªé“ï¼šé€™ä½" + RANK_D->query_respect(ob) + "ï¼Œä½ å·²ç¶“å¯ä»¥å›å»å¾©å‘½äº†ã€‚\n");
                 return;
         } 
 
@@ -88,13 +88,13 @@ void to_rob(object ob)
 
         room = environment(ob);
         
-        if( query("short", environment(ob)) == "ÇàÁúÄÚÃÅ" )
+        if( query("short", environment(ob)) == "é’é¾å…§é–€" )
         {
                 robber = new(__DIR__"robber1");
                 robber->do_change(ob);
                 set("want_kill", ob, robber);
                 robber->move(room);
-                message_vision(HIR "Í»È»³ÇÏÂÅÀÉÏÀ´Ò»¸öÃÉ¹Å±øÊ¿¡£\n" NOR, this_player()); 
+                message_vision(HIR "çªç„¶åŸä¸‹çˆ¬ä¸Šä¾†ä¸€å€‹è’™å¤å…µå£«ã€‚\n" NOR, this_player()); 
                 robber->kill_ob(ob);
                 ob->kill_ob(robber);
         }
@@ -102,33 +102,33 @@ void to_rob(object ob)
 
 int accept_kill(object me) 
 {
-        message_vision(CYN "$N" CYN "´óÅ­µÀ£º¡°¸øÎÒ¹ö£¡¡±Ëµ°ÕÒ»ÕÆ°Ñ$n" CYN "Åüµ¹ÔÚµØ¡£\n" NOR, this_object(), me); 
+        message_vision(CYN "$N" CYN "å¤§æ€’é“ï¼šâ€œçµ¦æˆ‘æ»¾ï¼â€èªªç½·ä¸€æŒæŠŠ$n" CYN "åŠˆå€’åœ¨åœ°ã€‚\n" NOR, this_object(), me); 
         me->unconcious(); 
         return -1; 
 }
 
 int accept_ansuan(object who) 
 {
-        return notify_fail("Äã¸ÕÏë°µËã£¬¿ÉÊÇÑÛÇ°Ò»»¨£¬¿´²»Ì«Çå³ş¡£\n"); 
+        return notify_fail("ä½ å‰›æƒ³æš—ç®—ï¼Œå¯æ˜¯çœ¼å‰ä¸€èŠ±ï¼Œçœ‹ä¸å¤ªæ¸…æ¥šã€‚\n"); 
 }
 
 int accept_hit(object me) 
 {
 
-        message_vision(CYN "$N" CYN "´óÅ­µÀ£º¡°¸øÎÒ¹ö£¡¡±Ëµ°ÕÒ»ÕÆ°Ñ$n" CYN "Åüµ¹ÔÚµØ¡£\n" NOR, this_object(), me); 
+        message_vision(CYN "$N" CYN "å¤§æ€’é“ï¼šâ€œçµ¦æˆ‘æ»¾ï¼â€èªªç½·ä¸€æŒæŠŠ$n" CYN "åŠˆå€’åœ¨åœ°ã€‚\n" NOR, this_object(), me); 
         me->unconcious(); 
         return -1; 
 }
 
 int accept_fight(object who) 
 {
-        command("say Ã»ĞËÈ¤¡£"); 
+        command("say æ²’èˆˆè¶£ã€‚"); 
         return 0; 
 }
 
 void fight_ob(object ob) 
 {
-        message_vision(CYN "$N" CYN "´óÅ­µÀ£º¡°¸øÎÒ¹ö£¡¡±Ëµ°ÕÒ»ÕÆ°Ñ$n" CYN "Åüµ¹ÔÚµØ¡£\n" NOR, this_object(), ob); 
+        message_vision(CYN "$N" CYN "å¤§æ€’é“ï¼šâ€œçµ¦æˆ‘æ»¾ï¼â€èªªç½·ä¸€æŒæŠŠ$n" CYN "åŠˆå€’åœ¨åœ°ã€‚\n" NOR, this_object(), ob); 
         ob->unconcious(); 
         return; 
 }

@@ -9,19 +9,19 @@ int main(object me, string arg)
         object ob;
 
         if (! arg)
-                return notify_fail("ÄãÒªºÍË­ÍÑÀë¹ØÏµ£¿\n");
+                return notify_fail("ä½ è¦å’Œèª°è„«é›¢é—œç³»ï¼Ÿ\n");
 
         if (! objectp(ob = present(arg, environment(me))))
-                return notify_fail("ÄãÒªºÍË­ÍÑÀë¹ØÏµ£¿\n");
+                return notify_fail("ä½ è¦å’Œèª°è„«é›¢é—œç³»ï¼Ÿ\n");
 
         if( query_temp("owner", ob) != query("id", me) )
-                return notify_fail("Äã²¢²»ÊÇ" + ob->name() + "µÄÖ÷ÈË°¡£¬·¢Ê²Ã´»°£¿\n");
+                return notify_fail("ä½ ä¸¦ä¸æ˜¯" + ob->name() + "çš„ä¸»äººå•Šï¼Œç™¼ä»€éº¼è©±ï¼Ÿ\n");
 
         if( query("can_speak", ob) )
-                message_vision("$NµÀ£º×ß°É£¬" + ob->name() +
-                               "£¬Äã×ß°É¡£\n", me, ob);
+                message_vision("$Né“ï¼šèµ°å§ï¼Œ" + ob->name() +
+                               "ï¼Œä½ èµ°å§ã€‚\n", me, ob);
         else
-                message_vision("$NºÜ´È±¯µØ°Ñ$n·ÅÀë£¬ÈÎÆä»Ø¹é×ÔÈ»ÁË¡£\n", me, ob);
+                message_vision("$Nå¾ˆæ…ˆæ‚²åœ°æŠŠ$næ”¾é›¢ï¼Œä»»å…¶å›æ­¸è‡ªç„¶äº†ã€‚\n", me, ob);
 
         if( query_temp("comedby", me) == ob )
                 delete_temp("comedby", me);
@@ -35,9 +35,9 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : release <¶ÔÏó>
+æŒ‡ä»¤æ ¼å¼ : release <å°è±¡>
 
-´ËÖ¸Áî¿ÉÓÃÓÚÈÃÄãµÄ¸úËæÕß»òÊÇÑ±ÑøµÄ¶¯Îï½áÊøÖ÷Å«×´Ì¬¡£
+æ­¤æŒ‡ä»¤å¯ç”¨äºè®“ä½ çš„è·Ÿéš¨è€…æˆ–æ˜¯é¦´é¤Šçš„å‹•ç‰©çµæŸä¸»å¥´ç‹€æ…‹ã€‚
 
 HELP );
         return 1;

@@ -2,13 +2,13 @@
 inherit ITEM;
 void create()
 {
-     	set_name(HIR"Ïû¿ÊÖ¹¶öµ¤"NOR, ({ "xiaoke dan","dan"}));
+     	set_name(HIR"æ¶ˆæ¸´æ­¢é¤“ä¸¹"NOR, ({ "xiaoke dan","dan"}));
       	set_weight(100);
       	if( clonep() )
             	set_default_object(__FILE__);
        else 
 	{       
-         	set("unit", "¿Å"); 
+         	set("unit", "é¡†"); 
              	set("no_get",1);
             	set("no_give",1);
       	}
@@ -24,12 +24,12 @@ int do_eat(string arg)
   	object me = this_player();
     
   	if(!id(arg)) return 0;
-  	if(me->is_busy()) return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É¡£\n");
+  	if(me->is_busy()) return notify_fail("ä½ ä¸Šä¸€å€‹å‹•ä½œé‚„æ²’æœ‰å®Œæˆã€‚\n");
     
    addn("food", 5*me->max_food_capacity(), me);
    addn("water", 5*me->max_food_capacity(), me);
 
- 	message_vision(HIR"$NÄÃÆğÏû¿ÊÖ¹¶öµ¤³ÔÁËÏÂÈ¥£¬¸Ğ¾õ¾«ÉñÒ»Õñ£¬¼¢¿ÊµÄ¸Ğ¾õ²»¸´´æÔÚ¡£\n"NOR,me);
+ 	message_vision(HIR"$Næ‹¿èµ·æ¶ˆæ¸´æ­¢é¤“ä¸¹åƒäº†ä¸‹å»ï¼Œæ„Ÿè¦ºç²¾ç¥ä¸€æŒ¯ï¼Œé¥‘æ¸´çš„æ„Ÿè¦ºä¸å¾©å­˜åœ¨ã€‚\n"NOR,me);
        destruct(this_object());
        return 1;
 }

@@ -29,7 +29,7 @@ void remove(string euid)
                 return;
 
         if( sizeof(events) > 0 )
-                error("ÅÅ³Ì¾«Áé£ºÄ¿Ç°ÕıÔÚÖ´ĞĞÅÅ³ÌÏµÍ³£¬Äã²»ÄÜ´İ»ÙÅÅ³Ì¾«Áé¡£\n");
+                error("æ’ç¨‹ç²¾éˆï¼šç›®å‰æ­£åœ¨åŸ·è¡Œæ’ç¨‹ç³»çµ±ï¼Œä½ ä¸èƒ½æ‘§æ¯€æ’ç¨‹ç²¾éˆã€‚\n");
 }
 
 int evaluate_event(int id)
@@ -44,11 +44,11 @@ int evaluate_event(int id)
 
         if( functionp(event[EVENT_OBJECT]) )
         {
-                monitor(sprintf("Ö´ĞĞº¯Êı %O", event[EVENT_OBJECT]));
+                monitor(sprintf("åŸ·è¡Œå‡½æ•¸ %O", event[EVENT_OBJECT]));
                 evaluate(event[EVENT_OBJECT]);
         } else {
                 mixed args = ({ event[EVENT_FUNCTION] }) + event[EVENT_ARGUMENT..sizeof(event)-1];
-                monitor(sprintf("Ö´ĞĞ %O->%s", event[EVENT_OBJECT], event[EVENT_FUNCTION]));
+                monitor(sprintf("åŸ·è¡Œ %O->%s", event[EVENT_OBJECT], event[EVENT_FUNCTION]));
                 monitor(sprintf("call_other(%O, %O)", event[EVENT_OBJECT], args));
                 call_other(event[EVENT_OBJECT], args);
         }
@@ -66,7 +66,7 @@ varargs int set_event(mixed time, int loop, mixed ob, mixed func, mixed args...)
 {
         mixed event;
 
-        if( !ob ) error("²ÎÊı¹ıÉÙ");
+        if( !ob ) error("åƒæ•¸éå°‘");
         if( functionp(ob) )
                 event = ({ loop, geteuid(previous_object()), 0, time, ob });
         else
@@ -101,7 +101,7 @@ void check_event()
 {
         foreach( int id, mixed event in events )
                 if( !event[EVENT_OBJECT] )
-                        // É¾³ıÒÑÒÅÊ§Îï¼ş»òº¯Ê½Ö¸±êµÄÊÂ¼ş
+                        // åˆªé™¤å·²éºå¤±ç‰©ä»¶æˆ–å‡½å¼æŒ‡æ¨™çš„äº‹ä»¶
                         map_delete(events, id);
 }
 
@@ -117,20 +117,20 @@ void heart_beat()
         if( !sizeof(events) ) return;
         if( !last_update_time ) last_update_time = time();
 
-        i = time() - last_update_time;  // ¼ÇËãÃ¿´ÎĞÄÌøÖ®Ê±¼ä²î
-        last_update_time = time();      // ¼ÇÂ¼×îºóÒ»´ÎĞÄÌøÊ±¼ä
+        i = time() - last_update_time;  // è¨˜ç®—æ¯æ¬¡å¿ƒè·³ä¹‹æ™‚é–“å·®
+        last_update_time = time();      // è¨˜éŒ„æœ€å¾Œä¸€æ¬¡å¿ƒè·³æ™‚é–“
 
         foreach( int id, mixed event in events ) {
                 if( undefinedp(events[id]) ) continue; 
-                if( !event[EVENT_OBJECT] ) {       // É¾³ıÒÑÒÅÊ§Îï¼ş»òº¯Ê½Ö¸±êµÄÊÂ¼ş
+                if( !event[EVENT_OBJECT] ) {       // åˆªé™¤å·²éºå¤±ç‰©ä»¶æˆ–å‡½å¼æŒ‡æ¨™çš„äº‹ä»¶
                         map_delete(events, id);
                         continue;
-                } if( event[EVENT_CUR_TIME] < event[EVENT_MAX_TIME] ) {       // Î´³¬¹ıÊÂ¼şÑ­»·Ê±¼ä
+                } if( event[EVENT_CUR_TIME] < event[EVENT_MAX_TIME] ) {       // æœªè¶…éäº‹ä»¶å¾ªç’°æ™‚é–“
                         event[EVENT_CUR_TIME] += i;
-                } else {       // ÒÑ³¬¹ıÊÂ¼şÑ­»·Ê±¼ä
+                } else {       // å·²è¶…éäº‹ä»¶å¾ªç’°æ™‚é–“
                         evaluate_event(id);
                         event[EVENT_CUR_TIME] = 0;
-                        if( !event[EVENT_LOOP] ) map_delete(events, id); // Ö´ĞĞºóÉ¾³ı
+                        if( !event[EVENT_LOOP] ) map_delete(events, id); // åŸ·è¡Œå¾Œåˆªé™¤
                 }
         }
 }
@@ -138,9 +138,9 @@ void heart_beat()
 void create()
 {
         seteuid(ROOT_UID);
-        set("channel_id", "ÅÅ³Ì¾«Áé");
-        monitor("ÅÅ³ÌÏµÍ³ÒÑ¾­Æô¶¯¡£");
-        // CHANNEL_D->do_channel(this_object(), "sys", "ÅÅ³ÌÏµÍ³ÒÑ¾­Æô¶¯¡£");
+        set("channel_id", "æ’ç¨‹ç²¾éˆ");
+        monitor("æ’ç¨‹ç³»çµ±å·²ç¶“å•Ÿå‹•ã€‚");
+        // CHANNEL_D->do_channel(this_object(), "sys", "æ’ç¨‹ç³»çµ±å·²ç¶“å•Ÿå‹•ã€‚");
 
         set_heart_beat(1);
 }

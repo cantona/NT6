@@ -1,5 +1,5 @@
 // This program is a part of NT MudLIB
-// /d/ruzhou/npc/meipo.c Ö»´¦Àí½á»éÓë°İÌÃ
+// /d/ruzhou/npc/meipo.c åªè™•ç†çµå©šèˆ‡æ‹œå ‚
 
 #include <ansi.h>
 #define MARRY_RING      "/clone/misc/wedding-ring.c"
@@ -23,24 +23,24 @@ int return_home(object);
 
 void create()
 {
-        set_name("Ã½ÆÅ", ({ "mei po", "meipo", "mei", "po" }) );
-        set("gender", "Å®ĞÔ" );
-        //set("nickname", HIR "½á»éµÃÓĞÊ¼ÓĞÖÕ£¬" HIC "±ØĞë" HIR "×ßÍêÁ÷³Ì£¡£¡£¡£¡£¡£¡" NOR); 
-        set("title", "ºìÄï×¯");
+        set_name("åª’å©†", ({ "mei po", "meipo", "mei", "po" }) );
+        set("gender", "å¥³æ€§" );
+        //set("nickname", HIR "çµå©šå¾—æœ‰å§‹æœ‰çµ‚ï¼Œ" HIC "å¿…é ˆ" HIR "èµ°å®Œæµç¨‹ï¼ï¼ï¼ï¼ï¼ï¼" NOR); 
+        set("title", "ç´…å¨˜èŠ");
         set("age", 43);
-        set("long","Ò»Î»¾«Ã÷ÄÜ¸ÉµÄÀÏÃ½ÆÅ¡£\n");
+        set("long","ä¸€ä½ç²¾æ˜èƒ½å¹¹çš„è€åª’å©†ã€‚\n");
         set("combat_exp", 100000);
         set("attitude", "friendly");
         set("inquiry", ([
-                "½á»é" : "Ã½ÆÅĞ¦ÃĞÃĞµØµãÍ·µÀ£º¡°ÊÇ°¡... Òª½á»é(marry)µ±È»ÒªÕÒÎÒÀ´×öÃ½µÄÑ½£¡¡±\n",
-                "marry" : "Ã½ÆÅĞ¦ÃĞÃĞµØµãÍ·µÀ£º¡°ÊÇ°¡... Òª½á»é(marry)µ±È»ÒªÕÒÎÒÀ´×öÃ½µÄÑ½£¡¡±\n",
-                "µÇ¼Ç" : "Ã½ÆÅĞ¦ÃĞÃĞµØµãÍ·µÀ£º¡°ÊÇ°¡... Òª½á»é(marry)µÇ¼Çµ±È»ÒªÕÒÎÒÀ´×öÃ½µÄÑ½£¡¡±\n",
-                "Àë»é" : "Ã½ÆÅÁ³É«Ò»±ä£¬ÓĞµãÃãÇ¿µØĞ¦µÀ£º¡°Òª...Àë»é(unmarry)£¿°¦...£¡ÎÒ¿ÉÊÇ¿´ÄãÃÇ³É»éµÄÑ½£¡\n"
-                      "²»¹ıÄãÃÇÒªÊÇÒ»¶¨ÒªÀëµÄ»°£¬ÄÇµÃÈ¥ËÕÖİÖª¸®´¦°ìÀíÁË£¡¡±\n",
-                "unmarry" : "Ã½ÆÅÁ³É«Ò»±ä£¬ÓĞµãÃãÇ¿µØĞ¦µÀ£º¡°Òª...Àë»é(unmarry)£¿°¦...£¡ÎÒ¿ÉÊÇ¿´ÄãÃÇ³É»éµÄÑ½£¡\n"
-                      "²»¹ıÄãÃÇÒªÊÇÒ»¶¨ÒªÀëµÄ»°£¬ÄÇµÃÈ¥ËÕÖİÖª¸®´¦°ìÀíÁË£¡¡±\n",
-                "·ÑÓÃ":"Ã½ÆÅÎûÎûĞ¦µÀ£º¡°½á»éÕâÃ´´óµÄÊÂ£¬»¨·ÑµÄµØ·½¿É²»ÉÙ£¬Òª50 gold£¬,¶øÀë»é\n"
-                      "¸üÒª»¨·Ñ²»ÉÙÇ®£¬ËùÒÔÒª100 gold¡£¡±\n",
+                "çµå©š" : "åª’å©†ç¬‘çœ¯çœ¯åœ°é»é ­é“ï¼šâ€œæ˜¯å•Š... è¦çµå©š(marry)ç•¶ç„¶è¦æ‰¾æˆ‘ä¾†åšåª’çš„å‘€ï¼â€\n",
+                "marry" : "åª’å©†ç¬‘çœ¯çœ¯åœ°é»é ­é“ï¼šâ€œæ˜¯å•Š... è¦çµå©š(marry)ç•¶ç„¶è¦æ‰¾æˆ‘ä¾†åšåª’çš„å‘€ï¼â€\n",
+                "ç™»è¨˜" : "åª’å©†ç¬‘çœ¯çœ¯åœ°é»é ­é“ï¼šâ€œæ˜¯å•Š... è¦çµå©š(marry)ç™»è¨˜ç•¶ç„¶è¦æ‰¾æˆ‘ä¾†åšåª’çš„å‘€ï¼â€\n",
+                "é›¢å©š" : "åª’å©†è‡‰è‰²ä¸€è®Šï¼Œæœ‰é»å‹‰å¼·åœ°ç¬‘é“ï¼šâ€œè¦...é›¢å©š(unmarry)ï¼Ÿå”‰...ï¼æˆ‘å¯æ˜¯çœ‹ä½ å€‘æˆå©šçš„å‘€ï¼\n"
+                      "ä¸éä½ å€‘è¦æ˜¯ä¸€å®šè¦é›¢çš„è©±ï¼Œé‚£å¾—å»è˜‡å·çŸ¥åºœè™•è¾¦ç†äº†ï¼â€\n",
+                "unmarry" : "åª’å©†è‡‰è‰²ä¸€è®Šï¼Œæœ‰é»å‹‰å¼·åœ°ç¬‘é“ï¼šâ€œè¦...é›¢å©š(unmarry)ï¼Ÿå”‰...ï¼æˆ‘å¯æ˜¯çœ‹ä½ å€‘æˆå©šçš„å‘€ï¼\n"
+                      "ä¸éä½ å€‘è¦æ˜¯ä¸€å®šè¦é›¢çš„è©±ï¼Œé‚£å¾—å»è˜‡å·çŸ¥åºœè™•è¾¦ç†äº†ï¼â€\n",
+                "è²»ç”¨":"åª’å©†å˜»å˜»ç¬‘é“ï¼šâ€œçµå©šé€™éº¼å¤§çš„äº‹ï¼ŒèŠ±è²»çš„åœ°æ–¹å¯ä¸å°‘ï¼Œè¦50 goldï¼Œ,è€Œé›¢å©š\n"
+                      "æ›´è¦èŠ±è²»ä¸å°‘éŒ¢ï¼Œæ‰€ä»¥è¦100 goldã€‚â€\n",
         ]) );
         set_skill("literate", 100);
         set_skill("dodge", 500);
@@ -52,32 +52,32 @@ void create()
 void init()
 {
         add_action("do_marry", "marry");
-        add_action("do_bai","°İ");
-        add_action("do_name","Çë");
+        add_action("do_bai","æ‹œ");
+        add_action("do_name","è«‹");
 }
 
-int accept_object(object me, object ob)//½»Ç®
+int accept_object(object me, object ob)//äº¤éŒ¢
 {
         object meipo = this_object();
 
         if( !query("money_id", ob) )
-             return notify_fail("Ã½ÆÅÎûÎûĞ¦µÀ£º¡°ÎÒÀÏÆÅ×ÓÓĞ³ÔÓĞºÈ²»ÊÕÊ²Ã´Àñ£¬Äú»¹ÊÇÄÃ»ØÈ¥°É£¡¡±\n");
-        if( !query_temp("ask_money", me))//ÓÉÏÂÃæÅĞ¶Ï½»Ç®µÄÈËÊÇ·ñ·ûºÏ½á»éÌõ¼ş¡£
-                   return notify_fail("Ã½ÆÅÃÔ»óµØÎÊ£º¡°ÄãÏë¸ÉÊ²Ã´£¿°×¸øÎÒÇ®£¿¡±\n");
-          if( query_temp("marry/money", meipo))//ÒÑ¾­ÓĞÈË½»ÁËÇ®ÁË
-                  return notify_fail("Ã½ÆÅËµ£º¡°µÈÎÒÃ¦ÍêÁËÒ»¶ÔÔÙËµ¡£¡±\n");
+             return notify_fail("åª’å©†å˜»å˜»ç¬‘é“ï¼šâ€œæˆ‘è€å©†å­æœ‰åƒæœ‰å–ä¸æ”¶ä»€éº¼ç¦®ï¼Œæ‚¨é‚„æ˜¯æ‹¿å›å»å§ï¼â€\n");
+        if( !query_temp("ask_money", me))//ç”±ä¸‹é¢åˆ¤æ–·äº¤éŒ¢çš„äººæ˜¯å¦ç¬¦åˆçµå©šæ¢ä»¶ã€‚
+                   return notify_fail("åª’å©†è¿·æƒ‘åœ°å•ï¼šâ€œä½ æƒ³å¹¹ä»€éº¼ï¼Ÿç™½çµ¦æˆ‘éŒ¢ï¼Ÿâ€\n");
+          if( query_temp("marry/money", meipo))//å·²ç¶“æœ‰äººäº¤äº†éŒ¢äº†
+                  return notify_fail("åª’å©†èªªï¼šâ€œç­‰æˆ‘å¿™å®Œäº†ä¸€å°å†èªªã€‚â€\n");
           if(ob->value() < 500000)
-                return notify_fail("Ã½ÆÅÖåÁËÖåÃ¼Í·ËµµÀ£º¡°Ç®Ì«ÉÙÁË°É£¿50 gold£¬½á»éÕâÃ´´óµÄÊÂ£¬ÔÙÉÙ¾Í²»ĞĞÁË¡£¡±\n");
-        message_vision("Ã½ÆÅ½Ó¹ıÇ®¶Ô$NËµ£º¡°ÕâÎ»"+RANK_D->query_respect(me)+"ÎÒ¿ÉÃ»×¬ÄãµÄÇ®£¬´ô»á¶ùÎÒ»¹ÒªÕÅÂŞÏ²ÌÃ¡¢»¹\n"
-                   "Òª¹ÍÈË¡¢»¹ÓĞ°ì¾ÆÑç£¬¸ã²»ºÃÎÒ»¹µÃÅâÉÏÒ»µãµÄ£¡¶øÇÒÎÒ»¹¿ÉÒÔ°ïÄã·¢ÇëÊø£¬\n"
-        "Äã¿ÉÒÔÊäÈë"HIC"¡®Çë <Ä³ÈËµÄÖĞÃû>¡¯"NOR"ÇëÄãµÄÅóÓÑÀ´²Î¼Ó»éÀñ¡£¡±\n",me);
-        set_temp("marry/money", me->name(), meipo);//¼ÇÂ¼¸ø¹ıÇ®µÄÈË
-        log_file("static/MARRY",sprintf("%s(%s)½á»é½»Ç®in%s¡£\n",query("name", me),
+                return notify_fail("åª’å©†çšºäº†çšºçœ‰é ­èªªé“ï¼šâ€œéŒ¢å¤ªå°‘äº†å§ï¼Ÿ50 goldï¼Œçµå©šé€™éº¼å¤§çš„äº‹ï¼Œå†å°‘å°±ä¸è¡Œäº†ã€‚â€\n");
+        message_vision("åª’å©†æ¥ééŒ¢å°$Nèªªï¼šâ€œé€™ä½"+RANK_D->query_respect(me)+"æˆ‘å¯æ²’è³ºä½ çš„éŒ¢ï¼Œå‘†æœƒå…’æˆ‘é‚„è¦å¼µç¾…å–œå ‚ã€é‚„\n"
+                   "è¦é›‡äººã€é‚„æœ‰è¾¦é…’å®´ï¼Œæä¸å¥½æˆ‘é‚„å¾—è³ ä¸Šä¸€é»çš„ï¼è€Œä¸”æˆ‘é‚„å¯ä»¥å¹«ä½ ç™¼è«‹æŸï¼Œ\n"
+        "ä½ å¯ä»¥è¼¸å…¥"HIC"â€˜è«‹ <æŸäººçš„ä¸­å>â€™"NOR"è«‹ä½ çš„æœ‹å‹ä¾†åƒåŠ å©šç¦®ã€‚â€\n",me);
+        set_temp("marry/money", me->name(), meipo);//è¨˜éŒ„çµ¦ééŒ¢çš„äºº
+        log_file("static/MARRY",sprintf("%s(%s)çµå©šäº¤éŒ¢in%sã€‚\n",query("name", me),
                 query("id", me),ctime(time())));
           return 1;
 }
 
-int do_name(string target)//Çë¿ÍÈË
+int do_name(string target)//è«‹å®¢äºº
 {
         object me,ob,dest, *all;
         int i;
@@ -86,17 +86,17 @@ int do_name(string target)//Çë¿ÍÈË
         all = users();
 
         if (me->is_busy())
-                return notify_fail("Ã½ÆÅËµµÀ£º¡°ÄãÃ¦ÍêºóÔÙºÍÎÒËµ»°°É£¡¡±\n");
+                return notify_fail("åª’å©†èªªé“ï¼šâ€œä½ å¿™å®Œå¾Œå†å’Œæˆ‘èªªè©±å§ï¼â€\n");
         if( ob->is_fighting()||me->is_fighting() )
-                return notify_fail("Ã½ÆÅËµµÀ£º¡°ÏÖÔÚÃ»¹¦·ò£¡¡±\n");
+                return notify_fail("åª’å©†èªªé“ï¼šâ€œç¾åœ¨æ²’åŠŸå¤«ï¼â€\n");
         if( !living(ob) )
-                return notify_fail("Äã»¹ÊÇÏÈÏë°ì·¨°ÑÃ½ÆÅ¾ÈĞÑ°É¡£\n");
+                return notify_fail("ä½ é‚„æ˜¯å…ˆæƒ³è¾¦æ³•æŠŠåª’å©†æ•‘é†’å§ã€‚\n");
         if( query_temp("marry/money", ob) != me->name() )
-      return notify_fail("Ã½ÆÅÑÛ¾¦Ğ±ÁËĞ±Äã£º¡°ÄãÓÖÃ»½»Ç®£¡¡±\n");
+      return notify_fail("åª’å©†çœ¼ç›æ–œäº†æ–œä½ ï¼šâ€œä½ åˆæ²’äº¤éŒ¢ï¼â€\n");
         if( query("marry/waiting_que", ob) )
-                return notify_fail("Ã½ÆÅĞ¦Ğ¦Ëµ£º¡°²»Òª¼±£¬ÎÒµÄĞ¡Ï²ÈµÃÇ»¹Ã»ÓĞ·É»ØÀ´ÄØ£¡¡±\n");
+                return notify_fail("åª’å©†ç¬‘ç¬‘èªªï¼šâ€œä¸è¦æ€¥ï¼Œæˆ‘çš„å°å–œéµ²å€‘é‚„æ²’æœ‰é£›å›ä¾†å‘¢ï¼â€\n");
         if( !target || target==" ")
-                return notify_fail("Ã½ÆÅ³é³öÒ»ÕÅÇë¼íĞ´ÁË¼¸±ÊÎÊ£º¡°ÄãÏëÇëË­À´²Î¼ÓÄãµÄ»éÀñ£¿¸æËßÎÒËû(Ëı)µÄÃû×Ö£¡¡±\n");
+                return notify_fail("åª’å©†æŠ½å‡ºä¸€å¼µè«‹æŸ¬å¯«äº†å¹¾ç­†å•ï¼šâ€œä½ æƒ³è«‹èª°ä¾†åƒåŠ ä½ çš„å©šç¦®ï¼Ÿå‘Šè¨´æˆ‘ä»–(å¥¹)çš„åå­—ï¼â€\n");
         for(i=0; i<sizeof(all); i++)
         {
                 if( query("env/invisible", all[i]))continue;
@@ -107,215 +107,215 @@ int do_name(string target)//Çë¿ÍÈË
                 }
         }
     if( !dest)
-                return notify_fail("Ã½ÆÅ¸æËßÄã£º¡°ºÜÒÅº¶£¬ÄúÏëÇëµÄÈËËûÏÖÔÚ²»ÔÚÓÎÏ·ÖĞ£¡¡±\n");
+                return notify_fail("åª’å©†å‘Šè¨´ä½ ï¼šâ€œå¾ˆéºæ†¾ï¼Œæ‚¨æƒ³è«‹çš„äººä»–ç¾åœ¨ä¸åœ¨éŠæˆ²ä¸­ï¼â€\n");
         if (dest->is_ghost())
-                   return notify_fail("Ã½ÆÅÍñÏ§µØµØ¸æËßÄã£º¡°¾İÎÒÃÇËùÖª£¬ÄúÒªÇëµÄÈËÒÑ¾­ËÀÁË£¬ÄúÇë½Ú°§Ë³±ã£¡¡±\n");
-        set("marry/waiting_que", 1, ob);//µÈÈµ
-        set("marry/me_name", me->name()+"("+query("id", me)+")", ob);//Ö÷ÈËÃû
-        message_vision(HIG"Ã½ÆÅÒ»ÕÅÏ²¼íÉÏĞ´ÉÏ¼¸¸ö×Ö£¬Ë«ÊÖÒ»ÅÄ£¬´Ó¶«ÀÈ¾Í·É³öÒ»Ö»Ğ¡Ï²Èµ£¬ÏÎ×ÅÏ²Ìû£¬\n"
-                "ÆËã¶ã¶µØÒ»ÏÂ×ÓÏûÊ§ÔÚÌì¿ÕÖĞÁË¡£\n" NOR,me);
+                   return notify_fail("åª’å©†å©‰æƒœåœ°åœ°å‘Šè¨´ä½ ï¼šâ€œæ“šæˆ‘å€‘æ‰€çŸ¥ï¼Œæ‚¨è¦è«‹çš„äººå·²ç¶“æ­»äº†ï¼Œæ‚¨è«‹ç¯€å“€é †ä¾¿ï¼â€\n");
+        set("marry/waiting_que", 1, ob);//ç­‰éµ²
+        set("marry/me_name", me->name()+"("+query("id", me)+")", ob);//ä¸»äººå
+        message_vision(HIG"åª’å©†ä¸€å¼µå–œæŸ¬ä¸Šå¯«ä¸Šå¹¾å€‹å­—ï¼Œé›™æ‰‹ä¸€æ‹ï¼Œå¾æ±å»Šå°±é£›å‡ºä¸€åªå°å–œéµ²ï¼ŒéŠœè‘—å–œå¸–ï¼Œ\n"
+                "æ’²æ„£æ„£åœ°ä¸€ä¸‹å­æ¶ˆå¤±åœ¨å¤©ç©ºä¸­äº†ã€‚\n" NOR,me);
         call_out("do_chase", 1, ob,dest);
         return 1;
 }
 
-int do_chase(object ob,object dest)//Ï²ÈµËÍÇë¼í
+int do_chase(object ob,object dest)//å–œéµ²é€è«‹æŸ¬
 {
         object obj;
 
         if( !objectp(dest) || !environment(dest) )
         {
-                call_out("do_ok",1,ob,1);//¼ÓÒ»¸öÊ§°ÜµÄ²ÎÊı»ØÈ¥
+                call_out("do_ok",1,ob,1);//åŠ ä¸€å€‹å¤±æ•—çš„åƒæ•¸å›å»
                 return 1;
         }
-        message_vision(HIY"\nÌì¿ÕÖĞÍ»È»·É¹ıÀ´Ò»Ö»»¨Ï²Èµ£¬ÂäÔÚ$N¼çÍ·£¬½«ÏÎ×ÅµÄÒ»ÕÅÏ²¼íµİ¸ø$N¡£\n" NOR, dest);
+        message_vision(HIY"\nå¤©ç©ºä¸­çªç„¶é£›éä¾†ä¸€åªèŠ±å–œéµ²ï¼Œè½åœ¨$Nè‚©é ­ï¼Œå°‡éŠœè‘—çš„ä¸€å¼µå–œæŸ¬éçµ¦$Nã€‚\n" NOR, dest);
         obj = new("/d/ruzhou/npc/obj/xitie");
-        obj->set_name(HIR+query("marry/me_name", ob)+"µÄ½á»éÇëÌû"NOR);
+        obj->set_name(HIR+query("marry/me_name", ob)+"çš„çµå©šè«‹å¸–"NOR);
         obj->move(dest);
         call_out("do_ok", 1, ob,0);
         return 1;
 }
 
-int do_ok(object ob,int flag)//Ï²ÈµËÍ¼í³É¹¦»ØÀ´
+int do_ok(object ob,int flag)//å–œéµ²é€æŸ¬æˆåŠŸå›ä¾†
 {
         if(flag)
-                message_vision("»¨Ï²Èµ´Ó´°ÍâÆËÀãÀãµØ·É½øÀ´£¬ÂäÔÚÃ½ÆÅÉíÅÔ£¬Ã½ÆÅÅ¶ÁËÒ»ÉùËµ£º¡°¸Õ²ÅµÄÄÇ¸öÈËÃ»ÕÒµ½£¬ÄãÏÈÇëÆäËüÈË°É£¡¡±\n",ob);
+                message_vision("èŠ±å–œéµ²å¾çª—å¤–æ’²æ¥æ¥åœ°é£›é€²ä¾†ï¼Œè½åœ¨åª’å©†èº«æ—ï¼Œåª’å©†å“¦äº†ä¸€è²èªªï¼šâ€œå‰›æ‰çš„é‚£å€‹äººæ²’æ‰¾åˆ°ï¼Œä½ å…ˆè«‹å…¶å®ƒäººå§ï¼â€\n",ob);
         else
-                message_vision("Í»È»¿´¼û»¨Ï²Èµ´Ó´°Íâ·É½øÀ´£¬ÂäÔÚÃ½ÆÅÉíÅÔ£¬Ã½ÆÅĞ¦ÃĞÃĞµØ¸§×Å»¨Ï²ÈµµÄÍ·ºó\n"
-                        "ËµµÀ£º¡°Çë¼í¸Õ²ÅÒÑ¾­¶¼ËÍµ½ÁË£¡Äú»¹ÏëÇëË­£¿²»ÏëÇëÁË¾Í¿ªÊ¼½á»éÊÖĞø(marry <ÄãµÄ¶ÔÏó>)°É£¡¡±\n",ob);
+                message_vision("çªç„¶çœ‹è¦‹èŠ±å–œéµ²å¾çª—å¤–é£›é€²ä¾†ï¼Œè½åœ¨åª’å©†èº«æ—ï¼Œåª’å©†ç¬‘çœ¯çœ¯åœ°æ’«è‘—èŠ±å–œéµ²çš„é ­å¾Œ\n"
+                        "èªªé“ï¼šâ€œè«‹æŸ¬å‰›æ‰å·²ç¶“éƒ½é€åˆ°äº†ï¼æ‚¨é‚„æƒ³è«‹èª°ï¼Ÿä¸æƒ³è«‹äº†å°±é–‹å§‹çµå©šæ‰‹çºŒ(marry <ä½ çš„å°è±¡>)å§ï¼â€\n",ob);
           delete("marry/waiting_que", ob);
         delete("marry/me_name", ob);
         return 1;
 }
 
-int do_marry(string arg) //ÅĞ¶Ï½á»é
+int do_marry(string arg) //åˆ¤æ–·çµå©š
 {
     object obj, me, ob, old_target, room, xlf;
         me = this_player();
         ob = this_object();
         if( query("marry/have_couple", ob) )
-                return notify_fail("Ã½ÆÅÒ»ã¶£º¡°°¡£¡½ñÌìÏ²ÊÂÕâÃ´¶à£¿¶Ô²»Æğ£¬ÎÒ°ÑÊÖÍ·ÕâÒ»¶ÔµÄ»éÊÂ°ìÍê£¬ÔÙ¸øÄã°ì°É£¡¡±\n");
+                return notify_fail("åª’å©†ä¸€æ„£ï¼šâ€œå•Šï¼ä»Šå¤©å–œäº‹é€™éº¼å¤šï¼Ÿå°ä¸èµ·ï¼Œæˆ‘æŠŠæ‰‹é ­é€™ä¸€å°çš„å©šäº‹è¾¦å®Œï¼Œå†çµ¦ä½ è¾¦å§ï¼â€\n");
 
     room = find_object("/d/city/zxlpath");
     if (! objectp(room))  room = load_object("/d/city/zxlpath");
     xlf = present("xi laifu", room);
     if (objectp(xlf))
-         return notify_fail("Ã½ÆÅĞ¦µÀ£º¡°°¡Ñ½Õæ²»´ÕÇÉ£¡Ï²ÀÏ°åÕıÔÚÖ÷³Ö»éÑç£¬" +
-                            "Òª²»½ñÌìÄãÃÇÏÈÈ¥ºÈ±­Ï²¾Æ£¬Ã÷¶ùÔÙ¸øÄãÃÇ°ì£¿¡±\n");
+         return notify_fail("åª’å©†ç¬‘é“ï¼šâ€œå•Šå‘€çœŸä¸æ¹Šå·§ï¼å–œè€æ¿æ­£åœ¨ä¸»æŒå©šå®´ï¼Œ" +
+                            "è¦ä¸ä»Šå¤©ä½ å€‘å…ˆå»å–æ¯å–œé…’ï¼Œæ˜å…’å†çµ¦ä½ å€‘è¾¦ï¼Ÿâ€\n");
 
 /*
-        if( query("gender", me) == "ÎŞĞÔ" )
-                return notify_fail("Ã½ÆÅºßÁËÒ»Éù£º¡°ÄãÎŞ¸ùÎŞĞÔ£¬½á¸öÊ²Ã´»é£¿£¡¡±\n");
-        if( (query("age", me)<14) && (query("gender", me) == "ÄĞĞÔ" )
-                 || (query("age", me)<14) && (query("gender", me) == "ÎŞĞÔ" )
-                 || (query("age", me)<14) && (query("gender", me) == "Å®ĞÔ") )
-                return notify_fail("Ã½ÆÅĞ¦ÎûÎûµØËµµÀ£º¡°ÄãÃÇÏÖÔÚ»¹ÄêÇá£¬ÒÔºóÔÙËµ°É£¡¡±\n");
+        if( query("gender", me) == "ç„¡æ€§" )
+                return notify_fail("åª’å©†å“¼äº†ä¸€è²ï¼šâ€œä½ ç„¡æ ¹ç„¡æ€§ï¼Œçµå€‹ä»€éº¼å©šï¼Ÿï¼â€\n");
+        if( (query("age", me)<14) && (query("gender", me) == "ç”·æ€§" )
+                 || (query("age", me)<14) && (query("gender", me) == "ç„¡æ€§" )
+                 || (query("age", me)<14) && (query("gender", me) == "å¥³æ€§") )
+                return notify_fail("åª’å©†ç¬‘å˜»å˜»åœ°èªªé“ï¼šâ€œä½ å€‘ç¾åœ¨é‚„å¹´è¼•ï¼Œä»¥å¾Œå†èªªå§ï¼â€\n");
 */
         if (me->is_busy())
-                return notify_fail("Ã½ÆÅËµµÀ£º¡°ÄãÏÖÔÚ²»ÊÇÕıÃ¦×ÅÂğ£¿¡±\n");
+                return notify_fail("åª’å©†èªªé“ï¼šâ€œä½ ç¾åœ¨ä¸æ˜¯æ­£å¿™è‘—å—ï¼Ÿâ€\n");
         if( me->is_fighting(ob) )
         {
                 if( !ob->is_killing(me) )
                         ob->kill_ob(me);
-                return notify_fail("Ã½ÆÅËµµÀ£º¡°ºÃ£¬ºÃ£¬ÀÏÄïËÍÄãÈ¥Òõ¼ä³É»é£¡¡±\n");
+                return notify_fail("åª’å©†èªªé“ï¼šâ€œå¥½ï¼Œå¥½ï¼Œè€å¨˜é€ä½ å»é™°é–“æˆå©šï¼â€\n");
         }
         if( ob->is_fighting() )
-                return notify_fail("Ã½ÆÅËµµÀ£º¡°Ã»¿´¼ûÕâ¶ùÓĞÈËµ·ÂÒÂğ£¡¡°\n");
+                return notify_fail("åª’å©†èªªé“ï¼šâ€œæ²’çœ‹è¦‹é€™å…’æœ‰äººæ—äº‚å—ï¼â€œ\n");
         if( !living(ob) )
-                return notify_fail("Äã»¹ÊÇÏÈÏë°ì·¨°ÑÃ½ÆÅ¾ÈĞÑ°É¡£\n");
+                return notify_fail("ä½ é‚„æ˜¯å…ˆæƒ³è¾¦æ³•æŠŠåª’å©†æ•‘é†’å§ã€‚\n");
         if( me->is_fighting() )
-                return notify_fail("Ã½ÆÅËµµÀ£ººÙºÙ£¬ÄãÏÈ»¹ÊÇÁÏÀíÍêÄãµÄÅóÓÑÔÙËµ°É£¡\n");
+                return notify_fail("åª’å©†èªªé“ï¼šå˜¿å˜¿ï¼Œä½ å…ˆé‚„æ˜¯æ–™ç†å®Œä½ çš„æœ‹å‹å†èªªå§ï¼\n");
         if( !environment() || base_name(environment()) != query("startroom"))
-                return notify_fail("Ã½ÆÅËµµÀ£º¡°Õæ±§Ç¸£¬ÎÒÏÖÔÚºÜÃ¦£¬ÇëÄúµÈÒ»»áµ½ºìÄïÌÃÀ´ÕÒÎÒ°É¡£¡±\n");
+                return notify_fail("åª’å©†èªªé“ï¼šâ€œçœŸæŠ±æ­‰ï¼Œæˆ‘ç¾åœ¨å¾ˆå¿™ï¼Œè«‹æ‚¨ç­‰ä¸€æœƒåˆ°ç´…å¨˜å ‚ä¾†æ‰¾æˆ‘å§ã€‚â€\n");
         if( query("class", me) == "bonze" || query("jobname", me) == "bonze" )
-                return notify_fail("Ã½ÆÅĞ¦µÀ£º¡°¹ş¹ş£¡ÔõÃ´£¬ĞÅ·ğµÄÒ²Ïë¿ªÉ«½äÁËÂğ?¡±\n");
+                return notify_fail("åª’å©†ç¬‘é“ï¼šâ€œå“ˆå“ˆï¼æ€éº¼ï¼Œä¿¡ä½›çš„ä¹Ÿæƒ³é–‹è‰²æˆ’äº†å—?â€\n");
         if( query("jobname", me) == "taoist" )
-                return notify_fail("Ã½ÆÅÒ¡ÁËÒ¡Í·µÀ£º¡°ÄãĞŞÁËµÀ¾¹»¹ÊÇ·²ĞÄ²»ãı£¬°¦£¡ÄãÒªÊÇÕæÏë£¬»¹ÊÇ»¹ÁËË×ÔÙÀ´°É£¡¡±\n");
+                return notify_fail("åª’å©†æ–äº†æ–é ­é“ï¼šâ€œä½ ä¿®äº†é“ç«Ÿé‚„æ˜¯å‡¡å¿ƒä¸æ³¯ï¼Œå”‰ï¼ä½ è¦æ˜¯çœŸæƒ³ï¼Œé‚„æ˜¯é‚„äº†ä¿—å†ä¾†å§ï¼â€\n");
         if(!arg ||!objectp(obj = present(arg, environment(me))))
-                return notify_fail("Ã½ÆÅËµµÀ£º¡°½á»é¿ÉÊÇÒªÁ½¸öÈËÒ»ÆğÀ´µÄÑ½£¡¡±\n");
+                return notify_fail("åª’å©†èªªé“ï¼šâ€œçµå©šå¯æ˜¯è¦å…©å€‹äººä¸€èµ·ä¾†çš„å‘€ï¼â€\n");
         if( query_temp("pending/pro", me) )
-                return notify_fail("Ã½ÆÅÆæµÀ£º¡°ß×£¿ÄãµÄ»éÀñ²»ÊÇÕıÔÚ½øĞĞÖĞÂğ£¿»¹ÒªÎÊÊ²Ã´£¿¡±\n");
+                return notify_fail("åª’å©†å¥‡é“ï¼šâ€œå’¦ï¼Ÿä½ çš„å©šç¦®ä¸æ˜¯æ­£åœ¨é€²è¡Œä¸­å—ï¼Ÿé‚„è¦å•ä»€éº¼ï¼Ÿâ€\n");
         if( query_temp("pending/pro", obj) )
-                return notify_fail("Ã½ÆÅËµµÀ£º¡°ÄãÏë¸ø±ğÈË½Á¾ÖÂğ£¿¡±\n");
+                return notify_fail("åª’å©†èªªé“ï¼šâ€œä½ æƒ³çµ¦åˆ¥äººæ”ªå±€å—ï¼Ÿâ€\n");
         if( !obj->is_character() )
-                return notify_fail("Ã½ÆÅËµµÀ£º¡°ÄãÕâ²»ÊÇÄÃ×Ô¼º¿ªäÌÂğ¡£¡±\n");
+                return notify_fail("åª’å©†èªªé“ï¼šâ€œä½ é€™ä¸æ˜¯æ‹¿è‡ªå·±é–‹æ¶®å—ã€‚â€\n");
 
         if( mapp(query("couple", me)) )
         {
                 if( query("couple/married", me)>2 )
-                        return notify_fail("Ã½ÆÅ·­ÁË·­ÒöÔµ²¾£¬°åÏÂÁ³ËµµÀ£º¡°ÎÒÔç¾Í¸úÄãËµ¹ı£¬ÔõÃ´ÓÖÀ´ÁË£¿\n"
-                                "Õâ´ÎÎÒÊµÔÚ²»ÄÜ°ïÄãÊ²Ã´ÁË£¬Äã½á»é´ÎÊıÌ«¶àÁË£¬°´³¯Í¢¸Ù¼Í£¬ÊÇ²»×¼ÔÙ¸øÄãÃÇ\n"
-                                "°ì½á»éÊÖĞøÁË£¬ÄãÃÇ×Ô¼ºÈ¥×ö¶ÔÒ°Ô§Ñì°É£¡\n");
+                        return notify_fail("åª’å©†ç¿»äº†ç¿»å§»ç·£ç°¿ï¼Œæ¿ä¸‹è‡‰èªªé“ï¼šâ€œæˆ‘æ—©å°±è·Ÿä½ èªªéï¼Œæ€éº¼åˆä¾†äº†ï¼Ÿ\n"
+                                "é€™æ¬¡æˆ‘å¯¦åœ¨ä¸èƒ½å¹«ä½ ä»€éº¼äº†ï¼Œä½ çµå©šæ¬¡æ•¸å¤ªå¤šäº†ï¼ŒæŒ‰æœå»·ç¶±ç´€ï¼Œæ˜¯ä¸æº–å†çµ¦ä½ å€‘\n"
+                                "è¾¦çµå©šæ‰‹çºŒäº†ï¼Œä½ å€‘è‡ªå·±å»åšå°é‡é´›é´¦å§ï¼\n");
                 if( query("couple/have_couple", me) )
                 {
                         if( obj == present(query("couple/couple_id", me),environment(me)) )
-                                return notify_fail("Ã½ÆÅÆæµÀ£º¡°ÄãÃÇ±¾À´¾ÍÊÇ·òÆŞÑ½£¡¸ÉÂï»¹ÒªÔÙÀ´£¿¡±\n");
-                        if( query("couple/couple_gender", me) == "ÕÉ·ò" )
-                                return notify_fail("Ã½ÆÅËµµÀ£º¡°ÄãÒÑ¾­ÊÇÓĞ·òÖ®¸¾ÁË£¬ÕâÀï²»ÔÊĞíÖØ»éµÄ¡£¡±\n");
+                                return notify_fail("åª’å©†å¥‡é“ï¼šâ€œä½ å€‘æœ¬ä¾†å°±æ˜¯å¤«å¦»å‘€ï¼å¹¹å˜›é‚„è¦å†ä¾†ï¼Ÿâ€\n");
+                        if( query("couple/couple_gender", me) == "ä¸ˆå¤«" )
+                                return notify_fail("åª’å©†èªªé“ï¼šâ€œä½ å·²ç¶“æ˜¯æœ‰å¤«ä¹‹å©¦äº†ï¼Œé€™è£¡ä¸å…è¨±é‡å©šçš„ã€‚â€\n");
                         else
-                                return notify_fail("Ã½ÆÅËµµÀ£º¡°ÄãÒÑ¾­ÊÇÓĞ¸¾Ö®·òÁË£¬ÕâÀï²»ÔÊĞíÖØ»éµÄ¡£¡±\n");
+                                return notify_fail("åª’å©†èªªé“ï¼šâ€œä½ å·²ç¶“æ˜¯æœ‰å©¦ä¹‹å¤«äº†ï¼Œé€™è£¡ä¸å…è¨±é‡å©šçš„ã€‚â€\n");
                 }
         }
         if( mapp(query("couple", obj)) )
         {
       if( query("couple/married", obj)>2 )
-              return notify_fail("Ã½ÆÅ·­ÁË·­ÒöÔµ²¾£¬Ì¾ÁË¿ÚÆøµÀ£º¡°Ôç¸úÄãÃÇËµ¹ı£¬ÔõÃ´ÓÖÀëÁË£¬Õâ\n"
-              "´ÎÎÒÊµÔÚ²»ÄÜ°ïÄãÃÇÊ²Ã´ÁË£¬ÄãÊÇÃ»ÎÊÌâ£¬µ«"+obj->name()+"½á»é´ÎÊıÌ«¶àÁË£¬\n"
-              "°´³¯Í¢¸Ù¼Í£¬ÊÇ²»×¼ÔÙ°ìÀí½á»éÊÖĞøÁË£¬ÄãÃÇÈ¥×ö¶ÔÒ°Ô§Ñì°É£¡\n");
+              return notify_fail("åª’å©†ç¿»äº†ç¿»å§»ç·£ç°¿ï¼Œå˜†äº†å£æ°£é“ï¼šâ€œæ—©è·Ÿä½ å€‘èªªéï¼Œæ€éº¼åˆé›¢äº†ï¼Œé€™\n"
+              "æ¬¡æˆ‘å¯¦åœ¨ä¸èƒ½å¹«ä½ å€‘ä»€éº¼äº†ï¼Œä½ æ˜¯æ²’å•é¡Œï¼Œä½†"+obj->name()+"çµå©šæ¬¡æ•¸å¤ªå¤šäº†ï¼Œ\n"
+              "æŒ‰æœå»·ç¶±ç´€ï¼Œæ˜¯ä¸æº–å†è¾¦ç†çµå©šæ‰‹çºŒäº†ï¼Œä½ å€‘å»åšå°é‡é´›é´¦å§ï¼\n");
              if( query("couple/have_couple", obj) )
                 {
-                        //if( query("couple/couple_gender", obj) == "ÕÉ·ò" )
-                        if( query("gender", obj) == "ÄĞĞÔ" )
-                                return notify_fail("Ã½ÆÅËµµÀ£º¿ÉÏ§ËıÒÑ¾­ÊÇÓĞ·òÖ®¸¾ÁË£¬ÕâÀï²»ÔÊĞíÖØ»éµÄ¡£\n");
+                        //if( query("couple/couple_gender", obj) == "ä¸ˆå¤«" )
+                        if( query("gender", obj) == "ç”·æ€§" )
+                                return notify_fail("åª’å©†èªªé“ï¼šå¯æƒœå¥¹å·²ç¶“æ˜¯æœ‰å¤«ä¹‹å©¦äº†ï¼Œé€™è£¡ä¸å…è¨±é‡å©šçš„ã€‚\n");
                         else
-                                return notify_fail("Ã½ÆÅËµµÀ£º¿ÉÏ§ËûÒÑ¾­ÊÇÓĞ¸¾Ö®·òÁË£¬ÕâÀï²»ÔÊĞíÖØ»éµÄ¡£\n");
+                                return notify_fail("åª’å©†èªªé“ï¼šå¯æƒœä»–å·²ç¶“æ˜¯æœ‰å©¦ä¹‹å¤«äº†ï¼Œé€™è£¡ä¸å…è¨±é‡å©šçš„ã€‚\n");
                 }
         }
         if( !living(obj) )
-                return notify_fail("Ã½ÆÅÒ¡Ò¡Í·ËµµÀ£º¡°"+ obj->name()+"ÏÖÔÚ»¹Ã»ÇåĞÑ¹ıÀ´£¬ÎÒ»¹²»ÄÜÈ·¶¨ÄãÃÇË«·½¶¼ÊÇ×ÔÔ¸µÄ¡£¡±\n");
+                return notify_fail("åª’å©†æ–æ–é ­èªªé“ï¼šâ€œ"+ obj->name()+"ç¾åœ¨é‚„æ²’æ¸…é†’éä¾†ï¼Œæˆ‘é‚„ä¸èƒ½ç¢ºå®šä½ å€‘é›™æ–¹éƒ½æ˜¯è‡ªé¡˜çš„ã€‚â€\n");
         if(obj == me)
-                return notify_fail("Ã½ÆÅËµµÀ£º¡°ÄãÕâ²»ÊÇÄÃ×Ô¼º¿ªäÌÂğ£¿¡±\n");
+                return notify_fail("åª’å©†èªªé“ï¼šâ€œä½ é€™ä¸æ˜¯æ‹¿è‡ªå·±é–‹æ¶®å—ï¼Ÿâ€\n");
         if( query("gender", obj) == query("gender", me) )
-                return notify_fail("Ã½ÆÅ¾ªµÀ£º¡°ÍÛ£¡ÄãÊÇÍ¬ĞÔÁµ£¿¶Ô²»Æğ£¬ÀÏÆÅ×Ó´¦Àí²»ÁËÕâÊÂ£¡¡±\n");
+                return notify_fail("åª’å©†é©šé“ï¼šâ€œå“‡ï¼ä½ æ˜¯åŒæ€§æˆ€ï¼Ÿå°ä¸èµ·ï¼Œè€å©†å­è™•ç†ä¸äº†é€™äº‹ï¼â€\n");
         if( !userp(obj) )
-                return notify_fail("Ã½ÆÅËµµÀ£º¡°¶Ô²»Æğ£¬ÄãÖ»ÄÜºÍÍæ¼Ò½á»é¡£¡±\n");
+                return notify_fail("åª’å©†èªªé“ï¼šâ€œå°ä¸èµ·ï¼Œä½ åªèƒ½å’Œç©å®¶çµå©šã€‚â€\n");
         if( query_temp("marry/money", ob) != me->name( )
-                    && query_temp("marry/money", ob) != obj->name())//Ö»ÒªÆäÖĞÓĞÒ»¸öÈË¸ø¹ı¾ÍĞĞ
+                    && query_temp("marry/money", ob) != obj->name())//åªè¦å…¶ä¸­æœ‰ä¸€å€‹äººçµ¦éå°±è¡Œ
            {
                 set_temp("ask_money", 1, me);
-            set_temp("ask_money", 1, obj);//±íÊ¾Ìõ¼ş·ûºÏ£¬¿ÉÒÔ¸¶Ç®£¬·ÀÖ¹Ìõ¼ş²»·û°×¸¶Ç®
-                   return notify_fail("Ã½ÆÅĞ¦ÎûÎûµØµÀ£º½á»é×ÜÒª»¨Ò»±ÊÇ®µÄà¶£¡Òª50 gold£¬²»¸øÇ®£¬ÎÒ¿ÉÃ»·¨¸øÄã°ì£¡\n");
+            set_temp("ask_money", 1, obj);//è¡¨ç¤ºæ¢ä»¶ç¬¦åˆï¼Œå¯ä»¥ä»˜éŒ¢ï¼Œé˜²æ­¢æ¢ä»¶ä¸ç¬¦ç™½ä»˜éŒ¢
+                   return notify_fail("åª’å©†ç¬‘å˜»å˜»åœ°é“ï¼šçµå©šç¸½è¦èŠ±ä¸€ç­†éŒ¢çš„å˜ï¼è¦50 goldï¼Œä¸çµ¦éŒ¢ï¼Œæˆ‘å¯æ²’æ³•çµ¦ä½ è¾¦ï¼\n");
         }
         if( !query_temp("marry/answer", me) )
         {
-                message_vision(HIG"Ã½ÆÅÌ¯¿ªÒöÔµ²¾£¬ĞõĞõß¶ß¶µØËµµÀ£º¡°½á»éÊÇÒ»±²×ÓµÄÖÕÉí´óÊÂ£¬¿É²»ÄÜ\n"
-                           "ËæËæ±ã±ã£¬·ñÔò£¬ÕâÊÀµÀ¾ÍÂÒÁË¡£Ã¿¸öÈËÖ»ÄÜÔÚÎÒÕâÀï°ìÈı´Î½á»éÊÖĞø¡£\n"
-                        "ÈÃÎÒ¿´¿´£º"HIC""+me->name()+"½á¹ı"+query("couple/married", me)+"´Î»é£»"+obj->name()+"½á¹ı"+query("couple/married", obj)+"´Î»é£»"
-                        HIG"ºÃµÄ£¬\n×îºó£¬ÄãÃÇÔÙÈÏÕæ¿¼ÂÇÒ»ÏÂ£ºÊÇ²»ÊÇÕæĞÄÔ¸ÒâºÍ¶Ô·½½á»é£¿¡±\n"NOR,me);
+                message_vision(HIG"åª’å©†æ”¤é–‹å§»ç·£ç°¿ï¼Œçµ®çµ®å¨å¨åœ°èªªé“ï¼šâ€œçµå©šæ˜¯ä¸€è¼©å­çš„çµ‚èº«å¤§äº‹ï¼Œå¯ä¸èƒ½\n"
+                           "éš¨éš¨ä¾¿ä¾¿ï¼Œå¦å‰‡ï¼Œé€™ä¸–é“å°±äº‚äº†ã€‚æ¯å€‹äººåªèƒ½åœ¨æˆ‘é€™è£¡è¾¦ä¸‰æ¬¡çµå©šæ‰‹çºŒã€‚\n"
+                        "è®“æˆ‘çœ‹çœ‹ï¼š"HIC""+me->name()+"çµé"+query("couple/married", me)+"æ¬¡å©šï¼›"+obj->name()+"çµé"+query("couple/married", obj)+"æ¬¡å©šï¼›"
+                        HIG"å¥½çš„ï¼Œ\næœ€å¾Œï¼Œä½ å€‘å†èªçœŸè€ƒæ…®ä¸€ä¸‹ï¼šæ˜¯ä¸æ˜¯çœŸå¿ƒé¡˜æ„å’Œå°æ–¹çµå©šï¼Ÿâ€\n"NOR,me);
                 set_temp("marry/answer", 1, obj);
         }
         if( query_temp("pending/marry", obj) != me )
         {
-                if( query("gender", obj) == "Å®ĞÔ" || (query("gender", obj) == "ÎŞĞÔ" && query("gender", me) == "ÄĞĞÔ") )
-                        message_vision(MAG "\n$N¶ÔÖø$nÎÊµÀ£º¡°ÄãÔ¸Òâ¼Ş¸øÎÒÂğ£¿¡±\n\n"NOR, me,obj);
+                if( query("gender", obj) == "å¥³æ€§" || (query("gender", obj) == "ç„¡æ€§" && query("gender", me) == "ç”·æ€§") )
+                        message_vision(MAG "\n$Nå°è‘—$nå•é“ï¼šâ€œä½ é¡˜æ„å«çµ¦æˆ‘å—ï¼Ÿâ€\n\n"NOR, me,obj);
                 else
-                        message_vision(MAG "\n$N¶ÔÖø$nÎÊµÀ£º¡°ÄãÔ¸ÒâÈ¢ÎÒÂğ£¿¡±\n\n"NOR, me,obj);
+                        message_vision(MAG "\n$Nå°è‘—$nå•é“ï¼šâ€œä½ é¡˜æ„å¨¶æˆ‘å—ï¼Ÿâ€\n\n"NOR, me,obj);
 
                 if( objectp(old_target=query_temp("pending/marry", me)) && old_target != obj )
                         tell_object(old_target, YEL + me->name() +
-                        "È¡ÏûÁËºÍÄã½á»éµÄÄîÍ·¡£\n" NOR);
+                        "å–æ¶ˆäº†å’Œä½ çµå©šçš„å¿µé ­ã€‚\n" NOR);
                 set_temp("pending/marry", obj, me);
-                if( query("gender", obj) == "Å®ĞÔ" || (query("gender", obj) == "ÎŞĞÔ" && query("gender", me) == "ÄĞĞÔ") )
-                        tell_object(obj, MAG "Èç¹ûÄãÔ¸Òâ¼Ş¸øËû£¬ÇëÄãÒ²¶Ô" + me->name()
-                        +"("+query("id", me)+")"+"ÏÂÒ»´ÎmarryÖ¸Áî¡£\n"NOR);
+                if( query("gender", obj) == "å¥³æ€§" || (query("gender", obj) == "ç„¡æ€§" && query("gender", me) == "ç”·æ€§") )
+                        tell_object(obj, MAG "å¦‚æœä½ é¡˜æ„å«çµ¦ä»–ï¼Œè«‹ä½ ä¹Ÿå°" + me->name()
+                        +"("+query("id", me)+")"+"ä¸‹ä¸€æ¬¡marryæŒ‡ä»¤ã€‚\n"NOR);
                 else
-                        tell_object(obj, MAG "Èç¹ûÄãÔ¸ÒâÈ¢Ëı£¬ÇëÄãÒ²¶Ô" + me->name() +
-                        "("+query("id", me)+")"+"ÏÂÒ»´Îmarry"+query("id", me)+"µÄÖ¸Áî¡£\n"NOR);
-                write(MAG"ÏÖÔÚÄã¼±ÇĞÅÎÍû×ÅÄãµÄĞÄÉÏÈËËµÍ¬Òâ...\n" NOR);
+                        tell_object(obj, MAG "å¦‚æœä½ é¡˜æ„å¨¶å¥¹ï¼Œè«‹ä½ ä¹Ÿå°" + me->name() +
+                        "("+query("id", me)+")"+"ä¸‹ä¸€æ¬¡marry"+query("id", me)+"çš„æŒ‡ä»¤ã€‚\n"NOR);
+                write(MAG"ç¾åœ¨ä½ æ€¥åˆ‡ç›¼æœ›è‘—ä½ çš„å¿ƒä¸ŠäººèªªåŒæ„...\n" NOR);
                 return 1;
         }
-        message_vision(MAG "\n$N¶ÔÖø$n´óÉùËµµÀ£ºÎÒÔ¸Òâ£¡\n\n"NOR, me,obj);
-        message_vision(MAG "Ã½ÆÅºÇºÇĞ¦µÀ£º¡°ÄÇ¾ÍºÃ£¬ÄÇ¾ÍºÃ£¬¶¼¸úÎÒµ½¶«±ßµÄÒöÔµÌÃÀ´×¼±¸°İÌÃ°É£¡¡±\n"
-                "ËµÍê£¬Ã½ÆÅÒ»Å¤Ò»Å¤µØ×ß½øÁË¶«±ßµÄ´óÌÃ¡£\n" NOR, obj, me);
-        me->delete_temp("ask_marry");//Íæ¼ÒÈ¡ÏûÎÊ½á»éµÄ²ÎÊı
-        obj->delete_temp("ask_marry");//Íæ¼ÒÈ¡ÏûÎÊ½á»éµÄ²ÎÊı
+        message_vision(MAG "\n$Nå°è‘—$nå¤§è²èªªé“ï¼šæˆ‘é¡˜æ„ï¼\n\n"NOR, me,obj);
+        message_vision(MAG "åª’å©†å‘µå‘µç¬‘é“ï¼šâ€œé‚£å°±å¥½ï¼Œé‚£å°±å¥½ï¼Œéƒ½è·Ÿæˆ‘åˆ°æ±é‚Šçš„å§»ç·£å ‚ä¾†æº–å‚™æ‹œå ‚å§ï¼â€\n"
+                "èªªå®Œï¼Œåª’å©†ä¸€æ‰­ä¸€æ‰­åœ°èµ°é€²äº†æ±é‚Šçš„å¤§å ‚ã€‚\n" NOR, obj, me);
+        me->delete_temp("ask_marry");//ç©å®¶å–æ¶ˆå•çµå©šçš„åƒæ•¸
+        obj->delete_temp("ask_marry");//ç©å®¶å–æ¶ˆå•çµå©šçš„åƒæ•¸
 
-        ob->delete_temp("marry/money");//Ã½ÆÅÈ¡Ïû½»¹ıÇ®µÄ²ÎÊı
-        set("marry/have_couple", 1, ob);//Ã½ÆÅÔÚÖ÷³Ö»éÀñÖĞ
+        ob->delete_temp("marry/money");//åª’å©†å–æ¶ˆäº¤ééŒ¢çš„åƒæ•¸
+        set("marry/have_couple", 1, ob);//åª’å©†åœ¨ä¸»æŒå©šç¦®ä¸­
         ob->move("/d/city/yinyuan-tang");
 
         set_temp("pending/pro", 1, me);
-        set_temp("pending/pro", 1, obj);//»éÀñÖĞ
+        set_temp("pending/pro", 1, obj);//å©šç¦®ä¸­
 
         set("couple/couple_name", obj->name(1), me);
         set("couple/couple_id",query("id",  obj), me);
         set("couple/couple_name", me->name(1), obj);
-        set("couple/couple_id",query("id",  me), obj);//ÕıÊ½½á»é²ÎÊı
+        set("couple/couple_id",query("id",  me), obj);//æ­£å¼çµå©šåƒæ•¸
 
-        if( query("gender", obj) == "Å®ĞÔ" || (query("gender", obj) == "ÎŞĞÔ" && query("gender", me) == "ÄĞĞÔ") )
+        if( query("gender", obj) == "å¥³æ€§" || (query("gender", obj) == "ç„¡æ€§" && query("gender", me) == "ç”·æ€§") )
         {
-                set("couple/couple_gender", "ÆŞ×Ó", me);
-                set("couple/couple_gender", "ÕÉ·ò", obj);
+                set("couple/couple_gender", "å¦»å­", me);
+                set("couple/couple_gender", "ä¸ˆå¤«", obj);
         }
         else
         {
-                set("couple/couple_gender", "ÆŞ×Ó", obj);
-                set("couple/couple_gender", "ÕÉ·ò", me);
+                set("couple/couple_gender", "å¦»å­", obj);
+                set("couple/couple_gender", "ä¸ˆå¤«", me);
         }
         call_out("meipo_waiting", 1,ob,me,obj);
          return 1;
 }
 
-int meipo_waiting(object ob,object me,object obj)//Ã½ÆÅµÈ°İÌÃ
+int meipo_waiting(object ob,object me,object obj)//åª’å©†ç­‰æ‹œå ‚
 {
         if( query_temp("wait_time", ob) == 200 )
         {
-                say( "Ã½ÆÅÒÉ»óµØËµµÀ£º¡°Ğ¡·òÆŞÁ¬°İÌÃÒ²²»¼±£¿ÄÑµÀÕæÊÇÓĞÔµÎŞ·İ£¿°¦£¬»éÀñ»¹ÊÇÈ¡Ïû°Õ£¡\n"
-              "ÀÏÄï¿ÉÊÇ°××¬ÁË50 goldÁË£¬ºÇºÇºÇ...¡±\n\n");
+                say( "åª’å©†ç–‘æƒ‘åœ°èªªé“ï¼šâ€œå°å¤«å¦»é€£æ‹œå ‚ä¹Ÿä¸æ€¥ï¼Ÿé›£é“çœŸæ˜¯æœ‰ç·£ç„¡ä»½ï¼Ÿå”‰ï¼Œå©šç¦®é‚„æ˜¯å–æ¶ˆç½·ï¼\n"
+              "è€å¨˜å¯æ˜¯ç™½è³ºäº†50 goldäº†ï¼Œå‘µå‘µå‘µ...â€\n\n");
                 call_out("do_back", 0, ob);
                 return 1;
         }
         if( environment(ob)==environment(me)&&environment(ob)==environment(obj) )
-        {                                                 //Á½ÈË¶¼ÔÚ
+        {                                                 //å…©äººéƒ½åœ¨
                 delete_temp("wait_time", ob);
                 call_out("ready_marry", 1,ob,me,obj);
         }
@@ -324,14 +324,14 @@ int meipo_waiting(object ob,object me,object obj)//Ã½ÆÅµÈ°İÌÃ
                 if( environment(ob)==environment(me)&&environment(ob)!=environment(obj) )
                 {
                         if( random(10) == 0 )
-                        say("\nÃ½ÆÅÎÊµÀ£º¡°"+me->name()+"£¡ÄãÈ¥ÎÊÎÊ"+obj->name()+"ÔõÃ´»¹²»¹ıÀ´£¿ÄÑµÀ²»Ô¸ÒâÁË£¿\n");
-                        addn_temp("wait_time", 1, ob);//ÆäÖĞÒ»ÈËobj²»ÔÚ
+                        say("\nåª’å©†å•é“ï¼šâ€œ"+me->name()+"ï¼ä½ å»å•å•"+obj->name()+"æ€éº¼é‚„ä¸éä¾†ï¼Ÿé›£é“ä¸é¡˜æ„äº†ï¼Ÿ\n");
+                        addn_temp("wait_time", 1, ob);//å…¶ä¸­ä¸€äººobjä¸åœ¨
                         call_out("meipo_waiting", 1, ob,me,obj);
                 }
                    else if( environment(ob)!=environment(me)&&environment(ob)==environment(obj) )
-                {                                            //ÆäÖĞÒ»ÈËme²»ÔÚ
+                {                                            //å…¶ä¸­ä¸€äººmeä¸åœ¨
                         if( random(10) == 0 )
-                        say("\nÃ½ÆÅÎÊµÀ£º¡°"+obj->name()+"£¡ÄãÈ¥ÎÊÎÊ"+me->name()+"ÔõÃ´»¹²»¹ıÀ´£¿ÄÑµÀ²»Ô¸ÒâÁË£¿\n");
+                        say("\nåª’å©†å•é“ï¼šâ€œ"+obj->name()+"ï¼ä½ å»å•å•"+me->name()+"æ€éº¼é‚„ä¸éä¾†ï¼Ÿé›£é“ä¸é¡˜æ„äº†ï¼Ÿ\n");
                         addn_temp("wait_time", 1, ob);
                         call_out("meipo_waiting", 1, ob,me,obj);
                 }
@@ -344,23 +344,23 @@ int meipo_waiting(object ob,object me,object obj)//Ã½ÆÅµÈ°İÌÃ
         return 1;
 }
 
-int ready_marry(object ob,object me,object obj)//×¼±¸»éÀñ
+int ready_marry(object ob,object me,object obj)//æº–å‚™å©šç¦®
 {
         object room,npc;
 
         if(!( room = find_object("/d/city/yinyuan-tang")) )
         room = load_object("/d/city/yinyuan-tang");
 
-        message("vision", HIY "\nÃ½ÆÅ¸ßÉù½ĞµÀ£º¡°¿ì¿ì¿ì£¬¸É»îµÄ¶¼³öÀ´ÁË£¬ÂíÉÏ²¼ÖÃÏ²ÌÃ£¡¡±\n" NOR, room);
-        message("vision", HIC"\nÖ»ÌıÌÃºóÏìÆğÒ»Õó½Å²½Éù£¬Ê®¼¸¸ö´©µÃÎå²ÊÏÊÑŞÒÂ·şµÄÉÙÄĞÉÙÅ®ÎûÎû¹ş¹şµØÅÜ½øÀ´£¬\n"
-                "ß´ß´ÔûÔûµØÒéÂÛ×Å£¬ÓÖ·ÖÍ·ÅÜ¿ªÁË£¬Ê±²»Ê±µØĞ¦×Å¿´Ò»¿´"+me->name()+"ºÍ"+obj->name()+"¡£\n\n"NOR, room);
-        say("Ã½ÆÅ¶ÔÁ½Î»ĞÂÈËËµµÀ£º¡°²»Òª×Å¼±£¬ÎÒÃÇ¶¼ÊÇºÜÓĞ¾­ÑéµÄ£¬ºÜ¿ì¾Í»á²¼ÖÃºÃµÄ£¡¡±\n"
-                CYN"Ö»¼ûÉí±ßµÄÈËÅÜÀ´ÅÜÈ¥£¬Ã¦µÃ²»µÃÁË¡£\n"NOR);
+        message("vision", HIY "\nåª’å©†é«˜è²å«é“ï¼šâ€œå¿«å¿«å¿«ï¼Œå¹¹æ´»çš„éƒ½å‡ºä¾†äº†ï¼Œé¦¬ä¸Šå¸ƒç½®å–œå ‚ï¼â€\n" NOR, room);
+        message("vision", HIC"\nåªè½å ‚å¾ŒéŸ¿èµ·ä¸€é™£è…³æ­¥è²ï¼Œåå¹¾å€‹ç©¿å¾—äº”å½©é®®è‰·è¡£æœçš„å°‘ç”·å°‘å¥³å˜»å˜»å“ˆå“ˆåœ°è·‘é€²ä¾†ï¼Œ\n"
+                "å˜°å˜°å–³å–³åœ°è­°è«–è‘—ï¼Œåˆåˆ†é ­è·‘é–‹äº†ï¼Œæ™‚ä¸æ™‚åœ°ç¬‘è‘—çœ‹ä¸€çœ‹"+me->name()+"å’Œ"+obj->name()+"ã€‚\n\n"NOR, room);
+        say("åª’å©†å°å…©ä½æ–°äººèªªé“ï¼šâ€œä¸è¦è‘—æ€¥ï¼Œæˆ‘å€‘éƒ½æ˜¯å¾ˆæœ‰ç¶“é©—çš„ï¼Œå¾ˆå¿«å°±æœƒå¸ƒç½®å¥½çš„ï¼â€\n"
+                CYN"åªè¦‹èº«é‚Šçš„äººè·‘ä¾†è·‘å»ï¼Œå¿™å¾—ä¸å¾—äº†ã€‚\n"NOR);
         call_out("wait_marry", 1, ob,me,obj);
         return 1;
 }
 
-int wait_marry(object ob,object me,object obj) //²¼ÖÃÏ²ÌÃ
+int wait_marry(object ob,object me,object obj) //å¸ƒç½®å–œå ‚
 {
         object room,m_cloth,w_cloth;
         if(!( room = find_object("/d/city/yinyuan-tang")) )
@@ -369,59 +369,59 @@ int wait_marry(object ob,object me,object obj) //²¼ÖÃÏ²ÌÃ
         switch(query_temp("wait_time", ob) )
         {
            case 0:
-            say(RED"\nÒ»¸öĞ¡¼Ò»ïÅÜ¹ıÀ´£¬½ĞµÀ£º¡°Ã½ÆÅ£¬ÂòºìÖ½µÄÇ®²»¹»ÁË£¡¡±Ã½ÆÅ¸Ï½ô¸øËûÒ»Ğ©Ç®¡£\n\n"NOR);
+            say(RED"\nä¸€å€‹å°å®¶ä¼™è·‘éä¾†ï¼Œå«é“ï¼šâ€œåª’å©†ï¼Œè²·ç´…ç´™çš„éŒ¢ä¸å¤ äº†ï¼â€åª’å©†è¶•ç·Šçµ¦ä»–ä¸€äº›éŒ¢ã€‚\n\n"NOR);
                 break;
         case 1:
-             say(MAG"\nÍ»È»£¬ÄÇ±ßµÄĞ¡¹ÃÄï½ĞµÀ£º¡°Ã½ÆÅ£¬ºìÔ§ÑìÌùÕâ±ßÕı²»Õı£¿¡±Ã½ÆÅÒ»¿´£º¡°ÓÒ±ßÔÙÉÏÈ¥µã£¡¡±\n\n"NOR);
+             say(MAG"\nçªç„¶ï¼Œé‚£é‚Šçš„å°å§‘å¨˜å«é“ï¼šâ€œåª’å©†ï¼Œç´…é´›é´¦è²¼é€™é‚Šæ­£ä¸æ­£ï¼Ÿâ€åª’å©†ä¸€çœ‹ï¼šâ€œå³é‚Šå†ä¸Šå»é»ï¼â€\n\n"NOR);
                   call_out("wait_marry", 1, ob,me,obj);
                 break;
         case 2:
-             say(CYN"\nËÄ¸ö¼Ò»ïºßÓ´ºÙÓ´µØÌ§×ÅÒ»Ö»´óÏä×Ó´ÓÎİÍâÄãÉí±ß×ß¹ı£¬Ã½ÆÅ¶£ÖöµÀ£º¡°ÂıĞ©¡¢Çáµã£¡¡±\n\n"NOR);
+             say(CYN"\nå››å€‹å®¶ä¼™å“¼å–²å˜¿å–²åœ°æŠ¬è‘—ä¸€åªå¤§ç®±å­å¾å±‹å¤–ä½ èº«é‚Šèµ°éï¼Œåª’å©†å®å›‘é“ï¼šâ€œæ…¢äº›ã€è¼•é»ï¼â€\n\n"NOR);
                   call_out("wait_marry", 1, ob,me,obj);
                 break;
         case 3:
-                say("\nÃ½ÆÅÒ»°ÑÀ­×¡Éí±ßÅÜ¹ıµÄÒ»¸öĞ¡»ï×Ó£º¡°Ó­±öÂ¥µÄÏ²Ñç¶©ÁËÂğ£¿¿ìÈ¥£¡¡±\n\n"NOR);
+                say("\nåª’å©†ä¸€æŠŠæ‹‰ä½èº«é‚Šè·‘éçš„ä¸€å€‹å°ä¼™å­ï¼šâ€œè¿è³“æ¨“çš„å–œå®´è¨‚äº†å—ï¼Ÿå¿«å»ï¼â€\n\n"NOR);
                   call_out("wait_marry", 1, ob,me,obj);
                 break;
         case 4:
-                say(YEL"\nÄÇ±ßµÄÈË½ĞµÀ£º¡°¿ìÄÃ»ğÕÛÀ´£¬°ÑÏãÖòµãÁÁ¡¢µãÁÁ¡£¡±\n\n"NOR);
+                say(YEL"\né‚£é‚Šçš„äººå«é“ï¼šâ€œå¿«æ‹¿ç«æŠ˜ä¾†ï¼ŒæŠŠé¦™ç‡­é»äº®ã€é»äº®ã€‚â€\n\n"NOR);
                   call_out("wait_marry", 1, ob,me,obj);
                 break;
         case 5:
-             say("\nÄÇ±ßÓÖ½ĞÆğÀ´£º¡°Ã½ÆÅ£¬¸øµãÇ®´ò·¢ËÍ»õÀ´µÄ°É£¡¡±¡°À´ÁË£¡¡±Ã½ÆÅ¸Ï½ôÅÜ¹ıÈ¥¡£\n\n");
+             say("\né‚£é‚Šåˆå«èµ·ä¾†ï¼šâ€œåª’å©†ï¼Œçµ¦é»éŒ¢æ‰“ç™¼é€è²¨ä¾†çš„å§ï¼â€â€œä¾†äº†ï¼â€åª’å©†è¶•ç·Šè·‘éå»ã€‚\n\n");
                  call_out("wait_marry", 1, ob,me,obj);
                 break;
         case 6:
-             say(CYN"\nÃ½ÆÅÒ»Â·Ğ¡ÅÜ¹ıÀ´£¬¿´¿´ĞÂÀÉĞÂÄïµÄÉí²Ä£¬µãµãÍ·»ØÍ·½Ğ£º¡°¿ì£¬¸øĞÂÈË×¼±¸Ï²×°¡£¡±\n\n"NOR);
+             say(CYN"\nåª’å©†ä¸€è·¯å°è·‘éä¾†ï¼Œçœ‹çœ‹æ–°éƒæ–°å¨˜çš„èº«æï¼Œé»é»é ­å›é ­å«ï¼šâ€œå¿«ï¼Œçµ¦æ–°äººæº–å‚™å–œè£ã€‚â€\n\n"NOR);
                   call_out("wait_marry", 1, ob,me,obj);
                 break;
         case 7:
-                  say(WHT"\nÒ»°ïÈËÆßÊÖ°Ë½ÅµØÌ§³öÁË¼¸ÕÅ´óÒÎ×Ó£¬ÔÚÖĞÌÃÉÏ¹ÒÁËÒ»¸ö´ó´óµÄ\n"HIR
-"                               ¡ö      ¡ö\n"
-"                            ¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö\n"
-"                            ¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö\n"
-"                             ¡ö¡ö¡ö  ¡ö¡ö¡ö\n"
-"                             ¡ö¡ö¡ö  ¡ö¡ö¡ö\n"
-"                              ¡ô¡ô    ¡ô¡ô\n"
-"                            ¡ö¡ö¡ö¡ö¡ö¡ö¡ö¡ö\n"
-"                             ¡ö¡ö¡ö  ¡ö¡ö¡ö\n"
-"                             ¡ö¡ö¡ö  ¡ö¡ö¡ö\n\n"NOR);
+                  say(WHT"\nä¸€å¹«äººä¸ƒæ‰‹å…«è…³åœ°æŠ¬å‡ºäº†å¹¾å¼µå¤§æ¤…å­ï¼Œåœ¨ä¸­å ‚ä¸Šæ›äº†ä¸€å€‹å¤§å¤§çš„\n"HIR
+"                               â–       â– \n"
+"                            â– â– â– â– â– â– â– â– \n"
+"                            â– â– â– â– â– â– â– â– \n"
+"                             â– â– â–   â– â– â– \n"
+"                             â– â– â–   â– â– â– \n"
+"                              â—†â—†    â—†â—†\n"
+"                            â– â– â– â– â– â– â– â– \n"
+"                             â– â– â–   â– â– â– \n"
+"                             â– â– â–   â– â– â– \n\n"NOR);
                   call_out("wait_marry", 1, ob,me,obj);
                 break;
            case 8:
-             say(YEL"\nßïÄÅÀÖÊÖ¿ªÊ¼µ÷ÊÔ»¶¿ìµÄÀÖÇú£¬½ø½ø³ö³ö²»ÉÙÈÏÊ¶²»ÈÏÊ¶µÄÈË£¬·×·×¹°ÊÖÏàºØ£º¡°¹§Ï²¹§Ï²£¡¡±\n\n"NOR);
+             say(YEL"\nå—©å¶æ¨‚æ‰‹é–‹å§‹èª¿è©¦æ­¡å¿«çš„æ¨‚æ›²ï¼Œé€²é€²å‡ºå‡ºä¸å°‘èªè­˜ä¸èªè­˜çš„äººï¼Œç´›ç´›æ‹±æ‰‹ç›¸è³€ï¼šâ€œæ­å–œæ­å–œï¼â€\n\n"NOR);
                   call_out("wait_marry", 1, ob,me,obj);
                 break;
         case 9:
-                    say("\n¼¸¸öĞ¡¹ÃÄïĞ¦ÎûÎûµØÒ»±ß²Á×Å×ÀÒÎ£¬Ò»±ß»¥ÏàÒ§×Å¶ú¶ä£¬²»Ê±µØÍµÑÛ¿´¿´ĞÂÈË¡£\n\n");
+                    say("\nå¹¾å€‹å°å§‘å¨˜ç¬‘å˜»å˜»åœ°ä¸€é‚Šæ“¦è‘—æ¡Œæ¤…ï¼Œä¸€é‚Šäº’ç›¸å’¬è‘—è€³æœµï¼Œä¸æ™‚åœ°å·çœ¼çœ‹çœ‹æ–°äººã€‚\n\n");
                   call_out("wait_marry", 1, ob,me,obj);
                 break;
         case 10:
-                    say("\nÁ½Î»²ÊÒÂÉÙÅ®¹ıÀ´½«Ò»Ì×´óºì½ğ±ß¹öÁúÅÛµİ¸øĞÂÀÉ£¬Ò»Ì×Çà±ß´÷»¨Ë®ÔÆĞä½»¸øĞÂÄïµÀ£º¡°ÓĞÇëĞÂÀÉĞÂÄï´©Ï²×°¡±¡£\n\n");
+                    say("\nå…©ä½å½©è¡£å°‘å¥³éä¾†å°‡ä¸€å¥—å¤§ç´…é‡‘é‚Šæ»¾é¾è¢éçµ¦æ–°éƒï¼Œä¸€å¥—é’é‚Šæˆ´èŠ±æ°´é›²è¢–äº¤çµ¦æ–°å¨˜é“ï¼šâ€œæœ‰è«‹æ–°éƒæ–°å¨˜ç©¿å–œè£â€ã€‚\n\n");
                     m_cloth = new("/d/ruzhou/npc/obj/longpao");
                     w_cloth = new("/d/ruzhou/npc/obj/yunxiu");
-                    //if( query("couple/couple_gender", me) == "ÆŞ×Ó" )
-                    if( query("gender", me) == "Å®ĞÔ" )
+                    //if( query("couple/couple_gender", me) == "å¦»å­" )
+                    if( query("gender", me) == "å¥³æ€§" )
                     {
                             m_cloth->move(me);
                             w_cloth->move(obj);
@@ -434,17 +434,17 @@ int wait_marry(object ob,object me,object obj) //²¼ÖÃÏ²ÌÃ
                   call_out("wait_marry", 1, ob,me,obj);
                 break;
         case 11:
-                message("vision", HIY "\nÃ½ÆÅ¸ßÉùÎÊÁËÒ»Éù£º¡°¶¼×¼±¸ºÃÁËÂğ£¿¡±ÖÚÈËÓ¦µÀ£º¡°ºÃÁË£¡¡±\n"
-                "Ã½ÆÅÁ¢¿ÌÍÏ³¤ÁËÉùÒôº°µÀ£º¡°ÓĞÇëÔÂÀÏÖ÷³Ö»éÀñ¡­¡­£¡¡±\n"
-                HIM"¶ÙÊ±£¬¹ÄÀÖÆëÃù£¬±ŞÅÚ´ó×÷£¬°éÀÉ°éÄïÓµ¹ıÀ´£¬ÆßÊÖ°Ë½Å¸øĞÂÀÉ¡¢ĞÂÄï»»ÉÏĞÂÒÂ£¬\n"
-                        "×ºÓµ×ÅÏò´óÌÃÖĞÑë×ßÈ¥¡£\n"NOR, room);
+                message("vision", HIY "\nåª’å©†é«˜è²å•äº†ä¸€è²ï¼šâ€œéƒ½æº–å‚™å¥½äº†å—ï¼Ÿâ€çœ¾äººæ‡‰é“ï¼šâ€œå¥½äº†ï¼â€\n"
+                "åª’å©†ç«‹åˆ»æ‹–é•·äº†è²éŸ³å–Šé“ï¼šâ€œæœ‰è«‹æœˆè€ä¸»æŒå©šç¦®â€¦â€¦ï¼â€\n"
+                HIM"é “æ™‚ï¼Œé¼“æ¨‚é½Šé³´ï¼Œé­ç‚®å¤§ä½œï¼Œä¼´éƒä¼´å¨˜æ“éä¾†ï¼Œä¸ƒæ‰‹å…«è…³çµ¦æ–°éƒã€æ–°å¨˜æ›ä¸Šæ–°è¡£ï¼Œ\n"
+                        "ç¶´æ“è‘—å‘å¤§å ‚ä¸­å¤®èµ°å»ã€‚\n"NOR, room);
                 call_out("start_marry", 1, ob,me,obj);
                 break;
    }
    return 1;
 }
 
-int start_marry(object ob,object me,object obj) //¿ªÊ¼»éÀñ
+int start_marry(object ob,object me,object obj) //é–‹å§‹å©šç¦®
 {
         object moon,room;
         string msg;
@@ -452,29 +452,29 @@ int start_marry(object ob,object me,object obj) //¿ªÊ¼»éÀñ
                 room = load_object("/d/city/yinyuan-tang");
         moon=new("/d/ruzhou/npc/yuelao");
         moon->move(room);
-        message("vision", "\nËæ×ÅÒ»Õó¹ş¹ş´óĞ¦£¬Ò»Î»ºìÃæ°×ĞëµÄÀÏÕß£¬¿ì²½õâ½øÌÃÖĞ£¬ÔÚ³¡µÄÉÙÄêÄĞÅ®¶¼¹ªÉíÏà°İ£º\n"
-           "¡°¹§ÇëÔÂÀÏÒ¯Ò¯£¡¡±ÔÂÀÏ°Ú°ÚÊÖ£¬Ğ¦ºÇºÇµØ¿´¿´"+me->name()+"ºÍ"+obj->name()+"£¬µãµãÍ·µÀ£º\n"
-      "¡°ºÃ£¡ºÃ£¡ÀÉ²ÅÅ®Ã²£¬Ìì×÷Ö®ºÏ£¡Ìì×÷Ö®ºÏÑ½£¡¡±\n"
-           HIY"\nÃ½ÆÅÒ»»ÓÊÖ£¬Ï²ÀÖÓÖ¸ßÆğ£¬Ö»Ìı¼ûÔÂÀÏ¸ßÉùĞû²¼£º¡°ĞÂÀÉ¡­ĞÂÄï¡­°İ¡­ÌìµØ¡­¡­£¡¡±\n"NOR,room, moon);
+        message("vision", "\néš¨è‘—ä¸€é™£å“ˆå“ˆå¤§ç¬‘ï¼Œä¸€ä½ç´…é¢ç™½é ˆçš„è€è€…ï¼Œå¿«æ­¥è¸±é€²å ‚ä¸­ï¼Œåœ¨å ´çš„å°‘å¹´ç”·å¥³éƒ½èº¬èº«ç›¸æ‹œï¼š\n"
+           "â€œæ­è«‹æœˆè€çˆºçˆºï¼â€æœˆè€æ“ºæ“ºæ‰‹ï¼Œç¬‘å‘µå‘µåœ°çœ‹çœ‹"+me->name()+"å’Œ"+obj->name()+"ï¼Œé»é»é ­é“ï¼š\n"
+      "â€œå¥½ï¼å¥½ï¼éƒæ‰å¥³è²Œï¼Œå¤©ä½œä¹‹åˆï¼å¤©ä½œä¹‹åˆå‘€ï¼â€\n"
+           HIY"\nåª’å©†ä¸€æ®æ‰‹ï¼Œå–œæ¨‚åˆé«˜èµ·ï¼Œåªè½è¦‹æœˆè€é«˜è²å®£å¸ƒï¼šâ€œæ–°éƒâ€¦æ–°å¨˜â€¦æ‹œâ€¦å¤©åœ°â€¦â€¦ï¼â€\n"NOR,room, moon);
         CHANNEL_D->do_channel(moon, "mudnews",
-           sprintf("¹§ºØ%sºÍ%sÏ²½áÁ¼Ôµ£¬°İÌÃ´óÀñ¼´Ê±¿ªÊ¼£¡\n",me->name(),obj->name()));
-        say("Ã½ÆÅÓÖĞ¡ÉùµØ¶ÔÁ½¸öĞÂÈËËµ£º¡°°´Ë³ĞòÊäÈë¡®°İ ÌìµØ¡¢°İ ¸ßÌÃºÍ°İ ¶Ô·½µÄÃû×Ö¡¯¡£¡±\n");
+           sprintf("æ­è³€%så’Œ%så–œçµè‰¯ç·£ï¼Œæ‹œå ‚å¤§ç¦®å³æ™‚é–‹å§‹ï¼\n",me->name(),obj->name()));
+        say("åª’å©†åˆå°è²åœ°å°å…©å€‹æ–°äººèªªï¼šâ€œæŒ‰é †åºè¼¸å…¥â€˜æ‹œ å¤©åœ°ã€æ‹œ é«˜å ‚å’Œæ‹œ å°æ–¹çš„åå­—â€™ã€‚â€\n");
         set_temp("pending/bai", 1, me);
         set_temp("pending/bai", 1, obj);
         return 1;
 }
 
-int do_back(object ob)//½áÊø
+int do_back(object ob)//çµæŸ
 {
         delete_temp("wait_time", ob);
-        delete_temp("marry", ob);//È¡ÏûÒ»ÇĞÓĞ¹Ø½á»éµÄ²ÎÊı
+        delete_temp("marry", ob);//å–æ¶ˆä¸€åˆ‡æœ‰é—œçµå©šçš„åƒæ•¸
         delete("marry", ob);
-        say("Ã½ÆÅÅÄÁËÅÄÉíÉÏ£¬ÓÖÒ»Å¤Ò»Å¤µØÏòÎ÷±ß×ßÈ¥¡£\n");
+        say("åª’å©†æ‹äº†æ‹èº«ä¸Šï¼Œåˆä¸€æ‰­ä¸€æ‰­åœ°å‘è¥¿é‚Šèµ°å»ã€‚\n");
         ob->move("/d/city/hongniang-zhuang");
         return 1;
 }
 
-int do_bai(string arg)//°İÌÃ
+int do_bai(string arg)//æ‹œå ‚
 {
         object me,ob,obj;
         string act;
@@ -482,89 +482,89 @@ int do_bai(string arg)//°İÌÃ
         me = this_player();
         ob = this_object();
         if (me->is_busy())
-                return notify_fail("Ã½ÆÅËµµÀ£º¡°ÄãÏÖÔÚ²»ÊÇÕıÃ¦×ÅÂğ£¿Ã¦ÍêÔÙËµ£¡¡±\n");
+                return notify_fail("åª’å©†èªªé“ï¼šâ€œä½ ç¾åœ¨ä¸æ˜¯æ­£å¿™è‘—å—ï¼Ÿå¿™å®Œå†èªªï¼â€\n");
 
         if( me->is_fighting(this_object()) )
         {
                 if( !this_object()->is_killing(me) )
                         this_object()->kill_ob(me);
-                return notify_fail("Ã½ÆÅËµµÀ£º¡°ÀÏÄïºÃĞÄ¸øÄã°ì»éÊÂ£¬Äã¸Ò¶¯Îä£¬ËÍÄãÈ¥Òõ¼ä³É»é°É£¡¡±\n");
+                return notify_fail("åª’å©†èªªé“ï¼šâ€œè€å¨˜å¥½å¿ƒçµ¦ä½ è¾¦å©šäº‹ï¼Œä½ æ•¢å‹•æ­¦ï¼Œé€ä½ å»é™°é–“æˆå©šå§ï¼â€\n");
         }
 
         if( this_object()->is_fighting() )
-                return notify_fail("Ã½ÆÅËµµÀ£ºÃ»¿´¼ûÕâ¶ùÓĞÈËµ·ÂÒÂğ£¡\n");
+                return notify_fail("åª’å©†èªªé“ï¼šæ²’çœ‹è¦‹é€™å…’æœ‰äººæ—äº‚å—ï¼\n");
 
         if( !living(this_object()) )
-                return notify_fail("Äã»¹ÊÇÏÈÏë°ì·¨°ÑÃ½ÆÅ¾ÈĞÑ°É¡£\n");
+                return notify_fail("ä½ é‚„æ˜¯å…ˆæƒ³è¾¦æ³•æŠŠåª’å©†æ•‘é†’å§ã€‚\n");
 
         if( me->is_fighting() )
-                return notify_fail("Ã½ÆÅËµµÀ£º¡°ºÙºÙ£¬ÄãÏÈ»¹ÊÇÁÏÀíÍêÄãµÄÅóÓÑÔÙËµ°É£¡¡±\n");
+                return notify_fail("åª’å©†èªªé“ï¼šâ€œå˜¿å˜¿ï¼Œä½ å…ˆé‚„æ˜¯æ–™ç†å®Œä½ çš„æœ‹å‹å†èªªå§ï¼â€\n");
 
         if( !environment()||base_name(environment()) != ("/d/city/yinyuan-tang") )
-                return notify_fail("Ã½ÆÅËµµÀ£º¡°ÄãÕâÈËÕæÊÇµÄ£¬°İÌÃÊÇÒªµ½ÒöÔµÌÃ²ÅĞĞµÄÑ½£¡¡±\n");
+                return notify_fail("åª’å©†èªªé“ï¼šâ€œä½ é€™äººçœŸæ˜¯çš„ï¼Œæ‹œå ‚æ˜¯è¦åˆ°å§»ç·£å ‚æ‰è¡Œçš„å‘€ï¼â€\n");
 
         if( !query_temp("pending/bai", me) )
-                return notify_fail("Ã½ÆÅĞ¦µÀ£º¡°¹ş¹ş£¬Äã·¸Ê²Ã´ÉµÑ½£¡¡±\n");
+                return notify_fail("åª’å©†ç¬‘é“ï¼šâ€œå“ˆå“ˆï¼Œä½ çŠ¯ä»€éº¼å‚»å‘€ï¼â€\n");
 
         if( !objectp(obj=present(query("couple/couple_id", me),environment(me)) )
                  || !find_player(query("couple/couple_id", me)) )
         {
-                message_vision("Ã½ÆÅ×ªÉíÒ»¿´£¬¾ªÑÈµØËµµÀ£º¡°°¦Ñ½£¡ÄãµÄ°®ÈËÔõÃ´Í»È»ÅÜÁË£¿»éÀñÔõÃ´¾ÙĞĞ£¿´ó»ïÉ¢Ì¯°É¡£¡±\n"
-                        "ÔÚÒ»Æ¬ÍïÏ§Éù£¬´ó¼Ò·×·×Àë³¡£¬Ï²ÌÃÉÏµÄ¶«Î÷Ò²ÊÇÒ»ÊÕ¶ø¿Õ¡£\n",me);
+                message_vision("åª’å©†è½‰èº«ä¸€çœ‹ï¼Œé©šè¨åœ°èªªé“ï¼šâ€œå”‰å‘€ï¼ä½ çš„æ„›äººæ€éº¼çªç„¶è·‘äº†ï¼Ÿå©šç¦®æ€éº¼èˆ‰è¡Œï¼Ÿå¤§ä¼™æ•£æ”¤å§ã€‚â€\n"
+                        "åœ¨ä¸€ç‰‡æƒ‹æƒœè²ï¼Œå¤§å®¶ç´›ç´›é›¢å ´ï¼Œå–œå ‚ä¸Šçš„æ±è¥¿ä¹Ÿæ˜¯ä¸€æ”¶è€Œç©ºã€‚\n",me);
                 call_out("do_back",1,ob);
                 return 1;
         }
-        if( arg==" ÌìµØ"||arg==" ¸ßÌÃ"||arg==" "+(string)query("couple/couple_name", me) )
-                return notify_fail("¡°°İ¡±ÓëºóÃæµÄ´ÊÖ®¼äÇëÓÃ°ë½Ç¿Õ¸ñ¡£\n");
+        if( arg==" å¤©åœ°"||arg==" é«˜å ‚"||arg==" "+(string)query("couple/couple_name", me) )
+                return notify_fail("â€œæ‹œâ€èˆ‡å¾Œé¢çš„è©ä¹‹é–“è«‹ç”¨åŠè§’ç©ºæ ¼ã€‚\n");
 
-        if( !arg || (query_temp("pending/bai", me) == 1 && arg != "ÌìµØ" )
-                 || (query_temp("pending/bai", me) == 2 && arg != "¸ßÌÃ" )
+        if( !arg || (query_temp("pending/bai", me) == 1 && arg != "å¤©åœ°" )
+                 || (query_temp("pending/bai", me) == 2 && arg != "é«˜å ‚" )
                  || (query_temp("pending/bai", me) == 3 && arg != query("couple/couple_name", me)) )
-                return notify_fail("Ã½ÆÅĞ¦µÀ£º¡°ÄãÂÒ°İÊ²Ã´Ñ½£¿Ò»°İÌìµØ£¡¶ş°İ¸ßÌÃ£¡Èı°İÄãµÄ°®ÈË£¡¿É±ğÔÙ´íÁË£¡¡±\n");
+                return notify_fail("åª’å©†ç¬‘é“ï¼šâ€œä½ äº‚æ‹œä»€éº¼å‘€ï¼Ÿä¸€æ‹œå¤©åœ°ï¼äºŒæ‹œé«˜å ‚ï¼ä¸‰æ‹œä½ çš„æ„›äººï¼å¯åˆ¥å†éŒ¯äº†ï¼â€\n");
 
         if( query_temp("pending/act", obj) != arg )
         {
                 if( query_temp("pending/bai", me) != 3 )
                 {
-                        tell_object(obj, MAG"ÄãµÄ°éÂÂÕıµÈ×ÅºÍÄã°İ " + arg + " ÄØ...\n" NOR);
-                        write(MAG "ÏÖÔÚÄãÕıµÈ´ı×ÅÄãµÄ°éÂÂ...\n" NOR);
+                        tell_object(obj, MAG"ä½ çš„ä¼´ä¾¶æ­£ç­‰è‘—å’Œä½ æ‹œ " + arg + " å‘¢...\n" NOR);
+                        write(MAG "ç¾åœ¨ä½ æ­£ç­‰å¾…è‘—ä½ çš„ä¼´ä¾¶...\n" NOR);
                         set_temp("pending/act", arg, me);
                 }
                 else
                 {
-                        tell_object(obj, MAG"ÄãµÄ°éÂÂÕıµÈ×ÅºÍÄã»¥°İ£¨°İËûµÄÃû×Ö£©ÄØ...\n" NOR);
-                        write(MAG "ÏÖÔÚÄãÕıµÈ´ı×ÅÄãµÄ°éÂÂ...\n" NOR);
+                        tell_object(obj, MAG"ä½ çš„ä¼´ä¾¶æ­£ç­‰è‘—å’Œä½ äº’æ‹œï¼ˆæ‹œä»–çš„åå­—ï¼‰å‘¢...\n" NOR);
+                        write(MAG "ç¾åœ¨ä½ æ­£ç­‰å¾…è‘—ä½ çš„ä¼´ä¾¶...\n" NOR);
                         set_temp("pending/act", me->name(), me);
                 }
                 return 1;
         }
         else if( query_temp("pending/bai", me) == 1 )
         {
-                  message_vision("¡°Ò»°İ¡­Ìì¡­µØ¡­¡­¡±$NºÍ$nÔÚÕóÕó¹ÄÀÖÉùÖĞÓ¯Ó¯°İÏÂ......\n",me,obj);
+                  message_vision("â€œä¸€æ‹œâ€¦å¤©â€¦åœ°â€¦â€¦â€$Nå’Œ$nåœ¨é™£é™£é¼“æ¨‚è²ä¸­ç›ˆç›ˆæ‹œä¸‹......\n",me,obj);
                 addn_temp("pending/bai", 1, me);
                 addn_temp("pending/bai", 1, obj);
                 return 1;
         }
         else if( query_temp("pending/bai", me) == 2 )
         {
-                  message_vision("¡°¶ş°İ¡­¸ß¡­ÌÃ¡­¡­¡±$NºÍ$nÔÚÕ¾ÆğÀ´ÏàÊÓÒ»Ğ¦£¬ÓÖ»º»º°İÏÂ......\n",me,obj);
+                  message_vision("â€œäºŒæ‹œâ€¦é«˜â€¦å ‚â€¦â€¦â€$Nå’Œ$nåœ¨ç«™èµ·ä¾†ç›¸è¦–ä¸€ç¬‘ï¼Œåˆç·©ç·©æ‹œä¸‹......\n",me,obj);
                 addn_temp("pending/bai", 1, me);
                 addn_temp("pending/bai", 1, obj);
                 return 1;
         }
         else if( query_temp("pending/bai", me) == 3 )
         {
-                  message_vision("¡°·òÆŞ¡­¶Ô¡­°İ¡­¡­¡±$NºÍ$nÔÚÏà»¥ÉîÉî°İÁËÒ»°İ......\n",me,obj);
-                message_vision(HIY "ÔÂÀÏĞ¦ºÇºÇµØËµµÀ£º¡°ºÃ£¬$NºÍ$n£¬ÏÖÔÚÕıÊ½½áÎª·òÆŞ! \n" NOR, obj, me);
+                  message_vision("â€œå¤«å¦»â€¦å°â€¦æ‹œâ€¦â€¦â€$Nå’Œ$nåœ¨ç›¸äº’æ·±æ·±æ‹œäº†ä¸€æ‹œ......\n",me,obj);
+                message_vision(HIY "æœˆè€ç¬‘å‘µå‘µåœ°èªªé“ï¼šâ€œå¥½ï¼Œ$Nå’Œ$nï¼Œç¾åœ¨æ­£å¼çµç‚ºå¤«å¦»! \n" NOR, obj, me);
                 CHANNEL_D->do_channel(this_object(), "chat",
-                        sprintf( "¹§Ï²%sºÍ%s£¬Ò»¶ÔèµÈËÏ²½áÁ¼Ôµ¡£\n        ¸÷Î»Ç×ÅóºÃÓÑ£¬¿ÉĞ¯Àñµ½ÑïÖİ×íÏÉÂ¥²Î¼ÓËûÃÇµÄ»éÑç£¡\n", me->name(), obj->name()));
+                        sprintf( "æ­å–œ%så’Œ%sï¼Œä¸€å°ç’§äººå–œçµè‰¯ç·£ã€‚\n        å„ä½è¦ªæœ‹å¥½å‹ï¼Œå¯æ”œç¦®åˆ°æšå·é†‰ä»™æ¨“åƒåŠ ä»–å€‘çš„å©šå®´ï¼\n", me->name(), obj->name()));
 
-                addn("couple/married", 1, me);//½á»é´ÎÊı
-                set("couple/have_couple", 1, me);//´¦ÓÚÒÑ»é×´Ì¬
-                set_temp("married_party", 1, me);//×öÉÏ¼ÇºÅ£¬Ï²À´¸£ÀÏ°å¿´µ½¾Í»áÍ¬Òâ¿ª¾ÆÏ¯
-                set_temp("married_party", 1, obj);//Á½ÈË¶¼×ö£¬µ«Ö»ÓĞÄĞĞÔ²ÅÓĞÓÃ
-                addn("couple/married", 1, obj);//½á»é´ÎÊı
-                set("couple/have_couple", 1, obj);//ÒÑ»é×´Ì¬
+                addn("couple/married", 1, me);//çµå©šæ¬¡æ•¸
+                set("couple/have_couple", 1, me);//è™•äºå·²å©šç‹€æ…‹
+                set_temp("married_party", 1, me);//åšä¸Šè¨˜è™Ÿï¼Œå–œä¾†ç¦è€æ¿çœ‹åˆ°å°±æœƒåŒæ„é–‹é…’å¸­
+                set_temp("married_party", 1, obj);//å…©äººéƒ½åšï¼Œä½†åªæœ‰ç”·æ€§æ‰æœ‰ç”¨
+                addn("couple/married", 1, obj);//çµå©šæ¬¡æ•¸
+                set("couple/have_couple", 1, obj);//å·²å©šç‹€æ…‹
 
                 delete_temp("pending/bai", me);
                 delete_temp("pending/bai", obj);
@@ -586,14 +586,14 @@ int do_right(object me, object ob)
         string fc;
         object ring;
 
-        message("visoin", name() + "Ğ¦×Å¶Ô¶şÈËËµ£º¡°½ñ¸ö¶ùÊÇÄãÃÇ"
-                "´óÏ²µÄÈÕ×Ó£¬ÎÒÃ»ÓĞÊ²Ã´ÀñÎï£¬Ö»ºÃËÍ¸øÄã"
-                "ÃÇÕâ¶ÔĞÂÈËÒ»¶Ô½á»é½äÖ¸°É£¡¡±\n\n", environment(me));
+        message("visoin", name() + "ç¬‘è‘—å°äºŒäººèªªï¼šâ€œä»Šå€‹å…’æ˜¯ä½ å€‘"
+                "å¤§å–œçš„æ—¥å­ï¼Œæˆ‘æ²’æœ‰ä»€éº¼ç¦®ç‰©ï¼Œåªå¥½é€çµ¦ä½ "
+                "å€‘é€™å°æ–°äººä¸€å°çµå©šæˆ’æŒ‡å§ï¼â€\n\n", environment(me));
 
         fc = read_file(MARRY_RING);
         fc = replace_string(fc, "LONG_DESCRIPTION",
-                            "ÕâÊÇ" + me->name(1) + "ºÍ" +
-                            ob->name(1) + "µÄ½á»é½äÖ¸£¬ÊÇÁ½ÈËµÄ¶¨ÇéÖ®Îï¡£\n");
+                            "é€™æ˜¯" + me->name(1) + "å’Œ" +
+                            ob->name(1) + "çš„çµå©šæˆ’æŒ‡ï¼Œæ˜¯å…©äººçš„å®šæƒ…ä¹‹ç‰©ã€‚\n");
 
         // give ring to me
         fn=RING_DIR+query("id", me);
@@ -606,7 +606,7 @@ int do_right(object me, object ob)
         write_file(fn + ".c", fc);
         ring = load_object(fn);
         ring->move(me, 1);
-        tell_object(me, HIY "Äã»ñµÃÁËÒ»¸ö½á»é½äÖ¸¡£\n" NOR);
+        tell_object(me, HIY "ä½ ç²å¾—äº†ä¸€å€‹çµå©šæˆ’æŒ‡ã€‚\n" NOR);
         set("can_summon/"+"wedding ring", fn, me);
 
         // give ring to ob
@@ -620,7 +620,7 @@ int do_right(object me, object ob)
         write_file(fn + ".c", fc);
         ring = load_object(fn);
         ring->move(ob, 1);
-        tell_object(ob, HIY "Äã»ñµÃÁËÒ»¸ö½á»é½äÖ¸¡£\n" NOR);
+        tell_object(ob, HIY "ä½ ç²å¾—äº†ä¸€å€‹çµå©šæˆ’æŒ‡ã€‚\n" NOR);
         set("can_summon/"+"wedding ring", fn, ob);
 
         // record
@@ -630,7 +630,7 @@ int do_right(object me, object ob)
         ob->save();
         return 1;
 }
-int last_marry(object ob,object me,object obj)//°İÌÃ½áÊø
+int last_marry(object ob,object me,object obj)//æ‹œå ‚çµæŸ
 {
         object moon,room;
         if(!(room = find_object("/d/city/yinyuan-tang")))
@@ -641,15 +641,15 @@ int last_marry(object ob,object me,object obj)//°İÌÃ½áÊø
         delete_temp("wait_time", ob);
         ob = this_object();
         delete_temp("marry/money", ob);
-        say("Ã½ÆÅº°µÀ£º¡°½Î·ò£¡¿ì½«ĞÂÈËËÍµ½Ó­±öÂ¥¾ÙĞĞ»éÑç£¬ÎÒºÍÔÂÀÏ¾Í²»È¥ÁË£¬ºÇºÇ£¡¡±\nËµÍêÒ»Å¤Ò»Å¤µØÏòÎ÷±ß×ßÈ¥¡£\n");
-        write_file("/log/static/MARRY",sprintf("%s(%s)and%s(%s)marriedin%s¡£\n",query("name", me),query("id", me),
+        say("åª’å©†å–Šé“ï¼šâ€œè½å¤«ï¼å¿«å°‡æ–°äººé€åˆ°è¿è³“æ¨“èˆ‰è¡Œå©šå®´ï¼Œæˆ‘å’Œæœˆè€å°±ä¸å»äº†ï¼Œå‘µå‘µï¼â€\nèªªå®Œä¸€æ‰­ä¸€æ‰­åœ°å‘è¥¿é‚Šèµ°å»ã€‚\n");
+        write_file("/log/static/MARRY",sprintf("%s(%s)and%s(%s)marriedin%sã€‚\n",query("name", me),query("id", me),
                 query("name", obj),query("id", obj),ctime(time())));
         delete("have_couple", ob);
         delete_temp("marry", ob);
         delete("marry", ob);
         ob->move("/d/city/hongniang-zhuang");
-        message_vision(HIR"°éÀÉ°éÄïÓµ×ÅÁ½Î»ĞÂÈË£¬ÉÏÁËÃÅ¿ÚµÄÁ½¶¥´óºì»¨½Î£¬Ö»Ìı½Î·òÃÇÒ»Éù¡°Æğ½Î£¡¡±\n"
-                   "Ò»ĞĞÈË´µ´µ´ò´òµØ±¼ÏòÓ­±öÂ¥......\n"NOR,me,obj);
+        message_vision(HIR"ä¼´éƒä¼´å¨˜æ“è‘—å…©ä½æ–°äººï¼Œä¸Šäº†é–€å£çš„å…©é ‚å¤§ç´…èŠ±è½ï¼Œåªè½è½å¤«å€‘ä¸€è²â€œèµ·è½ï¼â€\n"
+                   "ä¸€è¡Œäººå¹å¹æ‰“æ‰“åœ°å¥”å‘è¿è³“æ¨“......\n"NOR,me,obj);
         me->move("/d/ruzhou/jiao1");
         obj->move("/d/ruzhou/jiao2");
         call_out("go_lou",8,me,obj);
@@ -659,12 +659,12 @@ int last_marry(object ob,object me,object obj)//°İÌÃ½áÊø
 int go_lou(object me,object obj)
 {
         object npc;
-        message_vision("\n    ¹ıÁËºÃ³¤Ò»»á¶ù£¬Ö»Ìı½Î·òÃÇÒ»Éù¡°µ½À²£¡¡±½Î×ÓÕû¸ö¶ùÒ»Õğ£¬ÏëÊÇÂäµ½ÁËµØÉÏ£¬\n"
-           "$NºÍ$n´Ó½Î×ÓÖĞÏÂÀ´Ò»¿´£¬Ô­À´ÒÑ¾­µ½ÁËÓ­±öÂ¥¡£Á½ÈËÓÖ±»Óµ·ö×ÅÒ»Ö±ÉÏÁË¶şÂ¥¸£ÂúÌÃ¡£\n"
-      "Ö»ÌıÒ»ÕóºÇºÇĞ¦Éù£¬Ó­±öÂ¥ÀÏ°åÏ²À´¸£Ğ¦ÈİÂúÃæµØÓ­³öÀ´£º¡°¹§Ï²Á½Î»ĞÂÈË£¡¹§Ï²¹§Ï²£¡¡±\n",me,obj);
+        message_vision("\n    éäº†å¥½é•·ä¸€æœƒå…’ï¼Œåªè½è½å¤«å€‘ä¸€è²â€œåˆ°å•¦ï¼â€è½å­æ•´å€‹å…’ä¸€éœ‡ï¼Œæƒ³æ˜¯è½åˆ°äº†åœ°ä¸Šï¼Œ\n"
+           "$Nå’Œ$nå¾è½å­ä¸­ä¸‹ä¾†ä¸€çœ‹ï¼ŒåŸä¾†å·²ç¶“åˆ°äº†è¿è³“æ¨“ã€‚å…©äººåˆè¢«æ“æ‰¶è‘—ä¸€ç›´ä¸Šäº†äºŒæ¨“ç¦æ»¿å ‚ã€‚\n"
+      "åªè½ä¸€é™£å‘µå‘µç¬‘è²ï¼Œè¿è³“æ¨“è€æ¿å–œä¾†ç¦ç¬‘å®¹æ»¿é¢åœ°è¿å‡ºä¾†ï¼šâ€œæ­å–œå…©ä½æ–°äººï¼æ­å–œæ­å–œï¼â€\n",me,obj);
         npc=new("/d/ruzhou/npc/xi-laifu");
         set("name1", me->name(), npc);
-        set("name2", obj->name(), npc);//Ë«·½ĞÕÃû
+        set("name2", obj->name(), npc);//é›™æ–¹å§“å
         npc->move("/d/city/zxlpath");
         me->move("/d/city/zxlpath");
         obj->move("/d/city/zxlpath");
@@ -672,13 +672,13 @@ int go_lou(object me,object obj)
 }
 
 /*
-int return_home(object home)//¸²¸Ç±ê×¼¼Ì³ĞÖĞµÄ¸Ãº¯Êı£¬·ÀÖ¹»éÀñÖĞ¸üĞÂ£¬Ã½ÆÅ»Ø¼Ò
+int return_home(object home)//è¦†è“‹æ¨™æº–ç¹¼æ‰¿ä¸­çš„è©²å‡½æ•¸ï¼Œé˜²æ­¢å©šç¦®ä¸­æ›´æ–°ï¼Œåª’å©†å›å®¶
 {
     if( !environment()||  environment()==home ) return 1;
         if( !living(this_object()) ||  is_fighting()) return 0;
-        if( query("marry", this_object()))return 0;//ÓĞ½á»éµÄ²ÎÊı¾Í²»»ØÈ¥
+        if( query("marry", this_object()))return 0;//æœ‰çµå©šçš„åƒæ•¸å°±ä¸å›å»
 
-    message("vision", this_object()->name() + "¼±¼±Ã¦Ã¦µØÀë¿ªÁË¡£\n",
+    message("vision", this_object()->name() + "æ€¥æ€¥å¿™å¿™åœ°é›¢é–‹äº†ã€‚\n",
             environment(), this_object());
     return move(home);
 }

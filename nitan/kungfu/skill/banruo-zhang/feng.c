@@ -4,7 +4,7 @@
 
 inherit F_SSERVER;
 
-string name() { return "��ħ"; }
+string name() { return "封魔"; }
 
 void remove_effect(object me, int a_amount, int d_amount);
 
@@ -15,16 +15,16 @@ int perform(object me)
         string msg;
 
         if ((int)me->query_skill("banruo-zhang", 1) < 60)
-                return notify_fail("��İ����Ʒ�������죬����ʹ�á���ħ����\n");
+                return notify_fail("你的般若掌法不夠嫻熟，不會使用「封魔」。\n");
 
         if( query("neili", me)<200 )
-                return notify_fail("��������������޷�ʹ�á���ħ����\n");
+                return notify_fail("你的真氣不夠，無法使用「封魔」。\n");
 
         if( query_temp("brz_feng", me) )
-                return notify_fail("���Ѿ����˹����ˡ�\n");
+                return notify_fail("你已經在運功中了。\n");
 
         skill = me->query_skill("banruo-zhang", 1);
-        msg = HIG "$N" HIG "ʹ�������ơ���ħ��ʽ��˫�Ʒ��ɽ�������ס��\n" NOR;
+        msg = HIG "$N" HIG "使出般若掌「封魔」式，雙掌翻飛將周身護住。\n" NOR;
         message_combatd(msg, me);
 
         addn_temp("apply/attack", -skill/4, me);
@@ -47,6 +47,6 @@ void remove_effect(object me, int a_amount, int d_amount)
                 addn_temp("apply/attack", a_amount, me);
                 addn_temp("apply/defense", -d_amount, me);
                 delete_temp("brz_feng", me);
-                tell_object(me, "��İ����ơ���ħ��������ϣ��������ջص��\n");
+                tell_object(me, "你的般若掌「封魔」運行完畢，將內力收回丹田。\n");
         }
 }

@@ -1,11 +1,11 @@
 // This program is a part of NITAN MudLIB
-// chan.c ÁéÉß²øÉí
+// chan.c éˆè›‡çºèº«
 
 #include <ansi.h>
 
 inherit F_SSERVER;
 
-string name() { return "ÁéÉß²øÉí"; }
+string name() { return "éˆè›‡çºèº«"; }
 
 int perform(object me, object target)
 {
@@ -20,38 +20,38 @@ int perform(object me, object target)
         }
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail("¡¸ÁéÉß²øÉí¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œéˆè›‡çºèº«ã€åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me)) ||
             query("skill_type", weapon) != "staff" )
-                return notify_fail("ÔËÓÃ¡¸ÁéÉß²øÉí¡¹ÊÖÖĞ±ØĞë³ÖÕÈ£¡\n");
+                return notify_fail("é‹ç”¨ã€Œéˆè›‡çºèº«ã€æ‰‹ä¸­å¿…é ˆæŒæ–ï¼\n");
 
         if ((int)me->query_skill("force") < 80)
-                return notify_fail("ÄãµÄÄÚ¹¦»ğºò²»¹»£¡\n");
+                return notify_fail("ä½ çš„å…§åŠŸç«å€™ä¸å¤ ï¼\n");
 
         if ((int)me->query_skill("staff") < 80)
-                return notify_fail("ÄãµÄÕÈ·¨»¹²»µ½¼Ò£¬ÎŞ·¨Ê¹ÓÃ¡¸ÁéÉß²øÉí¡¹£¡\n");
+                return notify_fail("ä½ çš„æ–æ³•é‚„ä¸åˆ°å®¶ï¼Œç„¡æ³•ä½¿ç”¨ã€Œéˆè›‡çºèº«ã€ï¼\n");
 
         if (target->is_busy())
-                return notify_fail("¶Ô·½ÕıÃ¦×ÅÄØ£¬Äã»¹ÊÇ¼Ó½ô½ø¹¥°É£¡\n");
+                return notify_fail("å°æ–¹æ­£å¿™è‘—å‘¢ï¼Œä½ é‚„æ˜¯åŠ ç·Šé€²æ”»å§ï¼\n");
 
         if (! living(target))
-              return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+              return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIG "$N" HIG "ÊÖÖĞµÄ" + weapon->name() +
-              HIG "²»×¡µÄ²ü¶¯£¬»îÏÖÒ»ÌõÁéÉß£¬²øÏò$n" HIG "£¬ÄÑÒÔ×½Ãş¡£\n" NOR;
+        msg = HIG "$N" HIG "æ‰‹ä¸­çš„" + weapon->name() +
+              HIG "ä¸ä½çš„é¡«å‹•ï¼Œæ´»ç¾ä¸€æ¢éˆè›‡ï¼Œçºå‘$n" HIG "ï¼Œé›£ä»¥æ‰æ‘¸ã€‚\n" NOR;
 
         ap = attack_power(me, "staff");
         dp = defense_power(target, "dodge");
 
         if (ap / 2 + random(ap) > dp)
         {
-                msg += HIY "$n" HIY "²Ö»ÊÖ®ÏÂÖ»ÓĞÑÏÊØÃÅ»§£¬ÎŞÏ¾·´»÷£¡\n" NOR;
+                msg += HIY "$n" HIY "å€‰çš‡ä¹‹ä¸‹åªæœ‰åš´å®ˆé–€æˆ¶ï¼Œç„¡æš‡åæ“Šï¼\n" NOR;
                 target->start_busy(ap / 80 + 2);
         } else
         {
-                msg += HIC "¿ÉÊÇ$p" HIC "¿´ÆÆÁË$N" HIC
-                       "µÄĞéÕĞ£¬ÇÉÃîµÄÔËÓÃÉí·¨¶ã¹ıÁË$PµÄ¹¥»÷£¡" NOR;
+                msg += HIC "å¯æ˜¯$p" HIC "çœ‹ç ´äº†$N" HIC
+                       "çš„è™›æ‹›ï¼Œå·§å¦™çš„é‹ç”¨èº«æ³•èº²éäº†$Pçš„æ”»æ“Šï¼" NOR;
                 me->start_busy(2);
         }
         message_combatd(msg, me, target);

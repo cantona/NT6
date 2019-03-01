@@ -16,7 +16,7 @@ int permit_pass(object ob, string dir)
         if (! living(this_object()))
                 return 1;
 
-        notify_fail("¿´À´" + this_object()->name() + "²»´òËãÈÃÄã¹ıÈ¥¡£\n");
+        notify_fail("çœ‹ä¾†" + this_object()->name() + "ä¸æ‰“ç®—è®“ä½ éå»ã€‚\n");
 
         if (query("quest_dg", ob) ||
             query("quest_hs", ob) ||
@@ -32,9 +32,9 @@ int permit_pass(object ob, string dir)
                 if (stringp(msg = query("guarder/refuse_home")))
                         message_vision(msg + "\n", this_object(), ob);
                 else
-                        message_vision("$NÀäÀäµÄ¿´ÁË¿´$n£¬µÀ£ºÄã¼ÈÈ»ÒÑ¾­ÈëÁË" +
-                                       fam_name + "£¬»¹À´ÎÒÃÇ" + my_fam +
-                                       "¸ÉÊ²Ã´£¿\n", this_object(), ob);
+                        message_vision("$Nå†·å†·çš„çœ‹äº†çœ‹$nï¼Œé“ï¼šä½ æ—¢ç„¶å·²ç¶“å…¥äº†" +
+                                       fam_name + "ï¼Œé‚„ä¾†æˆ‘å€‘" + my_fam +
+                                       "å¹¹ä»€éº¼ï¼Ÿ\n", this_object(), ob);
                 return 0;
         }
 
@@ -44,8 +44,8 @@ int permit_pass(object ob, string dir)
                 if (stringp(msg = query("guarder/refuse_other")))
                         message_vision(msg + "\n", this_object(), ob);
                 else
-                        message_vision("$NÉìÊÖÀ¹×¡$n£¬µÀ£º¶Ô²»Æğ£¬²»ÊÇÎÒÃÇ" + my_fam +
-                                       "ÈË²»µÃÈëÄÚ£¡\n", this_object(), ob);
+                        message_vision("$Nä¼¸æ‰‹æ””ä½$nï¼Œé“ï¼šå°ä¸èµ·ï¼Œä¸æ˜¯æˆ‘å€‘" + my_fam +
+                                       "äººä¸å¾—å…¥å…§ï¼\n", this_object(), ob);
                 return 0;
         }
 
@@ -58,7 +58,7 @@ int permit_pass(object ob, string dir)
                         if (stringp(msg = query("guarder/refuse_carry")))
                                 message_vision(msg + "\n", this_object(), ob);
                         else
-                                message_vision("$N¶Ô$nºÈµÀ£ºÄã±³µÄÊÇË­£¿»¹²»¿ì¿ì·ÅÏÂ£¡\n",
+                                message_vision("$Nå°$nå–é“ï¼šä½ èƒŒçš„æ˜¯èª°ï¼Ÿé‚„ä¸å¿«å¿«æ”¾ä¸‹ï¼\n",
                                                this_object(), ob);
                         return 0;
                 }
@@ -117,8 +117,8 @@ void kill_enemy(object ob)
         if (base_name(environment(me)) != (string)query("startroom", me))
                 return;
 
-        message_vision(random(2) ? HIW "\n$N´óÉùº°µÀ£º´ó¼Ò¿ìÀ´°ïÃ¦°¡£¡\n\n" NOR :
-                                   HIW "\n$NºÈµÀ£º²»ºÃ£¡ÓĞÈËÌôÉÏÃÅÀ´ÁË£¡\n\n" NOR, me);
+        message_vision(random(2) ? HIW "\n$Nå¤§è²å–Šé“ï¼šå¤§å®¶å¿«ä¾†å¹«å¿™å•Šï¼\n\n" NOR :
+                                   HIW "\n$Nå–é“ï¼šä¸å¥½ï¼æœ‰äººæŒ‘ä¸Šé–€ä¾†äº†ï¼\n\n" NOR, me);
 
         if (me->is_master() && me->is_killing(query("id", ob)))
                 me->master_accept_kill(ob);
@@ -151,7 +151,7 @@ void kill_enemy(object ob)
         }
 
         if (! flag)
-                message_vision("½á¹ûÃ»ÓĞÒ»¸öÈË³öÀ´ :)\n", me);
+                message_vision("çµæœæ²’æœ‰ä¸€å€‹äººå‡ºä¾† :)\n", me);
 }
 
 int check_enemy(object ob, string type)
@@ -166,12 +166,12 @@ int check_enemy(object ob, string type)
         {
                 if (type == "fight")
                 {
-                        message_vision("$N¶Ô$nÒ¡Ò¡Í·µÀ£ºÎÒÏÖÔÚÃ»¿Õ¡£\n\n", me, ob);
+                        message_vision("$Nå°$næ–æ–é ­é“ï¼šæˆ‘ç¾åœ¨æ²’ç©ºã€‚\n\n", me, ob);
                         return 0;
                 } else
                 {
-                        message_vision("$N´óºÈµÀ£¬ºÃÄã¸ö" + RANK_D->query_rude(ob) +
-                                       "£¬»îµÃ²»ÄÍ·³ÁË£¡À´ÕâÀïÈöÒ°£¿\n", me, ob);
+                        message_vision("$Nå¤§å–é“ï¼Œå¥½ä½ å€‹" + RANK_D->query_rude(ob) +
+                                       "ï¼Œæ´»å¾—ä¸è€ç…©äº†ï¼ä¾†é€™è£¡æ’’é‡ï¼Ÿ\n", me, ob);
                         me->kill_ob(ob);
                 }
         } else
@@ -179,16 +179,16 @@ int check_enemy(object ob, string type)
         {
         case "hit":
         case "kill":
-                message_vision("$NÁ½ÑÛÒ»µÉ£¬ºÈµÀ£º" + query("name", ob) +
-                               "£¬ÄãÊÇÒªÔì·´Âğ£¿\n", me, ob);
+                message_vision("$Nå…©çœ¼ä¸€çªï¼Œå–é“ï¼š" + query("name", ob) +
+                               "ï¼Œä½ æ˜¯è¦é€ åå—ï¼Ÿ\n", me, ob);
                 me->kill_ob(ob);
                 break;
 
         case "fight":
                 if (ob->is_apprentice_of(me))
-                        message_vision("$NÒ»µÉ$n£¬Å­µÀ£ºÄã¸øÎÒºÃºÃÁ·¹¦È¥£¡\n", me, ob);
+                        message_vision("$Nä¸€çª$nï¼Œæ€’é“ï¼šä½ çµ¦æˆ‘å¥½å¥½ç·´åŠŸå»ï¼\n", me, ob);
                 else
-                        message_vision("$N¶Ô$nÒ¡Ò¡Í·µÀ£ºÕÒÄãµÄÊ¦¸µ±È»®È¥¡£\n\n", me, ob);
+                        message_vision("$Nå°$næ–æ–é ­é“ï¼šæ‰¾ä½ çš„å¸«å‚…æ¯”åŠƒå»ã€‚\n\n", me, ob);
                 return 0;
         }
 

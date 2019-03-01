@@ -1,4 +1,4 @@
-//qingshe.c ±ù²Ï
+//qingshe.c å†°è ¶
 
 #include <ansi.h>
 
@@ -6,16 +6,16 @@ inherit POISON_INSECT;
 
 void create()
 {
-        set_name("±ù²Ï", ({ "bing can", "can" }) );
+        set_name("å†°è ¶", ({ "bing can", "can" }) );
         set_weight(100);
-        set("race", "Ò°ÊŞ");
+        set("race", "é‡ç¸");
         set("age", 2);
-        set("long", "Ò»Ö»»ëÉíÉÏÏÂÍ¸ÌåÍ¨Ã÷µÄ²Ï¡£\n");
+        set("long", "ä¸€åªæ¸¾èº«ä¸Šä¸‹é€é«”é€šæ˜çš„è ¶ã€‚\n");
         set("attitude", "peaceful");
         set("str", 20);
         set("con", 20);
-        set("unit", "Ö»");
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "Î²°Í" }) );
+        set("unit", "åª");
+        set("limbs", ({ "é ­éƒ¨", "èº«é«”", "å°¾å·´" }) );
         set("verbs", ({ "bite" }) );
 
         set("insect_poison", ([

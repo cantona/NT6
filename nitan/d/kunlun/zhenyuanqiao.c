@@ -7,10 +7,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��Զ��");
+        set("short", "鎮遠橋");
         set("long",@long
-�����źųơ����»ƺӵ�һ�š������Ƽ�Ϊ��ΰ���������򣬶���
-��ԭ���ƺ�ˮ���ŵ���к��������¡���졣
+這座橋號稱“天下黃河第一橋”，氣勢極為雄偉，扼守西域，東往
+中原。黃河水從橋底傾瀉而過，轟隆作響。
 long);
         set("exits",([
                 "west"      : __DIR__"shanlu",

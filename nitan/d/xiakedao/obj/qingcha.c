@@ -1,23 +1,23 @@
-// qingcha.c Çå²è
+// qingcha.c æ¸…èŒ¶
 
 inherit ITEM;
 inherit F_LIQUID;
 
 void create()
 {
-        set_name("Çå²è",({"tea", "cha", "qing cha"}));
+        set_name("æ¸…èŒ¶",({"tea", "cha", "qing cha"}));
         set_weight(50);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»±­ÈÈ²è£¬ÓÆÓÆµØÃ°×ÅÏãÆø¡«¡«¡«\n");
-                set("unit", "±­");
+                set("long", "ä¸€æ¯ç†±èŒ¶ï¼Œæ‚ æ‚ åœ°å†’è‘—é¦™æ°£ï½ï½ï½\n");
+                set("unit", "æ¯");
                 set("value", 1000);
                 set("max_liquid", 20);
         }
         set("liquid", ([
                 "type": "tea",
-                "name": "²è",
+                "name": "èŒ¶",
                 "remaining": 2,
                 "drunk_apply": 25,
         ]));

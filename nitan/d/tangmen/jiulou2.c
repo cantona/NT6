@@ -7,16 +7,16 @@ int do_kan(string arg);
 
 void create()
 {
-        set("name", "���ž�¥��¥");
-        set("short", "���ž�¥��¥");
+        set("name", "唐門酒樓二樓");
+        set("short", "唐門酒樓二樓");
         set("long",
-"�������������ǳ����徲��һ��û������������ģ����Ķ���һЩ��\n"
-"�����ˣ��������Ʒ����µġ�����������Ȼ��������ȴ��û������ġ���\n"
-"���Ʒ�������һ�ȴ���(window)�ı��ϣ����������ڿ�ʲô������ǽ�Ϲ�\n"
-"��һЩ��û�������ֻ���\n"
+"這裡是雅座，非常的清靜，一般沒有人來在這裡的，來的都是一些唐\n"
+"門中人，好象找唐肥有事的。所以這裡雖然是雅座，卻是沒有生意的。老\n"
+"板唐肥正坐在一扇窗子(window)的邊上，好象向外在看什麼東東。牆上掛\n"
+"著一些個沒見過的字畫。\n"
 );
         set("item_desc", ([
-                "window" : HIG"һ�ۿ�ȥ,�紺�ĵ�����̣�����ֻ�����Ŀ���������\n"NOR,
+                "window" : HIG"一眼看去,早春的點點綠綠，讓你只覺得心曠神怡。。\n"NOR,
         ]));
         set("exits", ([
                 "down" : __DIR__"jiulou",
@@ -41,11 +41,11 @@ int do_kan(string arg)
         me = this_player();
         
         if ( !arg || arg!= "zihua")
-           return notify_fail(HIR"��Ҫ�ҿ�����\n"NOR);
+           return notify_fail(HIR"不要亂看啊！\n"NOR);
            
         if( query("combat_exp", me)<120000 )
         {
-                tell_object(me,HIR"���жپ����������ǲ��ɵ�����������\n"NOR);
+                tell_object(me,HIR"心中頓覺氣塞，神智不由得迷亂起來。\n"NOR);
                 if( query("qi", me)<500 )
                 {
                         me->unconcious();
@@ -57,19 +57,19 @@ int do_kan(string arg)
         }       
         
         if( query_temp("thua", me) )
-           return notify_fail("��Ҫ�ٿ��ˣ������˶��㲻�õģ�\n");
+           return notify_fail("不要再看了，看多了對你不好的！\n");
             
         if ( (int)me->query_skill("tangmen-jueqi",1) < 120)
-           return notify_fail("��һ���羰����������û�п��������ǲ���������\n");
+           return notify_fail("好一幅風景畫，從來都沒有看過，真是不枉此生。\n");
         
         if( query_temp("thua1", me) )
         {
                 set_temp("thua2", 1, me);
                 delete_temp("thua1", me);
-           return notify_fail("һ��ŭ��̰�ĵ��˲����к��³��ģ�\n");   
+           return notify_fail("一聲怒吼：貪心的人不會有好下場的！\n");   
         }  
         
-        message_vision(HIR"�ƻ�"NOR+HIC"��һ����������Ļ����㲻�ɵĳ���...... \n"NOR,me);
+        message_vision(HIR"唐花"NOR+HIC"，一朵如此美麗的花，你不由的痴了...... \n"NOR,me);
         set_temp("thua", 1, me);
         return 1;
 }

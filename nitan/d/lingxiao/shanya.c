@@ -5,20 +5,20 @@ int do_open(string arg);
 
 void create()
 {
-        set("short", "É½ÑÂ");
+        set("short", "å±±å´–");
         set("long",
-"Ó³ÕÕÔÚÑô¹â°×ÔÆÖ®¼äµÄ£¬ÊÇÒ»×ùÎ¡¶ëÖ®¼«µÄ´ó³Ç¡£Ö»¼û³ÇÇ½
-¸ßÓâÈýÕÉ£¬Ç½Í·Ç½Ô«Ñ©°×Ò»Æ¬£¬¾¡ÊÇ±ùÑ©¡£³ÇÇ½ÉÏÒþÒþÓÐÈËÍ·»Î
-¶¯£¬³ÇÍ·Ê÷×ÅÒ»ÃæÔÚî¸·çÖÐÕÐÕ¹µÄ´óÆì£¬³ÇÂ¥ÉÏÃæÐ´×ÅÈý¸ö´ó×Ö
+"æ˜ ç…§åœ¨é™½å…‰ç™½é›²ä¹‹é–“çš„ï¼Œæ˜¯ä¸€åº§å·å³¨ä¹‹æ¥µçš„å¤§åŸŽã€‚åªè¦‹åŸŽç‰†
+é«˜é€¾ä¸‰ä¸ˆï¼Œç‰†é ­ç‰†åž£é›ªç™½ä¸€ç‰‡ï¼Œç›¡æ˜¯å†°é›ªã€‚åŸŽç‰†ä¸Šéš±éš±æœ‰äººé ­æ™ƒ
+å‹•ï¼ŒåŸŽé ­æ¨¹è‘—ä¸€é¢åœ¨ç½¡é¢¨ä¸­æ‹›å±•çš„å¤§æ——ï¼ŒåŸŽæ¨“ä¸Šé¢å¯«è‘—ä¸‰å€‹å¤§å­—
 
-            " WHT "¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù
-            ¡ù                            ¡ù
-            ¡ù" NOR + HIW "     Áè      Ïö      ³Ç" NOR + WHT "     ¡ù
-            ¡ù                            ¡ù
-            ¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù" NOR "
+            " WHT "â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»
+            â€»                            â€»
+            â€»" NOR + HIW "     å‡Œ      éœ„      åŸŽ" NOR + WHT "     â€»
+            â€»                            â€»
+            â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»" NOR "
 
-³ÇÃÅÇ°ÓÐÒ»ÕÅºñºñµÄµõÇÅ(bridge)Õý½ô½ô¹Ø±Õ×Å¡£Èç¹ûÏëÒª½øÈë
-µÄ»°£¬±ØÐëÒªÇëÈË¿ª(open)²ÅÐÐ¡£\n");
+åŸŽé–€å‰æœ‰ä¸€å¼µåŽšåŽšçš„åŠæ©‹(bridge)æ­£ç·Šç·Šé—œé–‰è‘—ã€‚å¦‚æžœæƒ³è¦é€²å…¥
+çš„è©±ï¼Œå¿…é ˆè¦è«‹äººé–‹(open)æ‰è¡Œã€‚\n");
 
         set("outdoors", "lingxiao");
         set("exits", ([
@@ -28,7 +28,7 @@ void create()
         ]));
 
         set("item_desc", ([
-                "bridge" : WHT "\nÕâÊÇÒ»ÕÅ¼«´óµÄµõÇÅ£¬ÄËÊÇÁèÏö³ÇµÄÒ»µÀ·ÀÏß¡£\n" NOR,
+                "bridge" : WHT "\né€™æ˜¯ä¸€å¼µæ¥µå¤§çš„åŠæ©‹ï¼Œä¹ƒæ˜¯å‡Œéœ„åŸŽçš„ä¸€é“é˜²ç·šã€‚\n" NOR,
         ]) );
         setup();
 }
@@ -43,15 +43,15 @@ int do_open(string arg)
         object me=this_player();
 
         if (! arg || arg != "bridge" )
-                return notify_fail("ÄãÒª¸ÉÂï£¿\n");
+                return notify_fail("ä½ è¦å¹¹å˜›ï¼Ÿ\n");
 
-        message_vision(HIY "\n$N" HIY "ÔË×ãÁ¦Æø£¬´ó½ÐÒ»Éù£º¡°¿ªÃÅ"
-                       "Ñ½£¡¡±\n" NOR, this_player());
+        message_vision(HIY "\n$N" HIY "é‹è¶³åŠ›æ°£ï¼Œå¤§å«ä¸€è²ï¼šâ€œé–‹é–€"
+                       "å‘€ï¼â€\n" NOR, this_player());
 
-        message_vision(HIY "Ö»ÌýµÃ³ÇÉÏÓÐÈËËµµÀ£º¡°ÓÐÈËÀ´ÁË£¬·ÅµõÇÅ"
-                       "°É¡£¡±\n\n" NOR + HIC "Ö»ÌýµÃ¡°ÔþÔþÔþ¡±Ïì"
-                       "ÁËÆ¬¿Ì£¬µõÇÅ»º»º·ÅÏÂ£¬Â¶³öÒ»¸ö·½·½ÕýÕýµÄ³Ç"
-                       "ÃÅÀ´¡£\n" NOR, this_player());
+        message_vision(HIY "åªè½å¾—åŸŽä¸Šæœ‰äººèªªé“ï¼šâ€œæœ‰äººä¾†äº†ï¼Œæ”¾åŠæ©‹"
+                       "å§ã€‚â€\n\n" NOR + HIC "åªè½å¾—â€œè»‹è»‹è»‹â€éŸ¿"
+                       "äº†ç‰‡åˆ»ï¼ŒåŠæ©‹ç·©ç·©æ”¾ä¸‹ï¼Œéœ²å‡ºä¸€å€‹æ–¹æ–¹æ­£æ­£çš„åŸŽ"
+                       "é–€ä¾†ã€‚\n" NOR, this_player());
 
         set("exits/north", __DIR__"gate");
         remove_call_out("close");
@@ -62,7 +62,7 @@ int do_open(string arg)
 
 void close(object room)
 {
-        message("vision", HIY "Ö»Ìý¡°¸Â¸Â¸Â¸Â¡±¼¸Éù£¬µõÇÅÓÖ±»¹ØÁË"
-                          "ÆðÀ´¡£\n" NOR, room);
+        message("vision", HIY "åªè½â€œå˜Žå˜Žå˜Žå˜Žâ€å¹¾è²ï¼ŒåŠæ©‹åˆè¢«é—œäº†"
+                          "èµ·ä¾†ã€‚\n" NOR, room);
         delete("exits/north", room);
 }

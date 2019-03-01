@@ -3,13 +3,13 @@ inherit NPC;
 void do_chan();
 void create()
 {
-        string *names = ({"ÇàÉß","ÂÌÉß","»¨Éß"});
+        string *names = ({"é’è›‡","ç¶ è›‡","èŠ±è›‡"});
         set_name( names[random(sizeof(names))], ({ "big snake","snake"}));
         set("vendetta_mark","snake");
-        set("race", "Ò°ÊŞ");
-        set("gender", "ĞÛĞÔ");
+        set("race", "é‡ç¸");
+        set("gender", "é›„æ€§");
         set("age", 20);
-        set("long", "ÕâÊÇÒ»Ìõ´óÉß¡£\n");
+        set("long", "é€™æ˜¯ä¸€æ¢å¤§è›‡ã€‚\n");
 
         set("str", 40);
         set("cor", 100);
@@ -27,7 +27,7 @@ void create()
         set("chat_msg_combat", ({
                 (: do_chan() :),
         }) );
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "Î²°Í", "Æß´ç" }) );
+        set("limbs", ({ "é ­éƒ¨", "èº«é«”", "å°¾å·´", "ä¸ƒå¯¸" }) );
         set("verbs", ({ "bite" }) );
         set("combat_exp", 200000);
         set("bellicosity", 5 );
@@ -49,7 +49,7 @@ void do_chan() {
         enemy = enemies[random(sizeof(enemies))];
         if (!this_object()->is_fighting(enemy) )
                 return;
-        msg = HIG"\n$N¼ıÉäÒ»°ãÆËÉÏÀ´£¬²ø×¡ÁË$n£¡\n"NOR;
+        msg = HIG"\n$Nç®­å°„ä¸€èˆ¬æ’²ä¸Šä¾†ï¼Œçºä½äº†$nï¼\n"NOR;
         message_combatd(msg,this_object(),enemy);
         if (! enemy->is_busy())
                 enemy->start_busy(2);

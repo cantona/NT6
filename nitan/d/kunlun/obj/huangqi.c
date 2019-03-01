@@ -1,4 +1,4 @@
-// huangqi.c ª∆‹Œ
+// huangqi.c ÈªÉ‚ñ°
 
 #include <ansi.h>
 inherit ITEM;
@@ -13,12 +13,12 @@ void init()
 
 void create()
 {
-        set_name(YEL"ª∆‹Œ"NOR, ({"huang qi", "yao"}));
+        set_name(YEL"ÈªÉ‚ñ°"NOR, ({"huang qi", "yao"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "÷Í");
-                set("long", YEL"’‚ «“ª÷Í√´»◊»◊µƒø™◊≈µ≠ª∆…´–°ª®µƒª∆‹Œ°£\n"NOR);
+                set("unit", "Ê†™");
+                set("long", YEL"ÈÄôÊòØ‰∏ÄÊ†™ÊØõËå∏Ëå∏ÁöÑÈñãËëóÊ∑°ÈªÉËâ≤Â∞èËä±ÁöÑÈªÉ‚ñ°„ÄÇ\n"NOR);
                 set("value", 2500);
         }
         setup();
@@ -28,19 +28,19 @@ int do_eat(string arg)
 {
         object me=this_player();
 
-        if(!id(arg)) return notify_fail("ƒ„“™≥‘ ≤√¥£ø\n");
+        if(!id(arg)) return notify_fail("‰Ω†Ë¶ÅÂêÉ‰ªÄÈ∫ºÔºü\n");
         if(!present(this_object(), me))
-                return notify_fail("ƒ„“™≥‘ ≤√¥£ø\n");
+                return notify_fail("‰Ω†Ë¶ÅÂêÉ‰ªÄÈ∫ºÔºü\n");
         if( me->is_busy() )
-                return notify_fail("±º±£¨¬˝¬˝≥‘£¨–°–ƒ±“≠◊≈¡À°£\n");
+                return notify_fail("Âà•ÊÄ•ÔºåÊÖ¢ÊÖ¢ÂêÉÔºåÂ∞èÂøÉÂà•ÂôéËëó‰∫Ü„ÄÇ\n");
         if ( (int)me->query_condition("medicine" ) > 0 )
         {
                 addn("qi", -100, me);
                 addn("neili", 100, me);
-                message_vision(HIR "$N≥‘œ¬“ª÷Íª∆‹Œ£¨÷ªæıµ√Õ∑÷ÿΩ≈«·£¨“°“°”˚µπ£¨‘≠¿¥∑˛ ≥Ã´º±Ã´∂‡£¨“©–ß  µ√∆‰∑¥£°\n" NOR, me);
+                message_vision(HIR "$NÂêÉ‰∏ã‰∏ÄÊ†™ÈªÉ‚ñ°ÔºåÂè™Ë¶∫ÂæóÈ†≠ÈáçËÖ≥ËºïÔºåÊêñÊêñÊ¨≤ÂÄíÔºåÂéü‰æÜÊúçÈ£üÂ§™ÊÄ•Â§™Â§öÔºåËó•ÊïàÈÅ©ÂæóÂÖ∂ÂèçÔºÅ\n" NOR, me);
         } else {
                 addn("qi", 50, me);
-                message_vision("$N≥‘œ¬“ª÷Íª∆‹Œ£¨÷ªæıµ√ªÎ…Ì»»∆¯Ã⁄Ã⁄£¨∂Ÿ ±≥‰¬˙¡ÀªÓ¡¶£°\n", me);
+                message_vision("$NÂêÉ‰∏ã‰∏ÄÊ†™ÈªÉ‚ñ°ÔºåÂè™Ë¶∫ÂæóÊ∏æË∫´ÁÜ±Ê∞£È®∞È®∞ÔºåÈ†ìÊôÇÂÖÖÊªø‰∫ÜÊ¥ªÂäõÔºÅ\n", me);
 
                 me->apply_condition("medicine", 30);
         }

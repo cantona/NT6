@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�չ�ɽ·");
+        set("short", "日觀山路");
         set("long", @LONG
-�������չ۷�С·���Է嶥���£����ᶫ���š��˴�ɽ�ƶ��ͣ���
-��������ȣ�һ��С�Ķ��������ȥ��
+這裡是日觀峰小路，自峰頂東下，聯結東天門。此處山勢陡峭，兩
+邊下臨深谷，一不小心都會掉了下去。
 LONG );
         set("exits", ([
                 "eastdown" : __DIR__"dongling",

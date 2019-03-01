@@ -1,4 +1,4 @@
-// wuchang1.c �䳡
+// wuchang1.c 武場
 // Winder Oct.10 1998
 
 #include <ansi.h>
@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�䳡");
+        set("short", "武場");
         set("long", @LONG
-������ȫ��̵����䳡�����µ���ש�����̵��������룬ȴ
-��֪����˭�ȳ��˼�ʮ�����СС�İ��ӡ����ĳ������������
-���µ��е��������Ʒ��������쳤�վã����¾Ͳȳ��˰��ӡ�
+這裡是全真教的演武場，地下的青磚本來舖的整整齊齊，卻
+不知道被誰踩出了幾十個大大小小的凹坑。看的出來，這裡成年
+累月的有弟子修煉掌法步法，天長日久，地下就踩出了凹坑。
 LONG
         );
         set("outdoors", "chongyang");

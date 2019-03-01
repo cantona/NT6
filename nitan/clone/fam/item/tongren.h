@@ -1,4 +1,4 @@
-// Í­ÈË
+// éŠ…äºº
 
 #include <ansi.h>
 
@@ -10,20 +10,20 @@ int is_tongren() { return 1; };
 
 void create()
 {
-        set_name(NOR + YEL "Í­ÈËÖĞÎÄÃû" NOR, ({ "Í­ÈËID" }) );
+        set_name(NOR + YEL "éŠ…äººä¸­æ–‡å" NOR, ({ "éŠ…äººID" }) );
         set_weight(50);
 
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", NOR + YEL "ÕâÊÇÒ»¸ö³åÑ¨Í­ÈË£¬ÉÏÃæ»æÖÆÁË´òÍ¨¾­ÂöµÄ¹Ø¼üÑ¨Î»¡£\n" HIG
-                                      "*ÓĞ¹Ø¾­Âö³åÑ¨µÄÏêÏ¸½éÉÜÇë²Î¼û help jingmai \n" NOR);
+                set("long", NOR + YEL "é€™æ˜¯ä¸€å€‹æ²–ç©´éŠ…äººï¼Œä¸Šé¢ç¹ªåˆ¶äº†æ‰“é€šç¶“è„ˆçš„é—œéµç©´ä½ã€‚\n" HIG
+                                      "*æœ‰é—œç¶“è„ˆæ²–ç©´çš„è©³ç´°ä»‹ç´¹è«‹åƒè¦‹ help jingmai \n" NOR);
                 set("value", 1);
-                set("unit", "¸ö");
-                set("neili", NEILICOST); // ÏûºÄÄÚÁ¦
-                set("jingmai_name", "JINGMAI_NAME"); // ¾­ÂöÃû
-                set("xuewei_name", "XUEWEI_NAME"); // Ñ¨Î»Ãû
-                set("point", "CHONGXUE_XIAOGUO"); // ³åÑ¨Ğ§¹û
+                set("unit", "å€‹");
+                set("neili", NEILICOST); // æ¶ˆè€—å…§åŠ›
+                set("jingmai_name", "JINGMAI_NAME"); // ç¶“è„ˆå
+                set("xuewei_name", "XUEWEI_NAME"); // ç©´ä½å
+                set("point", "CHONGXUE_XIAOGUO"); // æ²–ç©´æ•ˆæœ
         }
 
         setup();

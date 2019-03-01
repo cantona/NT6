@@ -1,15 +1,15 @@
-// fu-huating »¨Ìü
+// fu-huating èŠ±å»³
 // Winder Oct.10 1998
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "»¨Ìü");
+        set("short", "èŠ±å»³");
         set("long", @LONG
-ÕâÀïÊÇÕâ»§ÈË¼ÒºÈ¾ÆÉÍÔÂµÄËùÔÚ£¬Ò»¸öÐ¡Í¤×Ó½¨ÔìÔÚÌüµÄÖÐÑë£¬
-ËÄÖÜÎ§ÈÆ×ÅÒ»Ð©ÆÏÌÑÌÙ(teng)¡£Ò»ÕóÎ¢·ç´µ¹ý£¬¿ÕÆøÖÐËÆºõÓÐÒþÒþ
-µÄ»¨ÏãÆ®À´£¬ÖÐÈËÓû×í¡£
+é€™è£¡æ˜¯é€™æˆ¶äººå®¶å–é…’è³žæœˆçš„æ‰€åœ¨ï¼Œä¸€å€‹å°äº­å­å»ºé€ åœ¨å»³çš„ä¸­å¤®ï¼Œ
+å››å‘¨åœç¹žè‘—ä¸€äº›è‘¡è„ç±(teng)ã€‚ä¸€é™£å¾®é¢¨å¹éŽï¼Œç©ºæ°£ä¸­ä¼¼ä¹Žæœ‰éš±éš±
+çš„èŠ±é¦™é£„ä¾†ï¼Œä¸­äººæ¬²é†‰ã€‚
 LONG
         );
         set("outdoors", "hanzhong");
@@ -19,7 +19,7 @@ LONG
         ]));
         set("no_clean_up", 0);
         set("item_desc", ([
-            "teng": "ÕâÐ©ÌÙºÃÏó³¤µÃÓÐÐ©ÈÕ×ÓÁË£¬ÃÜ²»Í¸·ç£¬ÏÄÌì´ôÔÚÌÙÏÂ¿Ï¶¨ÒõÁ¹¼«ÁË¡£\n"
+            "teng": "é€™äº›ç±å¥½è±¡é•·å¾—æœ‰äº›æ—¥å­äº†ï¼Œå¯†ä¸é€é¢¨ï¼Œå¤å¤©å‘†åœ¨ç±ä¸‹è‚¯å®šé™°æ¶¼æ¥µäº†ã€‚\n"
         ]) );
         set("coor/x", -12230);
 	set("coor/y", 790);

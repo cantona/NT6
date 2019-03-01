@@ -15,16 +15,16 @@ void init()
 
 void create()
 {
-        set_name(YEL"¡¸½ğÉßÃØÜ¸¡¹" NOR "ÉÏ²á", ({ "jinshe book1","book1", }));
+        set_name(YEL"ã€Œé‡‘è›‡ç§˜èŠ¨ã€" NOR "ä¸Šå†Š", ({ "jinshe book1","book1", }));
         set_weight(500);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
+                set("unit", "æœ¬");
                 set("material", "paper");
                 set("long",
-        "ÕâÊÇÒ»±¾ÓÃ±¡Ö½Ğ´³ÉµÄÊé¡£ÉÏÊé£º¡¸½ğÉßÃØÜ¸¡¹¡£\n"
-        "ÊéÆ¤·º»Æ£¬¿´À´ÒÑ¾­±£´æºÜ¾ÃÁË¡£\n", );
+        "é€™æ˜¯ä¸€æœ¬ç”¨è–„ç´™å¯«æˆçš„æ›¸ã€‚ä¸Šæ›¸ï¼šã€Œé‡‘è›‡ç§˜èŠ¨ã€ã€‚\n"
+        "æ›¸çš®æ³›é»ƒï¼Œçœ‹ä¾†å·²ç¶“ä¿å­˜å¾ˆä¹…äº†ã€‚\n", );
                 set("skill", ([
                         "name"        : "jinshe-jian",
                         "exp_required":        800000,
@@ -46,84 +46,84 @@ int do_du(string arg)
 
         if (! arg)
         {
-                write("ÑĞ¶Á½ğÉßÃØÜ¸Ö¸Áî¸ñÊ½£ºread <¼¼ÄÜ> from <½ğÉßÃØÜ¸>\n");
+                write("ç ”è®€é‡‘è›‡ç§˜èŠ¨æŒ‡ä»¤æ ¼å¼ï¼šread <æŠ€èƒ½> from <é‡‘è›‡ç§˜èŠ¨>\n");
                 return 1;
         }
 
         if (sscanf(arg, "%s from %s", skill, book) != 2)
         {
-                write("ÑĞ¶Á½ğÉßÃØÜ¸Ö¸Áî¸ñÊ½£ºread <¼¼ÄÜ> from <½ğÉßÃØÜ¸>\n");
+                write("ç ”è®€é‡‘è›‡ç§˜èŠ¨æŒ‡ä»¤æ ¼å¼ï¼šread <æŠ€èƒ½> from <é‡‘è›‡ç§˜èŠ¨>\n");
                 return 1;
         }
 
         if (me->is_busy())
         {
-                write("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+                write("ä½ ç¾åœ¨æ­£å¿™è‘—å‘¢ã€‚\n");
                 return 1;
         }
 
         if (me->is_fighting())
         {
-                write("ÄãÎŞ·¨ÔÚÕ½¶·ÖĞ×¨ĞÄÏÂÀ´ÑĞ¶ÁĞÂÖª£¡\n");
+                write("ä½ ç„¡æ³•åœ¨æˆ°é¬¥ä¸­å°ˆå¿ƒä¸‹ä¾†ç ”è®€æ–°çŸ¥ï¼\n");
                 return 1;
         }
 
         if( query("no_fight", where )
             && query("doing", me) != "scheme" )
         {
-                write("ÄãÎŞ·¨ÔÚÕâÀï¾²ÏÂĞÄÀ´ÑĞ¶Á½ğÉßÃØÜ¸¡£\n");
+                write("ä½ ç„¡æ³•åœ¨é€™è£¡éœä¸‹å¿ƒä¾†ç ”è®€é‡‘è›‡ç§˜èŠ¨ã€‚\n");
                 return 1;
         }
 
         if (! me->query_skill("literate", 1))
         {
-                write("ÄãÊÇ¸öÎÄÃ¤£¬ÏÈÑ§µãÎÄ»¯(literate)°É¡£\n");
+                write("ä½ æ˜¯å€‹æ–‡ç›²ï¼Œå…ˆå­¸é»æ–‡åŒ–(literate)å§ã€‚\n");
                 return 1;
         }
 
         if (! id(book))
         {
-                write("ÕâÀïÃ»ÓĞÕâ±¾Êé¡£\n");
+                write("é€™è£¡æ²’æœ‰é€™æœ¬æ›¸ã€‚\n");
                 return 1;
         }
 
-        if (skill != "ÉßÀ§³î³Ç" && skill != "ÉßÓ°ÍòµÀ"
-           && skill != "½ğÉßÊÉÌì")
+        if (skill != "è›‡å›°æ„åŸ" && skill != "è›‡å½±è¬é“"
+           && skill != "é‡‘è›‡å™¬å¤©")
         {
-                write("½ğÉßÃØÜ¸ÉÏ²¢Ã»ÓĞ¼ÇÔØÄã´òËãÑĞ¾¿µÄÄÚÈİ¡£\n" NOR);
+                write("é‡‘è›‡ç§˜èŠ¨ä¸Šä¸¦æ²’æœ‰è¨˜è¼‰ä½ æ‰“ç®—ç ”ç©¶çš„å…§å®¹ã€‚\n" NOR);
                 return 1;
         }
 
         if( count_lt(query("combat_exp", me),800000) )
         {
-                write("ÄãµÄÊµÕ½¾­Ñé²»×ã£¬ÔÙÔõÃ´¶ÁÒ²Ã»ÓÃ¡£\n");
+                write("ä½ çš„å¯¦æˆ°ç¶“é©—ä¸è¶³ï¼Œå†æ€éº¼è®€ä¹Ÿæ²’ç”¨ã€‚\n");
                 return 1;
         }
 
-        if (skill == "ÉßÀ§³î³Ç")
+        if (skill == "è›‡å›°æ„åŸ")
         {
            if( query("can_perform/jinshe-jian/kun", me) )
            {
-                write("Äã²»ÊÇÒÑ¾­»áÁËÂğ£¿\n");
+                write("ä½ ä¸æ˜¯å·²ç¶“æœƒäº†å—ï¼Ÿ\n");
                 return 1;
            }
            if (me->query_skill("jinshe-jian", 1) < 140)
            {
-                write("Äã½ğÉß½£·¨²»¹»ÊìÁ·£¬ÎŞ·¨ÑĞ¶Á´Ë¾øÕĞ£¡\n");
+                write("ä½ é‡‘è›‡åŠæ³•ä¸å¤ ç†Ÿç·´ï¼Œç„¡æ³•ç ”è®€æ­¤çµ•æ‹›ï¼\n");
                 return 1;
            }
 
            if (random (5) != 1)
            {
-                write("ÄãÑĞ¾¿ÁË°ëÌì£¬ÈÔÈ»ÎŞ·¨½«¡¸ÉßÀ§³î³Ç¡¹ÈÚ»á¹áÍ¨£¡\n");
+                write("ä½ ç ”ç©¶äº†åŠå¤©ï¼Œä»ç„¶ç„¡æ³•å°‡ã€Œè›‡å›°æ„åŸã€èæœƒè²«é€šï¼\n");
                 me->start_busy(15); 
                 set("jing", 1, me);
                 return 1;
            }
-           msg = HIG "$N" HIG "·­¿´ÃØÜ¸£¬×ĞÏ¸ÑĞ¾¿ÉÏÃæËù¼ÇÔØµÄÎäÑ§£¬ö®ÄÇ¼äºöÓĞËùÎò"
-                     "¡­¡­\n" NOR;
+           msg = HIG "$N" HIG "ç¿»çœ‹ç§˜èŠ¨ï¼Œä»”ç´°ç ”ç©¶ä¸Šé¢æ‰€è¨˜è¼‰çš„æ­¦å­¸ï¼Œéœé‚£é–“å¿½æœ‰æ‰€æ‚Ÿ"
+                     "â€¦â€¦\n" NOR;
 
-           msg += HIG "$N" HIG "³¤Ì¾Ò»Éù£¬¸Ğ¿®ÍòÇ§¡£\n" NOR; 
+           msg += HIG "$N" HIG "é•·å˜†ä¸€è²ï¼Œæ„Ÿæ…¨è¬åƒã€‚\n" NOR; 
            message_vision(msg, me); 
 
            if (me->can_improve_skill("sword"))
@@ -133,7 +133,7 @@ int do_du(string arg)
            if (me->can_improve_skill("martial-cognize"))
                    me->improve_skill("martial-cognize", 1500000);
 
-           write(HIW "ÄãÑ§»áÁË¡¸" HIG "ÉßÀ§³î³Ç" HIW "¡¹¡£\n" NOR);
+           write(HIW "ä½ å­¸æœƒäº†ã€Œ" HIG "è›‡å›°æ„åŸ" HIW "ã€ã€‚\n" NOR);
            set("can_perform/jinshe-jian/kun", 1, me);
            
            return 1;
@@ -141,29 +141,29 @@ int do_du(string arg)
     
         else 
        
-        if (skill == "ÉßÓ°ÍòµÀ")
+        if (skill == "è›‡å½±è¬é“")
         {
            if( query("can_perform/jinshe-jian/wan", me) )
            {
-                write("Äã²»ÊÇÒÑ¾­»áÁËÂğ£¿\n");
+                write("ä½ ä¸æ˜¯å·²ç¶“æœƒäº†å—ï¼Ÿ\n");
                 return 1;
            }
            if (me->query_skill("jinshe-jian", 1) < 180)
            {
-                write("Äã½ğÉß½£·¨²»¹»ÊìÁ·£¬ÎŞ·¨ÑĞ¶Á´Ë¾øÕĞ£¡\n");
+                write("ä½ é‡‘è›‡åŠæ³•ä¸å¤ ç†Ÿç·´ï¼Œç„¡æ³•ç ”è®€æ­¤çµ•æ‹›ï¼\n");
                 return 1;
            }
 
            if (random (8) != 1)
            {
-                write("ÄãÑĞ¾¿ÁË°ëÌì£¬ÈÔÈ»ÎŞ·¨½«¡¸ÉßÓ°ÍòµÀ¡¹ÈÚ»á¹áÍ¨£¡\n");
+                write("ä½ ç ”ç©¶äº†åŠå¤©ï¼Œä»ç„¶ç„¡æ³•å°‡ã€Œè›‡å½±è¬é“ã€èæœƒè²«é€šï¼\n");
                 me->start_busy(15);
                 set("jing", 1, me);
                 return 1;
            }
-           msg = HIG "$N" HIG "·­¿´ÃØÜ¸£¬×ĞÏ¸ÑĞ¾¿ÉÏÃæËù¼ÇÔØµÄÎäÑ§£¬ö®ÄÇ¼äºöÓĞËùÎò"
-                     "¡­¡­\n" NOR;
-           msg += HIG "$N" HIG "³¤Ì¾Ò»Éù£¬¸Ğ¿®ÍòÇ§¡£\n" NOR; 
+           msg = HIG "$N" HIG "ç¿»çœ‹ç§˜èŠ¨ï¼Œä»”ç´°ç ”ç©¶ä¸Šé¢æ‰€è¨˜è¼‰çš„æ­¦å­¸ï¼Œéœé‚£é–“å¿½æœ‰æ‰€æ‚Ÿ"
+                     "â€¦â€¦\n" NOR;
+           msg += HIG "$N" HIG "é•·å˜†ä¸€è²ï¼Œæ„Ÿæ…¨è¬åƒã€‚\n" NOR; 
 
            message_vision(msg, me); 
 
@@ -174,7 +174,7 @@ int do_du(string arg)
            if (me->can_improve_skill("martial-cognize"))
                    me->improve_skill("martial-cognize", 1500000);
 
-           write(HIW "ÄãÑ§»áÁË¡¸" HIG "ÉßÓ°ÍòµÀ" HIW "¡¹¡£\n" NOR);
+           write(HIW "ä½ å­¸æœƒäº†ã€Œ" HIG "è›‡å½±è¬é“" HIW "ã€ã€‚\n" NOR);
            set("can_perform/jinshe-jian/wan", 1, me);
 
            return 1;
@@ -182,29 +182,29 @@ int do_du(string arg)
  
         else 
 
-        if (skill == "½ğÉßÊÉÌì")
+        if (skill == "é‡‘è›‡å™¬å¤©")
         {
            if( query("can_perform/jinshe-jian/shi", me) )
            {
-                write("Äã²»ÊÇÒÑ¾­»áÁËÂğ£¿\n");
+                write("ä½ ä¸æ˜¯å·²ç¶“æœƒäº†å—ï¼Ÿ\n");
                 return 1;
            }
            if (me->query_skill("jinshe-jian", 1) < 200)
            {
-                write("Äã½ğÉß½£·¨²»¹»ÊìÁ·£¬ÎŞ·¨ÑĞ¶Á´Ë¾øÕĞ£¡\n");
+                write("ä½ é‡‘è›‡åŠæ³•ä¸å¤ ç†Ÿç·´ï¼Œç„¡æ³•ç ”è®€æ­¤çµ•æ‹›ï¼\n");
                 return 1;
            }
 
            if (random (10) != 1)
            {
-                write("ÄãÑĞ¾¿ÁË°ëÌì£¬ÈÔÈ»ÎŞ·¨½«¡¸Íò½£×İºá¡¹ÈÚ»á¹áÍ¨£¡\n");
+                write("ä½ ç ”ç©¶äº†åŠå¤©ï¼Œä»ç„¶ç„¡æ³•å°‡ã€Œè¬åŠç¸±æ©«ã€èæœƒè²«é€šï¼\n");
                 me->start_busy(15);
                 set("jing", 1, me);
                 return 1;
            }
-           msg = HIG "$N" HIG "·­¿´½£Æ×£¬×ĞÏ¸ÑĞ¾¿ÉÏÃæËù¼ÇÔØµÄÎäÑ§£¬ö®ÄÇ¼äºöÓĞËùÎò"
-                     "¡­¡­\n" NOR;
-           msg += HIG "$N" HIG "³¤Ì¾Ò»Éù£¬¸Ğ¿®ÍòÇ§¡£\n" NOR; 
+           msg = HIG "$N" HIG "ç¿»çœ‹åŠè­œï¼Œä»”ç´°ç ”ç©¶ä¸Šé¢æ‰€è¨˜è¼‰çš„æ­¦å­¸ï¼Œéœé‚£é–“å¿½æœ‰æ‰€æ‚Ÿ"
+                     "â€¦â€¦\n" NOR;
+           msg += HIG "$N" HIG "é•·å˜†ä¸€è²ï¼Œæ„Ÿæ…¨è¬åƒã€‚\n" NOR; 
            message_sort(msg, me); 
 
            if (me->can_improve_skill("sword"))
@@ -214,7 +214,7 @@ int do_du(string arg)
            if (me->can_improve_skill("martial-cognize"))
                    me->improve_skill("martial-cognize", 1500000);
 
-           write(HIW "ÄãÑ§»áÁË¡¸" HIG "½ğÉßÊÉÌì" HIW "¡¹¡£\n" NOR);
+           write(HIW "ä½ å­¸æœƒäº†ã€Œ" HIG "é‡‘è›‡å™¬å¤©" HIW "ã€ã€‚\n" NOR);
            set("can_perform/jinshe-jian/shi", 1, me);
            
            return 1;

@@ -1,4 +1,4 @@
-// bo.c ±Ìº£Çå²¨
+// bo.c ç¢§æµ·æ¸…æ³¢
 
 #include <ansi.h>
 
@@ -12,31 +12,31 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail("±Ìº£Çå²¨Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ç¢§æµ·æ¸…æ³¢åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if (target->is_busy())
-                return notify_fail(target->name() + "Ä¿Ç°Õý×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É£¡\n");
+                return notify_fail(target->name() + "ç›®å‰æ­£è‡ªé¡§ä¸æš‡ï¼Œæ”¾è†½æ”»æ“Šå§ï¼\n");
                 
         if ((int)me->query_skill("bluesea-force", 1) < 100)
-                return notify_fail("ÄãµÄÄÏº£Ðþ¹¦²»¹»Éîºñ£¬²»»áÊ¹ÓÃ±Ìº£Çå²¨¡£\n");
+                return notify_fail("ä½ çš„å—æµ·çŽ„åŠŸä¸å¤ æ·±åŽšï¼Œä¸æœƒä½¿ç”¨ç¢§æµ·æ¸…æ³¢ã€‚\n");
 
        if (! living(target))
-              return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+              return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIC "$N" HIC "ÕÆÁ¦ºö×óºöÓÒ£¬ÐÎ³ÉÒ»¸ö¸öÆøÐý£¬Èç²¨ÀËÒ»°ã½ÓÁ¬Ïò$n"
-              HIC "±ÆÈ¥£¡\n" NOR;
+        msg = HIC "$N" HIC "æŽŒåŠ›å¿½å·¦å¿½å³ï¼Œå½¢æˆä¸€å€‹å€‹æ°£æ—‹ï¼Œå¦‚æ³¢æµªä¸€èˆ¬æŽ¥é€£å‘$n"
+              HIC "é€¼åŽ»ï¼\n" NOR;
 
         ap = attack_power(me, "force");
         dp = defense_power(target, "parry");
 
         if (ap / 2 + random(ap) > dp)
         {
-                msg += HIR "½á¹û$p" HIR "±»$P" HIR "±ÆµÃÊ©Õ¹²»¿ª°ëµãÕÐÊ½£¡\n" NOR;
+                msg += HIR "çµæžœ$p" HIR "è¢«$P" HIR "é€¼å¾—æ–½å±•ä¸é–‹åŠé»žæ‹›å¼ï¼\n" NOR;
                 target->start_busy(ap / 80 + 2);
         } else
         {
-                msg += CYN "¿ÉÊÇ$p" CYN "¿´ÆÆÁË$P" CYN "µÄÕÆÊÆÀ´Â·£¬"
-                       "Õò¶¨×ÔÈô£¬Ó¦¶Ô×ÔÈç¡£\n" NOR;
+                msg += CYN "å¯æ˜¯$p" CYN "çœ‹ç ´äº†$P" CYN "çš„æŽŒå‹¢ä¾†è·¯ï¼Œ"
+                       "éŽ®å®šè‡ªè‹¥ï¼Œæ‡‰å°è‡ªå¦‚ã€‚\n" NOR;
                 me->start_busy(1);
         }
         message_combatd(msg, me, target);

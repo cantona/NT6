@@ -1,4 +1,4 @@
-// digging.c ¾òµØÖ®Êõ
+// digging.c æ˜åœ°ä¹‹è¡“
 // Last Modified by winder on Jun. 10 2000
 
 #include <ansi.h>;
@@ -19,23 +19,23 @@ int valid_learn(object me)
         lvl = (int)me->query_skill("construction", 1);
 
         if( lvl>29 && query("kar", me) != 27 )
-                return notify_fail("ÏŞÓÚÌì×Ê£¬ÄãÖ»ÄÜĞŞÏ°Õâ¸ö³Ì¶ÈÁË¡£\n");
+                return notify_fail("é™äºå¤©è³‡ï¼Œä½ åªèƒ½ä¿®ç¿’é€™å€‹ç¨‹åº¦äº†ã€‚\n");
         else return 1;
 }
 
 int practice_skill(object me)
 {
-        return notify_fail("¾òµØÖ®ÊõÖ»ÄÜ¿¿Ñ§Ï°À´Ìá¸ß¡£\n");
+        return notify_fail("æ˜åœ°ä¹‹è¡“åªèƒ½é å­¸ç¿’ä¾†æé«˜ã€‚\n");
 }
 int help(object me)
 {
-        write(HIC"\n¾òµØÖ®Êõ£º"NOR"\n");
+        write(HIC"\næ˜åœ°ä¹‹è¡“ï¼š"NOR"\n");
         write(@HELP
 
-    ¾òµØÖ®ÊõÊÇÉñÁúµº¶ÀÃÅ¾ø¼¼¡£
+    æ˜åœ°ä¹‹è¡“æ˜¯ç¥é¾å³¶ç¨é–€çµ•æŠ€ã€‚
 
-        Ñ§Ï°ÒªÇó£º
-                ÎŞ¡£
+        å­¸ç¿’è¦æ±‚ï¼š
+                ç„¡ã€‚
 HELP
         );
         return 1;

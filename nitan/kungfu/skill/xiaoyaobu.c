@@ -3,7 +3,7 @@ inherit SKILL;
 int is_ultimate_skill() { return 1; }
 
 string *dodge_msg = ({
-        "$nÂÒÌøÒ»Í¨£¬±Ü¹ıÁË$NµÄ¹¥ÊÆ¡£\n",
+        "$näº‚è·³ä¸€é€šï¼Œé¿éäº†$Nçš„æ”»å‹¢ã€‚\n",
 });
 
 int valid_enable(string usage) { return (usage == "dodge");}
@@ -18,7 +18,7 @@ string query_dodge_msg(string limb)
 int practice_skill(object me)
 {
         if( query("qi", me)<50 )
-                return notify_fail("ÄãµÄÌåÁ¦Ì«²îÁË£¬ÎŞ·¨¼ÌĞøÁ·Ï°¡£\n");
+                return notify_fail("ä½ çš„é«”åŠ›å¤ªå·®äº†ï¼Œç„¡æ³•ç¹¼çºŒç·´ç¿’ã€‚\n");
 
         me->receive_damage("qi", 40);
         return 1;

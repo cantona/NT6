@@ -1,4 +1,4 @@
-// liji.c ×¥³´Àï¼¹
+// liji.c æŠ“ç‚’è£¡è„Š
 
 #include <ansi.h>
 
@@ -7,13 +7,13 @@ inherit F_FOOD;
 
 void create()
 {
-        set_name(HIY "×¥³´Àï¼¹" NOR, ({"zhuachao liji", "liji"}));
+        set_name(HIY "æŠ“ç‚’è£¡è„Š" NOR, ({"zhuachao liji", "liji"}));
         set_weight(400);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "×¥³´Àï¼¹Ëá¡¢ÏÌ¡¢Ìğ£¬Íâ½¹ÀïÄÛ£¬ÊÇ¡°ËÄ´ó×¥³´¡±Ö®Ò»¡£\n");
-                set("unit", "µú");
+                set("long", "æŠ“ç‚’è£¡è„Šé…¸ã€å’¸ã€ç”œï¼Œå¤–ç„¦è£¡å«©ï¼Œæ˜¯â€œå››å¤§æŠ“ç‚’â€ä¹‹ä¸€ã€‚\n");
+                set("unit", "ç¢Ÿ");
                 set("value", 100);
                 set("food_remaining", 1);
                 set("food_supply", 50);

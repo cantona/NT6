@@ -3,9 +3,9 @@
 #include <ansi.h>
 inherit NPC;
 
-string *first_name = ({ "Ë®", "º£"});
+string *first_name = ({ "æ°´", "æµ·"});
 string *first_id = ({ "shui", "hai"});
-string *name_words = ({ "¾ŞÁé", "¹Ö"});
+string *name_words = ({ "å·¨éˆ", "æ€ª"});
 string *id_words = ({ "juling", "guai"});
 
 void create()
@@ -51,8 +51,8 @@ void create()
         set_temp("apply/unarmed_damage",1000+random(1000));
         set_temp("apply/armor", 1000+random(1000));
         set("drops", ([
-                "RA&RANDOM10"    :       100,   // µÍ¼¶ÆÕÍ¨×°±¸
-                "RA&RANDOM20"    :       30,    // ÖĞ¼¶ÆÕÍ¨×°±¸
+                "RA&RANDOM10"    :       100,   // ä½ç´šæ™®é€šè£å‚™
+                "RA&RANDOM20"    :       30,    // ä¸­ç´šæ™®é€šè£å‚™
                 "MO&A1000"       :       1,
                 "MO&A1001"       :       1,
                 "MO&A1002"       :       1,
@@ -87,8 +87,8 @@ mixed hit_ob(object me, object ob, int damage_bouns)
         if (damage < 0) damage = 0;
         ob->receive_wound("qi", damage, me);
         set("neili",query("max_neili",  me), me);
-        return HIC "$N" HIC "¡°¹ş¡±µÄÒ»ÉùÍÂ³öÒ»¿Úº®Æø£¬µÇÊ±Áî$n"
-               HIC "ËÄÖ«¼¸ºõ¶³½©¡£\n" NOR;
+        return HIC "$N" HIC "â€œå“ˆâ€çš„ä¸€è²åå‡ºä¸€å£å¯’æ°£ï¼Œç™»æ™‚ä»¤$n"
+               HIC "å››è‚¢å¹¾ä¹å‡åƒµã€‚\n" NOR;
 }
 
 void unconcious()

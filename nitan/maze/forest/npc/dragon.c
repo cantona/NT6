@@ -4,15 +4,15 @@ int big_blowing();
 int hurting();
 void create()
 {
-        set_name(HIR"ÁÒ»ðÄõÁú"NOR, ({ "dragon lord", "dragon" }) );
+        set_name(HIR"çƒˆç«å­½é¾"NOR, ({ "dragon lord", "dragon" }) );
         set("vendetta_mark","dragon");
-        set("race", "Ò°ÊÞ");
-        set("gender", "ÐÛÐÔ");
+        set("race", "é‡Žç¸");
+        set("gender", "é›„æ€§");
         set("age", 200);
 
         set("long",
-"ÕâÊÇÒ»ÌõÈ«Éí³àºì£¬ÎüÌìµØÖ®¼äµÄ»ðÆø¶ø³¤´óµÄÄõÁú£¡
-ËüÈ«ÉíÉ¢·¢×Å³àºìÉ«µÄ»ðÑæ\n");
+"é€™æ˜¯ä¸€æ¢å…¨èº«èµ¤ç´…ï¼Œå¸å¤©åœ°ä¹‹é–“çš„ç«æ°£è€Œé•·å¤§çš„å­½é¾ï¼
+å®ƒå…¨èº«æ•£ç™¼è‘—èµ¤ç´…è‰²çš„ç«ç‡„\n");
 
         set("str", 100+random(20));
         set("con", 52);
@@ -26,7 +26,7 @@ void create()
         set("neili", 100000);
         set("max_neili", 100000);
         set("attitude", "aggressive");
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "Î²°Í" }) );
+        set("limbs", ({ "é ­éƒ¨", "èº«é«”", "å°¾å·´" }) );
         set("verbs", ({ "bite", "claw" }) );
         set("chat_chance_combat",80);
         set("chat_msg_combat", ({
@@ -44,7 +44,7 @@ void create()
 int big_blowing()
 {
         remove_call_out("hurting");
-        message_vision( HIR "\n\n$N"HIR"ÉîÉîµØÎüÈëÒ»¿Ú»ðÆø£¬È«Éí×ªÎªÏÊºìµÄ»ðÉ«£¬Õû¸öÁú¸¹ÕÍ´óÁË¼¸±¶£¡£¡\n\n"NOR,
+        message_vision( HIR "\n\n$N"HIR"æ·±æ·±åœ°å¸å…¥ä¸€å£ç«æ°£ï¼Œå…¨èº«è½‰ç‚ºé®®ç´…çš„ç«è‰²ï¼Œæ•´å€‹é¾è…¹è„¹å¤§äº†å¹¾å€ï¼ï¼\n\n"NOR,
         this_object());
         hurting();
         start_busy(3+random(2));
@@ -55,7 +55,7 @@ int hurting()
         int dam;
         object *inv;
 
-        message_vision( HIR "\n\n$N"+HIR"ÍÂ³öÒ»¹É³ã¿É·Ù½ðµÄ»ðÑæ£®£®Õû¸öÌìµØËÆºõ¶¼±»È¼ÉÕ×Å£¡£¡£¡\n\n",this_object());
+        message_vision( HIR "\n\n$N"+HIR"åå‡ºä¸€è‚¡ç†¾å¯ç„šé‡‘çš„ç«ç‡„ï¼Žï¼Žæ•´å€‹å¤©åœ°ä¼¼ä¹Žéƒ½è¢«ç‡ƒç‡’è‘—ï¼ï¼ï¼\n\n",this_object());
         inv = all_inventory(environment(this_object()));
         for(i=sizeof(inv)-1; i>=0; i--)
         if( living(inv[i]))

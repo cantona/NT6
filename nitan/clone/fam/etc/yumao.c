@@ -5,13 +5,13 @@ inherit HEAD;
 
 void create()
 {
-        set_name(HIR "ÖìÈ¸ÓğÃ«" NOR, ({ "zhuque yumao", "zhuque", "yumao" }));
+        set_name(HIR "æœ±é›€ç¾½æ¯›" NOR, ({ "zhuque yumao", "zhuque", "yumao" }));
         set_weight(10);
         if (clonep())
                 set_default_object(__FILE__);
         else {               
-                    set("long", HIR "Ò»¸ùÖìÈ¸ÉíÉÏµÄÓğÃ«£¬³Ê»ğºìÉ«¡£\n" NOR);
-            set("unit", "¸ù");
+                    set("long", HIR "ä¸€æ ¹æœ±é›€èº«ä¸Šçš„ç¾½æ¯›ï¼Œå‘ˆç«ç´…è‰²ã€‚\n" NOR);
+            set("unit", "æ ¹");
             set("value", 100000);
 
         }

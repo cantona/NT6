@@ -6,12 +6,12 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIC "ºÚÓñ¶ÏÐø¸à" NOR, ({ "heiyugao" }));
+        set_name(HIC "é»‘çŽ‰æ–·çºŒè†" NOR, ({ "heiyugao" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Á£");
-                set("long", "ÕâÊÇÒ»Á£Ç§Äê¼«ÆäÄÑÅäÖÆµÄµÄºÚÓñ¶ÏÐø¸à,¾ÝËµÄÜÆðËÀ»ØÉú¡£\n");
+                set("unit", "ç²’");
+                set("long", "é€™æ˜¯ä¸€ç²’åƒå¹´æ¥µå…¶é›£é…åˆ¶çš„çš„é»‘çŽ‰æ–·çºŒè†,æ“šèªªèƒ½èµ·æ­»å›žç”Ÿã€‚\n");
                 set("only_do_effect", 1);
         }
 
@@ -22,7 +22,7 @@ int do_effect(object me)
 {
         me->receive_curing("jing", 1000);
         me->receive_curing("qi", 2000);
-        tell_object(me, HIG "ÄãÖ»¾õÒ»¹ÉÈÈÁ÷ÔÚÆß¾­°ËÂöÖÐÑ­»·ÁËÒ»¸öÖÜÌì£¬Á¢¿ÌÉñ²ÉÞÈÞÈÁË£¡\n" NOR);
+        tell_object(me, HIG "ä½ åªè¦ºä¸€è‚¡ç†±æµåœ¨ä¸ƒç¶“å…«è„ˆä¸­å¾ªç’°äº†ä¸€å€‹å‘¨å¤©ï¼Œç«‹åˆ»ç¥žæŽ¡å¥•å¥•äº†ï¼\n" NOR);
         destruct(this_object());
         return 1;
 }

@@ -1,5 +1,5 @@
 // This program is a part of NT MudLIB
-// roar.c ³¤Ğ¥
+// roar.c é•·å˜¯
 
 #include <ansi.h>
 
@@ -11,10 +11,10 @@ int exert(object me, object target)
         int i, skill, damage;
 
         if( query("neili", me)<600 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ã€‚\n");
 
         if( query("no_fight", environment(me)) )
-                return notify_fail("ÔÚÕâÀï²»ÄÜ¹¥»÷ËûÈË¡£\n");
+                return notify_fail("åœ¨é€™è£¡ä¸èƒ½æ”»æ“Šä»–äººã€‚\n");
 
         skill = me->query_skill("force");
 
@@ -22,8 +22,8 @@ int exert(object me, object target)
         me->receive_damage("qi", 10);
 
         me->start_busy(5);
-        message_combatd(HIY "$N" HIY "ÉîÎüÒ»àíÆø£¬ÔË×ãÄÚÁ¦£¬·¢³öÒ»Õó"
-                        "³¤Ğ¥£¬Òô´«°ÙÀï£¬ÉåÈËĞÄÉñ£¡\n" NOR, me);
+        message_combatd(HIY "$N" HIY "æ·±å¸ä¸€å›—æ°£ï¼Œé‹è¶³å…§åŠ›ï¼Œç™¼å‡ºä¸€é™£"
+                        "é•·å˜¯ï¼ŒéŸ³å‚³ç™¾è£¡ï¼Œæ‡¾äººå¿ƒç¥ï¼\n" NOR, me);
 
         ob = all_inventory(environment(me));
         for (i = 0; i < sizeof(ob); i++)
@@ -41,7 +41,7 @@ int exert(object me, object target)
                         ob[i]->receive_damage("jing", damage * 2, me);
                         if( query("neili", ob[i])<skill*2 )
                                 ob[i]->receive_wound("jing", damage, me);
-                        tell_object(ob[i], "Äã¾õµÃÑÛÇ°Ò»Õó½ğĞÇÂÒÃ°£¬¶ú¶äÍ´µÃÏñÊÇÒªÁÑ¿ªÒ»Ñù£¡\n");
+                        tell_object(ob[i], "ä½ è¦ºå¾—çœ¼å‰ä¸€é™£é‡‘æ˜Ÿäº‚å†’ï¼Œè€³æœµç—›å¾—åƒæ˜¯è¦è£‚é–‹ä¸€æ¨£ï¼\n");
                 }
 
                 me->want_kill(ob[i]);

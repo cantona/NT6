@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "���᷿");
+        set("short", "男廂房");
         set("long", @LONG
-�����ǹ���ׯ�е��ӵ���Ϣ�ң����ż���ľ�������Զ���һ֧�߽�
-���ӣ��������������һ��С�������������䳡��
+這裡是歸雲莊男弟子的休息室，擺著幾張木床。床旁都有一支高腳
+架子，用來掛衣物。西首一扇小窗。外面是練武場。
 LONG );
         set("exits",([
                 "east" : __DIR__"lianwuchang",

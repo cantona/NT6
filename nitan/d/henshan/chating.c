@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {        
-       set("short", "��ͤ");        
+       set("short", "茶亭");        
         set("long", @LONG
-����һ��·�ߵ�С��ͤ����ɽ·���˳��ڴ˴�ЪЪ�š�ͤ������
-�������Ӻͼ�֧���ʡ���Χ��һƬ���֡�
+這是一家路邊的小茶亭，趕山路的人常在此處歇歇腳。亭子裡有
+幾張桌子和幾支條凳。周圍是一片樹林。
 LONG );
     
        set("outdoors", "henshan");        

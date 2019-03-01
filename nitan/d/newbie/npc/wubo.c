@@ -1,4 +1,4 @@
-// ÓÐ»úÔµµÄ»°£¬ÃÎ»Ø¹Å´å£¬ÖØÐÂµÃµ½ÏÂÊöskillµÄ°ÂÒå £¬³ÉÎªÌìÏÂÎÞµÐµÄ×éºÏ¼¼ÄÜ
+// æœ‰æ©Ÿç·£çš„è©±ï¼Œå¤¢å›žå¤æ‘ï¼Œé‡æ–°å¾—åˆ°ä¸‹è¿°skillçš„å¥§ç¾© ï¼Œæˆç‚ºå¤©ä¸‹ç„¡æ•µçš„çµ„åˆæŠ€èƒ½
 inherit NPC;
 inherit F_MASTER;
 
@@ -6,12 +6,12 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("Îä²®", ({ "wu bo", "wu", "bo" }) );
-        //set("nickname", HIY "ÐÂÊÖ¸£ÐÇ" NOR);
-        set("title", HIC "ÎäÊõ½ÌÁ·" NOR);
-        set("gender", "ÄÐÐÔ");
+        set_name("æ­¦ä¼¯", ({ "wu bo", "wu", "bo" }) );
+        //set("nickname", HIY "æ–°æ‰‹ç¦æ˜Ÿ" NOR);
+        set("title", HIC "æ­¦è¡“æ•™ç·´" NOR);
+        set("gender", "ç”·æ€§");
         set("age", 30);
-        set("long", "ÕâÊÇ¹Å´åµÄÎäÊõ½ÌÁ·£¬Äã¿ÉÒÔ°ÝËûÎªÊ¦£¨bai wuqing zi£©Ñ§Ï°Îä¹¦¡£\n");
+        set("long", "é€™æ˜¯å¤æ‘çš„æ­¦è¡“æ•™ç·´ï¼Œä½ å¯ä»¥æ‹œä»–ç‚ºå¸«ï¼ˆbai wuqing ziï¼‰å­¸ç¿’æ­¦åŠŸã€‚\n");
         set("attitude", "peaceful");
 
         set("str", 26);
@@ -52,11 +52,11 @@ void create()
         set_temp("apply/armor", 100);
 
         set("inquiry", ([
-               "ÀÏ´å³¤"   :  "ËûÊÇÎÒ×ðÊ¦£¬ÓÐÊ²Ã´°ïÖú¾ÍÕÒËû¡£\n",
-               "»¨²®"     :  "ËûÊÇÎÒÊ¦ÐÖ£¬ÄãÒª³ö´å¾ÍÕÒËû£¡\n",
+               "è€æ‘é•·"   :  "ä»–æ˜¯æˆ‘å°Šå¸«ï¼Œæœ‰ä»€éº¼å¹«åŠ©å°±æ‰¾ä»–ã€‚\n",
+               "èŠ±ä¼¯"     :  "ä»–æ˜¯æˆ‘å¸«å…„ï¼Œä½ è¦å‡ºæ‘å°±æ‰¾ä»–ï¼\n",
         ]));
 
-        create_family("¹Å´å", 1, "µÜ×Ó");
+        create_family("å¤æ‘", 1, "å¼Ÿå­");
         setup();
 
         carry_object("/clone/weapon/changjian")->wield();
@@ -70,7 +70,7 @@ void attempt_apprentice(object ob)
         if( query("newbie_quest/leixing", ob) != "baishi" )
         {
              command("shake");
-             command("say Ã»ÓÐÎÒ×ðÊ¦ÀÏ´å³¤µÄÔÊÐí£¬ÎÒ¿É²»¸ÒÊÕÄãÎªÍ½£¡");
+             command("say æ²’æœ‰æˆ‘å°Šå¸«è€æ‘é•·çš„å…è¨±ï¼Œæˆ‘å¯ä¸æ•¢æ”¶ä½ ç‚ºå¾’ï¼");
              return;
         }
         */  
@@ -78,11 +78,11 @@ void attempt_apprentice(object ob)
         if( query("family", ob) )
         {
              command("yi");
-             command("say ÄãÊ¦¸µÊÇË­£¿");
+             command("say ä½ å¸«å‚…æ˜¯èª°ï¼Ÿ");
              return;
         }
 
-        command("say ºÃ°É£¬ÎÒ¾ÍÊÕÏÂÄãÁË¡£");
+        command("say å¥½å§ï¼Œæˆ‘å°±æ”¶ä¸‹ä½ äº†ã€‚");
         command("recruit "+query("id", ob));
 
         ob->save();
@@ -92,8 +92,8 @@ void attempt_apprentice(object ob)
 
 void init()
 {
-        tell_object(this_player(), HIG "°ÝÊ¦ÇëÊ¹ÓÃÖ¸Áî bai Ê¦¸µID(bai wu bo)¡£\n" NOR);
-        tell_object(this_player(), HIY "²é¿´Ê¦¸µ¼¼ÄÜÇëÊ¹ÓÃ skills Ê¦¸µID(skills wu bo)¡£\n" NOR);
+        tell_object(this_player(), HIG "æ‹œå¸«è«‹ä½¿ç”¨æŒ‡ä»¤ bai å¸«å‚…ID(bai wu bo)ã€‚\n" NOR);
+        tell_object(this_player(), HIY "æŸ¥çœ‹å¸«å‚…æŠ€èƒ½è«‹ä½¿ç”¨ skills å¸«å‚…ID(skills wu bo)ã€‚\n" NOR);
 }
 
 void unconcious()

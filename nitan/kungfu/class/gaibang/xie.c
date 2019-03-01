@@ -8,10 +8,10 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("Ğ»¸±¶æÖ÷", ({"xie duozhu", "xie", "duozhu"}));
-        set("gender", "ÄĞĞÔ");
-        set("nickname", HIG"´óÒå·Ö¶æ"HIY"¸±¶æÖ÷"NOR);
-        set("title", "Ø¤°ï°Ë´üµÜ×Ó");
+        set_name("è¬å‰¯èˆµä¸»", ({"xie duozhu", "xie", "duozhu"}));
+        set("gender", "ç”·æ€§");
+        set("nickname", HIG"å¤§ç¾©åˆ†èˆµ"HIY"å‰¯èˆµä¸»"NOR);
+        set("title", "ä¸å¹«å…«è¢‹å¼Ÿå­");
         set("age", 25);
         set("attitude", "peaceful");
         set("class", "beggar");
@@ -52,10 +52,10 @@ void create()
         map_skill("staff", "fengmo-zhang");
         map_skill("dodge", "xiaoyaoyou");
 
-        //set("party/party_name", HIC"Ø¤°ï"NOR);
-        //set("party/rank", HIG"´óÒå·Ö¶æ"HIY"Æß´ü¸±¶æÖ÷"NOR);
+        //set("party/party_name", HIC"ä¸å¹«"NOR);
+        //set("party/rank", HIG"å¤§ç¾©åˆ†èˆµ"HIY"ä¸ƒè¢‹å‰¯èˆµä¸»"NOR);
         //set("party/level", 7);
-        create_family("Ø¤°ï", 19, "µÜ×Ó");
+        create_family("ä¸å¹«", 19, "å¼Ÿå­");
 
         setup();
 
@@ -66,5 +66,5 @@ void create()
 void attempt_apprentice(object ob)
 {
         command("hmm");
-        command("say ×ß¿ª£¬ÎÒ²»ÊÕÍ½¡£");
+        command("say èµ°é–‹ï¼Œæˆ‘ä¸æ”¶å¾’ã€‚");
 }

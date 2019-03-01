@@ -1,6 +1,6 @@
 //rune27.c
 
-// Ohm Å·Ä·
+// Ohm æ­å§†
 
 #include <ansi.h>
 
@@ -10,13 +10,13 @@ int is_rune() { return 1; }
  
 void create()
 {
-        set_name(HIW "·ûÎÄ" NOR, ({"rune27", "rune"}));
+        set_name(HIW "ç¬¦æ–‡" NOR, ({"rune27", "rune"}));
         set_weight(10);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "·ûÎÄ£ºº²³èÃî³É·û£¬¿ÉÒÔ·ÅÈë°¼²ÛÎïÆ·¡£\n");
-                set("unit", "¸ö");
+                set("long", "ç¬¦æ–‡ï¼šç¿°å¯µå¦™æˆç¬¦ï¼Œå¯ä»¥æ”¾å…¥å‡¹æ§½ç‰©å“ã€‚\n");
+                set("unit", "å€‹");
                 set("enchase/SN", 27);
                 set("enchase/type", "all");
                 set("enchase/consistence", 100); 

@@ -16,12 +16,12 @@ inherit ROOM;
 
 void create()
 {
-	set("short","ÐùÔ¯¹¬");
+	set("short","è»’è½…å®®");
 	set("long",@LONG
-×ß½ø¹¬ÃÅ£¬ÕýÃæÊÇ¸ß´óµÄ²ÊÉ«ÈýÇåËÜÏñ£¬ÖÜÎ§·Å×ÅÀú´ú»ÊµÛ¾ÙÐÐ¼ÀµäÊ±ÓÃ¹ý
-µÄ¼ÀÆ÷ºÍÀÖÆ÷£¬Ç°Ãæ·Å×ÅÒ»¸öÏãÌ¨£¬ÏãÌ¨ÉÏ¼¸¸ùÏãÖò·Å³öÎ¢ÈõµÄ¹âÃ¢£¬Ò»ÕóÕóÑÌ
-Îí´ÓÏãÂ¯ÀïôÁôÁÉýÆð£¬ÁîÈËÈçÈëÏÉ¾³£¬ÕýÖÐÉñíèÓÐ¶þÁúÏ·ÖéºÍË«·ï³¯ÒÇ×°ÊÎ£¬íè
-ÄÚ¹©·îÉí×ÅÁúÅÛ£¬½ÅÌ¤ÔÆÂÄ£¬ÊÖÅõ±¦½£µÄÕæÎä×øÏñ¡£
+èµ°é€²å®®é–€ï¼Œæ­£é¢æ˜¯é«˜å¤§çš„å½©è‰²ä¸‰æ¸…å¡‘åƒï¼Œå‘¨åœæ”¾è‘—æ­·ä»£çš‡å¸èˆ‰è¡Œç¥­å…¸æ™‚ç”¨éŽ
+çš„ç¥­å™¨å’Œæ¨‚å™¨ï¼Œå‰é¢æ”¾è‘—ä¸€å€‹é¦™å°ï¼Œé¦™å°ä¸Šå¹¾æ ¹é¦™ç‡­æ”¾å‡ºå¾®å¼±çš„å…‰èŠ’ï¼Œä¸€é™£é™£ç…™
+éœ§å¾žé¦™çˆè£¡è£Šè£Šå‡èµ·ï¼Œä»¤äººå¦‚å…¥ä»™å¢ƒï¼Œæ­£ä¸­ç¥žé¾•æœ‰äºŒé¾æˆ²ç å’Œé›™é³³æœå„€è£é£¾ï¼Œé¾•
+å…§ä¾›å¥‰èº«è‘—é¾è¢ï¼Œè…³è¸é›²å±¥ï¼Œæ‰‹æ§å¯¶åŠçš„çœŸæ­¦ååƒã€‚
 LONG);
 	set("exits",
 	([
@@ -30,7 +30,7 @@ LONG);
           "south" : __DIR__"zhaohe_tang",
           "north" : __DIR__"lingzhi_yuan",
           	]));
-    set("need_clean","áÇá¼ÅÉ");
+    set("need_clean","å´†å³’æ´¾");
 	set("objects" , ([
 		__DIR__"npc/mu" : 1 ,
 		__DIR__"npc/song" : 1,
@@ -62,6 +62,6 @@ void reset()
 		break;
 	}
 	set("search_things", ([
-		"ÏãÂ¯" :  s_obj,
+		"é¦™çˆ" :  s_obj,
 		]) );
 }

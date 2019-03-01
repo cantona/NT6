@@ -1,8 +1,8 @@
-// yuyin.c ”‡“Ù»∆¡∫
+// yuyin.c ‰ΩôÈü≥ÁπûÊ®ë
 // Last Modified by winder on Aug. 13 2000
 
 #include <ansi.h>
-#define PNAME "°∏”‡“Ù»∆¡∫°π"
+#define PNAME "„Äå‰ΩôÈü≥ÁπûÊ®ë„Äç"
 inherit F_SSERVER;
 int perform(object me, object target)
 {
@@ -18,21 +18,21 @@ int perform(object me, object target)
    !query("can_perform/"+sskill+"/"+pfname, me) && 
    !query_temp("murong/xingyi", me) && 
    !SCBORN_D->valid_perform(me,sskill,pfname) )
-   return notify_fail("ƒ„À˘ π”√µƒÕ‚π¶÷–√ª”–’‚÷÷π¶ƒ‹°£\n");
+   return notify_fail("‰Ω†ÊâÄ‰ΩøÁî®ÁöÑÂ§ñÂäü‰∏≠Ê≤íÊúâÈÄôÁ®ÆÂäüËÉΩ„ÄÇ\n");
 
         if( !objectp(target) ) {flag =1;target = offensive_target(me);}
         
         if( !target || !target->is_character() || target == me ||        
                   !me->is_fighting(target) ||
           !living(target) || query_temp("noliving", target) )
-                return notify_fail(PNAME"÷ªƒ‹∂‘’Ω∂∑÷–µƒ∂‘ ÷ π”√°£\n");
+                return notify_fail(PNAME"Âè™ËÉΩÂ∞çÊà∞È¨•‰∏≠ÁöÑÂ∞çÊâã‰ΩøÁî®„ÄÇ\n");
 
         if( !objectp(weapon=query_temp("weapon", me)) || 
                 query("skill_type", weapon) != "sword" )
-                return notify_fail("ƒ„ π”√µƒŒ‰∆˜≤ª∂‘°£\n");
+                return notify_fail("‰Ω†‰ΩøÁî®ÁöÑÊ≠¶Âô®‰∏çÂ∞ç„ÄÇ\n");
                 
         if( target->is_busy() )
-                return notify_fail(target->name()+"ƒø«∞’˝◊‘πÀ≤ªœæ£¨∑≈µ®π•ª˜∞…£°\n");
+                return notify_fail(target->name()+"ÁõÆÂâçÊ≠£Ëá™È°ß‰∏çÊöáÔºåÊîæËÜΩÊîªÊìäÂêßÔºÅ\n");
 
         fskill = "baiyun-xinfa";
         bskill = "sword";
@@ -46,24 +46,24 @@ int perform(object me, object target)
         }
 
         if( (int)me->query_skill(fskill, 1) < 140 )
-                return notify_fail("ƒ„µƒ"+to_chinese(fskill)+"ª∫Ú≤ªπª£¨ π≤ª≥ˆ"+PNAME+"°£\n");
+                return notify_fail("‰Ω†ÁöÑ"+to_chinese(fskill)+"ÁÅ´ÂÄô‰∏çÂ§†Ôºå‰Ωø‰∏çÂá∫"+PNAME+"„ÄÇ\n");
 
         if( (int)me->query_skill(sskill, 1) < 140 )
-                return notify_fail("ƒ„µƒ"+to_chinese(sskill)+"≤ªÊµ Ï£¨ π≤ª≥ˆ"+PNAME+"°£\n");
+                return notify_fail("‰Ω†ÁöÑ"+to_chinese(sskill)+"‰∏çÂ´ªÁÜüÔºå‰Ωø‰∏çÂá∫"+PNAME+"„ÄÇ\n");
 
         if( query("neili", me)<300 )
-                return notify_fail("ƒ„µƒƒ⁄¡¶≤ªπª£¨≤ªƒ‹ π”√"PNAME"°£\n");
+                return notify_fail("‰Ω†ÁöÑÂÖßÂäõ‰∏çÂ§†Ôºå‰∏çËÉΩ‰ΩøÁî®"PNAME"„ÄÇ\n");
 
-        msg = HIG"$N"HIG" π≥ˆ°∏”‡“Ù»∆¡∫°π£¨Ω´ ÷÷–Ω£¥Ó‘⁄$n"HIG"±¯»–…œ£¨Ω£ÀÊ“‚◊™£¨¡¨√‡≤ªæ¯£¨ π$n"HIG"“ª ±Œﬁ∑®±‰’–°£\n";
+        msg = HIG"$N"HIG"‰ΩøÂá∫„Äå‰ΩôÈü≥ÁπûÊ®ë„ÄçÔºåÂ∞áÊâã‰∏≠ÂäçÊê≠Âú®$n"HIG"ÂÖµÂàÉ‰∏äÔºåÂäçÈö®ÊÑèËΩâÔºåÈÄ£Á∂ø‰∏çÁµïÔºå‰Ωø$n"HIG"‰∏ÄÊôÇÁÑ°Ê≥ïËÆäÊãõ„ÄÇ\n";
 
         addn("neili", -200, me);
 
         if( random(query("combat_exp", me))>query("combat_exp", target)/3 )
         {
-                msg += HIR "Ω·π˚$p±ª$Pƒ÷∏ˆ ÷√¶Ω≈¬“£¨æ™ª≈ ß¥Î£¨¥Ù‘⁄µ±≥°£¨≤ª÷™»Á∫Œ”¶∂‘£°\n" NOR;
+                msg += HIR "ÁµêÊûú$pË¢´$PÈ¨ßÂÄãÊâãÂøôËÖ≥‰∫ÇÔºåÈ©öÊÖåÂ§±Êé™ÔºåÂëÜÂú®Áï∂Â†¥Ôºå‰∏çÁü•Â¶Ç‰ΩïÊáâÂ∞çÔºÅ\n" NOR;
                 target->start_busy((int)me->query_skill(bskill, 1)/30);
         } else {
-                msg +=HIY"ø… «$pø¥∆∆¡À$Pµƒ∆ÛÕº£¨’Ú∂®”‚∫„£¨“ª’Ò’Òø™¡À$PµƒΩ££¨»´…Ò”¶∂‘◊‘»Á°£\n" NOR;
+                msg +=HIY"ÂèØÊòØ$pÁúãÁ†¥‰∫Ü$PÁöÑ‰ºÅÂúñÔºåÈéÆÂÆöÈÄæÊÅÜÔºå‰∏ÄÊåØÊåØÈñã‰∫Ü$PÁöÑÂäçÔºåÂÖ®Á•ûÊáâÂ∞çËá™Â¶Ç„ÄÇ\n" NOR;
                 me->start_busy(1);
         }
         message_combatd(msg, me, target);
@@ -71,20 +71,20 @@ int perform(object me, object target)
         if(!target->is_fighting(me)) target->fight_ob(me);
         return 1;
 }
-string name() {return replace_string(replace_string(PNAME,"°∏",""),"°π","");}
+string name() {return replace_string(replace_string(PNAME,"„Äå",""),"„Äç","");}
 
 int help(object me)
 {
-        write(WHT"\n"+to_chinese(explode(__FILE__,"/")[<2])+"÷Æ"+name()+WHT"£∫"NOR"\n");
+        write(WHT"\n"+to_chinese(explode(__FILE__,"/")[<2])+"‰πã"+name()+WHT"Ôºö"NOR"\n");
         write(@HELP
 
-         π”√π¶–ß£∫
-                ≥Ÿ÷Õ∂‘∑Ω≥ˆ ÷
+        ‰ΩøÁî®ÂäüÊïàÔºö
+                ÈÅ≤ÊªØÂ∞çÊñπÂá∫Êâã
 
-        ≥ˆ ÷“™«Û£∫
-                ∞◊‘∆–ƒ∑®50º∂
-                ∫„…ΩΩ£∑®40º∂
-                ƒ⁄¡¶300
+        Âá∫ÊâãË¶ÅÊ±ÇÔºö
+                ÁôΩÈõ≤ÂøÉÊ≥ï50Á¥ö
+                ÊÅÜÂ±±ÂäçÊ≥ï40Á¥ö
+                ÂÖßÂäõ300
 HELP
         );
         return 1;

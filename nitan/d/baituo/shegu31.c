@@ -1,5 +1,5 @@
 // Code of ShenZhou
-// shegu.c �߹�
+// shegu.c 蛇谷
 // maco 7/15/2000
 
 #include <ansi.h>
@@ -8,13 +8,13 @@ string look_cave();
 
 void create()
 {
-        set("short", "ɽ��");
+        set("short", "山壁");
 
         if(random(3) != 0 ) {
         set("long", @LONG
-���ǰ���ɽ���߹�֮�У���������ɽ�ڣ���������ʯ����ʯ����
-ϡϡ����س��ż���С�����紵��������ʱ��һЩСʯͷ�ӱ��ϻ���
-������
+這是白駝山的蛇谷之中，附近緊鄰山壁，到處都是石礫。石壁上
+稀稀疏疏地長著幾棵小樹，風吹過來，不時有一些小石頭從壁上滑落
+下來。
 LONG );
 
                 set("item_desc", ([
@@ -26,9 +26,9 @@ LONG );
         }
         else {
                 set("long", @LONG
-���ǰ���ɽ���߹�֮�У���������ɽ�ڣ���������ʯ����ʯ����
-ϡϡ����س��ż���С�����紵��������ʱ��һЩСʯͷ�ӱ��ϻ���
-������
+這是白駝山的蛇谷之中，附近緊鄰山壁，到處都是石礫。石壁上
+稀稀疏疏地長著幾棵小樹，風吹過來，不時有一些小石頭從壁上滑落
+下來。
 LONG
                 );
         }

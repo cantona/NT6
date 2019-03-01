@@ -15,8 +15,8 @@ int main(object me, string arg)
         {
                 inv = all_inventory(me);
                 if (! sizeof(inv))
-                        return notify_fail("ÄãÉíÉÏÃ»ÓĞÈÎºÎ¶«Î÷¡£\n");
-                write("ÄãÉíÉÏĞ¯´øÎïÆ·µÄ±ğ³ÆÈçÏÂ(ÓÒ·½)£º\n");
+                        return notify_fail("ä½ èº«ä¸Šæ²’æœ‰ä»»ä½•æ±è¥¿ã€‚\n");
+                write("ä½ èº«ä¸Šæ”œå¸¶ç‰©å“çš„åˆ¥ç¨±å¦‚ä¸‹(å³æ–¹)ï¼š\n");
                 for(i = 0; i < sizeof(inv); i++)
                 {
                         if (! me->visible(inv[i])) continue;
@@ -25,7 +25,7 @@ int main(object me, string arg)
                         l = 20 + strlen(name) - strlen(filter_color(name));
 #endif
                         write(sprintf("%-" + sprintf("%d", l) + "s = %s\n", name,
-                                implode(inv[i]->parse_command_id_list(), "¡¢")));
+                                implode(inv[i]->parse_command_id_list(), "ã€")));
                 }
                 return 1;
         }
@@ -38,9 +38,9 @@ int main(object me, string arg)
                         inv = filter_array(inv, (: $1->name() == $(cname) :));
 
                 if (! sizeof(inv))
-                        return notify_fail("ÕâÀïÃ»ÓĞÈÎºÎ¶«Î÷¡£\n");
+                        return notify_fail("é€™è£¡æ²’æœ‰ä»»ä½•æ±è¥¿ã€‚\n");
 
-                write("ÔÚÕâ¸ö·¿¼äÖĞ, ÉúÎï¼°ÎïÆ·µÄ(Ó¢ÎÄ)Ãû³ÆÈçÏÂ£º\n");
+                write("åœ¨é€™å€‹æˆ¿é–“ä¸­, ç”Ÿç‰©åŠç‰©å“çš„(è‹±æ–‡)åç¨±å¦‚ä¸‹ï¼š\n");
                 for(i = 0; i < sizeof(inv); i++)
                 {
                         if (! me->visible(inv[i])) continue;
@@ -49,7 +49,7 @@ int main(object me, string arg)
                         l = 20 + strlen(name) - strlen(filter_color(name));
 #endif
                         write(sprintf("%-" + sprintf("%d", l) + "s = %s\n", name,
-                                implode(inv[i]->parse_command_id_list(), "¡¢")));
+                                implode(inv[i]->parse_command_id_list(), "ã€")));
                 }
                 return 1;
         }
@@ -58,11 +58,11 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : id [here [for <ÖĞÎÄÃû×Ö>]]
+æŒ‡ä»¤æ ¼å¼ : id [here [for <ä¸­æ–‡åå­—>]]
  
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄãÖªµÀÎïÆ·µÄÓ¢ÎÄÃû³Æ¼°Ãû×Ö. Ö»´ò id »áÏÔÊ¾
-ÄãÉíÉÏËùĞ¯´øÎïÆ·µÄÃû³Æ. 'id here' ÔòÏÔÊ¾ËùÓĞ¸úÄãÔÚÍ¬Ò»¸ö
-»·¾³ÀïµÄÎï¼şÃû³Æ.
+é€™å€‹æŒ‡ä»¤å¯ä»¥è®“ä½ çŸ¥é“ç‰©å“çš„è‹±æ–‡åç¨±åŠåå­—. åªæ‰“ id æœƒé¡¯ç¤º
+ä½ èº«ä¸Šæ‰€æ”œå¸¶ç‰©å“çš„åç¨±. 'id here' å‰‡é¡¯ç¤ºæ‰€æœ‰è·Ÿä½ åœ¨åŒä¸€å€‹
+ç’°å¢ƒè£¡çš„ç‰©ä»¶åç¨±.
  
 HELP );
         return 1;

@@ -67,13 +67,13 @@ INLINE_STATIC void itoa (svalue_t * sp) {
 	}
 }
 
-/* ÊýÖµ±È½ÏÔËËã×Óº¯Ê½ ">" "<" ">=" "<=" "==" */
+/* æ•¸å€¼æ¯”è¼ƒé‹ç®—å­å‡½å¼ ">" "<" ">=" "<=" "==" */
 /*
 	< 	:	1
 	>	:	2
 	=	:	4
 */
-/* n1, n2 : ÕýÕûÊý */
+/* n1, n2 : æ­£æ•´æ•¸ */
 INLINE_STATIC int compare_value (int negative1, char * n1, int negative2, char * n2, const char * op) {
 	
 	int i=0, n1_len, n2_len, flag=0;
@@ -179,8 +179,8 @@ INLINE_STATIC int compare_value (int negative1, char * n1, int negative2, char *
 	return 0;
 }
 	
-/* ¼Ó·¨´¦Àíº¯Ê½ */
-/* n1, n2 : ÕýÕûÊý */
+/* åŠ æ³•è™•ç†å‡½å¼ */
+/* n1, n2 : æ­£æ•´æ•¸ */
 INLINE_STATIC char *addition (char * n1, char * n2) {
 
 	int i, j, k, carry=0;
@@ -229,8 +229,8 @@ INLINE_STATIC char *addition (char * n1, char * n2) {
 	return ret;
 }
 
-/* ¼õ·¨´¦Àíº¯Ê½ */
-/* n1 : ´óÕýÕûÊý, n2 : Ð¡ÕýÕûÊý */
+/* æ¸›æ³•è™•ç†å‡½å¼ */
+/* n1 : å¤§æ­£æ•´æ•¸, n2 : å°æ­£æ•´æ•¸ */
 INLINE_STATIC char *subtraction (char * n1, char * n2) {
 	
 	int i, j, k, carry=0;
@@ -264,8 +264,8 @@ INLINE_STATIC char *subtraction (char * n1, char * n2) {
    	return ret;
 }
 
-/* ³Ë·¨´¦Àíº¯Ê½ */
-/* n1, n2 : ÕýÕûÊý */
+/* ä¹˜æ³•è™•ç†å‡½å¼ */
+/* n1, n2 : æ­£æ•´æ•¸ */
 INLINE_STATIC char *multiplication (char * n1, char * n2) {
 
 	int i, j, carry=0;
@@ -311,8 +311,8 @@ INLINE_STATIC char *multiplication (char * n1, char * n2) {
 	return ret;
 }
 
-/* ³ý·¨´¦Àíº¯Ê½ */
-/* n1 : ´óÕýÕûÊý(±»³ýÊý), n2 : Ð¡ÕýÕûÊý(³ýÊý) */
+/* é™¤æ³•è™•ç†å‡½å¼ */
+/* n1 : å¤§æ­£æ•´æ•¸(è¢«é™¤æ•¸), n2 : å°æ­£æ•´æ•¸(é™¤æ•¸) */
 INLINE_STATIC char *division (char * n1, char * n2) {
 	
 	int i, j, k=0, carry=0;
@@ -322,7 +322,7 @@ INLINE_STATIC char *division (char * n1, char * n2) {
    	n1_len = strlen(n1);
    	n2_len = strlen(n2);
    	
-   	if( !n2[0] || n2[0] == 48 ) error("(division) ³ýÊýÎª 0");
+   	if( !n2[0] || n2[0] == 48 ) error("(division) é™¤æ•¸ç‚º 0");
    	
    	tmp = (char *)DMALLOC(n2_len+2, TAG_STRING, "division 1");
    	ret = (char *)DMALLOC(n1_len+2, TAG_STRING, "division 2");
@@ -549,7 +549,7 @@ void f_count() {
 			return;
 		}
 
-		default: error("ÔËËã×Ó´íÎó : +, -, *, /, >, >=, <, <=, =="); break;
+		default: error("é‹ç®—å­éŒ¯èª¤ : +, -, *, /, >, >=, <, <=, =="); break;
 	}
 }
 

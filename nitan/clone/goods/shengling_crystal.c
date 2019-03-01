@@ -1,5 +1,5 @@
 // This program is a part of NT MudLIB
-// ab_crystal.c ÄÜÁ¦Ë®¾§
+// ab_crystal.c èƒ½åŠ›æ°´æ™¶
 
 #include <ansi.h>
 
@@ -7,14 +7,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIM"Ê¥ÁéË®¾§"NOR, ({ "shengling crystal", "shengling", "crystal" }) );
+        set_name(HIM"è–éˆæ°´æ™¶"NOR, ({ "shengling crystal", "shengling", "crystal" }) );
         set_weight(1);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", HIM "Ê¥ÁéË®¾§£¬¿ÉÒÔ±£Ö¤ÔÚÇ¿»¯×°±¸Ê§°ÜÊ±ºò²»µôĞÇ¼¶£¬´øÔÚÉíÉÏ¼´¿É¡£\n" NOR);
+                set("long", HIM "è–éˆæ°´æ™¶ï¼Œå¯ä»¥ä¿è¨¼åœ¨å¼·åŒ–è£å‚™å¤±æ•—æ™‚å€™ä¸æ‰æ˜Ÿç´šï¼Œå¸¶åœ¨èº«ä¸Šå³å¯ã€‚\n" NOR);
                 set("value", 50000);
-                set("unit", "¿é");
+                set("unit", "å¡Š");
         }
         //set("set_data", 1);
         set("autoload", 1);

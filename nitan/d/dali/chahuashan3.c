@@ -4,17 +4,17 @@
 inherit ROOM;
 void create()
 {
-        set("short","�軨ɽ");
+        set("short","茶花山");
         set("long", @LONG
-�����ڲ軨ɽ�ϣ�������������ïʢ�Ĳ軨����Ȼ���󲿷���
-��Ʒ����ż��Ҳ����һ�����Ʒ�������С�������Զ�Ǵ����ǵı��š�
-��һЩ�����ڷ�����ȥ���ƺ����䳲(fengchao)���ڸ����軨���
+你走在茶花山上，這裡遍地是生長茂盛的茶花。當然，大部分是
+凡品，但偶爾也會有一兩株佳品藏匿其中。西望不遠是大理城的北門。
+有一些毒蜂在飛來飛去，似乎毒蜂巢(fengchao)就在附近茶花叢裡。
 LONG );
         set("objects", ([
            "/d/dali/npc/bee": 3,
         ]));
         set("item_desc", ([
-           "fengchao" : "����һ��Ұ����ķ䳲��\n",
+           "fengchao" : "這是一個野毒蜂的蜂巢。\n",
         ]));
         set("outdoors", "dalic");
         set("exits",([ /* sizeof() == 1 */

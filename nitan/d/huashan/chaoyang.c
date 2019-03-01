@@ -5,14 +5,14 @@ inherit ROOM;
  
 void create()
 {
-        set("short", "³¯Ñô·å");
+        set("short", "æœé™½å³°");
         set("long", @LONG
-ÕâÀï¾ÍÊÇ»ªÉ½µÄ¶«·å£¬Ò²³Æ³¯Ñô·å£¬ÊÇ»ªÉ½¿´ÈÕ³öµÄ¾ø¼Ñ´¦¡£ì¶
-´Ë¸©î«£¬»ÆºÓÒþÏÔ¶«åÆÈç´ø£¬ÄÏÍûÐ¡¹Â·å±³ÒÐÉ½ºÓ¡£Ð¡¹Â·åÉÏÓÐÒ»Ð¡
-Í¤£¬¸²ÒÔÌúÍß£¬Í¤ÖÐ°ÚÓÐÌúÆåÅÌÒ»¾Ö£¬ÄÇ¾ÍÊÇ»ªÉ½ÖøÃûµÄ¡º²©Ì¨¡»ÁË¡£
-Ô¶Íû¶«±ÚÐüÑÂ£¨ya£©ÉÏ£¬¸üÓÐÒ»¸ö¾ÞÐÍÕÆÓ¡£¬Ïà´«Îª¡¸ºÓÉñ¾ÞÁé¡¹Åü
-É½Ê±ËùÁôÏÂµÄ£¬Àî°×Ê«ÖÐ¡º¾ÞÁéÅØÏøÅüÁ½É½£¬ºé²¨ÅçÁ÷Éä¶«º£¡»¾ÍÊÇ
-Ö¸Õâ¸öÉÏ¹Å´«Ëµ¡£
+é€™è£¡å°±æ˜¯è¯å±±çš„æ±å³°ï¼Œä¹Ÿç¨±æœé™½å³°ï¼Œæ˜¯è¯å±±çœ‹æ—¥å‡ºçš„çµ•ä½³è™•ã€‚æ–¼
+æ­¤ä¿¯çž°ï¼Œé»ƒæ²³éš±é¡¯æ±è¿¤å¦‚å¸¶ï¼Œå—æœ›å°å­¤å³°èƒŒå€šå±±æ²³ã€‚å°å­¤å³°ä¸Šæœ‰ä¸€å°
+äº­ï¼Œè¦†ä»¥éµç“¦ï¼Œäº­ä¸­æ“ºæœ‰éµæ£‹ç›¤ä¸€å±€ï¼Œé‚£å°±æ˜¯è¯å±±è‘—åçš„ã€Žåšå°ã€äº†ã€‚
+é æœ›æ±å£æ‡¸å´–ï¼ˆyaï¼‰ä¸Šï¼Œæ›´æœ‰ä¸€å€‹å·¨åž‹æŽŒå°ï¼Œç›¸å‚³ç‚ºã€Œæ²³ç¥žå·¨éˆã€åŠˆ
+å±±æ™‚æ‰€ç•™ä¸‹çš„ï¼ŒæŽç™½è©©ä¸­ã€Žå·¨éˆå’†å“®åŠˆå…©å±±ï¼Œæ´ªæ³¢å™´æµå°„æ±æµ·ã€å°±æ˜¯
+æŒ‡é€™å€‹ä¸Šå¤å‚³èªªã€‚
 LONG );
         set("exits", ([ /* sizeof() == 1 */
                 "westdown" : __DIR__"chaopath2",
@@ -20,8 +20,8 @@ LONG );
 
 
         set("item_desc", ([
-                "ya"   : NOR + WHT "ÐüÑÂÏÂÇÍ±Ú¸ßËÊ£¬Ò»ÌõÇàÌÙ£¨teng£©Ö±´¹¶øÏÂ¡£\n" NOR,
-                "teng" : HIG "Ò»¸ùÇàÌÙ£¬À­£¨la£©×¡Ëü¿É×öÅÊÅÀÖ®ÓÃ¡£\n" NOR,
+                "ya"   : NOR + WHT "æ‡¸å´–ä¸‹å³­å£é«˜è³ï¼Œä¸€æ¢é’ç±ï¼ˆtengï¼‰ç›´åž‚è€Œä¸‹ã€‚\n" NOR,
+                "teng" : HIG "ä¸€æ ¹é’ç±ï¼Œæ‹‰ï¼ˆlaï¼‰ä½å®ƒå¯åšæ”€çˆ¬ä¹‹ç”¨ã€‚\n" NOR,
         ]));
 
         set("outdoors", "huashan" );
@@ -45,15 +45,15 @@ int do_la(string arg)
         object me = this_player();
 
         if (! arg || arg != "teng")
-               return notify_fail("ÄãÒªÀ­Ê²Ã´£¿\n");
+               return notify_fail("ä½ è¦æ‹‰ä»€éº¼ï¼Ÿ\n");
 
         if (me->is_busy() || me->is_fighting())
-               return notify_fail("µÈÄãÃ¦ÍêÁËÔÙËµ°É£¡\n");
+               return notify_fail("ç­‰ä½ å¿™å®Œäº†å†èªªå§ï¼\n");
 
         if( query_temp("la_teng_huashan", me) )
-               return notify_fail("ÄãÒÑ¾­À­×¡ÇàÌÙÁË¡£\n");
+               return notify_fail("ä½ å·²ç¶“æ‹‰ä½é’ç±äº†ã€‚\n");
 
-        message_vision(HIG "$N" HIG "½«ÇàÌÙÀÎÀÎµØ×¥×¡ÁË¡£\n", me);
+        message_vision(HIG "$N" HIG "å°‡é’ç±ç‰¢ç‰¢åœ°æŠ“ä½äº†ã€‚\n", me);
 
         set_temp("la_teng_huashan", 1, me);
 
@@ -67,27 +67,27 @@ int do_jump(string arg)
         object me = this_player();
 
         if (! arg || arg != "ya")
-               return notify_fail("ÄãÒªÍùÄÄ¶ùÌø£¿\n");
+               return notify_fail("ä½ è¦å¾€å“ªå…’è·³ï¼Ÿ\n");
 
         if (me->is_busy() || me->is_fighting())
-               return notify_fail("µÈÄãÃ¦ÍêÁËÔÙËµ°É£¡\n");
+               return notify_fail("ç­‰ä½ å¿™å®Œäº†å†èªªå§ï¼\n");
 
         if( !query_temp("la_teng_huashan", me) )
         {
 
-               message_vision(HIM "$N" HIM "×ÝÉíÌøÏÂÐüÑÂ ¡­¡­\n", me);
+               message_vision(HIM "$N" HIM "ç¸±èº«è·³ä¸‹æ‡¸å´– â€¦â€¦\n", me);
 
-               CHANNEL_D->do_channel(this_object(), "rumor", "ÌýËµ" + me->name() + HIM "Ìø"
-                                     "ÏÂ»ªÉ½ÐüÑÂ£¬×ÔÉ±ÉúÍö¡£\n" NOR); 
+               CHANNEL_D->do_channel(this_object(), "rumor", "è½èªª" + me->name() + HIM "è·³"
+                                     "ä¸‹è¯å±±æ‡¸å´–ï¼Œè‡ªæ®ºç”Ÿäº¡ã€‚\n" NOR); 
 
                me->die();               
                return 1;
 
         }
 
-        message_vision(HIG "$N" HIG "À­×ÅÇàÌÙÌøÏÂÐüÑÂ¡­¡­\n", me);
+        message_vision(HIG "$N" HIG "æ‹‰è‘—é’ç±è·³ä¸‹æ‡¸å´–â€¦â€¦\n", me);
                 
-        tell_object(me, HIG "ÃÍÈ»¼ä£¬Äã·¢ÏÖÏÂÃæÓÐÒ»¸öÐ¡¶´£¬ÄãÃÍÒ»ÍäÑü£¬½èÁ¦ÌøÁË½øÈ¥¡£\n" NOR);
+        tell_object(me, HIG "çŒ›ç„¶é–“ï¼Œä½ ç™¼ç¾ä¸‹é¢æœ‰ä¸€å€‹å°æ´žï¼Œä½ çŒ›ä¸€å½Žè…°ï¼Œå€ŸåŠ›è·³äº†é€²åŽ»ã€‚\n" NOR);
 
         me->move("/d/huashan/jinshedong");
 
@@ -102,18 +102,18 @@ int do_shout(string arg)
 
         if (! arg || arg == "") return 0;
 
-        message_vision("$N¸ßÉù½ÐµÀ£º" + arg + "¡£\n", me);
+        message_vision("$Né«˜è²å«é“ï¼š" + arg + "ã€‚\n", me);
 
-        if ((arg == "·çÇåÑïÇ°±²" || arg == "·çÇ°±²" || arg == "·çÀÏÇ°±²") 
-         && query("tian_count") >= 1 && query_temp("marks/·ç", me) == 1
+        if ((arg == "é¢¨æ¸…æšå‰è¼©" || arg == "é¢¨å‰è¼©" || arg == "é¢¨è€å‰è¼©") 
+         && query("tian_count") >= 1 && query_temp("marks/é¢¨", me) == 1
         &&  ! present("tian boguang", environment(me))) 
         {
                 addn("call_times", 1);
 
                 if ((int)query("call_times") == 3) 
                 {
-                        message_vision("Ö»ÌýµÃÉíÅÔµÄÊ÷ÉÏ´«À´Ò»ÕóßëÉ§£ºË­ÒªÕÒ·çÀÏÇ°±²°¡£¿\n", me);
-                        message_vision("½Ó×ÅÒ»¸öÎ¢×íµÄ´óºº´ÓÊ÷ÉÏÅÀÁËÏÂÀ´£¬¶¢×ÅÄã¿´ÁËÒ»»á¶ù¡£\n", me);
+                        message_vision("åªè½å¾—èº«æ—çš„æ¨¹ä¸Šå‚³ä¾†ä¸€é™£å˜®é¨·ï¼šèª°è¦æ‰¾é¢¨è€å‰è¼©å•Šï¼Ÿ\n", me);
+                        message_vision("æŽ¥è‘—ä¸€å€‹å¾®é†‰çš„å¤§æ¼¢å¾žæ¨¹ä¸Šçˆ¬äº†ä¸‹ä¾†ï¼Œç›¯è‘—ä½ çœ‹äº†ä¸€æœƒå…’ã€‚\n", me);
                         addn("tian_count", -1);
                         ob = new(__DIR__"npc/boguang.c");
                         ob->move(environment(me));

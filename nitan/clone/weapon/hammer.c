@@ -4,16 +4,16 @@ inherit HAMMER;
 
 void create()
 {
-        set_name( "·¨ÂÖ",({ "fa lun" ,"lun" ,"falun" }));
+        set_name( "æ³•è¼ª",({ "fa lun" ,"lun" ,"falun" }));
         set_weight(1000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long","ÕâÊÇÒ»±ú·¨ÂÖ£¬É®ÈËÃÇÓÃËüÀ´×÷·¨ÊÂ¡£\n");
+                set("unit", "æŠŠ");
+                set("long","é€™æ˜¯ä¸€æŸ„æ³•è¼ªï¼Œåƒ§äººå€‘ç”¨å®ƒä¾†ä½œæ³•äº‹ã€‚\n");
                 set("material", "wood");
-                set("wield_msg", "$N³é³öÒ»±ú$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg","$N½«ÊÖÖĞµÄ$n·Å»ØÑü¼ä¡£\n");
+                set("wield_msg", "$NæŠ½å‡ºä¸€æŸ„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg","$Nå°‡æ‰‹ä¸­çš„$næ”¾å›è…°é–“ã€‚\n");
         }
         init_hammer(5);
         setup();
@@ -25,17 +25,17 @@ inherit HAMMER;
 
 void create()
 {
-        set_name("Ìú´¸", ({ "hammer" }) );
+        set_name("éµéŒ˜", ({ "hammer" }) );
         set_weight(8000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "ÕâÊÇÒ»°ÑÉòÖØµÄÌú´¸£¬´òÔìµÄÏàµ±¼áÊµ¡£\n");
+                set("unit", "æŠŠ");
+                set("long", "é€™æ˜¯ä¸€æŠŠæ²ˆé‡çš„éµéŒ˜ï¼Œæ‰“é€ çš„ç›¸ç•¶å …å¯¦ã€‚\n");
                 set("value", 3);
                 set("material", "iron");
-                set("wield_msg", "$NÄÃ³öÒ»°Ñ$n£¬ÊÔÁËÊÔÖØÁ¿£¬È»ááÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+                set("wield_msg", "$Næ‹¿å‡ºä¸€æŠŠ$nï¼Œè©¦äº†è©¦é‡é‡ï¼Œç„¶å¾Œæ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
         }
 
         init_hammer(25);

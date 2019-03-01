@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create ()
 {
-        set ("short", "±±Â¥");
+        set ("short", "åŒ—æ¨“");
         set ("long", @LONG
-ÉÏµÃÂ¥À´£¬Ö»¼ûÖÐ¼ä¿¿´°·Å×ÅÒ»ÕÅ´óÊé×À£¬·Å×Å±ÊÄ«Ö½ÑâÓëÊ®À´±¾
-Êé£¬»¹ÓÐÒ»¼þ·ìÁËÒ»°ëµÄÐ¡º¢ÒÂÉÀ¡£ÕâÊÇÍò¼Ò¹«×ÓÍò¹ç×¡µÄµØ·½¡£
+ä¸Šå¾—æ¨“ä¾†ï¼Œåªè¦‹ä¸­é–“é çª—æ”¾è‘—ä¸€å¼µå¤§æ›¸æ¡Œï¼Œæ”¾è‘—ç­†å¢¨ç´™ç¡¯èˆ‡åä¾†æœ¬
+æ›¸ï¼Œé‚„æœ‰ä¸€ä»¶ç¸«äº†ä¸€åŠçš„å°å­©è¡£è¡«ã€‚é€™æ˜¯è¬å®¶å…¬å­è¬åœ­ä½çš„åœ°æ–¹ã€‚
 LONG);
         set("region", "jingzhou");
         set("exits", ([
@@ -33,10 +33,10 @@ int do_put(string arg)
 {
         object ob, me = this_player();
         if (arg != "tangshi book")
-                return notify_fail("ÄãÒª°ÑÊ²Ã´½þµ½Á³ÅèÖÐÈ¥£¿\n");
+                return notify_fail("ä½ è¦æŠŠä»€éº¼æµ¸åˆ°è‡‰ç›†ä¸­åŽ»ï¼Ÿ\n");
         if (! objectp(ob = present("tangshi book", me)))
-                return notify_fail("ÄãÃ»ÓÐÕâ±¾Êé¡£\n");
-        message("vision", me->name()+"°ÑÌÆÊ«Ñ¡¼­½þµ½Á³ÅèÖÐÈ¥£¬ÊéÉÏÂýÂýÏÔÊ¾³öÊý×ÖÀ´¡£ÍÛ£¡ÌÆÊ«½£·¨£¡\n", environment(me));
+                return notify_fail("ä½ æ²’æœ‰é€™æœ¬æ›¸ã€‚\n");
+        message("vision", me->name()+"æŠŠå”è©©é¸è¼¯æµ¸åˆ°è‡‰ç›†ä¸­åŽ»ï¼Œæ›¸ä¸Šæ…¢æ…¢é¡¯ç¤ºå‡ºæ•¸å­—ä¾†ã€‚å“‡ï¼å”è©©åŠæ³•ï¼\n", environment(me));
         destruct(ob);
         ob = new("/clone/book/tangshi_book");
         ob->move(me);

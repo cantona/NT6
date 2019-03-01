@@ -15,21 +15,21 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail("¹Â×¢Ò»ÖÀÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("å­¤æ³¨ä¸€æ“²åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon=query_temp("handing", me)) || 
             query("skill_type", weapon) != "throwing" || 
             weapon->query_amount() < 1)
-                return notify_fail("ÄãÊÖÖĞ±ØĞëÏÈÓĞ°µÆ÷¡£\n");
+                return notify_fail("ä½ æ‰‹ä¸­å¿…é ˆå…ˆæœ‰æš—å™¨ã€‚\n");
 
         if ((skill = me->query_skill("hanxing-bada", 1)) < 60)
-                return notify_fail("ÄãµÄº®ĞÇ°Ë´òĞŞÎªÌ«Ç³£¬ÎŞ·¨Ê©Õ¹¹Â×¢Ò»ÖÀ¡£\n");
+                return notify_fail("ä½ çš„å¯’æ˜Ÿå…«æ‰“ä¿®ç‚ºå¤ªæ·ºï¼Œç„¡æ³•æ–½å±•å­¤æ³¨ä¸€æ“²ã€‚\n");
 
-        msg = CYN "$N" CYN "¹Â×¢Ò»ÖÀ£¬·¢³öËùÓĞ°µÆ÷¹¥Ïò$n" CYN "£¡\n" NOR;
+        msg = CYN "$N" CYN "å­¤æ³¨ä¸€æ“²ï¼Œç™¼å‡ºæ‰€æœ‰æš—å™¨æ”»å‘$n" CYN "ï¼\n" NOR;
         me->start_busy(2);
         if( random(query("combat_exp", me)/100)>query("combat_exp", target)/200 )
         {
-                msg += HIR "½á¹û$p" HIR "±»$P" HIR "¹¥ÁË¸ö´ëÊÖ²»¼°£¬ÖĞÁËÊıÃ¶°µÆ÷£¡\n" NOR;
+                msg += HIR "çµæœ$p" HIR "è¢«$P" HIR "æ”»äº†å€‹æªæ‰‹ä¸åŠï¼Œä¸­äº†æ•¸æšæš—å™¨ï¼\n" NOR;
                 target->receive_wound("qi", skill / 2 + random(skill / 2), me);
                 COMBAT_D->clear_ahinfo();
                 weapon->hit_ob(me,target,query("jiali", me)+120);
@@ -37,8 +37,8 @@ int perform(object me, object target)
                         msg += pmsg;
         } else
         {
-                msg += CYN "¿ÉÊÇ$p" CYN "´ÓÈİ²»ÆÈµÄ¶ã¹ıÁË$P"
-                       CYN "µÄ×îºóÒ»»÷¡£\n" NOR;
+                msg += CYN "å¯æ˜¯$p" CYN "å¾å®¹ä¸è¿«çš„èº²éäº†$P"
+                       CYN "çš„æœ€å¾Œä¸€æ“Šã€‚\n" NOR;
         }
 
         message_combatd(msg, me, target);

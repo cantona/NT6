@@ -2,12 +2,12 @@
 inherit NPC;
 void create()
 {
-        set_name("µ¶É®", ({ "dao seng", "dao", "seng"}) );
-        set("long", "Ò»¸öÍº¶¥ºÍÉĞ£¬ÂãÂ¶×ÅÉÏÉí£¬¼¡Èâ½áÊµ¡£\n"
-                    "Õâ±ãÊÇÈêÑôÍõÊÖÏÂµÄÊ®°Ë½ğ¸ÕÖ®Ò»¡£\n");
+        set_name("åˆ€åƒ§", ({ "dao seng", "dao", "seng"}) );
+        set("long", "ä¸€å€‹ç¦¿é ‚å’Œå°šï¼Œè£¸éœ²è‘—ä¸Šèº«ï¼Œè‚Œè‚‰çµå¯¦ã€‚\n"
+                    "é€™ä¾¿æ˜¯æ±é™½ç‹æ‰‹ä¸‹çš„åå…«é‡‘å‰›ä¹‹ä¸€ã€‚\n");
         set("attitude", "heroism");
-        set("title", "ÈêÑôÍõ×ùÏÂÊ®°Ë½ğ¸Õ");
-        set("nickname", HIR "Îåµ¶½ğ¸Õ" NOR);
+        set("title", "æ±é™½ç‹åº§ä¸‹åå…«é‡‘å‰›");
+        set("nickname", HIR "äº”åˆ€é‡‘å‰›" NOR);
         set("age", 30);
         set("shen_type", -1);
 
@@ -66,7 +66,7 @@ void init()
         ob = this_player();
 
         command("yi");
-        command("say ÊÇË­ÄÇÃ´´óµ¨£¬¾ÓÈ»¸ÒÔÚÈêÑôÍõÑÛÆ¤ÏÂÈöÒ°£¡");
+        command("say æ˜¯èª°é‚£éº¼å¤§è†½ï¼Œå±…ç„¶æ•¢åœ¨æ±é™½ç‹çœ¼çš®ä¸‹æ’’é‡ï¼");
         remove_call_out("kill_ob");
         call_out("kill_ob", 1, ob); 
 }

@@ -1,11 +1,11 @@
-// Room in ����
+// Room in 高麗
 inherit ROOM;
 void create()        
 {
-        set("short", "���̨");
+        set("short", "烽火台");
         set("long", @LONG        
-���Ǹ���λ������ɽ���ϵ�һ�����̨���м����ٱ���������۲�
-�������������Կ������߸����ǵ�ȫò���ǳ�׳�ۡ�
+這是高麗位于西邊山峰上的一個烽火台。有幾個官兵正在這裡觀察
+情況。從這裡可以看到東邊高麗城的全貌，非常壯觀。
 LONG
         );
 set("outdoors", "gaoli");

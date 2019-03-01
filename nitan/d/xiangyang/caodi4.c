@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�ݵ�");
+        set("short", "草地");
         set("long", @LONG
-������������Ĳݵء��ɹű���������������İ���ȫ�����ˣ�
-���Ｘʮ�ﶼû�����̡�
+這是襄陽城外的草地。蒙古兵進犯以來，這裡的百姓全進城了，
+這裡幾十裡都沒了人煙。
 LONG );
         set("outdoors", "xiangyang");
 

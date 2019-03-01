@@ -14,14 +14,14 @@ string* npcs = ({
 
 void create()
 {
-        set("short", RED "Íò¶¾¿ß" NOR);
+        set("short", RED "è¬æ¯’çªŸ" NOR);
         set("long", @LONG
-ÕâÀïÊÇÉ½¶´ÄÚ²¿µÄÖ§¶´£¬ÕâÀïÒÑ¾­Ã»ÓÐÒ»Ë¿¹âÏßÁË£¬ºÚ¶´¶´µÄÊ²
-Ã´Ò²¿´²»¼û¡£¶´ÄÚÑÒ±Ú(wall)ÉÏºÃÏóÉú×Å¼¸Öê²»ÖªÃûµÄÐ¡²Ý¡£ÉíÅÔ´«
-À´Ò»Õó¡°ßÐßÐ¡±µÄÉùÒô¡£
+é€™è£¡æ˜¯å±±æ´žå…§éƒ¨çš„æ”¯æ´žï¼Œé€™è£¡å·²ç¶“æ²’æœ‰ä¸€çµ²å…‰ç·šäº†ï¼Œé»‘æ´žæ´žçš„ä»€
+éº¼ä¹Ÿçœ‹ä¸è¦‹ã€‚æ´žå…§å·–å£(wall)ä¸Šå¥½è±¡ç”Ÿè‘—å¹¾æ ªä¸çŸ¥åçš„å°è‰ã€‚èº«æ—å‚³
+ä¾†ä¸€é™£â€œâ–¡â–¡â€çš„è²éŸ³ã€‚
 LONG);
         set("item_desc", ([
-                "wall" : WHT "Ò»¶ÂÑÒ±Ú£¬ÉÏÃæÍ»³öÐ©Ê¯Ëñ£¬ËÆºõ¿ÉÒÔË³×ÅÅÀÉÏÈ¥¡£\n" NOR,
+                "wall" : WHT "ä¸€å µå·–å£ï¼Œä¸Šé¢çªå‡ºäº›çŸ³ç­ï¼Œä¼¼ä¹Žå¯ä»¥é †è‘—çˆ¬ä¸ŠåŽ»ã€‚\n" NOR,
         ]));
         set("exits", ([
                 "north" : __DIR__"wandu2",
@@ -47,13 +47,13 @@ int do_climb(string arg)
         object me = this_player();
         object ob; 
 
-        if( (!arg) ||!((arg == "wall") || (arg == "ÑÒ±Ú")))
-                return notify_fail("ÄãÒªÅÀÊ²Ã´£¿\n");
+        if( (!arg) ||!((arg == "wall") || (arg == "å·–å£")))
+                return notify_fail("ä½ è¦çˆ¬ä»€éº¼ï¼Ÿ\n");
 
-        message_vision(HIC "$N" HIC "ÅÊ×ÅÑÒ±ÚÉÏÍ»³öµÄÊ¯Ëñ¼èÄÑµÄÅÀÁËÉÏÈ¥¡£\n\n" NOR,me);
+        message_vision(HIC "$N" HIC "æ”€è‘—å·–å£ä¸Šçªå‡ºçš„çŸ³ç­è‰±é›£çš„çˆ¬äº†ä¸ŠåŽ»ã€‚\n\n" NOR,me);
         ob = load_object(__DIR__"dongxue");
         ob = find_object(__DIR__"dongxue");
-        message("vision",HIC+query("name", me)+HIC"´ÓÏÂÃæÅÀÁËÉÏÀ´¡£\n"NOR,ob);
+        message("vision",HIC+query("name", me)+HIC"å¾žä¸‹é¢çˆ¬äº†ä¸Šä¾†ã€‚\n"NOR,ob);
 
         me->move(__DIR__"dongxue");
         return 1;

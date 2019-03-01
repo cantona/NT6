@@ -17,10 +17,10 @@ int main(object me, string arg)
                 return 0;
 
         if( !arg )
-                return notify_fail("setskill <Ä³ÈË> <¼¼ÄÜ>/all <¼¶±ğÊı>¡£\n");
+                return notify_fail("setskill <æŸäºº> <æŠ€èƒ½>/all <ç´šåˆ¥æ•¸>ã€‚\n");
 
         if( !arg || sscanf(arg, "%s %s %d", obj, skill, level)!=3 )
-                return notify_fail("setskill <Ä³ÈË> <¼¼ÄÜ>/all <¼¶±ğÊı>¡£\n");
+                return notify_fail("setskill <æŸäºº> <æŠ€èƒ½>/all <ç´šåˆ¥æ•¸>ã€‚\n");
 
         ob = find_player(obj);
 
@@ -29,14 +29,14 @@ int main(object me, string arg)
         if( !ob )
                 ob = present(obj, environment(me));
         if( !ob )
-                return notify_fail("ÕÒ²»µ½Õâ¸öÉúÎï.\n");
+                return notify_fail("æ‰¾ä¸åˆ°é€™å€‹ç”Ÿç‰©.\n");
 
         if( (wiz_level(me) < wiz_level(ob)) && userp(ob) )
-                return notify_fail("ÄãÃ»ÓĞÉèÖÃ" + ob->name() + "¼¼ÄÜµÄÈ¨Àû¡£\n");
+                return notify_fail("ä½ æ²’æœ‰è¨­ç½®" + ob->name() + "æŠ€èƒ½çš„æ¬Šåˆ©ã€‚\n");
 
 /*
         if( level == 0 && wizardp(ob) )
-                return notify_fail("²»ÄÜÓÃ´ËÃüÁî½«Î×Ê¦µÄ¹¦·òÉ¾³ı¡£\n");
+                return notify_fail("ä¸èƒ½ç”¨æ­¤å‘½ä»¤å°‡å·«å¸«çš„åŠŸå¤«åˆªé™¤ã€‚\n");
 */
 
         if (! me->is_admin())
@@ -48,38 +48,38 @@ int main(object me, string arg)
 
                 case "self":
                         if (ob != me)
-                                return notify_fail("ÄãÖ»ÄÜÊ¹ÓÃ¸ÃÃüÁîºô½Ğ×ÔÉíµÄº¯Êı¡£\n");
+                                return notify_fail("ä½ åªèƒ½ä½¿ç”¨è©²å‘½ä»¤å‘¼å«è‡ªèº«çš„å‡½æ•¸ã€‚\n");
                         break;
 
                 case "npc":
                         if (playerp(ob) || ! ob->is_character())
-                                return notify_fail("ÄãÖ»ÄÜºô½Ğ NPC µÄº¯Êı¡£\n");
+                                return notify_fail("ä½ åªèƒ½å‘¼å« NPC çš„å‡½æ•¸ã€‚\n");
                         break;
 
                 case "user":
                         if (! playerp(ob))
-                                return notify_fail("ÄãÖ»ÄÜ¶ÔÍæ¼ÒÊ¹ÓÃÕâ¸öÃüÁî¡£\n");
+                                return notify_fail("ä½ åªèƒ½å°ç©å®¶ä½¿ç”¨é€™å€‹å‘½ä»¤ã€‚\n");
                         break;
 
                 case "nonechar":
                         if (ob->is_character())
-                                return notify_fail("ÄãÖ»ÄÜ¶Ô·Ç½ÇÉ«¶ÔÏóÊ¹ÓÃÕâ¸öÃüÁî¡£\n");
+                                return notify_fail("ä½ åªèƒ½å°éè§’è‰²å°è±¡ä½¿ç”¨é€™å€‹å‘½ä»¤ã€‚\n");
                         break;
 
                 case "wizard":
                         if (! wizardp(ob))
-                                return notify_fail("ÄãÖ»ÄÜ¶ÔÎ×Ê¦Ê¹ÓÃÕâ¸öÃüÁî¡£\n");
+                                return notify_fail("ä½ åªèƒ½å°å·«å¸«ä½¿ç”¨é€™å€‹å‘½ä»¤ã€‚\n");
                         break;
 
                 default:
-                        return notify_fail("Äã²»ÄÜÊ¹ÓÃ¸ÃÃüÁî¡£\n");
+                        return notify_fail("ä½ ä¸èƒ½ä½¿ç”¨è©²å‘½ä»¤ã€‚\n");
                 }
         }
 
-        write(WHT"begin setting skills for "NOR + ob->short(1) + WHT"£º\n"NOR);
+        write(WHT"begin setting skills for "NOR + ob->short(1) + WHT"ï¼š\n"NOR);
         if( skill == "all" ) {
                 if ( !(skill_status = ob->query_skills()) || !sizeof(skill_status) )
-                        return notify_fail("Õâ¸öÈËÃ»ÓĞÑ§»áÈÎºÎ¼¼ÄÜ£¬²»ÄÜÓÃ all Õâ¸ö²ÎÊı¡£\n");
+                        return notify_fail("é€™å€‹äººæ²’æœ‰å­¸æœƒä»»ä½•æŠ€èƒ½ï¼Œä¸èƒ½ç”¨ all é€™å€‹åƒæ•¸ã€‚\n");
                 skills  = keys(skill_status);
                 j = sizeof(skill_status);
                 for(i=0; i<j; i++) {
@@ -117,12 +117,12 @@ int main(object me, string arg)
 int help()
 {
         write(@LONG
-Ö¸Áî¸ñÊ½£ºsetskill  <Ä³ÈË> <¼¼ÄÜ>/all <¼¶±ğÊı>¡£
+æŒ‡ä»¤æ ¼å¼ï¼šsetskill  <æŸäºº> <æŠ€èƒ½>/all <ç´šåˆ¥æ•¸>ã€‚
 
-ÓÃÀ´Éè¶¨Ä³ÈËµÄÄ³ÖÖ¼¼ÄÜµÄ¼¶±ğÊı, Èç¹ûµÚ¶şÏîÊÇ all Ôò½«ÆäËùÓĞµÄ
-¼¼ÄÜ¸ÄÎªÉè¶¨µÄ¼¶±ğÊı¡£Èç¹ûÑ¡ÔñÁË¼¶±ğÊıÎª 0 ÔòÉ¾³ı¸ÃÈË´ËÏî¼¼ÄÜ¡£
+ç”¨ä¾†è¨­å®šæŸäººçš„æŸç¨®æŠ€èƒ½çš„ç´šåˆ¥æ•¸, å¦‚æœç¬¬äºŒé …æ˜¯ all å‰‡å°‡å…¶æ‰€æœ‰çš„
+æŠ€èƒ½æ”¹ç‚ºè¨­å®šçš„ç´šåˆ¥æ•¸ã€‚å¦‚æœé¸æ“‡äº†ç´šåˆ¥æ•¸ç‚º 0 å‰‡åˆªé™¤è©²äººæ­¤é …æŠ€èƒ½ã€‚
 
-¾¯¸æ£ºÇëÉ÷ÓÃ´ËÃüÁî¡£
+è­¦å‘Šï¼šè«‹æ…ç”¨æ­¤å‘½ä»¤ã€‚
 LONG    );
         return 1;
 }

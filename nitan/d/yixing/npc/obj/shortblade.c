@@ -5,21 +5,21 @@ inherit THROWING;
 
 void create()
 {
-        set_name("¶Ìµ¶", ({ "short blade", "dao" }));
+        set_name("çŸ­åˆ€", ({ "short blade", "dao" }));
         set_weight(7000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
                 set("value", 0);
-                set("base_unit", "±ú");
+                set("base_unit", "æŸ„");
                 set("base_weight", 300);
                 set("base_value", 0);
                 set("material", "iron");
-                set("unit", "°Ñ");
-                set("long", "ÕâÊÇÒ»À¦·Éµ¶¡£\n");
+                set("unit", "æŠŠ");
+                set("long", "é€™æ˜¯ä¸€æ†é£›åˆ€ã€‚\n");
                 set("material", "steel");
-                set("wield_msg", "$N¡¸à§¡¹µÄÒ»Éù³é³öÒ»±ú$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²å»ØÑü¼ä¡£\n");
+                set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€è²æŠ½å‡ºä¸€æŸ„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°‡æ‰‹ä¸­çš„$næ’å›è…°é–“ã€‚\n");
         }
         set_amount(18);
         init_throwing(25);

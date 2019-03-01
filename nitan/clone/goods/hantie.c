@@ -4,16 +4,16 @@ inherit TESSERA;
 
 void create()
 {
-        set_name(WHT "Ğş±ù¡¤º®Ìú" NOR, ({"ice steel", "han tie", "tie"}));
+        set_name(WHT "ç„å†°ï¹’å¯’éµ" NOR, ({"ice steel", "han tie", "tie"}));
         set_weight(50);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", WHT "Ò»¿éÁÁ¾§¾§µÄ½ğÊô£¬¾İËµÊÇÔÚÉÏ¹ÅĞş±ùÖĞÔĞÓı\n"
-                                "³öµÄº®Ìú¡£ÓµÓĞÎŞÇîµÄÄ§Á¦£¬ÉÏ¹ÅÉñÎï£¬ÒÑ¾­\n"
-                                "Í¨Áé¡£\n" NOR);
+                set("long", WHT "ä¸€å¡Šäº®æ™¶æ™¶çš„é‡‘å±¬ï¼Œæ“šèªªæ˜¯åœ¨ä¸Šå¤ç„å†°ä¸­å­•è‚²\n"
+                                "å‡ºçš„å¯’éµã€‚æ“æœ‰ç„¡çª®çš„é­”åŠ›ï¼Œä¸Šå¤ç¥ç‰©ï¼Œå·²ç¶“\n"
+                                "é€šéˆã€‚\n" NOR);
                 set("value", 10000000);
-                set("unit", "¿é");
+                set("unit", "å¡Š");
                 set("can_be_enchased", 1);
                 set("magic/type", "water");
                 set("magic/power", 1000);

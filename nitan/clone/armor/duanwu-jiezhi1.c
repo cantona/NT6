@@ -6,13 +6,13 @@ inherit RINGS;
 
 void create()
 {
-        set_name(HIC "Ê®ÖÜÄê¡¤¶ËÎç¡¤Áú½ä" NOR, ({ "duanwu longjie", "longjie" }));
+        set_name(HIC "åå‘¨å¹´ï¹’ç«¯åˆï¹’é¾æˆ’" NOR, ({ "duanwu longjie", "longjie" }));
         set_weight(1);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ã¶");
-                set("long", HIC "ÕâÊÇÓÉÑ×»ÆÊ®ÖÜÄêôß¶ËÎç½Ú·¢·ÅµÄ½äÖ¸£¬ÆäÉ¢·¢×ÅÃÔÈËµÄÂÌ¹â£¬ÕÛÉä³öÒ»ÌõÇàÁúÖ®Ïñ¡£\n" NOR);
+                set("unit", "æš");
+                set("long", HIC "é€™æ˜¯ç”±ç‚é»ƒåå‘¨å¹´æš¨ç«¯åˆç¯€ç™¼æ”¾çš„æˆ’æŒ‡ï¼Œå…¶æ•£ç™¼è‘—è¿·äººçš„ç¶ å…‰ï¼ŒæŠ˜å°„å‡ºä¸€æ¢é’é¾ä¹‹åƒã€‚\n" NOR);
                 set("value", 100);
                 set("material", "gold");
                 set("armor_prop/dex", 10);

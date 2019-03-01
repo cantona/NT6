@@ -4,14 +4,14 @@ inherit __DIR__"beast.c";
 
 void create()
 {
-  set_name(HIW"¾ÅÉ«ÉñÂ¹"NOR, ({"jiuse shenlu", "shenlu"}));
-  set("race", "Ò°ÊŞ");
+  set_name(HIW"ä¹è‰²ç¥é¹¿"NOR, ({"jiuse shenlu", "shenlu"}));
+  set("race", "é‡ç¸");
   set("age", 100);
-  set("long", "Ò»Í·»¨½Ç¾ÅÉ«Ã·»¨Â¹£¬ËÄÌãÉÏËÆºõÓĞ·çÔÆ¹öÆğ¡£\n");
+  set("long", "ä¸€é ­èŠ±è§’ä¹è‰²æ¢…èŠ±é¹¿ï¼Œå››è¹„ä¸Šä¼¼ä¹æœ‰é¢¨é›²æ»¾èµ·ã€‚\n");
   set("daoxing", 1500000);
 
   set("combat_exp", 300000);
-  set("limbs", ({ "Í·²¿", "ÉíÌå", "Ç°½Å", "áá½Å", "Î²°Í" }) );
+  set("limbs", ({ "é ­éƒ¨", "èº«é«”", "å‰è…³", "å¾Œè…³", "å°¾å·´" }) );
   set("verbs", ({ "bite"}));
 
   set("max_kee", 3000);
@@ -24,7 +24,7 @@ void create()
   set_skill("unarmed", 200);
 
   set("ride/need_train", 1);
-  set("ride/msg", "Æï");
+  set("ride/msg", "é¨");
   set("ride/dodge", 80);
 
   set_temp("apply/dodge", 100);

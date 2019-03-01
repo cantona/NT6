@@ -4,10 +4,10 @@ int update_condition(object me, int duration)
 {
         if (duration < 1)
         {
-                tell_object(me, "¹Ù¸®²»ÔÙÍ¨¼©ÄãÁË£¡\n");
+                tell_object(me, "å®˜åºœä¸å†é€šç·ä½ äº†ï¼\n");
                 CHANNEL_D->do_channel(this_object(), "rumor",
-                        "ÒòÎª" + me->name(1) + "Ò»Ö±Ã»ÄÜ±»" +
-                        "¼©ÄÃ¹é°¸£¬ÌýËµ¹Ù¸®ÒÑ¾­È¡ÏûÁËÍ¨¼©Áî¡£");
+                        "å› ç‚º" + me->name(1) + "ä¸€ç›´æ²’èƒ½è¢«" +
+                        "ç·æ‹¿æ­¸æ¡ˆï¼Œè½èªªå®˜åºœå·²ç¶“å–æ¶ˆäº†é€šç·ä»¤ã€‚");
                 return 0;
         }
 
@@ -21,14 +21,14 @@ int update_condition(object me, int duration)
                 me->receive_wound("jing",query("max_jing", me)/10);
                 me->receive_wound("qi",query("max_qi", me)/10);
                 if ( i > 20) 
-                        tell_object(me, "Ò»µÀÉÁµç»®¹ý³¤¿Õ£¬ÄãÏëÆðÒÔÇ°Îª·Ç×÷´õµÄÊÂ¼££¬²»ÓÉµÃÐÄ·¢Ðé£¡\n"  );
+                        tell_object(me, "ä¸€é“é–ƒé›»åŠƒéŽé•·ç©ºï¼Œä½ æƒ³èµ·ä»¥å‰ç‚ºéžä½œæ­¹çš„äº‹è·¡ï¼Œä¸ç”±å¾—å¿ƒç™¼è™›ï¼\n"  );
                 else 
                 if (i > 10)  
-                        tell_object(me, "Ìì¿ÕÖÐÏìÆðÁË¹ö¹öÀ×Éù£¬ÄãÕúÕúµØÍû×ÅÌìà«à«×ÔÓï£ºÎÒ×öÁËÕâÃ´¶à»µÊÂ£¬¸Ã²»»á±»ÌìÇ²°É£¡\n");
+                        tell_object(me, "å¤©ç©ºä¸­éŸ¿èµ·äº†æ»¾æ»¾é›·è²ï¼Œä½ æ€”æ€”åœ°æœ›è‘—å¤©å–ƒå–ƒè‡ªèªžï¼šæˆ‘åšäº†é€™éº¼å¤šå£žäº‹ï¼Œè©²ä¸æœƒè¢«å¤©é£å§ï¼\n");
                 else 
-                        tell_object(me, "Äã¾õµÃ±³¼¹Ò»Á¹£¬´òÐÄµ×Ó¿ÆðÁËÒ»¹Éº®Òâ£º¹í£¡£¡\n");
+                        tell_object(me, "ä½ è¦ºå¾—èƒŒè„Šä¸€æ¶¼ï¼Œæ‰“å¿ƒåº•æ¹§èµ·äº†ä¸€è‚¡å¯’æ„ï¼šé¬¼ï¼ï¼\n");
 
-                set_temp("die_reason", "ÔâÌìÇ²¶øËÀ", me);
+                set_temp("die_reason", "é­å¤©é£è€Œæ­»", me);
         }
 
         me->apply_condition("killer", duration - 1);

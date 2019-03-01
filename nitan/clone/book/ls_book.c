@@ -1,4 +1,4 @@
-//¶À¹Â¾Å½£½£Æ×(Lonely_sword_book)
+//ç¨å­¤ä¹åŠåŠè­œ(Lonely_sword_book)
 // ls_book.c
 // Date: Oct.6 1997 by That
 
@@ -12,56 +12,56 @@ int study(object me, string arg)
     object ob;
     int myskill, cost;
 
-    cost=20;                                            //Ã¿¶ÁÒ»´ÎºÄ20¾«
+    cost=20;                                            //æ¯è®€ä¸€æ¬¡è€—20ç²¾
     myskill=me->query_skill("lonely-sword", 1);
     if (!arg || !objectp(ob = present(arg, me)))
-        return notify_fail("ÄãÒª¶ÁÊ²Ã´£¿\n");
+        return notify_fail("ä½ è¦è®€ä»€éº¼ï¼Ÿ\n");
     if (!me->query_skill("literate", 1)||me->query_skill("literate",1) < 100)
-        return notify_fail("¶ÔÕÕ½£Æ×£¬ÄãÊ²Ã´¶¼¶Á²»¶®¡£\n");
+        return notify_fail("å°ç…§åŠè­œï¼Œä½ ä»€éº¼éƒ½è®€ä¸æ‡‚ã€‚\n");
     if (me->is_busy())
-        return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+        return notify_fail("ä½ ç¾åœ¨æ­£å¿™è‘—å‘¢ã€‚\n");
     if (me->is_fighting() )
-        return notify_fail("ÄãÎŞ·¨ÔÚÕ½¶·ÖĞ×¨ĞÄÏÂÀ´ÑĞ¶ÁĞÂÖª£¡\n");
+        return notify_fail("ä½ ç„¡æ³•åœ¨æˆ°é¬¥ä¸­å°ˆå¿ƒä¸‹ä¾†ç ”è®€æ–°çŸ¥ï¼\n");
     if( query("combat_exp", me)<50000 )
-        return notify_fail("ÄãµÄÊµÕ½¾­Ñé²»×ã£¬²»ÄÜÑ§¶À¹Â¾Å½£¡£\n");
+        return notify_fail("ä½ çš„å¯¦æˆ°ç¶“é©—ä¸è¶³ï¼Œä¸èƒ½å­¸ç¨å­¤ä¹åŠã€‚\n");
     if (myskill>299)
-        return notify_fail("ÄãÑĞ¶ÁÁËÒ»»á¶ù£¬·¢ÏÖÉÏÃæËùËµµÄ¶ÔÄã¶øÑÔ¶¼Ì«Ç³ÁË¡£\n");
+        return notify_fail("ä½ ç ”è®€äº†ä¸€æœƒå…’ï¼Œç™¼ç¾ä¸Šé¢æ‰€èªªçš„å°ä½ è€Œè¨€éƒ½å¤ªæ·ºäº†ã€‚\n");
     if (myskill<75)
-        return notify_fail("Äã¶ÁÁËÒ»»áÊé,¿ÉÊÇÈ´ºÁÎŞÊÕ»ñ¡£\n");
+        return notify_fail("ä½ è®€äº†ä¸€æœƒæ›¸,å¯æ˜¯å»æ¯«ç„¡æ”¶ç²ã€‚\n");
     if( query("jing", me)>cost )
     {
        if( myskill*myskill*myskill/10>query("combat_exp", me) )
        {
-          printf("Ò²ĞíÊÇÈ±·¦ÊµÕ½¾­Ñé£¬Äã¶Ô¶À¹Â¾Å½£½£Æ×ÃæËùËµµÄ¶«Î÷×ÜÊÇÎŞ·¨Áì»á¡£\n");
+          printf("ä¹Ÿè¨±æ˜¯ç¼ºä¹å¯¦æˆ°ç¶“é©—ï¼Œä½ å°ç¨å­¤ä¹åŠåŠè­œé¢æ‰€èªªçš„æ±è¥¿ç¸½æ˜¯ç„¡æ³•é ˜æœƒã€‚\n");
        }
        else
        {
-          printf("ÄãÑĞ¶ÁÓĞ¹Ø¶À¹Â¾Å½£½£Æ×ÉÏµÄ¼¼ÇÉ£¬ËÆºõÓĞµãĞÄµÃ¡£\n");
+          printf("ä½ ç ”è®€æœ‰é—œç¨å­¤ä¹åŠåŠè­œä¸Šçš„æŠ€å·§ï¼Œä¼¼ä¹æœ‰é»å¿ƒå¾—ã€‚\n");
           me->improve_skill("lonely-sword",me->query_skill("literate",1)+query("int", me));
        }
     }
     else
     {
        cost=query("jing", me);
-       write("ÄãÏÖÔÚ¹ıÓÚÆ£¾ë£¬ÎŞ·¨×¨ĞÄÏÂÀ´ÑĞ¶ÁĞÂÖª¡£\n");
+       write("ä½ ç¾åœ¨éäºç–²å€¦ï¼Œç„¡æ³•å°ˆå¿ƒä¸‹ä¾†ç ”è®€æ–°çŸ¥ã€‚\n");
     }
     me->receive_damage("jing", cost );
     return 1;
 }
 void create()
 {
-        set_name(HIG"¶À¹Â¾Å½£½£Æ×"NOR, ({ "lonely_sword_book","ls_book" }));
+        set_name(HIG"ç¨å­¤ä¹åŠåŠè­œ"NOR, ({ "lonely_sword_book","ls_book" }));
         set_weight(100);
         if( clonep() )
                 set_default_object(__FILE__);
         else
         {
-                set("unit", "±¾");
-                set("no_drop","ÕâÊÇµ±ÊÀ¹Â±¾°¡¡£ÈçºÎÄÜ¶ªÊ§£¿");
-                set("no_put","ÕâÊÇµ±ÊÀ¹Â±¾°¡¡£ÈçºÎÄÜ¶ªÊ§£¿");
+                set("unit", "æœ¬");
+                set("no_drop","é€™æ˜¯ç•¶ä¸–å­¤æœ¬å•Šã€‚å¦‚ä½•èƒ½ä¸Ÿå¤±ï¼Ÿ");
+                set("no_put","é€™æ˜¯ç•¶ä¸–å­¤æœ¬å•Šã€‚å¦‚ä½•èƒ½ä¸Ÿå¤±ï¼Ÿ");
                 set("no_get",1);
                 set("no_steal",1);
-                set("long","¶À¹Â¾Å½£½£·¨¡£ÄãÖ»ÄÜÑĞÏ°(yanxi)¡£\n");
+                set("long","ç¨å­¤ä¹åŠåŠæ³•ã€‚ä½ åªèƒ½ç ”ç¿’(yanxi)ã€‚\n");
                 set("value", 1000);
                 set("material", "paper");
                 set("master_id","npc");
@@ -79,7 +79,7 @@ int do_study(string arg)
         me=this_player();
         ob=this_object();
 
-        write("ÍÛ£¬ÕæÊÇÇ§¹Å¶À²½µÄ½£·¨£¡");
+        write("å“‡ï¼ŒçœŸæ˜¯åƒå¤ç¨æ­¥çš„åŠæ³•ï¼");
         study(me,arg);
         return 1;
 }
@@ -96,6 +96,6 @@ void autoload(string arg)
 }
 void owner_is_killed()
 {
-        write(HIY"Ö»¼ûÑÛÇ°½ğ¹âÒ»ÉÁ...ºÃÏóÊÇ.....\n"NOR);
+        write(HIY"åªè¦‹çœ¼å‰é‡‘å…‰ä¸€é–ƒ...å¥½è±¡æ˜¯.....\n"NOR);
         destruct(this_object());
 }

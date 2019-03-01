@@ -3,8 +3,8 @@ inherit "/clone/horse/horse.c";
 
 void create()
 {
-        set_name(NOR + YEL "普氏野马" NOR, ({ "pushi yema"}));
-        set("long", NOR + YEL "生活在新疆的普氏野马一小时可奔跑六十公里，还有连续奔跑四小时的耐力。\n" NOR);
+        set_name(NOR + YEL "鏅皬閲庨Μ" NOR, ({ "pushi yema"}));
+        set("long", NOR + YEL "鐢熸椿鍦ㄦ柊鐤嗙殑鏅皬閲庨Μ涓�灏忔檪鍙璺戝叚鍗佸叕瑁★紝閭勬湁閫ｇ簩濂旇窇鍥涘皬鏅傜殑鑰愬姏銆俓n" NOR);
 
     set("tili", 5000);
         set("max_tili", 5000);

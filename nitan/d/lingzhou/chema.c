@@ -5,17 +5,17 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "������");
+        set("short", "車馬店");
         set("long", @LONG
-һ�ҵ͵��ĳ�����ջ�������൱�¾ɣ��ܲ����ۣ��������ڼ�Ǯ��
-���������ڱ��ŵĽ�ͨҪ���ϣ����̾�����ѡ��������ţ�����Ҳ�൱
-��������Ҳ������������������صķ������顣
-    ǽ�Ϲ���һ������(paizi)��
+一家低檔的車馬客棧，建築相當陳舊，很不起眼，不過由于價錢低
+廉，又是在北門的交通要道上，三教九流多選擇這裡落腳，生意也相當
+不錯，你也可以在這裡打聽到當地的風土人情。
+    牆上掛著一個牌子(paizi)。
 LONG );
         set("no_fight", 1);
         set("no_sleep_room",1);
         set("item_desc", ([
-                "paizi" : "¥���ŷ���ÿҹʮ��������\n",
+                "paizi" : "樓上雅房，每夜十兩白銀。\n",
         ]));
         set("objects", ([
                 __DIR__"npc/xiaoer" : 1,
@@ -36,11 +36,11 @@ int valid_leave(object me, string dir)
 {
 
         if( !query_temp("rent_paid", me) && dir == "up" )
-        return notify_fail("��С��һ�µ���¥��ǰ������һ���������ţ����ס����\n");
+        return notify_fail("店小二一下擋在樓梯前，白眼一翻：怎麼著，想白住啊！\n");
 
         if( query_temp("rent_paid", me) && dir == "west" )
-        return notify_fail("��С���ܵ��ű���ס���͹��Ѿ��������ӣ����᲻ס��������أ�
-���˻���ΪС���ź����أ�\n");
+        return notify_fail("店小二跑到門邊攔住：客官已經付了銀子，怎麼不住店就走了呢！
+旁人還以為小店伺候不周呢！\n");
 
         return ::valid_leave(me, dir);
 }

@@ -5,10 +5,10 @@
 inherit ROOM;
 void create()
 {
-        set("short", "������");
+        set("short", "北岳廟");
         set("long", @LONG
-�������Ǹ�ΡΡ׳�۵Ĺ������ɽ�����أ����и��ϣ�����ʯ��
-���㡣�����Ǳ����������ߵġ������
+北岳廟是個巍巍壯觀的宮殿廟宇，山門三重，高列阜上，其下石階
+數層。這裡是北岳廟最大最高的“朝殿”。
 LONG);
         set("exits", ([ /* sizeof() == 4 */
                 "east"      : __DIR__"kutianjing",

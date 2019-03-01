@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-        set("short","Ѧ�ǳ�����");
+        set("short","薛記成衣舖");
         set("long", @LONG
-����һ�����ֺŵĹ���ׯ����������˸�ʽ����������񡢾
-˿������Ƥ������춷��л������ȹ��ˮ��ɫ�ް�������ɫ�Ż�������
-��һ���㡣
+這是一家老字號的估衣莊，裡面擺滿了各式各樣的衣物。綢、絹、
+絲、布、皮襖、大紅鬥蓬、蔥黃綾子棉裙、水綠色棉襖，秋香色團花。。。
+不一而足。
 LONG );
         set("objects", ([
            "/d/dali/npc/xueboss": 1,

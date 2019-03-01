@@ -1,24 +1,24 @@
 // heal.c
 // Updated by Lonely
 
-// ²Î¿¼ÓÚÏÀ¿ÍÐÐ
+// åƒè€ƒäºŽä¿ å®¢è¡Œ
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * **\
- * heal.c ÄÚ¹¦ÖÎÁÆÄÚÉË¹¦ÄÜ                                              *
+ * heal.c å…§åŠŸæ²»ç™‚å…§å‚·åŠŸèƒ½                                              *
  *                                                                      *
- * ÄÚ¹¦Ó¦¸ÃÓµÓÐ¼¸ÖÖ¹²ÓÐµÄ¹¦ÄÜ£¬ÏñÒÑÓÐµÄ´ò×ø¡¢ÍÂÄÅ¡¢ÔËÆø¡¢ÔË¾«¡¢ÔË¾«Á¦£¬ *
- * ÒÔ¼°¿ª·ÅÖÐµÄ±ÈÆ´ÄÚÁ¦¡£ÆäÖÐÔË×ªÄÚÏ¢ÖÎÁÆÄÚÉËÒ²Ó¦¸ÃÊÇËùÓÐÄÚ¹¦¶¼Ó¦¸ÃÓÐµÄ *
- * ¹¦ÄÜ¡£                                                               *
- * ÄàÌ¶ÏÖÓÐµÄÉËº¦ÏµÍ³£¬ÔÚÄÚÉËºÍÍâÉËÍêÈ«Ã»ÓÐÇø±ð¡£ÄÚÉËÍâÉËÊÇÁ½Âë×ÓÊÂ£¬µ± *
- * ÄÚ¹¦¸ß£¬ÄÚÉË×ÔÈ»ÈÝÒ×ºÃ¡£ÍâÉËÈ´Î´±Ø£¬ÓÖ²»ÊÇÉñ¹¦Ò»ÔË£¬Á¢¼´ÕòÉËÉú¼¡£¬ÄÇ *
- * ±ä³ÉÉú»¯ÈËÁË¡£ËùÒÔÍâÉËÔÚ´ó²¿·ÝÇé¿öÏÂÖ»ÄÜ½èÖúÓÚÍâ½çÒ©ÎïµÄ¸¨ÖúÀ´ÖÎÁÆ¡£ *
- * »ù±¾ÉÏÆÕÍ¨ÄÚÉË¶¼¿ÉÒÔÍ¨¹ýÔË×ªÄÚÏ¢À´ÖÎÁÆ£¬Ëù²îÕß²»¹ýì¶²»Í¬ÄÚ¹¦ÔÚì¶ÖÎÁÆ *
- * ·½ÃæÐ§¹ûµÄºÃ»µ£¬¶øÇÒÈç¹ûÉËÊÆÔ½ÖØ£¬Ð§¹ûÔ½Ð¡£¬²»ÏñÒÔÇ°ÏÀ¿ÍÐÐÒ»´Î¶àÉÙÄÚ *
- * Á¦¡¢¾Í¹Ì¶¨»Ö¸´¶àÉÙ¡£Í¨¹ýÄÚÉËµÄ¿µ¸´£¬ÂýÂý»á¼Ó¿ìÖÎÓúËÙ¶È¡£¶øÍâÉËµÄ¿µÓú *
- * ËÙ¶È£¬¶à°ëÔòÈ¡¾öÓÚÆäÉËÊÆµÄ³Ì¶È£¬ËùÓÃÒ©ÎïµÄÒ©ÐÔ£¬ÒÔ¼°±¾ÉíµÄ¼¡Èâ¹¹Ôì£¬ *
- * Ò²¾ÍÊÇÄàÌ¶ÀïÃæµÄcon¡£                                       *
- * ÖÁÓÚÈçºÎÌåÏÖ³öÄÚÍâÉËµÄ²»Í¬£¬¶ø½«ÕâÄàÌ¶µÄÉËº¦ÏµÍ³×öµÃ¸üºÏÀíÐÔ£¬ÕâÐ©ÊÇ *
- * ÒÔºóËùÒª¸Ä±äµÄ£¬ÕâÀïËùÒªËµÃ÷µÄÖ»ÊÇÒÔÏÂ¹¦ÄÜÖ»ÊÇÒÔÄÚÉË×÷ÎªÇ°Ìá¿¼ÂÇ£¬Ëù *
- * ÒÔ»òÐí¶ÔÓÚÄàÌ¶ÏÖÓÐµÄÉËº¦ÏµÍ³»áÓÐÉÙÐíµÄ²»ºÏÀíÐÔ¡£                     *
+ * å…§åŠŸæ‡‰è©²æ“æœ‰å¹¾ç¨®å…±æœ‰çš„åŠŸèƒ½ï¼Œåƒå·²æœ‰çš„æ‰“åã€åå¶ã€é‹æ°£ã€é‹ç²¾ã€é‹ç²¾åŠ›ï¼Œ *
+ * ä»¥åŠé–‹æ”¾ä¸­çš„æ¯”æ‹¼å…§åŠ›ã€‚å…¶ä¸­é‹è½‰å…§æ¯æ²»ç™‚å…§å‚·ä¹Ÿæ‡‰è©²æ˜¯æ‰€æœ‰å…§åŠŸéƒ½æ‡‰è©²æœ‰çš„ *
+ * åŠŸèƒ½ã€‚                                                               *
+ * æ³¥æ½­ç¾æœ‰çš„å‚·å®³ç³»çµ±ï¼Œåœ¨å…§å‚·å’Œå¤–å‚·å®Œå…¨æ²’æœ‰å€åˆ¥ã€‚å…§å‚·å¤–å‚·æ˜¯å…©ç¢¼å­äº‹ï¼Œç•¶ *
+ * å…§åŠŸé«˜ï¼Œå…§å‚·è‡ªç„¶å®¹æ˜“å¥½ã€‚å¤–å‚·å»æœªå¿…ï¼Œåˆä¸æ˜¯ç¥žåŠŸä¸€é‹ï¼Œç«‹å³éŽ®å‚·ç”Ÿè‚Œï¼Œé‚£ *
+ * è®Šæˆç”ŸåŒ–äººäº†ã€‚æ‰€ä»¥å¤–å‚·åœ¨å¤§éƒ¨ä»½æƒ…æ³ä¸‹åªèƒ½å€ŸåŠ©äºŽå¤–ç•Œè—¥ç‰©çš„è¼”åŠ©ä¾†æ²»ç™‚ã€‚ *
+ * åŸºæœ¬ä¸Šæ™®é€šå…§å‚·éƒ½å¯ä»¥é€šéŽé‹è½‰å…§æ¯ä¾†æ²»ç™‚ï¼Œæ‰€å·®è€…ä¸éŽæ–¼ä¸åŒå…§åŠŸåœ¨æ–¼æ²»ç™‚ *
+ * æ–¹é¢æ•ˆæžœçš„å¥½å£žï¼Œè€Œä¸”å¦‚æžœå‚·å‹¢è¶Šé‡ï¼Œæ•ˆæžœè¶Šå°ï¼Œä¸åƒä»¥å‰ä¿ å®¢è¡Œä¸€æ¬¡å¤šå°‘å…§ *
+ * åŠ›ã€å°±å›ºå®šæ¢å¾©å¤šå°‘ã€‚é€šéŽå…§å‚·çš„åº·å¾©ï¼Œæ…¢æ…¢æœƒåŠ å¿«æ²»ç™’é€Ÿåº¦ã€‚è€Œå¤–å‚·çš„åº·ç™’ *
+ * é€Ÿåº¦ï¼Œå¤šåŠå‰‡å–æ±ºäºŽå…¶å‚·å‹¢çš„ç¨‹åº¦ï¼Œæ‰€ç”¨è—¥ç‰©çš„è—¥æ€§ï¼Œä»¥åŠæœ¬èº«çš„è‚Œè‚‰æ§‹é€ ï¼Œ *
+ * ä¹Ÿå°±æ˜¯æ³¥æ½­è£¡é¢çš„conã€‚                                       *
+ * è‡³äºŽå¦‚ä½•é«”ç¾å‡ºå…§å¤–å‚·çš„ä¸åŒï¼Œè€Œå°‡é€™æ³¥æ½­çš„å‚·å®³ç³»çµ±åšå¾—æ›´åˆç†æ€§ï¼Œé€™äº›æ˜¯ *
+ * ä»¥å¾Œæ‰€è¦æ”¹è®Šçš„ï¼Œé€™è£¡æ‰€è¦èªªæ˜Žçš„åªæ˜¯ä»¥ä¸‹åŠŸèƒ½åªæ˜¯ä»¥å…§å‚·ä½œç‚ºå‰æè€ƒæ…®ï¼Œæ‰€ *
+ * ä»¥æˆ–è¨±å°äºŽæ³¥æ½­ç¾æœ‰çš„å‚·å®³ç³»çµ±æœƒæœ‰å°‘è¨±çš„ä¸åˆç†æ€§ã€‚                     *
  *                                                                      *
 \* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * **/
 
@@ -26,39 +26,39 @@
 #include <ansi.h>
 
 mapping eff_heal = ([
-        "yinyang-shiertian"     : 21,   // ×ªÊÀ¼¼ÄÜ£¬×îÇ¿µÄÄÚ¹¦¡£
-        "jiuyin-shengong"       : 10,   // ´ó×ÚÊ¦ÄÚ¹¦³¬Ç¿¡£
-        "bluesea-force"         : 10,   // ´ó×ÚÊ¦ÄÚ¹¦³¬Ç¿¡£
-        "never-defeated"        : 10,   // ´ó×ÚÊ¦ÄÚ¹¦³¬Ç¿¡£
-        "kuihua-mogong"         : 10,   // ´ó×ÚÊ¦ÄÚ¹¦³¬Ç¿¡£
-        "jiuyang-shengong"      : 9,    // ¾ÅÑôÉñ¹¦ÔÚÁÆÉË·½ÃæµÄÐ§¹ûÎÞ¿ÉÖÃÒÉ¡£
-        "taixuan-gong"          : 9,    // ²Î¿¼¾ÅÑôÉñ¹¦¡£
+        "yinyang-shiertian"     : 21,   // è½‰ä¸–æŠ€èƒ½ï¼Œæœ€å¼·çš„å…§åŠŸã€‚
+        "jiuyin-shengong"       : 10,   // å¤§å®—å¸«å…§åŠŸè¶…å¼·ã€‚
+        "bluesea-force"         : 10,   // å¤§å®—å¸«å…§åŠŸè¶…å¼·ã€‚
+        "never-defeated"        : 10,   // å¤§å®—å¸«å…§åŠŸè¶…å¼·ã€‚
+        "kuihua-mogong"         : 10,   // å¤§å®—å¸«å…§åŠŸè¶…å¼·ã€‚
+        "jiuyang-shengong"      : 9,    // ä¹é™½ç¥žåŠŸåœ¨ç™‚å‚·æ–¹é¢çš„æ•ˆæžœç„¡å¯ç½®ç–‘ã€‚
+        "taixuan-gong"          : 9,    // åƒè€ƒä¹é™½ç¥žåŠŸã€‚
         "yijinjing"             : 9,
-        "hunyuan-yiqi"          : 8,    // ¼øì¶Ò×½î¾­ÒÔ¼°¾ÅÑôÉñ¹¦ÔÚÁÆÉË·½ÃæµÄÐ§¹û¡£
-        "zixia-shengong"        : 8,    // ×ÏÏ¼Éñ¹¦¼°»ìÔª¹¦ÔÚ×ÔÁÆ·½ÃæÃ»ÓÐÊ²Ã´Ìá¼°£¬µ«ÊÇÓÐ¼ø
-                                        // ì¶ÆäÁÆÈËµÄÐ§¹û£¬ÒÔ¼°ÔÀ²»ÈºÔø¾­ÏëÈÃÁîºü³å×ÔÏ°×ÏÏ¼
-                                        // Éñ¹¦À´ÖÎÁÆÄÚÉË£¬¿É¼ûì¶×ÔÁÆ·½ÃæµÄÐ§¹û£¬»òÐí¿ÉÒÔÓë
-                                        // Ò×½î¾­ÏàæÇÃÀ¡£¾ÍËãÊÇÓÐËù²»¼°£¬¿¼ÂÇµ½µ±½ñ×ÏÏ¼Éñ¹¦
-                                        // Ã»ÓÐÊ²Ã´ÌØ±ðµÄ exert£¬Ò²Ó¦µ±ÈÃ×ÏÏ¼Éñ¹¦ÔÚÖÎÁÆ·½Ãæ
-                                        // µÄÐ§¹ûÏà¶Ôì¶ÆäËûÄÚ¹¦¸üºÃ¡£
+        "hunyuan-yiqi"          : 8,    // é‘’æ–¼æ˜“ç­‹ç¶“ä»¥åŠä¹é™½ç¥žåŠŸåœ¨ç™‚å‚·æ–¹é¢çš„æ•ˆæžœã€‚
+        "zixia-shengong"        : 8,    // ç´«éœžç¥žåŠŸåŠæ··å…ƒåŠŸåœ¨è‡ªç™‚æ–¹é¢æ²’æœ‰ä»€éº¼æåŠï¼Œä½†æ˜¯æœ‰é‘’
+                                        // æ–¼å…¶ç™‚äººçš„æ•ˆæžœï¼Œä»¥åŠå²³ä¸ç¾¤æ›¾ç¶“æƒ³è®“ä»¤ç‹æ²–è‡ªç¿’ç´«éœž
+                                        // ç¥žåŠŸä¾†æ²»ç™‚å…§å‚·ï¼Œå¯è¦‹æ–¼è‡ªç™‚æ–¹é¢çš„æ•ˆæžœï¼Œæˆ–è¨±å¯ä»¥èˆ‡
+                                        // æ˜“ç­‹ç¶“ç›¸åª²ç¾Žã€‚å°±ç®—æ˜¯æœ‰æ‰€ä¸åŠï¼Œè€ƒæ…®åˆ°ç•¶ä»Šç´«éœžç¥žåŠŸ
+                                        // æ²’æœ‰ä»€éº¼ç‰¹åˆ¥çš„ exertï¼Œä¹Ÿæ‡‰ç•¶è®“ç´«éœžç¥žåŠŸåœ¨æ²»ç™‚æ–¹é¢
+                                        // çš„æ•ˆæžœç›¸å°æ–¼å…¶ä»–å…§åŠŸæ›´å¥½ã€‚
         "taiji-shengong"        : 8,
-        "xiantian-gong"         : 8,    // ÊéÖÐÓÐÏàµ±Æª·ùÌáµ½Îäµ±¾ÅÑô¹¦ÓëÈ«ÕæÐþÃÅÄÚ¹¦µÄÁÆÉË¡£
-        "kurong-changong"       : 7,    // ´óÀíÄÚ¹¦ÔÚÁÆÈË·½ÃæµÄÐ§¹ûºÜºÃ£¬¿ÉÊÇÔÚ×ÔÁÆ·½ÃæÈ´Ã»
-                                        // ÓÐÊ²Ã´ÌØ±ðÖ®´¦¡£
-        "linji-zhuang"          : 7,    // ¶ëáÒÄÚ¹¦ÔÚÁÆÉË·½ÃæÃ»ÓÐÊ²Ã´ÌØ±ðÃèÊö£¬²»¹ýÒòÆäÊÇ¾Å
-                                        // ÑôÒ»Ïµ¡£
+        "xiantian-gong"         : 8,    // æ›¸ä¸­æœ‰ç›¸ç•¶ç¯‡å¹…æåˆ°æ­¦ç•¶ä¹é™½åŠŸèˆ‡å…¨çœŸçŽ„é–€å…§åŠŸçš„ç™‚å‚·ã€‚
+        "kurong-changong"       : 7,    // å¤§ç†å…§åŠŸåœ¨ç™‚äººæ–¹é¢çš„æ•ˆæžœå¾ˆå¥½ï¼Œå¯æ˜¯åœ¨è‡ªç™‚æ–¹é¢å»æ²’
+                                        // æœ‰ä»€éº¼ç‰¹åˆ¥ä¹‹è™•ã€‚
+        "linji-zhuang"          : 7,    // å³¨åµ‹å…§åŠŸåœ¨ç™‚å‚·æ–¹é¢æ²’æœ‰ä»€éº¼ç‰¹åˆ¥æè¿°ï¼Œä¸éŽå› å…¶æ˜¯ä¹
+                                        // é™½ä¸€ç³»ã€‚
         "bibo-shengong"         : 6,
         "yunu-xinfa"            : 6,
         "xiaowuxiang"           : 5,
-        "sanku-shengong"        : 5,    // Èý¿àÉñ¹¦£¬ÎªÌÆÃÅÄÚ¹¦£¬ÁÆÉËÒ»°ã,ÔÚÁÆ¶¾·½Ãæ³¬Ç¿¡£
-        "huntian-qigong"        : 4,    // »ìÌì¹¦¡¢¸òó¡¹¦¡¢ÁúÏó°ãÈô¹¦×ßµÄ¶¼ÊÇ¸ÕÃÍÒ»Â·µÄÄÚ¹¦£¬
-        "hamagong"              : 4,    // Òò´ËÔÚÁÆÉË·½Ãæ»áÏà¶ÔÈõÐ©¡£
+        "sanku-shengong"        : 5,    // ä¸‰è‹¦ç¥žåŠŸï¼Œç‚ºå”é–€å…§åŠŸï¼Œç™‚å‚·ä¸€èˆ¬,åœ¨ç™‚æ¯’æ–¹é¢è¶…å¼·ã€‚
+        "huntian-qigong"        : 4,    // æ··å¤©åŠŸã€è›¤èŸ†åŠŸã€é¾è±¡èˆ¬è‹¥åŠŸèµ°çš„éƒ½æ˜¯å‰›çŒ›ä¸€è·¯çš„å…§åŠŸï¼Œ
+        "hamagong"              : 4,    // å› æ­¤åœ¨ç™‚å‚·æ–¹é¢æœƒç›¸å°å¼±äº›ã€‚
         "longxiang-gong"        : 4,
-        "beiming-shengong"      : 3,    // ±±Ú¤Éñ¹¦ÎüÈËÄÚÁ¦£¬ÌåÄÚÕæÆøÏà³å»áÓ°ÏìÁÆÉËÊ±µÄÐ§¹û¡£
-        "huagong-dafa"          : 2,    // »¯¹¦´ó·¨ÒÔ¶¾Á·¹¦£¬ÔÚÁÆÉË·½ÃæÐ§¹ûÓ¦¸Ã×îÎª²»ºÃ¡£
+        "beiming-shengong"      : 3,    // åŒ—å†¥ç¥žåŠŸå¸äººå…§åŠ›ï¼Œé«”å…§çœŸæ°£ç›¸æ²–æœƒå½±éŸ¿ç™‚å‚·æ™‚çš„æ•ˆæžœã€‚
+        "huagong-dafa"          : 2,    // åŒ–åŠŸå¤§æ³•ä»¥æ¯’ç·´åŠŸï¼Œåœ¨ç™‚å‚·æ–¹é¢æ•ˆæžœæ‡‰è©²æœ€ç‚ºä¸å¥½ã€‚
         "dulong-dafa"           : 2,
         "hongming-xuangong"     : 1,
-        "ding-force"            : 1,    // ÒÔÉÏÈýÖÖÄÚ¹¦ÊéÖÐÎ´ÓÐÌá¼°£¬±»ÁÐÎª²»¿É¿¼¡£
+        "ding-force"            : 1,    // ä»¥ä¸Šä¸‰ç¨®å…§åŠŸæ›¸ä¸­æœªæœ‰æåŠï¼Œè¢«åˆ—ç‚ºä¸å¯è€ƒã€‚
 ]);
 
 
@@ -68,43 +68,43 @@ int exert(object me, object target)
         mapping msg;
 
         if (me->is_fighting())
-                return notify_fail("Õ½¶·ÖÐÔË¹¦ÁÆÉË£¿ÕÒËÀÂð£¿\n");
+                return notify_fail("æˆ°é¬¥ä¸­é‹åŠŸç™‚å‚·ï¼Ÿæ‰¾æ­»å—Žï¼Ÿ\n");
 
         if (me->is_busy())
-                return notify_fail("µÈÄãÃ¦ÍêÁËÊÖÍ·µÄÊÂÇéÔÙËµ£¡\n");
+                return notify_fail("ç­‰ä½ å¿™å®Œäº†æ‰‹é ­çš„äº‹æƒ…å†èªªï¼\n");
 
         force = me->query_skill_mapped("force");
         if (! stringp(force))
-                return notify_fail("ÏÈ¼¤·¢ÄãµÄÌØÊâÄÚ¹¦¡£\n");
+                return notify_fail("å…ˆæ¿€ç™¼ä½ çš„ç‰¹æ®Šå…§åŠŸã€‚\n");
 
         if( query("eff_qi", me) >= query("max_qi", me) )
-                return notify_fail("ÄãÏÖÔÚÆøÑª³äÓ¯£¬²»ÐèÒªÁÆÉË¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ°£è¡€å……ç›ˆï¼Œä¸éœ€è¦ç™‚å‚·ã€‚\n");
 
         if ((int)me->query_skill(force, 1) < 20)
-                return notify_fail("ÄãµÄ" + to_chinese(force) + "ÐÞÎª»¹²»¹»¡£\n");
+                return notify_fail("ä½ çš„" + to_chinese(force) + "ä¿®ç‚ºé‚„ä¸å¤ ã€‚\n");
 
         if( query("neili", me)<50 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ã€‚\n");
 
         if( query("eff_qi", me)<query("max_qi", me)/5 )
-                return notify_fail("ÄãÒÑ¾­ÊÜÉË¹ýÖØ£¬Ö»ÅÂÒ»ÔËÕæÆø±ãÓÐÉúÃüÎ£ÏÕ£¡\n");
+                return notify_fail("ä½ å·²ç¶“å—å‚·éŽé‡ï¼Œåªæ€•ä¸€é‹çœŸæ°£ä¾¿æœ‰ç”Ÿå‘½å±éšªï¼\n");
         
         msg = SKILL_D(force)->heal_msg(me);
                 
         if (! msg || undefinedp(msg["start_self"]))
-                write(HIW "ÄãÈ«Éí·ÅËÉ£¬×øÏÂÀ´¿ªÊ¼ÔË¹¦ÁÆÉË¡£\n" NOR);
+                write(HIW "ä½ å…¨èº«æ”¾é¬†ï¼Œåä¸‹ä¾†é–‹å§‹é‹åŠŸç™‚å‚·ã€‚\n" NOR);
         else 
                 write(msg["start_self"]);               
 
         set_temp("pending/healing", 1, me);
         
         if (! msg || undefinedp(msg["apply_short"]))
-                me->set_short_desc("Õý×øÔÚµØÏÂÔË¹¦ÁÆÉË¡£");                
+                me->set_short_desc("æ­£ååœ¨åœ°ä¸‹é‹åŠŸç™‚å‚·ã€‚");                
         else    
                 me->set_short_desc(msg["apply_short"]);
 
         if (! msg || undefinedp(msg["start_other"]))
-                tell_room(environment(me), HIW + me->name() + "ÅÌÏ¥×øÏÂ£¬¿ªÊ¼ÔË¹¦ÁÆÉË¡£\n" NOR, me);
+                tell_room(environment(me), HIW + me->name() + "ç›¤è†åä¸‹ï¼Œé–‹å§‹é‹åŠŸç™‚å‚·ã€‚\n" NOR, me);
         else
                 tell_room(environment(me), msg["start_other"], me); 
                                 
@@ -114,7 +114,7 @@ int exert(object me, object target)
         return 1;
 }
 
-// ÁÆÉËÖÐ
+// ç™‚å‚·ä¸­
 int healing(object me)
 {
         string force;
@@ -124,11 +124,11 @@ int healing(object me)
         force = me->query_skill_mapped("force");
         if (! stringp(force))
         {
-                // Ã»ÓÐÌØÊâÄÚ¹¦ÁË£¿
-                tell_object(me, "ÄãÒ»Ê±ÄÑÒÔ¶¨¶áÈçºÎÔËÓÃÄÚÁ¦£¬Ö»ºÃÏÈÔÝÍ£ÁÆÉË¡£\n");
+                // æ²’æœ‰ç‰¹æ®Šå…§åŠŸäº†ï¼Ÿ
+                tell_object(me, "ä½ ä¸€æ™‚é›£ä»¥å®šå¥ªå¦‚ä½•é‹ç”¨å…§åŠ›ï¼Œåªå¥½å…ˆæš«åœç™‚å‚·ã€‚\n");
                 set_temp("pending/healing", 0, me);
                 me->set_short_desc(0);
-                message_vision("$NÌ¾ÁË¿ÚÆø£¬Ò¡Ò¡»Î»ÎµÄÕ¾ÁËÆðÀ´¡£\n", me);
+                message_vision("$Nå˜†äº†å£æ°£ï¼Œæ–æ–æ™ƒæ™ƒçš„ç«™äº†èµ·ä¾†ã€‚\n", me);
                 return 0;
         }
         
@@ -136,11 +136,11 @@ int healing(object me)
 
         if( query("eff_qi", me)<query("max_qi", me) )
         {
-                // ÐèÒª¼ÌÐøÁÆÉË
+                // éœ€è¦ç¹¼çºŒç™‚å‚·
                 if( query("neili", me)<50 )
                 {
                         if (! msg || undefinedp(msg["unfinish_self"]))
-                                tell_object(me, "Äã¾õµÃÕæÆø²»¼Ã£¬ÄÑÒÔÔÚ¾­ÂöÖÐ¼ÌÐøÔË×ªÁÆÉË£¬Ö»µÃÔÝ»ºÁÆÉË£¬Õ¾ÆðÉíÀ´¡£\n");
+                                tell_object(me, "ä½ è¦ºå¾—çœŸæ°£ä¸æ¿Ÿï¼Œé›£ä»¥åœ¨ç¶“è„ˆä¸­ç¹¼çºŒé‹è½‰ç™‚å‚·ï¼Œåªå¾—æš«ç·©ç™‚å‚·ï¼Œç«™èµ·èº«ä¾†ã€‚\n");
                         else    
                                 tell_object(me, msg["unfinish_self"]);
                                 
@@ -148,7 +148,7 @@ int healing(object me)
                         me->set_short_desc(0);
                         
                         if (! msg || undefinedp(msg["unfinish_other"]))
-                                tell_room(environment(me), me->name() + "Ì¾ÁË¿ÚÆø£¬Ò¡Ò¡»Î»ÎµÄÕ¾ÁËÆðÀ´¡£\n", me);
+                                tell_room(environment(me), me->name() + "å˜†äº†å£æ°£ï¼Œæ–æ–æ™ƒæ™ƒçš„ç«™äº†èµ·ä¾†ã€‚\n", me);
                         else    
                                 tell_room(environment(me), msg["unfinish_other"], me);
                                 
@@ -173,16 +173,16 @@ int healing(object me)
                         switch (random(10))
                         {
                         case 0:
-                                tell_object(me, "ÄãÔËÓÃ" + to_chinese(force) + "ÑØ×Å"
-                                                "Öî´óÑ¨ÂýÂýÔË×ª£¬ÁÆ½âÉËÍ´¡£\n");
+                                tell_object(me, "ä½ é‹ç”¨" + to_chinese(force) + "æ²¿è‘—"
+                                                "è«¸å¤§ç©´æ…¢æ…¢é‹è½‰ï¼Œç™‚è§£å‚·ç—›ã€‚\n");
                                 break;
                         case 1:
-                                tell_object(me, "Äã½«ÄÚÁ¦ÄÉÈëµ¤Ìï£¬ÔÙÉÏÐÐ³å¶¥£¬Í¸Äà¹¬"
-                                                "£¬¶Ù¾õ¾«ÉñË¬¿ì¡£\n");
+                                tell_object(me, "ä½ å°‡å…§åŠ›ç´å…¥ä¸¹ç”°ï¼Œå†ä¸Šè¡Œæ²–é ‚ï¼Œé€æ³¥å®®"
+                                                "ï¼Œé “è¦ºç²¾ç¥žçˆ½å¿«ã€‚\n");
                                 break;
                         case 2:
-                                tell_object(me, "Äã½«ÄÚÁ¦ÔËÈëËÄÖ«°Ùêà£¬¸´ÓÖ»ØÊÕµ¤Ìï£¬"
-                                                 "ÉËÊÆÈ¬Óú²»ÉÙ¡£\n");
+                                tell_object(me, "ä½ å°‡å…§åŠ›é‹å…¥å››è‚¢ç™¾è³…ï¼Œå¾©åˆå›žæ”¶ä¸¹ç”°ï¼Œ"
+                                                 "å‚·å‹¢ç—Šç™’ä¸å°‘ã€‚\n");
                                 break;
                         }
                         return 1;
@@ -193,23 +193,23 @@ int healing(object me)
                 }
         }
 
-        // »Ö¸´Íê±Ï
+        // æ¢å¾©å®Œç•¢
         set_temp("pending/exercise", 0, me);
         me->set_short_desc(0);
         if (! msg || undefinedp(msg["finish_self"]))
-                tell_object(me, HIY "ÄãÔË¹¦Íê±Ï£¬ÍÂ³öÒ»¿ÚðöÑª£¬×Ô¾õ¾­ÂöË³³©£¬ÄÚÉË¾¡È¥£¬ÉñÔªÆø×ãµØÕ¾ÁËÆðÀ´¡£\n" NOR);
+                tell_object(me, HIY "ä½ é‹åŠŸå®Œç•¢ï¼Œåå‡ºä¸€å£ç˜€è¡€ï¼Œè‡ªè¦ºç¶“è„ˆé †æš¢ï¼Œå…§å‚·ç›¡åŽ»ï¼Œç¥žå…ƒæ°£è¶³åœ°ç«™äº†èµ·ä¾†ã€‚\n" NOR);
         else    
                 tell_room(me, msg["finish_self"]); 
                 
         if (! msg || undefinedp(msg["finish_other"]))
-                tell_room(environment(me), HIY + me->name() + "ÔË¹¦Íê±Ï£¬ÍÂ³öÒ»¿ÚðöÑª£¬Õ¾ÆðÉíÀ´£¬Á³É«¿´ÆðÀ´ºÃ¶àÁË¡£\n" NOR, me);
+                tell_room(environment(me), HIY + me->name() + "é‹åŠŸå®Œç•¢ï¼Œåå‡ºä¸€å£ç˜€è¡€ï¼Œç«™èµ·èº«ä¾†ï¼Œè‡‰è‰²çœ‹èµ·ä¾†å¥½å¤šäº†ã€‚\n" NOR, me);
         else
                 tell_room(environment(me), msg["finish_other"], me);      
                 
         return 0;
 }
 
-// Í£Ö¹ÁÆÉË
+// åœæ­¢ç™‚å‚·
 int halt_healing(object me)
 {
         string force;
@@ -219,12 +219,12 @@ int halt_healing(object me)
                 msg = SKILL_D(force)->heal_msg(me);
         
         if (! msg || undefinedp(msg["halt_self"]))
-                tell_object(me, "Äã½«ÕæÆøÊÕ»Øµ¤Ìï£¬Î¢Î¢´­Ï¢£¬Õ¾ÁËÆðÀ´¡£\n");
+                tell_object(me, "ä½ å°‡çœŸæ°£æ”¶å›žä¸¹ç”°ï¼Œå¾®å¾®å–˜æ¯ï¼Œç«™äº†èµ·ä¾†ã€‚\n");
         else    
                 tell_object(me, msg["halt_self"]);
                 
         if (! msg || undefinedp(msg["halt_other"]))
-                tell_room(environment(me), me->name() + "ÃÍµÄÎüÒ»¿ÚÆø£¬Í»È»Õ¾ÁËÆðÀ´¡£\n", me);
+                tell_room(environment(me), me->name() + "çŒ›çš„å¸ä¸€å£æ°£ï¼Œçªç„¶ç«™äº†èµ·ä¾†ã€‚\n", me);
         else    
                 tell_room(environment(me), msg["halt_other"], me);
                 

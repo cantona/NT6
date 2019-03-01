@@ -1,12 +1,12 @@
-subject : ÌìÄ§¾öÄÃµÄ·½·¨
-author_name : ¸ß´¦²»Ê¤º®
+subject : å¤©é­”æ±ºæ‹¿çš„æ–¹æ³•
+author_name : é«˜è™•ä¸å‹å¯’
 author_id : lonely
 time : 1225106174
-board : éÅÊ÷ÏÂµÄÁôÑÔ°å
+board : æ¦•æ¨¹ä¸‹çš„ç•™è¨€æ¿
 file : /data/analecta/2008/79067695.txt
 add_time : 1225106216
 content :
-ringto yangzhou;#4 w;s;w;ask gui san about ÌìÄ§¾ö;
-e;n;e;ask gong zi about ¹íÈı;kill li;get all from corpse;w;s;w;give gui san xiao;enter;
-½øÈ¥¾Í¿ÉÒÔÄÃµ½Ò»¸öÌúÏä×Ó£¬open xiang;¾Í¿ÉÒÔÄÃµ½ÌìÄ§¾öÁË
+ringto yangzhou;#4 w;s;w;ask gui san about å¤©é­”æ±º;
+e;n;e;ask gong zi about é¬¼ä¸‰;kill li;get all from corpse;w;s;w;give gui san xiao;enter;
+é€²å»å°±å¯ä»¥æ‹¿åˆ°ä¸€å€‹éµç®±å­ï¼Œopen xiang;å°±å¯ä»¥æ‹¿åˆ°å¤©é­”æ±ºäº†
 [2;37;0m

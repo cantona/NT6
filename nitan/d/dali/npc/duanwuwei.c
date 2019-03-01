@@ -6,10 +6,10 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("¶ÎÎŞÎ·", ({ "duan wuwei", "duan" }));
-        set("title",  "ÕòÄÏÍõ¸®¹Ü¼Ò" );
-        set("long", "ËûÊÇ´óÀí¹úÕòÄÏÍõ¸®¹Ü¼Ò¡£\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("æ®µç„¡ç•", ({ "duan wuwei", "duan" }));
+        set("title",  "é®å—ç‹åºœç®¡å®¶" );
+        set("long", "ä»–æ˜¯å¤§ç†åœ‹é®å—ç‹åºœç®¡å®¶ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 40);
         set("attitude", "friendly");
         set("shen_type", 1);
@@ -73,16 +73,16 @@ int checking(object me, object ob)
 
         if( (query("qi", me)*100/my_max_qi) <= 50 )
         {
-                command("say Çà³öì¶À¶Ê¤ì¶À¶£¬²»À¢ÊÇ´óÀí¶Î¼ÒµÄºÃµÜ×Ó ! ¹§Ï²ÄãÁË !\n");
-                command("say ÄãµÄÎä¹¦¿ÉÒÔ½øÒ»²½ÉîÔìÁË !\n");
+                command("say é’å‡ºæ–¼è—å‹æ–¼è—ï¼Œä¸æ„§æ˜¯å¤§ç†æ®µå®¶çš„å¥½å¼Ÿå­ ! æ­å–œä½ äº† !\n");
+                command("say ä½ çš„æ­¦åŠŸå¯ä»¥é€²ä¸€æ­¥æ·±é€ äº† !\n");
                 set_temp("have_fight1", 1, ob);
                 return 1;
         }
 
         if( (query("qi", ob)*100/his_max_qi)<50 )
         {
-                command("say ¿´À´" + RANK_D->query_respect(ob) + 
-                        "»¹µÃ¶à¼ÓÁ·Ï°£¬·½ÄÜÔÚ´óÀí¶Î¼ÒÖî¶àµÜ×ÓÖĞ³öÈËÍ·µØ !\n");
+                command("say çœ‹ä¾†" + RANK_D->query_respect(ob) + 
+                        "é‚„å¾—å¤šåŠ ç·´ç¿’ï¼Œæ–¹èƒ½åœ¨å¤§ç†æ®µå®¶è«¸å¤šå¼Ÿå­ä¸­å‡ºäººé ­åœ° !\n");
                 return 1;
         }
 

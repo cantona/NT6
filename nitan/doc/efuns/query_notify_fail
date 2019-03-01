@@ -1,27 +1,27 @@
 
         query_notify_fail()
 
-        Ãû³Æ£º
-                query_notify_fail() ÅÐ¶¨Ò»¸ö»¥¶¯Îï¼þÊÇ·ñÒÑÉè¶¨ÁË
-                        ´ý´¦ÀíµÄ notify_fail() ÐÅÏ¢
+        åç¨±ï¼š
+                query_notify_fail() åˆ¤å®šä¸€å€‹äº’å‹•ç‰©ä»¶æ˜¯å¦å·²è¨­å®šäº†
+                        å¾…è™•ç†çš„ notify_fail() ä¿¡æ¯
 
-        Óï·¨£º
+        èªžæ³•ï¼š
                 mixed query_notify_fail(void);
-                »ìºÏ query_notify_fail(ÎÞ²ÎÊý)
+                æ··åˆ query_notify_fail(ç„¡åƒæ•¸)
 
-        ÓÃ·¨£º
-                Õâ¸öº¯ÊýÅÐ¶ÏÊÇ·ñ this_player() µÄ notify_fail
-                ÖµÒÑ¾­±»Éè¶¨¡£Õâ¸öÖµ¼´¿ÉÄÜÊÇÒ»¸ö×Ö·û´®£¬Ò²¿ÉÄÜ
-                ÊÇÒ»¸öº¯Êý£¬È¡¾öÓÚ¶Ô this_player() ×îºóÒ»´Îºô½Ð
-                notify_fail() º¯ÊýËùÉè¶¨µÄÖµ¡£
+        ç”¨æ³•ï¼š
+                é€™å€‹å‡½æ•¸åˆ¤æ–·æ˜¯å¦ this_player() çš„ notify_fail
+                å€¼å·²ç¶“è¢«è¨­å®šã€‚é€™å€‹å€¼å³å¯èƒ½æ˜¯ä¸€å€‹å­—ç¬¦ä¸²ï¼Œä¹Ÿå¯èƒ½
+                æ˜¯ä¸€å€‹å‡½æ•¸ï¼Œå–æ±ºäºŽå° this_player() æœ€å¾Œä¸€æ¬¡å‘¼å«
+                notify_fail() å‡½æ•¸æ‰€è¨­å®šçš„å€¼ã€‚
 
-        ´Ëº¯ÊýÐèÒª±àÒë MudOS Ê±ÔÚÅäÖÃÎÄ¼þÀï¶¨ÒåÁË PACKAGE_CONTRIB¡£
-        Í¬Ê± NO_ADD_ACTION Ã»ÓÐ±»¶¨Òå¡£
+        æ­¤å‡½æ•¸éœ€è¦ç·¨è­¯ MudOS æ™‚åœ¨é…ç½®æ–‡ä»¶è£¡å®šç¾©äº† PACKAGE_CONTRIBã€‚
+        åŒæ™‚ NO_ADD_ACTION æ²’æœ‰è¢«å®šç¾©ã€‚
 
-        ²Î¿¼£º
+        åƒè€ƒï¼š
                 add_action,
                 notify_fail
 
-        by ·¢ÏÖºÅ(Find@tx)
+        by ç™¼ç¾è™Ÿ(Find@tx)
 
 

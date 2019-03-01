@@ -5,12 +5,12 @@ inherit ROOM;
 string look_gaoshi();
 void create()
 {
-        set("short", "Öî¸ðÁÁµî");
+        set("short", "è«¸è‘›äº®æ®¿");
         set("long", @LONG
-ÕâÀïÊÇÎäºîìôµÄÕýµîÖî¸ðÁÁµî¡£ÎäºîÓðÉÈÂÚ½íÒ»ÈçÉúÇ°¡£Á½±ßÖî
-¸ðÕ°ºÍÖî¸ðÉÐ¸¸×ÓËÜÏñÒ²èòèòÈçÉú¡£¹ÒÔÚµîÃÅÁ½±ÚµÄ£¬ÓÉÊ«Ê¥¶Å¸¦±Ê
-ÏÂÁ÷Â¶µÄÇ§¹ÅÃûÁª£º¡ºÈý¹ËÆµ·±ÌìÏÂÊÂ£¬Á½³¯¿ª¼ÃÀÏ³¼ÐÄ¡£¡»µÀ¾¡ÁË
-Õâ¸öÇ§¹Å·ç·¶µÄÒ»ÉúÐÄÊÂ¡£
+é€™è£¡æ˜¯æ­¦ä¾¯ç¥ çš„æ­£æ®¿è«¸è‘›äº®æ®¿ã€‚æ­¦ä¾¯ç¾½æ‰‡ç¶¸å·¾ä¸€å¦‚ç”Ÿå‰ã€‚å…©é‚Šè«¸
+è‘›çž»å’Œè«¸è‘›å°šçˆ¶å­å¡‘åƒä¹Ÿæ ©æ ©å¦‚ç”Ÿã€‚æŽ›åœ¨æ®¿é–€å…©å£çš„ï¼Œç”±è©©è–æœç”«ç­†
+ä¸‹æµéœ²çš„åƒå¤åè¯ï¼šã€Žä¸‰é¡§é »ç¹å¤©ä¸‹äº‹ï¼Œå…©æœé–‹æ¿Ÿè€è‡£å¿ƒã€‚ã€é“ç›¡äº†
+é€™å€‹åƒå¤é¢¨èŒƒçš„ä¸€ç”Ÿå¿ƒäº‹ã€‚
 LONG );
         set("exits", ([
             "southdown" : __DIR__"liubeidian",

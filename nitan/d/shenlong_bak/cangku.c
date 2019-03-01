@@ -21,10 +21,10 @@ int is_keeper(object, object);
 void destroy_ob(object);
 void create()
 {
-        set("short", "´¢²ØÊÒ");
+        set("short", "å„²è—å®¤");
         set("long", @LONG
-ÕâÀïÔ­À´ÊÇÒ»¸ö³¤ÔÚÉ½±ÚÉÏµÄÌìÈ»ÈÜ¶´£¬ºóÀ´±»ÈË¸ÄÔì³ÉÁËÒ»
-¸ö²Ö¿â¡£
+é€™è£¡åŽŸä¾†æ˜¯ä¸€å€‹é•·åœ¨å±±å£ä¸Šçš„å¤©ç„¶æº¶æ´žï¼Œå¾Œä¾†è¢«äººæ”¹é€ æˆäº†ä¸€
+å€‹å€‰åº«ã€‚
 LONG
         );
         set("exits", ([
@@ -89,7 +89,7 @@ void refresh_stuff()
                                                 "/cmds/std/wear"->do_wear(keeper, inv[i]); 
                                         }
 
-                                        message("channel:snow",HIM"¡¾Ò¥ÑÔ¡¿Ä³ÈË£º"+sprintf( "ÌýËµ%s"+HIM+"ºÃÏóÂäÔÚ%sµÄ%s"+HIM+"ÊÖÀïÁË£¡"NOR,
+                                        message("channel:snow",HIM"ã€è¬ è¨€ã€‘æŸäººï¼š"+sprintf( "è½èªª%s"+HIM+"å¥½è±¡è½åœ¨%sçš„%s"+HIM+"æ‰‹è£¡äº†ï¼"NOR,
                                         inv[i]->name(),
                                         to_chinese(explode(base_name(environment(keeper)), "/")[1]),
                                         keeper->name())+"\n",users());
@@ -133,7 +133,7 @@ void destroy_ob(object ob)
                 return;
         }
 
-        message("vision", ob->name() + "¼±¼±Ã¦Ã¦µØÀë¿ªÁË¡£\n", environment(ob), ({ob}));
+        message("vision", ob->name() + "æ€¥æ€¥å¿™å¿™åœ°é›¢é–‹äº†ã€‚\n", environment(ob), ({ob}));
 
         destruct(ob);
 }

@@ -16,24 +16,24 @@ int valid_leave(object me, string dir)
                 me->move(__DIR__"huangdi");
                 delete_temp("mark/steps", me);
                 delete_temp("mark/step", me);
-                tell_room(environment(me), me->name()+"´ÓÄÏ±ßµÄÐÇËÞº£×ßÁË¹ýÀ´¡£\n", ({ me }));
-                return notify_fail("ÄãÀÛµÃ°ëËÀ£¬ÖÕì¶×ß³öÁËÐÇËÞº£¡£\n");
+                tell_room(environment(me), me->name()+"å¾žå—é‚Šçš„æ˜Ÿå®¿æµ·èµ°äº†éŽä¾†ã€‚\n", ({ me }));
+                return notify_fail("ä½ ç´¯å¾—åŠæ­»ï¼Œçµ‚æ–¼èµ°å‡ºäº†æ˜Ÿå®¿æµ·ã€‚\n");
         }
         if( query_temp("mark/steps", me) <= -6 )
         {
                 me->move(__DIR__"xxh");
                 delete_temp("mark/steps", me);
                 delete_temp("mark/step", me);
-                tell_room(environment(me), me->name()+"´Ó±±±ßµÄÐÇËÞº£×ßÁË¹ýÀ´¡£\n", ({ me }));
-                return notify_fail("ÄãÀÛµÃ°ëËÀ£¬ÖÕì¶×ß³öÁËÐÇËÞº£¡£\n");
+                tell_room(environment(me), me->name()+"å¾žåŒ—é‚Šçš„æ˜Ÿå®¿æµ·èµ°äº†éŽä¾†ã€‚\n", ({ me }));
+                return notify_fail("ä½ ç´¯å¾—åŠæ­»ï¼Œçµ‚æ–¼èµ°å‡ºäº†æ˜Ÿå®¿æµ·ã€‚\n");
         }
         if( query_temp("mark/step", me) <= -3 )
         {
                 me->move(__DIR__"xiaolu");
                 delete_temp("mark/steps", me);
                 delete_temp("mark/step", me);
-                tell_room(environment(me), me->name()+"´ÓÎ÷±ßµÄÐÇËÞº£×ßÁË¹ýÀ´¡£\n", ({ me }));
-                return notify_fail("ÄãÀÛµÃ°ëËÀ£¬ÖÕì¶×ß³öÁËÐÇËÞº£¡£\n");
+                tell_room(environment(me), me->name()+"å¾žè¥¿é‚Šçš„æ˜Ÿå®¿æµ·èµ°äº†éŽä¾†ã€‚\n", ({ me }));
+                return notify_fail("ä½ ç´¯å¾—åŠæ­»ï¼Œçµ‚æ–¼èµ°å‡ºäº†æ˜Ÿå®¿æµ·ã€‚\n");
         }
 
         if( query_temp("mark/step", me) >= 3 )
@@ -41,8 +41,8 @@ int valid_leave(object me, string dir)
                 me->move(__DIR__"xiaojing");
                 delete_temp("mark/steps", me);
                 delete_temp("mark/step", me);
-                tell_room(environment(me), me->name()+"´Ó¶«±ßµÄÐÇËÞº£×ßÁË¹ýÀ´¡£\n", ({ me }));
-                return notify_fail("ÄãÀÛµÃ°ëËÀ£¬ÖÕì¶×ß³öÁËÐÇËÞº£¡£\n");
+                tell_room(environment(me), me->name()+"å¾žæ±é‚Šçš„æ˜Ÿå®¿æµ·èµ°äº†éŽä¾†ã€‚\n", ({ me }));
+                return notify_fail("ä½ ç´¯å¾—åŠæ­»ï¼Œçµ‚æ–¼èµ°å‡ºäº†æ˜Ÿå®¿æµ·ã€‚\n");
         }
         return ::valid_leave(me,dir);
 }

@@ -1,22 +1,22 @@
 #include <ansi.h>
-// 日出东方 richu-dongfang
+// 鏃ュ嚭鏉辨柟 richu-dongfang
 inherit SKILL; 
 string type() { return "knowledge"; } 
 
 int is_fmsk() { return 1; }
-string family_name() { return "日月神教"; }
+string family_name() { return "鏃ユ湀绁炴暀"; }
 
 int valid_learn(object me)
 {        
         if (me->query_skill("riyue-jian", 1) < 30)
-                return notify_fail("你日月剑法不足，无法研习日出东方。\n");
+                return notify_fail("浣犳棩鏈堝妽娉曚笉瓒筹紝鐒℃硶鐮旂繏鏃ュ嚭鏉辨柟銆俓n");
         
         if( query("family/family_name", me) != family_name() )
-                return notify_fail("日出东方只能日月神教弟子方可研习。\n");
+                return notify_fail("鏃ュ嚭鏉辨柟鍙兘鏃ユ湀绁炴暀寮熷瓙鏂瑰彲鐮旂繏銆俓n");
 
         if (me->query_skill("riyue-xinfa", 1) < 
             me->query_skill("richu-dongfang", 1) * 60 /100)
-                return notify_fail("你日月心法修为不足，无法继续研习日出东方。\n");
+                return notify_fail("浣犳棩鏈堝績娉曚慨鐐轰笉瓒筹紝鐒℃硶绻肩簩鐮旂繏鏃ュ嚭鏉辨柟銆俓n");
 
         return 1;
 }

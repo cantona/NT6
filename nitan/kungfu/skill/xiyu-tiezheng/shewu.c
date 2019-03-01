@@ -1,4 +1,4 @@
-// shewu.c ÉßÎè
+// shewu.c è›‡èˆž
 #include <ansi.h>
 #include <skill.h>
 #include <combat.h>
@@ -12,34 +12,34 @@ int perform(object me)
     skill = me->query_skill("xiyu-tiezheng",1);
 
     if( query("neili", me)<500 )
-        return notify_fail("ÄãµÄÄÚÁ¦²»¹»³äÅæ,ÎÞ·¨µ¯³ö¡¸ÉßÎè¡¹¡£\n");
+        return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ å……æ²›,ç„¡æ³•å½ˆå‡ºã€Œè›‡èˆžã€ã€‚\n");
     
     if( query("jingli", me)<50 )
-        return notify_fail("ÄãµÄ¾«Á¦²»¹»,ÎÞ·¨×¨ÐÄµ¯ÇÙ¡£\n");
+        return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤ ,ç„¡æ³•å°ˆå¿ƒå½ˆç´ã€‚\n");
 
     if (me->query_skill("guzheng-jifa",1)<100)
-        return notify_fail("ÄãµÄ¹ÅóÝ¼¼·¨²»¹»¡£\n");
+        return notify_fail("ä½ çš„å¤ç®æŠ€æ³•ä¸å¤ ã€‚\n");
     
     if (skill < 100)
-        return notify_fail("ÄãµÄ¼Ò´«óÝÇú²»¹»æµÊì¡£\n");
+        return notify_fail("ä½ çš„å®¶å‚³ç®æ›²ä¸å¤ å«»ç†Ÿã€‚\n");
 
     if( !objectp(ob=query_temp("handing", me)) || !ob->valid_as_zheng() )
-        return notify_fail("Äã²»ÄÃ³öóÝÀ´£¬ÔõÃ´µ¯×à£¿\n"); 
+        return notify_fail("ä½ ä¸æ‹¿å‡ºç®ä¾†ï¼Œæ€Žéº¼å½ˆå¥ï¼Ÿ\n"); 
 
 //    if(!environment(me)->query("can_perform_shewu"))  
-//        return notify_fail("ÔÚÕâÀïµ¯×àËÆºõ²»Ì«ÊÊºÏ°É¡£\n"); 
+//        return notify_fail("åœ¨é€™è£¡å½ˆå¥ä¼¼ä¹Žä¸å¤ªé©åˆå§ã€‚\n"); 
 
     if( query("sleep_room", environment(me)) )
-        return notify_fail("ÔÚÕâÀïµ¯×àËÆºõ²»Ì«ÊÊºÏ°É¡£\n");  
+        return notify_fail("åœ¨é€™è£¡å½ˆå¥ä¼¼ä¹Žä¸å¤ªé©åˆå§ã€‚\n");  
 
     if( query("no_fight", environment(me)) )
-        return notify_fail("ÔÚÕâÀïµ¯×àËÆºõ²»Ì«ÊÊºÏ°É¡£\n");  
+        return notify_fail("åœ¨é€™è£¡å½ˆå¥ä¼¼ä¹Žä¸å¤ªé©åˆå§ã€‚\n");  
 
     if(me->is_busy())
-        return notify_fail("ÄãÏÖÔÚÕýÃ¦×ÅÄØ£¡\n");
+        return notify_fail("ä½ ç¾åœ¨æ­£å¿™è‘—å‘¢ï¼\n");
 
 
-    message_vision(HIB"$NÅÌÏ¥¶ø×ø£¬Ë«ÊÖ·÷ÇÙ£¬Ê±¶ø¿ì¼²£¬Ê±¶ø»ºÂý£¬¿ÉËÆºõ²¢Î´µ¯³öÉùÒô¡£\n"NOR,me); 
+    message_vision(HIB"$Nç›¤è†è€Œåï¼Œé›™æ‰‹æ‹‚ç´ï¼Œæ™‚è€Œå¿«ç–¾ï¼Œæ™‚è€Œç·©æ…¢ï¼Œå¯ä¼¼ä¹Žä¸¦æœªå½ˆå‡ºè²éŸ³ã€‚\n"NOR,me); 
     
     if(skill >= 100 && skill <= 150)  n =10; 
     else if(skill > 150 && skill <= 200) n = 8;
@@ -52,25 +52,25 @@ int perform(object me)
         switch(random(4))
         {
             case 0:
-            message_vision("Í»È»£¬$N¸Ð¾õÉí±ßºÚÓ°ÉÁ¶¯£¬Ö»¼ûÒ»Ìõ¶¾ÉßÕýÍÂ×ÅÐÅ×Ó£¬°ºÊ×Ëæ×Å$NË«ÊÖµÄ½Ú×àÎè¶¯¡£\n",me); 
+            message_vision("çªç„¶ï¼Œ$Næ„Ÿè¦ºèº«é‚Šé»‘å½±é–ƒå‹•ï¼Œåªè¦‹ä¸€æ¢æ¯’è›‡æ­£åè‘—ä¿¡å­ï¼Œæ˜‚é¦–éš¨è‘—$Né›™æ‰‹çš„ç¯€å¥èˆžå‹•ã€‚\n",me); 
             snake=new("/clone/beast/dushe");
             snake->move(environment(me));
             break;
         
             case 1:
-            message_vision("Í»È»£¬$N¸Ð¾õÉí±ßºÚÓ°ÉÁ¶¯£¬Ö»¼ûÒ»Ìõ½ð»·ÉßÕýÍÂ×ÅÐÅ×Ó£¬°ºÊ×Ëæ×Å$NË«ÊÖµÄ½Ú×àÎè¶¯¡£\n",me);
+            message_vision("çªç„¶ï¼Œ$Næ„Ÿè¦ºèº«é‚Šé»‘å½±é–ƒå‹•ï¼Œåªè¦‹ä¸€æ¢é‡‘ç’°è›‡æ­£åè‘—ä¿¡å­ï¼Œæ˜‚é¦–éš¨è‘—$Né›™æ‰‹çš„ç¯€å¥èˆžå‹•ã€‚\n",me);
             snake=new("/clone/beast/jinshe");
             snake->move(environment(me));
             break;
         
             case 2:
-            message_vision("Í»È»£¬$N¸Ð¾õÉí±ßºÚÓ°ÉÁ¶¯£¬Ö»¼ûÒ»ÌõÎå²½ÉßÕýÍÂ×ÅÐÅ×Ó£¬°ºÊ×Ëæ×Å$NË«ÊÖµÄ½Ú×àÎè¶¯¡£\n",me);
+            message_vision("çªç„¶ï¼Œ$Næ„Ÿè¦ºèº«é‚Šé»‘å½±é–ƒå‹•ï¼Œåªè¦‹ä¸€æ¢äº”æ­¥è›‡æ­£åè‘—ä¿¡å­ï¼Œæ˜‚é¦–éš¨è‘—$Né›™æ‰‹çš„ç¯€å¥èˆžå‹•ã€‚\n",me);
             snake=new("/clone/beast/wubushe");        
             snake->move(environment(me));
             break;
         
             case 3:
-            message_vision("Í»È»£¬$N¸Ð¾õÉí±ßºÚÓ°ÉÁ¶¯£¬Ö»¼ûÒ»ÌõÖñÒ¶ÇàÉßÕýÍÂ×ÅÐÅ×Ó£¬°ºÊ×Ëæ×Å$NË«ÊÖµÄ½Ú×àÎè¶¯¡£\n",me);
+            message_vision("çªç„¶ï¼Œ$Næ„Ÿè¦ºèº«é‚Šé»‘å½±é–ƒå‹•ï¼Œåªè¦‹ä¸€æ¢ç«¹è‘‰é’è›‡æ­£åè‘—ä¿¡å­ï¼Œæ˜‚é¦–éš¨è‘—$Né›™æ‰‹çš„ç¯€å¥èˆžå‹•ã€‚\n",me);
             snake=new("/clone/beast/qingshe");        
             snake->move(environment(me));
             break;
@@ -81,7 +81,7 @@ int perform(object me)
     }
     else
     {
-        message_vision(GRN"$NÐÄÐ÷·×ÔÓ£¬µ¯ÁËÒ»»á±ã¸ÐÑªÆø·­Ó¿£¬ÊÕ¹¦Õ¾ÁËÆðÀ´¡£\n"NOR,me);
+        message_vision(GRN"$Nå¿ƒç·’ç´›é›œï¼Œå½ˆäº†ä¸€æœƒä¾¿æ„Ÿè¡€æ°£ç¿»æ¹§ï¼Œæ”¶åŠŸç«™äº†èµ·ä¾†ã€‚\n"NOR,me);
         addn("neili", -100, me);
         addn("jingli", -50, me);
         me->start_busy(3);

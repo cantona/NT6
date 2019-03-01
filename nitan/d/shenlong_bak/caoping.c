@@ -27,10 +27,10 @@ string* npcs = ({
 
 void create()
 {
-        set("short", "²İÆº");
+        set("short", "è‰åª");
         set("long", @LONG
-ÕâÀïÊÇÒ»Æ¬ÇàÇàµÄ²İÆº£¬ÓĞ¼¸¸öÉÙÄêÔÚÍæË£¡£ËÄÖÜ¿ªÂúÁË¸÷É«µÄÏÊ
-»¨£¬Ò»ÕóÁ¹·ç´µ¹ı£¬ÇåĞÂµÄ¿ÕÆøÖĞ´«À´¼¸ÂÆµ­µ­µÄ»¨Ïã¡£
+é€™è£¡æ˜¯ä¸€ç‰‡é’é’çš„è‰åªï¼Œæœ‰å¹¾å€‹å°‘å¹´åœ¨ç©è€ã€‚å››å‘¨é–‹æ»¿äº†å„è‰²çš„é®®
+èŠ±ï¼Œä¸€é™£æ¶¼é¢¨å¹éï¼Œæ¸…æ–°çš„ç©ºæ°£ä¸­å‚³ä¾†å¹¾ç¸·æ·¡æ·¡çš„èŠ±é¦™ã€‚
 LONG );
         set("exits", ([
                 "east" : __DIR__"kongdi",
@@ -58,7 +58,7 @@ int valid_leave(object me, string dir)
                 if((int)this_player()->query_condition("flower_poison") < 10 )
                 {
                         this_player()->apply_condition("flower_poison", 30);
-                        tell_object(me,HIG"ÄãÖ»¾õÒ»¹Éµ­ÏãÏ®À´£¬¶ÙÊ±ÄÔÖĞÒ»ÕóÂéÄ¾£¡\n"NOR);
+                        tell_object(me,HIG"ä½ åªè¦ºä¸€è‚¡æ·¡é¦™è¥²ä¾†ï¼Œé “æ™‚è…¦ä¸­ä¸€é™£éº»æœ¨ï¼\n"NOR);
                 }
         }
         return ::valid_leave(me, dir);

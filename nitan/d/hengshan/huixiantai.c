@@ -5,10 +5,10 @@
 inherit ROOM;
 void create()
 {
-        set("short", "����̨");
+        set("short", "會仙台");
         set("long", @LONG
-�߳���������ܿ���һ��ʯ�ߣ������ھ����������һ��С�ң�
-���ǻ���̨��̨������Ⱥ�ɵ����������飬����ʤ����
+走出北岳殿，就能看見一個石窟，緊靠在絕壁中鑿出的一個小室，
+就是會仙台。台上排列群仙雕像，密密麻麻，不能勝數。
 LONG);
         set("exits", ([ /* sizeof() == 4 */
                 "eastdown"  : __DIR__"beiyuedian",

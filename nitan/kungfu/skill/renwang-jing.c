@@ -1,22 +1,22 @@
 #include <ansi.h>
-// ÈÊÍõ¾­ renwang-jing
+// ä»ç‹ç¶“ renwang-jing
 inherit SKILL; 
 string type() { return "knowledge"; } 
 
 int is_fmsk() { return 1; }
-string family_name() { return "¶ÎÊÏ»Ê×å"; }
+string family_name() { return "æ®µæ°çš‡æ—"; }
 
 int valid_learn(object me)
 {        
         if (me->query_skill("sun-finger", 1) < 30)
-                return notify_fail("ÄãÒ»ÑôÖ¸»ğºò²»×ã£¬ÎŞ·¨ÑĞÏ°ÈÊÍõ¾­¡£\n");        
+                return notify_fail("ä½ ä¸€é™½æŒ‡ç«å€™ä¸è¶³ï¼Œç„¡æ³•ç ”ç¿’ä»ç‹ç¶“ã€‚\n");        
         
         if( query("family/family_name", me) != family_name() )
-                return notify_fail("ÈÊÍõ¾­Ö»ÄÜ¶ÎÊÏ»Ê×åµÜ×Ó·½¿ÉÑĞÏ°¡£\n");
+                return notify_fail("ä»ç‹ç¶“åªèƒ½æ®µæ°çš‡æ—å¼Ÿå­æ–¹å¯ç ”ç¿’ã€‚\n");
 
         if (me->query_skill("kurong-changong", 1) < 
             me->query_skill("renwang-jing", 1) * 60 /100)
-                return notify_fail("Äã¿İÈÙìø¹¦ĞŞÎª²»×ã£¬ÎŞ·¨¼ÌĞøÑĞÏ°ÈÊÍõ¾­¡£\n");
+                return notify_fail("ä½ æ¯æ¦®ç¦ªåŠŸä¿®ç‚ºä¸è¶³ï¼Œç„¡æ³•ç¹¼çºŒç ”ç¿’ä»ç‹ç¶“ã€‚\n");
 
         return 1;
 }

@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�Ƶ�");
+        set("short", "酒店");
         set("long", @LONG
-������һ�Ҷ�����ɫ�ľƵ꣬���ڵش�����ɽ�£��Ƶ���Թ�Ӧ
-��ζʳƷ��������ԭ���Ͷ����������ʣ����ԾƵ�������¡���Ƶ껹
-��Ӫ��ɢװ�Ƶ�ҵ��
+這裡是一家獨具特色的酒店，由于地處白駝山下，酒店可以供應
+風味食品。許多中原來客都愛來嘗嘗鮮，所以酒店生意興隆。酒店還
+經營打散裝酒的業務。
 LONG );
         set("exits", ([
                 "north" : __DIR__"xijie",

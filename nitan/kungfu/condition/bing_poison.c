@@ -8,11 +8,11 @@ inherit F_CLEAN_UP;
 int update_condition(object me, int duration)
 {
   if (me->is_ghost()) return 1;
-        tell_object(me,HIB"Í»È»Äã¸Ð¾õËÄÖ«ÂéÂéµÄËÆºõ²»´óÁé±ã£¡\n"NOR);
-        tell_room(environment(me),HIB+me->name()+"Í»È»È«ÉíÒ»²ü£¬Á½ÕÅÊÖÕÆÐÄÒÑÈ«³ÉºÚÉ«£¬ºÚÆø¸üË³×ÅÊÖ±ÛÏòÉÏÅÊÉý£¡\n"NOR, ({ me }));     
+        tell_object(me,HIB"çªç„¶ä½ æ„Ÿè¦ºå››è‚¢éº»éº»çš„ä¼¼ä¹Žä¸å¤§éˆä¾¿ï¼\n"NOR);
+        tell_room(environment(me),HIB+me->name()+"çªç„¶å…¨èº«ä¸€é¡«ï¼Œå…©å¼µæ‰‹æŽŒå¿ƒå·²å…¨æˆé»‘è‰²ï¼Œé»‘æ°£æ›´é †è‘—æ‰‹è‡‚å‘ä¸Šæ”€å‡ï¼\n"NOR, ({ me }));     
         me->receive_damage("qi", 25);
-        if(userp(me)) me->receive_wound("jing", 20,"ÖÐ±ù¾§¶¾");
-        else me->receive_wound("jing", 40,"ÖÐ±ù¾§¶¾");
+        if(userp(me)) me->receive_wound("jing", 20,"ä¸­å†°æ™¶æ¯’");
+        else me->receive_wound("jing", 40,"ä¸­å†°æ™¶æ¯’");
         if(!me->is_busy()) me->start_busy(2);
         if( query("eff_jing", me)<0 || query("eff_qi", me)<0)return 0;
         me->apply_condition("bing_poison", duration - 1);

@@ -1,5 +1,5 @@
 // This program is a part of NITAN MudLIB
-// ghost.c ÁùÒõ¹íÂö
+// ghost.c å…­é™°é¬¼è„ˆ
 // Created by Lonely 04/05/2009
 
 #include <ansi.h>
@@ -8,15 +8,15 @@ inherit F_CLEAN_UP;
 
 int is_scborn() { return 1; }
 
-string name() { return HIB "ÁùÒõ¹íÂö" NOR; }
+string name() { return HIB "å…­é™°é¬¼è„ˆ" NOR; }
 
 int perform(object me, string skill)
 {
-        return notify_fail("ÄËÊÀ¼äÇ§ÄêÒ»ÓöµÄÌØÊâ¾­Âö£¬´ËÂöÖÁÒõÖÁº®£¬Éí¾ã\n"
-                           "´Ë¾­ÂöµÄÓ¤¶ù³£±»ÎóÕïÎªº®¶¾²øÉí£¬Ò½¶ø²»µÃÆä·¨£¬\n"
-                           "µ¼ÖÂÓ×ÄêØ²ÕÛ¡£Óµ´Ë¾­ÂöÐÞÁ¶¸÷ÖÖÄÚ¹¦½«ÊÂ°ë¹¦±¶¡£\n"
-                           "ÎÞÂÛÄÐÅ®£¬¾ù¿ÉÖ±½ÓÐÞÁ¶±ÙÐ°½£·¨»òÊÇ¿û»¨Ä§¹¦£¬\n"
-                           "ÎÞÐèÔÙ×÷×Ô¹¬¡£ÓµÓÐ¸Ã¼¼ÄÜµÄÈËÑÐ¾¿ÈÎºÎ¿ÉÒÔ¼¤·¢\n"
-                           "ÎªÄÚ¹¦µÄ¼¼ÄÜÊ±£¬ÑÐ¾¿Ð§ÂÊÌá¸ß50%¡£ ¶øÄÚÁ¦ÉÏÏÞ\n"
-                           "Ò²¿ÉÌá¸ß50%¡£\n");
+        return notify_fail("ä¹ƒä¸–é–“åƒå¹´ä¸€é‡çš„ç‰¹æ®Šç¶“è„ˆï¼Œæ­¤è„ˆè‡³é™°è‡³å¯’ï¼Œèº«ä¿±\n"
+                           "æ­¤ç¶“è„ˆçš„å¬°å…’å¸¸è¢«èª¤è¨ºç‚ºå¯’æ¯’çºèº«ï¼Œé†«è€Œä¸å¾—å…¶æ³•ï¼Œ\n"
+                           "å°Žè‡´å¹¼å¹´å¤­æŠ˜ã€‚æ“æ­¤ç¶“è„ˆä¿®ç…‰å„ç¨®å…§åŠŸå°‡äº‹åŠåŠŸå€ã€‚\n"
+                           "ç„¡è«–ç”·å¥³ï¼Œå‡å¯ç›´æŽ¥ä¿®ç…‰è¾Ÿé‚ªåŠæ³•æˆ–æ˜¯è‘µèŠ±é­”åŠŸï¼Œ\n"
+                           "ç„¡éœ€å†ä½œè‡ªå®®ã€‚æ“æœ‰è©²æŠ€èƒ½çš„äººç ”ç©¶ä»»ä½•å¯ä»¥æ¿€ç™¼\n"
+                           "ç‚ºå…§åŠŸçš„æŠ€èƒ½æ™‚ï¼Œç ”ç©¶æ•ˆçŽ‡æé«˜50%ã€‚ è€Œå…§åŠ›ä¸Šé™\n"
+                           "ä¹Ÿå¯æé«˜50%ã€‚\n");
 }

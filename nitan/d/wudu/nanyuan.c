@@ -3,10 +3,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÄÏÔº");
+        set("short", "å—é™¢");
         set("long", @LONG
-ÕâÀïÊÇÄÏ¿çÔº£¬Ôº×ÓÀïÓÐ¿ÃºÜ´óµÄéÅÊ÷£¬½«Ìì¿Õ´ó²¿ÕÚ×¡
-Ôº×ÓÀï¾²ÇÄÇÄµÄ£¬¼¸Ö»¸ß´óµÄ²ØéáÔÚÊ÷ÏÂÀ´»Øõâ²½¡£ 
+é€™è£¡æ˜¯å—è·¨é™¢ï¼Œé™¢å­è£¡æœ‰æ£µå¾ˆå¤§çš„æ¦•æ¨¹ï¼Œå°‡å¤©ç©ºå¤§éƒ¨é®ä½
+é™¢å­è£¡éœæ‚„æ‚„çš„ï¼Œå¹¾åªé«˜å¤§çš„è—ç’åœ¨æ¨¹ä¸‹ä¾†å›žè¸±æ­¥ã€‚ 
 LONG);
         set("outdoors", "wudujiao");
 
@@ -34,14 +34,14 @@ int do_climb(string arg)
         object ob;
 
         if (! arg || arg != "tree")
-                return notify_fail("ÄãÒªÅÀÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦çˆ¬ä»€éº¼ï¼Ÿ\n");
 
-        message_vision(HIC "$N" HIC "´éÁË´éÊÖ£¬ÅÊ×ÅéÅÊ÷µÄÖ¦è¾ÈýÏÂÁ½"
-                       "ÏÂ¾ÍÅÀÁËÉÏÈ¥¡£\n" NOR, me);
+        message_vision(HIC "$N" HIC "æ’®äº†æ’®æ‰‹ï¼Œæ”€è‘—æ¦•æ¨¹çš„æžæˆä¸‰ä¸‹å…©"
+                       "ä¸‹å°±çˆ¬äº†ä¸ŠåŽ»ã€‚\n" NOR, me);
 
         ob = load_object(__DIR__"tree");
         ob = find_object(__DIR__"tree");
-        message("vision",query("name", me)+"´ÓÏÂÃæÅÀÁËÉÏÀ´¡£\n",ob);
+        message("vision",query("name", me)+"å¾žä¸‹é¢çˆ¬äº†ä¸Šä¾†ã€‚\n",ob);
         me->move(__DIR__"tree");
         return 1;
 }

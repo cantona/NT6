@@ -26,9 +26,9 @@ mixed  main(object  me,  string  arg,  int  remote)
                 }        
                 write  ("    ");
                 write(query("name", who)+"("+query("id", who)+")");
-                write(query("ride/msg", ridee)+"ÔÚ");
+                write(query("ride/msg", ridee)+"åœ¨");
                 write(query("name", ridee)+"("+query("id", ridee)+")");
-                write  ("ÉÏ¡£\n");
+                write  ("ä¸Šã€‚\n");
         }
         return  1;
 }
@@ -36,9 +36,9 @@ mixed  main(object  me,  string  arg,  int  remote)
 int  help  (object  me)
 {
                 write(@HELP
-Ö¸Áî¸ñÊ½  :  whoride  
+æŒ‡ä»¤æ ¼å¼  :  whoride  
   
-¿ÉÁĞ³öÄ¿Ç°ÆïÓĞ×øÆïµÄÍæ¼Ò¡£
+å¯åˆ—å‡ºç›®å‰é¨æœ‰åé¨çš„ç©å®¶ã€‚
   
   
 HELP

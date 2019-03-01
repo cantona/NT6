@@ -5,7 +5,7 @@
 
 inherit F_SSERVER;
 
-string name() { return HIW "ÌìÏÂÎŞ¹·" NOR; }
+string name() { return HIW "å¤©ä¸‹ç„¡ç‹—" NOR; }
 
 int perform(object me, object target)
 {
@@ -15,35 +15,35 @@ int perform(object me, object target)
         int i, attack_time;
 
         if( query("wugou", me)<500 )
-                return notify_fail("Äã»¹Ã»ÓĞÊÜ¹ı¸ßÈËÖ¸µã£¬ÎŞ·¨Ê©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ é‚„æ²’æœ‰å—éé«˜äººæŒ‡é»ï¼Œç„¡æ³•æ–½å±•" + name() + "ã€‚\n");
 
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(name() + "Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(name() + "åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me) )
             || query("skill_type", weapon) != "staff" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (me->query_skill("dagou-bang", 1) < 220)
-                return notify_fail("Äã´ò¹·°ô·¨²»¹»æµÊì£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ æ‰“ç‹—æ£’æ³•ä¸å¤ å«»ç†Ÿï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (me->query_skill_mapped("staff") != "dagou-bang")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢´ò¹·°ô·¨£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼æ‰“ç‹—æ£’æ³•ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if ((int)me->query_skill("force") < 300)
-                return notify_fail("ÄãµÄÄÚ¹¦»ğºò²»×ã£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸç«å€™ä¸è¶³ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if( query("neili", me)<500 )
-                return notify_fail("ÄãÏÖÔÚµÄÕæÆø²»¹»£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çš„çœŸæ°£ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIW "$N" HIW "ÊÖÖĞ" + weapon->name() + HIW "Ò»¾í£¬´ø"
-              "ÆğÕóÕó·çÉù£¬ÓÌÈôÇ§°Ù¸ùÏàËÆ£¬²ã²ãµşµş½«$n" HIW "ÁıÕÖ"
-              "ÆäÖĞ¡£\n" NOR;
+        msg = HIW "$N" HIW "æ‰‹ä¸­" + weapon->name() + HIW "ä¸€å·ï¼Œå¸¶"
+              "èµ·é™£é™£é¢¨è²ï¼ŒçŒ¶è‹¥åƒç™¾æ ¹ç›¸ä¼¼ï¼Œå±¤å±¤ç–Šç–Šå°‡$n" HIW "ç± ç½©"
+              "å…¶ä¸­ã€‚\n" NOR;
 
         ap = attack_power(me, "staff");
         dp = defense_power(target, "parry");
@@ -52,16 +52,16 @@ int perform(object me, object target)
 
         if (ap / 2 + random(ap) > dp)
         {
-                msg += HIR "$n" HIR "Ö»¾õÑÛ»¨çÔÂÒ£¬·¢ÏÖËÄÃæ°Ë·½½ÔÊÇÕÈ"
-                       "Ó°£¬ĞÄµ×º®Òâ¶ÙÉú£¬ÕĞ¼ÜÉ¢ÂÒ¡£\n" NOR;
+                msg += HIR "$n" HIR "åªè¦ºçœ¼èŠ±ç¹šäº‚ï¼Œç™¼ç¾å››é¢å…«æ–¹çš†æ˜¯æ–"
+                       "å½±ï¼Œå¿ƒåº•å¯’æ„é “ç”Ÿï¼Œæ‹›æ¶æ•£äº‚ã€‚\n" NOR;
                 count = ap / 5;
                 addn_temp("apply/attack", count, me);
                 addn_temp("apply/damage", count, me);
                 attack_time += random(ap / 90);
         } else
         {
-                msg += HIY "$n" HIY "Ö»¾õÑÛÇ°Ò»»¨£¬·¢ÏÖËÄÃæ°Ë·½½ÔÊÇÕÈ"
-                       "Ó°£¬¼±Ã¦ÊÕÁ²ĞÄÉñ£¬×ĞÏ¸ÕĞ¼Ü¡£\n" NOR;
+                msg += HIY "$n" HIY "åªè¦ºçœ¼å‰ä¸€èŠ±ï¼Œç™¼ç¾å››é¢å…«æ–¹çš†æ˜¯æ–"
+                       "å½±ï¼Œæ€¥å¿™æ”¶æ–‚å¿ƒç¥ï¼Œä»”ç´°æ‹›æ¶ã€‚\n" NOR;
                 count = 0;
         }
         message_combatd(msg, me, target);

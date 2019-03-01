@@ -1,29 +1,29 @@
 
         query_ip_port()
 
-        Ãû³Æ£º
-                query_ip_port() ·µ»ØÖ¸¶¨Íæ¼ÒÎï¼þµÄÁ¬½Ó¶Ë¿Ú
+        åç¨±ï¼š
+                query_ip_port() è¿”å›žæŒ‡å®šçŽ©å®¶ç‰©ä»¶çš„é€£æŽ¥ç«¯å£
 
-        Óï·¨£º
+        èªžæ³•ï¼š
                 int query_ip_port(object | void);
-                ÕûÊý query_ip_port(Îï¼þ | ÎÞ²ÎÊý)
+                æ•´æ•¸ query_ip_port(ç‰©ä»¶ | ç„¡åƒæ•¸)
 
-        ËµÃ÷£º
-                ·µ»Ø²ÎÊýÖÐÖ¸¶¨µÄÍæ¼ÒÎï¼þËùÁ¬½ÓµÄ MUD ±¾µØ
-                ¶Ë¿Ú£¬Èç¹û²»Ö¸¶¨²ÎÊý£¬Ä¬ÈÏÎª this_player()£¬
-                Èç¹û²ÎÊýÖ¸¶¨µÄÎï¼þÎª·Ç»¥¶¯Îï¼þ£¬Ôò´«»ØÁã¡£
+        èªªæ˜Žï¼š
+                è¿”å›žåƒæ•¸ä¸­æŒ‡å®šçš„çŽ©å®¶ç‰©ä»¶æ‰€é€£æŽ¥çš„ MUD æœ¬åœ°
+                ç«¯å£ï¼Œå¦‚æžœä¸æŒ‡å®šåƒæ•¸ï¼Œé»˜èªç‚º this_player()ï¼Œ
+                å¦‚æžœåƒæ•¸æŒ‡å®šçš„ç‰©ä»¶ç‚ºéžäº’å‹•ç‰©ä»¶ï¼Œå‰‡å‚³å›žé›¶ã€‚
 
-                ¶ÔÓÚ¿ª·Å¶à¸ö¶Ë¿Ú½ÓÊÜÍæ¼ÒÁ¬½ÓµÄÓÎÏ·£¬ÔÚÒ»Ð©
-                Í³¼Æ·½Ãæ¿ÉÄÜ»áÓÃµ½´Ëº¯Êý¡£
+                å°äºŽé–‹æ”¾å¤šå€‹ç«¯å£æŽ¥å—çŽ©å®¶é€£æŽ¥çš„éŠæˆ²ï¼Œåœ¨ä¸€äº›
+                çµ±è¨ˆæ–¹é¢å¯èƒ½æœƒç”¨åˆ°æ­¤å‡½æ•¸ã€‚
 
-        ´Ëº¯ÊýÐèÒª±àÒë MudOS Ê±ÔÚÅäÖÃÎÄ¼þÀï¶¨ÒåÁË PACKAGE_CONTRIB¡£
+        æ­¤å‡½æ•¸éœ€è¦ç·¨è­¯ MudOS æ™‚åœ¨é…ç½®æ–‡ä»¶è£¡å®šç¾©äº† PACKAGE_CONTRIBã€‚
 
-        ²Î¿¼£º
+        åƒè€ƒï¼š
                 query_ip_name,
                 query_host_name,
                 resolve,
                 socket_address
 
-        by ·¢ÏÖºÅ(Find@tx)
+        by ç™¼ç¾è™Ÿ(Find@tx)
 
 

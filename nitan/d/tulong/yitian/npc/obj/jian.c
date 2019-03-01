@@ -4,18 +4,18 @@ inherit SWORD;
 
 void create()
 {
-        set_name(NOR + WHT "ÒĞÌì½£" NOR, ({ "yitian jian", "yitian", "jian", "sword" }));
+        set_name(NOR + WHT "å€šå¤©åŠ" NOR, ({ "yitian jian", "yitian", "jian", "sword" }));
         set_weight(5000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
-                set("long", HIY "Õâ±ãÓëÌìÏÂÖÁ×ğµÄÍÀÁú±¦µ¶²¢³ÆµÄÒĞÌì½£¡£\n" NOR);
+                set("unit", "æŸ„");
+                set("long", HIY "é€™ä¾¿èˆ‡å¤©ä¸‹è‡³å°Šçš„å± é¾å¯¶åˆ€ä¸¦ç¨±çš„å€šå¤©åŠã€‚\n" NOR);
                 set("value", 500);
                 set("material", "wood");
-                set("wield_msg", HIM "$N" HIM "¡¸à§¡¹µÄ³é³ö$n" HIM "£¬¶ÙÊ±ÎÅ"
-                                 "µ½Ò»¹ÉÆæÒìµÄÏãÎ¶¡£\n×ĞÏ¸Ò»¿´£¬Ô­À´Õâ±úÒĞÌì"
-                                 "½£¾¹ÊÇÄ¾Í·ÖÆ³ÉµÄ¡£\n" NOR);
+                set("wield_msg", HIM "$N" HIM "ã€Œå”°ã€çš„æŠ½å‡º$n" HIM "ï¼Œé “æ™‚è"
+                                 "åˆ°ä¸€è‚¡å¥‡ç•°çš„é¦™å‘³ã€‚\nä»”ç´°ä¸€çœ‹ï¼ŒåŸä¾†é€™æŸ„å€šå¤©"
+                                 "åŠç«Ÿæ˜¯æœ¨é ­åˆ¶æˆçš„ã€‚\n" NOR);
         }
         init_sword(10);
         setup();

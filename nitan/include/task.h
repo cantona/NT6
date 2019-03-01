@@ -4,7 +4,7 @@ void init()
         if( interactive(environment()) &&
             environment()->query("combat_exp") > 100000000 &&random(5) == 2 )
         {
-         tell_object(ob,this_object()->name()+"转眼就不见了!\n");
+         tell_object(ob,this_object()->name()+"杞夌溂灏变笉瑕嬩簡!\n");
         remove_call_out("des");
         call_out("des",1); 
        }

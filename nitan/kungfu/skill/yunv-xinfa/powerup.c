@@ -1,4 +1,4 @@
-// powerup.c ÓñÅ®ĞÄ¾­¼ÓÁ¦
+// powerup.c ç‰å¥³å¿ƒç¶“åŠ åŠ›
 
 #include <ansi.h>
 inherit F_CLEAN_UP;
@@ -10,18 +10,18 @@ int exert(object me, object target)
         int skill;
 
         if( target != me )
-                return notify_fail("ÄãÖ»ÄÜÌáÉı×Ô¼ºµÄÕ½¶·Á¦¡£\n");
+                return notify_fail("ä½ åªèƒ½æå‡è‡ªå·±çš„æˆ°é¬¥åŠ›ã€‚\n");
         if( query("neili", me)<200 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ã€‚\n");
         if( query_temp("powerup", me) )
-                return notify_fail("ÄãÒÑ¾­ÔÚÔË¹¦ÖĞÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“åœ¨é‹åŠŸä¸­äº†ã€‚\n");
         if( (int)me->query_skill("yunv-xinfa",1) < 80)
-                return notify_fail("ÄãµÄÓñÅ®ĞÄ·¨»¹²»¹»¾«Êì¡£\n");
+                return notify_fail("ä½ çš„ç‰å¥³å¿ƒæ³•é‚„ä¸å¤ ç²¾ç†Ÿã€‚\n");
 
         skill = me->query_skill("force", 1);
 
         message_combatd(
-                HIC "$NÁ³É«Î¢Î¢Ò»³Á£¬Ë«ÕÆÏòÍâÒ»·Ö£¬×ËÊÆÂüÃî£¬ÈçÒ»¶ä"HIW"°×ÓñÀ¼»¨"HIC"Ê¢¿ªÔÚ³õ¶¬µÄº®·çÖĞ£¡\n" NOR, me);
+                HIC "$Nè‡‰è‰²å¾®å¾®ä¸€æ²‰ï¼Œé›™æŒå‘å¤–ä¸€åˆ†ï¼Œå§¿å‹¢æ›¼å¦™ï¼Œå¦‚ä¸€æœµ"HIW"ç™½ç‰è˜­èŠ±"HIC"ç››é–‹åœ¨åˆå†¬çš„å¯’é¢¨ä¸­ï¼\n" NOR, me);
 
         addn_temp("apply/attack", skill/3, me);
         addn_temp("apply/defense", skill/3, me);
@@ -40,6 +40,6 @@ void remove_effect(object me, int amount)
         addn_temp("apply/attack", -amount, me);
         addn_temp("apply/defense", -amount, me);
         delete_temp("powerup", me);
-        tell_object(me, "ÄãµÄÓñÅ®ĞÄ·¨ÔËĞĞÍê±Ï£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï¡£\n");
+        tell_object(me, "ä½ çš„ç‰å¥³å¿ƒæ³•é‹è¡Œå®Œç•¢ï¼Œå°‡å…§åŠ›æ”¶å›ä¸¹ç”°ã€‚\n");
 }
 

@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�ⷿ");
+        set("short", "庫房");
         set("long", @LONG
-���������䳡�Աߵ�С�ⷿ�������ܲ�ͨ�磬ֻ��һ˿���ߴ���
-��С����Ͷ�������������Щ���õ�����������ѩɽ�����ճ�������
-Ҫ�õ��ı�����
+這裡是練武場旁邊的小庫房，房裡密不通風，只有一絲光線從屋
+檐小縫中投射進來。房中有些備用的武器，都是雪山弟子日常練功需
+要用到的兵器。
 LONG );
         set("exits", ([
                 "east" : __DIR__"chang",

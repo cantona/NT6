@@ -21,9 +21,9 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : realnews <list | ±àºÅ>
+æŒ‡ä»¤æ ¼å¼ : realnews <list | ç·¨è™Ÿ>
  
-Õâ¸öÖ¸Áî¿ÉÒÔ²é¿´ÊµÊ±ĞÂÎÅ£¬²ÎÊıÎªlistÔòÏÔÊ¾ËùÓĞĞÂÎÅÁĞ±í¡£
+é€™å€‹æŒ‡ä»¤å¯ä»¥æŸ¥çœ‹å¯¦æ™‚æ–°èï¼Œåƒæ•¸ç‚ºlistå‰‡é¡¯ç¤ºæ‰€æœ‰æ–°èåˆ—è¡¨ã€‚
  
 HELP
     );

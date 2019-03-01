@@ -4,9 +4,9 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "»ÆÍÁÂ·");
+        set("short", "é»ƒåœŸè·¯");
         set("long", @LONG
-Äã×ßÔÚÒ»ÌõòêÑÑµÄĞ¡Â·ÉÏ¡£ÄÏ±ß·­¸öÒ»¸öĞ¡¸ß¸Ú¿ÉÒÔ»Øµ½¾©³Ç¡£
+ä½ èµ°åœ¨ä¸€æ¢èœ¿èœ’çš„å°è·¯ä¸Šã€‚å—é‚Šç¿»å€‹ä¸€å€‹å°é«˜å´—å¯ä»¥å›åˆ°äº¬åŸã€‚
 LONG );
         set("exits", ([
                 "east" : __DIR__"road2",
@@ -18,7 +18,7 @@ LONG );
 void init()
 {
         object me = this_player();
-        message_vision(HIB "Ò¹ÒÑ¾­ÉîÁË£¬·­¹ıÄÏ±ßµÄĞ¡¸ß¸Ú¿ÉÒÔÓÉĞ¡Â··µ»Ø¾©³Ç¡£\n"NOR, me);
+        message_vision(HIB "å¤œå·²ç¶“æ·±äº†ï¼Œç¿»éå—é‚Šçš„å°é«˜å´—å¯ä»¥ç”±å°è·¯è¿”å›äº¬åŸã€‚\n"NOR, me);
         remove_call_out("mes");
         call_out("mes",3,this_player());
         set_temp("want_leave", 1, this_player());
@@ -27,7 +27,7 @@ void init()
 
 void mes(object me)
 {
-        message_vision(HIR "ÄãÊÇ·ñÔ¸ÒâÀë¿ª(leave)Íò°²ËÂ£¿\n"NOR, me);
+        message_vision(HIR "ä½ æ˜¯å¦é¡˜æ„é›¢é–‹(leave)è¬å®‰å¯ºï¼Ÿ\n"NOR, me);
 }
 
 int do_leave()
@@ -35,7 +35,7 @@ int do_leave()
         object me = this_player();
         if( query_temp("want_leave", me) )
         {
-                tell_object(me, HIR "Äã¾ö¶¨Àë¿ªÍò°²ËÂ¡£\n" NOR);
+                tell_object(me, HIR "ä½ æ±ºå®šé›¢é–‹è¬å®‰å¯ºã€‚\n" NOR);
                 me->move("/d/heimuya/road3");
         }
         return 1;

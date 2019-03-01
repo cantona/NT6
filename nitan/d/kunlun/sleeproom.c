@@ -7,15 +7,15 @@ inherit ROOM;
 
 void create()
 {
-        set("short","����");
+        set("short","臥室");
         set("long",@long
-�����Ǻ�̫����谮�ĵ���С���õ��Է�����һ�������˱Ǳ���
-һ��ҩ�������滹���ŵ�һ��ʮ�ֹŹֵ���Ϣ������Ƭ�̣�����������
-Ϣ��Ũ�������������ء���������һ���ˣ����������������������
-���ǳ��ŷ��䡣����(window)���ǽ������š�
+這裡是何太沖最寵愛的第五小妾五姑的臥房。剛一進房，撲鼻便是
+一股藥氣，裡面還能聞到一股十分古怪的氣息，過了片刻，更覺得這氣
+息忽濃忽淡，甚是奇特。床上躺著一個人，這人面向帳裡，喘氣甚急，
+象是扯著風箱。窗子(window)都是緊緊關著。
 long);
         set("item_desc", ([
-                "window" : "������ƣ��㲻����򿪴���͸͸����\n",
+                "window" : "房裡很悶，你不禁想打開窗子透透氣。\n",
         ]));
         set("objects",([
                 __DIR__"npc/wugu" : 1,
@@ -23,7 +23,7 @@ long);
         set("exits", ([
                 "west" : __DIR__"tieqinju",
         ]));
-        create_door("west", "С��", "east", DOOR_CLOSED);
+        create_door("west", "小門", "east", DOOR_CLOSED);
         set("coor/x", -119970);
         set("coor/y", 40140);
         set("coor/z", 90);

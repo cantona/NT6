@@ -3,14 +3,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIM "Ã¨ÑýÊ¯" NOR, ({"maoyao shi", "maoyao", "shi" }));
+        set_name(HIM "è²“å¦–çŸ³" NOR, ({"maoyao shi", "maoyao", "shi" }));
         set_weight(2000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
+                set("unit", "é¡†");
                 set("value", 500000);
-                set("enchase/name", "Ã¨ÑýÊ¯");
+                set("enchase/name", "è²“å¦–çŸ³");
                 set("enchase/point", 1);
                 set("enchase/type", "surcoat");
                 set("enchase/cur_firm", 100);

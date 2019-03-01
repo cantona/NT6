@@ -1,4 +1,4 @@
-// hanshasheying.c º¬É³ÉäÓ°
+// hanshasheying.c å«æ²™å°„å½±
 
 #include <ansi.h>
 #include <armor.h>
@@ -7,14 +7,14 @@ inherit WAIST;
 
 void create()
 {
-        set_name("º¬É³ÉäÓ°", ({ "han sha she ying", "hssy" }) );
+        set_name("å«æ²™å°„å½±", ({ "han sha she ying", "hssy" }) );
         set_weight(500);
         set("taskobj", 1);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÎå¶¾½ÌµÄÆæÃÅ°µÆ÷¡¸º¬É³ÉäÓ°¡¹£¬Ñù×ÓÏóÒ»ÌõÑü´ø£¬¿ÉÒÔÊøÔÚÑü¼ä¡£\n´øÖĞ¼äÓĞÒ»¸ö±â±âµÄĞ¡ÌúºĞ¡£\n") ;
-                set("unit", "¸ö");
+                set("long", "é€™æ˜¯äº”æ¯’æ•™çš„å¥‡é–€æš—å™¨ã€Œå«æ²™å°„å½±ã€ï¼Œæ¨£å­è±¡ä¸€æ¢è…°å¸¶ï¼Œå¯ä»¥æŸåœ¨è…°é–“ã€‚\nå¸¶ä¸­é–“æœ‰ä¸€å€‹æ‰æ‰çš„å°éµç›’ã€‚\n") ;
+                set("unit", "å€‹");
                 set("value", 0);
                 set("material", "iron");
                 set("armor_prop/armor", 3);

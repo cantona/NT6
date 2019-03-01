@@ -2,12 +2,12 @@
 inherit ITEM;
 void create()
 {
-        set_name(HIR "Áúµ¨" NOR, ({"long dan", "dan", "long"}));
+        set_name(HIR "é¾è†½" NOR, ({"long dan", "dan", "long"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ö»");
-                set("long", HIR "\nÒ»Ö»ÑªÁÜÁÜµÄĞÂÏÊÁúµ¨£¬´ÓÉñÊŞÇàÁúµÄÉíÌåÀïÈ¡³ö£¬¿ÉÒÔÈëÒ©¡£\n" NOR);
+                set("unit", "åª");
+                set("long", HIR "\nä¸€åªè¡€æ·‹æ·‹çš„æ–°é®®é¾è†½ï¼Œå¾ç¥ç¸é’é¾çš„èº«é«”è£¡å–å‡ºï¼Œå¯ä»¥å…¥è—¥ã€‚\n" NOR);
                 set("value", 8000);
                 set("only_do_effect", 1);
         }
@@ -21,9 +21,9 @@ int do_effect(object me)
         my = me->query_entire_dbase();
 
         if( me->is_busy() )
-                return notify_fail("¼±Ê²Ã´£¬Ğ¡ĞÄ±ğÒ­×ÅÁË¡£\n");
+                return notify_fail("æ€¥ä»€éº¼ï¼Œå°å¿ƒåˆ¥å™è‘—äº†ã€‚\n");
 
-        message_vision(HIR "$N" HIR "ÉúÍÌÏÂÒ»Ö»ÑªÁÜÁÜµÄÁúµ¨£¬Ö»¸ĞÒ»¹ÉÕæÆø´ÓÌåÄÚÅìÅÈ¶ø³ö¡£\n" NOR, me);
+        message_vision(HIR "$N" HIR "ç”Ÿåä¸‹ä¸€åªè¡€æ·‹æ·‹çš„é¾è†½ï¼Œåªæ„Ÿä¸€è‚¡çœŸæ°£å¾é«”å…§æ¾æ¹ƒè€Œå‡ºã€‚\n" NOR, me);
         set("jingli",query("max_jingli",  me), me);
         set("neili",query("max_neili",  me), me);
         set("jing",query("max_jing",  me), me);

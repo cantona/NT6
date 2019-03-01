@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "���̸�");
+        set("short", "凌煙閣");
         set("long", @LONG
-խխ���ţ�խխ��¥�ݣ��������ŵķ��䣬�������ܿ���Ӵ���
-����ȥ��������ɫ������ǰ��
+窄窄的門，窄窄的樓梯，布置清雅的房間，窗戶都很寬大從窗內
+看出去，滿城秋色俱在眼前。
 LONG );
         set("exits", ([ /* sizeof() == 1 */
                 "west" : "/d/changan/fengxu4",

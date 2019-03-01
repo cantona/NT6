@@ -3,10 +3,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("¾«ÁéÁÔÈË", ({ "spirit hunter", "hunter"}));
+        set_name("ç²¾éˆçµäºº", ({ "spirit hunter", "hunter"}));
         set("long",
-                "ËûÃ¼Ä¿ÇåĞã£¬ÊÖ³Ö¹­¼ı£¬ËÆºõÕıÔÚµÈ´ı×ÅÊ²Ã´¡£\n");
-        set("gender", "ÄĞĞÔ");
+                "ä»–çœ‰ç›®æ¸…ç§€ï¼Œæ‰‹æŒå¼“ç®­ï¼Œä¼¼ä¹æ­£åœ¨ç­‰å¾…è‘—ä»€éº¼ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 30);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -37,7 +37,7 @@ void create()
 
         set("chat_chance",3);
         set("chat_msg", ({
-            "¾«ÁéÁÔÈËËµµÀ£ºÕâÀïÊÇ¸ö´óÁÔ³¡£¬Ö»ÒªÄÍĞÄ´òÁÔ(hunting)£¬Ò»¶¨»áÓĞ´óÊÕ»ñ¡£\n"
+            "ç²¾éˆçµäººèªªé“ï¼šé€™è£¡æ˜¯å€‹å¤§çµå ´ï¼Œåªè¦è€å¿ƒæ‰“çµ(hunting)ï¼Œä¸€å®šæœƒæœ‰å¤§æ”¶ç²ã€‚\n"
         }));
 
         setup();
@@ -61,7 +61,7 @@ void greeting(object ob)
 { 
 int change=0;
 if( !ob || environment(ob) != environment() ) return;
-message_vision( "\n$NÎ¢Ğ¦µÀ£ºÕâÎ»"+RANK_D->query_respect(ob) + "£¬À´µ½ÕâÀïÒ»¶¨ºÜĞÁ¿à£¬ĞªĞªÔÙ×ß°É¡£\n",this_object());
+message_vision( "\n$Nå¾®ç¬‘é“ï¼šé€™ä½"+RANK_D->query_respect(ob) + "ï¼Œä¾†åˆ°é€™è£¡ä¸€å®šå¾ˆè¾›è‹¦ï¼Œæ­‡æ­‡å†èµ°å§ã€‚\n",this_object());
 }
 
 int do_hunting()
@@ -71,15 +71,15 @@ int do_hunting()
         int i;
 
         if( query_temp("in_hunting", me) )
-           return notify_fail("¾«ÁéÁÔÈË¶ÔÄãËµ£º×¨ĞÄá÷ÁÔ£¬²»Òª¶«ÕÅÎ÷Íû¡£\n");
+           return notify_fail("ç²¾éˆçµäººå°ä½ èªªï¼šå°ˆå¿ƒç‹©çµï¼Œä¸è¦æ±å¼µè¥¿æœ›ã€‚\n");
         ob = users();
         for (i=sizeof(ob); i>0; i--)
         {
                 if (query_temp("in_hunting", ob[i-1]))
-                return notify_fail("¾«ÁéÁÔÈË¶ÔÄãËµ£ºÒÑ¾­ÓĞÈËÔÚá÷ÁÔÁË£¬ÄãÏÈĞİÏ¢Ò»ÏÂ°É¡£\n");
+                return notify_fail("ç²¾éˆçµäººå°ä½ èªªï¼šå·²ç¶“æœ‰äººåœ¨ç‹©çµäº†ï¼Œä½ å…ˆä¼‘æ¯ä¸€ä¸‹å§ã€‚\n");
         }
-        tell_room(environment(me),query("name", me)+"¿ªÊ¼Òş²ØÆğÀ´£¬×¼±¸á÷ÁÔ¡£\n");
-        set("hunter", HIY"ÁÔÈË"NOR, me);
+        tell_room(environment(me),query("name", me)+"é–‹å§‹éš±è—èµ·ä¾†ï¼Œæº–å‚™ç‹©çµã€‚\n");
+        set("hunter", HIY"çµäºº"NOR, me);
         set_temp("in_hunting", "1", me);
         me->save();
         remove_call_out("end_hunting");
@@ -92,7 +92,7 @@ void clone_beast(object me)
 {
         object ob;
         if (! me) return;
-        tell_room(environment(me),"¼¸Ö»Ò°ÊŞ´ÓÊ÷ÁÖÀï¾¯ÌèµØ×ß³öÀ´£¬Òª´òÁÔ¾ÍÊÇÏÖÔÚÁË£¡\n");
+        tell_room(environment(me),"å¹¾åªé‡ç¸å¾æ¨¹æ—è£¡è­¦æƒ•åœ°èµ°å‡ºä¾†ï¼Œè¦æ‰“çµå°±æ˜¯ç¾åœ¨äº†ï¼\n");
         switch (random(6)) {
          case 0: 
         ob=new("/quest/tulong/npc/wolf");
@@ -147,9 +147,9 @@ void end_hunting(object me)
         delete_temp("in_hunting", me);
         me->save();
         remove_call_out("clone_beast");
-        tell_room(environment(me),query("name", me)+"½áÊøÁËá÷ÁÔ¡£\n");
-        tell_object(me,"ÄãµÃµ½ÁËÒ»ÒıÆğ¾­ÑéºÍÇ±ÄÜ¡£\n");
-        tell_object(me,"Äã½áÊøÁËá÷ÁÔ¡£\n");
+        tell_room(environment(me),query("name", me)+"çµæŸäº†ç‹©çµã€‚\n");
+        tell_object(me,"ä½ å¾—åˆ°äº†ä¸€å¼•èµ·ç¶“é©—å’Œæ½›èƒ½ã€‚\n");
+        tell_object(me,"ä½ çµæŸäº†ç‹©çµã€‚\n");
 }
 void die()
 {

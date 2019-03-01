@@ -3,10 +3,10 @@ inherit F_DEALER;
 void create()
 {
 
-   set_name("°²ÄÏÌú½³",({ "tie jiang","tie","jiang","tiejiang" }) );
-        set("gender", "ÄĞĞÔ" );
+   set_name("å®‰å—éµåŒ ",({ "tie jiang","tie","jiang","tiejiang" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 40);
-   set("long", "ÕâÊÇ°²ÄÏµÄÌú½³£¬Ëû´òÔìµÄ±øÆ÷¶¼ÊÇºÜºÃ¡£\n");
+   set("long", "é€™æ˜¯å®‰å—çš„éµåŒ ï¼Œä»–æ‰“é€ çš„å…µå™¨éƒ½æ˜¯å¾ˆå¥½ã€‚\n");
      set("shop_id",({ "tie jiang","tie","jiang","tiejiang" }) );
    set("combat_exp",300000);
    set("str",26);

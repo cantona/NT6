@@ -15,14 +15,14 @@ nosave string s_id;
 
 string to_chinese(int status)
 {
-        if( status == 0 ) return HIW "ÆÕÍ¨" NOR;
-        else if( status == 1 ) return HIW "ÆÕÍ¨" NOR;
-        else if( status == 2 ) return HIB "ÓÅÁ¼" NOR;
-        else if( status == 3 ) return HIC "ÕäÏ¡" NOR;
-        else if( status == 4 ) return HIM "Ê·Ê«" NOR;
-        else if( status == 5 ) return HIY "´«Ëµ" NOR;
-        else if( status == 6 ) return HBRED+HIW "ÉñÆ÷" NOR;
-        else return HBRED+HIY "ÏÉÆ÷" NOR;
+        if( status == 0 ) return HIW "æ™®é€š" NOR;
+        else if( status == 1 ) return HIW "æ™®é€š" NOR;
+        else if( status == 2 ) return HIB "å„ªè‰¯" NOR;
+        else if( status == 3 ) return HIC "çç¨€" NOR;
+        else if( status == 4 ) return HIM "å²è©©" NOR;
+        else if( status == 5 ) return HIY "å‚³èªª" NOR;
+        else if( status == 6 ) return HBRED+HIW "ç¥å™¨" NOR;
+        else return HBRED+HIY "ä»™å™¨" NOR;
 }
 
 void setup()
@@ -53,7 +53,7 @@ string short()
                     
         if( !undefinedp(query("consistence")) && query("consistence") < 1 ) 
         //if( query("endurance") < 1 ) 
-                status += HIW" Ëğ"NOR WHT"»µ"NOR;
+                status += HIW" æ"NOR WHT"å£"NOR;
                 
         if( !stringp(colorname = query("colorname")) )
                 str = s_name + "(" + s_id + ")";
@@ -72,7 +72,7 @@ int fire(object me, object ob)
         string msg;
 
         if( this_object()->is_item_make() )
-                return notify_fail("ÄãÀÛµÃÂúÍ·´óº¹£¬ÔõÃ´µãÒ²µã²»×Å¡£\n");
+                return notify_fail("ä½ ç´¯å¾—æ»¿é ­å¤§æ±—ï¼Œæ€éº¼é»ä¹Ÿé»ä¸è‘—ã€‚\n");
 
         if( stringp(msg = query("no_light")) )
                 return notify_fail(msg);
@@ -80,21 +80,21 @@ int fire(object me, object ob)
         switch( query("material") )
         {
         case "wood":
-                msg = "$N°Ñ$n·ÅÔÚ$fÏÂÃæµãÈ¼ÁË£¬»ğ¹âÉÁ¶¯£¬½¥"
-                      "½¥Ö»Ê£ÏÂÁËÒ»ÍÅÌ¼·ÛËéÔü¡£\n";
+                msg = "$NæŠŠ$næ”¾åœ¨$fä¸‹é¢é»ç‡ƒäº†ï¼Œç«å…‰é–ƒå‹•ï¼Œæ¼¸"
+                      "æ¼¸åªå‰©ä¸‹äº†ä¸€åœ˜ç¢³ç²‰ç¢æ¸£ã€‚\n";
                 break;
         case "leather":
         case "feather":
         case "silk":
-                msg = "$NÓÃ$f°Ñ$nµã×ÅÁË£¬½á¹ûÉ¢·¢³öÒ»ÕóÁîÈËÄÑÎÅµÄ³ôÎ¶¡£\n";
+                msg = "$Nç”¨$fæŠŠ$né»è‘—äº†ï¼Œçµæœæ•£ç™¼å‡ºä¸€é™£ä»¤äººé›£èçš„è‡­å‘³ã€‚\n";
                 break;
         case "paper":
         case "cloth":
-                msg = "$Nµã×ÅÁË$n£¬»ğÃçÉÁÁË¼¸ÉÁ£¬ºÜ¿ì¾Í"
-                      "ÉÕÁË¸ö¸É¸É¾»¾»£¬Ê²Ã´¶¼Ã»ÓĞÊ£ÏÂÀ´¡£\n";
+                msg = "$Né»è‘—äº†$nï¼Œç«è‹—é–ƒäº†å¹¾é–ƒï¼Œå¾ˆå¿«å°±"
+                      "ç‡’äº†å€‹å¹¹å¹¹å‡ˆå‡ˆï¼Œä»€éº¼éƒ½æ²’æœ‰å‰©ä¸‹ä¾†ã€‚\n";
                 break;
         default:
-                return notify_fail("Õâ¶«Î÷¿´ÉÏÈ¥Ã»·¨µã£¬»¹ÊÇÊ¡Ê¡Á¦Æø°É¡£\n");
+                return notify_fail("é€™æ±è¥¿çœ‹ä¸Šå»æ²’æ³•é»ï¼Œé‚„æ˜¯çœçœåŠ›æ°£å§ã€‚\n");
         }
 
         msg = replace_string(msg, "$n", name());
@@ -107,30 +107,30 @@ int fire(object me, object ob)
 string type()
 {
         if( this_object()->is_weapon() )
-                return "ÎäÆ÷";
+                return "æ­¦å™¨";
         if( this_object()->is_unarmed_weapon() )
-                return "¿ÕÊÖÎäÆ÷";
+                return "ç©ºæ‰‹æ­¦å™¨";
         else if( this_object()->is_armor() )
-                return "·À¾ß";
+                return "é˜²å…·";
         else if( this_object()->is_food() )
-                return "Ê³Îï";
+                return "é£Ÿç‰©";
         else if( this_object()->is_liquid() )
-                return "Òû¾ß";
+                return "é£²å…·";
         else if( this_object()->is_container() )
-                return "ÈİÆ÷";
+                return "å®¹å™¨";
         else if( this_object()->is_book() )
-                return "ÊéÎï";
+                return "æ›¸ç‰©";
         else if( this_object()->is_money() )
-                return "»õ±Ò";
+                return "è²¨å¹£";
         else if( this_object()->is_charm() )
-                return "»¤Éí·û";
+                return "è­·èº«ç¬¦";
         else if( this_object()->is_rune() )
-                return "·ûÎÄ";
+                return "ç¬¦æ–‡";
         else if( this_object()->is_tessera() )
-                return "ÏâÇ¶Îï";
+                return "é‘²åµŒç‰©";
         else if( this_object()->is_task() )
-                return "ÈÎÎñÎïÆ·";
-        else    return "ÔÓÎï";
+                return "ä»»å‹™ç‰©å“";
+        else    return "é›œç‰©";
 }
 
 mixed query_autoload()

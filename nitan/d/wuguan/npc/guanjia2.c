@@ -3,14 +3,14 @@ inherit NPC;
 
 void create()
 {
-        set_name("Ä¾·¿¹ÜÊÂ", ({ "mufang guanshi", "guanshi" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("æœ¨æˆ¿ç®¡äº‹", ({ "mufang guanshi", "guanshi" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 50);
-        set("long", "ËûÊÇÄ¾·¿¹ÜÊÂ£¬×¨¹ÜÄ¾·¿£¡\n");
+        set("long", "ä»–æ˜¯æœ¨æˆ¿ç®¡äº‹ï¼Œå°ˆç®¡æœ¨æˆ¿ï¼\n");
         set("combat_exp", 2500);
         set("attitude", "friendly");
         set("inquiry", ([
-             	"¾âÄ¾Í·" : "Äã¾ÍÔÚÕâÀÏÀÏÊµÊµ¸øÎÒ¾âÄ¾Í·£¬Ã»ÓĞÎÒµÄÂúÒâ£¬Äã±ğÏë»ØÈ¥¸²Ãü£¡",
+             	"é‹¸æœ¨é ­" : "ä½ å°±åœ¨é€™è€è€å¯¦å¯¦çµ¦æˆ‘é‹¸æœ¨é ­ï¼Œæ²’æœ‰æˆ‘çš„æ»¿æ„ï¼Œä½ åˆ¥æƒ³å›å»è¦†å‘½ï¼",
                
         ]));
         setup();
@@ -33,19 +33,19 @@ void greeting(object ob)
 {
         if (! ob || environment(ob) != environment()) return;
          
-        if( query_temp("job_name", ob) != "¾âÄ¾Í·")return ;
+        if( query_temp("job_name", ob) != "é‹¸æœ¨é ­")return ;
 
         if (! (present("ju zi", ob)))
         {
         	command("hmm"+query("id", ob));
-        	command("say Äã»¹Ã»Áì¹¤¾ß°É£¬È¥¶«ÎïÆ··¿ÕÒÎäÒ¯ÒªÁËÔÙÀ´¡£\n");
+        	command("say ä½ é‚„æ²’é ˜å·¥å…·å§ï¼Œå»æ±ç‰©å“æˆ¿æ‰¾æ­¦çˆºè¦äº†å†ä¾†ã€‚\n");
         	return;
         }
 
-        if( !(query_temp("job_name", ob) != "¾âÄ¾Í·") )
+        if( !(query_temp("job_name", ob) != "é‹¸æœ¨é ­") )
         {
         	command("nod"+query("id", ob));
-                command("say ÊÇÒ®ÂÉ´óÒ¯·Ô¸ÀÄãÀ´µÄ°É£¿ÄÇÄã¾ÍÔÚÕâ¾âÄ¾(" HIY
-                        "ju mutou" NOR + CYN ")ºÃÁË¡£\n" NOR);
+                command("say æ˜¯è€¶å¾‹å¤§çˆºå©å’ä½ ä¾†çš„å§ï¼Ÿé‚£ä½ å°±åœ¨é€™é‹¸æœ¨(" HIY
+                        "ju mutou" NOR + CYN ")å¥½äº†ã€‚\n" NOR);
         }
 }

@@ -1,24 +1,24 @@
-// /d/xiakedao/shiroom06.c ���͵� ʯ��6
+// /d/xiakedao/shiroom06.c 俠客島 石室6
 
 inherit ROOM;
 
 int do_study(string arg);
 void create()
 {
-        set("short", "ʯ��");
+        set("short", "石室");
         set("long", @LONG
-���ʯ����ȴǡ�����˹ۿ�ͼ�ף��˵����������壬���ڴ�����
-����������ǽ�ϻ�Ѿ�����ȼ���ţ�ż��������΢�ıϲ�֮��������
-��������֬����ζ��ʯ��(wall)Ҳ��Ѭ���˼�����
+這間石室中卻恰巧無人觀看圖譜，端的是冷冷清清，隔壁傳來隱
+隱的喧囂。牆上火把靜靜地燃燒著，偶爾發出輕微的畢駁之聲，空中
+有陣陣鬆脂的氣味，石壁(wall)也被熏黑了幾處。
 LONG );
         set("exits", ([
                 "north" : __DIR__"shihole2",
         ]));
         set("item_desc", ([
                 "wall" : @WALL
-ǽ�����Ϸ����š�ǧ�ﲻ���С��������֡��ֵ��·�����ͼ��������
-һ����ͨ�������Զ��һ�������������֣������̳����𣬽�������
-���е�������֯��һƬ���Աߵ�ע�����࣬һʱҲ���ϲ��塣
+牆的正上方刻著「千裡不留行」幾個大字。字的下方刻有圖案，乃是
+一條普通的驛道。遠處一架馬車若隱若現，道上煙塵四起，漸漸地與
+空中的雲霧交織成一片。旁邊的注解甚多，一時也辨認不清。
 WALL
         ]));
         set("no_clean_up", 0);

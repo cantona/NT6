@@ -5,14 +5,14 @@ inherit TESSERA;
 
 void create()
 {
-        set_name(HIB "À¶±¦Ê¯" NOR, ({ "sapphire" }));
+        set_name(HIB "è—å¯¶çŸ³" NOR, ({ "sapphire" }));
         set_weight(20);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", WHT "ÕâÊÇÒ»¿Å±¦Ê¯£¬ÉÏÃæËÆºõ¸½×ÅÄ³ÖÖÉñÆæµÄÄ§Á¦¡£\n" NOR);
+                set("long", WHT "é€™æ˜¯ä¸€é¡†å¯¶çŸ³ï¼Œä¸Šé¢ä¼¼ä¹é™„è‘—æŸç¨®ç¥å¥‡çš„é­”åŠ›ã€‚\n" NOR);
                 set("value", 100000);
-                set("unit", "¿Å");
+                set("unit", "é¡†");
                 set("level", 2); 
                 set("material", "sapphire"); 
                 set("no_identify", 1);

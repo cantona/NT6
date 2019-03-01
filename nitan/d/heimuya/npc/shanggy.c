@@ -7,11 +7,11 @@ void greeting(object);
 void init();
 void create()
 {
-        set_name("ÉÏ¹ÙÔÆ", ({ "shangguan yun","shangguan","yun"}) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("ä¸Šå®˜é›²", ({ "shangguan yun","shangguan","yun"}) );
+        set("gender", "ç”·æ€§" );
         set("age", 40);
-        set("title" , "ÈÕÔÂÉñ½Ì°×»¢ÌÃ³¤ÀÏ");
-        set("long", "Ëû³¤ÊÖ³¤½Å, Ë«Ä¿¾«¹â²ÓÈ», ÈôÓĞÍşÊÆ¡£\n");
+        set("title" , "æ—¥æœˆç¥æ•™ç™½è™å ‚é•·è€");
+        set("long", "ä»–é•·æ‰‹é•·è…³, é›™ç›®ç²¾å…‰ç‡¦ç„¶, è‹¥æœ‰å¨å‹¢ã€‚\n");
         set("attitude", "friendly");
         set("shen_type", -1);
 
@@ -44,7 +44,7 @@ void create()
         map_skill("parry", "lingshe-zhangfa");
         map_skill("staff", "lingshe-zhangfa");
 
-        create_family("ÈÕÔÂÉñ½Ì",2,"µÜ×Ó °×»¢ÌÃ³¤ÀÏ");
+        create_family("æ—¥æœˆç¥æ•™",2,"å¼Ÿå­ ç™½è™å ‚é•·è€");
 
         set("chat_chance", 3);
         
@@ -60,5 +60,5 @@ void create()
 
 void attempt_apprentice(object ob)
 {
-             command("say ÎÒÊÇ»¼ÄÑÖ®Éí, ÔõÃ´ÄÜÊÕÍ½ÄØ¡£×³Ê¿»¹ÊÇÇë»Ø°É!\n");
+             command("say æˆ‘æ˜¯æ‚£é›£ä¹‹èº«, æ€éº¼èƒ½æ”¶å¾’å‘¢ã€‚å£¯å£«é‚„æ˜¯è«‹å›å§!\n");
 }

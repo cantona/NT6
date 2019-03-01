@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-      set("short", "С·");
+      set("short", "小路");
         set("long", @LONG
-�����Ĵ�������Ľ��硣һ�������ĵ�С��·����������������
-��ũ������·�����˺��٣����ҴҸ�·��
+這是四川與湖北的交界。一條靜悄悄的小土路，兩旁有疏疏落落
+的農舍耕田，但路上行人很少，都匆匆趕路。
 LONG );
       set("outdoors", "sanbuguan");
       set("exits", ([

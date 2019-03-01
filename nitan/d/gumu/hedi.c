@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", HIR"°µÁ÷ºÓµ×"NOR);
+        set("short", HIR"æš—æµæ²³åº•"NOR);
         set("long", @LONG
-ÄãÃ»ÔÚË®ÖĞ£¬¸Ğ¾õËÆºõÊÇµ½ÁËË®µ×,Ë®ÊÆÒÑ²»ËÆ¸Õ²ÅÄÇÃ´Ñ¸¼±£¬Ë®Ñ¹È´ÊÇ¸üÉõ´ÓÇ°¡£±ïµÃÄã¾ÍÒªÍ¸²»¹ıÆøÀ´ÁË£¬ÄãÇé¼±
-ÏÂ¼±¼±ÉóÊÓËÄÖÜÑ°ÕÒ³öÂ·,·¢¾õÉÏ·½(southup)ÒşÒşÍ¸×ÅÁÁ¹â,²»¾õ
-ĞÄÏÂÒ»Ï²,²»¼±Ï¸Ïë¾ÍÓûÏòÉÏ¸¡È¥.
+ä½ æ²’åœ¨æ°´ä¸­ï¼Œæ„Ÿè¦ºä¼¼ä¹æ˜¯åˆ°äº†æ°´åº•,æ°´å‹¢å·²ä¸ä¼¼å‰›æ‰é‚£éº¼è¿…æ€¥ï¼Œæ°´å£“å»æ˜¯æ›´ç”šå¾å‰ã€‚æ†‹å¾—ä½ å°±è¦é€ä¸éæ°£ä¾†äº†ï¼Œä½ æƒ…æ€¥
+ä¸‹æ€¥æ€¥å¯©è¦–å››å‘¨å°‹æ‰¾å‡ºè·¯,ç™¼è¦ºä¸Šæ–¹(southup)éš±éš±é€è‘—äº®å…‰,ä¸è¦º
+å¿ƒä¸‹ä¸€å–œ,ä¸æ€¥ç´°æƒ³å°±æ¬²å‘ä¸Šæµ®å».
 LONG
         );
 
@@ -24,10 +24,10 @@ void init()
         add_action("do_swim","swim");
         me->receive_damage("qi", 500 );
         me->receive_damage("jing", 500 );
-        message_vision(HIB"$NµÄÕæÆøÕıÔÚÁ÷Ê§£¬ºôÎüÊ®·ÖÀ§ÄÑ¡£\n"NOR, me);
+        message_vision(HIB"$Nçš„çœŸæ°£æ­£åœ¨æµå¤±ï¼Œå‘¼å¸ååˆ†å›°é›£ã€‚\n"NOR, me);
         if( query("qi", me)<10 || query("jing", me)<10 )
         {
-                set_temp("die_reason", "ÔÚÇ±Á÷ÖĞ±»ÑÍËÀ", me);
+                set_temp("die_reason", "åœ¨æ½›æµä¸­è¢«æ·¹æ­»", me);
                 me->unconcious();
                 me->die();
                 return ;
@@ -40,22 +40,22 @@ int do_swim(string arg)
         me=this_player();
 
         if ( !arg || arg != "southup" )
-                return notify_fail("ÄãÒªÓÎÏòÄÄÀï£¿\n");
+                return notify_fail("ä½ è¦éŠå‘å“ªè£¡ï¼Ÿ\n");
 
         if ( me->is_busy() || me->is_fighting())
-                return notify_fail("ÄãÕıÃ¦×ÅÄÄ£¡\n");
+                return notify_fail("ä½ æ­£å¿™è‘—å“ªï¼\n");
 
         if (arg =="southup")
         {
                 if ((int)me->query_encumbrance() * 100 / (int)me->query_max_encumbrance() >= 40)
-                        return notify_fail("ÄãÉí×Ó³ÁÖØ£¬ÓÃ¾¡È«Á¦Ò²ÎŞ·¨¸¡ÉÏÈ¥!\n");
+                        return notify_fail("ä½ èº«å­æ²‰é‡ï¼Œç”¨ç›¡å…¨åŠ›ä¹Ÿç„¡æ³•æµ®ä¸Šå»!\n");
 
-                message_vision(YEL"$NÁ½ÍÈÓÃÁ¦Ò»µÅ£¬ÏòÉÏÃæ¸¡È¥¡£\n"NOR, me);
+                message_vision(YEL"$Nå…©è…¿ç”¨åŠ›ä¸€è¹¬ï¼Œå‘ä¸Šé¢æµ®å»ã€‚\n"NOR, me);
                 me->receive_damage("jing", 500);
                 me->receive_damage("qi", 500);
                 me->move(__DIR__"midong");
-                tell_room(environment(me), me->name() + "´ÓÏÂÃæ¸¡ÁËÉÏÀ´¡£\n", ({ me }));
-                message_vision (HIB"$NÖ»¾õµÃÍ·ÔÎÔÎµÄ£¬ÉíÌå½şÔÚ±ùÀäµÄË®ÖĞ£¬²»×¡µÄ²ü¶¶¡£\n"NOR,me);
+                tell_room(environment(me), me->name() + "å¾ä¸‹é¢æµ®äº†ä¸Šä¾†ã€‚\n", ({ me }));
+                message_vision (HIB"$Nåªè¦ºå¾—é ­æšˆæšˆçš„ï¼Œèº«é«”æµ¸åœ¨å†°å†·çš„æ°´ä¸­ï¼Œä¸ä½çš„é¡«æŠ–ã€‚\n"NOR,me);
                 return 1;
         }
         return 1;

@@ -1,12 +1,12 @@
 inherit NPC;
 void create()
 {
-        set_name("µÜµÜ", ({ "kid"}) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("å¼Ÿå¼Ÿ", ({ "kid"}) );
+        set("gender", "ç”·æ€§" );
         set("age", 5);
-        set("title", "¾«Áé×åĞ¡º¢");
+        set("title", "ç²¾éˆæ—å°å­©");
         set("long",
-                "Ëû¹â×ÅÉí×Ó£¬Ã¼ÇåÄ¿Ğã£¬¿É°®Ö®¼«¡£\n");
+                "ä»–å…‰è‘—èº«å­ï¼Œçœ‰æ¸…ç›®ç§€ï¼Œå¯æ„›ä¹‹æ¥µã€‚\n");
         set("combat_exp", 50000);
         set("attitude", "friendly");
         set("per",15);
@@ -34,7 +34,7 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
         lianer = present("lian er", environment(ob));
         if(!objectp(lianer)){
-message_vision("$NËµ£º¡°Á«¶ù½ã³ªµÄ¸è×îºÃÌıÁË£¡¡±\n",this_object(),ob);
+message_vision("$Nèªªï¼šâ€œè“®å…’å§å”±çš„æ­Œæœ€å¥½è½äº†ï¼â€\n",this_object(),ob);
            return;
         }
         if(query_temp("marks/sing") == 1) {
@@ -42,10 +42,10 @@ message_vision("$NËµ£º¡°Á«¶ù½ã³ªµÄ¸è×îºÃÌıÁË£¡¡±\n",this_object(),ob);
         }
         switch( random(2) ) {
                 case 0:
-message_vision("$NÒ¡×ÅÁ«¶ùµÄÊÖ£¬Ëµ£º¡°Á«¶ù½ã½ã£¬³ª¸öĞ¡µ÷¸øÎÒÌı°É¡£¡±\n",this_object(),ob);
+message_vision("$Næ–è‘—è“®å…’çš„æ‰‹ï¼Œèªªï¼šâ€œè“®å…’å§å§ï¼Œå”±å€‹å°èª¿çµ¦æˆ‘è½å§ã€‚â€\n",this_object(),ob);
                         break;
                 case 1:
-message_vision("$N²ø×ÅÁ«¶ù£¬Ëµ£º¡°½ã½ã£¬ÎÒÒªÌıĞ¡Çú¶ù£¡¡±\n",this_object(),ob);
+message_vision("$Nçºè‘—è“®å…’ï¼Œèªªï¼šâ€œå§å§ï¼Œæˆ‘è¦è½å°æ›²å…’ï¼â€\n",this_object(),ob);
                         break;
         }
         set_temp("marks/sing", 1, this_object());
@@ -60,14 +60,14 @@ int accept_object(object who, object ob)
 
    id = ob->name(); 
    if( query("id", ob) == "fish"){
-   message_vision("$NËµµÀ£º¡°ÍÛ£¬ºÃ´óµÄÓã£¡¡±\n",this_object()); 
-   message_vision("$NËµµÀ£º¡°¶àĞ»ÄãÀ²£¬Õâ¸ö·çóİËÍ¸øÄã¡£¡±\n",this_object());
+   message_vision("$Nèªªé“ï¼šâ€œå“‡ï¼Œå¥½å¤§çš„é­šï¼â€\n",this_object()); 
+   message_vision("$Nèªªé“ï¼šâ€œå¤šè¬ä½ å•¦ï¼Œé€™å€‹é¢¨ç®é€çµ¦ä½ ã€‚â€\n",this_object());
    obj=new("/quest/tulong/obj/kite");
    obj->move(this_player());
    return 1;
    }    
-   message_vision("$NËµµÀ£º£¢¶àĞ»ÄãÀ²!£¢\n",this_object());
-   if(id == "»Æ½ğ" || id == "Òø×Ó"){
+   message_vision("$Nèªªé“ï¼šã€å¤šè¬ä½ å•¦!ã€\n",this_object());
+   if(id == "é»ƒé‡‘" || id == "éŠ€å­"){
      kar = (int)who->query_kar();
      c = (int)ob->value();
      if(random(c) > random(10000*(1000-kar*2))) {

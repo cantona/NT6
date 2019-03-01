@@ -1,14 +1,14 @@
-//bingqifang.c                ËÄ´¨ÌÆÃÅ¡ª±øÆ÷·¿
+//bingqifang.c                å››å·å”é–€â”€å…µå™¨æˆ¿
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "±øÆ÷·¿");
+        set("short", "å…µå™¨æˆ¿");
         set("long",
-"ÕâÀïÊÇÊñÖÐÌÆÃÅµÄ±øÆ÷·¿£¬·¿¼äºÜ´óÈ´³äÂúÁËÒ»¹ÉÏôÉ±Ö®Æø£¬¿¿Ç½°Ú\n"
-"·Å×Å¼¸¸ö±øÆ÷¼Ü£¬ÆäÖÐÒ»¸ö¼Ü×ÓÉÏÃæ°Ú·Å×ÅÒ»Ð©ÌÆÃÅÃØÖÆµÄ°µÆ÷ºÍ±øÆ÷£¬\n"
-"ÆäËüµÄ¼¸¸ö¼Ü×ÓÉÏÔòÊÇ½­ºþÖÐ³£ÓÃµÄ±øÆ÷¡£\n"
+"é€™è£¡æ˜¯èœ€ä¸­å”é–€çš„å…µå™¨æˆ¿ï¼Œæˆ¿é–“å¾ˆå¤§å»å……æ»¿äº†ä¸€è‚¡è•­æ®ºä¹‹æ°£ï¼Œé ç‰†æ“º\n"
+"æ”¾è‘—å¹¾å€‹å…µå™¨æž¶ï¼Œå…¶ä¸­ä¸€å€‹æž¶å­ä¸Šé¢æ“ºæ”¾è‘—ä¸€äº›å”é–€ç§˜åˆ¶çš„æš—å™¨å’Œå…µå™¨ï¼Œ\n"
+"å…¶å®ƒçš„å¹¾å€‹æž¶å­ä¸Šå‰‡æ˜¯æ±Ÿæ¹–ä¸­å¸¸ç”¨çš„å…µå™¨ã€‚\n"
 );
         set("exits", ([
                 "south" : __DIR__"nzlange2",

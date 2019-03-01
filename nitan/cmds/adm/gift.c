@@ -127,7 +127,7 @@ int main(object me, string arg)
         item->set_amount(200);
         item->move(ob, 1);
         tell_object(ob, "\a", 0); 
-        tell_object(ob, HIY"一阵祥风拂面而来，你感觉行囊里好像多了些东西。\n"NOR);
+        tell_object(ob, HIY"涓�闄ｇゥ棰ㄦ媯闈㈣�屼締锛屼綘鎰熻琛屽泭瑁″ソ鍍忓浜嗕簺鏉辫タ銆俓n"NOR);
         write("ok.\n");
         return 1;
 }

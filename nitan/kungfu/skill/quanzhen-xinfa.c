@@ -1,4 +1,4 @@
-// quanzhen-xinfa 全真心法
+// quanzhen-xinfa 鍏ㄧ湡蹇冩硶
 
 inherit FORCE;
 
@@ -18,7 +18,7 @@ int valid_learn(object me)
 
 int practice_skill(object me)
 {
-        return notify_fail("全真心法只能用学(learn)的来增加熟练度。\n");
+        return notify_fail("鍏ㄧ湡蹇冩硶鍙兘鐢ㄥ(learn)鐨勪締澧炲姞鐔熺反搴︺�俓n");
 }
 
 string exert_function_file(string func)

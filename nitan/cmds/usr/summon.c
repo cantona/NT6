@@ -1,4 +1,4 @@
-// summon. È¡»Ø±øÆ÷
+// summon. å–å›å…µå™¨
 
 #include <ansi.h>
 #include <command.h>
@@ -17,52 +17,52 @@ int main(object me, string str)
         {
                 summon=query("can_summon", me);
                 if (! mapp(summon) || ! sizeof(summon))
-                        return notify_fail("ÄãÒªÕÙ»½Ê²Ã´ÎïÆ·£¿\n");
+                        return notify_fail("ä½ è¦å¬å–šä»€éº¼ç‰©å“ï¼Ÿ\n");
 
                 ks = keys(summon);
                 /*
-                msg = "ÄãÏÖÔÚ¿ÉÒÔÕÙ»½µÄÎïÆ·´úÂëÓĞ";
+                msg = "ä½ ç¾åœ¨å¯ä»¥å¬å–šçš„ç‰©å“ä»£ç¢¼æœ‰";
                 if (sizeof(ks) >= 2)
-                        msg += implode(ks[0..sizeof(ks) - 2], "¡¢") +
-                                "ºÍ" + ks[sizeof(ks) - 1] + "¡£\n";
+                        msg += implode(ks[0..sizeof(ks) - 2], "ã€") +
+                                "å’Œ" + ks[sizeof(ks) - 1] + "ã€‚\n";
                 else
-                        msg += ks[0] + "¡£\n";
+                        msg += ks[0] + "ã€‚\n";
                 msg = sort_string(msg, 64);
                 */
-                msg = "ÄãÏÖÔÚ¿ÉÒÔÕÙ»½µÄÎïÆ·ÓĞ\n";
+                msg = "ä½ ç¾åœ¨å¯ä»¥å¬å–šçš„ç‰©å“æœ‰\n";
                 for( i=0; i<sizeof(ks); i++ )
                 {
                         if( !get_object(summon[ks[i]]) ) continue;
-                        msg += sprintf(HIW "ÎïÆ·´úÂë£º%-15s    ÎïÆ·Ãû×Ö£º%-20s\n"NOR,ks[i],summon[ks[i]]->name());
+                        msg += sprintf(HIW "ç‰©å“ä»£ç¢¼ï¼š%-15s    ç‰©å“åå­—ï¼š%-20s\n"NOR,ks[i],summon[ks[i]]->name());
                 }
                 write(msg);
                 return 1;
         }
 
         if (me->is_busy())
-                return notify_fail("ÄãÏÖÔÚÕıÃ¦£¬µÈÄãÓĞ¿ÕÁËÔÙËµ°É¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£å¿™ï¼Œç­‰ä½ æœ‰ç©ºäº†å†èªªå§ã€‚\n");
 
         if( !stringp(file=query("can_summon/"+str, me)) )
-                return notify_fail("Äã²»ÖªµÀÈçºÎÕÙ»½Õâ¸öÎïÆ·¡£\n");
+                return notify_fail("ä½ ä¸çŸ¥é“å¦‚ä½•å¬å–šé€™å€‹ç‰©å“ã€‚\n");
 
         if (file_size(file + ".c") < 0 && file_size(file) < 0)
-                return notify_fail("Äã²»ÖªµÀÈçºÎÕÙ»½Õâ¸öÎïÆ·¡£\n");
+                return notify_fail("ä½ ä¸çŸ¥é“å¦‚ä½•å¬å–šé€™å€‹ç‰©å“ã€‚\n");
 
         if (me->is_ghost())
-                return notify_fail("µÈÄã»¹ÁËÑôÔÙÕÙ»½°É¡£\n");
+                return notify_fail("ç­‰ä½ é‚„äº†é™½å†å¬å–šå§ã€‚\n");
 
         if( time()-query("combat/punish", me)<600 )
-                return notify_fail("ÄãÔİÊ±ÎŞ·¨¸ĞÓ¦µ½ÄãµÄÎïÆ·¡£\n");
+                return notify_fail("ä½ æš«æ™‚ç„¡æ³•æ„Ÿæ‡‰åˆ°ä½ çš„ç‰©å“ã€‚\n");
 
         if( query("no_magic", environment(me)) )
-                return notify_fail("ÄãÔÚÕâÀïÎŞ·¨¸ĞÓ¦µ½ÄãµÄÎïÆ·¡£\n");
+                return notify_fail("ä½ åœ¨é€™è£¡ç„¡æ³•æ„Ÿæ‡‰åˆ°ä½ çš„ç‰©å“ã€‚\n");
 
         call_other(file, "???");
         ob = find_object(file);
         if (! ob || ! ob->receive_summon(me))
         {
-                message_vision(HIM "$N" HIM "ÑïÆğÊÖÀ´£¬¿ÚÖĞÄîÄîÓĞ"
-                               "´Ê¡£\nÈ»¶øÊ²Ã´Ò²Ã»ÓĞ·¢Éú :)\n", me);
+                message_vision(HIM "$N" HIM "æšèµ·æ‰‹ä¾†ï¼Œå£ä¸­å¿µå¿µæœ‰"
+                               "è©ã€‚\nç„¶è€Œä»€éº¼ä¹Ÿæ²’æœ‰ç™¼ç”Ÿ :)\n", me);
         }
 
         if (me->is_fighting())
@@ -74,10 +74,10 @@ int main(object me, string str)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : summon <ÎïÆ·µÄID>
+æŒ‡ä»¤æ ¼å¼ : summon <ç‰©å“çš„ID>
 
-´ËÖ¸Áî¿ÉÈÃÄã°ÑÄ³Ğ©ÎïÆ·ºô»½¹ıÀ´²¢×°±¸ÉÏ£¬µ±È»ÄãµÃÓĞÒ»¶¨µÄ
-¾«Á¦Ê©Õ¹ÏÉÊõ²ÅĞĞ¡£
+æ­¤æŒ‡ä»¤å¯è®“ä½ æŠŠæŸäº›ç‰©å“å‘¼å–šéä¾†ä¸¦è£å‚™ä¸Šï¼Œç•¶ç„¶ä½ å¾—æœ‰ä¸€å®šçš„
+ç²¾åŠ›æ–½å±•ä»™è¡“æ‰è¡Œã€‚
 HELP );
         return 1;
 }

@@ -3,7 +3,7 @@
 
 inherit F_SSERVER;
 
-string name() { return YEL "½ðÕë¶É½Ù" NOR; }
+string name() { return YEL "é‡‘é‡æ¸¡åŠ«" NOR; }
 
 #include "/kungfu/skill/eff_msg.h";
 
@@ -19,30 +19,30 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(name() + "Ö»ÄÜÔÚÕ½¶·ÖÐ¶Ô¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(name() + "åªèƒ½åœ¨æˆ°é¬¥ä¸­å°å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon=query_temp("handing", me) )
             || query("skill_type", weapon) != "throwing" )
-                return notify_fail("ÄãÏÖÔÚÊÖÖÐ²¢Ã»ÓÐÄÃ×Å°µÆ÷¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ‰‹ä¸­ä¸¦æ²’æœ‰æ‹¿è‘—æš—å™¨ã€‚\n");
 
         if (weapon->query_amount() < 30)
-                return notify_fail("ÄãÖÁÉÙÒªÄÃÓÐ¶þÊ®Ã¶°µÆ÷²ÅÄÜÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ è‡³å°‘è¦æ‹¿æœ‰äºŒåæžšæš—å™¨æ‰èƒ½æ–½å±•" + name() + "ã€‚\n");
 
         if ((skill = me->query_skill("pomie-jinzhen", 1)) < 150)
-                return notify_fail("ÄãµÄÆÆÃð½ðÕë²»¹»æµÊì£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„ç ´æ»…é‡‘é‡ä¸å¤ å«»ç†Ÿï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if ((int)me->query_skill("force") < 200)
-                return notify_fail("ÄãµÄÄÚ¹¦»ðºò²»¹»£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸç«å€™ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if( query("neili", me)<150 )
-                return notify_fail("ÄãÏÖÔÚµÄÕæÆø²»×ã£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çš„çœŸæ°£ä¸è¶³ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (! living(target))
-               return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+               return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = YEL "Ö»¼û$N" YEL "ÓÒÊÖÒ»Ñï£¬Ê©³ö¡¸" HIR "½ðÕë¶É½Ù" NOR +
-              YEL "¡¹£¬ÊÖÖÐ" + weapon->name() + YEL "Èç¼±·ç±©Óê°ãÏò$n"
-              YEL "ÉäÈ¥£¡\n" NOR;
+        msg = YEL "åªè¦‹$N" YEL "å³æ‰‹ä¸€æšï¼Œæ–½å‡ºã€Œ" HIR "é‡‘é‡æ¸¡åŠ«" NOR +
+              YEL "ã€ï¼Œæ‰‹ä¸­" + weapon->name() + YEL "å¦‚æ€¥é¢¨æš´é›¨èˆ¬å‘$n"
+              YEL "å°„åŽ»ï¼\n" NOR;
 
         my_exp=attack_power(me, "throwing");
         ob_exp=defense_power(target, "dodge");
@@ -55,9 +55,9 @@ int perform(object me, object target)
                 if (random(my_exp / 4) > ob_exp) n += 4 + random(8);
                 if (weapon->query_amount() < n) n = weapon->query_amount();
 
-                msg += HIR "ö®Ê±¼äÒ»Æ¬½ðÃ¢ÁýÕÖ$n" HIR "ËÄ·½£¬ÌýµÃÒ»Éù"
-                       "²Ò½Ð£¬" + chinese_number(n) + "ÖùÏÊÑª·É½¦¶ø³ö"
-                       "¡£\n" NOR;
+                msg += HIR "éœŽæ™‚é–“ä¸€ç‰‡é‡‘èŠ’ç± ç½©$n" HIR "å››æ–¹ï¼Œè½å¾—ä¸€è²"
+                       "æ…˜å«ï¼Œ" + chinese_number(n) + "æŸ±é®®è¡€é£›æ¿ºè€Œå‡º"
+                       "ã€‚\n" NOR;
 
                 target->receive_damage("qi", skill + random(skill), me);
                 target->receive_wound("qi", skill / 2 + random(skill / 2), me);
@@ -73,8 +73,8 @@ int perform(object me, object target)
                 message_combatd(msg, me, target);
         } else
         {
-                msg += CYN "¿ÉÊÇ$n" CYN "Ë¿ºÁ²»¸Ò´óÒâ£¬µ±¼´×óÉÁÓÒ"
-                       "±Ü£¬¶ã¿ªÁËËùÓÐµÄ°µÆ÷¡£\n" NOR;
+                msg += CYN "å¯æ˜¯$n" CYN "çµ²æ¯«ä¸æ•¢å¤§æ„ï¼Œç•¶å³å·¦é–ƒå³"
+                       "é¿ï¼Œèº²é–‹äº†æ‰€æœ‰çš„æš—å™¨ã€‚\n" NOR;
                 message_combatd(msg, me, target);
         }
         weapon->set_amount(0);

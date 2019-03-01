@@ -6,13 +6,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIG"ÏªÉ½ĞĞÂÃÍ¼"NOR,({"painting","xi shan xing lv tu","tu"}) );
+        set_name(HIG"æºªå±±è¡Œæ—…åœ–"NOR,({"painting","xi shan xing lv tu","tu"}) );
         set("taskobj", 1);
-        set("long","ÕâÊÇ¾İËµÒÑ¾­Ê§´«ÁËµÄ·¶¿íÕæ¼££¬¶ÔÓÚ°®»­Ö®ÈË£¬ËãÊÇÎŞ¼ÛÖ®±¦ÁË¡£\n");
+        set("long","é€™æ˜¯æ“šèªªå·²ç¶“å¤±å‚³äº†çš„èŒƒå¯¬çœŸè·¡ï¼Œå°äºæ„›ç•«ä¹‹äººï¼Œç®—æ˜¯ç„¡åƒ¹ä¹‹å¯¶äº†ã€‚\n");
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "·ù");
+                set("unit", "å¹…");
                 set("value", 0);
                 set_weight(20);
         }

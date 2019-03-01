@@ -8,15 +8,15 @@ inherit SWORD;
  
 void create()
 {
-        set_name(HBGRN "ĞÌÌìÄ§½£" NOR, ({ "xingtian sword", "sword" }));
+        set_name(HBGRN "åˆ‘å¤©é­”åŠ" NOR, ({ "xingtian sword", "sword" }));
         set_weight(500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
-                set("long", HIY "Õâ±ãÊÇĞÌÌìÔø¾­Ê¹ÓÃµÄÄ§½££¬½£ÌåÑª¹â³åÌì¡£\n" NOR);
+                set("unit", "æŸ„");
+                set("long", HIY "é€™ä¾¿æ˜¯åˆ‘å¤©æ›¾ç¶“ä½¿ç”¨çš„é­”åŠï¼ŒåŠé«”è¡€å…‰æ²–å¤©ã€‚\n" NOR);
                 set("value", 3000); 
-                set("no_sell", "ÕâÑù¶«Î÷²»ÄÜÂô¡£\n");
+                set("no_sell", "é€™æ¨£æ±è¥¿ä¸èƒ½è³£ã€‚\n");
                 set("rigidity",8000);   
                 set("material", "tian jing");
                 set("no_pawn", 1);
@@ -24,7 +24,7 @@ void create()
 
         set("mod_mark", "A2033");
         set("mod_level", "M2030");
-        set("mod_name", HBRED "ĞÌÌìÌ××°" NOR);
+        set("mod_name", HBRED "åˆ‘å¤©å¥—è£" NOR);
         init_sword(50000);
         set("quality_level", 3);
         

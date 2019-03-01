@@ -31,7 +31,7 @@ int main(object me, string arg)
         seteuid(geteuid(me));
 
         if (! arg)
-                   return notify_fail("Äã±ØĞëÖ¸Ã÷Ïë±à¼­µÄ¼Ì³ĞµÄ¸ùµµ°¸Â·¾¶Ãû¡£\n");
+                   return notify_fail("ä½ å¿…é ˆæŒ‡æ˜æƒ³ç·¨è¼¯çš„ç¹¼æ‰¿çš„æ ¹æª”æ¡ˆè·¯å¾‘åã€‚\n");
 
         file = 0;
         opt_compile = 0;
@@ -61,7 +61,7 @@ int main(object me, string arg)
 
         if (! sscanf(file, "%*s.c")) file += ".c"; 
         if (file_size(file) < 0)
-                return notify_fail("Ã»ÓĞ " + file + " Õâ¸öµµ°¸¡£\n");
+                return notify_fail("æ²’æœ‰ " + file + " é€™å€‹æª”æ¡ˆã€‚\n");
         set("cwf", file, me);
 
         obs = filter_array(objects(), (: inherits($(file), $1) &&
@@ -71,13 +71,13 @@ int main(object me, string arg)
         obs -= ({ find_object(VOID_OB), find_object(TEMP_OB) });
         if (sizeof(obs) > 1024 && ! opt_force)
         {
-                write("Ò»¹²ÓĞ " + sizeof(obs) + " ¸öÎï¼şÇ£Éæ"
-                      "ÔÚÄÚ£¬Èç¹ûÄã¾ö¶¨±àÒë£¬ÇëÖ¸Ã÷-f²ÎÊı¡£\n");
+                write("ä¸€å…±æœ‰ " + sizeof(obs) + " å€‹ç‰©ä»¶ç‰½æ¶‰"
+                      "åœ¨å…§ï¼Œå¦‚æœä½ æ±ºå®šç·¨è­¯ï¼Œè«‹æŒ‡æ˜-fåƒæ•¸ã€‚\n");
                 return 1;
         }
 
         if (sizeof(obs) > 100 && opt_compile)
-                message_system("ÖØĞÂ±àÒëËùÓĞ¼Ì³Ğµµ°¸£¬ÇëÉÔºò...");
+                message_system("é‡æ–°ç·¨è­¯æ‰€æœ‰ç¹¼æ‰¿æª”æ¡ˆï¼Œè«‹ç¨å€™...");
 
         base = ({ file });
         count = 0;
@@ -86,11 +86,11 @@ int main(object me, string arg)
         while (sizeof(base))
         {
                 if (! level)
-                        write(HIG "±àÒë¸ùÎÄ¼ş£º" + file + "£¬×Ü¹² " +
-                              sizeof(obs) + " ¸ö¼Ì³ĞÎÄ¼ş¡£\n" NOR);
+                        write(HIG "ç·¨è­¯æ ¹æ–‡ä»¶ï¼š" + file + "ï¼Œç¸½å…± " +
+                              sizeof(obs) + " å€‹ç¹¼æ‰¿æ–‡ä»¶ã€‚\n" NOR);
                 else
-                        write(sprintf(WHT "±àÒëµÚ %d ´Î¼Ì³ĞµÄ %d ¸ö"
-                                      "ÎÄ¼ş£¬»¹Ê£ %d ¸öÎÄ¼ş¡£\n" NOR,
+                        write(sprintf(WHT "ç·¨è­¯ç¬¬ %d æ¬¡ç¹¼æ‰¿çš„ %d å€‹"
+                                      "æ–‡ä»¶ï¼Œé‚„å‰© %d å€‹æ–‡ä»¶ã€‚\n" NOR,
                                       level, sizeof(base), sizeof(obs)));
                 temp = ({ });
                 for (i = 0; i < sizeof(base); i++)
@@ -100,7 +100,7 @@ int main(object me, string arg)
                         {
                                 object *moves;
 
-                                if (opt_detail) write("±àÒë" + base[i] + ":");
+                                if (opt_detail) write("ç·¨è­¯" + base[i] + ":");
 
                                 moves = 0;
                                 if (ob = find_object(base[i]))
@@ -123,7 +123,7 @@ int main(object me, string arg)
                 
                                 if (catch(ob = load_object(base[i])))
                                 {
-                                        write(HIR "\n±àÒëÓöµ½´íÎóÖĞÖ¹¡£\n" NOR);
+                                        write(HIR "\nç·¨è­¯é‡åˆ°éŒ¯èª¤ä¸­æ­¢ã€‚\n" NOR);
                                         return 1;
                                 }
 
@@ -133,7 +133,7 @@ int main(object me, string arg)
                                 if (objectp(ob) && arrayp(moves))
                                         moves->move(ob, 1);
 
-                                if (opt_detail) write("³É¹¦£¡\n");
+                                if (opt_detail) write("æˆåŠŸï¼\n");
 
                                 // if the old object has environment, I should
                                 // replace this object in the environment.
@@ -142,7 +142,7 @@ int main(object me, string arg)
                         } else
                         {
                                 if (opt_detail)
-                                        write("ĞèÒª±àÒë" + base[i] + "¡£\n");
+                                        write("éœ€è¦ç·¨è­¯" + base[i] + "ã€‚\n");
                         }
                         count++;
         
@@ -162,10 +162,10 @@ int main(object me, string arg)
         }
 
         if (count > 0)
-                write(HIC "×Ü¹²ÓĞ" + HIW + count + HIC "¸öµµ°¸" +
-                      (opt_compile ? "±»³É¹¦±àÒë£¡\n" NOR : "ĞèÒª±àÒë¡£\n" NOR));
+                write(HIC "ç¸½å…±æœ‰" + HIW + count + HIC "å€‹æª”æ¡ˆ" +
+                      (opt_compile ? "è¢«æˆåŠŸç·¨è­¯ï¼\n" NOR : "éœ€è¦ç·¨è­¯ã€‚\n" NOR));
         else
-                write(HIC "Ã»ÓĞ±àÒëÈÎºÎµµ°¸ĞèÒª±àÒë¡£\n" NOR);
+                write(HIC "æ²’æœ‰ç·¨è­¯ä»»ä½•æª”æ¡ˆéœ€è¦ç·¨è­¯ã€‚\n" NOR);
 
         return 1;
 }
@@ -173,17 +173,17 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : updatei <µµ°¸Ãû> [-c] [-d] [-f]
+æŒ‡ä»¤æ ¼å¼ : updatei <æª”æ¡ˆå> [-c] [-d] [-f]
  
-Õâ¸öÖ¸Áî¿ÉÒÔ¸üĞÂÄ³¸öµµ°¸ºÍËùÓĞ¼Ì³Ğ¸Ãµµ°¸µÄÎï¼ş£¬²»¹ıÄÇĞ©¸´ÖÆ
-³öÀ´µÄÎï¼ş²»»á¸üĞÂ¡£±ÈÈçÄã±àÒëÁË/feature/message£¬Ôò¼Ì³Ğ¸ÃÎÄ
-¼şµÄ/inherit/char/charºÍ¼ä½Ó¼Ì³ĞµÄ/inherit/char/npc ¶¼»á±»ÖØ
-ĞÂ±àÒë¡£Èç¹ûÒ»¸öÎï¼şÊÇÍæ¼Ò¶ÔÏó£¬Ôò²»»á±»±àÒë¡£
+é€™å€‹æŒ‡ä»¤å¯ä»¥æ›´æ–°æŸå€‹æª”æ¡ˆå’Œæ‰€æœ‰ç¹¼æ‰¿è©²æª”æ¡ˆçš„ç‰©ä»¶ï¼Œä¸éé‚£äº›å¾©åˆ¶
+å‡ºä¾†çš„ç‰©ä»¶ä¸æœƒæ›´æ–°ã€‚æ¯”å¦‚ä½ ç·¨è­¯äº†/feature/messageï¼Œå‰‡ç¹¼æ‰¿è©²æ–‡
+ä»¶çš„/inherit/char/charå’Œé–“æ¥ç¹¼æ‰¿çš„/inherit/char/npc éƒ½æœƒè¢«é‡
+æ–°ç·¨è­¯ã€‚å¦‚æœä¸€å€‹ç‰©ä»¶æ˜¯ç©å®¶å°è±¡ï¼Œå‰‡ä¸æœƒè¢«ç·¨è­¯ã€‚
 
-Èç¹û²»Ö¸Ã÷²ÎÊı-c£¬ÔòÏµÍ³Ö»ÊÇÁĞ³öĞèÒª±àÒëÄÇĞ©µµ°¸¡£Èç¹ûÖ¸Ã÷ÁË
-²ÎÊı-c£¬Ôò±àÒë·¶Î§ÔÚ1024 ¸öÎÄ¼şÄÚ,Èç¹ûÖ¸Ã÷ÁË²ÎÊı-d£¬Ôò²ÉÓÃÏê
-Ï¸Ä£Ê½ÁĞ³öËùÓĞĞèÒª±àÒëµÄµµ°¸¡£Èç¹ûÖ¸Ã÷ÁË-fÔò±àÒëËùÓĞ¶ÔÏó£¬·ñ
-Ôò³¬¹ıÁË1024¸öÎÄ¼şÏµÍ³¾Í²»»á½øĞĞ±àÒë¡£
+å¦‚æœä¸æŒ‡æ˜åƒæ•¸-cï¼Œå‰‡ç³»çµ±åªæ˜¯åˆ—å‡ºéœ€è¦ç·¨è­¯é‚£äº›æª”æ¡ˆã€‚å¦‚æœæŒ‡æ˜äº†
+åƒæ•¸-cï¼Œå‰‡ç·¨è­¯èŒƒåœåœ¨1024 å€‹æ–‡ä»¶å…§,å¦‚æœæŒ‡æ˜äº†åƒæ•¸-dï¼Œå‰‡æ¡ç”¨è©³
+ç´°æ¨¡å¼åˆ—å‡ºæ‰€æœ‰éœ€è¦ç·¨è­¯çš„æª”æ¡ˆã€‚å¦‚æœæŒ‡æ˜äº†-få‰‡ç·¨è­¯æ‰€æœ‰å°è±¡ï¼Œå¦
+å‰‡è¶…éäº†1024å€‹æ–‡ä»¶ç³»çµ±å°±ä¸æœƒé€²è¡Œç·¨è­¯ã€‚
 HELP );
     return 1;
 }

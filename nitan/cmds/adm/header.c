@@ -18,17 +18,17 @@
 inherit F_CLEAN_UP;
 
 string help = @HELP
-¿É×Ô¶¯½¨Á¢µµ°¸±êÍ·, ²¢¿ÉĞŞ¸Ä±êÍ·ÄÚÈİ
+å¯è‡ªå‹•å»ºç«‹æª”æ¡ˆæ¨™é ­, ä¸¦å¯ä¿®æ”¹æ¨™é ­å…§å®¹
 ex :
-header filename.c //Èô filename ÉĞÎŞ NT ¸ñÊ½±êÍ·, Ôò×Ô¶¯½¨Á¢Ô¤Éè±êÍ·, ×÷ÕßÎªÏÂ´ËÖ¸ÁîÖ®ÈË
-header filename author lonely // Éè¶¨ filename ×÷ÕßÎª lonely
-header filename update update_info // ×Ô¶¯ÍùÏÂµİÔö update ×ÊÑ¶
-header filename note note_info // ÌîĞ´ NOTE(×¢½â) À¸
+header filename.c //è‹¥ filename å°šç„¡ NT æ ¼å¼æ¨™é ­, å‰‡è‡ªå‹•å»ºç«‹é è¨­æ¨™é ­, ä½œè€…ç‚ºä¸‹æ­¤æŒ‡ä»¤ä¹‹äºº
+header filename author lonely // è¨­å®š filename ä½œè€…ç‚º lonely
+header filename update update_info // è‡ªå‹•å¾€ä¸‹éå¢ update è³‡è¨Š
+header filename note note_info // å¡«å¯« NOTE(æ³¨è§£) æ¬„
 
-Í¬Ê±Ö§Ô®¶àĞĞÊäÈë
-header filename author1/author2 ÊäÈë¶àÃû×÷Õß
-header filename update1/update2 ÊäÈë¶àĞĞ¸üĞÂ×ÊÑ¶
-header filename note1/note2     ÊäÈë¶àĞĞ×¢½â×ÊÑ¶
+åŒæ™‚æ”¯æ´å¤šè¡Œè¼¸å…¥
+header filename author1/author2 è¼¸å…¥å¤šåä½œè€…
+header filename update1/update2 è¼¸å…¥å¤šè¡Œæ›´æ–°è³‡è¨Š
+header filename note1/note2     è¼¸å…¥å¤šè¡Œæ³¨è§£è³‡è¨Š
 HELP;
 
 string default_header   = @HEADER
@@ -118,7 +118,7 @@ int main(object me, string arg)
         seteuid(getuid(me));
 
         if( !arg )
-                return notify_fail("ÇëÊäÈëÏëÒª½¨Á¢±êÍ·µÄµµ°¸Ãû³Æ¡£\n" );
+                return notify_fail("è«‹è¼¸å…¥æƒ³è¦å»ºç«‹æ¨™é ­çš„æª”æ¡ˆåç¨±ã€‚\n" );
         
         parse = single_quote_parse(arg);
         arg = parse[0];
@@ -135,26 +135,26 @@ int main(object me, string arg)
         filename = arg;
         
         if( file_size(filename) < 0 )
-                return notify_fail("Ã»ÓĞ "+filename+" Õâ¸öµµ°¸¡£\n");
+                return notify_fail("æ²’æœ‰ "+filename+" é€™å€‹æª”æ¡ˆã€‚\n");
         
         if( filename[<2..<1] == __SAVE_EXTENSION__ )
-                return notify_fail("Õâ¸öµµ°¸ĞÍÊ½²»ÊÊºÏ½¨Á¢±êÍ·¡£\n");
+                return notify_fail("é€™å€‹æª”æ¡ˆå‹å¼ä¸é©åˆå»ºç«‹æ¨™é ­ã€‚\n");
 
         file = read_file(arg);
         
-        // ¼ì²éÊÇ·ñÒÑ¾­½¨Á¢±êÍ·
+        // æª¢æŸ¥æ˜¯å¦å·²ç¶“å»ºç«‹æ¨™é ­
         if( file[0..41] != "/* This program is a part of NiTan3 mudlib" )
         {
                 if( create_default_header(me, filename, file) )
                 {
-                        write("\n"+filename+" Ô¤Éè±êÍ·½¨Á¢Íê±Ï¡£\n");
+                        write("\n"+filename+" é è¨­æ¨™é ­å»ºç«‹å®Œç•¢ã€‚\n");
                         return 1;
                 }
                 else
-                        return notify_fail("ÄãµÄÈ¨ÏŞ²»×ãÒÔ´¦ÀíÕâ¸öµµ°¸¡£\n");
+                        return notify_fail("ä½ çš„æ¬Šé™ä¸è¶³ä»¥è™•ç†é€™å€‹æª”æ¡ˆã€‚\n");
         }
         else if( !option || !arg2 )
-                return notify_fail(filename+" µÄ±êÍ·ÒÑ¾­½¨Á¢¡£\n");
+                return notify_fail(filename+" çš„æ¨™é ­å·²ç¶“å»ºç«‹ã€‚\n");
 
         if( option && arg2 )
         {
@@ -247,19 +247,19 @@ int main(object me, string arg)
                                 
                                 break;
                         }
-                        default: return notify_fail("Ã»ÓĞ "+option+" Õâ¸öÑ¡Ïî¡£\n");
+                        default: return notify_fail("æ²’æœ‰ "+option+" é€™å€‹é¸é …ã€‚\n");
                 }
                 
                 line = member_array(" */", efile) + 1;
                 
                 if( write_file(filename, implode(efile, "\n"), 1) )
                 {
-                        write(me->query_idname()+"ĞŞ¸Ä "+filename+" ±êÍ·¡£\n");
-                        write(read_file(filename, 1, line) +"\n\n"+filename+" Ô¤Éè±êÍ·½¨Á¢Íê±Ï¡£\n");
+                        write(me->query_idname()+"ä¿®æ”¹ "+filename+" æ¨™é ­ã€‚\n");
+                        write(read_file(filename, 1, line) +"\n\n"+filename+" é è¨­æ¨™é ­å»ºç«‹å®Œç•¢ã€‚\n");
                         return 1;
                 }
                 else
-                        return notify_fail("ÄãµÄÈ¨ÏŞ²»×ãÒÔ´¦ÀíÕâ¸öµµ°¸¡£\n");               
+                        return notify_fail("ä½ çš„æ¬Šé™ä¸è¶³ä»¥è™•ç†é€™å€‹æª”æ¡ˆã€‚\n");               
         }
 }
 

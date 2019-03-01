@@ -8,22 +8,22 @@ inherit F_EQUIP;
 
 void create()
 {
-        set_name(HIY "Í­°å" NOR, ({"coin", "coins", "coin_money" }));
+        set_name(HIY "éŠ…æ¿" NOR, ({"coin", "coins", "coin_money" }));
         if( clonep() )
                 set_default_object(__FILE__);
         else {
                 set("money_id", "coin");
-                set("long", "ÕâÊÇÁ÷Í¨ÖĞµ¥Î»×îĞ¡µÄ»õ±Ò£¬Ô¼ÒªÒ»°Ù¸öÍ­°å²ÅÖµµÃÒ»Á½Òø×Ó¡£\n");
-                set("unit", "´®");
+                set("long", "é€™æ˜¯æµé€šä¸­å–®ä½æœ€å°çš„è²¨å¹£ï¼Œç´„è¦ä¸€ç™¾å€‹éŠ…æ¿æ‰å€¼å¾—ä¸€å…©éŠ€å­ã€‚\n");
+                set("unit", "ä¸²");
                 set("base_value", 1);
-                set("base_unit", "¸ö");
+                set("base_unit", "å€‹");
                 set("base_weight", 30);
                 set("consistence", 100);
 
                 set("weapon_prop/damage", 10);
                 set("flag", 2);
-                set("wield_msg", "$N´ÓĞä¿ÚÈ¡³öÒ»´®$nÅ×ÁËÅ×£¬ÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n·Å»Ø¶µÀï¡£\n");
+                set("wield_msg", "$Nå¾è¢–å£å–å‡ºä¸€ä¸²$næ‹‹äº†æ‹‹ï¼Œæ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°‡æ‰‹ä¸­çš„$næ”¾å›å…œè£¡ã€‚\n");
                 set("skill_type", "throwing");
                 if( !query("actions") ) {
                     set("actions", (: call_other,WEAPON_D, "query_action" :));

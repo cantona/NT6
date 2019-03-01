@@ -40,11 +40,11 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½£ºban [+|- site]
+æŒ‡ä»¤æ ¼å¼ï¼šban [+|- site]
           ban [add|del id]
           ban [list wel|net]
 
-ÕâÌõÃüÁîÊÇÓÃÀ´·ÀÖ¹ÓĞÈËĞîÒâµ·ÂÒ¡£
+é€™æ¢å‘½ä»¤æ˜¯ç”¨ä¾†é˜²æ­¢æœ‰äººè“„æ„æ—äº‚ã€‚
 HELP
         );
         return 1;

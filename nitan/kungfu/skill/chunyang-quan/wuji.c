@@ -1,13 +1,13 @@
 // Code of Shenzhou
 // creat by Karlopex@sz
 /*************************************************************************************
-perform wuji £¨¡¸´¿ÑôÎÞ¼«¡¹£©--ÖÐ¸ßÊÖÔÚ³öÉñÍ¨Ö®Ç°Ò»¸öÖØÒª½ø¹¥ÐÔpfm£¬¿ìËÙ¹¥»÷Ò»ÕÐ£¬ÍþÁ¦¾Þ´ó£¬µ«Ëù·ÑÄÚÁ¦Í¬Ñù¾Þ´ó¡£
-Ìõ¼þ£º´¿ÑôÈ­µÈ¼¶200£¬ÏÈÌì¹¦µÈ¼¶200¡££¨×¢£º²»ÊÇÓÐÐ§µÈ¼¶£©
-¹¦ÄÜ£ºÔö¼Ó20% attack
-ÏÞÖÆ£ºÖ»¿ÉÓëpfm sanhua »òÕß perform yanwuÖ®Ò»×éºÏÊ¹ÓÃ¡£
-      ÍþÁ¦¾Þ´ó£¬busyÊ±¼äÉÔ³¤ 20 tick +»òÖÁÕ½¶·½áÊø¡£
-      Ëù·ÑÄÚÁ¦ÓëÍþÁ¦³ÉÕý±È¡£ÍþÁ¦Ô½´ó£¬ÄÚÁ¦ÐèÇóÔ½¶à¡£skill*2
-ÃèÊö£º$1ÔËÆðÏÈÌì¹¦Ö®´¿ÑôÄÚ¾¢£¬Ì«ÑôÑ¨¸ß¸ß¹ÄÆð£¬ÃæÈç½ð²­£¬Ëù·¢È­ÕÐ¾¹´ø³öàÍàÍÉùÏì£¬´Ó²»¿ÉË¼Òé·½Î»Ïò$1»÷À´Ò»ÕÐ¡£
+perform wuji ï¼ˆã€Œç´”é™½ç„¡æ¥µã€ï¼‰--ä¸­é«˜æ‰‹åœ¨å‡ºç¥žé€šä¹‹å‰ä¸€å€‹é‡è¦é€²æ”»æ€§pfmï¼Œå¿«é€Ÿæ”»æ“Šä¸€æ‹›ï¼Œå¨åŠ›å·¨å¤§ï¼Œä½†æ‰€è²»å…§åŠ›åŒæ¨£å·¨å¤§ã€‚
+æ¢ä»¶ï¼šç´”é™½æ‹³ç­‰ç´š200ï¼Œå…ˆå¤©åŠŸç­‰ç´š200ã€‚ï¼ˆæ³¨ï¼šä¸æ˜¯æœ‰æ•ˆç­‰ç´šï¼‰
+åŠŸèƒ½ï¼šå¢žåŠ 20% attack
+é™åˆ¶ï¼šåªå¯èˆ‡pfm sanhua æˆ–è€… perform yanwuä¹‹ä¸€çµ„åˆä½¿ç”¨ã€‚
+      å¨åŠ›å·¨å¤§ï¼Œbusyæ™‚é–“ç¨é•· 20 tick +æˆ–è‡³æˆ°é¬¥çµæŸã€‚
+      æ‰€è²»å…§åŠ›èˆ‡å¨åŠ›æˆæ­£æ¯”ã€‚å¨åŠ›è¶Šå¤§ï¼Œå…§åŠ›éœ€æ±‚è¶Šå¤šã€‚skill*2
+æè¿°ï¼š$1é‹èµ·å…ˆå¤©åŠŸä¹‹ç´”é™½å…§å‹ï¼Œå¤ªé™½ç©´é«˜é«˜é¼“èµ·ï¼Œé¢å¦‚é‡‘ç®”ï¼Œæ‰€ç™¼æ‹³æ‹›ç«Ÿå¸¶å‡ºå—¤å—¤è²éŸ¿ï¼Œå¾žä¸å¯æ€è­°æ–¹ä½å‘$1æ“Šä¾†ä¸€æ‹›ã€‚
 ***************************************************************************************/               
 #include <ansi.h>
 #include <combat.h>
@@ -29,37 +29,37 @@ int perform(object me, object target)
         ||        !target->is_character()
         ||        !me->is_fighting(target)
         ||      !living(target) )
-                return notify_fail("¡¸´¿ÑôÎÞ¼«¡¹Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œç´”é™½ç„¡æ¥µã€åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( objectp(query_temp("weapon", me)) )
-                return notify_fail("¡¸´¿ÑôÎÞ¼«¡¹Ðè¿ÕÊÖ²ÅÄÜÊ©Õ¹£¡\n");
+                return notify_fail("ã€Œç´”é™½ç„¡æ¥µã€éœ€ç©ºæ‰‹æ‰èƒ½æ–½å±•ï¼\n");
 
         if( me->query_skill_mapped("cuff") != "chunyang-quan" )
-                return notify_fail("ÄãËùÓÃµÄ²¢·Ç´¿ÑôÈ­£¬²»ÄÜÊ©Õ¹¡¸´¿ÑôÎÞ¼«¡¹£¡\n");
+                return notify_fail("ä½ æ‰€ç”¨çš„ä¸¦éžç´”é™½æ‹³ï¼Œä¸èƒ½æ–½å±•ã€Œç´”é™½ç„¡æ¥µã€ï¼\n");
 
         if( me->query_skill_prepared("cuff") != "chunyang-quan" )
-                return notify_fail("ÄãËù±¸µÄ²¢·Ç´¿ÑôÈ­£¬²»ÄÜÊ©Õ¹¡¸´¿ÑôÎÞ¼«¡¹£¡\n");
+                return notify_fail("ä½ æ‰€å‚™çš„ä¸¦éžç´”é™½æ‹³ï¼Œä¸èƒ½æ–½å±•ã€Œç´”é™½ç„¡æ¥µã€ï¼\n");
 
         if( me->query_skill_mapped("force") != "xiantian-gong" )
-                return notify_fail("ÄãËùÓÃµÄ²¢·ÇÐþÃÅÏÈÌì¹¦£¬Ê©Õ¹²»³ö¡¸´¿ÑôÎÞ¼«¡¹£¡\n");
+                return notify_fail("ä½ æ‰€ç”¨çš„ä¸¦éžçŽ„é–€å…ˆå¤©åŠŸï¼Œæ–½å±•ä¸å‡ºã€Œç´”é™½ç„¡æ¥µã€ï¼\n");
 
         if( me->query_skill("xiantian-gong",1) < 199 )
-                return notify_fail("ÄãµÄÐþÃÅÏÈÌì¹¦»ðºòÎ´µ½£¬ÎÞ·¨Ê©Õ¹¡¸´¿ÑôÎÞ¼«¡¹£¡\n");
+                return notify_fail("ä½ çš„çŽ„é–€å…ˆå¤©åŠŸç«å€™æœªåˆ°ï¼Œç„¡æ³•æ–½å±•ã€Œç´”é™½ç„¡æ¥µã€ï¼\n");
 
         if( me->query_skill("chunyang-quan", 1) < 199 )
-                return notify_fail("¡¸´¿ÑôÎÞ¼«¡¹ÐèÒª¾«Õ¿µÄ´¿ÑôÈ­·½ÄÜÓÐÐ§Ê©Õ¹£¡\n");
+                return notify_fail("ã€Œç´”é™½ç„¡æ¥µã€éœ€è¦ç²¾æ¹›çš„ç´”é™½æ‹³æ–¹èƒ½æœ‰æ•ˆæ–½å±•ï¼\n");
 
         skill = me->query_skill("force") + me->query_skill("cuff");
         jiali=query("jiali", me);
         jiajin=query("jiajin", me);
         if( query("neili", me) <= skill*3/2 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»Ê¹ÓÃ¡¸´¿ÑôÎÞ¼«¡¹£¡\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ä½¿ç”¨ã€Œç´”é™½ç„¡æ¥µã€ï¼\n");
         if( query("jingli", me) <= skill )
-                return notify_fail("ÄãµÄ¾«Á¦²»¹»Ê¹ÓÃ¡¸´¿ÑôÎÞ¼«¡¹£¡\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤ ä½¿ç”¨ã€Œç´”é™½ç„¡æ¥µã€ï¼\n");
 
         addn_temp("apply/attack", skill/3, me);
         addn_temp("apply/damage", skill/6, me);
-        message_vision(HIG "\n\n$NÔËÆðÏÈÌì¹¦Ö®´¿ÑôÄÚ¾¢£¬Ì«ÑôÑ¨¸ß¸ß¹ÄÆð£¬ÃæÈç½ð²­£¬Ëù·¢È­ÕÐ¾¹´ø³öàÍàÍÉùÏì£¬´Ó²»¿ÉË¼ÒéµÄ·½Î»Ïò$n¹¥³öÒ»ÕÐ£¡£¡£¡\n" NOR, me, target);
+        message_vision(HIG "\n\n$Né‹èµ·å…ˆå¤©åŠŸä¹‹ç´”é™½å…§å‹ï¼Œå¤ªé™½ç©´é«˜é«˜é¼“èµ·ï¼Œé¢å¦‚é‡‘ç®”ï¼Œæ‰€ç™¼æ‹³æ‹›ç«Ÿå¸¶å‡ºå—¤å—¤è²éŸ¿ï¼Œå¾žä¸å¯æ€è­°çš„æ–¹ä½å‘$næ”»å‡ºä¸€æ‹›ï¼ï¼ï¼\n" NOR, me, target);
         chkpfm(me, target, skill);
         addn_temp("apply/attack", -skill/3, me);
         addn_temp("apply/damage", -skill/6, me);
@@ -85,7 +85,7 @@ int perform(object me, object target)
 void chkpfm(object me, object target, int amount)
 {
         object weapon2=query_temp("weapon", target);
-        string *limbs, action, limb, attack_skill, dodge_skill, parry_skill, result, msg = "", *type = ({"²ÁÉË","ðöÉË","ÄÚÉË"});
+        string *limbs, action, limb, attack_skill, dodge_skill, parry_skill, result, msg = "", *type = ({"æ“¦å‚·","ç˜€å‚·","å…§å‚·"});
         int ap, dp, pp, damage, level, sp, sp2, ap2, jiali, jiajin;
         if( !me->is_fighting(target) || !living(target) ) 
                 return;
@@ -111,8 +111,8 @@ void chkpfm(object me, object target, int amount)
                 dodge_skill = target->query_skill_mapped("dodge");
                 if ( !dodge_skill ) dodge_skill = "dodge";
                 if ( random( dp  * 9 / 10 ) < random(sp) ){
-                        msg += HIY "\n$nÒÔ"+to_chinese(dodge_skill)+"µÄÉí·¨ÉÁ¹ýÕâÒ»»÷£¬ÉíÐÎÉÐÎ´Í£ÎÈ£¬±»$NÇÀÏÈÆÛÉíµ½Ç°¡£\n" NOR;
-                        msg += HIG "\n" + action + "£¡\n" +NOR;
+                        msg += HIY "\n$nä»¥"+to_chinese(dodge_skill)+"çš„èº«æ³•é–ƒéŽé€™ä¸€æ“Šï¼Œèº«å½¢å°šæœªåœç©©ï¼Œè¢«$Næ¶å…ˆæ¬ºèº«åˆ°å‰ã€‚\n" NOR;
+                        msg += HIG "\n" + action + "ï¼\n" +NOR;
                         target->receive_damage("qi", damage/3, me);
                         target->receive_wound("qi", damage/5, me);
                         result = COMBAT_D->damage_msg(damage, type[random(sizeof(type))]);
@@ -133,7 +133,7 @@ void chkpfm(object me, object target, int amount)
                         if( !parry_skill || !SKILL_D(parry_skill)->parry_available()) 
                                 parry_skill = "parry";
                         if ( random(ap2) > random(pp * 3 / 2) && !weapon2 ){
-                                msg += HIY "\n$nÒÔ"+to_chinese(parry_skill)+"µÄÕÐÊ½ÉúÉú½ÓÏÂÕâÒ»»÷£¬½á¹û$NµÄÕÐÊ½É±ÉË¾Þ´ó¡£\n" NOR;
+                                msg += HIY "\n$nä»¥"+to_chinese(parry_skill)+"çš„æ‹›å¼ç”Ÿç”ŸæŽ¥ä¸‹é€™ä¸€æ“Šï¼Œçµæžœ$Nçš„æ‹›å¼æ®ºå‚·å·¨å¤§ã€‚\n" NOR;
                                 target->receive_damage("qi", damage/6, me);
                                 target->receive_wound("qi", damage/10, me);
                                 result = COMBAT_D->damage_msg(damage, type[random(sizeof(type))]);

@@ -14,54 +14,54 @@ int main(object me, string arg)
         seteuid(getuid());
 
         if( !mapp(couple=query("couple", me)) )
-                return notify_fail("ÄãÏÖÔÚºÃÏñÊÇµ¥ÉíÒ»ÈË°É£¿\n");
+                return notify_fail("ä½ ç¾åœ¨å¥½åƒæ˜¯å–®èº«ä¸€äººå§ï¼Ÿ\n");
 
         if (! arg)
-                return notify_fail("ÄãÒªºÍË­½â³ı»éÔ¼£¿\n");
+                return notify_fail("ä½ è¦å’Œèª°è§£é™¤å©šç´„ï¼Ÿ\n");
 
         if( arg == query("id", me) )
-                return notify_fail("·èÁË...ÄãÕæµÄ·èÁË...\n");
+                return notify_fail("ç˜‹äº†...ä½ çœŸçš„ç˜‹äº†...\n");
 
         if( arg != query("couple/couple_id", me) )
-                return notify_fail("ÕâÈËºÍÄãÏÖÔÚ²¢²»ÊÇ·òÆŞ¹ØÏµ°¡£¡\n");
+                return notify_fail("é€™äººå’Œä½ ç¾åœ¨ä¸¦ä¸æ˜¯å¤«å¦»é—œç³»å•Šï¼\n");
 
         if (objectp(witness = present("marriage witness", environment(me))))
                 return witness->do_divorce(me);
 
         if( !query_temp("pending/want_divorce", me) )
         {
-                write("ÄãÉí±ßÁ¬¸öÖ¤»éµÄÈË¶¼Ã»ÓĞ£¬¾ÍÏñ²İ²İµÄÀëÁË"
-                      "ËãÁË£¿ÒªÊÇÕâÑù£¬Äã¾ÍÔÚÊäÈëÒ»´ÎÕâ¸öÖ¸Áî±íÊ¾¾öĞÄ¡£\n");
+                write("ä½ èº«é‚Šé€£å€‹è¨¼å©šçš„äººéƒ½æ²’æœ‰ï¼Œå°±åƒè‰è‰çš„é›¢äº†"
+                      "ç®—äº†ï¼Ÿè¦æ˜¯é€™æ¨£ï¼Œä½ å°±åœ¨è¼¸å…¥ä¸€æ¬¡é€™å€‹æŒ‡ä»¤è¡¨ç¤ºæ±ºå¿ƒã€‚\n");
                 set_temp("pending/want_divorce", 1, me);
                 return 1;
         }
 
-        write("ÄãÏÂ¶¨¾öĞÄ£¬Ò»¶¨ÒªºÍ"+query("couple/couple_name", me)+"³¹µ×·ÖÊÖ£¡\n");
+        write("ä½ ä¸‹å®šæ±ºå¿ƒï¼Œä¸€å®šè¦å’Œ"+query("couple/couple_name", me)+"å¾¹åº•åˆ†æ‰‹ï¼\n");
 
         CHANNEL_D->do_channel(me, "chat",
-                "ÎÒ" + me->name(1) + "´Ó½ñÌìÆğ¾ÍºÍ" + couple["couple_name"] +
-                "(" + couple["couple_id"] + ")³¹µ×¶Ï¾ø¹ØÏµ£¡");
+                "æˆ‘" + me->name(1) + "å¾ä»Šå¤©èµ·å°±å’Œ" + couple["couple_name"] +
+                "(" + couple["couple_id"] + ")å¾¹åº•æ–·çµ•é—œç³»ï¼");
 
         user = find_player(couple["couple_id"]);
         if (user)
         {
                 switch(query("character", user) )
                 {
-                case "¹âÃ÷ÀÚÂä":
-                        msg = "ÌìÄÄ£¡" + me->name(1) + "ÄãÕâÃ»ÓĞÁ¼ĞÄµÄ" +
-                              RANK_D->query_rude(me) + "£¡";
+                case "å…‰æ˜ç£Šè½":
+                        msg = "å¤©å“ªï¼" + me->name(1) + "ä½ é€™æ²’æœ‰è‰¯å¿ƒçš„" +
+                              RANK_D->query_rude(me) + "ï¼";
                         break;
 
-                case "½Æ÷ï¶à±ä":
-                        msg = "ºß..ºß£¡ºÙ£¡×ß°É£¬×ß°É£¡";
+                case "ç‹¡é» å¤šè®Š":
+                        msg = "å“¼..å“¼ï¼å˜¿ï¼èµ°å§ï¼Œèµ°å§ï¼";
                         break;
 
-                case "ĞÄºİÊÖÀ±":
-                        msg = "ºÃÄã¸ö" + me->name(1) + "£¬ÔÛÃÇ×ß×ÅÇÆ£¡";
+                case "å¿ƒç‹ æ‰‹è¾£":
+                        msg = "å¥½ä½ å€‹" + me->name(1) + "ï¼Œå’±å€‘èµ°è‘—ç§ï¼";
                         break;
 
                 default:
-                        msg = "ºÜºÃ£¬" + me->name(1) + "ÄãµÈ×Å°É£¡";
+                        msg = "å¾ˆå¥½ï¼Œ" + me->name(1) + "ä½ ç­‰è‘—å§ï¼";
                         break;
                 }
 
@@ -75,9 +75,9 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : divorce
+æŒ‡ä»¤æ ¼å¼ : divorce
  
-Àë»é¡£ÒâË¼¾ÍÊÇÒÔºó¸÷×ß¸÷µÄÂ·¡£
+é›¢å©šã€‚æ„æ€å°±æ˜¯ä»¥å¾Œå„èµ°å„çš„è·¯ã€‚
  
 see also : divorce
 HELP );

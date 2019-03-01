@@ -4,12 +4,12 @@
 inherit NPC;
 
 string *degree_desc = ({
-       HIR "×Ü¶½" NOR,
-       MAG "±ø²¿ÊÌÀÉ" NOR,
-       MAG "±ø²¿ÉĞÊé" NOR,
-       HIB "Õò±±½Ú¶ÈÊ¹" NOR,
-       HIB "Õ÷ÌÖ´ó½«¾ü" NOR,
-       HIW "±øÂí´óÔªË§" NOR,
+       HIR "ç¸½ç£" NOR,
+       MAG "å…µéƒ¨ä¾éƒ" NOR,
+       MAG "å…µéƒ¨å°šæ›¸" NOR,
+       HIB "é®åŒ—ç¯€åº¦ä½¿" NOR,
+       HIB "å¾è¨å¤§å°‡è»" NOR,
+       HIW "å…µé¦¬å¤§å…ƒå¸¥" NOR,
 });
 string clear_degree(string arg);
 string ask_fengshang();
@@ -19,11 +19,11 @@ int add_degree(object ob, int lv);
 
 void create()
 {
-        set_name("Áõ¹«¹«", ({"liu gonggong", "liu"}));   
-        set("gender", "ÎŞĞÔ");
+        set_name("åŠ‰å…¬å…¬", ({"liu gonggong", "liu"}));   
+        set("gender", "ç„¡æ€§");
         set("age", random(20) + 20);
 
-        set("long", "ÕâÊÇÒ»¸ö¾©³Ç»Ê¹¬ÖĞµÄÒ»ÃûÌ«¼à£¬¸ºÔğÎª»ÊµÛ´«ËÍ×à±¾¡£\n");
+        set("long", "é€™æ˜¯ä¸€å€‹äº¬åŸçš‡å®®ä¸­çš„ä¸€åå¤ªç›£ï¼Œè² è²¬ç‚ºçš‡å¸å‚³é€å¥æœ¬ã€‚\n");
         set("combat_exp", 800000);
         set("attitude", "peaceful");
         set("max_qi", 3000);
@@ -32,9 +32,9 @@ void create()
         set("neili", 1000);
         set("no_get", 1);
         set("inquiry", ([
-                 "²ß·â" :   (: ask_degree :),  
-                 "³ö±ø" :   (: ask_chubing :),    
-                 "·âÉÍ" :   (: ask_fengshang :),  
+                 "ç­–å°" :   (: ask_degree :),  
+                 "å‡ºå…µ" :   (: ask_chubing :),    
+                 "å°è³" :   (: ask_fengshang :),  
              ]));
 
         setup();
@@ -48,8 +48,8 @@ int ask_degree()
 
         if( query_temp("degree_jungong", ob) )
         {
-                 command("say ´óÈËÉÔ°²ÎğÔê£¬"
-                        + "ÔÛ¼ÒÒÑ¾­Æô×àÊ¥ÉÏÁË£¬»¹ÊÇÏÈÄÍĞÄ¹§ºòÊ¥ÉÏÖ¼Òâ°É£¡\n");
+                 command("say å¤§äººç¨å®‰å‹¿èºï¼Œ"
+                        + "å’±å®¶å·²ç¶“å•Ÿå¥è–ä¸Šäº†ï¼Œé‚„æ˜¯å…ˆè€å¿ƒæ­å€™è–ä¸Šæ—¨æ„å§ï¼\n");
                  return 1;
         }
 
@@ -59,18 +59,18 @@ int ask_degree()
 
         if (lv > (sizeof(degree_desc) + 8))
         {
-                 command("say ´óÈËÒÑ¾­¹Ù¾Ó¼«Æ·£¬Î»¸ßÈ¨ÖØ£¬¸Ã¶à¿¼ÂÇĞ©"
-                        + "Îª¹ú¼ÒÉçğ¢³öÁ¦²ÅÊÇ£¡\n");
+                 command("say å¤§äººå·²ç¶“å®˜å±…æ¥µå“ï¼Œä½é«˜æ¬Šé‡ï¼Œè©²å¤šè€ƒæ…®äº›"
+                        + "ç‚ºåœ‹å®¶ç¤¾ç¨·å‡ºåŠ›æ‰æ˜¯ï¼\n");
                  return 1;       
         }
 
         if( lv <= query("degree_jungong", ob) || query("degree_jungong", ob)<8 )
         {
-                 command("say Òª»ñµÃ¸ü¸ßµÄ²ß·â£¬´óÈËËùÁ¢¾ü¹¦ºÃÏó²»¹»°¡£¡\n");
+                 command("say è¦ç²å¾—æ›´é«˜çš„ç­–å°ï¼Œå¤§äººæ‰€ç«‹è»åŠŸå¥½è±¡ä¸å¤ å•Šï¼\n");
                  return 1;
         }
 
-        command("say ´óÈËÇëÉÔºò£¬ÔÛ¼ÒÕâ¾ÍÁ¢¿ÌÙ÷±¨Ê¥ÉÏ£¬Îª´óÈËÇë·â£¡\n");
+        command("say å¤§äººè«‹ç¨å€™ï¼Œå’±å®¶é€™å°±ç«‹åˆ»ç¨Ÿå ±è–ä¸Šï¼Œç‚ºå¤§äººè«‹å°ï¼\n");
 
         remove_call_out("add_degree");
         call_out("add_degree", 10, ob, lv);
@@ -86,28 +86,28 @@ int add_degree(object ob, int lv)
         if( query("degree", ob))old_degree=query("degree", ob);
         else old_degree = "";
 
-        message("channel:rumor", MAG"¡¾´óËÎ¾©³Ç¡¿"NOR + YEL
+        message("channel:rumor", MAG"ã€å¤§å®‹äº¬åŸã€‘"NOR + YEL
                 + CHINESE_D->chinese_date((time() - 14 * 365 * 24 * 60 * 60))
                 + "......\n"NOR,
                 users());
 
-        message("channel:rumor", MAG"¡¾´óËÎ¾©³Ç¡¿"HIY"·îÌì³ĞÃü£¬»ÊµÛÚ¯Ô»£º"
-                +"²ß·â"+old_degree+""+HIW+query("name", ob )
-                + HIY" Îª´óËÎ "NOR + degree + HIY"£¬ÇÕ´Ë£¡\n"NOR,
+        message("channel:rumor", MAG"ã€å¤§å®‹äº¬åŸã€‘"HIY"å¥‰å¤©æ‰¿å‘½ï¼Œçš‡å¸è©˜æ›°ï¼š"
+                +"ç­–å°"+old_degree+""+HIW+query("name", ob )
+                + HIY" ç‚ºå¤§å®‹ "NOR + degree + HIY"ï¼Œæ¬½æ­¤ï¼\n"NOR,
                 users());
         delete_temp("degree_jungong", ob);
 
         if( query("degree", ob) )
         {
                  if( query("degree_ask", ob) )
-                         degree=HIM"¡î"NOR+clear_degree(query("degree", ob) )
-                                     + HIM " ¡î " NOR + degree + HIM " ¡î "NOR;
+                         degree=HIM"â˜†"NOR+clear_degree(query("degree", ob) )
+                                     + HIM " â˜† " NOR + degree + HIM " â˜† "NOR;
                   else
-                         degree=HIM"¡î"NOR+clear_degree(query("degree", ob) )
-                                     + degree + HIM " ¡î " NOR;
+                         degree=HIM"â˜†"NOR+clear_degree(query("degree", ob) )
+                                     + degree + HIM " â˜† " NOR;
               } else
-                degree = HIM " ¡î " NOR + degree
-                             + HIM " ¡î " NOR;   
+                degree = HIM " â˜† " NOR + degree
+                             + HIM " â˜† " NOR;   
 
         set("degree_jungong", lv, ob);
         set("degree", degree, ob);
@@ -117,23 +117,23 @@ int add_degree(object ob, int lv)
 
 string clear_degree(string arg)
 {
-               if ((strsrch(arg, HIR "Ìá¶½" NOR) >= 0)
-        ||  (strsrch(arg, HIR "×Ü¶½" NOR) >= 0) 
-        ||  (strsrch(arg, MAG "±ø²¿ÊÌÀÉ" NOR) >= 0) 
-        ||  (strsrch(arg, MAG "±ø²¿ÉĞÊé" NOR) >= 0)
-        ||  (strsrch(arg, HIB "Õò±±½Ú¶ÈÊ¹" NOR) >= 0) 
-        ||  (strsrch(arg, HIB "Õ÷ÌÖ´ó½«¾ü" NOR) >= 0) 
-        ||  (strsrch(arg, HIW "±øÂí´óÔªË§" NOR) >= 0) 
-        ||  (strsrch(arg, HIM " ¡î " NOR) >= 0))
+               if ((strsrch(arg, HIR "æç£" NOR) >= 0)
+        ||  (strsrch(arg, HIR "ç¸½ç£" NOR) >= 0) 
+        ||  (strsrch(arg, MAG "å…µéƒ¨ä¾éƒ" NOR) >= 0) 
+        ||  (strsrch(arg, MAG "å…µéƒ¨å°šæ›¸" NOR) >= 0)
+        ||  (strsrch(arg, HIB "é®åŒ—ç¯€åº¦ä½¿" NOR) >= 0) 
+        ||  (strsrch(arg, HIB "å¾è¨å¤§å°‡è»" NOR) >= 0) 
+        ||  (strsrch(arg, HIW "å…µé¦¬å¤§å…ƒå¸¥" NOR) >= 0) 
+        ||  (strsrch(arg, HIM " â˜† " NOR) >= 0))
                {
-                    arg = replace_string(arg, HIR "×Ü¶½" NOR, "");
-                    arg = replace_string(arg, MAG "±ø²¿ÊÌÀÉ" NOR, ""); 
-                    arg = replace_string(arg, MAG "±ø²¿ÉĞÊé" NOR, "");
-                    arg = replace_string(arg, HIB "Õò±±½Ú¶ÈÊ¹" NOR, "");   
-                    arg = replace_string(arg, HIB "Õ÷ÌÖ´ó½«¾ü" NOR, "");
-                    arg = replace_string(arg, HIW "±øÂí´óÔªË§" NOR, "");
-                    arg = replace_string(arg, HIR "Ìá¶½" NOR, "");   
-                    arg = replace_string(arg, HIM " ¡î " NOR, "");
+                    arg = replace_string(arg, HIR "ç¸½ç£" NOR, "");
+                    arg = replace_string(arg, MAG "å…µéƒ¨ä¾éƒ" NOR, ""); 
+                    arg = replace_string(arg, MAG "å…µéƒ¨å°šæ›¸" NOR, "");
+                    arg = replace_string(arg, HIB "é®åŒ—ç¯€åº¦ä½¿" NOR, "");   
+                    arg = replace_string(arg, HIB "å¾è¨å¤§å°‡è»" NOR, "");
+                    arg = replace_string(arg, HIW "å…µé¦¬å¤§å…ƒå¸¥" NOR, "");
+                    arg = replace_string(arg, HIR "æç£" NOR, "");   
+                    arg = replace_string(arg, HIM " â˜† " NOR, "");
                }
         return arg;
 }
@@ -146,15 +146,15 @@ string ask_chubing()
                int liangcao, i, reward;
 
                if (me->query_condition("junquest_fail"))
-                       return "´óÈËÉĞÊÇ´ı×ïÖ®Éí£¬ÇáÑÔ³ö±ø£¬¿ÖĞÔÃüÄÑ±£°¡£¬»¹ÊÇÇë»Ø°É£¡\n";
+                       return "å¤§äººå°šæ˜¯å¾…ç½ªä¹‹èº«ï¼Œè¼•è¨€å‡ºå…µï¼Œææ€§å‘½é›£ä¿å•Šï¼Œé‚„æ˜¯è«‹å›å§ï¼\n";
                if (me->query_condition("junquest_song"))
-                       return "´óÈËÒÑ¾­¾­¾üÁîÔÚÉíÁË£¬»¹ÔÚÕâÀïÄ¥²äÊ²Ã´°¡£¿£¡\n";
+                       return "å¤§äººå·²ç¶“ç¶“è»ä»¤åœ¨èº«äº†ï¼Œé‚„åœ¨é€™è£¡ç£¨è¹­ä»€éº¼å•Šï¼Ÿï¼\n";
                if( query("degree_jungong", me)<8 )
-                       return "´óÈË¹ÙµÍÎ»±°£¬ÈçºÎÄÜÈÎÒ»¾üÖ®Ë§£¬ÄÑ·şÈËĞÄÄÄ£¿£¡\n"; 
+                       return "å¤§äººå®˜ä½ä½å‘ï¼Œå¦‚ä½•èƒ½ä»»ä¸€è»ä¹‹å¸¥ï¼Œé›£æœäººå¿ƒå“ªï¼Ÿï¼\n"; 
 
                temp = read_file("/quest/quest_jun/song/master", 1, 1);
                if (temp != "" && (time() - query("begin/time")) < 4200)
-                       return "ÏÖÔÚÒÑ¾­ÓĞÈËÂÊ¾ü³öÕ÷ÁË£¬´óÈË¿ÉÒÔÇ°È¥ÖúÕó¡£\n";
+                       return "ç¾åœ¨å·²ç¶“æœ‰äººç‡è»å‡ºå¾äº†ï¼Œå¤§äººå¯ä»¥å‰å»åŠ©é™£ã€‚\n";
 
                set_temp("jun_quest/party", "song", me);
 
@@ -187,13 +187,13 @@ string ask_chubing()
                me->apply_condition("junquest_song", 240);
                remove_call_out("quest_begin");
                call_out("quest_begin", 10, me->short(1), me);
-               set("party/party_name", HIW"´óËÎ"NOR, me);
-               set("party/rank", HIW"±øÂíÔªË§"NOR, me);
+               set("party/party_name", HIW"å¤§å®‹"NOR, me);
+               set("party/rank", HIW"å…µé¦¬å…ƒå¸¥"NOR, me);
                delete("jun_quest/jiang", me);
 
-               return HIC"´óÈË£¬³¯ÖĞ¿ÉÓÃÖ®±øÒÑ¾­ËùÊ£ÎŞ¼¸£¬½ö´ËÊıÓª²½±ø£¬ÉĞ¿ÉÒ»Õ½£¬\n"
-                       + "´Ë´Î³öÕ÷£¬ÈÎÖØµÀÔ¶£¬ÎŞÄÎÊÂ¹ØÎÒ´óËÎ¹úÔË£¬»¹Íû´óÈË¾¡Á¦¶øÎª£¬"
-                       + "Íû´óÈË\nÔçÈÕµÃÊ¤£¬¿­Ğı»Ø³¯£¡ÓùÂí¼àÓĞÎª½«¾ü±¸µÄÇ§ÀïÂí£¬¿ÉÖú´óÈË½ÅÁ¦¡£\n"NOR;
+               return HIC"å¤§äººï¼Œæœä¸­å¯ç”¨ä¹‹å…µå·²ç¶“æ‰€å‰©ç„¡å¹¾ï¼Œåƒ…æ­¤æ•¸ç‡Ÿæ­¥å…µï¼Œå°šå¯ä¸€æˆ°ï¼Œ\n"
+                       + "æ­¤æ¬¡å‡ºå¾ï¼Œä»»é‡é“é ï¼Œç„¡å¥ˆäº‹é—œæˆ‘å¤§å®‹åœ‹é‹ï¼Œé‚„æœ›å¤§äººç›¡åŠ›è€Œç‚ºï¼Œ"
+                       + "æœ›å¤§äºº\næ—©æ—¥å¾—å‹ï¼Œå‡±æ—‹å›æœï¼å¾¡é¦¬ç›£æœ‰ç‚ºå°‡è»å‚™çš„åƒè£¡é¦¬ï¼Œå¯åŠ©å¤§äººè…³åŠ›ã€‚\n"NOR;
 }
 
 void quest_begin(string who, object me)
@@ -202,10 +202,10 @@ void quest_begin(string who, object me)
               string temp;
               int num, i;
 
-              message("channel:rumor", MAG"¡¾´óËÎÊ·¼Ç¡¿"
+              message("channel:rumor", MAG"ã€å¤§å®‹å²è¨˜ã€‘"
                       + CHINESE_D->chinese_date((time() - 14 * 365 * 24 * 60 * 60))
-                      + "ÃÉ¹Å¿Éº¹´ó¾ÙÄÏÇÖ£¬´óËÎÅÉ³ö\n " + who + "\n"
-                      + MAG" £¬ĞËÊ¦±±ÉÏ¿¹µĞ.....\n"NOR,
+                      + "è’™å¤å¯æ±—å¤§èˆ‰å—ä¾µï¼Œå¤§å®‹æ´¾å‡º\n " + who + "\n"
+                      + MAG" ï¼Œèˆˆå¸«åŒ—ä¸ŠæŠ—æ•µ.....\n"NOR,
                       users());
 
               set("begin/time", time());
@@ -275,18 +275,18 @@ string ask_fengshang()
         reward=query("jun_quest/reward", me);
 
         if (me->query_condition("junquest_fail"))
-                 return "´óÈËÓÌÊÇ´ı×ïÖ®Éí£¬»¹¸ÒÀ´ÒªÊ²Ã´·âÉÍ£¿£¿\n";
+                 return "å¤§äººçŒ¶æ˜¯å¾…ç½ªä¹‹èº«ï¼Œé‚„æ•¢ä¾†è¦ä»€éº¼å°è³ï¼Ÿï¼Ÿ\n";
 
         if (! intp(reward) || reward < 1)
-                 return "´óÈËÓÚÉçğ¢ÓĞºÎ¹¦ÀÍ°¡£¬ÄÄÀ´Ê²Ã´·âÉÍ£¿£¿\n";
+                 return "å¤§äººäºç¤¾ç¨·æœ‰ä½•åŠŸå‹å•Šï¼Œå“ªä¾†ä»€éº¼å°è³ï¼Ÿï¼Ÿ\n";
 
         if( query_temp("ask_fengshang", me) )
-                 return "´óÈËÉÔ°²ÎğÔê£¬"
-                        + "ÔÛ¼ÒÒÑ¾­Æô×àÊ¥ÉÏÁË£¬»¹ÊÇÏÈÄÍĞÄ¹§ºòÊ¥ÉÏÖ¼Òâ°É£¡\n";
+                 return "å¤§äººç¨å®‰å‹¿èºï¼Œ"
+                        + "å’±å®¶å·²ç¶“å•Ÿå¥è–ä¸Šäº†ï¼Œé‚„æ˜¯å…ˆè€å¿ƒæ­å€™è–ä¸Šæ—¨æ„å§ï¼\n";
         remove_call_out("add_fengshang");
         call_out("add_fengshang", 10, me, reward);
         set_temp("ask_fengshang", 1, me);
-        return "´óÈËÇëÉÔºò£¬ÔÛ¼ÒÕâ¾ÍÁ¢¿ÌÙ÷±¨Ê¥ÉÏ£¬Îª´óÈËÇë¹¦£¡\n"; 
+        return "å¤§äººè«‹ç¨å€™ï¼Œå’±å®¶é€™å°±ç«‹åˆ»ç¨Ÿå ±è–ä¸Šï¼Œç‚ºå¤§äººè«‹åŠŸï¼\n"; 
 }
 
                  
@@ -298,7 +298,7 @@ void add_fengshang(object me,int reward)
 
         if (! objectp(me)) return;
 
-        message("channel:rumor", MAG"¡¾´óËÎ¾©³Ç¡¿"NOR + YEL
+        message("channel:rumor", MAG"ã€å¤§å®‹äº¬åŸã€‘"NOR + YEL
                 + CHINESE_D->chinese_date((time() - 14 * 365 * 24 * 60 * 60))
                 + "......\n"NOR,
                 users());
@@ -313,15 +313,15 @@ void add_fengshang(object me,int reward)
         addn("potential", pot, me);
         addn("experience", random(21), me);
         addn("balance", 10000000, me);
-        message("channel:rumor", MAG"¡¾´óËÎ¾©³Ç¡¿" HIY "·îÌì³ĞÃü£¬»ÊµÛÚ¯Ô»£º\n"
-                + me->short(1) + "\n" + HIY"¿¹ÃÉÓĞ¹¦£¬ÉÍ»Æ½ğÇ§Á½£¬³ñ¶ĞÎå°ÙÆ¥£¬ÃÀÅ®Ê®Ãû£¬"
-                + " ¼Ç¾ü¹¦ "HIR + chinese_number(jungong)
-                + HIY" ²ß£¬ÇÕ´Ë£¡\n\n"NOR,
+        message("channel:rumor", MAG"ã€å¤§å®‹äº¬åŸã€‘" HIY "å¥‰å¤©æ‰¿å‘½ï¼Œçš‡å¸è©˜æ›°ï¼š\n"
+                + me->short(1) + "\n" + HIY"æŠ—è’™æœ‰åŠŸï¼Œè³é»ƒé‡‘åƒå…©ï¼Œç¶¢ç·äº”ç™¾åŒ¹ï¼Œç¾å¥³ååï¼Œ"
+                + " è¨˜è»åŠŸ "HIR + chinese_number(jungong)
+                + HIY" ç­–ï¼Œæ¬½æ­¤ï¼\n\n"NOR,
                 users());       
 
-        tell_object(me, HIW"Äã»ñµÃÁË" + HIR + chinese_number(exp)
-                    + HIW"µã¾­ÑéºÍ" + HIR + chinese_number(pot) 
-                    + HIW"µãÇ±ÄÜ½±Àø£¡£¡\n"NOR);
+        tell_object(me, HIW"ä½ ç²å¾—äº†" + HIR + chinese_number(exp)
+                    + HIW"é»ç¶“é©—å’Œ" + HIR + chinese_number(pot) 
+                    + HIW"é»æ½›èƒ½çå‹µï¼ï¼\n"NOR);
         
         jiang=query("jun_quest/jiang", me);
         if (jiang && sizeof(jiang) > 0)
@@ -339,13 +339,13 @@ void add_fengshang(object me,int reward)
                 addn("experience", random(11), jiang["jiang"+i]);
                 addn("balance", 5000000, jiang["jiang"+i]);
                   
-                message("channel:rumor", MAG"¡¾´óËÎ¾©³Ç¡¿" HIY "·îÌì³ĞÃü£¬»ÊµÛÚ¯Ô»£º\n"
-                        + jiang["jiang" + i]->short(1) + "\n" + HIY"¿¹ÃÉÓĞ¹¦£¬ÉÍ»Æ½ğÎå°ÙÁ½£¬³ñ¶ĞÁ½°ÙÆ¥£¬"
-                        + " ¼Ç¾ü¹¦ "HIR + chinese_number(jungong) + HIY" ²ß£¬ÇÕ´Ë£¡\n\n"NOR,
+                message("channel:rumor", MAG"ã€å¤§å®‹äº¬åŸã€‘" HIY "å¥‰å¤©æ‰¿å‘½ï¼Œçš‡å¸è©˜æ›°ï¼š\n"
+                        + jiang["jiang" + i]->short(1) + "\n" + HIY"æŠ—è’™æœ‰åŠŸï¼Œè³é»ƒé‡‘äº”ç™¾å…©ï¼Œç¶¢ç·å…©ç™¾åŒ¹ï¼Œ"
+                        + " è¨˜è»åŠŸ "HIR + chinese_number(jungong) + HIY" ç­–ï¼Œæ¬½æ­¤ï¼\n\n"NOR,
                         users()); 
                 delete("party", jiang["jiang"+i]);
-                tell_object(jiang["jiang" + i], HIW"Äã»ñµÃÁË" + HIR + chinese_number(exp)
-                            + HIW"µã¾­ÑéºÍ" + HIR + chinese_number(pot) + HIW"µãÇ±ÄÜ½±Àø£¡£¡\n"NOR);  
+                tell_object(jiang["jiang" + i], HIW"ä½ ç²å¾—äº†" + HIR + chinese_number(exp)
+                            + HIW"é»ç¶“é©—å’Œ" + HIR + chinese_number(pot) + HIW"é»æ½›èƒ½çå‹µï¼ï¼\n"NOR);  
         }       
          
         bingfu = present("bing fu", me);       

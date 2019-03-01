@@ -4,13 +4,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIR "ºìÖÊÆ¤¸ï" NOR, ({ "hongzhi pige", "hongzhi", "pige" }));
+        set_name(HIR "ç´…è³ªçš®é©" NOR, ({ "hongzhi pige", "hongzhi", "pige" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIG  "ÕâÊÇÒ»ÕÅºìÉ«µÄÆ¤¸ï£¬ÊÇÖÆ×÷¼×ÒÂµÄÉÏºÃ²ÄÁÏ¡£\n" NOR);
-                set("base_unit", "ÕÅ");
-                set("unit", "ÕÅ");
+                set("long", HIG  "é€™æ˜¯ä¸€å¼µç´…è‰²çš„çš®é©ï¼Œæ˜¯åˆ¶ä½œç”²è¡£çš„ä¸Šå¥½ææ–™ã€‚\n" NOR);
+                set("base_unit", "å¼µ");
+                set("unit", "å¼µ");
                 set("base_value", 100);
                 set("base_weight", 1000);
         }

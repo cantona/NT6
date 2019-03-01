@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�����");
+        set("short", "齊天峰");
         set("long", @LONG
-������ɽ����һ�߷壬ֱ�����ƣ���·��Ѱ��ֻ��ɽǰ����һ���
-ʯ (stone)������ɽ����������ʱ�к��������˳����ɽ���е������
-����ɽ֮̽����δ������
+北祈連山區第一高峰，直聳入雲，無路可尋。只見山前豎著一塊大
+石 (stone)，據聞山中土人曾見時有黑衣神秘人出入此山，有膽大好奇
+者入山探之，從未生還。
 LONG );
         set("outdoors", "qilian");
         set("exits", ([

@@ -1,4 +1,4 @@
-// tiaoyan.c ¶áÃüÈı¸«Ö®¡¸ÌôÑÛÊ½¡¹
+// tiaoyan.c å¥ªå‘½ä¸‰æ–§ä¹‹ã€ŒæŒ‘çœ¼å¼ã€
 
 #include <ansi.h>
 #include <combat.h>
@@ -13,25 +13,25 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail("¡¸ÌôÑÛÊ½¡¹Ö»ÄÜÔÚÕ½¶·ÖĞ¶Ô¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€ŒæŒ‘çœ¼å¼ã€åªèƒ½åœ¨æˆ°é¬¥ä¸­å°å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if ((lvl = me->query_skill("duanyun-fu")) < 60)
-                return notify_fail("ÄãµÄ¶áÃüÈı¸«»¹²»µ½¼Ò£¬²»»áÊ©Õ¹¡¸ÌôÑÛÊ½¡¹¡£\n");
+                return notify_fail("ä½ çš„å¥ªå‘½ä¸‰æ–§é‚„ä¸åˆ°å®¶ï¼Œä¸æœƒæ–½å±•ã€ŒæŒ‘çœ¼å¼ã€ã€‚\n");
 
         if( query("neili", me)<100 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬ÎŞ·¨Ê©Õ¹¡¸ÌôÑÛÊ½¡¹¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼Œç„¡æ³•æ–½å±•ã€ŒæŒ‘çœ¼å¼ã€ã€‚\n");
 
-        msg = HIG "$N" HIG "Ê¹³ö¶áÃüÈı¸«Ö®¡¸ÌôÑÛÊ½¡¹£¬¸«¼â¼²Ìô$n" HIG "Ë«ÑÛ¡£\n" NOR;
+        msg = HIG "$N" HIG "ä½¿å‡ºå¥ªå‘½ä¸‰æ–§ä¹‹ã€ŒæŒ‘çœ¼å¼ã€ï¼Œæ–§å°–ç–¾æŒ‘$n" HIG "é›™çœ¼ã€‚\n" NOR;
 
         me->start_busy(2);
         if( random(query("combat_exp", me)/100)>query("combat_exp", target)/200 )
         {
                 addn("neili", -50, me);
                 msg += COMBAT_D->do_damage(me, target, WEAPON_ATTACK, lvl, 45,
-                                           HIR "½á¹û$p" HIR "Ö»¾õµÃÑÛÇ°Ò»ºÚ£¬Ë«ÑÛÒ»"
-                                           "Õó¾çÍ´£¬ÑªÁ÷ÂúÃæ¡£\n" NOR);
+                                           HIR "çµæœ$p" HIR "åªè¦ºå¾—çœ¼å‰ä¸€é»‘ï¼Œé›™çœ¼ä¸€"
+                                           "é™£åŠ‡ç—›ï¼Œè¡€æµæ»¿é¢ã€‚\n" NOR);
         } else
-                msg += HIG "¿ÉÊÇ$p" HIG "¿´ÆÆÁË$P" HIG "µÄÆóÍ¼£¬¼±Ã¦¶ã¿ªÁË¡£\n" NOR;
+                msg += HIG "å¯æ˜¯$p" HIG "çœ‹ç ´äº†$P" HIG "çš„ä¼åœ–ï¼Œæ€¥å¿™èº²é–‹äº†ã€‚\n" NOR;
 
         message_combatd(msg, me, target);
 

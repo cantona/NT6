@@ -14,38 +14,38 @@ int main(object me, string arg)
         
         /*
         if( query("age", me)<24 )
-                return notify_fail("ÄãÏÖÔÚ»¹ÄêÇá£¬ÒÔºóÔÙÁ·°É£¡\n");
+                return notify_fail("ä½ ç¾åœ¨é‚„å¹´è¼•ï¼Œä»¥å¾Œå†ç·´å§ï¼\n");
         */
         if( query("pigging", environment(me)) )
-                return notify_fail("Äã»¹ÊÇ×¨ĞÄ¹°Öí°É£¡\n");
+                return notify_fail("ä½ é‚„æ˜¯å°ˆå¿ƒæ‹±è±¬å§ï¼\n");
 
         if (me->is_busy())
-                return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ£¡\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£å¿™è‘—å‘¢ï¼\n");
 
         if (me->is_fighting())
-                return notify_fail("Õ½¶·ÖĞÍÂÄÉ£¬ºÃÏóÖ»ÓĞÉñÏÉ²ÅÄÜ×öµ½¡£\n");
+                return notify_fail("æˆ°é¬¥ä¸­åç´ï¼Œå¥½è±¡åªæœ‰ç¥ä»™æ‰èƒ½åšåˆ°ã€‚\n");
 
         if (! arg || ! sscanf(arg, "%d", respirate_cost))
-                return notify_fail("ÄãÒª»¨¶àÉÙ¾«ĞŞĞĞ£¿\n");
+                return notify_fail("ä½ è¦èŠ±å¤šå°‘ç²¾ä¿®è¡Œï¼Ÿ\n");
 
         if (respirate_cost <= 0)
-                return notify_fail("Äã²»ÊÇÉñÏÉ£¡\n");
+                return notify_fail("ä½ ä¸æ˜¯ç¥ä»™ï¼\n");
 
         if( query("jing", me)<respirate_cost )
-                return notify_fail("ÄãÏÖÔÚ¾«²»×ã£¬ÎŞ·¨ĞŞĞĞ¾«Á¦£¡\n");
+                return notify_fail("ä½ ç¾åœ¨ç²¾ä¸è¶³ï¼Œç„¡æ³•ä¿®è¡Œç²¾åŠ›ï¼\n");
 
         if( query("qi", me)*100/query("max_qi", me)<70 )
-                return notify_fail("ÄãÏÖÔÚÉíÌå×´¿öÌ«²îÁË£¬ÎŞ·¨¼¯ÖĞ¾«Éñ£¡\n");
+                return notify_fail("ä½ ç¾åœ¨èº«é«”ç‹€æ³å¤ªå·®äº†ï¼Œç„¡æ³•é›†ä¸­ç²¾ç¥ï¼\n");
 
         if( query("no_fight", environment(me)) && 
             (query("doing", me) != "scheme" || this_player(1)) )
-                return notify_fail("ÄãÎŞ·¨ÔÚÕâ¸öµØ·½°²ĞÄÍÂÄÉ¡£\n");
+                return notify_fail("ä½ ç„¡æ³•åœ¨é€™å€‹åœ°æ–¹å®‰å¿ƒåç´ã€‚\n");
 
-        write("Äã±ÕÉÏÑÛ¾¦¿ªÊ¼´ò×ø¡£\n");
+        write("ä½ é–‰ä¸Šçœ¼ç›é–‹å§‹æ‰“åã€‚\n");
         set_temp("pending/respirate", 1, me);
         set_temp("respirate_cost", respirate_cost, me);
-        me->set_short_desc("Õı×øÔÚµØÏÂÍÂÄÉÁ¶¾«¡£");
-        message_vision("$NÅÌÏ¥×øÏÂ£¬¿ªÊ¼ÍÂÄÉÁ¶¾«¡£\n", me);
+        me->set_short_desc("æ­£ååœ¨åœ°ä¸‹åç´ç…‰ç²¾ã€‚");
+        message_vision("$Nç›¤è†åä¸‹ï¼Œé–‹å§‹åç´ç…‰ç²¾ã€‚\n", me);
         me->start_busy(bind((:call_other, __FILE__, "respirating" :), me),
                        bind((:call_other, __FILE__, "halt_respirate" :), me));
         return 1;
@@ -84,14 +84,14 @@ int respirating(object me)
         set_temp("pending/respirate", 0, me);
         me->set_short_desc(0);
         respirate_cost = 0;
-        message_vision("$NÍÂÄÉÍê±Ï£¬Õö¿ªË«ÑÛ£¬Õ¾ÁËÆğÀ´¡£\n", me);
+        message_vision("$Nåç´å®Œç•¢ï¼Œçœé–‹é›™çœ¼ï¼Œç«™äº†èµ·ä¾†ã€‚\n", me);
         if( query("jingli", me)<query("max_jingli", me)*2 )
                 return 0;
         else
         {
                 if( query("max_jingli", me)>me->query_current_jingli_limit() )
                 {
-                        write("ÄãµÄ¾«Á¦ĞŞÎªËÆºõÒÑ¾­´ïµ½ÁËÆ¿¾±¡£\n");
+                        write("ä½ çš„ç²¾åŠ›ä¿®ç‚ºä¼¼ä¹å·²ç¶“é”åˆ°äº†ç“¶é ¸ã€‚\n");
                         set("jingli",query("max_jingli",  me), me);
                         return 0;
                 }
@@ -99,7 +99,7 @@ int respirating(object me)
                 {
                         addn("max_jingli", 1, me);
                         set("jingli",query("max_jingli",  me), me);
-                        write("ÄãµÄ¾«Á¦Ôö¼ÓÁË£¡£¡\n");
+                        write("ä½ çš„ç²¾åŠ›å¢åŠ äº†ï¼ï¼\n");
                         return 0;
                 }
         }
@@ -107,8 +107,8 @@ int respirating(object me)
 
 int halt_respirate(object me)
 {
-        tell_object(me, "Äã½«ÕæÆøÑ¹»Øµ¤Ìï£¬Õ¾ÁËÆğÀ´¡£\n");
-        tell_room(environment(me), me->name() + "ÉîÎüÒ»¿ÚÆø£¬Õ¾ÁËÆğÀ´¡£\n", me);
+        tell_object(me, "ä½ å°‡çœŸæ°£å£“å›ä¸¹ç”°ï¼Œç«™äº†èµ·ä¾†ã€‚\n");
+        tell_room(environment(me), me->name() + "æ·±å¸ä¸€å£æ°£ï¼Œç«™äº†èµ·ä¾†ã€‚\n", me);
         respirate_cost = 0;
         if( query("jingli", me)>query("max_jingli", me)*2 )
                 set("jingli",query("max_jingli",  me)*2, me);
@@ -121,11 +121,11 @@ int halt_respirate(object me)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : respirate|tuna [<ºÄ·Ñ¡¸¾«¡¹µÄÁ¿>]
+æŒ‡ä»¤æ ¼å¼ : respirate|tuna [<è€—è²»ã€Œç²¾ã€çš„é‡>]
  
-µ±ÄãµÄÄêÁä´óÓÚ24ËêÒÔºó£¬¿ÉÒÔÍ¨¹ı´ò×øĞŞĞĞ£¬ÀûÓÃ¡¸Á¶¾«»¯Æø£¬Á¶
-Æø»¯Éñ£¬Á¶Éñ»¹Ğé¡¹µÄ·½·¨½«ÄãµÄ¾«×ª±ä³É¾«Á¦¡£×¢Òâ£ºÄã²»ÄÜÔÚ²»
-ÄÜÕ½¶·µÄµØ·½ÍÂÄÉ¡£
+ç•¶ä½ çš„å¹´é½¡å¤§äº24æ­²ä»¥å¾Œï¼Œå¯ä»¥é€šéæ‰“åä¿®è¡Œï¼Œåˆ©ç”¨ã€Œç…‰ç²¾åŒ–æ°£ï¼Œç…‰
+æ°£åŒ–ç¥ï¼Œç…‰ç¥é‚„è™›ã€çš„æ–¹æ³•å°‡ä½ çš„ç²¾è½‰è®Šæˆç²¾åŠ›ã€‚æ³¨æ„ï¼šä½ ä¸èƒ½åœ¨ä¸
+èƒ½æˆ°é¬¥çš„åœ°æ–¹åç´ã€‚
 
 See also: exercise
 HELP

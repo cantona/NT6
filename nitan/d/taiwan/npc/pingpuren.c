@@ -1,4 +1,4 @@
-// pingpuren.c Æ½ÆÒ×åÄĞÈË
+// pingpuren.c å¹³åŸ”æ—ç”·äºº
 // Last Modifyed by Ahda on Jan. 4 2002
 
 inherit NPC;
@@ -8,8 +8,8 @@ void create()
         int age;
         age = 20 + random(40);
         
-        set_name("Æ½ÆÒ×åÄĞ×Ó", ({ "pingpu man", "pingpu", "man", "people", }));
-        set("gender", "ÄĞĞÔ");
+        set_name("å¹³åŸ”æ—ç”·å­", ({ "pingpu man", "pingpu", "man", "people", }));
+        set("gender", "ç”·æ€§");
         set("age", age);
 
         set_skill("unarmed", 20);

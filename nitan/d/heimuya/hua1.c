@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��԰");
+        set("short", "花園");
         set("long", @LONG
-����һ�������µ�С��԰��԰�У���÷�������ɴ�أ����õ�
-�ľ߽��ģ�����ȥ��һƬ��ݵء�
+這是一個極精致的小花園。園中，紅梅綠竹，青鬆翠柏，布置得
+頗具匠心，往西去是一片青草地。
 LONG );
         set("exits", ([
             "west" : __DIR__"grass2",

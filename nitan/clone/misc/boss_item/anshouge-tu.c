@@ -3,13 +3,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIW "¡¶°²ÊØ¸óµØÍ¼¡·" NOR, ({"anshouge tu", "anshouge", "tu"}));
+        set_name(HIW "ã€Šå®‰å®ˆé–£åœ°åœ–ã€‹" NOR, ({"anshouge tu", "anshouge", "tu"}));
         set_weight(2000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "ÕÅ");
-                set("long", HIW "ÕâÊÇÒ»ÕÅ»æÓÐ·öÉ£°²ÊØ¸óµØÐÎµÄÍ¼Ö½¡£\n"  NOR);
+                set("unit", "å¼µ");
+                set("long", HIW "é€™æ˜¯ä¸€å¼µç¹ªæœ‰æ‰¶æ¡‘å®‰å®ˆé–£åœ°å½¢çš„åœ–ç´™ã€‚\n"  NOR);
 
                 set("value", 500000);
         }

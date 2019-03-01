@@ -6,17 +6,17 @@ inherit MYHEART;
 
 void create()
 {
-        set_name(NOR + WHT "ÒşÉí·û" NOR, ({ "yinshen fu", "yinshen", "fu" }) );
+        set_name(NOR + WHT "éš±èº«ç¬¦" NOR, ({ "yinshen fu", "yinshen", "fu" }) );
         set_weight(1);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
                 set("material", "paper");
-                set("unit", "ÕÅ");
-                set("long", HIY "ÕâÊÇÒ»ÕÅµÀ·û£¬¾İËµ×°±¸ºó¿ÉÒÔÒş²ØĞĞ×Ù¡£\n" NOR);
+                set("unit", "å¼µ");
+                set("long", HIY "é€™æ˜¯ä¸€å¼µé“ç¬¦ï¼Œæ“šèªªè£å‚™å¾Œå¯ä»¥éš±è—è¡Œè¹¤ã€‚\n" NOR);
                 set("value", 10000);
                 set("armor_prop/invisible", 1);
-                set("special/desc", "×°±¸ºó¿ÉÒş²ØĞĞ×Ù£¬ËûÈËÎŞ·¨²é¿´µ½ÄãµÄ´æÔÚ¡£");
+                set("special/desc", "è£å‚™å¾Œå¯éš±è—è¡Œè¹¤ï¼Œä»–äººç„¡æ³•æŸ¥çœ‹åˆ°ä½ çš„å­˜åœ¨ã€‚");
         }
         setup();
 }

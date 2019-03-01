@@ -3,13 +3,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIM "ÌìÊ¦»¤Éí·û" NOR, ({ "tianshi charm", "charm" }));
+        set_name(HIM "å¤©å¸«è­·èº«ç¬¦" NOR, ({ "tianshi charm", "charm" }));
         set_weight(3000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIR "´Ë·ûÎÄ¾ßÓĞ±£»¤Íæ¼ÒËÀÍöÎŞËğÊ§Ö®¹¦ÄÜ£¬±ØĞëËÀÍöÇ°·ÅÔÚÉíÉÏ¡£\n" NOR);
-                set("unit", "ÕÅ");
+                set("long", HIR "æ­¤ç¬¦æ–‡å…·æœ‰ä¿è­·ç©å®¶æ­»äº¡ç„¡æå¤±ä¹‹åŠŸèƒ½ï¼Œå¿…é ˆæ­»äº¡å‰æ”¾åœ¨èº«ä¸Šã€‚\n" NOR);
+                set("unit", "å¼µ");
                 set("value", 500000);
                 set("no_sell", 1);
                 set("auto_load", 1);

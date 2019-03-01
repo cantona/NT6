@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "������");
+        set("short", "鬆樹林");
         set("long", @LONG
-����һƬ�����֡����ɸߵ������������飬�ڵò������ա�����
-�������룬�в�֪����Ұ��͵͵�ӹ�������һƬ�ž���
+這是一片鬆樹林。幾丈高的鬆樹密密麻麻，遮得不見天日。地上
+落滿鬆針，有不知名的野兔偷偷逃過。四周一片寂靜。
 LONG );
         set("exits", ([
                 "south" : __DIR__"changlang",

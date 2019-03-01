@@ -1,8 +1,8 @@
-// lian.c Á¬×Ö¾÷
+// lian.c é€£å­—è¨£
 
 #include <ansi.h>
 
-string name() { return "Á¬×Ö¾÷"; }
+string name() { return "é€£å­—è¨£"; }
 
 inherit F_SSERVER;
 
@@ -22,31 +22,31 @@ int perform(object me, object target)
         }
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail("¡¸" + name() + "¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œ" + name() + "ã€åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me)) ||
             query("skill_type", weapon) != "sword" )
-                return notify_fail("±ØĞëÄÃ½£²ÅÄÜÊ©Õ¹¡¸" + name() + "¡¹¡£\n");
+                return notify_fail("å¿…é ˆæ‹¿åŠæ‰èƒ½æ–½å±•ã€Œ" + name() + "ã€ã€‚\n");
 
         if( query("neili", me)<1000 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬ÎŞ·¨Ê©Õ¹¡¸" + name() + "¡¹¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼Œç„¡æ³•æ–½å±•ã€Œ" + name() + "ã€ã€‚\n");
 
         if ((int)me->query_skill("taiji-shengong", 1) < 200)
-                return notify_fail("ÄãµÄÌ«¼«Éñ¹¦»ğºò²»¹»£¬ÄÑÒÔÊ©Õ¹¡¸" + name() + "¡¹¡£\n");
+                return notify_fail("ä½ çš„å¤ªæ¥µç¥åŠŸç«å€™ä¸å¤ ï¼Œé›£ä»¥æ–½å±•ã€Œ" + name() + "ã€ã€‚\n");
 
         if ((int)me->query_skill("taiji-jian", 1) < 200)
-                return notify_fail("ÄãµÄÌ«¼«½£»¹²»µ½¼Ò£¬ÎŞ·¨Ê¹ÓÃ¡¸" + name() + "¡¹¡£\n");
+                return notify_fail("ä½ çš„å¤ªæ¥µåŠé‚„ä¸åˆ°å®¶ï¼Œç„¡æ³•ä½¿ç”¨ã€Œ" + name() + "ã€ã€‚\n");
 
         if (me->query_skill_mapped("sword") != "taiji-jian")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢Ì«¼«½£·¨£¬ÎŞ·¨Ê¹ÓÃ¡¸" + name() + "¡¹¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼å¤ªæ¥µåŠæ³•ï¼Œç„¡æ³•ä½¿ç”¨ã€Œ" + name() + "ã€ã€‚\n");
 
         time = me->query_skill("taiji-jian") / 20;
         if (time > 10) time = 10;
         if (time < 1) time = 1;
 
-        msg = HIC "$N" HIC "Ò»Éù³¤Ğ¥£¬ÁéÌ¨ÇåÃ÷£¬ÄıÉñ¹éÔª£¬Ê¹³öÌ«¼«½£ÖĞµÄ¡¸" + name() + "¡¹¡£\n"
-              HIY "ÊÖÖĞ" + weapon->name() + HIY "ÕĞÊ½¶¸È»±äµÃÁèÀ÷ÎŞ±È£¬Ò»×ªÄî"
-              HIY "¼äÒÑÈ»¹¥³ö" + chinese_number(time) + "ÕĞ£¡\n" NOR;
+        msg = HIC "$N" HIC "ä¸€è²é•·å˜¯ï¼Œéˆå°æ¸…æ˜ï¼Œå‡ç¥æ­¸å…ƒï¼Œä½¿å‡ºå¤ªæ¥µåŠä¸­çš„ã€Œ" + name() + "ã€ã€‚\n"
+              HIY "æ‰‹ä¸­" + weapon->name() + HIY "æ‹›å¼é™¡ç„¶è®Šå¾—å‡Œå²ç„¡æ¯”ï¼Œä¸€è½‰å¿µ"
+              HIY "é–“å·²ç„¶æ”»å‡º" + chinese_number(time) + "æ‹›ï¼\n" NOR;
 
         message_combatd(msg, me, target);
         skill = me->query_skill("taiji-jian", 1) / 2;

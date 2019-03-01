@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create ()
 {
-        set ("short", "��ڼ��");
+        set ("short", "馮詡道");
         set("long", @LONG
-��ڼ���ǳ��������Ĵ�֣���ʯ��·��ֱ����չ��ȥ��һ·����
-�˱ȼ磬�ϸ账��������֮����ֱ�����ɾ��ء�
+馮詡道是長安城中心大街，青石板路筆直的伸展出去，一路上行
+人比肩，笙歌處處。景物之美，直如神仙境地。
 LONG );
         set("exits", 
         ([ //sizeof() == 2

@@ -1,5 +1,5 @@
 // This program is a part of NT MudLIB
-// jiutian.c  ·ïÎè¾ÅÌì
+// jiutian.c  é³³èˆä¹å¤©
 
 #include <ansi.h>
 #include <weapon.h>
@@ -7,7 +7,7 @@
 
 inherit F_SSERVER;
 
-string name() { return "·ïÎè¾ÅÌì"; }
+string name() { return "é³³èˆä¹å¤©"; }
 
 void remove_effect(object me, object target, int dodge, int damage, int parry);
 
@@ -21,56 +21,56 @@ int perform(object me, object target)
 
         if (me->query_skill_mapped("force") != "kurong-changong" &&
             me->query_skill_mapped("force") != "duanshi-xinfa")
-                return notify_fail(HIW"ÄãËùÓÃµÃÄÚ¹¦ĞÄ·¨²»¶Ô£¬ÎŞ·¨Ô¾ÆğÉíĞÎ¡£\n" NOR);
+                return notify_fail(HIW"ä½ æ‰€ç”¨å¾—å…§åŠŸå¿ƒæ³•ä¸å°ï¼Œç„¡æ³•èºèµ·èº«å½¢ã€‚\n" NOR);
 
         if (!target
         ||      !target->is_character()
         ||      !me->is_fighting(target))
-                return notify_fail( HIW "¡¸·ïÎè¾ÅÌì¡¹Ö»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ¡£\n" NOR);
+                return notify_fail( HIW "ã€Œé³³èˆä¹å¤©ã€åªèƒ½åœ¨æˆ°é¬¥ä¸­ä½¿ç”¨ã€‚\n" NOR);
 
         if( query_temp("jiutian", me) )
-                return notify_fail( HIW "ÄãÕıÔÚÎè¡¸·ïÎè¾ÅÌì¡¹£¡\n" NOR);
+                return notify_fail( HIW "ä½ æ­£åœ¨èˆã€Œé³³èˆä¹å¤©ã€ï¼\n" NOR);
 
         if( !objectp(weapon=query_temp("weapon", me) )
          || query("skill_type", weapon) != "whip" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ã€‚\n");
 
         if ((int)me->query_skill("kurong-changong", 1) < 130 &&
             (int)me->query_skill("duanshi-xinfa",1) < 130)
-                return notify_fail( HIW "ÄãµÄÄÚ¹¦ĞŞÎªÎ´µ½£¬ÎŞ·¨Ê©Õ¹¡¸·ïÎè¾ÅÌì¡¹¡£\n" NOR);
+                return notify_fail( HIW "ä½ çš„å…§åŠŸä¿®ç‚ºæœªåˆ°ï¼Œç„¡æ³•æ–½å±•ã€Œé³³èˆä¹å¤©ã€ã€‚\n" NOR);
 
         if ((int)me->query_skill("feifeng-whip", 1) < 150)
-                return notify_fail( HIW "ÄãµÄ·É·ï±Ş·¨ĞŞÎª»¹²»¹»£¬ÉĞÎ´ÁìÎòµ½¡¸·ïÎè¾ÅÌì¡¹¡£\n" NOR);
+                return notify_fail( HIW "ä½ çš„é£›é³³é­æ³•ä¿®ç‚ºé‚„ä¸å¤ ï¼Œå°šæœªé ˜æ‚Ÿåˆ°ã€Œé³³èˆä¹å¤©ã€ã€‚\n" NOR);
 
         if( query("max_neili", me) <= 1000 )
-                return notify_fail( HIW "ÄãµÄÄÚÁ¦ĞŞÎª²»×ã£¬¾¢Á¦²»×ãÒÔÊ©Õ¹¡¸·ïÎè¾ÅÌì¡¹£¡\n" NOR);
+                return notify_fail( HIW "ä½ çš„å…§åŠ›ä¿®ç‚ºä¸è¶³ï¼Œå‹åŠ›ä¸è¶³ä»¥æ–½å±•ã€Œé³³èˆä¹å¤©ã€ï¼\n" NOR);
 
         if( query("neili", me)<500 )
-                return notify_fail( HIW "ÄãÏÖÔÚÄÚÁ¦²»¹»£¬¾¢Á¦²»×ãÒÔÊ©Õ¹¡¸·ïÎè¾ÅÌì¡¹£¡\n" NOR);
+                return notify_fail( HIW "ä½ ç¾åœ¨å…§åŠ›ä¸å¤ ï¼Œå‹åŠ›ä¸è¶³ä»¥æ–½å±•ã€Œé³³èˆä¹å¤©ã€ï¼\n" NOR);
 
         if( query("jingli", me) <= 300 )
-                return notify_fail( HIW "ÄãµÄ¾«Á¦²»×ã£¬ÎŞ·¨Ê©Õ¹¡¸·ïÎè¾ÅÌì¡¹£¡\n" NOR);
+                return notify_fail( HIW "ä½ çš„ç²¾åŠ›ä¸è¶³ï¼Œç„¡æ³•æ–½å±•ã€Œé³³èˆä¹å¤©ã€ï¼\n" NOR);
 
-        if( query("gender", me) != "Å®ĞÔ" )
-                return notify_fail( HIW "¡¸·ïÎè¾ÅÌì¡¹Ö»ÓĞÅ®ĞÔÄÜÎè£¡\n" NOR);
+        if( query("gender", me) != "å¥³æ€§" )
+                return notify_fail( HIW "ã€Œé³³èˆä¹å¤©ã€åªæœ‰å¥³æ€§èƒ½èˆï¼\n" NOR);
 
         if (! living(target))
-                return notify_fail( HIW "¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬»¹Îè¸øË­¿´°¡£¡\n" NOR);
+                return notify_fail( HIW "å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œé‚„èˆçµ¦èª°çœ‹å•Šï¼\n" NOR);
 
-        message_vision(MAG"$NÏòºó×İÉíÒ»Ô¾£¬ôæôæÆğÎè£¬ÊÖÖĞµÄ"NOR+weapon->name()+NOR+MAG"ÏìÆğÕóÕó·ïÃù£¬Îè×ËÆæ¹îÄª²â£¬±ä»¯ÎŞ¶Ë£¬ÍğÈç·ï»ËÒ»°ãÉ²ÊÇºÃ¿´¡£\n\n" NOR, me);
+        message_vision(MAG"$Nå‘å¾Œç¸±èº«ä¸€èºï¼Œç¿©ç¿©èµ·èˆï¼Œæ‰‹ä¸­çš„"NOR+weapon->name()+NOR+MAG"éŸ¿èµ·é™£é™£é³³é³´ï¼Œèˆå§¿å¥‡è©­è«æ¸¬ï¼Œè®ŠåŒ–ç„¡ç«¯ï¼Œå®›å¦‚é³³å‡°ä¸€èˆ¬å‰æ˜¯å¥½çœ‹ã€‚\n\n" NOR, me);
 
         if( random(query("per", me))+8>20 )
         {
-                message_vision(HIR"Í»È»$nÒ»¸öÊ§Éñ£¬±»$NµÄ¶¯×÷ËùÎüÒı£¬¶Ù¸ĞĞÄ¿õÉñâù£¬ĞÄÔ³ÒâÂí£¬±»$NµÄÎè×ËÃÔµÄÉñ»êµßµ¹£¡\n\n"NOR, me, target);
+                message_vision(HIR"çªç„¶$nä¸€å€‹å¤±ç¥ï¼Œè¢«$Nçš„å‹•ä½œæ‰€å¸å¼•ï¼Œé “æ„Ÿå¿ƒæ› ç¥æ€¡ï¼Œå¿ƒçŒ¿æ„é¦¬ï¼Œè¢«$Nçš„èˆå§¿è¿·çš„ç¥é­‚é¡›å€’ï¼\n\n"NOR, me, target);
                 target->start_busy(random(5)+5);
 
                 if( query_temp("weapon", target)){
                         weapon1=query_temp("weapon", target);
                         if( query("combat_exp", me)<random(query("combat_exp", target)*8/5)){
-                                message_vision(HIW"$nÊÖÖ¸Ò»ËÉ£¬"NOR+weapon1->name()+NOR HIW"ÏÕĞ©ÍÑÊÖ£¡\n" NOR, me, target);
+                                message_vision(HIW"$næ‰‹æŒ‡ä¸€é¬†ï¼Œ"NOR+weapon1->name()+NOR HIW"éšªäº›è„«æ‰‹ï¼\n" NOR, me, target);
                         }
                         else {
-                                message_vision(HIW"$nÊÖÉÏÒ»ËÉ£¬²»ÓÉ×ÔÖ÷µÄ¶ªÏÂÁË"NOR+weapon1->name()+NOR HIW"£¡\n" NOR, me, target);
+                                message_vision(HIW"$næ‰‹ä¸Šä¸€é¬†ï¼Œä¸ç”±è‡ªä¸»çš„ä¸Ÿä¸‹äº†"NOR+weapon1->name()+NOR HIW"ï¼\n" NOR, me, target);
                                 weapon1->unequip();
                                 weapon1->move(environment(target));
                                 target->reset_action();
@@ -94,7 +94,7 @@ int perform(object me, object target)
         }
         else
         {
-                message_vision(RED"¾Í¿´$nÊÕÁ²ĞÄÉñ£¬ĞÄÈçÃ÷¾µ£¬È«Éñ¹á×¢£¬²¢Î´±»$NµÄÎè×ËËùÃÔ¡£\n"NOR, me, target);
+                message_vision(RED"å°±çœ‹$næ”¶æ–‚å¿ƒç¥ï¼Œå¿ƒå¦‚æ˜é¡ï¼Œå…¨ç¥è²«æ³¨ï¼Œä¸¦æœªè¢«$Nçš„èˆå§¿æ‰€è¿·ã€‚\n"NOR, me, target);
                 me->start_busy(random(5)+2);
         }
         return 1;
@@ -110,38 +110,38 @@ void checking(object me, object target, object weapon, int dodge, int damage, in
         if( query_temp("jiutian", me)){
         if( !me->is_fighting() )
         {
-                message_vision(HIY"\n$NÏòºóÒ»Ìø£¬ÊÕÆğÁË²½·¥¡£\n"NOR, me);
+                message_vision(HIY"\n$Nå‘å¾Œä¸€è·³ï¼Œæ”¶èµ·äº†æ­¥ä¼ã€‚\n"NOR, me);
                 remove_effect(me, target, dodge, damage, parry);
-                tell_object(me, HIM"\nÄãÉíĞÎÒ»Ö¹£¬ËÙ¶ÈÂıÁËÏÂÀ´¡£\n\n"NOR);
+                tell_object(me, HIM"\nä½ èº«å½¢ä¸€æ­¢ï¼Œé€Ÿåº¦æ…¢äº†ä¸‹ä¾†ã€‚\n\n"NOR);
                 return;
         }
         else if( environment(weapon) != me || weapon != query_temp("weapon", me) )
         {
-                message_vision(HIY"\n$N½Å²½Ò»¶Ù£¬Í£Ö¹ÁËÎèµ¸¡£\n"NOR, me);
+                message_vision(HIY"\n$Nè…³æ­¥ä¸€é “ï¼Œåœæ­¢äº†èˆè¹ˆã€‚\n"NOR, me);
                 remove_effect(me, target, dodge, damage, parry);
-                tell_object(me, HIM"\nÄã¸Ğ¾õµ½ÆøÑª²»Ë³£¬ËÙ¶È½¥½¥ÂıÁËÏÂÀ´¡£\n\n"NOR);
+                tell_object(me, HIM"\nä½ æ„Ÿè¦ºåˆ°æ°£è¡€ä¸é †ï¼Œé€Ÿåº¦æ¼¸æ¼¸æ…¢äº†ä¸‹ä¾†ã€‚\n\n"NOR);
                 return;
         }
         else if( query("weapon_prop", weapon) == 0 )
         {
-                message_vision(HIY"\n$NÊÖÖĞµÄ"NOR+weapon->name()+NOR HIY"ÒÑ»Ù£¬²»µÃ²»Í£ÏÂ½Å²½¡£\n"NOR, me);
+                message_vision(HIY"\n$Næ‰‹ä¸­çš„"NOR+weapon->name()+NOR HIY"å·²æ¯€ï¼Œä¸å¾—ä¸åœä¸‹è…³æ­¥ã€‚\n"NOR, me);
                 remove_effect(me, target, dodge, damage, parry);
                 return;
         }
         else if (me->query_skill_mapped("force") != "kurong-changong")
         {
                 remove_effect(me, target, dodge, damage, parry);
-                tell_object(me, HIY"\nÄã¸Ğµ½ÄÚÏ¢²»³©£¬²»µÃ²»Í£ÏÂ½Å²½¡£\n\n" NOR);
+                tell_object(me, HIY"\nä½ æ„Ÿåˆ°å…§æ¯ä¸æš¢ï¼Œä¸å¾—ä¸åœä¸‹è…³æ­¥ã€‚\n\n" NOR);
                 return;
         }
         if (random(5) == 1)
-                message_vision(HIG"$NÉí×ËÈçÍ¬¾ÅÌì·ï»Ë£¬äìÈ÷Æ®ÒİÓÖÍşÊÆ±ÆÈË£¡\n"NOR,me);
+                message_vision(HIG"$Nèº«å§¿å¦‚åŒä¹å¤©é³³å‡°ï¼Œç€Ÿæ´’é£„é€¸åˆå¨å‹¢é€¼äººï¼\n"NOR,me);
                 addn_temp("jiutian", -1, me);
                 call_out("checking", 1, me, target, weapon, dodge,damage, parry);
         }
         else {
                 remove_effect(me, target, dodge, damage, parry);
-                tell_object(me, HIM"\nÄã¸Ğ¾õµ½ÆøÑª²»Ë³£¬ËÙ¶È½¥½¥ÂıÁËÏÂÀ´¡£\n\n"NOR);
+                tell_object(me, HIM"\nä½ æ„Ÿè¦ºåˆ°æ°£è¡€ä¸é †ï¼Œé€Ÿåº¦æ¼¸æ¼¸æ…¢äº†ä¸‹ä¾†ã€‚\n\n"NOR);
         }
 }
 

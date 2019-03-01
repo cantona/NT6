@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-        set("short","ũ��");
+        set("short","農田");
         set("long",@LONG
-����һС����ͨ��ˮ�������Ϫ�����������ʮ�ַ��㡣Χ��
-ũ�����һƬƬɣ�֣������˲�ɣ�����ϣ���֯�൱���µ�˿֯Ʒ��
-����������ӡ�
+這是一小塊普通的水田，附近有溪流流過，灌溉十分方便。圍繞
+農田的是一片片桑林，擺夷人採桑、養蠶，紡織相當精致的絲織品。
+西邊有所民居。
 LONG);
         set("objects", ([
            __DIR__"npc/nongfu2": 1,

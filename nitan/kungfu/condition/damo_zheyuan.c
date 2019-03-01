@@ -6,23 +6,23 @@ inherit "/inherit/condition/damo";
 
 string name() { return "damo_zheyuan"; }
 
-string chinese_name() { return "ÕÛÔªÖ®ÈÅ"; }
+string chinese_name() { return "æŠ˜å…ƒä¹‹æ“¾"; }
 
 string update_msg_others()
 {
-        return HIM "$N" HIM "Á³É«ºöÈ»´ó±ä£¬»Æ¶¹°ã´óµÄº¹ÖéË³"
-               "×ÅÁ³ÅÓä¹ä¹¶øÏÂ¡£\n" NOR;
+        return HIM "$N" HIM "è‡‰è‰²å¿½ç„¶å¤§è®Šï¼Œé»ƒè±†èˆ¬å¤§çš„æ±—ç é †"
+               "è‘—è‡‰é¾æ¶”æ¶”è€Œä¸‹ã€‚\n" NOR;
 }
 
 string update_msg_self()
 {
-        return HIR "µ¤Ìï´¦Ò»Õó»ğÆğ£¬ºöÓÖ±äµÃ±ùÁ¹£¬Ïë±ØÊÇÊÜµ½"
-               "´ïÄ¦ÕÛÔª½£µÄ¸ÉÈÅ¡£\n" NOR;
+        return HIR "ä¸¹ç”°è™•ä¸€é™£ç«èµ·ï¼Œå¿½åˆè®Šå¾—å†°æ¶¼ï¼Œæƒ³å¿…æ˜¯å—åˆ°"
+               "é”æ‘©æŠ˜å…ƒåŠçš„å¹¹æ“¾ã€‚\n" NOR;
 }
 
 string die_reason()
 {
-        return "ÕæÔª±ÀÀ£¶øÍöÁË";
+        return "çœŸå…ƒå´©æ½°è€Œäº¡äº†";
 }
 
 int neili_damage(object me, mapping cnd)

@@ -3,38 +3,38 @@
 // 2002.05.09
 // last update 2002.08.23
 
-//  ´ËÎï¼ş¸ºÔğ´¦ÀíËùÓĞÒ©ÎïÏà¹ØµÄÊÂÎñ£¬°üÀ¨£º
+//  æ­¤ç‰©ä»¶è² è²¬è™•ç†æ‰€æœ‰è—¥ç‰©ç›¸é—œçš„äº‹å‹™ï¼ŒåŒ…æ‹¬ï¼š
 //
-//  1.¸ù¾İÒ©ĞÔ»ñµÃÏàÓ¦µÄÒ©²Ä¡£
-//  2.ºË¶Ô´¦·½½«Ò©²Ä×ª»¯ÎªÒ©Îï¡£
-//  3.´¦Àí¼°±£´æĞÂµÄ´¦·½Êı¾İ¡£
-//  4.½«Ò©²Ä»òÒ©ÎïµÄÃû³ÆÓë±àºÅ»¥Ïà×ª»»¡£
+//  1.æ ¹æ“šè—¥æ€§ç²å¾—ç›¸æ‡‰çš„è—¥æã€‚
+//  2.æ ¸å°è™•æ–¹å°‡è—¥æè½‰åŒ–ç‚ºè—¥ç‰©ã€‚
+//  3.è™•ç†åŠä¿å­˜æ–°çš„è™•æ–¹æ•¸æ“šã€‚
+//  4.å°‡è—¥ææˆ–è—¥ç‰©çš„åç¨±èˆ‡ç·¨è™Ÿäº’ç›¸è½‰æ›ã€‚
 
 /***********************************************************
-±£´æÒ©Îï±àºÅ¼°¶ÔÓ¦Ãû³ÆµÄÓ³ÉäÈçÏÂ£º
+ä¿å­˜è—¥ç‰©ç·¨è™ŸåŠå°æ‡‰åç¨±çš„æ˜ å°„å¦‚ä¸‹ï¼š
 mapping data = ([
         "herb" : ([
-                0 : "¸Ê²İ",
-                1 : "³ÁÏã",
+                0 : "ç”˜è‰",
+                1 : "æ²‰é¦™",
                 ]),
         "medicine" : ([
-                0 : "Ğş»Æ×ÏÇåµ¤",
-                1 : "¸Ê²İÈó·ÎÉ¢",
+                0 : "ç„é»ƒç´«æ¸…ä¸¹",
+                1 : "ç”˜è‰æ½¤è‚ºæ•£",
                 ]),
         ]);
 
-±£´æ´¦·½µÄÓ³ÉäÈçÏÂ£º
+ä¿å­˜è™•æ–¹çš„æ˜ å°„å¦‚ä¸‹ï¼š
 mapping prescription = ([
         1, 2, 3 : 1,
         2, 3, 4 : 2,
         ]);
 
-±£´æÒ©²ÄÏà¹ØĞÅÏ¢µÄÓ³ÉäÈçÏÂ£º
+ä¿å­˜è—¥æç›¸é—œä¿¡æ¯çš„æ˜ å°„å¦‚ä¸‹ï¼š
 mapping relation = ([
         0 : ([
                 "eng"  : ({"gan cao", "cao"}),
-                "unit" : "¿Ã",
-                "desc" : "Ò»¿Ã×ÏºìÉ«µÄĞ¡²İ£¬¿´ÆğÀ´É·ÊÇ¿É°®¡£",
+                "unit" : "æ£µ",
+                "desc" : "ä¸€æ£µç´«ç´…è‰²çš„å°è‰ï¼Œçœ‹èµ·ä¾†ç…æ˜¯å¯æ„›ã€‚",
                 ]),
         ]);
 ***********************************************************/
@@ -55,13 +55,13 @@ int register_all_medicine();
 void create()
 {
         seteuid(ROOT_UID);
-        initialize(); // ³õÊ¼»¯£¬°üÀ¨ÔØÈëÊı¾İ£¬Ë¢ĞÂÓ³ÉäµÈ
+        initialize(); // åˆå§‹åŒ–ï¼ŒåŒ…æ‹¬è¼‰å…¥æ•¸æ“šï¼Œåˆ·æ–°æ˜ å°„ç­‰
 
-        set("channel_id", "ÖÆÒ©¾«Áé");
-        CHANNEL_D->do_channel( this_object(), "sys", "ÖÆÒ©ÏµÍ³ÒÑ¾­Æô¶¯¡£");
+        set("channel_id", "åˆ¶è—¥ç²¾éˆ");
+        CHANNEL_D->do_channel( this_object(), "sys", "åˆ¶è—¥ç³»çµ±å·²ç¶“å•Ÿå‹•ã€‚");
 }
 
-// ³õÊ¼»¯£¬°üÀ¨ÔØÈëÊı¾İ£¬Ë¢ĞÂÓ³ÉäµÈ
+// åˆå§‹åŒ–ï¼ŒåŒ…æ‹¬è¼‰å…¥æ•¸æ“šï¼Œåˆ·æ–°æ˜ å°„ç­‰
 void initialize()
 {
         restore();        
@@ -88,10 +88,10 @@ void remove() { save(); }
 string query_save_file() { return DATA_DIR "pharmacyd"; }
 
 /*********************************************************************
-                       ÒÔÏÂÎªÔö¼Ó¡¢É¾³ıÊı¾İµÄ½Ó¿Ú
+                       ä»¥ä¸‹ç‚ºå¢åŠ ã€åˆªé™¤æ•¸æ“šçš„æ¥å£
 *********************************************************************/
 
-// ×¢²áÒ©²Äid¼°¶ÔÓ¦ÖĞÎÄÃû³Æ
+// æ³¨å†Šè—¥æidåŠå°æ‡‰ä¸­æ–‡åç¨±
 int register_herb(int id, string name)
 {
         object ob;
@@ -114,7 +114,7 @@ int register_herb(int id, string name)
         return 1;
 }
 
-// ÉèÖÃÒ©²ÄµÄ»ù±¾ĞÅÏ¢
+// è¨­ç½®è—¥æçš„åŸºæœ¬ä¿¡æ¯
 int set_relation(int id, mapping rt)
 {
         mapping map;
@@ -136,7 +136,7 @@ int set_relation(int id, mapping rt)
         return 1;
 }
 
-// ×¢²áÒ©Îïid¼°¶ÔÓ¦Ãû³Æ(ÓÉÒ©ÎïÎï¼şÈ¡µÃ)
+// æ³¨å†Šè—¥ç‰©idåŠå°æ‡‰åç¨±(ç”±è—¥ç‰©ç‰©ä»¶å–å¾—)
 int register_medicine(int id)
 {
         object obj;
@@ -166,7 +166,7 @@ int register_medicine(int id)
         return 1;
 }
 
-// ×¢²áËùÓĞÒ©Îï
+// æ³¨å†Šæ‰€æœ‰è—¥ç‰©
 int register_all_medicine()
 {
         int i, id;
@@ -186,7 +186,7 @@ int register_all_medicine()
         return 1;
 }
 
-// ×¢ÏúÄ³Ò»Ò©²Ä»òÒ©Îï
+// æ³¨éŠ·æŸä¸€è—¥ææˆ–è—¥ç‰©
 int unregister(string type, int id)
 {
 
@@ -202,7 +202,7 @@ int unregister(string type, int id)
         return 1;
 }
 
-// Ôö¼Ó´¦·½Êı¾İ
+// å¢åŠ è™•æ–¹æ•¸æ“š
 int add_prescription(int *herbs, string medicine)
 {
         if (! mapp(prescription))
@@ -213,7 +213,7 @@ int add_prescription(int *herbs, string medicine)
         return 1;
 }
 
-// É¾³ı´¦·½Êı¾İ
+// åˆªé™¤è™•æ–¹æ•¸æ“š
 int delete_prescription(int *herbs)
 {
         if (! mapp(prescription) || undefinedp(prescription[herbs]))
@@ -224,13 +224,13 @@ int delete_prescription(int *herbs)
 }
 
 /*********************************************************************
-                       ÒÔÏÂÎª¹©Íâ²¿µ÷ÓÃµÄ²éÑ¯½Ó¿Ú
+                       ä»¥ä¸‹ç‚ºä¾›å¤–éƒ¨èª¿ç”¨çš„æŸ¥è©¢æ¥å£
 *********************************************************************/
 
-// ·µ»Ø¸ÃÒ©²ÄµÄ»ù±¾ĞÅÏ¢£¬ÔÚÒ©²Ä³õÊ¼»¯Ê±µ÷ÓÃ
+// è¿”å›è©²è—¥æçš„åŸºæœ¬ä¿¡æ¯ï¼Œåœ¨è—¥æåˆå§‹åŒ–æ™‚èª¿ç”¨
 mapping query_relation(int id) { return relation[id]; }
 
-// Í¨¹ıÒ©²Ä»òÒ©ÎïÃû²éÑ¯±àºÅ
+// é€šéè—¥ææˆ–è—¥ç‰©åæŸ¥è©¢ç·¨è™Ÿ
 int check_id(string name)
 {
         int loc;
@@ -251,7 +251,7 @@ int check_id(string name)
         return key[loc];
 }
 
-// Í¨¹ıÀàĞÍ(Ò©²Ä»òÒ©Îï)¼°id²éÑ¯ÖĞÎÄÃû³Æ
+// é€šéé¡å‹(è—¥ææˆ–è—¥ç‰©)åŠidæŸ¥è©¢ä¸­æ–‡åç¨±
 string check_name(string type, int id)
 {
         mapping fname;
@@ -263,20 +263,20 @@ string check_name(string type, int id)
         return fname[id];
 }
 
-// ²éÑ¯¸ÃÀàĞÍ(Ò©²Ä»òÒ©Îï)Ä³Ò»idÊÇ·ñÒÑ×¢²á
+// æŸ¥è©¢è©²é¡å‹(è—¥ææˆ–è—¥ç‰©)æŸä¸€idæ˜¯å¦å·²æ³¨å†Š
 int already_registerd(string type, int id)
 {
         if (type != "herb" && type != "medicine")
-                return notify_fail("²éÑ¯ÀàĞÍ´íÎó£¡\n");
+                return notify_fail("æŸ¥è©¢é¡å‹éŒ¯èª¤ï¼\n");
 
         return undefinedp(data[type][id]) == 0;
 }
 
 /*********************************************************************
-                       ÒÔÏÂÎªµ÷ÓÃ²é¿´Êı¾İÁĞ±íµÄ½Ó¿Ú
+                       ä»¥ä¸‹ç‚ºèª¿ç”¨æŸ¥çœ‹æ•¸æ“šåˆ—è¡¨çš„æ¥å£
 *********************************************************************/
 
-// ·µ»ØÒ©²ÄÁĞ±í
+// è¿”å›è—¥æåˆ—è¡¨
 string list_herb()
 {
         int i;
@@ -287,25 +287,25 @@ string list_herb()
         herbs = data["herb"];
 
         if (! mapp(herbs) || ! sizeof(herbs))
-                return "Ä¿Ç°ÉĞÎ´Íê³ÉÒ©²ÄÊı¾İ¹¹Ôì£¡\n";
+                return "ç›®å‰å°šæœªå®Œæˆè—¥ææ•¸æ“šæ§‹é€ ï¼\n";
 
-        line  = WHT"\nÄ¿Ç°ÒÑÊÕ¼¯µÄÒ©²ÄÊı¾İÈçÏÂ£º\n\n"NOR;
+        line  = WHT"\nç›®å‰å·²æ”¶é›†çš„è—¥ææ•¸æ“šå¦‚ä¸‹ï¼š\n\n"NOR;
         key   = keys(herbs);
         key   = sort_array(key, 1);
 
         for(i = 0; i < sizeof(key); i++)
         {
                 line += sprintf(CYN"%2d", key[i]);
-                line += "¡¡¡¡";
+                line += "ã€€ã€€";
                 line += sprintf(WHT"%-10s"NOR, herbs[key[i]]);
 
-                line += (i<4 || i%4) ? "¡¡" : "\n";
+                line += (i<4 || i%4) ? "ã€€" : "\n";
         }
 
         return line;
 }
 
-// ·µ»ØÒ©ÎïÁĞ±í
+// è¿”å›è—¥ç‰©åˆ—è¡¨
 string list_medicine()
 {
         int i;
@@ -316,25 +316,25 @@ string list_medicine()
         medicines = data["medicine"];
 
         if (! mapp(medicines) || ! sizeof(medicines))
-                return "Ä¿Ç°ÉĞÎ´Íê³ÉÒ©ÎïÊı¾İ¹¹Ôì£¡\n";
+                return "ç›®å‰å°šæœªå®Œæˆè—¥ç‰©æ•¸æ“šæ§‹é€ ï¼\n";
 
-        line  = WHT"\nÄ¿Ç°ÒÑÊÕ¼¯µÄÒ©ÎïÊı¾İÈçÏÂ£º\n\n"NOR;
+        line  = WHT"\nç›®å‰å·²æ”¶é›†çš„è—¥ç‰©æ•¸æ“šå¦‚ä¸‹ï¼š\n\n"NOR;
         key   = keys(medicines);
         key   = sort_array(key, 1);
 
         for(i = 0; i < sizeof(key); i++)
         {
                 line += sprintf(CYN"%2d", key[i]);
-                line += "¡¡¡¡";
+                line += "ã€€ã€€";
                 line += sprintf(WHT"%-10s"NOR, medicines[key[i]]);
 
-                line += (i<4 || i%4) ? "¡¡" : "\n";
+                line += (i<4 || i%4) ? "ã€€" : "\n";
         }
 
         return line;
 }
 
-// ·µ»Ø´¦·½ÁĞ±í
+// è¿”å›è™•æ–¹åˆ—è¡¨
 string list_prescription()
 {
         int i;
@@ -342,7 +342,7 @@ string list_prescription()
         int *key, *value;
 
         if (! mapp(prescription) || ! sizeof(prescription))
-                return "Ä¿Ç°ÉĞÎŞÒ©·½Êı¾İ¿É¹©²éÑ¯£¡\n";
+                return "ç›®å‰å°šç„¡è—¥æ–¹æ•¸æ“šå¯ä¾›æŸ¥è©¢ï¼\n";
 
         line  = "";
         key   = keys(prescription);
@@ -353,7 +353,7 @@ string list_prescription()
                 foreach(int id in key[i])
                         line += sprintf(HIW"%-8s", check_name("herb", id));
 
-                line += sprintf(HIC"£º%-20s", check_name("medicine", value[i]));
+                line += sprintf(HIC"ï¼š%-20s", check_name("medicine", value[i]));
                 line += "\n" NOR;
         }
 
@@ -361,20 +361,20 @@ string list_prescription()
 }
 
 /*********************************************************************
-                       ÒÔÏÂÎª°´ÒªÇóÉú³ÉÒ©²ÄµÄ½Ó¿Ú
+                       ä»¥ä¸‹ç‚ºæŒ‰è¦æ±‚ç”Ÿæˆè—¥æçš„æ¥å£
 
-                ÆäÖĞ£¬Ã¿¼şÒ©²ÄµÄÊôĞÔ¶¼ÊÇÎ¨Ò»µÄ£¬ĞÎÊ½ÈçÏÂ£º
+                å…¶ä¸­ï¼Œæ¯ä»¶è—¥æçš„å±¬æ€§éƒ½æ˜¯å”¯ä¸€çš„ï¼Œå½¢å¼å¦‚ä¸‹ï¼š
 
-                Î¶ĞÔ(Taste)     £º¿à¡¢ÏÌ¡¢Ëá¡¢¸Ê¡¢ĞÁ
-                Ò©ĞÔ(Officinal) £ºº®¡¢Á¹¡¢Æ½¡¢ÎÂ¡¢ÈÈ
-                ¶¾ĞÔ(toXicity)  £ºÓĞ¡¢ÎŞ
+                å‘³æ€§(Taste)     ï¼šè‹¦ã€å’¸ã€é…¸ã€ç”˜ã€è¾›
+                è—¥æ€§(Officinal) ï¼šå¯’ã€æ¶¼ã€å¹³ã€æº«ã€ç†±
+                æ¯’æ€§(toXicity)  ï¼šæœ‰ã€ç„¡
 
-                ËùÒÔ£¬ÒÔ {x,y,z} ĞÎÊ½µÄÊı×é¶ÔÓ¦Î¨Ò»Ò»ÖÖÒ©
-                ²Ä£¬×ÜÊı¼´Îª 5x5x2 = 50 ÖÖ¡£
+                æ‰€ä»¥ï¼Œä»¥ {x,y,z} å½¢å¼çš„æ•¸çµ„å°æ‡‰å”¯ä¸€ä¸€ç¨®è—¥
+                æï¼Œç¸½æ•¸å³ç‚º 5x5x2 = 50 ç¨®ã€‚
 
 *********************************************************************/
 
-// ¸ù¾İÊôĞÔ¼ÆËã±àºÅ£¬´´½¨Ò©²Ä
+// æ ¹æ“šå±¬æ€§è¨ˆç®—ç·¨è™Ÿï¼Œå‰µå»ºè—¥æ
 object build_herb(int *prop)
 {
         int num;
@@ -391,7 +391,7 @@ object build_herb(int *prop)
             sizeof(prop) > 3)
                 error("Pharmacyd:Wrong Herb Prop.\n");
 
-        // Ëã·¨Îª 10*x + 2*y + z ¼´¿ÉµÃµ½¸ÃÒ©²ÄµÄÎ¨Ò»±àºÅ¡£
+        // ç®—æ³•ç‚º 10*x + 2*y + z å³å¯å¾—åˆ°è©²è—¥æçš„å”¯ä¸€ç·¨è™Ÿã€‚
         num  = xp;
         num += op * 2;
         num += tp * 10;
@@ -401,13 +401,13 @@ object build_herb(int *prop)
         if (! stringp(name))
                 error("Pharmacyd:Fail in Loading Herb object.\n");
 
-        ob = new(HERB_OB);               // ½¨Á¢Ô­ĞÍ
-        ob->initialize(num, name, prop); // ³õÊ¼»¯
+        ob = new(HERB_OB);               // å»ºç«‹åŸå‹
+        ob->initialize(num, name, prop); // åˆå§‹åŒ–
 
         return ob;
 }
 
-// ¸ù¾İ±àºÅ´´½¨Ò©²Ä
+// æ ¹æ“šç·¨è™Ÿå‰µå»ºè—¥æ
 object clone_herb(int id)
 {
         object ob;
@@ -426,23 +426,23 @@ object clone_herb(int id)
 
         prop = ({ tp, op , xp });
 
-        ob = new(HERB_OB);              // ½¨Á¢Ô­ĞÍ
-        ob->initialize(id, name, prop); // ³õÊ¼»¯
+        ob = new(HERB_OB);              // å»ºç«‹åŸå‹
+        ob->initialize(id, name, prop); // åˆå§‹åŒ–
 
         return ob;
 }
 
 /*********************************************************************
-                       ÒÔÏÂÎª°´´¦·½Éú³ÉÒ©ÎïµÄ½Ó¿Ú
+                       ä»¥ä¸‹ç‚ºæŒ‰è™•æ–¹ç”Ÿæˆè—¥ç‰©çš„æ¥å£
 
-                Ã¿´ÎÖÆÒ©µÄ³É¹¦ÂÊ´óÔ¼Îª50%£¬
-                ÄÜ·ñÖÆÒ©µÄÄÜÁ¦ÏŞÖÆÔİÊ±Î´ÓèÒÔ¿¼ÂÇ¡£
-                ÈôÖÆÒ©Ê§°Ü£¬ÓĞÒ»¶¨»ú»áµÃµ½ ´ß»¯¼Á Á¶½ğË® »Æ½ğ
-                ÖĞµÄÒ»ÖÖ£¬·ñÔò½«µÃµ½·ÏÁÏ¡£
+                æ¯æ¬¡åˆ¶è—¥çš„æˆåŠŸç‡å¤§ç´„ç‚º50%ï¼Œ
+                èƒ½å¦åˆ¶è—¥çš„èƒ½åŠ›é™åˆ¶æš«æ™‚æœªäºˆä»¥è€ƒæ…®ã€‚
+                è‹¥åˆ¶è—¥å¤±æ•—ï¼Œæœ‰ä¸€å®šæ©Ÿæœƒå¾—åˆ° å‚¬åŒ–åŠ‘ ç…‰é‡‘æ°´ é»ƒé‡‘
+                ä¸­çš„ä¸€ç¨®ï¼Œå¦å‰‡å°‡å¾—åˆ°å»¢æ–™ã€‚
 
 *********************************************************************/
 
-// ºË¶Ô´¦·½½«Ò©²Ä×ª»¯ÎªÒ©Îï
+// æ ¸å°è™•æ–¹å°‡è—¥æè½‰åŒ–ç‚ºè—¥ç‰©
 object build_medicine(object *herbs)
 {
         object obj;

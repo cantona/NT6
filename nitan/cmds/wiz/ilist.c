@@ -13,15 +13,15 @@ int main(object me, string arg)
         if (! SECURITY_D->valid_grant(me, "(wizard)"))
                 return 0;
 
-        if( !arg ) return notify_fail("Ö¸Áî¸ñÊ½£ºilist <Îï¼ş»òµµÃû>\n");
+        if( !arg ) return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šilist <ç‰©ä»¶æˆ–æª”å>\n");
 
         ob = present(arg, me);
         if( !ob ) ob = present(arg, environment(me));
         if (! ob) ob = find_object(resolve_path(query("cwd", me), arg));
-        if( !ob ) return notify_fail("Ã»ÓĞÕâÑùÎï¼ş»òÕâÑùÎï¼şÃ»ÓĞ±»ÔØÈë¡¡\n");
+        if( !ob ) return notify_fail("æ²’æœ‰é€™æ¨£ç‰©ä»¶æˆ–é€™æ¨£ç‰©ä»¶æ²’æœ‰è¢«è¼‰å…¥ã€€\n");
 
         list = inherit_list(ob);
-        printf("%O£º\n%s", ob,
+        printf("%Oï¼š\n%s", ob,
                 format_inherit_list(ob, inherit_list(ob), deep_inherit_list(ob), "  ", 1));
 
         return 1;
@@ -35,19 +35,19 @@ protected string format_inherit_list(object ob, string *list, string *deeplist,
 
         msg = "";
         for(int i=sizeof(list)-1; i>=0; i--) {
-                msg += indent + (member_array(list[i], deeplist)==-1? "¡õ": (i==0 ? "©¸ " : "©À "))  + list[i];
+                msg += indent + (member_array(list[i], deeplist)==-1? "â–¡": (i==0 ? "â”” " : "â”œ "))  + list[i];
                 switch(inherits(list[i], ob)) {
-                        case 0: msg += " (×îĞÂ°æÓĞ£¬µ«´ËÎï¼şÎ´¼Ì³Ğ)"; break;
+                        case 0: msg += " (æœ€æ–°ç‰ˆæœ‰ï¼Œä½†æ­¤ç‰©ä»¶æœªç¹¼æ‰¿)"; break;
                         case 1: break;
-                        case 2: msg += " (¾É°æ)"; break;
+                        case 2: msg += " (èˆŠç‰ˆ)"; break;
                 }
                 if( deep_ob = find_object(list[i]) ) {
                         string *l;
                         msg += "\n";
                         if( recursive && sizeof(l = inherit_list(deep_ob)) )
-                                msg += format_inherit_list(ob, l, deeplist, indent + (i==0 ? "  " : "©¦")+ "  ", 1);
+                                msg += format_inherit_list(ob, l, deeplist, indent + (i==0 ? "  " : "â”‚")+ "  ", 1);
                 }
-                else msg += " (Î´ÔØÈë£¬¿ÉÄÜ¼Ì³ĞÆäËûÎï¼ş)\n";
+                else msg += " (æœªè¼‰å…¥ï¼Œå¯èƒ½ç¹¼æ‰¿å…¶ä»–ç‰©ä»¶)\n";
         }
         return msg;
 }
@@ -55,9 +55,9 @@ protected string format_inherit_list(object ob, string *list, string *deeplist,
 int help ()
 {
         write(@HELP
-Ö¸Áî¸ñÊ½: ilist <Îï¼ş»òµµÃû>
+æŒ‡ä»¤æ ¼å¼: ilist <ç‰©ä»¶æˆ–æª”å>
  
-ÁĞ³öÒ»¸öÎï¼şËù¼Ì³ĞµÄËùÓĞÎï¼ş¡¡
+åˆ—å‡ºä¸€å€‹ç‰©ä»¶æ‰€ç¹¼æ‰¿çš„æ‰€æœ‰ç‰©ä»¶ã€€
  
 HELP
 );

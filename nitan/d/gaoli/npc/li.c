@@ -1,4 +1,4 @@
-// ´óÌÆË«Áú´«
+// å¤§å”é›™é¾å‚³
  
 // xiaoer.c
 
@@ -7,10 +7,10 @@ inherit F_DEALER;
 
 void create()
 {
-       set_name("ÀîÀÏ°å", ({"li laoban","li","laoban"}));
+       set_name("æè€æ¿", ({"li laoban","li","laoban"}));
        set("shop_id",({"li laoban","li","laoban"}));
-       set("shop_title","Ğ¡³ÔµêÀÏ°å");
-       set("gender", "ÄĞĞÔ");
+       set("shop_title","å°åƒåº—è€æ¿");
+       set("gender", "ç”·æ€§");
         set("combat_exp", 1000);
        set("age", 26);
        set("per", 14);

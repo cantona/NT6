@@ -6,13 +6,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name("ÓñºùÂ«", ({ "yu hulu", "hulu" }));
+        set_name("ç‰è‘«è˜†", ({ "yu hulu", "hulu" }));
         set_weight(300);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ö»");
-                set("long", "ÕâÊÇÒ»¸öÃÀÓñµñ¿ÌµÄºùÂ«£¬Ááçç¾«ÖÂ¡£\n");
+                set("unit", "åª");
+                set("long", "é€™æ˜¯ä¸€å€‹ç¾ç‰é›•åˆ»çš„è‘«è˜†ï¼Œç²ç“ç²¾è‡´ã€‚\n");
                 set("value", 8000);
                 set("material", "jade");
         }

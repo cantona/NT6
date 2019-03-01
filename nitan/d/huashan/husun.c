@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�����");
+        set("short", "猢猻愁");
         set("long", @LONG
-ǰ������һ��ʮ�ֶ��͵�ɽ�룬��������ֻ��Գ���̾�̨�ϣ���
-˵��ǰ�ӻ�ɽˮ����������Գ�ÿ�������Ҫ����ȥ��������Ҳ��
-�����ڳ�Խ���������������
+前面又是一處十分陡峭的山嶺，上面有四只鐵猿，盤踞台畔，據
+說以前從華山水簾洞出來的猿猴，每到這裡就要返回去，連它們也感
+到難于超越，此嶺因而得名。
 LONG );
         set("exits", ([
                 "northdown" : __DIR__"laojun",

@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��̨��");
+        set("short", "南台寺");
         set("long", @LONG
-��̨��Ϊ�������滳�õĵ���ʯͷϣǨ�ĵ������������Ʒ�����
-ʯͷ����Ĺ����������е�������ͨ�ģ�Ȫ�����ˣ�����׷ɣ�ɽ��
-����ʱ��ҶϤ�������ȥ����
+南台寺為禪宗七祖懷讓的弟子石頭希遷的道場，寺下紫雲峰上是
+石頭和尚墓。寺周林蔭夾道，曲徑通幽，泉流叮咚，蜂蝶紛飛，山風
+吹過時萬葉悉索，真好去處。
 LONG );
         set("exits", ([
                 "northdown"  : __DIR__"shanlu9",

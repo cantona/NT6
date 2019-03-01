@@ -5,10 +5,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("����", ({ "snake", "she" }) );
-        set("race", "����");
+        set_name("蝮蛇", ({ "snake", "she" }) );
+        set("race", "爬蛇");
         set("age", 4);
-        set("long", "����һֻ�Ϸ��������û���ߣ�ϰ����һ����ߴ�Ϊ��ͬ��\n");
+        set("long", "這是一只南方叢林裡出沒的蛇，習性與一般的蛇大為不同。\n");
         set("attitude", "aggressive");
 
         set("str", 40);

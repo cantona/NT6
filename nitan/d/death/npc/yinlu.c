@@ -4,13 +4,13 @@
 inherit NPC;
 void create()
 {
-        set_name(YEL "ÅĞ¹Ù" NOR, ({ "pan guan","guan" }) );
+        set_name(YEL "åˆ¤å®˜" NOR, ({ "pan guan","guan" }) );
         set("long", @LONG
-µØÓüÒõË¾ÖĞÖ´ÕÆ¹Ü´øÖÚ¹í£¬ÒÔÊ©½±³ÍÖ®¹Ù£¬ÊÖÖĞÄÃ×Å¼ÇÔØÈËÊÙÃüµÄÉúËÀ²¾¡£
+åœ°ç„é™°å¸ä¸­åŸ·æŒç®¡å¸¶çœ¾é¬¼ï¼Œä»¥æ–½çæ‡²ä¹‹å®˜ï¼Œæ‰‹ä¸­æ‹¿è‘—è¨˜è¼‰äººå£½å‘½çš„ç”Ÿæ­»ç°¿ã€‚
 LONG);
-        set("gender","ÄĞĞÔ");
+        set("gender","ç”·æ€§");
         set("str",1000);
-        set("title",HIB "ÒõÂÉË¾" NOR);                        
+        set("title",HIB "é™°å¾‹å¸" NOR);                        
         set("attitude", "peaceful");
         set("age", 1000);
         set("combat_exp", 100000000);

@@ -1,14 +1,14 @@
-// chuanyun-bu ���Ʋ���
+// chuanyun-bu 穿雲步法
 
 
 inherit SKILL;
 
 string *dodge_msg = ({
-    "$nһʽ��׷����硹�����ӳ���һת��$Nֻ������ǰһ����ʧȥ��Ŀ�ꡣ\n",
-    "$nһʽ�����Ҵ�������˫�ŵ�أ�����ͻȻ�θ�������������Ʈ����$N����\n",
-    "$nһʽ�����Ʋ��¡�������һ�Σ���ʱ��������Ӱһ���ӳ�����$N����ǰ��\n",
-    "$nһʽ����Ӱ���١���ƮȻ���һ�ˣ��㿪$N���������ơ�\n",
-    "$nһʽ������Ϊ�Ρ������弱ת����Ϊһ���׹⣬��ò����ĳ�����$N����Χ��\n",
+    "$n一式「追風逐電」，身子掣忽一轉，$N只覺的眼前一花，失去了目標。\n",
+    "$n一式「左右穿花」，雙腳點地，身子突然拔高了丈許，緩緩飄落在$N身後。\n",
+    "$n一式「登雲步月」，身行一晃，頓時無數條身影一下子出現在$N的面前。\n",
+    "$n一式「無影無蹤」，飄然向後一退，躲開$N的凌厲攻勢。\n",
+    "$n一式「劃地為牢」，身體急轉，化為一道白光，虛幻不定的出現在$N的周圍。\n",
 });
 
 int valid_enable(string usage)
@@ -29,7 +29,7 @@ string query_dodge_msg(string limb)
 int practice_skill(object me)
 {
         if( query("qi", me)<50 )
-                return notify_fail("�������̫���ˣ����������Ʋ�����\n");
+                return notify_fail("你的體力太差了，不能練穿雲步法。\n");
 
         me->receive_damage("qi", 40);
                 return 1;

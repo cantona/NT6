@@ -3,15 +3,15 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÔÀ²»Èº--¿Õ", ({ "yue buqun shadow", "shadow" }) );
-        set("title", "»ªÉ½ÅÉÕÆÃÅ");
-        set("nickname", "¾ı×Ó½£");
-        set("gender", "ÄĞĞÔ");
+        set_name("å²³ä¸ç¾¤--ç©º", ({ "yue buqun shadow", "shadow" }) );
+        set("title", "è¯å±±æ´¾æŒé–€");
+        set("nickname", "å›å­åŠ");
+        set("gender", "ç”·æ€§");
         set("class", "swordsman");
         set("age", 55);
         set("long",
-                "ÔÀ²»Èº×ÔÓ×Ö´ÕÆ»ªÉ½ÅÉ£¬ÄËµ±½ñÎäÁÖÖĞÒ»µÈÒ»µÄ¸ßÊÖ¡£²»¹ıÃæÇ°Õâ¸ö\n"
-    +"ÔÀ²»Èº£¬ËÆºõÈÃÈËÓĞĞ©²»ÕæÊµ¸Ğ¡£\n");
+                "å²³ä¸ç¾¤è‡ªå¹¼åŸ·æŒè¯å±±æ´¾ï¼Œä¹ƒç•¶ä»Šæ­¦æ—ä¸­ä¸€ç­‰ä¸€çš„é«˜æ‰‹ã€‚ä¸éé¢å‰é€™å€‹\n"
+    +"å²³ä¸ç¾¤ï¼Œä¼¼ä¹è®“äººæœ‰äº›ä¸çœŸå¯¦æ„Ÿã€‚\n");
         set("attitude", "peaceful");
         set("str", 126);
         set("con", 130);
@@ -38,7 +38,7 @@ void create()
                 (: perform_action, "sword.cimu" :), 
                 (: perform_action, "sword.cimu" :),         }) );
         set("inquiry", ([
-            "¹ı¹Ø": "ÒªÏë¹ı¹Ø£¬µÃÏÈ´ò°ÜÎÒ¡£\n",
+            "éé—œ": "è¦æƒ³éé—œï¼Œå¾—å…ˆæ‰“æ•—æˆ‘ã€‚\n",
         ]) );
 
         set_skill("unarmed", 820);
@@ -59,7 +59,7 @@ void create()
         map_skill("unarmed", "huashan-quan");
         map_skill("dodge", "feiyan-huixiang");
 
-        create_family("»ªÉ½ÅÉ", 13, "ÕÆÃÅ");
+        create_family("è¯å±±æ´¾", 13, "æŒé–€");
         setup();
 
         carry_object("/clone/weapon/changjian")->wield();
@@ -70,21 +70,21 @@ int accept_fight(object ob)
 {
         ob=this_player();   
         if( !query("fighter", ob)){
-        command("say À´µÃºÃ£¡ÎÒ¿ÉÊÇ²»»áÊÖÏÂÁôÇéµÄ¡£\n");
+        command("say ä¾†å¾—å¥½ï¼æˆ‘å¯æ˜¯ä¸æœƒæ‰‹ä¸‹ç•™æƒ…çš„ã€‚\n");
         set("fighter", 1, ob);
-        set_temp("m_success/»ÃÓ°", 1, ob);
+        set_temp("m_success/å¹»å½±", 1, ob);
         remove_call_out("kill_ob");
         call_out("kill_ob", 1, ob);
         return 1;
         }
         else
-        write(query("name", ob)+"£¬ÄãÒÑ¾­ÉÏ¹ı³¡ÁË£¡\n");
+        write(query("name", ob)+"ï¼Œä½ å·²ç¶“ä¸Šéå ´äº†ï¼\n");
 }
 
 void die()
 {
         object ob;
-        message_vision("\n$NÒ»»Î£¬±äÎªÒ»ÂÆÇáÑÌÏûÊ§ÁË¡£\n", this_object());
+        message_vision("\n$Nä¸€æ™ƒï¼Œè®Šç‚ºä¸€ç¸·è¼•ç…™æ¶ˆå¤±äº†ã€‚\n", this_object());
           if( objectp(ob = find_object("/d/dragon/dragoncave")) )
                   destruct(ob);
         ob = new("/quest/tulong/npc/shadow1");

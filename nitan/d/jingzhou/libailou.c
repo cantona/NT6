@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����");
+        set("short", "飯館");
         set("long", @LONG
-����һ��������С���ݣ�������Ϊ���ף��˿Ͷ��ǴҴҵ����ˣ�
-�����ӡ����ȡ��׾ƾ͸�·ȥ�ˡ�
+這是一家湘西的小飯館，布置頗為簡易，顧客多是匆匆的行人，
+買點包子、雞腿、米酒就趕路去了。
 LONG );
         set("exits", ([
                 "west" : __DIR__"beidajie2",

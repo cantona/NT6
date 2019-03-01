@@ -1,5 +1,5 @@
 // weapon.h
-// Ä£°å°üº¬Ö®ÎäÆ÷
+// æ¨¡æ¿åŒ…å«ä¹‹æ­¦å™¨
 
 string long()
 {
@@ -10,13 +10,13 @@ string long()
 
         long = query("long");
 
-        // ÏÔÊ¾Ç°×ºÃèÊö
+        // é¡¯ç¤ºå‰ç¶´æè¿°
         if (arrayp(fix_list = query("prefix")) && sizeof(fix_list))
         {
                 foreach (fix_name in fix_list)
                         long += ITEM_D->get_prefix_desc(fix_name) + "\n";
         }
-        // ÏÔÊ¾ºó×ºÃèÊö
+        // é¡¯ç¤ºå¾Œç¶´æè¿°
         if (arrayp(fix_list = query("postfix")) && sizeof(fix_list))
         {
                 foreach (fix_name in fix_list)

@@ -3,15 +3,15 @@ inherit ITEM;
 
 void create()
 {
-        set_name(WHT "¡¸¾ÅÒõÕæ¾­¡¹ÍØ±¾" NOR, ({ "zhenjing taben", "taben",
+        set_name(WHT "ã€Œä¹é™°çœŸç¶“ã€æ‹“æœ¬" NOR, ({ "zhenjing taben", "taben",
                                                 "zhenjing", "jing" }));
         set_weight(500);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "ÕÅ");
-                set("no_sell", "ÄãÏëÇ®Ïë·èÁË£¿ÕâÒ²ÄÃÀ´ÂôÇ®£¿");
-                set("long", WHT "ÕâÊÇÒ»ÕÅÍØÆ¬£¬ÉÏÃæÍØÂúÁËÃÜÃÜÂéÂéµÄĞ¡×Ö¡£\n" NOR);
+                set("unit", "å¼µ");
+                set("no_sell", "ä½ æƒ³éŒ¢æƒ³ç˜‹äº†ï¼Ÿé€™ä¹Ÿæ‹¿ä¾†è³£éŒ¢ï¼Ÿ");
+                set("long", WHT "é€™æ˜¯ä¸€å¼µæ‹“ç‰‡ï¼Œä¸Šé¢æ‹“æ»¿äº†å¯†å¯†éº»éº»çš„å°å­—ã€‚\n" NOR);
                 set("material", "paper");
                 set("skill", ([
                         "name":        "force",

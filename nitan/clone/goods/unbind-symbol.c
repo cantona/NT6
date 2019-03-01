@@ -3,13 +3,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(YEL "½â³ı°ó¶¨·û" NOR, ({ "unbind symbol", "unbind", "symbol" }));
+        set_name(YEL "è§£é™¤ç¶å®šç¬¦" NOR, ({ "unbind symbol", "unbind", "symbol" }));
         set_weight(3000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", YEL "¸Ã·ûÎÄ¿ÉÒÔ½â³ı(unbind)ÎïÆ·µÄ°ó¶¨ÊôĞÔ¡£\n" NOR);
-                set("unit", "¿é");
+                set("long", YEL "è©²ç¬¦æ–‡å¯ä»¥è§£é™¤(unbind)ç‰©å“çš„ç¶å®šå±¬æ€§ã€‚\n" NOR);
+                set("unit", "å¡Š");
                 set("value", 500000);
         }
         setup();
@@ -26,28 +26,28 @@ int do_unbind(string arg)
         object ob;
 
         if (! arg || arg == "")
-                return notify_fail("ÄãÒªÍùÊ²Ã´µÀ¾ßÉÏÊ¹ÓÃ¸ÃÉñ·û£¿\n");
+                return notify_fail("ä½ è¦å¾€ä»€éº¼é“å…·ä¸Šä½¿ç”¨è©²ç¥ç¬¦ï¼Ÿ\n");
 
         me = this_player();
         if (! objectp(ob = present(arg, me)) &&
             ! objectp(ob = present(arg, environment(me))))
-                return notify_fail("ÄãÉíÉÏºÍ¸½½üÃ»ÓĞÕâÑùµÀ¾ß°¡¡£\n");
+                return notify_fail("ä½ èº«ä¸Šå’Œé™„è¿‘æ²’æœ‰é€™æ¨£é“å…·å•Šã€‚\n");
 
         if (ob == this_object() || ob->is_character())
-                return notify_fail("ÄãÏëÒª¸ÉÊ²Ã´?\n");
+                return notify_fail("ä½ æƒ³è¦å¹¹ä»€éº¼?\n");
 
         if (!query("bindable", ob))
-                return notify_fail("Õâ¸öÎïÆ·Ã»ÓĞ°ó¶¨¹ı£¬ÎŞĞè½â³ı°ó¶¨£¡\n");
+                return notify_fail("é€™å€‹ç‰©å“æ²’æœ‰ç¶å®šéï¼Œç„¡éœ€è§£é™¤ç¶å®šï¼\n");
 
         delete("bindable", ob);
         delete("bind_owner", ob);
         set("set_data", 1, ob);
         set("auto_load", 1, ob);
 
-        tell_object(me, "Äã°Ñ" + name() + "¸ÇÔÚ" + ob->name() + "ÉÏ£¬È»ºó¿ÚÖĞÄîÄîÓĞ´Ê£¬"
-                        "Ö»¼ûÊ¥·û»¯×÷Ò»µÀºì¹â·ÉÈë" + ob->name() + "ÌåÄÚ£¡\n");
+        tell_object(me, "ä½ æŠŠ" + name() + "è“‹åœ¨" + ob->name() + "ä¸Šï¼Œç„¶å¾Œå£ä¸­å¿µå¿µæœ‰è©ï¼Œ"
+                        "åªè¦‹è–ç¬¦åŒ–ä½œä¸€é“ç´…å…‰é£›å…¥" + ob->name() + "é«”å…§ï¼\n");
 
-        tell_object(me, HIC "Äã¸ĞÊÜ" + ob->name() + HIC"ÒÑ¾­½â³ıÁË°ó¶¨¡£\n" NOR);
+        tell_object(me, HIC "ä½ æ„Ÿå—" + ob->name() + HIC"å·²ç¶“è§£é™¤äº†ç¶å®šã€‚\n" NOR);
 
         destruct(this_object());
         return 1;

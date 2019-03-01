@@ -4,7 +4,7 @@
 
 inherit ITEM;
 
-protected string mine_class, ucheck_long, unit = "Á½";
+protected string mine_class, ucheck_long, unit = "å…©";
 protected int eff_weight, check_flag;
 
 int no_save_in_home() { return 1; }
@@ -26,7 +26,7 @@ varargs int set_check_flag(int flag)
         }
 
         if(mine_class == BLACK_IRON)
-                unit = "Ç®";
+                unit = "éŒ¢";
 
         return check_flag = 1;
 }
@@ -36,23 +36,23 @@ void create()
         switch (random(3))
         {
                 case 0:
-                        set_name("Ğ¡¿óÊ¯", ({ "ore" }) );
-                        ucheck_long = "Ò»Ğ¡¿é¿óÊ¯¡£\n";
+                        set_name("å°ç¤¦çŸ³", ({ "ore" }) );
+                        ucheck_long = "ä¸€å°å¡Šç¤¦çŸ³ã€‚\n";
                         set_weight(10000);
                         break;
                 case 1:
-                        set_name("¿óÊ¯", ({ "ore" }) );
-                        ucheck_long = "Ò»¿é¿óÊ¯¡£\n";
+                        set_name("ç¤¦çŸ³", ({ "ore" }) );
+                        ucheck_long = "ä¸€å¡Šç¤¦çŸ³ã€‚\n";
                         set_weight(15000);
                         break;
                 case 2:
-                        set_name("´ó¿óÊ¯", ({ "ore" }) );
-                        ucheck_long = "Ò»´ó¿é¿óÊ¯¡£\n";
+                        set_name("å¤§ç¤¦çŸ³", ({ "ore" }) );
+                        ucheck_long = "ä¸€å¤§å¡Šç¤¦çŸ³ã€‚\n";
                         set_weight(20000);
                         break;
         }
 
-        set("unit", "¿é");
+        set("unit", "å¡Š");
         set("material", "stone");
         set("long", evaluate((: query_long :), this_object()));
         setup();
@@ -68,9 +68,9 @@ string query_long()
         if(!mine_class
         || (eff_weight < 1)
         || !(cm = MINE_D->chinese_mine_class(mine_class)))
-                return "Õâ¿éÊ¯Í·Àï²»º¬ÈÎºÎ¿óÎï³É·Ö¡£\n";
+                return "é€™å¡ŠçŸ³é ­è£¡ä¸å«ä»»ä½•ç¤¦ç‰©æˆåˆ†ã€‚\n";
 
-        return sprintf("ÕâÊÇÒ»¿éº¬ÓĞ%sµÄ¿óÊ¯£¬\n´óÔ¼º¬ÓĞ %d %s%s¡£\n",
+        return sprintf("é€™æ˜¯ä¸€å¡Šå«æœ‰%sçš„ç¤¦çŸ³ï¼Œ\nå¤§ç´„å«æœ‰ %d %s%sã€‚\n",
                 cm, eff_weight, unit, cm);
 }
 

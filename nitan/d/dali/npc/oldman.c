@@ -7,12 +7,12 @@ int ask_xdh(object me, object ob);
 
 void create()
 {
-        set_name("°ÚÒÄÀÏÛÅ",({ "old man", "old", "man" }) ); 
-        set("gender", "ÄÐÐÔ" );
+        set_name("æ“ºå¤·è€åŸ",({ "old man", "old", "man" }) ); 
+        set("gender", "ç”·æ€§" );
         set("age", 72);
         set("long", 
-"Ò»¸ö°ÚÒÄÀÏÛÅ´ó´óßÖßÖµØ×øÔÚÖñÀé°åÉáÃÅ¿Ú£¬Ë¦×ÅÈýËÄ¸ö°ÍÕÆ´óµÄ×ØÂÀÊ÷Ò¶£¬ÇÆ×ÅµÀ
-ÉÏÀ´À´ÍùÍùµÄÈËÃÇ£¬µ¹Ò²¿ì»î×ÔÔÚ¡£\n");
+"ä¸€å€‹æ“ºå¤·è€åŸå¤§å¤§å’§å’§åœ°ååœ¨ç«¹ç±¬æ¿èˆé–€å£ï¼Œç”©è‘—ä¸‰å››å€‹å·´æŽŒå¤§çš„æ£•å‘‚æ¨¹è‘‰ï¼Œçž§è‘—é“
+ä¸Šä¾†ä¾†å¾€å¾€çš„äººå€‘ï¼Œå€’ä¹Ÿå¿«æ´»è‡ªåœ¨ã€‚\n");
         set_temp("apply/defense", 5);
         set("combat_exp", 700);
         set("shen_type", 1);
@@ -23,7 +23,7 @@ void create()
         set("int", 15);
         set("attitude", "friendly");
         set("inquiry",([  
-                "Ð¡µ¶»á" : (: ask_xdh :),  
+                "å°åˆ€æœƒ" : (: ask_xdh :),  
                                ]) );  
         setup();
         carry_object("/clone/cloth/cloth")->wear();
@@ -34,22 +34,22 @@ int ask_xdh(object me, object ob)
      me=this_player(); 
      ob=this_object(); 
      ob=this_object(); 
-     if( query("bunch/bunch_name", me) != "Ð¡µ¶»á" && query("shen", me) <= 0 )
+     if( query("bunch/bunch_name", me) != "å°åˆ€æœƒ" && query("shen", me) <= 0 )
      { 
-           command("whisper"+query("id", me)+"ÐÖµÜÊÇÏë¼ÓÈëÔÛÃÇÐ¡µ¶»áµÄ°É£¡ËæÎÒÀ´°É£¡");
-           tell_object(me,HIB"°ÚÒÄÀÏÛÅ´øÄãµ½ÁËºóÔº£¬ÒÆ¿ªÒ»¿éÊ¯°å£¬ÄãË³×ÅÊ¯½××ßÁËÏÂÈ¥¡£\n"NOR);
-           message("vision", me->name() + "´ø×Å°ÚÒÄÀÏÛÅ¼±¼±Ã¦Ã¦µÄ×ßÁË¡£\n", 
+           command("whisper"+query("id", me)+"å…„å¼Ÿæ˜¯æƒ³åŠ å…¥å’±å€‘å°åˆ€æœƒçš„å§ï¼éš¨æˆ‘ä¾†å§ï¼");
+           tell_object(me,HIB"æ“ºå¤·è€åŸå¸¶ä½ åˆ°äº†å¾Œé™¢ï¼Œç§»é–‹ä¸€å¡ŠçŸ³æ¿ï¼Œä½ é †è‘—çŸ³éšŽèµ°äº†ä¸‹åŽ»ã€‚\n"NOR);
+           message("vision", me->name() + "å¸¶è‘—æ“ºå¤·è€åŸæ€¥æ€¥å¿™å¿™çš„èµ°äº†ã€‚\n", 
                               environment(me), ({me}) ); 
            me->move("/d/dali/xdh_dlfb");
            return 1; 
      } 
      if( good_bunch(me) || query("shen", me)>0 )
      { 
-           command("say ¿Í¹Ù£¬ÎÒ²»Ã÷°×ÄãµÄÒâË¼¡£\n"); 
+           command("say å®¢å®˜ï¼Œæˆ‘ä¸æ˜Žç™½ä½ çš„æ„æ€ã€‚\n"); 
            return 1; 
      } 
 
-     tell_object(me,"°ÚÒÄÀÏÛÅËµµÀ£º¡°¼ÈÈ»ÊÇ±¾°ïÐÖµÜ£¬¾ÍËæÎÒÀ´°É£¡¡±\n");
+     tell_object(me,"æ“ºå¤·è€åŸèªªé“ï¼šâ€œæ—¢ç„¶æ˜¯æœ¬å¹«å…„å¼Ÿï¼Œå°±éš¨æˆ‘ä¾†å§ï¼â€\n");
      me->move("/d/dali/xdh_dlfb"); 
      return 1; 
 } 

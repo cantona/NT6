@@ -5,11 +5,11 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("¸ßÔò³É", ({ "gao zecheng", "gao", "zecheng" }));
+        set_name("é«˜å‰‡æˆ", ({ "gao zecheng", "gao", "zecheng" }));
         set("long", 
-"Ëû´©ÇàÉ«³¤ÅÛ£¬±³ÉÏĞ±²å³¤½££¬¶şÊ®°Ë¾ÅËêÄê¼Í£¬Á³ÕÖº®Ëª£¬Ò»
-¸±ÒªÈÇÊÂÉú·ÇµÄÄ£Ñù¡£\n");
-        set("gender", "ÄĞĞÔ");
+"ä»–ç©¿é’è‰²é•·è¢ï¼ŒèƒŒä¸Šæ–œæ’é•·åŠï¼ŒäºŒåå…«ä¹æ­²å¹´ç´€ï¼Œè‡‰ç½©å¯’éœœï¼Œä¸€
+å‰¯è¦æƒ¹äº‹ç”Ÿéçš„æ¨¡æ¨£ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 22);
         set("attitude", "peaceful");
         set("shen_type", -1);
@@ -31,7 +31,7 @@ void create()
         set_skill("huashan-sword", 80);
         map_skill("parry", "huashan-sword");
         map_skill("sword", "huashan-sword");
-        create_family("À¥ÂØÅÉ", 4, "µÜ×Ó");
+        create_family("æ˜†ä¾–æ´¾", 4, "å¼Ÿå­");
 
         setup();
         carry_object("/d/wudang/obj/bluecloth")->wear();

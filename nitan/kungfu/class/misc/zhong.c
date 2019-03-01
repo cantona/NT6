@@ -6,12 +6,12 @@ inherit "/inherit/char/punisher";
 
 void create()
 {
-        set_name("ÖÓÖ¾Áé", ({ "pang toutuo", "pang" ,"toutuo"}));
-        set("title", HIY "ÉñÁú½Ì" NOR "×ó»¤·¨");
-        set("nickname",HIR "ÁÉ¶«ÅÖ×ğÕß" NOR);
-        set("long", "ÕâÍ·ÍÓÉí²ÄÆæ¸ß£¬¶øÇÒÊİµÃ³öÆæ£»Á³ÉÏÆ¤°ü¹ÇÍ·¡¢Ë«\n"
-                    "Ä¿ÉîÏİ£¬µ±Õæ±ãÈç½©Ê¬Ò»°ã¡£\n" );
-        set("gender", "ÄĞĞÔ");
+        set_name("é˜å¿—éˆ", ({ "pang toutuo", "pang" ,"toutuo"}));
+        set("title", HIY "ç¥é¾æ•™" NOR "å·¦è­·æ³•");
+        set("nickname",HIR "é¼æ±èƒ–å°Šè€…" NOR);
+        set("long", "é€™é ­é™€èº«æå¥‡é«˜ï¼Œè€Œä¸”ç˜¦å¾—å‡ºå¥‡ï¼›è‡‰ä¸Šçš®åŒ…éª¨é ­ã€é›™\n"
+                    "ç›®æ·±é™·ï¼Œç•¶çœŸä¾¿å¦‚åƒµå±ä¸€èˆ¬ã€‚\n" );
+        set("gender", "ç”·æ€§");
         set("age", 44);
 
         set("str", 32);
@@ -61,7 +61,7 @@ void create()
                 (: exert_function, "recover" :),
         }));
 
-        create_family("ÉñÁú½Ì", 0, "°×ÁúÊ¹");
+        create_family("ç¥é¾æ•™", 0, "ç™½é¾ä½¿");
 
         setup();
         carry_object("/clone/misc/cloth")->wear();

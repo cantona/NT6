@@ -1,17 +1,17 @@
 // This program is a part of NITAN MudLIB
-// mazed.c ÃÔ¹¬µÄÊØ»¤½ø³Ì
+// mazed.c è¿·å®®çš„å®ˆè­·é€²ç¨‹
 
 /***********************************************************************
- * Ã¿¸öÃÔ¹¬µÄÊı¾İ°üÀ¨£º                                                *
- * boss:            ÃÔ¹¬ÖĞ·ÅÖÃµÄNPC                                    *
- * roomlist:        ÃÔ¹¬µÄ·¿¼äµãÕó                                     *
- * entry:           ÃÔ¹¬µÄÈë¿Ú                                         *
- * target:          ÃÔ¹¬µÄ³ö¿Ú                                         *
- * direction:       ÃÔ¹¬µÄ·½Ïò                                         *
- * deep_map:        ÃÔ¹¬´øÂ·ÏßµÄµØÍ¼                                   *
- * comm_map:        ÃÔ¹¬²»´øÂ·ÏßµÄµØÍ¼                                 *
- * born_time:       ÃÔ¹¬´´½¨µÄÊ±¼ä                                     *
- * map_status:      ÃÔ¹¬µÄµØÍ¼×´Ì¬                                     *
+ * æ¯å€‹è¿·å®®çš„æ•¸æ“šåŒ…æ‹¬ï¼š                                                *
+ * boss:            è¿·å®®ä¸­æ”¾ç½®çš„NPC                                    *
+ * roomlist:        è¿·å®®çš„æˆ¿é–“é»é™£                                     *
+ * entry:           è¿·å®®çš„å…¥å£                                         *
+ * target:          è¿·å®®çš„å‡ºå£                                         *
+ * direction:       è¿·å®®çš„æ–¹å‘                                         *
+ * deep_map:        è¿·å®®å¸¶è·¯ç·šçš„åœ°åœ–                                   *
+ * comm_map:        è¿·å®®ä¸å¸¶è·¯ç·šçš„åœ°åœ–                                 *
+ * born_time:       è¿·å®®å‰µå»ºçš„æ™‚é–“                                     *
+ * map_status:      è¿·å®®çš„åœ°åœ–ç‹€æ…‹                                     *
  ***********************************************************************/
 
 #include <ansi.h>
@@ -26,44 +26,44 @@ int clean_up() { return 1; }
 
 /***********************************************************************/
 
-nosave mapping mazelist;                                  // ËùÓĞÃÔ¹¬ÁĞ±í
-nosave int mazeindex = 0;                                 // ËùÓĞÃÔ¹¬Ë÷Òı  
-nosave int show_local_room = 1;                           // ÊÇ·ñÏÔÊ¾Íæ¼ÒËùÔÚµÄÎ»ÖÃ   
-nosave mixed dead_room_list;                              // ÔÚ´´½¨ÃÔ¹¬Ê±¼ÇÂ¼ËÀºúÍ¬       
-nosave object *all_dead_room;                             // ¼ÇÂ¼ËùÓĞÔÚËÀºúÍ¬ÖĞµÄ·¿¼ä    
+nosave mapping mazelist;                                  // æ‰€æœ‰è¿·å®®åˆ—è¡¨
+nosave int mazeindex = 0;                                 // æ‰€æœ‰è¿·å®®ç´¢å¼•  
+nosave int show_local_room = 1;                           // æ˜¯å¦é¡¯ç¤ºç©å®¶æ‰€åœ¨çš„ä½ç½®   
+nosave mixed dead_room_list;                              // åœ¨å‰µå»ºè¿·å®®æ™‚è¨˜éŒ„æ­»èƒ¡åŒ       
+nosave object *all_dead_room;                             // è¨˜éŒ„æ‰€æœ‰åœ¨æ­»èƒ¡åŒä¸­çš„æˆ¿é–“    
  
-// ¶¨ÒåÌá¹©¸øÍâ²¿µ÷ÓÃµÄ½Ó¿Úº¯Êı
-public void check_maze(string mazename);                  // ¼ì²éÃÔ¹¬µÄ×´Ì¬ 
-public void remove_maze(string mazename);                 // ²ğ³ıÖ¸¶¨µÄÃÔ¹¬ 
-public object create_maze(object npc);                    // ´´½¨ĞÂµÄÃÔ¹¬   
-public void init_maze(string mazename);                   // ³õÊ¼»¯ÃÔ¹¬µØÍ¼  
-public string get_comm_map(string mazename, object room); // »ñÈ¡ÃÔ¹¬ÆÕÍ¨µØÍ¼ 
-public string get_deep_map(string mazename, object room); // »ñÈ¡ÃÔ¹¬ÏêÏ¸µØÍ¼
-public object trip_maze(string mazename, object room);    // Ë¤õÓµ½Ëæ»ú·¿¼ä   
-public void lostmap_maze(string mazename);                // ÃÔ¹¬µØÍ¼Ê§Ğ§    
-public void remove_xianjing(string mazename, object room);// ²ğ³ıÖ¸¶¨·¿¼äµÄÏİÚå  
-public void openmap_maze(string mazename);                // ¿ª·ÅÃÔ¹¬ÏêÏ¸µØÍ¼ 
-public void del_npc_skill(string mazename);               // ½µµÍNPCµÄÎä¹¦    
+// å®šç¾©æä¾›çµ¦å¤–éƒ¨èª¿ç”¨çš„æ¥å£å‡½æ•¸
+public void check_maze(string mazename);                  // æª¢æŸ¥è¿·å®®çš„ç‹€æ…‹ 
+public void remove_maze(string mazename);                 // æ‹†é™¤æŒ‡å®šçš„è¿·å®® 
+public object create_maze(object npc);                    // å‰µå»ºæ–°çš„è¿·å®®   
+public void init_maze(string mazename);                   // åˆå§‹åŒ–è¿·å®®åœ°åœ–  
+public string get_comm_map(string mazename, object room); // ç²å–è¿·å®®æ™®é€šåœ°åœ– 
+public string get_deep_map(string mazename, object room); // ç²å–è¿·å®®è©³ç´°åœ°åœ–
+public object trip_maze(string mazename, object room);    // æ‘”è·¤åˆ°éš¨æ©Ÿæˆ¿é–“   
+public void lostmap_maze(string mazename);                // è¿·å®®åœ°åœ–å¤±æ•ˆ    
+public void remove_xianjing(string mazename, object room);// æ‹†é™¤æŒ‡å®šæˆ¿é–“çš„é™·é˜±  
+public void openmap_maze(string mazename);                // é–‹æ”¾è¿·å®®è©³ç´°åœ°åœ– 
+public void del_npc_skill(string mazename);               // é™ä½NPCçš„æ­¦åŠŸ    
 
-// ×¨¹©¹ÜÀíµ÷ÓÃµÄ½Ó¿Úº¯Êı
-public string* query_all_maze();                          // ·µ»ØÃÔ¹¬Ãû³ÆÁĞ±í   
-public mapping query_maze(string mazename);               // ·µ»ØÖ¸¶¨ÃÔ¹¬µÄÏêÏ¸ĞÅÏ¢  
-public void set_locate_show(string mazename);             // ÉèÖÃÖ¸¶¨ÃÔ¹¬ÊÇ·ñÏÔÊ¾Íæ¼ÒËùÔÚµÄÎ»ÖÃ  
+// å°ˆä¾›ç®¡ç†èª¿ç”¨çš„æ¥å£å‡½æ•¸
+public string* query_all_maze();                          // è¿”å›è¿·å®®åç¨±åˆ—è¡¨   
+public mapping query_maze(string mazename);               // è¿”å›æŒ‡å®šè¿·å®®çš„è©³ç´°ä¿¡æ¯  
+public void set_locate_show(string mazename);             // è¨­ç½®æŒ‡å®šè¿·å®®æ˜¯å¦é¡¯ç¤ºç©å®¶æ‰€åœ¨çš„ä½ç½®  
 
 void create()
 {
         seteuid(getuid());
-        set("channel_id", "ÃÔ¹¬¾«Áé");
-        CHANNEL_D->do_channel(this_object(), "sys", "ÃÔ¹¬ÏµÍ³ÒÑ¾­Æô¶¯¡£");
+        set("channel_id", "è¿·å®®ç²¾éˆ");
+        CHANNEL_D->do_channel(this_object(), "sys", "è¿·å®®ç³»çµ±å·²ç¶“å•Ÿå‹•ã€‚");
         mazelist = ([ ]);
         collect_all_maze_information();
         set_heart_beat(HEART_TIME);
 }
 
-// ÃÔ¹¬ÏµÍ³ÖØĞÂÆô¶¯µÄÊ±ºòÊÕ¼¯ËùÓĞÃÔ¹¬·¿¼äµÄÏûÏ¢
+// è¿·å®®ç³»çµ±é‡æ–°å•Ÿå‹•çš„æ™‚å€™æ”¶é›†æ‰€æœ‰è¿·å®®æˆ¿é–“çš„æ¶ˆæ¯
 void collect_all_maze_information()
 {
-        // ½«ËùÓĞµÄÃÔ¹¬·¿¼äÈ«²¿Çå³ı
+        // å°‡æ‰€æœ‰çš„è¿·å®®æˆ¿é–“å…¨éƒ¨æ¸…é™¤
         int i, room_num;
         object *obs;
         
@@ -83,7 +83,7 @@ private void heart_beat()
         int i, maze_num;
         array maze_key;
     
-        // ÇåÀí³¬Ê±µÄÃÔ¹¬£¬ÇåÀíNPCÒÑ¾­ÏûÊ§µÄÃÔ¹¬
+        // æ¸…ç†è¶…æ™‚çš„è¿·å®®ï¼Œæ¸…ç†NPCå·²ç¶“æ¶ˆå¤±çš„è¿·å®®
         if ( !mapp(mazelist) ) return;
 
         maze_key = keys(mazelist);
@@ -162,35 +162,35 @@ public object create_maze(object npc)
 {
         int i, j;
         string entry_name = "";
-        string mazename;        /* ÃÔ¹¬Ãû×Ö         */
-        mapping tempmaze;       /* ÃÔ¹¬ÊµÌå         */
-        mixed mazeroom;         /* ÃÔ¹¬·¿¼äµãÕó     */
-        int *entry;             /* ÃÔ¹¬Èë¿Ú */
-        int *target;            /* ÃÔ¹¬³ö¿Ú */
+        string mazename;        /* è¿·å®®åå­—         */
+        mapping tempmaze;       /* è¿·å®®å¯¦é«”         */
+        mixed mazeroom;         /* è¿·å®®æˆ¿é–“é»é™£     */
+        int *entry;             /* è¿·å®®å…¥å£ */
+        int *target;            /* è¿·å®®å‡ºå£ */
         object temp_room;
     
         if ( !objectp(npc) || !npc->is_character() || !stringp(npc->name()) )
                 return 0;
     
-        // Éú³ÉÃÔ¹¬µÄÃû×Ö£¨Î¨Ò»Öµ£©
+        // ç”Ÿæˆè¿·å®®çš„åå­—ï¼ˆå”¯ä¸€å€¼ï¼‰
         mazename = sprintf("%s-%d", npc->name(), mazeindex);
         mazeindex ++;
     
         tempmaze = ([ ]);
 
-        // ÉèÖÃÃÔ¹¬µÄ´´½¨Ê±¼ä
+        // è¨­ç½®è¿·å®®çš„å‰µå»ºæ™‚é–“
         tempmaze["born_time"] = time();
     
-        // ÃÔ¹¬µØÍ¼³õÊ¼»¯ÎªÆÕÍ¨Ä£Ê½
+        // è¿·å®®åœ°åœ–åˆå§‹åŒ–ç‚ºæ™®é€šæ¨¡å¼
         tempmaze["map_status"] = MAP_COMM;
 
-        // ÉèÖÃÃÔ¹¬ÖĞ·ÅÖÃµÄNPC
+        // è¨­ç½®è¿·å®®ä¸­æ”¾ç½®çš„NPC
         tempmaze["boss"] = npc;
 
-        // ÉèÖÃÃÔ¹¬µÄ·½Ïò
-        tempmaze["direction"] = random(4);  //Ëæ»úÉú³ÉÃÔ¹¬µÄ·½Ïò
+        // è¨­ç½®è¿·å®®çš„æ–¹å‘
+        tempmaze["direction"] = random(4);  //éš¨æ©Ÿç”Ÿæˆè¿·å®®çš„æ–¹å‘
 
-        // ÉèÖÃÃÔ¹¬µÄÈë¿ÚºÍ³ö¿Ú
+        // è¨­ç½®è¿·å®®çš„å…¥å£å’Œå‡ºå£
         entry = ({0,0});
         target = ({0,0});
     
@@ -225,7 +225,7 @@ public object create_maze(object npc)
         tempmaze["entry"] = entry;
         tempmaze["target"] = target;
 
-        // ÉèÖÃÃÔ¹¬µÄ·¿¼äµãÕó    
+        // è¨­ç½®è¿·å®®çš„æˆ¿é–“é»é™£    
         mazeroom = allocate(HEIGHT);
         for ( i = 0; i < sizeof(mazeroom); i++ )
         {
@@ -243,16 +243,16 @@ public object create_maze(object npc)
                         temp_room->set("maze/east", NOT_DEFINED);
                         temp_room->set("maze/mazename", mazename);
             
-                        // ¸øÃÔ¹¬µÄÈë¿Ú·¿¼ä´òÉÏ±ê¼Ç
+                        // çµ¦è¿·å®®çš„å…¥å£æˆ¿é–“æ‰“ä¸Šæ¨™è¨˜
                         if ( i == entry[0] && j == entry[1] )
                         {
-                                temp_room->set("short", "ÃÔ¹¬Èë¿Ú");
+                                temp_room->set("short", "è¿·å®®å…¥å£");
                                 temp_room->set("maze/entry", 1);
                         }
-                        // ¸øÃÔ¹¬µÄ³ö¿Ú·¿¼ä´òÉÏ±ê¼Ç
+                        // çµ¦è¿·å®®çš„å‡ºå£æˆ¿é–“æ‰“ä¸Šæ¨™è¨˜
                         else if ( i == target[0] && j == target[1] )
                         {
-                                temp_room->set("short", "ÃÔ¹¬³ö¿Ú");
+                                temp_room->set("short", "è¿·å®®å‡ºå£");
                                 temp_room->set("maze/target", 1);
                         }
                         
@@ -262,23 +262,23 @@ public object create_maze(object npc)
         
         tempmaze["roomlist"] = mazeroom;
     
-        // ¸øÃÔ¹¬·Ö²¼±¦ÏäºÍÏİÚå
+        // çµ¦è¿·å®®åˆ†å¸ƒå¯¶ç®±å’Œé™·é˜±
         init_special_room(tempmaze);
 
-        // ½«ÃÔ¹¬½»¸øÊØ»¤½ø³Ì¹ÜÀí
+        // å°‡è¿·å®®äº¤çµ¦å®ˆè­·é€²ç¨‹ç®¡ç†
         mazelist[mazename] = tempmaze;
 
-        // ´´½¨ÃÔ¹¬²¼¾Ö
+        // å‰µå»ºè¿·å®®å¸ƒå±€
         init_maze(mazename);
     
-        // ·µ»ØÃÔ¹¬µÄ³ö¿Ú·¿¼ä
+        // è¿”å›è¿·å®®çš„å‡ºå£æˆ¿é–“
         return tempmaze["roomlist"][target[0]][target[1]];
 }
 
 void init_line(mapping maze)
 {
-        mixed line;        /* ´øÂ·ÏßµÄÃÔ¹¬µØÍ¼     */
-        mixed line2;       /* ²»´øÂ·ÏßµÄÃÔ¹¬µØÍ¼   */
+        mixed line;        /* å¸¶è·¯ç·šçš„è¿·å®®åœ°åœ–     */
+        mixed line2;       /* ä¸å¸¶è·¯ç·šçš„è¿·å®®åœ°åœ–   */
         int i, j;
         mixed roomlist;
         object room;
@@ -304,52 +304,52 @@ void init_line(mapping maze)
                                         room = roomlist[i/2][j/2];
                                         if ( objectp(room) && room->query("maze/xianjing") )
                                         {
-                                                line[i][j] = BMAG "¡¡" NOR;
-                                                line2[i][j] = "¡¡";
+                                                line[i][j] = BMAG "ã€€" NOR;
+                                                line2[i][j] = "ã€€";
                                         }
                                         else if ( objectp(room) && room->query("maze/box") )
                                         {
-                                                line[i][j] = BYEL "¡¡" NOR;
-                                                line2[i][j] = "¡¡";
+                                                line[i][j] = BYEL "ã€€" NOR;
+                                                line2[i][j] = "ã€€";
                                         }
                                         else
-                                                line[i][j] = line2[i][j] = "¡¡";
+                                                line[i][j] = line2[i][j] = "ã€€";
                                 } 
                                 else
-                                        line[i][j] = line2[i][j] = HIG "©¦" NOR;
+                                        line[i][j] = line2[i][j] = HIG "â”‚" NOR;
                         } 
                         else
                         {
                                 if ( j%2 == 1 )
-                                        line[i][j] = line2[i][j] = HIG "©¤" NOR;
+                                        line[i][j] = line2[i][j] = HIG "â”€" NOR;
                                 else
                                 {
                                         if ( i == 0 )
                                         {
                                                 if ( j == 0 )
-                                                        line[i][j] = line2[i][j] = HIG "©°" NOR; 
+                                                        line[i][j] = line2[i][j] = HIG "â”Œ" NOR; 
                                                 else if ( j == LENGTH*2 )
-                                                        line[i][j] = line2[i][j] = HIG "©´" NOR;
+                                                        line[i][j] = line2[i][j] = HIG "â”" NOR;
                                                 else
-                                                        line[i][j] = line2[i][j] = HIG "©Ğ" NOR;
+                                                        line[i][j] = line2[i][j] = HIG "â”¬" NOR;
                                         } 
                                         else if ( i == HEIGHT * 2 )
                                         {
                                                 if ( j == 0 )
-                                                        line[i][j] = line2[i][j] = HIG "©¸" NOR;
+                                                        line[i][j] = line2[i][j] = HIG "â””" NOR;
                                                 else if ( j == LENGTH*2 )
-                                                        line[i][j] = line2[i][j] = HIG "©¼" NOR;
+                                                        line[i][j] = line2[i][j] = HIG "â”˜" NOR;
                                                 else
-                                                        line[i][j] = line2[i][j] = HIG "©Ø" NOR;
+                                                        line[i][j] = line2[i][j] = HIG "â”´" NOR;
                                         } 
                                         else
                                         {
                                                 if ( j == 0 )
-                                                        line[i][j] = line2[i][j] = HIG "©À" NOR;
+                                                        line[i][j] = line2[i][j] = HIG "â”œ" NOR;
                                                 else if ( j == LENGTH*2 )
-                                                        line[i][j] = line2[i][j] = HIG "©È" NOR;
+                                                        line[i][j] = line2[i][j] = HIG "â”¤" NOR;
                                                 else
-                                                        line[i][j] = line2[i][j] = HIG "©à" NOR;
+                                                        line[i][j] = line2[i][j] = HIG "â”¼" NOR;
                                         }
                                 }
                         }
@@ -362,16 +362,16 @@ void init_line(mapping maze)
 
 public string get_comm_map(string mazename, object room)
 {
-        string map = "\nÃÔ¹¬µØÍ¼£º\n" WHT "°×É«·½¿é" NOR "±íÊ¾ÃÔ¹¬Èë¿Ú£»" 
-                                      RED "ºìÉ«·½¿é" NOR "±íÊ¾ÃÔ¹¬³ö¿Ú£»" 
-                                      HIB "À¶É«Îå½ÇĞÇ" NOR "±íÊ¾Äãµ±Ç°µÄÎ»ÖÃ¡£\n";
+        string map = "\nè¿·å®®åœ°åœ–ï¼š\n" WHT "ç™½è‰²æ–¹å¡Š" NOR "è¡¨ç¤ºè¿·å®®å…¥å£ï¼›" 
+                                      RED "ç´…è‰²æ–¹å¡Š" NOR "è¡¨ç¤ºè¿·å®®å‡ºå£ï¼›" 
+                                      HIB "è—è‰²äº”è§’æ˜Ÿ" NOR "è¡¨ç¤ºä½ ç•¶å‰çš„ä½ç½®ã€‚\n";
         mapping maze;
         mixed line;
         int i,j;
         int w, l;
     
         if ( undefinedp(mazelist[mazename]) )
-                return "ÃÔ¹¬ÊµÌå²»´æÔÚ¡£\n";
+                return "è¿·å®®å¯¦é«”ä¸å­˜åœ¨ã€‚\n";
     
         maze = mazelist[mazename];
     
@@ -382,7 +382,7 @@ public string get_comm_map(string mazename, object room)
                 return get_deep_map(mazename, room);
     
         if ( undefinedp(maze["comm_map"]) )
-                return "ÃÔ¹¬µØÍ¼²»´æÔÚ¡£\n";
+                return "è¿·å®®åœ°åœ–ä¸å­˜åœ¨ã€‚\n";
     
         if ( objectp(room) )
         {
@@ -402,7 +402,7 @@ public string get_comm_map(string mazename, object room)
                 for ( j = 0; j < sizeof(line[i]); j++ )
                 {
                         if ( show_local_room && i == w*2+1 && j == l*2+1 )
-                                map += replace_string(line[i][j], "¡¡", HIB "¡ï" NOR);
+                                map += replace_string(line[i][j], "ã€€", HIB "â˜…" NOR);
                         else
                                 map += line[i][j];
                 }
@@ -414,23 +414,23 @@ public string get_comm_map(string mazename, object room)
 
 public string get_deep_map(string mazename, object room)
 {
-        string map = "\nÃÔ¹¬µØÍ¼£º\n" WHT "°×É«·½¿é" NOR "±íÊ¾ÃÔ¹¬Èë¿Ú£»" 
-                                      RED "ºìÉ«·½¿é" NOR "±íÊ¾ÃÔ¹¬³ö¿Ú£»" 
-                                      HIB "À¶É«Îå½ÇĞÇ" NOR "±íÊ¾Äãµ±Ç°µÄÎ»ÖÃ¡£\n" 
-                                      YEL "»ÆÉ«·½¿é" NOR "±íÊ¾ÓĞ±¦Ïä£»" 
-                                      MAG "×ÏÉ«·½¿é" NOR "±íÊ¾ÓĞÏİÚå¡£\n";
+        string map = "\nè¿·å®®åœ°åœ–ï¼š\n" WHT "ç™½è‰²æ–¹å¡Š" NOR "è¡¨ç¤ºè¿·å®®å…¥å£ï¼›" 
+                                      RED "ç´…è‰²æ–¹å¡Š" NOR "è¡¨ç¤ºè¿·å®®å‡ºå£ï¼›" 
+                                      HIB "è—è‰²äº”è§’æ˜Ÿ" NOR "è¡¨ç¤ºä½ ç•¶å‰çš„ä½ç½®ã€‚\n" 
+                                      YEL "é»ƒè‰²æ–¹å¡Š" NOR "è¡¨ç¤ºæœ‰å¯¶ç®±ï¼›" 
+                                      MAG "ç´«è‰²æ–¹å¡Š" NOR "è¡¨ç¤ºæœ‰é™·é˜±ã€‚\n";
         mapping maze;
         mixed line;
         int i, j;
         int w, l;
     
         if ( undefinedp(mazelist[mazename]) )
-                return "ÃÔ¹¬ÊµÌå²»´æÔÚ¡£\n";
+                return "è¿·å®®å¯¦é«”ä¸å­˜åœ¨ã€‚\n";
     
         maze = mazelist[mazename];
     
         if ( undefinedp(maze["deep_map"]) )
-                return "ÃÔ¹¬µØÍ¼²»´æÔÚ¡£\n";
+                return "è¿·å®®åœ°åœ–ä¸å­˜åœ¨ã€‚\n";
 
         if ( objectp(room) )
         {
@@ -450,7 +450,7 @@ public string get_deep_map(string mazename, object room)
                 for ( j = 0; j < sizeof(line[i]); j++ )
                 {
                         if ( i == w*2+1 && j == l*2+1 )
-                                map += replace_string(line[i][j], "¡¡", HIB "¡ï" NOR);
+                                map += replace_string(line[i][j], "ã€€", HIB "â˜…" NOR);
                         else
                                 map += line[i][j];
                 }
@@ -479,7 +479,7 @@ public void init_maze(string mazename)
     
         mazeroom = maze["roomlist"];
 
-        // ³õÊ¼»¯ÃÔ¹¬µØÍ¼
+        // åˆå§‹åŒ–è¿·å®®åœ°åœ–
         init_line(maze);
 
         for ( i = 0; i < sizeof(mazeroom); i++ )
@@ -497,10 +497,10 @@ public void init_maze(string mazename)
                 }
         }
 
-        // ³õÊ¼»¯ÃÔ¹¬Â·Ïß
+        // åˆå§‹åŒ–è¿·å®®è·¯ç·š
         init_road(mazeroom[maze["entry"][0]][maze["entry"][1]], maze);
     
-        // ¸øÂ·ÏßÉÏµÄ·¿¼äÖÆÔì²íÂ·
+        // çµ¦è·¯ç·šä¸Šçš„æˆ¿é–“åˆ¶é€ å²”è·¯
         roomlist = ({ });
         for ( i = 0; i < sizeof(mazeroom); i++ )
         {
@@ -514,7 +514,7 @@ public void init_maze(string mazename)
         for ( i = 0; i < sizeof(roomlist); i++ )
                 init_wall(roomlist[i], maze);
     
-        // ½«´ôËÀµÄ·¿¼äÈ«²¿´òÍ¨
+        // å°‡å‘†æ­»çš„æˆ¿é–“å…¨éƒ¨æ‰“é€š
         dead_room_list = ({ });
         all_dead_room = ({ });
         for ( i = 0; i < sizeof(mazeroom); i++ )
@@ -535,7 +535,7 @@ public void init_maze(string mazename)
                 for ( i = 0; i < sizeof(dead_room_list); i++ )
                 {
                         room_ok = 0;
-                        // ±éÀúÃÔ¹¬µÄÃ¿¸ö·¿¼ä£¬¿´ÊÇ·ñ¿ÉÒÔºÍÆäËüµØ·½Á¬Í¨ÆğÀ´
+                        // éæ­·è¿·å®®çš„æ¯å€‹æˆ¿é–“ï¼Œçœ‹æ˜¯å¦å¯ä»¥å’Œå…¶å®ƒåœ°æ–¹é€£é€šèµ·ä¾†
                         for ( j = 0; j < sizeof(dead_room_list[i]); j++ )
                         {
                                 temp_room = dead_room_list[i][j];
@@ -546,8 +546,8 @@ public void init_maze(string mazename)
                                 {
                                         temp_room->set("maze/north", CAN_WALK);
                                         mazeroom[w-1][l]->set("maze/south", CAN_WALK);
-                                        maze["deep_map"][w*2][l*2+1] = "¡¡";
-                                        maze["comm_map"][w*2][l*2+1] = "¡¡";
+                                        maze["deep_map"][w*2][l*2+1] = "ã€€";
+                                        maze["comm_map"][w*2][l*2+1] = "ã€€";
                                         room_ok = 1;
                                 } else 
                                 if ( temp_room->query("maze/south") != CAN_WALK && w < HEIGHT - 1 &&
@@ -555,8 +555,8 @@ public void init_maze(string mazename)
                                 {
                                         temp_room->set("maze/south", CAN_WALK);
                                         mazeroom[w+1][l]->set("maze/north", CAN_WALK);
-                                        maze["deep_map"][w*2+2][l*2+1] = "¡¡";
-                                        maze["comm_map"][w*2+2][l*2+1] = "¡¡";
+                                        maze["deep_map"][w*2+2][l*2+1] = "ã€€";
+                                        maze["comm_map"][w*2+2][l*2+1] = "ã€€";
                                         room_ok = 1;
                                 } else 
                                 if ( temp_room->query("maze/west") != CAN_WALK && l > 0 &&
@@ -564,8 +564,8 @@ public void init_maze(string mazename)
                                 {
                                         temp_room->set("maze/west", CAN_WALK);
                                         mazeroom[w][l-1]->set("maze/east", CAN_WALK);
-                                        maze["deep_map"][w*2+1][l*2] = "¡¡";
-                                        maze["comm_map"][w*2+1][l*2] = "¡¡";
+                                        maze["deep_map"][w*2+1][l*2] = "ã€€";
+                                        maze["comm_map"][w*2+1][l*2] = "ã€€";
                                         room_ok = 1;
                                 } else
                                 if ( temp_room->query("maze/east") != CAN_WALK && l < LENGTH - 1 &&
@@ -573,14 +573,14 @@ public void init_maze(string mazename)
                                 {
                                         temp_room->set("maze/east", CAN_WALK);
                                         mazeroom[w][l+1]->set("maze/west", CAN_WALK);
-                                        maze["deep_map"][w*2+1][l*2+2] = "¡¡";
-                                        maze["comm_map"][w*2+1][l*2+2] = "¡¡";
+                                        maze["deep_map"][w*2+1][l*2+2] = "ã€€";
+                                        maze["comm_map"][w*2+1][l*2+2] = "ã€€";
                                         room_ok = 1;
                                 }
                                 
-                                if ( room_ok )    // ÃÔ¹¬ÒÑ¾­´òÍ¨
+                                if ( room_ok )    // è¿·å®®å·²ç¶“æ‰“é€š
                                 {
-                                        // ½«±¾ÃÔ¹¬ÖĞµÄËùÓĞ·¿¼ä´Óall_dead_roomÖĞÈ¥µô
+                                        // å°‡æœ¬è¿·å®®ä¸­çš„æ‰€æœ‰æˆ¿é–“å¾all_dead_roomä¸­å»æ‰
                                         for ( room_ok = 0; room_ok < sizeof(dead_room_list[i]); room_ok++ )
                                         {
                                                 dead_room_list[i][room_ok]->delete("maze/dead_room");
@@ -593,12 +593,12 @@ public void init_maze(string mazename)
         }
         
         if ( sizeof(all_dead_room) )
-                log_file("static/maze", sprintf("ÓĞ%d¸ö´ôËÀµÄ·¿¼ä¡£\n", sizeof(all_dead_room)) );
+                log_file("static/maze", sprintf("æœ‰%då€‹å‘†æ­»çš„æˆ¿é–“ã€‚\n", sizeof(all_dead_room)) );
 
         dead_room_list = 0;
         all_dead_room = 0;
     
-        // ½«·¿¼äµÄ³ö¿ÚË¢ĞÂ
+        // å°‡æˆ¿é–“çš„å‡ºå£åˆ·æ–°
         init_room_exits(maze);
 
         return;
@@ -623,26 +623,26 @@ void init_road(object room, mapping maze)
         w = room->query("maze/x");
         l = room->query("maze/y");
     
-        // ÒÑ¾­µ½´ïÁËÃÔ¹¬³ö¿Ú
+        // å·²ç¶“åˆ°é”äº†è¿·å®®å‡ºå£
         if ( w == maze["target"][0] && l == maze["target"][1] )
         {
-                line[w*2+1][l*2+1] =  HBRED "¡¡" NOR;
-                line2[w*2+1][l*2+1] = HBRED "¡¡" NOR;
+                line[w*2+1][l*2+1] =  HBRED "ã€€" NOR;
+                line2[w*2+1][l*2+1] = HBRED "ã€€" NOR;
                 return;
         }        
     
-        if ( w == maze["entry"][0] && l == maze["entry"][1] ) // ÕâÊÇÃÔ¹¬Èë¿Ú
+        if ( w == maze["entry"][0] && l == maze["entry"][1] ) // é€™æ˜¯è¿·å®®å…¥å£
         {
-                line[w*2+1][l*2+1] =  HBWHT "¡¡" NOR;
-                line2[w*2+1][l*2+1] = HBWHT "¡¡" NOR;
+                line[w*2+1][l*2+1] =  HBWHT "ã€€" NOR;
+                line2[w*2+1][l*2+1] = HBWHT "ã€€" NOR;
         } 
         else
         {
-                // Èç¹ûÒÑ¾­ÓĞÑÕÉ«ÁË£¬±íÊ¾ÓĞ±¦Ïä»òÕßÏİÚå£¬²»ÔÙ¸ü¸ÄµØÍ¼
-                if ( line[w*2+1][l*2+1] == "¡¡" )
-                        line[w*2+1][l*2+1] = BGRN "¡¡" NOR;
+                // å¦‚æœå·²ç¶“æœ‰é¡è‰²äº†ï¼Œè¡¨ç¤ºæœ‰å¯¶ç®±æˆ–è€…é™·é˜±ï¼Œä¸å†æ›´æ”¹åœ°åœ–
+                if ( line[w*2+1][l*2+1] == "ã€€" )
+                        line[w*2+1][l*2+1] = BGRN "ã€€" NOR;
         
-                // line2[w*2+1][l*2+1] = "¡¡";
+                // line2[w*2+1][l*2+1] = "ã€€";
         }
     
         dirs = ({ });
@@ -678,8 +678,8 @@ void init_road(object room, mapping maze)
                 next_l = l - 1;
                 next_room = mazeroom[next_w][next_l];
                 next_room->set("maze/east", CAN_WALK);
-                line[w*2+1][l*2] = BGRN "¡¡" NOR;
-                line2[w*2+1][l*2] = "¡¡";
+                line[w*2+1][l*2] = BGRN "ã€€" NOR;
+                line2[w*2+1][l*2] = "ã€€";
                 break;
         case EAST:
                 room->set("maze/east", CAN_WALK);
@@ -687,8 +687,8 @@ void init_road(object room, mapping maze)
                 next_l = l + 1;
                 next_room = mazeroom[next_w][next_l];
                 next_room->set("maze/west", CAN_WALK);
-                line[w*2+1][l*2+2] = BGRN "¡¡" NOR;
-                line2[w*2+1][l*2+2] = "¡¡";
+                line[w*2+1][l*2+2] = BGRN "ã€€" NOR;
+                line2[w*2+1][l*2+2] = "ã€€";
                 break;
         case SOUTH:
                 room->set("maze/south", CAN_WALK);
@@ -696,8 +696,8 @@ void init_road(object room, mapping maze)
                 next_l = l;
                 next_room = mazeroom[next_w][next_l];
                 next_room->set("maze/north", CAN_WALK);
-                line[w*2+2][l*2+1] = BGRN "¡¡" NOR;
-                line2[w*2+2][l*2+1] = "¡¡";
+                line[w*2+2][l*2+1] = BGRN "ã€€" NOR;
+                line2[w*2+2][l*2+1] = "ã€€";
                 break;
         default:
                 room->set("maze/north", CAN_WALK);
@@ -705,8 +705,8 @@ void init_road(object room, mapping maze)
                 next_l = l;
                 next_room = mazeroom[next_w][next_l];
                 next_room->set("maze/south", CAN_WALK);
-                line[w*2][l*2+1] = BGRN "¡¡" NOR;
-                line2[w*2][l*2+1] = "¡¡";
+                line[w*2][l*2+1] = BGRN "ã€€" NOR;
+                line2[w*2][l*2+1] = "ã€€";
                 break;
         }
     
@@ -724,7 +724,7 @@ void init_wall(object room, mapping maze)
         w = room->query("maze/x");
         l = room->query("maze/y");
     
-        // ÏòNORTH·½ÏòÖÆÔì²íÂ·
+        // å‘NORTHæ–¹å‘åˆ¶é€ å²”è·¯
         if ( w > 0 && room->query("maze/north") == NOT_DEFINED )
         {
                 next_w = w - 1;
@@ -732,14 +732,14 @@ void init_wall(object room, mapping maze)
                 next_room = maze["roomlist"][next_w][next_l];
                 if ( next_room->query("maze/roomtype") == NOT_DEFINED )
                 {
-                        // Â·ºÍÇ½¸÷ÓĞÒ»°ëµÄ¸ÅÂÊ
+                        // è·¯å’Œç‰†å„æœ‰ä¸€åŠçš„æ¦‚ç‡
                         if ( random(2) == 1 )
                         {
                                 room->set("maze/north", CAN_WALK);
                                 next_room->set("maze/south", CAN_WALK);
                                 next_room->set("maze/roomtype", IS_ROOM);
-                                maze["deep_map"][w*2][l*2+1] = "¡¡";
-                                maze["comm_map"][w*2][l*2+1] = "¡¡";
+                                maze["deep_map"][w*2][l*2+1] = "ã€€";
+                                maze["comm_map"][w*2][l*2+1] = "ã€€";
                                 init_wall(next_room, maze);
                         }
                         else
@@ -750,7 +750,7 @@ void init_wall(object room, mapping maze)
                 }
         }
     
-        // ÏòSOUTH·½ÏòÖÆÔì²íÂ·
+        // å‘SOUTHæ–¹å‘åˆ¶é€ å²”è·¯
         if ( w < HEIGHT - 1 && room->query("maze/south") == NOT_DEFINED )
         {
                 next_w = w + 1;
@@ -758,14 +758,14 @@ void init_wall(object room, mapping maze)
                 next_room = maze["roomlist"][next_w][next_l];
                 if ( next_room->query("maze/roomtype") == NOT_DEFINED )
                 {
-                        // Â·ºÍÇ½¸÷ÓĞÒ»°ëµÄ¸ÅÂÊ
+                        // è·¯å’Œç‰†å„æœ‰ä¸€åŠçš„æ¦‚ç‡
                         if ( random(2) == 1 )
                         {
                                 room->set("maze/south", CAN_WALK);
                                 next_room->set("maze/north", CAN_WALK);
                                 next_room->set("maze/roomtype", IS_ROOM);
-                                maze["deep_map"][w*2+2][l*2+1] = "¡¡";
-                                maze["comm_map"][w*2+2][l*2+1] = "¡¡";
+                                maze["deep_map"][w*2+2][l*2+1] = "ã€€";
+                                maze["comm_map"][w*2+2][l*2+1] = "ã€€";
                                 init_wall(next_room, maze);
                         }
                         else
@@ -776,7 +776,7 @@ void init_wall(object room, mapping maze)
                 }
         }
 
-        // ÏòEAST·½ÏòÖÆÔì²íÂ·
+        // å‘EASTæ–¹å‘åˆ¶é€ å²”è·¯
         if ( l < LENGTH - 1 && room->query("maze/east") == NOT_DEFINED )
         {
                 next_w = w;
@@ -784,14 +784,14 @@ void init_wall(object room, mapping maze)
                 next_room = maze["roomlist"][next_w][next_l];
                 if ( next_room->query("maze/roomtype") == NOT_DEFINED )
                 {
-                        // Â·ºÍÇ½¸÷ÓĞÒ»°ëµÄ¸ÅÂÊ
+                        // è·¯å’Œç‰†å„æœ‰ä¸€åŠçš„æ¦‚ç‡
                         if ( random(2) == 1 )
                         {
                                 room->set("maze/east", CAN_WALK);
                                 next_room->set("maze/west", CAN_WALK);
                                 next_room->set("maze/roomtype", IS_ROOM);
-                                maze["deep_map"][w*2+1][l*2+2] = "¡¡";
-                                maze["comm_map"][w*2+1][l*2+2] = "¡¡";
+                                maze["deep_map"][w*2+1][l*2+2] = "ã€€";
+                                maze["comm_map"][w*2+1][l*2+2] = "ã€€";
                                 init_wall(next_room, maze);
                         }
                         else
@@ -802,7 +802,7 @@ void init_wall(object room, mapping maze)
                 }
         }
 
-        // ÏòWEST·½ÏòÖÆÔì²íÂ·
+        // å‘WESTæ–¹å‘åˆ¶é€ å²”è·¯
         if ( l > 0 && room->query("maze/west") == NOT_DEFINED )
         {
                 next_w = w;
@@ -810,14 +810,14 @@ void init_wall(object room, mapping maze)
                 next_room = maze["roomlist"][next_w][next_l];
                 if ( next_room->query("maze/roomtype") == NOT_DEFINED )
                 {
-                        // Â·ºÍÇ½¸÷ÓĞÒ»°ëµÄ¸ÅÂÊ
+                        // è·¯å’Œç‰†å„æœ‰ä¸€åŠçš„æ¦‚ç‡
                         if ( random(2) == 1 )
                         {
                                 room->set("maze/west", CAN_WALK);
                                 next_room->set("maze/east", CAN_WALK);
                                 next_room->set("maze/roomtype", IS_ROOM);
-                                maze["deep_map"][w*2+1][l*2] = "¡¡";
-                                maze["comm_map"][w*2+1][l*2] = "¡¡";
+                                maze["deep_map"][w*2+1][l*2] = "ã€€";
+                                maze["comm_map"][w*2+1][l*2] = "ã€€";
                                 init_wall(next_room, maze);
                         }
                         else
@@ -844,7 +844,7 @@ object *finish_room(object room, mapping maze)
         w = room->query("maze/x");
         l = room->query("maze/y");
     
-        // ¸ø·¿¼ä¼ÓÉÏÒ»¸öÁÙÊ±±ê¼Ç£¬±£Ö¤ÔÚµİ¹é¹ı³ÌÖĞ²»»á±»ÖØ¸´µ÷ÓÃ
+        // çµ¦æˆ¿é–“åŠ ä¸Šä¸€å€‹è‡¨æ™‚æ¨™è¨˜ï¼Œä¿è¨¼åœ¨éæ­¸éç¨‹ä¸­ä¸æœƒè¢«é‡å¾©èª¿ç”¨
         room->set("maze/finish_room", 1);
     
         dirs = ({ });
@@ -895,8 +895,8 @@ object *finish_room(object room, mapping maze)
                 next_room = maze["roomlist"][next_w][next_l];
                 room->set("maze/north", CAN_WALK);
                 next_room->set("maze/south", CAN_WALK);
-                maze["deep_map"][w*2][l*2+1] = "¡¡";
-                maze["comm_map"][w*2][l*2+1] = "¡¡";
+                maze["deep_map"][w*2][l*2+1] = "ã€€";
+                maze["comm_map"][w*2][l*2+1] = "ã€€";
                 break;
         case SOUTH:
                 next_w = w + 1;
@@ -904,8 +904,8 @@ object *finish_room(object room, mapping maze)
                 next_room = maze["roomlist"][next_w][next_l];
                 room->set("maze/south", CAN_WALK);
                 next_room->set("maze/north", CAN_WALK);
-                maze["deep_map"][w*2+2][l*2+1] = "¡¡";
-                maze["comm_map"][w*2+2][l*2+1] = "¡¡";
+                maze["deep_map"][w*2+2][l*2+1] = "ã€€";
+                maze["comm_map"][w*2+2][l*2+1] = "ã€€";
                 break;
         case WEST:
                 next_w = w;
@@ -913,8 +913,8 @@ object *finish_room(object room, mapping maze)
                 next_room = maze["roomlist"][next_w][next_l];
                 room->set("maze/west", CAN_WALK);
                 next_room->set("maze/east", CAN_WALK);
-                maze["deep_map"][w*2+1][l*2] = "¡¡";
-                maze["comm_map"][w*2+1][l*2] = "¡¡";
+                maze["deep_map"][w*2+1][l*2] = "ã€€";
+                maze["comm_map"][w*2+1][l*2] = "ã€€";
                 break;
         default:
                 next_w = w;
@@ -922,8 +922,8 @@ object *finish_room(object room, mapping maze)
                 next_room = maze["roomlist"][next_w][next_l];
                 room->set("maze/east", CAN_WALK);
                 next_room->set("maze/west", CAN_WALK);
-                maze["deep_map"][w*2+1][l*2+2] = "¡¡";
-                maze["comm_map"][w*2+1][l*2+2] = "¡¡";
+                maze["deep_map"][w*2+1][l*2+2] = "ã€€";
+                maze["comm_map"][w*2+1][l*2+2] = "ã€€";
                 break;
         }
     
@@ -970,9 +970,9 @@ void init_special_room(mapping maze)
                 }
         }
         
-        // ·Ö²¼±¦Ïä
+        // åˆ†å¸ƒå¯¶ç®±
         box_num = 0;
-        // Ê×ÏÈ·ÅÖÃµØÍ¼£¬ÕâÊÇ±ØĞëÓĞµÄ
+        // é¦–å…ˆæ”¾ç½®åœ°åœ–ï¼Œé€™æ˜¯å¿…é ˆæœ‰çš„
         room = allroom[random(sizeof(allroom))];
         room->set("maze/box", SPECIAL_MAP);
         baoxiang = new(BAOXIANG_OB);
@@ -999,27 +999,27 @@ void init_special_room(mapping maze)
                 box_type = random(100);
                 if ( box_type > 97 )
                 {
-                        room->set("maze/box", SPECIAL_DAN);     //°Ù·ÖÖ®¶ş
+                        room->set("maze/box", SPECIAL_DAN);     //ç™¾åˆ†ä¹‹äºŒ
                         baoxiang->set("maze/box", SPECIAL_DAN);
                 }
                 else if ( box_type > 94 )
                 {
-                        room->set("maze/box", JINKUAI);         //°Ù·ÖÖ®Èı
+                        room->set("maze/box", JINKUAI);         //ç™¾åˆ†ä¹‹ä¸‰
                         baoxiang->set("maze/box", JINKUAI);
                 }
                 else if ( box_type < 15 )
                 {
-                        room->set("maze/box", GOLD);            //°Ù·ÖÖ®Ê®Îå
+                        room->set("maze/box", GOLD);            //ç™¾åˆ†ä¹‹åäº”
                         baoxiang->set("maze/box", GOLD);
                 }
                 else if ( box_type < 65 )
                 {
-                        room->set("maze/box", OBJ);             //°Ù·ÖÖ®ÎåÊ®
+                        room->set("maze/box", OBJ);             //ç™¾åˆ†ä¹‹äº”å
                         baoxiang->set("maze/box", OBJ);
                 }
                 else if ( box_type < 85 )
                 {
-                        room->set("maze/box", SPECIAL_OBJ);     //°Ù·ÖÖ®¶şÊ®
+                        room->set("maze/box", SPECIAL_OBJ);     //ç™¾åˆ†ä¹‹äºŒå
                         baoxiang->set("maze/box", SPECIAL_OBJ);
                 }
                 else
@@ -1031,7 +1031,7 @@ void init_special_room(mapping maze)
                         }
                         else
                         {
-                                room->set("maze/box", SPECIAL_OBJ); //°Ù·ÖÖ®Ê®
+                                room->set("maze/box", SPECIAL_OBJ); //ç™¾åˆ†ä¹‹å
                                 baoxiang->set("maze/box", SPECIAL_OBJ);
                         }
                 }
@@ -1040,7 +1040,7 @@ void init_special_room(mapping maze)
                 box_num ++;        
         }
 
-        // ·Ö²¼ÏİÚå
+        // åˆ†å¸ƒé™·é˜±
         xianjing_num = 0;
     
         while ( xianjing_num < XIANJING_NUM )
@@ -1051,15 +1051,15 @@ void init_special_room(mapping maze)
                 room = allroom[random(sizeof(allroom))];
                 xianjing_type = random(100);
                 if ( xianjing_type > 99 )
-                        room->set("maze/xianjing", LOSTMAP);    //ÔİÊ±¹Ø±Õ
+                        room->set("maze/xianjing", LOSTMAP);    //æš«æ™‚é—œé–‰
                 else if ( xianjing_type < 20 )     
-                        room->set("maze/xianjing", TRIP);       //°Ù·ÖÖ®¶şÊ®
+                        room->set("maze/xianjing", TRIP);       //ç™¾åˆ†ä¹‹äºŒå
                 else if ( xianjing_type < 40 )
-                        room->set("maze/xianjing", CHANGEMAP);  //°Ù·ÖÖ®¶şÊ®
+                        room->set("maze/xianjing", CHANGEMAP);  //ç™¾åˆ†ä¹‹äºŒå
                 else if ( xianjing_type < 70 )
-                        room->set("maze/xianjing", WOUND);      //°Ù·ÖÖ®ÈıÊ®
+                        room->set("maze/xianjing", WOUND);      //ç™¾åˆ†ä¹‹ä¸‰å
                 else
-                        room->set("maze/xianjing", BUSY);       //°Ù·ÖÖ®ÈıÊ®
+                        room->set("maze/xianjing", BUSY);       //ç™¾åˆ†ä¹‹ä¸‰å
                         
                 allroom -= ({ room });
                 xianjing_num ++;        
@@ -1103,7 +1103,7 @@ void init_room_exits(mapping maze)
                         else
                                 room->set("exits/east", sprintf("/%O", room) );
             
-                        // ¸øÃÔ¹¬µÄ³ö¿Ú·¿¼äÔö¼Ó³ö¿Ú
+                        // çµ¦è¿·å®®çš„å‡ºå£æˆ¿é–“å¢åŠ å‡ºå£
                         if ( room->query("maze/target") )
                                 room->set("exits/out", ROOM_EXIT_FILE);
                 }
@@ -1140,10 +1140,10 @@ public object trip_maze(string mazename, object room)
        
                 next_room = roomlist[w][l];
                 if ( !objectp(next_room) ) break;
-                if ( next_room->query("maze/target") ) continue;    // ²»ÄÜÊÇÃÔ¹¬³ö¿Ú
-                if ( next_room->query("maze/xianjing") ) continue;  // ²»ÄÜÊÇÁíÒ»¸öÏİÚå
+                if ( next_room->query("maze/target") ) continue;    // ä¸èƒ½æ˜¯è¿·å®®å‡ºå£
+                if ( next_room->query("maze/xianjing") ) continue;  // ä¸èƒ½æ˜¯å¦ä¸€å€‹é™·é˜±
                 if ( w == room->query("maze/x") && 
-                     l == room->query("maze/y") ) continue;         // ²»ÄÜÊÇ¸Ã·¿¼ä±¾Éí
+                     l == room->query("maze/y") ) continue;         // ä¸èƒ½æ˜¯è©²æˆ¿é–“æœ¬èº«
 
                 break;
         }
@@ -1244,9 +1244,9 @@ public void remove_xianjing(string mazename, object room)
         l = room->query("maze/y");
     
         if ( room->query("maze/roomtype") == IS_ROAD )
-                line[w*2+1][l*2+1] = BGRN "¡¡" NOR;
+                line[w*2+1][l*2+1] = BGRN "ã€€" NOR;
         else
-                line[w*2+1][l*2+1] = "¡¡";
+                line[w*2+1][l*2+1] = "ã€€";
     
         return;
 }
@@ -1290,7 +1290,7 @@ public mapping query_maze(string mazename)
         return result;    
 }
 
-/*************************¸±±¾-ĞéÄâÃÔ¹¬********************************/
+/*************************å‰¯æœ¬-è™›æ“¬è¿·å®®********************************/
 #define MAZE                    "maze.c"
 #define ENTRY                   "enter.c"
 #define EXIT                    "out.c"
@@ -1337,7 +1337,7 @@ public int enter_virtual_maze(object me, string arg)
         
         if ( me->query_condition("killer") )
         {
-                tell_object(me, "É±ÈËÍ¨¼©·¸ÊÇ²»ÄÜ½øÈë¸±±¾µÄ¡£\n");
+                tell_object(me, "æ®ºäººé€šç·çŠ¯æ˜¯ä¸èƒ½é€²å…¥å‰¯æœ¬çš„ã€‚\n");
                 return 0;
         }
 
@@ -1347,7 +1347,7 @@ public int enter_virtual_maze(object me, string arg)
                 foreach ( object ob1 in inv ) 
                         if( ob1 && ob1->is_character() ) 
                         {
-                                tell_object(me, "Äã²»¿ÉÒÔ½«ÆäËûÍæ¼Ò»òÕßNPC(°üÀ¨³èÎï)±³½ø¸±±¾ÄÚ¡£\n");
+                                tell_object(me, "ä½ ä¸å¯ä»¥å°‡å…¶ä»–ç©å®¶æˆ–è€…NPC(åŒ…æ‹¬å¯µç‰©)èƒŒé€²å‰¯æœ¬å…§ã€‚\n");
                                 return 0;
                         }
         }
@@ -1361,29 +1361,29 @@ public int enter_virtual_maze(object me, string arg)
         dir = query_maze_file(id, arg);        
         enter_file = dir + ENTRY;
         
-        // ÒÑ¾­´´½¨¹ı
+        // å·²ç¶“å‰µå»ºé
         if ( file_size(enter_file) > 0 )
         {
-                // Ã»ÓĞ±»ÔØÈë
+                // æ²’æœ‰è¢«è¼‰å…¥
                 room = find_object(enter_file);
                 if ( !room  )
                 {                        
                         if ( sizeof(member) && !me->is_team_leader() )
                         { 
-                                tell_object(me, "±ØĞëÓÉ¶Ó³¤À´´´½¨¸±±¾ÈÎÎñµÄ¡£\n");
+                                tell_object(me, "å¿…é ˆç”±éšŠé•·ä¾†å‰µå»ºå‰¯æœ¬ä»»å‹™çš„ã€‚\n");
                                 return 0;
                         }    
                                                                                  
                         room = load_object(enter_file);
                 }
-                // ÒÑ¾­ÔØÈë¹ıÂË
-        } else  // Ã»ÓĞ´´½¨¹ı  
+                // å·²ç¶“è¼‰å…¥éæ¿¾
+        } else  // æ²’æœ‰å‰µå»ºé  
         {      
                 dir = query_maze_file(me->query("id"), arg);                       
                 enter_file = create_maze_file(me, arg);  
                 if ( !enter_file )
                 {
-                        tell_object(me, "´´½¨¸±±¾Ê§°Ü¡£\n");
+                        tell_object(me, "å‰µå»ºå‰¯æœ¬å¤±æ•—ã€‚\n");
                         return 0;
                 }              
                              
@@ -1399,13 +1399,13 @@ public int enter_virtual_maze(object me, string arg)
         
         if (me->query("level") < min || (max && me->query("level") > max))
         {
-                tell_object(me, HIW "¸±±¾ÒªÇó×îµÍµÈ¼¶Îª " + min + " £¬" + 
-                                (max ? "×î¸ßµÈ¼¶Îª " + max + " £¬" : "") + 
-                                "ÄãÎŞ·¨½øÈë¸±±¾¡£\n" NOR);
+                tell_object(me, HIW "å‰¯æœ¬è¦æ±‚æœ€ä½ç­‰ç´šç‚º " + min + " ï¼Œ" + 
+                                (max ? "æœ€é«˜ç­‰ç´šç‚º " + max + " ï¼Œ" : "") + 
+                                "ä½ ç„¡æ³•é€²å…¥å‰¯æœ¬ã€‚\n" NOR);
                 return 0;
         }                
                
-        tell_object(me, HIR "×£ÄãºÃÔËÆø£¡\n" NOR);
+        tell_object(me, HIR "ç¥ä½ å¥½é‹æ°£ï¼\n" NOR);
         me->move(room); 
         return 1;
 }

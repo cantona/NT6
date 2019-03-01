@@ -75,7 +75,7 @@ varargs mixed do_emote(object me, string verb, string arg, int channel_emote, mi
 
         if (channel_emote && channel_emote == 4)
         {
-                // ¸ù¾İÆäËûMUD·µ»ØµÄĞÅÏ¢×öÉú³ÉEMOTE±íÇé
+                // æ ¹æ“šå…¶ä»–MUDè¿”å›çš„ä¿¡æ¯åšç”ŸæˆEMOTEè¡¨æƒ…
                 if (sscanf(arg,"mud=%s name=%s id=%s age=%d gender=%s respect=%s rude=%s ",
                                         rwho["mud"],
                                         rwho["name"],
@@ -88,7 +88,7 @@ varargs mixed do_emote(object me, string verb, string arg, int channel_emote, mi
 
                 if (! mapp(def = query_emote(verb)))
                 {
-                        tell_object(me, "Ã»ÓĞ " + verb + " Õâ¸ö±íÇé¶¯´Ê¡£\n");
+                        tell_object(me, "æ²’æœ‰ " + verb + " é€™å€‹è¡¨æƒ…å‹•è©ã€‚\n");
                         return 0;
                 }
 
@@ -120,7 +120,7 @@ varargs mixed do_emote(object me, string verb, string arg, int channel_emote, mi
                 if( query("doing", me) == "scheme" )
                 {
                         if( query("jing", me)<100 )
-                                return notify_fail("ÄãÏÖÔÚµÄ¾«Éñ²»¼Ã£¬µÈÒ»»á¶ù°É¡£\n");
+                                return notify_fail("ä½ ç¾åœ¨çš„ç²¾ç¥ä¸æ¿Ÿï¼Œç­‰ä¸€æœƒå…’å§ã€‚\n");
                         addn("jing", -50, me);
                 }
         }
@@ -139,7 +139,7 @@ varargs mixed do_emote(object me, string verb, string arg, int channel_emote, mi
                 }
 
                 if (! target->is_character())
-                        return notify_fail("ÄãÒª¶ÔË­×öÕâ¸ö¶¯×÷£¿\n");
+                        return notify_fail("ä½ è¦å°èª°åšé€™å€‹å‹•ä½œï¼Ÿ\n");
 
                 if (! me->visible(target))
                         return 0;
@@ -153,7 +153,7 @@ varargs mixed do_emote(object me, string verb, string arg, int channel_emote, mi
                 {
                         can_emote=query("env/can_emote", target);
                         if (! is_sub(query("id", me), can_emote))
-                                return notify_fail("Õâ¸öÈË²»Ïë½ÓÊÜÄãµÄ¶¯×÷¡£\n");
+                                return notify_fail("é€™å€‹äººä¸æƒ³æ¥å—ä½ çš„å‹•ä½œã€‚\n");
                 }
 
                 tar_name = target->name() + default_color;
@@ -385,26 +385,26 @@ string listemote(object me,int arg)
             emote = query_emote(e[i]);
              if (!mapp(emote) || sizeof(emote) < 1) continue;
              result = "------------------------------------------------------------\n";
-             result += sprintf("±íÇé¶¯´Ê£º%s\n",e[i]);
-//           if (emote["myself_self"]) result += sprintf("¶Ô×Ô¼ºÊ¹ÓÃ×Ô¼º¿´µ½µÄĞÅÏ¢£º%s",emote["myself_self"]);
-             if (emote["others_self"]) result += sprintf("¶Ô×Ô¼ºÊ¹ÓÃ±ğÈË¿´µ½µÄĞÅÏ¢£º%s",emote["others_self"]);
-//           if (emote["myself_target"]) result += sprintf("¶Ô±ğÈËÊ¹ÓÃ×Ô¼º¿´µ½µÄĞÅÏ¢£º%s",emote["myself_target"]);
-//           if (emote["target"]) result += sprintf("¶Ô±ğÈËÊ¹ÓÃ¶Ô·½¿´µ½µÄĞÅÏ¢£º%s",emote["target"]);
-             if (emote["others_target"]) result += sprintf("¶Ô±ğÈËÊ¹ÓÃÆäËûÈË¿´µ½ĞÅÏ¢£º%s",emote["others_target"]);
-//           if (emote["myself"]) result += sprintf("Ã»Ê¹ÓÃÄ¿±ê×Ô¼º¿´µ½µÄĞÅÏ¢£º%s",emote["myself"]);
-             if (emote["others"]) result += sprintf("Ã»Ê¹ÓÃÄ¿±ê±ğÈË¿´µ½µÄĞÅÏ¢£º%s",emote["others"]);
+             result += sprintf("è¡¨æƒ…å‹•è©ï¼š%s\n",e[i]);
+//           if (emote["myself_self"]) result += sprintf("å°è‡ªå·±ä½¿ç”¨è‡ªå·±çœ‹åˆ°çš„ä¿¡æ¯ï¼š%s",emote["myself_self"]);
+             if (emote["others_self"]) result += sprintf("å°è‡ªå·±ä½¿ç”¨åˆ¥äººçœ‹åˆ°çš„ä¿¡æ¯ï¼š%s",emote["others_self"]);
+//           if (emote["myself_target"]) result += sprintf("å°åˆ¥äººä½¿ç”¨è‡ªå·±çœ‹åˆ°çš„ä¿¡æ¯ï¼š%s",emote["myself_target"]);
+//           if (emote["target"]) result += sprintf("å°åˆ¥äººä½¿ç”¨å°æ–¹çœ‹åˆ°çš„ä¿¡æ¯ï¼š%s",emote["target"]);
+             if (emote["others_target"]) result += sprintf("å°åˆ¥äººä½¿ç”¨å…¶ä»–äººçœ‹åˆ°ä¿¡æ¯ï¼š%s",emote["others_target"]);
+//           if (emote["myself"]) result += sprintf("æ²’ä½¿ç”¨ç›®æ¨™è‡ªå·±çœ‹åˆ°çš„ä¿¡æ¯ï¼š%s",emote["myself"]);
+             if (emote["others"]) result += sprintf("æ²’ä½¿ç”¨ç›®æ¨™åˆ¥äººçœ‹åˆ°çš„ä¿¡æ¯ï¼š%s",emote["others"]);
 
 
-            result = replace_string(result, "$n", "Ä³ÈË");
+            result = replace_string(result, "$n", "æŸäºº");
             result = replace_string(result, "$N", me->name(1));
-            result = replace_string(result, "$P", "Äã");
-            result = replace_string(result, "$p", "(Ëû/Ëı)");
+            result = replace_string(result, "$P", "ä½ ");
+            result = replace_string(result, "$p", "(ä»–/å¥¹)");
             result = replace_string(result, "$S", RANK_D->query_self(me));
             result = replace_string(result, "$s", RANK_D->query_self_rude(me));
-            result = replace_string(result, "$R", "×³Ê¿");
-            result = replace_string(result, "$r", "³ôÔô");
-            result = replace_string(result, "$C", "ÓŞĞÖÎÒ");
-            result = replace_string(result, "$c", "¸ç¸ç");
+            result = replace_string(result, "$R", "å£¯å£«");
+            result = replace_string(result, "$r", "è‡­è³Š");
+            result = replace_string(result, "$C", "æ„šå…„æˆ‘");
+            result = replace_string(result, "$c", "å“¥å“¥");
             str += result;
         }
         if (arg)

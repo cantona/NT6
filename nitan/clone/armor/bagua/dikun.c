@@ -6,16 +6,16 @@ inherit BOOTS;
 
 void create()
 {
-        set_name(HIY "°ËØÔµØÀ¤Ñ¥" NOR, ({ "dikun xue", "dikun", "xue" }));
+        set_name(HIY "å…«å¦åœ°å¤é´" NOR, ({ "dikun xue", "dikun", "xue" }));
         set_weight(100);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIY"Ñ×»Æ·çÓêÊ®Äê¼ÍÄîÌ××°Ö®£º°ËØÔµØÀ¤Ñ¥\n" NOR);
-                set("unit", "Ë«");
+                set("long", HIY"ç‚é»ƒé¢¨é›¨åå¹´ç´€å¿µå¥—è£ä¹‹ï¼šå…«å¦åœ°å¤é´\n" NOR);
+                set("unit", "é›™");
                 set("value", 100);
                 set("armor_prop/dex", 20);
-                set("armor_prop/T_bagua", 1); // Ì××°¼ÆÊı±êÖ¾
+                set("armor_prop/T_bagua", 1); // å¥—è£è¨ˆæ•¸æ¨™å¿—
         }
         setup();
 }

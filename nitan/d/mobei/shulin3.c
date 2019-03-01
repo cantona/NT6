@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "������");
+        set("short", "雜樹林");
         set("long", @LONG
-��Į����Ƭ�ຮ�������ϣ���Ƭ����������ɳĮ�е����ݰ����˾�
-ϲ�����Ӳ�����ľҲ�Ƚϰ�С������ط��Ĺ�ľ�԰�·��ȫ��ס�ˣ�
-���ϲ����ļ�ƬҶ���ڷ�������Ʈ�䡣
+在漠北這片苦寒的土地上，這片雜樹林宛如沙漠中的綠州般令人驚
+喜。林子不大，樹木也比較矮小，許多地方的灌木叢把路完全擋住了，
+樹上殘留的幾片葉子在風中輕輕飄落。
 LONG);
         set("outdoors","mobei");
         set("exits", ([ /* sizeof() == 1 */

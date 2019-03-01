@@ -3,13 +3,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIW "ýˆÁÛ" NOR, ({ "dragon palta", "palta" }));
+        set_name(HIW "â–¡é±—" NOR, ({ "dragon palta", "palta" }));
         set_weight(2000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "Ò»Æ¬ýˆÁÛ£¬¹â²Ê¶áÄ¿¡£\n" NOR);
-                set("unit", "Æ¬");
+                set("long", HIW "ä¸€ç‰‡â–¡é±—ï¼Œå…‰å½©å¥ªç›®ã€‚\n" NOR);
+                set("unit", "ç‰‡");
                 set("value", 100000);
         }
         setup();

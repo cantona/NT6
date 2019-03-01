@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "С��");
+        set("short", "小徑");
         set("long", @LONG
-������ƫƧ��С�������ѵ��������ɽ��������Ȼ������ң����
-������һ�������ɽ�ȣ�������ɭ���Ǿ��ǰ���ɽ���߹ȡ����ߵĲ�
-·ͨ������ɽׯ���߳���
+這是條偏僻的小徑，蜿蜒地繞入白駝山，四周悄然無聲。遙望北
+方，是一座深邃的山谷，氣氛陰森，那就是白駝山的蛇谷。東邊的岔
+路通往白駝山莊的蛇場。
 LONG );
         set("exits", ([ 
                 "east"  : __DIR__"shechang",

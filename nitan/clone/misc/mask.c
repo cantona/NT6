@@ -5,13 +5,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name("Ãæ¾ß", ({ "mian ju", "mask" }) );
+        set_name("é¢å…·", ({ "mian ju", "mask" }) );
         set_weight(3000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
-                set("long", "ÕâËÆºõÊÇÒ»¸öÓÉÈËÆ¤ÖÆ³ÉµÄÃæ¾ß¡£\n");
+                set("unit", "å€‹");
+                set("long", "é€™ä¼¼ä¹Žæ˜¯ä¸€å€‹ç”±äººçš®åˆ¶æˆçš„é¢å…·ã€‚\n");
                 set("value", 10000);
         }
         setup();
@@ -30,53 +30,53 @@ int do_pretend(string arg)
         string pshort;
 
         if (! arg)
-                return notify_fail("ÄãÏë¼Ù×°Ë­£¿\n");
+                return notify_fail("ä½ æƒ³å‡è£èª°ï¼Ÿ\n");
 
         me = this_player();
         if (arg == "none" || arg == "cancel")
         {
                 if (! query_temp("owner"))
-                        return notify_fail("ÄãÏÖÔÚ²¢Ã»ÓÐÊ¹ÓÃÃæ¾ß¡£\n");
+                        return notify_fail("ä½ ç¾åœ¨ä¸¦æ²’æœ‰ä½¿ç”¨é¢å…·ã€‚\n");
 
                 delete_temp("apply/name", me);
                 delete_temp("apply/short", me);
                 delete_temp("apply/long", me);
-                message_vision("$N´ÓÁ³ÉÏÈ¡ÏÂÁËÒ»¸öÈËÆ¤Ãæ¾ß¡£\n", me);
+                message_vision("$Nå¾žè‡‰ä¸Šå–ä¸‹äº†ä¸€å€‹äººçš®é¢å…·ã€‚\n", me);
                 return 1;
         }
 
         if (me->query_skill("pretending", 1) < 100)
-                return notify_fail("ÄãÄÃ×ÅÃæ¾ßÃþÀ´ÃþÈ¥£¬¾ÍÊÇ²»»áÊ¹ÓÃ¡£\n");
+                return notify_fail("ä½ æ‹¿è‘—é¢å…·æ‘¸ä¾†æ‘¸åŽ»ï¼Œå°±æ˜¯ä¸æœƒä½¿ç”¨ã€‚\n");
 
         if( query("age", me) >= 60 && 
             !query("special_skill/youth", me) )
-                return notify_fail("ÄãÌ«ÀÏÁË£¬ÄÑÒÔ°çµÃÏñ¡£\n");
+                return notify_fail("ä½ å¤ªè€äº†ï¼Œé›£ä»¥æ‰®å¾—åƒã€‚\n");
 
         if (me->query_condition("killer"))
-                return notify_fail("Í¨¼©·¸ÎÞ·¨´÷Ãæ¾ß¡£\n");
+                return notify_fail("é€šç·çŠ¯ç„¡æ³•æˆ´é¢å…·ã€‚\n");
 
         if( sscanf(base_name(environment(me)), "/maze/battle%*s") )
-                return notify_fail("Õ½³¡ÀïÎÞ·¨´÷Ãæ¾ß¡£\n");
+                return notify_fail("æˆ°å ´è£¡ç„¡æ³•æˆ´é¢å…·ã€‚\n");
 
         if (! objectp(who = present(arg, environment(me))) || 
             ! living(who))
-                return notify_fail("ÄãÏë¼Ù×°Ë­£¿\n");
+                return notify_fail("ä½ æƒ³å‡è£èª°ï¼Ÿ\n");
 
         if (wizardp(who))
-                return notify_fail("ÄãÎÞ·¨¼Ù°çÎ×Ê¦¡£\n");
+                return notify_fail("ä½ ç„¡æ³•å‡æ‰®å·«å¸«ã€‚\n");
 
         if( !query("can_speak", who) )
-                return notify_fail("¼Ù°ç" + who->name() + "£¿ºÃÏñÌ«ÄÑÁËµã¡£\n");
+                return notify_fail("å‡æ‰®" + who->name() + "ï¼Ÿå¥½åƒå¤ªé›£äº†é»žã€‚\n");
 
-        // ÒòÎªºô½Ðshort()ÓÐÊ±ºò»á±íÊö¶Ô·½µÄ×´Ì¬£¬ËùÒÔ²»Ö±½Ó
-        // ¿½±´who->short()£¬¶øÊÇÖ±½Ó¿´¸´ÖÆ¶Ô·½µÄÓ¦ÓÃshort()£¬
-        // Èç¹ûÃ»ÓÐ¾Í¸´ÖÆ¶Ô·½µÄÕæÊµshort()¡£
+        // å› ç‚ºå‘¼å«short()æœ‰æ™‚å€™æœƒè¡¨è¿°å°æ–¹çš„ç‹€æ…‹ï¼Œæ‰€ä»¥ä¸ç›´æŽ¥
+        // æ‹·è²who->short()ï¼Œè€Œæ˜¯ç›´æŽ¥çœ‹å¾©åˆ¶å°æ–¹çš„æ‡‰ç”¨short()ï¼Œ
+        // å¦‚æžœæ²’æœ‰å°±å¾©åˆ¶å°æ–¹çš„çœŸå¯¦short()ã€‚
         if( sizeof(mask=query_temp("apply/short", who)) )
                 pshort = mask[sizeof(mask) - 1];
         else
                 pshort = who->short(1);
 
-        write("Äã¿ªÊ¼¼Ù×°" + who->name() + "¡£\n");
+        write("ä½ é–‹å§‹å‡è£" + who->name() + "ã€‚\n");
         set_temp("apply/name", ({who->name()}), me);
         set_temp("apply/short", ({pshort}), me);
         set_temp("apply/long", ({who->long()}), me);

@@ -2,9 +2,9 @@ inherit NPC;
 
 void create()
 {
-        set_name("³øÊ¦", ({ "chu shi", "chu", "shi" }));
-        set("long", "¹Å´åµÄ³øÊ¦£¬Äã¿ÉÒÔÎÊËûÒª(yao)Ò»Ğ©³ÔµÄ¡£\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("å»šå¸«", ({ "chu shi", "chu", "shi" }));
+        set("long", "å¤æ‘çš„å»šå¸«ï¼Œä½ å¯ä»¥å•ä»–è¦(yao)ä¸€äº›åƒçš„ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 50);
         set("combat_exp", 7500);
         set_skill("unarmed", 35);

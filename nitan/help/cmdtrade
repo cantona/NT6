@@ -1,58 +1,58 @@
-©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤
-$BBLU$$HIY$                      ¡¾ÉÌÒµÖ¸Áî½éÉÜ¡¿                      $NOR$
-©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+$BBLU$$HIY$                      ã€å•†æ¥­æŒ‡ä»¤ä»‹ç´¹ã€‘                      $NOR$
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
-$HIY$¡¾µêÆÌÃüÁî¡¿$NOR$
+$HIY$ã€åº—èˆ–å‘½ä»¤ã€‘$NOR$
 
-Éè¶¨»ï¼ÆÃèÊö£º$HIC$modify  <ÏîÄ¿> <ÄÚÈÝ>$NOR$
+è¨­å®šä¼™è¨ˆæè¿°ï¼š$HIC$modify  <é …ç›®> <å…§å®¹>$NOR$
 
-              µêÆÌµÄÃèÊöÏîÄ¿°üÀ¨Ãû³Æ($HIY$short$NOR$)ºÍÐÅÏ¢($HIY$long$NOR$)Á½Ïî¡£
+              åº—èˆ–çš„æè¿°é …ç›®åŒ…æ‹¬åç¨±($HIY$short$NOR$)å’Œä¿¡æ¯($HIY$long$NOR$)å…©é …ã€‚
 
-              µêÆÌ»ï¼ÆµÄÃèÊöÏîÄ¿¹²°üÀ¨Ãû×Ö($HIY$name$NOR$)¡¢ÐÅÏ¢($HIY$desc$NOR$)
-              ÐÔ±ð($HIY$gender$NOR$)¡¢Í·ÏÎ($HIY$title$NOR$)ÒÔ¼°´ÂºÅ($HIY$nickname$NOR$)µÈ¡£
+              åº—èˆ–ä¼™è¨ˆçš„æè¿°é …ç›®å…±åŒ…æ‹¬åå­—($HIY$name$NOR$)ã€ä¿¡æ¯($HIY$desc$NOR$)
+              æ€§åˆ¥($HIY$gender$NOR$)ã€é ­éŠœ($HIY$title$NOR$)ä»¥åŠç¶½è™Ÿ($HIY$nickname$NOR$)ç­‰ã€‚
 
-»õÎï±ê¼Û³öÊÛ£º$HIC$stock   <»õÎï> <¼ÛÖµ> *$NOR$
+è²¨ç‰©æ¨™åƒ¹å‡ºå”®ï¼š$HIC$stock   <è²¨ç‰©> <åƒ¹å€¼> *$NOR$
 
-              ÆäÖÐ»õÎï¼ÛÖµ($HIY$value$NOR$)ÖÐµÄ($HIY$*$NOR$)ÄËÊÇÒÔÍ­°å×÷Îªµ¥Î»µÄ
-              ¼Û¸ñ£¬×î¸ß¿É±ê¼ÛÒ»Ç§Á½»Æ½ð£¬¶øË°½ðÔòÊÇÌáÈ¡½»Ò×
-              »õÎï³É½»¼Û¸ñµÄ°Ù·ÖÖ®Ò»¡£
+              å…¶ä¸­è²¨ç‰©åƒ¹å€¼($HIY$value$NOR$)ä¸­çš„($HIY$*$NOR$)ä¹ƒæ˜¯ä»¥éŠ…æ¿ä½œç‚ºå–®ä½çš„
+              åƒ¹æ ¼ï¼Œæœ€é«˜å¯æ¨™åƒ¹ä¸€åƒå…©é»ƒé‡‘ï¼Œè€Œç¨…é‡‘å‰‡æ˜¯æå–äº¤æ˜“
+              è²¨ç‰©æˆäº¤åƒ¹æ ¼çš„ç™¾åˆ†ä¹‹ä¸€ã€‚
 
-»õÎïÈ¡Ïû³öÊÛ£º$HIC$unstock <»õÎï>$NOR$
+è²¨ç‰©å–æ¶ˆå‡ºå”®ï¼š$HIC$unstock <è²¨ç‰©>$NOR$
 
-ÉèÖÃµêÆÌ¹ó±ö£º$HIC$invite | vip <id> <num>$NOR$
+è¨­ç½®åº—èˆ–è²´è³“ï¼š$HIC$invite | vip <id> <num>$NOR$
 
-              ÎªµêÆÌÌí¼Ó¹ó±ö,ÆäÖÐ($HIY$num 1 - 9$NOR$)±íÊ¾¿É¶ÔÏíÊÜ¸Ã´ý
-              ÓöµÄÍæ¼Ò´òÒ»ÖÁ¾ÅÕÛ£¬¶ø($HIY$num 10$NOR$)±íÊ¾È¡ÏûÖ¸¶¨¹ó±ö
-              ×Ê¸ñ£¬½öÊäÈë($HIY$invite$NOR$)Ôò¿É²é¿´µ±Ç°µÄ¹ó±öÃûµ¥¡£
+              ç‚ºåº—èˆ–æ·»åŠ è²´è³“,å…¶ä¸­($HIY$num 1 - 9$NOR$)è¡¨ç¤ºå¯å°äº«å—è©²å¾…
+              é‡çš„çŽ©å®¶æ‰“ä¸€è‡³ä¹æŠ˜ï¼Œè€Œ($HIY$num 10$NOR$)è¡¨ç¤ºå–æ¶ˆæŒ‡å®šè²´è³“
+              è³‡æ ¼ï¼Œåƒ…è¼¸å…¥($HIY$invite$NOR$)å‰‡å¯æŸ¥çœ‹ç•¶å‰çš„è²´è³“åå–®ã€‚
 
-ÉèÖÃµêÆÌºÚ»§£º$HIC$ban | unwelcome <id>$NOR$
+è¨­ç½®åº—èˆ–é»‘æˆ¶ï¼š$HIC$ban | unwelcome <id>$NOR$
 
-              ÎªµêÆÌÌí¼ÓºÚ»§£¬ÓÐºÚ»§±ê¼ÇµÄÍæ¼Ò²»ÄÜÔÚ¸ÃµêÆÌ¹º
-              ÂòÈÎºÎÎïÆ·¡£Ê¹ÓÃ($HIY$ban - <id>$NOR$)Ôò¿ÉÒÔÈ¡ÏûÖ¸¶¨ÁËµÄ
-              ºÚ»§,½öÊäÈë($HIY$ban$NOR$)Ôò¿É²é¿´µ±Ç°ÒÑÉè¶¨ºÃµÄºÚ»§Ãûµ¥¡£
+              ç‚ºåº—èˆ–æ·»åŠ é»‘æˆ¶ï¼Œæœ‰é»‘æˆ¶æ¨™è¨˜çš„çŽ©å®¶ä¸èƒ½åœ¨è©²åº—èˆ–è³¼
+              è²·ä»»ä½•ç‰©å“ã€‚ä½¿ç”¨($HIY$ban - <id>$NOR$)å‰‡å¯ä»¥å–æ¶ˆæŒ‡å®šäº†çš„
+              é»‘æˆ¶,åƒ…è¼¸å…¥($HIY$ban$NOR$)å‰‡å¯æŸ¥çœ‹ç•¶å‰å·²è¨­å®šå¥½çš„é»‘æˆ¶åå–®ã€‚
 
-$HIY$¡¾ÅÄÂôÃüÁî¡¿$NOR$
+$HIY$ã€æ‹è³£å‘½ä»¤ã€‘$NOR$
 
-ÁÐ³öÅÄÂôµêÆÌ£º$HIC$list$NOR$
-¾ÙÅÆ²ÎÓë¾º¼Û£º$HIC$jupai$NOR$
+åˆ—å‡ºæ‹è³£åº—èˆ–ï¼š$HIC$list$NOR$
+èˆ‰ç‰Œåƒèˆ‡ç«¶åƒ¹ï¼š$HIC$jupai$NOR$
 
-$HIY$¡¾Î×Ê¦ÃüÁî¡¿$NOR$
+$HIY$ã€å·«å¸«å‘½ä»¤ã€‘$NOR$
 
-³õÊ¼ËùÓÐµêÆÌ£º$HIC$shop reset$NOR$
-Ö¸¶¨µêÆÌÖ÷ÈË£º$HIC$shop owner$NOR$
-¿ª·ÅÖ¸¶¨µêÆÌ£º$HIC$shop open$NOR$
-¹Ø±ÕÖ¸¶¨µêÆÌ£º$HIC$shop close$NOR$
-¿ªÊ¼µêÆÌÅÄÂô£º$HIC$start$NOR$
-½øÐÐ×Ô¶¯ÅÄÂô£º$HIC$auto$NOR$
-½ûÖ¹Ä³ÈË²Î¼Ó£º$HIC$ban$NOR$
-Ñ¡ÔñÅÄÂôµêÆÌ£º$HIC$qiao$NOR$
-½áÊøµêÆÌÅÄÂô£º$HIC$finish$NOR$
+åˆå§‹æ‰€æœ‰åº—èˆ–ï¼š$HIC$shop reset$NOR$
+æŒ‡å®šåº—èˆ–ä¸»äººï¼š$HIC$shop owner$NOR$
+é–‹æ”¾æŒ‡å®šåº—èˆ–ï¼š$HIC$shop open$NOR$
+é—œé–‰æŒ‡å®šåº—èˆ–ï¼š$HIC$shop close$NOR$
+é–‹å§‹åº—èˆ–æ‹è³£ï¼š$HIC$start$NOR$
+é€²è¡Œè‡ªå‹•æ‹è³£ï¼š$HIC$auto$NOR$
+ç¦æ­¢æŸäººåƒåŠ ï¼š$HIC$ban$NOR$
+é¸æ“‡æ‹è³£åº—èˆ–ï¼š$HIC$qiao$NOR$
+çµæŸåº—èˆ–æ‹è³£ï¼š$HIC$finish$NOR$
 
-©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤
-$BBLU$$HIY$                        ¡¾ ×Û  Êö ¡¿                        $NOR$
-©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤
-ÓÎÏ·ÖÐµÄËùÓÐµÄÍæ¼Ò¾ù¿ÉÍ¨¹ý($HIY$shop$NOR$)Ö¸ÁîÀ´²é¿´µ±Ç°µÄµêÆÌ×´¿ö¡£¸÷
-¸ö³ÇÊÐµÄµêÆÌ¾ùÔÚ¸ÃµØÇøµÄÂí¾Ç¶þÂ¥£¬Òò´Ë½»Í¨·Ç³£±ãÀû¡£Ö»ÒªÓÃÐÄ
-¾­Óª£¬¸»¼×ÌìÏÂ±ã²»ÔÙÊÇÃÎÏë¡£Í¨¹ý¾­ÉÌÀ´²Ù×ÝÕû¸öÓÎÏ·ºÍÕÆ¹ÜÌìÏÂ
-»õÎïÁ÷Ïò£¬°ÑÎÕ×¡ÎäÁÖºÀ½ÜµÄÃüÂö£¬ß³ßå·çÔÆ£¬Ö¸ÈÕ¿É´ý¡£
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+$BBLU$$HIY$                        ã€ ç¶œ  è¿° ã€‘                        $NOR$
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+éŠæˆ²ä¸­çš„æ‰€æœ‰çš„çŽ©å®¶å‡å¯é€šéŽ($HIY$shop$NOR$)æŒ‡ä»¤ä¾†æŸ¥çœ‹ç•¶å‰çš„åº—èˆ–ç‹€æ³ã€‚å„
+å€‹åŸŽå¸‚çš„åº—èˆ–å‡åœ¨è©²åœ°å€çš„é¦¬å»„äºŒæ¨“ï¼Œå› æ­¤äº¤é€šéžå¸¸ä¾¿åˆ©ã€‚åªè¦ç”¨å¿ƒ
+ç¶“ç‡Ÿï¼Œå¯Œç”²å¤©ä¸‹ä¾¿ä¸å†æ˜¯å¤¢æƒ³ã€‚é€šéŽç¶“å•†ä¾†æ“ç¸±æ•´å€‹éŠæˆ²å’ŒæŽŒç®¡å¤©ä¸‹
+è²¨ç‰©æµå‘ï¼ŒæŠŠæ¡ä½æ­¦æž—è±ªå‚‘çš„å‘½è„ˆï¼Œå±â–¡é¢¨é›²ï¼ŒæŒ‡æ—¥å¯å¾…ã€‚
 

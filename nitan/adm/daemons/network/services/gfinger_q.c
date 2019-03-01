@@ -34,14 +34,14 @@ string send_gfinger_q(string mud, string wiz, mixed them)
 
         // make sure we have an entry for the recipient
         minfo = DNS_MASTER->query_mud_info(mud);
-        if (!minfo) return LOCAL_MUD_NAME() + "Ŀǰ��û�к�" + mud + "��ϵ�ϡ�\n";
+        if (!minfo) return LOCAL_MUD_NAME() + "目前並沒有和" + mud + "聯系上。\n";
 
         // send the finger
         DNS_MASTER->send_udp(minfo["HOSTADDRESS"], minfo["PORTUDP"],
                 sprintf("@@@%s||NAME:%s||PORTUDP:%d||PLAYER:%s||ASKWIZ:%s@@@\n",
                 DNS_GFINGER_Q, Mud_name(), udp_port(),
                 wiz,objectp(them)?query("id", them):them));
-        return "������Ϣ�Ѿ����������Ժ�\n";
+        return "網絡信息已經發出，請稍候。\n";
 }
 
 void incoming_request(mapping info)

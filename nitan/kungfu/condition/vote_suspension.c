@@ -8,7 +8,7 @@ int dispel() { return 0; }
 int update_condition(object me, int duration)
 {
         if (duration < 1) {
-                tell_object(me, HIY "¹Û²ìÆÚÒÑÂú£¬ÄãÓÖ¿ÉÒÔÍ¶Æ±ÁË£¡\n" NOR);
+                tell_object(me, HIY "è§€å¯ŸæœŸå·²æ»¿ï¼Œä½ åˆå¯ä»¥æŠ•ç¥¨äº†ï¼\n" NOR);
                 me->delete("vote/deprived");
                 return 0;
         }

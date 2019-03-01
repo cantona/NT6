@@ -4,18 +4,18 @@
 inherit ITEM;
 void create()
 {
-        set_name(YEL"Ê®°ËÄàÅ¼"NOR, ({ "18 niou", "niou" }));
+        set_name(YEL"åå…«æ³¥å¶"NOR, ({ "18 niou", "niou" }));
         set_weight(600);
         set("taskobj", 1);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "ºÐ");
+                set("unit", "ç›’");
                 set("long", 
-"ÕâÊÇÒ»¸öÐ¡Ä¾ºÐ£¬ºÐÖÐµæ×ÅÃÞ»¨£¬²¢ÁÐ×ÅÈýÅÅÄàÖÆÍæÅ¼£¬Ã¿ÅÅÁù
-¸ö£¬¹²ÊÇÒ»Ê®°Ë¸ö¡£ÍæÅ¼ÖÆ×÷¾«ÇÉ£¬Ã¿¸ö¶¼ÊÇÂãÌåµÄÄÐÈË£¬Æ¤·ô
-ÉÏÍ¿ÁË°×ÛÑ£¬»­ÂúÁËÒ»ÌõÌõºìÏß£¬¸üÓÐÎÞÊýºÚµã£¬¶¼ÊÇÂöÂçºÍÑ¨
-µÀµÄ·½Î»¡£\n");
+"é€™æ˜¯ä¸€å€‹å°æœ¨ç›’ï¼Œç›’ä¸­å¢Šè‘—æ£‰èŠ±ï¼Œä¸¦åˆ—è‘—ä¸‰æŽ’æ³¥åˆ¶çŽ©å¶ï¼Œæ¯æŽ’å…­
+å€‹ï¼Œå…±æ˜¯ä¸€åå…«å€‹ã€‚çŽ©å¶åˆ¶ä½œç²¾å·§ï¼Œæ¯å€‹éƒ½æ˜¯è£¸é«”çš„ç”·äººï¼Œçš®è†š
+ä¸Šå¡—äº†ç™½å Šï¼Œç•«æ»¿äº†ä¸€æ¢æ¢ç´…ç·šï¼Œæ›´æœ‰ç„¡æ•¸é»‘é»žï¼Œéƒ½æ˜¯è„ˆçµ¡å’Œç©´
+é“çš„æ–¹ä½ã€‚\n");
                 set("value", 0);
                 set("material", "mud");
         }

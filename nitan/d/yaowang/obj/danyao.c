@@ -9,10 +9,10 @@ object me = this_object();
         object where = environment();
         if (!wizardp(this_player())) 
         {
-        set("no_get","ÄãÊÖÀïÒ»ËÉ"+query("name", this_object())+"´ÓÖ¸¼ä»¬Âä£¡\n");
-        set("no_give","ÕâÃ´Õä¹óµÄÒ©£¬ÄÄÄÜËæ±ã¸øÈË£¿\n");
-        set("no_drop","ÕâÃ´±¦¹óµÄÒ©£¬ÈÓÁË¶à¿ÉÏ§Ñ½£¡\n");
-        set("no_sell","·²ÈËÄÄÀïÖªµÀ"+query("name", this_object())+"µÄ¼ÛÖµ£¿»¹ÊÇ×Ô¼ºÁô×Å°É¡£\n");
+        set("no_get","ä½ æ‰‹è£¡ä¸€é¬†"+query("name", this_object())+"å¾æŒ‡é–“æ»‘è½ï¼\n");
+        set("no_give","é€™éº¼çè²´çš„è—¥ï¼Œå“ªèƒ½éš¨ä¾¿çµ¦äººï¼Ÿ\n");
+        set("no_drop","é€™éº¼å¯¶è²´çš„è—¥ï¼Œæ‰”äº†å¤šå¯æƒœå‘€ï¼\n");
+        set("no_sell","å‡¡äººå“ªè£¡çŸ¥é“"+query("name", this_object())+"çš„åƒ¹å€¼ï¼Ÿé‚„æ˜¯è‡ªå·±ç•™è‘—å§ã€‚\n");
         if( !query("my_owner", me) && interactive(who) )
         set("my_owner",query("id",  who), me);
    
@@ -36,22 +36,22 @@ object me = this_object();
 }
 void destruct_me(object where, object me)
 {
-        message_vision("Ç§Ãæ¹Ö¹í¹íËîËîµØÄÃÆğ$nÈö½Å¾ÍÅÜ,¿ì×·!\n",where,me);
+        message_vision("åƒé¢æ€ªé¬¼é¬¼ç¥Ÿç¥Ÿåœ°æ‹¿èµ·$næ’’è…³å°±è·‘,å¿«è¿½!\n",where,me);
         destruct (me);
 }
 
 void create()
 {
-        set_name(YEL"µ¤Ò©"NOR, ({"dan yao","danyao"}));
+        set_name(YEL"ä¸¹è—¥"NOR, ({"dan yao","danyao"}));
         set_weight(20);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-        set("unit", "Öê");
-        set("long", "Ò»¿ÅÏãÆøËÄÒçµÄµ¤Ò©¡£\n");
-        set("canoe",1); // Éí·İ¼ø¶¨,·ÀÖ¹¼ÙÒ©²Ä
+        set("unit", "æ ª");
+        set("long", "ä¸€é¡†é¦™æ°£å››æº¢çš„ä¸¹è—¥ã€‚\n");
+        set("canoe",1); // èº«ä»½é‘’å®š,é˜²æ­¢å‡è—¥æ
         set("value", 0);
-        set("drug_type", "²¹Æ·");
+        set("drug_type", "è£œå“");
         }
   
         setup();

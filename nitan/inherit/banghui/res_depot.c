@@ -1,5 +1,5 @@
 // res_ku.c
-// ԭ�ϲֿ�
+// 原料倉庫
 // by Find.
 
 #define MAX_AMOUNT_PER_RES_IN_DEPOT	1000000000

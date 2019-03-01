@@ -1,4 +1,4 @@
-//lianhuan.c  ·èÄ§ÕÈ·¨Ö®·èÄ§·ÉÕÈ
+//lianhuan.c  ç˜‹é­”æ–æ³•ä¹‹ç˜‹é­”é£›æ–
 
 #include <ansi.h>
 
@@ -18,32 +18,32 @@ int perform(object me, object target)
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("·èÄ§·ÉÕÈÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ç˜‹é­”é£›æ–åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( query_temp("fengmo", me) )
-                return notify_fail("ÄãÒÑÔÚÊ¹ÓÃ·èÄ§·ÉÕÈÁË£¡\n");
+                return notify_fail("ä½ å·²åœ¨ä½¿ç”¨ç˜‹é­”é£›æ–äº†ï¼\n");
 
         weapon=query_temp("weapon", me);
         if( !objectp(weapon) || query("skill_type", weapon) != "staff" )
-                return notify_fail("ÄãÊÖÖĞÎŞÕÈ£¬ÈçºÎÄÜ¹»Ê©Õ¹·èÄ§·ÉÕÈ£¿\n");
+                return notify_fail("ä½ æ‰‹ä¸­ç„¡æ–ï¼Œå¦‚ä½•èƒ½å¤ æ–½å±•ç˜‹é­”é£›æ–ï¼Ÿ\n");
 
         if( me->query_skill_mapped("force") != "huntian-qigong" && me->query_skill_mapped("force") != "jiaohua-neigong"  )
-                return notify_fail("ÄãËùÓÃµÄÄÚ¹¦²»¶Ô£¬ÎŞ·¨ÅäºÏÕÈ·¨Ê©Õ¹·èÄ§·ÉÕÈ£¡\n");
+                return notify_fail("ä½ æ‰€ç”¨çš„å…§åŠŸä¸å°ï¼Œç„¡æ³•é…åˆæ–æ³•æ–½å±•ç˜‹é­”é£›æ–ï¼\n");
 
         if( me->query_skill("force") < 100 )
-                return notify_fail("ÄãµÄÄÚ¹¦»ğºòÎ´µ½£¬ÎŞ·¨ÅäºÏÕÈ·¨Ê©Õ¹·èÄ§·ÉÕÈ£¡\n");
+                return notify_fail("ä½ çš„å…§åŠŸç«å€™æœªåˆ°ï¼Œç„¡æ³•é…åˆæ–æ³•æ–½å±•ç˜‹é­”é£›æ–ï¼\n");
 
         if( me->query_skill("staff") < 100 )
-                return notify_fail("Äã·èÄ§ÕÈ·¨ĞŞÎª²»×ã£¬»¹²»»áÊ¹ÓÃ·èÄ§·ÉÕÈ£¡\n");
+                return notify_fail("ä½ ç˜‹é­”æ–æ³•ä¿®ç‚ºä¸è¶³ï¼Œé‚„ä¸æœƒä½¿ç”¨ç˜‹é­”é£›æ–ï¼\n");
 
         if( query("neili", me) <= 300 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»Ê©Õ¹·èÄ§·ÉÕÈ£¡\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ æ–½å±•ç˜‹é­”é£›æ–ï¼\n");
         if( query("jingli", me) <= 200 )
-                return notify_fail("ÄãµÄ¾«Á¦²»¹»Ê©Õ¹·èÄ§·ÉÕÈ£¡\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤ æ–½å±•ç˜‹é­”é£›æ–ï¼\n");
 
         skill = me->query_skill("staff");
         
-        message_vision(HIR "\n$N´óºÈÒ»Éù½«ÊÖÖĞ¼±×ª×ÅµÄ"+weapon->name()+"ÍÑÊÖÖÀ³ö£¬ÔÚ¿ÕÖĞ¸ßµÍ×óÓÒ»ØĞı£¡\n\n" NOR, me, target);
+        message_vision(HIR "\n$Nå¤§å–ä¸€è²å°‡æ‰‹ä¸­æ€¥è½‰è‘—çš„"+weapon->name()+"è„«æ‰‹æ“²å‡ºï¼Œåœ¨ç©ºä¸­é«˜ä½å·¦å³å›æ—‹ï¼\n\n" NOR, me, target);
 
         set_temp("fengmo", 1, me);
         set_temp("location", file_name(environment(me)), me);
@@ -74,9 +74,9 @@ void check_fight(object me, object target, object weapon)
         } else {
                 limbs=query("limbs", target);
                 limb = limbs[random(sizeof(limbs))];
-                type = "´ìÉË";
+                type = "æŒ«å‚·";
 
-                message_vision(HIR "\nÍ»È»¼ä$n×ÔĞĞÏò$NµÄ"+limb+"ÃÍÈ»·É×²¹ıÈ¥£¡\n" NOR, target, weapon);
+                message_vision(HIR "\nçªç„¶é–“$nè‡ªè¡Œå‘$Nçš„"+limb+"çŒ›ç„¶é£›æ’éå»ï¼\n" NOR, target, weapon);
 
                 if (living(target))
                         dp=query("combat_exp", target);
@@ -95,10 +95,10 @@ void check_fight(object me, object target, object weapon)
                         message_vision("($N"+str+")\n", target);
 
                 } else {
-                        message_vision(YEL "$N¿´µÃ·ÖÃ÷£¬ÉíĞÎÒ»ÈÃ£¬±Ü¹ıÁË$n£¡\n" NOR, target, weapon);
+                        message_vision(YEL "$Nçœ‹å¾—åˆ†æ˜ï¼Œèº«å½¢ä¸€è®“ï¼Œé¿éäº†$nï¼\n" NOR, target, weapon);
                 }
         
-                message_vision(HIR "\n$NÃÍÎüÒ»¿ÚÆø£¬Æ®Éí¸ÏÉÏ$nÉìÕÆÔÚÕÈÎ²Ò»ÍÆ£¬½«ÆäÓÖÍÆÔÚ°ë¿Õ·ÉĞı¡£\n\n" NOR, me, weapon);
+                message_vision(HIR "\n$NçŒ›å¸ä¸€å£æ°£ï¼Œé£„èº«è¶•ä¸Š$nä¼¸æŒåœ¨æ–å°¾ä¸€æ¨ï¼Œå°‡å…¶åˆæ¨åœ¨åŠç©ºé£›æ—‹ã€‚\n\n" NOR, me, weapon);
 
                 addn_temp("fengmo", 1, me);
                 call_out("check_fight", 1, me, target, weapon);
@@ -115,11 +115,11 @@ int remove_attack(object me, object weapon)
                 weapon->move(me);
                 set("no_clean_up", 0, weapon);
                 weapon->wield();
-                message_vision(YEL "\n$N×İÉíÉÏÇ°£¬½«·ÉĞıµÄ$nÊÕ»Ø¡£\n\n" NOR, me, weapon);
+                message_vision(YEL "\n$Nç¸±èº«ä¸Šå‰ï¼Œå°‡é£›æ—‹çš„$næ”¶å›ã€‚\n\n" NOR, me, weapon);
         }
         else {
                 weapon->move(query_temp("location", me));
-                message("vision", "Ö»ÌıµÃïÏµÄÒ»Éù£¬"+weapon->name()+"Á¦¾¡ÓÉ°ë¿ÕµøÂä¡£\n", environment(weapon), ({weapon}) );
+                message("vision", "åªè½å¾—é˜çš„ä¸€è²ï¼Œ"+weapon->name()+"åŠ›ç›¡ç”±åŠç©ºè·Œè½ã€‚\n", environment(weapon), ({weapon}) );
         }
         delete_temp("location", me);
 

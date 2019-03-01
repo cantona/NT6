@@ -5,12 +5,12 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIR "»ØÆøÍè" NOR, ({"huiqi wan", "huiqi", "wan"}));
+        set_name(HIR "å›žæ°£ä¸¸" NOR, ({"huiqi wan", "huiqi", "wan"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
-                set("long", HIR "Ò»¿ÅºÚÉ«µÄÒ©Íè¡£»Ö¸´1000µãÆøÑªºÍ×î´óÆøÑª¡£\n" NOR);
+                set("unit", "é¡†");
+                set("long", HIR "ä¸€é¡†é»‘è‰²çš„è—¥ä¸¸ã€‚æ¢å¾©1000é»žæ°£è¡€å’Œæœ€å¤§æ°£è¡€ã€‚\n" NOR);
                 set("value", 30000);
                 set("only_do_effect", 1);
         }
@@ -22,12 +22,12 @@ int do_effect(object me)
 {
         if (time() - me->query_temp("last_eat_p1") < 600)
         {
-                write("Äã¸Õ³Ô¹ýÒ©£¬Ò©Á¦»¹Ã»ÓÐÍêÈ«ÎüÊÕ¡£\n");
+                write("ä½ å‰›åƒéŽè—¥ï¼Œè—¥åŠ›é‚„æ²’æœ‰å®Œå…¨å¸æ”¶ã€‚\n");
                 return 1;
         }
         me->set_temp("last_eat_p1", time());
 
-        message_vision(HIR "$N" HIR "³ÔÏÂÒ»¿Å»ØÆøÍè£¬Ö»¾õÊæÌ©Ö®¼«£¡\n" NOR, me);
+        message_vision(HIR "$N" HIR "åƒä¸‹ä¸€é¡†å›žæ°£ä¸¸ï¼Œåªè¦ºèˆ’æ³°ä¹‹æ¥µï¼\n" NOR, me);
 
         if (me->query("max_qi") - me->query("eff_qi") <= 1000)
         {

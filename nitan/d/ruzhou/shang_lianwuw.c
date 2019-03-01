@@ -3,14 +3,14 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Á·Îä³¡");
+        set("short", "ç·´æ­¦å ´");
         set("long", @LONG
-ÕâÊÇÉÌ¼Ò±¤µÄÁ·Îä³¡£¬¿ÕÀ«µÄ³¡µØÉÏÆÌÂúÁËÏ¸Ï¸µÄ»ÆÍÁ£¬Õý
-ºÃÊÊºÏÑÝÎä¡£ËÄÃæÓÐ¼¸¸öÉÌ¼Ò±¤µÄµÜ×ÓÕýÔÚÁ·Îä¡£³¡µØ±ßÉÏ¹Ò×Å
-¼¸¸ö´óÉ³´ü(shadai)£¬²»ÖªÓÐÊ²Ã´ÓÃ´¦¡£
+é€™æ˜¯å•†å®¶å ¡çš„ç·´æ­¦å ´ï¼Œç©ºé—Šçš„å ´åœ°ä¸Šèˆ–æ»¿äº†ç´°ç´°çš„é»ƒåœŸï¼Œæ­£
+å¥½é©åˆæ¼”æ­¦ã€‚å››é¢æœ‰å¹¾å€‹å•†å®¶å ¡çš„å¼Ÿå­æ­£åœ¨ç·´æ­¦ã€‚å ´åœ°é‚Šä¸ŠæŽ›è‘—
+å¹¾å€‹å¤§æ²™è¢‹(shadai)ï¼Œä¸çŸ¥æœ‰ä»€éº¼ç”¨è™•ã€‚
 LONG);
         set("item_desc", ([
-                "shadai" : WHT "¼¸¸ö³ÁÖØµÄÉ³´ü£¬¿ÉÒÔÊÔ×Å´ò´ò(jida)¿´¡£\n" NOR,
+                "shadai" : WHT "å¹¾å€‹æ²‰é‡çš„æ²™è¢‹ï¼Œå¯ä»¥è©¦è‘—æ‰“æ‰“(jida)çœ‹ã€‚\n" NOR,
         ]));
 
         set("exits", ([
@@ -34,27 +34,27 @@ int do_jida(string arg)
         me = this_player();
 
         if (! living(me) || arg != "shadai")
-                return notify_fail("ÄãÒª»÷´òÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦æ“Šæ‰“ä»€éº¼ï¼Ÿ\n");
 
         if (me->is_busy())
-                return notify_fail("ÄãÏÖÔÚÕýÃ¦×Å¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£å¿™è‘—ã€‚\n");
 
         if( objectp(weapon=query_temp("weapon", me)) )
-                return notify_fail(WHT "Äã²ÙÆðÊÖÖÐ±øÆ÷ÏòÉ³´ü¿³È¥£¬¡°ßê¡±µÄÒ»ÉùÉ³´üÓ¦"
-                                   "Éù¶øÆÆ£¬ÀïÃæµÄÉ³Á÷ÁËÒ»µØ¡£\n" NOR);
+                return notify_fail(WHT "ä½ æ“èµ·æ‰‹ä¸­å…µå™¨å‘æ²™è¢‹ç åŽ»ï¼Œâ€œå“§â€çš„ä¸€è²æ²™è¢‹æ‡‰"
+                                   "è²è€Œç ´ï¼Œè£¡é¢çš„æ²™æµäº†ä¸€åœ°ã€‚\n" NOR);
 
         if ((int)me->query_skill("cuff", 1) < 30
            || (int)me->query_skill("strike", 1) < 30)
-                return notify_fail("Äã»÷´ò°ëÌì£¬ÊÖ¶¼´ò³ö¼ëÁË£¬¿É»¹ÊÇÊ²Ã´¶¼Ã»Ñ§µ½£¬¿É"
-                                   "ÄÜÊÇÈ­ÕÆµÈ¼¶Ì«µÍµÄÔµ¹Ê¡£\n");
+                return notify_fail("ä½ æ“Šæ‰“åŠå¤©ï¼Œæ‰‹éƒ½æ‰“å‡ºç¹­äº†ï¼Œå¯é‚„æ˜¯ä»€éº¼éƒ½æ²’å­¸åˆ°ï¼Œå¯"
+                                   "èƒ½æ˜¯æ‹³æŽŒç­‰ç´šå¤ªä½Žçš„ç·£æ•…ã€‚\n");
 
         if ((int)me->query_skill("cuff", 1) >= 120
            && (int)me->query_skill("strike", 1) >= 120)
-                return notify_fail("Äã¶Ô×ÅÉ³´ü»÷´òÁËÒ»»á¶ù£¬·¢ÏÖÕâÀïÒÑ¾­²»ÄÜÔÙÌá¸ßÊ²"
-                                   "Ã´ÁË¡£\n");
+                return notify_fail("ä½ å°è‘—æ²™è¢‹æ“Šæ‰“äº†ä¸€æœƒå…’ï¼Œç™¼ç¾é€™è£¡å·²ç¶“ä¸èƒ½å†æé«˜ä»€"
+                                   "éº¼äº†ã€‚\n");
 
         if( query("qi", me)<40 )
-                return notify_fail("ÄãÏÖÔÚÀÛµÃ¸ì²²¶¼Ì§²»ÆðÀ´ÁË£¬ÏÈÐÝÏ¢Ò»»á¶ù°É¡£\n");
+                return notify_fail("ä½ ç¾åœ¨ç´¯å¾—èƒ³è†Šéƒ½æŠ¬ä¸èµ·ä¾†äº†ï¼Œå…ˆä¼‘æ¯ä¸€æœƒå…’å§ã€‚\n");
 
         me->receive_damage("qi", 30);
 
@@ -67,7 +67,7 @@ int do_jida(string arg)
                 me->improve_skill("strike",query("con", me)*2);
 
         me->start_busy(random(2));
-        message_vision(WHT "\n$N" WHT "Õ¾ÎÈÂí²½£¬Ò»ÕÆÒ»È­¶Ô×ÅÉ³´ü´òÁËÆðÀ´¡£\n" NOR, me);
-        write(HIC "ÄãÔÚ»÷´ò¹ý³ÌÖÐÁìÎòÁË²»ÉÙ¡¸»ù±¾È­·¨¡¹¼°¡¸»ù±¾ÕÆ·¨¡¹µÄÇÏÃÅ¡£\n" NOR);
+        message_vision(WHT "\n$N" WHT "ç«™ç©©é¦¬æ­¥ï¼Œä¸€æŽŒä¸€æ‹³å°è‘—æ²™è¢‹æ‰“äº†èµ·ä¾†ã€‚\n" NOR, me);
+        write(HIC "ä½ åœ¨æ“Šæ‰“éŽç¨‹ä¸­é ˜æ‚Ÿäº†ä¸å°‘ã€ŒåŸºæœ¬æ‹³æ³•ã€åŠã€ŒåŸºæœ¬æŽŒæ³•ã€çš„ç«…é–€ã€‚\n" NOR);
         return 1;
 }

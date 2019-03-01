@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�鷿");
+        set("short", "書房");
         set("long", @LONG
-�������鷿����ǽһ�Ŵ���ܣ��ڷ��źܶ���鼮��������ʥ����
-����������ų��ԡ�ʥ������������һֱ����Ϊ�٣���������ѧ�����ա�
-һ������ȥ���ƺ��й��ڲ������巽����顣
+這裡是書房，靠牆一排大書架，擺放著很多的書籍，昆侖三聖何足
+道以琴棋而號稱以“聖”，故昆侖派一直引以為榮，鼓勵弟子學琴棋藝。
+一眼望過去，似乎有關于不少琴棋方面的書。
 LONG );
         set("exits", ([
                 "west"  : __DIR__"jiuqulang3",

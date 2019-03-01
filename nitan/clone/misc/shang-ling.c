@@ -3,13 +3,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(NOR + WHT "ÉÌÁî" NOR, ({ "shang ling", "shang", "ling" }));
+        set_name(NOR + WHT "å•†ä»¤" NOR, ({ "shang ling", "shang", "ling" }));
         set_weight(1);
-        set("long", NOR + WHT "ÕâÊÇÒ»ÕÅºìµ×½ğ±ßµÄÍ¨ÉÌÁî£¬ÓÉÉÌÒµĞ­»á°ä·¢¡£\n" NOR);
-        set("unit", "ÕÅ");
+        set("long", NOR + WHT "é€™æ˜¯ä¸€å¼µç´…åº•é‡‘é‚Šçš„é€šå•†ä»¤ï¼Œç”±å•†æ¥­å”æœƒé ’ç™¼ã€‚\n" NOR);
+        set("unit", "å¼µ");
         set("value", 5);
         set("material", "paper");
-        set("no_sell", "ÕâÄêÍ·£¬Äã°Ñ³Ô·¹µÄ¼Ò»ïÒ²ÄÃÀ´ÂôÇ®£¿");
+        set("no_sell", "é€™å¹´é ­ï¼Œä½ æŠŠåƒé£¯çš„å®¶ä¼™ä¹Ÿæ‹¿ä¾†è³£éŒ¢ï¼Ÿ");
         setup();
 }
 
@@ -29,16 +29,16 @@ int do_stock(string arg)
         me = this_player();
 
         if( !query("is_vendor", me) )
-                return notify_fail("Ö»ÓĞ´ÓÊÂÉÌÒµµÄÈË²ÅÄÜ°ÚÌ¯¡£\n");
+                return notify_fail("åªæœ‰å¾äº‹å•†æ¥­çš„äººæ‰èƒ½æ“ºæ”¤ã€‚\n");
 
         if (! present("shang ling", me))
-                return notify_fail("ÄãµÄÉÌÁî²»ÔÚÉíÉÏ£¬Èç½ñÊÀµÀÂÒ£¬Ğ¡ĞÄÎªÃî¡£\n");
+                return notify_fail("ä½ çš„å•†ä»¤ä¸åœ¨èº«ä¸Šï¼Œå¦‚ä»Šä¸–é“äº‚ï¼Œå°å¿ƒç‚ºå¦™ã€‚\n");
 
         if( !query_temp("on_baitan", me) )
-                return notify_fail("Äã±ØĞëÊ×ÏÈ°Ú¸öÌ¯Î»(baitan)²ÅÄÜ¶µÊÛ»õÎï¡£\n");
+                return notify_fail("ä½ å¿…é ˆé¦–å…ˆæ“ºå€‹æ”¤ä½(baitan)æ‰èƒ½å…œå”®è²¨ç‰©ã€‚\n");
 
         if (! arg)
-                return notify_fail("Ö¸Áî¸ñÊ½£ºstock <»õÎï> <Ô­Öµ±¶Êı>\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šstock <è²¨ç‰©> <åŸå€¼å€æ•¸>\n");
 
         i = sizeof(args = explode(arg, " "));
 
@@ -49,28 +49,28 @@ int do_stock(string arg)
                 arg = replace_string(arg, " " + amount, "");
 
         if (! (goods = present(arg, me)) || ! objectp(goods))
-                return notify_fail("ÄãÉíÉÏ²¢Ã»ÓĞÕâ¸ö»õÎï¡£\n");
+                return notify_fail("ä½ èº«ä¸Šä¸¦æ²’æœ‰é€™å€‹è²¨ç‰©ã€‚\n");
 
         if (goods->is_character())
-                return notify_fail("Äã²»ÄÜ··Âô»îÎï¡£\n");
+                return notify_fail("ä½ ä¸èƒ½è²©è³£æ´»ç‰©ã€‚\n");
 
         if( query("money_id", goods) )
-                return notify_fail("Äã´òËã°ÑÇ®Ò²ÄÃÀ´³öÊÛ£¿\n");
+                return notify_fail("ä½ æ‰“ç®—æŠŠéŒ¢ä¹Ÿæ‹¿ä¾†å‡ºå”®ï¼Ÿ\n");
 
         if( query("id", goods) == "shangling" )
-                return notify_fail("°ÑÕâ¶«Î÷ÂôÁË£¬Äã¿¿Ê²Ã´À´³Ô·¹£¿\n");
+                return notify_fail("æŠŠé€™æ±è¥¿è³£äº†ï¼Œä½ é ä»€éº¼ä¾†åƒé£¯ï¼Ÿ\n");
 
         if (goods->is_item_make())
-                return notify_fail("Õâ¶«Î÷ÊÇ¶¨ÁËÃûµÄ£¬ÏàĞÅÃ»ÈËÔ¸È¥Âò¡£\n");
+                return notify_fail("é€™æ±è¥¿æ˜¯å®šäº†åçš„ï¼Œç›¸ä¿¡æ²’äººé¡˜å»è²·ã€‚\n");
 
         if( sizeof(query("vendor_goods", me)) >= 10 )
-                return notify_fail("ÄãÒ»´ÎÖ»ÄÜ°ÚÊ®ÖÖ»õÎï£¬°Ñ±ğµÄÏÈÊÕµãÆğÀ´°É¡£\n");
+                return notify_fail("ä½ ä¸€æ¬¡åªèƒ½æ“ºåç¨®è²¨ç‰©ï¼ŒæŠŠåˆ¥çš„å…ˆæ”¶é»èµ·ä¾†å§ã€‚\n");
 
         if (amount > 100)
-                return notify_fail("ÎïÆ·³öÊÛ¼Û¸ñ×î¶à¶¨ÎªÔ­¼ÛµÄÒ»°Ù±¶¡£\n");
+                return notify_fail("ç‰©å“å‡ºå”®åƒ¹æ ¼æœ€å¤šå®šç‚ºåŸåƒ¹çš„ä¸€ç™¾å€ã€‚\n");
 
         if( amount < 0 )
-                return notify_fail("ÎïÆ·µÄ³öÊÛ¼Û¸ñ²»ÄÜÎª¸º±¶Êı¡£\n");
+                return notify_fail("ç‰©å“çš„å‡ºå”®åƒ¹æ ¼ä¸èƒ½ç‚ºè² å€æ•¸ã€‚\n");
 
         value=query("base_value", goods);
 
@@ -80,15 +80,15 @@ int do_stock(string arg)
         if (amount)
         {
                 value = amount * value;
-                beishu = chinese_number((string)amount) + "±¶¼Û";
+                beishu = chinese_number((string)amount) + "å€åƒ¹";
         } else
         {
                 value = value/2;
-                beishu = "°ë¼Û";
+                beishu = "åŠåƒ¹";
         }
 
         if (! value)
-                return notify_fail("Õâ¶«Î÷²»ÖµÇ®£¬Ã»ÈË»áÈ¥ÂòµÄ¡£\n");
+                return notify_fail("é€™æ±è¥¿ä¸å€¼éŒ¢ï¼Œæ²’äººæœƒå»è²·çš„ã€‚\n");
 
         all_goods=query("vendor_goods", me);
 
@@ -97,8 +97,8 @@ int do_stock(string arg)
 
         all_goods[base_name(goods)] = value;
         set("vendor_goods", all_goods, me);
-        message_vision(HIW "$N" HIW "½«"+ goods->name(1) + HIW "¶¨Îª" +
-                       beishu + HIW "°ÚÉÏÌ¯×Ó¿ªÊ¼³öÊÛ¡£\n" NOR, me);
+        message_vision(HIW "$N" HIW "å°‡"+ goods->name(1) + HIW "å®šç‚º" +
+                       beishu + HIW "æ“ºä¸Šæ”¤å­é–‹å§‹å‡ºå”®ã€‚\n" NOR, me);
         return 1;
 }
 
@@ -112,21 +112,21 @@ int do_unstock(string arg)
         me = this_player();
 
         if( !query("is_vendor", me) )
-                return notify_fail("Ö»ÓĞ´ÓÊÂÉÌÒµµÄÈË²ÅÄÜ°ÚÌ¯¡£\n");
+                return notify_fail("åªæœ‰å¾äº‹å•†æ¥­çš„äººæ‰èƒ½æ“ºæ”¤ã€‚\n");
 
         if( !query_temp("on_baitan", me) )
-                return notify_fail("ÄãÄ¿Ç°²¢Ã»ÓĞ°ÚÌ¯¡£\n");
+                return notify_fail("ä½ ç›®å‰ä¸¦æ²’æœ‰æ“ºæ”¤ã€‚\n");
 
         if (! arg)
-                return notify_fail("unstock <»õÎï>\n");
+                return notify_fail("unstock <è²¨ç‰©>\n");
 
         if (! (goods = present(arg, me)))
-                return notify_fail("Äã²¢Ã»ÓĞ¶µÊÛÕâ¸ö»õÎï¡£\n");
+                return notify_fail("ä½ ä¸¦æ²’æœ‰å…œå”®é€™å€‹è²¨ç‰©ã€‚\n");
 
         all_goods=query("vendor_goods", me);
 
         if (! all_goods)
-                return notify_fail("ÄãÏÖÔÚ²¢Ã»ÓĞ¶µÊÛÈÎºÎ»õÎï¡£\n");
+                return notify_fail("ä½ ç¾åœ¨ä¸¦æ²’æœ‰å…œå”®ä»»ä½•è²¨ç‰©ã€‚\n");
 
         goods_key = keys(all_goods);
 
@@ -139,10 +139,10 @@ int do_unstock(string arg)
         if (have_it)
         {
                 map_delete(all_goods, base_name(goods));
-                message_vision(HIW "$N" HIW "½«" + goods->name(1) +
-                               HIW "´ÓÌ¯×ÓÉÏÊÕÆğ²»ÂôÁË¡£\n", me);
+                message_vision(HIW "$N" HIW "å°‡" + goods->name(1) +
+                               HIW "å¾æ”¤å­ä¸Šæ”¶èµ·ä¸è³£äº†ã€‚\n", me);
         } else
-                return notify_fail("Äã²¢Ã»ÓĞ¶µÊÛÕâ¸ö»õÎï¡£\n");
+                return notify_fail("ä½ ä¸¦æ²’æœ‰å…œå”®é€™å€‹è²¨ç‰©ã€‚\n");
 
         set("vendor_goods", all_goods, me);
         return 1;

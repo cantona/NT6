@@ -31,9 +31,9 @@ void incoming_request(mapping info)
         if (VERSION_D->is_release_server() &&
             info["MUDLIB"] == MUDLIB_NAME)
         {
-                // ±¾µØ·þÎñÆ÷½ÓÊÜµ½ÁË×Ô³ÆÎªÍ¬LIBµÄMUDÐÅÏ¢
+                // æœ¬åœ°æœå‹™å™¨æŽ¥å—åˆ°äº†è‡ªç¨±ç‚ºåŒLIBçš„MUDä¿¡æ¯
                 if (! query(info["HOSTADDRESS"] + " " + info["PORT"], get_object(CONFIG_D)))
-                        // Õâ¸ö²»ÊÇ¾­¹ý×ÜÕ¾ÊÚÈ¨µÄMUD£¬¶ªÆú
+                        // é€™å€‹ä¸æ˜¯ç¶“éŽç¸½ç«™æŽˆæ¬Šçš„MUDï¼Œä¸Ÿæ£„
                         return 0;
         }
 

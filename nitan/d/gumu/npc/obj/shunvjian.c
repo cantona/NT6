@@ -1,5 +1,5 @@
 // shunvjian.c
-// for Ğ¡ÁúÅ®
+// for å°é¾å¥³
 // By Lgg,1998.9
 
 #include <ansi.h>
@@ -8,19 +8,19 @@ inherit SWORD;
 
 void create()
 {
-        set_name(HIC "ÊçÅ®½£" NOR, ({ "shunvjian", "jian", "sword" }));
+        set_name(HIC "æ·‘å¥³åŠ" NOR, ({ "shunvjian", "jian", "sword" }));
         set_weight(6000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
-                set("long", "ÕâÊÇÒ»¿Ú±éÌåÍ¨ºÚµÄ½££¬½£ÉíÉÏÓÃ½ğË¿ïÃ×Å¼¸¸ö×Ö£º\n"
-                            "ñºñ»ÊçÅ®£¬¾ı×ÓºÃåÏ\n");
+                set("unit", "æŸ„");
+                set("long", "é€™æ˜¯ä¸€å£éé«”é€šé»‘çš„åŠï¼ŒåŠèº«ä¸Šç”¨é‡‘çµ²éŒˆè‘—å¹¾å€‹å­—ï¼š\n"
+                            "çªˆçª•æ·‘å¥³ï¼Œå›å­å¥½é€‘\n");
                 set("value", 12000);
                 set("material", "steel");
                 set("weapon_prop/per", 25);
-                set("wield_msg", "$NµÍÌ¾Ò»Éù£¬½«$n»º»º³é³ö½£ÇÊ¡£\n");
-                set("unwield_msg", "$NÓÒÊÖÒ»»Î£¬$nÒÑÈ»»ØÇÊ¡£\n");
+                set("wield_msg", "$Nä½å˜†ä¸€è²ï¼Œå°‡$nç·©ç·©æŠ½å‡ºåŠé˜ã€‚\n");
+                set("unwield_msg", "$Nå³æ‰‹ä¸€æ™ƒï¼Œ$nå·²ç„¶å›é˜ã€‚\n");
         }
         init_sword(35);
         setup();

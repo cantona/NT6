@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����");
+        set("short", "南廳");
         set("long", @LONG
-����һ����ķ��䣬��������ҩ��һ��ŨŨ��ҩζ����
-������Ϣ�����Ǵ�ҩ���ϵļ��ٸ�С������ɢ�������ġ�
+這是一間大大的房間，放著整排藥櫃，一股濃濃的藥味讓你
+幾欲窒息，那是從藥櫃上的幾百個小抽屜裡散發出來的。
 LONG );
 
         set("no_fight", 1);

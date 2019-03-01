@@ -1,5 +1,5 @@
 // Code of ShenZhou
-// lt_snake.c Á½Í·Éß ( ??? )
+// lt_snake.c å…©é ­è›‡ ( ??? )
 // by maco
 
 #include <ansi.h>
@@ -11,9 +11,9 @@ int auto_perform_double();
 void create()
 {
         int poison = 10;
-        set_name("Á½Í·Éß", ({ "liangtou she", "she", "snake" }) );
+        set_name("å…©é ­è›‡", ({ "liangtou she", "she", "snake" }) );
         set("age", 100);
-        set("long", "ÕâÌõÉß»¨ÎÆ°ßìµ£¬¾±×ÓÁ½±ß·Ö²í£¬¾¹È»ÓĞÁ½¸öÍ·£¬¼«ÊÇÕøÄü¡£\n¾İËµ¿´µ½Á½Í·ÉßµÄÈË£¬Ò»¶¨»áËÀ¡£\n");
+        set("long", "é€™æ¢è›‡èŠ±ç´‹æ–‘æ–•ï¼Œé ¸å­å…©é‚Šåˆ†å²”ï¼Œç«Ÿç„¶æœ‰å…©å€‹é ­ï¼Œæ¥µæ˜¯çŒ™ç°ã€‚\næ“šèªªçœ‹åˆ°å…©é ­è›‡çš„äººï¼Œä¸€å®šæœƒæ­»ã€‚\n");
         set("attitude", "aggressive");
 
         set_weight(poison*600 + 9000);
@@ -26,7 +26,7 @@ void create()
         set("max_qi", 9000);
         set("max_jingli", 9000);
 
-        set("limbs", ({ "×ó¾±", "ÓÒ¾±", "ÉíÌå", "Æß´ç", "Î²°Í" }) );
+        set("limbs", ({ "å·¦é ¸", "å³é ¸", "èº«é«”", "ä¸ƒå¯¸", "å°¾å·´" }) );
 
         set("combat_exp", 1200000);
 

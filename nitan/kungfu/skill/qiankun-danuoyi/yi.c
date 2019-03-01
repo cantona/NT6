@@ -1,11 +1,11 @@
 // This program is a part of NITAN MudLIB
-// yi.c ´óÅ²ÒÆ
+// yi.c å¤§æŒªç§»
 
 #include <ansi.h>
 
 inherit F_SSERVER;
 
-string name() { return "´óÅ²ÒÆ"; }
+string name() { return "å¤§æŒªç§»"; }
 
 int perform(object me, object target)
 {
@@ -22,19 +22,19 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail("¡¸´óÅ²ÒÆ¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œå¤§æŒªç§»ã€åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if ((level = (int)me->query_skill("qiankun-danuoyi", 1)) < 50)
-                return notify_fail("ÄãµÄÇ¬À¤´óÅ²ÒÆ»¹Ã»ÓĞĞŞÁ¶µ½µÚ¶ş²ã£¬ÎŞ·¨Ê©Õ¹´óÅ²ÒÆ¡£\n");
+                return notify_fail("ä½ çš„ä¹¾å¤å¤§æŒªç§»é‚„æ²’æœ‰ä¿®ç…‰åˆ°ç¬¬äºŒå±¤ï¼Œç„¡æ³•æ–½å±•å¤§æŒªç§»ã€‚\n");
 
         if (query("neili", me) < 400)
-                return notify_fail("ÄãÏÖÔÚÕæÆø²»¹»£¬ÎŞ·¨Ê¹ÓÃ¡¸´óÅ²ÒÆ¡¹¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çœŸæ°£ä¸å¤ ï¼Œç„¡æ³•ä½¿ç”¨ã€Œå¤§æŒªç§»ã€ã€‚\n");
 
        if (! living(target))
-              return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+              return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIM "$N" HIM "ÕĞÊıºöÈ»µÄÒ»±ä£¬Ä¡¿ÉÃ÷·½£¬ÄÚÁ¦ËÄ´¦»ØĞı£¬ÎŞĞÎÖĞÇ£Òı×Å$n"
-              HIM "µÄÕĞÊ½£¡\n";
+        msg = HIM "$N" HIM "æ‹›æ•¸å¿½ç„¶çš„ä¸€è®Šï¼Œæ‘¹å¯æ˜æ–¹ï¼Œå…§åŠ›å››è™•å›æ—‹ï¼Œç„¡å½¢ä¸­ç‰½å¼•è‘—$n"
+              HIM "çš„æ‹›å¼ï¼\n";
 
         ap = attack_power(me, "parry");
         dp = defense_power(target, "dodge");
@@ -54,8 +54,8 @@ int perform(object me, object target)
         if (ap / 2 + random(ap / 2) > dp)
         {
                 // Success to make the target attack hiself
-                msg += HIR "½á¹û$p" HIR "Ò»ÕĞ»÷³ö£¬ÕıºÃ´òÔÚ×Ô¼ºµÄ"
-                       "Òªº¦ÉÏ£¬²»½ûÒ»Éù²Ò½Ğ£¬Ë¤µø¿ªÈ¥¡£\n" NOR;
+                msg += HIR "çµæœ$p" HIR "ä¸€æ‹›æ“Šå‡ºï¼Œæ­£å¥½æ‰“åœ¨è‡ªå·±çš„"
+                       "è¦å®³ä¸Šï¼Œä¸ç¦ä¸€è²æ…˜å«ï¼Œæ‘”è·Œé–‹å»ã€‚\n" NOR;
                 // damage = target->query("max_qi");
                 damage = damage_power(me, "parry");
                 damage+= query("jiali", me);
@@ -66,25 +66,25 @@ int perform(object me, object target)
         if (ap / 2 + random(ap) < dp)
         {
                 // The enemy has defense
-                msg += CYN "È»¶ø$p" CYN "ÄÚ¹¦Éîºñ£¬²¢Ã»ÓĞ±»$P"
-                       CYN "ÕâÇÉÃîµÄ¾¢Á¦Ëù´ø¶¯¡£\n" CYN;
+                msg += CYN "ç„¶è€Œ$p" CYN "å…§åŠŸæ·±åšï¼Œä¸¦æ²’æœ‰è¢«$P"
+                       CYN "é€™å·§å¦™çš„å‹åŠ›æ‰€å¸¶å‹•ã€‚\n" CYN;
         } else
         if (sizeof(obs = me->query_enemy() - ({ target })) == 0)
         {
                 // No other enemy
-                msg += HIC "½á¹û$p" HIC "µÄÕĞÊ½ÄªÃûÆäÃîµÄ±ä"
-                       "ÁË·½Ïò£¬¾¹È»¿ØÖÆ²»×¡£¡ĞÒºÃÉí±ßÃ»ÓĞ±ğ"
-                       "ÈË£¬Ã»ÓĞÄğ³É´ó»ö¡£\n" NOR;
+                msg += HIC "çµæœ$p" HIC "çš„æ‹›å¼è«åå…¶å¦™çš„è®Š"
+                       "äº†æ–¹å‘ï¼Œç«Ÿç„¶æ§åˆ¶ä¸ä½ï¼å¹¸å¥½èº«é‚Šæ²’æœ‰åˆ¥"
+                       "äººï¼Œæ²’æœ‰é‡€æˆå¤§ç¦ã€‚\n" NOR;
         } else
         {
                 string pname;
                 // Sucess to make the target attack my enemy
                 der = obs[random(sizeof(obs))];
                 pname = der->name();
-                if (pname == target->name()) pname = "ÁíÒ»¸ö" + pname;
-                msg += HIG "½á¹û$p" HIG "·¢³öµÄÕĞÊ½²»ÓÉ×ÔÖ÷"
-                       "µÄ±äÁË·½Ïò£¬Í»È»¹¥Ïò" + pname + HIG "£¬²»½ûÁî" +
-                       pname + HIG "´ó³ÔÒ»¾ª£¬ÕĞ¼Ü²»µü£¡" NOR;
+                if (pname == target->name()) pname = "å¦ä¸€å€‹" + pname;
+                msg += HIG "çµæœ$p" HIG "ç™¼å‡ºçš„æ‹›å¼ä¸ç”±è‡ªä¸»"
+                       "çš„è®Šäº†æ–¹å‘ï¼Œçªç„¶æ”»å‘" + pname + HIG "ï¼Œä¸ç¦ä»¤" +
+                       pname + HIG "å¤§åƒä¸€é©šï¼Œæ‹›æ¶ä¸è¿­ï¼" NOR;
         }
 
         message_combatd(msg, me, target);

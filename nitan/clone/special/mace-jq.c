@@ -4,26 +4,26 @@
 #include <weapon.h>
 
 #define ADMIN   "???"
-#define PARTY   "½ğÇ®°ï"
+#define PARTY   "é‡‘éŒ¢å¹«"
 
 inherit STAFF;
 
 void create()
 {
-        set_name(HIG + PARTY + "È¨ÕÈ" NOR, ({ "mace" }) );
+        set_name(HIG + PARTY + "æ¬Šæ–" NOR, ({ "mace" }) );
         set_weight(30);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIG "Ò»¸ù¾§Ó¨ÌŞÍ¸µÄÈ¨ÕÈ£¬ºÃÏñÊÇØ¤°ïµÄÓñÖñÕÈÅ¶£¡\n"
-                                "Äã×ĞÏ¸Ò»¿´£¬²»ÊÇ£¬Ô­À´ÊÇÃ°ÅÆ»õ£¬ÊÇ" + PARTY + "µÄÈ¨ÕÈ¡£\n"
-                                "°ïÖ÷Í¨¹ıËü·¢ºÅË¾Áî£¬ÑûÇë(author)ËûÈËÈë°ï»òÊÇ¿ª³ı(expell)²»Ìı»°µÄÈË¡£\n" NOR);
+                set("long", HIG "ä¸€æ ¹æ™¶ç‘©å‰”é€çš„æ¬Šæ–ï¼Œå¥½åƒæ˜¯ä¸å¹«çš„ç‰ç«¹æ–å“¦ï¼\n"
+                                "ä½ ä»”ç´°ä¸€çœ‹ï¼Œä¸æ˜¯ï¼ŒåŸä¾†æ˜¯å†’ç‰Œè²¨ï¼Œæ˜¯" + PARTY + "çš„æ¬Šæ–ã€‚\n"
+                                "å¹«ä¸»é€šéå®ƒç™¼è™Ÿå¸ä»¤ï¼Œé‚€è«‹(author)ä»–äººå…¥å¹«æˆ–æ˜¯é–‹é™¤(expell)ä¸è½è©±çš„äººã€‚\n" NOR);
                 set("value", 1);
-                set("no_sell", "ÕâÊÇÊ²Ã´À¬»ø£¿\n");
-                set("unit", "¸ù");
-                set("wield_msg", HIG "$N" HIG "ÁÁ³öÒ»¸ö¾§Ó¨ÌŞÍ¸µÄĞ¡¹÷¹÷£¬ÉñÆø"
-                                 "»îÏÖµÄºÈµÀ£º¡°»¹²»°İ¼û...±¾...°ïÖ÷£¿¡±\n" NOR);
-                set("unwield_msg", HIG "$N" HIG "¹í¹íËîËîµÄ°ÑÈ¨ÕÈÊÕºÃ¡£\n" NOR);
+                set("no_sell", "é€™æ˜¯ä»€éº¼åƒåœ¾ï¼Ÿ\n");
+                set("unit", "æ ¹");
+                set("wield_msg", HIG "$N" HIG "äº®å‡ºä¸€å€‹æ™¶ç‘©å‰”é€çš„å°æ£æ£ï¼Œç¥æ°£"
+                                 "æ´»ç¾çš„å–é“ï¼šâ€œé‚„ä¸æ‹œè¦‹...æœ¬...å¹«ä¸»ï¼Ÿâ€\n" NOR);
+                set("unwield_msg", HIG "$N" HIG "é¬¼é¬¼ç¥Ÿç¥Ÿçš„æŠŠæ¬Šæ–æ”¶å¥½ã€‚\n" NOR);
         }
 
         set("admin", ADMIN);
@@ -49,26 +49,26 @@ int do_owner(string arg)
 
         me = this_player();
         if (wiz_level(me) < wiz_level("(wizard)"))
-                return notify_fail("±ØĞëÊÇ (wizard) ÒÔÉÏµÄÎ×Ê¦²ÅÄÜÊÚÈ¨¡£\n");
+                return notify_fail("å¿…é ˆæ˜¯ (wizard) ä»¥ä¸Šçš„å·«å¸«æ‰èƒ½æˆæ¬Šã€‚\n");
 
         if (! arg || ! objectp(ob = present(arg, environment(me))))
-                return notify_fail("ÄãÒª°ÑÕâ" + name() + "Ôù¸øË­£¿\n");
+                return notify_fail("ä½ è¦æŠŠé€™" + name() + "è´ˆçµ¦èª°ï¼Ÿ\n");
 
         if (ob == me)
-                return notify_fail("ÄãÄÔ³±°¡£¿\n");
+                return notify_fail("ä½ è…¦æ½®å•Šï¼Ÿ\n");
 
         if (! playerp(ob))
-                return notify_fail("ÄãÖ»ÄÜ°ÑÈ¨ÕÈÔù¸øÍæ¼Ò¡£\n");
+                return notify_fail("ä½ åªèƒ½æŠŠæ¬Šæ–è´ˆçµ¦ç©å®¶ã€‚\n");
 
         if (ob->query("party/party_name") &&
             ob->query("party/party_name") != PARTY)
-                return notify_fail(ob->name(1) + "ÒÑ¾­ÈëÁËÆäËü°ïÅÉ£¬²»ºÏÊÊ½ÓÊÜÕâ" + name() + "¡£\n");
+                return notify_fail(ob->name(1) + "å·²ç¶“å…¥äº†å…¶å®ƒå¹«æ´¾ï¼Œä¸åˆé©æ¥å—é€™" + name() + "ã€‚\n");
 
-        message_vision("$NÖ¸ÁËÖ¸" + name() + "£¬µÀ£ºÕâ" + name() +
-                       "ÎÒ¾ÍÔù¸ø°ïÖ÷" + ob->name(1) + "ÁË¡£\n", me);
+        message_vision("$NæŒ‡äº†æŒ‡" + name() + "ï¼Œé“ï¼šé€™" + name() +
+                       "æˆ‘å°±è´ˆçµ¦å¹«ä¸»" + ob->name(1) + "äº†ã€‚\n", me);
         ob->set("party/party_name", PARTY);
         set("admin", ob->query("id"));
-        message_vision("$N½«" + name() + "½»¸øÁË$n¡£\n", me, ob);
+        message_vision("$Nå°‡" + name() + "äº¤çµ¦äº†$nã€‚\n", me, ob);
         move(ob, 1);
         return 1;
 }
@@ -80,45 +80,45 @@ int do_author(string arg)
 
         me = this_player();
         if (me->query("id") != query("admin") && me->query("couple/id") != query("admin"))
-                return notify_fail("Äã²»ÊÇ" + PARTY + "°ïÖ÷»ò°ïÖ÷·òÈË£¬Ã»ÈËÌıÄãµÄ¡£\n");
+                return notify_fail("ä½ ä¸æ˜¯" + PARTY + "å¹«ä¸»æˆ–å¹«ä¸»å¤«äººï¼Œæ²’äººè½ä½ çš„ã€‚\n");
 
         if (me->query("party/party_name") != PARTY)
-                return notify_fail("Äã×Ô¼º¶¼²»ÊÇ" + PARTY + "µÄÈË£¬ÔõÃ´ÊÕ±ğÈË£¿\n");
+                return notify_fail("ä½ è‡ªå·±éƒ½ä¸æ˜¯" + PARTY + "çš„äººï¼Œæ€éº¼æ”¶åˆ¥äººï¼Ÿ\n");
 
         if (! arg || ! objectp(ob = present(arg, environment(me))))
-                return notify_fail("ÄãÒªÑûÇëË­¼ÓÈë" + PARTY + "£¿\n");
+                return notify_fail("ä½ è¦é‚€è«‹èª°åŠ å…¥" + PARTY + "ï¼Ÿ\n");
 
         if (! playerp(ob))
-                return notify_fail("ÄãÖ»ÄÜÑûÇëÍæ¼Ò¼ÓÈë·¢´ô°ï¡£\n");
+                return notify_fail("ä½ åªèƒ½é‚€è«‹ç©å®¶åŠ å…¥ç™¼å‘†å¹«ã€‚\n");
 
         if (ob == me)
-                return notify_fail("ÄãÄÔ³±°¡£¿\n");
+                return notify_fail("ä½ è…¦æ½®å•Šï¼Ÿ\n");
 
         if (ob->query("combat_exp") >= 50000)
-                return notify_fail("´ËÈË¾­ÑéÌ«¸ß£¬²»ÒË½øÈë" + PARTY + "¡£\n");
+                return notify_fail("æ­¤äººç¶“é©—å¤ªé«˜ï¼Œä¸å®œé€²å…¥" + PARTY + "ã€‚\n");
 
         if (ob->query("party/party_name"))
         {
                 if (ob->query("party/party_name") == PARTY)
-                        return notify_fail("ÈË¼ÒÒÑ¾­ÊÇ" + PARTY + "µÄÈËÁË¡£\n");
+                        return notify_fail("äººå®¶å·²ç¶“æ˜¯" + PARTY + "çš„äººäº†ã€‚\n");
 
-                return notify_fail("ÈË¼ÒÒÑ¾­ÈëÁËÆäËû°ï»áÁË£¬²»ÄÜ¼ÓÈëÄãµÄ" + PARTY + "ÁË¡£\n");
+                return notify_fail("äººå®¶å·²ç¶“å…¥äº†å…¶ä»–å¹«æœƒäº†ï¼Œä¸èƒ½åŠ å…¥ä½ çš„" + PARTY + "äº†ã€‚\n");
         }
 
         if (me->query_temp("author") == ob)
-                return notify_fail("ÄãÒÑ¾­ÑûÇëÈË¼ÒÁË£¬¿ÉÊÇ±ğÈË»¹Ã»ÓĞ´ğÓ¦¡£\n");
+                return notify_fail("ä½ å·²ç¶“é‚€è«‹äººå®¶äº†ï¼Œå¯æ˜¯åˆ¥äººé‚„æ²’æœ‰ç­”æ‡‰ã€‚\n");
 
         if (! living(ob))
-                return notify_fail("¿´Ñù×ÓÈË¼ÒÃ»·¨Ìı¼ûÄãËµÊ²Ã´ÁË¡£\n");
+                return notify_fail("çœ‹æ¨£å­äººå®¶æ²’æ³•è½è¦‹ä½ èªªä»€éº¼äº†ã€‚\n");
 
-        message_vision("$N¸ß¾ÙÈ¨ÕÈ£¬ÎÊµÀ£º¡°" + ob->name(1) + "£¬Äã¿ÉÔ¸ÒâÈëÎÒ" +
-                       PARTY + "£¿¡±\n", me);
+        message_vision("$Né«˜èˆ‰æ¬Šæ–ï¼Œå•é“ï¼šâ€œ" + ob->name(1) + "ï¼Œä½ å¯é¡˜æ„å…¥æˆ‘" +
+                       PARTY + "ï¼Ÿâ€\n", me);
         ob->set_temp("pending/answer/" + me->query("id") + "/right",
                      (: call_other, __FILE__, "do_right", ob, me :));
         ob->set_temp("pending/answer/" + me->query("id") + "/refuse",
                      (: call_other, __FILE__, "do_refuse", ob, me :));
         me->set_temp("pending/author", ob);
-        tell_object(ob, YEL + me->name(1) + "ÏëÊÕÄãÈë" + PARTY + "£¬ÄãÍ¬Òâ²»Í¬Òâ(right/refuse)£¿\n" NOR);
+        tell_object(ob, YEL + me->name(1) + "æƒ³æ”¶ä½ å…¥" + PARTY + "ï¼Œä½ åŒæ„ä¸åŒæ„(right/refuse)ï¼Ÿ\n" NOR);
         return 1;
 }
 
@@ -129,67 +129,67 @@ int do_expell(string arg)
 
         me = this_player();
         if (me->query("id") != query("admin") && me->query("couple/id") != query("admin"))
-                return notify_fail("Äã²»ÊÇ" + PARTY + "°ïÖ÷»ò°ïÖ÷·òÈË£¬Ã»ÈËÌıÄãµÄ¡£\n");
+                return notify_fail("ä½ ä¸æ˜¯" + PARTY + "å¹«ä¸»æˆ–å¹«ä¸»å¤«äººï¼Œæ²’äººè½ä½ çš„ã€‚\n");
 
         if (! arg || ! objectp(ob = present(arg, environment(me))))
-                return notify_fail("ÄãÒªÑûÇëË­¼ÓÈë" + PARTY + "£¿\n");
+                return notify_fail("ä½ è¦é‚€è«‹èª°åŠ å…¥" + PARTY + "ï¼Ÿ\n");
 
         if (! playerp(ob))
-                return notify_fail("ÄãÖ»ÄÜÑûÇëÍæ¼Ò¼ÓÈë·¢´ô°ï¡£\n");
+                return notify_fail("ä½ åªèƒ½é‚€è«‹ç©å®¶åŠ å…¥ç™¼å‘†å¹«ã€‚\n");
 
         if (ob == me)
-                return notify_fail("ÄãÄÔ³±°¡£¿\n");
+                return notify_fail("ä½ è…¦æ½®å•Šï¼Ÿ\n");
 
         if (ob->query("party/party_name") != PARTY)
-                return notify_fail("ÈË¼Ò²»ÊÇÄã" + PARTY + "µÄÈË£¬ÀÁµÃÀíÄã¡£\n");
+                return notify_fail("äººå®¶ä¸æ˜¯ä½ " + PARTY + "çš„äººï¼Œæ‡¶å¾—ç†ä½ ã€‚\n");
 
-        message_vision("$NºßÁËÒ»Éù£¬ºÈµÀ£º¡°" + ob->name(1) +
-                       "£¡ÄãÂÅ·¸°ï¹æ£¬½ñÈÕ¸ïÄã³ö°ï£¬¹ö°É£¡¡±\n", me);
+        message_vision("$Nå“¼äº†ä¸€è²ï¼Œå–é“ï¼šâ€œ" + ob->name(1) +
+                       "ï¼ä½ å±¢çŠ¯å¹«è¦ï¼Œä»Šæ—¥é©ä½ å‡ºå¹«ï¼Œæ»¾å§ï¼â€\n", me);
         ob->delete("party");
 
         CHANNEL_D->do_channel(this_object(), "rumor",
-                              "ÌıËµ" + ob->name(1) + "±»" + me->name(1) +
-                              "¿ª³ı³ö" + PARTY + "ÁË¡£");
+                              "è½èªª" + ob->name(1) + "è¢«" + me->name(1) +
+                              "é–‹é™¤å‡º" + PARTY + "äº†ã€‚");
         return 1;
 }
 
 int do_right(object me, object ob)
 {
         if (! ob || environment(ob) != environment(me))
-                return notify_fail("¿ÉÏ§°¡£¬ÈË¼ÒÒÑ¾­²»ÔÚÕâ¶ùÁË¡£\n");
+                return notify_fail("å¯æƒœå•Šï¼Œäººå®¶å·²ç¶“ä¸åœ¨é€™å…’äº†ã€‚\n");
 
         if (! living(ob))
-                return notify_fail("ÈË¼ÒÏÖÔÚÌı²»µ½ÄãËµµÄ»°£¬»¹ÊÇËãÁË°É¡£\n");
+                return notify_fail("äººå®¶ç¾åœ¨è½ä¸åˆ°ä½ èªªçš„è©±ï¼Œé‚„æ˜¯ç®—äº†å§ã€‚\n");
 
         if (ob->query_temp("pending/author") != me)
-                return notify_fail("ÈË¼ÒÏÖÔÚÒÑ¾­²»´òËãÊÕÄãÁË¡£\n");
+                return notify_fail("äººå®¶ç¾åœ¨å·²ç¶“ä¸æ‰“ç®—æ”¶ä½ äº†ã€‚\n");
 
         ob->delete_temp("pending/author");
 
-        message_vision("$NÆ´ÃüµãÍ·£¬ÏñĞ¡¼¦×ÄÃ×Ò»Ñù£¬Ã¦µÀ£º¡°ºÃ£¡ºÃ£¡ºÃ£¡¡±\n", me);
+        message_vision("$Næ‹¼å‘½é»é ­ï¼Œåƒå°é›å•„ç±³ä¸€æ¨£ï¼Œå¿™é“ï¼šâ€œå¥½ï¼å¥½ï¼å¥½ï¼â€\n", me);
 
         me->set("party/party_name", PARTY);
         CHANNEL_D->do_channel(this_object(), "rumor",
-                              "ÌıËµ" + ob->name(1) + "ÊÕ" + me->name(1) +
-                              "ÈëÁË" + PARTY + "¡£");
+                              "è½èªª" + ob->name(1) + "æ”¶" + me->name(1) +
+                              "å…¥äº†" + PARTY + "ã€‚");
         return 1;
 }
 
 int do_refuse(object me, object ob)
 {
         if (! ob || environment(ob) != environment(me))
-                return notify_fail("¿ÉÏ§°¡£¬ÈË¼ÒÒÑ¾­²»ÔÚÕâ¶ùÁË¡£\n");
+                return notify_fail("å¯æƒœå•Šï¼Œäººå®¶å·²ç¶“ä¸åœ¨é€™å…’äº†ã€‚\n");
 
         if (! living(ob))
-                return notify_fail("ÈË¼ÒÏÖÔÚÌı²»µ½ÄãËµµÄ»°£¬»¹ÊÇËãÁË°É¡£\n");
+                return notify_fail("äººå®¶ç¾åœ¨è½ä¸åˆ°ä½ èªªçš„è©±ï¼Œé‚„æ˜¯ç®—äº†å§ã€‚\n");
 
         if (ob->query_temp("pending/author") != me)
-                return notify_fail("ÈË¼ÒÏÖÔÚÒÑ¾­²»´òËãÊÕÄãÁË¡£\n");
+                return notify_fail("äººå®¶ç¾åœ¨å·²ç¶“ä¸æ‰“ç®—æ”¶ä½ äº†ã€‚\n");
 
         ob->delete_temp("pending/author");
-        message_vision("$NÒ»½Å°Ñ$nÌß¿ª£¬ºÈµÀ£º¡°¹ö£¡Ò»±ßÍæÈ¥£¡¡±\n",
+        message_vision("$Nä¸€è…³æŠŠ$nè¸¢é–‹ï¼Œå–é“ï¼šâ€œæ»¾ï¼ä¸€é‚Šç©å»ï¼â€\n",
                        me, ob);
-        tell_object(ob, "¿´À´ÈË¼Ò¶ÔÄãµÄ" + PARTY + "Ã»Ê²Ã´ĞËÈ¤¡£\n");
+        tell_object(ob, "çœ‹ä¾†äººå®¶å°ä½ çš„" + PARTY + "æ²’ä»€éº¼èˆˆè¶£ã€‚\n");
 
         return 1;
 }

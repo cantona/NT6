@@ -1,13 +1,13 @@
-// ´óÌÆË«Áú´«
-// jin.c ½ğÂú¹ñ
+// å¤§å”é›™é¾å‚³
+// jin.c é‡‘æ»¿æ«ƒ
  
 inherit NPC;
 inherit F_BANKER;
 void create()
 {
-   set_name("½ğÂú¹ñ", ({"jin mangui", "jin", "boss"}));
+   set_name("é‡‘æ»¿æ«ƒ", ({"jin mangui", "jin", "boss"}));
    set("shop_id",({"jin mangui", "jin", "boss"}));
-   set("gender", "ÄĞĞÔ");
+   set("gender", "ç”·æ€§");
    set("age", 47);
    set("kee", 500); 
    set("max_qi", 500);
@@ -17,7 +17,7 @@ void create()
    set("mana", 200); 
    set("combat_exp", 50000);
    set("attitude", "friendly");
-   set("rank_info/respect", "ÕÆ¹ñµÄ");
+   set("rank_info/respect", "æŒæ«ƒçš„");
    set("env/wimpy", 50);
    set("chat_chance", 10);
    set_skill("parry", 60);

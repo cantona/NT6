@@ -4,13 +4,13 @@ inherit EQUIP_SOUL;
 
 void create()
 {
-        set_name(HIM "½äÖ¸Ö®»ê" NOR, ({"rings soul2", "rings", "soul2"}));
+        set_name(HIM "æˆ’æŒ‡ä¹‹é­‚" NOR, ({"rings soul2", "rings", "soul2"}));
         set_weight(100);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIM "ÕâÊÇÒ»¸ö½äÖ¸Ö®»ê¡£\n" NOR);
-                set("unit", "¸ö");
+                set("long", HIM "é€™æ˜¯ä¸€å€‹æˆ’æŒ‡ä¹‹é­‚ã€‚\n" NOR);
+                set("unit", "å€‹");
                 set("value", 200000);
                 set("no_sell", 1);
         }

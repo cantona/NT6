@@ -4,14 +4,14 @@
 inherit ARMOR;
 void create()
 {
-    set_name(WHT "Èí¼×" NOR,({ "ruan jia","jia", }) );
+    set_name(WHT "è»Ÿç”²" NOR,({ "ruan jia","jia", }) );
     set_weight(1000);
     if( clonep() )
         set_default_object(__FILE__);
     else
     {
-        set("unit", "¼ş");
-            set("long", "Ò»¼şÇáÆ®Æ®µÄ¡¢ÉúÂú¼âÈñµ¹´ÌµÄ»¤¼×¡£\n");
+        set("unit", "ä»¶");
+            set("long", "ä¸€ä»¶è¼•é£„é£„çš„ã€ç”Ÿæ»¿å°–éŠ³å€’åˆºçš„è­·ç”²ã€‚\n");
             set("material", "copper");
             set("value",2000);
             set("armor_prop/armor", 75);

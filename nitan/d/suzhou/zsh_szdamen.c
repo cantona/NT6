@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 { 
-        set("short", "×ÏÉÀ»áÇ°ÃÅ");
+        set("short", "ç´«è¡«æœƒå‰é–€");
         set("long", @LONG
-ÕâÀïÊÇ×ÏÉÀ»á×Ü²¿ËùÔÚµØ¡£×ÏÉÀ»áÔÚ½­ºşÉÏĞĞ¶¯ÉñÃØ£¬ÂÅĞĞÏÀÒå
-Ö®¾Ù£¬Ğí¶à½­ºşºÃºº¾ùÄ½Ãû¶øÀ´¡£
+é€™è£¡æ˜¯ç´«è¡«æœƒç¸½éƒ¨æ‰€åœ¨åœ°ã€‚ç´«è¡«æœƒåœ¨æ±Ÿæ¹–ä¸Šè¡Œå‹•ç¥ç§˜ï¼Œå±¢è¡Œä¿ ç¾©
+ä¹‹èˆ‰ï¼Œè¨±å¤šæ±Ÿæ¹–å¥½æ¼¢å‡æ…•åè€Œä¾†ã€‚
 LONG );
         set("outdoors", "suzhou");
         set("exits", ([
@@ -30,8 +30,8 @@ int valid_leave(object me, string dir)
 { 
         if (objectp(present("shou wei", environment(me))) && dir == "north") 
         {
-           if( !query_temp("good_zsh", me) && query("bunch/bunch_name", me) != "×ÏÉÀ»á" )
-               return notify_fail("ÊØÎÀÒ»°ÑÀ¹×¡Äã£º¡°ÎÒ×ÏÉÀ»á²»»¶Ó­ÍâÈË£¬Çë»Ø°É£¡¡±\n"); 
+           if( !query_temp("good_zsh", me) && query("bunch/bunch_name", me) != "ç´«è¡«æœƒ" )
+               return notify_fail("å®ˆè¡›ä¸€æŠŠæ””ä½ä½ ï¼šâ€œæˆ‘ç´«è¡«æœƒä¸æ­¡è¿å¤–äººï¼Œè«‹å›å§ï¼â€\n"); 
            else
            {
               delete_temp("good_zsh", me);

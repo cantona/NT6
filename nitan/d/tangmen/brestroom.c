@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {        
-        set("short", "�е�����Ϣ��");
+        set("short", "男弟子休息室");
         set("long",
-"����һ���谵�ķ��䣬���ڱ����ĺڲ���ס��ֻ��һ˿���ߴ��ŷ�\n"
-"��͸������Լ�Ŀ������������ڿ�ǽ�Ĵ�����Ϣ��\n"
+"這是一個昏暗的房間，窗口被厚厚的黑布遮住，只有一絲光線從門縫\n"
+"中透過，隱約的看到幾個人躺在靠牆的大床上休息。\n"
 );        
         set("valid_startroom",1);
         set("no_steal", "1");

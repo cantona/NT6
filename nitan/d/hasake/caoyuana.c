@@ -1,12 +1,12 @@
-// caoyuana.c ²ÝÔ­
+// caoyuana.c è‰åŽŸ
 inherit ROOM;
 void create()
 {
-        set("short", "²ÝÔ­±ßÔµ");
+        set("short", "è‰åŽŸé‚Šç·£");
         set("long", @LONG
-ÕâÀïÊÇ´ó²ÝÔ­ºÍÉ³Ä®½ÓÈÀÖ®µØ£¬Çà²ÝÓÉÏ¡ÖÁÃÜ£¬ÏòÎ÷ÃàÃàÑÓÉì¶øÈ¥¡£
-µØÉÏÓÐ¼¸ÐÐÂæÍÕÌ¤¹ýµÄÌãÓ¡£¬¿´Ñù×ÓÕâÀï³£³£ÓÐÉÌ¶ÓÀ´Íù¡£Î÷ÄÏ·½ºÃÏóÓÐ
-Ð©´¶ÑÌ¡£
+é€™è£¡æ˜¯å¤§è‰åŽŸå’Œæ²™æ¼ æŽ¥å£¤ä¹‹åœ°ï¼Œé’è‰ç”±ç¨€è‡³å¯†ï¼Œå‘è¥¿ç¶¿ç¶¿å»¶ä¼¸è€ŒåŽ»ã€‚
+åœ°ä¸Šæœ‰å¹¾è¡Œé§±é§è¸éŽçš„è¹„å°ï¼Œçœ‹æ¨£å­é€™è£¡å¸¸å¸¸æœ‰å•†éšŠä¾†å¾€ã€‚è¥¿å—æ–¹å¥½è±¡æœ‰
+äº›ç‚Šç…™ã€‚
 LONG);
         set("exits", ([
            "east" : __FILE__,

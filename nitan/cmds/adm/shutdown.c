@@ -12,7 +12,7 @@ int main(object me, string arg)
         if (! SECURITY_D->valid_grant(me, "(admin)"))
                 return 0;
         
-        message_system("ÓÎÏ·ÖØĞÂÆô¶¯£¬ÇëÉÔºòÔÙµÇÂ¼¡£");
+        message_system("éŠæˆ²é‡æ–°å•Ÿå‹•ï¼Œè«‹ç¨å€™å†ç™»éŒ„ã€‚");
 
         user = users();
         for (i = 0; i < sizeof(user); i++)
@@ -36,9 +36,9 @@ int main(object me, string arg)
 int help (object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½: shutdown
+æŒ‡ä»¤æ ¼å¼: shutdown
  
-Ç¿ĞĞÖØĞÂÆğ¶¯ÓÎÏ·£¬²¢ÇÒ²»±£´æÈÎºÎÔËĞĞÖĞµÄÊı¾İ¡£
+å¼·è¡Œé‡æ–°èµ·å‹•éŠæˆ²ï¼Œä¸¦ä¸”ä¸ä¿å­˜ä»»ä½•é‹è¡Œä¸­çš„æ•¸æ“šã€‚
  
 HELP );
         return 1;

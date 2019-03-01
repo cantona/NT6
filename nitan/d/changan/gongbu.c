@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create ()
 {
-        set ("short", "¹¤²¿");
+        set ("short", "å·¥éƒ¨");
         set("long", @LONG
-ÕâÀïÊÇÅþÁÚÄÏ°²´óµÀµÄ¹¤²¿¹¤³§¼¯ÖÐµØÇø£¬²¢Ã»ÓÐÐÐÕþ»ú¹¹£¬µ«
-ÊÇÍâµØÔËÀ´µÄ¸÷ÖÖÕä¹ó×ÊÔ´¶¼ÔÚÕâÀï¼Ó¹¤ÐÎ³ÉÉÏºÃµÄÓÃ²Ä£¬È»ºó·â´æ
-Èë¿â»òÊÇ×ªÔË¸÷µØ¡£¸½½üµÄ¹¤³§ÀïÃæ¾¡ÊÇÌìÏÂµÄÄÜ¹¤ÇÉ½³¡£
+é€™è£¡æ˜¯æ¯—é„°å—å®‰å¤§é“çš„å·¥éƒ¨å·¥å» é›†ä¸­åœ°å€ï¼Œä¸¦æ²’æœ‰è¡Œæ”¿æ©Ÿæ§‹ï¼Œä½†
+æ˜¯å¤–åœ°é‹ä¾†çš„å„ç¨®çè²´è³‡æºéƒ½åœ¨é€™è£¡åŠ å·¥å½¢æˆä¸Šå¥½çš„ç”¨æï¼Œç„¶å¾Œå°å­˜
+å…¥åº«æˆ–æ˜¯è½‰é‹å„åœ°ã€‚é™„è¿‘çš„å·¥å» è£¡é¢ç›¡æ˜¯å¤©ä¸‹çš„èƒ½å·¥å·§åŒ ã€‚
 LONG );
         set("exits",  ([ //sizeof() == 2
                 "west"  : __DIR__"nanan-dadao",

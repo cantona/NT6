@@ -4,12 +4,12 @@ inherit ROOM;
 #define FO  "/adm/npc/buddha"
 void create()
 {
-        set("short", HIY "¡¾¼«ÀÖÊÀ½ç¡¿" NOR);
+        set("short", HIY "ã€æ¥µæ¨‚ä¸–ç•Œã€‘" NOR);
         set("long", HIW @LONG
-ÕâÀïÊÇÎ÷·½¼«ÀÖÊÀ½ç£¬ÊÇ·ð×æºÍËûµÄµÜ×Ó¾Û¾ÓÖ®ËùÔÚ¡£
-µ½´¦¶¼ÊÇÔÆº££¬Ï¼¹âÉÁÉÁ£¬½ð¹âËÄÒç£¬Ëµ²»³öµÄ×¯ÑÏºêÎ°¡£
-·ð×æÊÍåÈÄ²Äá¶Ë×øÔÚÕýÖÐÑë£¬ÖÜÎ§ÊÇÐÎÌ¬¸÷ÒìµÄÎå°ÙÂÞºº¡£
-·ð×æÐÎÏóÊ®·ÖÎ°°¶£¬Äã¾õµÃ×Ô¼º»¹²»¼°·ð×æÒ»¸ö½ÅÖº¸ß¡£
+é€™è£¡æ˜¯è¥¿æ–¹æ¥µæ¨‚ä¸–ç•Œï¼Œæ˜¯ä½›ç¥–å’Œä»–çš„å¼Ÿå­èšå±…ä¹‹æ‰€åœ¨ã€‚
+åˆ°è™•éƒ½æ˜¯é›²æµ·ï¼Œéœžå…‰é–ƒé–ƒï¼Œé‡‘å…‰å››æº¢ï¼Œèªªä¸å‡ºçš„èŽŠåš´å®å‰ã€‚
+ä½›ç¥–é‡‹è¿¦ç‰Ÿå°¼ç«¯ååœ¨æ­£ä¸­å¤®ï¼Œå‘¨åœæ˜¯å½¢æ…‹å„ç•°çš„äº”ç™¾ç¾…æ¼¢ã€‚
+ä½›ç¥–å½¢è±¡ååˆ†å‰å²¸ï¼Œä½ è¦ºå¾—è‡ªå·±é‚„ä¸åŠä½›ç¥–ä¸€å€‹è…³è¶¾é«˜ã€‚
 LONG NOR );
 /*        set("exits", ([
                 "down" : __DIR__"tianmen",

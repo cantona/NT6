@@ -4,18 +4,18 @@ inherit SKILL;
 string type() { return "knowledge"; } 
 
 int is_fmsk() { return 1; }
-string family_name() { return "Ľ������"; }
+string family_name() { return "慕容世家"; }
 
 int valid_learn(object me)
 {        
         if (me->query_skill("canhe-zhi", 1) < 300)
-                return notify_fail("��κ�ָ����㣬�޷���ϰ��ͨ���¡�\n");        
+                return notify_fail("你參合指火候不足，無法研習慧通天下。\n");        
         
         if( query("family/family_name", me) != family_name() )
-                return notify_fail("��ͨ����ֻ��Ľ�����ҵ��ӷ�����ϰ��\n");
+                return notify_fail("慧通天下只能慕容世家弟子方可研習。\n");
 
         if (me->query_skill("martial-cognize", 1) < 400)
-                return notify_fail("����ѧ�������㣬�޷���ϰ��ͨ���¡�\n");
+                return notify_fail("你武學修養不足，無法研習慧通天下。\n");
 
         return 1;
 }

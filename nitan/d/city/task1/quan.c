@@ -1,14 +1,14 @@
-// quan.c È«¶ş·ç
+// quan.c å…¨äºŒé¢¨
 
 #include <ansi.h>
 inherit NPC;
 
 void create()
 {
-        set_name("È«¶ş·ç", ({ "quan  erfeng"}));
+        set_name("å…¨äºŒé¢¨", ({ "quan  erfeng"}));
 //        set("nickname", "");
-        set("long","À¥ÂØÅÉµÄÅÑÍ½£¬ÔøÒ»¶ÈÍ¶¿¿³¯Í¢£¬ÓĞ×ÅÒ»ÕÅºÚÆáÆáµÄÁ³£¬ÃæÄ¿¿ÉÔ÷¡£\n");
-        set("gender", "ÄĞĞÔ");
+        set("long","æ˜†ä¾–æ´¾çš„å›å¾’ï¼Œæ›¾ä¸€åº¦æŠ•é æœå»·ï¼Œæœ‰è‘—ä¸€å¼µé»‘æ¼†æ¼†çš„è‡‰ï¼Œé¢ç›®å¯æ†ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 45);
         set("attitude", "peaceful");
         set("str", 25);

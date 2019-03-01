@@ -1,5 +1,5 @@
 // dagou-zhen.c
-// ´ò¹·Õó
+// æ‰“ç‹—é™£
 
 
 inherit SKI_ZHEN;
@@ -8,13 +8,13 @@ void create()
 {
         ::create();
 
-        set_menpai("Ø¤°ï");           // Õó·¨ËùÊôÃÅÅÉ
-        set_member_num(6);              // ÕóĞÎÈËÊı
-        set_array_name("´ò¹·Õó");     // Õó·¨Ãû³Æ
-        set_master_level(100);          // ÕóÖ÷ÒªÇó´ËÕó·¨µÄ×îµÍµÈ¼¶
-        set_member_level(50);           // Õó·¨³ÉÔ±ÒªÇó´ËÕó·¨µÄ×îµÍµÈ¼¶
-        set_skill_type("dagou-bang");   // Õó·¨ËùÊ¹ÓÃµÄÎä¹¦
-        set_master_skill_level(100);    // ÕóÖ÷Îä¹¦µÈ¼¶
-        set_member_skill_level(50);     // ³ÉÔ±Îä¹¦µÈ¼¶
-        set_effective_level(10);        // Õó·¨ÓĞĞ§Öµ
+        set_menpai("ä¸å¹«");           // é™£æ³•æ‰€å±¬é–€æ´¾
+        set_member_num(6);              // é™£å½¢äººæ•¸
+        set_array_name("æ‰“ç‹—é™£");     // é™£æ³•åç¨±
+        set_master_level(100);          // é™£ä¸»è¦æ±‚æ­¤é™£æ³•çš„æœ€ä½ç­‰ç´š
+        set_member_level(50);           // é™£æ³•æˆå“¡è¦æ±‚æ­¤é™£æ³•çš„æœ€ä½ç­‰ç´š
+        set_skill_type("dagou-bang");   // é™£æ³•æ‰€ä½¿ç”¨çš„æ­¦åŠŸ
+        set_master_skill_level(100);    // é™£ä¸»æ­¦åŠŸç­‰ç´š
+        set_member_skill_level(50);     // æˆå“¡æ­¦åŠŸç­‰ç´š
+        set_effective_level(10);        // é™£æ³•æœ‰æ•ˆå€¼
 }

@@ -4,19 +4,19 @@ inherit EQUIP;
 
 void create()
 {
-        set_name( HIY "Èí½ğÊø´ø" NOR, ({ "ruanjin sudai", "sudai", "ruanjin" }) );
+        set_name( HIY "è»Ÿé‡‘æŸå¸¶" NOR, ({ "ruanjin sudai", "sudai", "ruanjin" }) );
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ìõ");
+                set("unit", "æ¢");
                 set("value", 2000);
                 set("material", "cloth");
                 set("armor_type", "waist");
                 set("armor_prop/armor", 4);
                 set("armor_prop/dodge", -1);
-                set("wear_msg","$NÎ§ÉÏÒ»Ìõ$n¡£\n");
-                set("remove_msg","$N½«$n½âÁËÏÂÀ´¡£\n");
+                set("wear_msg","$Nåœä¸Šä¸€æ¢$nã€‚\n");
+                set("remove_msg","$Nå°‡$nè§£äº†ä¸‹ä¾†ã€‚\n");
         }
 
         setup();

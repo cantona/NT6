@@ -1,4 +1,4 @@
-// xiaowuxiang.c С���๦
+// xiaowuxiang.c 小無相功
 // Last Modified by winder on Mar. 10 2000
 
 #include <ansi.h>
@@ -35,18 +35,18 @@ int valid_enable(string usage) { return usage == "force"; }
 int valid_learn(object me)
 {
         if ((int)me->query_skill("force", 1) < 10)
-                return notify_fail("��Ļ����ڹ�����㣬����ѧС���๦��\n");
+                return notify_fail("你的基本內功火候不足，不能學小無相功。\n");
 
-        if( query("gender", me) == "����" && 
+        if( query("gender", me) == "無性" && 
         (int)me->query_skill("xiaowuxiang", 1) > 49)
-                return notify_fail("���޸����ԣ����������������������С���๦��\n");
+                return notify_fail("你無根無性，陰陽不調，難以領會高深的小無相功。\n");
 
         return ::valid_learn(me);
 }
 
 int practice_skill(object me)
 {
-        return notify_fail("С���๦ֻ����ѧ(learn)�������������ȡ�\n");
+        return notify_fail("小無相功只能用學(learn)的來增加熟練度。\n");
 }
 
 string exert_function_file(string func)
@@ -55,21 +55,21 @@ string exert_function_file(string func)
 }
 int help(object me)
 {
-        write(HIC"\nС���๦��"NOR"\n");
+        write(HIC"\n小無相功："NOR"\n");
         write(@HELP
 
-    С���๦�˱��������ң�ɵ��ڹ�֮һ����ң�ڹ���Ϊ��ڤ��
-�����˻�����Ψ�Ҷ��𹦼�С���๦���֣���ң��������ң�Ӿ�ͨ
-��ڤ�񹦣���ɽͯ��ר�ð˻�����Ψ�Ҷ��𹦣���ʦ������̫����
-��ˮ�����С���๦��Ϊ������������Ϊ��ެ��ʦ�Ħ�����ã���
-Ϊѩɽ���ڹ���С���๦��΢�����֮�߶�ѩɽ����֮���浶��
-�����������־���֮�¡�
+    小無相功乃北宋年間逍遙派的內功之一，逍遙內功分為北冥神
+功，八荒六合唯我獨尊功及小無相功三種，逍遙派掌門逍遙子精通
+北冥神功，天山童姥專擅八荒六合唯我獨尊功，其師妹西夏太後李
+秋水則得授小無相功作為防身絕技，後為吐蕃國師鳩摩智所得，成
+為雪山派內功。小無相功精微奧妙，以之催動雪山絕技之火燄刀，
+威力不在少林絕藝之下。
 
-        ѧϰҪ��
-                �ǳ���Ϊ����ѧ����30�����ϵ�С���๦
-                ̫��ѧ����50�����ϵ�С���๦
-                �����ڹ�10
-                ��Ӧ������
+        學習要求：
+                非出家為喇嘛學不到30級以上的小無相功
+                太監學不到50級以上的小無相功
+                基本內功10
+                相應的正氣
 HELP
         );
         return 1;

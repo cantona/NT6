@@ -3,7 +3,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-string name() { return MAG "ÓÄÚ¤½£Æø" NOR; }
+string name() { return MAG "å¹½å†¥åŠæ°£" NOR; }
 
 inherit F_SSERVER;
 
@@ -17,31 +17,31 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(name() + "Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(name() + "åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( objectp(query_temp("weapon", me)) )
-                return notify_fail("Äã±ØĞë¿ÕÊÖ²ÅÄÜÊ¹ÓÃ" + name() + "¡£\n");
+                return notify_fail("ä½ å¿…é ˆç©ºæ‰‹æ‰èƒ½ä½¿ç”¨" + name() + "ã€‚\n");
 
         if ((int)me->query_skill("canhe-zhi", 1) < 120)
-                return notify_fail("ÄãµÄ²ÎºÏÖ¸ĞŞÎªÓĞÏŞ£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„åƒåˆæŒ‡ä¿®ç‚ºæœ‰é™ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (me->query_skill_mapped("finger") != "canhe-zhi")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢²ÎºÏÖ¸£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼åƒåˆæŒ‡ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (me->query_skill_prepared("finger") != "canhe-zhi")
-                return notify_fail("ÄãÏÖÔÚÃ»ÓĞ×¼±¸Ê¹ÓÃ²ÎºÏÖ¸£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ²’æœ‰æº–å‚™ä½¿ç”¨åƒåˆæŒ‡ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if( query("max_neili", me)<2500 )
-                return notify_fail("ÄãµÄÄÚÁ¦ĞŞÎª²»×ã£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¿®ç‚ºä¸è¶³ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if( query("neili", me)<500 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIW "Ö»¼û$N" HIW "ÉíĞÎÒ»Õ¹£¬Éí·¨¶¸È»±äµÃ¹îÒìÎŞ±È£¬¾ÛÁ¦ÓÚÖ¸ÇÄÈ»µã"
-              "³ö£¬Êı¹É½£ÆøÖ±Ï®$n" HIW "ÒªÑ¨¶øÈ¥¡£\n" NOR;
+        msg = HIW "åªè¦‹$N" HIW "èº«å½¢ä¸€å±•ï¼Œèº«æ³•é™¡ç„¶è®Šå¾—è©­ç•°ç„¡æ¯”ï¼ŒèšåŠ›äºæŒ‡æ‚„ç„¶é»"
+              "å‡ºï¼Œæ•¸è‚¡åŠæ°£ç›´è¥²$n" HIW "è¦ç©´è€Œå»ã€‚\n" NOR;
 
         message_combatd(msg, me, target);
 

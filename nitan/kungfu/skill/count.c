@@ -1,4 +1,4 @@
-// count.c ÒõÑô°ËØÔ
+// count.c é™°é™½å…«å¦
 // Last Modified by winder on Mar. 10 2000
 
 #include <ansi.h>;
@@ -20,27 +20,27 @@ int valid_learn(object me)
         gift = 35;
         mat = 300;
 
-        if( query("family/family_name", me) == "ÌÒ»¨µº" )
+        if( query("family/family_name", me) == "æ¡ƒèŠ±å³¶" )
         {
                 gift = 30;
                 mat = 200;
         }
 
         if( !query("family/family_name", me) || 
-            query("family/family_name", me) != "ÌÒ»¨µº" )
-                return notify_fail("Äã²»ÊÇÌÒ»¨µºµÜ×Ó£¬ÄÑÒÔÁì»áÒõÑô°ËØÔµÄ°ÂÃî¡£\n");
+            query("family/family_name", me) != "æ¡ƒèŠ±å³¶" )
+                return notify_fail("ä½ ä¸æ˜¯æ¡ƒèŠ±å³¶å¼Ÿå­ï¼Œé›£ä»¥é ˜æœƒé™°é™½å…«å¦çš„å¥§å¦™ã€‚\n");
 
         if( query("int", me)<gift )
-                return notify_fail("ÄãµÄÏÈÌìÎòĞÔ²»×ã£¬ÄÑÒÔÁì»áÒõÑô°ËØÔµÄ°ÂÃî¡£\n");
+                return notify_fail("ä½ çš„å…ˆå¤©æ‚Ÿæ€§ä¸è¶³ï¼Œé›£ä»¥é ˜æœƒé™°é™½å…«å¦çš„å¥§å¦™ã€‚\n");
 
         if ((int)me->query_skill("mathematics", 1) < mat)
-                return notify_fail("ÄãµÄËãÊõÖªÊ¶Ì«²î£¬ÎŞ·¨Àí½âÒõÑô°ËØÔµÄ°ÂÃî¡£\n");
+                return notify_fail("ä½ çš„ç®—è¡“çŸ¥è­˜å¤ªå·®ï¼Œç„¡æ³•ç†è§£é™°é™½å…«å¦çš„å¥§å¦™ã€‚\n");
 
         if ((int)me->query_skill("mathematics", 1) < (int)me->query_skill("count", 1))
-                return notify_fail("ÄãµÄËãÊõÖªÊ¶ÓĞÏŞ£¬ÎŞ·¨Àí½â¸üÉî°ÂµÄÒõÑô°ËØÔ¡£\n");
+                return notify_fail("ä½ çš„ç®—è¡“çŸ¥è­˜æœ‰é™ï¼Œç„¡æ³•ç†è§£æ›´æ·±å¥§çš„é™°é™½å…«å¦ã€‚\n");
 
         if( me->query_skill("zuoyou-hubo",1) && !query("special_skill/capture", me) )
-                return notify_fail("ÄãµÄÊÜµ½×óÓÒ»¥²©·ÖĞÄÖ®ÊõÓ°Ïì£¬ÄÑÒÔÁì»áÒõÑô°ËØÔµÄ°ÂÃî¡£\n");
+                return notify_fail("ä½ çš„å—åˆ°å·¦å³äº’åšåˆ†å¿ƒä¹‹è¡“å½±éŸ¿ï¼Œé›£ä»¥é ˜æœƒé™°é™½å…«å¦çš„å¥§å¦™ã€‚\n");
 
         return 1;
 }
@@ -48,20 +48,20 @@ int valid_learn(object me)
 
 int practice_skill(object me)
 {
-        return notify_fail("ÒõÑô°ËØÔÖ»ÄÜÓÃÑ§(learn)µÄÀ´Ôö¼ÓÊìÁ·¶È¡£\n");
+        return notify_fail("é™°é™½å…«å¦åªèƒ½ç”¨å­¸(learn)çš„ä¾†å¢åŠ ç†Ÿç·´åº¦ã€‚\n");
 }
 int help(object me)
 {
-        write(HIC"\nÒõÑô°ËØÔ£º"NOR"\n");
+        write(HIC"\né™°é™½å…«å¦ï¼š"NOR"\n");
         write(@HELP
 
-    ÌÒ»¨µºµÜ×Ó¿ÉÒÔÆ¾´Ë¼¼ÄÜ²éÖªÍæ¼ÒÄ¿Ç°ËùÔÚµÄÎ»ÖÃ¡£¿ÉÒÔÍ¨¹ı
-ÔÄ¶Á¡¶ºÓÍ¼¡·¡¢¡¶ÂåÊé¡·Ìá¸ß¡£
-    Çëhelp location¡£
+    æ¡ƒèŠ±å³¶å¼Ÿå­å¯ä»¥æ†‘æ­¤æŠ€èƒ½æŸ¥çŸ¥ç©å®¶ç›®å‰æ‰€åœ¨çš„ä½ç½®ã€‚å¯ä»¥é€šé
+é–±è®€ã€Šæ²³åœ–ã€‹ã€ã€Šæ´›æ›¸ã€‹æé«˜ã€‚
+    è«‹help locationã€‚
 
-        Ñ§Ï°ÒªÇó£º
-                ¶ÁÊéĞ´×Ö50¼¶
-                ÉíÎª»ÆÒ©Ê¦µÕ´«µÜ×Ó
+        å­¸ç¿’è¦æ±‚ï¼š
+                è®€æ›¸å¯«å­—50ç´š
+                èº«ç‚ºé»ƒè—¥å¸«å«¡å‚³å¼Ÿå­
 HELP
         );
         return 1;

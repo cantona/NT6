@@ -1,11 +1,11 @@
-// cui.c ´ÞÔ±Íâ
+// cui.c å´”å“¡å¤–
 
 inherit BUNCHER;
 
 void create()
 {
-        set_name("´ÞÔ±Íâ", ({ "cui yuanwai", "cui" }));
-        set("gender", "ÄÐÐÔ");
+        set_name("å´”å“¡å¤–", ({ "cui yuanwai", "cui" }));
+        set("gender", "ç”·æ€§");
         set("age", 55);
 
         set("max_qi",500);

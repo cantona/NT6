@@ -8,16 +8,16 @@ inherit F_FRUIT;
 
 void create()
 {
-        set_name(RED"ºìÔæ"NOR, ({"hong zao", "hongzao"}));
+        set_name(RED"ç´…æ£—"NOR, ({"hong zao", "hongzao"}));
         set_weight(4000);
-        set("long", "Ò»°ÑºìºìµÄ´óÔæ¡£\n");
-        set("unit", "°Ñ");
+        set("long", "ä¸€æŠŠç´…ç´…çš„å¤§æ£—ã€‚\n");
+        set("unit", "æŠŠ");
         set("value", 0);
         set("fruit_remaining", 18); 
         set("food_supply", 2);   
         set("water_supply", 1);  
-        set("eat_msg", "$NÄÃÆğ$n£¬¶ªÁËÒ»¿Åµ½×ìÀï£¬¡°àÛ¡±µÄÒ»ÉùÍÂ³öÔæºË¡£\n"); 
-        set("end_msg", "$N°ÑÊ£ÏÂµÄ$n³ÔÁË¸ö¸É¾»¡£\n");  
-        set("over_msg", "³ÔÕâÃ´¶à£¿Ğ¡ĞÄ³ÅÆÆ¶ÇÆ¤£¡£¡£¡£¡\n"); 
+        set("eat_msg", "$Næ‹¿èµ·$nï¼Œä¸Ÿäº†ä¸€é¡†åˆ°å˜´è£¡ï¼Œâ€œå™—â€çš„ä¸€è²åå‡ºæ£—æ ¸ã€‚\n"); 
+        set("end_msg", "$NæŠŠå‰©ä¸‹çš„$nåƒäº†å€‹å¹¹å‡ˆã€‚\n");  
+        set("over_msg", "åƒé€™éº¼å¤šï¼Ÿå°å¿ƒæ’ç ´è‚šçš®ï¼ï¼ï¼ï¼\n"); 
         setup();
 }

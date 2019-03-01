@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��ԭ");
+        set("short", "草原");
         set("long", @LONG
-�����Ĳ�ԭ���������ǰ����Ⱥ��ţ��Χ���������ߣ�Զ����ؽ�
-�ʴ���ʱ�д�Ƭ���̳�ӿ��ɲ�Ǽ����������أ����Ǹ����ʱ����
-�ֵ������硣
+美麗的草原就在你的面前，成群的牛羊圍繞在你身邊，遠處天地交
+際處不時有大片的煙塵湧起，剎那間就塞滿了天地，那是戈壁中時而出
+現的龍卷風。
 LONG
         );
         set("outdoors", "huijiang");

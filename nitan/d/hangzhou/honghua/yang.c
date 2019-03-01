@@ -1,4 +1,4 @@
-// yang.c Ñî³ÉĞ­
+// yang.c æ¥Šæˆå”
 
 #include <ansi.h>
 
@@ -7,12 +7,12 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("Ñî³ÉĞ­", ({ "yang chengxie", "yang","chengxie" }));
-        set("title", HIR "ºì»¨»á"HIG"°Ëµ±¼Ò" NOR);
-        set("nickname", CYN "ÌúËş" NOR);
+        set_name("æ¥Šæˆå”", ({ "yang chengxie", "yang","chengxie" }));
+        set("title", HIR "ç´…èŠ±æœƒ"HIG"å…«ç•¶å®¶" NOR);
+        set("nickname", CYN "éµå¡”" NOR);
         set("long", 
-"ËûÓÖ·ÊÓÖ¸ß£¬ÊÖÖ´¸Ö±Ş£¬±ŞÉíÉõÊÇ´ÖÖØ£¬¿´Ä£ÑùÉÙËµÒ²ÓĞÈıÊ®À´½ï¡£\n");
-        set("gender", "ÄĞĞÔ");
+"ä»–åˆè‚¥åˆé«˜ï¼Œæ‰‹åŸ·é‹¼é­ï¼Œé­èº«ç”šæ˜¯ç²—é‡ï¼Œçœ‹æ¨¡æ¨£å°‘èªªä¹Ÿæœ‰ä¸‰åä¾†æ–¤ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("class", "fighter");
         set("age", 26);
         set("attitude", "friendly");

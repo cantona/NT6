@@ -1,4 +1,4 @@
-// ÖÇ»ÛË®¾§ ÓëÍ¬°éÏµÍ³¹ØÁª ²Î¿¼ÎÄ¼ş help mater
+// æ™ºæ…§æ°´æ™¶ èˆ‡åŒä¼´ç³»çµ±é—œè¯ åƒè€ƒæ–‡ä»¶ help mater
 
 #include <ansi.h>
 
@@ -6,14 +6,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIM "ÖÇ»ÛË®¾§" NOR, ({ "zhihui shuijing" }) );
+        set_name(HIM "æ™ºæ…§æ°´æ™¶" NOR, ({ "zhihui shuijing" }) );
         set_weight(100);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", HIM "Ò»¿é·ÛÉ«µÄË®¾§ËéÆ¬£¬ÄãµÄÍ¬°é×îÏ²»¶¡£\n" NOR);
+                set("long", HIM "ä¸€å¡Šç²‰è‰²çš„æ°´æ™¶ç¢ç‰‡ï¼Œä½ çš„åŒä¼´æœ€å–œæ­¡ã€‚\n" NOR);
                 set("value", 1);
-                set("unit", "¿é");
+                set("unit", "å¡Š");
         }
         setup();
 }

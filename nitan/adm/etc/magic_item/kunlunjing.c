@@ -1,4 +1,4 @@
-// ÉÏ¹ÅÊ®´óÉñÆ÷Ö® À¥ÂØ¾µ
+// ä¸Šå¤åå¤§ç¥å™¨ä¹‹ æ˜†ä¾–é¡
 // Create by Rcwiz for Hero.cn 2003/09
 
 #include <ansi.h>
@@ -7,7 +7,7 @@ inherit ITEM;
 
 int is_magic_item() { return 1; }
 
-// ¿É´©ËóµÄµØµã
+// å¯ç©¿æ¢­çš„åœ°é»
 mapping place = ([
         "beijing"   : "/d/beijing/majiu",
         "yangzhou"  : "/d/city/majiu",
@@ -41,16 +41,16 @@ mapping place = ([
 
 void create()
 {
-        set_name(HIW "À¥ÂØ¾µ" NOR, ({ "kunlun jing", "kunlun", "jing" }) );
+        set_name(HIW "æ˜†ä¾–é¡" NOR, ({ "kunlun jing", "kunlun", "jing" }) );
         set_weight(100);
         if (clonep())
                 set_default_object(__FILE__);
         else
         {
-                set("unit", "Ãæ");
-                set("long", HIW "ÕâÊÇÒ»ÃæÍ¨ÌåÒø¹âµÄ¾µ×Ó£¬¾İËµÓµÓĞ´©ËóÊ±¿ÕµÄÄÜÁ¦¡£\n"                               
-                                "¿É½èÓÃÆä´©Ëó(trans)µ½¸÷´ó³ÇÊĞÂí¾Ç£¬¿ÉÒÔÊäÈë trans ²é¿´\n"
-                                "¿É´©ËóµÄµØµã£¬Ê¹ÓÃ trans ? ²é¿´Ê¹ÓÃ´ÎÊı¡£\n" NOR);                
+                set("unit", "é¢");
+                set("long", HIW "é€™æ˜¯ä¸€é¢é€šé«”éŠ€å…‰çš„é¡å­ï¼Œæ“šèªªæ“æœ‰ç©¿æ¢­æ™‚ç©ºçš„èƒ½åŠ›ã€‚\n"                               
+                                "å¯å€Ÿç”¨å…¶ç©¿æ¢­(trans)åˆ°å„å¤§åŸå¸‚é¦¬å»„ï¼Œå¯ä»¥è¼¸å…¥ trans æŸ¥çœ‹\n"
+                                "å¯ç©¿æ¢­çš„åœ°é»ï¼Œä½¿ç”¨ trans ? æŸ¥çœ‹ä½¿ç”¨æ¬¡æ•¸ã€‚\n" NOR);                
 
         }
 
@@ -75,7 +75,7 @@ int do_trans(string arg)
         places = keys(place);
         if (! arg)
         {
-              write(HIC "Äã¿ÉÒÔ´©Ëóµ½ÒÔÏÂµØµã£º\n");
+              write(HIC "ä½ å¯ä»¥ç©¿æ¢­åˆ°ä»¥ä¸‹åœ°é»ï¼š\n");
               for (i = 0; i < sizeof(places); i ++)
                       write(places[i] + "\n");
               
@@ -83,26 +83,26 @@ int do_trans(string arg)
         }
         if (arg == "?")
         {
-                 write(HIG "Ê¹ÓÃ´ÎÊı " + this_object()->query("count") + "/30\n" NOR);
+                 write(HIG "ä½¿ç”¨æ¬¡æ•¸ " + this_object()->query("count") + "/30\n" NOR);
                  return 1;
         }
         if (me->is_fighting() || me->is_busy())
-                 return notify_fail("ÄãÕıÃ¦ÄØ£¡\n");
+                 return notify_fail("ä½ æ­£å¿™å‘¢ï¼\n");
                          
         if (member_array(arg, places) == -1)
-                 return notify_fail("¿´Çå³ş£¬Ã»ÓĞÄãÒªµ½µÄµØ·½¡£\n");                
+                 return notify_fail("çœ‹æ¸…æ¥šï¼Œæ²’æœ‰ä½ è¦åˆ°çš„åœ°æ–¹ã€‚\n");                
 
-        message_sort(HIW "\n$N" HIW "»ÓÎè×ÅÊÖÖĞµÄÀ¥ÂØ¾µ£¬É²ÄÇ¼ä¹â»ªÍòµÀ£¬$N" HIW "½è"
-                         "×ÅÍòµÀ¹âÃ¢ÏûÊ§ÔÚÌì¼Ê ¡­¡­\n" NOR, me);
+        message_sort(HIW "\n$N" HIW "æ®èˆè‘—æ‰‹ä¸­çš„æ˜†ä¾–é¡ï¼Œå‰é‚£é–“å…‰è¯è¬é“ï¼Œ$N" HIW "å€Ÿ"
+                         "è‘—è¬é“å…‰èŠ’æ¶ˆå¤±åœ¨å¤©éš› â€¦â€¦\n" NOR, me);
 
-        write(HIG "Äã´ÓÌì¶øÏÂ£¬ÂäÔÚÁËµØÉÏ¡£\n" NOR);
+        write(HIG "ä½ å¾å¤©è€Œä¸‹ï¼Œè½åœ¨äº†åœ°ä¸Šã€‚\n" NOR);
         
         me->move(place[arg]);        
         me->start_busy(2);
         this_object()->add("count", 1);
         if (this_object()->query("count") >= 30)
         {
-                write(HIW "Ö»ÌıµÃÒ»ÕóÇå´àµÄÆÆËéÉù£¬À¥ÂØ¾µÒÑ¾­Ëğ»µÁË£¡\n" NOR);
+                write(HIW "åªè½å¾—ä¸€é™£æ¸…è„†çš„ç ´ç¢è²ï¼Œæ˜†ä¾–é¡å·²ç¶“æå£äº†ï¼\n" NOR);
                 destruct(this_object());                                
         }
         

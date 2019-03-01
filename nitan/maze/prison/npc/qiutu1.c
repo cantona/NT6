@@ -2,33 +2,33 @@
 inherit NPC;
 
 mapping family_punishers = ([
-        "Îäµ±ÅÉ"   : ({ CLASS_D("misc") + "/chongxu" }),
-        "ÉÙÁÖÅÉ"   : ({ CLASS_D("misc") + "/fangsheng" }),
-        "»ªÉ½ÅÉ"   : ({ CLASS_D("misc") + "/murenqing" }),
-        "¶ëáÒÅÉ"   : ({ CLASS_D("misc") + "/guoxiang" }),
-        "ÌÒ»¨µº"   : ({ CLASS_D("misc") + "/taogu" }),
-        "ÉñÁú½Ì"   : ({ CLASS_D("misc") + "/zhong" }),
-        "Ø¤°ï"     : ({ CLASS_D("misc") + "/wangjiantong" }),
-        "¹ÅÄ¹ÅÉ"   : ({ CLASS_D("misc") + "/popo" }),
-        "È«Õæ½Ì"   : ({ CLASS_D("misc") + "/laodao" }),
-        "ÐÇËÞÅÉ"   : ({ CLASS_D("misc") + "/xiaoxian" }),
-        "åÐÒ£ÅÉ"   : ({ CLASS_D("misc") + "/liqiushui" }),
-        "´óÂÖËÂ"   : ({ CLASS_D("misc") + "/laoseng" }),
-        "Ñªµ¶ÃÅ"   : ({ CLASS_D("misc") + "/hongri" }),
-        "ÁéðÕ¹¬"   : ({ CLASS_D("misc") + "/tonglao" }),
-        "Ä½ÈÝÊÀ¼Ò" : ({ CLASS_D("misc") + "/furen" }),
-        "Å·ÑôÊÀ¼Ò" : ({ CLASS_D("misc") + "/laonu" }),
-        "¹ØÍâºú¼Ò" : ({ CLASS_D("misc") + "/huyidao" }),
-        "¶ÎÊÏ»Ê×å" : ({ CLASS_D("misc") + "/duansh" }),
-        "Ã÷½Ì"     : ({ CLASS_D("misc") + "/yangdingtian" }),
-        "ÈÕÔÂÉñ½Ì" : ({ CLASS_D("misc") + "/zhanglao" }),
+        "æ­¦ç•¶æ´¾"   : ({ CLASS_D("misc") + "/chongxu" }),
+        "å°‘æž—æ´¾"   : ({ CLASS_D("misc") + "/fangsheng" }),
+        "è¯å±±æ´¾"   : ({ CLASS_D("misc") + "/murenqing" }),
+        "å³¨åµ‹æ´¾"   : ({ CLASS_D("misc") + "/guoxiang" }),
+        "æ¡ƒèŠ±å³¶"   : ({ CLASS_D("misc") + "/taogu" }),
+        "ç¥žé¾æ•™"   : ({ CLASS_D("misc") + "/zhong" }),
+        "ä¸å¹«"     : ({ CLASS_D("misc") + "/wangjiantong" }),
+        "å¤å¢“æ´¾"   : ({ CLASS_D("misc") + "/popo" }),
+        "å…¨çœŸæ•™"   : ({ CLASS_D("misc") + "/laodao" }),
+        "æ˜Ÿå®¿æ´¾"   : ({ CLASS_D("misc") + "/xiaoxian" }),
+        "é€é™æ´¾"   : ({ CLASS_D("misc") + "/liqiushui" }),
+        "å¤§è¼ªå¯º"   : ({ CLASS_D("misc") + "/laoseng" }),
+        "è¡€åˆ€é–€"   : ({ CLASS_D("misc") + "/hongri" }),
+        "éˆé·²å®®"   : ({ CLASS_D("misc") + "/tonglao" }),
+        "æ…•å®¹ä¸–å®¶" : ({ CLASS_D("misc") + "/furen" }),
+        "æ­é™½ä¸–å®¶" : ({ CLASS_D("misc") + "/laonu" }),
+        "é—œå¤–èƒ¡å®¶" : ({ CLASS_D("misc") + "/huyidao" }),
+        "æ®µæ°çš‡æ—" : ({ CLASS_D("misc") + "/duansh" }),
+        "æ˜Žæ•™"     : ({ CLASS_D("misc") + "/yangdingtian" }),
+        "æ—¥æœˆç¥žæ•™" : ({ CLASS_D("misc") + "/zhanglao" }),
 ]);
 
 void create()
 {
-        set_name("ÉÆÁ¼µÄÇôÍ½", ({ "qiu tu", "qiu", "tu" }));
-        set("long", "Ò»¸öÉÆÁ¼µÄÇôÍ½¡£\n");
-        set("gender", "ÄÐÐÔ");
+        set_name("å–„è‰¯çš„å›šå¾’", ({ "qiu tu", "qiu", "tu" }));
+        set("long", "ä¸€å€‹å–„è‰¯çš„å›šå¾’ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 30);
         set("str", 20);
         set("int", 20);
@@ -147,45 +147,45 @@ void set_from_me(object me)
 
         switch (npc->query("family/family_name"))
         {
-                case "Îäµ±ÅÉ":
-                case "»ªÉ½ÅÉ":
-                case "¶ëáÒÅÉ":
-                case "ÌÒ»¨µº":
-                case "È«Õæ½Ì":
-                case "Ä½ÈÝÊÀ¼Ò":
+                case "æ­¦ç•¶æ´¾":
+                case "è¯å±±æ´¾":
+                case "å³¨åµ‹æ´¾":
+                case "æ¡ƒèŠ±å³¶":
+                case "å…¨çœŸæ•™":
+                case "æ…•å®¹ä¸–å®¶":
                         weapon = new("/clone/weapon/changjian");
                         weapon->move(npc);
                         weapon->wield();
                         break;
-                case "ÈÕÔÂÉñ½Ì":
+                case "æ—¥æœˆç¥žæ•™":
                         weapon = new("/d/fuzhou/obj/xiuhua");
                         weapon->move(npc);
                         weapon->wield();
                         break;
-                case "´óÂÖËÂ":
+                case "å¤§è¼ªå¯º":
                         weapon = new("/clone/weapon/falun");
                         weapon->move(npc);
                         weapon->set_amount(4);
                         weapon->wield();
                         break;
-                case "¹ØÍâºú¼Ò":
-                case "Ñªµ¶ÃÅ":
+                case "é—œå¤–èƒ¡å®¶":
+                case "è¡€åˆ€é–€":
                         weapon = new("/clone/weapon/blade");
                         weapon->move(npc);
                         weapon->wield();
                         break;
-                case "ÐÇËÞÅÉ":
-                case "ÉñÁú½Ì":
+                case "æ˜Ÿå®¿æ´¾":
+                case "ç¥žé¾æ•™":
                         weapon = new("/clone/weapon/gangzhang");
                         weapon->move(npc);
                         weapon->wield();
                         break;
-                case "¹ÅÄ¹ÅÉ":
+                case "å¤å¢“æ´¾":
                         weapon = new("/clone/weapon/gangjian");
                         weapon->move(npc);
                         weapon->wield();
                         break;
-                case "ÉÙÁÖÅÉ":
+                case "å°‘æž—æ´¾":
                         weapon = new("/clone/weapon/changbian");
                         weapon->move(npc);
                         weapon->wield();
@@ -202,7 +202,7 @@ int accept_fight(object ob)
         object me;
         me = this_object();
         set_from_me(ob);
-        command("say Äã¸øÎÒÈ¥ËÀ°É£¡");
+        command("say ä½ çµ¦æˆ‘åŽ»æ­»å§ï¼");
         command("yun powerup");
         command("yun shield");
         switch (me->query_skill_mapped("force"))
@@ -259,7 +259,7 @@ int accept_hit(object ob)
         object me;
         me = this_object();
         set_from_me(ob);
-        command("say Äã¸øÎÒÈ¥ËÀ°É£¡");
+        command("say ä½ çµ¦æˆ‘åŽ»æ­»å§ï¼");
         command("yun powerup");
         command("yun shield");
         switch (me->query_skill_mapped("force"))
@@ -316,7 +316,7 @@ int accept_kill(object ob)
         object me;
         me = this_object();
         set_from_me(ob);
-        command("say Äã¸øÎÒÈ¥ËÀ°É£¡");
+        command("say ä½ çµ¦æˆ‘åŽ»æ­»å§ï¼");
         command("yun powerup");
         command("yun shield");
         switch (me->query_skill_mapped("force"))

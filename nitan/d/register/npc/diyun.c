@@ -1,12 +1,12 @@
-// diyun µÒÔÆ
+// diyun ç‹„é›²
 
 inherit NPC;
 
 void create()
 {
-        set_name("µÒÔÆ", ({ "di yun", "diyun"}));
-        set("long", "ËûÓ¢Îä¸ÕÕı£¬ÓĞÒ»¹ÉºÀÂõÖ®Æø¡£\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("ç‹„é›²", ({ "di yun", "diyun"}));
+        set("long", "ä»–è‹±æ­¦å‰›æ­£ï¼Œæœ‰ä¸€è‚¡è±ªé‚ä¹‹æ°£ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 25);
         set("attitude", "peaceful");
         set("shen_type", 1);

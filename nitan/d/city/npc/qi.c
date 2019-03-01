@@ -1,4 +1,4 @@
-// qi.c Æİ³¤·¢
+// qi.c æˆšé•·ç™¼
 
 #include <ansi.h>
 #include <command.h>
@@ -10,15 +10,15 @@ int do_answer();
 
 void create()
 {
-        set_name("Æİ³¤·¢", ({ "qi changfa", "qi" }));
-        set("title", "ÌÉÊ¬½£ÃÅ´«ÈË");
-        set("nickname", HIR "Ô×ÈË²»ÓÃµ¶£¬" HIC "Ô¸" HIR "ÕßÉÏ¹³" NOR);
+        set_name("æˆšé•·ç™¼", ({ "qi changfa", "qi" }));
+        set("title", "èººå±åŠé–€å‚³äºº");
+        set("nickname", HIR "å®°äººä¸ç”¨åˆ€ï¼Œ" HIC "é¡˜" HIR "è€…ä¸Šé‰¤" NOR);
 
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("age", 48);
         set("str", 100);
         set("long",
-                "ÆİÀÏ°å×î½üÊÇ±¬·¢ºá²Æ£¬ËùÎ½ÊÇÈıÄê²»¿ªÕÅ£¬¿ªÕÅ¹ÜÈıÄê¡£\n");
+                "æˆšè€æ¿æœ€è¿‘æ˜¯çˆ†ç™¼æ©«è²¡ï¼Œæ‰€è¬‚æ˜¯ä¸‰å¹´ä¸é–‹å¼µï¼Œé–‹å¼µç®¡ä¸‰å¹´ã€‚\n");
         set_skill("unarmed", 50);
         set_skill("dodge", 50);
         set_skill("higgling", 800);
@@ -28,20 +28,20 @@ void create()
         set("attitude", "friendly");
 
         set("inquiry", ([
-                "±¦Îï" : (: do_answer :),
-                "ÂòÂô" : (: do_answer :),
-                "ÉúÒâ" : (: do_answer :),
-                "¶«Î÷" : "ÈÓµô¾ÍÃ»ÁË£¡ºÙºÙ¡£",
-                "»¹ÎÒÇ®"     : "ºß£¡ÎÒÕâÀïÊÇÓĞ½øÎŞ³ö£¡",
-                "ÎÒµÄÇ®"     : "Ê²Ã´ÄãµÄÇ®£¬µØÉÏµÄ¾ÍÊÇÎÒµÄ£¡",
-                "Ç®"         : "ÏëÇ®°¡£¿×Ô¼ºÈ¥Õõ£¡",
-                "ÎÒµÄ¶«Î÷"   : "ÈÓµô¾ÍÃ»ÁË£¡ºÙºÙ¡£",
-                "Êê"         : "Êê£¿Ã»µÃÊê£¡",
-                "ÌìÍõ±£Ãüµ¤" : "Âô£¡Âô£¡Îå°ÙÁ½»Æ½ğÒ»Á££¡",
-                "ôä´äÀ¼"     : "¿ÉÖÎ°Ù¶¾°¡£¡ÓĞÆø¾ÍÄÜ»î£¡",
-                "Öì¾¦±ùó¸"   : "ËäÈ»²»Ïóôä´äÀ¼ÄÇÑù¿ÉÆğËÀ»ØÉú£¬µ«ÊÇÄÜ½â°Ù¶¾£¡",
-                "ÌÖ¼Û»¹¼Û"   : "ºÍÎÒÑ§(higgling)... ÎÒºÜÇî°¡£¡",
-                "higgling"   : "ºÍÎÒÑ§ÌÖ¼Û»¹¼ÛÃ´... ÎÒºÜÇî°¡£¡",
+                "å¯¶ç‰©" : (: do_answer :),
+                "è²·è³£" : (: do_answer :),
+                "ç”Ÿæ„" : (: do_answer :),
+                "æ±è¥¿" : "æ‰”æ‰å°±æ²’äº†ï¼å˜¿å˜¿ã€‚",
+                "é‚„æˆ‘éŒ¢"     : "å“¼ï¼æˆ‘é€™è£¡æ˜¯æœ‰é€²ç„¡å‡ºï¼",
+                "æˆ‘çš„éŒ¢"     : "ä»€éº¼ä½ çš„éŒ¢ï¼Œåœ°ä¸Šçš„å°±æ˜¯æˆ‘çš„ï¼",
+                "éŒ¢"         : "æƒ³éŒ¢å•Šï¼Ÿè‡ªå·±å»æ™ï¼",
+                "æˆ‘çš„æ±è¥¿"   : "æ‰”æ‰å°±æ²’äº†ï¼å˜¿å˜¿ã€‚",
+                "è´–"         : "è´–ï¼Ÿæ²’å¾—è´–ï¼",
+                "å¤©ç‹ä¿å‘½ä¸¹" : "è³£ï¼è³£ï¼äº”ç™¾å…©é»ƒé‡‘ä¸€ç²’ï¼",
+                "ç¿¡ç¿ è˜­"     : "å¯æ²»ç™¾æ¯’å•Šï¼æœ‰æ°£å°±èƒ½æ´»ï¼",
+                "æœ±ç›å†°èŸ¾"   : "é›–ç„¶ä¸è±¡ç¿¡ç¿ è˜­é‚£æ¨£å¯èµ·æ­»å›ç”Ÿï¼Œä½†æ˜¯èƒ½è§£ç™¾æ¯’ï¼",
+                "è¨åƒ¹é‚„åƒ¹"   : "å’Œæˆ‘å­¸(higgling)... æˆ‘å¾ˆçª®å•Šï¼",
+                "higgling"   : "å’Œæˆ‘å­¸è¨åƒ¹é‚„åƒ¹éº¼... æˆ‘å¾ˆçª®å•Šï¼",
         ]));
 
         set("vendor_goods", ([
@@ -114,7 +114,7 @@ void heart_beat()
                             find_object(start_room) == environment())
                                 continue;
 
-                        message_vision("$NÖåÁËÖåÃ¼£¬°Ñ$nÍÆÁË³öÈ¥¡£\n",
+                        message_vision("$Nçšºäº†çšºçœ‰ï¼ŒæŠŠ$næ¨äº†å‡ºå»ã€‚\n",
                                        this_object(), ob);
                         ob->move("/d/city/beidajie1");
                 }
@@ -141,15 +141,15 @@ int do_drop(string arg)
                 if( query_temp("static/drop_npc", me)>1 &&
                     query("combat_exp", me) >= 50000 )
                 {
-                        message_vision("$N´óÅ­µÀ£º£º¡°ºÃÄã¸ö" +
+                        message_vision("$Nå¤§æ€’é“ï¼šï¼šâ€œå¥½ä½ å€‹" +
                                        RANK_D->query_rude(ob) +
-                                       "£¬»¹À´ÌíÂÒ£¡¡±\nËµ°ÕÖ»¼û$N"
-                                       "·ÉÆğÒ»½Å£¬½«$nºÍ" + ob->name() +
-                                       "Ò»ÆğÌß³öÃÅÍâ¡£\n", this_object(), me);
+                                       "ï¼Œé‚„ä¾†æ·»äº‚ï¼â€\nèªªç½·åªè¦‹$N"
+                                       "é£›èµ·ä¸€è…³ï¼Œå°‡$nå’Œ" + ob->name() +
+                                       "ä¸€èµ·è¸¢å‡ºé–€å¤–ã€‚\n", this_object(), me);
                         ob->move("/d/city/beidajie1");
                         me->move("/d/city/beidajie1");
-                        message("vision", "Ö»Ìı¶£¶£ßÛ¹âÒ»ÕóÏò£¬" + me->name() +
-                                          "±»ÈËÒ»½ÅÌßÁË³öÀ´¡£\n",
+                        message("vision", "åªè½å®å®â–¡å…‰ä¸€é™£å‘ï¼Œ" + me->name() +
+                                          "è¢«äººä¸€è…³è¸¢äº†å‡ºä¾†ã€‚\n",
                                 environment(me), me);
 /*
                         me->receive_damage("qi", 1);
@@ -158,13 +158,13 @@ int do_drop(string arg)
                         return 1;
                 }
 
-                message_vision("$NÅ­µÀ£º¡°¹ö¿ª£¬ÉÙ¸øÎÒÌíÂÒ£¬Ó°ÏìÎÒµÄÉúÒâ¡£¡±\n"
-                               "Ëµ°ÕÖ»¼û$N·ÉÆğÒ»½Å£¬½«$nºÍ" + ob->name() +
-                               "Ò»ÆğÌß³öÃÅÍâ¡£\n", this_object(), me);
+                message_vision("$Næ€’é“ï¼šâ€œæ»¾é–‹ï¼Œå°‘çµ¦æˆ‘æ·»äº‚ï¼Œå½±éŸ¿æˆ‘çš„ç”Ÿæ„ã€‚â€\n"
+                               "èªªç½·åªè¦‹$Né£›èµ·ä¸€è…³ï¼Œå°‡$nå’Œ" + ob->name() +
+                               "ä¸€èµ·è¸¢å‡ºé–€å¤–ã€‚\n", this_object(), me);
                 ob->move("/d/city/beidajie1");
                 me->move("/d/city/beidajie1");
-                message("vision", "Ö»Ìı¶£¶£ßÛ¹âÒ»ÕóÏò£¬" + me->name() +
-                                  "±»ÈËÒ»½ÅÌßÁË³öÀ´¡£\n",
+                message("vision", "åªè½å®å®â–¡å…‰ä¸€é™£å‘ï¼Œ" + me->name() +
+                                  "è¢«äººä¸€è…³è¸¢äº†å‡ºä¾†ã€‚\n",
                         environment(me), me);
 /*
                 me->receive_damage("qi", 1);
@@ -190,14 +190,14 @@ int do_drop(string arg)
                 switch (random(4))
                 {
                 case 0:
-                        command("say ÈÕ»ıÔÂÀÛ£¬Ğ¡¿µÖ®Â·£¡");
+                        command("say æ—¥ç©æœˆç´¯ï¼Œå°åº·ä¹‹è·¯ï¼");
                         break;
                 case 1:
                         command("kok "+query("id", this_player()));
-                        command("say ËæµØÂÒÈÓÀ¬»ø£¬·£¿îÎåÔª£¡");
+                        command("say éš¨åœ°äº‚æ‰”åƒåœ¾ï¼Œç½°æ¬¾äº”å…ƒï¼");
                         break;
                 case 2:
-                        command("say °Ü¼Ò×Ó£¬°Ü¼Ò×Ó£¡");
+                        command("say æ•—å®¶å­ï¼Œæ•—å®¶å­ï¼");
                         break;
                 default:
                         command("heihei");
@@ -209,9 +209,9 @@ int do_drop(string arg)
 
 int do_answer()
 {
-        write(name() + "ÔÚÄã¶ú±ßÇáÉùËµµÀ£ºÎÒ");
+        write(name() + "åœ¨ä½ è€³é‚Šè¼•è²èªªé“ï¼šæˆ‘");
         ::do_list();
-        write("Õâ¿ÉÕæÊÇ»õÕæ¼ÛÊµ£¬Í¯ÛÅÎŞÆÛ°¡£¡\n");
+        write("é€™å¯çœŸæ˜¯è²¨çœŸåƒ¹å¯¦ï¼Œç«¥åŸç„¡æ¬ºå•Šï¼\n");
         return 1;
 }
 
@@ -219,28 +219,28 @@ int accept_object(object who, object ob)
 {
         if( query("money_id", ob) )
         {
-                if( !query_temp("mark/Æİ", who) )
-                        set_temp("mark/Æİ", 0, who);
+                if( !query_temp("mark/æˆš", who) )
+                        set_temp("mark/æˆš", 0, who);
 
                 if( query("money_id", ob) && ob->value() >= 10000 )
                 {
-                        message_vision("$NÍ¬ÒâÖ¸µã$nÒ»Ğ©ÌÖ¼Û»¹¼ÛµÃµÄ¼¼ÇÉ¡£\n",
+                        message_vision("$NåŒæ„æŒ‡é»$nä¸€äº›è¨åƒ¹é‚„åƒ¹å¾—çš„æŠ€å·§ã€‚\n",
                                        this_object(), who);
-                        addn_temp("mark/Æİ", ob->value()/100, who);
+                        addn_temp("mark/æˆš", ob->value()/100, who);
                         destruct(ob);
                         return 1;
                 }
-                command("say ÄãÕâµãÇ®... ÎÒËäÈ»Çî¿É»¹Õæ¿´²»ÉÏ£¡");
+                command("say ä½ é€™é»éŒ¢... æˆ‘é›–ç„¶çª®å¯é‚„çœŸçœ‹ä¸ä¸Šï¼");
                 return -1;
         }
 
         switch (random(6))
         {
         case 0:
-                command("say ºÃ£¡ºÃ£¡");
+                command("say å¥½ï¼å¥½ï¼");
                 break;
         case 1:
-                command("say ²»Òª¾Í¸øÎÒ£¡");
+                command("say ä¸è¦å°±çµ¦æˆ‘ï¼");
                 break;
         }
 
@@ -255,26 +255,26 @@ int accept_object(object who, object ob)
 
 void unconcious()
 {
-        message_vision("\n$NºßºßÁ½Éù£¬µÀ£º¡°À§ËÀÁË...Å¶£¡¡±\n",
+        message_vision("\n$Nå“¼å“¼å…©è²ï¼Œé“ï¼šâ€œå›°æ­»äº†...å“¦ï¼â€\n",
                        this_object());
         full_self();
 }
 
 void die()
 {
-        message_vision("\n$N´ó½ĞÒ»Éù£¬µÀ£º¡°Í´ËÀÀ²£¡¡±Á¬Ã¦ÌÍ³öÌìÍõ±£Ãüµ¤³ÔÁËÁ½¿Å¡£\n",
+        message_vision("\n$Nå¤§å«ä¸€è²ï¼Œé“ï¼šâ€œç—›æ­»å•¦ï¼â€é€£å¿™æå‡ºå¤©ç‹ä¿å‘½ä¸¹åƒäº†å…©é¡†ã€‚\n",
                        this_object());
         full_self();
 }
 
 int recognize_apprentice(object ob, string skill)
 {
-        if( query_temp("mark/Æİ", ob)<1 )
+        if( query_temp("mark/æˆš", ob)<1 )
                 return 0;
 
         if (skill != "higgling")
                 return 0;
 
-        addn_temp("mark/Æİ", -1, ob);
+        addn_temp("mark/æˆš", -1, ob);
         return 1;
 }

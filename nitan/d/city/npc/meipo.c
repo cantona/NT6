@@ -7,21 +7,21 @@ string ask_hunyin();
 
 void create()
 {
-      set_name("Ã½ÆÅ",({"meipo", "mei po", "po", "mei"}));
+      set_name("åª’å©†",({"meipo", "mei po", "po", "mei"}));
       set("age", 65);
-      set("gender", "Å®ĞÔ");
-      set("nickname", "ÒöÔµÌì¶¨");
+      set("gender", "å¥³æ€§");
+      set("nickname", "å§»ç·£å¤©å®š");
       set_skill("unarmed", 40);
 
       set("inquiry",([
-            "½éÉÜ¶ÔÏó" :  (: ask_hunyin :),
+            "ä»‹ç´¹å°è±¡" :  (: ask_hunyin :),
       ]));
 
         set("chat_chance", 15); 
         set("chat_msg", ({ 
-                "»¨Ã½ÆÅÉñÃØÙâÙâµÄËµµÀ£º¾İËµÁéÉ½ÉÏÓĞ´«ËµÖĞµÄÑ©Á«»¨£¬ÄÇ¿ÉÊÇËÍ¸øĞÄÉÏÈË×îºÃµÄÀñÎïÅ¶¡£\n",
-                "»¨Ã½ÆÅÚ¨Ú¨µÄËµ£ºÕâ¸ö¡«¡«ËûÊÇ¸öÈ³×Ó£¬ÀÏÆÅ×ÓÎÒ¿ÉÃ»ËµËû²»ÊÇ°¡£¬Õâ¼Ş¶¼¼ŞÁË£¬»¹ÄÜ¹ÖÎÒ£¿\n",
-                "»¨Ã½ÆÅÍµÍµÒ»Ğ¦£ºÕâÑ©Á«»¨´÷ÉÏÁËÕæÊÇ»¨ÈİÔÂÃ²°¡£¬ÎÒÀÏÆÅ×Ó¿ÉÒªÏë¸ö·¨×ÓÁôÏÂ£¬²»ÄÜ¾ÍÕâÃ´¸øÁËÄÇĞ¡Äï×Ó¡£\n"
+                "èŠ±åª’å©†ç¥ç§˜å…®å…®çš„èªªé“ï¼šæ“šèªªéˆå±±ä¸Šæœ‰å‚³èªªä¸­çš„é›ªè“®èŠ±ï¼Œé‚£å¯æ˜¯é€çµ¦å¿ƒä¸Šäººæœ€å¥½çš„ç¦®ç‰©å“¦ã€‚\n",
+                "èŠ±åª’å©†è¨•è¨•çš„èªªï¼šé€™å€‹ï½ï½ä»–æ˜¯å€‹ç˜¸å­ï¼Œè€å©†å­æˆ‘å¯æ²’èªªä»–ä¸æ˜¯å•Šï¼Œé€™å«éƒ½å«äº†ï¼Œé‚„èƒ½æ€ªæˆ‘ï¼Ÿ\n",
+                "èŠ±åª’å©†å·å·ä¸€ç¬‘ï¼šé€™é›ªè“®èŠ±æˆ´ä¸Šäº†çœŸæ˜¯èŠ±å®¹æœˆè²Œå•Šï¼Œæˆ‘è€å©†å­å¯è¦æƒ³å€‹æ³•å­ç•™ä¸‹ï¼Œä¸èƒ½å°±é€™éº¼çµ¦äº†é‚£å°å¨˜å­ã€‚\n"
         }) ); 
 
       setup();
@@ -47,36 +47,36 @@ void greeting(object ob)
       if (!ob||environment(ob)!=environment())   return;
       if( query("age", ob) >= 18 && !query("couple", ob) )
       {
-           if( query("gender", ob) == "ÎŞĞÔ" )
+           if( query("gender", ob) == "ç„¡æ€§" )
            {
-                 message_vision("$N¶Ô$nÒ¡Í·Ì¾µÀ£º¿ÉÏ§ÊÇ¸öÌ«¼à£¬²»È»Ò²µ½" +
-                                "È¢Ï±¸¾µÄÊ±ºòÁË¡£\n", this_object(), ob);
+                 message_vision("$Nå°$næ–é ­å˜†é“ï¼šå¯æƒœæ˜¯å€‹å¤ªç›£ï¼Œä¸ç„¶ä¹Ÿåˆ°" +
+                                "å¨¶åª³å©¦çš„æ™‚å€™äº†ã€‚\n", this_object(), ob);
                  return;
            }
 
-           if( query("gender", ob) == "ÄĞĞÔ" )
+           if( query("gender", ob) == "ç”·æ€§" )
            {
                  if( query("per", ob)<20 )
 
-                 message_vision("$N¿´¼û$n£¬ÏÅÁËÒ»Ìø£ºÕâÎ»¹«×Ó¿ÉÊÇÒªÀÏÆÅ×Ó" +
-                                "¸øÄã½éÉÜ¶ÔÏó£¿ÄÑÄÄ£¡\n", this_object(), ob);
+                 message_vision("$Nçœ‹è¦‹$nï¼Œåš‡äº†ä¸€è·³ï¼šé€™ä½å…¬å­å¯æ˜¯è¦è€å©†å­" +
+                                "çµ¦ä½ ä»‹ç´¹å°è±¡ï¼Ÿé›£å“ªï¼\n", this_object(), ob);
                  else
 
-                 message_vision("$N´ÕÉÏÇ°¶Ô$nµÀ£º¹«×ÓÒ»±íÈË²Ä£¬¿ÉÒªÀÏÆÅ×Ó" +
-                                "¸øÄã½éÉÜ¶ÔÏó£¿\n", this_object(), ob);
+                 message_vision("$Næ¹Šä¸Šå‰å°$né“ï¼šå…¬å­ä¸€è¡¨äººæï¼Œå¯è¦è€å©†å­" +
+                                "çµ¦ä½ ä»‹ç´¹å°è±¡ï¼Ÿ\n", this_object(), ob);
                  return;
            }
 
-           if( query("gender", ob) == "Å®ĞÔ" )
+           if( query("gender", ob) == "å¥³æ€§" )
            {
                  if( query("per", ob)<20 )
 
-                 message_vision("$N¿´¼û$n£¬Ì¾ÁË¿ÚÆø£ºÕâÎ»¹ÃÄïËä²»³î¼Ş£¬¿ÉÒªÕÒ" +
-                                "¸öºÃÈË¼ÒÈ´·ÇÒ×ÊÂ£¡\n", this_object(), ob);
+                 message_vision("$Nçœ‹è¦‹$nï¼Œå˜†äº†å£æ°£ï¼šé€™ä½å§‘å¨˜é›–ä¸æ„å«ï¼Œå¯è¦æ‰¾" +
+                                "å€‹å¥½äººå®¶å»éæ˜“äº‹ï¼\n", this_object(), ob);
                  else
 
-                 message_vision("$N´ÕÉÏÇ°¶Ô$nµÀ£ººÃ¿¡ÇÎµÄÈË¶ù£¬¿ÉÒªÀÏÆÅ×Ó" +
-                                "¸øÄã½éÉÜ¶ÔÏó£¿\n", this_object(), ob);
+                 message_vision("$Næ¹Šä¸Šå‰å°$né“ï¼šå¥½ä¿Šä¿çš„äººå…’ï¼Œå¯è¦è€å©†å­" +
+                                "çµ¦ä½ ä»‹ç´¹å°è±¡ï¼Ÿ\n", this_object(), ob);
                  return;
            }
       }
@@ -90,24 +90,24 @@ string ask_hunyin()
       string who,gender=query("gender", ob);
       int i, p;
 
-      if (gender == "ÎŞĞÔ")
-           return "Äã¸öËÀÌ«¼à£¬»¹ÏëÕÒ¶ÔÏó½á»éº¦ÈË£¿";
+      if (gender == "ç„¡æ€§")
+           return "ä½ å€‹æ­»å¤ªç›£ï¼Œé‚„æƒ³æ‰¾å°è±¡çµå©šå®³äººï¼Ÿ";
 
       if( query("couple", ob) )
-           return "Äã¶¼ÊÇ½áÁË»éµÄÈËÁË, »¹ÕÒÊ²Ã´¶ÔÏó£¿";
+           return "ä½ éƒ½æ˜¯çµäº†å©šçš„äººäº†, é‚„æ‰¾ä»€éº¼å°è±¡ï¼Ÿ";
 
       if( query("age", ob)<18 )
-           return "ÕâÃ´Ğ¡¾ÍÏëÕÒ¶ÔÏóÀ²£¬ÎûÎû¡£\n";
+           return "é€™éº¼å°å°±æƒ³æ‰¾å°è±¡å•¦ï¼Œå˜»å˜»ã€‚\n";
 
       if( query_temp("mameipo/agree", ob) )
-           return "ÔõÃ´£¿"+query_temp("mameipo/agree", ob)+
-                  "»¹Ã»ÓĞ´ğÓ¦ÄãÕâÃÅÇ×ÊÂÂğ£¿\n";
+           return "æ€éº¼ï¼Ÿ"+query_temp("mameipo/agree", ob)+
+                  "é‚„æ²’æœ‰ç­”æ‡‰ä½ é€™é–€è¦ªäº‹å—ï¼Ÿ\n";
 
       i = 0;
       while ( i <sizeof(list))
       {
            if( query("gender", list[i]) == gender || 
-               query("gender", list[i]) == "ÎŞĞÔ" || 
+               query("gender", list[i]) == "ç„¡æ€§" || 
                query("age", list[i])<18 || 
                query("age", list[i])>query("age", ob)+5 || 
                query("age", list[i])<query("age", ob)-5 || 
@@ -123,10 +123,10 @@ string ask_hunyin()
            p = random(sizeof(list));
            who=query("id", list[p]);
            set_temp("mameipo/who", who, ob);
-           return "¿´À´"+query("name", list[p])+"("+query("id", list[p])+")"+
-                  "ºÍÄãºÜÏàÅä£¬ÄãÒâÏÂÈçºÎ£¿(agree)\n";
+           return "çœ‹ä¾†"+query("name", list[p])+"("+query("id", list[p])+")"+
+                  "å’Œä½ å¾ˆç›¸é…ï¼Œä½ æ„ä¸‹å¦‚ä½•ï¼Ÿ(agree)\n";
       }
-      else   return "ÔİÊ±»¹ÕÒ²»µ½ÓëÄãÏàÅäµÄÈË¡£";
+      else   return "æš«æ™‚é‚„æ‰¾ä¸åˆ°èˆ‡ä½ ç›¸é…çš„äººã€‚";
 }
 
 int do_agree()
@@ -135,23 +135,23 @@ int do_agree()
 
       if( !query_temp("mameipo/who", ob) )
       {
-           tell_object(ob, "»¨Ã½ÆÅ¶ÔÄãµÀ£ºÄãÊÇÏëÀÏÆÅ×Ó¸øÄã½éÉÜ¶ÔÏóÃ´£¿\n");
+           tell_object(ob, "èŠ±åª’å©†å°ä½ é“ï¼šä½ æ˜¯æƒ³è€å©†å­çµ¦ä½ ä»‹ç´¹å°è±¡éº¼ï¼Ÿ\n");
            return 1;
       }
 
-      tell_object(ob, HIC"»¨Ã½ÆÅ¶ÔÄãµÀ£º¼ÈÈç´Ë£¬ÀÏÆÅ×Ó¾Í¸øÄã°ÑÕâºÃÊÂ¶ù¸ú¶Ô·½ËµËµ¡£\n"NOR);
+      tell_object(ob, HIC"èŠ±åª’å©†å°ä½ é“ï¼šæ—¢å¦‚æ­¤ï¼Œè€å©†å­å°±çµ¦ä½ æŠŠé€™å¥½äº‹å…’è·Ÿå°æ–¹èªªèªªã€‚\n"NOR);
       who=find_player(query_temp("mameipo/who", ob));
       if (!who)
       {
-           tell_object(ob,HIC"»¨Ã½ÆÅ¶ÔÄãµÀ£º¿ÉÏ§£¬ÏÖÔÚÀÏÆÅ×ÓÕÒ²»µ½ÄãµÄÒâÖĞÈË¡£\n"NOR);
+           tell_object(ob,HIC"èŠ±åª’å©†å°ä½ é“ï¼šå¯æƒœï¼Œç¾åœ¨è€å©†å­æ‰¾ä¸åˆ°ä½ çš„æ„ä¸­äººã€‚\n"NOR);
            return 1;
       }
 
-      tell_object(who,query("name", ob)+"ÍĞ»¨Ã½ÆÅ¸øÄãËÍÀ´¶ä"+HIR+"ºìÃµ¹å"NOR+"¡£\n");
+      tell_object(who,query("name", ob)+"æ‰˜èŠ±åª’å©†çµ¦ä½ é€ä¾†æœµ"+HIR+"ç´…ç«ç‘°"NOR+"ã€‚\n");
       command("tell"+query_temp("mameipo/who", ob)+""+query("name", ob)+"("+
-              query("id", ob)+")¶ÔÄãºÜÓĞÒâË¼£¬ÍĞÀÏÆÅ×Ó¸øÄãËµËµ¡£\n");
+              query("id", ob)+")å°ä½ å¾ˆæœ‰æ„æ€ï¼Œæ‰˜è€å©†å­çµ¦ä½ èªªèªªã€‚\n");
       new("/d/city/obj/rrose")->move(who);
-      tell_object(ob, HIC"»¨Ã½ÆÅ¶ÔÄãµÀ£ºÀÏÆÅ×ÓÒÑ¾­°ÑÄãµÄÒâË¼×ª¸æÁË£¬ÄãÕâ¾ÍÈ¥ÌáÇ×°É¡£\n"NOR);
+      tell_object(ob, HIC"èŠ±åª’å©†å°ä½ é“ï¼šè€å©†å­å·²ç¶“æŠŠä½ çš„æ„æ€è½‰å‘Šäº†ï¼Œä½ é€™å°±å»æè¦ªå§ã€‚\n"NOR);
       delete_temp("mameipo/who", ob);
       set_temp("mameipo/agree",query("name",  who)+"("+query("id", who)+")", ob);
       return 1;

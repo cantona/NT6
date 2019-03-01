@@ -23,11 +23,11 @@ int main(object me, string arg)
                         else str = emote[e[i]]["others_self"];
                 }
                 if(!str) continue;
-                str = replace_string(str, "$n", "ĳ��");
-                str = replace_string(str, "$N", "��");
-                str = replace_string(str, "$p", "��");
-                str = replace_string(str, "$s", "׳ʿ");
-                str = replace_string(str, "$r", "С���˵�");
+                str = replace_string(str, "$n", "某人");
+                str = replace_string(str, "$N", "你");
+                str = replace_string(str, "$p", "他");
+                str = replace_string(str, "$s", "壯士");
+                str = replace_string(str, "$r", "小王八蛋");
                 if( strlen(e[i]) > 6 )
                         msg += e[i]+"\t : ";
                 else
@@ -45,9 +45,9 @@ int help(object me)
 {
         write(@HELP
 
-ָ���ʽ : demote
+指令格式 : demote
 
-    ���ָ������г�Ŀǰ����ʹ�õ�emote�ľ������ݡ�
+    這個指令可以列出目前所能使用的emote的具體內容。
 
 HELP
         );

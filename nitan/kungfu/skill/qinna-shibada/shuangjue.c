@@ -1,4 +1,4 @@
-// shuangjue.c  È­ÍÈË«¾ø
+// shuangjue.c  æ‹³è…¿é›™çµ•
 
 #include <ansi.h>
 
@@ -18,48 +18,48 @@ int perform(object me, object target)
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("È­ÍÈË«¾øÖ»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("æ‹³è…¿é›™çµ•åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
                if( objectp(query_temp("weapon", me)) )
-               return notify_fail("Äã±ØÐë¿ÕÊÖÊ¹ÓÃ¡¸È­ÍÈË«¾ø¡¹£¡\n");
+               return notify_fail("ä½ å¿…é ˆç©ºæ‰‹ä½¿ç”¨ã€Œæ‹³è…¿é›™çµ•ã€ï¼\n");
 
         if (me->query_skill_prepared("cuff") != "zhentian-quan"
             || me->query_skill_prepared("leg") != "chuanyun-tui"
             || me->query_skill_mapped("cuff") != "zhentian-quan"
             || me->query_skill_mapped("leg") != "chuanyun-tui")
-                return notify_fail("ÄãÏÖÔÚÎÞ·¨Ê¹ÓÃ¡¸È­ÍÈË«¾ø¡¹½øÐÐ¹¥»÷£¡\n");
+                return notify_fail("ä½ ç¾åœ¨ç„¡æ³•ä½¿ç”¨ã€Œæ‹³è…¿é›™çµ•ã€é€²è¡Œæ”»æ“Šï¼\n");
 
         if( (int)me->query_skill("zhentian-quan", 1) < 100 )
-                return notify_fail("ÄãµÄÕðÌìÈ­²»¹»æµÊì£¬ÎÞ·¨Ê©Õ¹³öÈ­ÍÈË«¾ø¡£\n");
+                return notify_fail("ä½ çš„éœ‡å¤©æ‹³ä¸å¤ å«»ç†Ÿï¼Œç„¡æ³•æ–½å±•å‡ºæ‹³è…¿é›™çµ•ã€‚\n");
 
             if( (int)me->query_skill("strike", 1) < 100 )
-                return notify_fail("ÄãµÄÈ­·¨²»¹»æµÊì£¬ÎÞ·¨Ê©Õ¹³öÈ­ÍÈË«¾ø¡£\n");
+                return notify_fail("ä½ çš„æ‹³æ³•ä¸å¤ å«»ç†Ÿï¼Œç„¡æ³•æ–½å±•å‡ºæ‹³è…¿é›™çµ•ã€‚\n");
 
           if( (int)me->query_skill("lag", 1) < 100 )
-                return notify_fail("ÄãµÄÍÈ·¨²»¹»æµÊì£¬ÎÞ·¨Ê©Õ¹³öÈ­ÍÈË«¾ø¡£\n");
+                return notify_fail("ä½ çš„è…¿æ³•ä¸å¤ å«»ç†Ÿï¼Œç„¡æ³•æ–½å±•å‡ºæ‹³è…¿é›™çµ•ã€‚\n");
 
              if( (int)me->query_skill("force", 1) < 100 )
-                return notify_fail("ÄãµÄÄÚ¹¦²»¹»æµÊì£¬ÎÞ·¨Ê©Õ¹³öÈ­ÍÈË«¾ø¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸä¸å¤ å«»ç†Ÿï¼Œç„¡æ³•æ–½å±•å‡ºæ‹³è…¿é›™çµ•ã€‚\n");
 
         if( (int)me->query_skill("chuanyun-tui", 1) < 150 )
-                return notify_fail("ÄãµÄ´©ÔÆÍÈ²»¹»æµÊì£¬ÎÞ·¨Ê©Õ¹³öÈ­ÍÈË«¾ø¡£\n");
+                return notify_fail("ä½ çš„ç©¿é›²è…¿ä¸å¤ å«»ç†Ÿï¼Œç„¡æ³•æ–½å±•å‡ºæ‹³è…¿é›™çµ•ã€‚\n");
               if( (int)me->query_skill("parry", 1) < 100 )
-                return notify_fail("ÄãµÄÕÐ¼Ü²»¹»æµÊì£¬ÎÞ·¨Ê©Õ¹³öÈ­ÍÈË«¾ø¡£\n");
+                return notify_fail("ä½ çš„æ‹›æž¶ä¸å¤ å«»ç†Ÿï¼Œç„¡æ³•æ–½å±•å‡ºæ‹³è…¿é›™çµ•ã€‚\n");
         if ((int)me->query_skill("xuantian-wuji", 1) < 100)
 
-                return notify_fail("ÄãµÄÐþÌìÎÞ¼«¹¦»ðºò²»¹»£¬ÎÞ·¨Ê©Õ¹³öÈ­ÍÈË«¾ø¡£\n");
+                return notify_fail("ä½ çš„çŽ„å¤©ç„¡æ¥µåŠŸç«å€™ä¸å¤ ï¼Œç„¡æ³•æ–½å±•å‡ºæ‹³è…¿é›™çµ•ã€‚\n");
                if( (int)me->query_dex() < 30 )
-                           return notify_fail("ÄãµÄÉí·¨Ç·¼Ñ£¬ÎÞ·¨Ê©Õ¹³öÈ­ÍÈË«¾ø¡£\n");
+                           return notify_fail("ä½ çš„èº«æ³•æ¬ ä½³ï¼Œç„¡æ³•æ–½å±•å‡ºæ‹³è…¿é›™çµ•ã€‚\n");
                if( (int)me->query_str() < 30 )
-                           return notify_fail("ÄãµÄÌåÆÇ²»×ã£¬ÎÞ·¨·¢»Ó³öÈ­ÍÈË«¾øµÄÍþÁ¦¡£\n");
+                           return notify_fail("ä½ çš„é«”é­„ä¸è¶³ï¼Œç„¡æ³•ç™¼æ®å‡ºæ‹³è…¿é›™çµ•çš„å¨åŠ›ã€‚\n");
                if( (int)me->query_int() < 30 )
-                           return notify_fail("ÄãµÄÎòÐÔ²»¹»£¬ÎÞ·¨ÁìÎò³öÈ­ÍÈË«¾ø¡£\n");
+                           return notify_fail("ä½ çš„æ‚Ÿæ€§ä¸å¤ ï¼Œç„¡æ³•é ˜æ‚Ÿå‡ºæ‹³è…¿é›™çµ•ã€‚\n");
         if( query("max_neili", me)<2000 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬ÎÞ·¨Ê©Õ¹³öÈ­ÍÈË«¾ø¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ï¼Œç„¡æ³•æ–½å±•å‡ºæ‹³è…¿é›™çµ•ã€‚\n");
         if( query("neili", me)<1000 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬ÎÞ·¨Ê©Õ¹³öÈ­ÍÈË«¾ø¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼Œç„¡æ³•æ–½å±•å‡ºæ‹³è…¿é›™çµ•ã€‚\n");
 
-        message_vision(RED "$NÒ»ÉùÇåÐ¥£¬È­½ÅÆëÊ©£¬Ê¹³öÀ¥ÂØ¾øÑ§¡¸È­ÍÈË«¾ø¡¹Ñ¸½ÝÎÞÂ×µØ¹¥Ïò$n£¡\n"NOR,me, target);
+        message_vision(RED "$Nä¸€è²æ¸…å˜¯ï¼Œæ‹³è…³é½Šæ–½ï¼Œä½¿å‡ºæ˜†ä¾–çµ•å­¸ã€Œæ‹³è…¿é›™çµ•ã€è¿…æ·ç„¡å€«åœ°æ”»å‘$nï¼\n"NOR,me, target);
           addn("neili", -400, me);
                  addn_temp("apply/str", y, me);
                  addn_temp("apply/attack", y, me);

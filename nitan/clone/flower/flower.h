@@ -15,13 +15,13 @@ int do_check()
         {
                 if(query("flower_aroma")>3)
                 {
-                        message_vision("$NÉíÉÏµÄ$nÒÑ¿İÎ®ÁË¡£\n", this_player(),this_object());        
+                        message_vision("$Nèº«ä¸Šçš„$nå·²æ¯èäº†ã€‚\n", this_player(),this_object());        
                         destruct(this_object());
                         return 1;
                 }
                 if((string)file_name(environment(env))!="/d/city/huadian")
                 {
-                        message_vision("$NÉíÉÏµÄ$n´«³öÒ»ÕóÕóÃÔÈËµÄÓÄÏã¡£\n", env,this_object());                
+                        message_vision("$Nèº«ä¸Šçš„$nå‚³å‡ºä¸€é™£é™£è¿·äººçš„å¹½é¦™ã€‚\n", env,this_object());                
                         addn("flower_aroma",1);
                 }
                 remove_call_out("do_check");
@@ -30,7 +30,7 @@ int do_check()
         }
         else 
         {
-                message_vision("Ò»Õó·ç´µÀ´£¬½«$N´µ×ßÁË¡£\n", this_object());        
+                message_vision("ä¸€é™£é¢¨å¹ä¾†ï¼Œå°‡$Nå¹èµ°äº†ã€‚\n", this_object());        
                 destruct(this_object());
                 return 1;
         }

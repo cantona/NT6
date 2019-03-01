@@ -1,4 +1,4 @@
-// datang1.c ����һ��
+// datang1.c 大堂一進
 // Winder Oct.10 1998
 
 #include <ansi.h>
@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����һ��");
+        set("short", "大堂一進");
         set("long", @LONG
-�����Ǵ��ã���ȫ��̽Ӵ����˵ĵط����úܴ󣬼�ʮ������һ
-���ſ�Ҳ˿������ӵ�������������������ש��������ͯ��æǰæ��
-�ض˲���ˮ�к����ˡ�
+這裡是大堂，是全真教接待客人的地方。堂很大，幾十張桌椅一
+字排開也絲毫不顯擁擠。地下舖著整齊的青磚，幾名道童正忙前忙後
+地端茶送水招呼客人。
 LONG
         );
         set("exits", ([

@@ -3,10 +3,10 @@
 inherit BUILD_ROOM;
 void create()
 {
-        set("short", "ɽ·");
+        set("short", "山路");
         set("long", @LONG
-�����������С·�ϣ�������;ɽ����Ӱ��������У���ʯ�߲���
-�����е��ػ��泩�����ϱ㵽�������á����¾͵���������
+走在這彎彎的小路上，看著沿途山峰雲影，鬆竹青蔥，巖石斑駁。
+不禁感到胸懷舒暢。西上便到了上天竺。東下就到了龍井。
 LONG);
         set("exits", ([
             "westup"   : __DIR__"faxisi",

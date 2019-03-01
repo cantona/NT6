@@ -1,17 +1,17 @@
-// green-cloth.c ÂÌÉ«Ê¥ÒÂ
+// green-cloth.c ç¶ è‰²è–è¡£
 #include <armor.h>
 #include <ansi.h>
 inherit CLOTH;
 
 void create()
 {
-        set_name(GRN"ÂÌÉ«Ê¥ÒÂ"NOR, ({ "cloth" }) );
+        set_name(GRN"ç¶ è‰²è–è¡£"NOR, ({ "cloth" }) );
         set_weight(3000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long","ÕâÊÇÒ»¼şĞå×ÅºìÉ«»ğÑæµÄÂÌÉ«Ê¥ÒÂ¡£\n");
-                set("unit", "¼ş");
+                set("long","é€™æ˜¯ä¸€ä»¶ç¹¡è‘—ç´…è‰²ç«ç‡„çš„ç¶ è‰²è–è¡£ã€‚\n");
+                set("unit", "ä»¶");
                 set("material", "cloth");
                 set("armor_prop/armor", 10);
         }

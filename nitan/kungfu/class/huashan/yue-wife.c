@@ -1,5 +1,5 @@
 // This program is a part of NITAN MudLIB
-// yue-wife.c ÔÀ·òÈË
+// yue-wife.c å²³å¤«äºº
 
 inherit NPC;
 inherit F_MASTER;
@@ -9,13 +9,13 @@ inherit F_QUESTER;
 
 void create()
 {
-        set_name("ÄşÖĞÔò", ({ "ning zhongze", "ning", "zhongzhe", "yue wife" }) );
-        set("nickname", "ÊçÅ®½£");
-        set("gender", "Å®ĞÔ");
+        set_name("å¯§ä¸­å‰‡", ({ "ning zhongze", "ning", "zhongzhe", "yue wife" }) );
+        set("nickname", "æ·‘å¥³åŠ");
+        set("gender", "å¥³æ€§");
         set("class", "swordsman");
         set("age", 50);
-        set("long", "ÔÀ·òÈËÔ­ĞÕÄş£¬¹ëÃûÄşÖĞÔò£¬"
-                    "ÊÇÔÀ²»ÈºµÄÊ¦ÃÃ£¬Ò²ÊÇËûµÄÆŞ×Ó¡£\n");
+        set("long", "å²³å¤«äººåŸå§“å¯§ï¼Œé–¨åå¯§ä¸­å‰‡ï¼Œ"
+                    "æ˜¯å²³ä¸ç¾¤çš„å¸«å¦¹ï¼Œä¹Ÿæ˜¯ä»–çš„å¦»å­ã€‚\n");
         set("attitude", "peaceful");
         set("shen_type", 1);
 
@@ -72,7 +72,7 @@ void create()
         set_temp("apply/unarmed_damage", 150);
         set_temp("apply/armor", 600);
 
-        create_family("»ªÉ½ÅÉ", 13, "ÕÆÃÅ·òÈË");
+        create_family("è¯å±±æ´¾", 13, "æŒé–€å¤«äºº");
 
         set("chat_chance_combat", 120);
         set("chat_msg_combat", ({
@@ -94,11 +94,11 @@ void attempt_apprentice(object ob)
 {
         if( query("apprentice_available") ) {
                 if( find_call_out("do_recruit") != -1 )
-                        command("say ÂıÖø£¬Ò»¸öÒ»¸öÀ´¡£");
+                        command("say æ…¢è‘—ï¼Œä¸€å€‹ä¸€å€‹ä¾†ã€‚");
                 else
                         call_out("do_recruit", 2, ob);
         } else {
-                command("say ½ñÌìºÃÀÛÓ´¡£");
+                command("say ä»Šå¤©å¥½ç´¯å–²ã€‚");
         }
 }
 
@@ -107,31 +107,31 @@ void do_recruit(object ob)
         if (! permit_recruit(ob))
                 return;
 
-        if( query("gender", ob) != "Å®ĞÔ" )
+        if( query("gender", ob) != "å¥³æ€§" )
         {
-                command("say ÕâÎ»" + RANK_D->query_respect(ob) + "Äã»¹ÊÇÕÒÎÒÊ¦¸çÈ¥°É.");
+                command("say é€™ä½" + RANK_D->query_respect(ob) + "ä½ é‚„æ˜¯æ‰¾æˆ‘å¸«å“¥å»å§.");
                 return;
         }
 
         if( query("shen", ob)<20000 )
         {
-                command("say ÄãĞĞÏÀÕÌÒåµÄÊÂ»¹×öµÃ²»¹»£¬ÎÒ»¹²»ÄÜÊÕÄã£¡");
+                command("say ä½ è¡Œä¿ ä»—ç¾©çš„äº‹é‚„åšå¾—ä¸å¤ ï¼Œæˆ‘é‚„ä¸èƒ½æ”¶ä½ ï¼");
                 return;
         }
 
         if (ob->query_skill("huashan-neigong", 1) < 140)
         {
-                command("say ÎÒ»ªÉ½ÅÉÒÔĞŞÆøÎªÖ÷£¬ÄãÁ¬±¾ÃÅÄÚ¹¦¶¼»¹²»ÊìÁ·£¬ÎÒ²»ÄÜÊÕÄã£¡");
+                command("say æˆ‘è¯å±±æ´¾ä»¥ä¿®æ°£ç‚ºä¸»ï¼Œä½ é€£æœ¬é–€å…§åŠŸéƒ½é‚„ä¸ç†Ÿç·´ï¼Œæˆ‘ä¸èƒ½æ”¶ä½ ï¼");
                 return;
         }
 
         if (ob->query_skill("huashan-sword", 1) < 140)
         {
-                command("say Äã»ªÉ½½£·¨»¹²»¹»ÊìÁ·£¬ÏÂÈ¥¶àÁ·Ï°Á·Ï°ÔÙÀ´ÕÒÎÒ°É£¡");
+                command("say ä½ è¯å±±åŠæ³•é‚„ä¸å¤ ç†Ÿç·´ï¼Œä¸‹å»å¤šç·´ç¿’ç·´ç¿’å†ä¾†æ‰¾æˆ‘å§ï¼");
                 return;
         }
 
-        command("say Î¢Ğ¦µÀ£ººÃ£¬ºÃ£¬Ö»ÒªÄãÓÃĞÄÑ§£¬ËûÈÕ±ØÓĞ³É¾Í¡£");
+        command("say å¾®ç¬‘é“ï¼šå¥½ï¼Œå¥½ï¼Œåªè¦ä½ ç”¨å¿ƒå­¸ï¼Œä»–æ—¥å¿…æœ‰æˆå°±ã€‚");
         command("recruit "+query("id", ob));
 }
 
@@ -151,16 +151,16 @@ int accept_ask(object me, string topic)
 {
         switch (topic)
         {
-        case "ÀúÁ·" :
-        case "ÀúÁ¶" :
-        case "¶ÍÁ¶" :
+        case "æ­·ç·´" :
+        case "æ­·ç…‰" :
+        case "é›ç…‰" :
                 return QUEST_D->accept_ask(this_object(), me, topic);
                 break;
 
-        case "ÄşÊÏÒ»½£" :
+        case "å¯§æ°ä¸€åŠ" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/yunu-sword/ning",
-                           "name"    : "ÄşÊÏÒ»½£",
+                           "name"    : "å¯§æ°ä¸€åŠ",
                            "sk1"     : "yunu-sword",
                            "lv1"     : 100,
                            "sk2"     : "force",
@@ -171,10 +171,10 @@ int accept_ask(object me, string topic)
                            "shen"    : 30000, ]));
                 break;
 
-        case "ÎŞË«ÎŞ¶Ô" :
+        case "ç„¡é›™ç„¡å°" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/yunu-sword/wushuang",
-                           "name"    : "ÎŞË«ÎŞ¶Ô",
+                           "name"    : "ç„¡é›™ç„¡å°",
                            "sk1"     : "yunu-sword",
                            "lv1"     : 100,
                            "sk2"     : "force",

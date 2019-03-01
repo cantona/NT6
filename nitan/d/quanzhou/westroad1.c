@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��ͩ��·");
+        set("short", "刺桐西路");
         set("long", @LONG
-����Ȫ�ݵ���Ҫ�ɵ�����ֱ���㣬��ˮ���������ַǷ������߱���
-�����Ŀ�Ԫ�¼����ŵ��š�������һ���ӻ��̡�
+這是泉州的主要幹道，筆直寬廣，車水馬龍，熱鬧非凡。西邊便是
+著名的開元寺及西門吊橋。北邊有一家雜貨舖。
 LONG );
         set("outdoors", "quanzhou");
         set("no_clean_up", 0);

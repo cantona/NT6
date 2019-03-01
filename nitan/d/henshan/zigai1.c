@@ -2,9 +2,9 @@ inherit ROOM;
 
 void create()
 {
-        set("short","ˮ������");
+        set("short","水蓮洞內");
         set("long", @LONG
-����һƬ��ڣ�ʲô����������ֻ����ˮ�ε�������
+這裡一片漆黑，什麼都看不見，只聽見水滴的聲音。
 LONG );
         set("exits",([
                "east" :__DIR__"inhole2",           
@@ -25,9 +25,9 @@ void init()
                if (present("fire", me))
                {
                        set("long", @LONG
-Խ�������ߵ�·Խ����խ������Ҳ��һ˿����Ҳ�䲻������
-���û�л��۵Ļ��������Ǵ粽���С���֪������·��ͨ��ʲ
-ô�ط�����ֻ������������ɪɪ�����ɵش��˸�������
+越往裡面走道路越是狹窄，洞裡也是一絲陽光也射不進來，
+如果沒有火折的話，恐怕是寸步難行。不知道這條路是通向什
+麼地方，你只覺得這裡陰風瑟瑟，不由地打了個寒顫。
 LONG);
                        set("exits/west",__DIR__"zigai4",);
                }

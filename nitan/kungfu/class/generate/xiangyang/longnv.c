@@ -6,13 +6,13 @@ void create()
 {
         object ob;
 
-        set_name("Ğ¡ÁúÅ®", ({ "xiao longnv", "xiao", "longnv" }));
-        set("gender", "Å®ĞÔ");
+        set_name("å°é¾å¥³", ({ "xiao longnv", "xiao", "longnv" }));
+        set("gender", "å¥³æ€§");
         set("age", 22);
         set("long", @LONG
-ËıÒ»Éú°®´©°×ÒÂ£¬µ±ÕæÈç·ç·÷ÓñÊ÷£¬Ñ©¹üÇí°ú£¬
-¼æÖ®ÉúĞÔÇåÀä£¬Êµµ±µÃÆğ¡°Àä½şÈÜÈÜÔÂ¡±µÄĞÎ
-Èİ¡£
+å¥¹ä¸€ç”Ÿæ„›ç©¿ç™½è¡£ï¼Œç•¶çœŸå¦‚é¢¨æ‹‚ç‰æ¨¹ï¼Œé›ªè£¹ç“Šè‹ï¼Œ
+å…¼ä¹‹ç”Ÿæ€§æ¸…å†·ï¼Œå¯¦ç•¶å¾—èµ·â€œå†·æµ¸æº¶æº¶æœˆâ€çš„å½¢
+å®¹ã€‚
 LONG);
         set("attitude", "friendly");
         set("str", 21);
@@ -67,7 +67,7 @@ LONG);
         prepare_skill("strike", "tianluo-diwang");
         prepare_skill("unarmed", "meinv-quan");
 
-        create_family("¹ÅÄ¹ÅÉ", 3, "µÜ×Ó");
+        create_family("å¤å¢“æ´¾", 3, "å¼Ÿå­");
 
 
         set_temp("apply/attack", 150);
@@ -109,7 +109,7 @@ void unconcious()
 
 void die_msg()
 {
-        command("chat ¹ı¶ù ¡­¡­");
+        command("chat éå…’ â€¦â€¦");
         destruct(this_object());
 }
 

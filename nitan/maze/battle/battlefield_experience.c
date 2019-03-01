@@ -6,7 +6,7 @@
 inherit CONDITION_MOD;
 
 string id               = "battlefield-experience";
-string name     = HIC"ÎŞÖ¹¾¡µÄ"NOR CYN"Õ½ÕùÀúÁ·"NOR;
+string name     = HIC"ç„¡æ­¢ç›¡çš„"NOR CYN"æˆ°çˆ­æ­·ç·´"NOR;
 string type     = CONDITION_TYPE_POSITIVE;
 int time                = 300;
 int heartbeat   = 0;
@@ -54,7 +54,7 @@ int get_abi_value(int value)
 }
 
 
-// Æô¶¯×´Ì¬Ê±µÄĞ§¹û
+// å•Ÿå‹•ç‹€æ…‹æ™‚çš„æ•ˆæœ
 
 void start_effect(object ob)
 {
@@ -68,13 +68,13 @@ void start_effect(object ob)
         ::start_effect(ob);
 }
 
-// ½áÊø×´Ì¬Ê±µÄĞ§¹û
+// çµæŸç‹€æ…‹æ™‚çš„æ•ˆæœ
 void stop_effect(object ob)
 {
         ::stop_effect(ob);
 }
 
-// ×´Ì¬½øĞĞÖĞµÄĞ§¹û
+// ç‹€æ…‹é€²è¡Œä¸­çš„æ•ˆæœ
 void heart_beat_effect(object ob)
 {
 

@@ -7,9 +7,9 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("ÒÇºÍ", ({ "yi he", "he" }) );
-        set("long", "ËıÊÇÒ»Î»ÖĞÄêÅ®Äá£¬Ëı¿´ÆğÀ´²»±°²»¿º£¬Ê®·Ö³Á×ÅÀÏÁ·¡£\n");
-        set("gender", "Å®ĞÔ");
+        set_name("å„€å’Œ", ({ "yi he", "he" }) );
+        set("long", "å¥¹æ˜¯ä¸€ä½ä¸­å¹´å¥³å°¼ï¼Œå¥¹çœ‹èµ·ä¾†ä¸å‘ä¸äº¢ï¼Œååˆ†æ²‰è‘—è€ç·´ã€‚\n");
+        set("gender", "å¥³æ€§");
         set("class", "bonze");
         set("age", 35);
         set("attitude", "peaceful");
@@ -62,7 +62,7 @@ void create()
                 (: exert_function, "recover" :),
         }) );
 
-        create_family("ºãÉ½ÅÉ", 14, "µÜ×Ó");
+        create_family("æ†å±±æ´¾", 14, "å¼Ÿå­");
         setup();
 
         carry_object("/clone/weapon/changjian")->wield();
@@ -74,25 +74,25 @@ void attempt_apprentice(object ob)
         if (! permit_recruit(ob))
                 return;
 
-        if( query("combat_exp", ob)>10000 && query("family/family_name", ob) != "ºãÉ½ÅÉ" )
+        if( query("combat_exp", ob)>10000 && query("family/family_name", ob) != "æ†å±±æ´¾" )
         {
-                command("say ÎÒºãÉ½ÅÉ×¢ÖØÇåĞŞ£¬¶ÔµÜ×ÓÒªÇóÄÜÈÌÊÜ¼ÅÄ¯¡£");
-                command("say ÔÚ½­ºşÔÄÀú·½Ãæ£¬" + RANK_D->query_respect(ob) +
-                        "¾­Àú·á¸»£¬ÊÇ·ñÄÜÔÚºãÉ½ĞŞµÀ£¿");
+                command("say æˆ‘æ†å±±æ´¾æ³¨é‡æ¸…ä¿®ï¼Œå°å¼Ÿå­è¦æ±‚èƒ½å¿å—å¯‚å¯ã€‚");
+                command("say åœ¨æ±Ÿæ¹–é–±æ­·æ–¹é¢ï¼Œ" + RANK_D->query_respect(ob) +
+                        "ç¶“æ­·è±å¯Œï¼Œæ˜¯å¦èƒ½åœ¨æ†å±±ä¿®é“ï¼Ÿ");
                 return;
         }
         if( query("shen", ob)<0 )
         {
-                command("say ÎÒºãÉ½ÄËÊÇÌÃÌÃÎåÔÀ½£ÅÉÖ®Ò»£¬¶ÔµÜ×ÓÒªÇó¼«ÑÏ¡£");
-                command("say ÔÚµÂĞĞ·½Ãæ£¬" + RANK_D->query_respect(ob) +
-                        "ÊÇ·ñ»¹×öµÃ²»¹»£¿");
+                command("say æˆ‘æ†å±±ä¹ƒæ˜¯å ‚å ‚äº”å²³åŠæ´¾ä¹‹ä¸€ï¼Œå°å¼Ÿå­è¦æ±‚æ¥µåš´ã€‚");
+                command("say åœ¨å¾·è¡Œæ–¹é¢ï¼Œ" + RANK_D->query_respect(ob) +
+                        "æ˜¯å¦é‚„åšå¾—ä¸å¤ ï¼Ÿ");
                 return;
         }
-        if( query("gender", ob) != "Å®ĞÔ" )
+        if( query("gender", ob) != "å¥³æ€§" )
         {
-                command("say ÎÒºãÉ½Ö»ÊÕÅ®Í½¡£");
+                command("say æˆ‘æ†å±±åªæ”¶å¥³å¾’ã€‚");
                 return;
         }
-        command("say ºÃ°É£¬ÎÒ¾ÍÊÕÏÂÄãÁË¡£");
+        command("say å¥½å§ï¼Œæˆ‘å°±æ”¶ä¸‹ä½ äº†ã€‚");
         command("recruit "+query("id", ob));
 }

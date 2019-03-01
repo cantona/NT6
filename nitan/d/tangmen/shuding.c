@@ -9,13 +9,13 @@ inherit ROOM;
 void create()
 {        
         seteuid(getuid());
-        set("short", "Ê÷¶¥");
+        set("short", "æ¨¹é ‚");
         set("long",
-"ÕâÊÇÍòÄê¹ÅËÉµÄÊ÷¶¥¡£µ±Äê×æÊ¦Ò¯£¿£¿£¿ÔøÔÚÕâÀïÈÕ¹ÛÔÆ¶¯£¬Ò¹¹ÛĞÇ\n"
-"±ä£¬×îÖÕÎò³öÁË£¿£¿£¿£¿µÄÌÆÃÅ¾øÑ§£¬Òò´ËºÜ¶àµÜ×Ó³£³£ÔÚÕâÀïÈÕÒ¹¾²×ø¡£\n"
+"é€™æ˜¯è¬å¹´å¤é¬†çš„æ¨¹é ‚ã€‚ç•¶å¹´ç¥–å¸«çˆºï¼Ÿï¼Ÿï¼Ÿæ›¾åœ¨é€™è£¡æ—¥è§€é›²å‹•ï¼Œå¤œè§€æ˜Ÿ\n"
+"è®Šï¼Œæœ€çµ‚æ‚Ÿå‡ºäº†ï¼Ÿï¼Ÿï¼Ÿï¼Ÿçš„å”é–€çµ•å­¸ï¼Œå› æ­¤å¾ˆå¤šå¼Ÿå­å¸¸å¸¸åœ¨é€™è£¡æ—¥å¤œéœåã€‚\n"
 );        
         set("item_desc", ([
-                "down" : "Ò»ÑÛÍûÈ¥Ö»¼û°×ÔÆÆ¬Æ¬£¬ÓÌÈçÃŞĞõ°ãÇáÈá£¬Ëæ×ÅÉ½·çÆ®À´Æ®È¥¡£\n",
+                "down" : "ä¸€çœ¼æœ›å»åªè¦‹ç™½é›²ç‰‡ç‰‡ï¼ŒçŒ¶å¦‚æ£‰çµ®èˆ¬è¼•æŸ”ï¼Œéš¨è‘—å±±é¢¨é£„ä¾†é£„å»ã€‚\n",
         ]));
 
         set("area", "tangmen");
@@ -37,7 +37,7 @@ int do_wu(string arg)
         int d_skill, f_skill;
 
         me = this_player();
-        cost=20+(30-query("int", me))/2;//Ô­Ê¼ÖµÎª15+¡£¼Ó´óµãÄÑ¶È
+        cost=20+(30-query("int", me))/2;//åŸå§‹å€¼ç‚º15+ã€‚åŠ å¤§é»é›£åº¦
         c_exp=query("combat_exp", me);
         d_skill = (int)me->query_skill("dodge",1); 
         f_skill = (int)me->query_skill("finger",1); 
@@ -46,37 +46,37 @@ int do_wu(string arg)
                 cost = 0;
 
         if ( 25 - (int)me->query_int() > 0 )
-             return notify_fail("ÒÔÄãÄ¿Ç°µÄÎòĞÔ£¬¿ÖÅÂ²»»áÁìÎòµ½Ê²Ã´¡£\n");
+             return notify_fail("ä»¥ä½ ç›®å‰çš„æ‚Ÿæ€§ï¼Œææ€•ä¸æœƒé ˜æ‚Ÿåˆ°ä»€éº¼ã€‚\n");
 
         if( !me->query_skill("literate", 1) )
-                return notify_fail("ÄãÊÇ¸öÎÄÃ¤£¬ÏÈÑ§µãÎÄ»¯(literate)°É¡£\n");
+                return notify_fail("ä½ æ˜¯å€‹æ–‡ç›²ï¼Œå…ˆå­¸é»æ–‡åŒ–(literate)å§ã€‚\n");
 
         if ( me->is_busy() )
-                return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£å¿™è‘—å‘¢ã€‚\n");
 
         if( me->is_fighting() )
-                return notify_fail("ÄãÎŞ·¨ÔÚÕ½¶·ÖĞ¾²ĞÄÁìÎò£¡\n");
+                return notify_fail("ä½ ç„¡æ³•åœ¨æˆ°é¬¥ä¸­éœå¿ƒé ˜æ‚Ÿï¼\n");
         if ( arg == "yun")
         {
                 if( (int)me->query_skill("dodge", 1) < 51 )
-                        return notify_fail("ÄãÈÕ¹ÛÔÆ±ä£¬µ«ÊÇÈ´ÎŞ·¨´ÓÖĞÁìÎòÊ²Ã´¡£\n");
+                        return notify_fail("ä½ æ—¥è§€é›²è®Šï¼Œä½†æ˜¯å»ç„¡æ³•å¾ä¸­é ˜æ‚Ÿä»€éº¼ã€‚\n");
 
                 if( (int)me->query_skill("dodge", 1) > 201 )
-                        return notify_fail("ÄãÈÕ¹ÛÔÆ±ä£¬×Ô¾õÒ»ÇĞ±ä»¯¶¼ÒÑÊì¼ÇÓÚĞÄ¡£\n");
+                        return notify_fail("ä½ æ—¥è§€é›²è®Šï¼Œè‡ªè¦ºä¸€åˆ‡è®ŠåŒ–éƒ½å·²ç†Ÿè¨˜äºå¿ƒã€‚\n");
 
                 if( d_skill*d_skill*d_skill/10 > c_exp )
-                                      return notify_fail("Äã¾²¹ÛÌì±ä£¬µ«ÓÉÓÚÊµÕ½¾­Ñé²»×ãÃ»ÓĞÁìÎòµ½Ê²Ã´¡£\n"); 
+                                      return notify_fail("ä½ éœè§€å¤©è®Šï¼Œä½†ç”±äºå¯¦æˆ°ç¶“é©—ä¸è¶³æ²’æœ‰é ˜æ‚Ÿåˆ°ä»€éº¼ã€‚\n"); 
 
                 if( query("jingli", me)>cost )
                 {
-                        tell_object(me, "ÄãÅÌÏ¥×øÏÂ¾²¹ÛÍ·¶¥¸¡ÔÆËæ·çÆ®¶¯£¬ºÁÎŞ×Ù¼£¿ÉÑ°¡£\nÄã¶Ô»ù±¾Éí·¨ÓĞÁË½øÒ»²½ÈÏÊ¶¡£\n");
+                        tell_object(me, "ä½ ç›¤è†åä¸‹éœè§€é ­é ‚æµ®é›²éš¨é¢¨é£„å‹•ï¼Œæ¯«ç„¡è¹¤è·¡å¯å°‹ã€‚\nä½ å°åŸºæœ¬èº«æ³•æœ‰äº†é€²ä¸€æ­¥èªè­˜ã€‚\n");
                         me->improve_skill("dodge", random( (int)me->query_skill("literate", 1) / 2 ) + 20 );
                         addn("jingli", -cost, me);
                 }
                 else
                 {
                         if( query("jingli", me) <= cost )
-                                write("ÄãÏÖÔÚ¹ıÓÚÆ£¾ë£¬ÎŞ·¨¾²ÏÂĞÄÀ´ÁìÎò¡£\n");
+                                write("ä½ ç¾åœ¨éäºç–²å€¦ï¼Œç„¡æ³•éœä¸‹å¿ƒä¾†é ˜æ‚Ÿã€‚\n");
                 }
                 return 1;
         }
@@ -84,24 +84,24 @@ int do_wu(string arg)
                 if ( arg == "xing")
                 {
                         if( (int)me->query_skill("finger", 1) < 51 )
-                                return notify_fail("ÄãÒ¹¹ÛĞÇ±ä£¬µ«ÊÇÈ´ÎŞ·¨´ÓÖĞÁìÎòÊ²Ã´¡£\n");
+                                return notify_fail("ä½ å¤œè§€æ˜Ÿè®Šï¼Œä½†æ˜¯å»ç„¡æ³•å¾ä¸­é ˜æ‚Ÿä»€éº¼ã€‚\n");
         
                         if( (int)me->query_skill("finger", 1) > 201 )
-                                return notify_fail("ÄãÒ¹¹ÛĞÇ±ä£¬×Ô¾õÒ»ÇĞ±ä»¯¶¼ÒÑÊì¼ÇÓÚĞÄ¡£\n");
+                                return notify_fail("ä½ å¤œè§€æ˜Ÿè®Šï¼Œè‡ªè¦ºä¸€åˆ‡è®ŠåŒ–éƒ½å·²ç†Ÿè¨˜äºå¿ƒã€‚\n");
 
                         if( f_skill*d_skill*d_skill/10 > c_exp )
-                                      return notify_fail("Äã¾²¹ÛÌì±ä£¬µ«ÓÉÓÚÊµÕ½¾­Ñé²»×ãÃ»ÓĞÁìÎòµ½Ê²Ã´¡£\n"); 
+                                      return notify_fail("ä½ éœè§€å¤©è®Šï¼Œä½†ç”±äºå¯¦æˆ°ç¶“é©—ä¸è¶³æ²’æœ‰é ˜æ‚Ÿåˆ°ä»€éº¼ã€‚\n"); 
         
                         if( query("jingli", me)>cost )
                         {
-                                tell_object(me, "ÄãÅÌÏ¥×øÏÂ¾²¹ÛÍ·¶¥Ã÷ĞÇÉÁË¸£¬ºö¾²ºö¶¯¡£\nÄã¶Ô»ù±¾ÊÖ·¨ÓĞÁË½øÒ»²½ÈÏÊ¶¡£\n");
+                                tell_object(me, "ä½ ç›¤è†åä¸‹éœè§€é ­é ‚æ˜æ˜Ÿé–ƒçˆï¼Œå¿½éœå¿½å‹•ã€‚\nä½ å°åŸºæœ¬æ‰‹æ³•æœ‰äº†é€²ä¸€æ­¥èªè­˜ã€‚\n");
                                 me->improve_skill("finger", random( (int)me->query_skill("literate", 1) / 2 ) + 20 );
                                 addn("jingli", -cost, me);
                         }
                         else
                         {
                                 if( query("jingli", me) <= cost )
-                                        write("ÄãÏÖÔÚ¹ıÓÚÆ£¾ë£¬ÎŞ·¨¾²ÏÂĞÄÀ´ÁìÎò¡£\n");
+                                        write("ä½ ç¾åœ¨éäºç–²å€¦ï¼Œç„¡æ³•éœä¸‹å¿ƒä¾†é ˜æ‚Ÿã€‚\n");
                         }
                         return 1;
                 }
@@ -116,10 +116,10 @@ int do_climb(string arg)
 
         if ( arg && arg == "down" )
         {
-                message_vision(HIC "$NÅÊ×Å·±Ã¯µÄÊ÷Ö¦Ò»²½²½ÅÀÁËÏÂÈ¥¡£\n" NOR, ob);
+                message_vision(HIC "$Næ”€è‘—ç¹èŒ‚çš„æ¨¹æä¸€æ­¥æ­¥çˆ¬äº†ä¸‹å»ã€‚\n" NOR, ob);
                 ob->move(__DIR__"shugan3");
                 return 1;
         }
         else
-                return notify_fail("ÄãÒªÏòÄÄÀïÅÀ£¿\n");
+                return notify_fail("ä½ è¦å‘å“ªè£¡çˆ¬ï¼Ÿ\n");
 }

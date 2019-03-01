@@ -1,4 +1,4 @@
-//jingshi2.c                ËÄ´¨ÌÆÃÅ¡ª¾²ÊÒ
+//jingshi2.c                å››å·å”é–€â”€éœå®¤
 
 #include <ansi.h>
 #include <room.h>
@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "¾²ÊÒ");
+        set("short", "éœå®¤");
         set("long",
-"ÕâÊÇÒ»¼ä¾²ÊÒ¡£ÕâÀïÊÇÌÆÃÅµÜ×ÓÍÂÄÉ¡¢´ò×øµÄµØ·½£¬ÕâÀï·Ç³£°²¾²£¬\n"
-"Ã»ÓÐÒ»Ë¿ÉùÒô¡£ÎÝÖÐÃ»ÓÐÈÎºÎ°ÚÉè£¬Ö»ÊÇÔÚµØÉÏÈÓ×ÅÊ®¼¸¸öÆÑÍÅÓÐ¼¸ÃûµÜ\n"
-"×ÓÕýÅÌ×øÔÚÉÏÃæÓÃÐÄÁ·¹¦¡£\n"
+"é€™æ˜¯ä¸€é–“éœå®¤ã€‚é€™è£¡æ˜¯å”é–€å¼Ÿå­åç´ã€æ‰“åçš„åœ°æ–¹ï¼Œé€™è£¡éžå¸¸å®‰éœï¼Œ\n"
+"æ²’æœ‰ä¸€çµ²è²éŸ³ã€‚å±‹ä¸­æ²’æœ‰ä»»ä½•æ“ºè¨­ï¼Œåªæ˜¯åœ¨åœ°ä¸Šæ‰”è‘—åå¹¾å€‹è’²åœ˜æœ‰å¹¾åå¼Ÿ\n"
+"å­æ­£ç›¤ååœ¨ä¸Šé¢ç”¨å¿ƒç·´åŠŸã€‚\n"
 );
         set("no_steal", "1");
         set("no_fight", "1");

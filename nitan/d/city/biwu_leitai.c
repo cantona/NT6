@@ -6,11 +6,11 @@ int do_look(string arg);
 
 void create()
 {
-    set("short", HIY"ÀŞÌ¨"NOR);
+    set("short", HIY"æ“‚å°"NOR);
         set("long", @LONG
-ÕâÊÇÒ»¸öËÄ·½µÄ´óÀŞÌ¨£¬ÀŞÌ¨±±Ãæ¹Ò×ÅÒ»ÕÅºñºñµÄ²¼Á±×Ó£¬Äã¸Ğ
-¾õµ½Ò»¹ÉÅ¨ºñµÄÉ±Æø´Ó²¼Á±ºóÉ¢·¢³öÀ´£¬ÃÖÂşÔÚ¿ÕÆøÀï£¬Ö±×êÈëÄãÄÚ
-ĞÄ¡£
+é€™æ˜¯ä¸€å€‹å››æ–¹çš„å¤§æ“‚å°ï¼Œæ“‚å°åŒ—é¢æ›è‘—ä¸€å¼µåšåšçš„å¸ƒç°¾å­ï¼Œä½ æ„Ÿ
+è¦ºåˆ°ä¸€è‚¡æ¿ƒåšçš„æ®ºæ°£å¾å¸ƒç°¾å¾Œæ•£ç™¼å‡ºä¾†ï¼Œå½Œæ¼«åœ¨ç©ºæ°£è£¡ï¼Œç›´é‘½å…¥ä½ å…§
+å¿ƒã€‚
 LONG );
 
     set("no_beg",1);
@@ -38,7 +38,7 @@ int do_get()
     me = this_player();
     if (wizardp(me)) return 0;
 
-    tell_object(me,"ÔÚÕâÀïÄãÏë¸ÉÊ²Ã´£¿\n");
+    tell_object(me,"åœ¨é€™è£¡ä½ æƒ³å¹¹ä»€éº¼ï¼Ÿ\n");
     return 1;
 }
 
@@ -48,7 +48,7 @@ int do_drop()
     me = this_player();
     if (wizardp(me)) return 0;
 
-    tell_object(me,"ÔÚÕâÀïÄãÏë¸ÉÊ²Ã´£¿\n");
+    tell_object(me,"åœ¨é€™è£¡ä½ æƒ³å¹¹ä»€éº¼ï¼Ÿ\n");
     return 1;
 }
 
@@ -58,7 +58,7 @@ int do_put()
     me = this_player();
     if (wizardp(me)) return 0;
 
-    tell_object(me,"ÔÚÕâÀïÄãÏë¸ÉÊ²Ã´£¿\n");
+    tell_object(me,"åœ¨é€™è£¡ä½ æƒ³å¹¹ä»€éº¼ï¼Ÿ\n");
     return 1;
 }
 
@@ -68,6 +68,6 @@ int do_summon()
     me = this_player();
     if (wizardp(me)) return 0;
 
-    tell_object(me,"ÔÚÕâÀïÄãÏë¸ÉÊ²Ã´£¿\n");
+    tell_object(me,"åœ¨é€™è£¡ä½ æƒ³å¹¹ä»€éº¼ï¼Ÿ\n");
     return 1;
 }

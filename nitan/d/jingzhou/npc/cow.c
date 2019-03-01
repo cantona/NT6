@@ -1,4 +1,4 @@
-// cow.c ´ó»ÆÅ£
+// cow.c å¤§é»ƒç‰›
 
 #include <command.h>
 #include <dbase.h>
@@ -9,9 +9,9 @@ inherit NPC;
 
 void create()
 {
-        set_name(HIY"´ó»Æ"NOR, ({ "cow" }));
-        set("long","Ò»Í·´ó»ÆÅ£¡£ËüºÃÏóÔÚÁ÷ÑÛÀá£¬Í¦Í¨ÈËĞÔµÄ¡£\n");
-        set("race", "×ßĞó");
+        set_name(HIY"å¤§é»ƒ"NOR, ({ "cow" }));
+        set("long","ä¸€é ­å¤§é»ƒç‰›ã€‚å®ƒå¥½è±¡åœ¨æµçœ¼æ·šï¼ŒæŒºé€šäººæ€§çš„ã€‚\n");
+        set("race", "èµ°ç•œ");
         set("age", 5);
         set("int", 30);
         set("qi", 300);

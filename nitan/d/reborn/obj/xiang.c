@@ -5,14 +5,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name(MAG "ÕÙÉñÏã" NOR, ({ "magic xiang" }) );
+        set_name(MAG "å¬ç¥é¦™" NOR, ({ "magic xiang" }) );
         set_weight(2000);
         if( clonep() ){
                 set_default_object(__FILE__);
         } else {
                 set("value", 10);
-                set("unit", "Ö§");
-                set("long", MAG "ÕâÊÇÒ»Ö§ÕÙÉñÏã£¬´«Ëµ¿ÉÒÔÔÚÎåÔÀ¼ÀÌ³ÄÇÀïÕÙ»½ÉñÏÉ³öÏÖ¡£\n" NOR);
+                set("unit", "æ”¯");
+                set("long", MAG "é€™æ˜¯ä¸€æ”¯å¬ç¥é¦™ï¼Œå‚³èªªå¯ä»¥åœ¨äº”å²³ç¥­å£‡é‚£è£¡å¬å–šç¥ä»™å‡ºç¾ã€‚\n" NOR);
         }
         setup();
 }
@@ -26,7 +26,7 @@ void start_borrowing()
 void destroy()
 {
         if (environment())
-                message("visoin", RED "ÕÙÉñÏã½¥½¥µÄÏ¨ÃğÁË£¬Ö»ÁôÏÂÁËÒ»µã»Ò½ı¡£\n" NOR,
+                message("visoin", RED "å¬ç¥é¦™æ¼¸æ¼¸çš„ç†„æ»…äº†ï¼Œåªç•™ä¸‹äº†ä¸€é»ç°ç‡¼ã€‚\n" NOR,
                         environment());
         destruct(this_object());
 }

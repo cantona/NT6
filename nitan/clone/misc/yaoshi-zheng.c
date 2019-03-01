@@ -3,19 +3,19 @@ inherit ITEM;
 
 void create()
 {
-        set_name(WHT "Á¶Ò©Ê¦Ö¤" NOR, ({ "yaoshi zheng", "yaoshi", "zheng" }));
+        set_name(WHT "ç…‰è—¥å¸«è¨¼" NOR, ({ "yaoshi zheng", "yaoshi", "zheng" }));
         set_weight(1);
         set("level", 1);
-        set("long", WHT "ÕâÊÇÒ»Ã¶ºìµ×½ğ±ßµÄÁ¶Ò©Ê¦Ö¤£¬µÈ¼¶ "+query("level")+" Æ·£¬ÓÉÁ¶Ò©Ê¦Ğ­»á°ä·¢¡£\n" NOR);
-        set("unit", "Ã¶");
+        set("long", WHT "é€™æ˜¯ä¸€æšç´…åº•é‡‘é‚Šçš„ç…‰è—¥å¸«è¨¼ï¼Œç­‰ç´š "+query("level")+" å“ï¼Œç”±ç…‰è—¥å¸«å”æœƒé ’ç™¼ã€‚\n" NOR);
+        set("unit", "æš");
         set("value", 5);
         set("material", "steal");
-        set("no_sell", "ÕâÄêÍ·£¬Äã°Ñ³Ô·¹µÄ¼Ò»ïÒ²ÄÃÀ´ÂôÇ®£¿");
+        set("no_sell", "é€™å¹´é ­ï¼Œä½ æŠŠåƒé£¯çš„å®¶ä¼™ä¹Ÿæ‹¿ä¾†è³£éŒ¢ï¼Ÿ");
         setup();
 }
 
 void enable()
 {
-        set_name(HIR+chinese_number(query("level"))+"Æ·" WHT "Á¶Ò©Ê¦Ö¤" NOR, ({ "yaoshi zheng", "yaoshi", "zheng" }));
-        set("long", WHT "ÕâÊÇÒ»Ã¶ºìµ×½ğ±ßµÄÁ¶Ò©Ê¦Ö¤£¬µÈ¼¶ "+query("level")+" Æ·£¬ÓÉÁ¶Ò©Ê¦Ğ­»á°ä·¢¡£\n" NOR);
+        set_name(HIR+chinese_number(query("level"))+"å“" WHT "ç…‰è—¥å¸«è¨¼" NOR, ({ "yaoshi zheng", "yaoshi", "zheng" }));
+        set("long", WHT "é€™æ˜¯ä¸€æšç´…åº•é‡‘é‚Šçš„ç…‰è—¥å¸«è¨¼ï¼Œç­‰ç´š "+query("level")+" å“ï¼Œç”±ç…‰è—¥å¸«å”æœƒé ’ç™¼ã€‚\n" NOR);
 }

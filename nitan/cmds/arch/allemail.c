@@ -21,20 +21,20 @@ int main(object me, string arg)
                 return 0;
 
         if (! arg)
-                return notify_fail("÷∏¡Ó∏Ò Ω£∫allemail <ÕÊº“ID> | -all\n");
+                return notify_fail("Êåá‰ª§Ê†ºÂºèÔºöallemail <Áé©ÂÆ∂ID> | -all\n");
 
         if (arg != "-all")
         {
                 string r;
                 r= examine_player(arg);
-                write("ºÏ≤ÈOK.\n");
+                write("Ê™¢Êü•OK.\n");
                 log_file("static/email", filter_color(r));
                 return 1;
         }
 
-         message_system("œµÕ≥Ω¯–– ˝æ›¥¶¿Ì÷–£¨«ÎƒÕ–ƒµ»∫Ú...\n");
-        write(HIG "œ÷‘⁄œµÕ≥Ω´ºÏ≤ÈÀ˘”–ÕÊº“£¨…‘∫Ûª„±®°£\n"
-              HIG "Ω¯∂»£∫" + process_bar(0) + "\n");
+         message_system("Á≥ªÁµ±ÈÄ≤Ë°åÊï∏ÊìöËôïÁêÜ‰∏≠ÔºåË´ãËÄêÂøÉÁ≠âÂÄô...\n");
+        write(HIG "ÁèæÂú®Á≥ªÁµ±Â∞áÊ™¢Êü•ÊâÄÊúâÁé©ÂÆ∂ÔºåÁ®çÂæåÂåØÂ†±„ÄÇ\n"
+              HIG "ÈÄ≤Â∫¶Ôºö" + process_bar(0) + "\n");
         if (me)
         {
                 me->attach_system();
@@ -77,8 +77,8 @@ void search_dir(object me, int raw)
                 }
                 total += j;
                 message("system", ESC + "[1A" + ESC + "[256D"
-                                  HIG "Ω¯∂»£∫" + process_bar((i + 1) * 100 / sizeof(dir)) +
-                                  "\n" + (me ? HIR "÷¥––÷–" NOR "> " : ""),
+                                  HIG "ÈÄ≤Â∫¶Ôºö" + process_bar((i + 1) * 100 / sizeof(dir)) +
+                                  "\n" + (me ? HIR "Âü∑Ë°å‰∏≠" NOR "> " : ""),
                                   me ? me : filter_array(all_interactive(), (: wizardp :)));
         }
 

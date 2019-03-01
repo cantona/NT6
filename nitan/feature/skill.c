@@ -279,14 +279,14 @@ int skill_death_penalty()
         sk = keys(skills);
         if( !mapp(learned) ) {
                 for( i = 0; i<sizeof(sk); i++ ) {
-	        	// ÃÅÅÉ¼¼ÄÜ²»¶ªÊ§
+	        	// é–€æ´¾æŠ€èƒ½ä¸ä¸Ÿå¤±
 	        	if( SKILL_D(sk[i])->is_fmsk() ) continue;
                         skills[sk[i]]--;
                         if( skills[sk[i]] < 1) map_delete(skills, sk[i]);
                 }
         } else {
                 for( i = 0; i<sizeof(sk); i++ ) {
-	        	// ÃÅÅÉ¼¼ÄÜ²»¶ªÊ§
+	        	// é–€æ´¾æŠ€èƒ½ä¸ä¸Ÿå¤±
 	        	if( SKILL_D(sk[i])->is_fmsk() ) continue;
                         if( (int)learned[sk[i]] > (skills[sk[i]]+1) * (skills[sk[i]]+1) / 2 )
                                 map_delete(learned, sk[i]);
@@ -318,7 +318,7 @@ int skill_expell_penalty()
                         continue;
                 }
 
-                // ×Ô´´µÄÎä¹¦²»½µµÍ
+                // è‡ªå‰µçš„æ­¦åŠŸä¸é™ä½Ž
                 if( SKILL_D(skname[i])->is_invent_skill() )
                         continue;
 
@@ -363,11 +363,11 @@ int can_improve_skill(string skill)
 
         switch( SKILL_D(skill)->type() ) {
         case "knowledge":
-                // ÖªÊ¶Àà¼¼ÄÜ
+                // çŸ¥è­˜é¡žæŠ€èƒ½
                 return 1;
 
         case "technic":
-                // ¼¼ÊõÀà¼¼ÄÜ
+                // æŠ€è¡“é¡žæŠ€èƒ½
                 return 1;
 
         case "martial":
@@ -433,8 +433,8 @@ varargs void improve_skill(string skill, int amount, int weak_mode)
             learned[skill] > (skills[skill] + 1) * (skills[skill] + 1) ) {
                 skills[skill]++;
                 learned[skill] = 0;
-                tell_object(this_object(), HIC "ÄãµÄ¡¸" + to_chinese(skill) +
-                            "¡¹½ø²½ÁË£¡\n" NOR);
+                tell_object(this_object(), HIC "ä½ çš„ã€Œ" + to_chinese(skill) +
+                            "ã€é€²æ­¥äº†ï¼\n" NOR);
                 SKILL_D(skill)->skill_improved(this_object());
         }
         */
@@ -443,8 +443,8 @@ varargs void improve_skill(string skill, int amount, int weak_mode)
                 &&      learned[skill] > (skills[skill] + 1) * (skills[skill] + 1) ) {
                         skills[skill]++;
                         learned[skill] -= skills[skill] * skills[skill];
-                        tell_object(this_object(), HIC "ÄãµÄ¡¸" + to_chinese(skill) +
-                                    "¡¹½ø²½ÁË£¡\n" NOR);
+                        tell_object(this_object(), HIC "ä½ çš„ã€Œ" + to_chinese(skill) +
+                                    "ã€é€²æ­¥äº†ï¼\n" NOR);
                         SKILL_D(skill)->skill_improved(this_object());
                         SKILLS_D->skill_summary(this_object(),skill,skills[skill]);
                 }

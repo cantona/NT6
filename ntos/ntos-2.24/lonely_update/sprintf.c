@@ -562,7 +562,7 @@ INLINE_STATIC void add_nstr (const char * str, int len) {
 static void add_justified (const char * str, int slen, pad_info_t * pad,
                              int fs, format_info finfo, short int trailing)
 {
-    /* efun sprintf() Ê¡ÂÔ¶Ô ansi ÂëµÄ×ÖÔªÊı¼ÆËã by Lonely. */
+    /* efun sprintf() çœç•¥å° ansi ç¢¼çš„å­—å…ƒæ•¸è¨ˆç®— by Lonely. */
     const char* str_a;
 #ifdef USE_ICONV_UTF8
     int skip = 0;

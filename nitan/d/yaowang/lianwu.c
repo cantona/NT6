@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Á·Îä³¡");
+        set("short", "ç·´æ­¦å ´");
         set("long", @LONG
-ÕâÀï¾ÍÊÇÒ©Íõ¹ÈµÄµÜ×ÓÆ½Ê±Á·¹¦µÄµØ·½£¬²»ÉÙµÜ×ÓÔÚÕâÀï´òÈ­
-ÌßÍÈ¡£ÕýÖÐÊÇÒ»¸±Ò»ÈË¶à¸ßµÄÃ·»¨×®(zhuang)£¬Äã¿ÉÒÔÌø(jump)
-ÉÏÈ¥×ß×®Á·Ï°Çá¹¦¡£
+é€™è£¡å°±æ˜¯è—¥çŽ‹è°·çš„å¼Ÿå­å¹³æ™‚ç·´åŠŸçš„åœ°æ–¹ï¼Œä¸å°‘å¼Ÿå­åœ¨é€™è£¡æ‰“æ‹³
+è¸¢è…¿ã€‚æ­£ä¸­æ˜¯ä¸€å‰¯ä¸€äººå¤šé«˜çš„æ¢…èŠ±æ¨(zhuang)ï¼Œä½ å¯ä»¥è·³(jump)
+ä¸ŠåŽ»èµ°æ¨ç·´ç¿’è¼•åŠŸã€‚
 LONG
         );
         set("exits", ([ /* sizeof() == 1 */
@@ -28,17 +28,17 @@ int do_jump(string arg)
         object me = this_player();
         string out;
 
-        if(arg != "zhuang" && arg != "Ã·»¨×®")
+        if(arg != "zhuang" && arg != "æ¢…èŠ±æ¨")
         {
-                write("ÄãÒªÌøµ½ÄÄÀï£¿\n");
+                write("ä½ è¦è·³åˆ°å“ªè£¡ï¼Ÿ\n");
                 return 1;
         }
 
-        out = "$N×ÝÉíÌøÉÏÃ·»¨×®¡£\n";
+        out = "$Nç¸±èº«è·³ä¸Šæ¢…èŠ±æ¨ã€‚\n";
 
         if(me->query_skill("dodge", 1) < 30)
         {
-                out += "Éí×Ó»ÎÁË¼¸ÏÂ£¬Ë¤ÁËÏÂÀ´¡£\n";
+                out += "èº«å­æ™ƒäº†å¹¾ä¸‹ï¼Œæ‘”äº†ä¸‹ä¾†ã€‚\n";
                 message_vision(out, me);
                 me->receive_wound("qi",query("max_qi", me)/4,"trip");
                 me->start_busy(2);
@@ -48,8 +48,8 @@ int do_jump(string arg)
         message_vision(out, me);
         if(!me->move(__DIR__"zhuang1"))
         {
-                tell_object(me, "Äã¿´ÁË¿´ÉÏÃæÈËÌ«¶à£¬ÓÖÌøÁË»ØÈ¥¡£\n");
-                tell_room(__FILE__, me->name()+"ÌøÁËÏÂÀ´¡£\n", ({me}));
+                tell_object(me, "ä½ çœ‹äº†çœ‹ä¸Šé¢äººå¤ªå¤šï¼Œåˆè·³äº†å›žåŽ»ã€‚\n");
+                tell_room(__FILE__, me->name()+"è·³äº†ä¸‹ä¾†ã€‚\n", ({me}));
                 return 1;
         }
 

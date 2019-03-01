@@ -5,10 +5,10 @@ inherit ROOM;
 string look_gaoshi();
 void create()
 {
-        set("short", "�Ÿ�����");
+        set("short", "杜甫草堂");
         set("long", @LONG
-�����ǶŸ���Ԣ�ɶ��Ĺʾӡ���������ˮ���ӣ�С�Ź���������
-��ӳ���Եü�ׯ�����£����ӵ��ţ��ֲ�ʧ����ף��������ʡ�
+這裡是杜甫流寓成都的故居。草堂裡流水回縈，小橋勾連，竹樹
+掩映，顯得既莊嚴肅穆，古樸典雅，又不失幽深靜謐，秀麗清朗。
 LONG );
         set("outdoors", "chengdu");
         set("no_clean_up", 0);

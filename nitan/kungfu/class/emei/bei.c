@@ -8,9 +8,9 @@ int ask_for_ji();
 
 void create()
 {
-        set_name("±´½õÒÇ", ({ "bei jinyi", "bei", "jinyi"}));
-        set("long", "ËıÊÇ¶ëáÒÅÉµÄµÚËÄ´úË×¼ÒµÜ×Ó¡£\n");
-        set("gender", "Å®ĞÔ");
+        set_name("è²éŒ¦å„€", ({ "bei jinyi", "bei", "jinyi"}));
+        set("long", "å¥¹æ˜¯å³¨åµ‹æ´¾çš„ç¬¬å››ä»£ä¿—å®¶å¼Ÿå­ã€‚\n");
+        set("gender", "å¥³æ€§");
         set("age", 21);
         set("attitude", "peaceful");
         set("class", "fighter");
@@ -58,12 +58,12 @@ void create()
         prepare_skill("strike", "sixiang-zhang");
 
         set("inquiry", ([
-                "³ö¼Ò"     : "ÄãÈ¥±¾É½µÄâÖÌÃÀïÕÒÎÒ¾²×Ö±²Ê¦½ã°É¡£ËıÃÇÔÚ¸£ÊÙâÖ¡¢Ç§·ğâÖ¡¢\nÍòÄêâÖ¡¢ÍòĞĞâÖºÍÎÔÔÆâÖĞŞĞĞ¡£\n",
-                "Ãğ¾øÊ¦Ì«" : "ËıÊÇ±¾ÅÉÕÆÃÅÈË£¬ÔÚ»ª²ØâÖĞŞĞĞ¡£\n",
-                "¼ÍÏşÜ½"   : (: ask_for_ji :),
+                "å‡ºå®¶"     : "ä½ å»æœ¬å±±çš„åºµå ‚è£¡æ‰¾æˆ‘éœå­—è¼©å¸«å§å§ã€‚å¥¹å€‘åœ¨ç¦å£½åºµã€åƒä½›åºµã€\nè¬å¹´åºµã€è¬è¡Œåºµå’Œè‡¥é›²åºµä¿®è¡Œã€‚\n",
+                "æ»…çµ•å¸«å¤ª" : "å¥¹æ˜¯æœ¬æ´¾æŒé–€äººï¼Œåœ¨è¯è—åºµä¿®è¡Œã€‚\n",
+                "ç´€æ›‰èŠ™"   : (: ask_for_ji :),
         ]));
 
-        create_family("¶ëáÒÅÉ", 4, "µÜ×Ó");
+        create_family("å³¨åµ‹æ´¾", 4, "å¼Ÿå­");
 
         set("chat_chance_combat", 120);
         set("chat_msg_combat", ({
@@ -88,7 +88,7 @@ void attempt_apprentice(object ob)
         if (! permit_recruit(ob))
                 return;
 
-        command("say ºÃ°É£¬ÎÒ¾ÍÊÕÏÂÄãÁË¡£");
+        command("say å¥½å§ï¼Œæˆ‘å°±æ”¶ä¸‹ä½ äº†ã€‚");
         command("recruit "+query("id", ob));
 }
 
@@ -96,7 +96,7 @@ int ask_for_ji()
 {
         object ob;
         ob = this_player();
-        tell_object(ob,"±´½õÒÇËµµÀ£º¼ÍÏşÜ½ÔÚÉáÉíÑÂÄØ¡£Ëı¾ÍÊÇÏë²»¿ª¡£àË£¡\n");
+        tell_object(ob,"è²éŒ¦å„€èªªé“ï¼šç´€æ›‰èŠ™åœ¨èˆèº«å´–å‘¢ã€‚å¥¹å°±æ˜¯æƒ³ä¸é–‹ã€‚å—¨ï¼\n");
         set("marks/ji", 1, ob);
         return 1;
 }

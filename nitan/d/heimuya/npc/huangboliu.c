@@ -5,12 +5,12 @@ inherit F_UNIQUE;
 #include <ansi.h>;
 void create()
 {
-        set_name("»Æ²®Á÷", ({ "huang boliu","huang","boliu"}) );
-        set("gender", "ÄÐÐÔ" );
-        set("title", "ÈÕÔÂÉñ½Ì·çÀ×ÌÃÏãÖ÷");
-        set("nickname", HIW"Òø÷×òÔ"NOR);
+        set_name("é»ƒä¼¯æµ", ({ "huang boliu","huang","boliu"}) );
+        set("gender", "ç”·æ€§" );
+        set("title", "æ—¥æœˆç¥žæ•™é¢¨é›·å ‚é¦™ä¸»");
+        set("nickname", HIW"éŠ€é«¯è›Ÿ"NOR);
         set("age", 85);
-        set("long", "Ò»²¿°×Ðë£¬Ö±´¹ÖÁÐØ£¬Éí²Ä¿ýÎàÖ®¼«¡£\n");
+        set("long", "ä¸€éƒ¨ç™½é ˆï¼Œç›´åž‚è‡³èƒ¸ï¼Œèº«æé­æ¢§ä¹‹æ¥µã€‚\n");
         set("attitude", "friendly");
         set("shen_type", 1);
 
@@ -39,7 +39,7 @@ void create()
         map_skill("parry", "changquan");
         map_skill("unarmed", "changquan");
 
-        create_family("ÈÕÔÂÉñ½Ì",2,"µÜ×Ó ·çÀ×ÌÃÏãÖ÷");
+        create_family("æ—¥æœˆç¥žæ•™",2,"å¼Ÿå­ é¢¨é›·å ‚é¦™ä¸»");
 
         setup();
         carry_object("/clone/misc/cloth")->wear();

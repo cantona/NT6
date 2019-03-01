@@ -5,14 +5,14 @@
 
 inherit F_SHADOW;
 
-nosave string from_user;        // ÓÃ»§·¢ËÍÀ´µÄĞÅÏ¢
-nosave int fd;                  // Á¬½ÓÔ¶¶Ë»úÆ÷µÄÌ×½Ó×Ö
-nosave string dest_addr;        // Á¬½ÓÔ¶¶Ë»úÆ÷µÄµØÖ·
-nosave int port;                // Á¬½ÓÔ¶¶Ë»úÆ÷µÄ¶Ë¿ÚºÅ
+nosave string from_user;        // ç”¨æˆ¶ç™¼é€ä¾†çš„ä¿¡æ¯
+nosave int fd;                  // é€£æ¥é ç«¯æ©Ÿå™¨çš„å¥—æ¥å­—
+nosave string dest_addr;        // é€£æ¥é ç«¯æ©Ÿå™¨çš„åœ°å€
+nosave int port;                // é€£æ¥é ç«¯æ©Ÿå™¨çš„ç«¯å£è™Ÿ
 
 #define MAX_PENDING_INPUT               16384
 
-// È¡ÏûËùÓĞÈËÎïµÄ»ù±¾ÊôĞÔ
+// å–æ¶ˆæ‰€æœ‰äººç‰©çš„åŸºæœ¬å±¬æ€§
 
 private void send_to_remote();
 
@@ -30,7 +30,7 @@ void telnet_input(string str)
 
         if (str == "CLOSE")
         {
-                write("ÓÃ»§¶Ï¿ªÁËÁ¬½Ó¡£\n");
+                write("ç”¨æˆ¶æ–·é–‹äº†é€£æ¥ã€‚\n");
                 destruct(this_object());
                 return;
         }
@@ -46,12 +46,12 @@ void telnet_input(string str)
                 if (find_call_out("send_to_remote") == -1)
                         send_to_remote();
         } else
-                write("ÄãÊäÈëµÄÌ«¶àÁË...\n");
+                write("ä½ è¼¸å…¥çš„å¤ªå¤šäº†...\n");
 }
 
 int accept_fight(object ob)
 {
-        return notify_fail("ÕıÔÚÔ¶³ÌµÇÂ¼ÖĞ...\n");
+        return notify_fail("æ­£åœ¨é ç¨‹ç™»éŒ„ä¸­...\n");
 }
 
 int accept_hit(object ob)
@@ -122,11 +122,11 @@ void connect_to(string arg)
 {
         if (sscanf(arg, "%s %d", dest_addr, port) != 2)
         {
-                write("µØÖ·´íÎó¡£\n");
+                write("åœ°å€éŒ¯èª¤ã€‚\n");
                 return;
         }
 
-        write("½âÎöµØÖ·ÖĞ...\n");
+        write("è§£æåœ°å€ä¸­...\n");
         from_user = "";
         resolve(dest_addr, "telnet_resolve_callback");
         input_to("telnet_input");
@@ -148,7 +148,7 @@ void telnet_resolve_callback(string address, string resolved, int key)
         {
                 if (! resolved)
                 {
-                        message("telnet", "ÎŞ·¨½âÎöµØÖ·¡£\n", sob);
+                        message("telnet", "ç„¡æ³•è§£æåœ°å€ã€‚\n", sob);
                         if (sscanf(dest_addr, "%*d.%*d.%*d.%*d") == 4)
                                 resolved = dest_addr;
                         else
@@ -161,7 +161,7 @@ void telnet_resolve_callback(string address, string resolved, int key)
                                    "telnet_close_callback" );
                 if (fd < 0)
                 {
-                        message("telnet", "SOCKET ³õÊ¼»¯´íÎó¡£\n", sob);
+                        message("telnet", "SOCKET åˆå§‹åŒ–éŒ¯èª¤ã€‚\n", sob);
                         break;
                 }
         
@@ -170,11 +170,11 @@ void telnet_resolve_callback(string address, string resolved, int key)
                                      "telnet_write_callback");
                 if (ret != EESUCCESS)
                 {
-                        message("telnet", "ÍøÂçÁ¬½Ó´íÎó¡£\n", sob);
+                        message("telnet", "ç¶²çµ¡é€£æ¥éŒ¯èª¤ã€‚\n", sob);
                         break;
                 }
         
-                message("telnet", "ÕıÔÚÁ¬½Ó" + address +
+                message("telnet", "æ­£åœ¨é€£æ¥" + address +
                                   "(" + full_addr + ")...\n", sob);
                 return;
         }
@@ -209,7 +209,7 @@ void telnet_close_callback(int fd)
         object sob;
 
         if (objectp(sob = query_shadow_now()))
-                message("telnet", HIR "Á¬½Ó¶Ï¿ªÁË£ºÇë°´»Ø³µ¼ü¼ÌĞø..." NOR, sob);
+                message("telnet", HIR "é€£æ¥æ–·é–‹äº†ï¼šè«‹æŒ‰å›è»Šéµç¹¼çºŒ..." NOR, sob);
 
         destruct(this_object());
 }
@@ -231,31 +231,31 @@ varargs string short(int raw)
         if (objectp(sob = query_shadow_now()))
         {
                 str = sob->short(raw);
-                str = replace_string(str, " <ÊäÈëÎÄ×ÖÖĞ>", " <Ô¶³ÌµÇÂ¼ÖĞ>");
+                str = replace_string(str, " <è¼¸å…¥æ–‡å­—ä¸­>", " <é ç¨‹ç™»éŒ„ä¸­>");
                 return str;
         }
 
         return 0;
 }
 
-// ½«ÓÃ»§·¢ËÍÀ´µÄÊı¾İ·¢ËÍµ½Ô¶¶Ë·şÎñÆ÷ÉÏÈ¥
+// å°‡ç”¨æˆ¶ç™¼é€ä¾†çš„æ•¸æ“šç™¼é€åˆ°é ç«¯æœå‹™å™¨ä¸Šå»
 private void send_to_remote()
 {
         switch (socket_write(fd, from_user))
         {
         case EESUCCESS:
         case EECALLBACK:
-                // ·¢ËÍ³É¹¦ÁË
+                // ç™¼é€æˆåŠŸäº†
                 from_user = "";
                 return;
 
         case EEWOULDBLOCK:
-                // ·¢ËÍÊı¾İ×èÈû
+                // ç™¼é€æ•¸æ“šé˜»å¡
                 call_out("send_to_remote", 2);
                 return;
 
         default:
-                // ·¢ËÍÊ§°Ü
+                // ç™¼é€å¤±æ•—
                 return;
         }
 }

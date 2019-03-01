@@ -1,5 +1,5 @@
 // This program is a part of NITAN MudLIB
-// memberd.c »áÔ±¾«Áé
+// memberd.c æœƒå“¡ç²¾éˆ
 
 #pragma optimize
 #pragma save_binary
@@ -42,7 +42,7 @@ void create()
         seteuid(ROOT_UID);
 }
 
-// ²éÑ¯ ID ÊÇ·ñÊÇ³åÖµÓÃ»§
+// æŸ¥è©¢ ID æ˜¯å¦æ˜¯æ²–å€¼ç”¨æˆ¶
 public int is_member(mixed ob)
 {
         mixed  ret;
@@ -67,7 +67,7 @@ public int is_member(mixed ob)
         return ret;
 }
 
-// ²éÑ¯ ID ÊÇ·ñÊÇÓĞĞ§»áÔ±
+// æŸ¥è©¢ ID æ˜¯å¦æ˜¯æœ‰æ•ˆæœƒå“¡
 public int is_valid_member(mixed ob)
 {
         mixed  ret;
@@ -92,7 +92,7 @@ public int is_valid_member(mixed ob)
         return ret;
 }
 
-// »áÔ±Ë«±¶½±ÀøÊ±¼ä
+// æœƒå“¡é›™å€çå‹µæ™‚é–“
 public int is_double_reward(object ob)
 {
         int t;
@@ -114,7 +114,7 @@ public int is_double_reward(object ob)
         return 0;
 }
 
-// ²éÑ¯ ID Ïà¹ØĞÅÏ¢
+// æŸ¥è©¢ ID ç›¸é—œä¿¡æ¯
 public mixed db_query_member(mixed ob, string key)
 {
         mixed  ret;
@@ -143,7 +143,7 @@ public mixed db_query_member(mixed ob, string key)
                 return 0;
 }
 
-// ¸ù¾İÌõ¼şÑ°ÕÒ»áÔ±
+// æ ¹æ“šæ¢ä»¶å°‹æ‰¾æœƒå“¡
 public mixed db_find_member(string key, mixed data)
 {
         mixed  ret;
@@ -170,7 +170,7 @@ public mixed db_find_member(string key, mixed data)
         return ret;
 }
 
-// ´´½¨ĞÂµÄ»áÔ±
+// å‰µå»ºæ–°çš„æœƒå“¡
 public varargs int db_create_member(mixed ob, int money, string from_id)
 {
         mixed  ret;
@@ -198,9 +198,9 @@ public varargs int db_create_member(mixed ob, int money, string from_id)
         */
 
         if (!stringp(from_id) || from_id == "")
-                payinfo = sprintf("ÄãÓÚ %s ³åÖµ %d $NT¡£\n", TIME_D->replace_ctime(time()), money);
+                payinfo = sprintf("ä½ äº %s æ²–å€¼ %d $NTã€‚\n", TIME_D->replace_ctime(time()), money);
         else
-                payinfo = sprintf("ÄãÓÚ %s ÊÕµ½ %s µÄ×ªÕÊ %d $NT¡£\n",
+                payinfo = sprintf("ä½ äº %s æ”¶åˆ° %s çš„è½‰å¸³ %d $NTã€‚\n",
                                   TIME_D->replace_ctime(time()), from_id, money);
 
         sql = sprintf("INSERT INTO %s SET id = \"%s\", uid = \"%s\", money = %d, paytimes = 1, payinfo = \"%s\",
@@ -219,7 +219,7 @@ public varargs int db_create_member(mixed ob, int money, string from_id)
         return ret;
 }
 
-// É¾³ı»áÔ±
+// åˆªé™¤æœƒå“¡
 public int db_remove_member(mixed ob)
 {
         mixed  ret;
@@ -249,7 +249,7 @@ public int db_remove_member(mixed ob)
         return ret;
 }
 
-// Éè¶¨»áÔ±ÊôĞÔ
+// è¨­å®šæœƒå“¡å±¬æ€§
 public int db_set_member(mixed ob, string key, mixed data)
 {
         mixed  ret;
@@ -300,7 +300,7 @@ public int db_set_member(mixed ob, string key, mixed data)
         return ret;
 }
 
-// Ôö¼Ó»áÔ±ÊôĞÔµã
+// å¢åŠ æœƒå“¡å±¬æ€§é»
 public int db_add_member(mixed ob, string key, int num)
 {
         mixed  ret;
@@ -332,7 +332,7 @@ public int db_add_member(mixed ob, string key, int num)
         return ret;
 }
 
-// »áÔ±¿¨
+// æœƒå“¡å¡
 public varargs mixed db_fee_member(mixed ob, int day, int flag)
 {
         mixed  ret;
@@ -395,7 +395,7 @@ public varargs mixed db_fee_member(mixed ob, int day, int flag)
         return ret;
 }
 
-// »áÔ±³åÖµ
+// æœƒå“¡æ²–å€¼
 public varargs int db_pay_member(mixed ob, int money, string from_id)
 {
         string id, sql;
@@ -432,9 +432,9 @@ public varargs int db_pay_member(mixed ob, int money, string from_id)
         if (!payinfo) payinfo = "";
 
         if (!stringp(from_id) || from_id == "")
-                info = sprintf("ÄãÓÚ %s ³åÖµ %d $NT¡£\n", TIME_D->replace_ctime(time()), money);
+                info = sprintf("ä½ äº %s æ²–å€¼ %d $NTã€‚\n", TIME_D->replace_ctime(time()), money);
         else
-                info = sprintf("ÄãÓÚ %s ÊÕµ½ %s µÄ×ªÕÊ %d $NT¡£\n",
+                info = sprintf("ä½ äº %s æ”¶åˆ° %s çš„è½‰å¸³ %d $NTã€‚\n",
                                 TIME_D->replace_ctime(time()), from_id, money);
 
         payinfo += info;
@@ -500,7 +500,7 @@ public varargs int player_pay(mixed from, int money, mixed to)
         return ret;
 }
 
-// »áÔ±×ªÕÊ
+// æœƒå“¡è½‰å¸³
 public int db_transfer_member(mixed ob, mixed to, int value)
 {
         string id, to_id, sql;
@@ -536,7 +536,7 @@ public int db_transfer_member(mixed ob, mixed to, int value)
         target = UPDATE_D->global_find_player(to_id);
         if (!objectp(target))
         {
-                write("Ã»ÓĞÕâ¸öÍæ¼Ò£¬Çë¼ì²éÈ·ÈÏºóÔÙÊÔ£¡\n");
+                write("æ²’æœ‰é€™å€‹ç©å®¶ï¼Œè«‹æª¢æŸ¥ç¢ºèªå¾Œå†è©¦ï¼\n");
                 return 0;
         }
 
@@ -544,7 +544,7 @@ public int db_transfer_member(mixed ob, mixed to, int value)
 
         if (!is_member(id))
         {
-                write("ÄúÄ¿Ç°Ã»ÓĞ³äÖµ¼ÇÂ¼£¬Ò²Ã»ÓĞÍõÕß½ğ±Ò£¡\n");
+                write("æ‚¨ç›®å‰æ²’æœ‰å……å€¼è¨˜éŒ„ï¼Œä¹Ÿæ²’æœ‰ç‹è€…é‡‘å¹£ï¼\n");
                 return 0;
         }
 
@@ -552,13 +552,13 @@ public int db_transfer_member(mixed ob, mixed to, int value)
         money = db_query_member(id, "money");
         if (money < value)
         {
-                write("¶Ô²»Æğ£¬ÄúµÄÍõÕß½ğ±ÒÊıÁ¿²»¹»£¡\n");
+                write("å°ä¸èµ·ï¼Œæ‚¨çš„ç‹è€…é‡‘å¹£æ•¸é‡ä¸å¤ ï¼\n");
                 return 0;
         }
 
         if (!db_set_member(ob, "money", (money - value)))
         {
-                write("×ªÕÊÊ§°Ü£¬ÇëÓë±¾Õ¾ADMINÁªÏµ£¡\n");
+                write("è½‰å¸³å¤±æ•—ï¼Œè«‹èˆ‡æœ¬ç«™ADMINè¯ç³»ï¼\n");
                 return 0;
         }
 
@@ -568,7 +568,7 @@ public int db_transfer_member(mixed ob, mixed to, int value)
                 db_pay_member(to_id, value, id);
 
         zhuaninfo  = db_query_member(id, "transferinfo");
-        zhuaninfo += sprintf("ÄãÓÚ %s ×ªÕÊ %d $NT¸øÍæ¼Ò %s¡£\n",
+        zhuaninfo += sprintf("ä½ äº %s è½‰å¸³ %d $NTçµ¦ç©å®¶ %sã€‚\n",
                            TIME_D->replace_ctime(time()),
                            value,
                            to_id);
@@ -576,8 +576,8 @@ public int db_transfer_member(mixed ob, mixed to, int value)
         db_set_member(ob, "transferinfo", zhuaninfo);
         db_add_member(ob, "transfervalue", value);
         db_add_member(ob, "transfertimes", 1);
-        write(HIG "×ªÕÊ³É¹¦£¬ ÄúµÄ×ªÕÊ¼ÇÂ¼ÒÑĞ´ÈëÎÄ¼ş£¬ÇëÊ¹ÓÃ " HIR "member show zhuaninfo " HIG " ²éÑ¯£¡ \n" NOR);
-        write(HIC "Äú×Ü¹²×ªÕÊÁË " + HIY + value + HIC + " $NT , ×£ÄúºÃÔË£¡\n" NOR);
+        write(HIG "è½‰å¸³æˆåŠŸï¼Œ æ‚¨çš„è½‰å¸³è¨˜éŒ„å·²å¯«å…¥æ–‡ä»¶ï¼Œè«‹ä½¿ç”¨ " HIR "member show zhuaninfo " HIG " æŸ¥è©¢ï¼ \n" NOR);
+        write(HIC "æ‚¨ç¸½å…±è½‰å¸³äº† " + HIY + value + HIC + " $NT , ç¥æ‚¨å¥½é‹ï¼\n" NOR);
 
         return 1;
 }
@@ -598,33 +598,33 @@ public void show_member_info(mixed ob, string arg)
 
         switch(arg)
         {
-        // ³äÖµ¼ÇÂ¼
+        // å……å€¼è¨˜éŒ„
         case "payinfo":
                 if (!is_member(ob))
                 {
-                        write("ÄúÄ¿Ç°Ã»ÓĞ³äÖµ¼ÇÂ¼£¡\n");
+                        write("æ‚¨ç›®å‰æ²’æœ‰å……å€¼è¨˜éŒ„ï¼\n");
                         return;
                 }
                 ret = db_query_member(ob, arg);
-                write(BBLU + HIW "ÄúµÄ³äÖµ¼ÇÂ¼ÈçÏÂ£º\n\n" NOR);
+                write(BBLU + HIW "æ‚¨çš„å……å€¼è¨˜éŒ„å¦‚ä¸‹ï¼š\n\n" NOR);
                 res = explode(ret, "\n");
                 for (i = 0; i < sizeof(res); i++)
                         write(BBLU + HIY + res[i] + "\n" NOR);
                 break;
-        // ¹ºÂò¼ÇÂ¼
+        // è³¼è²·è¨˜éŒ„
         case "buyinfo":
                 if (!is_member(ob))
                 {
-                        write("ÄúÄ¿Ç°Ã»ÓĞ¹ºÂò¼ÇÂ¼£¡\n");
+                        write("æ‚¨ç›®å‰æ²’æœ‰è³¼è²·è¨˜éŒ„ï¼\n");
                         return;
                 }
                 ret = db_query_member(ob, arg);
                 if (!stringp(ret) || ret == "")
                 {
-                     write("ÄúÄ¿Ç°Ã»ÓĞ¹ºÂò¼ÇÂ¼£¡\n");
+                     write("æ‚¨ç›®å‰æ²’æœ‰è³¼è²·è¨˜éŒ„ï¼\n");
                      return;
                 }
-                write(BBLU + HIW "ÄúµÄ¹ºÂò¼ÇÂ¼ÈçÏÂ£º\n\n" NOR);
+                write(BBLU + HIW "æ‚¨çš„è³¼è²·è¨˜éŒ„å¦‚ä¸‹ï¼š\n\n" NOR);
                 /*
                 res = explode(ret, "\n");
                 for (i = 0; i < sizeof(res); i++)
@@ -633,80 +633,80 @@ public void show_member_info(mixed ob, string arg)
                 ob->start_more(BBLU + HIY + ret + "\n" NOR);
                 break;
 
-        // ×ªÕÊ¼ÇÂ¼
+        // è½‰å¸³è¨˜éŒ„
         case "zhuaninfo":
         case "transferinfo":
                 if (!is_member(ob))
                 {
-                        write("ÄúÄ¿Ç°Ã»ÓĞ×ªÕÊ¼ÇÂ¼£¡\n");
+                        write("æ‚¨ç›®å‰æ²’æœ‰è½‰å¸³è¨˜éŒ„ï¼\n");
                         return;
                 }
                 //ret = db_query_member(ob, arg);
                 ret = db_query_member(ob, "transferinfo");
                 if (!stringp(ret) || ret == "")
                 {
-                     write("ÄúÄ¿Ç°Ã»ÓĞ×ªÕÊ¼ÇÂ¼£¡\n");
+                     write("æ‚¨ç›®å‰æ²’æœ‰è½‰å¸³è¨˜éŒ„ï¼\n");
                      return;
                 }
-                write(BBLU + HIW "ÄúµÄ×ªÕÊ¼ÇÂ¼ÈçÏÂ£º\n\n" NOR);
+                write(BBLU + HIW "æ‚¨çš„è½‰å¸³è¨˜éŒ„å¦‚ä¸‹ï¼š\n\n" NOR);
                 res = explode(ret, "\n");
                 for (i = 0; i < sizeof(res); i++)
                         write(BBLU + HIY + res[i] + "\n" NOR);
                 break;
 
-        // Ãæ°å
+        // é¢æ¿
         case "info":
-                write(BBLU + HIW "\t\t       ÍõÕßÖ®Õ½»áÔ±ÏµÍ³Ãæ°å\t\t     " + VERSION + "\n" NOR);
-                write(HIW "¡Ô---------------------------------------------------------------¡Ô\n" NOR);
+                write(BBLU + HIW "\t\t       ç‹è€…ä¹‹æˆ°æœƒå“¡ç³»çµ±é¢æ¿\t\t     " + VERSION + "\n" NOR);
+                write(HIW "â‰¡---------------------------------------------------------------â‰¡\n" NOR);
                 write(HIY "WELCOME TO JOIN IN THE MEMBERS OF NT5 AND HOPE YOU ALL GOES WELL.\n\n" NOR);
 
-                write(sprintf(HIC "  »áÔ±´úºÅ£º%-25s½ğ±ÒÓà¶î£º%s\n" NOR,
+                write(sprintf(HIC "  æœƒå“¡ä»£è™Ÿï¼š%-25sé‡‘å¹£ä½™é¡ï¼š%s\n" NOR,
                               id, db_query_member(ob, "money") + " $NT"));
-                write(sprintf(HIC "  Èë»áÊ±¼ä£º%-25sÓĞĞ§Ê±¼ä£º%s\n" NOR,
+                write(sprintf(HIC "  å…¥æœƒæ™‚é–“ï¼š%-25sæœ‰æ•ˆæ™‚é–“ï¼š%s\n" NOR,
                               db_query_member(ob, "jointime") ?
-                              TIME_D->replace_ctime(db_query_member(ob, "jointime")) : "Ã»ÓĞÈë»á",
+                              TIME_D->replace_ctime(db_query_member(ob, "jointime")) : "æ²’æœ‰å…¥æœƒ",
                               db_query_member(ob, "endtime") > 1888888888 ?
-                              "ÖÕÉí»áÔ±" : (db_query_member(ob, "endtime") ?
+                              "çµ‚èº«æœƒå“¡" : (db_query_member(ob, "endtime") ?
                               TIME_D->replace_ctime(db_query_member(ob, "endtime")) : "0")));
-                write(sprintf(HIC "  ³åÖµÀÛ¼Æ£º%-25s³äÖµ´ÎÊı£º%d\n" NOR,
+                write(sprintf(HIC "  æ²–å€¼ç´¯è¨ˆï¼š%-25så……å€¼æ¬¡æ•¸ï¼š%d\n" NOR,
                               db_query_member(ob, "payvalue") + " $NT",
                               db_query_member(ob, "paytimes")));
-                write(sprintf(HIC "  ¹ºÂòÀÛ¼Æ£º%-25s¹ºÂò´ÎÊı£º%d\n" NOR,
+                write(sprintf(HIC "  è³¼è²·ç´¯è¨ˆï¼š%-25sè³¼è²·æ¬¡æ•¸ï¼š%d\n" NOR,
                               db_query_member(ob, "buyvalue") + " $NT",
                               db_query_member(ob, "buytimes")));
-                write(sprintf(HIC "  ×ªÕÊÀÛ¼Æ£º%-25s×ªÕÊ´ÎÊı£º%d\n" NOR,
+                write(sprintf(HIC "  è½‰å¸³ç´¯è¨ˆï¼š%-25sè½‰å¸³æ¬¡æ•¸ï¼š%d\n" NOR,
                               db_query_member(ob, "transfervalue") + " $NT",
                               db_query_member(ob, "transfertimes")));
-                write(sprintf(HIM "\n  Äú×îºóÒ»´Î³äÖµÊ±¼äÊÇ               %s\n" NOR,
+                write(sprintf(HIM "\n  æ‚¨æœ€å¾Œä¸€æ¬¡å……å€¼æ™‚é–“æ˜¯               %s\n" NOR,
                               TIME_D->replace_ctime(db_query_member(ob, "last_paytime"))));
-                write(sprintf(HIM "  Äú×îºóÒ»´Î¹ºÂòÊ±¼äÊÇ               %s\n" NOR,
+                write(sprintf(HIM "  æ‚¨æœ€å¾Œä¸€æ¬¡è³¼è²·æ™‚é–“æ˜¯               %s\n" NOR,
                               db_query_member(ob, "last_buytime") ?
-                              TIME_D->replace_ctime(db_query_member(ob, "last_buytime")) : "¡ª¡ª¡ª¡ª"));
-                write(sprintf(HIM "  Äú×îºóÒ»´Î¹ºÂòÎïÆ·ÊÇ               %s(%s)\n" NOR,
+                              TIME_D->replace_ctime(db_query_member(ob, "last_buytime")) : "â”€â”€â”€â”€"));
+                write(sprintf(HIM "  æ‚¨æœ€å¾Œä¸€æ¬¡è³¼è²·ç‰©å“æ˜¯               %s(%s)\n" NOR,
                               sizeof(db_query_member(ob, "last_buyob")) ?
-                              db_query_member(ob, "last_buyob") : "¡ª¡ª¡ª¡ª",
+                              db_query_member(ob, "last_buyob") : "â”€â”€â”€â”€",
                               db_query_member(ob, "last_buyvalue") ?
                               db_query_member(ob, "last_buyvalue") + " $NT" : "0"));
 
-                write(HIG "\n  *ÇëÊ¹ÓÃ" HIR " member show info " HIG "          ´ò¿ªÄàÌ¶»áÔ±ÏµÍ³Ãæ°å¡£\n" NOR);
-                write(HIG "  *ÇëÊ¹ÓÃ" HIR " member show payinfo " HIG "       ²é¿´ÀúÊ·³äÖµ¼ÇÂ¼¡£\n" NOR);
-                write(HIG "  *ÇëÊ¹ÓÃ" HIR " member show buyinfo " HIG "       ²é¿´¹ºÂòÎïÆ·¼ÇÂ¼¡£\n" NOR);
-                write(HIG "  *ÇëÊ¹ÓÃ" HIR " member show zhuaninfo " HIG "     ²é¿´ÀúÊ·×ªÕÊ¼ÇÂ¼¡£\n" NOR);
-                write(HIG "  *ÇëÊ¹ÓÃ" HIR " member show goods " HIG "         ²é¿´ÍõÕßÉÌµê³öÊÛµÄÎïÆ·¡£\n" NOR);
-                write(HIG "  *ÇëÊ¹ÓÃ" HIR " member zhuan <$NT> to <id>" HIG " ×ªÕÊ½ğ±Ò($NT)¸ø±ğµÄ½ÇÉ«(ID)¡£\n" NOR);
-                write(HIG "  *ÇëÊ¹ÓÃ" HIR " member buy <ÎïÆ·´úºÅ> " HIG "     ¹ºÂòÎïÆ·¡£\n" NOR);
-                write(HIG "  *ÇëÊ¹ÓÃ" HIR " member look <ÎïÆ·´úºÅ> " HIG "    ²é¿´ÎïÆ·¡£\n" NOR);
-                write(HIG "  *ÇëÊ¹ÓÃ" HIR " member check <id> " HIG "         ¼ì²é»áÔ±ĞÅÏ¢¡£\n" NOR);
-                write(HIG "  *ÇëÊ¹ÓÃ" HIR " member stats " HIG "              ÁĞ³öËùÓĞµÄ»áÔ±¡£\n" NOR);
-                write(HIG "  *ÇëÊ¹ÓÃ" HIR " member ?? " HIG "                 member Ö¸Áî°ïÖú¡£\n\n\n" NOR);
+                write(HIG "\n  *è«‹ä½¿ç”¨" HIR " member show info " HIG "          æ‰“é–‹æ³¥æ½­æœƒå“¡ç³»çµ±é¢æ¿ã€‚\n" NOR);
+                write(HIG "  *è«‹ä½¿ç”¨" HIR " member show payinfo " HIG "       æŸ¥çœ‹æ­·å²å……å€¼è¨˜éŒ„ã€‚\n" NOR);
+                write(HIG "  *è«‹ä½¿ç”¨" HIR " member show buyinfo " HIG "       æŸ¥çœ‹è³¼è²·ç‰©å“è¨˜éŒ„ã€‚\n" NOR);
+                write(HIG "  *è«‹ä½¿ç”¨" HIR " member show zhuaninfo " HIG "     æŸ¥çœ‹æ­·å²è½‰å¸³è¨˜éŒ„ã€‚\n" NOR);
+                write(HIG "  *è«‹ä½¿ç”¨" HIR " member show goods " HIG "         æŸ¥çœ‹ç‹è€…å•†åº—å‡ºå”®çš„ç‰©å“ã€‚\n" NOR);
+                write(HIG "  *è«‹ä½¿ç”¨" HIR " member zhuan <$NT> to <id>" HIG " è½‰å¸³é‡‘å¹£($NT)çµ¦åˆ¥çš„è§’è‰²(ID)ã€‚\n" NOR);
+                write(HIG "  *è«‹ä½¿ç”¨" HIR " member buy <ç‰©å“ä»£è™Ÿ> " HIG "     è³¼è²·ç‰©å“ã€‚\n" NOR);
+                write(HIG "  *è«‹ä½¿ç”¨" HIR " member look <ç‰©å“ä»£è™Ÿ> " HIG "    æŸ¥çœ‹ç‰©å“ã€‚\n" NOR);
+                write(HIG "  *è«‹ä½¿ç”¨" HIR " member check <id> " HIG "         æª¢æŸ¥æœƒå“¡ä¿¡æ¯ã€‚\n" NOR);
+                write(HIG "  *è«‹ä½¿ç”¨" HIR " member stats " HIG "              åˆ—å‡ºæ‰€æœ‰çš„æœƒå“¡ã€‚\n" NOR);
+                write(HIG "  *è«‹ä½¿ç”¨" HIR " member ?? " HIG "                 member æŒ‡ä»¤å¹«åŠ©ã€‚\n\n\n" NOR);
 
 
-                write(HIR "  Îª±ÜÃâ´øÀ´²»±ØÒªµÄËğÊ§ÇëÈÏÕæÔÄ¶ÁÍõÕßÖ®Õ½»áÔ±ÖÆ¶ÈÎÄ¼ş" HIY "(help member)\n\n" NOR);
+                write(HIR "  ç‚ºé¿å…å¸¶ä¾†ä¸å¿…è¦çš„æå¤±è«‹èªçœŸé–±è®€ç‹è€…ä¹‹æˆ°æœƒå“¡åˆ¶åº¦æ–‡ä»¶" HIY "(help member)\n\n" NOR);
                 write(HIY "                                                 NT5 WIZARD GROUP\n" NOR);
-                write(HIW "¡Ô---------------------------------------------------------------¡Ô\n" NOR);
+                write(HIW "â‰¡---------------------------------------------------------------â‰¡\n" NOR);
 
                 break;
-           // ÎïÆ·Çåµ¥
+           // ç‰©å“æ¸…å–®
            case "goods":
                 GOODS_D->show_goods(ob);
                 break;
@@ -732,35 +732,35 @@ public mixed show_all_members(int flag)
         if (!sizeof(members))
         {
                 if (flag) return ({});
-                write(HIG "ÔİÎŞ»áÔ±£¡\n" NOR);
+                write(HIG "æš«ç„¡æœƒå“¡ï¼\n" NOR);
                 return;
         }
 
         if (flag) return members;
 
-        write(HIM "ÒÔÏÂÊÇÍõÕß¹éÀ´µÄËùÓĞ»áÔ±ÁĞ±í£º\n" NOR);
-        write(HIW "¡Ô-------------------------------------------------------------------¡Ô\n" NOR);
+        write(HIM "ä»¥ä¸‹æ˜¯ç‹è€…æ­¸ä¾†çš„æ‰€æœ‰æœƒå“¡åˆ—è¡¨ï¼š\n" NOR);
+        write(HIW "â‰¡-------------------------------------------------------------------â‰¡\n" NOR);
 
         write(sprintf(HIR "%-18s%-18s%-26s%-20s\n\n" NOR,
-                    "ĞÕ  Ãû", "ÕÊ  ºÅ", "Èë»áÊ±¼ä", "×´  ¿ö"));
+                    "å§“  å", "å¸³  è™Ÿ", "å…¥æœƒæ™‚é–“", "ç‹€  æ³"));
 
         for (nCount = 0; nCount < sizeof(members); nCount ++)
         {
                 if (ob = find_player(members[nCount][0]))
                 {
-                        if( query("doing", ob))status=HIY"¼Æ»®ÖĞ"NOR;
-                        else if (interactive(ob) && query_idle(ob) > 120)status = HIM "·¢´ô" NOR;
-                        else if (is_valid_member(members[nCount][0]))status = HIW "ÔÚÏß" NOR;
-                        else status = HIR "¹ıÆÚ" NOR;
+                        if( query("doing", ob))status=HIY"è¨ˆåŠƒä¸­"NOR;
+                        else if (interactive(ob) && query_idle(ob) > 120)status = HIM "ç™¼å‘†" NOR;
+                        else if (is_valid_member(members[nCount][0]))status = HIW "åœ¨ç·š" NOR;
+                        else status = HIR "éæœŸ" NOR;
                         name = ob->name(1);
                         jointime = TIME_D->replace_ctime(db_query_member(members[nCount][0], "jointime"));
                 }
                 else
                 {
-                        if (is_valid_member(members[nCount][0])) status = NOR + WHT "ÀëÏß" NOR;
-                        else status = HIR "¹ıÆÚ" NOR;
-                        name = "¡ª¡ª¡ª";
-                        jointime = "¡ª¡ª¡ª";
+                        if (is_valid_member(members[nCount][0])) status = NOR + WHT "é›¢ç·š" NOR;
+                        else status = HIR "éæœŸ" NOR;
+                        name = "â”€â”€â”€";
+                        jointime = "â”€â”€â”€";
                 }
 
                 write(sprintf(HIG "%-18s%-18s%-26s%-20s\n" NOR,
@@ -769,11 +769,11 @@ public mixed show_all_members(int flag)
                            jointime,
                            status));
 
-                m ++; // ¹ıÂËµô×ªÕÊ¼ÇÂ¼ÎÄ¼ş£¬Êµ¼Ê»áÔ±Êı
+                m ++; // éæ¿¾æ‰è½‰å¸³è¨˜éŒ„æ–‡ä»¶ï¼Œå¯¦éš›æœƒå“¡æ•¸
 
         }
-        write(HIY "\n×Ü¹²ÓĞ " + m + " Ãû×¢²á»áÔ±¡£\n" NOR);
-        write(HIW "¡Ô-------------------------------------------------------------------¡Ô\n\n" NOR);
+        write(HIY "\nç¸½å…±æœ‰ " + m + " åæ³¨å†Šæœƒå“¡ã€‚\n" NOR);
+        write(HIW "â‰¡-------------------------------------------------------------------â‰¡\n\n" NOR);
         return 1;
 }
 

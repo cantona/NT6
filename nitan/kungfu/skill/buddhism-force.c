@@ -20,18 +20,18 @@ int valid_learn(object me)
 
         lvl = (int)me->query_skill("buddhism-force", 1);
 
-        if( query("gender", me) == "ÎŞĞÔ" )
-                return notify_fail("ÄãÎŞ¸ùÎŞĞÔ£¬ÒõÑô²»µ÷£¬ÄÑÒÔÁì»á½ğ¸Õ²»»µÉñ¹¦¡£\n");
+        if( query("gender", me) == "ç„¡æ€§" )
+                return notify_fail("ä½ ç„¡æ ¹ç„¡æ€§ï¼Œé™°é™½ä¸èª¿ï¼Œé›£ä»¥é ˜æœƒé‡‘å‰›ä¸å£ç¥åŠŸã€‚\n");
 
-        if( query("sex/times", me) || query("gender", me) != "ÄĞĞÔ" )
-                return notify_fail("Ñ§½ğ¸Õ²»»µÉñ¹¦±ØĞëÊÇÍ¯×ÓÖ®Éí¡£\n");
+        if( query("sex/times", me) || query("gender", me) != "ç”·æ€§" )
+                return notify_fail("å­¸é‡‘å‰›ä¸å£ç¥åŠŸå¿…é ˆæ˜¯ç«¥å­ä¹‹èº«ã€‚\n");
 
         return ::valid_learn(me);
 }
 
 int practice_skill(object me)
 {
-        return notify_fail("½ğ¸Õ²»»µÉñ¹¦Ö»ÄÜÓÃÑ§(learn)µÄÀ´Ôö¼ÓÊìÁ·¶È¡£\n");
+        return notify_fail("é‡‘å‰›ä¸å£ç¥åŠŸåªèƒ½ç”¨å­¸(learn)çš„ä¾†å¢åŠ ç†Ÿç·´åº¦ã€‚\n");
 }
 string exert_function_file(string func)
 {
@@ -46,6 +46,6 @@ void skill_improved(object me)
         {
                 addn("con", 1, me);
                 set("sl_gift/con", 1, me);
-                tell_object(me, HIM "\nÄãµÄ½ğ¸Õ²»»µÉñ¹¦Ñ§ÓĞËù³É£¬Ìá¸ßÁËÄãµÄ¸ù¹Ç¡£\n" NOR);
+                tell_object(me, HIM "\nä½ çš„é‡‘å‰›ä¸å£ç¥åŠŸå­¸æœ‰æ‰€æˆï¼Œæé«˜äº†ä½ çš„æ ¹éª¨ã€‚\n" NOR);
         }
 }

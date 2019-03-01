@@ -1,9 +1,9 @@
 inherit ROOM;
 void create()
 {
-        set("short", "地道");
+        set("short", "鍦伴亾");
         set("long",
-"黑漆漆的地道，你不知道要爬多久才能出去。\n"
+"榛戞紗婕嗙殑鍦伴亾锛屼綘涓嶇煡閬撹鐖涔呮墠鑳藉嚭鍘汇�俓n"
 );
         set("exits", ([
   "up" : __DIR__"didao1",

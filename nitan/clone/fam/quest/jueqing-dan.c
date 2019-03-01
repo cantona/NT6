@@ -4,14 +4,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIR "¾øÇéµ¤" NOR, ({ "jueqing dan", "jueqing", "dan" }) );
+        set_name(HIR "çµ•æƒ…ä¸¹" NOR, ({ "jueqing dan", "jueqing", "dan" }) );
         set_weight(100);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIR "ÕâÊÇÒ»¿ÅÏÊºìÉ«µÄµ¤Ò©£¬Íâ¹ÛÉõÊÇÃÀÀö£¬¾ÝËµÄÜ½âÇé»¨Ö®¶¾¡£\n" NOR);
+                set("long", HIR "é€™æ˜¯ä¸€é¡†é®®ç´…è‰²çš„ä¸¹è—¥ï¼Œå¤–è§€ç”šæ˜¯ç¾Žéº—ï¼Œæ“šèªªèƒ½è§£æƒ…èŠ±ä¹‹æ¯’ã€‚\n" NOR);
                 set("value", 500000);
-                set("unit", "¿Å");             
+                set("unit", "é¡†");             
         }
         setup();
 }

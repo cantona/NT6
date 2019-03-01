@@ -3,20 +3,20 @@
 inherit NPC;
 #include <ansi.h>
 int ask_jiuyuan();
-#define QUESTDIR "quest/���Ӣ�۴�/"
+#define QUESTDIR "quest/射雕英雄傳/"
 
 void greeting(object me);
 
 void create()
 {
-	set_name("��Х��", ({ "guo xiaotian", "guo", "xiaotian" }) );
-	set("gender", "����" );
-	set("title", HIC"����"NOR);
-	set("nickname", HIC"���b����֮��"NOR);
+	set_name("郭嘯天", ({ "guo xiaotian", "guo", "xiaotian" }) );
+	set("gender", "男性" );
+	set("title", HIC"大俠"NOR);
+	set("nickname", HIC"北□郭靖之父"NOR);
 	set("age", 28);
 	set("long",
-"�����Ŀ��࣬Ũü���ۡ�\n"
-"������ɽ���ú����������ʹ��ʢ�ĺ����\n");
+"他身材魁梧，濃眉大眼。\n"
+"他是樑山泊好漢地佑星賽仁貴郭盛的後代。\n");
 	set("str", 25);
 	set("dex", 25);
 	set("con", 25);
@@ -48,18 +48,18 @@ void create()
 	set("neili", 50000);
 
   set("inquiry", ([
-    "��Ԯ": (: ask_jiuyuan :),
-		"������": "��������ܡ�",
-    "��Ƽ" : "�����һ�ҡ�",
-    "����" : "����һ�����˸���δ�����Ķ�Ůȡ�����֡�",
-    "�" : "��������������ĵĹ��⡣",
-    "��ϧ��" : "�����ҵ�ϱ��",
+    "救援": (: ask_jiuyuan :),
+		"楊鐵心": "他是我義弟。",
+    "李萍" : "她是我渾家。",
+    "郭靖" : "這是一個道人給我未出世的兒女取的名字。",
+    "楊康" : "這是我義弟楊鐵心的骨肉。",
+    "包惜弱" : "她是我弟媳。",
 
 	]));
 	set("chat_chance", 10);
         set("chat_msg", ({
-		"���ﲻ��ô�ĳ��ִ���������⵽���Ƿ�����ʲô���顢����\n",
-		"���Ӻ͵�ϱ��Ҫ���ˣ���ڹ�������ô�ᷢ�����������ء�����\n",
+		"村裡不怎麼的出現大批金兵，這到底是發生了什麼事情、、、\n",
+		"內子和弟媳快要生了，這節骨眼上怎麼會發生這種事情呢、、、\n",
         }) );
      setup();
 	carry_object("/clone/armor/cloth.c")->wear();
@@ -73,41 +73,41 @@ int ask_jiuyuan()
 	if(me->query(QUESTDIR+"start"))
 		  {
 	  command("beg1 "+me->query("id"));
-		command("say ��λ"+RANK_D->query_respect(this_player())+"����ȥ������ܰ���Ҫ��������ס�ˣ�");
+		command("say 這位"+RANK_D->query_respect(this_player())+"，快去救我義弟啊，要不他頂不住了？");
 			  return 1;
   } 
 	if(me->query(QUESTDIR+"over"))
 				  {
 	  command("beg1 "+me->query("id"));
-		command("say ��л��λ"+RANK_D->query_respect(this_player())+"���־������ѽ��");		
+		command("say 多謝這位"+RANK_D->query_respect(this_player())+"出手救我義弟呀？");		
 					  return 1;
   } 
   if( me->query("combat_exp") < 2000000 )
         	{
 	  command("disapp "+me->query("id"));
-		command("say ���㵱ǰ�ľ�����»����ܰ�æ��Ԯ����ܣ�����ץ��ȥ����ȥ�ɡ�\n");
+		command("say 以你當前的經驗恐怕還不能幫忙救援我義弟，還是抓緊去練功去吧。\n");
        			  return 1;
   }  	
   if(me->query(QUESTDIR+"time") && time()-me->query(QUESTDIR+"time")<86400)
 	{
 	  command("shake "+me->query("id"));
-	  command("say �����Ȱﵽ����ɣ�����ɡ�");
+	  command("say 今天先幫到這裡吧，明天吧。");
 	  return 1;
   }
    if(me->query(QUESTDIR+"combat_exp") && me->query("combat_exp")-me->query(QUESTDIR+"combat_exp")<100000)
 	{
 	  command("look "+me->query("id"));
-	  command("say ���㵱ǰ�ľ�����»����޷���æ������ץ��ȥ����ȥ�ɡ�");
+	  command("say 以你當前的經驗恐怕還是無法幫忙，還是抓緊去練功去吧。");
 	  return 1;
   }
  if(!me->query(QUESTDIR+"over"))
     {
-	me->set(QUESTDIR+"��ѩ����/start", 1);
+	me->set(QUESTDIR+"風雪驚變/start", 1);
 	me->set(QUESTDIR+"time",time());
   me->set(QUESTDIR+"combat_exp",me->query("combat_exp"));
 	command("cry "+me->query("id"));
-	command("say �����Һ���ܾ�Ԯһλ�����׷ɱ�ĵ�ʿ��û�뵽����ȴ���н����ץ���ǣ�\n"+
-		       "��λ������Ͽ�ȥ����ܼҽ������������İɣ���׼�����������͵���");
+	command("say 昨日我和義弟救援一位被金兵追殺的道士，沒想到今日卻來有金兵來抓我們，\n"+
+		       "這位大俠請趕快去我義弟家解救我義弟楊鐵心吧，我準備下武器隨後就到。");
 		       return 1;
   }
 }

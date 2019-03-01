@@ -4,10 +4,10 @@ inherit BOSS;
 
 void create()
 {
-        set_name(HIG"Ä§½çÄ§Íõ"NOR, ({"yao wang", "yao", "wang"}) );
-        set("gender", "ÄĞĞÔ" );
+        set_name(HIG"é­”ç•Œé­”ç‹"NOR, ({"yao wang", "yao", "wang"}) );
+        set("gender", "ç”·æ€§" );
         set("age", random(30)+20);
-        set("long", "Ä§½çÄ§Íõ,¸Õ´Ó·âÓ¡ÖĞÌÓÍÑ³ö¡£\n");
+        set("long", "é­”ç•Œé­”ç‹,å‰›å¾å°å°ä¸­é€ƒè„«å‡ºã€‚\n");
         set("attitude", "aggressive");
         set("class", "lvlin");
         set("str", 130);

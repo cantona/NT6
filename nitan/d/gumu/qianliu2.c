@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", HIR"Ç±Á÷"NOR);
+        set("short", HIR"æ½›æµ"NOR);
         set("long", @LONG
-ÄãÃ»ÔÚË®ÖĞ£¬Ö»¾õË®ÊÆÉõ¼±£¬³åµÃÄãÎŞ·¨Á¢×ã¡£ÄãÆøÃÆÒì³££¬Ö»µÃÆÁÆøÃş
-Ë÷Ç±ĞĞ£¬µ±ÕæÊÇ½øÍËÎ¬¹È¡£
+ä½ æ²’åœ¨æ°´ä¸­ï¼Œåªè¦ºæ°´å‹¢ç”šæ€¥ï¼Œæ²–å¾—ä½ ç„¡æ³•ç«‹è¶³ã€‚ä½ æ°£æ‚¶ç•°å¸¸ï¼Œåªå¾—å±æ°£æ‘¸
+ç´¢æ½›è¡Œï¼Œç•¶çœŸæ˜¯é€²é€€ç¶­è°·ã€‚
 LONG        );
 
         set("exits", ([
@@ -29,10 +29,10 @@ void init()
         add_action("do_qian","qian");   
         me->receive_damage("qi", 50 );
         me->receive_damage("jing", 50 ); 
-        message_vision(HIB"$NµÄÕæÆøÕıÔÚÁ÷Ê§£¬ºôÎüÊ®·ÖÀ§ÄÑ¡£\n"NOR, me);
+        message_vision(HIB"$Nçš„çœŸæ°£æ­£åœ¨æµå¤±ï¼Œå‘¼å¸ååˆ†å›°é›£ã€‚\n"NOR, me);
         if( query("qi", me)<10 || query("jing", me)<10 )
         {
-                set_temp("die_reason", "ÔÚÇ±Á÷ÖĞ±»ÑÍËÀ", me);
+                set_temp("die_reason", "åœ¨æ½›æµä¸­è¢«æ·¹æ­»", me);
                 me->unconcious();
                 me->die();
                 return ;   
@@ -44,19 +44,19 @@ int do_qian(string arg)
         object me;      
         me=this_player();       
         if ( !arg || arg != "down" )    
-                return notify_fail("ÄãÒªÍùÄÄÀïÇ±£¿\n"); 
+                return notify_fail("ä½ è¦å¾€å“ªè£¡æ½›ï¼Ÿ\n"); 
         if ( me->is_busy() || me->is_fighting())        
-                return notify_fail("ÄãÕıÃ¦×ÅÄÄ£¡\n");   
+                return notify_fail("ä½ æ­£å¿™è‘—å“ªï¼\n");   
         if (arg =="down")
         {       
                 if ((int)me->query_encumbrance() * 100 / (int)me->query_max_encumbrance() <= 50)        
-                        return notify_fail("ÓÉÓÚÖØÁ¦²»¹»£¬ÄãÎŞ·¨¼ÌĞøÏÂÇ±!\n");  
-                message_vision(HIG"$NÒ»¸öÃÍÔÔ£¬Ç±ÁËÏÂÈ¥¡£\n"NOR, me);   
+                        return notify_fail("ç”±äºé‡åŠ›ä¸å¤ ï¼Œä½ ç„¡æ³•ç¹¼çºŒä¸‹æ½›!\n");  
+                message_vision(HIG"$Nä¸€å€‹çŒ›æ ½ï¼Œæ½›äº†ä¸‹å»ã€‚\n"NOR, me);   
                 me->receive_damage("jing", 500);        
                 me->receive_damage("qi", 500);          
                 me->move(__DIR__"qianliu3");       
-                tell_room(environment(me), me->name() + "´ÓÉÏÃæÇ±ÁËÏÂÀ´¡£\n", ({ me }));        
-                message_vision (HIB"$NÖ»¾õµÃÍ·ÔÎÔÎµÄ£¬ÉíÌå½şÔÚ±ùÀäµÄË®ÖĞ£¬²»×¡µÄ²ü¶¶¡£\n"NOR,me);       
+                tell_room(environment(me), me->name() + "å¾ä¸Šé¢æ½›äº†ä¸‹ä¾†ã€‚\n", ({ me }));        
+                message_vision (HIB"$Nåªè¦ºå¾—é ­æšˆæšˆçš„ï¼Œèº«é«”æµ¸åœ¨å†°å†·çš„æ°´ä¸­ï¼Œä¸ä½çš„é¡«æŠ–ã€‚\n"NOR,me);       
                 return 1;       
         }
         return 1;       

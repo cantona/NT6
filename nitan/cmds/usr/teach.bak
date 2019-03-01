@@ -38,57 +38,57 @@ void done_re(object me, int i, string author, string text)
 		
         if (! notes[i-1])
 	{
-		tell_object(me, "error 01 �ظ�ʧ�ܣ�����teach list����Ƿ��ѱ����\n");
+		tell_object(me, "error 01 回復失敗，請檢查teach list編號是否已變更。\n");
 		return;
 	}
 	if (notes[i-1]["author"] != author)
 	{
-		tell_object(me, "error 02 �ظ�ʧ�ܣ�����teach list����Ƿ��ѱ����\n");
+		tell_object(me, "error 02 回復失敗，請檢查teach list編號是否已變更。\n");
 		return;
 	}
         
         notes[i-1]["msg"] =  notes[i-1]["msg"] + "\n" + 
                              HIR"----------------------------------------------------------------------\n" NOR +
-                             HIG + me->query("name") + "(" + me->query("id") + ")�ظ���" + 
+                             HIG + me->query("name") + "(" + me->query("id") + ")回復于" + 
                              MEMBER_D->bjtime(time(), 1)[0..9] + "\n" NOR + text + "\n";
         
         notes[i-1]["msg"] =  notes[i-1]["msg"] + 
                              HIR"----------------------------------------------------------------------\n\n" NOR;                     
         save();
 
-        tell_object(me, HIG "�ظ���ϣ������ȷ���������ѽ����ʹ�� teach solve " + i + " ��ע��\n");
+        tell_object(me, HIG "回復完畢，如果你確定此問題已解決請使用 teach solve " + i + " 標注！\n");
 
-	// ͬʱ�����
+	// 同時求教者
 	ob = find_player(author);
 	if (objectp(ob))
 	{
 		tell_object(ob, BEEP);
-                tell_object(ob, HIG + me->query("name") + "(" + me->query("id") + ")��"
-                                "������������Ϣ����ʹ�� 'teach read' �鿴��\n" NOR);
+                tell_object(ob, HIG + me->query("name") + "(" + me->query("id") + ")回"
+                                "復了你的求教信息！請使用 'teach read' 查看。\n" NOR);
 	}
-	// ���Ͷ���Ϣ֪ͨ
-    INFO_D->send_msg(author, "== ���������Ϣ�ѱ��ظ� ==\n" + notes[i-1]["msg"] + "\n");
+	// 發送短消息通知
+    INFO_D->send_msg(author, "== 您的求教信息已被回復 ==\n" + notes[i-1]["msg"] + "\n");
 
 	return;        
 }
 
 void do_re(object me, int i)
 {
-    if (! wizardp(me) && me->query("viremploy/job") != "���ֵ�ʦ")
+    if (! wizardp(me) && me->query("viremploy/job") != "新手導師")
     {
-	write("��û��Ȩ�޽��лظ���\n");
+	write("你沒有權限進行回復！\n");
 	return;
     }
 
     if( i > sizeof(notes) || i < 1) 
     {
-        write("�޴˱��!\n");
+        write("無此編號!\n");
         return 0;
     }
 
     if ( notes[i-1]["solve"] != "" )
     {
-        write(notes[i-1]["solve"] + "�Ѿ���־����������Ҫ�ٻظ�!\n");
+        write(notes[i-1]["solve"] + "已經標志過啦，不需要再回復!\n");
         return;
     }
 
@@ -122,30 +122,30 @@ void done_post(object me, mapping note, string text)
             notes[i-1]["time"] = note["time"];
             notes[i-1]["solve"] = "";
         }
-            tell_object(me, HIY "���������Ϣ������ϡ������Ϣ�Ѿ����ӵ����ֵ�ʦ֪ͨ�����\n");
-            tell_object(me, HIY "�������æ���Լ������飬��һ��ʱ�������� teach read �鿴"
-                                "�Ƿ�����\n" NOR);
+            tell_object(me, HIY "新手求教信息輸入完畢。你的信息已經被加到新手導師通知隊列裡。\n");
+            tell_object(me, HIY "你可以先忙你自己的事情，過一段時間後可以用 teach read 查看"
+                                "是否解決。\n" NOR);
     }
     else
     {
             notes += ({ note });
-            tell_object(me, HIY "���������Ϣ������ϡ������Ϣ�Ѿ����ӵ����ֵ�ʦ֪ͨ�����\n");
-            tell_object(me, HIY "���ֵ�ʦ���ڴ���������ң���ȴ���\n");
-            tell_object(me, HIY "�������æ���Լ������飬��һ��ʱ�������� teach read �鿴"
-                                "�Ƿ�����\n" NOR);
+            tell_object(me, HIY "新手求教信息輸入完畢。你的信息已經被加到新手導師通知隊列裡。\n");
+            tell_object(me, HIY "新手導師正在處理其他玩家，請等待。\n");
+            tell_object(me, HIY "你可以先忙你自己的事情，過一段時間後可以用 teach read 查看"
+                                "是否解決。\n" NOR);
     }
 
     save();
 
-    // ֪ͨ���е����ֵ�ʦ
+    // 通知所有的新手導師
     obs = users();
     foreach(ob in obs)
     { 
-            if (ob->query("viremploy/job") == "���ֵ�ʦ")
+            if (ob->query("viremploy/job") == "新手導師")
 	    {
                         tell_object(ob, BEEP);
-			tell_object(ob, HIG + me->query("name") + "(" + me->query("id") + ")������"
-                                        "���ֵ�ʦ��̣�teach list����\n" NOR);
+			tell_object(ob, HIG + me->query("name") + "(" + me->query("id") + ")正在向"
+                                        "新手導師求教（teach list）。\n" NOR);
             }
     }
     
@@ -159,10 +159,10 @@ void list_bug(object me)
 
     if (sizeof(notes) < 1) 
     {
-    	write("û�����ַ��������Ϣ��\n");
+    	write("沒有新手發出求教信息。\n");
 	return;
     } 
-    s = sprintf(HIW "\n���ַ���������б�����:\n" 
+    s = sprintf(HIW "\n新手發出的求教列表如下:\n" 
                 "----------------------------------------------------------------------\n" NOR);
 
     for( i = 0; i < sizeof(notes); i ++)
@@ -170,12 +170,12 @@ void list_bug(object me)
         str = sprintf("%d) %-50s %10s %s \n",
                            i + 1, 
                            notes[i]["title"], 
-	                   notes[i]["solve"] == "" ? "δ���" : HIG "�ѽ��" NOR " By " + notes[i]["solve"],
+	                   notes[i]["solve"] == "" ? "未解決" : HIG "已解決" NOR " By " + notes[i]["solve"],
                            MEMBER_D->bjtime(notes[i]["time"], 1)[0..9]);
         s = s + str;
     }
 
-    s = s + HIR "\n\n���ֵ�ʦʹ�� teach re <���> ���ͽ������������ѽ���������ע��\n\n" NOR;
+    s = s + HIR "\n\n新手導師使用 teach re <編號> 發送解決結果，並將已解決的問題標注。\n\n" NOR;
 
     me->start_more(s);
 }
@@ -186,7 +186,7 @@ void do_read(object me, int i)
 
     if( i > sizeof(notes) || i < 1) 
     {
-        write("�޴˱��!\n");
+        write("無此編號!\n");
         return;
     }
     s = sprintf("%d) %-50s %10s %s\n"
@@ -194,7 +194,7 @@ void do_read(object me, int i)
               "%s",
                i, 
                notes[i-1]["title"], 
-               notes[i-1]["solve"]=="" ? "δ���" : HIG "�ѽ��" NOR " By " + notes[i-1]["solve"],
+               notes[i-1]["solve"]=="" ? "未解決" : HIG "已解決" NOR " By " + notes[i-1]["solve"],
                MEMBER_D->bjtime(notes[i-1]["time"], 1)[0..9],
                notes[i-1]["msg"]);
 
@@ -215,20 +215,20 @@ int do_solve(object me, int i)
 {
     if( i > sizeof(notes) || i < 1) 
     {
-        write("�޴˱��!\n");
+        write("無此編號!\n");
         return 0;
     }
 
     if ( notes[i-1]["solve"] != "" )
     {
-        write(notes[i-1]["solve"] + "�Ѿ���־����!\n");
+        write(notes[i-1]["solve"] + "已經標志過啦!\n");
         return 1;
     }
     notes[i-1]["solve"] = me->query("id");
 
     save();
 
-    write(HIG "�������Ϣ�ѱ�־Ϊ�����\n" NOR);
+    write(HIG "該求教信息已標志為解決。\n" NOR);
 
     return 1;
 }
@@ -242,10 +242,10 @@ int main(object me, string arg)
     int i_re;
 
 
-	// ��ȡ�����
+	// 先取下面具
 	if (me->query_temp("apply/mask_flag"))
 	{
-		return notify_fail("����Ϊ�β�������Ŀʾ�ˣ�\n");
+		return notify_fail("閣下為何不以真面目示人？\n");
 	}
 
     restore();
@@ -254,15 +254,15 @@ int main(object me, string arg)
     {
         if(! wiz_level(me) || arg == "help")
         {
-            	tell_object(me, HIY "������" HIY MUD_NAME HIY "�������������ͣ�ͻȻ���ֲ�֪������ôŪ�ˡ�\n" NOR);
-           	tell_object(me, HIY "��Ͻ������ֵ�ʦ������������źţ�HELP������\n" NOR);
+            	tell_object(me, HIY "你正在" HIY MUD_NAME HIY "裡辛苦地挖著泥巴，突然發現不知道該怎麼弄了。\n" NOR);
+           	tell_object(me, HIY "你趕緊向新手導師發出緊急求教信號：HELP！！！\n" NOR);
             	where = environment(me);
             	if (! where)
-               	    s=sprintf("%s(%s)���",
+               	    s=sprintf("%s(%s)求教",
                               (string)me->query("name"),
                               (string)me->query("id"));
                 else
-                    s=sprintf("%s(%s)��%s���",
+                    s=sprintf("%s(%s)在%s求教",
                               (string)me->query("name"),
                               (string)me->query("id"),
                               (string)where->query("short"));
@@ -284,11 +284,11 @@ int main(object me, string arg)
 
     if( sscanf(arg, "%s %s", s, arg1) == 2 ) 
     {
-       	    if( ! wiz_level(me) && me->query("viremploy/job") != "���ֵ�ʦ") 
-                     return notify_fail("���޴�Ȩ�ޣ�����ʹ�÷�������� help teach \n");
+       	    if( ! wiz_level(me) && me->query("viremploy/job") != "新手導師") 
+                     return notify_fail("你無此權限，具體使用方法請參閱 help teach \n");
 
        	    if ( s != "solve" && s != "re" )
-                     return notify_fail("��ʽ���ԣ�����ʹ�÷�������� help teach \n");
+                     return notify_fail("格式不對，具體使用方法請參閱 help teach \n");
 
 	    if (s == "re")
 	    {
@@ -299,10 +299,10 @@ int main(object me, string arg)
 
             if ( arg1 == "all" )
 	    {
-                     if( !(i = sizeof(notes)) ) return notify_fail("û�˷��������Ϣ��\n");
+                     if( !(i = sizeof(notes)) ) return notify_fail("沒人發出求教信息。\n");
                      for( ; i > 0; i-- )notes[i-1]["solve"] = me->query("id");
 		     save();
-                     write("���е������Ϣ�Ѿ�����ˡ�\n");
+                     write("所有的求教信息已經解決了。\n");
                      return 1;
             }
 
@@ -318,12 +318,12 @@ int main(object me, string arg)
     if( sscanf(arg, "%s %d", s, arg2) == 2 ) 
     {
 
-	// ����Ĭ��Ϊ"solve"
-        if( ! wiz_level(me) && me->query("viremploy/job") != "���ֵ�ʦ") 
-                     return notify_fail("���޴�Ȩ�ޣ�����ʹ�÷�������� help teach \n");
+	// 以下默認為"solve"
+        if( ! wiz_level(me) && me->query("viremploy/job") != "新手導師") 
+                     return notify_fail("你無此權限，具體使用方法請參閱 help teach \n");
 
         if ( s != "solve")
-                     return notify_fail("��ʽ���ԣ�����ʹ�÷�������� help teach \n");
+                     return notify_fail("格式不對，具體使用方法請參閱 help teach \n");
 
         do_solve( me, arg2 );
 
@@ -336,7 +336,7 @@ int main(object me, string arg)
             {
         	case "read":       
 	            if( ! (i = sizeof(notes)) )
-        	               return notify_fail("��û���˷��������Ϣ��\n");
+        	               return notify_fail("還沒有人發出求教信息！\n");
             	    else 
 	   	    {
                         i = search_id( me->query("id") );
@@ -345,23 +345,23 @@ int main(object me, string arg)
                     break;
 
 	        case "list":
-         	    if( ! wiz_level(me) && me->query("viremploy/job") != "���ֵ�ʦ") 
-				return notify_fail("���޴�Ȩ�ޣ�����ʹ�÷�������� help teach \n");
+         	    if( ! wiz_level(me) && me->query("viremploy/job") != "新手導師") 
+				return notify_fail("你無此權限，具體使用方法請參閱 help teach \n");
            	    list_bug(me);
                     break;
 
         	case "del":
-            	    if( ! wiz_level(me) && me->query("viremploy/job") != "���ֵ�ʦ")
-                               return notify_fail("����Ȩɾ�������Ϣ������ʹ�÷�������� help teach \n");
+            	    if( ! wiz_level(me) && me->query("viremploy/job") != "新手導師")
+                               return notify_fail("你無權刪除求教信息，具體使用方法請參閱 help teach \n");
 
                     if( !(i = sizeof(notes)) )
-                               return notify_fail("û���˷��������Ϣ��\n");
+                               return notify_fail("沒有人發出求教信息。\n");
 
            	    for( ; i > 0; i-- ) 
 		    {
                          if( "" != notes[i-1]["solve"] )
 			 {
-                              printf("%s�������Ϣ�Ѿ���ɾ���ˣ�\n", notes[i-1]["author"]);
+                              printf("%s的求教信息已經被刪除了！\n", notes[i-1]["author"]);
 
                     	      if( sizeof(notes) == 1 ) notes = ({});
                               else if(i == 1) notes = notes[1..sizeof(notes)-1];
@@ -374,8 +374,8 @@ int main(object me, string arg)
                     break;
 
                 default:
-            	    if( ! wiz_level(me) && me->query("viremploy/job") != "���ֵ�ʦ") 
-                            return notify_fail("���޴�Ȩ�ޣ�����ʹ�÷�������� help teach \n");
+            	    if( ! wiz_level(me) && me->query("viremploy/job") != "新手導師") 
+                            return notify_fail("你無此權限，具體使用方法請參閱 help teach \n");
 
                     if( sscanf(arg, "%d", i) == 1 )
                     	    do_read( me, i );
@@ -383,49 +383,49 @@ int main(object me, string arg)
                     else if( sscanf( arg, "%s", str ) == 1 ) 
                     {
                     	i = search_id(str);
-                   	if( i == 0 ) return notify_fail("�޴���ҷ����������Ϣ��\n");
+                   	if( i == 0 ) return notify_fail("無此玩家發出的求教信息！\n");
                     	do_read( me, i );
                     }
              }
     }
-    else return notify_fail("ָ���ʽ���ԣ�����ʹ�÷�������� help teach \n");
+    else return notify_fail("指令格式不對，具體使用方法請參閱 help teach \n");
 
     return 1;
 }
 
 int help(object me)
 {
-        if (! wiz_level(me) && me->query("viremploy/job") != "���ֵ�ʦ")
+        if (! wiz_level(me) && me->query("viremploy/job") != "新手導師")
         write(@HELP
-ָ���ʽ : 
+指令格式 : 
 
 teach help: 
-���ָ����������������ֵ�ʦ������
-����������ϵͳ����ʾ������������ݵ����������������
-Ӧ�ý����ֵ��������Ҫ��̵�����˵������Ա������ֵ�ʦ��
-�������ÿ�����ֻ����һ�������Ϣ���µ������Ϣ��������
-ǰ�����롣
+這個指令可以讓新手向新手導師求助。
+輸入該命令後，系統將提示你輸入求教內容的描述。玩家在這裡
+應該將出現的情況和想要請教的內容說清楚，以便讓新手導師幫
+助解決。每個玩家只能貼一條求教信息，新的求教信息將覆蓋以
+前的輸入。
 
 teach read:
-������ teach read �Ķ��Լ������������Ϣ��
+可以用 teach read 閱讀自己貼出的求教信息。
 
 HELP
     );
         else 
 write(@HELP
-ָ���ʽ :       
-           teach help                  �� ��������źŸ����ֵ�ʦ��
-���ָ����������������ֵ�ʦ������
-����������ϵͳ����ʾ������������ݵ����������������
-Ӧ�ý����ֵ��������Ҫ��̵�����˵������Ա������ֵ�ʦ��
-�������ÿ�����ֻ����һ�������Ϣ���µ������Ϣ��������
-ǰ�����롣
-           teach read                  �� �Ķ��ѷ��͵�����źż��ظ������
-           teach (list)                �� ��ʾϵͳ��Ŀǰ�����������Ϣ��     
-           teach <��������id>        �� ��ʾָ�������������Ϣ��           
-           teach del                   �� ɾ�������Ѿ���עΪ���ѽ��������Ϣ��
-           teach solve <��������id>  �� ��ָ�������Ϣ��עΪ���ѽ������
-           teach re <����>             �� �ظ�ָ�������������Ϣ��
+指令格式 :       
+           teach help                  ： 發送求教信號給新手導師。
+這個指令可以讓新手向新手導師求助。
+輸入該命令後，系統將提示你輸入求教內容的描述。玩家在這裡
+應該將出現的情況和想要請教的內容說清楚，以便讓新手導師幫
+助解決。每個玩家只能貼一條求教信息，新的求教信息將覆蓋以
+前的輸入。
+           teach read                  ： 閱讀已發送的求教信號及回復情況。
+           teach (list)                ： 顯示系統中目前的新手求教信息。     
+           teach <號碼或玩家id>        ： 顯示指定的新手求教信息。           
+           teach del                   ： 刪除所有已經標注為“已解決”的信息。
+           teach solve <號碼或玩家id>  ： 將指定求教信息標注為“已解決”。
+           teach re <號碼>             ： 回復指定的新手求教信息。
 
 HELP
 );

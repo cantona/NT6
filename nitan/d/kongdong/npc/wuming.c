@@ -1,5 +1,5 @@
-//Ò»¸ö¿ÉÒÔÖ¸µ¼áÇá¼µÜ×ÓÎä¹¦µÄNPC£¬¿ÉÒÔ¿´×÷ÊÇÉñÏÉµÄ»¯Éí¡£
-//ÐÐ×ÙÎÞ¶¨£¬¶øÇÒºÜÉÙ³öÏÖ¡£
+//ä¸€å€‹å¯ä»¥æŒ‡å°Žå´†å³’å¼Ÿå­æ­¦åŠŸçš„NPCï¼Œå¯ä»¥çœ‹ä½œæ˜¯ç¥žä»™çš„åŒ–èº«ã€‚
+//è¡Œè¹¤ç„¡å®šï¼Œè€Œä¸”å¾ˆå°‘å‡ºç¾ã€‚
 // Qyz
 
 inherit F_UNIQUE;
@@ -9,9 +9,9 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÎÞÃûÀÏÕß", ({ "lao zhe","zhe", "old" }) );
+        set_name("ç„¡åè€è€…", ({ "lao zhe","zhe", "old" }) );
         set("title","");
-        set("gender", "ÄÐÐÔ" );
+        set("gender", "ç”·æ€§" );
         set("age", 110);
         set("cor", 40);
         set("cps", 40);
@@ -39,7 +39,7 @@ void create()
         set("force", 10000);
         set("force_factor",1000);
 
-        set("long",     "ÕâÊÇÒ»Î»ÏÉ·çµÀ¹ÇµÄÀÏµÀÈË£¬³¤µÃ´ÈÃ¼ÉÆÄ¿£¬¼«ÊÇ¿ÉÇ×¡£\n");
+        set("long",     "é€™æ˜¯ä¸€ä½ä»™é¢¨é“éª¨çš„è€é“äººï¼Œé•·å¾—æ…ˆçœ‰å–„ç›®ï¼Œæ¥µæ˜¯å¯è¦ªã€‚\n");
         set("chat_chance_combat", 20);      
         set("chat_msg_combat", ({
         (: SKILL_D("hujia-dao")->perform_action(this_object(), "weizhen-bafang") :),
@@ -59,24 +59,24 @@ int valid_teach( object ppl, string skill )
 {
 	
    
-    if (ppl->query("family/family_name") != "áÇá¼ÅÉ")      //Èç¹ûÃ»ÓÐÑ§¹¦·òµÄ±ê¼Ç
+    if (ppl->query("family/family_name") != "å´†å³’æ´¾")      //å¦‚æžœæ²’æœ‰å­¸åŠŸå¤«çš„æ¨™è¨˜
     {
-        command( "say ¡°ºÇºÇ£¬ºÃ¾ÃÃ»ÈËºÍÀÏ·òËµ»°À²£¡¡±" );
+        command( "say â€œå‘µå‘µï¼Œå¥½ä¹…æ²’äººå’Œè€å¤«èªªè©±å•¦ï¼â€" );
         return 0;
     }
    
     if (ppl->query("marks/kongdong/zhou") != 1) 
     {
-        command( "say ¡°Äã¼û¹ýÖÜÕæÈËÃ´£¿¡±" );
+        command( "say â€œä½ è¦‹éŽå‘¨çœŸäººéº¼ï¼Ÿâ€" );
         return 0;
     }
     if ( !query_jibie( skill ) )
         return 0;
      
      
-    if( ppl->query("class_score/áÇá¼ÅÉ") < 500 )
+    if( ppl->query("class_score/å´†å³’æ´¾") < 500 )
         {
-        command( "say ¡°ÎÒÔÚáÇá¼É½×¡¼¸Ê®ÄêÁË£¬ÔõÃ´²»Ôø¼û¹ýÄã£¿¡±" );
+        command( "say â€œæˆ‘åœ¨å´†å³’å±±ä½å¹¾åå¹´äº†ï¼Œæ€Žéº¼ä¸æ›¾è¦‹éŽä½ ï¼Ÿâ€" );
         return 0;
            
         }
@@ -84,23 +84,23 @@ int valid_teach( object ppl, string skill )
     return 1;   
     if( skill=="hujia-dao"&&random( (int)ppl->query("kar") ) < 20 &&ppl->query_jibie("hujia-dao")<1) 
      {
-        command( "say ¡°ÄãÕâÈË¿´ÆðÀ´ÐÄÊõ²»Õý£¬ÎÒ²»ÄÜ½ÌÄã£¡¡±" );
+        command( "say â€œä½ é€™äººçœ‹èµ·ä¾†å¿ƒè¡“ä¸æ­£ï¼Œæˆ‘ä¸èƒ½æ•™ä½ ï¼â€" );
         ppl->add("gin",-20);
         return 0;
     }
        if(skill=="hujia-dao"&& ppl->query_xiuwei_by_type("blade")<1500)
      {
-        command( "say ¡°¿ÉÏ§ÄãÐÞÎª²»¹»£¬ÁìÎò²»ÁËÎÒ¼Ò´«µÄºú¼Òµ¶·¨£¡¡±" );
+        command( "say â€œå¯æƒœä½ ä¿®ç‚ºä¸å¤ ï¼Œé ˜æ‚Ÿä¸äº†æˆ‘å®¶å‚³çš„èƒ¡å®¶åˆ€æ³•ï¼â€" );
         return 0;
     }  
-    command( "say ¡°ÖÕÓÚÕÒµ½Ò»¸ö¿ÉÒÔ·¢ÑïÎÒºú¼Òµ¶·¨µÄºó±²ÁË¡£¡±" );
+    command( "say â€œçµ‚äºŽæ‰¾åˆ°ä¸€å€‹å¯ä»¥ç™¼æšæˆ‘èƒ¡å®¶åˆ€æ³•çš„å¾Œè¼©äº†ã€‚â€" );
     command( "haaa" );
     return 1; 
 
 }
 
 
-int zhongcheng( object ppl, string skill )  //²»¼ì²éÖÒ³Ï¶È
+int zhongcheng( object ppl, string skill )  //ä¸æª¢æŸ¥å¿ èª åº¦
 {
     return 1;
 }

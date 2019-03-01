@@ -7,12 +7,12 @@ int give_ling();
 
 void create()
 {
-        set_name("ÕÅÈı", ({ "zhang san", "zhang", "san" }));
-        set("title", HIY "ÏÀ¿ÍµºÉÍÉÆÊ¹Õß" NOR);
-        set("gender", "ÄĞĞÔ");
+        set_name("å¼µä¸‰", ({ "zhang san", "zhang", "san" }));
+        set("title", HIY "ä¿ å®¢å³¶è³å–„ä½¿è€…" NOR);
+        set("gender", "ç”·æ€§");
         set("age", 37);
         set("long",
-              "ÕâÊÇ¸ö¿´ÆğÀ´ÈıÊ®À´ËêµÄºº×Ó£¬Éí²Ä·ÊÅÖ£¬Á³É«ºìÈó¡£\n"
+              "é€™æ˜¯å€‹çœ‹èµ·ä¾†ä¸‰åä¾†æ­²çš„æ¼¢å­ï¼Œèº«æè‚¥èƒ–ï¼Œè‡‰è‰²ç´…æ½¤ã€‚\n"
         );
 
         set("str", 36);
@@ -56,10 +56,10 @@ void create()
                 (: perform_action, "unarmed.xuan" :),
                 (: perform_action, "unarmed.hun" :),
         }) );
-        create_family("ÏÀ¿Íµº", 0, "ÉÍÉÆÊ¹Õß");
+        create_family("ä¿ å®¢å³¶", 0, "è³å–„ä½¿è€…");
         set("inquiry",  ([
-            "ÉÍÉÆ·£¶ñÁî" : (: give_ling :),
-            "À°°ËÖà"     : "ÄÃÁËÉÍÉÆ·£¶ñÁî£¬ÉÏÏÀ¿Íµº¾Í¿ÉÒÔºÈÀ°°ËÖà£¬ÄãÒ²ÏëÈ¥£¿\n",
+            "è³å–„ç½°æƒ¡ä»¤" : (: give_ling :),
+            "è‡˜å…«ç²¥"     : "æ‹¿äº†è³å–„ç½°æƒ¡ä»¤ï¼Œä¸Šä¿ å®¢å³¶å°±å¯ä»¥å–è‡˜å…«ç²¥ï¼Œä½ ä¹Ÿæƒ³å»ï¼Ÿ\n",
         ]));
 
         set("lingpai", 3);
@@ -85,44 +85,44 @@ int give_ling()
         if( query("shen", me)<-100000 )
         {
              command("heng");
-             command("say ¶ûµÈĞ°Ä§ÍáµÀ£¬ÎÒÕıÓûÏà³ı£¬ÄãÈ´·´ÕÒÉÏÃÅÀ´ÁË£¡\n");
+             command("say çˆ¾ç­‰é‚ªé­”æ­ªé“ï¼Œæˆ‘æ­£æ¬²ç›¸é™¤ï¼Œä½ å»åæ‰¾ä¸Šé–€ä¾†äº†ï¼\n");
              kill_ob(me);
              return 1;
         }
         
         if (me->query_skill("force", 1) < 200)
         {
-             command("say ¸óÏÂÄÚ¹¦²»¼Ã£¬ÕâÉÍÉÆ·£¶ñÁîÄã»¹ÊÇÒª²»µÃ£¡\n");
+             command("say é–£ä¸‹å…§åŠŸä¸æ¿Ÿï¼Œé€™è³å–„ç½°æƒ¡ä»¤ä½ é‚„æ˜¯è¦ä¸å¾—ï¼\n");
              return 1;
         }  
 
         if( query("weiwang", me)<100000 )
         {
-             command("say ¸óÏÂ·Ç½­ºş³ÉÃûÈËÊ¿£¬»¹ÊÇÇë»Ø°É£¡");
+             command("say é–£ä¸‹éæ±Ÿæ¹–æˆåäººå£«ï¼Œé‚„æ˜¯è«‹å›å§ï¼");
              return 1;
         }
        
         if (me->query_skill("martial-cognize", 1) < 200)
         {
-             command("say ¸óÏÂÎäÑ§ĞŞÑøÊµÔÚÓĞÏŞ£¬ÕâÉÍÉÆ·£¶ñÁîÄã»¹ÊÇ²»ÒªÎªºÃ£¡\n");
+             command("say é–£ä¸‹æ­¦å­¸ä¿®é¤Šå¯¦åœ¨æœ‰é™ï¼Œé€™è³å–„ç½°æƒ¡ä»¤ä½ é‚„æ˜¯ä¸è¦ç‚ºå¥½ï¼\n");
              return 1;
         }  
        
         if (present("shangfa ling", me))
         {
              command("heng");
-             command("say ¸óÏÂÒ²Ì«Ì°ĞÄÁË°É£¡");
+             command("say é–£ä¸‹ä¹Ÿå¤ªè²ªå¿ƒäº†å§ï¼");
              return 1;
         }
 
         if (query("lingpai") < 1)
         {
              command("shake"); 
-             command("say ÎÒÊÖÍ·ÉÏµÄÉÍÉÆ·£¶ñÁîÒÑ¾­È«ËÍ³öÈ¥ÁË¡£");
+             command("say æˆ‘æ‰‹é ­ä¸Šçš„è³å–„ç½°æƒ¡ä»¤å·²ç¶“å…¨é€å‡ºå»äº†ã€‚");
              return 1;
         }
         command("nod");
-        command("say ÄÃÈ¥°É£¬¼ÇµÃÉÏÏÀ¿ÍµººÈÀ°°ËÖà£¡");
+        command("say æ‹¿å»å§ï¼Œè¨˜å¾—ä¸Šä¿ å®¢å³¶å–è‡˜å…«ç²¥ï¼");
 
         "/clone/lonely/shangfaling"->move(me);
         return 1;

@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short",HIG"Ò©·¿"NOR);
+        set("short",HIG"è—¥æˆ¿"NOR);
         set("long", @LONG
-ÕâÀïÊÇÒ»¼äÊ¯ÊÒ£¬ÖÜÎ§µÄ»ğ°Ñ½«Ê¯ÊÒÕÕµÄµÆ»ğÍ¨Ã÷£¬Ê¯ÊÒÀïÃæ°ÚÂú
-ÁËºÜ¶àÆ¿Æ¿¹Ş¹Ş£¬ÉÏÃæ¶¼ÌùºÃÁË±êÇ©£¬Ò»Æ¿Æ¿Óñ·ä½¬±»¹ÅÄ¹µÜ×ÓÖÆ³Éºó
-·ÅÔÚ´Ë´¦¡£ÄãÄÜ¿´¼û¼¸¸ö¹ÅÄ¹µÜ×ÓÕıÔÚÃ¦ÂµµÄ¸É»î¡£
+é€™è£¡æ˜¯ä¸€é–“çŸ³å®¤ï¼Œå‘¨åœçš„ç«æŠŠå°‡çŸ³å®¤ç…§çš„ç‡ˆç«é€šæ˜ï¼ŒçŸ³å®¤è£¡é¢æ“ºæ»¿
+äº†å¾ˆå¤šç“¶ç“¶ç½ç½ï¼Œä¸Šé¢éƒ½è²¼å¥½äº†æ¨™ç°½ï¼Œä¸€ç“¶ç“¶ç‰èœ‚æ¼¿è¢«å¤å¢“å¼Ÿå­åˆ¶æˆå¾Œ
+æ”¾åœ¨æ­¤è™•ã€‚ä½ èƒ½çœ‹è¦‹å¹¾å€‹å¤å¢“å¼Ÿå­æ­£åœ¨å¿™ç¢Œçš„å¹¹æ´»ã€‚
 LONG        );
         set("exits", ([
                 "north" : __DIR__"mudao10",
@@ -40,16 +40,16 @@ int do_make(string arg)
         ob= present("feng mi", me);
         name1=query("id", me);
         if (me->is_busy() || me->is_fighting())
-                return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ æ­£å¿™è‘—å‘¢ã€‚\n");
         if ( arg =="jiang")
         {
                 if( !query_temp("gm_job1", me) )
-                        return notify_fail("Äã»¹Ã»È¥²ÉÃÛÄØ£¬ÔõÃ´À´ÖÆÓñ·ä½¬£¿\n");
+                        return notify_fail("ä½ é‚„æ²’å»æ¡èœœå‘¢ï¼Œæ€éº¼ä¾†åˆ¶ç‰èœ‚æ¼¿ï¼Ÿ\n");
                 if (!objectp(present("feng mi", me)))
-                        return notify_fail("ÄãÓÃÊ²Ã´À´ÖÆ³ÉÓñ·ä½¬£¿\n");
+                        return notify_fail("ä½ ç”¨ä»€éº¼ä¾†åˆ¶æˆç‰èœ‚æ¼¿ï¼Ÿ\n");
                 if( query_temp("gm/make", ob) != name1 )
-                        return notify_fail("Õâ·äÃÛºÃÏó²»ÊÇÄã²ÉÀ´µÄ°É£¿\n");
-                message_vision(HIY"$N×ĞÏ¸µØ½«·äÃÛµ÷ºÍ¾ùÔÈ£¬ÖÆ³ÉÓñ·ä½¬£¬·ÅÔÚ¼ÜÉÏ¡£\n"NOR,me);
+                        return notify_fail("é€™èœ‚èœœå¥½è±¡ä¸æ˜¯ä½ æ¡ä¾†çš„å§ï¼Ÿ\n");
+                message_vision(HIY"$Nä»”ç´°åœ°å°‡èœ‚èœœèª¿å’Œå‡å‹»ï¼Œåˆ¶æˆç‰èœ‚æ¼¿ï¼Œæ”¾åœ¨æ¶ä¸Šã€‚\n"NOR,me);
                 delete_temp("gm_job1", me);
                 exp=40+random(20);
                 addn("combat_exp", exp, me);
@@ -58,10 +58,10 @@ int do_make(string arg)
                 score=2+random(5);
                 addn("score", score, me);
                 call_out("destroying", 1, ob);
-                tell_object(me,HIW"ÒòÎªÀÍ×÷£¬ÄãÔö³¤ÁË£º" + chinese_number(exp) + "µãÊµÕ½¾­Ñé" + chinese_number(pot) + "µãÇ±ÄÜ" + chinese_number(score) + "µã½­ºşÔÄÀú¡£\n"NOR);
+                tell_object(me,HIW"å› ç‚ºå‹ä½œï¼Œä½ å¢é•·äº†ï¼š" + chinese_number(exp) + "é»å¯¦æˆ°ç¶“é©—" + chinese_number(pot) + "é»æ½›èƒ½" + chinese_number(score) + "é»æ±Ÿæ¹–é–±æ­·ã€‚\n"NOR);
                 return 1;
         }
-        return notify_fail("ÄãÏë°Ñ·äÃÛÖÆ³ÉÊ²Ã´°¡£¿\n");
+        return notify_fail("ä½ æƒ³æŠŠèœ‚èœœåˆ¶æˆä»€éº¼å•Šï¼Ÿ\n");
 }
 
 void destroying(object ob)

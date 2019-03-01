@@ -1,6 +1,6 @@
 // This program is a part of NT MudLIB
 // Written by Lonely@nitan.org
-// realnewsd.c ÊµÊ±ĞÂÎÅÏµÍ³
+// realnewsd.c å¯¦æ™‚æ–°èç³»çµ±
 
 #include <ansi.h>
 #include <net/socket.h>
@@ -31,7 +31,7 @@
 
 #define HTTP_GET_PAGE_REQUEST(_page_, _host_name_) "GET " + _page_ + " HTTP/1.1\nAccept: */*\nAccept-Language: zh-cn\nAccept-Encoding: deflate\nAccept-Charset: gb2312\nHost: " + _host_name_ + "\nConnection: Keep-Alive\n\n"
 
-#define DEBUG(x) CHANNEL_D->channel_broadcast("nch", "REALNEWS_D ¾«Áé£º"+(string)x)
+#define DEBUG(x) CHANNEL_D->channel_broadcast("nch", "REALNEWS_D ç²¾éˆï¼š"+(string)x)
 
 void get_news_list(string url);
 void get_each_news_data(int fd);
@@ -74,12 +74,12 @@ string DN2IP(string host)
 
 public string read_news_list()
 {
-        string list = sprintf("\n%4s%|12s%-48s\n%64'-'s\n", "±àºÅ", "Àà±ğ", "±êÌâ", "");
+        string list = sprintf("\n%4s%|12s%-48s\n%64'-'s\n", "ç·¨è™Ÿ", "é¡åˆ¥", "æ¨™é¡Œ", "");
         array groups;
         array titles;
 
         if ( !sizeof(news_list) || !sizeof(news_data) )
-                return "µ±Ç°Ã»ÓĞ¿É¶ÁĞÂÎÅ¡£\n";
+                return "ç•¶å‰æ²’æœ‰å¯è®€æ–°èã€‚\n";
 
         groups = keys(news_data);
 
@@ -112,13 +112,13 @@ public string read_news(string num)
         mixed data;
 
         if (! sscanf(num[0..0], "%d", group_id))
-                return "ĞÂÎÅ±àºÅ´íÎó£¡\n";
+                return "æ–°èç·¨è™ŸéŒ¯èª¤ï¼\n";
 
         if (! sscanf(num[1..], "%d", title_id))
-                return "ĞÂÎÅ±àºÅ´íÎó£¡\n";
+                return "æ–°èç·¨è™ŸéŒ¯èª¤ï¼\n";
 
         if (! sizeof(group_ids))
-                return "ĞÂÎÅ±àºÅ´íÎó£¡\n";
+                return "æ–°èç·¨è™ŸéŒ¯èª¤ï¼\n";
 
         foreach (string gp, int n in group_ids)
         {
@@ -144,7 +144,7 @@ public string read_news(string num)
         if (! news_data[group][title])
         ***********************************************/
         if (! mb_query(group + "/" + title, news_data))
-                return "ĞÂÎÅ±àºÅ´íÎó£¡\n";
+                return "æ–°èç·¨è™ŸéŒ¯èª¤ï¼\n";
 
         data = news_data[group][title];
 
@@ -153,7 +153,7 @@ public string read_news(string num)
                         data[NEWS_URL] + NOR + data[NEWS_DATA];
 
         return "\n" + HIY + sprintf("%|64s", title) + HIW + "\n" +
-                        data[NEWS_URL] + NOR + "\n\nĞÂÎÅÄÚÈİÃ»ÓĞ¶ÁÈ¡³É¹¦,Çë²é¿´ÉÏÃæÍøÖ·ÁË½âÏêÇé.\n\n";
+                        data[NEWS_URL] + NOR + "\n\næ–°èå…§å®¹æ²’æœ‰è®€å–æˆåŠŸ,è«‹æŸ¥çœ‹ä¸Šé¢ç¶²å€äº†è§£è©³æƒ….\n\n";
 
 }
 
@@ -203,7 +203,7 @@ string parse_news_data(string data)
         int data_size, text_flag = 0, el_flag = 0;
 
         a = strsrch(data, "<!-- publish_helper name=");
-        b = strsrch(data, "<!-- ·ÖÏí begin -->");
+        b = strsrch(data, "<!-- åˆ†äº« begin -->");
 
         data = data[a..b];
         c = strsrch(data, "<!--NEWSZW_HZH_BEGIN-->");
@@ -266,10 +266,10 @@ string parse_news_data(string data)
 void get_each_news_status(int fd, string msg)
 {
         if (fd && !undefinedp(socket_obs[fd]))
-                DEBUG(sprintf("¶ÁÈ¡µ¥¶ÀĞÂÎÅ¡º%s¡»Ïß³Ì×´¿ö£º%s\n",
+                DEBUG(sprintf("è®€å–å–®ç¨æ–°èã€%sã€ç·šç¨‹ç‹€æ³ï¼š%s\n",
                               socket_obs[fd][TITLE], msg));
         else
-                DEBUG(sprintf("¶ÁÈ¡µ¥¶ÀĞÂÎÅÏß³Ì×´¿ö£º%s\n", msg));
+                DEBUG(sprintf("è®€å–å–®ç¨æ–°èç·šç¨‹ç‹€æ³ï¼š%s\n", msg));
 }
 
 void get_each_news_rece(int fd, mixed data)
@@ -280,7 +280,7 @@ void get_each_news_rece(int fd, mixed data)
         else
                 news_data["temp"]["fd"] += data;
         */
-        // »ñÈ¡Ö÷Ò³Ä³Ò»¸öĞÂÎÅÄÚÈİĞÅÏ¢·ÅÈënews_data["temp"]["fd"]ÖĞ
+        // ç²å–ä¸»é æŸä¸€å€‹æ–°èå…§å®¹ä¿¡æ¯æ”¾å…¥news_data["temp"]["fd"]ä¸­
 
         mb_set("temp/" + fd, mb_query("temp/" + fd, news_data) + data, news_data);
 }
@@ -305,7 +305,7 @@ void get_each_news_close(int fd)
         foreach (string group in groups)
                 if (! undefinedp(news_data[group][title]))
                 {
-                        // »ñÈ¡ĞÂÎÅÀà±ğÃû
+                        // ç²å–æ–°èé¡åˆ¥å
                         group_name = group;
                         break;
                 }
@@ -324,7 +324,7 @@ void get_each_news_close(int fd)
 
         if (! sizeof(news_html_page) || strsrch(news_html_page, "</html>") < 0)
         {
-                // »ñÈ¡ĞÂÎÅÊ§°ÜÔòÖØĞÂ³¢ÊÔ
+                // ç²å–æ–°èå¤±æ•—å‰‡é‡æ–°å˜—è©¦
                 get_each_news_data(fd);
                 socket_close(fd);
                 return;
@@ -333,7 +333,7 @@ void get_each_news_close(int fd)
         news_html_page = parse_news_data(news_html_page);
         news_info += ({ news_html_page });
 
-        // ½«ĞÂÎÅÄÚÈİ¼Óµ½news_dataÀï
+        // å°‡æ–°èå…§å®¹åŠ åˆ°news_dataè£¡
         // news_data[group_name][title] = news_info;
         mb_set(group_name + "/" + title, news_info, news_data);
         mb_delete("temp/" + fd, news_data);
@@ -352,14 +352,14 @@ void get_each_news_data(int fd)
         int    socket_ob_fd;
         mixed  socket_data;
 
-        if( fd ) // ¶ÁÈ¡Ö¸¶¨fdµÄnews£¬Ö÷Òª³öÏÖÔÚ¶ÁÈ¡²»³É¹¦Ê±¡£
+        if( fd ) // è®€å–æŒ‡å®šfdçš„newsï¼Œä¸»è¦å‡ºç¾åœ¨è®€å–ä¸æˆåŠŸæ™‚ã€‚
         {
                 socket_data = socket_obs[fd];
 
                 purl = socket_data[PAGE_URL];
                 if( !undefinedp(get_each_news_times[purl]) )
                 {
-                        // ÔÙ´Î¶ÁÈ¡²»³É¹¦µÄ»°Ôò·ÅÆú¶ÁÈ¡
+                        // å†æ¬¡è®€å–ä¸æˆåŠŸçš„è©±å‰‡æ”¾æ£„è®€å–
                         map_delete(socket_obs, fd);
                         return;
                 }
@@ -446,7 +446,7 @@ void parse_group_list()
                 sscanf(group_part, "%*s<author>%s</author>%*s", a_news_from);
                 sscanf(group_part, "%*s<pubDate>%s</pubDate>%*s", a_news_time);
 
-                //a_news_title = replace_string(a_news_title, "/", "£¯");
+                //a_news_title = replace_string(a_news_title, "/", "ï¼");
                 // news_data[group_name][a_news_title] = ({a_news_page_url, a_news_from, a_news_time});
                 mb_set(group_name + "/" + a_news_title, ({ a_news_page_url, a_news_from, a_news_time }), news_data);
 
@@ -457,9 +457,9 @@ void parse_group_list()
 
 void get_group_list_rece(int fd, mixed data)
 {
-        // »ñÈ¡Ö÷Ò³ËùÓĞÄÚÈİĞÅÏ¢·ÅÈënews_data["temp"]["list"]ÖĞ
+        // ç²å–ä¸»é æ‰€æœ‰å…§å®¹ä¿¡æ¯æ”¾å…¥news_data["temp"]["list"]ä¸­
         mb_set("temp/group", mb_query("temp/group", news_data) + data, news_data);
-        //DEBUG(sprintf("»ñÈ¡Ö÷Ò³ËùÓĞÄÚÈİ·ÅÈënews_data[temp][group]ĞÅÏ¢£º%O\n", data));
+        //DEBUG(sprintf("ç²å–ä¸»é æ‰€æœ‰å…§å®¹æ”¾å…¥news_data[temp][group]ä¿¡æ¯ï¼š%O\n", data));
 }
 
 void get_group_list_close(int fd)
@@ -495,20 +495,20 @@ void parse_news_list()
         int    socket_ob_fd;
         mixed  socket_data;
 
-        // ½«»ñÈ¡µÄÖ÷Ò³ÄÚÈİ½øĞĞÉ¸Ñ¡¹éÀà´æ·Åµ½news_data[group_name][title]
+        // å°‡ç²å–çš„ä¸»é å…§å®¹é€²è¡Œç¯©é¸æ­¸é¡å­˜æ”¾åˆ°news_data[group_name][title]
         // if (! (temp = news_data["temp"]["list"]))
         if (! (temp = mb_query("temp/list", news_data)))
                 return;
 
-        body_part = temp[strsrch(temp, "<!-- ÓÒ²àÆµµÀÄÚÈİ¿ªÊ¼-->")..strsrch(temp, "<!-- ÓÒ²àÆµµÀÄÚÈİ½áÊø-->")];
+        body_part = temp[strsrch(temp, "<!-- å³å´é »é“å…§å®¹é–‹å§‹-->")..strsrch(temp, "<!-- å³å´é »é“å…§å®¹çµæŸ-->")];
 
         reset_eval_cost();
-        //&nbsp;&nbsp;<a href="http://rss.sina.com.cn/news/marquee/ddt.xml" class="f14"><font color="#000000">¹úÄÚÒªÎÅ</font></a></span></td>
+        //&nbsp;&nbsp;<a href="http://rss.sina.com.cn/news/marquee/ddt.xml" class="f14"><font color="#000000">åœ‹å…§è¦è</font></a></span></td>
         while(sscanf(body_part, "%*s&nbsp;&nbsp;<a href=\"%s\" class=\"f14\"><font color=\"#000000\">%s</font></a></span></td>%s", a_news_page_url, group_name, body_part) > 2)
         {
                 reset_eval_cost();
 
-                if( group_name != "¹úÄÚÒªÎÅ" && group_name != "¹ú¼ÊÒªÎÅ" && group_name != "Éç»áĞÂÎÅ" && group_name != "Ê±ÕşÒªÎÅ" )
+                if( group_name != "åœ‹å…§è¦è" && group_name != "åœ‹éš›è¦è" && group_name != "ç¤¾æœƒæ–°è" && group_name != "æ™‚æ”¿è¦è" )
                         continue;
                         
                 group_list += ([group_name : a_news_page_url]);
@@ -553,9 +553,9 @@ void get_news_list_rece(int fd, mixed data)
         else
                 news_data["temp"]["list"] += data;
         */
-        // »ñÈ¡Ö÷Ò³ËùÓĞÄÚÈİĞÅÏ¢·ÅÈënews_data["temp"]["list"]ÖĞ
+        // ç²å–ä¸»é æ‰€æœ‰å…§å®¹ä¿¡æ¯æ”¾å…¥news_data["temp"]["list"]ä¸­
         mb_set("temp/list", mb_query("temp/list", news_data) + data, news_data);
-        //DEBUG(sprintf("»ñÈ¡Ö÷Ò³ËùÓĞÄÚÈİ·ÅÈënews_data[temp][list]ĞÅÏ¢£º%O\n", data));
+        //DEBUG(sprintf("ç²å–ä¸»é æ‰€æœ‰å…§å®¹æ”¾å…¥news_data[temp][list]ä¿¡æ¯ï¼š%O\n", data));
 }
 
 void get_news_list_close(int fd)
@@ -615,11 +615,11 @@ void broadcast_news()
                 // broadcast_news();
                 return;
         }
-        CHANNEL_D->channel_broadcast("news", sprintf(WHT "¡¾%s¡¿%s%3s%s%3s(ĞÂÎÅ±àºÅ%d%2'0'd)\n" NOR,
+        CHANNEL_D->channel_broadcast("news", sprintf(WHT "ã€%sã€‘%s%3s%s%3s(æ–°èç·¨è™Ÿ%d%2'0'd)\n" NOR,
                                     news_group, news_title, "", news_data[news_group][news_title][NEWS_TIME], "",
                                     group_ids[news_group], title_ids[news_title]));
         /*
-        message("realnews", sprintf(WHT "¡¾%s¡¿%s%3s%s%3s(ĞÂÎÅ±àºÅ%d%2'0'd)\n" NOR,
+        message("realnews", sprintf(WHT "ã€%sã€‘%s%3s%s%3s(æ–°èç·¨è™Ÿ%d%2'0'd)\n" NOR,
                                     news_group, news_title, "", news_data[news_group][news_title][NEWS_TIME], "",
                                     group_ids[news_group], title_ids[news_title]),
                                     filter_array(users(), (: !$1->query("env/no_realnews") :)));
@@ -645,5 +645,5 @@ void create()
 
 string query_name()
 {
-        return "ÕæÊµĞÂÎÅÏµÍ³(REALNEWS_D)";
+        return "çœŸå¯¦æ–°èç³»çµ±(REALNEWS_D)";
 }

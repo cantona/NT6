@@ -18,7 +18,7 @@ int accept_fight(object ob)
             || query("jing") < query("eff_jing") * 2 / 3
             || query("neili") < query("max_neili") * 2 / 3)
         {
-                // command("say ÎÒÏÖÔÚÓĞµãÆ£¾ë£¬´ıÎÒĞª»á¶ùÔÙËµ¡£");
+                // command("say æˆ‘ç¾åœ¨æœ‰é»ç–²å€¦ï¼Œå¾…æˆ‘æ­‡æœƒå…’å†èªªã€‚");
                 return 0;
         }
 
@@ -29,14 +29,14 @@ int accept_fight(object ob)
         ob5 = present("tao huaxian", environment(me));
         ob6 = present("tao shixian", environment(me));
 
-        msg1 = "ÌÒ¸ùÏÉÍ»È»±Æ½ü$N£¬Ò»°ÑÏò$NµÄ×óÊÖ×½È¥¡£\n";
-        msg2 = "ÌÒ¸ÉÏÉÍ»È»±Æ½ü$N£¬Ò»°ÑÏò$NµÄÓÒÊÖ×½È¥¡£\n";
-        msg3 = "ÌÒÖ¦ÏÉÍ»È»±Æ½ü$N£¬Ò»°ÑÏò$NµÄ×ó½Å×½È¥¡£\n";
-        msg4 = "ÌÒÒ¶ÏÉÍ»È»±Æ½ü$N£¬Ò»°ÑÏò$NµÄÓÒ½Å×½È¥¡£\n";
-        msg5 = "ÌÒ»¨ÏÉÍ»È»±Æ½ü$N£¬Ò»°ÑÏò$NµÄ×óÊÖ×½È¥¡£\n";
-        msg6 = "ÌÒÊµÏÉÍ»È»±Æ½ü$N£¬Ò»°ÑÏò$NµÄÓÒ½Å×½È¥¡£\n";
+        msg1 = "æ¡ƒæ ¹ä»™çªç„¶é€¼è¿‘$Nï¼Œä¸€æŠŠå‘$Nçš„å·¦æ‰‹æ‰å»ã€‚\n";
+        msg2 = "æ¡ƒå¹¹ä»™çªç„¶é€¼è¿‘$Nï¼Œä¸€æŠŠå‘$Nçš„å³æ‰‹æ‰å»ã€‚\n";
+        msg3 = "æ¡ƒæä»™çªç„¶é€¼è¿‘$Nï¼Œä¸€æŠŠå‘$Nçš„å·¦è…³æ‰å»ã€‚\n";
+        msg4 = "æ¡ƒè‘‰ä»™çªç„¶é€¼è¿‘$Nï¼Œä¸€æŠŠå‘$Nçš„å³è…³æ‰å»ã€‚\n";
+        msg5 = "æ¡ƒèŠ±ä»™çªç„¶é€¼è¿‘$Nï¼Œä¸€æŠŠå‘$Nçš„å·¦æ‰‹æ‰å»ã€‚\n";
+        msg6 = "æ¡ƒå¯¦ä»™çªç„¶é€¼è¿‘$Nï¼Œä¸€æŠŠå‘$Nçš„å³è…³æ‰å»ã€‚\n";
 
-        command( "say ´óâ·¶ù×¼±¸¡£" );
+        command( "say å¤§å¤¥å…’æº–å‚™ã€‚" );
         competition_with(ob);
 
         if (objectp(ob1) && ob1 != me) call_out("tear_and_kill", random(5), ob1, ob, msg1);
@@ -51,7 +51,7 @@ int accept_fight(object ob)
 
 string ask_me()
 {
-        return "Äã´òµÃ¹ıÔÛÃÇÁùĞÖµÜ£¬ÎÒ×ÔÈ»»á´øÄãÈ¥¼ûËû¡£";
+        return "ä½ æ‰“å¾—éå’±å€‘å…­å…„å¼Ÿï¼Œæˆ‘è‡ªç„¶æœƒå¸¶ä½ å»è¦‹ä»–ã€‚";
 }
 
 int accept_kill(object ob)
@@ -60,7 +60,7 @@ int accept_kill(object ob)
         object ob1, ob2, ob3, ob4, ob5, ob6;
 
         delete_temp("win", ob);
-        command( "say ÄãÏëÄ±²Äº¦Ãü²»³É£¬ÊÇ²»ÊÇ¶Ê¼ÉÔÛÃÇÁùĞÖµÜÃûÂú½­ºş£¿\n");
+        command( "say ä½ æƒ³è¬€æå®³å‘½ä¸æˆï¼Œæ˜¯ä¸æ˜¯å¦’å¿Œå’±å€‘å…­å…„å¼Ÿåæ»¿æ±Ÿæ¹–ï¼Ÿ\n");
 
         if (objectp(ob1 = present("tao genxian", environment(me)))) ob1->kill_ob(ob);
         if (objectp(ob2 = present("tao ganxian", environment(me)))) ob2->kill_ob(ob);
@@ -74,7 +74,7 @@ int accept_kill(object ob)
 
 int tear_and_kill(object me, object ob, string msg)
 {
-    // Õâ¸öº¯ÊıÊÇÑÓÊ±ºô½ĞµÄ£¬ËùÒÔÖ´ĞĞÇ°ÏÈÒªÅĞ¶ÏÁ½¸öÎï¼ş¶¼·ñ¶¼»¹ÔÚ
+    // é€™å€‹å‡½æ•¸æ˜¯å»¶æ™‚å‘¼å«çš„ï¼Œæ‰€ä»¥åŸ·è¡Œå‰å…ˆè¦åˆ¤æ–·å…©å€‹ç‰©ä»¶éƒ½å¦éƒ½é‚„åœ¨
     if (! objectp(ob) || !objectp(me))
         return 1;
 
@@ -89,21 +89,21 @@ int tear_and_kill(object me, object ob, string msg)
         if( random(query("combat_exp", me))>query("combat_exp", ob)/2 )
         {
                 addn_temp("caught", 1, ob);
-                message_combatd("½á¹û$N±»" + me->name() + "×½¸öÕı×Å£¡\n", ob);
+                message_combatd("çµæœ$Nè¢«" + me->name() + "æ‰å€‹æ­£è‘—ï¼\n", ob);
                 if( query_temp("caught", ob) == 4 )
                 {
-                        message_combatd("\nÌÒ¹ÈÁùÏÉ×½×Å$NËÄÖ«ÃÍÈ»Ò»³¶£¬$NÖ»¾õµÃÒ»Õó¾çÍ´£¬±ãÊ§È¥Öª¾õÁË¡£\n", ob);
+                        message_combatd("\næ¡ƒè°·å…­ä»™æ‰è‘—$Nå››è‚¢çŒ›ç„¶ä¸€æ‰¯ï¼Œ$Nåªè¦ºå¾—ä¸€é™£åŠ‡ç—›ï¼Œä¾¿å¤±å»çŸ¥è¦ºäº†ã€‚\n", ob);
                         delete_temp("caught", ob);
                         ob->unconcious();
-                        set_temp("die_reason", "±»ÌÒ¹ÈÁùÏÉËº³ÉËÄ¿éÁË", ob);
+                        set_temp("die_reason", "è¢«æ¡ƒè°·å…­ä»™æ’•æˆå››å¡Šäº†", ob);
                         ob->remove_all_enemy(0);
                         me->remove_all_enemy(0);
                         ob->die();
-                        CHANNEL_D->do_channel(me,"chat",sprintf("%s±»ÌÒ¹ÈÁùÏÉËº³ÉËÄ¿éÁË£¡",ob->name()));
+                        CHANNEL_D->do_channel(me,"chat",sprintf("%sè¢«æ¡ƒè°·å…­ä»™æ’•æˆå››å¡Šäº†ï¼",ob->name()));
                 }
         } else
         {
-                message_combatd("$N³É¹¦µØÉÁ¿ªÁË¡£\n", ob);
+                message_combatd("$NæˆåŠŸåœ°é–ƒé–‹äº†ã€‚\n", ob);
         }
 
         return 1;
@@ -115,14 +115,14 @@ void lost()
 
         ob = this_object();
         me = query_competitor();
-        command( "say " + RANK_D->query_respect(ob) + "¹ûÈ»ÓĞ¼¸ÊÖ£¬ÎÒ»¹ÊÇÈÃÄãĞª»á¶ù°É£¬¿É²»ÊÇÎÒ´ò²»¹ıÄãà¸¡£");
+        command( "say " + RANK_D->query_respect(ob) + "æœç„¶æœ‰å¹¾æ‰‹ï¼Œæˆ‘é‚„æ˜¯è®“ä½ æ­‡æœƒå…’å§ï¼Œå¯ä¸æ˜¯æˆ‘æ‰“ä¸éä½ å–”ã€‚");
 
-        if( ob->name() == "ÌÒ¸ùÏÉ")set_temp("win/tao1", 1, me);
-        if( ob->name() == "ÌÒ¸ÉÏÉ")set_temp("win/tao2", 1, me);
-        if( ob->name() == "ÌÒÖ¦ÏÉ")set_temp("win/tao3", 1, me);
-        if( ob->name() == "ÌÒÒ¶ÏÉ")set_temp("win/tao4", 1, me);
-        if( ob->name() == "ÌÒ»¨ÏÉ")set_temp("win/tao5", 1, me);
-        if( ob->name() == "ÌÒÊµÏÉ")set_temp("win/tao6", 1, me);
+        if( ob->name() == "æ¡ƒæ ¹ä»™")set_temp("win/tao1", 1, me);
+        if( ob->name() == "æ¡ƒå¹¹ä»™")set_temp("win/tao2", 1, me);
+        if( ob->name() == "æ¡ƒæä»™")set_temp("win/tao3", 1, me);
+        if( ob->name() == "æ¡ƒè‘‰ä»™")set_temp("win/tao4", 1, me);
+        if( ob->name() == "æ¡ƒèŠ±ä»™")set_temp("win/tao5", 1, me);
+        if( ob->name() == "æ¡ƒå¯¦ä»™")set_temp("win/tao6", 1, me);
         delete_temp("caught", me);
         ::lost();
 }
@@ -137,6 +137,6 @@ void win()
                 return;
         }
         delete_temp("caught", me);
-        command("say ¾ÍÄãÕâµãË®Æ½Ò²Ïë¹ıÎÒµÄ¹Ø£¿ÏÂÈ¥Á·Á·ÔÙÀ´°É¡£");
+        command("say å°±ä½ é€™é»æ°´å¹³ä¹Ÿæƒ³éæˆ‘çš„é—œï¼Ÿä¸‹å»ç·´ç·´å†ä¾†å§ã€‚");
         ::win();
 }

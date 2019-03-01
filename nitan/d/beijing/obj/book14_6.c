@@ -9,13 +9,13 @@ void init()
 
 void create()
 {
-        set_name(HIR"ËÄÊ®¶şÕÂ¾­Áù"NOR, ({"book6"}));
+        set_name(HIR"å››åäºŒç« ç¶“å…­"NOR, ({"book6"}));
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "\nÒ»±¾ÕıºìÆìµÄ¾­Êé£¬·âÆ¤(binding)ºÜ¾«ÖÂ¡£\n");
-                set("unit", "±¾");
+                set("long", "\nä¸€æœ¬æ­£ç´…æ——çš„ç¶“æ›¸ï¼Œå°çš®(binding)å¾ˆç²¾è‡´ã€‚\n");
+                set("unit", "æœ¬");
                 set("material", "paper");
         }
         setup();
@@ -29,11 +29,11 @@ int do_tear(string arg)
 
         if( !arg || arg=="" ) return 0;
         if(!present(this_object(), me))
-                return notify_fail("ÄãÒªËºÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦æ’•ä»€éº¼ï¼Ÿ\n");
 
         if(arg=="book6")
         {
-                message_vision("$NÒ»ÏÂ°Ñ¾­ÊéËºµÃ·ÛËé¡£\n", me);
+                message_vision("$Nä¸€ä¸‹æŠŠç¶“æ›¸æ’•å¾—ç²‰ç¢ã€‚\n", me);
                 destruct(this_object());
                 return 1;
         }
@@ -43,18 +43,18 @@ int do_tear(string arg)
                 if( dir=="binding" )
                 {
                         if( query("hasgot", this_object()) )
-                                message_vision("$N½«·âÆ¤Ëº¿ª£¬·¢ÏÖÑòÆ¤ÒÑ¾­±»È¡×ßÁË¡£\n", me);
+                                message_vision("$Nå°‡å°çš®æ’•é–‹ï¼Œç™¼ç¾ç¾Šçš®å·²ç¶“è¢«å–èµ°äº†ã€‚\n", me);
                         else
                         {
-                                message_vision("$N½«·âÆ¤Ëº¿ª£¬¼¸¿éÑòÆ¤µôÁËÏÂÀ´¡£\n", me);
-                                message_vision("$NÏÈ½«ÑòÆ¤ÉÏµÄµØÍ¼¼ÇÁËÏÂÀ´£¬È»ºó°ÑËüÃÇÉÕµôÁË¡£\n", me);
+                                message_vision("$Nå°‡å°çš®æ’•é–‹ï¼Œå¹¾å¡Šç¾Šçš®æ‰äº†ä¸‹ä¾†ã€‚\n", me);
+                                message_vision("$Nå…ˆå°‡ç¾Šçš®ä¸Šçš„åœ°åœ–è¨˜äº†ä¸‹ä¾†ï¼Œç„¶å¾ŒæŠŠå®ƒå€‘ç‡’æ‰äº†ã€‚\n", me);
                                 set("huanggong\haspi6", 1, me);
                                 set("hasgot", 1, this_object());
                         }
                 }
                 else
                 {
-                        message_vision("$NÒ»ÏÂ°Ñ¾­ÊéËºµÃ·ÛËé¡£\n", me);
+                        message_vision("$Nä¸€ä¸‹æŠŠç¶“æ›¸æ’•å¾—ç²‰ç¢ã€‚\n", me);
                         destruct(this_object());
                 }
                 return 1;

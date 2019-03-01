@@ -3,11 +3,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short",HIB"À¶¶ÓÎ÷Â·"NOR);
+        set("short",HIB"è—éšŠè¥¿è·¯"NOR);
         set("long",@LONG
-ÇÀÆìÕ½³¡
+æ¶æ——æˆ°å ´
 
-ĞğÊöÕ÷Çó£¬Ò»¸ñ 2 Ğş»Æ
+æ•˜è¿°å¾æ±‚ï¼Œä¸€æ ¼ 2 ç„é»ƒ
 LONG);
         set("flag_war", 1);
         set("no_magic", 1);

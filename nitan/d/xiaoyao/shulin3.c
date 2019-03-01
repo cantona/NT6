@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����");
+        set("short", "樹林");
         set("long", @LONG
-����һƬï�ܵ����֡��ܶ�ü�ʮ�ɸߵĴ�������һ�飬��һ�Ѱ�
-�����ɡ�������¶����ڱεð�Ȼ�޹⡣�����л���ʱ������������Ȼ
-���������졣
+這是一片茂密的樹林。很多棵幾十丈高的大樹聚在一塊，象一把把
+瓊天大傘，連日月都被遮蔽得暗然無光。樹林中還不時可以聽到大自然
+發出的聲響。
 LONG );
         set("objects", ([ ]));
         set("outdoors", "xiaoyao");

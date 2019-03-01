@@ -1,10 +1,10 @@
 // This program is a part of NITAN MudLIB
-// wuchang.c �޳��廯
+// wuchang.c 無常五化
 
 #include <ansi.h>
 
 inherit F_SSERVER;
-string name() { return "�޳��廯"; }
+string name() { return "無常五化"; }
 
 int perform(object me, object target)
 {
@@ -19,29 +19,29 @@ int perform(object me, object target)
         }
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail("���޳��廯��ֻ�ܶ�ս���еĶ���ʹ�á�\n");
+                return notify_fail("「無常五化」只能對戰鬥中的對手使用。\n");
 
         if( !objectp(weapon=query_temp("weapon", me)) ||
             query("skill_type", weapon) != "staff" )
-                return notify_fail("ʩչ���޳��廯��ʱ��������һ�ѽ���\n");
+                return notify_fail("施展「無常五化」時必須拿著一把劍！\n");
 
         if( query("neili", me)<100 )
-                return notify_fail("��������������޷�ʩչ���޳��廯����\n");
+                return notify_fail("你的真氣不夠，無法施展「無常五化」！\n");
 
         if ((int)me->query_skill("force") < 200)
-                return notify_fail("����ڹ���򲻹�������ʩչ���޳��廯����\n");
+                return notify_fail("你的內功火候不夠，難以施展「無常五化」！\n");
 
         if ((int)me->query_skill("wuchang-zhang", 1) < 150)
-                return notify_fail("����޳��ȷ��������ң��޷�ʹ�á��޳��廯����\n");
+                return notify_fail("你的無常杖法還不到家，無法使用「無常五化」！\n");
 
         if (me->query_skill_mapped("staff") != "wuchang-zhang")
-                return notify_fail("��û�м����޳��ȷ�������ʹ�á��޳��廯����\n");
+                return notify_fail("你沒有激發無常杖法，不能使用「無常五化」！\n");
 
        if (! living(target))
-              return notify_fail("�Է����Ѿ������ˣ��ò�����ô�����ɣ�\n");
+              return notify_fail("對方都已經這樣了，用不著這麼費力吧？\n");
 
-        msg = HIY "$N" HIY "�����е�" + weapon->name() +
-             HIY "һ��������������Ӱɨ��$n" HIY "��\n" NOR;
+        msg = HIY "$N" HIY "將手中的" + weapon->name() +
+             HIY "一盪，化作無數杖影掃向$n" HIY "！\n" NOR;
         message_combatd(msg, me, target);
 
         addn("neili", -100, me);

@@ -3,8 +3,8 @@ inherit ITEM;
 
 void create()
 {
-        set_name("Ò©¹ñ",({"treasure box", "box"}));
-        set("short", "Ò©¹ñ");
+        set_name("è—¥æ«ƒ",({"treasure box", "box"}));
+        set("short", "è—¥æ«ƒ");
         set("env/invisibility",1);
         set_max_encumbrance(50000000);
         set_weight(100);

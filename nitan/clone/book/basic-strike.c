@@ -4,14 +4,14 @@ inherit BOOK;
 
 void create()
 {
-        set_name("ÕÆ·¨ÈëÃÅ", ({ "strike book", "book" }));
+        set_name("æŒæ³•å…¥é–€", ({ "strike book", "book" }));
         set_weight(600);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
+                set("unit", "æœ¬");
                 set("long",
-"·âÃæÉÏĞ´Öø¡¸ÕÆ·¨ÈëÃÅ£©¡¹\n");
+"å°é¢ä¸Šå¯«è‘—ã€ŒæŒæ³•å…¥é–€ï¼‰ã€\n");
                 set("value", 200);
                 set("material", "paper");
                 set("skill", ([

@@ -11,17 +11,17 @@ int exert(object me, object target)
         int level = me->query_skill("linji-zhuang", 1);
         int range ;
 
-        if (level < 180) return notify_fail("ÄãµÄÁÙ¼ÃÊ®¶ş×¯ĞŞÎª»¹²»¹»¡£\n");
+        if (level < 180) return notify_fail("ä½ çš„è‡¨æ¿ŸåäºŒèŠä¿®ç‚ºé‚„ä¸å¤ ã€‚\n");
 
         if( query("max_neili", me)<15*level )
-                return notify_fail("ÄãµÄÄÚÁ¦»¹²»¹»Ç¿¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›é‚„ä¸å¤ å¼·ã€‚\n");
 
         if( query("neili", me)<15*level )
-                return notify_fail("ÄãµÄÕæÆø²»¹»¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ã€‚\n");
 
-        write(HIY "ÄãÄı¾ÛÓÄÚ¤¶şÆø£¬¿ÚĞû·ğºÅ: °¢ÃÖÍÓ·ğ£¡Ò»¹É¼«Ï¸ÃÜ¼«ÓÆ³¤µÄÄÚÁ¦´ÓĞÄ¶ø·¢, Ö±ÉÏÔÆÏö£¡\n" NOR);
+        write(HIY "ä½ å‡èšå¹½å†¥äºŒæ°£ï¼Œå£å®£ä½›è™Ÿ: é˜¿å½Œé™€ä½›ï¼ä¸€è‚¡æ¥µç´°å¯†æ¥µæ‚ é•·çš„å…§åŠ›å¾å¿ƒè€Œç™¼, ç›´ä¸Šé›²éœ„ï¼\n" NOR);
         message("vision",
-                HIY + "Ö»¼û" + me->name() + "Äı¾ÛÓÄÚ¤¶şÆø£¬µÍÃ¼´¹Ê×, ¿ÚĞû·ğºÅ: °¢ÃÖÍÓ·ğ! ÓïÒôËäµÍÈ´º¶ÈËĞÄ·Î!\n",
+                HIY + "åªè¦‹" + me->name() + "å‡èšå¹½å†¥äºŒæ°£ï¼Œä½çœ‰å‚é¦–, å£å®£ä½›è™Ÿ: é˜¿å½Œé™€ä½›! èªéŸ³é›–ä½å»æ†¾äººå¿ƒè‚º!\n",
                 environment(me), me);
 
         addn("neili", -15*level, me);
@@ -54,14 +54,14 @@ void hitself(object me, object *bad_guys, int degree)
         {/*success to let this player hit-self*/
         switch (degree) {
         case 1:   // lightest
-            message_vision("$nÏëÆğ×Ô¼ºËù×öµÄÖÖÖÖ¶ñĞĞ, Ğß²ÑµÃÁ½Èù·¢ºì, ÌáÊÖ±ãÕÕ×Ô¼º´òÈ¥¡£\n",
+            message_vision("$næƒ³èµ·è‡ªå·±æ‰€åšçš„ç¨®ç¨®æƒ¡è¡Œ, ç¾æ…šå¾—å…©è…®ç™¼ç´…, ææ‰‹ä¾¿ç…§è‡ªå·±æ‰“å»ã€‚\n",
                 killer, killer);
               addn_temp("apply/defense", -200, killer);
               addn_temp("apply/dodge", -200, killer);
               addn_temp("apply/parry", -200, killer);
             break;
         case 2:   // medium
-            message_vision("$nÏëÆğ×Ô¼º¹ıÈ¥É±ÈËÈçÂé, ĞÄÖĞÒ»Áİ, ²»½ûË«ÊÖ´ò²ü, »º»ºÏò×Ô¼ºÁéÌ¨´òÏÂ¡£\n",
+            message_vision("$næƒ³èµ·è‡ªå·±éå»æ®ºäººå¦‚éº», å¿ƒä¸­ä¸€å‡œ, ä¸ç¦é›™æ‰‹æ‰“é¡«, ç·©ç·©å‘è‡ªå·±éˆå°æ‰“ä¸‹ã€‚\n",
                 killer, killer);
               addn_temp("apply/defense", -200, killer);
               addn_temp("apply/dodge", -200, killer);
@@ -71,7 +71,7 @@ void hitself(object me, object *bad_guys, int degree)
             COMBAT_D->do_attack(killer,killer,query_temp("weapon", killer));
             break;
         case 3:   // hardest
-            message_vision("$nÑöÌìÌ¾µÀ: ±ãËÆÎÒÕâµÈÄõÕÏ, »îÔÚÈË¼ä×÷Éõ£¡µ±ÏÂ»ØÊÖÍù×Ô¼ºËÀÑ¨ÃÍ»÷£¡\n",
+            message_vision("$nä»°å¤©å˜†é“: ä¾¿ä¼¼æˆ‘é€™ç­‰å­½éšœ, æ´»åœ¨äººé–“ä½œç”šï¼ç•¶ä¸‹å›æ‰‹å¾€è‡ªå·±æ­»ç©´çŒ›æ“Šï¼\n",
                 killer, killer);
               addn_temp("apply/defense", -200, killer);
               addn_temp("apply/dodge", -200, killer);
@@ -114,8 +114,8 @@ void hitself(object me, object *bad_guys, int degree)
 //                /*not in same room*/
 //                killer->move(room);
         if (present(me,environment(killer))) {
-message_vision(HIR"$N³å×Å$nÆÆ¿Ú´óÂî£º¾ÍÆ¾ÄãÕâÑùµÄ»õÉ«Ò²¸ÒÔÚÎÒÃæÇ°Ö¸ÊÖ»®½Å£¬»¹²»¸øÎÒ¹öµÃÔ¶Ô¶µÄ£¡\n"NOR,killer,me);
-//        tell_object(me,HIR"ÄãµÄÕıÆø²»¹»Ñ¹ÖÆ¶Ô·½,·´¶ø¼¤Å­¶ÔÊÖ!"NOR);
+message_vision(HIR"$Næ²–è‘—$nç ´å£å¤§ç½µï¼šå°±æ†‘ä½ é€™æ¨£çš„è²¨è‰²ä¹Ÿæ•¢åœ¨æˆ‘é¢å‰æŒ‡æ‰‹åŠƒè…³ï¼Œé‚„ä¸çµ¦æˆ‘æ»¾å¾—é é çš„ï¼\n"NOR,killer,me);
+//        tell_object(me,HIR"ä½ çš„æ­£æ°£ä¸å¤ å£“åˆ¶å°æ–¹,åè€Œæ¿€æ€’å°æ‰‹!"NOR);
         me->start_busy(1+random(1));
 //        if( !killer->is_killing(me) ) killer->kill_ob(me);
         COMBAT_D->do_attack(killer,me,query_temp("weapon", killer));
@@ -208,15 +208,15 @@ int visit_room(string room_path, mapping t_info, mapping r_info, mapping data)
             dist_msg = "";
             dist_msg2 = "";
             if (dist > 10) {
-                dist_msg="¼«Ò£Ô¶´¦";
-                dist_msg2="ËäÈ»ÉùÒô¼«Ô¶¼«Çá, È´Áî";
+                dist_msg="æ¥µé™é è™•";
+                dist_msg2="é›–ç„¶è²éŸ³æ¥µé æ¥µè¼•, å»ä»¤";
             }else if (dist > 5) {
-                dist_msg="Ô¶´¦";
-                dist_msg2="ËäÈ»ÉùÒô²»´ó, È´Áî";
+                dist_msg="é è™•";
+                dist_msg2="é›–ç„¶è²éŸ³ä¸å¤§, å»ä»¤";
             }
             message("vision",
-                HIY+"Ö»Ìı"+dist_msg+me->name()+"¿ÚÖĞ·ğºÅ²»¾ø´«À´, ÆäÒâ´ó´È´ó±¯, Í¨ÓÄÚ¤, Ô½ÉúËÀ, »ë²»ËÆÈË¼äËùÓĞ¡£\n"+
-                dist_msg2+"ÖÚÈËÌıµÄ¶¼´ô×¡ÁË, ²»×Ô¾õµØÍ£ÊÖ°Õ¶·¡£\n"+NOR,
+                HIY+"åªè½"+dist_msg+me->name()+"å£ä¸­ä½›è™Ÿä¸çµ•å‚³ä¾†, å…¶æ„å¤§æ…ˆå¤§æ‚², é€šå¹½å†¥, è¶Šç”Ÿæ­», æ¸¾ä¸ä¼¼äººé–“æ‰€æœ‰ã€‚\n"+
+                dist_msg2+"çœ¾äººè½çš„éƒ½å‘†ä½äº†, ä¸è‡ªè¦ºåœ°åœæ‰‹ç½·é¬¥ã€‚\n"+NOR,
                 room, me);
             if (bad_guys) {
                 if (dist < range/7) {

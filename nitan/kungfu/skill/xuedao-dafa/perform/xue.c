@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define XUE "¡¸" HIR "¼ÀÑªÉñµ¶" NOR "¡¹"
+#define XUE "ã€Œ" HIR "ç¥­è¡€ç¥žåˆ€" NOR "ã€"
 
 inherit F_SSERVER;
 
@@ -12,7 +12,7 @@ int perform(object me, object target)
         int ap, dp, damage;
 
         if( userp(me) && !query("can_perform/xuedao-dafa/xue", me) )
-                return notify_fail("ÄãËùÊ¹ÓÃµÄÍâ¹¦ÖÐÃ»ÓÐÕâÖÖ¹¦ÄÜ¡£\n");
+                return notify_fail("ä½ æ‰€ä½¿ç”¨çš„å¤–åŠŸä¸­æ²’æœ‰é€™ç¨®åŠŸèƒ½ã€‚\n");
 
         if (! target)
         {
@@ -21,38 +21,38 @@ int perform(object me, object target)
         }
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(XUE "Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(XUE "åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
  
         if( !objectp(weapon=query_temp("weapon", me)) || 
             query("skill_type", weapon) != "blade" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô£¬ÄÑÒÔÊ©Õ¹" XUE "¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ï¼Œé›£ä»¥æ–½å±•" XUE "ã€‚\n");
 
         if ((int)me->query_skill("force") < 220)
-                return notify_fail("ÄãµÄÄÚ¹¦»ðºò²»¹»£¬ÄÑÒÔÊ©Õ¹" XUE "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸç«å€™ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" XUE "ã€‚\n");
 
         if ((int)me->query_skill("xuedao-dafa", 1) < 160)
-                return notify_fail("ÄãµÄÑªµ¶´ó·¨»¹²»µ½¼Ò£¬ÄÑÒÔÊ©Õ¹" XUE "¡£\n");
+                return notify_fail("ä½ çš„è¡€åˆ€å¤§æ³•é‚„ä¸åˆ°å®¶ï¼Œé›£ä»¥æ–½å±•" XUE "ã€‚\n");
 
         if (me->query_skill_mapped("force") != "xuedao-dafa")
-                return notify_fail("ÄãÃ»ÓÐ¼¤·¢Ñªµ¶´ó·¨ÎªÄÚ¹¦£¬ÄÑÒÔÊ©Õ¹" XUE "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼è¡€åˆ€å¤§æ³•ç‚ºå…§åŠŸï¼Œé›£ä»¥æ–½å±•" XUE "ã€‚\n");
 
         if (me->query_skill_mapped("blade") != "xuedao-dafa")
-                return notify_fail("ÄãÃ»ÓÐ¼¤·¢Ñªµ¶´ó·¨Îªµ¶·¨£¬ÄÑÒÔÊ©Õ¹" XUE "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼è¡€åˆ€å¤§æ³•ç‚ºåˆ€æ³•ï¼Œé›£ä»¥æ–½å±•" XUE "ã€‚\n");
 
         if( query("qi", me)<100 )
-                return notify_fail("ÄãÄ¿Ç°ÆøÑª·­¹ö£¬ÄÑÒÔÊ©Õ¹" XUE "¡£\n");
+                return notify_fail("ä½ ç›®å‰æ°£è¡€ç¿»æ»¾ï¼Œé›£ä»¥æ–½å±•" XUE "ã€‚\n");
 
         if( query("neili", me)<200 )
-                return notify_fail("ÄãÄ¿Ç°ÕæÆø²»×ã£¬ÄÑÒÔÊ©Õ¹" XUE "¡£\n");
+                return notify_fail("ä½ ç›®å‰çœŸæ°£ä¸è¶³ï¼Œé›£ä»¥æ–½å±•" XUE "ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
         ap = attack_power(me, "blade");
         dp = defense_power(target, "parry");
 
-        msg = HIR "$N" HIR "»Óµ¶Ïò×ó¼çÒ»ÀÕ£¬ÑªÖé¶ÙÊ±½¦Âúµ¶Ãæ£¬½ô½Ó×ÅÓÒ±Û"
-              "ÂÕ³öÒ»Æ¬Ñª¹âÏò$n" HIR "µ±Í·ÅüÂä¡£\n" NOR;
+        msg = HIR "$N" HIR "æ®åˆ€å‘å·¦è‚©ä¸€å‹’ï¼Œè¡€ç é “æ™‚æ¿ºæ»¿åˆ€é¢ï¼Œç·ŠæŽ¥è‘—å³è‡‚"
+              "æŽ„å‡ºä¸€ç‰‡è¡€å…‰å‘$n" HIR "ç•¶é ­åŠˆè½ã€‚\n" NOR;
 
         if (ap / 2 + random(ap) > dp)
         {
@@ -60,14 +60,14 @@ int perform(object me, object target)
                 addn("neili", -150, me);
                 me->start_busy(2);
                 msg += COMBAT_D->do_damage(me, target, WEAPON_ATTACK, damage, 80,
-                                           HIR "$n" HIR "Ö»¼ûÑªµ¶¼²ÉÁ£¬ÑÛÇ°Ò»ÕóÑª"
-                                           "ºì£¬µ¶ÈÐÅüÃæ¶øÏÂ£¬ÏÊÑª·É½¦£¬²»½û²ÒÉù"
-                                           "´óº¿£¡\n" NOR);
+                                           HIR "$n" HIR "åªè¦‹è¡€åˆ€ç–¾é–ƒï¼Œçœ¼å‰ä¸€é™£è¡€"
+                                           "ç´…ï¼Œåˆ€åˆƒåŠˆé¢è€Œä¸‹ï¼Œé®®è¡€é£›æ¿ºï¼Œä¸ç¦æ…˜è²"
+                                           "å¤§åšŽï¼\n" NOR);
         } else
         {
                 me->start_busy(2);
-                msg += CYN "¿ÉÊÇ$n" CYN "²àÉí±ÜÈÃ£¬²»»Å²»Ã¦£¬¶ã¹ýÁË$N"
-                       CYN "µÄ±ØÉ±Ò»µ¶¡£\n"NOR;
+                msg += CYN "å¯æ˜¯$n" CYN "å´èº«é¿è®“ï¼Œä¸æ…Œä¸å¿™ï¼Œèº²éŽäº†$N"
+                       CYN "çš„å¿…æ®ºä¸€åˆ€ã€‚\n"NOR;
                 addn("neili", -100, me);
         }
         me->receive_wound("qi", 50);

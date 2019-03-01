@@ -22,27 +22,27 @@ int main(object me, string arg)
                 ob = present(arg, environment(me));
                 if (! ob) ob = find_player(arg);
                 if (! ob) ob = find_living(arg);
-                if (! ob) return notify_fail("ÄãÒª²ì¿´Ë­µÄ×´Ì¬£¿\n");
+                if (! ob) return notify_fail("ä½ è¦å¯Ÿçœ‹èª°çš„ç‹€æ…‹ï¼Ÿ\n");
         }
         
         mine = ob->query_entire_dbase();
-        line = sprintf("\n-------ÏÈÌì×ÊÖÊ-------\n");
-        line += sprintf(" ëöÁ¦£º[%s]  ÎòĞÔ£º[%s]  ¸ù¹Ç£º[%s]  Éí·¨£º[%s]\n\n", 
+        line = sprintf("\n-------å…ˆå¤©è³‡è³ª-------\n");
+        line += sprintf(" è†‚åŠ›ï¼š[%s]  æ‚Ÿæ€§ï¼š[%s]  æ ¹éª¨ï¼š[%s]  èº«æ³•ï¼š[%s]\n\n", 
                         sprintf("%3d",mine["str"]),
                         sprintf("%3d",mine["int"]),
                         sprintf("%3d",mine["con"]),
                         sprintf("%3d",mine["dex"]));
-        line += sprintf("-------ºóÌì×ÊÖÊ-------\n");
-        line += sprintf(" ëöÁ¦£º[%s]  ÎòĞÔ£º[%s]  ¸ù¹Ç£º[%s]  Éí·¨£º[%s]\n\n", 
+        line += sprintf("-------å¾Œå¤©è³‡è³ª-------\n");
+        line += sprintf(" è†‚åŠ›ï¼š[%s]  æ‚Ÿæ€§ï¼š[%s]  æ ¹éª¨ï¼š[%s]  èº«æ³•ï¼š[%s]\n\n", 
                         sprintf("%3d",ob->query_str()),
                         sprintf("%3d",ob->query_int()),
                         sprintf("%3d",ob->query_con()),
                         sprintf("%3d",ob->query_dex()));
-        line+=sprintf(HIC"-------Ä§·¨ÌáÉıÏÈÌì¸ù¹Ç£º%s\n\n"NOR,sprintf("%3d",query("con_improve_time", ob)));
+        line+=sprintf(HIC"-------é­”æ³•æå‡å…ˆå¤©æ ¹éª¨ï¼š%s\n\n"NOR,sprintf("%3d",query("con_improve_time", ob)));
 
         basic_data = mine["str"] + mine["int"] + mine["con"] + mine["dex"];
         if( basic_data>(80+query("con_improve_time", ob)) )
-                 line += sprintf(HIY "ÏÈÌì×ÊÖÊÒì³£, %3d - 80 = %3d\n\n" NOR, basic_data, (basic_data - 80));
+                 line += sprintf(HIY "å…ˆå¤©è³‡è³ªç•°å¸¸, %3d - 80 = %3d\n\n" NOR, basic_data, (basic_data - 80));
 
         write(line);
         return 1;

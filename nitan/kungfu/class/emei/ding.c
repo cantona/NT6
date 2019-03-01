@@ -1,5 +1,5 @@
 // This program is a part of NT MudLIB
-// ding.c ¶¡Ãô¾ı
+// ding.c ä¸æ•å›
 
 #include "emei.h"
 
@@ -8,10 +8,10 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("¶¡Ãô¾ı", ({ "ding minjun","ding","minjun"}));
+        set_name("ä¸æ•å›", ({ "ding minjun","ding","minjun"}));
         set("long",
-                "ËıÊÇ¶ëáÒÅÉµÄµÚËÄ´úË×¼ÒµÜ×Ó¡£ÊÇÌìÏÂ×î¶ñĞÄ£¬ÎŞÀµµÄÈË¡£\n");
-        set("gender", "Å®ĞÔ");
+                "å¥¹æ˜¯å³¨åµ‹æ´¾çš„ç¬¬å››ä»£ä¿—å®¶å¼Ÿå­ã€‚æ˜¯å¤©ä¸‹æœ€æƒ¡å¿ƒï¼Œç„¡è³´çš„äººã€‚\n");
+        set("gender", "å¥³æ€§");
         set("age", 22);
         set("attitude", "peaceful");
         set("shen_type", -2);
@@ -57,11 +57,11 @@ void create()
         map_skill("parry","huifeng-jian");
 
         set("inquiry", ([
-                "³ö¼Ò"     : "ÄãÈ¥±¾É½µÄâÖÌÃÀïÕÒÎÒ¾²×Ö±²Ê¦½ã°É¡£ËıÃÇÔÚ¸£ÊÙâÖ¡¢Ç§·ğâÖ¡¢\nÍòÄêâÖ¡¢ÍòĞĞâÖºÍÎÔÔÆâÖĞŞĞĞ¡£\n",
-                "Ãğ¾øÊ¦Ì«" : "ËıÊÇ±¾ÅÉÕÆÃÅÈË£¬ÔÚ»ª²ØâÖĞŞĞĞ¡£\n",
+                "å‡ºå®¶"     : "ä½ å»æœ¬å±±çš„åºµå ‚è£¡æ‰¾æˆ‘éœå­—è¼©å¸«å§å§ã€‚å¥¹å€‘åœ¨ç¦å£½åºµã€åƒä½›åºµã€\nè¬å¹´åºµã€è¬è¡Œåºµå’Œè‡¥é›²åºµä¿®è¡Œã€‚\n",
+                "æ»…çµ•å¸«å¤ª" : "å¥¹æ˜¯æœ¬æ´¾æŒé–€äººï¼Œåœ¨è¯è—åºµä¿®è¡Œã€‚\n",
         ]));
 
-        create_family("¶ëáÒÅÉ", 4, "µÜ×Ó");
+        create_family("å³¨åµ‹æ´¾", 4, "å¼Ÿå­");
 
         set("master_ob", 2);
         set("master_ob", 2);
@@ -86,26 +86,26 @@ void init()
 void greeting(object ob)
 {
           if( !ob || environment(ob) != environment() ) return;
-          command("chat"+query("name", ob)+"ÎÒºÃÏ²»¶Äã°¡£¡\n");
+          command("chat"+query("name", ob)+"æˆ‘å¥½å–œæ­¡ä½ å•Šï¼\n");
 }
 int do_hit(string arg)
 {
-          command("chat"+query("name", this_player())+"Òª·ÇÀñÎÒÁË£¡\n");
+          command("chat"+query("name", this_player())+"è¦éç¦®æˆ‘äº†ï¼\n");
           return 1;
 }
 int do_kill(string arg)
 {
-          command("chat"+query("name", this_player())+"Õâ¸ö»ìµ°ÒªÇ¿¼éÎÒÁË£¡¿ìÀ´ÈËÄÄ£¡\n");
+          command("chat"+query("name", this_player())+"é€™å€‹æ··è›‹è¦å¼·å§¦æˆ‘äº†ï¼å¿«ä¾†äººå“ªï¼\n");
           return 1;
 }
 int accept_fight(object me)
 {
-          command("chat"+query("name", this_player())+"ÒªÇ¿¼éÎÒÁË£¬¾ÈÃü°¡£¡\n");
+          command("chat"+query("name", this_player())+"è¦å¼·å§¦æˆ‘äº†ï¼Œæ•‘å‘½å•Šï¼\n");
           return 0;
 }
 
 void attempt_apprentice(object ob)
 {
-        command ("say °¢ÃÖÍÓ·ğ£¡Æ¶Äá²»ÊÕµÜ×Ó¡£\n");
+        command ("say é˜¿å½Œé™€ä½›ï¼è²§å°¼ä¸æ”¶å¼Ÿå­ã€‚\n");
         return;
 }

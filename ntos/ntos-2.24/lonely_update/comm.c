@@ -1716,7 +1716,7 @@ INLINE int epoll_ctl_add(int fd , uint32_t events , uint32_t u32)
 	ev.events = events;
         if (epoll_ctl(epoll_fd, EPOLL_CTL_ADD, fd, &ev) < 0)
 	{
-		fprintf(stderr, "socket '%d' add to epoll fail£¡%s\n",
+		fprintf(stderr, "socket '%d' add to epoll failï¼%s\n",
 			  fd, strerror(errno));
 		return -1;
 	}
@@ -1758,7 +1758,7 @@ INLINE void init_epoll()
     }
     else
     {
-    	debug_message("\nOpen file size limit reset %d for epoll£¡\n\n\n",EP_MAX_CTL);
+    	debug_message("\nOpen file size limit reset %d for epollï¼\n\n\n",EP_MAX_CTL);
     }
     /* create epoll fd */
 	epoll_fd = epoll_create(EP_MAX_CTL);

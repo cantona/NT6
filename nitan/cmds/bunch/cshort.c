@@ -20,9 +20,9 @@ int main(object me, string arg)
 		return 0;
 
 	if(!content = read_file(base_name(env)+".c"))
-		return notify_fail("ÎŞ·¨¶ÁÈ¡µ±Ç°µµ°¸¡£\n");
+		return notify_fail("ç„¡æ³•è®€å–ç•¶å‰æª”æ¡ˆã€‚\n");
 
-	write("ÇëÊäÈë·¿¼äµÄÃû³Æ[2-6¸öºº×Ö]('q'ÍË³ö)£º\n");
+	write("è«‹è¼¸å…¥æˆ¿é–“çš„åç¨±[2-6å€‹æ¼¢å­—]('q'é€€å‡º)ï¼š\n");
 	input_to( (: get_room_short :), me, env );
 	return 1;
 }
@@ -36,7 +36,7 @@ protected void get_room_short(string sdesc, object who, object env)
 
 	if(!stringp(sdesc) || (sdesc == ""))
 	{
-		tell_object(who, "ÇëÊäÈë·¿¼äµÄÃû³Æ[2-6¸öºº×Ö]£¬ÊäÈë('q'ÍË³ö)£º\n");
+		tell_object(who, "è«‹è¼¸å…¥æˆ¿é–“çš„åç¨±[2-6å€‹æ¼¢å­—]ï¼Œè¼¸å…¥('q'é€€å‡º)ï¼š\n");
 		input_to( (: get_room_short :), who, env);
 		return;
 	}
@@ -44,13 +44,13 @@ protected void get_room_short(string sdesc, object who, object env)
 	if( (sdesc[0] == 'q')
 	|| (sdesc[0] == 'Q') )
 	{
-		tell_object(who, "ÖÕÖ¹·¿¼äĞŞ¸Ä¡£\n");
+		tell_object(who, "çµ‚æ­¢æˆ¿é–“ä¿®æ”¹ã€‚\n");
 		return;
 	}
 
 	if( ((l = strlen(sdesc)) < 4) || (l > 12) )
 	{
-		tell_object(who, "·¿¼äµÄÃû³Æ±ØĞëÎª2-6¸öºº×Ö£¬ÊäÈë('q'ÍË³ö)£º\n");
+		tell_object(who, "æˆ¿é–“çš„åç¨±å¿…é ˆç‚º2-6å€‹æ¼¢å­—ï¼Œè¼¸å…¥('q'é€€å‡º)ï¼š\n");
 		input_to( (: get_room_short :), who, env);
 		return;
 	}
@@ -61,7 +61,7 @@ protected void get_room_short(string sdesc, object who, object env)
 
                 if( sdesc[l]<128 )
 		{
-			tell_object(who, "·¿¼äµÄÃû³Æ±ØĞëÊ¹ÓÃÖĞÎÄ£¬ÊäÈë('q'ÍË³ö)£º\n");
+			tell_object(who, "æˆ¿é–“çš„åç¨±å¿…é ˆä½¿ç”¨ä¸­æ–‡ï¼Œè¼¸å…¥('q'é€€å‡º)ï¼š\n");
 			input_to( (: get_room_short :), who, env);
 			return;
                 }
@@ -73,7 +73,7 @@ protected void get_room_short(string sdesc, object who, object env)
 			if( (section < 16)
 			|| (section > 87) )
 			{
-				tell_object(who,"\n·¿¼äµÄÃû³Æ±ØĞëÊ¹ÓÃ³£ÓÃ¡¸ºº×Ö¡¹£¬ÊäÈë('q'ÍË³ö)£º\n");
+				tell_object(who,"\næˆ¿é–“çš„åç¨±å¿…é ˆä½¿ç”¨å¸¸ç”¨ã€Œæ¼¢å­—ã€ï¼Œè¼¸å…¥('q'é€€å‡º)ï¼š\n");
 				input_to( (: get_room_short :), who, env);
 				return;
 			}
@@ -92,19 +92,19 @@ protected void change_room_short(object who, object env, string sdesc)
 
 	if(environment(who) != env)
 	{
-		tell_object(who, "ÄãµÄÎ»ÖÃ·¢ÉúÁË±ä»¯£¬ĞŞ¸Ä±»Í£Ö¹¡£\n");
+		tell_object(who, "ä½ çš„ä½ç½®ç™¼ç”Ÿäº†è®ŠåŒ–ï¼Œä¿®æ”¹è¢«åœæ­¢ã€‚\n");
 		return;
 	}
 
 	if(!content = read_file(fname = base_name(env)+".c"))
 	{
-		tell_object(who, "ÎŞ·¨¶ÁÈ¡µ±Ç°µµ°¸£¬ĞŞ¸ÄÊ§°Ü¡£\n");
+		tell_object(who, "ç„¡æ³•è®€å–ç•¶å‰æª”æ¡ˆï¼Œä¿®æ”¹å¤±æ•—ã€‚\n");
 		return;
 	}
 
 	if(!BUNCH_D->parse_set_value(ref content, "short", ref f_sect, ref e_sect))
 	{
-		tell_object(who, "ÎŞ·¨ÆÊÎöµ±Ç°µµ°¸£¬ĞŞ¸ÄÊ§°Ü¡£\n");
+		tell_object(who, "ç„¡æ³•å‰–æç•¶å‰æª”æ¡ˆï¼Œä¿®æ”¹å¤±æ•—ã€‚\n");
 		return;
 	}
 
@@ -113,14 +113,14 @@ protected void change_room_short(object who, object env, string sdesc)
 
 	if(!write_file(fname, newf, 1))
 	{
-		tell_object(who, "ÎŞ·¨Ğ´Èëµµ°¸£¬ĞŞ¸ÄÊ§°Ü¡£\n");
+		tell_object(who, "ç„¡æ³•å¯«å…¥æª”æ¡ˆï¼Œä¿®æ”¹å¤±æ•—ã€‚\n");
 		return;
 	}
 
 	if( !BUNCH_D->update_room(env) )
 	{
-		tell_object(who, "ÖØĞÂÔØÈë·¿¼ä´íÎó£¬ĞŞ¸ÄÊ§°Ü¡£\n");
+		tell_object(who, "é‡æ–°è¼‰å…¥æˆ¿é–“éŒ¯èª¤ï¼Œä¿®æ”¹å¤±æ•—ã€‚\n");
 		return;
 	}
-	tell_object(who, "ĞŞ¸Ä³É¹¦¡£\n");
+	tell_object(who, "ä¿®æ”¹æˆåŠŸã€‚\n");
 }

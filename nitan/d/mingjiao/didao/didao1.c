@@ -1,14 +1,14 @@
 // Code of ShenZhou
-// Room: didao1.c µØµÀ
+// Room: didao1.c åœ°é“
 // Zhangchi 3/00
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "µØµÀ");
+        set("short", "åœ°é“");
         set("long", @LONG
-ÕâÀïÊÇºñÍÁÆìÍÚµÄµØµÀ£¬ÀïÃæºÚÆáÆáµÄ£¬Ö»ÓĞ¼¸±ú»ğ°Ñ²åÔÚÇ½ÉÏ¡£
+é€™è£¡æ˜¯åšåœŸæ——æŒ–çš„åœ°é“ï¼Œè£¡é¢é»‘æ¼†æ¼†çš„ï¼Œåªæœ‰å¹¾æŸ„ç«æŠŠæ’åœ¨ç‰†ä¸Šã€‚
 LONG );
         set("exits", ([ /* sizeof() == 1 */
                 "up": "/d/mingjiao/didao/didao",

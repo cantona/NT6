@@ -3,11 +3,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "���");
+        set("short", "蜀道");
         set("long", @LONG
-�����������������µ�����ϣ���·ʮ����խ�����ﲻʱ����ǿ
-����û���������˺��٣���Ŀ��ȥ����Բ��������û�����̣��㻹��
-�ӿ첽���߰ɡ�
+你走在以險著稱天下的蜀道上，道路十分狹窄，這裡不時會有強
+盜出沒，來往的人很少，舉目看去，方圓幾百裡內沒有人煙，你還是
+加快步子走吧。
 LONG );
         set("exits", ([
                   "east" : __DIR__"shudao11",

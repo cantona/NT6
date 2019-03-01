@@ -4,32 +4,32 @@ inherit SKILL;
 int is_ultimate_skill() { return 1; }
 
 mapping *action = ({
-([      "action" : "$NÉîÎüÒ»¿ÚÆø£¬¾ÙÆğÊÖÖĞ$w¿³Ïò$n£¬µ¶¹âÔÚ¿ÕÖĞ»®³öÒ»µÀ»¡Ïß",
+([      "action" : "$Næ·±å¸ä¸€å£æ°£ï¼Œèˆ‰èµ·æ‰‹ä¸­$wç å‘$nï¼Œåˆ€å…‰åœ¨ç©ºä¸­åŠƒå‡ºä¸€é“å¼§ç·š",
         "force"  : 20,
         "attack" : 50,
         "dodge"  : 10,
         "parry"  : 30,
         "lvl"    : 0,
         "damage" : 30,
-        "damage_type" : "¿³ÉË",
+        "damage_type" : "ç å‚·",
 ]),
-([      "action" : "$N·´ÊÖÒ»µ¶£¬µ¶¹â»®Ïò$n£¬×ËÊÆÓÅÃÀÖ®¼«",
+([      "action" : "$Nåæ‰‹ä¸€åˆ€ï¼Œåˆ€å…‰åŠƒå‘$nï¼Œå§¿å‹¢å„ªç¾ä¹‹æ¥µ",
         "force"  : 40,
         "attack" : 65,
         "dodge"  : 10,
         "parry"  : 45,
         "lvl"    : 10,
         "damage" : 50,
-        "damage_type" : "¸îÉË",
+        "damage_type" : "å‰²å‚·",
 ]),
-([      "action" : "$N´ÓÈİ²»ÆÈ£¬×ª¶¯×ÅÊÖÖĞ$w£¬½¥½¥½«$nÁıÕÖ",
+([      "action" : "$Nå¾å®¹ä¸è¿«ï¼Œè½‰å‹•è‘—æ‰‹ä¸­$wï¼Œæ¼¸æ¼¸å°‡$nç± ç½©",
         "force"  : 80,
         "attack" : 80,
         "dodge"  : 10,
         "parry"  : 55,
         "lvl"    : 20,
         "damage" : 60,
-        "damage_type" : "¸îÉË",
+        "damage_type" : "å‰²å‚·",
 ]),
 });
 
@@ -41,10 +41,10 @@ int valid_enable(string usage)
 int valid_learn(object me)
 {
         if ((int)me->query_skill("blade", 1) < 10 )
-                return notify_fail("ÄãµÄ»ù±¾µ¶·¨Ë®Æ½ÓĞÏŞ£¬ÎŞ·¨Á·Ï°¾øµ¶\n");
+                return notify_fail("ä½ çš„åŸºæœ¬åˆ€æ³•æ°´å¹³æœ‰é™ï¼Œç„¡æ³•ç·´ç¿’çµ•åˆ€\n");
 
         if ((int)me->query_skill("blade", 1) < (int)me->query_skill("juedao", 1))
-                return notify_fail("ÄãµÄ»ù±¾µ¶·¨Ë®Æ½ÓĞÏŞ£¬ÎŞ·¨Áì»á¸ü¸ßÉîµÄ¾øµ¶\n");
+                return notify_fail("ä½ çš„åŸºæœ¬åˆ€æ³•æ°´å¹³æœ‰é™ï¼Œç„¡æ³•é ˜æœƒæ›´é«˜æ·±çš„çµ•åˆ€\n");
 
         return 1;
 }
@@ -74,10 +74,10 @@ int practice_skill(object me)
 
         if( !objectp(weapon=query_temp("weapon", me) )
             || query("skill_type", weapon) != "blade" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ã€‚\n");
 
         if( query("qi", me)<20 )
-                return notify_fail("ÄãµÄÌåÁ¦²»¹»£¬ÎŞ·¨¼ÌĞøÁ·Ï°¡£\n");
+                return notify_fail("ä½ çš„é«”åŠ›ä¸å¤ ï¼Œç„¡æ³•ç¹¼çºŒç·´ç¿’ã€‚\n");
 
         me->receive_damage("qi", 15);
 

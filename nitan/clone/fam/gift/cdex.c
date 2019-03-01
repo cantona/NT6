@@ -7,16 +7,16 @@ string query_autoload()
                                                                                          
 void create()                                                                            
 {                                                                                        
-        set_name(HIR "Âä·ïµ¤" NOR, ({ "luofeng dan" }));              
+        set_name(HIR "è½é³³ä¸¹" NOR, ({ "luofeng dan" }));              
         if (clonep())                                                                    
                 set_default_object(__FILE__);                                            
         else {                                                                           
-                set("long", YEL "´Ëµ¤³ÔÏÂºó¿ÉÒÔÏû³ýÒ»´ÎÉí·¨Àà³Ôµ¤Ê§°Ü¼ÇÂ¼¡£\n" NOR);   
-                set("base_unit", "¿Å");                                                  
+                set("long", YEL "æ­¤ä¸¹åƒä¸‹å¾Œå¯ä»¥æ¶ˆé™¤ä¸€æ¬¡èº«æ³•é¡žåƒä¸¹å¤±æ•—è¨˜éŒ„ã€‚\n" NOR);   
+                set("base_unit", "é¡†");                                                  
                 set("base_value", 400000);                                               
                 set("base_weight", 50);                                                  
                 set("only_do_effect", 1);                                                                                                                               
-                set("gift_msg", HIM "Í»È»¼äÄã¾õµÃ×Ô¼ºÉíÉÏºÃÏóÉÏÁËµãÊ²Ã´¡£\n" NOR);
+                set("gift_msg", HIM "çªç„¶é–“ä½ è¦ºå¾—è‡ªå·±èº«ä¸Šå¥½è±¡ä¸Šäº†é»žä»€éº¼ã€‚\n" NOR);
         }                                                                                
         setup();                                                                         
 }               
@@ -24,13 +24,13 @@ void create()
 int do_effect(object me)
 {
                                                                
-        message_vision(WHT "$N" WHT "Ò»Ñö²±£¬ÍÌÏÂÁËÒ»" +                                                                      
+        message_vision(WHT "$N" WHT "ä¸€ä»°è„–ï¼Œåžä¸‹äº†ä¸€" +                                                                      
                        query("base_unit") + name() + WHT
-                       "¡£\n" NOR, me);    
+                       "ã€‚\n" NOR, me);    
                        
         if( query("gift/clearcount", me) >= 3 )
         {                                                           
-                tell_object(me, "Äã¾õµÃÕâÒ©ºÃÏóÃ»Ê²Ã´Ð§¹û¡£\n");
+                tell_object(me, "ä½ è¦ºå¾—é€™è—¥å¥½è±¡æ²’ä»€éº¼æ•ˆæžœã€‚\n");
         }
         else
         {                                                           
@@ -44,7 +44,7 @@ int do_effect(object me)
                 }
                 else 
                 {
-                        tell_object(me, HIC "Äã¾õµÃÕâÒ©ºÃÏóÃ»Ê²Ã´Ð§¹û¡£\n" NOR);
+                        tell_object(me, HIC "ä½ è¦ºå¾—é€™è—¥å¥½è±¡æ²’ä»€éº¼æ•ˆæžœã€‚\n" NOR);
                 }
                 
         }             

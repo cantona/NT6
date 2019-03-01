@@ -1,14 +1,14 @@
-//  jitan.c ¼ÀÌ³
+//  jitan.c ç¥­å£‡
 
 inherit ROOM;
 
 void create()
 {
-        set("short","¼ÀÌ³");
+        set("short","ç¥­å£‡");
         set("long", @LONG
- ÕâÀïÊÇÑ©É½ËÂ¼ÀÌ³£¬ÖĞ¼äÒ»¸ö¸ßÌ¨£¬ÇàÊ¯Æö¾Í¡£ÖÜÎ§°ÚÂúÁËÄ¾²ñ
-ºÍËÖÓÍ£¬ÅÔ±ßÒ»¸öÊ¢Ë®µÄÂ­²§°Ú×ÅÒ»Ö»·¨Áå¡£Ò»Ğ©Í´¿àºÍ¿ÉÁ¯µÄÍöÁé
-¿ÉÒÔÔÚÕâÀï»ñµÃ³¬¶È¡£
+ é€™è£¡æ˜¯é›ªå±±å¯ºç¥­å£‡ï¼Œä¸­é–“ä¸€å€‹é«˜å°ï¼Œé’çŸ³ç Œå°±ã€‚å‘¨åœæ“ºæ»¿äº†æœ¨æŸ´
+å’Œé…¥æ²¹ï¼Œæ—é‚Šä¸€å€‹ç››æ°´çš„é¡±ç µæ“ºè‘—ä¸€åªæ³•éˆ´ã€‚ä¸€äº›ç—›è‹¦å’Œå¯æ†çš„äº¡éˆ
+å¯ä»¥åœ¨é€™è£¡ç²å¾—è¶…åº¦ã€‚
 LONG );
         set("outdoors","xueshan");
         set("no_fight","1");
@@ -34,7 +34,7 @@ int valid_leave(object me, string dir)
         if (! objectp(ob)) return ::valid_leave(me, dir);
         if( query("name", me) == query("pending", ob )
          && query("burning", ob) )
-                return notify_fail("Äã·¨ÊÂÃ»×öÍê¾ÍÏë×ß£¿\n");
+                return notify_fail("ä½ æ³•äº‹æ²’åšå®Œå°±æƒ³èµ°ï¼Ÿ\n");
         return ::valid_leave(me, dir);
 }
 */

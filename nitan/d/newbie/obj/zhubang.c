@@ -1,20 +1,20 @@
-// zhubang.c Öñ°ô
+// zhubang.c ç«¹æ£’
 
 #include <weapon.h>
 inherit STAFF;
 
 void create()
 {
-        set_name("Öñ°ô", ({ "zhu bang","zhu","bang" }));
+        set_name("ç«¹æ£’", ({ "zhu bang","zhu","bang" }));
         set_weight(300);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ù");
-                set("long", "ÕâÊÇÒ»¸ù·¢»ÆµÄÖñ°ô£¬ÈëÊÖ³ÁµéµéµÄ£¬ËÆºõÏàµ±½áÊµ¡£\n");
+                set("unit", "æ ¹");
+                set("long", "é€™æ˜¯ä¸€æ ¹ç™¼é»ƒçš„ç«¹æ£’ï¼Œå…¥æ‰‹æ²‰ç”¸ç”¸çš„ï¼Œä¼¼ä¹ç›¸ç•¶çµå¯¦ã€‚\n");
                 set("material", "bamboo");
-                set("wield_msg", "$N³é³öÒ»¸ù$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²å»ØÑü¼ä¡£\n");
+                set("wield_msg", "$NæŠ½å‡ºä¸€æ ¹$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°‡æ‰‹ä¸­çš„$næ’å›è…°é–“ã€‚\n");
         }
         init_staff(5);
         setup();

@@ -10,38 +10,38 @@ int exert(object me, object target)
         int skill;
 
         if( !query("reborn/times", me) )
-                return notify_fail("ÄãÉÐÎ´×ªÊÀÖØÉú£¬ÎÞ·¨Ê¹ÓÃº®Ä§ÐþÁ¦£¡\n");
+                return notify_fail("ä½ å°šæœªè½‰ä¸–é‡ç”Ÿï¼Œç„¡æ³•ä½¿ç”¨å¯’é­”çŽ„åŠ›ï¼\n");
 
         if( target != me )
-                return notify_fail("ÄãÖ»ÄÜÓÃ±ù²Ïº®¹¦À´¼¤·¢º®Ä§ÐþÁ¦¡£\n");
+                return notify_fail("ä½ åªèƒ½ç”¨å†°è ¶å¯’åŠŸä¾†æ¿€ç™¼å¯’é­”çŽ„åŠ›ã€‚\n");
 
         if( (skill = me->query_skill("freezing-force", 1)) < 1500 )
-                return notify_fail("ÄãµÄ±ù²Ïº®¹¦ÐÞÎª²»¹»£¬ÎÞ·¨Ê¹ÓÃº®Ä§ÐþÁ¦£¡\n");
+                return notify_fail("ä½ çš„å†°è ¶å¯’åŠŸä¿®ç‚ºä¸å¤ ï¼Œç„¡æ³•ä½¿ç”¨å¯’é­”çŽ„åŠ›ï¼\n");
 
         if( me->query_skill("huagong-dafa", 1) < 1500 )
-                return notify_fail("ÄãµÄ»¯¹¦´ó·¨ÐÞÎª²»¹»£¬ÎÞ·¨Ê¹ÓÃº®Ä§ÐþÁ¦£¡\n");
+                return notify_fail("ä½ çš„åŒ–åŠŸå¤§æ³•ä¿®ç‚ºä¸å¤ ï¼Œç„¡æ³•ä½¿ç”¨å¯’é­”çŽ„åŠ›ï¼\n");
 
         if( me->query_skill("poison", 1) < 1500 )
-                return notify_fail("Äã¶Ô»ù±¾¶¾¹¦µÄ²ÎÎò»¹²»¹»£¬ÎÞ·¨Ê¹ÓÃº®Ä§ÐþÁ¦£¡\n");
+                return notify_fail("ä½ å°åŸºæœ¬æ¯’åŠŸçš„åƒæ‚Ÿé‚„ä¸å¤ ï¼Œç„¡æ³•ä½¿ç”¨å¯’é­”çŽ„åŠ›ï¼\n");
 
         if( me->query_skill("force", 1) < 1500 )
-                return notify_fail("Äã¶Ô»ù±¾ÄÚ¹¦µÄÐÞÎª»¹²»¹»£¬ÎÞ·¨Ê¹ÓÃº®Ä§ÐþÁ¦£¡\n");
+                return notify_fail("ä½ å°åŸºæœ¬å…§åŠŸçš„ä¿®ç‚ºé‚„ä¸å¤ ï¼Œç„¡æ³•ä½¿ç”¨å¯’é­”çŽ„åŠ›ï¼\n");
 
         if( query_temp("freezing", me) )
-                return notify_fail("ÄãÒÑ¾­ÔÚÔËÆðº®Ä§ÐþÁ¦ÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“åœ¨é‹èµ·å¯’é­”çŽ„åŠ›äº†ã€‚\n");
 
         if( query("jingli", me)<2000 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ã€‚\n");
 
         if( query("neili", me)<5000 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ã€‚\n");
 
         addn("neili", -1000, me);
         me->receive_damage("qi", 0);
 
-        message_combatd(HIB "$N" HIB "ÉñÉ«ÄýÖØ£¬ÉîÎüÒ»¿ÚÆø£¬Ìå±íË²¼ä±äÎªµåÀ¶É«£¬$N" HIB "ËæÖ®°Ú³ö¸÷ÖÖÆæÌØµÄÔìÐÍÎè¶¯×Å¡£\n"
-                       "Ëæ×ÅÄÇÐ©¹îÒìµÄÎè×Ë£¬À¶É«ÑÌÆøËÄÆð£¬ÔÚ¿ÕÖÐ¾¹ËÆÏÔÏÖÎÞÊýÒìÑù²Ï³æ£¬ÔÚ$NÉíÖÜÈÆÐÐ²»Ö¹£¬\n"
-                       "ËÄÖÜÎÂ¶ÈÖè½µ£¬Ö»É²ÄÇ¼ä¹¦·ò£¬¿ÕÆøËÆºõ¶¼Äý½áÁË¡£ÕâË²¼ä£¬$N" HIB "ÈçÍ¬¶¾Éñ¸½Ìå£¬Ê¹ÈËÖÜÉí²üÀõ¡£\n" NOR, me);
+        message_combatd(HIB "$N" HIB "ç¥žè‰²å‡é‡ï¼Œæ·±å¸ä¸€å£æ°£ï¼Œé«”è¡¨çž¬é–“è®Šç‚ºé›è—è‰²ï¼Œ$N" HIB "éš¨ä¹‹æ“ºå‡ºå„ç¨®å¥‡ç‰¹çš„é€ åž‹èˆžå‹•è‘—ã€‚\n"
+                       "éš¨è‘—é‚£äº›è©­ç•°çš„èˆžå§¿ï¼Œè—è‰²ç…™æ°£å››èµ·ï¼Œåœ¨ç©ºä¸­ç«Ÿä¼¼é¡¯ç¾ç„¡æ•¸ç•°æ¨£è ¶èŸ²ï¼Œåœ¨$Nèº«å‘¨ç¹žè¡Œä¸æ­¢ï¼Œ\n"
+                       "å››å‘¨æº«åº¦é©Ÿé™ï¼Œåªå‰Žé‚£é–“åŠŸå¤«ï¼Œç©ºæ°£ä¼¼ä¹Žéƒ½å‡çµäº†ã€‚é€™çž¬é–“ï¼Œ$N" HIB "å¦‚åŒæ¯’ç¥žé™„é«”ï¼Œä½¿äººå‘¨èº«é¡«æ —ã€‚\n" NOR, me);
 
         addn_temp("apply/unarmed_damage", 9000, me);
         addn_temp("apply/avoid_freeze", 90, me);
@@ -64,7 +64,7 @@ void remove_effect(object me)
                 addn_temp("apply/unarmed_damage", -9000, me);
                 addn_temp("apply/avoid_freeze", -90, me);
                 delete_temp("freezing", me);
-                tell_object(me, HIB "$N" HIB "ÉíÐÎÒ»ÖÍ£¬ÂÔÏÔõçõÇ£¬½«±ù²Ïº®Ä§ÐþÁ¦ÊÕ»Øµ¤Ìï£¬"
-                                "Ëæ×ÅÕæÆøÄý³ÉµÄ²Ï³æÄÉÈëÌåÄÚ£¬\n$N" HIB"µÄÌåÉ«»Ö¸´Õý³££¬ÖÜÎ§µÄº®ÆøÒ²ÂýÂýÉ¢¿ªÁË¡£\n" NOR);
+                tell_object(me, HIB "$N" HIB "èº«å½¢ä¸€æ»¯ï¼Œç•¥é¡¯è¹£è·šï¼Œå°‡å†°è ¶å¯’é­”çŽ„åŠ›æ”¶å›žä¸¹ç”°ï¼Œ"
+                                "éš¨è‘—çœŸæ°£å‡æˆçš„è ¶èŸ²ç´å…¥é«”å…§ï¼Œ\n$N" HIB"çš„é«”è‰²æ¢å¾©æ­£å¸¸ï¼Œå‘¨åœçš„å¯’æ°£ä¹Ÿæ…¢æ…¢æ•£é–‹äº†ã€‚\n" NOR);
         }
 }

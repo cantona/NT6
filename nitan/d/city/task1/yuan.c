@@ -1,15 +1,15 @@
-// yuan.c Ôª¹ã²¨
+// yuan.c å…ƒå»£æ³¢
 
 #include <ansi.h>
 inherit NPC;
 
 void create()
 {
-        set_name("Ôª¹ã²¨", ({ "yuan  guangbo"}));
-        set("nickname", "º£É°°ï°ïÖ÷");
+        set_name("å…ƒå»£æ³¢", ({ "yuan  guangbo"}));
+        set("nickname", "æµ·ç ‚å¹«å¹«ä¸»");
         set("long",
-        "º£É°°ïµÄ°ïÖ÷£¬ÔÚÑØº£µØ´ø´ò¼Ò½ÙÉá£¬×÷¶ñ¶à¶Ë¡£\n");
-        set("gender", "ÄĞĞÔ");
+        "æµ·ç ‚å¹«çš„å¹«ä¸»ï¼Œåœ¨æ²¿æµ·åœ°å¸¶æ‰“å®¶åŠ«èˆï¼Œä½œæƒ¡å¤šç«¯ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 46);
         set("attitude", "peaceful");
         set("str", 28);

@@ -5,11 +5,11 @@ inherit ROOM;
 #include <ansi.h>;
 void create()
 {
-        set("short", "���᷿");
+        set("short", "西廂房");
         set("long", @LONG
-������һ�ƴ�ʦ�ĵ�����ƽ�����������ĵط�����������һЩ
-���ţ�ǽ�߿���һЩ���������ϵ���ש���Ѿ��ݳ���ӡ�ˣ���ש��
-���ʮ�ֹ⻬��
+這裡是一燈大師的弟子們平常打坐練功的地方。地上舖著一些
+蒲團，牆邊靠著一些兵器，地上的青磚都已經陷出足印了，青磚被
+蹭得十分光滑。
 LONG );
         set("objects", ([
                 "/clone/npc/mu-ren": 6,

@@ -1,4 +1,4 @@
-// Npc: /d/kunlun/npc/weibi.c ÎÀèµ
+// Npc: /d/kunlun/npc/weibi.c è¡›ç’§
 // Last Modified by winder on Jun. 29 2001
 
 #include <ansi.h>
@@ -6,9 +6,9 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÎÀèµ", ({ "wei bi", "wei"}));
-        set("long","ËûÈİÃ²Ó¢¿¡£¬³¤ÉíÓñÁ¢£¬ËäÔÚÕâµÈ´óº®Ììºò£¬È´Ö»\n´©ÁËÒ»¼ş±¡±¡µÄµ­»ÆÉ«¶ĞÅÛ£¬ÏÔÊÇÄÚ¹¦²»Èõ¡£\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("è¡›ç’§", ({ "wei bi", "wei"}));
+        set("long","ä»–å®¹è²Œè‹±ä¿Šï¼Œé•·èº«ç‰ç«‹ï¼Œé›–åœ¨é€™ç­‰å¤§å¯’å¤©å€™ï¼Œå»åª\nç©¿äº†ä¸€ä»¶è–„è–„çš„æ·¡é»ƒè‰²ç·è¢ï¼Œé¡¯æ˜¯å…§åŠŸä¸å¼±ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("per", 30);
         set("age", 18);
 

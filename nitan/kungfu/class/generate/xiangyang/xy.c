@@ -6,46 +6,46 @@ int main(object me, string arg)
 {
         string poision;
         
-        // ÏÔÊ¾ÏåÑôÕ½×´Ì¬
-        // ¸ù¾İXYWAR_D->now_status()
+        // é¡¯ç¤ºè¥„é™½æˆ°ç‹€æ…‹
+        // æ ¹æ“šXYWAR_D->now_status()
         if (! arg)
         {
                 return 1;
         }
         
-        // ÏÔÊ¾ÏåÑôÊ¿±øÇé¿ö
+        // é¡¯ç¤ºè¥„é™½å£«å…µæƒ…æ³
         if (arg == "soldier")
         {
-                if (me->is_busy())return notify_fail("ÄãÕıÃ¦ÄØ¡£\n");
+                if (me->is_busy())return notify_fail("ä½ æ­£å¿™å‘¢ã€‚\n");
                 
                 if (XYWAR_D->now_status() != 2 && XYWAR_D->now_status() != 3 && ! wizardp(me))
-                        return notify_fail("ÏåÑô±£ÎÀÕ½Ä¿Ç°»¹Ã»ÓĞ¿ªÊ¼£¬ÎŞ·¨²é¿´¡£\n");
+                        return notify_fail("è¥„é™½ä¿è¡›æˆ°ç›®å‰é‚„æ²’æœ‰é–‹å§‹ï¼Œç„¡æ³•æŸ¥çœ‹ã€‚\n");
                 
                 XYWAR_D->show_soldier(me);
                 return 1;
         }
         
-        // µ÷¶¯ÏåÑôÊØ¾ü£¬Ö»ÓĞÍæ¼Ò½«Áì²Å¿ÉÒÔµ÷¶¯
+        // èª¿å‹•è¥„é™½å®ˆè»ï¼Œåªæœ‰ç©å®¶å°‡é ˜æ‰å¯ä»¥èª¿å‹•
         if (sscanf(arg, "xmove %s", poision))
         {
                 if (XYWAR_D->leader_player() != me->query("id") && ! wizardp(me))
-                        return notify_fail("¶Ô²»Æğ£¬ÄãÃ»ÓĞÈ¨Àûµ÷¶¯ÏåÑôÊØ¾ü¡£\n");
+                        return notify_fail("å°ä¸èµ·ï¼Œä½ æ²’æœ‰æ¬Šåˆ©èª¿å‹•è¥„é™½å®ˆè»ã€‚\n");
                 
                 XYWAR_D->move_xysoldier(me, poision);
                 
                 return 1;
         }
                 
-        // ÔöÅÉÃÉ¹Å¾ü
-        // Ö»ÓĞÎ×Ê¦ÓĞÈ¨Àû
+        // å¢æ´¾è’™å¤è»
+        // åªæœ‰å·«å¸«æœ‰æ¬Šåˆ©
         if (arg == "add mgb" && wizardp(me))
         {
                 
-                // Ôö¼ÓÃÉ¹Å±øÊ±¼ä¼ä¸ôADD_MGB_TIME
+                // å¢åŠ è’™å¤å…µæ™‚é–“é–“éš”ADD_MGB_TIME
                 /*
                 if (time() - last_add_mgb_time < 120)
                 {
-                        return notify_fail("ÃÉ¹Å±ø¸ÕÔöÔ®¹ı£¬±øÁ¦»¹µ÷Åä²»¹ıÀ´¡£\n");
+                        return notify_fail("è’™å¤å…µå‰›å¢æ´éï¼Œå…µåŠ›é‚„èª¿é…ä¸éä¾†ã€‚\n");
                 }
                 */
                 XYWAR_D->combat_add_soldier();

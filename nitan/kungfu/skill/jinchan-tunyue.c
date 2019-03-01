@@ -1,18 +1,18 @@
 #include <ansi.h>
-// 金蟾吞月 jinchan-tunyue
+// 閲戣熅鍚炴湀 jinchan-tunyue
 inherit SKILL; 
 string type() { return "knowledge"; } 
 
 int is_fmsk() { return 1; }
-string family_name() { return "欧阳世家"; }
+string family_name() { return "姝愰櫧涓栧"; }
 
 int valid_learn(object me)
 {        
         if (me->query_skill("hamagong", 1) < 30)
-                return notify_fail("你蛤蟆功火候不足，无法研习金蟾吞月。\n"); 
+                return notify_fail("浣犺洡锜嗗姛鐏�欎笉瓒筹紝鐒℃硶鐮旂繏閲戣熅鍚炴湀銆俓n"); 
         
         if( query("family/family_name", me) != family_name() )
-                return notify_fail("金蟾吞月只能欧阳世家弟子方可研习。\n");
+                return notify_fail("閲戣熅鍚炴湀鍙兘姝愰櫧涓栧寮熷瓙鏂瑰彲鐮旂繏銆俓n");
 
         return 1;
 }

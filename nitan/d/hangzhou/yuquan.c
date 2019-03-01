@@ -4,17 +4,17 @@
 inherit ROOM;
 void create()
 {
-        set("short", "��Ȫ");
+        set("short", "玉泉");
         set("long", @LONG
-��Ȫ�½�����Ȫɽ�ϣ�ԭ�������¡��߽���Ȫ�£�ֻ�������м���ˮ��(pond)��
-�������ǳ�����ɽ��·��
+玉泉寺建在玉泉山上，原名清漣寺。走進玉泉寺，只見這裡有幾個水池(pond)。
+朝東就是出寺下山的路。
 LONG);
         set("exits", ([
                 "eastdown"  : __DIR__"road5",
                 "north"     :  __DIR__"quanbian-xiaojing",
         ]));
         set("item_desc", ([
-                "pond": "���Ե�ʯ�����š�������Ȫ��������ż��Сˮ����ӿ������һ������\n",
+                "pond": "池旁的石碑刻著“古珍珠泉”，池內偶有小水泡上湧，好象一串珍珠\n",
         ]));
         set("objects" , ([
                 __DIR__"npc/you-ke" : 1,

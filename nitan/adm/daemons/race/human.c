@@ -9,20 +9,20 @@ inherit F_DBASE;
 inherit F_SKILL;
 
 mapping *combat_action = ({
-([      "action":               "$N»ÓÈ­¹¥»÷$nµÄ$l",
-        "damage_type":  "ğöÉË",
+([      "action":               "$Næ®æ‹³æ”»æ“Š$nçš„$l",
+        "damage_type":  "ç˜€å‚·",
 ]),
-([      "action":               "$NÍù$nµÄ$lÒ»×¥",
-        "damage_type":  "×¥ÉË",
+([      "action":               "$Nå¾€$nçš„$lä¸€æŠ“",
+        "damage_type":  "æŠ“å‚·",
 ]),
-([      "action":               "$NÍù$nµÄ$lºİºİµØÌßÁËÒ»½Å",
-        "damage_type":  "ğöÉË",
+([      "action":               "$Nå¾€$nçš„$lç‹ ç‹ åœ°è¸¢äº†ä¸€è…³",
+        "damage_type":  "ç˜€å‚·",
 ]),
-([      "action":               "$NÌáÆğÈ­Í·Íù$nµÄ$l´·È¥",
-        "damage_type":  "ğöÉË",
+([      "action":               "$Næèµ·æ‹³é ­å¾€$nçš„$læ¶å»",
+        "damage_type":  "ç˜€å‚·",
 ]),
-([      "action":               "$N¶Ô×¼$nµÄ$lÓÃÁ¦»Ó³öÒ»È­",
-        "damage_type":  "ğöÉË",
+([      "action":               "$Nå°æº–$nçš„$lç”¨åŠ›æ®å‡ºä¸€æ‹³",
+        "damage_type":  "ç˜€å‚·",
 ]),
 });
 
@@ -47,14 +47,14 @@ void setup_human(object ob)
         my = ob->query_entire_dbase();
         ob->set_default_action(__FILE__, "query_action");
 	set("default_actions", (: call_other, __FILE__, "query_action" :), ob);
-        if (! stringp(my["unit"])) my["unit"] = "Î»";
-        if (! stringp(my["gender"])) my["gender"] = "ÄĞĞÔ";
+        if (! stringp(my["unit"])) my["unit"] = "ä½";
+        if (! stringp(my["gender"])) my["gender"] = "ç”·æ€§";
         if (/*undefinedp*/!(my["can_speak"])) my["can_speak"] = 1;
         if (! stringp(my["attitude"])) my["attitude"] = "peaceful";
         if (! pointerp(my["limbs"])) my["limbs"] = ({
-                "Í·²¿", "¾±²¿", "ĞØ¿Ú", "ºóĞÄ", "×ó¼ç", "ÓÒ¼ç", "×ó±Û",
-                "ÓÒ±Û", "×óÊÖ", "ÓÒÊÖ", "Á½Àß", "×óÁ³", "Ñü¼ä", "Ğ¡¸¹",
-                "×óÍÈ", "ÓÒÍÈ", "ÓÒÁ³", "×ó½Å", "ÓÒ½Å", "×ó¶ú", "ÓÒ¶ú"
+                "é ­éƒ¨", "é ¸éƒ¨", "èƒ¸å£", "å¾Œå¿ƒ", "å·¦è‚©", "å³è‚©", "å·¦è‡‚",
+                "å³è‡‚", "å·¦æ‰‹", "å³æ‰‹", "å…©è‚‹", "å·¦è‡‰", "è…°é–“", "å°è…¹",
+                "å·¦è…¿", "å³è…¿", "å³è‡‰", "å·¦è…³", "å³è…³", "å·¦è€³", "å³è€³"
         });
 
         if (/*undefinedp*/!(my["age"])) my["age"] = 14;
@@ -89,15 +89,15 @@ void setup_human(object ob)
                 if ((int)my["max_jingli"] > 0)
                         my["max_jing"] += (int)my["max_jingli"] / 3;
 
-                // ·ğ¼ÒÑø¾«£º£³£°ËêÇ°²¹¾«£¬£³£°Ëêºó³¤¾«
+                // ä½›å®¶é¤Šç²¾ï¼šï¼“ï¼æ­²å‰è£œç²¾ï¼Œï¼“ï¼æ­²å¾Œé•·ç²¾
                 if (userp(ob) && mapp(my["family"])) {
-                        if ( my["family"]["family_name"] == "¶ëáÒÅÉ" )
+                        if ( my["family"]["family_name"] == "å³¨åµ‹æ´¾" )
                                 xism_age = (int)ob->query_skill("mahayana", 1);
-                        else if ( my["family"]["family_name"] == "ÉÙÁÖÅÉ" )
+                        else if ( my["family"]["family_name"] == "å°‘æ—æ´¾" )
                                 xism_age = (int)ob->query_skill("buddhism", 1);
-                        else if ( my["family"]["family_name"] == "¶ÎÊÏ»Ê×å" )
+                        else if ( my["family"]["family_name"] == "æ®µæ°çš‡æ—" )
                                 xism_age = (int)ob->query_skill("buddhism", 1);
-                        else if ( my["family"]["family_name"] == "Ñ©É½ËÂ" || my["family"]["family_name"] == "Ñªµ¶ÃÅ" )
+                        else if ( my["family"]["family_name"] == "é›ªå±±å¯º" || my["family"]["family_name"] == "è¡€åˆ€é–€" )
                                 xism_age = (int)ob->query_skill("lamaism", 1);
                 }
                 else
@@ -113,17 +113,17 @@ void setup_human(object ob)
                         skill = ob->query_skill("force");
                         if (xism_age > 0 && skill > 0) {
                                 skill = xism_age * (skill/20);
-                                if ( my["family"]["family_name"] == "ÉÙÁÖÅÉ" )
+                                if ( my["family"]["family_name"] == "å°‘æ—æ´¾" )
                                 {
                                         my["max_jing"] += skill;
                                         //my["max_qi"] += skill/2;
                                 }
-                                else if ( my["family"]["family_name"] == "¶ëáÒÅÉ" )
+                                else if ( my["family"]["family_name"] == "å³¨åµ‹æ´¾" )
                                 {
                                         my["max_jing"] += skill;
                                         //my["max_qi"] += skill/2;
                                 }
-                                else if ( my["family"]["family_name"] == "¶ÎÊÏ»Ê×å" )
+                                else if ( my["family"]["family_name"] == "æ®µæ°çš‡æ—" )
                                 {
                                         my["max_jing"] += skill*2/3;
                                         //my["max_qi"] += skill/2;
@@ -136,8 +136,8 @@ void setup_human(object ob)
                         }
                 }
 
-                // µØÉ²Á¶»ê£ºÃ¿ËÀÒ»´Î£¬Ø¤°ï¾«³¤¸ù¹ÇÖµ
-                if (userp(ob) && mapp(my["family"]) && my["family"]["family_name"] == "Ø¤°ï")
+                // åœ°å‰ç…‰é­‚ï¼šæ¯æ­»ä¸€æ¬¡ï¼Œä¸å¹«ç²¾é•·æ ¹éª¨å€¼
+                if (userp(ob) && mapp(my["family"]) && my["family"]["family_name"] == "ä¸å¹«")
                 {
                         add_point = my["combat_exp"]/50000;
                         if (mapp(my["combat"]))
@@ -152,8 +152,8 @@ void setup_human(object ob)
                         }
                 }
 
-                // »ªÉ½×ÏÏ¼Éñ¹¦£»£³£°ËêÇ°²¹¾«£¬£³£°Ëêºó³¤¾«
-                if (userp(ob) && mapp(my["family"]) && my["family"]["family_name"] == "»ªÉ½ÅÉ"
+                // è¯å±±ç´«éœç¥åŠŸï¼›ï¼“ï¼æ­²å‰è£œç²¾ï¼Œï¼“ï¼æ­²å¾Œé•·ç²¾
+                if (userp(ob) && mapp(my["family"]) && my["family"]["family_name"] == "è¯å±±æ´¾"
                 && (jing_age = (int)ob->query_skill("zixia-shengong", 1)/3) > 39)
                 {
                         if (jing_age > 250) jing_age = 250;
@@ -168,8 +168,8 @@ void setup_human(object ob)
                                 my["max_jing"] += jing_age * (skill/30);
                 }
 
-                // ¹ÅÄ¹ËØÅ®ĞÄ·¨£»£³£°ËêÇ°²¹¾«£¬£³£°Ëêºó³¤¾«
-                if (userp(ob) && mapp(my["family"]) && my["family"]["family_name"] == "¹ÅÄ¹ÅÉ"
+                // å¤å¢“ç´ å¥³å¿ƒæ³•ï¼›ï¼“ï¼æ­²å‰è£œç²¾ï¼Œï¼“ï¼æ­²å¾Œé•·ç²¾
+                if (userp(ob) && mapp(my["family"]) && my["family"]["family_name"] == "å¤å¢“æ´¾"
                         && (jing_age =(int)ob->query_skill("yunv-xinjing", 1)) > 39)
                 {
                         if (jing_age > 250) jing_age = 250;
@@ -184,8 +184,8 @@ void setup_human(object ob)
                                 my["max_jing"] += jing_age * (skill/30);
                 }
 
-                // ÌÒ»¨µºÆæÃÅÎåĞĞ£º£³£°ËêÇ°²¹¾«£¬£³£°Ëêºó³¤¾«£¬µ«Ğ§ÓÃĞ¡
-                if (userp(ob) && mapp(my["family"]) && my["family"]["family_name"] == "ÌÒ»¨µº"
+                // æ¡ƒèŠ±å³¶å¥‡é–€äº”è¡Œï¼šï¼“ï¼æ­²å‰è£œç²¾ï¼Œï¼“ï¼æ­²å¾Œé•·ç²¾ï¼Œä½†æ•ˆç”¨å°
+                if (userp(ob) && mapp(my["family"]) && my["family"]["family_name"] == "æ¡ƒèŠ±å³¶"
                         && (xism_age=(int)ob->query_skill("qimen-wuxing", 1)/3) > 39)
                 {
                         if (xism_age > 250) xism_age = 250;
@@ -199,8 +199,8 @@ void setup_human(object ob)
                         if (xism_age > 0 ) my["max_jing"] += xism_age * (skill/35);
                 }
 
-                // Ã÷½ÌÊ¥»ğĞşÚ¤£º£³£°ËêÇ°²¹¾«£¬£³£°Ëêºó³¤¾«£¬µ«Ğ§ÓÃĞ¡
-                if (userp(ob) && mapp(my["family"]) && my["family"]["family_name"] == "Ã÷½Ì"
+                // æ˜æ•™è–ç«ç„å†¥ï¼šï¼“ï¼æ­²å‰è£œç²¾ï¼Œï¼“ï¼æ­²å¾Œé•·ç²¾ï¼Œä½†æ•ˆç”¨å°
+                if (userp(ob) && mapp(my["family"]) && my["family"]["family_name"] == "æ˜æ•™"
                         && (xism_age=(int)ob->query_skill("shenghuo-shengong", 1)/3) > 39)
                 {
                         if (xism_age > 250) xism_age = 250;
@@ -214,8 +214,8 @@ void setup_human(object ob)
                         if (xism_age > 0 ) my["max_jing"] += xism_age * (skill/35);
                 }
 
-                // ÈÕÔÂÉñ½ÌÈÕÔÂ¹â»ª£º£³£°ËêÇ°²¹¾«£¬£³£°Ëêºó³¤¾«£¬µ«Ğ§ÓÃĞ¡
-                if (userp(ob) && mapp(my["family"]) && my["family"]["family_name"] == "ÈÕÔÂÉñ½Ì"
+                // æ—¥æœˆç¥æ•™æ—¥æœˆå…‰è¯ï¼šï¼“ï¼æ­²å‰è£œç²¾ï¼Œï¼“ï¼æ­²å¾Œé•·ç²¾ï¼Œä½†æ•ˆç”¨å°
+                if (userp(ob) && mapp(my["family"]) && my["family"]["family_name"] == "æ—¥æœˆç¥æ•™"
                         && (xism_age=(int)ob->query_skill("riyue-guanghua", 1)/3) > 39)
                 {
                         if (xism_age > 250) xism_age = 250;
@@ -229,8 +229,8 @@ void setup_human(object ob)
                         if (xism_age > 0 ) my["max_jing"] += xism_age * (skill/35);
                 }
 
-                // ¹ØÍâºú¼ÒÃîÊÖÇı¶¾£º£³£°ËêÇ°²¹¾«£¬£³£°Ëêºó³¤¾«£¬µ«Ğ§ÓÃĞ¡
-                if (userp(ob) && mapp(my["family"]) && my["family"]["family_name"] == "¹ØÍâºú¼Ò"
+                // é—œå¤–èƒ¡å®¶å¦™æ‰‹é©…æ¯’ï¼šï¼“ï¼æ­²å‰è£œç²¾ï¼Œï¼“ï¼æ­²å¾Œé•·ç²¾ï¼Œä½†æ•ˆç”¨å°
+                if (userp(ob) && mapp(my["family"]) && my["family"]["family_name"] == "é—œå¤–èƒ¡å®¶"
                         && (xism_age=(int)ob->query_skill("dispel-poison", 1)) > 39)
                 {
                         if (xism_age > 250) xism_age = 250;
@@ -285,8 +285,8 @@ void setup_human(object ob)
                 if ((int)my["max_neili"] > 0)
                         my["max_qi"] += (int)my["max_neili"] / 4;
 
-                // Îäµ±Ì«¼«¼ÓÆø
-                if (userp(ob) && mapp(my["family"]) && my["family"]["family_name"] == "Îäµ±ÅÉ" &&
+                // æ­¦ç•¶å¤ªæ¥µåŠ æ°£
+                if (userp(ob) && mapp(my["family"]) && my["family"]["family_name"] == "æ­¦ç•¶æ´¾" &&
                     (x = (int)ob->query_skill("taoism", 1)) > 39 &&
                     (y = (int)ob->query_skill("taiji-shengong", 1)) > 39)
                 {
@@ -298,8 +298,8 @@ void setup_human(object ob)
                         my["max_qi"] += (x + 100 ) * (y + 100) / 100;
                 }
 
-                //È«ÕæÏÈÌì¹¦¼ÓÆø
-                if (userp(ob) && mapp(my["family"]) && my["family"]["family_name"] == "È«Õæ½Ì" &&
+                //å…¨çœŸå…ˆå¤©åŠŸåŠ æ°£
+                if (userp(ob) && mapp(my["family"]) && my["family"]["family_name"] == "å…¨çœŸæ•™" &&
                     (x = (int)ob->query_skill("taoism", 1)) > 39 &&
                     (y = (int)ob->query_skill("xiantian-gong", 1)) > 39)
                 {
@@ -311,8 +311,8 @@ void setup_human(object ob)
                         my["max_qi"] += (x + 100 ) * (y + 100) / 100;
                 }
 
-                // ĞÇËŞ¾Û¶¾Á·Æø£º£³£°ËêÇ°²¹Æø£¬£³£°Ëêºó³¤Æø
-                if (userp(ob) &&  mapp(my["family"]) && my["family"]["family_name"] == "ĞÇËŞÅÉ"
+                // æ˜Ÿå®¿èšæ¯’ç·´æ°£ï¼šï¼“ï¼æ­²å‰è£œæ°£ï¼Œï¼“ï¼æ­²å¾Œé•·æ°£
+                if (userp(ob) &&  mapp(my["family"]) && my["family"]["family_name"] == "æ˜Ÿå®¿æ´¾"
                 && (xism_age=(int)ob->query_skill("poison", 1)/3) > 39)
                 {
                         if (xism_age > 250) xism_age = 250;
@@ -327,8 +327,8 @@ void setup_human(object ob)
                                 my["max_qi"] += xism_age * (skill/30);
                 }
 
-                // °×ÍÕÉ½×¯¾Û¶¾Á·Æø£º£³£°ËêÇ°²¹Æø£¬£³£°Ëêºó³¤Æø
-                if (userp(ob) && mapp(my["family"]) && my["family"]["family_name"] == "Å·ÑôÊÀ¼Ò"
+                // ç™½é§å±±èŠèšæ¯’ç·´æ°£ï¼šï¼“ï¼æ­²å‰è£œæ°£ï¼Œï¼“ï¼æ­²å¾Œé•·æ°£
+                if (userp(ob) && mapp(my["family"]) && my["family"]["family_name"] == "æ­é™½ä¸–å®¶"
                      && (xism_age=(int)ob->query_skill("poison", 1)/3) > 39)
                 {
                         if (xism_age > 250) xism_age = 250;
@@ -342,8 +342,8 @@ void setup_human(object ob)
                                 my["max_qi"] += xism_age * (skill/30);
                 }
 
-                // åĞÒ£ÅÉåĞÒ£ÆæÑ§Á·Æø£º£³£°ËêÇ°²¹Æø£¬£³£°Ëêºó³¤Æø
-                if (userp(ob) && mapp(my["family"]) && my["family"]["family_name"] == "åĞÒ£ÅÉ"
+                // é€é™æ´¾é€é™å¥‡å­¸ç·´æ°£ï¼šï¼“ï¼æ­²å‰è£œæ°£ï¼Œï¼“ï¼æ­²å¾Œé•·æ°£
+                if (userp(ob) && mapp(my["family"]) && my["family"]["family_name"] == "é€é™æ´¾"
                      && (xism_age=(int)ob->query_skill("xiaoyao-qixue", 1)) > 39)
                 {
                         if (xism_age > 250) xism_age = 250;
@@ -358,8 +358,8 @@ void setup_human(object ob)
                                 my["max_qi"] += xism_age * (skill/40);
                 }
 
-                // ÁéğÕ¹¬°Ë»ÄÉñ¹¦£º£³£°ËêÇ°²¹Æø£¬£³£°Ëêºó³¤Æø
-                if (userp(ob) && mapp(my["family"]) && my["family"]["family_name"] == "ÁéğÕ¹¬"
+                // éˆé·²å®®å…«è’ç¥åŠŸï¼šï¼“ï¼æ­²å‰è£œæ°£ï¼Œï¼“ï¼æ­²å¾Œé•·æ°£
+                if (userp(ob) && mapp(my["family"]) && my["family"]["family_name"] == "éˆé·²å®®"
                      && (xism_age=(int)ob->query_skill("bahuang-gong", 1)/3) > 39)
                 {
                         if (xism_age > 250) xism_age = 250;
@@ -374,8 +374,8 @@ void setup_human(object ob)
                                 my["max_qi"] += xism_age * (skill/40);
                 }
 
-                // Ä½ÈİÊÀ¼Ò×Ï»ÕĞÄ·¨Á·Æø£º£³£°ËêÇ°²¹Æø£¬£³£°Ëêºó³¤Æø
-                if (userp(ob) && mapp(my["family"]) && my["family"]["family_name"] == "Ä½ÈİÊÀ¼Ò"
+                // æ…•å®¹ä¸–å®¶ç´«å¾½å¿ƒæ³•ç·´æ°£ï¼šï¼“ï¼æ­²å‰è£œæ°£ï¼Œï¼“ï¼æ­²å¾Œé•·æ°£
+                if (userp(ob) && mapp(my["family"]) && my["family"]["family_name"] == "æ…•å®¹ä¸–å®¶"
                      && (xism_age=(int)ob->query_skill("zihui-xinfa", 1)/3) > 39)
                 {
                         if (xism_age > 250) xism_age = 250;
@@ -390,8 +390,8 @@ void setup_human(object ob)
                                 my["max_qi"] += xism_age * (skill/40);
                 }
 
-                // ÉñÁúµºÉñÁúÃÔĞÁÁ·Æø£º£³£°ËêÇ°²¹Æø£¬£³£°Ëêºó³¤Æø
-                if (userp(ob) && mapp(my["family"]) && my["family"]["family_name"] == "ÉñÁú½Ì"
+                // ç¥é¾å³¶ç¥é¾è¿·è¾›ç·´æ°£ï¼šï¼“ï¼æ­²å‰è£œæ°£ï¼Œï¼“ï¼æ­²å¾Œé•·æ°£
+                if (userp(ob) && mapp(my["family"]) && my["family"]["family_name"] == "ç¥é¾æ•™"
                      && (xism_age=(int)ob->query_skill("shenlong-mixin", 1)) > 39)
                 {
                         if (xism_age > 250) xism_age = 250;
@@ -423,7 +423,7 @@ void setup_human(object ob)
                 if( userp(ob) && query("jingmai/finish", ob) )
                         my["max_qi"] += ZHOUTIAN_D->query_jingmai_effect("qi"); 
 
-                // ·şÓÃsuperÒ©Æ·
+                // æœç”¨superè—¥å“
                 if( userp(ob) && query("drug_addqi", ob) )
                         my["max_qi"] += query("drug_addqi", ob);
 

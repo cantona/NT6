@@ -4,13 +4,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIY "яв╩филЁг╬еуш©╗" NOR, ({"yhshop vipcard9"}));
+        set_name(HIY "Г┌▌И╩┐Е∙├Е÷▌Д╧²Ф┼≤Е█║" NOR, ({"yhshop vipcard9"}));
         set_weight(1);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIY "уБйгр╩уе╩ф╫П╢РтЛ╤ЬЁи╣д©╗ф╛ё╛яв╩филЁг╧╨бР╬еушсе╩щ║ё║╦п╩п╩дЗ╣д╡нсК║╧\n" NOR);
-                set("unit", "уе");
+                set("long", HIY "И─≥Ф≤╞Д╦─Е╪╣И╩┐И┤▒Ф┴⌠И─═Х─▄Ф┬░Г └Е█║Г┴┤О╪▄Г┌▌И╩┐Е∙├Е÷▌ХЁ╪Х╡╥Д╧²Ф┼≤Е└╙Ф┐═Ц─┌Ц─▄Х╛²Х╛²Ф┌╗Г └Е▐┐Х┬┤Ц─█\n" NOR);
+                set("unit", "Е╪╣");
                                 set("no_drop", 1);
                                 set("no_sell", 1);
                                 set("no_give", 1);

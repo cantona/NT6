@@ -6,13 +6,13 @@ int do_back(object me);
 
 void create()
 {
-//        set_name("ºÚÒÂÈË", ({ "heiyi ren","ren"}));
+//        set_name("é»‘è¡£äºº", ({ "heiyi ren","ren"}));
         NPC_D->generate_cn_name(this_object());
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("quest_no_guard",1);
         set("no_steal",1);
         set("no_ansuan",1);
-//        set("long", "Ò»¸ö´©×ÅºÚÉ«Ò¹ĞĞÒÂµÄÈË¡£\n");
+//        set("long", "ä¸€å€‹ç©¿è‘—é»‘è‰²å¤œè¡Œè¡£çš„äººã€‚\n");
         set("chat_chance", 10);
         set("chat_msg", ({
                                  (: random_move :)
@@ -27,7 +27,7 @@ void create()
         add_money("silver",10+random(30));
         carry_object("/d/city/obj/tiejia")->wear();
         if (clonep())
-        call_out("do_back", 943 , this_object()); //ËÄÌìÄÚ4*(86400/365)-1
+        call_out("do_back", 943 , this_object()); //å››å¤©å…§4*(86400/365)-1
 }
 
 int do_back(object me)
@@ -39,7 +39,7 @@ int do_back(object me)
         }
         if (objectp(environment(me)))
         {
-                tell_room(environment(me),query("name", me)+"´Ò´ÒÃ¦Ã¦µÄÀë¿ªÁË¡£\n",({me}));
+                tell_room(environment(me),query("name", me)+"åŒ†åŒ†å¿™å¿™çš„é›¢é–‹äº†ã€‚\n",({me}));
                 destruct(me); 
         }
   return 1;
@@ -62,7 +62,7 @@ void die()
 
         me=find_player(query("owner", ob));
         if (!objectp(me)) return ::die();
-        q=query("quest/kill", me);//ÈÎÎñÏà¹Ø
+        q=query("quest/kill", me);//ä»»å‹™ç›¸é—œ
         q["notice"] = "die";
         lvl = NPC_D->check_level(me);
         exp = 10 + random(5) + lvl;
@@ -72,28 +72,28 @@ void die()
         quest_count=query("quest_num/kill", me)+1;
                 if (quest_count >= 500)
                 {
-                        // Á¬ĞøÍê³ÉÁË³¬¹ı500´ÎµÄÈÎÎñ
+                        // é€£çºŒå®Œæˆäº†è¶…é500æ¬¡çš„ä»»å‹™
                         exp += 80 + random(quest_count / 20 + 1);
                         pot += 45 + random(quest_count / 25 + 1);
                         score += 4 + random(15);
                 } else
                 if (quest_count >= 200)
                 {
-                        // Á¬ĞøÍê³ÉÁË³¬¹ı200´ÎµÄÈÎÎñ
+                        // é€£çºŒå®Œæˆäº†è¶…é200æ¬¡çš„ä»»å‹™
                         exp += 70 + random(quest_count / 20 + 1);
                         pot += 40 + random(quest_count / 25 + 1);
                         score += 3 + random(10);
                 } else
                 if (quest_count >= 100)
                 {
-                        // Á¬ĞøÍê³ÉÁË³¬¹ı100´ÎµÄÈÎÎñ
+                        // é€£çºŒå®Œæˆäº†è¶…é100æ¬¡çš„ä»»å‹™
                         exp += 50 + random(quest_count / 20 + 1);
                         pot += 30 + random(quest_count / 25 + 1);
                         score += 2 + random(10);
                 } else
                 if (quest_count >= 10)
                 {
-                        // Á¬ĞøÍê³ÉÁË³¬¹ı10´ÎµÄÈÎÎñ
+                        // é€£çºŒå®Œæˆäº†è¶…é10æ¬¡çš„ä»»å‹™
                         exp += 45 + random(quest_count / 20 + 1);
                         pot += 25 + random(quest_count / 25 + 1);
                         score += 1 + random(5);
@@ -131,15 +131,15 @@ void die()
         }
         added+=query_temp("quest/escape_times", me)*2;
         delete_temp("quest/escape_times", me);
-        // ¸ù¾İNPCµÄ°ïÊÖºÍÌÓ×ßµÄ´ÎÊıµ÷Õû¾­Ñé
+        // æ ¹æ“šNPCçš„å¹«æ‰‹å’Œé€ƒèµ°çš„æ¬¡æ•¸èª¿æ•´ç¶“é©—
         if (added)
         {
                 exp += exp * added / 2;
                 pot += pot * added / 2;
         }
 //        me->delete("quest/kill");
-        // ÕâÀïµ÷ÕûÒ»Ğ© ÒÔÉÏ±ÈÀıÊÇ2:1×óÓÒ
-        // Ã¿¸öÏÂÀ´ÊÇ200¶àexp 100¶àpot
+        // é€™è£¡èª¿æ•´ä¸€äº› ä»¥ä¸Šæ¯”ä¾‹æ˜¯2:1å·¦å³
+        // æ¯å€‹ä¸‹ä¾†æ˜¯200å¤šexp 100å¤špot
         exp *= 3;
         pot *= 2;
         score *= 2;
@@ -164,13 +164,13 @@ void die()
                         exp = per_exp;
                         pot = per_pot;
                         score = per_score;
-                        if (obs[i]==fme)  //´òÔÎµÄË«·İ
+                        if (obs[i]==fme)  //æ‰“æšˆçš„é›™ä»½
                         {
                                         exp += per_exp;
                                         pot += per_pot;
                                         score += per_score;
                         }
-                        if (obs[i]==me) // ÁìÈÎÎñµÄË«·İ
+                        if (obs[i]==me) // é ˜ä»»å‹™çš„é›™ä»½
                         {
                                         exp += per_exp;
                                         pot += per_pot;
@@ -184,15 +184,15 @@ void die()
                                 addn("combat_exp", exp, obs[i]);
                                 addn("potential", pot, obs[i]);
                                 addn("score", score, obs[i]);
-//                        obs[i]->set_temp("prize_reason","×·É±");
+//                        obs[i]->set_temp("prize_reason","è¿½æ®º");
 //                        obs[i]->set_temp("can_give_prize",1);
 //                        obs[i]->set_temp("prize_exp",exp);
 //                        obs[i]->set_temp("prize_pot",pot);
 
-                                tell_object(obs[i],HIW"¾­¹ıÕâ·¬ÀúÁ·£¬Äã±»½±ÀøÁË£º");
-                                tell_object(obs[i],chinese_number(exp) +"µãÊµÕ½¾­Ñé¡¢" +
-                                chinese_number(pot) + "µãÇ±ÄÜ¡¢"+
-                                chinese_number(score)+"µã½­ºşÔÄÀú¡£\n"NOR);
+                                tell_object(obs[i],HIW"ç¶“éé€™ç•ªæ­·ç·´ï¼Œä½ è¢«çå‹µäº†ï¼š");
+                                tell_object(obs[i],chinese_number(exp) +"é»å¯¦æˆ°ç¶“é©—ã€" +
+                                chinese_number(pot) + "é»æ½›èƒ½ã€"+
+                                chinese_number(score)+"é»æ±Ÿæ¹–é–±æ­·ã€‚\n"NOR);
                         }
                 }
         }
@@ -208,7 +208,7 @@ int accept_fight(object ob)
         if (!arrayp(killer)) killer = ({});
         if (member_array(ob,killer)<0) killer += ({ob});
         set_temp("killer", killer, this_object());
-  command("say ºÃ£¡ÔÛÃÇ¾Í±È»®±È»®£¡");
+  command("say å¥½ï¼å’±å€‘å°±æ¯”åŠƒæ¯”åŠƒï¼");
         kill_ob(ob);
         return 1;
 }
@@ -221,7 +221,7 @@ int accept_hit(object ob)
         if (!arrayp(killer)) killer = ({});
         if (member_array(ob,killer)<0) killer += ({ob});
         set_temp("killer", killer, this_object());
-  command("say ÄãËÀÈ¥°É£¡");
+  command("say ä½ æ­»å»å§ï¼");
   kill_ob(ob);
   return 1;
 }
@@ -235,10 +235,10 @@ int accept_kill(object ob)
         if (member_array(ob,killer)<0) killer += ({ob});
         set_temp("killer", killer, this_object());
         set_temp("killer", killer, this_object());
-        command("say ºß£¡ÕÒËÀ£¡");
+        command("say å“¼ï¼æ‰¾æ­»ï¼");
         return 1;
 }
-int accept_ansuan(object who) {return notify_fail("´ËÈË¾¯ÌèĞÔÌ«¸ß£¬Ã»·¨°µËã¡£\n");}
+int accept_ansuan(object who) {return notify_fail("æ­¤äººè­¦æƒ•æ€§å¤ªé«˜ï¼Œæ²’æ³•æš—ç®—ã€‚\n");}
 int accept_touxi(object who)        {return accept_kill(who);}
 void random_move()
 {

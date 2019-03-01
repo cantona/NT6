@@ -2,8 +2,8 @@ inherit NPC;
  
 void create()
 {
-        set_name("�Ů", ({ "binu", }) );
-        set("gender", "Ů��" );
+        set_name("婢女", ({ "binu", }) );
+        set("gender", "女性" );
         set("age",18);
         set("class", "taohua");
         set("combat_exp", 100);

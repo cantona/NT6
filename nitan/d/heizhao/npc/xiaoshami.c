@@ -3,10 +3,10 @@ inherit NPC;
 #include <ansi.h>;
 void create()
 {
-        set_name("Ğ¡É³ÃÖ", ({"xiao shami","shami",}));
+        set_name("å°æ²™å½Œ", ({"xiao shami","shami",}));
         set("long",
-        "ËûÊÇ±¾ËÂĞ¡É³ÃÖ¡£\n");
-        set("gender", "ÄĞĞÔ");
+        "ä»–æ˜¯æœ¬å¯ºå°æ²™å½Œã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 12);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -57,7 +57,7 @@ void greeting(object ob)
         if( (myfam["master_id"] == "yideng dashi") &&
                 !query("exits/out", environment(this_object())) )
         {
-message_vision(HIY"Ğ¡É³ÃÖ¶Ô$NËµ£º¡°Äã»ØÀ´ÁË¡£È¥¼ûÊ¦¸¸°É¡£¡±Ëµ×Å´ò¿ªºóÃÅ¡£\n"NOR, ob);
+message_vision(HIY"å°æ²™å½Œå°$Nèªªï¼šâ€œä½ å›ä¾†äº†ã€‚å»è¦‹å¸«çˆ¶å§ã€‚â€èªªè‘—æ‰“é–‹å¾Œé–€ã€‚\n"NOR, ob);
                 set("exits/out", "/d/heizhao/zhulin1", environment(this_object()));
         }
         return;
@@ -67,11 +67,11 @@ int accept_object(object who, object ob)
 {
         if ( !who || environment(who) != environment() ) return 0;
         if ( !objectp(ob) ) return 0;
-        if ( !present(ob, who) ) return notify_fail("ÄãÃ»ÓĞÕâ¼ş¶«Î÷¡£\n");
+        if ( !present(ob, who) ) return notify_fail("ä½ æ²’æœ‰é€™ä»¶æ±è¥¿ã€‚\n");
 
         if( query("id", ob) != "huangbu xiaonan" )
-                return notify_fail("Ğ¡É³ÃÖ²»ÏëÒªÕâ¼ş¶«Î÷¡£\n");
+                return notify_fail("å°æ²™å½Œä¸æƒ³è¦é€™ä»¶æ±è¥¿ã€‚\n");
         set("exits/out", "/d/heizhao/zhulin1", environment(this_object()));
-        message_vision(HIY"Ğ¡É³ÃÖµãÁËµãÍ·£¬°ÑìøÔººóÃÅ´ò¿ªÀ´¡£\n"NOR, who);
+        message_vision(HIY"å°æ²™å½Œé»äº†é»é ­ï¼ŒæŠŠç¦ªé™¢å¾Œé–€æ‰“é–‹ä¾†ã€‚\n"NOR, who);
         return 1;
 }

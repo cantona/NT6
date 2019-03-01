@@ -1,6 +1,6 @@
 #include <ansi.h>
 
-#define SIX "¡¸" HIW "ÁùÂö½£Æø" NOR "¡¹"
+#define SIX "ã€Œ" HIW "å…­è„ˆåŠæ°£" NOR "ã€"
 
 inherit F_SSERVER;
 
@@ -16,41 +16,41 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if( userp(me) && !query("can_perform/liumai-shenjian/six", me) )
-                return notify_fail("ÄãËùÊ¹ÓÃµÄÍâ¹¦ÖĞÃ»ÓĞÕâÖÖ¹¦ÄÜ¡£\n");
+                return notify_fail("ä½ æ‰€ä½¿ç”¨çš„å¤–åŠŸä¸­æ²’æœ‰é€™ç¨®åŠŸèƒ½ã€‚\n");
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(SIX "Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(SIX "åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if (me->query_skill_prepared("finger") != "liumai-shenjian")
-                return notify_fail("ÄãÃ»ÓĞ×¼±¸Ê¹ÓÃÁùÂöÉñ½££¬ÎŞ·¨Ê©Õ¹" SIX "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æº–å‚™ä½¿ç”¨å…­è„ˆç¥åŠï¼Œç„¡æ³•æ–½å±•" SIX "ã€‚\n");
 
         skill = me->query_skill("liumai-shenjian", 1);
 
         if (skill < 220)
-                return notify_fail("ÄãµÄÁùÂöÉñ½£ĞŞÎªÓĞÏŞ£¬ÎŞ·¨Ê¹ÓÃ" SIX "£¡\n");
+                return notify_fail("ä½ çš„å…­è„ˆç¥åŠä¿®ç‚ºæœ‰é™ï¼Œç„¡æ³•ä½¿ç”¨" SIX "ï¼\n");
 
         if (me->query_skill("force") < 400)
-                return notify_fail("ÄãµÄÄÚ¹¦»ğºò²»¹»£¬ÄÑÒÔÊ©Õ¹" SIX "£¡\n");
+                return notify_fail("ä½ çš„å…§åŠŸç«å€™ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" SIX "ï¼\n");
 
         if( query("max_neili", me)<7000 )
-                return notify_fail("ÄãµÄÄÚÁ¦ĞŞÎªÃ»ÓĞ´ïµ½ÄÇ¸ö¾³½ç£¬ÎŞ·¨ÔË×ªÄÚ"
-                                   "Á¦ĞÎ³É" SIX "£¡\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¿®ç‚ºæ²’æœ‰é”åˆ°é‚£å€‹å¢ƒç•Œï¼Œç„¡æ³•é‹è½‰å…§"
+                                   "åŠ›å½¢æˆ" SIX "ï¼\n");
 
         if( query("neili", me)<500 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬ÏÖÔÚÎŞ·¨Ê©Õ¹" SIX "£¡\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼Œç¾åœ¨ç„¡æ³•æ–½å±•" SIX "ï¼\n");
 
         if( query_temp("weapon", me) )
-                return notify_fail("Äã±ØĞëÊÇ¿ÕÊÖ²ÅÄÜÊ©Õ¹" SIX "£¡\n");
+                return notify_fail("ä½ å¿…é ˆæ˜¯ç©ºæ‰‹æ‰èƒ½æ–½å±•" SIX "ï¼\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIW "$N" HIW "Ì¯¿ªË«ÊÖ£¬ÊÖÖ¸Á¬µ¯£¬ö®Ê±¼ä¿ÕÆøÖËÈÈ£¬¼¸"
-              "Óû·ĞÌÚ£¬ÁùµÀ½£Æø·Ö×ÔÁùÑ¨£¬Ò»Æğ³åÏò$n" HIW "£¡\n" NOR;
+        msg = HIW "$N" HIW "æ”¤é–‹é›™æ‰‹ï¼Œæ‰‹æŒ‡é€£å½ˆï¼Œéœæ™‚é–“ç©ºæ°£ç‚™ç†±ï¼Œå¹¾"
+              "æ¬²æ²¸é¨°ï¼Œå…­é“åŠæ°£åˆ†è‡ªå…­ç©´ï¼Œä¸€èµ·æ²–å‘$n" HIW "ï¼\n" NOR;
 
         if( random(query("combat_exp", me)/200)>query("combat_exp", target)/300 )
         {
-                msg += HIR "$n" HIR "Ö»¸Ğ½£Æø×İºá£¬Î¢Ò»ã¶Éñ£¬²»½ûĞÄÃÈÍËÒâ¡£\n" NOR;
+                msg += HIR "$n" HIR "åªæ„ŸåŠæ°£ç¸±æ©«ï¼Œå¾®ä¸€æ„£ç¥ï¼Œä¸ç¦å¿ƒèŒé€€æ„ã€‚\n" NOR;
                 delta = skill / 6;
         } else
                 delta = 0;

@@ -12,35 +12,35 @@ int perform(object me, object target)
         extra = me->query_skill("leiming-bian",1);
 
         if( userp(me) && !query("can_perform/leiming-bian/cibei", me) )
-              return notify_fail("ÄãÊ¹ÓÃµÄÍâ¹¦ÖĞÃ»ÓĞÕâ¸ö¹¦ÄÜ¡£\n");
+              return notify_fail("ä½ ä½¿ç”¨çš„å¤–åŠŸä¸­æ²’æœ‰é€™å€‹åŠŸèƒ½ã€‚\n");
         if( !target ) target = offensive_target(me);
 
         if( !target
          || !target->is_character()
          || !me->is_fighting(target) )
-              return notify_fail("£Û´È±¯×Ö¾÷£İÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+              return notify_fail("ï¹æ…ˆæ‚²å­—è¨£ï¹åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( extra < 160)
-              return notify_fail("ÄãµÄÀ×Ãù±Ş·¨ĞŞÎªÌ«²î,»¹²»ÄÜÊ¹ÓÃ´È±¯×Ö¾÷£¡\n");
+              return notify_fail("ä½ çš„é›·é³´é­æ³•ä¿®ç‚ºå¤ªå·®,é‚„ä¸èƒ½ä½¿ç”¨æ…ˆæ‚²å­—è¨£ï¼\n");
 
         skill = me->query_skill("buddhism", 1);
 
         if( skill < 150)
-              return notify_fail("ÄãµÄìø×ÚĞÄ·¨µÈ¼¶²»¹»£¬ÔõÄÜÖ§³Ö´È±¯×Ö¾÷£¿ \n");
+              return notify_fail("ä½ çš„ç¦ªå®—å¿ƒæ³•ç­‰ç´šä¸å¤ ï¼Œæ€èƒ½æ”¯æŒæ…ˆæ‚²å­—è¨£ï¼Ÿ \n");
 
         if( query("shen", me)<200000 )
-              return notify_fail("´È±¯×Ö¾÷ĞèÒÔÎŞ±ßÕıÆøÎª¸¨,´óÊ¦»¹ÊÇ¶àĞĞÉÆÊÂ°É! \n");
+              return notify_fail("æ…ˆæ‚²å­—è¨£éœ€ä»¥ç„¡é‚Šæ­£æ°£ç‚ºè¼”,å¤§å¸«é‚„æ˜¯å¤šè¡Œå–„äº‹å§! \n");
 
         if( query("neili", me)<1500 )
-              return notify_fail("ÄãµÄÄÚÁ¦ĞŞÎª²»¹»¸¨Öú´È±¯×Ö¾÷¡£\n");
+              return notify_fail("ä½ çš„å…§åŠ›ä¿®ç‚ºä¸å¤ è¼”åŠ©æ…ˆæ‚²å­—è¨£ã€‚\n");
 
         weapon=query_temp("weapon", me);
 
         if( !weapon
           || query("skill_type", weapon) != "whip" )
-              return notify_fail("ÄãÊÖÖĞÃ»ÓĞ±øÆ÷ÈçºÎÊ¹ÓÃ´È±¯×Ö¾÷¡£\n");
+              return notify_fail("ä½ æ‰‹ä¸­æ²’æœ‰å…µå™¨å¦‚ä½•ä½¿ç”¨æ…ˆæ‚²å­—è¨£ã€‚\n");
 
-        msg = RED "Ö»¼û$Nà«à«×ÔÓïµÀ£º´È±¯Îª»³£¬ÊÖÖĞµÄ" + weapon->name() + RED "·Â·ğÈçÀ´³öÊÀ°ãµ¹¾íÏò$n¡£\n" NOR;
+        msg = RED "åªè¦‹$Nå–ƒå–ƒè‡ªèªé“ï¼šæ…ˆæ‚²ç‚ºæ‡·ï¼Œæ‰‹ä¸­çš„" + weapon->name() + RED "ä»¿ä½›å¦‚ä¾†å‡ºä¸–èˆ¬å€’å·å‘$nã€‚\n" NOR;
         
         at=query("combat_exp")*me->query_skill("leiming-bian", me)/1000;
         df=query("combat_exp")*target->query_skill("dodge", target)/1000;
@@ -51,7 +51,7 @@ int perform(object me, object target)
             
             if(damage > 1500) damage = 1500 + (damage-1500)/100;
             
-            msg += CYN "$n²»½û±»$NµÄÎŞ±ß·ğ·¨´ò¶¯£¬ÃÍµÄºóÍË£¬Á³ÉÏÃ»ÓĞÒ»Ë¿ÑªÉ«...\n" NOR;
+            msg += CYN "$nä¸ç¦è¢«$Nçš„ç„¡é‚Šä½›æ³•æ‰“å‹•ï¼ŒçŒ›çš„å¾Œé€€ï¼Œè‡‰ä¸Šæ²’æœ‰ä¸€çµ²è¡€è‰²...\n" NOR;
             target->receive_damage("qi", damage, me);
             target->receive_wound("qi", damage / 3, me);
             
@@ -61,7 +61,7 @@ int perform(object me, object target)
             target->start_busy(3);
             
             weapon=query_temp("weapon", me);
-            msg = HIG "\n½ô½Ó×Å$NÊÖÖĞµÄ" + weapon->name() + HIG "Á¬Ğø»Î¶¯£¬¾¹È»²»ÖªµÀÓĞ¶àÉÙ»÷¡£\n" NOR;
+            msg = HIG "\nç·Šæ¥è‘—$Næ‰‹ä¸­çš„" + weapon->name() + HIG "é€£çºŒæ™ƒå‹•ï¼Œç«Ÿç„¶ä¸çŸ¥é“æœ‰å¤šå°‘æ“Šã€‚\n" NOR;
             message_vision(msg,me,target);
             
             lmt = random(me->query_skill("leiming-bian", 1) / 50) + 1;
@@ -81,7 +81,7 @@ int perform(object me, object target)
             me->start_busy(random(2) + 2);
         } else 
        {      
-              msg = HIG "\n$n×ó¶ãÓÒÉÁ£¬Ç¿$NµÄ¹¥»÷ÍêÈ«»¯ÓÚÎŞĞÎ£¡\n" NOR;
+              msg = HIG "\n$nå·¦èº²å³é–ƒï¼Œå¼·$Nçš„æ”»æ“Šå®Œå…¨åŒ–äºç„¡å½¢ï¼\n" NOR;
               message_vision(msg,me,target);
               addn("neili", -200, me);
               me->start_busy(random(2));

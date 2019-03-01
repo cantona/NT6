@@ -1,23 +1,23 @@
 int permit_recruit(object ob)
 {
 
-        if( query("detach/¹ÅÄ¹ÅÉ", ob) || 
-            query("betrayer/¹ÅÄ¹ÅÉ", ob) )
+        if( query("detach/å¤å¢“æ´¾", ob) || 
+            query("betrayer/å¤å¢“æ´¾", ob) )
         {
-                command("say °¦£¡È¥±ãÈ¥ÁË£¬»ØÀ´ÓÖÊÇºÎ¿àÓÉÀ´£¿");
+                command("say å”‰ï¼å»ä¾¿å»äº†ï¼Œå›ä¾†åˆæ˜¯ä½•è‹¦ç”±ä¾†ï¼Ÿ");
                 return 0;
         }
 
         if( query("betrayer/times", ob) )
         {
-                command("say ¸óÏÂ²»ÖÒ²»ĞÅ£¬ÎÒ²»¸ÒÊÕÄãÎªÍ½¡£");
+                command("say é–£ä¸‹ä¸å¿ ä¸ä¿¡ï¼Œæˆ‘ä¸æ•¢æ”¶ä½ ç‚ºå¾’ã€‚");
                 return 0;
         }
 
         if( query("family/family_name", ob) && 
-            query("family/family_name", ob) != "¹ÅÄ¹ÅÉ" )
+            query("family/family_name", ob) != "å¤å¢“æ´¾" )
         {
-                command("say Äã¼ÈÓĞÁËÃûÊ¦Ö¸µã£¬¾ÍÒªÇÚÏÂ¿à¹¦£¬ÎğÒªÈıĞÄ¶şÒâ£¡");
+                command("say ä½ æ—¢æœ‰äº†åå¸«æŒ‡é»ï¼Œå°±è¦å‹¤ä¸‹è‹¦åŠŸï¼Œå‹¿è¦ä¸‰å¿ƒäºŒæ„ï¼");
                 return 0;
         }
 

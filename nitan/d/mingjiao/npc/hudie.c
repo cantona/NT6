@@ -4,12 +4,12 @@ inherit NPC;
 
 void create()
 {
-        set_name("蝴蝶", ({ "hudie"}) );
-        set("race", "野兽");
+        set_name("铦磋澏", ({ "hudie"}) );
+        set("race", "閲庣嵏");
         set("age", 3);
-        set("long", "一只五颜六色的蝴蝶，十分可爱，是蝴蝶的珍品。\n");
+        set("long", "涓�鍙簲椤忓叚鑹茬殑铦磋澏锛屽崄鍒嗗彲鎰涳紝鏄澊铦剁殑鐝嶅搧銆俓n");
 
-        set("limbs", ({ "头部", "身体", "前爪", "后爪", "尾巴" }) );
+        set("limbs", ({ "闋儴", "韬珨", "鍓嶇埅", "寰岀埅", "灏惧反" }) );
         set("verbs", ({ "bite", "claw" }) );
 
         set("combat_exp", 100);

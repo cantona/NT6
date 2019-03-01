@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-        set("short","��������");
+        set("short","妃麗湖畔");
         set("long",@LONG
-��վ���������ı��������߲�Զ����ϲ�ݳǡ��˺����󣬵���ˮ
-�峺�������У�����̨�Ĵ��������ں��ϲ��㡣��֮�ϺͶ���
-��ɽ�϶���̨�Ĵ����е�·�ƺ�������ͨ���ϱߡ�
+你站在妃麗湖的北岸，北邊不遠就是喜州城。此湖不大，但湖水
+清澈，魚鱉皆有，不少台夷村民劃著竹筏在湖上捕魚。湖之南和東邊
+半山上都有台夷村鎮，有道路繞湖東而過通向南邊。
 LONG);
         set("outdoors", "dalis");
         set("exits",([ /* sizeof() == 1 */

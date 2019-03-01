@@ -2,14 +2,14 @@
 
 void create()
 {
-        set_name(HIY"½ğ"HIW"Òø"HIC"»¨"NOR, ({"jinyin hua","hua"}));
+        set_name(HIY"é‡‘"HIW"éŠ€"HIC"èŠ±"NOR, ({"jinyin hua","hua"}));
 
         if (clonep())
                 set_default_object(__FILE__);
         else 
         {
-                set("long","½ğÒø»¨£ºÌÙ±¾Ö²Îï£¬»¨·Ö½ğÒø¶şÉ«£¬¿ÉÈëÒ©£¬°Ü»ğ¼Á¡£\n");
-                set("base_unit", "¶ä");
+                set("long","é‡‘éŠ€èŠ±ï¼šç±æœ¬æ¤ç‰©ï¼ŒèŠ±åˆ†é‡‘éŠ€äºŒè‰²ï¼Œå¯å…¥è—¥ï¼Œæ•—ç«åŠ‘ã€‚\n");
+                set("base_unit", "æœµ");
                 set("base_value", 4000);
                 set("base_weight", 60);
                 set("cure_s",0);

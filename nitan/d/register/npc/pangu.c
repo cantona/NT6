@@ -8,9 +8,9 @@ void greeting(object me);
 
 void create()
 {
-        set_name("ÅÌ¹Å", ({ "pan gu", }));
-        set("long", "ËûÈİÃ²ÍşÑÏ£¬²»¿ÉÒ»ÊÀ¡£ÍÛ£¡Ëû¾ÍÊÇ¿ªÌì±ÙµØµÄÉñÏÉ¡£\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("ç›¤å¤", ({ "pan gu", }));
+        set("long", "ä»–å®¹è²Œå¨åš´ï¼Œä¸å¯ä¸€ä¸–ã€‚å“‡ï¼ä»–å°±æ˜¯é–‹å¤©è¾Ÿåœ°çš„ç¥ä»™ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 999);
         set("attitude", "peaceful");
         set("shen_type", 0);
@@ -19,8 +19,8 @@ void create()
         setup();
         carry_object("/clone/cloth/cloth.c")->wear();
         carry_object("/clone/weapon/bigaxe.c")->wield();
-        create_family("ÍòÎïÖ®Éñ", 1, "ÌìµØÖ®Ö÷");
-        set("title", HIY "ÍòÎïÖ®Éñ" NOR);
+        create_family("è¬ç‰©ä¹‹ç¥", 1, "å¤©åœ°ä¹‹ä¸»");
+        set("title", HIY "è¬ç‰©ä¹‹ç¥" NOR);
 }
 
 void init()
@@ -47,14 +47,14 @@ void greeting(object me)
 
         if( undefinedp(query("born", me)) )
         {
-                command("say "+query("name", me)+"£¬Äã¿ì¿ìÑ¡Ôñ(choose)ºÃ½ÇÉ«ĞÔ¸ñ£¬È»ºóÍ¶Ì¥È¥°É£¡");
-                tell_object(me, CYN "ÌØ±ğÌáÊ¾£ºËäÈ»ĞÔ¸ñ¶ÔÄã°İÄÄ¸öÃÅÅÉ²¢Ã»ÓĞÓ°Ïì£¬µ«ÊÇËü»áÓ°ÏìÄãÑ§Ä³Ğ©Îä¹¦£¡\n" NOR);
-                tell_object(me, HIY "ĞÂÊÖµ¼Ê¦£ºÇëÊäÈë help start À´»ñÖªÕë¶Ô¸÷¸öÃÅÅÉËùÍÆ¼öµÄĞÔ¸ñ¡£(°İÊ¦Ö®Ç°¿ÉÒÔÔÚ±±¾©ÎÄÃíµ÷ÕûĞÔ¸ñ)\n" NOR);
-                tell_object(me, "Äú¿ÉÒÔÑ¡Ôñ(choose)µÄ½ÇÉ«ĞÔ¸ñÈçÏÂ£º\n"
-                            HIC "1" NOR ".¹âÃ÷ÀÚÂä  "
-                            HIC "2" NOR ".½Æ÷ï¶à±ä  "
-                            HIC "3" NOR ".ĞÄºİÊÖÀ±  "
-                            HIC "4" NOR ".ÒõÏÕ¼éÕ© ("
+                command("say "+query("name", me)+"ï¼Œä½ å¿«å¿«é¸æ“‡(choose)å¥½è§’è‰²æ€§æ ¼ï¼Œç„¶å¾ŒæŠ•èƒå»å§ï¼");
+                tell_object(me, CYN "ç‰¹åˆ¥æç¤ºï¼šé›–ç„¶æ€§æ ¼å°ä½ æ‹œå“ªå€‹é–€æ´¾ä¸¦æ²’æœ‰å½±éŸ¿ï¼Œä½†æ˜¯å®ƒæœƒå½±éŸ¿ä½ å­¸æŸäº›æ­¦åŠŸï¼\n" NOR);
+                tell_object(me, HIY "æ–°æ‰‹å°å¸«ï¼šè«‹è¼¸å…¥ help start ä¾†ç²çŸ¥é‡å°å„å€‹é–€æ´¾æ‰€æ¨è–¦çš„æ€§æ ¼ã€‚(æ‹œå¸«ä¹‹å‰å¯ä»¥åœ¨åŒ—äº¬æ–‡å»Ÿèª¿æ•´æ€§æ ¼)\n" NOR);
+                tell_object(me, "æ‚¨å¯ä»¥é¸æ“‡(choose)çš„è§’è‰²æ€§æ ¼å¦‚ä¸‹ï¼š\n"
+                            HIC "1" NOR ".å…‰æ˜ç£Šè½  "
+                            HIC "2" NOR ".ç‹¡é» å¤šè®Š  "
+                            HIC "3" NOR ".å¿ƒç‹ æ‰‹è¾£  "
+                            HIC "4" NOR ".é™°éšªå§¦è© ("
                             HIC "choose 1" NOR "-" HIC "4" NOR ")\n\n");
 
         } else
@@ -64,18 +64,18 @@ void greeting(object me)
                 else
                 {
                         command("kick "+query("id", me));
-                        command("say ·²ÈËÅÜµ½ÕâÀïÀ´¸ÉÊ²Ã´£¿");
-                        message_vision("$NÒ»½Å°Ñ$nÌßµÃÎŞÓ°ÎŞ×Ù¡£\n\n",
+                        command("say å‡¡äººè·‘åˆ°é€™è£¡ä¾†å¹¹ä»€éº¼ï¼Ÿ");
+                        message_vision("$Nä¸€è…³æŠŠ$nè¸¢å¾—ç„¡å½±ç„¡è¹¤ã€‚\n\n",
                                        this_object(), me);
                         me->move(VOID_OB);
-                        message_vision("\n$NµøÂäµØÉÏ£¬Îæ×ÅÆ¨¹ÉÍÛÍÛ½ĞÁË¼¸Éù¡£\n",
+                        message_vision("\n$Nè·Œè½åœ°ä¸Šï¼Œæ‚è‘—å±è‚¡å“‡å“‡å«äº†å¹¾è²ã€‚\n",
                                        me);
                 }
         }
 
         if( undefinedp(query("born", me)) && !objectp(present("book",me)) )
         {
-                command("say ¿´Äã³õÀ´Õ§µ½£¬Î´±Ø¶®µÃ¹æ¾Ø¡£¸øÄãÒ»±¾Êé£¬Äã¿ÉÒÔ¿´¿´£¡(read book)");
+                command("say çœ‹ä½ åˆä¾†ä¹åˆ°ï¼Œæœªå¿…æ‡‚å¾—è¦çŸ©ã€‚çµ¦ä½ ä¸€æœ¬æ›¸ï¼Œä½ å¯ä»¥çœ‹çœ‹ï¼(read book)");
                 ob = new ("/clone/misc/newbie");
                 ob->move(this_object());
                 command("give book to "+query("id", me));
@@ -86,9 +86,9 @@ int attempt_apprentice(object ob)
 {
         if( !query("born", ob) )
         {
-                command("say Äã¿ìÍ¶Ì¥È¥£¬ÔÚÕâÀïÏ¹½ÁºÍÊ²Ã´£¿");
+                command("say ä½ å¿«æŠ•èƒå»ï¼Œåœ¨é€™è£¡çæ”ªå’Œä»€éº¼ï¼Ÿ");
                 return 0;
         }
 
-        command("say ¹ö£¡¸øÎÒÒ»±ß¶ùÈ¥£¡");
+        command("say æ»¾ï¼çµ¦æˆ‘ä¸€é‚Šå…’å»ï¼");
 }

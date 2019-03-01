@@ -6,14 +6,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIC "ÇàÃ·" NOR, ({ "penglai qingmei" }) );
+        set_name(HIC "é’æ¢…" NOR, ({ "penglai qingmei" }) );
         set_weight(100);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
+                set("unit", "é¡†");
                 set("value", 1);
-                set("long", HIC "´Ó³¤ÉúÃ·ÁÖÖĞ²É¼¯¶øÀ´µÄÇàÃ·¡£\n" NOR);
+                set("long", HIC "å¾é•·ç”Ÿæ¢…æ—ä¸­æ¡é›†è€Œä¾†çš„é’æ¢…ã€‚\n" NOR);
         }
 
         setup();

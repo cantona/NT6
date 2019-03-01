@@ -5,8 +5,8 @@ int is_pld_npc(){return 1;}
 
 void create()
 {
-        set_name(HIM "Ğ¡µûÏÉ" NOR, ({ "xiao diexian", "xiao", "diexian" }));
-        set("long", HIM "»¹Î´ÍêÈ«ĞŞÁ¶³ÉÈËĞÎµÄĞ¡µûÏÉ¡£\n" NOR);
+        set_name(HIM "å°è¶ä»™" NOR, ({ "xiao diexian", "xiao", "diexian" }));
+        set("long", HIM "é‚„æœªå®Œå…¨ä¿®ç…‰æˆäººå½¢çš„å°è¶ä»™ã€‚\n" NOR);
 
         set("age", 80);
         set("str", 40);

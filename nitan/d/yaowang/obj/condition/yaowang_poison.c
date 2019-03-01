@@ -6,16 +6,16 @@ inherit POISON;
 
 string name() { return "yaowang_poison"; }
 
-string chinese_name() { return HIW "ҩ���ȶ��Ŷ�ҩ" NOR; }
+string chinese_name() { return HIW "藥王谷獨門毒藥" NOR; }
 
 string update_msg_others()
 {
-       return HIW "$N��ɫ���ϣ�ȫ����ס�Ĳ��������ظ�����졣\n" NOR;
+       return HIW "$N臉色發紫，全身不住的顫抖，牙關格格作響。\n" NOR;
 }
 
 string update_msg_self()
 {
-        return HIW "���ҩ���ȶ���֮�������ˣ�\n" NOR;
+        return HIW "你的藥王谷獨門之毒發作了！\n" NOR;
 }
 
 int jing_damage(object me, mapping cnd)
@@ -43,8 +43,8 @@ int dispel(object me, object ob, mapping cnd)
                         return ::dispel(me, ob, cnd);
                 }
                                         
-                tell_object(me, "����ͼ�˹�����ҩ����֮����ͻȻһ�е�"
-                                "��˺���ѷε���ʹ���������ʡ�\n");
+                tell_object(me, "你試圖運功化解藥王谷之毒，突然一感到"
+                                "陣撕心裂肺的疼痛，幾乎暈厥。\n");
                 return -1;
         }
         else
@@ -63,12 +63,12 @@ int dispel(object me, object ob, mapping cnd)
                 }
 
 
-        tell_object(me, "�㽫��������" + ob->name() + "���У�ȴ����"
-                        "������ת�쳣���죬�������⣬\nͻȻ��" + ob->name() +
-                        "�������£���æס�֡�\n");
-        tell_object(ob, "�����" + me->name() + "�����������������"
-                        "��������Ȼһ��˺���ѷεľ�ʹ��\n��ʤҩ���ȶ���֮"
-                        "��������ʱ�����㼸�����ʡ�\n");
+        tell_object(me, "你將真氣輸入" + ob->name() + "體中，卻覺得"
+                        "真氣運轉異常怪異，難以理解，\n突然見" + ob->name() +
+                        "汗如雨下，連忙住手。\n");
+        tell_object(ob, "你覺得" + me->name() + "將內力緩緩輸入你的"
+                        "經脈，忽然一陣撕心裂肺的劇痛，\n猶勝藥王谷獨門之"
+                        "毒發作的時候，令你幾乎暈厥。\n");
         return -1;
         }
         

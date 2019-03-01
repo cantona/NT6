@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-        set("short", "Ïá·¿");
+        set("short", "å»‚æˆ¿");
         set("long", @LONG
-ÕâÊÇ¼äÕû½àµÄÏá·¿£¬ÒòÃÅ´°³£±Õ×Å£¬¹âÏßºÜ»è°µ¡£·¿Àï±ðÎÞËûÎï£¬
-Ö»ÓÐÖÐ¼ä·Å×Å¼¸ÕÅÊÕÊ°µÃÊæÊæ·þ·þµÄ´ó´²£¬¿´×Å¾ÍÈÃÈËÏëË¯¾õ¡£ÕâÀï
-ÊÇÐÝÏ¢µÄµØ·½£¬ÓÐÊ±ºòÁ·¹¦ÀÛÁË£¬¶Î¼ÒµÜ×ÓÒ²»áÔÚÕâÀïÐÝÏ¢¡£
+é€™æ˜¯é–“æ•´æ½”çš„å»‚æˆ¿ï¼Œå› é–€çª—å¸¸é–‰è‘—ï¼Œå…‰ç·šå¾ˆæ˜æš—ã€‚æˆ¿è£¡åˆ¥ç„¡ä»–ç‰©ï¼Œ
+åªæœ‰ä¸­é–“æ”¾è‘—å¹¾å¼µæ”¶æ‹¾å¾—èˆ’èˆ’æœæœçš„å¤§åºŠï¼Œçœ‹è‘—å°±è®“äººæƒ³ç¡è¦ºã€‚é€™è£¡
+æ˜¯ä¼‘æ¯çš„åœ°æ–¹ï¼Œæœ‰æ™‚å€™ç·´åŠŸç´¯äº†ï¼Œæ®µå®¶å¼Ÿå­ä¹Ÿæœƒåœ¨é€™è£¡ä¼‘æ¯ã€‚
 LONG );
         set("exits",([ /* sizeof() == 1 */
             "north"  : "/d/dali/chahua1",

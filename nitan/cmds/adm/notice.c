@@ -20,13 +20,13 @@ int main(object me, string msg)
         {
                 if( file_size(NOTICE) < 0 )
                 {
-                        write("ÏÖÔÚÃ»ÓĞÉè¶¨ÈÎºÎÁ¬ÏßÍ¨Öª\n");
+                        write("ç¾åœ¨æ²’æœ‰è¨­å®šä»»ä½•é€£ç·šé€šçŸ¥\n");
                         write("--------------------------------------------\n\n");
                         return help(me);
                 }
 
                 arg = read_file(NOTICE);
-                write("ÄãÏÖÔÚËùÉè¶¨µÄÁ¬ÏßÍ¨ÖªÊÇ£º\n");
+                write("ä½ ç¾åœ¨æ‰€è¨­å®šçš„é€£ç·šé€šçŸ¥æ˜¯ï¼š\n");
                 write("--------------------------------------------\n\n");
 
                 if( strlen(arg) > 8190 )
@@ -40,7 +40,7 @@ int main(object me, string msg)
         if( msg == "-rm" )
         {
                 rm(NOTICE);
-                write("Í¨ÖªÒÑ±»Çå³ı!\n");
+                write("é€šçŸ¥å·²è¢«æ¸…é™¤!\n");
                 return 1;
         }
 
@@ -51,25 +51,25 @@ int main(object me, string msg)
         lines = explode(msg, "\n");
         for( int i=0; i<sizeof(lines); i++ )
                 if ( i % 2 == 0)
-                        lines[i] = BLINK + REDYEL "¨€" NOR "  " + lines[i];
+                        lines[i] = BLINK + REDYEL "â–¡" NOR "  " + lines[i];
                 else
-                        lines[i] = BLINK + YELRED "¨€" NOR "  " + lines[i];
+                        lines[i] = BLINK + YELRED "â–¡" NOR "  " + lines[i];
 
         msg = implode(lines, "\n") + "\n";
         msg = color_filter(msg);
         msg += NOR;
         write_file(NOTICE, msg, 1);
-        write("Á¬ÏßÍ¨Öª¼ÓÈëÍê±Ï¡£\n");
+        write("é€£ç·šé€šçŸ¥åŠ å…¥å®Œç•¢ã€‚\n");
         return 1;
 }
 
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½: notice <Í¨ÖªÄÚÈİ>
+æŒ‡ä»¤æ ¼å¼: notice <é€šçŸ¥å…§å®¹>
 
-¸ÄÖ¸ÁîÓÃÀ´Ìí¼ÓÍæ¼ÒÁ¬ÏßºóµÄÍ¨ÖªĞÅÏ¢£¬ÈçÎŞ±ØÒª¾¡Á¿ÉÙÓÃ
-notice -rm ÓÃÀ´Çå³ıĞÅÏ¢¡£
+æ”¹æŒ‡ä»¤ç”¨ä¾†æ·»åŠ ç©å®¶é€£ç·šå¾Œçš„é€šçŸ¥ä¿¡æ¯ï¼Œå¦‚ç„¡å¿…è¦ç›¡é‡å°‘ç”¨
+notice -rm ç”¨ä¾†æ¸…é™¤ä¿¡æ¯ã€‚
 HELP
         );
         return 1;

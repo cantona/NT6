@@ -6,11 +6,11 @@ inherit PRODUCING_ROOM;
 
 void create()
 {
-        set("short", "²ÉÊ¯³¡");
+        set("short", "æŽ¡çŸ³å ´");
         set("long", @LONG
-ÕâÀïÊÇÉ½½Å£¬ÑÛÇ°ÝëÈ»ËÊÁ¢×ÅÒ»×ù´óÉ½£¬²»¹ýÒ»²àÒÑ¾­±»Õ¨µÃÖ§Àë
-ÆÆËé£¬¹¤ÈËÃÇÀ´À´ÍùÍù£¬°áÔË×ÅÊ¯ÁÏ¡£ÔÚ±±·½Ò²ÓÐÕâÃ´´óµÄÊ¯É½£¬Äã²»
-½ûÓÐÐ©¾ªÑÈ¡£ÑÛÇ°ÓÐÒ»¸öÈË£¬¿´ÆðÀ´Ïñ¸ö¼à¹¤¡£
+é€™è£¡æ˜¯å±±è…³ï¼Œçœ¼å‰é©€ç„¶è³ç«‹è‘—ä¸€åº§å¤§å±±ï¼Œä¸éŽä¸€å´å·²ç¶“è¢«ç‚¸å¾—æ”¯é›¢
+ç ´ç¢Žï¼Œå·¥äººå€‘ä¾†ä¾†å¾€å¾€ï¼Œæ¬é‹è‘—çŸ³æ–™ã€‚åœ¨åŒ—æ–¹ä¹Ÿæœ‰é€™éº¼å¤§çš„çŸ³å±±ï¼Œä½ ä¸
+ç¦æœ‰äº›é©šè¨ã€‚çœ¼å‰æœ‰ä¸€å€‹äººï¼Œçœ‹èµ·ä¾†åƒå€‹ç›£å·¥ã€‚
 LONG );
         set("exits", ([
                 "west" : __DIR__"tulu",
@@ -22,7 +22,7 @@ LONG );
 
         set("no_fight", 1);
 
-        set("product/stone", ([ "name" : "Ê¯ÁÏ",
+        set("product/stone", ([ "name" : "çŸ³æ–™",
                                 "rate" : 1000,
                                 "max"  : 200000, ]));
 

@@ -6,20 +6,20 @@ inherit THROWING;
 
 void create()
 {
-        set_name(HIY"¶áÃü½ğ»¨"NOR, ({ "duoming jinhua", "flower" }) );
+        set_name(HIY"å¥ªå‘½é‡‘èŠ±"NOR, ({ "duoming jinhua", "flower" }) );
         set("taskobj", 1);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
+                set("unit", "æŠŠ");
                 set("value", 0);
-                set("base_unit", "¶ä");
+                set("base_unit", "æœµ");
                 set("base_weight", 300);
                 set("base_value", 0);
                 set("material", "iron");
-                set("long", "¶áÃü½ğ»¨ÊÇ½ğ»¨ÆÅÆÅµÄ¶ÀÃÅ°µÆ÷£¬¼ÈºİÇÒ¶¾¡£\n");
-                set("wield_msg", HIC"$NÑ¸ËÙµØ´ÓĞäÖĞÃş³öÒ»°Ñ¶áÃü½ğ»¨£¬¿ÛÔÚÊÖÖĞ£¡\n"NOR);
-                set("unwield_msg",HIC"$N½«ÊÖÀïÊ£ÏÂµÄ¶áÃü½ğ»¨ÊÕ»ØĞäÖĞ¡£\n"NOR);
+                set("long", "å¥ªå‘½é‡‘èŠ±æ˜¯é‡‘èŠ±å©†å©†çš„ç¨é–€æš—å™¨ï¼Œæ—¢ç‹ ä¸”æ¯’ã€‚\n");
+                set("wield_msg", HIC"$Nè¿…é€Ÿåœ°å¾è¢–ä¸­æ‘¸å‡ºä¸€æŠŠå¥ªå‘½é‡‘èŠ±ï¼Œæ‰£åœ¨æ‰‹ä¸­ï¼\n"NOR);
+                set("unwield_msg",HIC"$Nå°‡æ‰‹è£¡å‰©ä¸‹çš„å¥ªå‘½é‡‘èŠ±æ”¶å›è¢–ä¸­ã€‚\n"NOR);
         }
         setup();
 }

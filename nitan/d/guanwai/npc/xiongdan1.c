@@ -12,12 +12,12 @@ void init()
 
 void create()
 {
-        set_name("ĞÜµ¨¸É", ({"xiongdan gan", "xiongdan", "gan"}));
+        set_name("ç†Šè†½å¹¹", ({"xiongdan gan", "xiongdan", "gan"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸±");
-                set("long", "ÕâÊÇÒ»¸±ĞÜµ¨¸É¡£\n");
+                set("unit", "å‰¯");
+                set("long", "é€™æ˜¯ä¸€å‰¯ç†Šè†½å¹¹ã€‚\n");
                 set("value", 1000);
         }
         setup();
@@ -27,12 +27,12 @@ int do_eat(string arg)
 {
         object me = this_player();
         if (!id(arg))
-        return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
-        if (me->is_fighting()) return notify_fail("Õ½¶·ÖĞ²»ÄÜ³Ô¶«Î÷£¡\n");
-        if (me->is_busy()) return notify_fail("ÄãÕıÃ¦×ÅÄØ£¡\n");
+        return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
+        if (me->is_fighting()) return notify_fail("æˆ°é¬¥ä¸­ä¸èƒ½åƒæ±è¥¿ï¼\n");
+        if (me->is_busy()) return notify_fail("ä½ æ­£å¿™è‘—å‘¢ï¼\n");
 
         set("eff_qi",query("max_qi",  this_player()), this_player());
-        message_vision("$N³ÔÏÂÒ»¸±ĞÜµ¨¸É£¬¾õµÃ¾«ÉñºÃ¶àÁË¡£\n", this_player());
+        message_vision("$Nåƒä¸‹ä¸€å‰¯ç†Šè†½å¹¹ï¼Œè¦ºå¾—ç²¾ç¥å¥½å¤šäº†ã€‚\n", this_player());
         destruct(this_object());
         return 1;
 }

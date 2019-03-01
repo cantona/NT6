@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����");
+        set("short", "楓橋");
         set("long", @LONG
-�µı�����һ���ſ׳ʰ�Բ�ĵ���ʯ��--���ţ��������˺ӵķ���
-�塣�ŵĶ���������أ�����׻��أ�����أ��ϳ��������ء�
+寺的北面有一座橋孔呈半圓的單空石橋--楓橋，她跨于運河的楓橋
+灣。橋的東面是鐵嶺關，它與白虎關，滸墅關，合稱蘇州三關。
 LONG );
         set("outdoors", "suzhou");
         set("no_clean_up", 0);

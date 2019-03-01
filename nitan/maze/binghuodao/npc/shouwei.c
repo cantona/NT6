@@ -4,11 +4,11 @@ inherit NPC;
 
 void create()
 {
-        set_name(HIW "±ù" HIR "»ğ" HIC"ÊØ»¤Éñ" NOR, ({ "binghuo shouhushen", "binghuo", "shouhushen" }));
-        set("title", HIB "°µÒ¹Á÷ĞÇ" NOR); 
-        set("long", HIC "´«ËµËû¾ÍÊÇ±ù»ğµºµÄÊØ»¤Éñ£¬ÔÚÕâÀïÒÑ¾­ÊØ»¤ÁËÇ§ÍòÄê¡£\n" NOR);
+        set_name(HIW "å†°" HIR "ç«" HIC"å®ˆè­·ç¥" NOR, ({ "binghuo shouhushen", "binghuo", "shouhushen" }));
+        set("title", HIB "æš—å¤œæµæ˜Ÿ" NOR); 
+        set("long", HIC "å‚³èªªä»–å°±æ˜¯å†°ç«å³¶çš„å®ˆè­·ç¥ï¼Œåœ¨é€™è£¡å·²ç¶“å®ˆè­·äº†åƒè¬å¹´ã€‚\n" NOR);
 
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("age", 9999);
 
         set("str", 9999);
@@ -22,8 +22,8 @@ void create()
         set_temp("apply/unarmed_damage", 5000000); 
         set_temp("apply/damage", 5000000); 
         set_temp("apply/armor", 200000);
-        set_temp("apply/qy", 80);  // ÆøÔË
-        set_temp("apply/fy", 80);  // ¸£Ôµ      
+        set_temp("apply/qy", 80);  // æ°£é‹
+        set_temp("apply/fy", 80);  // ç¦ç·£      
 
         set("scborn/ok", 1);
 
@@ -67,7 +67,7 @@ void create()
 
         set_skill("jingluo-xue", 9999);
 
-        set("no_nuoyi", 1); // ²»±»Å²ÒÆÓ°Ïì
+        set("no_nuoyi", 1); // ä¸è¢«æŒªç§»å½±éŸ¿
 
         map_skill("parry", "qiankun-danuoyi");
         map_skill("force", "yinyang-shiertian");
@@ -90,7 +90,7 @@ void create()
               // 
               (: command("perform sword.ben twice") :), 
               (: command("perform sword.ben and sword.tian") :),
-              // ÒõÑô12t
+              // é™°é™½12t
               (: command("perform finger.tian twice") :), 
               (: command("perform finger.zhen and finger.jiu") :), 
 
@@ -102,14 +102,14 @@ void create()
 
         }));
 
-        set("my_life", 1); // µ±ÆøÑªµÍÓÚ10%µÄÊ±ºò²¹ÂúÒ»´Î£¬ÉèÖÃ¸Ã²ÎÊıÎª0
+        set("my_life", 1); // ç•¶æ°£è¡€ä½äº10%çš„æ™‚å€™è£œæ»¿ä¸€æ¬¡ï¼Œè¨­ç½®è©²åƒæ•¸ç‚º0
 
         setup();
 
-        // ÒÂ·ş
+        // è¡£æœ
         carry_object("/clone/cloth/bupao")->wear();
 
-        // ÎäÆ÷
+        // æ­¦å™¨
         carry_object("/clone/weapon/huoyun-dao")->wield();
 }
 
@@ -120,7 +120,7 @@ void heart_beat()
         keep_heart_beat();
         if( !environment(this_object()) ) return;
 
-        // ½â³ı²»ÄÜperform yunµÄÏŞÖÆ
+        // è§£é™¤ä¸èƒ½perform yunçš„é™åˆ¶
         if (random(10) == 1)
         {
                 delete_temp("no_perform");
@@ -161,7 +161,7 @@ void new_life()
 {
         object me = this_object();
 
-        // ²¹ÂúÆøÑª
+        // è£œæ»¿æ°£è¡€
         set("eff_qi",query("max_qi",  me), me);
         set("qi",query("max_qi",  me), me);
         set("eff_jing",query("max_jing",  me), me);
@@ -179,11 +179,11 @@ void new_life()
         set_temp("apply/unarmed_damage", 150000); 
         set_temp("apply/damage", 150000); 
         set_temp("apply/armor", 100000);
-        set_temp("apply/qy", 70);  // ÆøÔË
-        set_temp("apply/fy", 70);  // ¸£Ôµ      
+        set_temp("apply/qy", 70);  // æ°£é‹
+        set_temp("apply/fy", 70);  // ç¦ç·£      
         delete("my_life", me);
 
-        message_vision(HIG "\n$N" HIG "´óºÈÒ»Éù£¬Ä¿¹â¶ÙÊ±³äÂúÉ±Òâ£¡\n\n" NOR, me);
+        message_vision(HIG "\n$N" HIG "å¤§å–ä¸€è²ï¼Œç›®å…‰é “æ™‚å……æ»¿æ®ºæ„ï¼\n\n" NOR, me);
         
         return; 
 }
@@ -210,7 +210,7 @@ void die(object killer)
                 return;
         }
 
-        // Èç¹û»¹Î´ÖØÉú£¬ÔòÖØÉúÒ»´Î
+        // å¦‚æœé‚„æœªé‡ç”Ÿï¼Œå‰‡é‡ç”Ÿä¸€æ¬¡
         if (query("my_life"))
         {
                 new_life();
@@ -218,7 +218,7 @@ void die(object killer)
         }
 
 
-        // ²»¸øÓè½±Àø
+        // ä¸çµ¦äºˆçå‹µ
         ::die(killer);
         return;
 }  

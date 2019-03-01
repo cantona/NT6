@@ -1,6 +1,6 @@
-// hammer.c (Ë«ÊÖ´¸)
-// ×ÔÔìÎïÆ· (by Find.)
-// Ã»ÓĞ°²È«ÎÊÌâµ«Ì«Âé·³
+// hammer.c (é›™æ‰‹éŒ˜)
+// è‡ªé€ ç‰©å“ (by Find.)
+// æ²’æœ‰å®‰å…¨å•é¡Œä½†å¤ªéº»ç…©
 
 #include <mine_def.h>
 #include <weapon.h>
@@ -11,7 +11,7 @@ inherit HAMMER;
 
 protected int weapon_attr_flag, require_res;
 
-string query_selling_msg() { return "×ÔÔì±øÆ÷"; }
+string query_selling_msg() { return "è‡ªé€ å…µå™¨"; }
 
 int query_weapon_attr() { return weapon_attr_flag; }
 int set_weapon_attr(int n)
@@ -86,7 +86,7 @@ nomask mixed set(string prop, mixed data)
 
 protected void create(class weapon_args arg)
 {
-        set("unit", "°Ñ");
+        set("unit", "æŠŠ");
         if( clonep() )
                 set_default_object(__FILE__);
 
@@ -112,13 +112,13 @@ protected void create(class weapon_args arg)
 
         else
         {
-                set_name("´óÌú´¸", ({ "hammer" }) );
+                set_name("å¤§éµéŒ˜", ({ "hammer" }) );
                 set_weight(12000);
-                set("long", "ÕâÊÇÒ»°ÑÉòÖØµÄÌú´¸£¬´òÔìµÄÏàµ±¼áÊµ¡£\n");
+                set("long", "é€™æ˜¯ä¸€æŠŠæ²ˆé‡çš„éµéŒ˜ï¼Œæ‰“é€ çš„ç›¸ç•¶å …å¯¦ã€‚\n");
                 set("value", 400);
                 set("material", "iron");
-                set("wield_msg", "$NÄÃ³öÒ»°Ñ$n£¬ÊÔÁËÊÔÖØÁ¿£¬È»ºóÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+                set("wield_msg", "$Næ‹¿å‡ºä¸€æŠŠ$nï¼Œè©¦äº†è©¦é‡é‡ï¼Œç„¶å¾Œæ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
                 init_hammer(30);
         }
 

@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��ʯ·");
+        set("short", "碎石路");
         set("long", @LONG
-����һ��������С���ӣ�ϡϡ����ķֲ��ż�ʮ�������෿����
-�������˼Ҳ��࣬���Ҵ�����ܼ���������һ�����������ʯ·��
-�����Ǽ��ʵ����լ��
+這是一個寧靜的小村子，稀稀落落的分布著幾十間土坯泥房，看
+來村中人家不多，而且大都生活很艱辛。這是一條東西向的碎石路，
+北面是間結實的民宅。
 LONG );
         set("exits", ([ /* sizeof() == 3 */
             "east"  : __DIR__"eroad1",

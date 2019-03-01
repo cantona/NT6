@@ -1,15 +1,15 @@
-// xiuxishi.c ��Ϣ��
+// xiuxishi.c 休息室
 // Winder Oct.10 1998
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "��Ϣ��");
+        set("short", "休息室");
         set("long", @LONG
-���Ǽ�ܴ�ķ��䣬���߷ǳ��谵������û��ʲô��Ķ�����
-ֻ���м����һ����ʰ����������Ĵ󴲣����ϵı���Ҳ������
-������࣬���ž�������˯����
+這是間很大的房間，光線非常昏暗。房裡沒有什麼別的東西，
+只有中間放著一張收拾得舒舒服服的大床，床上的被褥也整理得
+整整潔潔，看著就讓人想睡覺。
 LONG
         );
 

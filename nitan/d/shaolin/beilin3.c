@@ -5,12 +5,12 @@ int do_study(string arg);
 
 void create()
 {
-        set("short", NOR + WHT "µØÏÂÊÒ" NOR);
+        set("short", NOR + WHT "åœ°ä¸‹å®¤" NOR);
         set("long", @LONG
-ÕâÀïÊÇ·ğËşµ×ÏÂµÄµØÏÂÃÜÊÒ¡£ÃÜÊÒËäĞ¡£¬È´Ò²ÎåÔà¾ãÈ«£¬Ê¯×ÀÊ¯
-ÒÎ£¬Ê¯¼¸Ê¯´²£¬Á¬ÊÒÄÚ·ÅµÄ¼¸¼şÆ÷Ãó£¬Ò²¶¼ÊÇÊ¯ÖÆµÄ¡£¿´À´ËÆºõºÜ¾Ã
-ÒÔÇ°ÓĞÈËÔÚÕâÀï×¡¹ı¡£ÕıÖĞµÄÊ¯×À (table)ÉÏÆ½·Å×ÅÒ»¿é±¡»¡µÄÊ¯°å£¬
-ÉÏÃæºÃÏó¿Ì×ÅĞ©Ê²Ã´¡£
+é€™è£¡æ˜¯ä½›å¡”åº•ä¸‹çš„åœ°ä¸‹å¯†å®¤ã€‚å¯†å®¤é›–å°ï¼Œå»ä¹Ÿäº”è‡Ÿä¿±å…¨ï¼ŒçŸ³æ¡ŒçŸ³
+æ¤…ï¼ŒçŸ³å¹¾çŸ³åºŠï¼Œé€£å®¤å…§æ”¾çš„å¹¾ä»¶å™¨çš¿ï¼Œä¹Ÿéƒ½æ˜¯çŸ³åˆ¶çš„ã€‚çœ‹ä¾†ä¼¼ä¹å¾ˆä¹…
+ä»¥å‰æœ‰äººåœ¨é€™è£¡ä½éã€‚æ­£ä¸­çš„çŸ³æ¡Œ (table)ä¸Šå¹³æ”¾è‘—ä¸€å¡Šè–„å¼§çš„çŸ³æ¿ï¼Œ
+ä¸Šé¢å¥½è±¡åˆ»è‘—äº›ä»€éº¼ã€‚
 LONG );
         set("exits", ([
                 "up" : __DIR__"beilin2",
@@ -19,8 +19,8 @@ LONG );
                 "/clone/book/book-stone" : 1,
         ]));
         set("item_desc", ([
-                "table" : WHT "ÕâÊÇÒ»Õû¿é¾ŞÊ¯µñ³ÉµÄÊ¯×À"
-                          "£¬ÉÏÃæ¿ÌÁËĞ©Ææ¹ÖµÄÍ¼ĞÎ¡£\n" NOR,
+                "table" : WHT "é€™æ˜¯ä¸€æ•´å¡Šå·¨çŸ³é›•æˆçš„çŸ³æ¡Œ"
+                          "ï¼Œä¸Šé¢åˆ»äº†äº›å¥‡æ€ªçš„åœ–å½¢ã€‚\n" NOR,
         ]));
         setup();
 }
@@ -39,10 +39,10 @@ int do_study(string arg)
         me = this_player();
 
         if (arg != "table")
-                return notify_fail("ÄãÒª¶ÁÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦è®€ä»€éº¼ï¼Ÿ\n");
 
         if ((int)me->query_skill("literate", 1) < 1)
-                return notify_fail("ÄãÊÇ¸öÎÄÃ¤£¬ÏÈÑ§µãÎÄ»¯(literate)°É¡£\n");
+                return notify_fail("ä½ æ˜¯å€‹æ–‡ç›²ï¼Œå…ˆå­¸é»æ–‡åŒ–(literate)å§ã€‚\n");
 
         me->receive_damage("jing", 10 + random(10));
 
@@ -52,7 +52,7 @@ int do_study(string arg)
                 return 1;
         }
 
-        msg = HIY "Äã×¨ĞÄµÄÑĞ¶ÁÊ¯×ÀÉÏµÄ¹Å¹ÖÍ¼ĞÎ¡£\n" NOR;
+        msg = HIY "ä½ å°ˆå¿ƒçš„ç ”è®€çŸ³æ¡Œä¸Šçš„å¤æ€ªåœ–å½¢ã€‚\n" NOR;
 
         switch (random(5)) 
         {
@@ -60,7 +60,7 @@ int do_study(string arg)
                 if ((int)me->query_skill("finger", 1) < 100)
                 {
                         me->improve_skill("finger", 2 + random(me->query_int()));
-                        msg += "Äã¶Ô×ÅÊ¯×À×ÁÄ¥ÁËÒ»»Ø¶ù£¬ËÆºõ¶ÔÖ¸·¨ÓĞµãĞÄµÃ¡£\n";
+                        msg += "ä½ å°è‘—çŸ³æ¡Œç¢ç£¨äº†ä¸€å›å…’ï¼Œä¼¼ä¹å°æŒ‡æ³•æœ‰é»å¿ƒå¾—ã€‚\n";
                         set_temp("stone_learned", 1, me);
                 }
                 break;
@@ -69,7 +69,7 @@ int do_study(string arg)
                 if ((int)me->query_skill("claw", 1) < 100)
                 {
                         me->improve_skill("claw", 2 + random(me->query_int()));
-                        msg += "Äã¶Ô×ÅÊ¯×À×ÁÄ¥ÁËÒ»»Ø¶ù£¬ËÆºõ¶Ô×¦·¨ÓĞµãĞÄµÃ¡£\n";
+                        msg += "ä½ å°è‘—çŸ³æ¡Œç¢ç£¨äº†ä¸€å›å…’ï¼Œä¼¼ä¹å°çˆªæ³•æœ‰é»å¿ƒå¾—ã€‚\n";
                         set_temp("stone_learned", 1, me);
                 }
                 break;
@@ -78,7 +78,7 @@ int do_study(string arg)
                 if ((int)me->query_skill("strike", 1) < 100)
                 {
                         me->improve_skill("strike", 2 + me->query_int());
-                        msg += "Äã¶Ô×ÅÊ¯×À×ÁÄ¥ÁËÒ»»Ø¶ù£¬ËÆºõ¶ÔÕÆ·¨ÓĞµãĞÄµÃ¡£\n";
+                        msg += "ä½ å°è‘—çŸ³æ¡Œç¢ç£¨äº†ä¸€å›å…’ï¼Œä¼¼ä¹å°æŒæ³•æœ‰é»å¿ƒå¾—ã€‚\n";
                         set_temp("stone_learned", 1, me);
                 }
                 break;
@@ -87,7 +87,7 @@ int do_study(string arg)
                 if ((int)me->query_skill("cuff", 1) < 100)
                 {
                         me->improve_skill("cuff", 2 + random(me->query_int()));
-                        msg += "Äã¶Ô×ÅÊ¯×À×ÁÄ¥ÁËÒ»»Ø¶ù£¬ËÆºõ¶ÔÈ­·¨ÓĞµãĞÄµÃ¡£\n";
+                        msg += "ä½ å°è‘—çŸ³æ¡Œç¢ç£¨äº†ä¸€å›å…’ï¼Œä¼¼ä¹å°æ‹³æ³•æœ‰é»å¿ƒå¾—ã€‚\n";
                         set_temp("stone_learned", 1, me);
                 }
                 break;
@@ -96,14 +96,14 @@ int do_study(string arg)
                 if ( (int)me->query_skill("hand", 1) < 100)
                 {
                         me->improve_skill("hand", 2 + random(me->query_int()));
-                        msg += "Äã¶Ô×ÅÊ¯×À×ÁÄ¥ÁËÒ»»Ø¶ù£¬ËÆºõ¶ÔÊÖ·¨ÓĞµãĞÄµÃ¡£\n";
+                        msg += "ä½ å°è‘—çŸ³æ¡Œç¢ç£¨äº†ä¸€å›å…’ï¼Œä¼¼ä¹å°æ‰‹æ³•æœ‰é»å¿ƒå¾—ã€‚\n";
                         set_temp("stone_learned", 1, me);
                 }
         }
 
         if( !query_temp("stone_learned", me) )
-                msg += HIY "Äã¶Ô×ÅÊ¯×À×ÁÄ¥ÁËÒ»»Ø¶ù£¬·¢ÏÖÉÏÃæËùËµµÄÒÑ¾­Ì«"
-                       "¹ıÇ³ÏÔÁË¡£\n" NOR;
+                msg += HIY "ä½ å°è‘—çŸ³æ¡Œç¢ç£¨äº†ä¸€å›å…’ï¼Œç™¼ç¾ä¸Šé¢æ‰€èªªçš„å·²ç¶“å¤ª"
+                       "éæ·ºé¡¯äº†ã€‚\n" NOR;
 
         write(msg);
         return 1;

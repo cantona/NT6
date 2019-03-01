@@ -1,4 +1,4 @@
-// hun.c ÈºÄ§ÂÒÎè
+// hun.c ç¾¤é­”äº‚èˆ
 
 #include <ansi.h>
 
@@ -17,23 +17,23 @@ int perform(object me, object target)
         skill = me->query_skill("diyushajie-strike", 1);
 
         if (! me->is_fighting(target))
-                return notify_fail("ÈºÄ§ÂÒÎèÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ç¾¤é­”äº‚èˆåªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if(me->query_skill_mapped("strike") != "diyushajie-strike") 
-                return notify_fail("ÄãÃ»ÓĞÓÃµØÓüÉ±½ÙÕÆ·¨£¬ÎŞ·¨Ê¹ÓÃ¡¸ÈºÄ§ÂÒÎè¡¹¾øÕĞ£¡\n");
+                return notify_fail("ä½ æ²’æœ‰ç”¨åœ°ç„æ®ºåŠ«æŒæ³•ï¼Œç„¡æ³•ä½¿ç”¨ã€Œç¾¤é­”äº‚èˆã€çµ•æ‹›ï¼\n");
 
         if (me->query_skill_prepared("strike") != "diyushajie-strike")
-                return notify_fail("ÄãÃ»ÓĞ×¼±¸Ê¹ÓÃµØÓüÉ±½ÙÕÆ·¨£¬ÎŞ·¨Ê©Õ¹¡¸ÈºÄ§ÂÒÎè¡¹¾øÕĞ¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æº–å‚™ä½¿ç”¨åœ°ç„æ®ºåŠ«æŒæ³•ï¼Œç„¡æ³•æ–½å±•ã€Œç¾¤é­”äº‚èˆã€çµ•æ‹›ã€‚\n");
 
         if (skill < 100)
-                return notify_fail("ÄãµÄµØÓüÉ±½ÙÕÆ·¨µÈ¼¶²»¹»£¬Á·ºÃÁËÔÙÀ´£¡\n");
+                return notify_fail("ä½ çš„åœ°ç„æ®ºåŠ«æŒæ³•ç­‰ç´šä¸å¤ ï¼Œç·´å¥½äº†å†ä¾†ï¼\n");
 
         if( objectp(weapon=query_temp("weapon", me)) || 
             objectp(weapon=query_temp("handing", me)) )
-                return notify_fail("Äã±ØĞë¿Õ×ÅË«ÊÖ²ÅÄÜÊ¹ÓÃÕÆ·¨¾øÕĞ¡£\n");
+                return notify_fail("ä½ å¿…é ˆç©ºè‘—é›™æ‰‹æ‰èƒ½ä½¿ç”¨æŒæ³•çµ•æ‹›ã€‚\n");
 
         if( query("neili", me)<500 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ã€‚\n");
         
         ap = me->query_skill("strike") + me->query_skill("force");
         ap+=query("jiali", me);
@@ -44,10 +44,10 @@ int perform(object me, object target)
         dp = target->query_skill("parry",1) + target->query_skill("dodge",1);
         dp = dp*3/2;
 
-        msg = HIG "$N" HIG "Ë«ÊÖºÏ½á¡°" HIY "Ê®°Ë²ãµØÓüÂÖ»ØÓ¡" HIG "¡±£¬"
-              "½ÅÌ¤ÒõÑô°ËØÔÕó,·½Ô²Ê®ÀïÈºÄ§ÂÒÎè¡£\n" HIG "ÕóÕóÆæÒìµÄÉùÒô£¬ÓÌÈç¹íÒ÷£¬"
-              "Áî$n" HIG "ĞÄÉñ²»¶¨£¬ÉñÇé»Ğã±¡£\n"
-              "Í»È»¼äÒ»È¦È¦±ÌÃ¢Î§Ïò$n" HIG "£¬ÕğµÃ$n" HIR "ÍÂÑª" HIG "Á¬Á¬£¡\n" NOR;
+        msg = HIG "$N" HIG "é›™æ‰‹åˆçµâ€œ" HIY "åå…«å±¤åœ°ç„è¼ªå›å°" HIG "â€ï¼Œ"
+              "è…³è¸é™°é™½å…«å¦é™£,æ–¹åœ“åè£¡ç¾¤é­”äº‚èˆã€‚\n" HIG "é™£é™£å¥‡ç•°çš„è²éŸ³ï¼ŒçŒ¶å¦‚é¬¼åŸï¼Œ"
+              "ä»¤$n" HIG "å¿ƒç¥ä¸å®šï¼Œç¥æƒ…ææƒšã€‚\n"
+              "çªç„¶é–“ä¸€åœˆåœˆç¢§èŠ’åœå‘$n" HIG "ï¼Œéœ‡å¾—$n" HIR "åè¡€" HIG "é€£é€£ï¼\n" NOR;
 
         message_combatd(msg, me, target);
 
@@ -60,12 +60,12 @@ int perform(object me, object target)
                 COMBAT_D->do_attack(me, target, 0, 0);
         }
 
-        msg = HIG "\n$n" HIG "ÉĞÎ´»Ø¹ıĞÄÉñ£¬½á¹û·¢ÏÖ±»¡°" HIY "Ê®°Ë²ãµØÓüÂÖ»ØÉ±½Ù" HIG "¡±µÄÇ¿´óÄ§Æø³åÈëÌåÄÚ£¬µÇ¸ĞºôÎü²»³©¡£\n"
-              "³Ë´ËÁ¼»ú£¬$N" HIG "Ê®°Ë¹É¼«´óµÄÁ¦µÀÈçÍ¬ÅÅÉ½µ¹º£Ò»°ã±¼Ïò$n" HIG "£¬ÖÜÔâ¿ñ·ç´ó×÷£¬·ÉÉ°×ßÊ¯£¡\n\n" NOR;
+        msg = HIG "\n$n" HIG "å°šæœªå›éå¿ƒç¥ï¼Œçµæœç™¼ç¾è¢«â€œ" HIY "åå…«å±¤åœ°ç„è¼ªå›æ®ºåŠ«" HIG "â€çš„å¼·å¤§é­”æ°£æ²–å…¥é«”å…§ï¼Œç™»æ„Ÿå‘¼å¸ä¸æš¢ã€‚\n"
+              "ä¹˜æ­¤è‰¯æ©Ÿï¼Œ$N" HIG "åå…«è‚¡æ¥µå¤§çš„åŠ›é“å¦‚åŒæ’å±±å€’æµ·ä¸€èˆ¬å¥”å‘$n" HIG "ï¼Œå‘¨é­ç‹‚é¢¨å¤§ä½œï¼Œé£›ç ‚èµ°çŸ³ï¼\n\n" NOR;
 
         if (ap / 2 + random(ap) > dp || !living(target))
         {
-                msg += HIM "$n" HIM "ÔÙÒ²µÖµ²²»×¡£¬Éí×Ó±»¸ß¸ßÅ×Æğ£¬¿ÚÖĞ" HIR "ÏÊÑª" HIM "¿ñÅç£¬ÉúËÀ²»Ã÷¡£\n" NOR;
+                msg += HIM "$n" HIM "å†ä¹ŸæŠµæ“‹ä¸ä½ï¼Œèº«å­è¢«é«˜é«˜æ‹‹èµ·ï¼Œå£ä¸­" HIR "é®®è¡€" HIM "ç‹‚å™´ï¼Œç”Ÿæ­»ä¸æ˜ã€‚\n" NOR;
                 target->receive_damage("qi", damage, me);
                 target->receive_wound("qi", damage/2, me);
                 str=COMBAT_D->status_msg(query("qi", target)*100/query("max_qi", target));
@@ -73,7 +73,7 @@ int perform(object me, object target)
                 target->start_busy(1);
         } else
         {
-                msg += HIM "$n" HIM "Æ´Á¦×İÉíºóÔ¾£¬ÏÕÏÕ±Ü¹ı´ËÖÂÃüÒ»»÷£¬ĞÄÓĞÓà¼Â¡£\n" NOR;
+                msg += HIM "$n" HIM "æ‹¼åŠ›ç¸±èº«å¾Œèºï¼Œéšªéšªé¿éæ­¤è‡´å‘½ä¸€æ“Šï¼Œå¿ƒæœ‰ä½™æ‚¸ã€‚\n" NOR;
         }
 
         me->start_busy(2 + random(2));

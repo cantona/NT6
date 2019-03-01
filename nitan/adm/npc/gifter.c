@@ -15,11 +15,11 @@ mixed ask_gift6();
 
 void create()
 {
-        set_name(HIM "ÀñÎïÌìÊ¹" NOR, ({ "gift angel", "tianshi", "gift", "angel", "liwu" }));
+        set_name(HIM "ç¦®ç‰©å¤©ä½¿" NOR, ({ "gift angel", "tianshi", "gift", "angel", "liwu" }));
         set("long", @LONG
-ÀñÎïÌìÊ¹£¬¸ºÔğÄàÌ¶½ÚÇìÆÚ¼äÀñÎï·¢·ÅµÄÌìÊ¹¡£
+ç¦®ç‰©å¤©ä½¿ï¼Œè² è²¬æ³¥æ½­ç¯€æ…¶æœŸé–“ç¦®ç‰©ç™¼æ”¾çš„å¤©ä½¿ã€‚
 LONG);
-        set("gender", "Å®ĞÔ" );
+        set("gender", "å¥³æ€§" );
         set("age", 18);
         set("attitude", "friendly");
         set("max_jing", 50000);
@@ -36,16 +36,16 @@ LONG);
         set("combat_exp", 1200000);
 
         set("inquiry", ([
-                "½ÚÈÕÀñÎï" : (: get_reward :),
-                "ÀñÎï" : (: get_reward :),
+                "ç¯€æ—¥ç¦®ç‰©" : (: get_reward :),
+                "ç¦®ç‰©" : (: get_reward :),
 /*
                 "gift" : (: ask_gift :),
-                // "¹úÇìÀñÎï" : (: ask_gift1 :),
-                // "»áÔ±ÌåÑé" : (: ask_gift2 :),
-                // "Ôªµ©ÀñÎï" : (: ask_gift3 :),
-                "´º½ÚÀñÎï" : (: ask_gift4 :),
-                // "´º½ÚÌØÊâÀñÎï" : (: ask_gift5 :),
-                // "ĞÂÈË¸£Àû" : (: ask_gift6 :),
+                // "åœ‹æ…¶ç¦®ç‰©" : (: ask_gift1 :),
+                // "æœƒå“¡é«”é©—" : (: ask_gift2 :),
+                // "å…ƒæ—¦ç¦®ç‰©" : (: ask_gift3 :),
+                "æ˜¥ç¯€ç¦®ç‰©" : (: ask_gift4 :),
+                // "æ˜¥ç¯€ç‰¹æ®Šç¦®ç‰©" : (: ask_gift5 :),
+                // "æ–°äººç¦åˆ©" : (: ask_gift6 :),
 */
         ]));
 
@@ -75,7 +75,7 @@ mixed ask_gift()
         file = read_file(CONFIG_DIR + "gift");
         if (! stringp(file))
         {
-                command("say ¿ÉÏ§£¬ÌìÉñ»¹Ã»ÓĞ´òËã×öÈÎÎñÀñÎïÄØ£¡");
+                command("say å¯æƒœï¼Œå¤©ç¥é‚„æ²’æœ‰æ‰“ç®—åšä»»å‹™ç¦®ç‰©å‘¢ï¼");
                 return 1;
         }
 
@@ -84,35 +84,35 @@ mixed ask_gift()
 
         if (sscanf(file, "%s %d to %d", gift, time1, time2) != 3)
         {
-                command("say Ææ¹Ö£¬ÀñÎïÔõÃ´²»¼ûÁË£¬ÄÑµÀÊÇÌìÉñÔÚ×÷¹Ö£¿£¡");
+                command("say å¥‡æ€ªï¼Œç¦®ç‰©æ€éº¼ä¸è¦‹äº†ï¼Œé›£é“æ˜¯å¤©ç¥åœ¨ä½œæ€ªï¼Ÿï¼");
                 return 1;
         }
 
         if( query("gifter/"+time1, me) )
         {
-                command("say ºÇºÇ¡«Õâ¾ÍÊÇÄúµÄ²»ÊÇÁË£¡ÎÒÒÑ¾­¸ø¹ıÄúÀñÎïÁË°¡£¡");
+                command("say å‘µå‘µï½é€™å°±æ˜¯æ‚¨çš„ä¸æ˜¯äº†ï¼æˆ‘å·²ç¶“çµ¦éæ‚¨ç¦®ç‰©äº†å•Šï¼");
                 return 1;
         }
 
         if (time() < time1 || time() > time2)
         {
-                command("say ¶Ô²»Æğ£¬ÄãÀ´µÄ²»ÊÇÊ±ºò£¬ÏÖÔÚËÍÄãÀñÎï£¬ÌìÉñ»á³Í·£ÎÒµÄ£¡");
+                command("say å°ä¸èµ·ï¼Œä½ ä¾†çš„ä¸æ˜¯æ™‚å€™ï¼Œç¾åœ¨é€ä½ ç¦®ç‰©ï¼Œå¤©ç¥æœƒæ‡²ç½°æˆ‘çš„ï¼");
                 return 1;
         }
 
         if (! ob = new(gift))
         {
-                 command("say Ææ¹Ö£¬ÀñÎïÓĞ´óÎÊÌâ£¬Äã¸Ï¿ìºÍÌìÉñ±¨¸æ°É£¡");
+                 command("say å¥‡æ€ªï¼Œç¦®ç‰©æœ‰å¤§å•é¡Œï¼Œä½ è¶•å¿«å’Œå¤©ç¥å ±å‘Šå§ï¼");
                  return 1;
         } else
         {
                 set("gifter/"+time1, 1, me);
                 ob->move(me, 1);
 
-                message_vision(HIW "$N" HIW "Áè¿ÕÒ»Ö¸£¬Í»È»Ìì¿ÕÖĞÒ»µÀ" HIM "Æß" HIY "²Ê" HIR "Ï¼" HIC "¹â" HIW "ÁıÕÖ$n£¬×ªË²¼´ÊÅ£¡\n" NOR,
+                message_vision(HIW "$N" HIW "å‡Œç©ºä¸€æŒ‡ï¼Œçªç„¶å¤©ç©ºä¸­ä¸€é“" HIM "ä¸ƒ" HIY "å½©" HIR "éœ" HIC "å…‰" HIW "ç± ç½©$nï¼Œè½‰ç¬å³é€ï¼\n" NOR,
                                this_object(), me);
 
-                tell_object(me, HIG "ÄãÉíÉÏºÃÏó¶àÁËÒ»¸öÀñÎï£¨gift£©£¬Äã¿ì¿´¿´ÊÇÊ²Ã´ÀñÎï°É¡£\n" NOR);
+                tell_object(me, HIG "ä½ èº«ä¸Šå¥½è±¡å¤šäº†ä¸€å€‹ç¦®ç‰©ï¼ˆgiftï¼‰ï¼Œä½ å¿«çœ‹çœ‹æ˜¯ä»€éº¼ç¦®ç‰©å§ã€‚\n" NOR);
                 return 1;
         }
 }
@@ -126,9 +126,9 @@ mixed ask_gift1()
         td = time() / 86400;
 
         if( query("gifter/which_day", me) == td )
-                return "Äã½ñÌìÒÑ¾­Áì¹ıÀñÎïÁË¡£";
+                return "ä½ ä»Šå¤©å·²ç¶“é ˜éç¦®ç‰©äº†ã€‚";
 
-        tell_object(me, HIY "\nÄãÁìÈ¡ÁËÒ»¸ö½ñÌìµÄÀñÎï(" HIM "ÌìÊ¦»¤Éí·û" NOR + HIY ")£¬×£ÄãÔÚÍõÕß¹éÀ´ÀïÍæµÄÓä¿ì£¡\n" NOR);
+        tell_object(me, HIY "\nä½ é ˜å–äº†ä¸€å€‹ä»Šå¤©çš„ç¦®ç‰©(" HIM "å¤©å¸«è­·èº«ç¬¦" NOR + HIY ")ï¼Œç¥ä½ åœ¨ç‹è€…æ­¸ä¾†è£¡ç©çš„æ„‰å¿«ï¼\n" NOR);
 
         ob = new("/clone/goods/tianshi-charm");
         ob->move(me, 1);
@@ -148,7 +148,7 @@ mixed ask_gift2()
 
 
         if( query("gifter/monfee1", me) )
-                return "ÄãÒÑ¾­ÌåÑé¹ı»áÔ±ÁË¡£";
+                return "ä½ å·²ç¶“é«”é©—éæœƒå“¡äº†ã€‚";
 
         id=query("id", me);
 
@@ -175,7 +175,7 @@ mixed ask_gift2()
 
         set("gifter/monfee1", 1, me);
 
-        tell_object(me, HIY "\nÄãÁìÈ¡ÁËÒ»¸öÔÂµÄ(" HIM "»áÔ±ÌåÑé" NOR + HIY ")£¬×£ÄãÔÚÍõÕß¹éÀ´ÀïÍæµÄÓä¿ì£¡\n" NOR);
+        tell_object(me, HIY "\nä½ é ˜å–äº†ä¸€å€‹æœˆçš„(" HIM "æœƒå“¡é«”é©—" NOR + HIY ")ï¼Œç¥ä½ åœ¨ç‹è€…æ­¸ä¾†è£¡ç©çš„æ„‰å¿«ï¼\n" NOR);
 
         return 1;
 }
@@ -186,7 +186,7 @@ mixed ask_gift3()
 
 
         if( query("gifter/20081224", me) )
-                return "ÄãÒÑ¾­Áì¹ıÔªµ©ÀñÎïÁË£¬²»ÒªÌ«Ì°ĞÄ¡£:)";
+                return "ä½ å·²ç¶“é ˜éå…ƒæ—¦ç¦®ç‰©äº†ï¼Œä¸è¦å¤ªè²ªå¿ƒã€‚:)";
 
         if (! MEMBER_D->is_valid_member(me))
         {
@@ -205,7 +205,7 @@ mixed ask_gift3()
 
         set("gifter/20081224", 1, me);
 
-        tell_object(me, HIY "\nÌì¿ÕÍ»ÏÖÒ»µÀ½ğ¹âÕÕÒ«×ÅÄã£¬ÄãÚ¤Ú¤ÖĞ¸Ğ¾õµ½ÔÚ2009Äê½«ÍòÊÂÓĞÈçÉñÖú£¡\n" NOR);
+        tell_object(me, HIY "\nå¤©ç©ºçªç¾ä¸€é“é‡‘å…‰ç…§è€€è‘—ä½ ï¼Œä½ å†¥å†¥ä¸­æ„Ÿè¦ºåˆ°åœ¨2009å¹´å°‡è¬äº‹æœ‰å¦‚ç¥åŠ©ï¼\n" NOR);
 
         return 1;
 }
@@ -217,7 +217,7 @@ mixed ask_gift4()
 
 
         if( query("gifter/20120120", me) )
-                return "ÄãÒÑ¾­Áì¹ı´º½ÚÀñÎïÁË£¬²»ÒªÌ«Ì°ĞÄ¡£:)";
+                return "ä½ å·²ç¶“é ˜éæ˜¥ç¯€ç¦®ç‰©äº†ï¼Œä¸è¦å¤ªè²ªå¿ƒã€‚:)";
 
         addn("combat_exp", 2000000, me);
         addn("potential", 1000000, me);
@@ -270,41 +270,41 @@ mixed ask_gift4()
 
                 tell_object(me,
 HIW"\n"+
-"     ©³©¥©¥©¥©¥©¥©¥©¥©¥ "HIR"´º½Ú¿ìÀÖ"HIW" ©¥©¥©¥©¥©¥©¥©¥©¥©·\n"+
-"     ©§  ©°©¤©¤©¤©¤ Happy  New  Year ©¤©¤©¤©¤©´  ©§\n"+
-"     ©§  ©¦                                  ©¦  ©§\n"+
-"     ©§  ©¦                                  ©¦  ©§\n");
+"     â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡ "HIR"æ˜¥ç¯€å¿«æ¨‚"HIW" â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡\n"+
+"     â–¡  â”Œâ”€â”€â”€â”€ Happy  New  Year â”€â”€â”€â”€â”  â–¡\n"+
+"     â–¡  â”‚                                  â”‚  â–¡\n"+
+"     â–¡  â”‚                                  â”‚  â–¡\n");
                 if( strlen(query("name", me)) == 2)tell_object(me,
-HIW"©§©¦Ç×°®µÄ"+query("name", me)+"£º©¦©§\n");
+HIW"â–¡â”‚è¦ªæ„›çš„"+query("name", me)+"ï¼šâ”‚â–¡\n");
                 if( strlen(query("name", me)) == 4)tell_object(me,
-HIW"©§©¦Ç×°®µÄ"+query("name", me)+"£º©¦©§\n");
+HIW"â–¡â”‚è¦ªæ„›çš„"+query("name", me)+"ï¼šâ”‚â–¡\n");
                 if( strlen(query("name", me)) == 6)tell_object(me,
-HIW"©§©¦Ç×°®µÄ"+query("name", me)+"£º©¦©§\n");
+HIW"â–¡â”‚è¦ªæ„›çš„"+query("name", me)+"ï¼šâ”‚â–¡\n");
                 if( strlen(query("name", me)) == 8)tell_object(me,
-HIW"©§©¦Ç×°®µÄ"+query("name", me)+"£º©¦©§\n");
+HIW"â–¡â”‚è¦ªæ„›çš„"+query("name", me)+"ï¼šâ”‚â–¡\n");
                 if( strlen(query("name", me)) == 10)tell_object(me,
-HIW"©§©¦Ç×°®µÄ"+query("name", me)+"£º©¦©§\n");
+HIW"â–¡â”‚è¦ªæ„›çš„"+query("name", me)+"ï¼šâ”‚â–¡\n");
         tell_object(me,
-HIW"     ©§  ©¦      Ô¸ÄúºÍÄúµÄ¼ÒÈËÔÚĞÂµÄÒ»Äê    ©¦  ©§\n"+
-"     ©§  ©¦  Àï£¬½¡¿µ¡¢¿ìÀÖ¡¢Æ½°²£¡          ©¦  ©§\n"+
-"     ©§  ©¦                                  ©¦  ©§\n"+
-"     ©§  ©¦             *  *"HIR"r"HIW"*  *            ©¦  ©§\n"+
-"     ©§  ©¦          * *"HIR"a"HIW"* "HIG"^"HIY"Y"HIG"^"HIW" *"HIR"i"HIW"* *         ©¦  ©§\n"+
-"     ©§  ©¦         *"HIM"m"HIW"*"HIG"^"HIY"Y"HIG"^"HIW"*"HIG"^\\^"HIW"*"HIG"^"HIY"Y"HIG"^"HIW"*"RED"s"HIW"*        ©¦  ©§\n"+
-"     ©§  ©¦         "HIG"^"HIY"Y"HIG"^"HIW"*"HIG"\\"HIW"*"RED"e"HIW"*"HIG"/"HIW"*"HIG"l"HIW"*"HIG"/"HIW"*"HIG"^"HIY"Y"HIG"^"HIW"        ©¦  ©§\n"+
-"     ©§  ©¦         *"HIG"\\"HIW"*"CYN"t"HIW"*"HIG"|"HIY"Y"HIG"^\\^"HIY"Y"HIG"|"HIW"*"HIG"l"HIW"*"HIG"/"HIW"*        ©¦  ©§\n"+
-"     ©§  ©¦        *"MAG"s"HIW"*"HIG"|"HIY"Y"HIG"^\\\\^/^//^"HIY"Y"HIG"|"HIW"*"HIR"a"HIW"*       ©¦  ©§\n"+
-"     ©§  ©¦        "GRN"^"YEL"Y"GRN"^\\\\_^\\\\\\//^_//^"YEL"Y"GRN"^"HIW"       ©¦  ©§\n"+
-"     ©§  ©¦        "GRN"^\\_^\\_\\_\\//_/_/^_/^"HIW"       ©¦  ©§\n"+
-"     ©§  ©¦         "GRN"^^\\_^\\_\\\\/_/^_/^^"HIW"        ©¦  ©§\n"+
-"     ©§  ©¦           "GRN"^^\\_ \\// _/^^"HIW"          ©¦  ©§\n"+
-"     ©§  ©¦               "GRN"\\_\\_/"HIW"              ©¦  ©§\n"+
-"     ©§  ©¦                "GRN"/|\\"HIW"               ©¦  ©§\n"+
-"     ©§  ©¦               "GRN"/\\\\/\\"HIW"              ©¦  ©§\n"+
-"     ©§  ©¦                                  ©¦  ©§\n"+
-"     ©§  ©¦                  "RED"ÄàÌ¶Î×Ê¦×é¹§ºØ"HIW"  ©¦  ©§\n"+
-HIW"     ©§  ©¸©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¼  ©§\n"+
-"     ©»©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¿\n"+
+HIW"     â–¡  â”‚      é¡˜æ‚¨å’Œæ‚¨çš„å®¶äººåœ¨æ–°çš„ä¸€å¹´    â”‚  â–¡\n"+
+"     â–¡  â”‚  è£¡ï¼Œå¥åº·ã€å¿«æ¨‚ã€å¹³å®‰ï¼          â”‚  â–¡\n"+
+"     â–¡  â”‚                                  â”‚  â–¡\n"+
+"     â–¡  â”‚             *  *"HIR"r"HIW"*  *            â”‚  â–¡\n"+
+"     â–¡  â”‚          * *"HIR"a"HIW"* "HIG"^"HIY"Y"HIG"^"HIW" *"HIR"i"HIW"* *         â”‚  â–¡\n"+
+"     â–¡  â”‚         *"HIM"m"HIW"*"HIG"^"HIY"Y"HIG"^"HIW"*"HIG"^\\^"HIW"*"HIG"^"HIY"Y"HIG"^"HIW"*"RED"s"HIW"*        â”‚  â–¡\n"+
+"     â–¡  â”‚         "HIG"^"HIY"Y"HIG"^"HIW"*"HIG"\\"HIW"*"RED"e"HIW"*"HIG"/"HIW"*"HIG"l"HIW"*"HIG"/"HIW"*"HIG"^"HIY"Y"HIG"^"HIW"        â”‚  â–¡\n"+
+"     â–¡  â”‚         *"HIG"\\"HIW"*"CYN"t"HIW"*"HIG"|"HIY"Y"HIG"^\\^"HIY"Y"HIG"|"HIW"*"HIG"l"HIW"*"HIG"/"HIW"*        â”‚  â–¡\n"+
+"     â–¡  â”‚        *"MAG"s"HIW"*"HIG"|"HIY"Y"HIG"^\\\\^/^//^"HIY"Y"HIG"|"HIW"*"HIR"a"HIW"*       â”‚  â–¡\n"+
+"     â–¡  â”‚        "GRN"^"YEL"Y"GRN"^\\\\_^\\\\\\//^_//^"YEL"Y"GRN"^"HIW"       â”‚  â–¡\n"+
+"     â–¡  â”‚        "GRN"^\\_^\\_\\_\\//_/_/^_/^"HIW"       â”‚  â–¡\n"+
+"     â–¡  â”‚         "GRN"^^\\_^\\_\\\\/_/^_/^^"HIW"        â”‚  â–¡\n"+
+"     â–¡  â”‚           "GRN"^^\\_ \\// _/^^"HIW"          â”‚  â–¡\n"+
+"     â–¡  â”‚               "GRN"\\_\\_/"HIW"              â”‚  â–¡\n"+
+"     â–¡  â”‚                "GRN"/|\\"HIW"               â”‚  â–¡\n"+
+"     â–¡  â”‚               "GRN"/\\\\/\\"HIW"              â”‚  â–¡\n"+
+"     â–¡  â”‚                                  â”‚  â–¡\n"+
+"     â–¡  â”‚                  "RED"æ³¥æ½­å·«å¸«çµ„æ­è³€"HIW"  â”‚  â–¡\n"+
+HIW"     â–¡  â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜  â–¡\n"+
+"     â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡\n"+
 "\n" NOR);
 
         return 1;
@@ -315,7 +315,7 @@ mixed ask_gift5()
         object me = this_player();
 
         if( query("gifter/20090121", me) )
-                return "ÄãÒÑ¾­Áì¹ı´º½ÚÌØÊâÀñÎïÁË£¬²»ÒªÌ«Ì°ĞÄ¡£:)";
+                return "ä½ å·²ç¶“é ˜éæ˜¥ç¯€ç‰¹æ®Šç¦®ç‰©äº†ï¼Œä¸è¦å¤ªè²ªå¿ƒã€‚:)";
 
         if (! MEMBER_D->is_valid_member(me))
                 addn("time_reward/quest", 259200, me);
@@ -323,7 +323,7 @@ mixed ask_gift5()
                 addn("time_reward/quest", 518400, me);
 
         set("gifter/20090121", 1, me);
-        tell_object(me, HIY "\nÄãÁìÈ¡ÁË´º½ÚÌØÊâÀñÎï£¬×£ÄãĞÂÄê¿ìÀÖ£¡\n" NOR);
+        tell_object(me, HIY "\nä½ é ˜å–äº†æ˜¥ç¯€ç‰¹æ®Šç¦®ç‰©ï¼Œç¥ä½ æ–°å¹´å¿«æ¨‚ï¼\n" NOR);
 
         return 1;
 }
@@ -332,11 +332,11 @@ mixed ask_gift6()
 {
         object me = this_player();
         if( query("gifter/20090701", me) )
-                return "ÄãÒÑ¾­Áì¹ıĞÂÈË¸£ÀûÁË£¬²»ÒªÌ«Ì°ĞÄ¡£:)";
+                return "ä½ å·²ç¶“é ˜éæ–°äººç¦åˆ©äº†ï¼Œä¸è¦å¤ªè²ªå¿ƒã€‚:)";
 
         addn("max_neili", 100000, me);
         addn("max_jingli", 100000, me);
         set("gifter/20090701", 1, me);
-        tell_object(me, HIY "\nÄãÁìÈ¡ÁËĞÂÈË¸£Àû£¬×£ÄãÍæµÃÓä¿ì£¡\n" NOR);
+        tell_object(me, HIY "\nä½ é ˜å–äº†æ–°äººç¦åˆ©ï¼Œç¥ä½ ç©å¾—æ„‰å¿«ï¼\n" NOR);
         return 1;
 }

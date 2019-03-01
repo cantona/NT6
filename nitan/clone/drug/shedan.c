@@ -10,9 +10,9 @@ int cure_ob(string);
 
 void create()
 {
-        set_name("¶¾Éßµ¨", ({"shedan", "dan"}));
-        set("unit", "Á£");
-        set("long", "ÕâÊÇÒ»Ö»ÂÌÓ¨Ó¨µÄ¶¾Éßµ¨¡£\n");
+        set_name("æ¯’è›‡è†½", ({"shedan", "dan"}));
+        set("unit", "ç²’");
+        set("long", "é€™æ˜¯ä¸€åªç¶ ç‘©ç‘©çš„æ¯’è›‡è†½ã€‚\n");
         set("value", 200);
                 set("no_sell", 1);
         set("medicine", 1);
@@ -23,8 +23,8 @@ void create()
 int do_eat(string arg)
 {
         if (!id(arg))
-                return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
-        return notify_fail("ÄãÕÒËÀ°¡¡£\n");
+                return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
+        return notify_fail("ä½ æ‰¾æ­»å•Šã€‚\n");
 }
 */
 
@@ -35,7 +35,7 @@ void init()
 }
 int cure_ob(object me)
 {
-   message_vision("$N³ÔÏÂÒ»Á£" + name() + "¡£\n", me);
+   message_vision("$Nåƒä¸‹ä¸€ç²’" + name() + "ã€‚\n", me);
    if ((int)me->query_condition("snake_poison") > 7) {
       me->apply_condition("snake_poison", (int)me->query_condition("snake_poison") - 5);
    }
@@ -47,7 +47,7 @@ int effect_in_liquid(object ob)
 {
         if( query("liquid/type", ob) == "alcohol"){
         addn("qi", 10*query("liquid/drunk_apply", ob), this_player());
-        tell_object(this_player(), MAG"Äã¸Ğµ½Ò»¹ÉÕæÆø»º»º×¢Èëµ¤Ìï£¬»ìÉíÉÏÏÂÅ¯ºåºåµÄ¡£\n"NOR);
+        tell_object(this_player(), MAG"ä½ æ„Ÿåˆ°ä¸€è‚¡çœŸæ°£ç·©ç·©æ³¨å…¥ä¸¹ç”°ï¼Œæ··èº«ä¸Šä¸‹æš–å“„å“„çš„ã€‚\n"NOR);
         }
         return 0;
 }

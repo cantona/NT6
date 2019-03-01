@@ -4,17 +4,17 @@ inherit BLADE;
 
 void create()
 {
-        set_name(NOR + CYN "ËªÀä±¦µ¶" NOR, ({ "shuangleng dao", "shuangleng", "dao" }));
+        set_name(NOR + CYN "éœœå†·å¯¶åˆ€" NOR, ({ "shuangleng dao", "shuangleng", "dao" }));
         set_weight(500);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
-                set("long", NOR + CYN "µ¶±úÉÏµÄĞ¡×­Ğ´×Å£ºÁÁÈçËªÑ©£¬»ÓÈ÷Ö®¼äÂşÌìÒøÓê¡£³öÇÊÖ®Ê±£¬ÎŞÑª²»¹é£¬Ê®²½Ö®ÄÚ£¬Ë­ÓëÕù·æ£¡¡£\n"
-                                                      "´Ëµ¶ÎªÑ×»Æ·Ç×ÔÔì±øÆ÷±¦µ¶ÅÅÃûµÚÈıÎ»¡£\n" NOR);
+                set("unit", "æŸ„");
+                set("long", NOR + CYN "åˆ€æŸ„ä¸Šçš„å°ç¯†å¯«è‘—ï¼šäº®å¦‚éœœé›ªï¼Œæ®æ´’ä¹‹é–“æ¼«å¤©éŠ€é›¨ã€‚å‡ºé˜ä¹‹æ™‚ï¼Œç„¡è¡€ä¸æ­¸ï¼Œåæ­¥ä¹‹å…§ï¼Œèª°èˆ‡çˆ­é‹’ï¼ã€‚\n"
+                                                      "æ­¤åˆ€ç‚ºç‚é»ƒéè‡ªé€ å…µå™¨å¯¶åˆ€æ’åç¬¬ä¸‰ä½ã€‚\n" NOR);
                 set("material", "steel");
-                set("wield_msg", NOR + CYN "$nº®¹âÒ»ÉÁ£¬ÒÑÈ»³öÇÊ¡£\n" NOR);
-                set("unwield_msg", NOR + CYN "$n»ØÇÊ£¬ÌìµØ¶ÙÊ±°µµ­¡£\n" NOR);
+                set("wield_msg", NOR + CYN "$nå¯’å…‰ä¸€é–ƒï¼Œå·²ç„¶å‡ºé˜ã€‚\n" NOR);
+                set("unwield_msg", NOR + CYN "$nå›é˜ï¼Œå¤©åœ°é “æ™‚æš—æ·¡ã€‚\n" NOR);
                                 set("value", 100000);
         }
         init_blade(800);

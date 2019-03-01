@@ -4,11 +4,11 @@
 inherit BUILD_ROOM;
 void create()
 {
-        set("short", "ɽ·");
+        set("short", "山路");
         set("long", @LONG
-ɽ·��᫣��������ӡ�������ľ�Դ䣬����ï�ܡ�ɽ·����һɽ
-������˵������ʱ�ᴫ���������������ϻ�������������ɽ��·����
-����ɽ�㵽��ɽ�ס�
+山路崎嶇，曲折蜿延。四周林木蒼翠，修竹茂密。山路旁有一山
+洞，據說洞裡有時會傳出虎哮聲，故名老虎洞。西邊是下山的路，往
+東下山便到了山底。
 LONG);
         set("exits", ([
             "eastup"  : __DIR__"yuhuangsd",

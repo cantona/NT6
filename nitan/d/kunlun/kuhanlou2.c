@@ -10,13 +10,13 @@ int do_duanmo(string arg);
 
 void create()
 {
-        set("short", "�ຮ¥����");
+        set("short", "苦寒樓二層");
         set("long", @LONG
-ÿ��¥���϶������˽�ʵ��ľ¥�壬�˽��ε�ǽ�����������ȴ�
-��������ǽ�������������������ź͸��ֵĻ��񣬲���ר�ŵ����ּ���
-�����ǵ��¼�������������������ֻ�ܿ���Χ�����ܵ��������ѵ���ɼ
-�֣�����ͨ�������̼��ͺ������Ĺ����İ취����ö���ѧ���β����
-׷��
+每個樓層上都舖設了結實的木樓板，八角形的牆身上則開了四扇大
+窗。四周牆壁貼著昆侖派歷代掌門和高手的畫像，並有專門的文字記載
+著他們的事跡。從這裡往外眺望，只能看到圍繞塔周的密密匝匝的雲杉
+林，正是通過這種忍饑耐寒，清心寡欲的辦法以求得對武學孜孜不倦的
+追求。
 LONG );
         set("exits", ([
                 "up"   : __DIR__"kuhanlou3",
@@ -43,10 +43,10 @@ int do_duanmo(string arg)
         object ob, me = this_player();
 
         if( query("kar", me)<20 )
-                return notify_fail("��Ҫ��ʲô��\n");
+                return notify_fail("你要幹什麼？\n");
 
         if ( !arg && (arg != "huaxiang") && (arg != "wall") )
-                return notify_fail("����Ҫ��Ħʲô������\n");
+                return notify_fail("你想要端摩什麼東西？\n");
 
         if ( query("item_count") < 1 ||
                 query_temp("count", me) <= query("times") )
@@ -54,7 +54,7 @@ int do_duanmo(string arg)
                 addn_temp("count", 1, me);
                 me->receive_damage("jing", 10);
                 me->receive_damage("qi", 10);
-                return notify_fail("����ϸ��Ħ������ǰ�����˵Ļ����������ǵ����ݺὭ����������𣬲���������������п���\n");
+                return notify_fail("你仔細端摩昆侖派前輩高人的畫像，想象他們當年縱橫江湖，快意恩仇，不由心中生出許多感慨。\n");
         }
 
         if ( query("item_count") > 0)

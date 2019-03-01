@@ -3,16 +3,16 @@
 // #define DEBUG_USER      "lonely"
 // #define DEBUG_MSG(x, y) tell_object(find_player(DEBUG_USER), sprintf(HIR "%s: " NOR WHT "%s\n" NOR, x, y))
 
-#define DBASE_DATA      0       // dbase Êı¾İ
-#define FUNCTION_DATA   1       // º¯ÊıÊı¾İ
-#define EXTRA_BASE_DATA 2       // ×¨ÃÅ»ù×¼ÎÄ¼ş
+#define DBASE_DATA      0       // dbase æ•¸æ“š
+#define FUNCTION_DATA   1       // å‡½æ•¸æ•¸æ“š
+#define EXTRA_BASE_DATA 2       // å°ˆé–€åŸºæº–æ–‡ä»¶
 
-// »ù×¼Îï¼şÂ·¾¶
+// åŸºæº–ç‰©ä»¶è·¯å¾‘
 #define BASIC_OB_DIR    "/inherit/template/"
 #define TEMPLATE_DATA   "/data/template/"
 
-// Ğë½«¡° ¡±Ìæ»»ÎªÕâÒ»×Ö·û
+// é ˆå°‡â€œ â€æ›¿æ›ç‚ºé€™ä¸€å­—ç¬¦
 #define CONNECT_CHAR    "_"
 
-// Ä£°åÎÄ¼ş¼Ì³ĞµÄÎï¼ş
+// æ¨¡æ¿æ–‡ä»¶ç¹¼æ‰¿çš„ç‰©ä»¶
 #define TEMPLATE_OB     "/inherit/misc/template"

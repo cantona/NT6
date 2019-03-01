@@ -1,4 +1,4 @@
-// xiandan.c œ…µ§
+// xiandan.c ‰ªô‰∏π
 
 #include <ansi.h>
 
@@ -6,29 +6,29 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIG "ªŸ»›ÕË" NOR, ({ "huirong wan", "wan", "huirong" }) );
+        set_name(HIG "ÊØÄÂÆπ‰∏∏" NOR, ({ "huirong wan", "wan", "huirong" }) );
         set_weight(200);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "“ªø≈‘∞‘∞µƒµ§ÕË£¨æ›Àµ≥‘¡Àø…“‘±‰µƒ‘Ω¿¥‘Ω≥Û£¨’Ê≤ª÷™µ¿À≠ªπ“™’‚∏ˆ∂´Œ˜“Æ°£\n");
+                set("long", "‰∏ÄÈ°ÜÂúíÂúíÁöÑ‰∏π‰∏∏ÔºåÊìöË™™ÂêÉ‰∫ÜÂèØ‰ª•ËÆäÁöÑË∂ä‰æÜË∂äÈÜúÔºåÁúü‰∏çÁü•ÈÅìË™∞ÈÇÑË¶ÅÈÄôÂÄãÊù±Ë•øËÄ∂„ÄÇ\n");
                 set("value", 10000);
-                set("unit", "¡£");
+                set("unit", "Á≤í");
                 set("only_do_effect", 1);
         }
 }
 
 int do_effect(object me)
 {
-        message_vision("$N“ª—ˆ≤±£¨ÕÃœ¬¡À“ª¡£" + this_object()->name() +
-                       "°£\n", me);
+        message_vision("$N‰∏Ä‰ª∞ËÑñÔºåÂêû‰∏ã‰∫Ü‰∏ÄÁ≤í" + this_object()->name() +
+                       "„ÄÇ\n", me);
         if( query("per", me) <= 13 )
         {
-                message_vision("$N∫ˆ»ª°∞Õ€Õ€°±£¨Õ¬¡À“ªµÿ°£\n", me);
-                tell_object(me, "ƒ„æıµ√◊Ï¿Ô∑«≥£µƒø‡°£\n");
+                message_vision("$NÂøΩÁÑ∂‚ÄúÂìáÂìá‚ÄùÔºåÂêê‰∫Ü‰∏ÄÂú∞„ÄÇ\n", me);
+                tell_object(me, "‰Ω†Ë¶∫ÂæóÂò¥Ë£°ÈùûÂ∏∏ÁöÑËã¶„ÄÇ\n");
         } else
         {
-                tell_object(me, HIG "ƒ„ø™ º∑¢æıƒ„µƒ»›√≤ø™ º∏ƒ±‰£¨±‰µƒƒ—ø¥∂‡¡À°£\n" NOR);
+                tell_object(me, HIG "‰Ω†ÈñãÂßãÁôºË¶∫‰Ω†ÁöÑÂÆπË≤åÈñãÂßãÊîπËÆäÔºåËÆäÁöÑÈõ£ÁúãÂ§ö‰∫Ü„ÄÇ\n" NOR);
                 addn("per", -1, me);
         }
 

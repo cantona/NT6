@@ -4,9 +4,9 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "у╩╣ю");
+        set("short", "Фё╖И│⌠");
         set("long", @LONG
-уБюОйгм╗мЫцВ╫л╣ду╩╣юё╛╫еобц╞ажиЗтфё╛╪╚фД╪Хоу║ё
+И─≥Хё║Ф≤╞И─ Е╬─Ф≤▌Ф∙≥Г └Фё╖И│⌠О╪▄Х┘ЁД╦▀Х▄┌Ф·≈Г■÷И⌡╡О╪▄Ф╔╣Е┘╤Х┴╠И ╙Ц─┌
 LONG );
         set("exits", ([
                 "northup"   : __DIR__"zhandao2",
@@ -25,9 +25,9 @@ void init()
         {
                 me->receive_damage("qi", 50);
                 me->receive_wound("qi",  50);
-message_vision(HIR"$Nр╩╡╩п║пд╫еобл╓ак╦Ж©уё╛... ╟║...ё║\n"NOR, me);
+message_vision(HIR"$NД╦─Д╦█Е╟▐Е©┐Х┘ЁД╦▀Х╦▐Д╨├Е─▀Г╘╨О╪▄... Е∙┼...О╪│\n"NOR, me);
                 me->move(__DIR__"lhqpaifang");
-                tell_object(me, HIR "дЦ╢су╩╣ю╣Ьакобю╢ё╛╨цлш !╩╧йэакик║ё\n" NOR);
-message("vision",HIR"ж╩╪Ш"+query("name", me)+"╢су╩╣юиофкм╗р╩иЫ╣Ьакобю╢ё╛литз╣ьио╟КлЛею╡╩фПю╢ё║\n"NOR,environment(me),me);
+                tell_object(me, HIR "Д╫═Е╬·Фё╖И│⌠Х╥▄Д╨├Д╦▀Д╬├О╪▄Е╔╫Г√╪ !И┌└Е▐≈Д╨├Е┌╥Ц─┌\n" NOR);
+message("vision",HIR"Е▐╙Х╕▀"+query("name", me)+"Е╬·Фё╖И│⌠Д╦┼Ф▓╡И─ Д╦─Х│╡Х╥▄Д╨├Д╦▀Д╬├О╪▄Х╨╨Е°╗Е°╟Д╦┼Е█┼Е╓╘Г┬╛Д╦█Х╣╥Д╬├О╪│\n"NOR,environment(me),me);
         }
 }

@@ -1,18 +1,18 @@
-// laofu.c 老虎
+// laofu.c 鑰佽檸
 // Date: Sep.22 1997
 
 inherit NPC;
 
 void create()
 {
-        set_name("老虎", ({ "laohu", "tiger","hu" }) );
-        set("race", "野兽");
+        set_name("鑰佽檸", ({ "laohu", "tiger","hu" }) );
+        set("race", "閲庣嵏");
         set("age", 20);
-        set("long", "一只斑斓猛虎，雄伟极了。\n");
+        set("long", "涓�鍙枒鏂曠寷铏庯紝闆勫亯妤典簡銆俓n");
         set("attitude", "aggressive");
         set("shen_type", -1);
 
-        set("limbs", ({ "虎头", "虎身", "前爪", "后抓", "尾巴" }) );
+        set("limbs", ({ "铏庨牠", "铏庤韩", "鍓嶇埅", "寰屾姄", "灏惧反" }) );
         set("verbs", ({ "bite", "claw" }) );
 
         set("combat_exp", 50000);
@@ -29,7 +29,7 @@ void create()
 
         set("chat_chance", 10);
         set("chat_msg", ({
-                "老虎在浚巡，吓得你大气都不敢出。\n",
-                "老虎仰天长啸，声震山谷，黄叶纷坠。\n",
+                "鑰佽檸鍦ㄦ楷宸★紝鍤囧緱浣犲ぇ姘ｉ兘涓嶆暍鍑恒�俓n",
+                "鑰佽檸浠板ぉ闀峰槸锛岃伈闇囧北璋凤紝榛冭憠绱涘銆俓n",
         }) );
 }

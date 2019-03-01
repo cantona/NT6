@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "������");
+        set("short", "玉柱峰");
         set("long", @LONG
-���Ʒ����ϣ��з����ͦ�㣬���ͻ��������������´к��һˮ����
-�����ߣ�ע����أ����ǹż����صġ�����Ȫ���ˡ�
+白雲峰西南，有峰高聳挺秀，多峰突起，形如玉柱。東麓瀉出一水，懸
+流如線，注入天池，就是古籍所載的“金線泉”了。
 LONG );
         set("exits", ([
                 "north"      : __DIR__"tiyun",

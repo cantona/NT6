@@ -15,46 +15,46 @@ int main(object me, string arg)
 
         seteuid(getuid());
 
-        if( query("family/family_name", me) != "Ø¤°ï" )
-                  return notify_fail("Ö»ÓĞÆòØ¤²ÅÄÜÆòÌÖ£¡\n");
+        if( query("family/family_name", me) != "ä¸å¹«" )
+                  return notify_fail("åªæœ‰ä¹ä¸æ‰èƒ½ä¹è¨ï¼\n");
 
         if( query("no_beg", environment(me)) || 
             query("no_fight", environment(me)) )
-                return notify_fail("ÕâÀï²»ÊÇÄã½Ğ»¯×ÓÄÜÀ´ÌÖ·¹µÄµØ·½£¡\n");
+                return notify_fail("é€™è£¡ä¸æ˜¯ä½ å«åŒ–å­èƒ½ä¾†è¨é£¯çš„åœ°æ–¹ï¼\n");
 
         if( query_temp("begging", me) )
-                return notify_fail("ÄãÒÑ¾­ÔÚÏòÈË¼ÒÆòÌÖÁË£¡\n");
+                return notify_fail("ä½ å·²ç¶“åœ¨å‘äººå®¶ä¹è¨äº†ï¼\n");
 
         if (! arg || sscanf(arg, "%s from %s", what, who) != 2)
-                return notify_fail("Ö¸Áî¸ñÊ½£ºbeg <ÎïÆ·> from <ÈËÎï>\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šbeg <ç‰©å“> from <äººç‰©>\n");
 
         victim = present(who, environment(me));
         if (what != "gold" && what != "silver" && what != "coin")
-                return notify_fail("ÄãÖ»ÄÜÆòÌÖÓ²Í¨»õ :)\n");
+                return notify_fail("ä½ åªèƒ½ä¹è¨ç¡¬é€šè²¨ :)\n");
 
         if (! victim || victim == me)
-                return notify_fail("ÄãÏëÆòÌÖµÄ¶ÔÏó²»ÔÚÕâÀï¡£\n");
+                return notify_fail("ä½ æƒ³ä¹è¨çš„å°è±¡ä¸åœ¨é€™è£¡ã€‚\n");
 
         if (! living(victim) || ! objectp(victim))
-                return notify_fail("ÄãÒªÏòË­ÆòÌÖ£¿\n");
+                return notify_fail("ä½ è¦å‘èª°ä¹è¨ï¼Ÿ\n");
 
-        if( query("family/family_name", victim) == "Ø¤°ï" )
-                return notify_fail("Äã²»ÄÜÏòÆòØ¤ÆòÌÖ£¡\n");
+        if( query("family/family_name", victim) == "ä¸å¹«" )
+                return notify_fail("ä½ ä¸èƒ½å‘ä¹ä¸ä¹è¨ï¼\n");
 
         if (! wizardp(me) && wizardp(victim))
-                return notify_fail("Íæ¼Ò²»ÄÜÏòÎ×Ê¦ÆòÌÖ¡£\n");
+                return notify_fail("ç©å®¶ä¸èƒ½å‘å·«å¸«ä¹è¨ã€‚\n");
 
         if( query("env/no_beg", me) )
-                return notify_fail(victim->name() + "¶ÔÄãµÄÆòÌÖÀí¶¼²»Àí£¡¡£\n");
+                return notify_fail(victim->name() + "å°ä½ çš„ä¹è¨ç†éƒ½ä¸ç†ï¼ã€‚\n");
 
         if (me->is_busy())
-                return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£å¿™è‘—å‘¢ã€‚\n");
 
         if (me->is_fighting())
-                return notify_fail("Ò»±ß´ò¼ÜÒ»±ßÒª·¹£¿ÄãÕæÊÇ»îÄåÁË£¡\n");
+                return notify_fail("ä¸€é‚Šæ‰“æ¶ä¸€é‚Šè¦é£¯ï¼Ÿä½ çœŸæ˜¯æ´»è†©äº†ï¼\n");
 
         if (victim->is_fighting())
-                return notify_fail(victim->name() + "ÕıÔÚ´ò¼Ü£¬Ã»¿ÕÀíÄã£¡\n");
+                return notify_fail(victim->name() + "æ­£åœ¨æ‰“æ¶ï¼Œæ²’ç©ºç†ä½ ï¼\n");
 
         ob = present(what, victim);
         if (! ob) ob = present("gold", victim);
@@ -62,10 +62,10 @@ int main(object me, string arg)
         if (! ob) ob = present("coin", victim);
 
         if (! ob)
-                return notify_fail( victim->name() + "ÉíÉÏ¿´ÆğÀ´Ã»ÓĞÊ²÷áÈÃÄã¸ĞĞËÈ¤µÄ¶«Î÷¡£\n");
+                return notify_fail( victim->name() + "èº«ä¸Šçœ‹èµ·ä¾†æ²’æœ‰ä»€éº¼è®“ä½ æ„Ÿèˆˆè¶£çš„æ±è¥¿ã€‚\n");
 
         if( query("equipped", ob) || query("no_drop", ob) )
-                return notify_fail("ÕâÊÇÄÇÈËµÄËæÉí¼Ò»ï£¬¿Ï¶¨²»»á¸øÄã¡£\n");
+                return notify_fail("é€™æ˜¯é‚£äººçš„éš¨èº«å®¶ä¼™ï¼Œè‚¯å®šä¸æœƒçµ¦ä½ ã€‚\n");
 
         sp = (int)me->query_skill("begging");
         sp = sp * sp * sp / 10;
@@ -73,13 +73,13 @@ int main(object me, string arg)
         if (sp < 1) sp = 1;
         dp=query("jing", victim)+ob->value()/5;
 
-        tell_object(me, "Äã×°³ö¿ÉÁ¯°Í°ÍµÄÑù×Ó£¬ÂıÂıµØÏò" + victim->name() + "×ß¹ıÈ¥£¬Éì³öË«ÊÖ£¬ÏëÒª"
+        tell_object(me, "ä½ è£å‡ºå¯æ†å·´å·´çš„æ¨£å­ï¼Œæ…¢æ…¢åœ°å‘" + victim->name() + "èµ°éå»ï¼Œä¼¸å‡ºé›™æ‰‹ï¼Œæƒ³è¦"
                         +query("unit", ob)+ob->name()+"...\n\n");
-        tell_object(victim, me->name() + "¿ÉÁ¯°Í°ÍµØÏòÄãÂıÂı×ß¹ıÀ´£¬Éì³öÊÖ£¬ËµµÀ£º" + RANK_D->query_respect(victim) + "ĞĞĞĞºÃ£¬¸øÎÒ"
-                        +query("unit", ob)+ob->name()+"°É...£¡\n\n");
-        message("vision", "Ö»¼û" + me->name() + "×°³ö¿ÉÁ¯°Í°ÍµÄÑù×Ó£¬ÂıÂıµØÏò"
-                + victim->name() + "×ß¹ıÈ¥£¬\nÉì³öË«ÊÖ£¬ËµµÀ£º"
-                + RANK_D->query_respect(victim) + "£¬ĞĞĞĞºÃ°É ...\n\n", environment(me), ({ me, victim}) );
+        tell_object(victim, me->name() + "å¯æ†å·´å·´åœ°å‘ä½ æ…¢æ…¢èµ°éä¾†ï¼Œä¼¸å‡ºæ‰‹ï¼Œèªªé“ï¼š" + RANK_D->query_respect(victim) + "è¡Œè¡Œå¥½ï¼Œçµ¦æˆ‘"
+                        +query("unit", ob)+ob->name()+"å§...ï¼\n\n");
+        message("vision", "åªè¦‹" + me->name() + "è£å‡ºå¯æ†å·´å·´çš„æ¨£å­ï¼Œæ…¢æ…¢åœ°å‘"
+                + victim->name() + "èµ°éå»ï¼Œ\nä¼¸å‡ºé›™æ‰‹ï¼Œèªªé“ï¼š"
+                + RANK_D->query_respect(victim) + "ï¼Œè¡Œè¡Œå¥½å§ ...\n\n", environment(me), ({ me, victim}) );
 
         set_temp("begging", 1, me);
         call_out( "compelete_beg", 3, me, victim, ob, sp, dp);
@@ -102,13 +102,13 @@ protected void compelete_beg(object me, object victim, object ob, int sp, int dp
 
         if (! victim || environment(victim) != environment(me))
         {
-                tell_object(me, "Ì«¿ÉÏ§ÁË£¬ÄãÒªÆòÌÖµÄÈËÒÑ¾­×ßÁË¡£\n");
+                tell_object(me, "å¤ªå¯æƒœäº†ï¼Œä½ è¦ä¹è¨çš„äººå·²ç¶“èµ°äº†ã€‚\n");
                 return;
         }
 
         if (environment(ob) != victim)
         {
-                tell_object(me, "Ì«¿ÉÏ§ÁË£¬ÈË¼ÒºÃÏñÒÑ¾­Ã»ÓĞ" + ob->name() + "ÁË¡£\n");
+                tell_object(me, "å¤ªå¯æƒœäº†ï¼Œäººå®¶å¥½åƒå·²ç¶“æ²’æœ‰" + ob->name() + "äº†ã€‚\n");
                 return;
         }
 
@@ -116,8 +116,8 @@ protected void compelete_beg(object me, object victim, object ob, int sp, int dp
         {
                 if( !query("money_id", ob) || !(amount=ob->query_amount()) )
                 {
-                        tell_object(me, "¿´À´»¹ÊÇ×ß°É£¬Õâ¼Ò"
-                                    "»ïÉíÉÏÒÑ¾­Ã»ÓĞ¶àÉÙÓÍË®¿ÉÕ¥ÁË¡£\n");
+                        tell_object(me, "çœ‹ä¾†é‚„æ˜¯èµ°å§ï¼Œé€™å®¶"
+                                    "ä¼™èº«ä¸Šå·²ç¶“æ²’æœ‰å¤šå°‘æ²¹æ°´å¯æ¦¨äº†ã€‚\n");
                         return;
                 }
 
@@ -129,10 +129,10 @@ protected void compelete_beg(object me, object victim, object ob, int sp, int dp
                 ob1->set_amount(bcount);
                 ob1->move(me);
 
-                tell_object(me, victim->name() + "µÍÍ·ÏëÁËÒ»»á£¬ÓÖ¿´ÁË¿´Äã£¬Ò¡Ò¡Í·£¬Ì¾ÁË¿ÚÆø£¬¶ª¸øÄãÒ»" +
-                                query("unit", ob1)+ob1->name()+"¡£\n");
-                tell_object(victim, "Äã¿´×Å" +  me->name() +"µÄ¿ÉÁ¯Ñù£¬Ì¾ÁË¿ÚÆø£¬¶ª¸øËûÒ»" +
-                                query("unit", ob1)+ob1->name()+"¡£\n");
+                tell_object(me, victim->name() + "ä½é ­æƒ³äº†ä¸€æœƒï¼Œåˆçœ‹äº†çœ‹ä½ ï¼Œæ–æ–é ­ï¼Œå˜†äº†å£æ°£ï¼Œä¸Ÿçµ¦ä½ ä¸€" +
+                                query("unit", ob1)+ob1->name()+"ã€‚\n");
+                tell_object(victim, "ä½ çœ‹è‘—" +  me->name() +"çš„å¯æ†æ¨£ï¼Œå˜†äº†å£æ°£ï¼Œä¸Ÿçµ¦ä»–ä¸€" +
+                                query("unit", ob1)+ob1->name()+"ã€‚\n");
 
                       if (me->can_improve_skill("begging"))
                           me->improve_skill("begging",random(query("int", me)));
@@ -147,20 +147,20 @@ protected void compelete_beg(object me, object victim, object ob, int sp, int dp
         {
                 if (random(sp) > dp / 2)
                 {
-                        message_vision(victim->name() + "ºİºİ"
-                                       "µØµÉÁË$NÒ»ÑÛ£¬ºÈµÀ£º¹ö£¡"
-                                       "$NÏÅÁËÒ»Ìø£¬¼±Ã¦Å¤Í·»ÒÁï"
-                                       "ÁïµØ×ß¿ªÁË¡£\n", me);
+                        message_vision(victim->name() + "ç‹ ç‹ "
+                                       "åœ°çªäº†$Nä¸€çœ¼ï¼Œå–é“ï¼šæ»¾ï¼"
+                                       "$Nåš‡äº†ä¸€è·³ï¼Œæ€¥å¿™æ‰­é ­ç°æºœ"
+                                       "æºœåœ°èµ°é–‹äº†ã€‚\n", me);
                         if (! me->is_busy())
                                 me->start_busy(3);
                         return;
                 }
 
-                tell_object(me, victim->name() + "Å¤¹ıÍ·È¥£¬¶ÔÄãÀí¶¼²»Àí¡£\n");
-                tell_object(victim, "ÄãÅ¤¹ıÍ·È¥£¬¶Ô" + me->name() +
-                            "Àí¶¼²»Àí¡£\n");
-                message("vision", victim->name() + "Å¤¹ıÍ·È¥£¬¶Ô" +
-                        me->name() +  "Àí¶¼²»Àí¡£\n",
+                tell_object(me, victim->name() + "æ‰­éé ­å»ï¼Œå°ä½ ç†éƒ½ä¸ç†ã€‚\n");
+                tell_object(victim, "ä½ æ‰­éé ­å»ï¼Œå°" + me->name() +
+                            "ç†éƒ½ä¸ç†ã€‚\n");
+                message("vision", victim->name() + "æ‰­éé ­å»ï¼Œå°" +
+                        me->name() +  "ç†éƒ½ä¸ç†ã€‚\n",
                         environment(me), ({ me, victim }) );
 
                 if (! me->is_busy())
@@ -171,7 +171,7 @@ protected void compelete_beg(object me, object victim, object ob, int sp, int dp
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : beg <Ä³Îï> from <Ä³ÈË>
+æŒ‡ä»¤æ ¼å¼ : beg <æŸç‰©> from <æŸäºº>
 
 HELP );
         return 1;

@@ -5,12 +5,12 @@ inherit HANDS;
 
 void create()
 {
-        set_name( HIC "À¶¹â·É»ê" NOR, ({ "languang feihun", "languang" }) );
+        set_name( HIC "è—å…‰é£›é­‚" NOR, ({ "languang feihun", "languang" }) );
         set_weight(4000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ë«");
+                set("unit", "é›™");
                 set("value", 2000000);
                 set("armor_prop/armor", 100);
                                 set("armor_prop/str", 10);

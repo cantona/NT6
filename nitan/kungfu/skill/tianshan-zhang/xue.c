@@ -1,18 +1,18 @@
 // This program is a part of NITAN MudLIB
-// xue.c ±ùÑ©·×·É
+// xue.c å†°é›ªç´›é£›
 
 #include <ansi.h>
 
 inherit F_SSERVER;
 
-string name() { return HIW "±ùÑ©·×·É" NOR; }
+string name() { return HIW "å†°é›ªç´›é£›" NOR; }
 
 string *desc = ({
-HIW"\n                  ^³¤¿ÕÀ×Òş£¡^          \n" NOR,
-HIY  "                ^^^É½·çÁİÙı£¡^^^       \n" NOR,
-RED  "             ^^^^^^»Ø¹â»Ãµç£¡^^^^^^  \n" NOR,
-HIM  "          ^^^^^^^^^±ùºÓ¿ª¶³£¡^^^^^^^^^ \n" NOR,
-HIC  "       ^^^^^^^^^^^^ÌìÉ½Ñ©±À£¡^^^^^^^^^^^^ \n" NOR,
+HIW"\n                  ^é•·ç©ºé›·éš±ï¼^          \n" NOR,
+HIY  "                ^^^å±±é¢¨å‡œå†½ï¼^^^       \n" NOR,
+RED  "             ^^^^^^å›å…‰å¹»é›»ï¼^^^^^^  \n" NOR,
+HIM  "          ^^^^^^^^^å†°æ²³é–‹å‡ï¼^^^^^^^^^ \n" NOR,
+HIC  "       ^^^^^^^^^^^^å¤©å±±é›ªå´©ï¼^^^^^^^^^^^^ \n" NOR,
 });
 
 int perform(object me, object target)
@@ -28,28 +28,28 @@ int perform(object me, object target)
         }
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(name() + "Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(name() + "åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me)) ||
             query("skill_type", weapon) != "staff" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô£¡\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ï¼\n");
 
         if( query("neili", me)<100 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¡\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼\n");
 
         if ((int)me->query_skill("force", 1) < 100)
-                return notify_fail("ÄãµÄ»ù±¾ÄÚ¹¦»ğºò²»¹»£¡\n");
+                return notify_fail("ä½ çš„åŸºæœ¬å…§åŠŸç«å€™ä¸å¤ ï¼\n");
 
         if ((int)me->query_skill("tianshan-zhang", 1) < 100)
-                return notify_fail("ÄãµÄÌìÉ½ÕÈ·¨»¹²»µ½¼Ò£¬ÎŞ·¨Ê¹ÓÃ" + name() + "£¡\n");
+                return notify_fail("ä½ çš„å¤©å±±æ–æ³•é‚„ä¸åˆ°å®¶ï¼Œç„¡æ³•ä½¿ç”¨" + name() + "ï¼\n");
 
         if (me->query_skill_mapped("staff") != "tianshan-zhang")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢ÌìÉ½ÕÈ·¨£¬Ê¹²»ÁË" + name() + "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼å¤©å±±æ–æ³•ï¼Œä½¿ä¸äº†" + name() + "ã€‚\n");
 
         if (! living(target))
-               return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+               return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIW "$N" HIW "Ê¹³öĞÇËŞ¾ø¼¼¡¸±ùÑ©·×·É¡¹£¬ÕĞÊ½±äµÃ¹îÃØÒì³££¡\n" NOR;
+        msg = HIW "$N" HIW "ä½¿å‡ºæ˜Ÿå®¿çµ•æŠ€ã€Œå†°é›ªç´›é£›ã€ï¼Œæ‹›å¼è®Šå¾—è©­ç§˜ç•°å¸¸ï¼\n" NOR;
         message_combatd(msg, me);
         addn("neili", -120, me);
         level = me->query_skill("tianshan-zhang", 1);

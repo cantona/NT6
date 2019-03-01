@@ -5,21 +5,21 @@ inherit WHIP;
 
 void create()
 {
-        set_name(HIR "ÈíºìÖëË÷" NOR,({ "ruanhong zhusuo", "ruanhong",
+        set_name(HIR "è»Ÿç´…è››ç´¢" NOR,({ "ruanhong zhusuo", "ruanhong",
                                        "zhusuo", "suo", "whip" }) );
         set_weight(1000);
         if (clonep())
                 destruct(this_object());
         else {
-                set("long", HIR "Ò»Ö§Í¨ÌåÑªºìµÄ³¤Ë÷£¬¿´ÉÏÈ¥ºÜÊÇ¼áÈÍ¡£\n" NOR);
-                set("unit", "¸ù");
+                set("long", HIR "ä¸€æ”¯é€šé«”è¡€ç´…çš„é•·ç´¢ï¼Œçœ‹ä¸ŠåŽ»å¾ˆæ˜¯å …éŸŒã€‚\n" NOR);
+                set("unit", "æ ¹");
                 set("value", 800000);
                 set("no_sell", 1);
                 set("material", "steel");
-                set("wield_msg", HIR "$N" HIR "´ÓÑü¼äÈ¡³öÒ»¾íÑªºìÉ«µÄ³¤Ë÷£¬¡°Å¾"
-                                 "¡±µØÁè¿Õ³é´òÁËÒ»ÏÂ¡£\n" NOR);
-                set("unwield_msg", HIR "$N" HIR "Ò»ÉùÇáºß£¬½«ÊÖÖÐÈíºìÖëË÷ÅÌºÃ£¬"
-                                 "·Å»ØÑü¼ä¡£\n" NOR);
+                set("wield_msg", HIR "$N" HIR "å¾žè…°é–“å–å‡ºä¸€å·è¡€ç´…è‰²çš„é•·ç´¢ï¼Œâ€œå•ª"
+                                 "â€åœ°å‡Œç©ºæŠ½æ‰“äº†ä¸€ä¸‹ã€‚\n" NOR);
+                set("unwield_msg", HIR "$N" HIR "ä¸€è²è¼•å“¼ï¼Œå°‡æ‰‹ä¸­è»Ÿç´…è››ç´¢ç›¤å¥½ï¼Œ"
+                                 "æ”¾å›žè…°é–“ã€‚\n" NOR);
                 set("stable", 100);
         }
         init_whip(120);
@@ -40,15 +40,15 @@ mixed hit_ob(object me, object victim, int damage_bonus)
         case 0:
                 if (! victim->is_busy())
                 victim->start_busy(me->query_skill("whip") / 10 + 2);
-                return HIR "$N" HIR "ÊÖÖÐÈíºìÖëË÷¼±ËÙ×ª¶¯£¬»ÓÎè³öÂþÌì±ÞÓ°£¬¹¥"
-                       "µÃ$n" HIR "ÑÛ»¨çÔÂÒ£¬´ëÊÖ²»¼°£¡\n" NOR;
+                return HIR "$N" HIR "æ‰‹ä¸­è»Ÿç´…è››ç´¢æ€¥é€Ÿè½‰å‹•ï¼Œæ®èˆžå‡ºæ¼«å¤©éž­å½±ï¼Œæ”»"
+                       "å¾—$n" HIR "çœ¼èŠ±ç¹šäº‚ï¼ŒæŽªæ‰‹ä¸åŠï¼\n" NOR;
 
         case 1:
                 n = me->query_skill("whip");
                 victim->receive_damage("qi", n * 3 / 4, me);
                 victim->receive_wound("qi", n * 3 / 4, me);
-                return HIR "$N" HIR "Ò»Éù¸ßºÈ£¬ÊÖÖÐÈíºìÖëË÷¼±ËÙ×ª¶¯£¬µÇÊ±Ñª¹â"
-                       "ÂþÌì£¬±ÞÓ°×Ýºá£¬ËÆÕæËÆ»Ã£¬½ÊÏò$n" HIR "£¡\n" NOR;
+                return HIR "$N" HIR "ä¸€è²é«˜å–ï¼Œæ‰‹ä¸­è»Ÿç´…è››ç´¢æ€¥é€Ÿè½‰å‹•ï¼Œç™»æ™‚è¡€å…‰"
+                       "æ¼«å¤©ï¼Œéž­å½±ç¸±æ©«ï¼Œä¼¼çœŸä¼¼å¹»ï¼Œçµžå‘$n" HIR "ï¼\n" NOR;
         }
         return damage_bonus;
 }

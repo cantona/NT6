@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", HIR"��ϼ��¥"NOR);
+        set("short", HIR"紅霞二樓"NOR);
         set("long", @LONG
-��ϼ¥�ϳ��赭�����¡�һ�����û����һ��ʢ���Ĳ軨������һ
-��ľ����д���ǣ�������ˮ���軨�ף��Ĺ�������֦�족��
+紅霞樓上陳設淡雅有致。一幅中堂繪的是一叢盛開的茶花，兩旁一
+副木聯，寫的是：“春溝水動茶花白，夏谷雲生荔枝紅”。
 LONG );
         set("exits", ([
                 "down"     : __DIR__"hongxia1",

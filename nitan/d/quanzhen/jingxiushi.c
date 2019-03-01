@@ -1,14 +1,14 @@
-// jingxiushi.c ¾²ÐÞÊÒ
+// jingxiushi.c éœä¿®å®¤
 // Winder Oct.10 1998
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "¾²ÐÞÊÒ");
+        set("short", "éœä¿®å®¤");
         set("long", @LONG
-ÕâÀïÊÇÈ«Õæ½ÌµÜ×Ó¾²ÐÞ²ÎÎòµÀÇéµÄ·¿¼ä£¬·¿¼äºÜÐ¡£¬µ«ÊÕÊ°µÄ¸É
-¸É¾»¾»£¬×ÀÒÎ¶¼°Ú·ÅµÃÕûÕûÆëÆë£¬ÈÃÈËÒ»¿´¾ÍÐÄÎÞÔÓÄî¡£
+é€™è£¡æ˜¯å…¨çœŸæ•™å¼Ÿå­éœä¿®åƒæ‚Ÿé“æƒ…çš„æˆ¿é–“ï¼Œæˆ¿é–“å¾ˆå°ï¼Œä½†æ”¶æ‹¾çš„å¹¹
+å¹¹å‡ˆå‡ˆï¼Œæ¡Œæ¤…éƒ½æ“ºæ”¾å¾—æ•´æ•´é½Šé½Šï¼Œè®“äººä¸€çœ‹å°±å¿ƒç„¡é›œå¿µã€‚
 LONG
         );
         set("exits", ([
@@ -32,13 +32,13 @@ int valid_leave(object me, string dir)
 
         if (dir == "east" )
         {
-                if( !(fam=query("family", me)) || fam["family_name"] != "È«Õæ½Ì" )
+                if( !(fam=query("family", me)) || fam["family_name"] != "å…¨çœŸæ•™" )
                 {
                         if(present("liu chuxuan", environment(me)) && living(present("liu chuxuan", environment(me))))
                         {
                                 return notify_fail(
-"Áõ´¦ÐþÉìÊÖÀ¹×¡ÄãµÀ£ººóÃæÊÇ±¾½Ì×æÊ¦ÇåÐÞÖ®µØ£¬" + RANK_D->query_respect(me) + "Çë
-Ö¹²½¡£\n");
+"åŠ‰è™•çŽ„ä¼¸æ‰‹æ””ä½ä½ é“ï¼šå¾Œé¢æ˜¯æœ¬æ•™ç¥–å¸«æ¸…ä¿®ä¹‹åœ°ï¼Œ" + RANK_D->query_respect(me) + "è«‹
+æ­¢æ­¥ã€‚\n");
                         }
                         else
                                 return ::valid_leave(me, dir);

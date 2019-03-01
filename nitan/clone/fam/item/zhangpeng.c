@@ -8,15 +8,15 @@ int is_zhangpeng() { return 1;}
 
 void create()
 {
-        set_name(HIC "µ¥ÈËÕÊÅñ" NOR, ({ "danren zhangpeng", "danren", "zhangpeng"}) );
+        set_name(HIC "å–®äººå¸³ç¯·" NOR, ({ "danren zhangpeng", "danren", "zhangpeng"}) );
         set_weight(2000);
                 set_max_encumbrance(1000000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
                 set("value", 1000000);
-                set("long", HIC "ÕâÊÇÒ»¸öµ¥ÈËÕÊÅñ£¬Äã¿ÉÒÔ´ò¿ªÕÊÅñÀ´ĞİÏ¢£¨Ö¸Áî£ºopenzp)¡£\n" NOR);
-                set("unit", "¸ö");
+                set("long", HIC "é€™æ˜¯ä¸€å€‹å–®äººå¸³ç¯·ï¼Œä½ å¯ä»¥æ‰“é–‹å¸³ç¯·ä¾†ä¼‘æ¯ï¼ˆæŒ‡ä»¤ï¼šopenzp)ã€‚\n" NOR);
+                set("unit", "å€‹");
                                 set("no_hand", 1);
                                 set("no_steal", 1);
                                 set("no_clean_up", 1);
@@ -32,7 +32,7 @@ void init()
                 add_action("do_enter", "enterzp");
 }
 
-// ½øÈëÕÊÅñ
+// é€²å…¥å¸³ç¯·
 int do_enter()
 {
                 object me, ob;
@@ -41,19 +41,19 @@ int do_enter()
                 ob = this_object();
                 
                 if (ob->query("opening") != me->query("id"))
-                        return notify_fail("ÄãÄ¿Ç°ÎŞ·¨½øÈëÕâ¸öÕÊÅñ¡£\n");
+                        return notify_fail("ä½ ç›®å‰ç„¡æ³•é€²å…¥é€™å€‹å¸³ç¯·ã€‚\n");
 
                 if (environment(me) == ob)
-                        return notify_fail("Äã²»ÊÇÒÑ¾­½øÀ´ÁËÂğ£¿\n");
+                        return notify_fail("ä½ ä¸æ˜¯å·²ç¶“é€²ä¾†äº†å—ï¼Ÿ\n");
 
                 me->move(ob);
                 
-                message_vision(HIC "$NÒ»Í·×ê½ø" + ob->name() + HIC "¡£\n" NOR, me);
+                message_vision(HIC "$Nä¸€é ­é‘½é€²" + ob->name() + HIC "ã€‚\n" NOR, me);
 
                 return 1;
 }
 
-// ³öÕÊÅñ
+// å‡ºå¸³ç¯·
 int do_out()
 {
                 object me, ob;
@@ -62,19 +62,19 @@ int do_out()
                 ob = this_object();
 
                 if (environment(me) != ob)
-                        return notify_fail("Äã²¢Ã»ÓĞÔÚÕÊÅñÀï°¡¡£\n");
+                        return notify_fail("ä½ ä¸¦æ²’æœ‰åœ¨å¸³ç¯·è£¡å•Šã€‚\n");
 
                 if (! ob->query("out"))
-                        return notify_fail("Ä¿Ç°ÎŞ·¨³öÕÊÅñ¡£\n");
+                        return notify_fail("ç›®å‰ç„¡æ³•å‡ºå¸³ç¯·ã€‚\n");
 
-                message_vision(HIC "$N×ê³öÕÊÅñ¡£\n" NOR, me);
+                message_vision(HIC "$Né‘½å‡ºå¸³ç¯·ã€‚\n" NOR, me);
 
                 me->move(ob->query("out"));
 
                 return 1;                        
 }
 
-// ´ò¿ªÕÊÅñ
+// æ‰“é–‹å¸³ç¯·
 int do_open()
 {
                 object me;
@@ -88,57 +88,57 @@ int do_open()
                                 
                 if (me->query("danren_zhangpeng/flag"))
                 {
-                        return notify_fail("ÄãÒÑ¾­ÓĞµ¥ÈËÕÊÅñ±»´ò¿ªÁË£¬²»ÄÜÔÙ´ò¿ªÕÊÅñ¡£\n");
+                        return notify_fail("ä½ å·²ç¶“æœ‰å–®äººå¸³ç¯·è¢«æ‰“é–‹äº†ï¼Œä¸èƒ½å†æ‰“é–‹å¸³ç¯·ã€‚\n");
                 }
                 
                 if (this_object()->query("opening"))
-                                return notify_fail("ÕÊÅñ²»ÊÇ´ò¿ªµÄÃ´£¿\n");
+                                return notify_fail("å¸³ç¯·ä¸æ˜¯æ‰“é–‹çš„éº¼ï¼Ÿ\n");
 
                 env = environment(me);
 
                 if (env->is_zhangpeng())
-                                return notify_fail("Õâ¸öµØ·½²»ÄÜÔÙ´ò¿ªµ¥ÈËÕÊÅñÁË¡£\n");        
+                                return notify_fail("é€™å€‹åœ°æ–¹ä¸èƒ½å†æ‰“é–‹å–®äººå¸³ç¯·äº†ã€‚\n");        
 
                 if (! env->query("outdoors"))
-                                return notify_fail("ÕÊÅñÖ»ÄÜÔÚ»§Íâ´ò¿ª¡£\n");
+                                return notify_fail("å¸³ç¯·åªèƒ½åœ¨æˆ¶å¤–æ‰“é–‹ã€‚\n");
                 
                 if (me->is_busy() || me->is_fighting())
-                                return notify_fail("ÄãÏÖÔÚÕıÃ¦ÓÚ×öÆäËûÊÂÇé£¬ÎŞ·¨´ò¿ªÕÊÅñ¡£\n");
+                                return notify_fail("ä½ ç¾åœ¨æ­£å¿™äºåšå…¶ä»–äº‹æƒ…ï¼Œç„¡æ³•æ‰“é–‹å¸³ç¯·ã€‚\n");
                 
-                // Ò»¸öµØµãÖ»ÄÜ¿ªÒ»¸öÕÊÅñ
+                // ä¸€å€‹åœ°é»åªèƒ½é–‹ä¸€å€‹å¸³ç¯·
                 obs = all_inventory(env);
                 
                 foreach(obj in obs)
                 {
                         if (obj->is_zhangpeng())
                         {
-                                return notify_fail("Õâ¸öµØ·½ÒÑ¾­ÓĞÈË°ÚÕÊÅñÁË£¬Äã»¹ÊÇ»»¸öµØ·½°É¡£\n");
+                                return notify_fail("é€™å€‹åœ°æ–¹å·²ç¶“æœ‰äººæ“ºå¸³ç¯·äº†ï¼Œä½ é‚„æ˜¯æ›å€‹åœ°æ–¹å§ã€‚\n");
                         }
                 }
                 
                 obt = new("/clone/fam/item/zhangpeng");
 
-                // ÉèÖÃÖ÷ÈË
+                // è¨­ç½®ä¸»äºº
                 obt->set("opening", me->query("id"));                
                 obt->set("no_get", 1);
                 
-                // ÉèÖÃÃèÊö
-                obt->set("long", HIW "ÕâÊÇÒ»¸öµ¥ÈËÕÊÅñ£¬Äã¿ÉÒÔÊÕÆğÕÊÅñ(Ö¸Áî£ºclosezp£©¡£\n"
-                                 HIW "****Èç¹û¾õµÃÃÆÁË¿ÉÒÔµ½ÍâÃæÍ¸Í¸Æø(outzp£©£¬½øÈëÕÊÅñÊ¹ÓÃÖ¸Áî£¨enterzp£©¡£\n" NOR);
+                // è¨­ç½®æè¿°
+                obt->set("long", HIW "é€™æ˜¯ä¸€å€‹å–®äººå¸³ç¯·ï¼Œä½ å¯ä»¥æ”¶èµ·å¸³ç¯·(æŒ‡ä»¤ï¼šclosezpï¼‰ã€‚\n"
+                                 HIW "****å¦‚æœè¦ºå¾—æ‚¶äº†å¯ä»¥åˆ°å¤–é¢é€é€æ°£(outzpï¼‰ï¼Œé€²å…¥å¸³ç¯·ä½¿ç”¨æŒ‡ä»¤ï¼ˆenterzpï¼‰ã€‚\n" NOR);
 
-                // ÉèÖÃÌØÊâÊôĞÔ
+                // è¨­ç½®ç‰¹æ®Šå±¬æ€§
                 obt->set("sleep_room", 1);
                 obt->set("no_fight", 1);
 
-                // ÉèÖÃ³ö¿Ú
+                // è¨­ç½®å‡ºå£
                 obt->set("out", file_name(env));
 
-                message_vision(HIC "$N´ò¿ª" + this_object()->name() + HIC "Ò»Í·×êÁË½øÈ¥¡£\n" NOR, me);
+                message_vision(HIC "$Næ‰“é–‹" + this_object()->name() + HIC "ä¸€é ­é‘½äº†é€²å»ã€‚\n" NOR, me);
 
                 me->move(obt);
                 obt->move(env);
 
-                // ÉèÖÃÌØÊâ±êÖ¾
+                // è¨­ç½®ç‰¹æ®Šæ¨™å¿—
                 me->set("danren_zhangpeng/flag", 1);
                 me->set("danren_zhangpeng/ob", obt);
                 
@@ -159,28 +159,28 @@ int do_close(string arg)
                 obt = this_object();
 
                 if (! obt->query("opening"))
-                                return notify_fail("µ¥ÈËÕÊÅñ²»ÊÇ¹Ø±Õ×ÅµÄÃ´£¿\n");
+                                return notify_fail("å–®äººå¸³ç¯·ä¸æ˜¯é—œé–‰è‘—çš„éº¼ï¼Ÿ\n");
 
                 if (obt->query("opening") != me->query("id"))
-                                return notify_fail("ÄãÃ»ÓĞÈ¨ÀûÊÕÆğÕâ¸öÕÊÅñ¡£\n");
+                                return notify_fail("ä½ æ²’æœ‰æ¬Šåˆ©æ”¶èµ·é€™å€‹å¸³ç¯·ã€‚\n");
 
-                // ¸´ÖÆÒ»¸öÕÊÅñ¸ø¸ÃÍæ¼Ò
+                // å¾©åˆ¶ä¸€å€‹å¸³ç¯·çµ¦è©²ç©å®¶
                 newob = new("/clone/fam/item/zhangpeng");
                 
-                message_vision(HIW "$N½«ÕÊÅñÊÕÁËÆğÀ´£¬×°½øĞĞÄÒ¡£\n" NOR, me);
+                message_vision(HIW "$Nå°‡å¸³ç¯·æ”¶äº†èµ·ä¾†ï¼Œè£é€²è¡Œå›Šã€‚\n" NOR, me);
 
-                // ¼ì²é¸ºÖØ
+                // æª¢æŸ¥è² é‡
              if (newob->query_weight() + me->query_encumbrance() >= me->query_max_encumbrance())
                 {
-                                tell_object(HIR "¶Ô²»Æğ£¬ÄãµÄ¸ºÖØ²»×ã£¬ÎŞ·¨ÊÕÆğÕâ¸öÕÊÅñ¡£\n" NOR);
+                                tell_object(HIR "å°ä¸èµ·ï¼Œä½ çš„è² é‡ä¸è¶³ï¼Œç„¡æ³•æ”¶èµ·é€™å€‹å¸³ç¯·ã€‚\n" NOR);
                                 destruct(newob);
                                 return 1;
                 }
 
-                // Ïë½«ÕÊÅñÀïµÄÈËÒÆ³öÀ´£¬È»ºó´İ»ÙÕÊÅñ£¬×îºó¸´ÖÆÒ»¸öÕÊÅñ¸ø¸ÃÍæ¼Ò
+                // æƒ³å°‡å¸³ç¯·è£¡çš„äººç§»å‡ºä¾†ï¼Œç„¶å¾Œæ‘§æ¯€å¸³ç¯·ï¼Œæœ€å¾Œå¾©åˆ¶ä¸€å€‹å¸³ç¯·çµ¦è©²ç©å®¶
                 obs = all_inventory(obt);
 
-            // ½«ÕÊÅñÀïµÄÈË¶¼ÒÆ³öÀ´
+            // å°‡å¸³ç¯·è£¡çš„äººéƒ½ç§»å‡ºä¾†
                 if (sizeof(obs))
                 {
                         foreach(obj in obs)
@@ -189,13 +189,13 @@ int do_close(string arg)
                         }
                 }
 
-        // ½«¸´ÖÆµÄÕÊÅñ¸ø¸ÃÍæ¼Ò
+        // å°‡å¾©åˆ¶çš„å¸³ç¯·çµ¦è©²ç©å®¶
                 newob->move(me, 1);
 
                 me->delete("danren_zhangpeng");
 
                 me->save();
-                // ´İ»ÙÕâ¸öÕÊÅñ
+                // æ‘§æ¯€é€™å€‹å¸³ç¯·
                 destruct(this_object());
 
                 return 1;

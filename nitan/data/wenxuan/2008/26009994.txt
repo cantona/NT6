@@ -1,8 +1,8 @@
-subject : ×ß³öÉÙÁÖ¼àÓüµÄÂ·¾¶
-author_name : Ş±´ó´ô
+subject : èµ°å‡ºå°‘æ—ç›£ç„çš„è·¯å¾‘
+author_name : è–‡å¤§å‘†
 author_id : vivi
 time : 1206624217
-board : Ş±´ó´ôµÄÁôÑÔ°å
+board : è–‡å¤§å‘†çš„ç•™è¨€æ¿
 file : /data/analecta/2008/26009994.txt
 add_time : 1211022893
 content :

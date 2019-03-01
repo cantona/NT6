@@ -1,11 +1,11 @@
 // Copyright (C) 2005, by Lonely. All rights reserved.
 // This software can not be used, copied, or modified 
 // in any form without the written permission from authors.
-// ĞèÒªÍæ¼ÒÊäÈëÖ÷ÒªÎªÒÔÏÂËÄ¸ö²¿·Ö
-// c_name(e_name) ¾øÕĞµµÃûºÍ¾øÕĞÃû³Æ
-// pfm_attack_msg ¾øÕĞ·¢ÕĞÃèÊö
-// pfm_succeed_msg ¾øÕĞ´òÖĞÃèÊö
-// pfm_fail_msg ¾øÕĞÊ§ÎóÃèÊö
+// éœ€è¦ç©å®¶è¼¸å…¥ä¸»è¦ç‚ºä»¥ä¸‹å››å€‹éƒ¨åˆ†
+// c_name(e_name) çµ•æ‹›æª”åå’Œçµ•æ‹›åç¨±
+// pfm_attack_msg çµ•æ‹›ç™¼æ‹›æè¿°
+// pfm_succeed_msg çµ•æ‹›æ‰“ä¸­æè¿°
+// pfm_fail_msg çµ•æ‹›å¤±èª¤æè¿°
 
 #include <ansi.h>
 #include <command.h>
@@ -20,21 +20,21 @@
 inherit F_CLEAN_UP;
 
 mapping valid_types = ([
-        "unarmed":      "È­½Å",
-        "sword":        "½£·¨",
-        // "arrow":        "¼ı·¨",
-        "axe":          "¸«·¨",
-        "blade":        "µ¶·¨",
-        "staff":        "ÕÈ·¨",
-        "hammer":       "´¸·¨",
-        "club" :        "¹÷·¨",
-        // "dodge":        "Çá¹¦",
-        "whip":         "±Ş·¨",
-        "finger":       "Ö¸·¨",
-        "hand":         "ÊÖ·¨",
-        "cuff":         "È­·¨",
-        "claw":         "×¦·¨",
-        "strike":       "ÕÆ·¨",
+        "unarmed":      "æ‹³è…³",
+        "sword":        "åŠæ³•",
+        // "arrow":        "ç®­æ³•",
+        "axe":          "æ–§æ³•",
+        "blade":        "åˆ€æ³•",
+        "staff":        "æ–æ³•",
+        "hammer":       "éŒ˜æ³•",
+        "club" :        "æ£æ³•",
+        // "dodge":        "è¼•åŠŸ",
+        "whip":         "é­æ³•",
+        "finger":       "æŒ‡æ³•",
+        "hand":         "æ‰‹æ³•",
+        "cuff":         "æ‹³æ³•",
+        "claw":         "çˆªæ³•",
+        "strike":       "æŒæ³•",
 ]);
 
 string *weapon_types = ({
@@ -44,27 +44,27 @@ string *weapon_types = ({
 });
 
 string *msga = ({ 
-        "Ú¤Ú¤Ö®ÖĞ£¬$NÍ»È»·¢ÏÖ",
-        "$N½Ê¾¡ÄÔÖ­£¬ËÆºõ¾õµÃ",
-        "$NÁéÌ¨Ò»Æ¬ÇåÃ÷£¬ÏëÆğ",
-        "$N¿àË¼ÒÔÇ°Á·¹¦Ê±µÄµãµãµÎµÎ£¬ËÆºõÏëÆğ",
-        "Í»È»£¬$NÄÔº£Áé¹âÒ»ÏÖ£¬·¢ÏÖ",
-        "$N·´¸´±È»®£¬·¢ÏÖ",
+        "å†¥å†¥ä¹‹ä¸­ï¼Œ$Nçªç„¶ç™¼ç¾",
+        "$Nçµç›¡è…¦æ±ï¼Œä¼¼ä¹è¦ºå¾—",
+        "$Néˆå°ä¸€ç‰‡æ¸…æ˜ï¼Œæƒ³èµ·",
+        "$Nè‹¦æ€ä»¥å‰ç·´åŠŸæ™‚çš„é»é»æ»´æ»´ï¼Œä¼¼ä¹æƒ³èµ·",
+        "çªç„¶ï¼Œ$Nè…¦æµ·éˆå…‰ä¸€ç¾ï¼Œç™¼ç¾",
+        "$Nåå¾©æ¯”åŠƒï¼Œç™¼ç¾",
 });
 
 string *msgb = ({ 
-        "ËÆÓĞÏàÍ¨Ö®´¦£¬²»½ûĞÄÖĞÒ»ÁÁ¡£",
-        "ÆÄÓĞÒ»Ò»Ó¡Ö¤Ö®¹¦£¬ËæÊÖÑİÁ·£¬ËÆÓĞËùÎò¡£",
-        "ËÆºõ¿ÉÒÔÈÚºÏ¹áÍ¨£¬¶ÙÊ±ĞÄÄÚÒ»Õó¿ñÏ²£¡",
-        "¿ÉÒÔÏà»¥È¡³¤²¹¶Ì£¬¿ª±ÙÒ»ÖÖÈ«ĞÂµÄ¾³½ç¡£",
-        "Èç¹ûÁ¬ĞøÊ¹³ö£¬ËÆºõ¿ÉÒÔ½«ÍşÁ¦·¢»ÓÖÁ¼«ÏŞ¡£",
-        "Èç¹ûÏê¼ÓĞŞÕı£¬¿ÉÒÔÏà»¥ÃÖ²¹¸öÖĞ²»×ã£¬´´Ôì³ö¸üÍêÃÀµÄ¾øÕĞ¡£"
+        "ä¼¼æœ‰ç›¸é€šä¹‹è™•ï¼Œä¸ç¦å¿ƒä¸­ä¸€äº®ã€‚",
+        "é —æœ‰ä¸€ä¸€å°è¨¼ä¹‹åŠŸï¼Œéš¨æ‰‹æ¼”ç·´ï¼Œä¼¼æœ‰æ‰€æ‚Ÿã€‚",
+        "ä¼¼ä¹å¯ä»¥èåˆè²«é€šï¼Œé “æ™‚å¿ƒå…§ä¸€é™£ç‹‚å–œï¼",
+        "å¯ä»¥ç›¸äº’å–é•·è£œçŸ­ï¼Œé–‹è¾Ÿä¸€ç¨®å…¨æ–°çš„å¢ƒç•Œã€‚",
+        "å¦‚æœé€£çºŒä½¿å‡ºï¼Œä¼¼ä¹å¯ä»¥å°‡å¨åŠ›ç™¼æ®è‡³æ¥µé™ã€‚",
+        "å¦‚æœè©³åŠ ä¿®æ­£ï¼Œå¯ä»¥ç›¸äº’å½Œè£œå€‹ä¸­ä¸è¶³ï¼Œå‰µé€ å‡ºæ›´å®Œç¾çš„çµ•æ‹›ã€‚"
 });
 
 string *banned_name = ({
-        "Äã", "Äã", "ÎÒ", "Ëû", "Ëı", "Ëü",
-        "°Ö", "Ò¯", "¡¡", "Âè",
-        "Êº", "Äò", "·à",
+        "ä½ ", "ä½ ", "æˆ‘", "ä»–", "å¥¹", "å®ƒ",
+        "çˆ¸", "çˆº", "ã€€", "åª½",
+        "å±", "å°¿", "ç³",
 });
 
 string get_skill_name(object me, string skill);
@@ -92,17 +92,17 @@ int main(object me, string arg)
         where = environment(me);
         
         if (! wizardp(me) && ! MEMBER_D->is_valid_member(query("id", me))) 
-                return notify_fail("Ö»ÓĞ»áÔ±²Å¿ÉÒÔ×Ô´´ÈÎºÎ¾øÕĞ¡£\n");
+                return notify_fail("åªæœ‰æœƒå“¡æ‰å¯ä»¥è‡ªå‰µä»»ä½•çµ•æ‹›ã€‚\n");
 
         if( !arg ) {
                 if( !mapp(creates=query("create", me)) )
-                        return notify_fail("ÄãÄ¿Ç°»¹Ã»ÓĞÈÎºÎ×Ô´´¾øÕĞ¡£\n");
+                        return notify_fail("ä½ ç›®å‰é‚„æ²’æœ‰ä»»ä½•è‡ªå‰µçµ•æ‹›ã€‚\n");
                         
                 skills = keys(creates);   
  
-                msg = WHT "ÄãÄ¿Ç°¹²×Ô´´µÄÎä¹¦¾øÕĞÇé¿öÈçÏÂ£º\n" NOR;               
+                msg = WHT "ä½ ç›®å‰å…±è‡ªå‰µçš„æ­¦åŠŸçµ•æ‹›æƒ…æ³å¦‚ä¸‹ï¼š\n" NOR;               
                 for( i = 0; i < sizeof(skills); i++ ) {  
-                        msg += HIC "\n" + skills[i] + " £º";          
+                        msg += HIC "\n" + skills[i] + " ï¼š";          
                         performs = keys(creates[skills[i]]);
                         for( j = 0; j < sizeof(performs); j++ ) {
                                 msg += performs[j];
@@ -119,12 +119,12 @@ int main(object me, string arg)
         if( sscanf(arg, "%s %s d", skill, perform) == 2 ) {                        
                 object ob;
                 if( !query("create/"+skill, me) )
-                        return notify_fail("Ã»ÓĞ×Ô´´ÕâÖÖÎä¹¦¾øÕĞ£¬ÇëÈ·ÈÏÊäÈëµÄÎä¹¦Ó¢ÎÄÃû³Æ¡£\n");
+                        return notify_fail("æ²’æœ‰è‡ªå‰µé€™ç¨®æ­¦åŠŸçµ•æ‹›ï¼Œè«‹ç¢ºèªè¼¸å…¥çš„æ­¦åŠŸè‹±æ–‡åç¨±ã€‚\n");
                 
                 if( !query("create/"+skill+"/"+perform, me) )
-                        return notify_fail("Ã»ÓĞ×Ô´´ÕâÖÖÎä¹¦¾øÕĞ£¬ÇëÈ·ÈÏÊäÈëµÄ¾øÕĞÓ¢ÎÄÃû³Æ¡£\n");
+                        return notify_fail("æ²’æœ‰è‡ªå‰µé€™ç¨®æ­¦åŠŸçµ•æ‹›ï¼Œè«‹ç¢ºèªè¼¸å…¥çš„çµ•æ‹›è‹±æ–‡åç¨±ã€‚\n");
                 
-                tell_object(me, HIR "ÄãÉ¾³ıÁË×Ô´´" + to_chinese(skill) + "¾øÕĞ" + to_chinese(perform) + "(" + perform + ")¡£\n" NOR);                                                
+                tell_object(me, HIR "ä½ åˆªé™¤äº†è‡ªå‰µ" + to_chinese(skill) + "çµ•æ‹›" + to_chinese(perform) + "(" + perform + ")ã€‚\n" NOR);                                                
                 CHINESE_D->remove_translate(perform);                        
                 dir = SKILL_D(skill);
                 if (dir[strlen(dir) - 1] != '/')
@@ -147,63 +147,63 @@ int main(object me, string arg)
         }
                 
         if( me->is_busy() )
-                return notify_fail("Äã»¹ÊÇÏÈÃ¦ÍêÊÖÍ·µÄÊÂÔÙËµ°É£¡\n");         
+                return notify_fail("ä½ é‚„æ˜¯å…ˆå¿™å®Œæ‰‹é ­çš„äº‹å†èªªå§ï¼\n");         
     
         if( query("pigging", where) )
-                return notify_fail("Äã»¹ÊÇ×¨ĞÄ¹°Öí°É£¡\n");
+                return notify_fail("ä½ é‚„æ˜¯å°ˆå¿ƒæ‹±è±¬å§ï¼\n");
                 
         if( !query("no_fight", where) )
-                return notify_fail("ÔÚÕâÀï±Õ¹Ø£¿²»Ì«°²È«°É£¿\n");
+                return notify_fail("åœ¨é€™è£¡é–‰é—œï¼Ÿä¸å¤ªå®‰å…¨å§ï¼Ÿ\n");
 
         if( !query("sleep_room", where) )
-                return notify_fail("ÄãµÃÕÒÒ»¸öÄÜ¹»ĞİÏ¢µÄµØ·½±Õ¹Ø¡£\n");
+                return notify_fail("ä½ å¾—æ‰¾ä¸€å€‹èƒ½å¤ ä¼‘æ¯çš„åœ°æ–¹é–‰é—œã€‚\n");
                 
         if( !ultrap(me) )
-                return notify_fail("Äã»¹Ã»ÓĞµ½´ó×ÚÊ¦µÄ¾³½ç£¬»¹ÊÇºÃºÃÑ§Ï°¶ÍÁ¶°É¡£\n");
+                return notify_fail("ä½ é‚„æ²’æœ‰åˆ°å¤§å®—å¸«çš„å¢ƒç•Œï¼Œé‚„æ˜¯å¥½å¥½å­¸ç¿’é›ç…‰å§ã€‚\n");
 
         if( query("reborn/times", me)<1 )
-                return notify_fail("Äã»¹Ã»ÓĞ¾­¹ı×ªÊÀ£¬»¹ÊÇºÃºÃÑ§Ï°¶ÍÁ¶°É¡£\n");
+                return notify_fail("ä½ é‚„æ²’æœ‰ç¶“éè½‰ä¸–ï¼Œé‚„æ˜¯å¥½å¥½å­¸ç¿’é›ç…‰å§ã€‚\n");
 
         if( query("potential", me)-query("learned_points", me)<1000000 )
-                return notify_fail("ÄãµÄÇ±ÄÜ²»¹»£¬Ã»·¨±Õ¹ØĞŞĞĞ¡£\n");
+                return notify_fail("ä½ çš„æ½›èƒ½ä¸å¤ ï¼Œæ²’æ³•é–‰é—œä¿®è¡Œã€‚\n");
 
         if( query("qi", me)*100/query("max_qi", me)<90 )
-                return notify_fail("ÄãÏÖÔÚµÄÆøÌ«ÉÙÁË£¬ÎŞ·¨¾²ĞÄ±Õ¹Ø¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çš„æ°£å¤ªå°‘äº†ï¼Œç„¡æ³•éœå¿ƒé–‰é—œã€‚\n");
 
         if( query("jing", me)*100/query("max_jing", me)<90 )
-                return notify_fail("ÄãÏÖÔÚµÄ¾«Ì«ÉÙÁË£¬ÎŞ·¨¾²ĞÄ±Õ¹Ø¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çš„ç²¾å¤ªå°‘äº†ï¼Œç„¡æ³•éœå¿ƒé–‰é—œã€‚\n");
 
         if( query("max_neili", me)<4000 )
-                return notify_fail("Äã¾õµÃÄÚÁ¦ÆÄÓĞ²»×ã£¬¿´À´Ä¿Ç°»¹ÄÑÒÔ"
-                                   "½øĞĞ³¤Ê±¼äµÄ±Õ¹ØĞŞÁ¶¡£\n");
+                return notify_fail("ä½ è¦ºå¾—å…§åŠ›é —æœ‰ä¸è¶³ï¼Œçœ‹ä¾†ç›®å‰é‚„é›£ä»¥"
+                                   "é€²è¡Œé•·æ™‚é–“çš„é–‰é—œä¿®ç…‰ã€‚\n");
 
         if( query("neili", me)*100/query("max_neili", me)<90 )
-                return notify_fail("ÄãÏÖÔÚµÄÄÚÁ¦Ì«ÉÙÁË£¬ÎŞ·¨¾²ĞÄ±Õ¹Ø¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çš„å…§åŠ›å¤ªå°‘äº†ï¼Œç„¡æ³•éœå¿ƒé–‰é—œã€‚\n");
 
         if( !mapp(skills_map = me->query_skills() ) || sizeof(skills_map) < 1 )
-                return notify_fail("Äã»¹ÊÇÏÈÈ¥Ñ§µã¹¦·òÔÙÀ´°É¡£\n");
+                return notify_fail("ä½ é‚„æ˜¯å…ˆå»å­¸é»åŠŸå¤«å†ä¾†å§ã€‚\n");
 
         if( undefinedp(skills_map[arg]) || skills_map[arg] < 1 )
-                return notify_fail("ÄãÁ¬»ù±¾µÄ" + to_chinese(arg) + "¶¼²»»á£¬´ÓºÎÌ¸Æğ£¿\n");
+                return notify_fail("ä½ é€£åŸºæœ¬çš„" + to_chinese(arg) + "éƒ½ä¸æœƒï¼Œå¾ä½•è«‡èµ·ï¼Ÿ\n");
 
         if( me->query_skill("martial-cognize", 1) < NEED_LVL )
-                return notify_fail("ÄãµÄÎäÑ§ĞŞÑøµÄĞŞÎª»¹²»¹»¸ßÉî¡£\n");
+                return notify_fail("ä½ çš„æ­¦å­¸ä¿®é¤Šçš„ä¿®ç‚ºé‚„ä¸å¤ é«˜æ·±ã€‚\n");
 
         if( skills_map[arg] < NEED_LVL )
-                return notify_fail("ÄãµÄ" + to_chinese(arg) + "µÄĞŞÎª»¹²»¹»¸ßÉî¡£\n");
+                return notify_fail("ä½ çš„" + to_chinese(arg) + "çš„ä¿®ç‚ºé‚„ä¸å¤ é«˜æ·±ã€‚\n");
                                 
         if( SKILL_D(arg)->type() != "martial" )
-                return notify_fail("ÄãÎŞ·¨ÎªÕâÖÖÎä¹¦´´Ôì¾øÕĞ¡£\n");
+                return notify_fail("ä½ ç„¡æ³•ç‚ºé€™ç¨®æ­¦åŠŸå‰µé€ çµ•æ‹›ã€‚\n");
 
         dir = SKILL_D(arg) + "/";
 
         // if( file_size(dir) != -2 )
-        //        return notify_fail("ÄãÎŞ·¨ÎªÕâÖÖÎä¹¦´´Ôì¾øÕĞ¡£\n");
+        //        return notify_fail("ä½ ç„¡æ³•ç‚ºé€™ç¨®æ­¦åŠŸå‰µé€ çµ•æ‹›ã€‚\n");
                         
         /*
         if( SKILL_D(arg)->is_invent_skill() ) {
                 if( query("jieti/times", me)<2 )
-                        return notify_fail("ÄãÄ¿Ç°»¹ÎŞ·¨ÎªÕâÖÖ×Ô´´Îä¹¦´´Ôì¾øÕĞ¡£\n"); 
+                        return notify_fail("ä½ ç›®å‰é‚„ç„¡æ³•ç‚ºé€™ç¨®è‡ªå‰µæ­¦åŠŸå‰µé€ çµ•æ‹›ã€‚\n"); 
         }  
         */
  
@@ -220,7 +220,7 @@ int main(object me, string arg)
         
         // if( sizeof(types) != 1 )
         if( sizeof(types) < 1)
-                return notify_fail("ÄãÄ¿Ç°»¹ÎŞ·¨ÎªÕâÖÖ×Ô´´Îä¹¦´´Ôì¾øÕĞ¡£\n"); 
+                return notify_fail("ä½ ç›®å‰é‚„ç„¡æ³•ç‚ºé€™ç¨®è‡ªå‰µæ­¦åŠŸå‰µé€ çµ•æ‹›ã€‚\n"); 
                
         base_skill = types[0];
         skill = arg;
@@ -228,22 +228,22 @@ int main(object me, string arg)
         if( objectp(weapon=query_temp("weapon", me))){
                 if( member_array(base_skill, weapon_types) == -1 ) {
                         if (sizeof(types) == 1)
-                                return notify_fail("Äã±ØĞë¿ÕÊÖ²ÅÄÜ×Ô´´" + to_chinese(skill) + "µÄ¾øÕĞ¡£\n");
+                                return notify_fail("ä½ å¿…é ˆç©ºæ‰‹æ‰èƒ½è‡ªå‰µ" + to_chinese(skill) + "çš„çµ•æ‹›ã€‚\n");
                         else {
                                 for (i = 1; i < sizeof(types); i++) {
                                         base_skill = types[i];
                                         if( member_array(base_skill, weapon_types) != -1 ) {
-                                                flag = 1; // ¿ÉÄÃ±øÆ÷
+                                                flag = 1; // å¯æ‹¿å…µå™¨
                                                 break;
                                         }
                                 }
-                                if( flag != 1 ) return notify_fail("Äã±ØĞë¿ÕÊÖ²ÅÄÜ×Ô´´" + to_chinese(skill) + "µÄ¾øÕĞ¡£\n");
+                                if( flag != 1 ) return notify_fail("ä½ å¿…é ˆç©ºæ‰‹æ‰èƒ½è‡ªå‰µ" + to_chinese(skill) + "çš„çµ•æ‹›ã€‚\n");
                         }
                 }
                 if( member_array(base_skill, weapon_types) != -1 ) {
                         if( query("skill_type", weapon) != base_skill){
                                 if (sizeof(types) == 1)
-                                        return notify_fail("ÄãËùÊ¹ÓÃµÄÎäÆ÷²»¶Ô£¬ÎŞ·¨×Ô´´" + to_chinese(skill) + "µÄ¾øÕĞ¡£\n");
+                                        return notify_fail("ä½ æ‰€ä½¿ç”¨çš„æ­¦å™¨ä¸å°ï¼Œç„¡æ³•è‡ªå‰µ" + to_chinese(skill) + "çš„çµ•æ‹›ã€‚\n");
                                 else {
                                         for (i = 1; i < sizeof(types); i++) {
                                                 base_skill = types[i];  
@@ -253,7 +253,7 @@ int main(object me, string arg)
                                                 }
                                         }
                                         if( flag != 2 )
-                                                return notify_fail("ÄãËùÊ¹ÓÃµÄÎäÆ÷²»¶Ô£¬ÎŞ·¨×Ô´´" + to_chinese(skill) + "µÄ¾øÕĞ¡£\n");
+                                                return notify_fail("ä½ æ‰€ä½¿ç”¨çš„æ­¦å™¨ä¸å°ï¼Œç„¡æ³•è‡ªå‰µ" + to_chinese(skill) + "çš„çµ•æ‹›ã€‚\n");
                                 }
                         }
                 }
@@ -261,7 +261,7 @@ int main(object me, string arg)
         } else 
         if( member_array(base_skill, weapon_types) != -1 ) {
                 if (sizeof(types) == 1)
-                        return notify_fail("Äã±ØĞëÄÃÆğÎäÆ÷²ÅÄÜ¿ªÊ¼×Ô´´" + to_chinese(skill) + "µÄ¾øÕĞ¡£\n");
+                        return notify_fail("ä½ å¿…é ˆæ‹¿èµ·æ­¦å™¨æ‰èƒ½é–‹å§‹è‡ªå‰µ" + to_chinese(skill) + "çš„çµ•æ‹›ã€‚\n");
                 else {
                         for (i = 1; i < sizeof(types); i++) {
                                 base_skill = types[i]; 
@@ -270,7 +270,7 @@ int main(object me, string arg)
                                         break;
                                 }
                         }
-                        if( flag != 3 ) return notify_fail("Äã±ØĞëÄÃÆğÎäÆ÷²ÅÄÜ¿ªÊ¼×Ô´´" + to_chinese(skill) + "µÄ¾øÕĞ¡£\n");
+                        if( flag != 3 ) return notify_fail("ä½ å¿…é ˆæ‹¿èµ·æ­¦å™¨æ‰èƒ½é–‹å§‹è‡ªå‰µ" + to_chinese(skill) + "çš„çµ•æ‹›ã€‚\n");
                 }
         }                                
 
@@ -283,33 +283,33 @@ int main(object me, string arg)
         }
 
         if( sizeof(mut_skills) < 3 )
-                return notify_fail("ÄãµÄ" + valid_types[base_skill] + "ĞŞÎª»¹²»¹»¹ã²©£¬ÔÙÈ¥¶àÑ§Ï°Ñ§Ï°£¡\n");
+                return notify_fail("ä½ çš„" + valid_types[base_skill] + "ä¿®ç‚ºé‚„ä¸å¤ å»£åšï¼Œå†å»å¤šå­¸ç¿’å­¸ç¿’ï¼\n");
 
         mut_skills = filter_array(mut_skills, (: $(skills_map)[$1] >= NEED_LVL :));
 
         if( sizeof(mut_skills) < 3 )
-                return notify_fail("ÄãÔÚ" + valid_types[base_skill] + "·½ÃæµÄĞŞÎª»¹²»¹»¸ßÉî¡£\n");
+                return notify_fail("ä½ åœ¨" + valid_types[base_skill] + "æ–¹é¢çš„ä¿®ç‚ºé‚„ä¸å¤ é«˜æ·±ã€‚\n");
         
         if( sizeof(query("create/"+skill, me)) >= 3 )
-                return notify_fail("ÄãµÄ" + to_chinese(skill) + 
-                                   "¾øÕĞÊıÁ¿ÒÑ¾­µ½ÁË¼«ÏŞ£¬ÎŞ·¨ÔÙ×Ô´´ĞÂ¾øÕĞ¡£\n");
+                return notify_fail("ä½ çš„" + to_chinese(skill) + 
+                                   "çµ•æ‹›æ•¸é‡å·²ç¶“åˆ°äº†æ¥µé™ï¼Œç„¡æ³•å†è‡ªå‰µæ–°çµ•æ‹›ã€‚\n");
         delete_temp("create", me);
                                 
                 
-        message_vision("$NÅÌÏ¥×øÏÂ£¬¿ªÊ¼¿àË¼Ú¤Ïë£¬×¨ĞÄµÄ×Ô´´" + to_chinese(skill) + "¾øÕĞ¡£\n", me);              
+        message_vision("$Nç›¤è†åä¸‹ï¼Œé–‹å§‹è‹¦æ€å†¥æƒ³ï¼Œå°ˆå¿ƒçš„è‡ªå‰µ" + to_chinese(skill) + "çµ•æ‹›ã€‚\n", me);              
 
         set_temp("create/skill", skill, me);
         set_temp("create/base_skill", base_skill, me);
         set_temp("create/mut_skills", mut_skills, me);
         
-        me->set_short_desc("ÕıÔÚÈ«Éñ¹á×¢µØ×Ô´´" + to_chinese(skill) + "¾øÕĞ¡£");
+        me->set_short_desc("æ­£åœ¨å…¨ç¥è²«æ³¨åœ°è‡ªå‰µ" + to_chinese(skill) + "çµ•æ‹›ã€‚");
 
         me->start_busy(bind((:call_other, __FILE__, "inventing" :), me),
                        bind((:call_other, __FILE__, "halt_inventing" :), me));
 
         CHANNEL_D->do_channel(this_object(), "rumor",
-                              sprintf("%s(%s)¿ªÊ¼±Õ¹Ø×Ô´´%s¡£\n",
-                              me->name(1),query("id", me),to_chinese(skill)+"ĞÂ¾øÕĞ"));
+                              sprintf("%s(%s)é–‹å§‹é–‰é—œè‡ªå‰µ%sã€‚\n",
+                              me->name(1),query("id", me),to_chinese(skill)+"æ–°çµ•æ‹›"));
         return 1;
 }
 
@@ -323,8 +323,8 @@ int inventing(object me)
         pot=query("potential", me);
         if( pot <= query("learned_points", me) )
         {
-                tell_object(me, "ÄãµÄÇ±ÄÜºÄ¾¡£¬È´Ò»ÎŞËù»ñ£¬Ê§ÍûµØÕ¾ÁË¡£\n");
-                message_vision("$NÕö¿ªË«Ä¿£¬»º»ºÍÂÁËÒ»¿ÚÆø£¬Õ¾ÁËÆğÀ´¡£\n", me);
+                tell_object(me, "ä½ çš„æ½›èƒ½è€—ç›¡ï¼Œå»ä¸€ç„¡æ‰€ç²ï¼Œå¤±æœ›åœ°ç«™äº†ã€‚\n");
+                message_vision("$Nçœé–‹é›™ç›®ï¼Œç·©ç·©åäº†ä¸€å£æ°£ï¼Œç«™äº†èµ·ä¾†ã€‚\n", me);
                 me->set_short_desc(0);
                 return 0;
         }
@@ -345,23 +345,23 @@ int inventing(object me)
                         chinese_skills += ({ to_chinese(mut_skill)});
                 }
                 
-                message_sort("ÃÍÈ»¼ä$NÄÔÖĞÂÔ¹ıÖÖÖÖÕĞÊ½£¬ÈÚºÏ" + 
-                                sprintf( HIG"%s" NOR "ÒÔ¼°" HIG "%s"NOR, 
-                                implode(chinese_skills[0..sizeof(chinese_skills)-2], NOR "¡¢" HIG), 
+                message_sort("çŒ›ç„¶é–“$Nè…¦ä¸­ç•¥éç¨®ç¨®æ‹›å¼ï¼Œèåˆ" + 
+                                sprintf( HIG"%s" NOR "ä»¥åŠ" HIG "%s"NOR, 
+                                implode(chinese_skills[0..sizeof(chinese_skills)-2], NOR "ã€" HIG), 
                                 chinese_skills[sizeof(chinese_skills)-1])
-                                + "Õâ" + chinese_number(sizeof(mut_skills)) + "ÖÖÎä¹¦Ö®¾«ËèÎª"
-                                + to_chinese(skill) + "´´³öĞÂµÄ¾øÕĞ\n", me);
+                                + "é€™" + chinese_number(sizeof(mut_skills)) + "ç¨®æ­¦åŠŸä¹‹ç²¾é«“ç‚º"
+                                + to_chinese(skill) + "å‰µå‡ºæ–°çš„çµ•æ‹›\n", me);
 
                 me->clear_written();
                 me->set_short_desc(0);   
                 delete_temp("create", me);
-                tell_object(me, HIW "\nÈÎºÎÊ±ºòÊäÈë ~q Ôò¿ÉÖÕÖ¹×Ô´´¾øÕĞ¡£\n" NOR);
-                tell_object(me, HIW "\n\nÄãÕıÔÚÎª" + to_chinese(skill) + "×Ô´´ĞÂµÄ¾øÕĞ¡£\n" NOR
-                                "Äã¿ÉÒÔÎªÕâ¸ö¾øÕĞÑ¡Ôñ´´½¨ÒÔÏÂÀàĞÍ\n\n" NOR);                
-                tell_object(me, "\t1> ´´½¨Ò»¸öÎªÁ¬ÕĞµÄ¾øÕĞ\n");
-                tell_object(me, "\t2> ´´½¨Ò»¸öÎªµ¥ÕĞµÄ¾øÕĞ\n");
-                tell_object(me, "\t3> ´´½¨Ò»¸öÎª»ìºÏÕĞµÄ¾øÕĞ\n");                   
-                tell_object(me, "\t3> ÇëÖØĞÂÑ¡Ôñ1-3£º");       
+                tell_object(me, HIW "\nä»»ä½•æ™‚å€™è¼¸å…¥ ~q å‰‡å¯çµ‚æ­¢è‡ªå‰µçµ•æ‹›ã€‚\n" NOR);
+                tell_object(me, HIW "\n\nä½ æ­£åœ¨ç‚º" + to_chinese(skill) + "è‡ªå‰µæ–°çš„çµ•æ‹›ã€‚\n" NOR
+                                "ä½ å¯ä»¥ç‚ºé€™å€‹çµ•æ‹›é¸æ“‡å‰µå»ºä»¥ä¸‹é¡å‹\n\n" NOR);                
+                tell_object(me, "\t1> å‰µå»ºä¸€å€‹ç‚ºé€£æ‹›çš„çµ•æ‹›\n");
+                tell_object(me, "\t2> å‰µå»ºä¸€å€‹ç‚ºå–®æ‹›çš„çµ•æ‹›\n");
+                tell_object(me, "\t3> å‰µå»ºä¸€å€‹ç‚ºæ··åˆæ‹›çš„çµ•æ‹›\n");                   
+                tell_object(me, "\t3> è«‹é‡æ–°é¸æ“‡1-3ï¼š");       
                     
                 input_to( (: get_perform_model :), me, base_skill, skill );
                 return 0;
@@ -382,8 +382,8 @@ int inventing(object me)
                 msgs += ({ get_skill_name(me, sk_tmp) });
         }
 
-        msg = msga[random(sizeof(msga))] + sprintf("%s" NOR "ÒÔ¼°%s", 
-              implode(msgs[0..sizeof(msgs)-2], NOR "¡¢"), msgs[sizeof(msgs)-1])
+        msg = msga[random(sizeof(msga))] + sprintf("%s" NOR "ä»¥åŠ%s", 
+              implode(msgs[0..sizeof(msgs)-2], NOR "ã€"), msgs[sizeof(msgs)-1])
               + NOR + msgb[random(sizeof(msgb))] + "\n"NOR;
 
         message_sort(msg, me);
@@ -395,8 +395,8 @@ int halt_inventing(object me)
 {
         me->set_short_desc(0);
         delete_temp("create", me);
-        tell_object(me, HIG "ÄãÖĞÖ¹ÁË×Ô´´¾øÕĞ¡£\n" NOR);
-        message_vision(HIY "$N" HIY "ÆğÉíÕ¾Á¢£¬ÉñÇé³äÂúÁËÊ§Íû¡£\n\n" NOR, me);
+        tell_object(me, HIG "ä½ ä¸­æ­¢äº†è‡ªå‰µçµ•æ‹›ã€‚\n" NOR);
+        message_vision(HIY "$N" HIY "èµ·èº«ç«™ç«‹ï¼Œç¥æƒ…å……æ»¿äº†å¤±æœ›ã€‚\n\n" NOR, me);
         return 1;
 }
 
@@ -420,21 +420,21 @@ string get_skill_name(object me, string skill)
 
         action = actions["action"];
 
-        if( strsrch(action, "¡¸") != -1 && strsrch(action, "¡¹") != -1 ) {
-                a = strsrch(action, "¡¸");
-                b = strsrch(action, "¡¹");
+        if( strsrch(action, "ã€Œ") != -1 && strsrch(action, "ã€") != -1 ) {
+                a = strsrch(action, "ã€Œ");
+                b = strsrch(action, "ã€");
                 skill_name = action[a..b+1];
-                return HIG + to_chinese(skill) + NOR + (random(2)?"µÄÒ»ÕĞ"YEL:"ÖĞµÄ"YEL) + skill_name + NOR;
-        } else if( strsrch(action, "¡¾") != -1 && strsrch(action, "¡¿") != -1 ) {
-                a = strsrch(action, "¡¾");
-                b = strsrch(action, "¡¿");
+                return HIG + to_chinese(skill) + NOR + (random(2)?"çš„ä¸€æ‹›"YEL:"ä¸­çš„"YEL) + skill_name + NOR;
+        } else if( strsrch(action, "ã€") != -1 && strsrch(action, "ã€‘") != -1 ) {
+                a = strsrch(action, "ã€");
+                b = strsrch(action, "ã€‘");
                 skill_name = action[a..b+1];
-                return HIG + to_chinese(skill) + NOR + (random(2)?"µÄÒ»ÕĞ"YEL:"ÖĞµÄ"YEL) + skill_name + NOR;
-        } else if( strsrch(action, "¡°") != -1 && strsrch(action, "¡±") != -1 ) {
-                a = strsrch(action, "¡°");
-                b = strsrch(action, "¡±");
+                return HIG + to_chinese(skill) + NOR + (random(2)?"çš„ä¸€æ‹›"YEL:"ä¸­çš„"YEL) + skill_name + NOR;
+        } else if( strsrch(action, "â€œ") != -1 && strsrch(action, "â€") != -1 ) {
+                a = strsrch(action, "â€œ");
+                b = strsrch(action, "â€");
                 skill_name = action[a..b+1];
-                return HIG + to_chinese(skill) + NOR + (random(2)?"µÄÒ»ÕĞ"YEL:"ÖĞµÄ"YEL) + skill_name + NOR;
+                return HIG + to_chinese(skill) + NOR + (random(2)?"çš„ä¸€æ‹›"YEL:"ä¸­çš„"YEL) + skill_name + NOR;
         } else return HIG + to_chinese(skill);
 }
 
@@ -445,18 +445,18 @@ void get_perform_model(string arg, object me, string base_skill, string skill)
         
         if( arg == "" || arg == "~q" )
         {
-                tell_object(me, "Äã·ÅÆúÁË×Ô´´¾øÕĞ¡£\n"); 
+                tell_object(me, "ä½ æ”¾æ£„äº†è‡ªå‰µçµ•æ‹›ã€‚\n"); 
                 return;
         }
                 
         n = to_int(atoi(arg));
         if (n < 1 || n > 3)
         {
-                tell_object(me, "¶Ô²»Æğ£¬ÄúÖ»ÄÜÑ¡Ôñ1-3£¬°´ÏÂ»Ø³µÖ±½ÓÑ¡ÔñÁ¬ÕÕ¡£\n\n");
-                tell_object(me, "\t1> ´´½¨Ò»¸öÎªÁ¬ÕĞµÄ¾øÕĞ\n");
-                tell_object(me, "\t2> ´´½¨Ò»¸öÎªµ¥ÕĞµÄ¾øÕĞ\n");
-                tell_object(me, "\t3> ´´½¨Ò»¸öÎª»ìºÏÕĞµÄ¾øÕĞ\n");   
-                tell_object(me, "\t3> ÇëÖØĞÂÑ¡Ôñ1-3£º");       
+                tell_object(me, "å°ä¸èµ·ï¼Œæ‚¨åªèƒ½é¸æ“‡1-3ï¼ŒæŒ‰ä¸‹å›è»Šç›´æ¥é¸æ“‡é€£ç…§ã€‚\n\n");
+                tell_object(me, "\t1> å‰µå»ºä¸€å€‹ç‚ºé€£æ‹›çš„çµ•æ‹›\n");
+                tell_object(me, "\t2> å‰µå»ºä¸€å€‹ç‚ºå–®æ‹›çš„çµ•æ‹›\n");
+                tell_object(me, "\t3> å‰µå»ºä¸€å€‹ç‚ºæ··åˆæ‹›çš„çµ•æ‹›\n");   
+                tell_object(me, "\t3> è«‹é‡æ–°é¸æ“‡1-3ï¼š");       
                 input_to((: get_perform_model :), me, base_skill, skill);
                 return;
         }
@@ -464,21 +464,21 @@ void get_perform_model(string arg, object me, string base_skill, string skill)
          switch(n)
         {
         case 1:
-                model = "Á¬ÕĞĞÍ";
+                model = "é€£æ‹›å‹";
                 break;
         case 2:
-                model = "µ¥ÕĞĞÍ";
+                model = "å–®æ‹›å‹";
                 break;
         case 3:
-                model = "»ìºÏÕĞĞÍ";
+                model = "æ··åˆæ‹›å‹";
                 break;
         }
 
-        tell_object(me, HIW "\n\n\nÄãÕıÔÚÎª" + to_chinese(skill) + "×Ô´´³öÁË" + model + "µÄ¾øÕĞ¡£\n" NOR
-                        "Äã¿ÉÒÔÎªÕâ¸ö¾øÕĞÈ¡Ò»¸öÃû×Ö\n\n"
-                        HIY "¸ñÊ½£º" HIC "<Ó¢ÎÄÃû> <ÖĞÎÄÃû>\n\n" NOR
-                        HIW "ÎğÓÃÉ§ÈÅĞÔ»ò²»ÑÅµÄÃû×Ö£¬·ñÔò½«»á±»É¾³ı¡£\n" NOR
-                        "ÇëÊäÈë£º");
+        tell_object(me, HIW "\n\n\nä½ æ­£åœ¨ç‚º" + to_chinese(skill) + "è‡ªå‰µå‡ºäº†" + model + "çš„çµ•æ‹›ã€‚\n" NOR
+                        "ä½ å¯ä»¥ç‚ºé€™å€‹çµ•æ‹›å–ä¸€å€‹åå­—\n\n"
+                        HIY "æ ¼å¼ï¼š" HIC "<è‹±æ–‡å> <ä¸­æ–‡å>\n\n" NOR
+                        HIW "å‹¿ç”¨é¨·æ“¾æ€§æˆ–ä¸é›…çš„åå­—ï¼Œå¦å‰‡å°‡æœƒè¢«åˆªé™¤ã€‚\n" NOR
+                        "è«‹è¼¸å…¥ï¼š");
         input_to( (: get_perform_name :), me, base_skill, skill, model );
 }
 
@@ -489,20 +489,20 @@ void get_perform_name(string arg, object me, string base_skill, string skill, st
                        
         if( arg == "" || arg == "~q" )
         {
-                tell_object(me, "Äã·ÅÆúÁË×Ô´´¾øÕĞ¡£\n"); 
+                tell_object(me, "ä½ æ”¾æ£„äº†è‡ªå‰µçµ•æ‹›ã€‚\n"); 
                 return;
         }
 
         if( sscanf(arg, "%s %s", arg, c_name) != 2 )
         {
-                tell_object(me, "¶Ô²»Æğ£¬ÇëÓÃ£º<Ó¢ÎÄÃû> <ÖĞÎÄÃû> µÄ¸ñÊ½ÊäÈë¡£\nÇëÖØĞÂÊäÈë£º");
+                tell_object(me, "å°ä¸èµ·ï¼Œè«‹ç”¨ï¼š<è‹±æ–‡å> <ä¸­æ–‡å> çš„æ ¼å¼è¼¸å…¥ã€‚\nè«‹é‡æ–°è¼¸å…¥ï¼š");
                 input_to((: get_perform_name :), me, base_skill, skill, model);
                 return;
         }
         
         if ((strlen(arg) < 3) || (strlen(arg) > 10))
         {
-                tell_object(me, "¶Ô²»Æğ£¬Ó¢ÎÄÃû±ØĞëÊÇ 3 µ½ 10 ¸öÓ¢ÎÄ×ÖÄ¸¡£\nÇëÖØĞÂÊäÈë£º");
+                tell_object(me, "å°ä¸èµ·ï¼Œè‹±æ–‡åå¿…é ˆæ˜¯ 3 åˆ° 10 å€‹è‹±æ–‡å­—æ¯ã€‚\nè«‹é‡æ–°è¼¸å…¥ï¼š");
                 input_to((: get_perform_name :), me, base_skill, skill, model);
                 return;
         }
@@ -511,7 +511,7 @@ void get_perform_name(string arg, object me, string base_skill, string skill, st
         {
                 if (arg[i] < 'a' || arg[i] > 'z' )
                 {
-                        tell_object(me, "¶Ô²»Æğ£¬Ó¢ÎÄÃûÖ»ÄÜÓÃÓ¢ÎÄ×ÖÄ¸¡£\nÇëÖØĞÂÊäÈë£º");
+                        tell_object(me, "å°ä¸èµ·ï¼Œè‹±æ–‡ååªèƒ½ç”¨è‹±æ–‡å­—æ¯ã€‚\nè«‹é‡æ–°è¼¸å…¥ï¼š");
                         input_to((: get_perform_name :), me, base_skill, skill, model);
                         return;
                 }
@@ -526,7 +526,7 @@ void get_perform_name(string arg, object me, string base_skill, string skill, st
                 file += "perform/";                       
         file += e_name;
         if( file_size(file + SYC) > 0 || get_object(file) ) {
-                        tell_object(me, "¶Ô²»Æğ£¬ÒÑ¾­ÓĞ("+ arg +")ÕâÖÖ¾øÕĞÎÄ¼ş´æÔÚ¡£\nÇëÖØĞÂÊäÈë£º");
+                        tell_object(me, "å°ä¸èµ·ï¼Œå·²ç¶“æœ‰("+ arg +")é€™ç¨®çµ•æ‹›æ–‡ä»¶å­˜åœ¨ã€‚\nè«‹é‡æ–°è¼¸å…¥ï¼š");
                         input_to((: get_perform_name :), me, base_skill, skill, model);
                         return;
         }
@@ -535,33 +535,33 @@ void get_perform_name(string arg, object me, string base_skill, string skill, st
                 c_name = LANGUAGE_D->toGB(c_name);
                 
         if( !is_chinese(c_name) ) {
-                        tell_object(me, "¶Ô²»Æğ£¬ÇëÓÃ¡¾ÖĞÎÄ¡¿×öÖĞÎÄÃû¡£\nÇëÖØĞÂÊäÈë£º");
+                        tell_object(me, "å°ä¸èµ·ï¼Œè«‹ç”¨ã€ä¸­æ–‡ã€‘åšä¸­æ–‡åã€‚\nè«‹é‡æ–°è¼¸å…¥ï¼š");
                         input_to((: get_perform_name :), me, base_skill, skill, model);
                         return;
         }
 
         if (member_array(c_name, banned_name) % 2 == 0)
         {
-                tell_object(me, "¶Ô²»Æğ£¬ÕâÖÖÃû³Æ»áÔì³ÉÆäËûÈËµÄÀ§ÈÅ¡£\nÇëÖØĞÂÊäÈë£º");
+                tell_object(me, "å°ä¸èµ·ï¼Œé€™ç¨®åç¨±æœƒé€ æˆå…¶ä»–äººçš„å›°æ“¾ã€‚\nè«‹é‡æ–°è¼¸å…¥ï¼š");
                 input_to((: get_perform_name :), me, base_skill, skill, model);
                 return;
         }
 
         if( strlen(c_name) > 20 ) {
-                tell_object(me, "¶Ô²»Æğ£¬ÄúÉèÖÃµÄÖĞÎÄÃûÌ«³¤£¬ÇëÑ¡Ò»¸ö¾«Õ¿Ò»µãµÄÃû×Ö¡£\nÇëÖØĞÂÊäÈë£º");
+                tell_object(me, "å°ä¸èµ·ï¼Œæ‚¨è¨­ç½®çš„ä¸­æ–‡åå¤ªé•·ï¼Œè«‹é¸ä¸€å€‹ç²¾æ¹›ä¸€é»çš„åå­—ã€‚\nè«‹é‡æ–°è¼¸å…¥ï¼š");
                 input_to((: get_perform_name :), me, base_skill, skill, model);
                 return;
         }
         
-        tell_object(me, HIW "\n\n\nÄú³É¹¦Îª" + to_chinese(skill) + "ĞÂ¾øÕĞÉèÖÃºÃ¾øÕĞÃû" 
-                        HIW + c_name + "(" + e_name + ")" HIW "¡£\n" NOR);
+        tell_object(me, HIW "\n\n\næ‚¨æˆåŠŸç‚º" + to_chinese(skill) + "æ–°çµ•æ‹›è¨­ç½®å¥½çµ•æ‹›å" 
+                        HIW + c_name + "(" + e_name + ")" HIW "ã€‚\n" NOR);
                         
-        tell_object(me, HIC "\n×¢ÒâÎÊÌâ: $N ´ú±íÄã $n ´ú±íµĞÈË $w ´ú±íÄãµÄÎäÆ÷ \n\n" NOR);
-        tell_object(me, HIC "ÀıÈç£º(È­½ÅÀà) \n" NOR);
-        tell_object(me, HIM "$N" HIM "Ò»ÉùÅ­º¿£¬½«Õ½ÉñĞÄ¾­ÌáÔË¼«ÖÁ£¬Ë«È­¶ÙÊ±Ğ¯×ÅÀ×öªÍò¾ûÖ®ÊÆÃÍ¹áÏò$n" HIM "¡£\n" NOR);
-        tell_object(me, HIC "ÀıÈç£º(ÎäÆ÷Àà)\n" NOR); 
-        tell_object(me, HIM "$N" HIM "ÊÖÖĞ$wº®Æø±ÆÈË£¬µ¶ÉíËºÁÑ¿ÕÆø£¬Æ¬Æ¬Ñ©»¨Æ®Âä£¬µ¶Î´ÖÁÆøÏÈ¼°£¬$n" HIM "Ã¼Ã«¶¼ÃÉÉÏÁË±¡±¡°×Ëª£¡\n\n" NOR);
-        tell_object(me, HIC "ÇëÊäÈë·¢ÕĞÊ±ÃèÊö£º£¨³¤¶È²»³¬¹ı200¸öºº×Ö£©\n" NOR);                         
+        tell_object(me, HIC "\næ³¨æ„å•é¡Œ: $N ä»£è¡¨ä½  $n ä»£è¡¨æ•µäºº $w ä»£è¡¨ä½ çš„æ­¦å™¨ \n\n" NOR);
+        tell_object(me, HIC "ä¾‹å¦‚ï¼š(æ‹³è…³é¡) \n" NOR);
+        tell_object(me, HIM "$N" HIM "ä¸€è²æ€’åšï¼Œå°‡æˆ°ç¥å¿ƒç¶“æé‹æ¥µè‡³ï¼Œé›™æ‹³é “æ™‚æ”œè‘—é›·éœ†è¬éˆä¹‹å‹¢çŒ›è²«å‘$n" HIM "ã€‚\n" NOR);
+        tell_object(me, HIC "ä¾‹å¦‚ï¼š(æ­¦å™¨é¡)\n" NOR); 
+        tell_object(me, HIM "$N" HIM "æ‰‹ä¸­$wå¯’æ°£é€¼äººï¼Œåˆ€èº«æ’•è£‚ç©ºæ°£ï¼Œç‰‡ç‰‡é›ªèŠ±é£„è½ï¼Œåˆ€æœªè‡³æ°£å…ˆåŠï¼Œ$n" HIM "çœ‰æ¯›éƒ½è’™ä¸Šäº†è–„è–„ç™½éœœï¼\n\n" NOR);
+        tell_object(me, HIC "è«‹è¼¸å…¥ç™¼æ‹›æ™‚æè¿°ï¼šï¼ˆé•·åº¦ä¸è¶…é200å€‹æ¼¢å­—ï¼‰\n" NOR);                         
         me->edit(bind((: call_other, __FILE__, "get_perform_msg1", me, base_skill, skill, model, c_name, e_name :), me));
 }
 
@@ -570,13 +570,13 @@ void get_perform_msg1(object me, string base_skill, string skill, string model, 
         string pfm_attack_msg;
                         
         if( !stringp( msg ) || msg == "" ) {
-                tell_object(me, "ÕâÌ×Îä¹¦¾øÕĞ²»¿ÉÒÔÃ»ÓĞ¾øÕĞÃèÊö£¡\n");
+                tell_object(me, "é€™å¥—æ­¦åŠŸçµ•æ‹›ä¸å¯ä»¥æ²’æœ‰çµ•æ‹›æè¿°ï¼\n");
                 me->edit(bind((: call_other, __FILE__, "get_perform_msg1", me, base_skill, skill, model, c_name, e_name :), me));
                 return;
         }
         else {
                 if( strlen(msg) > 400 ) {
-                        tell_object(me, "ÄúÉè¶¨µÄÃèÊöÌ«³¤ÁË£¬ÇëÉè¶¨Ò»¸ö¾«¼òµÄÃèÊö¡£\n");
+                        tell_object(me, "æ‚¨è¨­å®šçš„æè¿°å¤ªé•·äº†ï¼Œè«‹è¨­å®šä¸€å€‹ç²¾ç°¡çš„æè¿°ã€‚\n");
                         me->edit(bind((: call_other, __FILE__, "get_perform_msg1", me, base_skill, skill, model, c_name, e_name :), me));
                         return;
                 }
@@ -584,19 +584,19 @@ void get_perform_msg1(object me, string base_skill, string skill, string model, 
 
         msg = replace_string(msg, "\"", "");
         msg = replace_string(msg, "\n", "");
-        msg = replace_string(msg, "$w", "ÎäÆ÷");
-        msg = replace_string(msg, "Äã", "$N");
+        msg = replace_string(msg, "$w", "æ­¦å™¨");
+        msg = replace_string(msg, "ä½ ", "$N");
         msg = filter_color(msg);
                      
         pfm_attack_msg = msg;
                               
         tell_object(me, HIC "\nOK\n" NOR); 
-        tell_object(me, HIC "\n×¢ÒâÎÊÌâ: $N ´ú±íÄã $n ´ú±íµĞÈË $w ´ú±íÄãµÄÎäÆ÷ \n\n" NOR);
-        tell_object(me, HIC "ÀıÈç£º(È­½ÅÀà) \n" NOR);
-        tell_object(me, HIM "½á¹û$n" HIM "ÉÁ±Ü²»¼°£¬$N" HIM "µÄÈ­Á¦ÕÆ¾¢¶ÙÊ±Í¸Ìå¶øÈë£¬¿ÚÖĞÏÊÑª¿ñÅç£¬Á¬ÍËÊı²½¡£\n" NOR);
-        tell_object(me, HIC "ÀıÈç£º(ÎäÆ÷Àà)\n" NOR); 
-        tell_object(me, HIM "Ö»¼û$n" HIM "Ò»Éù²Ò½Ğ£¬ĞØ¿Ú¸øÅü¿ªÒ»¸ö¾Ş´óµÄ¿Ú×Ó£¬ÏÊÑªĞÚÓ¿Åç³ö£¡\n\n" NOR);
-        tell_object(me, HIC "ÇëÊäÈë¾øÕĞ´òÖĞÊ±ÃèÊö£º£¨³¤¶È²»³¬¹ı100¸öºº×Ö£©\n" NOR);    
+        tell_object(me, HIC "\næ³¨æ„å•é¡Œ: $N ä»£è¡¨ä½  $n ä»£è¡¨æ•µäºº $w ä»£è¡¨ä½ çš„æ­¦å™¨ \n\n" NOR);
+        tell_object(me, HIC "ä¾‹å¦‚ï¼š(æ‹³è…³é¡) \n" NOR);
+        tell_object(me, HIM "çµæœ$n" HIM "é–ƒé¿ä¸åŠï¼Œ$N" HIM "çš„æ‹³åŠ›æŒå‹é “æ™‚é€é«”è€Œå…¥ï¼Œå£ä¸­é®®è¡€ç‹‚å™´ï¼Œé€£é€€æ•¸æ­¥ã€‚\n" NOR);
+        tell_object(me, HIC "ä¾‹å¦‚ï¼š(æ­¦å™¨é¡)\n" NOR); 
+        tell_object(me, HIM "åªè¦‹$n" HIM "ä¸€è²æ…˜å«ï¼Œèƒ¸å£çµ¦åŠˆé–‹ä¸€å€‹å·¨å¤§çš„å£å­ï¼Œé®®è¡€æ´¶æ¹§å™´å‡ºï¼\n\n" NOR);
+        tell_object(me, HIC "è«‹è¼¸å…¥çµ•æ‹›æ‰“ä¸­æ™‚æè¿°ï¼šï¼ˆé•·åº¦ä¸è¶…é100å€‹æ¼¢å­—ï¼‰\n" NOR);    
         me->edit(bind((: call_other, __FILE__, "get_perform_msg2", me, base_skill, skill, model, c_name, e_name, pfm_attack_msg :), me));
 }
 
@@ -605,13 +605,13 @@ void get_perform_msg2(object me, string base_skill, string skill, string model, 
         string pfm_succeed_msg;
         
         if( !stringp( msg ) || msg == "" ) {
-                tell_object(me, "ÕâÌ×Îä¹¦¾øÕĞ²»¿ÉÒÔÃ»ÓĞ¾øÕĞÃèÊö£¡\n");
+                tell_object(me, "é€™å¥—æ­¦åŠŸçµ•æ‹›ä¸å¯ä»¥æ²’æœ‰çµ•æ‹›æè¿°ï¼\n");
                 me->edit(bind((: call_other, __FILE__, "get_perform_msg2", me, base_skill, skill, model, c_name, e_name, pfm_attack_msg :), me));
                 return;
         }
         else {
                 if( strlen(msg) > 200 ) {
-                        tell_object(me, "ÄúÉè¶¨µÄÃèÊöÌ«³¤ÁË£¬ÇëÉè¶¨Ò»¸ö¾«¼òµÄÃèÊö¡£\n");
+                        tell_object(me, "æ‚¨è¨­å®šçš„æè¿°å¤ªé•·äº†ï¼Œè«‹è¨­å®šä¸€å€‹ç²¾ç°¡çš„æè¿°ã€‚\n");
                         me->edit(bind((: call_other, __FILE__, "get_perform_msg2", me, base_skill, skill, model, c_name, e_name, pfm_attack_msg :), me));
                         return;
                 }
@@ -619,19 +619,19 @@ void get_perform_msg2(object me, string base_skill, string skill, string model, 
  
         msg = replace_string(msg, "\"", "");
         msg = replace_string(msg, "\n", "");
-        msg = replace_string(msg, "$w", "ÎäÆ÷");
-        msg = replace_string(msg, "Äã", "$N");
+        msg = replace_string(msg, "$w", "æ­¦å™¨");
+        msg = replace_string(msg, "ä½ ", "$N");
         msg = filter_color(msg);
                
         pfm_succeed_msg = msg;
                               
         tell_object(me, HIC "\nOK\n" NOR);   
-        tell_object(me, HIC "\n×¢ÒâÎÊÌâ: $P ´ú±íÄã $p ´ú±íµĞÈË $w ´ú±íÄãµÄÎäÆ÷ \n" NOR);
-        tell_object(me, HIC "ÀıÈç£º(È­½ÅÀà) \n" NOR);
-        tell_object(me, HIM "¿ÉÊÇ$p" HIM "Ê¶ÆÆÁË$P" HIM "ÕâÒ»ÕĞ£¬Ğ±Ğ±Ò»Ô¾±Ü¿ª¡£\n" NOR);
-        tell_object(me, HIC "ÀıÈç£º(ÎäÆ÷Àà)\n" NOR); 
-        tell_object(me, HIM "$p" HIM "¼ûÊÆ²»Ãî£¬³éÉí¼±ÍË£¬ÏÕÏÕ±Ü¹ı$P" HIM "µÄÕâ¼ÇÉ±ÕĞ£¬³¾ÍÁ·ÉÑïÖĞ£¬µØÉÏÁÑ¿ªÁËÒ»µÀ´ó¿Ú×Ó£¡\n\n" NOR);        
-        tell_object(me, HIC "ÇëÊäÈë¾øÕĞÊ§ÎóÊ±ÃèÊö£º£¨³¤¶È²»³¬¹ı100¸öºº×Ö£©\n" NOR);   
+        tell_object(me, HIC "\næ³¨æ„å•é¡Œ: $P ä»£è¡¨ä½  $p ä»£è¡¨æ•µäºº $w ä»£è¡¨ä½ çš„æ­¦å™¨ \n" NOR);
+        tell_object(me, HIC "ä¾‹å¦‚ï¼š(æ‹³è…³é¡) \n" NOR);
+        tell_object(me, HIM "å¯æ˜¯$p" HIM "è­˜ç ´äº†$P" HIM "é€™ä¸€æ‹›ï¼Œæ–œæ–œä¸€èºé¿é–‹ã€‚\n" NOR);
+        tell_object(me, HIC "ä¾‹å¦‚ï¼š(æ­¦å™¨é¡)\n" NOR); 
+        tell_object(me, HIM "$p" HIM "è¦‹å‹¢ä¸å¦™ï¼ŒæŠ½èº«æ€¥é€€ï¼Œéšªéšªé¿é$P" HIM "çš„é€™è¨˜æ®ºæ‹›ï¼Œå¡µåœŸé£›æšä¸­ï¼Œåœ°ä¸Šè£‚é–‹äº†ä¸€é“å¤§å£å­ï¼\n\n" NOR);        
+        tell_object(me, HIC "è«‹è¼¸å…¥çµ•æ‹›å¤±èª¤æ™‚æè¿°ï¼šï¼ˆé•·åº¦ä¸è¶…é100å€‹æ¼¢å­—ï¼‰\n" NOR);   
         me->edit(bind((: call_other, __FILE__, "get_perform_msg3", me, base_skill, skill, model, c_name, e_name, pfm_attack_msg, pfm_succeed_msg :), me));
 }
 
@@ -640,13 +640,13 @@ void get_perform_msg3(object me, string base_skill, string skill, string model, 
         string pfm_fail_msg;
         
         if( !stringp( msg ) || msg == "" ) {
-                tell_object(me, "ÕâÌ×Îä¹¦¾øÕĞ²»¿ÉÒÔÃ»ÓĞ¾øÕĞÃèÊö£¡\n");
+                tell_object(me, "é€™å¥—æ­¦åŠŸçµ•æ‹›ä¸å¯ä»¥æ²’æœ‰çµ•æ‹›æè¿°ï¼\n");
                 me->edit(bind((: call_other, __FILE__, "get_perform_msg3", me, base_skill, skill, model, c_name, e_name, pfm_attack_msg, pfm_succeed_msg :), me));
                 return;
         }
         else {
                 if( strlen(msg) > 200 ) {
-                        tell_object(me, "ÄúÉè¶¨µÄÃèÊöÌ«³¤ÁË£¬ÇëÉè¶¨Ò»¸ö¾«¼òµÄÃèÊö¡£\n");
+                        tell_object(me, "æ‚¨è¨­å®šçš„æè¿°å¤ªé•·äº†ï¼Œè«‹è¨­å®šä¸€å€‹ç²¾ç°¡çš„æè¿°ã€‚\n");
                         me->edit(bind((: call_other, __FILE__, "get_perform_msg3", me, base_skill, skill, model, c_name, e_name, pfm_attack_msg, pfm_succeed_msg :), me));
                         return;
                 }
@@ -654,20 +654,20 @@ void get_perform_msg3(object me, string base_skill, string skill, string model, 
 
         msg = replace_string(msg, "\"", "");
         msg = replace_string(msg, "\n", "");
-        msg = replace_string(msg, "$w", "ÎäÆ÷");
-        msg = replace_string(msg, "Äã", "$N");
+        msg = replace_string(msg, "$w", "æ­¦å™¨");
+        msg = replace_string(msg, "ä½ ", "$N");
         msg = filter_color(msg);
                 
         pfm_fail_msg = msg;                            
         
-        tell_object(me, HIW "\nÄã³É¹¦µÄÎª" + to_chinese(skill) + "ĞÂ´´µÄ¾øÕĞÉèÖÃÒÔÏÂÏà¹ØĞÅÏ¢¡£\n\n" NOR
-                        HIC "¾øÕĞÀàĞÍ£º" NOR HIC + model + "\n" NOR
-                        HIC "ÖĞÎÄÃû³Æ£º" NOR HIC + c_name + "\n" NOR
-                        HIC "Ó¢ÎÄÃû³Æ£º" NOR HIC + e_name + "\n" NOR
-                        HIC "·¢ÕĞÃèÊö£º" NOR HIC + pfm_attack_msg + "\n" NOR
-                        HIC "´òÖĞÃèÊö£º" NOR HIC + pfm_succeed_msg + "\n" NOR
-                        HIC "Ê§ÎóÃèÊö£º" NOR HIC + pfm_fail_msg + "\n" NOR
-                        HIW "ÄãÈ·¶¨Âğ£¿(Y/N)" NOR);
+        tell_object(me, HIW "\nä½ æˆåŠŸçš„ç‚º" + to_chinese(skill) + "æ–°å‰µçš„çµ•æ‹›è¨­ç½®ä»¥ä¸‹ç›¸é—œä¿¡æ¯ã€‚\n\n" NOR
+                        HIC "çµ•æ‹›é¡å‹ï¼š" NOR HIC + model + "\n" NOR
+                        HIC "ä¸­æ–‡åç¨±ï¼š" NOR HIC + c_name + "\n" NOR
+                        HIC "è‹±æ–‡åç¨±ï¼š" NOR HIC + e_name + "\n" NOR
+                        HIC "ç™¼æ‹›æè¿°ï¼š" NOR HIC + pfm_attack_msg + "\n" NOR
+                        HIC "æ‰“ä¸­æè¿°ï¼š" NOR HIC + pfm_succeed_msg + "\n" NOR
+                        HIC "å¤±èª¤æè¿°ï¼š" NOR HIC + pfm_fail_msg + "\n" NOR
+                        HIW "ä½ ç¢ºå®šå—ï¼Ÿ(Y/N)" NOR);
                                 
         input_to( (: decide_input_perform :), me, base_skill, skill, model, c_name, e_name, pfm_attack_msg, pfm_succeed_msg, pfm_fail_msg );
 }
@@ -680,7 +680,7 @@ void decide_input_perform(string arg, object me, string base_skill, string skill
                 
         if( arg == "y" || arg == "Y" ) {
                 if( objectp( ob = get_object(SKILL_D(skill) + "/" + e_name) ) ) {
-                        tell_object(me, "BUG£¡ÇëÁªÏµÎ×Ê¦£¡\n");
+                        tell_object(me, "BUGï¼è«‹è¯ç³»å·«å¸«ï¼\n");
                         return;
                 }
                 finish_write_perform(me, base_skill, skill, model, c_name, e_name, pfm_attack_msg, pfm_succeed_msg, pfm_fail_msg);
@@ -702,8 +702,8 @@ void decide_input_perform(string arg, object me, string base_skill, string skill
                 
                 if( get_object(dir + e_name) ) {
                         CHANNEL_D->do_channel(this_object(), "rumor",
-                                           sprintf("%s(%s)½«ÉúÆ½ËùÑ§ÈÚºÏÎüÊÕ£¬Îª" NOR HIW + "¡¶" + to_chinese(skill) + "¡·" NOR
-                                           HIM "´´³öĞÂµÄ¾øÕĞ" NOR HIC + "¡¶" + c_name + "¡·" NOR + HIM "¡£" , 
+                                           sprintf("%s(%s)å°‡ç”Ÿå¹³æ‰€å­¸èåˆå¸æ”¶ï¼Œç‚º" NOR HIW + "ã€Š" + to_chinese(skill) + "ã€‹" NOR
+                                           HIM "å‰µå‡ºæ–°çš„çµ•æ‹›" NOR HIC + "ã€Š" + c_name + "ã€‹" NOR + HIM "ã€‚" , 
                                            me->name(1),query("id", me)));
                         
                         me->force_me("chat*admire2"+query("id", me));
@@ -717,12 +717,12 @@ void decide_input_perform(string arg, object me, string base_skill, string skill
                 }
 
         } else {
-                tell_object(me, HIW "\n\n\nÄãÎª" + to_chinese(skill) + "×Ô´´³öÁËĞÂµÄ¾øÕĞ¡£\n" NOR
-                                "Äã¿ÉÒÔÖØĞÂÑ¡ÔñÎªÕâ¸ö¾øÕĞÑ¡Ôñ´´½¨ÒÔÏÂÀàĞÍ\n\n" NOR);      
-                tell_object(me, "\t1> ´´½¨Ò»¸öÎªÁ¬ÕĞµÄ¾øÕĞ\n");
-                tell_object(me, "\t2> ´´½¨Ò»¸öÎªµ¥ÕĞµÄ¾øÕĞ\n");
-                tell_object(me, "\t3> ´´½¨Ò»¸öÎª»ìºÏÕĞµÄ¾øÕĞ\n");   
-                tell_object(me, "\t3> ÇëÖØĞÂÑ¡Ôñ1-3£º");       
+                tell_object(me, HIW "\n\n\nä½ ç‚º" + to_chinese(skill) + "è‡ªå‰µå‡ºäº†æ–°çš„çµ•æ‹›ã€‚\n" NOR
+                                "ä½ å¯ä»¥é‡æ–°é¸æ“‡ç‚ºé€™å€‹çµ•æ‹›é¸æ“‡å‰µå»ºä»¥ä¸‹é¡å‹\n\n" NOR);      
+                tell_object(me, "\t1> å‰µå»ºä¸€å€‹ç‚ºé€£æ‹›çš„çµ•æ‹›\n");
+                tell_object(me, "\t2> å‰µå»ºä¸€å€‹ç‚ºå–®æ‹›çš„çµ•æ‹›\n");
+                tell_object(me, "\t3> å‰µå»ºä¸€å€‹ç‚ºæ··åˆæ‹›çš„çµ•æ‹›\n");   
+                tell_object(me, "\t3> è«‹é‡æ–°é¸æ“‡1-3ï¼š");       
  
                 input_to((: get_perform_model :), me, base_skill, skill);
         }                       
@@ -742,17 +742,17 @@ void finish_write_perform(object me, string base_skill, string skill, string mod
         header1+="//Createby"+query("name", me)+"("+capitalize(geteuid(me))+")at"+ctime(time())+"\n";
         header1 += "// " + c_name + "(" + e_name + ")\n"; 
 
-        if( model == "Á¬ÕĞĞÍ" ) 
+        if( model == "é€£æ‹›å‹" ) 
                 header2 = read_file(PERFORM_MODEL_LIAN);
-        else if( model == "µ¥ÕĞĞÍ" )
+        else if( model == "å–®æ‹›å‹" )
                 header2 = read_file(PERFORM_MODEL_DAN);
         else
                 header2 = read_file(PERFORM_MODEL_HUN);          
  
-        header2 = replace_string(header2, "<¾øÕĞÃû>", c_name);
-        header2 = replace_string(header2, "<PFM·¢ÕĞÃèÊö>", pfm_attack_msg); 
-        header2 = replace_string(header2, "<PFM´òÖĞÃèÊö>", pfm_succeed_msg); 
-        header2 = replace_string(header2, "<PFMÊ§ÎóÃèÊö>", pfm_fail_msg);
+        header2 = replace_string(header2, "<çµ•æ‹›å>", c_name);
+        header2 = replace_string(header2, "<PFMç™¼æ‹›æè¿°>", pfm_attack_msg); 
+        header2 = replace_string(header2, "<PFMæ‰“ä¸­æè¿°>", pfm_succeed_msg); 
+        header2 = replace_string(header2, "<PFMå¤±èª¤æè¿°>", pfm_fail_msg);
         header2 = replace_string(header2, "E_NAME", e_name);
         header2 = replace_string(header2, "BASE_SKILL", base_skill);
         header2 = replace_string(header2, "SKILL", skill);
@@ -768,16 +768,16 @@ void finish_write_perform(object me, string base_skill, string skill, string mod
                 
         assure_file(dir); 
         write_file(dir + e_name + SYC, result, 1);
-        write(HIC "¾øÕĞ´´½¨³É¹¦£¬ÒÔºóÇëÊ¹ÓÃ " + HIY "perform " + e_name +  HIC " Ê¹ÓÃ¸Ã¾øÕĞ¡£\n" NOR );
+        write(HIC "çµ•æ‹›å‰µå»ºæˆåŠŸï¼Œä»¥å¾Œè«‹ä½¿ç”¨ " + HIY "perform " + e_name +  HIC " ä½¿ç”¨è©²çµ•æ‹›ã€‚\n" NOR );
 }
 
 int help(object me)
 {
         write(@HELP
                                          
-Ö¸Áî¸ñÊ½: create                           ²é¿´×Ô¼º×Ô´´Îä¹¦¾øÕĞµÄÇé¿ö
-          create <Îä¹¦Ãû³Æ>                Îª¸ÃÎä¹¦×Ô´´ĞÂµÄ¾øÕĞ
-          create <Îä¹¦Ãû³Æ> <¾øÕĞÃû³Æ> d   É¾³ı¸ÃÎä¹¦µÄÒÑ´´Îä¹¦Ö®¾øÕĞ
+æŒ‡ä»¤æ ¼å¼: create                           æŸ¥çœ‹è‡ªå·±è‡ªå‰µæ­¦åŠŸçµ•æ‹›çš„æƒ…æ³
+          create <æ­¦åŠŸåç¨±>                ç‚ºè©²æ­¦åŠŸè‡ªå‰µæ–°çš„çµ•æ‹›
+          create <æ­¦åŠŸåç¨±> <çµ•æ‹›åç¨±> d   åˆªé™¤è©²æ­¦åŠŸçš„å·²å‰µæ­¦åŠŸä¹‹çµ•æ‹›
 
 HELP );
         return 1;

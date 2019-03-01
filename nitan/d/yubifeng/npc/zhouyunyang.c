@@ -1,14 +1,14 @@
-// zhouyunqi.c ÖÜÔÆÑô
+// zhouyunqi.c å‘¨é›²é™½
 
 #include <ansi.h>
 inherit NPC;
 
 void create()
 {
-        set_name("ÖÜÔÆÑô", ({ "zhou yunyang", "yunyang", "zhou" }) );
-        set("gender", "ÄĞĞÔ");
-        set("title", "ÁÉ¶«ÌìÁúÃÅ±±×ÚµÚÁù´úµÜ×Ó");
-        set("nickname", "»ØÁú½£");
+        set_name("å‘¨é›²é™½", ({ "zhou yunyang", "yunyang", "zhou" }) );
+        set("gender", "ç”·æ€§");
+        set("title", "é¼æ±å¤©é¾é–€åŒ—å®—ç¬¬å…­ä»£å¼Ÿå­");
+        set("nickname", "å›é¾åŠ");
         set("age", 43);
         set("attitude", "friendly");
         set("str", 20);

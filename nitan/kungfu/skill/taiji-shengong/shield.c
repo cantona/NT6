@@ -1,4 +1,4 @@
-// shield.c Ì«¼«»¤ÌåÉñ¹¦
+// shield.c å¤ªæ¥µè­·é«”ç¥åŠŸ
 // Created by Lonely
 
 #include <ansi.h>
@@ -12,26 +12,26 @@ int exert(object me, object target)
         int skill;
 
         if (target != me)
-                return notify_fail("ÄãÖ»ÄÜÓÃÌ«¼«Éñ¹¦À´ÌáÉı×Ô¼ºµÄ·ÀÓùÁ¦¡£\n");
+                return notify_fail("ä½ åªèƒ½ç”¨å¤ªæ¥µç¥åŠŸä¾†æå‡è‡ªå·±çš„é˜²å¾¡åŠ›ã€‚\n");
 
         if( query("neili", me)<100 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ã€‚\n");
 
         if ((int)me->query_skill("taiji-shengong", 1) < 40)
-                return notify_fail("ÄãµÄÌ«¼«Éñ¹¦µÈ¼¶²»¹»¡£\n");
+                return notify_fail("ä½ çš„å¤ªæ¥µç¥åŠŸç­‰ç´šä¸å¤ ã€‚\n");
 
         if( query_temp("shield", me) )
-                return notify_fail("ÄãÒÑ¾­ÔÚÔË¹¦ÖĞÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“åœ¨é‹åŠŸä¸­äº†ã€‚\n");
 
         skill = me->query_skill("force");
         addn("neili", -100, me);
         me->receive_damage("qi", 0);
 
-        message_combatd(HIR "$N" HIR "Ä¬ÄîÌ«¼«Éñ¹¦µÄ¿Ú¾÷£ºËû"
-                            "Ç¿ÓÉËûÇ¿£¬Çå·ç·÷É½¸Ô¡£ËûºáÈÎËûºá£¬"
-                            "Ã÷ÔÂÕÕ´ó½­¡­¡­\nÉ²ÄÇ¼äÖ»¼û$N" 
-                        HIR "È«Éí¶ÙÊ±¸¡ÏÖ³öÒ»²ã¸ÕÃÍµÄ¾¢Æø£¬½«$P"
-                        HIR "È«È«ÁıÕÖ¡£\n" NOR, me);
+        message_combatd(HIR "$N" HIR "é»˜å¿µå¤ªæ¥µç¥åŠŸçš„å£è¨£ï¼šä»–"
+                            "å¼·ç”±ä»–å¼·ï¼Œæ¸…é¢¨æ‹‚å±±å²¡ã€‚ä»–æ©«ä»»ä»–æ©«ï¼Œ"
+                            "æ˜æœˆç…§å¤§æ±Ÿâ€¦â€¦\nå‰é‚£é–“åªè¦‹$N" 
+                        HIR "å…¨èº«é “æ™‚æµ®ç¾å‡ºä¸€å±¤å‰›çŒ›çš„å‹æ°£ï¼Œå°‡$P"
+                        HIR "å…¨å…¨ç± ç½©ã€‚\n" NOR, me);
 
         addn_temp("apply/armor", skill/2, me);
         set_temp("shield", 1, me);
@@ -50,7 +50,7 @@ void remove_effect(object me, int amount)
         {
                 addn_temp("apply/armor", -amount, me);
                 delete_temp("shield", me);
-                tell_object(me, "ÄãµÄÌ«¼«Éñ¹¦ÔËĞĞÍê±Ï£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï¡£\n");
+                tell_object(me, "ä½ çš„å¤ªæ¥µç¥åŠŸé‹è¡Œå®Œç•¢ï¼Œå°‡å…§åŠ›æ”¶å›ä¸¹ç”°ã€‚\n");
         }
 }
 

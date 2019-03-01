@@ -8,11 +8,11 @@ string ask_rudao();
 
 void create()
 {
-        set_name("Éµ¹Ã", ({ "sha gu", "sha", "gu" }));
+        set_name("å‚»å§‘", ({ "sha gu", "sha", "gu" }));
         set("long",
-"ËıÇúÁé·çµÄÅ®¶ù£¬Ó×Ê±ËÆºõÊÜÁË¾ªÏÅ£¬ÄÔ×ÓÊÜËğ£¬ÖÇÁ¦Óë³£ÈËÏà±È²îÁËºÜ¶à¡£\n"
-"ËıÏàÃ²Æ½Æ½£¬Á³ÉÏ×Ü´ø×ÅÌìÕæµÄÉµĞ¦£¬×ìÀïºß×Å¶ù¸è¡£\n");
-        set("gender", "Å®ĞÔ");        
+"å¥¹æ›²éˆé¢¨çš„å¥³å…’ï¼Œå¹¼æ™‚ä¼¼ä¹å—äº†é©šåš‡ï¼Œè…¦å­å—æï¼Œæ™ºåŠ›èˆ‡å¸¸äººç›¸æ¯”å·®äº†å¾ˆå¤šã€‚\n"
+"å¥¹ç›¸è²Œå¹³å¹³ï¼Œè‡‰ä¸Šç¸½å¸¶è‘—å¤©çœŸçš„å‚»ç¬‘ï¼Œå˜´è£¡å“¼è‘—å…’æ­Œã€‚\n");
+        set("gender", "å¥³æ€§");        
         set("age", 20);
         set("attitude", "heroism");
         set("shen_type", 0);
@@ -38,12 +38,12 @@ void create()
         set_skill("strike", 100);
         
         set("inquiry", ([
-        "Íæ" : (: ask_rudao :),
-        "ÍæÒ»»á" : (: ask_rudao :),
-        "ÍæÒ»»á¶ù" : (: ask_rudao :),
+        "ç©" : (: ask_rudao :),
+        "ç©ä¸€æœƒ" : (: ask_rudao :),
+        "ç©ä¸€æœƒå…’" : (: ask_rudao :),
         ]));
 
-        create_family("ÌÒ»¨µº", 3, "µÜ×Ó");
+        create_family("æ¡ƒèŠ±å³¶", 3, "å¼Ÿå­");
         set("amulet_count", 1);
 
         setup();
@@ -65,21 +65,21 @@ string ask_rudao()
         
     if( query_temp("play_with_shagu", me)>1+random(2 )
         && query("amulet_count") > 0 ) {
-                command("say ÄãÅãÎÒÍæµÃÕæ¹»¾ÃµÄ£¬ËÍÄãÑù¶«Î÷°É¡£\n");
+                command("say ä½ é™ªæˆ‘ç©å¾—çœŸå¤ ä¹…çš„ï¼Œé€ä½ æ¨£æ±è¥¿å§ã€‚\n");
                 obj = new("/d/taohua/obj/amulet");
                 obj->move(me);
                 delete_temp("play_with_shagu", me);
                 addn_temp("amulet_count", -1);
-                message_vision("$Nµİ¸ø$nÒ»¸ö³¤ÃüËø¡£\n", this_object(), me);
+                message_vision("$Néçµ¦$nä¸€å€‹é•·å‘½é–ã€‚\n", this_object(), me);
         }
                 
-        if( query("family/master_name", me) == "³ÌÓ¢"
-         || query("family/master_name", me) == "»ÆÒ©Ê¦"){
-                return "Äã²»ÊÇÌÒ»¨µºµÄÈËÂğ£¿ÕâÀïµÄÈË¶¼ºÜ´ÏÃ÷£¬²»»áºÍÉµ¹ÃÍæµÄ¡£\nÄãÕæ±¿£¬±ÈÉµ¹Ã»¹±¿£¡";
+        if( query("family/master_name", me) == "ç¨‹è‹±"
+         || query("family/master_name", me) == "é»ƒè—¥å¸«"){
+                return "ä½ ä¸æ˜¯æ¡ƒèŠ±å³¶çš„äººå—ï¼Ÿé€™è£¡çš„äººéƒ½å¾ˆè°æ˜ï¼Œä¸æœƒå’Œå‚»å§‘ç©çš„ã€‚\nä½ çœŸç¬¨ï¼Œæ¯”å‚»å§‘é‚„ç¬¨ï¼";
         }
 
         set_temp("pending/rudao", 1, me);
-        return "Ò¯Ò¯Ëµ²»ÄÜÈÃ²»Èı²»ËÄµÄÈËÉÏµº£¬Èç¹ûÄãÄÜ°¤ÎÒ¼¸ÏÂ×á£¬\n¾ÍÈÃÄã¹ıÈ¥£¬Ô¸Òâ(agree)µÄ»°£¬¸æËßÎÒ¡£\n"; 
+        return "çˆºçˆºèªªä¸èƒ½è®“ä¸ä¸‰ä¸å››çš„äººä¸Šå³¶ï¼Œå¦‚æœä½ èƒ½æŒ¨æˆ‘å¹¾ä¸‹æï¼Œ\nå°±è®“ä½ éå»ï¼Œé¡˜æ„(agree)çš„è©±ï¼Œå‘Šè¨´æˆ‘ã€‚\n"; 
 }
 
 
@@ -87,7 +87,7 @@ int do_agree()
 {
         int i, k;
 
-        write(CYN"\nÉµ¹ÃÅÄ×ÅÊÖ¸ßĞËµÄÌøÆğÀ´£¬´ó½ĞµÀ£º¿ª´òÀ²£¡¿ª´òÀ²£¡\n"NOR);
+        write(CYN"\nå‚»å§‘æ‹è‘—æ‰‹é«˜èˆˆçš„è·³èµ·ä¾†ï¼Œå¤§å«é“ï¼šé–‹æ‰“å•¦ï¼é–‹æ‰“å•¦ï¼\n"NOR);
         
         set_temp("apply/armor", 100);
         set_temp("apply/attack", 100);
@@ -99,7 +99,7 @@ int do_agree()
         for (i = 0; i < k; i++) {
                 if( query("qi", this_player())<0
                 || !present(this_player(), environment())) {
-                write(CYN"\nÉµ¹ÃÅÄ×ÅÊÖ¸ßĞËµÄÌøÆğÀ´£¬´ó½ĞµÀ£º´òÅÜÀ²£¡´òÅÜÀ²£¡²»Èı²»ËÄµÄ¼Ò»ï´òÅÜÀ²£¡\n"NOR);                        
+                write(CYN"\nå‚»å§‘æ‹è‘—æ‰‹é«˜èˆˆçš„è·³èµ·ä¾†ï¼Œå¤§å«é“ï¼šæ‰“è·‘å•¦ï¼æ‰“è·‘å•¦ï¼ä¸ä¸‰ä¸å››çš„å®¶ä¼™æ‰“è·‘å•¦ï¼\n"NOR);                        
                         delete_temp("apply/armor");
                         delete_temp("apply/attack");
                         delete_temp("apply/defense");
@@ -108,7 +108,7 @@ int do_agree()
                 COMBAT_D->do_attack(this_object(), this_player(), query_temp("weapon")); 
         }
 
-        write(CYN"\nÉµ¹Ã¾ïÁË¾ï×ì£¬ËµµÀ£ººÃ°É£¬Äã¾Í¹ıÈ¥°É£¬¼ÇµÃÒÔááÔÙÀ´ÕÒÎÒÍæ¶ù¡£\n"NOR);        
+        write(CYN"\nå‚»å§‘æ’…äº†æ’…å˜´ï¼Œèªªé“ï¼šå¥½å§ï¼Œä½ å°±éå»å§ï¼Œè¨˜å¾—ä»¥å¾Œå†ä¾†æ‰¾æˆ‘ç©å…’ã€‚\n"NOR);        
         set_temp("shagu_pass", 1, this_player());
 
         delete_temp("apply/armor");
@@ -120,15 +120,15 @@ int do_agree()
 
 int accept_fight(object me)
 {
-        command("say ºÃÒ®£¡ºÃÒ®£¡ÓÖÓĞÈËÅãÎÒÍæÁË£¡\n");
+        command("say å¥½è€¶ï¼å¥½è€¶ï¼åˆæœ‰äººé™ªæˆ‘ç©äº†ï¼\n");
         call_out("play_with_shagu", 10, me);
         return 1;
 }
 
 int accept_kill(object me)
 {
-        if( query("family/family_name", me) == "ÌÒ»¨µº"){
-        command("say ÄãÎÒ±¾ÊÇÍ¬ÃÅ£¬ÈçºÎÒª¼Óº¦ÓÚÎÒ£¡\n");
+        if( query("family/family_name", me) == "æ¡ƒèŠ±å³¶"){
+        command("say ä½ æˆ‘æœ¬æ˜¯åŒé–€ï¼Œå¦‚ä½•è¦åŠ å®³äºæˆ‘ï¼\n");
         set_temp("th_killer", 1, me);
         kill_ob(me);
         return 1;
@@ -140,6 +140,6 @@ int play_with_shagu(object me)
 {
         if( !me->is_fighting(this_object()) )
                 return 1;
-        command("say ºÃÍæ£¡ºÃÍæ£¡½ñÌìÕæºÃÍæ£¡");
+        command("say å¥½ç©ï¼å¥½ç©ï¼ä»Šå¤©çœŸå¥½ç©ï¼");
         addn_temp("play_with_shagu", 1, me);
 }

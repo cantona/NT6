@@ -4,13 +4,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name("Ğå»¨Ğ¬", ({ "xiuhua xie", "xiuhua", "xie", "shoe" }));
+        set_name("ç¹¡èŠ±é‹", ({ "xiuhua xie", "xiuhua", "xie", "shoe" }));
         set_weight(300);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ö»");
-                set("long", HIM "ÕâÊÇÒ»Ö»Æ¯ÁÁµÄĞå»¨Ğ¬¡£\n" NOR);
+                set("unit", "åª");
+                set("long", HIM "é€™æ˜¯ä¸€åªæ¼‚äº®çš„ç¹¡èŠ±é‹ã€‚\n" NOR);
                 set("value", 50);
                 set("material", "cloth");
                 set("female_only", 1);

@@ -6,12 +6,12 @@ inherit NPC;
 
 void create()
 {
-        set_name(NOR + YEL "»Æ½ğ" + HIW "°×Óñ" + HIY "»¢" NOR, ({ "gold tiger" }) );
-        set("title", HIM "ÍòÊŞÖ®Íõ" NOR);
-        set("gender", "ÄĞĞÔ");
+        set_name(NOR + YEL "é»ƒé‡‘" + HIW "ç™½ç‰" + HIY "è™" NOR, ({ "gold tiger" }) );
+        set("title", HIM "è¬ç¸ä¹‹ç‹" NOR);
+        set("gender", "ç”·æ€§");
         set("age", 2000);
         set("long", @LONG
-ÕâÊÇÒ»Ö»¾Ş´óµÄÀÏ»¢£¬»ëÉí½ğ»ÆÉ«£¬Í·Îª°×É«£¬ÓÌÈç°×Óñ¡£
+é€™æ˜¯ä¸€åªå·¨å¤§çš„è€è™ï¼Œæ¸¾èº«é‡‘é»ƒè‰²ï¼Œé ­ç‚ºç™½è‰²ï¼ŒçŒ¶å¦‚ç™½ç‰ã€‚
 LONG );
         set("combat_exp", 1000000000);
         set("shen_type", 0);
@@ -59,7 +59,7 @@ void fight_ob(object ob)
         if (is_fighting(ob))
                 return;
 
-        message_vision(HIW "$NÒ»Éù³¤Ğ¥£¬ÕÅÑÀÎè×¦£¬ÃæÄ¿ÕøÄü¡£\n" NOR, this_object(), ob);
+        message_vision(HIW "$Nä¸€è²é•·å˜¯ï¼Œå¼µç‰™èˆçˆªï¼Œé¢ç›®çŒ™ç°ã€‚\n" NOR, this_object(), ob);
 
         ::fight_ob(ob);
         if( !is_killing(query("id", ob)) )
@@ -68,7 +68,7 @@ void fight_ob(object ob)
 
 int accept_fight(object ob)
 {
-        message_vision(HIW "$N" HIW "Ò»Éù³¤Ğ¥£¬ÆËÏò$n" HIW "ÉÏÀ´¡£\n" NOR,
+        message_vision(HIW "$N" HIW "ä¸€è²é•·å˜¯ï¼Œæ’²å‘$n" HIW "ä¸Šä¾†ã€‚\n" NOR,
                        this_object(), ob);
         kill_ob(ob);
         return -1;
@@ -88,8 +88,8 @@ mixed hit_ob(object me, object ob, int damage_bouns)
 {
         ob->receive_wound("qi", 1000 + random(1000), me);
         set("neili",query("max_neili",  me), me);
-        return HIW "$N" HIW "ÖÜÎ§×ÏÆø´óÊ¢£¬ÃæÄ¿ÕøÄü£¬¿ñĞ¥Ò»Éù£¬µÇÊ±Áî$n"
-               HIW "ÃÔ»ó²»ÒÑ£¬ÄÑÒÔ×Ô°Î¡£\n" NOR;
+        return HIW "$N" HIW "å‘¨åœç´«æ°£å¤§ç››ï¼Œé¢ç›®çŒ™ç°ï¼Œç‹‚å˜¯ä¸€è²ï¼Œç™»æ™‚ä»¤$n"
+               HIW "è¿·æƒ‘ä¸å·²ï¼Œé›£ä»¥è‡ªæ‹”ã€‚\n" NOR;
 }
 
 varargs void unconcious(object defeater)
@@ -121,7 +121,7 @@ varargs void die(object killer)
 
         if( query("lunhui-sword_quest/chushengdao/give_quest", killer) )
         {
-                tell_object(killer, BLINK + HIG "ÄãÒÑ¾­É±ËÀÁË»Æ½ğ°×Óñ»¢£¬ÈÎÎñÍê³É¡£\n" NOR);
+                tell_object(killer, BLINK + HIG "ä½ å·²ç¶“æ®ºæ­»äº†é»ƒé‡‘ç™½ç‰è™ï¼Œä»»å‹™å®Œæˆã€‚\n" NOR);
                 set("lunhui-sword_quest/chushengdao/killed", 1, killer);
                 killer->save();
         }
@@ -133,7 +133,7 @@ void random_move()
 {
         if (time() - query("born_time") > 1800)
         {
-                message_vision("$N´ÜÈë´ÔÁÖ£¬ÏûÊ§ÁË¡£\n", this_object());
+                message_vision("$Nç«„å…¥å¢æ—ï¼Œæ¶ˆå¤±äº†ã€‚\n", this_object());
                 destruct(this_object());
                 return;
         }

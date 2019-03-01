@@ -3,10 +3,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Ë®Á«¶´ÄÚ");
+        set("short", "æ°´è“®æ´å…§");
         set("long", @LONG
-ÍùÇ°ĞĞ¶ÎÂ·ºó£¬µÀÂ·Ò²½¥½¥¿íÀ«ÁËÆğÀ´¡£ÒşÒşÔ¼Ô¼ËÆºõÓĞË®µÎÖ®
-Éù´«À´£¬Äã²»½ûÏë³¯ÉùÒô´«À´µÄ·½Ïò×ßÈ¥ (zou)¿´¿´¡£
+å¾€å‰è¡Œæ®µè·¯å¾Œï¼Œé“è·¯ä¹Ÿæ¼¸æ¼¸å¯¬é—Šäº†èµ·ä¾†ã€‚éš±éš±ç´„ç´„ä¼¼ä¹æœ‰æ°´æ»´ä¹‹
+è²å‚³ä¾†ï¼Œä½ ä¸ç¦æƒ³æœè²éŸ³å‚³ä¾†çš„æ–¹å‘èµ°å» (zou)çœ‹çœ‹ã€‚
 LONG );
         set("exits",([
                "east" : __DIR__"zigai1",
@@ -28,20 +28,20 @@ void init()
         add_action("do_use", "use");
 
         if (present("fire", me))
-                       set_temp("marks/µã", 1, me);
+                       set_temp("marks/é»", 1, me);
 
-        else delete_temp("marks/µã", me);
+        else delete_temp("marks/é»", me);
 }        
 
 int do_zou()
 {
         object me = this_player();
         
-        if( !query_temp("marks/µã", me) )
-                return notify_fail(HIW"\nÕâÀïÒ»Æ¬ÆáºÚ£¬Èç¹ûÃ»ÓĞ»ğ¹â´ç²½ÄÑĞĞ¡£\n\n"NOR);
+        if( !query_temp("marks/é»", me) )
+                return notify_fail(HIW"\né€™è£¡ä¸€ç‰‡æ¼†é»‘ï¼Œå¦‚æœæ²’æœ‰ç«å…‰å¯¸æ­¥é›£è¡Œã€‚\n\n"NOR);
         
         if (me->is_fighting() || me->is_busy())
-                return notify_fail("\nÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n\n");
+                return notify_fail("\nä½ ç¾åœ¨æ­£å¿™è‘—å‘¢ã€‚\n\n");
         
         me->move(__DIR__"outzigai");
         
@@ -57,9 +57,9 @@ int do_use(string arg)
         
         if (! present("fire", me)) return 0;
 
-        write(HIC "\nÄã½«»ğÕÛµãÈ»ÁË¡£\n\n" NOR);
+        write(HIC "\nä½ å°‡ç«æŠ˜é»ç„¶äº†ã€‚\n\n" NOR);
 
-        set_temp("marks/µã", 1, me);
+        set_temp("marks/é»", 1, me);
 
         return 1;
 

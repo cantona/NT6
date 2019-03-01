@@ -3,12 +3,12 @@ inherit NPC;
 
 void create()
 {
-        set_name("Ìú´«¼×", ({ "tie chuanjia", "tie", "chuanjia" }) );
-        set("nickname", WHT "Ìú¼×½ð¸Õ" NOR);
-        set("title", "ÖÒÐÄ»¤ÎÀ");
-        set("gender", "ÄÐÐÔ");
+        set_name("éµå‚³ç”²", ({ "tie chuanjia", "tie", "chuanjia" }) );
+        set("nickname", WHT "éµç”²é‡‘å‰›" NOR);
+        set("title", "å¿ å¿ƒè­·è¡›");
+        set("gender", "ç”·æ€§");
         set("age", 42);
-        set("long", "Ò»¸öÉí²Ä¿ýÎàµÄºº×Ó¡£\n");
+        set("long", "ä¸€å€‹èº«æé­æ¢§çš„æ¼¢å­ã€‚\n");
         set("attitude", "peaceful");
 
         set("str", 40);
@@ -82,7 +82,7 @@ void die()
                          if (arrayp(ob->query_team()))
                          {
                                  command("heng");
-                                 command("say Ê¤Ö®²»Îä£¡");
+                                 command("say å‹ä¹‹ä¸æ­¦ï¼");
                                  set("qi", 160000);
                                  set("jing", 60000);
                                  set("neili", 35000);
@@ -100,7 +100,7 @@ void die()
              if (ob->query("sky12/floor") == 1)
              {
                       ob->set("sky12/floor", 2);
-                 command("say ¸óÏÂÇë±ã°É£¡");
+                 command("say é–£ä¸‹è«‹ä¾¿å§ï¼");
              }
         }
 
@@ -115,7 +115,7 @@ void die()
 
         return;
 }
-// ÆøÑªÐ¡ÓÚ1000ÔòËÀÍö£¬±ÜÃâËûÈËÐ­Öú°ïÃ¦×ªÊÀ
+// æ°£è¡€å°äºŽ1000å‰‡æ­»äº¡ï¼Œé¿å…ä»–äººå”åŠ©å¹«å¿™è½‰ä¸–
 void heart_beat()
 {
         if (this_object()->query("qi") < 1000 || this_object()->query("eff_qi") < 1000)

@@ -2,12 +2,12 @@
 
 void create()
 {
-        set_name(HIC "ÁâÒ¶ºì¾°Ìì" NOR, ({ "hy-sb", "Rhodiola henryi", "herb_hy_sb" }));
+        set_name(HIC "è±è‘‰ç´…æ™¯å¤©" NOR, ({ "hy-sb", "Rhodiola henryi", "herb_hy_sb" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "¾°Ìì¿ÆÖ²ÎïÍã¶¹Æß(ÓÖ³ÆÁâÒ¶ºì¾°Ìì)(Rhodiola henryi)µÄ´ø¸ùÈ«²İ¡£ÒòÆäÓĞ»îÑª¡¢Ö¹Í´¡¢ÏûÖ×Ö®¹¦Ğ§£¬ÇÒÒ©Ğ§×÷ÓÃ¿ì£¬¹ÊÃû¡°Ê®²½»¹Ñô¡±ºÍ¡°´ó¾È¼İ¡±¡£\n" NOR);
-                set("base_unit", "¿Å");
+                set("long", HIW "æ™¯å¤©ç§‘æ¤ç‰©è±Œè±†ä¸ƒ(åˆç¨±è±è‘‰ç´…æ™¯å¤©)(Rhodiola henryi)çš„å¸¶æ ¹å…¨è‰ã€‚å› å…¶æœ‰æ´»è¡€ã€æ­¢ç—›ã€æ¶ˆè…«ä¹‹åŠŸæ•ˆï¼Œä¸”è—¥æ•ˆä½œç”¨å¿«ï¼Œæ•…åâ€œåæ­¥é‚„é™½â€å’Œâ€œå¤§æ•‘é§•â€ã€‚\n" NOR);
+                set("base_unit", "é¡†");
                 set("base_value", 20000);
                 set("base_weight", 100);
         }

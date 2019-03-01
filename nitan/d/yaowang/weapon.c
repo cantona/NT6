@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "������");
+        set("short", "兵器室");
         set("long", @LONG
-   �������ҩ���ȵı����ң�����ı������ǹ�ҩ������ƽʱ
-�����õģ�����Ӧ�о��С�
+   這裡就是藥王谷的兵器室，裡面的兵器都是供藥王弟子平時
+練功用的，竹刀竹劍應有盡有。
 LONG
         );
         set("exits", ([ /* sizeof() == 1 */

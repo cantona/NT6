@@ -1,8 +1,8 @@
 
-#define RD              (1<<0)  // 研发
-#define WORKER          (1<<1)  // 工人
-#define CLERK           (1<<2)  // 店员
-#define ADVENTURER      (1<<3)  // 探险
-#define SOLDIER         (1<<4)  // 军人
-#define SPORTER         (1<<5)  // 球员
+#define RD              (1<<0)  // 鐮旂櫦
+#define WORKER          (1<<1)  // 宸ヤ汉
+#define CLERK           (1<<2)  // 搴楀摗
+#define ADVENTURER      (1<<3)  // 鎺㈤毆
+#define SOLDIER         (1<<4)  // 杌嶄汉
+#define SPORTER         (1<<5)  // 鐞冨摗
 

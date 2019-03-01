@@ -1,4 +1,4 @@
-// /d/shenlong/zoulang.c ×ßÀÈ
+// /d/shenlong/zoulang.c èµ°å»Š
 // Last Modified by winder on Jul. 12 2002
 
 #include <ansi.h>
@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "×ßÀÈ");
+        set("short", "èµ°å»Š");
         set("long", @LONG
-ÕâÊÇÒ»ÌõÊ¯×ßÀÈ£¬ÄÏÃæÍ¨Ïò´óÌü£¬±±ÃæÊÇÁ·Îä³¡£¬Á½±ßÊÇÓÃÊ¯Öù³Å
-µÄÁ¹Åï£¬¹ÒÂúÊ÷Ò¶¡¢ÇàÌÙ£¬±ßÉÏÓÐÐí¶àÐ¡Ê¯µÊ¿É¹©ÈËÐÝÏ¢¡£Ò»Ð©µÊ×ÓÉÏ
-ÃæÈýÈýÁ½Á½µØ×øÁËÐí¶àÉñÁú½ÌµÄµÜ×Ó£¬ÕýÔÚÆß×ì°ËÉàµØÌ¸ÂÛ×ÅÊ²Ã´¡£
+é€™æ˜¯ä¸€æ¢çŸ³èµ°å»Šï¼Œå—é¢é€šå‘å¤§å»³ï¼ŒåŒ—é¢æ˜¯ç·´æ­¦å ´ï¼Œå…©é‚Šæ˜¯ç”¨çŸ³æŸ±æ’
+çš„æ¶¼æ£šï¼ŒæŽ›æ»¿æ¨¹è‘‰ã€é’ç±ï¼Œé‚Šä¸Šæœ‰è¨±å¤šå°çŸ³å‡³å¯ä¾›äººä¼‘æ¯ã€‚ä¸€äº›å‡³å­ä¸Š
+é¢ä¸‰ä¸‰å…©å…©åœ°åäº†è¨±å¤šç¥žé¾æ•™çš„å¼Ÿå­ï¼Œæ­£åœ¨ä¸ƒå˜´å…«èˆŒåœ°è«‡è«–è‘—ä»€éº¼ã€‚
 LONG
         );
         set("outdoors", "shenlong");

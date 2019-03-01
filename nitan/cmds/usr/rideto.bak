@@ -58,19 +58,19 @@ mapping places = ([
         "yanziwu"  : "/d/yanziwu/bozhou",
         "tangmen"  : "/d/tangmen/tmyizhan",
         "mojiao"   : "/d/yuanyue/damen",
-        "wuxi"     : "/d/wuxi/guangchang", // ÎŞÎı
-        "juyong"   : "/d/changcheng/juyongguan",  //¾ÓÓ¹¹Ø
-        "jiayu"    : "/d/xingxiu/jiayuguan",  //¼ÎÓø¹Ø
-        "huibu"    : "/d/huijiang/buluo1", //»Ø½® »Ø²¿²¿Âä
-        "xinjiang" : "/d/huijiang/caoyuan", //ĞÂ½®  ´ó²İÔ­
-        "yili"     : "/d/xingxiu/yili", //ÒÁÀç³Ç
-        "yueyang"  : "/d/yueyang/zhongxin", //ÔÀÑô³Ç
-        "yanping"  : "/d/yanping/fuqiao1", //ÑÓÆ½¸®
-        "lingxiao" : "/d/lingxiao/bar", //ÁèÏöÄÚÃÅ
-        "wudu"     : "/d/wudu/damen",            //Îå¶¾½Ì´óÃÅ
-        "tiezhang" : "/d/tiezhang/shanjiao", //ÌúÕÆ°ï É½½ÅÏÂ
-        "qingcheng": "/d/qingcheng/tianshidong", //Çà³Ç ÌìÊ¦¶´
-        "huijiang" : "/d/huijiang/damen", // »Ø½® ºì»¨»á
+        "wuxi"     : "/d/wuxi/guangchang", // ç„¡éŒ«
+        "juyong"   : "/d/changcheng/juyongguan",  //å±…åº¸é—œ
+        "jiayu"    : "/d/xingxiu/jiayuguan",  //å˜‰å³ªé—œ
+        "huibu"    : "/d/huijiang/buluo1", //å›ç–† å›éƒ¨éƒ¨è½
+        "xinjiang" : "/d/huijiang/caoyuan", //æ–°ç–†  å¤§è‰åŸ
+        "yili"     : "/d/xingxiu/yili", //ä¼ŠçŠåŸ
+        "yueyang"  : "/d/yueyang/zhongxin", //å²³é™½åŸ
+        "yanping"  : "/d/yanping/fuqiao1", //å»¶å¹³åºœ
+        "lingxiao" : "/d/lingxiao/bar", //å‡Œéœ„å…§é–€
+        "wudu"     : "/d/wudu/damen",            //äº”æ¯’æ•™å¤§é–€
+        "tiezhang" : "/d/tiezhang/shanjiao", //éµæŒå¹« å±±è…³ä¸‹
+        "qingcheng": "/d/qingcheng/tianshidong", //é’åŸ å¤©å¸«æ´
+        "huijiang" : "/d/huijiang/damen", // å›ç–† ç´…èŠ±æœƒ
         "ganjiang" : "/d/item/road5",
         "shendiao" : "/d/huashan/jianzhong",
         "wudu"     : "/d/wudu/damen",
@@ -84,39 +84,39 @@ int main(object me, string arg)
         if (! arg) return help(me);
 
         if (me->over_encumbranced())
-                return notify_fail("ÄãµÄ¸ººÉ¹ıÖØ£¬¶¯µ¯²»µÃ¡£\n");
+                return notify_fail("ä½ çš„è² è·éé‡ï¼Œå‹•å½ˆä¸å¾—ã€‚\n");
 
         if (me->query_encumbrance() < 0)
-                return notify_fail("ÄãµÄ¸ººÉ³öÏÖ¹ÊÕÏ£¬¶¯µ¯²»µÃ¡£\n");
+                return notify_fail("ä½ çš„è² è·å‡ºç¾æ•…éšœï¼Œå‹•å½ˆä¸å¾—ã€‚\n");
 
         if( query_temp("sleeped", me) )
-                return notify_fail("ÄãÏÖÔÚÕıÌÉ×ÅÄØ¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£èººè‘—å‘¢ã€‚\n");
 
         if (me->is_in_prison())
-                return notify_fail("ÄãÕıÔÚ×öÀÎÄØ£¬ÄãÏë¸ÉÊ²Ã´£¿£¡\n");
+                return notify_fail("ä½ æ­£åœ¨åšç‰¢å‘¢ï¼Œä½ æƒ³å¹¹ä»€éº¼ï¼Ÿï¼\n");
 
         if (me->is_fighting())
-                return notify_fail("ÄãÏÖÔÚÕıÔÚÕ½¶·£¡\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£åœ¨æˆ°é¬¥ï¼\n");
 
         if( me->is_busy() || query("doing", me) )
-                return notify_fail("ÄãµÄ¶¯×÷»¹Ã»ÓĞÍê³É£¬²»ÄÜÒÆ¶¯¡£\n");
+                return notify_fail("ä½ çš„å‹•ä½œé‚„æ²’æœ‰å®Œæˆï¼Œä¸èƒ½ç§»å‹•ã€‚\n");
 
         if( !objectp(riding=query_temp("is_riding", me)) )
-                return notify_fail("Äã»¹Ã»ÓĞ×øÆï£¡\n");
+                return notify_fail("ä½ é‚„æ²’æœ‰åé¨ï¼\n");
 
         if( !present(query("id", riding),me) )
-                return notify_fail("ÄãµÄ×øÆï²»ÔÚÄãÉí±ß£¡\n");
+                return notify_fail("ä½ çš„åé¨ä¸åœ¨ä½ èº«é‚Šï¼\n");
 
 /*
         if( !query("outdoors", environment(me)) )
-                return notify_fail("ÔÚ·¿¼äÀï²»ÄÜÂÒÅÜ£¡\n");
+                return notify_fail("åœ¨æˆ¿é–“è£¡ä¸èƒ½äº‚è·‘ï¼\n");
 */
 
         if( query("no_magic", environment(me)) || query("no_fly", environment(me)) || query("maze", environment(me)) )
-                return notify_fail("Äã·¢ÏÖÕâÀïÓĞµã¹Å¹Ö£¬ÄãµÄ×øÆïºÃÏó²»ÌıÄãµÄÖ¸»Ó£¡\n");
+                return notify_fail("ä½ ç™¼ç¾é€™è£¡æœ‰é»å¤æ€ªï¼Œä½ çš„åé¨å¥½è±¡ä¸è½ä½ çš„æŒ‡æ®ï¼\n");
 
         if (me->query_condition("killer"))
-                return notify_fail("ÄãÓĞÃü°¸ÔÚÉíÄØ£¬Äã»¹ÊÇĞ¡ĞÄÎªÃî£¬²»ÒËÔÚ¹ÙµÀÉÏËÁÎŞ¼Éµ¬ĞĞ×ß£¡\n");
+                return notify_fail("ä½ æœ‰å‘½æ¡ˆåœ¨èº«å‘¢ï¼Œä½ é‚„æ˜¯å°å¿ƒç‚ºå¦™ï¼Œä¸å®œåœ¨å®˜é“ä¸Šè‚†ç„¡å¿Œæ†šè¡Œèµ°ï¼\n");
 
         if (member_array(arg, keys(places)) == -1 && arg != "home")
         {
@@ -124,19 +124,19 @@ int main(object me, string arg)
                 {
                         if (!objectp(room = get_object(where)))
                         {
-                                write("ÄãÎŞ·¨³Ë×øÆï´ïµ½Õâ¸öµØ·½¡£\n");
+                                write("ä½ ç„¡æ³•ä¹˜åé¨é”åˆ°é€™å€‹åœ°æ–¹ã€‚\n");
                                 return 1;
                         }
 
                 } else
                 {
-                        write("ÄãÎŞ·¨³Ë×øÆï´ïµ½Õâ¸öµØ·½¡£\n");
+                        write("ä½ ç„¡æ³•ä¹˜åé¨é”åˆ°é€™å€‹åœ°æ–¹ã€‚\n");
                         return 1;
                 }
         }
 
         if( arg == "home" && !query("private_room/position", me) )
-                return notify_fail("Äã»¹Ã»ÓĞ×¡·¿ÄØ£¡\n");
+                return notify_fail("ä½ é‚„æ²’æœ‰ä½æˆ¿å‘¢ï¼\n");
 
         if( arg == "home" && stringp(query("private_room/position", me)) &&
             file_size(query("private_room/position", me)+".c")>0 )
@@ -146,17 +146,17 @@ int main(object me, string arg)
                 if( !room )
                         room = get_object(places[arg]);
         }
-        if (! room) return notify_fail("Äã¸Ğ¾õµ½ËÆºõÄÇ¸öµØ·½ÓĞµã²»¶Ô¾¢¡£\n");
+        if (! room) return notify_fail("ä½ æ„Ÿè¦ºåˆ°ä¼¼ä¹é‚£å€‹åœ°æ–¹æœ‰é»ä¸å°å‹ã€‚\n");
 
-        message("vision", me->name() + "Æï×Å¡¸" + riding->name() + NOR "¡¹´Ò´ÒÃ¦Ã¦µØÀë¿ªÁË¡£\n",
+        message("vision", me->name() + "é¨è‘—ã€Œ" + riding->name() + NOR "ã€åŒ†åŒ†å¿™å¿™åœ°é›¢é–‹äº†ã€‚\n",
                 environment(me), ({me}));
 
         where=query("short", room);
 
-        tell_object(me, "ÄãÒ»Â·Âí²»Í£Ìã£¬ÖÕÓÚ¸Ïµ½ÁË" + where + "¡£\n");
+        tell_object(me, "ä½ ä¸€è·¯é¦¬ä¸åœè¹„ï¼Œçµ‚äºè¶•åˆ°äº†" + where + "ã€‚\n");
         me->move(room);
 
-        message("vision", me->name() + "Æï×Å¡¸" + riding->name() + NOR "¡¹Ò»Â·¼²³Û¶øÀ´¡£\n",
+        message("vision", me->name() + "é¨è‘—ã€Œ" + riding->name() + NOR "ã€ä¸€è·¯ç–¾é¦³è€Œä¾†ã€‚\n",
                 environment(me), ({me}));
 
         // me->receive_damage("qi", 10);
@@ -167,26 +167,26 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : rideto <µØµã>
+æŒ‡ä»¤æ ¼å¼ : rideto <åœ°é»>
 
-ÀûÓÃ×øÆïµ½´ïÄ³¸öµØµã¡£Ä¿Ç°¿ÉÒÔÀûÓÃ×øÆïÈ¥µÄµØ·½ÓĞ£º
-yangzhou : Ñï  Öİ        beijing  : ±±  ¾©        chengdu  : ³É  ¶¼
-changan  : ³¤  °²        hangzhou : º¼  Öİ        suzhou   : ËÕ  Öİ
-xiangyang: Ïå  Ñô        fuzhou   : ¸£  Öİ        foshan   : ·ğ  É½
-lingzhou : Áé  Öİ        jingzhou : ¾£  Öİ        zhongzhou: ÖĞ  Öİ
-henyang  : ºâ  Ñô        jiaxing  : ¼Î  ĞË        yongdeng : ÓÀ  µÇ
-quanzhou : Èª  Öİ        dali     : ´ó  Àí        nanyang  : ÄÏ  Ñô
-wudang   : Îäµ±É½        taishan  : Ì©  É½        quanzhen : È«Õæ½Ì
-emei     : ¶ëÃ¼É½        lingjiu  : ÁéğÕ¹¬        gumu     : ¹Å  Ä¹
-baituo   : °×ÍÔÉ½        mingjiao : ¹âÃ÷¶¥        xingxiu  : ĞÇËŞº£
-huashan  : »ª  É½        murong   : Ä½  Èİ        xueshan  : Ñ©  É½
-xuedao   : Ñªµ¶ÃÅ        xiaoyao  : åĞÒ£ÁÖ        kunlun   : À¥ÂØÉ½
-guanwai  : ¹Ø  Íâ        guiyun   : ¹éÔÆ×¯        nanhai   : ÄÏ  º£
-hanzhong : ººÖĞÕò        zhongnan : ÖÕÄÏÉ½        yanziwu  : Ñà×ÓÎë
-tangmen  : ÌÆ  ÃÅ        lanzhou  : À¼  Öİ        kaifeng  : ¿ª  ·â
-luoyang  : Âå  Ñô        kunming  : À¥  Ã÷        heimuya  : ºÚÄ¾ÑÂ
-mojiao   : Ä§  ½Ì        ganjiang : ¸É  ½«        home     : ×¡  ·¿
-shendiao : Éñ  µñ        wudu     : Îå¶¾½Ì
+åˆ©ç”¨åé¨åˆ°é”æŸå€‹åœ°é»ã€‚ç›®å‰å¯ä»¥åˆ©ç”¨åé¨å»çš„åœ°æ–¹æœ‰ï¼š
+yangzhou : æš  å·        beijing  : åŒ—  äº¬        chengdu  : æˆ  éƒ½
+changan  : é•·  å®‰        hangzhou : æ­  å·        suzhou   : è˜‡  å·
+xiangyang: è¥„  é™½        fuzhou   : ç¦  å·        foshan   : ä½›  å±±
+lingzhou : éˆ  å·        jingzhou : èŠ  å·        zhongzhou: ä¸­  å·
+henyang  : è¡¡  é™½        jiaxing  : å˜‰  èˆˆ        yongdeng : æ°¸  ç™»
+quanzhou : æ³‰  å·        dali     : å¤§  ç†        nanyang  : å—  é™½
+wudang   : æ­¦ç•¶å±±        taishan  : æ³°  å±±        quanzhen : å…¨çœŸæ•™
+emei     : å³¨çœ‰å±±        lingjiu  : éˆé·²å®®        gumu     : å¤  å¢“
+baituo   : ç™½é¦±å±±        mingjiao : å…‰æ˜é ‚        xingxiu  : æ˜Ÿå®¿æµ·
+huashan  : è¯  å±±        murong   : æ…•  å®¹        xueshan  : é›ª  å±±
+xuedao   : è¡€åˆ€é–€        xiaoyao  : é€é™æ—        kunlun   : æ˜†ä¾–å±±
+guanwai  : é—œ  å¤–        guiyun   : æ­¸é›²èŠ        nanhai   : å—  æµ·
+hanzhong : æ¼¢ä¸­é®        zhongnan : çµ‚å—å±±        yanziwu  : ç‡•å­å¡¢
+tangmen  : å”  é–€        lanzhou  : è˜­  å·        kaifeng  : é–‹  å°
+luoyang  : æ´›  é™½        kunming  : æ˜†  æ˜        heimuya  : é»‘æœ¨å´–
+mojiao   : é­”  æ•™        ganjiang : å¹¹  å°‡        home     : ä½  æˆ¿
+shendiao : ç¥  é›•        wudu     : äº”æ¯’æ•™
 
 HELP
         );

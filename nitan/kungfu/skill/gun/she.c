@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define SHE "¡¸" HIR "°ÎÇ¹ÀÇÑÀÉä»÷" NOR "¡¹"
+#define SHE "ã€Œ" HIR "æ‹”æ§ç‹¼ç‰™å°„æ“Š" NOR "ã€"
 
 inherit F_SSERVER;
 
@@ -12,28 +12,28 @@ int perform(object me, object target)
         int i;
 
         if( userp(me) && !query("can_perform/gun/she", me) )
-                return notify_fail("ÄãËùÊ¹ÓÃµÄÍâ¹¦ÖĞÃ»ÓĞÕâÖÖ¹¦ÄÜ¡£\n");
+                return notify_fail("ä½ æ‰€ä½¿ç”¨çš„å¤–åŠŸä¸­æ²’æœ‰é€™ç¨®åŠŸèƒ½ã€‚\n");
 
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(SHE "Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(SHE "åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me)) || 
             query("skill_type", weapon) != "hammer" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô£¬ÄÑÒÔÊ©Õ¹" SHE "¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ï¼Œé›£ä»¥æ–½å±•" SHE "ã€‚\n");
 
         if ((int)me->query_skill("gun", 1) < 80)
-                return notify_fail("ÄãµÄÇ¹Ğµ¼¼Êõ²»¹»ÊìÁ·£¬ÄÑÒÔÊ©Õ¹" SHE "¡£\n");
+                return notify_fail("ä½ çš„æ§æ¢°æŠ€è¡“ä¸å¤ ç†Ÿç·´ï¼Œé›£ä»¥æ–½å±•" SHE "ã€‚\n");
 
         if (me->query_skill_mapped("hammer") != "gun")
-                return notify_fail("Äã²¢Ã»ÓĞÔËÓÃÇ¹Ğµ¼¼Êõ£¬ÄÑÒÔÊ©Õ¹" SHE "¡£\n");
+                return notify_fail("ä½ ä¸¦æ²’æœ‰é‹ç”¨æ§æ¢°æŠ€è¡“ï¼Œé›£ä»¥æ–½å±•" SHE "ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIR "$N" HIR "Ê©³öÃØ°ÂÒå¡¸°ÎÇ¹ÀÇÑÀÉä»÷¡¹£¬ÊÖÖĞ" + weapon->name() +
-              HIR "Á¬ĞøÊıÇ¹£¬Í¬Ê±Åç³öÊıÊ®Ìõ»ğÁúÕÖÏò$n" HIR "ËÄÖÜ£¡\n\n" NOR;
+        msg = HIR "$N" HIR "æ–½å‡ºç§˜å¥§ç¾©ã€Œæ‹”æ§ç‹¼ç‰™å°„æ“Šã€ï¼Œæ‰‹ä¸­" + weapon->name() +
+              HIR "é€£çºŒæ•¸æ§ï¼ŒåŒæ™‚å™´å‡ºæ•¸åæ¢ç«é¾ç½©å‘$n" HIR "å››å‘¨ï¼\n\n" NOR;
         message_combatd(msg, me, target);
 
         for (i = 0; i < 18; i++)

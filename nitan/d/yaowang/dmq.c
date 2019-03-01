@@ -3,15 +3,15 @@ inherit ROOM;
 string go_enter(object me)
 {
         if( query_temp("been_recommend_to_yaowang", me )
-         || (query("family/family_name", me) == "Ò©Íõ¹È") )
+         || (query("family/family_name", me) == "è—¥ç‹è°·") )
                 return __DIR__"gd2";
         else
                 return __DIR__"gd1";
 }
-//²»ÖªµÀÎªÊ²Ã´²»ÄÜÓÃÕâÀàÓï¾ä¡£
+//ä¸çŸ¥é“ç‚ºä»€éº¼ä¸èƒ½ç”¨é€™é¡èªå¥ã€‚
 string go_out(object me)
 {
-        if( query("family/family_name", me) == "Ò©Íõ¹È" )
+        if( query("family/family_name", me) == "è—¥ç‹è°·" )
                 return __DIR__"gd1";
         else
                 return __DIR__"shulin/exit";
@@ -19,10 +19,10 @@ string go_out(object me)
 */
 void create()
 {
-        set("short", "¶ÀÄ¾ÇÅ");
+        set("short", "ç¨æœ¨æ©‹");
         set("long", @LONG
-ÕâÊÇÒ»×ùÔ­Ä¾°ó³ÉµÄĞ¡ÇÅ£¬ÈË×ßÔÚÉÏÃæÖ¨Ö¨¸Â¸ÂµÄÂÒÏì£¬ºÃ
-ÏñËæÊ±¶¼»áµ¹Ëú£¬ÈÃÈËÌáĞÄµõµ¨¡£
+é€™æ˜¯ä¸€åº§åŸæœ¨ç¶æˆçš„å°æ©‹ï¼Œäººèµ°åœ¨ä¸Šé¢å±å±å˜å˜çš„äº‚éŸ¿ï¼Œå¥½
+åƒéš¨æ™‚éƒ½æœƒå€’å¡Œï¼Œè®“äººæå¿ƒåŠè†½ã€‚
 LONG
         );
         set("exits", ([ /* sizeof() == 2 */

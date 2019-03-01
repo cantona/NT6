@@ -1,13 +1,13 @@
-// bing.c ¹Ù±ø
+// bing.c å®˜å…µ
 
 inherit NPC;
 
 void create()
 {
-        set_name("æä±ø", ({ "yi bing", "bing" }));
+        set_name("é©›å…µ", ({ "yi bing", "bing" }));
         set("age", 22);
-        set("gender", "ÄĞĞÔ");
-        set("long","Ëû¾ÍÊÇ¹ÜÕâ¸öÂíÕ¾µÄ±øÊ¿¡£ËäÈ»²»´òÕ½£¬Æ¢ÆøºÃ£¬Ò²²»ÄÜËæ±ãÕĞÈÇÅ¶¡£\n");
+        set("gender", "ç”·æ€§");
+        set("long","ä»–å°±æ˜¯ç®¡é€™å€‹é¦¬ç«™çš„å…µå£«ã€‚é›–ç„¶ä¸æ‰“æˆ°ï¼Œè„¾æ°£å¥½ï¼Œä¹Ÿä¸èƒ½éš¨ä¾¿æ‹›æƒ¹å“¦ã€‚\n");
         set("attitude", "peaceful");
         set("str", 24);
         set("dex", 16);

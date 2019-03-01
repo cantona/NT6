@@ -86,7 +86,7 @@ int query_neili_limit()
 
         fam = query("family/family_name");
         if (query("class") == "bonze" &&
-            (fam == "Ñ©É½ËÂ" || fam == "ÉÙÁÖÅÉ" || fam == "¶ëáÒÅÉ" || fam == "Ñªµ¶ÃÅ"))
+            (fam == "é›ªå±±å¯º" || fam == "å°‘æž—æ´¾" || fam == "å³¨åµ‹æ´¾" || fam == "è¡€åˆ€é–€"))
                 neili_limit += 500;
 
         return neili_limit;
@@ -115,7 +115,7 @@ int query_current_neili_limit()
 
         fam = query("family/family_name");
         if (query("class") == "bonze" &&
-            (fam == "Ñ©É½ËÂ" || fam == "ÉÙÁÖÅÉ" || fam == "¶ëáÒÅÉ" || fam == "Ñªµ¶ÃÅ"))
+            (fam == "é›ªå±±å¯º" || fam == "å°‘æž—æ´¾" || fam == "å³¨åµ‹æ´¾" || fam == "è¡€åˆ€é–€"))
                 neili += 500;
 
         return neili;
@@ -241,16 +241,16 @@ void die()
 
         if (objectp(killer))
         {
-                  message("channel:rumor", HIM "¡¾½­ºþÒ¥ÑÔ¡¿Ä³ÈË£º" + NOR + HIW +
-                        "ÎÒ¿´¼û" + this_object()->name() + "±»" + killer->name() +
-                        "É±º¦ÁË£¬ÕæÊÇ²ÒÎÞÈËµÀ°¡£¡\n" NOR, users());
+                  message("channel:rumor", HIM "ã€æ±Ÿæ¹–è¬ è¨€ã€‘æŸäººï¼š" + NOR + HIW +
+                        "æˆ‘çœ‹è¦‹" + this_object()->name() + "è¢«" + killer->name() +
+                        "æ®ºå®³äº†ï¼ŒçœŸæ˜¯æ…˜ç„¡äººé“å•Šï¼\n" NOR, users());
 
                   if (playerp(killer))
                           killer->apply_condition("killer", 1000 + killer->query_condition("killer"));
         } else
-                message("channel:rumor",HIM "¡¾½­ºþÒ¥ÑÔ¡¿Ä³ÈË£º" + NOR + HIW +
-                        "ÌýËµ" + this_object()->name() +
-                        "ËÀÁË£¬ËÀ×´²Ò²»ÈÌ¶Ã£¡\n" NOR, users());
+                message("channel:rumor",HIM "ã€æ±Ÿæ¹–è¬ è¨€ã€‘æŸäººï¼š" + NOR + HIW +
+                        "è½èªª" + this_object()->name() +
+                        "æ­»äº†ï¼Œæ­»ç‹€æ…˜ä¸å¿ç¹ï¼\n" NOR, users());
 
         if (objectp(corpse = CHAR_D->make_corpse(this_object(), killer)))
                 corpse->move(environment());

@@ -1,5 +1,5 @@
 // This program is a part of XYZX MudLIB
-// shang-shan.c ÉÍÉÆÊ¹Õß
+// shang-shan.c è³å–„ä½¿è€…
 
 #define SHIZHE DATA_DIR + "npc/shang-shan"
 
@@ -27,11 +27,11 @@ void create()
 {
         seteuid(getuid());
         if( !restore() ) {
-                set_name("¶«·½ÈÕ", ({ "shangshan shizhe", "shangshan", "shizhe" }) );
-                set("title", "ÉÍÉÆÊ¹Õß" );
-                set("gender", "ÄĞĞÔ" );
+                set_name("æ±æ–¹æ—¥", ({ "shangshan shizhe", "shangshan", "shizhe" }) );
+                set("title", "è³å–„ä½¿è€…" );
+                set("gender", "ç”·æ€§" );
                 set("age", 35);
-                set("long","Ò»Î»Ğ¦Èİ¿ÉŞäµÄÖĞÄêÈË£¬Ëû¾ÍÊÇÀÖÉÆºÃÊ©£¬°®Æ¶Èç×ÓµÄÎäÁÖÉÍÉÆÊ¹Õß¡£\n");
+                set("long","ä¸€ä½ç¬‘å®¹å¯æ¬çš„ä¸­å¹´äººï¼Œä»–å°±æ˜¯æ¨‚å–„å¥½æ–½ï¼Œæ„›è²§å¦‚å­çš„æ­¦æ—è³å–„ä½¿è€…ã€‚\n");
                 set("attitude", "heroism");
                 set("generation",0);
                 set("winner","NONE");
@@ -70,7 +70,7 @@ void create()
                 carry_object("/d/city/obj/cloth")->wear();
         } else {
                 if( !query("name") )
-                        set_name("¶«·½ÈÕ", ({ "shangshan shizhe", "shangshan", "shizhe" }));
+                        set_name("æ±æ–¹æ—¥", ({ "shangshan shizhe", "shangshan", "shizhe" }));
                 else
                         set_name(query("name"), ({ "shangshan shizhe", "shangshan", "shizhe" }));
                 setup();
@@ -119,10 +119,10 @@ int do_kill(string arg)
 
         if( !this_object()->id(arg) ) return 0;
         if( query("winner", this_object()) == query("id", this_player()) )
-                return notify_fail("ÄãÊÇ²»ÊÇ·èÁË£¿£¡\n");
+                return notify_fail("ä½ æ˜¯ä¸æ˜¯ç˜‹äº†ï¼Ÿï¼\n");
 
-        command("say ÄãÏëÄ±º¦±¾Ê¹Õß£¬µ±ÕæÊÇ×ÔÕÒËÀÂ·£¡ ×ùÏÂºìÒÂÎäÊ¿ºÎÔÚ£¡");
-        message_vision("ËÄÖÜµÄºìÒÂÎäÊ¿ÈºÆğ¶Ô$N·¢¶¯¹¥»÷£¡\n", this_player());
+        command("say ä½ æƒ³è¬€å®³æœ¬ä½¿è€…ï¼Œç•¶çœŸæ˜¯è‡ªæ‰¾æ­»è·¯ï¼ åº§ä¸‹ç´…è¡£æ­¦å£«ä½•åœ¨ï¼");
+        message_vision("å››å‘¨çš„ç´…è¡£æ­¦å£«ç¾¤èµ·å°$Nç™¼å‹•æ”»æ“Šï¼\n", this_player());
         for( i=0; i<4; i++ ) {
                 if( objectp( ob = present("wei shi " + (i+1), environment(this_object())) ) )
                         ob->kill_ob(this_player());
@@ -146,7 +146,7 @@ int accept_fight(object ob)
         mengzhu->restore();
         name1=query("winner", mengzhu);
         if( query("id", this_player()) == name1){
-                command("say ÃËÖ÷´óÈË£¬ÔÚÏÂ·£¶ñÊ¹ÕßÔõÃ´ÊÇÄúµÄ¶ÔÊÖ£¿£¡\n");
+                command("say ç›Ÿä¸»å¤§äººï¼Œåœ¨ä¸‹ç½°æƒ¡ä½¿è€…æ€éº¼æ˜¯æ‚¨çš„å°æ‰‹ï¼Ÿï¼\n");
                 return 0;
         }
 
@@ -156,24 +156,24 @@ int accept_fight(object ob)
         fae->restore();
         name2=query("winner", fae);
         if( query("id", this_player()) == name2){
-                command("say ÄãÊÇ·£¶ñÊ¹Õß£¬ÎÒÊÇÉÍÉÆÊ¹Õß£¬ÎÒÃÇ´òÊ²Ã´¼Ü£¿£¡\n");
+                command("say ä½ æ˜¯ç½°æƒ¡ä½¿è€…ï¼Œæˆ‘æ˜¯è³å–„ä½¿è€…ï¼Œæˆ‘å€‘æ‰“ä»€éº¼æ¶ï¼Ÿï¼\n");
                 return 0;
         }
 
         if( query("winner", me) == query("id", ob)){
                 remove_call_out("do_copy");
                 call_out("do_copy", 1, me, ob);
-                command("say Äã¸úÄã×Ô¼º´òÊ²Ã´¼Ü£¿£¡\n");
+                command("say ä½ è·Ÿä½ è‡ªå·±æ‰“ä»€éº¼æ¶ï¼Ÿï¼\n");
                 return 0;
         }
 
         if( wizardp(this_player()) ) {
-                command("say Î×Ê¦²»ÄÜÇÀÊ¹ÕßÖ®Î»£¡\n");
+                command("say å·«å¸«ä¸èƒ½æ¶ä½¿è€…ä¹‹ä½ï¼\n");
                 return 0;
         }
 
         if( me->is_fighting() || query("fighting", me) )
-                return notify_fail("ÒÑ¾­ÓĞÈËÕıÔÚÌôÕ½ÉÍÉÆÊ¹Õß£¡\n");
+                return notify_fail("å·²ç¶“æœ‰äººæ­£åœ¨æŒ‘æˆ°è³å–„ä½¿è€…ï¼\n");
 
         full_self();
         competition_with(ob);
@@ -190,8 +190,8 @@ void win()
                 return;
         }
 
-        command("say ¿´À´" + RANK_D->query_respect(me) +
-                "»¹µÃ¶à¼ÓÁ·Ï°£¬·½ÄÜÔÚµ±½ñÎäÁÖÖĞ³öÈËÍ·µØ !\n");
+        command("say çœ‹ä¾†" + RANK_D->query_respect(me) +
+                "é‚„å¾—å¤šåŠ ç·´ç¿’ï¼Œæ–¹èƒ½åœ¨ç•¶ä»Šæ­¦æ—ä¸­å‡ºäººé ­åœ° !\n");
         ::win();
 }
 
@@ -203,9 +203,9 @@ void lost()
         ob = query_competitor();
 
         if( !living(me) ) me->revive();
-        command("say ¹ûÈ»À÷º¦£¬¹§Ï²Äã³ÉÎªµ±½ñÉÍÉÆÊ¹Õß£¡\n");
-        command("chat ¹ş¹ş¹ş£¬µ½µ×ÊÇ³¤½­ááÀËÍÆÇ°ÀË£¬Ò»´úĞÂÈË»»¾ÉÈË£¡\n");
-        command("chat¹§Ï²"+query("name", ob)+"±»ÍÆ¾ÙÎªµ±½ñÉÍÉÆÊ¹Õß£¡\n");
+        command("say æœç„¶å²å®³ï¼Œæ­å–œä½ æˆç‚ºç•¶ä»Šè³å–„ä½¿è€…ï¼\n");
+        command("chat å“ˆå“ˆå“ˆï¼Œåˆ°åº•æ˜¯é•·æ±Ÿå¾Œæµªæ¨å‰æµªï¼Œä¸€ä»£æ–°äººæ›èˆŠäººï¼\n");
+        command("chatæ­å–œ"+query("name", ob)+"è¢«æ¨èˆ‰ç‚ºç•¶ä»Šè³å–„ä½¿è€…ï¼\n");
         set("fighting", 1, me);
         remove_call_out("do_copy");
         call_out("do_copy", 1, me, ob);
@@ -222,10 +222,10 @@ int do_copy(object me, object ob)
         set("name",query("name",  ob), me);
 
         delete("party", ob);
-        set("party/party_name", HIC+"µÚ"+chinese_number(query("generation", me))+"´ú"+NOR, ob);
-        set("party/rank", HIC+"ÉÍÉÆÊ¹Õß"+NOR, ob);
+        set("party/party_name", HIC+"ç¬¬"+chinese_number(query("generation", me))+"ä»£"+NOR, ob);
+        set("party/rank", HIC+"è³å–„ä½¿è€…"+NOR, ob);
 
-        set("short", HIC+"µÚ"+chinese_number(query("generation", me))+"´úÉÍÉÆÊ¹Õß"+NOR+""+query("name", me)+"(Shangshanshizhe)", me);
+        set("short", HIC+"ç¬¬"+chinese_number(query("generation", me))+"ä»£è³å–„ä½¿è€…"+NOR+""+query("name", me)+"(Shangshanshizhe)", me);
         delete("title", me);
 
         remove_call_out("do_clone");
@@ -238,16 +238,16 @@ int do_recopy(object me, object ob)
         ob = this_player();
 
         if( me->is_fighting() || ob->is_fighting() || query("fighting", me) )
-                return notify_fail("ÏÖÔÚÕâÀïÕı´òµÄ²»ÒàÀÖºõ£¡µÈ»á°É£¡\n");
+                return notify_fail("ç¾åœ¨é€™è£¡æ­£æ‰“çš„ä¸äº¦æ¨‚ä¹ï¼ç­‰æœƒå§ï¼\n");
 
         if( query("winner", me) != query("id", ob) )
-                return notify_fail("Äã²»ÊÇÏÖÈÎÉÍÉÆÊ¹Õß£¡\n");;
+                return notify_fail("ä½ ä¸æ˜¯ç¾ä»»è³å–„ä½¿è€…ï¼\n");;
 
         set("name",query("name",  ob), me);
         delete("party", ob);
-        set("party/party_name", HIC+"µÚ"+chinese_number(query("generation", me))+"´ú"+NOR, ob);
-        set("party/rank", HIC+"ÉÍÉÆÊ¹Õß"+NOR, ob);
-        set("short", HIC+"µÚ"+chinese_number(query("generation", me))+"´úÉÍÉÆÊ¹Õß"+NOR+""+query("name", me)+"(Shangshanshizhe)", me);
+        set("party/party_name", HIC+"ç¬¬"+chinese_number(query("generation", me))+"ä»£"+NOR, ob);
+        set("party/rank", HIC+"è³å–„ä½¿è€…"+NOR, ob);
+        set("short", HIC+"ç¬¬"+chinese_number(query("generation", me))+"ä»£è³å–„ä½¿è€…"+NOR+""+query("name", me)+"(Shangshanshizhe)", me);
         delete("title", me);
         remove_call_out("do_clone");
         call_out("do_clone", 0, me, ob);
@@ -367,7 +367,7 @@ int do_clone(object me, object ob)
         delete("fighting", me);
         set("backup/condition", ob->query_condition(), me);
         save();
-        tell_object(ob, "×´Ì¬´¢´æÍê±Ï¡£\n");
+        tell_object(ob, "ç‹€æ…‹å„²å­˜å®Œç•¢ã€‚\n");
         /*
         newob = new(SHANGSHAN);
         newob->move("/d/taishan/xiayi");
@@ -390,14 +390,14 @@ int do_recover()
         ob = this_player();
 
         if( me->is_fighting() || ob->is_fighting() || query("fighting", me) )
-                return notify_fail("ÏÖÔÚÕâÀïÕı´òµÄ²»ÒàÀÖºõ£¡µÈ»á°É£¡\n");
+                return notify_fail("ç¾åœ¨é€™è£¡æ­£æ‰“çš„ä¸äº¦æ¨‚ä¹ï¼ç­‰æœƒå§ï¼\n");
 
         if( query("winner", me) != query("id", ob) || query("age", me)>query("age", ob) || 
              query("birthday", me) != query("birthday", ob) )
-                return notify_fail("Äã²»ÊÇÏÖÈÎÉÍÉÆÊ¹Õß£¡\n");
+                return notify_fail("ä½ ä¸æ˜¯ç¾ä»»è³å–„ä½¿è€…ï¼\n");
 
         if( time()-query("recover", me)<60 )
-                return notify_fail("×´Ì¬ÔİÊ±²»ÄÜ¸´Ôª¡£\n");
+                return notify_fail("ç‹€æ…‹æš«æ™‚ä¸èƒ½å¾©å…ƒã€‚\n");
 
         /* delete and copy skills */
         if( mapp(skill_status = ob->query_skills()) ) {
@@ -438,7 +438,7 @@ int do_recover()
         }
 
         set("recover", time(), me);
-        write("×´Ì¬¸´ÔªÍê±Ï¡£\n");
+        write("ç‹€æ…‹å¾©å…ƒå®Œç•¢ã€‚\n");
         return 1;
 }
 

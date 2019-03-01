@@ -5,11 +5,11 @@ inherit ROOM;
 #include <ansi.h>;
 void create()
 {
-        set("short", "ɽ��");
+        set("short", "山道");
         set("long", @LONG
-��������˿�ʼ��ɽ�����ܿ�ȥȺɽ���ƣ�����ȴ����һЩ�Ͱ�
-��������ꡣɽ�ϸ����ŵĶ���������һ�Ĵ��֣�������ȥ��������
-�̣�ԶԶ��ϡ����������Х��
+大驛道至此開始上山，四周看去群山環繞，但是卻都是一些低矮
+起伏的丘陵。山上覆蓋著的都是青綠如一的叢林，縱眼望去，了無人
+煙，遠遠依稀聞聽鳥鳴獸嘯。
 LONG );
         set("outdoors", "yixing");
         set("no_clean_up", 0);

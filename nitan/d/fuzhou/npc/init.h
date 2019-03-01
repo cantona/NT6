@@ -1,4 +1,4 @@
-// init.h ¶¨Òå»ÆºÓ°ï¸ßÊÖ¼ì²é£¬×Ô¼ºÏûÊ§µÄÊ±¼ä
+// init.h å®šç¾©é»ƒæ²³å¹«é«˜æ‰‹æª¢æŸ¥ï¼Œè‡ªå·±æ¶ˆå¤±çš„æ™‚é–“
 #define A_TIME 20
 
 void init()
@@ -77,7 +77,7 @@ void do_check()
         {
                if( ! living(me)&& ob = present("biao tou",environment(me)))
                 {
-                    message_vision("$NÒ§ÑÀÇĞ³İµØ¶Ô×ÅÌì¿Õ´ó½Ğ£º¡°ÔôÀÏÌì£¡¡±\n",me);
+                    message_vision("$Nå’¬ç‰™åˆ‡é½’åœ°å°è‘—å¤©ç©ºå¤§å«ï¼šâ€œè³Šè€å¤©ï¼â€\n",me);
                     addn("combat_num", 1, ob);
                     return;
                 }
@@ -95,7 +95,7 @@ void do_check()
                         if( !query("no_fight", environment()) )
                         {
                                 me->set_leader(ob);
-                                message_vision("$N¶Ô×Å$n´óºÈÒ»Éù£ºÄãÕâ"+RANK_D->query_rude(ob)+"£¬ÄÃÃüÀ´£¡\n",me,ob);
+                                message_vision("$Nå°è‘—$nå¤§å–ä¸€è²ï¼šä½ é€™"+RANK_D->query_rude(ob)+"ï¼Œæ‹¿å‘½ä¾†ï¼\n",me,ob);
                                 command("kill"+query("id", ob));
                         //      ob -> addn("combat_num",1);
                        //       if(!ob->is_busy())  ob->start_busy(20);
@@ -116,8 +116,8 @@ void do_jiefei()
         object ob;
         object me = this_object();
         remove_call_out("do_jiefei");
-        message_vision(HIY"$NÀäĞ¦µÀ£º¹ş¹ş£¬ÎÒµÄ°ïÊÖÀ´À²£¡\n"NOR,me);
-        message_vision(HIR"ÃÍµØÒ»Õó½Å²½ÂÒÏì£¬»ÆºÓ°ï½Ù·Ë³åÁË¹ıÀ´£¡\n"NOR,me);
+        message_vision(HIY"$Nå†·ç¬‘é“ï¼šå“ˆå“ˆï¼Œæˆ‘çš„å¹«æ‰‹ä¾†å•¦ï¼\n"NOR,me);
+        message_vision(HIR"çŒ›åœ°ä¸€é™£è…³æ­¥äº‚éŸ¿ï¼Œé»ƒæ²³å¹«åŠ«åŒªæ²–äº†éä¾†ï¼\n"NOR,me);
         ob = new(__DIR__"jiefei");
         ob ->move(environment(me));
 }
@@ -129,7 +129,7 @@ void do_wait()
         remove_call_out("do_wait");
         if( ob = present("biao tou",environment(me)))
         {
-                message_vision("$NÀäĞ¦µÀ£ºïÚÍ·»¹ÔÚÕâÑ½¡£ÔõÃ´³äÑÆ°ÍÁË£¿\n",this_object());
+                message_vision("$Nå†·ç¬‘é“ï¼šé¢é ­é‚„åœ¨é€™å‘€ã€‚æ€éº¼å……å•å·´äº†ï¼Ÿ\n",this_object());
                 command("kill"+query("id", ob));
         }
         if (me->is_fighting() || !living(me) )
@@ -140,12 +140,12 @@ void do_wait()
         {
                 if (ob = present("corpse",environment(me)))
                 {
-                        message_vision("$N¿ñĞ¦µÀ£º¡°ïÚÍ·¼ÈËÀ£¬ÄãÃ»·¨½»²î£¬ÎÒ¿ÉÒÔ»ØÈ¥½»²îÁË¡£¡±\nÒ»Õó·ç°ã²»¼ûÁË¡£\n",this_object());
+                        message_vision("$Nç‹‚ç¬‘é“ï¼šâ€œé¢é ­æ—¢æ­»ï¼Œä½ æ²’æ³•äº¤å·®ï¼Œæˆ‘å¯ä»¥å›å»äº¤å·®äº†ã€‚â€\nä¸€é™£é¢¨èˆ¬ä¸è¦‹äº†ã€‚\n",this_object());
                         destruct(me);
                 }
                 else
                 {
-                        message_vision("$N×ÔÑÔ×ÔÓïµØËµµÀ£º¿´À´ïÚ³µ²»»á´ÓÕâÀïÀ´ÁË£¬ÎÒ»¹ÊÇ»ØÈ¥°É¡£\n$NÂúÃæÎŞÄÎµØÏòÔ¶´¦×ßÁË¿ªÈ¥¡£\n",this_object());
+                        message_vision("$Nè‡ªè¨€è‡ªèªåœ°èªªé“ï¼šçœ‹ä¾†é¢è»Šä¸æœƒå¾é€™è£¡ä¾†äº†ï¼Œæˆ‘é‚„æ˜¯å›å»å§ã€‚\n$Næ»¿é¢ç„¡å¥ˆåœ°å‘é è™•èµ°äº†é–‹å»ã€‚\n",this_object());
                         destruct(me);
                 }
         }
@@ -157,7 +157,7 @@ void killed_enemy(object victim)
 
         if( query("id", victim) == "biaotou" )
         {
-                message_vision("$NÑöÌì¿ñĞ¦Ò»Éù£º¹ş¹ş£¬¡°ÖÕÓÚµÃÊÖÁË£¡ÎÒ¿´ÄãÔõÃ´½»²î£¡¡±¼¸¸öÆğÂä£¬·ÉÉí²»¼ûÁË¡£\n",me);
+                message_vision("$Nä»°å¤©ç‹‚ç¬‘ä¸€è²ï¼šå“ˆå“ˆï¼Œâ€œçµ‚äºå¾—æ‰‹äº†ï¼æˆ‘çœ‹ä½ æ€éº¼äº¤å·®ï¼â€å¹¾å€‹èµ·è½ï¼Œé£›èº«ä¸è¦‹äº†ã€‚\n",me);
                 destruct(me);
         }
 }

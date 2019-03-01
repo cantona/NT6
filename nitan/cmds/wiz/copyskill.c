@@ -26,21 +26,21 @@ int main(object me, string arg)
         if (sscanf(arg, "%s to %s", arg, target) == 2)
         {
                 if (! objectp(tob = present(target, environment(me))))
-                        return notify_fail("ÄãÑÛÇ°Ã»ÓĞ " + target + " Õâ¸öÈË¡£\n");
+                        return notify_fail("ä½ çœ¼å‰æ²’æœ‰ " + target + " é€™å€‹äººã€‚\n");
         } else
                 tob = me;
 
         if (wiz_level(me) <= wiz_level(tob) && me != tob)
-                return notify_fail("ÄãÖ»ÄÜ¸øÈ¨ÏŞ±È×Ô¼ºµÍµÄÈË¸´ÖÆÎä¹¦¡£\n");
+                return notify_fail("ä½ åªèƒ½çµ¦æ¬Šé™æ¯”è‡ªå·±ä½çš„äººå¾©åˆ¶æ­¦åŠŸã€‚\n");
 
         if (arg == "me")
                 ob = me;
         else
         if (! objectp(ob = present(arg, environment(me))))
-                return notify_fail("ÄãÑÛÇ°Ã»ÓĞ " + arg + " Õâ¸öÈË¡£\n");
+                return notify_fail("ä½ çœ¼å‰æ²’æœ‰ " + arg + " é€™å€‹äººã€‚\n");
 
         if (! is_root(me) && playerp(tob) && ! wizardp(tob))
-                return notify_fail("Ö»ÓĞÌìÉñ²ÅÄÜ¸øÆÕÍ¨Íæ¼Ò¸´ÖÆÎä¹¦¡£\n");
+                return notify_fail("åªæœ‰å¤©ç¥æ‰èƒ½çµ¦æ™®é€šç©å®¶å¾©åˆ¶æ­¦åŠŸã€‚\n");
 
         if (! me->is_admin())
         {
@@ -48,21 +48,21 @@ int main(object me, string arg)
                 {
                 case "me":
                         if (tob != me)
-                                return notify_fail("ÄãÖ»ÄÜ¸ø×Ô¼º¸´ÖÆÎä¹¦¡£\n");
+                                return notify_fail("ä½ åªèƒ½çµ¦è‡ªå·±å¾©åˆ¶æ­¦åŠŸã€‚\n");
                 case "wizard":
                         if (wiz_level(tob) < 1)
-                                return notify_fail("ÄãÖ»ÄÜ¸øÎ×Ê¦¸´ÖÆÎä¹¦¡£\n");
+                                return notify_fail("ä½ åªèƒ½çµ¦å·«å¸«å¾©åˆ¶æ­¦åŠŸã€‚\n");
 
                 case "all":
                         break;
 
                 default:
-                        return notify_fail("Äã²»ÄÜ¸´ÖÆÎä¹¦¡£\n");
+                        return notify_fail("ä½ ä¸èƒ½å¾©åˆ¶æ­¦åŠŸã€‚\n");
                 }
         }
 
         if (ob == tob)
-                return notify_fail("²»ĞèÒª¸´ÖÆ°É¡£\n");
+                return notify_fail("ä¸éœ€è¦å¾©åˆ¶å§ã€‚\n");
 
         if (me != tob)
                 log_file("static/copyskill", sprintf("%s %s copy %s(%s)'s skill to %s(%s).\n",
@@ -71,8 +71,8 @@ int main(object me, string arg)
                                                      tob->name(1), query("id", tob)));
 
         copy_skill(tob, ob);
-        message_vision(HIM + me->name(1) + HIM "¿ÚÖĞÄîÄîÓĞ´Ê£¬Ö»¼ûÒ»µÀºì¹âÁıÕÖÁË$N"
-                       HIM "ºÍ$n" HIM "¡£\n" NOR, tob, ob);
+        message_vision(HIM + me->name(1) + HIM "å£ä¸­å¿µå¿µæœ‰è©ï¼Œåªè¦‹ä¸€é“ç´…å…‰ç± ç½©äº†$N"
+                       HIM "å’Œ$n" HIM "ã€‚\n" NOR, tob, ob);
         return 1;
 }
 
@@ -193,11 +193,11 @@ protected int copy_skill(object me, object ob)
 int help()
 {
         write(@TEXT
-Ö¸Áî¸ñÊ½£ºcopyskill <¶ÔÏó> [to <Ä¿µÄ¶ÔÏó>]
+æŒ‡ä»¤æ ¼å¼ï¼šcopyskill <å°è±¡> [to <ç›®çš„å°è±¡>]
 
-Õâ¸öÖ¸ÁîÈÃÄã¸´ÖÆ¶ÔÏóµÄÕ½¶·¾­ÑéºÍËùÓĞµÄÎä¹¦¼¼ÄÜ¡£
+é€™å€‹æŒ‡ä»¤è®“ä½ å¾©åˆ¶å°è±¡çš„æˆ°é¬¥ç¶“é©—å’Œæ‰€æœ‰çš„æ­¦åŠŸæŠ€èƒ½ã€‚
 
-¸ÃÃüÁîÔÚ¿ÉÒÔ±»ÊÚÈ¨Ê¹ÓÃµÄĞÅÏ¢°üÀ¨£ºme¡¢wizard¡¢all¡£
+è©²å‘½ä»¤åœ¨å¯ä»¥è¢«æˆæ¬Šä½¿ç”¨çš„ä¿¡æ¯åŒ…æ‹¬ï¼šmeã€wizardã€allã€‚
 TEXT );
         return 1 ;
 }

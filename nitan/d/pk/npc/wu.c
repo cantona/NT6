@@ -6,15 +6,15 @@ string ask_me();
 
 void create()
 {
-        set_name("ÎÚÀÏ´ó", ({ "wu laoda", "wu" }));
-        set("gender", "ÄĞĞÔ");
+        set_name("çƒè€å¤§", ({ "wu laoda", "wu" }));
+        set("gender", "ç”·æ€§");
         set("age", 47);
 
         set("inquiry", ([
-                "ÍÀÈË´óÈü" : (: ask_me :),
-                "ÍÀÈË±ÈÈü" : (: ask_me :),
-                "ÍÀÈËÈü"   : (: ask_me :),
-                "ÍÀÈË"     : (: ask_me :),
+                "å± äººå¤§è³½" : (: ask_me :),
+                "å± äººæ¯”è³½" : (: ask_me :),
+                "å± äººè³½"   : (: ask_me :),
+                "å± äºº"     : (: ask_me :),
         ]));
 
         setup();
@@ -34,7 +34,7 @@ void unconcious()
 
 void die()
 {
-        message_vision("$N´òÁË¸öÅçÌç£¬Ëæ¼´»Ö¸´Õı³£¡£\n", this_object());
+        message_vision("$Næ‰“äº†å€‹å™´åšï¼Œéš¨å³æ¢å¾©æ­£å¸¸ã€‚\n", this_object());
 }
 
 string ask_me()
@@ -43,28 +43,28 @@ string ask_me()
 
         me = this_player();
         if (PK_D->is_pking())
-                return "ÏÖÔÚÍÀÈË´óÈüÕıÔÚ¾ÙĞĞÄØ£¬ÄãÏë¸ÉÊ²Ã´£¿";
+                return "ç¾åœ¨å± äººå¤§è³½æ­£åœ¨èˆ‰è¡Œå‘¢ï¼Œä½ æƒ³å¹¹ä»€éº¼ï¼Ÿ";
 
         if (PK_D->is_ready())
-                return "ºÜºÃ£¬ÏÖÔÚÍÀÈË´óÈüÕıÒª¿ªÊ¼£¬ÄãÒª±¨ÃûÃ´(sign)£¿";
+                return "å¾ˆå¥½ï¼Œç¾åœ¨å± äººå¤§è³½æ­£è¦é–‹å§‹ï¼Œä½ è¦å ±åéº¼(sign)ï¼Ÿ";
 
-        return "ÍÀÈË´óÈü£¿ÄãÂıÂıµÈ×Å°É¡£ÒªÊÇÎŞÁÄ£¬ÏÖÔÚÒªÊÇÏë½øÈ¥ÍæÍæ(join)Ò²ĞĞ¡£";
+        return "å± äººå¤§è³½ï¼Ÿä½ æ…¢æ…¢ç­‰è‘—å§ã€‚è¦æ˜¯ç„¡èŠï¼Œç¾åœ¨è¦æ˜¯æƒ³é€²å»ç©ç©(join)ä¹Ÿè¡Œã€‚";
 }
 
 int do_join()
 {
         if (PK_D->is_pking())
-                return notify_fail("ÎÚÀÏ´óÑÛ¾¦Ò»µ¯£¬ºÈµÀ£º¡°ÏÖÔÚÀïÃæÕı±ÈÈüÄØ£¬ÄãÕâĞ©ÈËµÈµÈ°É¡£¡±\n");
+                return notify_fail("çƒè€å¤§çœ¼ç›ä¸€å½ˆï¼Œå–é“ï¼šâ€œç¾åœ¨è£¡é¢æ­£æ¯”è³½å‘¢ï¼Œä½ é€™äº›äººç­‰ç­‰å§ã€‚â€\n");
 
         if (PK_D->is_ready())
-                return notify_fail("ÎÚÀÏ´óÀÁÀÁµÀ£º¡°ÒªÏëÕıÊ½±ÈÈü¾Í½øÈ¥£¬ÆäËûÈËÏÈµÈ×Å¡£¡±\n");
+                return notify_fail("çƒè€å¤§æ‡¶æ‡¶é“ï¼šâ€œè¦æƒ³æ­£å¼æ¯”è³½å°±é€²å»ï¼Œå…¶ä»–äººå…ˆç­‰è‘—ã€‚â€\n");
 
-        message_vision("$NÅâĞ¦¶Ô$nµÀ£º¡°ÎÒ½øÈ¥Áï´ïÁï´ï£¬·ÅĞĞ¿ÉºÃ£¿¡±\n",
+        message_vision("$Nè³ ç¬‘å°$né“ï¼šâ€œæˆ‘é€²å»æºœé”æºœé”ï¼Œæ”¾è¡Œå¯å¥½ï¼Ÿâ€\n",
                        this_player(), this_object());
 
         if (PK_D->join_competition(this_player()))
         {
-                message("vision", this_player()->name() + "Ò»ÁïĞ¡ÅÜ½øÁËÍÀÈË³¡¡£\n",
+                message("vision", this_player()->name() + "ä¸€æºœå°è·‘é€²äº†å± äººå ´ã€‚\n",
                         environment());
                 return 1;
         }
@@ -79,12 +79,12 @@ int do_sign()
         object ob;
 
         me = this_player();
-        message_vision("$NÅã×ÅĞ¦Á³¶Ô$nµÀ£º¡°ÄúºÃ£¬ÄúºÃ£¬ÎÒÒ²À´Ç©¸öµ½¡£¡±\n",
+        message_vision("$Né™ªè‘—ç¬‘è‡‰å°$né“ï¼šâ€œæ‚¨å¥½ï¼Œæ‚¨å¥½ï¼Œæˆ‘ä¹Ÿä¾†ç°½å€‹åˆ°ã€‚â€\n",
                        me, this_object());
         if( query("combat_exp", me)<1000 )
         {
-                message_vision("$nÌ§Í·¿´ÁË¿´$N£¬²»Ğ¼µÀ£º¡°¾ÍÄã"
-                               "Õâµã±¾ÊÂ£¿Ö»ºÃ²Î¼Ó±»ÍÀ´óÈü£¡¡±\n",
+                message_vision("$næŠ¬é ­çœ‹äº†çœ‹$Nï¼Œä¸å±‘é“ï¼šâ€œå°±ä½ "
+                               "é€™é»æœ¬äº‹ï¼Ÿåªå¥½åƒåŠ è¢«å± å¤§è³½ï¼â€\n",
                                me, this_object());
                 return 1;
         }
@@ -98,18 +98,18 @@ int do_sign()
         foreach (ob in deep_inventory(me))
                 if (ob->is_character())
                 {
-                        command("say Äã±³µÄË­£¿È¥±ÈÈü»¹ÍÏ¼Ò´ø¿ÚµÄ£¿¿ì¸øÎÒ¹ö£¡");
-                        message_vision("$N·ÉÆğÒ»½Å£¬°Ñ$nÌßµ¹ÔÚµØ£¡\n",
+                        command("say ä½ èƒŒçš„èª°ï¼Ÿå»æ¯”è³½é‚„æ‹–å®¶å¸¶å£çš„ï¼Ÿå¿«çµ¦æˆ‘æ»¾ï¼");
+                        message_vision("$Né£›èµ·ä¸€è…³ï¼ŒæŠŠ$nè¸¢å€’åœ¨åœ°ï¼\n",
                                        this_object(), me);
                         me->receive_damage("qi", 50);
                         return 1;
                 }
 
-        message_vision("$nµãµãÍ·£¬¶Ô$NµÀ£º¡°ºÃ°É£¬ÄãÏÈ½ø"
-                       "È¥×¼±¸°É¡£¡±\n$NµãµãÍ·£¬Ïò±±ÃæµÄ"
-                       "×¼±¸ÊÒ×ßÈ¥¡£\n", me, this_object());
+        message_vision("$né»é»é ­ï¼Œå°$Né“ï¼šâ€œå¥½å§ï¼Œä½ å…ˆé€²"
+                       "å»æº–å‚™å§ã€‚â€\n$Né»é»é ­ï¼Œå‘åŒ—é¢çš„"
+                       "æº–å‚™å®¤èµ°å»ã€‚\n", me, this_object());
         me->move("/d/pk/ready");
-        message("vision", me->name() + "¾«Éñ¶¶ËÓµÄ×ßÁË½øÀ´¡£\n",
+        message("vision", me->name() + "ç²¾ç¥æŠ–æ“»çš„èµ°äº†é€²ä¾†ã€‚\n",
                 environment(me), ({ me }));
         return 1;
 }

@@ -1,46 +1,46 @@
 #include <ansi.h>
 
-#define DIAN "¡¸" HIW "º××ì¾¢µãÁúÔ¾ÇÏ" NOR "¡¹"
+#define DIAN "ã€Œ" HIW "é¶´å˜´å‹é»žé¾èºç«…" NOR "ã€"
 
 int exert(object me, object target)
 {
         if( userp(me) && !query("can_perform/taiji-shengong/dian", me) )
-                return notify_fail("Äã»¹Ã»ÓÐÁìÎòµ½Õâ¸öÔË¹¦¾÷ÇÏ£¬ÎÞ·¨Ê©Õ¹" DIAN "¡£\n"); 
+                return notify_fail("ä½ é‚„æ²’æœ‰é ˜æ‚Ÿåˆ°é€™å€‹é‹åŠŸè¨£ç«…ï¼Œç„¡æ³•æ–½å±•" DIAN "ã€‚\n"); 
 
         if (! target)
-                return notify_fail("ÄãÒªÓÃÕæÆøÎªË­ÁÆÉË£¿\n");
+                return notify_fail("ä½ è¦ç”¨çœŸæ°£ç‚ºèª°ç™‚å‚·ï¼Ÿ\n");
 
         if (target == me)
-                return notify_fail(DIAN "Ö»ÄÜ¶Ô±ðÈËÊ©Õ¹¡£\n");
+                return notify_fail(DIAN "åªèƒ½å°åˆ¥äººæ–½å±•ã€‚\n");
 
         if (me->is_fighting() || target->is_fighting())
-                return notify_fail("Õ½¶·ÖÐÎÞ·¨ÔË¹¦ÁÆÉË¡£\n");
+                return notify_fail("æˆ°é¬¥ä¸­ç„¡æ³•é‹åŠŸç™‚å‚·ã€‚\n");
 
         if( query("not_living", target) )
-                return notify_fail("ÄãÎÞ·¨¸ø" + target->name() + "ÁÆÉË¡£\n");
+                return notify_fail("ä½ ç„¡æ³•çµ¦" + target->name() + "ç™‚å‚·ã€‚\n");
 
         if ((int)me->query_skill("taiji-shengong", 1) < 100)
-                return notify_fail("ÄãµÄÌ«¼«Éñ¹¦²»¹»æµÊì£¬ÄÑÒÔÊ©Õ¹" DIAN "¡£\n");
+                return notify_fail("ä½ çš„å¤ªæ¥µç¥žåŠŸä¸å¤ å«»ç†Ÿï¼Œé›£ä»¥æ–½å±•" DIAN "ã€‚\n");
 
         if( query("max_neili", me)<1500 )
-                return notify_fail("ÄãµÄÄÚÁ¦ÐÞÎªÌ«Ç³£¬ÄÑÒÔÊ©Õ¹" DIAN "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¿®ç‚ºå¤ªæ·ºï¼Œé›£ä»¥æ–½å±•" DIAN "ã€‚\n");
 
         if( query("neili", me)<1000 )
-                return notify_fail("ÄãÏÖÔÚµÄÕæÆø²»×ã£¬ÄÑÒÔÊ©Õ¹" DIAN "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çš„çœŸæ°£ä¸è¶³ï¼Œé›£ä»¥æ–½å±•" DIAN "ã€‚\n");
 
         if( query("jing", me)<100 )
-                return notify_fail("ÄãÏÖÔÚ¾«Éñ×´Ì¬²»¼Ñ£¬ÄÑÒÔÊ©Õ¹" DIAN "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨ç²¾ç¥žç‹€æ…‹ä¸ä½³ï¼Œé›£ä»¥æ–½å±•" DIAN "ã€‚\n");
 
         if( query("eff_qi", target) >= query("max_qi", target) && 
             query("eff_jing", target) >= query("max_jing", target) )
-                return notify_fail("¶Ô·½Ã»ÓÐÊÜÉË£¬²»ÐèÒª½ÓÊÜÖÎÁÆ¡£\n");
+                return notify_fail("å°æ–¹æ²’æœ‰å—å‚·ï¼Œä¸éœ€è¦æŽ¥å—æ²»ç™‚ã€‚\n");
 
-        message_sort(HIW "\nÖ»¼û$N" HIW "Ë«ÊÖÊ³Ö¸ºÍÄ´Ö¸ÐéÄÃ£¬³Éº××ì¾¢"
-                     "ÊÆ£¬ÒÔÊ³Ö¸Ö¸¼âµãÔÚ$n" HIW "¶ú¼âÈý·Ö´¦µÄÁúÔ¾ÇÏ£¬"
-                     "ÔËÆðÄÚ¹¦£¬Î¢Î¢°Ú¶¯¡£ÕâÕÐº××ì¾¢µãÁúÔ¾ÇÏÊ¹½«³öÀ´£¬"
-                     "±ãÊÇÐÂ¶ÏÆøÖ®ÈËÒ²ÄÜ»¹»êÆ¬¿Ì¡£¹ýµÃÒ»»á±ã¼ûµÃ$p¶îÍ·"
-                     "ÉÏÃ°³ö¶¹´óº¹Öé£¬Í·ÉÏÃ°³öÒþÒþ°×Îí£¬ÍÛµÄÒ»ÏÂÍÂ³öðö"
-                     "Ñª£¬Á³É«µÇÊ±¿´ÆðÀ´ºìÈó¶àÁË¡£\n" NOR, me, target);
+        message_sort(HIW "\nåªè¦‹$N" HIW "é›™æ‰‹é£ŸæŒ‡å’Œæ‹‡æŒ‡è™›æ‹¿ï¼Œæˆé¶´å˜´å‹"
+                     "å‹¢ï¼Œä»¥é£ŸæŒ‡æŒ‡å°–é»žåœ¨$n" HIW "è€³å°–ä¸‰åˆ†è™•çš„é¾èºç«…ï¼Œ"
+                     "é‹èµ·å…§åŠŸï¼Œå¾®å¾®æ“ºå‹•ã€‚é€™æ‹›é¶´å˜´å‹é»žé¾èºç«…ä½¿å°‡å‡ºä¾†ï¼Œ"
+                     "ä¾¿æ˜¯æ–°æ–·æ°£ä¹‹äººä¹Ÿèƒ½é‚„é­‚ç‰‡åˆ»ã€‚éŽå¾—ä¸€æœƒä¾¿è¦‹å¾—$pé¡é ­"
+                     "ä¸Šå†’å‡ºè±†å¤§æ±—ç ï¼Œé ­ä¸Šå†’å‡ºéš±éš±ç™½éœ§ï¼Œå“‡çš„ä¸€ä¸‹åå‡ºç˜€"
+                     "è¡€ï¼Œè‡‰è‰²ç™»æ™‚çœ‹èµ·ä¾†ç´…æ½¤å¤šäº†ã€‚\n" NOR, me, target);
 
         addn("neili", -800, me);
         me->receive_damage("qi", 100);
@@ -64,7 +64,7 @@ int exert(object me, object target)
         if (! target->is_busy())
                 target->stary_busy(2);
 
-        message_vision("\n$N±ÕÄ¿Ú¤×ø£¬¿ªÊ¼ÔË¹¦µ÷Ï¢¡£\n", me);
+        message_vision("\n$Né–‰ç›®å†¥åï¼Œé–‹å§‹é‹åŠŸèª¿æ¯ã€‚\n", me);
         me->start_busy(10);
         return 1;
 }

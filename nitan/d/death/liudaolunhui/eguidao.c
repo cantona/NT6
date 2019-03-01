@@ -3,12 +3,12 @@ inherit ROOM;
 
 void create()
 {
-        set("short", NOR + HIB "\n\n                ¶ö        ¹í        µÀ" NOR);
+        set("short", NOR + HIB "\n\n                é¤“        é¬¼        é“" NOR);
         set("long", HIB "\n"
-"°§º¿ËÄÆð£¬»·¹ËÖÜÎ§£¬±éÊÇÑÊÏ¸ÈçÕë£¬¿Ú´óÈç¾æ£¬¸¹¹ÄÈçÉ½µÄ\n"
-"¶ö¹í¡£Ç°ÊÀÔì×÷µÄÉÆ¶ñÒµ²»Í¬£¬ÔÚ¶ö¹íµÀËùÊÜµÄ¹û±¨Ò²»á²»Í¬¡£\n"
-"¶ö¹í¶àÊÇ¼³¼³ÓÚÒûÊ³£¬µ«È´ËÄ´¦±¼×ßÇóÊ³²»ÄÜ£¬Ëù¼û³ØË®È´¶¼\n"
-"±ä³ÉÅ§Ñª¶ø²»ÄÜÒûÓÃ£¬²»ÊÇÓöË®³É»ð¾ÍÊÇºíÏ¸ÎÞ·¨ÑÊÊ³¡£\n\n" NOR);
+"å“€åšŽå››èµ·ï¼Œç’°é¡§å‘¨åœï¼Œéæ˜¯åš¥ç´°å¦‚é‡ï¼Œå£å¤§å¦‚ç‚¬ï¼Œè…¹é¼“å¦‚å±±çš„\n"
+"é¤“é¬¼ã€‚å‰ä¸–é€ ä½œçš„å–„æƒ¡æ¥­ä¸åŒï¼Œåœ¨é¤“é¬¼é“æ‰€å—çš„æžœå ±ä¹Ÿæœƒä¸åŒã€‚\n"
+"é¤“é¬¼å¤šæ˜¯æ±²æ±²äºŽé£²é£Ÿï¼Œä½†å»å››è™•å¥”èµ°æ±‚é£Ÿä¸èƒ½ï¼Œæ‰€è¦‹æ± æ°´å»éƒ½\n"
+"è®Šæˆè†¿è¡€è€Œä¸èƒ½é£²ç”¨ï¼Œä¸æ˜¯é‡æ°´æˆç«å°±æ˜¯å–‰ç´°ç„¡æ³•åš¥é£Ÿã€‚\n\n" NOR);
 
         set("objects", ([
                 __DIR__"npc/eguidaofo" : 1,

@@ -1,5 +1,5 @@
 //quest/helian.c
-// Modified by Zeratul May 2,2001 Ôö¼ÓÁ½¸öÈÎÎñÖ®¼äµÄÊ±¼äÏŞÖÆ£¬»Ö¸´ÓÃÇ®È¡ÏûµÄ¹¦ÄÜ
+// Modified by Zeratul May 2,2001 å¢åŠ å…©å€‹ä»»å‹™ä¹‹é–“çš„æ™‚é–“é™åˆ¶ï¼Œæ¢å¾©ç”¨éŒ¢å–æ¶ˆçš„åŠŸèƒ½
 
 inherit NPC;
 #include <ansi.h>;
@@ -7,14 +7,14 @@ inherit NPC;
 int time_period(int timep,object me);
 void create()
 {
-        set_name("ºÕÁ¬ÌúÊ÷", ({ "helian tieshu", "helian", "tieshu" }));
-        set("title", HIY"Î÷ÏÄ¹úÕ÷¶«´ó½«¾ü"HIM"Î÷ÏÄÒ»Æ·ÌÃ"HIR"×Ü¹Ü"NOR);
-        set("gender", "ÄĞĞÔ");
+        set_name("èµ«é€£éµæ¨¹", ({ "helian tieshu", "helian", "tieshu" }));
+        set("title", HIY"è¥¿å¤åœ‹å¾æ±å¤§å°‡è»"HIM"è¥¿å¤ä¸€å“å ‚"HIR"ç¸½ç®¡"NOR);
+        set("gender", "ç”·æ€§");
         set("age", 35);
         set("str", 25);
         set("dex", 26);
         set("per", 16);
-        set("long", "ËûÉí´©´óºì½õÅÛ£¬ÈıÊ®ËÄÎåËêÄê¼Í£¬Ó¥¹³±Ç¡¢°Ë×ÖĞë¡£\n");
+        set("long", "ä»–èº«ç©¿å¤§ç´…éŒ¦è¢ï¼Œä¸‰åå››äº”æ­²å¹´ç´€ï¼Œé·¹é‰¤é¼»ã€å…«å­—é ˆã€‚\n");
 
         set("combat_exp", 500000);
         set("shen_type", -1);
@@ -39,7 +39,7 @@ void create()
         map_skill("claw", "jiuyin-baiguzhao");
         prepare_skill("claw", "jiuyin-baiguzhao");
         set("inquiry", ([
-                "Ò»Æ·ÌÃ": "Ò»Æ·ÌÃ¾ÍÊÇÒªºÍÖĞÔ­ÎäÁÖ×ö¶Ô£¡\n",
+                "ä¸€å“å ‚": "ä¸€å“å ‚å°±æ˜¯è¦å’Œä¸­åŸæ­¦æ—åšå°ï¼\n",
         ]) );
 
         setup();
@@ -48,7 +48,7 @@ void create()
 
 int accept_fight(object me)
 {
-        command("say Äã¸ÒÀ´Ò»Æ·ÌÃÈöÒ°£¡²»ÒªÃüÁË£¡");
+        command("say ä½ æ•¢ä¾†ä¸€å“å ‚æ’’é‡ï¼ä¸è¦å‘½äº†ï¼");
         return 0;
 }
 
@@ -137,31 +137,31 @@ int give_quest()
         combatexp = (int) (me->query("combat_exp"));
         if( !(int)me->query("yipin/joined"))
         {
-                tell_object(me,"ºÕÁ¬ÌúÊ÷¶ÔÄãºßÁËÒ»ÉùµÀ£º¡°Äã²»ÊÇ±¾ÌÃµÄ°É£¿À´Õâ´ÕÊ²Ã´ÈÈÄÖ£¡¡±\n");
+                tell_object(me,"èµ«é€£éµæ¨¹å°ä½ å“¼äº†ä¸€è²é“ï¼šâ€œä½ ä¸æ˜¯æœ¬å ‚çš„å§ï¼Ÿä¾†é€™æ¹Šä»€éº¼ç†±é¬§ï¼â€\n");
                 return 1;
         }
         //Modified by zeratul 2000-12-25
         if(combatexp<10000)
         {
-                tell_object(me,"ºÕÁ¬ÌúÊ÷¶ÔÄãºßÁËÒ»ÉùµÀ£º¡°ÕâÖÖĞ¡½ÇÉ«»¹ÏëÍ¶»úÒ»Æ·ÌÃ£¿¡±\n");
+                tell_object(me,"èµ«é€£éµæ¨¹å°ä½ å“¼äº†ä¸€è²é“ï¼šâ€œé€™ç¨®å°è§’è‰²é‚„æƒ³æŠ•æ©Ÿä¸€å“å ‚ï¼Ÿâ€\n");
                 return 1;
         }
 /*        if(combatexp>10000000)
         {
-                tell_object(me,"ºÕÁ¬ÌúÊ÷¹ªÉíµÀ£º¡°ÕâÖÖĞ¡ÊÂÔõ¸ÒÀÍ·³Äú¡£¡±\n");
+                tell_object(me,"èµ«é€£éµæ¨¹èº¬èº«é“ï¼šâ€œé€™ç¨®å°äº‹æ€æ•¢å‹ç…©æ‚¨ã€‚â€\n");
                 return 1;
         } */
         if( me->query("quest/helian") && !me->query( "quest/helian/finished" ) )
         {
                 if( ((int) me->query("/quest/helian/time")) > time() )
                 {
-//                        tell_object(me,"ºÕÁ¬ÌúÊ÷¶ÔÄãÀäÀäÒ»Ğ¦µÀ£ºÈÃÄã°ìµÄÊÂÈçºÎÁË£¿\n");
-                        tell_object(me,"ºÕÁ¬ÌúÊ÷ºÜ²»Ğ¼µØî©ÁËÄãÒ»ÑÛËµµÀ£ºÄãÒªÊÇÃ»±¾ÊÂ£¬¾ÍÄÃµã¶ù·ÑÓÃ³öÀ´ÎÒÈÃ±ğµÄÈËÈ¥¡£\n");
+//                        tell_object(me,"èµ«é€£éµæ¨¹å°ä½ å†·å†·ä¸€ç¬‘é“ï¼šè®“ä½ è¾¦çš„äº‹å¦‚ä½•äº†ï¼Ÿ\n");
+                        tell_object(me,"èµ«é€£éµæ¨¹å¾ˆä¸å±‘åœ°çŸäº†ä½ ä¸€çœ¼èªªé“ï¼šä½ è¦æ˜¯æ²’æœ¬äº‹ï¼Œå°±æ‹¿é»å…’è²»ç”¨å‡ºä¾†æˆ‘è®“åˆ¥çš„äººå»ã€‚\n");
                         return 1;
                 }
                 else
                 {
-                        tell_object( me, "ºÕÁ¬ÌúÊ÷¶Ô×ÅÄãÌ¾ÁËÒ»¿ÚÆø£º°¥£¬ÎÒ¾ÍÔÙ¸øÄãÒ»´Î»ú»á°É¡£\n" );
+                        tell_object( me, "èµ«é€£éµæ¨¹å°è‘—ä½ å˜†äº†ä¸€å£æ°£ï¼šå“ï¼Œæˆ‘å°±å†çµ¦ä½ ä¸€æ¬¡æ©Ÿæœƒå§ã€‚\n" );
                         me->delete( "quest/helian/finished" );
                         me->add("qi",-(int)(me->query("qi")/10));
                         me->add("quests/abandon", 1);
@@ -170,7 +170,7 @@ int give_quest()
         else
                 if (me->query("/quest/helian/last_time")+60+random(60) > time())
                 {
-                        tell_object(me,"ºÕÁ¬ÌúÊ÷¶ÔÄãĞ¦µÀ£ºÄã¹ıÓÚÀÍÀÛ£¬ĞªÏ¢»á¶ùÔÙÉÏÂ·°É¡£\n");
+                        tell_object(me,"èµ«é€£éµæ¨¹å°ä½ ç¬‘é“ï¼šä½ éäºå‹ç´¯ï¼Œæ­‡æ¯æœƒå…’å†ä¸Šè·¯å§ã€‚\n");
                         return 1;
                 }
         
@@ -182,7 +182,7 @@ int give_quest()
         while (1 == 1)
         {
                 quest = __DIR__"qslist"->query_quest();
-                quest["quest_type"] = "É±";
+                quest["quest_type"] = "æ®º";
                 quest["exp_bonus"] = expright[j];
                 quest["pot_bonus"] = potright[j];
                 quest["score"] = 150 + random(50);
@@ -195,7 +195,7 @@ int give_quest()
         timep = random(60) * 10 + 600;
 
         time_period(timep, me);
-        tell_object(me,"ÏÈÌæÎÒ°Ñ¡º"+quest["quest"]+"¡»¸øÎÒÉ±ÁË£¬¿´ÄÇĞ©ÄÏÂùÓÖÄÜ°ÑÒ»Æ·ÌÃÔõÃ´×Å£¿£¡\n" NOR);
+        tell_object(me,"å…ˆæ›¿æˆ‘æŠŠã€"+quest["quest"]+"ã€çµ¦æˆ‘æ®ºäº†ï¼Œçœ‹é‚£äº›å—è »åˆèƒ½æŠŠä¸€å“å ‚æ€éº¼è‘—ï¼Ÿï¼\n" NOR);
 
         me->set("/quest/helian/time", (int)time()+timep);
         me->set("/quest/helian/factor",factor);
@@ -220,14 +220,14 @@ int time_period(int timep, object me)
         h = t % 24;        t /= 24;
         d = t;
 
-        if(d) time = chinese_number(d) + "Ìì";
+        if(d) time = chinese_number(d) + "å¤©";
         else time = "";
 
-        if(h) time += chinese_number(h) + "Ğ¡Ê±";
-        if(m) time += chinese_number(m) + "·Ö";
-        time += chinese_number(s) + "Ãë";
+        if(h) time += chinese_number(h) + "å°æ™‚";
+        if(m) time += chinese_number(m) + "åˆ†";
+        time += chinese_number(s) + "ç§’";
 
-        tell_object(me,HIW "ºÕÁ¬ÌúÊ÷·Ô¸ÀµÀ£º¸øÄãÔÚ" + time + "ÄÚ");
+        tell_object(me,HIW "èµ«é€£éµæ¨¹å©å’é“ï¼šçµ¦ä½ åœ¨" + time + "å…§");
         return 1;
 }
 
@@ -238,7 +238,7 @@ int accept_object(object who, object ob)
         if ( !ob->query("money_id") ) return 0;
         if ( !who->query("quest/helian") ||
                 who->query("quest/helian/finished") || ob->value() < 10000 )
-                tell_object(who,"ºÕÁ¬ÌúÊ÷Ğ¦µÀ£ºÄÇÎÒ¿É¾Í²»¿ÍÆøÁË¡£\n");
+                tell_object(who,"èµ«é€£éµæ¨¹ç¬‘é“ï¼šé‚£æˆ‘å¯å°±ä¸å®¢æ°£äº†ã€‚\n");
         else
         {
                 require = who->query("quests/require");
@@ -255,22 +255,22 @@ int accept_object(object who, object ob)
                 who->set("quests/num",num);
                 if(num==2 && ob->value() < 1000000)
                 {
-                        tell_object(who, "ºÕÁ¬ÌúÊ÷Ò»Ë«¼âÕë°ãµÄÑÛ¾¦Ö±¶¢×ÅÄã£ºÎÒÊµÔÚ²»Ïë¸øÄãÈÎÎñ£¡Ê®ÏîÍê³É²»ÁËÒ»Ïî¡£Èç¹ûÄã²»ÏëÍê³ÉÕâ´ÎµÄÈÎÎñ£¬ÄÃÒ»°ÙÁ½Î¥Ô¼½ğÀ´£¡\n");
+                        tell_object(who, "èµ«é€£éµæ¨¹ä¸€é›™å°–é‡èˆ¬çš„çœ¼ç›ç›´ç›¯è‘—ä½ ï¼šæˆ‘å¯¦åœ¨ä¸æƒ³çµ¦ä½ ä»»å‹™ï¼åé …å®Œæˆä¸äº†ä¸€é …ã€‚å¦‚æœä½ ä¸æƒ³å®Œæˆé€™æ¬¡çš„ä»»å‹™ï¼Œæ‹¿ä¸€ç™¾å…©é•ç´„é‡‘ä¾†ï¼\n");
                         return 1;
                 }
                 if(num==1 && ob->value() < 100000)
                 {
-                        tell_object(who, "ºÕÁ¬ÌúÊ÷Ò»Ë«¼âÕë°ãµÄÑÛ¾¦Ö±¶¢×ÅÄã£ºÄãµÄÈÎÎñ×ÊĞÅÌ«²î£¬ÒªĞÂÈÎÎñ£¬ÏÈÄÃÊ®Á½»Æ½ğÀ´£¡\n");
+                        tell_object(who, "èµ«é€£éµæ¨¹ä¸€é›™å°–é‡èˆ¬çš„çœ¼ç›ç›´ç›¯è‘—ä½ ï¼šä½ çš„ä»»å‹™è³‡ä¿¡å¤ªå·®ï¼Œè¦æ–°ä»»å‹™ï¼Œå…ˆæ‹¿åå…©é»ƒé‡‘ä¾†ï¼\n");
                         return 1;
                 }                
                 if( ob->value() < 10000)
                 {
-                        tell_object(who, "ºÕÁ¬ÌúÊ÷Ò»Ë«¼âÕë°ãµÄÑÛ¾¦Ö±¶¢×ÅÄã£ºÕâµãÇ®¿É²»¹»ÎÒÃÇµÄ¿ªÏú£¡\n");
+                        tell_object(who, "èµ«é€£éµæ¨¹ä¸€é›™å°–é‡èˆ¬çš„çœ¼ç›ç›´ç›¯è‘—ä½ ï¼šé€™é»éŒ¢å¯ä¸å¤ æˆ‘å€‘çš„é–‹éŠ·ï¼\n");
                         return 1;
                 }
                 else
                 {
-                        tell_object(who, "ºÕÁ¬ÌúÊ÷Ğ¦µÀ£ºÄÇºÃ£¬ÔÛÃÇÂòÂô²»³ÉÈÊÒåÔÚ¡£ÏëÌÖ²îÊ¹ÔÙÕÒÎÒ°É£¡\n");
+                        tell_object(who, "èµ«é€£éµæ¨¹ç¬‘é“ï¼šé‚£å¥½ï¼Œå’±å€‘è²·è³£ä¸æˆä»ç¾©åœ¨ã€‚æƒ³è¨å·®ä½¿å†æ‰¾æˆ‘å§ï¼\n");
                         who->set( "quest/helian/finished", 1 );
                         who->delete( "quest/helian/last_time" );
                         who->add("quests/abandon", 1);

@@ -4,11 +4,11 @@ inherit BOSS;
 
 void create()
 {
-        set_name(HIG"É³Ä®ÔôµÁ"NOR, ({"shamo zeidao", "qiang dao", "zeidao"}) );
-        set("title", HIY "ÂÌÁÖÂùºº" NOR);
-        set("gender", "ÄĞĞÔ" );
+        set_name(HIG"æ²™æ¼ è³Šç›œ"NOR, ({"shamo zeidao", "qiang dao", "zeidao"}) );
+        set("title", HIY "ç¶ æ—è »æ¼¢" NOR);
+        set("gender", "ç”·æ€§" );
         set("age", random(30)+20);
-        set("long", "ºáĞĞÎŞ¾¡´óÄ®µÄÇ¿µÁ£¬Õ¼×Å¶ÔµØĞÎÊìÏ¤¶ÔÀ´ÎŞ¾¡´óÄ®½­ºş¿Í¹¥»÷ÇÀÂÓ\n");
+        set("long", "æ©«è¡Œç„¡ç›¡å¤§æ¼ çš„å¼·ç›œï¼Œä½”è‘—å°åœ°å½¢ç†Ÿæ‚‰å°ä¾†ç„¡ç›¡å¤§æ¼ æ±Ÿæ¹–å®¢æ”»æ“Šæ¶æ \n");
         set("attitude", "aggressive");
         set("class", "lvlin");
         set("str", 30);
@@ -40,7 +40,7 @@ void create()
         map_skill("parry", "jiuyin-baiguzhao");
         map_skill("blade", "wuhu-duanmendao");
         map_skill("dodge", "tiyunzong");
-        create_family("ÂÌÁÖ±©·çÃË", 3, "µÜ×Ó");
+        create_family("ç¶ æ—æš´é¢¨ç›Ÿ", 3, "å¼Ÿå­");
 
         set("auto_perform", 1);
         set("auto_exert", 1);
@@ -66,15 +66,15 @@ void create()
 
 int accept_fight(object ob)
 {
-        command("say ÎÒ¿ÉÃ»ĞËÈ¤ÅãÄãÍæ£¬¿ì¸øÎÒ¹ö¿ª¡£");
+        command("say æˆ‘å¯æ²’èˆˆè¶£é™ªä½ ç©ï¼Œå¿«çµ¦æˆ‘æ»¾é–‹ã€‚");
         return 0;
 }
 
 int accept_hit(object ob)
 {
-        message_vision(HIW "$N" HIW "Á³É«Ò»±ä£¬ÉÁ¹ıÒ»µÀÉ±Æø¡£Å­"
-                       "ºÈµÀ£ººÃÒ»¸ö" + RANK_D->query_rude(ob) +
-                       "£¬À´°É£¡\n" NOR, this_object());
+        message_vision(HIW "$N" HIW "è‡‰è‰²ä¸€è®Šï¼Œé–ƒéä¸€é“æ®ºæ°£ã€‚æ€’"
+                       "å–é“ï¼šå¥½ä¸€å€‹" + RANK_D->query_rude(ob) +
+                       "ï¼Œä¾†å§ï¼\n" NOR, this_object());
 
         NPC_D->copy_from_me(this_object(), ob, 50, 1);
         kill_ob(ob);
@@ -91,10 +91,10 @@ int accept_kill(object ob)
 
 int accept_ansuan(object ob)
 {
-        return notify_fail("ÄÇÈË¾¯ÌèĞÔºÃ¸ß£¬ÄãÄÑÒÔÏÂÊÖ¡£\n");
+        return notify_fail("é‚£äººè­¦æƒ•æ€§å¥½é«˜ï¼Œä½ é›£ä»¥ä¸‹æ‰‹ã€‚\n");
 }
 
 int accept_touxi(object ob)
 {
-        return notify_fail("ÄÇÈË¾¯ÌèĞÔºÃ¸ß£¬ÄãÄÑÒÔÏÂÊÖ¡£\n");
+        return notify_fail("é‚£äººè­¦æƒ•æ€§å¥½é«˜ï¼Œä½ é›£ä»¥ä¸‹æ‰‹ã€‚\n");
 }

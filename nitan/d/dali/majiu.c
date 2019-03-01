@@ -3,12 +3,12 @@ inherit TRANS_ROOM;
 
 void create()
 {
-        set("short", "����");
+        set("short", "馬廄");
         set("long", @LONG
-���Ǿ�Ӫ���ϵ����ǣ����깩Ӧ���ʲ��ϡ��˵���紾�ӿ���ֻ
-Ҫ�������������Ǿͻ����ǣ�����Ǻ����տ���������ι�����㣬��
-ϴˢ�ø�Ǭ������һֱ�ź򵽿��������·�����������µ���ľ����
-���ſ���ľ��(paizi)��
+這是軍營邊上的馬廄，常年供應新鮮草料。此地民風淳樸客人只
+要帶馬來，馬夫們就會把馬牽到馬廄好生照看，將它們喂飽飲足，再
+洗刷得幹乾凈凈。一直伺候到客人離城上路。馬廄雨檐下的爛木柱上
+釘著塊破木牌(paizi)。
 LONG );
         set("exits",([
                 "east" : __DIR__"bingying",

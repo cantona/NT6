@@ -1,11 +1,11 @@
 // This program is a part of NITAN MudLIB
-// leidong.c �׶�����
+// leidong.c 雷動九天
 
 #include <ansi.h>
 
 inherit F_SSERVER;
 
-string name() { return "�׶�����"; }
+string name() { return "雷動九天"; }
 
 int perform(object me, object target)
 {
@@ -16,28 +16,28 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail("�׶�����ֻ�ܶ�ս���еĶ���ʹ�á�\n");
+                return notify_fail("雷動九天只能對戰鬥中的對手使用。\n");
 
         if( objectp(query_temp("weapon", me)) )
-                return notify_fail("�������ֲ���ʹ���׶����죡\n");
+                return notify_fail("你必須空手才能使用雷動九天！\n");
 
         if ((int)me->query_skill("poyu-quan", 1) < 80)
-                return notify_fail("�������ȭ������죬����ʹ���׶����죡\n");
+                return notify_fail("你的破玉拳不夠嫻熟，不會使用雷動九天！\n");
 
         if ((int)me->query_skill("zixia-shengong", 1) < 80)
-                return notify_fail("�����ϼ�񹦲����ߣ������ó��׶������˵С�\n");
+                return notify_fail("你的紫霞神功不夠高，不能用出雷動九天傷敵。\n");
 
         if (me->query_skill_prepared("cuff") != "poyu-quan"
                 || me->query_skill_mapped("cuff") != "poyu-quan")
-                return notify_fail("�������޷�ʹ�á��׶����졹���й�����\n");
+                return notify_fail("你現在無法使用「雷動九天」進行攻擊。\n");
 
         if( query("neili", me)<200 )
-                return notify_fail("����������̫�����޷�ʹ���׶����졣\n");
+                return notify_fail("你現在內力太弱，無法使出雷動九天。\n");
 
         if( query_temp("leidong", me) )
-                return notify_fail("������ʹ���׶����죡\n");
+                return notify_fail("你正在使用雷動九天！\n");
 
-        msg = MAG "$N" MAG "ʹ����ʯ����ȭ�ľ�ѧ�׶����죬��ʱ��յ���������\n" NOR;
+        msg = MAG "$N" MAG "使出劈石破玉拳的絕學雷動九天，頓時天空電閃雷鳴！\n" NOR;
         message_combatd(msg, me, target);
 
         improve=query("dex", me);

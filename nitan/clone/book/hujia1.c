@@ -4,18 +4,18 @@ inherit BOOK;
 
 void create()
 {
-        set_name("ºú¼ÒÈ­¾­",({ "hujia quanjing","book"}));
+        set_name("èƒ¡å®¶æ‹³ç¶“",({ "hujia quanjing","book"}));
         set_weight(200);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
-                set("long","ÕâÊÇÒ»±¾ºú¼Òµ¶Æ×£¬¼ÇÂ¼ÁËºú¼ÒÈ­·¨Î¢ÃîÖ®´¦¡£\n");
+                set("unit", "æœ¬");
+                set("long","é€™æ˜¯ä¸€æœ¬èƒ¡å®¶åˆ€è­œï¼Œè¨˜éŒ„äº†èƒ¡å®¶æ‹³æ³•å¾®å¦™ä¹‹è™•ã€‚\n");
                 set("value", 50);
                 set("material", "paper");
                 set("skill", ([
                         "name":         "hujia-quan",      //name of the skill
-						"family_name" : "¹ØÍâºú¼Ò",
+						"family_name" : "é—œå¤–èƒ¡å®¶",
                         "exp_required": 1000,         //minimum combat experience required
                         "jing_cost":    30,           // jing cost every time study this
                         "difficulty":   30,           // the base int to learn this skill

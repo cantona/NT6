@@ -14,32 +14,32 @@ int main(object me,string arg)
                 return 0;
         if(!arg)
                 return help();
-        str=NOR "¿ªÊ¼ËÑË÷(×î¶àÖ»ÁĞ"+MR+"¸öËÑË÷½á¹û)£º\n";
+        str=NOR "é–‹å§‹æœç´¢(æœ€å¤šåªåˆ—"+MR+"å€‹æœç´¢çµæœ)ï¼š\n";
         foreach(object ob in objects())
         {
                 if(ob->id(arg) && sizeof(tmp)<MR)
                         tmp+=({ob});
         }
         if(sizeof(tmp)<1)
-                str+="Ã»ÓĞËÑË÷µ½ÈÎºÎ½á¹û£¡\n";
+                str+="æ²’æœ‰æœç´¢åˆ°ä»»ä½•çµæœï¼\n";
         else        
                 foreach(object ob in tmp)
                 {
                         env=environment(ob);
                         if(objectp(env))
                         {
-                                str+="\n·¢ÏÖ"+ob->name()+"("+query("id", ob)+")Ô´ÎÄ¼ş---"+HIY+file_name(ob)+NOR"\n";
-                                str+=sprintf("--- %s(%s) Ô´ÎÄ¼ş --- "+HIY+"%s\n"NOR,
-                                        stringp(env->name())?env->name():(stringp(env->short())?env->short():"ÎŞÃû"),
+                                str+="\nç™¼ç¾"+ob->name()+"("+query("id", ob)+")æºæ–‡ä»¶---"+HIY+file_name(ob)+NOR"\n";
+                                str+=sprintf("--- %s(%s) æºæ–‡ä»¶ --- "+HIY+"%s\n"NOR,
+                                        stringp(env->name())?env->name():(stringp(env->short())?env->short():"ç„¡å"),
                                         stringp(query("id", env))?query("id", env):"0",
                                         file_name(env)  );
                                 while(objectp(env=environment(env)))
-                                        str+=sprintf(" ©À %s(%s) Ô´ÎÄ¼ş --- "+HIY+"%s\n"NOR,
-                                        stringp(env->name())?env->name():(stringp(env->short())?env->short():"ÎŞÃû"),
+                                        str+=sprintf(" â”œ %s(%s) æºæ–‡ä»¶ --- "+HIY+"%s\n"NOR,
+                                        stringp(env->name())?env->name():(stringp(env->short())?env->short():"ç„¡å"),
                                         stringp(query("id", env))?query("id", env):"0",
                                         file_name(env)  );
                         }
-                        else str+="\n·¢ÏÖÎŞ»·¾³Îï¼ş"+ob->name()+"("+query("id", ob)+")Ô´ÎÄ¼ş---"+HIY+file_name(ob)+NOR"\n";
+                        else str+="\nç™¼ç¾ç„¡ç’°å¢ƒç‰©ä»¶"+ob->name()+"("+query("id", ob)+")æºæ–‡ä»¶---"+HIY+file_name(ob)+NOR"\n";
                 }
         me->start_more(str);
         return 1;
@@ -47,6 +47,6 @@ int main(object me,string arg)
 
 int help()
 {
-        write("\nÇëÊäÈëwh <id>À´²éÕÒÓÎÏ·ÖĞÖ¸¶¨IDµÄ»·¾³¡££¨×î¶àÏÔÊ¾15¸öÎï¼ş£©\n");
+        write("\nè«‹è¼¸å…¥wh <id>ä¾†æŸ¥æ‰¾éŠæˆ²ä¸­æŒ‡å®šIDçš„ç’°å¢ƒã€‚ï¼ˆæœ€å¤šé¡¯ç¤º15å€‹ç‰©ä»¶ï¼‰\n");
         return 1;
 }

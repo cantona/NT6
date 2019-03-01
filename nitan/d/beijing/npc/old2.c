@@ -8,8 +8,8 @@ int ask_hbd(object me, object ob);
 
 void create()
 {
-        set_name("ÀÏºº", ({ "old man", "old", "man" }) );
-        set("gender", "ÄÐÐÔ" );
+        set_name("è€æ¼¢", ({ "old man", "old", "man" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 63);
         set("shen_type", 1);
         set("combat_exp", 10000);
@@ -19,7 +19,7 @@ void create()
         set("int", 20);
         set("attitude", "peaceful");
         set("inquiry",([  
-                "ºÚ°×µÀ" : (: ask_hbd :),  
+                "é»‘ç™½é“" : (: ask_hbd :),  
                                ]) );  
         setup();
         carry_object("/d/beijing/npc/obj/cloth")->wear();
@@ -30,22 +30,22 @@ int ask_hbd(object me, object ob)
      me=this_player(); 
      ob=this_object(); 
      ob=this_object(); 
-     if( query("bunch/bunch_name", me) != "ºÚ°×µÀ" && query("shen", me) <= 0 )
+     if( query("bunch/bunch_name", me) != "é»‘ç™½é“" && query("shen", me) <= 0 )
      { 
-           command("whisper"+query("id", me)+"ÐÖµÜÊÇÏë¼ÓÈëÔÛÃÇºÚ°×µÀµÄ°É£¡ËæÎÒÀ´°É£¡");
-           tell_object(me,HIB"ÀÏºº´øÄãµ½ÁËºóÔº£¬ÒÆ¿ªÒ»¿éÊ¯°å£¬ÄãË³×ÅÊ¯½××ßÁËÏÂÈ¥¡£\n"NOR);
-           message("vision", me->name() + "´ø×ÅÀÏºº¼±¼±Ã¦Ã¦µÄ×ßÁË¡£\n", 
+           command("whisper"+query("id", me)+"å…„å¼Ÿæ˜¯æƒ³åŠ å…¥å’±å€‘é»‘ç™½é“çš„å§ï¼éš¨æˆ‘ä¾†å§ï¼");
+           tell_object(me,HIB"è€æ¼¢å¸¶ä½ åˆ°äº†å¾Œé™¢ï¼Œç§»é–‹ä¸€å¡ŠçŸ³æ¿ï¼Œä½ é †è‘—çŸ³éšŽèµ°äº†ä¸‹åŽ»ã€‚\n"NOR);
+           message("vision", me->name() + "å¸¶è‘—è€æ¼¢æ€¥æ€¥å¿™å¿™çš„èµ°äº†ã€‚\n", 
                               environment(me), ({me}) ); 
            me->move("/d/beijing/hbd_bjzb");
            return 1; 
      } 
      if( good_bunch(me) || query("shen", me)>0 )
      { 
-           command("say ¿Í¹Ù£¬ÎÒ²»Ã÷°×ÄãµÄÒâË¼¡£\n"); 
+           command("say å®¢å®˜ï¼Œæˆ‘ä¸æ˜Žç™½ä½ çš„æ„æ€ã€‚\n"); 
            return 1; 
      } 
 
-     tell_object(me,"ÀÏººËµµÀ£º¡°¼ÈÈ»ÊÇ±¾°ïÐÖµÜ£¬¾ÍËæÎÒÀ´°É£¡¡±\n");
+     tell_object(me,"è€æ¼¢èªªé“ï¼šâ€œæ—¢ç„¶æ˜¯æœ¬å¹«å…„å¼Ÿï¼Œå°±éš¨æˆ‘ä¾†å§ï¼â€\n");
      me->move("/d/beijing/hbd_bjzb"); 
      return 1; 
 } 

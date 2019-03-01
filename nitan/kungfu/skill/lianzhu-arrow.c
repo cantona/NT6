@@ -6,7 +6,7 @@ int valid_enable(string usage) { return  usage == "arrow"; }
 
 int valid_learn(object me)
 {
-        return notify_fail("Á¬Öé¼ı·¨Ö»ÄÜÏò¹ù¾¸Çë½Ì(qingjiao)À´Ñ§Ï°£¡\n");    
+        return notify_fail("é€£ç ç®­æ³•åªèƒ½å‘éƒ­é–è«‹æ•™(qingjiao)ä¾†å­¸ç¿’ï¼\n");    
 }
 
 string perform_action_file(string action)

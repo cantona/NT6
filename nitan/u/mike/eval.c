@@ -34,10 +34,10 @@ s="mike";s[..-1];
         stime = to_float(einfo["stime"] - sinfo["stime"])/1000000;
         etime = to_float(time_exp + EXPT_TRIM)/1000000;
 
-        msg  = sprintf("\n效率评估: %d\n", cost + COST_TRIM);
-        msg += sprintf("系统时间: %.6f s\n", stime);
-        msg += sprintf("使用时间: %.6f s\n", utime);
-        msg += sprintf("运算时间: %.6f s\n", etime);
+        msg  = sprintf("\n鏁堢巼瑭曚及: %d\n", cost + COST_TRIM);
+        msg += sprintf("绯荤当鏅傞枔: %.6f s\n", stime);
+        msg += sprintf("浣跨敤鏅傞枔: %.6f s\n", utime);
+        msg += sprintf("閬嬬畻鏅傞枔: %.6f s\n", etime);
         
         tell_object(me, msg);
 }

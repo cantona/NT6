@@ -11,10 +11,10 @@ string* books = ({
 });
 void create()
 {
-        set("short", "�ؾ���");
+        set("short", "藏經室");
         set("long", @LONG
- ������ѩɽ�µĲؾ��ң���ǽ��һ����ܣ������˸���ȭ�ס���
-��������ǵ����������Ħ�Ƿ���ķ𾭺ʹ�������ȡ������ѧ�伮��
+ 這裡是雪山寺的藏經室，靠牆是一排書架，擺滿了各種拳譜、書
+籍。大多是當年掌門人鳩摩智翻譯的佛經和從少林寺取來的武學典籍。
 LONG );
         set("exits", ([
                 "north" : __DIR__"dating",

@@ -1,4 +1,4 @@
-// Room: /d/jiaxing/Yanyu2.c  ÑÌÓêÂ¥¶þÂ¥
+// Room: /d/jiaxing/Yanyu2.c  ç…™é›¨æ¨“äºŒæ¨“
 // Last Modified by winder on Nov. 17 2000
 
 #include <ansi.h>
@@ -10,19 +10,19 @@ int do_halloa(string arg);
 
 void create()
 {
-        set("short", "ÑÌÓêÂ¥¶þÂ¥");
+        set("short", "ç…™é›¨æ¨“äºŒæ¨“");
         set("long", @LONG
-ÑÌÓêÂ¥ÔÚÄÏºþÅÏ£¬ËÄÍûÁÙ·ç£¬õ¸õ¸×íÈË¡£Áø°¶·­Ò·£¬ÇÝÔëÆð·ü¡£ºþ
-ÃæÇáÑÌ±¡Îí£¬¼¸Î²Ð¡ÖÛµ´ÑúÆä¼ä¡£°ëºþË®Àï¶¼¸¡×Å±ÌÓÍÓÍµÄÁâÒ¶£¬Ô½Å®
-Çá¸è£¬½¿³ÕÎÞÄÇ¡£Äã·ÅÑÛ¹ÛÉÍ£¬ÃÀ¾°ÎÞÏÞ£¬ÐØ»³´ó³©Ö®ÏÂÖ»Ïë´óÉùº°½Ð
-(halloa)¡£
+ç…™é›¨æ¨“åœ¨å—æ¹–ç•”ï¼Œå››æœ›è‡¨é¢¨ï¼Œé†ºé†ºé†‰äººã€‚æŸ³å²¸ç¿»æ›³ï¼Œç¦½å™ªèµ·ä¼ã€‚æ¹–
+é¢è¼•ç…™è–„éœ§ï¼Œå¹¾å°¾å°èˆŸç›ªæ¼¾å…¶é–“ã€‚åŠæ¹–æ°´è£¡éƒ½æµ®è‘—ç¢§æ²¹æ²¹çš„è±è‘‰ï¼Œè¶Šå¥³
+è¼•æ­Œï¼Œå¬Œç—´ç„¡é‚£ã€‚ä½ æ”¾çœ¼è§€è³žï¼Œç¾Žæ™¯ç„¡é™ï¼Œèƒ¸æ‡·å¤§æš¢ä¹‹ä¸‹åªæƒ³å¤§è²å–Šå«
+(halloa)ã€‚
 
-    Â¥ÖÐÁ¢ÁËÒ»·ù³¤ØÒ(bian)£¬½ÊË¿Ïâ±ß£¬éªÄ¾ÎªÀï£¬Äê´úËä¾Ã£¬Í©ÓÍ
-·ÛÆá£¬ÓÌ×ÔÇåÐÂÈç×ò¡£Öù×ÓÉÏÒþÒþÓÐÐ©×Ö¼££¨ziji£©¡£
+    æ¨“ä¸­ç«‹äº†ä¸€å¹…é•·åŒ¾(bian)ï¼Œçµžçµ²é‘²é‚Šï¼Œæ¥ æœ¨ç‚ºè£¡ï¼Œå¹´ä»£é›–ä¹…ï¼Œæ¡æ²¹
+ç²‰æ¼†ï¼ŒçŒ¶è‡ªæ¸…æ–°å¦‚æ˜¨ã€‚æŸ±å­ä¸Šéš±éš±æœ‰äº›å­—è·¡ï¼ˆzijiï¼‰ã€‚
 LONG );
         set("no_sleep_room",1);
         set("item_desc", ([
-            "ziji" : "½­ÄÏÆß¹Ö½Ð°åÇñ´¦»ú´¦¡£\n",
+            "ziji" : "æ±Ÿå—ä¸ƒæ€ªå«æ¿é‚±è™•æ©Ÿè™•ã€‚\n",
             "bian" : (: look_bian :),
         ]));
 
@@ -45,13 +45,13 @@ void init()
         myfam=query("family", me);
         if (!mapp(myfam) || !stringp(myfam["family_name"])) return 0;
         
-        if (myfam["family_name"] == "°×ÍÕÉ½ÅÉ" && me->query_condition("ice_sting")
+        if (myfam["family_name"] == "ç™½é§å±±æ´¾" && me->query_condition("ice_sting")
                 && me->query_condition("ice_sting") < 10) {
-                message_vision(HIB"$NÖ»¾õµÃ×ó±ÛÔ½À´Ô½ÊÇÖ×´ó£¬Çé×´Ð×ÏÕÎÞ±È£¬ÔÙ²»¾ÈÖÎ¾ÍÀ´²»¼°ÁË£¡\n", me);
-                message_vision(HIG"ºöÌýµÃ±³ºóÒ»ÈËËµµÀ£º¡±Ð¡ÍÞÍÞ£¬ÖªµÀÀ÷º¦ÁË°É£¡¡°£¬ÉùÒôï¬ïÏ´Ì¶ú£¬\n", me);
-                message_vision("$N³ÔÁËÒ»¾ª£¬¼±Ã¦×ª¹ýÉíÀ´£¬Ö»¼ûÒ»¸ö¹ÖÈË£¬Ë«ÊÖ¸÷³ÖÒ»¿éÊ¯Í·£¬ÒÔÊÖÎª×ã£¬\n", me);
-                message_vision("¡±²§£¬²§£¬²§¡°µØ×ßÁË¹ýÀ´£¬ÄÇÈË¹ÖÑÛÒ»·­£º¡±Ð¡ÍÞ¶ù£¬ÒªÃüµÄ¸úÎÒÀ´¡£¡° \n", me);
-                message_vision("Ëµ°Õ£¬Ë«ÊÖÒ»·¢¾¢£¬Ô½ÉÏÁËÎÝ¶¥¡£$NÖªµÀÓöÉÏÁË¾ÈÐÇ£¬´óÏ²¹ýÍû£¬Á¬Ã¦ÅÊÅÀ¶øÉÏ¡£\n"NOR, me);
+                message_vision(HIB"$Nåªè¦ºå¾—å·¦è‡‚è¶Šä¾†è¶Šæ˜¯è…«å¤§ï¼Œæƒ…ç‹€å…‡éšªç„¡æ¯”ï¼Œå†ä¸æ•‘æ²»å°±ä¾†ä¸åŠäº†ï¼\n", me);
+                message_vision(HIG"å¿½è½å¾—èƒŒå¾Œä¸€äººèªªé“ï¼šâ€å°å¨ƒå¨ƒï¼ŒçŸ¥é“åŽ²å®³äº†å§ï¼â€œï¼Œè²éŸ³é—é˜åˆºè€³ï¼Œ\n", me);
+                message_vision("$Nåƒäº†ä¸€é©šï¼Œæ€¥å¿™è½‰éŽèº«ä¾†ï¼Œåªè¦‹ä¸€å€‹æ€ªäººï¼Œé›™æ‰‹å„æŒä¸€å¡ŠçŸ³é ­ï¼Œä»¥æ‰‹ç‚ºè¶³ï¼Œ\n", me);
+                message_vision("â€ç µï¼Œç µï¼Œç µâ€œåœ°èµ°äº†éŽä¾†ï¼Œé‚£äººæ€ªçœ¼ä¸€ç¿»ï¼šâ€å°å¨ƒå…’ï¼Œè¦å‘½çš„è·Ÿæˆ‘ä¾†ã€‚â€œ \n", me);
+                message_vision("èªªç½·ï¼Œé›™æ‰‹ä¸€ç™¼å‹ï¼Œè¶Šä¸Šäº†å±‹é ‚ã€‚$NçŸ¥é“é‡ä¸Šäº†æ•‘æ˜Ÿï¼Œå¤§å–œéŽæœ›ï¼Œé€£å¿™æ”€çˆ¬è€Œä¸Šã€‚\n"NOR, me);
                 me->move(__DIR__"yanyu3");
         }
 }
@@ -61,35 +61,35 @@ int do_halloa(string arg)
         object me = this_player();
         mapping myfam;
         
-        if (!arg || arg != "Òå¸¸") return 0;
+        if (!arg || arg != "ç¾©çˆ¶") return 0;
         
         myfam=query("family", me);
         
         if (!mapp(myfam) || !stringp(myfam["family_name"])) return 0;
-        if (myfam["family_name"] == "°×ÍÕÉ½ÅÉ" && myfam["master_id"] == "ouyang feng") {
-                message_vision(HIC"$NÆø³Áµ¤Ìï£¬³¤Ð¥Ò»Éù£º¡°Òå¸¸£¬ÄãÔÚÄÄÀï£¿¡±\n", me);
-                message_vision("¹ýÁË°ëÉÎ£¬¶úÅÏ´«À´ÊìÏ¤µÄ¡°²§£¬²§£¬²§¡±µÄÉùÏì£¬Å·Ñô·æ´ÓÂ¥¶¥Ò»Ô¾¶øÏÂ¡£\n", me);
-                message_vision("Å·Ñô·æ¶Ô×Å$NµãÁËµãÍ·£º¡±¹Ôº¢×Ó£¬ÄãÓÖÀ´Ñ§¹¦·òÁË£¬¸úÎÒÀ´°É£¡\n"NOR, me);
+        if (myfam["family_name"] == "ç™½é§å±±æ´¾" && myfam["master_id"] == "ouyang feng") {
+                message_vision(HIC"$Næ°£æ²‰ä¸¹ç”°ï¼Œé•·å˜¯ä¸€è²ï¼šâ€œç¾©çˆ¶ï¼Œä½ åœ¨å“ªè£¡ï¼Ÿâ€\n", me);
+                message_vision("éŽäº†åŠæ™Œï¼Œè€³ç•”å‚³ä¾†ç†Ÿæ‚‰çš„â€œç µï¼Œç µï¼Œç µâ€çš„è²éŸ¿ï¼Œæ­é™½é‹’å¾žæ¨“é ‚ä¸€èºè€Œä¸‹ã€‚\n", me);
+                message_vision("æ­é™½é‹’å°è‘—$Né»žäº†é»žé ­ï¼šâ€ä¹–å­©å­ï¼Œä½ åˆä¾†å­¸åŠŸå¤«äº†ï¼Œè·Ÿæˆ‘ä¾†å§ï¼\n"NOR, me);
                 me->move(__DIR__"yanyu3");
                 return 1;
-        } else  return notify_fail("½ÐÏºÃ×½Ð£¬ÄãÒå¸¸ÊÇË­£¿\n");
+        } else  return notify_fail("å«è¦ç±³å«ï¼Œä½ ç¾©çˆ¶æ˜¯èª°ï¼Ÿ\n");
 }
 
 string look_bian()
 {
         return
-        "¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n"
-        "¡ù¡ù¡ù¡ù¡¡¡¡¡¡                    ¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡ù¡ù¡ù¡ù\n"
-        "¡ù¡ù¡ù¡ù¡¡¡¡¡¡¡¡            ¡¡Î÷ÖÞÇú    ¡¡        ¡¡¡¡¡¡¡¡¡ù¡ù¡ù¡ù\n"
-        "¡ù¡ù¡ù¡ù¡¡                                            ¡¡¡¡¡ù¡ù¡ù¡ù\n"
-        "¡ù¡ù¡ù¡ù¡¡ÒäÃ·ÏÂÎ÷ÖÞ  ÕÛÃ·¼Ä½­±±  µ¥ÉÀÐÓ×Óºì  Ë«÷ÞÑ»³ûÉ«¡¡¡ù¡ù¡ù¡ù\n"
-        "¡ù¡ù¡ù¡ù¡¡Î÷ÖÞÔÚºÎ´¦  Ë«½°Ò¡Í·¶È  ÈÕÄº²®ÀÍ·É  ·ç´µÎÚèêÊ÷¡¡¡ù¡ù¡ù¡ù\n"
-        "¡ù¡ù¡ù¡ù¡¡Ê÷ÏÂ¼´ÃÅÇ°  ÃÅÖÐÂ¶´äîä  ¿ªÃÅÀÉ²»ÖÁ  ³öÃÅ²ÉºìÁ«¡¡¡ù¡ù¡ù¡ù\n"
-        "¡ù¡ù¡ù¡ù¡¡²ÉÁ«ÄÏÌÁÇï  Á«»¨¹ýÈËÍ·  µÍÍ·ÅªÁ«×Ó  Á«×ÓÇåÈçË®¡¡¡ù¡ù¡ù¡ù\n"
-        "¡ù¡ù¡ù¡ù¡¡ÖÃÁ«»³ÐäÖÐ  Á«ÐÄ³¹µ×ºì  ÒäÀÉÀÉ²»ÖÁ  ÑöÊ×Ë¼·Éºè¡¡¡ù¡ù¡ù¡ù\n"
-        "¡ù¡ù¡ù¡ù¡¡·ÉºèÂúÎ÷ÖÞ  ÍûÂ¥ÉÏÇàÂ¥  Â¥¸ßÍû²»¼û  ¾¡ÈÕÀ¸¸ËÍ·¡¡¡ù¡ù¡ù¡ù\n"
-        "¡ù¡ù¡ù¡ù¡¡À¸¸ËÊ®¶þÇú  ´¹ÊÖÃ÷ÈçÓñ  ¾íÁ±Ìì×Ô¸ß  º£Ë®Ò¡¿ÕÂÌ¡¡¡ù¡ù¡ù¡ù\n"
-        "¡ù¡ù¡ù¡ù¡¡º£Ë®ÃÎÓÆÓÆ  ¾ý³îÎÒÒà³î  ÄÏ·çÈçÎÒÒâ  ´µÃÎµ½Î÷ÖÞ¡¡¡ù¡ù¡ù¡ù\n"
-        "¡ù¡ù¡ù¡ù¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡                    ¡¡¡¡¡¡¡¡¡ù¡ù¡ù¡ù\n"
-        "¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n";
+        "â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»\n"
+        "â€»â€»â€»â€»ã€€ã€€ã€€                    ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€â€»â€»â€»â€»\n"
+        "â€»â€»â€»â€»ã€€ã€€ã€€ã€€            ã€€è¥¿æ´²æ›²    ã€€        ã€€ã€€ã€€ã€€â€»â€»â€»â€»\n"
+        "â€»â€»â€»â€»ã€€                                            ã€€ã€€â€»â€»â€»â€»\n"
+        "â€»â€»â€»â€»ã€€æ†¶æ¢…ä¸‹è¥¿æ´²  æŠ˜æ¢…å¯„æ±ŸåŒ—  å–®è¡«æå­ç´…  é›™é¬¢é´‰é››è‰²ã€€â€»â€»â€»â€»\n"
+        "â€»â€»â€»â€»ã€€è¥¿æ´²åœ¨ä½•è™•  é›™æ§³æ–é ­åº¦  æ—¥æš®ä¼¯å‹žé£›  é¢¨å¹çƒâ–¡æ¨¹ã€€â€»â€»â€»â€»\n"
+        "â€»â€»â€»â€»ã€€æ¨¹ä¸‹å³é–€å‰  é–€ä¸­éœ²ç¿ éˆ¿  é–‹é–€éƒŽä¸è‡³  å‡ºé–€æŽ¡ç´…è“®ã€€â€»â€»â€»â€»\n"
+        "â€»â€»â€»â€»ã€€æŽ¡è“®å—å¡˜ç§‹  è“®èŠ±éŽäººé ­  ä½Žé ­å¼„è“®å­  è“®å­æ¸…å¦‚æ°´ã€€â€»â€»â€»â€»\n"
+        "â€»â€»â€»â€»ã€€ç½®è“®æ‡·è¢–ä¸­  è“®å¿ƒå¾¹åº•ç´…  æ†¶éƒŽéƒŽä¸è‡³  ä»°é¦–æ€é£›é´»ã€€â€»â€»â€»â€»\n"
+        "â€»â€»â€»â€»ã€€é£›é´»æ»¿è¥¿æ´²  æœ›æ¨“ä¸Šé’æ¨“  æ¨“é«˜æœ›ä¸è¦‹  ç›¡æ—¥æ¬„æ¡¿é ­ã€€â€»â€»â€»â€»\n"
+        "â€»â€»â€»â€»ã€€æ¬„æ¡¿åäºŒæ›²  åž‚æ‰‹æ˜Žå¦‚çŽ‰  å·ç°¾å¤©è‡ªé«˜  æµ·æ°´æ–ç©ºç¶ ã€€â€»â€»â€»â€»\n"
+        "â€»â€»â€»â€»ã€€æµ·æ°´å¤¢æ‚ æ‚   å›æ„æˆ‘äº¦æ„  å—é¢¨å¦‚æˆ‘æ„  å¹å¤¢åˆ°è¥¿æ´²ã€€â€»â€»â€»â€»\n"
+        "â€»â€»â€»â€»ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€                    ã€€ã€€ã€€ã€€â€»â€»â€»â€»\n"
+        "â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»\n";
 }

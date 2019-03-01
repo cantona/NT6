@@ -4,18 +4,18 @@ inherit ITEM;
 
 void create()
 {
-        set_name( HIR"Ò»ÑôÖ¸¾÷"NOR,({ "sunfinger book","book"}));
+        set_name( HIR"ä¸€é™½æŒ‡è¨£"NOR,({ "sunfinger book","book"}));
         set_weight(200);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
-                set("long","ÕâÊÇÒ»±¾Ò»ÑôÖ¸ÃÜ¾÷¡£·âÃæÉÏÓĞÒ»Î»ÖĞÄêĞãÊ¿ÓÒÊÖÖĞÖ¸Ö¸ÏòÌì¿ÕµÄ±³Ó°¡£\n");
+                set("unit", "æœ¬");
+                set("long","é€™æ˜¯ä¸€æœ¬ä¸€é™½æŒ‡å¯†è¨£ã€‚å°é¢ä¸Šæœ‰ä¸€ä½ä¸­å¹´ç§€å£«å³æ‰‹ä¸­æŒ‡æŒ‡å‘å¤©ç©ºçš„èƒŒå½±ã€‚\n");
                 set("value", 500);
                 set("material", "paper");
                 set("skill", ([
                         "name":         "sun-finger", // name of the skill
-					    "family_name" : "¶ÎÊÏ»Ê×å",
+					    "family_name" : "æ®µæ°çš‡æ—",
                         "exp_required": 1000, // minimum experience required
                         "jing_cost":  30, // jing cost every time study this
                         "difficulty": 20, // the base int to learn this skill

@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "С·");
+        set("short", "小路");
         set("long", @LONG
-����һ�����ź���С·��·������һƬ�����֣�������Կ�������
-�ϵİ������������ﲻʱ���Կ���һֻֻ����������ȥ��
+這是一條沿著湖的小路，路西邊是一片鬆樹林，東面可以看見瓊島
+上的白塔。鬆樹林裡不時可以看見一只只鬆鼠跳來跳去。
 LONG
         );
         set("exits", ([

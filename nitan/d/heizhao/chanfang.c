@@ -4,10 +4,10 @@
 inherit ROOM;
 void create()
 {
-        set("short", "ìø·¿");
+        set("short", "ç¦ªæˆ¿");
         set("long", @LONG
-ÕâÀïÊÇÒ»¼äÄÚÊÒìø·¿£¬Ò»°ãÊÇ´ò×øÈë¶¨µÄµØ·½¡£Å¼¶ûÒ²ÓÃÀ´½Ó´ý
-·ðÃÅ¸ßÉ®£¬Ì½ÌÖìø×Ú¡£
+é€™è£¡æ˜¯ä¸€é–“å…§å®¤ç¦ªæˆ¿ï¼Œä¸€èˆ¬æ˜¯æ‰“åå…¥å®šçš„åœ°æ–¹ã€‚å¶çˆ¾ä¹Ÿç”¨ä¾†æŽ¥å¾…
+ä½›é–€é«˜åƒ§ï¼ŒæŽ¢è¨Žç¦ªå®—ã€‚
 LONG );
 
         set("no_sleep_room",1);
@@ -22,7 +22,7 @@ int valid_leave(object me, string dir)
 {
         object yd;
         if (objectp(yd=present("yideng dashi", environment(me)))) {
-                message_vision("Ò»µÆ´óÊ¦¶Ô$NÎ¢Î¢Ð¦ÁËÐ¦£º¡°Äã¸Ä±äÖ÷Òâ²»ÐèÒªÎÒµÄÖÎÁÆÁË£¿ºÃ°É¡£¡±\nËµ°Õ×ªÉíÀë¿ªÁËìø·¿¡£\n", me);
+                message_vision("ä¸€ç‡ˆå¤§å¸«å°$Nå¾®å¾®ç¬‘äº†ç¬‘ï¼šâ€œä½ æ”¹è®Šä¸»æ„ä¸éœ€è¦æˆ‘çš„æ²»ç™‚äº†ï¼Ÿå¥½å§ã€‚â€\nèªªç½·è½‰èº«é›¢é–‹äº†ç¦ªæˆ¿ã€‚\n", me);
                 delete_temp("yideng_waitreward", me);
                 yd->move("/d/heizhao/yideng9");
         }

@@ -2,16 +2,16 @@
 inherit ROOM;
 void create()
 {
-  set("short","³ø·¿");
+  set("short","å»šæˆ¿");
         set("long", @LONG
-ÕâÊÇ°×»¢ÌÃµÄ³ø·¿£¬Ò»Î»ÃÀÀöÊÌÅ®ÂúÁ³¶ÑĞ¦¡£Õû¸ö·¿¼ä²ËÏãëÙÖ¬
-ÏãÃÔÂş¡£Ç½ÉÏÌù×ÅÒ»ÕÅĞÑÄ¿µÄÆôÊÂ(note)¡£
+é€™æ˜¯ç™½è™å ‚çš„å»šæˆ¿ï¼Œä¸€ä½ç¾éº—ä¾å¥³æ»¿è‡‰å †ç¬‘ã€‚æ•´å€‹æˆ¿é–“èœé¦™èƒ­è„‚
+é¦™è¿·æ¼«ã€‚ç‰†ä¸Šè²¼è‘—ä¸€å¼µé†’ç›®çš„å•Ÿäº‹(note)ã€‚
 LONG );
   set("exits",([
       "west" : __DIR__"chitang",
   ]));
   set("item_desc",([
-      "note" : "×îÄÑÏûÊÜÅ®ÈË¸££¬ºìÑÕ»öË®¡£----->ÔÀ²»ÈºÌâ\n",
+      "note" : "æœ€é›£æ¶ˆå—å¥³äººç¦ï¼Œç´…é¡ç¦æ°´ã€‚----->å²³ä¸ç¾¤é¡Œ\n",
   ]));
 
   set("objects",([
@@ -27,6 +27,6 @@ int valid_leave(object me, string dir)
         if (( present("tea", me)||present("she rou", me))
         &&objectp(present("shi nu", environment(me))) )
         return notify_fail
-        ("ÊÌÅ®ÃÀÄ¿Ò»Ìô£¬Ïë×ß£¬Ã»ÃÅ£¡\n");
+        ("ä¾å¥³ç¾ç›®ä¸€æŒ‘ï¼Œæƒ³èµ°ï¼Œæ²’é–€ï¼\n");
         return ::valid_leave(me, dir);
 }

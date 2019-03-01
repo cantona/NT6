@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 { 
-        set("short", "´ó  ÃÅ");
+        set("short", "å¤§  é–€");
         set("long", @LONG
-ÕâÀïÊÇÏÀÒåÃËÏåÑô×Ü²¿µÄ´óÃÅ£¬Ò»Ãæ´óÆìÓ­·çÕĞÕ¹£¬ÉÏÊé¡º³ú¶ñ
-Îñ¾¡¡»ËÄ¸ö´ó×Ö¡£
+é€™è£¡æ˜¯ä¿ ç¾©ç›Ÿè¥„é™½ç¸½éƒ¨çš„å¤§é–€ï¼Œä¸€é¢å¤§æ——è¿é¢¨æ‹›å±•ï¼Œä¸Šæ›¸ã€é‹¤æƒ¡
+å‹™ç›¡ã€å››å€‹å¤§å­—ã€‚
 LONG );
         set("outdoors", "yangzhou");
         set("exits", ([
@@ -25,8 +25,8 @@ int valid_leave(object me, string dir)
 { 
         if (objectp(present("shou wei", environment(me))) && dir == "north") 
         {
-           if( !query_temp("good_xym1", me) && query("bunch/bunch_name", me) != "ÏÀÒåÃË" )
-               return notify_fail("ÊØÎÀÒ»°ÑÀ¹×¡Äã£¬ÀÊÉùºÈµÀ£ºÎÒÏÀÒåÃËÔõÓÉÏĞÔÓÈËµÈËæ±ã½ø³ö¡£\n"); 
+           if( !query_temp("good_xym1", me) && query("bunch/bunch_name", me) != "ä¿ ç¾©ç›Ÿ" )
+               return notify_fail("å®ˆè¡›ä¸€æŠŠæ””ä½ä½ ï¼Œæœ—è²å–é“ï¼šæˆ‘ä¿ ç¾©ç›Ÿæ€ç”±é–’é›œäººç­‰éš¨ä¾¿é€²å‡ºã€‚\n"); 
            else
            {
               delete_temp("good_xym1", me);

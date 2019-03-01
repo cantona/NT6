@@ -5,14 +5,14 @@ inherit MYHEART2;
 
 void create()
 {
-        set_name(HIY "ÌìÊ¦Ïñ" NOR, ({ "tianshi xiang", "tianshi", "xiang" }) );
+        set_name(HIY "å¤©å¸«åƒ" NOR, ({ "tianshi xiang", "tianshi", "xiang" }) );
         set_weight(1);
         if( clonep())
                 set_default_object(__FILE__);
         else {
                 set("material", "paper");
-                set("unit", "×ğ");
-                set("long", HIY "Ò»×ğÊÖÕÆ°ã´óĞ¡µÄÍ­Ïñ£¬Ï¸¿´Ö®ÏÂ£¬¾¹È»ÓĞ¼¸·ÖÑÛÊì¡£\n" NOR);
+                set("unit", "å°Š");
+                set("long", HIY "ä¸€å°Šæ‰‹æŒèˆ¬å¤§å°çš„éŠ…åƒï¼Œç´°çœ‹ä¹‹ä¸‹ï¼Œç«Ÿç„¶æœ‰å¹¾åˆ†çœ¼ç†Ÿã€‚\n" NOR);
                 set("value", 1000000);
                 set("limit", ([
                         "exp"    :   2000000,

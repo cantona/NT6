@@ -3,14 +3,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIW "¡¸ÎŞ×ÖÌìÊé¡¹" NOR, ({ "wuzi tianshu", "wuzi", "tianshu" }));
+        set_name(HIW "ã€Œç„¡å­—å¤©æ›¸ã€" NOR, ({ "wuzi tianshu", "wuzi", "tianshu" }));
         set_weight(3000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "´«ËµÖĞµ°Éú»ñÏÉÈËËùÔùµÄÆæÊé£¬Õû±¾Êé²»¼ûÒ»×Ö¡£\n" NOR);
+                set("long", HIW "å‚³èªªä¸­è›‹ç”Ÿç²ä»™äººæ‰€è´ˆçš„å¥‡æ›¸ï¼Œæ•´æœ¬æ›¸ä¸è¦‹ä¸€å­—ã€‚\n" NOR);
                 set("value", 500000);
-                set("unit", "±¾");
+                set("unit", "æœ¬");
         }
 }
 
@@ -24,27 +24,27 @@ int do_read(string arg)
         object me = this_player();
 
         if (me->is_busy())
-                return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£å¿™è‘—å‘¢ã€‚\n");
 
         if (me->is_fighting())
-                return notify_fail("Õ½¶·ÖĞÎŞ·¨ÑĞ¶Á¡£\n");
+                return notify_fail("æˆ°é¬¥ä¸­ç„¡æ³•ç ”è®€ã€‚\n");
 
         if (arg && id(arg))
         {
                 if( query("skybook/item/tianshu2", me )
                    || me->query_skill("literate") > 0)
-                        return notify_fail(HIW "\nÄãÇáÇá·­¿ªÊéÒ³£¬Í»È»¼äÒ»µÀÇ¿"
-                                           "¹âÉäÀ´£¬Ê²Ã´¶¼¿´²»Çå³ş¡£\n" NOR);
+                        return notify_fail(HIW "\nä½ è¼•è¼•ç¿»é–‹æ›¸é ï¼Œçªç„¶é–“ä¸€é“å¼·"
+                                           "å…‰å°„ä¾†ï¼Œä»€éº¼éƒ½çœ‹ä¸æ¸…æ¥šã€‚\n" NOR);
 
-                log_file("static/using", sprintf("%s(%s) use ÎŞ×ÖÌìÊé at %s.\n",
+                log_file("static/using", sprintf("%s(%s) use ç„¡å­—å¤©æ›¸ at %s.\n",
                                                  me->name(1),query("id", me),
                                                  ctime(time())));
 
-                message_vision(HIY "$N" HIY "ÇáÇá·­¿ª" + query("name") + HIY "Êé"
-                               "Ò³£¬ö®Ê±¼äÒ»µÀ¹â»ªÉÁ¹ı$P" HIY "µÄÃæÅÓ¡£\n" NOR, me);
+                message_vision(HIY "$N" HIY "è¼•è¼•ç¿»é–‹" + query("name") + HIY "æ›¸"
+                               "é ï¼Œéœæ™‚é–“ä¸€é“å…‰è¯é–ƒé$P" HIY "çš„é¢é¾ã€‚\n" NOR, me);
 
-                tell_object(me, HIC "Ú¤Ú¤ÖĞÄãËÆºõÊÜµ½ÁËÄ³ÖÖµÄÆôµÏ£¬ÍùÈÕµÄÒ»ÇĞ·³"
-                                "ÄÕ½¥½¥ÏûÊÅ´ù¾¡¡£\n" NOR);
+                tell_object(me, HIC "å†¥å†¥ä¸­ä½ ä¼¼ä¹å—åˆ°äº†æŸç¨®çš„å•Ÿè¿ªï¼Œå¾€æ—¥çš„ä¸€åˆ‡ç…©"
+                                "æƒ±æ¼¸æ¼¸æ¶ˆé€æ®†ç›¡ã€‚\n" NOR);
 
                 set("skybook/item/tianshu2", 1, me);
                 me->start_busy(10);

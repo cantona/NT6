@@ -5,30 +5,30 @@ inherit SKILL;
 int is_ultimate_skill() { return 1; }
 
 mapping *action = ({
-([      "action" : "$N½£ºáÓÚĞØ£¬ÃÍµØ´ÌÏò$n£¬ÕĞÊ½ÆÄÎªÁèÀ÷",
+([      "action" : "$NåŠæ©«äºèƒ¸ï¼ŒçŒ›åœ°åˆºå‘$nï¼Œæ‹›å¼é —ç‚ºå‡Œå²",
         "force"  : 20,
          "attack" : 40,
         "dodge"  : 20,
         "parry"  : 20,
         "damage" : 20,
         "lvl"    : 0,
-        "damage_type": "´ÌÉË"
+        "damage_type": "åˆºå‚·"
 ]),
-([      "action" : "$NÊÖÖĞ$wÔÚ°ë¿Õ»®³öÒ»¸ö°ëÔ²£¬ºöÈ»¼ä½£¹âÒ»ÉÁ£¬$wÒÑ´ÌÏò$n$l",
+([      "action" : "$Næ‰‹ä¸­$wåœ¨åŠç©ºåŠƒå‡ºä¸€å€‹åŠåœ“ï¼Œå¿½ç„¶é–“åŠå…‰ä¸€é–ƒï¼Œ$wå·²åˆºå‘$n$l",
         "force"  : 40,
         "attack" : 60,
         "dodge"  : 20,
         "damage" : 40,
         "lvl"    : 10,
-        "damage_type": "´ÌÉË"
+        "damage_type": "åˆºå‚·"
 ]),
-([      "action" : "$N·ÉÉí¶øÆğ£¬Ö»¼û°ë¿Õ½£ÉÁ¶¯£¬$wÓÌÈçÉúÁËÑÛ¾¦Ò»°ã´ÌÏò$n",
+([      "action" : "$Né£›èº«è€Œèµ·ï¼Œåªè¦‹åŠç©ºåŠé–ƒå‹•ï¼Œ$wçŒ¶å¦‚ç”Ÿäº†çœ¼ç›ä¸€èˆ¬åˆºå‘$n",
         "force"  : 60,
         "attack" : 80,
         "dodge"  : 15,
         "damage" : 50,
         "lvl"    : 20,
-        "damage_type": "´ÌÉË"
+        "damage_type": "åˆºå‚·"
 ]),
 });
 
@@ -38,10 +38,10 @@ int valid_enable(string usage) { return usage == "sword" || usage == "parry"; }
 int valid_learn(object me)
 {
         if ((int)me->query_skill("sword", 1) < 10)
-                return notify_fail("ÄãµÄ»ù±¾½£·¨»ğºòÌ«Ç³£¬ÎŞ·¨Ñ§Ï°Ñ×»Æ½£·¨¡£\n");
+                return notify_fail("ä½ çš„åŸºæœ¬åŠæ³•ç«å€™å¤ªæ·ºï¼Œç„¡æ³•å­¸ç¿’ç‚é»ƒåŠæ³•ã€‚\n");
 
         if ((int)me->query_skill("sword", 1) < (int)me->query_skill("tianjian", 1))
-                return notify_fail("ÄãµÄ»ù±¾½£·¨Ë®Æ½ÓĞÏŞ£¬ÎŞ·¨Áì»á¸ü¸ßÉîµÄÑ×»Æ½£·¨¡£\n");
+                return notify_fail("ä½ çš„åŸºæœ¬åŠæ³•æ°´å¹³æœ‰é™ï¼Œç„¡æ³•é ˜æœƒæ›´é«˜æ·±çš„ç‚é»ƒåŠæ³•ã€‚\n");
 
         return 1;
 }
@@ -70,10 +70,10 @@ int practice_skill(object me)
 
         if( !objectp(weapon=query_temp("weapon", me)) || 
             query("skill_type", weapon) != "sword" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ã€‚\n");
 
         if( query("qi", me)<10 )
-                return notify_fail("ÄãµÄÌåÁ¦²»¹»Á·Ñ×»Æ½£·¨¡£\n");
+                return notify_fail("ä½ çš„é«”åŠ›ä¸å¤ ç·´ç‚é»ƒåŠæ³•ã€‚\n");
 
         me->receive_damage("qi", 5);        
 
@@ -94,7 +94,7 @@ void skill_improved(object me)
         if( lvl >= 30 &&  
             !query("can_perform/tianjian/lian", me) )   
         {
-                tell_object(me, HIC "ÄãÍ¨ÏşÁËÌì½£¡¸" HIR "Á¬»·¾ö" HIC "¡¹µÄ°ÂÃØ¡£\n" NOR);     
+                tell_object(me, HIC "ä½ é€šæ›‰äº†å¤©åŠã€Œ" HIR "é€£ç’°æ±º" HIC "ã€çš„å¥§ç§˜ã€‚\n" NOR);     
                 set("can_perform/tianjian/lian", 1, me);  
                 me->improve_skill("martial-cognize", 1500000);
         }

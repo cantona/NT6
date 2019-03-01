@@ -3,9 +3,9 @@
 
 inherit ITEM;
 
-string *name = ({"ËÇÁÏ", "·¹ÍÅ", "ÃæÍÅ", "Èâ¿é", "ÈâÍÅ"});
+string *name = ({"é£¼æ–™", "é£¯åœ˜", "é¢åœ˜", "è‚‰å¡Š", "è‚‰åœ˜"});
 string *id = ({"si liao", "fan tuan", "mian tuan", "rou kuai", "rou tuan"});
-string *unit = ({"°Ñ", "¸ö", "¸ö","¿é", "¸ö"});
+string *unit = ({"æŠŠ", "å€‹", "å€‹","å¡Š", "å€‹"});
 string *value = ({200, 400, 400, 800, 1600});
 string *remaining = ({ 5, 3, 4, 3, 2});
 string *supply = ({5, 10, 12, 20, 25});
@@ -21,7 +21,7 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long","Ò»"+unit[i]+"Î¹Ñø³èÎïµÄ"+name[i]+"¡£¿´ÆğÀ´ºÃÏóÔàºõºõµÄ¡£\n");
+                set("long","ä¸€"+unit[i]+"å–‚é¤Šå¯µç‰©çš„"+name[i]+"ã€‚çœ‹èµ·ä¾†å¥½è±¡è‡Ÿä¹ä¹çš„ã€‚\n");
                 set("unit", unit[i]);
                 set("value", value[i]);
                 set("siliao_remaining", remaining[i]);

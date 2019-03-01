@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�ݵ�");
+        set("short", "草地");
         set("long",@LONG
-һƬ���Ĳݵء��̲�����ï�ܵ������ţ��ݴԼ���һЩ��֪��
-��С����������ȥ��Զ����һƬ���֡�
+一片青翠的草地。綠草如蔭，茂密地生長著，草叢間有一些不知名
+的小蟲在鑽來鑽去。遠處有一片樹林。
 LONG
 );
         set("exits",([

@@ -4,14 +4,14 @@ inherit TRANS_ROOM;
 void create()
 {
 mapping map_short = ([
-         "nanyang"       : "ÄÏÑô",
-         "suzhou"        : "ËÕÖÝ",
-         "luoyang"       : "ÂåÑô",
-         "beijing"       : "±±¾©",
-         "xiangyang"     : "ÏåÑô",
-         "kaifeng"       : "¿ª·â",
-         "changan"       : "³¤°²",
-         "yangzhou"      : "ÑïÖÝ",
+         "nanyang"       : "å—é™½",
+         "suzhou"        : "è˜‡å·ž",
+         "luoyang"       : "æ´›é™½",
+         "beijing"       : "åŒ—äº¬",
+         "xiangyang"     : "è¥„é™½",
+         "kaifeng"       : "é–‹å°",
+         "changan"       : "é•·å®‰",
+         "yangzhou"      : "æšå·ž",
 ]);
 
 mapping trans_pay = ([
@@ -25,13 +25,13 @@ mapping trans_pay = ([
          "yangzhou"      : 80,
 ]);
 
-      set("short", "Âí¾Ç");
+      set("short", "é¦¬å»„");
       set("long", @LONG
-ÕâÀïÊÇÖÐÖÝ³ÇÓ¢ºÀ¾ÆÂ¥ºóµÄÂí¾Ç£¬³£Äê¹©Ó¦ÐÂÏÊ²ÝÁÏ¡£ÖÐ
-ÖÝ³Ç×Ô¹ÅÄË¾üÊÂÒªµØ£¬Ãñ·ç´¾ÆÓ£¬Âí·òÃÇ»á°ÑÂíÇ£µ½Âí¾ÇºÃÉú
-ÕÕ¿´£¬½«ËüÃÇÎ¹±¥Òû×ã£¬ÔÙÏ´Ë¢µÃ¸ÉÇ¬¾»¾»£¬Ò»Ö±ËÅºòµ½¿ÍÈË
-ÉÏÂ·¡£Âí¾ÇÓêéÜÏÂµÄÀÃÄ¾ÖùÉÏ¶¤×ÅÒ»¿éÆÆÄ¾ÅÆ (paizi)¡£Âí¾Ç
-ÖÐ¶Ñ·ÅÖø¼¸¶Ñ²ÝÁÏ£¬ÕýÖÐÓÐÒ»¿Úãï²Û¡£
+é€™è£¡æ˜¯ä¸­å·žåŸŽè‹±è±ªé…’æ¨“å¾Œçš„é¦¬å»„ï¼Œå¸¸å¹´ä¾›æ‡‰æ–°é®®è‰æ–™ã€‚ä¸­
+å·žåŸŽè‡ªå¤ä¹ƒè»äº‹è¦åœ°ï¼Œæ°‘é¢¨æ·³æ¨¸ï¼Œé¦¬å¤«å€‘æœƒæŠŠé¦¬ç‰½åˆ°é¦¬å»„å¥½ç”Ÿ
+ç…§çœ‹ï¼Œå°‡å®ƒå€‘å–‚é£½é£²è¶³ï¼Œå†æ´—åˆ·å¾—å¹¹ä¹¾å‡ˆå‡ˆï¼Œä¸€ç›´ä¼ºå€™åˆ°å®¢äºº
+ä¸Šè·¯ã€‚é¦¬å»„é›¨æªä¸‹çš„çˆ›æœ¨æŸ±ä¸Šé‡˜è‘—ä¸€å¡Šç ´æœ¨ç‰Œ (paizi)ã€‚é¦¬å»„
+ä¸­å †æ”¾è‘—å¹¾å †è‰æ–™ï¼Œæ­£ä¸­æœ‰ä¸€å£æ³”æ§½ã€‚
 LONG);
       set("outdoors", "zhongzhou");
       set("no_fight", 1);

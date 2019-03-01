@@ -1,4 +1,4 @@
-// group_quest:family Èº×éÈÎÎñ¡ª¡ªÃÅÅÉÈëÇÖ
+// group_quest:family ç¾¤çµ„ä»»å‹™â”€â”€é–€æ´¾å…¥ä¾µ
 
 #include <ansi.h>
 #include "family.h"
@@ -14,8 +14,8 @@ void create()
         }
 }
 
-//string prompt() { return HIR "¡¾ÃÅÅÉÈëÇÖ¡¿" NOR; }
-string prompt() { return HIR "¡¾ÃÅÅÉ¡¿" NOR; }
+//string prompt() { return HIR "ã€é–€æ´¾å…¥ä¾µã€‘" NOR; }
+string prompt() { return HIR "ã€é–€æ´¾ã€‘" NOR; }
 
 int select_quest()
 {
@@ -25,7 +25,7 @@ int select_quest()
         string p,*kp;
         mapping fam_map = ([]);
 
-        // ±éÀúÔÙÏÖËùÓĞÍæ¼Ò£¬È¡µÃÃ¿¸öÃÅÅÉµÄÔÚÏßÍæ¼ÒÊı£¬´æÈë±äÁ¿fam_map  family -> player_number
+        // éæ­·å†ç¾æ‰€æœ‰ç©å®¶ï¼Œå–å¾—æ¯å€‹é–€æ´¾çš„åœ¨ç·šç©å®¶æ•¸ï¼Œå­˜å…¥è®Šé‡fam_map  family -> player_number
         foreach (object user in users())
         {
                 if (! wizardp(user))
@@ -39,29 +39,29 @@ int select_quest()
                 }
         }
 
-        // MUDÖĞÃ»ÓĞÊôÓÚÈÎºÎÒ»¸öÃÅÅÉµÄÍæ¼Ò
+        // MUDä¸­æ²’æœ‰å±¬äºä»»ä½•ä¸€å€‹é–€æ´¾çš„ç©å®¶
         if (!sizeof(fam_map))
             return 0;
 
-        // È¡µÃÓĞÍæ¼ÒÔÚÏßµÄÃÅÅÉÃûµ¥
+        // å–å¾—æœ‰ç©å®¶åœ¨ç·šçš„é–€æ´¾åå–®
         kp = keys(fam_map);
-        kp -= ({ "¹Å´å", "¾øÇé¹È", "ÔÆÁúÃÅ", "»ªÉ½½£×Ú" });
+        kp -= ({ "å¤æ‘", "çµ•æƒ…è°·", "é›²é¾é–€", "è¯å±±åŠå®—" });
         if( !sizeof(kp) ) return 0;
 
-        // Ëæ¼´ÌôÑ¡Ò»¸öÃÅÅÉ
+        // éš¨å³æŒ‘é¸ä¸€å€‹é–€æ´¾
         p = kp[random(sizeof(kp))];
 
-        // ¸ù¾İÕâ¸öÃÅÅÉÔÚÏßµÄÍæ¼ÒÊı¾ö¶¨ÈÎÎñµĞÈËÊı
+        // æ ¹æ“šé€™å€‹é–€æ´¾åœ¨ç·šçš„ç©å®¶æ•¸æ±ºå®šä»»å‹™æ•µäººæ•¸
         all = sizeof(fam_map[p]);
         if (all < 5) all = 5;
         if (all > 20) all = 30 - random(10);
 
         the_family = p;
 
-        // ´ÓÕâ¸öÃÅÅÉÖĞËæ»ú³éÈ¡Èı¸öÍæ¼ÒµÄÃûµ¥£¬
-        // ÕâÀïÓĞÒ»¸öÎÊÌâ£¬Èç¹ûÕâ¸öÃÅÅÉÔÚÏßµÄÍæ¼ÒÊıÉÙÓÚ3ÈËÔõÃ´°ì£¿
-        // ¶øÇÒÎÒÒ²Ã»ÓĞ·¢ÏÖÄÄÀïÊ¹ÓÃµ½ÁËname1, name2, name3£¬ºÜÆæ¹Ö
-        // ÎÒÏÖÔÚ°ÑËûÃÇ·Åµ½Ò»¸önameÊı×éÀïÃæ
+        // å¾é€™å€‹é–€æ´¾ä¸­éš¨æ©ŸæŠ½å–ä¸‰å€‹ç©å®¶çš„åå–®ï¼Œ
+        // é€™è£¡æœ‰ä¸€å€‹å•é¡Œï¼Œå¦‚æœé€™å€‹é–€æ´¾åœ¨ç·šçš„ç©å®¶æ•¸å°‘äº3äººæ€éº¼è¾¦ï¼Ÿ
+        // è€Œä¸”æˆ‘ä¹Ÿæ²’æœ‰ç™¼ç¾å“ªè£¡ä½¿ç”¨åˆ°äº†name1, name2, name3ï¼Œå¾ˆå¥‡æ€ª
+        // æˆ‘ç¾åœ¨æŠŠä»–å€‘æ”¾åˆ°ä¸€å€‹nameæ•¸çµ„è£¡é¢
         i = 3;
         while (i--)
         {
@@ -70,14 +70,14 @@ int select_quest()
                 name[i]=(query("name", fam_map[p][random(sizeof(fam_map[p]))]));
             }
             else
-                name[i] = p + "µÜ×Ó";
+                name[i] = p + "å¼Ÿå­";
         }
 
-        // ÉèÖÃ¹ú¼Ò
-        the_nation = "ÖĞ¹ú";
+        // è¨­ç½®åœ‹å®¶
+        the_nation = "ä¸­åœ‹";
         the_enemy = GROUP_QUEST_D->get_enemy(); 
 
-        // Ñ¡È¡Ò»¸ö¹ÊÊÂ
+        // é¸å–ä¸€å€‹æ•…äº‹
         story = all_story[random(sizeof(all_story))];
 
         return 1;
@@ -89,14 +89,14 @@ string create_tiaoxin()
         int i,lvl;
         string title;
 
-        title = HIY + the_family + NOR + HIW + "³ğ¼Ò" + NOR + " " + HIY +
+        title = HIY + the_family + NOR + HIW + "ä»‡å®¶" + NOR + " " + HIY +
                         the_enemy + NOR;
 
         for (i = 0;i < all;i ++)
         {
                 lvl = random(15) + 1;
                 ob = GROUP_QUEST_D->create_npc(the_nation,lvl);
-                GROUP_QUEST_D->place_npc(ob,"ÃÅÅÉ",the_family,lvl);
+                GROUP_QUEST_D->place_npc(ob,"é–€æ´¾",the_family,lvl);
                 set("title", title, ob);
                 ob->random_move();
                 ob->random_move();
@@ -104,7 +104,7 @@ string create_tiaoxin()
                 ob->random_move();
         }
         GROUP_QUEST_D->set_enemy(all);
-        return "´óĞ¡à¶ÂŞ¸ßºô£º¡º" + HIY + "¡¾" + the_family + "¡¿" + NOR + WHT + "µÄÈË¿ì¸øÎÒ¹ö³öÀ´£¬´óÒ¯ÃÇ½ñÌìÒªÄãÃÇµÄºÃ¿´£¡£¡¡»";
+        return "å¤§å°å˜ç¾…é«˜å‘¼ï¼šã€" + HIY + "ã€" + the_family + "ã€‘" + NOR + WHT + "çš„äººå¿«çµ¦æˆ‘æ»¾å‡ºä¾†ï¼Œå¤§çˆºå€‘ä»Šå¤©è¦ä½ å€‘çš„å¥½çœ‹ï¼ï¼ã€";
 }
 
 mixed query_quest_message(int step)
@@ -121,7 +121,7 @@ mixed query_quest_message(int step)
                 msg = replace_string(msg,"name2",name[1]);
                 msg = replace_string(msg,"name3",name[2]);
                 msg = replace_string(msg,"the_enemy",HIY + the_enemy + NOR + WHT);
-                msg = replace_string(msg,"the_family",HIY + "¡¾" + the_family + "¡¿" + NOR + WHT);
+                msg = replace_string(msg,"the_family",HIY + "ã€" + the_family + "ã€‘" + NOR + WHT);
         }
         return msg;
 }

@@ -1,767 +1,767 @@
-                         ¹ØÓÚÎä¹¦µÄÉèÖÃ
+                         é—œäºæ­¦åŠŸçš„è¨­ç½®
 
-Ò»¡¢´ò¶·³ÌĞò¹«Ê½£º
-¹¥»÷ÄÜÁ¦£ºap
-¶ã±ÜÄÜÁ¦£ºdp
-ÕĞ¼ÜÄÜÁ¦£ºpp
-ÉÏÊöÈı¸ö³õÊ¼ÖµÓÉskill_powerº¯ÊıµÃ³ö£¬ÓëÎä¹¦µÄaction²ÎÊıÉè¶¨ÎŞ¹Ø¡£
+ä¸€ã€æ‰“é¬¥ç¨‹åºå…¬å¼ï¼š
+æ”»æ“Šèƒ½åŠ›ï¼šap
+èº²é¿èƒ½åŠ›ï¼šdp
+æ‹›æ¶èƒ½åŠ›ï¼špp
+ä¸Šè¿°ä¸‰å€‹åˆå§‹å€¼ç”±skill_powerå‡½æ•¸å¾—å‡ºï¼Œèˆ‡æ­¦åŠŸçš„actionåƒæ•¸è¨­å®šç„¡é—œã€‚
 
-Ä¿Ç°ÎÒÃÇÒªÇóÏÂÁĞËÄ¸öÎä¹¦action²ÎÊı£º
+ç›®å‰æˆ‘å€‘è¦æ±‚ä¸‹åˆ—å››å€‹æ­¦åŠŸactionåƒæ•¸ï¼š
 dodge parry force damage
-ÆäÖĞ£¬¿ÕÊÖÎä¹¦²»ÔÊĞíÓĞdamage²ÎÊı¡£
+å…¶ä¸­ï¼Œç©ºæ‰‹æ­¦åŠŸä¸å…è¨±æœ‰damageåƒæ•¸ã€‚
 
-dp = dp + action["dodge"]/100   ¶ã±Ü³É¹¦µÄ¹«Ê½ÊÇ£ºrandom(ap+dp) < dp
-pp = pp + action["parry"]/100   ÕĞ¼Ü³É¹¦µÄ¹«Ê½ÊÇ£ºrandom(ap+pp) < pp
+dp = dp + action["dodge"]/100   èº²é¿æˆåŠŸçš„å…¬å¼æ˜¯ï¼šrandom(ap+dp) < dp
+pp = pp + action["parry"]/100   æ‹›æ¶æˆåŠŸçš„å…¬å¼æ˜¯ï¼šrandom(ap+pp) < pp
 
-ËùÒÔ£¬dodgeºÍparry²ÎÊıÔ½¸ß£¬¶ÔÊÖ¾ÍÔ½ÈİÒ×¶ã±Ü»òÕĞ¼Ü³É¹¦¡£ÕâÁ½¸ö²ÎÊı
-ÔÊĞí·¶Î§£º-90 <-> 90¡£
+æ‰€ä»¥ï¼Œdodgeå’Œparryåƒæ•¸è¶Šé«˜ï¼Œå°æ‰‹å°±è¶Šå®¹æ˜“èº²é¿æˆ–æ‹›æ¶æˆåŠŸã€‚é€™å…©å€‹åƒæ•¸
+å…è¨±èŒƒåœï¼š-90 <-> 90ã€‚
 
-×îÖÕÉËº¦Á¦ = damage + damagebonus
+æœ€çµ‚å‚·å®³åŠ› = damage + damagebonus
 
 damage = apply/damage * (1+action["damage"]/200)
 damagebonus = query_str() * (1+action["force"]/200)
 
-ÓÉÓÚÃ»ÓĞapply/damage£¬ËùÒÔ¿ÕÊÖ¹¦·òµÄdamageµÈÓÚ0£¬action["damage"]Ò²
-²»Æğ×÷ÓÃ¡£¶øÎŞÂÛ¿ÕÊÖ»¹ÊÇ±øÆ÷£¬damagebonusÊÇÓÀÔ¶¶¼ÓĞµÄ¡£
+ç”±äºæ²’æœ‰apply/damageï¼Œæ‰€ä»¥ç©ºæ‰‹åŠŸå¤«çš„damageç­‰äº0ï¼Œaction["damage"]ä¹Ÿ
+ä¸èµ·ä½œç”¨ã€‚è€Œç„¡è«–ç©ºæ‰‹é‚„æ˜¯å…µå™¨ï¼Œdamagebonusæ˜¯æ°¸é éƒ½æœ‰çš„ã€‚
 
-½¨Òé´ó¼Òset combat verbose¡£
+å»ºè­°å¤§å®¶set combat verboseã€‚
 
-¶ş¡¢skillÉè¶¨±ê×¼
-  1) ÊÇ°´ÕÕ»ù±¾µÄ¼¼ÄÜ°ÑÌØÊâ¼¼ÄÜ·ÖÀà,±ÈÈçsword,hand,fingerµÈµÈ
-  2) ÔÚÃ¿Ò»ÀàÖĞ·Ö4¸öµµ´Î Ç¿(6) ½ÏÇ¿(4) ÖĞ(2) ÖĞÏÂ(1) À´µ÷Õû
-  3) ÔÚÃ¿¸öµµ´ÎÖĞ ÔÙ¸ù¾İforce ,dodge, parry, damageÀ´ÓĞ²àÖØµÄ
-   ĞŞ¸Ä, ÕùÈ¡×ö³ö²ã´ÎĞÔºÍ¶àÑùĞÔÀ´
+äºŒã€skillè¨­å®šæ¨™æº–
+  1) æ˜¯æŒ‰ç…§åŸºæœ¬çš„æŠ€èƒ½æŠŠç‰¹æ®ŠæŠ€èƒ½åˆ†é¡,æ¯”å¦‚sword,hand,fingerç­‰ç­‰
+  2) åœ¨æ¯ä¸€é¡ä¸­åˆ†4å€‹æª”æ¬¡ å¼·(6) è¼ƒå¼·(4) ä¸­(2) ä¸­ä¸‹(1) ä¾†èª¿æ•´
+  3) åœ¨æ¯å€‹æª”æ¬¡ä¸­ å†æ ¹æ“šforce ,dodge, parry, damageä¾†æœ‰å´é‡çš„
+   ä¿®æ”¹, çˆ­å–åšå‡ºå±¤æ¬¡æ€§å’Œå¤šæ¨£æ€§ä¾†
 
-    a) Òª¿¼ÂÇµ½Íæ¼ÒµÄÆøÑª³¤¶Ì, Ä¿Ç°Ò»°ãÃÅÅÉÍæ¼ÒµÄÆøÑª¶¼ÔÚ1000
-×óÓÒ,Í¬Ê±Ò»Ğ©ÌØÊâ±øÆ÷É±ÉËÁ¦Ì«Å£ ,Ë«ÊÖ±øÆ÷(Õâ¸ö½¨Òé¸Äµô ºÇºÇ),
-ËùÒÔÔÚÉèµÄÊ±ºò½¨Òédamage²»Ó¦¸ÃÌ«¸ß
-    b) Õë¶ÔÄ¿Ç°È«ÌìÏÂ²î²»¶à¶¼ÊÇÓÃswordµÄÇé¿ö,½¨Òé¶ÔÒ»Ğ©ÌØÊâ±ø
-Æ÷µÄÉè¶¨¸øÓèÕÕ¹Ë ¿ÉÒÔ·Åµ½Ç¿»ò½ÏÇ¿µÄµµ´ÎÀ´µ÷Õû
-    c) Í¬Ê±½¨Òé×ÛºÏ¿¼ÂÇÒ»ÏÂÃÅÅÉµÄ×ÜÌåÇé¿ö,±ÈÈçÄÚ¹¦,Çá¹¦,±øÆ÷,
-¿ÕÊÖµÈ,»¹ÓĞµØÀíÎ»ÖÃ,×öÈÎÎñµÄÄÑÒ×³Ì¶È(ÃÔ¹¬),ÎÒ»áÕë¶ÔÃÅÅÉÇé¿ö¾ß
-Ìå×ö³öÒ»ÕÅ±íÀ´
-    d) ¾ßÌåµ½ÕĞÊ½ÉÏµÄforce,dodge,parry,damageµÄÉè¶¨
+    a) è¦è€ƒæ…®åˆ°ç©å®¶çš„æ°£è¡€é•·çŸ­, ç›®å‰ä¸€èˆ¬é–€æ´¾ç©å®¶çš„æ°£è¡€éƒ½åœ¨1000
+å·¦å³,åŒæ™‚ä¸€äº›ç‰¹æ®Šå…µå™¨æ®ºå‚·åŠ›å¤ªç‰› ,é›™æ‰‹å…µå™¨(é€™å€‹å»ºè­°æ”¹æ‰ å‘µå‘µ),
+æ‰€ä»¥åœ¨è¨­çš„æ™‚å€™å»ºè­°damageä¸æ‡‰è©²å¤ªé«˜
+    b) é‡å°ç›®å‰å…¨å¤©ä¸‹å·®ä¸å¤šéƒ½æ˜¯ç”¨swordçš„æƒ…æ³,å»ºè­°å°ä¸€äº›ç‰¹æ®Šå…µ
+å™¨çš„è¨­å®šçµ¦äºˆç…§é¡§ å¯ä»¥æ”¾åˆ°å¼·æˆ–è¼ƒå¼·çš„æª”æ¬¡ä¾†èª¿æ•´
+    c) åŒæ™‚å»ºè­°ç¶œåˆè€ƒæ…®ä¸€ä¸‹é–€æ´¾çš„ç¸½é«”æƒ…æ³,æ¯”å¦‚å…§åŠŸ,è¼•åŠŸ,å…µå™¨,
+ç©ºæ‰‹ç­‰,é‚„æœ‰åœ°ç†ä½ç½®,åšä»»å‹™çš„é›£æ˜“ç¨‹åº¦(è¿·å®®),æˆ‘æœƒé‡å°é–€æ´¾æƒ…æ³å…·
+é«”åšå‡ºä¸€å¼µè¡¨ä¾†
+    d) å…·é«”åˆ°æ‹›å¼ä¸Šçš„force,dodge,parry,damageçš„è¨­å®š
 
-    force ¿ÕÊÖÉè¸ßµã,±øÆ÷ÉÏ¸ù¾İÃÅÅÉµÄÄÚ¹¦¼ÓÒÔ¿¼ÂÇ
-          ³¤ÖØ±øÆ÷ÉèµÄµÍ,¶ÌÈí±øÆ÷ÉèµÄ¸ß
-    dodge ³¤±øÆ÷ºÍÖØ±øÆ÷ÉèµÄµÍĞ©,¶ø¶Ì±øÆ÷ºÍÈí±øÆ÷ÉèµÄ¸ß,¿ÕÊÖ
-          ¸úforceÏà·´,×ß¸ÕÃÍÒ»Â·µÄdodgeµÍ,ÇáÇÉÒ»Â·µÄdodge¸ß
-    parry ³¤±øÆ÷ºÍÖØ±øÆ÷ÉèµÄ¸ßĞ©,ÆäËûµÄÏàÓ¦ÉèµÄµÍĞ©
-          ¿ÕÊÖ²Î¿¼forceºÍ¾ßÌåÎä¹¦¶¨
-    damage Ö»ÓĞ±øÆ÷ÉÏÓÃ,ÖØ±øÆ÷ÀàºÍ·æÀû±øÆ÷ÉèµÃ¸ßĞ©,ÆäËû±øÆ÷Àà
-          ÉèµÄµÍ
+    force ç©ºæ‰‹è¨­é«˜é»,å…µå™¨ä¸Šæ ¹æ“šé–€æ´¾çš„å…§åŠŸåŠ ä»¥è€ƒæ…®
+          é•·é‡å…µå™¨è¨­çš„ä½,çŸ­è»Ÿå…µå™¨è¨­çš„é«˜
+    dodge é•·å…µå™¨å’Œé‡å…µå™¨è¨­çš„ä½äº›,è€ŒçŸ­å…µå™¨å’Œè»Ÿå…µå™¨è¨­çš„é«˜,ç©ºæ‰‹
+          è·Ÿforceç›¸å,èµ°å‰›çŒ›ä¸€è·¯çš„dodgeä½,è¼•å·§ä¸€è·¯çš„dodgeé«˜
+    parry é•·å…µå™¨å’Œé‡å…µå™¨è¨­çš„é«˜äº›,å…¶ä»–çš„ç›¸æ‡‰è¨­çš„ä½äº›
+          ç©ºæ‰‹åƒè€ƒforceå’Œå…·é«”æ­¦åŠŸå®š
+    damage åªæœ‰å…µå™¨ä¸Šç”¨,é‡å…µå™¨é¡å’Œé‹’åˆ©å…µå™¨è¨­å¾—é«˜äº›,å…¶ä»–å…µå™¨é¡
+          è¨­çš„ä½
 
-Èı¡¢Ä¿Ç°Îä¹¦ÁĞ±í
+ä¸‰ã€ç›®å‰æ­¦åŠŸåˆ—è¡¨
 
-"axe":          "¸«·¨",        family    dodge      parry      force     damage
-duanyun-fu.c        ¶ÏÔÆ¸«     ´óÀí
-"blade":        "µ¶·¨",        family    dodge      parry      force     damage
-cibei-blade.c:      ´È±¯µ¶     ÉÙÁÖ
-fanliangyi-dao.c:   ·´Á½ÒÇµ¶·¨ »ªÉ½
-hujia-daofa.c:      ºú¼Òµ¶·¨   ¹«¹²
-jinwu-blade.c:      ½ğÎÚµ¶·¨   ÁèÏö
-kuangfeng-blade.c:  ¿ñ·çµ¶·¨   ¹«¹²
-liuhe-blade.c:      ËÄÏóÁùºÏµ¶ Ø¤°ï
-murong-blade.c:     Ä½Èİµ¶·¨   Ä½Èİ
-qiuge-dao.c:        Çï¸èÆßµ¶   ºì»¨
-ranmu-blade.c:      È¼Ä¾µ¶·¨   ÄÏÉÙÁÖ
-ruyi-dao.c:         ÈçÒâµ¶·¨   åĞÒ£
-taiji-dao.c:        Ì«¼«µ¶·¨   Îäµ±
-wuhu-duanmendao.c:  Îå»¢¶ÏÃÅµ¶ ÔÆÁú
-xiuluo-blade.c:     ĞŞÂŞµ¶     ÄÏÉÙÁÖ
-xiuluo-dao.c:       ĞŞÂŞµ¶     ÉÙÁÖ
-xue-dao.c:          Ñªµ¶       Ñ©É½ËÂ
-yanxing-dao.c:      ÑãĞĞµ¶     ¶ëáÒ
-"claw":         "×¦·¨",        family    dodge      parry      force     damage
-dragon-claw.c:      Áú×¦¹¦     ÄÏÉÙÁÖ
-eagleg-claw.c:      Ó¥×¦¹¦     ÄÏÉÙÁÖ
-jimie-claw.c:       ¼ÅÃğ×¦     ÄÏÉÙÁÖ
-jiuyin-baiguzhao.c: ¾ÅÒõ°×¹Ç×¦ ¹«¹²
-longzhua-gong.c:    Áú×¦¹¦     ÉÙÁÖ
-sanyin-wugongzhao.c:ÈıÒõòÚò¼×¦ ĞÇËŞ
-sougu.c:            ËÑ¹ÇÓ¥×¦¹¦ Ã÷½Ì
-yingzhua-gong.c:    Ó¥×¦¹¦     ÉÙÁÖ
-yunlong-zhua.c:     ÔÆÁú×¦     ÔÆÁú
-"club" :        "¹÷·¨",        family    dodge      parry      force     damage
-juemen-gun.c:       ¾øÃÅ¹÷     ÉÙÁÖ(Î´ÓÃ)
-weituo-chu.c:       Î¤ÍÔèÆ     ÄÏÉÙÁÖ
-weituo-club.c:      Î¤ÍÓ¹÷     ÄÏÉÙÁÖ
-weituo-gun.c:       Î¤ÍÓ¹÷     ÉÙÁÖ
-zui-club.c:         ÉÙÁÖ×í¹÷   ÄÏÉÙÁÖ
-zui-gun.c:          ÉÙÁÖ×í¹÷   ÉÙÁÖ
-"cuff":         "È­·¨",        family    dodge      parry      force     damage
-baihua-cuoquan.c:   °Ù»¨´íÈ­   ºì»¨
-changquan.c:        Ì«×æ³¤È­   ¹«¹²
-chunyang-quan.c:    ´¿ÑôÈ­     È«Õæ
-hamaquan.c:         ¸òó¡È­     °×ÍÕ
-houquan.c:          ºïÈ­       ÔÆÁú
-huhe-quan.c:        »¢º×Ë«ĞÎÈ­ ¹«¹²
-jingang-cuff.c:     ´ó½ğ¸ÕÈ­   ÄÏÉÙÁÖ
-jingang-quan.c:     ´ó½ğ¸ÕÈ­   ÉÙÁÖ
-jinyu-quan.c:       ½ğÓñÈ­     ´óÀí
-luohan-cuff.c:      ÉÙÁÖÂŞººÈ­ ÄÏÉÙÁÖ
-luohan-quan.c:      ÉÙÁÖÂŞººÈ­ ÉÙÁÖ
-poyu-quan.c:        ÆÆÓñÈ­     »ªÉ½
-qishang-quan.c:     ÆßÉËÈ­     Ã÷½Ì
-shaolin-cuff.c:     ÉÙÁÖÄÏÈ­   ÄÏÉÙÁÖ
-yujiamu-quan.c:     ½ğ¸Õè¤åÈÄ¸È­ Ñ©É½ËÂ
-zhentian-cuff.c:    ÕğÌìÈ­·¨   À¥ÂØ
-"dagger":       "¶Ì±ø",        family    dodge      parry      force     damage
-shigu-bifa.c:       Ê¯¹Ä´òÑ¨±Ê·¨ ºÚÄ¾ÑÂ
-"dodge":        "Çá¹¦",        family    dodge      parry      force     damage
-anying-fuxiang.c    °µÓ°¸¡Ïã   ÌÒ»¨
-bixie-jian.c        ±ÙĞ°½£·¨   ¹«¹²
-chanchu-bufa.c      ó¸òÜ²½·¨   °×ÍÕ
-chuanhua.c          ´©»¨ÈÆÊ÷   Çà³Ç
-feixing-shu.c       ·ÉĞÇÊõ     ĞÇËŞ
-feiyan-huixiang.c   ·ÉÑà»ØÏè   »ªÉ½
-fengshenjue.c       ·çÉñ¾÷     Ì©É½
-fuguanglueying.c    ¸¡¹âÂÓÓ°   áÔÉ½
-huashan-shenfa.c    »ªÉ½Éí·¨   »ªÉ½  
-jinyan-gong.c       ½ğÑã¹¦     È«Õæ
-kunlun-shenfa.c     À¥ÂØÉí·¨   À¥ÂØ
-lingboweibu.c       Áè²¨Î¢²½   åĞÒ£
-lingxu-bu.c         ÁèĞé²½     ¹«¹²
-piaoyibu.c          Æ®Òİ²½·¨   ºÚÄ¾ÑÂ
-qiankun-danuoyi.c   Ç¬À¤´óÅ²ÒÆ Ã÷½Ì
-qingfu-shenfa.c     ÇàòğÉí·¨   Ã÷½Ì
-qiuyan-nanhui.c     ÇïÑãÄÏ»Ø   ºâÉ½
-shaolin-shenfa.c    ÉÙÁÖÉí·¨   ÉÙÁÖ
-shenkong-xing.c     Éí¿ÕĞĞ     Ñ©É½ËÂ
-shenxing-baibian.c  ÉñĞĞ°Ù±ä   ¹«¹²
-shuishangpiao.c     ÌúÕÆË®ÉÏÆ® ÌúÕÆ
-snowstep.c          Ã·Ñ©Æ®Ïã²½ ÁèÏö
-taixuan-gong.c      Ì«Ğş¹¦     ¹«¹²
-taxue-wuhen.c       Ì¤Ñ©ÎŞºÛ   À¥ÂØ
-tiannan-step.c      ÌìÄÏ²½·¨   ´óÀí
-tiyunzong.c         ÌİÔÆ×İ     Îäµ±
-wudu-yanluobu.c     Îå¶¾ÑÌÂÜ²½ Îå¶¾
-xiaoyaoyou.c        åĞÒ£ÓÎ     Ø¤°ï
-yanfly.c            ÑàË«·É     ¹«¹²
-yanling-shenfa.c    ÑàÁéÉí·¨   Ä½Èİ
-yiwei-dujiang.c     Ò»Î­¶É½­   ÄÏÉÙÁÖ
-yixingbu.c          ÒâĞÎ²½·¨   ÉñÁú
-youlong-shenfa.c    ÓÎÁúÉí·¨   ºì»¨
-yueying-wubu.c      ÔÂÓ°Îè²½   åĞÒ£
-yunlong-shenfa.c    ÔÆÁúÉí·¨   ÔÆÁú
-yunv-shenfa.c       ÓñÅ®Éí·¨   ¹ÅÄ¹
-zhaixinggong.c      ÕªĞÇ¹¦     ĞÇËŞ
-zhutian-bu.c        ÖîÌì»¯Éí²½ ¶ëáÒ
-"finger":       "Ö¸·¨",        family    dodge      parry      force     damage
-canhe-finger.c:     ²ÎºÏÖ¸     Ä½Èİ
-duoluoye-finger.c:  ¶àÂŞÒ¶Ö¸   ÄÏÉÙÁÖ
-mohe-finger.c:      Ä¦Ú­Ö¸     ÄÏÉÙÁÖ
-nianhua-finger.c:   Äé»¨Ö¸     ÄÏÉÙÁÖ
-nianhua-zhi.c:      Äé»¨Ö¸     ÉÙÁÖ
-one-finger.c:       Ò»Ö¸ìø     ÄÏÉÙÁÖ
-six-finger.c:       ÁùÂöÉñ½£   ´óÀí
-sun-finger.c:       Ò»ÑôÖ¸     ´óÀí
-tanzhi-shentong.c   µ¯Ö¸ÉñÍ¨   ÌÒ»¨
-tiangang-zhi.c:     Ììî¸Ö¸Ñ¨·¨ ¶ëáÒ
-wuxiang-finger.c:   ÎŞÏà½ÙÖ¸   ÄÏÉÙÁÖ
-xuantian-zhi.c:     ĞşÌìÎŞÇéÖ¸ ºÚÄ¾ÑÂ
-yizhi-chan.c:       Ò»Ö¸ìø     ÉÙÁÖ
-"force":        "ÄÚ¹¦",        family    dodge      parry      force     damage
-bahuang-gong        °Ë»ÄÁùºÏÎ¨ÎÒ¶À×ğ¹¦ åĞÒ£
-baiyun-xinfa.c      °×ÔÆĞÄ·¨   ºãÉ½
-beiming-shengong.c  ±±Ú¤Éñ¹¦   åĞÒ£
-bibo-shengong.c     ±Ì²¨Éñ¹¦   ÌÒ»¨
-binxue-xinfa.c      ±ùÑ©ĞÄ·¨   ÁèÏö
-guiyuan-tunafa.c    ¹éÔªÍÂÄÉ·¨ ÌúÕÆ
-hamagong.c          ¸òó¡¹¦     °×ÍÕ
-hanbing-zhenqi.c    º®±ùÕæÆø   áÔÉ½
-honghua-shengong.c  ºì»¨Éñ¹¦   ºì»¨»á
-huagong-dafa.c      »¯¹¦´ó·¨   ĞÇËŞ
-huashan-neigong.c   »ªÉ½ÄÚ¹¦   »ªÉ½
-huiyan-xinfa.c      »ØÑãĞÄ·¨   ºâÉ½
-huntian-qigong.c    »ìÌìÆø¹¦   Ø¤°ï
-hunyuan-yiqi.c      »ìÔªÒ»Æø¹¦ ÉÙÁÖ
-jiuyang-shengong.c  ¾ÅÑôÉñ¹¦   Ã÷½Ì
-kuihua-xinfa.c      ¿û»¨ĞÄ·¨   ºÚÄ¾ÑÂ
-kurong-changong.c   ¿İÈÙìø¹¦   ´óÀí
-linji-zhuang.c      ÁÙ¼ÃÊ®¶ş×¯ ¶ëáÒ
-longxiang.c         ÁúÏó°ãÈô¹¦ Ñ©É½ËÂ
-panshi-shengong.c   ÅÍÊ¯Éñ¹¦   Ì©É½
-qingming-xuangong.c ÇàÚ¤Ğş¹¦   Çà³Ç
-shenlong-xinfa.c    ÉñÁúĞÄ·¨   ÉñÁú
-shenyuan-gong.c     ÉñÔª¹¦     Ä½Èİ
-shenzhao-jing.c     ÉñÕÕ¾­     ¹«¹²
-taiji-shengong.c    Ì«¼«Éñ¹¦   Îäµ±
-taixuan-gong.c      Ì«Ğş¹¦     ¹«¹²
-wudu-shengong.c     Îå¶¾Éñ¹¦   Îå¶¾
-xiantian-qigong.c   ÏÈÌìÆø¹¦   È«Õæ
-xiaowuxiang.c       Ğ¡ÎŞÏà¹¦   Ñ©É½ËÂ
-xixing-dafa.c       ÎüĞÇ´ó·¨   ºÚÄ¾ÑÂ
-xuantian-wuji.c     ĞşÌìÎŞ¼«¹¦ À¥ÂØ
-yijinjing.c         Ò×½î¾­     ÄÏ±±ÉÙÁÖ
-yunlong-shengong.c  ÔÆÁúÉñ¹¦   ÔÆÁú
-yunv-xinfa.c        ÓñÅ®ĞÄ·¨   ¹ÅÄ¹
-zhanzhuang-gong.c   Õ¾×®¹¦     ÄÏÉÙÁÖ
-zixia-shengong.c    ×ÏÏ¼Éñ¹¦   »ªÉ½
-"hammer":       "´¸·¨",        family    dodge      parry      force     damage
-riyue-lun.c:        ÈÕÔÂÂÖ·¨   Ñ©É½ËÂ
-"hand":         "ÊÖ·¨",        family    dodge      parry      force     damage
-benlei-shou.c:      ±¼À×ÊÖ     ºì»¨»á
-boluomi-hand.c:     ²¨ÂŞÃÛÊÖ   ÄÏÉÙÁÖ
-chuanyun-shou.c:    ´©ÔÆÊÖ     ºãÉ½
-dashou-yin.c:       ´óÊÖÓ¡     Ñ©É½ËÂ
-fengyun-hand.c:     ·çÔÆÊÖ     ÄÏÉÙÁÖ
-fengyun-shou.c:     ·çÔÆÊÖ     ÉÙÁÖ
-lanhua-shou.c:      À¼»¨·÷Ñ¨ÊÖ ÌÒ»¨
-luoyan-hand.c:      ´óÂäÑãÊÖ   ºâÉ½
-poyun-hand.c:       ÆÆÔÆÊÖ     áÔÉ½
-qianye-hand.c:      ÈçÀ´Ç§Ò¶ÊÖ ÄÏÉÙÁÖ
-qianye-shou.c:      ÈçÀ´Ç§Ò¶ÊÖ ÉÙÁÖ
-qianzhu-wandushou.c:Ç§ÖëÍò¶¾ÊÖ Îå¶¾
-sanshou.c:          ÔÀ¼ÒÉ¢ÊÖ   ¹«¹²
-shenlong-bashi.c:   ÉñÁú°ËÊ½   ÉñÁú
-shexing-diaoshou.c: ÉßĞĞµóÊÖ   °×ÍÕ
-songyang-strike.c:  ´óáÔÑôÕÆ·¨ áÔÉ½
-suohou-hand.c:      ËøºíÇÜÄÃÊÖ Ø¤°ï
-yunlong-shou.c:     ÔÆÁúÊÖ     ÔÆÁú
-zhemei-shou.c:      ÌìÉ½ÕÛÃ·ÊÖ åĞÒ£
-"hook":         "¹³·¨",        family    dodge      parry      force     damage
-wudu-goufa.c:       Îå¶¾¹³·¨   Îå¶¾
-"leg":          "ÍÈ·¨",        family    dodge      parry      force     damage
-chuanyun-leg.c:     ´©ÔÆÍÈ·¨   À¥ÂØ
-ruying-leg.c:       ÈçÓ°ËæĞÎÍÈ ÄÏÉÙÁÖ
-shaolin-leg.c:      ÉÙÁÖµ¯ÍÈ   ÄÏÉÙÁÖ
-"spear":        "Ç¹·¨",        family    dodge      parry      force     damage
-tiexue-qiang.c:     ÌúÑªÇ¹·¨   ÌúÕÆ
-zhongping-qiang.c:  ÖĞÆ½Ç¹·¨   ¹«¹²
-"staff":        "ÕÈ·¨",        family    dodge      parry      force     damage
-duanjia-sword.c:(½£ÕÈ)¶Î¼Ò½£·¨ ´óÀí
-fengmo-staff.c:     ·èÄ§ÕÈ·¨   Ø¤°ï
-lingshe-zhangfa.c:  ÁéÉßÕÈ·¨   °×ÍÕ
-pudu-staff.c:       ÆÕ¶ÉÕÈ·¨   ÄÏÉÙÁÖ
-pudu-zhang.c:       ÆÕ¶ÉÕÈ·¨   ÉÙÁÖ
-shedao-qigong.c:(½£ÕÈ)ÉßµºÆæ¹¦ ÉñÁú
-tianshan-zhang.c:   ÌìÉ½ÕÈ·¨   ĞÇËŞ
-wuchang-staff.c:    ÎŞ³£ÕÈ·¨   ÄÏÉÙÁÖ
-wuchang-zhang.c:    ÎŞ³£ÕÈ·¨   ÉÙÁÖ
-xiangmo-chu.c:      ½ğ¸Õ½µÄ§èÆ Ñ©É½ËÂ
-"stick":        "°ô·¨",        family    dodge      parry      force     damage
-dagou-bang.c:       ´ò¹·°ô·¨   Ø¤°ï
-"strike":       "ÕÆ·¨",        family    dodge      parry      force     damage
-banruo-zhang.c:     °ãÈôÕÆ     ÉÙÁÖ
-boruo-strike.c:     °ãÈôÕÆ     ÄÏÉÙÁÖ
-chousui-zhang.c:    ³éËèÕÆ     ĞÇËŞ
-cuixin-strike.c:    ´İĞÄÕÆ     Çà³Ç
-hamagong.c:(ÄÚ¹¦&ÕÆ)¸òó¡¹¦     °×ÍÕ
-hanbing-mianzhang.c:º®±ùÃàÕÆ   Ã÷½Ì
-haotian-zhang.c:    ê»ÌìÕÆ     È«Õæ
-heisha-zhang.c:            ºÚÉ°ÕÆ     ºì»¨
-huagu-mianzhang.c:  »¯¹ÇÃàÕÆ   ÉñÁú
-huashan-zhangfa.c:  »ªÉ½ÕÆ·¨   »ªÉ½(Î´ÓÃ)
-hunyuan-zhang.c:    »ìÔªÕÆ     »ªÉ½
-huoyan-dao.c:       »ğÑæµ¶     Ñ©É½
-jinding-zhang.c:    ½ğ¶¥ÃàÕÆ   ¶ëáÒ
-jingang-strike.c:   ´ó½ğ¸ÕÉñÕÆ ÄÏÉÙÁÖ
-jinshe-zhang.c:     ½ğÉßÓÎÉíÕÆ ¹«¹²
-kuaihuo-strike.c:   ¿ì»îÊ®ÈıÕÆ Ì©É½
-kunlun-strike.c:    À¥ÂØÕÆ     À¥ÂØ
-liuyang-zhang.c:    ÌìÉ½ÁùÑôÕÆ åĞÒ£
-sanhua-strike.c:    É¢»¨ÕÆ     ÄÏÉÙÁÖ
-sanhua-zhang.c:     É¢»¨ÕÆ     ÉÙÁÖ
-snow-strike.c:      ·ÉÑ©Ó³Ã·ÕÆ ÁèÏö
-songyang-strike.c:  ´óáÔÑôÕÆ   áÔÉ½
-tianchang-zhang.c:  Ìì³¤ÕÆ·¨   ºãÉ½
-weituo-strike.c:    Î¤ÍÓÕÆ     ÄÏÉÙÁÖ
-wudu-zhang.c:       Îå¶¾ÕÆ     Îå¶¾
-wuluo-zhang.c:      ÎåÂŞÇáÑÌÕÆ ´óÀí
-xianglong-zhang.c:  ½µÁúÊ®°ËÕÆ Ø¤°ï
-xingyi-strike.c:    ĞÇÒÆÕÆ     Ä½Èİ
-zhusha-zhang.c:            ÖìÉ°ÕÆ     ÌúÕÆ
-"sword":        "½£·¨",        family    dodge      parry      force     damage
-bixie-jian.c:       ±ÙĞ°½£·¨   ¹«¹²
-bixie-sword.c:      ¼Ù±ÙĞ°½£·¨ ¹«¹²
-changge-jian.c:     ³¤¸è½£·¨   ¹«¹²
-chongling-sword.c:  ³åÁé½£·¨   »ªÉ½
-damo-jian.c:        ´ïÄ¦½£     ÉÙÁÖ
-damo-sword.c:       ´ïÄ¦½£     ÄÏÉÙÁÖ
-duanjia-sword.c:(½£ÕÈ)¶Î¼Ò½£   ´óÀí
-fumo-jian.c:        ·üÄ§½£     ÉÙÁÖ
-fumo-sword.c:       ·üÄ§½£     ÄÏÉÙÁÖ
-hengshan-jian.c:    ºãÉ½½£·¨   ºãÉ½
-hengshan-sword.c:   ºâÉ½½£·¨   ºâÉ½
-huashan-jian.c:     »ªÉ½½£·¨   »ªÉ½(Î´ÓÃ)
-huashan-jianfa.c:   »ªÉ½½£·¨   »ªÉ½(Î´ÓÃ)
-huashan-sword.c:    »ªÉ½½£·¨   »ªÉ½
-huifeng-jian.c:     »Ø·ç·÷Áø½£ ¶ëáÒ
-iron-sword.c:       ĞşÌú½£·¨   ¹ÅÄ¹
-jinshe-jian.c:      ½ğÉß½£·¨   ¹«¹²
-kuangfeng-jian.c:   ¿ñ·ç½£·¨   »ªÉ½
-liangyi-jian.c:     Á½ÒÇ½£·¨   Îäµ±
-liangyi-sword.c:    ÕıÁ½ÒÇ½£·¨ À¥ÂØ
-lonely-sword.c:     ¶À¹Â¾Å½£   »ªÉ½
-luohua-jian.c:      Âä»¨Ê®Èı½£ ºì»¨
-luoying-shenjian.c: ÂäÓ¢Éñ½£   ÌÒ»¨
-mingwang-jian.c:    ²»¶¯Ã÷Íõ½£ Ñ©É½
-murong-sword.c:     Ä½Èİ½£·¨   Ä½Èİ
-qingmang-sword.c:   Çàòş½£·¨   Îå¶¾
-quanzhen-jian.c:    È«Õæ½£·¨   È«Õæ
-shedao-qigong.c:(½£ÕÈ)ÉßµºÆæ¹¦ ÉñÁú
-shenghuo-ling.c:    Ê¥»ğÁî·¨   Ã÷½Ì
-songfeng-jian.c:    ËÉ·ç½£·¨   Çà³Ç
-songshan-sword.c:   áÔÉ½½£·¨   áÔÉ½
-taiji-jian.c:       Ì«¼«½£·¨   Îäµ±
-taishan-sword.c:    Ì©É½½£·¨   Ì©É½
-tangshi-jian.c:     ÌÆÊ«½£·¨   ¹«¹²
-tianyu-qijian.c:    ÌìÓğÆæ½£   åĞÒ£
-wudang-jian.c:      Îäµ±½£·¨   Îäµ±
-wuyun-jian.c:       ÎåÔÏÆßÏÒ½£ ºÚÄ¾ÑÂ
-xueshan-sword.c:    Ñ©É½½£·¨   ÁèÏö
-xunlei-sword.c:     Ñ¸À×Ê®Áù½£ À¥ÂØ
-yunlong-jian.c:     ÔÆÁú½£·¨   ÔÆÁú
-yunu-sword.c:       ÓñÅ®½ğÕëÊ®Èı½£ »ªÉ½
-yunv-jian.c:        ÓñÅ®ËØĞÄ½£ ¹ÅÄ¹
-yuxiao-jian.c:      Óñóï½£·¨   ÌÒ»¨
-zhuihun-jian.c:     ×·»ê¶áÃü½£ ºì»¨
-"throwing":     "°µÆ÷",        family    dodge      parry      force     damage
-duoming-jinhua.c:   ¶áÃù½ğ»¨   Ã÷½Ì
-feixing-shu.c:      ·ÉĞÇÊõ     ĞÇËŞ
-hanxing-bada.c:     º®ĞÇ°Ë´ò   ¹«¹²(Ó¦¸ÄÎªºì»¨»á)
-jinshe-zhui.c:      ½ğÉß×¶·¨   ¹«¹²
-mantian-huayu.c:    ÂúÌì»¨Óê   À¥ÂØ
-wuying-feidao.c:    ÎŞÓ°·Éµ¶   ºì»¨
-xuanyuan-arrow.c:   ĞùÔ¯¼ı     Éñ¼ı°ËÆï
-"unarmed":      "È­½Å",        family    dodge      parry      force     damage
-anran-zhang.c:      ÷öÈ»Ïú»êÕÆ ¹ÅÄ¹
-huashan-ken.c:      »ªÉ½È­·¨   »ªÉ½
-kongming-quan.c:    ¿ÕÃ÷È­     ¹«¹²
-meinv-quan.c:       ÃÀÅ®È­     ¹ÅÄ¹
-shenzhao-jing.c:    ÉñÕÕ¾­     ¹«¹²
-taiji-quan.c:       Ì«¼«È­     Îäµ±
-taixuan-gong.c:            Ì«Ğş¹¦     ¹«¹²
-wudang-quan.c:      Îäµ±È­     Îäµ±
-wuying-leg.c:       ÎŞÓ°ÍÈ     Çà³Ç
-xuanfeng-leg.c:     Ğı·çÉ¨Ò¶ÍÈ ÌÒ»¨
-"whip":         "±Ş·¨",        family    dodge      parry      force     damage
-duanyun-bian.c:     ¶ÏÔÆ±Ş·¨   È«Õæ
-feifeng-whip.c:     ·É·ï±Ş·¨   ´óÀí
-jiujie-whip.c:      ¾Å½Ú±Ş·¨   ÄÏÉÙÁÖ
-qiufeng-chenfa.c:   Çï·ç³¾·¨   ¹ÅÄ¹
-riyue-bian.c:       ÈÕÔÂ±Ş·¨   ÉÙÁÖ
-riyue-whip.c:       ÈÕÔÂ±Ş·¨   ÄÏÉÙÁÖ
-wudu-whip.c:        Îå¶¾±Ş·¨   Îå¶¾
-xiangmo-whip.c:     ½µÄ§±Ş     ÄÏÉÙÁÖ
-yunlong-bian.c:     ÔÆÁú±Ş     ÔÆÁú
-
-
-
-
-²Î¿¼×ÊÁÏ£º
-                      ÄÚ  ¹¦  ÅÅ  Ãû
-
-taixuan-force   Ì«ĞşÉñ¹¦,
-
-ninesun-force   ¾ÅÑôÉñ¹¦,       ninemoon-force  ¾ÅÒõÉñ¹¦,
-wuxiang-force   Ğ¡ÎŞÏà¹¦,       yijing-force    Ò×½îÉñ¹¦,
-bahuang-force   °Ë»ÄÁùºÏÎ¨ÎÒ¶À×ğ,
-
-taiji-force     Ì«¼«Éñ¹¦,       yunu-force      ÓñÅ®ĞÄ¾­,
-
-dazhoutian-force´óÖÜÌì¹¦,       luoying-force   ÂäÓ¢ĞÄ·¨,
-gumu-force      ¿İÄ¾Éñ¹¦,       hama-force      ¸òó¡¹¦,
-lotus-force     Á«»¨ĞÄ·¨,       emei-force      ¶ëÃ¼ĞÄ·¨,
-tianmo-force    ÌìÄ§´ó·¨,       hunyuan-force   »ìÔªÉñ¹¦,
-beiming-force   ±±Ú¤Éñ¹¦,       huagong-force   »¯¹¦´ó·¨,
-xixing-force    ÎüĞÇ´ó·¨,       mizong-force    ÃÜ×ÚĞÄ·¨,
-huangting-force »ÆÍ¥ĞÄ·¨,       douzhuan-force  ¶·×ªĞÇÒÆ,
-wuxiang-force   Ğ¡ÎŞÏà¹¦,       yijing-force    Ò×½îÉñ¹¦,
-bahuang-force   °Ë»ÄÁùºÏÎ¨ÎÒ¶À×ğ,
-
-taiji-force     Ì«¼«Éñ¹¦,       yunu-force      ÓñÅ®ĞÄ¾­,
-
-dazhoutian-force´óÖÜÌì¹¦,       luoying-force   ÂäÓ¢ĞÄ·¨,
-gumu-force      ¿İÄ¾Éñ¹¦,       hama-force      ¸òó¡¹¦,
-lotus-force     Á«»¨ĞÄ·¨,       emei-force      ¶ëÃ¼ĞÄ·¨,
-tianmo-force    ÌìÄ§´ó·¨,       hunyuan-force   »ìÔªÉñ¹¦,
-beiming-force   ±±Ú¤Éñ¹¦,       huagong-force   »¯¹¦´ó·¨,
-xixing-force    ÎüĞÇ´ó·¨,       mizong-force    ÃÜ×ÚĞÄ·¨,
-huangting-force »ÆÍ¥ĞÄ·¨,       douzhuan-force  ¶·×ªĞÇÒÆ,
-shenlong-force  ÉñÁúĞÄ·¨,       guangming-force ´ó¹âÃ÷ĞÄ·¨,
-kunlun-force    À¥ÂØĞÄ·¨,       zixia-force     ×ÏÏ¼Éñ¹¦,
-songshan-force  áÔÉ½ĞÄ·¨,       taishan-force   Ì©É½ĞÄ·¨,
-hengshan-force  ºâÉ½ĞÄ·¨,       heng-shan-force ºãÉ½ĞÄ·¨,
-
-By Micro Liang (97-07-01)
+"axe":          "æ–§æ³•",        family    dodge      parry      force     damage
+duanyun-fu.c        æ–·é›²æ–§     å¤§ç†
+"blade":        "åˆ€æ³•",        family    dodge      parry      force     damage
+cibei-blade.c:      æ…ˆæ‚²åˆ€     å°‘æ—
+fanliangyi-dao.c:   åå…©å„€åˆ€æ³• è¯å±±
+hujia-daofa.c:      èƒ¡å®¶åˆ€æ³•   å…¬å…±
+jinwu-blade.c:      é‡‘çƒåˆ€æ³•   å‡Œéœ„
+kuangfeng-blade.c:  ç‹‚é¢¨åˆ€æ³•   å…¬å…±
+liuhe-blade.c:      å››è±¡å…­åˆåˆ€ ä¸å¹«
+murong-blade.c:     æ…•å®¹åˆ€æ³•   æ…•å®¹
+qiuge-dao.c:        ç§‹æ­Œä¸ƒåˆ€   ç´…èŠ±
+ranmu-blade.c:      ç‡ƒæœ¨åˆ€æ³•   å—å°‘æ—
+ruyi-dao.c:         å¦‚æ„åˆ€æ³•   é€é™
+taiji-dao.c:        å¤ªæ¥µåˆ€æ³•   æ­¦ç•¶
+wuhu-duanmendao.c:  äº”è™æ–·é–€åˆ€ é›²é¾
+xiuluo-blade.c:     ä¿®ç¾…åˆ€     å—å°‘æ—
+xiuluo-dao.c:       ä¿®ç¾…åˆ€     å°‘æ—
+xue-dao.c:          è¡€åˆ€       é›ªå±±å¯º
+yanxing-dao.c:      é›è¡Œåˆ€     å³¨åµ‹
+"claw":         "çˆªæ³•",        family    dodge      parry      force     damage
+dragon-claw.c:      é¾çˆªåŠŸ     å—å°‘æ—
+eagleg-claw.c:      é·¹çˆªåŠŸ     å—å°‘æ—
+jimie-claw.c:       å¯‚æ»…çˆª     å—å°‘æ—
+jiuyin-baiguzhao.c: ä¹é™°ç™½éª¨çˆª å…¬å…±
+longzhua-gong.c:    é¾çˆªåŠŸ     å°‘æ—
+sanyin-wugongzhao.c:ä¸‰é™°èœˆèš£çˆª æ˜Ÿå®¿
+sougu.c:            æœéª¨é·¹çˆªåŠŸ æ˜æ•™
+yingzhua-gong.c:    é·¹çˆªåŠŸ     å°‘æ—
+yunlong-zhua.c:     é›²é¾çˆª     é›²é¾
+"club" :        "æ£æ³•",        family    dodge      parry      force     damage
+juemen-gun.c:       çµ•é–€æ£     å°‘æ—(æœªç”¨)
+weituo-chu.c:       éŸ‹é¦±æµ     å—å°‘æ—
+weituo-club.c:      éŸ‹é™€æ£     å—å°‘æ—
+weituo-gun.c:       éŸ‹é™€æ£     å°‘æ—
+zui-club.c:         å°‘æ—é†‰æ£   å—å°‘æ—
+zui-gun.c:          å°‘æ—é†‰æ£   å°‘æ—
+"cuff":         "æ‹³æ³•",        family    dodge      parry      force     damage
+baihua-cuoquan.c:   ç™¾èŠ±éŒ¯æ‹³   ç´…èŠ±
+changquan.c:        å¤ªç¥–é•·æ‹³   å…¬å…±
+chunyang-quan.c:    ç´”é™½æ‹³     å…¨çœŸ
+hamaquan.c:         è›¤èŸ†æ‹³     ç™½é§
+houquan.c:          çŒ´æ‹³       é›²é¾
+huhe-quan.c:        è™é¶´é›™å½¢æ‹³ å…¬å…±
+jingang-cuff.c:     å¤§é‡‘å‰›æ‹³   å—å°‘æ—
+jingang-quan.c:     å¤§é‡‘å‰›æ‹³   å°‘æ—
+jinyu-quan.c:       é‡‘ç‰æ‹³     å¤§ç†
+luohan-cuff.c:      å°‘æ—ç¾…æ¼¢æ‹³ å—å°‘æ—
+luohan-quan.c:      å°‘æ—ç¾…æ¼¢æ‹³ å°‘æ—
+poyu-quan.c:        ç ´ç‰æ‹³     è¯å±±
+qishang-quan.c:     ä¸ƒå‚·æ‹³     æ˜æ•™
+shaolin-cuff.c:     å°‘æ—å—æ‹³   å—å°‘æ—
+yujiamu-quan.c:     é‡‘å‰›ç‘œè¿¦æ¯æ‹³ é›ªå±±å¯º
+zhentian-cuff.c:    éœ‡å¤©æ‹³æ³•   æ˜†ä¾–
+"dagger":       "çŸ­å…µ",        family    dodge      parry      force     damage
+shigu-bifa.c:       çŸ³é¼“æ‰“ç©´ç­†æ³• é»‘æœ¨å´–
+"dodge":        "è¼•åŠŸ",        family    dodge      parry      force     damage
+anying-fuxiang.c    æš—å½±æµ®é¦™   æ¡ƒèŠ±
+bixie-jian.c        è¾Ÿé‚ªåŠæ³•   å…¬å…±
+chanchu-bufa.c      èŸ¾èœæ­¥æ³•   ç™½é§
+chuanhua.c          ç©¿èŠ±ç¹æ¨¹   é’åŸ
+feixing-shu.c       é£›æ˜Ÿè¡“     æ˜Ÿå®¿
+feiyan-huixiang.c   é£›ç‡•å›ç¿”   è¯å±±
+fengshenjue.c       é¢¨ç¥è¨£     æ³°å±±
+fuguanglueying.c    æµ®å…‰æ å½±   åµ©å±±
+huashan-shenfa.c    è¯å±±èº«æ³•   è¯å±±  
+jinyan-gong.c       é‡‘é›åŠŸ     å…¨çœŸ
+kunlun-shenfa.c     æ˜†ä¾–èº«æ³•   æ˜†ä¾–
+lingboweibu.c       å‡Œæ³¢å¾®æ­¥   é€é™
+lingxu-bu.c         å‡Œè™›æ­¥     å…¬å…±
+piaoyibu.c          é£„é€¸æ­¥æ³•   é»‘æœ¨å´–
+qiankun-danuoyi.c   ä¹¾å¤å¤§æŒªç§» æ˜æ•™
+qingfu-shenfa.c     é’è èº«æ³•   æ˜æ•™
+qiuyan-nanhui.c     ç§‹é›å—å›   è¡¡å±±
+shaolin-shenfa.c    å°‘æ—èº«æ³•   å°‘æ—
+shenkong-xing.c     èº«ç©ºè¡Œ     é›ªå±±å¯º
+shenxing-baibian.c  ç¥è¡Œç™¾è®Š   å…¬å…±
+shuishangpiao.c     éµæŒæ°´ä¸Šé£„ éµæŒ
+snowstep.c          æ¢…é›ªé£„é¦™æ­¥ å‡Œéœ„
+taixuan-gong.c      å¤ªç„åŠŸ     å…¬å…±
+taxue-wuhen.c       è¸é›ªç„¡ç—•   æ˜†ä¾–
+tiannan-step.c      å¤©å—æ­¥æ³•   å¤§ç†
+tiyunzong.c         æ¢¯é›²ç¸±     æ­¦ç•¶
+wudu-yanluobu.c     äº”æ¯’ç…™è˜¿æ­¥ äº”æ¯’
+xiaoyaoyou.c        é€é™éŠ     ä¸å¹«
+yanfly.c            ç‡•é›™é£›     å…¬å…±
+yanling-shenfa.c    ç‡•éˆèº«æ³•   æ…•å®¹
+yiwei-dujiang.c     ä¸€è‘¦æ¸¡æ±Ÿ   å—å°‘æ—
+yixingbu.c          æ„å½¢æ­¥æ³•   ç¥é¾
+youlong-shenfa.c    éŠé¾èº«æ³•   ç´…èŠ±
+yueying-wubu.c      æœˆå½±èˆæ­¥   é€é™
+yunlong-shenfa.c    é›²é¾èº«æ³•   é›²é¾
+yunv-shenfa.c       ç‰å¥³èº«æ³•   å¤å¢“
+zhaixinggong.c      æ‘˜æ˜ŸåŠŸ     æ˜Ÿå®¿
+zhutian-bu.c        è«¸å¤©åŒ–èº«æ­¥ å³¨åµ‹
+"finger":       "æŒ‡æ³•",        family    dodge      parry      force     damage
+canhe-finger.c:     åƒåˆæŒ‡     æ…•å®¹
+duoluoye-finger.c:  å¤šç¾…è‘‰æŒ‡   å—å°‘æ—
+mohe-finger.c:      æ‘©è¨¶æŒ‡     å—å°‘æ—
+nianhua-finger.c:   æ‹ˆèŠ±æŒ‡     å—å°‘æ—
+nianhua-zhi.c:      æ‹ˆèŠ±æŒ‡     å°‘æ—
+one-finger.c:       ä¸€æŒ‡ç¦ª     å—å°‘æ—
+six-finger.c:       å…­è„ˆç¥åŠ   å¤§ç†
+sun-finger.c:       ä¸€é™½æŒ‡     å¤§ç†
+tanzhi-shentong.c   å½ˆæŒ‡ç¥é€š   æ¡ƒèŠ±
+tiangang-zhi.c:     å¤©ç½¡æŒ‡ç©´æ³• å³¨åµ‹
+wuxiang-finger.c:   ç„¡ç›¸åŠ«æŒ‡   å—å°‘æ—
+xuantian-zhi.c:     ç„å¤©ç„¡æƒ…æŒ‡ é»‘æœ¨å´–
+yizhi-chan.c:       ä¸€æŒ‡ç¦ª     å°‘æ—
+"force":        "å…§åŠŸ",        family    dodge      parry      force     damage
+bahuang-gong        å…«è’å…­åˆå”¯æˆ‘ç¨å°ŠåŠŸ é€é™
+baiyun-xinfa.c      ç™½é›²å¿ƒæ³•   æ†å±±
+beiming-shengong.c  åŒ—å†¥ç¥åŠŸ   é€é™
+bibo-shengong.c     ç¢§æ³¢ç¥åŠŸ   æ¡ƒèŠ±
+binxue-xinfa.c      å†°é›ªå¿ƒæ³•   å‡Œéœ„
+guiyuan-tunafa.c    æ­¸å…ƒåç´æ³• éµæŒ
+hamagong.c          è›¤èŸ†åŠŸ     ç™½é§
+hanbing-zhenqi.c    å¯’å†°çœŸæ°£   åµ©å±±
+honghua-shengong.c  ç´…èŠ±ç¥åŠŸ   ç´…èŠ±æœƒ
+huagong-dafa.c      åŒ–åŠŸå¤§æ³•   æ˜Ÿå®¿
+huashan-neigong.c   è¯å±±å…§åŠŸ   è¯å±±
+huiyan-xinfa.c      å›é›å¿ƒæ³•   è¡¡å±±
+huntian-qigong.c    æ··å¤©æ°£åŠŸ   ä¸å¹«
+hunyuan-yiqi.c      æ··å…ƒä¸€æ°£åŠŸ å°‘æ—
+jiuyang-shengong.c  ä¹é™½ç¥åŠŸ   æ˜æ•™
+kuihua-xinfa.c      è‘µèŠ±å¿ƒæ³•   é»‘æœ¨å´–
+kurong-changong.c   æ¯æ¦®ç¦ªåŠŸ   å¤§ç†
+linji-zhuang.c      è‡¨æ¿ŸåäºŒèŠ å³¨åµ‹
+longxiang.c         é¾è±¡èˆ¬è‹¥åŠŸ é›ªå±±å¯º
+panshi-shengong.c   ç£çŸ³ç¥åŠŸ   æ³°å±±
+qingming-xuangong.c é’å†¥ç„åŠŸ   é’åŸ
+shenlong-xinfa.c    ç¥é¾å¿ƒæ³•   ç¥é¾
+shenyuan-gong.c     ç¥å…ƒåŠŸ     æ…•å®¹
+shenzhao-jing.c     ç¥ç…§ç¶“     å…¬å…±
+taiji-shengong.c    å¤ªæ¥µç¥åŠŸ   æ­¦ç•¶
+taixuan-gong.c      å¤ªç„åŠŸ     å…¬å…±
+wudu-shengong.c     äº”æ¯’ç¥åŠŸ   äº”æ¯’
+xiantian-qigong.c   å…ˆå¤©æ°£åŠŸ   å…¨çœŸ
+xiaowuxiang.c       å°ç„¡ç›¸åŠŸ   é›ªå±±å¯º
+xixing-dafa.c       å¸æ˜Ÿå¤§æ³•   é»‘æœ¨å´–
+xuantian-wuji.c     ç„å¤©ç„¡æ¥µåŠŸ æ˜†ä¾–
+yijinjing.c         æ˜“ç­‹ç¶“     å—åŒ—å°‘æ—
+yunlong-shengong.c  é›²é¾ç¥åŠŸ   é›²é¾
+yunv-xinfa.c        ç‰å¥³å¿ƒæ³•   å¤å¢“
+zhanzhuang-gong.c   ç«™æ¨åŠŸ     å—å°‘æ—
+zixia-shengong.c    ç´«éœç¥åŠŸ   è¯å±±
+"hammer":       "éŒ˜æ³•",        family    dodge      parry      force     damage
+riyue-lun.c:        æ—¥æœˆè¼ªæ³•   é›ªå±±å¯º
+"hand":         "æ‰‹æ³•",        family    dodge      parry      force     damage
+benlei-shou.c:      å¥”é›·æ‰‹     ç´…èŠ±æœƒ
+boluomi-hand.c:     æ³¢ç¾…èœœæ‰‹   å—å°‘æ—
+chuanyun-shou.c:    ç©¿é›²æ‰‹     æ†å±±
+dashou-yin.c:       å¤§æ‰‹å°     é›ªå±±å¯º
+fengyun-hand.c:     é¢¨é›²æ‰‹     å—å°‘æ—
+fengyun-shou.c:     é¢¨é›²æ‰‹     å°‘æ—
+lanhua-shou.c:      è˜­èŠ±æ‹‚ç©´æ‰‹ æ¡ƒèŠ±
+luoyan-hand.c:      å¤§è½é›æ‰‹   è¡¡å±±
+poyun-hand.c:       ç ´é›²æ‰‹     åµ©å±±
+qianye-hand.c:      å¦‚ä¾†åƒè‘‰æ‰‹ å—å°‘æ—
+qianye-shou.c:      å¦‚ä¾†åƒè‘‰æ‰‹ å°‘æ—
+qianzhu-wandushou.c:åƒè››è¬æ¯’æ‰‹ äº”æ¯’
+sanshou.c:          å²³å®¶æ•£æ‰‹   å…¬å…±
+shenlong-bashi.c:   ç¥é¾å…«å¼   ç¥é¾
+shexing-diaoshou.c: è›‡è¡Œåˆæ‰‹   ç™½é§
+songyang-strike.c:  å¤§åµ©é™½æŒæ³• åµ©å±±
+suohou-hand.c:      é–å–‰æ“’æ‹¿æ‰‹ ä¸å¹«
+yunlong-shou.c:     é›²é¾æ‰‹     é›²é¾
+zhemei-shou.c:      å¤©å±±æŠ˜æ¢…æ‰‹ é€é™
+"hook":         "é‰¤æ³•",        family    dodge      parry      force     damage
+wudu-goufa.c:       äº”æ¯’é‰¤æ³•   äº”æ¯’
+"leg":          "è…¿æ³•",        family    dodge      parry      force     damage
+chuanyun-leg.c:     ç©¿é›²è…¿æ³•   æ˜†ä¾–
+ruying-leg.c:       å¦‚å½±éš¨å½¢è…¿ å—å°‘æ—
+shaolin-leg.c:      å°‘æ—å½ˆè…¿   å—å°‘æ—
+"spear":        "æ§æ³•",        family    dodge      parry      force     damage
+tiexue-qiang.c:     éµè¡€æ§æ³•   éµæŒ
+zhongping-qiang.c:  ä¸­å¹³æ§æ³•   å…¬å…±
+"staff":        "æ–æ³•",        family    dodge      parry      force     damage
+duanjia-sword.c:(åŠæ–)æ®µå®¶åŠæ³• å¤§ç†
+fengmo-staff.c:     ç˜‹é­”æ–æ³•   ä¸å¹«
+lingshe-zhangfa.c:  éˆè›‡æ–æ³•   ç™½é§
+pudu-staff.c:       æ™®æ¸¡æ–æ³•   å—å°‘æ—
+pudu-zhang.c:       æ™®æ¸¡æ–æ³•   å°‘æ—
+shedao-qigong.c:(åŠæ–)è›‡å³¶å¥‡åŠŸ ç¥é¾
+tianshan-zhang.c:   å¤©å±±æ–æ³•   æ˜Ÿå®¿
+wuchang-staff.c:    ç„¡å¸¸æ–æ³•   å—å°‘æ—
+wuchang-zhang.c:    ç„¡å¸¸æ–æ³•   å°‘æ—
+xiangmo-chu.c:      é‡‘å‰›é™é­”æµ é›ªå±±å¯º
+"stick":        "æ£’æ³•",        family    dodge      parry      force     damage
+dagou-bang.c:       æ‰“ç‹—æ£’æ³•   ä¸å¹«
+"strike":       "æŒæ³•",        family    dodge      parry      force     damage
+banruo-zhang.c:     èˆ¬è‹¥æŒ     å°‘æ—
+boruo-strike.c:     èˆ¬è‹¥æŒ     å—å°‘æ—
+chousui-zhang.c:    æŠ½é«“æŒ     æ˜Ÿå®¿
+cuixin-strike.c:    æ‘§å¿ƒæŒ     é’åŸ
+hamagong.c:(å…§åŠŸ&æŒ)è›¤èŸ†åŠŸ     ç™½é§
+hanbing-mianzhang.c:å¯’å†°ç¶¿æŒ   æ˜æ•™
+haotian-zhang.c:    æ˜Šå¤©æŒ     å…¨çœŸ
+heisha-zhang.c:            é»‘ç ‚æŒ     ç´…èŠ±
+huagu-mianzhang.c:  åŒ–éª¨ç¶¿æŒ   ç¥é¾
+huashan-zhangfa.c:  è¯å±±æŒæ³•   è¯å±±(æœªç”¨)
+hunyuan-zhang.c:    æ··å…ƒæŒ     è¯å±±
+huoyan-dao.c:       ç«ç‡„åˆ€     é›ªå±±
+jinding-zhang.c:    é‡‘é ‚ç¶¿æŒ   å³¨åµ‹
+jingang-strike.c:   å¤§é‡‘å‰›ç¥æŒ å—å°‘æ—
+jinshe-zhang.c:     é‡‘è›‡éŠèº«æŒ å…¬å…±
+kuaihuo-strike.c:   å¿«æ´»åä¸‰æŒ æ³°å±±
+kunlun-strike.c:    æ˜†ä¾–æŒ     æ˜†ä¾–
+liuyang-zhang.c:    å¤©å±±å…­é™½æŒ é€é™
+sanhua-strike.c:    æ•£èŠ±æŒ     å—å°‘æ—
+sanhua-zhang.c:     æ•£èŠ±æŒ     å°‘æ—
+snow-strike.c:      é£›é›ªæ˜ æ¢…æŒ å‡Œéœ„
+songyang-strike.c:  å¤§åµ©é™½æŒ   åµ©å±±
+tianchang-zhang.c:  å¤©é•·æŒæ³•   æ†å±±
+weituo-strike.c:    éŸ‹é™€æŒ     å—å°‘æ—
+wudu-zhang.c:       äº”æ¯’æŒ     äº”æ¯’
+wuluo-zhang.c:      äº”ç¾…è¼•ç…™æŒ å¤§ç†
+xianglong-zhang.c:  é™é¾åå…«æŒ ä¸å¹«
+xingyi-strike.c:    æ˜Ÿç§»æŒ     æ…•å®¹
+zhusha-zhang.c:            æœ±ç ‚æŒ     éµæŒ
+"sword":        "åŠæ³•",        family    dodge      parry      force     damage
+bixie-jian.c:       è¾Ÿé‚ªåŠæ³•   å…¬å…±
+bixie-sword.c:      å‡è¾Ÿé‚ªåŠæ³• å…¬å…±
+changge-jian.c:     é•·æ­ŒåŠæ³•   å…¬å…±
+chongling-sword.c:  æ²–éˆåŠæ³•   è¯å±±
+damo-jian.c:        é”æ‘©åŠ     å°‘æ—
+damo-sword.c:       é”æ‘©åŠ     å—å°‘æ—
+duanjia-sword.c:(åŠæ–)æ®µå®¶åŠ   å¤§ç†
+fumo-jian.c:        ä¼é­”åŠ     å°‘æ—
+fumo-sword.c:       ä¼é­”åŠ     å—å°‘æ—
+hengshan-jian.c:    æ†å±±åŠæ³•   æ†å±±
+hengshan-sword.c:   è¡¡å±±åŠæ³•   è¡¡å±±
+huashan-jian.c:     è¯å±±åŠæ³•   è¯å±±(æœªç”¨)
+huashan-jianfa.c:   è¯å±±åŠæ³•   è¯å±±(æœªç”¨)
+huashan-sword.c:    è¯å±±åŠæ³•   è¯å±±
+huifeng-jian.c:     å›é¢¨æ‹‚æŸ³åŠ å³¨åµ‹
+iron-sword.c:       ç„éµåŠæ³•   å¤å¢“
+jinshe-jian.c:      é‡‘è›‡åŠæ³•   å…¬å…±
+kuangfeng-jian.c:   ç‹‚é¢¨åŠæ³•   è¯å±±
+liangyi-jian.c:     å…©å„€åŠæ³•   æ­¦ç•¶
+liangyi-sword.c:    æ­£å…©å„€åŠæ³• æ˜†ä¾–
+lonely-sword.c:     ç¨å­¤ä¹åŠ   è¯å±±
+luohua-jian.c:      è½èŠ±åä¸‰åŠ ç´…èŠ±
+luoying-shenjian.c: è½è‹±ç¥åŠ   æ¡ƒèŠ±
+mingwang-jian.c:    ä¸å‹•æ˜ç‹åŠ é›ªå±±
+murong-sword.c:     æ…•å®¹åŠæ³•   æ…•å®¹
+qingmang-sword.c:   é’èŸ’åŠæ³•   äº”æ¯’
+quanzhen-jian.c:    å…¨çœŸåŠæ³•   å…¨çœŸ
+shedao-qigong.c:(åŠæ–)è›‡å³¶å¥‡åŠŸ ç¥é¾
+shenghuo-ling.c:    è–ç«ä»¤æ³•   æ˜æ•™
+songfeng-jian.c:    é¬†é¢¨åŠæ³•   é’åŸ
+songshan-sword.c:   åµ©å±±åŠæ³•   åµ©å±±
+taiji-jian.c:       å¤ªæ¥µåŠæ³•   æ­¦ç•¶
+taishan-sword.c:    æ³°å±±åŠæ³•   æ³°å±±
+tangshi-jian.c:     å”è©©åŠæ³•   å…¬å…±
+tianyu-qijian.c:    å¤©ç¾½å¥‡åŠ   é€é™
+wudang-jian.c:      æ­¦ç•¶åŠæ³•   æ­¦ç•¶
+wuyun-jian.c:       äº”éŸ»ä¸ƒå¼¦åŠ é»‘æœ¨å´–
+xueshan-sword.c:    é›ªå±±åŠæ³•   å‡Œéœ„
+xunlei-sword.c:     è¿…é›·åå…­åŠ æ˜†ä¾–
+yunlong-jian.c:     é›²é¾åŠæ³•   é›²é¾
+yunu-sword.c:       ç‰å¥³é‡‘é‡åä¸‰åŠ è¯å±±
+yunv-jian.c:        ç‰å¥³ç´ å¿ƒåŠ å¤å¢“
+yuxiao-jian.c:      ç‰ç°«åŠæ³•   æ¡ƒèŠ±
+zhuihun-jian.c:     è¿½é­‚å¥ªå‘½åŠ ç´…èŠ±
+"throwing":     "æš—å™¨",        family    dodge      parry      force     damage
+duoming-jinhua.c:   å¥ªé³´é‡‘èŠ±   æ˜æ•™
+feixing-shu.c:      é£›æ˜Ÿè¡“     æ˜Ÿå®¿
+hanxing-bada.c:     å¯’æ˜Ÿå…«æ‰“   å…¬å…±(æ‡‰æ”¹ç‚ºç´…èŠ±æœƒ)
+jinshe-zhui.c:      é‡‘è›‡éŒæ³•   å…¬å…±
+mantian-huayu.c:    æ»¿å¤©èŠ±é›¨   æ˜†ä¾–
+wuying-feidao.c:    ç„¡å½±é£›åˆ€   ç´…èŠ±
+xuanyuan-arrow.c:   è»’è½…ç®­     ç¥ç®­å…«é¨
+"unarmed":      "æ‹³è…³",        family    dodge      parry      force     damage
+anran-zhang.c:      é»¯ç„¶éŠ·é­‚æŒ å¤å¢“
+huashan-ken.c:      è¯å±±æ‹³æ³•   è¯å±±
+kongming-quan.c:    ç©ºæ˜æ‹³     å…¬å…±
+meinv-quan.c:       ç¾å¥³æ‹³     å¤å¢“
+shenzhao-jing.c:    ç¥ç…§ç¶“     å…¬å…±
+taiji-quan.c:       å¤ªæ¥µæ‹³     æ­¦ç•¶
+taixuan-gong.c:            å¤ªç„åŠŸ     å…¬å…±
+wudang-quan.c:      æ­¦ç•¶æ‹³     æ­¦ç•¶
+wuying-leg.c:       ç„¡å½±è…¿     é’åŸ
+xuanfeng-leg.c:     æ—‹é¢¨æƒè‘‰è…¿ æ¡ƒèŠ±
+"whip":         "é­æ³•",        family    dodge      parry      force     damage
+duanyun-bian.c:     æ–·é›²é­æ³•   å…¨çœŸ
+feifeng-whip.c:     é£›é³³é­æ³•   å¤§ç†
+jiujie-whip.c:      ä¹ç¯€é­æ³•   å—å°‘æ—
+qiufeng-chenfa.c:   ç§‹é¢¨å¡µæ³•   å¤å¢“
+riyue-bian.c:       æ—¥æœˆé­æ³•   å°‘æ—
+riyue-whip.c:       æ—¥æœˆé­æ³•   å—å°‘æ—
+wudu-whip.c:        äº”æ¯’é­æ³•   äº”æ¯’
+xiangmo-whip.c:     é™é­”é­     å—å°‘æ—
+yunlong-bian.c:     é›²é¾é­     é›²é¾
 
 
 
-                      Çá  ¹¦  ÅÅ  Ãû
 
-kuihua-steps    ¿û»¨Éñ¹¦,       lingbo-steps    Áè²¨Î¢²½,
+åƒè€ƒè³‡æ–™ï¼š
+                      å…§  åŠŸ  æ’  å
 
-ghostbat-steps  ¹íòğÉí·¨,
+taixuan-force   å¤ªç„ç¥åŠŸ,
 
-tiyun-steps     ÌİÔÆ×İ,         feixian-steps   ÌìÍâ·ÉÏÉ²½,
+ninesun-force   ä¹é™½ç¥åŠŸ,       ninemoon-force  ä¹é™°ç¥åŠŸ,
+wuxiang-force   å°ç„¡ç›¸åŠŸ,       yijing-force    æ˜“ç­‹ç¥åŠŸ,
+bahuang-force   å…«è’å…­åˆå”¯æˆ‘ç¨å°Š,
 
-jinyan-steps    ½ğÑãÉñ¹¦,       yingfeng-steps  Ó­·ç·÷Áø²½,
-xuanfeng-steps  Ğı·çÉ¨Ò¶²½,     qiankun-steps   Ç¬À¤²½·¨,
-zhaixing-steps  ÕªĞÇ²½·¨,       piaomiao-steps  Æ®ÃìÉí·¨,
+taiji-force     å¤ªæ¥µç¥åŠŸ,       yunu-force      ç‰å¥³å¿ƒç¶“,
 
-yiwei-steps     Ò»Î­¶É½­,       shenxing-steps  ÉñĞĞ°Ù±ä,
-taxue-steps     Ì¤Ñ©ÎŞºÛ,
+dazhoutian-forceå¤§å‘¨å¤©åŠŸ,       luoying-force   è½è‹±å¿ƒæ³•,
+gumu-force      æ¯æœ¨ç¥åŠŸ,       hama-force      è›¤èŸ†åŠŸ,
+lotus-force     è“®èŠ±å¿ƒæ³•,       emei-force      å³¨çœ‰å¿ƒæ³•,
+tianmo-force    å¤©é­”å¤§æ³•,       hunyuan-force   æ··å…ƒç¥åŠŸ,
+beiming-force   åŒ—å†¥ç¥åŠŸ,       huagong-force   åŒ–åŠŸå¤§æ³•,
+xixing-force    å¸æ˜Ÿå¤§æ³•,       mizong-force    å¯†å®—å¿ƒæ³•,
+huangting-force é»ƒåº­å¿ƒæ³•,       douzhuan-force  é¬¥è½‰æ˜Ÿç§»,
+wuxiang-force   å°ç„¡ç›¸åŠŸ,       yijing-force    æ˜“ç­‹ç¥åŠŸ,
+bahuang-force   å…«è’å…­åˆå”¯æˆ‘ç¨å°Š,
 
-baituo-steps    °×ÍÕ²½·¨,       xiaoyao-steps   åĞÒ£ÓÎ,
-shenlong-steps  ÉñÁú²½·¨,       lieyan-steps    ÁÒÑæÉí·¨,
-kunlun-steps    À¥ÂØ²½·¨,       emei-steps      ¶ëÃ¼²½·¨,
-songshan-steps  áÔÉ½Éí·¨,       taishan-steps   Ì©É½Éí·¨,
-hengshan-steps  ºâÉ½Éí·¨,       heng-shan-steps ºãÉ½Éí·¨,
+taiji-force     å¤ªæ¥µç¥åŠŸ,       yunu-force      ç‰å¥³å¿ƒç¶“,
+
+dazhoutian-forceå¤§å‘¨å¤©åŠŸ,       luoying-force   è½è‹±å¿ƒæ³•,
+gumu-force      æ¯æœ¨ç¥åŠŸ,       hama-force      è›¤èŸ†åŠŸ,
+lotus-force     è“®èŠ±å¿ƒæ³•,       emei-force      å³¨çœ‰å¿ƒæ³•,
+tianmo-force    å¤©é­”å¤§æ³•,       hunyuan-force   æ··å…ƒç¥åŠŸ,
+beiming-force   åŒ—å†¥ç¥åŠŸ,       huagong-force   åŒ–åŠŸå¤§æ³•,
+xixing-force    å¸æ˜Ÿå¤§æ³•,       mizong-force    å¯†å®—å¿ƒæ³•,
+huangting-force é»ƒåº­å¿ƒæ³•,       douzhuan-force  é¬¥è½‰æ˜Ÿç§»,
+shenlong-force  ç¥é¾å¿ƒæ³•,       guangming-force å¤§å…‰æ˜å¿ƒæ³•,
+kunlun-force    æ˜†ä¾–å¿ƒæ³•,       zixia-force     ç´«éœç¥åŠŸ,
+songshan-force  åµ©å±±å¿ƒæ³•,       taishan-force   æ³°å±±å¿ƒæ³•,
+hengshan-force  è¡¡å±±å¿ƒæ³•,       heng-shan-force æ†å±±å¿ƒæ³•,
 
 By Micro Liang (97-07-01)
 
 
 
-                       ÄÚ  ¹¦  µÄ  ÔË  ÓÃ
+                      è¼•  åŠŸ  æ’  å
 
-ÄÚ¹¦ÔËÓÃ×Ü±í£º
+kuihua-steps    è‘µèŠ±ç¥åŠŸ,       lingbo-steps    å‡Œæ³¢å¾®æ­¥,
 
-regenerate ÌáÕñ¾«Á¦    recover    µ÷ÔÈÆøÏ¢    refresh    »Ö¸´ĞÄÉñ
-transfer   ´«ÊäÄÚÁ¦    heal       ÔË¹¦ÁÆÉË    lifeheal   ÎªÈËÁÆÉË
-powerup    ÌáÉıÕ½Á¦    powerfade  Ñ¹ÖÆÉ±Æø    protect    »¤ÌåÕæÆø
-roar       Ê¨ ×Ó ºğ    erase      »¯Á¦Ö®Êõ    hitback    ×ªÁ¦Ö®Êõ
-absorb_force    ÎüÈ¡ÄÚÁ¦          absorb_max_force       ÎüÈ¡ÕæÔª
-lostmind   Éã»ê´ó·¨
+ghostbat-steps  é¬¼è èº«æ³•,
 
-ÄÚ¹¦ÔËÓÃÏê±í£º
+tiyun-steps     æ¢¯é›²ç¸±,         feixian-steps   å¤©å¤–é£›ä»™æ­¥,
 
-force           »ù±¾ÄÚ¹¦£º      ÌáÕñ¾«Á¦¡¢µ÷ÔÈÆøÏ¢¡¢»Ö¸´ĞÄÉñ¡¢´«ÊäÄÚÁ¦¡¢
-                                ÔË¹¦ÁÆÉË
+jinyan-steps    é‡‘é›ç¥åŠŸ,       yingfeng-steps  è¿é¢¨æ‹‚æŸ³æ­¥,
+xuanfeng-steps  æ—‹é¢¨æƒè‘‰æ­¥,     qiankun-steps   ä¹¾å¤æ­¥æ³•,
+zhaixing-steps  æ‘˜æ˜Ÿæ­¥æ³•,       piaomiao-steps  é£„æ¸ºèº«æ³•,
 
-taixuan-force   Ì«ĞşÉñ¹¦£º      ÌáÉıÕ½Á¦£¨ÎŞÉ±Æø£¬ÎŞÑÓÊ±£©¡¢  ÎªÈËÁÆÉË¡¢
-                                »¤ÌåÕæÆø¡¢Ê¨ ×Ó ºğ
-ninemoon-force  ¾ÅÒõÉñ¹¦£º      ÌáÉıÕ½Á¦¡¢Ñ¹ÖÆÉ±Æø¡¢ÎªÈËÁÆÉË¡¢»¤ÌåÕæÆø¡¢
-                                Éã»ê´ó·¨
-ninesun-force   ¾ÅÑôÉñ¹¦£º      ÌáÉıÕ½Á¦¡¢ÎªÈËÁÆÉË¡¢»¤ÌåÕæÆø
-wuxiang-force   Ğ¡ÎŞÏà¹¦£º      ÌáÉıÕ½Á¦¡¢Ñ¹ÖÆÉ±Æø¡¢»¤ÌåÕæÆø
-yijing-force    Ò×½îÉñ¹¦£º      ÌáÉıÕ½Á¦¡¢ÎªÈËÁÆÉË¡¢»¤ÌåÕæÆø¡¢Ê¨ ×Ó ºğ
-bahuang-force   °Ë»ÄÁùºÏÎ¨ÎÒ¶À×ğ£º        ÌáÉıÕ½Á¦£¨ÎŞÉ±Æø£©¡¢»¤ÌåÕæÆø¡¢
-                                ÓÀ°ıÇà´º
-taiji-force     Ì«¼«Éñ¹¦£º      ÎªÈËÁÆÉË¡¢»¤ÌåÕæÆø
-yunu-force      ÓñÅ®ĞÄ¾­£º      ÎªÈËÁÆÉË¡¢»¤ÌåÕæÆø
-nuoyi-force     Ç¬À¤´óÅ²ÒÆ£º    »¯Á¦Ö®Êõ¡¢×ªÁ¦Ö®Êõ
-dazhoutian-force´óÖÜÌì¹¦£º      ÎªÈËÁÆÉË¡¢»¤ÌåÕæÆø
-luoying-force   ÂäÓ¢ĞÄ·¨£º      ÎªÈËÁÆÉË¡¢»¤ÌåÕæÆø
-gumu-force      ¿İÄ¾Éñ¹¦£º      ÎªÈËÁÆÉË¡¢»¤ÌåÕæÆø
-hama-force      ¸òó¡¹¦£º        »¤ÌåÕæÆø
-lotus-force     Á«»¨ĞÄ·¨£º      ÎªÈËÁÆÉË¡¢»¤ÌåÕæÆø¡¢Éã»ê´ó·¨
-emei-force      ¶ëÃ¼ĞÄ·¨£º      ÎªÈËÁÆÉË¡¢»¤ÌåÕæÆø
-tianmo-force    ÌìÄ§´ó·¨£º      »¤ÌåÕæÆø¡¢Ê¨ ×Ó ºğ
-hunyuan-force   »ìÔªÉñ¹¦£º      ÎªÈËÁÆÉË¡¢»¤ÌåÕæÆø¡¢Ê¨ ×Ó ºğ
-beiming-force   ±±Ú¤Éñ¹¦£º      ÎªÈËÁÆÉË¡¢»¤ÌåÕæÆø¡¢ÎüÈ¡ÄÚÁ¦¡¢ÎüÈ¡ÕæÔª
-huagong-force   »¯¹¦´ó·¨£º      »¤ÌåÕæÆø¡¢ÎüÈ¡ÄÚÁ¦¡¢ÎüÈ¡ÕæÔª
-xixing-force    ÎüĞÇ´ó·¨£º      »¤ÌåÕæÆø¡¢ÎüÈ¡ÄÚÁ¦¡¢ÎüÈ¡ÕæÔª
-mizong-force    ÃÜ×ÚĞÄ·¨£º      ÎªÈËÁÆÉË¡¢»¤ÌåÕæÆø
-huangting-force »ÆÍ¥ĞÄ·¨£º      ÎªÈËÁÆÉË¡¢»¤ÌåÕæÆø
-douzhuan-force  ¶·×ªĞÇÒÆ£º      »¤ÌåÕæÆø¡¢×ªÁ¦Ö®Êõ
-shenlong-force  ÉñÁúĞÄ·¨£º      »¤ÌåÕæÆø
-guangming-force ´ó¹âÃ÷ĞÄ·¨£º    »¤ÌåÕæÆø
-kunlun-force    À¥ÂØĞÄ·¨£º      ÎªÈËÁÆÉË¡¢»¤ÌåÕæÆø
-zixia-force     ×ÏÏ¼Éñ¹¦£º      ÎªÈËÁÆÉË¡¢»¤ÌåÕæÆø
-songshan-force  áÔÉ½ĞÄ·¨£º      ÎªÈËÁÆÉË
-taishan-force   Ì©É½ĞÄ·¨£º      ÎªÈËÁÆÉË
-hengshan-force  ºâÉ½ĞÄ·¨£º      ÎªÈËÁÆÉË
-heng-shan-force ºãÉ½ĞÄ·¨£º      ÎªÈËÁÆÉË
+yiwei-steps     ä¸€è‘¦æ¸¡æ±Ÿ,       shenxing-steps  ç¥è¡Œç™¾è®Š,
+taxue-steps     è¸é›ªç„¡ç—•,
+
+baituo-steps    ç™½é§æ­¥æ³•,       xiaoyao-steps   é€é™éŠ,
+shenlong-steps  ç¥é¾æ­¥æ³•,       lieyan-steps    çƒˆç‡„èº«æ³•,
+kunlun-steps    æ˜†ä¾–æ­¥æ³•,       emei-steps      å³¨çœ‰æ­¥æ³•,
+songshan-steps  åµ©å±±èº«æ³•,       taishan-steps   æ³°å±±èº«æ³•,
+hengshan-steps  è¡¡å±±èº«æ³•,       heng-shan-steps æ†å±±èº«æ³•,
 
 By Micro Liang (97-07-01)
 
 
 
-                      Çá  ¹¦  ¾ø  ¼¼
+                       å…§  åŠŸ  çš„  é‹  ç”¨
 
-kuihua-steps    ¿û»¨Éñ¹¦£º      quick_attack£¨¿ìËÙ¹¥»÷£©
-ghostbat-steps  ¹íòğÉí·¨£º      quick_attack£¨¿ìËÙ¹¥»÷£©
+å…§åŠŸé‹ç”¨ç¸½è¡¨ï¼š
+
+regenerate ææŒ¯ç²¾åŠ›    recover    èª¿å‹»æ°£æ¯    refresh    æ¢å¾©å¿ƒç¥
+transfer   å‚³è¼¸å…§åŠ›    heal       é‹åŠŸç™‚å‚·    lifeheal   ç‚ºäººç™‚å‚·
+powerup    æå‡æˆ°åŠ›    powerfade  å£“åˆ¶æ®ºæ°£    protect    è­·é«”çœŸæ°£
+roar       ç… å­ å¼    erase      åŒ–åŠ›ä¹‹è¡“    hitback    è½‰åŠ›ä¹‹è¡“
+absorb_force    å¸å–å…§åŠ›          absorb_max_force       å¸å–çœŸå…ƒ
+lostmind   æ”é­‚å¤§æ³•
+
+å…§åŠŸé‹ç”¨è©³è¡¨ï¼š
+
+force           åŸºæœ¬å…§åŠŸï¼š      ææŒ¯ç²¾åŠ›ã€èª¿å‹»æ°£æ¯ã€æ¢å¾©å¿ƒç¥ã€å‚³è¼¸å…§åŠ›ã€
+                                é‹åŠŸç™‚å‚·
+
+taixuan-force   å¤ªç„ç¥åŠŸï¼š      æå‡æˆ°åŠ›ï¼ˆç„¡æ®ºæ°£ï¼Œç„¡å»¶æ™‚ï¼‰ã€  ç‚ºäººç™‚å‚·ã€
+                                è­·é«”çœŸæ°£ã€ç… å­ å¼
+ninemoon-force  ä¹é™°ç¥åŠŸï¼š      æå‡æˆ°åŠ›ã€å£“åˆ¶æ®ºæ°£ã€ç‚ºäººç™‚å‚·ã€è­·é«”çœŸæ°£ã€
+                                æ”é­‚å¤§æ³•
+ninesun-force   ä¹é™½ç¥åŠŸï¼š      æå‡æˆ°åŠ›ã€ç‚ºäººç™‚å‚·ã€è­·é«”çœŸæ°£
+wuxiang-force   å°ç„¡ç›¸åŠŸï¼š      æå‡æˆ°åŠ›ã€å£“åˆ¶æ®ºæ°£ã€è­·é«”çœŸæ°£
+yijing-force    æ˜“ç­‹ç¥åŠŸï¼š      æå‡æˆ°åŠ›ã€ç‚ºäººç™‚å‚·ã€è­·é«”çœŸæ°£ã€ç… å­ å¼
+bahuang-force   å…«è’å…­åˆå”¯æˆ‘ç¨å°Šï¼š        æå‡æˆ°åŠ›ï¼ˆç„¡æ®ºæ°£ï¼‰ã€è­·é«”çœŸæ°£ã€
+                                æ°¸è¤’é’æ˜¥
+taiji-force     å¤ªæ¥µç¥åŠŸï¼š      ç‚ºäººç™‚å‚·ã€è­·é«”çœŸæ°£
+yunu-force      ç‰å¥³å¿ƒç¶“ï¼š      ç‚ºäººç™‚å‚·ã€è­·é«”çœŸæ°£
+nuoyi-force     ä¹¾å¤å¤§æŒªç§»ï¼š    åŒ–åŠ›ä¹‹è¡“ã€è½‰åŠ›ä¹‹è¡“
+dazhoutian-forceå¤§å‘¨å¤©åŠŸï¼š      ç‚ºäººç™‚å‚·ã€è­·é«”çœŸæ°£
+luoying-force   è½è‹±å¿ƒæ³•ï¼š      ç‚ºäººç™‚å‚·ã€è­·é«”çœŸæ°£
+gumu-force      æ¯æœ¨ç¥åŠŸï¼š      ç‚ºäººç™‚å‚·ã€è­·é«”çœŸæ°£
+hama-force      è›¤èŸ†åŠŸï¼š        è­·é«”çœŸæ°£
+lotus-force     è“®èŠ±å¿ƒæ³•ï¼š      ç‚ºäººç™‚å‚·ã€è­·é«”çœŸæ°£ã€æ”é­‚å¤§æ³•
+emei-force      å³¨çœ‰å¿ƒæ³•ï¼š      ç‚ºäººç™‚å‚·ã€è­·é«”çœŸæ°£
+tianmo-force    å¤©é­”å¤§æ³•ï¼š      è­·é«”çœŸæ°£ã€ç… å­ å¼
+hunyuan-force   æ··å…ƒç¥åŠŸï¼š      ç‚ºäººç™‚å‚·ã€è­·é«”çœŸæ°£ã€ç… å­ å¼
+beiming-force   åŒ—å†¥ç¥åŠŸï¼š      ç‚ºäººç™‚å‚·ã€è­·é«”çœŸæ°£ã€å¸å–å…§åŠ›ã€å¸å–çœŸå…ƒ
+huagong-force   åŒ–åŠŸå¤§æ³•ï¼š      è­·é«”çœŸæ°£ã€å¸å–å…§åŠ›ã€å¸å–çœŸå…ƒ
+xixing-force    å¸æ˜Ÿå¤§æ³•ï¼š      è­·é«”çœŸæ°£ã€å¸å–å…§åŠ›ã€å¸å–çœŸå…ƒ
+mizong-force    å¯†å®—å¿ƒæ³•ï¼š      ç‚ºäººç™‚å‚·ã€è­·é«”çœŸæ°£
+huangting-force é»ƒåº­å¿ƒæ³•ï¼š      ç‚ºäººç™‚å‚·ã€è­·é«”çœŸæ°£
+douzhuan-force  é¬¥è½‰æ˜Ÿç§»ï¼š      è­·é«”çœŸæ°£ã€è½‰åŠ›ä¹‹è¡“
+shenlong-force  ç¥é¾å¿ƒæ³•ï¼š      è­·é«”çœŸæ°£
+guangming-force å¤§å…‰æ˜å¿ƒæ³•ï¼š    è­·é«”çœŸæ°£
+kunlun-force    æ˜†ä¾–å¿ƒæ³•ï¼š      ç‚ºäººç™‚å‚·ã€è­·é«”çœŸæ°£
+zixia-force     ç´«éœç¥åŠŸï¼š      ç‚ºäººç™‚å‚·ã€è­·é«”çœŸæ°£
+songshan-force  åµ©å±±å¿ƒæ³•ï¼š      ç‚ºäººç™‚å‚·
+taishan-force   æ³°å±±å¿ƒæ³•ï¼š      ç‚ºäººç™‚å‚·
+hengshan-force  è¡¡å±±å¿ƒæ³•ï¼š      ç‚ºäººç™‚å‚·
+heng-shan-force æ†å±±å¿ƒæ³•ï¼š      ç‚ºäººç™‚å‚·
 
 By Micro Liang (97-07-01)
 
 
-                      ±ø  Æ÷  ÅÅ  Ãû
 
-pixie-sword     ±ÙĞ°½£·¨,
+                      è¼•  åŠŸ  çµ•  æŠ€
 
-dugu-sword      ¶À¹Â¾Å½£,       dugu-jianqi     ¶À¹Â½£Æø,
+kuihua-steps    è‘µèŠ±ç¥åŠŸï¼š      quick_attackï¼ˆå¿«é€Ÿæ”»æ“Šï¼‰
+ghostbat-steps  é¬¼è èº«æ³•ï¼š      quick_attackï¼ˆå¿«é€Ÿæ”»æ“Šï¼‰
 
-liumai-sword    ÁùÂöÉñ½£,       taiji-sword     Ì«¼«½£·¨,
+By Micro Liang (97-07-01)
 
-xuantie-sword   ĞşÌú½£·¨,       yunu-sword      ÓñÅ®ËØĞÄ½£,
-ruyixiaoyao-sword ÈçÒâåĞÒ£½£,   dagou-stick     ´ò¹·°ô·¨,
 
-damo-sword      ´ïÄ¦½£·¨,       fumo-whip       ·üÄ§±Ş·¨,
-qixing-sword    ÆßĞÇ½£·¨,       yuxiao-sword    ÓñÏô½£·¨,
-baituo-staff    °×ÍÕÕÈ·¨,       tianmo-sword    ÌìÄ§½£·¨,
-tianmo-blade    ÌìÄ§µ¶·¨,
+                      å…µ  å™¨  æ’  å
 
-xiaoyao-sword   åĞÒ£½£·¨,       ruyi-blade      ÈçÒâµ¶·¨,
-xingsu-staff    ĞÇËŞÕÈ·¨,       guangming-sword ¹âÃ÷½£·¨,
-yitian-sword    ÒĞÌì½£·¨,       tulong-blade    ÍÀÁúµ¶·¨,
-murong-sword    Ä½ÈØ½£·¨,       wulun-dafa      ÎåÂÖ´ó·¨,
-shenlong-blade  ÉñÁúµ¶·¨,       tianshi-ling    ÌìÊ¦·üÄ§Áå,
+pixie-sword     è¾Ÿé‚ªåŠæ³•,
 
-jinhua-staff    ½ğ»¨ÕÈ·¨,       tianlong-staff  ÌìÁúÕÈ·¨,
-huashan-sword   »ªÉ½½£·¨,       liangyi-sword   Á½ÒÇ½£·¨,
-fanliangyi-blade·´Á½ÒÇµ¶·¨,     fumo-sword      ·üÄ§½£·¨,
-puti-blade      ÆĞÌáµ¶·¨,       weituo-stick    Î¤ÍÓ¹÷·¨,
-wuchang-fork    ÎŞ³£²æ·¨,       zui-gun         ÉÙÁÖ×í¹÷,
-jingang-hammer  ½ğ¸Õ´¸·¨,       songshan-sword  áÔÉ½½£·¨,
-taishan-sword   Ì©É½½£·¨,       hengshan-sword  ºâÉ½½£·¨,
-heng-shan-sword ºãÉ½½£·¨,
+dugu-sword      ç¨å­¤ä¹åŠ,       dugu-jianqi     ç¨å­¤åŠæ°£,
+
+liumai-sword    å…­è„ˆç¥åŠ,       taiji-sword     å¤ªæ¥µåŠæ³•,
+
+xuantie-sword   ç„éµåŠæ³•,       yunu-sword      ç‰å¥³ç´ å¿ƒåŠ,
+ruyixiaoyao-sword å¦‚æ„é€é™åŠ,   dagou-stick     æ‰“ç‹—æ£’æ³•,
+
+damo-sword      é”æ‘©åŠæ³•,       fumo-whip       ä¼é­”é­æ³•,
+qixing-sword    ä¸ƒæ˜ŸåŠæ³•,       yuxiao-sword    ç‰è•­åŠæ³•,
+baituo-staff    ç™½é§æ–æ³•,       tianmo-sword    å¤©é­”åŠæ³•,
+tianmo-blade    å¤©é­”åˆ€æ³•,
+
+xiaoyao-sword   é€é™åŠæ³•,       ruyi-blade      å¦‚æ„åˆ€æ³•,
+xingsu-staff    æ˜Ÿå®¿æ–æ³•,       guangming-sword å…‰æ˜åŠæ³•,
+yitian-sword    å€šå¤©åŠæ³•,       tulong-blade    å± é¾åˆ€æ³•,
+murong-sword    æ…•è“‰åŠæ³•,       wulun-dafa      äº”è¼ªå¤§æ³•,
+shenlong-blade  ç¥é¾åˆ€æ³•,       tianshi-ling    å¤©å¸«ä¼é­”éˆ´,
+
+jinhua-staff    é‡‘èŠ±æ–æ³•,       tianlong-staff  å¤©é¾æ–æ³•,
+huashan-sword   è¯å±±åŠæ³•,       liangyi-sword   å…©å„€åŠæ³•,
+fanliangyi-bladeåå…©å„€åˆ€æ³•,     fumo-sword      ä¼é­”åŠæ³•,
+puti-blade      è©æåˆ€æ³•,       weituo-stick    éŸ‹é™€æ£æ³•,
+wuchang-fork    ç„¡å¸¸å‰æ³•,       zui-gun         å°‘æ—é†‰æ£,
+jingang-hammer  é‡‘å‰›éŒ˜æ³•,       songshan-sword  åµ©å±±åŠæ³•,
+taishan-sword   æ³°å±±åŠæ³•,       hengshan-sword  è¡¡å±±åŠæ³•,
+heng-shan-sword æ†å±±åŠæ³•,
 
 By Micro Liang (97-07-01)
  
 
 
-                      È­  ½Å  ÅÅ  Ãû
+                      æ‹³  è…³  æ’  å
 
-xianglong-zhang ½µÁúÊ®°ËÕÆ,
+xianglong-zhang é™é¾åå…«æŒ,
 
-liumai-sword    ÁùÂöÉñ½£,       liuyang-zhang   ÌìÉ½ÁùÑôÕÆ,
-zhemei-shou     ÌìÉ½ÕÛÃ·ÊÖ,     xiaohun-zhang   ÷öÈ»Ïú»êÕÆ,
+liumai-sword    å…­è„ˆç¥åŠ,       liuyang-zhang   å¤©å±±å…­é™½æŒ,
+zhemei-shou     å¤©å±±æŠ˜æ¢…æ‰‹,     xiaohun-zhang   é»¯ç„¶éŠ·é­‚æŒ,
 
-taiji-quan      Ì«¼«È­·¨,       rulai-zhang     ÈçÀ´ÉñÕÆ,
-kongming-quan   ¿ÕÃ÷È­,
+taiji-quan      å¤ªæ¥µæ‹³æ³•,       rulai-zhang     å¦‚ä¾†ç¥æŒ,
+kongming-quan   ç©ºæ˜æ‹³,
 
-damo-quan       ´ïÄ¦È­,         qixing-zhang    ÆßĞÇÕÆ·¨,
-luoying-zhang   ÂäÓ¢Éñ½£ÕÆ,     yiyang-zhi      Ò»ÑôÖ¸,
-lingshe-zhang   ÁéÉßÕÆ·¨,       tianxian-zhang  ÌìÏÉÉ¢»¨ÕÆ,
-qishier-yi      ÆßÊ®¶ş°ã¾øÒÕ,   tianmo-zhang    ÌìÄ§ÕÆ·¨,
+damo-quan       é”æ‘©æ‹³,         qixing-zhang    ä¸ƒæ˜ŸæŒæ³•,
+luoying-zhang   è½è‹±ç¥åŠæŒ,     yiyang-zhi      ä¸€é™½æŒ‡,
+lingshe-zhang   éˆè›‡æŒæ³•,       tianxian-zhang  å¤©ä»™æ•£èŠ±æŒ,
+qishier-yi      ä¸ƒåäºŒèˆ¬çµ•è—,   tianmo-zhang    å¤©é­”æŒæ³•,
 
-qishang-quan    ÆßÉËÈ­,         tianying-zhuza  ÌìÓ¥Éñ×¦,
-xingsu-zhang    ĞÇËŞ¶¾ÕÆ,       chuanyun-zhang  Æ®Ñ©´©ÔÆÕÆ,
-tianshi-zhang   ÌìÊ¦ÕÆ·¨,       murong-zhang    Ä½ÈØÕÆ·¨,
-hanbing-zhang   º®±ùÉñÕÆ,       bosi-guaizhao   ²¨Ë¹¹ÖÕĞ,
-dashouyin       ´óÊÖÓ¡,
+qishang-quan    ä¸ƒå‚·æ‹³,         tianying-zhuza  å¤©é·¹ç¥çˆª,
+xingsu-zhang    æ˜Ÿå®¿æ¯’æŒ,       chuanyun-zhang  é£„é›ªç©¿é›²æŒ,
+tianshi-zhang   å¤©å¸«æŒæ³•,       murong-zhang    æ…•è“‰æŒæ³•,
+hanbing-zhang   å¯’å†°ç¥æŒ,       bosi-guaizhao   æ³¢æ–¯æ€ªæ‹›,
+dashouyin       å¤§æ‰‹å°,
 
-nianhua-zhi     Äé»¨Ö¸,         yizhi-chan      Ò»Ö¸ìø,
-longzhua-gong   Áú×¦¹¦,         yingzhua-gong   Ó¥×¦¹¦,
-fengyun-shou    ·çÔÆÊÖ,         qianye-shou     ÈçÀ´Ç§Ò¶ÊÖ,
-luohan-quan     ÂŞººÉñÈ­,       sanhua-zhang    É¢»¨ÕÆ,
-banruo-zhang    °ãÈôÕÆ,         guangming-zhang ¹âÃ÷ÕÆ·¨,
-kunlun-zhang    À¥ÂØÕÆ·¨,       huashan-zhang   »ªÉ½ÕÆ·¨,
-xiaobao-juehuo  Ğ¡±¦¾ø»î,       songshan-zhang  áÔÉ½ÕÆ·¨,
-taishan-zhang   Ì©É½ÕÆ·¨,       hengshan-zhang  ºâÉ½ÕÆ·¨,
-heng-shan-zhang ºãÉ½ÕÆ·¨,
+nianhua-zhi     æ‹ˆèŠ±æŒ‡,         yizhi-chan      ä¸€æŒ‡ç¦ª,
+longzhua-gong   é¾çˆªåŠŸ,         yingzhua-gong   é·¹çˆªåŠŸ,
+fengyun-shou    é¢¨é›²æ‰‹,         qianye-shou     å¦‚ä¾†åƒè‘‰æ‰‹,
+luohan-quan     ç¾…æ¼¢ç¥æ‹³,       sanhua-zhang    æ•£èŠ±æŒ,
+banruo-zhang    èˆ¬è‹¥æŒ,         guangming-zhang å…‰æ˜æŒæ³•,
+kunlun-zhang    æ˜†ä¾–æŒæ³•,       huashan-zhang   è¯å±±æŒæ³•,
+xiaobao-juehuo  å°å¯¶çµ•æ´»,       songshan-zhang  åµ©å±±æŒæ³•,
+taishan-zhang   æ³°å±±æŒæ³•,       hengshan-zhang  è¡¡å±±æŒæ³•,
+heng-shan-zhang æ†å±±æŒæ³•,
 
 By Micro Liang (97-07-01)
 
 
 ----------------------------------------------------------------------
-·ÉºüÍâ´«£º
-   ËÄÏó²½
-   °ËØÔÓÎÉíÕÆ
+é£›ç‹å¤–å‚³ï¼š
+   å››è±¡æ­¥
+   å…«å¦éŠèº«æŒ
 
-Ñ©É½·Éºü£º
-   ºú¼Òµ¶·¨
-   Ãç¼Ò½£·¨
-   »¢×¦ÇÜÄÃÊÖ
+é›ªå±±é£›ç‹ï¼š
+   èƒ¡å®¶åˆ€æ³•
+   è‹—å®¶åŠæ³•
+   è™çˆªæ“’æ‹¿æ‰‹
 
-Á¬³Ç¾÷£º
-   ÉñÕÕ¹¦
-   ÎŞÓ°ÉñÈ­
-   Á¬³Ç½£·¨
-   ÌÆÊ«½£·¨
-   ÌÉÊ¬½£·¨
-   Ñªµ¶µ¶·¨
+é€£åŸè¨£ï¼š
+   ç¥ç…§åŠŸ
+   ç„¡å½±ç¥æ‹³
+   é€£åŸåŠæ³•
+   å”è©©åŠæ³•
+   èººå±åŠæ³•
+   è¡€åˆ€åˆ€æ³•
 
-ÌìÁú°Ë²¿£º
-  åĞÒ£ÅÉ£º
-   Áè²¨Î¢²½
-   ÌìÉ½ÁùÑôÕÆ
-   åĞÒ£ÕÛÃ·ÊÖ
-   ÉúËÀ·û
-   °×ºçÕÆÁ¦
-   ±±Ú¤Éñ¹¦
-   Ğ¡ÎŞÏà¹¦
-   °Ë»ÄÁùºÏÎ¨ÎÒ¶À×ğ¹¦
-  ĞÇËŞÅÉ£º
-   »¯¹¦´ó·¨
-   ¸¯Ê¬×¦
-  ¹ÃËÕÄ½Èİ£º
-   ¶·×ªĞÇÒÆ
-   ÈşºÏÖ¸
-  ´óÀí¶ÎÊÏ£º
-   ÁùÂöÉñ½£
-   ÎåÂŞÇáÑÌÕÆ
-  ÆäËü£º
-   »ğÑæµ¶
-   Ò×½î¾­
-   Éßº×°Ë´ò
-   öù×ì¼ô·¨
-   ÎŞÁ¿½£·¨
-   ÅÅÔÆÕÆ
-   Ì«×æ³¤È­
-   ËøºíÇÜÄÃÊÖ
-   ²øË¿ÇÜÄÃÊÖ
-   ÌìÁéÇ§ÁÑ
-   ÖÜ¹«½£
-   Îå»¢¶ÏÃÅµ¶
-   ÁùºÏµ¶
-   °ËØÔµ¶·¨
-   ÓæÛÅ¹³·¨
-   ²ñµ¶Ê®°ËÂ·
-   »Ø·ç·÷Áøµ¶
+å¤©é¾å…«éƒ¨ï¼š
+  é€é™æ´¾ï¼š
+   å‡Œæ³¢å¾®æ­¥
+   å¤©å±±å…­é™½æŒ
+   é€é™æŠ˜æ¢…æ‰‹
+   ç”Ÿæ­»ç¬¦
+   ç™½è™¹æŒåŠ›
+   åŒ—å†¥ç¥åŠŸ
+   å°ç„¡ç›¸åŠŸ
+   å…«è’å…­åˆå”¯æˆ‘ç¨å°ŠåŠŸ
+  æ˜Ÿå®¿æ´¾ï¼š
+   åŒ–åŠŸå¤§æ³•
+   è…å±çˆª
+  å§‘è˜‡æ…•å®¹ï¼š
+   é¬¥è½‰æ˜Ÿç§»
+   ä¸‰åˆæŒ‡
+  å¤§ç†æ®µæ°ï¼š
+   å…­è„ˆç¥åŠ
+   äº”ç¾…è¼•ç…™æŒ
+  å…¶å®ƒï¼š
+   ç«ç‡„åˆ€
+   æ˜“ç­‹ç¶“
+   è›‡é¶´å…«æ‰“
+   é±·å˜´å‰ªæ³•
+   ç„¡é‡åŠæ³•
+   æ’é›²æŒ
+   å¤ªç¥–é•·æ‹³
+   é–å–‰æ“’æ‹¿æ‰‹
+   çºçµ²æ“’æ‹¿æ‰‹
+   å¤©éˆåƒè£‚
+   å‘¨å…¬åŠ
+   äº”è™æ–·é–€åˆ€
+   å…­åˆåˆ€
+   å…«å¦åˆ€æ³•
+   æ¼åŸé‰¤æ³•
+   æŸ´åˆ€åå…«è·¯
+   å›é¢¨æ‹‚æŸ³åˆ€
 
-Éä??Ó¢ĞÛ´«£º
-  ¶«Ğ°£º
-   ÂäÓ¢½£·¨
-   ÂäÓ¢Éñ½£ÕÆ
-   Ğı·çÉ¨Ò¶ÍÈ
-   ¿ñ·ç¾ø¼¼
-   ÓñÏô½£·¨
-   µ¯Ö¸ÉñÍ¨
-   À¼»¨·÷Ñ¨ÊÖ
-   ±Ìº£³±óÏÇú
-  Î÷¶¾£º
-   ¸òó¡¹¦
-   ÁéÉßÈ­
-  ÄÏµÛ£º
-   Ò»ÑôÖ¸
-  ±±Ø¤£º
-   ½µÁúÊ®°ËÕÆ
-   ´ò¹·°ô·¨
-   åĞÒ£ÓÎ
-  ÖĞÉñÍ¨£º
-   ÏÈÌì¹¦
-   È«Õæ½£·¨
-   ½ğÑã¹¦
-   Ììéè±±¶·Õó
-  ÆäËü£º
-   ×óÓÒ»¥²©Ö®Êõ
-   ¿ÕÃ÷È­
-   ½ğÁú±Ş·¨
-   Ô½Å®½£
-   ·èÄ§ÕÈ·¨
-   ÄÏÉ½ÕÆ
-   ¾ÅÒõÕæ¾­£º
-    ¾ÅÒõ°×¹Ç×¦
-    ´İĞÄÕÆ
-    Ò×½î¶Í¹ÇÆª
-    ÉßĞĞÀê·­
-    ·ÉĞõ¾¢
-   ¿ÕÃ÷È­
-   ÌúÕÆ
+å°„??è‹±é›„å‚³ï¼š
+  æ±é‚ªï¼š
+   è½è‹±åŠæ³•
+   è½è‹±ç¥åŠæŒ
+   æ—‹é¢¨æƒè‘‰è…¿
+   ç‹‚é¢¨çµ•æŠ€
+   ç‰è•­åŠæ³•
+   å½ˆæŒ‡ç¥é€š
+   è˜­èŠ±æ‹‚ç©´æ‰‹
+   ç¢§æµ·æ½®ç¬™æ›²
+  è¥¿æ¯’ï¼š
+   è›¤èŸ†åŠŸ
+   éˆè›‡æ‹³
+  å—å¸ï¼š
+   ä¸€é™½æŒ‡
+  åŒ—ä¸ï¼š
+   é™é¾åå…«æŒ
+   æ‰“ç‹—æ£’æ³•
+   é€é™éŠ
+  ä¸­ç¥é€šï¼š
+   å…ˆå¤©åŠŸ
+   å…¨çœŸåŠæ³•
+   é‡‘é›åŠŸ
+   å¤©æ®åŒ—é¬¥é™£
+  å…¶å®ƒï¼š
+   å·¦å³äº’åšä¹‹è¡“
+   ç©ºæ˜æ‹³
+   é‡‘é¾é­æ³•
+   è¶Šå¥³åŠ
+   ç˜‹é­”æ–æ³•
+   å—å±±æŒ
+   ä¹é™°çœŸç¶“ï¼š
+    ä¹é™°ç™½éª¨çˆª
+    æ‘§å¿ƒæŒ
+    æ˜“ç­‹é›éª¨ç¯‡
+    è›‡è¡Œè²ç¿»
+    é£›çµ®å‹
+   ç©ºæ˜æ‹³
+   éµæŒ
 
-°×ÂíĞ¥Î÷·ç£º
+ç™½é¦¬å˜¯è¥¿é¢¨ï¼š
 
-Â¹¶¦¼Ç£º
-   ÄıÑªÉñ×¦
-   ÃÀÈËÈıÊ½£º
-    ¹óåú»Øíø
-    Ğ¡Á¯ºá³Â
-    ·ÉÑà»ØÏè
-   Ó¢ĞÛÈıÊ½
-   Ì«¼«µ¶
+é¹¿é¼è¨˜ï¼š
+   å‡è¡€ç¥çˆª
+   ç¾äººä¸‰å¼ï¼š
+    è²´å¦ƒå›çœ¸
+    å°æ†æ©«é™³
+    é£›ç‡•å›ç¿”
+   è‹±é›„ä¸‰å¼
+   å¤ªæ¥µåˆ€
 
-Ğ¦°Á½­ºş£º
-   áÔÉ½½£·¨
-   ´óáÔÑôÊÖ
-   ºâÉ½½£·¨
-   °Ù±äÇ§»ÃºâÉ½ÔÆÎíÊ®ÈıÊ½
-   ºãÉ½½£·¨
-   Íò»¨½£·¨
-   Ì©É½½£·¨
-   Ì©É½Ê®°ËÅÌ
-   »ªÉ½½£·¨
-   ÓñÅ®½ğÕëÊ®ÈıÊ½
-   ³åÁé½£·¨
-   ¿ñ·çµ¶·¨
-   ¶À¹Â¾Å½£
-   ÎüĞÇ´ó·¨
-   ¿û»¨±¦µä
-   ±ÙĞ°½£·¨
-   ÆßÏÒÎŞĞÎ½£
-   ĞşÌìÖ¸
-   ÆÃÄ«½£·¨
+ç¬‘å‚²æ±Ÿæ¹–ï¼š
+   åµ©å±±åŠæ³•
+   å¤§åµ©é™½æ‰‹
+   è¡¡å±±åŠæ³•
+   ç™¾è®Šåƒå¹»è¡¡å±±é›²éœ§åä¸‰å¼
+   æ†å±±åŠæ³•
+   è¬èŠ±åŠæ³•
+   æ³°å±±åŠæ³•
+   æ³°å±±åå…«ç›¤
+   è¯å±±åŠæ³•
+   ç‰å¥³é‡‘é‡åä¸‰å¼
+   æ²–éˆåŠæ³•
+   ç‹‚é¢¨åˆ€æ³•
+   ç¨å­¤ä¹åŠ
+   å¸æ˜Ÿå¤§æ³•
+   è‘µèŠ±å¯¶å…¸
+   è¾Ÿé‚ªåŠæ³•
+   ä¸ƒå¼¦ç„¡å½¢åŠ
+   ç„å¤©æŒ‡
+   æ½‘å¢¨åŠæ³•
 
-Êé½£¶÷³ğÂ¼£º
-   °Ù»¨´íÈ­
-   Èı·Ö½£·¨
-   ÈáÔÆ½£·¨
-   ºÚÉ³ÕÆ
+æ›¸åŠæ©ä»‡éŒ„ï¼š
+   ç™¾èŠ±éŒ¯æ‹³
+   ä¸‰åˆ†åŠæ³•
+   æŸ”é›²åŠæ³•
+   é»‘æ²™æŒ
 
-Éñ??ÏÀÂÂ£º
-  ¹ÅÄ¹ÅÉ£º
-   Îå¶¾ÉñÕÆ
-   ±ùÆÇÒøÕë
-   Óñ·äÕë
-   ÓñÅ®ĞÄ¾­
-   ÓñÅ®½£·¨
-   ÓñÅ®ËØĞÄ½£
-  ÆäËü£º
-   ÷öÈ»Ïú»êÕÆ
-   ÁúÏó°ãÈô¹¦
-   º®Òõ¼ı
-   Äàöú¹¦
-   ÒõÑôµ¹ÂÒÈĞ·¨
-   ¾ÅÒõÉñ×¦
-   ÓãÍøÕó
+ç¥??ä¿ ä¾¶ï¼š
+  å¤å¢“æ´¾ï¼š
+   äº”æ¯’ç¥æŒ
+   å†°é­„éŠ€é‡
+   ç‰èœ‚é‡
+   ç‰å¥³å¿ƒç¶“
+   ç‰å¥³åŠæ³•
+   ç‰å¥³ç´ å¿ƒåŠ
+  å…¶å®ƒï¼š
+   é»¯ç„¶éŠ·é­‚æŒ
+   é¾è±¡èˆ¬è‹¥åŠŸ
+   å¯’é™°ç®­
+   æ³¥é°åŠŸ
+   é™°é™½å€’äº‚åˆƒæ³•
+   ä¹é™°ç¥çˆª
+   é­šç¶²é™£
 
-ÏÀ¿ÍĞĞ£º
-   Ñ©É½½£·¨
-   ½ğÎÚµ¶·¨
-   ÉÏÇå¹Û½£·¨
-   Ã·»¨È­
-   ¶¡¼ÒÇÜÄÃÊÖ
-   ½ğÁú±Ş·¨
-   ÎåĞĞÁùºÏÈ­
-   ±ÌÕëÇåÕÆ
-   Ñ×Ñ×¹¦
-   ÂŞºº·üÄ§Éñ¹¦
-   ÏÀ¿ÍµºÊ¯±ÚÎä¹¦
+ä¿ å®¢è¡Œï¼š
+   é›ªå±±åŠæ³•
+   é‡‘çƒåˆ€æ³•
+   ä¸Šæ¸…è§€åŠæ³•
+   æ¢…èŠ±æ‹³
+   ä¸å®¶æ“’æ‹¿æ‰‹
+   é‡‘é¾é­æ³•
+   äº”è¡Œå…­åˆæ‹³
+   ç¢§é‡æ¸…æŒ
+   ç‚ç‚åŠŸ
+   ç¾…æ¼¢ä¼é­”ç¥åŠŸ
+   ä¿ å®¢å³¶çŸ³å£æ­¦åŠŸ
 
-ÒĞÌìÍÀÁú¼Ç£º
-  Ã÷½Ì£º
-   Ç¬À¤´óÅ²ÒÆ
-   Ê¥»ğÁîÎä¹¦
-  ²¨Ë¹Ã÷½Ì£º
-   Òõ·çµ¶
-   Í¸¹Ç¶¤
-  áÇá¼ÅÉ£º
-   ÆßÉËÈ­
-  »ªÉ½ÅÉ£º
-   Ó¥ÉßÉúËÀ²©
-   ·´Á½ÒÇµ¶·¨
-  À¥ÂØÅÉ£º
-   Á½ÒÇ½£·¨
-   ÎŞÉùÎŞÏ¢
-  ¶ëİÉÅÉ£º
-   ËÄÏóÕÆ
-   Æ®Ñ©´©ÔÆÕÆ
-   ½ØÊÖ¾ÅÊ½
-  Îäµ±£º
-   ´¿ÑôÎŞ¼«¹¦
-   ÉñÃÅÊ®Èı½£
-   ÈÆÖ¸Èá½£
-   ÌİÔÆ×Ù
-   Ì«¼«È­
-   Ì«¼«½£
-   »¢×¦¾ø»§ÊÖ
-   Îäµ±³¤È­
-   ÕæÎäÆß½ØÕó
-  ÉÙÁÖ£º
-    Áú×¦ÊÖ
-  ÆäËü£º
-   º®±ùÃàÕÆ
-   Ó¥×¦ÇÜÄÃÊÖ
-   ¾ÅÑôÉñ¹¦
-   »ÃÒõÖ¸
-   »ìÔª¹¦
-   ĞşÚ¤ÉñÕÆ
-   Ç§ÖëÍò¶¾ÊÖ
+å€šå¤©å± é¾è¨˜ï¼š
+  æ˜æ•™ï¼š
+   ä¹¾å¤å¤§æŒªç§»
+   è–ç«ä»¤æ­¦åŠŸ
+  æ³¢æ–¯æ˜æ•™ï¼š
+   é™°é¢¨åˆ€
+   é€éª¨é‡˜
+  å´†å³’æ´¾ï¼š
+   ä¸ƒå‚·æ‹³
+  è¯å±±æ´¾ï¼š
+   é·¹è›‡ç”Ÿæ­»åš
+   åå…©å„€åˆ€æ³•
+  æ˜†ä¾–æ´¾ï¼š
+   å…©å„€åŠæ³•
+   ç„¡è²ç„¡æ¯
+  å³¨è†æ´¾ï¼š
+   å››è±¡æŒ
+   é£„é›ªç©¿é›²æŒ
+   æˆªæ‰‹ä¹å¼
+  æ­¦ç•¶ï¼š
+   ç´”é™½ç„¡æ¥µåŠŸ
+   ç¥é–€åä¸‰åŠ
+   ç¹æŒ‡æŸ”åŠ
+   æ¢¯é›²è¹¤
+   å¤ªæ¥µæ‹³
+   å¤ªæ¥µåŠ
+   è™çˆªçµ•æˆ¶æ‰‹
+   æ­¦ç•¶é•·æ‹³
+   çœŸæ­¦ä¸ƒæˆªé™£
+  å°‘æ—ï¼š
+    é¾çˆªæ‰‹
+  å…¶å®ƒï¼š
+   å¯’å†°ç¶¿æŒ
+   é·¹çˆªæ“’æ‹¿æ‰‹
+   ä¹é™½ç¥åŠŸ
+   å¹»é™°æŒ‡
+   æ··å…ƒåŠŸ
+   ç„å†¥ç¥æŒ
+   åƒè››è¬æ¯’æ‰‹
 
-±ÌÑª½££º
-   ÉñĞĞ°Ù±ä
-   ÆÆÓñÈ­
-   ·ü»¢ÕÆ
-   ³¤È­Ê®¶Î½õ
-   »ìÔªÕÆ
-   ½ğÉß½£·¨
-   ½ğÉßÓÎÉíÕÆ
-   ½ğÉß×¶·¨
+ç¢§è¡€åŠï¼š
+   ç¥è¡Œç™¾è®Š
+   ç ´ç‰æ‹³
+   ä¼è™æŒ
+   é•·æ‹³åæ®µéŒ¦
+   æ··å…ƒæŒ
+   é‡‘è›‡åŠæ³•
+   é‡‘è›‡éŠèº«æŒ
+   é‡‘è›‡éŒæ³•
 
-Ô§Ñìµ¶£º
-   ·ò¸¾µ¶·¨
+é´›é´¦åˆ€ï¼š
+   å¤«å©¦åˆ€æ³•
 
 
 

@@ -1,4 +1,4 @@
-// zhangfapu.c ê»ÌìÕÆ·¨Æ×
+// zhangfapu.c æ˜Šå¤©æŒæ³•è­œ
 // By Lgg,1998.9
 
 #include <ansi.h>
@@ -7,13 +7,13 @@ inherit F_UNIQUE;
 
 void create()
 {
-        set_name(HIY"ê»ÌìÕÆ·¨Æ×" NOR, ({ "zhangfa pu","pu", }));
+        set_name(HIY"æ˜Šå¤©æŒæ³•è­œ" NOR, ({ "zhangfa pu","pu", }));
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
-                set("long", "ÕâÊÇÒ»±¾ºÜÆÆ¾ÉµÄÊé£¬ÊéÀïÃæºÃÏó»¹ÓĞÒ»Ğ©Ğ¡ÈË»ÓÎèÈ­½ÅµÄÍ¼ĞÎ¡£\n");
+                set("unit", "æœ¬");
+                set("long", "é€™æ˜¯ä¸€æœ¬å¾ˆç ´èˆŠçš„æ›¸ï¼Œæ›¸è£¡é¢å¥½è±¡é‚„æœ‰ä¸€äº›å°äººæ®èˆæ‹³è…³çš„åœ–å½¢ã€‚\n");
                 set("value", 0);
                 set("material", "paper");
                 set("skill", ([

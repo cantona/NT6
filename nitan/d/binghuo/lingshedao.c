@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "���ߵ���̲");
+        set("short", "靈蛇島海灘");
         set("long", @LONG
-���Ǹ���ľ�д�Ĵ󵺣��������ͦ�Σ������źü�����ɽ����
-����ɽʯֱ���뺣������ǳ̲��������ֻ�������͡�
+這是個樹木蔥翠的大島，島上奇峰挺拔，聳立著好幾座高山。島
+西端山石直降入海，並無淺灘，往來船只近岸泊就。
 LONG );
         set("outdoors", "lingshe");
         set("exits", ([

@@ -6,13 +6,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(NOR + RED "¶¾Íè" NOR, ({ "du wan", "du", "wan", "duwan" }));
+        set_name(NOR + RED "æ¯’ä¸¸" NOR, ({ "du wan", "du", "wan", "duwan" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", RED "ÕâÊÇÒ»Á£ÓÉ¶¾³æ¶¾Òº¾«ÖÆ¶ø³ÉµÄ¶¾Ò©£¬¶¾ÐÔÃÍÁÒÖ®¼«¡£\n" NOR);
-                set("base_unit", "¿Å");
-                set("unit", "¿Å");
+                set("long", RED "é€™æ˜¯ä¸€ç²’ç”±æ¯’èŸ²æ¯’æ¶²ç²¾åˆ¶è€Œæˆçš„æ¯’è—¥ï¼Œæ¯’æ€§çŒ›çƒˆä¹‹æ¥µã€‚\n" NOR);
+                set("base_unit", "é¡†");
+                set("unit", "é¡†");
                 set("base_value", 100);
                 set("base_weight", 10);
                 set("poison_type", "poison");
@@ -22,7 +22,7 @@ void create()
                 set("poison", ([
                         "level" : 800,
                         "id"    : "ding chunqiu",
-                        "name"  : "¶¾",
+                        "name"  : "æ¯’",
                         "duration": 40,
                 ]));
                 set("no_sell", 1);
@@ -33,8 +33,8 @@ void create()
 
 int do_effect(object me)
 {
-        message_vision("$NÒ»Ñö²±£¬°Ñ¶¾Ò©È«²¿µ¹ÈëÁË×ìÖÐ¡£\n", me);
-        set_temp("die_reason", "³ÔÁË¶¾Ò©È¥¼ûºÚ°×ÎÞ³£ÁË", me);
+        message_vision("$Nä¸€ä»°è„–ï¼ŒæŠŠæ¯’è—¥å…¨éƒ¨å€’å…¥äº†å˜´ä¸­ã€‚\n", me);
+        set_temp("die_reason", "åƒäº†æ¯’è—¥åŽ»è¦‹é»‘ç™½ç„¡å¸¸äº†", me);
         me->die();
 
         destruct(this_object());

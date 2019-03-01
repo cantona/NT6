@@ -4,12 +4,12 @@ inherit "/maze/necropolis/necropolis_npc";
 void do_swing();
 void create()
 {
-        string *names = ({"Ê¬É·"}); 
+        string *names = ({"å±ç…ž"}); 
         // set_name( names[random(sizeof(names))], ({ "power zombie","zombie"}));
         set_name( names[random(sizeof(names))], ({ "power zombie" }));
         set("vendetta_mark","zombie");
-        set("long", "ÕâÊÇÒ»¸ö¸¯ÀÃµÄ½©Ê¬¡£\n");
-        set("title", HIB "(¹íÆø)" NOR); 
+        set("long", "é€™æ˜¯ä¸€å€‹è…çˆ›çš„åƒµå±ã€‚\n");
+        set("title", HIB "(é¬¼æ°£)" NOR); 
 
         set("str", 50);
         set("con", 120);
@@ -23,7 +23,7 @@ void create()
         set("attitude", "peaceful");
         //set("chat_chance", 2);
         //set("chat_msg", ({
-        //                "÷¼÷Ã¿Õ¶´µÄÑÛ¿ôÀïÉÁË¸×Å¿ÉÅÂµÄÓ«¹â¡£\n"
+        //                "éª·é«ç©ºæ´žçš„çœ¼çœ¶è£¡é–ƒçˆè‘—å¯æ€•çš„ç†’å…‰ã€‚\n"
         //}) ); 
 
         set("chat_chance_combat", 100);
@@ -33,7 +33,7 @@ void create()
 
         set("combat_exp", 150000000);
         set("bellicosity", 5 );
-        set("death_msg",RED"\n$N»¯×÷ÁËÒ»Ì²ÑªË®¡£\n\n"NOR);
+        set("death_msg",RED"\n$NåŒ–ä½œäº†ä¸€ç˜è¡€æ°´ã€‚\n\n"NOR);
 
         set_skill("force", 120);
         set_skill("dodge", 120);
@@ -74,7 +74,7 @@ void do_swing() {
         if(!enemies || sizeof(enemies)==0)
                 return;
 
-        msg = RED"$NÒ»Éùº¿½Ð£¬Éí×ÓÐý·ç°ã×ª¶¯ÆðÀ´£¡£¡\n"NOR;        
+        msg = RED"$Nä¸€è²åšŽå«ï¼Œèº«å­æ—‹é¢¨èˆ¬è½‰å‹•èµ·ä¾†ï¼ï¼\n"NOR;        
         message_vision(msg,this_object());
         addn_temp("apply/damage",400);
         addn_temp("apply/attack",400);
@@ -83,7 +83,7 @@ void do_swing() {
                         return;
                 if(!present(enemy, environment(this_object())))
                 return; 
-                msg = RED"Ò»µÀ×¦Ó°Ï®Ïò$n£¡"NOR;
+                msg = RED"ä¸€é“çˆªå½±è¥²å‘$nï¼"NOR;
                 message_vision(msg,this_object(), enemy);
                 COMBAT_D->do_attack(this_object(),enemy); 
         }

@@ -8,13 +8,13 @@
 #pragma save_binary
 
 mapping gems = ([
-        "ruby":         "ºì±¦Ê¯",
-        "topaz":        "»Æ±¦Ê¯",
-        "sapphire":     "À¶±¦Ê¯",
-        "emerald":      "ôä´äÂÌ",
-        "amethyst":     "×ÏË®¾§",
-        "diamond":      "Ë®¾§×ê",
-        "skull":        "÷¼÷ÃÍ·",
+        "ruby":         "ç´…å¯¶çŸ³",
+        "topaz":        "é»ƒå¯¶çŸ³",
+        "sapphire":     "è—å¯¶çŸ³",
+        "emerald":      "ç¿¡ç¿ ç¶ ",
+        "amethyst":     "ç´«æ°´æ™¶",
+        "diamond":      "æ°´æ™¶é‘½",
+        "skull":        "éª·é«é ­",
 ]);
 mapping gems_color = ([
         "ruby":         HIR,
@@ -27,10 +27,10 @@ mapping gems_color = ([
 ]);
 
 string *gems_level = ({
-        "Ï¸ËéµÄ",
+        "ç´°ç¢Žçš„",
         "",
-        "Ï¡ÊÀ",
-        "ÉñÖ®",
+        "ç¨€ä¸–",
+        "ç¥žä¹‹",
 });
 
 string *gems_level_id = ({
@@ -59,7 +59,7 @@ mixed identify_ob(object me, object ob)
         mixed   obj;
         mapping data, temp;
         
-        level = query("level", ob); // Ö»ÓÐ±¦Ê¯ÖÖÀà£¬Ã»ÓÐµÈ¼¶
+        level = query("level", ob); // åªæœ‰å¯¶çŸ³ç¨®é¡žï¼Œæ²’æœ‰ç­‰ç´š
         if( !level )
         {
                 mf = query_temp("magic_find", me);
@@ -98,11 +98,11 @@ mixed identify_ob(object me, object ob)
         return obj;
 }
 
-// ÎÞÉÏÉñÆ·->ÉÏ¹ÅÉñÆ·->ÖÐ¹ÅÉñÆ·->Ô¶¹ÅÉñÆ·->Ì«¹ÅÉñÆ·
-// Ì«Ê¼¡¢Ì«³õ¡¢Ì«Ðþ Ì«Ðé¡¢ºé»Ä
-// Ú¤¹ÅÖæ¡¢Ì«¹ÅÖæ¡¢Ôª¹ÅÖæºÍÏÔÉúÖæ
-// ÆäÖÐÔª¹ÅÖæÓÖ»®·ÖÎª¹ÅÔª¹Å´ú¡¢ÖÐÔª¹Å´úºÍÐÂÔª¹Å´ú£»
-// ÏÔÉúÖæ»®·Ö¹ÅÉú´ú¡¢ÖÐÉú´úºÍÐÂÉú´ú¡£
+// ç„¡ä¸Šç¥žå“->ä¸Šå¤ç¥žå“->ä¸­å¤ç¥žå“->é å¤ç¥žå“->å¤ªå¤ç¥žå“
+// å¤ªå§‹ã€å¤ªåˆã€å¤ªçŽ„ å¤ªè™›ã€æ´ªè’
+// å†¥å¤å®™ã€å¤ªå¤å®™ã€å…ƒå¤å®™å’Œé¡¯ç”Ÿå®™
+// å…¶ä¸­å…ƒå¤å®™åˆåŠƒåˆ†ç‚ºå¤å…ƒå¤ä»£ã€ä¸­å…ƒå¤ä»£å’Œæ–°å…ƒå¤ä»£ï¼›
+// é¡¯ç”Ÿå®™åŠƒåˆ†å¤ç”Ÿä»£ã€ä¸­ç”Ÿä»£å’Œæ–°ç”Ÿä»£ã€‚
 varargs int identify_ultimate_ob(object item, int close)
 {
         mapping data, prop;
@@ -192,8 +192,8 @@ varargs int identify_ultimate_ob(object item, int close)
 
                 if (!close)
                 CHANNEL_D->do_channel(find_object(ITEM_D), "rumor",
-                              "ÌýËµÉÏ¹ÅÉñÆ·" + item->name() + HIM +
-                              "À´µ½ÁËÈË¼ä¡£");
+                              "è½èªªä¸Šå¤ç¥žå“" + item->name() + HIM +
+                              "ä¾†åˆ°äº†äººé–“ã€‚");
 
 
                 log_file("static/ultimate", sprintf("%s Have 69 SN. Wash %d Times. %s\n",
@@ -243,8 +243,8 @@ varargs int identify_ultimate_ob(object item, int close)
 
                         if (!close)
                         CHANNEL_D->do_channel(find_object(ITEM_D), "rumor",
-                                "ÌýËµÉÏ¹ÅÉñÆ·" + item->name() + HIM +
-                                "À´µ½ÁËÈË¼ä¡£");
+                                "è½èªªä¸Šå¤ç¥žå“" + item->name() + HIM +
+                                "ä¾†åˆ°äº†äººé–“ã€‚");
 
                 } else
                 {
@@ -286,8 +286,8 @@ varargs int identify_ultimate_ob(object item, int close)
 
                         if (!close)
                         CHANNEL_D->do_channel(find_object(ITEM_D), "rumor",
-                                "ÌýËµÔ¶¹ÅÉñÆ·" + item->name() + HIM +
-                                "À´µ½ÁËÈË¼ä¡£");
+                                "è½èªªé å¤ç¥žå“" + item->name() + HIM +
+                                "ä¾†åˆ°äº†äººé–“ã€‚");
                 }
 
                 set("ultimate/ob", 1, item);
@@ -339,8 +339,8 @@ varargs int identify_ultimate_ob(object item, int close)
                 item->save();
                 if (!close)
                 CHANNEL_D->do_channel(find_object(ITEM_D), "rumor",
-                              "ÌýËµÔ¶¹ÅÉñÆ·" + item->name() + HIM +
-                              "À´µ½ÁËÈË¼ä¡£");
+                              "è½èªªé å¤ç¥žå“" + item->name() + HIM +
+                              "ä¾†åˆ°äº†äººé–“ã€‚");
 
                 log_file("static/ultimate", sprintf("%s Have 105 SN. Wash %d Times. %s\n",
                           base_name(item),query("enchase/wash", item),TIME_D->replace_ctime(time())));
@@ -413,8 +413,8 @@ varargs int identify_ultimate_ob(object item, int close)
                 item->save();
                 if (!close)
                 CHANNEL_D->do_channel(find_object(ITEM_D), "rumor",
-                              "ÌýËµÌ«¹ÅÉñÆ·" + item->name() + HIM +
-                              "À´µ½ÁËÈË¼ä¡£");
+                              "è½èªªå¤ªå¤ç¥žå“" + item->name() + HIM +
+                              "ä¾†åˆ°äº†äººé–“ã€‚");
 
                 log_file("static/ultimate", sprintf("%s Have 121 SN. Wash %d Times. %s\n",
                           base_name(item),query("enchase/wash", item),TIME_D->replace_ctime(time())));

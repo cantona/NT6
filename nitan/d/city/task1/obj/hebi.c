@@ -1,22 +1,22 @@
-// hebi.c º××ì±Ê
+// hebi.c é¶´å˜´ç­†
 
 #include <weapon.h>
 inherit DAGGER;
 
 void create()
 {
-        set_name("º××ì±Ê", ({ "hebi" }));
+        set_name("é¶´å˜´ç­†", ({ "hebi" }));
         set_weight(5000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ö§");
-                set("long", "ÕâÊÇÒ»Ö§±Ê¶ËÈñÈçº××ì£¬È´ÊÇ¾§¹âÉÁÁÁµÄ±øÆ÷¡£\n");
+                set("unit", "æ”¯");
+                set("long", "é€™æ˜¯ä¸€æ”¯ç­†ç«¯éŠ³å¦‚é¶´å˜´ï¼Œå»æ˜¯æ™¶å…‰é–ƒäº®çš„å…µå™¨ã€‚\n");
                 set("value", 1500);
                 set("rigidity",100);
                 set("material", "steel");
-                set("wield_msg", "$N³é³öÒ»Ö§$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²å»ØÑü¼ä¡£\n");
+                set("wield_msg", "$NæŠ½å‡ºä¸€æ”¯$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°‡æ‰‹ä¸­çš„$næ’å›è…°é–“ã€‚\n");
         }
           init_dagger(40);
         setup();

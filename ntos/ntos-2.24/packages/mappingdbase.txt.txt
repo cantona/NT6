@@ -1,38 +1,38 @@
-RW°æµÄdatabase
-Ìá¹©8¸öefun£¬ºÍ/feature/dbase.cÀïÃæµÄÒ»ÃşÒ»Ñù
+RWç‰ˆçš„database
+æä¾›8å€‹efunï¼Œå’Œ/feature/dbase.cè£¡é¢çš„ä¸€æ‘¸ä¸€æ¨£
 set query delete set_temp query_temp delete_temp
-addn addn_temp(ÕâÁ½¸öÖ»ÄÜ¶ÔintĞÍ²Ù×÷)
-Ê¹ÓÃµÄÊ±ºòÒ»¶¨ÒªÔÚµ±Ç°Îï¼şÀïÃæÉùÃ÷ÁË
-mapping database(¶ÔÓ¦set query delete addnËÄ¸öefun)ºÍ
-mapping temp_database(¶ÔÓ¦set_tempµÈËÄ¸öefun)
+addn addn_temp(é€™å…©å€‹åªèƒ½å°intå‹æ“ä½œ)
+ä½¿ç”¨çš„æ™‚å€™ä¸€å®šè¦åœ¨ç•¶å‰ç‰©ä»¶è£¡é¢è²æ˜äº†
+mapping database(å°æ‡‰set query delete addnå››å€‹efun)å’Œ
+mapping temp_database(å°æ‡‰set_tempç­‰å››å€‹efun)
 
-ÎÒ²»Ì«Ï²»¶ÕâÖÖÓÃ·¨£¬Õâ¸ödatabase.cÊÇÎªÁËÌá¹©Ğ§ÂÊ¶ø°Ñlib funĞ´µ½driverÀï³ÉÎª
-efun£¬²»¾ßÓĞÍ¨ÓÃĞÔ£¬ÊÇÎªÁËÃæ¶ÔRWµÄÊµ¼ÊÇé¿öµÄÌØÀı(RWÀïÃæµÄmapping ºÜ´ó)
-¶øÇÒÒ²ÆÆ»µÁËefunµÄ·â×°ĞÔ£¬ËùÒÔÎÒ¸ÄĞ´ÁË¡£
+æˆ‘ä¸å¤ªå–œæ­¡é€™ç¨®ç”¨æ³•ï¼Œé€™å€‹database.cæ˜¯ç‚ºäº†æä¾›æ•ˆç‡è€ŒæŠŠlib funå¯«åˆ°driverè£¡æˆç‚º
+efunï¼Œä¸å…·æœ‰é€šç”¨æ€§ï¼Œæ˜¯ç‚ºäº†é¢å°RWçš„å¯¦éš›æƒ…æ³çš„ç‰¹ä¾‹(RWè£¡é¢çš„mapping å¾ˆå¤§)
+è€Œä¸”ä¹Ÿç ´å£äº†efunçš„å°è£æ€§ï¼Œæ‰€ä»¥æˆ‘æ”¹å¯«äº†ã€‚
 
-×¢£ºmb ÊÇmappingbaseµÄÒâË¼£¬ÎÒ²»ÏëÇÀÁËdatabaseÕâÃû×Ö¡£
+æ³¨ï¼šmb æ˜¯mappingbaseçš„æ„æ€ï¼Œæˆ‘ä¸æƒ³æ¶äº†databaseé€™åå­—ã€‚
 
 mixed mb_set(string, mixed, void | string | mapping, void | object);
-»ìºÏ mb_set(×Ö´®, »ìºÏ, ÎŞ »ò ×Ö´® »ò Ó³Éä, ÎŞ »ò Îï¼ş)
+æ··åˆ mb_set(å­—ä¸², æ··åˆ, ç„¡ æˆ– å­—ä¸² æˆ– æ˜ å°„, ç„¡ æˆ– ç‰©ä»¶)
 
-¾ßÌåĞÎÊ½ÓĞÏÂÁĞÎåÖÖ£¬
+å…·é«”å½¢å¼æœ‰ä¸‹åˆ—äº”ç¨®ï¼Œ
 mixed mb_set(string idx, mixed value)
 mixed mb_set(string idx, mixed value, object ob)
 mixed mb_set(string idx, mixed value, mapping base)
 mixed mb_set(string idx, mixed value, string base_name)
 mixed mb_set(string idx, mixed value, string base_name, object ob)
 
-mixed mb_set(string idx, mixed value, mapping base, object ob)ÊÇ²»Ö§³ÖµÄ´íÎóĞÎÊ½¡£
+mixed mb_set(string idx, mixed value, mapping base, object ob)æ˜¯ä¸æ”¯æŒçš„éŒ¯èª¤å½¢å¼ã€‚
 
 
-¹¦ÓÃÊÇ½«Îï¼şobÖĞµÄ±äÁ¿ÃûÎªbase_nameµÄÓ³ÉäÖĞÒÔidxÎª¼üµÄÖµÉèÖÃÎªvalue
-ÈôÃ»ÓĞÖÆ¶¨Îï¼şÔõÎªµ±Ç°Îï¼ş£¬ÈôÃ»ÓĞÖÆ¶¨Ó³ÉäµÄ±äÁ¿Ãû³Æ£¬ÔòÎª "dbase"
-¿ÉÒÔÖ±½ÓÖ¸Ã÷Ó³Éä mapping base£»µ±Ê¹ÓÃ
-mixed mb_set(string idx, mixed value, string base_name)µÄĞÎÊ½Ê±£¬Ò»¶¨¿ÉÒÔÊ¹ÓÃ
-mixed mb_set(string idx, mixed value, mapping base)£¬ÇÒºóÕßµÄĞ§ÂÊ¸ßÓÚÇ°Õß
+åŠŸç”¨æ˜¯å°‡ç‰©ä»¶obä¸­çš„è®Šé‡åç‚ºbase_nameçš„æ˜ å°„ä¸­ä»¥idxç‚ºéµçš„å€¼è¨­ç½®ç‚ºvalue
+è‹¥æ²’æœ‰åˆ¶å®šç‰©ä»¶æ€ç‚ºç•¶å‰ç‰©ä»¶ï¼Œè‹¥æ²’æœ‰åˆ¶å®šæ˜ å°„çš„è®Šé‡åç¨±ï¼Œå‰‡ç‚º "dbase"
+å¯ä»¥ç›´æ¥æŒ‡æ˜æ˜ å°„ mapping baseï¼›ç•¶ä½¿ç”¨
+mixed mb_set(string idx, mixed value, string base_name)çš„å½¢å¼æ™‚ï¼Œä¸€å®šå¯ä»¥ä½¿ç”¨
+mixed mb_set(string idx, mixed value, mapping base)ï¼Œä¸”å¾Œè€…çš„æ•ˆç‡é«˜äºå‰è€…
 
 
-ÒÔÏÂÁ½¸öefunºÍÉÏÃæµÄsetÇé¿öÀàËÆ
+ä»¥ä¸‹å…©å€‹efunå’Œä¸Šé¢çš„setæƒ…æ³é¡ä¼¼
 
 mixed mb_query(string, void | string | mapping, void | object);
 

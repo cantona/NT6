@@ -5,12 +5,12 @@ inherit F_MASTER;
 #include <ansi.h>
 void create()
 {
-        set_name("¸ßÀÏÕß", ({ "gao-laozhe", "gao" }));
-        set("title", HIR"»ªÉ½µÚÊ®¶ş´ú³¤ÀÏ"NOR);
+        set_name("é«˜è€è€…", ({ "gao-laozhe", "gao" }));
+        set("title", HIR"è¯å±±ç¬¬åäºŒä»£é•·è€"NOR);
         set("long", 
-"Ëû¾ÍÊÇ»ªÉ½µÄ³¤ÀÏ¸ßÀÏÕß¡£Ò»¸±»ë²»ÔÚºõµÄÄ£Ñù£¬¿ªÀÊÀÖÌì£¬ÍòÊÂ²»İÓ»³£¬\n"
-"µ«ÊÂÊÂ×·ËæËûµÄÊ¦ĞÖ°«ÀÏÕß¡£\n");
-        set("gender", "ÄĞĞÔ");
+"ä»–å°±æ˜¯è¯å±±çš„é•·è€é«˜è€è€…ã€‚ä¸€å‰¯æ¸¾ä¸åœ¨ä¹çš„æ¨¡æ¨£ï¼Œé–‹æœ—æ¨‚å¤©ï¼Œè¬äº‹ä¸ç¸ˆæ‡·ï¼Œ\n"
+"ä½†äº‹äº‹è¿½éš¨ä»–çš„å¸«å…„çŸ®è€è€…ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 65);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -53,7 +53,7 @@ void create()
         map_skill("sword", "huashan-sword");
         map_skill("strike", "hunyuan-zhang");
 
-        create_family("»ªÉ½ÅÉ", 12, "µÜ×Ó");
+        create_family("è¯å±±æ´¾", 12, "å¼Ÿå­");
 
         set("chat_chance_combat", 60);
         set("chat_msg_combat", ({

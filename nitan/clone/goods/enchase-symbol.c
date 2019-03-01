@@ -3,13 +3,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIM "ÏâÇ¶·û" NOR, ({ "enchase symbol", "symbol" }));
+        set_name(HIM "é‘²åµŒç¬¦" NOR, ({ "enchase symbol", "symbol" }));
         set_weight(3000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIR "´Ë·ûÎÄ¾ßÓĞÊ¹ÏâÇ¶±¦ÎïÊ±ºòÓµÓĞ100%³É¹¦ÂÊ¡£\n" NOR);
-                set("unit", "ÕÅ");
+                set("long", HIR "æ­¤ç¬¦æ–‡å…·æœ‰ä½¿é‘²åµŒå¯¶ç‰©æ™‚å€™æ“æœ‰100%æˆåŠŸç‡ã€‚\n" NOR);
+                set("unit", "å¼µ");
                 set("value", 500000);
         }
         setup();

@@ -5,25 +5,25 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "Ǯׯ");
+	set("short", "錢莊");
         set("long", @LONG
-Ǯ�ҿ���Ǯׯ������ԭ�����������ֺź�������õ�Ǯׯ�ˣ���
-�м��������ʷ����ȫ�����ض��зֺš������е���Ʊ�������ã�ͨ
-�д��ϱ���Ǯׯ������һ���˶�ߵĺ�ľ��̨����̨�������һ��
-���� (paizi)������С�۾���Ǯ�ϰ������ڹ�̨���濴�����ʱ�����
-����û��ע�⵽�������
+錢家開的錢莊，在中原可算是最老字號和信譽最好的錢莊了，已
+有幾百年的歷史，在全國各地都有分號。它發行的銀票信譽極好，通
+行大江南北。錢莊中央有一半人多高的紅木櫃台，櫃台上面掛著一塊
+牌子 (paizi)。戴著小眼鏡的錢老板正坐在櫃台後面看他的帳本，似
+乎並沒有注意到你進來。
 LONG );
 	set("exits", ([
 		"east" : "/d/city/beidajie1",
 	]));
 	set("item_desc", ([
 		"paizi" : @TEXT
-     ��Ǯׯ�ṩ���·���
-      ��Ǯ        deposit����cun
-      ȡǮ        withdraw����qu
-      Ǯ�Ҷһ�    convert����duihuan
-      ����        check����chazhang
-      ת��        transfer����zhuanzhang
+     本錢莊提供以下服務：
+      存錢        deposit或者cun
+      取錢        withdraw或者qu
+      錢幣兌換    convert或者duihuan
+      查帳        check或者chazhang
+      轉帳        transfer或者zhuanzhang
 TEXT
 	]) );
 

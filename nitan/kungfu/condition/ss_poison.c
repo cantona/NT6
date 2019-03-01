@@ -6,14 +6,14 @@ inherit POISON;
 
 string name() { return "ss_poison"; }
 
-string chinese_name() { return "ÉúËÀ·û"; }
+string chinese_name() { return "ç”Ÿæ­»ç¬¦"; }
 
 string update_msg_others()
 {
-       return HIR "Ö»¼û$N" HIR "°§º¿Á¬Á¬£¬Ë«ÊÖÔÚÉíÉÏÒ»ÕóÂÒ×¥£¬¿à²»¿°ÑÔ¡£\n" NOR;
+       return HIR "åªè¦‹$N" HIR "å“€åšé€£é€£ï¼Œé›™æ‰‹åœ¨èº«ä¸Šä¸€é™£äº‚æŠ“ï¼Œè‹¦ä¸å ªè¨€ã€‚\n" NOR;
 }
 
 string update_msg_self()
 {
-        return HIB "ºöÈ»Ò»¹Éº®Á÷¼Ğ×ÅÒ»Õó×ÆÈÈÓ¿ÉÏĞÄÀ´£¬ÄãÖĞµÄÉúËÀ·û·¢×÷ÁË£¡\n" NOR;
+        return HIB "å¿½ç„¶ä¸€è‚¡å¯’æµå¤¾è‘—ä¸€é™£ç¼ç†±æ¹§ä¸Šå¿ƒä¾†ï¼Œä½ ä¸­çš„ç”Ÿæ­»ç¬¦ç™¼ä½œäº†ï¼\n" NOR;
 }

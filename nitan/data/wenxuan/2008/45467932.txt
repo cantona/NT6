@@ -1,12 +1,12 @@
-subject : �ٱ���ͨ����������
-author_name : ޱ���
+subject : 百變神通（易容術）
+author_name : 薇大呆
 author_id : vivi
 time : 1207566746
-board : ޱ��������԰�
+board : 薇大呆的留言板
 file : /data/analecta/2008/45467932.txt
 add_time : 1211023007
 content :
-��Ҫ����30���ϣ��ڳ����̻�Ժ��¥��e�ߣ�ɱ�˴��֣�push����enter������С���������ɱ�ˣ�
-�������ţ��㽻����Ա�⣬��Ա���������壬����ȥ��С�����������ߣ�����ȥ����Ա�⣬
-���Եõ���,�ܶ���1-200������
+需要膂力30以上，在長安煙花院三樓向e走，殺了打手，push床；enter；除了小姑娘，其他都殺了，
+她給你信，你交給蕭員外，蕭員外會給你玉佩，你再去見小姑娘，她會跟你走，帶她去見蕭員外，
+可以得到書,能讀到1-200易容術
 [2;37;0m

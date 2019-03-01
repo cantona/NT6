@@ -1,23 +1,23 @@
         objects(3)                LP MudOSv21c7                (7 Jul 1996)
-        º¯ÊýÃû³Æ:
-                objects - ´«»ØÒ»¸öÒÑÔØÈëÖ®Îï¼þµÄÕóÁÐ (array).
-        º¯ÊýÓï·¨:
+        å‡½æ•¸åç¨±:
+                objects - å‚³å›žä¸€å€‹å·²è¼‰å…¥ä¹‹ç‰©ä»¶çš„é™£åˆ— (array).
+        å‡½æ•¸èªžæ³•:
                 object *objects( string func, object ob ); 
                 object *objects( function f );
-                Îï¼þ *objects( ×Ö´® func, Îï¼þ ob );
-                Îï¼þ *objects( º¯Ê½Ö¸±ê f );
-        º¯ÊýÓÃ·¨:
-                objects() ´«»Ø mud  ÀïÒÑ¾­ÔØÈëÖ®Îï¼þµÄÕóÁÐ. Çë×¢Òâ, 
-                Èç¹ûÏµÍ³Éè¶¨µÄ×î´óÕóÁÐ³¤¶È (maximum array size)Ì«µÍ, 
-                objects() ´«»ØµÄÕóÁÐÄÚÈÝ»áÖÐ¶ÏÔÚ×î´ó³¤¶ÈµÄµØ·½. ÕâÑù
-                Ò»À´, objects() Ò²¾ÍÃ»ÓÐÊ²÷áÓÃ´¦.
-                Èç¹ûÖ¸¶¨ÁË func ºÍ ob Á½¸ö²ÎÊý, Ôò»áºô½Ð ob->func(), 
-                ²¢ÒÔËùÓÐÒÑ¾­ÔØÈëµÄÎï¼þ×÷Îª func() µÄ²ÎÊý. Èç¹ûº¯Ê½´«
-                »Ø·ÇÁãÖµ, ´ËÎï¼þ¾Í»á±» objects()  ´«»ØÀ´. Èç¹ûÊÇÁãÔò
-                ²»»á.
-                Èç¹ûÖ¸¶¨ f, ËùÓÐÒÑÔØÈëµÄÎï¼þ¶¼»áºô½Ðº¯Ê½Ö¸±ê f. ÀýÈç:
-                objects( (: clonep :) ) »á´«»ØÏÖ´æÈ«²¿µÄ¸´ÖÆÎï¼þµÄÁÐ±í.
-        ²Î¿¼º¯Êý:
+                ç‰©ä»¶ *objects( å­—ä¸² func, ç‰©ä»¶ ob );
+                ç‰©ä»¶ *objects( å‡½å¼æŒ‡æ¨™ f );
+        å‡½æ•¸ç”¨æ³•:
+                objects() å‚³å›ž mud  è£¡å·²ç¶“è¼‰å…¥ä¹‹ç‰©ä»¶çš„é™£åˆ—. è«‹æ³¨æ„, 
+                å¦‚æžœç³»çµ±è¨­å®šçš„æœ€å¤§é™£åˆ—é•·åº¦ (maximum array size)å¤ªä½Ž, 
+                objects() å‚³å›žçš„é™£åˆ—å…§å®¹æœƒä¸­æ–·åœ¨æœ€å¤§é•·åº¦çš„åœ°æ–¹. é€™æ¨£
+                ä¸€ä¾†, objects() ä¹Ÿå°±æ²’æœ‰ä»€éº¼ç”¨è™•.
+                å¦‚æžœæŒ‡å®šäº† func å’Œ ob å…©å€‹åƒæ•¸, å‰‡æœƒå‘¼å« ob->func(), 
+                ä¸¦ä»¥æ‰€æœ‰å·²ç¶“è¼‰å…¥çš„ç‰©ä»¶ä½œç‚º func() çš„åƒæ•¸. å¦‚æžœå‡½å¼å‚³
+                å›žéžé›¶å€¼, æ­¤ç‰©ä»¶å°±æœƒè¢« objects()  å‚³å›žä¾†. å¦‚æžœæ˜¯é›¶å‰‡
+                ä¸æœƒ.
+                å¦‚æžœæŒ‡å®š f, æ‰€æœ‰å·²è¼‰å…¥çš„ç‰©ä»¶éƒ½æœƒå‘¼å«å‡½å¼æŒ‡æ¨™ f. ä¾‹å¦‚:
+                objects( (: clonep :) ) æœƒå‚³å›žç¾å­˜å…¨éƒ¨çš„å¾©åˆ¶ç‰©ä»¶çš„åˆ—è¡¨.
+        åƒè€ƒå‡½æ•¸:
                 livings(3), users(3)
-        ÊÖ²á·­Òë:
+        æ‰‹å†Šç¿»è­¯:
                 Phoebus@ZH        97.Apr.24.                (Writen 5/23/97)

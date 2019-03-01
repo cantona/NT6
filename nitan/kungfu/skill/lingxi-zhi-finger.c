@@ -1,6 +1,6 @@
 // This is player's own skill (Write by Lonely@nt2)
-//CreatebyĞ¡Ñı(Sata)atTue May 10 13:11:08 2011
-// ÁéÏ¬Ò»Ö¸Ö¸(lingxi-zhi-finger.c)
+//Createbyå°å¦–(Sata)atTue May 10 13:11:08 2011
+// éˆçŠ€ä¸€æŒ‡æŒ‡(lingxi-zhi-finger.c)
 
 #include <ansi.h>
 inherit SKILL;        
@@ -9,59 +9,59 @@ int is_invent_skill() { return 1; }
 
 mapping *action = ({
 // ZHAOSHI : 0
-([      "action" : "$NË«±ÛÎ¢Çú£¬Á½È­½ôÎÕ£¬Ò»Ê½¡¸Áé¹âÕ§ÏÖ¡¹£¬Ë«ÊÖÊ³Ö¸ÃÍµÄµãÏò$n¡£",
+([      "action" : "$Né›™è‡‚å¾®æ›²ï¼Œå…©æ‹³ç·Šæ¡ï¼Œä¸€å¼ã€Œéˆå…‰ä¹ç¾ã€ï¼Œé›™æ‰‹é£ŸæŒ‡çŒ›çš„é»å‘$nã€‚",
 	"attack" : 260,
 	"damage" : 260,
 	"force" : 260,
 	"dodge" : 260,
 	"parry" : 260,
 	"lvl" : 100,
-	"damage_type" : "ğöÉË",
-	"skill_name" : "Áé¹âÕ§ÏÖ"
+	"damage_type" : "ç˜€å‚·",
+	"skill_name" : "éˆå…‰ä¹ç¾"
  ]),
 // ZHAOSHI : 1
-([      "action" : "$NÁ½±Û½ôÉì£¬ÍÈ½Å¼âµãµØ£¬Ò»Ê½¡¸Ò»Ö¸¾ªÌì¡¹£¬Ë«ÊÖ½£Ö¸½ôÎÕ¶Ô×¼$nµÄ$lÓÃ¾¡È«ÉíÁ¦Æø´ÁÁËÉÏÈ¥¡£",
+([      "action" : "$Nå…©è‡‚ç·Šä¼¸ï¼Œè…¿è…³å°–é»åœ°ï¼Œä¸€å¼ã€Œä¸€æŒ‡é©šå¤©ã€ï¼Œé›™æ‰‹åŠæŒ‡ç·Šæ¡å°æº–$nçš„$lç”¨ç›¡å…¨èº«åŠ›æ°£æˆ³äº†ä¸Šå»ã€‚",
 	"attack" : 260,
 	"damage" : 260,
 	"force" : 260,
 	"dodge" : 260,
 	"parry" : 260,
 	"lvl" : 110,
-	"damage_type" : "ğöÉË",
-	"skill_name" : "Ò»Ö¸¾ªÌì"
+	"damage_type" : "ç˜€å‚·",
+	"skill_name" : "ä¸€æŒ‡é©šå¤©"
  ]),
 // ZHAOSHI : 2
-([      "action" : "$NÁ½±Û½ôÉì£¬ÍÈ½Å¼âµãµØ£¬Ò»Ê½¡¸Ò»Ö¸¶¨À¤¡¹£¬×óÊÖÖĞÖ¸Ö±½ÓÖ¸Ïò$nµÄ$l",
+([      "action" : "$Nå…©è‡‚ç·Šä¼¸ï¼Œè…¿è…³å°–é»åœ°ï¼Œä¸€å¼ã€Œä¸€æŒ‡å®šå¤ã€ï¼Œå·¦æ‰‹ä¸­æŒ‡ç›´æ¥æŒ‡å‘$nçš„$l",
 	"attack" : 260,
 	"damage" : 260,
 	"force" : 260,
 	"dodge" : 260,
 	"parry" : 260,
 	"lvl" : 120,
-	"damage_type" : "ğöÉË",
-	"skill_name" : "Ò»Ö¸¶¨À¤"
+	"damage_type" : "ç˜€å‚·",
+	"skill_name" : "ä¸€æŒ‡å®šå¤"
  ]),
 // ZHAOSHI : 3
-([      "action" : "$NÁ½±Û½ôÉì£¬Ò»Ê½¡¸¶¨½­É½¡¹£¬ÓÒÊÖ´óÄ´Ö¸Ö±Ö¸$nµÄ$l¶øÈ¥",
+([      "action" : "$Nå…©è‡‚ç·Šä¼¸ï¼Œä¸€å¼ã€Œå®šæ±Ÿå±±ã€ï¼Œå³æ‰‹å¤§æ‹‡æŒ‡ç›´æŒ‡$nçš„$lè€Œå»",
 	"attack" : 260,
 	"damage" : 260,
 	"force" : 260,
 	"dodge" : 260,
 	"parry" : 260,
 	"lvl" : 130,
-	"damage_type" : "ğöÉË",
-	"skill_name" : "¶¨½­É½"
+	"damage_type" : "ç˜€å‚·",
+	"skill_name" : "å®šæ±Ÿå±±"
  ]),
 // ZHAOSHI : 4
-([      "action" : "$NË«ÕÆÊ®Ö¸²¢Æë£¬Ò»Ê½¡¸Ç§¾üÆÆ¡¹£¬´ø×Åî¸·çËÀËÀµÄËø×¡$n¡£",
+([      "action" : "$Né›™æŒåæŒ‡ä¸¦é½Šï¼Œä¸€å¼ã€Œåƒè»ç ´ã€ï¼Œå¸¶è‘—ç½¡é¢¨æ­»æ­»çš„é–ä½$nã€‚",
 	"attack" : 260,
 	"damage" : 260,
 	"force" : 260,
 	"dodge" : 260,
 	"parry" : 260,
 	"lvl" : 140,
-	"damage_type" : "ğöÉË",
-	"skill_name" : "Ç§¾üÆÆ"
+	"damage_type" : "ç˜€å‚·",
+	"skill_name" : "åƒè»ç ´"
  ]),
 // ZHAOSHI : 5
 });
@@ -69,9 +69,9 @@ mapping *action = ({
 int valid_learn(object me)
 {
         if( query_temp("weapon", me) || query_temp("secondary_weapon", me) )
-                return notify_fail("Á·"+"ÁéÏ¬Ò»Ö¸Ö¸"+"±ØĞë¿ÕÊÖ¡£\n");
+                return notify_fail("ç·´"+"éˆçŠ€ä¸€æŒ‡æŒ‡"+"å¿…é ˆç©ºæ‰‹ã€‚\n");
         if( query("max_neili", me)<50 )
-                return notify_fail("ÄãµÄÄÚÁ¦Ì«Èõ£¬ÎŞ·¨Á·"+"ÁéÏ¬Ò»Ö¸Ö¸"+"¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›å¤ªå¼±ï¼Œç„¡æ³•ç·´"+"éˆçŠ€ä¸€æŒ‡æŒ‡"+"ã€‚\n");
         return 1;
 }
 
@@ -117,9 +117,9 @@ int query_effect_parry(object attacker, object me)
 int practice_skill(object me)
 {
         if( query("qi", me)<25 )
-                return notify_fail("ÄãµÄÌåÁ¦²»¹»ÁË£¬ĞİÏ¢Ò»ÏÂÔÙÁ·°É¡£\n");
+                return notify_fail("ä½ çš„é«”åŠ›ä¸å¤ äº†ï¼Œä¼‘æ¯ä¸€ä¸‹å†ç·´å§ã€‚\n");
         if( query("neili", me)<3 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»ÁË£¬ĞİÏ¢Ò»ÏÂÔÙÁ·°É¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ äº†ï¼Œä¼‘æ¯ä¸€ä¸‹å†ç·´å§ã€‚\n");
         me->receive_damage("qi", 25);
         addn("neili", -3, me);
         return 1;
@@ -133,7 +133,7 @@ mixed hit_ob(object me, object victim, int damage)
         if (random(damage) > victim->query_str()) 
         {
                 result = ([ "damage" : damage ]);
-                result += ([ "msg" : HIW "ÄãÌıµ½¡¸¿¦àê¡¹Ò»ÉùÇáÏì£¬ÒÑ±»$NËù·¢É±Æø´ìÉË£¬$n¶ÙÊ±ÑªÃ°ÈıÕÉ£¡£¡£¡\n" NOR ]);
+                result += ([ "msg" : HIW "ä½ è½åˆ°ã€Œå–€åš“ã€ä¸€è²è¼•éŸ¿ï¼Œå·²è¢«$Næ‰€ç™¼æ®ºæ°£æŒ«å‚·ï¼Œ$né “æ™‚è¡€å†’ä¸‰ä¸ˆï¼ï¼ï¼\n" NOR ]);
 
                 return result;
         }

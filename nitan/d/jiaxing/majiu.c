@@ -3,11 +3,11 @@ inherit TRANS_ROOM;
 
 void create()
 {
-        set("short","Âí¾Ç");
+        set("short","é¦¬å»„");
         set("long", @LONG
-ÕâÊÇ¼ÎÐË³ÇµÄÂí¾Ç£¬³£Äê¹©Ó¦ÐÂÏÊ²ÝÁÏ¡£Âí¾ÇÓêéÜÏÂµÄÀÃÄ¾ÖùÉÏ
-¶¤×ÅÒ»¿éÆÆÄ¾ÅÆ(paizi)¡£    
-    Âí¾ÇÖÐ¶Ñ·ÅÖø¼¸¶Ñ²ÝÁÏ£¬ÕýÖÐÓÐÒ»¿Úãï²Û¡£
+é€™æ˜¯å˜‰èˆˆåŸŽçš„é¦¬å»„ï¼Œå¸¸å¹´ä¾›æ‡‰æ–°é®®è‰æ–™ã€‚é¦¬å»„é›¨æªä¸‹çš„çˆ›æœ¨æŸ±ä¸Š
+é‡˜è‘—ä¸€å¡Šç ´æœ¨ç‰Œ(paizi)ã€‚    
+    é¦¬å»„ä¸­å †æ”¾è‘—å¹¾å †è‰æ–™ï¼Œæ­£ä¸­æœ‰ä¸€å£æ³”æ§½ã€‚
 LONG );
         set("outdoors", "jiaxing");
         set("no_fight", 1);

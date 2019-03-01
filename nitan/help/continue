@@ -1,223 +1,222 @@
-������������������������������������������������������������
-                 ��$HIR$���߹�������ָ������$NOR$��                                     
-������������������������������������������������������������
+──────────────────────────────
+                 【$HIR$王者歸來新手指北進階$NOR$】                                     
+──────────────────────────────
 
-    ���߹����ȶ������Ѿ�15���ˣ����˺ܶ�������ѣ�MUD��Ϸ�Ѿ�
-�ܳ�ʱ��û����ô���ֹ��ˣ�����С��Ҳ����Ѫ���ڣ� ���˷ϻ�����
-˵�ˣ�����help start��help add_gift����Ӧ��֪����һ������Ӧ
-����ô���˰ɣ��ٺʹ��˵����һ�����⣬ �󲿷ֵ�������֮����
-ЩhelpȻ����ʣ�����λ�������㶫������ʲô�ġ� ��ʵ�ܲ��õ�һ
-����Ϊ��Ϊʲô˵�أ���Ϊ˭�����ʶ�����ƾ�յ����ģ� �����Ϊʲ
-ô��дhelp start��ʱ���Ƽ�����id������ǿ���˿϶��Ǵ��ף� ��
-Ϊ�������Ժ��ڵ���id��ʮ���������Ͼ��ʱ���Ҫ������ �϶�������
-����õ��������㡣
+    王者歸來穩定運行已經15天了，來了很多的新朋友，MUD遊戲已經
+很長時間沒有這麼熱鬧過了，看的小弟也是熱血沸騰， 好了廢話不多
+說了，看了help start和help add_gift後大家應該知道第一個大米應
+該怎麼練了吧，再和大家說這樣一個問題， 大部分的新手來之後看了
+些help然後就問：“那位大俠給點東西啊，什麼的” 其實很不好的一
+種行為，為什麼說呢，因為誰的物資都不是憑空得來的， 這就是為什
+麼我寫help start的時候不推薦練主id，而是強調了肯定是大米， 因
+為那樣練對後期的主id會十分有利，畢竟問別人要東西， 肯定不如自
+己獲得的那樣方便。
     
-    �ðɣ� ��������������ɣ�����ָ������ƪҪ�����Ǹ���������
-idӦ����ôѡ�츳���Լ�����������
+    好吧， 讓我們切入正題吧，新手指北進階篇要講的是各個門派主
+id應該怎麼選天賦，以及其主攻方向。
 
-    ���߹��Ŀǰ���ŵ��������ɼ������ܹ���22���� ���µ�������
-�漰�����ǵ����ӣ������Ƽ����츳����ΪʲôҪ����ѡ�� �ҾͲ�
-������ˣ���ҿ��Դ������������ã�
-    $HIG$�����ɣ�
-    �Ƽ��츳��$HIY$ str 21 int 21 con 18 dex 20
-    ����츳��$HIR$ str 30 int 30 con 30 dex 29
-    ��    ��$HIM$������ ���� ���ս�թ
-    �����ص㣺$HIW$��������ǿ����������
-    �Ƽ��书��$HIY$�׽ ��ղ����� �����ķ�
+    王者歸回目前開放的所有門派加起來總共有22個， 以下的排名不
+涉及到他們的優劣，至于推薦的天賦點數為什麼要這樣選擇， 我就不
+多解釋了，大家可以從其它幫助裡獲得：
+    $HIG$少林派：
+    推薦天賦：$HIY$ str 21 int 21 con 18 dex 20
+    最後天賦：$HIR$ str 30 int 30 con 30 dex 29
+    性    格：$HIM$狡黠多變 或者 陰險狡詐
+    門派特點：$HIW$防御力超強，精氣超長
+    推薦武功：$HIY$易筋經 金剛不壞體 禪宗心法
 
-    $HIG$�䵱�ɣ�
-    �Ƽ��츳��$HIY$ str 19 int 27 con 15 dex 19
-    ����츳��$HIR$ str 28 int 36 con 27 dex 28
-    ��    ��$HIM$������ ���� ���ս�թ
-    �����ص㣺$HIW$�м�ͻ������Ѫ����
-    �Ƽ��书��$HIY$̫��ϵ�� ��ѧ�ķ�
+    $HIG$武當派：
+    推薦天賦：$HIY$ str 19 int 27 con 15 dex 19
+    最後天賦：$HIR$ str 28 int 36 con 27 dex 28
+    性    格：$HIM$狡黠多變 或者 陰險狡詐
+    門派特點：$HIW$招架突出，氣血超長
+    推薦武功：$HIY$太極系列 道學心法
 
-    $HIG$ؤ�
-    �Ƽ��츳��$HIY$ str 22 int 25 con 15 dex 18
-    ����츳��$HIR$ str 31 int 34 con 27 dex 27
-    ��    ��$HIM$��������
-    �����ص㣺$HIW$
-    �Ƽ��书��$HIY$����ʮ���� �򹷰�
+    $HIG$丐幫：
+    推薦天賦：$HIY$ str 22 int 25 con 15 dex 18
+    最後天賦：$HIR$ str 31 int 34 con 27 dex 27
+    性    格：$HIM$光明磊落
+    門派特點：$HIW$
+    推薦武功：$HIY$降龍十八掌 打狗棒
 
-    $HIG$ȫ��̣�
-    �Ƽ��츳��$HIY$ str 20 int 21 con 20 dex 19
+    $HIG$全真教：
+    推薦天賦：$HIY$ str 20 int 21 con 20 dex 19
               $HIY$ str 16 int 30 con 19 dex 15
-    ����츳��$HIR$ str 29 int 30 con 32 dex 28
-              �����츳ѡ��÷�������
+    最後天賦：$HIR$ str 29 int 30 con 32 dex 28
+              此種天賦選擇得放棄互博
               $HIR$ str 25 int 39 con 31 dex 24
-              $HIR$����ѡ��������ԣ���Ϊ���˹������
-              $HIR$���ĵ��츳�⻹��������ϵͳ����
-    ��    ��$HIM$��������
-    �����ص㣺$HIW$������Ⱥ
-    �Ƽ��书��$HIY$���һ��� ���칦 ����ȭ
-    �Ƽ��Ա�Ů ����+����
+              $HIR$此種選擇得有耐性，因為除了購買故事
+              $HIR$加四點天賦外還得中三個系統故事
+    性    格：$HIM$光明磊落
+    門派特點：$HIW$防御超群
+    推薦武功：$HIY$左右互博 先天功 空明拳
+    推薦性別：女 互博+明玉功
 
-    $HIG$��ɽ�ɣ�
-    �Ƽ��츳��$HIY$ str 19 int 25 con 20 dex 19
-    ����츳��$HIR$ str 28 int 34 con 29 dex 28
-    ��    ��$HIM$������
-    �����ص㣺$HIW$��������
-    �Ƽ��书��$HIY$���¾Ž� �׽
+    $HIG$華山派：
+    推薦天賦：$HIY$ str 19 int 25 con 20 dex 19
+    最後天賦：$HIR$ str 28 int 34 con 29 dex 28
+    性    格：$HIM$狡黠多變
+    門派特點：$HIW$劍絕天下
+    推薦武功：$HIY$獨孤九劍 易筋經
 
-    $HIG$Ľ�����ң�
-    �Ƽ��츳��$HIY$ str 20 int 21 con 18 dex 21
-    ����츳��$HIR$ str 29 int 30 con 30 dex 30
-    ��    ��$HIM$���ռ�թ
-    �����ص㣺$HIW$������Ⱥ
-    �Ƽ��书��$HIY$��ת���� �κ�ָ ����ħ��
+    $HIG$慕容世家：
+    推薦天賦：$HIY$ str 20 int 21 con 18 dex 21
+    最後天賦：$HIR$ str 29 int 30 con 30 dex 30
+    性    格：$HIM$陰險姦詐
+    門派特點：$HIW$防御超群
+    推薦武功：$HIY$鬥轉星移 參合指 葵花魔功
 
-    $HIG$���ϻ��壺
-    �Ƽ��츳��$HIY$ str 24 int 23 con 14 dex 19
-    ����츳��$HIR$ str 33 int 32 con 26 dex 28
-    ��    ��$HIM$���ռ�թ
-    �����ص㣺$HIW$���ֳ�Ⱥ
-    �Ƽ��书��$HIY$������ ����ħ��
+    $HIG$段氏皇族：
+    推薦天賦：$HIY$ str 24 int 23 con 14 dex 19
+    最後天賦：$HIR$ str 33 int 32 con 26 dex 28
+    性    格：$HIM$陰險姦詐
+    門派特點：$HIW$空手超群
+    推薦武功：$HIY$六脈神劍 葵花魔功
 
-    $HIG$���չ���
-    �Ƽ��츳��$HIY$ str 21 int 21 con 18 dex 20
-    ����츳��$HIR$ str 30 int 30 con 30 dex 29
-    ��    ��$HIM$������
-    �����ص㣺$HIW$�ڹ��Ե�
-    �Ƽ��书��$HIY$�˻Ĺ� ���� ������
+    $HIG$靈鷲宮：
+    推薦天賦：$HIY$ str 21 int 21 con 18 dex 20
+    最後天賦：$HIR$ str 30 int 30 con 30 dex 29
+    性    格：$HIM$狡黠多變
+    門派特點：$HIW$內功霸道
+    推薦武功：$HIY$八荒功 明玉功 不敗神功
 
-    $HIG$�����£�
-    �Ƽ��츳��$HIY$ str 21 int 21 con 18 dex 20
-    ����츳��$HIR$ str 30 int 30 con 30 dex 29
-    ��    ��$HIM$�ĺ�����
-    �����ص㣺$HIW$�ڹ��Ե�
-    �Ƽ��书��$HIY$���� �����ķ�  
+    $HIG$大輪寺：
+    推薦天賦：$HIY$ str 21 int 21 con 18 dex 20
+    最後天賦：$HIR$ str 30 int 30 con 30 dex 29
+    性    格：$HIM$心狠手辣
+    門派特點：$HIW$內功霸道
+    推薦武功：$HIY$龍象功 喇嘛心法  
 
-    $HIG$�����ɣ�
-    �Ƽ��츳��$HIY$ str 23 int 24 con 16 dex 17
-    ����츳��$HIR$ str 32 int 33 con 28 dex 26
-    ��    ��$HIM$��������
-    �����ص㣺$HIW$��������
-    �Ƽ��书��$HIY$���콣�� �ټ�ʮ��ׯ
+    $HIG$峨嵋派：
+    推薦天賦：$HIY$ str 23 int 24 con 16 dex 17
+    最後天賦：$HIR$ str 32 int 33 con 28 dex 26
+    性    格：$HIM$光明磊落
+    門派特點：$HIW$劍霸天下
+    推薦武功：$HIY$倚天劍法 臨濟十二莊
 
-    $HIG$�һ�����
-    �Ƽ��츳��$HIY$ str 16 int 27 con 18 dex 19
-    ����츳��$HIR$ str 25 int 36 con 30 dex 28
-    ��    ��$HIM$���ռ�թ
-    �����ص㣺$HIW$���ֳ�Ⱥ
-    �Ƽ��书��$HIY$��ָ��ͨ ��������
+    $HIG$桃花島：
+    推薦天賦：$HIY$ str 16 int 27 con 18 dex 19
+    最後天賦：$HIR$ str 25 int 36 con 30 dex 28
+    性    格：$HIM$陰險姦詐
+    門派特點：$HIW$空手超群
+    推薦武功：$HIY$彈指神通 奇門五行
 
-    $HIG$�����̣�
-    �Ƽ��츳��$HIY$ str 21 int 21 con 18 dex 20
-    ����츳��$HIR$ str 30 int 30 con 30 dex 29
-    ��    ��$HIM$�ĺ�����
-    �����ص㣺$HIW$�������
-    �Ƽ��书��$HIY$�ߵ��湦 ��������
+    $HIG$神龍教：
+    推薦天賦：$HIY$ str 21 int 21 con 18 dex 20
+    最後天賦：$HIR$ str 30 int 30 con 30 dex 29
+    性    格：$HIM$心狠手辣
+    門派特點：$HIW$功夫詭異
+    推薦武功：$HIY$蛇島奇功 化骨綿掌
 
-    $HIG$��Ĺ�ɣ�
-    �Ƽ��츳��$HIY$ str 21 int 21 con 18 dex 20
+    $HIG$古墓派：
+    推薦天賦：$HIY$ str 21 int 21 con 18 dex 20
               $HIY$ str 18 int 30 con 14 dex 18 
-    ����츳��$HIR$ str 30 int 30 con 30 dex 29
+    最後天賦：$HIR$ str 30 int 30 con 30 dex 29
               $HIR$ str 27 int 39 con 26 dex 27
-              (��Ҫ����4����£����ߵ����й���)
-    ��    ��$HIM$������
-    �����ص㣺$HIW$���һ���
-    �Ƽ��书��$HIY$���һ��� ̫����
+              (需要購買4點故事，或者等著中故事)
+    性    格：$HIM$狡黠多變
+    門派特點：$HIW$左右互博
+    推薦武功：$HIY$左右互博 太玄功
 
-    $HIG$�����ɣ�
-    $HIR$�����Ƽ��������ɽ������������޸���������
+    $HIG$星宿派：
+    $HIR$無需推薦，此門派建議天神斟酌修改其威力。
     
-    $HIG$��ң�ɣ�
-    �Ƽ��츳��$HIY$ str 21 int 21 con 18 dex 20
-    ����츳��$HIR$ str 30 int 30 con 30 dex 29
-    ��    ��$HIM$��������
-    �����ص㣺$HIW$�Ṧ����
-    �Ƽ��书��$HIY$��ڤ�� ������ �貨΢��
+    $HIG$逍遙派：
+    推薦天賦：$HIY$ str 21 int 21 con 18 dex 20
+    最後天賦：$HIR$ str 30 int 30 con 30 dex 29
+    性    格：$HIM$光明磊落
+    門派特點：$HIW$輕功絕倫
+    推薦武功：$HIY$北冥神功 六陽掌 凌波微步
 
-    $HIG$Ѫ���ţ�
-    �Ƽ��츳��$HIY$ str 23 int 21 con 20 dex 16
-    ����츳��$HIR$ str 32 int 30 con 32 dex 25
-    ��    ��$HIM$�ĺ�����
-    �����ص㣺$HIW$�ڹ�����
-    �Ƽ��书��$HIY$���־� Ѫ������ ���ǽ���
+    $HIG$血刀門：
+    推薦天賦：$HIY$ str 23 int 21 con 20 dex 16
+    最後天賦：$HIR$ str 32 int 30 con 32 dex 25
+    性    格：$HIM$心狠手辣
+    門派特點：$HIW$內功帶毒
+    推薦武功：$HIY$神罩經 血刀刀法 連城劍法
 
-    $HIG$ŷ�����ң�
-    �Ƽ��츳��$HIY$ str 21 int 21 con 18 dex 20
-    ����츳��$HIR$ str 30 int 30 con 30 dex 29
-    ��    ��$HIM$�ĺ�����
-    �����ص㣺$HIW$�ڹ�����
-    �Ƽ��书��$HIY$��󡹦 �����ȷ�
+    $HIG$歐陽世家：
+    推薦天賦：$HIY$ str 21 int 21 con 18 dex 20
+    最後天賦：$HIR$ str 30 int 30 con 30 dex 29
+    性    格：$HIM$心狠手辣
+    門派特點：$HIW$內功帶毒
+    推薦武功：$HIY$蛤蟆功 靈蛇杖法
 
-    $HIG$������ң�
-    �Ƽ��츳��$HIY$ str 21 int 22 con 19 dex 18
+    $HIG$關外胡家：
+    推薦天賦：$HIY$ str 21 int 22 con 19 dex 18
               $HIY$ str 21 int 23 con 19 dex 17
-    ����츳��$HIR$ str 30 int 31 con 31 dex 27
+    最後天賦：$HIR$ str 30 int 31 con 31 dex 27
               $HIR$ str 30 int 32 con 31 dex 26 
-              (Ҫ��Ǯ����ϵͳ���£��Ƽ���һ��
-              �츳�������������������)
-    ��    ��$HIM$��������
-    �����ص㣺$HIW$������һ
-    �Ƽ��书��$HIY$���ҵ��� ��������
+              (要花錢或中系統故事，推薦第一種
+              天賦，並建議調整刀劍威力)
+    性    格：$HIM$光明磊落
+    門派特點：$HIW$兵器第一
+    推薦武功：$HIY$胡家刀法 刀劍歸真
 
-    $HIG$�������ң�
-    �Ƽ��츳��$HIY$ str 21 int 21 con 18 dex 20
-    ����츳��$HIR$ str 30 int 30 con 29 dex 30
-    ��    ��$HIM$�ĺ�����
-    �����ص㣺$HIW$ɱ������
-    �Ƽ��书��$HIY$���Ű���  
+    $HIG$唐門世家：
+    推薦天賦：$HIY$ str 21 int 21 con 18 dex 20
+    最後天賦：$HIR$ str 30 int 30 con 29 dex 30
+    性    格：$HIM$心狠手辣
+    門派特點：$HIW$殺手世家
+    推薦武功：$HIY$唐門暗器  
 
-    $HIG$������̣�
-    �Ƽ��츳��$HIY$ str 18 int 25 con 14 dex 23
-    ����츳��$HIR$ str 27 int 34 con 26 dex 32
-    ��    ��$HIM$���ս�թ
-    �����ص㣺$HIW$���ٹ���
-    �Ƽ��书��$HIY$��а��
+    $HIG$日月神教：
+    推薦天賦：$HIY$ str 18 int 25 con 14 dex 23
+    最後天賦：$HIR$ str 27 int 34 con 26 dex 32
+    性    格：$HIM$陰險狡詐
+    門派特點：$HIW$快速攻擊
+    推薦武功：$HIY$辟邪劍
 
-    $HIG$���̣�
-    �Ƽ��츳��$HIY$ str 18 int 25 con 20 dex 17
-    ����츳��$HIR$ str 27 int 34 con 32 dex 26
-    ��    ��$HIM$���ս�թ ������
-    �����ص㣺$HIW$��������
-    �Ƽ��书��$HIY$������ ʥ���� Ǭ����Ų��
-              $HIY$����ȭ(�й���)  ��������$NOR$
-
-
-    �����������ܣ�������Ӧ�ö�Ӧ���˽⵽���ѡ������������
-�ɣ���ʵû�о��Ե�ǿ��ֻ�Ǹ��˶���С˵������ĸ���ϲ�ð��ˡ�
-ѡ������Ϳ��Կ�ʼ��һЩ׼���Թ����ˣ������Ĺ��̴�ҿ��Կ�һ
-����д��help start���Ѿ��Ƚ������˵���˶ȹ����ֵ������ˣ���
-�γԵ�ҩ�ͽ���������츳����ҿ��Կ�һ����д��help  add_gift
-��������Щ���⻹����һЩ������Ҫ�������ǽ����ģ�
-
-    1��������λ�ã�gc e e e s�Ϳ��ʹ��ѧϰ30����training,
-Ȼ������ʹ��100 gold���Ϳ��Ի�����İ��ĳ����ˣ��Ϳ���ʹ��
-rideto������Ĺ��������̶�ˡ�����ͨ��help rideto ���鿴����
-ȥ���ĵط���
-    2�����ΰ��Ļ�÷�ʽ�����Ե�gc e e e s �ĵط���qi changfa
-����dizang zhishi��Ŀǰ�������8000gÿ�����򵽺�����ʹ�ߣ�
-Ȼ���ٸ���5000g����Ϳ��Ի�����ΰ��ˣ�ͬʱ������summon crui
-se ob��hide or drop cruise ob ��ʹ�ã���store��take ����ȡ��
-Ʒ��
-    3����Ƕ���ܣ��滭���ܣ��ּۻ��۵ļ��ܣ����Ƿǳ����õģ���
-Ƕ������װ������Ƕ���ֱ�������߱��������ԣ�ѧ��500������Ƕ��
-�ɹ�����100% �ģ�ֻ��ѧ��滭���ܲ��ܹ�ȥ������ͼ�������ּ�
-����ѧ��400 ����ϵͳ�̵��ﹺ�������Ի��7�۵��Żݡ���Ա��
-�����⡣
-    4�����ֻ����书�鼮��������ݺͳɶ�������������еĻ�����
-�������Զ���100���ٲ��ֻ����书���Զ���180����200������ָ����
-���Ҹ����ŵ�id��������ŵ�����ȥ����ָ����lingwu xing��
-    5�����˿���Ϊÿ��Ҫȥ��˯���������鷳����ô��ҿ�����һ��
-װ�������ֽ�˯��(sleepbag)�Ϳ��������˯�ˡ�
-    6���������Ϸ����һ�ִ�����һ��Ҫ���ģ��Ǿ����䵱���ף���
-Ϊ�䵱���׿������������Ƶ�������ɢ����ҩ� ǰ�߿���˲��ָ�
-״̬��������������Ϸ��ͷ��β�����õĶ������Ӿ�������10 ��װ��
-Ҳ����ʥ�������������������������Ǵ������ã�����id �����ڲ�һ
-������ʦ����������ø�����Դ(ʦ�������������Դ�����) ������
-���ִ�����������ĸ��� ���ƻ�ʱ��������ɢ�����Ϳ��Թ���ʦ��
-��������ø�����Դ���ƻ�ʱ�乻�˺�ͼƻ���ɢ�����ִ����� sk��
-����400���������640w�Ϳ����ˡ�
-    7�����������Ǳ���ۿ��Ƶģ�������Ϸ��ֻ�о�ת�𵤲ż����
-�����߳��ڹ��ڻƹ����ٲ����Ҳ������������ۣ� ����������
-���ض��и��Ե���;�� ��������Ϸ���ʱ���Ҫ��Щ�������ǱȽ�����
-�ģ�������help start �вŻ��Ƽ��������ף������������Ը�������
-�Ƚ������淨�����Ҳ֪�������Ѱ��
+    $HIG$明教：
+    推薦天賦：$HIY$ str 18 int 25 con 20 dex 17
+    最後天賦：$HIR$ str 27 int 34 con 32 dex 26
+    性    格：$HIM$陰險狡詐 狡黠多變
+    門派特點：$HIW$超級門派
+    推薦武功：$HIY$九陽神功 聖火令 乾坤大挪移
+              $HIY$七傷拳(中故事)  青蝠身法$NOR$
 
 
-    ����ָ��2��д������ɣ���ʵ���кܶ�ܶ����Ҫ�����ģ���ϧ
-�Ҳ������֣�Ҳֻ��д�������ˡ�
+    看完上述介紹，我想大家應該都應該了解到如何選擇主練方向了
+吧，其實沒有絕對的強，只是個人對于小說中人物的個人喜好罷了。
+選完人物就可以開始做一些準備性工作了，練功的過程大家可以看一
+下我寫的help start，已經比較清楚的說明了度過新手的歷程了，如
+何吃丹藥和解密來提高天賦，大家可以看一下我寫的help  add_gift
+，除了這些以外還是有一些事情是要和新手們交代的：
 
-�����������������������������������������������������������
+    1、坐騎如何獲得：gc e e e s和狂風使者學習30級的training,
+然後給狂風使者100 gold，就可以獲得你心愛的寵物了，就可以使用
+rideto來方便的逛變整個泥潭了。可以通過help rideto 來查看可以
+去到的地方。
+    2、漫遊包的獲得方式：可以到gc e e e s 的地方和qi changfa
+購買dizang zhishi，目前的物價是8000g每個，買到後給狂風使者，
+然後再給他5000g，你就可以獲得漫遊包了，同時可以用summon crui
+se ob和hide or drop cruise ob 來使用，用store和take 來存取物
+品。
+    3、鑲嵌技能，繪畫技能，討價還價的技能，都是非常有用的，鑲
+嵌可以在裝備上鑲嵌各種寶物來提高兵器的屬性，學到500級後鑲嵌的
+成功率是100% 的，只有學會繪畫技能才能夠去做畫地圖的任務，討價
+還價學到400 後，在系統商店裡購買東西可以獲得7折的優惠。會員商
+店例外。
+    4、各種基本武功書籍，揚州武館和成都武館有賣，所有的基本武
+功均可以讀到100，少部分基本武功可以讀到180或者200，基本指法可
+以找個唐門的id背你進唐門的樹頂去領悟，指令是lingwu xing。
+    5、新人可能為每次要去買睡袋而覺得麻煩，哪麼大家可以造一個
+裝備，名字叫睡袋(sleepbag)就可以隨地亂睡了。
+    6、玩這個遊戲呢有一種大米是一定要練的，那就是武當大米，因
+為武當大米可以做三寶蠟黃丹、玉清散兩種藥物， 前者可以瞬間恢復
+狀態，後者是整個遊戲從頭到尾必須用的東西，加精力和做10 級裝備
+也就是聖化兵器，都必須用它，而且是大量的用，由于id 到後期不一
+定都做師門任務來獲得各種資源(師門任務的物資來源量最大) ，所以
+這種大米最好是練四個， 當計劃時間做玉清散用完後就可以掛上師門
+任務來獲得各種資源，計劃時間夠了後就計劃做散，這種大米呢 sk控
+制在400，經驗控制640w就可以了。
+    7、精力上限是被靈慧控制的，整個遊戲中只有九轉金丹才加靈慧
+，或者長期掛在黃果樹瀑布那裡，也會獲得少許的靈慧， 其它各種物
+資呢都有各自的用途， 所以在遊戲裡問別人要這些東西呢是比較困難
+的，所以在help start 中才會推薦先練大米，自力更生、自給自足是
+比較愉快的玩法，大家也知道求人難啊□
+
+    新手指北2就寫到這裡吧，其實還有很多很多的需要交代的，可惜
+我不是新手，也只能寫到這裡了。
+
+─────────────────────────────□

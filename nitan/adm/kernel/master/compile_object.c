@@ -5,27 +5,27 @@
 // filename named by 'file'.  It should return 0 if no object is to be
 // associated.
 /*
-Ãû³Æ£º
-        compile_object - Ìá¹©ĞéÄâÎï¼ş (virtual object) ¹¦ÄÜµÄ mudlib ½éÃæ¡£
-Óï·¨£º
+åç¨±ï¼š
+        compile_object - æä¾›è™›æ“¬ç‰©ä»¶ (virtual object) åŠŸèƒ½çš„ mudlib ä»‹é¢ã€‚
+èªæ³•ï¼š
         object compile_object( string pathname );
 
-        Îï¼ş compile_object( ×Ö´® Â·¾¶Ãû );
-ÓÃ·¨£º
-        µ± mudlib Ö¸Ê¾Çı¶¯³ÌÊ½ÔØÈëÒ»¸ö²»´æÔÚÓÚ¼ÇÒäÌåÖĞµÄµµ°¸£¬Çı¶¯³ÌÊ½»áºô
-        ½Ğ compile_object º¯Ê½¡£¾ÙÀıÀ´Ëµ£¬Èç¹û mudlib ºô½Ğ
-        call_other("/obj/file.r", "some_function") »ò new("/obj/file.r") Ê±
-        £¬¼ÇÒäÌåÖĞÃ»ÓĞ½Ğ×ö /obj/file.r.c µÄ¶«Î÷£¬Çı¶¯³ÌÊ½¾Íºô½ĞÖ÷Ô×Îï¼ş
-         (master object) µÄ compile_object("/obj/file.r")¡£Èç¹û mudlib ²»Ï£
-        ÍûÁ¬½á (associate) /obj/file.r µµ°¸£¬compile_object() ½«´«»Ø 0¡£Èç
-        ¹û mudlib Ô¸Òâ£¬¾ÍÒª´«»Ø /obj/file.r Õâ¸öÎï¼ş¡£ÔÚ compile_object()
-        Á¬½áÒ»¸öµµ°¸Ãû³ÆºÍÎï¼şÖ®ºó£¬¶ÔÇı¶¯³ÌÊ½¶øÑÔ£¬¾ÍÈçÍ¬ÓÎÏ·ÖĞ´æÔÚ
-        file.r.c Õâ¸öµµ°¸£¬¶øÔØÈë´ËÎï¼şÊ±²úÉúµÄ¾ÍÊÇ compile_object() ´«»ØµÄ
-        Îï¼ş¡£
-×÷Õß£º
+        ç‰©ä»¶ compile_object( å­—ä¸² è·¯å¾‘å );
+ç”¨æ³•ï¼š
+        ç•¶ mudlib æŒ‡ç¤ºé©…å‹•ç¨‹å¼è¼‰å…¥ä¸€å€‹ä¸å­˜åœ¨äºè¨˜æ†¶é«”ä¸­çš„æª”æ¡ˆï¼Œé©…å‹•ç¨‹å¼æœƒå‘¼
+        å« compile_object å‡½å¼ã€‚èˆ‰ä¾‹ä¾†èªªï¼Œå¦‚æœ mudlib å‘¼å«
+        call_other("/obj/file.r", "some_function") æˆ– new("/obj/file.r") æ™‚
+        ï¼Œè¨˜æ†¶é«”ä¸­æ²’æœ‰å«åš /obj/file.r.c çš„æ±è¥¿ï¼Œé©…å‹•ç¨‹å¼å°±å‘¼å«ä¸»å®°ç‰©ä»¶
+         (master object) çš„ compile_object("/obj/file.r")ã€‚å¦‚æœ mudlib ä¸å¸Œ
+        æœ›é€£çµ (associate) /obj/file.r æª”æ¡ˆï¼Œcompile_object() å°‡å‚³å› 0ã€‚å¦‚
+        æœ mudlib é¡˜æ„ï¼Œå°±è¦å‚³å› /obj/file.r é€™å€‹ç‰©ä»¶ã€‚åœ¨ compile_object()
+        é€£çµä¸€å€‹æª”æ¡ˆåç¨±å’Œç‰©ä»¶ä¹‹å¾Œï¼Œå°é©…å‹•ç¨‹å¼è€Œè¨€ï¼Œå°±å¦‚åŒéŠæˆ²ä¸­å­˜åœ¨
+        file.r.c é€™å€‹æª”æ¡ˆï¼Œè€Œè¼‰å…¥æ­¤ç‰©ä»¶æ™‚ç”¢ç”Ÿçš„å°±æ˜¯ compile_object() å‚³å›çš„
+        ç‰©ä»¶ã€‚
+ä½œè€…ï¼š
         Tim Hollebeek  Beek@ZorkMUD, Lima Bean, IdeaExchange, and elsewhere
-·­Òë£º
-        spock@muds.net          2000.May.20.    v22 °æ
+ç¿»è­¯ï¼š
+        spock@muds.net          2000.May.20.    v22 ç‰ˆ
 */
 
 varargs mixed compile_object(string file, int cloning)

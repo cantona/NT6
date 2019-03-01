@@ -5,8 +5,8 @@ inherit NPC;
 
 void create()
 {
-        set_name("药铺小厮", ({ "yaopu xiaosi", "xiaosi"}));
-        set("long", "他肌肤黄瘦，脸有菜色，可知经常受掌柜的刻薄。\n");
+        set_name("钘ヨ垨灏忓粷", ({ "yaopu xiaosi", "xiaosi"}));
+        set("long", "浠栬倢鑶氶粌鐦︼紝鑷夋湁鑿滆壊锛屽彲鐭ョ稉甯稿彈鎺屾珒鐨勫埢钖勩�俓n");
         set("shen_type", 1);
 
         set("str", 20);

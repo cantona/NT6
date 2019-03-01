@@ -15,14 +15,14 @@ int exert(object me, object target)
   !query("perform/roar", me) && 
   !query("can_perform/kuihua-xinfa/roar", me) && 
   !query_temp("murong/xingyi", me) )
-   return notify_fail("ÄãËùÊ¹ÓÃµÄÄÚ¹¦ÖĞÃ»ÓĞÕâÖÖ¹¦ÄÜ¡£");
+   return notify_fail("ä½ æ‰€ä½¿ç”¨çš„å…§åŠŸä¸­æ²’æœ‰é€™ç¨®åŠŸèƒ½ã€‚");
 */
 
         if( (query("neili", me)<500) || (query("max_neili", me)<500) || (me->query_skill("kuihua-xinfa",1)<100) )
-                return notify_fail("Äã¹Ä×ãÕæÆø£¢ß÷£¢µÄºğÁËÒ»Éù, ½á¹ûÏÅ×ßÁË¼¸Ö»ÀÏÊó¡£\n");
+                return notify_fail("ä½ é¼“è¶³çœŸæ°£ã€å–µã€çš„å¼äº†ä¸€è², çµæœåš‡èµ°äº†å¹¾åªè€é¼ ã€‚\n");
 
         if( query("no_fight", environment(me)) )
-                return notify_fail("ÔÚÕâÀï²»ÄÜ¹¥»÷ËûÈË¡£\n");
+                return notify_fail("åœ¨é€™è£¡ä¸èƒ½æ”»æ“Šä»–äººã€‚\n");
 
         skill = me->query_skill("force");
 
@@ -31,7 +31,7 @@ int exert(object me, object target)
 
         me->start_busy(5);
         message_combatd(
-                HIY"$NÉîÉîµØÎüÒ»àíÆø£¬ÕæÁ¦±Å·¢£¬ÔËÆğ¿û»¨ĞÄ·¨£¬·¢³öÒ»Éù¼âÀûµÄ³¤Ğ¥£º¡°"HIR"ÈÕ³ö¶«·½£¬Î¨ÎÒ²»°Ü£¡"HIY"¡±\n" NOR, me);
+                HIY"$Næ·±æ·±åœ°å¸ä¸€å›—æ°£ï¼ŒçœŸåŠ›è¿¸ç™¼ï¼Œé‹èµ·è‘µèŠ±å¿ƒæ³•ï¼Œç™¼å‡ºä¸€è²å°–åˆ©çš„é•·å˜¯ï¼šâ€œ"HIR"æ—¥å‡ºæ±æ–¹ï¼Œå”¯æˆ‘ä¸æ•—ï¼"HIY"â€\n" NOR, me);
 
         ob = all_inventory(environment(me));
         for(i=0; i<sizeof(ob); i++)
@@ -49,7 +49,7 @@ int exert(object me, object target)
                         ob[i]->receive_damage("jing", damage * 2 );
                         if( query("neili", ob[i])<skill*2 )
                                 ob[i]->receive_wound("jing", damage);
-                        tell_object(ob[i], "Äã¾õµÃÒ»ÕóÌì»èµØ°µ£¬¶ú¶äÈçÕëÔúÒ»°ãÌÛÍ´ÓûÁÑ£¡\n");
+                        tell_object(ob[i], "ä½ è¦ºå¾—ä¸€é™£å¤©æ˜åœ°æš—ï¼Œè€³æœµå¦‚é‡ç´®ä¸€èˆ¬ç–¼ç—›æ¬²è£‚ï¼\n");
                 }
 
                 if( userp(ob[i]) ) ob[i]->fight_ob(me);
@@ -60,15 +60,15 @@ int exert(object me, object target)
 
 int help(object me)
 {
-        write(WHT"\n¿û»¨ĞÄ·¨Ö®¶«·½²»°Ü£º"NOR"\n");
+        write(WHT"\nè‘µèŠ±å¿ƒæ³•ä¹‹æ±æ–¹ä¸æ•—ï¼š"NOR"\n");
         write(@HELP
 
-        Ê¹ÓÃ¹¦Ğ§£º
-                ÉËº¦×Ô¼ºÖÜÎ§µÄËùÓĞÉúÎïµÄ¾«Æø
+        ä½¿ç”¨åŠŸæ•ˆï¼š
+                å‚·å®³è‡ªå·±å‘¨åœçš„æ‰€æœ‰ç”Ÿç‰©çš„ç²¾æ°£
 
-        ³öÊÖÒªÇó£º
-                ¿û»¨ĞÄ·¨100¼¶
-                ÄÚÁ¦500
+        å‡ºæ‰‹è¦æ±‚ï¼š
+                è‘µèŠ±å¿ƒæ³•100ç´š
+                å…§åŠ›500
 HELP
         );
         return 1;

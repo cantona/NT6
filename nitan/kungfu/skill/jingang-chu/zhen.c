@@ -13,7 +13,7 @@ int perform(object me, object target)
         int i;
         
         if( userp(me) && !query("can_perform/jingang-chu/xiang", me) )
-                return notify_fail("Äã»¹Ã»ÓĞÊÜ¹ı¸ßÈËÖ¸µã£¬ÎŞ·¨Ê©Õ¹Õò»êÎè¡£\n");
+                return notify_fail("ä½ é‚„æ²’æœ‰å—éé«˜äººæŒ‡é»ï¼Œç„¡æ³•æ–½å±•é®é­‚èˆã€‚\n");
                  
         if (! target)
         {
@@ -22,26 +22,26 @@ int perform(object me, object target)
         }
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail("¡¸Õò»êÎè¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œé®é­‚èˆã€åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
  
         if( !objectp(weapon=query_temp("weapon", me)) || 
             query("skill_type", weapon) != "staff" )
-                return notify_fail("ÊÖÖĞÕÈ»¹Ê¹Ê²Ã´¡¸Õò»êÎè¡¹£¡\n");
+                return notify_fail("æ‰‹ä¸­æ–é‚„ä½¿ä»€éº¼ã€Œé®é­‚èˆã€ï¼\n");
 
         if( query("neili", me)<200 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¡\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼\n");
 
         if ((int)me->query_skill("staff") < 100)
-                return notify_fail("ÄãµÄ»ù±¾ÕÈ·¨»ğºò²»¹»£¡\n");
+                return notify_fail("ä½ çš„åŸºæœ¬æ–æ³•ç«å€™ä¸å¤ ï¼\n");
 
         if ((int)me->query_skill("jingang-chu", 1) < 100)
-                return notify_fail("ÄãµÄºú½ğ¸ÕÕò»êÎèèÆ»¹²»µ½¼Ò£¬ÎŞ·¨Ê¹ÓÃ¡¸Õò»êÎè¡¹£¡\n");
+                return notify_fail("ä½ çš„èƒ¡é‡‘å‰›é®é­‚èˆæµé‚„ä¸åˆ°å®¶ï¼Œç„¡æ³•ä½¿ç”¨ã€Œé®é­‚èˆã€ï¼\n");
 
         if (me->query_skill_mapped("staff") != "jingang-chu")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢½ğ¸ÕÕò»êÎèèÆ£¬ÎŞ·¨Ê¹ÓÃ¡¸Õò»êÎè¡¹£¡\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼é‡‘å‰›é®é­‚èˆæµï¼Œç„¡æ³•ä½¿ç”¨ã€Œé®é­‚èˆã€ï¼\n");
 
-        msg = HIW "$N" HIW "Ê©Õ¹³öÕò»êÎèèÆµÄ¾«ÃîÕĞÊ½¡¸Õò»êÎè¡¹£¬Ö»¼û" + weapon->name() +
-              HIW "ÍÌÍÌÍÂÍÂ£¬±ä»¯Äª²â£¬ÁıÕÖÁË$n" HIW "ÖÜÉíÒªº¦£¡\n" NOR;
+        msg = HIW "$N" HIW "æ–½å±•å‡ºé®é­‚èˆæµçš„ç²¾å¦™æ‹›å¼ã€Œé®é­‚èˆã€ï¼Œåªè¦‹" + weapon->name() +
+              HIW "ååååï¼Œè®ŠåŒ–è«æ¸¬ï¼Œç± ç½©äº†$n" HIW "å‘¨èº«è¦å®³ï¼\n" NOR;
 
 
         message_combatd(msg, me, target);

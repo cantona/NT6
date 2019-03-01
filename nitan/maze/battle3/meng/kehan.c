@@ -9,9 +9,9 @@ void create()
         int skill, nl;
         int exp;
 
-        set_name("ÃÉ¹Å¿Éº¹",({ "menggu kehan", "kehan"  }));
-        set("gender", "ÄÐÐÔ" );
-        set("long", "Õâ¾ÍÊÇ´Ë´ÎÁì±øÄÏÇÖµÄÃÉ¹Å¿Éº¹¡£\n");
+        set_name("è’™å¤å¯æ±—",({ "menggu kehan", "kehan"  }));
+        set("gender", "ç”·æ€§" );
+        set("long", "é€™å°±æ˜¯æ­¤æ¬¡é ˜å…µå—ä¾µçš„è’™å¤å¯æ±—ã€‚\n");
 
         set("int", 30);
         set("str", 60 + random(20));
@@ -98,7 +98,7 @@ int do_kill(string arg)
 
         if (this_object()->id(arg))
         {
-                write("ÓÐÃ»ÓÐ¸ã´í£¬ÄÇÊÇÃÉ¹Å±øÒ®£¬»¹²»¿ìÅÜ£¿£¡\n");
+                write("æœ‰æ²’æœ‰æžéŒ¯ï¼Œé‚£æ˜¯è’™å¤å…µè€¶ï¼Œé‚„ä¸å¿«è·‘ï¼Ÿï¼\n");
                 return 1;
         } else
         if ((sscanf(arg, "%s from %s",what, who) == 2 ||
@@ -106,12 +106,12 @@ int do_kill(string arg)
              sscanf(arg, "%s on %s", what, who) == 2 ||
              sscanf(arg, "%s %s", what, who) == 2) &&
              this_object()->id(who)) {
-                write("ÓÐÃ»ÓÐ¸ã´í£¬ÄÇÊÇÃÉ¹Å±øÒ®£¬»¹²»¿ìÅÜ£¿£¡\n");
+                write("æœ‰æ²’æœ‰æžéŒ¯ï¼Œé‚£æ˜¯è’™å¤å…µè€¶ï¼Œé‚„ä¸å¿«è·‘ï¼Ÿï¼\n");
                 return 1;
         } else
         if (arg == "roar" || arg == "hou")
         {
-                write("ÓÐÃ»ÓÐ¸ã´í£¬ÄÇÊÇÃÉ¹Å±øÒ®£¬»¹²»¿ìÅÜ£¿£¡\n");
+                write("æœ‰æ²’æœ‰æžéŒ¯ï¼Œé‚£æ˜¯è’™å¤å…µè€¶ï¼Œé‚„ä¸å¿«è·‘ï¼Ÿï¼\n");
                 return 1;
         }
 
@@ -122,7 +122,7 @@ void new_life()
 {
         object me = this_object();
 
-        full_self(); // ²¹ÂúÆøÑª
+        full_self(); // è£œæ»¿æ°£è¡€
 
         delete_temp("no_perform");
         delete_temp("no_exert");
@@ -137,7 +137,7 @@ void new_life()
         set_temp("apply/armor", 100000);
         addn("my_life", -1, me);
 
-        message_vision(HIG "\n$N" HIG "´óºÈÒ»Éù£¬Ä¿¹â¶ÙÊ±³äÂúÉ±Òâ£¡\n\n" NOR, me);
+        message_vision(HIG "\n$N" HIG "å¤§å–ä¸€è²ï¼Œç›®å…‰é “æ™‚å……æ»¿æ®ºæ„ï¼\n\n" NOR, me);
 
         return;
 }
@@ -149,15 +149,15 @@ varargs void die(object killer)
         if (! objectp(ob = query_last_damage_from())) return;
         if( query_temp("warquest/party", ob) != "song")return ;
 
-        // Èç¹û»¹Î´ÖØÉú£¬ÔòÖØÉúÒ»´Î
+        // å¦‚æžœé‚„æœªé‡ç”Ÿï¼Œå‰‡é‡ç”Ÿä¸€æ¬¡
         if (query("my_life") > 0)
         {
                 new_life();
                 return;
         }
 
-        message_vision("$NÂÊÁìµÄÃÉ¹ÅÆï±øÔÚ¼¸¾­Íç¿¹ºó£¬ÖÕÓÚ±»³¹µ×" +
-                        HIR "ÏûÃðÁË" NOR "£¡\n",
+        message_vision("$NçŽ‡é ˜çš„è’™å¤é¨Žå…µåœ¨å¹¾ç¶“é ‘æŠ—å¾Œï¼Œçµ‚äºŽè¢«å¾¹åº•" +
+                        HIR "æ¶ˆæ»…äº†" NOR "ï¼\n",
                         this_object());
                         
         addn_temp("warquest/reward", 50, ob);
@@ -165,9 +165,9 @@ varargs void die(object killer)
         if( MEMBER_D->is_valid_member(ob) && query("quest_tuteng/start", ob) && random(100) < 2 ) 
         {
                 obj = new("/clone/tuteng/diwang-suipian"+(47+random(3)));
-                message_vision(HIR "¶£~~Ò»Éù£¬´Ó$N" HIR "µô³öÒ»Ñù¶«Î÷£¬$n" HIR
-                	           "¸Ï½ô¼ðÁËÆðÀ´¡£\n" NOR, this_object(), ob);
-                tell_object(ob, BLINK + HIG "ÄãµÃµ½ÁË" + obj->name() + BLINK + HIG "¡£\n" NOR);
+                message_vision(HIR "å®~~ä¸€è²ï¼Œå¾ž$N" HIR "æŽ‰å‡ºä¸€æ¨£æ±è¥¿ï¼Œ$n" HIR
+                	           "è¶•ç·Šæ€äº†èµ·ä¾†ã€‚\n" NOR, this_object(), ob);
+                tell_object(ob, BLINK + HIG "ä½ å¾—åˆ°äº†" + obj->name() + BLINK + HIG "ã€‚\n" NOR);
                 obj->move(ob, 1);
         }
 

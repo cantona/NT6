@@ -2,12 +2,12 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "´óæäµÀ");
+        set("short", "å¤§é©›é“");
         set("long", @LONG
-Äã×ßÔÚÒ»Ìõ³¾ÍÁ·ÉÑïµÄ´óæäµÀÉÏ¡£ËÄÖÜÈËÀ´ÈËÍù¡£Ìôµ£×ÓµÄ¡¢ÐÐ
-ÉÌµÄ£¬¸Ï×Å´ó³µµÄÂí·ò£¬ÉÏ¾©¸Ï¿¼µÄÊéÉú£¬ÎõÎõÈÁÈÁ£¬·Ç³£ÈÈÄÖ¡£²»
-Ê±»¹ÓÐÁ½ÈýÆï¿ìÂí´ÓÉí±ß·É³Û¶ø¹ý£¬ÑïÆðÒ»Â·³¾°£¡£µÀÂ·Á½ÅÔÊÇÕûÕû
-ÆëÆëµÄÑîÊ÷ÁÖ¡£¶«±±·½ÏòÊÇÁíÒ»Ìõ´óµÀ¡£
+ä½ èµ°åœ¨ä¸€æ¢å¡µåœŸé£›æšçš„å¤§é©›é“ä¸Šã€‚å››å‘¨äººä¾†äººå¾€ã€‚æŒ‘æ“”å­çš„ã€è¡Œ
+å•†çš„ï¼Œè¶•è‘—å¤§è»Šçš„é¦¬å¤«ï¼Œä¸Šäº¬è¶•è€ƒçš„æ›¸ç”Ÿï¼Œç†™ç†™æ”˜æ”˜ï¼Œéžå¸¸ç†±é¬§ã€‚ä¸
+æ™‚é‚„æœ‰å…©ä¸‰é¨Žå¿«é¦¬å¾žèº«é‚Šé£›é¦³è€ŒéŽï¼Œæšèµ·ä¸€è·¯å¡µåŸƒã€‚é“è·¯å…©æ—æ˜¯æ•´æ•´
+é½Šé½Šçš„æ¥Šæ¨¹æž—ã€‚æ±åŒ—æ–¹å‘æ˜¯å¦ä¸€æ¢å¤§é“ã€‚
 LONG );
         set("exits", ([
                 "northeast" : "/d/guanwai/laolongtou",

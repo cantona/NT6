@@ -5,16 +5,16 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIR "ÁúÑª" NOR, ({ "dragon blood", "dragon", "blood" }) );
+        set_name(HIR "é¾è¡€" NOR, ({ "dragon blood", "dragon", "blood" }) );
         set_weight(30);
 
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIR "Ò»Æ¿ÁúÖ®ÑªÒº£¬¿ÉÒÔÓÃÀ´ĞŞ¸´ÏâÇ¶Îï(Ö¸Áî rehab)¡£\n "
-                            HIY "ÏÂÏß¶ªÊ§    £º   ·ñ\n"NOR);
+                set("long", HIR "ä¸€ç“¶é¾ä¹‹è¡€æ¶²ï¼Œå¯ä»¥ç”¨ä¾†ä¿®å¾©é‘²åµŒç‰©(æŒ‡ä»¤ rehab)ã€‚\n "
+                            HIY "ä¸‹ç·šä¸Ÿå¤±    ï¼š   å¦\n"NOR);
                 set("value", 2000000);
-                set("unit", "Æ¿");
+                set("unit", "ç“¶");
         }
 
         setup();
@@ -36,34 +36,34 @@ int do_rehab(string arg)
 
         me = this_player();
 
-        if (! arg)return notify_fail("Ö¸Áî¸ñÊ½£ºrehab <ÏâÇ¶ÎïÆ·ID> in <µÀ¾ßID>\n");
+        if (! arg)return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šrehab <é‘²åµŒç‰©å“ID> in <é“å…·ID>\n");
 
         if (me->is_busy())
-                return notify_fail("ÏÈÃ¦ÍêÁËÄãµÄÊÂÇéÔÙ×öÕâ¼şÊÂÇé°É£¡\n");
+                return notify_fail("å…ˆå¿™å®Œäº†ä½ çš„äº‹æƒ…å†åšé€™ä»¶äº‹æƒ…å§ï¼\n");
 
         if (me->is_fighting())
-                return notify_fail("ÄãÏÖÔÚÕıÔÚ´ò¼Ü£¬Ã»Ê±¼ä×öÕâĞ©ÊÂÇé¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£åœ¨æ‰“æ¶ï¼Œæ²’æ™‚é–“åšé€™äº›äº‹æƒ…ã€‚\n");
 
         if (sscanf(arg, "%s in %s", enid, obid) != 2)
-                return notify_fail("Ö¸Áî¸ñÊ½£ºrehab <ÏâÇ¶ÎïÆ·ID> in <µÀ¾ßID>\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šrehab <é‘²åµŒç‰©å“ID> in <é“å…·ID>\n");
 
         if (! objectp(ob = present(obid, me)))
-                return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑùµÀ¾ß¡£\n");         
+                return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™æ¨£é“å…·ã€‚\n");         
         
         if (! ob->query("enchase"))
-                return notify_fail(ob->name() + "ºÃÏóÃ»ÓĞÏâÇ¶Ê²Ã´°É£¡\n" NOR);
+                return notify_fail(ob->name() + "å¥½è±¡æ²’æœ‰é‘²åµŒä»€éº¼å§ï¼\n" NOR);
 
         if (! ob->query("enchase/" + enid))
-                return notify_fail(ob->name() + "ÉÏÃ»ÓĞÕâ¸öÏâÇ¶ÎïÆ·¡£\n" NOR);
+                return notify_fail(ob->name() + "ä¸Šæ²’æœ‰é€™å€‹é‘²åµŒç‰©å“ã€‚\n" NOR);
 
         if (ob->query("enchase/" + enid + "/cur_firm") >= 99)
-                return notify_fail(ob->query("enchase/" + enid + "/name") + "Ä¿Ç°²¢²»ĞèÒªÔö¼Ó¼á¹Ì¡£\n");
+                return notify_fail(ob->query("enchase/" + enid + "/name") + "ç›®å‰ä¸¦ä¸éœ€è¦å¢åŠ å …å›ºã€‚\n");
 
-        // ¿ªÊ¼ÎªÏâÇ¶ÎïÆ·Ôö¼Ó¼á¹Ì
+        // é–‹å§‹ç‚ºé‘²åµŒç‰©å“å¢åŠ å …å›º
         ob->set("enchase/" + enid + "/cur_firm", 99);
         ob->save();
 
-        tell_object(me, HIG + ob->query("enchase/" + enid + "/name") + "µÄ¼á¹ÌÔö¼ÓÁË£¡\n" NOR);
+        tell_object(me, HIG + ob->query("enchase/" + enid + "/name") + "çš„å …å›ºå¢åŠ äº†ï¼\n" NOR);
 
         destruct(this_object());
 

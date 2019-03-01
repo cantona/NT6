@@ -35,19 +35,19 @@ int main(object me, string arg)
         {
                 if (me && ! is_root(me))
                 {
-                        write("Ö»ÓĞ¹ÜÀíÔ±²ÅÄÜÊ¹ÓÃ -R ²ÎÊı¡£\n");
+                        write("åªæœ‰ç®¡ç†å“¡æ‰èƒ½ä½¿ç”¨ -R åƒæ•¸ã€‚\n");
                         return 1;
                 }
 
                 if (strsrch(dir, "*") != -1)
                 {
-                        write("ÎªÁË°²È«Æğ¼û£¬Ê¹ÓÃ -R µÄ²ÎÊıµÄÊ±ºò²»ÄÜÊ¹ÓÃÍ¨Åä·û¡£\n");
+                        write("ç‚ºäº†å®‰å…¨èµ·è¦‹ï¼Œä½¿ç”¨ -R çš„åƒæ•¸çš„æ™‚å€™ä¸èƒ½ä½¿ç”¨é€šé…ç¬¦ã€‚\n");
                         return 1;
                 }
 
                 if (dir == "/")
                 {
-                        write("Äã²»ÄÜÉ¾³ı¸ùÄ¿Â¼¡£\n");
+                        write("ä½ ä¸èƒ½åˆªé™¤æ ¹ç›®éŒ„ã€‚\n");
                         return 1;
                 }
 
@@ -63,16 +63,16 @@ int main(object me, string arg)
         {
                 grant = SECURITY_D->query_site_privilege("edit");
                 if( !grant && !sscanf(file, "/u/%*s") )
-                        return notify_fail("ÄãÖ»ÄÜÉ¾³ıÄã×Ô¼ºµÄÄ¿Â¼ÏÂÎÄ¼ş¡£\n");
+                        return notify_fail("ä½ åªèƒ½åˆªé™¤ä½ è‡ªå·±çš„ç›®éŒ„ä¸‹æ–‡ä»¶ã€‚\n");
                         
                 if( grant != "all" && !sscanf(file, "/%s/%*s", grant) )
-                        return notify_fail("ÄãÖ»ÄÜÉ¾³ıÄã×Ô¼ºÄ¿Â¼ÏÂÒÔ¼°" + grant + "Ä¿Â¼ÏÂÎÄ¼ş¡£\n");
+                        return notify_fail("ä½ åªèƒ½åˆªé™¤ä½ è‡ªå·±ç›®éŒ„ä¸‹ä»¥åŠ" + grant + "ç›®éŒ„ä¸‹æ–‡ä»¶ã€‚\n");
         }
         flist = get_dir(file);
         if (arrayp(flist)) flist -= ({ ".", ".." });
         if (! arrayp(flist) || ! sizeof(flist))
         {
-                write("Ã»ÓĞÕâ¸öÎÄ¼ş¡£\n");
+                write("æ²’æœ‰é€™å€‹æ–‡ä»¶ã€‚\n");
                 return 1;
         }
 
@@ -84,7 +84,7 @@ int main(object me, string arg)
         }
 
         if (rm_dir)
-                message_system(HIR "É¾³ıÄ¿Â¼ÖĞ£¬ÇëÉÔºò..." NOR),
+                message_system(HIR "åˆªé™¤ç›®éŒ„ä¸­ï¼Œè«‹ç¨å€™..." NOR),
 
         count = 0;
         for (i = 0; i < sizeof(flist); i++)
@@ -93,9 +93,9 @@ int main(object me, string arg)
         }
 
         if (count)
-                write(HIY "×Ü¹²ÓĞ" + count + "¸öÎÄ¼ş±»³É¹¦É¾³ı¡£\n" NOR);
+                write(HIY "ç¸½å…±æœ‰" + count + "å€‹æ–‡ä»¶è¢«æˆåŠŸåˆªé™¤ã€‚\n" NOR);
         else
-                write("Ã»ÓĞÉ¾³ıÈÎºÎÎÄ¼ş¡£\n");
+                write("æ²’æœ‰åˆªé™¤ä»»ä½•æ–‡ä»¶ã€‚\n");
         return 1;
 }
 
@@ -104,7 +104,7 @@ protected int rm_item(string file, int rm_dir, object me)
         switch (file_size(file))
         {
         case -1:
-                write("Ã»ÓĞÕâ¸öÎÄ¼ş¡£\n");
+                write("æ²’æœ‰é€™å€‹æ–‡ä»¶ã€‚\n");
                 return 0;
 
         case -2:
@@ -112,10 +112,10 @@ protected int rm_item(string file, int rm_dir, object me)
                         return rm_dir(file);
 
                 if (rmdir(file))
-                        write("³É¹¦µÄÉ¾³ıÁËÄ¿Â¼(" + file + ").\n");
+                        write("æˆåŠŸçš„åˆªé™¤äº†ç›®éŒ„(" + file + ").\n");
                 else
-                        write("ÄãÃ»ÓĞÉ¾³ı¸ÃÄ¿Â¼µÄÈ¨ÏŞ»òÕßÊÔÍ¼É¾³ıÒ»¸ö"
-                              "·Ç¿ÕµÄÄ¿Â¼(" + file + ")¡£\n");
+                        write("ä½ æ²’æœ‰åˆªé™¤è©²ç›®éŒ„çš„æ¬Šé™æˆ–è€…è©¦åœ–åˆªé™¤ä¸€å€‹"
+                              "éç©ºçš„ç›®éŒ„(" + file + ")ã€‚\n");
                 return 0;
                 
         default:
@@ -126,7 +126,7 @@ protected int rm_item(string file, int rm_dir, object me)
                 if (! SECURITY_D->valid_read(file, me, "ls"))
                         return 0;
 
-                write("ÄãÃ»ÓĞÉ¾³ı(" + file + ")µÄÈ¨ÏŞ¡£\n");
+                write("ä½ æ²’æœ‰åˆªé™¤(" + file + ")çš„æ¬Šé™ã€‚\n");
                 return 1;
         }
 }
@@ -161,7 +161,7 @@ int rm_dir(string dir)
                         count += rm_dir(dir + file[i][0]);
         }
 
-        write (HIC "É¾³ıÄ¿Â¼(" + dir + ")¡£\n" NOR);
+        write (HIC "åˆªé™¤ç›®éŒ„(" + dir + ")ã€‚\n" NOR);
         rmdir(dir);
         return count;
 }
@@ -169,10 +169,10 @@ int rm_dir(string dir)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : rm [-R] µµ°¸Ãû
+æŒ‡ä»¤æ ¼å¼ : rm [-R] æª”æ¡ˆå
  
-´ËÖ¸Áî¿ÉÈÃÄãÉ¾³ıÄ³¸öµµ°¸»òÄ¿Â¼¡£Èç¹ûÊ¹ÓÃÁË-R²ÎÊı£¬¿ÉÒÔÉ¾³ı·Ç¿ÕµÄÄ¿
-Â¼£¬Ê¹ÓÃ¸Ã²ÎÊıÎñ±ØÒªĞ¡ĞÄ£¬ÒÔÃâÉ¾³ı´íÂ·¾¶¡£
+æ­¤æŒ‡ä»¤å¯è®“ä½ åˆªé™¤æŸå€‹æª”æ¡ˆæˆ–ç›®éŒ„ã€‚å¦‚æœä½¿ç”¨äº†-Råƒæ•¸ï¼Œå¯ä»¥åˆªé™¤éç©ºçš„ç›®
+éŒ„ï¼Œä½¿ç”¨è©²åƒæ•¸å‹™å¿…è¦å°å¿ƒï¼Œä»¥å…åˆªé™¤éŒ¯è·¯å¾‘ã€‚
 
 see also: cp, mv
 HELP );

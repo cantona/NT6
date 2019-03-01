@@ -1,4 +1,4 @@
-// hyz_damage.c »ìÔªÎŞ¼«¾¢ÉË
+// hyz_damage.c æ··å…ƒç„¡æ¥µå‹å‚·
 // by Lonely
 
 #include <ansi.h>
@@ -9,14 +9,14 @@ inherit POISON;
 
 string name() { return "hyz_damage"; } 
 
-string chinese_name() { return "»ìÔªÎŞ¼«¾¢ÄÚÉË"; } 
+string chinese_name() { return "æ··å…ƒç„¡æ¥µå‹å…§å‚·"; } 
 
 string update_msg_others() 
 {
-        return HIW "$N" HIW "µÄÁ³É«Í»È»´óÎª²Ô°×£¬Ò¡Ò¡Óû×¹£¬ËÆºõÊÇÄÚÉË·¢×÷ÁË£¡\n" NOR; 
+        return HIW "$N" HIW "çš„è‡‰è‰²çªç„¶å¤§ç‚ºè’¼ç™½ï¼Œæ–æ–æ¬²å¢œï¼Œä¼¼ä¹æ˜¯å…§å‚·ç™¼ä½œäº†ï¼\n" NOR; 
 }
 
 string update_msg_self() 
 {
-        return HIW "ºöÈ»ÄãÒ»ÕóÍ·ÔÎÄ¿Ñ££¬ÄãËùÖĞµÄ»ìÔªÎŞ¼«¾¢ÄÚÉË·¢×÷ÁË£¡\n" NOR; 
+        return HIW "å¿½ç„¶ä½ ä¸€é™£é ­æšˆç›®çœ©ï¼Œä½ æ‰€ä¸­çš„æ··å…ƒç„¡æ¥µå‹å…§å‚·ç™¼ä½œäº†ï¼\n" NOR; 
 }

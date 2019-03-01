@@ -7,11 +7,11 @@ string look_gaoshi();
 
 void create()
 {
-        set("short", "ɽ���س�¥");
+        set("short", "山海關城樓");
         set("long", WHT@LONG
-�����ɽ���س�¥������Ρ��Ľ�ɽ��������ɽ���ϱ��ڣ�������
-ʧ����ɫ��Ⱥɽ֮�С����£�����һ�ߴ��ϱ������棬�̲����꣬����
-���ġ�����Ԫ˧����Դ˴�����ɽ�󺣣�ʵ�ɼ��ʺ����������˹ء�
+你登上山海關城樓，北望巍峨的角山，長城在山脊上奔騰，漸漸消
+失在黛色的群山之中。關下，沉沉一線穿南北；南面，煙波萬頃，橫無
+際涯。大明元帥徐達以此處“枕山襟海，實遼薊嚥喉”，故築此關。
 LONG
 NOR  );
         set("outdoors", "changcheng");

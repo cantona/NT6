@@ -2,16 +2,16 @@
 #include <ansi.h>
 //inherit NPC;
 inherit FIGHTER;
-#define QUESTJINSHE "quest/½ğÉß½£·¨/"
+#define QUESTJINSHE "quest/é‡‘è›‡åŠæ³•/"
 
 void create()
 {
-	set_name("ÎÂ·½Ê©", ({ "wen fangshi", "wen", "fangshi" }));
-        set("gender", "ÄĞĞÔ");
-        set("title", "ÎÂ¼ÒÎåÀÏ");
+	set_name("æº«æ–¹æ–½", ({ "wen fangshi", "wen", "fangshi" }));
+        set("gender", "ç”·æ€§");
+        set("title", "æº«å®¶äº”è€");
         set("long", 
-        "Ëû¾ÍÊÇÎÂ¼ÒÎåÀÏµÄÀÏËÄÎÂ·½Ê©¡£\n"
-        "Ò»¸öÄê½üÎåÊ®µÄÀÏÕß£¬µ«Í··¢ÒÑ¾­°ë°×¡£\n");
+        "ä»–å°±æ˜¯æº«å®¶äº”è€çš„è€å››æº«æ–¹æ–½ã€‚\n"
+        "ä¸€å€‹å¹´è¿‘äº”åçš„è€è€…ï¼Œä½†é ­ç™¼å·²ç¶“åŠç™½ã€‚\n");
         set("str", 25);
         set("dex", 25);
         set("con", 25);
@@ -70,7 +70,7 @@ void init()
     if( query("setok", ob))return ;
         set("setok", 1, ob);
           ob->copy_state();     
-        //¸ù¾İÃÅÅÉ¸üĞÂnpc µÄÒ»Ğ©×´Ì¬
+        //æ ¹æ“šé–€æ´¾æ›´æ–°npc çš„ä¸€äº›ç‹€æ…‹
           i=query("max_pot", me);
           if(i<350) i=350;
           i=i-100;      
@@ -122,7 +122,7 @@ int do_kill(object me)
         ::do_kill(me);
 }
 
-//¼ì²é£¬quest¹ı³Ì²»ÔÊĞíËÀÍö
+//æª¢æŸ¥ï¼Œquestéç¨‹ä¸å…è¨±æ­»äº¡
 int checking(object me, object ob)
 {
         int ret =  ::checking(me,ob);
@@ -131,9 +131,9 @@ int checking(object me, object ob)
         call_out("checking", 1, me, ob);
   if( !living(me) && living(ob) && query("jing", ob)>0 && query("jingli", ob)>0 && query("qi", ob)>0){
                 remove_call_out("checking");
-                tell_room(environment(me), HIB"\n"+me->name()+"ÑÛ¿´¾ÍÊÇ²»µĞ£¬Í»È»Ò»¹É¾¢·çÏ®À´£¬ÎåĞĞÕóÒ»¶Ù³öÏÖÒ»µÀ¼äÏ¶£¬"+me->name()+"Ë³ÊÆ´³³öÎÂ¼Ò±¤×¯¡£\n"NOR);
+                tell_room(environment(me), HIB"\n"+me->name()+"çœ¼çœ‹å°±æ˜¯ä¸æ•µï¼Œçªç„¶ä¸€è‚¡å‹é¢¨è¥²ä¾†ï¼Œäº”è¡Œé™£ä¸€é “å‡ºç¾ä¸€é“é–“éš™ï¼Œ"+me->name()+"é †å‹¢é—–å‡ºæº«å®¶å ¡èŠã€‚\n"NOR);
                 me->move("/d/xiangyang/ncx3");
-                tell_room(environment(me), HIB"\nÒ»¸öÉíÓ°Í»È»·ÉÀ´£¬´ıÄã×ĞÏ¸¿´À´£¬Ô­À´ÊÇ"+me->name()+"£¬Ö»¼û"+me->name()+"Í»È»Ò»¶Ù£¬¾¹È»»èµ¹ÔÚµØ¡£\n"NOR);
+                tell_room(environment(me), HIB"\nä¸€å€‹èº«å½±çªç„¶é£›ä¾†ï¼Œå¾…ä½ ä»”ç´°çœ‹ä¾†ï¼ŒåŸä¾†æ˜¯"+me->name()+"ï¼Œåªè¦‹"+me->name()+"çªç„¶ä¸€é “ï¼Œç«Ÿç„¶æ˜å€’åœ¨åœ°ã€‚\n"NOR);
                 me->delete_tem(QUESTJINSHE+"start_kill");
                 delete_temp(QUESTJINSHE+"kill", me);
                 delete_temp(QUESTJINSHE+"kill_5wen", me);
@@ -141,8 +141,8 @@ int checking(object me, object ob)
                 set("qi", 100, me);
                 set("jing", 100, me);
                 set("jingli", 100, me);
-        log_file("quest/FEIHU",sprintf("%s¼ÍÂ¼£º%s(%s)½ğÉß½£·¨Ê§°Ü¡£¾­Ñé%d¡£\n",ob->name(1),me->name(1),query("id", me),query("combat_exp", me)));
-    tell_room(environment(ob), ob->name()+"ºßÁËÒ»Éù£º¡°¿ì×·£¡¡±\n");
+        log_file("quest/FEIHU",sprintf("%sç´€éŒ„ï¼š%s(%s)é‡‘è›‡åŠæ³•å¤±æ•—ã€‚ç¶“é©—%dã€‚\n",ob->name(1),me->name(1),query("id", me),query("combat_exp", me)));
+    tell_room(environment(ob), ob->name()+"å“¼äº†ä¸€è²ï¼šâ€œå¿«è¿½ï¼â€\n");
                 destruct(ob);
                 return 1;
         }
@@ -169,16 +169,16 @@ void do_lost()
                 delete_temp(QUESTJINSHE+"have_kill", me);
                 delete_temp(QUESTJINSHE+"kill_5wen", me);
 
-        log_file("quest/FEIHU",sprintf("%s¼ÍÂ¼£º%s(%s)½ğÉß½£·¨Ê§°Ü¡£¾­Ñé%d¡£\n",ob->name(1),me->name(1),query("id", me),query("combat_exp", me)));
+        log_file("quest/FEIHU",sprintf("%sç´€éŒ„ï¼š%s(%s)é‡‘è›‡åŠæ³•å¤±æ•—ã€‚ç¶“é©—%dã€‚\n",ob->name(1),me->name(1),query("id", me),query("combat_exp", me)));
         }
-  tell_room(environment(ob), ob->name()+"ºßÁËÒ»Éù£º¡°¾ÍÕâµã±¾ÊÂ°¡£¡¡±\n");
+  tell_room(environment(ob), ob->name()+"å“¼äº†ä¸€è²ï¼šâ€œå°±é€™é»æœ¬äº‹å•Šï¼â€\n");
         destruct(ob);
 }
 
 void dest(object ob)
 {
   if(!ob) return;
-  tell_room(environment(ob), HIR+"\n"+ob->name()+"ºßÁËÒ»Éù£¬µã×ÓÀ÷º¦£¬ÎÒÃÇ³·~~~~~~~\n"NOR);
+  tell_room(environment(ob), HIR+"\n"+ob->name()+"å“¼äº†ä¸€è²ï¼Œé»å­å²å®³ï¼Œæˆ‘å€‘æ’¤~~~~~~~\n"NOR);
         destruct(ob);
 }
 void die()

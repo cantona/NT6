@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-        set("short","ÇàÖñÁÖ");
+        set("short","é’ç«¹æž—");
         set("long",@LONG
-Ò»´óÆ¬Ã¯ÃÜµÄÇàÖñÁÖÏòÎ÷ÃæÉ½ÀïÂûÑÓ³öÈ¥¡£´Ë¼äÖñ×ÓÇàÄÛ£¬ÖñËñ
-±éµØ£¬¸½½üÂ¬Â¹×åµÄÌ¨ÒÄ¸¾Å®³£Ç°À´²ÉÕªÖñËñÎªÊ³£¬ÁíÍâÒ²¿³·¥Ð©Çà
-ÖñÓÃÀ´ÖÆ×öÖñÍ²ºÍ±àÖ¯µÄÖñóú¿ðÂ¨¡£
+ä¸€å¤§ç‰‡èŒ‚å¯†çš„é’ç«¹æž—å‘è¥¿é¢å±±è£¡è”“å»¶å‡ºåŽ»ã€‚æ­¤é–“ç«¹å­é’å«©ï¼Œç«¹ç­
+éåœ°ï¼Œé™„è¿‘ç›§é¹¿æ—çš„å°å¤·å©¦å¥³å¸¸å‰ä¾†æŽ¡æ‘˜ç«¹ç­ç‚ºé£Ÿï¼Œå¦å¤–ä¹Ÿç ä¼äº›é’
+ç«¹ç”¨ä¾†åˆ¶åšç«¹ç­’å’Œç·¨ç¹”çš„ç«¹ç¯¾ç­ç°ã€‚
 LONG);
         set("objects", ([
            __DIR__"npc/caisunren": 1,

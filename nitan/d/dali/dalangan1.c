@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-        set("short","�����");
+        set("short","大桿欄");
         set("long",@LONG
-����һ�ô��������������ڴ˽���һ���൱��ĸ������²�����
-��һ��Ȧ��ʮ��ͷţ���Աߵ�¥���޵��Ŀ������������Ǳ��ص���
-���˼ҡ�
+依著一棵大榕樹，擺夷人在此建了一座相當大的桿欄。下層這裡
+有一滿圈的十幾頭牛羊。旁邊的樓梯修得頗寬。看來這裡是本地的體
+面人家。
 LONG);
         set("objects", ([
            __DIR__"npc/shanyang": 3,

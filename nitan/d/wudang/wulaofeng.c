@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short","���Ϸ�");
+        set("short","五老峰");
         set("long", @LONG
-��������䵱ɽ���Ϸ塣ֻ�����������ͻأ�������ޱȣ�����
-�಻�ҷŵ��ڴ����ͷ羰��
+這裡便是武當山五老峰。只見那五座奇峰突兀，驚險無比，行人
+多不敢放膽在此玩賞風景。
 LONG );
         set("exits", ([
                 "northdown": __DIR__"sanlaofeng",

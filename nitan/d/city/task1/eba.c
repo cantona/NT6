@@ -1,14 +1,14 @@
-// eba.c ¶ñ°Ô
+// eba.c æƒ¡éœ¸
 
 #include <ansi.h>
 inherit NPC;
 
 void create()
 {
-        set_name("¶ñ°Ô", ({ "e  ba"}));
+        set_name("æƒ¡éœ¸", ({ "e  ba"}));
         set("long",
-        "Ò»¸öÎ£º¦Ò»·½µÄ¶ñ°Ô£¬Ç¿ÄĞ°ÔÅ®£¬ÎŞ¶ñ²»×ö¡£\n");
-        set("gender", "ÄĞĞÔ");
+        "ä¸€å€‹å±å®³ä¸€æ–¹çš„æƒ¡éœ¸ï¼Œå¼·ç”·éœ¸å¥³ï¼Œç„¡æƒ¡ä¸åšã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", random(20) + 25);
         set("attitude", "peaceful");
         set("str", 25);

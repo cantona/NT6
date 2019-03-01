@@ -6,13 +6,13 @@ inherit NECK;
 
 void create()
 {
-        set_name("Œß≤±", ({"neck"}));
+        set_name("ÂúçËÑñ", ({"neck"}));
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
                 set("material", "cloth");
-                set("unit", "Ãı");
+                set("unit", "Ê¢ù");
                 set("armor_prop/armor", 1);
         }
         setup();

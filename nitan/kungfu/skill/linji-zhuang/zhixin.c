@@ -6,24 +6,24 @@ int exert(object me, object target)
 {
         int level = me->query_skill("linji-zhuang", 1);
 
-        if (level < 60) return notify_fail("ÄãµÄÁÙ¼ÃÊ®¶þ×¯ÐÞÎª»¹²»¹»¡£\n");
+        if (level < 60) return notify_fail("ä½ çš„è‡¨æ¿ŸåäºŒèŽŠä¿®ç‚ºé‚„ä¸å¤ ã€‚\n");
 
         if( query("max_neili", me)<5*level )
-                return notify_fail("ÄãµÄÄÚÁ¦»¹²»¹»Ç¿¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›é‚„ä¸å¤ å¼·ã€‚\n");
 
         if( query("neili", me)<4*level )
-                return notify_fail("ÄãµÄÕæÆø²»¹»¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ã€‚\n");
 
         if( query("eff_qi", me)<query("max_qi", me)/2 )
-                return notify_fail("ÄãÒÑ¾­ÊÜÉË¹ýÖØ£¬Ö»ÅÂÒ»ÔËÕæÆø±ãÓÐÉúÃüÎ£ÏÕ£¡\n");
+                return notify_fail("ä½ å·²ç¶“å—å‚·éŽé‡ï¼Œåªæ€•ä¸€é‹çœŸæ°£ä¾¿æœ‰ç”Ÿå‘½å±éšªï¼\n");
 
         if( query_temp("linji/zhixin", me) )
-                return notify_fail("ÄãÒÑ¾­ÔËÓÃÖ®ÐÄ¶þ×¯Äý¾ÛÐÄÉñÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“é‹ç”¨ä¹‹å¿ƒäºŒèŽŠå‡èšå¿ƒç¥žäº†ã€‚\n");
 
         set_temp("linji/zhixin", 1, me);
-        write( HIY "ÄãÎ¢Ò»ÄýÉñ£¬ÔË¶¯Ö®ÐÄÁ½×¯£¬È¥×ÇÆø³öÌåÍâ£¬ÊÕÇåÆøÈëÐÄÖÐ£¬Ö»¾õÁéÌ¨ÇåÃ÷£¬ÁìÎòÁ¦ËÆºõÓÐËùÔö¼Ó¡£\n" NOR);
+        write( HIY "ä½ å¾®ä¸€å‡ç¥žï¼Œé‹å‹•ä¹‹å¿ƒå…©èŽŠï¼ŒåŽ»æ¿æ°£å‡ºé«”å¤–ï¼Œæ”¶æ¸…æ°£å…¥å¿ƒä¸­ï¼Œåªè¦ºéˆå°æ¸…æ˜Žï¼Œé ˜æ‚ŸåŠ›ä¼¼ä¹Žæœ‰æ‰€å¢žåŠ ã€‚\n" NOR);
         message("vision",
-                HIY + "Ö»¼û" + me->name() + "Î¢Ò»ÄýÉñ£¬ÍÌÍÂ¼¸¿Ú³¤Æø£¬Ò»¶ÔÑÛíøÁé¶¯¾§ÁÁ£¬Éñ²ÉÞÄÞÄ¡£\n" NOR,
+                HIY + "åªè¦‹" + me->name() + "å¾®ä¸€å‡ç¥žï¼Œåžåå¹¾å£é•·æ°£ï¼Œä¸€å°çœ¼çœ¸éˆå‹•æ™¶äº®ï¼Œç¥žæŽ¡å¼ˆå¼ˆã€‚\n" NOR,
                 environment(me), me);
 
         addn("neili", -4*level, me);
@@ -42,5 +42,5 @@ void recover(object me, int level)
         addn_temp("apply/int", -level, me);
         delete_temp("linji/zhixin", me);
 
-        tell_object(me, HIG"ÄãÌåÄÚÒÑ»ý¹ý¶à×ÇÆø£¬ËÆºõÁìÎòÁ¦ÓÖ¹éÓÚÑ°³£¡£\n"NOR);
+        tell_object(me, HIG"ä½ é«”å…§å·²ç©éŽå¤šæ¿æ°£ï¼Œä¼¼ä¹Žé ˜æ‚ŸåŠ›åˆæ­¸äºŽå°‹å¸¸ã€‚\n"NOR);
 }

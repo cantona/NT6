@@ -1,18 +1,18 @@
 // Code of LXTX
-// axe.c ¸«Í·
+// axe.c æ–§é ­
 
 #include <weapon.h>
 inherit AXE;
 
 void create()
 {
-        set_name("¸«Í·", ({ "axe","fu" }));
+        set_name("æ–§é ­", ({ "axe","fu" }));
         set_weight(9000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "ÕâÊÇÒ»°Ñ¸«Í·£¬¿ÉÒÔÓÃÀ´¿³Ê÷¡£\n");
+                set("unit", "æŠŠ");
+                set("long", "é€™æ˜¯ä¸€æŠŠæ–§é ­ï¼Œå¯ä»¥ç”¨ä¾†ç æ¨¹ã€‚\n");
                 set("value", 10);
                 set("material", "steel");
                 set("no_drop",1);

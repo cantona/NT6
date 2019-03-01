@@ -2,17 +2,17 @@
 inherit NPC;
 void create()
 {
-        set_name("ÎâÁùÆÆ", ({ "wu liupo","wu","liupo"}) );
+        set_name("å³å…­ç ´", ({ "wu liupo","wu","liupo"}) );
         set("long",@LONG
-Ëû¸ßÊÝ±ÊÖ±¡¢°ÁÈ»Í¦Á¢£¬×ÔÓÐÒ»¹ÉÊéÏãÊÀ¼ÒµÄÆøÖÊ£®²Ô°×µÄÁ³´ø×ÅÅ¨ÁÒµÄ
-Êé¾íÆø£¬¿´ÉÏÈ¥ºÜÄêÇà£¬µ«Á½÷ÞÆ«ÒÑ°ß×Ô£¬ËûµÄÈå·þÁ½Ðä¸ß¸ßÞÛôò£¬Â¶³öÑ©°×
-µÄÊÖ±Û£¬ÊÖÊ®Ö¸¼â³¤£¬ÓÈÊ¤Å®º¢¶ù¼ÒµÄÊÖ¡£ÓÈÆäÊ¹ÈË×¢Ä¿µÄÊÇËû¶ú¶äÉÏÐ®×ÅÒ»
-¸ùÒø¹âÉÁÉÁ³¤ÈôÎå´çµÄÕë¡£
+ä»–é«˜ç˜¦ç­†ç›´ã€å‚²ç„¶æŒºç«‹ï¼Œè‡ªæœ‰ä¸€è‚¡æ›¸é¦™ä¸–å®¶çš„æ°£è³ªï¼Žè’¼ç™½çš„è‡‰å¸¶è‘—æ¿ƒçƒˆçš„
+æ›¸å·æ°£ï¼Œçœ‹ä¸ŠåŽ»å¾ˆå¹´é’ï¼Œä½†å…©é¬¢åå·²æ–‘è‡ªï¼Œä»–çš„å„’æœå…©è¢–é«˜é«˜æ‹è¶„ï¼Œéœ²å‡ºé›ªç™½
+çš„æ‰‹è‡‚ï¼Œæ‰‹åæŒ‡å°–é•·ï¼Œå°¤å‹å¥³å­©å…’å®¶çš„æ‰‹ã€‚å°¤å…¶ä½¿äººæ³¨ç›®çš„æ˜¯ä»–è€³æœµä¸ŠæŒ¾è‘—ä¸€
+æ ¹éŠ€å…‰é–ƒé–ƒé•·è‹¥äº”å¯¸çš„é‡ã€‚
 LONG
          );
 
-        set("title",MAG"Éñ¼ý°ËÐÛ"NOR);
-       set("nickname","É¢¶¾¼ý");
+        set("title",MAG"ç¥žç®­å…«é›„"NOR);
+       set("nickname","æ•£æ¯’ç®­");
         set("max_jing", 6000);
         set("max_qi", 6000);                    
         set("max_sen", 6000);

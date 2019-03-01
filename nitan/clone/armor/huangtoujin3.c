@@ -6,14 +6,14 @@ inherit HEAD;
  
 void create()
 {
-        set_name(HIY "»ÆÍ·½í" NOR, ({ "huang toujin3", "huang", "toujin3" }) );
+        set_name(HIY "é»ƒé ­å·¾" NOR, ({ "huang toujin3", "huang", "toujin3" }) );
         set_weight(300);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
                 set("material", "cloth");
-                set("unit", "¶¥");
-                set("long", HIY "ÕâÊÇÒ»¶¥»ÆÍ·½í£¬Ïà´«ºº³¯»Æ½íÒå¾üËùÅå´ø¡£\n" NOR);
+                set("unit", "é ‚");
+                set("long", HIY "é€™æ˜¯ä¸€é ‚é»ƒé ­å·¾ï¼Œç›¸å‚³æ¼¢æœé»ƒå·¾ç¾©è»æ‰€ä½©å¸¶ã€‚\n" NOR);
                 set("value", 100000);
                 set("armor_prop/armor", 100);
                 set("armor_prop/str", 14);

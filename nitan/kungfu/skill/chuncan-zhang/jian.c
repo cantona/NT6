@@ -1,6 +1,6 @@
 #include <ansi.h>
 
-#define JIAN "¡¸" HIW "×÷¼ë×Ô¸¿" NOR "¡¹"
+#define JIAN "ã€Œ" HIW "ä½œç¹­è‡ªç¸›" NOR "ã€"
 
 inherit F_CLEAN_UP;
 inherit F_SSERVER;
@@ -14,30 +14,30 @@ int perform(object me)
         string msg;
 
         if( userp(me) && !query("can_perform/chuncan-zhang/jian", me) )
-                return notify_fail("ÄãËùÊ¹ÓÃµÄÍâ¹¦ÖĞÃ»ÓĞÕâÖÖ¹¦ÄÜ¡£\n");
+                return notify_fail("ä½ æ‰€ä½¿ç”¨çš„å¤–åŠŸä¸­æ²’æœ‰é€™ç¨®åŠŸèƒ½ã€‚\n");
 
         if( query_temp("ccz_jian", me) )
-                return notify_fail("ÄãÒÑ¾­ÔËÆğ" JIAN "ÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“é‹èµ·" JIAN "äº†ã€‚\n");
 
         if ((int)me->query_skill("chuncan-zhang", 1) < 80)
-                return notify_fail("ÄãµÄ´º²ÏÕÆ·¨²»¹»æµÊì£¬ÄÑÒÔÊ©Õ¹" JIAN "¡£\n");
+                return notify_fail("ä½ çš„æ˜¥è ¶æŒæ³•ä¸å¤ å«»ç†Ÿï¼Œé›£ä»¥æ–½å±•" JIAN "ã€‚\n");
 
         if ((int)me->query_skill("force", 1) < 120)
-                return notify_fail("ÄãµÄÄÚ¹¦»ğºò²»¹»£¬ÄÑÒÔÊ©Õ¹" JIAN "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸç«å€™ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" JIAN "ã€‚\n");
 
         if( query("max_neili", me)<800 )
-                return notify_fail("ÄãµÄÄÚÁ¦ĞŞÎª²»¹»£¬ÄÑÒÔÊ©Õ¹" JIAN "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¿®ç‚ºä¸å¤ ï¼Œé›£ä»¥æ–½å±•" JIAN "ã€‚\n");
 
         if (me->query_skill_mapped("strike") != "chuncan-zhang")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢´º²ÏÕÆ·¨£¬ÄÑÒÔÊ©Õ¹" JIAN "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼æ˜¥è ¶æŒæ³•ï¼Œé›£ä»¥æ–½å±•" JIAN "ã€‚\n");
 
         if (me->query_skill_prepared("strike") != "chuncan-zhang")
-                return notify_fail("ÄãÃ»ÓĞ×¼±¸´º²ÏÕÆ·¨£¬ÄÑÒÔÊ©Õ¹" JIAN "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æº–å‚™æ˜¥è ¶æŒæ³•ï¼Œé›£ä»¥æ–½å±•" JIAN "ã€‚\n");
 
         if( query("neili", me)<200 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬ÄÑÒÔÊ©Õ¹" JIAN "¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" JIAN "ã€‚\n");
 
-        msg = HIW "$N" HIW "Äı¾ÛÄÚÁ¦£¬ÕÆ¾¢ÍÌÍÂ£¬¶ÙÊ±Ë«ÕÆÏÆÆğÒ»²ãÆø¾¢£¬»¤×¡ÖÜÉí¾­Âö¡£\n\n" NOR;
+        msg = HIW "$N" HIW "å‡èšå…§åŠ›ï¼ŒæŒå‹ååï¼Œé “æ™‚é›™æŒæ€èµ·ä¸€å±¤æ°£å‹ï¼Œè­·ä½å‘¨èº«ç¶“è„ˆã€‚\n\n" NOR;
         message_combatd(msg, me);
 
         skill = me->query_skill("chuncan-zhang", 1);
@@ -61,6 +61,6 @@ void remove_effect(object me, int a_amount, int d_amount)
                 addn_temp("apply/attack", a_amount, me);
                 addn_temp("apply/dodge", -d_amount, me);
                 delete_temp("ccz_jian", me);
-                tell_object(me, "ÄãµÄ" JIAN "ÔËĞĞÍê±Ï£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï¡£\n");
+                tell_object(me, "ä½ çš„" JIAN "é‹è¡Œå®Œç•¢ï¼Œå°‡å…§åŠ›æ”¶å›ä¸¹ç”°ã€‚\n");
         }
 }

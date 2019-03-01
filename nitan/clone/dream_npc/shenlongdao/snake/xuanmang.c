@@ -1,6 +1,6 @@
 inherit DREAM_NPC;
 
-#define NAME    HIW "Ğş±ù" HIR "³à" HIW "òş" NOR
+#define NAME    HIW "ç„å†°" HIR "èµ¤" HIW "èŸ’" NOR
 #include <ansi.h>
 
 int is_snake(){return 1;}
@@ -9,8 +9,8 @@ void create()
         set_name(NAME, ({ "xuanbing chimang", "xuan", "bing", "xuanbing",
                           "chimang", "mang", "snake" }));
         set("long", HIW @LONG
-ÕâÊÇÒ»Ö»Ñ©É½¹ÖÉß£¬Ö»¼ûËüÍ¨ÌåÑ©°×£¬ÑÛÈçÁÒ
-Ñ×¡£¿´À´Õâ¸ö±ù¶´ÊÇËüµÄ³²Ñ¨¡£
+é€™æ˜¯ä¸€åªé›ªå±±æ€ªè›‡ï¼Œåªè¦‹å®ƒé€šé«”é›ªç™½ï¼Œçœ¼å¦‚çƒˆ
+ç‚ã€‚çœ‹ä¾†é€™å€‹å†°æ´æ˜¯å®ƒçš„å·¢ç©´ã€‚
 LONG NOR);
 
         set("age", 15);
@@ -29,7 +29,7 @@ LONG NOR);
                 set("max_neili", 35000);
                 set("neili", 35000);
 
-         set("no_nuoyi", 1); // ²»±»Å²ÒÆÓ°Ïì
+         set("no_nuoyi", 1); // ä¸è¢«æŒªç§»å½±éŸ¿
          
         set_skill("unarmed", 500);
         set_skill("dodge", 500);
@@ -110,34 +110,34 @@ mixed hit_ob(object me, object ob, int damage)
         {
                 if( query("qi", ob)<150 )
                 {
-                        msg = HIR "Äã¾õµÃÉË¿ÚÓĞĞ©·¢Âé£¬Á¬Ã¦ÔË¹¦»¯½â£¬µ«"
-                              "ÊÇÒ»Ê±ÌåÁ¦²»Ö§£¬ÄÑÒÔÊ©Îª¡£\n" NOR;
+                        msg = HIR "ä½ è¦ºå¾—å‚·å£æœ‰äº›ç™¼éº»ï¼Œé€£å¿™é‹åŠŸåŒ–è§£ï¼Œä½†"
+                              "æ˜¯ä¸€æ™‚é«”åŠ›ä¸æ”¯ï¼Œé›£ä»¥æ–½ç‚ºã€‚\n" NOR;
                 } else
                 if( query("jing", ob)<60 )
                 {
-                        msg = HIR "Äã¾õµÃÉË¿ÚÓĞĞ©·¢Âé£¬Á¬Ã¦ÔË¹¦»¯½â£¬µ«"
-                              "ÊÇÒ»Ê±¾«Éñ²»¼Ã£¬ÄÑÒÔÊ©Îª¡£\n" NOR;
+                        msg = HIR "ä½ è¦ºå¾—å‚·å£æœ‰äº›ç™¼éº»ï¼Œé€£å¿™é‹åŠŸåŒ–è§£ï¼Œä½†"
+                              "æ˜¯ä¸€æ™‚ç²¾ç¥ä¸æ¿Ÿï¼Œé›£ä»¥æ–½ç‚ºã€‚\n" NOR;
                 } else
                 if( query("neili", ob)<damage/5+50 )
                 {
-                        msg = HIR "Äã¾õµÃÉË¿ÚÓĞĞ©·¢Âé£¬Á¬Ã¦ÔË¹¦»¯½â£¬µ«"
-                              "ÊÇÒ»Ê±ÄÚÁ¦²»×ã£¬ÄÑÒÔÊ©Îª¡£\n" NOR;
+                        msg = HIR "ä½ è¦ºå¾—å‚·å£æœ‰äº›ç™¼éº»ï¼Œé€£å¿™é‹åŠŸåŒ–è§£ï¼Œä½†"
+                              "æ˜¯ä¸€æ™‚å…§åŠ›ä¸è¶³ï¼Œé›£ä»¥æ–½ç‚ºã€‚\n" NOR;
                 } else
                 {
                         addn("neili", -damage/5, ob);
                         ob->receive_damage("qi", 20);
                         ob->receive_damage("jing", 10);
-                        return HIM "Äã¾õµÃ±»Ò§ÖĞµÄµØ·½ÓĞĞ©·¢Âé£¬Á¬Ã¦ÔË¹¦"
-                               "»¯½â¶¾ĞÔ¡£\n" NOR;
+                        return HIM "ä½ è¦ºå¾—è¢«å’¬ä¸­çš„åœ°æ–¹æœ‰äº›ç™¼éº»ï¼Œé€£å¿™é‹åŠŸ"
+                               "åŒ–è§£æ¯’æ€§ã€‚\n" NOR;
                 }
         }
 
         if (ob->affect_by("poison", ([ "level" : (int)p["level"] / 2,
-                                       "name"  : "Éß¶¾",
+                                       "name"  : "è›‡æ¯’",
                                        "id"    : "nature poison",
                                        "duration" : dur / 2, ])))
         {
-                msg += HIR "$n" HIR "Á³É«Ò»±ä£¬Ö»¾õ±»Ò§ÖĞµÄµØ·½Ò»ÕóÂéÄ¾¡£\n" NOR;
+                msg += HIR "$n" HIR "è‡‰è‰²ä¸€è®Šï¼Œåªè¦ºè¢«å’¬ä¸­çš„åœ°æ–¹ä¸€é™£éº»æœ¨ã€‚\n" NOR;
         }
         return msg;
 }

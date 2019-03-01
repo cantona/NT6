@@ -1,14 +1,14 @@
-// eseng.c ¶ñÉ®
+// eseng.c æƒ¡åƒ§
 
 #include <ansi.h>
 inherit NPC;
 
 void create()
 {
-        set_name("¶ñÉ®", ({ "e  seng"}));
+        set_name("æƒ¡åƒ§", ({ "e  seng"}));
         set("long",
-        "ÉÙÁÖµÄÅÑÉ®£¬¸ÉÁË²»ÉÙ»µÊÂ£¬¾İËµÊ±³£³öÃ»ÔÚÑÌ»¨ÁøÏï¡£\n");
-        set("gender", "ÄĞĞÔ");
+        "å°‘æ—çš„å›åƒ§ï¼Œå¹¹äº†ä¸å°‘å£äº‹ï¼Œæ“šèªªæ™‚å¸¸å‡ºæ²’åœ¨ç…™èŠ±æŸ³å··ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 37);
         set("attitude", "peaceful");
         set("str", 25);

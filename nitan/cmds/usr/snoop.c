@@ -18,10 +18,10 @@ int main(object me, string arg)
         if (! arg)
         {
                 if (objectp(ob = query_snooping(me)))
-                        write("ÄãÏÖÔÚÕýÔÚ¼àÌý"+query("name", ob)+
-                              "ËùÊÕµ½µÄÑ¶Ï¢¡£\n");
+                        write("ä½ ç¾åœ¨æ­£åœ¨ç›£è½"+query("name", ob)+
+                              "æ‰€æ”¶åˆ°çš„è¨Šæ¯ã€‚\n");
                 else
-                        write("ÄãÏÖÔÚÃ»ÓÐ¼àÌýÈÎºÎÈË¡£\n");
+                        write("ä½ ç¾åœ¨æ²’æœ‰ç›£è½ä»»ä½•äººã€‚\n");
 
                 return 1;
         } else
@@ -35,7 +35,7 @@ int main(object me, string arg)
         {
                 if (! SECURITY_D->valid_grant(me, "(admin)"))
                 {
-                        write("²ÎÊý´íÎó¡£\n");
+                        write("åƒæ•¸éŒ¯èª¤ã€‚\n");
                         return 1;
                 }
 
@@ -45,22 +45,22 @@ int main(object me, string arg)
                         ob = find_player(arg);
                 if (! objectp(ob))
                 {
-                        write("Ã»ÓÐÕÒµ½ " + arg + " Õâ¸öÍæ¼Ò£¬ÎÞ·¨²é¿´ÐÅÏ¢¡£\n");
+                        write("æ²’æœ‰æ‰¾åˆ° " + arg + " é€™å€‹çŽ©å®¶ï¼Œç„¡æ³•æŸ¥çœ‹ä¿¡æ¯ã€‚\n");
                         return 1;
                 }
 
-                msg = "Ä¿Ç°ÓÐ¹Ø" + ob->name(1) + "(" + geteuid(ob) + ")µÄ¼àÌýÇé¿öÈçÏÂ£º\n";
+                msg = "ç›®å‰æœ‰é—œ" + ob->name(1) + "(" + geteuid(ob) + ")çš„ç›£è½æƒ…æ³å¦‚ä¸‹ï¼š\n";
                 if (objectp(sob = query_snooping(ob)))
-                        msg += "ÕýÔÚ¼àÌý" + sob->name(1) + "(" + geteuid(sob) +
-                               ")ÊÕµ½µÄÐÅÏ¢¡£\n";
+                        msg += "æ­£åœ¨ç›£è½" + sob->name(1) + "(" + geteuid(sob) +
+                               ")æ”¶åˆ°çš„ä¿¡æ¯ã€‚\n";
                 else
-                        msg += "Ã»ÓÐ¼àÌýÈÎºÎÈË¡£\n";
+                        msg += "æ²’æœ‰ç›£è½ä»»ä½•äººã€‚\n";
 
                 if (objectp(sob = query_snoop(ob)))
-                        msg += "ÕýÔÚ±»" + sob->name(1) + "(" + geteuid(sob) +
-                               ")ÇÔÌý¡£\n";
+                        msg += "æ­£åœ¨è¢«" + sob->name(1) + "(" + geteuid(sob) +
+                               ")ç«Šè½ã€‚\n";
                 else
-                        msg += "Ã»ÓÐ±»ÈÎºÎÈËÇÔÌý¡£\n";
+                        msg += "æ²’æœ‰è¢«ä»»ä½•äººç«Šè½ã€‚\n";
 
                 write(msg);
                 return 1;
@@ -69,22 +69,22 @@ int main(object me, string arg)
         ob = find_player(arg);
         if (! ob) ob = find_living(arg);
         if (! ob || ! me->visible(ob))
-                return notify_fail("Ã»ÓÐÕâ¸öÈË¡£\n");
+                return notify_fail("æ²’æœ‰é€™å€‹äººã€‚\n");
 
         if (! interactive(ob))
-                return notify_fail("Õâ¸öÍæ¼Ò²»ÔÚÏßÉÏ£¬ÎÞ·¨¼àÌý¡£\n");
+                return notify_fail("é€™å€‹çŽ©å®¶ä¸åœ¨ç·šä¸Šï¼Œç„¡æ³•ç›£è½ã€‚\n");
 
         if( !is_sub(query("id", me),query("env/can_snoop", ob)) && 
             ! SECURITY_D->valid_grant(me, "(arch)"))
-                return notify_fail("Õâ¸öÍæ¼Ò²»ÔÊÐíÄã¼àÌý¡£\n");
+                return notify_fail("é€™å€‹çŽ©å®¶ä¸å…è¨±ä½ ç›£è½ã€‚\n");
 
         if (wiz_level(ob) > wiz_level(me))
-                return notify_fail("ÄãµÄÈ¨ÏÞ²»¹»¼àÌý¶Ô·½¡£\n");
+                return notify_fail("ä½ çš„æ¬Šé™ä¸å¤ ç›£è½å°æ–¹ã€‚\n");
 
-        if (me == ob) return notify_fail("ÇëÓÃ snoop none ½â³ý¼àÌý¡£\n");
+        if (me == ob) return notify_fail("è«‹ç”¨ snoop none è§£é™¤ç›£è½ã€‚\n");
                 
         snoop(me, ob);
-        write("ÄãÏÖÔÚ¿ªÊ¼ÇÔÌý" + ob->name(1) + "ËùÊÕµ½µÄÑ¶Ï¢¡£\n");
+        write("ä½ ç¾åœ¨é–‹å§‹ç«Šè½" + ob->name(1) + "æ‰€æ”¶åˆ°çš„è¨Šæ¯ã€‚\n");
         /*
         if (playerp(ob)) log_file("snoop",
                 sprintf("%s(%s-%s) snoops %s on %s.\n", me->name(1),
@@ -98,12 +98,12 @@ int main(object me, string arg)
 int help()
 {
         write(@TEXT
-Ö¸Áî¸ñÊ½£ºsnoop <Ä³ÈË> | none | -i <Ä³ÈË>
+æŒ‡ä»¤æ ¼å¼ï¼šsnoop <æŸäºº> | none | -i <æŸäºº>
 
-¼àÌýÆäËûÊ¹ÓÃÕßËùÊÕÌýµÄÑ¶Ï¢£¬snoop none ÔòÈ¡Ïû¼àÌý¡£Äã¼àÌý
-¶Ô·½µÄÇ°ÌáÊÇ¶Ô·½ÔÊÐíÄãÕâÃ´×ö£¬¼´ÉèÖÃÁË can_snoop ÎªÄãµÄID¡£
+ç›£è½å…¶ä»–ä½¿ç”¨è€…æ‰€æ”¶è½çš„è¨Šæ¯ï¼Œsnoop none å‰‡å–æ¶ˆç›£è½ã€‚ä½ ç›£è½
+å°æ–¹çš„å‰ææ˜¯å°æ–¹å…è¨±ä½ é€™éº¼åšï¼Œå³è¨­ç½®äº† can_snoop ç‚ºä½ çš„IDã€‚
 
-Ê¹ÓÃ -i ²ÎÊý¿ÉÒÔ²é¿´Ä³ÈËÄ¿Ç°ÇÔÌýµÄÐÅÏ¢¡£
+ä½¿ç”¨ -i åƒæ•¸å¯ä»¥æŸ¥çœ‹æŸäººç›®å‰ç«Šè½çš„ä¿¡æ¯ã€‚
 TEXT );
         return 1;
 }

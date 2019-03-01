@@ -3,7 +3,7 @@
 inherit F_SSERVER;
 #include <ansi.h>
 
-string perform_name(){ return HBBLU"ºÚ É° ÕÆ"NOR; }
+string perform_name(){ return HBBLU"é»‘ ç ‚ æŽŒ"NOR; }
 int perform(object me, object target)
 {
         string msg;
@@ -11,30 +11,30 @@ int perform(object me, object target)
         if( !objectp(target)
         ||  !target->is_character()
         ||  !me->is_fighting(target) )
-                return notify_fail("¡¸ºÚÉ°ÕÆ¡¹Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œé»‘ç ‚æŽŒã€åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
         if( (int)me->query_skill("force", 1) < 150 )
-                return notify_fail("ÄãµÄ¹éÔªÍÂÄÉ·¨ÐÞÎªÎ´µ½£¬ÎÞ·¨Ê¹³öºÚÉ°ÕÆ¡£\n");
+                return notify_fail("ä½ çš„æ­¸å…ƒåç´æ³•ä¿®ç‚ºæœªåˆ°ï¼Œç„¡æ³•ä½¿å‡ºé»‘ç ‚æŽŒã€‚\n");
         if( (int)me->query_skill("dodge", 1) < 150 )
-                return notify_fail("ÄãµÄË®ÉÏÆ¯ÐÞÎªÎ´µ½£¬ÎÞ·¨Ê¹³öºÚÉ°ÕÆ¡£\n");
+                return notify_fail("ä½ çš„æ°´ä¸Šæ¼‚ä¿®ç‚ºæœªåˆ°ï¼Œç„¡æ³•ä½¿å‡ºé»‘ç ‚æŽŒã€‚\n");
         if( (int)me->query_skill("super-strike", 1) < 150 )
-                return notify_fail("ÄãµÄÌúÕÆÐÞÎªÎ´µ½£¬ÎÞ·¨Ê¹³öºÚÉ°ÕÆ¡£\n");
+                return notify_fail("ä½ çš„éµæŽŒä¿®ç‚ºæœªåˆ°ï¼Œç„¡æ³•ä½¿å‡ºé»‘ç ‚æŽŒã€‚\n");
         if( (int)me->query("neili") < 500 )
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ£¬²»ÄÜ³öºÚÉ°ÕÆ¡£\n");
+                return notify_fail("ä½ ç¾åœ¨å…§åŠ›å¤ªå¼±ï¼Œä¸èƒ½å‡ºé»‘ç ‚æŽŒã€‚\n");
         if (target->query_condition("no_force"))
-                return notify_fail("ËûÒÑ¾­±»»÷ÖÐÁË£¬²»ÐèÒªÔÙÊ¹ÓÃºÚÉ°ÕÆ¡£\n");
+                return notify_fail("ä»–å·²ç¶“è¢«æ“Šä¸­äº†ï¼Œä¸éœ€è¦å†ä½¿ç”¨é»‘ç ‚æŽŒã€‚\n");
                 
-        me->start_perform(1,"ºÚÉ°ÕÆ");
-        msg = HBBLU"\n$NË«ÊÖÒ»´í£¬Ò»ÉÏÒ»ÏÂÏò$nµÄÐØ¿Ú¼°µ¤Ìï»÷µ½£¡\n"NOR;
+        me->start_perform(1,"é»‘ç ‚æŽŒ");
+        msg = HBBLU"\n$Né›™æ‰‹ä¸€éŒ¯ï¼Œä¸€ä¸Šä¸€ä¸‹å‘$nçš„èƒ¸å£åŠä¸¹ç”°æ“Šåˆ°ï¼\n"NOR;
         if (random(me->query_dex()) > target->query_dex()/3 || random(me->query_con()) > target->query_con()/5)
         {
-                msg += HIR"½á¹û$NË«Ë«»÷ÖÐ£¬$nÕæÆøÒ»ÖÏ£¬ÄÚÏ¢ÔÙÒ²ÎÞ·¨×ÔÓÉÔË×ª£¡\n"NOR;
+                msg += HIR"çµæžœ$Né›™é›™æ“Šä¸­ï¼Œ$nçœŸæ°£ä¸€çª’ï¼Œå…§æ¯å†ä¹Ÿç„¡æ³•è‡ªç”±é‹è½‰ï¼\n"NOR;
                 me->start_busy(1);
                 target->apply_condition("no_force",(int)me->query_skill("force")/30 + (int)me->query_skill("poison",1)/30);
         }
         else {
                 me->start_busy(1);
                 if (!target->is_busy()) target->start_busy(2);
-                msg += HIR"$nÃãÇ¿¶ã¿ª£¬ÆøÏ¢´ÖÖØ¡£\n"NOR;
+                msg += HIR"$nå‹‰å¼·èº²é–‹ï¼Œæ°£æ¯ç²—é‡ã€‚\n"NOR;
         }
         me->add("neili",-(300+random(100)));
         message_vision(msg, me, target);

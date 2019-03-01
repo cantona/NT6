@@ -1,6 +1,6 @@
 // Code of ShenZhou
 
-// baihuafushegao.c °Ù»¨òóÉß¸à
+// baihuafushegao.c ç™¾èŠ±è®è›‡è†
 // ywz 08/31/96
 
 #include <ansi.h>
@@ -17,13 +17,13 @@ void init()
 
 void create()
 {
-        set_name(RED "°Ù»¨¸¹Éß¸à" NOR, ({"fushe gao", "gao"}));
+        set_name(RED "ç™¾èŠ±è…¹è›‡è†" NOR, ({"fushe gao", "gao"}));
         set_weight(20);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿é");
-                set("long", "ÕâÊÇÒ»¿é°Ù»¨òóÉß¸à£¬¿´ÉÏÈ¥ºÚºõºõµÄ£¬»¹Í¸×Åºì¹â£¬ÓÃÀ´¶Ô¸¶µĞÈË×îºÃÁË¡£\n");
+                set("unit", "å¡Š");
+                set("long", "é€™æ˜¯ä¸€å¡Šç™¾èŠ±è®è›‡è†ï¼Œçœ‹ä¸Šå»é»‘ä¹ä¹çš„ï¼Œé‚„é€è‘—ç´…å…‰ï¼Œç”¨ä¾†å°ä»˜æ•µäººæœ€å¥½äº†ã€‚\n");
                 set("value", 10000);
                 set("no_sell", 1);
                 set("medicine", 1);
@@ -41,12 +41,12 @@ int do_use(string arg)
         skill = me->query_skill("force");
 
 //      if (!id(arg))
-//              return notify_fail("ÄãÒªÓÃÊ²Ã´£¿\n");
+//              return notify_fail("ä½ è¦ç”¨ä»€éº¼ï¼Ÿ\n");
 
         if (!me->is_fighting())
-                return notify_fail("°Ù»¨òóÉß¸àÖ»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ!\n");
+                return notify_fail("ç™¾èŠ±è®è›‡è†åªèƒ½åœ¨æˆ°é¬¥ä¸­ä½¿ç”¨!\n");
 
-        message_vision(HIG "$NÑïÊÖÈ÷¿ªÒ»Ğ©²»ÖªÊ²Ã´£¬ãµ £¿  °¡...£¡ \n" NOR, me);
+        message_vision(HIG "$Næšæ‰‹æ´’é–‹ä¸€äº›ä¸çŸ¥ä»€éº¼ï¼Œæ„• ï¼Ÿ  å•Š...ï¼ \n" NOR, me);
 
         enemy = this_player()->query_enemy();
         exp1=query("combat_exp", this_player());
@@ -127,12 +127,12 @@ int do_use(string arg)
                                 }
 
                          }
-//                        tell_object(enemy[i], "Äã¾õµÃÑÛÇ°Ò»ÕóÄ£ºı£¬È«ÉíÒ»ÏÂ×ÓÏóÉ¢ÁË¼Ü£¡\n");
+//                        tell_object(enemy[i], "ä½ è¦ºå¾—çœ¼å‰ä¸€é™£æ¨¡ç³Šï¼Œå…¨èº«ä¸€ä¸‹å­è±¡æ•£äº†æ¶ï¼\n");
 //                        enemy[i]->unconcious();
 //                        }
 //                        else {
-//                        tell_object(enemy[i], "Äã¾õµÃÑÛÇ°Ò»ÕóÄ£ºı£¬È«ÉíÒ»ÏÂ×ÓÏóÉ¢ÁË¼Ü£¡\n");
-//                        tell_object(this_player(), "Äã¾õµÃÑÛÇ°Ò»ÕóÄ£ºı£¬È«ÉíÒ»ÏÂ×ÓÏóÉ¢ÁË¼Ü£¡\n");
+//                        tell_object(enemy[i], "ä½ è¦ºå¾—çœ¼å‰ä¸€é™£æ¨¡ç³Šï¼Œå…¨èº«ä¸€ä¸‹å­è±¡æ•£äº†æ¶ï¼\n");
+//                        tell_object(this_player(), "ä½ è¦ºå¾—çœ¼å‰ä¸€é™£æ¨¡ç³Šï¼Œå…¨èº«ä¸€ä¸‹å­è±¡æ•£äº†æ¶ï¼\n");
 
 //                        enemy[i]->unconcious();
 //                        this_player()->unconcious();
@@ -153,12 +153,12 @@ int do_use(string arg)
 //              damage = skill - ((int)ob[i]->query("max_neili") / 10);
 //              if( damage > 0 )
 //                      {
-                        tell_object(ob[i], "Äã¾õµÃÑÛÇ°Ò»ÕóÄ£ºı£¬È«ÉíÒ»ÏÂ×ÓÏóÉ¢ÁË¼Ü£¡\n");
+                        tell_object(ob[i], "ä½ è¦ºå¾—çœ¼å‰ä¸€é™£æ¨¡ç³Šï¼Œå…¨èº«ä¸€ä¸‹å­è±¡æ•£äº†æ¶ï¼\n");
                         ob[i]->unconcious();
 //                      ob[i]->receive_damage("qi", damage);
 //                      if( (int)ob[i]->query("neili") < skill * 2 )
 //                              ob[i]->receive_wound("qi", damage);
-//                      tell_object(ob[i], "Äã¾õµÃÑÛÇ°Ò»ÕóÄ£ºı£¬È«ÉíÒ»ÏÂ×ÓÏóÉ¢ÁË¼Ü£¡\n");
+//                      tell_object(ob[i], "ä½ è¦ºå¾—çœ¼å‰ä¸€é™£æ¨¡ç³Šï¼Œå…¨èº«ä¸€ä¸‹å­è±¡æ•£äº†æ¶ï¼\n");
 //                      }
 //              else
 //                     {
@@ -168,7 +168,7 @@ int do_use(string arg)
 //              if( userp(ob[i]) ) ob[i]->fight_ob(me);
 //              else if( !ob[i]->is_killing(me) ) ob[i]->kill_ob(me);
 
-//              command("chat ÕâÏÂÄãÃÇ¿É×ÅÁËÎÒµÄµÀµÀÁË£¬¹ş¹ş £¡");
+//              command("chat é€™ä¸‹ä½ å€‘å¯è‘—äº†æˆ‘çš„é“é“äº†ï¼Œå“ˆå“ˆ ï¼");
 
 */
                 destruct(this_object());
@@ -181,9 +181,9 @@ int do_eat(string arg)
         object me = this_player();
 
         if (!id(arg))
-                return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
 
-        return notify_fail("Õâ¶«Î÷²»ÄÜÕâÃ´³Ô¡£\n");
+        return notify_fail("é€™æ±è¥¿ä¸èƒ½é€™éº¼åƒã€‚\n");
 
 //      destruct(this_object());
         return 1;

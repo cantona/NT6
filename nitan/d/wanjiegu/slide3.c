@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ɽ��");
+        set("short", "山坡");
         set("long", @LONG
-ɽ��֮������һЩ��֪�����Ӳݣ��Լ����������ֲ����Ĺ�ľ
-�ԣ���������д���������Ұ����·�����Ŀ��ţ�ż���м�ֻ������
-����ȥ��
+山坡之上張著一些不知名的雜草，以及三三兩兩分布其間的灌木
+叢，這裡很少有大樹，幾朵野花在路邊悄悄開放，偶爾有幾只蝴蝶飛
+來飛去。
 LONG );
         set("outdoors", "wanjiegu");
         set("exits", ([ /* sizeof() == 2 */

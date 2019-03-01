@@ -4,12 +4,12 @@ inherit ITEM;
 void create()
 {
         set_weight(100);
-        set_name(HIW "ÆßĞÇº£ÌÄ·Û" NOR, ({"qixing-haitang fen", "qixing fen", "fen"}));
+        set_name(HIW "ä¸ƒæ˜Ÿæµ·æ£ ç²‰" NOR, ({"qixing-haitang fen", "qixing fen", "fen"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°ü");
-                set("long", HIW "ÕâÊÇÒ»Æ¿°×É«µÄ¾ç¶¾·ÛÄ©£¬¿ÉÉ±ÈËÓÚÎŞĞÎ¡£\n" NOR);
+                set("unit", "åŒ…");
+                set("long", HIW "é€™æ˜¯ä¸€ç“¶ç™½è‰²çš„åŠ‡æ¯’ç²‰æœ«ï¼Œå¯æ®ºäººäºç„¡å½¢ã€‚\n" NOR);
                 set("value", 50000);
                 set("poison_type", "yaowang_poison");
                 set("can_pour", 1);
@@ -18,7 +18,7 @@ void create()
                 set("poison", ([
                         "level" : 200,
                               "id"    : "yaowang", 
-                        "name"  : "ÆßĞÇº£ÌÄ·Û",
+                        "name"  : "ä¸ƒæ˜Ÿæµ·æ£ ç²‰",
                         "duration": 15,
                 ]));
                 set("no_sell", 1);
@@ -29,8 +29,8 @@ void create()
 
 int do_effect(object me)
 {
-        message_vision("$NÒ»Ñö²±£¬½«ÆßĞÇº£ÌÄ·Ûµ¹ÈëÁË×ìÖĞ¡£\n", me);
-        set_temp("die_reason", "³ÔÁËÆßĞÇº£ÌÄ·ÛÈ¥¼ûºÚ°×ÎŞ³£ÁË", me);
+        message_vision("$Nä¸€ä»°è„–ï¼Œå°‡ä¸ƒæ˜Ÿæµ·æ£ ç²‰å€’å…¥äº†å˜´ä¸­ã€‚\n", me);
+        set_temp("die_reason", "åƒäº†ä¸ƒæ˜Ÿæµ·æ£ ç²‰å»è¦‹é»‘ç™½ç„¡å¸¸äº†", me);
         me->die();
         destruct(this_object());
         return 1;

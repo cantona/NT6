@@ -1,19 +1,19 @@
 // Room: /d/nanyang/npc/obj/jiuhulu.c
 // Last Modified by winder on Nov. 20 2001
-//ÕâÊÇÓÃÀ´Âò¾ÆÓÃµÄºùÂ«£¬²»ÊÇcommon×°±¸ÓÃµÄ£¬ËùÒÔ±È½Ï¹ó¡£
+//é€™æ˜¯ç”¨ä¾†è²·é…’ç”¨çš„è‘«è˜†ï¼Œä¸æ˜¯commonè£å‚™ç”¨çš„ï¼Œæ‰€ä»¥æ¯”è¼ƒè²´ã€‚
 
 inherit ITEM;
 inherit F_LIQUID;
 #include <ansi.h>
 void create()
 {
-        set_name(YEL"¾ÆºùÂ«"NOR, ({"jiu hulu", "hulu", "pot"}));
+        set_name(YEL"é…’è‘«è˜†"NOR, ({"jiu hulu", "hulu", "pot"}));
         set_weight(3000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¸öÓÃÀ´×°¾ÆµÄ´óºùÂ«£¬ÍâÆ¤½ğ»Æ£¬ÀïÃæÄÜ×°ºÃ¼¸½ï¾Æ¡£\n");
-                set("unit", "¸ö");
+                set("long", "ä¸€å€‹ç”¨ä¾†è£é…’çš„å¤§è‘«è˜†ï¼Œå¤–çš®é‡‘é»ƒï¼Œè£¡é¢èƒ½è£å¥½å¹¾æ–¤é…’ã€‚\n");
+                set("unit", "å€‹");
                 set("value", 300);
                 set("max_liquid", 30);
         }
@@ -21,7 +21,7 @@ void create()
         // we set it to contain wine at the beginning
         set("liquid", ([
                 "type": "alcohol",
-                "name": "»Æ¾Æ",
+                "name": "é»ƒé…’",
                 "remaining": 30,
                 "drunk_apply": 10,
         ]));

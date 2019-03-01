@@ -1,56 +1,56 @@
 
      socket_listen(3)       MudOS (5 Sep 1994)        socket_listen(3)
 
-     Ãû³Æ£º
-          socket_listen() - ÇãÌı(listen)Ò»¸ö socket µÄÁ¬½Ó(connection)¡£
+     åç¨±ï¼š
+          socket_listen() - å‚¾è½(listen)ä¸€å€‹ socket çš„é€£æ¥(connection)ã€‚
 
-     Óï·¨£º
+     èªæ³•ï¼š
           #include 
 
           int socket_listen( int s, string listen_callback );
 
-          ÕûÊı socket_listen( ÕûÊı s, ×Ö´® listen_callback );
+          æ•´æ•¸ socket_listen( æ•´æ•¸ s, å­—ä¸² listen_callback );
 
-     ÓÃ·¨£º
-          ÎªÁËÒª½ÓÊÜÁ¬½Ó£¬Ê×ÏÈÒªÒÔ socket_create(3) ½¨Á¢Ò»¸ö socket£¬
-          ÔÙÒÔ socket_listen(3) ½«Õâ¸ö socket ·Åµ½ÇãÌıÄ£Ê½£¬×îáá²ÅÒÔ
-          socket_accept(3) ½ÓÊÜÕâ¸öÁ¬½Ó¡£socket_listen() ºô½ĞÖ»ÄÜ×÷ÓÃ
-          ì¶ STREAM »òÊÇ MUD ĞÍÌ¬µÄ sockets¡£
+     ç”¨æ³•ï¼š
+          ç‚ºäº†è¦æ¥å—é€£æ¥ï¼Œé¦–å…ˆè¦ä»¥ socket_create(3) å»ºç«‹ä¸€å€‹ socketï¼Œ
+          å†ä»¥ socket_listen(3) å°‡é€™å€‹ socket æ”¾åˆ°å‚¾è½æ¨¡å¼ï¼Œæœ€å¾Œæ‰ä»¥
+          socket_accept(3) æ¥å—é€™å€‹é€£æ¥ã€‚socket_listen() å‘¼å«åªèƒ½ä½œç”¨
+          æ–¼ STREAM æˆ–æ˜¯ MUD å‹æ…‹çš„ socketsã€‚
 
-          listen_callback ²ÎÊıÊÇ¸øÇı¶¯³ÌÊ½ÔÚµÃµ½ÕıÇãÌıÖĞ socket µÄÁ¬
-          ½ÓÊ±ºô½ĞµÄº¯Ê½Ãû³Æ¡£Õâ¸öÇãÌı»Øºô(callback)º¯Ê½Ó¦¸ÃÊÇÕâ¸ö¸ñ
-          Ê½£º
+          listen_callback åƒæ•¸æ˜¯çµ¦é©…å‹•ç¨‹å¼åœ¨å¾—åˆ°æ­£å‚¾è½ä¸­ socket çš„é€£
+          æ¥æ™‚å‘¼å«çš„å‡½å¼åç¨±ã€‚é€™å€‹å‚¾è½å›å‘¼(callback)å‡½å¼æ‡‰è©²æ˜¯é€™å€‹æ ¼
+          å¼ï¼š
 
                void listen_callback(int fd)
 
-          ÕâÀïµÄ fd ÊÇÕıÇãÌıÖĞµÄ socket¡£
+          é€™è£¡çš„ fd æ˜¯æ­£å‚¾è½ä¸­çš„ socketã€‚
 
-     ´«»ØÖµ£º
-          socket_listen() ´«»Ø£º
+     å‚³å›å€¼ï¼š
+          socket_listen() å‚³å›ï¼š
 
-               ³É¹¦Ê±ÊÇ EESUCCESS¡£
+               æˆåŠŸæ™‚æ˜¯ EESUCCESSã€‚
 
-               Ê§°ÜÊ±ÊÇÒ»¸öº¬ÓĞÈçÏÂÒâÒåµÄ¸ºÖµ¡£
+               å¤±æ•—æ™‚æ˜¯ä¸€å€‹å«æœ‰å¦‚ä¸‹æ„ç¾©çš„è² å€¼ã€‚
 
-     ´íÎóÂë£º
-          EEFDRANGE      ÃèÊöÖµ(descriptor)³¬³ö¡õÎ§¡£
+     éŒ¯èª¤ç¢¼ï¼š
+          EEFDRANGE      æè¿°å€¼(descriptor)è¶…å‡ºâ–¡åœã€‚
 
-          EEBADF         ÎŞĞ§µÄÃèÊöÖµ¡£
+          EEBADF         ç„¡æ•ˆçš„æè¿°å€¼ã€‚
 
-          EESECURITY     ÆóÍ¼Î¥·´°²È«¡£
+          EESECURITY     ä¼åœ–é•åå®‰å…¨ã€‚
 
-          EEMODENOTSUPP  ²»Ö§Ô®´Ë socket ĞÍÌ¬¡£
+          EEMODENOTSUPP  ä¸æ”¯æ´æ­¤ socket å‹æ…‹ã€‚
 
-          EENOADDR       socket ÉĞÎ´Éè¶¨Î»Ö·¡£
+          EENOADDR       socket å°šæœªè¨­å®šä½å€ã€‚
 
-          EEISCONN       socket ÒÑÁ¬½Ó¡£
+          EEISCONN       socket å·²é€£æ¥ã€‚
 
-          EELISTEN       ÇãÌıÎÊÌâ¡£
+          EELISTEN       å‚¾è½å•é¡Œã€‚
 
-     ²ÎÕÕ£º
+     åƒç…§ï¼š
           socket_accept(3), socket_connect(3), socket_create(3)
 
-     ·­Òë£º
+     ç¿»è­¯ï¼š
           Kenny@Broken.History       97.Jul.27       (printed 3/16/95)
 
 

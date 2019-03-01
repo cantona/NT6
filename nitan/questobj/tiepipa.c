@@ -6,18 +6,18 @@ inherit HAMMER;
 
 void create()
 {
-        set_name(HIB"ÌúÅıÅÃ"NOR, ({ "tiepipa" }) );
+        set_name(HIB"éµçµç¶"NOR, ({ "tiepipa" }) );
         set("taskobj", 1);
         set_weight(50000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "ÕâÊÇÒ»°ÑÆæĞÎÌúÅıÅÃ£¬´òÔìµÄÏàµ±¾«ÇÉ¼áÊµ¡£\n");
+                set("unit", "æŠŠ");
+                set("long", "é€™æ˜¯ä¸€æŠŠå¥‡å½¢éµçµç¶ï¼Œæ‰“é€ çš„ç›¸ç•¶ç²¾å·§å …å¯¦ã€‚\n");
                 set("value", 0);
                 set("material", "iron");
-                set("wield_msg", "$N´Ó±³ÉÏ½âÏÂÒ»°Ñ$n£¬È»ááºáÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+                set("wield_msg", "$Nå¾èƒŒä¸Šè§£ä¸‹ä¸€æŠŠ$nï¼Œç„¶å¾Œæ©«åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
         }
         setup();
 }

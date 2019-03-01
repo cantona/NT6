@@ -1,16 +1,16 @@
-// lugu.c Ò°Â¹¹Ç
+// lugu.c é‡Žé¹¿éª¨
 
 inherit ITEM;
 
 void create()
 {
-        set_name("Â¹¹Ç", ({"lu gu", "gu", "bone"}));
+        set_name("é¹¿éª¨", ({"lu gu", "gu", "bone"}));
         set_weight(200);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¸ù¸Õ¸ÕÌÞ³öÀ´µÄÒ°Â¹¹ÇÍ·¡£\n");
-                set("unit", "¸ù");
+                set("long", "ä¸€æ ¹å‰›å‰›å‰”å‡ºä¾†çš„é‡Žé¹¿éª¨é ­ã€‚\n");
+                set("unit", "æ ¹");
                 set("value", 300);
         }
 }

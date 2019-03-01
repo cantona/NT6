@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "¶´ÄÚ");
+        set("short", "æ´å…§");
         set("long", @LONG
-ÕâÀïÊÇÉ½ÔôµÄÀÏÎÑµÄËùÔÚ¡£ÅÔ±ßÓĞÒ»²à¶´£¬ÀïÃæÒşÒş´«À´Å®×ÓµÄ
-¿ŞÉù¡£Ò»¸ö´Ö×³µÄÉ½ÔôÊØÎÀÔÚÕâÀï¡£
+é€™è£¡æ˜¯å±±è³Šçš„è€çª©çš„æ‰€åœ¨ã€‚æ—é‚Šæœ‰ä¸€å´æ´ï¼Œè£¡é¢éš±éš±å‚³ä¾†å¥³å­çš„
+å“­è²ã€‚ä¸€å€‹ç²—å£¯çš„å±±è³Šå®ˆè¡›åœ¨é€™è£¡ã€‚
 LONG );
         set("exits", ([
                 "west"  : __DIR__"cedong",
@@ -29,6 +29,6 @@ int valid_leave(object me, string dir)
         if ( (dir == "west")
              && objectp(npc = present("shanzei tou", environment(me)))
              && living(npc) )
-                return notify_fail("É½ÔôÍ·²ÙÆğÈ­Í·£ºÄãÏëÕ¼ÎÒÀÏÆÅµÄ±ãÒË£¿¿ì¹ö£¡\n");
+                return notify_fail("å±±è³Šé ­æ“èµ·æ‹³é ­ï¼šä½ æƒ³ä½”æˆ‘è€å©†çš„ä¾¿å®œï¼Ÿå¿«æ»¾ï¼\n");
         return ::valid_leave(me, dir);
 }

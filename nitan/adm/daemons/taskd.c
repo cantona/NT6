@@ -1,5 +1,5 @@
 // taskd.c
-// Ó¦¸Ã¼ÓÉÏËæ¼´Éú³Éboss£¬É±ËÀºó»ñÈ¡ÎïÆ·
+// èŒ¼èœ†æ¨“å¥»å‘´æ’ˆæ±œå‚–bossã„›ä¼€ä¾šç¶´é³³ïŸ«æ˜œï›‡
 
 #define TASK_DIR        "/task/"
 #define TASK_OB_DIR     TASK_DIR + "obj/"
@@ -39,7 +39,7 @@ nosave mapping search_room;
 mapping query_sroom() {return search_room;}
 mapping *query_task() {return task_status;}
 
-nosave string  *symbol = ({"¡Ä", "¡à", "¡ü", "¡Å", "¡ß", "¡ı", "£¼", "<=", "¡û", "£¾", "=>", "¡ú", "¨J", "¨K", "¨L", "¨I", "//", "£¯", "\\\\", "£Ü", "||", "¡¬","==", "¡ş", "¡ù", "¡ö", "¡ô", "¡ó", "¡õ", "¡ò", "¡ñ", "¡ğ"});
+nosave string  *symbol = ({"ï¼¿", "ï¹¤", "âˆ¥", "Ë", "ï¹£", "âˆ£", "Ë‰", "<=", "â†˜", "Ë‡", "=>", "â†™", "æ²…", "æ²›", "æ±ª", "æ²‰", "//", "ã„", "\\\\", "", "||", "â€²","==", "ï¼", "â†—", "â†", "â†‘", "âŠ™", "â†“", "âŠ•", "â™‚", "â™€"});
 nosave string  *colors = ({RED, GRN, YEL, BLU, MAG, CYN, WHT, HIR, HIG, HIY, HIB, HIM, HIC, HIW});
 
 void remove()
@@ -86,7 +86,7 @@ int clean_up() { return 1; }
 void create()
 {
         seteuid(getuid());
-        set("channel_id", "Ê¹Ãü¾«Áé");
+        set("channel_id", "å¦éŸœå„•é¾");
         get_object("/d/city/dangpu");
         init_task();
 }
@@ -148,7 +148,7 @@ void init_task()
 
         /************************************************
          message("system", "==========================================\n"
-                           "            Ê¹ÃüÈÎÎñ·ÖÅäÍê±Ï              \n"
+                           "            å¦éŸœï ˜æ˜¢ç…¦é¥œä¿‡æ•‘              \n"
                            "==========================================\n",
                            filter_array(users(),(:!query("env/no_task", $1):)));
         ************************************************/
@@ -159,7 +159,7 @@ void init_task()
 
 void delay_init_task()
 {
-        message("system", HIW "¡¾Ê¹Ãü¾«Áé¡¿Ê¹ÃüÈÎÎñ½«ÓÚÈı·ÖÖÓºóÖØĞÂ·ÖÅä¡£\n" NOR,
+        message("system", HIW "â–½å¦éŸœå„•é¾â–¼å¦éŸœï ˜æ˜¢è”šè¡¾ï¡‡ç…¦ç¬˜ç¶´ç¬­é™”ç…¦é¥œï¹\n" NOR,
                 //filter_array(users(),(:!query("env/no_task", $1):)));
                 users());
         remove_call_out("init_task");
@@ -196,7 +196,7 @@ void alloc_task(string arg, int i)
 
         foreach (inv in invs)
                 if (((inv->is_character() && ! userp(inv) &&
-                    query("race", inv) != "Ò°ÊŞ" && 
+                    query("race", inv) != "ç§å¿¤" && 
                     !query_temp("quest_ob", inv) && 
                     ! inv->is_stay_in_room() &&
                     ! inv->is_vendor() &&
@@ -271,7 +271,7 @@ void reg_info(string arg, object env, int i)
                 if( query_temp("override/accept_object", task_status[i]["env"]) )
                         return;
 
-                if( query("race", task_status[i]["env"]) == "Ò°ÊŞ" )
+                if( query("race", task_status[i]["env"]) == "ç§å¿¤" )
                         return;
 
                 set("inquiry/"+filter_color(task_status[i]["name"]),
@@ -294,11 +294,11 @@ string task_list()
         mapping task_info;
 
         if (! sizeof(task_status))
-                return "Ä¿Ç°»¹Ã»ÓĞÈÎºÎÊ¹Ãü±»ÏµÍ³·ÖÅä¡£\n";
+                return "é†´ïéœç¾¶è¡„ï ˜ç¡å¦éŸœæ©ç‚µè‹€ç…¦é¥œï¹\n";
 
         foreach (task_info in task_status) {
-                tmp = sprintf("%2s%sµÄ¡º%s¡»(%s)", task_info["flag"] ?
-                        WHT "¡Ì" NOR : "", task_info["owner"],
+                tmp = sprintf("%2s%sè…”â—‡%sâ—†(%s)", task_info["flag"] ?
+                        WHT "ï¹Ÿ" NOR : "", task_info["owner"],
                         task_info["name"], task_info["id"]);
                 res += sprintf("%s%" + (38 - strlen(filter_color(tmp))) + "s", tmp, "");
                 res += i % 2 ? "" : "\n";
@@ -311,11 +311,11 @@ string task_list()
 string locate_ob(object me, string arg)
 {
         string *altitude =({
-                "¸ß´¦", "µØ·½", "µÍ´¦"
+                "è©¢æ­", "è¯æº", "è…´æ­"
         });
         string *directions=({
-                "ÖÜÎ§","±±·½", "ÄÏ·½", "¶«·½","Î÷·½",
-                "¶«±±·½","Î÷±±·½","¶«ÄÏ·½","Î÷ÄÏ·½"
+                "ç¬šå³“","æ§æº", "é°æº", "é™²æº","æ˜¹æº",
+                "é™²æ§æº","æ˜¹æ§æº","é™²é°æº","æ˜¹é°æº"
         });
 
         int dis, x_sub, y_sub, z_sub, task_size = sizeof(task_status) - BIG_TASK_N;
@@ -329,11 +329,11 @@ string locate_ob(object me, string arg)
                         call_other(TASK_OB_DIR + obj_info["file"], "???");
                         ob = find_object(TASK_OB_DIR + obj_info["file"]);
                         if (obj_info["flag"])
-                                return "¡º" + obj_info["name"] + "¡»ÒÑ¾­Îï¹éÔ­Ö÷ÁË£¬Äã»¹ÕÒÊ²Ã´£¿\n";
+                                return "â—‡" + obj_info["name"] + "â—†çœ’å†ªæ˜œå¯¥åŸ»ç¿‹è³¸ã„›æ–•éœæ¢‘å¦¦ç¹«Ë‹\n";
 
                         /*
                         if( objectp(ob) && query("geter", ob) && playerp(environment(ob)) )
-                                return "¡º" + obj_info["name"] + "¡»ÒÑ¾­ÓĞÈËÄÃµ½ÁË£¬Äã»¹ÕÒÊ²Ã´£¿\n";
+                                return "â—‡" + obj_info["name"] + "â—†çœ’å†ªè¡„ï •é½å–„è³¸ã„›æ–•éœæ¢‘å¦¦ç¹«Ë‹\n";
                         */
                         if (! objectp(env = environment(ob)))
                                env = obj_info["env"];
@@ -348,7 +348,7 @@ string locate_ob(object me, string arg)
                         city = LOOK_CMD->locate(base_name(room));
                         coor_there=query("coor", room);
                         if (! coor_there)
-                                return "¡º" + obj_info["name"] + "¡»ÔÚÒ»¸ö·½Î»ÎŞ·¨È·¶¨µÄÇøÓò£¬ÎŞ·¨ËÑÑ°¡£\n";
+                                return "â—‡" + obj_info["name"] + "â—†å©“ç¨è·ºæºå¼‡æ‹¸æ¥Šï éš…è…”ï¥éƒ–ã„›æ‹¸æ¥Šåˆ²æ‰†ï¹\n";
 
                         x_sub = coor_there["x"] - coor_here["x"];
                         y_sub = coor_there["y"] - coor_here["y"];
@@ -427,79 +427,79 @@ string display_locate(int dist, string alti, string dire, string city)
         string output;
 
         switch(dire) {
-                case "ÖÜÎ§" :
-                        msg[0] = color + (random(3) == 0 ? "¨I" : (random(2) == 0 ? "£Ü" : "\\\\")) + (random(3) == 0 ? "¡Ä" : (random(2) == 0 ? "¡ü" : "¡à")) + (random(3) == 0 ? "¨J" : (random(2) == 0 ? "£¯" : "//")) + NOR;
-                        msg[1] = color + (random(3) == 0 ? "¡û" : (random(2) == 0 ? "¡ş" : "==")) + symbol[random(8) + 24] + (random(3) == 0 ? "¡ú" : (random(2) == 0 ? "¡ş" : "==")) + NOR;
-                        msg[2] = color + (random(3) == 0 ? "¨L" : (random(2) == 0 ? "£¯" : "//")) + (random(3) == 0 ? "¡Å" : (random(2) == 0 ? "¡ı" : "¡ß")) + (random(3) == 0 ? "¨K" : (random(2) == 0 ? "£Ü" : "\\")) + NOR;
+                case "ç¬šå³“" :
+                        msg[0] = color + (random(3) == 0 ? "æ²‰" : (random(2) == 0 ? "" : "\\\\")) + (random(3) == 0 ? "ï¼¿" : (random(2) == 0 ? "âˆ¥" : "ï¹¤")) + (random(3) == 0 ? "æ²…" : (random(2) == 0 ? "ã„" : "//")) + NOR;
+                        msg[1] = color + (random(3) == 0 ? "â†˜" : (random(2) == 0 ? "ï¼" : "==")) + symbol[random(8) + 24] + (random(3) == 0 ? "â†™" : (random(2) == 0 ? "ï¼" : "==")) + NOR;
+                        msg[2] = color + (random(3) == 0 ? "æ±ª" : (random(2) == 0 ? "ã„" : "//")) + (random(3) == 0 ? "Ë" : (random(2) == 0 ? "âˆ£" : "ï¹£")) + (random(3) == 0 ? "æ²›" : (random(2) == 0 ? "" : "\\")) + NOR;
                         break;
-                case "±±·½":
+                case "æ§æº":
                         msg[0] = "  " + color + symbol[random(3)] + NOR + "  ";
-                        msg[1] = "  " + color + (random(10) < 2 ? (random(2) == 0 ? "||" : "¡¬") : symbol[random(8) + 24]) + NOR + "  ";
+                        msg[1] = "  " + color + (random(10) < 2 ? (random(2) == 0 ? "||" : "â€²") : symbol[random(8) + 24]) + NOR + "  ";
                         msg[2] = msg[1];
                         break;
-                case "ÄÏ·½":
-                        msg[0] = "  " + color + (random(10) < 2 ? (random(2) == 0 ? "||" : "¡¬") : symbol[random(8) + 24]) + NOR + "  ";
+                case "é°æº":
+                        msg[0] = "  " + color + (random(10) < 2 ? (random(2) == 0 ? "||" : "â€²") : symbol[random(8) + 24]) + NOR + "  ";
                         msg[1] = msg[0];
                         msg[2] = "  " + color + symbol[random(3) + 3] + NOR + "  ";
                         break;
-                case "¶«·½":
+                case "é™²æº":
                         msg[0] = "      ";
-                        msg[1] = random(10) < 2 ? (random(2) == 0 ? "==" : "¡ş") : symbol[random(8) + 24];
+                        msg[1] = random(10) < 2 ? (random(2) == 0 ? "==" : "ï¼") : symbol[random(8) + 24];
                         msg[1] = color + msg[1] + msg[1] + NOR + symbol[random(3) + 9];
                         msg[2] = msg[0];
                         break;
-                case "Î÷·½":
+                case "æ˜¹æº":
                         msg[0] = "      ";
-                        msg[1] = random(10) < 2 ? (random(2) == 0 ? "==" : "¡ş") : symbol[random(8) + 24];
+                        msg[1] = random(10) < 2 ? (random(2) == 0 ? "==" : "ï¼") : symbol[random(8) + 24];
                         msg[1] = color + symbol[random(3) + 6] + msg[1] + msg[1] + NOR;
                         msg[2] = msg[0];
                         break;
-                case "¶«±±·½":
+                case "é™²æ§æº":
                         msg[0] = "   " + color + (random(4) == 0 ? symbol[12] : symbol[random(3)]) + NOR + " ";
-                        msg[1] = color + (random(10) < 2 ? (random(2) == 0 ? "//" : "£¯") : symbol[random(8) + 24]) + NOR;
+                        msg[1] = color + (random(10) < 2 ? (random(2) == 0 ? "//" : "ã„") : symbol[random(8) + 24]) + NOR;
                         msg[2] = " " + msg[1] + "   ";
                         msg[1] = "  " + msg[1] + "  ";
                         break;
-                case "Î÷±±·½":
+                case "æ˜¹æ§æº":
                         msg[0] = " " + color + (random(4) == 0 ? symbol[15] : symbol[random(3)]) + NOR + "   ";
-                        msg[1] = color + (random(10) < 2 ? (random(2) == 0 ? "\\\\" : "£Ü") : symbol[random(8) + 24]) + NOR;
+                        msg[1] = color + (random(10) < 2 ? (random(2) == 0 ? "\\\\" : "") : symbol[random(8) + 24]) + NOR;
                         msg[2] = "   " + msg[1] + " ";
                         msg[1] = "  " + msg[1] + "  ";
                         break;
-                case "¶«ÄÏ·½":
-                        msg[0] = color + (random(10) < 2 ? (random(2) == 0 ? "\\\\" : "£Ü") : symbol[random(8) + 24]) + NOR;
+                case "é™²é°æº":
+                        msg[0] = color + (random(10) < 2 ? (random(2) == 0 ? "\\\\" : "") : symbol[random(8) + 24]) + NOR;
                         msg[1] = "  " + msg[0] + "  ";
                         msg[0] = " " + msg[0] + "   ";
                         msg[2] = "   " + color + (random(4) == 0 ? symbol[13] : symbol[random(3) + 3]) + NOR + " ";
                         break;
-                case "Î÷ÄÏ·½":
-                        msg[0] = color + (random(10) < 2 ? (random(2) == 0 ? "//" : "£¯") : symbol[random(8) + 24]) + NOR;
+                case "æ˜¹é°æº":
+                        msg[0] = color + (random(10) < 2 ? (random(2) == 0 ? "//" : "ã„") : symbol[random(8) + 24]) + NOR;
                         msg[1] = "  " + msg[0] + "  ";
                         msg[0] = "   " + msg[0] + " ";
                         msg[2] = " " + color + (random(4) == 0 ? symbol[14] : symbol[random(3) + 3]) + NOR + "   ";
                         break;
         }
         i = random(4) + 2;
-        // ÏÂÃæÊÇ¸ÉÈÅÒòËØ
+        // ç‹Ÿé†±å²†è£œï ç§ªåŒ¼
         /**********************************************************/
         msg[0] = filter_symb(fill_f, 0) + sprintf("%" + i + "s", " ") + msg[0] + "   " + filter_symb(fill_b, 0);
         msg[1] = filter_symb(fill_f, 2) + sprintf("%" + i + "s", " ") + msg[1] + "   " + filter_symb(fill_b, 2);
         msg[2] = filter_symb(fill_f, 1) + sprintf("%" + i + "s", " ") + msg[2] + "   " + filter_symb(fill_b, 1);
-        if (alti == "¸ß´¦") msg[0] += " " + colors[random(sizeof(colors))] + alti + NOR;
-        if (alti == "µÍ´¦") msg[2] += " " + colors[random(sizeof(colors))] + alti + NOR;
-        output = HIW "ËùÔÚÇøÓò£º" + city + "\n©¥©¥©¥©¥©¥©¥©¥©¥\n\n" NOR + msg[0] + "\n" + msg[1] + "\n" + msg[2] + "\n" NOR + n_color + "¾àÀëÖ¸Êı£º" +
-                //sprintf(color + "%'¡õ'" + dist + "s" + n_color + "%'¡ö'" + (48-dist) + "s%d\n" NOR, "", "", dist);
-                sprintf(NOR + color + "%'©¥'" + (48-dist) + "s" + NOR + n_color + "%'©¥'" + dist + "s%d\n" NOR, "", "", dist);
-        //output = HIW "©¥©¥©¥©¥©¥©¥©¥©¥\n\n" NOR + msg[0] + "\n" + msg[1] + "\n" + msg[2] + "\n" NOR + n_color + "¾àÀëÖ¸Êı£º" +
-                //sprintf(color + "%'©¥'" + dist + "s" + n_color + "%'©¥'" + (48-dist) + "s\n" NOR, "", "");
+        if (alti == "è©¢æ­") msg[0] += " " + colors[random(sizeof(colors))] + alti + NOR;
+        if (alti == "è…´æ­") msg[2] += " " + colors[random(sizeof(colors))] + alti + NOR;
+        output = HIW "å€å©“ï¥éƒ–ã„©" + city + "\nå²©å²©å²©å²©å²©å²©å²©å²©\n\n" NOR + msg[0] + "\n" + msg[1] + "\n" + msg[2] + "\n" NOR + n_color + "æ“’ç‡­ç¡Œæ…ã„©" +
+                //sprintf(color + "%'â†“'" + dist + "s" + n_color + "%'â†'" + (48-dist) + "s%d\n" NOR, "", "", dist);
+                sprintf(NOR + color + "%'å²©'" + (48-dist) + "s" + NOR + n_color + "%'å²©'" + dist + "s%d\n" NOR, "", "", dist);
+        //output = HIW "å²©å²©å²©å²©å²©å²©å²©å²©\n\n" NOR + msg[0] + "\n" + msg[1] + "\n" + msg[2] + "\n" NOR + n_color + "æ“’ç‡­ç¡Œæ…ã„©" +
+                //sprintf(color + "%'å²©'" + dist + "s" + n_color + "%'å²©'" + (48-dist) + "s\n" NOR, "", "");
         return output;
         /**********************************************************
         msg[0] = sprintf("%" + i + "s", " ") + msg[0];
         msg[1] = sprintf("%" + i + "s", " ") + msg[1];
         msg[2] = sprintf("%" + i + "s", " ") + msg[2];
-        if(alti == "¸ß´¦") msg[0] += " " + colors[random(sizeof(colors))] + alti + NOR;
-        if(alti == "µÍ´¦") msg[2] += " " + colors[random(sizeof(colors))] + alti + NOR;
-        return implode(msg, "\n") + sprintf("\n¾àÀëÖ¸Êı£º%d\n", dist);
+        if(alti == "è©¢æ­") msg[0] += " " + colors[random(sizeof(colors))] + alti + NOR;
+        if(alti == "è…´æ­") msg[2] += " " + colors[random(sizeof(colors))] + alti + NOR;
+        return implode(msg, "\n") + sprintf("\næ“’ç‡­ç¡Œæ…ã„©%d\n", dist);
         **********************************************************/
 }
 
@@ -516,14 +516,14 @@ string ask_for_task(object me, string arg)
         if (type = query_temp("task/" + query("id", who), me))
         switch(type) {
                 case "sell" :
-                        msg = "²»ÊÇËµÁËÂğ£¬ÒªµÄ»°Ò»Á½»Æ½ğÂôÄã¡£";
+                        msg = "ç¥¥å²†ä½½è³¸é˜ã„›çŒè…”è¶•ç¨è¬—é…´è¸¢é—–æ–•ï¹";
                         break;
                 case "draw" :
-                        msg =  RANK_D->query_respect(who) + "Èç¹ûÒÑ¾­»­ºÃÁË" +
-                                query("task/draw", who)+"µÄ·ç¾°Í¼¾ÍÇë¾¡¿ì¸ø"+RANK_D->query_self(me)+"°É£¡";
+                        msg =  RANK_D->query_respect(who) + "ï ±å½†çœ’å†ªè³’ç–‘è³¸" +
+                                query("task/draw", who)+"è…”ç‘åŠ“èŠæ†©ï˜é´ƒè¾¦è·¤"+RANK_D->query_self(me)+"å‹˜ã„";
                         break;
                 case "find" :
-                        msg="¸æËß¹ıÄãÁË£¬ÄÃ"+query("task/find", who)+"À´»»¡£";
+                        msg="è±¢å’‚å¾¹æ–•è³¸ã„›é½"+query("task/find", who)+"æ‡‚é™ï¹";
                         break;
         }
         else
@@ -541,23 +541,23 @@ string ask_for_task(object me, string arg)
                 }
                 switch (random(3)) {
                 case 0 :
-                        msg = "ÕâÎ»" + RANK_D->query_respect(who) + "Èç¹ûÔ¸Òâ³öÒ»Á½»Æ½ğµÄ»°£¬" +
-                                RANK_D->query_self(me) + "Ô¸Òâ°Ñ" + arg + "Âô¸ø" +
-                                RANK_D->query_respect(who) + "¡£";
+                        msg = "æ¶´å¼‡" + RANK_D->query_respect(who) + "ï ±å½†å ‹ç ©å ¤ç¨è¬—é…´è¸¢è…”è¶•ã„›" +
+                                RANK_D->query_self(me) + "å ‹ç ©åƒ" + arg + "é—–è·¤" +
+                                RANK_D->query_respect(who) + "ï¹";
                         set_temp("task/"+query("id", who), "sell", me);
                         break;
                 case 1 :
                         where = explode(read_file(QUEST_LIST + "place"), "\n")[random(sizeof(explode(read_file(QUEST_LIST + "place"), "\n")))];
-                        msg = RANK_D->query_self(me) + "·Ç³£ÏëµÃµ½Ò»·ù" + where[0..strsrch(where, "/")-1] +
-                                where[strsrch(where, "/")+1..] + "·ç¾°Í¼£¬Èç¹û" + RANK_D->query_respect(who) +
-                                "ÄÜ»­Ò»·ùÀ´£¬" + RANK_D->query_self(me) + "Ô¸½«" + arg + "ÔùÓë" +
-                                RANK_D->query_respect(who) + "¡£";
+                        msg = RANK_D->query_self(me) + "æº–éƒ½ç ‘è…•å–„ç¨ç›Ÿ" + where[0..strsrch(where, "/")-1] +
+                                where[strsrch(where, "/")+1..] + "ç‘åŠ“èŠã„›ï ±å½†" + RANK_D->query_respect(who) +
+                                "å¤”è³’ç¨ç›Ÿæ‡‚ã„›" + RANK_D->query_self(me) + "å ‹è”š" + arg + "å´Œè¿µ" +
+                                RANK_D->query_respect(who) + "ï¹";
                         set_temp("task/"+query("id", who), "draw", me);
                         set("task/draw", where[strsrch(where,"/")+1..], who);
                         break;
                 case 2 :
                         find = explode(read_file(QUEST_LIST + "find"), "\n")[random(sizeof(explode(read_file(QUEST_LIST + "find"), "\n")))];
-                        msg = RANK_D->query_self(me) + "Õâ" + arg + "Ö»»»²»Âô£¬Òª»»µÃ»°£¬ÄÃ" + find + "À´¡£";
+                        msg = RANK_D->query_self(me) + "æ¶´" + arg + "ç¡é™ç¥¥é—–ã„›çŒé™è…•è¶•ã„›é½" + find + "æ‡‚ï¹";
                         set_temp("task/"+query("id", who), "find", me);
                         set("task/find", find, who);
                         break;
@@ -581,58 +581,58 @@ int accept_object(object who, object me, object obj)
         if (type == "draw") {
                 if( query("id", obj) != "paper" || !query("draw/info", obj) || 
                     (objectp(query("draw/info", obj)) && filter_color((query("draw/info", obj))->short()) != query("task/draw", me)) || 
-                    query("draw/content", obj) == "ÉÏÃæÂÒÆß°ËÔãµÄ¿´²»³ö»­µÄÊÇÊ²Ã´¡£\n"){
-                        message_vision(CYN"$N"CYN"ÖåÁËÖåÃ¼µÀ£ºÎÒÒªµÄÊÇ"+query("task/draw", me)+
-                        "µÄ·ç¾°Í¼£¬ÄãÕâÊÇÊ²Ã´¶«Î÷£¿\n",
+                    query("draw/content", obj) == "å¥»é†±è§´ï›¯åŒåªè…”è‰˜ç¥¥å ¤è³’è…”å²†å¦¦ç¹«ï¹\n"){
+                        message_vision(CYN"$N"CYN"ç´¶è³¸ç´¶ç¾¹è€‹ã„©æ‰‚çŒè…”å²†"+query("task/draw", me)+
+                        "è…”ç‘åŠ“èŠã„›æ–•æ¶´å²†å¦¦ç¹«é™²æ˜¹Ë‹\n",
                         who);
                         return 0;
                 } else {
-                        if( query("draw/content", obj)[8..9] == "Ëä"){
-                                msg = "»­µÄËäÈ»²»ÔõÃ´Ñù£¬µ«";
+                        if( query("draw/content", obj)[8..9] == "å‘¥"){
+                                msg = "è³’è…”å‘¥ï …ç¥¥å´‹ç¹«æ¬´ã„›ç­";
                                 gift = 6000;
                         } else {
-                                msg = "»­µÄèòèòÈçÉú£¬Õı";
+                                msg = "è³’è…”é¼é¼ï ±æ±œã„›æ·";
                                 gift = 1200;
                         }
-                        message_vision(CYN "$N" CYN "µãÁËµãÍ·µÀ£º" + msg + "ÊÇÎÒÒªµÄ¶«Î÷¡£\n", who);
-                        msg="Í¨¹ıÌæ"+query("name", who)+"»­"+query("task/draw", me)+"·ç¾°µÄ¹ı³Ì£¬";
+                        message_vision(CYN "$N" CYN "è¸è³¸è¸èŠ›è€‹ã„©" + msg + "å²†æ‰‚çŒè…”é™²æ˜¹ï¹\n", who);
+                        msg="ç±µå¾¹æ¸"+query("name", who)+"è³’"+query("task/draw", me)+"ç‘åŠ“è…”å¾¹æœ€ã„›";
                 }
         } else
         if (type == "find") {
                 if( filter_color(query("name", obj)) != query("task/find", me)){
-                        message_vision(CYN "$N" CYN "¿´ÁËÒ»ÑÛ$nµÀ£º" + RANK_D->query_respect(me) + "ÄãÅª´íÁË°É£¬ÎÒÒªµÄÊÇ" +
-                                query("task/find", me)+"£¬²»ÊÇ$n£¡\n",who,obj);
+                        message_vision(CYN "$N" CYN "è‰˜è³¸ç¨æ¡‰$nè€‹ã„©" + RANK_D->query_respect(me) + "æ–•è®€æ¸£è³¸å‹˜ã„›æ‰‚çŒè…”å²†" +
+                                query("task/find", me)+"ã„›ç¥¥å²†$nã„\n",who,obj);
                         return 0;
                 } else {
-                        message_vision(CYN "$N" CYN "×ĞÏ¸¿´ÁË¿´$nµÀ£º²»´í£¬²»´í£¬ÎÒÒªµÄ¾ÍÊÇÕâ¸ö¡£\n", who, obj);
-                        msg="Í¨¹ıÎª"+query("name", who)+"Ñ°ÕÒ"+query("task/find", me)+"µÄ¹ı³Ì£¬";
+                        message_vision(CYN "$N" CYN "è±ç‰‰è‰˜è³¸è‰˜$nè€‹ã„©ç¥¥æ¸£ã„›ç¥¥æ¸£ã„›æ‰‚çŒè…”æ†©å²†æ¶´è·ºï¹\n", who, obj);
+                        msg="ç±µå¾¹å³ˆ"+query("name", who)+"æ‰†æ¢‘"+query("task/find", me)+"è…”å¾¹æœ€ã„›";
                         gift = 8000;
                 }
         } else {
                 if( query("money_id", obj) != "gold" || obj->query_amount()<1){
-                        message_vision(CYN "$N" CYN "´óÉùµÀ£ºËµÁËÒ»Á½»Æ½ğ¾ÍÊÇÒ»Á½»Æ½ğ£¬·ÖºÁ¶¼²»ÄÜº¬ºı¡£\n", who);
+                        message_vision(CYN "$N" CYN "æ¹®æ±’è€‹ã„©ä½½è³¸ç¨è¬—é…´è¸¢æ†©å²†ç¨è¬—é…´è¸¢ã„›ç…¦ç‘­é£²ç¥¥å¤”æ¼ªç·‡ï¹\n", who);
                         return 0;
                 } else {
                         if (obj->query_amount() > 1)
-                                message_vision(CYN "$N" CYN "Ğ¦ÎûÎûµÀ£º" + RANK_D->query_respect(me) + "¼ÈÈ»Ô¸Òâ¶à¸ø£¬" + RANK_D->query_sele(who) + "ÆñÓĞ²»ÊÕÖ®Àí¡£\n", who);
+                                message_vision(CYN "$N" CYN "è™·æŸæŸè€‹ã„©" + RANK_D->query_respect(me) + "æš«ï …å ‹ç ©å—£è·¤ã„›" + RANK_D->query_sele(who) + "ïœè¡„ç¥¥å½¶çœ³ç‡´ï¹\n", who);
                         else
-                                message_vision(CYN "$N" CYN "ÕıÉ«µÀ£ºàÅ£¬·ÖÎÄ²»²î£¬¾ÍÊÇÕâ¸öÊı¡£\n", who);
+                                message_vision(CYN "$N" CYN "æ·ä¼è€‹ã„©é‰£ã„›ç…¦æ…ç¥¥èˆ¹ã„›æ†©å²†æ¶´è·ºæ…ï¹\n", who);
                         msg = 0;
                 }
         }
 
-        message_vision("$n½Ó¹ıÁË$NµÄ" + obj->short() + "¡£\n", me, who);
+        message_vision("$nè«‰å¾¹è³¸$Nè…”" + obj->short() + "ï¹\n", me, who);
         destruct(obj);
         if( sizeof(filter_array(all_inventory(who),(:query("task_ob", $1):))) )
                 obj=filter_array(all_inventory(who),(:query("task_ob", $1):))[0];
         if (objectp(obj)) {
-                message_vision("$NÄÃ³ö" + obj->short() + "¸ø$n¡£\n", who, me);
+                message_vision("$Né½å ¤" + obj->short() + "è·¤$nï¹\n", who, me);
                 obj->move(me, 1);
                 delete("inquiry/"+filter_color(query("name", obj)), who);
                 delete_temp("override/accept_object", who);
                 who->delete_override("die");
         } else
-                message_vision(CYN "$N" CYN "ŞÏŞÎµÄĞ¦µÀ£ºÕâÎ»" + RANK_D->query_respect(me) + "ÊµÔÚÊÇ¶Ô²»×¡£¬ÄÇ¸ö¶«Î÷ÒÑ¾­±»±ğÈËÈ¡×ßÁË¡£\n");
+                message_vision(CYN "$N" CYN "ç˜ç—¸è…”è™·è€‹ã„©æ¶´å¼‡" + RANK_D->query_respect(me) + "å¦—å©“å²†å‹¤ç¥¥è›‚ã„›é¥’è·ºé™²æ˜¹çœ’å†ªæ©æ¢—ï •ïŸ«è»—è³¸ï¹\n");
 
         delete_temp("task/"+query("id", me), who);
         delete("task/draw", me);
@@ -686,7 +686,7 @@ int task_reward(object me, object who, object ob)
         if( query("task/total_count", me) >= 300 && 
             query("task/which_day", me) == td )
         {
-                tell_object(me, WHT "Äã½ñÌìÒÑ¾­Íê³ÉTASKÈÎÎñ³¬¹ıÃ¿ÈÕ¹æ¶¨µÄÏŞÖÆÁË¡£\n" NOR);
+                tell_object(me, WHT "æ–•è¸æ¯çœ’å†ªä¿‡å‚–TASKï ˜æ˜¢é–‰å¾¹è—©ï Ÿå¯éš…è…”ç™¹ç§¶è³¸ï¹\n" NOR);
                 destruct(ob);
                 return 1;
         }
@@ -694,7 +694,7 @@ int task_reward(object me, object who, object ob)
 /*
         if( query("reborn/times", me) )
         {
-                tell_object(me, WHT "×ªÊÀÍæ¼ÒÎŞ·¨Í¨¹ı×öTASKÈÎÎñ»ñµÃ½±Àø¡£\n" NOR);
+                tell_object(me, WHT "è›Œå²ä¿™æ¨¡æ‹¸æ¥Šç±µå¾¹é…•TASKï ˜æ˜¢é³³è…•è”£ç™‚ï¹\n" NOR);
                 destruct(ob);
                 return 1;
         }
@@ -758,7 +758,7 @@ int task_reward(object me, object who, object ob)
         addn("weiwang", weiwang, me);
         */
 
-        msg = WHT "Í¨¹ıÎª" + filter_color(who->name()) + "Ñ°»Ø" + filter_color(ob->name()) + "µÄ¹ı³Ì" NOR;
+        msg = WHT "ç±µå¾¹å³ˆ" + filter_color(who->name()) + "æ‰†éš™" + filter_color(ob->name()) + "è…”å¾¹æœ€" NOR;
         GIFT_D->delay_bonus(me, ([
                 "promot"  : msg,
                 "exp"     : exp,
@@ -805,14 +805,14 @@ int task_reward(object me, object who, object ob)
         if (stringp(gift)) {
                 gift_ob = new(gift);
                 gift_ob->move(me, 1);
-                message_vision(CYN "$N" CYN "Î¢Ğ¦µÀ£º" + RANK_D->query_self(who) +
-                        "ÕâÀïÓĞÒ»"+(stringp(query("base_unit", gift_ob))?
+                message_vision(CYN "$N" CYN "å³šè™·è€‹ã„©" + RANK_D->query_self(who) +
+                        "æ¶´çˆµè¡„ç¨"+(stringp(query("base_unit", gift_ob))?
                         query("base_unit", gift_ob):
                         query("unit", gift_ob))+query("name", gift_ob)+CYN+
-                        "Ôù¸ø" + RANK_D->query_respect(me) + "ÒÔ±íĞ»Òâ¡£\n", who);
+                        "å´Œè·¤" + RANK_D->query_respect(me) + "çœ•æ¡¶éƒ…ç ©ï¹\n", who);
         }
         /*
-        log_file("static/task", sprintf("%s %s½«%s½»¸ø%sµÃµ½%sµãÇ±ÄÜ¡£\n",
+        log_file("static/task", sprintf("%s %sè”š%sè è·¤%sè…•å–„%sè¸ïå¤”ï¹\n",
                 log_time(), me->name(), filter_color(ob->name()),
                 filter_color(who->name()), chinese_number(pot)));
         */

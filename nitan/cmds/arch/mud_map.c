@@ -15,17 +15,17 @@ int main(object me,string arg)
                 return 0;
 
         if( !arg || sscanf(arg, "%d", max_node)!=1 )
-                return notify_fail("map ½ÚµãÊı\n½ÚµãÊı ×îºÃÊÇ5£¬µ½µ×ÏµÍ³ÄÜ³ĞÊÜ¶àÉÙ£¬²»ÖªµÀ:(\n");
+                return notify_fail("map ç¯€é»æ•¸\nç¯€é»æ•¸ æœ€å¥½æ˜¯5ï¼Œåˆ°åº•ç³»çµ±èƒ½æ‰¿å—å¤šå°‘ï¼Œä¸çŸ¥é“:(\n");
 
         if(max_node>20) 
-                return notify_fail("²»ÒªÂÒÀ´£¬Ğ¡ĞÄÏµÍ³±ÀÀ£!\n ×îºÃÊÇ5£¬µ½µ×ÏµÍ³ÄÜ³ĞÊÜ¶àÉÙ£¬²»ÖªµÀ:(\n");
+                return notify_fail("ä¸è¦äº‚ä¾†ï¼Œå°å¿ƒç³»çµ±å´©æ½°!\n æœ€å¥½æ˜¯5ï¼Œåˆ°åº•ç³»çµ±èƒ½æ‰¿å—å¤šå°‘ï¼Œä¸çŸ¥é“:(\n");
 
         if(max_node<=0) 
-                return notify_fail("¸ºÊıĞĞÂğ£¿");
+                return notify_fail("è² æ•¸è¡Œå—ï¼Ÿ");
 
         if(!find_object(filename))      load_object(filename);
         if(!find_object(filename)) 
-                return notify_fail("ÄãµÄÎÄ¼ş²»È«.\n");
+                return notify_fail("ä½ çš„æ–‡ä»¶ä¸å…¨.\n");
         ob=new(filename);
 
         ob->start_mapping(max_node);

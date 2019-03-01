@@ -6,9 +6,9 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÐÄÑâ", ({ "xin yan", "xin", "yan" }) );
-        set("title", "ºì»¨»á×Ü¹Ü");
-        set("gender", "ÄÐÐÔ");
+        set_name("å¿ƒç¡¯", ({ "xin yan", "xin", "yan" }) );
+        set("title", "ç´…èŠ±æœƒç¸½ç®¡");
+        set("gender", "ç”·æ€§");
         set("age", 20);
 
         set("str", 22);
@@ -17,7 +17,7 @@ void create()
         set("kar", 25);
         set("con", 23);
         set("dex", 23);
-        set("long","ËûÒ²ÊÇºì»¨»á×Ü¶æÖ÷³Â¼ÒÂåµÄÊéÍ¯£¬¿´ÉÏÈ¥Ò»¸±¼«Îª¾«Ã÷ÄÜ¸ÉµÄÄ£Ñù£¬\nºì»¨»áÖÐ´ó´óÐ¡Ð¡µÄËöËéÊÂÎñÈ«¹éËû¹Ü¡£\n");
+        set("long","ä»–ä¹Ÿæ˜¯ç´…èŠ±æœƒç¸½èˆµä¸»é™³å®¶æ´›çš„æ›¸ç«¥ï¼Œçœ‹ä¸ŠåŽ»ä¸€å‰¯æ¥µç‚ºç²¾æ˜Žèƒ½å¹¹çš„æ¨¡æ¨£ï¼Œ\nç´…èŠ±æœƒä¸­å¤§å¤§å°å°çš„ç‘£ç¢Žäº‹å‹™å…¨æ­¸ä»–ç®¡ã€‚\n");
         set("combat_exp", 30000);
         set("attitude", "friendly");
         set("env/wimpy", 30);
@@ -41,7 +41,7 @@ void create()
         map_skill("parry", "zhuihun-jian");
         map_skill("sword", "zhuihun-jian");
 
-        create_family("ºì»¨»á", 3, "µÜ×Ó");
+        create_family("ç´…èŠ±æœƒ", 3, "å¼Ÿå­");
         setup();
         
         carry_object(WEAPON_DIR"changjian")->wield();

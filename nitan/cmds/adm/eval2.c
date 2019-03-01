@@ -16,16 +16,16 @@ int main(object me, string arg)
                 return 0; 
 
         if( !me->is_admin() )
-                return notify_fail("Äã²»ÄÜÊ¹ÓÃ¸ÃÃüÁî¡£\n"); 
+                return notify_fail("ä½ ä¸èƒ½ä½¿ç”¨è©²å‘½ä»¤ã€‚\n"); 
 
         if( !arg )
-                return notify_fail("Ö¸Áî¸ñÊ½: eval <LPC ÃüÁî>\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼: eval <LPC å‘½ä»¤>\n");
 
         seteuid(geteuid(this_player(1)));
         filename=user_path(query("id", me));
 
         if( get_dir(filename) == 0 )
-                        return notify_fail("ÄãÃ»ÓĞË½ÈË¹¤×÷Ä¿Â¼£¬²»ÄÜÊ¹ÓÃ´ËÖ¸Áî£¡\n");
+                        return notify_fail("ä½ æ²’æœ‰ç§äººå·¥ä½œç›®éŒ„ï¼Œä¸èƒ½ä½¿ç”¨æ­¤æŒ‡ä»¤ï¼\n");
 
         filename+=("eval_"+query("id", me)+".c");
 
@@ -64,7 +64,7 @@ EndText
         cost -= eval_cost();
         if (!err)
         {
-                        write(sprintf("´«»ØÖµÎª: %O\nÖ´ĞĞÖ¸ÁîÊı£º%d\nÖ´ĞĞ³É¹¦\¡£\n", ret,cost));
+                        write(sprintf("å‚³å›å€¼ç‚º: %O\nåŸ·è¡ŒæŒ‡ä»¤æ•¸ï¼š%d\nåŸ·è¡ŒæˆåŠŸ\ã€‚\n", ret,cost));
                 rm(filename);
                 if( ret=find_object(filename) ) destruct(ret);
                 set("channel_id", sprintf("%s(%s)", me->name(),
@@ -72,7 +72,7 @@ EndText
                 CHANNEL_D->do_channel(this_object(), "sys",
                         sprintf("eval %s", arg));
         }
-        else write("Ö´ĞĞÊ§°Ü£¡\n");
+        else write("åŸ·è¡Œå¤±æ•—ï¼\n");
         return 1;
 }
 
@@ -94,11 +94,11 @@ string doith(string arg) {
                         if(strlen(inp[i])==j+1) {
                                 if(sizeof(inp) == i+1) {
                                         if (cnt>0)
-                                                write("!!!!!! Äã¶àĞ´ÁË "+cnt+"Ò»¸ö×óÀ¨ºÅ¡¸(¡¹¡£!!!!!!\n");
+                                                write("!!!!!! ä½ å¤šå¯«äº† "+cnt+"ä¸€å€‹å·¦æ‹¬è™Ÿã€Œ(ã€ã€‚!!!!!!\n");
                                         else if(cnt<0)
-                                                write("!!!!!! Äã¶àĞ´ÁË "+(-cnt)+ "Ò»¸öÓÒÀ¨ºÅ¡¸)¡¹¡£!!!!!!\n");
+                                                write("!!!!!! ä½ å¤šå¯«äº† "+(-cnt)+ "ä¸€å€‹å³æ‹¬è™Ÿã€Œ)ã€ã€‚!!!!!!\n");
                                         else if(poq)
-                                                write("!!!!!! ×Ö´®²»Õı³£½áÊø !!!\n");
+                                                write("!!!!!! å­—ä¸²ä¸æ­£å¸¸çµæŸ !!!\n");
                                         // error or no error we return here at the end
                                         return "\t"+implode(inp, ";\n\t");
                                                                         }
@@ -113,11 +113,11 @@ string doith(string arg) {
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : eval <LPC ÃüÁî>
+æŒ‡ä»¤æ ¼å¼ : eval <LPC å‘½ä»¤>
 
-Ö´ĞĞÖ¸¶¨µÄ LPC ÃüÁî¡£
+åŸ·è¡ŒæŒ‡å®šçš„ LPC å‘½ä»¤ã€‚
 
-ÀıÈç£ºevalthis_player()->set("test",({"test_data"}) )
+ä¾‹å¦‚ï¼ševalthis_player()->set("test",({"test_data"}) )
 
 HELP );
     return 1;

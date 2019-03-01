@@ -13,24 +13,24 @@ int main(object me, string arg)
                 return 0;
                 
         if (! find_object(FTP_D))
-                return notify_fail("´«Êä¾«Áé(FTP_D)ÉĞÎ´Æô¶¯¡£\n");
+                return notify_fail("å‚³è¼¸ç²¾éˆ(FTP_D)å°šæœªå•Ÿå‹•ã€‚\n");
 
         ftp_sockets = FTP_D->query_sockets();
 
         if (! ftp_sockets || ! sizeof(ftp_sockets))
-                return notify_fail("´«Êä¾«Áé(FTP_D)Ä¿Ç°Ã»ÓĞÈÎºÎÊ¹ÓÃÕßÁ¬Ïß¡£\n");
+                return notify_fail("å‚³è¼¸ç²¾éˆ(FTP_D)ç›®å‰æ²’æœ‰ä»»ä½•ä½¿ç”¨è€…é€£ç·šã€‚\n");
                 
-        msg = sprintf("%-3s %-12s %-17s %-8s %-s\n", "FD", "ÕÊºÅ", "Á¬ÏßÎ»ÖÃ", "×´Ì¬", "×îºóÖ¸Áî"); 
+        msg = sprintf("%-3s %-12s %-17s %-8s %-s\n", "FD", "å¸³è™Ÿ", "é€£ç·šä½ç½®", "ç‹€æ…‹", "æœ€å¾ŒæŒ‡ä»¤"); 
         foreach(string fd, mixed val in ftp_sockets)
         {
-                if (! undefinedp(val["retr"])) stat += "<ÏÂÔØÖĞ>";
-                if (! undefinedp(val["stor"])) stat += "<ÉÏ´«ÖĞ>";
+                if (! undefinedp(val["retr"])) stat += "<ä¸‹è¼‰ä¸­>";
+                if (! undefinedp(val["stor"])) stat += "<ä¸Šå‚³ä¸­>";
                 msg += sprintf("%3d %-12s %-17s %-8s %s\n",
                         fd,
-                        (val["login"] ? val["user"]:"(Î´µÇÈë)"),
+                        (val["login"] ? val["user"]:"(æœªç™»å…¥)"),
                         val["address"],
                         stat, 
-                        (val["lastcmd"] || "(ÎŞ)"),
+                        (val["lastcmd"] || "(ç„¡)"),
                 );
         }
         tell_object(me, msg);

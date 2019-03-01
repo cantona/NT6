@@ -1,4 +1,4 @@
-// miejue.c Ãğ¾øÊ¦Ì«
+// miejue.c æ»…çµ•å¸«å¤ª
 // Modified by That Oct.1997
 #include <command.h>
 #include <ansi.h>
@@ -10,10 +10,10 @@ mixed out_master(mixed arg);
 
 void create()
 {
-        set_name("Ãğ¾øÊ¦Ì«", ({ "miejue-shitai","miejue","shitai"}));
+        set_name("æ»…çµ•å¸«å¤ª", ({ "miejue-shitai","miejue","shitai"}));
         set("long",
-                "ËıÊÇ¶ëáÒÅÉµÄµÚÈı´úµÜ×Ó£¬ÏÖÈÎ¶ëáÒÅÉÕÆÃÅÈË¡£\n");
-        set("gender", "Å®ĞÔ");
+                "å¥¹æ˜¯å³¨åµ‹æ´¾çš„ç¬¬ä¸‰ä»£å¼Ÿå­ï¼Œç¾ä»»å³¨åµ‹æ´¾æŒé–€äººã€‚\n");
+        set("gender", "å¥³æ€§");
         set("age", 62);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -64,7 +64,7 @@ void create()
         map_skill("sword","huifeng-jian");
         map_skill("blade","yanxing-dao");
         map_skill("parry","huifeng-jian");
-        create_family("¶ëáÒÅÉ", 3, "ÕÆÃÅÈË");
+        create_family("å³¨åµ‹æ´¾", 3, "æŒé–€äºº");
 
         setup();
         carry_object("/clone/weapon/changjian")->wield();
@@ -89,7 +89,7 @@ void greeting(object ob)
         int i;
 
         obj = all_inventory(environment(me));
-        command("say ÜÆÈô£¬×İËÀÏÀ¹ÇÏã£¬³ıÄ§ÎÀµÀ¶¨Òª´Ë¾«Éñ¡£");
+        command("say èŠ·è‹¥ï¼Œç¸±æ­»ä¿ éª¨é¦™ï¼Œé™¤é­”è¡›é“å®šè¦æ­¤ç²¾ç¥ã€‚");
         for(i=0; i<sizeof(obj); i++)
         {
                 if( query("id", obj[i]) == "zhou-zhiruo" )

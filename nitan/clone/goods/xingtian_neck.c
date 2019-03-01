@@ -6,15 +6,15 @@ inherit NECK;
  
 void create()
 {
-        set_name(HBGRN "ĞÌÌìÏîÁ´" NOR, ({ "xingtian neck", "neck" }) );
+        set_name(HBGRN "åˆ‘å¤©é …éˆ" NOR, ({ "xingtian neck", "neck" }) );
         set_weight(500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
-                set("long", HIY "Õâ±ãÊÇĞÌÌì´÷¹ıµÄÏîÁ´£¬Í¨ÌåÑª¹âÌÏÌì¡£\n" NOR);
+                set("unit", "å€‹");
+                set("long", HIY "é€™ä¾¿æ˜¯åˆ‘å¤©æˆ´éçš„é …éˆï¼Œé€šé«”è¡€å…‰æ»”å¤©ã€‚\n" NOR);
                 set("value", 3000); 
-                set("no_sell", "ÕâÑù¶«Î÷²»ÄÜÂô¡£\n");
+                set("no_sell", "é€™æ¨£æ±è¥¿ä¸èƒ½è³£ã€‚\n");
                 set("rigidity",8000);   
                 set("material", "tian jing");
                 set("no_pawn", 1);
@@ -23,7 +23,7 @@ void create()
         
         set("mod_mark", "A2030");
         set("mod_level", "M2030");
-        set("mod_name", HBRED "ĞÌÌìÌ××°" NOR);
+        set("mod_name", HBRED "åˆ‘å¤©å¥—è£" NOR);
         set("quality_level", 3);
 
         setup();

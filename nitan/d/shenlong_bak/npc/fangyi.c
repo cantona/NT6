@@ -1,17 +1,17 @@
-// fangyi.c ·½âù
+// fangyi.c æ–¹æ€¡
 // Last Modified by winder on Jul. 12 2002
 
 #include <ansi.h>;
 inherit NPC;
 
 int do_work();
-string *fjob = ({"¶¾Éß", "òşÉß", "¸¹Éß", "½ğ»·Éß", "Ë®Éß", "Òø»·Éß", "ÖñÒ¶Çà"});
+string *fjob = ({"æ¯’è›‡", "èŸ’è›‡", "è…¹è›‡", "é‡‘ç’°è›‡", "æ°´è›‡", "éŠ€ç’°è›‡", "ç«¹è‘‰é’"});
 
 void create()
 {
-        set_name("·½âù", ({ "fang yi","fang" }));
-        set("long", "Ò»ÕÅ¹Ï×ÓÁ³£¬ÈİÃ²ÉõÃÀ¡£\n");
-        set("gender", "Å®ĞÔ");
+        set_name("æ–¹æ€¡", ({ "fang yi","fang" }));
+        set("long", "ä¸€å¼µç“œå­è‡‰ï¼Œå®¹è²Œç”šç¾ã€‚\n");
+        set("gender", "å¥³æ€§");
         set("age", 18);
         set("attitude", "peaceful");
         set("shen_type", 0);
@@ -45,14 +45,14 @@ void create()
         map_skill("parry", "jueming-leg");
         prepare_skill("leg", "jueming-leg");
 
-        set("party/party_name", HIY"ÉñÁú½Ì"NOR);
-        set("party/rank", HIR"³àÁúÃÅ"NOR"½ÌÖÚ");
+        set("party/party_name", HIY"ç¥é¾æ•™"NOR);
+        set("party/rank", HIR"èµ¤é¾é–€"NOR"æ•™çœ¾");
         set("party/level", 1);
-        create_family("ÉñÁú½Ì", 3, "µÜ×Ó");
+        create_family("ç¥é¾æ•™", 3, "å¼Ÿå­");
 
         set("inquiry", ([
-                "½ÌÖ÷" : (: do_work :),
-                "ÉñÁú½Ì" : (: do_work :),
+                "æ•™ä¸»" : (: do_work :),
+                "ç¥é¾æ•™" : (: do_work :),
                 "jiao" : (: do_work :),
         ]));
         setup();
@@ -73,28 +73,28 @@ int do_work()
 
         if( !query("sg/spy", me) && !wizardp(me) )
         {
-                say("·½âùºßÁËÒ»ÉùËµ£º¼ÙÈÊ¼ÙÒåµÄ¶«Î÷£¬»¹²»¸øÎÒ¹ö£¡\n");
+                say("æ–¹æ€¡å“¼äº†ä¸€è²èªªï¼šå‡ä»å‡ç¾©çš„æ±è¥¿ï¼Œé‚„ä¸çµ¦æˆ‘æ»¾ï¼\n");
                 return 1;
         }
-        if( query_temp("marks/·½a", me) )
+        if( query_temp("marks/æ–¹a", me) )
         {
-                say("·½âù²»ÄÍ·³µØËµµÀ£ºÓĞÍêÃ»ÍêÁË£¿\n");
+                say("æ–¹æ€¡ä¸è€ç…©åœ°èªªé“ï¼šæœ‰å®Œæ²’å®Œäº†ï¼Ÿ\n");
                 return 1;
         }
-        if( time()<query("marks/·½c", me)+180 )
+        if( time()<query("marks/æ–¹c", me)+180 )
         {
                 command("slap"+query("id", me));
-                say("·½âù´óÅ­µÀ£º´ÀÖí£¬ÕâÃ´¿ì¾ÍÍüÁË£¡\n");
+                say("æ–¹æ€¡å¤§æ€’é“ï¼šè ¢è±¬ï¼Œé€™éº¼å¿«å°±å¿˜äº†ï¼\n");
                 return 1;
         }
 
-        set_temp("marks/·½a", 1, me);
-        set("marks/·½c", time(), me);
+        set_temp("marks/æ–¹a", 1, me);
+        set("marks/æ–¹c", time(), me);
 
         fwant = fjob[random(sizeof(fjob))];
-        fword = sprintf("·½âùÌ¾ÁË¿ÚÆø£¬ËµµÀ£º·î½ÌÖ÷Ö®Ãü£¬×½%sÀ´ÅäÒ©¡£\n",fwant);
+        fword = sprintf("æ–¹æ€¡å˜†äº†å£æ°£ï¼Œèªªé“ï¼šå¥‰æ•™ä¸»ä¹‹å‘½ï¼Œæ‰%sä¾†é…è—¥ã€‚\n",fwant);
         say(fword);
-        set_temp("marks/¶¾Éß", fwant, me);
+        set_temp("marks/æ¯’è›‡", fwant, me);
         return 1;
 }
 
@@ -103,16 +103,16 @@ int do_comfort(string arg)
         object me = this_player();
 
         if(!arg || !(arg == "fang yi" || arg == "fang")) return notify_fail("");
-        message_vision("$NĞ¦ÎûÎûµØ°²Î¿×Å·½âù¡£\n", me);
-        if( !query_temp("marks/·½a", me) )
+        message_vision("$Nç¬‘å˜»å˜»åœ°å®‰æ…°è‘—æ–¹æ€¡ã€‚\n", me);
+        if( !query_temp("marks/æ–¹a", me) )
         {
-                say("·½âùÀäĞ¦µÀ£º±ğ¼ÙĞÊĞÊÁË¡£\n");
+                say("æ–¹æ€¡å†·ç¬‘é“ï¼šåˆ¥å‡æƒºæƒºäº†ã€‚\n");
                 return 1;
         }
-        delete_temp("marks/·½a", me);
-        message_vision("$NµÀ£º·½¹ÃÄï£¬Çë·ÅĞÄ£¡ÎÒÕâ¾Í¸øÄãÈ¥×¥¡£\n", me);
+        delete_temp("marks/æ–¹a", me);
+        message_vision("$Né“ï¼šæ–¹å§‘å¨˜ï¼Œè«‹æ”¾å¿ƒï¼æˆ‘é€™å°±çµ¦ä½ å»æŠ“ã€‚\n", me);
         command("thank"+query("id", me));
-        set_temp("marks/·½b", 1, me);
+        set_temp("marks/æ–¹b", 1, me);
 
         return 1;
 }
@@ -121,23 +121,23 @@ int accept_object(object who, object ob)
 {
         int expgain, faccept;
 
-        if( !query_temp("marks/·½b", who))return 0;
-        if( query("name", ob) != query_temp("marks/¶¾Éß", who) )
+        if( !query_temp("marks/æ–¹b", who))return 0;
+        if( query("name", ob) != query_temp("marks/æ¯’è›‡", who) )
         {
                 command("angry"+query("id", who));
                 command("disapp"+query("id", who));
                 return 0;
         }
 
-        delete_temp("marks/·½b", who);
-        delete_temp("marks/¶¾Éß", who);
+        delete_temp("marks/æ–¹b", who);
+        delete_temp("marks/æ¯’è›‡", who);
 
         call_out("destroy_it", 1, ob);
 
         command("jump"+query("id", who));
         command("secret"+query("id", who));
 
-        message_vision("·½âùÔÚ$N¶ú±ßÇÄÇÄµÄËµÁË¼¸¾ä»°¡£\n", who);
+        message_vision("æ–¹æ€¡åœ¨$Nè€³é‚Šæ‚„æ‚„çš„èªªäº†å¹¾å¥è©±ã€‚\n", who);
         if( who->query_skill("medicine", 1) < 30 )
                 who->improve_skill("medicine",random(2*query("int", who)));
 

@@ -7,46 +7,46 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIG "À°°ËÖà" NOR, ({ "laba zhou", "zhou" }) );
+        set_name(HIG "è‡˜å…«ç²¥" NOR, ({ "laba zhou", "zhou" }) );
         set_weight(300);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIG "Ö»¼ûÈÈÖàÕôÆøÉÏÃ°£¬Ø£×ÔÔÚÒ»¸ö¸öÆøÅİ´ÓÖàµ××ê½«ÉÏÀ´£¬Ò»ÍëÖà¾¡×÷ÉîÂÌÖ®É«£¬ÇÆÉÏÈ¥Ëµ²»³öµÄ¹îÒì¡£\n" NOR);
+                set("long", HIG "åªè¦‹ç†±ç²¥è’¸æ°£ä¸Šå†’ï¼Œå…€è‡ªåœ¨ä¸€å€‹å€‹æ°£æ³¡å¾ç²¥åº•é‘½å°‡ä¸Šä¾†ï¼Œä¸€ç¢—ç²¥ç›¡ä½œæ·±ç¶ ä¹‹è‰²ï¼Œç§ä¸Šå»èªªä¸å‡ºçš„è©­ç•°ã€‚\n" NOR);
                 set("value", 1);
-                set("unit", "Íë");
+                set("unit", "ç¢—");
                 set("only_do_effect", 1); 
         }
 }
 
 int do_effect(object me)
 {
-        // ÒÑ¾­ºÈ¹ı
+        // å·²ç¶“å–é
         if( query("gift/labazhou", me) )
         {
-                message_vision(HIY "$N" HIY "¶ËÆøÖàÍë£¬ºÈÁË¸öÍëµ×³¯Ìì£¬µ«ÊÇ¾õµÃÃ»ÓĞÊ²Ã´×÷ÓÃ¡£\n" NOR, me);
+                message_vision(HIY "$N" HIY "ç«¯æ°£ç²¥ç¢—ï¼Œå–äº†å€‹ç¢—åº•æœå¤©ï¼Œä½†æ˜¯è¦ºå¾—æ²’æœ‰ä»€éº¼ä½œç”¨ã€‚\n" NOR, me);
                 destruct(this_object());
                 return 1;
         }
-        // ²úÉúĞ§¹û
+        // ç”¢ç”Ÿæ•ˆæœ
         if( query("story/labazhou", me) )
         {
-                message_vision(HIY "$N" HIY "¶ËÆğÖàÍë£¬Ö»¾õÒ©Æø´Ì±Ç£¬Èë¿ÚÈ´ÌğÌğµÄ²¢²»ÄÑ³Ô£¬Çê¿Ì¼ä±ãºÈÁË¸öÍëµ×³¯Ìì¡£\n" NOR, me);
+                message_vision(HIY "$N" HIY "ç«¯èµ·ç²¥ç¢—ï¼Œåªè¦ºè—¥æ°£åˆºé¼»ï¼Œå…¥å£å»ç”œç”œçš„ä¸¦ä¸é›£åƒï¼Œé ƒåˆ»é–“ä¾¿å–äº†å€‹ç¢—åº•æœå¤©ã€‚\n" NOR, me);
                 if (random(10) == 1) 
                 {
-                        message_vision(HIC "$N" HIC "¾õµÃÕâÖàÌğÌğµÄ£¬·Ç³£ºÃºÈ¡£\n"NOR, me);
+                        message_vision(HIC "$N" HIC "è¦ºå¾—é€™ç²¥ç”œç”œçš„ï¼Œéå¸¸å¥½å–ã€‚\n"NOR, me);
                         destruct(this_object());
-                        return 1;  // 10% µÄ¼¸ÂÊÃ»ÓĞĞ§¹û
+                        return 1;  // 10% çš„å¹¾ç‡æ²’æœ‰æ•ˆæœ
                 }
 
                 set("gift/labazhou", 1, me);
 
-                message_vision(HIC "$N" HIC "ĞØÖĞÒ»¹ÉÈÈÆøÓ¿ÏÖÉÏÀ´£¬µÇÊ±¾õµÃ¾«ÉñÎªÖ®Ò»Õñ¡£\n" NOR, me);
+                message_vision(HIC "$N" HIC "èƒ¸ä¸­ä¸€è‚¡ç†±æ°£æ¹§ç¾ä¸Šä¾†ï¼Œç™»æ™‚è¦ºå¾—ç²¾ç¥ç‚ºä¹‹ä¸€æŒ¯ã€‚\n" NOR, me);
 
                 destruct(this_object());
                 return 1;
         }
         else
-        // Ã»ÓĞÖĞ¹ÊÊÂµÄ²»ÄÜºÈ
-                return notify_fail("ÕâÍëÖàÉîÂÌÈç´Ë£¬Ö»Ó³µÃÈËÃæ¾ã±Ì£¬Ò©Æø´Ì±Ç£¬Æä¶¾¿ÉÖª£¬ÄãÈÌ²»×¡±ãÒªÅ»ÍÂ¡£\n");
+        // æ²’æœ‰ä¸­æ•…äº‹çš„ä¸èƒ½å–
+                return notify_fail("é€™ç¢—ç²¥æ·±ç¶ å¦‚æ­¤ï¼Œåªæ˜ å¾—äººé¢ä¿±ç¢§ï¼Œè—¥æ°£åˆºé¼»ï¼Œå…¶æ¯’å¯çŸ¥ï¼Œä½ å¿ä¸ä½ä¾¿è¦å˜”åã€‚\n");
 }

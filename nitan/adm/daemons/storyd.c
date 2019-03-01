@@ -5,7 +5,7 @@
 inherit F_DBASE;
 inherit F_SAVE;
 
-// Ã¿ 10 ÌìË¢ÐÂ¹ÊÊÂ
+// æ¯ 10 å¤©åˆ·æ–°æ•…äº‹
 #define REFRESH_INTERVAL        10 * 86400
 
 string *story_name;
@@ -29,10 +29,10 @@ string query_save_file()
 void create()
 {
         seteuid(ROOT_UID);
-        set("channel_id", "¹ÊÊÂ¾«Áé");
-        CHANNEL_D->do_channel( this_object(), "sys", "¹ÊÊÂÏµÍ³ÒÑ¾­Æô¶¯¡£");
+        set("channel_id", "æ•…äº‹ç²¾éˆ");
+        CHANNEL_D->do_channel( this_object(), "sys", "æ•…äº‹ç³»çµ±å·²ç¶“å•Ÿå‹•ã€‚");
 
-        // »Ö¸´¹ÊÊÂ·¢Éú×´¿ö
+        // æ¢å¾©æ•…äº‹ç™¼ç”Ÿç‹€æ³
         restore();
 
         if (! arrayp(story_name))
@@ -52,7 +52,7 @@ int query_next_update()
 
 void init_story()
 {
-        CHANNEL_D->do_channel(this_object(), "sys", "¹ÊÊÂÏµÍ³¸üÐÂËùÓÐ¹ÊÊÂ¡£");
+        CHANNEL_D->do_channel(this_object(), "sys", "æ•…äº‹ç³»çµ±æ›´æ–°æ‰€æœ‰æ•…äº‹ã€‚");
         story_name = get_dir(STORY_DIR + "*.c");
         story_name = map_array(story_name, (: $1[0..<3] :));
 
@@ -63,7 +63,7 @@ private void ready_to_start()
 {
         int dp;
 
-        // ±£´æµ±Ç°¹ÊÊÂ×´¿ö
+        // ä¿å­˜ç•¶å‰æ•…äº‹ç‹€æ³
         save();
 
         if ((dp = time() - last_update) >= REFRESH_INTERVAL)
@@ -104,11 +104,11 @@ varargs void start_story(string sname)
 
         /*
         if (VERSION_D->is_boot_synchronizing())
-                // ÕýÔÚÆô¶¯ÖÐÍ¬²½°æ±¾£¿ÄÇÃ´²»Æô¶¯ÈÎºÎ¹ÊÊÂ
+                // æ­£åœ¨å•Ÿå‹•ä¸­åŒæ­¥ç‰ˆæœ¬ï¼Ÿé‚£éº¼ä¸å•Ÿå‹•ä»»ä½•æ•…äº‹
                 return;
         */
 
-        CHANNEL_D->do_channel(this_object(), "sys", "¹ÊÊÂÏµÍ³¿ªÊ¼Ñ¡Ôñ¹ÊÊÂ¡£");
+        CHANNEL_D->do_channel(this_object(), "sys", "æ•…äº‹ç³»çµ±é–‹å§‹é¸æ“‡æ•…äº‹ã€‚");
 
         if (sname)
                 all_story = explode(sname, ",");
@@ -124,7 +124,7 @@ varargs void start_story(string sname)
                         history[name] = (int)time();
 
                 CHANNEL_D->do_channel(this_object(), "sys",
-                                      "¹ÊÊÂÏµÍ³Ñ¡ÔñÁË¹ÊÊÂ(" + name + ")¡£");
+                                      "æ•…äº‹ç³»çµ±é¸æ“‡äº†æ•…äº‹(" + name + ")ã€‚");
 
                 all_story -= ({ name });
                 if (ob = find_object(STORY_DIR + name))
@@ -172,7 +172,7 @@ void process_story(object ob)
         step++;
 
         prompt = ob->prompt();
-        if (! prompt) prompt = HIG "¡¾¹ÊÊÂ¡¿" NOR;
+        if (! prompt) prompt = HIG "ã€æ•…äº‹ã€‘" NOR;
         if (functionp(line)) catch(line = evaluate(line));
         if (stringp(line))
         {
@@ -215,13 +215,13 @@ void give_gift(string gift, int amount, string msg)
 
         if (sizeof(ips) >= 1)
         {
-                // ÐèÒªÈý¸öÒÔÉÏµÄIPµÇÂ¼²Å¸øÓë½±Æ·
+                // éœ€è¦ä¸‰å€‹ä»¥ä¸Šçš„IPç™»éŒ„æ‰çµ¦èˆ‡çŽå“
 
-                // Ëæ¼´³éÒ»¸öIP
+                // éš¨å³æŠ½ä¸€å€‹IP
                 ks = keys(ips);
                 ip = ks[random(sizeof(ks))];
 
-                // ÔÚ¸ÃIPµØÖ·ÉÏËæ¼´³éÈ¡Ò»¸öÍæ¼Ò
+                // åœ¨è©²IPåœ°å€ä¸Šéš¨å³æŠ½å–ä¸€å€‹çŽ©å®¶
                 pob = ips[ip][random(sizeof(ips[ip]))];
 
                 env = environment(pob);
@@ -237,8 +237,8 @@ void give_gift(string gift, int amount, string msg)
                         ob->move(env);
                 }
                 CHANNEL_D->do_channel( this_object(),
-                        "sys", sprintf(NOR WHT "ÔùÆ·%s" NOR WHT "µôµ½ÁË"
-                                HIC "%s" NOR WHT "(%O" NOR WHT ")¡£" NOR,
+                        "sys", sprintf(NOR WHT "è´ˆå“%s" NOR WHT "æŽ‰åˆ°äº†"
+                                HIC "%s" NOR WHT "(%O" NOR WHT ")ã€‚" NOR,
                                 ob->name(), env->short(), env));
         }
 }
@@ -253,9 +253,9 @@ string query_info()
 
         dp = REFRESH_INTERVAL - dp;
         if (dp < 0)
-                msg = "¹ÊÊÂ¾«ÁéÂíÉÏË¢ÐÂËùÓÐ¹ÊÊÂ¡£\n";
+                msg = "æ•…äº‹ç²¾éˆé¦¬ä¸Šåˆ·æ–°æ‰€æœ‰æ•…äº‹ã€‚\n";
         else
-                msg = "¹ÊÊÂ¾«Áé½«ÔÚ" + appromix_time(dp) + "ºóË¢ÐÂËùÓÐ¹ÊÊÂ¡£\n";
+                msg = "æ•…äº‹ç²¾éˆå°‡åœ¨" + appromix_time(dp) + "å¾Œåˆ·æ–°æ‰€æœ‰æ•…äº‹ã€‚\n";
 
         return msg;
 }

@@ -5,12 +5,12 @@ inherit COMBINED_ITEM;
 
 void create()
 {
-        set_name(NOR + WHT "±Ì²Ï¹Æ¶¾" NOR, ({ "bican gudu", "bican", "gudu" }));
+        set_name(NOR + WHT "ç¢§è ¶è ±æ¯’" NOR, ({ "bican gudu", "bican", "gudu" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIB "ÕâÊÇÒ»Á£¼¯°Ù¶¾Ö®¾«»ªÁ¶ÖÆ¶ø³ÉµÄ¶¾Ò©£¬¶¾ĞÔÃÍÁÒÖ®¼«¡£¾­¹ı¿×È¸µ¨¡¢º×¶¥ºìÁ·ÖÆºóÎŞÉ«ÎŞÎ¶£¬Î¨¼ûĞ§½Ï»º!\n" NOR);
-                set("base_unit", "Á£");
+                set("long", HIB "é€™æ˜¯ä¸€ç²’é›†ç™¾æ¯’ä¹‹ç²¾è¯ç…‰åˆ¶è€Œæˆçš„æ¯’è—¥ï¼Œæ¯’æ€§çŒ›çƒˆä¹‹æ¥µã€‚ç¶“éå­”é›€è†½ã€é¶´é ‚ç´…ç·´åˆ¶å¾Œç„¡è‰²ç„¡å‘³ï¼Œå”¯è¦‹æ•ˆè¼ƒç·©!\n" NOR);
+                set("base_unit", "ç²’");
                 set("base_value", 200000);
                 set("base_weight", 10);
                 set("poison_type", "yaowang_poison");
@@ -20,7 +20,7 @@ void create()
                 set("poison", ([
                         "level" : 350,
                         "id"    : "yaowang",
-                        "name"  : "±Ì²Ï¹Æ¶¾",
+                        "name"  : "ç¢§è ¶è ±æ¯’",
                         "duration" : 22,
                 ]));
                 set("no_sell", 1);
@@ -32,8 +32,8 @@ void create()
 
 int do_effect(object me)
 {
-        message_vision("$NÒ»Ñö²±£¬°Ñ±Ì²Ï¹Æ¶¾È«²¿µ¹ÈëÁË×ìÖĞ¡£\n", me);
-        set_temp("die_reason", "³ÔÁË±Ì²Ï¹Æ¶¾±©±ĞÉíÍöÁË", me);
+        message_vision("$Nä¸€ä»°è„–ï¼ŒæŠŠç¢§è ¶è ±æ¯’å…¨éƒ¨å€’å…¥äº†å˜´ä¸­ã€‚\n", me);
+        set_temp("die_reason", "åƒäº†ç¢§è ¶è ±æ¯’æš´æ–ƒèº«äº¡äº†", me);
         me->die();
 
         add_amount(-1);

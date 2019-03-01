@@ -16,7 +16,7 @@ int main(object me, string arg)
 {
         string mailto, topic;
 
-        return notify_fail("´Ë·şÎñÒÑ¾­ÔİÍ£¡£\n");
+        return notify_fail("æ­¤æœå‹™å·²ç¶“æš«åœã€‚\n");
         if (! arg || sscanf(arg, "%s %s", mailto, topic) != 2)
         {
                 mailto = arg;
@@ -25,7 +25,7 @@ int main(object me, string arg)
 
         if (! mailto || mailto == "")
         {
-                write("ÇëÊäÈëÄã·¢ËÍÓÊ¼şµÄµØÖ·£º");
+                write("è«‹è¼¸å…¥ä½ ç™¼é€éƒµä»¶çš„åœ°å€ï¼š");
                 input_to("get_mail_to", me, 0);
                 return 1;
         }
@@ -41,7 +41,7 @@ protected void get_mail_to(string mailto, object me, string topic)
         if (! mailto || mailto == "" || sscanf(mailto, "%s@%s", user, addr) != 2 ||
             user == "" || addr == "")
         {
-                tell_object(me, "ÄãÖ¸¶¨µÄ·¢ËÍµØÖ·¸ñÊ½²»ÕıÈ·¡£\n");
+                tell_object(me, "ä½ æŒ‡å®šçš„ç™¼é€åœ°å€æ ¼å¼ä¸æ­£ç¢ºã€‚\n");
                 return;
         }
 
@@ -51,20 +51,20 @@ protected void get_mail_to(string mailto, object me, string topic)
                 return;
         }
 
-        write("ÇëÊäÈëÄãĞÅ¼şµÄ±êÌâ£º");
+        write("è«‹è¼¸å…¥ä½ ä¿¡ä»¶çš„æ¨™é¡Œï¼š");
         input_to("get_mail_subject", me, mailto);
 }
 
 protected void get_mail_subject(string topic, object me, string mailto)
 {
         if (! topic || topic == "")
-                topic = "Ã»ÓĞ";
+                topic = "æ²’æœ‰";
 
-        write(sprintf(WHT "·¢ĞÅÈË£º" CYN "%s  "
-                      WHT "ÊÕĞÅÈË£º" CYN "%s  "
-                      WHT "Ö÷Ìâ£º" CYN "%s\n" NOR,
+        write(sprintf(WHT "ç™¼ä¿¡äººï¼š" CYN "%s  "
+                      WHT "æ”¶ä¿¡äººï¼š" CYN "%s  "
+                      WHT "ä¸»é¡Œï¼š" CYN "%s\n" NOR,
                       query("email", me),mailto,topic));
-        write("ÇëÊäÈëÄãĞÅ¼şµÄÄÚÈİ¡£\n");
+        write("è«‹è¼¸å…¥ä½ ä¿¡ä»¶çš„å…§å®¹ã€‚\n");
         me->edit(bind((: call_other, __FILE__, "done", me, mailto, topic :), me));
 }
 
@@ -73,12 +73,12 @@ void done(object me, string mailto, string topic, string msg)
         if (! me || ! msg || msg == "")
                 return;
 
-        msg += "\n\n        ¸ĞĞ»Äú¹âÁÙÄàÌ¶ÍøÂçÓÎÏ·£¬×£ÄúÔÚÄàÌ¶ÍæµÄÓä¿ì£¡\n" +
-               "        ÄàÌ¶ÍøÂçÓÎÏ·Ö÷Ò³Îª http://www.mudbuilder.com/ ¡£\n";
+        msg += "\n\n        æ„Ÿè¬æ‚¨å…‰è‡¨æ³¥æ½­ç¶²çµ¡éŠæˆ²ï¼Œç¥æ‚¨åœ¨æ³¥æ½­ç©çš„æ„‰å¿«ï¼\n" +
+               "        æ³¥æ½­ç¶²çµ¡éŠæˆ²ä¸»é ç‚º http://www.mudbuilder.com/ ã€‚\n";
 
         if( !wizardp(me) && time()-query_temp("last_mail", me)<30 )
         {
-                tell_object(me, "ÄãÔÚÈıÊ®ÃëÖÓÄÚÖ»ÄÜ·¢ËÍÒ»·âĞÅ¼ş¡£\n");
+                tell_object(me, "ä½ åœ¨ä¸‰åç§’é˜å…§åªèƒ½ç™¼é€ä¸€å°ä¿¡ä»¶ã€‚\n");
                 return;
         }
 
@@ -87,17 +87,17 @@ void done(object me, string mailto, string topic, string msg)
                                  mailto, topic, msg))
         {
                 tell_object(me, query_fail_msg());
-                tell_object(me, "·¢ËÍÓÊ¼şÊ§°Ü¡£\n");
+                tell_object(me, "ç™¼é€éƒµä»¶å¤±æ•—ã€‚\n");
         } else
-                tell_object(me, "ÄãµÄÓÊ¼şÒÑ¾­·¢Íù<" + mailto + ">ÁË¡£\n");
+                tell_object(me, "ä½ çš„éƒµä»¶å·²ç¶“ç™¼å¾€<" + mailto + ">äº†ã€‚\n");
 }
 
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½£º mail [<µØÖ·>] [<Ö÷Ìâ>]
+æŒ‡ä»¤æ ¼å¼ï¼š mail [<åœ°å€>] [<ä¸»é¡Œ>]
 
-Õâ¸öÖ¸ÁîÈÃÄã·¢ĞÅ¸øÄ³ÈË¡£
+é€™å€‹æŒ‡ä»¤è®“ä½ ç™¼ä¿¡çµ¦æŸäººã€‚
 HELP );
         return 1;
 }

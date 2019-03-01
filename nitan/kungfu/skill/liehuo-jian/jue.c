@@ -1,11 +1,11 @@
 // This program is a part of NITAN MudLIB
-// jue.c ÁÒ»ğÈı¾ø½£
+// jue.c çƒˆç«ä¸‰çµ•åŠ
 
 #include <ansi.h>
 
 inherit F_SSERVER;
 
-string name() { return "ÁÒ»ğÈı¾ø½£"; }
+string name() { return "çƒˆç«ä¸‰çµ•åŠ"; }
 
 int perform(object me, object target)
 {
@@ -14,23 +14,23 @@ int perform(object me, object target)
         int i;
 
         if (! me->is_fighting())
-                return notify_fail("¡¸"+HIR"ÁÒ»ğÈı¾ø½£"NOR+"¡¹Ö»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œ"+HIR"çƒˆç«ä¸‰çµ•åŠ"NOR+"ã€åªèƒ½åœ¨æˆ°é¬¥ä¸­ä½¿ç”¨ã€‚\n");
 
         if (me->is_busy())
-                return notify_fail("ÄãÕıÃ¦×ÅÄØ£¡\n");
+                return notify_fail("ä½ æ­£å¿™è‘—å‘¢ï¼\n");
 
         if (! objectp(weapon = query_temp("weapon", me))
         || (string)query("skill_type", weapon) != "sword")
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ã€‚\n");
 
         if ((int)query("neili", me) < 500)
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¡\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼\n");
 
         if ((int)me->query_skill("sword") < 100 ||
                 me->query_skill_mapped("sword") != "liehuo-jian")
-                return notify_fail("ÄãµÄ¡¸ÁÒ»ğ½£¡¹»¹²»µ½¼Ò£¬ÎŞ·¨Ê¹ÓÃ¡¸"+HIR"ÁÒ»ğÈı¾ø½£"NOR+"¡¹£¡\n");
+                return notify_fail("ä½ çš„ã€Œçƒˆç«åŠã€é‚„ä¸åˆ°å®¶ï¼Œç„¡æ³•ä½¿ç”¨ã€Œ"+HIR"çƒˆç«ä¸‰çµ•åŠ"NOR+"ã€ï¼\n");
 
-        msg = HIR "$NÔËÆğÄÚÁ¦£¬¶ÙÊ±ÊÖÖĞ±øÆ÷»ğÑæ±ÆÈË£¬½Ó×ÅÏò¶Ô·½Á¬»·´ÌÈ¥£¡\n" NOR;
+        msg = HIR "$Né‹èµ·å…§åŠ›ï¼Œé “æ™‚æ‰‹ä¸­å…µå™¨ç«ç‡„é€¼äººï¼Œæ¥è‘—å‘å°æ–¹é€£ç’°åˆºå»ï¼\n" NOR;
         message_combatd(msg, me, target);
 
         me->clean_up_enemy();
@@ -40,7 +40,7 @@ int perform(object me, object target)
         for(i = 0; i < 3; i++)
                 if (me->is_fighting(ob) && ob->is_fighting(me) && query("eff_qi", ob)>0)
                 {
-                        set("action_msg", "½ô¸ú×Å", me);
+                        set("action_msg", "ç·Šè·Ÿè‘—", me);
                         if (!query("equipped", weapon)) break;
                         COMBAT_D->do_attack(me, ob,weapon, 0);
                 } else break;

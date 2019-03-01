@@ -2,9 +2,9 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Î÷ÃÅÍâ");
+        set("short", "è¥¿é–€å¤–");
         set("long", @LONG
-ÕâÀïÊÇ±±¾©µÄÎ÷³ÇÃÅÍâ¡£ÈËÀ´ÈËÍù£¬É·ÊÇÈÈÄÖ¡£
+é€™è£¡æ˜¯åŒ—äº¬çš„è¥¿åŸé–€å¤–ã€‚äººä¾†äººå¾€ï¼Œç…æ˜¯ç†±é¬§ã€‚
 LONG );
         set("exits", ([
                 "east" : "/d/beijing/xichengmen",

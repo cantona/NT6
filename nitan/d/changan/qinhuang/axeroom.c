@@ -2,9 +2,9 @@ inherit ROOM;
 int do_xue(string arg);
 void create()
 {
-    set("short", "¸«Ù¸");
+    set("short", "æ–§ä¿‘");
         set("long", @LONG
-ÕâÀïµÄÌÕÙ¸ÊÖÀï¶¼ÄÃ×Å¸«£¬°Ú×Å¸÷ÖÖ×ËÊÆ£¬ÉñÌ¬¸÷Òì¡£
+é€™è£¡çš„é™¶ä¿‘æ‰‹è£¡éƒ½æ‹¿è‘—æ–§ï¼Œæ“ºè‘—å„ç¨®å§¿å‹¢ï¼Œç¥æ…‹å„ç•°ã€‚
 LONG );
     set("exits", ([
            "west":__DIR__"shidao5",
@@ -19,26 +19,26 @@ int do_xue(string arg)
 {
     object me;
     me = this_player();
-    if ( !arg || ( arg != "Ù¸" ) )
-        return notify_fail("Ê²Ã´£¿\n");
+    if ( !arg || ( arg != "ä¿‘" ) )
+        return notify_fail("ä»€éº¼ï¼Ÿ\n");
     if ( (int)me->query_skill("literate", 1) < 1)
-        return notify_fail("ÄãÊÇ¸öÎÄÃ¤£¬ÏÈÑ§µãÎÄ»¯(literate)°É¡£\n");
-    if( query("hammer", me))return notify_fail("ÄãÒÑ¾­Ñ§¹ı´¸Ù¸ÁË¡£\n");
-    if( query("sword", me))return notify_fail("ÄãÒÑ¾­Ñ§¹ı½£Ù¸ÁË¡£\n");
-    if( query("unarmed", me))return notify_fail("ÄãÒÑ¾­Ñ§¹ıÈ­Ù¸ÁË¡£\n");
-    if( query("club", me))return notify_fail("ÄãÒÑ¾­Ñ§¹ı¹÷Ù¸ÁË¡£\n");
-    if( query("whip", me))return notify_fail("ÄãÒÑ¾­Ñ§¹ı±ŞÙ¸ÁË¡£\n");
-    if( query("staff", me))return notify_fail("ÄãÒÑ¾­Ñ§¹ıÕÈÙ¸ÁË¡£\n");
-    if( query("throwing", me))return notify_fail("ÄãÒÑ¾­Ñ§¹ı¼ıÙ¸ÁË¡£\n");
-    if( query("blade", me))return notify_fail("ÄãÒÑ¾­Ñ§¹ıµ¶Ù¸ÁË¡£\n");
+        return notify_fail("ä½ æ˜¯å€‹æ–‡ç›²ï¼Œå…ˆå­¸é»æ–‡åŒ–(literate)å§ã€‚\n");
+    if( query("hammer", me))return notify_fail("ä½ å·²ç¶“å­¸ééŒ˜ä¿‘äº†ã€‚\n");
+    if( query("sword", me))return notify_fail("ä½ å·²ç¶“å­¸éåŠä¿‘äº†ã€‚\n");
+    if( query("unarmed", me))return notify_fail("ä½ å·²ç¶“å­¸éæ‹³ä¿‘äº†ã€‚\n");
+    if( query("club", me))return notify_fail("ä½ å·²ç¶“å­¸éæ£ä¿‘äº†ã€‚\n");
+    if( query("whip", me))return notify_fail("ä½ å·²ç¶“å­¸éé­ä¿‘äº†ã€‚\n");
+    if( query("staff", me))return notify_fail("ä½ å·²ç¶“å­¸éæ–ä¿‘äº†ã€‚\n");
+    if( query("throwing", me))return notify_fail("ä½ å·²ç¶“å­¸éç®­ä¿‘äº†ã€‚\n");
+    if( query("blade", me))return notify_fail("ä½ å·²ç¶“å­¸éåˆ€ä¿‘äº†ã€‚\n");
     me->receive_damage("jing", 1000);
-    message_vision("$N¿ªÊ¼Ä£·ÂÑ§Ï°ÕâĞ©ÇØÙ¸µÄ¸÷ÖÖ¶¯×÷¡£\n", me);
+    message_vision("$Né–‹å§‹æ¨¡ä»¿å­¸ç¿’é€™äº›ç§¦ä¿‘çš„å„ç¨®å‹•ä½œã€‚\n", me);
     if ( (int)me->query_skill("axe", 1) < 851)
     {
         me->improve_skill("axe", me->query_int());
         set("axe", 1, me);
         return 1;
     }
-    write("Äã¶Ô×ÅÇØÙ¸ÇÆÁËÒ»»Ø¶ù£¬·¢ÏÖÒÑ¾­Ã»ÓĞÊ²Ã´ºÃÑ§µÄÁË¡£\n");
+    write("ä½ å°è‘—ç§¦ä¿‘ç§äº†ä¸€å›å…’ï¼Œç™¼ç¾å·²ç¶“æ²’æœ‰ä»€éº¼å¥½å­¸çš„äº†ã€‚\n");
     return 1;
 }

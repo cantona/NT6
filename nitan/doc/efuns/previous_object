@@ -1,20 +1,20 @@
         previous_object(3)        LP MudOSv21c7                (7 Jul 1996)
-        º¯ÊıÃû³Æ:
-                previous_object() - ´«»Øºô½ĞÄ¿Ç°Õâ¸öº¯Ê½µÄÎï¼ş 
-                                     (»òÎï¼şÁĞ±í).
-        º¯ÊıÓï·¨:
+        å‡½æ•¸åç¨±:
+                previous_object() - å‚³å›å‘¼å«ç›®å‰é€™å€‹å‡½å¼çš„ç‰©ä»¶ 
+                                     (æˆ–ç‰©ä»¶åˆ—è¡¨).
+        å‡½æ•¸èªæ³•:
                 mixed previous_object( int | void );
-                »ìºÏ previous_object( ÕûÊı »ò ÎŞ²ÎÊı );
-        º¯ÊıÓÃ·¨:
-                ´«»ØÒ»¸öºô½ĞÄ¿Ç°º¯Ê½Ö®Îï¼şµÄÎï¼şÖ¸±ê. Çë×¢Òâ, ÇøÓòº¯Ê½
-                (local function)  µÄºô½Ğ²»»áÈÃ previous_object()  Éè¶¨
-                ÎªÄ¿Ç°µÄÎï¼ş, ²»»á¸Ä±ä previous_object()  ´«»ØµÄÎï¼ş.
-                Èç¹ûÖ¸¶¨Ò»¸öÕıÕûÊıÎª²ÎÊı, ¾Í´«»ØÏÈÇ°µÚ¼¸¸öºô½ĞµÄÎï¼ş.
-                previous_object(0) ÈçÍ¬ previous_object(),
-                previous_object(1) ÊÇ previous object µÄ
-                previous_object(), ÒÔ´ËÀàÍÆ.  previous_object(-1) Ôò´«
-                »ØËùÓĞµÄ previous object ÕóÁĞ.
-        ²Î¿¼º¯Êı:
+                æ··åˆ previous_object( æ•´æ•¸ æˆ– ç„¡åƒæ•¸ );
+        å‡½æ•¸ç”¨æ³•:
+                å‚³å›ä¸€å€‹å‘¼å«ç›®å‰å‡½å¼ä¹‹ç‰©ä»¶çš„ç‰©ä»¶æŒ‡æ¨™. è«‹æ³¨æ„, å€åŸŸå‡½å¼
+                (local function)  çš„å‘¼å«ä¸æœƒè®“ previous_object()  è¨­å®š
+                ç‚ºç›®å‰çš„ç‰©ä»¶, ä¸æœƒæ”¹è®Š previous_object()  å‚³å›çš„ç‰©ä»¶.
+                å¦‚æœæŒ‡å®šä¸€å€‹æ­£æ•´æ•¸ç‚ºåƒæ•¸, å°±å‚³å›å…ˆå‰ç¬¬å¹¾å€‹å‘¼å«çš„ç‰©ä»¶.
+                previous_object(0) å¦‚åŒ previous_object(),
+                previous_object(1) æ˜¯ previous object çš„
+                previous_object(), ä»¥æ­¤é¡æ¨.  previous_object(-1) å‰‡å‚³
+                å›æ‰€æœ‰çš„ previous object é™£åˆ—.
+        åƒè€ƒå‡½æ•¸:
                 call_other(3), call_out(3), origin(3)
-        ÊÖ²á·­Òë:
+        æ‰‹å†Šç¿»è­¯:
                 Phoebus@ZH        97.Apr.24.                (Writen 5/23/97)

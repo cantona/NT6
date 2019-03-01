@@ -22,7 +22,7 @@ int main(object me, string arg)
 
         lines = file_lines(IP_FILE);
 
-        write(HIR "ÕıÔÚ×ª»»...\n\n" NOR);
+        write(HIR "æ­£åœ¨è½‰æ›...\n\n" NOR);
         for (i = 1; i <= lines; i++)
         {
                 line = read_file(IP_FILE, i, 1);
@@ -31,7 +31,7 @@ int main(object me, string arg)
 
                 if (i % 100) reset_eval_cost();
         }
-        write(HIR "\nÒ»¹²×ª»»ÁË " + (i - 1) + " Ìõ IP Êı¾İ¡£\n" NOR);
+        write(HIR "\nä¸€å…±è½‰æ›äº† " + (i - 1) + " æ¢ IP æ•¸æ“šã€‚\n" NOR);
 
         return 1;
 }
@@ -58,9 +58,9 @@ void resolve_data(string line)
 int help()
 {
         write(@TEXT
-Ö¸Áî¸ñÊ½: import
+æŒ‡ä»¤æ ¼å¼: import
 
-µ¼Èë IP Êı¾İÎÄ¼ş¡£
+å°å…¥ IP æ•¸æ“šæ–‡ä»¶ã€‚
 TEXT);
         return 1;
 }

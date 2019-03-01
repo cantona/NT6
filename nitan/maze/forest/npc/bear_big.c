@@ -5,13 +5,13 @@ inherit NPC;
 void do_stun();
 void create()
 {
-        string *names = ({"×ØÐÜ","ºÚÐÜ","°×ÐÜ"});
+        string *names = ({"æ£•ç†Š","é»‘ç†Š","ç™½ç†Š"});
         set_name( names[random(sizeof(names))], ({ "big bear","bear"}));
         set("vendetta_mark","bear");
-        set("race", "Ò°ÊÞ");
-        set("gender", "ÐÛÐÔ");
+        set("race", "é‡Žç¸");
+        set("gender", "é›„æ€§");
         set("age", 20);
-        set("long", "ÕâÊÇÒ»Ö»Ð×ÃÍµÄÐÜ¡£\n");
+        set("long", "é€™æ˜¯ä¸€åªå…‡çŒ›çš„ç†Šã€‚\n");
 
         set("str", 100);
         set("dex", 40);
@@ -28,7 +28,7 @@ void create()
                 (: do_stun() :),
         }) );
 
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "Ç°½Å", "áá½Å", "Î²°Í" }) );
+        set("limbs", ({ "é ­éƒ¨", "èº«é«”", "å‰è…³", "å¾Œè…³", "å°¾å·´" }) );
         set("verbs", ({ "bite", "claw" }) );
 
         set_temp("apply/attack", 50);
@@ -48,7 +48,7 @@ void do_stun()
         if (!enemies || sizeof(enemies)==0)
                 return;
         enemy = enemies[random(sizeof(enemies))];
-        msg = HIC"\n$NÍ»È»Õ¾Á¢ÆðÀ´£¬ÂÕÆðÐÜÕÆ³¯$nÅÄÀ´£¡\n"NOR;
+        msg = HIC"\n$Nçªç„¶ç«™ç«‹èµ·ä¾†ï¼ŒæŽ„èµ·ç†ŠæŽŒæœ$næ‹ä¾†ï¼\n"NOR;
         message_combatd(msg, this_object(), enemy);
         COMBAT_D->do_attack(this_object(),enemy, 0, 0);
         start_busy(2);

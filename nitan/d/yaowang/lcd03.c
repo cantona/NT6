@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��ŢС·");
+        set("short", "泥濘小路");
         set("long", @LONG
-����һ����С��·��������������¹���һ����Ţ��������
-��һЩ���õĿ�֦��Ҷ������Ѭ�졣
+這是一條的小岔路，地上總是像剛下過雨一樣泥濘不堪，和
+著一些腐爛的枯枝敗葉，臭氣熏天。
 LONG
         );
         set("exits", ([ /* sizeof() == 2 */

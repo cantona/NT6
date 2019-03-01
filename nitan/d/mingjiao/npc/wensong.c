@@ -12,14 +12,14 @@ string ask_job();
 
 void create()
 {
-        set_name("ÎÅ²ÔËÉ", ({ "wen cangsong", "wen", "cangsong", }));
+        set_name("èè’¼é¬†", ({ "wen cangsong", "wen", "cangsong", }));
         set("long",
-        "ËûÊÇÒ»Î»¸ß´ó¿ıÎ°µÄÖĞÄêÄĞ×Ó£¬Éí´©Ò»¼ş°×²¼³¤ÅÛ¡£\n"
-        "ËûÌìÉúÉñÁ¦£¬ÊÖÖĞµÄÁ½Í·ÀÇÑÀ°ôÓĞÍò·ò²»µ±Ö®ÓÂ£¬ÕæÊÇÒ»ÌõÍş·çÁİÁİµÄºº×Ó¡£\n"
+        "ä»–æ˜¯ä¸€ä½é«˜å¤§é­å‰çš„ä¸­å¹´ç”·å­ï¼Œèº«ç©¿ä¸€ä»¶ç™½å¸ƒé•·è¢ã€‚\n"
+        "ä»–å¤©ç”Ÿç¥åŠ›ï¼Œæ‰‹ä¸­çš„å…©é ­ç‹¼ç‰™æ£’æœ‰è¬å¤«ä¸ç•¶ä¹‹å‹‡ï¼ŒçœŸæ˜¯ä¸€æ¢å¨é¢¨å‡œå‡œçš„æ¼¢å­ã€‚\n"
         );
 
-        set("title", HIG "Ã÷½Ì" HIC "¾ŞÄ¾Æì" NOR "ÕÆÆìÊ¹");
-        set("gender", "ÄĞĞÔ");
+        set("title", HIG "æ˜æ•™" HIC "å·¨æœ¨æ——" NOR "æŒæ——ä½¿");
+        set("gender", "ç”·æ€§");
         set("attitude", "friendly");
         set("class", "fighter");
 
@@ -64,14 +64,14 @@ void create()
         prepare_skill("cuff", "shenghuo-quan");
         prepare_skill("strike", "guangming-zhang");
 
-        create_family("Ã÷½Ì", 37, "¾ŞÄ¾ÆìÕÆÆìÊ¹");
-        set("inherit_title",HIG"Ã÷½Ì"NOR"¾ŞÄ¾Æì½ÌÖÚ"NOR);
+        create_family("æ˜æ•™", 37, "å·¨æœ¨æ——æŒæ——ä½¿");
+        set("inherit_title",HIG"æ˜æ•™"NOR"å·¨æœ¨æ——æ•™çœ¾"NOR);
 
         set("inquiry", ([
-                "name" : "ÔÚÏÂ¾ÍÊÇÃ÷½Ì¾ŞÄ¾ÆìÕÆÆìÊ¹ÎÅ²ÔËÉ£¬²»Öª¸óÏÂÓĞºÎÖ¸½Ì¡£",
-                "ÈÎÎñ" : (: ask_job :),
+                "name" : "åœ¨ä¸‹å°±æ˜¯æ˜æ•™å·¨æœ¨æ——æŒæ——ä½¿èè’¼é¬†ï¼Œä¸çŸ¥é–£ä¸‹æœ‰ä½•æŒ‡æ•™ã€‚",
+                "ä»»å‹™" : (: ask_job :),
                 "job"  : (: ask_job :),
-                "·ÅÆú" : (: ask_abandon :),
+                "æ”¾æ£„" : (: ask_abandon :),
                 "abandon" : (: ask_abandon :),
         ]));
 
@@ -87,13 +87,13 @@ string ask_job()
      mapping fam ;
      object ling,axe,shugan;
 
-    if( !(fam=query("family", this_player())) || fam["family_name"] != "Ã÷½Ì" )
-        return "ÕâÎ»"+RANK_D->query_respect(player)+"²¢·ÇÎÒ½ÌµÜĞÖ£¬ÄÇ¸ÒÔÚÏÂÄÇ¸Ò·ÖÅÉ¸óÏÂÊ²Ã´ÈÎÎñÄØ¡£\n";
+    if( !(fam=query("family", this_player())) || fam["family_name"] != "æ˜æ•™" )
+        return "é€™ä½"+RANK_D->query_respect(player)+"ä¸¦éæˆ‘æ•™å¼Ÿå…„ï¼Œé‚£æ•¢åœ¨ä¸‹é‚£æ•¢åˆ†æ´¾é–£ä¸‹ä»€éº¼ä»»å‹™å‘¢ã€‚\n";
 
         if( query("combat_exp", player)>400000 )
-                 return "ÕâÎ»"+RANK_D->query_respect(player)+"ÊµÕ½¾­ÑéÒÑ¾­ÆÄ¸ß£¬Æñ¸ÒÀÍ·³´ó¼Ü¡£\n";
+                 return "é€™ä½"+RANK_D->query_respect(player)+"å¯¦æˆ°ç¶“é©—å·²ç¶“é —é«˜ï¼Œè±ˆæ•¢å‹ç…©å¤§æ¶ã€‚\n";
         if (fam["generation"] <37)
-                 return "ÕâÎ»"+RANK_D->query_respect(player)+"ÔÚÎÒÃ÷½ÌµØÎ»ÆÄ¸ß£¬Æñ¸ÒÀÍ·³´ó¼Ü¡£\n";
+                 return "é€™ä½"+RANK_D->query_respect(player)+"åœ¨æˆ‘æ˜æ•™åœ°ä½é —é«˜ï¼Œè±ˆæ•¢å‹ç…©å¤§æ¶ã€‚\n";
 
         if( query("mingjiao/job", player) == "mu_kanshu" && shugan=present("shugan",player) )
         {
@@ -102,15 +102,15 @@ string ask_job()
                         command("pat"+query("id", player));
                         if (axe=present("axe",player))
                                 destruct(axe);
-                        message_vision("ÎÅ²ÔËÉ½ĞÀ´Ò»Ãû½ÌÖÚ£¬°Ñ$NµÄÊ÷¸É½ÓÁË¹ıÈ¥¡£\n",player);
+                        message_vision("èè’¼é¬†å«ä¾†ä¸€åæ•™çœ¾ï¼ŒæŠŠ$Nçš„æ¨¹å¹¹æ¥äº†éå»ã€‚\n",player);
                         destruct(shugan);
                         delete_temp("apply/short", player);
                         remove_call_out("reward");
-                        call_out("reward",1,this_player(),"¿³Ê÷");
-               return query("name", player)+"¸ÉµÃ²»´í£¡ÏÂÈ¥ºÃºÃĞİÏ¢ĞİÏ¢¡£\n"; 
+                        call_out("reward",1,this_player(),"ç æ¨¹");
+               return query("name", player)+"å¹¹å¾—ä¸éŒ¯ï¼ä¸‹å»å¥½å¥½ä¼‘æ¯ä¼‘æ¯ã€‚\n"; 
                 }
                 else
-                        return "ÕâºÃÏó²»ÊÇÄã¿³µÄ°É¡£ÏëÍµÀÁ£¿\n";
+                        return "é€™å¥½è±¡ä¸æ˜¯ä½ ç çš„å§ã€‚æƒ³å·æ‡¶ï¼Ÿ\n";
         }
 
         if( query("mingjiao/job", player) )
@@ -122,9 +122,9 @@ string ask_job()
 
         axe=new(OBJ_PATH"/axe");
         axe->move(player);
-        tell_object(player,"ÎÅ²ÔËÉ¸øÄãÒ»°Ñ¸«Í·¡£\n");
+        tell_object(player,"èè’¼é¬†çµ¦ä½ ä¸€æŠŠæ–§é ­ã€‚\n");
 
-        return "ÄãÀ´µÄÕıºÃ£¬ĞÖµÜÃÇÑİÁ·Õó·¨£¬¾ŞÄ¾²»¹»ÁË£¬ÄãÈ¥Ê÷ÁÖÀï¿³Ğ©Ê÷¸É¿¸»ØÀ´¡£\n";
+        return "ä½ ä¾†çš„æ­£å¥½ï¼Œå…„å¼Ÿå€‘æ¼”ç·´é™£æ³•ï¼Œå·¨æœ¨ä¸å¤ äº†ï¼Œä½ å»æ¨¹æ—è£¡ç äº›æ¨¹å¹¹æ‰›å›ä¾†ã€‚\n";
 
 }
 

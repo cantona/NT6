@@ -6,15 +6,15 @@ inherit POISON;
 
 string name() { return "cuixin_zhang"; }
 
-string chinese_name() { return "´ßĞÄÕÆÕÆÁ¦"; }
+string chinese_name() { return "å‚¬å¿ƒæŒæŒåŠ›"; }
 
 string update_msg_others()
 {
-       return HIR "$N" HIR "Ò»Éù²Òº¿£¬ÄÚÏ¢ÄæÁ÷£¬¡°ÍÛ¡±µÄÒ»ÉùÅç³öÒ»´ó¿ÚÏÊÑª¡£\n" NOR;
+       return HIR "$N" HIR "ä¸€è²æ…˜åšï¼Œå…§æ¯é€†æµï¼Œâ€œå“‡â€çš„ä¸€è²å™´å‡ºä¸€å¤§å£é®®è¡€ã€‚\n" NOR;
 }
 
 string update_msg_self()
 {
-        return HIR "ÄãÖ»¸Ğµ½ÎåÔàÁù¸­·­ÌÚ²»Ö¹£¬¾ç¶¾¹¥ĞÄ£¬¿´À´ÊÇÖĞÁË´ßĞÄÕÆÕÆ¾¢µÄ¸ÉÈÅ£¡\n" NOR;
+        return HIR "ä½ åªæ„Ÿåˆ°äº”è‡Ÿå…­è…‘ç¿»é¨°ä¸æ­¢ï¼ŒåŠ‡æ¯’æ”»å¿ƒï¼Œçœ‹ä¾†æ˜¯ä¸­äº†å‚¬å¿ƒæŒæŒå‹çš„å¹¹æ“¾ï¼\n" NOR;
 }
 

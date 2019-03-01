@@ -5,12 +5,12 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÉÅÌÃ");
+        set("short", "è†³å ‚");
         set("long", @LONG
-ÕâÀïÊÇÈ«Õæ½ÌµÄÉÅÌÃ£¬ÊÇµÜ×ÓÃÇÓÃ²ÍµÄµØ·½¡£Õâ¸öÌÃºÜ´ó£¬
-ÕûÆëµØ°Ú·Å×ÅÒ»ÅÅÒ»ÅÅµÄ×ÀÒÎ¡£ÏÖÔÚ×ÀÒÎÉÏÈıÈıÁ½Á½µØ×ø×ÅÈ«Õæ
-µÜ×Ó£¬ÓĞµÄÕıÔÚÓÃ²Í£¬ÓĞµÄµÍÍ·Ì¸Ğ¦¡£¿´×Å¿É¿ÚµÄ·¹²Ë£¬ÄãÈÌ²»
-×¡Ò²Ïë½Ğ(order)Ò»·İ¡£
+é€™è£¡æ˜¯å…¨çœŸæ•™çš„è†³å ‚ï¼Œæ˜¯å¼Ÿå­å€‘ç”¨é¤çš„åœ°æ–¹ã€‚é€™å€‹å ‚å¾ˆå¤§ï¼Œ
+æ•´é½Šåœ°æ“ºæ”¾è‘—ä¸€æ’ä¸€æ’çš„æ¡Œæ¤…ã€‚ç¾åœ¨æ¡Œæ¤…ä¸Šä¸‰ä¸‰å…©å…©åœ°åè‘—å…¨çœŸ
+å¼Ÿå­ï¼Œæœ‰çš„æ­£åœ¨ç”¨é¤ï¼Œæœ‰çš„ä½é ­è«‡ç¬‘ã€‚çœ‹è‘—å¯å£çš„é£¯èœï¼Œä½ å¿ä¸
+ä½ä¹Ÿæƒ³å«(order)ä¸€ä»½ã€‚
 LONG
         );
         set("exits",([
@@ -36,18 +36,18 @@ int do_order(string arg)
         object food;
         object water;
 
-        if (arg)  return notify_fail("ÕâÑù¶«Î÷ÕâÀïÃ»ÓĞ°¡¡£\n");
-        if( query("family/family_name", me) != "È«Õæ½Ì" )
+        if (arg)  return notify_fail("é€™æ¨£æ±è¥¿é€™è£¡æ²’æœ‰å•Šã€‚\n");
+        if( query("family/family_name", me) != "å…¨çœŸæ•™" )
         {
-              message_vision("»ğ¹¤µÀÈË³å³öÀ´£¬µÉÁË$NÒ»ÑÛ£º¡°ÄãÄÄÀïÀ´µÄ£¡¸ÒÀ´»ì·¹³Ô£¡¡±\n",me);
+              message_vision("ç«å·¥é“äººæ²–å‡ºä¾†ï¼Œçªäº†$Nä¸€çœ¼ï¼šâ€œä½ å“ªè£¡ä¾†çš„ï¼æ•¢ä¾†æ··é£¯åƒï¼â€\n",me);
               return 1;
         }
 
         if ((present("bowl",this_player()) || present("rice",this_player())))
-              message_vision("»ğ¹¤µÀÈË³å³öÀ´£¬µÉÁË$NÒ»ÑÛ£º¡°»¹Ã»³ÔÍêÓÖÏëÒª£¡¡±\n",me);
+              message_vision("ç«å·¥é“äººæ²–å‡ºä¾†ï¼Œçªäº†$Nä¸€çœ¼ï¼šâ€œé‚„æ²’åƒå®Œåˆæƒ³è¦ï¼â€\n",me);
         else
         {
-              message_vision("»ğ¹¤µÀÈËÁ¬Ã¦´Ó³ø·¿³öÀ´£¬°ÑÒ»ÍëÃ×·¹ºÍÒ»ÍëË®ÄÃÁË¸ø$N¡£\n",me);
+              message_vision("ç«å·¥é“äººé€£å¿™å¾å»šæˆ¿å‡ºä¾†ï¼ŒæŠŠä¸€ç¢—ç±³é£¯å’Œä¸€ç¢—æ°´æ‹¿äº†çµ¦$Nã€‚\n",me);
               food=new(__DIR__"obj/rice");
               water=new(__DIR__"obj/bowl");
               food->move(me);
@@ -61,6 +61,6 @@ int valid_leave(object me,string dir)
         me=this_player();
         if(( dir=="north" || dir=="northwest")
         && (present("bowl",this_player()) || present("rice",this_player())))
-             return notify_fail("»ğ¹¤µÀÈËËµµÀ£ºÊ³ÎïºÍÒûË®²»ÄÜ´ø³öÉÅÌÃÈ¥¡£\n");
+             return notify_fail("ç«å·¥é“äººèªªé“ï¼šé£Ÿç‰©å’Œé£²æ°´ä¸èƒ½å¸¶å‡ºè†³å ‚å»ã€‚\n");
         return ::valid_leave(me,dir);
 }

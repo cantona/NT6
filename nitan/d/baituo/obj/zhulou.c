@@ -1,5 +1,5 @@
 // Code of JHSH
-// zhulou.c ÖñÂ¨
+// zhulou.c ç«¹ç°
 // maco
 
 #include <ansi.h>
@@ -8,14 +8,14 @@ inherit ITEM;
 int no_limit_amount(){ return 1; }
 void create()
 {
-        set_name("ÖñÂ¨", ({ "zhu lou", "lou", "basket"}) );
+        set_name("ç«¹ç°", ({ "zhu lou", "lou", "basket"}) );
         set_weight(1000);
         set_max_encumbrance(100000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
-                set("long", "Ò»¸öÖñÌõ±à³ÉµÄÂ¨×Ó£¬ÊÇÅ·ÑôÊÀ¼ÒµÄÈË×¨ÃÅÓÃÀ´²¶ÉßµÄ¡£\n");
+                set("unit", "å€‹");
+                set("long", "ä¸€å€‹ç«¹æ¢ç·¨æˆçš„ç°å­ï¼Œæ˜¯æ­é™½ä¸–å®¶çš„äººå°ˆé–€ç”¨ä¾†æ•è›‡çš„ã€‚\n");
                 set("material", "bamboo");
                 set("value", 100);
         }
@@ -39,38 +39,38 @@ int do_catch(string arg)
 
         if (me->is_busy()
          || query_temp("pending/exercising", me) )
-                return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£å¿™è‘—å‘¢ã€‚\n");
 
         if(me->is_fighting())
-                return notify_fail("ÏÈ½â¾öÑÛÇ°µÄµĞÈËÔÙËµ°É¡£\n");
+                return notify_fail("å…ˆè§£æ±ºçœ¼å‰çš„æ•µäººå†èªªå§ã€‚\n");
 
         if ( !arg )
-                return notify_fail("ÄãÒª²¶×½Ê²Ã´£¿\n" );
+                return notify_fail("ä½ è¦æ•æ‰ä»€éº¼ï¼Ÿ\n" );
 
         snake = present(arg, environment(me));
 
         if( !objectp(snake = present(arg, me)) && !objectp(snake = present(arg, environment(me)))) 
-                return notify_fail("ÄãÒª²¶×½Ê²Ã´£¿\n" );
+                return notify_fail("ä½ è¦æ•æ‰ä»€éº¼ï¼Ÿ\n" );
 
-        if( query("race", snake) != "ÉßÀà" )
-                return notify_fail("ÕâÖñÂ¨ÊÇÓÃÀ´×½ÉßµÄ¡£\n");
+        if( query("race", snake) != "è›‡é¡" )
+                return notify_fail("é€™ç«¹ç°æ˜¯ç”¨ä¾†æ‰è›‡çš„ã€‚\n");
 
         if( query("keeper", obj) != query("id", me) )
-                return notify_fail("Õâ²»ÊÇÄãµÄÖñÂ¨£¬»¹ÊÇ±ğÂÒ¶¯µÄºÃ¡£\n");
+                return notify_fail("é€™ä¸æ˜¯ä½ çš„ç«¹ç°ï¼Œé‚„æ˜¯åˆ¥äº‚å‹•çš„å¥½ã€‚\n");
 
         if( query("who_breed", snake) )
-                return notify_fail("ÕâÌõ"+snake->name()+"ÊÇÅ·ÑôÊÀ¼ÒÅàÑø³öÀ´µÄ£¬¼´Ê¹×½ÁË£¬Ò²²»ÄÜ½øĞĞÓıÖÖ¡£\n");
+                return notify_fail("é€™æ¢"+snake->name()+"æ˜¯æ­é™½ä¸–å®¶åŸ¹é¤Šå‡ºä¾†çš„ï¼Œå³ä½¿æ‰äº†ï¼Œä¹Ÿä¸èƒ½é€²è¡Œè‚²ç¨®ã€‚\n");
 
         if( snake->query_lord() != me && living(snake) 
          && query("caught", snake) != query("id", me) )
-                return notify_fail(snake->name()+"²¢·ÇÄãËùÑ±Ñø£¬Ö±½Ó¶¯ÊÖ×½Ïàµ±Î£ÏÕ¡£\n");
+                return notify_fail(snake->name()+"ä¸¦éä½ æ‰€é¦´é¤Šï¼Œç›´æ¥å‹•æ‰‹æ‰ç›¸ç•¶å±éšªã€‚\n");
 
         if( !query("bt_snake", snake) )
-                return notify_fail("Õâ²»ÊÇÅ·ÑôÊÀ¼ÒÉß¹ÈµÄÆ·ÖÖ¡£\n");
+                return notify_fail("é€™ä¸æ˜¯æ­é™½ä¸–å®¶è›‡è°·çš„å“ç¨®ã€‚\n");
 
         if( snake->move(obj) ) 
         {
-                message_vision("$N½«"+snake->name()+"×½ÁËÆğÀ´£¬´ÓÎ²°ÍÆğÂıÂı·Å½øÖñÂ¨¡£\n", me, snake);
+                message_vision("$Nå°‡"+snake->name()+"æ‰äº†èµ·ä¾†ï¼Œå¾å°¾å·´èµ·æ…¢æ…¢æ”¾é€²ç«¹ç°ã€‚\n", me, snake);
                 delete("frightened", snake);
                 if( !query("caught", snake) )
                 me->improve_skill("training",atoi(query("snake_poison", snake)));
@@ -89,40 +89,40 @@ int do_free(string arg)
         obj = this_object();
 
         if( !arg )
-                return notify_fail("ÄãÏë°ÑÊ²÷á·Å³öÖñÂ¨£¿\n");
+                return notify_fail("ä½ æƒ³æŠŠä»€éº¼æ”¾å‡ºç«¹ç°ï¼Ÿ\n");
 
         if( me->is_busy() )
-                return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ æ­£å¿™è‘—å‘¢ã€‚\n");
 
         if( query("keeper", obj) != query("id", me) )
-                return notify_fail("Õâ²»ÊÇÄãµÄÖñÂ¨£¬»¹ÊÇ±ğÂÒ¶¯µÄºÃ¡£\n");
+                return notify_fail("é€™ä¸æ˜¯ä½ çš„ç«¹ç°ï¼Œé‚„æ˜¯åˆ¥äº‚å‹•çš„å¥½ã€‚\n");
 
         if(arg=="all") {
 
                 if( me->is_fighting() )
-                        return notify_fail("Äã»¹ÔÚÕ½¶·ÖĞ£¡Ò»´ÎìóÄÜ·ÅÒ»ÌõÉß¡£\n");
+                        return notify_fail("ä½ é‚„åœ¨æˆ°é¬¥ä¸­ï¼ä¸€æ¬¡ç¥—èƒ½æ”¾ä¸€æ¢è›‡ã€‚\n");
 
                 inv = all_inventory(obj);
                 if( !sizeof(inv) )
-                        return notify_fail("ÄÇÀïÃæÃ»ÓĞÈÎºÎ¶«Î÷¡£\n");
+                        return notify_fail("é‚£è£¡é¢æ²’æœ‰ä»»ä½•æ±è¥¿ã€‚\n");
 
                 for(i=0; i<sizeof(inv); i++) {
-                        if( query("race", inv[i]) != "ÉßÀà")continue;
+                        if( query("race", inv[i]) != "è›‡é¡")continue;
                         inv[i]->move(environment(me));
-                        message_vision("$N½«Ò»Ìõ$n·Å³öÖñÂ¨¡£\n"NOR, me, inv[i]);
+                        message_vision("$Nå°‡ä¸€æ¢$næ”¾å‡ºç«¹ç°ã€‚\n"NOR, me, inv[i]);
                 }
-                write("ÖñÂ¨ÀïµÄÉßÈ«±»·Å³öÀ´ÁË¡£\n");
+                write("ç«¹ç°è£¡çš„è›‡å…¨è¢«æ”¾å‡ºä¾†äº†ã€‚\n");
                 return 1;
 
         }
 
         if( !objectp(snake = present(arg, obj)) )
-                return notify_fail("ÖñÂ¨ÀïÃ»ÓĞÕâ¸öÉúÎï¡£\n");
+                return notify_fail("ç«¹ç°è£¡æ²’æœ‰é€™å€‹ç”Ÿç‰©ã€‚\n");
 
         if( !snake->is_character() || snake->is_corpse() )
-                return notify_fail("ÄÇ²¢²»ÊÇ»îÎï£¬Ö±½ÓÓÃÄÃµÄ¾Í¿ÉÒÔÁË¡£\n");
+                return notify_fail("é‚£ä¸¦ä¸æ˜¯æ´»ç‰©ï¼Œç›´æ¥ç”¨æ‹¿çš„å°±å¯ä»¥äº†ã€‚\n");
 
-        message_vision("$N½«Ò»"+query("unit", snake)+"$n·Å³öÖñÂ¨¡£\n"NOR,me,snake);
+        message_vision("$Nå°‡ä¸€"+query("unit", snake)+"$næ”¾å‡ºç«¹ç°ã€‚\n"NOR,me,snake);
 
         snake->move(environment(me));
 
@@ -133,11 +133,11 @@ int do_free(string arg)
 
 int reject(object ob)
 {
-        if( query("race", ob) == "ÉßÀà"){
-                notify_fail("ÇëÓÃ²¶×½(catch | buzhuo)Ö¸Áî¡£\n");
+        if( query("race", ob) == "è›‡é¡"){
+                notify_fail("è«‹ç”¨æ•æ‰(catch | buzhuo)æŒ‡ä»¤ã€‚\n");
                 return 1;
                 }
 
-        notify_fail("ÕâÖñÂ¨ÊÇÓÃÀ´×½ÉßµÄ¡£\n");
+        notify_fail("é€™ç«¹ç°æ˜¯ç”¨ä¾†æ‰è›‡çš„ã€‚\n");
         return 1;
 }

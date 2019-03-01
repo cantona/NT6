@@ -4,7 +4,7 @@
 #include <combat.h>
 
 inherit F_SSERVER;
-string name() { return "����"; }
+string name() { return "絕命"; }
 
 int perform(object me)
 {
@@ -19,21 +19,21 @@ int perform(object me)
         }
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail("��������ֻ�ܶ�ս���еĶ���ʹ�á�\n");
+                return notify_fail("「絕命」只能對戰鬥中的對手使用。\n");
 
         if( query_temp("weapon", me) )
-                return notify_fail("��ֻ�ܿ���ʹ�á���������\n");
+                return notify_fail("你只能空手使用「絕命」。\n");
 
         ap = attack_power(me, "claw");
 
         if (ap < 150)
-                return notify_fail("���߱ӥ��צ�ȼ�����, �޷�ʹ�á���������\n");
+                return notify_fail("你的弒鷹神爪等級不夠, 無法使用「絕命」！\n");
 
         if( query("neili", me)<180 )
-                return notify_fail("��������������޷����á���������\n");
+                return notify_fail("你的真氣不夠，無法運用「絕命」！\n");
 
-        msg = HIR "$N" HIR "һ�����ȣ��ֱ������ͻ������һ�Σ����ֳ�צ����$n" HIR
-              "ǰ��Ѹ��ץ����\n" NOR;
+        msg = HIR "$N" HIR "一聲暴喝，手臂上青筋突起，左手一晃，右手成爪，向$n" HIR
+              "前胸迅疾抓到。\n" NOR;
 
         dp = defense_power(target, "parry");
 
@@ -42,16 +42,16 @@ int perform(object me)
                 addn("neili", -150, me);
                 damage = damage_power(me, "claw");
                 msg += COMBAT_D->do_damage(me, target, UNARMED_ATTACK, damage, 60,
-                                           HIR "$n" HIR "���ܲ�����ǰ�ض�ʱ��ץ��"
-                                           "����Ѫ�ۣ����������Һ���\n" NOR);
+                                           HIR "$n" HIR "閃避不及，前胸頓時被抓出"
+                                           "五條血痕，不禁長聲慘呼！\n" NOR);
                 me->start_busy(2 + random(2));
         } else
         {
                 addn("neili", -50, me);
                 damage = damage_power(me, "claw") / 5;
                 msg += COMBAT_D->do_damage(me, target, UNARMED_ATTACK, damage, 30,
-                                           HIM "$n" HIM "����С����У�ƴ����⣬"
-                                           "��˫���Ա�ץ���˼���Ѫӡ��\n" NOR);
+                                           HIM "$n" HIM "不敢小覷此招，拼力拆解，"
+                                           "但雙臂仍被抓出了幾條血印！\n" NOR);
                 me->start_busy(3);
         }
         message_combatd(msg, me, target);

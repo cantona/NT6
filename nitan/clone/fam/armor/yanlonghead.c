@@ -5,26 +5,26 @@ inherit HEAD;
 
 void create()
 {
-        set_name(HIY "Ñ×ÁúÉñ¹Ú" NOR, ({ "yanlong shenguan", "shenguan", "yanlong" }));
+        set_name(HIY "ç‚é¾ç¥å† " NOR, ({ "yanlong shenguan", "shenguan", "yanlong" }));
         set_weight(4000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIY "Ò»¶¥ÓÃÁú½ÇºÍÁúÁÛ×ö³ÉµÄÍ·¹Ú¡£\n" NOR
-                            HIC "ÓĞĞ§ÕĞ¼ÜĞŞÕı£º+ 10       ÓĞĞ§Çá¹¦ĞŞÕı£º  + 5\n" NOR
-                            HIC "¿¹¶¾Ğ§¹ûĞŞÕı£º+ 5%       ·ÀÓùĞ§¹ûµÈ¼¶£º   10\n" NOR
-                            HIC "¿¹¶¾»Ø±ÜĞŞÕı£º+ 5%\n" NOR);
-                set("unit", "¶¥");
+                set("long", HIY "ä¸€é ‚ç”¨é¾è§’å’Œé¾é±—åšæˆçš„é ­å† ã€‚\n" NOR
+                            HIC "æœ‰æ•ˆæ‹›æ¶ä¿®æ­£ï¼š+ 10       æœ‰æ•ˆè¼•åŠŸä¿®æ­£ï¼š  + 5\n" NOR
+                            HIC "æŠ—æ¯’æ•ˆæœä¿®æ­£ï¼š+ 5%       é˜²å¾¡æ•ˆæœç­‰ç´šï¼š   10\n" NOR
+                            HIC "æŠ—æ¯’å›é¿ä¿®æ­£ï¼š+ 5%\n" NOR);
+                set("unit", "é ‚");
                 set("value", 500000);
                 set("armor_prop/armor", 10);
                 set("armor_prop/avoid_poison", 5);
                 set("armor_prop/reduce_poison", 5);
                 set("armor_prop/dodge", 10);
                 set("armor_prop/parry", 10);
-                set("wear_msg", HIY "$N" HIY "ÇáÇáµØ°Ñ$n"
-                    HIY "´÷ÔÚÍ·ÉÏ¡£\n" NOR);
-                set("remove_msg", HIC "$N" HIC "ÇáÇáµØ°Ñ$n"
-                    HIC "´ÓÑü¼äÈ¡ÁËÏÂÀ´¡£\n" NOR);
+                set("wear_msg", HIY "$N" HIY "è¼•è¼•åœ°æŠŠ$n"
+                    HIY "æˆ´åœ¨é ­ä¸Šã€‚\n" NOR);
+                set("remove_msg", HIC "$N" HIC "è¼•è¼•åœ°æŠŠ$n"
+                    HIC "å¾è…°é–“å–äº†ä¸‹ä¾†ã€‚\n" NOR);
         }
         setup();
 }

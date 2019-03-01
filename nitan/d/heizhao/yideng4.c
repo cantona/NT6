@@ -4,14 +4,14 @@
 inherit ROOM;
 void create()
 {
-        set("short", "ɽ��");
+        set("short", "山腰");
         set("long", @LONG
-������ɽ�İ�������ǰ��ɫ�续����Ϫ������ˮ��ƽ��֮������
-�ƶ�ס��������Ϫˮ��Լ���������Դ�����ˮ������֮���ֲ������
-���������ڴ����һ�ʢ��֮ʱ�����һƬ���壬����ҫ�ۡ���ʱ����
-�һ�����ˮ������һ�Դ԰�ɫС������������������Լ�ʱ�з�����
-����ɽ��һ���ֱ۴�ϸ�ĳ��٣��ط���ϡ���ͷ��������ɽ����ϰ�
-����������֮�У���֪�嶥���ж�ߡ�
+這裡是山的半腰，眼前景色如畫，清溪潺潺，水流平穩之極，幾
+似定住不動。那溪水寬約丈許，兩旁垂柳拂水，綠柳之間夾植著無數
+桃樹，若在春日桃花盛開之時，想見一片錦繡，繁華耀眼。這時雖無
+桃花，但水邊生滿一叢叢白色小花，芳香馥鬱，綠柳叢間時有飛鳥鳴
+囀。山邊一條手臂粗細的長籐，沿峰而上。仰頭上望，見山峰的上半
+截隱入雲霧之中，不知峰頂究有多高。
 LONG );
 
     set("no_sleep_room",1);
@@ -35,6 +35,6 @@ LONG );
 int valid_leave(object me, string dir)
 {
         if (dir == "up" && objectp(present("qiao fu", environment(me))))
-        return notify_fail("�Է�һ�۲����ĵ�������ǰ��\n");
+        return notify_fail("樵夫一眼不發的擋在你身前。\n");
         return ::valid_leave(me, dir);
 }

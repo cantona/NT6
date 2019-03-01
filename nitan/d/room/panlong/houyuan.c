@@ -1,20 +1,20 @@
-// houyuan.c ÅÌÁú¾ÓºóÔº
+// houyuan.c ç›¤é¾å±…å¾Œé™¢
 
 //** inherit PRIVATE_ROOM;
 inherit ROOM;                                   /* EXAMPLE */
 
 void create()
 {
-        set("short", "ºóÔº");
+        set("short", "å¾Œé™¢");
         set("long", @LONG
-ÕâÊÇÅÌÁú¾ÓµÄºóÔº£¬ÕýÖÐÒ»¸ö¼ÙÉ½£¬°ÁÈ»¶øÁ¢¡¢·Ç³£ÐÛÎ°¡£ÏÂÓÐ
-Ò»Ë®³Ø£¬»·É½¶ø×ß£¬ÓÆÈ»²»Ï¢¡£¶«ÃæÄËÊÇÁ·ÎäÖ®´¦£¬Î÷ÃæÊÇÓ¶ÈËÃÇ×¼
-±¸Ê³ÎïµÄ³ø·¿¡£
+é€™æ˜¯ç›¤é¾å±…çš„å¾Œé™¢ï¼Œæ­£ä¸­ä¸€å€‹å‡å±±ï¼Œå‚²ç„¶è€Œç«‹ã€éžå¸¸é›„å‰ã€‚ä¸‹æœ‰
+ä¸€æ°´æ± ï¼Œç’°å±±è€Œèµ°ï¼Œæ‚ ç„¶ä¸æ¯ã€‚æ±é¢ä¹ƒæ˜¯ç·´æ­¦ä¹‹è™•ï¼Œè¥¿é¢æ˜¯å‚­äººå€‘æº–
+å‚™é£Ÿç‰©çš„å»šæˆ¿ã€‚
 LONG );
 
-        set("default_long", "ÕâÊÇROOM_NAMEµÄºóÔº£¬ÕýÖÐÒ»¸ö¼ÙÉ½£¬°ÁÈ»¶ø"/* EXAMPLE */
-                            "Á¢¡¢·Ç³£ÐÛÎ°¡£ÏÂÓÐÒ»Ë®³Ø£¬»·É½¶ø×ß£¬ÓÆÈ»" /* EXAMPLE */
-                            "²»Ï¢¡£¶«ÃæÄËÊÇÁ·ÎäÖ®´¦£¬Î÷ÃæÊÇ³ø·¿¡£");   /* EXAMPLE */
+        set("default_long", "é€™æ˜¯ROOM_NAMEçš„å¾Œé™¢ï¼Œæ­£ä¸­ä¸€å€‹å‡å±±ï¼Œå‚²ç„¶è€Œ"/* EXAMPLE */
+                            "ç«‹ã€éžå¸¸é›„å‰ã€‚ä¸‹æœ‰ä¸€æ°´æ± ï¼Œç’°å±±è€Œèµ°ï¼Œæ‚ ç„¶" /* EXAMPLE */
+                            "ä¸æ¯ã€‚æ±é¢ä¹ƒæ˜¯ç·´æ­¦ä¹‹è™•ï¼Œè¥¿é¢æ˜¯å»šæˆ¿ã€‚");   /* EXAMPLE */
                                                                        /* EXAMPLE */
 
         set("exits", ([

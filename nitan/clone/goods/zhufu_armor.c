@@ -7,13 +7,13 @@ inherit ARMOR;
 
 void create()
 {
-        set_name(HIY "Éñ" HIW "Ö®" HIM "×£¸£" NOR YEL "Ìú¼×" NOR, ({"zhufu armor","tiejia","armor"}));
+        set_name(HIY "ç¥" HIW "ä¹‹" HIM "ç¥ç¦" NOR YEL "éµç”²" NOR, ({"zhufu armor","tiejia","armor"}));
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼ş");
-                set("long", "Ò»¼ş³ÁµéµéµÄÌú¼×¡£\n");
+                set("unit", "ä»¶");
+                set("long", "ä¸€ä»¶æ²‰ç”¸ç”¸çš„éµç”²ã€‚\n");
                 set("value", 3000);
                 set("material", "steel");
                 set("armor_prop/armor", 40);
@@ -22,7 +22,7 @@ void create()
         set("auto_load", 1); 
         set("mod_mark", "A2010");  
         set("mod_level", "M2010");  
-        set("mod_name", HIY"Éñ"HIW"Ö®"HIM"×£¸£"NOR YEL"Ì××°"NOR); 
+        set("mod_name", HIY"ç¥"HIW"ä¹‹"HIM"ç¥ç¦"NOR YEL"å¥—è£"NOR); 
 
         set("enchase", ([ 
                 "flute" : 1,
@@ -36,7 +36,7 @@ void create()
         set("insert", ([ /* sizeof() == 1 */
                 "1" : ([ /* sizeof() == 3 */
                         "id" : "magic stone",
-                        "name" : HIM"ĞşÊ¯"NOR,
+                        "name" : HIM"ç„çŸ³"NOR,
                         "apply_prop" : ([ /* sizeof() == 2 */
                                 "armor1" : 30,
                                 "int" : 1,

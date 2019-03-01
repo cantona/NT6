@@ -1,4 +1,4 @@
-// wudang-quan.c Îäµ±³¤È­
+// wudang-quan.c æ­¦ç•¶é•·æ‹³
 // Last Modified by Winder on Feb. 18 2001
 #include <ansi.h>;
 inherit SKILL;
@@ -6,29 +6,29 @@ string type() { return "martial"; }
 string martialtype() { return "skill"; }
 
 mapping *action = ({
-([        "action" : "$NÁ¦¹àÓÒ±Û£¬Ò»ÕĞ"RED"¡¸ÆßĞÇÊÖ¡¹"NOR"£¬Ò»È­Ö±³ö´òÏò$nµÄ$l",
+([        "action" : "$NåŠ›çŒå³è‡‚ï¼Œä¸€æ‹›"RED"ã€Œä¸ƒæ˜Ÿæ‰‹ã€"NOR"ï¼Œä¸€æ‹³ç›´å‡ºæ‰“å‘$nçš„$l",
         "lvl" : 0,
-        "skill_name" : "ÆßĞÇÊÖ"
+        "skill_name" : "ä¸ƒæ˜Ÿæ‰‹"
 ]),
-([        "action" : "$NÉíĞĞÇ°Ì½£¬ÉÁÉí¿ç±¼$nÉí²à£¬Ò»ÕĞ"HIB"¡¸ÍÆÊÖ¡¹"NOR"£¬Ïò$nµÄ$lÍÆÈ¥",
+([        "action" : "$Nèº«è¡Œå‰æ¢ï¼Œé–ƒèº«è·¨å¥”$nèº«å´ï¼Œä¸€æ‹›"HIB"ã€Œæ¨æ‰‹ã€"NOR"ï¼Œå‘$nçš„$læ¨å»",
         "lvl" : 10,
-        "skill_name" : "ÍÆÊÖ"
+        "skill_name" : "æ¨æ‰‹"
 ]),
-([        "action" : "$NË«±ÛÎ¢Çú£¬ÉíĞĞ»Î¶¯£¬Ò»ÕĞ"HIM"¡¸Ò»Ìõ±Ş¡¹"NOR"ÊØÖĞ´ø¹¥´òÏò$nµÄ$l",
+([        "action" : "$Né›™è‡‚å¾®æ›²ï¼Œèº«è¡Œæ™ƒå‹•ï¼Œä¸€æ‹›"HIM"ã€Œä¸€æ¢é­ã€"NOR"å®ˆä¸­å¸¶æ”»æ‰“å‘$nçš„$l",
         "lvl" : 20,
-        "skill_name" : "Ò»Ìõ±Ş"
+        "skill_name" : "ä¸€æ¢é­"
 ]),
-([        "action" : "$NÂí²½ÔúÎÈ£¬×óÊÖĞé»Î£¬ÓÒÊÖÎÕÈ­Ò»Ê½"GRN"¡¸Ö±»÷¡¹"NOR"Ñ¸ÃÍ´òÏò$nµÄĞØ¿Ú",
+([        "action" : "$Né¦¬æ­¥ç´®ç©©ï¼Œå·¦æ‰‹è™›æ™ƒï¼Œå³æ‰‹æ¡æ‹³ä¸€å¼"GRN"ã€Œç›´æ“Šã€"NOR"è¿…çŒ›æ‰“å‘$nçš„èƒ¸å£",
         "lvl" : 40,
-        "skill_name" : "Ö±»÷"
+        "skill_name" : "ç›´æ“Š"
 ]),
-([        "action" : "$NÊ©³ö"HIC"¡¸Ñã»ØÍ·¡¹"NOR"£¬×İÉíÔ¾Ïò¿ÕÖĞ£¬Ë«ÊÖÍ¬Ê±»÷Ïò$nµÄ$l",
+([        "action" : "$Næ–½å‡º"HIC"ã€Œé›å›é ­ã€"NOR"ï¼Œç¸±èº«èºå‘ç©ºä¸­ï¼Œé›™æ‰‹åŒæ™‚æ“Šå‘$nçš„$l",
         "lvl" : 50,
-        "skill_name" : "Ñã»ØÍ·"
+        "skill_name" : "é›å›é ­"
 ]),
-([        "action" : "$NË«±Û»Ø»·£¬ÉíĞĞÎ¢Î¢ºóÑö£¬Ò»ÕĞ"HIW"¡¸¾®À¸¡¹"NOR"£¬²øÏò$nµÄË«ÊÖ",
+([        "action" : "$Né›™è‡‚å›ç’°ï¼Œèº«è¡Œå¾®å¾®å¾Œä»°ï¼Œä¸€æ‹›"HIW"ã€Œäº•æ¬„ã€"NOR"ï¼Œçºå‘$nçš„é›™æ‰‹",
         "lvl" : 60,
-        "skill_name" : "¾®À¸"
+        "skill_name" : "äº•æ¬„"
 ])
 });
 
@@ -37,13 +37,13 @@ int valid_combine(string combo) { return combo=="juehu-shou"; }
 int valid_learn(object me)
 {
         if( query_temp("weapon", me) || query_temp("secondary_weapon", me) )
-                return notify_fail("Á·Îäµ±³¤È­±ØĞë¿ÕÊÖ¡£\n");
+                return notify_fail("ç·´æ­¦ç•¶é•·æ‹³å¿…é ˆç©ºæ‰‹ã€‚\n");
 
         if ((int)me->query_skill("yinyun-ziqi", 1) < 10)
-                return notify_fail("ÄãµÄë³ëµ×ÏÆø»ğºò²»¹»£¬ÎŞ·¨Ñ§Îäµ±³¤È­¡£\n");
+                return notify_fail("ä½ çš„æ°¤æ°³ç´«æ°£ç«å€™ä¸å¤ ï¼Œç„¡æ³•å­¸æ­¦ç•¶é•·æ‹³ã€‚\n");
 
         if( query("max_neili", me)<50 )
-                return notify_fail("ÄãµÄÄÚÁ¦Ì«Èõ£¬ÎŞ·¨Á·Îäµ±³¤È­¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›å¤ªå¼±ï¼Œç„¡æ³•ç·´æ­¦ç•¶é•·æ‹³ã€‚\n");
 
         return 1;
 }
@@ -55,7 +55,7 @@ int practice_skill(object me)
         while (i--) if (lvl == action[i]["lvl"]) return 0;
 
         if( query("qi", me)<30 )
-                return notify_fail("ÄãµÄÌåÁ¦Ì«µÍÁË¡£\n");
+                return notify_fail("ä½ çš„é«”åŠ›å¤ªä½äº†ã€‚\n");
         me->receive_damage("qi", 20);
         return 1;
 }
@@ -82,16 +82,16 @@ mapping query_action(object me, object weapon)
         for(i = ttl; i > 0; i--)
                 if(lvl > action[i-1]["lvl"])
                 {
-                        seq = i; /* »ñµÃÕĞÊıĞòºÅÉÏÏŞ */
+                        seq = i; /* ç²å¾—æ‹›æ•¸åºè™Ÿä¸Šé™ */
                         break;
                 }
-        seq = random(seq);       /* Ñ¡Ôñ³öÊÖÕĞÊıĞòºÅ */
+        seq = random(seq);       /* é¸æ“‡å‡ºæ‰‹æ‹›æ•¸åºè™Ÿ */
         return ([
                 "action"      : action[seq]["action"],
                 "dodge"       : d_e1 + (d_e2 - d_e1) * seq / ttl,
                 "parry"       : p_e1 + (p_e2 - p_e1) * seq / ttl,
                 "force"       : f_e1 + (f_e2 - f_e1) * seq / ttl,
-                "damage_type" : random(2) ? "ÄÚÉË" : "ğöÉË",
+                "damage_type" : random(2) ? "å…§å‚·" : "ç˜€å‚·",
         ]);
 }
 
@@ -114,13 +114,13 @@ int query_effect_parry(object attacker, object me)
 
 int help(object me)
 {
-        write(HIC"\nÎäµ±³¤È­£º"NOR"\n");
+        write(HIC"\næ­¦ç•¶é•·æ‹³ï¼š"NOR"\n");
         write(@HELP
 
-    Îäµ±³¤È­ÎªÎäµ±ÅÉÈëÃÅÈ­·¨¡£
+    æ­¦ç•¶é•·æ‹³ç‚ºæ­¦ç•¶æ´¾å…¥é–€æ‹³æ³•ã€‚
 
-        Ñ§Ï°ÒªÇó£º
-                Ì«¼«Éñ¹¦1¼¶
+        å­¸ç¿’è¦æ±‚ï¼š
+                å¤ªæ¥µç¥åŠŸ1ç´š
 HELP
         );
         return 1;

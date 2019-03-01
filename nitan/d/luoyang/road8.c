@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "´ó¹ÙµÀ");
+        set("short", "å¤§å®˜é“");
         set("long", @LONG
-ÕâÊÇÒ»Ìõ¿íÀ«±ÊÖ±µÄ¹ÙµÀ£¬×ã¿ÉÈÝµÃÏÂÊ®Âí²¢³Û¡£ÓÉÓÚ³£Äê³µÂí±¼
-³Û£¬Â·ÃæÏÝÏÂÉîÉîµÄ³µÕÞ¡£ÓêÑ©ÌìÆø£¬ÄàÅ¢²»¿°¡£ÇçÌìÈÕÍ·£¬ÓÖ·Û³¾·É
-Ñï¡£´óµÀÍù¶«Í¨ÏòÖ¬·ÛÖ®¶¼µÄÑïÖÝ£¬¶øÎ÷ÃæÔòÊÇÍ¨ÍùÂåÑô³Ç¡£
+é€™æ˜¯ä¸€æ¢å¯¬é—Šç­†ç›´çš„å®˜é“ï¼Œè¶³å¯å®¹å¾—ä¸‹åé¦¬ä¸¦é¦³ã€‚ç”±äºŽå¸¸å¹´è»Šé¦¬å¥”
+é¦³ï¼Œè·¯é¢é™·ä¸‹æ·±æ·±çš„è»Šè½ã€‚é›¨é›ªå¤©æ°£ï¼Œæ³¥æ¿˜ä¸å ªã€‚æ™´å¤©æ—¥é ­ï¼Œåˆç²‰å¡µé£›
+æšã€‚å¤§é“å¾€æ±é€šå‘è„‚ç²‰ä¹‹éƒ½çš„æšå·žï¼Œè€Œè¥¿é¢å‰‡æ˜¯é€šå¾€æ´›é™½åŸŽã€‚
 LONG);
         set("exits", ([  /*  sizeof()  ==  2  */
                 "east"      : "/d/city/ximenroad",

@@ -8,12 +8,12 @@ inherit COMBINED_ITEM;
 
 void create()
 {
-	set_name("Æå×Ó", ({ "qi zi", "zi" }) );
+	set_name("æ£‹å­", ({ "qi zi", "zi" }) );
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long",	"Ò»°Ñ×ö¹¤¾«Ï¸µÄÔÆ×Ó¡£\n");
-		set("unit", "°Ñ");
+		set("long",	"ä¸€æŠŠåšå·¥ç²¾ç´°çš„é›²å­ã€‚\n");
+		set("unit", "æŠŠ");
 	}
 	set_amount(100);
 	setup();

@@ -5,9 +5,9 @@ inherit F_QUESTER;
 #include <ansi.h>;
 void create()
 {
-        set_name("Â³Á¬ÈÙ", ({ "lu lianrong", "lu", "lianrong" }) );
-        set("nickname", HIY"½ðÑÛµñ"NOR);
-        set("gender", "ÄÐÐÔ");
+        set_name("é­¯é€£æ¦®", ({ "lu lianrong", "lu", "lianrong" }) );
+        set("nickname", HIY"é‡‘çœ¼é›•"NOR);
+        set("gender", "ç”·æ€§");
         set("class", "swordsman");
         set("age", 45);
         set("attitude", "peaceful");
@@ -37,7 +37,7 @@ void create()
         map_skill("parry", "hengshan-sword");
         map_skill("dodge", "lingxu-bu");
 
-        create_family("ºâÉ½ÅÉ", 13, "µÜ×Ó");
+        create_family("è¡¡å±±æ´¾", 13, "å¼Ÿå­");
         setup();
 
         carry_object("/clone/weapon/changjian")->wield();

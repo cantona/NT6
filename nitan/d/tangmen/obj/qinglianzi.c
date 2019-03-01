@@ -3,17 +3,17 @@
 inherit THROWING;
 void create()
 {
-        set_name("ÇàÁ«×Ó", ({ "qing lianzi", "lianzi" }) );
+        set_name("é’è“®å­", ({ "qing lianzi", "lianzi" }) );
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
+                set("unit", "æŠŠ");
                 set("value",2000);
-                set("base_unit", "Á£");
+                set("base_unit", "ç²’");
                 set("base_weight",20);
                 set("base_value", 80);
                 set("material", "stone");
-                set("long", "Ò»Á£³¤µÄÏóÁ«×ÓÒ»ÑùµÄÔ²Ê¯Í·¡£\n");
+                set("long", "ä¸€ç²’é•·çš„è±¡è“®å­ä¸€æ¨£çš„åœ“çŸ³é ­ã€‚\n");
                 
         }
        set_amount(25);

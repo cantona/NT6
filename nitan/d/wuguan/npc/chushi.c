@@ -3,9 +3,9 @@ inherit NPC;
 
 void create()
 {
-        set_name("³øÊ¦", ({ "chu shi", "chu", "shi" }));
-        set("long", "ËûÊÇ¹ù¸®µÄ³ø×Ó£¬¶ØºñÀÏÊµ¡£Äã¿ÉÒÔÎÊËûÒª(serve)Ð©³ÔµÄ¡£\n");
-        set("gender", "ÄÐÐÔ");
+        set_name("å»šå¸«", ({ "chu shi", "chu", "shi" }));
+        set("long", "ä»–æ˜¯éƒ­åºœçš„å»šå­ï¼Œæ•¦åŽšè€å¯¦ã€‚ä½ å¯ä»¥å•ä»–è¦(serve)äº›åƒçš„ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 65);
         set("combat_exp", 7500);
         set_skill("unarmed", 35);
@@ -32,17 +32,17 @@ int do_serve()
 
         if (present("rice", me)
            && present("tea", me))
-                return notify_fail(CYN "³øÊ¦µÀ£ºÄãÉíÉÏ²»ÊÇ»¹ÓÐÃ´£¿³ÔÍê"
-                                   "ÁËÔÙÄÃ£¬±ðÀË·ÑÊ³Îï¡£\n" NOR);
+                return notify_fail(CYN "å»šå¸«é“ï¼šä½ èº«ä¸Šä¸æ˜¯é‚„æœ‰éº¼ï¼Ÿåƒå®Œ"
+                                   "äº†å†æ‹¿ï¼Œåˆ¥æµªè²»é£Ÿç‰©ã€‚\n" NOR);
 
         if (objectp(present("rice", environment(me)))
            && objectp(present("tea", environment(me))))
-                return notify_fail(CYN "³øÊ¦µÀ£ºÕâÖÜÎ§²»ÊÇ»¹ÓÐÃ´£¿³ÔÍê"
-                                   "ÁËÔÙÄÃ£¬±ðÀË·ÑÊ³Îï¡£\n" NOR);
+                return notify_fail(CYN "å»šå¸«é“ï¼šé€™å‘¨åœä¸æ˜¯é‚„æœ‰éº¼ï¼Ÿåƒå®Œ"
+                                   "äº†å†æ‹¿ï¼Œåˆ¥æµªè²»é£Ÿç‰©ã€‚\n" NOR);
 
 
-        message_vision(HIC "\n³øÊ¦½«ÈÈÆøÌÚÌÚµÄ·¹²ËµÝµ½$N" HIC "ÊÖÖÐ£¬Ð¦"
-                       "µÀ£ºÄãÂýÓÃ¡£\n\n" NOR, me);
+        message_vision(HIC "\nå»šå¸«å°‡ç†±æ°£é¨°é¨°çš„é£¯èœéžåˆ°$N" HIC "æ‰‹ä¸­ï¼Œç¬‘"
+                       "é“ï¼šä½ æ…¢ç”¨ã€‚\n\n" NOR, me);
         food = new("/d/wuguan/obj/rice");
         water = new("/d/wuguan/obj/tea");
         food->move(me);

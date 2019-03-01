@@ -1,4 +1,4 @@
-// force.c »ù±¾ÄÚ¹¦
+// force.c åŸºæœ¬å…§åŠŸ
 // Last Modified by winder on Mar. 10 2000
 
 #include <ansi.h>
@@ -21,14 +21,14 @@ void skill_improved(object me)
 {}
 int help(object me)
 {
-        write(HIC"\n»ù±¾ÄÚ¹¦£º"NOR"\n");
+        write(HIC"\nåŸºæœ¬å…§åŠŸï¼š"NOR"\n");
         write(@HELP
 
-    »ù±¾ÄÚ¹¦ÊÇËùÓĞÎä¹¦µÄ»ù´¡£¬²¢ÄÜ¸ÄÉÆÄãºóÌìµÄ¸ù¹Ç¡£
-    Çëhelp neigong¡£
+    åŸºæœ¬å…§åŠŸæ˜¯æ‰€æœ‰æ­¦åŠŸçš„åŸºç¤ï¼Œä¸¦èƒ½æ”¹å–„ä½ å¾Œå¤©çš„æ ¹éª¨ã€‚
+    è«‹help neigongã€‚
 
-        Ñ§Ï°ÒªÇó£º
-                ÎŞ
+        å­¸ç¿’è¦æ±‚ï¼š
+                ç„¡
 HELP
         );
         return 1;

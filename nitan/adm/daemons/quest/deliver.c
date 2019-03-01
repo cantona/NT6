@@ -1,4 +1,4 @@
-// Íæ¼ÒÈÎÎñÊØ»¤½ø³Ì£ºdeliver.c
+// ç©å®¶ä»»å‹™å®ˆè­·é€²ç¨‹ï¼šdeliver.c
 
 #include <ansi.h>
 
@@ -16,7 +16,7 @@ string *ob_list = ({
 
 void startup();
 
-// ÈÎÎñ¶ÔÏó´´½¨
+// ä»»å‹™å°è±¡å‰µå»º
 void create()
 {
         seteuid(getuid());
@@ -25,12 +25,12 @@ void create()
 
 void start_quest()
 {
-        object qob;     // ÈÎÎñÎï¼ş
-        string name;    // ÒªËÍµÄ»õÎï
-        int amount;     // ËÍ»õµÄÊıÁ¿
+        object qob;     // ä»»å‹™ç‰©ä»¶
+        string name;    // è¦é€çš„è²¨ç‰©
+        int amount;     // é€è²¨çš„æ•¸é‡
 
         if (sizeof(children("/clone/quest/deliver")) > 30)
-                // ÏµÍ³ÖĞ×î¶68¸öËÍ»õµÄÈÎÎñ
+                // ç³»çµ±ä¸­æœ€â–¡8å€‹é€è²¨çš„ä»»å‹™
                 return;
 
         name = ob_list[random(sizeof(ob_list))];
@@ -41,9 +41,9 @@ void start_quest()
 
 /*
         CHANNEL_D->do_channel(find_object(QUEST_D),
-                              "debug", "½ø³Ì(DELIVER)ÀûÓÃ" +
+                              "debug", "é€²ç¨‹(DELIVER)åˆ©ç”¨" +
                               get_object(name)->name() +
-                              NOR HIW "´´½¨ÁËÒ»¸öÈÎÎñ¡£");
+                              NOR HIW "å‰µå»ºäº†ä¸€å€‹ä»»å‹™ã€‚");
 */
 }
 
@@ -52,26 +52,26 @@ private void heart_beat()
         if (! find_object(QUEST_D))
                 return;
 
-        // Èç¹û¿ÉÒÔ£¬Ã¿´ÎĞÄÌø²úÉúÒ»¸öQUEST
+        // å¦‚æœå¯ä»¥ï¼Œæ¯æ¬¡å¿ƒè·³ç”¢ç”Ÿä¸€å€‹QUEST
         start_quest();
 }
 
-// ÈÎÎñÊØ»¤½ø³Ì»½ĞÑÕâ¸ö½ø³Ì
+// ä»»å‹™å®ˆè­·é€²ç¨‹å–šé†’é€™å€‹é€²ç¨‹
 void startup()
 {
-        // Æô¶¯
+        // å•Ÿå‹•
         if (! find_object(QUEST_D))
                 return;
 
         if (! query_heart_beat())
                 CHANNEL_D->do_channel(find_object(QUEST_D),
-                                      "sys", "½ø³Ì(DELIVER)Æô¶¯ÁË¡£");
+                                      "sys", "é€²ç¨‹(DELIVER)å•Ÿå‹•äº†ã€‚");
 
-        // Æ½¾ùÃ¿ËÄ·ÖÖÓ²úÉúÒ»¸öÈÎÎñ
+        // å¹³å‡æ¯å››åˆ†é˜ç”¢ç”Ÿä¸€å€‹ä»»å‹™
         set_heart_beat(2 + random(2));
 }
 
-// Í£Ö¹Õâ¸öÈÎÎñ½ø³Ì
+// åœæ­¢é€™å€‹ä»»å‹™é€²ç¨‹
 void stop()
 {
         set_heart_beat(0);

@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "������");
+        set("short", "打錫巷");
         set("long", @LONG
-��������ͨͨ��һ��ʯ��С·���������棬Ҳ��������벻������
-ʩ�Ž�������̨���Ϊ����ս��������ǳص���ʯ�˻��̳ɴ�·��
+這是普普通通的一條石板小路。走在上面，也許你根本想不到這是
+施琅將軍攻克台灣後為顯其戰功，將其城池的砌石運回舖成此路。
 LONG );
         set("outdoors", "quanzhou");
         set("no_clean_up", 0);

@@ -5,20 +5,20 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��ƽ��");
+        set("short", "安平橋");
         set("long", @LONG
-����ǵ�����ĺ��۴�ʯ�š���ƽ�š���ȫ�ų���������壬
-�������̵Ķ��Ǵ�ʯ�塣ʯ���еĳ���ʮ�ɣ��ش�����������ͤ��
-��������ͤ���������ޱ���ʮ������ʯ����ʿ����ͤ���ϻ���һ����
-��(duilian)��
+這就是當代最長的海港大石橋“安平橋”，全橋長五裡，寬丈五，
+橋面上舖的都是大石板。石板有的長近十丈，重達五萬斤，橋上有亭子
+五座。中亭有歷代重修碑記十三方，石雕武士兩尊，亭柱上還有一幅對
+聯(duilian)。
 LONG
         );
         set("objects", ([ /* sizeof() == 1 */
         ]));
         set("item_desc", ([ /* sizeof() == 1 */
                 "duilian" : "
-           �����з���˹��
-           �������ų�����\n",
+           世間有佛尊斯佛
+           天下無橋長此橋\n",
         ]));
         set("outdoors", "quanzhou");
         set("exits", ([ /* sizeof() == 2 */

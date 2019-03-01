@@ -3,7 +3,7 @@
 
 inherit F_SSERVER;
 
-string name() { return HIW "À¼½£Îè" NOR; } 
+string name() { return HIW "è˜­åŠèˆ" NOR; } 
 
 int perform(object me, object target)
 {
@@ -16,25 +16,25 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(name() + "Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(name() + "åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me)) || 
             query("skill_type", weapon) != "sword" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if ((int)me->query_skill("lunhui-sword", 1) < 600)
-                return notify_fail("ÄãµÄÁùµÀÂÖ»Ø½£²»¹»æµÊì£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„å…­é“è¼ªå›åŠä¸å¤ å«»ç†Ÿï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if( query("neili", me)<3000 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (me->query_skill_mapped("sword") != "lunhui-sword")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢ÁùµÀÂÖ»Ø½££¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼å…­é“è¼ªå›åŠï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIG "$N" HIG "ÇáÎèÊÖÖĞ" + weapon->name() + HIG "£¬½£¹âËÄÉä¼ä£¬ÂşÌìÀ¼»¨È÷Âä£¬ÓÌÈçÏÉ¾³°ãÃÀÃî ¡­¡­\n" NOR;
+        msg = HIG "$N" HIG "è¼•èˆæ‰‹ä¸­" + weapon->name() + HIG "ï¼ŒåŠå…‰å››å°„é–“ï¼Œæ¼«å¤©è˜­èŠ±æ´’è½ï¼ŒçŒ¶å¦‚ä»™å¢ƒèˆ¬ç¾å¦™ â€¦â€¦\n" NOR;
 
         ap = attack_power(me, "sword"); 
         dp = defense_power(target, "dodge");

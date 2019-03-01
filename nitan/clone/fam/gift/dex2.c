@@ -3,19 +3,19 @@ inherit __DIR__"gift";
 
 void create()
 {
-        set_name(NOR + HIR "ÖìÈ¸Ááççµ¤" NOR, ({ "zhuque dan", "zhuque", "dan" }));
+        set_name(NOR + HIR "æœ±é›€ç²ç“ä¸¹" NOR, ({ "zhuque dan", "zhuque", "dan" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIR "ÕâÊÇÒ»¿ÅÓĞ×ÅÑªÉ«¹âÔóµÄÒ©Íè£¬¾İËµ³Ôºó¿ÉÔöÇ¿Éí·¨¡£\n" NOR);
-                set("base_unit", "¿Å");
+                set("long", HIR "é€™æ˜¯ä¸€é¡†æœ‰è‘—è¡€è‰²å…‰æ¾¤çš„è—¥ä¸¸ï¼Œæ“šèªªåƒå¾Œå¯å¢å¼·èº«æ³•ã€‚\n" NOR);
+                set("base_unit", "é¡†");
                 set("base_value", 10000);
                 set("base_weight", 50);
                 set("only_do_effect", 1);
                 set("gift_type", "dex");
-                set("gift_name", "ÏÈÌìÉí·¨");
+                set("gift_name", "å…ˆå¤©èº«æ³•");
                 set("gift_point", 65);
-                set("gift_msg", HIW "Í»È»ÄãÖ»¾õÈ«ÉíÇáÆ®Æ®µÄ£¬ÓĞ¹ÉÌÚÔÆ¼İÎíµÄ¸Ğ¾õ¡£\n" NOR);
+                set("gift_msg", HIW "çªç„¶ä½ åªè¦ºå…¨èº«è¼•é£„é£„çš„ï¼Œæœ‰è‚¡é¨°é›²é§•éœ§çš„æ„Ÿè¦ºã€‚\n" NOR);
         }
         setup();
 }

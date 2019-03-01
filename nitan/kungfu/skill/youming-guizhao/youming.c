@@ -1,11 +1,11 @@
 // This program is a part of NITAN MudLIB
-// youming.c  ÓÄÚ¤¹íÓ°
+// youming.c  å¹½å†¥é¬¼å½±
 
 #include <ansi.h>
 
 inherit F_SSERVER;
 
-string name() { return "ÓÄÚ¤¹íÓ°"; }
+string name() { return "å¹½å†¥é¬¼å½±"; }
 
 int perform(object me, object target)
 {
@@ -18,47 +18,47 @@ int perform(object me, object target)
         }
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail("¡¸ÓÄÚ¤¹íÓ°¡¹Ö»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œå¹½å†¥é¬¼å½±ã€åªèƒ½åœ¨æˆ°é¬¥ä¸­ä½¿ç”¨ã€‚\n");
 
         if ((int)me->query_skill("youming-guizhao", 1) < 120 )
-                return notify_fail("ÄãµÄÓÄÚ¤¹í×¦µÈ¼¶²»¹»£¬²»ÄÜºô»½¹íÓ°£¡\n");
+                return notify_fail("ä½ çš„å¹½å†¥é¬¼çˆªç­‰ç´šä¸å¤ ï¼Œä¸èƒ½å‘¼å–šé¬¼å½±ï¼\n");
 
         if ((int)me->query_skill("claw", 1) < 120 )
-                return notify_fail("ÄãµÄ»ù±¾×¦·¨¼«²»¹»æµÊì£¬²»ÄÜºô»½¹íÓ°£¡\n");
+                return notify_fail("ä½ çš„åŸºæœ¬çˆªæ³•æ¥µä¸å¤ å«»ç†Ÿï¼Œä¸èƒ½å‘¼å–šé¬¼å½±ï¼\n");
 
         if( objectp(query_temp("weapon", me)) )
-                return notify_fail("Äã±ØĞë¿ÕÊÖÊ¹ÓÃ¡¸ÓÄÚ¤¹íÓ°¡¹£¡\n");
+                return notify_fail("ä½ å¿…é ˆç©ºæ‰‹ä½¿ç”¨ã€Œå¹½å†¥é¬¼å½±ã€ï¼\n");
 
         /*
         if ((int)me->query_skill("xiaowuxiang", 1)<100
                 && (int)me->query_skill("bahuang-gong", 1)<100
                 && (int)me->query_skill("beiming-shengong", 1)<100)
-                return notify_fail("ÄãµÄåĞÒ£ÅÉÄÚ¹¦»ğºò²»¹»¡£\n");
+                return notify_fail("ä½ çš„é€é™æ´¾å…§åŠŸç«å€™ä¸å¤ ã€‚\n");
 
         if (me->query_skill_mapped("force") != "xiaowuxiang"
                 && me->query_skill_mapped("force") != "bahuang-gong"
                 && me->query_skill_mapped("force") != "beiming-shengong")
-                return notify_fail("ÄãÃ»ÓĞÔËÓÃåĞÒ£ÅÉÄÚ¹¦£¡\n");
+                return notify_fail("ä½ æ²’æœ‰é‹ç”¨é€é™æ´¾å…§åŠŸï¼\n");
         */
 
         if (me->query_skill_prepared("claw") != "youming-guizhao"
                 || me->query_skill_mapped("claw") != "youming-guizhao"
                 || me->query_skill_mapped("parry") != "youming-guizhao")
-                return notify_fail("ÄãÏÖÔÚÎŞ·¨ºô»½³ö¹íÓ°½øĞĞ¹¥»÷£¡\n");
+                return notify_fail("ä½ ç¾åœ¨ç„¡æ³•å‘¼å–šå‡ºé¬¼å½±é€²è¡Œæ”»æ“Šï¼\n");
 
         if( query("neili", me)<800 )
-                return notify_fail("ÄãÏÖÔÚÕæÆøÌ«Èõ£¬²»ÄÜºô»½¹íÓ°£¡\n");
+                return notify_fail("ä½ ç¾åœ¨çœŸæ°£å¤ªå¼±ï¼Œä¸èƒ½å‘¼å–šé¬¼å½±ï¼\n");
 
         if( query("max_neili", me)<1000 )
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ£¬²»ÄÜºô»½¹íÓ°£¡\n");
+                return notify_fail("ä½ ç¾åœ¨å…§åŠ›å¤ªå¼±ï¼Œä¸èƒ½å‘¼å–šé¬¼å½±ï¼\n");
 
         if( query_temp("lingjiu/youming", me) )
-                return notify_fail("ÄãÒÑ¾­ºô»½³öÁËÓÄÚ¤¹íÓ°£¡\n");
+                return notify_fail("ä½ å·²ç¶“å‘¼å–šå‡ºäº†å¹½å†¥é¬¼å½±ï¼\n");
 
         skill = me->query_skill("claw");
 
-        message_combatd(HIR "Í»È»$NÒ§ÆÆÉà¼â£¬¸ßÉù½Ğ»½ÌìµØ¹íÉñ£¬ÈçÍ¬·è×ÓÒ»°ã£¡¸ú×ÅµØÃæ±äµÃÓĞÈçË®¶¯£¬Ö»¼û\n"
-                        "Ò»Ìõ"HIB"¹íÓ°"HIR"´ÓµØµ×Ã°³ö£¬·ÉÓÚ°ë¿Õ£¬ÉíĞĞÆ®Ãì²»¶¨£¬Ê±¶øÏóÒ»»ğÇò£¬Ê±¶øÏóÒ»ºÚÓ°£¡\n\n" NOR,
+        message_combatd(HIR "çªç„¶$Nå’¬ç ´èˆŒå°–ï¼Œé«˜è²å«å–šå¤©åœ°é¬¼ç¥ï¼Œå¦‚åŒç˜‹å­ä¸€èˆ¬ï¼è·Ÿè‘—åœ°é¢è®Šå¾—æœ‰å¦‚æ°´å‹•ï¼Œåªè¦‹\n"
+                        "ä¸€æ¢"HIB"é¬¼å½±"HIR"å¾åœ°åº•å†’å‡ºï¼Œé£›äºåŠç©ºï¼Œèº«è¡Œé£„æ¸ºä¸å®šï¼Œæ™‚è€Œè±¡ä¸€ç«çƒï¼Œæ™‚è€Œè±¡ä¸€é»‘å½±ï¼\n\n" NOR,
                         me);
 
         addn("neili", -skill, me);
@@ -77,7 +77,7 @@ void checking(object me, object target)
 
         if( !living(me) || me->is_ghost() )
         {
-                message_combatd(HIR"ÄÇÌõ"HIB"¹íÓ°"HIR"ÓÚ°ë¿ÕÅÇ»²ÁËÒ»Õó£¬¾ÍÏûÊ§ÔÚµØµ×ÁË£¡\n"NOR, me);
+                message_combatd(HIR"é‚£æ¢"HIB"é¬¼å½±"HIR"äºåŠç©ºå¾˜å¾Šäº†ä¸€é™£ï¼Œå°±æ¶ˆå¤±åœ¨åœ°åº•äº†ï¼\n"NOR, me);
                 addn_temp("apply/defense", -skill/2, me);
                 delete_temp("lingjiu/youming", me);
                 remove_call_out("remove_effect");
@@ -85,7 +85,7 @@ void checking(object me, object target)
         }
         if( !me->is_fighting() )
         {
-                message_combatd(HIR"ÄÇÌõ"HIB"¹íÓ°"HIR"ÓÚ°ë¿ÕÅÇ»²ÁËÒ»Õó£¬¾ÍÏûÊ§ÔÚµØµ×ÁË£¡\n"NOR, me);
+                message_combatd(HIR"é‚£æ¢"HIB"é¬¼å½±"HIR"äºåŠç©ºå¾˜å¾Šäº†ä¸€é™£ï¼Œå°±æ¶ˆå¤±åœ¨åœ°åº•äº†ï¼\n"NOR, me);
                 addn_temp("apply/defense", -skill/2, me);
                 delete_temp("lingjiu/youming", me);
                 remove_call_out("remove_effect");
@@ -95,9 +95,9 @@ void checking(object me, object target)
            || me->query_skill_mapped("claw") != "youming-guizhao"
            || me->query_skill_prepared("claw") != "youming-guizhao" )
         {
-                tell_object(me,"\n$NÖèÈ»±ä»»ÕĞÊı£¬²»ÄÜÔÙ¼ÌĞøÓÃÓÄÚ¤¹íÓ°Ç£ÖÆ¶ÔÊÖµÄ¹¥»÷£¡\n");
+                tell_object(me,"\n$Né©Ÿç„¶è®Šæ›æ‹›æ•¸ï¼Œä¸èƒ½å†ç¹¼çºŒç”¨å¹½å†¥é¬¼å½±ç‰½åˆ¶å°æ‰‹çš„æ”»æ“Šï¼\n");
                 addn_temp("apply/defense", -skill/2, me);
-                message_combatd(HIR"ÄÇÌõ"HIB"¹íÓ°"HIR"ÓÚ°ë¿ÕÅÇ»²ÁËÒ»Õó£¬¾ÍÏûÊ§ÔÚµØµ×ÁË£¡\n"NOR, me);
+                message_combatd(HIR"é‚£æ¢"HIB"é¬¼å½±"HIR"äºåŠç©ºå¾˜å¾Šäº†ä¸€é™£ï¼Œå°±æ¶ˆå¤±åœ¨åœ°åº•äº†ï¼\n"NOR, me);
                 delete_temp("lingjiu/youming", me);
                 remove_call_out("remove_effect");
                 return ;
@@ -114,7 +114,7 @@ void remove_effect(object me)
 
         skill = me->query_skill("claw");
 
-        message_combatd(HIR"µØÃæµÄ²¨¶¯½¥½¥¼õÈõ£¬ÄÇÌõ"HIB"¹íÓ°"HIR"ÓÚ°ë¿ÕÅÇ»²ÁËÒ»Õó£¬¾ÍÏûÊ§ÔÚµØµ×ÁË£¡\n"NOR, me);
+        message_combatd(HIR"åœ°é¢çš„æ³¢å‹•æ¼¸æ¼¸æ¸›å¼±ï¼Œé‚£æ¢"HIB"é¬¼å½±"HIR"äºåŠç©ºå¾˜å¾Šäº†ä¸€é™£ï¼Œå°±æ¶ˆå¤±åœ¨åœ°åº•äº†ï¼\n"NOR, me);
         addn_temp("apply/defense", -skill/2, me);
         delete_temp("lingjiu/youming", me);
         return;

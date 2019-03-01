@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��ɽ��");
+        set("short", "後山門");
         set("long", @LONG
-�ߵ��ؾ���󣬶���������С�š�����ǿ�Ԫ�µĺ�ɽ�š�������
-����������
+走到藏經閣後，東北邊有扇小門。這就是開元寺的後山門。門外是
+個城隍廟。
 LONG );
         set("outdoors", "quanzhou");
         set("no_clean_up", 0);

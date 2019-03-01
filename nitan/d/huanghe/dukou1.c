@@ -3,11 +3,11 @@ inherit RIVER;
 
 void create()
 {
-        set ("short", "�ƺӶɿ�");
+        set ("short", "黃河渡口");
         set ("long", @LONG
-�ɿ�ǰ������ӿ���ȵĻƺ� (river)�ˡ�������������ɳ
-���£�������������ɴ������������ڲ����д��У���Ϊ��
-�ա����˻ƺӣ����ǻ����ˡ�
+渡口前就是洶湧澎湃的黃河 (river)了。濁流滾滾，泥沙
+俱下，聲震數裡。兩岸渡船來來往往，在波谷中穿行，甚為兇
+險。過了黃河，就是華北了。
 LONG);
         set("to", "/d/beijing/dukou2");
         set("exits", ([

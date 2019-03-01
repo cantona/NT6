@@ -6,14 +6,14 @@ inherit ARMOR;
 
 void create(class data)
 {
-        set_name("¼×", ({ "armor", }));
+        set_name("ç”²", ({ "armor", }));
 
         if (clonep())
                 set_default_object(__FILE__);
         else
         {
-                set("long", "ÕâÊÇÒ»¼şÆÕÍ¨µÄ»¤¼×¡£\n");
-                set("unit", "¼ş");
+                set("long", "é€™æ˜¯ä¸€ä»¶æ™®é€šçš„è­·ç”²ã€‚\n");
+                set("unit", "ä»¶");
                 set("value", 200);
                 set("material", "cloth");
                 set("armor_prop/armor", query("point")*2);
@@ -23,7 +23,7 @@ void create(class data)
         setup();
 }
 
-// ÎäÆ÷×°±¸µÄÉËº¦Öµ
+// æ­¦å™¨è£å‚™çš„å‚·å®³å€¼
 int apply_damage()
 {
         int d;
@@ -31,11 +31,11 @@ int apply_damage()
 
         attack_lvl = weapon_level();
         p = query("point");
-        d = attack_lvl * p / MAX_LEVEL + query("bless") * 10; // Ç¬À¤Ê¥Ë®Ê¥»¯Ò»´ÎÔö¼ÓÊ®µã¹¥»÷
+        d = attack_lvl * p / MAX_LEVEL + query("bless") * 10; // ä¹¾å¤è–æ°´è–åŒ–ä¸€æ¬¡å¢åŠ åé»æ”»æ“Š
         return d + p;
 }
 
-// ·ÀÓù×°±¸µÄÓĞĞ§Öµ
+// é˜²å¾¡è£å‚™çš„æœ‰æ•ˆå€¼
 int apply_armor()
 {
         int d;
@@ -43,8 +43,8 @@ int apply_armor()
 
         defense_lvl = armor_level();
         p = query("point");
-        // if( d > p * 3 / 2) d = p * 3 / 2 + query("bless") * 10;// Ç¬À¤Ê¥Ë®Ê¥»¯Ò»´ÎÔö¼Ó10µã·ÀÓù
-        d = p * 3 / 2 + query("bless") * 2;// Ç¬À¤Ê¥Ë®Ê¥»¯Ò»´ÎÔö¼Ó2µã·ÀÓù
+        // if( d > p * 3 / 2) d = p * 3 / 2 + query("bless") * 10;// ä¹¾å¤è–æ°´è–åŒ–ä¸€æ¬¡å¢åŠ 10é»é˜²å¾¡
+        d = p * 3 / 2 + query("bless") * 2;// ä¹¾å¤è–æ°´è–åŒ–ä¸€æ¬¡å¢åŠ 2é»é˜²å¾¡
         return d + p;
 }
 
@@ -55,19 +55,19 @@ inherit ARMOR;
 
 void create()
 {
-        set_name("½ğË¿¼×", ({ "aarmor" }));
+        set_name("é‡‘çµ²ç”²", ({ "aarmor" }));
         set_weight(9000);
         set("item_make", 1);
-        set("unit", "ÕÅ");
-        set("long", "ÕâÊÇÓÉÉñÌúÁ¶ÖÆ¶ø³ÉµÄÒ»ÕÅ»¤¼×¡£
-»¤¼×ÔµÉÏ¿Ì×ÅÒ»ĞĞĞ¡×Ö£ººú´óÒ»(adami)
+        set("unit", "å¼µ");
+        set("long", "é€™æ˜¯ç”±ç¥éµç…‰åˆ¶è€Œæˆçš„ä¸€å¼µè­·ç”²ã€‚
+è­·ç”²ç·£ä¸Šåˆ»è‘—ä¸€è¡Œå°å­—ï¼šèƒ¡å¤§ä¸€(adami)
 ");
         set("value", 2100000);
         set("point", 152);
         set("material", "magic stone");
         set("material_file", "ddd");
-        set("wear_msg", "$N×°±¸½ğË¿¼×¡£\n");
-        set("remove_msg", "$NÍÑÏÂÁË½ğË¿¼×¡£\n");
+        set("wear_msg", "$Nè£å‚™é‡‘çµ²ç”²ã€‚\n");
+        set("remove_msg", "$Nè„«ä¸‹äº†é‡‘çµ²ç”²ã€‚\n");
         set("armor_prop/armor", apply_armor());
 
         setup();
@@ -84,18 +84,18 @@ inherit F_ITEMMAKE;
 
 void create()
 {
-        set_name("°×ºç½£", ({ "asword" }));
+        set_name("ç™½è™¹åŠ", ({ "asword" }));
         set_weight(9000);
         set("item_make", 1);
-        set("unit", "±ú");
-        set("long", "ÕâÊÇÓÉÉñÌúÁ¶ÖÆ¶ø³ÉµÄÒ»±ú½£¡£
-½£±úÉÏ¿Ì×ÅÒ»ĞĞĞ¡×Ö£ººú´óÒ»(adami)
+        set("unit", "æŸ„");
+        set("long", "é€™æ˜¯ç”±ç¥éµç…‰åˆ¶è€Œæˆçš„ä¸€æŸ„åŠã€‚
+åŠæŸ„ä¸Šåˆ»è‘—ä¸€è¡Œå°å­—ï¼šèƒ¡å¤§ä¸€(adami)
 ");
         set("value", 2100000);
         set("point", 190);
         set("material", "magic stone");
-        set("wield_msg", "$N¡¸à§¡¹µÄÒ»Éù³é³öÒ»±úº®¹âÉÁÉÁµÄ$nÎÕÔÚÊÖÖĞ¡£\n");
-        set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²å»Ø½£ÇÊ¡£\n");
+        set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€è²æŠ½å‡ºä¸€æŸ„å¯’å…‰é–ƒé–ƒçš„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+        set("unwield_msg", "$Nå°‡æ‰‹ä¸­çš„$næ’å›åŠé˜ã€‚\n");
 
         init_sword(apply_damage());
 

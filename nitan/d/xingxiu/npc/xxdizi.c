@@ -4,9 +4,9 @@
 inherit NPC;
 void create()
 {
-        set_name("ÐÇËÞÅÉµÜ×Ó", ({ "xingxiu dizi", "dizi"}));
-        set("long", "ËûÊÇÐÇËÞÅÉµÄ¶ñÍ½, ÉÕÉ±ÇÀ¼é¶Ä, ÎÞ¶ñ²»×÷¡£\n");
-        set("gender", "ÄÐÐÔ");
+        set_name("æ˜Ÿå®¿æ´¾å¼Ÿå­", ({ "xingxiu dizi", "dizi"}));
+        set("long", "ä»–æ˜¯æ˜Ÿå®¿æ´¾çš„æƒ¡å¾’, ç‡’æ®ºæ¶å§¦è³­, ç„¡æƒ¡ä¸ä½œã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 30 + random(10));
         set("attitude", "peaceful");
         set("shen", -1000);
@@ -36,14 +36,14 @@ void create()
         map_skill("parry", "chousui-zhang");
         prepare_skill("parry", "chousui-zhang");
 
-        create_family("ÐÇËÞÅÉ", 3, "µÜ×Ó");
+        create_family("æ˜Ÿå®¿æ´¾", 3, "å¼Ÿå­");
         setup();
         carry_object("/clone/cloth/dao-cloth")->wear();
         set("chat_chance", 5);
         set("chat_msg", ({
-                "ÐÇËÞÅÉµÜ×ÓÒ»»á¶ù´µ×àË¿Öñóï¹Ü, Ò»»á¶ù¸ßÉùËÌµÀ£¬¡°ÐÇ¡«ËÞ¡«ÀÏ¡«ÏÉ£¬¹Å¡«½ñ¡«ÎÞ¡«±È¡±¡£\n",
-                "ÐÇËÞÅÉµÜ×ÓÒ»»á¶ù´µ×àË¿Öñóï¹Ü, Ò»»á¶ù¸ßÉùËÌµÀ£¬¡°ÐÇ¡«ËÞ¡«ÀÏ¡«ÏÉ£¬Íþ¡«Õð¡«å¾¡«Óî¡±¡£\n",
-                "ÐÇËÞÅÉµÜ×ÓÒ»»á¶ù´µ×àË¿Öñóï¹Ü, Ò»»á¶ù¸ßÉùËÌµÀ£¬¡°ÐÇ¡«ËÞ¡«ÀÏ¡«ÏÉ£¬µÂ¡«Åä¡«Ìì¡«µØ¡±¡£\n",
+                "æ˜Ÿå®¿æ´¾å¼Ÿå­ä¸€æœƒå…’å¹å¥çµ²ç«¹ç°«ç®¡, ä¸€æœƒå…’é«˜è²é Œé“ï¼Œâ€œæ˜Ÿï½žå®¿ï½žè€ï½žä»™ï¼Œå¤ï½žä»Šï½žç„¡ï½žæ¯”â€ã€‚\n",
+                "æ˜Ÿå®¿æ´¾å¼Ÿå­ä¸€æœƒå…’å¹å¥çµ²ç«¹ç°«ç®¡, ä¸€æœƒå…’é«˜è²é Œé“ï¼Œâ€œæ˜Ÿï½žå®¿ï½žè€ï½žä»™ï¼Œå¨ï½žéœ‡ï½žå¯°ï½žå®‡â€ã€‚\n",
+                "æ˜Ÿå®¿æ´¾å¼Ÿå­ä¸€æœƒå…’å¹å¥çµ²ç«¹ç°«ç®¡, ä¸€æœƒå…’é«˜è²é Œé“ï¼Œâ€œæ˜Ÿï½žå®¿ï½žè€ï½žä»™ï¼Œå¾·ï½žé…ï½žå¤©ï½žåœ°â€ã€‚\n",
         }) );
 
 }

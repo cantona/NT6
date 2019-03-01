@@ -29,21 +29,21 @@
 // id    : who make this poison
 // name  : the name of the poison, defulat:"nature poison"
 
-string chinese_name() { return "¶¾"; }
+string chinese_name() { return "æ¯’"; }
 
 string update_msg_others()
 {
-        return HIG "$N" HIG "Í´¿àµÄÉëÒ÷ÁËÒ»Éù¡£\n" NOR;
+        return HIG "$N" HIG "ç—›è‹¦çš„å‘»åŸäº†ä¸€è²ã€‚\n" NOR;
 }
 
 string update_msg_self()
 {
-        return HIG "ÄãÖĞµÄ$?" HIG "·¢×÷ÁË¡£\n" NOR;
+        return HIG "ä½ ä¸­çš„$?" HIG "ç™¼ä½œäº†ã€‚\n" NOR;
 }
 
 string die_msg_others()
 {
-        return RED "$N" RED "Ë»ÑÆ×Å½ĞÁËÁ½Éù£¬¾Í²»ÔÙ´­ÆøÁË¡£\n" NOR;
+        return RED "$N" RED "å˜¶å•è‘—å«äº†å…©è²ï¼Œå°±ä¸å†å–˜æ°£äº†ã€‚\n" NOR;
 }
 
 mapping mixed_poison(mapping p1, mapping p2)
@@ -102,9 +102,9 @@ mapping mixed_poison(mapping p1, mapping p2)
         {
                 // two poison mixed
                 if (p["level"] >= 100)
-                        p["name"] = "¾ç¶¾";
+                        p["name"] = "åŠ‡æ¯’";
                 else
-                        p["name"] = "¶¾";
+                        p["name"] = "æ¯’";
         } else
                 p["name"] = p1["name"];
 
@@ -146,12 +146,12 @@ int dispel(object me, object ob, mapping cnd)
                 return 0;
 
         if (! stringp(cnd["name"]))
-                cnd["name"] = "¶¾";
+                cnd["name"] = "æ¯’";
 
         pos = cnd["name"];
         if( query("neili", me)<200 )
         {
-                tell_object(me, "ÄãÄÚÁ¦²»×ã£¬ÎŞ·¨ÇıÉ¢" + pos + "¡£\n");
+                tell_object(me, "ä½ å…§åŠ›ä¸è¶³ï¼Œç„¡æ³•é©…æ•£" + pos + "ã€‚\n");
                 return -1;
         }
 
@@ -176,11 +176,11 @@ int dispel(object me, object ob, mapping cnd)
                  me->query_skill("dispel-poison", 1) +
                  query_temp("apply/dispel-poison", me);
 
-        // ÒÆ¾­Ò×ÂöÔöÇ¿±Æ¶¾Ğ§¹û
+        // ç§»ç¶“æ˜“è„ˆå¢å¼·é€¼æ¯’æ•ˆæœ
         if( query("special_skill/divine", me) )
                 my_lvl += (int)me->query_con() * 3;
                 
-        // ÌìÉúÆæ¹ÇÔöÇ¿±Æ¶¾Ğ§¹û£¬Ğ§¹ûÎªÒÆ¾­Ò×Âö2±¶
+        // å¤©ç”Ÿå¥‡éª¨å¢å¼·é€¼æ¯’æ•ˆæœï¼Œæ•ˆæœç‚ºç§»ç¶“æ˜“è„ˆ2å€
        if( query("special_skill/qigu", me) )
                 my_lvl += (int)me->query_con() * 6;
         
@@ -193,17 +193,17 @@ int dispel(object me, object ob, mapping cnd)
         {
                 if (me == ob)
                 {
-                        tell_object(me, MAG "ÄãÔËÓÃÄÚ¹¦ÇıÉ¢" + pos +
-                                    "£¬È»¶øËÆºõÃ»ÓĞ°ëµãĞ§¹û¡£\n" NOR);
+                        tell_object(me, MAG "ä½ é‹ç”¨å…§åŠŸé©…æ•£" + pos +
+                                    "ï¼Œç„¶è€Œä¼¼ä¹æ²’æœ‰åŠé»æ•ˆæœã€‚\n" NOR);
                         me->start_busy(1);
                         return -1;
                 } else
                 {
-                        tell_object(me, MAG "ÄãÔËÓÃÄÚ¹¦°ïÖú" + ob->name() +
-                                    "ÇıÉ¢" + pos + "£¬È»¶øËÆºõÃ»ÓĞ°ëµãĞ§¹û¡£"
+                        tell_object(me, MAG "ä½ é‹ç”¨å…§åŠŸå¹«åŠ©" + ob->name() +
+                                    "é©…æ•£" + pos + "ï¼Œç„¶è€Œä¼¼ä¹æ²’æœ‰åŠé»æ•ˆæœã€‚"
                                     "\n" NOR);
-                        tell_object(ob, MAG + me->name() + "½«ÄÚÁ¦»º»ºµÄÊä"
-                                    "ÈëÄãµÄÌåÁ¦£¬Äã¾õµÃÒ»Õó¶ñĞÄ£¬¼¸ÓûÅ»ÍÂ¡£"
+                        tell_object(ob, MAG + me->name() + "å°‡å…§åŠ›ç·©ç·©çš„è¼¸"
+                                    "å…¥ä½ çš„é«”åŠ›ï¼Œä½ è¦ºå¾—ä¸€é™£æƒ¡å¿ƒï¼Œå¹¾æ¬²å˜”åã€‚"
                                     "\n" NOR);
                         me->start_busy(1);
                         ob->start_busy(1);
@@ -211,7 +211,7 @@ int dispel(object me, object ob, mapping cnd)
                 }
         }
 
-        // È¥¶¾ÄÜÁ¦
+        // å»æ¯’èƒ½åŠ›
         power = my_lvl + me->query_skill("dispel-poison", 1)  +
                 query_temp("apply/dispel-poison", me);
         if( query("breakup", ob) )
@@ -220,8 +220,8 @@ int dispel(object me, object ob, mapping cnd)
         {
                 if( cnd["id"] == query("id", me) )
                 {
-                        tell_object(me, WHT "ÄãÔËÓÃÄÚ¹¦£¬½«" + pos +
-                                    "¾¡ÊıÇıÉ¢¡£\n" NOR);
+                        tell_object(me, WHT "ä½ é‹ç”¨å…§åŠŸï¼Œå°‡" + pos +
+                                    "ç›¡æ•¸é©…æ•£ã€‚\n" NOR);
                         addn("neili", -100, me);
                         cnd["remain"] = 0;
                         me->start_busy(1);
@@ -236,12 +236,12 @@ int dispel(object me, object ob, mapping cnd)
                                 dis = cnd["remain"];
                                 cost_neili = cnd["remain"] * 2 * (cnd["level"] + 1) /
                                              power;
-                                tell_object(me, WHT "ÄãÔËÓÃÄÚ¹¦£¬½«" + pos +
-                                            "¾¡ÊıÇıÉ¢¡£\n" NOR);
+                                tell_object(me, WHT "ä½ é‹ç”¨å…§åŠŸï¼Œå°‡" + pos +
+                                            "ç›¡æ•¸é©…æ•£ã€‚\n" NOR);
                         } else
                         {
-                                tell_object(me, WHT "ÄãÔËÓÃÄÚ¹¦£¬ÇıÉ¢ÁËÒ»Ğ©" + pos +
-                                            "¡£\n" NOR);
+                                tell_object(me, WHT "ä½ é‹ç”¨å…§åŠŸï¼Œé©…æ•£äº†ä¸€äº›" + pos +
+                                            "ã€‚\n" NOR);
                         }
                         cnd["remain"] -= dis;
                         if (cnd["remain"] < 0)
@@ -253,8 +253,8 @@ int dispel(object me, object ob, mapping cnd)
         {
                 if( cnd["id"] == query("id", me) )
                 {
-                        tell_object(me, WHT "ÄãÔËÓÃÄÚ¹¦£¬°ïÖú" + ob->name() +
-                                    "½«" + pos + "¾¡ÊıÇıÉ¢¡£\n" NOR);
+                        tell_object(me, WHT "ä½ é‹ç”¨å…§åŠŸï¼Œå¹«åŠ©" + ob->name() +
+                                    "å°‡" + pos + "ç›¡æ•¸é©…æ•£ã€‚\n" NOR);
                         addn("neili", -150, me);
                         cnd["remain"] = 0;
                         me->start_busy(2);
@@ -270,12 +270,12 @@ int dispel(object me, object ob, mapping cnd)
                                 dis = cnd["remain"];
                                 cost_neili = cnd["remain"] * 4 * (cnd["level"] + 1) /
                                              power;
-                                tell_object(me, WHT "ÄãÔËÓÃÄÚ¹¦£¬°ïÖú" + ob->name() +
-                                            "½«" + pos + "¾¡ÊıÇıÉ¢¡£\n" NOR);
+                                tell_object(me, WHT "ä½ é‹ç”¨å…§åŠŸï¼Œå¹«åŠ©" + ob->name() +
+                                            "å°‡" + pos + "ç›¡æ•¸é©…æ•£ã€‚\n" NOR);
                         } else
                         {
-                                tell_object(me, WHT "ÄãÔËÓÃÄÚ¹¦£¬°ïÖú" + ob->name() +
-                                            "ÇıÉ¢ÁËÒ»Ğ©" + pos + "¡£\n" NOR);
+                                tell_object(me, WHT "ä½ é‹ç”¨å…§åŠŸï¼Œå¹«åŠ©" + ob->name() +
+                                            "é©…æ•£äº†ä¸€äº›" + pos + "ã€‚\n" NOR);
                         }
                         cnd["remain"] -= dis;
                         if (cnd["remain"] < 0)
@@ -331,10 +331,10 @@ int qi_damage(object me, mapping cnd)
 // die reason
 string die_reason(string name)
 {
-        if (! name || name == "¶¾")
-                return "¶¾·¢ÉíÍöÁË";
+        if (! name || name == "æ¯’")
+                return "æ¯’ç™¼èº«äº¡äº†";
         else
-                return name + HIM "·¢×÷ÉíÍöÁË";
+                return name + HIM "ç™¼ä½œèº«äº¡äº†";
 }
 
 int update_condition(object me, mapping cnd)
@@ -396,7 +396,7 @@ int update_condition(object me, mapping cnd)
             if (cnd["id"] == "poison" || improve == -1 ||
             cnd["level"] / 2 + random(cnd["level"]) < (int)me->query_skill("force") + improve)
         {
-                // ¿¹¶¾ÄÜÁ¦·¢»Ó×÷ÓÃ
+                // æŠ—æ¯’èƒ½åŠ›ç™¼æ®ä½œç”¨
                 if (improve == -1)
                         cnd["remain"] = 0;
                 else
@@ -404,16 +404,16 @@ int update_condition(object me, mapping cnd)
 
                 if (cnd["remain"] <= cnd["level"])
                 {
-                        message("vision", HIM + me->name() + "³¤³¤µÄÓõ"
-                                "ÁËÒ»¿ÚÆø£¬¿´ÆğÀ´ÉñÉ«ºÃ¶àÁË¡£\n" NOR,
+                        message("vision", HIM + me->name() + "é•·é•·çš„å"
+                                "äº†ä¸€å£æ°£ï¼Œçœ‹èµ·ä¾†ç¥è‰²å¥½å¤šäº†ã€‚\n" NOR,
                                 environment(me), ({ me }));
-                        tell_object(me, HIM "Äã¾õµÃÉíÉÏµÄ" + cnd["name"] +
-                                    HIM "²»×¡µÄÏûÍË£¬¸Ğ¾õÉÏºÃ¶àÁË£¬²»"
-                                    "½û³¤³¤µÄÓõÁËÒ»¿ÚÆø¡£\n" NOR);
+                        tell_object(me, HIM "ä½ è¦ºå¾—èº«ä¸Šçš„" + cnd["name"] +
+                                    HIM "ä¸ä½çš„æ¶ˆé€€ï¼Œæ„Ÿè¦ºä¸Šå¥½å¤šäº†ï¼Œä¸"
+                                    "ç¦é•·é•·çš„åäº†ä¸€å£æ°£ã€‚\n" NOR);
                         return 0;
                 }
 
-                // Õı³£È¥¶¾
+                // æ­£å¸¸å»æ¯’
                 cnd["remain"] -= cnd["level"];
                 me->apply_condition(this_object()->name(), cnd);
         }

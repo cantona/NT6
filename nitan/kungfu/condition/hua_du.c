@@ -9,8 +9,8 @@ int update_condition(object me, int duration)
 {   
         if (duration == 1)
         {
-                tell_object(me, HIR "你一个月没有继续化毒，体内毒力已经开始渐渐不受控制！\n" NOR );
-                message("vision", me->name() +"的身体一震，神色发散，脸色开始发青。\n", environment(me), me);
+                tell_object(me, HIR "浣犱竴鍊嬫湀娌掓湁绻肩簩鍖栨瘨锛岄珨鍏ф瘨鍔涘凡缍撻枊濮嬫几婕镐笉鍙楁帶鍒讹紒\n" NOR );
+                message("vision", me->name() +"鐨勮韩楂斾竴闇囷紝绁炶壊鐧兼暎锛岃噳鑹查枊濮嬬櫦闈掋�俓n", environment(me), me);
                 me->apply_condition("hua_poison", 80 + me->query_skill("huagong-dafa", 1));
         }
         me->apply_condition("hua_du", duration - 1);

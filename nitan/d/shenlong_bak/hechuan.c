@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�Ӵ�");
+        set("short", "河船");
         set("long", @LONG
-����һ��װ�λ����ĺӴ������в��õ��������Ź뷿������������
-���ǵ������һ�㣬���͵ð������Ȳ��ѡ���������������ҩ�������
-����֫����˫�ۻ��ǡ�
+這是一艘裝飾華麗的河船，艙中布置得尤如名門閨房。你走了其中
+便是到了苗家一般，不油得暗暗驚訝不已。四周迷漫著奇異藥氣，你感
+覺四肢發軟雙眼渾濁。
 LONG
         );
         set("exits", ([
@@ -31,7 +31,7 @@ void init()
         {
                 if( lvl = me->query_skill("force", 1) > 149 ) return;
 
-                write("��⣡���ж��ˣ���һ����������ѡ�\n");
+                write("糟糕！你中毒了！你一提氣便覺艱難。\n");
                 lose = 140 - lvl;
                 if( lose < 0 ) lose = 0;
                 lose += 10;
@@ -53,5 +53,5 @@ void recover(object me, int lose)
          addn_temp("apply/damage", lose, me);
          addn_temp("apply/attack", lose, me);
          addn_temp("apply/dodge", lose, me);
-         write("���˹�Ƭ�̣����ڽ��඾�Ƴ��е�ȫ����̹��\n");
+         write("你運功片刻，終于將余毒逼出感到全身舒坦。\n");
 }

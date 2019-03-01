@@ -5,7 +5,7 @@ inherit ITEM;
 
 void create()
 {
-        set_name(BLK"�ڳ�"NOR, ({ "wu chi", "chi", "wu" }) );
+        set_name(BLK"烏池"NOR, ({ "wu chi", "chi", "wu" }) );
         set_weight(500);
         set_max_encumbrance(80000);
         set("no_get", 1);
@@ -13,8 +13,8 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "��");
-                set("long", BLK"һ��ˮɫΪ�ڵĳ�̶��\n"NOR);
+                set("unit", "個");
+                set("long", BLK"一個水色為烏的池潭。\n"NOR);
                 set("value", 1);
         }
 }

@@ -1,16 +1,16 @@
-// huoji. Ò©ÆÌ»ï¼Æ
+// huoji. è—¥èˆ–ä¼™è¨ˆ
 
 inherit NPC;
 inherit F_DEALER;
 
 void create()
 {
-        set_name("»ï¼Æ", ({ "huoji" }));
+        set_name("ä¼™è¨ˆ", ({ "huoji" }));
         set("str", 20);
-        set("gender", "ÄÐÐÔ");
+        set("gender", "ç”·æ€§");
         set("per", 18);
         set("age", 18);
-        set("long", "ËûÊÇÕâ¶ùµÄ»ï¼Æ£¬ÕýÔÚµêÀïÃ¦ÀïÃ¦Íâ¡£\n");
+        set("long", "ä»–æ˜¯é€™å…’çš„ä¼™è¨ˆï¼Œæ­£åœ¨åº—è£¡å¿™è£¡å¿™å¤–ã€‚\n");
         set("combat_exp", 250);
         set("attitude", "friendly");
         set("vendor_goods", ({

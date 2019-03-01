@@ -1,10 +1,10 @@
-// fengyun. ·çÆğÔÆÓ¿
+// fengyun. é¢¨èµ·é›²æ¹§
 
 #include <ansi.h>
 
 inherit F_SSERVER;
 
-string name() { return "·çÆğÔÆÓ¿"; }
+string name() { return "é¢¨èµ·é›²æ¹§"; }
 int perform(object me, object target)
 {
         string msg;
@@ -20,21 +20,21 @@ int perform(object me, object target)
         }
 
         if (! me->is_fighting(target))
-                return notify_fail("¡¸·çÆğÔÆÓ¿¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œé¢¨èµ·é›²æ¹§ã€åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( query_temp("weapon", me) )
-                return notify_fail("ÄãÖ»ÓĞ¿ÕÊÖ²ÅÄÜÊ¹ÓÃ¡¸·çÆğÔÆÓ¿¡¹¡£\n");
+                return notify_fail("ä½ åªæœ‰ç©ºæ‰‹æ‰èƒ½ä½¿ç”¨ã€Œé¢¨èµ·é›²æ¹§ã€ã€‚\n");
 
         skill = me->query_skill("fengyun-bianhuan", 1);
 
         if (skill < 150)
-                return notify_fail("ÄãµÄ·çÔÆ±ä»ÃĞŞÎªÌ«µÍ£¬ÏÖÔÚ²»ÄÜÊ¹ÓÃ¡¸·çÆğÔÆÓ¿¡¹£¡\n");
+                return notify_fail("ä½ çš„é¢¨é›²è®Šå¹»ä¿®ç‚ºå¤ªä½ï¼Œç¾åœ¨ä¸èƒ½ä½¿ç”¨ã€Œé¢¨èµ·é›²æ¹§ã€ï¼\n");
 
         if( query("neili", me)<100 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬ÎŞ·¨Ê¹³ö¡¸·çÆğÔÆÓ¿¡¹£¡\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼Œç„¡æ³•ä½¿å‡ºã€Œé¢¨èµ·é›²æ¹§ã€ï¼\n");
 
-        msg = HIW "$N" HIW "Ë«È­Ò»´í£¬»Ã»¯³öÒ»È¦È¦ËÆÓĞÈôÎŞ£¬ĞéÊµÄÑ·ÖµÄÈ­Ó°£¬"
-              HIW "£¬â®ÉíÏò$n" HIW "´ò³ö¡£\n" NOR;
+        msg = HIW "$N" HIW "é›™æ‹³ä¸€éŒ¯ï¼Œå¹»åŒ–å‡ºä¸€åœˆåœˆä¼¼æœ‰è‹¥ç„¡ï¼Œè™›å¯¦é›£åˆ†çš„æ‹³å½±ï¼Œ"
+              HIW "ï¼ŒçŒ±èº«å‘$n" HIW "æ‰“å‡ºã€‚\n" NOR;
 
         message_combatd(msg, me, target);
         count = skill / 3;

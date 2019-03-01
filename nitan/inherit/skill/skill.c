@@ -65,7 +65,7 @@ int valid_effect(object me, object weapon, string action_name, int skill)
 // This function should return the type of the skill. The skill type now
 // affects if the skill requires combat exp in order to be learned (see
 // /cmds/std/learn.c ) and the ranking of a skill level (see
-// /cmds/usr/skills.c )¡£
+// /cmds/usr/skills.c )ã€‚
 // Currently we have only 2 types of skill: "martial" and "knowledge".
 
 string type() { return "martial"; }
@@ -85,7 +85,7 @@ int valid_learn_level(object me)
 void skill_improved(object me) {}
 
 int practice_level() { return 100; }
-// ×Ô¼ºÁ·Òþº¬¼¶±ð
+// è‡ªå·±ç·´éš±å«ç´šåˆ¥
 
 //
 // exert_function()
@@ -107,7 +107,7 @@ int exert_function(object me, string arg)
         if( sscanf(arg, "%s %s", func, target)==2 ) {
                 target_ob = present(target, environment(me));
                 if( !target_ob )
-                        return notify_fail("ÕâÀïÃ»ÓÐ " + target + "¡£\n");
+                        return notify_fail("é€™è£¡æ²’æœ‰ " + target + "ã€‚\n");
         } else {
                 func = arg;
                 target_ob = me;
@@ -131,7 +131,7 @@ int perform_action(object me, string arg)
         if( sscanf(arg, "%s %s", action, target) == 2 ) {
                 target_ob = present(target, environment(me));
                 if( !target_ob )
-                        return notify_fail("ÕâÀïÃ»ÓÐ" + target + "¡£\n");
+                        return notify_fail("é€™è£¡æ²’æœ‰" + target + "ã€‚\n");
         } else {
                 action = arg;
         }
@@ -152,7 +152,7 @@ int perform_action(object me, string arg)
                 if( lock > 90) lock = 90;
                 if( me != target_ob && random(100) >= avoid && random(100) < lock )
                         return notify_fail(HIC BWHT + target_ob->name() +
-                                "È«ÉíÍ»È»·¢³öÒ»µÀÒ«ÑÛµÄ¹âÃ¢£¬ÄãÍ»È»ÐÄÖÐÒ»ÂÒ£¬¶ÙÊ±ÒÅÍüÁË¾øÕÐÈçºÎÊ¹ÓÃ¡£\n" NOR);
+                                "å…¨èº«çªç„¶ç™¼å‡ºä¸€é“è€€çœ¼çš„å…‰èŠ’ï¼Œä½ çªç„¶å¿ƒä¸­ä¸€äº‚ï¼Œé “æ™‚éºå¿˜äº†çµ•æ‹›å¦‚ä½•ä½¿ç”¨ã€‚\n" NOR);
         }
         /*
         if( base_name(ob) != SKILL_D("six-finger") &&
@@ -169,17 +169,17 @@ int perform_action(object me, string arg)
                                 if( target_ob->query_skill_mapped("parry") == "qiankun-danuoyi" )
                                         tell_object(all_inventory(environment(me)),
                                                 sprintf(HIG+query("name", target_ob)+
-                                                        "Ê©Õ¹³ö¾ø¼¼¡ª¡ª ¡¸" NOR + BLINK + HIR +
-                                                        "Ç¬À¤´óÅ²ÒÆ" NOR + HIG "¡¹\n" +
-                                                        "¾¹½«" + me->name(1) + "µÄ³ÉÃû¾ø¼¼¾¡ÊýÅ²ÒÆÓÚ" +
-                                                        me->name(1) + "×ÔÉí£¡£¡£¡\n" NOR));
+                                                        "æ–½å±•å‡ºçµ•æŠ€â”€â”€ ã€Œ" NOR + BLINK + HIR +
+                                                        "ä¹¾å¤å¤§æŒªç§»" NOR + HIG "ã€\n" +
+                                                        "ç«Ÿå°‡" + me->name(1) + "çš„æˆåçµ•æŠ€ç›¡æ•¸æŒªç§»äºŽ" +
+                                                        me->name(1) + "è‡ªèº«ï¼ï¼ï¼\n" NOR));
                                 else
                                         tell_object(all_inventory(environment(me)),
                                                 sprintf(HIG+query("name", target_ob)+
-                                                        "Ê©Õ¹³ö¹ÃËÕÄ½ÈÝ¼Ò´«¾ø¼¼¡ª¡ª ¡¸" NOR + BLINK + HIR +
-                                                        "ÒÔ±ËÖ®µÀ * * * »¹Ê©±ËÉí" NOR + HIG "¡¹\n" +
-                                                        "¾¹½«" + me->name(1) + "µÄ³ÉÃû¾ø¼¼¾¡Êý·µÊ©ÓÚ" +
-                                                        me->name(1) + "×ÔÉí£¡£¡£¡\n" NOR));
+                                                        "æ–½å±•å‡ºå§‘è˜‡æ…•å®¹å®¶å‚³çµ•æŠ€â”€â”€ ã€Œ" NOR + BLINK + HIR +
+                                                        "ä»¥å½¼ä¹‹é“ * * * é‚„æ–½å½¼èº«" NOR + HIG "ã€\n" +
+                                                        "ç«Ÿå°‡" + me->name(1) + "çš„æˆåçµ•æŠ€ç›¡æ•¸è¿”æ–½äºŽ" +
+                                                        me->name(1) + "è‡ªèº«ï¼ï¼ï¼\n" NOR));
 
                                 addn("neili", -300, target_ob);
                                 return 1;
@@ -215,10 +215,10 @@ int NewRandom(int n, int base, int d)
         return n;
 }
 
-// ÌØÊâÕÐÊ½(ÓÉcombatd.cµ÷ÓÃ)
+// ç‰¹æ®Šæ‹›å¼(ç”±combatd.cèª¿ç”¨)
 void do_interlink(object me, object victim) { return; }
 
-// ÒÔÏÂÊÇÄ§·¨Ïµ¼¼ÄÜµ÷ÓÃ
+// ä»¥ä¸‹æ˜¯é­”æ³•ç³»æŠ€èƒ½èª¿ç”¨
 int is_reinpose(object me, object target) { return 0; }
 
 int reinpose(object me, object target, int damage) { return damage; }
@@ -227,11 +227,11 @@ int cast_spell(object me, string spell, object target)
 {
         string file;
 
-        notify_fail("ÄãËùÑ¡ÓÃµÄÖäÎÄÏµÖÐÃ»ÓÐÕâÖÖÖäÎÄ¡£\n");
+        notify_fail("ä½ æ‰€é¸ç”¨çš„å’’æ–‡ç³»ä¸­æ²’æœ‰é€™ç¨®å’’æ–‡ã€‚\n");
         if( !stringp(file = (string)this_object()->cast_spell_file(spell))
         ||      file_size(file + ".c") <= 0 ) {
                 file = "/kungfu/magicpool/" + spell;
-                // Ä§·¨³ØµÄÄ§·¨
+                // é­”æ³•æ± çš„é­”æ³•
                 if( file_size(file + ".c") <= 0 )
                         return 0;
         }
@@ -244,7 +244,7 @@ int conjure_magic(object me, string spell, object target)
 {
         string file;
 
-        notify_fail("ÄãËùÑ¡ÓÃµÄ·¨ÊõÏµÖÐÃ»ÓÐÕâÖÖ·¨Êõ¡£\n");
+        notify_fail("ä½ æ‰€é¸ç”¨çš„æ³•è¡“ç³»ä¸­æ²’æœ‰é€™ç¨®æ³•è¡“ã€‚\n");
 
         if( !stringp(file = (string)this_object()->conjure_magic_file(spell))
         ||      file_size(file + ".c") <= 0 )

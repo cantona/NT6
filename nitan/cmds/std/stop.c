@@ -12,22 +12,22 @@ int main(object me, string arg)
         seteuid(getuid());
 
         if (! arg)
-                return notify_fail("��Ҫ����˭��\n");
+                return notify_fail("你要命令誰？\n");
 
         if (! objectp(ob = present(arg, environment(me))))
-                return notify_fail("��Ҫ����˭��\n");
+                return notify_fail("你要命令誰？\n");
 
         if( query_temp("owner", ob) != query("id", me) )
-                return notify_fail("�˼Ҳ�������Ļ��ġ�\n");
+                return notify_fail("人家不會聽你的話的。\n");
 
         if (! ob->is_fighting())
-                return notify_fail(ob->name() + "���ڲ�û�кͱ��˲�����\n");
+                return notify_fail(ob->name() + "現在並沒有和別人搏鬥。\n");
 
         if( query("can_speak", ob) )
-                message_vision("$N���һ��������" + ob->name() + "��ס�֣���\n",
+                message_vision("$N大喝一聲道：“" + ob->name() + "，住手！”\n",
                                me);
         else
-                message_vision("ֻ��$N����$n����һ�����ڣ�$n���һ�ܣ���ҧ�ˣ�\n",
+                message_vision("只見$N沖著$n口中一聲呼哨，$n向後一竄，不咬了！\n",
                                me, ob);
 
         ob->force_me("halt");
@@ -37,9 +37,9 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-ָ���ʽ : stop <����>
+指令格式 : stop <對象>
 
-��ָ�����������ĸ����߻���ѱ���Ķ���ֹͣ�������ˡ�
+此指令可用于讓你的跟隨者或是馴養的動物停止攻擊他人。
 HELP );
         return 1;
 }

@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short","�ͷ�");
+        set("short","客房");
         set("long",@LONG
-���ǹ���ׯ�д�����ס�޵ķ��䡣���ڳ��辫�ţ�������ԣ�����
-�Žࡣ���洰����һ����԰�����Ͼ��£��������С�
+這是歸雲莊招待客人住宿的房間。室內陳設精雅，兩床相對，枕衾
+雅潔。北面窗外是一個大花園，江南景致，盡在其中。
 LONG
 );
         set("exits",([

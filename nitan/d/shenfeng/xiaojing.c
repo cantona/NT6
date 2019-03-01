@@ -1,11 +1,11 @@
 inherit ROOM;
 void create()
 {
-        set("short", "ʯ��С��");
+        set("short", "石礫小徑");
         set("long", @LONG
-�˴��������Į������ط���Ȼ��ͬ����ػ�ɳ�л��Ŵ�
-��ʯ�������ִ������������ף�ɽ�����ƴ��ֿɼ���·����ʮ
-�ֵ�������С�
+此處地勢與大漠的其余地方截然不同，遍地黃沙中混著粗
+大石礫，丘壑處處，亂巖嶙嶙，山峰雖似觸手可及，路竟是十
+分的崎嶇難行。
 LONG);
         set("outdoors", "gaochang");
         set("exits", ([

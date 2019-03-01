@@ -5,8 +5,8 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÀÏÄêŞÄÕß", ({ "yi zhe","zhe" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("è€å¹´å¼ˆè€…", ({ "yi zhe","zhe" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 80);
         set("str", 46);
         set("cor", 40);
@@ -29,7 +29,7 @@ void create()
         set("max_force", 3000);
         set("force", 3000);
 
-        set("long",     "ÕâÊÇÒ»¸ö¾«ÉñÛÇîåµÄÀÏÕß£¬Ë«Ä¿ÓĞÉñ£¬ÉÁË¸×Åî£ÖÇµÄ¹âÃ¢¡£\n");
+        set("long",     "é€™æ˜¯ä¸€å€‹ç²¾ç¥çŸé‘ çš„è€è€…ï¼Œé›™ç›®æœ‰ç¥ï¼Œé–ƒçˆè‘—ç¿æ™ºçš„å…‰èŠ’ã€‚\n");
 
 
         set("combat_exp", 999999);

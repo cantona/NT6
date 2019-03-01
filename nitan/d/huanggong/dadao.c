@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "���");
+        set("short", "大道");
         set("long", @LONG
-����ͨ�����еĴ��. ����ԶԶ��������ũ̳. ������һƬ�Գ�, 
-�ǻʼҵ�������. ÿ����϶���ȥ����. ƽʱ�ͱȽ�����, ������Щ��
-����, �ֵø�����.
+這是通往宮中的大道. 北邊遠遠能望見先農壇. 西邊有一片獵場, 
+是皇家的上林囿. 每年皇上都會去狩獵. 平時就比較冷清, 倒是那些動
+物們, 樂得個安閒.
 LONG
         );
         set("outdoors", "huanggong");

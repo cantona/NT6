@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Ê÷ÁÖ");
+        set("short", "æ¨¹æ—");
         set("long", @LONG
-ÕâÀïÊÇÒ»Æ¬Ã¯ÃÜµÄÊ÷ÁÖ(wood)£¬´äÂÌÉ«µÄÊ÷ÒõÕÚ¸Ç×ÅÌì¿Õ£¬Å¼¶û
-»¹´ÓÁÖ×ÓÉî´¦´«À´¼¸Éù²»ÖªÊ²Ã´Ò°ÊŞµÄË»½Ğ¡£ÅÔ±ßÁ¢×ÅÒ»ÕÅÄ¾ÅÆ(pai
-)¡£
+é€™è£¡æ˜¯ä¸€ç‰‡èŒ‚å¯†çš„æ¨¹æ—(wood)ï¼Œç¿ ç¶ è‰²çš„æ¨¹é™°é®è“‹è‘—å¤©ç©ºï¼Œå¶çˆ¾
+é‚„å¾æ—å­æ·±è™•å‚³ä¾†å¹¾è²ä¸çŸ¥ä»€éº¼é‡ç¸çš„å˜¶å«ã€‚æ—é‚Šç«‹è‘—ä¸€å¼µæœ¨ç‰Œ(pai
+)ã€‚
 LONG );
         set("outdoors", "baituo");
         set("exits", ([
@@ -24,8 +24,8 @@ LONG );
                 "laohu"      : 2000,
         ]));
         set("item_desc", ([
-                "pai"  : "±£»¤Ê÷ÁÖ  ÊÊÁ¿¿³·¥\n",
-                "wood" :"Ò»Æ¬¿É¿³·¥µÄÊ÷ÁÖ¡£\n",
+                "pai"  : "ä¿è­·æ¨¹æ—  é©é‡ç ä¼\n",
+                "wood" :"ä¸€ç‰‡å¯ç ä¼çš„æ¨¹æ—ã€‚\n",
         ]));        
          set("coor/x", -49990);
         set("coor/y", 20000);
@@ -45,21 +45,21 @@ int do_cut(string arg)
         object ob;
  
         if (! arg || arg != "wood")
-                return notify_fail("ÄãÒª¿³Ê²Ã´£¿\n");
+                return notify_fail("ä½ è¦ç ä»€éº¼ï¼Ÿ\n");
                 
         if (present("chai dao", me))
-                return notify_fail("Ã»ÓĞ²ñµ¶ÔõÃ´¿³²ñ£¿\n");
+                return notify_fail("æ²’æœ‰æŸ´åˆ€æ€éº¼ç æŸ´ï¼Ÿ\n");
                 
         if (query_temp("times") == 0)
-                return notify_fail("ÇëÊÊÁ¿¿³·¥£¡\n");
+                return notify_fail("è«‹é©é‡ç ä¼ï¼\n");
  
         if( query("qi", me)<20 )
-                return notify_fail("ÄãµÄÆøÌ«ĞéÈõ£¬²»ÄÜ¿³²ñ£¡\n");
+                return notify_fail("ä½ çš„æ°£å¤ªè™›å¼±ï¼Œä¸èƒ½ç æŸ´ï¼\n");
  
         ob = new("/d/baituo/obj/chai");
         ob->move(environment(me));
         addn("qi", -20, me);
         addn_temp("times", -1);
-        message_vision("$N¿³ÁËÒ»À¦²ñ£¬ÀÛµÃ¹»Çº¡£\n", me);
+        message_vision("$Nç äº†ä¸€æ†æŸ´ï¼Œç´¯å¾—å¤ å—†ã€‚\n", me);
         return 1;
 }

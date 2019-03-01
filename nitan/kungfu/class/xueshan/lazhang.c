@@ -7,14 +7,14 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("À­ÕÂ»î·ğ", ({ "lazhang huofo", "lazhang", "huofo" }));
+        set_name("æ‹‰ç« æ´»ä½›", ({ "lazhang huofo", "lazhang", "huofo" }));
         set("long", @LONG
-À­ÕÂ»î·ğÊÇÑ©É½ËÂÓĞµÀµÄ¸ßÉ®£¬¶Ô·ğ·¨ÓĞ¾«Éî
-µÄÑĞ¾¿¡£ËûÉí´©Ò»¼ş»ÆÉ«ôÂôÄ£¬Í·´øÉ®Ã±¡£´È
-Ã¼ÉÆÄ¿£¬ËÆºõÊÖÎŞ¸¿¼¦Ö®Á¦¡£
+æ‹‰ç« æ´»ä½›æ˜¯é›ªå±±å¯ºæœ‰é“çš„é«˜åƒ§ï¼Œå°ä½›æ³•æœ‰ç²¾æ·±
+çš„ç ”ç©¶ã€‚ä»–èº«ç©¿ä¸€ä»¶é»ƒè‰²è¢ˆè£Ÿï¼Œé ­å¸¶åƒ§å¸½ã€‚æ…ˆ
+çœ‰å–„ç›®ï¼Œä¼¼ä¹æ‰‹ç„¡ç¸›é›ä¹‹åŠ›ã€‚
 LONG);
-        set("title", "Ñ©É½ËÂ»î·ğ");
-        set("gender", "ÄĞĞÔ");
+        set("title", "é›ªå±±å¯ºæ´»ä½›");
+        set("gender", "ç”·æ€§");
         set("class", "bonze");
         set("age", 38);
         set("attitude", "peaceful");
@@ -67,11 +67,11 @@ LONG);
                 (: exert_function, "recover" :),
         }));
 
-        create_family("Ñ©É½ËÂ", 3, "»î·ğ");
+        create_family("é›ªå±±å¯º", 3, "æ´»ä½›");
 
         set("inquiry",([
-                "Ìê¶È" : (: ask_for_join :),
-                "³ö¼Ò" : (: ask_for_join :),
+                "å‰ƒåº¦" : (: ask_for_join :),
+                "å‡ºå®¶" : (: ask_for_join :),
         ]));
 
         set("master_ob", 3);
@@ -86,5 +86,5 @@ void attempt_apprentice(object ob)
         if (! permit_recruit(ob))
                 return;
 
-        command("say Æ¶É®Ö»ÑĞ·ğ·¨£¬²¢²»ÊÕÍ½¡£");
+        command("say è²§åƒ§åªç ”ä½›æ³•ï¼Œä¸¦ä¸æ”¶å¾’ã€‚");
 }

@@ -5,19 +5,19 @@ inherit BLADE;
 
 void create()
 {
-	set_name(GRN"±Ìµ¶"NOR, ({"bi dao","blade"}) );
+	set_name(GRN"ç¢§åˆ€"NOR, ({"bi dao","blade"}) );
 	set_weight(2000);
-        set("long","Ò»°ÑĞÎ×´ÆæÌØµÄ¶Ìµ¶£¬Ñª²Û¼«´Ö£¬ÒşÒşÓĞÒ»¹ÉÂÌ¹âÍ¸³ö¡£\n" NOR);
+        set("long","ä¸€æŠŠå½¢ç‹€å¥‡ç‰¹çš„çŸ­åˆ€ï¼Œè¡€æ§½æ¥µç²—ï¼Œéš±éš±æœ‰ä¸€è‚¡ç¶ å…‰é€å‡ºã€‚\n" NOR);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("unit", "°Ñ");
+		set("unit", "æŠŠ");
 		set("value",15000);
-                set("cant_sell","ÄãÕâ°Ñµ¶ÊÇË­¸øµÄ£¿£¡Ğ¡µê¿É²»¸ÒÊÕÍÛ£¡\n");
+                set("cant_sell","ä½ é€™æŠŠåˆ€æ˜¯èª°çµ¦çš„ï¼Ÿï¼å°åº—å¯ä¸æ•¢æ”¶å“‡ï¼\n");
 		set("material", "steel");
 	}
 	init_blade(35);
-	set("wield_msg", "$N¡¸à§¡¹µÄÒ»Éù³é³öÒ»°ÑÃ÷»Î»ÎµÄ$nÎÕÔÚÊÖÖĞ¡£\n");
-	set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²åÈëÑü¼ä¡£\n");
+	set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€è²æŠ½å‡ºä¸€æŠŠæ˜æ™ƒæ™ƒçš„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+	set("unwield_msg", "$Nå°‡æ‰‹ä¸­çš„$næ’å…¥è…°é–“ã€‚\n");
 	setup();
 }

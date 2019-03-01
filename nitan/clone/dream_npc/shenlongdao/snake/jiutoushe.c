@@ -5,8 +5,8 @@ int is_snake(){return 1;}
 
 void create()
 {
-        set_name(HIR "¾ÅÍ·Éß" NOR, ({ "jiutou she", "jiutou", "she" }));
-        set("long", HIR "ÕâÊÇÒ»Ö»¾Ş´óµÄ¶¾Éß£¬³¤ÓĞ¾Å¸öÍ·£¬ĞÎ×´Ê®·Ö¿ÉÅÂ¡£\n" NOR);
+        set_name(HIR "ä¹é ­è›‡" NOR, ({ "jiutou she", "jiutou", "she" }));
+        set("long", HIR "é€™æ˜¯ä¸€åªå·¨å¤§çš„æ¯’è›‡ï¼Œé•·æœ‰ä¹å€‹é ­ï¼Œå½¢ç‹€ååˆ†å¯æ€•ã€‚\n" NOR);
 
         set("age", 90);
         set("str", 300);
@@ -28,7 +28,7 @@ void create()
         set("max_neili", 650000);
         set("neili", 650000);
 
-        set("no_nuoyi", 1); // ²»±»Å²ÒÆÓ°Ïì
+        set("no_nuoyi", 1); // ä¸è¢«æŒªç§»å½±éŸ¿
 
         set("snake_poison", ([
                 "level"  : 600,
@@ -106,18 +106,18 @@ mixed hit_ob(object me, object ob, int damage)
         {
                 if (query("qi", ob) < 150)
                 {
-                        msg = HIR "Äã¾õµÃÉË¿ÚÓĞĞ©·¢Âé£¬Á¬Ã¦ÔË¹¦»¯½â£¬µ«"
-                              "ÊÇÒ»Ê±ÌåÁ¦²»Ö§£¬ÄÑÒÔÊ©Îª¡£\n" NOR;
+                        msg = HIR "ä½ è¦ºå¾—å‚·å£æœ‰äº›ç™¼éº»ï¼Œé€£å¿™é‹åŠŸåŒ–è§£ï¼Œä½†"
+                              "æ˜¯ä¸€æ™‚é«”åŠ›ä¸æ”¯ï¼Œé›£ä»¥æ–½ç‚ºã€‚\n" NOR;
                 } else
                 if (query("jing", ob) < 60)
                 {
-                        msg = HIR "Äã¾õµÃÉË¿ÚÓĞĞ©·¢Âé£¬Á¬Ã¦ÔË¹¦»¯½â£¬µ«"
-                              "ÊÇÒ»Ê±¾«Éñ²»¼Ã£¬ÄÑÒÔÊ©Îª¡£\n" NOR;
+                        msg = HIR "ä½ è¦ºå¾—å‚·å£æœ‰äº›ç™¼éº»ï¼Œé€£å¿™é‹åŠŸåŒ–è§£ï¼Œä½†"
+                              "æ˜¯ä¸€æ™‚ç²¾ç¥ä¸æ¿Ÿï¼Œé›£ä»¥æ–½ç‚ºã€‚\n" NOR;
                 } else
                 if (query("neili", ob) < damage / 5 + 50)
                 {
-                        msg = HIR "Äã¾õµÃÉË¿ÚÓĞĞ©·¢Âé£¬Á¬Ã¦ÔË¹¦»¯½â£¬µ«"
-                              "ÊÇÒ»Ê±ÄÚÁ¦²»×ã£¬ÄÑÒÔÊ©Îª¡£\n" NOR;
+                        msg = HIR "ä½ è¦ºå¾—å‚·å£æœ‰äº›ç™¼éº»ï¼Œé€£å¿™é‹åŠŸåŒ–è§£ï¼Œä½†"
+                              "æ˜¯ä¸€æ™‚å…§åŠ›ä¸è¶³ï¼Œé›£ä»¥æ–½ç‚ºã€‚\n" NOR;
                 } else
                 {
                         ob->add("neili", -damage / 5);
@@ -125,17 +125,17 @@ mixed hit_ob(object me, object ob, int damage)
                                 set("neili", 0, ob);
                         ob->receive_damage("qi", 20);
                         ob->receive_damage("jing", 10);
-                        return HIM "Äã¾õµÃ±»Ò§ÖĞµÄµØ·½ÓĞĞ©·¢Âé£¬Á¬Ã¦ÔË¹¦"
-                               "»¯½â¶¾ĞÔ¡£\n" NOR;
+                        return HIM "ä½ è¦ºå¾—è¢«å’¬ä¸­çš„åœ°æ–¹æœ‰äº›ç™¼éº»ï¼Œé€£å¿™é‹åŠŸ"
+                               "åŒ–è§£æ¯’æ€§ã€‚\n" NOR;
                 }
         }
 
         if (ob->affect_by("poison", ([ "level" : (int)p["level"] / 2,
-                                       "name"  : "Éß¶¾",
+                                       "name"  : "è›‡æ¯’",
                                        "id"    : "nature poison",
                                        "duration" : dur / 2, ])))
         {
-                msg += HIR "$n" HIR "Á³É«Ò»±ä£¬Ö»¾õ±»Ò§ÖĞµÄµØ·½Ò»ÕóÂéÄ¾¡£\n" NOR;
+                msg += HIR "$n" HIR "è‡‰è‰²ä¸€è®Šï¼Œåªè¦ºè¢«å’¬ä¸­çš„åœ°æ–¹ä¸€é™£éº»æœ¨ã€‚\n" NOR;
         }
         return msg;
 }

@@ -4,9 +4,9 @@ inherit ITEM;
 
 void create()
 {
-        set_name("¹ë·¿Ô¿³×", ({"guifang key", "key"}));
+        set_name("é–¨æˆ¿é‘°åŒ™", ({"guifang key", "key"}));
         set("long",
-                "ÕâÊÇÒ»°ÑºÜÆÕÍ¨µÄÔ¿³×¡£\n");
-        set("unit", "°Ñ");
+                "é€™æ˜¯ä¸€æŠŠå¾ˆæ™®é€šçš„é‘°åŒ™ã€‚\n");
+        set("unit", "æŠŠ");
         set("weight", 10);
 }

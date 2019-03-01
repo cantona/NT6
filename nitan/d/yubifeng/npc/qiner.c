@@ -1,14 +1,14 @@
-// qiner.c ÇÙ¶ù
+// qiner.c ç´å…’
 
 #include <ansi.h>
 inherit NPC;
 
 void create()
 {
-        set_name("ÇÙ¶ù", ({ "qin er", "qiner", "qin" }) );
-        set("gender", "Å®ĞÔ");
+        set_name("ç´å…’", ({ "qin er", "qiner", "qin" }) );
+        set("gender", "å¥³æ€§");
         set("age", 16);
-        set("long","ËıÊÇÃçÈôÀ¼µÄÌùÉíÊÌæ¾¡£\n");
+        set("long","å¥¹æ˜¯è‹—è‹¥è˜­çš„è²¼èº«ä¾å©¢ã€‚\n");
         set("attitude", "friendly");
         set("str", 15);
         set("int", 15);

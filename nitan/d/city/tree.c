@@ -4,19 +4,19 @@ inherit CREATE_CHAT_ROOM;
 
 void create()
 {
-        set("short", "´óéÅÊ÷ÉÏ");
+        set("short", "å¤§æ¦•æ¨¹ä¸Š");
         set("long", @LONG
-ÕâÀïÊÇ´óÊ÷µÄ¶¥¶Ë£¬ËÄÖÜÈ«ÊÇÅ¨ÃÜµÄÖ¦Ò¶ºÍÊªäõäõµÄÌ¦Şº¡£Ò»Õó
-Î¢·ç´µÀ´£¬Ê÷Ò¶·¢³öà§À²À²µÄÉùÒô¡£´ÓÉÏÃæÍûÏÂÈ¥ÄãÖ»¾õµÃÒ»ÕóÑÛÔÎ£¬
-ĞÄÏë»¹ÊÇ¸Ï¿ìÏÂÈ¥°É¡£
+é€™è£¡æ˜¯å¤§æ¨¹çš„é ‚ç«¯ï¼Œå››å‘¨å…¨æ˜¯æ¿ƒå¯†çš„æè‘‰å’Œæ¿•æ¼‰æ¼‰çš„è‹”è˜šã€‚ä¸€é™£
+å¾®é¢¨å¹ä¾†ï¼Œæ¨¹è‘‰ç™¼å‡ºå”°å•¦å•¦çš„è²éŸ³ã€‚å¾ä¸Šé¢æœ›ä¸‹å»ä½ åªè¦ºå¾—ä¸€é™£çœ¼æšˆï¼Œ
+å¿ƒæƒ³é‚„æ˜¯è¶•å¿«ä¸‹å»å§ã€‚
 LONG );
         set("no_fight", 1); 
         set("valid_startroom", 1); 
         set("no_sleep_room",1); 
         set("outdoors", "city");
         set("item_desc", ([
-                "tree" : GRN "\nÕâÊÇÒ»¿Ã¾Ş´ó¹ÅÀÏµÄ´óéÅ"
-                         "Ê÷£¬Ö¦Ò¶·Ç³£µÄÃ¯ÃÜ¡£\n" NOR,
+                "tree" : GRN "\né€™æ˜¯ä¸€æ£µå·¨å¤§å¤è€çš„å¤§æ¦•"
+                         "æ¨¹ï¼Œæè‘‰éå¸¸çš„èŒ‚å¯†ã€‚\n" NOR,
         ]));
         set("exits", ([
                 "down" : __DIR__"guangchang",
@@ -47,41 +47,41 @@ int do_climb(string arg)
         if (arg == "tree" || arg == "up")
         {
                 if( objectp(query_temp("is_riding", me)) )
-                        return notify_fail("Ã»ÌıËµ¹ıÓĞÈËÄÜÆï×øÆï»¹ÄÜÅÀÊ÷µÄ¡£\n");
+                        return notify_fail("æ²’è½èªªéæœ‰äººèƒ½é¨åé¨é‚„èƒ½çˆ¬æ¨¹çš„ã€‚\n");
 
                 if (me->is_busy())
                 {
-                        return notify_fail("ÄãµÄ¶¯×÷»¹Ã»ÓĞÍê³É£¬²»ÄÜÒÆ¶¯¡£\n");
+                        return notify_fail("ä½ çš„å‹•ä½œé‚„æ²’æœ‰å®Œæˆï¼Œä¸èƒ½ç§»å‹•ã€‚\n");
                         return 1; 
                 }
 
-                if( query("gender", me) != "Å®ĞÔ" )
+                if( query("gender", me) != "å¥³æ€§" )
                         message("vision",
-                                me->name() + "Õ½Õ½¾¤¾¤µØÀ­×Å´óéÅÊ÷µÄÅÌ¸ù£¬Æ¨¹ÉÒ»Å¤Ò»Å¤µØÍùÉÏÅÀ¡£\n",
+                                me->name() + "æˆ°æˆ°å…¢å…¢åœ°æ‹‰è‘—å¤§æ¦•æ¨¹çš„ç›¤æ ¹ï¼Œå±è‚¡ä¸€æ‰­ä¸€æ‰­åœ°å¾€ä¸Šçˆ¬ã€‚\n",
                                 environment(me), ({me}) );
                 else 
                 if( query("age", me)<40 && query("per", me)>24 )
                         message("vision",
-                                me->name() + "ÇáÇáÒ»Ìø£¬ÒÂÈ¹Æ®Æ®£¬ÏóÏÉ×Ó°ã·ÉÉÏ´óéÅÊ÷¡£\n",
+                                me->name() + "è¼•è¼•ä¸€è·³ï¼Œè¡£è£™é£„é£„ï¼Œè±¡ä»™å­èˆ¬é£›ä¸Šå¤§æ¦•æ¨¹ã€‚\n",
                                 environment(me), ({me}) );
                 else 
                         message("vision",
-                                me->name() + "Õ½Õ½¾¤¾¤µÄ×¥×¡Ê÷¸ÉÍùÉÏÅÀÈ¥¡£\n", 
+                                me->name() + "æˆ°æˆ°å…¢å…¢çš„æŠ“ä½æ¨¹å¹¹å¾€ä¸Šçˆ¬å»ã€‚\n", 
                                 environment(me), ({me}) );        
 
                 me->move(__DIR__"tree2");
                 
-                if( query("gender", me) != "Å®ĞÔ" )
+                if( query("gender", me) != "å¥³æ€§" )
                         message("vision",
-                                me->name() + "Æø´­ĞêĞêµØÅÀÁËÉÏÀ´¡£\n",
+                                me->name() + "æ°£å–˜å™“å™“åœ°çˆ¬äº†ä¸Šä¾†ã€‚\n",
                                 environment(me), ({me}) );
                 else 
                 if( query("age", me)<40 && query("per", me)>24 )
-                        message("vision","Ò»ÕóÇåÏã·ÉÀ´£¬Äã¶¨ÑÛÒ»¿´£¬"+
-                                me->name() + "ÒÑ¾­æÃæÃÓñÁ¢ÔÚÄãÑÛÇ°¡£\n",
+                        message("vision","ä¸€é™£æ¸…é¦™é£›ä¾†ï¼Œä½ å®šçœ¼ä¸€çœ‹ï¼Œ"+
+                                me->name() + "å·²ç¶“å©·å©·ç‰ç«‹åœ¨ä½ çœ¼å‰ã€‚\n",
                                 environment(me), ({me}) );
                 else  
-                        message("vision", me->name() + "Õ½Õ½¾¤¾¤µØ´ÓÏÂÃæÅÀÁËÉÏÀ´¡£\n", 
+                        message("vision", me->name() + "æˆ°æˆ°å…¢å…¢åœ°å¾ä¸‹é¢çˆ¬äº†ä¸Šä¾†ã€‚\n", 
                                 environment(me), ({me}) );
                                 
                 return 1;
@@ -93,18 +93,18 @@ int do_jump(string arg)
         object me;
         me = this_player();
         
-        if( !arg || arg != "down") return notify_fail("ÄãÒªÍùÄÄÌø£¿\n");
+        if( !arg || arg != "down") return notify_fail("ä½ è¦å¾€å“ªè·³ï¼Ÿ\n");
         
         if( me->is_busy() )  
-                return notify_fail("ÄãÕıÃ¦×ÅÄØ£¡\n");
+                return notify_fail("ä½ æ­£å¿™è‘—å‘¢ï¼\n");
         
         message("vision",
-                me->name() + "ÓÌÔ¥ÁËÒ»ÏÂ£¬¹ÄÆğÓÂÆø£¬ÌøÁËÏÂÈ¥¡£\n¡°àØ¡±µÄÒ»¾ŞÏì£¬ËÆºõÌıµ½"+me->name()+"²Òº¿ÁËÒ»Éù!\n",
+                me->name() + "çŒ¶è±«äº†ä¸€ä¸‹ï¼Œé¼“èµ·å‹‡æ°£ï¼Œè·³äº†ä¸‹å»ã€‚\nâ€œâ–¡â€çš„ä¸€å·¨éŸ¿ï¼Œä¼¼ä¹è½åˆ°"+me->name()+"æ…˜åšäº†ä¸€è²!\n",
                 environment(me), ({me}) );
         
         me->move(__DIR__"guangchang");
         message("vision",
-                me->name() + "²Òº¿Ò»Éù£¬´ÓÊ÷ÉÏµôÁËÏÂÀ´¡£\n",
+                me->name() + "æ…˜åšä¸€è²ï¼Œå¾æ¨¹ä¸Šæ‰äº†ä¸‹ä¾†ã€‚\n",
                 environment(me), ({me}) );
         
         return 1;
@@ -114,10 +114,10 @@ int valid_leave(object me, string dir)
 {
 
         if ( dir=="down" && !wizardp(me))
-                return notify_fail("ÅÌ¸ù²»ÖªµÀ¸øÄÄ¸ö»µ¼Ò»ï¿³¶ÏÁËâ£¬¿´À´Ö»ÄÌøÅÀ(tiao)ÏÂÈ¥£¡\n");
+                return notify_fail("ç›¤æ ¹ä¸çŸ¥é“çµ¦å“ªå€‹å£å®¶ä¼™ç æ–·äº†çŒ“â–¡è ¢ç²—è’è·³çˆ¬(tiao)ä¸‹å»ï¼\n");
 
         if ( dir=="up" && !wizardp(me))
-                return notify_fail("ÕâÀïÃ»·¨Ö±½Ó×ß£¬¿´À´ÄãÖ»ÄÜÅÀ(climb)ÉÏÈ¥£¡\n");
+                return notify_fail("é€™è£¡æ²’æ³•ç›´æ¥èµ°ï¼Œçœ‹ä¾†ä½ åªèƒ½çˆ¬(climb)ä¸Šå»ï¼\n");
 
         return 1;
 }

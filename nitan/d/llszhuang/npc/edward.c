@@ -8,10 +8,10 @@ inherit CLASS_D("generate") + "/chinese";
 void create()
 {
         ::create();
-        set_name(HIM "Ğ¦Ìì" NOR, ({ "xiao tian", "edward" }));
-        set("gender", "ÄĞĞÔ" );
+        set_name(HIM "ç¬‘å¤©" NOR, ({ "xiao tian", "edward" }));
+        set("gender", "ç”·æ€§" );
         set("age", 30 + random(30));
-        set("long", "ÈçÃÎÈç»ÃÎŞ·¨ÈÃÈË¿´µÄÇå³şµÄÒ»¸öÈË¡£");
+        set("long", "å¦‚å¤¢å¦‚å¹»ç„¡æ³•è®“äººçœ‹çš„æ¸…æ¥šçš„ä¸€å€‹äººã€‚");
         set("attitude", "friendly");
         set_temp("apply/attack", 3000);
         set_temp("apply/dodge", 3000);
@@ -82,7 +82,7 @@ varargs void die(object killer)
         {
                 ob = new("/d/reborn/obj/mibao");
                 ob->move(killer, 1);
-                tell_object(killer, HIR "Äã»ñµÃÁËÒ»¼şÃÜ±¦ÆæÕä¡£\n" NOR);
+                tell_object(killer, HIR "ä½ ç²å¾—äº†ä¸€ä»¶å¯†å¯¶å¥‡çã€‚\n" NOR);
                 set_temp("mibao/finded", 1, killer);
         }
        

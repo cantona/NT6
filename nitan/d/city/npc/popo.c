@@ -4,12 +4,12 @@
 inherit NPC;
 void create()
 {
-        set_name("ÀÏÆÅÆÅ", ({ "lao popo","old","popo" }) );
-        set("title", "Æ½Ãñ" );
-        set("gender", "Å®ĞÔ" );
+        set_name("è€å©†å©†", ({ "lao popo","old","popo" }) );
+        set("title", "å¹³æ°‘" );
+        set("gender", "å¥³æ€§" );
         set("age", 65);
         set("combat_exp",100);
-        set("long","ÕâÀÏÆÅÆÅ¿´ÆğÀ´´ÈÃ¼ÉÆÄ¿£¬ÌØ±ğ¿ÉÇ×¡£\n");
+        set("long","é€™è€å©†å©†çœ‹èµ·ä¾†æ…ˆçœ‰å–„ç›®ï¼Œç‰¹åˆ¥å¯è¦ªã€‚\n");
         set("attitude", "friendly");
         setup();
         carry_object("/clone/misc/cloth")->wear();

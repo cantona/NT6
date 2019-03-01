@@ -6,18 +6,18 @@
 #include <weapon.h>
 inherit SWORD; 
 void create() {
-        set_name("¹Ç½£", ({ "bone sword" }) );
+        set_name("éª¨åŠ", ({ "bone sword" }) );
         set_weight(7000);
                 set("maze_item",1); 
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long", "ÕâÊÇÒ»°Ñ²»ÖªµÀÊ²Ã´¹ÇÍ·±ä³ÉµÄ½£¡£\n");
+                set("unit", "æŠŠ");
+                set("long", "é€™æ˜¯ä¸€æŠŠä¸çŸ¥é“ä»€éº¼éª¨é ­è®Šæˆçš„åŠã€‚\n");
                 set("value", 0);
                 set("material", "steel");
-                set("wield_msg", "$NÄÃ³öÒ»°Ñ$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$nÊÕÆğÀ´¡£\n");
+                set("wield_msg", "$Næ‹¿å‡ºä¸€æŠŠ$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°‡æ‰‹ä¸­çš„$næ”¶èµ·ä¾†ã€‚\n");
         }
         ::init_sword(25);
 }     

@@ -1,11 +1,11 @@
 // This program is a part of NITAN MudLIB
-// jue.c ¡¸×Ü¾÷Ê½¡¹
+// jue.c ã€Œç¸½è¨£å¼ã€
 
 #include <ansi.h>
 
 inherit F_SSERVER;
 
-string name() { return "×Ü¾÷Ê½"; }
+string name() { return "ç¸½è¨£å¼"; }
 
 int perform(object me)
 {
@@ -19,36 +19,36 @@ int perform(object me)
         if (jing_cost < 5) jing_cost = 5;
 
         if( query("no_fight", environment(me)) && query("doing", me) != "scheme" )
-                return notify_fail("ÕâÀïÌ«àĞÔÓ£¬Äã²»ÄÜ¾²ÏÂĞÄÀ´ÑİÁ·¡£\n");
+                return notify_fail("é€™è£¡å¤ªå˜ˆé›œï¼Œä½ ä¸èƒ½éœä¸‹å¿ƒä¾†æ¼”ç·´ã€‚\n");
 
         if (me->is_fighting())
-                return notify_fail("¡¸×Ü¾÷Ê½¡¹²»ÄÜÔÚÕ½¶·ÖĞÑİÁ·¡£\n");
+                return notify_fail("ã€Œç¸½è¨£å¼ã€ä¸èƒ½åœ¨æˆ°é¬¥ä¸­æ¼”ç·´ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me)) ||
             query("skill_type", weapon) != "sword" )
-                return notify_fail("Äã±ØĞëÏÈÈ¥ÕÒÒ»°Ñ½£¡£\n");
+                return notify_fail("ä½ å¿…é ˆå…ˆå»æ‰¾ä¸€æŠŠåŠã€‚\n");
 
         if (! skill || skill < 20)
-                return notify_fail("ÄãµÄ¶À¹Â¾Å½£µÈ¼¶²»¹», ²»ÄÜÑİÁ·¡¸×Ü¾÷Ê½¡¹£¡\n");
+                return notify_fail("ä½ çš„ç¨å­¤ä¹åŠç­‰ç´šä¸å¤ , ä¸èƒ½æ¼”ç·´ã€Œç¸½è¨£å¼ã€ï¼\n");
 
         if( query("neili", me)<50 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬Ã»ÓĞÁ¦ÆøÑİÁ·¡¸×Ü¾÷Ê½¡¹£¡\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ï¼Œæ²’æœ‰åŠ›æ°£æ¼”ç·´ã€Œç¸½è¨£å¼ã€ï¼\n");
 
         if( query("jing", me)<-jing_cost )
-                return notify_fail("ÄãÏÖÔÚÌ«ÀÛÁË£¬ÎŞ·¨¼¯ÖĞ¾«ÉñÑİÁ·¡¸×Ü¾÷Ê½¡¹£¡\n");
+                return notify_fail("ä½ ç¾åœ¨å¤ªç´¯äº†ï¼Œç„¡æ³•é›†ä¸­ç²¾ç¥æ¼”ç·´ã€Œç¸½è¨£å¼ã€ï¼\n");
 
         if (me->query_skill("lonely-sword", 1) > 600 &&
             me->query_skill("lonely-sword", 1) > me->query_skill("sword", 1))
-                return notify_fail("ÄãµÄ½£·¨²»¹»£¬ÎŞ·¨Ê¹ÓÃ¡¸×Ü¾÷Ê½¡¹À´Ìá¸ß¶À¹Â¾Å½££¡\n");
+                return notify_fail("ä½ çš„åŠæ³•ä¸å¤ ï¼Œç„¡æ³•ä½¿ç”¨ã€Œç¸½è¨£å¼ã€ä¾†æé«˜ç¨å­¤ä¹åŠï¼\n");
 
         if (me->query_skill("lonely-sword", 1) > 800)
-                return notify_fail("¶À¹Â¾Å½£ÑİÁ·ÒÑ¾­µ½ÁË¼«ÏŞ£¬ĞèÒªÑĞ¾¿²ÅÄÜÌá¸ßµÈ¼¶£¡\n");
+                return notify_fail("ç¨å­¤ä¹åŠæ¼”ç·´å·²ç¶“åˆ°äº†æ¥µé™ï¼Œéœ€è¦ç ”ç©¶æ‰èƒ½æé«˜ç­‰ç´šï¼\n");
 
         if (! me->can_improve_skill("lonely-sword"))
-                return notify_fail("ÄãµÄÊµÕ½¾­Ñé²»¹»£¬ÎŞ·¨Ìå»á¡¸×Ü¾÷Ê½¡¹£¡\n");
+                return notify_fail("ä½ çš„å¯¦æˆ°ç¶“é©—ä¸å¤ ï¼Œç„¡æ³•é«”æœƒã€Œç¸½è¨£å¼ã€ï¼\n");
 
-        msg = HIG "$N" HIG "Ê¹³ö¶À¹Â¾Å½£Ö®¡¸×Ü¾÷Ê½¡¹£¬½«ÊÖÖĞ" +
-              weapon->name() + HIG "ËæÒâ»ÓÎè»÷´Ì¡£\n" NOR;
+        msg = HIG "$N" HIG "ä½¿å‡ºç¨å­¤ä¹åŠä¹‹ã€Œç¸½è¨£å¼ã€ï¼Œå°‡æ‰‹ä¸­" +
+              weapon->name() + HIG "éš¨æ„æ®èˆæ“Šåˆºã€‚\n" NOR;
         message_combatd(msg, me);
 
         addn("neili", -50, me);
@@ -64,7 +64,7 @@ int perform(object me)
            improve = 10 + random((int)me->query_int() * 4 - 9); else
            improve = 10 + random((int)me->query_int() * 8 - 9);
 
-        tell_object(me, MAG "ÄãµÄ¡¸»ù±¾½£·¨¡¹ºÍ¡¸¶À¹Â¾Å½£¡¹½ø²½ÁË£¡\n" NOR);
+        tell_object(me, MAG "ä½ çš„ã€ŒåŸºæœ¬åŠæ³•ã€å’Œã€Œç¨å­¤ä¹åŠã€é€²æ­¥äº†ï¼\n" NOR);
         me->improve_skill("sword", improve);
         me->improve_skill("lonely-sword", improve * 3 / 2);
         me->start_busy(random(2));

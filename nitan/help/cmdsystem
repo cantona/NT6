@@ -1,181 +1,181 @@
-��̶����ָ����ϸ��˵���£�
+泥潭常用指令詳細解說如下：
 
 
-    ����Ϸ����ҿ���ʹ�������ָ�ϵͳָ�����ָ�
-ð��ָ��书ָ���Լ�����ָ�����ָ���ǣͣգ�һ�㶼��
-��ָ�����Ӣ�ı�ʾ�������ڱ�ʾ���õ�������д��
+    本遊戲的玩家可以使用五大類指令：系統指令、聊天指令、
+冒險指令、武功指令以及特殊指令。基本指令是ＭＵＤ一般都有
+的指令，故用英文表示。括號內表示可用的命令縮寫。
 
 
-$HIY$��ϵͳָ�$NOR$
+$HIY$【系統指令】$NOR$
 
     $HIC$help$NOR$
-    ָ���ʽ��help <����>��
-    ���磺help newbie�� help intro��Ҳ���Կ���ͼ��������
-˵�������磺help map���� help map_all�� ���ָ���ṩ����
-��ĳһ�������ϸ˵���ļ������ǲ�ָ�����⣬���ṩ���й���
-����ļ���
+    指令格式：help <主題>。
+    例如：help newbie或 help intro；也可以看地圖或者門派
+說明，例如：help map或者 help map_all。 這個指令提供你針
+對某一主題的詳細說明文件，若是不指定主題，則提供你有關主
+題的文件。
 
     $HIC$alias$NOR$
-    ָ���ʽ��alias <���趨ָ֮��> <ϵͳ�ṩָ֮��>��
-    ��ʱϵͳ���ṩָ֮����Ҫ����ܳ����ִ�, ��ʹ��ʱ (��
-���Ǿ����õ���) ������о�������, ��ʱ�㼴���ô�һָ����
-�������ԭ��ָ֮����硰alias sc score���ͻ��� sc ��ȡ
-��score ָ���alias�� �󲻼Ӳ������г������е����ָ�
-��alias sc�������� sc ������ָ����п�����$1��$2��$3
-����ȡ����һ���ڶ������������������� $* ȡ�����еĲ�����
-���磺��alias xunwen ask $1 about $2������ÿ�����xunwen
-waiter name�� �ͻ�ȡ���ɣ���ask waiter about name����
+    指令格式：alias <欲設定之指令> <系統提供之指令>。
+    有時系統所提供之指令需要輸入很長的字串, 在使用時 (尤
+其是經常用到的) 或許會感覺不方便, 此時你即可用此一指令設
+定並替代原有之指令。例如“alias sc score”就會以 sc 來取
+代score 指令。“alias” 後不加參數則列出你所有的替代指令。
+“alias sc”會消除 sc 這個替代指令。其中可以用$1、$2、$3
+等來取代第一、第二、第三個參數，或是 $* 取代所有的參數，
+例如：“alias xunwen ask $1 about $2”，則每當你打“xunwen
+waiter name” 就會取代成：“ask waiter about name”。
 
     $HIC$cls$NOR$
-    ָ���ʽ��cls��
-    �����Ļ��Ϣ��
+    指令格式：cls。
+    清除屏幕信息。
 
     $HIC$describe$NOR$
-    ָ���ʽ��describe <���趨֮���Լ�����������|none>��
-    ���ָ�������趨�������� look ָ���ʱ�������������
-none������ȡ����ǰ���趨��
+    指令格式：describe <欲設定之對自己的描述句子|none>。
+    這個指令讓你設定當別人用 look 指令看你時，對你的描述。
+none參數則取消以前的設定。
 
     $HIC$exit(quit)$NOR$
-    ָ���ʽ��quit��
-    ��������ʱ�뿪ʱ, �����ô�һָ�
+    指令格式：quit。
+    當你想暫時離開時, 可利用此一指令。
 
     $HIC$passwd$NOR$
-    ָ���ʽ��passwd��
-    ���ָ������޸�����������롣��ȻҪ��������ɿ����ˡ�
+    指令格式：passwd。
+    這個指令可以修改你的人物密碼。當然要求先輸入舊口令了。
 
     $HIC$save$NOR$
-    ָ���ʽ��save��
-    ��������ܶ��Ľ����������
+    指令格式：save。
+    把你辛苦奮鬥的結果存起來。
 
     $HIC$who$NOR$
-    ָ���ʽ��who [-l|-p|-w|<id>]��
-    ���ָ������г����������ϵ���Ҽ���ȼ���-lѡ���г�
-�ϳ��İ����ɱ������е�ѶϢ��-iֻ�г���ҵı��ŵ��ӡ�-wֻ
-�г��������е���ʦ��<id>���г�ָ����ҵ�ͬ�ŵ��ӡ�
+    指令格式：who [-l|-p|-w|<id>]。
+    這個指令可以列出所有在線上的玩家及其等級。-l選項列出
+較長的按門派輩分排列的訊息。-i只列出玩家的本門弟子。-w只
+列出線上所有的巫師。<id>則列出指定玩家的同門弟子。
 
     $HIC$finger$NOR$
-    ָ���ʽ��finger [ʹ��������]��
-    ���ָ��, ���û��ָ��ʹ��������, ����ʾ������������
-����ҵ��������ϡ���֮, �����ʾ�й�ĳ����ҵ�����, Ȩ��
-�����ϡ�
+    指令格式：finger [使用者姓名]。
+    這個指令, 如果沒有指定使用者姓名, 會顯示出所有正在線
+上玩家的連線資料。反之, 則可顯示有關某個玩家的連線, 權限
+等資料。
 
     $HIC$id$NOR$
-    ָ���ʽ��id [here]��
-    ���ָ���������֪����Ʒ��Ӣ�����Ƽ����֡�ֻ��id����
-ʾ��������Я����Ʒ�����ơ�id here ����ʾ���и�����ͬһ��
-�������������ơ�
+    指令格式：id [here]。
+    這個指令可以讓你知道物品的英文名稱及名字。只打id會顯
+示你身上所攜帶物品的名稱。id here 則顯示所有跟你在同一個
+環境裡的物件名稱。
 
     $HIC$inventory(i)$NOR$
-    ָ���ʽ��inventory��
-    ���г���Ŀǰ������Я����������Ʒ��
+    指令格式：inventory。
+    可列出你目前身上所攜帶的所有物品。
 
     $HIC$nick$NOR$
-    ָ���ʽ��nick <���, �º�> | none��
-    ���ָ���������Ϊ�Լ�ȡһ�����������Ż�ͷ�Σ������
-ϣ���ڴº���ʹ�� ANSI �Ŀ�����Ԫ�ı���ɫ������ʹ��������
-˵������ɫ���š�
-    nick none ȡ���ºš�
+    指令格式：nick <外號, 綽號> | none。
+    這個指令可以讓你為自己取一個響亮的名號或頭銜，你如果
+希望在綽號中使用 ANSI 的控制字元改變顏色，可以使用命令中
+說明的顏色代號。
+    nick none 取消綽號。
 
     $HIC$hp$NOR$
-    ָ���ʽ��hp��
-    ���ָ�������ʾ��ľ�������������������ʳ���ˮ��
-���������ֵ��
+    指令格式：hp。
+    這個指令可以顯示你的精、氣、內力、精力、食物、飲水以
+及經驗等數值。
 
     $HIC$score$NOR$
-    ָ���ʽ��score��
-    ���ָ�������ϸ��ʾ��ľ�������������������ʳ���
-ˮ�Լ����顢����(а��)��ֵ��
+    指令格式：score。
+    這個指令可以詳細顯示你的精、氣、內力、精力、食物、飲
+水以及經驗、正氣(邪氣)數值。
 
     $HIC$snoop$NOR$
-    ָ���ʽ��snoop <���>��
-    ���ָ������������ĳ����ң�ǰ���ǶԷ��������������
-�������ˣ�set can_snoop <���ID>
+    指令格式：snoop <玩家>。
+    這個指令可以讓你監聽某個玩家，前提是對方允許你監聽他，
+即設置了：set can_snoop <你的ID>
 
     $HIC$title$NOR$
-    ָ���ʽ��title��
-    ��ʾ��Ŀǰ�Ľ׼���ͷ�Ρ�
+    指令格式：title。
+    顯示你目前的階級和頭銜。
        
     $HIC$set$NOR$
-    ָ���ʽ��set <������> [<����ֵ>]��
-    ���ָ�������趨һЩ�������������Ӳ���ʱ����ʾ��Ŀǰ
-�趨�Ļ�����������ָ������ֵ�����ڶ�ֵΪ��YES���� ȡ����
-���趨���� unsetָ���Щ�����������������ﱻ����������
-��������Щ�������������趨����� help settings��
+    指令格式：set <變數名> [<變數值>]。
+    這個指令讓你設定一些環境變數，不加參數時會顯示你目前
+設定的環境變數，不指定變數值，則內定值為“YES”。 取消變
+數設定請用 unset指令，這些變量會隨著您的人物被儲存下來。
+至于有哪些環境變數可以設定，請見 help settings。
 
     $HIC$unset$NOR$
-    ָ���ʽ��unset <������>��
-    ���ָ������ɾ�������������趨��
+    指令格式：unset <變數名>。
+    這個指令讓你刪除環境變數的設定。
 
     $HIC$swear$NOR$
-    ָ���ʽ��swear with <���>
-    ���ָ�������������ҽ��Ϊ�����ֵܡ�
+    指令格式：swear with <玩家>
+    這個指令讓你和其他玩家結拜為異姓兄弟。
 
     $HIC$brothers$NOR$
-    ָ���ʽ��brothers [out <���>]��
-    ���ָ������鿴Ŀǰ�����ֵܵ���Ϣ�������������Ѹ��۶�
-�壬Ҳ����ʹ������ָ���
+    指令格式：brothers [out <玩家>]。
+    這個指令讓你查看目前結義兄弟的信息，如果你想和朋友割袍斷
+義，也可以使用這條指令。。
 
     $HIC$league$NOR$
-    ָ���ʽ��league [info | hatred]��
-    ���ָ������鿴Ŀǰ���ڵĽ���ͬ�˵���Ϣ���������Ŀǰͬ
-�˵ĵж����
+    指令格式：league [info | hatred]。
+    這個指令讓你查看目前所在的結義同盟的信息，或是瀏覽目前同
+盟的敵對人物。
 
     $HIC$top$NOR$
-    ָ���ʽ��top [family | league]��
-    ���ָ���������Ŀǰ�����ϵ����Ŵ��ɵ�������������һͬ��
-��������
+    指令格式：top [family | league]。
+    這個指令讓你瀏覽目前江湖上的名門大派的威望和著名結一同盟
+的聲望。
 
     $HIC$suicide$NOR$
-    ָ���ʽ��suicide [-f]��
-    �����Ϊĳ��ԭ���㲻����ˣ������ѡ����ɱ����ɱ����
-�֣�suicideΪ����Ͷ̥��suicide -f Ϊ��Զ�ĳ�ȥ������ϣ�
-ϵͳ��Ҫ��������������ȷ�����ݡ�
+    指令格式：suicide [-f]。
+    如果因為某種原因你不想活了，你可以選擇自殺。自殺分兩
+種：suicide為重新投胎，suicide -f 為永遠的除去玩家資料，
+系統會要求你輸入密碼以確認身份。
 
     $HIC$femote$NOR$
-    ָ���ʽ��femote <�ؼ���> | <��ʽ������>��
-    ���ָ��������ݹؼ���������һ�����鶯�ʡ�
+    指令格式：femote <關鍵字> | <格式化句子>。
+    這個指令讓你根據關鍵字來查找一個表情動詞。
 
     $HIC$semote$NOR$
-    ָ���ʽ��semote [-r] n
-    ���ָ�������г�Ŀǰ���еı��鶯�ʻ�������޸ĵı��鶯�ʡ�
+    指令格式：semote [-r] n
+    這個指令讓你列出目前所有的表情動詞或是最近修改的表情動詞。
 
     $HIC$bjtime$NOR$
-    ָ���ʽ��bjtime��
-    ���ָ������֪��������ʵ�����еı���ʱ�䡣
+    指令格式：bjtime。
+    這個指令讓你知道現在現實生活中的北京時間。
 
     $HIC$time$NOR$
-    ָ���ʽ��time��
-    ���ָ������֪����������Ϸ��ʱ����
+    指令格式：time。
+    這個指令讓你知道現在在遊戲的時辰。
 
     $HIC$uptime$NOR$
-    ָ���ʽ��uptime��
-    ���ָ�����������Ϸ�Ѿ�����ִ���˶�á�
+    指令格式：uptime。
+    這個指令告訴您該遊戲已經連續執行了多久。
 
     $HIC$version$NOR$
-    ָ���ʽ��version��
-    ���ָ�����ʾ��ϷĿǰ���õİ汾��
+    指令格式：version。
+    這個指令會顯示遊戲目前所用的版本。
 
     $HIC$summon$NOR$
-    ָ���ʽ��summon <��ƷID>
-    ���ָ��������Ժ����Լ�����Ʒ��
+    指令格式：summon <物品ID>
+    這個指令讓你可以呼喚自己的物品。
 
     $HIC$hide$NOR$
-    ָ���ʽ��hide <��ƷID>
-    ���ָ��������������Լ�����Ʒ��
+    指令格式：hide <物品ID>
+    這個指令讓你可以隱藏自己的物品。
 
     $HIC$miss$NOR$
-    ָ���ʽ��miss <��ƷID>
-    ���ָ���������׷Ѱ�Լ�����Ʒ��
+    指令格式：miss <物品ID>
+    這個指令讓你可以追尋自己的物品。
 
     $HIC$news$NOR$
-    ָ���ʽ��news [next] | [<���ű��>]
-    ���ָ�������Ķ���Ϸ�з��������š����û�мӲ��������Զ�
-�г�Ŀǰϵͳ�����е����š�
+    指令格式：news [next] | [<新聞編號>]
+    這個指令讓你閱讀遊戲中發布的新聞。如果沒有加參數，則自動
+列出目前系統中所有的新聞。
 
     $HIC$wizlist$NOR$
-    ָ���ʽ��wizlist��
-    �г�Ŀǰ���е���ʦ������
+    指令格式：wizlist。
+    列出目前所有的巫師名單。
 
     $HIC$system$NOR$
-    ָ���ʽ��system��
-    ��ʾĿǰ��Ϸʹ����Դ�������
+    指令格式：system。
+    顯示目前遊戲使用資源的情況。

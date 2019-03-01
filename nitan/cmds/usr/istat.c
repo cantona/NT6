@@ -23,7 +23,7 @@ int main(object me, string arg)
         seteuid(getuid(me));
 
         if( !wizardp(me) && time()-query_temp("last_stats", me)<5 )
-                return notify_fail("ÏµÍ³Æø´­ĞêµØÌ¾µÀ£ºÂıÂıÀ´ ....\n");
+                return notify_fail("ç³»çµ±æ°£å–˜å™“åœ°å˜†é“ï¼šæ…¢æ…¢ä¾† ....\n");
 
         set_temp("last_stats", time(), me);
         MYGIFT_D->check_mygift(me, "newbie_mygift/istat");
@@ -40,34 +40,34 @@ int main(object me, string arg)
                                 ob = find_living(arg);
 
                         if (! ob || ! ob->is_character() || ! me->visible(ob))
-                                return notify_fail("ÄãÒª²ì¿´Ë­µÄ×´Ì¬£¿\n");
+                                return notify_fail("ä½ è¦å¯Ÿçœ‹èª°çš„ç‹€æ…‹ï¼Ÿ\n");
 
                         if( !wizardp(me) && query("couple/child_id", me) != query("id", ob) )
-                                return notify_fail("ÄãÒª²ì¿´Ë­µÄ×´Ì¬£¿\n");
+                                return notify_fail("ä½ è¦å¯Ÿçœ‹èª°çš„ç‹€æ…‹ï¼Ÿ\n");
 
                 } else
-                        return notify_fail("Ö»ÓĞÎ×Ê¦ÄÜ²ì¿´±ğÈËµÄ×´Ì¬¡£\n");
+                        return notify_fail("åªæœ‰å·«å¸«èƒ½å¯Ÿçœ‹åˆ¥äººçš„ç‹€æ…‹ã€‚\n");
         } else
                 ob = me;
 
-        sp = HIM + (ob == me ? "Äã" : ob->name(1)) + "Ä¿Ç°µÄ¸÷¸½¼ÓÊôĞÔĞ§¹ûÒ»ÀÀ\n" NOR;
-        sp += HIC "¡Ô" HIY "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤" HIC "¡Ô\n" NOR;
+        sp = HIM + (ob == me ? "ä½ " : ob->name(1)) + "ç›®å‰çš„å„é™„åŠ å±¬æ€§æ•ˆæœä¸€è¦½\n" NOR;
+        sp += HIC "â‰¡" HIY "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€" HIC "â‰¡\n" NOR;
 
-        sp += sprintf(HIC "¡¾±ÛÁ¦¸½¼Ó¡¿" HIG " %9d / %-9d"
-                      HIC "¡¾ÎòĞÔ¸½¼Ó¡¿" HIG " %9d / %d\n"
-                      HIC "¡¾¸ù¹Ç¸½¼Ó¡¿" HIG " %9d / %-9d"
-                      HIC "¡¾Éí·¨¸½¼Ó¡¿" HIG " %9d / %d\n",
+        sp += sprintf(HIC "ã€è‡‚åŠ›é™„åŠ ã€‘" HIG " %9d / %-9d"
+                      HIC "ã€æ‚Ÿæ€§é™„åŠ ã€‘" HIG " %9d / %d\n"
+                      HIC "ã€æ ¹éª¨é™„åŠ ã€‘" HIG " %9d / %-9d"
+                      HIC "ã€èº«æ³•é™„åŠ ã€‘" HIG " %9d / %d\n",
                       jingmai_effect(ob, "str")+query_temp("apply/attribute", ob)+query_temp("apply/str", ob),1000,
                       jingmai_effect(ob, "int")+query_temp("apply/attribute", ob)+query_temp("apply/int", ob),1000,
                       jingmai_effect(ob, "con")+query_temp("apply/attribute", ob)+query_temp("apply/con", ob),1000,
                       jingmai_effect(ob, "dex")+query_temp("apply/attribute", ob)+query_temp("apply/dex", ob),1000);
 
-        sp += sprintf(HIC "¡¾Ç±ÄÜÉÏÏŞ¡¿" HIM " %9d / %-9d"
-                      HIC "¡¾Ìå»áÉÏÏŞ¡¿" HIM " %9d / %d\n"
-                      HIC "¡¾ÄÚÁ¦ÉÏÏŞ¡¿" HIM " %9d / %-9d"
-                      HIC "¡¾¾«Á¦ÉÏÏŞ¡¿" HIM " %9d / %d\n"
-                      HIC "¡¾ÆøÑªÉÏÏŞ¡¿" HIM " %9d / %-9d"
-                      HIC "¡¾¾«ÆøÉÏÏŞ¡¿" HIM " %9d / %d\n",
+        sp += sprintf(HIC "ã€æ½›èƒ½ä¸Šé™ã€‘" HIM " %9d / %-9d"
+                      HIC "ã€é«”æœƒä¸Šé™ã€‘" HIM " %9d / %d\n"
+                      HIC "ã€å…§åŠ›ä¸Šé™ã€‘" HIM " %9d / %-9d"
+                      HIC "ã€ç²¾åŠ›ä¸Šé™ã€‘" HIM " %9d / %d\n"
+                      HIC "ã€æ°£è¡€ä¸Šé™ã€‘" HIM " %9d / %-9d"
+                      HIC "ã€ç²¾æ°£ä¸Šé™ã€‘" HIM " %9d / %d\n",
                       jingmai_effect(ob, "pot")+query_temp("apply/max_potential", ob),10000000,
                       jingmai_effect(ob, "mar")+query_temp("apply/max_experience", ob),10000000,
                       jingmai_effect(ob, "neili")+query_temp("apply/max_neili", ob),1000000,
@@ -75,14 +75,14 @@ int main(object me, string arg)
                       jingmai_effect(ob, "qi")+query_temp("apply/max_qi", ob),1000000,
                       jingmai_effect(ob, "jing")+query_temp("apply/max_jing", ob),500000);
 
-        sp += sprintf(HIC "¡¾ÑĞ¾¿´ÎÊı¡¿" HIY " %9d / %-9d"
-                      HIC "¡¾ÑĞ¾¿Ğ§¹û¡¿" HIY " %9s / %s\n"
-                      HIC "¡¾Á·Ï°´ÎÊı¡¿" HIY " %9d / %-9d"
-                      HIC "¡¾Á·Ï°Ğ§¹û¡¿" HIY " %9s / %s\n"
-                      HIC "¡¾Ñ§Ï°´ÎÊı¡¿" HIY " %9d / %-9d"
-                      HIC "¡¾Ñ§Ï°Ğ§¹û¡¿" HIY " %9s / %s\n"
-                      HIC "¡¾¼³È¡ÏûºÄ¡¿" HIY " %9d / %-9d"
-                      HIC "¡¾¼³È¡Ğ§¹û¡¿" HIY " %9s / %s\n",
+        sp += sprintf(HIC "ã€ç ”ç©¶æ¬¡æ•¸ã€‘" HIY " %9d / %-9d"
+                      HIC "ã€ç ”ç©¶æ•ˆæœã€‘" HIY " %9s / %s\n"
+                      HIC "ã€ç·´ç¿’æ¬¡æ•¸ã€‘" HIY " %9d / %-9d"
+                      HIC "ã€ç·´ç¿’æ•ˆæœã€‘" HIY " %9s / %s\n"
+                      HIC "ã€å­¸ç¿’æ¬¡æ•¸ã€‘" HIY " %9d / %-9d"
+                      HIC "ã€å­¸ç¿’æ•ˆæœã€‘" HIY " %9s / %s\n"
+                      HIC "ã€æ±²å–æ¶ˆè€—ã€‘" HIY " %9d / %-9d"
+                      HIC "ã€æ±²å–æ•ˆæœã€‘" HIY " %9s / %s\n",
                       jingmai_effect(ob, "research_times")+query_temp("apply/research_times", ob),3000,
                       jingmai_effect(ob, "research_effect")+query_temp("apply/research_effect", ob)+"%","1500%",
                       jingmai_effect(ob, "practice_times")+query_temp("apply/practice_times", ob),3000,
@@ -92,26 +92,26 @@ int main(object me, string arg)
                       jingmai_effect(ob, "derive_times")+query_temp("apply/derive_times", ob),3000,
                       jingmai_effect(ob, "derive_effect")+query_temp("apply/derive_effect", ob)+"%","1500%");
 
-        sp += sprintf(WHT "¡¾¹¥»÷µÈ¼¶¡¿" HIW " %9d / %-9d"
-                      WHT "¡¾·ÀÓùµÈ¼¶¡¿" HIW " %9d / %d\n"
-                      WHT "¡¾¶ãÉÁµÈ¼¶¡¿" HIW " %9d / %-9d"
-                      WHT "¡¾ÕĞ¼ÜµÈ¼¶¡¿" HIW " %9d / %d\n"
-                      WHT "¡¾¾øÕĞÃüÖĞ¡¿" HIW " %9s / %-9s"
-                      WHT "¡¾¾øÕĞ·ÀÓù¡¿" HIW " %9s / %s\n"
-                      WHT "¡¾±øÆ÷ÉËº¦¡¿" HIG " %9d / %-9d"
-                      WHT "¡¾¿ÕÊÖÉËº¦¡¿" HIG " %9d / %d\n"
-                      WHT "¡¾¾øÕĞÉËº¦¡¿" HIG " %9s / %-9s"
-                      WHT "¡¾Õ½¶·±£»¤¡¿" HIG " %9d / %d\n"
-                      WHT "¡¾¸½¼ÓÉËº¦¡¿" HIG " %9d / %-9d"
-                      WHT "¡¾¸½¼Ó±£»¤¡¿" HIG " %9d / %d\n"
+        sp += sprintf(WHT "ã€æ”»æ“Šç­‰ç´šã€‘" HIW " %9d / %-9d"
+                      WHT "ã€é˜²å¾¡ç­‰ç´šã€‘" HIW " %9d / %d\n"
+                      WHT "ã€èº²é–ƒç­‰ç´šã€‘" HIW " %9d / %-9d"
+                      WHT "ã€æ‹›æ¶ç­‰ç´šã€‘" HIW " %9d / %d\n"
+                      WHT "ã€çµ•æ‹›å‘½ä¸­ã€‘" HIW " %9s / %-9s"
+                      WHT "ã€çµ•æ‹›é˜²å¾¡ã€‘" HIW " %9s / %s\n"
+                      WHT "ã€å…µå™¨å‚·å®³ã€‘" HIG " %9d / %-9d"
+                      WHT "ã€ç©ºæ‰‹å‚·å®³ã€‘" HIG " %9d / %d\n"
+                      WHT "ã€çµ•æ‹›å‚·å®³ã€‘" HIG " %9s / %-9s"
+                      WHT "ã€æˆ°é¬¥ä¿è­·ã€‘" HIG " %9d / %d\n"
+                      WHT "ã€é™„åŠ å‚·å®³ã€‘" HIG " %9d / %-9d"
+                      WHT "ã€é™„åŠ ä¿è­·ã€‘" HIG " %9d / %d\n"
                       /*
-                      WHT "¡¾¸ÄÔìÉËº¦¡¿" HIG " %9d / %-9d"
-                      WHT "¡¾¸ÄÔì±£»¤¡¿" HIG " %9d / %d\n"
+                      WHT "ã€æ”¹é€ å‚·å®³ã€‘" HIG " %9d / %-9d"
+                      WHT "ã€æ”¹é€ ä¿è­·ã€‘" HIG " %9d / %d\n"
                       */
-                      WHT "¡¾ÎŞÊÓÕĞ¼Ü¡¿" HIY " %9s / %-9s"
-                      WHT "¡¾ÎŞÊÓ¶ãÉÁ¡¿" HIY " %9s / %s\n"
-                      WHT "¡¾ÎŞÊÓ¹¥»÷¡¿" HIY " %9s / %-9s"
-                      WHT "¡¾ÎŞÊÓÄÚ¹¦¡¿" HIY " %9s / %s\n",
+                      WHT "ã€ç„¡è¦–æ‹›æ¶ã€‘" HIY " %9s / %-9s"
+                      WHT "ã€ç„¡è¦–èº²é–ƒã€‘" HIY " %9s / %s\n"
+                      WHT "ã€ç„¡è¦–æ”»æ“Šã€‘" HIY " %9s / %-9s"
+                      WHT "ã€ç„¡è¦–å…§åŠŸã€‘" HIY " %9s / %s\n",
                       jingmai_effect(ob, "attack")+query_temp("apply/attack", ob),3000,
                       jingmai_effect(ob, "defense")+query_temp("apply/defense", ob),3000,
                       query_temp("apply/dodge", ob),3000,query_temp("apply/parry", ob),3000,
@@ -125,18 +125,18 @@ int main(object me, string arg)
                       query_temp("apply/avoid_parry", ob)+"%","90%",query_temp("apply/avoid_dodge", ob)+"%","90%",
                       query_temp("apply/avoid_attack", ob)+"%","90%",query_temp("apply/avoid_force", ob)+"%","90%");
 
-        sp += sprintf(RED "¡¾¶¾ ÉË º¦¡¿" RED " %9s / %-9s"
-                      RED "¡¾¿¹    ¶¾¡¿" RED " %9s / %s\n"
-                      RED "¡¾½ğ ÉË º¦¡¿" RED " %9s / %-9s"
-                      RED "¡¾¿¹    ½ğ¡¿" RED " %9s / %s\n"
-                      RED "¡¾Ä¾ ÉË º¦¡¿" RED " %9s / %-9s"
-                      RED "¡¾¿¹    Ä¾¡¿" RED " %9s / %s\n"
-                      RED "¡¾Ë® ÉË º¦¡¿" RED " %9s / %-9s"
-                      RED "¡¾¿¹    Ë®¡¿" RED " %9s / %s\n"
-                      RED "¡¾»ğ ÉË º¦¡¿" RED " %9s / %-9s"
-                      RED "¡¾¿¹    »ğ¡¿" RED " %9s / %s\n"
-                      RED "¡¾ÍÁ ÉË º¦¡¿" RED " %9s / %-9s"
-                      RED "¡¾¿¹    ÍÁ¡¿" RED " %9s / %s\n",
+        sp += sprintf(RED "ã€æ¯’ å‚· å®³ã€‘" RED " %9s / %-9s"
+                      RED "ã€æŠ—    æ¯’ã€‘" RED " %9s / %s\n"
+                      RED "ã€é‡‘ å‚· å®³ã€‘" RED " %9s / %-9s"
+                      RED "ã€æŠ—    é‡‘ã€‘" RED " %9s / %s\n"
+                      RED "ã€æœ¨ å‚· å®³ã€‘" RED " %9s / %-9s"
+                      RED "ã€æŠ—    æœ¨ã€‘" RED " %9s / %s\n"
+                      RED "ã€æ°´ å‚· å®³ã€‘" RED " %9s / %-9s"
+                      RED "ã€æŠ—    æ°´ã€‘" RED " %9s / %s\n"
+                      RED "ã€ç« å‚· å®³ã€‘" RED " %9s / %-9s"
+                      RED "ã€æŠ—    ç«ã€‘" RED " %9s / %s\n"
+                      RED "ã€åœŸ å‚· å®³ã€‘" RED " %9s / %-9s"
+                      RED "ã€æŠ—    åœŸã€‘" RED " %9s / %s\n",
                       query_temp("apply/add_poison", ob)+"%","90%",query_temp("apply/reduce_poison", ob)+"%","90%",
                       query_temp("apply/add_metal", ob)+"%","90%",query_temp("apply/avoid_metal", ob)+"%","90%",
                       query_temp("apply/add_wood", ob)+"%","90%",query_temp("apply/avoid_wood", ob)+"%","90%",
@@ -144,18 +144,18 @@ int main(object me, string arg)
                       query_temp("apply/add_fire", ob)+"%","90%",query_temp("apply/avoid_fire", ob)+"%","90%",
                       query_temp("apply/add_earth", ob)+"%","90%",query_temp("apply/avoid_earth", ob)+"%","90%");
                               
-        sp += sprintf(HIB "¡¾ÄÚÁ¦»Ö¸´¡¿" HIB " %9d / %-9d"
-                      HIB "¡¾ÉúÃü»Ö¸´¡¿" HIB " %9d / %d\n"
-                      HIB "¡¾¾«Æø»Ö¸´¡¿" HIB " %9d / %-9d"
-                      HIB "¡¾ÉË×ªÄÚÁ¦¡¿" HIB " %9s / %s\n"
-                      HIB "¡¾ÍµÈ¡ÄÚÁ¦¡¿" HIB " %9s / %-9s"
-                      HIB "¡¾ÍµÈ¡ÉúÃü¡¿" HIB " %9s / %s\n"
-                      HIB "¡¾¶îÍâ½±Àø¡¿" HIB " %9s / %-9s"
-                      HIB "¡¾¶îÍâ¾­Ñé¡¿" HIB " %9s / %s\n"
-                      HIB "¡¾¶îÍâÇ±ÄÜ¡¿" HIB " %9s / %-9s"
-                      HIB "¡¾¶îÍâÌå»á¡¿" HIB " %9s / %s\n"
-                      HIB "¡¾¶îÍâÕæÆø¡¿" HIB " %9s / %-9s"
-                      HIB "¡¾ºöÊÓÃ¦ÂÒ¡¿" HIB " %9s / %s\n",
+        sp += sprintf(HIB "ã€å…§åŠ›æ¢å¾©ã€‘" HIB " %9d / %-9d"
+                      HIB "ã€ç”Ÿå‘½æ¢å¾©ã€‘" HIB " %9d / %d\n"
+                      HIB "ã€ç²¾æ°£æ¢å¾©ã€‘" HIB " %9d / %-9d"
+                      HIB "ã€å‚·è½‰å…§åŠ›ã€‘" HIB " %9s / %s\n"
+                      HIB "ã€å·å–å…§åŠ›ã€‘" HIB " %9s / %-9s"
+                      HIB "ã€å·å–ç”Ÿå‘½ã€‘" HIB " %9s / %s\n"
+                      HIB "ã€é¡å¤–çå‹µã€‘" HIB " %9s / %-9s"
+                      HIB "ã€é¡å¤–ç¶“é©—ã€‘" HIB " %9s / %s\n"
+                      HIB "ã€é¡å¤–æ½›èƒ½ã€‘" HIB " %9s / %-9s"
+                      HIB "ã€é¡å¤–é«”æœƒã€‘" HIB " %9s / %s\n"
+                      HIB "ã€é¡å¤–çœŸæ°£ã€‘" HIB " %9s / %-9s"
+                      HIB "ã€å¿½è¦–å¿™äº‚ã€‘" HIB " %9s / %s\n",
                       query_temp("apply/ref_neili", ob),500,query_temp("apply/ref_qi", ob),200,
                       query_temp("apply/ref_jing", ob),200,query_temp("apply/qi_vs_neili", ob)+"%","90%",
                       query_temp("apply/suck_neili", ob)+"%","90%",query_temp("apply/suck_qi", ob)+"%","90%",
@@ -163,16 +163,16 @@ int main(object me, string arg)
                       query_temp("apply/add_pot", ob)+"%","210%",query_temp("apply/add_mar", ob)+"%","210%",
                       query_temp("apply/add_force", ob)+"%","210%",query_temp("apply/avoid_busy", ob)+"%","90%");
                       
-        sp += sprintf(WHT "¡¾Ñ° ½ğ ÂÊ¡¿" HIM " %9s / %-9s"
-                      WHT "¡¾Ñ° ±¦ ÂÊ¡¿" HIM " %9s / %s\n"
-                      WHT "¡¾É±    Â¾¡¿" CYN " %9s / %-9s"
-                      WHT "¡¾ÆÆ    Æø¡¿" CYN " %9s / %s\n"
-                      WHT "¡¾Ë«±¶ÉËº¦¡¿" CYN " %9s / %-9s"
-                      WHT "¡¾ÆÆ    ¼×¡¿" CYN " %9s / %s\n"
-                      WHT "¡¾ÖÂ    Ã¤¡¿" CYN " %9s / %-9s"
-                      WHT "¡¾ºöÊÓÖÂÃ¤¡¿" CYN " %9s / %s\n"
-                      WHT "¡¾ÌìÄ§¸½Ìå¡¿" CYN " %9s / %-9s"
-                      WHT "¡¾Õ½Éñ¸½Ìå¡¿" CYN " %9s / %s\n",
+        sp += sprintf(WHT "ã€å°‹ é‡‘ ç‡ã€‘" HIM " %9s / %-9s"
+                      WHT "ã€å°‹ å¯¶ ç‡ã€‘" HIM " %9s / %s\n"
+                      WHT "ã€æ®º    æˆ®ã€‘" CYN " %9s / %-9s"
+                      WHT "ã€ç ´    æ°£ã€‘" CYN " %9s / %s\n"
+                      WHT "ã€é›™å€å‚·å®³ã€‘" CYN " %9s / %-9s"
+                      WHT "ã€ç ´    ç”²ã€‘" CYN " %9s / %s\n"
+                      WHT "ã€è‡´    ç›²ã€‘" CYN " %9s / %-9s"
+                      WHT "ã€å¿½è¦–è‡´ç›²ã€‘" CYN " %9s / %s\n"
+                      WHT "ã€å¤©é­”é™„é«”ã€‘" CYN " %9s / %-9s"
+                      WHT "ã€æˆ°ç¥é™„é«”ã€‘" CYN " %9s / %s\n",
                       query_temp("apply/gold_find", ob)+"%","100%",
                       jingmai_effect(ob, "magic_find")+query_temp("apply/magic_find", ob)+"%","300%",
                       query_temp("apply/slaughter", ob)+"%","90%",query_temp("apply/clear_force", ob)+"%","90%",
@@ -181,22 +181,22 @@ int main(object me, string arg)
                       query_temp("apply/absorb_blood", ob)+"%","90%",query_temp("apply/full_self", ob)+"%","90%");
                       
 
-        sp += sprintf(HIY "¡¾±ù    ¶³¡¿" HIM " %9s / %-9s"
-                      HIY "¡¾ºöÊÓ±ù¶³¡¿" HIM " %9s / %s\n"
-                      HIY "¡¾Ñ£    ÔÎ¡¿" HIM " %9s / %-9s"
-                      HIY "¡¾ºöÊÓÑ£ÔÎ¡¿" HIM " %9s / %s\n"
-                      HIY "¡¾ÒÅ    Íü¡¿" HIM " %9s / %-9s"
-                      HIY "¡¾ºöÊÓÒÅÍü¡¿" HIM " %9s / %s\n"
-                      HIY "¡¾Ã¦    ÂÒ¡¿" HIM " %9d / %-9d"
-                      HIY "¡¾»¯½âÃ¦ÂÒ¡¿" HIM " %9d / %d\n"
-                      HIY "¡¾Ğé    Èõ¡¿" HIM " %9s / %-9s"
-                      HIY "¡¾ºöÊÓĞéÈõ¡¿" HIM " %9s / %s\n"
-                      HIY "¡¾×·¼ÓÉËº¦¡¿" HIM " %9s / %-9s"
-                      HIY "¡¾»¯½âÉËº¦¡¿" HIM " %9s / %s\n"
-                      HIY "¡¾ÉËº¦·´ÊÉ¡¿" HIM " %9s / %-9s"
-                      HIY "¡¾Ô¡ÑªÖØÉú¡¿" HIM " %9s / %s\n"                      
-                      HIY "¡¾±Ø É± ÂÊ¡¿" HIM " %9s / %-9s"
-                      HIY "¡¾ÌáÉı¼¼ÄÜ¡¿" HIM " %9d / %d\n",
+        sp += sprintf(HIY "ã€å†°    å‡ã€‘" HIM " %9s / %-9s"
+                      HIY "ã€å¿½è¦–å†°å‡ã€‘" HIM " %9s / %s\n"
+                      HIY "ã€çœ©    æšˆã€‘" HIM " %9s / %-9s"
+                      HIY "ã€å¿½è¦–çœ©æšˆã€‘" HIM " %9s / %s\n"
+                      HIY "ã€éº    å¿˜ã€‘" HIM " %9s / %-9s"
+                      HIY "ã€å¿½è¦–éºå¿˜ã€‘" HIM " %9s / %s\n"
+                      HIY "ã€å¿™    äº‚ã€‘" HIM " %9d / %-9d"
+                      HIY "ã€åŒ–è§£å¿™äº‚ã€‘" HIM " %9d / %d\n"
+                      HIY "ã€è™›    å¼±ã€‘" HIM " %9s / %-9s"
+                      HIY "ã€å¿½è¦–è™›å¼±ã€‘" HIM " %9s / %s\n"
+                      HIY "ã€è¿½åŠ å‚·å®³ã€‘" HIM " %9s / %-9s"
+                      HIY "ã€åŒ–è§£å‚·å®³ã€‘" HIM " %9s / %s\n"
+                      HIY "ã€å‚·å®³åå™¬ã€‘" HIM " %9s / %-9s"
+                      HIY "ã€æµ´è¡€é‡ç”Ÿã€‘" HIM " %9s / %s\n"                      
+                      HIY "ã€å¿… æ®º ç‡ã€‘" HIM " %9s / %-9s"
+                      HIY "ã€æå‡æŠ€èƒ½ã€‘" HIM " %9d / %d\n",
                       query_temp("apply/add_freeze", ob)+"%","90%",query_temp("apply/avoid_freeze", ob)+"%","90%",
                       query_temp("apply/add_dizziness", ob)+"%","90%",query_temp("apply/avoid_dizziness", ob)+"%","90%",                    
                       query_temp("apply/add_forget", ob)+"%","90%",query_temp("apply/avoid_forget", ob)+"%","90%",
@@ -207,26 +207,26 @@ int main(object me, string arg)
                       query_temp("apply/counter_damage", ob)+"%","90%",query_temp("apply/avoid_die", ob)+"%","90%",
                       query_temp("apply/fatal_blow", ob)+"%","90%",query_temp("apply/add_skill", ob),3000);
 
-        sp += HIC "¡Ô" HIY "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤" HIC "¡Ô\n" NOR;
+        sp += HIC "â‰¡" HIY "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€" HIC "â‰¡\n" NOR;
 
-        sp += sprintf(HIG + (ob == me ? "Äã" : ob->name()) + HIG "ÔÚ%sÀïÒÑ¾­ÀúÁ·ÁË " NOR + HIC "%s\n" NOR,
+        sp += sprintf(HIG + (ob == me ? "ä½ " : ob->name()) + HIG "åœ¨%sè£¡å·²ç¶“æ­·ç·´äº† " NOR + HIC "%s\n" NOR,
                         LOCAL_MUD_NAME(), time_period(query("online_time", ob)));
 
         /*
         if (MEMBER_D->is_valid_member(ob))
-                sp += sprintf(HIG + (ob == me ? "Äã" : ob->name()) + HIG "¿ÉÓÃÀ´ÀëÏßÁ·¹¦Ê±¼ä»¹ÓĞ " NOR + HIY "ÎŞÏŞÖÆ\n" NOR);
+                sp += sprintf(HIG + (ob == me ? "ä½ " : ob->name()) + HIG "å¯ç”¨ä¾†é›¢ç·šç·´åŠŸæ™‚é–“é‚„æœ‰ " NOR + HIY "ç„¡é™åˆ¶\n" NOR);
         else
         */
         {
                 if( query("online_time", ob)/3<query("offline_time", ob) )
                         set("offline_time",query("online_time",  ob)/3, ob);
-                sp += sprintf(HIG + (ob == me ? "Äã" : ob->name()) + HIG "¿ÉÓÃÀ´ÀëÏßÁ·¹¦Ê±¼ä»¹ÓĞ " NOR + HIY "%s\n" NOR,
+                sp += sprintf(HIG + (ob == me ? "ä½ " : ob->name()) + HIG "å¯ç”¨ä¾†é›¢ç·šç·´åŠŸæ™‚é–“é‚„æœ‰ " NOR + HIY "%s\n" NOR,
                               time_period(query("online_time", ob)/3-query("offline_time", ob)));
         }
 
-        sp += sprintf(HIG + (ob == me ? "Äã" : ob->name()) + HIG "½ñÌìµÄË«±¶¾­ÑéÊ±¼ä»¹Óà " NOR + HIW "%s\n" NOR,
+        sp += sprintf(HIG + (ob == me ? "ä½ " : ob->name()) + HIG "ä»Šå¤©çš„é›™å€ç¶“é©—æ™‚é–“é‚„ä½™ " NOR + HIW "%s\n" NOR,
                       time_period(query("time_reward/quest", ob)));
-        sp += sprintf(HIG + (ob == me ? "Äã" : ob->name()) + HIG "½ñÌìµÄ¸ßĞ§Á·¹¦Ê±¼ä»¹Óà " NOR + HIM "%s\n" NOR,
+        sp += sprintf(HIG + (ob == me ? "ä½ " : ob->name()) + HIG "ä»Šå¤©çš„é«˜æ•ˆç·´åŠŸæ™‚é–“é‚„ä½™ " NOR + HIM "%s\n" NOR,
                       time_period(query("time_reward/study", ob)));
 
 

@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Ğ¡¾¶");
+        set("short", "å°å¾‘");
         set("long", @LONG
-Ò»ÌõÎåÉ«²ÊÊ¯Ğ¡¾¶Ö±Í¨¾«Éá£¬Á½ÅÔÖÖÂúÏÊ»¨£¬Îå²ÊçÍ·×¡£Â·±ß¸ü
-ÓĞ¸÷ÖÖ¹ûÊ÷£¬¹û(yiguo)ÒÑÊìÍ¸,ÉõÎªÓÕÈË¡£Ò»ÉÈÓñÃÅÔÚÑô¹âÏÂ·İÍâ¿É
-°®¡£
+ä¸€æ¢äº”è‰²å½©çŸ³å°å¾‘ç›´é€šç²¾èˆï¼Œå…©æ—ç¨®æ»¿é®®èŠ±ï¼Œäº”å½©ç¹½ç´›ã€‚è·¯é‚Šæ›´
+æœ‰å„ç¨®æœæ¨¹ï¼Œæœ(yiguo)å·²ç†Ÿé€,ç”šç‚ºèª˜äººã€‚ä¸€æ‰‡ç‰é–€åœ¨é™½å…‰ä¸‹ä»½å¤–å¯
+æ„›ã€‚
 LONG );
         set("exits", ([ /* sizeof() == 4 */
                 "eastup" : __DIR__"gu3",
@@ -17,7 +17,7 @@ LONG );
  
         ]));
         set("outdoors","tieflag");      
-        create_door("westdown","ÓñÃÅ","eastup",DOOR_CLOSED);         
+        create_door("westdown","ç‰é–€","eastup",DOOR_CLOSED);         
         set("coor/x",90);
         set("coor/y",10);
         set("coor/z",-10);
@@ -30,20 +30,20 @@ void init()
 int do_get(string arg)
 {
         object swo;
-        if( query("mark/been_get")>10) return notify_fail("¹û×ÓÒÑ±»Õª¹âÁË¡£\n");
+        if( query("mark/been_get")>10) return notify_fail("æœå­å·²è¢«æ‘˜å…‰äº†ã€‚\n");
         if(random(1000)>10) 
         { 
                 swo=new(__DIR__"obj/yiguo");
                 swo->move(this_player());
                 addn("mark/been_get",1);
-                write("Äã´ÓÊ÷ÉÏÕªÁËÒ»¸ö¹û×Ó¡£\n" );
+                write("ä½ å¾æ¨¹ä¸Šæ‘˜äº†ä¸€å€‹æœå­ã€‚\n" );
         }
         else
         { 
                 swo=new(__DIR__"obj/yiguo1");
                 swo->move(this_player());
                 addn("mark/been_get",1);
-                write("Äã´ÓÊ÷ÉÏÕªÁËÒ»¸ö¹û×Ó. \n" );
+                write("ä½ å¾æ¨¹ä¸Šæ‘˜äº†ä¸€å€‹æœå­. \n" );
         }
         
         return 1; 

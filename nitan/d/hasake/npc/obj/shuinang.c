@@ -1,24 +1,24 @@
-// shuinang.c  Ë®ÄÒ
+// shuinang.c  æ°´å›Š
 
 inherit ITEM;
 inherit F_LIQUID;
 
 void create()
 {
-        set_name("Ë®ÄÒ", ({"shuinang", "wineskin", "skin"}));
+        set_name("æ°´å›Š", ({"shuinang", "wineskin", "skin"}));
         set_weight(500);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇ×°ÂúÇåË®µÄË®ÄÒ¡£\n");
-                set("unit", "Ö»");
+                set("long", "é€™æ˜¯è£æ»¿æ¸…æ°´çš„æ°´å›Šã€‚\n");
+                set("unit", "åª");
                 set("value", 200);
                 set("max_liquid", 300);
         }
 
         set("liquid", ([
                 "type": "water",
-                "name": "ÌìÉ½Ñ©Ë®",
+                "name": "å¤©å±±é›ªæ°´",
                 "remaining": 10,
                 "drunk_apply": 30,
         ]));

@@ -4,15 +4,15 @@ inherit ITEM;
 void create()
 {
                     
-        set_name(RED"ÌìÀÎÈë¿Ú"NOR, ({ "prison door","door"}) );
+        set_name(RED"å¤©ç‰¢å…¥å£"NOR, ({ "prison door","door"}) );
         set_weight(5);
         set("no_get",1);
 
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", GRN"´ÓÕâ¸öÈë¿Ú¿ÉÒÔ½øÈëµØÏÂÌìÀÎÃÔ¹¬¸±±¾¡£(enter door)\n"NOR); 
-                set("unit", "¸ö");
+                set("long", GRN"å¾žé€™å€‹å…¥å£å¯ä»¥é€²å…¥åœ°ä¸‹å¤©ç‰¢è¿·å®®å‰¯æœ¬ã€‚(enter door)\n"NOR); 
+                set("unit", "å€‹");
                 set("lore",1);
                 set("value", 20);
         }
@@ -30,7 +30,7 @@ int do_enter(string arg) {
                 return 0;
         time = this_player()->query_temp("maze/time")+30-time();
         if(time>0)
-                return notify_fail("Äã»¹ÐèÒªµÈ"+CHINESE_D->chinese_period(time)+"²ÅÄÜ½øÈëÌìÀÎ¸±±¾¡£\n");
+                return notify_fail("ä½ é‚„éœ€è¦ç­‰"+CHINESE_D->chinese_period(time)+"æ‰èƒ½é€²å…¥å¤©ç‰¢å‰¯æœ¬ã€‚\n");
         FUBEN_D->enter_virtual_maze(this_player(), "prison");
         return 1;
 }

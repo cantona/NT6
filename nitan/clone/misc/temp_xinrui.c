@@ -43,7 +43,7 @@ void create()
         string id;
         ::create();
         id = XINRUI_D->query_new_id();
-        set_name( "ÄàÌ¶ĞÂÈñ" , ({ id }) );
+        set_name( "æ³¥æ½­æ–°éŠ³" , ({ id }) );
         setup();
         restore();
 }

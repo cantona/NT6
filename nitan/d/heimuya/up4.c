@@ -12,12 +12,12 @@ int do_insert(string arg);
 
 void create()
 {
-        set("short", "ÐüÑÂ");
+        set("short", "æ‡¸å´–");
         set("long", @LONG
-ÓÖÒ»×ù¶¸ÇÍµÄÐüÑÂÁ¢ÔÚÁËÄãµÄÃæÇ°¡£ÐüÑÂÉÏ·Â·ðÓÐ×ù°×É«µÄ½¨Öþ£¬
-¿ÉÔÆÑÌçÔÈÆ£¬¿´²»ÇåÎú¡£ÑÂÉÏÓÖ´¹ÏÂÒ»ÌõÉþË÷(rope)£¬¿´ÉÏÈ¥ÏóÊÇÐü
-ÑÂÉÏÏÂ»¥Í¨ÏûÏ¢µÄ¹¤¾ß£¬ÒªÏë°ì·¨ÕÒÆäËûµÄÅÆ×Ó°¡¡£ÉþË÷µÄÉÏÃæËÆºõ
-ÒþÔ¼ÓÐÒ»¸öµõÀº(basket)£¬ÐüÑÂµÄÇ½ÉÏËÆºõÓÐÒ»¸öÏ»×Ó(xiazi)¡£
+åˆä¸€åº§é™¡å³­çš„æ‡¸å´–ç«‹åœ¨äº†ä½ çš„é¢å‰ã€‚æ‡¸å´–ä¸Šä»¿ä½›æœ‰åº§ç™½è‰²çš„å»ºç¯‰ï¼Œ
+å¯é›²ç…™ç¹šç¹žï¼Œçœ‹ä¸æ¸…æ™°ã€‚å´–ä¸Šåˆåž‚ä¸‹ä¸€æ¢ç¹©ç´¢(rope)ï¼Œçœ‹ä¸ŠåŽ»è±¡æ˜¯æ‡¸
+å´–ä¸Šä¸‹äº’é€šæ¶ˆæ¯çš„å·¥å…·ï¼Œè¦æƒ³è¾¦æ³•æ‰¾å…¶ä»–çš„ç‰Œå­å•Šã€‚ç¹©ç´¢çš„ä¸Šé¢ä¼¼ä¹Ž
+éš±ç´„æœ‰ä¸€å€‹åŠç±ƒ(basket)ï¼Œæ‡¸å´–çš„ç‰†ä¸Šä¼¼ä¹Žæœ‰ä¸€å€‹åŒ£å­(xiazi)ã€‚
 LONG );
 
     set("exits", ([
@@ -25,9 +25,9 @@ LONG );
     ]));
 
     set("item_desc", ([
-        "basket": "ÄÇÊÇÒ»¸öµôÀº£¬¿´Ñù×ÓÓÐÐ©¹Å¹Ö¡£\n",
-        "rope"  : "Éþ×Ó¾ÍÊÇÉþ×Ó£¬¿ÉÄÜÊÇÏòÉÏµÄ¹¤¾ß¡£\n",
-        "xiazi" : "ÕâÊÇÒ»¸öÏ»×Ó£¬¿´Ñù×ÓÊÇÒ»¸ö¿ª¹Ø£¬Ï»×ÓµÄ²àÃæÓÐÒ»¸ö²å¿×¡£\n",
+        "basket": "é‚£æ˜¯ä¸€å€‹æŽ‰ç±ƒï¼Œçœ‹æ¨£å­æœ‰äº›å¤æ€ªã€‚\n",
+        "rope"  : "ç¹©å­å°±æ˜¯ç¹©å­ï¼Œå¯èƒ½æ˜¯å‘ä¸Šçš„å·¥å…·ã€‚\n",
+        "xiazi" : "é€™æ˜¯ä¸€å€‹åŒ£å­ï¼Œçœ‹æ¨£å­æ˜¯ä¸€å€‹é–‹é—œï¼ŒåŒ£å­çš„å´é¢æœ‰ä¸€å€‹æ’å­”ã€‚\n",
     ]));
      set("no_clean_up", 0);
     setup();
@@ -50,16 +50,16 @@ void check_trigger()
                 set("insert_trigger", 1, room);
                 set("exits/enter", __DIR__"basket");
                 set("exits/out", __FILE__, room);
-                message("vision", "¡°°È¡±µÄÒ»Éù£¬ÄãÊÖÖÐµÄÁîÅÆÒÑ±»ÕÛ¶Ï£¬Ö»¼ûÒ»¸ö"
-                        "µôÀº(basket)´ÓÌì¶ø½µ£¬Äã²»½ûÒ»Õú£¡\n", this_object());
+                message("vision", "â€œå­â€çš„ä¸€è²ï¼Œä½ æ‰‹ä¸­çš„ä»¤ç‰Œå·²è¢«æŠ˜æ–·ï¼Œåªè¦‹ä¸€å€‹"
+                        "æŽ‰ç±ƒ(basket)å¾žå¤©è€Œé™ï¼Œä½ ä¸ç¦ä¸€æ€”ï¼\n", this_object());
                 set("item_desc", ([
-                    "basket" : "ÕâÊÇÒ»¸öµôÀº£¬ÊÇ´«ËµÖÐµÄ½»Í¨¹¤¾ß¡£\n",
+                    "basket" : "é€™æ˜¯ä¸€å€‹æŽ‰ç±ƒï¼Œæ˜¯å‚³èªªä¸­çš„äº¤é€šå·¥å…·ã€‚\n",
                 ]));
                 remove_call_out("on_board");
                 call_out("on_board", 15);
             }
             else
-                message("vision", "¿´Ñù×ÓÄãµÃµÈÏÂ²¦¶ù¡£\n",this_object() );
+                message("vision", "çœ‹æ¨£å­ä½ å¾—ç­‰ä¸‹æ’¥å…’ã€‚\n",this_object() );
         }
         else
             message("vision", "ERROR: basket not found\n", this_object() );
@@ -71,8 +71,8 @@ void on_board()
     object room, me = this_player();
 
     if( !query("exits/enter") ) return;
-    tell_object(me, HIG"Ö»¼ûµôÀº»º»ºÏòÉÏ£¬ËÄÖÜÎÞÏÞÃÀºÃ£¬"
-                "ÄãËÆºõÖÃÉíÓÚÒ»´¦ÈË¼äÏÉ¾³ÎÞÒì¡£\n"NOR);
+    tell_object(me, HIG"åªè¦‹æŽ‰ç±ƒç·©ç·©å‘ä¸Šï¼Œå››å‘¨ç„¡é™ç¾Žå¥½ï¼Œ"
+                "ä½ ä¼¼ä¹Žç½®èº«äºŽä¸€è™•äººé–“ä»™å¢ƒç„¡ç•°ã€‚\n"NOR);
 
     if( room = find_object(__DIR__"basket") )
     {
@@ -89,7 +89,7 @@ void arrive()
     if( room = find_object(__DIR__"basket") )
     {
         set("exits/out", __DIR__"chengdedian", room);
-        message("vision", "ÄãÑÛÇ°Ò»ÁÁ£¬Ò»´±´±°×É«½¨ÖþÒÙÁ¢ÑÛÇ°£¬ö®ÊÇ»Ô»Í¡£\n",room );
+        message("vision", "ä½ çœ¼å‰ä¸€äº®ï¼Œä¸€å¹¢å¹¢ç™½è‰²å»ºç¯‰å±¹ç«‹çœ¼å‰ï¼ŒéœŽæ˜¯è¼ç…Œã€‚\n",room );
     }
     remove_call_out("close_passage");
     call_out("close_passage", 20);
@@ -113,11 +113,11 @@ int do_insert(string arg)
     me=this_player();
 
     if( !arg || arg=="" ) return 0;
-    if( arg=="¿¨" ) arg = "card4";   
+    if( arg=="å¡" ) arg = "card4";   
     if( arg=="card4")
     {
         if( !objectp(ob = present(arg, me)) )
-                return notify_fail("ÄãÉíÉÏÃ»ÓÐÕâÑù¶«Î÷¡£\n");
+                return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™æ¨£æ±è¥¿ã€‚\n");
 
         if( !query_temp("mark/cards", me) )
                 set_temp("mark/cards", 1, me);
@@ -130,14 +130,14 @@ int do_insert(string arg)
         }
         else    {
                 addn_temp("mark/cards", 1, me);
-                message("vision", "àâµÄÒ»Éù£¬Äã¿´µ½µôÀºÏòÏÂÒ»½Ú¡£\n",me );
+                message("vision", "â–¡çš„ä¸€è²ï¼Œä½ çœ‹åˆ°æŽ‰ç±ƒå‘ä¸‹ä¸€ç¯€ã€‚\n",me );
         }
     }
     else
     {
         if( !objectp(ob = present(arg, me)) )
-                return notify_fail("ÄãÉíÉÏÃ»ÓÐÕâÑù¶«Î÷¡£\n");
-        else    return notify_fail(ob->name() + "ºÃÏñ¸ú²å¿×²»ºÏ£¬ÔõÃ´Ò²²å²»½øÈ¥¡£\n");
+                return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™æ¨£æ±è¥¿ã€‚\n");
+        else    return notify_fail(ob->name() + "å¥½åƒè·Ÿæ’å­”ä¸åˆï¼Œæ€Žéº¼ä¹Ÿæ’ä¸é€²åŽ»ã€‚\n");
     }
     return 1;
 }

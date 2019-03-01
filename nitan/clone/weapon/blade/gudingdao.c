@@ -6,21 +6,21 @@ inherit BLADE;
 
 void create()
 {
-         set_name("¹Å¶§µ¶", ({"guding dao", "dao", "blade", }) );
+         set_name("å¤éŒ åˆ€", ({"guding dao", "dao", "blade", }) );
          set_weight(10000);
          if( clonep() )
                  set_default_object(__FILE__);
          else {
-                 set("unit", "±ú");
+                 set("unit", "æŸ„");
                  set("value", 0);
                  set("no_sell", 1);
                  set("no_give", 1);
                  set("no_drop", 1);
                  set("no_put", 1);
                  set("material", "steel");
-                 set("long", "Ò»°ÑĞâ¼£°ß²µµÄ³¤µ¶£¬·İÁ¿Ïàµ±µÄ³ÁÖØ¡£\n");
-                 set("wield_msg", "$NÄ¨ÁËÄ¨$nÉÏµÄ»Ò³¾£¬ÎÕÔÚÊÖÀï¡£\n");
-                 set("unequip_msg", "$N½«$n°óµ½Éíºó¡£\n");
+                 set("long", "ä¸€æŠŠé½è·¡æ–‘é§çš„é•·åˆ€ï¼Œä»½é‡ç›¸ç•¶çš„æ²‰é‡ã€‚\n");
+                 set("wield_msg", "$NæŠ¹äº†æŠ¹$nä¸Šçš„ç°å¡µï¼Œæ¡åœ¨æ‰‹è£¡ã€‚\n");
+                 set("unequip_msg", "$Nå°‡$nç¶åˆ°èº«å¾Œã€‚\n");
          }
          init_blade(60);
          setup();

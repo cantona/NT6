@@ -9,8 +9,8 @@ inherit F_GUARDER;
 
 void create()
 {
-        set_name("º×±ÊÎÌ", ({ "hebi weng", "hebi", "weng" }));
-        set("gender", "ÄÐÐÔ");
+        set_name("é¶´ç­†ç¿", ({ "hebi weng", "hebi", "weng" }));
+        set("gender", "ç”·æ€§");
         set("shen_type", -1);
         set("age", 50);
         set("str", 30);
@@ -55,12 +55,12 @@ void create()
 
         prepare_skill("strike", "xuanming-zhang");
              
-        create_family("ÐþÚ¤¹È", 2, "µÜ×Ó");
+        create_family("çŽ„å†¥è°·", 2, "å¼Ÿå­");
 
         set("no_teach", ([
-                "xuanming-shengong" : "ÐþÚ¤Éñ¹¦ÒªÎÒÊ¦¸¸°ÙËðµÀÈËÇ××Ô´«ÊÚ¡£",
-                "xuanming-zhang"    : "ÐþÚ¤ÉñÕÆÒªÎÒÊ¦¸¸Ç××Ô´«ÊÚ£¬Äã»¹ÊÇÈ¥ÕÒËûÀÏÈË¼Ò°É£¡",
-                "dulong-shenzhua"   : "Õâ¸öÄã»¹ÊÇÕÒÎÒÊ¦ÐÖÂ¹ÕÈ¿Í°É£¬Ëû±ÈÎÒÀ÷º¦¶àÁË£¡",
+                "xuanming-shengong" : "çŽ„å†¥ç¥žåŠŸè¦æˆ‘å¸«çˆ¶ç™¾æé“äººè¦ªè‡ªå‚³æŽˆã€‚",
+                "xuanming-zhang"    : "çŽ„å†¥ç¥žæŽŒè¦æˆ‘å¸«çˆ¶è¦ªè‡ªå‚³æŽˆï¼Œä½ é‚„æ˜¯åŽ»æ‰¾ä»–è€äººå®¶å§ï¼",
+                "dulong-shenzhua"   : "é€™å€‹ä½ é‚„æ˜¯æ‰¾æˆ‘å¸«å…„é¹¿æ–å®¢å§ï¼Œä»–æ¯”æˆ‘åŽ²å®³å¤šäº†ï¼",
         ])); 
 
         set("chat_chance_combat", 120);
@@ -73,10 +73,10 @@ void create()
         }));
 
         set("inquiry", ([
-                "ÕÅÎÞ¼É"    :   "ºß£¬³ôÐ¡×ÓÂÅ´Î»µÎÒ´óÊÂ£¡ÎÒ·ÇÉ±ÁËËû²»¿É£¡\n",
-                "ÕÔÃô"      :   "ÄÇÑ¾Í·¹î¼Æ¶à¶Ë£¬Íü¶÷¸ºÒå£¬Í÷ÎÒÐÖµÜÎªËý³öÉúÈëËÀ¡£\n",
-                "°ÙËðµÀÈË"  :   "ËûÊÇÎÒ¶÷Ê¦£¬ÄãÎÊÕâ¸ÉÊ²Ã´£¿\n",
-                "Â¹ÕÈ¿Í"    :   "ËûÊÇÎÒÊ¦ÐÖ£¬ÎÒÃÇ´ÓÐ¡¸ú×ÅÊ¦¸¸Ñ§ÒÕ£¬Ç×Í¬ÊÖ×ã¡£\n", 
+                "å¼µç„¡å¿Œ"    :   "å“¼ï¼Œè‡­å°å­å±¢æ¬¡å£žæˆ‘å¤§äº‹ï¼æˆ‘éžæ®ºäº†ä»–ä¸å¯ï¼\n",
+                "è¶™æ•"      :   "é‚£ä¸«é ­è©­è¨ˆå¤šç«¯ï¼Œå¿˜æ©è² ç¾©ï¼Œæž‰æˆ‘å…„å¼Ÿç‚ºå¥¹å‡ºç”Ÿå…¥æ­»ã€‚\n",
+                "ç™¾æé“äºº"  :   "ä»–æ˜¯æˆ‘æ©å¸«ï¼Œä½ å•é€™å¹¹ä»€éº¼ï¼Ÿ\n",
+                "é¹¿æ–å®¢"    :   "ä»–æ˜¯æˆ‘å¸«å…„ï¼Œæˆ‘å€‘å¾žå°è·Ÿè‘—å¸«çˆ¶å­¸è—ï¼Œè¦ªåŒæ‰‹è¶³ã€‚\n", 
         ]));
 
         set_temp("apply/attack", 80);
@@ -96,27 +96,27 @@ void create()
 
 void attempt_apprentice(object ob)
 {
-        tell_object(ob, "ÐþÚ¤¹ÈÔÝ²»¿ª·Å¡£\n");
+        tell_object(ob, "çŽ„å†¥è°·æš«ä¸é–‹æ”¾ã€‚\n");
         return;
 
         if (! permit_recruit(ob))
                 return;
 
-        if( query("family/master_name", ob) == "Â¹ÕÈ¿Í" )
+        if( query("family/master_name", ob) == "é¹¿æ–å®¢" )
         {
-                command("say Äã¼ÈÈ»ÒÑµÃµ½ÎÒÊ¦ÐÖÖ¸µã£¬»¹ÊÇºÃºÃ¸ú×ÅËûÑ§°É£¡");
+                command("say ä½ æ—¢ç„¶å·²å¾—åˆ°æˆ‘å¸«å…„æŒ‡é»žï¼Œé‚„æ˜¯å¥½å¥½è·Ÿè‘—ä»–å­¸å§ï¼");
                 return;
         }
 
         if( query("shen", ob)>0 )
         {
-                command("say ÎÒÐþÚ¤¹ÈÏòÀ´²»ºÍÄãÃÇÕâÐ©ÕýµÀÈËÊ¿½»Íù¡£");
-                command("say Äã»¹ÊÇÇë»Ø°É£¡");
+                command("say æˆ‘çŽ„å†¥è°·å‘ä¾†ä¸å’Œä½ å€‘é€™äº›æ­£é“äººå£«äº¤å¾€ã€‚");
+                command("say ä½ é‚„æ˜¯è«‹å›žå§ï¼");
                 return;
         }
 
         command("nod");
-        command("say ½ñÈÕÎÒ¾ÍÔÝÇÒÊÕÏÂÄã£¬ÈÕºó¶¨Ðë¿Ì¿àÁ·Îä¡£");
+        command("say ä»Šæ—¥æˆ‘å°±æš«ä¸”æ”¶ä¸‹ä½ ï¼Œæ—¥å¾Œå®šé ˆåˆ»è‹¦ç·´æ­¦ã€‚");
         command("recruit "+query("id", ob));
 }
 
@@ -124,50 +124,50 @@ int accept_ask(object me, string topic)
 {
         switch (topic)
         {
-        case "ÕÆ´ò·É»¨" :
+        case "æŽŒæ‰“é£›èŠ±" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/feihua-zhang/fei",
-                           "name"    : "ÕÆ´ò·É»¨",
+                           "name"    : "æŽŒæ‰“é£›èŠ±",
                            "sk1"     : "feihua-zhang",
                            "lv1"     : 40,
                            "gongxian": 100,
                            "shen"    : -2000, ]));
                 break;
 
-        case "¾í×Ö¾ö" :
+        case "å·å­—æ±º" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/piaofeng-quan/juan",
-                           "name"    : "¾í×Ö¾ö",
+                           "name"    : "å·å­—æ±º",
                            "sk1"     : "piaofeng-quan",
                            "lv1"     :  30,
                            "gongxian":  80,
                            "shen"    : -500, ]));
                 break;
 
-        case "²ÐÔÂ´Ì" :
+        case "æ®˜æœˆåˆº" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/jingyue-bifa/ci",
-                           "name"    : "²ÐÔÂ´Ì",
+                           "name"    : "æ®˜æœˆåˆº",
                            "sk1"     : "jingyue-bifa",
                            "lv1"     : 30,
                            "gongxian": 200,
                            "shen"    : -2400, ]));
                 break;
 
-        case "ÄÚµãÇ¬À¤" :
+        case "å…§é»žä¹¾å¤" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/hexing-bifa/dian",
-                           "name"    : "ÄÚµãÇ¬À¤",
+                           "name"    : "å…§é»žä¹¾å¤",
                            "sk1"     : "hexing-bifa",
                            "lv1"     : 100,
                            "gongxian": 320,
                            "shen"    : -8000, ]));
                 break;
 
-        case "ÈçÓ°ÏàËæ" :
+        case "å¦‚å½±ç›¸éš¨" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/xuanming-zhang/ying",
-                           "name"    : "ÈçÓ°ÏàËæ",
+                           "name"    : "å¦‚å½±ç›¸éš¨",
                            "sk1"     : "xuanming-zhang",
                            "lv1"     :  100,
                            "dodge"   :  180,
@@ -175,7 +175,7 @@ int accept_ask(object me, string topic)
                            "shen"    : -32000, ]));
                 break;
 
-         case "º×ÐÎ±Ê" :
+         case "é¶´å½¢ç­†" :
                 return MASTER_D->give_item(me, this_object(),
                                (["item"     :  BI,
                                  "master"   :  1,

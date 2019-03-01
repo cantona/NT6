@@ -4,18 +4,18 @@ inherit SKILL;
 string type() { return "knowledge"; } 
 
 int is_fmsk() { return 1; }
-string family_name() { return "ĞÇËŞÅÉ"; }
+string family_name() { return "æ˜Ÿå®¿æ´¾"; }
 
 int valid_learn(object me)
 {        
         if (me->query_skill("sanyin-wugongzhao", 1) < 30)
-                return notify_fail("ÄãÈıÒõòÚò¼×¦»ğºò²»×ã£¬ÎŞ·¨ÑĞÏ°±ù²Ï¹¦¡£\n");        
+                return notify_fail("ä½ ä¸‰é™°èœˆèš£çˆªç«å€™ä¸è¶³ï¼Œç„¡æ³•ç ”ç¿’å†°è ¶åŠŸã€‚\n");        
         
         if( query("family/family_name", me) != family_name() )
-                return notify_fail("±ù²Ï¹¦Ö»ÄÜĞÇËŞÅÉµÜ×Ó·½¿ÉÑĞÏ°¡£\n");
+                return notify_fail("å†°è ¶åŠŸåªèƒ½æ˜Ÿå®¿æ´¾å¼Ÿå­æ–¹å¯ç ”ç¿’ã€‚\n");
 
         if (me->query_skill("bingchan-gong", 1) / 2 > me->query_skill("xingxiu-qishu", 1)) 
-                return notify_fail("ÄãĞÇËŞÆæÊõµÈ¼¶²»×ã£¬ÎŞ·¨¼ÌĞøÑĞÏ°±ù²Ï¹¦¡£\n"); 
+                return notify_fail("ä½ æ˜Ÿå®¿å¥‡è¡“ç­‰ç´šä¸è¶³ï¼Œç„¡æ³•ç¹¼çºŒç ”ç¿’å†°è ¶åŠŸã€‚\n"); 
 
         return 1;
 }

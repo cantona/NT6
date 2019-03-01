@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ɽ·");
+        set("short", "山路");
         set("long", @LONG
-һ�Ҿ޴���ٲ������������Խɽ�䣬ˮ����Ũ�÷·���Ե���
-ˮ�������ɽ�ͼ����𱡻������������۲�ɢ��������ˮ�����������
+一掛巨大的瀑布白龍出霄般橫越山間，水氣已濃得仿佛可以滴下
+水珠兒來。山巒間升起薄弧的青霧，凝聚不散。嘩嘩的水聲震耳欲聾。
 LONG );
         set("exits", ([
                 "north" : __DIR__"tohsq7",

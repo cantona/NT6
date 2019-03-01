@@ -1,4 +1,4 @@
-// yangyandan.c ÑøÑÕµ¤
+// yangyandan.c é¤Šé¡ä¸¹
 // Last Modified by Winder on Mar. 5 2001
 
 inherit ITEM;
@@ -12,12 +12,12 @@ void init()
 
 void create()
 {
-        set_name(HIW"ÑøÑÕµ¤"NOR, ({"yangyan dan", "dan"}));
-        set("unit", "Á£");
+        set_name(HIW"é¤Šé¡ä¸¹"NOR, ({"yangyan dan", "dan"}));
+        set("unit", "ç²’");
         set("vegetable", 0);
         set("nostrum", 0);
         set("level", 300);
-        set("long", "ÕâÊÇÒ»Á£ÓñÑ©¿É°®µÄÑøÑÕµ¤¡£\n");
+        set("long", "é€™æ˜¯ä¸€ç²’ç‰é›ªå¯æ„›çš„é¤Šé¡ä¸¹ã€‚\n");
         set("pour_type", "1");
         setup();
 }
@@ -26,20 +26,20 @@ int do_eat(string arg)
 {
         object me=this_player();
 
-        if(!id(arg)) return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+        if(!id(arg)) return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if(!present(this_object(), me))
-                return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if( me->is_busy() )
-                return notify_fail("±ğ¼±£¬ÂıÂı³Ô£¬Ğ¡ĞÄ±ğÒ­×ÅÁË¡£\n");
+                return notify_fail("åˆ¥æ€¥ï¼Œæ…¢æ…¢åƒï¼Œå°å¿ƒåˆ¥å™è‘—äº†ã€‚\n");
 
         if( query("per", me) >= 40 )
         {
-                message_vision("$NÃ»±ØÒª³ÔÑøÑÕµ¤¡£\n",me);
+                message_vision("$Næ²’å¿…è¦åƒé¤Šé¡ä¸¹ã€‚\n",me);
         }
         else
         {
                 addn("per", 1, me);
-                message_vision("$N³ÔÏÂÒ»Á£ÑøÑÕµ¤£¬ÏÂÒâÊ¶µØÉìÊÖÃşÁËÃşÁ³£¬¾õµÃËÆºõÖåÎÆÊÇ±ÈÔ­À´ÉÙÁËµã¡£\n",me);
+                message_vision("$Nåƒä¸‹ä¸€ç²’é¤Šé¡ä¸¹ï¼Œä¸‹æ„è­˜åœ°ä¼¸æ‰‹æ‘¸äº†æ‘¸è‡‰ï¼Œè¦ºå¾—ä¼¼ä¹çšºç´‹æ˜¯æ¯”åŸä¾†å°‘äº†é»ã€‚\n",me);
                 destruct(this_object());
         }
         return 1;

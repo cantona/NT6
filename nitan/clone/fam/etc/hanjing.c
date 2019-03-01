@@ -4,13 +4,13 @@ inherit ITEM;
 int is_enchase_ob() { return 1; } 
 void create()
 {
-        set_name(HIW "ÉñÖ®º®¾§¡¤±ù" NOR, ({"shenzhi hanjing", "shenzhi", "hanjing"}));
+        set_name(HIW "ç¥ä¹‹å¯’æ™¶ï¹’å†°" NOR, ({"shenzhi hanjing", "shenzhi", "hanjing"}));
         set_weight(300);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "º®ÆøÁıÕÖÔÚËÄÖÜ£¬ÁîÈË²»¸Ò½Ó½ü£¬ÄËÌì½ç¼«º®Ö®Ê¥Îï£¬ÓµÓĞ×ÅÉñÆæµÄÁ¦Á¿¡£\n" NOR);
-                set("unit", "¿é");
+                set("long", HIW "å¯’æ°£ç± ç½©åœ¨å››å‘¨ï¼Œä»¤äººä¸æ•¢æ¥è¿‘ï¼Œä¹ƒå¤©ç•Œæ¥µå¯’ä¹‹è–ç‰©ï¼Œæ“æœ‰è‘—ç¥å¥‡çš„åŠ›é‡ã€‚\n" NOR);
+                set("unit", "å¡Š");
                 set("value", 12000);
                 set("can_be_enchased", 1);
                 set("enchase/type", "all");

@@ -1,14 +1,14 @@
-// xiuxis2.c ��Ϣ��
+// xiuxis2.c 休息室
 
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "��Ϣ��");
+        set("short", "休息室");
         set("long", @LONG
-����һ��ʯ���������м���ż��Ŵ󴲣��������ӣ�������
-����Ϣ�ĵط������й�����ͣ�ʹ�˸���˯�⡣
+這是一間石洞，洞內中間擺著幾張大床，幾張桌子，看來是
+個休息的地方，室中光線柔和，使人更增睡意。
 LONG );
         set("exits", ([
                 "south" : __DIR__"neiting",

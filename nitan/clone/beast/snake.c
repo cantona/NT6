@@ -4,10 +4,10 @@ inherit SNAKE;
 
 void create()
 {
-        set_name("ºÚ¹Ú¾Şòş", ({ "black snake", "she" }) );
-        set("race", "Ò°ÊŞ");
+        set_name("é»‘å† å·¨èŸ’", ({ "black snake", "she" }) );
+        set("race", "é‡ç¸");
         set("age", 20);
-        set("long", "Ò»Ö»ÅÓÈ»´óÎï£¬ËüÑÛÖĞÅç»ğ,ºÃÏóÒªÒ»¿Ú°ÑÄãÍÌÏÂ¡£\n");
+        set("long", "ä¸€åªé¾ç„¶å¤§ç‰©ï¼Œå®ƒçœ¼ä¸­å™´ç«,å¥½è±¡è¦ä¸€å£æŠŠä½ åä¸‹ã€‚\n");
         set("attitude", "aggressive");
         set("qi", 4000);
         set("max_qi", 4000);
@@ -15,7 +15,7 @@ void create()
         set("max_jing", 500);
         set("str", 86);
         set("con", 80);
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "Æß´ç", "Î²°Í" }) );
+        set("limbs", ({ "é ­éƒ¨", "èº«é«”", "ä¸ƒå¯¸", "å°¾å·´" }) );
         set("verbs", ({ "bite" }) );
 
         set("snake_poison", ([
@@ -42,8 +42,8 @@ int convert(string arg)
         object ob;
 
         if (arg!="snake" && arg!="she") return 0;
-        if( query("family/family_name", me) != "Å·ÑôÊÀ¼Ò" )
-                return notify_fail("Äã²»ÄÜ»¯ÉßÎªÕÈ¡£\n");
+        if( query("family/family_name", me) != "æ­é™½ä¸–å®¶" )
+                return notify_fail("ä½ ä¸èƒ½åŒ–è›‡ç‚ºæ–ã€‚\n");
 
-        return notify_fail("ºÚ¹Ú¾ŞòşÉí×ÓÌ«¹ı´Ö´ó£¬ÎŞ·¨»¯ÎªÉßÕÈ¡£\n");
+        return notify_fail("é»‘å† å·¨èŸ’èº«å­å¤ªéç²—å¤§ï¼Œç„¡æ³•åŒ–ç‚ºè›‡æ–ã€‚\n");
 }

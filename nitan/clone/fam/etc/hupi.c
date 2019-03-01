@@ -3,13 +3,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIW "°×»¢Æ¤" NOR, ({ "tiger skin", "skin" }));
+        set_name(HIW "ç™½è™çš®" NOR, ({ "tiger skin", "skin" }));
         set_weight(2000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "Ò»ÕÅ°×»¢Æ¤£¬ÄËÖÆÒÂ¼«Æ·£¬ÊÀ¼äº±ÓĞ¡£\n" NOR);
-                set("unit", "ÕÅ");
+                set("long", HIW "ä¸€å¼µç™½è™çš®ï¼Œä¹ƒåˆ¶è¡£æ¥µå“ï¼Œä¸–é–“ç½•æœ‰ã€‚\n" NOR);
+                set("unit", "å¼µ");
                 set("value", 500000);
         }
         setup();

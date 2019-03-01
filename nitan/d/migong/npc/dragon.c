@@ -11,13 +11,13 @@ int big_blowing();
 
 void create()
 {
-        set_name(HIC "ÉñÄ§»Ê" NOR, ({ "shen mo huang", "shenmo", "huang" }) );
-        set("title", HIY "Ä§×åÖÁ×ğ" NOR);
-        set("gender", "ÄĞĞÔ");
+        set_name(HIC "ç¥é­”çš‡" NOR, ({ "shen mo huang", "shenmo", "huang" }) );
+        set("title", HIY "é­”æ—è‡³å°Š" NOR);
+        set("gender", "ç”·æ€§");
         set("age", 8888);
         set("long", @LONG
-ÕâÊÇÒ»Ö»´ú±íÔÂ£¨Moon£©£¬ÕÆ¹Ü×ÅVampire Land£¬ÆäÄÜÁ¦ÎªÎüÈë´¹¶úÍÃÊŞ²¢·Ö½âËûÃÇµÄ×ÊÁÏÊ¹×Ô¼ºÓµÓĞ²»ËÀÖ®ÉíµÄÄ§×å¡£
-²»ÊÜÈÎºÎÅ²ÒÆ¡¢ÖÂÃüÒ»»÷¡¢ÖÂÔÎ¹¥»÷¡¢Ã¦ÂÒµÄĞ§¹ûÓ°Ïì¡£
+é€™æ˜¯ä¸€åªä»£è¡¨æœˆï¼ˆMoonï¼‰ï¼ŒæŒç®¡è‘—Vampire Landï¼Œå…¶èƒ½åŠ›ç‚ºå¸å…¥å‚è€³å…”ç¸ä¸¦åˆ†è§£ä»–å€‘çš„è³‡æ–™ä½¿è‡ªå·±æ“æœ‰ä¸æ­»ä¹‹èº«çš„é­”æ—ã€‚
+ä¸å—ä»»ä½•æŒªç§»ã€è‡´å‘½ä¸€æ“Šã€è‡´æšˆæ”»æ“Šã€å¿™äº‚çš„æ•ˆæœå½±éŸ¿ã€‚
 LONG );
         set("combat_exp", 500000);
         set("shen_type", 0);
@@ -33,7 +33,7 @@ LONG );
         set("max_jingli", 1500000000);
         set("level", 140);
 
-        set("no_nuoyi", 1); // ²»±»Å²ÒÆÓ°Ïì
+        set("no_nuoyi", 1); // ä¸è¢«æŒªç§»å½±éŸ¿
 
         set("str", 700);
         set("int", 400);
@@ -71,8 +71,8 @@ LONG );
         ]));
 
         set("drops", ([
-                "RA&RANDOM20"    :       100,   // µÍ¼¶ÆÕÍ¨×°±¸
-                "RA&RANDOM30"    :       40,    // µÍ¼¶ÆÕÍ¨×°±¸
+                "RA&RANDOM20"    :       100,   // ä½ç´šæ™®é€šè£å‚™
+                "RA&RANDOM30"    :       40,    // ä½ç´šæ™®é€šè£å‚™
                 "FI&/clone/armor/fenghuang-chai2"           :           20,
                 "FI&/clone/armor/haizhi-xin2"               :           20,
                 "FI&/clone/armor/hong-feihun2"              :           15,
@@ -153,8 +153,8 @@ void init()
 
 int big_blowing()
 {
-        message_vision(HIB "$N" HIB "ÉîÉîµØÎüÈëÒ»¿ÚÆø£¬È«Éí·¢³öÒ«ÑÛµÄ½ğÉ«£¬"
-                       "Õû¸ö¸¹²¿ÕÍ´óÁË¼¸±¶£¡£¡\n" NOR, this_object());
+        message_vision(HIB "$N" HIB "æ·±æ·±åœ°å¸å…¥ä¸€å£æ°£ï¼Œå…¨èº«ç™¼å‡ºè€€çœ¼çš„é‡‘è‰²ï¼Œ"
+                       "æ•´å€‹è…¹éƒ¨è„¹å¤§äº†å¹¾å€ï¼ï¼\n" NOR, this_object());
 
         remove_call_out("hurting");
         call_out("hurting", random(2) + 1);
@@ -166,7 +166,7 @@ int hurting()
         int dam, i , num;
         object *inv;
 
-        message_vision(HIB "$N" HIB "Åç³öÒ»ÍÅ¾Ş´óµÄ»ğÇò£®£®£®£®£®£®Õû¸öÌìµØ¶¼±»»ğÇòÍÌÃ»£¡£¡£¡\n" NOR,
+        message_vision(HIB "$N" HIB "å™´å‡ºä¸€åœ˜å·¨å¤§çš„ç«çƒï¼ï¼ï¼ï¼ï¼ï¼æ•´å€‹å¤©åœ°éƒ½è¢«ç«çƒåæ²’ï¼ï¼ï¼\n" NOR,
                        this_object());
 
         inv = all_inventory(environment(this_object()));
@@ -195,7 +195,7 @@ int hurting()
 
 int accept_fight(object ob)
 {
-        message_vision("$NÒ»Éù³¤Ğ¥£¬ÆËÁË¹ıÀ´¡£\n",
+        message_vision("$Nä¸€è²é•·å˜¯ï¼Œæ’²äº†éä¾†ã€‚\n",
                        this_object(), ob);
         kill_ob(ob);
         return -1;
@@ -215,7 +215,7 @@ mixed hit_ob(object me, object ob, int damage_bouns)
 {
         ob->start_busy(5 + random(5));
         me->receive_wound("qi", 25000 + random(30000), ob);
-        return HIY "$N" HIY "ÖÜÎ§ÎíÆøçÔÈÆ£¬Ö±±ÆµÃ$n" HIY "Í·ÔÎÄ¿Ñ£¡£\n" NOR;
+        return HIY "$N" HIY "å‘¨åœéœ§æ°£ç¹šç¹ï¼Œç›´é€¼å¾—$n" HIY "é ­æšˆç›®çœ©ã€‚\n" NOR;
 }
 
 void heart_beat()
@@ -228,19 +228,19 @@ void heart_beat()
 
 void death_msg()
 {
-        command("chat ÈË¼ä¾ÓÈ»ÓĞÈç´ËÀ÷º¦µÄ½ÇÉ«£¬¿´À´ÎÒÄ§×åÔÚÈË¼äÎŞÁ¢ÉíÖ®µØÁË£¡");
-        message_vision("$N³¤Ğ¥Ò»Éù£¬Ïì³¹ÌìµØ£¬È»ºóÉíÌåÂıÂı±äµÃÍ¸Ã÷£¬ÏûÊ§ÔÚÎŞ¾¡Ä§ÆøÖ®ÖĞ¡£\n", this_object());
+        command("chat äººé–“å±…ç„¶æœ‰å¦‚æ­¤å²å®³çš„è§’è‰²ï¼Œçœ‹ä¾†æˆ‘é­”æ—åœ¨äººé–“ç„¡ç«‹èº«ä¹‹åœ°äº†ï¼");
+        message_vision("$Né•·å˜¯ä¸€è²ï¼ŒéŸ¿å¾¹å¤©åœ°ï¼Œç„¶å¾Œèº«é«”æ…¢æ…¢è®Šå¾—é€æ˜ï¼Œæ¶ˆå¤±åœ¨ç„¡ç›¡é­”æ°£ä¹‹ä¸­ã€‚\n", this_object());
         CHANNEL_D->do_channel(this_object(), "rumor",
-                        "ÌıËµ" + name() + HIM "ÔÚÈË¼äÊÜÈèºó£¬»Øµ½ÁËÄ§×å£¬´Ó´Ë²»ÔÙ³öÃ»ÈË¼ä¡£" NOR);
+                        "è½èªª" + name() + HIM "åœ¨äººé–“å—è¾±å¾Œï¼Œå›åˆ°äº†é­”æ—ï¼Œå¾æ­¤ä¸å†å‡ºæ²’äººé–“ã€‚" NOR);
 }
 
 void random_move()
 {
         if (time() - query_temp("born_time") > 1800)
         {
-                message_vision("$N³¤Ğ¥Ò»Éù£¬Ïì³¹ÌìµØ£¬È»ºóÉíÌåÂıÂı±äµÃÍ¸Ã÷£¬ÏûÊ§ÔÚÎŞ¾¡Ä§ÆøÖ®ÖĞ¡£\n", this_object());
+                message_vision("$Né•·å˜¯ä¸€è²ï¼ŒéŸ¿å¾¹å¤©åœ°ï¼Œç„¶å¾Œèº«é«”æ…¢æ…¢è®Šå¾—é€æ˜ï¼Œæ¶ˆå¤±åœ¨ç„¡ç›¡é­”æ°£ä¹‹ä¸­ã€‚\n", this_object());
                 CHANNEL_D->do_channel(this_object(), "rumor",
-                        "ÌıËµ" + name() + HIM "ÔÚÈË¼ä×ßÁËÒ»Ôâºó£¬°ÙÎŞÁÄÄÎ£¬ÓÖ·µ»ØÁËÄ§½ç¡£" NOR);
+                        "è½èªª" + name() + HIM "åœ¨äººé–“èµ°äº†ä¸€é­å¾Œï¼Œç™¾ç„¡èŠå¥ˆï¼Œåˆè¿”å›äº†é­”ç•Œã€‚" NOR);
                 destruct(this_object());
                 return;
         }

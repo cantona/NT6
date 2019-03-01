@@ -927,44 +927,44 @@
 #undef IPV6
 
 /*
- * moon���������º���
- * milli_clock - ȡϵͳ���뼰ʱ�䡢��������ʼ����
- * luan - ��̨����������ڵ���ʹ��
- * MD5 - ������ܺ��������ڵ�¼����
+ * moon包添加以下函數
+ * milli_clock - 取系統毫秒及時間、從啟動開始連線
+ * luan - 後台輸出函數用于調試使用
+ * MD5 - 單向加密函數，用于登錄連線
  */
 #define PACKAGE_MOON
 /*
- * �� select ģʽ�޸�Ϊ epoll ģʽ
- * ������Ĭ��Ϊ select ģʽ
+ * 將 select 模式修改為 epoll 模式
+ * 不定義默認為 select 模式
  */
 #undef EPOLL
-/* epoll �Ĳ������� */
+/* epoll 的參數設置 */
 #ifdef EPOLL
 /*
- * epoll �����һ��������Ƿ�����Ϣ����ʱ��������
- * ���ʱepoll��Ч�ʺܵ͡�1000������Ч�ʲ�ʮ������
- * Ч�ʲ��ԣ�ÿ��ÿ��һ��������򷵻���Ϣ�����û�й㲥
- * �������һ��������㲥��Ϣ���ܱ�������һ�������������ʱ
- * select - 1000�� ��� msg_buf CPU 30%
- * epoll  - 1000�� ��� msg_buf CPU 50%
- * epoll  - 1000�� ����� msg_buf CPU 4%
- * epoll  - 4000�� ����� msg_buf CPU 16%
+ * epoll 檢測玩家緩沖區、是否有信息、及時清理數據
+ * 檢測時epoll的效率很低、1000人連線效率差十倍以上
+ * 效率測試：每人每秒一條命令、單向返回信息的命令、沒有廣播
+ * 不檢測玩家緩沖區、廣播信息可能保留在玩家緩存區、產生延時
+ * select - 1000人 檢測 msg_buf CPU 30%
+ * epoll  - 1000人 檢測 msg_buf CPU 50%
+ * epoll  - 1000人 不檢測 msg_buf CPU 4%
+ * epoll  - 4000人 不檢測 msg_buf CPU 16%
  *
- * �㲥��Ϣ666��ÿ��㲥1����Ϣ666*666��
- * CPU����40-50%���ҡ���಻��
+ * 廣播消息666人每秒廣播1條消息666*666、
+ * CPU都在40-50%左右、差距不大
  */
 #define EP_CHECK_BUF
-/* epoll һ��������¼�����Ŀ */
+/* epoll 一次最大處理事件的數目 */
 #define EP_MAX_EVENT    256
-/* epoll ����ʱ�ӡ�10����û��socket�¼�������wait */
+/* epoll 監聽時延、10毫秒沒有socket事件、跳出wait */
 #define EP_TIME_OUT     1
-/* ÿ���ٴ��¼���flushһ������ */
+/* 每多少此事件、flush一次數據 */
 #define EP_TICK_FLUSH   3
 /*
- * ��������ϵͳ�����ļ�����Ŀ
- * new_user_handle����Ԥ��10���������������
- * �硢��һ��load�ļ��������ļ���update�ļ������log
- * read�ļ������ݿ�����lpc_socket������Ҫϵͳ������
+ * 重新設置系統最大打開文件的數目
+ * new_user_handle、將預留10個句柄給其他程序
+ * 如、第一次load文件、編譯文件、update文件、輸出log
+ * read文件、數據庫句柄、lpc_socket、都需要系統分配句柄
  */
 #define EP_MAX_CTL      4096
 #endif

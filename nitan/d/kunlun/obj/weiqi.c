@@ -1,4 +1,4 @@
-// weiqi.c Î§Æå
+// weiqi.c åœæ£‹
 
 #include <armor.h>
 
@@ -6,14 +6,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name("Î§Æå", ({ "wei qi", "weiqi", "qi", "go" }));
+        set_name("åœæ£‹", ({ "wei qi", "weiqi", "qi", "go" }));
         set_weight(2000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸±");
+                set("unit", "å‰¯");
                 set("long",
-                        "ÕâÊÇÒ»¸±Î§Æå£¬ÆåÅÌÓÃ´ÅÌúËùÖÆ£¬Æå×ÓÓÃÌúÖı³É¡£\n");
+                        "é€™æ˜¯ä¸€å‰¯åœæ£‹ï¼Œæ£‹ç›¤ç”¨ç£éµæ‰€åˆ¶ï¼Œæ£‹å­ç”¨éµé‘„æˆã€‚\n");
                 set("value", 5000);
                 set("material", "steel");
                 set("armor_prop/armor", 10 );

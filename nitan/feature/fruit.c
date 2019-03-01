@@ -30,19 +30,19 @@ int do_eat(string arg)
         if( !living(this_player()) || this_player()->query_temp("noliving") )
                 return 1;
         if( me->query("jing") < 0 || me->query("qi") < 0 )
-                return notify_fail("ÄãÌ«ÀÛÁË£¬ÊµÔÚÃ»Á¦Æø³ÔÊ²Ã´ÁË¡£\n");
-        if( !this_object()->id( arg ) ) return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+                return notify_fail("ä½ å¤ªç´¯äº†ï¼Œå¯¦åœ¨æ²’åŠ›æ°£åƒä»€éº¼äº†ã€‚\n");
+        if( !this_object()->id( arg ) ) return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if( me->is_busy() )
-                return notify_fail("±ð¼±£¬ÂýÂý³Ô£¬Ð¡ÐÄ±ðÒ­×ÅÁË¡£\n");
+                return notify_fail("åˆ¥æ€¥ï¼Œæ…¢æ…¢åƒï¼Œå°å¿ƒåˆ¥å™Žè‘—äº†ã€‚\n");
         if( me->is_fighting() )
                 me->start_busy(2);
         if( !query( "fruit_remaining" )  )
-                return notify_fail("ÄãÄÃ×ÅÕâ¸ö" + ob->name() + "£¬¿´ÁË°ëÌì¾õµÃÎÞ´¦ÏÂ×ì¡£\n");
+                return notify_fail("ä½ æ‹¿è‘—é€™å€‹" + ob->name() + "ï¼Œçœ‹äº†åŠå¤©è¦ºå¾—ç„¡è™•ä¸‹å˜´ã€‚\n");
         if( (int)me->query("water") >= (int)me->max_food_capacity() ||
                 (int)me->query("food") >= (int)me->max_water_capacity() )
         {
                 if ( msg = query( "over_msg" ) ) notify_fail( msg );
-                else notify_fail("³ÔÄÇÃ´¶à£¿£¿ÕæÌ°ÐÄ£¬Ð¡ÐÄ³ÅËÀÁË¡­¡­\n");
+                else notify_fail("åƒé‚£éº¼å¤šï¼Ÿï¼ŸçœŸè²ªå¿ƒï¼Œå°å¿ƒæ’æ­»äº†â€¦â€¦\n");
                 return 0;
         }
         addn( "fruit_remaining", -1);
@@ -52,9 +52,9 @@ int do_eat(string arg)
                 me->addn("food" ,  query( "food_supply" ) );
                 me->addn( "water" , query( "water_supply" ) );
 
-// hamletµÄÏë·¨£ºÊ³Îï¶ÔÌì¸³ÓÐÓ°Ïì (trill)
-// ¿ÉÒÔÔÚfood,fruitµÈ¼Ó¸ömapping gifts
-// ÕâÑù¶ÔgiftsÓÐÓ°Ïì
+// hamletçš„æƒ³æ³•ï¼šé£Ÿç‰©å°å¤©è³¦æœ‰å½±éŸ¿ (trill)
+// å¯ä»¥åœ¨food,fruitç­‰åŠ å€‹mapping gifts
+// é€™æ¨£å°giftsæœ‰å½±éŸ¿
 
                 if ( gifts = query("gifts") )
                 {
@@ -68,16 +68,16 @@ int do_eat(string arg)
                                 temp *= sign;
                                 if (temp >= 500  && random( 2000 - temp ) == 0 && me->query("age")<22)
                                 {
-//Èç¹ûÕâ¸öplayerÄê¼ÍÐ¡<22£¬¾Í¸ÄÉÆÏÈÌìµÄÌì¸³
-//·ñÔò Ö»Ó°ÏìºóÌìµÄÌì¸³¾Í query_per()ÕâÀàÁË..
-//ÏÖÔÚÕâ¸ö¶«Î÷Ì«Âé·³£¬¶øÇÒÎÒÃÇ¶ÔÏÈÌìºóÌìµÄÌì¸³Ê¹ÓÃÃ»ÓÐÃ÷È·µÄ¸ÅÄî
-//ËùÒÔÎÒ¾Í°ÑËü¶¼¸Ä³ÉÏÈÌìµÄÁË¡£¡ª¡ªlala£¬£±£¹£¹£¸£­£°£±£­£°£·
+//å¦‚æžœé€™å€‹playerå¹´ç´€å°<22ï¼Œå°±æ”¹å–„å…ˆå¤©çš„å¤©è³¦
+//å¦å‰‡ åªå½±éŸ¿å¾Œå¤©çš„å¤©è³¦å°± query_per()é€™é¡žäº†..
+//ç¾åœ¨é€™å€‹æ±è¥¿å¤ªéº»ç…©ï¼Œè€Œä¸”æˆ‘å€‘å°å…ˆå¤©å¾Œå¤©çš„å¤©è³¦ä½¿ç”¨æ²’æœ‰æ˜Žç¢ºçš„æ¦‚å¿µ
+//æ‰€ä»¥æˆ‘å°±æŠŠå®ƒéƒ½æ”¹æˆå…ˆå¤©çš„äº†ã€‚â”€â”€lalaï¼Œï¼‘ï¼™ï¼™ï¼˜ï¼ï¼ï¼‘ï¼ï¼ï¼—
 
-//Ô­À´µÄ½±Àø¿ÉÒÔ³Ôµ½30 30 35 35 µÄÌì¸³ ½øÐÐÁËÏÞÖÆ
+//åŽŸä¾†çš„çŽå‹µå¯ä»¥åƒåˆ°30 30 35 35 çš„å¤©è³¦ é€²è¡Œäº†é™åˆ¶
 //-- qingyun 2004.10.13
-//Õâ¸ö¶«Î÷ÊÇ±ðµÄmudµÄ°É
-//Ô­±¾ÊÇ½¨Á¢ÔÚ²»ÄÜÑ¸ËÙ½µÊ³Îï»ù´¡ÉÏ£¬ÒòÎªÏÀ¿ÍÐÐÓÐÉ³Ä®
-//Õâ¸ö¶«Î÷µÈÍ¬ÓÚËÍÌì¸³¸øÖªµÀµÄÈË 
+//é€™å€‹æ±è¥¿æ˜¯åˆ¥çš„mudçš„å§
+//åŽŸæœ¬æ˜¯å»ºç«‹åœ¨ä¸èƒ½è¿…é€Ÿé™é£Ÿç‰©åŸºç¤Žä¸Šï¼Œå› ç‚ºä¿ å®¢è¡Œæœ‰æ²™æ¼ 
+//é€™å€‹æ±è¥¿ç­‰åŒäºŽé€å¤©è³¦çµ¦çŸ¥é“çš„äºº 
                                         if (me->query(list[i])>=30 )
                                                 sign = 0;
                                         if (me->query("gift/hamlet/"+list[i])>0)
@@ -89,19 +89,19 @@ int do_eat(string arg)
                                                 me->addn("gift/hamlet/"+list[i],1);
                                                 me->addn( list[ i ] , sign );
                                                 me->set( "hamlet_food/" + list[ i ], 0);
-                                                tell_object( me, YEL"ÓÉÓÚÄãÈÕ³£µÄÒûÊ³Ï°¹ß¶øÔì³ÉÁËÄãÌì¸³µÄ¸Ä±ä£¡\n"NOR );
+                                                tell_object( me, YEL"ç”±äºŽä½ æ—¥å¸¸çš„é£²é£Ÿç¿’æ…£è€Œé€ æˆäº†ä½ å¤©è³¦çš„æ”¹è®Šï¼\n"NOR );
                                         }
                                 }
                         }
                 }
                 if ( msg = query( "eat_msg" ) ) message_vision( msg, me, ob );
-                else message_vision( RED"$NÄÃÆð$n£¬ºÝºÝµØÒ§ÁË¼¸¿Ú£¬´óÔÞµÀ£ºÎ¶µÀºÃ¼«ÁË£¡\n" NOR, me, ob);
+                else message_vision( RED"$Næ‹¿èµ·$nï¼Œç‹ ç‹ åœ°å’¬äº†å¹¾å£ï¼Œå¤§è®šé“ï¼šå‘³é“å¥½æ¥µäº†ï¼\n" NOR, me, ob);
         }
         else
         {
-//³Ôµ½×îºóÒ»¿Ú¾Í±ä³É¸öË®¹ûºË
+//åƒåˆ°æœ€å¾Œä¸€å£å°±è®Šæˆå€‹æ°´æžœæ ¸
                 if ( msg = query ("end_msg" ) ) message_vision( msg , me, ob );
-                else message_vision(RED"$N³ÔÍê×îºóÒ»¿Ú$n£¬ÐÄÂúÒâ×ãµÄËµ£ºÕæ²»´í¡£\n", me,ob);
+                else message_vision(RED"$Nåƒå®Œæœ€å¾Œä¸€å£$nï¼Œå¿ƒæ»¿æ„è¶³çš„èªªï¼šçœŸä¸éŒ¯ã€‚\n", me,ob);
                 if ( query("core") )
                 {
                         core = new( "/clone/misc/core.c" );
@@ -137,21 +137,21 @@ int stats( int i )
                         break;
                 case 1:
                         base_long = query("base_long");
-                        set("long",base_long+"£¬ÉÏÃæºÃÏóÓÐÐ©°ßµã£¬²»¹ý»¹²»ËãÏÔÑÛ¡£\n");
+                        set("long",base_long+"ï¼Œä¸Šé¢å¥½è±¡æœ‰äº›æ–‘é»žï¼Œä¸éŽé‚„ä¸ç®—é¡¯çœ¼ã€‚\n");
                         call_out("stats", life/4, 2);
                         break;
                 case 2:
                         base_name = query("base_name");
                         base_long = query("base_long");
-                        set("name","ÓÐµãÀÃÁËµÄ"+base_name );
-                        set("long",base_long+"£¬¿ÉÏ§ÒÑ¾­¿ªÊ¼ÀÃÁË¡£\n");
+                        set("name","æœ‰é»žçˆ›äº†çš„"+base_name );
+                        set("long",base_long+"ï¼Œå¯æƒœå·²ç¶“é–‹å§‹çˆ›äº†ã€‚\n");
                         call_out("stats", life/4, 3);
                         break;
                 case 3:
                         base_name = query("base_name");
                         base_long = query("base_long");
-                        set("name", "ÀÃ" + base_name );
-                        set("long",base_long+"£¬¿ÉÏ§ÒÑ¾­ÀÃÁË£¬É¢·¢³öÒ»¹ÉÒìÎ¶¡£\n");
+                        set("name", "çˆ›" + base_name );
+                        set("long",base_long+"ï¼Œå¯æƒœå·²ç¶“çˆ›äº†ï¼Œæ•£ç™¼å‡ºä¸€è‚¡ç•°å‘³ã€‚\n");
                         call_out("stats", life/4, 4);
                         break;
                 default :
@@ -168,7 +168,7 @@ int stats( int i )
                                 if ( env = environment( this_object() ) )
                                         core->move( env );
                         }
-                        tell_room( environment(this_object()), this_object()->query("name")+"ÖÕÓÚÍêÈ«ÀÃµôÁË¡£\n" );
+                        tell_room( environment(this_object()), this_object()->query("name")+"çµ‚äºŽå®Œå…¨çˆ›æŽ‰äº†ã€‚\n" );
                         destruct( this_object() );
                         break;
         }

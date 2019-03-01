@@ -4,15 +4,15 @@ inherit ITEM;
 
 void create()
 {
-        set_name("ÌúÅÆ", ({ "qulingfeng tiepai", "tiepai", "pai" }) );
+        set_name("éµç‰Œ", ({ "qulingfeng tiepai", "tiepai", "pai" }) );
         set("long","
-Ò»Ãæ×ö³É°ËØÔĞÎ×´µÄÌúÅÆ£¬·­¹ıÀ´¿´£¬±³ÃæĞ´×ÅÒ»¸ö¡°Çú¡±×Ö¡£
+ä¸€é¢åšæˆå…«å¦å½¢ç‹€çš„éµç‰Œï¼Œç¿»éä¾†çœ‹ï¼ŒèƒŒé¢å¯«è‘—ä¸€å€‹â€œæ›²â€å­—ã€‚
 ");
         set_weight(10);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ãæ");
+                set("unit", "é¢");
         }
         setup();
 }

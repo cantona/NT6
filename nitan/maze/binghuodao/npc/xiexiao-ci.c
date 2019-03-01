@@ -6,10 +6,10 @@ int move_bhd();
 
 void create()
 {
-        set_name(HIM "Ð»Ïþ´Ê" NOR, ({ "xiexiao ci", "xiexiao", "ci" }));
-        set("title", HIW "±ù" HIR "»ð" HIC "Ê¹Õß");
-        set("long", "ËýÊÇ¸ºÔð»¤ËÍÍæ¼Òµ½ÖÐÔ­µÄÃØÃÜÊ¹Õß¡£\n");
-        set("gender", "Å®ÐÔ");
+        set_name(HIM "è¬æ›‰è©ž" NOR, ({ "xiexiao ci", "xiexiao", "ci" }));
+        set("title", HIW "å†°" HIR "ç«" HIC "ä½¿è€…");
+        set("long", "å¥¹æ˜¯è² è²¬è­·é€çŽ©å®¶åˆ°ä¸­åŽŸçš„ç§˜å¯†ä½¿è€…ã€‚\n");
+        set("gender", "å¥³æ€§");
         set("age", 20);
         set("max_qi", 99999);
         set("qi", 99999);
@@ -27,7 +27,7 @@ void create()
         set("str", 88);
 
         set("inquiry", ([
-                "ÖÐÔ­" : (: move_bhd :),
+                "ä¸­åŽŸ" : (: move_bhd :),
         ]));
         set("combat_exp", 10000000);
         set("shen_type", 1);
@@ -40,7 +40,7 @@ int move_bhd()
         object me = this_player();
 
         command("wave");
-        command("say »¶Ó­ÔÙ»Øµ½±ù»ðµº£¡");
+        command("say æ­¡è¿Žå†å›žåˆ°å†°ç«å³¶ï¼");
 
         me->move("/d/quanzhou/yongninggang");
         return 1;

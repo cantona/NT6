@@ -5,13 +5,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name( HIG "Æ®Òİ²½·¨" NOR, ({ "wuji" }));
+        set_name( HIG "é£„é€¸æ­¥æ³•" NOR, ({ "wuji" }));
         set_weight(200);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
-                set("long", HIG "ÕâÊÇÒ»±¾²ĞÆÆµÄ¾ÉÊé£¬ÉÏÃæ»­×ÅÎè¶¯µÄĞ¡ÈË¡£\n" NOR);
+                set("unit", "æœ¬");
+                set("long", HIG "é€™æ˜¯ä¸€æœ¬æ®˜ç ´çš„èˆŠæ›¸ï¼Œä¸Šé¢ç•«è‘—èˆå‹•çš„å°äººã€‚\n" NOR);
                 set("value", 100);
                 set("material", "paper");
                 set("skill", ([

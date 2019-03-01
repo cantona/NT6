@@ -1,10 +1,10 @@
 inherit ROOM;
 void create()
 {
-          set("short", "�չ���");
+          set("short", "閉關室");
         set("long", @LONG
-���ﵱ�걾����ɽͯ�ѱչ������ĵط�������ɽͯ����ȥ֮��
-�����ӱ㽫�˴�Ų������÷������Ľ��þ�ס��
+這裡當年本是天山童姥閉關修練的地方，至天山童姥仙去之後，
+虛竹子便將此處挪出，讓梅蘭竹菊四姐妹居住。
 LONG );
           set("sleep_room", 1);
           set("exits",([

@@ -4,12 +4,12 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIY "ÉÍÉÆ" HIR "·£¶ñ" NOR "Áî" NOR,({ "shangfa ling", "ling" }) );
+        set_name(HIY "è³å–„" HIR "ç½°æƒ¡" NOR "ä»¤" NOR,({ "shangfa ling", "ling" }) );
         set_weight(1000);
         set("long", @LONG
-ÕâÊÇÒ»ÃæÓÃ»ÆÍ­ËùÖıµÄÍ­ÅÆ£¬ÕıÃæ¿Ì×Å¡°ÉÍÉÆ¡±£¬±³Ãæ¿Ì×Å¡°·£¶ñ¡±¡£
+é€™æ˜¯ä¸€é¢ç”¨é»ƒéŠ…æ‰€é‘„çš„éŠ…ç‰Œï¼Œæ­£é¢åˆ»è‘—â€œè³å–„â€ï¼ŒèƒŒé¢åˆ»è‘—â€œç½°æƒ¡â€ã€‚
 LONG );
-                set("unit", "Ãæ");
+                set("unit", "é¢");
                 set("value", 0);
                 set("no_sell", 1);
                 set("no_drop", 1);

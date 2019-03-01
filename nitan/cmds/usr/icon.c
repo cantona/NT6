@@ -9,7 +9,7 @@ int main(object me,string arg)
 {
         mixed tmp;
         int ico;
-        string str="",icon=HIR"¿Õ£¬Ã»ÓĞÉèÖÃ"NOR;
+        string str="",icon=HIR"ç©ºï¼Œæ²’æœ‰è¨­ç½®"NOR;
         if( (tmp=query("icon", me)) )
         {
                 if( intp(tmp) )
@@ -24,7 +24,7 @@ int main(object me,string arg)
                 }
         }
 
-        str+=NOR+"ÄãÔ­À´µÄÍ·Ïñ±àºÅÊÇ"+HIY+icon+NOR+"£¡\n";
+        str+=NOR+"ä½ åŸä¾†çš„é ­åƒç·¨è™Ÿæ˜¯"+HIY+icon+NOR+"ï¼\n";
 
         if(arg)
         {
@@ -32,7 +32,7 @@ int main(object me,string arg)
                         return help();
                 icon=sprintf("%d",ico);
                 while( sizeof(icon)<5 )        icon = "0" + icon;
-                str+="ËüÒÑ¾­±»ĞŞ¸ÄÎª"+HIG+icon+NOR+"ÁË£¡\n";
+                str+="å®ƒå·²ç¶“è¢«ä¿®æ”¹ç‚º"+HIG+icon+NOR+"äº†ï¼\n";
                 set("icon", icon, me);
         }
         else help();
@@ -42,10 +42,10 @@ int main(object me,string arg)
 
 int help()
 {
-        write("ÃüÁî¸ñÊ½£º"+HIY+"icon [Í¼±ê±àºÅ]\n"+NOR+
-                "    Äã¿ÉÒÔÓÃ±¾ÃüÁî²éÑ¯ºÍĞŞ¸Ä×Ô¼ºµÄÍ·Ïñ±àºÅ¡£\n"+
-                "    Äã¿ÉÒÔÈ¥[http://www.qqchat.net]²éÑ¯ºÍÑ¡Ôñ×Ô¼ºµÄÍ·ÏñÍ¼±ê±àºÅ¡£\n"+
-                "    Ä¿Ç°Í¼±ê¿ÉÒÔÑ¡Ôñ·¶Î§ÊÇ"+HIR+" 1 - "+MAX_ICONS+NOR+" ¡£\n");
+        write("å‘½ä»¤æ ¼å¼ï¼š"+HIY+"icon [åœ–æ¨™ç·¨è™Ÿ]\n"+NOR+
+                "    ä½ å¯ä»¥ç”¨æœ¬å‘½ä»¤æŸ¥è©¢å’Œä¿®æ”¹è‡ªå·±çš„é ­åƒç·¨è™Ÿã€‚\n"+
+                "    ä½ å¯ä»¥å»[http://www.qqchat.net]æŸ¥è©¢å’Œé¸æ“‡è‡ªå·±çš„é ­åƒåœ–æ¨™ç·¨è™Ÿã€‚\n"+
+                "    ç›®å‰åœ–æ¨™å¯ä»¥é¸æ“‡èŒƒåœæ˜¯"+HIR+" 1 - "+MAX_ICONS+NOR+" ã€‚\n");
         return 1;
 }
 

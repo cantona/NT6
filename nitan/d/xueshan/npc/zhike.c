@@ -3,8 +3,8 @@ inherit KNOWER;
 
 void create()
 {
-        set_name("Öª¿ÍÉ®", ({ "zhike seng", "zhike", "seng" }));
-        set("gender", "ÄĞĞÔ");
+        set_name("çŸ¥å®¢åƒ§", ({ "zhike seng", "zhike", "seng" }));
+        set("gender", "ç”·æ€§");
         set("age", 40 + random(10));
         set("attitude", "friendly");
         set("combat_exp", 60000);

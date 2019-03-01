@@ -2,9 +2,9 @@ inherit DEMONROOM;
 
 void create()
 {
-        set("short", "���߿�");
+        set("short", "毒蛇窟");
         set("long",@LONG
-�����߶��ڵĶ��߿ߣ�ֻ���������Ƕ��ߣ��ֲ��ǳ���
+這是蛇洞內的毒蛇窟，只見四周滿是毒蛇，恐怖非常。
 LONG);
 
 	set("exits", ([

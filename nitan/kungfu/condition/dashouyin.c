@@ -14,10 +14,10 @@ int update_condition(object me, int duration)
         damage = me->query_condition("dashouyin") +2;
         damage *= me->query_con();
         
-        tell_object(me,"Í»È»Äã¸Ğ¾õĞØ¿ÚÌÛÍ´Òì³££¬¸Õ²Å±»´óÊÖÓ¡ÅÄÖĞµÄÀß¹Ç´¦ºÃÏóÒªÁÑ¿ªÁËËÆµÄ£¬ÏÊÑªÒ²´Ó¿ÚÖĞÅçÁË³öÀ´£¡\n");
-        tell_room(environment(me),HIR + me->name()+"Í»È»Ò»ÑÔ²»·¢£¬Ë«ÊÖÎæĞØ£¬µÅµÅíãµ¹ÍËÁËÊı²½£¬½Ó×ÅÍÛµÃÒ»ÉùÍÂ³ö¿ÚÏÊÑªÀ´£¡\n" NOR,({ me }));
-        me->receive_damage("qi", damage,"´óÊÖÓ¡¾¢Á¦·¢×÷");
-        me->receive_wound("qi", damage/2,"´óÊÖÓ¡¾¢Á¦·¢×÷");
+        tell_object(me,"çªç„¶ä½ æ„Ÿè¦ºèƒ¸å£ç–¼ç—›ç•°å¸¸ï¼Œå‰›æ‰è¢«å¤§æ‰‹å°æ‹ä¸­çš„è‚‹éª¨è™•å¥½è±¡è¦è£‚é–‹äº†ä¼¼çš„ï¼Œé®®è¡€ä¹Ÿå¾å£ä¸­å™´äº†å‡ºä¾†ï¼\n");
+        tell_room(environment(me),HIR + me->name()+"çªç„¶ä¸€è¨€ä¸ç™¼ï¼Œé›™æ‰‹æ‚èƒ¸ï¼Œè¹¬è¹¬ç£´å€’é€€äº†æ•¸æ­¥ï¼Œæ¥è‘—å“‡å¾—ä¸€è²åå‡ºå£é®®è¡€ä¾†ï¼\n" NOR,({ me }));
+        me->receive_damage("qi", damage,"å¤§æ‰‹å°å‹åŠ›ç™¼ä½œ");
+        me->receive_wound("qi", damage/2,"å¤§æ‰‹å°å‹åŠ›ç™¼ä½œ");
         p=query("qi", me)*100/query("max_qi", me);
         msg = "( $N"+eff_status_msg(p)+" )\n";
         if( living(me) && !query_temp("noliving", me))message_vision(msg,me);

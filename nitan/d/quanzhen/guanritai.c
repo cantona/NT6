@@ -1,15 +1,15 @@
-// guanritai.c ¹ÛÈÕÌ¨
+// guanritai.c è§€æ—¥å°
 // Winder Oct.10 1998
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "¹ÛÈÕÌ¨");
+        set("short", "è§€æ—¥å°");
         set("long", @LONG
-ÕâÀïÊÇÖÕÄÏÉ½ÉÏµÄ¹ÛÈÕÌ¨£¬²»ÖªÄÄ³¯ÄÄ´úºÎÈËÔÚÕâÀïÐÞÖþÁËÕâ¸ö
-Æ½Ì¨£¬ÓÃÀ´¹ÛÕ°ÈÕ³öµÄÃÀ¾°¡£ÕâÀïµÄÉ½ÊÆ·Ç³£¶¸¾þ£¬ÍùÏÂÒ»¿´£¬ÐüÑÂ
-±ÚÁ¢£¬½ÅÏÂ°×ÔÆÆ®¹ý£¬Õæ²»ÖªÉíÔÚºÎ¾³¡£
+é€™è£¡æ˜¯çµ‚å—å±±ä¸Šçš„è§€æ—¥å°ï¼Œä¸çŸ¥å“ªæœå“ªä»£ä½•äººåœ¨é€™è£¡ä¿®ç¯‰äº†é€™å€‹
+å¹³å°ï¼Œç”¨ä¾†è§€çž»æ—¥å‡ºçš„ç¾Žæ™¯ã€‚é€™è£¡çš„å±±å‹¢éžå¸¸é™¡å³»ï¼Œå¾€ä¸‹ä¸€çœ‹ï¼Œæ‡¸å´–
+å£ç«‹ï¼Œè…³ä¸‹ç™½é›²é£„éŽï¼ŒçœŸä¸çŸ¥èº«åœ¨ä½•å¢ƒã€‚
 LONG
         );
         set("outdoors", "zhongnan");

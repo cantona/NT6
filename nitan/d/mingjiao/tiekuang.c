@@ -10,12 +10,12 @@ int check_busy(object me);
 
 void create()
 {
-        set("short",HIR "Ìú¿ó" NOR);
+        set("short",HIR "éµç¤¦" NOR);
         set("long", @LONG
-[1£»37mÕâÀïÊÇÒ»¸ö¹âÍºÍºµÄĞ¡É½Çğ£¬ËÄÖÜÊ²Ã´»¨²İÊ÷Ä¾Ò²Ã»ÓĞ¡£×ĞÏ¸Ò»
-¿´£¬·¢ÏÖÉ½ÇğÖÜÎ§ÓĞĞ©ºÚ÷î÷îµÄ´óÊ¯Í·£¬Õâ¾ÍÊÇ¹âÃ÷¶¥Ê¢²úµÄÎÚ½ğÌú
-¿óÊ¯¡£Ã÷½Ì½ÌÖÚÓÃµÄ±øÆ÷¶¼ÊÇÓÃÕâÖÖ¿óÊ¯ÖıÔì¶ø³É£¬±ÈÖ®Ñ°³£¾«ÌúÖı
-ÔìµÄ±øÆ÷¸üÎª¼á¹Ì£¬·æÀû¡£[2£»37£»0m
+[1ï¼›37mé€™è£¡æ˜¯ä¸€å€‹å…‰ç¦¿ç¦¿çš„å°å±±ä¸˜ï¼Œå››å‘¨ä»€éº¼èŠ±è‰æ¨¹æœ¨ä¹Ÿæ²’æœ‰ã€‚ä»”ç´°ä¸€
+çœ‹ï¼Œç™¼ç¾å±±ä¸˜å‘¨åœæœ‰äº›é»‘é»é»çš„å¤§çŸ³é ­ï¼Œé€™å°±æ˜¯å…‰æ˜é ‚ç››ç”¢çš„çƒé‡‘éµ
+ç¤¦çŸ³ã€‚æ˜æ•™æ•™çœ¾ç”¨çš„å…µå™¨éƒ½æ˜¯ç”¨é€™ç¨®ç¤¦çŸ³é‘„é€ è€Œæˆï¼Œæ¯”ä¹‹å°‹å¸¸ç²¾éµé‘„
+é€ çš„å…µå™¨æ›´ç‚ºå …å›ºï¼Œé‹’åˆ©ã€‚[2ï¼›37ï¼›0m
 LONG );
         set("exits", ([ /* sizeof() == 1 */
           "east" : __DIR__"rjqmenlou1",
@@ -36,7 +36,7 @@ void init()
 
 int do_save(string arg)
 {
-        write("ÕâÀï²¢·ÇÒ»°ãµØ·½,²»ÄÜÔÚÕâÀï¼ÍÂ¼¡£\n");
+        write("é€™è£¡ä¸¦éä¸€èˆ¬åœ°æ–¹,ä¸èƒ½åœ¨é€™è£¡ç´€éŒ„ã€‚\n");
         return 1;
 }
 
@@ -47,29 +47,29 @@ int do_wa(string arg)
         me = this_player();
 
         if( me->is_busy() || query_temp("pending/job_busy", me) )
-                return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ æ­£å¿™è‘—å‘¢ã€‚\n");
 
         if( query("mingjiao/job", me) != "jin_caikuang")
-                return notify_fail("ÕâÀï²»ÄÜËæ±ãÂÒÍÚ£¡\n");
+                return notify_fail("é€™è£¡ä¸èƒ½éš¨ä¾¿äº‚æŒ–ï¼\n");
 
         if( present("wujin kuangshi", me) )
-                return notify_fail("ÄãÒÑ¾­ÓĞÒ»¿é¿óÊ¯£¬ÊµÔÚ±§²»¶¯µÚ¶ş¿éÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“æœ‰ä¸€å¡Šç¤¦çŸ³ï¼Œå¯¦åœ¨æŠ±ä¸å‹•ç¬¬äºŒå¡Šäº†ã€‚\n");
 
         if( !objectp(qiao = present("tie qiao", me)) )
-                 return notify_fail("ÄãÃ»ÓĞ³ÃÊÖµÄ¹¤¾ß£¬ÎŞ·¨¿ª²ÉÌú¿ó\n");
+                 return notify_fail("ä½ æ²’æœ‰è¶æ‰‹çš„å·¥å…·ï¼Œç„¡æ³•é–‹æ¡éµç¤¦\n");
 
         if( query("jing", me) < 50 || query("qi", me) < 30 )
-                return notify_fail("ÄãÒÑ¾­¾«Æ£Á¦½ßÁË£¡\n");
+                return notify_fail("ä½ å·²ç¶“ç²¾ç–²åŠ›ç«­äº†ï¼\n");
 
         if( query("wa_times") > 0 )
         {
-                message_vision("$N½«ÌúÇÂÄÃÔÚÊÖÉÏ£¬¿´×¼ÁËÒ»¿éºÚ÷î÷îµÄÎÚ½ğÌú¿óÊ¯£¬ÓÃÁ¦ÏòÏÂÍÚÈ¥¡£\n",me);
+                message_vision("$Nå°‡éµé¬æ‹¿åœ¨æ‰‹ä¸Šï¼Œçœ‹æº–äº†ä¸€å¡Šé»‘é»é»çš„çƒé‡‘éµç¤¦çŸ³ï¼Œç”¨åŠ›å‘ä¸‹æŒ–å»ã€‚\n",me);
                 set_temp("pending/job_busy", 1, me);
                 call_out("start_wa", 10, me);
                 me->start_busy( (: check_busy :) );
         }
         else
-                tell_object(me,"¿óÊ¯ËÆºõ¶¼±»ÍÚ¹âÁË¡£\n");
+                tell_object(me,"ç¤¦çŸ³ä¼¼ä¹éƒ½è¢«æŒ–å…‰äº†ã€‚\n");
 
         return 1;
 
@@ -87,7 +87,7 @@ int start_wa(object me)
 
         if(query("jingli", me)>90 && random(3)==1)
         {
-                message_vision("$N½«Ò»Ğ¡¿é"+HIB"ÎÚ½ğ¿óÊ¯"NOR+"ÍÚÁË³öÀ´·ÅÔÚÉíÉÏ¡£\n",me);
+                message_vision("$Nå°‡ä¸€å°å¡Š"+HIB"çƒé‡‘ç¤¦çŸ³"NOR+"æŒ–äº†å‡ºä¾†æ”¾åœ¨èº«ä¸Šã€‚\n",me);
                 addn("wa_times",-1);
                 kuangshi=new(__DIR__"obj/kuangshi");
                 if (! kuangshi->move(me))
@@ -97,7 +97,7 @@ int start_wa(object me)
         }
         else
         {
-                tell_object(me,HIR"ÄãÍ»È»¾õµÃÆøÁ¦²»¼Ã£¬ÔõÑùÒ²ÎŞ·¨½«ÄÇ¿é¿óÊ¯ÍÚ³ö¡£\n"NOR);
+                tell_object(me,HIR"ä½ çªç„¶è¦ºå¾—æ°£åŠ›ä¸æ¿Ÿï¼Œæ€æ¨£ä¹Ÿç„¡æ³•å°‡é‚£å¡Šç¤¦çŸ³æŒ–å‡ºã€‚\n"NOR);
                 addn("jing",-20, me);
                 addn("qi",-30, me);
         }
@@ -112,7 +112,7 @@ int valid_leave(object me, string dir)
         object ob;
 
         if (dir == "northeast" && query_temp("job_busy", me) )
-               return notify_fail("ÄãÕıÃ¦×ÅÍÚ¿óÄØ£¡\n");
+               return notify_fail("ä½ æ­£å¿™è‘—æŒ–ç¤¦å‘¢ï¼\n");
 
         return ::valid_leave(me, dir);
 }

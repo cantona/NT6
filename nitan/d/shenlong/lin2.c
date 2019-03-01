@@ -12,9 +12,9 @@ string* npcs = ({
  
 void create()
 {
-        set("short", "��ľ��");
+        set("short", "灌木林");
         set("long",@LONG
-����һƬ��ľ�֡����˲�Զ����Ϳ��Կ��ü�ǰ��Ŀյ��ˡ�
+這是一片灌木林。走了不遠，你就可以看得見前面的空地了。
 LONG);
 	set("exits", ([
 		"north" : __DIR__"kongdi",

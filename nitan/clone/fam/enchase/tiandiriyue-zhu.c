@@ -3,19 +3,19 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIY "ÌìµØÈÕÔÂÁéÖé" NOR, ({"tiandi riyuezhu", "tiandi", "riyuezhu" }));
+        set_name(HIY "å¤©åœ°æ—¥æœˆéˆç " NOR, ({"tiandi riyuezhu", "tiandi", "riyuezhu" }));
         set_weight(900);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIY "Ò»¿Å¾§Ó¨Í¨Í¸£¬ÓÌÂ¶ÓûµÎµÄ±¦Ê¯£¬ÊÀ¼äº±¼û¡£¡£\n" NOR);
-                set("unit", "¿Å");
+                set("long", HIY "ä¸€é¡†æ™¶ç‘©é€šé€ï¼ŒçŒ¶éœ²æ¬²æ»´çš„å¯¶çŸ³ï¼Œä¸–é–“ç½•è¦‹ã€‚ã€‚\n" NOR);
+                set("unit", "é¡†");
                 set("value", 5000);
-                set("enchase/name", "ÌìµØÈÕÔÂÁéÖé");
+                set("enchase/name", "å¤©åœ°æ—¥æœˆéˆç ");
                 set("enchase/point", 1);
                 set("enchase/type", "def");
                                 set("enchase/cur_firm", 100);
-                                set("nine_object", 1); // ¾Å¿×ÏâÇ¶ÎïÆ·±ê¼Ç
+                                set("nine_object", 1); // ä¹å­”é‘²åµŒç‰©å“æ¨™è¨˜
                                 set("enchase/spe_data", ([]) );  
         }
         setup();

@@ -4,9 +4,9 @@ inherit NPC;
 inherit F_DEALER;
 void create()
 {
-        set_name("½ğËãÅÌ", ({"jin suanpan", "jin"}));
-        set("title", "µ±ÆÌÕÆ¹ñ");
-        set("gender", "ÄĞĞÔ");
+        set_name("é‡‘ç®—ç›¤", ({"jin suanpan", "jin"}));
+        set("title", "ç•¶èˆ–æŒæ«ƒ");
+        set("gender", "ç”·æ€§");
         set("age", 34);
 
         set("str", 22);
@@ -47,6 +47,6 @@ void init()
 
 void die()
 {
-        message_vision("\n$NËÀÁË¡£\n", this_object());
+        message_vision("\n$Næ­»äº†ã€‚\n", this_object());
         destruct(this_object());
 }

@@ -1,4 +1,4 @@
-// makadaowoman.c Âí¿¨µÀ×åÅ®×Ó
+// makadaowoman.c é¦¬å¡é“æ—å¥³å­
 // Last Modifyed by Ahda on Jan. 4 2002
 
 inherit NPC;
@@ -8,8 +8,8 @@ void create()
         int age;
         age = 20 + random(40);
         
-        set_name("Âí¿¨µÀ×åÅ®×Ó", ({ "makadao woman", "woman"}));
-        set("gender", "Å®ĞÔ");
+        set_name("é¦¬å¡é“æ—å¥³å­", ({ "makadao woman", "woman"}));
+        set("gender", "å¥³æ€§");
         set("age", age);
 
         set_skill("unarmed", 20);

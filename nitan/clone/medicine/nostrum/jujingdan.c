@@ -10,12 +10,12 @@ void init()
 
 void create()
 {
-        set_name(HIY"ÑÓÄê¾Û¾«µ¤"NOR, ({"jujing dan", "dan"}));
-        set("unit", "Á£");
+        set_name(HIY"å»¶å¹´èšç²¾ä¸¹"NOR, ({"jujing dan", "dan"}));
+        set("unit", "ç²’");
         set("vegetable", 68);
         set("nostrum", 14);
         set("level", 80);
-        set("long", "ÕâÊÇÒ»Á£Îäµ±ÃÅÏÂÁ¶¹¦ÓÃµÄµ¤Ò©¡£\n");
+        set("long", "é€™æ˜¯ä¸€ç²’æ­¦ç•¶é–€ä¸‹ç…‰åŠŸç”¨çš„ä¸¹è—¥ã€‚\n");
         set("pour_type", "1");
         setup();
 }
@@ -28,15 +28,15 @@ int do_eat(string arg)
         taoism_limit = me->query_skill("taoism", 1)*10;
         jingli_limit=query("max_jingli", me);
 
-        if(!id(arg)) return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+        if(!id(arg)) return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if(!present(this_object(), me))
-                return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if( me->is_busy() )
-                return notify_fail("±ğ¼±£¬ÂıÂı³Ô£¬Ğ¡ĞÄ±ğÒ­×ÅÁË¡£\n");
+                return notify_fail("åˆ¥æ€¥ï¼Œæ…¢æ…¢åƒï¼Œå°å¿ƒåˆ¥å™è‘—äº†ã€‚\n");
 
         if( jingli_limit <= taoism_limit)addn("max_jingli", 1, me);
         set("qi",query("eff_qi",  me), me);
-        message_vision("$N³ÔÏÂÒ»Á£ÑÓÄê¾Û¾«µ¤£¬¶Ù¾õÉàµ×Éú½ò£¬ÆøÑªÍúÊ¢¡£\n",me);
+        message_vision("$Nåƒä¸‹ä¸€ç²’å»¶å¹´èšç²¾ä¸¹ï¼Œé “è¦ºèˆŒåº•ç”Ÿæ´¥ï¼Œæ°£è¡€æ—ºç››ã€‚\n",me);
 
         destruct(this_object());
         return 1;

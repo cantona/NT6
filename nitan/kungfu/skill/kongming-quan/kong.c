@@ -3,7 +3,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-string name() { return HIG "¿Õ¿ÕÈçÒ²" NOR; }
+string name() { return HIG "ç©ºç©ºå¦‚ä¹Ÿ" NOR; }
 
 inherit F_SSERVER;
 
@@ -16,28 +16,28 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(name() + "Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(name() + "åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( objectp(query_temp("weapon", me)) )
-                return notify_fail(name() + "Ö»ÄÜ¿ÕÊÖÊ©Õ¹¡£\n");
+                return notify_fail(name() + "åªèƒ½ç©ºæ‰‹æ–½å±•ã€‚\n");
 
         if ((int)me->query_skill("kongming-quan", 1) < 150)
-                return notify_fail("ÄãµÄ¿ÕÃ÷È­²»¹»æµÊì£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„ç©ºæ˜æ‹³ä¸å¤ å«»ç†Ÿï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (me->query_skill_mapped("unarmed") != "kongming-quan")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢¿ÕÃ÷È­£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼ç©ºæ˜æ‹³ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (me->query_skill_prepared("unarmed") != "kongming-quan")
-                return notify_fail("ÄãÃ»ÓĞ×¼±¸¿ÕÃ÷È­£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æº–å‚™ç©ºæ˜æ‹³ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if( query("neili", me)<150 )
-                return notify_fail("ÄãÏÖÔÚµÄÕæÆøÌ«Èõ£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çš„çœŸæ°£å¤ªå¼±ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = WHT "$N" WHT "Ê¹³ö¿ÕÃ÷È­¡¸" HIG "¿Õ¿ÕÈçÒ²" NOR + WHT "¡¹£¬È­¾¢"
-              "ĞéĞéÊµÊµ£¬±ä»¯Äª²â£¬ÈÃ$n" WHT "Ò»Ê±ÄÑÒÔ²¶×½¡£\n" NOR;
+        msg = WHT "$N" WHT "ä½¿å‡ºç©ºæ˜æ‹³ã€Œ" HIG "ç©ºç©ºå¦‚ä¹Ÿ" NOR + WHT "ã€ï¼Œæ‹³å‹"
+              "è™›è™›å¯¦å¯¦ï¼Œè®ŠåŒ–è«æ¸¬ï¼Œè®“$n" WHT "ä¸€æ™‚é›£ä»¥æ•æ‰ã€‚\n" NOR;
         addn("neili", -80, me);
 
         ap = attack_power(me, "unarmed");
@@ -51,14 +51,14 @@ int perform(object me, object target)
                 damage+= query("jiali", me);
 
                 msg += COMBAT_D->do_damage(me, target, UNARMED_ATTACK, damage, 50,
-                                           HIR "$n" HIR "ÎŞ·¨¿ú²â$N" HIR "È­ÖĞ°Â"
-                                           "ÃØ£¬±»ÕâÒ»È­»÷ÖĞÒªº¦£¬µÇÊ±Å»³öÒ»´ó¿Ú"
-                                           "ÏÊÑª£¡\n:ÄÚÉË@?");
+                                           HIR "$n" HIR "ç„¡æ³•çªºæ¸¬$N" HIR "æ‹³ä¸­å¥§"
+                                           "ç§˜ï¼Œè¢«é€™ä¸€æ‹³æ“Šä¸­è¦å®³ï¼Œç™»æ™‚å˜”å‡ºä¸€å¤§å£"
+                                           "é®®è¡€ï¼\n:å…§å‚·@?");
         } else
         {
                 me->start_busy(2);
-                msg += CYN "¿ÉÊÇ$p" CYN "Ê¶ÆÆÁË$P"
-                       CYN "µÄÈ­ÕĞÖĞµÄ±ä»¯£¬¾«ĞÄÓ¦¶Ô£¬²¢Ã»ÓĞ³Ô¿÷¡£\n" NOR;
+                msg += CYN "å¯æ˜¯$p" CYN "è­˜ç ´äº†$P"
+                       CYN "çš„æ‹³æ‹›ä¸­çš„è®ŠåŒ–ï¼Œç²¾å¿ƒæ‡‰å°ï¼Œä¸¦æ²’æœ‰åƒè™§ã€‚\n" NOR;
         }
         message_combatd(msg, me, target);
         return 1;

@@ -3,16 +3,16 @@ int main(object me,string arg)
         //Look  score  hp  search  say   chat  chann  I   fee  who  map  help  alias  icon  
         string *cmdbar;
         string *tmp = ({
-                "¹Û²ì=look","ÎïÆ·=i","ÆÀ¼Û£Ó£Ã=score","×´Ì¬£È£Ğ=hp",
-                "¹¦·ò£Ó£Ë=cha","ÉèÖÃÍ·Ïñ=face ...","²éÑ¯·ÑÓÃ=fee",
-                "ÉèÖÃÆµµÀ=chann","ËÑË÷=search","ÔÚÏß=who",
-                "°ïÖú=help ...","Ëµ»°=say ...","ÏĞÁÄ=chat ...",});
+                "è§€å¯Ÿ=look","ç‰©å“=i","è©•åƒ¹ï¼³ï¼£=score","ç‹€æ…‹ï¼¨ï¼°=hp",
+                "åŠŸå¤«ï¼³ï¼«=cha","è¨­ç½®é ­åƒ=face ...","æŸ¥è©¢è²»ç”¨=fee",
+                "è¨­ç½®é »é“=chann","æœç´¢=search","åœ¨ç·š=who",
+                "å¹«åŠ©=help ...","èªªè©±=say ...","é–’èŠ=chat ...",});
 
         
         cmdbar=query("cmdbar", me);
         if(!arrayp ( cmdbar ) || sizeof(cmdbar)!=13)
                 cmdbar = tmp;
-        //me->set("cmdbar",cmdbar);//ÒÔºóÈç¹ûÊÜÍæ¼Ò»¶Ó­µÄ»°¿ÉÒÔÔÊĞíËûÃÇ×Ô¼º¶¨ÒåÃüÁî£¨¹Ø±ÕÖØĞÂÔËĞĞºóÉúĞ§£©
+        //me->set("cmdbar",cmdbar);//ä»¥å¾Œå¦‚æœå—ç©å®¶æ­¡è¿çš„è©±å¯ä»¥å…è¨±ä»–å€‘è‡ªå·±å®šç¾©å‘½ä»¤ï¼ˆé—œé–‰é‡æ–°é‹è¡Œå¾Œç”Ÿæ•ˆï¼‰
         write(TMI("cmdbar "+implode(cmdbar,";")+";"));
         return 1;
 }

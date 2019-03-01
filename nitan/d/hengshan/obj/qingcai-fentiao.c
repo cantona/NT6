@@ -1,4 +1,4 @@
-// qingcai-fentiao.c Çà²Ë·ÛÌõ
+// qingcai-fentiao.c é’èœç²‰æ¢
 // Last Modified by Sir on May. 22 2001
 
 inherit ITEM;
@@ -6,13 +6,13 @@ inherit F_FOOD;
 
 void create()
 {
-        set_name("·ÛÌõ", ({"qingcai fentiao","fentiao"}));
+        set_name("ç²‰æ¢", ({"qingcai fentiao","fentiao"}));
         set_weight(200);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»Åè°×ÂÌÏà¼ä£¬ÇåÏã¿É¿ÚµÄÇà²Ë·ÛÌõ¡£\n");
-                set("unit", "Åè");
+                set("long", "ä¸€ç›†ç™½ç¶ ç›¸é–“ï¼Œæ¸…é¦™å¯å£çš„é’èœç²‰æ¢ã€‚\n");
+                set("unit", "ç›†");
                 set("value", 150);
                 set("food_remaining", 4);
                 set("food_supply", 40);

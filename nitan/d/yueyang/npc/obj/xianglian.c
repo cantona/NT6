@@ -1,4 +1,4 @@
-// xiangliangeng.c ÏæÁ«¸ş
+// xiangliangeng.c æ¹˜è“®ç¾¹
 
 #include <ansi.h>;
 inherit ITEM;
@@ -6,13 +6,13 @@ inherit F_FOOD;
 
 void create()
 {
-        set_name(HIY"ÏæÁ«¸ş"NOR, ({"xianglian geng", "geng"}));
+        set_name(HIY"æ¹˜è“®ç¾¹"NOR, ({"xianglian geng", "geng"}));
         set_weight(500);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»ÍëÓÃºşÄÏ¶´Í¥ºşµÄÁ«×Ó°¾µÄ¸şÌÀ¡£\n");
-                set("unit", "Íë");
+                set("long", "é€™æ˜¯ä¸€ç¢—ç”¨æ¹–å—æ´åº­æ¹–çš„è“®å­ç†¬çš„ç¾¹æ¹¯ã€‚\n");
+                set("unit", "ç¢—");
                 set("value", 100);
                 set("food_remaining", 10);
                 set("food_supply", 10);

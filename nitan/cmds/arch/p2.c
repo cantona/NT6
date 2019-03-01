@@ -27,8 +27,8 @@ int do_sort_players(int day)
         object login_ob, user_ob;
 
         seteuid(getuid());
-        message("system", "\n--- ÕûÀíÍæ¼Ò´¢´æµµÖĞ£¬ÇëÉÔºò ---\n", users());
-        write("´¦ÀíÖĞ£º");
+        message("system", "\n--- æ•´ç†ç©å®¶å„²å­˜æª”ä¸­ï¼Œè«‹ç¨å€™ ---\n", users());
+        write("è™•ç†ä¸­ï¼š");
         count = 0;
         fail = 0;
         succ = 0;
@@ -82,7 +82,7 @@ int do_sort_players(int day)
         }
         destruct(login_ob);
 
-        write("\n×Ü¹²ÓĞ " + count + " Î»Ê¹ÓÃÕß¡£\n");
-        write("Îª " + succ + " ¸öÍæ¼ÒÔö¼ÓÁË¼ø±ğ ID£¬ÁíÍâ " + fail + " ¸öÊ¹ÓÃÕßÎŞ·¨´¦Àí¡£\n");
+        write("\nç¸½å…±æœ‰ " + count + " ä½ä½¿ç”¨è€…ã€‚\n");
+        write("ç‚º " + succ + " å€‹ç©å®¶å¢åŠ äº†é‘’åˆ¥ IDï¼Œå¦å¤– " + fail + " å€‹ä½¿ç”¨è€…ç„¡æ³•è™•ç†ã€‚\n");
         return 1;
 }

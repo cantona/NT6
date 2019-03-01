@@ -4,20 +4,20 @@ inherit __DIR__"tattoo";
 
 void create()
 {
-        set_name(NOR + WHT "Íò·ğ³¯Ê¥Í¼" NOR, ({ "wanfo tu", "wanfo", "tu" }));
+        set_name(NOR + WHT "è¬ä½›æœè–åœ–" NOR, ({ "wanfo tu", "wanfo", "tu" }));
         set_weight(300);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»ÕÅ¹Å¾ÉµÄÍ¼Æ¬£¬ÉÏÃæ»æ×ÅĞ©ÎÆÑù¡£");
-                set("unit", "ÕÅ");
+                set("long", "é€™æ˜¯ä¸€å¼µå¤èˆŠçš„åœ–ç‰‡ï¼Œä¸Šé¢ç¹ªè‘—äº›ç´‹æ¨£ã€‚");
+                set("unit", "å¼µ");
                 set("value", 16500);
                 set("material", "paper");
-                set("tattoo_long", "ÎŞÊıÉ®ÈË³¯°İ·ğ×æ£¬½ğ¹âÉ¢²¼£¬ÉñÊ¥×¯ÑÏ");
-                set("can_tattoo", ({ "ĞØ¿Ú", "ºó±³", }));
-                set("tattoo_type", ({ "¸ù¹Ç" }));
+                set("tattoo_long", "ç„¡æ•¸åƒ§äººæœæ‹œä½›ç¥–ï¼Œé‡‘å…‰æ•£å¸ƒï¼Œç¥è–èŠåš´");
+                set("can_tattoo", ({ "èƒ¸å£", "å¾ŒèƒŒ", }));
+                set("tattoo_type", ({ "æ ¹éª¨" }));
                 set("tattoo_con", 4);
                 set("tattoo_special", "health");
-                set("tattoo_spcname", "ÄÚÁ²Ç¬À¤");
+                set("tattoo_spcname", "å…§æ–‚ä¹¾å¤");
         }
 }

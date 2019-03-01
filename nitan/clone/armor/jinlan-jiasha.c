@@ -7,14 +7,14 @@ inherit CLOTH;
 
 void create()
 {
-        set_name(HIR "½õ" HIC "ïç" HIM "ôÂôÄ" NOR, ({ "jinlan jiasha", "jinlan", "jiasha" }) );
+        set_name(HIR "éŒ¦" HIC "é‘­" HIM "è¢ˆè£Ÿ" NOR, ({ "jinlan jiasha", "jinlan", "jiasha" }) );
         set_weight(3000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼ş");
-                set("long", HIR "´ËÄË´«ËµÖĞÌÆÉ®Ëù´©´÷µÄ½õïçôÂôÄ£¬Ö»¼û½ğ¹âÉÁÒ«£¬ÁîÈËÕö²»¿ªÑÛ£¬ÓÌÈç·ğ¹âÆÕÕÕ°ãÏéºÍ¡£\n"
-                            HIC "×ĞÏ¸¿´È¥£¬ôÂôÄÉÏÒşÔ¼³öÏÖ¼¸¸ö´ó×Ö£º" HIG "²»×¹µØÓü£¬²»ÈëÂÖ»Ø\n" NOR);
+                set("unit", "ä»¶");
+                set("long", HIR "æ­¤ä¹ƒå‚³èªªä¸­å”åƒ§æ‰€ç©¿æˆ´çš„éŒ¦é‘­è¢ˆè£Ÿï¼Œåªè¦‹é‡‘å…‰é–ƒè€€ï¼Œä»¤äººçœä¸é–‹çœ¼ï¼ŒçŒ¶å¦‚ä½›å…‰æ™®ç…§èˆ¬ç¥¥å’Œã€‚\n"
+                            HIC "ä»”ç´°çœ‹å»ï¼Œè¢ˆè£Ÿä¸Šéš±ç´„å‡ºç¾å¹¾å€‹å¤§å­—ï¼š" HIG "ä¸å¢œåœ°ç„ï¼Œä¸å…¥è¼ªå›\n" NOR);
                 set("value", 800000);
                 set("armor_prop/armor", 800);
                 set("armor_prop/str", 7);

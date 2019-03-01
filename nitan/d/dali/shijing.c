@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-        set("short","ʯ��");
+        set("short","石徑");
         set("long", @LONG
-�����ڴ������������е�ʯ���ϡ�·�߳�ľ���죬΢��ϰϰ��ʮ
-����ˬ��·����һ������͸����С����ˮ�����㣬ӳӰ��䡣����ͨ
-���������������Ǹ���԰��
+你走在大理鎮南王府中的石徑上。路邊長木遮天，微風習習，十
+分涼爽。路南是一個碧綠透亮的小湖，水禽遊魚，映影其間。西邊通
+向大廳，東面好象是個花園。
 LONG );
         set("objects", ([
            "/d/dali/npc/xianhe": 1,

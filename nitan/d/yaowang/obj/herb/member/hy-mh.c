@@ -2,12 +2,12 @@
 
 void create()
 {
-        set_name(HIC "Ã·»¨»¹Ñô" NOR, ({ "hy-mh", "Rhodobryum giganteum", "herb_hy_mh" }));
+        set_name(HIC "æ¢…èŠ±é‚„é™½" NOR, ({ "hy-mh", "Rhodobryum giganteum", "herb_hy_mh" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "Õæ½Í¿ÆÖ²ÎïÅ¯µØ´óÒ¶Şº(Rhodobryum giganteum)µÄÈ«²İ¡£ÒòÆä¶¥Ò¶´ó.´ØÉúÈç»¨°ú×´£¬ĞÎÈçÃ·»¨£¬¹ÊµÃ´ËÃû¡£\n" NOR);
-                set("base_unit", "¿Å");
+                set("long", HIW "çœŸé…µç§‘æ¤ç‰©æš–åœ°å¤§è‘‰è˜š(Rhodobryum giganteum)çš„å…¨è‰ã€‚å› å…¶é ‚è‘‰å¤§.ç°‡ç”Ÿå¦‚èŠ±è‹ç‹€ï¼Œå½¢å¦‚æ¢…èŠ±ï¼Œæ•…å¾—æ­¤åã€‚\n" NOR);
+                set("base_unit", "é¡†");
                 set("base_value", 20000);
                 set("base_weight", 100);
         }

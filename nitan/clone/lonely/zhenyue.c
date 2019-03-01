@@ -5,25 +5,25 @@ inherit SWORD;
 
 void create()
 {
-        set_name(NOR + CYN "ÕòÔÀÉĞ·½" NOR, ({ "zhenyue shangfang", "zhenyue", 
+        set_name(NOR + CYN "é®å²³å°šæ–¹" NOR, ({ "zhenyue shangfang", "zhenyue", 
                                               "shangfang", "sword" }));
         set_weight(8000);
         if (clonep())
                 destruct(this_object());
         else {
                 set("long", NOR + CYN "
-´Ë½£ÄËÖÜÕÑÍõè¦ÔÚÎ»ÎåÊ®Ò»ÄêÒÔ¶şÄêËê´ÎÈÉÎç£¬ÖıÎå½££¬¸÷Í¶
-ÎåÔÀ£¬ÃúÔ»ÕòÔÀÉĞ·½£¬¹ÅÎÄ×­Êé£¬½£³¤Îå³ßÍ¨ÌåÁ÷¹â¡£½£¼¹Óë
-½£±úÖ®ÉÏ»¹ÖıÓĞÎŞÊıÃÜÃÜÂéÂéµÄ¹Å×­£¬ËÆºõÓëÎäÑ§ÓĞ¹Ø¡£\n" NOR);
-                set("unit", "±ú");
+æ­¤åŠä¹ƒå‘¨æ˜­ç‹ç‘•åœ¨ä½äº”åä¸€å¹´ä»¥äºŒå¹´æ­²æ¬¡å£¬åˆï¼Œé‘„äº”åŠï¼Œå„æŠ•
+äº”å²³ï¼ŒéŠ˜æ›°é®å²³å°šæ–¹ï¼Œå¤æ–‡ç¯†æ›¸ï¼ŒåŠé•·äº”å°ºé€šé«”æµå…‰ã€‚åŠè„Šèˆ‡
+åŠæŸ„ä¹‹ä¸Šé‚„é‘„æœ‰ç„¡æ•¸å¯†å¯†éº»éº»çš„å¤ç¯†ï¼Œä¼¼ä¹èˆ‡æ­¦å­¸æœ‰é—œã€‚\n" NOR);
+                set("unit", "æŸ„");
                 set("value", 800000);
                 set("no_sell", 1);
                 set("material", "steel");
-                set("wield_msg", CYN "$N" CYN "İëµØ×İÉù³¤Ğ¥£¬ö®Ê±º®"
-                                 "Ã¢Ò»ÉÁ£¬Ò»µÀÇà¹âÆÆ¿Õ»®¹ı£¬ÂäÓÚ$N"
-                                 CYN "ÕÆ¼ä¡£\n" NOR);
-                set("unwield_msg", CYN "$N" CYN "Ò»ÉùÇáºß£¬½«ÊÖÖĞµÄ"
-                                   "ÕòÔÀÉĞ·½±¦½£²åÈë½£ÇÊ¡£\n" NOR);
+                set("wield_msg", CYN "$N" CYN "é©€åœ°ç¸±è²é•·å˜¯ï¼Œéœæ™‚å¯’"
+                                 "èŠ’ä¸€é–ƒï¼Œä¸€é“é’å…‰ç ´ç©ºåŠƒéï¼Œè½äº$N"
+                                 CYN "æŒé–“ã€‚\n" NOR);
+                set("unwield_msg", CYN "$N" CYN "ä¸€è²è¼•å“¼ï¼Œå°‡æ‰‹ä¸­çš„"
+                                   "é®å²³å°šæ–¹å¯¶åŠæ’å…¥åŠé˜ã€‚\n" NOR);
                 set("skill", ([
                         "name"         : "zhenyue-jue",
                         "exp_required" : 300000,
@@ -59,15 +59,15 @@ mixed hit_ob(object me, object victim, int damage_bonus)
         case 0:
                 victim->receive_damage("jing", n / 2, me);
                 victim->receive_wound("jing", n / 4, me);
-                return HIW "$N" HIW "½«ÕæÆøÔËÓÚ" NOR + CYN "Õò"
-                       "ÔÀÉĞ·½" HIW "½£Éí£¬ö®Ê±½£Ã¢±©ÕÇ£¬±ÆµÃ$n"
-                       HIW "Á¬Á¬ºóÍË£¡\n" NOR;
+                return HIW "$N" HIW "å°‡çœŸæ°£é‹äº" NOR + CYN "é®"
+                       "å²³å°šæ–¹" HIW "åŠèº«ï¼Œéœæ™‚åŠèŠ’æš´æ¼²ï¼Œé€¼å¾—$n"
+                       HIW "é€£é€£å¾Œé€€ï¼\n" NOR;
         case 1:
                 victim->receive_damage("qi", n, me);
                 victim->receive_wound("qi", n, me);
-                return HIR "$N" HIR "ÊÖÖĞ" NOR + CYN "ÕòÔÀÉĞ·½"
-                       HIR "Çà¹âµ´Ñú£¬Í¸³öÒ»µÀµÀº®ÀäµÄ½£ÆøÖ±Ïò$n"
-                       HIR "¶øÈ¥£¡\n" NOR;
+                return HIR "$N" HIR "æ‰‹ä¸­" NOR + CYN "é®å²³å°šæ–¹"
+                       HIR "é’å…‰ç›ªæ¼¾ï¼Œé€å‡ºä¸€é“é“å¯’å†·çš„åŠæ°£ç›´å‘$n"
+                       HIR "è€Œå»ï¼\n" NOR;
         }
         return damage_bonus;
 }

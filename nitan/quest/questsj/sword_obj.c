@@ -3,66 +3,66 @@
 #include <ansi.h>
 
 mapping sword_obj = ([
-        "/d/yanziwu/npc/obj/changjian":30,            //°¢Öì¡¢°¢±Ì
-        "/d/xiangyang/npc/obj/mujian":5,              //Ä¾½³¹ºÂò
-        "/d/xiakedao/obj/baihongjian":5,              //ÏÀ¿ÍµºÊ¯¶´
-        "/d/wudang/quest/obj/ghost_sword":10,         //Îäµ±ÌÒÊ÷Ö¦
-        "/d/wanjiegu/npc/obj/tie-gan":35,             //¶ÎÑÓÇì
-        "/d/village/obj/zhujian":5,                   //ÁéğÕÎäÆ÷¿â¡¢ÏÀ¿ÍµºÎäÆ÷¿â¡¢ËÕÖİĞ¡··¡¢Îäµ±Á·¹¦·¿
-        "/d/village/npc/obj/youlong":35,              //·ëÌú½³
-        "/d/tulong/tulong/obj/ling1":32,              //Á÷ÔÆÊ¹
-        "/d/tulong/obj/yitianjian":35,                //ÕÔÃô
-        "/d/tulong/obj/duan1":0,                      //¶ÏÁËµÄÒÀÌì½£
-        "/d/taohua/obj/yuxiao":35,                    //»ÆÒ©Ê¦
-        "/d/taohua/obj/taojian":18,                   //ÌÒ»¨µº±øÆ÷¿â
-        "/d/shaolin/obj/zhujian":18,                  //ÉÙÁÖ±øÆ÷¿â
-        "/d/shaolin/obj/changjian":10,                //ÉÙÁÖÒ»Ğ©ºÍÉĞ¡¢µÀ³¾ìøÊ¦Ë÷È¡
-        "/d/quanzhou/pig/obj/cleansword":1,           //ÔİÊ±ÎŞ´¦»ñÈ¡
-        "/d/quanzhou/obj/xiuhua":5,                   //ºúÕÆ¹ñ¹ºÂò
-        "/d/quanzhou/npc/obj/xiuhua":1,               //ÔİÊ±ÎŞ´¦»ñÈ¡
-        "/d/quanzhen/npc/obj/gangjian":22,            //È«Õæìø·¿¡¢Îä¹¦ÕòÎä½«£¨Á½¸ö£©
-        "/d/mingjiao/obj/changjian":1,                //ÔİÊ±ÎŞ´¦»ñÈ¡
-        "/d/meizhuang/obj/sea-wood":32,               //ÇÙÒôĞ¡Ôº
-        "/d/meizhuang/obj/qin":1,                     //ÔİÊ±ÎŞ´¦»ñÈ¡
-        "/d/jinshe/obj/jinshe-jian":32,               //½ğÉß¶´
-        "/d/huashan/obj/longquan":30,                 //»ªÉ½¾ÓÊÒ
-        "/d/huashan/npc/obj/green_water_sword":35,    //ÔÀÁéÉº
-        "/d/heimuya/obj/yuxiao":35,                   //¶«·½²»°Ü
-        "/d/heimuya/npc/obj/zhen":1,                  //ÔİÊ±ÎŞ´¦»ñÈ¡
-        "/d/heimuya/npc/obj/changjian":30,            //É£ÈıÄï¡¢ÈÎÓ¯Ó¯
-        "/d/hangzhou/honghua/obj/shortsword":35,      //»ôÇàÍ©
-        "/d/gumu/npc/obj/shunvjian":35,               //Ğ¡ÁúÅ®
-        "/d/gumu/npc/obj/junzijian":35,               //Ğ¡ÁúÅ®
-        "/d/fuzhou/obj/xiuhua":5,                     //ºÜ¶à
-        "/d/fuzhou/npc/obj/xiuhua":1,                 //ÔİÊ±ÎŞ´¦»ñÈ¡
-        "/d/emei/obj/zhujian":25,                     //¶ëáÒ´¢Îï¼ä
-        "/d/emei/obj/skysword":1,                     //ÔİÊ±ÎŞ´¦»ñÈ¡
-        "/d/emei/obj/ruanjian":35,                    //¾²·çÊ¦Ì«
-        "/d/city/obj/gangjian":18,                    //°×ÒÂÎÀÊ¿£¨Áù¸ö£©
-        "/d/city/obj/duanjian":12,                    //Ïàµ±¶à
-        "/d/city/obj/changjian":10,                   //Ïàµ±¶à
-        "/d/city/obj/branch1":18,                     //Éß¹È
-        "/d/city/obj/branch":18,                      //Éß¹È
-        "/d/city/npc/obj/gangjian":10,                //Ïàµ±¶à
-        "/d/city/npc/obj/duanjian":1,                 //ÔİÊ±ÎŞ´¦»ñÈ¡
-        "/d/city/npc/obj/changjian":15,               //³ÌÓñ»·¡¢¶¡¼á¡¢Ê·ÁîÍş¡¢Ã·×¯»¤Ôº
-        "/d/changan/npc/obj/sword":12,                //ÈºÓñÂ¥±£ïÚ¡¢ÁºĞËÂ»
-        "/d/changan/npc/obj/changjian":10,            //Ä½ÈİºÀ¡¢Îä½«
-        "/d/beijing/npc/obj/sword5":20,               //¶«³§¹Ù±ø
-        "/d/beijing/npc/obj/sword4":15,               //Î÷³§¹Ù±ø¡¢³ÇÃÅ¶½²ì¡¢ÓùÇ°ÊÌÎÀ¡¢æçÆïÓªÊÌÎÀ¡¢ÕÅ¿µÄê¡¢ÕÔÆëÏÍ
-        "/d/beijing/npc/obj/sword3":35,               //·ëÎı·¶
-        "/d/beijing/npc/obj/sword2":20,               //½£É®
-        "/d/beijing/npc/obj/sword1":30,               //¹é¶şÄï
-        "/d/beijing/npc/obj/bishou":35,               //÷¡°İ
-        "/d/beijing/npc/obj/baojian":1,               //ÔİÊ±ÎŞ´¦»ñÈ¡
-        "/clone/weapon/zhujian":5,                    //ºÜ¶à
-        "/clone/weapon/xiyang-sword":10,              //ÈÕ±¾ÍâµĞ
-        "/clone/weapon/green_sword":35,               //ÕÅÕÙÖØ
-        "/clone/weapon/gangjian":5,                   //ºÜ¶à
-        "/clone/weapon/duanjian":1,                   //ÔİÊ±ÎŞ´¦»ñÈ¡
-        "/clone/weapon/changjian":5,                  //ºÜ¶à
-        "/clone/book/shenghuo-ling":35,               //ÕÅÎŞ¼É
-        "/kungfu/class/dali/obj/tiedi":35,            //¸ßÉıÌ©
+        "/d/yanziwu/npc/obj/changjian":30,            //é˜¿æœ±ã€é˜¿ç¢§
+        "/d/xiangyang/npc/obj/mujian":5,              //æœ¨åŒ è³¼è²·
+        "/d/xiakedao/obj/baihongjian":5,              //ä¿ å®¢å³¶çŸ³æ´
+        "/d/wudang/quest/obj/ghost_sword":10,         //æ­¦ç•¶æ¡ƒæ¨¹æ
+        "/d/wanjiegu/npc/obj/tie-gan":35,             //æ®µå»¶æ…¶
+        "/d/village/obj/zhujian":5,                   //éˆé·²æ­¦å™¨åº«ã€ä¿ å®¢å³¶æ­¦å™¨åº«ã€è˜‡å·å°è²©ã€æ­¦ç•¶ç·´åŠŸæˆ¿
+        "/d/village/npc/obj/youlong":35,              //é¦®éµåŒ 
+        "/d/tulong/tulong/obj/ling1":32,              //æµé›²ä½¿
+        "/d/tulong/obj/yitianjian":35,                //è¶™æ•
+        "/d/tulong/obj/duan1":0,                      //æ–·äº†çš„ä¾å¤©åŠ
+        "/d/taohua/obj/yuxiao":35,                    //é»ƒè—¥å¸«
+        "/d/taohua/obj/taojian":18,                   //æ¡ƒèŠ±å³¶å…µå™¨åº«
+        "/d/shaolin/obj/zhujian":18,                  //å°‘æ—å…µå™¨åº«
+        "/d/shaolin/obj/changjian":10,                //å°‘æ—ä¸€äº›å’Œå°šã€é“å¡µç¦ªå¸«ç´¢å–
+        "/d/quanzhou/pig/obj/cleansword":1,           //æš«æ™‚ç„¡è™•ç²å–
+        "/d/quanzhou/obj/xiuhua":5,                   //èƒ¡æŒæ«ƒè³¼è²·
+        "/d/quanzhou/npc/obj/xiuhua":1,               //æš«æ™‚ç„¡è™•ç²å–
+        "/d/quanzhen/npc/obj/gangjian":22,            //å…¨çœŸç¦ªæˆ¿ã€æ­¦åŠŸé®æ­¦å°‡ï¼ˆå…©å€‹ï¼‰
+        "/d/mingjiao/obj/changjian":1,                //æš«æ™‚ç„¡è™•ç²å–
+        "/d/meizhuang/obj/sea-wood":32,               //ç´éŸ³å°é™¢
+        "/d/meizhuang/obj/qin":1,                     //æš«æ™‚ç„¡è™•ç²å–
+        "/d/jinshe/obj/jinshe-jian":32,               //é‡‘è›‡æ´
+        "/d/huashan/obj/longquan":30,                 //è¯å±±å±…å®¤
+        "/d/huashan/npc/obj/green_water_sword":35,    //å²³éˆçŠ
+        "/d/heimuya/obj/yuxiao":35,                   //æ±æ–¹ä¸æ•—
+        "/d/heimuya/npc/obj/zhen":1,                  //æš«æ™‚ç„¡è™•ç²å–
+        "/d/heimuya/npc/obj/changjian":30,            //æ¡‘ä¸‰å¨˜ã€ä»»ç›ˆç›ˆ
+        "/d/hangzhou/honghua/obj/shortsword":35,      //éœé’æ¡
+        "/d/gumu/npc/obj/shunvjian":35,               //å°é¾å¥³
+        "/d/gumu/npc/obj/junzijian":35,               //å°é¾å¥³
+        "/d/fuzhou/obj/xiuhua":5,                     //å¾ˆå¤š
+        "/d/fuzhou/npc/obj/xiuhua":1,                 //æš«æ™‚ç„¡è™•ç²å–
+        "/d/emei/obj/zhujian":25,                     //å³¨åµ‹å„²ç‰©é–“
+        "/d/emei/obj/skysword":1,                     //æš«æ™‚ç„¡è™•ç²å–
+        "/d/emei/obj/ruanjian":35,                    //éœé¢¨å¸«å¤ª
+        "/d/city/obj/gangjian":18,                    //ç™½è¡£è¡›å£«ï¼ˆå…­å€‹ï¼‰
+        "/d/city/obj/duanjian":12,                    //ç›¸ç•¶å¤š
+        "/d/city/obj/changjian":10,                   //ç›¸ç•¶å¤š
+        "/d/city/obj/branch1":18,                     //è›‡è°·
+        "/d/city/obj/branch":18,                      //è›‡è°·
+        "/d/city/npc/obj/gangjian":10,                //ç›¸ç•¶å¤š
+        "/d/city/npc/obj/duanjian":1,                 //æš«æ™‚ç„¡è™•ç²å–
+        "/d/city/npc/obj/changjian":15,               //ç¨‹ç‰ç’°ã€ä¸å …ã€å²ä»¤å¨ã€æ¢…èŠè­·é™¢
+        "/d/changan/npc/obj/sword":12,                //ç¾¤ç‰æ¨“ä¿é¢ã€æ¨‘èˆˆç¥¿
+        "/d/changan/npc/obj/changjian":10,            //æ…•å®¹è±ªã€æ­¦å°‡
+        "/d/beijing/npc/obj/sword5":20,               //æ±å» å®˜å…µ
+        "/d/beijing/npc/obj/sword4":15,               //è¥¿å» å®˜å…µã€åŸé–€ç£å¯Ÿã€å¾¡å‰ä¾è¡›ã€é©é¨ç‡Ÿä¾è¡›ã€å¼µåº·å¹´ã€è¶™é½Šè³¢
+        "/d/beijing/npc/obj/sword3":35,               //é¦®éŒ«èŒƒ
+        "/d/beijing/npc/obj/sword2":20,               //åŠåƒ§
+        "/d/beijing/npc/obj/sword1":30,               //æ­¸äºŒå¨˜
+        "/d/beijing/npc/obj/bishou":35,               //é°²æ‹œ
+        "/d/beijing/npc/obj/baojian":1,               //æš«æ™‚ç„¡è™•ç²å–
+        "/clone/weapon/zhujian":5,                    //å¾ˆå¤š
+        "/clone/weapon/xiyang-sword":10,              //æ—¥æœ¬å¤–æ•µ
+        "/clone/weapon/green_sword":35,               //å¼µå¬é‡
+        "/clone/weapon/gangjian":5,                   //å¾ˆå¤š
+        "/clone/weapon/duanjian":1,                   //æš«æ™‚ç„¡è™•ç²å–
+        "/clone/weapon/changjian":5,                  //å¾ˆå¤š
+        "/clone/book/shenghuo-ling":35,               //å¼µç„¡å¿Œ
+        "/kungfu/class/dali/obj/tiedi":35,            //é«˜å‡æ³°
 ]);
 
 int check_value(string filename)

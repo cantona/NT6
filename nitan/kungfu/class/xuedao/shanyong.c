@@ -14,11 +14,11 @@ int do_kneel();
 
 void create()
 {
-        set_name("ÉÆÓÂ", ({ "shan yong", "shan", "yong" }));
+        set_name("å–„å‹‡", ({ "shan yong", "shan", "yong" }));
         set("long", @LONG
-Ò»¸öÅÖÅÖµÄÎ÷²ØÉ®ÈË£¬Ãæ´øĞ¦Èİ£¬È´³£¸ÉĞ¦Àï²Øµ¶µÄÊÂ¡£
+ä¸€å€‹èƒ–èƒ–çš„è¥¿è—åƒ§äººï¼Œé¢å¸¶ç¬‘å®¹ï¼Œå»å¸¸å¹¹ç¬‘è£¡è—åˆ€çš„äº‹ã€‚
 LONG);
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("age", 35);
         set("attitude", "peaceful");
         set("shen_type", -1);
@@ -71,11 +71,11 @@ LONG);
         }) );
 
         set("inquiry",([
-                "Ìê¶È" : (: ask_for_join :),
-                "³ö¼Ò" : (: ask_for_join :),
+                "å‰ƒåº¦" : (: ask_for_join :),
+                "å‡ºå®¶" : (: ask_for_join :),
         ]));
 
-        create_family("Ñªµ¶ÃÅ", 6, "µÜ×Ó");
+        create_family("è¡€åˆ€é–€", 6, "å¼Ÿå­");
         set("class", "bonze");
 
         set("master_ob", 3);
@@ -95,23 +95,23 @@ void attempt_apprentice(object ob)
         if (! permit_recruit(ob))
                 return;
 
-        if( query("gender", ob) == "Å®ĞÔ" )
+        if( query("gender", ob) == "å¥³æ€§" )
         {
-                command("say ÎÒ²»ÊÕÅ®Í½µÜ¡£\n");
+                command("say æˆ‘ä¸æ”¶å¥³å¾’å¼Ÿã€‚\n");
                 return;
         }
 
-        if( query("gender", ob) != "ÄĞĞÔ" )
+        if( query("gender", ob) != "ç”·æ€§" )
         {
-                command("say ¹«¹«±ğ¿ªÍæĞ¦ÁË£¬»¹ÊÇ¸Ï¿ì»Ø¹¬È¥ËÅºò»ÊÉÏ°É¡£\n");
+                command("say å…¬å…¬åˆ¥é–‹ç©ç¬‘äº†ï¼Œé‚„æ˜¯è¶•å¿«å›å®®å»ä¼ºå€™çš‡ä¸Šå§ã€‚\n");
                 return;
         }
 
         if( query("class", ob) != "bonze" )
         {
                 set_temp("pending/join_bonze", 1, ob);
-                command("say Äã²»ÊÇ³ö¼ÒÈË£¬ÎÒÃÇÑªµ¶ÃÅÊÇ²»»áÊÕÁôµÄ¡£Èç¹ûÄã"
-                        "¾ö¶¨Òª³ö¼Ò£¬¾Í¹òÏÂ°É(" HIY "kneel" NOR + CYN ")¡£" NOR);
+                command("say ä½ ä¸æ˜¯å‡ºå®¶äººï¼Œæˆ‘å€‘è¡€åˆ€é–€æ˜¯ä¸æœƒæ”¶ç•™çš„ã€‚å¦‚æœä½ "
+                        "æ±ºå®šè¦å‡ºå®¶ï¼Œå°±è·ªä¸‹å§(" HIY "kneel" NOR + CYN ")ã€‚" NOR);
                 return;
         }
 
@@ -125,16 +125,16 @@ string ask_for_join()
         me = this_player();
 
         if( query("class", me) == "bonze" )
-                return "°¢ÃÖÍÓ·ğ£¡ÄãÎÒÍ¬ÊÇ³ö¼ÒÈË£¬ºÎ¹Ê¸úÆ¶É®¿ªÕâµÈÍæĞ¦£¿\n";
+                return "é˜¿å½Œé™€ä½›ï¼ä½ æˆ‘åŒæ˜¯å‡ºå®¶äººï¼Œä½•æ•…è·Ÿè²§åƒ§é–‹é€™ç­‰ç©ç¬‘ï¼Ÿ\n";
 
-        if( query("gender", me) == "Å®ĞÔ" )
-                return "Ê©Ö÷ÈôÕæĞÄÏò·ğ£¬ÕæÊÇ¿ÉÏ²¿ÉºØ£¬¿ÉÏ§±¾ËÂ²»ÊÕÅ®Í½¡£\n";
+        if( query("gender", me) == "å¥³æ€§" )
+                return "æ–½ä¸»è‹¥çœŸå¿ƒå‘ä½›ï¼ŒçœŸæ˜¯å¯å–œå¯è³€ï¼Œå¯æƒœæœ¬å¯ºä¸æ”¶å¥³å¾’ã€‚\n";
 
-        if( query("gender", me) != "ÄĞĞÔ" )
-                return "¹«¹«±ğ¿ªÍæĞ¦ÁË£¬»¹ÊÇ¸Ï¿ì»Ø¹¬È¥ËÅºò»ÊÉÏ°É¡£\n";
+        if( query("gender", me) != "ç”·æ€§" )
+                return "å…¬å…¬åˆ¥é–‹ç©ç¬‘äº†ï¼Œé‚„æ˜¯è¶•å¿«å›å®®å»ä¼ºå€™çš‡ä¸Šå§ã€‚\n";
 
         set_temp("pending/join_bonze", 1, me);
-        return "°¢ÃÖÍÓ·ğ£¡ÉÆÔÕ£¡ÉÆÔÕ£¡Ê©Ö÷ÈôÕæĞÄğ§ÒÀÎÒ·ğ£¬Çë¹òÏÂ(kneel)ÊÜ½ä¡£\n";
+        return "é˜¿å½Œé™€ä½›ï¼å–„å“‰ï¼å–„å“‰ï¼æ–½ä¸»è‹¥çœŸå¿ƒçšˆä¾æˆ‘ä½›ï¼Œè«‹è·ªä¸‹(kneel)å—æˆ’ã€‚\n";
 }
 
 int do_kneel()
@@ -142,11 +142,11 @@ int do_kneel()
         object me = this_player();
 
         if( !query_temp("pending/join_bonze", me) )
-                return notify_fail("Äã¹òÁË°ëµã£¬½á¹ûÃ»ÈËÀíÄã¡£\n");
+                return notify_fail("ä½ è·ªäº†åŠé»ï¼Œçµæœæ²’äººç†ä½ ã€‚\n");
 
-        message_vision(HIY "$N" HIY "Ë«ÊÖºÏÊ®£¬¹§¹§¾´¾´µØ¹òÁËÏÂÀ´¡£\n\n"
-                       "$n" HIY "Éì³öÊÖÕÆ£¬ÔÚ$N" HIY "Í·¶¥ÇáÇáµØÄ¦êıÁË¼¸"
-                       "ÏÂ£¬½«$N" HIY "µÄÍ··¢¾¡ÊıÌêÈ¥¡£\n\n" NOR, me,
+        message_vision(HIY "$N" HIY "é›™æ‰‹åˆåï¼Œæ­æ­æ•¬æ•¬åœ°è·ªäº†ä¸‹ä¾†ã€‚\n\n"
+                       "$n" HIY "ä¼¸å‡ºæ‰‹æŒï¼Œåœ¨$N" HIY "é ­é ‚è¼•è¼•åœ°æ‘©æŒ²äº†å¹¾"
+                       "ä¸‹ï¼Œå°‡$N" HIY "çš„é ­ç™¼ç›¡æ•¸å‰ƒå»ã€‚\n\n" NOR, me,
                        this_object());
 
         command("ke");

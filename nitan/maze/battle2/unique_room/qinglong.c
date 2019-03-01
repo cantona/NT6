@@ -8,12 +8,12 @@ mapping data = ([]);
 
 void create()
 {
-        set("short", HIY "ÇàÁú¼ÀÌ¨" NOR);
+        set("short", HIY "é’é¾ç¥­å°" NOR);
         set("long",@LONG
-ÄãÕ¾ÔÚ¼ÀÌ¨ÉÏ£¬¸Ğ¾õ½ÅÏÂÒì³£±ùÀä¡£¼ÀÌ¨ÉÏÔÓÂÒ²»¿°£¬Õı
-ÖĞ²å×ÅÒ»Ãæ¼ÀÆì£¨jiqi£©£¬ÉÏÃæËÆºõÒÑ¾­È¾ÂúÁËÏÊÑª¡£ÕâÀïËÆ
-ºõ·¢Éú¹ı¼¤ÁÒµÄ´ò¶·£¬²»ÖªµÀÊÇÎªÁËÕù¶áÊ²Ã´¡£Äã²»ÓÉË¼Ğ÷Íò
-Ç§£¬¡°³¾¹é³¾£¬ÍÁ¹éÍÁ ¡­¡­ ÊÀÈË¾¿¾¹ÎªÁËÄÄ°ã£¿¡±
+ä½ ç«™åœ¨ç¥­å°ä¸Šï¼Œæ„Ÿè¦ºè…³ä¸‹ç•°å¸¸å†°å†·ã€‚ç¥­å°ä¸Šé›œäº‚ä¸å ªï¼Œæ­£
+ä¸­æ’è‘—ä¸€é¢ç¥­æ——ï¼ˆjiqiï¼‰ï¼Œä¸Šé¢ä¼¼ä¹å·²ç¶“æŸ“æ»¿äº†é®®è¡€ã€‚é€™è£¡ä¼¼
+ä¹ç™¼ç”Ÿéæ¿€çƒˆçš„æ‰“é¬¥ï¼Œä¸çŸ¥é“æ˜¯ç‚ºäº†çˆ­å¥ªä»€éº¼ã€‚ä½ ä¸ç”±æ€ç·’è¬
+åƒï¼Œâ€œå¡µæ­¸å¡µï¼ŒåœŸæ­¸åœŸ â€¦â€¦ ä¸–äººç©¶ç«Ÿç‚ºäº†å“ªèˆ¬ï¼Ÿâ€
 LONG);
 
         set("outdoors", "battlefield");
@@ -41,12 +41,12 @@ string show_jiqi()
         string  team_name;
 
         if( !sizeof(data) )
-                return HIG "ÏÖÔÚ»¹Ã»ÓĞÈË¶áÈ¡¼ÀÆì£¬¸Ï½ô¶áÈ¡(duoqu jiqi)°É¡£\n" NOR;
+                return HIG "ç¾åœ¨é‚„æ²’æœ‰äººå¥ªå–ç¥­æ——ï¼Œè¶•ç·Šå¥ªå–(duoqu jiqi)å§ã€‚\n" NOR;
 
 
 
-        str  = HIG "ÏÖÔÚ¼ÀÆì¶áÈ¡µÄÇé¿öÈçÏÂ£º\n" NOR;
-        str += sprintf(HIC "%-20s%-20s\n" NOR, "¶ÓÎé", "¶áÆìÊ±³¤");
+        str  = HIG "ç¾åœ¨ç¥­æ——å¥ªå–çš„æƒ…æ³å¦‚ä¸‹ï¼š\n" NOR;
+        str += sprintf(HIC "%-20s%-20s\n" NOR, "éšŠä¼", "å¥ªæ——æ™‚é•·");
         str += HIC "-------------------------------\n" NOR;
         key = keys(data);
 
@@ -58,17 +58,17 @@ string show_jiqi()
         if( objectp(ob = query("jiqi_owner")) )
         {
                 team_name = query_temp("battle/team_name", ob);
-                str += HIC "ÏÖÔÚ¼ÀÆìÕı±»" HIY +"¡¾" + team_name + "¡¿µÄ" + ob->name() +
-                       HIY "(" + query("id", ob) + ")" HIC + "¶áÈ¡ÖĞ£¡\n" NOR;
+                str += HIC "ç¾åœ¨ç¥­æ——æ­£è¢«" HIY +"ã€" + team_name + "ã€‘çš„" + ob->name() +
+                       HIY "(" + query("id", ob) + ")" HIC + "å¥ªå–ä¸­ï¼\n" NOR;
         }
         else
         {
-                str += HIG "ÏÖÔÚ¼ÀÆìÃ»ÓĞ±»¶áÈ¡£¬¸Ï½ô¶áÈ¡£¨duoqu jiqi£©°É£¡\n" NOR;
+                str += HIG "ç¾åœ¨ç¥­æ——æ²’æœ‰è¢«å¥ªå–ï¼Œè¶•ç·Šå¥ªå–ï¼ˆduoqu jiqiï¼‰å§ï¼\n" NOR;
         }
         return str;
 }
 
- // ¶áÈ¡ÆìÖÄ
+ // å¥ªå–æ——å¹Ÿ
 int do_duoqu(string arg)
 {
         object me = this_player();
@@ -76,31 +76,31 @@ int do_duoqu(string arg)
         string team_name;
 
         if( !arg || arg != "jiqi" )
-                return notify_fail("ÄãÒª¶áÈ¡Ê²Ã´£¿\n");
+                return notify_fail("ä½ è¦å¥ªå–ä»€éº¼ï¼Ÿ\n");
 
         if( time() - query_temp("last_do_duoqu", me) < 10 )
-                return notify_fail("Äã¾àÀëÉÏ´Î¶áÆì³¢ÊÔÊ±¼ä²»×ã10Ãë£¬²»ÄÜÁ¬Ğø³¢ÊÔ£¡\n");
+                return notify_fail("ä½ è·é›¢ä¸Šæ¬¡å¥ªæ——å˜—è©¦æ™‚é–“ä¸è¶³10ç§’ï¼Œä¸èƒ½é€£çºŒå˜—è©¦ï¼\n");
 
-        // ÓĞÈË¶áÈ¡Ê±²»ÄÜ¶áÈ¡
+        // æœ‰äººå¥ªå–æ™‚ä¸èƒ½å¥ªå–
         if( objectp(ob = query("jiqi_owner")) )
         {
                 me->set_temp("last_do_duoqu", time());
-                return notify_fail(HIR "¼ÀÆìÕı±»" + HIY + ob->name() + HIY "(" + query("id", ob) + ")" HIR "¶áÈ¡ÖĞ£¡\n" NOR);
+                return notify_fail(HIR "ç¥­æ——æ­£è¢«" + HIY + ob->name() + HIY "(" + query("id", ob) + ")" HIR "å¥ªå–ä¸­ï¼\n" NOR);
         }
 
-        // ¶áÈ¡
+        // å¥ªå–
         set("jiqi_owner", me);
         team_name = query_temp("battle/team_name", me);
         if( !undefinedp(data[team_name]) )
         {
-                write(HIG "Äã¶áÈ¡ÁË¼ÀÆì£¬ÄãµÄ¶ÓÎé×Ü¹²¶áÈ¡¼ÀÆìÊ±¼äÎª£º" HIY + time_period(data[team_name]) + HIG "¡£\n" NOR);
-                tell_room(this_object(), HIG + me->name() + HIG "¶áÈ¡ÁË¼ÀÆì£¬ÆäËùÔÚ¶ÓÎé¡¾" + team_name +
-                          "¡¿×Ü¹²¶áÈ¡¼ÀÆìÊ±¼äÎª£º" HIY + time_period(data[team_name]) + HIG "¡£\n" NOR, ({ me }));
+                write(HIG "ä½ å¥ªå–äº†ç¥­æ——ï¼Œä½ çš„éšŠä¼ç¸½å…±å¥ªå–ç¥­æ——æ™‚é–“ç‚ºï¼š" HIY + time_period(data[team_name]) + HIG "ã€‚\n" NOR);
+                tell_room(this_object(), HIG + me->name() + HIG "å¥ªå–äº†ç¥­æ——ï¼Œå…¶æ‰€åœ¨éšŠä¼ã€" + team_name +
+                          "ã€‘ç¸½å…±å¥ªå–ç¥­æ——æ™‚é–“ç‚ºï¼š" HIY + time_period(data[team_name]) + HIG "ã€‚\n" NOR, ({ me }));
         }
         else
         {
-                write(HIG "Äã¶áÈ¡ÁË¼ÀÆì£¬¿ªÊ¼Í³¼Æ¼ÇÊ±¡£¡£¡£\n" NOR);
-                tell_room(this_object(), HIG + me->name() + HIG "¶áÈ¡ÁË¼ÀÆì£¬ÆäËùÔÚ¶ÓÎé¡¾" + team_name + "¡¿¡£\n" NOR, ({ me }));
+                write(HIG "ä½ å¥ªå–äº†ç¥­æ——ï¼Œé–‹å§‹çµ±è¨ˆè¨˜æ™‚ã€‚ã€‚ã€‚\n" NOR);
+                tell_room(this_object(), HIG + me->name() + HIG "å¥ªå–äº†ç¥­æ——ï¼Œå…¶æ‰€åœ¨éšŠä¼ã€" + team_name + "ã€‘ã€‚\n" NOR, ({ me }));
         }
         return 1;
 }
@@ -126,7 +126,7 @@ void heart_beat()
 
         team_name = query_temp("battle/team_name", me);
 
-        // ÀÛ¼Æ¶áÆìÊ±¼ä
+        // ç´¯è¨ˆå¥ªæ——æ™‚é–“
         if( undefinedp(data[team_name]) )
                 data[team_name] = 1;
         else
@@ -134,7 +134,7 @@ void heart_beat()
 
         time = data[team_name];
 
-        // ÀÛ¼Æµ½10·ÖÖÓÔòÊ¤Àû
+        // ç´¯è¨ˆåˆ°10åˆ†é˜å‰‡å‹åˆ©
         if( time >= 600 )
         {
                 BATTLEFIELD_D->win_battle(team_name);
@@ -144,7 +144,7 @@ void heart_beat()
         if( time >= 540 )
         {
                 if( !(time % 10) )
-                        CHANNEL_D->channel_broadcast("war", HIR"Õ½"NOR RED"Õù"HIR"£º"+team_name+HIR"×Ü¹²¶áÈ¡"+query("short")+"¼ÀÆìÊ±¼äÎª£º" HIY +time_period(time) + HIR "£¬¼´½«»ñµÃ×îÖÕÊ¤Àû..."NOR);
+                        CHANNEL_D->channel_broadcast("war", HIR"æˆ°"NOR RED"çˆ­"HIR"ï¼š"+team_name+HIR"ç¸½å…±å¥ªå–"+query("short")+"ç¥­æ——æ™‚é–“ç‚ºï¼š" HIY +time_period(time) + HIR "ï¼Œå³å°‡ç²å¾—æœ€çµ‚å‹åˆ©..."NOR);
         }
         return;
 }

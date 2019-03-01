@@ -6,12 +6,12 @@ int give_quest(string arg);
 
 void create()
 {
-        set_name("´óËÎ¼à¾ü", ({"jian jun", "jian", "jun"}));
-        set("title", HIR "´óÄÚÌ«¼à" NOR);
-        set("gender", "ÎÞÐÔ");
+        set_name("å¤§å®‹ç›£è»", ({"jian jun", "jian", "jun"}));
+        set("title", HIR "å¤§å…§å¤ªç›£" NOR);
+        set("gender", "ç„¡æ€§");
         set("age", random(20) + 20);
 
-        set("long", "ÕâÊÇÒ»¸ö¾©³Ç»Ê¹¬ÖÐµÄÒ»ÃûÌ«¼à£¬¸ºÔð¿¹»÷ÃÉ¹Å¾ü¶ÓÈëÇÖ´óËÎµÄ¼à¾ü¡£\n");
+        set("long", "é€™æ˜¯ä¸€å€‹äº¬åŸŽçš‡å®®ä¸­çš„ä¸€åå¤ªç›£ï¼Œè² è²¬æŠ—æ“Šè’™å¤è»éšŠå…¥ä¾µå¤§å®‹çš„ç›£è»ã€‚\n");
         set("combat_exp", 800000);
         set("attitude", "peaceful");
         set("max_qi", 3000);
@@ -20,7 +20,7 @@ void create()
         set("neili", 1000);
         set("no_get", 1);
         set("inquiry", ([ 
-                "ÁìÈ¡ÈÎÎñ" : "¸ñÊ½£ºlingming yayun-liangcao",
+                "é ˜å–ä»»å‹™" : "æ ¼å¼ï¼šlingming yayun-liangcao",
         ]));
 
         setup();
@@ -44,13 +44,13 @@ int give_quest(string arg)
         
         if (! arg)
         {
-                tell_object(ob, "ÄãÏëÒªÁìÃüÈ¥¸ÉÊ²Ã´ÊÂÇé£¿£¡\n");
+                tell_object(ob, "ä½ æƒ³è¦é ˜å‘½åŽ»å¹¹ä»€éº¼äº‹æƒ…ï¼Ÿï¼\n");
                 return 1;
         }
         
         if( query_temp("warquest/party", ob) != "song" )
         {
-                tell_object(ob, "Äã»¹Ã»ÓÐ²Î¼ÓËÎ¾ü£¬ÈçºÎÁìÃü°¡£¿£¡\n");
+                tell_object(ob, "ä½ é‚„æ²’æœ‰åƒåŠ å®‹è»ï¼Œå¦‚ä½•é ˜å‘½å•Šï¼Ÿï¼\n");
                 return 1;
         }
                 
@@ -61,14 +61,14 @@ int give_quest(string arg)
                 if( query_temp("warquest/train", ob )
                  && query_temp("warquest/train", ob) != "infantry" )
                 {
-                        tell_object(ob, "ÄãÒÑ¾­ÁíÓÐËûÖ°ÁË£¡\n");
+                        tell_object(ob, "ä½ å·²ç¶“å¦æœ‰ä»–è·äº†ï¼\n");
                         return 1;
                 }
 
-                message_vision(HIR "$NÂÔÒ»³ÁË¼£¬´Ó°¸Ç°³é³öÒ»Ã¶Áî¼ýµÀ£º¡°$nÌýÁî£¬" +
-                               "½üÀ´¾üÖÐ¼¸ÎÞÄÜÕ½Ö®Ê¦£¬\nÃüÄã¼Ó½ôÑµÁ·Ò»Ö§¾«Èñ²½±ø£¬ÒÔ±¸²»Ê±Ö®Ðè£¬" +
-                               "²»µÃÓÐÎó£¡\n" NOR, me, ob);
-                set_temp("title", HIW"´óËÎ²½±øÓªÍ³Áì"NOR, ob);
+                message_vision(HIR "$Nç•¥ä¸€æ²‰æ€ï¼Œå¾žæ¡ˆå‰æŠ½å‡ºä¸€æžšä»¤ç®­é“ï¼šâ€œ$nè½ä»¤ï¼Œ" +
+                               "è¿‘ä¾†è»ä¸­å¹¾ç„¡èƒ½æˆ°ä¹‹å¸«ï¼Œ\nå‘½ä½ åŠ ç·Šè¨“ç·´ä¸€æ”¯ç²¾éŠ³æ­¥å…µï¼Œä»¥å‚™ä¸æ™‚ä¹‹éœ€ï¼Œ" +
+                               "ä¸å¾—æœ‰èª¤ï¼\n" NOR, me, ob);
+                set_temp("title", HIW"å¤§å®‹æ­¥å…µç‡Ÿçµ±é ˜"NOR, ob);
                 if (! present("ling jian", ob))
                 {
                         ling = new("/adm/npc/obj/lingjian");
@@ -76,7 +76,7 @@ int give_quest(string arg)
                         ling->move(ob);
                 }
                 set_temp("warquest/train", "infantry", ob);
-                set_temp("warquest/quest", "ÑµÁ·²½±ø£¬×÷Õ½×¼±¸", ob);
+                set_temp("warquest/quest", "è¨“ç·´æ­¥å…µï¼Œä½œæˆ°æº–å‚™", ob);
                 ob->command("drill");
                 break;
 
@@ -85,15 +85,15 @@ int give_quest(string arg)
                 if( query_temp("warquest/train", ob )
                  && query_temp("warquest/train", ob) != "cavalry" )
                 {
-                        tell_object(ob, "ÄãÒÑ¾­ÁíÓÐËûÖ°ÁË£¡\n");
+                        tell_object(ob, "ä½ å·²ç¶“å¦æœ‰ä»–è·äº†ï¼\n");
                         return 1;
                 }
 
-                message_vision(HIR "$NÂÔÒ»³ÁË¼£¬´Ó°¸Ç°³é³öÒ»Ã¶Áî¼ýµÀ£º¡°$nÌýÁî£¬" +
-                               "½üÀ´¾üÖÐ¼¸ÎÞÄÜÕ½Ö®Ê¦£¬\nÃüÄã¼Ó½ôÑµÁ·Ò»Ö§¾«ÈñÆï±ø£¬ÒÔ±¸²»Ê±Ö®Ðè£¬" +
-                               "²»µÃÓÐÎó£¡\n" NOR, me, ob);
+                message_vision(HIR "$Nç•¥ä¸€æ²‰æ€ï¼Œå¾žæ¡ˆå‰æŠ½å‡ºä¸€æžšä»¤ç®­é“ï¼šâ€œ$nè½ä»¤ï¼Œ" +
+                               "è¿‘ä¾†è»ä¸­å¹¾ç„¡èƒ½æˆ°ä¹‹å¸«ï¼Œ\nå‘½ä½ åŠ ç·Šè¨“ç·´ä¸€æ”¯ç²¾éŠ³é¨Žå…µï¼Œä»¥å‚™ä¸æ™‚ä¹‹éœ€ï¼Œ" +
+                               "ä¸å¾—æœ‰èª¤ï¼\n" NOR, me, ob);
 
-                set_temp("title", HIR"´óËÎ³µÆïÓªÍ³Áì"NOR, ob);
+                set_temp("title", HIR"å¤§å®‹è»Šé¨Žç‡Ÿçµ±é ˜"NOR, ob);
                 if (! present("zhan ma", ob))
                 {
                         horse = new("/maze/battle3/song/horse");
@@ -108,7 +108,7 @@ int give_quest(string arg)
                         ling->move(ob);
                 }
                 set_temp("warquest/train", "cavalry", ob);
-                set_temp("warquest/quest", "ÑµÁ·Æï±ø£¬×÷Õ½×¼±¸", ob);
+                set_temp("warquest/quest", "è¨“ç·´é¨Žå…µï¼Œä½œæˆ°æº–å‚™", ob);
                 ob->command("drill");
                 break;
 
@@ -117,14 +117,14 @@ int give_quest(string arg)
                 if( query_temp("warquest/train", ob )
                  && query_temp("warquest/train", ob) != "archer" )
                 {
-                        tell_object(ob, "ÄãÒÑ¾­ÁíÓÐËûÖ°ÁË£¡\n");
+                        tell_object(ob, "ä½ å·²ç¶“å¦æœ‰ä»–è·äº†ï¼\n");
                         return 1;
                 }
 
-                message_vision(HIR "$NÂÔÒ»³ÁË¼£¬´Ó°¸Ç°³é³öÒ»Ã¶Áî¼ýµÀ£º¡°$nÌýÁî£¬" +
-                               "½üÀ´¾üÖÐ¼¸ÎÞÄÜÕ½Ö®Ê¦£¬\nÃüÄã¼Ó½ôÑµÁ·Ò»Ö§¾«Èñ¹­¼ýÊÖ£¬ÒÔ±¸²»Ê±Ö®Ðè£¬" +
-                               "²»µÃÓÐÎó£¡\n" NOR, me, ob);
-                set_temp("title", HIB"´óËÎÉñåóÓªÍ³Áì"NOR, ob);
+                message_vision(HIR "$Nç•¥ä¸€æ²‰æ€ï¼Œå¾žæ¡ˆå‰æŠ½å‡ºä¸€æžšä»¤ç®­é“ï¼šâ€œ$nè½ä»¤ï¼Œ" +
+                               "è¿‘ä¾†è»ä¸­å¹¾ç„¡èƒ½æˆ°ä¹‹å¸«ï¼Œ\nå‘½ä½ åŠ ç·Šè¨“ç·´ä¸€æ”¯ç²¾éŠ³å¼“ç®­æ‰‹ï¼Œä»¥å‚™ä¸æ™‚ä¹‹éœ€ï¼Œ" +
+                               "ä¸å¾—æœ‰èª¤ï¼\n" NOR, me, ob);
+                set_temp("title", HIB"å¤§å®‹ç¥žå¼©ç‡Ÿçµ±é ˜"NOR, ob);
                 if (! present("ling jian", ob))
                 {
                         ling = new("/adm/npc/obj/lingjian");
@@ -133,7 +133,7 @@ int give_quest(string arg)
                 }
 
                 set_temp("warquest/train", "archer", ob);
-                set_temp("warquest/quest", "ÑµÁ·¹­±ø£¬×÷Õ½×¼±¸", ob);
+                set_temp("warquest/quest", "è¨“ç·´å¼“å…µï¼Œä½œæˆ°æº–å‚™", ob);
                 ob->command("drill");
                 break;
                 
@@ -141,11 +141,11 @@ int give_quest(string arg)
                 count = 600000;
                 if( WAR_D->query_moneys() < 600000 )
                 {
-                        message_vision(HIR "$NÂÔÒ»³ÁË¼£¬´Ó°¸Ç°³é³öÒ»Ã¶Áî¼ýµÀ£º¡°$nÌýÁî£¬" +
-                               "½üÀ´¾üÖÐÁ¸²ÝØÑ·¦£¬\nÃüÄã»ðËÙÂÊ²¿£¬ÔÚ°ëÔÂÄÚ½«¾©Ê¦¹©Ó¦Ö®Á¸²ÝÑº½â" +
-                               "ÖÁ¾üÖÐ£¬ÈçÓÐÑÓÎó£¬¾ü·¨ÂÛ´¦£¡\n" NOR, me, ob);
+                        message_vision(HIR "$Nç•¥ä¸€æ²‰æ€ï¼Œå¾žæ¡ˆå‰æŠ½å‡ºä¸€æžšä»¤ç®­é“ï¼šâ€œ$nè½ä»¤ï¼Œ" +
+                               "è¿‘ä¾†è»ä¸­ç³§è‰åŒ±ä¹ï¼Œ\nå‘½ä½ ç«é€ŸçŽ‡éƒ¨ï¼Œåœ¨åŠæœˆå…§å°‡äº¬å¸«ä¾›æ‡‰ä¹‹ç³§è‰æŠ¼è§£" +
+                               "è‡³è»ä¸­ï¼Œå¦‚æœ‰å»¶èª¤ï¼Œè»æ³•è«–è™•ï¼\n" NOR, me, ob);
 
-                        set_temp("title", HIY"´óËÎ¾ü±¸ÓªÍ³Áì"NOR, ob);
+                        set_temp("title", HIY"å¤§å®‹è»å‚™ç‡Ÿçµ±é ˜"NOR, ob);
                         if (! present("ling jian", ob))
                         {
                                 ling = new("/adm/npc/obj/lingjian");
@@ -153,15 +153,15 @@ int give_quest(string arg)
                                 ling->move(ob);
                         }
                         set_temp("warquest/purchase", "forage", ob);
-                        set_temp("warquest/quest", "ÑºÔËÁ¸²Ý£¬²¹³ä¾ü±¸", ob);
+                        set_temp("warquest/quest", "æŠ¼é‹ç³§è‰ï¼Œè£œå……è»å‚™", ob);
                         ob->command("stock");
                 } 
                 else if( WAR_D->query_soilders(me) < 2000 )
                 {        
-                        message_vision(HIR "$NÂÔÒ»³ÁË¼£¬´Ó°¸Ç°³é³öÒ»Ã¶Áî¼ýµÀ£º¡°$nÌýÁî£¬" +
-                               "½üÀ´¾üÖÐ±øÔ±ØÑ·¦£¬\nÃüÄã»ðËÙÂÊ²¿£¬¸ÏÈ¥ÏåÑô³ÇÄÚÕÐÄ¼ÐÂ±ø" +
-                               "ÖÁ¾üÖÐ£¬ÈçÓÐÑÓÎó£¬¾ü·¨ÂÛ´¦£¡\n" NOR, me, ob);
-                        set_temp("title", HIY"´óËÎ¾ü±¸ÓªÍ³Áì"NOR, ob);
+                        message_vision(HIR "$Nç•¥ä¸€æ²‰æ€ï¼Œå¾žæ¡ˆå‰æŠ½å‡ºä¸€æžšä»¤ç®­é“ï¼šâ€œ$nè½ä»¤ï¼Œ" +
+                               "è¿‘ä¾†è»ä¸­å…µå“¡åŒ±ä¹ï¼Œ\nå‘½ä½ ç«é€ŸçŽ‡éƒ¨ï¼Œè¶•åŽ»è¥„é™½åŸŽå…§æ‹›å‹Ÿæ–°å…µ" +
+                               "è‡³è»ä¸­ï¼Œå¦‚æœ‰å»¶èª¤ï¼Œè»æ³•è«–è™•ï¼\n" NOR, me, ob);
+                        set_temp("title", HIY"å¤§å®‹è»å‚™ç‡Ÿçµ±é ˜"NOR, ob);
                         if (! present("ling jian", ob))
                         {
                                 ling = new("/adm/npc/obj/lingjian");
@@ -169,16 +169,16 @@ int give_quest(string arg)
                                 ling->move(ob);
                         }
                         set_temp("warquest/purchase", "enlist", ob);
-                        set_temp("warquest/quest", "ÕÐÄ¼ÐÂ±ø£¬²¹³ä±øÔ´", ob);
+                        set_temp("warquest/quest", "æ‹›å‹Ÿæ–°å…µï¼Œè£œå……å…µæº", ob);
                         WAR_D->change_moneys(-count);
                         ob->command("stock");
                 }
                 else if( WAR_D->query_weapons(me) < 4000 )
                 {               
-                        message_vision(HIR "$NÂÔÒ»³ÁË¼£¬´Ó°¸Ç°³é³öÒ»Ã¶Áî¼ýµÀ£º¡°$nÌýÁî£¬" +
-                               "½üÀ´¾üÖÐ±øÆ÷ºÍ¿ø¼×ØÑ·¦£¬\nÃüÄã»ðËÙÂÊ²¿£¬¸ÏÈ¥ÏåÑô³ÇÄÚ²É¹º±øÆ÷ºÍ¿ø¼×" +
-                               "ÖÁ¾üÖÐ£¬ÈçÓÐÑÓÎó£¬¾ü·¨ÂÛ´¦£¡\n" NOR, me, ob);
-                        set_temp("title", HIY"´óËÎ¾ü±¸ÓªÍ³Áì"NOR, ob);
+                        message_vision(HIR "$Nç•¥ä¸€æ²‰æ€ï¼Œå¾žæ¡ˆå‰æŠ½å‡ºä¸€æžšä»¤ç®­é“ï¼šâ€œ$nè½ä»¤ï¼Œ" +
+                               "è¿‘ä¾†è»ä¸­å…µå™¨å’Œç›”ç”²åŒ±ä¹ï¼Œ\nå‘½ä½ ç«é€ŸçŽ‡éƒ¨ï¼Œè¶•åŽ»è¥„é™½åŸŽå…§æŽ¡è³¼å…µå™¨å’Œç›”ç”²" +
+                               "è‡³è»ä¸­ï¼Œå¦‚æœ‰å»¶èª¤ï¼Œè»æ³•è«–è™•ï¼\n" NOR, me, ob);
+                        set_temp("title", HIY"å¤§å®‹è»å‚™ç‡Ÿçµ±é ˜"NOR, ob);
                         if (! present("ling jian", ob))
                         {
                                 ling = new("/adm/npc/obj/lingjian");
@@ -186,16 +186,16 @@ int give_quest(string arg)
                                 ling->move(ob);
                         }
                         set_temp("warquest/purchase", "weapon", ob);
-                        set_temp("warquest/quest", "¹ºÖÃ±ø¼×£¬²¹³ä¾ü±¸", ob);
+                        set_temp("warquest/quest", "è³¼ç½®å…µç”²ï¼Œè£œå……è»å‚™", ob);
                         WAR_D->change_moneys(-count);
                         ob->command("stock");
                 }
                 else if( WAR_D->query_arrows(me) < 2000 )
                 {
-                        message_vision(HIR "$NÂÔÒ»³ÁË¼£¬´Ó°¸Ç°³é³öÒ»Ã¶Áî¼ýµÀ£º¡°$nÌýÁî£¬" +
-                               "½üÀ´¾üÓª¼ýÂ¥Óð¼ýØÑ·¦£¬\nÃüÄã»ðËÙÂÊ²¿£¬¸ÏÈ¥ÏåÑô³ÇÄÚ²É¹ºÓð¼ý" +
-                               "ÖÁ¾üÖÐ£¬ÈçÓÐÑÓÎó£¬¾ü·¨ÂÛ´¦£¡\n" NOR, me, ob);
-                        set_temp("title", HIY"´óËÎ¾ü±¸ÓªÍ³Áì"NOR, ob);
+                        message_vision(HIR "$Nç•¥ä¸€æ²‰æ€ï¼Œå¾žæ¡ˆå‰æŠ½å‡ºä¸€æžšä»¤ç®­é“ï¼šâ€œ$nè½ä»¤ï¼Œ" +
+                               "è¿‘ä¾†è»ç‡Ÿç®­æ¨“ç¾½ç®­åŒ±ä¹ï¼Œ\nå‘½ä½ ç«é€ŸçŽ‡éƒ¨ï¼Œè¶•åŽ»è¥„é™½åŸŽå…§æŽ¡è³¼ç¾½ç®­" +
+                               "è‡³è»ä¸­ï¼Œå¦‚æœ‰å»¶èª¤ï¼Œè»æ³•è«–è™•ï¼\n" NOR, me, ob);
+                        set_temp("title", HIY"å¤§å®‹è»å‚™ç‡Ÿçµ±é ˜"NOR, ob);
                         if (! present("ling jian", ob))
                         {
                                 ling = new("/adm/npc/obj/lingjian");
@@ -203,16 +203,16 @@ int give_quest(string arg)
                                 ling->move(ob);
                         }
                         set_temp("warquest/purchase", "arrow", ob);
-                        set_temp("warquest/quest", "¹ºÖÃÓð¼ý£¬²¹³ä¾ü±¸", ob);
+                        set_temp("warquest/quest", "è³¼ç½®ç¾½ç®­ï¼Œè£œå……è»å‚™", ob);
                         WAR_D->change_moneys(-count);
                         ob->command("stock");
                 }
                 else if( WAR_D->query_horses(me) < 2000 )
                 {
-                        message_vision(HIR "$NÂÔÒ»³ÁË¼£¬´Ó°¸Ç°³é³öÒ»Ã¶Áî¼ýµÀ£º¡°$nÌýÁî£¬" +
-                               "½üÀ´¾üÖÐÕ½ÂíØÑ·¦£¬\nÃüÄã»ðËÙÂÊ²¿£¬¸ÏÈ¥ÏåÑô³ÇÄÚ²É¹ºÕ½Âí" +
-                               "ÖÁ¾üÖÐ£¬ÈçÓÐÑÓÎó£¬¾ü·¨ÂÛ´¦£¡\n" NOR, me, ob);
-                        set_temp("title", HIY"´óËÎ¾ü±¸ÓªÍ³Áì"NOR, ob);
+                        message_vision(HIR "$Nç•¥ä¸€æ²‰æ€ï¼Œå¾žæ¡ˆå‰æŠ½å‡ºä¸€æžšä»¤ç®­é“ï¼šâ€œ$nè½ä»¤ï¼Œ" +
+                               "è¿‘ä¾†è»ä¸­æˆ°é¦¬åŒ±ä¹ï¼Œ\nå‘½ä½ ç«é€ŸçŽ‡éƒ¨ï¼Œè¶•åŽ»è¥„é™½åŸŽå…§æŽ¡è³¼æˆ°é¦¬" +
+                               "è‡³è»ä¸­ï¼Œå¦‚æœ‰å»¶èª¤ï¼Œè»æ³•è«–è™•ï¼\n" NOR, me, ob);
+                        set_temp("title", HIY"å¤§å®‹è»å‚™ç‡Ÿçµ±é ˜"NOR, ob);
                         if (! present("ling jian", ob))
                         {
                                 ling = new("/adm/npc/obj/lingjian");
@@ -220,16 +220,16 @@ int give_quest(string arg)
                                 ling->move(ob);
                         }
                         set_temp("warquest/purchase", "horse", ob);
-                        set_temp("warquest/quest", "¹ºÖÃÕ½Âí£¬²¹³ä¾ü±¸", ob);
+                        set_temp("warquest/quest", "è³¼ç½®æˆ°é¦¬ï¼Œè£œå……è»å‚™", ob);
                         WAR_D->change_moneys(-count);
                         ob->command("stock");
                 }
                 else if( WAR_D->query_stones(me) < 2000 )
                 {
-                        message_vision(HIR "$NÂÔÒ»³ÁË¼£¬´Ó°¸Ç°³é³öÒ»Ã¶Áî¼ýµÀ£º¡°$nÌýÁî£¬" +
-                               "½üÀ´¾üÖÐ¹öÊ¯ºÍéÛÄ¾ØÑ·¦£¬\nÃüÄã»ðËÙÂÊ²¿£¬¸ÏÈ¥ÏåÑô³ÇÄÚ²É¹ºÊ¯Í·ºÍÄ¾²Ä" +
-                               "ÖÁ¾üÖÐ£¬ÈçÓÐÑÓÎó£¬¾ü·¨ÂÛ´¦£¡\n" NOR, me, ob);
-                        set_temp("title", HIY"´óËÎ¾ü±¸ÓªÍ³Áì"NOR, ob);
+                        message_vision(HIR "$Nç•¥ä¸€æ²‰æ€ï¼Œå¾žæ¡ˆå‰æŠ½å‡ºä¸€æžšä»¤ç®­é“ï¼šâ€œ$nè½ä»¤ï¼Œ" +
+                               "è¿‘ä¾†è»ä¸­æ»¾çŸ³å’Œæª‘æœ¨åŒ±ä¹ï¼Œ\nå‘½ä½ ç«é€ŸçŽ‡éƒ¨ï¼Œè¶•åŽ»è¥„é™½åŸŽå…§æŽ¡è³¼çŸ³é ­å’Œæœ¨æ" +
+                               "è‡³è»ä¸­ï¼Œå¦‚æœ‰å»¶èª¤ï¼Œè»æ³•è«–è™•ï¼\n" NOR, me, ob);
+                        set_temp("title", HIY"å¤§å®‹è»å‚™ç‡Ÿçµ±é ˜"NOR, ob);
                         if (! present("ling jian", ob))
                         {
                                 ling = new("/adm/npc/obj/lingjian");
@@ -237,29 +237,29 @@ int give_quest(string arg)
                                 ling->move(ob);
                         }
                         set_temp("warquest/purchase", "stone", ob);
-                        set_temp("warquest/quest", "¹ºÖÃÊ¯Ä¾£¬²¹³ä¾ü±¸", ob);
+                        set_temp("warquest/quest", "è³¼ç½®çŸ³æœ¨ï¼Œè£œå……è»å‚™", ob);
                         WAR_D->change_moneys(-count);
                         ob->command("stock");
                 }
                 else if( WAR_D->query_economy(me) < 1200000 )
                 {
-                        message_vision(HIR "$NÂÔÒ»³ÁË¼£¬´Ó°¸Ç°³é³öÒ»Ã¶Áî¼ýµÀ£º¡°$nÌýÁî£¬" +
-                               "½üÀ´ÃÉ¹ÅÆï±ø³£É§ÈÅÎÒ´óËÎÏåÑô³Ç£¬\nÃüÄã»ðËÙÂÊ²¿£¬¸ÏÈ¥ÏåÑô×¤ÊØ³Ç³Ø" +
-                               "£¬ÈçÓÐÑÓÎó£¬¾ü·¨ÂÛ´¦£¡\n" NOR, me, ob);
-                        set_temp("title", HIY"´óËÎºó·ÀÓªÍ³Áì"NOR, ob);
+                        message_vision(HIR "$Nç•¥ä¸€æ²‰æ€ï¼Œå¾žæ¡ˆå‰æŠ½å‡ºä¸€æžšä»¤ç®­é“ï¼šâ€œ$nè½ä»¤ï¼Œ" +
+                               "è¿‘ä¾†è’™å¤é¨Žå…µå¸¸é¨·æ“¾æˆ‘å¤§å®‹è¥„é™½åŸŽï¼Œ\nå‘½ä½ ç«é€ŸçŽ‡éƒ¨ï¼Œè¶•åŽ»è¥„é™½é§å®ˆåŸŽæ± " +
+                               "ï¼Œå¦‚æœ‰å»¶èª¤ï¼Œè»æ³•è«–è™•ï¼\n" NOR, me, ob);
+                        set_temp("title", HIY"å¤§å®‹å¾Œé˜²ç‡Ÿçµ±é ˜"NOR, ob);
 
                         set_temp("warquest/guard", 1, ob);
-                        set_temp("warquest/quest", "ÊØÎÀÏåÑô£¬ÎÈ¹Ìºó·½", ob);
+                        set_temp("warquest/quest", "å®ˆè¡›è¥„é™½ï¼Œç©©å›ºå¾Œæ–¹", ob);
                         // ob->command("guard");
                         ob->move("/d/xiangyang/guofuting");
                 }
                 else
                 {
-                        message_vision(HIR "$NÂÔÒ»³ÁË¼£¬´Ó°¸Ç°³é³öÒ»Ã¶Áî¼ýµÀ£º¡°$nÌýÁî£¬" +
-                               "½üÀ´¾üÖÐÁ¸²ÝØÑ·¦£¬\nÃüÄã»ðËÙÂÊ²¿£¬ÔÚ°ëÔÂÄÚ½«¾©Ê¦¹©Ó¦Ö®Á¸²ÝÑº½â" +
-                               "ÖÁ¾üÖÐ£¬ÈçÓÐÑÓÎó£¬¾ü·¨ÂÛ´¦£¡\n" NOR, me, ob);
+                        message_vision(HIR "$Nç•¥ä¸€æ²‰æ€ï¼Œå¾žæ¡ˆå‰æŠ½å‡ºä¸€æžšä»¤ç®­é“ï¼šâ€œ$nè½ä»¤ï¼Œ" +
+                               "è¿‘ä¾†è»ä¸­ç³§è‰åŒ±ä¹ï¼Œ\nå‘½ä½ ç«é€ŸçŽ‡éƒ¨ï¼Œåœ¨åŠæœˆå…§å°‡äº¬å¸«ä¾›æ‡‰ä¹‹ç³§è‰æŠ¼è§£" +
+                               "è‡³è»ä¸­ï¼Œå¦‚æœ‰å»¶èª¤ï¼Œè»æ³•è«–è™•ï¼\n" NOR, me, ob);
 
-                        set_temp("title", HIY"´óËÎ¾ü±¸ÓªÍ³Áì"NOR, ob);
+                        set_temp("title", HIY"å¤§å®‹è»å‚™ç‡Ÿçµ±é ˜"NOR, ob);
                         if (! present("ling jian", ob))
                         {
                                 ling = new("/adm/npc/obj/lingjian");
@@ -267,16 +267,16 @@ int give_quest(string arg)
                                 ling->move(ob);
                         }
                         set_temp("warquest/purchase", "forage", ob);
-                        set_temp("warquest/quest", "ÑºÔËÁ¸²Ý£¬²¹³ä¾ü±¸", ob);
+                        set_temp("warquest/quest", "æŠ¼é‹ç³§è‰ï¼Œè£œå……è»å‚™", ob);
                         ob->command("stock");
                 }
                 break;
         default:
-                tell_object(ob, "ÄãÏëÒªÁìÃü×öÊ²Ã´ÊÂÇé£¿£¡\n");
+                tell_object(ob, "ä½ æƒ³è¦é ˜å‘½åšä»€éº¼äº‹æƒ…ï¼Ÿï¼\n");
                 return 1;
         }
 
-        message_vision("ÖÚ½«Áì´óÉùÓ¦µÀ£ºÄ©½«×ñÃü£¡£¡\n", me, ob);
+        message_vision("çœ¾å°‡é ˜å¤§è²æ‡‰é“ï¼šæœ«å°‡éµå‘½ï¼ï¼\n", me, ob);
         return 1;
 }
 
@@ -285,7 +285,7 @@ int accept_hit(object me)
         if (playerp(me))
         {
                 command("heng");
-                command("say ÄãÒªÏëÒªÕÒËÀÂð£¡");
+                command("say ä½ è¦æƒ³è¦æ‰¾æ­»å—Žï¼");
                 return 0;
         }
 }
@@ -295,7 +295,7 @@ int accept_fight(object me)
         if (playerp(me))
         {
                 command("heng");
-                command("say ÄãÒªÏëÒªÕÒËÀÂð£¡");
+                command("say ä½ è¦æƒ³è¦æ‰¾æ­»å—Žï¼");
                 return 0;
         }
 }
@@ -304,8 +304,8 @@ int accept_kill(object me)
 {
         if (playerp(me))
         {
-                message_vision(CYN "$N" CYN "´óÅ­µÀ£º¡°¿´À´ÄãÊÇÕæµÄÏëÕÒËÀ£¡¡±£¬Ëµ°ÕÒ»ÕÆ°Ñ$n" CYN
-                               "Åüµ¹ÔÚµØ¡£\n" NOR, this_object(), me);
+                message_vision(CYN "$N" CYN "å¤§æ€’é“ï¼šâ€œçœ‹ä¾†ä½ æ˜¯çœŸçš„æƒ³æ‰¾æ­»ï¼â€ï¼Œèªªç½·ä¸€æŽŒæŠŠ$n" CYN
+                               "åŠˆå€’åœ¨åœ°ã€‚\n" NOR, this_object(), me);
                 me->unconcious();
                 return -1;
         }

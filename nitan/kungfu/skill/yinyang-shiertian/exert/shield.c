@@ -1,4 +1,4 @@
-// shield.c 阴阳九转十二重天护体神功
+// shield.c 闄伴櫧涔濊綁鍗佷簩閲嶅ぉ璀烽珨绁炲姛
 //
 
 #include <ansi.h>
@@ -12,22 +12,22 @@ int exert(object me, object target)
         int skill;
 
         if (target != me)
-                return notify_fail("你只能用阴阳九转十二重天来提升自己的防御力。\n");
+                return notify_fail("浣犲彧鑳界敤闄伴櫧涔濊綁鍗佷簩閲嶅ぉ渚嗘彁鍗囪嚜宸辩殑闃插尽鍔涖�俓n");
 
         if( query("neili", me)<100 )
-                return notify_fail("你的内力不够。\n");
+                return notify_fail("浣犵殑鍏у姏涓嶅銆俓n");
 
         if ((int)me->query_skill("yinyang-shiertian", 1) < 50)
-                return notify_fail("你的阴阳九转十二重天修为不够。\n");
+                return notify_fail("浣犵殑闄伴櫧涔濊綁鍗佷簩閲嶅ぉ淇偤涓嶅銆俓n");
 
         if( query_temp("shield", me) )
-                return notify_fail("你已经在运功中了。\n");
+                return notify_fail("浣犲凡缍撳湪閬嬪姛涓簡銆俓n");
 
         skill = me->query_skill("force");
         addn("neili", -100, me);
         me->receive_damage("qi", 0);
 
-        message_combatd(HIW "$N" HIW "阴阳运转，脚下现出一幅太极图不停转动，黑白二气周身绕转，气势大增！\n" NOR, me);
+        message_combatd(HIW "$N" HIW "闄伴櫧閬嬭綁锛岃叧涓嬬従鍑轰竴骞呭お妤靛湒涓嶅仠杞夊嫊锛岄粦鐧戒簩姘ｅ懆韬篂杞夛紝姘ｅ嫝澶у锛乗n" NOR, me);
 
         addn_temp("apply/armor", skill/2, me);
         set_temp("shield", 1, me);
@@ -45,6 +45,6 @@ void remove_effect(object me, int amount)
         {
                 addn_temp("apply/armor", -amount, me);
                 delete_temp("shield", me);
-                tell_object(me, "你的阴阳九转十二重天运行完毕，将内力收回丹田。\n");
+                tell_object(me, "浣犵殑闄伴櫧涔濊綁鍗佷簩閲嶅ぉ閬嬭瀹岀暍锛屽皣鍏у姏鏀跺洖涓圭敯銆俓n");
         }
 }

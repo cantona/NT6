@@ -1,5 +1,5 @@
 /*************
- * ±ê×¼µ±Æ±  *
+ * æ¨™æº–ç•¶ç¥¨  *
  * by Find.  *
  *************/
 
@@ -7,11 +7,11 @@ inherit ITEM;
 
 class pawn_ob
 {
-        string master;          // µ±Ö÷ ID
-        string pob_file;        // µ±Æ·ÎÄ¼þÃû
-        int time;               // µ½ÆÚÊ±¼ä
-        string hockshop;        // µ±ÆÌÎÄ¼þÃû
-        string ps_long;         // µ±Æ±ÃèÊö
+        string master;          // ç•¶ä¸» ID
+        string pob_file;        // ç•¶å“æ–‡ä»¶å
+        int time;               // åˆ°æœŸæ™‚é–“
+        string hockshop;        // ç•¶èˆ–æ–‡ä»¶å
+        string ps_long;         // ç•¶ç¥¨æè¿°
 }
 
 protected class pawn_ob this_one;
@@ -19,7 +19,7 @@ protected class pawn_ob this_one;
 string this_long()
 {
         if(!this_one || !this_one->ps_long)
-                return "ÕâÊÇÒ»ÕÅ¿Õ°×µÄµ±Æ±¡£\n";
+                return "é€™æ˜¯ä¸€å¼µç©ºç™½çš„ç•¶ç¥¨ã€‚\n";
         else
                 return this_one->ps_long;
 }
@@ -41,7 +41,7 @@ void use_this_stamp(mixed *use)
                 this_one->ps_long = use[4];
 }
 
-// ²éÑ¯º¯Êý
+// æŸ¥è©¢å‡½æ•¸
 string query_master()
 {
         if(!this_one)
@@ -92,9 +92,9 @@ mixed *query_all_msg()
 
 void create()
 {
-        set_name("µ±Æ±", ({ "pawn stamp", "stamp" }));
+        set_name("ç•¶ç¥¨", ({ "pawn stamp", "stamp" }));
         set_weight(0);
-        set("unit", "ÕÅ");
+        set("unit", "å¼µ");
         set("long", (: this_long :));
         setup();
 }

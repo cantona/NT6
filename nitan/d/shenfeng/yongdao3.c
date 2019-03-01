@@ -5,12 +5,12 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ğ®µÀ");
+        set("short", "ç”¬é“");
         set("long", @LONG
-Ç°ÃæÉ½Ê¯×èÂ·£¬ÒÑµ½¾¡Í·¡£Ö»¼û¾¡Í·´¦ÉÁÉÁÉú¹â£¬×ß½ü¿´
-Ê±£¬È´ÊÇÒ»ÓñÊ¯¾ŞÃÅ¡£ÕâÃÅ¸ß´ïÕÉĞí£¬ÄÇÀïÏñÃÅ£¬Ö±ÊÇÒ»¿é¾Ş
-´óµÄÑÒÊ¯¡£Ê¯ÃÅ(gate)ÉÏÏÂ×óÓÒ»¹ÓĞËÄ¸öÃÅ»·£¬¾ùÓĞÁ½³ß¶à³¤
-µÄ´Ö´óÌúÅ¥½ô½ô¿Û×¡¡£
+å‰é¢å±±çŸ³é˜»è·¯ï¼Œå·²åˆ°ç›¡é ­ã€‚åªè¦‹ç›¡é ­è™•é–ƒé–ƒç”Ÿå…‰ï¼Œèµ°è¿‘çœ‹
+æ™‚ï¼Œå»æ˜¯ä¸€ç‰çŸ³å·¨é–€ã€‚é€™é–€é«˜é”ä¸ˆè¨±ï¼Œé‚£è£¡åƒé–€ï¼Œç›´æ˜¯ä¸€å¡Šå·¨
+å¤§çš„å·–çŸ³ã€‚çŸ³é–€(gate)ä¸Šä¸‹å·¦å³é‚„æœ‰å››å€‹é–€ç’°ï¼Œå‡æœ‰å…©å°ºå¤šé•·
+çš„ç²—å¤§éµéˆ•ç·Šç·Šæ‰£ä½ã€‚
 LONG);
         set("exits", ([ 
                 "south" : __DIR__"yongdao2",
@@ -28,24 +28,24 @@ void init()
         if (! environment(ob))
         {
                 set("item_desc",([
-                        "gate": WHT "\nÁ½ÉÈºñºñµÄ´óÊ¯ÃÅ£¬ËÆºõ²»¿ÉÄÜ´òÆÆËü¡£Ö»¼û"
-                                "Ê¯ÃÅµÄÃÅ»·ÉÏ²å\n×ÅÒ»°Ñ" NOR + YEL "»Æ½ğ¸«" NOR
-                                + WHT "(huangjin fu)" WHT "¡£\n\n" NOR,
+                        "gate": WHT "\nå…©æ‰‡åšåšçš„å¤§çŸ³é–€ï¼Œä¼¼ä¹ä¸å¯èƒ½æ‰“ç ´å®ƒã€‚åªè¦‹"
+                                "çŸ³é–€çš„é–€ç’°ä¸Šæ’\nè‘—ä¸€æŠŠ" NOR + YEL "é»ƒé‡‘æ–§" NOR
+                                + WHT "(huangjin fu)" WHT "ã€‚\n\n" NOR,
 
-                        "huangjin fu" : YEL "ÕâÊÇÒ»±ú´¿»ÆÖıÔìµÄ´ó¸«£¬¸«±úÄ©¶ËËÆ"
-                                        "ºõÓĞĞ©ËÉ¶¯¡£\n" NOR,
+                        "huangjin fu" : YEL "é€™æ˜¯ä¸€æŸ„ç´”é»ƒé‘„é€ çš„å¤§æ–§ï¼Œæ–§æŸ„æœ«ç«¯ä¼¼"
+                                        "ä¹æœ‰äº›é¬†å‹•ã€‚\n" NOR,
 
-                        "fu"          : YEL "ÕâÊÇÒ»±ú´¿»ÆÖıÔìµÄ´ó¸«£¬¸«±úÄ©¶ËËÆ"
-                                        "ºõÓĞĞ©ËÉ¶¯¡£\n" NOR,
+                        "fu"          : YEL "é€™æ˜¯ä¸€æŸ„ç´”é»ƒé‘„é€ çš„å¤§æ–§ï¼Œæ–§æŸ„æœ«ç«¯ä¼¼"
+                                        "ä¹æœ‰äº›é¬†å‹•ã€‚\n" NOR,
 
-                        "huangjin"    : YEL "ÕâÊÇÒ»±ú´¿»ÆÖıÔìµÄ´ó¸«£¬¸«±úÄ©¶ËËÆ"
-                                        "ºõÓĞĞ©ËÉ¶¯¡£\n" NOR,
+                        "huangjin"    : YEL "é€™æ˜¯ä¸€æŸ„ç´”é»ƒé‘„é€ çš„å¤§æ–§ï¼Œæ–§æŸ„æœ«ç«¯ä¼¼"
+                                        "ä¹æœ‰äº›é¬†å‹•ã€‚\n" NOR,
                 ]));
                 add_action("do_get", "get");
              } else
         {
                 set("item_desc",([
-                        "gate": WHT "Á½ÉÈºñºñµÄ´óÊ¯ÃÅ£¬ËÆºõ²»¿ÉÄÜ´òÆÆËü¡£\n" NOR,
+                        "gate": WHT "å…©æ‰‡åšåšçš„å¤§çŸ³é–€ï¼Œä¼¼ä¹ä¸å¯èƒ½æ‰“ç ´å®ƒã€‚\n" NOR,
                 ]));
         }
                add_action("do_break", "break");
@@ -70,20 +70,20 @@ int do_get(string arg)
                 if ((int)me->query_skill("force", 1) > 200)
                 {
                         ob->move(me, 1);
-                             message_vision(HIY "\n$N" HIY "¡¸àÛ¡¹µÄÒ»Éù£¬´ÓÊ¯ÃÅÉÏ°Î"
-                                       "³öÒ»±ú»Æ½ğ¸«£¬Ö»¼¤µÃ³¾ÍÁ·ÉÑï¡£\n\n" NOR,
+                             message_vision(HIY "\n$N" HIY "ã€Œå™—ã€çš„ä¸€è²ï¼Œå¾çŸ³é–€ä¸Šæ‹”"
+                                       "å‡ºä¸€æŸ„é»ƒé‡‘æ–§ï¼Œåªæ¿€å¾—å¡µåœŸé£›æšã€‚\n\n" NOR,
                                        me);
 
                              set("item_desc",([
-                                     "gate": WHT "Á½ÉÈºñºñµÄ´óÊ¯ÃÅ£¬ËÆºõ²»¿ÉÄÜ´òÆÆËü"
-                                        "¡£\n" NOR,
+                                     "gate": WHT "å…©æ‰‡åšåšçš„å¤§çŸ³é–€ï¼Œä¼¼ä¹ä¸å¯èƒ½æ‰“ç ´å®ƒ"
+                                        "ã€‚\n" NOR,
                         ]));
 
                      } else
                 {
-                             message_vision(WHT "\n$N" WHT "Ê¹³öÁË³ÔÄÌµÄÁ¦£¬¿ÉÊÇÃÅ»·"
-                                       "ÉÏµÄ" NOR + YEL "»Æ½ğ¸«" NOR "(huangjin"
-                                       " fu)" WHT "ÒÀÈ»ÎÆË¿²»¶¯¡£\n" NOR, me);
+                             message_vision(WHT "\n$N" WHT "ä½¿å‡ºäº†åƒå¥¶çš„åŠ›ï¼Œå¯æ˜¯é–€ç’°"
+                                       "ä¸Šçš„" NOR + YEL "é»ƒé‡‘æ–§" NOR "(huangjin"
+                                       " fu)" WHT "ä¾ç„¶ç´‹çµ²ä¸å‹•ã€‚\n" NOR, me);
                      }
                      return 1;
         }
@@ -99,40 +99,40 @@ int do_break(string arg)
         ob=query_temp("weapon", me);
 
             if (! arg || arg != "gate")
-                return notify_fail("ÄãÒª»ÙµôÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦æ¯€æ‰ä»€éº¼ï¼Ÿ\n");
 
         if (query("exits/north"))
-                return notify_fail("Ê¯ÃÅÒÑ¾­±»Åü¿ªÁË£¬»¹ÅüÊ²Ã´£¿\n");
+                return notify_fail("çŸ³é–€å·²ç¶“è¢«åŠˆé–‹äº†ï¼Œé‚„åŠˆä»€éº¼ï¼Ÿ\n");
 
             if (! ob)
         {
-                message_vision(HIY "\n$N" HIY "Æø³Áµ¤ÌïÔúÎÈÂí²½£¬´óºğÒ»Éù£¬Ë«È­"
-                               "ÃÍµÄ»÷ÏòÊ¯ÃÅ£¡\n" NOR, me);
+                message_vision(HIY "\n$N" HIY "æ°£æ²‰ä¸¹ç”°ç´®ç©©é¦¬æ­¥ï¼Œå¤§å¼ä¸€è²ï¼Œé›™æ‹³"
+                               "çŒ›çš„æ“Šå‘çŸ³é–€ï¼\n" NOR, me);
 
                     if ((int)me->query_skill("force", 1) < 200)
                 {
-                        message_vision(HIR "½á¹ûÖ»Ìı$N" HIR "Ò»ÉùÃÆºß£¬±»Ê¯ÃÅµÄ"
-                                       "·´µ¯Á¦ÕğµÃ·ÉÁË³öÈ¥¡£\n\n" NOR, me);
+                        message_vision(HIR "çµæœåªè½$N" HIR "ä¸€è²æ‚¶å“¼ï¼Œè¢«çŸ³é–€çš„"
+                                       "åå½ˆåŠ›éœ‡å¾—é£›äº†å‡ºå»ã€‚\n\n" NOR, me);
                         me->receive_wound("qi", 300);
                         set("neili", 0, me);
                         me->unconcious();
                 } else
                 {
-                        message_vision(HIR "½á¹ûÖ»ÌıºäµÄÒ»ÉùÃÆÏì£¬ÄÇÊ¯ÃÅÈ´ÊÇÎÆ"
-                                       "Ë¿Î´¶¯¡£\n\n" NOR, me);
+                        message_vision(HIR "çµæœåªè½è½Ÿçš„ä¸€è²æ‚¶éŸ¿ï¼Œé‚£çŸ³é–€å»æ˜¯ç´‹"
+                                       "çµ²æœªå‹•ã€‚\n\n" NOR, me);
                         set("neili", 0, me);
                 }
                 return 1;
             }
 
-               message_vision(HIY"\n$N"HIY"¸ß¸ß¾ÙÆğÊÖÖĞµÄ"+query("name", ob)+HIY
-                       "£¬³¯Ê¯ÃÅÃÍÅü¶øÈ¥£¡\n" NOR, me);
+               message_vision(HIY"\n$N"HIY"é«˜é«˜èˆ‰èµ·æ‰‹ä¸­çš„"+query("name", ob)+HIY
+                       "ï¼ŒæœçŸ³é–€çŒ›åŠˆè€Œå»ï¼\n" NOR, me);
 
             if ((int)me->query_skill("force", 1) < 200
            || base_name(ob) != HUANGJINFU)
         {
-                message_vision(HIR "½á¹ûÖ»Ìı¡¸îõ¡¹µÄÒ»Éù£¬$N" HIR "»¢¿ÚÒ»Õğ£¬"
-                               +query("name", ob)+HIR"½û²»×¡ÍÑÊÖ·É³ö¡£\n\n"
+                message_vision(HIR "çµæœåªè½ã€Œéºã€çš„ä¸€è²ï¼Œ$N" HIR "è™å£ä¸€éœ‡ï¼Œ"
+                               +query("name", ob)+HIR"ç¦ä¸ä½è„«æ‰‹é£›å‡ºã€‚\n\n"
                                NOR, me);
                 ob->move(environment(me));
                 return 1;
@@ -143,14 +143,14 @@ int do_break(string arg)
 
         if (! query("exits/north"))
         {
-                message_vision(HIY "Ö»Ìı¡¸ºä¡¹µÄÒ»Éù¾ŞÏì£¬Ê¯ÃÅÒÑ±»$N" HIY "ÅüµÃ"
-                               "·ÛËé£¬Â¶³öÒ»¸ö¶´¿Ú¡£\n\n" NOR, me);
+                message_vision(HIY "åªè½ã€Œè½Ÿã€çš„ä¸€è²å·¨éŸ¿ï¼ŒçŸ³é–€å·²è¢«$N" HIY "åŠˆå¾—"
+                               "ç²‰ç¢ï¼Œéœ²å‡ºä¸€å€‹æ´å£ã€‚\n\n" NOR, me);
 
                 set("exits/north", __DIR__"yongdao4");
                 set("exits/south", __FILE__, room);
 
-                message("vision", HIY "\nÖ»ÌıÍâÃæ¡¸ºä¡¹µÄÒ»Éù¾ŞÏì£¬Ê¯ÃÅ±»ÈËÅü¿ª"
-                                  "ÁË¡£\n" NOR, room);
+                message("vision", HIY "\nåªè½å¤–é¢ã€Œè½Ÿã€çš„ä¸€è²å·¨éŸ¿ï¼ŒçŸ³é–€è¢«äººåŠˆé–‹"
+                                  "äº†ã€‚\n" NOR, room);
         }
             return 1;
 }

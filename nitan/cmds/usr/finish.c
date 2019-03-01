@@ -9,39 +9,39 @@ int main(object me, string arg)
         object ob;
 
         if (! arg || arg == "")
-                return notify_fail("ÄãÒªÏòË­ÁìÈ¡ÈÎÎñ½±Àø£¿\n");
+                return notify_fail("ä½ è¦å‘èª°é ˜å–ä»»å‹™çå‹µï¼Ÿ\n");
         
         if (! objectp(ob = present(arg, environment(me))))
-                return notify_fail("ÕâÀïÃ»ÓĞÕâ¸öÈË£¬ÄãÔõÃ´Áì½±Àø£¿\n");
+                return notify_fail("é€™è£¡æ²’æœ‰é€™å€‹äººï¼Œä½ æ€éº¼é ˜çå‹µï¼Ÿ\n");
 
         if (! living(ob))
-                return notify_fail("Äã»¹ÊÇµÈ" + ob->name() +
-                                   "ĞÑÁËÔÙËµ°É£¡\n");
+                return notify_fail("ä½ é‚„æ˜¯ç­‰" + ob->name() +
+                                   "é†’äº†å†èªªå§ï¼\n");
 
         if (me->is_fighting())
-                return notify_fail("×¨ĞÄ´òÄãµÄ¼Ü£¡\n");
+                return notify_fail("å°ˆå¿ƒæ‰“ä½ çš„æ¶ï¼\n");
 
         if (me->is_busy())
-                return notify_fail("Äã»¹ÊÇÓĞ¿ÕÁËÔÙºÍ" + ob->name() +
-                                   "Ì¸ÕâĞ©ÎÊÌâ°É£¡\n");
+                return notify_fail("ä½ é‚„æ˜¯æœ‰ç©ºäº†å†å’Œ" + ob->name() +
+                                   "è«‡é€™äº›å•é¡Œå§ï¼\n");
 
         if (ob->is_fighting())
-                return notify_fail("Äã»¹ÊÇµÈ" + ob->name() +
-                                   "´òÍê¼ÜÔÙËµ°É£¡\n");
+                return notify_fail("ä½ é‚„æ˜¯ç­‰" + ob->name() +
+                                   "æ‰“å®Œæ¶å†èªªå§ï¼\n");
 
         if (ob->is_busy())
                 return notify_fail(ob->name() +
-                                   "ÕıÃ¦×ÅÄØ£¬Ã»¹¦·òÀíÄã¡£\n");
+                                   "æ­£å¿™è‘—å‘¢ï¼Œæ²’åŠŸå¤«ç†ä½ ã€‚\n");
 
-        notify_fail(ob->name() + "Íû×ÅÄãºÇºÇµÄÉµĞ¦¡£\n");
+        notify_fail(ob->name() + "æœ›è‘—ä½ å‘µå‘µçš„å‚»ç¬‘ã€‚\n");
         return ob->ask_finish(me);
 }
 
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : defend  Õâ¸öÖ¸Áî¿ÉÒÔÓÃÀ´ÏòÄãµÄÃÅÅÉµÄÕÆÃÅ»òÊÀ¼Ò³¤±²
-ÁìÈ¡ÈÎÎñ¡£
+æŒ‡ä»¤æ ¼å¼ : defend  é€™å€‹æŒ‡ä»¤å¯ä»¥ç”¨ä¾†å‘ä½ çš„é–€æ´¾çš„æŒé–€æˆ–ä¸–å®¶é•·è¼©
+é ˜å–ä»»å‹™ã€‚
 HELP );
         return 1;
 }

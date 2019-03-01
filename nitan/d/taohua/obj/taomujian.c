@@ -1,6 +1,6 @@
 //Cracked by Kafei
 // taomu-jian.c
-//maco ĞŞ¸Ä 26/8/99
+//maco ä¿®æ”¹ 26/8/99
 
 #include <ansi.h>
 #include <weapon.h>
@@ -9,17 +9,17 @@ inherit SWORD;
 
 void create()
 {
-        set_name(HIM"ÌÒÄ¾½£"NOR,({ "taomu jian", "taomu", "jian" }) );
+        set_name(HIM"æ¡ƒæœ¨åŠ"NOR,({ "taomu jian", "taomu", "jian" }) );
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
+                set("unit", "æŠŠ");
                 set("value", 0);
                 set("material", "wood");
-                set("long", "ÕâÊÇÒ»±úÈı³ßÀ´³¤£¬ÊÖ¹¤ÖÆ³ÉµÄÌÒÄ¾½££¬ËÆºõ²»ÊÇÒ»¼şºÃ±øÆ÷¡£\n");
-                set("wield_msg", "$NÄÃ³öÒ»°Ñ$n£¬ÎÕÔÚÊÖÖĞ¡£\n");
-                set("unequip_msg", "$N·ÅÏÂÊÖÖĞµÄ$n¡£\n");
+                set("long", "é€™æ˜¯ä¸€æŸ„ä¸‰å°ºä¾†é•·ï¼Œæ‰‹å·¥åˆ¶æˆçš„æ¡ƒæœ¨åŠï¼Œä¼¼ä¹ä¸æ˜¯ä¸€ä»¶å¥½å…µå™¨ã€‚\n");
+                set("wield_msg", "$Næ‹¿å‡ºä¸€æŠŠ$nï¼Œæ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unequip_msg", "$Næ”¾ä¸‹æ‰‹ä¸­çš„$nã€‚\n");
         }
         init_sword(3);
         setup();
@@ -40,9 +40,9 @@ mixed hit_ob(object me, object victim, int damage_bonus)
         if (strsrch(file_name(where), "/d/taohua/") < 0)
                 return; 
 
-        if (!fam1 || fam1["family_name"] != "ÌÒ»¨µº")
+        if (!fam1 || fam1["family_name"] != "æ¡ƒèŠ±å³¶")
                 return;
-        if (!fam2 || fam2["family_name"] != "ÌÒ»¨µº")
+        if (!fam2 || fam2["family_name"] != "æ¡ƒèŠ±å³¶")
                 return;
 
         if (!userp(victim)) 
@@ -75,12 +75,12 @@ mixed hit_ob(object me, object victim, int damage_bonus)
         bonus = (int)(gain+damage_bonus/100*gain);
 
         me->apply_condition("th_gain", me->query_condition("th_gain")+1);
-        addn_temp("exp_gain", bonus/3, me);//Ô­±¾ÊÇ³ıÒÔ2
+        addn_temp("exp_gain", bonus/3, me);//åŸæœ¬æ˜¯é™¤ä»¥2
         set_temp("partner", victim->name(), me);
         set_temp("partner", me->name(), victim);
 //        me->addn("combat_exp", (int)bonus);
         if( query("potential", victim)<query("max_potential", victim) )
-                addn_temp("pot_gain", bonus/3, victim);//Ô­±¾ÊÇ³ıÒÔ2
+                addn_temp("pot_gain", bonus/3, victim);//åŸæœ¬æ˜¯é™¤ä»¥2
 //                victim->addn("potential", bonus);
         set_heart_beat(1);
         return;

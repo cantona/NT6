@@ -5,10 +5,10 @@ inherit F_DEALER;
 
 void create()
 {
-        set_name("ÕÅÀ¼Ïã", ({"zhang lanxiang", "zhang", "lanxiang"}));
+        set_name("å¼µè˜­é¦™", ({"zhang lanxiang", "zhang", "lanxiang"}));
         set("shop_id",({"laoban","zhanglanxiang","zhang","lanxiang"}));
-        set("shop_title", "Ë®¹ûµêÀÏ°å");
-        set("gender", "Å®ÐÔ");
+        set("shop_title", "æ°´æžœåº—è€æ¿");
+        set("gender", "å¥³æ€§");
         set("combat_exp", 4000);
         set("age", 23);
         set("per", 40);
@@ -46,6 +46,6 @@ void greeting(object ob)
 {
         if (! ob || environment(ob) != environment()) return;
 
-        say("ÕÅÀ¼ÏãÐ¦ßäßäµØËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob) +
-            "£¬ÐÂµ½µÄ¸÷ÖÖË®¹û£¬Âòµã¶ù»Ø¼Ò³¢³¢°É¡£\n");
+        say("å¼µè˜­é¦™ç¬‘å’ªå’ªåœ°èªªé“ï¼šé€™ä½" + RANK_D->query_respect(ob) +
+            "ï¼Œæ–°åˆ°çš„å„ç¨®æ°´æžœï¼Œè²·é»žå…’å›žå®¶å˜—å˜—å§ã€‚\n");
 }

@@ -1,25 +1,25 @@
-// /d/xiakedao/shiroom17.c ���͵� ʯ��17
+// /d/xiakedao/shiroom17.c 俠客島 石室17
 
 inherit ROOM;
 
 int do_study(string arg);
 void create()
 {
-        set("short", "ʯ��");
+        set("short", "石室");
         set("long", @LONG
-�������֮��������һ�����İ�С�ĺ����ֳֻƽ������ʹ��ü
-�̵��ٸ�˫սһ�����ӡ���������һƬ�ƹ������λζ���˿��������
-�硣���о��缤��֮�£����ҲϨ������֧��ʯ��(wall)�ϵ�ͼ����
-Լ�ɼ���
+這裡鏗鏘之聲不絕，一個身材矮小的漢子手持黃金棍，與使蛾眉
+刺的少婦雙戰一個瘦子。那瘦子在一片黃光中身形晃動，絲毫不落下
+風。兵刃勁風激盪之下，火把也熄滅了兩支。石壁(wall)上的圖譜隱
+約可見。
 LONG );
         set("exits", ([
                 "south" : __DIR__"shihole5",
         ]));
         set("item_desc", ([
                 "wall" : @WALL
-ǽ�����Ϸ����š����Իӽ�鳡��������֡������ͼ������׳������
-�����ˡ����������´��ƽ�����˴���������ֻ����ǹ���գ�Ѫ
-���ɡ��Ա�ע�Ͳ��࣬���Ǳ����۽���
+牆的正上方刻著「救趙揮金槌」幾個大字。下面的圖畫波瀾壯闊，豪
+氣逼人。正是岳武穆大破金兵，八大錘鬧朱仙鎮。只見刀槍蔽日，血
+肉橫飛。旁邊注釋不多，均是筆力雄健。
 WALL
         ]));
         set("no_clean_up", 0);

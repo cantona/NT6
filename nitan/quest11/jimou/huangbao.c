@@ -1,4 +1,4 @@
-// »Ñ±¨
+// è¬Šå ±
 #include <mudlib.h>
 #include <daemons.h>
 #include <ansi.h>
@@ -22,37 +22,37 @@ string* charlist;
 	p_name=CHAR_D->get_char(ob->query_primary_id(),"name");
 	where = TROOP_D->get_troop_area(p_id);
 	if(!(p_skill=CHAR_D->get_char(ob->query_primary_id(),"skills")["huangbao"]))
-        {       write("Äã²»»á»Ñ±¨Ö®¼Æ¡£\n");
+        {       write("ä½ ä¸æœƒè¬Šå ±ä¹‹è¨ˆã€‚\n");
                 return;}
 	if( !p_id){
-                write("Ö»ÓÐÉíÔÚ¾üÖÐ²ÅÄÜ»Ñ±¨¡£\n");
+                write("åªæœ‰èº«åœ¨è»ä¸­æ‰èƒ½è¬Šå ±ã€‚\n");
                 return;
         }	
 	// In the furture, We have to consider theplayer's ablility
 	// add the exp of this jimou, reduce mp, etc.
 	if ( !e_id || TROOP_D->get_troop_area(e_id)!=where)
-		{ write("¶Ô·½²»ÔÚ´ËÕ½³¡ÉÏ¡£\n");
+		{ write("å°æ–¹ä¸åœ¨æ­¤æˆ°å ´ä¸Šã€‚\n");
 			return;
 		}
 	
 	if (TROOP_D->get_troop_side(e_id) ==TROOP_D->get_troop_side(p_id))
-                {write ("²»¿ÉÏò¼º·½²¿¶ÓÊ©ÓÃ´Ë¼Æ¡£\n");
+                {write ("ä¸å¯å‘å·±æ–¹éƒ¨éšŠæ–½ç”¨æ­¤è¨ˆã€‚\n");
                         return;
                 }
 	side = TROOP_D->get_troops(p_id,"side");
 	if (side == "a")
-	{	write("Ö»ÓÐ·ÀÊØ·½¿ÉÒÔÊ©ÓÃ´Ë¼Æ¡£\n");
+	{	write("åªæœ‰é˜²å®ˆæ–¹å¯ä»¥æ–½ç”¨æ­¤è¨ˆã€‚\n");
 		return;
 	}
 	task = TROOP_D->get_troops(e_id, "task_id");
 	if( (who==TASK_D->get_task(task, "att_leader")) ){
-                write("²»¿É¶ÔÖ÷½«Ê©ÓÃ´Ë¼Æ¡£\n");
+                write("ä¸å¯å°ä¸»å°‡æ–½ç”¨æ­¤è¨ˆã€‚\n");
                 return;
 		}
 charlist = TROOP_D->get_troops(e_id,"chars");
 
 if(member_array(TASK_D->get_task(task, "att_leader"),charlist)>=0)
-        {write("²»¿É¶ÔÖ÷½«²¿¶ÓÊ¹ÓÃ.\n");
+        {write("ä¸å¯å°ä¸»å°‡éƒ¨éšŠä½¿ç”¨.\n");
                 return;
         }
 	x =TROOP_D->get_troop_position(p_id)[0];
@@ -62,16 +62,16 @@ if(member_array(TASK_D->get_task(task, "att_leader"),charlist)>=0)
                 y2 = TROOP_D->get_troop_position(e_id)[1];
 
                 if( (x-x2)*(x-x2)+(y-y2)*(y-y2) > 9 ){
-			write("ÄãÀëµÐÈËÌ«Ô¶ÎÞ·¨Ê©¼Æ¡£\n");
+			write("ä½ é›¢æ•µäººå¤ªé ç„¡æ³•æ–½è¨ˆã€‚\n");
 			return;}
                 tell(deep_inventory(TROOP_D->find_troop(e_id)),
-	"Ê¿±øÒ»ÕóÐú»©£¬Ô­À´ÊÇ"+p_name+"¶ÔÄãµÄ²¿¶ÓÊ¹ÓÃ»Ñ±¨Ö®¼Æ¡£\n",
+	"å£«å…µä¸€é™£å–§å˜©ï¼ŒåŽŸä¾†æ˜¯"+p_name+"å°ä½ çš„éƒ¨éšŠä½¿ç”¨è¬Šå ±ä¹‹è¨ˆã€‚\n",
                         MSG_INDENT);
                 // In future, we have to consider effects of the
                 // ablility of general, zhenxing, dixing, etc.
                 // Now the damage depends only on the No of bowman
 	ob->simple_action(SG_SKILL_D->query_use("huangbao"));
-	ob->start_busy(10, "ÄãÕýÃ¦ÓÚ»Ñ±¨ÄØ¡£");
+	ob->start_busy(10, "ä½ æ­£å¿™äºŽè¬Šå ±å‘¢ã€‚");
 	load_object("/daemons/cast_d.c")->reg_player(ob->query_primary_id(), "huangbao");
         ob->award_exp(ob->query_sk_level("sk_zhimou")/2+random(20), "huangbao");
 	
@@ -107,16 +107,16 @@ kill = random(kill);
         ob->stop_busy();	
 	if(kill>100)
 	{	tell(deep_inventory(TROOP_D->find_troop(e_id)),
-                "Äã´óºÈµÀ£º¾È±øÈç¾È»ð£¬ÎáµÈËÙÍË£¡\n",
+                "ä½ å¤§å–é“ï¼šæ•‘å…µå¦‚æ•‘ç«ï¼Œå¾ç­‰é€Ÿé€€ï¼\n",
                         MSG_INDENT);
 		mora1 = random (6) +2;
 		tell(deep_inventory(TROOP_D->find_troop(p_id)),
-                "¼Æ²ßÍêÈ«³É¹¦£¬µÐÈË³·ÍË¡£\n",
+                "è¨ˆç­–å®Œå…¨æˆåŠŸï¼Œæ•µäººæ’¤é€€ã€‚\n",
                         MSG_INDENT);
 		ob->simple_action(SG_SKILL_D->query_succ("huangbao"));	
 		WARAI_D->war_inf(TROOP_D->get_troops(p_id,"task_id"),
-TROOP_D->find_troop(p_id)->query_id()[1]+"Ê¹ÓÃ»Ñ±¨Ö®¼Æ£¬Áî"+
-TROOP_D->find_troop(e_id)->query_id()[1]+"È«¾ü³·ÍË¡£","b");
+TROOP_D->find_troop(p_id)->query_id()[1]+"ä½¿ç”¨è¬Šå ±ä¹‹è¨ˆï¼Œä»¤"+
+TROOP_D->find_troop(e_id)->query_id()[1]+"å…¨è»æ’¤é€€ã€‚","b");
 	TROOP_D->remove_troop(e_id);
 		return;
 } 
@@ -124,44 +124,44 @@ TROOP_D->find_troop(e_id)->query_id()[1]+"È«¾ü³·ÍË¡£","b");
 	{     if(kill>20)
 		{
 	tell(deep_inventory(TROOP_D->find_troop(e_id)),
-        	"Ê¿±ø¿ªÊ¼ÌÓ×ß£¬ÏëÊÇÊÜÁË»Ñ±¨µÄÓ°Ïì¡£\n",
+        	"å£«å…µé–‹å§‹é€ƒèµ°ï¼Œæƒ³æ˜¯å—äº†è¬Šå ±çš„å½±éŸ¿ã€‚\n",
                         MSG_INDENT);	
 		mora = random (-3) - 5;
 		mora1 = random (3) + 1;
 		rate = 1.1;
 	tell(deep_inventory(TROOP_D->find_troop(p_id)),
-                "¼Æ²ß´ó³É¹¦£¬µÐ·½Ê¿±ø¿ªÊ¼ÌÓ×ß¡£\n",
+                "è¨ˆç­–å¤§æˆåŠŸï¼Œæ•µæ–¹å£«å…µé–‹å§‹é€ƒèµ°ã€‚\n",
                         MSG_INDENT);	
 	ob->simple_action(SG_SKILL_D->query_succ("huangbao"));
 		}
 	      else if( kill>5)
 		{
 		tell(deep_inventory(TROOP_D->find_troop(e_id)),
-        	"Ê¿±øÃæÓÐÒÉÎÊ£¬ÊÜÁË»Ñ±¨µÄÓ°Ïì¡£\n",
+        	"å£«å…µé¢æœ‰ç–‘å•ï¼Œå—äº†è¬Šå ±çš„å½±éŸ¿ã€‚\n",
                         MSG_INDENT);
 		mora = random(-2) - 1;
 		mora1 = 1;
 		tell(deep_inventory(TROOP_D->find_troop(p_id)),
-                "¼Æ²ß³É¹¦£¬µÐÈËÊÜÁË»Ñ±¨µÄÓ°Ïì¡£\n",
+                "è¨ˆç­–æˆåŠŸï¼Œæ•µäººå—äº†è¬Šå ±çš„å½±éŸ¿ã€‚\n",
                         MSG_INDENT);
 	ob->simple_action(SG_SKILL_D->query_succ("huangbao"));
 		}	
 	      else 
 		{
 		tell(deep_inventory(TROOP_D->find_troop(e_id)),
-        	"Ê¿±ø³É¹¦ÆÆ½âµÐÈË»Ñ±¨¡£\n",
+        	"å£«å…µæˆåŠŸç ´è§£æ•µäººè¬Šå ±ã€‚\n",
                         MSG_INDENT);
 		mora = random(20) + 10;
 		mora1 = random(-8) - 3;
 		ob->simple_action(SG_SKILL_D->query_fail("huangbao"));
 		tell(deep_inventory(TROOP_D->find_troop(p_id)),
-                "¼Æ²ßÊ§°Ü£¬ÎÒ¾üÃÉÊÜËðÊ§¡£\n",
+                "è¨ˆç­–å¤±æ•—ï¼Œæˆ‘è»è’™å—æå¤±ã€‚\n",
                         MSG_INDENT);
 	  	damage= 100 + random (150);
         	WARAI_D->kill_troop(p_id,damage);
 		WARAI_D->war_inf(TROOP_D->get_troops(p_id,"task_id"),
-TROOP_D->find_troop(p_id)->query_id()[1]+"Ê¹ÓÃ»Ñ±¨Ö®¼ÆÊ§°Ü£¬±»µÐÈË³Ë»ú¼ß
-Ãð"+chinese_number(damage)+"ÈË¡£","b");
+TROOP_D->find_troop(p_id)->query_id()[1]+"ä½¿ç”¨è¬Šå ±ä¹‹è¨ˆå¤±æ•—ï¼Œè¢«æ•µäººä¹˜æ©Ÿæ®²
+æ»…"+chinese_number(damage)+"äººã€‚","b");
 		WARAI_D->clear_empty_troop(({p_id}));
 		
 		}
@@ -172,9 +172,9 @@ TROOP_D->find_troop(p_id)->query_id()[1]+"Ê¹ÓÃ»Ñ±¨Ö®¼ÆÊ§°Ü£¬±»µÐÈË³Ë»ú¼ß
 	{	damage =kill*rate*2;
 		WARAI_D->kill_troop(e_id,damage);
                 WARAI_D->war_inf(TROOP_D->get_troops(p_id,"task_id"),
-TROOP_D->find_troop(p_id)->query_id()[1]+"Ê¹ÓÃ»Ñ±¨Ö®¼Æ£¬Áî"+
-TROOP_D->find_troop(e_id)->query_id()[1]+"ÌÓ×ß"+
-chinese_number(damage)+"ÈË¡£","b");
+TROOP_D->find_troop(p_id)->query_id()[1]+"ä½¿ç”¨è¬Šå ±ä¹‹è¨ˆï¼Œä»¤"+
+TROOP_D->find_troop(e_id)->query_id()[1]+"é€ƒèµ°"+
+chinese_number(damage)+"äººã€‚","b");
                 WARAI_D->clear_empty_troop(({e_id}));
 	}
 	return;

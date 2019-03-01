@@ -1,4 +1,4 @@
-// wangjiantong.c Íô½£Í¨
+// wangjiantong.c æ±ªåŠé€š
 
 #include <ansi.h>
 
@@ -6,11 +6,11 @@ inherit "/inherit/char/punisher";
 
 void create()
 {
-        set_name("Íô½£Í¨", ({"wang jiantong", "wang", "jiantong"}));
+        set_name("æ±ªåŠé€š", ({"wang jiantong", "wang", "jiantong"}));
 
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("age", 54);
-        set("long", "ËûÌåÌ¬¿ıÎà£¬ÏàÃ²ÍşÑÏ¡£\n");
+        set("long", "ä»–é«”æ…‹é­æ¢§ï¼Œç›¸è²Œå¨åš´ã€‚\n");
         set("attitude", "peaceful");
         
         set("str", 35);
@@ -58,7 +58,7 @@ void create()
 
         prepare_skill("strike", "dragon-strike");
 
-        create_family("Ø¤°ï", 0, "ÃûËŞ");
+        create_family("ä¸å¹«", 0, "åå®¿");
 
         setup();
         carry_object("/clone/weapon/gangzhang")->wield();

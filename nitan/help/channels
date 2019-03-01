@@ -1,44 +1,44 @@
-$HIY$������������Ƶ����$NOR$
+$HIY$【交流和聊天頻道】$NOR$
 
-����������ָ������������ҽ��������졣
-��̶�����칦�ܶ���ҵĳɳ�����Ҫ�ģ������е���Ҿ���������
-ΪĿ�Ľ��������еġ�������Ǿ����ṩ�ḻ�����칦�ܣ�
+您可用下列指令來和其他玩家交流和聊天。
+泥潭的聊天功能對玩家的成長很重要的，甚至有的玩家就是以聊天
+為目的進入俠客行的。因此我們盡量提供豐富的聊天功能：
 
-$HIY$����Ƶ��$NOR$
-        $HIC$chat$NOR$     ����
-        $HIC$rumor$NOR$    ҥ��
-        $HIC$party$NOR$    ����
-        $HIC$family$NOR$   ͬ��
-        $HIC$inter$NOR$    ͬ��
-        $HIC$bill$NOR$     ����
-        $HIC$ultra$NOR$    ��ʦ
-        $HIC$es$NOR$       ����
-        $HIC$rultra$NOR$   ������ʦ
+$HIY$公開頻道$NOR$
+        $HIC$chat$NOR$     閒聊
+        $HIC$rumor$NOR$    謠言
+        $HIC$party$NOR$    幫派
+        $HIC$family$NOR$   同門
+        $HIC$inter$NOR$    同盟
+        $HIC$bill$NOR$     交易
+        $HIC$ultra$NOR$    宗師
+        $HIC$es$NOR$       網際
+        $HIC$rultra$NOR$   網際宗師
 
-��������ֻҪ�ں�����������磺��chat ��ã����Ϳ����ˡ� ����
-����Ҳ�ṩ�˺ܶද����������hi�ȣ�ʹ�õķ����ǣ���chat* hi��
-��������������$HIY$semote$NOR$����$HIY$femote$NOR$�����á�
+上述命令只要在後面加上內容如：“chat 你好！”就可以了。 另外
+我們也提供了很多動作描述，如hi等，使用的方法是：“chat* hi”
+動作描述可以用$HIY$semote$NOR$或是$HIY$femote$NOR$命令獲得。
 
-ע�⣺���е�������ʦƵ��$HIC$rultra$NOR$��һ������������Ƶ����������
-�������Ƶ������ô���Զ���������վ��Ĵ���ʦ�Ľ�̸�����ص���
-ʦ��̸���Զ�ת����$HIC$chat$NOR$Ƶ���ĶԻ���
+注意：其中的網際宗師頻道$HIC$rultra$NOR$是一個用來收聽的頻道，如果你打
+開了這個頻道，那麼會自動收聽其他站點的大宗師的交談。本地的宗
+師交談會自動轉換成$HIC$chat$NOR$頻道的對話。
 
-$HIY$˽��Ƶ��$NOR$
-        $HIC$tell$NOR$ sb ��Ϣ      ���߱�����Ϣ
-        $HIC$reply$NOR$ ��Ϣ        �ش������Ϣ
-        $HIC$whisper$NOR$ sb ��Ϣ   �ͱ��˶������ͬһ�����ڣ�
-        $HIC$say$NOR$ ��Ϣ          ˵����ͬһ�����ھ��������� 
-        $HIC$ask$NOR$ sb about ��Ϣ �ʻ���ͬһ�����ھ��������� 
-        $HIC$answer$NOR$ ��Ϣ       �ش�ͬһ�����ھ��������� 
+$HIY$私人頻道$NOR$
+        $HIC$tell$NOR$ sb 信息      告訴別人信息
+        $HIC$reply$NOR$ 信息        回答別人信息
+        $HIC$whisper$NOR$ sb 信息   和別人耳語（需在同一房間內）
+        $HIC$say$NOR$ 信息          說話（同一房間內均可聽到） 
+        $HIC$ask$NOR$ sb about 信息 問話（同一房間內均可聽到） 
+        $HIC$answer$NOR$ 信息       回答（同一房間內均可聽到） 
 
-$HIY$����$NOR$
+$HIY$設置$NOR$
 
-�����Ϊ�˱��������˵�ɧ�ţ�����ʹ��$HIC$no_emote/can_emote$NOR$������
-�������㲻��ӭ����Ҷ��������鶯����ͬʱ��Ҳ��������$HIC$no_tell
-can_tell$NOR$�������㲻ϲ������Һ��㽻̸��
+如果你為了避免其他人的騷擾，可以使用$HIC$no_emote/can_emote$NOR$的設置
+來避免你不歡迎的玩家對你做表情動作，同時你也可以設置$HIC$no_tell
+can_tell$NOR$來避免你不喜歡得玩家和你交談。
 
-�����Ͷ��˽�̸�����ܸо���$HIY$reply$NOR$ ����ʹ�ò��㣬��Ϊ����ش�
-��ʱ����п��ܻش���������������ʹ��$HIC$jam_talk$NOR$�ķ�ʽ������
-���������Ļش𣬻����ֹ�������Ϣ����������Բο�$HIY$help settings$NOR$
-����ص����������
+如果你和多人交談，可能感覺到$HIY$reply$NOR$ 命令使用不便，因為在你回答
+的時候很有可能回答錯對象，這樣你可以使用$HIC$jam_talk$NOR$的方式，讓你
+逐條逐條的回答，或是手工翻動信息。具體你可以參考$HIY$help settings$NOR$
+和相關的命令幫助。
 

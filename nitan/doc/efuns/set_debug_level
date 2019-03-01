@@ -1,17 +1,17 @@
         set_debug_level(3)        LP MudOSv21c7                (7 Jul 1996)
-        º¯ÊıÃû³Æ:
-                set_debug_level() - Éè¶¨Çı¶¯³ÌÊ½ (driver) Ê¹ÓÃ debug()
-                                    ¾Ş¼¯ (macro) Ê±, Æä³ı´í (debug) µÄ
-                                    µÈ¼¶.
-        º¯ÊıÓï·¨:
+        å‡½æ•¸åç¨±:
+                set_debug_level() - è¨­å®šé©…å‹•ç¨‹å¼ (driver) ä½¿ç”¨ debug()
+                                    å·¨é›† (macro) æ™‚, å…¶é™¤éŒ¯ (debug) çš„
+                                    ç­‰ç´š.
+        å‡½æ•¸èªæ³•:
                 void set_debug_level( int level );
-                ÎŞ´«»ØÖµ set_debug_level( ÕûÊı level );
-        º¯ÊıÓÃ·¨:
-                Õâ¸ö³¬Ô½º¯Ê½ (emulated function, efun) Ö»ÓĞÔÚ±àÒëÇı¶¯³ÌÊ½
-                Ê±Ê¹ÓÃ -DDEBUG_MACRO ²ÅÓĞĞ§. set_debug_macro() ÈÃ mud  Ö´
-                ĞĞÊ±, ¿ÉÒÔ´ÓÄÚ²¿¿ØÖÆ³ı´íÑ¶Ï¢µÄÁ¿¼°ÖÖÀà.
-                Çë²Î¿¼Çı¶¯³ÌÊ½Ô­Ê¼ÂëÖĞµÄ debug.h, ÆäÖĞÓĞÏêÏ¸µÄ¶¨Òå.
-        ²Î¿¼º¯Êı:
+                ç„¡å‚³å›å€¼ set_debug_level( æ•´æ•¸ level );
+        å‡½æ•¸ç”¨æ³•:
+                é€™å€‹è¶…è¶Šå‡½å¼ (emulated function, efun) åªæœ‰åœ¨ç·¨è­¯é©…å‹•ç¨‹å¼
+                æ™‚ä½¿ç”¨ -DDEBUG_MACRO æ‰æœ‰æ•ˆ. set_debug_macro() è®“ mud  åŸ·
+                è¡Œæ™‚, å¯ä»¥å¾å…§éƒ¨æ§åˆ¶é™¤éŒ¯è¨Šæ¯çš„é‡åŠç¨®é¡.
+                è«‹åƒè€ƒé©…å‹•ç¨‹å¼åŸå§‹ç¢¼ä¸­çš„ debug.h, å…¶ä¸­æœ‰è©³ç´°çš„å®šç¾©.
+        åƒè€ƒå‡½æ•¸:
                 set_malloc_mask(3)
-        ÊÖ²á·­Òë:
+        æ‰‹å†Šç¿»è­¯:
                 Phoebus@ZH        97.Jul.20.                (Writen 5/23/97)

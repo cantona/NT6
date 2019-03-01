@@ -1,12 +1,12 @@
 // This program is a part of NITAN MudLIB
-// he.c Ë«½£½»´í
+// he.c é›™åŠäº¤éŒ¯
 
 #include <ansi.h>
 #include <combat.h>
 
 inherit F_SSERVER;
 
-string name() { return "Ë«½£½»´í"; }
+string name() { return "é›™åŠäº¤éŒ¯"; }
 
 int perform(object me, object target)
 {
@@ -17,29 +17,29 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail("Ë«½£½»´íÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("é›™åŠäº¤éŒ¯åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me)) ||
             query("skill_type", weapon) != "sword" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ã€‚\n");
 
         if ((int)me->query_skill("force") < 120)
-                return notify_fail("ÄãµÄÄÚ¹¦²»¹»æµÊì£¬²»ÄÜÊ¹ÓÃË«½£½»´í¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸä¸å¤ å«»ç†Ÿï¼Œä¸èƒ½ä½¿ç”¨é›™åŠäº¤éŒ¯ã€‚\n");
 
         if ((int)me->query_skill("yunv-jian", 1) < 80)
-                return notify_fail("ÄãµÄÓñÅ®½£·¨²»¹»æµÊì£¬²»ÄÜÊ¹ÓÃË«½£½»´í¡£\n");
+                return notify_fail("ä½ çš„ç‰å¥³åŠæ³•ä¸å¤ å«»ç†Ÿï¼Œä¸èƒ½ä½¿ç”¨é›™åŠäº¤éŒ¯ã€‚\n");
 
         if ((int)me->query_skill("quanzhen-jian", 1) < 50)
-                return notify_fail("ÄãµÄÈ«Õæ½£·¨²»¹»æµÊì£¬²»ÄÜÊ¹ÓÃË«½£½»´í¡£\n");
+                return notify_fail("ä½ çš„å…¨çœŸåŠæ³•ä¸å¤ å«»ç†Ÿï¼Œä¸èƒ½ä½¿ç”¨é›™åŠäº¤éŒ¯ã€‚\n");
 
         if( query("neili", me)<400 )
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ£¬²»ÄÜÊ¹ÓÃË«½£½»´í¡£\n");
+                return notify_fail("ä½ ç¾åœ¨å…§åŠ›å¤ªå¼±ï¼Œä¸èƒ½ä½¿ç”¨é›™åŠäº¤éŒ¯ã€‚\n");
 
         if (me->query_skill_mapped("sword") != "yunv-jian")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢ÓñÅ®½£·¨£¬²»ÄÜÊ¹ÓÃË«½£½»´í¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼ç‰å¥³åŠæ³•ï¼Œä¸èƒ½ä½¿ç”¨é›™åŠäº¤éŒ¯ã€‚\n");
 
-        msg = HIY "$N" HIY "×óÊÖÒÔÈ«Õæ½£·¨½£Òâ£¬ÓÒÊÖ»¯ÓñÅ®½£·¨½£"
-              "ÕĞ£¬Ë«½£½»´íÍ¬Ê±´Ì³ö¡£\n" NOR;
+        msg = HIY "$N" HIY "å·¦æ‰‹ä»¥å…¨çœŸåŠæ³•åŠæ„ï¼Œå³æ‰‹åŒ–ç‰å¥³åŠæ³•åŠ"
+              "æ‹›ï¼Œé›™åŠäº¤éŒ¯åŒæ™‚åˆºå‡ºã€‚\n" NOR;
 
         ap = attack_power(me, "sword");
 
@@ -55,15 +55,15 @@ int perform(object me, object target)
 
                 addn("neili", -350, me);
                 msg += COMBAT_D->do_damage(me, target, WEAPON_ATTACK, damage, 55,
-                                           HIR "$n" HIR "¿´µ½$N" HIR "Ë«½£·ÉÎè£¬ÕĞÊ½ÖĞËùÓĞ"
-                                           "ÆÆÕÀ¶¼ÎªÁíÒ»½£²¹È¥£¬¾¹²»ÖªÈçºÎÊÇºÃ£¡\n"
-                                           HIR"Ò»´ôÖ®ÏÂ£¬$N" HIR "µÄ½£ÕĞÒÑ¾­ÆÆÊ½¶øÈë£¡$n"
-                                           HIR "Ò»Éù²Ò½ĞÖ®ÏÂ£¬µÇÊ±ÊÜÁËÖØ´´£¡\n" NOR);
+                                           HIR "$n" HIR "çœ‹åˆ°$N" HIR "é›™åŠé£›èˆï¼Œæ‹›å¼ä¸­æ‰€æœ‰"
+                                           "ç ´ç¶»éƒ½ç‚ºå¦ä¸€åŠè£œå»ï¼Œç«Ÿä¸çŸ¥å¦‚ä½•æ˜¯å¥½ï¼\n"
+                                           HIR"ä¸€å‘†ä¹‹ä¸‹ï¼Œ$N" HIR "çš„åŠæ‹›å·²ç¶“ç ´å¼è€Œå…¥ï¼$n"
+                                           HIR "ä¸€è²æ…˜å«ä¹‹ä¸‹ï¼Œç™»æ™‚å—äº†é‡å‰µï¼\n" NOR);
         } else
         {
                 me->start_busy(3);
-                msg += CYN "¿ÉÊÇ$p" NOR CYN "¿´ÆÆÁË$P" NOR CYN "µÄÆóÍ¼£¬½«"
-                       "×Ô¼ºµÄÈ«ÉíÉÏÏÂ»¤µÃÃÜ²»Í¸·ç£¬Áî$P" NOR CYN "ÎŞ¼Æ¿ÉÊ©¡£\n" NOR;
+                msg += CYN "å¯æ˜¯$p" NOR CYN "çœ‹ç ´äº†$P" NOR CYN "çš„ä¼åœ–ï¼Œå°‡"
+                       "è‡ªå·±çš„å…¨èº«ä¸Šä¸‹è­·å¾—å¯†ä¸é€é¢¨ï¼Œä»¤$P" NOR CYN "ç„¡è¨ˆå¯æ–½ã€‚\n" NOR;
         }
         message_combatd(msg, me, target);
 

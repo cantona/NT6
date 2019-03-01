@@ -3,11 +3,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("������ͷ", ({ "tiaocai laotou","laotou" }) );
-        set("gender", "����" );
+        set_name("挑菜老頭", ({ "tiaocai laotou","laotou" }) );
+        set("gender", "男性" );
         set("age",60);
         set("inquiry", ([
-                "·" : "һֱ����ʯ���ϵ���ͷ�����ˡ�\n",
+                "路" : "一直沿著石階上到盡頭就是了。\n",
                         ]) );
         set("social_exp",2000);
         set("combat_exp",10000);
@@ -33,6 +33,6 @@ void init()
 void greeting(object ob)
 {
         if(!ob||!present(ob,environment(this_object())))return;
-        say("������ͷ����֣�����µ�˵��"+RANK_D->query_respect(ob)
-            +"����˵�����ɽ�Ͽ�������ѽ��\n");
+        say("挑菜老頭對你鄭重其事地說："+RANK_D->query_respect(ob)
+            +"，聽說這崆峒山上可有神仙呀。\n");
         }

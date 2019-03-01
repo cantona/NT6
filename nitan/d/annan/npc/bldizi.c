@@ -2,11 +2,11 @@ inherit NPC;
 
 void create()
 {
-   set_name("°²ÄÏ°ïµÜ×Ó",({ "dizi"}) );
-        set("gender", "ÄĞĞÔ" );
+   set_name("å®‰å—å¹«å¼Ÿå­",({ "dizi"}) );
+        set("gender", "ç”·æ€§" );
         set("age",30+random(10));
-   set("long", "ÕâÊÇ°²ÄÏ°ïµÄµÜ×Ó¡£¾İËµ°²ÄÏ°ïÒÔ··ÂôÈË¿ÚÎªÖ÷£¬\n"+
-               "ËùÒÔ¹ÃÄï¸¾ÈË¶¼Ô¶Ô¶µØ¶ã×ÅËûÃÇ¡£\n");       
+   set("long", "é€™æ˜¯å®‰å—å¹«çš„å¼Ÿå­ã€‚æ“šèªªå®‰å—å¹«ä»¥è²©è³£äººå£ç‚ºä¸»ï¼Œ\n"+
+               "æ‰€ä»¥å§‘å¨˜å©¦äººéƒ½é é åœ°èº²è‘—ä»–å€‘ã€‚\n");       
    set("combat_exp", 50000);
    set_skill("parry",50);
    set_skill("dodge",50);
@@ -39,15 +39,15 @@ void welcome(object ob)
    if(!ob||!living(ob)||
    environment(ob)!=environment(this_object()))
    return;
-   if( query("gender", ob) == "Å®ĞÔ"){
+   if( query("gender", ob) == "å¥³æ€§"){
      if( query("class", ob) == "bonze" )
-       message_vision("$N³¯$n´òÁ¿ÁË¼¸ÑÛ:Ô­À´ÊÇ¸öÄá¹Ã£¡ÕæÊÇµ¹Ã¹£¡£¡\n",
+       message_vision("$Næœ$næ‰“é‡äº†å¹¾çœ¼:åŸä¾†æ˜¯å€‹å°¼å§‘ï¼çœŸæ˜¯å€’éœ‰ï¼ï¼\n",
            this_object(),ob);
      else
-     message_vision("$N³¯$nÉÏÉÏÏÂÏÂ´òÁ¿×Å£¬²»ÖªµÀÔÚ´ò×ÅÊ²Ã´¹íÖ÷Òâ¡£\n",
+     message_vision("$Næœ$nä¸Šä¸Šä¸‹ä¸‹æ‰“é‡è‘—ï¼Œä¸çŸ¥é“åœ¨æ‰“è‘—ä»€éº¼é¬¼ä¸»æ„ã€‚\n",
            this_object(),ob);}
    else
-    message_vision("$NÀäÀäµØ¿´ÁË¿´$n",this_object(),ob);
+    message_vision("$Nå†·å†·åœ°çœ‹äº†çœ‹$n",this_object(),ob);
     
    return;
 }

@@ -3,11 +3,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÌìÏãÌÃ´óÃÅ");
+        set("short", "å¤©é¦™å ‚å¤§é–€");
         set("long", @LONG
-ÕâÊÇÈÕÔÂÉñ½ÌÏÂµÚËÄ´óÌÃÌìÏãÌÃµÄ´óÃÅ£¬ÃÅÇ°°Ú·Å×ÅÁ½×ùÊ¯Ê¨£¬
-ÕòÊØ×ÅÖìÆá´óÃÅ¡£´óÃÅÁ½ÅÔÕ¾×ÅÊıÃûÇá×°Å®×Ó£¬µ¥ÊÖ³Ö×Å³¤±Ş£¬¾¯Ìè
-µØ×¢ÊÓ×ÅÖÜÎ§µÄÒ»ÇĞ¡£
+é€™æ˜¯æ—¥æœˆç¥æ•™ä¸‹ç¬¬å››å¤§å ‚å¤©é¦™å ‚çš„å¤§é–€ï¼Œé–€å‰æ“ºæ”¾è‘—å…©åº§çŸ³ç…ï¼Œ
+é®å®ˆè‘—æœ±æ¼†å¤§é–€ã€‚å¤§é–€å…©æ—ç«™è‘—æ•¸åè¼•è£å¥³å­ï¼Œå–®æ‰‹æŒè‘—é•·é­ï¼Œè­¦æƒ•
+åœ°æ³¨è¦–è‘—å‘¨åœçš„ä¸€åˆ‡ã€‚
 LONG );
         set("outdoors", "heimuya");
         set("exits", ([
@@ -25,9 +25,9 @@ int valid_leave(object me, string dir)
         if (objectp(present("riyue dizi", environment(me)))
            && dir == "south"
             && query("family/family_name", me )
-            && query("family/family_name", me) != "ÈÕÔÂÉñ½Ì" )
-                return notify_fail(CYN "ÈÕÔÂµÜ×Ó½«ÄãÀ¹×¡£¬ËµµÀ£ºÕâÀïÄËÉñ"
-                                   "½ÌÖØµØ£¬ËûÈË²»µÃÈëÄÚ¡£\n" NOR);
+            && query("family/family_name", me) != "æ—¥æœˆç¥æ•™" )
+                return notify_fail(CYN "æ—¥æœˆå¼Ÿå­å°‡ä½ æ””ä½ï¼Œèªªé“ï¼šé€™è£¡ä¹ƒç¥"
+                                   "æ•™é‡åœ°ï¼Œä»–äººä¸å¾—å…¥å…§ã€‚\n" NOR);
 
         return ::valid_leave(me, dir);
 }

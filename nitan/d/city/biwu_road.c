@@ -6,10 +6,10 @@ int do_look(string arg);
 
 void create()
 {
-    set("short", HIY"ÑÝÎä×ßÀÈ"NOR);
+    set("short", HIY"æ¼”æ­¦èµ°å»Š"NOR);
         set("long", @LONG
-ÕâÊÇÒ»¸öºÜ¶ÌµÄ×ßÀÈ£¬²àÃÅÍ¨ÏòÑÝÎäÐÝÏ¢ÊÒ£¬´Ó´óÃÅ½øÀ´Ö±×ß£¬
-¾ÍÊÇÖøÃûµÄÑÝÎä´óÌü¡£
+é€™æ˜¯ä¸€å€‹å¾ˆçŸ­çš„èµ°å»Šï¼Œå´é–€é€šå‘æ¼”æ­¦ä¼‘æ¯å®¤ï¼Œå¾žå¤§é–€é€²ä¾†ç›´èµ°ï¼Œ
+å°±æ˜¯è‘—åçš„æ¼”æ­¦å¤§å»³ã€‚
 LONG );
 
     set("no_fight",1);

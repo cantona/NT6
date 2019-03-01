@@ -6,19 +6,19 @@ inherit HAIRPIN;
 
 void create()
 {
-        set_name(HIR "·ï»Ë½ğîÎ" NOR, ({ "fenghuang chai", "fenghuang", "chai" }));
+        set_name(HIR "é³³å‡°é‡‘é‡µ" NOR, ({ "fenghuang chai", "fenghuang", "chai" }));
         set_weight(500);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ö»");
+                set("unit", "åª");
                 set("value", 200000);
                 set("material", "gold");
                 set("armor_prop/armor", 1);
                 set("armor_prop/int", 4);
                 set("armor_prop/con", 4);
                 set("limit", ([
-                        "sex" : 1, // 1 ÎªÅ®ĞÔ
+                        "sex" : 1, // 1 ç‚ºå¥³æ€§
                 ]));
         }
         setup();

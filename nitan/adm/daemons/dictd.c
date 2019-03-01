@@ -1,7 +1,7 @@
 // Copyright (C) 2005, by Lonely. All rights reserved.
 // This software can not be used, copied, or modified 
 // in any form without the written permission from authors.
-// dictd.c ×Öµä¾«Áé
+// dictd.c å­—å…¸ç²¾éˆ
 
 #include <ansi.h>
 #include <net/socket.h>  
@@ -16,8 +16,8 @@ int clean_up() { return 1; }
 void create() 
 { 
         seteuid(ROOT_UID); 
-        set("channel_id", "×Öµä¾«Áé"); 
-        CHANNEL_D->do_channel(this_object(), "sys", "×Öµä¾«ÁéÒÑ¾­Æô¶¯¡£"); 
+        set("channel_id", "å­—å…¸ç²¾éˆ"); 
+        CHANNEL_D->do_channel(this_object(), "sys", "å­—å…¸ç²¾éˆå·²ç¶“å•Ÿå‹•ã€‚"); 
 } 
 
 void translate(object user, string sentence, string language)
@@ -31,7 +31,7 @@ void translate(object user, string sentence, string language)
 
         if( fd < 0 )
         {
-                tell_object(user, HIR "·­ÒëÊ§°Ü, ÇëÉÔºóÔÚÊÔ¡£\n" NOR); 
+                tell_object(user, HIR "ç¿»è­¯å¤±æ•—, è«‹ç¨å¾Œåœ¨è©¦ã€‚\n" NOR); 
                 return;
         }
 
@@ -40,7 +40,7 @@ void translate(object user, string sentence, string language)
 
         if( err != EESUCCESS )
         {
-                tell_object(user, HIR "·­ÒëÊ§°Ü, ÇëÉÔºóÔÚÊÔ¡£\n" NOR);
+                tell_object(user, HIR "ç¿»è­¯å¤±æ•—, è«‹ç¨å¾Œåœ¨è©¦ã€‚\n" NOR);
                 return;
         }     
 
@@ -87,14 +87,14 @@ void get_translated(int fd)
 
         if( sscanf(socket_info[fd]["translate"], "%*s<textarea name=utrans %*s>%s</textarea></td>%*s", translate) != 4 )
         {
-                tell_object(socket_info[fd]["user"], HIR "·­ÒëÊ§°Ü£º\n" NOR + socket_info[fd]["sentence"] + "\n");
-                tell_object(socket_info[fd]["user"], HIR "·­ÒëÊ§°Ü£º\n" NOR + socket_info[fd]["translate"] + "\n");
+                tell_object(socket_info[fd]["user"], HIR "ç¿»è­¯å¤±æ•—ï¼š\n" NOR + socket_info[fd]["sentence"] + "\n");
+                tell_object(socket_info[fd]["user"], HIR "ç¿»è­¯å¤±æ•—ï¼š\n" NOR + socket_info[fd]["translate"] + "\n");
                 return ;
         }
 
         translate = replace_string(translate, "_LINE_", "\n");
 
-        translate = sprintf(HIC "Äú²éÑ¯µÄÎª : %s "NOR"\n%s\n" HIR "%s\n\n" NOR, 
+        translate = sprintf(HIC "æ‚¨æŸ¥è©¢çš„ç‚º : %s "NOR"\n%s\n" HIR "%s\n\n" NOR, 
                             socket_info[fd]["sentence"], repeat_string("=", 50), translate);
 
 

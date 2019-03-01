@@ -4,14 +4,14 @@ inherit NPC;
 
 void create()
 {
-        set_name("Öî¸ðÁÁ", ({ "zhuge liang", "zhuge", "liang"}));
-        set("long", "    ´ËÈË±ãÊÇ´«ËµÖÐÓÐÍ¨Ìì³¹µ×µÄÈý¹úÊ±´úÊñ¹ú\n"
-                    "¾üÊ¦Öî¸ðÁÁ£¬¾ÝËµËûÉÏÖªÌìÎÄ£¬ÏÂÍ¨µØÀí£¬ÎÞÒ»\n"
-                    "²»¾«£¬ÎÞÒ»²»Ïþ£¬ÕæÄËÉñÈËÒ²¡£\n");
+        set_name("è«¸è‘›äº®", ({ "zhuge liang", "zhuge", "liang"}));
+        set("long", "    æ­¤äººä¾¿æ˜¯å‚³èªªä¸­æœ‰é€šå¤©å¾¹åº•çš„ä¸‰åœ‹æ™‚ä»£èœ€åœ‹\n"
+                    "è»å¸«è«¸è‘›äº®ï¼Œæ“šèªªä»–ä¸ŠçŸ¥å¤©æ–‡ï¼Œä¸‹é€šåœ°ç†ï¼Œç„¡ä¸€\n"
+                    "ä¸ç²¾ï¼Œç„¡ä¸€ä¸æ›‰ï¼ŒçœŸä¹ƒç¥žäººä¹Ÿã€‚\n");
 
-        set("nickname", HIG "ÖÇÄÒ" NOR);
-        set("title", HIY "Êñ¹ú¾üÊ¦" NOR);
-        set("gender", "ÄÐÐÔ");
+        set("nickname", HIG "æ™ºå›Š" NOR);
+        set("title", HIY "èœ€åœ‹è»å¸«" NOR);
+        set("gender", "ç”·æ€§");
         set("age", 30);
         set("attitude", "friendly");
         set("shen_type", 1);
@@ -64,7 +64,7 @@ void die()
                          if (arrayp(ob->query_team()))
                          {
                                  command("heng");
-                                 command("say Ê¤Ö®²»Îä£¡");
+                                 command("say å‹ä¹‹ä¸æ­¦ï¼");
                                  set("qi", 500000);
                                  set("jing", 500000);
                                  set("neili", 35000);
@@ -82,7 +82,7 @@ void die()
              if (ob->query("sky12/floor") == 9)
              {
                       ob->set("sky12/floor", 10);
-                 command("say ¸óÏÂÇë±ã°É£¡");
+                 command("say é–£ä¸‹è«‹ä¾¿å§ï¼");
              }
         }
 
@@ -98,7 +98,7 @@ void die()
         return;
 }
 
-// ÆøÑªÐ¡ÓÚ1000ÔòËÀÍö£¬±ÜÃâËûÈËÐ­Öú°ïÃ¦×ªÊÀ
+// æ°£è¡€å°äºŽ1000å‰‡æ­»äº¡ï¼Œé¿å…ä»–äººå”åŠ©å¹«å¿™è½‰ä¸–
 void heart_beat()
 {
         if (this_object()->query("qi") < 1000 || this_object()->query("eff_qi") < 1000)

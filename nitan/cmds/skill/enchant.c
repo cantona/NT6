@@ -15,74 +15,74 @@ int main(object me, string arg)
         int flag = 0;
 
         if( !arg || sscanf(arg,"%s from %s", tessera, what) != 2 )
-                return notify_fail("Ö¸Áî¸ñÊ½£ºenchant <ÎïÆ·> from <×°±¸>\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šenchant <ç‰©å“> from <è£å‚™>\n");
 
         if( me->is_busy() )
-                return notify_fail("ÏÈÃ¦ÍêÁËÄãµÄÊÂÇéÔÙ×öÕâ¼şÊÂÇé°É£¡\n");
+                return notify_fail("å…ˆå¿™å®Œäº†ä½ çš„äº‹æƒ…å†åšé€™ä»¶äº‹æƒ…å§ï¼\n");
 
         if( me->is_fighting() )
-                return notify_fail("ÄãÏÖÔÚÕıÔÚ´ò¼Ü£¬Ã»Ê±¼ä×öÕâĞ©ÊÂÇé¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£åœ¨æ‰“æ¶ï¼Œæ²’æ™‚é–“åšé€™äº›äº‹æƒ…ã€‚\n");
 
         if( !objectp(obj = present(tessera, me)) )
-                return notify_fail("ÄãÉíÉÏÃ»ÓĞ " + tessera + " ÕâÖÖÎïÆ·°¡¡£\n");
+                return notify_fail("ä½ èº«ä¸Šæ²’æœ‰ " + tessera + " é€™ç¨®ç‰©å“å•Šã€‚\n");
 
         if( !objectp(item = present(what, me)) )
-                return notify_fail("ÄãÉíÉÏÃ»ÓĞ" + what + "ÕâÑù×°±¸°¡¡£\n");
+                return notify_fail("ä½ èº«ä¸Šæ²’æœ‰" + what + "é€™æ¨£è£å‚™å•Šã€‚\n");
 
         if( me->query_skill("enchanting", 1) < 200 )
-                return notify_fail("Äã¾õµÃÄãµÄ¸½Ä§¼¼ÒÕ»¹²»¹»æµÊì£¬²»¸ÒÃ³È»¶¯ÊÖ¡£\n");
+                return notify_fail("ä½ è¦ºå¾—ä½ çš„é™„é­”æŠ€è—é‚„ä¸å¤ å«»ç†Ÿï¼Œä¸æ•¢è²¿ç„¶å‹•æ‰‹ã€‚\n");
 
         if( query("max_jingli", me)<300 )
-                return notify_fail("ÄãÏÖÔÚµÄ¾«Á¦ĞŞÎªÓĞÏŞ£¬ÎŞ·¨¸½Ä§ÎïÆ·¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çš„ç²¾åŠ›ä¿®ç‚ºæœ‰é™ï¼Œç„¡æ³•é™„é­”ç‰©å“ã€‚\n");
 
         if( query("jingli", me)<300 )
-                return notify_fail("ÄãÏÖÔÚ¾«Á¦²»¼Ã£¬ÎŞ·¨¸½Ä§ÎïÆ·¡£\n");
+                return notify_fail("ä½ ç¾åœ¨ç²¾åŠ›ä¸æ¿Ÿï¼Œç„¡æ³•é™„é­”ç‰©å“ã€‚\n");
 
         if( query("equipped", item) )
-                return notify_fail("ÄãÏÈĞ¶³ıËûÏÈ¡£\n");
+                return notify_fail("ä½ å…ˆå¸é™¤ä»–å…ˆã€‚\n");
 
         if( query("no_identify", item) )
-                return notify_fail("´ËÎïÆ·»¹Ã»ÓĞÇ©¶¨¡£\n");
+                return notify_fail("æ­¤ç‰©å“é‚„æ²’æœ‰ç°½å®šã€‚\n");
 
         if( !query("enchase", item) || !query("enchase/apply_prop", item) )
-                return notify_fail("Õâ¸öÎïÆ·ÉÏÃæÃ»ÓĞ¿ÉÓÃ×÷¸½Ä§µÄÊôĞÔ¡£\n");
+                return notify_fail("é€™å€‹ç‰©å“ä¸Šé¢æ²’æœ‰å¯ç”¨ä½œé™„é­”çš„å±¬æ€§ã€‚\n");
 
         if( item->is_item_make() || !query("insert", item) )
-                return notify_fail("Õâ¸öÎïÆ·ÎŞ·¨ÓÃÀ´¸½Ä§µÄÊôĞÔ¡£\n");
+                return notify_fail("é€™å€‹ç‰©å“ç„¡æ³•ç”¨ä¾†é™„é­”çš„å±¬æ€§ã€‚\n");
 
         if( query("maze_item", item) )
-                return notify_fail("Õâ¸öÎïÆ·À´Àú²»Ã÷£¬²»¿ÉÒÔÓÃ×÷¸½Ä§ÊôĞÔ¡£\n");
+                return notify_fail("é€™å€‹ç‰©å“ä¾†æ­·ä¸æ˜ï¼Œä¸å¯ä»¥ç”¨ä½œé™„é­”å±¬æ€§ã€‚\n");
 
         if( query("enchase/increase", item) )
-                return notify_fail("¸ÄÔì¹ıµÄ×°±¸²»¿ÉÒÔÓÃ×÷¸½Ä§ÊôĞÔ¡£\n");
+                return notify_fail("æ”¹é€ éçš„è£å‚™ä¸å¯ä»¥ç”¨ä½œé™„é­”å±¬æ€§ã€‚\n");
 
         if( !query("can_enchant", obj) )
-                return notify_fail("Ö»ÓĞÈÕ»êºÍÔÂÆÇ²Å¿ÉÒÔÓÃÀ´¸½Ä§×°±¸ÊôĞÔ¡£\n");
+                return notify_fail("åªæœ‰æ—¥é­‚å’Œæœˆé­„æ‰å¯ä»¥ç”¨ä¾†é™„é­”è£å‚™å±¬æ€§ã€‚\n");
 
         if( query("enchase", obj) )
-                return notify_fail(obj->name()+"ÉÏÒÑ¾­¸½Ä§¹ıÊôĞÔÁË¡£\n");
+                return notify_fail(obj->name()+"ä¸Šå·²ç¶“é™„é­”éå±¬æ€§äº†ã€‚\n");
 
         if( query("skill_type", item )
          || (query("armor_type", item) == "hands"
          || query("armor_type", item) == "finger") )
         {
                 if( query("can_enchant", obj) != "weapon" )
-                        return notify_fail("Ö»ÓĞÈÕ»ê²Å¿ÉÒÔÓÃÀ´¸½Ä§´Ë×°±¸ÊôĞÔ¡£\n");
+                        return notify_fail("åªæœ‰æ—¥é­‚æ‰å¯ä»¥ç”¨ä¾†é™„é­”æ­¤è£å‚™å±¬æ€§ã€‚\n");
         }
         else
         {
                 if( query("can_enchant", obj) != "armor" )
-                        return notify_fail("Ö»ÓĞÔÂÆÇ²Å¿ÉÒÔÓÃÀ´¸½Ä§´Ë×°±¸ÊôĞÔ¡£\n");
+                        return notify_fail("åªæœ‰æœˆé­„æ‰å¯ä»¥ç”¨ä¾†é™„é­”æ­¤è£å‚™å±¬æ€§ã€‚\n");
         }
 
         scroll = present("enchant scroll", me);
 
         if( objectp(scroll) )
-                tell_object(me, HIW "\nÄãË«Ä¿Î¢±Õ£¬½«"+item->name()+HIW"ºÍ"+obj->name()+HIW"ÖÃÓÚ¸½Ä§¾íÖáÉÏÄıÓÚÉíÇ°£¬ÔË×ªÄÚ¾¢ÆÈ"
-                        "Ê¹ËüÃÇ¿ÕÖĞĞı×ª½»ÈÚ¡£\n" NOR);
+                tell_object(me, HIW "\nä½ é›™ç›®å¾®é–‰ï¼Œå°‡"+item->name()+HIW"å’Œ"+obj->name()+HIW"ç½®äºé™„é­”å·è»¸ä¸Šå‡äºèº«å‰ï¼Œé‹è½‰å…§å‹è¿«"
+                        "ä½¿å®ƒå€‘ç©ºä¸­æ—‹è½‰äº¤èã€‚\n" NOR);
         else
-                tell_object(me, HIW "\nÄãË«Ä¿Î¢±Õ£¬½«"+item->name()+HIW"ºÍ"+obj->name()+HIW"ÄıÓÚÉíÇ°£¬ÔË×ªÄÚ¾¢ÆÈ"
-                        "Ê¹ËüÃÇ¿ÕÖĞĞı×ª½»ÈÚ¡£\n" NOR);
+                tell_object(me, HIW "\nä½ é›™ç›®å¾®é–‰ï¼Œå°‡"+item->name()+HIW"å’Œ"+obj->name()+HIW"å‡äºèº«å‰ï¼Œé‹è½‰å…§å‹è¿«"
+                        "ä½¿å®ƒå€‘ç©ºä¸­æ—‹è½‰äº¤èã€‚\n" NOR);
 
         me->start_busy(1);
         addn("jingli", -200, me);
@@ -90,16 +90,16 @@ int main(object me, string arg)
         flag = obj->do_extract(item);
 
         if( flag ) {
-                message("vision", HIW "\nö®Ê±¼äÖ»¼û" + me->name() + HIW "ÉíÇ°Ò»µÀ"
-                        "¹â»ªÉÁ¹ı£¬µ«×ªË²¼´ÊÅ£¬ËÆºõ·¢ÉúÁËÊ²Ã´²»Í¬Ñ°³£µÄ"
-                        "ÊÂÇé¡£\n\n" NOR, environment(me), ({me}));
+                message("vision", HIW "\néœæ™‚é–“åªè¦‹" + me->name() + HIW "èº«å‰ä¸€é“"
+                        "å…‰è¯é–ƒéï¼Œä½†è½‰ç¬å³é€ï¼Œä¼¼ä¹ç™¼ç”Ÿäº†ä»€éº¼ä¸åŒå°‹å¸¸çš„"
+                        "äº‹æƒ…ã€‚\n\n" NOR, environment(me), ({me}));
 
-                tell_object(me, HIW "ö®Ê±¼äÖ»¼ûÍòµÀ¹â»ª¼²ÉÁ¶ø¹ı£¬Äã¼±Ã¦Éì³öË«ÊÖ½«"+obj->name()+HIW"½Ó×¡£¬"
-                        "·¢ÏÖÕÆĞÄ"+obj->name()+HIW"ÔÌÑú×ÅÆßÉ«Ï¼¹â¡£\n\n" NOR);
+                tell_object(me, HIW "éœæ™‚é–“åªè¦‹è¬é“å…‰è¯ç–¾é–ƒè€Œéï¼Œä½ æ€¥å¿™ä¼¸å‡ºé›™æ‰‹å°‡"+obj->name()+HIW"æ¥ä½ï¼Œ"
+                        "ç™¼ç¾æŒå¿ƒ"+obj->name()+HIW"è˜Šæ¼¾è‘—ä¸ƒè‰²éœå…‰ã€‚\n\n" NOR);
 
                 if( objectp(scroll) )
                 {
-                        tell_object(me, HIW"Ö»¼û"+scroll->name()+HIW"ÔÚÄÚÁ¦×¢ÈëÏÂÒÑ»¯Îª»Ò½ı¡£\n"NOR);
+                        tell_object(me, HIW"åªè¦‹"+scroll->name()+HIW"åœ¨å…§åŠ›æ³¨å…¥ä¸‹å·²åŒ–ç‚ºç°ç‡¼ã€‚\n"NOR);
                         destruct(scroll);
                 }
                 
@@ -109,16 +109,16 @@ int main(object me, string arg)
         }
         if( objectp(scroll) )
         {
-                tell_object(me, HIW"µ«¼û"+scroll->name()+HIW"ÔÚÄÚÁ¦×¢ÈëÏÂÒÑ»¯Îª»Ò½ı¡£\n"NOR);
+                tell_object(me, HIW"ä½†è¦‹"+scroll->name()+HIW"åœ¨å…§åŠ›æ³¨å…¥ä¸‹å·²åŒ–ç‚ºç°ç‡¼ã€‚\n"NOR);
                 destruct(scroll);
         }
         else
         {
-                tell_object(me, HIW"µ«¼û"+item->name()+HIW"Ë²¼äÆÆÁÑ£¬±ä³ÉÆ¬Æ¬ËéÆ¬È÷ÂäÒ»µØ¡£\n");
+                tell_object(me, HIW"ä½†è¦‹"+item->name()+HIW"ç¬é–“ç ´è£‚ï¼Œè®Šæˆç‰‡ç‰‡ç¢ç‰‡æ´’è½ä¸€åœ°ã€‚\n");
                 destruct(item);
         }
 
-        tell_object(me, HIR "Äã²»½ûÒ»Éù³¤Ì¾¡£\n" NOR);
+        tell_object(me, HIR "ä½ ä¸ç¦ä¸€è²é•·å˜†ã€‚\n" NOR);
 
         return 1;
 }

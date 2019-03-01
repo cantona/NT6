@@ -12,7 +12,7 @@ int main(object me, string arg)
         int i;
         int count;
 
-        if (! arg) return notify_fail("ÄãÒªÍÑµôÊ²Ã´£¿\n");
+        if (! arg) return notify_fail("ä½ è¦è„«æ‰ä»€éº¼ï¼Ÿ\n");
 
         if (arg == "all")
         {
@@ -20,14 +20,14 @@ int main(object me, string arg)
                 for (count = 0, i = 0; i < sizeof(inv); i++)
                         count += do_remove(me, inv[i]);
                 if (count)
-                        write("ÄãÍÑÍêÁË¡£\n");
+                        write("ä½ è„«å®Œäº†ã€‚\n");
                 else
-                        write("ÄãÊ²Ã´¶¼Ã»ÓĞÍÑÏÂÀ´¡£\n");
+                        write("ä½ ä»€éº¼éƒ½æ²’æœ‰è„«ä¸‹ä¾†ã€‚\n");
                 return 1;
         }
 
         if (! objectp(ob = present(arg, me)))
-                return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+                return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™æ¨£æ±è¥¿ã€‚\n");
 
         if( query("equipped", ob) != "worn" )
         {
@@ -45,7 +45,7 @@ int main(object me, string arg)
                 }
 
                 if (! count)
-                        return notify_fail("Äã²¢Ã»ÓĞ×°±¸ÕâÑù¶«Î÷¡£\n");
+                        return notify_fail("ä½ ä¸¦æ²’æœ‰è£å‚™é€™æ¨£æ±è¥¿ã€‚\n");
         }
 
         return do_remove(me, ob);
@@ -56,7 +56,7 @@ int do_remove(object me, object ob)
         string str;
 
         if( query("equipped", ob) != "worn" )
-                return notify_fail("Äã²¢Ã»ÓĞ×°±¸ÕâÑù¶«Î÷¡£\n");
+                return notify_fail("ä½ ä¸¦æ²’æœ‰è£å‚™é€™æ¨£æ±è¥¿ã€‚\n");
 
         if (ob->unequip())
         {
@@ -66,16 +66,16 @@ int do_remove(object me, object ob)
                                 case "armor":
                                 case "surcoat":
                                 case "boots":
-                                        str = YEL "$N½«$n" YEL "ÍÑÁËÏÂÀ´¡£\n" NOR;
+                                        str = YEL "$Nå°‡$n" YEL "è„«äº†ä¸‹ä¾†ã€‚\n" NOR;
                                         break;
                                 case "bandage":
-                                        str = YEL "$N½«$n" YEL "´ÓÉË¿Ú´¦²ğÁËÏÂÀ´¡£\n" NOR;
+                                        str = YEL "$Nå°‡$n" YEL "å¾å‚·å£è™•æ‹†äº†ä¸‹ä¾†ã€‚\n" NOR;
                                         break;
                                 default:
-                                        str = YEL "$NĞ¶³ı$n" YEL "µÄ×°±¸¡£\n" NOR;
+                                        str = YEL "$Nå¸é™¤$n" YEL "çš„è£å‚™ã€‚\n" NOR;
                         }
                 if( query_temp("no_wear", ob) )
-                        str += "ÍÑÏÂ" + ob->name() + "ÒÔºóÄã¾õµÃÊæ·ş¶àÁË¡£\n";
+                        str += "è„«ä¸‹" + ob->name() + "ä»¥å¾Œä½ è¦ºå¾—èˆ’æœå¤šäº†ã€‚\n";
                 message_vision(str, me, ob);
                 return 1;
         } else
@@ -85,9 +85,9 @@ int do_remove(object me, object ob)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : remove all | <ÎïÆ·Ãû³Æ>
+æŒ‡ä»¤æ ¼å¼ : remove all | <ç‰©å“åç¨±>
  
-Õâ¸öÖ¸ÁîÈÃÄãÍÑµôÉíÉÏÄ³¼ş·À¾ß.
+é€™å€‹æŒ‡ä»¤è®“ä½ è„«æ‰èº«ä¸ŠæŸä»¶é˜²å…·.
  
 HELP );
         return 1;

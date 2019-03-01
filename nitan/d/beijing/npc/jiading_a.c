@@ -2,11 +2,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("÷¡¸®¼Ò¶¡", ({ "jia ding", "jia", "ding" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("é°²åºœå®¶ä¸", ({ "jia ding", "jia", "ding" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 22);
         set("long",
-                "Ò»¸öÔÚ÷¡°İ¸®Àï¸ÉÏÂµÈ»îµÄ¼Ò¶¡¡£\n");
+                "ä¸€å€‹åœ¨é°²æ‹œåºœè£¡å¹¹ä¸‹ç­‰æ´»çš„å®¶ä¸ã€‚\n");
         set("shen_type", 1);
         set("combat_exp", 2000);
        set("str", 10);

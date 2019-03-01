@@ -1,12 +1,12 @@
 // Last Modified by Sir on May. 22 2001
-//Room: byaeast.c °×ÔÆâÖ¶«ÀÈ
+//Room: byaeast.c ç™½é›²åºµæ±å»Š
 
 inherit ROOM;
 void create()
 {
-        set("short","°×ÔÆâÖ¶«ÀÈ");
+        set("short","ç™½é›²åºµæ±å»Š");
         set("long",@LONG
-ÕâÀïÊÇºãÉ½°×ÔÆâÖ¶«ÀÈ¡£×ßÀÈÍù±±Í¨ÍùÁ·Îä·¿£¬¶«±ßÍ¨Íù²Ø¾­¸ó¡£
+é€™è£¡æ˜¯æ†å±±ç™½é›²åºµæ±å»Šã€‚èµ°å»Šå¾€åŒ—é€šå¾€ç·´æ­¦æˆ¿ï¼Œæ±é‚Šé€šå¾€è—ç¶“é–£ã€‚
 LONG);
         set("outdoors", "hengshan");
         set("exits",([ /* sizeof() == 1 */

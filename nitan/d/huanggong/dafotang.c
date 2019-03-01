@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�����");
+        set("short", "大佛堂");
         set("long", @LONG
-���Ǵ�������Ĵ���á����﹩��һ���������񣬷���ǰ��һ�Ź�
-�������ϵ���յ�͵ơ�
+這是慈寧宮後的大佛堂。堂裡供著一尊如來佛像，佛像前是一張供
+桌。桌上點著盞油燈。
 LONG );
         set("exits", ([
                   "south" : __DIR__"cininggong",

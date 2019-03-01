@@ -112,7 +112,7 @@ mixed cptree(string dir, string dst)
         res[0] = allocate(0);
         res[1] = allocate(0);
 
-        // 2b14ÖĞ¿ÉÓÃÏÂÃæµÄ·½Ê½
+        // 2b14ä¸­å¯ç”¨ä¸‹é¢çš„æ–¹å¼
         // string *res = allocate(2, allocate(0));
 
         res = f_cptree(dir, dst);
@@ -150,7 +150,7 @@ string *deep_path_list(string dir)
         return result;
 }
 
-// ·´×ª arr ÕóÁĞ£¬Ê¹×îºóÒ»¸öÔªËØ±ä³ÉµÚÒ»¸öÔªËØ£¬ÔªËØÎ»ÖÃÍêÈ«¶Ôµ÷¡£
+// åè½‰ arr é™£åˆ—ï¼Œä½¿æœ€å¾Œä¸€å€‹å…ƒç´ è®Šæˆç¬¬ä¸€å€‹å…ƒç´ ï¼Œå…ƒç´ ä½ç½®å®Œå…¨å°èª¿ã€‚
 void reverse_array(string *arr)
 {
         if( !arrayp(arr) || !sizeof(arr) )
@@ -270,7 +270,7 @@ int mapping_eqv(mapping map1, mapping map2)
         return 1;
 }
 
-// ½« int ÕóÁĞÔªËØÈ«²¿Ïà¼Ó
+// å°‡ int é™£åˆ—å…ƒç´ å…¨éƒ¨ç›¸åŠ 
 int int_array_addition(int *arr)
 {
         int total;
@@ -281,7 +281,7 @@ int int_array_addition(int *arr)
         return total;
 }
 
-// »úÂÊ
+// æ©Ÿç‡
 // ([ elem1 : prob1, elem2 : prob2,... ])
 mixed probability(mapping data)
 {
@@ -337,18 +337,18 @@ string big_number_check(mixed bn)
 }
 
 /*
-Ãû³Æ£º
-        object_parse() - ´«»Ø·ûºÏÌõ¼şµÄÎï¼ş¡£
-Óï·¨£º
+åç¨±ï¼š
+        object_parse() - å‚³å›ç¬¦åˆæ¢ä»¶çš„ç‰©ä»¶ã€‚
+èªæ³•ï¼š
         object object_parse(string arg, object* objects);
-ÓÃ·¨£º
-        ÒÀÕÕ×Ö´® arg µÄÄÚÈİ£¬ÓÉÎï¼şÕóÁĞ objects Ö®ÖĞÈ¡µÃÕıÈ·µÄÎï¼şÔªËØ
-        ²¢´«»Ø´ËÎï¼ş£¬ÈôÃ»ÓĞÈÎºÎÎï¼şÔªËØ·ûºÏÌõ¼ş£¬Ôò»Ø´« 0¡£
+ç”¨æ³•ï¼š
+        ä¾ç…§å­—ä¸² arg çš„å…§å®¹ï¼Œç”±ç‰©ä»¶é™£åˆ— objects ä¹‹ä¸­å–å¾—æ­£ç¢ºçš„ç‰©ä»¶å…ƒç´ 
+        ä¸¦å‚³å›æ­¤ç‰©ä»¶ï¼Œè‹¥æ²’æœ‰ä»»ä½•ç‰©ä»¶å…ƒç´ ç¬¦åˆæ¢ä»¶ï¼Œå‰‡å›å‚³ 0ã€‚
 
-        ÀıÈç
-                arg Îª "rice 2"
-                Ôò»áËÑÑ°Îï¼şÕóÁĞ objects ÖĞµÚ¶ş¸ö¿ÉÒÔ±»³ÆÎª rice µÄÎï¼ş
-                ¼´µÚ¶ş¸ö id("rice") »Ø´« 1 ÖµµÄÎï¼ş
+        ä¾‹å¦‚
+                arg ç‚º "rice 2"
+                å‰‡æœƒæœå°‹ç‰©ä»¶é™£åˆ— objects ä¸­ç¬¬äºŒå€‹å¯ä»¥è¢«ç¨±ç‚º rice çš„ç‰©ä»¶
+                å³ç¬¬äºŒå€‹ id("rice") å›å‚³ 1 å€¼çš„ç‰©ä»¶
 */
 object object_parse(string arg, object* objects)
 {
@@ -360,13 +360,13 @@ object object_parse(string arg, object* objects)
 
         if( !arg || !arg[0] || !sizeof(objects) ) return 0;
 
-        // ÊÔ×ÅÈ¡µÃ which
+        // è©¦è‘—å–å¾— which
         if( sscanf(arg, "%s %d", objectname, which) != 2 )
                 objectname = arg;
 
         if( which < 1 ) return 0;
 
-        // ÈôËÍÈëµÄÓï·¨°üÀ¨ amount, ÔòÈ¡³ö amount µÄ²¿·Ö
+        // è‹¥é€å…¥çš„èªæ³•åŒ…æ‹¬ amount, å‰‡å–å‡º amount çš„éƒ¨åˆ†
         if( sscanf(objectname, "%s %s", amount, objectname) == 2 ) {
                 if( !big_number_check(amount) )
                         objectname = amount +" "+ objectname;
@@ -388,19 +388,19 @@ object object_parse(string arg, object* objects)
 }
 
 /*
-Ãû³Æ£º
-        process_function() - ÒÀĞòÖ´ĞĞ´«ÈëµÄÕóÁĞÄÚÈİ¡£
-Óï·¨£º
+åç¨±ï¼š
+        process_function() - ä¾åºåŸ·è¡Œå‚³å…¥çš„é™£åˆ—å…§å®¹ã€‚
+èªæ³•ï¼š
         void process_function(array arr);
-ÓÃ·¨£º
-        ÒÀÕÕË³ĞòÖ´ĞĞ´«ÈëµÄÕóÁĞÄÚÈİ, ÈôÕóÁĞÄÚÈİÎªÕûÊıÔò´ú±íÑÓ³Ù
-        ÆäÕûÊıÃëÔÙ¼ÌĞøÖ´ĞĞ½ÓÏÂÀ´µÄÔªËØ, ÈôÔªËØÎªº¯Ê½Ö¸±êÔò»áÖ´
-        ĞĞÆäº¯Ê½, Èôº¯Ê½»Ø´« -1, Ôò»áÁ¢¼´ÖĞÖ¹Õû¸ö process, ½ÓÏÂ
-        À´µÄÔªËØ±ã²»»á±»Ö´ĞĞ¡£
+ç”¨æ³•ï¼š
+        ä¾ç…§é †åºåŸ·è¡Œå‚³å…¥çš„é™£åˆ—å…§å®¹, è‹¥é™£åˆ—å…§å®¹ç‚ºæ•´æ•¸å‰‡ä»£è¡¨å»¶é²
+        å…¶æ•´æ•¸ç§’å†ç¹¼çºŒåŸ·è¡Œæ¥ä¸‹ä¾†çš„å…ƒç´ , è‹¥å…ƒç´ ç‚ºå‡½å¼æŒ‡æ¨™å‰‡æœƒåŸ·
+        è¡Œå…¶å‡½å¼, è‹¥å‡½å¼å›å‚³ -1, å‰‡æœƒç«‹å³ä¸­æ­¢æ•´å€‹ process, æ¥ä¸‹
+        ä¾†çš„å…ƒç´ ä¾¿ä¸æœƒè¢«åŸ·è¡Œã€‚
 
         ex: arr = ({ 2, <function1>, 3, <function2>, <function3> })
-        Ôò process_function(arr) ºó»áÏÈ¼ä¸ôÁ½ÃëºóÔÙÖ´ĞĞ function1,
-        ½Ó×ÅÔÙ¼ä¸ô 3 ÃëºóÔÙÁ¬ĞøÖ´ĞĞ function2 Óë function3
+        å‰‡ process_function(arr) å¾Œæœƒå…ˆé–“éš”å…©ç§’å¾Œå†åŸ·è¡Œ function1,
+        æ¥è‘—å†é–“éš” 3 ç§’å¾Œå†é€£çºŒåŸ·è¡Œ function2 èˆ‡ function3
 */
 void process_function(string *fp)
 {
@@ -421,7 +421,7 @@ void process_function(string *fp)
         call_out((: process_function :), second, fp[1..]);
 }
 
-// µ¥ÒıºÅÓï·¨½âÎö
+// å–®å¼•è™Ÿèªæ³•è§£æ
 string *single_quote_parse(string p)
 {
         int i, j, size;
@@ -530,7 +530,7 @@ string base_dir(object obj)
 varargs string format_string(string str, int wrap, int ignore_return)
 {
         string tmp = "";
-        int len = 0, ansi = 0, clen = 0;   // clen ÊÇÒÑ³öÏÖµÄºº×Ö¸öÊı¡£
+        int len = 0, ansi = 0, clen = 0;   // clen æ˜¯å·²å‡ºç¾çš„æ¼¢å­—å€‹æ•¸ã€‚
 
         if(  !str || !stringp(str) )
                 return 0;
@@ -629,7 +629,7 @@ int count_eq(mixed n1, mixed n2)
         return efun::count(n1, "==", n2);
 }
 
-// ´óÊı´Î·½ÔËËã
+// å¤§æ•¸æ¬¡æ–¹é‹ç®—
 string big_number_pow(mixed number, mixed exponent)
 {
         mixed result = number;
@@ -670,7 +670,7 @@ string big_number_random(string count)
                 foreach(int ref i in part)
                         i = random(10) + 48;
 
-                // Èç¹û part > count[1..]
+                // å¦‚æœ part > count[1..]
                 if( count_ge(part, count[1..]) )
                         b = random(count[0] - 48);
                 else

@@ -19,101 +19,101 @@
 
 #define MEMBER_D         "/adm/daemons/memberd"
 
-// ¶«Ğ°£¬Î÷¶¾£¬ÄÏµÛ£¬±±Ø¤¿ÉËæ»úÔöÔ®
+// æ±é‚ªï¼Œè¥¿æ¯’ï¼Œå—å¸ï¼ŒåŒ—ä¸å¯éš¨æ©Ÿå¢æ´
 #define DONGXIE          "/kungfu/class/generate/xiangyang/huang"
 #define XIDU             "/kungfu/class/generate/xiangyang/ouyangfeng"
 #define NANDI            "/kungfu/class/generate/xiangyang/yideng"
 #define BEIGAI           "/kungfu/class/generate/xiangyang/hong"
 
-// Ñî¹ıºÍĞ¡ÁúÅ®
+// æ¥Šéå’Œå°é¾å¥³
 #define YANGGUO          "/kungfu/class/generate/xiangyang/yang"
 #define LONGNV           "/kungfu/class/generate/xiangyang/longnv"
 
-// Ôö¼ÓµÄÃÉ¹Å±ø
+// å¢åŠ çš„è’™å¤å…µ
 #define MORE_SOLDIER     10
-// µ÷¶¯ÏåÑôÊØ¾ü¼ä¸ô
+// èª¿å‹•è¥„é™½å®ˆè»é–“éš”
 #define MOVE_WAIT        60
 
-// Ôö¼ÓµÄÏåÑôÊ¿±øÊıÁ¿
+// å¢åŠ çš„è¥„é™½å£«å…µæ•¸é‡
 #define ADD_XY_SOLDIER   120
 
-// ÔöÅÉÃÉ¹Å±ø´ÎÊı
+// å¢æ´¾è’™å¤å…µæ¬¡æ•¸
 #define ADD_MGB_TIMES    3
 
-// Ôö¼ÓÃÉ¹Å±øÊ±¼ä¼ä¸ô
+// å¢åŠ è’™å¤å…µæ™‚é–“é–“éš”
 #define ADD_MGB_WAIT     120
 
-// ²âÊÔ±êÖ¾
+// æ¸¬è©¦æ¨™å¿—
 #define TEST             0
 
-// ÊÇ·ñÔÊĞí¿ª·Å±êÖ¾
+// æ˜¯å¦å…è¨±é–‹æ”¾æ¨™å¿—
 #define ALLOW_START      1
 
 inherit F_DBASE;
 
-int status = 0;                // ÏåÑôÕ½×´Ì¬
-int start_status = 0;          // ÏµÍ³×´Ì¬£¬1 ±íÃ÷¿ªÊ¼£¬Ôò²»ÔÙÖØ¸´µ÷ÓÃ
-int sign_up_status = 0;        // ±¨Ãû±êÖ¾
-string *p = ({});             // ²Î¼ÓÏåÑôÕ½µÄÍæ¼ÒÎï¼şÁĞ±í
+int status = 0;                // è¥„é™½æˆ°ç‹€æ…‹
+int start_status = 0;          // ç³»çµ±ç‹€æ…‹ï¼Œ1 è¡¨æ˜é–‹å§‹ï¼Œå‰‡ä¸å†é‡å¾©èª¿ç”¨
+int sign_up_status = 0;        // å ±åæ¨™å¿—
+string *p = ({});             // åƒåŠ è¥„é™½æˆ°çš„ç©å®¶ç‰©ä»¶åˆ—è¡¨
 
-int start_time = 0;           // ÏåÑô±£ÎÀÕ½¿ªÊ¼Ê±¼ä
-int attack_time = 0;          // ÃÉ¹ÅÈË¿ªÊ¼¹¥³ÇÊ±¼ä
+int start_time = 0;           // è¥„é™½ä¿è¡›æˆ°é–‹å§‹æ™‚é–“
+int attack_time = 0;          // è’™å¤äººé–‹å§‹æ”»åŸæ™‚é–“
         
-int tiemuzhen = 0;            // ±¾´ÎÊÇ·ñ³öÏÖÌúÄ¾Õæ
+int tiemuzhen = 0;            // æœ¬æ¬¡æ˜¯å¦å‡ºç¾éµæœ¨çœŸ
 
-int n_mg_tq = 0, n_mg_zb = 0, n_mg_gb = 0 , n_mg_bb = 0;// Æï±ø¡¢ÕÜ±ğ¡¢¹­±ø¡¢²½±øÊıÁ¿
-int n_xy_sb = 0; // ÏåÑôÊ¿±ø
+int n_mg_tq = 0, n_mg_zb = 0, n_mg_gb = 0 , n_mg_bb = 0;// é¨å…µã€å“²åˆ¥ã€å¼“å…µã€æ­¥å…µæ•¸é‡
+int n_xy_sb = 0; // è¥„é™½å£«å…µ
 
-int n_xy_sb2; // ÏåÑôÊ¿±ø×î³õÊıÁ¿
-int n_mg_sb2; // ÃÉ¹ÅÊ¿±ø×î³õÊıÁ¿
+int n_xy_sb2; // è¥„é™½å£«å…µæœ€åˆæ•¸é‡
+int n_mg_sb2; // è’™å¤å£«å…µæœ€åˆæ•¸é‡
 
-int add_mgb_times = 0; // ÔöÔ®ÃÉ¹Å±ø´ÎÊı
+int add_mgb_times = 0; // å¢æ´è’™å¤å…µæ¬¡æ•¸
 int query_add_mgb_times(){return add_mgb_times;}
 
-int last_add_mgb_time = 0; // ÉÏ´ÎÔöÔ®ÃÉ¹Å±øÊ±¼ä
-int last_combat_change_time = 0; // ÉÏ´Îµ÷ÕûÕ½ÊõµÄÊ±¼ä
-int add_xyb_flag = 0; // ÔöÅÉÏåÑôÊ¿±ø±êÖ¾
+int last_add_mgb_time = 0; // ä¸Šæ¬¡å¢æ´è’™å¤å…µæ™‚é–“
+int last_combat_change_time = 0; // ä¸Šæ¬¡èª¿æ•´æˆ°è¡“çš„æ™‚é–“
+int add_xyb_flag = 0; // å¢æ´¾è¥„é™½å£«å…µæ¨™å¿—
 
 public int query_add_xyb_flag(){return add_xyb_flag;}
 
-// ½­ºşÈËÊ¿ÔöÔ®µÄÏûÏ¢
+// æ±Ÿæ¹–äººå£«å¢æ´çš„æ¶ˆæ¯
 string xy_msg1 = "----";
 string query_xy_msg1(){return xy_msg1;}
 
-// 1 ÎªÏåÑô  2 ÎªÃÉ¹Å
-int who_win; // ÏåÑô±£ÎÀÕ½Ë­Ê¤Àû
+// 1 ç‚ºè¥„é™½  2 ç‚ºè’™å¤
+int who_win; // è¥„é™½ä¿è¡›æˆ°èª°å‹åˆ©
 
-// ÏåÑô±£ÎÀÕ½ĞòÁĞºÅ RAN_NUM
-// ¸ÃĞòÁĞºÅÔÚÃ¿´Î¿ªÊ¼Ç°Ëæ»ú²úÉú£¬×÷ÓÃÊÇ±ê×¢±¾´ÎÏåÑô±£ÎÀÕ½¶·µÄÎ¨Ò»ĞÔ
-// Ã¿É±ËÀÒ»¸öÃÉ¹Å²¢Ôò×öÉèÖÃ /xywar/RAN_NUM/point, point¸ù¾İÉ±ËÀµÄÃÉ¹Å±øµÈ¼¶À´ÉèÖÃ
+// è¥„é™½ä¿è¡›æˆ°åºåˆ—è™Ÿ RAN_NUM
+// è©²åºåˆ—è™Ÿåœ¨æ¯æ¬¡é–‹å§‹å‰éš¨æ©Ÿç”¢ç”Ÿï¼Œä½œç”¨æ˜¯æ¨™æ³¨æœ¬æ¬¡è¥„é™½ä¿è¡›æˆ°é¬¥çš„å”¯ä¸€æ€§
+// æ¯æ®ºæ­»ä¸€å€‹è’™å¤ä¸¦å‰‡åšè¨­ç½® /xywar/RAN_NUM/point, pointæ ¹æ“šæ®ºæ­»çš„è’™å¤å…µç­‰ç´šä¾†è¨­ç½®
 int RAN_NUM = 0;
 
 public int get_who_win(){return who_win;}
 public int set_who_win(int who){who_win = who;} 
 public void player_die(string id);
-public int get_ran_num(){return RAN_NUM;} // »ñÈ¡±¾´ÎÏåÑô±£ÎÀÕ½ĞòÁĞºÅ
+public int get_ran_num(){return RAN_NUM;} // ç²å–æœ¬æ¬¡è¥„é™½ä¿è¡›æˆ°åºåˆ—è™Ÿ
 
-object xy_guojing; // ¹ù¾¸
-int guojing_moved = 0; // ¹ù¾¸ÊÇ·ñÒÑ¾­ÓëÃÉ¹ÅÈË½»Õ½
+object xy_guojing; // éƒ­é–
+int guojing_moved = 0; // éƒ­é–æ˜¯å¦å·²ç¶“èˆ‡è’™å¤äººäº¤æˆ°
 
-// ĞÂÔöÃÉ¹ÅÔ®¾üËùÔÚ·½Î»£¬¹¥»÷·½ÏòÔò·´Ïò£¨ÓÉÎ×Ê¦¶¯Ì¬¿ØÖÆ£©
+// æ–°å¢è’™å¤æ´è»æ‰€åœ¨æ–¹ä½ï¼Œæ”»æ“Šæ–¹å‘å‰‡åå‘ï¼ˆç”±å·«å¸«å‹•æ…‹æ§åˆ¶ï¼‰
 string yb_attack_where = "none";
 string query_yb_attack_where() { return yb_attack_where; }
 string set_yb_attack_where(string str_where) { return yb_attack_where = str_where; }
 
 
-// /kungfu/class/generate/xiangyang/guo.c µ÷ÓÃ
+// /kungfu/class/generate/xiangyang/guo.c èª¿ç”¨
 public int if_guojing_moved()
 {
         return guojing_moved;
 }
 
-// ÃâËÀµ÷ÓÃ
+// å…æ­»èª¿ç”¨
 int die_xywar(object me)
 {
         me->delete_override("die");
 
-        // ±£ÎÀÕ½ÒÑ¾­½áÊøÔòÃ»ÓĞËÀÍö±£»¤
+        // ä¿è¡›æˆ°å·²ç¶“çµæŸå‰‡æ²’æœ‰æ­»äº¡ä¿è­·
         if (status == THEEND)return 0;
         
         me->move("d/city/wumiao");
@@ -125,7 +125,7 @@ int die_xywar(object me)
         me->set("jingli", me->query("max_jingli"));        
 
         me->revive();
-        tell_object(me, BLINK + HIG "ÄãÒÑ¾­ÍË³öÏåÑô±£ÎÀÕ½£¡\n" NOR);
+        tell_object(me, BLINK + HIG "ä½ å·²ç¶“é€€å‡ºè¥„é™½ä¿è¡›æˆ°ï¼\n" NOR);
         player_die(me->query("id"));
         
         me->save();
@@ -133,7 +133,7 @@ int die_xywar(object me)
         return 1;        
 }
 
-// ÒÆ¶¯NPCµ½ÃÉ¹Å¾üÓªÇ°¶Ô¾üÓªÆäËûPLAYER×öÇåÀí
+// ç§»å‹•NPCåˆ°è’™å¤è»ç‡Ÿå‰å°è»ç‡Ÿå…¶ä»–PLAYERåšæ¸…ç†
 void clear_junying()
 {
         object room;
@@ -155,7 +155,7 @@ void clear_junying()
                 
                 if (! sizeof(ob))continue;
                 
-                // ½«ÔÚ¾üÓªµÄËùÓĞÍæ¼ÒÒÆ¶¯µÄÎäÃí
+                // å°‡åœ¨è»ç‡Ÿçš„æ‰€æœ‰ç©å®¶ç§»å‹•çš„æ­¦å»Ÿ
                 for (j = 0; j < sizeof(ob); j ++)
                 {
                         if (playerp(ob[j]))
@@ -166,10 +166,10 @@ void clear_junying()
                 }                        
         }                                                        
         
-        XYWAR_D->xywar_message(HIW "ÃÉ¹Å¾üÓªÇåÀíÍê±Ï£¡\n" NOR);
+        XYWAR_D->xywar_message(HIW "è’™å¤è»ç‡Ÿæ¸…ç†å®Œç•¢ï¼\n" NOR);
 }
 
-// ÉèÖÃ±¨Ãû²Î¼ÓÏåÑô±£ÎÀÕ½µÄÍæ¼ÒÃâ³ıËÀÍö
+// è¨­ç½®å ±ååƒåŠ è¥„é™½ä¿è¡›æˆ°çš„ç©å®¶å…é™¤æ­»äº¡
 void set_no_die(object me)
 {
         me->set_override("die", (: call_other, __FILE__, "die_xywar", me:));
@@ -178,26 +178,26 @@ void set_no_die(object me)
 }
 
 
-int is_guojing_died = 0;     // ¹ù¾¸ÊÇ·ñËÀÍö
+int is_guojing_died = 0;     // éƒ­é–æ˜¯å¦æ­»äº¡
 
-string xysb_poision = "ÏåÑô³ÇÄÚËÄÖÜ";
+string xysb_poision = "è¥„é™½åŸå…§å››å‘¨";
 
-void start_xywar();                // ÏåÑôÕ½¿ªÊ¼
-void reset_data();                 // ÏåÑôÕ½½áÊøºóÖØĞÂÉèÖÃÊı¾İ
-string xywar_message(string msg);  // ÏåÑôÕ½±¨
-void set_now_status(int flag);     // ÉèÖÃÕ½¶·×´Ì¬
+void start_xywar();                // è¥„é™½æˆ°é–‹å§‹
+void reset_data();                 // è¥„é™½æˆ°çµæŸå¾Œé‡æ–°è¨­ç½®æ•¸æ“š
+string xywar_message(string msg);  // è¥„é™½æˆ°å ±
+void set_now_status(int flag);     // è¨­ç½®æˆ°é¬¥ç‹€æ…‹
 
-void combat_xjtuibing();          // Õ½Êõ£ºĞé¼ÙÍË±ø
-void combat_sdjixi();             // Õ½Êõ£ºÉù¶«»÷Î÷
+void combat_xjtuibing();          // æˆ°è¡“ï¼šè™›å‡é€€å…µ
+void combat_sdjixi();             // æˆ°è¡“ï¼šè²æ±æ“Šè¥¿
 
-string more_soldier_poision;  // Ä³Ò»·½ÏòÉÏÊ¿±ø¶àMORE_SOLDIERÃû
+string more_soldier_poision;  // æŸä¸€æ–¹å‘ä¸Šå£«å…µå¤šMORE_SOLDIERå
 
-string player_leader; // Íæ¼Ò½«ÁìµÄID
+string player_leader; // ç©å®¶å°‡é ˜çš„ID
 
-int last_move_xysolder = 0; // ÉÏ´Îµ÷¶¯ÏåÑôÊØ¾üµÄÊ±¼ä
+int last_move_xysolder = 0; // ä¸Šæ¬¡èª¿å‹•è¥„é™½å®ˆè»çš„æ™‚é–“
 int query_last_move_xysolder(){ return last_move_xysolder;}
 
-// ËÄ´óÃÅ×¤²¢µØµã
+// å››å¤§é–€é§ä¸¦åœ°é»
 mapping doors = ([
         "west"  :      "/d/xiangyang/guandao_1",
         "east"  :      "/d/zhongzhou/toyy",
@@ -206,10 +206,10 @@ mapping doors = ([
 ]);
 
 mapping doors_name = ([
-        "west"  :      "°×»¢ÃÅ",
-        "east"  :      "ÇàÁúÃÅ",
-        "south" :      "ÖìÈ¸ÃÅ",
-        "north" :      "ĞşÎäÃÅ",
+        "west"  :      "ç™½è™é–€",
+        "east"  :      "é’é¾é–€",
+        "south" :      "æœ±é›€é–€",
+        "north" :      "ç„æ­¦é–€",
 ]);
 
 string random_doors_name()
@@ -221,13 +221,13 @@ string random_doors_name()
         return doors_name[keys_name[random(sizeof(keys_name))]];
 }
 
-// /kungfu/class/generate/xiangyang/guo.c random_move()µ÷ÓÃ
+// /kungfu/class/generate/xiangyang/guo.c random_move()èª¿ç”¨
 public mixed get_doors()
 {
         return doors;
 }
 
-// ÏåÑôÊ¿±øËÄ´óÃÅ×¤²¢µØµã
+// è¥„é™½å£«å…µå››å¤§é–€é§ä¸¦åœ°é»
 mapping doors2 = ([
         "west"  :      "/d/xiangyang/westgate1",
         "east"  :      "/d/xiangyang/eastgate1",
@@ -236,13 +236,13 @@ mapping doors2 = ([
 ]);
               
 mapping doors2_name = ([
-        "west"  :      "°×»¢ÄÚÃÅ",
-        "east"  :      "ÇàÁúÄÚÃÅ",
-        "south" :      "ÖìÈ¸ÄÚÃÅ",
-        "north" :      "ĞşÎäÄÚÃÅ",        
+        "west"  :      "ç™½è™å…§é–€",
+        "east"  :      "é’é¾å…§é–€",
+        "south" :      "æœ±é›€å…§é–€",
+        "north" :      "ç„æ­¦å…§é–€",        
 ]);
        
-// ÏåÑô×î½Ó½üÖĞÑë¹ã³¡µÄËÄ¸öµØµã
+// è¥„é™½æœ€æ¥è¿‘ä¸­å¤®å»£å ´çš„å››å€‹åœ°é»
 mapping doors3 = ([
         "west"  :      "/d/xiangyang/westjie1",
         "east"  :      "/d/xiangyang/eastjie1",
@@ -251,14 +251,14 @@ mapping doors3 = ([
 ]);
 
 mapping doors3_name = ([
-        "west"  :      "ÏåÑô³ÇÎ÷´ó½Ö",
-        "east"  :      "ÏåÑô³Ç¶«´ó½Ö",
-        "south" :      "ÏåÑô³ÇÄÏ´ó½Ö",
-        "north" :      "°²¸§¸®ÅÆÂ¥",        
+        "west"  :      "è¥„é™½åŸè¥¿å¤§è¡—",
+        "east"  :      "è¥„é™½åŸæ±å¤§è¡—",
+        "south" :      "è¥„é™½åŸå—å¤§è¡—",
+        "north" :      "å®‰æ’«åºœç‰Œæ¨“",        
 ]);
 
-// ËÄ´óÃÅµÄ±øÁ¦ÊıÁ¿
-// ({ ÌúÆï¡¢ÕÜ±ğ¡¢¹­±ø¡¢ ²½±ø  })
+// å››å¤§é–€çš„å…µåŠ›æ•¸é‡
+// ({ éµé¨ã€å“²åˆ¥ã€å¼“å…µã€ æ­¥å…µ  })
 mapping n_soldier = ([
         "west"  :      ({0, 0, 0, 0}),
         "east"  :      ({0, 0, 0, 0}),
@@ -266,7 +266,7 @@ mapping n_soldier = ([
         "north" :      ({0, 0, 0, 0}),
 ]);
 
-// ½«·½Ïò·´Ïò
+// å°‡æ–¹å‘åå‘
 public string re_poision(string p)
 {
         if (! sizeof(p))return "";
@@ -284,31 +284,31 @@ public string re_poision(string p)
         }
 }
 
-// ÏåÑôÕ½½áÊø
+// è¥„é™½æˆ°çµæŸ
 void xywar_over()
 {
         status = THEEND;
-        xywar_message(HIR "ÌáÊ¾£º±¾´ÎÏåÑô±£ÎÀÕ½ÓÉÓÚ±¨ÃûÈËÊı²»×ã£¬Ğû¸æ½áÊø¡£\n" NOR);
-        reset_data();           // ÏåÑôÕ½½áÊøºóÖØĞÂÉèÖÃÊı¾İ
+        xywar_message(HIR "æç¤ºï¼šæœ¬æ¬¡è¥„é™½ä¿è¡›æˆ°ç”±äºå ±åäººæ•¸ä¸è¶³ï¼Œå®£å‘ŠçµæŸã€‚\n" NOR);
+        reset_data();           // è¥„é™½æˆ°çµæŸå¾Œé‡æ–°è¨­ç½®æ•¸æ“š
 
         return;
 }
 
-// ±£ÎÀÕ½Ê§°Ü
-// ÃÉ¹ÅÊ¤Àû
+// ä¿è¡›æˆ°å¤±æ•—
+// è’™å¤å‹åˆ©
 public void war_fail()
 {        
         who_win = 2;;
         
-        call_out("xywar_message", 4, HIY "±¾´ÎÏåÑô±£ÎÀÕ½ÒÔ²Ğ°ÜÊÕ³¡£¬ÃÉ¹ÅÈË³¤ÇıÖ±Èë£¬Õ¼ÁìÁËÏåÑô£¬´Ó´ËÉúÁéÍ¿Ì¿£¬Ãñ²»ÁÄÉú ¡­¡­£¡\n");
-        call_out("xywar_message", 5, HIY "¶ø²ÎÓëÄÇ´Î²ÒÁÒµÄÏåÑô±£ÎÀÕ½µÄÒåÊ¿ÃÇÈ´ÓÀÔ¶²»»á±»ºóÈËËùÒÅÍü£¡\n");
+        call_out("xywar_message", 4, HIY "æœ¬æ¬¡è¥„é™½ä¿è¡›æˆ°ä»¥æ®˜æ•—æ”¶å ´ï¼Œè’™å¤äººé•·é©…ç›´å…¥ï¼Œä½”é ˜äº†è¥„é™½ï¼Œå¾æ­¤ç”Ÿéˆå¡—ç‚­ï¼Œæ°‘ä¸èŠç”Ÿ â€¦â€¦ï¼\n");
+        call_out("xywar_message", 5, HIY "è€Œåƒèˆ‡é‚£æ¬¡æ…˜çƒˆçš„è¥„é™½ä¿è¡›æˆ°çš„ç¾©å£«å€‘å»æ°¸é ä¸æœƒè¢«å¾Œäººæ‰€éºå¿˜ï¼\n");
 
         set_now_status(THEEND);
 
         return;
 }
 
-// ½±ÀøËùÓĞ²ÎÕ½Íæ¼Ò
+// çå‹µæ‰€æœ‰åƒæˆ°ç©å®¶
 void gift_to_player()
 {
         object dob;
@@ -318,7 +318,7 @@ void gift_to_player()
         
         n = sizeof(p);
         
-        // ½«±¾´ÎÏåÑô±£ÎÀÕ½ĞòÁĞºÅ×ª»¯Îª×Ö´®
+        // å°‡æœ¬æ¬¡è¥„é™½ä¿è¡›æˆ°åºåˆ—è™Ÿè½‰åŒ–ç‚ºå­—ä¸²
         str_ran_num = sprintf("%d", RAN_NUM);
         
         for (i = 0; i < n; i ++)
@@ -327,10 +327,10 @@ void gift_to_player()
                 
                 if (! objectp(dob))continue;
                 
-                // ÉèÖÃ¹¦Ñ«
+                // è¨­ç½®åŠŸå‹›
                 dob->add("xywar/win", 1);
 
-                // ¸ù¾İÕ½¶·ÖĞÉ±µĞÊıÁ¿À´½øĞĞ½±Àø£¬Ò»¸öÎ´É±Ôò½±ÀøÉèÖÃÎª×îµÍ
+                // æ ¹æ“šæˆ°é¬¥ä¸­æ®ºæ•µæ•¸é‡ä¾†é€²è¡Œçå‹µï¼Œä¸€å€‹æœªæ®ºå‰‡çå‹µè¨­ç½®ç‚ºæœ€ä½
                 if (dob->query("xywar/xy_" + str_ran_num))
                 {
                         GIFT_D->delay_bonus(dob,
@@ -339,7 +339,7 @@ void gift_to_player()
                                            "weiwang"  : GIFT_WEI_BASE + dob->query("xywar/xy_" + str_ran_num) / 20,
                                            "score"    : GIFT_YUE_BASE + dob->query("xywar/xy_" + str_ran_num) / 20,
                                            "mar"      : GIFT_MAR_BASE + dob->query("xywar/xy_" + str_ran_num) / 20,
-                                           "prompt"   : "ÄãÔÚÏåÑô±£ÎÀÕ½Ê¤Àûºó"]), 999);
+                                           "prompt"   : "ä½ åœ¨è¥„é™½ä¿è¡›æˆ°å‹åˆ©å¾Œ"]), 999);
                         dob->delete("xywar/xy_" + str_ran_num);
                 }
                 else
@@ -350,12 +350,12 @@ void gift_to_player()
                                            "weiwang"  : GIFT_WEI_BASE,
                                            "score"    : GIFT_YUE_BASE,
                                            "mar"      : GIFT_MAR_BASE,
-                                           "prompt"   : "ÄãÔÚÏåÑô±£ÎÀÕ½Ê¤Àûºó"]), 999);                                         
+                                           "prompt"   : "ä½ åœ¨è¥„é™½ä¿è¡›æˆ°å‹åˆ©å¾Œ"]), 999);                                         
                 }
                 dob->save();
 
                 /*
-                // ¸ù¾İ¾­ÑéÀ´»®·Ö½±Àø
+                // æ ¹æ“šç¶“é©—ä¾†åŠƒåˆ†çå‹µ
                 if (dob->query("combat_exp") >= 30000000)
                         GIFT_D->delay_bonus(dob,
                                         ([ "exp"      : GIFT_EXP_BASE + random(GIFT_EXP_BASE / 2),                                           
@@ -363,7 +363,7 @@ void gift_to_player()
                                            "weiwang"  : GIFT_WEI_BASE + random(GIFT_WEI_BASE / 2),                               
                                            "score"    : GIFT_YUE_BASE + random(GIFT_YUE_BASE / 2),  
                                            "mar"      : GIFT_MAR_BASE + random(GIFT_MAR_BASE / 2),                           
-                                           "prompt"   : "ÄãÔÚÏåÑô±£ÎÀÕ½Ê¤Àûºó"]), 999);
+                                           "prompt"   : "ä½ åœ¨è¥„é™½ä¿è¡›æˆ°å‹åˆ©å¾Œ"]), 999);
                 else
                         GIFT_D->delay_bonus(dob,                                              
                                         ([ "exp"      : GIFT_EXP_BASE / 2 + random(GIFT_EXP_BASE / 3),                                           
@@ -371,15 +371,15 @@ void gift_to_player()
                                            "weiwang"  : GIFT_WEI_BASE / 2 + random(GIFT_WEI_BASE / 3),                               
                                            "score"    : GIFT_YUE_BASE / 2 + random(GIFT_YUE_BASE / 3),  
                                            "mar"      : GIFT_MAR_BASE / 2 + random(GIFT_MAR_BASE / 3),                           
-                                           "prompt"   : "ÄãÔÚÏåÑô±£ÎÀÕ½Ê¤Àûºó"]), 999);                                                           
+                                           "prompt"   : "ä½ åœ¨è¥„é™½ä¿è¡›æˆ°å‹åˆ©å¾Œ"]), 999);                                                           
          */
         }
         
 }
 
-// ±£ÎÀÕ½Ê¤Àû
-// ÏåÑôÊ¤Àû
-// ½±ÀøËùÓĞ²ÎÕ½Íæ¼Ò
+// ä¿è¡›æˆ°å‹åˆ©
+// è¥„é™½å‹åˆ©
+// çå‹µæ‰€æœ‰åƒæˆ°ç©å®¶
 public void war_win()
 {
         who_win = 1;
@@ -388,58 +388,58 @@ public void war_win()
         
         set_now_status(THEEND);
         
-        call_out("xywar_message", 4, HIW "ÓÉÓÚÏåÑôÊØ¾ü¼°Íæ¼ÒµØ·ÜÁ¦µÖ¿¹£¬ÖÕÓÚ»÷ÍËÁËÃÉ¹Å¾ü£¬ÏåÑô±£ÎÀÕ½Ê¤Àû£¡\n");
+        call_out("xywar_message", 4, HIW "ç”±äºè¥„é™½å®ˆè»åŠç©å®¶åœ°å¥®åŠ›æŠµæŠ—ï¼Œçµ‚äºæ“Šé€€äº†è’™å¤è»ï¼Œè¥„é™½ä¿è¡›æˆ°å‹åˆ©ï¼\n");
 
         return;
 }
 
-// ÃÉ¹ÅÈËÕ¼ÁìÖĞÑë¹ã³¡
+// è’™å¤äººä½”é ˜ä¸­å¤®å»£å ´
 void arrived_center()
 {
         if (status == THEEND)return;
 
         war_fail();
 
-        xywar_message(HIR "ÃÉ¹ÅÈËÒÑÕ¼ÁìÏåÑôÖĞÑë¹ã³¡£¬±¾´ÎÏåÑô±£ÎÀÕ½ÒÔÏåÑôÊ§Ïİ¸æÖÕ£¡\n" NOR);                
+        xywar_message(HIR "è’™å¤äººå·²ä½”é ˜è¥„é™½ä¸­å¤®å»£å ´ï¼Œæœ¬æ¬¡è¥„é™½ä¿è¡›æˆ°ä»¥è¥„é™½å¤±é™·å‘Šçµ‚ï¼\n" NOR);                
         
 }
 
-// ÓÉÓÚ±¨ÃûÍæ¼ÒÊ£Óà²»µ½ÎåÃû£¬Õ½¶·Ê§°Ü
+// ç”±äºå ±åç©å®¶å‰©ä½™ä¸åˆ°äº”åï¼Œæˆ°é¬¥å¤±æ•—
 void war_end_player()
 {
         if (status == THEEND)return;
                 
-        xywar_message(HIR "ÓÉÓÚ²ÎÓëÏåÑô±£ÎÀÕ½µÄÍæ¼ÒÒÑÊ£Óà²»µ½ÎåÃû£¬ÄÑÒÔ¼ÌĞøµÖ¿¹ÃÉ¹ÅÈËµÄ¹¥ÊÆ¡£" NOR);
-        xywar_message(HIR "ÃÉ¹ÅÈË³¤ÇıÖ±Èë£¬Õ¼ÁìÁËÏåÑô£¬´Ó´ËÉúÁéÍ¿Ì¿£¬Ãñ²»ÁÄÉú ¡­¡­" NOR);
-        xywar_message(HIR "¶ø²ÎÓëÄÇ´Î²ÒÁÒµÄÏåÑô±£ÎÀÕ½µÄÒåÊ¿ÃÇÈ´ÓÀÔ¶²»»á±»ºóÈËËùÒÅÍü£¡\n" NOR);
+        xywar_message(HIR "ç”±äºåƒèˆ‡è¥„é™½ä¿è¡›æˆ°çš„ç©å®¶å·²å‰©ä½™ä¸åˆ°äº”åï¼Œé›£ä»¥ç¹¼çºŒæŠµæŠ—è’™å¤äººçš„æ”»å‹¢ã€‚" NOR);
+        xywar_message(HIR "è’™å¤äººé•·é©…ç›´å…¥ï¼Œä½”é ˜äº†è¥„é™½ï¼Œå¾æ­¤ç”Ÿéˆå¡—ç‚­ï¼Œæ°‘ä¸èŠç”Ÿ â€¦â€¦" NOR);
+        xywar_message(HIR "è€Œåƒèˆ‡é‚£æ¬¡æ…˜çƒˆçš„è¥„é™½ä¿è¡›æˆ°çš„ç¾©å£«å€‘å»æ°¸é ä¸æœƒè¢«å¾Œäººæ‰€éºå¿˜ï¼\n" NOR);
         
         set_now_status(THEEND);
                 
 }
 
-// Íâ²¿µ÷ÓÃ /kungfu/class/generate/xiangyang/xyshibing.cµ÷ÓÃ
-// ÅĞ¶ÏÄ¿Ç°ÊÇ·ñÊÜµ½µ÷¶¯
+// å¤–éƒ¨èª¿ç”¨ /kungfu/class/generate/xiangyang/xyshibing.cèª¿ç”¨
+// åˆ¤æ–·ç›®å‰æ˜¯å¦å—åˆ°èª¿å‹•
 public int is_moved()
 {
-        if (xysb_poision == "ÏåÑô³ÇÄÚËÄÖÜ")return 0;
+        if (xysb_poision == "è¥„é™½åŸå…§å››å‘¨")return 0;
         
         return 1;
 }
 
-// ÏåÑôÊ¿±øÄ¿Ç°µÄÎ»ÖÃ
-// Íâ²¿¿Éµ÷ÓÃ
+// è¥„é™½å£«å…µç›®å‰çš„ä½ç½®
+// å¤–éƒ¨å¯èª¿ç”¨
 public string xy_soldier_poision(string para)
 {
-        if (xysb_poision == "ÏåÑô³ÇÄÚËÄÖÜ")
+        if (xysb_poision == "è¥„é™½åŸå…§å››å‘¨")
                 return xysb_poision;
 
         switch(para)
         {
-                // ·µ»ØµØÃû
+                // è¿”å›åœ°å
                 case "name" :
                         return doors3_name[xysb_poision];
                 
-                // ·µ»Ø·½Î»
+                // è¿”å›æ–¹ä½
                 case "poision" :
                         return xysb_poision;
                 
@@ -450,7 +450,7 @@ public string xy_soldier_poision(string para)
         }
 }
 
-// ÃÉ¹Å¾ü×ÜÊıÁ¿
+// è’™å¤è»ç¸½æ•¸é‡
 int total_menggu_soldier(string route)
 {
         int i, j, total = 0;
@@ -459,13 +459,13 @@ int total_menggu_soldier(string route)
 
         key_n_soldier = keys(n_soldier);
 
-        // ·µ»ØÏåÑôÊ¿±ø×ÜÊı
+        // è¿”å›è¥„é™½å£«å…µç¸½æ•¸
         if (route == "xiangyang")
         {
                 return n_xy_sb;
         }
         
-        // ·µ»ØÃÉ¹ÅÊ¿±ø×ÜÊı
+        // è¿”å›è’™å¤å£«å…µç¸½æ•¸
         if (route == "total")
         {
                 for (j = 0; j < sizeof(key_n_soldier); j ++ )
@@ -479,7 +479,7 @@ int total_menggu_soldier(string route)
                 return total;
         }
         
-        // Ä³Ò»ÒÆ¶¯·½ÏòÉÏµÄÃÉ¹Å¾ü×ÜÊıÁ¿
+        // æŸä¸€ç§»å‹•æ–¹å‘ä¸Šçš„è’™å¤è»ç¸½æ•¸é‡
         if (stringp(route))
         {
                 route_n_soldier = n_soldier[route];
@@ -497,8 +497,8 @@ int total_menggu_soldier(string route)
 }
 
 // key = "max" || key = "min"
-// ·µ»Øn_soldier ÖĞÊ¿±øÁ¦Á¿×îÇ¿»ò×îÈõµÄ×é
-// ÆäÖĞÊ¿±ø ²ÎÊıÎª1¡¢¹­±øÎª2, ÕÜ±ğÎª3£¬Æï±øÎª4
+// è¿”å›n_soldier ä¸­å£«å…µåŠ›é‡æœ€å¼·æˆ–æœ€å¼±çš„çµ„
+// å…¶ä¸­å£«å…µ åƒæ•¸ç‚º1ã€å¼“å…µç‚º2, å“²åˆ¥ç‚º3ï¼Œé¨å…µç‚º4
 string max_min_n_soldier(string keys)
 {
         int i, j, power_w, power_e, power_s, power_n;
@@ -559,27 +559,27 @@ string max_min_n_soldier(string keys)
 
 }
 
-// ÃÉ¹ÅÊ¿±øËÀÍöÍ¨¸æ£¬ÓÃÓÚÏµÍ³ÅĞ¶ÏÃ¿×é¾ü¶ÓÊıÁ¿
-// ÏåÑôÊ¿±øÍ¨¸æ£¬ÓÃÓÚÏµÍ³ÅĞ¶ÏÏåÑôÊ¿±ø×ÜÊıÁ¿
+// è’™å¤å£«å…µæ­»äº¡é€šå‘Šï¼Œç”¨äºç³»çµ±åˆ¤æ–·æ¯çµ„è»éšŠæ•¸é‡
+// è¥„é™½å£«å…µé€šå‘Šï¼Œç”¨äºç³»çµ±åˆ¤æ–·è¥„é™½å£«å…µç¸½æ•¸é‡
 void soldier_die(string route, int which)
 {
-        if (route == "xiangyang") // ÏåÑôÊ¿±øËÀÍö
+        if (route == "xiangyang") // è¥„é™½å£«å…µæ­»äº¡
         {
                 n_xy_sb -= 1;
                 if (n_xy_sb <= 0)n_xy_sb = 0;
                 return;
         }
 
-        // route ´ú±íwest, east, south, northÖĞµÄÒ»ÖÖ£¬ which ´ú±í±øÖÖ
+        // route ä»£è¡¨west, east, south, northä¸­çš„ä¸€ç¨®ï¼Œ which ä»£è¡¨å…µç¨®
         if (route != "west" &&
             route != "north" &&
             route != "south" &&
             route != "east")return;
 
-        // 0 ´ú±íÆï±ø¡¢1´ú±íÕÜ±ğ¡¢2´ú±í¹­±ø¡¢3´ú±í²½±ø
+        // 0 ä»£è¡¨é¨å…µã€1ä»£è¡¨å“²åˆ¥ã€2ä»£è¡¨å¼“å…µã€3ä»£è¡¨æ­¥å…µ
         if (which < 0 || which > 3)return;
         
-        // ½«ROUTE·´Ò»´Î
+        // å°‡ROUTEåä¸€æ¬¡
         route = re_poision(route);
         
         n_soldier[route][which] -= 1;
@@ -591,20 +591,20 @@ void soldier_die(string route, int which)
         return;
 }
 
-// ÅĞ¶Ï¹ù¾¸ÊÇ·ñÒÑ¾­ËÀÍö
+// åˆ¤æ–·éƒ­é–æ˜¯å¦å·²ç¶“æ­»äº¡
 int is_guojing_die()
 {
         return is_guojing_died;
 }
 
-// ¹ù¾¸ËÀÍö
-// ¹ù¾¸ËÀÍöºóËùÓĞÏåÑôÊ¿±ø×Ô¶¯³·ÍË
+// éƒ­é–æ­»äº¡
+// éƒ­é–æ­»äº¡å¾Œæ‰€æœ‰è¥„é™½å£«å…µè‡ªå‹•æ’¤é€€
 void guojing_die()
 {
-        is_guojing_died = 1; // ±êÖ¾¹ù¾¸ÒÑËÀÍö
+        is_guojing_died = 1; // æ¨™å¿—éƒ­é–å·²æ­»äº¡
 }
 
-// ±¨Ãû²Î¼ÓÏåÑôÕ½
+// å ±ååƒåŠ è¥„é™½æˆ°
 void sign_up(string id)
 {
         if (! sizeof(p)) p = ({});
@@ -615,13 +615,13 @@ void sign_up(string id)
 }
 
 
-// ·µ»ØÒÑ±¨ÃûµÄÈËÊı
+// è¿”å›å·²å ±åçš„äººæ•¸
 public int n_sign_up(){return sizeof(p);}
 
-// ·µ»Ø±¨ÃûµÄÊı×é
+// è¿”å›å ±åçš„æ•¸çµ„
 public string *p_sign_up(){return p;}
 
-// ¼ì²éÄ³IDÊÇ·ñ±¨Ãû×´Ì¬ÈÔÈ»ÓĞĞ§
+// æª¢æŸ¥æŸIDæ˜¯å¦å ±åç‹€æ…‹ä»ç„¶æœ‰æ•ˆ
 int if_sign_up(string id)
 {
         if (! sizeof(p))return 0;
@@ -631,7 +631,7 @@ int if_sign_up(string id)
         return 0;
 }
 
-// Íâ²¿µ÷ÓÃ£¬Íæ¼ÒËÀÍöºó´ÓÏåÑô±£ÎÀÕ¾±¨ÃûÖĞÉ¾³ı
+// å¤–éƒ¨èª¿ç”¨ï¼Œç©å®¶æ­»äº¡å¾Œå¾è¥„é™½ä¿è¡›ç«™å ±åä¸­åˆªé™¤
 public void player_die(string id)
 {
         if (! stringp(id))return;
@@ -642,7 +642,7 @@ public void player_die(string id)
         return;
 }
 
-// ¼ì²éÀëÏßµÄ±¨ÃûÍæ¼Ò²¢É¾³ıÖ®
+// æª¢æŸ¥é›¢ç·šçš„å ±åç©å®¶ä¸¦åˆªé™¤ä¹‹
 void sub_check_player()
 {
         int i;
@@ -659,13 +659,13 @@ void sub_check_player()
         
 }
 
-// ¼ì²éÀëÏßµÄ±¨ÃûÍæ¼Ò²¢É¾³ıÖ®
-// µ÷ÓÃ sub_check_player()Ö´ĞĞ
+// æª¢æŸ¥é›¢ç·šçš„å ±åç©å®¶ä¸¦åˆªé™¤ä¹‹
+// èª¿ç”¨ sub_check_player()åŸ·è¡Œ
 void check_player()
 {
         int i;
         remove_call_out("check_player");
-        call_out("check_player", 10); // ¼ì²é²Î¼ÓÏåÑôÕ½µÄÍæ¼Ò
+        call_out("check_player", 10); // æª¢æŸ¥åƒåŠ è¥„é™½æˆ°çš„ç©å®¶
 
         if (! sizeof(p))return;
 
@@ -674,33 +674,33 @@ void check_player()
         return;
 }
 
-// ·µ»Ø¸÷ÖÖ×´Ì¬
-// 1=ÏåÑôÊ¤Àû | -1=ÃÉ¹ÅÊ¤Àû
-// 2=½øĞĞÖĞ   | 0=½áÊø»òÎ´¿ªÊ¼
-// 3=µÈ´ı½ø¹¥
+// è¿”å›å„ç¨®ç‹€æ…‹
+// 1=è¥„é™½å‹åˆ© | -1=è’™å¤å‹åˆ©
+// 2=é€²è¡Œä¸­   | 0=çµæŸæˆ–æœªé–‹å§‹
+// 3=ç­‰å¾…é€²æ”»
 int now_status(){return status;}
 
-// ÉèÖÃ¸÷ÖÖ×´Ì¬
+// è¨­ç½®å„ç¨®ç‹€æ…‹
 void set_now_status(int flag)
 {
-        // Èç¹û×´Ì¬Îª½áÊøÕ½¶·
+        // å¦‚æœç‹€æ…‹ç‚ºçµæŸæˆ°é¬¥
         if (flag == THEEND)
         {
                 status = THEEND;
-                call_out("xywar_message", 10, HIG "±¾´ÎÏåÑô±£ÎÀÕ½ÒÑ½áÊø£¬ÏµÍ³½«ÓÚ1·ÖÖÓÄÚÊÍ·Å×ÊÔ´£¬ÏåÑô»Ö¸´Æ½¾²¡£");
-                reset_data(); // ³õÊ¼»¯ËùÓĞÊı¾İ
+                call_out("xywar_message", 10, HIG "æœ¬æ¬¡è¥„é™½ä¿è¡›æˆ°å·²çµæŸï¼Œç³»çµ±å°‡äº1åˆ†é˜å…§é‡‹æ”¾è³‡æºï¼Œè¥„é™½æ¢å¾©å¹³éœã€‚");
+                reset_data(); // åˆå§‹åŒ–æ‰€æœ‰æ•¸æ“š
         }
 
         status = flag;
 }
 
-// ±¨Ãû±êÖ¾£¬1=¿ÉÒÔ±¨Ãû  0=²»¿ÉÒÔ±¨Ãû
+// å ±åæ¨™å¿—ï¼Œ1=å¯ä»¥å ±å  0=ä¸å¯ä»¥å ±å
 int sign_up_status(){return sign_up_status;}
 
-// ÉèÖÃ±¨Ãû±êÖ¾
+// è¨­ç½®å ±åæ¨™å¿—
 void set_sign_up_status(int flag){sign_up_status = flag;}
 
-// ÍË±ø±êÖ¾
+// é€€å…µæ¨™å¿—
 int dest_status()
 {
         if (status == THEEND)
@@ -711,21 +711,21 @@ int dest_status()
         return 0;
 }
 
-// ¹ıÂË²»½ÓÊÜ¹ÊÊÂĞÅÏ¢µÄÈË
+// éæ¿¾ä¸æ¥å—æ•…äº‹ä¿¡æ¯çš„äºº
 int filter_listener(object ob)
 {
-            // ¼Æ»®ÖĞ²»½ÓÊÕ
+            // è¨ˆåŠƒä¸­ä¸æ¥æ”¶
         if (ob->query("doing") == "scheme") return 0;
         return 1;
 }
 
-// ÏåÑôÕ½ÏµÍ³Í¨¸æ
+// è¥„é™½æˆ°ç³»çµ±é€šå‘Š
 void xywar_message(string msg)
 {
         string prompt;
         object *listeners;
 
-        prompt = HIY "¡¾ÏåÑôÕ½±¨¡¿" NOR;
+        prompt = HIY "ã€è¥„é™½æˆ°å ±ã€‘" NOR;
         listeners = filter_array(users(), (: filter_listener :));
         message( "story",  prompt + HIC + msg + "\n" NOR, listeners );
 }
@@ -737,7 +737,7 @@ void do_attack_msg(string msg)
         xywar_message(msg);
 }
 
-// ¹ù¾¸Í¨¸æ£º¹ıÂËÃ»ÓĞ±¨ÃûµÄÈË
+// éƒ­é–é€šå‘Šï¼šéæ¿¾æ²’æœ‰å ±åçš„äºº
 int filter_listener2(object ob)
 {
         if (member_array(ob->query("id"), p) == -1)return 0;
@@ -745,18 +745,18 @@ int filter_listener2(object ob)
         return 1;
 }
 
-// ¹ù¾¸Í¨¸æ
+// éƒ­é–é€šå‘Š
 void guojing_message(string msg)
 {
         string prompt;
         object *listeners;
 
-        prompt = HIY "¡¾¹ù¾¸¡¿" NOR;
+        prompt = HIY "ã€éƒ­é–ã€‘" NOR;
         listeners = filter_array(users(), (: filter_listener2 :));
         message( "story",  prompt + HIR + msg + "\n" NOR, listeners );
 }
 
-// Ã¿ÔÂ1ÈÕºÍ15ÈÕÍíÉÏ8µã30¿ªÊ¼
+// æ¯æœˆ1æ—¥å’Œ15æ—¥æ™šä¸Š8é»30é–‹å§‹
 void check_time()
 {
         string *str_bjtime,bjtime1;
@@ -764,31 +764,31 @@ void check_time()
         remove_call_out("check_time");
         call_out("check_time", 15);
 
-        // Èç¹û·¢ÏÖÕ½¶·¿ªÊ¼±êÖ¾
+        // å¦‚æœç™¼ç¾æˆ°é¬¥é–‹å§‹æ¨™å¿—
         if (start_status)return;
 
-        // 1Ğ¡Ê±ÄÚ²»ÄÜÖØ¸´×Ô¶¯Æô¶¯
+        // 1å°æ™‚å…§ä¸èƒ½é‡å¾©è‡ªå‹•å•Ÿå‹•
         if (time() - DB_D->query_data("xywar/last_auto_start") < 36000)
                 return;
                 
-        // ¼ì²éÊÇ·ñµ½ÁËÆô¶¯Ê±¼ä£¬Èç¹ûÊÇÔòÉèÖÃ¿ªÊ¼±êÖ¾
-        // ·µ»Ø±±¾©Ê±¼ä (Äê:ÔÂ:ÈÕ:Ê±:·Ö:Ãë)
+        // æª¢æŸ¥æ˜¯å¦åˆ°äº†å•Ÿå‹•æ™‚é–“ï¼Œå¦‚æœæ˜¯å‰‡è¨­ç½®é–‹å§‹æ¨™å¿—
+        // è¿”å›åŒ—äº¬æ™‚é–“ (å¹´:æœˆ:æ—¥:æ™‚:åˆ†:ç§’)
         bjtime1 = MEMBER_D->bjtime(time(), 0);
         str_bjtime = explode(bjtime1, ":");
         
-        // Ã¿ÔÂ1ÈÕ£¬»ò15ÈÕ20£º30·Ö¿ªÊ¼
+        // æ¯æœˆ1æ—¥ï¼Œæˆ–15æ—¥20ï¼š30åˆ†é–‹å§‹
         if (str_bjtime[2] == "1" || str_bjtime[2] == "15")
         {
                 if (str_bjtime[3] == "20" && str_bjtime[4] == "30")
                         DB_D->set_data("xywar/start", 1);
         }
 
-        // ¼ì²é¿ªÊ¼±êÖ¾£¬²¢Æô¶¯
+        // æª¢æŸ¥é–‹å§‹æ¨™å¿—ï¼Œä¸¦å•Ÿå‹•
         if (DB_D->query_data("xywar/start"))
         {                
                 DB_D->set_data("xywar/start", 0);
                 DB_D->set_data("xywar/last_auto_start", time());
-                log_file("xywar", "xywar ÓÚ " + ctime(time()) + " ×Ô¶¯Æô¶¯£¡\n");
+                log_file("xywar", "xywar äº " + ctime(time()) + " è‡ªå‹•å•Ÿå‹•ï¼\n");
                 start_xywar();
         }
 }
@@ -796,21 +796,21 @@ void check_time()
 void create()
 {
         seteuid(getuid());
-        set("channel_id", "ÏåÑôÕ½¶·ÏµÍ³");
+        set("channel_id", "è¥„é™½æˆ°é¬¥ç³»çµ±");
         set("no_clean_up", 1);
-        CHANNEL_D->do_channel(this_object(), "sys", "ÏµÍ³ÒÑ¾­Æô¶¯¡£");
+        CHANNEL_D->do_channel(this_object(), "sys", "ç³»çµ±å·²ç¶“å•Ÿå‹•ã€‚");
         
         if (! ALLOW_START)return;
         
         remove_call_out("check_time");
-        call_out("check_time", 10); // ¼ì²éÏåÑôÕ½¿ªÊ¼Ê±¼ä
+        call_out("check_time", 10); // æª¢æŸ¥è¥„é™½æˆ°é–‹å§‹æ™‚é–“
         remove_call_out("check_player");
-        call_out("check_player", 10); // ¼ì²é²Î¼ÓÏåÑôÕ½µÄÍæ¼Ò
+        call_out("check_player", 10); // æª¢æŸ¥åƒåŠ è¥„é™½æˆ°çš„ç©å®¶
         remove_call_out("check_combatd");
-        call_out("check_combatd", 30); // Õ½¶·Õ½ÊõÏµÍ³×Ü¿Øº¯Êı
+        call_out("check_combatd", 30); // æˆ°é¬¥æˆ°è¡“ç³»çµ±ç¸½æ§å‡½æ•¸
 }
 
-// Õ½¶·Õ½ÊõÏµÍ³×Ü¿ØÎÄ¼ş£¬ÓÃÓÚ¿ØÖÆÃÉ¹Å¾ü¶ÓÕ½Êõ¾ü¶Óµ÷Õû
+// æˆ°é¬¥æˆ°è¡“ç³»çµ±ç¸½æ§æ–‡ä»¶ï¼Œç”¨äºæ§åˆ¶è’™å¤è»éšŠæˆ°è¡“è»éšŠèª¿æ•´
 void check_combatd()
 {
                 int total, w, e, s, n;
@@ -821,10 +821,10 @@ void check_combatd()
                 remove_call_out("check_combatd");
                 call_out("check_combatd", 10);
 
-                // ÏåÑôÕ½½áÊø
+                // è¥„é™½æˆ°çµæŸ
                 if (status == THEEND)return;
                 
-                // ¸÷ÃÅÈËÊı¼°×ÜÈËÊı
+                // å„é–€äººæ•¸åŠç¸½äººæ•¸
                 total = total_menggu_soldier("total");
                 xytotal = total_menggu_soldier("xiangyang");
                 w = total_menggu_soldier("west");
@@ -832,92 +832,92 @@ void check_combatd()
                 s = total_menggu_soldier("south");
                 n = total_menggu_soldier("north");
                 
-                // ÏåÑôÊ¿±øËÀÉË¹ı°ëÌáÊ¾
+                // è¥„é™½å£«å…µæ­»å‚·éåŠæç¤º
                 if (xytotal < n_xy_sb2 / 2 && ! guojing_moved)
                 {
-                        xywar_message(HIW "ËÎ¾üÌ½×Ó£º±¨£¡£¡Ä¿Ç°ÎÒËÎ¾üÒÑ¾­ËÀÉË¹ı°ë£¬Çé¿öÊ®·ÖÎ£¼±¡£\n" NOR);
+                        xywar_message(HIW "å®‹è»æ¢å­ï¼šå ±ï¼ï¼ç›®å‰æˆ‘å®‹è»å·²ç¶“æ­»å‚·éåŠï¼Œæƒ…æ³ååˆ†å±æ€¥ã€‚\n" NOR);
 
                         // 
                         if (! is_guojing_die())
                         {
-                                xywar_message(HIW "¹ù¾¸£ººÃ£¬¼ÈÈ»Èç´Ë£¬ÎÒ¹ùÄ³ÊÄÓëÏåÑô¹²´æÍö ¡­¡­" NOR);
-                                xywar_message(HIR "ÌıËµ¹ù¾¸Ç××ÔÉÏÕó£¬ÓëÃÉ¹ÅÈË¾öÒ»ËÀÕ½¡£\n" NOR);
+                                xywar_message(HIW "éƒ­é–ï¼šå¥½ï¼Œæ—¢ç„¶å¦‚æ­¤ï¼Œæˆ‘éƒ­æŸèª“èˆ‡è¥„é™½å…±å­˜äº¡ â€¦â€¦" NOR);
+                                xywar_message(HIR "è½èªªéƒ­é–è¦ªè‡ªä¸Šé™£ï¼Œèˆ‡è’™å¤äººæ±ºä¸€æ­»æˆ°ã€‚\n" NOR);
                                 
-                                call_out("xywar_message", 2, HIY "ÃÉ¹Å½«Áì£ºÃÉ¹ÅÓÂÊ¿ÃÇÏòÇ°³å°¡£¬ËÎ¾üÒÑ¾­À£²»³É¾üÁË¡£\n");
+                                call_out("xywar_message", 2, HIY "è’™å¤å°‡é ˜ï¼šè’™å¤å‹‡å£«å€‘å‘å‰æ²–å•Šï¼Œå®‹è»å·²ç¶“æ½°ä¸æˆè»äº†ã€‚\n");
 
-                                // ½«guojing ÒÆ¶¯µ½ÃÉ¹ÅÈË×î¶àµÄµØ·½
+                                // å°‡guojing ç§»å‹•åˆ°è’™å¤äººæœ€å¤šçš„åœ°æ–¹
                                 if (objectp(xy_guojing))
                                 {
                                         max_route = max_min_n_soldier("max");
                                         xy_guojing->move(doors[max_route]);
 
-                                        // ÉèÖÃÒÆ¶¯·½Ïò
+                                        // è¨­ç½®ç§»å‹•æ–¹å‘
                                         xy_guojing->set("route", re_poision(max_route));
 
-                                        // ÒÑ¾­ÒÆ¶¯±êÖ¾
+                                        // å·²ç¶“ç§»å‹•æ¨™å¿—
                                         guojing_moved = 1;                                        
                                 }
                         }
                 }
 
-                // ÕıÔÚÕ½¶·ÖĞ£¬ÊÊÊ±µ÷ÕûÕ½Êõ
+                // æ­£åœ¨æˆ°é¬¥ä¸­ï¼Œé©æ™‚èª¿æ•´æˆ°è¡“
                 /*
                 */
                 if (status == WARRING || (status == WAIT_START && total_menggu_soldier("total") < 120))
                 {
-                        // 1.  ÃÉ¹Å¾ü¶ÓÊıÁ¿ÉÙÓÚ80Ê±ÅÉ±øÔöÔ®
+                        // 1.  è’™å¤è»éšŠæ•¸é‡å°‘äº80æ™‚æ´¾å…µå¢æ´
                         if (add_mgb_times < ADD_MGB_TIMES &&
                                time() - last_add_mgb_time >= ADD_MGB_WAIT &&
                                (status == WARRING || status == WAIT_START) &&
                                total_menggu_soldier("total") < 120)                        
                         {
                                 last_add_mgb_time = time();
-                                call_out("xywar_message", 2, HIW "ÃÉ¹ÅÌ½×Ó£º±¨£¡ËÎ¾üµÃ½­ºşÈËÊ¿Ö§³Ö£¬ÍçÇ¿µÖ¿¹£¬ÎÒ¾üÄ¿Ç°ÉËÍö²ÒÖØ£¡");
-                                call_out("xywar_message", 4, HIW "ÃÉ¹Å½«Áì¡°àÅ¡±ÁËÒ»Éù£º¿´À´£¬ÎÒÃÇÓ¦¸Ã²ÉÈ¡Ò»Ğ©ĞĞ¶¯ÁË£¬´«Áî·ÅÀÇÑÌ¡­¡­");
-                                call_out("xywar_message", 5, HIY "ÏåÑôÌ½×Ó£º±¨£¡ÃÉ¹ÅÈËÒÑ·Å³öÀÇÑÌ£¬¼ÓÅÉÔ®¾ü½ø¹¥ÏåÑô£¡");
+                                call_out("xywar_message", 2, HIW "è’™å¤æ¢å­ï¼šå ±ï¼å®‹è»å¾—æ±Ÿæ¹–äººå£«æ”¯æŒï¼Œé ‘å¼·æŠµæŠ—ï¼Œæˆ‘è»ç›®å‰å‚·äº¡æ…˜é‡ï¼");
+                                call_out("xywar_message", 4, HIW "è’™å¤å°‡é ˜â€œå—¯â€äº†ä¸€è²ï¼šçœ‹ä¾†ï¼Œæˆ‘å€‘æ‡‰è©²æ¡å–ä¸€äº›è¡Œå‹•äº†ï¼Œå‚³ä»¤æ”¾ç‹¼ç…™â€¦â€¦");
+                                call_out("xywar_message", 5, HIY "è¥„é™½æ¢å­ï¼šå ±ï¼è’™å¤äººå·²æ”¾å‡ºç‹¼ç…™ï¼ŒåŠ æ´¾æ´è»é€²æ”»è¥„é™½ï¼");
                                 call_out("combat_add_soldier", 7);
                                         
                         }
                         
-                        // 2.  ÃÉ¹Å¾ü¶Ó½ø¹¥3·ÖÖÓºó¿ªÊ¼µ÷ÕûÕ½Êõ
+                        // 2.  è’™å¤è»éšŠé€²æ”»3åˆ†é˜å¾Œé–‹å§‹èª¿æ•´æˆ°è¡“
                         if (time() - attack_time > 180 && 
-                            time() - last_combat_change_time > 90 && // ¾àÀëÉÏ´ÎÕ½Êõµ÷ÕûÊ±¼äÎª90Ãë
+                            time() - last_combat_change_time > 90 && // è·é›¢ä¸Šæ¬¡æˆ°è¡“èª¿æ•´æ™‚é–“ç‚º90ç§’
                             random(5) == 1)
                         {
                                 last_combat_change_time = time();
                                 
                                 switch(random(5))
                                 {
-                                        // Ğé¼ÙÍË±ø
+                                        // è™›å‡é€€å…µ
                                         case 0:
                                                 combat_xjtuibing();
                                                 break;
-                                        // Éù¶«»÷Î÷
+                                        // è²æ±æ“Šè¥¿
                                         default :
                                                 combat_sdjixi();
                                                 break;                                        
                                 }
                         }
 
-                        // ÃÉ¹ÅÈËÈ«Ãğ£¬ÔòÏåÑôÊ¤Àû
+                        // è’™å¤äººå…¨æ»…ï¼Œå‰‡è¥„é™½å‹åˆ©
                         if (total_menggu_soldier("total") <= 0)
                         {
-                                xywar_message(HIG "ÃÉ¹Å¾üÒÑ¾­È«¾ü¸²Ã»£¡");
+                                xywar_message(HIG "è’™å¤è»å·²ç¶“å…¨è»è¦†æ²’ï¼");
                                 war_win();
                                 return;
                         }
                         
-                        // ·ÀÓù30·ÖÖÓÔò´ú±íÏåÑôÊ¤Àû
+                        // é˜²å¾¡30åˆ†é˜å‰‡ä»£è¡¨è¥„é™½å‹åˆ©
                         if (time() - attack_time > 1800)
                         {
-                                xywar_message(HIG "¹ù¾¸£ºÏåÑô³Ç¾­¹ıÖÚ¶àÍæ¼Ò¼°½«Ê¿µÄÅ¬Á¦£¬ÒÑ¾­¼áÊØ³¬¹ı30·ÖÖÓ");
-                                xywar_message(HIG "¹ù¾¸£ºÃÉ¹ÅÈËÁ¸²İê¢ÖØÒÑ¾­ÏûºÄ´ù¾¡£¬Ö»µÃÔİÊ±ÍË±ø£¡");
+                                xywar_message(HIG "éƒ­é–ï¼šè¥„é™½åŸç¶“éçœ¾å¤šç©å®¶åŠå°‡å£«çš„åŠªåŠ›ï¼Œå·²ç¶“å …å®ˆè¶…é30åˆ†é˜");
+                                xywar_message(HIG "éƒ­é–ï¼šè’™å¤äººç³§è‰è¼œé‡å·²ç¶“æ¶ˆè€—æ®†ç›¡ï¼Œåªå¾—æš«æ™‚é€€å…µï¼");
                                 war_win();
                                 return;                                
                         }
                 }
 
-                // ÕıÔÚµÈ´ı½ø¹¥
+                // æ­£åœ¨ç­‰å¾…é€²æ”»
                 if (status == WAIT_START)
                 {
                         if (random(3) == 1)
@@ -925,59 +925,59 @@ void check_combatd()
                                 switch(random(10))
                                 {
                                         case 0:
-                                                xywar_message("¹ù¾¸£ºÃÉ¹ÅÈËÕıÔÚµ÷Åä¾ü¶Ó£¬Çë±£ÎÀÏåÑôµÄÒåÊ¿×öºÃÏà¹Ø×¼±¸£¬ËæÊ±±¸Õ½¡£");
-                                                xywar_message("»ÆÈØ£º¸÷Î»ÊØ³ÇÍæ¼ÒÇë¸÷×Ô·ÖÅäºÃÈÎÎñ£¬×¼±¸ËæÊ±Ó­»÷ÃÉ¹Å¾ü£¬ÊÄËÀ±£ÎÀÏåÑô¡£\n");
+                                                xywar_message("éƒ­é–ï¼šè’™å¤äººæ­£åœ¨èª¿é…è»éšŠï¼Œè«‹ä¿è¡›è¥„é™½çš„ç¾©å£«åšå¥½ç›¸é—œæº–å‚™ï¼Œéš¨æ™‚å‚™æˆ°ã€‚");
+                                                xywar_message("é»ƒè“‰ï¼šå„ä½å®ˆåŸç©å®¶è«‹å„è‡ªåˆ†é…å¥½ä»»å‹™ï¼Œæº–å‚™éš¨æ™‚è¿æ“Šè’™å¤è»ï¼Œèª“æ­»ä¿è¡›è¥„é™½ã€‚\n");
                                                 break;
                                         case 1:
-                                                xywar_message("¹ù¾¸£ºÃÉ¹ÅµÄÇ§·ò³¤ÔÚ´Ó¾üÇ°¶¼ÊÇÒ»´ú³ÉÃûµÄÎäÑ§×ÚÊ¦£¬ÍòÍò²»¿ÉÇáÊÓ¡£");
-                                                xywar_message("¹ù¾¸£ºÍæ¼ÒÖ»ÒªÊØ(guard)×¡Â·¿Ú£¬ÃÉ¹ÅÈË±ãÎŞ·¨Í¨¹ı£¬µ«±»À¹½ØµÄÃÉ¹ÅÈË»áÖ÷¶¯¹¥»÷ÊØ×¡Â·¿ÚµÄÍæ¼Ò¡£");
-                                                xywar_message("»ÆÈØ£ºÃÉ¹ÅÇ§·ò³¤²»Ö÷¶¯¹¥»÷¾­ÑéÔÚ2ÒÚÒÔÏÂµÄÍæ¼Ò£¬Í¬Ê±¾­ÑéÔÚ2ÒÚÒÔÏÂµÄÍæ¼Ò¼´Ê¹ÊØ(guard)×¡Â·¿Ú\n"
-                                                              "            ºó£¬Ò²ÎŞ·¨À¹½Ø×¡Ç§·ò³¤¡£\n");
+                                                xywar_message("éƒ­é–ï¼šè’™å¤çš„åƒå¤«é•·åœ¨å¾è»å‰éƒ½æ˜¯ä¸€ä»£æˆåçš„æ­¦å­¸å®—å¸«ï¼Œè¬è¬ä¸å¯è¼•è¦–ã€‚");
+                                                xywar_message("éƒ­é–ï¼šç©å®¶åªè¦å®ˆ(guard)ä½è·¯å£ï¼Œè’™å¤äººä¾¿ç„¡æ³•é€šéï¼Œä½†è¢«æ””æˆªçš„è’™å¤äººæœƒä¸»å‹•æ”»æ“Šå®ˆä½è·¯å£çš„ç©å®¶ã€‚");
+                                                xywar_message("é»ƒè“‰ï¼šè’™å¤åƒå¤«é•·ä¸ä¸»å‹•æ”»æ“Šç¶“é©—åœ¨2å„„ä»¥ä¸‹çš„ç©å®¶ï¼ŒåŒæ™‚ç¶“é©—åœ¨2å„„ä»¥ä¸‹çš„ç©å®¶å³ä½¿å®ˆ(guard)ä½è·¯å£\n"
+                                                              "            å¾Œï¼Œä¹Ÿç„¡æ³•æ””æˆªä½åƒå¤«é•·ã€‚\n");
                                                 
                                                 break;
                                         case 2:
-                                                xywar_message("ÃÉ¹ÅÌ½×Ó£ºÏåÑô³ÇÄÚÍ»È»¼¯¾ÛÁË´óÁ¿½­ºşÈËÊ¿£¬¿´À´ËûÃÇÏëËÀÊØ³Ç³Ø¡£");
-                                                if (tiemuzhen)dj_name = "³É¼ªË¼º¹";
-                                                else dj_name = "ÃÉ¹Å½«Áì";
-                                                xywar_message(dj_name + "£ººß£¬Á½¾ü½»·æÆñÍ¬½­ºşËº¶·£¬Ò»ÈºÎÚºÏÖ®ÖÚ±Ø½«ËÀÓÚÂÒ¼ıÖ®ÏÂ¡£\n");                                        
+                                                xywar_message("è’™å¤æ¢å­ï¼šè¥„é™½åŸå…§çªç„¶é›†èšäº†å¤§é‡æ±Ÿæ¹–äººå£«ï¼Œçœ‹ä¾†ä»–å€‘æƒ³æ­»å®ˆåŸæ± ã€‚");
+                                                if (tiemuzhen)dj_name = "æˆå‰æ€æ±—";
+                                                else dj_name = "è’™å¤å°‡é ˜";
+                                                xywar_message(dj_name + "ï¼šå“¼ï¼Œå…©è»äº¤é‹’è±ˆåŒæ±Ÿæ¹–æ’•é¬¥ï¼Œä¸€ç¾¤çƒåˆä¹‹çœ¾å¿…å°‡æ­»äºäº‚ç®­ä¹‹ä¸‹ã€‚\n");                                        
                                                 break;                
                                         case 3:
-                                                xywar_message("»ÆÈØ£º²ÎÕ½µÄÍæ¼ÒÔÚÉ±ËÀÈÎÒâÃÉ¹ÅÈËºó¶¼»á»ñµÃÒ»¶¨µÄ¾­ÑéºÍÇ±ÄÜ½±Àø¡£");
-                                                xywar_message("»ÆÈØ£ºÈç¹ûÏåÑô±£ÎÀÕ½Ê¤ÀûÔòËùÓĞ²ÎÕ½Íæ¼Ò£¨²»°üÀ¨ÖĞÍ¾ÍË³öµÄ£©¶¼½«»ñµÃ·á¸»µÄ½±Àø\n");
+                                                xywar_message("é»ƒè“‰ï¼šåƒæˆ°çš„ç©å®¶åœ¨æ®ºæ­»ä»»æ„è’™å¤äººå¾Œéƒ½æœƒç²å¾—ä¸€å®šçš„ç¶“é©—å’Œæ½›èƒ½çå‹µã€‚");
+                                                xywar_message("é»ƒè“‰ï¼šå¦‚æœè¥„é™½ä¿è¡›æˆ°å‹åˆ©å‰‡æ‰€æœ‰åƒæˆ°ç©å®¶ï¼ˆä¸åŒ…æ‹¬ä¸­é€”é€€å‡ºçš„ï¼‰éƒ½å°‡ç²å¾—è±å¯Œçš„çå‹µ\n");
                                                 break;
                                         case 4:
-                                                xywar_message("»ÆÈØ£ºÔÚ¶Ô¿¹ÃÉ¹ÅÈËÊ±ÏµÍ³»á×Ô¶¯¹Ø±Õ²ÎÕ½Íæ¼ÒµÄÕ½¶·ĞÅÏ¢£¬ÖĞÍ¾ÇĞÎğ´ò¿ª£¬ÒÔÃâÓ°ÏìÓÎÏ·ËÙ¶È¡£\n");
+                                                xywar_message("é»ƒè“‰ï¼šåœ¨å°æŠ—è’™å¤äººæ™‚ç³»çµ±æœƒè‡ªå‹•é—œé–‰åƒæˆ°ç©å®¶çš„æˆ°é¬¥ä¿¡æ¯ï¼Œä¸­é€”åˆ‡å‹¿æ‰“é–‹ï¼Œä»¥å…å½±éŸ¿éŠæˆ²é€Ÿåº¦ã€‚\n");
                                                 break;
                                         case 5:
-                                                xywar_message("»ÆÈØ£ºÃÉ¹ÅÈË¹î¼Æ¶à¶Ë£¬ÔÚÕ½¶·ÖĞ»áËæÊ±µ÷ÕûÕ½Êõ£¬Ò²¿ÉÄÜ»áÅÉ±øÔöÔ®¡£");
-                                                xywar_message("»ÆÈØ£ºÍæ¼Ò½«ÁìÇë¸ù¾İË«·½Õ½¶·×´¿öËæÊ±×ö³öÕ½ÂÔµ÷Õû£¬Ö¸»Ó¸÷²ÎÕ½Íæ¼ÒµÖ¿¹ÃÉ¹ÅÈË½ø¹¥¡£\n");                                                
+                                                xywar_message("é»ƒè“‰ï¼šè’™å¤äººè©­è¨ˆå¤šç«¯ï¼Œåœ¨æˆ°é¬¥ä¸­æœƒéš¨æ™‚èª¿æ•´æˆ°è¡“ï¼Œä¹Ÿå¯èƒ½æœƒæ´¾å…µå¢æ´ã€‚");
+                                                xywar_message("é»ƒè“‰ï¼šç©å®¶å°‡é ˜è«‹æ ¹æ“šé›™æ–¹æˆ°é¬¥ç‹€æ³éš¨æ™‚åšå‡ºæˆ°ç•¥èª¿æ•´ï¼ŒæŒ‡æ®å„åƒæˆ°ç©å®¶æŠµæŠ—è’™å¤äººé€²æ”»ã€‚\n");                                                
                                                 break;
                                         case 6:
-                                                xywar_message("¹ù¾¸£ºÍæ¼Ò½«Áì¿ÉÔÚ±¾´ÎÏåÑô±£ÎÀÕ½ÖĞÊ¹ÓÃÒ»´Î±ø·û£¬Ê¹ÓÃºó¿ÉÔö¼Ó120ÃûÏåÑôÊØ¾ü¡£");
-                                                xywar_message("¹ù¾¸£ºÊ¹ÓÃ±ø·ûµÄÖ¸ÁîÊÇ " HIY "xy add xyb " HIC "¡£\n");
+                                                xywar_message("éƒ­é–ï¼šç©å®¶å°‡é ˜å¯åœ¨æœ¬æ¬¡è¥„é™½ä¿è¡›æˆ°ä¸­ä½¿ç”¨ä¸€æ¬¡å…µç¬¦ï¼Œä½¿ç”¨å¾Œå¯å¢åŠ 120åè¥„é™½å®ˆè»ã€‚");
+                                                xywar_message("éƒ­é–ï¼šä½¿ç”¨å…µç¬¦çš„æŒ‡ä»¤æ˜¯ " HIY "xy add xyb " HIC "ã€‚\n");
                                                 break;
                                         case 7:
-                                                xywar_message("¹ù¾¸£ºÒ»µ©Íæ¼ÒÓëÃÉ¹ÅÈË¶ÔÃæ£¬ÃÉ¹ÅÈËÔò»á×Ô¶¯½ĞÉ±£¬Åå´øÒşÉí·ûÔò¿ÉÒşÉíÓÚÃÉ¹ÅÈËÖĞ£¬²»±»Ö÷¶¯¹¥»÷¡£\n");
+                                                xywar_message("éƒ­é–ï¼šä¸€æ—¦ç©å®¶èˆ‡è’™å¤äººå°é¢ï¼Œè’™å¤äººå‰‡æœƒè‡ªå‹•å«æ®ºï¼Œä½©å¸¶éš±èº«ç¬¦å‰‡å¯éš±èº«äºè’™å¤äººä¸­ï¼Œä¸è¢«ä¸»å‹•æ”»æ“Šã€‚\n");
                                                 break;
                                         case 8:
                                                 if (tiemuzhen)
                                                 {
-                                                        xywar_message("¹ù¾¸£º¹ùÄ³×ÔÓ×¸úËæ´óº¹ÌúÄ¾Õæ³Û³Ò´óÄ®£¬Íä¹­Éäµñ£¬²»Ïë½ñÈÕÈ´¶ÔÕ½É³³¡¡£");
-                                                        xywar_message("¹ù¾¸£º²»¹ı¹úÄÑµ±Í·£¬ÃÉ¹ÅÈËÉ±ÂÓ³ÉĞÔ£¬½ñÈÕ¹ùÄ³½«ÊÄËÀ±£ÎÀÎÒ´óËÎ½­É½£¬ËÀÊØÏåÑô¡£");
-                                                        xywar_message("¹ù¾¸£º²ÎÕ½Íæ¼Ò¿ÉÑ¡³öÊıÃû¸ßÊÖÍµÏ®ÃÉ¹Å¾üÓª£¬Ö»ÒªÉ±ËÀ³É¼ªË¼º¹ÌúÄ¾ÕæÃÉ¹ÅÈË±ã²»¹¥×ÔÆÆ¡£\n");
+                                                        xywar_message("éƒ­é–ï¼šéƒ­æŸè‡ªå¹¼è·Ÿéš¨å¤§æ±—éµæœ¨çœŸé¦³é¨å¤§æ¼ ï¼Œå½å¼“å°„é›•ï¼Œä¸æƒ³ä»Šæ—¥å»å°æˆ°æ²™å ´ã€‚");
+                                                        xywar_message("éƒ­é–ï¼šä¸éåœ‹é›£ç•¶é ­ï¼Œè’™å¤äººæ®ºæ æˆæ€§ï¼Œä»Šæ—¥éƒ­æŸå°‡èª“æ­»ä¿è¡›æˆ‘å¤§å®‹æ±Ÿå±±ï¼Œæ­»å®ˆè¥„é™½ã€‚");
+                                                        xywar_message("éƒ­é–ï¼šåƒæˆ°ç©å®¶å¯é¸å‡ºæ•¸åé«˜æ‰‹å·è¥²è’™å¤è»ç‡Ÿï¼Œåªè¦æ®ºæ­»æˆå‰æ€æ±—éµæœ¨çœŸè’™å¤äººä¾¿ä¸æ”»è‡ªç ´ã€‚\n");
                                                         break;
                                                 }
-                                                xywar_message("¹ù¾¸£º¹ùÄ³×ÔÓ×¸úËæ´óº¹ÌúÄ¾Õæ³Û³Ò´óÄ®£¬ÓëÃÉ¹ÅÕÜ±ğÍä¹­Éäµñ£¬²»Ïë½ñÈÕÈ´¶ÔÕ½É³³¡¡£");
-                                                xywar_message("¹ù¾¸£º²»¹ı¹úÄÑµ±Í·£¬ÃÉ¹ÅÈËÉ±ÂÓ³ÉĞÔ£¬½ñÈÕ¹ùÄ³½«ÊÄËÀ±£ÎÀÎÒ´óËÎ½­É½£¬ËÀÊØÏåÑô¡£");
-                                                xywar_message("¹ù¾¸£ºÃÉ¹ÅÕÜ±ğÔÚÃÉ¹ÅÓïÖĞÎª¡°ÉñÉäÊÖ¡±£¬Æä¼ı·¨¾«×¼£¬ÇĞ¼É²»¿ÉÇáÊÓ¡£");
-                                                xywar_message("¹ù¾¸£ºÈç¹û¿ÉÄÜÍæ¼ÒÔÚ¼¯ÖĞÓÅÊÆ±øÁ¦½â¾öÇ§·ò³¤ºóÓ¦¼¯ÖĞÈ«Á¦½«ÕÜ±ğÏûÃğ¡£\n");
+                                                xywar_message("éƒ­é–ï¼šéƒ­æŸè‡ªå¹¼è·Ÿéš¨å¤§æ±—éµæœ¨çœŸé¦³é¨å¤§æ¼ ï¼Œèˆ‡è’™å¤å“²åˆ¥å½å¼“å°„é›•ï¼Œä¸æƒ³ä»Šæ—¥å»å°æˆ°æ²™å ´ã€‚");
+                                                xywar_message("éƒ­é–ï¼šä¸éåœ‹é›£ç•¶é ­ï¼Œè’™å¤äººæ®ºæ æˆæ€§ï¼Œä»Šæ—¥éƒ­æŸå°‡èª“æ­»ä¿è¡›æˆ‘å¤§å®‹æ±Ÿå±±ï¼Œæ­»å®ˆè¥„é™½ã€‚");
+                                                xywar_message("éƒ­é–ï¼šè’™å¤å“²åˆ¥åœ¨è’™å¤èªä¸­ç‚ºâ€œç¥å°„æ‰‹â€ï¼Œå…¶ç®­æ³•ç²¾æº–ï¼Œåˆ‡å¿Œä¸å¯è¼•è¦–ã€‚");
+                                                xywar_message("éƒ­é–ï¼šå¦‚æœå¯èƒ½ç©å®¶åœ¨é›†ä¸­å„ªå‹¢å…µåŠ›è§£æ±ºåƒå¤«é•·å¾Œæ‡‰é›†ä¸­å…¨åŠ›å°‡å“²åˆ¥æ¶ˆæ»…ã€‚\n");
                                                 break;
                                         case 9:
-                                                xywar_message("ÏåÑô³ÇËÄÖÜÒÑ¾­ÃÖÂş×ÅÅ¨ÁÒµÄÏõÑÌÎ¶£¬³ÇÃñÔçÒÑ¸÷×ÔÊÕÊ°Ï¸Èí£¬ËæÊ±×¼±¸³ÃÂÒÌÓÃü£¬³¡ÃæÒ»Æ¬»ìÂÒ¡£");
+                                                xywar_message("è¥„é™½åŸå››å‘¨å·²ç¶“å½Œæ¼«è‘—æ¿ƒçƒˆçš„ç¡ç…™å‘³ï¼ŒåŸæ°‘æ—©å·²å„è‡ªæ”¶æ‹¾ç´°è»Ÿï¼Œéš¨æ™‚æº–å‚™è¶äº‚é€ƒå‘½ï¼Œå ´é¢ä¸€ç‰‡æ··äº‚ã€‚");
                                                 break;
                                         default:
-                                                xywar_message(HIW "ÃÉ¹Å¾üÊ¿£ºÈı¾üÒÑ¼¯ºÏÍê±Ï£¬Á¸²İê¢ÖØ¡¢µ¶Ç¹¼ıÊ¸ÒÑµãËãÍê±Ï£¬ËæÊ±¿ÉÒÔ¿ªÕ½¡£" NOR);
-                                                xywar_message(HIY "ÏåÑô¾üÊ¿£ºÎÒ¾üÒÑ¼¯ºÏÍê±Ï£¬ËÄ³ÇÃÅ¾ùÒªµÀ¾ùÒÑÓĞÖØ±ø°ÑÊØ£¬ÎÒ¾üÊÄÓÚÃÉ¹ÅÈËÖÜĞıµ½µ×¡£\n" NOR);
+                                                xywar_message(HIW "è’™å¤è»å£«ï¼šä¸‰è»å·²é›†åˆå®Œç•¢ï¼Œç³§è‰è¼œé‡ã€åˆ€æ§ç®­çŸ¢å·²é»ç®—å®Œç•¢ï¼Œéš¨æ™‚å¯ä»¥é–‹æˆ°ã€‚" NOR);
+                                                xywar_message(HIY "è¥„é™½è»å£«ï¼šæˆ‘è»å·²é›†åˆå®Œç•¢ï¼Œå››åŸé–€å‡è¦é“å‡å·²æœ‰é‡å…µæŠŠå®ˆï¼Œæˆ‘è»èª“äºè’™å¤äººå‘¨æ—‹åˆ°åº•ã€‚\n" NOR);
                                                 
                                                 break;                                                                                                                                
                                 }
@@ -985,118 +985,118 @@ void check_combatd()
                 }
 
                 /*
-                Õ½Êõ£ºÃÉ¹Å¾ü¶Ó¿ÉÔÚÕ½¶·ÖĞ¸ù¾İÌõ¼ş¸Ä±äÕ½Êõ
-                1¡¢Éù¶«»÷Î÷
-                2¡¢Ğé¼ÙÍË±ø
-                3¡¢ÔöÅÉ±øÁ¦
+                æˆ°è¡“ï¼šè’™å¤è»éšŠå¯åœ¨æˆ°é¬¥ä¸­æ ¹æ“šæ¢ä»¶æ”¹è®Šæˆ°è¡“
+                1ã€è²æ±æ“Šè¥¿
+                2ã€è™›å‡é€€å…µ
+                3ã€å¢æ´¾å…µåŠ›
                 */
 }
 
-// ÏåÑôÕ½½áÊø£¬ÖØÖÃÏà¹ØÊı¾İ
+// è¥„é™½æˆ°çµæŸï¼Œé‡ç½®ç›¸é—œæ•¸æ“š
 void reset_data()
 {
-            p = ({});                 // ²Î¼ÓÏåÑôÕ½µÄÍæ¼ÒÎï¼şÁĞ±í
-        status = THEEND;          // ÏåÑôÕ½×´Ì¬
-        start_status = 0;         // ÏµÍ³×´Ì¬ »Ö¸´µ½Î´¿ªÊ¼×´Ì¬
-        sign_up_status = 0;       // ±¨Ãû±êÖ¾
-            tiemuzhen = 0;            // ±¾´ÎÊÇ·ñ³öÏÖÌúÄ¾Õæ
+            p = ({});                 // åƒåŠ è¥„é™½æˆ°çš„ç©å®¶ç‰©ä»¶åˆ—è¡¨
+        status = THEEND;          // è¥„é™½æˆ°ç‹€æ…‹
+        start_status = 0;         // ç³»çµ±ç‹€æ…‹ æ¢å¾©åˆ°æœªé–‹å§‹ç‹€æ…‹
+        sign_up_status = 0;       // å ±åæ¨™å¿—
+            tiemuzhen = 0;            // æœ¬æ¬¡æ˜¯å¦å‡ºç¾éµæœ¨çœŸ
         n_mg_tq = 0;
         n_mg_zb = 0;
         n_mg_gb = 0;
-        n_mg_bb = 0;              // Æï±ø¡¢ÕÜ±ğ¡¢¹­±ø¡¢²½±øÊıÁ¿
-        n_xy_sb = 0;              // ÏåÑôÊ¿±øÊıÁ¿        
-        is_guojing_died = 0;      // ¹ù¾¸ÊÇ·ñËÀÍö±êÖ¾
+        n_mg_bb = 0;              // é¨å…µã€å“²åˆ¥ã€å¼“å…µã€æ­¥å…µæ•¸é‡
+        n_xy_sb = 0;              // è¥„é™½å£«å…µæ•¸é‡        
+        is_guojing_died = 0;      // éƒ­é–æ˜¯å¦æ­»äº¡æ¨™å¿—
 
-        add_mgb_times = 0;             // ÔöÔ®ÃÉ¹Å±ø´ÎÊı
-        add_xyb_flag = 0;              // ÔöÔ®ÏåÑôÊ¿±ø´ÎÊı±êÖ¾
-        last_add_mgb_time = 0;         // ÉÏ´ÎÔöÔ®ÃÉ¹Å±øÊ±¼ä
-        guojing_moved = 0;             // ¹ù¾¸ÊÇ·ñÒÑ¾­ÓëÃÉ¹ÅÈË½»Õ½
-        xysb_poision = "ÏåÑô³ÇÄÚËÄÖÜ"; // ÏåÑôÊØ¾ü×¤ÔúµØ
-        player_leader = "";            // Íæ¼Ò½«ÁìµÄID
-        last_move_xysolder = 0;        // ÉÏ´Îµ÷¶¯ÏåÑôÊØ¾üµÄÊ±¼ä
-        start_time = 0;                // ÏåÑô±£ÎÀÕ½¿ªÊ¼Ê±¼ä
-        attack_time = 0;               // ÃÉ¹ÅÈË¿ªÊ¼¹¥³ÇÊ±¼ä
-        who_win = 0;                   // Ë­Ê¤Àû
-        xy_msg1 = "----";              // ÏåÑôÔöÔ®ÏûÏ¢£¬Ñî¹ıµÈ
-        yb_attack_where = "none";      // ĞÂÔöÃÉ¹Å±ø¹¥»÷·½Ïò
+        add_mgb_times = 0;             // å¢æ´è’™å¤å…µæ¬¡æ•¸
+        add_xyb_flag = 0;              // å¢æ´è¥„é™½å£«å…µæ¬¡æ•¸æ¨™å¿—
+        last_add_mgb_time = 0;         // ä¸Šæ¬¡å¢æ´è’™å¤å…µæ™‚é–“
+        guojing_moved = 0;             // éƒ­é–æ˜¯å¦å·²ç¶“èˆ‡è’™å¤äººäº¤æˆ°
+        xysb_poision = "è¥„é™½åŸå…§å››å‘¨"; // è¥„é™½å®ˆè»é§ç´®åœ°
+        player_leader = "";            // ç©å®¶å°‡é ˜çš„ID
+        last_move_xysolder = 0;        // ä¸Šæ¬¡èª¿å‹•è¥„é™½å®ˆè»çš„æ™‚é–“
+        start_time = 0;                // è¥„é™½ä¿è¡›æˆ°é–‹å§‹æ™‚é–“
+        attack_time = 0;               // è’™å¤äººé–‹å§‹æ”»åŸæ™‚é–“
+        who_win = 0;                   // èª°å‹åˆ©
+        xy_msg1 = "----";              // è¥„é™½å¢æ´æ¶ˆæ¯ï¼Œæ¥Šéç­‰
+        yb_attack_where = "none";      // æ–°å¢è’™å¤å…µæ”»æ“Šæ–¹å‘
 
 }
 
 
-// ÃÉ¹ÅÈË¿ªÊ¼½ø¹¥ÏåÑô
+// è’™å¤äººé–‹å§‹é€²æ”»è¥„é™½
 void do_attack()
 {
         if (status == THEEND)return;
 
-        xywar_message(HIR "ÃÉ¹ÅÈË¿ªÊ¼Î§¹¥ÏåÑô³Ç£¡" NOR);
+        xywar_message(HIR "è’™å¤äººé–‹å§‹åœæ”»è¥„é™½åŸï¼" NOR);
         attack_time = time();
         status = WARRING;
 }
 
-// ²¥±¨ÃÉ¹Å¾üÕ½±¨
-// ´óÔ¼Ã¿·ÖÖÓ²¥·ÅÒ»´Î£¬Ö±µ½¿ªÊ¼¹¥³Ç
+// æ’­å ±è’™å¤è»æˆ°å ±
+// å¤§ç´„æ¯åˆ†é˜æ’­æ”¾ä¸€æ¬¡ï¼Œç›´åˆ°é–‹å§‹æ”»åŸ
 void do_combatd_message(int i)
 {
         string dj_name;
         if (tiemuzhen)
         {
-                dj_name = "³É¼ªË¼º¹";
+                dj_name = "æˆå‰æ€æ±—";
         }
         else
-                dj_name = "ÃÉ¹Å´ó½«";
+                dj_name = "è’™å¤å¤§å°‡";
 
         if (status == THEEND)return;
         
         switch(i)
         {
                 case 1:
-                        xywar_message(dj_name + "£º´«ÎÒºÅÁî£¬È«¾üÔÚ´ËÔúÓª£¬Îå·ÖÖÓºóÈ«¾ü¿ªÊ¼Î§¹¥ÏåÑô³Ç£¡");
+                        xywar_message(dj_name + "ï¼šå‚³æˆ‘è™Ÿä»¤ï¼Œå…¨è»åœ¨æ­¤ç´®ç‡Ÿï¼Œäº”åˆ†é˜å¾Œå…¨è»é–‹å§‹åœæ”»è¥„é™½åŸï¼");
                         break;
-                // ±¨¸æÃÉ¹ÅÈË×Ü¾üÁ¦
+                // å ±å‘Šè’™å¤äººç¸½è»åŠ›
                 case 2:
-                        xywar_message("ËÎ¾üÌ½×Ó£º±¾´ÎÃÉ¹Å¾ü¶Ó×ÜÊıÁ¿Ô¼Îª£º" + HIY + sprintf("%d", total_menggu_soldier("total"))  + HIC "¡¡ÈË£¡²¢·ÖËÄ"
-                                  "Â·£¬·Ö±ğ×¤ÔúÔÚÖìÈ¸ÃÅ£¬°×»¢ÃÅ£¬ÇàÁúÃÅ¼°ĞşÎäÃÅÍâ¡£");
+                        xywar_message("å®‹è»æ¢å­ï¼šæœ¬æ¬¡è’™å¤è»éšŠç¸½æ•¸é‡ç´„ç‚ºï¼š" + HIY + sprintf("%d", total_menggu_soldier("total"))  + HIC "ã€€äººï¼ä¸¦åˆ†å››"
+                                  "è·¯ï¼Œåˆ†åˆ¥é§ç´®åœ¨æœ±é›€é–€ï¼Œç™½è™é–€ï¼Œé’é¾é–€åŠç„æ­¦é–€å¤–ã€‚");
                         if (tiemuzhen)
                         {
-                                xywar_message(HIR "ËÎ¾üÌ½×Ó£º±¾´ÎÃÉ¹Å¾üÓÉ³É¼ªË¼º¹ÌúÄ¾ÕæÇ××ÔÂÊÁì¡£" NOR);
+                                xywar_message(HIR "å®‹è»æ¢å­ï¼šæœ¬æ¬¡è’™å¤è»ç”±æˆå‰æ€æ±—éµæœ¨çœŸè¦ªè‡ªç‡é ˜ã€‚" NOR);
                         }
                         break;
                 //
                 case 3:
-                        xywar_message("ËÎ¾üÌ½×Ó£ºÏåÑô³ÇÄÚËÎ¾üÒÑµ÷ÅäÍê±Ï£¬ËæÊ±×¼±¸Ó­»÷ÃÉ¹Å¾ü¡£");
+                        xywar_message("å®‹è»æ¢å­ï¼šè¥„é™½åŸå…§å®‹è»å·²èª¿é…å®Œç•¢ï¼Œéš¨æ™‚æº–å‚™è¿æ“Šè’™å¤è»ã€‚");
                         break;
                 //
                 case 4:
-                        xywar_message("¹ù¾¸£ºÇë±¨Ãû²Î¼ÓÏåÑô±£ÎÀÕ½µÄÍæ¼Ò×ÔĞĞ×éÖ¯£¬ÊØ×¡ËÄ´óÃÅÂ·¿Ú£¬·ÀÖ¹ÃÉ¹ÅÈË¹¥ÈëÏåÑôÖĞÑë¹ã³¡¡£");
+                        xywar_message("éƒ­é–ï¼šè«‹å ±ååƒåŠ è¥„é™½ä¿è¡›æˆ°çš„ç©å®¶è‡ªè¡Œçµ„ç¹”ï¼Œå®ˆä½å››å¤§é–€è·¯å£ï¼Œé˜²æ­¢è’™å¤äººæ”»å…¥è¥„é™½ä¸­å¤®å»£å ´ã€‚");
                         break;
                 //
                 case 5:
-                        xywar_message("ËÎ¾üÌ½×Ó£ºÃÉ¹Å¾ü¶ÓÒÑ¿ªÊ¼½øĞĞµ÷¶¯£¬ËæÊ±»áÓĞËùĞĞ¶¯¡£");
+                        xywar_message("å®‹è»æ¢å­ï¼šè’™å¤è»éšŠå·²é–‹å§‹é€²è¡Œèª¿å‹•ï¼Œéš¨æ™‚æœƒæœ‰æ‰€è¡Œå‹•ã€‚");
                         break;
                 case 6:
-                        xywar_message(dj_name + "£º´«ÎÒºÅÁî£¬È«¾üÓÚ£³£°Ãëºó¿ªÊ¼½ø¹¥ÏåÑô³Ç¡£");
-                        xywar_message(HIR "ÃÉ¹ÅÈËÓÚ30Ãëºó¿ªÊ¼½ø¹¥ÏåÑô³Ç£¬Çë×¢ÒâÊØºÃÏà¹ØÂ·¿Ú¡£" NOR);
-                        xywar_message(HIY "Õ½¶·ÖĞÇëÊ¹ÓÃÖ¸Áî " HIR "xy" HIY " ËæÊ±²é¿´Õ½¿öÏêÇé¡£" NOR);
+                        xywar_message(dj_name + "ï¼šå‚³æˆ‘è™Ÿä»¤ï¼Œå…¨è»äºï¼“ï¼ç§’å¾Œé–‹å§‹é€²æ”»è¥„é™½åŸã€‚");
+                        xywar_message(HIR "è’™å¤äººäº30ç§’å¾Œé–‹å§‹é€²æ”»è¥„é™½åŸï¼Œè«‹æ³¨æ„å®ˆå¥½ç›¸é—œè·¯å£ã€‚" NOR);
+                        xywar_message(HIY "æˆ°é¬¥ä¸­è«‹ä½¿ç”¨æŒ‡ä»¤ " HIR "xy" HIY " éš¨æ™‚æŸ¥çœ‹æˆ°æ³è©³æƒ…ã€‚" NOR);
                         if (tiemuzhen)
                         {
-                                xywar_message(HIG "Ê¤ÀûÌõ¼ş£º1¡¢É±ËÀ³É¼ªË¼º¹\t       " HIM "Ê§°ÜÌõ¼ş£º1¡¢ÃÉ¹ÅÈËÕ¼ÁìÏåÑôÖĞÑë¹ã³¡\n" HIG
-                                              "\t              2¡¢·ÀÊØÃÉ¹ÅÈË¹¥»÷30·ÖÖÓ\t         " HIM "2¡¢ËùÓĞ²Î¼ÓÏåÑô±£ÎÀÕ½µÄÍæ¼ÒÊ£Óà²»µ½ÎåÃû\n" HIG
-                                              "\t              3¡¢È«²¿¼ßÃğÃÉ¹ÅÈË\n" 
-                                              HIG "\t              4¡¢ÃÉ¹ÅÈËÍË±ø\n" NOR);
+                                xywar_message(HIG "å‹åˆ©æ¢ä»¶ï¼š1ã€æ®ºæ­»æˆå‰æ€æ±—\t       " HIM "å¤±æ•—æ¢ä»¶ï¼š1ã€è’™å¤äººä½”é ˜è¥„é™½ä¸­å¤®å»£å ´\n" HIG
+                                              "\t              2ã€é˜²å®ˆè’™å¤äººæ”»æ“Š30åˆ†é˜\t         " HIM "2ã€æ‰€æœ‰åƒåŠ è¥„é™½ä¿è¡›æˆ°çš„ç©å®¶å‰©ä½™ä¸åˆ°äº”å\n" HIG
+                                              "\t              3ã€å…¨éƒ¨æ®²æ»…è’™å¤äºº\n" 
+                                              HIG "\t              4ã€è’™å¤äººé€€å…µ\n" NOR);
                         }
                         else
                         {
-                                xywar_message(HIG "Ê¤ÀûÌõ¼ş£º1¡¢·ÀÊØÃÉ¹ÅÈË¹¥»÷30·ÖÖÓ\t       " HIM "Ê§°ÜÌõ¼ş£º1¡¢ÃÉ¹ÅÈËÕ¼ÁìÏåÑôÖĞÑë¹ã³¡\n" HIG
-                                              "\t              2¡¢È«²¿¼ßÃğÃÉ¹ÅÈË¡£\t       " HIM "          2¡¢ËùÓĞ²Î¼ÓÏåÑô±£ÎÀÕ½µÄÍæ¼ÒÊ£Óà²»µ½ÎåÃû\n" 
-                                              HIG "\t              3¡¢ÃÉ¹ÅÈËÍË±ø\n" NOR);                                
+                                xywar_message(HIG "å‹åˆ©æ¢ä»¶ï¼š1ã€é˜²å®ˆè’™å¤äººæ”»æ“Š30åˆ†é˜\t       " HIM "å¤±æ•—æ¢ä»¶ï¼š1ã€è’™å¤äººä½”é ˜è¥„é™½ä¸­å¤®å»£å ´\n" HIG
+                                              "\t              2ã€å…¨éƒ¨æ®²æ»…è’™å¤äººã€‚\t       " HIM "          2ã€æ‰€æœ‰åƒåŠ è¥„é™½ä¿è¡›æˆ°çš„ç©å®¶å‰©ä½™ä¸åˆ°äº”å\n" 
+                                              HIG "\t              3ã€è’™å¤äººé€€å…µ\n" NOR);                                
                         }
 
-                        // 30ÃëºóÃÉ¹Å¾ü¿ªÊ¼½ø¹¥
+                        // 30ç§’å¾Œè’™å¤è»é–‹å§‹é€²æ”»
                         remove_call_out("do_attack");
                         call_out("do_attack", 30);
 
-                        call_out("do_attack_msg", 22, HIM "³ÇÍâ·¢³öÂşÌìÕ½¹ÄÖ®Éù£¬ÃÉ¹Å¾üÊ¿´À´ÀÓû¶¯¡£");
-                        call_out("do_attack_msg", 26, HIM "Ò»ÉùÏ¬ÀûµØºÅ½ÇÉùÏìÆğ£¬ÍòÉ½À×¶¯£¬¾íÆğÂşÌì¿ñÉ³£¬ÃÉ¹ÅÈË¾ü¶ÓÒÑ¿ªÊ¼µ÷¶¯¡£");
+                        call_out("do_attack_msg", 22, HIM "åŸå¤–ç™¼å‡ºæ¼«å¤©æˆ°é¼“ä¹‹è²ï¼Œè’™å¤è»å£«è ¢è ¢æ¬²å‹•ã€‚");
+                        call_out("do_attack_msg", 26, HIM "ä¸€è²çŠ€åˆ©åœ°è™Ÿè§’è²éŸ¿èµ·ï¼Œè¬å±±é›·å‹•ï¼Œå·èµ·æ¼«å¤©ç‹‚æ²™ï¼Œè’™å¤äººè»éšŠå·²é–‹å§‹èª¿å‹•ã€‚");
                         
                         return;
                         break;
@@ -1110,81 +1110,81 @@ void do_combatd_message(int i)
         return;
 }
 
-// Í£Ö¹±¨Ãû£¬¼ì²é±¨ÃûÊÇ·ñ´ïµ½ÈËÊıÒªÇó
+// åœæ­¢å ±åï¼Œæª¢æŸ¥å ±åæ˜¯å¦é”åˆ°äººæ•¸è¦æ±‚
 void check_sign_up()
 {
-        string dj_name; // ´ó½«µÄĞÕÃû        
+        string dj_name; // å¤§å°‡çš„å§“å        
         object ob;
         
-        // Í£Ö¹±¨Ãû
+        // åœæ­¢å ±å
         sign_up_status = 0;
 
-        xywar_message(HIY "¹ù¾¸£º¸÷Î»½­ºşÒåÊ¿£¬ºÜ¸ĞĞ»´ó¼ÒµÄÖ§³Ö£¬ÏÖÔÚÍ£Ö¹±¨Ãû£¬²¢¹«²¼ÎÒ¾üÍ³¼ÆµÄ±¨ÃûÈËÊı£¡" NOR);
-        xywar_message(HIW "ÏåÑô¸±½«£º±¾´Î×Ü¹²ÓĞ " HIY + chinese_number(sizeof(p)) + HIW " Î»Íæ¼Ò±¨Ãû²Î¼ÓÏåÑô±£ÎÀÕ½£¡" NOR);
+        xywar_message(HIY "éƒ­é–ï¼šå„ä½æ±Ÿæ¹–ç¾©å£«ï¼Œå¾ˆæ„Ÿè¬å¤§å®¶çš„æ”¯æŒï¼Œç¾åœ¨åœæ­¢å ±åï¼Œä¸¦å…¬å¸ƒæˆ‘è»çµ±è¨ˆçš„å ±åäººæ•¸ï¼" NOR);
+        xywar_message(HIW "è¥„é™½å‰¯å°‡ï¼šæœ¬æ¬¡ç¸½å…±æœ‰ " HIY + chinese_number(sizeof(p)) + HIW " ä½ç©å®¶å ±ååƒåŠ è¥„é™½ä¿è¡›æˆ°ï¼" NOR);
 
-        // ¼ì²éÀëÏßÍæ¼Ò£¬´Ó±¨ÃûÖĞÉ¾³ıÖ®
+        // æª¢æŸ¥é›¢ç·šç©å®¶ï¼Œå¾å ±åä¸­åˆªé™¤ä¹‹
         sub_check_player();
                 
-        // ²Î¼ÓÈËÊı¹ıÉÙ£¬½áÊøÏåÑôÕ½£¬ÃÉ¹ÅÈËÍË±ø
+        // åƒåŠ äººæ•¸éå°‘ï¼ŒçµæŸè¥„é™½æˆ°ï¼Œè’™å¤äººé€€å…µ
         if (sizeof(p) < 20 && ! TEST)
         {
-                status = 0; // ÏåÑôÕ½½áÊø±êÖ¾
+                status = 0; // è¥„é™½æˆ°çµæŸæ¨™å¿—
 
-                xywar_message("¸÷Î»½­ºşÒåÊ¿£¬±¾´ÎÏåÑô±£ÎÀÕ½±¨ÃûÈËÊı²»×ã20ÈË£¬¼ÈÈ»ÌìÒâÈç´Ë£¬Ò²°Õ£¡\n");
+                xywar_message("å„ä½æ±Ÿæ¹–ç¾©å£«ï¼Œæœ¬æ¬¡è¥„é™½ä¿è¡›æˆ°å ±åäººæ•¸ä¸è¶³20äººï¼Œæ—¢ç„¶å¤©æ„å¦‚æ­¤ï¼Œä¹Ÿç½·ï¼\n");
 
-                if (tiemuzhen)dj_name = "³É¼ªË¼º¹";
-                else dj_name = "´ó½«¾ü";
+                if (tiemuzhen)dj_name = "æˆå‰æ€æ±—";
+                else dj_name = "å¤§å°‡è»";
 
                 switch(random(5))
                 {
                          case 1:
-                                 call_out("xywar_message", 4, "ÃÉ¹Å¸±½«£º±¨¸æ" + dj_name + "£¬ÎÒ¾ü²¿·ÖÊ¿±øÍ»È»È¾ÉÏÎÁÒß£¬Ä¿Ç°ÒÑ¾­ÎŞ·¨Õ½¶·¡£");
-                                 call_out("xywar_message", 6, dj_name + "£º°¡£¿¾¹ÓĞ´ËÊÂ£¬Á¢¿ÌÍ¨ÖªÈ«¾üÁ¢¼´³·ÍË ¡­¡­");
+                                 call_out("xywar_message", 4, "è’™å¤å‰¯å°‡ï¼šå ±å‘Š" + dj_name + "ï¼Œæˆ‘è»éƒ¨åˆ†å£«å…µçªç„¶æŸ“ä¸Šç˜Ÿç–«ï¼Œç›®å‰å·²ç¶“ç„¡æ³•æˆ°é¬¥ã€‚");
+                                 call_out("xywar_message", 6, dj_name + "ï¼šå•Šï¼Ÿç«Ÿæœ‰æ­¤äº‹ï¼Œç«‹åˆ»é€šçŸ¥å…¨è»ç«‹å³æ’¤é€€ â€¦â€¦");
                                  break;
                          case 2:
-                                 call_out("xywar_message", 4, "ÃÉ¹ÅÌ½×Ó£º±¨¸æ" + dj_name + "£¬ÏåÑô³ÇÄÚ¾ÓÈ»ºÁÎŞ¶¯¾²£¬Ò²²»¼û·ÀÊØµÄ¾üÊ¿£¬¿ÖÓĞÕ©¡£");
-                                 call_out("xywar_message", 6, dj_name + "£º¶÷£¬ÓĞµÀÀí£¬ÎÒÒ²Õı¾õµÃÄÉÃÆ¡£ÂíÉÏÍ¨ÖªÈ«¾üÑ¸ËÙ³·±ø£¬È»ºó´Ó³¤¼ÆÒé£¡");
+                                 call_out("xywar_message", 4, "è’™å¤æ¢å­ï¼šå ±å‘Š" + dj_name + "ï¼Œè¥„é™½åŸå…§å±…ç„¶æ¯«ç„¡å‹•éœï¼Œä¹Ÿä¸è¦‹é˜²å®ˆçš„è»å£«ï¼Œææœ‰è©ã€‚");
+                                 call_out("xywar_message", 6, dj_name + "ï¼šæ©ï¼Œæœ‰é“ç†ï¼Œæˆ‘ä¹Ÿæ­£è¦ºå¾—ç´æ‚¶ã€‚é¦¬ä¸Šé€šçŸ¥å…¨è»è¿…é€Ÿæ’¤å…µï¼Œç„¶å¾Œå¾é•·è¨ˆè­°ï¼");
                                  break;
                          default:
-                                 call_out("xywar_message", 4, "ÃÉ¹Å°Ù·ò³¤£º±¨¸æ" + dj_name + "£¬ÎÒ¾üÔËÁ¸³µÎŞ¹Ê×ÔÈ¼£¬Á¸²İê¢ÖØÒÑËğÊ§´ù¾¡¡£");
-                                 call_out("xywar_message", 6, dj_name + "ºß£¬»µÎÒ´óÊÂ£¬À´°¡£¬ÍÏ³öÈ¥¿³ÁË£¡Á¢¼´Í¨ÖªÈ«¾ü»ğËÙ³·ÍË£¬ÒÔÃâËÎ¾ü³Ë»úÍµÏ®£¡");
+                                 call_out("xywar_message", 4, "è’™å¤ç™¾å¤«é•·ï¼šå ±å‘Š" + dj_name + "ï¼Œæˆ‘è»é‹ç³§è»Šç„¡æ•…è‡ªç‡ƒï¼Œç³§è‰è¼œé‡å·²æå¤±æ®†ç›¡ã€‚");
+                                 call_out("xywar_message", 6, dj_name + "å“¼ï¼Œå£æˆ‘å¤§äº‹ï¼Œä¾†å•Šï¼Œæ‹–å‡ºå»ç äº†ï¼ç«‹å³é€šçŸ¥å…¨è»ç«é€Ÿæ’¤é€€ï¼Œä»¥å…å®‹è»ä¹˜æ©Ÿå·è¥²ï¼");
                                  break;
                 }
 
-                call_out("xywar_message", 8, "ËÎ±ø£º±¨~~£¡ÃÉ¹ÅÈËÍ»È»ÏÂÁî³·¾ü£¬ËùÓĞÀ´Ï®¾ü¶ÓÒÑÈ«²¿³·»Ø£¡");
+                call_out("xywar_message", 8, "å®‹å…µï¼šå ±~~ï¼è’™å¤äººçªç„¶ä¸‹ä»¤æ’¤è»ï¼Œæ‰€æœ‰ä¾†è¥²è»éšŠå·²å…¨éƒ¨æ’¤å›ï¼");
 
                 call_out("xywar_over", 10);
                 return;
         }
         
-        // Ëæ»úÑ¡ÔñÒ»¸ö
+        // éš¨æ©Ÿé¸æ“‡ä¸€å€‹
         if (sizeof(p))player_leader = p[random(sizeof(p))];
 
         if (sizeof(player_leader))ob = find_player(player_leader);
         
         if (objectp(ob))
         {
-                // Ñ¡ÔñÍæ¼Ò½«Áì
-                xywar_message(HIG "±¾´ÎÏåÑô±£ÎÀÕ½ÓÉ" + HIY + ob->name() + "(" + ob->query("id") + ")" HIG 
-                                 "µ£ÈÎÏåÑôÊØ¾ü½«Áì£¬¿ÉÒÔ¸ù¾İÕ½¿öµ÷¶¯ÏåÑôÊØ¾ü(xy xmove ·½Ïò)¡£\n");
+                // é¸æ“‡ç©å®¶å°‡é ˜
+                xywar_message(HIG "æœ¬æ¬¡è¥„é™½ä¿è¡›æˆ°ç”±" + HIY + ob->name() + "(" + ob->query("id") + ")" HIG 
+                                 "æ“”ä»»è¥„é™½å®ˆè»å°‡é ˜ï¼Œå¯ä»¥æ ¹æ“šæˆ°æ³èª¿å‹•è¥„é™½å®ˆè»(xy xmove æ–¹å‘)ã€‚\n");
         }
         
-        xywar_message("ËÎ±ø£º±¨~~£¡ÃÉ¹Å¾ü½«»áÔÚÎå·ÖÖÓºóÎ§¹¥ÏåÑô£¬Çë×öºÃÏà¹Ø×¼±¸£¬ËÀÊØ(guard)ÃÉ¹Å¾ü±Ø¾­Ö®Â·¡£");
+        xywar_message("å®‹å…µï¼šå ±~~ï¼è’™å¤è»å°‡æœƒåœ¨äº”åˆ†é˜å¾Œåœæ”»è¥„é™½ï¼Œè«‹åšå¥½ç›¸é—œæº–å‚™ï¼Œæ­»å®ˆ(guard)è’™å¤è»å¿…ç¶“ä¹‹è·¯ã€‚");
 
-        // 10ÃëÖÓºó¿ªÊ¼Ã¿¸éÒ»·ÖÖÓ²¥±¨ÃÉ¹Å¾ü¶ÓÇé¿ö
+        // 10ç§’é˜å¾Œé–‹å§‹æ¯æ“±ä¸€åˆ†é˜æ’­å ±è’™å¤è»éšŠæƒ…æ³
         remove_call_out("do_combatd_message");
         call_out("do_combatd_message", 10, 1);
 
         return;
 }
 
-// ·ÖÅä¾ü¶ÓÊıÁ¿
+// åˆ†é…è»éšŠæ•¸é‡
 int allot_soldier()
 {
         int i, k;
         string *key_n_soldier;
 
-        // ¾ü¶ÓÊıÁ¿
+        // è»éšŠæ•¸é‡
         n_mg_tq = 40 + random(10);
         //n_mg_zb = 40 + random(10);
         n_mg_zb = 60 + random(20);
@@ -1194,10 +1194,10 @@ int allot_soldier()
         n_mg_bb = 120 + random(40);
         n_xy_sb = 80 + random(20);
 
-            // 1/5³öÏÖÌúÄ¾Õæ
+            // 1/5å‡ºç¾éµæœ¨çœŸ
         if (random(5) == 1)tiemuzhen = 1;
 
-        // ³öÏÖÌúÄ¾Õæ±øÁ¦Ôö¼Ó20%
+        // å‡ºç¾éµæœ¨çœŸå…µåŠ›å¢åŠ 20%
         if (tiemuzhen)
         {
                 n_mg_tq = n_mg_tq + n_mg_tq / 5;
@@ -1206,15 +1206,15 @@ int allot_soldier()
                 n_mg_bb = n_mg_bb + n_mg_bb / 5;
         }
 
-        // Ëæ»úÑ¡ÔñÒ»¸öÃÅÊ¿±ø½Ï¶à
+        // éš¨æ©Ÿé¸æ“‡ä¸€å€‹é–€å£«å…µè¼ƒå¤š
         key_n_soldier = keys(n_soldier);
         i = random(sizeof(key_n_soldier));        
         
-        // ¸Ã·½ÏòÉÏ¶àMORE_SOLDIERÃûÊ¿±ø
+        // è©²æ–¹å‘ä¸Šå¤šMORE_SOLDIERåå£«å…µ
         more_soldier_poision = key_n_soldier[i];
         
-            // ({ ÌúÆï¡¢ÕÜ±ğ¡¢¹­±ø¡¢ ²½±ø  })
-            // Æ½¾ù·ÖÅäµ½ËÄÃÅ
+            // ({ éµé¨ã€å“²åˆ¥ã€å¼“å…µã€ æ­¥å…µ  })
+            // å¹³å‡åˆ†é…åˆ°å››é–€
         for (k = 0; k < sizeof(key_n_soldier); k ++ )
         {
                 n_soldier[key_n_soldier[k]] = ({ n_mg_tq / 4,
@@ -1224,76 +1224,76 @@ int allot_soldier()
                                                });
         }
 
-            // ({ ÌúÆï¡¢ÕÜ±ğ¡¢¹­±ø¡¢ ²½±ø  })
-            // Ëæ»úÒ»¸öÃÅÊ¿±ø½Ï¶à
+            // ({ éµé¨ã€å“²åˆ¥ã€å¼“å…µã€ æ­¥å…µ  })
+            // éš¨æ©Ÿä¸€å€‹é–€å£«å…µè¼ƒå¤š
         n_soldier[more_soldier_poision] = ({ n_mg_tq / 4 + MORE_SOLDIER,
                                              n_mg_zb / 4 + MORE_SOLDIER,
                                              n_mg_gb / 4 + MORE_SOLDIER,
                                              n_mg_bb / 4 + MORE_SOLDIER,
                                        });
                                       
-        // ¼ÇÂ¼×î³õÃÉ¹Å¾ü×ÜÊı
+        // è¨˜éŒ„æœ€åˆè’™å¤è»ç¸½æ•¸
         n_mg_sb2 = total_menggu_soldier("total");
         n_xy_sb2 = total_menggu_soldier("xiangyang");
         
         return 1;
 }
 
-// ³õÊ¼»¯¾ü¶Ó
+// åˆå§‹åŒ–è»éšŠ
 int init_soldier()
 {
         /**
-        1¡¢³õÊ¼»¯¹ù¾¸
-        2¡¢ÉèÖÃÏåÑôÕ½µÈ´ı±êÖ¾
-        3¡¢²úÉúÃÉ¹Å¾ü¶ÓÎï¼ş²¢ÒÆ¶¯µ½¸÷×ÔµÄÎ»ÖÃ
-        4¡¢²úÉúÏåÑôÊ¿±ø²¢·ÖÅäµ½ËÄ¸öÃÅ
+        1ã€åˆå§‹åŒ–éƒ­é–
+        2ã€è¨­ç½®è¥„é™½æˆ°ç­‰å¾…æ¨™å¿—
+        3ã€ç”¢ç”Ÿè’™å¤è»éšŠç‰©ä»¶ä¸¦ç§»å‹•åˆ°å„è‡ªçš„ä½ç½®
+        4ã€ç”¢ç”Ÿè¥„é™½å£«å…µä¸¦åˆ†é…åˆ°å››å€‹é–€
         **/        
-        object ob, mg_dj;// ÃÉ¹Å´ó½«
+        object ob, mg_dj;// è’™å¤å¤§å°‡
         string *key_doors;
-        string re_route; // ·½Ïò·´Ïò
+        string re_route; // æ–¹å‘åå‘
         //int n_mg_tq, n_mg_zb, n_mg_bb, n_mg_gb, n_xy_sb;
         int i, n;
 
-        // ÉèÖÃµÈ´ı¹¥»÷±êÖ¾
+        // è¨­ç½®ç­‰å¾…æ”»æ“Šæ¨™å¿—
         status = WAIT_START;
         
         xy_guojing = new(XYNPC + "guo");
         if (tiemuzhen)mg_dj = new(XYNPC + "tiemuzhen");
         else mg_dj = new(XYNPC + "mgdajiang");
 
-        // ¸ù¾İÊÂÏÈ·ÖÅäµÄÊıÁ¿½øĞĞ¸÷ÖÖ±øÖÖ·ÖÅä
+        // æ ¹æ“šäº‹å…ˆåˆ†é…çš„æ•¸é‡é€²è¡Œå„ç¨®å…µç¨®åˆ†é…
 
-        // 8¸öÇ§·ò³¤
+        // 8å€‹åƒå¤«é•·
         for (i = 0; i < 8 ; i ++)
         {
                 ob = new(XYNPC + "mgqianfuzhang");
                 
-                // ÉèÖÃ±¾´ÎÏåÑô±£ÎÀÕ½µÄĞòÁĞºÅ
+                // è¨­ç½®æœ¬æ¬¡è¥„é™½ä¿è¡›æˆ°çš„åºåˆ—è™Ÿ
                 ob->set("ran_num", RAN_NUM);
                 
-                // ·ÖÅäµ½ËÄ´óÃÅ
+                // åˆ†é…åˆ°å››å¤§é–€
 
-                // ¶«ÃÅ
+                // æ±é–€
                 if (i < 2)
                 {
                         ob->set("route", "west");
                         ob->move(doors["east"]);
                 }
 
-                // ÄÏÃÅ
+                // å—é–€
                 if (i >= 2 && i < 4)
                 {
                         ob->set("route", "north");
                         ob->move(doors["south"]);
                 }
 
-                // Î÷ÃÅ
+                // è¥¿é–€
                 if (i >= 4 && i < 6)
                 {
                         ob->set("route", "east");
                         ob->move(doors["west"]);
                 }
-                // ±±ÃÅ
+                // åŒ—é–€
                 if (i >= 6)
                 {
                         ob->set("route", "south");
@@ -1301,74 +1301,74 @@ int init_soldier()
                 }
         }
 
-        // 12¸ö°Ù·ò³¤
+        // 12å€‹ç™¾å¤«é•·
         for (i = 0; i < 12 ; i ++)
         {
                 ob = new(XYNPC + "mgbaifuzhang");
                 
-                // ÉèÖÃ±¾´ÎÏåÑô±£ÎÀÕ½µÄĞòÁĞºÅ
+                // è¨­ç½®æœ¬æ¬¡è¥„é™½ä¿è¡›æˆ°çš„åºåˆ—è™Ÿ
                 ob->set("ran_num", RAN_NUM);
                                 
-                // ·ÖÅäµ½ËÄ´óÃÅ
+                // åˆ†é…åˆ°å››å¤§é–€
 
-                // ¶«ÃÅ
+                // æ±é–€
                 if (i < 3)
                 {
                         ob->set("route", "west");
                         ob->move(doors["east"]);
                 }
 
-                // ÄÏÃÅ
+                // å—é–€
                 if (i >= 3 && i < 6)
                 {
                         ob->set("route", "north");
                         ob->move(doors["south"]);
                 }
 
-                // Î÷ÃÅ
+                // è¥¿é–€
                 if (i >= 6 && i < 9)
                 {
                         ob->set("route", "east");
                         ob->move(doors["west"]);
                 }
-                // ±±ÃÅ
+                // åŒ—é–€
                 if (i >= 9)
                 {
                         ob->set("route", "south");
                         ob->move(doors["north"]);
                 }
         }
-        // 4¸ö¸±½«
+        // 4å€‹å‰¯å°‡
         for (i = 0; i < 4; i ++)
         {
                 ob = new(XYNPC + "mgfujiang");
                 
-                // ÉèÖÃ±¾´ÎÏåÑô±£ÎÀÕ½µÄĞòÁĞºÅ
+                // è¨­ç½®æœ¬æ¬¡è¥„é™½ä¿è¡›æˆ°çš„åºåˆ—è™Ÿ
                 ob->set("ran_num", RAN_NUM);
                                 
-                // ·ÖÅäµ½ËÄ´óÃÅ
+                // åˆ†é…åˆ°å››å¤§é–€
 
-                // ¶«ÃÅ
+                // æ±é–€
                 if (i == 0)
                 {
                         ob->set("route", "west");
                         ob->move(doors["east"]);
                 }
 
-                // ÄÏÃÅ
+                // å—é–€
                 if (i == 1)
                 {
                         ob->set("route", "north");
                         ob->move(doors["south"]);
                 }
 
-                // Î÷ÃÅ
+                // è¥¿é–€
                 if (i == 2)
                 {
                         ob->set("route", "east");
                         ob->move(doors["west"]);
                 }
-                // ±±ÃÅ
+                // åŒ—é–€
                 if (i == 3)
                 {
                         ob->set("route", "south");
@@ -1378,37 +1378,37 @@ int init_soldier()
 
         n = n_mg_tq / 4;
 
-        // n_mg_tq¸öÌúÆï±ø
+        // n_mg_tqå€‹éµé¨å…µ
         for (i = 0; i < n_mg_tq ; i ++)
         {
                 ob = new(XYNPC + "mgqibing");
                 
-                // ÉèÖÃ±¾´ÎÏåÑô±£ÎÀÕ½µÄĞòÁĞºÅ
+                // è¨­ç½®æœ¬æ¬¡è¥„é™½ä¿è¡›æˆ°çš„åºåˆ—è™Ÿ
                 ob->set("ran_num", RAN_NUM);
                                 
-                // ·ÖÅäµ½ËÄ´óÃÅ
+                // åˆ†é…åˆ°å››å¤§é–€
 
-                // ¶«ÃÅ
+                // æ±é–€
                 if (i < n)
                 {
                         ob->set("route", "west");
                         ob->move(doors["east"]);
                 }
 
-                // ÄÏÃÅ
+                // å—é–€
                 if (i >= n && i < n * 2)
                 {
                         ob->set("route", "north");
                         ob->move(doors["south"]);
                 }
 
-                // Î÷ÃÅ
+                // è¥¿é–€
                 if (i >= n * 2 && i < n * 3)
                 {
                         ob->set("route", "east");
                         ob->move(doors["west"]);
                 }
-                // ±±ÃÅ
+                // åŒ—é–€
                 if (i >= n * 3)
                 {
                         ob->set("route", "south");
@@ -1418,37 +1418,37 @@ int init_soldier()
 
         n = n_mg_zb / 4;
 
-        // n_mg_zb¸öÕÜ±ğ
+        // n_mg_zbå€‹å“²åˆ¥
         for (i = 0; i < n_mg_zb ; i ++)
         {
                 ob = new(XYNPC + "mgzhebie");
                 
-                // ÉèÖÃ±¾´ÎÏåÑô±£ÎÀÕ½µÄĞòÁĞºÅ
+                // è¨­ç½®æœ¬æ¬¡è¥„é™½ä¿è¡›æˆ°çš„åºåˆ—è™Ÿ
                 ob->set("ran_num", RAN_NUM);
                                 
-                // ·ÖÅäµ½ËÄ´óÃÅ
+                // åˆ†é…åˆ°å››å¤§é–€
 
-                // ¶«ÃÅ
+                // æ±é–€
                 if (i < n)
                 {
                         ob->set("route", "west");
                         ob->move(doors["east"]);
                 }
 
-                // ÄÏÃÅ
+                // å—é–€
                 if (i >= n && i < n * 2)
                 {
                         ob->set("route", "north");
                         ob->move(doors["south"]);
                 }
 
-                // Î÷ÃÅ
+                // è¥¿é–€
                 if (i >= n * 2 && i < n * 3)
                 {
                         ob->set("route", "east");
                         ob->move(doors["west"]);
                 }
-                // ±±ÃÅ
+                // åŒ—é–€
                 if (i >= n * 3)
                 {
                         ob->set("route", "south");
@@ -1458,37 +1458,37 @@ int init_soldier()
 
         n = n_mg_gb / 4;
 
-        // n_mg_gb¸ö¹­±ø
+        // n_mg_gbå€‹å¼“å…µ
         for (i = 0; i < n_mg_gb ; i ++)
         {
                 ob = new(XYNPC + "mggongbing");
                 
-                // ÉèÖÃ±¾´ÎÏåÑô±£ÎÀÕ½µÄĞòÁĞºÅ
+                // è¨­ç½®æœ¬æ¬¡è¥„é™½ä¿è¡›æˆ°çš„åºåˆ—è™Ÿ
                 ob->set("ran_num", RAN_NUM);
                                 
-                // ·ÖÅäµ½ËÄ´óÃÅ
+                // åˆ†é…åˆ°å››å¤§é–€
 
-                // ¶«ÃÅ
+                // æ±é–€
                 if (i < n)
                 {
                         ob->set("route", "west");
                         ob->move(doors["east"]);
                 }
 
-                // ÄÏÃÅ
+                // å—é–€
                 if (i >= n && i < n * 2)
                 {
                         ob->set("route", "north");
                         ob->move(doors["south"]);
                 }
 
-                // Î÷ÃÅ
+                // è¥¿é–€
                 if (i >= n * 2 && i < n * 3)
                 {
                         ob->set("route", "east");
                         ob->move(doors["west"]);
                 }
-                // ±±ÃÅ
+                // åŒ—é–€
                 if (i >= n * 3)
                 {
                         ob->set("route", "south");
@@ -1498,37 +1498,37 @@ int init_soldier()
 
         n = n_mg_bb / 4;
 
-        // n_mg_bb¸ö²½±ø
+        // n_mg_bbå€‹æ­¥å…µ
         for (i = 0; i < n_mg_bb ; i ++)
         {
                 ob = new(XYNPC + "mgbubing");
                 
-                // ÉèÖÃ±¾´ÎÏåÑô±£ÎÀÕ½µÄĞòÁĞºÅ
+                // è¨­ç½®æœ¬æ¬¡è¥„é™½ä¿è¡›æˆ°çš„åºåˆ—è™Ÿ
                 ob->set("ran_num", RAN_NUM);
                                 
-                // ·ÖÅäµ½ËÄ´óÃÅ
+                // åˆ†é…åˆ°å››å¤§é–€
 
-                // ¶«ÃÅ
+                // æ±é–€
                 if (i < n)
                 {
                         ob->set("route", "west");
                         ob->move(doors["east"]);
                 }
 
-                // ÄÏÃÅ
+                // å—é–€
                 if (i >= n && i < n * 2)
                 {
                         ob->set("route", "north");
                         ob->move(doors["south"]);
                 }
 
-                // Î÷ÃÅ
+                // è¥¿é–€
                 if (i >= n * 2 && i < n * 3)
                 {
                         ob->set("route", "east");
                         ob->move(doors["west"]);
                 }
-                // ±±ÃÅ
+                // åŒ—é–€
                 if (i >= n * 3)
                 {
                         ob->set("route", "south");
@@ -1536,7 +1536,7 @@ int init_soldier()
                 }
         }
         
-        // ÔÚmore_soldier_poisionÃÅ¶àÔö¼ÓMORE_SOLDIERÃûÊ¿±ø        
+        // åœ¨more_soldier_poisioné–€å¤šå¢åŠ MORE_SOLDIERåå£«å…µ        
         re_route = re_poision(more_soldier_poision);
 
         for (i = 0; i < MORE_SOLDIER ; i ++)
@@ -1544,60 +1544,60 @@ int init_soldier()
                 ob = new(XYNPC + "mgbubing");
                 ob->set("route", re_route);
                 ob->move(doors[more_soldier_poision]);                
-                // ÉèÖÃ±¾´ÎÏåÑô±£ÎÀÕ½µÄĞòÁĞºÅ
+                // è¨­ç½®æœ¬æ¬¡è¥„é™½ä¿è¡›æˆ°çš„åºåˆ—è™Ÿ
                 ob->set("ran_num", RAN_NUM);
 
                 ob = new(XYNPC + "mggongbing");
                 ob->set("route", re_route);
                 ob->move(doors[more_soldier_poision]);
-                // ÉèÖÃ±¾´ÎÏåÑô±£ÎÀÕ½µÄĞòÁĞºÅ
+                // è¨­ç½®æœ¬æ¬¡è¥„é™½ä¿è¡›æˆ°çš„åºåˆ—è™Ÿ
                 ob->set("ran_num", RAN_NUM);
                                 
                 ob = new(XYNPC + "mgqibing");
                 ob->set("route", re_route);
                 ob->move(doors[more_soldier_poision]);
-                // ÉèÖÃ±¾´ÎÏåÑô±£ÎÀÕ½µÄĞòÁĞºÅ
+                // è¨­ç½®æœ¬æ¬¡è¥„é™½ä¿è¡›æˆ°çš„åºåˆ—è™Ÿ
                 ob->set("ran_num", RAN_NUM);
                 
                 ob = new(XYNPC + "mgzhebie");
                 ob->set("route", re_route);
                 ob->move(doors[more_soldier_poision]);
-                // ÉèÖÃ±¾´ÎÏåÑô±£ÎÀÕ½µÄĞòÁĞºÅ
+                // è¨­ç½®æœ¬æ¬¡è¥„é™½ä¿è¡›æˆ°çš„åºåˆ—è™Ÿ
                 ob->set("ran_num", RAN_NUM);                
         }
 
-        // ¼ÇÂ¼£¬ÓĞÊ±ºò»á³öÏÖÃ»ÓĞÏåÑôÊ¿±ø
+        // è¨˜éŒ„ï¼Œæœ‰æ™‚å€™æœƒå‡ºç¾æ²’æœ‰è¥„é™½å£«å…µ
         if (n_xy_sb <= 1)log_file("xiangyang_xysb", "ok at " + ctime(time()) + "\n");
         
         n = n_xy_sb / 4;
 
-        // n_xy_sb¸öÏåÑôÊ¿±ø
+        // n_xy_sbå€‹è¥„é™½å£«å…µ
         for (i = 0; i < n_xy_sb ; i ++)
         {
                 ob = new(XYNPC + "xyshibing");
 
-                // ·ÖÅäµ½ËÄ´óÃÅ
-                // ¶«ÃÅ
+                // åˆ†é…åˆ°å››å¤§é–€
+                // æ±é–€
                 if (i < n)
                 {
                         ob->set("route", "west");
                         ob->move(doors2["east"]);
                 }
 
-                // ÄÏÃÅ
+                // å—é–€
                 if (i >= n && i < n * 2)
                 {
                         ob->set("route", "north");
                         ob->move(doors2["south"]);
                 }
 
-                // Î÷ÃÅ
+                // è¥¿é–€
                 if (i >= n * 2 && i < n * 3)
                 {
                         ob->set("route", "east");
                         ob->move(doors2["west"]);
                 }
-                // ±±ÃÅ
+                // åŒ—é–€
                 if (i >= n * 3)
                 {
                         ob->set("route", "south");
@@ -1607,35 +1607,35 @@ int init_soldier()
 
         key_doors = keys(doors);
 
-        // ¹ù¾¸ÒÆ¶¯µ½ÖĞÑë¹ã³¡
+        // éƒ­é–ç§»å‹•åˆ°ä¸­å¤®å»£å ´
         xy_guojing->move("/d/xiangyang/guangchang");
 
 
-        // ÒÆ¶¯NPCµ½¾üÓªÇ°ÇåÀí¾üÓªÆäËûPLAYER
+        // ç§»å‹•NPCåˆ°è»ç‡Ÿå‰æ¸…ç†è»ç‡Ÿå…¶ä»–PLAYER
         clear_junying();
         
-        // ÃÉ¹Å´ó½«ÒÆ¶¯µ½¾üÓª
+        // è’™å¤å¤§å°‡ç§»å‹•åˆ°è»ç‡Ÿ
         if (tiemuzhen)
         {
                 mg_dj = new(XYNPC + "tiemuzhen");
                 mg_dj->move("/d/xiangyang/junying3");
-                // ÉèÖÃ±¾´ÎÏåÑô±£ÎÀÕ½µÄĞòÁĞºÅ
+                // è¨­ç½®æœ¬æ¬¡è¥„é™½ä¿è¡›æˆ°çš„åºåˆ—è™Ÿ
                 mg_dj->set("ran_num", RAN_NUM);                
         }
         else
         {
                 mg_dj = new(XYNPC + "mgdajiang");
                 mg_dj->move("/d/xiangyang/junying3");
-                // ÉèÖÃ±¾´ÎÏåÑô±£ÎÀÕ½µÄĞòÁĞºÅ
+                // è¨­ç½®æœ¬æ¬¡è¥„é™½ä¿è¡›æˆ°çš„åºåˆ—è™Ÿ
                 mg_dj->set("ran_num", RAN_NUM);                
         }
 
-        // Á½ÃûÇ§·ò³¤±£»¤´ó½«
+        // å…©ååƒå¤«é•·ä¿è­·å¤§å°‡
         for (i = 0; i < 2; i ++)
         {
                 ob = new(XYNPC + "mgqianfuzhang");
                 ob->move(environment(mg_dj));
-                // ÉèÖÃ±¾´ÎÏåÑô±£ÎÀÕ½µÄĞòÁĞºÅ
+                // è¨­ç½®æœ¬æ¬¡è¥„é™½ä¿è¡›æˆ°çš„åºåˆ—è™Ÿ
                 ob->set("ran_num", RAN_NUM);
                                 
                 if (tiemuzhen)                
@@ -1644,8 +1644,8 @@ int init_soldier()
                         ob->force_me("guard menggu dajiang");
         }
         
-        // Èç¹ûÓĞÌúÄ¾ÕæÔòÔö¼Ó 
-        // 8ÃûÇ§·ò³¤£¬4Ãû¸±½«£¬20ÃûÌúÆï¡¢20ÃûÕÜ±ğ±£»¤
+        // å¦‚æœæœ‰éµæœ¨çœŸå‰‡å¢åŠ  
+        // 8ååƒå¤«é•·ï¼Œ4åå‰¯å°‡ï¼Œ20åéµé¨ã€20åå“²åˆ¥ä¿è­·
         if (tiemuzhen)
         {
                 for (i = 0; i < 8; i ++ )
@@ -1653,7 +1653,7 @@ int init_soldier()
                         ob = new(XYNPC + "mgqianfuzhang");
                         ob->move(environment(mg_dj));
                         ob->force_me("guard tie muzhen");
-                        // ÉèÖÃ±¾´ÎÏåÑô±£ÎÀÕ½µÄĞòÁĞºÅ
+                        // è¨­ç½®æœ¬æ¬¡è¥„é™½ä¿è¡›æˆ°çš„åºåˆ—è™Ÿ
                         ob->set("ran_num", RAN_NUM);                        
                 }
                                 
@@ -1662,18 +1662,18 @@ int init_soldier()
                         ob = new(XYNPC + "mgfujiang");
                         ob->move(environment(mg_dj));
                         ob->force_me("guard tie muzhen");
-                        // ÉèÖÃ±¾´ÎÏåÑô±£ÎÀÕ½µÄĞòÁĞºÅ
+                        // è¨­ç½®æœ¬æ¬¡è¥„é™½ä¿è¡›æˆ°çš„åºåˆ—è™Ÿ
                         ob->set("ran_num", RAN_NUM);                        
                 }
                 
-                // ÒªÉèÖÃ²»¼ÆËãÊ¿±øÊıÁ¿±êÖ¾
+                // è¦è¨­ç½®ä¸è¨ˆç®—å£«å…µæ•¸é‡æ¨™å¿—
                 for (i = 0; i < 20; i ++ )
                 {
                         ob = new(XYNPC + "mgqibing");
                         ob->set("no_total", 1);
                         ob->move(environment(mg_dj));
                         ob->force_me("guard tie muzhen");
-                        // ÉèÖÃ±¾´ÎÏåÑô±£ÎÀÕ½µÄĞòÁĞºÅ
+                        // è¨­ç½®æœ¬æ¬¡è¥„é™½ä¿è¡›æˆ°çš„åºåˆ—è™Ÿ
                         ob->set("ran_num", RAN_NUM);                        
                 }
 
@@ -1683,37 +1683,37 @@ int init_soldier()
                         ob->set("no_total", 1);
                         ob->move(environment(mg_dj));
                         ob->force_me("guard tie muzhen");
-                        // ÉèÖÃ±¾´ÎÏåÑô±£ÎÀÕ½µÄĞòÁĞºÅ
+                        // è¨­ç½®æœ¬æ¬¡è¥„é™½ä¿è¡›æˆ°çš„åºåˆ—è™Ÿ
                         ob->set("ran_num", RAN_NUM);                        
                 }
         }
 
-        // ÒÆ¶¯10Ãû²½£¬10Ãû¹­ÊÖ±øµ½¾üÓªÍâ/d/xiangyang/junying1
-        // ÊØ»¤·½Ïònorth
+        // ç§»å‹•10åæ­¥ï¼Œ10åå¼“æ‰‹å…µåˆ°è»ç‡Ÿå¤–/d/xiangyang/junying1
+        // å®ˆè­·æ–¹å‘north
         for (i = 0; i < 10; i ++)
         {
                 ob = new(XYNPC + "mgbubing");
                 ob->set("no_total", 1);
                 ob->move("/d/xiangyang/junying1");
                 ob->force_me("guard north");
-                // ÉèÖÃ±¾´ÎÏåÑô±£ÎÀÕ½µÄĞòÁĞºÅ
+                // è¨­ç½®æœ¬æ¬¡è¥„é™½ä¿è¡›æˆ°çš„åºåˆ—è™Ÿ
                 ob->set("ran_num", RAN_NUM);
                                 
                 ob = new(XYNPC + "mggongbing");
                 ob->set("no_total", 1);
                 ob->move("/d/xiangyang/junying1");
                 ob->force_me("guard north");
-                // ÉèÖÃ±¾´ÎÏåÑô±£ÎÀÕ½µÄĞòÁĞºÅ
+                // è¨­ç½®æœ¬æ¬¡è¥„é™½ä¿è¡›æˆ°çš„åºåˆ—è™Ÿ
                 ob->set("ran_num", RAN_NUM);                
         }
 
-        // ÒÆ¶¯6ÃûÇ§·ò³¤£¬40ÃûÕÜ±ğ£¬40ÃûÌúÆïÊØ»¤¾üÓª/d/xiangyang/junying2
+        // ç§»å‹•6ååƒå¤«é•·ï¼Œ40åå“²åˆ¥ï¼Œ40åéµé¨å®ˆè­·è»ç‡Ÿ/d/xiangyang/junying2
         for (i = 0; i < 6; i ++)
         {
                 ob = new(XYNPC + "mgqianfuzhang");
                 ob->move("/d/xiangyang/junying2");
                 ob->force_me("guard north");
-                // ÉèÖÃ±¾´ÎÏåÑô±£ÎÀÕ½µÄĞòÁĞºÅ
+                // è¨­ç½®æœ¬æ¬¡è¥„é™½ä¿è¡›æˆ°çš„åºåˆ—è™Ÿ
                 ob->set("ran_num", RAN_NUM);                
         }
         for (i = 0; i < 40; i ++)
@@ -1722,52 +1722,52 @@ int init_soldier()
                 ob->set("no_total", 1);                
                 ob->move("/d/xiangyang/junying2");
                 ob->force_me("guard north");
-                // ÉèÖÃ±¾´ÎÏåÑô±£ÎÀÕ½µÄĞòÁĞºÅ
+                // è¨­ç½®æœ¬æ¬¡è¥„é™½ä¿è¡›æˆ°çš„åºåˆ—è™Ÿ
                 ob->set("ran_num", RAN_NUM);
                                 
                 ob = new(XYNPC + "mgqibing");
                 ob->set("no_total", 1);
                 ob->move("/d/xiangyang/junying2");
                 ob->force_me("guard north");
-                // ÉèÖÃ±¾´ÎÏåÑô±£ÎÀÕ½µÄĞòÁĞºÅ
+                // è¨­ç½®æœ¬æ¬¡è¥„é™½ä¿è¡›æˆ°çš„åºåˆ—è™Ÿ
                 ob->set("ran_num", RAN_NUM);                
         }
 
-        call_out("xywar_message", 2, "ÃÉ¹Å¾ü¶ÓÒÑ¾­µÖ´ïÏåÑô³ÇÍâ°²ÓªÔúÕ¯£¬ÏÖÔÚÈ«¾üÕıºîÃü´ı·¢£¡");
+        call_out("xywar_message", 2, "è’™å¤è»éšŠå·²ç¶“æŠµé”è¥„é™½åŸå¤–å®‰ç‡Ÿç´®å¯¨ï¼Œç¾åœ¨å…¨è»æ­£ä¾¯å‘½å¾…ç™¼ï¼");
 
-        call_out("xywar_message", 15, "ËÎ±øÌ½×Ó£º´Ë´ÎÃÉ¹Å¾ü¶ÓÈËÊı´óÔ¼Îª£º " HIY +
-                                      sprintf("%d", total_menggu_soldier("total")) + HIC " ÈË¡£");
+        call_out("xywar_message", 15, "å®‹å…µæ¢å­ï¼šæ­¤æ¬¡è’™å¤è»éšŠäººæ•¸å¤§ç´„ç‚ºï¼š " HIY +
+                                      sprintf("%d", total_menggu_soldier("total")) + HIC " äººã€‚");
 
-        // ¹ù¾¸Í¨ÖªÍæ¼Ò½øĞĞ±¨Ãû
-        call_out("xywar_message", 5, HIY "¹ù¾¸£º¸÷Â·½­ºşºÀ½Ü£¬ÎäÁÖÍ¬µÀ£¬ÏÖ½ñÃÉ¹ÅÈË¼´½«Î§¹¥ÏåÑô£¬Çé¿öÎ£»ú£¬"
-                                         "ÈçÔ¸±£ÎÀÏåÑô³öÒ»·İÁ¦£¬Çë\n            ËÙµ½" HIM "ÏåÑôÖĞÑë¹ã³¡" HIY "½øĞĞ±¨Ãû°É£¡" NOR);
+        // éƒ­é–é€šçŸ¥ç©å®¶é€²è¡Œå ±å
+        call_out("xywar_message", 5, HIY "éƒ­é–ï¼šå„è·¯æ±Ÿæ¹–è±ªå‚‘ï¼Œæ­¦æ—åŒé“ï¼Œç¾ä»Šè’™å¤äººå³å°‡åœæ”»è¥„é™½ï¼Œæƒ…æ³å±æ©Ÿï¼Œ"
+                                         "å¦‚é¡˜ä¿è¡›è¥„é™½å‡ºä¸€ä»½åŠ›ï¼Œè«‹\n            é€Ÿåˆ°" HIM "è¥„é™½ä¸­å¤®å»£å ´" HIY "é€²è¡Œå ±åå§ï¼" NOR);
 
-        // ÉèÖÃ¿É±¨Ãû±êÖ¾
+        // è¨­ç½®å¯å ±åæ¨™å¿—
         sign_up_status = 1;
 
-            // 5·ÖÖÓºóÍ£Ö¹±¨Ãû£¬²¢¼ì²é±¨ÃûÈËÊıÊÇ·ñ´ïµ½ÒªÇó
+            // 5åˆ†é˜å¾Œåœæ­¢å ±åï¼Œä¸¦æª¢æŸ¥å ±åäººæ•¸æ˜¯å¦é”åˆ°è¦æ±‚
         remove_call_out("check_sign_up");
         if (TEST)call_out("check_sign_up", 10);
         else call_out("check_sign_up", 300);
 
         return;
 }
-// ÏåÑôÔ®¾ü´ïµ½ºóµÄ¶¯×÷
+// è¥„é™½æ´è»é”åˆ°å¾Œçš„å‹•ä½œ
 void add_xy_soldier_action()
 {
-        call_out("xywar_message", 1, HIY "ÃÉ¹ÅÌ½×Ó£º±¨£¡ÏåÑôÔ®±øÒÑ¾­²¿ÊğÍê±Ï£¬·ÖÉ¢ÓÚËÄ³ÇÃÅµÖ¿¹ÎÒ¾ü¡£" NOR);
+        call_out("xywar_message", 1, HIY "è’™å¤æ¢å­ï¼šå ±ï¼è¥„é™½æ´å…µå·²ç¶“éƒ¨ç½²å®Œç•¢ï¼Œåˆ†æ•£äºå››åŸé–€æŠµæŠ—æˆ‘è»ã€‚" NOR);
         
         if (random(2) == 1)        
-                call_out("xywar_message", 3, HIY "ÃÉ¹Å½«Áì£ººß£¡¿´À´ËûÃÇÊÇÔÚ×ö×îºóµÄ´¹ËÀÕõÔú£¬´«Áî¼ÓÇ¿½ø¹¥£¬¾¡¿ìÄÃÏÂ³Ç³Ø¡£" NOR);
+                call_out("xywar_message", 3, HIY "è’™å¤å°‡é ˜ï¼šå“¼ï¼çœ‹ä¾†ä»–å€‘æ˜¯åœ¨åšæœ€å¾Œçš„å‚æ­»æ™ç´®ï¼Œå‚³ä»¤åŠ å¼·é€²æ”»ï¼Œç›¡å¿«æ‹¿ä¸‹åŸæ± ã€‚" NOR);
         else
-                call_out("xywar_message", 3, HIY "ÃÉ¹Å½«Áì£º´«ÁîÈ«¾ü½«Ê¿¼ÓÇ¿¹¥ÊÆ£¬ÍòÍò²»¿ÉÇáµĞ£¬Õâ´ÎÎñ±ØÒªË³ÀûÄÃÏÂÏåÑô³Ç" NOR);
+                call_out("xywar_message", 3, HIY "è’™å¤å°‡é ˜ï¼šå‚³ä»¤å…¨è»å°‡å£«åŠ å¼·æ”»å‹¢ï¼Œè¬è¬ä¸å¯è¼•æ•µï¼Œé€™æ¬¡å‹™å¿…è¦é †åˆ©æ‹¿ä¸‹è¥„é™½åŸ" NOR);
 }
 
-// Ôö¼ÓÏåÑôÊ¿±ø
+// å¢åŠ è¥„é™½å£«å…µ
 void add_xy_soldier()
 {
         object ob;
-        string re_route; // ·½Ïò·´Ïò
+        string re_route; // æ–¹å‘åå‘
         int i, n, k;
         string *key_n_soldier;
 
@@ -1776,33 +1776,33 @@ void add_xy_soldier()
         n_xy_sb = ADD_XY_SOLDIER;
         n = ADD_XY_SOLDIER / 4;
         
-        // n_xy_sb¸öÏåÑôÊ¿±ø
+        // n_xy_sbå€‹è¥„é™½å£«å…µ
         for (i = 0; i < n_xy_sb ; i ++)
         {
                 ob = new(XYNPC + "xyshibing");
 
-                // ·ÖÅäµ½ËÄ´óÃÅ
-                // ¶«ÃÅ
+                // åˆ†é…åˆ°å››å¤§é–€
+                // æ±é–€
                 if (i < n)
                 {
                         ob->set("route", "west");
                         ob->move(doors3["east"]);
                 }
 
-                // ÄÏÃÅ
+                // å—é–€
                 if (i >= n && i < n * 2)
                 {
                         ob->set("route", "north");
                         ob->move(doors3["south"]);
                 }
 
-                // Î÷ÃÅ
+                // è¥¿é–€
                 if (i >= n * 2 && i < n * 3)
                 {
                         ob->set("route", "east");
                         ob->move(doors3["west"]);
                 }
-                // ±±ÃÅ
+                // åŒ—é–€
                 if (i >= n * 3)
                 {
                         ob->set("route", "south");
@@ -1811,54 +1811,54 @@ void add_xy_soldier()
         }        
 
 
-        // ĞŞ¸ÄÏåÑô¾üÊıÁ¿¼ÇÂ¼±í
+        // ä¿®æ”¹è¥„é™½è»æ•¸é‡è¨˜éŒ„è¡¨
         n_xy_sb = n_xy_sb + ADD_XY_SOLDIER;
 
-        xywar_message(HIY "ÏåÑôÔ®±øÒÑµÖ´ïÏåÑô³Ç£¬²¢Æ½¾ù·ÖÉ¢ÔÚËÄÃÅµÖÓùÃÉ¹ÅÈË¡£");
+        xywar_message(HIY "è¥„é™½æ´å…µå·²æŠµé”è¥„é™½åŸï¼Œä¸¦å¹³å‡åˆ†æ•£åœ¨å››é–€æŠµå¾¡è’™å¤äººã€‚");
         
         call_out("add_xy_soldier_action", 2); 
         
         return;
 }
 
-// Íâ²¿µ÷ÓÃ£ºÔö¼ÓÏåÑôÊ¿±ø£¬ÆğÇ°¶Ëµ÷ÓÃ£¬Ôö¼ÓÑÓ³ÙĞ§¹û×÷ÓÃ
+// å¤–éƒ¨èª¿ç”¨ï¼šå¢åŠ è¥„é™½å£«å…µï¼Œèµ·å‰ç«¯èª¿ç”¨ï¼Œå¢åŠ å»¶é²æ•ˆæœä½œç”¨
 void add_xy_soldier_ext(object me)
 {        
-        // ¼ì²éÊÇ·ñ¿Éµ÷ÓÃ
+        // æª¢æŸ¥æ˜¯å¦å¯èª¿ç”¨
             if (now_status() != WARRING && now_status() != WAIT_START)
             {
-                    write("Õ½¶·»¹Ã»ÓĞ¿ªÊ¼ÄØ¡£\n");
+                    write("æˆ°é¬¥é‚„æ²’æœ‰é–‹å§‹å‘¢ã€‚\n");
                     return;
             }            
         
-        // µ÷ÓÃºóÔö¼Óµ÷ÓÃ±êÖ¾
+        // èª¿ç”¨å¾Œå¢åŠ èª¿ç”¨æ¨™å¿—
         add_xyb_flag = 1;
         
-        call_out("xywar_message", 2, HIR + me->name() + "Ê¹ÓÃ±ø·û£¬ÔöÅÉÏåÑôÊØ¾ü¡£" NOR);
-        call_out("xywar_message", 4, HIR + "ÏåÑôÔ®¾üÕıÔÚ·ÖÅäºÍµ÷¶¯£¬Ô®¾üµÖ´ïºó½«Æ½¾ù·ÖÉ¢ÔÚËÄÃÅµÖ¿¹ÃÉ¹Å¾ü¡£" NOR);
-        call_out("xywar_message", 6, HIR + "ÏåÑôÔ®¾ü¼´½«µÖ´ïÏåÑô³Ç£¬ÇëÌáÇ°×öºÃÏà¹ØÕ½Êõµ÷¶¯¡£" NOR);
+        call_out("xywar_message", 2, HIR + me->name() + "ä½¿ç”¨å…µç¬¦ï¼Œå¢æ´¾è¥„é™½å®ˆè»ã€‚" NOR);
+        call_out("xywar_message", 4, HIR + "è¥„é™½æ´è»æ­£åœ¨åˆ†é…å’Œèª¿å‹•ï¼Œæ´è»æŠµé”å¾Œå°‡å¹³å‡åˆ†æ•£åœ¨å››é–€æŠµæŠ—è’™å¤è»ã€‚" NOR);
+        call_out("xywar_message", 6, HIR + "è¥„é™½æ´è»å³å°‡æŠµé”è¥„é™½åŸï¼Œè«‹æå‰åšå¥½ç›¸é—œæˆ°è¡“èª¿å‹•ã€‚" NOR);
         call_out("add_xy_soldier", 12);
 }
 
-// ÃÉ¹ÅÈËÅÉ±øÔöÔ®
-// ĞèÒªÔÚÉèÖÃ·½Î»µÄÊ±ºò¼ì²é yb_attack_where ±äÁ¿£¬Èç¹û²»Îª"none"ÔòĞèÒªµ¥¶ÀÉèÖÃ
-// Ä¿µÄÊÇ½«Ô®¾ü»ğÁ¦ÔÚÄ³Ò»·½ÏòÉÏ¼¯ÖĞ£¬±ãÓÚ¹¥³Ç
+// è’™å¤äººæ´¾å…µå¢æ´
+// éœ€è¦åœ¨è¨­ç½®æ–¹ä½çš„æ™‚å€™æª¢æŸ¥ yb_attack_where è®Šé‡ï¼Œå¦‚æœä¸ç‚º"none"å‰‡éœ€è¦å–®ç¨è¨­ç½®
+// ç›®çš„æ˜¯å°‡æ´è»ç«åŠ›åœ¨æŸä¸€æ–¹å‘ä¸Šé›†ä¸­ï¼Œä¾¿äºæ”»åŸ
 void add_soldier()
 {
         object ob;
-        string re_route; // ·½Ïò·´Ïò
+        string re_route; // æ–¹å‘åå‘
         int i, n, k;
         string *key_n_soldier;
 
-        // ¸ù¾İÊÂÏÈ·ÖÅäµÄÊıÁ¿½øĞĞ¸÷ÖÖ±øÖÖ·ÖÅä
+        // æ ¹æ“šäº‹å…ˆåˆ†é…çš„æ•¸é‡é€²è¡Œå„ç¨®å…µç¨®åˆ†é…
         
-        // 8¸öÇ§·ò³¤
+        // 8å€‹åƒå¤«é•·
         for (i = 0; i < 8 ; i ++)
         {
                 ob = new(XYNPC + "mgqianfuzhang");
-                // ·ÖÅäµ½ËÄ´óÃÅ
+                // åˆ†é…åˆ°å››å¤§é–€
 
-                // ¶«ÃÅ
+                // æ±é–€
                 if (i < 2)
                 {
                         if (yb_attack_where != "none")
@@ -1873,7 +1873,7 @@ void add_soldier()
                         }
                 }
 
-                // ÄÏÃÅ
+                // å—é–€
                 if (i >= 2 && i < 4)
                 {
                         if (yb_attack_where != "none")
@@ -1888,7 +1888,7 @@ void add_soldier()
                         }
                 }
 
-                // Î÷ÃÅ
+                // è¥¿é–€
                 if (i >= 4 && i < 6)
                 {
                         if (yb_attack_where != "none")
@@ -1902,7 +1902,7 @@ void add_soldier()
                                 ob->move(doors["west"]);
                         }
                 }
-                // ±±ÃÅ
+                // åŒ—é–€
                 if (i >= 6)
                 {
                         if (yb_attack_where != "none")
@@ -1918,13 +1918,13 @@ void add_soldier()
                 }
         }
 
-        // 12¸ö°Ù·ò³¤
+        // 12å€‹ç™¾å¤«é•·
         for (i = 0; i < 12 ; i ++)
         {
                 ob = new(XYNPC + "mgbaifuzhang");
-                // ·ÖÅäµ½ËÄ´óÃÅ
+                // åˆ†é…åˆ°å››å¤§é–€
 
-                // ¶«ÃÅ
+                // æ±é–€
                 if (i < 3)
                 {
                         if (yb_attack_where != "none")
@@ -1939,7 +1939,7 @@ void add_soldier()
                         }
                 }
 
-                // ÄÏÃÅ
+                // å—é–€
                 if (i >= 3 && i < 6)
                 {
                         if (yb_attack_where != "none")
@@ -1954,7 +1954,7 @@ void add_soldier()
                         }
                 }
 
-                // Î÷ÃÅ
+                // è¥¿é–€
                 if (i >= 6 && i < 9)
                 {
                         if (yb_attack_where != "none")
@@ -1968,7 +1968,7 @@ void add_soldier()
                                 ob->move(doors["west"]);
                         }
                 }
-                // ±±ÃÅ
+                // åŒ—é–€
                 if (i >= 9)
                 {
                         if (yb_attack_where != "none")
@@ -1983,13 +1983,13 @@ void add_soldier()
                         }
                 }
         }
-        // 4¸ö¸±½«
+        // 4å€‹å‰¯å°‡
         for (i = 0; i < 4; i ++)
         {
                 ob = new(XYNPC + "mgfujiang");
-                // ·ÖÅäµ½ËÄ´óÃÅ
+                // åˆ†é…åˆ°å››å¤§é–€
 
-                // ¶«ÃÅ
+                // æ±é–€
                 if (i == 0)
                 {
                         if (yb_attack_where != "none")
@@ -2004,7 +2004,7 @@ void add_soldier()
                         }
                 }
 
-                // ÄÏÃÅ
+                // å—é–€
                 if (i == 1)
                 {
                         if (yb_attack_where != "none")
@@ -2019,7 +2019,7 @@ void add_soldier()
                         }
                 }
 
-                // Î÷ÃÅ
+                // è¥¿é–€
                 if (i == 2)
                 {
                         if (yb_attack_where != "none")
@@ -2033,7 +2033,7 @@ void add_soldier()
                                 ob->move(doors["west"]);
                         }
                 }
-                // ±±ÃÅ
+                // åŒ—é–€
                 if (i == 3)
                 {
                         if (yb_attack_where != "none")
@@ -2051,14 +2051,14 @@ void add_soldier()
 
         n = n_mg_tq / 4;
 
-        // n_mg_tq¸öÌúÆï±ø
+        // n_mg_tqå€‹éµé¨å…µ
         for (i = 0; i < n_mg_tq ; i ++)
         {
                 ob = new(XYNPC + "mgqibing");
 
-                // ·ÖÅäµ½ËÄ´óÃÅ
+                // åˆ†é…åˆ°å››å¤§é–€
 
-                // ¶«ÃÅ
+                // æ±é–€
                 if (i < n)
                 {
                         if (yb_attack_where != "none")
@@ -2073,7 +2073,7 @@ void add_soldier()
                         }
                 }
 
-                // ÄÏÃÅ
+                // å—é–€
                 if (i >= n && i < n * 2)
                 {
                         if (yb_attack_where != "none")
@@ -2088,7 +2088,7 @@ void add_soldier()
                         }
                 }
 
-                // Î÷ÃÅ
+                // è¥¿é–€
                 if (i >= n * 2 && i < n * 3)
                 {
                         if (yb_attack_where != "none")
@@ -2102,7 +2102,7 @@ void add_soldier()
                                 ob->move(doors["west"]);
                         }
                 }
-                // ±±ÃÅ
+                // åŒ—é–€
                 if (i >= n * 3)
                 {
                         if (yb_attack_where != "none")
@@ -2120,14 +2120,14 @@ void add_soldier()
 
         n = n_mg_zb / 4;
 
-        // n_mg_zb¸öÕÜ±ğ
+        // n_mg_zbå€‹å“²åˆ¥
         for (i = 0; i < n_mg_zb ; i ++)
         {
                 ob = new(XYNPC + "mgzhebie");
 
-                // ·ÖÅäµ½ËÄ´óÃÅ
+                // åˆ†é…åˆ°å››å¤§é–€
 
-                // ¶«ÃÅ
+                // æ±é–€
                 if (i < n)
                 {
                         if (yb_attack_where != "none")
@@ -2142,7 +2142,7 @@ void add_soldier()
                         }
                 }
 
-                // ÄÏÃÅ
+                // å—é–€
                 if (i >= n && i < n * 2)
                 {
                         if (yb_attack_where != "none")
@@ -2157,7 +2157,7 @@ void add_soldier()
                         }
                 }
 
-                // Î÷ÃÅ
+                // è¥¿é–€
                 if (i >= n * 2 && i < n * 3)
                 {
                         if (yb_attack_where != "none")
@@ -2171,7 +2171,7 @@ void add_soldier()
                                 ob->move(doors["west"]);
                         }
                 }
-                // ±±ÃÅ
+                // åŒ—é–€
                 if (i >= n * 3)
                 {
                         if (yb_attack_where != "none")
@@ -2189,14 +2189,14 @@ void add_soldier()
 
         n = n_mg_gb / 4;
 
-        // n_mg_gb¸ö¹­±ø
+        // n_mg_gbå€‹å¼“å…µ
         for (i = 0; i < n_mg_gb ; i ++)
         {
                 ob = new(XYNPC + "mggongbing");
 
-                // ·ÖÅäµ½ËÄ´óÃÅ
+                // åˆ†é…åˆ°å››å¤§é–€
 
-                // ¶«ÃÅ
+                // æ±é–€
                 if (i < n)
                 {
                         if (yb_attack_where != "none")
@@ -2211,7 +2211,7 @@ void add_soldier()
                         }
                 }
 
-                // ÄÏÃÅ
+                // å—é–€
                 if (i >= n && i < n * 2)
                 {
                         if (yb_attack_where != "none")
@@ -2226,7 +2226,7 @@ void add_soldier()
                         }
                 }
 
-                // Î÷ÃÅ
+                // è¥¿é–€
                 if (i >= n * 2 && i < n * 3)
                 {
                         if (yb_attack_where != "none")
@@ -2240,7 +2240,7 @@ void add_soldier()
                                 ob->move(doors["west"]);
                         }
                 }
-                // ±±ÃÅ
+                // åŒ—é–€
                 if (i >= n * 3)
                 {
                         if (yb_attack_where != "none")
@@ -2258,14 +2258,14 @@ void add_soldier()
 
         n = n_mg_bb / 4;
 
-        // n_mg_bb¸ö²½±ø
+        // n_mg_bbå€‹æ­¥å…µ
         for (i = 0; i < n_mg_bb ; i ++)
         {
                 ob = new(XYNPC + "mgbubing");
 
-                // ·ÖÅäµ½ËÄ´óÃÅ
+                // åˆ†é…åˆ°å››å¤§é–€
 
-                // ¶«ÃÅ
+                // æ±é–€
                 if (i < n)
                 {
                         if (yb_attack_where != "none")
@@ -2280,7 +2280,7 @@ void add_soldier()
                         }
                 }
 
-                // ÄÏÃÅ
+                // å—é–€
                 if (i >= n && i < n * 2)
                 {
                         if (yb_attack_where != "none")
@@ -2295,7 +2295,7 @@ void add_soldier()
                         }
                 }
 
-                // Î÷ÃÅ
+                // è¥¿é–€
                 if (i >= n * 2 && i < n * 3)
                 {
                         if (yb_attack_where != "none")
@@ -2309,7 +2309,7 @@ void add_soldier()
                                 ob->move(doors["west"]);
                         }
                 }
-                // ±±ÃÅ
+                // åŒ—é–€
                 if (i >= n * 3)
                 {
                         if (yb_attack_where != "none")
@@ -2325,7 +2325,7 @@ void add_soldier()
                 }
         }
         
-        // ÔÚmore_soldier_poisionÃÅ¶àÔö¼ÓMORE_SOLDIERÃûÊ¿±ø        
+        // åœ¨more_soldier_poisioné–€å¤šå¢åŠ MORE_SOLDIERåå£«å…µ        
         re_route = re_poision(more_soldier_poision);
 
         for (i = 0; i < MORE_SOLDIER ; i ++)
@@ -2347,7 +2347,7 @@ void add_soldier()
                 ob->move(doors[more_soldier_poision]);
         }
 
-        // ĞŞ¸ÄÃÉ¹Å¾üÊıÁ¿¼ÇÂ¼±í
+        // ä¿®æ”¹è’™å¤è»æ•¸é‡è¨˜éŒ„è¡¨
         key_n_soldier = keys(n_soldier);
 
         for (k = 0; k < sizeof(key_n_soldier); k ++ )
@@ -2359,8 +2359,8 @@ void add_soldier()
                                                });
         }
 
-            // ({ ÌúÆï¡¢ÕÜ±ğ¡¢¹­±ø¡¢ ²½±ø  })
-            // Ëæ»úÒ»¸öÃÅÊ¿±ø½Ï¶à
+            // ({ éµé¨ã€å“²åˆ¥ã€å¼“å…µã€ æ­¥å…µ  })
+            // éš¨æ©Ÿä¸€å€‹é–€å£«å…µè¼ƒå¤š
         n_soldier[more_soldier_poision] = ({ 
                                              n_soldier[more_soldier_poision][0] + MORE_SOLDIER,
                                              n_soldier[more_soldier_poision][1] + MORE_SOLDIER,
@@ -2368,23 +2368,23 @@ void add_soldier()
                                              n_soldier[more_soldier_poision][3] + MORE_SOLDIER,
                                           });
 
-        xywar_message(HIR "ÃÉ¹ÅÈËÔöÔ®²¿¶ÓÒÑµÖ´ïÏåÑô£¬²¢×¼±¸¿ªÊ¼¹¥³Ç¡£");
+        xywar_message(HIR "è’™å¤äººå¢æ´éƒ¨éšŠå·²æŠµé”è¥„é™½ï¼Œä¸¦æº–å‚™é–‹å§‹æ”»åŸã€‚");
 
-        // É¢²¼Ğé¼ÙÏûÏ¢
+        // æ•£å¸ƒè™›å‡æ¶ˆæ¯
         if (yb_attack_where != "none")
         {
                 string string_ran_doors = random_doors_name();
                 
-                xywar_message(HIY "ÃÉ¹Å´ó½«£ºÃÉ¹ÅÔ®¾üÌıÁî£¬ËùÓĞ·Ö¶Ó³¯×Å" + HIR + string_ran_doors +
-                              HIY "·½Ïò½ø¹¥£¬²»µÃÓĞÎó¡£" NOR);
-                xywar_message(NOR + YEL "Çê¿Ì¼ä£¬Àë" + string_ran_doors + NOR + YEL "²»Ô¶´¦£¬³¾ÍÁ·ÉÑï£¬"
-                              "ËÆºõ¾Û¼¯ÁË´óÁ¿¾ü¶Ó¡£" NOR);
+                xywar_message(HIY "è’™å¤å¤§å°‡ï¼šè’™å¤æ´è»è½ä»¤ï¼Œæ‰€æœ‰åˆ†éšŠæœè‘—" + HIR + string_ran_doors +
+                              HIY "æ–¹å‘é€²æ”»ï¼Œä¸å¾—æœ‰èª¤ã€‚" NOR);
+                xywar_message(NOR + YEL "é ƒåˆ»é–“ï¼Œé›¢" + string_ran_doors + NOR + YEL "ä¸é è™•ï¼Œå¡µåœŸé£›æšï¼Œ"
+                              "ä¼¼ä¹èšé›†äº†å¤§é‡è»éšŠã€‚" NOR);
         }
 
         return;
 }
 
-// ½­ºşÈËÊ¿Ö§Ô®
+// æ±Ÿæ¹–äººå£«æ”¯æ´
 void support_npc()
 {
         object ob1, ob2, ob3, ob4;
@@ -2396,21 +2396,21 @@ void support_npc()
         
         switch(random(2))
         {
-                // Ñî¹ıºÍĞ¡ÁúÅ®
+                // æ¥Šéå’Œå°é¾å¥³
                 case 0:
-                        call_out("xywar_message", 2, HIW "Ñî¹ı£º¹ù²®²®£¬ÏÖ½ñÏåÑôÓĞÄÑ£¬ÖïÉ±ÃÉ¹Å÷²×ÓÔõÄÜ²»Ëã¹ı¶ùÒ»·İ£¡" NOR);
-                        call_out("xywar_message", 5, HIW "Ğ¡ÁúÅ®£º¹ı¶ù£¬Äãµ½ÄÄ¶ùÎÒ¾Í¸úÄãµ½ÄÄ¶ù ¡­¡­" NOR);
-                        call_out("xywar_message", 8, HIY "¹ù¾¸´óĞ¦£ººÃºÃºÃ£¡ÄĞ¶ùÒÔ±£¼ÒÎÀ¹úÎª¼ºÈÎ£¬ÓĞ¹ı¶ùÄãºÍÁú¹ÃÄïÔÚ£¬ÎÒ¾Í·ÅĞÄÁË£¡" NOR);
-                        // Ëæ»úÑ¡ÔñÒ»¸öÃÅÊØ»¤
+                        call_out("xywar_message", 2, HIW "æ¥Šéï¼šéƒ­ä¼¯ä¼¯ï¼Œç¾ä»Šè¥„é™½æœ‰é›£ï¼Œèª…æ®ºè’™å¤éŸƒå­æ€èƒ½ä¸ç®—éå…’ä¸€ä»½ï¼" NOR);
+                        call_out("xywar_message", 5, HIW "å°é¾å¥³ï¼šéå…’ï¼Œä½ åˆ°å“ªå…’æˆ‘å°±è·Ÿä½ åˆ°å“ªå…’ â€¦â€¦" NOR);
+                        call_out("xywar_message", 8, HIY "éƒ­é–å¤§ç¬‘ï¼šå¥½å¥½å¥½ï¼ç”·å…’ä»¥ä¿å®¶è¡›åœ‹ç‚ºå·±ä»»ï¼Œæœ‰éå…’ä½ å’Œé¾å§‘å¨˜åœ¨ï¼Œæˆ‘å°±æ”¾å¿ƒäº†ï¼" NOR);
+                        // éš¨æ©Ÿé¸æ“‡ä¸€å€‹é–€å®ˆè­·
                         sp = keys(doors2);
                         pos = sp[random(sizeof(sp))];
                         guard_door = doors2[pos];
                         guard_door_name = doors2_name[pos];
-                        call_out("xywar_message", 12, HIW "Ñî¹ı£ºÎÒºÍÁú¶ùÒ²ÊÇÂ·¹ı´ËµØ£¬ÌıËµÃÉ¹ÅÈË½«ÒªÎ§¹¥ÏåÑô³Ç£¬ËùÒÔ±ãÀ´¿´¿´¡£" NOR);
-                        call_out("xywar_message", 15, HIW "Ñî¹ı£ºÎÒºÍÁú¶ù¾ö¶¨ÁËÒªÖú¹ù²®²®Ò»±ÛÖ®Á¦£¬±£ÎÀÏåÑô³Ç¡£" NOR);
-                        call_out("xywar_message", 18, HIW "Ğ¡ÁúÅ®ÍûÁË¹ù¾¸Ò»ÑÛµãÁËµãÍ·¡£" NOR);
-                        call_out("xywar_message", 20, HIY "¹ù¾¸¼¤¶¯µØËµµ½£ººÃ£¬¹ı¶ù¡£ÄÇÄãÃÇ¾ÍÊØ»¤" + HIR + guard_door_name + HIY "°É£¡" NOR);
-                        call_out("xywar_message", 22, HIW "ÑÔ±Ï£¬Ñî¹ıºÍĞ¡ÁúÅ®Ö±±¼" + guard_door_name + "¡£" NOR);
+                        call_out("xywar_message", 12, HIW "æ¥Šéï¼šæˆ‘å’Œé¾å…’ä¹Ÿæ˜¯è·¯éæ­¤åœ°ï¼Œè½èªªè’™å¤äººå°‡è¦åœæ”»è¥„é™½åŸï¼Œæ‰€ä»¥ä¾¿ä¾†çœ‹çœ‹ã€‚" NOR);
+                        call_out("xywar_message", 15, HIW "æ¥Šéï¼šæˆ‘å’Œé¾å…’æ±ºå®šäº†è¦åŠ©éƒ­ä¼¯ä¼¯ä¸€è‡‚ä¹‹åŠ›ï¼Œä¿è¡›è¥„é™½åŸã€‚" NOR);
+                        call_out("xywar_message", 18, HIW "å°é¾å¥³æœ›äº†éƒ­é–ä¸€çœ¼é»äº†é»é ­ã€‚" NOR);
+                        call_out("xywar_message", 20, HIY "éƒ­é–æ¿€å‹•åœ°èªªåˆ°ï¼šå¥½ï¼Œéå…’ã€‚é‚£ä½ å€‘å°±å®ˆè­·" + HIR + guard_door_name + HIY "å§ï¼" NOR);
+                        call_out("xywar_message", 22, HIW "è¨€ç•¢ï¼Œæ¥Šéå’Œå°é¾å¥³ç›´å¥”" + guard_door_name + "ã€‚" NOR);
                         
                         ob1 = new(YANGGUO);
                         ob2 = new(LONGNV);
@@ -2418,21 +2418,21 @@ void support_npc()
                         ob1->move(guard_door);
                         ob1->force_me("guard " + re_poision(pos));
                         ob2->move(guard_door);
-                        ob2->force_me("guard " + ob1->query("id")); // Ğ¡ÁúÅ®Ö»±£»¤Ñî¹ı
+                        ob2->force_me("guard " + ob1->query("id")); // å°é¾å¥³åªä¿è­·æ¥Šé
                         ob1->set("mate", ob2);
                         ob2->set("mate", ob1);
                         
-                        xy_msg1 = "Ñî¹ıºÍĞ¡ÁúÅ®Ç°À´Ö§Ô®£¬ÊØ»¤" + HIR + guard_door_name;
+                        xy_msg1 = "æ¥Šéå’Œå°é¾å¥³å‰ä¾†æ”¯æ´ï¼Œå®ˆè­·" + HIR + guard_door_name;
                         break;
 
-                // ¶«Ğ°µÈ
+                // æ±é‚ªç­‰
                 case 1:
-                        call_out("xywar_message", 2, HIW "»ÆÒ©Ê¦£ººß£¡ÃÉ¹Å÷²×Ó¾¹È»Èç´ËÏùÕÅ£¬ÎÒ»ÆÀÏĞ°¾ÍÆ«Òª¸úÄãÃÇ»á»á£¡" NOR);
-                        call_out("xywar_message", 6, HIY "Å·Ñô·æ£º¹ş¹ş¹ş£¡¼ÈÈ»»ÆÀÏĞ°ÓĞÕâ¸öÑÅĞË£¬ÄÇÎÒÎ÷¶¾Å·Ñô·æÔõÄÜ²»´Õ´ÕÈÈÄÖ£¬¹ş¹ş¹ş£¡" NOR);
-                        call_out("xywar_message", 10, HIM "Ò»µÆ´óÊ¦Ë«ÊÖºÏÊ®µÀ£º¿ÉÁ¯ÎÒÌìÏÂ²ÔÉúÓÖ½«ÖÃÉí»ğº££¬ÉúÁéÍ¿Ì¿£¬ÀÏñÄÆñÄÜ×øÊÓ²»Àí£¡" NOR);
-                        call_out("xywar_message", 14, HIG "ºéÆß¹«£º¹ş¹ş£¬ÕâÃ´ÈÈÄÖ£¿ÎÒÀÏ½Ğ»¨×Ó¿É²»ÄÜ´í¹ı¡­¡­" NOR);
-                        call_out("xywar_message", 18, HIC "¹ù¾¸Ò»Á³ĞË·Ü£ººÃºÃºÃ£¡ÏåÑôÓĞ¾ÈÁË£¡" NOR);
-                        call_out("xywar_message", 20, HIR "ÌıËµ¶«Ğ°¡¢Î÷¶¾¡¢ÄÏµÛ¡¢±±Ø¤ËÄ´ó×ÚÊ¦¼ÓÈëµ½ÏåÑô±£ÎÀÕ½µ±ÖĞ£¬¹²Í¬¿¹»÷ÃÉ¹ÅÈË¡£" NOR);
+                        call_out("xywar_message", 2, HIW "é»ƒè—¥å¸«ï¼šå“¼ï¼è’™å¤éŸƒå­ç«Ÿç„¶å¦‚æ­¤å›‚å¼µï¼Œæˆ‘é»ƒè€é‚ªå°±åè¦è·Ÿä½ å€‘æœƒæœƒï¼" NOR);
+                        call_out("xywar_message", 6, HIY "æ­é™½é‹’ï¼šå“ˆå“ˆå“ˆï¼æ—¢ç„¶é»ƒè€é‚ªæœ‰é€™å€‹é›…èˆˆï¼Œé‚£æˆ‘è¥¿æ¯’æ­é™½é‹’æ€èƒ½ä¸æ¹Šæ¹Šç†±é¬§ï¼Œå“ˆå“ˆå“ˆï¼" NOR);
+                        call_out("xywar_message", 10, HIM "ä¸€ç‡ˆå¤§å¸«é›™æ‰‹åˆåé“ï¼šå¯æ†æˆ‘å¤©ä¸‹è’¼ç”Ÿåˆå°‡ç½®èº«ç«æµ·ï¼Œç”Ÿéˆå¡—ç‚­ï¼Œè€è¡²è±ˆèƒ½åè¦–ä¸ç†ï¼" NOR);
+                        call_out("xywar_message", 14, HIG "æ´ªä¸ƒå…¬ï¼šå“ˆå“ˆï¼Œé€™éº¼ç†±é¬§ï¼Ÿæˆ‘è€å«èŠ±å­å¯ä¸èƒ½éŒ¯éâ€¦â€¦" NOR);
+                        call_out("xywar_message", 18, HIC "éƒ­é–ä¸€è‡‰èˆˆå¥®ï¼šå¥½å¥½å¥½ï¼è¥„é™½æœ‰æ•‘äº†ï¼" NOR);
+                        call_out("xywar_message", 20, HIR "è½èªªæ±é‚ªã€è¥¿æ¯’ã€å—å¸ã€åŒ—ä¸å››å¤§å®—å¸«åŠ å…¥åˆ°è¥„é™½ä¿è¡›æˆ°ç•¶ä¸­ï¼Œå…±åŒæŠ—æ“Šè’™å¤äººã€‚" NOR);
                         
                         ob1 = new(DONGXIE);
                         ob2 = new(XIDU);
@@ -2447,7 +2447,7 @@ void support_npc()
                         ob4->move(doors2["north"]);
                         ob4->force_me("guard " + "south");        
 
-                        xy_msg1 = "¶«Ğ°¡¢Î÷¶¾¡¢ÄÏµÛ¡¢±±Ø¤ËÄ´ó¸ßÊÖÇ°À´ÔöÔ®£¬·Ö±ğÊØ»¤ËÄÃÅ¡£";        
+                        xy_msg1 = "æ±é‚ªã€è¥¿æ¯’ã€å—å¸ã€åŒ—ä¸å››å¤§é«˜æ‰‹å‰ä¾†å¢æ´ï¼Œåˆ†åˆ¥å®ˆè­·å››é–€ã€‚";        
 
                         break;
                         
@@ -2459,44 +2459,44 @@ void support_npc()
 void start_story(int i)
 {
         string *story = ({
-                "ËÎ³¯Ä©Äê£¬³¯Í¢»èÓ¹¸¯°Ü£¬ÃÉ¹ÅÈË´ó¾Ù·¥ËÎ£¬ÌìÏÂÉúÁéÍ¿Ì¿£¬Ãñ²»ÁÄÉú ¡­¡­",
-                "ÏåÑô³ÇÄËËÎ³¯Õ½ÂÔÒªµØ£¬Á¬ÄêÀ´Îª¶áÈ¡ÏåÑô£¬ÃÉ¹ÅÈËÆğÓÃÖØ±øÎ§¹¥ ¡­¡­",
-                "µ«ÊÇ£¬¹ù¾¸»ÆÈØ·ò¸¾³¤ÄêÀ´´øÁìÏåÑô±øÊ¿£¬ËÀÊØ³Ç³Ø£¬ÍçÇ¿µÖ¿¹£¬ÁîÃÉ¹ÅÈË¾Ã¹¥²»ÏÂ¡£",
-                "ÃÉ¹Å¾üÓª ¡­¡­",
-                "³É¼ªË¼º¹£ºÏåÑô²»È¡£¬ÄÑÒÔ³É¾ÍÎÒÃÉ¹Å´óÒµ£¬¿´À´ĞèÒª¼ÓÅÉ±øÁ¦Ç¿¹¥ÏåÑô³Ç£¡",
-                "³É¼ªË¼º¹£º´«ÎÒºÅÁî£¬¼ÓÅÉ±øÁ¦£¬×¼±¸Ç¿¹¥ÏåÑô£¬´Ë´ÎÒ»¶¨Òª½«ÏåÑô³ÇÄÃÏÂ¡£",
-                HIR "ÌáÊ¾£ºÃÉ¹Å³É¼ªË¼º¹ÅÉ³öÖØ±ø½ø¹¥ÏåÑô£¡" NOR,
-                "ÏåÑô³ÇÄÚ¡£"
-                "ËÎ±ø£º±¨£¡£¬¾İÇ°·½Ì½×Ó»Ø±¨£¬ÃÉ¹ÅÈËÒÑÅÉ±øÖ±±ÆÏåÑô£¡£¡£¡",
-                "¹ù¾¸£º°¥£¬ÃÉ¹ÅÈË¾Ã¹¥ÏåÑô²»ÏÂ£¬Õâ´ÎÒ»¶¨ÓÖ¼ÓÖØ±øÁ¦£¬ÓûÇ¿È¡ÎÒÏåÑô³Ç¡£",
-                "¹ù¾¸¶ÙÁË¶Ù¶ÔËÎ±ø·Ô¸ÀµÀ£º´«ÁîÏåÑôËùÓĞ¾üÊ¿¼ÓÇ¿½ä±¸£¬µÈ´ıºÅÁî£¡",
-                "ËÎ±øÓ¦ÁËÒ»Éù×ªÉí³öÈ¥¡£",
-                "¹ù¾¸³¤Ì¾µÀ£ºÕâ´ÎÃÉ¹ÅÈË´ó¾Ù½ø¹¥ÏåÑô£¬²»ÖªµÀÓÖÒªÓĞ¶àÉÙÎŞ¹¼µÄÈËÎşÉü£¬°¥...",
-                "¹ù¾¸¶ÙÁË¶Ù¶Ô×øÔÚÒ»ÅÔµÄ»ÆÈØËµµÀ£ºÕâ´ÎÃÉ¹ÅÈËÀ´ÊÆĞÚĞÚ£¬¶ÔÏåÑôÖ¾ÔÚ±ØµÃ£¬ÒÔÄ¿Ç°ÏåÑô³ÇµÄ±øÁ¦¿ÖÅÂ¼áÊØ²»ÁË¶à¾Ã£¬\n"
-                "            ²»ÖªÈØ¶ùÄãÓĞÊ²Ã´ºÃ°ì·¨¿ÉÒÔ°ïÖú¶É¹ıÕâÒ»´ÎÎ£ÄÑ£¬±£×¡ÏåÑô³Ç£¡",
-                "»ÆÈØÕ¾ÆğÔÚ·¿ÖĞ×ßÁËÒ»È¦¶Ô¹ù¾¸ËµµÀ£ºÒÔÄ¿Ç°µÄĞÎÊÆ¿´£¬µĞÇ¿ÎÒÈõ£¬Èç¹û¹â¿¿ÏåÑô³ÇÄ¿Ç°Õâµã±øÁ¦¿ÖÅÂ ¡­¡­",
-                "»ÆÈØ¶ÙÁË¶ÙÓÖµÀ£º²»ÈçÒÔ¾¸¸ç¸çÄãµÄ´óÃû£¬ÕĞÄ¼ÌìÏÂÓ¢ĞÛºÀ½ÜÀ´´Ë¹²Í¬×÷Õ½£¬»ò¿É±£×¡ÏåÑô³Ç¡£",
-                "¹ù¾¸ÃÍÈ»¼äÊÖÒ»ÅÄ×À×Ó½«ÕıÔÚË¼Ë÷µÄ»ÆÈØÏÅÁËÒ»´óÌø£ººÃ£¬¾ÍÕâÃ´¾ö¶¨ÁË£¬Õâ´ÎÎŞÂÛÈçºÎ¶¼ÒªÊØ×¡ÏåÑô³Ç¡£",
-                "»ÆÈØ£º@@",
-                "´ËÊ±£¬Ò»Î»ËÎ±ø¼±´Ò´ÒµØÅÜÁË½øÀ´µÀ£º¹ù½«¾ü£¬¾İÌ½×Ó»Ø±¨£¬ÃÉ¹Å¾üÒÑ±Æ½üÏåÑô£¬´óÔ¼Îå·ÖÖÓºó¿ÉµÖ´ï³ÇÍâ£¡",
-                "¹ù¾¸ÕıÉ«µÀ£º´«ÁîÏåÑôÈ«Ìå¾üÊ¿£¬Õñ×÷¾«Éñ£¬ËæÊ±×¼±¸ºÍÃÉ¹ÅÈË¿ªÕ½¡£",
-                "ËÎ¾üÓ¦ÁËÒ»Éù£¬×ªÉíÅÜ³öÈ¥¡£",
-                "¹ù¾¸ºÍ»ÆÈØµÍÉù½»Ì¸ÁË¼¸¾äºóÒ²¸ú×Å³öÈ¥£¬Ö±±¼¾üÓª ¡­¡­ ´óÕ½Ò»´¥¼´·¢£¡",
-                HIR "ÌáÊ¾£ºÃÉ¹Å¾ü¶Ó½«ÓÚÎå·ÖÖÓºóµÖ´ïÏåÑô³ÇÍâ£¬ÇëÕıÔÚÈÎÎñµÄÍæ¼ÒÍ£Ö¹ÈÎÎñ£¬ÒÔÃâÎŞ¹¼ÊÜº¦£¡£¡£¡" NOR,
+                "å®‹æœæœ«å¹´ï¼Œæœå»·æ˜åº¸è…æ•—ï¼Œè’™å¤äººå¤§èˆ‰ä¼å®‹ï¼Œå¤©ä¸‹ç”Ÿéˆå¡—ç‚­ï¼Œæ°‘ä¸èŠç”Ÿ â€¦â€¦",
+                "è¥„é™½åŸä¹ƒå®‹æœæˆ°ç•¥è¦åœ°ï¼Œé€£å¹´ä¾†ç‚ºå¥ªå–è¥„é™½ï¼Œè’™å¤äººèµ·ç”¨é‡å…µåœæ”» â€¦â€¦",
+                "ä½†æ˜¯ï¼Œéƒ­é–é»ƒè“‰å¤«å©¦é•·å¹´ä¾†å¸¶é ˜è¥„é™½å…µå£«ï¼Œæ­»å®ˆåŸæ± ï¼Œé ‘å¼·æŠµæŠ—ï¼Œä»¤è’™å¤äººä¹…æ”»ä¸ä¸‹ã€‚",
+                "è’™å¤è»ç‡Ÿ â€¦â€¦",
+                "æˆå‰æ€æ±—ï¼šè¥„é™½ä¸å–ï¼Œé›£ä»¥æˆå°±æˆ‘è’™å¤å¤§æ¥­ï¼Œçœ‹ä¾†éœ€è¦åŠ æ´¾å…µåŠ›å¼·æ”»è¥„é™½åŸï¼",
+                "æˆå‰æ€æ±—ï¼šå‚³æˆ‘è™Ÿä»¤ï¼ŒåŠ æ´¾å…µåŠ›ï¼Œæº–å‚™å¼·æ”»è¥„é™½ï¼Œæ­¤æ¬¡ä¸€å®šè¦å°‡è¥„é™½åŸæ‹¿ä¸‹ã€‚",
+                HIR "æç¤ºï¼šè’™å¤æˆå‰æ€æ±—æ´¾å‡ºé‡å…µé€²æ”»è¥„é™½ï¼" NOR,
+                "è¥„é™½åŸå…§ã€‚"
+                "å®‹å…µï¼šå ±ï¼ï¼Œæ“šå‰æ–¹æ¢å­å›å ±ï¼Œè’™å¤äººå·²æ´¾å…µç›´é€¼è¥„é™½ï¼ï¼ï¼",
+                "éƒ­é–ï¼šå“ï¼Œè’™å¤äººä¹…æ”»è¥„é™½ä¸ä¸‹ï¼Œé€™æ¬¡ä¸€å®šåˆåŠ é‡å…µåŠ›ï¼Œæ¬²å¼·å–æˆ‘è¥„é™½åŸã€‚",
+                "éƒ­é–é “äº†é “å°å®‹å…µå©å’é“ï¼šå‚³ä»¤è¥„é™½æ‰€æœ‰è»å£«åŠ å¼·æˆ’å‚™ï¼Œç­‰å¾…è™Ÿä»¤ï¼",
+                "å®‹å…µæ‡‰äº†ä¸€è²è½‰èº«å‡ºå»ã€‚",
+                "éƒ­é–é•·å˜†é“ï¼šé€™æ¬¡è’™å¤äººå¤§èˆ‰é€²æ”»è¥„é™½ï¼Œä¸çŸ¥é“åˆè¦æœ‰å¤šå°‘ç„¡è¾œçš„äººçŠ§ç‰²ï¼Œå“...",
+                "éƒ­é–é “äº†é “å°ååœ¨ä¸€æ—çš„é»ƒè“‰èªªé“ï¼šé€™æ¬¡è’™å¤äººä¾†å‹¢æ´¶æ´¶ï¼Œå°è¥„é™½å¿—åœ¨å¿…å¾—ï¼Œä»¥ç›®å‰è¥„é™½åŸçš„å…µåŠ›ææ€•å …å®ˆä¸äº†å¤šä¹…ï¼Œ\n"
+                "            ä¸çŸ¥è“‰å…’ä½ æœ‰ä»€éº¼å¥½è¾¦æ³•å¯ä»¥å¹«åŠ©æ¸¡éé€™ä¸€æ¬¡å±é›£ï¼Œä¿ä½è¥„é™½åŸï¼",
+                "é»ƒè“‰ç«™èµ·åœ¨æˆ¿ä¸­èµ°äº†ä¸€åœˆå°éƒ­é–èªªé“ï¼šä»¥ç›®å‰çš„å½¢å‹¢çœ‹ï¼Œæ•µå¼·æˆ‘å¼±ï¼Œå¦‚æœå…‰é è¥„é™½åŸç›®å‰é€™é»å…µåŠ›ææ€• â€¦â€¦",
+                "é»ƒè“‰é “äº†é “åˆé“ï¼šä¸å¦‚ä»¥é–å“¥å“¥ä½ çš„å¤§åï¼Œæ‹›å‹Ÿå¤©ä¸‹è‹±é›„è±ªå‚‘ä¾†æ­¤å…±åŒä½œæˆ°ï¼Œæˆ–å¯ä¿ä½è¥„é™½åŸã€‚",
+                "éƒ­é–çŒ›ç„¶é–“æ‰‹ä¸€æ‹æ¡Œå­å°‡æ­£åœ¨æ€ç´¢çš„é»ƒè“‰åš‡äº†ä¸€å¤§è·³ï¼šå¥½ï¼Œå°±é€™éº¼æ±ºå®šäº†ï¼Œé€™æ¬¡ç„¡è«–å¦‚ä½•éƒ½è¦å®ˆä½è¥„é™½åŸã€‚",
+                "é»ƒè“‰ï¼š@@",
+                "æ­¤æ™‚ï¼Œä¸€ä½å®‹å…µæ€¥åŒ†åŒ†åœ°è·‘äº†é€²ä¾†é“ï¼šéƒ­å°‡è»ï¼Œæ“šæ¢å­å›å ±ï¼Œè’™å¤è»å·²é€¼è¿‘è¥„é™½ï¼Œå¤§ç´„äº”åˆ†é˜å¾Œå¯æŠµé”åŸå¤–ï¼",
+                "éƒ­é–æ­£è‰²é“ï¼šå‚³ä»¤è¥„é™½å…¨é«”è»å£«ï¼ŒæŒ¯ä½œç²¾ç¥ï¼Œéš¨æ™‚æº–å‚™å’Œè’™å¤äººé–‹æˆ°ã€‚",
+                "å®‹è»æ‡‰äº†ä¸€è²ï¼Œè½‰èº«è·‘å‡ºå»ã€‚",
+                "éƒ­é–å’Œé»ƒè“‰ä½è²äº¤è«‡äº†å¹¾å¥å¾Œä¹Ÿè·Ÿè‘—å‡ºå»ï¼Œç›´å¥”è»ç‡Ÿ â€¦â€¦ å¤§æˆ°ä¸€è§¸å³ç™¼ï¼",
+                HIR "æç¤ºï¼šè’™å¤è»éšŠå°‡äºäº”åˆ†é˜å¾ŒæŠµé”è¥„é™½åŸå¤–ï¼Œè«‹æ­£åœ¨ä»»å‹™çš„ç©å®¶åœæ­¢ä»»å‹™ï¼Œä»¥å…ç„¡è¾œå—å®³ï¼ï¼ï¼" NOR,
         });
         
         
         
-        // Îå·ÖÖÓºó
-        // ¶ş·ÖÖÓºó
-        // Ëæ»úÅĞ¶ÏÊÇ·ñ½­ºşÈËÊ¿²ÎÓë
+        // äº”åˆ†é˜å¾Œ
+        // äºŒåˆ†é˜å¾Œ
+        // éš¨æ©Ÿåˆ¤æ–·æ˜¯å¦æ±Ÿæ¹–äººå£«åƒèˆ‡
         if (i >= sizeof(story))
         {
                 remove_call_out("init_soldier");
                 if (TEST)call_out("init_soldier", 5);
-                else call_out("init_soldier", 300); // ³õÊ¼»¯±ØÒªÊı¾İ
+                else call_out("init_soldier", 300); // åˆå§‹åŒ–å¿…è¦æ•¸æ“š
                 
-                // ½­ºşÈËÊ¿×ÊÔ®ÏåÑô
+                // æ±Ÿæ¹–äººå£«è³‡æ´è¥„é™½
                 remove_call_out("support_npc");
                 if (TEST)call_out("support_npc", 2);
                 else call_out("support_npc", 120);
@@ -2512,43 +2512,43 @@ void start_story(int i)
         return;
 }
 
-// ¿ªÊ¼ÏåÑôÕ½
+// é–‹å§‹è¥„é™½æˆ°
 void start_xywar()
 {
         /*
-        1¡¢·ÖÅä¾ü¶ÓÊıÁ¿£¬½ô¸ù×Å¿ªÊ¼¹ÊÊÂÇé½ÚĞğÊö
-        2¡¢1¡¢Íê³ÉÎå·ÖÖÓºó³õÊ¼»¯-->init_soldier()
-        3¡¢ÕıÊ½Æô¶¯Õ½¶·
+        1ã€åˆ†é…è»éšŠæ•¸é‡ï¼Œç·Šæ ¹è‘—é–‹å§‹æ•…äº‹æƒ…ç¯€æ•˜è¿°
+        2ã€1ã€å®Œæˆäº”åˆ†é˜å¾Œåˆå§‹åŒ–-->init_soldier()
+        3ã€æ­£å¼å•Ÿå‹•æˆ°é¬¥
         */
 
-        start_status = 1;    // ÉèÖÃÇé½Ú¿ªÊ¼ÒÔÃâÏµÍ³ÖØ¸´µ÷ÓÃ
-        start_time = time();  // ÉèÖÃ¿ªÊ¼Ê±¼ä
+        start_status = 1;    // è¨­ç½®æƒ…ç¯€é–‹å§‹ä»¥å…ç³»çµ±é‡å¾©èª¿ç”¨
+        start_time = time();  // è¨­ç½®é–‹å§‹æ™‚é–“
 
-        RAN_NUM = 100 + random(900); // ²úÉú±¾´ÎÏåÑô±£ÎÀÕ½ĞòÁĞºÅ£¬¹²ÈıÎ»Êı
+        RAN_NUM = 100 + random(900); // ç”¢ç”Ÿæœ¬æ¬¡è¥„é™½ä¿è¡›æˆ°åºåˆ—è™Ÿï¼Œå…±ä¸‰ä½æ•¸
         
-        allot_soldier(); // ·ÖÅä¾ü¶ÓÊıÁ¿
+        allot_soldier(); // åˆ†é…è»éšŠæ•¸é‡
 
-        // ¿ªÊ¼ĞğÊö¹ÊÊÂ
+        // é–‹å§‹æ•˜è¿°æ•…äº‹
         start_story(0);
 
 }
 
-// ·µ»Ø±¾´ÎÍæ¼Ò½«Áì
-// Èç¹ûÆäÍË³öÕ½¶·Ôò·µ»Ø ¡°ÎŞ¡°
+// è¿”å›æœ¬æ¬¡ç©å®¶å°‡é ˜
+// å¦‚æœå…¶é€€å‡ºæˆ°é¬¥å‰‡è¿”å› â€œç„¡â€œ
 string leader_player()
 {        
-        if (! if_sign_up(player_leader))return "ÎŞ";
+        if (! if_sign_up(player_leader))return "ç„¡";
         
         return player_leader;
 }
 
-// Íæ¼Ò¿É¿ØÖÆÏåÑôÊØ¾ü
-// 1¡¢²éÑ¯Ä¿Ç°ÊØ¾üÊØÎÀµØµã
-// 2¡¢ÉèÖÃÊØ¾ü¼¯ºÏ±øÁ¦ÊØÎÀµØµã
-// Èç¹ûÏåÑôÊ¿±øËÀÍêÔòÎŞ·¨ÔÙÏÔÊ¾
-// ÃÉ¹Å¾üÅÉÇ²Ô®¾üºó1·ÖÖÓÄÚÎŞ·¨²éÑ¯
+// ç©å®¶å¯æ§åˆ¶è¥„é™½å®ˆè»
+// 1ã€æŸ¥è©¢ç›®å‰å®ˆè»å®ˆè¡›åœ°é»
+// 2ã€è¨­ç½®å®ˆè»é›†åˆå…µåŠ›å®ˆè¡›åœ°é»
+// å¦‚æœè¥„é™½å£«å…µæ­»å®Œå‰‡ç„¡æ³•å†é¡¯ç¤º
+// è’™å¤è»æ´¾é£æ´è»å¾Œ1åˆ†é˜å…§ç„¡æ³•æŸ¥è©¢
 
-// ²éÑ¯ÊØ¾ü¼°ÃÉ¹Å¾üÇé¿ö
+// æŸ¥è©¢å®ˆè»åŠè’™å¤è»æƒ…æ³
 void show_soldier(object me)
 {
         int total, xytotal, w, e, s, n;
@@ -2561,21 +2561,21 @@ void show_soldier(object me)
         s = total_menggu_soldier("south");
         n = total_menggu_soldier("north");
                 
-        msg =  HIR "\n¸ù¾İÌ½×ÓµÄÏûÏ¢£¬´øÀ´ÒÔÏÂÏåÑôÕ½±¨£º\n" NOR;
+        msg =  HIR "\næ ¹æ“šæ¢å­çš„æ¶ˆæ¯ï¼Œå¸¶ä¾†ä»¥ä¸‹è¥„é™½æˆ°å ±ï¼š\n" NOR;
         msg += HIC "--------------------------------------------------------------------\n" NOR;
         if (time() - last_move_xysolder < 60)
         {
-                msg += HIG "ÃÉ¹Å¾ü¸ÕÔöÅÉÁË´óÁ¿Ô®¾ü£¬Ä¿Ç°×¼È·ÈËÊıÕıÔÚ´ÌÌ½µ±ÖĞ ¡­¡­\n" NOR;
+                msg += HIG "è’™å¤è»å‰›å¢æ´¾äº†å¤§é‡æ´è»ï¼Œç›®å‰æº–ç¢ºäººæ•¸æ­£åœ¨åˆºæ¢ç•¶ä¸­ â€¦â€¦\n" NOR;
         }
         else
         {
-                msg += HIG "ÃÉ¹Å¾ü×ÜÊı£º" HIR + sprintf("%d", total) + HIG "ÈË£¬ÆäÖĞ£º" 
-                       "ÇàÁúÃÅ" HIR + sprintf("%d", e) + HIG "ÈË£¬ÖìÈ¸ÃÅ" HIR + sprintf("%d", s) + HIG "ÈË£¬"
-                       "°×»¢ÃÅ" HIR + sprintf("%d", w) + HIG "ÈË£¬ĞşÎäÃÅ" HIR + sprintf("%d", n) + HIG "ÈË¡£\n" NOR;
+                msg += HIG "è’™å¤è»ç¸½æ•¸ï¼š" HIR + sprintf("%d", total) + HIG "äººï¼Œå…¶ä¸­ï¼š" 
+                       "é’é¾é–€" HIR + sprintf("%d", e) + HIG "äººï¼Œæœ±é›€é–€" HIR + sprintf("%d", s) + HIG "äººï¼Œ"
+                       "ç™½è™é–€" HIR + sprintf("%d", w) + HIG "äººï¼Œç„æ­¦é–€" HIR + sprintf("%d", n) + HIG "äººã€‚\n" NOR;
         }
 
-        msg += HIW "ÏåÑôÊØ¾ü×ÜÈËÊı: " HIR + sprintf("%d", xytotal) + HIW "ÈË£¬Ö÷Òª¼¯ÖĞÔÚ" HIR + 
-               xy_soldier_poision("name") + "(" + xy_soldier_poision("poision") + HIW ")¡£\n" NOR;    
+        msg += HIW "è¥„é™½å®ˆè»ç¸½äººæ•¸: " HIR + sprintf("%d", xytotal) + HIW "äººï¼Œä¸»è¦é›†ä¸­åœ¨" HIR + 
+               xy_soldier_poision("name") + "(" + xy_soldier_poision("poision") + HIW ")ã€‚\n" NOR;    
         msg += HIC "--------------------------------------------------------------------\n" NOR;        
 
         tell_object(me, msg);
@@ -2584,8 +2584,8 @@ void show_soldier(object me)
 }
 
 
-// µ÷¶¯ÏåÑôÊØ¾ü
-// È¨ÏŞÔÚ/cmds/usr/xy.c Àï×öÅĞ¶Ï
+// èª¿å‹•è¥„é™½å®ˆè»
+// æ¬Šé™åœ¨/cmds/usr/xy.c è£¡åšåˆ¤æ–·
 void move_xysoldier(object me, string p)
 {
         int xytotal;
@@ -2593,14 +2593,14 @@ void move_xysoldier(object me, string p)
         
         if (now_status() != WARRING && now_status() != WAIT_START)
         {
-                write("ÏåÑô±£ÎÀÕ½»¹Ã»ÓĞ¿ªÊ¼£¬ÄãÎŞ·¨µ÷¶¯ÏåÑôÊØ¾ü¡£\n");
+                write("è¥„é™½ä¿è¡›æˆ°é‚„æ²’æœ‰é–‹å§‹ï¼Œä½ ç„¡æ³•èª¿å‹•è¥„é™½å®ˆè»ã€‚\n");
                 return;
         }
         
-        // ÉÏ´Îµ÷¶¯Ê±¼ä¼ä¸ôÖÁÉÙÎªMOVE_WAITÃë
+        // ä¸Šæ¬¡èª¿å‹•æ™‚é–“é–“éš”è‡³å°‘ç‚ºMOVE_WAITç§’
         if (time() - last_move_xysolder < MOVE_WAIT)
         {
-                write("¾àÀëÉÏ´Îµ÷¶¯ÏåÑôÊØ¾üÊ±¼ä²»×ã60Ãë£¬Ê¿±øÆ£±¹£¬ÎŞ·¨Á¬Ğøµ÷¶¯¡£\n");
+                write("è·é›¢ä¸Šæ¬¡èª¿å‹•è¥„é™½å®ˆè»æ™‚é–“ä¸è¶³60ç§’ï¼Œå£«å…µç–²æ†Šï¼Œç„¡æ³•é€£çºŒèª¿å‹•ã€‚\n");
                 return;
         }
         
@@ -2608,47 +2608,47 @@ void move_xysoldier(object me, string p)
         
         if (xytotal < 5)
         {
-                write("Ä¿Ç°ÏåÑôÊØ¾üÊıÁ¿Ì«ÉÙ£¬ÎŞ·¨½øĞĞµ÷¶¯¡£\n");
+                write("ç›®å‰è¥„é™½å®ˆè»æ•¸é‡å¤ªå°‘ï¼Œç„¡æ³•é€²è¡Œèª¿å‹•ã€‚\n");
                 return;
         }
         
         if (p != "west" && p != "east" && p != "north" && p != "south")
         {
-                write("ÄãÒª½«ÏåÑôÊØ¾üÍùÄÄ¸ö·½Ïòµ÷¶¯£¿(west|north|east|south)\n");
+                write("ä½ è¦å°‡è¥„é™½å®ˆè»å¾€å“ªå€‹æ–¹å‘èª¿å‹•ï¼Ÿ(west|north|east|south)\n");
                 return;
         }
         
-        // ÉèÖÃÏåÑôÊØ¾üĞÂµÄ·ÀÊØ·½Ïò
+        // è¨­ç½®è¥„é™½å®ˆè»æ–°çš„é˜²å®ˆæ–¹å‘
         xysb_poision = p;
         
-        // ÉèÖÃµ÷¶¯Ê±¼ä
+        // è¨­ç½®èª¿å‹•æ™‚é–“
         last_move_xysolder = time();
         
-        write("ÄãÒÑ¾­ÏÂÁîµ÷¶¯ÏåÑôÊØ¾ü£¬ÏåÑôÊØ¾üÕı¸ÏÍù" + HIY + xy_soldier_poision("name") + NOR "µØµãµÖÓùÃÉ¹ÅÈË¡£\n" NOR);
+        write("ä½ å·²ç¶“ä¸‹ä»¤èª¿å‹•è¥„é™½å®ˆè»ï¼Œè¥„é™½å®ˆè»æ­£è¶•å¾€" + HIY + xy_soldier_poision("name") + NOR "åœ°é»æŠµå¾¡è’™å¤äººã€‚\n" NOR);
         
-        xywar_message(HIG + me->name() + "ÕıÔÚµ÷¶¯ÏåÑôÊØ¾ü£¬ÏåÑôÊØ¾üÒÑ¾­¸ÏÍù" + HIY + xy_soldier_poision("name") + HIG "µØµãµÖÓùÃÉ¹ÅÈË¡£\n" NOR);
+        xywar_message(HIG + me->name() + "æ­£åœ¨èª¿å‹•è¥„é™½å®ˆè»ï¼Œè¥„é™½å®ˆè»å·²ç¶“è¶•å¾€" + HIY + xy_soldier_poision("name") + HIG "åœ°é»æŠµå¾¡è’™å¤äººã€‚\n" NOR);
         
-        if (tiemuzhen)dj_name = "³É¼ªË¼º¹";
-        else dj_name = "ÃÉ¹Å´ó½«";
+        if (tiemuzhen)dj_name = "æˆå‰æ€æ±—";
+        else dj_name = "è’™å¤å¤§å°‡";
         
         switch(random(5))
         {
                 case 0:
-                        msg = "ºß£¬´Ë´ÎÏåÑô³ÇÖÁÔÚ±ØµÃ£¬ÕâÖ»ÊÇËÎ¾üÔÚ×ö´¹ËÀµÄµÖ¿¹¡£";
+                        msg = "å“¼ï¼Œæ­¤æ¬¡è¥„é™½åŸè‡³åœ¨å¿…å¾—ï¼Œé€™åªæ˜¯å®‹è»åœ¨åšå‚æ­»çš„æŠµæŠ—ã€‚";
                         break;
                 case 1:
-                        msg = "¹ş¹ş¹ş£¬µñ³æĞ¡¼¼£¬²»¹ıÊÇÒÔÂÑ»÷Ê¯£¬ó«±Ûµ±³µ¶øÒÑ¡£";
+                        msg = "å“ˆå“ˆå“ˆï¼Œé›•èŸ²å°æŠ€ï¼Œä¸éæ˜¯ä»¥åµæ“ŠçŸ³ï¼Œè³è‡‚ç•¶è»Šè€Œå·²ã€‚";
                         break;                        
                 case 2:
-                        msg = "ß×£¿´Î´ËËÎ¾ü½«ÁìÊÇºÎĞíÈËÒ²£¿¾¹È»¶®µÃÈç´ËÓÃ±ø£¬¿´À´ÖĞÔ­ÈË²Å±²³ö£¬ÎÒµÈÇĞ²»¿ÉÇáµĞ¡£";
+                        msg = "å’¦ï¼Ÿæ¬¡æ­¤å®‹è»å°‡é ˜æ˜¯ä½•è¨±äººä¹Ÿï¼Ÿç«Ÿç„¶æ‡‚å¾—å¦‚æ­¤ç”¨å…µï¼Œçœ‹ä¾†ä¸­åŸäººæ‰è¼©å‡ºï¼Œæˆ‘ç­‰åˆ‡ä¸å¯è¼•æ•µã€‚";
                         break;
                 
                 default:
-                        msg = "ºß£¬ÎÒÃÉ¹ÅÓÂÊ¿ÒÔÒ»µĞÊ®£¬¶ûµÈÀÏÈõ²Ğ±øÆñÄÜÓëÎÒÃÉ¹ÅÈËµÄÕù·æ¡£";
+                        msg = "å“¼ï¼Œæˆ‘è’™å¤å‹‡å£«ä»¥ä¸€æ•µåï¼Œçˆ¾ç­‰è€å¼±æ®˜å…µè±ˆèƒ½èˆ‡æˆ‘è’™å¤äººçš„çˆ­é‹’ã€‚";
                         break;                
         }
         
-        msg = HIM + dj_name + "£º" + msg + NOR;
+        msg = HIM + dj_name + "ï¼š" + msg + NOR;
 
         xywar_message(msg);
         
@@ -2656,67 +2656,67 @@ void move_xysoldier(object me, string p)
 }
 
 
-// µ÷ÓÃÃÉ¹Å¾üÕ½Êõ
-// Ôö¼ÓÔ®¾ü
+// èª¿ç”¨è’™å¤è»æˆ°è¡“
+// å¢åŠ æ´è»
 void combat_add_soldier()
 {
             
-            // ×î¶àÔö¼ÓADD_MGB_TIMES´Î
+            // æœ€å¤šå¢åŠ ADD_MGB_TIMESæ¬¡
             if (add_mgb_times >= ADD_MGB_TIMES)
             {
-                    write("ÔöÔ®´ÎÊıÒÑ´ï¼«ÏŞ¡£\n");
+                    write("å¢æ´æ¬¡æ•¸å·²é”æ¥µé™ã€‚\n");
                     return;
             }
 
             if (now_status() != WARRING && now_status() != WAIT_START)
             {
-                    write("Õ½¶·»¹Ã»ÓĞ¿ªÊ¼ÄØ¡£\n");
+                    write("æˆ°é¬¥é‚„æ²’æœ‰é–‹å§‹å‘¢ã€‚\n");
                     return;
             }
 
             last_add_mgb_time = time();
             add_mgb_times += 1;
             
-            write(HIW "ÄãÏÂÁîÅÉ³öÃÉ¹Å¾üÔöÔ®¡£\n" NOR);
+            write(HIW "ä½ ä¸‹ä»¤æ´¾å‡ºè’™å¤è»å¢æ´ã€‚\n" NOR);
 
-            // ¿ªÊ¼×¼±¸µ÷¶¯            
-            xywar_message(HIR "ÃÉ¹ÅÈËµãÈ¼ÁËÀÇÑÌ£¬Í¨ÖªÃÉ¹Å¾üÔöÔ®¡£" NOR);
+            // é–‹å§‹æº–å‚™èª¿å‹•            
+            xywar_message(HIR "è’™å¤äººé»ç‡ƒäº†ç‹¼ç…™ï¼Œé€šçŸ¥è’™å¤è»å¢æ´ã€‚" NOR);
 
-            // ÑÓ³ÙÅÉ±ø
+            // å»¶é²æ´¾å…µ
             remove_call_out("delay_add_soldier");
             call_out("delay_add_soldier", 30 + random(10));
 
-            call_out("xywar_message", 3, HIR "ÃÉ¹ÅÔ®¾üÒÑ¾­ÊÕµ½Ñ¶Ï¢£¬×¼±¸¿ªÊ¼µ÷¶¯¡£");
-            call_out("xywar_message", 8, HIR "ÃÉ¹ÅÔöÔ®²¿¶ÓÒÑ¿ªÊ¼Æğ³Ì£¬ºÜ¿ì½«´ïµ½ÏåÑô¡£");
-            call_out("xywar_message", 15, HIR "ÃÉ¹ÅÔ®¾üÕıÁ¬Ò¹¸ÏÂ·£¬¼´½«µÖ´ïÏåÑô³Ç¡£");
+            call_out("xywar_message", 3, HIR "è’™å¤æ´è»å·²ç¶“æ”¶åˆ°è¨Šæ¯ï¼Œæº–å‚™é–‹å§‹èª¿å‹•ã€‚");
+            call_out("xywar_message", 8, HIR "è’™å¤å¢æ´éƒ¨éšŠå·²é–‹å§‹èµ·ç¨‹ï¼Œå¾ˆå¿«å°‡é”åˆ°è¥„é™½ã€‚");
+            call_out("xywar_message", 15, HIR "è’™å¤æ´è»æ­£é€£å¤œè¶•è·¯ï¼Œå³å°‡æŠµé”è¥„é™½åŸã€‚");
 }
 
-// ÃÉ¹ÅÑÓ³ÙÅÉ±ø
+// è’™å¤å»¶é²æ´¾å…µ
 void delay_add_soldier()
 {
         if (now_status() != WARRING && ! TEST)return;
 
-        // ÅÉ±øÔöÔ®
+        // æ´¾å…µå¢æ´
         add_soldier();
 }
 
-// Õ½Êõ£ºĞé¼ÙÍË±ø
+// æˆ°è¡“ï¼šè™›å‡é€€å…µ
 void combat_xjtuibing()
 {
         
 }
 
-// Õ½Êõ£ºÉù¶«»÷Î÷
+// æˆ°è¡“ï¼šè²æ±æ“Šè¥¿
 void combat_sdjixi()
 {
         
 }
 
-// ¼¯ÖĞ±øÁ¦¹¥»÷Ä³ÃÅ
-// ²ÎÊıpos Îª·½Ïò£¬Ö¸Ïà¶ÔÓÚÏåÑô¹ã³¡µÄ·½Ïò west,east,north,south
+// é›†ä¸­å…µåŠ›æ”»æ“ŠæŸé–€
+// åƒæ•¸pos ç‚ºæ–¹å‘ï¼ŒæŒ‡ç›¸å°äºè¥„é™½å»£å ´çš„æ–¹å‘ west,east,north,south
 void combat_attack_all(string pos)
 {
-        // 50%¼¸ÂÊĞé¼ÙËµÃ÷¹¥»÷·½Ïò
+        // 50%å¹¾ç‡è™›å‡èªªæ˜æ”»æ“Šæ–¹å‘
         if (random(2) == 1)
         {
         }

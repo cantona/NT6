@@ -5,13 +5,13 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "åÐÒ£¶´");
+        set("short", "é€é™æ´ž");
         set("long", @LONG
-ÕâÀï¾ÍÊÇÐÇËÞµÜ×ÓÒùÀÖÖ®´¦¡£Ô­À´²»¹ýÊÇÒ»´Ö²ÚµÄÊ¯¶´£¬ºóÒòÖÚÐÇ
-ËÞµÜ×Ó²»¶ÏÐÞÉÉ£¬³ÉÁË·½Ô°¼¸°ÙÀï³ôÃûÕÑÖøµÄÒù¿ß¡£²»ÖªÓÐ¶àÉÙÄÁÑòÅ®
-ÔÚ´Ë°µÎÞÌìÈÕ£¬¶È¹ýÓàÉú¡£
-    ¶´ÀïÃæÆÌÁË¼¸ÕÅ³ôºæºæµÄ²Ýµæ×Ó¡£µæ×ÓÅÔ±ßÊÇÒ»Ð©ÆÆ¾Æ¹Þ×Ó¡£¶´±Ú
-(wall)ÉÏÓÐÐ©×Ö¼£¡£
+é€™è£¡å°±æ˜¯æ˜Ÿå®¿å¼Ÿå­æ·«æ¨‚ä¹‹è™•ã€‚åŽŸä¾†ä¸éŽæ˜¯ä¸€ç²—ç³™çš„çŸ³æ´žï¼Œå¾Œå› çœ¾æ˜Ÿ
+å®¿å¼Ÿå­ä¸æ–·ä¿®ç¹•ï¼Œæˆäº†æ–¹åœ’å¹¾ç™¾è£¡è‡­åæ˜­è‘—çš„æ·«çªŸã€‚ä¸çŸ¥æœ‰å¤šå°‘ç‰§ç¾Šå¥³
+åœ¨æ­¤æš—ç„¡å¤©æ—¥ï¼Œåº¦éŽä½™ç”Ÿã€‚
+    æ´žè£¡é¢èˆ–äº†å¹¾å¼µè‡­çƒ˜çƒ˜çš„è‰å¢Šå­ã€‚å¢Šå­æ—é‚Šæ˜¯ä¸€äº›ç ´é…’ç½å­ã€‚æ´žå£
+(wall)ä¸Šæœ‰äº›å­—è·¡ã€‚
 LONG );
         set("sleep_room", "1");
         set("no_fight", "1");
@@ -19,7 +19,7 @@ LONG );
                 "out" : __DIR__"shidao",
         ]));
         set("item_desc", ([
-                "wall" : "ÐÇËÞÒùÔôÈËÈËµÃ¶øÖïÖ®£¡\n\n         ÍÛ£¡Ë¬ËÀÁË£¡\n",
+                "wall" : "æ˜Ÿå®¿æ·«è³Šäººäººå¾—è€Œèª…ä¹‹ï¼\n\n         å“‡ï¼çˆ½æ­»äº†ï¼\n",
         ]) );
         set("no_clean_up", 0);
         set("coor/x", -50200);

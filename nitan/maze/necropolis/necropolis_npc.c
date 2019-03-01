@@ -13,7 +13,7 @@ void die() {
         if(query("death_msg"))
                         message_vision(query("death_msg"),this_object());
         else
-                        message_vision("\n$NÀ¿¡À°£\n\n",this_object());
+                        message_vision("\n$NÊ≠ª‰∫Ü„ÄÇ\n\n",this_object());
         //check quest
         killer = query_last_damage_from();
 
@@ -27,19 +27,19 @@ void die() {
                         if(finished>count)
                                         finished = count;
                         set("quest/killed/"+name(), finished, mazeobj);
-                        tell_object(killer,HIW"…±À¿ "+name()+": "+finished+"/"+count+"°£\n"NOR);
+                        tell_object(killer,HIW"ÊÆ∫Ê≠ª "+name()+": "+finished+"/"+count+"„ÄÇ\n"NOR);
                 }
-                //µ⁄6∏ˆ»ŒŒÒ£¨ ÿŒ¿∂°“ª£¨…±∂˛ Æ∏ˆÕˆ¡È
+                //Á¨¨6ÂÄã‰ªªÂãôÔºåÂÆàË°õ‰∏Å‰∏ÄÔºåÊÆ∫‰∫åÂçÅÂÄã‰∫°Èùà
                 if( query("quest/quest_index", mazeobj) == 6 && is_undead() && 
-                   environment() && query("short", environment()) == HIY"æ€¡È∑®’Û"NOR){
-                                count=query("quest/to_kill/Õˆ¡È", mazeobj);
+                   environment() && query("short", environment()) == HIY"ËÅöÈùàÊ≥ïÈô£"NOR){
+                                count=query("quest/to_kill/‰∫°Èùà", mazeobj);
                                 if(count>0) {
-                                        finished=query("quest/killed/Õˆ¡È", mazeobj);
+                                        finished=query("quest/killed/‰∫°Èùà", mazeobj);
                                         finished++;
                                         if(finished>count)
                                                 finished = count;
-                                        set("quest/killed/Õˆ¡È", finished, mazeobj);
-                                        tell_object(killer,HIW"≥¨∂» Õˆ¡È: "+finished+"/"+count+" °£\n"NOR);
+                                        set("quest/killed/‰∫°Èùà", finished, mazeobj);
+                                        tell_object(killer,HIW"Ë∂ÖÂ∫¶ ‰∫°Èùà: "+finished+"/"+count+" „ÄÇ\n"NOR);
                                 }
                 }
         }

@@ -4,9 +4,9 @@
 inherit NPC;
 void create()
 {
-        set_name("ÃÉÃæÈË", ({ "figure" }) );
+        set_name("è’™é¢äºº", ({ "figure" }) );
         set("long",
-"Õâ¸öÈËÍ·ÉÏ´÷ÖøÃÉÃæÍ·ÕÖ£¬°Ë³É×¼±¸¸ÉÊ²÷á»µÊÂ¡£\n");
+"é€™å€‹äººé ­ä¸Šæˆ´è‘—è’™é¢é ­ç½©ï¼Œå…«æˆæº–å‚™å¹¹ä»€éº¼å£äº‹ã€‚\n");
         set("attitude", "heroism");
         set("hired_killer", 1);
         set("age",random(10)+30);
@@ -69,14 +69,14 @@ int do_arrest(string arg)
    object ob = this_player();
    object who;
    job=query("job", ob);
-   if( !job || job["job_type"] != "×¥")
-     return notify_fail("Äã²»ÊÇ¹Ù²î£¬²»ÄÜ×¥²î°ì°¸£¡\n");
+   if( !job || job["job_type"] != "æŠ“")
+     return notify_fail("ä½ ä¸æ˜¯å®˜å·®ï¼Œä¸èƒ½æŠ“å·®è¾¦æ¡ˆï¼\n");
    if(!arg)
-   return notify_fail("ÄãÏë×¥Ë­£¿\n");
+   return notify_fail("ä½ æƒ³æŠ“èª°ï¼Ÿ\n");
    if(!objectp(who = present(arg, environment(ob))))
-   return notify_fail("ÕâÀïÃ»ÓĞÄãÏë×¥µÄÈË¡£\n");
-   message_vision("$NÄÃÆğÒ»ÌõÌúÁ´×Ó£¬¶¶¶¯×Å...\n",ob); 
-   message_vision("¶Ô×Å$N´óÉùºÈµÀ£º¡°´óµ¨ÔôÈË£¬¿´ÄãÍùÄÄÀïÌÓ£¡ÄÃÃüÀ´°É£¡¡±\n",this_object());
+   return notify_fail("é€™è£¡æ²’æœ‰ä½ æƒ³æŠ“çš„äººã€‚\n");
+   message_vision("$Næ‹¿èµ·ä¸€æ¢éµéˆå­ï¼ŒæŠ–å‹•è‘—...\n",ob); 
+   message_vision("å°è‘—$Nå¤§è²å–é“ï¼šâ€œå¤§è†½è³Šäººï¼Œçœ‹ä½ å¾€å“ªè£¡é€ƒï¼æ‹¿å‘½ä¾†å§ï¼â€\n",this_object());
    set_temp("arrest", 1, ob);
    this_object()->kill_ob(ob);
    return 1;
@@ -84,7 +84,7 @@ int do_arrest(string arg)
 
 void move_killer()
 {
-    message_vision("$N´Ò´ÒÀëÈ¥ÁË¡£\n",this_object());
+    message_vision("$NåŒ†åŒ†é›¢å»äº†ã€‚\n",this_object());
     destruct(this_object());
     return ;
 }

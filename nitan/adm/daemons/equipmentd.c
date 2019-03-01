@@ -12,323 +12,323 @@ inherit F_DBASE;
 #define EQUIP_LIST      CONFIG_DIR "equiplist/"
 
 /*
-a ÎïÀí¹¥»÷Àà
-Ôö¼Óattack£¨¹Ì¶¨£©
-Ôö¼ÓÉËº¦£¨Ëæ»ú£©
-b  ÎïÀí·ÀÓù
-Ôö¼ÓÆøÑª¿¹ĞÔ£¨¹Ì¶¨£©
-Ôö¼Ó¶îÍâÆøÑªºÍ»¤¼×£¨Ëæ»ú£©
-Ôö¼°ÆøÑª»Ö¸´£¨Ëæ»ú£©
-c Ä§·¨¹¥»÷
-Ôö¼Óattack£¨¹Ì¶¨£©
-Ôö¼ÓÄ§·¨ÉËº¦£¨Ëæ»ú£©
-d Ä§·¨·ÀÓù
-Ôö¼Ó Ä§·¨¿¹ĞÔ£¨¹Ì¶¨£©
-Ôö¼Ó¶îÍâĞÄÉñºÍ¾«Á¦£¨Ëæ»ú£©
-f ÖÎÁÆÊä³ö
-Ôö¼ÓÁÆÉË±ÈÀı£¨¹Ì¶¨£©
-Ôö¼Ó·¨Á¦¡¢ÁéÁ¦£¨Ëæ»ú£©
-Ôö¼Ó·¨Á¦ ÁéÁ¦»Ö¸´£¨Ëæ»ú£©
-g ¶ÔÓÑ·½µÄÔöÇ¿buff
-Ôö¼Óbuff ³ÖĞøÊ±¼ä£¨¹Ì¶¨£©
-Ôö¼Ó¶ÓÎéÈºÉË£¨Ëæ»ú£©
-Ôö¼Ó¶ÓÎéÈº¿¹£¨Ëæ»ú£©
-h ¶Ô¹ÖÎïµÄdebuff
-Ôö¼Óbuff ³ÖĞøÊ±¼ä£¨¹Ì¶¨£©
-¼õÉÙ¹ÖÎï¿¹ĞÔ£¨Ëæ»ú£©
-Ñ£ÔÎ        Í£Ö¹¶Ô·½³öÊÖ
-Ã¤Ä¿        ½µµÍ¶Ô·½ÃüÖĞ30%
-¶¨Éí        ½µµÍ¶Ô·½ÉÁ±Ü30%
-³Ù»º        ½µµÍ¶Ô·½¹¥»÷ËÙ¶ÈµÄ50%
-»ìÂÒ        ÔÚÒ»¶¨»ØºÏÄÚ¹¥»÷Ëæ»úÄ¿±ê£¬°üÀ¨¼º·½¶ÓÓÑ
+a ç‰©ç†æ”»æ“Šé¡
+å¢åŠ attackï¼ˆå›ºå®šï¼‰
+å¢åŠ å‚·å®³ï¼ˆéš¨æ©Ÿï¼‰
+b  ç‰©ç†é˜²å¾¡
+å¢åŠ æ°£è¡€æŠ—æ€§ï¼ˆå›ºå®šï¼‰
+å¢åŠ é¡å¤–æ°£è¡€å’Œè­·ç”²ï¼ˆéš¨æ©Ÿï¼‰
+å¢åŠæ°£è¡€æ¢å¾©ï¼ˆéš¨æ©Ÿï¼‰
+c é­”æ³•æ”»æ“Š
+å¢åŠ attackï¼ˆå›ºå®šï¼‰
+å¢åŠ é­”æ³•å‚·å®³ï¼ˆéš¨æ©Ÿï¼‰
+d é­”æ³•é˜²å¾¡
+å¢åŠ  é­”æ³•æŠ—æ€§ï¼ˆå›ºå®šï¼‰
+å¢åŠ é¡å¤–å¿ƒç¥å’Œç²¾åŠ›ï¼ˆéš¨æ©Ÿï¼‰
+f æ²»ç™‚è¼¸å‡º
+å¢åŠ ç™‚å‚·æ¯”ä¾‹ï¼ˆå›ºå®šï¼‰
+å¢åŠ æ³•åŠ›ã€éˆåŠ›ï¼ˆéš¨æ©Ÿï¼‰
+å¢åŠ æ³•åŠ› éˆåŠ›æ¢å¾©ï¼ˆéš¨æ©Ÿï¼‰
+g å°å‹æ–¹çš„å¢å¼·buff
+å¢åŠ buff æŒçºŒæ™‚é–“ï¼ˆå›ºå®šï¼‰
+å¢åŠ éšŠä¼ç¾¤å‚·ï¼ˆéš¨æ©Ÿï¼‰
+å¢åŠ éšŠä¼ç¾¤æŠ—ï¼ˆéš¨æ©Ÿï¼‰
+h å°æ€ªç‰©çš„debuff
+å¢åŠ buff æŒçºŒæ™‚é–“ï¼ˆå›ºå®šï¼‰
+æ¸›å°‘æ€ªç‰©æŠ—æ€§ï¼ˆéš¨æ©Ÿï¼‰
+çœ©æšˆ        åœæ­¢å°æ–¹å‡ºæ‰‹
+ç›²ç›®        é™ä½å°æ–¹å‘½ä¸­30%
+å®šèº«        é™ä½å°æ–¹é–ƒé¿30%
+é²ç·©        é™ä½å°æ–¹æ”»æ“Šé€Ÿåº¦çš„50%
+æ··äº‚        åœ¨ä¸€å®šå›åˆå…§æ”»æ“Šéš¨æ©Ÿç›®æ¨™ï¼ŒåŒ…æ‹¬å·±æ–¹éšŠå‹
 */
-// ÉñÓÓ Õ½¶·Ê±µ±HP=0Ê±£¬20%µÄ¼¸ÂÊ³öÏÖÉñÓÓ¸´»îĞ§¹û£¬¸´»îÒÔºóÓµÓĞÉÙÁ¿HP
-// ÆÆ·ÀÌá¸ß£ºÎÒµÄÀí½âÊÇÔÚÄ¿Ç°ÆÆ·ÀµÄ¼¼ÊõÉÏÔö¼ÓÒ»¸ö±ÈÀı¡£±ÈÈçÆÆ·ÀÌá¸ß10£¥£¬ÄÇÃ´Èç¹ûÄãÆÆ·À10µã£¬¾Í±ä³ÉÁË11µã¡£
-// ÃüÖĞ¼ÓÇ¿£ºËµÊµ»°£¬ÎÒ¿´²»³öËüÓĞÊ²Ã´×÷ÓÃÀ´¡£
-// Ë«±¶´ò»÷£ºÔÚÄãÔì³ÉÉËº¦µÄ»ù´¡ÉÏ£¬¼Ó2±¶£¬ÖØÒªµÄÒ»¸öÊôĞÔ¡£±ÈÀıÔ½¸ßÔ½ºÃ¡£
-// ÖÂÃü´ò»÷£º·Ç³£ÖØÒªµÄÊôĞÔ£¬Ôì³É±ÈÀı´òÑªĞ§¹û¡£
-// ±ÈÈç»ğ´ú±íÑ£ÔÎ Ë®´ú±íÕĞÊ½±äÂı ½ğ´ú±í³ÖĞøÉËº¦ÃüÖĞ Ä¾´ú±íÖÂÃ¤
-// É±Â¾-¹¥»÷Ê±ÓĞ¼¸ÂÊ¶Ôµ±Ç°·¿¼äËùÓĞÈË½øĞĞÒ»´Î¹¥»÷
-// »¹ÓĞ 5ĞĞ¿ÉÒÔÊÇ ¼±ËÙ ±©»÷ ¸ñµ²£¨¼õÃâÉËº¦£© ¾«Í¨  ÃüÖĞ
-// ¼±ËÙ¾ÍÊÇÔö¼Ó³öÕĞµÄ¼¸ÂÊ ±©»÷ÊÇË«±¶ÉËº¦¼¸ÂÊ ¸ñµ²ÊÇ¼õÃâ30%ÉËº¦¼¸ÂÊ¡£ÃüÖĞÊÇÎŞÊÓÉÁ±ÜÕĞ¼ÜµÄ¼¸ÂÊ ¾«Í¨ÊÇperformÉËº¦¼Ó³É
-// 7¸ö·À¾ß5¿×£¬2¸ö±øÆ÷7¿×£¬3¸öÊÎÆ·3¿×
-// ËùÓĞÊôĞÔ
+// ç¥ä½‘ æˆ°é¬¥æ™‚ç•¶HP=0æ™‚ï¼Œ20%çš„å¹¾ç‡å‡ºç¾ç¥ä½‘å¾©æ´»æ•ˆæœï¼Œå¾©æ´»ä»¥å¾Œæ“æœ‰å°‘é‡HP
+// ç ´é˜²æé«˜ï¼šæˆ‘çš„ç†è§£æ˜¯åœ¨ç›®å‰ç ´é˜²çš„æŠ€è¡“ä¸Šå¢åŠ ä¸€å€‹æ¯”ä¾‹ã€‚æ¯”å¦‚ç ´é˜²æé«˜10ï¼…ï¼Œé‚£éº¼å¦‚æœä½ ç ´é˜²10é»ï¼Œå°±è®Šæˆäº†11é»ã€‚
+// å‘½ä¸­åŠ å¼·ï¼šèªªå¯¦è©±ï¼Œæˆ‘çœ‹ä¸å‡ºå®ƒæœ‰ä»€éº¼ä½œç”¨ä¾†ã€‚
+// é›™å€æ‰“æ“Šï¼šåœ¨ä½ é€ æˆå‚·å®³çš„åŸºç¤ä¸Šï¼ŒåŠ 2å€ï¼Œé‡è¦çš„ä¸€å€‹å±¬æ€§ã€‚æ¯”ä¾‹è¶Šé«˜è¶Šå¥½ã€‚
+// è‡´å‘½æ‰“æ“Šï¼šéå¸¸é‡è¦çš„å±¬æ€§ï¼Œé€ æˆæ¯”ä¾‹æ‰“è¡€æ•ˆæœã€‚
+// æ¯”å¦‚ç«ä»£è¡¨çœ©æšˆ æ°´ä»£è¡¨æ‹›å¼è®Šæ…¢ é‡‘ä»£è¡¨æŒçºŒå‚·å®³å‘½ä¸­ æœ¨ä»£è¡¨è‡´ç›²
+// æ®ºæˆ®-æ”»æ“Šæ™‚æœ‰å¹¾ç‡å°ç•¶å‰æˆ¿é–“æ‰€æœ‰äººé€²è¡Œä¸€æ¬¡æ”»æ“Š
+// é‚„æœ‰ 5è¡Œå¯ä»¥æ˜¯ æ€¥é€Ÿ æš´æ“Š æ ¼æ“‹ï¼ˆæ¸›å…å‚·å®³ï¼‰ ç²¾é€š  å‘½ä¸­
+// æ€¥é€Ÿå°±æ˜¯å¢åŠ å‡ºæ‹›çš„å¹¾ç‡ æš´æ“Šæ˜¯é›™å€å‚·å®³å¹¾ç‡ æ ¼æ“‹æ˜¯æ¸›å…30%å‚·å®³å¹¾ç‡ã€‚å‘½ä¸­æ˜¯ç„¡è¦–é–ƒé¿æ‹›æ¶çš„å¹¾ç‡ ç²¾é€šæ˜¯performå‚·å®³åŠ æˆ
+// 7å€‹é˜²å…·5å­”ï¼Œ2å€‹å…µå™¨7å­”ï¼Œ3å€‹é£¾å“3å­”
+// æ‰€æœ‰å±¬æ€§
 mapping value_2_props = ([
-        "consistence"   : "ÄÍ¾Ã¶È",     // »ù±¾ÊôĞÔ           a
-        "damage"        : "±øÆ÷ÉËº¦Á¦", // »ù±¾ÊôĞÔ           a
-        "unarmed_damage": "¿ÕÊÖÉËº¦Á¦", // »ù±¾ÊôĞÔ           a
-        "armor"         : "±£»¤Á¦",     // »ù±¾ÊôĞÔ           a
-        "damage1"       : "¸½¼ÓÉËº¦",   // weapon             a
-        "armor1"        : "¸½¼Ó±£»¤",   // armor              a
+        "consistence"   : "è€ä¹…åº¦",     // åŸºæœ¬å±¬æ€§           a
+        "damage"        : "å…µå™¨å‚·å®³åŠ›", // åŸºæœ¬å±¬æ€§           a
+        "unarmed_damage": "ç©ºæ‰‹å‚·å®³åŠ›", // åŸºæœ¬å±¬æ€§           a
+        "armor"         : "ä¿è­·åŠ›",     // åŸºæœ¬å±¬æ€§           a
+        "damage1"       : "é™„åŠ å‚·å®³",   // weapon             a
+        "armor1"        : "é™„åŠ ä¿è­·",   // armor              a
        
-        "str"           : "±ÛÁ¦",       // weapon/armor/rings a
-        "int"           : "ÎòĞÔ",       // weapon/armor/rings a
-        "con"           : "¸ù¹Ç",       // weapon/armor/rings a
-        "dex"           : "Éí·¨",       // weapon/armor/rings a
-        "kar"           : "¸£Ôµ",       // weapon/armor/rings a
-        "per"           : "ÈİÃ²",       // rings              a
-        "gold_find"     : "»ñÈ¡»Æ½ğ¼¸ÂÊ",     // weapon/rings a
+        "str"           : "è‡‚åŠ›",       // weapon/armor/rings a
+        "int"           : "æ‚Ÿæ€§",       // weapon/armor/rings a
+        "con"           : "æ ¹éª¨",       // weapon/armor/rings a
+        "dex"           : "èº«æ³•",       // weapon/armor/rings a
+        "kar"           : "ç¦ç·£",       // weapon/armor/rings a
+        "per"           : "å®¹è²Œ",       // rings              a
+        "gold_find"     : "ç²å–é»ƒé‡‘å¹¾ç‡",     // weapon/rings a
         
 
-        "max_jingli"    : "¾«Á¦×î´óÖµ", // weapon/armor/rings a
-        "max_jing"      : "¾«Æø×î´óÖµ", // weapon/armor/rings a
-        "max_potential" : "Ç±ÄÜÉÏÏŞ",   // weapon/armor/rings a
-        "max_experience": "Ìå»áÉÏÏŞ",   // weapon/armor/rings a
+        "max_jingli"    : "ç²¾åŠ›æœ€å¤§å€¼", // weapon/armor/rings a
+        "max_jing"      : "ç²¾æ°£æœ€å¤§å€¼", // weapon/armor/rings a
+        "max_potential" : "æ½›èƒ½ä¸Šé™",   // weapon/armor/rings a
+        "max_experience": "é«”æœƒä¸Šé™",   // weapon/armor/rings a
 
-        "sword"         : "½£·¨",       // weapon             a
-        "blade"         : "µ¶·¨",       // weapon             a
-        "club"          : "¹÷·¨",       // weapon             a
-        "hammer"        : "´¸·¨",       // weapon             a
-        "staff"         : "ÕÈ·¨",       // weapon             a
-        "whip"          : "±Ş·¨",       // weapon             a
-        "unarmed"       : "È­½Å",       // weapon             a
-        "strike"        : "ÕÆ·¨",       // weapon             a
-        "cuff"          : "È­·¨",       // weapon             a
-        "hand"          : "ÊÖ·¨",       // weapon             a
-        "finger"        : "Ö¸·¨",       // weapon             a
-        "claw"          : "×¦·¨",       // weapon             a
+        "sword"         : "åŠæ³•",       // weapon             a
+        "blade"         : "åˆ€æ³•",       // weapon             a
+        "club"          : "æ£æ³•",       // weapon             a
+        "hammer"        : "éŒ˜æ³•",       // weapon             a
+        "staff"         : "æ–æ³•",       // weapon             a
+        "whip"          : "é­æ³•",       // weapon             a
+        "unarmed"       : "æ‹³è…³",       // weapon             a
+        "strike"        : "æŒæ³•",       // weapon             a
+        "cuff"          : "æ‹³æ³•",       // weapon             a
+        "hand"          : "æ‰‹æ³•",       // weapon             a
+        "finger"        : "æŒ‡æ³•",       // weapon             a
+        "claw"          : "çˆªæ³•",       // weapon             a
 
-        "attack"        : "¹¥»÷",       // weapon             a
-        "parry"         : "ÕĞ¼Ü",       // armor              a
-        "dodge"         : "¶ãÉÁ",       // armor              a
-        "defense"       : "·ÀÓù",       // armor              a
+        "attack"        : "æ”»æ“Š",       // weapon             a
+        "parry"         : "æ‹›æ¶",       // armor              a
+        "dodge"         : "èº²é–ƒ",       // armor              a
+        "defense"       : "é˜²å¾¡",       // armor              a
 
-        "research_times": "ÑĞ¾¿´ÎÊı",   // weapon/armor/rings a
-        "learn_times"   : "Ñ§Ï°´ÎÊı",   // weapon/armor/rings a
-        "practice_times": "Á·Ï°´ÎÊı",   // weapon/armor/rings a
-        "study_times"   : "¶ÁÊé´ÎÊı",   // weapon/armor/rings a
+        "research_times": "ç ”ç©¶æ¬¡æ•¸",   // weapon/armor/rings a
+        "learn_times"   : "å­¸ç¿’æ¬¡æ•¸",   // weapon/armor/rings a
+        "practice_times": "ç·´ç¿’æ¬¡æ•¸",   // weapon/armor/rings a
+        "study_times"   : "è®€æ›¸æ¬¡æ•¸",   // weapon/armor/rings a
 ]);        
         
 mapping value_3_props = ([        
-        "attribute"     : "ËùÓĞÊôĞÔ",   // rings              b
-        "max_neili"     : "ÄÚÁ¦×î´óÖµ", // weapon/armor/rings b
-        "max_qi"        : "ÆøÑª×î´óÖµ", // weapon/armor/rings b
-        "ref_neili"     : "ÄÚÁ¦»Ö¸´",   // armor/rings        b
-        "ref_qi"        : "ÉúÃü»Ö¸´",   // armor/rings        b
-        "ref_jing"      : "¾«Æø»Ö¸´",   // armor/rings        b
+        "attribute"     : "æ‰€æœ‰å±¬æ€§",   // rings              b
+        "max_neili"     : "å…§åŠ›æœ€å¤§å€¼", // weapon/armor/rings b
+        "max_qi"        : "æ°£è¡€æœ€å¤§å€¼", // weapon/armor/rings b
+        "ref_neili"     : "å…§åŠ›æ¢å¾©",   // armor/rings        b
+        "ref_qi"        : "ç”Ÿå‘½æ¢å¾©",   // armor/rings        b
+        "ref_jing"      : "ç²¾æ°£æ¢å¾©",   // armor/rings        b
 
-        "add_poison"    : "¶¾ÉËº¦",     // weapon                           b
-        "add_metal"     : "½ğÉËº¦",     // weapon                           b
-        "add_wood"      : "Ä¾ÉËº¦",     // weapon                           b
-        "add_water"     : "Ë®ÉËº¦",     // weapon                           b
-        "add_fire"      : "»ğÉËº¦",     // weapon                           b
-        "add_earth"     : "ÍÁÉËº¦",     // weapon                           b
-        "reduce_metal"  : "¿¹½ğ",       // armor                            b
-        "reduce_wood"   : "¿¹Ä¾",       // armor                            b
-        "reduce_water"  : "¿¹Ë®",       // armor                            b
-        "reduce_fire"   : "¿¹»ğ",       // armor                            b
-        "reduce_earth"  : "¿¹ÍÁ",       // armor                            b
-        "reduce_poison" : "¿¹¶¾",       // armor                            b
-        "avoid_poison"  : "ºöÊÓÖĞ¶¾",   // armor/rings                      b
+        "add_poison"    : "æ¯’å‚·å®³",     // weapon                           b
+        "add_metal"     : "é‡‘å‚·å®³",     // weapon                           b
+        "add_wood"      : "æœ¨å‚·å®³",     // weapon                           b
+        "add_water"     : "æ°´å‚·å®³",     // weapon                           b
+        "add_fire"      : "ç«å‚·å®³",     // weapon                           b
+        "add_earth"     : "åœŸå‚·å®³",     // weapon                           b
+        "reduce_metal"  : "æŠ—é‡‘",       // armor                            b
+        "reduce_wood"   : "æŠ—æœ¨",       // armor                            b
+        "reduce_water"  : "æŠ—æ°´",       // armor                            b
+        "reduce_fire"   : "æŠ—ç«",       // armor                            b
+        "reduce_earth"  : "æŠ—åœŸ",       // armor                            b
+        "reduce_poison" : "æŠ—æ¯’",       // armor                            b
+        "avoid_poison"  : "å¿½è¦–ä¸­æ¯’",   // armor/rings                      b
 
-        "research_effect"       : "ÑĞ¾¿Ğ§¹û",   // weapon/armor/rings       b
-        "practice_effect"       : "Á·Ï°Ğ§¹û",   // weapon/armor/rings       b
-        "study_effect"          : "¶ÁÊéĞ§¹û",   // weapon/armor/rings       b
-        "learn_effect"          : "Ñ§Ï°Ğ§¹û",   // weapon/armor/rings       b
-        "derive_effect"         : "¼³È¡Ğ§¹û",   // weapon/armor/rings       b
-        "derive_times"          : "¼³È¡ÏûºÄ",   // weapon/armor/rings       b
+        "research_effect"       : "ç ”ç©¶æ•ˆæœ",   // weapon/armor/rings       b
+        "practice_effect"       : "ç·´ç¿’æ•ˆæœ",   // weapon/armor/rings       b
+        "study_effect"          : "è®€æ›¸æ•ˆæœ",   // weapon/armor/rings       b
+        "learn_effect"          : "å­¸ç¿’æ•ˆæœ",   // weapon/armor/rings       b
+        "derive_effect"         : "æ±²å–æ•ˆæœ",   // weapon/armor/rings       b
+        "derive_times"          : "æ±²å–æ¶ˆè€—",   // weapon/armor/rings       b
 
-        "add_pot"       : "»ñÈ¡¶îÍâÇ±ÄÜ",       // weapon/rings   b
-        "add_mar"       : "»ñÈ¡¶îÍâÌå»á",       // weapon/rings   b
+        "add_pot"       : "ç²å–é¡å¤–æ½›èƒ½",       // weapon/rings   b
+        "add_mar"       : "ç²å–é¡å¤–é«”æœƒ",       // weapon/rings   b
 ]);    
 
 mapping value_5_props = ([             
-        "magic_find"    : "Ñ°±¦ÂÊ(MFÖµ)",       // weapon/rings             c
-        "ap_power"      : "¾øÕĞ¹¥»÷Á¦",         // weapon/rings             c
-        "dp_power"      : "¾øÕĞ·ÀÓùÁ¦",         // armor                    c
-        "da_power"      : "¾øÕĞÉËº¦Á¦",         // weapon/rings             c
-        "avoid_defense" : "¹¥»÷ÎŞÊÓÄ¿±ê·ÀÓù",   // weapon/rings             c
-        "avoid_parry"   : "¹¥»÷ÎŞÊÓÄ¿±êÕĞ¼Ü",   // weapon/rings             c
-        "avoid_dodge"   : "¹¥»÷ÎŞÊÓÄ¿±ê¶ãÉÁ",   // weapon/rings             c
-        "avoid_force"   : "¹¥»÷ÎŞÊÓÄÚ¹¦·ÀÓù",   // weapon/rings             c
-        "avoid_attack"  : "ÎŞÊÓÄ¿±êÌØÊâ¹¥»÷",   // armor                    c
-        "suck_neili"    : "ÍµÈ¡ÄÚÁ¦",           // weapon ÃüÖĞÍµÈ¡ÄÚÁ¦¼¸ÂÊ£ºÃüÖĞµĞÈËÊ±°´ÉËº¦ÖµµÄ10%ÂÊ»Ø¸´ÄÚÁ¦   c
-        "suck_qi"       : "ÍµÈ¡ÉúÃü",           // weapon ÃüÖĞÍµÈ¡ÉúÃü¼¸ÂÊ£ºÃüÖĞµĞÈËÊ±°´ÉËº¦ÖµµÄ10%±ÈÂÊ»Ø¸´ÉúÃü c
-        "double_damage" : "Ë«±¶ÉËº¦",           // weapon/rings Ôö¼ÓÉ±Æø£º¼ÓÒ»µãÉ±Æø£¬±©»÷£¨Ë«±¶ÉËº¦£©µÄ¸ÅÂÊÔö¼Ó1%  c
-        "through_armor" : "ÆÆ¼×",               // weapon/rings ÆÆ¼×-¹¥»÷Ê±ÎŞÊÓÄ¿±ê·À¾ßµÄ±£»¤Á¦through_armor        c        
-        "qi_vs_neili"   : "ÊÜËğµÄÉúÃü×ªÎªÄÚÁ¦", // rings 30%µÄ»ú»áÊÜËğµÄÉúÃüx%×ª»»ÎªÄÚÁ¦  c   
-        "absorb_blood"  : "ÌìÄ§¸½Ìå",           // weapon/rings Ìá¸ß×ÔÉíÕ½¶·Á¦30%         c
+        "magic_find"    : "å°‹å¯¶ç‡(MFå€¼)",       // weapon/rings             c
+        "ap_power"      : "çµ•æ‹›æ”»æ“ŠåŠ›",         // weapon/rings             c
+        "dp_power"      : "çµ•æ‹›é˜²å¾¡åŠ›",         // armor                    c
+        "da_power"      : "çµ•æ‹›å‚·å®³åŠ›",         // weapon/rings             c
+        "avoid_defense" : "æ”»æ“Šç„¡è¦–ç›®æ¨™é˜²å¾¡",   // weapon/rings             c
+        "avoid_parry"   : "æ”»æ“Šç„¡è¦–ç›®æ¨™æ‹›æ¶",   // weapon/rings             c
+        "avoid_dodge"   : "æ”»æ“Šç„¡è¦–ç›®æ¨™èº²é–ƒ",   // weapon/rings             c
+        "avoid_force"   : "æ”»æ“Šç„¡è¦–å…§åŠŸé˜²å¾¡",   // weapon/rings             c
+        "avoid_attack"  : "ç„¡è¦–ç›®æ¨™ç‰¹æ®Šæ”»æ“Š",   // armor                    c
+        "suck_neili"    : "å·å–å…§åŠ›",           // weapon å‘½ä¸­å·å–å…§åŠ›å¹¾ç‡ï¼šå‘½ä¸­æ•µäººæ™‚æŒ‰å‚·å®³å€¼çš„10%ç‡å›å¾©å…§åŠ›   c
+        "suck_qi"       : "å·å–ç”Ÿå‘½",           // weapon å‘½ä¸­å·å–ç”Ÿå‘½å¹¾ç‡ï¼šå‘½ä¸­æ•µäººæ™‚æŒ‰å‚·å®³å€¼çš„10%æ¯”ç‡å›å¾©ç”Ÿå‘½ c
+        "double_damage" : "é›™å€å‚·å®³",           // weapon/rings å¢åŠ æ®ºæ°£ï¼šåŠ ä¸€é»æ®ºæ°£ï¼Œæš´æ“Šï¼ˆé›™å€å‚·å®³ï¼‰çš„æ¦‚ç‡å¢åŠ 1%  c
+        "through_armor" : "ç ´ç”²",               // weapon/rings ç ´ç”²-æ”»æ“Šæ™‚ç„¡è¦–ç›®æ¨™é˜²å…·çš„ä¿è­·åŠ›through_armor        c        
+        "qi_vs_neili"   : "å—æçš„ç”Ÿå‘½è½‰ç‚ºå…§åŠ›", // rings 30%çš„æ©Ÿæœƒå—æçš„ç”Ÿå‘½x%è½‰æ›ç‚ºå…§åŠ›  c   
+        "absorb_blood"  : "å¤©é­”é™„é«”",           // weapon/rings æé«˜è‡ªèº«æˆ°é¬¥åŠ›30%         c
 
-        "add_reward"    : "»ñÈ¡¶îÍâ½±Àø",       // weapon/rings   c
-        "add_exp"       : "»ñÈ¡¶îÍâ¾­Ñé",       // weapon/rings   c
-        "add_force"     : "»ñÈ¡¶îÍâÏÈÌìÕæÆø",   // weapon/rings   c        
-        "add_blind"     : "ÖÂÃ¤",               // weapon ÖÕ¼«±øÆ÷ ÖÂÃ¤-ÈÃ¶ÔÊÖÊ§Ã÷ c
-        "avoid_blind"   : "ºöÊÓÖÂÃ¤",           // armor/rings ÖÕ¼«·À¾ß            c
+        "add_reward"    : "ç²å–é¡å¤–çå‹µ",       // weapon/rings   c
+        "add_exp"       : "ç²å–é¡å¤–ç¶“é©—",       // weapon/rings   c
+        "add_force"     : "ç²å–é¡å¤–å…ˆå¤©çœŸæ°£",   // weapon/rings   c        
+        "add_blind"     : "è‡´ç›²",               // weapon çµ‚æ¥µå…µå™¨ è‡´ç›²-è®“å°æ‰‹å¤±æ˜ c
+        "avoid_blind"   : "å¿½è¦–è‡´ç›²",           // armor/rings çµ‚æ¥µé˜²å…·            c
 ]);
 
 mapping value_10_props = ([          
-        "clear_force"   : "ÆÆÆø",                       // weapon ÆÆ³ı¶ÔÊÖËùÓĞÄÚÁ¦£¬ÈÃ¶ÔÊÖÄÚÁ¦Îª0 d       
-        "add_freeze"    : "±ù¶³",                       // weapon ÖÕ¼«±øÆ÷ ±ù¶³-³Ù»º£¬¼õ»º¶Ô·½¹¥»÷£¬¹¥»÷pfmËÙ¶È½µµÍ£¬ÎŞÈÎºÎ·ÀÓù£¬ÎŞ¶ãÉÁ£¬ÎŞÕĞ¼Ü£¬¾ÍÊÇ°¤´ò d
-        "add_dizziness" : "Ñ£ÔÎ",                       // weapon ÖÕ¼«±øÆ÷ Ñ£ÔÎ£¬²»ÄÜ½øĞĞÈÎºÎĞĞ¶¯£¬ÊÜµ½¹¥»÷»áĞÑÀ´£¬·ñÔò5ÃëÄÚÒ»Ö±²»¶¯£¬½â³ıÕ½¶·×´Ì¬ d
-        "add_forget"    : "ÒÅÍü",                       // weapon ÖÕ¼«·À¾ß ÒÅÍü-Ê¹¶Ô·½Íü¼ÇËùÓĞ¼¼ÄÜµÄ¾øÕĞadd_oblivion    d
-        "add_weak"      : "ĞéÈõ",                       // weapon ÖÕ¼«±øÆ÷ ÈÃ¶ÔÊÖ¹¥·ÀÉËº¦¼õ°ë£¬°üÀ¨¾øÕĞ                 d
-        "add_busy"      : "Ã¦ÂÒ",                       // weapon ÖÕ¼«±øÆ÷                                              d
+        "clear_force"   : "ç ´æ°£",                       // weapon ç ´é™¤å°æ‰‹æ‰€æœ‰å…§åŠ›ï¼Œè®“å°æ‰‹å…§åŠ›ç‚º0 d       
+        "add_freeze"    : "å†°å‡",                       // weapon çµ‚æ¥µå…µå™¨ å†°å‡-é²ç·©ï¼Œæ¸›ç·©å°æ–¹æ”»æ“Šï¼Œæ”»æ“Špfmé€Ÿåº¦é™ä½ï¼Œç„¡ä»»ä½•é˜²å¾¡ï¼Œç„¡èº²é–ƒï¼Œç„¡æ‹›æ¶ï¼Œå°±æ˜¯æŒ¨æ‰“ d
+        "add_dizziness" : "çœ©æšˆ",                       // weapon çµ‚æ¥µå…µå™¨ çœ©æšˆï¼Œä¸èƒ½é€²è¡Œä»»ä½•è¡Œå‹•ï¼Œå—åˆ°æ”»æ“Šæœƒé†’ä¾†ï¼Œå¦å‰‡5ç§’å…§ä¸€ç›´ä¸å‹•ï¼Œè§£é™¤æˆ°é¬¥ç‹€æ…‹ d
+        "add_forget"    : "éºå¿˜",                       // weapon çµ‚æ¥µé˜²å…· éºå¿˜-ä½¿å°æ–¹å¿˜è¨˜æ‰€æœ‰æŠ€èƒ½çš„çµ•æ‹›add_oblivion    d
+        "add_weak"      : "è™›å¼±",                       // weapon çµ‚æ¥µå…µå™¨ è®“å°æ‰‹æ”»é˜²å‚·å®³æ¸›åŠï¼ŒåŒ…æ‹¬çµ•æ‹›                 d
+        "add_busy"      : "å¿™äº‚",                       // weapon çµ‚æ¥µå…µå™¨                                              d
 
-        "avoid_freeze"  : "ºöÊÓ±ù¶³",                   // armor/rings ÖÕ¼«·À¾ß d
-        "avoid_dizziness": "ºöÊÓÑ£ÔÎ",                  // armor/rings ÖÕ¼«·À¾ß d
-        "avoid_forget"  : "ºöÊÓÒÅÍü",                   // armor/rings ÖÕ¼«±øÆ÷ d
-        "avoid_weak"    : "ºöÊÓĞéÈõ",                   // armor/rings ÖÕ¼«·À¾ß d
-        "avoid_busy"    : "ºöÊÓÃ¦ÂÒ",                   // armor/rings ÖÕ¼«·À¾ß d
-        "reduce_busy"   : "»¯½âÃ¦ÂÒ",                   // armor/rings ÖÕ¼«·À¾ß d
+        "avoid_freeze"  : "å¿½è¦–å†°å‡",                   // armor/rings çµ‚æ¥µé˜²å…· d
+        "avoid_dizziness": "å¿½è¦–çœ©æšˆ",                  // armor/rings çµ‚æ¥µé˜²å…· d
+        "avoid_forget"  : "å¿½è¦–éºå¿˜",                   // armor/rings çµ‚æ¥µå…µå™¨ d
+        "avoid_weak"    : "å¿½è¦–è™›å¼±",                   // armor/rings çµ‚æ¥µé˜²å…· d
+        "avoid_busy"    : "å¿½è¦–å¿™äº‚",                   // armor/rings çµ‚æ¥µé˜²å…· d
+        "reduce_busy"   : "åŒ–è§£å¿™äº‚",                   // armor/rings çµ‚æ¥µé˜²å…· d
 
-        "fatal_blow"    : "±ØÉ±ÂÊ",                     // weapon ÖÕ¼«±øÆ÷ ±ØÉ±ÂÊ-ÓµÓĞ20%µÄ¼¸ÂÊËğÉËÄ¿±êµÄÉúÃüx%     d                                    d
-        "slaughter"     : "É±Â¾",                       // weapon É±Â¾-¹¥»÷Ê±ÓĞ¼¸ÂÊ¶Ôµ±Ç°·¿¼äËùÓĞµĞÈË½øĞĞÒ»´Î¹¥»÷   d  
-        "add_skill"     : "ÌáÉı¼¼ÄÜ",                   // weapon/rings ÖÕ¼«±øÆ÷                                    d
-        "add_damage"    : "×·¼ÓÉËº¦",                   // weapon ÖÕ¼«±øÆ÷                                          d
-        "reduce_damage" : "»¯½âÉËº¦",                   // armor ÖÕ¼«·À¾ß                                           d
-        "full_self"     : "Õ½Éñ¸½Ìå",                   // armor ÖÕ¼«·À¾ß Õ½Éñ¸½Ìå-ÆøÑªÄÚÁ¦×Ô¶¯»Ö¸´                 d
-        "avoid_die"     : "Ô¡ÑªÖØÉú",                   // armor/ring ·ï»ËÄù˜„£¬Ô¡ÑªÖØÉú£¬ºöÊÓËÀÍö                  d
-        "counter_damage": "ÉËº¦·´Éä",                   // armor ÖÕ¼«·À¾ß ÉËº¦·´ÉäÊÜµ½ÉËº¦Ê±30%¼¸ÂÊµÄÉËº¦x%·´Éä¸ø¶Ô·½ d
+        "fatal_blow"    : "å¿…æ®ºç‡",                     // weapon çµ‚æ¥µå…µå™¨ å¿…æ®ºç‡-æ“æœ‰20%çš„å¹¾ç‡æå‚·ç›®æ¨™çš„ç”Ÿå‘½x%     d                                    d
+        "slaughter"     : "æ®ºæˆ®",                       // weapon æ®ºæˆ®-æ”»æ“Šæ™‚æœ‰å¹¾ç‡å°ç•¶å‰æˆ¿é–“æ‰€æœ‰æ•µäººé€²è¡Œä¸€æ¬¡æ”»æ“Š   d  
+        "add_skill"     : "æå‡æŠ€èƒ½",                   // weapon/rings çµ‚æ¥µå…µå™¨                                    d
+        "add_damage"    : "è¿½åŠ å‚·å®³",                   // weapon çµ‚æ¥µå…µå™¨                                          d
+        "reduce_damage" : "åŒ–è§£å‚·å®³",                   // armor çµ‚æ¥µé˜²å…·                                           d
+        "full_self"     : "æˆ°ç¥é™„é«”",                   // armor çµ‚æ¥µé˜²å…· æˆ°ç¥é™„é«”-æ°£è¡€å…§åŠ›è‡ªå‹•æ¢å¾©                 d
+        "avoid_die"     : "æµ´è¡€é‡ç”Ÿ",                   // armor/ring é³³å‡°æ¶…â–¡ï¼Œæµ´è¡€é‡ç”Ÿï¼Œå¿½è¦–æ­»äº¡                  d
+        "counter_damage": "å‚·å®³åå°„",                   // armor çµ‚æ¥µé˜²å…· å‚·å®³åå°„å—åˆ°å‚·å®³æ™‚30%å¹¾ç‡çš„å‚·å®³x%åå°„çµ¦å°æ–¹ d
 ]);
 
-// ËùÓĞÊôĞÔ
+// æ‰€æœ‰å±¬æ€§
 mapping all_props = ([
-        "consistence"   : "ÄÍ¾Ã¶È",     // »ù±¾ÊôĞÔ
-        "damage"        : "±øÆ÷ÉËº¦Á¦", // »ù±¾ÊôĞÔ
-        "unarmed_damage": "¿ÕÊÖÉËº¦Á¦", // »ù±¾ÊôĞÔ
-        "armor"         : "±£»¤Á¦",     // »ù±¾ÊôĞÔ
-        "damage2"       : "¸ÄÔìÉËº¦",   // weapon
-        "armor2"        : "¸ÄÔì±£»¤",   // armor
-        "damage1"       : "¸½¼ÓÉËº¦",   // weapon
-        "armor1"        : "¸½¼Ó±£»¤",   // armor
+        "consistence"   : "è€ä¹…åº¦",     // åŸºæœ¬å±¬æ€§
+        "damage"        : "å…µå™¨å‚·å®³åŠ›", // åŸºæœ¬å±¬æ€§
+        "unarmed_damage": "ç©ºæ‰‹å‚·å®³åŠ›", // åŸºæœ¬å±¬æ€§
+        "armor"         : "ä¿è­·åŠ›",     // åŸºæœ¬å±¬æ€§
+        "damage2"       : "æ”¹é€ å‚·å®³",   // weapon
+        "armor2"        : "æ”¹é€ ä¿è­·",   // armor
+        "damage1"       : "é™„åŠ å‚·å®³",   // weapon
+        "armor1"        : "é™„åŠ ä¿è­·",   // armor
        
-        "str"           : "±ÛÁ¦",       // weapon/armor/rings
-        "int"           : "ÎòĞÔ",       // weapon/armor/rings
-        "con"           : "¸ù¹Ç",       // weapon/armor/rings
-        "dex"           : "Éí·¨",       // weapon/armor/rings
-        "kar"           : "¸£Ôµ",       // weapon/armor/rings
-        "per"           : "ÈİÃ²",       // rings
-        "attribute"     : "ËùÓĞÊôĞÔ",   // rings
+        "str"           : "è‡‚åŠ›",       // weapon/armor/rings
+        "int"           : "æ‚Ÿæ€§",       // weapon/armor/rings
+        "con"           : "æ ¹éª¨",       // weapon/armor/rings
+        "dex"           : "èº«æ³•",       // weapon/armor/rings
+        "kar"           : "ç¦ç·£",       // weapon/armor/rings
+        "per"           : "å®¹è²Œ",       // rings
+        "attribute"     : "æ‰€æœ‰å±¬æ€§",   // rings
         
-        "max_neili"     : "ÄÚÁ¦×î´óÖµ", // weapon/armor/rings
-        "max_qi"        : "ÆøÑª×î´óÖµ", // weapon/armor/rings
-        "max_jingli"    : "¾«Á¦×î´óÖµ", // weapon/armor/rings
-        "max_jing"      : "¾«Æø×î´óÖµ", // weapon/armor/rings
-        "max_potential" : "Ç±ÄÜÉÏÏŞ",   // weapon/armor/rings
-        "max_experience": "Ìå»áÉÏÏŞ",   // weapon/armor/rings
+        "max_neili"     : "å…§åŠ›æœ€å¤§å€¼", // weapon/armor/rings
+        "max_qi"        : "æ°£è¡€æœ€å¤§å€¼", // weapon/armor/rings
+        "max_jingli"    : "ç²¾åŠ›æœ€å¤§å€¼", // weapon/armor/rings
+        "max_jing"      : "ç²¾æ°£æœ€å¤§å€¼", // weapon/armor/rings
+        "max_potential" : "æ½›èƒ½ä¸Šé™",   // weapon/armor/rings
+        "max_experience": "é«”æœƒä¸Šé™",   // weapon/armor/rings
 
-        "sword"         : "½£·¨",       // weapon
-        "blade"         : "µ¶·¨",       // weapon
-        "club"          : "¹÷·¨",       // weapon
-        "hammer"        : "´¸·¨",       // weapon
-        "staff"         : "ÕÈ·¨",       // weapon
-        "whip"          : "±Ş·¨",       // weapon
-        "unarmed"       : "È­½Å",       // weapon
-        "strike"        : "ÕÆ·¨",       // weapon
-        "cuff"          : "È­·¨",       // weapon
-        "hand"          : "ÊÖ·¨",       // weapon
-        "finger"        : "Ö¸·¨",       // weapon
-        "claw"          : "×¦·¨",       // weapon
+        "sword"         : "åŠæ³•",       // weapon
+        "blade"         : "åˆ€æ³•",       // weapon
+        "club"          : "æ£æ³•",       // weapon
+        "hammer"        : "éŒ˜æ³•",       // weapon
+        "staff"         : "æ–æ³•",       // weapon
+        "whip"          : "é­æ³•",       // weapon
+        "unarmed"       : "æ‹³è…³",       // weapon
+        "strike"        : "æŒæ³•",       // weapon
+        "cuff"          : "æ‹³æ³•",       // weapon
+        "hand"          : "æ‰‹æ³•",       // weapon
+        "finger"        : "æŒ‡æ³•",       // weapon
+        "claw"          : "çˆªæ³•",       // weapon
 
-        "attack"        : "¹¥»÷",       // weapon
-        "parry"         : "ÕĞ¼Ü",       // armor
-        "dodge"         : "¶ãÉÁ",       // armor
-        "defense"       : "·ÀÓù",       // armor
+        "attack"        : "æ”»æ“Š",       // weapon
+        "parry"         : "æ‹›æ¶",       // armor
+        "dodge"         : "èº²é–ƒ",       // armor
+        "defense"       : "é˜²å¾¡",       // armor
 
-        "ref_neili"     : "ÄÚÁ¦»Ö¸´",   // armor/rings
-        "ref_qi"        : "ÉúÃü»Ö¸´",   // armor/rings
-        "ref_jing"      : "¾«Æø»Ö¸´",   // armor/rings
-        "suck_neili"    : "ÍµÈ¡ÄÚÁ¦",   // weapon ÃüÖĞÍµÈ¡ÄÚÁ¦¼¸ÂÊ£ºÃüÖĞµĞÈËÊ±°´ÉËº¦ÖµµÄ10%ÂÊ»Ø¸´ÄÚÁ¦
-        "suck_qi"       : "ÍµÈ¡ÉúÃü",   // weapon ÃüÖĞÍµÈ¡ÉúÃü¼¸ÂÊ£ºÃüÖĞµĞÈËÊ±°´ÉËº¦ÖµµÄ10%±ÈÂÊ»Ø¸´ÉúÃü
+        "ref_neili"     : "å…§åŠ›æ¢å¾©",   // armor/rings
+        "ref_qi"        : "ç”Ÿå‘½æ¢å¾©",   // armor/rings
+        "ref_jing"      : "ç²¾æ°£æ¢å¾©",   // armor/rings
+        "suck_neili"    : "å·å–å…§åŠ›",   // weapon å‘½ä¸­å·å–å…§åŠ›å¹¾ç‡ï¼šå‘½ä¸­æ•µäººæ™‚æŒ‰å‚·å®³å€¼çš„10%ç‡å›å¾©å…§åŠ›
+        "suck_qi"       : "å·å–ç”Ÿå‘½",   // weapon å‘½ä¸­å·å–ç”Ÿå‘½å¹¾ç‡ï¼šå‘½ä¸­æ•µäººæ™‚æŒ‰å‚·å®³å€¼çš„10%æ¯”ç‡å›å¾©ç”Ÿå‘½
 
-        "gold_find"     : "»ñÈ¡»Æ½ğ¼¸ÂÊ",       // weapon/rings
-        "magic_find"    : "Ñ°±¦ÂÊ(MFÖµ)",       // weapon/rings
+        "gold_find"     : "ç²å–é»ƒé‡‘å¹¾ç‡",       // weapon/rings
+        "magic_find"    : "å°‹å¯¶ç‡(MFå€¼)",       // weapon/rings
                 
-        // »ğÑæÉËº¦£¬Àä¶³ÉËº¦£¬ÉÁµçÉËº¦£¬¶¾ËØÉËº¦£¬¿¹»ğ£¬¿¹º®£¬¿¹ÉÁµç£¬¿¹¶¾
-        "add_poison"    : "¶¾ÉËº¦",     // weapon
-        "add_metal"     : "½ğÉËº¦",     // weapon
-        "add_wood"      : "Ä¾ÉËº¦",     // weapon
-        "add_water"     : "Ë®ÉËº¦",     // weapon
-        "add_fire"      : "»ğÉËº¦",     // weapon
-        "add_earth"     : "ÍÁÉËº¦",     // weapon   
-        "reduce_metal"  : "¿¹½ğ",       // armor
-        "reduce_wood"   : "¿¹Ä¾",       // armor
-        "reduce_water"  : "¿¹Ë®",       // armor
-        "reduce_fire"   : "¿¹»ğ",       // armor
-        "reduce_earth"  : "¿¹ÍÁ",       // armor
-        "reduce_poison" : "¿¹¶¾",       // armor
-        "avoid_poison"  : "ºöÊÓÖĞ¶¾",   // armor/rings
+        // ç«ç‡„å‚·å®³ï¼Œå†·å‡å‚·å®³ï¼Œé–ƒé›»å‚·å®³ï¼Œæ¯’ç´ å‚·å®³ï¼ŒæŠ—ç«ï¼ŒæŠ—å¯’ï¼ŒæŠ—é–ƒé›»ï¼ŒæŠ—æ¯’
+        "add_poison"    : "æ¯’å‚·å®³",     // weapon
+        "add_metal"     : "é‡‘å‚·å®³",     // weapon
+        "add_wood"      : "æœ¨å‚·å®³",     // weapon
+        "add_water"     : "æ°´å‚·å®³",     // weapon
+        "add_fire"      : "ç«å‚·å®³",     // weapon
+        "add_earth"     : "åœŸå‚·å®³",     // weapon   
+        "reduce_metal"  : "æŠ—é‡‘",       // armor
+        "reduce_wood"   : "æŠ—æœ¨",       // armor
+        "reduce_water"  : "æŠ—æ°´",       // armor
+        "reduce_fire"   : "æŠ—ç«",       // armor
+        "reduce_earth"  : "æŠ—åœŸ",       // armor
+        "reduce_poison" : "æŠ—æ¯’",       // armor
+        "avoid_poison"  : "å¿½è¦–ä¸­æ¯’",   // armor/rings
 
-        "research_effect"       : "ÑĞ¾¿Ğ§¹û",   // weapon/armor/rings
-        "practice_effect"       : "Á·Ï°Ğ§¹û",   // weapon/armor/rings
-        "study_effect"          : "¶ÁÊéĞ§¹û",   // weapon/armor/rings
-        "learn_effect"          : "Ñ§Ï°Ğ§¹û",   // weapon/armor/rings
-        "derive_effect"         : "¼³È¡Ğ§¹û",   // weapon/armor/rings
-        "research_times"        : "ÑĞ¾¿´ÎÊı",   // weapon/armor/rings
-        "learn_times"           : "Ñ§Ï°´ÎÊı",   // weapon/armor/rings
-        "practice_times"        : "Á·Ï°´ÎÊı",   // weapon/armor/rings
-        "study_times"           : "¶ÁÊé´ÎÊı",   // weapon/armor/rings
-        "derive_times"          : "¼³È¡ÏûºÄ",   // weapon/armor/rings
-        // ÒÔÉÏ¶¼ÊÇ»ù±¾ÊôĞÔ 
+        "research_effect"       : "ç ”ç©¶æ•ˆæœ",   // weapon/armor/rings
+        "practice_effect"       : "ç·´ç¿’æ•ˆæœ",   // weapon/armor/rings
+        "study_effect"          : "è®€æ›¸æ•ˆæœ",   // weapon/armor/rings
+        "learn_effect"          : "å­¸ç¿’æ•ˆæœ",   // weapon/armor/rings
+        "derive_effect"         : "æ±²å–æ•ˆæœ",   // weapon/armor/rings
+        "research_times"        : "ç ”ç©¶æ¬¡æ•¸",   // weapon/armor/rings
+        "learn_times"           : "å­¸ç¿’æ¬¡æ•¸",   // weapon/armor/rings
+        "practice_times"        : "ç·´ç¿’æ¬¡æ•¸",   // weapon/armor/rings
+        "study_times"           : "è®€æ›¸æ¬¡æ•¸",   // weapon/armor/rings
+        "derive_times"          : "æ±²å–æ¶ˆè€—",   // weapon/armor/rings
+        // ä»¥ä¸Šéƒ½æ˜¯åŸºæœ¬å±¬æ€§ 
         
-        "ap_power"      : "¾øÕĞ¹¥»÷Á¦",         // weapon/rings
-        "dp_power"      : "¾øÕĞ·ÀÓùÁ¦",         // armor
-        "da_power"      : "¾øÕĞÉËº¦Á¦",         // weapon/rings
-        "avoid_defense" : "¹¥»÷ÎŞÊÓÄ¿±ê·ÀÓù",   // weapon/rings
-        "avoid_parry"   : "¹¥»÷ÎŞÊÓÄ¿±êÕĞ¼Ü",   // weapon/rings
-        "avoid_dodge"   : "¹¥»÷ÎŞÊÓÄ¿±ê¶ãÉÁ",   // weapon/rings
-        "avoid_force"   : "¹¥»÷ÎŞÊÓÄÚ¹¦·ÀÓù",   // weapon/rings
-        "avoid_attack"  : "ÎŞÊÓÄ¿±êÌØÊâ¹¥»÷",   // armor
+        "ap_power"      : "çµ•æ‹›æ”»æ“ŠåŠ›",         // weapon/rings
+        "dp_power"      : "çµ•æ‹›é˜²å¾¡åŠ›",         // armor
+        "da_power"      : "çµ•æ‹›å‚·å®³åŠ›",         // weapon/rings
+        "avoid_defense" : "æ”»æ“Šç„¡è¦–ç›®æ¨™é˜²å¾¡",   // weapon/rings
+        "avoid_parry"   : "æ”»æ“Šç„¡è¦–ç›®æ¨™æ‹›æ¶",   // weapon/rings
+        "avoid_dodge"   : "æ”»æ“Šç„¡è¦–ç›®æ¨™èº²é–ƒ",   // weapon/rings
+        "avoid_force"   : "æ”»æ“Šç„¡è¦–å…§åŠŸé˜²å¾¡",   // weapon/rings
+        "avoid_attack"  : "ç„¡è¦–ç›®æ¨™ç‰¹æ®Šæ”»æ“Š",   // armor
         
-        //"trace"         : "ÇÜ×Ù",       // weapon/rings ÎŞÊÓ¶Ô·½ÕĞ¼Ü
-        //"escape"        : "¶İÒş",       // armor ¶ãÉÁ¼¸ÂÊ
-        //"proficient"    : "¾«Í¨",       // weapon/rings ¾«Í¨ÊÇperformÉËº¦¼Ó³É
-        //"fatal_chance"  : "±©»÷",       // weapon/rings »áĞÄÒ»»÷
-        //"antifatal_chance": "·À±©»÷",   // armor
+        //"trace"         : "æ“’è¹¤",       // weapon/rings ç„¡è¦–å°æ–¹æ‹›æ¶
+        //"escape"        : "ééš±",       // armor èº²é–ƒå¹¾ç‡
+        //"proficient"    : "ç²¾é€š",       // weapon/rings ç²¾é€šæ˜¯performå‚·å®³åŠ æˆ
+        //"fatal_chance"  : "æš´æ“Š",       // weapon/rings æœƒå¿ƒä¸€æ“Š
+        //"antifatal_chance": "é˜²æš´æ“Š",   // armor
    
-        "attack_chance" : "Á¬»÷ÂÊ",             // weapon/rings ¼±ËÙ¾ÍÊÇÔö¼Ó³öÕĞµÄ¼¸ÂÊ
-        "double_damage" : "Ë«±¶ÉËº¦",           // weapon/rings Ôö¼ÓÉ±Æø£º¼ÓÒ»µãÉ±Æø£¬±©»÷£¨Ë«±¶ÉËº¦£©µÄ¸ÅÂÊÔö¼Ó1%
-        "through_armor" : "ÆÆ¼×",               // weapon/rings ÆÆ¼×-¹¥»÷Ê±ÎŞÊÓÄ¿±ê·À¾ßµÄ±£»¤Á¦through_armor
+        "attack_chance" : "é€£æ“Šç‡",             // weapon/rings æ€¥é€Ÿå°±æ˜¯å¢åŠ å‡ºæ‹›çš„å¹¾ç‡
+        "double_damage" : "é›™å€å‚·å®³",           // weapon/rings å¢åŠ æ®ºæ°£ï¼šåŠ ä¸€é»æ®ºæ°£ï¼Œæš´æ“Šï¼ˆé›™å€å‚·å®³ï¼‰çš„æ¦‚ç‡å¢åŠ 1%
+        "through_armor" : "ç ´ç”²",               // weapon/rings ç ´ç”²-æ”»æ“Šæ™‚ç„¡è¦–ç›®æ¨™é˜²å…·çš„ä¿è­·åŠ›through_armor
         
-        "qi_vs_neili"   : "ÊÜËğµÄÉúÃü×ªÎªÄÚÁ¦", // rings 30%µÄ»ú»áÊÜËğµÄÉúÃüx%×ª»»ÎªÄÚÁ¦
-        "clear_force"   : "ÆÆÆø",               // weapon
+        "qi_vs_neili"   : "å—æçš„ç”Ÿå‘½è½‰ç‚ºå…§åŠ›", // rings 30%çš„æ©Ÿæœƒå—æçš„ç”Ÿå‘½x%è½‰æ›ç‚ºå…§åŠ›
+        "clear_force"   : "ç ´æ°£",               // weapon
         
-        //"block_heal"    : "·ÀÖ¹¶ÔÊÖ×ÔÁÆ",       // weapon
-        "absorb_blood"  : "ÌìÄ§¸½Ìå",           // weapon/rings Ìá¸ß×ÔÉíÕ½¶·Á¦30%
+        //"block_heal"    : "é˜²æ­¢å°æ‰‹è‡ªç™‚",       // weapon
+        "absorb_blood"  : "å¤©é­”é™„é«”",           // weapon/rings æé«˜è‡ªèº«æˆ°é¬¥åŠ›30%
 
-        "add_reward"    : "»ñÈ¡¶îÍâ½±Àø",       // weapon/rings
-        "add_exp"       : "»ñÈ¡¶îÍâ¾­Ñé",       // weapon/rings
-        "add_pot"       : "»ñÈ¡¶îÍâÇ±ÄÜ",       // weapon/rings
-        "add_mar"       : "»ñÈ¡¶îÍâÌå»á",       // weapon/rings
-        "add_force"     : "»ñÈ¡¶îÍâÏÈÌìÕæÆø",   // weapon/rings
+        "add_reward"    : "ç²å–é¡å¤–çå‹µ",       // weapon/rings
+        "add_exp"       : "ç²å–é¡å¤–ç¶“é©—",       // weapon/rings
+        "add_pot"       : "ç²å–é¡å¤–æ½›èƒ½",       // weapon/rings
+        "add_mar"       : "ç²å–é¡å¤–é«”æœƒ",       // weapon/rings
+        "add_force"     : "ç²å–é¡å¤–å…ˆå¤©çœŸæ°£",   // weapon/rings
 
-        // ¶ÔÓÑ·½µÄÔöÇ¿buff
-        // ÈºÌåÖÎÁÆ
-        // ¶Ô¹ÖÎïµÄdebuff
+        // å°å‹æ–¹çš„å¢å¼·buff
+        // ç¾¤é«”æ²»ç™‚
+        // å°æ€ªç‰©çš„debuff
         
-        "add_blind"     : "ÖÂÃ¤",                       // weapon ÖÕ¼«±øÆ÷ ÖÂÃ¤-ÈÃ¶ÔÊÖÊ§Ã÷
-        "add_freeze"    : "±ù¶³",                       // weapon ÖÕ¼«±øÆ÷ ±ù¶³-³Ù»º£¬¼õ»º¶Ô·½¹¥»÷£¬¹¥»÷pfmËÙ¶È½µµÍ£¬ÎŞÈÎºÎ·ÀÓù£¬ÎŞ¶ãÉÁ£¬ÎŞÕĞ¼Ü£¬¾ÍÊÇ°¤´ò
-        //"add_burning"   : "×ÆÉÕ",                       // weapon ÖÕ¼«±øÆ÷ ×ÆÉÕ-Ò»¶¨Ê±¼äÄÚÄ¿±ê²»Í£µÄ¼õÉÙÄÚÁ¦ºÍÆøÑªcondition
-        "add_dizziness" : "Ñ£ÔÎ",                       // weapon ÖÕ¼«±øÆ÷ Ñ£ÔÎ£¬²»ÄÜ½øĞĞÈÎºÎĞĞ¶¯£¬ÊÜµ½¹¥»÷»áĞÑÀ´£¬·ñÔò5ÃëÄÚÒ»Ö±²»¶¯£¬½â³ıÕ½¶·×´Ì¬
-        "add_forget"    : "ÒÅÍü",                       // weapon ÖÕ¼«·À¾ß ÒÅÍü-Ê¹¶Ô·½Íü¼ÇËùÓĞ¼¼ÄÜµÄ¾øÕĞadd_oblivion   
-        "add_weak"      : "ĞéÈõ",                       // weapon ÖÕ¼«±øÆ÷
-        "add_busy"      : "Ã¦ÂÒ",                       // weapon ÖÕ¼«±øÆ÷
+        "add_blind"     : "è‡´ç›²",                       // weapon çµ‚æ¥µå…µå™¨ è‡´ç›²-è®“å°æ‰‹å¤±æ˜
+        "add_freeze"    : "å†°å‡",                       // weapon çµ‚æ¥µå…µå™¨ å†°å‡-é²ç·©ï¼Œæ¸›ç·©å°æ–¹æ”»æ“Šï¼Œæ”»æ“Špfmé€Ÿåº¦é™ä½ï¼Œç„¡ä»»ä½•é˜²å¾¡ï¼Œç„¡èº²é–ƒï¼Œç„¡æ‹›æ¶ï¼Œå°±æ˜¯æŒ¨æ‰“
+        //"add_burning"   : "ç¼ç‡’",                       // weapon çµ‚æ¥µå…µå™¨ ç¼ç‡’-ä¸€å®šæ™‚é–“å…§ç›®æ¨™ä¸åœçš„æ¸›å°‘å…§åŠ›å’Œæ°£è¡€condition
+        "add_dizziness" : "çœ©æšˆ",                       // weapon çµ‚æ¥µå…µå™¨ çœ©æšˆï¼Œä¸èƒ½é€²è¡Œä»»ä½•è¡Œå‹•ï¼Œå—åˆ°æ”»æ“Šæœƒé†’ä¾†ï¼Œå¦å‰‡5ç§’å…§ä¸€ç›´ä¸å‹•ï¼Œè§£é™¤æˆ°é¬¥ç‹€æ…‹
+        "add_forget"    : "éºå¿˜",                       // weapon çµ‚æ¥µé˜²å…· éºå¿˜-ä½¿å°æ–¹å¿˜è¨˜æ‰€æœ‰æŠ€èƒ½çš„çµ•æ‹›add_oblivion   
+        "add_weak"      : "è™›å¼±",                       // weapon çµ‚æ¥µå…µå™¨
+        "add_busy"      : "å¿™äº‚",                       // weapon çµ‚æ¥µå…µå™¨
 
-        "avoid_blind"   : "ºöÊÓÖÂÃ¤",                   // armor/rings ÖÕ¼«·À¾ß
-        "avoid_freeze"  : "ºöÊÓ±ù¶³",                   // armor/rings ÖÕ¼«·À¾ß
-        //"avoid_burning" : "ºöÊÓ×ÆÉÕ",                   // armor/rings ÖÕ¼«·À¾ß
-        "avoid_dizziness": "ºöÊÓÑ£ÔÎ",                  // armor/rings ÖÕ¼«·À¾ß
-        "avoid_forget"  : "ºöÊÓÒÅÍü",                   // armor/rings ÖÕ¼«±øÆ÷
-        "avoid_weak"    : "ºöÊÓĞéÈõ",                   // armor/rings ÖÕ¼«·À¾ß
-        "avoid_busy"    : "ºöÊÓÃ¦ÂÒ",                   // armor/rings ÖÕ¼«·À¾ß
-        "reduce_busy"   : "»¯½âÃ¦ÂÒ",                   // armor/rings ÖÕ¼«·À¾ß
+        "avoid_blind"   : "å¿½è¦–è‡´ç›²",                   // armor/rings çµ‚æ¥µé˜²å…·
+        "avoid_freeze"  : "å¿½è¦–å†°å‡",                   // armor/rings çµ‚æ¥µé˜²å…·
+        //"avoid_burning" : "å¿½è¦–ç¼ç‡’",                   // armor/rings çµ‚æ¥µé˜²å…·
+        "avoid_dizziness": "å¿½è¦–çœ©æšˆ",                  // armor/rings çµ‚æ¥µé˜²å…·
+        "avoid_forget"  : "å¿½è¦–éºå¿˜",                   // armor/rings çµ‚æ¥µå…µå™¨
+        "avoid_weak"    : "å¿½è¦–è™›å¼±",                   // armor/rings çµ‚æ¥µé˜²å…·
+        "avoid_busy"    : "å¿½è¦–å¿™äº‚",                   // armor/rings çµ‚æ¥µé˜²å…·
+        "reduce_busy"   : "åŒ–è§£å¿™äº‚",                   // armor/rings çµ‚æ¥µé˜²å…·
 
-        "fatal_blow"    : "±ØÉ±ÂÊ",                     // weapon ÖÕ¼«±øÆ÷ ±ØÉ±ÂÊ-ÓµÓĞ20%µÄ¼¸ÂÊËğÉËÄ¿±êµÄÉúÃüx%     
-        "anti_fatal"    : "ºöÊÓ±ØÉ±",                   // armor/rings
-        "slaughter"     : "É±Â¾",                       // weapon É±Â¾-¹¥»÷Ê±ÓĞ¼¸ÂÊ¶Ôµ±Ç°·¿¼äËùÓĞµĞÈË½øĞĞÒ»´Î¹¥»÷     
-        "add_skill"     : "ÌáÉı¼¼ÄÜ",                   // weapon/rings ÖÕ¼«±øÆ÷
-        "add_damage"    : "×·¼ÓÉËº¦",                   // weapon ÖÕ¼«±øÆ÷
-        "reduce_damage" : "»¯½âÉËº¦",                   // armor ÖÕ¼«·À¾ß 
-        "full_self"     : "Õ½Éñ¸½Ìå",                   // armor ÖÕ¼«·À¾ß Õ½Éñ¸½Ìå-ÆøÑªÄÚÁ¦×Ô¶¯»Ö¸´
-        "avoid_die"     : "Ô¡ÑªÖØÉú",                   // armor/ring ·ï»ËÄù˜„£¬Ô¡ÑªÖØÉú£¬ºöÊÓËÀÍö
-        "counter_damage": "ÉËº¦·´Éä",                   // armor ÖÕ¼«·À¾ß ÉËº¦·´Éä£¬ÊÜµ½ÉËº¦Ê±30%¼¸ÂÊµÄÉËº¦x%·´Éä¸ø¶Ô·½
+        "fatal_blow"    : "å¿…æ®ºç‡",                     // weapon çµ‚æ¥µå…µå™¨ å¿…æ®ºç‡-æ“æœ‰20%çš„å¹¾ç‡æå‚·ç›®æ¨™çš„ç”Ÿå‘½x%     
+        "anti_fatal"    : "å¿½è¦–å¿…æ®º",                   // armor/rings
+        "slaughter"     : "æ®ºæˆ®",                       // weapon æ®ºæˆ®-æ”»æ“Šæ™‚æœ‰å¹¾ç‡å°ç•¶å‰æˆ¿é–“æ‰€æœ‰æ•µäººé€²è¡Œä¸€æ¬¡æ”»æ“Š     
+        "add_skill"     : "æå‡æŠ€èƒ½",                   // weapon/rings çµ‚æ¥µå…µå™¨
+        "add_damage"    : "è¿½åŠ å‚·å®³",                   // weapon çµ‚æ¥µå…µå™¨
+        "reduce_damage" : "åŒ–è§£å‚·å®³",                   // armor çµ‚æ¥µé˜²å…· 
+        "full_self"     : "æˆ°ç¥é™„é«”",                   // armor çµ‚æ¥µé˜²å…· æˆ°ç¥é™„é«”-æ°£è¡€å…§åŠ›è‡ªå‹•æ¢å¾©
+        "avoid_die"     : "æµ´è¡€é‡ç”Ÿ",                   // armor/ring é³³å‡°æ¶…â–¡ï¼Œæµ´è¡€é‡ç”Ÿï¼Œå¿½è¦–æ­»äº¡
+        "counter_damage": "å‚·å®³åå°„",                   // armor çµ‚æ¥µé˜²å…· å‚·å®³åå°„ï¼Œå—åˆ°å‚·å®³æ™‚30%å¹¾ç‡çš„å‚·å®³x%åå°„çµ¦å°æ–¹
 ]);
 
 
-// ±¦Ê¯·ÖÎª4¸öµÈ¼¶£¬ËéÆ¬£¬ÍêºÃ1£¬Ï¡ÓĞ1+1£¬ÉñÖ®1+2
-// Ò»¸ö¹Ì¶¨µÄÊôĞÔ(½ğÄ¾Ë®»ğÍÁ)+1-2¸öËæ»úÊôĞÔ
+// å¯¶çŸ³åˆ†ç‚º4å€‹ç­‰ç´šï¼Œç¢ç‰‡ï¼Œå®Œå¥½1ï¼Œç¨€æœ‰1+1ï¼Œç¥ä¹‹1+2
+// ä¸€å€‹å›ºå®šçš„å±¬æ€§(é‡‘æœ¨æ°´ç«åœŸ)+1-2å€‹éš¨æ©Ÿå±¬æ€§
 
-// °Ù·Ö±ÈµÄÊôĞÔ
+// ç™¾åˆ†æ¯”çš„å±¬æ€§
 string *percent_props = ({
         "gold_find", "magic_find", "add_metal", "add_wood", "add_water", "add_fire", "add_earth", 
         "add_poison", "reduce_metal", "reduce_fire", "reduce_wood", "reduce_water", "reduce_earth",
@@ -342,7 +342,7 @@ string *percent_props = ({
         "add_damage", "reduce_damage", "full_self", "avoid_die", "counter_damage", "suck_neili", "suck_qi",
 });
 
-// ±¦Ê¯ÊôĞÔÖµ
+// å¯¶çŸ³å±¬æ€§å€¼
 mapping prop_values = ([
         "damage1"       : ({ 600, 800, 1000, 1200, 1400, 1600, 2000, }),
         "armor1"        : ({ 300, 400, 500, 600, 700, 800, 900, }),
@@ -403,7 +403,7 @@ mapping prop_values = ([
         "counter_damage": ({ 1, 1, 1, }),       // 70
 ]);
 
-// ÊôĞÔÇ¿»¯Öµ1-9ĞÇ
+// å±¬æ€§å¼·åŒ–å€¼1-9æ˜Ÿ
 mapping steady_values = ([
         "damage1,damage2"       : ({ 4600,6600,9600,13600,18600,24600,31600,39600,50000 }),
         "armor1,armor2"         : ({ 2200,2900,3700,4600,5600,7700,8900,10200,11500 }),
@@ -461,9 +461,9 @@ mapping steady_values = ([
         "counter_damage": ({ 1, 2, 3, 4, 5, 6, 7, 8, 10, }),
 ]);
 
-// ×°±¸µÄÆ·¼¶ÓĞ6¼¶£¬Ç°2¸öÆ·¼¶ÊôĞÔÃ»ÓĞÌØÊâ£¬´ÓÏ¡ÓĞ£¨µÚÈı¸ö£©Æ·¼¶¿ªÊ¼ÓĞÌØÊâÊôĞÔ
-// ±¦Ê¯µÄµÈ¼¶ÓĞ3¼¶£¬±¦Ê¯µÄÊôĞÔÓ¦¸ÃºÍ×°±¸Ç°2¸öÆ·¼¶µÄÊôĞÔÒ»Ñù
-// qlvl1Ö»ÓĞ»ù±¾ÊôĞÔ£¬qlvl2²ÅÓĞ±¦Ê¯ÊôĞÔ£¬qlvl3ÓµÓĞ±¦Ê¯ÊôĞÔ£¬qlvl4ÓµÓĞÊ·Ê«ÊôĞÔ£¬qlvl5ÓµÓĞ´«ËµÊôĞÔ£¬qlvl6ÓµÓĞÉñÆæÊôĞÔ
+// è£å‚™çš„å“ç´šæœ‰6ç´šï¼Œå‰2å€‹å“ç´šå±¬æ€§æ²’æœ‰ç‰¹æ®Šï¼Œå¾ç¨€æœ‰ï¼ˆç¬¬ä¸‰å€‹ï¼‰å“ç´šé–‹å§‹æœ‰ç‰¹æ®Šå±¬æ€§
+// å¯¶çŸ³çš„ç­‰ç´šæœ‰3ç´šï¼Œå¯¶çŸ³çš„å±¬æ€§æ‡‰è©²å’Œè£å‚™å‰2å€‹å“ç´šçš„å±¬æ€§ä¸€æ¨£
+// qlvl1åªæœ‰åŸºæœ¬å±¬æ€§ï¼Œqlvl2æ‰æœ‰å¯¶çŸ³å±¬æ€§ï¼Œqlvl3æ“æœ‰å¯¶çŸ³å±¬æ€§ï¼Œqlvl4æ“æœ‰å²è©©å±¬æ€§ï¼Œqlvl5æ“æœ‰å‚³èªªå±¬æ€§ï¼Œqlvl6æ“æœ‰ç¥å¥‡å±¬æ€§
 mixed weapon_props = ({
         ({ "damage1", "int", "str", "con", "dex", "kar", "skill", "attack", 
            "suck_neili", "suck_qi", "gold_find", "magic_find", "add_poison",
@@ -478,7 +478,7 @@ mixed weapon_props = ({
         }),
         ({ "research_effect", "practice_effect", "study_effect", "learn_effect", "derive_effect", "damage1",
            "attack", "ap_power", "da_power", "avoid_defense", "avoid_parry", "avoid_dodge", "suck_qi", "clear_force",
-           "suck_neili", "avoid_force", "add_exp", "add_pot", "add_mar", "add_force", "through_armor", "skill", // skillÌØÊâ´¦Àí 
+           "suck_neili", "avoid_force", "add_exp", "add_pot", "add_mar", "add_force", "through_armor", "skill", // skillç‰¹æ®Šè™•ç† 
         }), 
         ({ "through_armor", "slaughter", "double_damage", "add_reward", "absorb_blood", 
            "add_blind", "suck_qi", "suck_neili", "add_exp", "add_pot", "add_mar", "add_force",
@@ -512,7 +512,7 @@ mixed armor_props = ({
         }),
 });
 
-// ÏîÁ´amulet¡¢½äÖ¸ring¡¢»¤Éí·ûÊôĞÔcharm
+// é …éˆamuletã€æˆ’æŒ‡ringã€è­·èº«ç¬¦å±¬æ€§charm
 mixed ring_props = ({
         ({ "per", "attribute", "max_neili", "max_qi", "max_jing", "max_jingli", "max_potential",
            "max_experience", "ref_neili", "ref_jing", "ref_qi", "gold_find",
@@ -536,18 +536,18 @@ mixed ring_props = ({
         }),
 });
 
-// Ì×»¯µÄ±øÆ÷ÊôĞÔ 
+// å¥—åŒ–çš„å…µå™¨å±¬æ€§ 
 string *suit_weapon_props = ({
         "double_damage", "avoid_forget", "add_damage", "add_skill", "fatal_blow", "add_busy", "add_weak", "add_dizziness",
         "add_freeze",
         
 });
-// Ì×»¯µÄ·À¾ßÊôĞÔ 
+// å¥—åŒ–çš„é˜²å…·å±¬æ€§ 
 string *suit_armor_props = ({
         "reduce_busy", "avoid_busy", "avoid_weak", "avoid_dizziness", "avoid_die", 
         "counter_damage", "avoid_forget", "full_self", "reduce_damage", "research_effect",
 });
-// Ì×»¯µÄ»¤Éí·ûÊôĞÔ
+// å¥—åŒ–çš„è­·èº«ç¬¦å±¬æ€§
 string *suit_ring_props = ({
         "magic_find", "add_exp", "add_pot", "add_mar", "add_force", "avoid_die",
         "add_reward", "full_self", "avoid_busy", "avoid_forget", "research_effect",
@@ -556,11 +556,11 @@ string *suit_ring_props = ({
 void create()
 {
         seteuid(getuid());
-        set("name", "×°±¸¾«Áé");
+        set("name", "è£å‚™ç²¾éˆ");
         set("id", "equipmentd");
 }
 
-// ÎªÊôĞÔÃû³ÆÆ¥ÅäÖĞÎÄ
+// ç‚ºå±¬æ€§åç¨±åŒ¹é…ä¸­æ–‡
 varargs string chinese(string prop, int value)
 {
         string desc;
@@ -582,7 +582,7 @@ varargs string chinese(string prop, int value)
         return desc;
 }
 
-// »ñÈ¡×°±¸²¿¼şµÄÊôĞÔ
+// ç²å–è£å‚™éƒ¨ä»¶çš„å±¬æ€§
 varargs int query_prop_value(string prop, int ilvl, int s)
 {
         int i, j, flag;
@@ -592,7 +592,7 @@ varargs int query_prop_value(string prop, int ilvl, int s)
         string *temp_str;
 
         flag = 0;
-        if( s ) data = copy(steady_values); // Ç¿»¯ÊôĞÔ
+        if( s ) data = copy(steady_values); // å¼·åŒ–å±¬æ€§
         else data = copy(prop_values);
         ks = keys(data);
         for( i=0; i<sizeof(ks); i++ ) {
@@ -616,7 +616,7 @@ varargs int query_prop_value(string prop, int ilvl, int s)
         return value[random(sizeof(value))];
 }
 
-// ×°±¸ÂÌ»¯Ê±ºò»ñµÃµÄÊôĞÔ
+// è£å‚™ç¶ åŒ–æ™‚å€™ç²å¾—çš„å±¬æ€§
 mapping apply_ultimate_prop(object ob, string type, int ilvl)
 {
         string *props;
@@ -641,8 +641,8 @@ mapping apply_ultimate_prop(object ob, string type, int ilvl)
         else
         if( type == "rings"
         ||  type == "charm"
-        ||  type == "myheart"   // »¤Éí·û¡¤×ó
-        ||  type == "myheart2"  // »¤Éí·û¡¤ÓÒ
+        ||  type == "myheart"   // è­·èº«ç¬¦ï¹’å·¦
+        ||  type == "myheart2"  // è­·èº«ç¬¦ï¹’å³
         ||  type == "neck" )
                 props = suit_ring_props;
         else
@@ -664,7 +664,7 @@ mapping apply_ultimate_prop(object ob, string type, int ilvl)
         return apply;
 }
 
-// Éú³É±¦Ê¯ÊôĞÔ
+// ç”Ÿæˆå¯¶çŸ³å±¬æ€§
 varargs mapping apply_gem_prop(string type, int ilvl, int n)
 {
         string *props;
@@ -685,12 +685,12 @@ varargs mapping apply_gem_prop(string type, int ilvl, int n)
         ||  type == "throwing"
         ||  type == "hands"
         ||  type == "finger" )
-                props = weapon_props[0]; // »ñÈ¡¶ÔÓ¦µÄÆ·ÖÊÊôĞÔ
+                props = weapon_props[0]; // ç²å–å°æ‡‰çš„å“è³ªå±¬æ€§
         else
         if( type == "rings"
         ||  type == "charm"
-        ||  type == "myheart"   // »¤Éí·û¡¤×ó
-        ||  type == "myheart2"  // »¤Éí·û¡¤ÓÒ
+        ||  type == "myheart"   // è­·èº«ç¬¦ï¹’å·¦
+        ||  type == "myheart2"  // è­·èº«ç¬¦ï¹’å³
         ||  type == "neck" )
                 props = ring_props[0];
         else
@@ -704,7 +704,7 @@ varargs mapping apply_gem_prop(string type, int ilvl, int n)
                 prop = props[random(sizeof(props))];
                 props -= ({ prop });
 
-                if( prop == "skill" ) // skillÌØÊâ·ÖÎö
+                if( prop == "skill" ) // skillç‰¹æ®Šåˆ†æ
                 {
                         int rate;
                         rate = random(100);
@@ -736,7 +736,7 @@ varargs mapping apply_gem_prop(string type, int ilvl, int n)
         return apply;
 }
 
-// ÉèÖÃ×°±¸ÊôĞÔ
+// è¨­ç½®è£å‚™å±¬æ€§
 mapping apply_props(string type, int ilvl, int n)
 {
         mapping applied_prop;
@@ -750,7 +750,7 @@ mapping apply_props(string type, int ilvl, int n)
         insert = ([]);
         
         if( !n ) return data;
-        for( i=1; i<=n; i++ ) // °¼²ÛÊı
+        for( i=1; i<=n; i++ ) // å‡¹æ§½æ•¸
         {
                 enchase_prop = copy(apply_gem_prop(type, ilvl));
                 apply = keys(enchase_prop);
@@ -761,7 +761,7 @@ mapping apply_props(string type, int ilvl, int n)
                         else
                                 applied_prop[apply[j]] += enchase_prop[apply[j]];
                 }
-                insert[to_string(i)] = (["name" : HIM"ĞşÊ¯"NOR, "id" : "magic stone", "apply_prop" : enchase_prop]);
+                insert[to_string(i)] = (["name" : HIM"ç„çŸ³"NOR, "id" : "magic stone", "apply_prop" : enchase_prop]);
         }
         
         data["apply_prop"] = applied_prop;
@@ -781,7 +781,7 @@ protected mapping trans_data(string mark)
 
         temp_status = ([ ]);
 
-        // ½âÎöinsert
+        // è§£æinsert
         if( sscanf(mark, "%s<insert>%s</insert>", mark, temp_str2) == 2 ) 
         {
                 temp_map2 = ([ ]);
@@ -801,7 +801,7 @@ protected mapping trans_data(string mark)
                                         if( sscanf(temp_arr[i], "%s:%d", temp_key, temp_value) != 2 )
                                                 sscanf(temp_arr[i], "%s:%s", temp_key, temp_value);
 
-                                        // ½âÎöVALUE
+                                        // è§£æVALUE
                                         if( stringp(temp_value) && strsrch(temp_value, '/') != -1 ) {
                                                 temp_val = explode(temp_value, "/");
                                                 temp_value = ({});
@@ -811,7 +811,7 @@ protected mapping trans_data(string mark)
                                                         else
                                                                 temp_value += temp_val[i];
                                         }
-                                        // ½âÎöKEY
+                                        // è§£æKEY
                                         if( stringp(temp_key) && strsrch(temp_key, '/') != -1 )
                                                 _set( temp_map, explode(temp_key, "/"), temp_value );
                                         else
@@ -826,7 +826,7 @@ protected mapping trans_data(string mark)
                 temp_status["insert"] = temp_map2;
         }   
         
-        // ¿ªÊ¼½âÎö
+        // é–‹å§‹è§£æ
         while (sscanf(mark, "%*s<%s>%s</%s>%s", key, temp_str, key, mark) > 3)
         {
                 temp_map = ([ ]);
@@ -834,7 +834,7 @@ protected mapping trans_data(string mark)
                 if( sizeof(temp_arr) < 2 ) {
                         if( sscanf(temp_arr[0], "%s:%d", temp_key, temp_value) == 2 ||
                             sscanf(temp_arr[0], "%s:%s", temp_key, temp_value) == 2 ) {
-                               // ½âÎöVALUE
+                               // è§£æVALUE
                                 if( stringp(temp_value) && strsrch(temp_value, '/') != -1 ) {
                                         temp_val = explode(temp_value, "/");
                                         temp_value = ({});
@@ -844,7 +844,7 @@ protected mapping trans_data(string mark)
                                                 else
                                                         temp_value += temp_val[i];
                                 }
-                                // ½âÎöKEY
+                                // è§£æKEY
                                 if( stringp(temp_key) && strsrch(temp_key, '/') != -1 )
                                         _set( temp_map, explode(temp_key, "/"), temp_value );
                                 else
@@ -863,7 +863,7 @@ protected mapping trans_data(string mark)
                                 if( sscanf(temp_arr[i], "%s:%d", temp_key, temp_value) != 2 )
                                         sscanf(temp_arr[i], "%s:%s", temp_key, temp_value);
 
-                                // ½âÎöVALUE
+                                // è§£æVALUE
                                 if( stringp(temp_value) && strsrch(temp_value, '/') != -1 ) {
                                         temp_val = explode(temp_value, "/");
                                         temp_value = ({});
@@ -873,7 +873,7 @@ protected mapping trans_data(string mark)
                                                 else
                                                         temp_value += temp_val[i];
                                 }
-                                // ½âÎöKEY
+                                // è§£æKEY
                                 if( stringp(temp_key) && strsrch(temp_key, '/') != -1 )
                                         _set( temp_map, explode(temp_key, "/"), temp_value );
                                 else
@@ -895,7 +895,7 @@ protected mapping trans_data(string mark)
         return temp_status;
 }
 
-// ´´ÔìÒ»¸ö¹Ì¶¨Îï¼ş£¬¸ù¾İĞòºÅ
+// å‰µé€ ä¸€å€‹å›ºå®šç‰©ä»¶ï¼Œæ ¹æ“šåºè™Ÿ
 varargs mixed create_object(string num, int level)
 {
         string *list;
@@ -971,7 +971,7 @@ varargs mixed create_object(string num, int level)
                 this_file = read_file(filename);
         }
 
-        // ½âÎöĞòºÅ¶ÔÓ¦µÄ×Ö·û´®
+        // è§£æåºè™Ÿå°æ‡‰çš„å­—ç¬¦ä¸²
         if( sscanf(this_file, "%*s<"+num+">%s</"+num+">%*s", mark) ) {
                 sscanf(mark, "%*s<type>%s</type>%s", type, mark);
                 filename = EQUIP_DIR + type;
@@ -984,18 +984,18 @@ varargs mixed create_object(string num, int level)
 
                 ob = TEMPLATE_D->create_object(filename, temp_status["id"], temp_status, 0, temp_function);
                 set("mod_mark", num, ob);
-                set("can_sign", 1, ob); // ×°±¸Ç©Ãû
+                set("can_sign", 1, ob); // è£å‚™ç°½å
                 if( temp_status["mod_level"] )
                         set("mod_level", temp_status["mod_level"], ob);
 
                 return ob;
         } else {
-                CHANNEL_D->do_channel(this_object(),"sys", "´´ÔìÒ»¸ö´íÎóµÄÎï¼ş¡£");
+                CHANNEL_D->do_channel(this_object(),"sys", "å‰µé€ ä¸€å€‹éŒ¯èª¤çš„ç‰©ä»¶ã€‚");
                 return 0;
         }
 }
 
-// ´´ÔìÒ»¸ö¹Ì¶¨Ì××°²¿¼ş£¬¸ù¾İĞòºÅ
+// å‰µé€ ä¸€å€‹å›ºå®šå¥—è£éƒ¨ä»¶ï¼Œæ ¹æ“šåºè™Ÿ
 varargs object create_module(string num, int level)
 {
         string mark, part, str, rec;
@@ -1036,7 +1036,7 @@ varargs object create_module(string num, int level)
 
                 this_file = read_file(filename);
         }
-        //½âÎöĞòºÅ¶ÔÓ¦µÄ×Ö·û´®
+        //è§£æåºè™Ÿå°æ‡‰çš„å­—ç¬¦ä¸²
         if( sscanf(this_file, "%*s<"+num+">%s</"+num+">%*s", mark) )
         {
                 sscanf(mark, "%*s<type>%s</type>%s", type, mark);
@@ -1050,18 +1050,18 @@ varargs object create_module(string num, int level)
 
                 ob = TEMPLATE_D->create_object(filename, temp_status["id"], temp_status, 0, temp_function);
                 set("mod_mark", num, ob);
-                //set("can_sign", 1, ob); // ×°±¸Ç©Ãû
+                //set("can_sign", 1, ob); // è£å‚™ç°½å
                 //if( temp_status["mod_level"] )
                 //        set("mod_level", temp_status["mod_level"], ob);
 
                 return ob;
         } else {
-                CHANNEL_D->do_channel(this_object(), "sys", "´´ÔìÒ»¸öÌ××°²¿¼ş´íÎó¡£");
+                CHANNEL_D->do_channel(this_object(), "sys", "å‰µé€ ä¸€å€‹å¥—è£éƒ¨ä»¶éŒ¯èª¤ã€‚");
                 return 0;
         }
 }
 
-// ´´ÔìÒ»¸ö¶¯Ì¬µÄÎï¼ş
+// å‰µé€ ä¸€å€‹å‹•æ…‹çš„ç‰©ä»¶
 public varargs object create_dynamic(string obj_type, int ilvl, int mf, int flag)
 {
         mapping temp_status, all_list, data;
@@ -1080,7 +1080,7 @@ public varargs object create_dynamic(string obj_type, int ilvl, int mf, int flag
         if( !ilvl || ilvl < 1 )
                 return 0;
 
-        if( !obj_type || obj_type == "" ) { // Ëæ»úÉú³É×°±¸ÖÖÀà»ò±¦Ê¯
+        if( !obj_type || obj_type == "" ) { // éš¨æ©Ÿç”Ÿæˆè£å‚™ç¨®é¡æˆ–å¯¶çŸ³
                 rate = random(100);
                 if( rate < 30 ) obj_type = "weapon";
                 else if( rate < 70 ) obj_type = "armor";
@@ -1089,7 +1089,7 @@ public varargs object create_dynamic(string obj_type, int ilvl, int mf, int flag
                 flag = 0;
         }
 
-        if( flag ) { // Ö¸¶¨µÄ±øÆ÷ÀàĞÍ¡¢·À¾ßÀàĞÍ»ò±¦Ê¯ÀàĞÍ
+        if( flag ) { // æŒ‡å®šçš„å…µå™¨é¡å‹ã€é˜²å…·é¡å‹æˆ–å¯¶çŸ³é¡å‹
                 if( flag == 1 ) {
                         if( member_array(obj_type, weapon_type) != -1 )
                                 base_type = "weapon";
@@ -1099,7 +1099,7 @@ public varargs object create_dynamic(string obj_type, int ilvl, int mf, int flag
                                 base_type = "rings";
                         else    base_type = "gem";
                 } else {
-                        // ÏµÍ³¹Ì¶¨µÄÃû³ÆºÍIDµÄ×°±¸
+                        // ç³»çµ±å›ºå®šçš„åç¨±å’ŒIDçš„è£å‚™
                         all_list = type_list[obj_type];
                         all_id = values(all_list);
                         id = all_id[random(sizeof(all_id))];
@@ -1107,10 +1107,10 @@ public varargs object create_dynamic(string obj_type, int ilvl, int mf, int flag
         } else {
                 base_type = obj_type;
                 types = all_type[obj_type];
-                obj_type = types[random(sizeof(types))]; // Ëæ»úÒ»ÖÖ
+                obj_type = types[random(sizeof(types))]; // éš¨æ©Ÿä¸€ç¨®
         }
 
-        if( flag && flag > 1 ) // ÓÃÄ£ĞÍÎÄ¼ş£¬ĞèÒª¼ì²éĞ´·¨
+        if( flag && flag > 1 ) // ç”¨æ¨¡å‹æ–‡ä»¶ï¼Œéœ€è¦æª¢æŸ¥å¯«æ³•
                 filename = sprintf("%s%s/%s.c", TEMPLATE_DIR, base_type, obj_type);
         else
                 filename = sprintf("%s%s/%s.c", EQUIP_DIR, base_type, obj_type);
@@ -1124,18 +1124,18 @@ public varargs object create_dynamic(string obj_type, int ilvl, int mf, int flag
         else data["int"] = ilvl*2 + random(ilvl);
 
         data["level"] = ilvl;
-        temp_status["require"] = copy(data); // ÉèÖÃ×°±¸ÒªÇó
+        temp_status["require"] = copy(data); // è¨­ç½®è£å‚™è¦æ±‚
 
-        if( base_type != "gem" ) // µôÂä×°±¸£¬·Ç±¦Ê¯
+        if( base_type != "gem" ) // æ‰è½è£å‚™ï¼Œéå¯¶çŸ³
         {
-                // °¼²ÛÊıÁ¿£ºÆÕÍ¨0¡¢¾«ÖÆ1¡¢ÕäÏ¡2¡¢Ê·Ê«3¡¢´«Ëµ4¡¢ÉñÆ÷5
-                // ÎäÆ÷6¿×£¬·À¾ß4¿×£¬»¤Éí·û3¿×£¬¶ÜÅÆ4¿×
+                // å‡¹æ§½æ•¸é‡ï¼šæ™®é€š0ã€ç²¾åˆ¶1ã€çç¨€2ã€å²è©©3ã€å‚³èªª4ã€ç¥å™¨5
+                // æ­¦å™¨6å­”ï¼Œé˜²å…·4å­”ï¼Œè­·èº«ç¬¦3å­”ï¼Œç›¾ç‰Œ4å­”
                 
                 if( mf < 2 ) mf = 2;
                 
-                uf = mf*10/(mf+10);  // ´«ËµÆ·¼¶
-                sf = mf*30/(mf+30);  // Ê·Ê«Æ·¼¶
-                rf = mf*500/(mf+500);  // ÕäÏ¡Æ·¼¶
+                uf = mf*10/(mf+10);  // å‚³èªªå“ç´š
+                sf = mf*30/(mf+30);  // å²è©©å“ç´š
+                rf = mf*500/(mf+500);  // çç¨€å“ç´š
                                      
                 rate = random(100);
                 /*
@@ -1145,21 +1145,21 @@ public varargs object create_dynamic(string obj_type, int ilvl, int mf, int flag
                 if( mf >= 600 )
                 {
                         if( base_type == "weapon" || obj_type == "hands" || obj_type == "finger" )
-                                n = 5;       // °¼²ÛÊıÁ¿
+                                n = 5;       // å‡¹æ§½æ•¸é‡
                         else if( base_type == "armor" )
                                 n = 3;
-                        else // »¤Éí·û
+                        else // è­·èº«ç¬¦
                                 n = 3;
                         qlvl = 6; 
-                        color = HBRED+HIW; // Éñ»°
+                        color = HBRED+HIW; // ç¥è©±
                 } else 
                 if( mf >= 500 )
                 {
                         if( base_type == "weapon" || obj_type == "hands" || obj_type == "finger" )
-                                n = 4;       // °¼²ÛÊıÁ¿
+                                n = 4;       // å‡¹æ§½æ•¸é‡
                         else if( base_type == "armor" )
                                 n = 3;
-                        else // »¤Éí·û
+                        else // è­·èº«ç¬¦
                                 n = 3;
                         if( (mf >= 540 && random(300) == 1) || random(1000) == 1 )
                         {
@@ -1170,7 +1170,7 @@ public varargs object create_dynamic(string obj_type, int ilvl, int mf, int flag
                         else
                         {
                                 qlvl = 5;
-                                color = HIY; // ´«ËµÒÔÉÏ
+                                color = HIY; // å‚³èªªä»¥ä¸Š
                         }
                 } else  
                 if( mf >= 400 )
@@ -1187,7 +1187,7 @@ public varargs object create_dynamic(string obj_type, int ilvl, int mf, int flag
                         else
                         {
                                 qlvl = 4;
-                                color = HIM; // Ê·Ê«
+                                color = HIM; // å²è©©
                         }
                 } else             
                 if( mf >= 300 )
@@ -1201,48 +1201,48 @@ public varargs object create_dynamic(string obj_type, int ilvl, int mf, int flag
                         else
                         {
                                 qlvl = 3;
-                                color = HIR; // ÕäÏ¡ÒÔÉÏ
+                                color = HIR; // çç¨€ä»¥ä¸Š
                         }
                 } else           
                 if( rate < uf && !random(100) )
                 {
                         if( base_type == "weapon" || obj_type == "hands" || obj_type == "finger" )
-                                n = 4;       // °¼²ÛÊıÁ¿
+                                n = 4;       // å‡¹æ§½æ•¸é‡
                         else if( base_type == "armor" )
                                 n = 3;
-                        else // »¤Éí·û
+                        else // è­·èº«ç¬¦
                                 n = 3;
                         qlvl = 5; 
-                        color = HIY; // ´«Ëµ
+                        color = HIY; // å‚³èªª
                 } else
                 if( rate < sf && !random(50) )
                 {
                         n = 3;
                         qlvl = 4;
-                        color = HIM; // Ê·Ê«
+                        color = HIM; // å²è©©
                 } else
                 if( rate < rf )
                 {
                         n = 2;
                         qlvl = 3;
-                        color = HIR; // ÕäÏ¡
+                        color = HIR; // çç¨€
                 }
                 else
                 if( rate < mf )
                 {
                         n = 1;
                         qlvl = 2;
-                        color = HIB; // ¾«ÖÆ
+                        color = HIB; // ç²¾åˆ¶
                 }
                 else
                 {
                         n = 0;
                         qlvl = 1;
-                        color = HIW; // ÆÕÍ¨
+                        color = HIW; // æ™®é€š
                 }
                 data = ([]);
                 if( n > 1 )
-                        n = random(n); // Ëæ»ú°¼²ÛÊı
+                        n = random(n); // éš¨æ©Ÿå‡¹æ§½æ•¸
                 if( n > 0 )
                 {
                         data = apply_props(obj_type, ilvl/10, n);
@@ -1250,10 +1250,10 @@ public varargs object create_dynamic(string obj_type, int ilvl, int mf, int flag
                         data["used"] = n;
                         insert = data["insert"];
                         map_delete(data, "insert");
-                        temp_status["enchase"] = copy(data); // ÉèÖÃ×°±¸ÊôĞÔ buff/enchase ?
-                        temp_status["insert"] = insert;      // ²å²Û±¦Ê¯ÊôĞÔ
+                        temp_status["enchase"] = copy(data); // è¨­ç½®è£å‚™å±¬æ€§ buff/enchase ?
+                        temp_status["insert"] = insert;      // æ’æ§½å¯¶çŸ³å±¬æ€§
                 }
-                if( qlvl > 5 ) // ÉñÆ÷
+                if( qlvl > 5 ) // ç¥å™¨
                 {
                         if( base_type == "weapon" || obj_type == "hands" || obj_type == "finger" )   
                                 props = weapon_props[3];
@@ -1286,7 +1286,7 @@ public varargs object create_dynamic(string obj_type, int ilvl, int mf, int flag
                         else
                                 applied_prop[prop] += query_prop_value(prop, ilvl/10);           
                 } else {
-                if( qlvl > 4 ) // ´«Ëµ
+                if( qlvl > 4 ) // å‚³èªª
                 {
                         if( base_type == "weapon" || obj_type == "hands" || obj_type == "finger" )   
                                 props = weapon_props[2];
@@ -1301,7 +1301,7 @@ public varargs object create_dynamic(string obj_type, int ilvl, int mf, int flag
                         else
                                 applied_prop[prop] += query_prop_value(prop, ilvl/10);  
                 }
-                if( qlvl > 3 ) // Ê·Ê«
+                if( qlvl > 3 ) // å²è©©
                 {
                         if( base_type == "weapon" || obj_type == "hands" || obj_type == "finger" )   
                                 props = weapon_props[1];
@@ -1316,7 +1316,7 @@ public varargs object create_dynamic(string obj_type, int ilvl, int mf, int flag
                         else
                                 applied_prop[prop] += query_prop_value(prop, ilvl/10);  
                 } 
-                if( qlvl > 2 ) // ÕäÏ¡
+                if( qlvl > 2 ) // çç¨€
                 {
                         if( base_type == "weapon" || obj_type == "hands" || obj_type == "finger" )   
                                 props = weapon_props[0];
@@ -1335,7 +1335,7 @@ public varargs object create_dynamic(string obj_type, int ilvl, int mf, int flag
                         
                 if( base_type == "weapon" )
                 {
-                        temp_status["weapon_prop"] = ([ "damage" : (ilvl+15)*qlvl*10 ]); // »ù±¾ÊôĞÔ-ÉËº¦                        
+                        temp_status["weapon_prop"] = ([ "damage" : (ilvl+15)*qlvl*10 ]); // åŸºæœ¬å±¬æ€§-å‚·å®³                        
                         if( applied_prop )
                                 temp_status["weapon_prop"] += applied_prop;
                 }
@@ -1351,12 +1351,12 @@ public varargs object create_dynamic(string obj_type, int ilvl, int mf, int flag
                         }
                         else
                         {
-                                temp_status["armor_prop"] = ([ "armor" : (ilvl+15)*qlvl*2 ]); // »ù±¾ÊôĞÔ-±£»¤
+                                temp_status["armor_prop"] = ([ "armor" : (ilvl+15)*qlvl*2 ]); // åŸºæœ¬å±¬æ€§-ä¿è­·
                                 if( applied_prop )
                                         temp_status["armor_prop"] += applied_prop;
                         }    
                 }
-                else // »¤Éí·û
+                else // è­·èº«ç¬¦
                 {
                         temp_status["armor_prop"] = ([ "armor" : 10 ]);
                         if( applied_prop )
@@ -1364,16 +1364,16 @@ public varargs object create_dynamic(string obj_type, int ilvl, int mf, int flag
                 }
                 
                 ob = TEMPLATE_D->create_object(filename, obj_type, temp_status);
-                set("quality_level", qlvl, ob); // Æ·ÖÊ
-                set("can_sign", 1, ob); // ×°±¸Ç©Ãû
-                set("auto_load", 1, ob); // ÏÂÏß²»µô
+                set("quality_level", qlvl, ob); // å“è³ª
+                set("can_sign", 1, ob); // è£å‚™ç°½å
+                set("auto_load", 1, ob); // ä¸‹ç·šä¸æ‰
                 if( color )
-                        ob->set_color(color); // ÉèÖÃÑÕÉ«,x_nameÖĞÒÑ¾­´¦ÀíÑÕÉ«ÁË£¿
+                        ob->set_color(color); // è¨­ç½®é¡è‰²,x_nameä¸­å·²ç¶“è™•ç†é¡è‰²äº†ï¼Ÿ
         }
-        else // µôÂä±¦Ê¯
+        else // æ‰è½å¯¶çŸ³
         {
-                // ±¦Ê¯·ÖÎª4¸öµÈ¼¶£¬ËéÆ¬£¬ÍêºÃ1£¬Ï¡ÓĞ1+1£¬ÉñÖ®1+2£¬±¦Ê¯ÓµÓĞ±øÆ÷ºÍ·À¾ßÒÔ¼°ÊÎÆ·3ÖÖÊôĞÔ£¿
-                // µôÂäÎ´¼ø¶¨µÄ±¦Ê¯´úÌæ
+                // å¯¶çŸ³åˆ†ç‚º4å€‹ç­‰ç´šï¼Œç¢ç‰‡ï¼Œå®Œå¥½1ï¼Œç¨€æœ‰1+1ï¼Œç¥ä¹‹1+2ï¼Œå¯¶çŸ³æ“æœ‰å…µå™¨å’Œé˜²å…·ä»¥åŠé£¾å“3ç¨®å±¬æ€§ï¼Ÿ
+                // æ‰è½æœªé‘’å®šçš„å¯¶çŸ³ä»£æ›¿
                 ob = new("/clone/tessera/gem.c");
                 //file = map_array(get_dir("/inherit/template/gem/"), (: "/inherit/template/gem/" + $1 :)); 
                 //filename = file[random(sizeof(file))]; 
@@ -1420,7 +1420,7 @@ public varargs void killer_reward(object killer, object victim, mapping drops)
                 value = drops[ks[i]];
                 value += value * mf/100;
                 
-                // µôÂä¼¸ÂÊ¹«Ê½                
+                // æ‰è½å¹¾ç‡å…¬å¼                
                 if( team_size >= 5 )
                         value = value * 220 / 100;
                 else if( team_size == 4 )
@@ -1434,31 +1434,31 @@ public varargs void killer_reward(object killer, object victim, mapping drops)
                         rand = random(score);
                         if( rand < value) {
                                 str = key[0..1];
-                                // µôÂäÕóÁĞ¹Ø¼ü×ÖÒÔ F I ÆğÍ·±íÊ¾ÎªµôÂäÄ³¸öÎïÆ·
+                                // æ‰è½é™£åˆ—é—œéµå­—ä»¥ F I èµ·é ­è¡¨ç¤ºç‚ºæ‰è½æŸå€‹ç‰©å“
                                 if( str == "FI" ) {
                                         if( sscanf(key, "FI&%s", ob_file) )
                                                 ob = new(ob_file);
 
                                 }
-                                // µôÂäÕóÁĞ¹Ø¼ü×ÖÒÔ N U ÆğÍ·±íÊ¾ÎªµôÂäÄ³¸öĞòºÅµÄÎïÆ·
+                                // æ‰è½é™£åˆ—é—œéµå­—ä»¥ N U èµ·é ­è¡¨ç¤ºç‚ºæ‰è½æŸå€‹åºè™Ÿçš„ç‰©å“
                                 else if( str == "NU" ) {
                                         if(  sscanf(key, "NU&%s", ob_num) )
                                                 ob = create_object(ob_num);
 
                                 }
-                                // µôÂäÕóÁĞ¹Ø¼ü×ÖÒÔ T Y ÆğÍ·±íÊ¾ÎªµôÂäÄ³¸öÀàĞÍµÄÎïÆ·
+                                // æ‰è½é™£åˆ—é—œéµå­—ä»¥ T Y èµ·é ­è¡¨ç¤ºç‚ºæ‰è½æŸå€‹é¡å‹çš„ç‰©å“
                                 else if( str == "TY" ) {
                                         if(  sscanf(key, "TY&%s%d", ob_typ, level) == 2 )
                                                 ob = create_dynamic(ob_typ, level, mf);
 
                                 }
-                                // µôÂäÕóÁĞ¹Ø¼ü×ÖÒÔ M O ÆğÍ·±íÊ¾ÎªµôÂäÄ³¸öĞòºÅµÄÌ××°²¿¼ş
+                                // æ‰è½é™£åˆ—é—œéµå­—ä»¥ M O èµ·é ­è¡¨ç¤ºç‚ºæ‰è½æŸå€‹åºè™Ÿçš„å¥—è£éƒ¨ä»¶
                                 else if( str == "MO" ) {
                                         if( sscanf(key, "MO&%s", ob_num) )
                                                 ob = create_module(ob_num);
 
                                 }
-                                // µôÂäÕóÁĞ¹Ø¼ü×ÖÒÔ R A ÆğÍ·±íÊ¾ÎªµôÂäÄ³ÀàÆ·ÖÊµÄµÄËæ»úÎïÆ·»òÕßËæ»úµÄÄ³¼¶×°±¸
+                                // æ‰è½é™£åˆ—é—œéµå­—ä»¥ R A èµ·é ­è¡¨ç¤ºç‚ºæ‰è½æŸé¡å“è³ªçš„çš„éš¨æ©Ÿç‰©å“æˆ–è€…éš¨æ©Ÿçš„æŸç´šè£å‚™
                                 else if( str == "RA" ) {
                                         if( sscanf(key, "RA&%s%d", ob_quality, level) == 2 ) {
                                                 switch (ob_quality)
@@ -1490,31 +1490,31 @@ public varargs void killer_reward(object killer, object victim, mapping drops)
                                         }
                                 }
                                 if( objectp(ob) ) {
-                                        // HIW+treasure_level+NOR" ¼¶"HIC"Ï¡"NOR CYN"ÓĞ"NOR"ÎïÆ·
+                                        // HIW+treasure_level+NOR" ç´š"HIC"ç¨€"NOR CYN"æœ‰"NOR"ç‰©å“
 /*
-                                        if( query("quality_level", ob) == 3 ) // ÕäÏ¡
+                                        if( query("quality_level", ob) == 3 ) // çç¨€
                                                 CHANNEL_D->channel_broadcast("news",  
-                                                        killer->name() + "É±ËÀ" + victim->name() + NOR YEL"£¬´ÓÆäÉíÉÏµô³öÒ»"+query("unit", ob)+HIR" Õä"NOR RED"Ï¡"HIW"¼¶ "NOR YEL+ob->name()+YEL"¡£\n"NOR);
-                                        else if( query("quality_level", ob) == 4 ) // Ê·Ê«
+                                                        killer->name() + "æ®ºæ­»" + victim->name() + NOR YEL"ï¼Œå¾å…¶èº«ä¸Šæ‰å‡ºä¸€"+query("unit", ob)+HIR" ç"NOR RED"ç¨€"HIW"ç´š "NOR YEL+ob->name()+YEL"ã€‚\n"NOR);
+                                        else if( query("quality_level", ob) == 4 ) // å²è©©
 */
-                                        if( query("quality_level", ob) == 4 ) // Ê·Ê«
+                                        if( query("quality_level", ob) == 4 ) // å²è©©
                                                 CHANNEL_D->channel_broadcast("news",  
-                                                        killer->name() + "É±ËÀ" + victim->name() + NOR YEL"£¬´ÓÆäÉíÉÏµô³öÒ»"+query("unit", ob)+HIM" Ê·"NOR MAG"Ê«"HIW"¼¶ "NOR YEL+ob->name()+YEL"¡£\n"NOR);
-                                        else if( query("quality_level", ob) == 5 ) // ´«Ëµ
+                                                        killer->name() + "æ®ºæ­»" + victim->name() + NOR YEL"ï¼Œå¾å…¶èº«ä¸Šæ‰å‡ºä¸€"+query("unit", ob)+HIM" å²"NOR MAG"è©©"HIW"ç´š "NOR YEL+ob->name()+YEL"ã€‚\n"NOR);
+                                        else if( query("quality_level", ob) == 5 ) // å‚³èªª
                                                 CHANNEL_D->channel_broadcast("news",  
-                                                        killer->name() + "É±ËÀ" + victim->name() + NOR YEL"£¬´ÓÆäÉíÉÏµô³öÒ»"+query("unit", ob)+HIY" ´«"NOR YEL"Ëµ"HIW"¼¶ "NOR YEL+ob->name()+YEL"¡£\n"NOR);
-                                        else if( query("quality_level", ob) == 6 ) // ÉñÆ÷
+                                                        killer->name() + "æ®ºæ­»" + victim->name() + NOR YEL"ï¼Œå¾å…¶èº«ä¸Šæ‰å‡ºä¸€"+query("unit", ob)+HIY" å‚³"NOR YEL"èªª"HIW"ç´š "NOR YEL+ob->name()+YEL"ã€‚\n"NOR);
+                                        else if( query("quality_level", ob) == 6 ) // ç¥å™¨
                                         {
                                                 CHANNEL_D->channel_broadcast("news",  
-                                                        //killer->name() + "É±ËÀ" + victim->name() + NOR YEL"£¬´ÓÆäÊ¬ÌåÉÏ¼ñÆğÁËÒ»"+query("unit", ob)+HIY" Éñ"NOR YEL"Æ÷"HIW"¼¶ "NOR YEL+ob->name()+YEL"¡£\n"NOR);
-                                                        killer->name() + "É±ËÀ" + victim->name() + NOR YEL"£¬´ÓÆäÉíÉÏµô³öÒ»"+query("unit", ob)+" "+HBRED+HIW"ÉñÆ÷"NOR+HIW"¼¶ "NOR YEL+ob->name()+YEL"¡£\n"NOR);
+                                                        //killer->name() + "æ®ºæ­»" + victim->name() + NOR YEL"ï¼Œå¾å…¶å±é«”ä¸Šæ’¿èµ·äº†ä¸€"+query("unit", ob)+HIY" ç¥"NOR YEL"å™¨"HIW"ç´š "NOR YEL+ob->name()+YEL"ã€‚\n"NOR);
+                                                        killer->name() + "æ®ºæ­»" + victim->name() + NOR YEL"ï¼Œå¾å…¶èº«ä¸Šæ‰å‡ºä¸€"+query("unit", ob)+" "+HBRED+HIW"ç¥å™¨"NOR+HIW"ç´š "NOR YEL+ob->name()+YEL"ã€‚\n"NOR);
                                                 log_file("myth", sprintf("%s have get a %s(%s) of myth equip at %s.\n",killer->query_idname(),query("name",ob),query("id",ob),TIME_D->replace_ctime(time())));
                                         }
                                                         
-                                        message_vision(HIC "µ±~~Ò»Éù£¬´Ó$N" HIC "ÉíÉÏµô³ö" + ob->name() + NOR + HIC "£¬ÂäÔÚµØÉÏ¡£\n" NOR, victim);
+                                        message_vision(HIC "ç•¶~~ä¸€è²ï¼Œå¾$N" HIC "èº«ä¸Šæ‰å‡º" + ob->name() + NOR + HIC "ï¼Œè½åœ¨åœ°ä¸Šã€‚\n" NOR, victim);
                                         if( query("quality_level", ob) > 2 ) {
                                                 set("who_get/id", query("id", killer), ob);
-		                                set("who_get/time", time() + 10, ob); // 10ÃëÄÚ±ğÈË¶¼²»ÄÜ¼ñÈ¡
+		                                set("who_get/time", time() + 10, ob); // 10ç§’å…§åˆ¥äººéƒ½ä¸èƒ½æ’¿å–
                                         }
                                         ob->move(where);                   
                                 }
@@ -1528,13 +1528,13 @@ public varargs void killer_reward(object killer, object victim, mapping drops)
                 ob->set_amount(random(20)+20);
                 /*
                 set("who_get/id", query("id", killer), ob);
-	        set("who_get/time", time() + 10, ob); // 10ÃëÄÚ±ğÈË¶¼²»ÄÜ¼ñÈ¡
+	        set("who_get/time", time() + 10, ob); // 10ç§’å…§åˆ¥äººéƒ½ä¸èƒ½æ’¿å–
 	        */
                 ob->move(where);
-                message_vision(HIC "¶£~~Ò»Éù£¬´Ó$N" HIC "ÉíÉÏµô³ö" + ob->name() + NOR + HIC "£¬ÂäÔÚµØÉÏ¡£\n" NOR, victim);
+                message_vision(HIC "å®~~ä¸€è²ï¼Œå¾$N" HIC "èº«ä¸Šæ‰å‡º" + ob->name() + NOR + HIC "ï¼Œè½åœ¨åœ°ä¸Šã€‚\n" NOR, victim);
         }
 
-        // ÌØÊâ»î¶¯±¬ÎïÆ·£¬Í³Ò»µ÷ÓÃgiftd½Ó¿Ú
+        // ç‰¹æ®Šæ´»å‹•çˆ†ç‰©å“ï¼Œçµ±ä¸€èª¿ç”¨giftdæ¥å£
         //GIFT_D->boss_drops(this_object());
 
         return;

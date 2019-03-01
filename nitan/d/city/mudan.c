@@ -1,4 +1,4 @@
-// Äµµ¤Ñç»áÌü.c
+// ç‰¡ä¸¹å®´æœƒå»³.c
 
 #include <ansi.h>
 #include <room.h>
@@ -13,15 +13,15 @@ create_food(string nmstr, string* idlist, string longstr)
         obj->set_name(nmstr, idlist);
         if (longstr)
         set("long", @LONG
-½øÃÅÈÆ¹ıÒ»µÀµ­ºì³ñÆÁ·ç£¬Ó­ÃæÇ½ÉÏ¹Ò×ÅÒ»¸±¡ºÄµµ¤ÕùÑŞ¡»Í¼£¬
-Äµµ¤ÊÇÖĞ¹ú¹ú»¨£¬ËØÒÔ¸»¹óÖø³Æ¡£Í¼²à¶ÔÁª£º ÓÄ¾¶Ìì×Ë³Ê¶ÀĞã£¬¹ÅÔ°
-¹úÉ«¹ÚÈº·¼¡£³ÄÍĞÁËÄÇÒ»¾¥Äµµ¤·ÖÍâ¾«Éñ¡£ÌüÄÚ³ÂÁĞÉİ»ª£¬ÕıÖĞÑëÒ»
-ÕÅµñ»¨éªÄ¾ÇàÆáÇ¶Óñ´óÔ²×À£¬ËÄÖÜÊ®¶şÕÅÏâÒøÏóÑÀ·öÊÖºìÄ¾ÒÎ£¬±­Íë
-É×óç£¬ÈëÑÛÉú»Ô¡£    ÕâÀï±ãÊÇ×íÏÉÂ¥µÄÃµ¹åÌü£¬×ÀÉÏÆ½ÆÌ×ÅÒ»·İ²Ë
-µ¥(menu)¡£
+é€²é–€ç¹éä¸€é“æ·¡ç´…ç¶¢å±é¢¨ï¼Œè¿é¢ç‰†ä¸Šæ›è‘—ä¸€å‰¯ã€ç‰¡ä¸¹çˆ­è‰·ã€åœ–ï¼Œ
+ç‰¡ä¸¹æ˜¯ä¸­åœ‹åœ‹èŠ±ï¼Œç´ ä»¥å¯Œè²´è‘—ç¨±ã€‚åœ–å´å°è¯ï¼š å¹½å¾‘å¤©å§¿å‘ˆç¨ç§€ï¼Œå¤åœ’
+åœ‹è‰²å† ç¾¤èŠ³ã€‚è¥¯æ‰˜äº†é‚£ä¸€è–ç‰¡ä¸¹åˆ†å¤–ç²¾ç¥ã€‚å»³å…§é™³åˆ—å¥¢è¯ï¼Œæ­£ä¸­å¤®ä¸€
+å¼µé›•èŠ±æ¥ æœ¨é’æ¼†åµŒç‰å¤§åœ“æ¡Œï¼Œå››å‘¨åäºŒå¼µé‘²éŠ€è±¡ç‰™æ‰¶æ‰‹ç´…æœ¨æ¤…ï¼Œæ¯ç¢—
+å‹ºç®¸ï¼Œå…¥çœ¼ç”Ÿè¼ã€‚    é€™è£¡ä¾¿æ˜¯é†‰ä»™æ¨“çš„ç«ç‘°å»³ï¼Œæ¡Œä¸Šå¹³èˆ–è‘—ä¸€ä»½èœ
+å–®(menu)ã€‚
 LONG );
         else
-              set("long", GRN+"Ò»ÅÌÈÈÆøÌÚÌÚ,ÏãÅçÅçµÄ"+nmstr+"¡£\n"+NOR, obj);
+              set("long", GRN+"ä¸€ç›¤ç†±æ°£é¨°é¨°,é¦™å™´å™´çš„"+nmstr+"ã€‚\n"+NOR, obj);
         obj->move(this_object());
 }
 
@@ -35,7 +35,7 @@ create_water(string nmstr, string* idlist, string cup, string longstr)
         if (longstr)
               set("long", longstr, obj);
         else
-              set("long", YEL+"Ò»±­¿É¿ÚµÄ"+nmstr+"¡£\n"+NOR, obj);
+              set("long", YEL+"ä¸€æ¯å¯å£çš„"+nmstr+"ã€‚\n"+NOR, obj);
         set("liquid/name", nmstr, obj);
         obj->move(this_object());
 }
@@ -50,20 +50,20 @@ create_wine(string nmstr, string* idlist, string cup, string longstr)
         if (longstr)
               set("long", longstr, obj);
         else
-              set("long", RED+"Ò»±­´¼ÕıµÄ"+nmstr+"¡£\n"+NOR, obj);
+              set("long", RED+"ä¸€æ¯é†‡æ­£çš„"+nmstr+"ã€‚\n"+NOR, obj);
         set("liquid/name", nmstr, obj);
         obj->move(this_object());
 }
 
 void create()
 {
-        set("short", HIR"Äµµ¤ÑçÌü"NOR);
+        set("short", HIR"ç‰¡ä¸¹å®´å»³"NOR);
         set("long", @LONG
-½øÃÅÈÆ¹ıÒ»µÀµ­ºì³ñÆÁ·ç£¬Ó­ÃæÇ½ÉÏ¹Ò×ÅÒ»¸±¡ºÄµµ¤ÕùÑŞ¡»Í¼£¬Äµµ¤ÊÇÖĞ¹ú
-¹ú»¨£¬ËØÒÔ¸»¹óÖø³Æ¡£Í¼²à¶ÔÁª: ÓÄ¾¶Ìì×Ë³Ê¶ÀĞã£¬¹ÅÔ°¹úÉ«¹ÚÈº·¼¡£³ÄÍĞÁËÄÇ
-Ò»¾¥Äµµ¤·ÖÍâ¾«Éñ¡£ÌüÄÚ³ÂÁĞÉİ»ª£¬ÕıÖĞÑëÒ»ÕÅµñ»¨éªÄ¾ÇàÆáÇ¶Óñ´óÔ²×À£¬ËÄÖÜ
-Ê®¶şÕÅÏâÒøÏóÑÀ·öÊÖºìÄ¾ÒÎ£¬±­ÍëÉ×óç£¬ÈëÑÛÉú»Ô¡£
-    ÕâÀï±ãÊÇ×íÏÉÂ¥µÄÃµ¹åÌü£¬×ÀÉÏÆ½ÆÌ×ÅÒ»·İ²Ëµ¥(menu)¡£
+é€²é–€ç¹éä¸€é“æ·¡ç´…ç¶¢å±é¢¨ï¼Œè¿é¢ç‰†ä¸Šæ›è‘—ä¸€å‰¯ã€ç‰¡ä¸¹çˆ­è‰·ã€åœ–ï¼Œç‰¡ä¸¹æ˜¯ä¸­åœ‹
+åœ‹èŠ±ï¼Œç´ ä»¥å¯Œè²´è‘—ç¨±ã€‚åœ–å´å°è¯: å¹½å¾‘å¤©å§¿å‘ˆç¨ç§€ï¼Œå¤åœ’åœ‹è‰²å† ç¾¤èŠ³ã€‚è¥¯æ‰˜äº†é‚£
+ä¸€è–ç‰¡ä¸¹åˆ†å¤–ç²¾ç¥ã€‚å»³å…§é™³åˆ—å¥¢è¯ï¼Œæ­£ä¸­å¤®ä¸€å¼µé›•èŠ±æ¥ æœ¨é’æ¼†åµŒç‰å¤§åœ“æ¡Œï¼Œå››å‘¨
+åäºŒå¼µé‘²éŠ€è±¡ç‰™æ‰¶æ‰‹ç´…æœ¨æ¤…ï¼Œæ¯ç¢—å‹ºç®¸ï¼Œå…¥çœ¼ç”Ÿè¼ã€‚
+    é€™è£¡ä¾¿æ˜¯é†‰ä»™æ¨“çš„ç«ç‘°å»³ï¼Œæ¡Œä¸Šå¹³èˆ–è‘—ä¸€ä»½èœå–®(menu)ã€‚
 LONG );
         set("exits", ([ /* sizeof() == 1 */
             "north" : "/d/city/zxlpath",
@@ -71,19 +71,19 @@ LONG );
         set("no_sleep_room",1);
         set("item_desc", ([
                 "menu": @TEXT
-³Ğ°ì¸÷Ê½¾ÆÏ¯, »¶Ó­»İ¹Ë£º
+æ‰¿è¾¦å„å¼é…’å¸­, æ­¡è¿æƒ é¡§ï¼š
 
-        order birthday: ×£ÊÙÑç        (2Á½»Æ½ğ)
+        order birthday: ç¥å£½å®´        (2å…©é»ƒé‡‘)
 
-        order marry:    ¶©»éÑç        (3Á½»Æ½ğ)
+        order marry:    è¨‚å©šå®´        (3å…©é»ƒé‡‘)
 
-        order player:   ÈººÀÑç        (5Á½»Æ½ğ)
+        order player:   ç¾¤è±ªå®´        (5å…©é»ƒé‡‘)
 
-        order end:      ½á  Êø
+        order end:      çµ  æŸ
 
 TEXT
         ]) );
-//        create_door("out", "ºìÄ¾ïÎ»¨ÃÅ", "enter", DOOR_CLOSED);
+//        create_door("out", "ç´…æœ¨é¤èŠ±é–€", "enter", DOOR_CLOSED);
         set("no_clean_up", 0);
 	set("coor/x", 20);
 	set("coor/y", 10);
@@ -116,15 +116,15 @@ int do_broadcast(string arg)
                 return 0;
         type = query("order_type");
         if (type == "marry") {
-                mesg = me->name() + "ÏÖÔÚÔÚ×íÏÉÂ¥Äµµ¤Ìü¾ÙĞĞ¶©»é¾ÆÑçÁË  !!!\n";
+                mesg = me->name() + "ç¾åœ¨åœ¨é†‰ä»™æ¨“ç‰¡ä¸¹å»³èˆ‰è¡Œè¨‚å©šé…’å®´äº†  !!!\n";
         } else if (type == "birthday") {
-                mesg = me->name() + "ÏÖÔÚÔÚ×íÏÉÂ¥Äµµ¤Ìü¾ÙĞĞÉú³½ÊÙÑçÁË  !!!\n";
+                mesg = me->name() + "ç¾åœ¨åœ¨é†‰ä»™æ¨“ç‰¡ä¸¹å»³èˆ‰è¡Œç”Ÿè¾°å£½å®´äº†  !!!\n";
         } else if (type == "player") {
-                mesg = me->name() + "ÏÖÔÚÔÚ×íÏÉÂ¥Äµµ¤ÌüÑçÇë¸÷Â·Ó¢ĞÛºÀ½Ü  !!!\n";
+                mesg = me->name() + "ç¾åœ¨åœ¨é†‰ä»™æ¨“ç‰¡ä¸¹å»³å®´è«‹å„è·¯è‹±é›„è±ªå‚‘  !!!\n";
        }
-        message("channel:chat", RED+"¡¾½­ºşÍ¨¸æ¡¿"+mesg+NOR, users() );
-        message("channel:chat", GRN+"¡¾½­ºşÍ¨¸æ¡¿"+mesg+NOR, users() );
-        message("channel:chat", CYN+"¡¾½­ºşÍ¨¸æ¡¿"+mesg+NOR, users() );
+        message("channel:chat", RED+"ã€æ±Ÿæ¹–é€šå‘Šã€‘"+mesg+NOR, users() );
+        message("channel:chat", GRN+"ã€æ±Ÿæ¹–é€šå‘Šã€‘"+mesg+NOR, users() );
+        message("channel:chat", CYN+"ã€æ±Ÿæ¹–é€šå‘Šã€‘"+mesg+NOR, users() );
         return 1;
 }
 
@@ -139,8 +139,8 @@ int do_order(string arg)
         env = this_object();
         mesg = query("order_owner");
         if( mesg && (arg == "end") && (mesg == query("id", me))){
-                mesg = "Äµµ¤ÌüµÄÑç»á½áÊøÁË  !!!\n";
-                message("channel:chat", RED+"¡¾½­ºşÍ¨¸æ¡¿"+mesg+NOR, users() );
+                mesg = "ç‰¡ä¸¹å»³çš„å®´æœƒçµæŸäº†  !!!\n";
+                message("channel:chat", RED+"ã€æ±Ÿæ¹–é€šå‘Šã€‘"+mesg+NOR, users() );
                 delete("order_owner");
                 delete("order_type");
                 oblist = all_inventory(env);
@@ -154,101 +154,101 @@ int do_order(string arg)
                 return 1;
         }
         if (mesg)
-                return notify_fail("ÕâÀïÒÑ¾­±»ÈË°ü×âÁË.\n");
-         notify_fail("ÄãÃ»ÓĞ×ã¹»µÄÇ®»òÁãÇ®²»¹».\n");
+                return notify_fail("é€™è£¡å·²ç¶“è¢«äººåŒ…ç§Ÿäº†.\n");
+         notify_fail("ä½ æ²’æœ‰è¶³å¤ çš„éŒ¢æˆ–é›¶éŒ¢ä¸å¤ .\n");
         if (arg == "marry") {
-                mesg = me->name() + "ÏÖÔÚÔÚ×íÏÉÂ¥Äµµ¤Ìü¾ÙĞĞ¶©»é¾ÆÑçÁË  !!!\n";
+                mesg = me->name() + "ç¾åœ¨åœ¨é†‰ä»™æ¨“ç‰¡ä¸¹å»³èˆ‰è¡Œè¨‚å©šé…’å®´äº†  !!!\n";
                 if (me->can_afford(30000) == 0)
                         return 0;
                 me->pay_money(30000);
-                create_water(HIG"Áú¾®²è"NOR, ({ "tea" }), MAG"×ÏÉ°²èÖÑ"NOR );
-                create_water(RED"ÆÕ¶ı²è"NOR, ({ "tea" }), WHT"Ë®¾§Õµ"NOR );
-                create_wine(WHT"Ã×¾Æ"NOR, ({ "wine" }), HIW"ÌÂ´É±­"NOR );
-                create_wine(GRN"ÖñÒ¶Çà"NOR, ({ "wine" }), GRN"ôä´ä±­"NOR );
-                create_wine(YEL"ÉÜĞË»Æ¾Æ"NOR, ({ "wine" }), HIY"ÏóÑÀ±­"NOR );
-                create_wine(HIR"Å®¶ùºì"NOR, ({ "wine" }), MAG"×ÏÌ´±­"NOR );
-                create_wine(WHT"Ã©Ì¨¾Æ"NOR, ({ "wine" }), YEL"öÌ½ğ±­"NOR );
-                create_wine(RED"¹ğ»¨¾Æ"NOR, ({ "wine" }), WHT"ÁğÁ§±­"NOR );
-                create_food(YEL"ÏãËÖ»¨Éú"NOR,({"peanut"}) );
-                create_food(HIR"¾ÆÔãºìÔæ"NOR,({"jujube"}) );
-                create_food(RED"Ï²ÌÇ"NOR,({"sugar"}) );
-                create_food(HIW"ÄÌÓÍ¹Ï×Ó"NOR,({"melon seeds","seeds"}) );
-                create_food(HIG"±ÌÂİ´º¾í"NOR, ({ "spring roll","roll" }) );
-                create_food(HIC"ÏãÆ¬ÕôÓã"NOR, ({"fish"}) );
-                create_food(HIW"ÂéÀ±ÊÖËº¼¦"NOR, ({"chicken"}) );
-                create_food(HIR"¸ÉìÔÓÈÓã"NOR, ({"fish"}) );
-                create_food(HIY"¶«±±Ë®½È"NOR, ({ "dumpling" }) );
-                create_food(RED"ÂéÀ±»ğ¹ø"NOR, ({ "chafing dish","dish" }) );
-                create_food(HIR"ÓÍ¼åó¦Ğ·"NOR, ({ "crab" }) );
-                create_food(HIY"·ÛÕôÈâ"NOR, ({ "meat" }) );
-                create_food(YEL"¼Ò³£¶¹¸¯"NOR, ({ "bean curd" }) );
+                create_water(HIG"é¾äº•èŒ¶"NOR, ({ "tea" }), MAG"ç´«ç ‚èŒ¶ç›…"NOR );
+                create_water(RED"æ™®æ´±èŒ¶"NOR, ({ "tea" }), WHT"æ°´æ™¶ç›"NOR );
+                create_wine(WHT"ç±³é…’"NOR, ({ "wine" }), HIW"æªç“·æ¯"NOR );
+                create_wine(GRN"ç«¹è‘‰é’"NOR, ({ "wine" }), GRN"ç¿¡ç¿ æ¯"NOR );
+                create_wine(YEL"ç´¹èˆˆé»ƒé…’"NOR, ({ "wine" }), HIY"è±¡ç‰™æ¯"NOR );
+                create_wine(HIR"å¥³å…’ç´…"NOR, ({ "wine" }), MAG"ç´«æª€æ¯"NOR );
+                create_wine(WHT"èŒ…å°é…’"NOR, ({ "wine" }), YEL"éé‡‘æ¯"NOR );
+                create_wine(RED"æ¡‚èŠ±é…’"NOR, ({ "wine" }), WHT"ç‰ç’ƒæ¯"NOR );
+                create_food(YEL"é¦™é…¥èŠ±ç”Ÿ"NOR,({"peanut"}) );
+                create_food(HIR"é…’ç³Ÿç´…æ£—"NOR,({"jujube"}) );
+                create_food(RED"å–œç³–"NOR,({"sugar"}) );
+                create_food(HIW"å¥¶æ²¹ç“œå­"NOR,({"melon seeds","seeds"}) );
+                create_food(HIG"ç¢§èºæ˜¥å·"NOR, ({ "spring roll","roll" }) );
+                create_food(HIC"é¦™ç‰‡è’¸é­š"NOR, ({"fish"}) );
+                create_food(HIW"éº»è¾£æ‰‹æ’•é›"NOR, ({"chicken"}) );
+                create_food(HIR"å¹¹ç…¸å°¤é­š"NOR, ({"fish"}) );
+                create_food(HIY"æ±åŒ—æ°´é¤ƒ"NOR, ({ "dumpling" }) );
+                create_food(RED"éº»è¾£ç«é‹"NOR, ({ "chafing dish","dish" }) );
+                create_food(HIR"æ²¹ç…èƒèŸ¹"NOR, ({ "crab" }) );
+                create_food(HIY"ç²‰è’¸è‚‰"NOR, ({ "meat" }) );
+                create_food(YEL"å®¶å¸¸è±†è…"NOR, ({ "bean curd" }) );
         } else if (arg == "birthday") {
-                mesg = me->name() + "ÏÖÔÚÔÚ×íÏÉÂ¥Äµµ¤Ìü¾ÙĞĞÉú³½ÊÙÑçÁË  !!!\n";
+                mesg = me->name() + "ç¾åœ¨åœ¨é†‰ä»™æ¨“ç‰¡ä¸¹å»³èˆ‰è¡Œç”Ÿè¾°å£½å®´äº†  !!!\n";
                 if (me->can_afford(20000) == 0)
                         return 0;
                 me->pay_money(20000);
-                create_water(GRN"ÔÆÎí²è"NOR, ({ "tea" }), MAG"×ÏÉ°²èÖÑ"NOR );
-                create_water(HIG"¾ıÉ½ÒøÕë"NOR, ({ "tea" }), RED"ºìÄàÕµ"NOR );
-                create_water(HIW"ÏÊÄÌ"NOR, ({ "milk" }), WHT"²£Á§±­"NOR );
-                create_wine(RED"³ÂÄê»¨µñ"NOR, ({ "wine" }), HIW"ËÎ´É±­"NOR  );
-                create_wine(WHT"ÎåÁ¸Òº"NOR, ({ "wine" }), WHT"²£Á§±­"NOR );
-                create_wine(WHT"Ã×¾Æ"NOR, ({ "wine" }), HIW"ÌÂ´É±­"NOR );
-                create_wine(HIR"¶Å¿µ¾Æ"NOR, ({ "wine" }), HIG"ÇàÍ­¾ô"NOR  );
-                create_wine(HIW"Í¸Æ¿Ïã"NOR, ({ "wine" }), WHT"ÁğÁ§±­"NOR  );
-                create_food(HIY"µÂÖİ°Ç¼¦"NOR, ({ "chicken" }) );
-                create_food(HIG"±ÌÂİ´º¾í"NOR, ({ "spring roll","roll" }) );
-                create_food(HIC"ÏãÆ¬ÕôÓã"NOR, ({"fish"}) );
-                create_food(YEL"¿§à¬·¹"NOR, ({"rice"}) );
-                create_food(RED"òºÓÍÈâÆ¬"NOR, ({"fish meat","meat"}) );
-                create_food(RED"ÑòÈâ´®"NOR, ({ "mutton" }) );
-                create_food(HIR"ÖØÇì»ğ¹ø"NOR, ({ "chafing dish","dish" }) );
-                create_food(HIY"±±¾©¿¾Ñ¼"NOR, ({ "duck" }) );
-                create_food(YEL"·ÛÕôÈâ"NOR, ({ "meat" }) );
-                create_food(HIW"ËÄÏ²¶¹¸¯"NOR, ({ "bean curd" }) );
+                create_water(GRN"é›²éœ§èŒ¶"NOR, ({ "tea" }), MAG"ç´«ç ‚èŒ¶ç›…"NOR );
+                create_water(HIG"å›å±±éŠ€é‡"NOR, ({ "tea" }), RED"ç´…æ³¥ç›"NOR );
+                create_water(HIW"é®®å¥¶"NOR, ({ "milk" }), WHT"ç»ç’ƒæ¯"NOR );
+                create_wine(RED"é™³å¹´èŠ±é›•"NOR, ({ "wine" }), HIW"å®‹ç“·æ¯"NOR  );
+                create_wine(WHT"äº”ç³§æ¶²"NOR, ({ "wine" }), WHT"ç»ç’ƒæ¯"NOR );
+                create_wine(WHT"ç±³é…’"NOR, ({ "wine" }), HIW"æªç“·æ¯"NOR );
+                create_wine(HIR"æœåº·é…’"NOR, ({ "wine" }), HIG"é’éŠ…çˆµ"NOR  );
+                create_wine(HIW"é€ç“¶é¦™"NOR, ({ "wine" }), WHT"ç‰ç’ƒæ¯"NOR  );
+                create_food(HIY"å¾·å·æ‰’é›"NOR, ({ "chicken" }) );
+                create_food(HIG"ç¢§èºæ˜¥å·"NOR, ({ "spring roll","roll" }) );
+                create_food(HIC"é¦™ç‰‡è’¸é­š"NOR, ({"fish"}) );
+                create_food(YEL"å’–å–±é£¯"NOR, ({"rice"}) );
+                create_food(RED"è ”æ²¹è‚‰ç‰‡"NOR, ({"fish meat","meat"}) );
+                create_food(RED"ç¾Šè‚‰ä¸²"NOR, ({ "mutton" }) );
+                create_food(HIR"é‡æ…¶ç«é‹"NOR, ({ "chafing dish","dish" }) );
+                create_food(HIY"åŒ—äº¬çƒ¤é´¨"NOR, ({ "duck" }) );
+                create_food(YEL"ç²‰è’¸è‚‰"NOR, ({ "meat" }) );
+                create_food(HIW"å››å–œè±†è…"NOR, ({ "bean curd" }) );
         } else if (arg == "player") {
-                mesg = me->name() + "ÏÖÔÚÔÚ×íÏÉÂ¥Äµµ¤ÌüÑçÇë¸÷Â·Ó¢ĞÛºÀ½Ü  !!!\n";
+                mesg = me->name() + "ç¾åœ¨åœ¨é†‰ä»™æ¨“ç‰¡ä¸¹å»³å®´è«‹å„è·¯è‹±é›„è±ªå‚‘  !!!\n";
                 if (me->can_afford(50000) == 0)
                         return 0;
                 me->pay_money(40000);
-                create_food(YEL"½Ğ»¨¼¦"NOR, ({ "chicken" }) );
-                create_food(HIW"ËÄÏ²¶¹¸¯"NOR, ({ "bean curd" }) );
-                create_food(HIG"±ÌÂİ´º¾í"NOR, ({ "spring","roll" }) );
-                create_food(HIC"ÏãÆ¬ÕôÓã"NOR, ({"fish"}) );
-                create_food(RED"ÑòÈâ´®"NOR, ({ "mutton" }) );
-                create_food(HIY"»¨Ö¦·¹¾í"NOR, ({"rice"}) );
-                create_food(HIR"ÓãÏãÈâË¿"NOR, ({"fish meat","meat"}) );
-                create_food(HIY"µÂÖİ°Ç¼¦"NOR, ({ "chicken" }) );
-                create_food(RED"ÂéÀ±»ğ¹ø"NOR, ({ "chrafing dish","dish" }) );
-                create_food(HIY"±±¾©¿¾Ñ¼"NOR, ({ "duck" }) );
-                create_food(HIW"°×Õ¶¼¦"NOR, ({ "chicken" }) );
-                create_food(YEL"·ÛÕôÈâ"NOR, ({ "meat" }) );
-                create_food(HIR"ÖØÇì»ğ¹ø"NOR, ({ "chafing dish","dish" }) );
-                create_food(HIR"ÂéÆÅ¶¹¸¯"NOR, ({ "bean curd" }) );
-                create_food(RED"òºÓÍÈâÆ¬"NOR, ({"fish meat","meat"}) );
-                create_food(YEL"¿§à¬·¹"NOR, ({"rice"}) );
-                create_food(HIW"ÂéÀ±ÊÖËº¼¦"NOR, ({"chicken"}) );
-                create_food(HIR"¸ÉìÔÓÈÓã"NOR, ({"fish"}) );
-                create_food(HIY"¶«±±Ë®½È"NOR, ({ "dumpling" }) );
-                create_water(HIW"ÑòÄÌ"NOR, ({ "milk" }), CYN"Çà»¨Íë"NOR );
-                create_water(GRN"ÔÆÎí²è"NOR, ({ "tea" }), MAG"×ÏÉ°²èÖÑ"NOR );
-                create_water(GRN"±ÌÂİ´º"NOR, ({ "tea" }), MAG"×ÏÉ°Õµ"NOR );
-                create_water(HIG"¾ıÉ½ÒøÕë"NOR, ({ "tea" }), RED"ºìÄàÕµ"NOR );
-                create_water(HIR"ºìÃ«¼â"NOR, ({ "tea" }), CYN"ÇàÄàÕµ"NOR );
-                create_wine(HIW"·Ú¾Æ"NOR, ({ "wine" }), WHT"ÑòÖ¬°×Óñ±­"NOR );
-                create_wine(WHT"¹ØÍâ°×¾Æ"NOR, ({ "wine" }), YEL"Ï¬½Ç±­"NOR );
-                create_wine(RED"ÆÏÌÑ¾Æ"NOR, ({ "wine" }), HIW"Ò¹¹â±­"NOR );
-                create_wine(WHT"¸ßÁ»¾Æ"NOR, ({ "wine" }), CYN"ÇàÍ­¾ô"NOR );
-                create_wine(HIG"°Ù²İ¾Æ"NOR, ({ "wine" }), RED"¹ÅÌÙ±­"NOR );
-                create_wine(HIR"×´Ôªºì"NOR, ({ "wine" }), WHT"¹Å´É±­"NOR );
-                create_wine(GRN"Àæ»¨¾Æ"NOR, ({ "wine" }), HIG"ôä´ä±­"NOR );
-                create_wine(HIW"ÓñÂ¶¾Æ"NOR, ({ "wine" }), WHT"ÁğÁ§±­"NOR );
+                create_food(YEL"å«èŠ±é›"NOR, ({ "chicken" }) );
+                create_food(HIW"å››å–œè±†è…"NOR, ({ "bean curd" }) );
+                create_food(HIG"ç¢§èºæ˜¥å·"NOR, ({ "spring","roll" }) );
+                create_food(HIC"é¦™ç‰‡è’¸é­š"NOR, ({"fish"}) );
+                create_food(RED"ç¾Šè‚‰ä¸²"NOR, ({ "mutton" }) );
+                create_food(HIY"èŠ±æé£¯å·"NOR, ({"rice"}) );
+                create_food(HIR"é­šé¦™è‚‰çµ²"NOR, ({"fish meat","meat"}) );
+                create_food(HIY"å¾·å·æ‰’é›"NOR, ({ "chicken" }) );
+                create_food(RED"éº»è¾£ç«é‹"NOR, ({ "chrafing dish","dish" }) );
+                create_food(HIY"åŒ—äº¬çƒ¤é´¨"NOR, ({ "duck" }) );
+                create_food(HIW"ç™½æ–¬é›"NOR, ({ "chicken" }) );
+                create_food(YEL"ç²‰è’¸è‚‰"NOR, ({ "meat" }) );
+                create_food(HIR"é‡æ…¶ç«é‹"NOR, ({ "chafing dish","dish" }) );
+                create_food(HIR"éº»å©†è±†è…"NOR, ({ "bean curd" }) );
+                create_food(RED"è ”æ²¹è‚‰ç‰‡"NOR, ({"fish meat","meat"}) );
+                create_food(YEL"å’–å–±é£¯"NOR, ({"rice"}) );
+                create_food(HIW"éº»è¾£æ‰‹æ’•é›"NOR, ({"chicken"}) );
+                create_food(HIR"å¹¹ç…¸å°¤é­š"NOR, ({"fish"}) );
+                create_food(HIY"æ±åŒ—æ°´é¤ƒ"NOR, ({ "dumpling" }) );
+                create_water(HIW"ç¾Šå¥¶"NOR, ({ "milk" }), CYN"é’èŠ±ç¢—"NOR );
+                create_water(GRN"é›²éœ§èŒ¶"NOR, ({ "tea" }), MAG"ç´«ç ‚èŒ¶ç›…"NOR );
+                create_water(GRN"ç¢§èºæ˜¥"NOR, ({ "tea" }), MAG"ç´«ç ‚ç›"NOR );
+                create_water(HIG"å›å±±éŠ€é‡"NOR, ({ "tea" }), RED"ç´…æ³¥ç›"NOR );
+                create_water(HIR"ç´…æ¯›å°–"NOR, ({ "tea" }), CYN"é’æ³¥ç›"NOR );
+                create_wine(HIW"æ±¾é…’"NOR, ({ "wine" }), WHT"ç¾Šè„‚ç™½ç‰æ¯"NOR );
+                create_wine(WHT"é—œå¤–ç™½é…’"NOR, ({ "wine" }), YEL"çŠ€è§’æ¯"NOR );
+                create_wine(RED"è‘¡è„é…’"NOR, ({ "wine" }), HIW"å¤œå…‰æ¯"NOR );
+                create_wine(WHT"é«˜ç²±é…’"NOR, ({ "wine" }), CYN"é’éŠ…çˆµ"NOR );
+                create_wine(HIG"ç™¾è‰é…’"NOR, ({ "wine" }), RED"å¤ç±æ¯"NOR );
+                create_wine(HIR"ç‹€å…ƒç´…"NOR, ({ "wine" }), WHT"å¤ç“·æ¯"NOR );
+                create_wine(GRN"æ¢¨èŠ±é…’"NOR, ({ "wine" }), HIG"ç¿¡ç¿ æ¯"NOR );
+                create_wine(HIW"ç‰éœ²é…’"NOR, ({ "wine" }), WHT"ç‰ç’ƒæ¯"NOR );
         }
          else {
-                return notify_fail("ÄãÒª¶¨Ê²Ã´¾ÆÏ¯?\n");
+                return notify_fail("ä½ è¦å®šä»€éº¼é…’å¸­?\n");
         }
-        message("channel:chat", RED+"¡¾½­ºşÍ¨¸æ¡¿"+mesg+NOR, users() );
-        message("channel:chat", GRN+"¡¾½­ºşÍ¨¸æ¡¿"+mesg+NOR, users() );
-        message("channel:chat", CYN+"¡¾½­ºşÍ¨¸æ¡¿"+mesg+NOR, users() );
+        message("channel:chat", RED+"ã€æ±Ÿæ¹–é€šå‘Šã€‘"+mesg+NOR, users() );
+        message("channel:chat", GRN+"ã€æ±Ÿæ¹–é€šå‘Šã€‘"+mesg+NOR, users() );
+        message("channel:chat", CYN+"ã€æ±Ÿæ¹–é€šå‘Šã€‘"+mesg+NOR, users() );
         set("order_owner",query("id", me));
         set("order_type", arg);
         return 1;
@@ -257,6 +257,6 @@ int valid_leave(object me, string dir)
 {
         if( query("id", me) != query("order_owner") )
                 return 1;
-        return notify_fail(RED + "ÏÈÓÃ order end ½áÊøÑç»áºó²ÅÄÜÀë¿ª¡£\n" + NOR);
+        return notify_fail(RED + "å…ˆç”¨ order end çµæŸå®´æœƒå¾Œæ‰èƒ½é›¢é–‹ã€‚\n" + NOR);
 }
 

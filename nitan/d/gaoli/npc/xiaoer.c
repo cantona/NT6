@@ -1,4 +1,4 @@
-// ´óÌÆË«Áú´«
+// å¤§å”é›™é¾å‚³
  
 // xiaoer.c
 
@@ -7,10 +7,10 @@ inherit NPC;
 void create()
 {
       
-       set_name("µêĞ¡¶ş", ({"xiao er","xiaoer","xiao","waiter","er"}));
+       set_name("åº—å°äºŒ", ({"xiao er","xiaoer","xiao","waiter","er"}));
        set("shop_id",({"waiter","xiaoer","xiao","er"}));
-       set("shop_title","µêĞ¡¶ş");
-       set("gender", "ÄĞĞÔ");
+       set("shop_title","åº—å°äºŒ");
+       set("gender", "ç”·æ€§");
         set("combat_exp", 1000);
        set("age", 26);
        set("per", 14);
@@ -31,9 +31,9 @@ void greeting(object ob)
         if( !ob || !visible(ob) || environment(ob) != environment() ) return;
         switch( random(3) ) {  // 1/3 chance to greet.
                 case 0:
-                        say( name()+"Ğ¦ßäßäµØËµµÀ£ºÕâÎ»" +
+                        say( name()+"ç¬‘å’ªå’ªåœ°èªªé“ï¼šé€™ä½" +
 RANK_D->query_respect(ob)
-                                + "£¬½øÀ´ĞªĞª½Å£¬ºÈÁ½ÖÑ°É¡£\n");
+                                + "ï¼Œé€²ä¾†æ­‡æ­‡è…³ï¼Œå–å…©ç›…å§ã€‚\n");
                         break;
         }
 }
@@ -42,7 +42,7 @@ int accept_object(object who, object ob)
 {
    if (ob->query("money_id") && ob->value() >= 300) 
    {
-     tell_object(who, "Ğ¡¶şÒ»¹şÑü£¬ËµµÀ£º¶àĞ»ÄúÀÏ£¬¿Í¹ÙÇëÉÏÂ¥ĞªÏ¢¡£\n");
+     tell_object(who, "å°äºŒä¸€å“ˆè…°ï¼Œèªªé“ï¼šå¤šè¬æ‚¨è€ï¼Œå®¢å®˜è«‹ä¸Šæ¨“æ­‡æ¯ã€‚\n");
      who->set_temp("rent_paid",1);
      return 1;
    }

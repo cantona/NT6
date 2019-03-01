@@ -3,13 +3,13 @@ inherit F_FOOD;
 int do_eat(string arg);
 void create()
 {
-        set_name("¿¾Èâ", ({ "fried meat", "meat" }) );
+        set_name("çƒ¤è‚‰", ({ "fried meat", "meat" }) );
         set_weight(350);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»´®ÏãÅçÅçµÄ¿¾Èâ\n");
-                set("unit", "´®");
+                set("long", "ä¸€ä¸²é¦™å™´å™´çš„çƒ¤è‚‰\n");
+                set("unit", "ä¸²");
                 set("value", 3);
                 set("food_remaining", 12);
                 set("food_supply", 12);
@@ -24,7 +24,7 @@ void eat_decayed(object me)
    waittime=5-me->query_con()/10;
    if (waittime<1) waittime=1;
    me->start_busy(waittime);
-   message_vision("$NºöÈ»¾õµÃ¶Ç×ÓÀï¹¾à½¹¾à½Ö±Ïì£¬ÕÒÁË¿é¸É¾»µØ·½¾Í¶×ÁËÏÂÀ´...\nÎØ£¬ºÃ³ô£¡\n", me);
+   message_vision("$Nå¿½ç„¶è¦ºå¾—è‚šå­è£¡å’•å˜Ÿå’•å˜Ÿç›´éŸ¿ï¼Œæ‰¾äº†å¡Šå¹¹å‡ˆåœ°æ–¹å°±è¹²äº†ä¸‹ä¾†...\nå—šï¼Œå¥½è‡­ï¼\n", me);
    return;
 }
 int do_eat(string arg)
@@ -35,10 +35,10 @@ int do_eat(string arg)
    if (!foo) return foo;
 */
    if (query("decayed")<1)
-       message_vision("$N¾õµÃ" + name() + "·Ç³£ºÃ³Ô£¬ÕæÏëÔÙÀ´Ò»´®¡£\n", this_player());
+       message_vision("$Nè¦ºå¾—" + name() + "éå¸¸å¥½åƒï¼ŒçœŸæƒ³å†ä¾†ä¸€ä¸²ã€‚\n", this_player());
    else
    {
-     message_vision("$N¾õµÃ" + name() + "Î¶µÀ¹Ö¹ÖµÄ¡£\n", this_player());
+     message_vision("$Nè¦ºå¾—" + name() + "å‘³é“æ€ªæ€ªçš„ã€‚\n", this_player());
      call_out("eat_decayed",this_player()->query_con()/5+1,this_player());
    }
   return 1;

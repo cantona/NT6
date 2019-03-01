@@ -1,14 +1,14 @@
-// mafu.c Âí·ò
+// mafu.c é¦¬å¤«
 
 #include <ansi.h>
 inherit NPC;
 
 void create()
 {
-        set_name("Âí·ò", ({ "ma fu", "mafu", "ma"}));
+        set_name("é¦¬å¤«", ({ "ma fu", "mafu", "ma"}));
         set("age", 32);
-        set("gender", "ÄĞĞÔ");
-        set("long", "ÕâÊÇÂí¾ÇÑ±ÂíºÍĞ¡»ï¼Æ£¬Æ½Ê±´òÀíÕÕÁÏÂíÆ¥¡£\n");
+        set("gender", "ç”·æ€§");
+        set("long", "é€™æ˜¯é¦¬å»„é¦´é¦¬å’Œå°ä¼™è¨ˆï¼Œå¹³æ™‚æ‰“ç†ç…§æ–™é¦¬åŒ¹ã€‚\n");
         set("attitude", "peaceful");
         set("str", 24);
         set("dex", 16);
@@ -36,16 +36,16 @@ void greeting(object ob)
         if (! ob || environment(ob) != environment())
                 return;
 
-        say(CYN "Âí·òµãÍ·¹şÑüµØËµµÀ£ºÕâÎ»¿Í¹Ù£¬ÄúºÃ£¬´òËãÈ¥ÄÄ¶ù°¡£¿\n" NOR);
+        say(CYN "é¦¬å¤«é»é ­å“ˆè…°åœ°èªªé“ï¼šé€™ä½å®¢å®˜ï¼Œæ‚¨å¥½ï¼Œæ‰“ç®—å»å“ªå…’å•Šï¼Ÿ\n" NOR);
 }
 
 int accept_object(object who, object ob)
 {
         if( query("money_id", ob) )
         {
-                message_vision(CYN "$N" CYN "¶Ô$n" CYN "ËµµÀ£ºÄãÏëÈ¥" NOR +
-                               HIY "(goto)" NOR + CYN "ÄÄ¶ù£¿ÏÈ¸æËßĞ¡µÄÔÙ¸¶"
-                               "Ç®Ò²²»³Ù¡£\n" NOR, this_object(), who);
+                message_vision(CYN "$N" CYN "å°$n" CYN "èªªé“ï¼šä½ æƒ³å»" NOR +
+                               HIY "(goto)" NOR + CYN "å“ªå…’ï¼Ÿå…ˆå‘Šè¨´å°çš„å†ä»˜"
+                               "éŒ¢ä¹Ÿä¸é²ã€‚\n" NOR, this_object(), who);
                 return 0;
         }
 

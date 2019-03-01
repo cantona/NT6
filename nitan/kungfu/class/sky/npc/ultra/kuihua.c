@@ -1,4 +1,4 @@
-// kuihua ¿û»¨Ì«¼à
+// kuihua è‘µèŠ±å¤ªç›£
 
 #include <ansi.h>
 
@@ -6,11 +6,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("¿û»¨Ì«¼à", ({ "kuihua taijian", "kuihua", "taijian" }) );
-        set("title", HIR "´ó×ÚÊ¦" NOR);
-        set("gender", "ÄÐÐÔ");
+        set_name("è‘µèŠ±å¤ªç›£", ({ "kuihua taijian", "kuihua", "taijian" }) );
+        set("title", HIR "å¤§å®—å¸«" NOR);
+        set("gender", "ç”·æ€§");
         set("age", 39);
-        set("long", "´ËÈËÁ³ÐÍÊÝÏ÷£¬ÂúÊÇÒõæð£¬²»ÖªÊÇÏ²ÊÇÅ­¡£\n");
+        set("long", "æ­¤äººè‡‰åž‹ç˜¦å‰Šï¼Œæ»¿æ˜¯é™°é¨–ï¼Œä¸çŸ¥æ˜¯å–œæ˜¯æ€’ã€‚\n");
         set("attitude", "peaceful");
         set("str", 31);
         set("int", 39);
@@ -48,7 +48,7 @@ void create()
         set("opinion/ultra",  1);
         set("opinion/master", 1);
 
-        set("rank_info/self", "±¾¹¬");
+        set("rank_info/self", "æœ¬å®®");
 
         set("chat_chance_combat", 100);
         set("chat_msg_combat", ({
@@ -117,7 +117,7 @@ void die()
                          if (arrayp(ob->query_team()))
                          {
                                  command("heng");
-                                 command("say Ê¤Ö®²»Îä£¡");
+                                 command("say å‹ä¹‹ä¸æ­¦ï¼");
                                  set("qi", 400000);
                                  set("jing", 200000);
                                  set("eff_qi", 400000);
@@ -146,7 +146,7 @@ void die()
         return;
 }
 
-// ÆøÑªÐ¡ÓÚ1000ÔòËÀÍö£¬±ÜÃâËûÈËÐ­Öú°ïÃ¦×ªÊÀ
+// æ°£è¡€å°äºŽ1000å‰‡æ­»äº¡ï¼Œé¿å…ä»–äººå”åŠ©å¹«å¿™è½‰ä¸–
 void heart_beat()
 {
         if (this_object()->query("qi") < 1000 || this_object()->query("eff_qi") < 1000)

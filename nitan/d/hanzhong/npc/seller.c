@@ -7,11 +7,11 @@ string ask_me();
 
 void create()
 {
-        set_name("Ğ¡··", ({ "seller" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("å°è²©", ({ "seller" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 32);
         set("long",
-                "ÕâÊÇ¸öĞ¡··£¬±ğ¿´Ëû³¤µÄÀÏÀÏÊµÊµ£¬¿ÉÄã±ğÏë´ÓËûÄÇ¶ùÌÍ±ãÒË¡£\n");
+                "é€™æ˜¯å€‹å°è²©ï¼Œåˆ¥çœ‹ä»–é•·çš„è€è€å¯¦å¯¦ï¼Œå¯ä½ åˆ¥æƒ³å¾ä»–é‚£å…’æä¾¿å®œã€‚\n");
         set("combat_exp", 300);
         set("str", 17);
         set("dex", 20);
@@ -26,8 +26,8 @@ void create()
                 "/d/xingxiu/obj/fire",
         }) );
         set("inquiry", ([
-                "Ò©" : (: ask_me :),
-                "Ò©²Ä" : (: ask_me :),
+                "è—¥" : (: ask_me :),
+                "è—¥æ" : (: ask_me :),
         ]) );
         setup();
         carry_object(CLOTH_DIR"cloth")->wear();
@@ -44,14 +44,14 @@ void init()
 string ask_me()
 {
         object me=this_player();
-        if( query_temp("tmark/Ò©", me)){
-                return "ÎÒ×ßÄÏ´³±±£¬Ã»¼û¹ıÄãÕâÃ´ÂŞàÂµÄÈË£¡\n";
+        if( query_temp("tmark/è—¥", me)){
+                return "æˆ‘èµ°å—é—–åŒ—ï¼Œæ²’è¦‹éä½ é€™éº¼ç¾…å—¦çš„äººï¼\n";
         }
         else
         {
-                set_temp("tmark/Ò©", 1, me);
-                return "µ±ÄêÎÒµ½¼«±±É­ÁÖÖĞ²ÉÒ©£¬»¹ÕæÓöµ½ÁËÒ»Ğ©ºÃÒ©²Ä£¬ÒªÂòµÃÏÈ½»
-Ç®¡£\n";
+                set_temp("tmark/è—¥", 1, me);
+                return "ç•¶å¹´æˆ‘åˆ°æ¥µåŒ—æ£®æ—ä¸­æ¡è—¥ï¼Œé‚„çœŸé‡åˆ°äº†ä¸€äº›å¥½è—¥æï¼Œè¦è²·å¾—å…ˆäº¤
+éŒ¢ã€‚\n";
         }
 }
 
@@ -61,27 +61,27 @@ int accept_object(object who, object ob)
 
         if( query("count", this_object())<0 )
         {
-                write("Ğ¡··ËµµÀ£º¡°¼ÈÈ»Äú³öµÃÆğ¼ÛÇ®£¬»¹³îÃ»µØÂò£¿ÎÒÕâÊÇÃ»ÁË¡£¡±\n");
+                write("å°è²©èªªé“ï¼šâ€œæ—¢ç„¶æ‚¨å‡ºå¾—èµ·åƒ¹éŒ¢ï¼Œé‚„æ„æ²’åœ°è²·ï¼Ÿæˆ‘é€™æ˜¯æ²’äº†ã€‚â€\n");
                 return 1;
         }
         if( (query("money_id", ob)) && (ob->value() >= 10000) && 
-                (query_temp("tmark/Ò©", who)) )
+                (query_temp("tmark/è—¥", who)) )
         {
                 obj = new(VEGETABLE_DIR"heshouwu");
                 obj->move(who);
-                addn_temp("tmark/Ò©", 0, who);
-                write("Ğ¡··ËµµÀ£º¡°¼ÈÈ»Äú³öµÃÆğ¼ÛÇ®£¬ÕâÎ¶Ò©¿É¾Í¹éÄúÁË¡£¡±\n");
+                addn_temp("tmark/è—¥", 0, who);
+                write("å°è²©èªªé“ï¼šâ€œæ—¢ç„¶æ‚¨å‡ºå¾—èµ·åƒ¹éŒ¢ï¼Œé€™å‘³è—¥å¯å°±æ­¸æ‚¨äº†ã€‚â€\n");
                 addn("count", -1);
                 return 1;
         }
         else
                 if( query("money_id", ob) )
                 {
-                        write("Ğ¡··ÒõĞ¦Ò»Éù£¬ËµµÀ£º¡°ºÙºÙ£¬¸øÎÒÕâÃ´¶àÇ®ÄÄ¡£¡±\n");
+                        write("å°è²©é™°ç¬‘ä¸€è²ï¼Œèªªé“ï¼šâ€œå˜¿å˜¿ï¼Œçµ¦æˆ‘é€™éº¼å¤šéŒ¢å“ªã€‚â€\n");
                         return 1;
                 }
                 else
                 {
-                        return notify_fail("Ğ¡··²ïÒìµØËµµÀ£º¡°¸øÎÒÕâ¸ö¸ÉÊ²Ã´£¿¡±\n");
+                        return notify_fail("å°è²©è©«ç•°åœ°èªªé“ï¼šâ€œçµ¦æˆ‘é€™å€‹å¹¹ä»€éº¼ï¼Ÿâ€\n");
                 }
 }

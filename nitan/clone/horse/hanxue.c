@@ -3,9 +3,9 @@ inherit "/clone/horse/horse.c";
 
 void create()
 {
-        set_name(MAG "汗血宝驹" NOR, ({ "hanxue baoju", "hanxue", "baoju"}));
-        set("long", HIR "西南大宛宛丘，有良马，其大二丈，鬣至膝，尾委于地，蹄\n"
-                        "如汗，腕可握。日行千里，至日中而汗血\n" NOR);
+        set_name(MAG "姹楄瀵堕" NOR, ({ "hanxue baoju", "hanxue", "baoju"}));
+        set("long", HIR "瑗垮崡澶у疀瀹涗笜锛屾湁鑹Μ锛屽叾澶т簩涓堬紝楝ｈ嚦鑶濓紝灏惧浜庡湴锛岃箘\n"
+                        "濡傛睏锛岃厱鍙彙銆傛棩琛屽崈瑁★紝鑷虫棩涓�屾睏琛�\n" NOR);
         set("tili", 10000);
         set("max_tili", 10000);
         set("level", 5);

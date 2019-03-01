@@ -6,19 +6,19 @@ inherit EQUIP;
 
 void create()
 {
-        set_name(BLU"²Ê¶Ð½ôÉí°À"NOR, ({"jinshen ao", "mini-ao", "cloth"}));
+        set_name(BLU"å½©ç·žç·Šèº«è¥–"NOR, ({"jinshen ao", "mini-ao", "cloth"}));
         set_weight(700);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼þ");
+                set("unit", "ä»¶");
                 set("value", 2000);
                 set("material", "cloth");
                 set("armor_type", "cloth");
                 set("armor_prop/per", 2);
                 set("armor_prop/armor", 3);
                 set("female_only", 1);
-                set("wear_msg","$N´©ÉÏÒ»¼þ$n¡£\n");
-                set("remove_msg","$½«$nÍÑÁËÏÂÀ´¡£\n");
+                set("wear_msg","$Nç©¿ä¸Šä¸€ä»¶$nã€‚\n");
+                set("remove_msg","$å°‡$nè„«äº†ä¸‹ä¾†ã€‚\n");
         }
 }

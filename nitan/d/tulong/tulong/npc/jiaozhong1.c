@@ -2,10 +2,10 @@
 inherit NPC;
 void create()
 {
-        set_name("½ÌÖÚ", ({ "jiao zhong", "jiao", "zhong" }));
-        set("long", "Ò»¸öÌìÓ¥½ÌµÄ½ÌÖÚ£¬ÊÖÖĞ»ÓÎè×ÅÒ»Ãæ´óÆì¡£\n");
+        set_name("æ•™çœ¾", ({ "jiao zhong", "jiao", "zhong" }));
+        set("long", "ä¸€å€‹å¤©é·¹æ•™çš„æ•™çœ¾ï¼Œæ‰‹ä¸­æ®èˆè‘—ä¸€é¢å¤§æ——ã€‚\n");
         set("attitude", "heroism");
-        set("title", HIR "ÌìÓ¥½ÌÖìÈ¸Ì³" NOR);
+        set("title", HIR "å¤©é·¹æ•™æœ±é›€å£‡" NOR);
 
         set("combat_exp", 200000+random(200000));
 

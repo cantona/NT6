@@ -1,15 +1,15 @@
-// huogong.c »ğ¹¤µÀÈË
+// huogong.c ç«å·¥é“äºº
 
 inherit NPC;
 
 void create()
 {
-        set_name("»ğ¹¤µÀÈË", ({"huogong"}));
-        set("gender", "ÄĞĞÔ");
+        set_name("ç«å·¥é“äºº", ({"huogong"}));
+        set("gender", "ç”·æ€§");
         set("age", 35);
         set("class", "quanzhen");
         set("long",
-                "ÕâÀïÈ«Õæ½ÌÕÆ¹Ü³ø·¿µÄ»ğ¹¤µÀÈË¡£\n");
+                "é€™è£¡å…¨çœŸæ•™æŒç®¡å»šæˆ¿çš„ç«å·¥é“äººã€‚\n");
         set("attitude", "friendly");
 
         set("str", 20);
@@ -28,9 +28,9 @@ void create()
         set("combat_exp", 15000);
 
         set_skill("force", 50);
-        set_skill("xiantian-gong", 40);    //ÏÈÌìÆø¹¦
+        set_skill("xiantian-gong", 40);    //å…ˆå¤©æ°£åŠŸ
         set_skill("dodge", 50);
-        set_skill("jinyan-gong", 50);   //½ğÑã¹¦
+        set_skill("jinyan-gong", 50);   //é‡‘é›åŠŸ
         set_skill("parry", 50);
         set_skill("strike",50);
 

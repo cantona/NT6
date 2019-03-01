@@ -1,6 +1,6 @@
 // reflect.c
-// Ú¤Ë¼Ö¸Áî»ñÈ¡ÉÙÁ¿¾­ÑéºÍÇ±ÄÜ
-// »áÔ±×¨ÓÃÖ¸Áî Create by Rcwiz for HERO.CD
+// å†¥æ€æŒ‡ä»¤ç²å–å°‘é‡ç¶“é©—å’Œæ½›èƒ½
+// æœƒå“¡å°ˆç”¨æŒ‡ä»¤ Create by Rcwiz for HERO.CD
 
 #include <ansi.h>
 #define MEMBER_D     "/adm/daemons/memberd"
@@ -13,7 +13,7 @@ void end_reflect(object me)
 
          if( query_temp("reflect", me) )
          {
-               message_vision(HIY "$N" HIY "Ú¤Ë¼Íê±Ï£¬»º»ºµØÕö¿ªÑÛ¾¦£¬ËÆºõÈôÓĞËùÎò£¡\n" NOR, me);
+               message_vision(HIY "$N" HIY "å†¥æ€å®Œç•¢ï¼Œç·©ç·©åœ°çœé–‹çœ¼ç›ï¼Œä¼¼ä¹è‹¥æœ‰æ‰€æ‚Ÿï¼\n" NOR, me);
  
                delete_temp("reflect", me);
 
@@ -33,8 +33,8 @@ void end_reflect(object me)
                addn("combat_exp", exp, me);
                addn("potential", pot, me);
 
-               write(HIG "Í¨¹ıÕâ´ÎÚ¤Ë¼£¬Äã»ñµÃÁË" HIC + chinese_number(exp) + HIG 
-                     "µãÊµÕ½¾­ÑéºÍ" HIC + chinese_number(pot) + HIG "µãÇ±ÄÜ¡£\n");
+               write(HIG "é€šéé€™æ¬¡å†¥æ€ï¼Œä½ ç²å¾—äº†" HIC + chinese_number(exp) + HIG 
+                     "é»å¯¦æˆ°ç¶“é©—å’Œ" HIC + chinese_number(pot) + HIG "é»æ½›èƒ½ã€‚\n");
 
          }
 
@@ -48,22 +48,22 @@ int main(object me)
 
 
          if (me->is_busy() || me->is_fighting())
-                 return notify_fail("µÈÄãÃ¦ÍêÔÙËµ°É£¡\n");
+                 return notify_fail("ç­‰ä½ å¿™å®Œå†èªªå§ï¼\n");
 
          if( query_temp("reflect", me) )
-                 return notify_fail("ÄãÕıÔÚÚ¤Ë¼¡£\n");
+                 return notify_fail("ä½ æ­£åœ¨å†¥æ€ã€‚\n");
 
          if (! wizardp(me) && ! MEMBER_D->is_valid_member(query("id", me)))
                  return 0;
 
          if( !query("doing", me) )
-                 return notify_fail("Ö»ÓĞ¼Æ»®Ê±²ÅÄÜÚ¤Ë¼¡£\n");
+                 return notify_fail("åªæœ‰è¨ˆåŠƒæ™‚æ‰èƒ½å†¥æ€ã€‚\n");
 
          if( query("combat_exp", me)<1000000 )
-                  return notify_fail("ÄãÊµÕ½¾­Ñé£¬ÎŞ·¨Ú¤Ë¼¡£\n");
+                  return notify_fail("ä½ å¯¦æˆ°ç¶“é©—ï¼Œç„¡æ³•å†¥æ€ã€‚\n");
 
          if (me->query_skill("martial-cognize", 1) < 160)
-                  return notify_fail("ÄãÎäÑ§ĞŞÑø²»×ã£¬ÎŞ·¨Ú¤Ë¼¡£\n");
+                  return notify_fail("ä½ æ­¦å­¸ä¿®é¤Šä¸è¶³ï¼Œç„¡æ³•å†¥æ€ã€‚\n");
  
 
          set_temp("reflect", 1, me);
@@ -73,7 +73,7 @@ int main(object me)
          me->start_call_out((: call_other, __FILE__,
                              "end_reflect", me:), 28 + random(6));
 
-         message_vision(HIY "$N" HIY "ÅÌÏ¥¶ø×ø£¬±ÕÄ¿Ú¤Ë¼ ¡­¡­\n" NOR, me);
+         message_vision(HIY "$N" HIY "ç›¤è†è€Œåï¼Œé–‰ç›®å†¥æ€ â€¦â€¦\n" NOR, me);
 
          return 1;
 }
@@ -81,10 +81,10 @@ int main(object me)
 int help(object me)
 {
   write(@HELP
-Ö¸Áî¸ñÊ½ : reflect
+æŒ‡ä»¤æ ¼å¼ : reflect
 
-¸ÃÖ¸Áî¿ÉÒÔÔÚ¼Æ»®Ê±Ê¹ÓÃÒÔÌá¸ßÉÙÁ¿¾­ÑéºÍÇ±ÄÜ¡£
-¸ÃÖ¸ÁîÖ»ÏŞ»áÔ±Ê¹ÓÃ¡£
+è©²æŒ‡ä»¤å¯ä»¥åœ¨è¨ˆåŠƒæ™‚ä½¿ç”¨ä»¥æé«˜å°‘é‡ç¶“é©—å’Œæ½›èƒ½ã€‚
+è©²æŒ‡ä»¤åªé™æœƒå“¡ä½¿ç”¨ã€‚
 
 HELP
 );

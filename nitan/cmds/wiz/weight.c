@@ -21,28 +21,28 @@ int main(object me, string arg)
         {
         case "light":
                 if (me->query_weight() < 2)
-                        return notify_fail("ÄãÒÑ¾­ÇáµÄ²»ÄÜÔÙÇáÁË¡£\n");
+                        return notify_fail("ä½ å·²ç¶“è¼•çš„ä¸èƒ½å†è¼•äº†ã€‚\n");
                 me->set_weight(me->query_weight() / 2);
-                to = "Çá";
+                to = "è¼•";
                 break;
 
         case "heavy":
                 if (me->query_weight() >= 128 * 1024)
-                        return notify_fail("ÄãÎŞ·¨±äµÃ¸üÖØÁË¡£\n");
+                        return notify_fail("ä½ ç„¡æ³•è®Šå¾—æ›´é‡äº†ã€‚\n");
                 if (! me->query_weight())
                         me->set_weight(1);
                 else
                         me->set_weight(me->query_weight() * 2);
-                to = "ÖØ";
+                to = "é‡";
                 break;
 
         case "origin":
                 origin=40000+(query("str", me)-10)*2000;
                 if (origin > me->query_weight())
-                        to = "ÖØ"; else
+                        to = "é‡"; else
                 if (origin < me->query_weight())
-                        to = "Çá"; else
-                        return notify_fail("ÄãµÄÌåÖØÃ»ÓĞÈÎºÎ±ä»¯¡£\n");
+                        to = "è¼•"; else
+                        return notify_fail("ä½ çš„é«”é‡æ²’æœ‰ä»»ä½•è®ŠåŒ–ã€‚\n");
 
                 me->set_weight(origin);
                 break;
@@ -52,16 +52,16 @@ int main(object me, string arg)
                 return 1;
         }
 
-        tell_object(me, HIM "»©£¡Äã¾õµÃÄã±äµÃ" + to + "ÁËÒ»Ğ©¡£\n" NOR);
+        tell_object(me, HIM "å˜©ï¼ä½ è¦ºå¾—ä½ è®Šå¾—" + to + "äº†ä¸€äº›ã€‚\n" NOR);
 
         if (objectp(env = environment(me)))
         {
-                message("vision", me->name() + "¿ÚÖĞÄîÄîÓĞ´Ê£¬²»ÖªµÀ"
-                        "ÔÚ¸ÉĞ©Ê²Ã´¡£\n", env, ({ env, me }));
+                message("vision", me->name() + "å£ä¸­å¿µå¿µæœ‰è©ï¼Œä¸çŸ¥é“"
+                        "åœ¨å¹¹äº›ä»€éº¼ã€‚\n", env, ({ env, me }));
 
                 if( userp(env) && !query("env/invisible", me) )
-                        tell_object(env, HIM "ÄãºöÈ»¾õµÃÉíÉÏºÃÏñ" +
-                                         to + "ÁËºÜ¶à¡£\n" NOR);
+                        tell_object(env, HIM "ä½ å¿½ç„¶è¦ºå¾—èº«ä¸Šå¥½åƒ" +
+                                         to + "äº†å¾ˆå¤šã€‚\n" NOR);
         }
 
         return 1;
@@ -70,10 +70,10 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : miagic <light | heavy | origin>
+æŒ‡ä»¤æ ¼å¼ : miagic <light | heavy | origin>
  
-Õâ¸öÖ¸Áî»áÊ¹ÄãµÄÖØÁ¿±ä»¯£¬Ã¿´Î¼Ó±¶»òÊÇ¼õ°ë¡£Èç¹ûÖ¸Ã÷ origin
-¾Í»Ö¸´Ô­À´µÄÌåÖØ¡£
+é€™å€‹æŒ‡ä»¤æœƒä½¿ä½ çš„é‡é‡è®ŠåŒ–ï¼Œæ¯æ¬¡åŠ å€æˆ–æ˜¯æ¸›åŠã€‚å¦‚æœæŒ‡æ˜ origin
+å°±æ¢å¾©åŸä¾†çš„é«”é‡ã€‚
  
 HELP );
     return 1;

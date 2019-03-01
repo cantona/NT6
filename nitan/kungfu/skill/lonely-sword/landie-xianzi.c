@@ -5,15 +5,15 @@
 
 inherit NPC;
 
-string lookdesc = "ËıÒ»ÉíÇåµ­°×ÒÂ£¬Èç·ç·÷ÓñÊ÷£¬Ñ©¹üÇí°ú£¬¼æÖ®ÉúĞÔÇåÀä£¬ÕæÄËÏÉ×Ó¡£\n";
+string lookdesc = "å¥¹ä¸€èº«æ¸…æ·¡ç™½è¡£ï¼Œå¦‚é¢¨æ‹‚ç‰æ¨¹ï¼Œé›ªè£¹ç“Šè‹ï¼Œå…¼ä¹‹ç”Ÿæ€§æ¸…å†·ï¼ŒçœŸä¹ƒä»™å­ã€‚\n";
 
 void create()
 {
-        set_name(HIM "À¶µûÏÉ×Ó" NOR, ({ "landie xianzi", "landie", "xianzi"}));
-        set("title", HIC "áÇá¼ÏÉ¾³" NOR);
-        set("gender", "Å®ĞÔ");
+        set_name(HIM "è—è¶ä»™å­" NOR, ({ "landie xianzi", "landie", "xianzi"}));
+        set("title", HIC "å´†å³’ä»™å¢ƒ" NOR);
+        set("gender", "å¥³æ€§");
         set("age", 22);
-        set("long", lookdesc); // ³õÊ¼»¯Ê±»áÖØĞÂÉèÖÃlookdesc¿ÉÒÔÏÔÊ¾ÄÇ¸öÍæ¼ÒÄÜ¹»¶ÔÎÒÔì³ÉÉËº¦
+        set("long", lookdesc); // åˆå§‹åŒ–æ™‚æœƒé‡æ–°è¨­ç½®lookdescå¯ä»¥é¡¯ç¤ºé‚£å€‹ç©å®¶èƒ½å¤ å°æˆ‘é€ æˆå‚·å®³
         set("attitude", "friendly");
         set("str", 21);
         set("int", 40);
@@ -22,7 +22,7 @@ void create()
         set("per", 30);
         set("shen_type", 1);
         set("scborn/ok", 1);
-        set("no_nuoyi", 1); // ²»±»Å²ÒÆÓ°Ïì
+        set("no_nuoyi", 1); // ä¸è¢«æŒªç§»å½±éŸ¿
         set("qi", 5000000);
         set("max_qi", 5000000);
 
@@ -84,7 +84,7 @@ void create()
                 (: perform_action, "whip.feng twice" :),
         }) );
 
-        set("jianling-summon",1); // ²»»á±»½£ÁéDAMAGE_ALLÉËº¦
+        set("jianling-summon",1); // ä¸æœƒè¢«åŠéˆDAMAGE_ALLå‚·å®³
         
         setup();
 
@@ -92,14 +92,14 @@ void create()
         carry_object("/clone/cloth/baipao")->wear();
 }
 
-// ³õÊ¼»¯
+// åˆå§‹åŒ–
 void init_me(object jianling, object wanjia)
 {
         set("jianling", jianling);
         set("mytarget", wanjia);
         set("env", environment(jianling));
         
-        set("long", lookdesc + HIR "Ä¿Ç°Ö»ÓĞ" + HIY + wanjia->name() +  HIR "ÄÜ¹»¶ÔÆäÔì³ÉÉËº¦£¡\n");
+        set("long", lookdesc + HIR "ç›®å‰åªæœ‰" + HIY + wanjia->name() +  HIR "èƒ½å¤ å°å…¶é€ æˆå‚·å®³ï¼\n");
 }
 
 int accept_fight(object ob)
@@ -124,18 +124,18 @@ mixed hit_ob(object me, object ob, int damage_bouns)
 {
         ob->start_busy(12 + random(12));
         me->receive_wound("qi", 200000 + random(90000), ob);
-        return HIY "$N" HIY "½¿ºÈÒ»Éù£¬·ÜÁ¦¹¥»÷£¬¾¹±ÆµÃ$n" HIY "ÊÖÃ¦½ÅÂÒ¡£\n" NOR;
+        return HIY "$N" HIY "å¬Œå–ä¸€è²ï¼Œå¥®åŠ›æ”»æ“Šï¼Œç«Ÿé€¼å¾—$n" HIY "æ‰‹å¿™è…³äº‚ã€‚\n" NOR;
 }
 
 
 int receive_damage(string type, int damage, object who)
 {
-        // Ö»ÓĞÖ¸¶¨Ä¿±ê²ÅÄÜ¶ÔÎÒÔì³ÉÉËº¦
+        // åªæœ‰æŒ‡å®šç›®æ¨™æ‰èƒ½å°æˆ‘é€ æˆå‚·å®³
         if (! who)return 0;
         
         if ( who != query("mytarget"))
         {
-                message_vision(HIG "$N" HIG "¿´Í¸ÁË$n" HIG "µÄ¹¥ÊÆ£¬¾¹Ë¿ºÁÎŞÉË£¡\n" NOR, this_object(), who);
+                message_vision(HIG "$N" HIG "çœ‹é€äº†$n" HIG "çš„æ”»å‹¢ï¼Œç«Ÿçµ²æ¯«ç„¡å‚·ï¼\n" NOR, this_object(), who);
                 return 0;
         }
 }
@@ -155,7 +155,7 @@ void heart_beat()
 
 void unconcious()
 {
-        // ·ÀÖ¹Ö±½Ócall_die()
+        // é˜²æ­¢ç›´æ¥call_die()
         if (query("qi") > 60000)
         {
                 revive();
@@ -167,7 +167,7 @@ void unconcious()
 void die(object killer)
 {
 
-        message_vision(HIC "Ö»¼ûÒ»µÀ¹âÃ¢´Ó$N" HIC "ÌåÄÚÉıÆğ£¬$N" HIC "¾¹»¯×÷Ò»ÂÆÀ¶µû·É×ßÁË£¡\n" NOR, this_object());
+        message_vision(HIC "åªè¦‹ä¸€é“å…‰èŠ’å¾$N" HIC "é«”å…§å‡èµ·ï¼Œ$N" HIC "ç«ŸåŒ–ä½œä¸€ç¸·è—è¶é£›èµ°äº†ï¼\n" NOR, this_object());
                                         
         command("chat* tlbb " + query("id"));                           
         destruct(this_object());
@@ -179,12 +179,12 @@ void remove()
 {
         object dob;
         
-        dob = query("jianling");// »ñÈ¡¶ÔÓ¦µÄ½£ÁéOB
+        dob = query("jianling");// ç²å–å°æ‡‰çš„åŠéˆOB
         
         if (! objectp(dob))return;
         
-        delete("mylandie", dob);//Í¨Öª½£Áé£¬À¶µûÏûÊ§ÁË
-        set("last_summon_landie", time(), dob);//Í¨Öª½£Áé£¬À¶µûÏûÊ§Ê±¼ä
+        delete("mylandie", dob);//é€šçŸ¥åŠéˆï¼Œè—è¶æ¶ˆå¤±äº†
+        set("last_summon_landie", time(), dob);//é€šçŸ¥åŠéˆï¼Œè—è¶æ¶ˆå¤±æ™‚é–“
         
         return;
 }

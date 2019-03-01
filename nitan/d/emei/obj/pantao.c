@@ -3,15 +3,15 @@ inherit ITEM;
 
 void create()
 {
-          set_name(HIR "ó´ÌÒ" NOR, ({"pan tao", "pan", "tao"}));
+          set_name(HIR "èŸ æ¡ƒ" NOR, ({"pan tao", "pan", "tao"}));
           set_weight(150);
           if (clonep())
                     set_default_object(__FILE__);
           else {
-                    set("long", HIR "Ò»¸ö»ðºìÉ«µÄ´óó´ÌÒ£¬ÕýÉ¢·¢×ÅÆË±ÇµÄÇåÏã¡£\n" NOR);
+                    set("long", HIR "ä¸€å€‹ç«ç´…è‰²çš„å¤§èŸ æ¡ƒï¼Œæ­£æ•£ç™¼è‘—æ’²é¼»çš„æ¸…é¦™ã€‚\n" NOR);
                     set("value", 3000);
                 set("only_do_effect", 1);
-                    set("unit", "¸ö");
+                    set("unit", "å€‹");
           }
           setup();
 }
@@ -23,8 +23,8 @@ int do_effect(object me)
 
         neili_limit = me->query_neili_limit();
 
-        message_vision(HIR "\n$N" HIR "ÈýÁ½¿Ú½«ÊÖÖÐµÄó´ÌÒ½ÀÀÃÍÌÏÂ£¬Ò»ÕÅÁ³¶ÙÊ±ÕÍ"
-                       "µÃÍ¨ºì¡£\n\n" NOR, me);
+        message_vision(HIR "\n$N" HIR "ä¸‰å…©å£å°‡æ‰‹ä¸­çš„èŸ æ¡ƒåš¼çˆ›åžä¸‹ï¼Œä¸€å¼µè‡‰é “æ™‚è„¹"
+                       "å¾—é€šç´…ã€‚\n\n" NOR, me);
         me->start_busy(random(5) + 5);
 
           if( query("max_neili", me)<neili_limit )

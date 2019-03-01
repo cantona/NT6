@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-string name() { return HIW "Á¶ĞÄµ¯" NOR; }
+string name() { return HIW "ç…‰å¿ƒå½ˆ" NOR; }
 
 inherit F_SSERVER;
 
@@ -17,86 +17,86 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(name() + "Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(name() + "åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         lvl = me->query_skill("chousui-zhang", 1);
         lvp = me->query_skill("poison");
 
         if (lvl < 120)
-                return notify_fail("ÄãµÄ³éËèÕÆ²»¹»æµÊì£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„æŠ½é«“æŒä¸å¤ å«»ç†Ÿï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (lvp < 180)
-                return notify_fail("Äã¶Ô¶¾¼¼µÄÁË½â²»¹»£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ å°æ¯’æŠ€çš„äº†è§£ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if ((int)me->query_skill("throwing") < 150)
-                return notify_fail("Äã°µÆ÷ÊÖ·¨»ğºò²»¹»£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ æš—å™¨æ‰‹æ³•ç«å€™ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (me->query_skill_mapped("strike") != "chousui-zhang")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢³éËèÕÆ£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼æŠ½é«“æŒï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (me->query_skill_prepared("strike") != "chousui-zhang")
-                return notify_fail("ÄãÃ»ÓĞ×¼±¸³éËèÕÆ£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æº–å‚™æŠ½é«“æŒï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if( query("max_neili", me)<1000 )
-                return notify_fail("ÄãµÄÄÚÁ¦ĞŞÎª²»×ã£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¿®ç‚ºä¸è¶³ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if( query("neili", me)<300 )
-                return notify_fail("ÄãÏÖÔÚµÄÄÚÏ¢²»×ã£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çš„å…§æ¯ä¸è¶³ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
-        // ÈÎÎñNPC¿ÉÒÔÖ±½ÓÊ©Õ¹
+        // ä»»å‹™NPCå¯ä»¥ç›´æ¥æ–½å±•
         if( userp(me) && !objectp(du=query_temp("handing", me)) )
-                return notify_fail("Äã±ØĞëÄÃ×Å(hand)Ğ©¶¾Ò©²ÅÄÜÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ å¿…é ˆæ‹¿è‘—(hand)äº›æ¯’è—¥æ‰èƒ½æ–½å±•" + name() + "ã€‚\n");
 
         if (objectp(du) && ! mapp(query("poison", du))) 
-                return notify_fail("ÄãÊÖÖĞËùÄÃµÄ" + du->name() + NOR "²»"
-                                   "ÊÇ¶¾Ò©£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ æ‰‹ä¸­æ‰€æ‹¿çš„" + du->name() + NOR "ä¸"
+                                   "æ˜¯æ¯’è—¥ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if( objectp(du) && query("no_shot", du) )
-                return notify_fail("½«" + du->name() + NOR "µ¯Éä³öÈ¥£¿ËÆ"
-                                   "ºõ²»Ì«ºÃ°É¡£\n");
+                return notify_fail("å°‡" + du->name() + NOR "å½ˆå°„å‡ºå»ï¼Ÿä¼¼"
+                                   "ä¹ä¸å¤ªå¥½å§ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        // ¸ù¾İ³éËèÕÆºÍ¶¾¼¼µÄ²»Í¬£¬¸øÓè²»Í¬µÄĞÅÏ¢
+        // æ ¹æ“šæŠ½é«“æŒå’Œæ¯’æŠ€çš„ä¸åŒï¼Œçµ¦äºˆä¸åŒçš„ä¿¡æ¯
         if (lvl >= 200 && lvp >= 270)
         {
                 pos = 600 + random(lvp * 4 / 3);
-                fire = "Ò»ÍÅÓ¨ÂÌÉ«µÄ" HIG "±ÌÑæ" HIR;
+                fire = "ä¸€åœ˜ç‘©ç¶ è‰²çš„" HIG "ç¢§ç‡„" HIR;
         } else
         if (lvl >= 180 && lvp >= 240)
         {
                 pos = 400 + random(lvp * 3 / 4);
-                fire = "Ò»¸öÒóºìÉ«µÄ»ğÇò";
+                fire = "ä¸€å€‹æ®·ç´…è‰²çš„ç«çƒ";
         } else
         if (lvl >= 150 && lvp >= 210)
         {
                 pos = 200 + random(lvp * 2 / 3);
-                fire = "ÊıµãÒóºìÉ«µÄ" NOR + RED "»ğĞÇ" HIR;
+                fire = "æ•¸é»æ®·ç´…è‰²çš„" NOR + RED "ç«æ˜Ÿ" HIR;
         } else
         {
                 pos = 100 + random(lvp / 2);
-                fire = "Ò»µã°µºìÉ«µÄ" NOR + RED "»ğĞÇ" HIR;
+                fire = "ä¸€é»æš—ç´…è‰²çš„" NOR + RED "ç«æ˜Ÿ" HIR;
         }
 
         if (objectp(du))
                 name = du->name();
         else
-                name = NOR + RED "¶¾Íè";
+                name = NOR + RED "æ¯’ä¸¸";
 
-        msg = HIR "$N" HIR "µ¥ÕÆÒ»¶¶£¬Ê©³öĞÇËŞÅÉ¾ø¼¼¡¸" HIW "Á¶ĞÄµ¯"
-              HIR "¡¹£¬½«ÊÖÖĞ" + name + HIR "¡¸à²¡¹µÄµ¯ÉäÁË³öÈ¥¡£\n"
-              "È´¼ûÄÇ" + name + HIR "ÉäÖÁÖĞÍ¾£¬¾¹İëµØ±¬ÁÑ¿ª£¬»¯×÷" +
-              fire + "Æ®È»Ï®Ïò$n" HIR "¡£\n" NOR;
+        msg = HIR "$N" HIR "å–®æŒä¸€æŠ–ï¼Œæ–½å‡ºæ˜Ÿå®¿æ´¾çµ•æŠ€ã€Œ" HIW "ç…‰å¿ƒå½ˆ"
+              HIR "ã€ï¼Œå°‡æ‰‹ä¸­" + name + HIR "ã€Œå—–ã€çš„å½ˆå°„äº†å‡ºå»ã€‚\n"
+              "å»è¦‹é‚£" + name + HIR "å°„è‡³ä¸­é€”ï¼Œç«Ÿé©€åœ°çˆ†è£‚é–‹ï¼ŒåŒ–ä½œ" +
+              fire + "é£„ç„¶è¥²å‘$n" HIR "ã€‚\n" NOR;
 
         an=query("max_neili", me)+query("neili", me)/4;
         dn=query("max_neili", target)+query("neili", target)/4;
 
-        // Ê×ÏÈÅĞ¶ÏÄÚÁ¦£¬Èç¹û¶Ô·½ÄÚÁ¦¹ı¸ßÔòÎŞĞ§
+        // é¦–å…ˆåˆ¤æ–·å…§åŠ›ï¼Œå¦‚æœå°æ–¹å…§åŠ›éé«˜å‰‡ç„¡æ•ˆ
         if (an / 2 + random(an) < dn * 2 / 3)
         {
-                msg += WHT "È»¶ø$n" WHT "È«È»²»·ÅÔÚĞÄÉÏ£¬ÇáÇáÒ»¶¶£¬ÒÑ½«$N"
-                       WHT "ÉäÀ´µÄ»ğÑæÕğÃğ¡£\n" NOR;
+                msg += WHT "ç„¶è€Œ$n" WHT "å…¨ç„¶ä¸æ”¾åœ¨å¿ƒä¸Šï¼Œè¼•è¼•ä¸€æŠ–ï¼Œå·²å°‡$N"
+                       WHT "å°„ä¾†çš„ç«ç‡„éœ‡æ»…ã€‚\n" NOR;
                 me->start_busy(3);
                 addn("neili", -150, me);
         } else
@@ -104,7 +104,7 @@ int perform(object me, object target)
                 ap = attack_power(me, "strike") +
                      me->query_skill("poison");
 
-                // ½«ÈÎÎñNPCºÍÍæ¼ÒÇø·Ö£¬ÔÙ¼ÆËã·ÀÓù×´¿ö
+                // å°‡ä»»å‹™NPCå’Œç©å®¶å€åˆ†ï¼Œå†è¨ˆç®—é˜²å¾¡ç‹€æ³
                 if (userp(me))
                         dp = defense_power(target, "dodge") +
                              target->query_skill("martial-cognize")/2;
@@ -123,15 +123,15 @@ int perform(object me, object target)
                         addn("neili", -200, me);
                 } else
                 {
-                        msg += CYN "¿ÉÊÇ$n" CYN "¼ûÊÆ²»Ãî£¬¼±Ã¦ÌÚÅ²ÉíĞÎ£¬ÖÕ"
-                               "ÓÚ±Ü¿ªÁË$N" CYN "ÉäÀ´µÄ»ğÑæ¡£\n" NOR;
+                        msg += CYN "å¯æ˜¯$n" CYN "è¦‹å‹¢ä¸å¦™ï¼Œæ€¥å¿™é¨°æŒªèº«å½¢ï¼Œçµ‚"
+                               "äºé¿é–‹äº†$N" CYN "å°„ä¾†çš„ç«ç‡„ã€‚\n" NOR;
                         me->start_busy(3);
                         addn("neili", -100, me);
                 }
         }
         message_combatd(msg, me, target);
 
-        // ÏûºÄ¶¾Ò©ÊıÁ¿
+        // æ¶ˆè€—æ¯’è—¥æ•¸é‡
         if (objectp(du))
         {
                 if (du->query_amount())
@@ -174,7 +174,7 @@ string final(object me, object target, int damage)
                 }
                 name = cloth->name();
         } else
-                name = "¼¡·ô";
+                name = "è‚Œè†š";
 
         target->affect_by("fire_poison",
                 ([ "level"    : lvp * 2 + random(lvp * 3),
@@ -186,6 +186,6 @@ string final(object me, object target, int damage)
         if( !target->is_busy() )
                 target->start_busy(1);
 
-        return  HIR "$n" HIR "Ò»¸ö²»É÷£¬»ğĞÇ¶ÙÊ±½¦µ½" + name +
-                HIR "Ö®ÉÏ£¬´óÊÆÈ¼ÉÕÆğÀ´£¬Æ¤ÈâÉÕµÃàÍàÍ×÷Ïì¡£\n" NOR;
+        return  HIR "$n" HIR "ä¸€å€‹ä¸æ…ï¼Œç«æ˜Ÿé “æ™‚æ¿ºåˆ°" + name +
+                HIR "ä¹‹ä¸Šï¼Œå¤§å‹¢ç‡ƒç‡’èµ·ä¾†ï¼Œçš®è‚‰ç‡’å¾—å—¤å—¤ä½œéŸ¿ã€‚\n" NOR;
 }

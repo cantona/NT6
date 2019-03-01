@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "������");
+        set("short", "會仙橋");
         set("long", @LONG
-���������ƽ��һ��ɽ������������һ��խխ��ľ�ź��ڽ��ϣ�
-ֻ��һ�˾�����
+這裡地勢稍平，一道山澗緩緩流過，一座窄窄的木橋橫在澗上，
+只溶一人經過。
 LONG );
         set("exits", ([
                 "north" : __DIR__"chaotiangong",

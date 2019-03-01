@@ -1,4 +1,4 @@
-// jinit.h ½Ù·Ë¼ì²é£¬×Ô¼ºÏûÊ§µÄÊ±¼ä
+// jinit.h åŠ«åŒªæª¢æŸ¥ï¼Œè‡ªå·±æ¶ˆå¤±çš„æ™‚é–“
 #define A_TIME 20
 
 void init()
@@ -80,13 +80,13 @@ void do_check()
         {
                 if(cart = present("cart",environment(me)))
                 {
-                        message_vision(HIY"\n$N¶Ô×Å$n´óºÈÒ»Éù£º¡°ÄãÕâ"+RANK_D->query_rude(ob)+"£¬Äã´óÒ¯ÎÒ¿É×ßÁË£¡¡±\n",me,ob);
-                        message_vision(HIR"\nïÚ³µ¸ø»ÆºÓ°ï½Ù·ËÒ»Â·ÍÆ×Å£¬Ò»Õó¡°ºäÂ¡Â¡¡±Ïì×ÅÊ»ÁË¿ªÈ¥¡£\n\n"NOR,me);
+                        message_vision(HIY"\n$Nå°è‘—$nå¤§å–ä¸€è²ï¼šâ€œä½ é€™"+RANK_D->query_rude(ob)+"ï¼Œä½ å¤§çˆºæˆ‘å¯èµ°äº†ï¼â€\n",me,ob);
+                        message_vision(HIR"\né¢è»Šçµ¦é»ƒæ²³å¹«åŠ«åŒªä¸€è·¯æŽ¨è‘—ï¼Œä¸€é™£â€œè½Ÿéš†éš†â€éŸ¿è‘—é§›äº†é–‹åŽ»ã€‚\n\n"NOR,me);
                         if( mapp(exits=query("exits", environment(me))) )
                                 dirs = keys(exits);
                         command("go " + dirs[random(sizeof(dirs))]);
                         cart->move(environment(me));
-                        message_vision(HIR"\nïÚ³µ¸ø»ÆºÓ°ï½Ù·ËÒ»Â·ÍÆ×Å£¬Ò»Õó¡°ºäÂ¡Â¡¡±Ïì×ÅÊ»ÁË¿ªÈ¥¡£\n"NOR,me);
+                        message_vision(HIR"\né¢è»Šçµ¦é»ƒæ²³å¹«åŠ«åŒªä¸€è·¯æŽ¨è‘—ï¼Œä¸€é™£â€œè½Ÿéš†éš†â€éŸ¿è‘—é§›äº†é–‹åŽ»ã€‚\n"NOR,me);
                 }
 
                 call_out("do_check", 1);
@@ -105,9 +105,9 @@ void do_wait()
         {
                 if (cart=present("cart",where))
                 {
-                        message_vision("$NÀäÐ¦µÀ£º¡°ÕâÐ©³ô±£ïÚµÄ¸Ï²»ÉÏÀ²£¡´óÒ¯Õâ¾Í°ÑïÚ³µÀ­»ØÉ½Õ¯ÁË£¡¡±\n",me);
+                        message_vision("$Nå†·ç¬‘é“ï¼šâ€œé€™äº›è‡­ä¿é¢çš„è¶•ä¸ä¸Šå•¦ï¼å¤§çˆºé€™å°±æŠŠé¢è»Šæ‹‰å›žå±±å¯¨äº†ï¼â€\n",me);
                         if (sscanf(file_name(where), "/d/%s/%s", area, home))
-message("channel:chat",HIM"¡¾Ò¥ÑÔ¡¿"+query("guardby", cart)+"±£µÄïÚ£¬ÔÚ"+to_chinese(area)+"µØÃæÉÏ±»»ÆºÓ½Ù·Ë¶á»ØÉ½Õ¯È¥ÁË£¡\n"NOR,users());
+message("channel:chat",HIM"ã€è¬ è¨€ã€‘"+query("guardby", cart)+"ä¿çš„é¢ï¼Œåœ¨"+to_chinese(area)+"åœ°é¢ä¸Šè¢«é»ƒæ²³åŠ«åŒªå¥ªå›žå±±å¯¨åŽ»äº†ï¼\n"NOR,users());
                         cart->move(VOID_OB);
                         destruct(cart);
                         destruct(me);

@@ -591,7 +591,7 @@ static void prntln (char * str, int vflg, int lineno)
     while (*str && *str != NL) {
         if ((line - start) > ED_MAXLINE) {
             free_ed_buffer(current_editor);
-            error("����ĵ�����ʽ��Ed �޷������� %d �������ִ���\n", ED_MAXLINE);
+            error("錯誤的檔案格式。Ed 無法處理比 %d 還長的字串。\n", ED_MAXLINE);
         }
         //if (*str < ' ' || *str >= DEL) {
         if((*str < ' ') && (*str >='\0')) { // by Lonely
@@ -634,7 +634,7 @@ static int egets (char * str, int size, FILE * stream)
         if (c == EOF) {
             *cp = EOS;
             if (count)
-                ED_OUTPUT(ED_DEST, "[���һ��δ���]\n");
+                ED_OUTPUT(ED_DEST, "[最後一行未完成]\n");
             return (count);
         } else if (c == NL) {
             *cp = EOS;
@@ -653,7 +653,7 @@ static int egets (char * str, int size, FILE * stream)
     }
     str[count - 1] = EOS;
     if (c != NL) {
-        ED_OUTPUT(ED_DEST, "ɾ�ڸ���\n");
+        ED_OUTPUT(ED_DEST, "刪節該行\n");
         P_TRUNCATED++;
         while ((c = getc(stream)) != EOF)
             if (c == NL)
@@ -676,7 +676,7 @@ static int doread (int lin, const char * fname)
     if (P_VERBOSE)
         ED_OUTPUTV(ED_DEST, "\"%s\" ", fname);
     if ((fp = fopen(fname, "r")) == NULL) {
-        ED_OUTPUT(ED_DEST, " ���ɶ�ȡ��\n");
+        ED_OUTPUT(ED_DEST, " 不可讀取。\n");
         return ERR;
     }
     setCurLn(lin);
@@ -692,13 +692,13 @@ static int doread (int lin, const char * fname)
     if (err < 0)
         return (err);
     if (P_VERBOSE) {
-        ED_OUTPUTV(ED_DEST, "�� %u �� %u λԪ��", lines, bytes);
+        ED_OUTPUTV(ED_DEST, "共 %u 行 %u 位元組", lines, bytes);
         if (P_NONASCII)
-            ED_OUTPUTV(ED_DEST, " [�� %d �� ASCII ��Ԫ]", P_NONASCII);
+            ED_OUTPUTV(ED_DEST, " [共 %d 非 ASCII 字元]", P_NONASCII);
         if (P_NULLCHAR)
-            ED_OUTPUTV(ED_DEST, " [�� %d ���ִ�]", P_NULLCHAR);
+            ED_OUTPUTV(ED_DEST, " [共 %d 空字串]", P_NULLCHAR);
         if (P_TRUNCATED)
-            ED_OUTPUTV(ED_DEST, " [���ض� %d ��]", P_TRUNCATED);
+            ED_OUTPUTV(ED_DEST, " [共截短 %d 行]", P_TRUNCATED);
         ED_OUTPUT(ED_DEST, "\n");
     }
     return (err);
@@ -732,9 +732,9 @@ static int dowrite (int from, int to, const char * fname, int apflg)
         ED_OUTPUTV(ED_DEST, "\"/%s\" ", fname);
     if ((fp = fopen(fname, (apflg ? "a" : "w"))) == NULL) {
         if (!P_RESTRICT)
-            ED_OUTPUT(ED_DEST, " �˵��޷����������༭��\n");
+            ED_OUTPUT(ED_DEST, " 此檔無法被開啟來編輯。\n");
         else
-            ED_OUTPUT(ED_DEST, "�޷������������༭��\n");
+            ED_OUTPUT(ED_DEST, "無法開啟檔案來編輯。\n");
         return ERR;
     }
     lptr = getptr(from);
@@ -743,7 +743,7 @@ static int dowrite (int from, int to, const char * fname, int apflg)
         lines++;
         bytes += strlen(str) + 1;       /* str + '\n' */
         if (fputs(str, fp) == EOF) {
-            ED_OUTPUT(ED_DEST, "����д�����\n");
+            ED_OUTPUT(ED_DEST, "檔案寫入錯誤\n");
             err++;
             break;
         }
@@ -752,7 +752,7 @@ static int dowrite (int from, int to, const char * fname, int apflg)
     }
 
     if (!P_RESTRICT)
-        ED_OUTPUTV(ED_DEST, "�� %u �� %lu λԪ��\n", lines, bytes);
+        ED_OUTPUTV(ED_DEST, "共 %u 行 %lu 位元組\n", lines, bytes);
     fclose(fp);
 
 #ifdef OLD_ED
@@ -819,7 +819,7 @@ static char *getfn (int writeflg)
 
     }
     if (strlen(file) == 0) {
-        ED_OUTPUT(ED_DEST, "�������ƴ���\n");
+        ED_OUTPUT(ED_DEST, "檔案名稱錯誤。\n");
         return (0);
     }
 
@@ -840,7 +840,7 @@ static char *getfn (int writeflg)
     file[MAXFNAME - 1] = 0;
 
     if (*file == 0) {
-        ED_OUTPUT(ED_DEST, "û�е������ơ�\n");
+        ED_OUTPUT(ED_DEST, "沒有檔案名稱。\n");
         return (NULL);
     }
     return (file);
@@ -1097,7 +1097,7 @@ static int join (int first, int last)
         str = gettxtl(lin);
         while (*str) {
             if (cp >= buf + ED_MAXLINE - 1) {
-                ED_OUTPUT(ED_DEST, "���й���\n");
+                ED_OUTPUT(ED_DEST, "此行過長\n");
                 return ERR;
             }
             *cp++ = *str++;
@@ -1214,14 +1214,14 @@ static int set()
         char out[512];
         char *pos = out;
 
-        pos += sprintf(pos, "ED �汾 %d.%d\n", version / 100,
+        pos += sprintf(pos, "ED 版本 %d.%d\n", version / 100,
                                                   version % 100);
         limit = tbl + (sizeof(tbl) / sizeof(struct tbl));
         for (t = tbl; t < limit; t += 2) {
             pos += sprintf(pos, "%s:%s ", t->t_str,
-                        P_FLAGS & t->t_or_mask ? "��" : "��");
+                        P_FLAGS & t->t_or_mask ? "開" : "關");
         }
-        pos += sprintf(pos, "\n���ſո�(shiftwidth):%d\n", P_SHIFTWIDTH);
+        pos += sprintf(pos, "\n縮排空格(shiftwidth):%d\n", P_SHIFTWIDTH);
 
         ED_OUTPUT(ED_DEST, out);
         return (0);
@@ -1229,7 +1229,7 @@ static int set()
     Skip_White_Space;
     for (i = 0; *inptr != SP && *inptr != HT && *inptr != NL;) {
         if (i == sizeof word - 1) {
-            ED_OUTPUT(ED_DEST, "��Ĳ��������������� 'set' ָ���Ҫ��\n");
+            ED_OUTPUT(ED_DEST, "你的參數過長，不符合 'set' 指令的要求。\n");
             return 0;
         }
         word[i++] = *inptr++;
@@ -1405,7 +1405,7 @@ static void shift (register char * text)
                 return;
             }
         }
-        error("���ź�Ľ��̫���������ڵ� %d ��\n");
+        error("縮排後的結果太長，發生于第 %d 行\n");
     }
 }
 
@@ -1542,7 +1542,7 @@ static void indent (char * buf)
                     p++;
                     break;
                 } else if (*p == '\0') {
-                    error("δ�������ִ������ڵ� %d ��\n");
+                    error("未結束的字串發現于第 %d 行\n");
                 } else if (*p == '\\' && *++p == '\0') {
                     break;
                 }
@@ -1719,7 +1719,7 @@ static void indent (char * buf)
 
                 if (sp == stackbot) {
                     /* out of stack */
-                    error("��״���Ź����ڵ� %d �С�\n");
+                    error("巢狀縮排過深于第 %d 行。\n");
                 }
                 /* handle indentation */
                 i = *ip;
@@ -2027,8 +2027,8 @@ static int docmd (int glob)
             P_FLAGS &= ~NFLG_MASK;
         else
             P_FLAGS |= NFLG_MASK;
-        ED_OUTPUTV(ED_DEST, "�к�ģʽ %s��������Ԫģʽ %s\n",
-                    P_NFLG ? "��" : "��", P_LFLG ? "��" : "��");
+        ED_OUTPUTV(ED_DEST, "行號模式 %s，特殊字元模式 %s\n",
+                    P_NFLG ? "開" : "關", P_LFLG ? "開" : "關");
         break;
 
     case 'I':
@@ -2036,11 +2036,11 @@ static int docmd (int glob)
             return LINE_OR_RANGE_ILL;
         if (*inptr != NL)
             return SYNTAX_ERROR;
-        ED_OUTPUT(ED_DEST, "��ʼ��������(Indentation)��������\n");
+        ED_OUTPUT(ED_DEST, "開始進行縮排(Indentation)處理‥‥\n");
         if (indent_code())
-            ED_OUTPUT(ED_DEST, "ֹͣ���ţ������д�������\n");
+            ED_OUTPUT(ED_DEST, "停止縮排，可能有錯誤發生。\n");
         else
-            ED_OUTPUT(ED_DEST, "������ϡ�\n");
+            ED_OUTPUT(ED_DEST, "縮排完畢。\n");
         break;
 
     case 'H':
@@ -2364,7 +2364,7 @@ void ed_start (const char * file_arg, const char * write_fn,
         strncpy(P_FNAME, file_arg, MAXFNAME - 1);
         P_FNAME[MAXFNAME - 1] = 0;
     } else {
-        ED_OUTPUT(ED_DEST, "<û��ָ������>\n");
+        ED_OUTPUT(ED_DEST, "<沒有指定檔案>\n");
     }
     set_prompt(":");
     return;
@@ -2415,65 +2415,65 @@ void ed_cmd (char * str)
 static void report_status (int status) {
     switch (status) {
     case EOF:
-        ED_OUTPUT(ED_DEST, "<�뿪 ed>\n");
+        ED_OUTPUT(ED_DEST, "<離開 ed>\n");
         free_ed_buffer(current_editor);
         return;
     case CHANGED:
-        ED_OUTPUT(ED_DEST, "<�����Ѹ���>\n");
+        ED_OUTPUT(ED_DEST, "<檔案已更變>\n");
         break;
     case SET_FAIL:
-        ED_OUTPUT(ED_DEST, "<set ָ��ʧ��>\n");
+        ED_OUTPUT(ED_DEST, "<set 指令失敗>\n");
         break;
     case SUB_FAIL:
-        ED_OUTPUT(ED_DEST, "<ȡ���ִ�ʧ��>\n");
+        ED_OUTPUT(ED_DEST, "<取代字串失敗>\n");
         break;
     case MEM_FAIL:
-        ED_OUTPUT(ED_DEST, "<�����岻�㣺���Ͽ�����ʧ>\n");
+        ED_OUTPUT(ED_DEST, "<記憶體不足：資料可能流失>\n");
         break;
     case UNRECOG_COMMAND:
-        ED_OUTPUT(ED_DEST, "<û�����ָ��>\n");
+        ED_OUTPUT(ED_DEST, "<沒有這個指令>\n");
         break;
     case BAD_LINE_RANGE:
-        ED_OUTPUT(ED_DEST, "<����ȷ�ķ�Χ>\n");
+        ED_OUTPUT(ED_DEST, "<不正確的范圍>\n");
         break;
     case BAD_LINE_NUMBER:
-        ED_OUTPUT(ED_DEST, "<����ȷ������>\n");
+        ED_OUTPUT(ED_DEST, "<不正確的行數>\n");
         break;
     case SYNTAX_ERROR:
-        ED_OUTPUT(ED_DEST, "<����ȷ��ָ���ʽ>\n");
+        ED_OUTPUT(ED_DEST, "<不正確的指令格式>\n");
         break;
     case RANGE_ILLEGAL:
-        ED_OUTPUT(ED_DEST, "<��ָ���޷�ʹ�÷�Χ>\n");
+        ED_OUTPUT(ED_DEST, "<此指令無法使用范圍>\n");
         break;
     case IS_RESTRICTED:
-        ED_OUTPUT(ED_DEST, "<���޷�ʹ�ô�ָ��>\n");
+        ED_OUTPUT(ED_DEST, "<你無法使用此指令>\n");
         break;
     case LINE_OR_RANGE_ILL:
-        ED_OUTPUT(ED_DEST, "<��ָ���޷�ʹ��������Χ>\n");
+        ED_OUTPUT(ED_DEST, "<此指令無法使用行數或范圍>\n");
         break;
     case FILE_NAME_ERROR:
-        ED_OUTPUT(ED_DEST, "<'file' ָ�����>\n");
+        ED_OUTPUT(ED_DEST, "<'file' 指令錯誤>\n");
         break;
     case MARK_A_TO_Z:
-        ED_OUTPUT(ED_DEST, "<��Ƿ�Χ������ 'a �� 'z>\n");
+        ED_OUTPUT(ED_DEST, "<標記范圍必須由 'a 到 'z>\n");
         break;
     case SUB_BAD_PATTERN:
-        ED_OUTPUT(ED_DEST, "<����ȷ����Ѱ��ʽ>\n");
+        ED_OUTPUT(ED_DEST, "<不正確的搜尋樣式>\n");
         break;
     case SUB_BAD_REPLACEMENT:
-        ED_OUTPUT(ED_DEST, "<����ȷ��ȡ����ʽ>��\n");
+        ED_OUTPUT(ED_DEST, "<不正確的取代樣式>。\n");
         break;
     case BAD_DESTINATION:
-        ED_OUTPUT(ED_DEST, "<�ƶ����Ƶ�Ŀ�ش���>\n");
+        ED_OUTPUT(ED_DEST, "<移動或復制的目地錯誤>\n");
         break;
     case END_OF_FILE:
-        ED_OUTPUT(ED_DEST, "<��β>\n");
+        ED_OUTPUT(ED_DEST, "<檔尾>\n");
         break;
     case SEARCH_FAILED:
-        ED_OUTPUT(ED_DEST, "<��Ѱʧ��>\n");
+        ED_OUTPUT(ED_DEST, "<搜尋失敗>\n");
         break;
     default:
-        ED_OUTPUT(ED_DEST, "<����ȷ��ָ��>\n");
+        ED_OUTPUT(ED_DEST, "<不正確的指令>\n");
     }
 }
 
@@ -2514,228 +2514,228 @@ static void print_help (int arg)
 
     switch (arg) {
     case 'I':
-        ED_OUTPUT(ED_DEST, "                    �Զ����� (V 1.0)\n");
+        ED_OUTPUT(ED_DEST, "                    自動縮排 (V 1.0)\n");
         ED_OUTPUT(ED_DEST, "------------------------------------\n");
-        ED_OUTPUT(ED_DEST, "                Qixx [����: 7/10/91]\n");
-        ED_OUTPUT(ED_DEST, "ָ���ʽ: I\n\n");
-        ED_OUTPUT(ED_DEST, "��ʹ�����ָ��ʱ�򣬱��༭��ʽ���Զ����㽫��ʽ�������ŵĶ�\n");
-        ED_OUTPUT(ED_DEST, "�����ó�ʽ���ĸ�������\����Ѱ�Ҵ��󡣲���ͬʱѰ��һЩ����\n");
-        ED_OUTPUT(ED_DEST, "δ�жϵ��ִ� (Unterminated String)������Ե� {} �� () ֮��\n");
-        ED_OUTPUT(ED_DEST, "�Ļ������� (���û����ԵĻ������ź���������������) ����\n");
-        ED_OUTPUT(ED_DEST, "�����κ�δ�������ŵĳ�ʽ�룬�뽫֮�ĵ� gaunt@mcs.anl.gov��\n");
+        ED_OUTPUT(ED_DEST, "                Qixx [更新: 7/10/91]\n");
+        ED_OUTPUT(ED_DEST, "指令格式: I\n\n");
+        ED_OUTPUT(ED_DEST, "當使用這個指令時候，本編輯程式會自動幫你將程式碼做縮排的動\n");
+        ED_OUTPUT(ED_DEST, "作，讓程式碼變的更容易閱\讀和尋找錯誤。並且同時尋找一些像是\n");
+        ED_OUTPUT(ED_DEST, "未中斷的字串 (Unterminated String)、不配對的 {} 和 () 之類\n");
+        ED_OUTPUT(ED_DEST, "的基本錯誤 (如果沒有配對的話，縮排後看起來就有問題了) 。如\n");
+        ED_OUTPUT(ED_DEST, "果有任何未妥善縮排的程式碼，請將之寄到 gaunt@mcs.anl.gov。\n");
         break;
     case 'n':
-        ED_OUTPUT(ED_DEST, "ָ���ʽ: n\n\n");
-        ED_OUTPUT(ED_DEST, "���ָ��Ὣ�ڽ�������趨����ʾ������ģʽ��\n");
+        ED_OUTPUT(ED_DEST, "指令格式: n\n\n");
+        ED_OUTPUT(ED_DEST, "這個指令會將內建的旗標設定成顯示行數的模式。\n");
         break;
     case 'a':
-        ED_OUTPUT(ED_DEST, "ָ���ʽ: [�к�]a �� a\n\n");
-        ED_OUTPUT(ED_DEST, "���ָ��������ָ��ĳ��֮��ʼ���� (append) ���֣�����ָ��\n");
-        ED_OUTPUT(ED_DEST, "��ΪĿǰ���ڵ��������ڿհ��д��� '.' ������������ģʽ��\n");
+        ED_OUTPUT(ED_DEST, "指令格式: [行號]a 或 a\n\n");
+        ED_OUTPUT(ED_DEST, "這個指令另你由指定某行之後開始新增 (append) 文字，若不指定\n");
+        ED_OUTPUT(ED_DEST, "則為目前所在的行數。在空白行打入 '.' 來結束本輸入模式。\n");
         break;
     case 'A':
-        ED_OUTPUT(ED_DEST, "ָ���ʽ: [����]A �� A\n\n");
-        ED_OUTPUT(ED_DEST, "��ͬ 'a' ָ���ʹ�÷����Զ�����ģʽ (inverse autoindent mode)��\n");
-        ED_OUTPUT(ED_DEST, "������ 'a' ָ���Ƚϡ�\n");
+        ED_OUTPUT(ED_DEST, "指令格式: [行數]A 或 A\n\n");
+        ED_OUTPUT(ED_DEST, "如同 'a' 指令，但使用反向自動縮排模式 (inverse autoindent mode)。\n");
+        ED_OUTPUT(ED_DEST, "建議與 'a' 指定比較。\n");
         break;
     case 'i':
-        ED_OUTPUT(ED_DEST, "ָ���ʽ: [����]i �� i\n\n");
-        ED_OUTPUT(ED_DEST, "���ָ��������ָ��ĳ��֮ǰ��ʼ���� (insert) ���֣�����ָ��\n");
-        ED_OUTPUT(ED_DEST, "��ΪĿǰ���ڵ��������ڿհ��д��� '.' ������������ģʽ��\n");
+        ED_OUTPUT(ED_DEST, "指令格式: [行數]i 或 i\n\n");
+        ED_OUTPUT(ED_DEST, "這個指令另你由指定某行之前開始插入 (insert) 文字，若不指定\n");
+        ED_OUTPUT(ED_DEST, "則為目前所在的行數。在空白行打入 '.' 來結束本輸入模式。\n");
         break;
     case 'c':
-        ED_OUTPUT(ED_DEST, "ָ���ʽ: [��Χ]c �� c\n\n");
-        ED_OUTPUT(ED_DEST, "��ָ���Χ�ڵ�����ȡ��Ϊ����������֣����ǲ�ָ����Χ��Ϊ\n");
-        ED_OUTPUT(ED_DEST, "Ŀǰ���ڸ��С��ڿհ��д��� '.' ������������ģʽ��\n");
+        ED_OUTPUT(ED_DEST, "指令格式: [范圍]c 或 c\n\n");
+        ED_OUTPUT(ED_DEST, "此指令將范圍內的行數取代為新輸入的文字，若是不指定范圍則為\n");
+        ED_OUTPUT(ED_DEST, "目前所在該行。在空白行打入 '.' 來結束本輸入模式。\n");
         break;
     case 'd':
-        ED_OUTPUT(ED_DEST, "ָ���ʽ: [��Χ]d �� d\n\n");
-        ED_OUTPUT(ED_DEST, "��ָ���Χ�ڵ�����ɾ�������ǲ�ָ����Χ��ΪĿǰ���ڸ��С�\n");
+        ED_OUTPUT(ED_DEST, "指令格式: [范圍]d 或 d\n\n");
+        ED_OUTPUT(ED_DEST, "此指令將范圍內的行數刪除，若是不指定范圍則為目前所在該行。\n");
         break;
 #ifndef RESTRICTED_ED
     case 'e':
-        ED_OUTPUT(ED_DEST, "ָ���ʽ: e [��������]\n\n");
-        ED_OUTPUT(ED_DEST, "��ָ��༭�еĵ����ɼ�����������������¶���õ�����\n");
+        ED_OUTPUT(ED_DEST, "指令格式: e [檔案名稱]\n\n");
+        ED_OUTPUT(ED_DEST, "此指令將編輯中的檔案由記憶體中清除，並重新讀入該檔案。\n");
         break;
     case 'E':
-        ED_OUTPUT(ED_DEST, "ָ���ʽ: E [��������]\n\n");
-        ED_OUTPUT(ED_DEST, "��ָ���� 'e' ��ͬ�����������δ������޸ġ�\n");
+        ED_OUTPUT(ED_DEST, "指令格式: E [檔案名稱]\n\n");
+        ED_OUTPUT(ED_DEST, "此指令與 'e' 相同，但會忽略尚未儲存的修改。\n");
         break;
     case 'f':
-        ED_OUTPUT(ED_DEST, "ָ���ʽ: f �� f [����]\n\n");
-        ED_OUTPUT(ED_DEST, "��ʾĿǰ�༭�еĵ������ơ���������ָ���������򽫻�ѵ�����\n");
-        ED_OUTPUT(ED_DEST, "��Ϊָ�����µ�����\n");
+        ED_OUTPUT(ED_DEST, "指令格式: f 或 f [檔案]\n\n");
+        ED_OUTPUT(ED_DEST, "顯示目前編輯中的檔案名稱。若後面有指定檔名，則將會把檔名更\n");
+        ED_OUTPUT(ED_DEST, "改為指定的新檔案。\n");
         break;
 #endif                          /* RESTRICTED_ED mode */
     case 'g':
-        ED_OUTPUT(ED_DEST, "ָ���ʽ: [��Χ] g/[�ִ�]/p �� g/[�ִ�]/p\n\n");
-        ED_OUTPUT(ED_DEST, "�ڷ�Χ��Ѱ�����а��� [�ִ�] ����������ͬʱ�г��Ǽ��С����\n");
-        ED_OUTPUT(ED_DEST, "��ָ����Χ�����Ѱ����������\n");
-        ED_OUTPUT(ED_DEST, "������ 'v' ָ��Ƚϡ�\n");
+        ED_OUTPUT(ED_DEST, "指令格式: [范圍] g/[字串]/p 或 g/[字串]/p\n\n");
+        ED_OUTPUT(ED_DEST, "在范圍內尋找所有包含 [字串] 的行數，並同時列出那幾行。如果\n");
+        ED_OUTPUT(ED_DEST, "不指定范圍則會搜尋整個檔案。\n");
+        ED_OUTPUT(ED_DEST, "建議與 'v' 指令比較。\n");
         break;
     case 'h':
-        ED_OUTPUT(ED_DEST, "ָ���ʽ: h[ָ��] �� h\n\n");
-        ED_OUTPUT(ED_DEST, "��ʾ [ָ��] ����ϸ˵����������ָ��ļ���˵����\n");
-        ED_OUTPUT(ED_DEST, "��ָ���� Qixx ������\n");
+        ED_OUTPUT(ED_DEST, "指令格式: h[指令] 或 h\n\n");
+        ED_OUTPUT(ED_DEST, "顯示 [指令] 的詳細說明或者所有指令的簡略說明。\n");
+        ED_OUTPUT(ED_DEST, "本指令由 Qixx 新增。\n");
         break;
     case 'j':
-        ED_OUTPUT(ED_DEST, "ָ���ʽ: [��Χ]j �� j\n\n");
-        ED_OUTPUT(ED_DEST, "����Χ�����л�����Ԫ�Ƴ���ϳ�һ�С����û��ָ����Χ��Χ\n");
-        ED_OUTPUT(ED_DEST, "ΪĿǰ����֮������һ�С������Χֻ��һ�еĻ�����ָ��������\n");
-        ED_OUTPUT(ED_DEST, "�����á�\n");
+        ED_OUTPUT(ED_DEST, "指令格式: [范圍]j 或 j\n\n");
+        ED_OUTPUT(ED_DEST, "將范圍內所有換行字元移除結合成一行。如果沒有指定范圍則范圍\n");
+        ED_OUTPUT(ED_DEST, "為目前所在之行與下一行。如果范圍只有一行的話，本指令則無任\n");
+        ED_OUTPUT(ED_DEST, "何作用。\n");
         break;
     case 'k':
-        ED_OUTPUT(ED_DEST, "ָ���ʽ: [����]k[��ĸ] �� k[��ĸ]\n\n");
-        ED_OUTPUT(ED_DEST, "��ָ�� [����] ��ǳ� [��ĸ] �������ָ��������ΪĿǰ���ڸ�\n");
-        ED_OUTPUT(ED_DEST, "�С����� '[��ĸ] ����г��ոձ�ǹ������С�����ǹ�������\n");
-        ED_OUTPUT(ED_DEST, "�����ᱻ�޸ġ�\n");
+        ED_OUTPUT(ED_DEST, "指令格式: [行數]k[字母] 或 k[字母]\n\n");
+        ED_OUTPUT(ED_DEST, "將指定 [行數] 標記成 [字母] ，如果不指定行數則為目前所在該\n");
+        ED_OUTPUT(ED_DEST, "行。輸入 '[字母] 則會列出剛剛標記過的那行。被標記過的行數\n");
+        ED_OUTPUT(ED_DEST, "並不會被修改。\n");
         break;
     case 'l':
-        ED_OUTPUT(ED_DEST, "ָ���ʽ: [��Χ]l �� l\n\n");
-        ED_OUTPUT(ED_DEST, "����Χ�ڵ��Ǽ����г��������ҽ��޷���ʾ����Ԫ (�绻����Ԫ) \n");
-        ED_OUTPUT(ED_DEST, "�÷�������ʾ�������ָ����Χ��ΪĿǰ���ڸ��С�\n");
+        ED_OUTPUT(ED_DEST, "指令格式: [范圍]l 或 l\n\n");
+        ED_OUTPUT(ED_DEST, "將范圍內的那幾行列出來，並且將無法顯示的字元 (如換行字元) \n");
+        ED_OUTPUT(ED_DEST, "用符號來表示。如果不指定范圍則為目前所在該行。\n");
         break;
     case 'm':
-        ED_OUTPUT(ED_DEST, "ָ���ʽ: [��Χ]m[����] �� m[����]\n");
-        ED_OUTPUT(ED_DEST, "��ָ���Χ�ڵ��Ǽ����Ƶ��� [����] �ĺ��棬�����ָ����Χ\n");
-        ED_OUTPUT(ED_DEST, "����ָĿǰ���ڸ��С�[���� 0] ����Ƶ������������档\n");
+        ED_OUTPUT(ED_DEST, "指令格式: [范圍]m[行數] 或 m[行數]\n");
+        ED_OUTPUT(ED_DEST, "此指令將范圍內的那幾行移到第 [行數] 的後面，如果不指定范圍\n");
+        ED_OUTPUT(ED_DEST, "則是指目前所在該行。[行數 0] 則會移到檔案的最上面。\n");
         break;
     case 'p':
-        ED_OUTPUT(ED_DEST, "ָ���ʽ: [��Χ]p �� p\n\n");
-        ED_OUTPUT(ED_DEST, "��ָ���Χ�ڵ��Ǽ�����ӡ (print) ��ӫĻ�ϣ���ָ����Χ��\n");
-        ED_OUTPUT(ED_DEST, "ΪĿǰ���ڸ��С�\n");
+        ED_OUTPUT(ED_DEST, "指令格式: [范圍]p 或 p\n\n");
+        ED_OUTPUT(ED_DEST, "此指令將范圍內的那幾行列印 (print) 到熒幕上，不指定范圍則\n");
+        ED_OUTPUT(ED_DEST, "為目前所在該行。\n");
         break;
     case 'q':
-        ED_OUTPUT(ED_DEST, "ָ���ʽ: q\n\n");
-        ED_OUTPUT(ED_DEST, "�뿪���༭������������б����������޷��뿪������\ָ�� 'w'\n");
-        ED_OUTPUT(ED_DEST, "��������д�뵵����\n");
+        ED_OUTPUT(ED_DEST, "指令格式: q\n\n");
+        ED_OUTPUT(ED_DEST, "離開本編輯器。如果檔案有被更動過則無法離開，參閱\指令 'w'\n");
+        ED_OUTPUT(ED_DEST, "來將更變寫入檔案。\n");
         break;
     case 'Q':
-        ED_OUTPUT(ED_DEST, "ָ���ʽ: Q\n\n");
-        ED_OUTPUT(ED_DEST, "ǿ���뿪���༭���������κε�δ����䶯��\n");
+        ED_OUTPUT(ED_DEST, "指令格式: Q\n\n");
+        ED_OUTPUT(ED_DEST, "強制離開本編輯器，忽略任何的未儲存變動。\n");
         break;
 #ifndef RESTRICTED_ED
     case 'r':
-        ED_OUTPUT(ED_DEST, "ָ���ʽ: [����]r [����] �� r [����]\n\n");
-        ED_OUTPUT(ED_DEST, "���� [����] ������ [����] ֮�������ָ�������Ļ���ΪĿǰ\n");
-        ED_OUTPUT(ED_DEST, "����֮���С�\n");
+        ED_OUTPUT(ED_DEST, "指令格式: [行數]r [檔案] 或 r [檔案]\n\n");
+        ED_OUTPUT(ED_DEST, "讀入 [檔案] 並插入 [行數] 之後，如果不指定行數的話則為目前\n");
+        ED_OUTPUT(ED_DEST, "所在之該行。\n");
         break;
 #endif                          /* RESTRICTED_ED */
     case 't':
-        ED_OUTPUT(ED_DEST, "ָ���ʽ: [��Χ]t[����] �� t[����]\n\n");
-        ED_OUTPUT(ED_DEST, "��ָ���÷��� m ��ͬ���䲻ͬΪ��ָ����ƶ�ָ����Χ������\n");
-        ED_OUTPUT(ED_DEST, "��ָ����Χ copy ������ [����] ֮��ԭ�� [��Χ] ���򲻱䡣\n");
-        ED_OUTPUT(ED_DEST, "����ο� 'm' ָ�\n");
+        ED_OUTPUT(ED_DEST, "指令格式: [范圍]t[行數] 或 t[行數]\n\n");
+        ED_OUTPUT(ED_DEST, "此指令用法與 m 相同，其不同為此指令並非移動指定范圍，而是\n");
+        ED_OUTPUT(ED_DEST, "將指定范圍 copy 並插入 [行數] 之後，原本 [范圍] 內則不變。\n");
+        ED_OUTPUT(ED_DEST, "建議參考 'm' 指令。\n");
         break;
     case 'v':
-        ED_OUTPUT(ED_DEST, "ָ���ʽ: [��Χ]v/[�ִ�]/p �� v/[�ִ�]/p\n\n");
-        ED_OUTPUT(ED_DEST, "�ڷ�Χ����Ѱ���в����� [�ִ�] ����������ͬʱ�г��Ǽ��С���\n");
-        ED_OUTPUT(ED_DEST, "����ָ����Χ����Ѱ����������\n");
-        ED_OUTPUT(ED_DEST, "������ 'g' ָ��Ƚϡ�\n");
+        ED_OUTPUT(ED_DEST, "指令格式: [范圍]v/[字串]/p 或 v/[字串]/p\n\n");
+        ED_OUTPUT(ED_DEST, "在范圍內搜尋所有不包含 [字串] 的行數，並同時列出那幾行。如\n");
+        ED_OUTPUT(ED_DEST, "果不指定范圍則搜尋整個檔案。\n");
+        ED_OUTPUT(ED_DEST, "建議與 'g' 指令比較。\n");
         break;
     case 'z':
-        ED_OUTPUT(ED_DEST, "ָ���ʽ: z �� z- �� z.\n\n");
-        ED_OUTPUT(ED_DEST, "'z' ��ʾ��Ŀǰ��ʼ������ 20 �� (����Ŀǰ�������� + 20)��\n");
-        ED_OUTPUT(ED_DEST, "'z-' ��ʾ��Ŀǰ��ʼ������ 20 �� (���������Ŀǰ��������)��\n");
-        ED_OUTPUT(ED_DEST, "'z.' ��ʾ��Ŀǰ��ʼ���� 10 �е��� 10 �� (Ŀǰ�������� + 10)��\n");
+        ED_OUTPUT(ED_DEST, "指令格式: z 或 z- 或 z.\n\n");
+        ED_OUTPUT(ED_DEST, "'z' 顯示由目前開始的下面 20 行 (並將目前所在行數 + 20)。\n");
+        ED_OUTPUT(ED_DEST, "'z-' 顯示由目前開始的上面 20 行 (並不會更動目前所在行數)。\n");
+        ED_OUTPUT(ED_DEST, "'z.' 顯示由目前開始的上 10 行到下 10 行 (目前所在行數 + 10)。\n");
         break;
     case 'Z':
-        ED_OUTPUT(ED_DEST, "ָ���ʽ: Z �� Z- �� Z.\n\n");
-        ED_OUTPUT(ED_DEST, "�÷�ͬ 'z'������ΧΪ�� 2 ����\n");
+        ED_OUTPUT(ED_DEST, "指令格式: Z 或 Z- 或 Z.\n\n");
+        ED_OUTPUT(ED_DEST, "用法同 'z'，但范圍為其 2 倍。\n");
         break;
     case 'x':
-        ED_OUTPUT(ED_DEST, "ָ���ʽ: x\n\n");
-        ED_OUTPUT(ED_DEST, "����༭�е������뿪���༭��ʽ��\n");
+        ED_OUTPUT(ED_DEST, "指令格式: x\n\n");
+        ED_OUTPUT(ED_DEST, "儲存編輯中檔案並離開本編輯程式。\n");
         break;
     case 's':
         if (*inptr == 'e' && *(inptr + 1) == 't') {
-            ED_OUTPUT(ED_DEST, "ָ���ʽ: set [ѡ��] �� set no[ѡ��] �� set��\n\
+            ED_OUTPUT(ED_DEST, "指令格式: set [選項] 或 set no[選項] 或 set。\n\
 \n\
-���û�м��� [ѡ��] ����ʾĿǰ���趨������� no[ѡ��] ���رոù�\�ܣ�\n\
-set save ��ᴢ��Ŀǰ���趨��\n\
-ѡ������:\n\
+如果沒有加入 [選項] 則顯示目前的設定。如果用 no[選項] 則會關閉該功\能，\n\
+set save 則會儲存目前的設定。\n\
+選項如下:\n\
 \n\
-number                  ��ʾ���� (�ο�ָ�� n)��\n\
-list                    ��ʾ������Ԫ (�ο�ָ�� l)��\n\
-print                   ���滻 (subsitution) �����ʾĿǰ���ڸ��С�\n\
-eightbit                << ��˵�� >>\n\
-autoindent              �ᱣ��ԭ�����е����š��� ^D �� ^K ��������һ��\n\
-excompatible            �Ὣ \\( \\) ����˼�� ( ) ������\n\
-dprint                  ��ɾ������֮����ʾĿǰ���ڸ��С�\n\
-shiftwidth [����]       �趨���Զ��Ű�ʱ��Ŀո���Ŀ��\n");
+number                  顯示行數 (參考指令 n)。\n\
+list                    顯示特殊字元 (參考指令 l)。\n\
+print                   在替換 (subsitution) 後會顯示目前所在該行。\n\
+eightbit                << 無說明 >>\n\
+autoindent              會保持原來該行的縮排。用 ^D 或 ^K 來向右移一格。\n\
+excompatible            會將 \\( \\) 的意思與 ( ) 互換。\n\
+dprint                  在刪除行數之後顯示目前所在該行。\n\
+shiftwidth [數字]       設定在自動排版時候的空格數目。\n");
 
         }
         break;
     case '/':
-        ED_OUTPUT(ED_DEST, "ָ���ʽ: /[��ʽ]\n\n");
-        ED_OUTPUT(ED_DEST, "Ѱ����һ������ [��ʽ] ��������ֱ��ע����� [��ʽ] �ڴ�ʹ��\n");
-        ED_OUTPUT(ED_DEST, "�����ʾ (regular expression) �﷨���������� .*][() ���ֵ�\n");
-        ED_OUTPUT(ED_DEST, "��ʽǰ�������� \\.\n");
+        ED_OUTPUT(ED_DEST, "指令格式: /[樣式]\n\n");
+        ED_OUTPUT(ED_DEST, "尋找下一個符合 [樣式] 的行數。直得注意的是 [樣式] 在此使用\n");
+        ED_OUTPUT(ED_DEST, "正規表示 (regular expression) 語法，所以像是 .*][() 這種的\n");
+        ED_OUTPUT(ED_DEST, "樣式前面必須加上 \\.\n");
         break;
     case '?':
-        ED_OUTPUT(ED_DEST, "ָ���ʽ: ?[��ʽ]\n\n");
-        ED_OUTPUT(ED_DEST, "Ѱ�����һ������ [��ʽ] ��������\n");
-        ED_OUTPUT(ED_DEST, "����ο� '/' ָ�\n");
+        ED_OUTPUT(ED_DEST, "指令格式: ?[樣式]\n\n");
+        ED_OUTPUT(ED_DEST, "尋找最後一個符合 [樣式] 的行數。\n");
+        ED_OUTPUT(ED_DEST, "建議參考 '/' 指令。\n");
         break;
         /* someone should REALLY write help for s in the near future */
 #ifndef RESTRICTED_ED
     case 'w':
     case 'W':
-        ED_OUTPUT(ED_DEST, "ָ���ʽ: W [����] �� W\n\n");
-        ED_OUTPUT(ED_DEST, "��Ŀǰ�ڼ�������༭�ĵ��������� [����] �ĺ��棬����ָ����\n");
-        ED_OUTPUT(ED_DEST, "���������ڱ༭�ĵ�����\n");
+        ED_OUTPUT(ED_DEST, "指令格式: W [檔案] 或 W\n\n");
+        ED_OUTPUT(ED_DEST, "將目前在記憶體裡編輯的檔案新增到 [檔案] 的後面，若無指定則\n");
+        ED_OUTPUT(ED_DEST, "新增至正在編輯的檔案。\n");
         break;
 #endif                          /* RESTRICTED_ED */
     default:
-        ED_OUTPUT(ED_DEST, "             Ed ʹ��˵��  (V 2.0)\n");
+        ED_OUTPUT(ED_DEST, "             Ed 使用說明  (V 2.0)\n");
         ED_OUTPUT(ED_DEST, "---------------------------------\n");
-        ED_OUTPUT(ED_DEST, "            Qixx [����: 07/10/91]\n");
-        ED_OUTPUT(ED_DEST, "         ���Ļ�����: Cwlin & Ekac\n");
-        ED_OUTPUT(ED_DEST, "       [����������: 11/08/2002]\n");
-        ED_OUTPUT(ED_DEST, "\n\nָ��\n--------\n");
-        ED_OUTPUT(ED_DEST, "/\t��ǰ��Ѱ <��ʽ>\n");
-        ED_OUTPUT(ED_DEST, "?\t�����Ѱ <��ʽ>\n");
-        ED_OUTPUT(ED_DEST, "=\t��ʾ��������\n");
-        ED_OUTPUT(ED_DEST, "a\t���������ڴ���֮��\n");
-        ED_OUTPUT(ED_DEST, "A\t���� 'a', ��ʹ�÷�������ģʽ\n");
-        ED_OUTPUT(ED_DEST, "c\t���ĸ���\n");
-        ED_OUTPUT(ED_DEST, "d\tɾ������\n");
+        ED_OUTPUT(ED_DEST, "            Qixx [更新: 07/10/91]\n");
+        ED_OUTPUT(ED_DEST, "         中文化作者: Cwlin & Ekac\n");
+        ED_OUTPUT(ED_DEST, "       [最後更新日期: 11/08/2002]\n");
+        ED_OUTPUT(ED_DEST, "\n\n指令\n--------\n");
+        ED_OUTPUT(ED_DEST, "/\t向前搜尋 <樣式>\n");
+        ED_OUTPUT(ED_DEST, "?\t向後搜尋 <樣式>\n");
+        ED_OUTPUT(ED_DEST, "=\t顯示所在行數\n");
+        ED_OUTPUT(ED_DEST, "a\t插入文字于此行之後\n");
+        ED_OUTPUT(ED_DEST, "A\t類似 'a', 但使用反向縮排模式\n");
+        ED_OUTPUT(ED_DEST, "c\t更改該行\n");
+        ED_OUTPUT(ED_DEST, "d\t刪除該行\n");
 #ifdef RESTRICTED_ED
         if (!P_RESTRICT) {
-                ED_OUTPUT(ED_DEST, "e\tʹ����������ȡ���˵�\n");
-                ED_OUTPUT(ED_DEST, "E\tͬ 'e', ��������δ����ı䶯\n");
-                ED_OUTPUT(ED_DEST, "f\t��ʾ/���� Ŀǰ��������\n");
+                ED_OUTPUT(ED_DEST, "e\t使用其他檔案取代此檔\n");
+                ED_OUTPUT(ED_DEST, "E\t同 'e', 但忽略尚未儲存的變動\n");
+                ED_OUTPUT(ED_DEST, "f\t顯示/更改 目前檔案名稱\n");
         }
 #endif                          /* restricted ed */
-        ED_OUTPUT(ED_DEST, "g\t��Ѱ����ʾ������ʽ������\n");
-        ED_OUTPUT(ED_DEST, "h\t˵������ (����˵��ѶϢ)\n");
-        ED_OUTPUT(ED_DEST, "i\t����������֮ǰ��������\n");
-        ED_OUTPUT(ED_DEST, "I\t�������е������� (Qixx �汾 1.0)\n");
-    ED_OUTPUT(ED_DEST, "j\t�ϲ���Χ�ڵ��Ǽ��г�һ��\n");
-    ED_OUTPUT(ED_DEST, "k\t���ĳ�У��� '[���] �ɷ��ش���\n");
-    ED_OUTPUT(ED_DEST, "l\t��ʾ���еĿ�����Ԫ\n");
-    ED_OUTPUT(ED_DEST, "m\t�ƶ���Χ���ݵ�ָ������֮��\n");
-    ED_OUTPUT(ED_DEST, "n\t�趨�Ƿ���ʾ����\n");
-    ED_OUTPUT(ED_DEST, "O\tͬ 'i'\n");
-    ED_OUTPUT(ED_DEST, "o\tͬ 'a'\n");
-    ED_OUTPUT(ED_DEST, "p\t�Է�Χ�ڵ�������\n");
-    ED_OUTPUT(ED_DEST, "q\t�뿪�༭��\n");
-    ED_OUTPUT(ED_DEST, "Q\t�뿪�༭����������δ������޸�\n");
-    ED_OUTPUT(ED_DEST, "r\t���뵵��������������֮��\n");
-    ED_OUTPUT(ED_DEST, "s\t��Ѱ��ȡ��\n");
-    ED_OUTPUT(ED_DEST, "set\t��ѯ, ���Ļ򴢴�ѡ���趨\n");
-    ED_OUTPUT(ED_DEST, "t\t�����е�ָ��λַ\n");
-    ED_OUTPUT(ED_DEST, "v\t��Ѱ����ʾ��������ʽ������\n");
-    ED_OUTPUT(ED_DEST, "x\t���浵�����뿪\n");
+        ED_OUTPUT(ED_DEST, "g\t搜尋並顯示符合樣式的行數\n");
+        ED_OUTPUT(ED_DEST, "h\t說明檔案 (即此說明訊息)\n");
+        ED_OUTPUT(ED_DEST, "i\t于所在行數之前插入文字\n");
+        ED_OUTPUT(ED_DEST, "I\t縮排所有檔案內容 (Qixx 版本 1.0)\n");
+    ED_OUTPUT(ED_DEST, "j\t合並范圍內的那幾行成一行\n");
+    ED_OUTPUT(ED_DEST, "k\t標記某行，用 '[標記] 可返回此行\n");
+    ED_OUTPUT(ED_DEST, "l\t顯示列中的控制字元\n");
+    ED_OUTPUT(ED_DEST, "m\t移動范圍內容到指定行數之後\n");
+    ED_OUTPUT(ED_DEST, "n\t設定是否顯示行數\n");
+    ED_OUTPUT(ED_DEST, "O\t同 'i'\n");
+    ED_OUTPUT(ED_DEST, "o\t同 'a'\n");
+    ED_OUTPUT(ED_DEST, "p\t顯范圍內的所有行\n");
+    ED_OUTPUT(ED_DEST, "q\t離開編輯器\n");
+    ED_OUTPUT(ED_DEST, "Q\t離開編輯器，忽略尚未儲存的修改\n");
+    ED_OUTPUT(ED_DEST, "r\t讀入檔案並插入所在行之後\n");
+    ED_OUTPUT(ED_DEST, "s\t搜尋與取代\n");
+    ED_OUTPUT(ED_DEST, "set\t查詢, 更改或儲存選項設定\n");
+    ED_OUTPUT(ED_DEST, "t\t復制列到指定位址\n");
+    ED_OUTPUT(ED_DEST, "v\t搜尋並顯示不符合樣式的行數\n");
+    ED_OUTPUT(ED_DEST, "x\t儲存檔案並離開\n");
 #ifdef RESTRICTED_ED
         if (!P_RESTRICT) {
-        ED_OUTPUT(ED_DEST, "w\t��Ŀǰ�༭���д��Ŀǰ������ָ������\n");
-        ED_OUTPUT(ED_DEST, "W\t��Ŀǰ�༭���������Ŀǰ������ָ�������ĺ���\n");
+        ED_OUTPUT(ED_DEST, "w\t將目前編輯結果寫入目前檔案或指定檔案\n");
+        ED_OUTPUT(ED_DEST, "W\t將目前編輯結果新增至目前檔案或指定檔案的後面\n");
         }
 #endif                          /* restricted ed */
-    ED_OUTPUT(ED_DEST, "z\t��ʾ 20 ��, . + - Ϊ���õķ�Χ����\n");
-    ED_OUTPUT(ED_DEST, "Z\t��ʾ 40 ��, . + - Ϊ���õķ�Χ����\n");
-    ED_OUTPUT(ED_DEST, "\n��ȡ��ĳָ�����ϸ��˵�������� h[ָ��]��\n");
+    ED_OUTPUT(ED_DEST, "z\t顯示 20 行, . + - 為可用的范圍參數\n");
+    ED_OUTPUT(ED_DEST, "Z\t顯示 40 行, . + - 為可用的范圍參數\n");
+    ED_OUTPUT(ED_DEST, "\n欲取得某指令更詳細的說明請輸入 h[指令]。\n");
 
 #ifdef RECEIVE_ED
         copy_and_push_string(edout);
@@ -2857,7 +2857,7 @@ static void print_help2()
     FREE(curp);
 
     if(P_HELPOUT) {
-      ED_OUTPUT(ED_DEST, "--������ [ENTER] ����--");
+      ED_OUTPUT(ED_DEST, "--請輸入 [ENTER] 繼續--");
       P_MORE = 1;
     }
     else

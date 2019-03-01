@@ -1,4 +1,4 @@
-// youke.c ÓÎ¿Í 
+// youke.c éŠå®¢ 
 // Last Modifyed by Winder on Dec. 24 2001
 //
 
@@ -6,8 +6,8 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÓÎ¿Í", ({ "youke" }));
-        set("gender", "ÄĞĞÔ");
+        set_name("éŠå®¢", ({ "youke" }));
+        set("gender", "ç”·æ€§");
         set("age", 20 + random(30));
 
         set_skill("unarmed", 20);

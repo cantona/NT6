@@ -1,5 +1,5 @@
 // This program is a part of NT MudLIB
-// powerup.c ¾ÅÑôÉñ¹¦¼ÓÁ¦
+// powerup.c ä¹é™½ç¥åŠŸåŠ åŠ›
 
 #include <ansi.h>
 
@@ -12,20 +12,20 @@ int exert(object me, object target)
         int skill;
 
         if (target != me)
-                return notify_fail("ÄãÖ»ÄÜÓÃ¾ÅÑôÉñ¹¦À´ÌáÉı×Ô¼ºµÄÕ½¶·Á¦¡£\n");
+                return notify_fail("ä½ åªèƒ½ç”¨ä¹é™½ç¥åŠŸä¾†æå‡è‡ªå·±çš„æˆ°é¬¥åŠ›ã€‚\n");
 
         if ((int)query("neili", me) < 100)
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ã€‚\n");
 
         if ((int)query_temp("powerup", me))
-                return notify_fail("ÄãÒÑ¾­ÔÚÔË¹¦ÖĞÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“åœ¨é‹åŠŸä¸­äº†ã€‚\n");
 
         skill = me->query_skill("force");
         addn("neili", -100, me);
         me->receive_damage("qi", 0);
 
-        message_combatd(HIR "$N" HIR "Î¢Ò»ÄıÉñ£¬ÔËÆğ¾ÅÑôÉñ¹¦£¬½«ÕæÆø"
-                        "Äı¾ÛÔÚµ¤ÌïÖ®ÖĞ£¬ÑØÆæ¾­°ËÂö±é²¼È«Éí£¡\n" NOR, me);
+        message_combatd(HIR "$N" HIR "å¾®ä¸€å‡ç¥ï¼Œé‹èµ·ä¹é™½ç¥åŠŸï¼Œå°‡çœŸæ°£"
+                        "å‡èšåœ¨ä¸¹ç”°ä¹‹ä¸­ï¼Œæ²¿å¥‡ç¶“å…«è„ˆéå¸ƒå…¨èº«ï¼\n" NOR, me);
 
         addn_temp("apply/attack", skill*2/5, me);
         addn_temp("apply/unarmed_damage", skill*2/5, me);
@@ -55,6 +55,6 @@ void remove_effect(object me, int amount)
                 if( query("reborn/times", me) )
                         addn_temp("apply/dispel_poison", -amount, me);
                 delete_temp("powerup", me);
-                tell_object(me, "ÄãµÄ¾ÅÑôÉñ¹¦ÔËĞĞÍê±Ï£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï¡£\n");
+                tell_object(me, "ä½ çš„ä¹é™½ç¥åŠŸé‹è¡Œå®Œç•¢ï¼Œå°‡å…§åŠ›æ”¶å›ä¸¹ç”°ã€‚\n");
         }
 }

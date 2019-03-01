@@ -1,15 +1,15 @@
-// /d/playertown/road3.c 碎石小道
+// /d/playertown/road3.c 纰庣煶灏忛亾
 // Build 1999.12.10 bmw
 
 inherit BUILD_ROOM;
 
 void create()
 {
-        set("short","碎石小道");
+        set("short","纰庣煶灏忛亾");
         set("long",
-"这是一条布满石子的小路，两边长着几颗高大的杨柳树，在小路的北\n"
-"方，传来阵阵小贩的吆喝声，大概集市就在那里吧；东南面是通往村外的\n"
-"路，东面的小路是深入村庄的中心，。\n"
+"閫欐槸涓�姊濆竷婊跨煶瀛愮殑灏忚矾锛屽叐閭婇暦钁楀咕椤嗛珮澶х殑妤婃煶妯癸紝鍦ㄥ皬璺殑鍖梊n"
+"鏂癸紝鍌充締闄ｉ櫍灏忚博鐨勫悊鍠濊伈锛屽ぇ姒傞泦甯傚氨鍦ㄩ偅瑁″惂锛涙澅鍗楅潰鏄�氬線鏉戝鐨刓n"
+"璺紝鏉遍潰鐨勫皬璺槸娣卞叆鏉戣帄鐨勪腑蹇冿紝銆俓n"
 );
 
         set("recordable_room",1);

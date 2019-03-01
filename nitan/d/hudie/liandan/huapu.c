@@ -9,11 +9,11 @@ void shouhuo(object me);
 
 void create()
 {
-	set("short", "»¨ÆÔ");
+	set("short", "èŠ±åœƒ");
 	set("long", @LONG
-ÕâÀïÊÇ¡ºµû¹ÈÒ½ÏÉ¡»ºúÇàÅ£µÄÒ©ÆÔ£¬ÁãÁãÂäÂäÖÖÁË¼¸ÖêÖ²Îï¡£ºú´ó
-·òÎªÈËÆ¢Æø¹Å¹Ö£¬Çë²»µ½Ê²Ã´ÈËÎªËû´òÀí£¬Òò´ËÕâ¿éÒ©ÆÔÏÔµÃÏàµ±ÆÆ°Ü
-Ë¥Âä¡£
+é€™è£¡æ˜¯ã€è¶è°·é†«ä»™ã€èƒ¡é’ç‰›çš„è—¥åœƒï¼Œé›¶é›¶è½è½ç¨®äº†å¹¾æ ªæ¤ç‰©ã€‚èƒ¡å¤§
+å¤«ç‚ºäººè„¾æ°£å¤æ€ªï¼Œè«‹ä¸åˆ°ä»€éº¼äººç‚ºä»–æ‰“ç†ï¼Œå› æ­¤é€™å¡Šè—¥åœƒé¡¯å¾—ç›¸ç•¶ç ´æ•—
+è¡°è½ã€‚
 LONG
 	);
        set("outdoors", "mingjiao");
@@ -47,24 +47,24 @@ int do_mai(string arg)
     	object me = this_player();
 
 	if (me->is_busy())
-  		return notify_fail("ÄãÏÖÔÚÕıÃ¦,µÈÒ»ÏÂÔÙÖÖ°É!\n");
+  		return notify_fail("ä½ ç¾åœ¨æ­£å¿™,ç­‰ä¸€ä¸‹å†ç¨®å§!\n");
 
 	if (!arg)
-		return notify_fail("ÄãÒªÖÖÊ²Ã´£¿\n");
+		return notify_fail("ä½ è¦ç¨®ä»€éº¼ï¼Ÿ\n");
 
     	if (arg != "hua zhong")
-       	return notify_fail("ÕâÑù¶«Î÷²¢²»ÊÊºÏÔÚÕâÀïÖÖÖ²¡£\n");
+       	return notify_fail("é€™æ¨£æ±è¥¿ä¸¦ä¸é©åˆåœ¨é€™è£¡ç¨®æ¤ã€‚\n");
        
 	if( query_temp("zhonghua", me) )
-       	return notify_fail("ÄãÉÏ´ÎÖÖµÄ»¨»¨²İ²İ¶¼³¤ºÃÁËÂğ£¿\n");
+       	return notify_fail("ä½ ä¸Šæ¬¡ç¨®çš„èŠ±èŠ±è‰è‰éƒ½é•·å¥½äº†å—ï¼Ÿ\n");
 
 	ob = present("hua zhong", me);
 	if (!ob)
-		return notify_fail("ÄãÒªÖÖÊ²Ã´£¿\n");
+		return notify_fail("ä½ è¦ç¨®ä»€éº¼ï¼Ÿ\n");
 
 	destruct(ob);
 
-	message_vision (MAG"$NÔÚµØÉÏÍÚÁËÒ»¸öĞ¡¿Ó£¬Ğ¡ĞÄµØ°ÑÏÊ»¨ÖÖ×ÑÂñÔÚÀïÃæ¡£\n"NOR,me);
+	message_vision (MAG"$Nåœ¨åœ°ä¸ŠæŒ–äº†ä¸€å€‹å°å‘ï¼Œå°å¿ƒåœ°æŠŠé®®èŠ±ç¨®ç±½åŸ‹åœ¨è£¡é¢ã€‚\n"NOR,me);
 
 	me->start_busy(5);
 set_temp("zhonghua", 1, 	me);
@@ -77,7 +77,7 @@ set_temp("zhonghua", 1, 	me);
 
 void faya(object me)
 {
-	message_vision (HIG"$NÄÍĞÄµØµÈÁËÒ»¶ÎÊ±¼ä£¬Ö»¼ûÒ»¸ùÂÌÓÍÓÍµÄÄÛÃçÆÆÍÁ¶ø³ö£¡\n"NOR,me);
+	message_vision (HIG"$Nè€å¿ƒåœ°ç­‰äº†ä¸€æ®µæ™‚é–“ï¼Œåªè¦‹ä¸€æ ¹ç¶ æ²¹æ²¹çš„å«©è‹—ç ´åœŸè€Œå‡ºï¼\n"NOR,me);
 
 	me->start_busy(5);
 
@@ -104,7 +104,7 @@ void faya(object me)
 
 void jiaoshui(object me)
 {
-	message_vision (HIR"Ö»¼ûÌì¿Õ½¾ÑôËÆ»ğ£¬$NÖÖÏÂµÄÖ²ÎïÑÛ¿´×Å¾ÍÒ»µãµã¸É¿İÁË¡£\n"NOR,me);
+	message_vision (HIR"åªè¦‹å¤©ç©ºé©•é™½ä¼¼ç«ï¼Œ$Nç¨®ä¸‹çš„æ¤ç‰©çœ¼çœ‹è‘—å°±ä¸€é»é»å¹¹æ¯äº†ã€‚\n"NOR,me);
 
 set_temp("need_jiaoshui", 1, 	me);
 }
@@ -115,12 +115,12 @@ int do_jiaoshui()
 	object ob;
 
 	if( !query_temp("need_jiaoshui", me) )
-		return notify_fail("ÄãÒª×öÊ²Ã´£¿\n");
+		return notify_fail("ä½ è¦åšä»€éº¼ï¼Ÿ\n");
 	
 	if (!ob = present("shui hu", me))
-		return notify_fail("ÄãÉíÉÏÃ»ÓĞË®ºø£¬ÄÃÊ²Ã´½½»¨£¿\n");
+		return notify_fail("ä½ èº«ä¸Šæ²’æœ‰æ°´å£ºï¼Œæ‹¿ä»€éº¼æ¾†èŠ±ï¼Ÿ\n");
 
-	message_vision (HIB"$NÄÃ³öÒ»°ÑË®ºø£¬×ĞÏ¸µØ½½ÔÚ×Ô¼ºÖÖµÄÖ²ÎïÉÏ¡£\n"NOR,me);
+	message_vision (HIB"$Næ‹¿å‡ºä¸€æŠŠæ°´å£ºï¼Œä»”ç´°åœ°æ¾†åœ¨è‡ªå·±ç¨®çš„æ¤ç‰©ä¸Šã€‚\n"NOR,me);
 	me->start_busy(5);
 delete_temp("need_jiaoshui", 	me);
 
@@ -145,7 +145,7 @@ delete_temp("need_jiaoshui", 	me);
 
 void chucao(object me)
 {
-	message_vision (GRN"Ëæ×ÅÊ±¼äµÄÍÆÒÆ£¬$NÖÖÏÂµÄÖ²ÎïÅÔ±ß½¥½¥³¤³öÁËÒ»Ğ©ÔÓ²İ¡£\n"NOR,me);
+	message_vision (GRN"éš¨è‘—æ™‚é–“çš„æ¨ç§»ï¼Œ$Nç¨®ä¸‹çš„æ¤ç‰©æ—é‚Šæ¼¸æ¼¸é•·å‡ºäº†ä¸€äº›é›œè‰ã€‚\n"NOR,me);
 
 set_temp("need_chucao", 1, 	me);
 }
@@ -156,12 +156,12 @@ int do_chucao()
 	object ob;
 
 	if( !query_temp("need_chucao", me) )
-		return notify_fail("ÄãÒª×öÊ²Ã´£¿\n");
+		return notify_fail("ä½ è¦åšä»€éº¼ï¼Ÿ\n");
 	
 	if (!ob = present("yao chu", me))
-		return notify_fail("ÄãÉíÉÏÃ»ÓĞÒ©³ú£¬ÄÃÊ²Ã´³ı²İ£¿\n");
+		return notify_fail("ä½ èº«ä¸Šæ²’æœ‰è—¥é‹¤ï¼Œæ‹¿ä»€éº¼é™¤è‰ï¼Ÿ\n");
 
-	message_vision (HIB"$NÄÃ³öÒ©³ú£¬×ĞÏ¸µØ°ÑÖÜÎ§µÄÔÓ²İÇå³ı¸É¾»¡£\n"NOR,me);
+	message_vision (HIB"$Næ‹¿å‡ºè—¥é‹¤ï¼Œä»”ç´°åœ°æŠŠå‘¨åœçš„é›œè‰æ¸…é™¤å¹¹å‡ˆã€‚\n"NOR,me);
 	me->start_busy(5);
 delete_temp("need_chucao", 	me);
 
@@ -186,7 +186,7 @@ delete_temp("need_chucao", 	me);
 
 void zhuochong(object me)
 {
-	message_vision (HIY"ÓÖ¹ıÁËÒ»»á£¬$NÍ»È»·¢ÏÖÓĞ¼¸Ö»º¦³æÕıÔÚ·è¿ñµØ¿ĞÊÉÖ²ÎïµÄ¸ù¾¥£¡\n"NOR,me);
+	message_vision (HIY"åˆéäº†ä¸€æœƒï¼Œ$Nçªç„¶ç™¼ç¾æœ‰å¹¾åªå®³èŸ²æ­£åœ¨ç˜‹ç‹‚åœ°å•ƒå™¬æ¤ç‰©çš„æ ¹è–ï¼\n"NOR,me);
 
 set_temp("need_zhuochong", 1, 	me);
 }
@@ -196,9 +196,9 @@ int do_zhuochong()
     	object me = this_player();
 
 	if( !query_temp("need_zhuochong", me) )
-		return notify_fail("ÄãÒª×öÊ²Ã´£¿\n");
+		return notify_fail("ä½ è¦åšä»€éº¼ï¼Ÿ\n");
 	
-	message_vision (HIB"$N²»¹ËµØÃæ°¹Ôà£¬Å¿ÔÚµØÉÏ°Ñº¦³æÒ»ÌõÒ»ÌõÕÒ³öÀ´É±ËÀ¡£\n"NOR,me);
+	message_vision (HIB"$Nä¸é¡§åœ°é¢éª¯è‡Ÿï¼Œè¶´åœ¨åœ°ä¸ŠæŠŠå®³èŸ²ä¸€æ¢ä¸€æ¢æ‰¾å‡ºä¾†æ®ºæ­»ã€‚\n"NOR,me);
 	me->start_busy(5);
 delete_temp("need_zhuochong", 	me);
 
@@ -231,57 +231,57 @@ void shouhuo(object me)
 	{
 		hua1 = new(__DIR__"/yao/hualei");
    		hua1->move(me);
-   		message_vision(HIM"$NÊÕ»ñÁËÒ»¶ä"+hua1->name()+HIM"£¡\n"NOR, this_player());
+   		message_vision(HIM"$Næ”¶ç²äº†ä¸€æœµ"+hua1->name()+HIM"ï¼\n"NOR, this_player());
 	}
 	else if (i == 2)
 	{
 		hua1 = new(__DIR__"/yao/hualei");
    		hua1->move(me);
-   		message_vision(HIM"$NÊÕ»ñÁËÒ»¶ä"+hua1->name()+HIM"£¡\n"NOR, this_player());
+   		message_vision(HIM"$Næ”¶ç²äº†ä¸€æœµ"+hua1->name()+HIM"ï¼\n"NOR, this_player());
 
 		hua2 = new(__DIR__"/yao/hualei");
    		hua2->move(me);
-   		message_vision(HIM"$NÊÕ»ñÁËÒ»¶ä"+hua2->name()+HIM"£¡\n"NOR, this_player());
+   		message_vision(HIM"$Næ”¶ç²äº†ä¸€æœµ"+hua2->name()+HIM"ï¼\n"NOR, this_player());
 
 	}
 	else if (i == 3)
 	{
 		hua1 = new(__DIR__"/yao/hualei");
    		hua1->move(me);
-   		message_vision(HIM"$NÊÕ»ñÁËÒ»¶ä"+hua1->name()+HIM"£¡\n"NOR, this_player());
+   		message_vision(HIM"$Næ”¶ç²äº†ä¸€æœµ"+hua1->name()+HIM"ï¼\n"NOR, this_player());
 
 		hua2 = new(__DIR__"/yao/hualei");
    		hua2->move(me);
-   		message_vision(HIM"$NÊÕ»ñÁËÒ»¶ä"+hua2->name()+HIM"£¡\n"NOR, this_player());
+   		message_vision(HIM"$Næ”¶ç²äº†ä¸€æœµ"+hua2->name()+HIM"ï¼\n"NOR, this_player());
 
 		hua3 = new(__DIR__"/yao/hualei");
    		hua3->move(me);
-   		message_vision(HIM"$NÊÕ»ñÁËÒ»¶ä"+hua3->name()+HIM"£¡\n"NOR, this_player());
+   		message_vision(HIM"$Næ”¶ç²äº†ä¸€æœµ"+hua3->name()+HIM"ï¼\n"NOR, this_player());
 
 	}
 	else
 	{
 		hua1 = new(__DIR__"/yao/hualei");
    		hua1->move(me);
-   		message_vision(HIM"$NÊÕ»ñÁËÒ»¶ä"+hua1->name()+HIM"£¡\n"NOR, this_player());
+   		message_vision(HIM"$Næ”¶ç²äº†ä¸€æœµ"+hua1->name()+HIM"ï¼\n"NOR, this_player());
 
 		hua2 = new(__DIR__"/yao/hualei");
    		hua2->move(me);
-   		message_vision(HIM"$NÊÕ»ñÁËÒ»¶ä"+hua2->name()+HIM"£¡\n"NOR, this_player());
+   		message_vision(HIM"$Næ”¶ç²äº†ä¸€æœµ"+hua2->name()+HIM"ï¼\n"NOR, this_player());
 
 		hua3 = new(__DIR__"/yao/hualei");
    		hua3->move(me);
-   		message_vision(HIM"$NÊÕ»ñÁËÒ»¶ä"+hua3->name()+HIM"£¡\n"NOR, this_player());
+   		message_vision(HIM"$Næ”¶ç²äº†ä¸€æœµ"+hua3->name()+HIM"ï¼\n"NOR, this_player());
 
 		hua4 = new(__DIR__"/yao/hualei");
    		hua4->move(me);
-   		message_vision(HIM"$NÊÕ»ñÁËÒ»¶ä"+hua4->name()+HIM"£¡\n"NOR, this_player());
+   		message_vision(HIM"$Næ”¶ç²äº†ä¸€æœµ"+hua4->name()+HIM"ï¼\n"NOR, this_player());
 
 	}
 
 	me->start_busy(2);
 
-	message_vision (HIR"ÖÕÓÚµ½ÁËÊÕ»ñµÄ¼¾½Ú£¡$NÕâ´ÎÊÕ»ñÁË"+chinese_number(i)+"¶ä»¨£¡\n"NOR,me);
+	message_vision (HIR"çµ‚äºåˆ°äº†æ”¶ç²çš„å­£ç¯€ï¼$Né€™æ¬¡æ”¶ç²äº†"+chinese_number(i)+"æœµèŠ±ï¼\n"NOR,me);
 
 addn("combat_exp", 1000+random(i*1000), 	me);
 addn("potential", 300+random(i*300), 	me);
@@ -289,7 +289,7 @@ addn("potential", 300+random(i*300), 	me);
         delete_temp("zhonghua", me);
 
 
-	tell_object(this_player(),MAG"ÓÉÓÚÄãµÄĞÁÇÚÀÍ¶¯£¬¾­ÑéºÍÇ±ÄÜ¶¼ÓĞËùÔö³¤¡£\n"NOR);
+	tell_object(this_player(),MAG"ç”±äºä½ çš„è¾›å‹¤å‹å‹•ï¼Œç¶“é©—å’Œæ½›èƒ½éƒ½æœ‰æ‰€å¢é•·ã€‚\n"NOR);
 
 
 }
@@ -297,12 +297,12 @@ addn("potential", 300+random(i*300), 	me);
 int valid_leave(object me, string dir)
 {
 	if( query_temp("zhonghua", me) )
-		 return notify_fail("µÈ»¨ÖÖ³öÀ´ÔÙ×ßÒ²²»³Ù¡£\n");
+		 return notify_fail("ç­‰èŠ±ç¨®å‡ºä¾†å†èµ°ä¹Ÿä¸é²ã€‚\n");
 	else return ::valid_leave(me, dir);
 }
 
 int discmds()
 {
-        tell_object(this_player(),"¼ÈÈ»µ½ÁËÕâÀï£¬»¹ÊÇ×¨ĞÄÖÖ»¨°É£¡\n");
+        tell_object(this_player(),"æ—¢ç„¶åˆ°äº†é€™è£¡ï¼Œé‚„æ˜¯å°ˆå¿ƒç¨®èŠ±å§ï¼\n");
         return 1;
 }

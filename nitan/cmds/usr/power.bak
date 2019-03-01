@@ -4,7 +4,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define LINE HIC "¡Ô" HIY "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤" HIC "¡Ô\n" NOR
+#define LINE HIC "â‰¡" HIY "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€" HIC "â‰¡\n" NOR
 #define MEMBER_D     "/adm/daemons/memberd"
 #define TAOZHUANG_D  "/adm/daemons/taozhuangd"
 
@@ -13,27 +13,27 @@ inherit F_CLEAN_UP;
 void create() { seteuid(ROOT_UID); }
 
 /*
-¡Ô©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤¡Ô
-Ö°    Òµ£º                         Ö°ÒµÆÀ¼Û£º
-ÃüÖĞµÈ¼¶£º                  	   »Ø±ÜµÈ¼¶£º
-ÉËº¦µÈ¼¶£º                  	   ·À»¤µÈ¼¶£º
+â‰¡â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â‰¡
+è·    æ¥­ï¼š                         è·æ¥­è©•åƒ¹ï¼š
+å‘½ä¸­ç­‰ç´šï¼š                  	   å›é¿ç­‰ç´šï¼š
+å‚·å®³ç­‰ç´šï¼š                  	   é˜²è­·ç­‰ç´šï¼š
 
-¡Ô©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤¡Ô
+â‰¡â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â‰¡
 */
 
-// ÔªÉñµÈ¼¶
-// flag = 0 ·µ»ØÔªÉñµÈ¼¶   flag = 1 ·µ»ØÉı¼¶½ø¶È°Ù·Ö±È£¬Èç92%Ôò·µ»Ø92
+// å…ƒç¥ç­‰ç´š
+// flag = 0 è¿”å›å…ƒç¥ç­‰ç´š   flag = 1 è¿”å›å‡ç´šé€²åº¦ç™¾åˆ†æ¯”ï¼Œå¦‚92%å‰‡è¿”å›92
 public int yuanshen_level(object me, int flag)
 {
 	int level, point;
 	
-	// 100¼¶Ç°Ã¿2000Íò¾­ÑéÉı1¼¶
+	// 100ç´šå‰æ¯2000è¬ç¶“é©—å‡1ç´š
 	level = me->query("yuanshen/exp") / 20000000;
-	// 101¡«150¼¶Ã¿4000Íò¾­ÑéÉı1¼¶
+	// 101ï½150ç´šæ¯4000è¬ç¶“é©—å‡1ç´š
 	level += me->query("yuanshen/exp2") / 40000000;
-	// 151¡«180¼¶Ã¿6000Íò¾­ÑéÉı1¼¶
+	// 151ï½180ç´šæ¯6000è¬ç¶“é©—å‡1ç´š
 	level += me->query("yuanshen/exp3") / 60000000;
-	// 181¡«200¼¶Ã¿8000Íò¾­ÑéÉı1¼¶
+	// 181ï½200ç´šæ¯8000è¬ç¶“é©—å‡1ç´š
 	level += me->query("yuanshen/exp4") / 80000000;
 
 	if (flag)
@@ -53,15 +53,15 @@ public int yuanshen_level(object me, int flag)
 	return level;	
 }
 
-// ·µ»ØÔªÉñÎåĞĞÊôĞÔ
+// è¿”å›å…ƒç¥äº”è¡Œå±¬æ€§
 public string WUXING(int iwuxing)
 {
 	string * wuxing_list = ({
-		      HIY "½ğ" NOR,
-		NOR + YEL "Ä¾" NOR,
-		      HIC "Ë®" NOR,
-		      HIR "»ğ" NOR,
-		NOR + WHT "ÍÁ" NOR,
+		      HIY "é‡‘" NOR,
+		NOR + YEL "æœ¨" NOR,
+		      HIC "æ°´" NOR,
+		      HIR "ç«" NOR,
+		NOR + WHT "åœŸ" NOR,
 	});
 	
 	return wuxing_list[iwuxing];
@@ -71,7 +71,7 @@ int main(object me, string arg)
 {
 	string line;
 	int job_score, attack, parry_points, dodge_points, damage, damage_bonus, defense;
-	int huibi_points; // »Ø±Ü×ÛºÏµãÊı
+	int huibi_points; // å›é¿ç¶œåˆé»æ•¸
 	object weapon;
    	mapping prepare;
     	string *sk;	
@@ -80,7 +80,7 @@ int main(object me, string arg)
 	object tar;
 	int damage1, damage2;
 	int itemp;
-	int attack_up, damage_up, huibi_up, defense_up; // ÔªÉñµÄ¶îÍâÌáÉı
+	int attack_up, damage_up, huibi_up, defense_up; // å…ƒç¥çš„é¡å¤–æå‡
 	string *srv_tmp;
 	mapping srvs;
 	int i, add_yanjiu, add_jiqu;
@@ -90,36 +90,36 @@ int main(object me, string arg)
 
 	string *add_keys2 = ({ "int", "con", "dex", "str", "cint" });
 	
-	int tzlv; // Ì××°µÈ¼¶
-	mapping tz; // Ì××°ÊôĞÔ 
+	int tzlv; // å¥—è£ç­‰ç´š
+	mapping tz; // å¥—è£å±¬æ€§ 
 
 	object mater;
 /*
 	if (! wizardp(me))
-		return notify_fail("ÏµÍ³¸üĞÂÖĞ£¬ÇëÉÔºóÔÙÊÔ£¡\n");
+		return notify_fail("ç³»çµ±æ›´æ–°ä¸­ï¼Œè«‹ç¨å¾Œå†è©¦ï¼\n");
 */
 	
 	if (arg)
 	{
 
-        	// Ê¹ÓÃÂÖ»Øµã
+        	// ä½¿ç”¨è¼ªå›é»
 		if (sscanf(arg, "lhpoint add %s", para1) == 1)
 		{
 			if (member_array(para1, add_keys) == -1)
 			{								
-				return notify_fail("Ö¸Áî¸ñÊ½£ºpower lhpoint add <int|con|dex|str|cint|ÌØÊâ¼¼ÄÜID>¡£\n");	
+				return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼špower lhpoint add <int|con|dex|str|cint|ç‰¹æ®ŠæŠ€èƒ½ID>ã€‚\n");	
 			}
 
-			// Ôö¼ÓÏÈÌìÊôĞÔ
+			// å¢åŠ å…ˆå¤©å±¬æ€§
 			if (member_array(para1, add_keys2) != -1)
 			{
-				// ¼ì²éÂÖ»ØµãÊÇ·ñ×ã¹»
+				// æª¢æŸ¥è¼ªå›é»æ˜¯å¦è¶³å¤ 
 				if (me->query("scborn/cur_lunhui_point") < 4)
 				{
-					return notify_fail("ÄãµÄÂÖ»Øµã²»¹»¡£\n");
+					return notify_fail("ä½ çš„è¼ªå›é»ä¸å¤ ã€‚\n");
 				}
 				
-				// ¼õÉÙ1µãÎòĞÔ
+				// æ¸›å°‘1é»æ‚Ÿæ€§
 				if (para1 == "cint")
 				{
 					me->add("int", -1);
@@ -137,16 +137,16 @@ int main(object me, string arg)
 
 			}
 			
-			// Ôö¼Ó×ªÊÀ¼¼ÄÜ
+			// å¢åŠ è½‰ä¸–æŠ€èƒ½
 			if (! me->query("special_skill/" + para1))
 			{
-				return notify_fail("Äã²»»áÕâÑù¼¼ÄÜ¡£\n");
+				return notify_fail("ä½ ä¸æœƒé€™æ¨£æŠ€èƒ½ã€‚\n");
 			}
 
-				// ¼ì²éÂÖ»ØµãÊÇ·ñ×ã¹»
+				// æª¢æŸ¥è¼ªå›é»æ˜¯å¦è¶³å¤ 
 				if (me->query("scborn/cur_lunhui_point") < 1)
 				{
-					return notify_fail("ÄãµÄÂÖ»Øµã²»¹»¡£\n");
+					return notify_fail("ä½ çš„è¼ªå›é»ä¸å¤ ã€‚\n");
 				}			
 
 				me->add("lhpoint/special/" + para1, 1);
@@ -160,33 +160,33 @@ int main(object me, string arg)
 
 		if (arg == "-p")
 		{
-			line = HIY "¸÷ÊôĞÔ¶ÔÕ½¶·ÊôĞÔÓ°ÏìĞ§¹ûÒ»ÀÀ\n" NOR;
+			line = HIY "å„å±¬æ€§å°æˆ°é¬¥å±¬æ€§å½±éŸ¿æ•ˆæœä¸€è¦½\n" NOR;
 			line += LINE;
 			line += HIC +
-				"¡¾ÊµÕ½¾­Ñé¡¿                       ¡¾ÏÈÌìÉí·¨¡¿\n" NOR +
-				" ÃüÖĞµÈ¼¶£º¡ï                       ÃüÖĞµÈ¼¶£º¡ï¡ï¡ï¡ï¡ï¡ï\n"
-				" »Ø±ÜµÈ¼¶£º¡ï                       »Ø±ÜµÈ¼¶£º¡ï¡ï¡ï¡ï¡ï¡ï\n\n" HIC +
-				"¡¾ÏÈÌì±ÛÁ¦¡¿                       ¡¾ºóÌìÉí·¨¡¿\n" NOR +
-				" ÉËº¦µÈ¼¶£º¡ï¡ï¡ï¡ï¡ï¡ï             ÃüÖĞµÈ¼¶£º¡ï¡ï¡ï¡ï¡ï\n"
-				"                                    »Ø±ÜµÈ¼¶£º¡ï¡ï¡ï¡ï¡ï\n\n" HIC +
-				"¡¾ºóÌì±ÛÁ¦¡¿                       ¡¾Îä¹¦µÈ¼¶¼°Ïà¹ØÊôĞÔ¡¿\n" NOR +
-				" ÉËº¦µÈ¼¶£º¡ï¡ï¡ï¡ï¡ï               ÃüÖĞµÈ¼¶£º¡ï¡ï¡ï¡ï¡ï¡ï\n"
-				"                                    »Ø±ÜµÈ¼¶£º¡ï¡ï¡ï¡ï¡ï¡ï\n"
-				"                                    ÉËº¦µÈ¼¶£º¡ï¡ï¡ï¡ï¡ï¡ï\n"
-				"                                    ·À»¤µÈ¼¶£º¡ï¡ï¡ï¡ï¡ï¡ï\n\n" HIC +
-				"¡¾ÔË¹¦Ğ§¹û¡¿                       ¡¾±øÆ÷Ğ§¹û¡¿\n" NOR +
-				" ÃüÖĞµÈ¼¶£º¡ï¡ï¡ï¡ï                 ÉËº¦µÈ¼¶£º¡ï¡ï¡ï¡ï¡ï¡ï\n"
-				" »Ø±ÜµÈ¼¶£º¡ï¡ï¡ï¡ï\n"
-				" ÉËº¦µÈ¼¶£º¡ï¡ï¡ï¡ï\n"
-				" ·À»¤µÈ¼¶£º¡ï¡ï¡ï¡ï\n\n" HIC +
-				"¡¾·À¾ßĞ§¹û¡¿                       ¡¾¼ÓÁ¦Ğ§¹û¡¿\n" NOR +
-				" »Ø±ÜµÈ¼¶£º¡ï¡ï¡ï¡ï¡ï¡ï             ÉËº¦µÈ¼¶£º¡ï¡ï¡ï¡ï\n"
-				" ·À»¤µÈ¼¶£º¡ï¡ï¡ï¡ï¡ï¡ï\n\n" HIC +
-				"¡¾ÆäËûĞ§¹û¡¿\n" NOR +
-				" ÃüÖĞµÈ¼¶£º¡ï\n"
-				" »Ø±ÜµÈ¼¶£º¡ï\n"
-				" ÉËº¦µÈ¼¶£º¡ï\n"
-				" ·À»¤µÈ¼¶£º¡ï\n\n" NOR;
+				"ã€å¯¦æˆ°ç¶“é©—ã€‘                       ã€å…ˆå¤©èº«æ³•ã€‘\n" NOR +
+				" å‘½ä¸­ç­‰ç´šï¼šâ˜…                       å‘½ä¸­ç­‰ç´šï¼šâ˜…â˜…â˜…â˜…â˜…â˜…\n"
+				" å›é¿ç­‰ç´šï¼šâ˜…                       å›é¿ç­‰ç´šï¼šâ˜…â˜…â˜…â˜…â˜…â˜…\n\n" HIC +
+				"ã€å…ˆå¤©è‡‚åŠ›ã€‘                       ã€å¾Œå¤©èº«æ³•ã€‘\n" NOR +
+				" å‚·å®³ç­‰ç´šï¼šâ˜…â˜…â˜…â˜…â˜…â˜…             å‘½ä¸­ç­‰ç´šï¼šâ˜…â˜…â˜…â˜…â˜…\n"
+				"                                    å›é¿ç­‰ç´šï¼šâ˜…â˜…â˜…â˜…â˜…\n\n" HIC +
+				"ã€å¾Œå¤©è‡‚åŠ›ã€‘                       ã€æ­¦åŠŸç­‰ç´šåŠç›¸é—œå±¬æ€§ã€‘\n" NOR +
+				" å‚·å®³ç­‰ç´šï¼šâ˜…â˜…â˜…â˜…â˜…               å‘½ä¸­ç­‰ç´šï¼šâ˜…â˜…â˜…â˜…â˜…â˜…\n"
+				"                                    å›é¿ç­‰ç´šï¼šâ˜…â˜…â˜…â˜…â˜…â˜…\n"
+				"                                    å‚·å®³ç­‰ç´šï¼šâ˜…â˜…â˜…â˜…â˜…â˜…\n"
+				"                                    é˜²è­·ç­‰ç´šï¼šâ˜…â˜…â˜…â˜…â˜…â˜…\n\n" HIC +
+				"ã€é‹åŠŸæ•ˆæœã€‘                       ã€å…µå™¨æ•ˆæœã€‘\n" NOR +
+				" å‘½ä¸­ç­‰ç´šï¼šâ˜…â˜…â˜…â˜…                 å‚·å®³ç­‰ç´šï¼šâ˜…â˜…â˜…â˜…â˜…â˜…\n"
+				" å›é¿ç­‰ç´šï¼šâ˜…â˜…â˜…â˜…\n"
+				" å‚·å®³ç­‰ç´šï¼šâ˜…â˜…â˜…â˜…\n"
+				" é˜²è­·ç­‰ç´šï¼šâ˜…â˜…â˜…â˜…\n\n" HIC +
+				"ã€é˜²å…·æ•ˆæœã€‘                       ã€åŠ åŠ›æ•ˆæœã€‘\n" NOR +
+				" å›é¿ç­‰ç´šï¼šâ˜…â˜…â˜…â˜…â˜…â˜…             å‚·å®³ç­‰ç´šï¼šâ˜…â˜…â˜…â˜…\n"
+				" é˜²è­·ç­‰ç´šï¼šâ˜…â˜…â˜…â˜…â˜…â˜…\n\n" HIC +
+				"ã€å…¶ä»–æ•ˆæœã€‘\n" NOR +
+				" å‘½ä¸­ç­‰ç´šï¼šâ˜…\n"
+				" å›é¿ç­‰ç´šï¼šâ˜…\n"
+				" å‚·å®³ç­‰ç´šï¼šâ˜…\n"
+				" é˜²è­·ç­‰ç´šï¼šâ˜…\n\n" NOR;
 			line += LINE;
 
 			write(line);
@@ -194,12 +194,12 @@ int main(object me, string arg)
 			return 1;
 		}
 
-       		 // ÏÔÊ¾µ±Ç°¹ºÂòµÄÓĞĞ§·şÎñ£¨Î´¹ıÆÚµÄ·şÎñ£©
+       		 // é¡¯ç¤ºç•¶å‰è³¼è²·çš„æœ‰æ•ˆæœå‹™ï¼ˆæœªéæœŸçš„æœå‹™ï¼‰
 		if (arg == "-s")
 		{
-			line = HIY "ÒÔÏÂÊÇÄúµ±Ç°Ëù¹ºÂòµÄÓĞĞ§·şÎñ\n" NOR;
+			line = HIY "ä»¥ä¸‹æ˜¯æ‚¨ç•¶å‰æ‰€è³¼è²·çš„æœ‰æ•ˆæœå‹™\n" NOR;
 			line += LINE;
-			line += sprintf(HIY "%-30s%-30s\n" NOR, "·şÎñ", "µ½ÆÚÊ±¼ä");
+			line += sprintf(HIY "%-30s%-30s\n" NOR, "æœå‹™", "åˆ°æœŸæ™‚é–“");
 			line += LINE;
 			
 			if (mapp(srvs = me->query("service")))
@@ -216,10 +216,10 @@ int main(object me, string arg)
 					}
 				}
 				else 
-					line += HIR "\nÄúÄ¿Ç°Ã»ÓĞ¹ºÂòÈÎºÎ·şÎñ£¡ÈçÓû¹ºÂò·şÎñÇë²Î¼û°ïÖúÎÄ¼ş help yhshop_srv¡£\n\n" NOR;
+					line += HIR "\næ‚¨ç›®å‰æ²’æœ‰è³¼è²·ä»»ä½•æœå‹™ï¼å¦‚æ¬²è³¼è²·æœå‹™è«‹åƒè¦‹å¹«åŠ©æ–‡ä»¶ help yhshop_srvã€‚\n\n" NOR;
 			}
 			else
-				line += HIR "\nÄúÄ¿Ç°Ã»ÓĞ¹ºÂòÈÎºÎ·şÎñ£¡ÈçÓû¹ºÂò·şÎñÇë²Î¼û°ïÖúÎÄ¼ş help yhshop_srv¡£\n\n" NOR;
+				line += HIR "\næ‚¨ç›®å‰æ²’æœ‰è³¼è²·ä»»ä½•æœå‹™ï¼å¦‚æ¬²è³¼è²·æœå‹™è«‹åƒè¦‹å¹«åŠ©æ–‡ä»¶ help yhshop_srvã€‚\n\n" NOR;
 
 			line += LINE;
 
@@ -229,19 +229,19 @@ int main(object me, string arg)
 
 		}
 
-       		 // ÏÔÊ¾ÂÖ»ØµãÊ¹ÓÃÇé¿ö
+       		 // é¡¯ç¤ºè¼ªå›é»ä½¿ç”¨æƒ…æ³
 		if (arg == "-l")
 		{
-			line = HIY "ÒÔÏÂÊÇÄúÂÖ»ØµãÊ¹ÓÃÇé¿ö£º\n" NOR;
+			line = HIY "ä»¥ä¸‹æ˜¯æ‚¨è¼ªå›é»ä½¿ç”¨æƒ…æ³ï¼š\n" NOR;
 			line += LINE;
-			line += "µ±Ç°ÂÖ»Øµã£º" + sprintf("%d", me->query("scborn/cur_lunhui_point")) + "\n";
-			line += "ÀÛ»ıÂÖ»Øµã£º" + sprintf("%d", me->query("scborn/total_lunhui_point")) + "\n";
-			line += "ÒÑÓÃÂÖ»Øµã£º" + sprintf("%d", 
+			line += "ç•¶å‰è¼ªå›é»ï¼š" + sprintf("%d", me->query("scborn/cur_lunhui_point")) + "\n";
+			line += "ç´¯ç©è¼ªå›é»ï¼š" + sprintf("%d", me->query("scborn/total_lunhui_point")) + "\n";
+			line += "å·²ç”¨è¼ªå›é»ï¼š" + sprintf("%d", 
 				                     me->query("scborn/total_lunhui_point") - me->query("scborn/cur_lunhui_point")) + "\n";
 
 			line += LINE;
 
-			line += sprintf(HIY "%-30s%-30s\n" NOR, "Ôö¼ÓÖ°Òµ¼¼ÄÜ", "Ôö¼ÓµÈ¼¶");
+			line += sprintf(HIY "%-30s%-30s\n" NOR, "å¢åŠ è·æ¥­æŠ€èƒ½", "å¢åŠ ç­‰ç´š");
 			line += LINE;
 
 			if (srvs = me->query("lhpoint/special"))
@@ -258,10 +258,10 @@ int main(object me, string arg)
 					}
 				}
 				else 
-					line += HIR "\nÄúÄ¿Ç°»¹Ã»ÓĞÊ¹ÓÃÂÖ»ØµãÔö¼ÓÖ°Òµ¼¼ÄÜµÈ¼¶¡£\n\n" NOR;
+					line += HIR "\næ‚¨ç›®å‰é‚„æ²’æœ‰ä½¿ç”¨è¼ªå›é»å¢åŠ è·æ¥­æŠ€èƒ½ç­‰ç´šã€‚\n\n" NOR;
 			}
 			else
-				line += HIR "\nÄúÄ¿Ç°»¹Ã»ÓĞÊ¹ÓÃÂÖ»ØµãÔö¼ÓÖ°Òµ¼¼ÄÜµÈ¼¶¡£°ïÖúÎÄ¼ş help scborn¡£\n\n" NOR;
+				line += HIR "\næ‚¨ç›®å‰é‚„æ²’æœ‰ä½¿ç”¨è¼ªå›é»å¢åŠ è·æ¥­æŠ€èƒ½ç­‰ç´šã€‚å¹«åŠ©æ–‡ä»¶ help scbornã€‚\n\n" NOR;
 			
 			line += LINE;
 
@@ -271,16 +271,16 @@ int main(object me, string arg)
 		}
 
 		if (! wizardp(me) && arg != me->query("id") && ! me->query("skyeye"))
-			return notify_fail("ÄãÖ»ÄÜ²é¿´×Ô¼ºµÄÊôĞÔ¡£\n");
+			return notify_fail("ä½ åªèƒ½æŸ¥çœ‹è‡ªå·±çš„å±¬æ€§ã€‚\n");
 
 		tar = find_player(arg);
 
 		if (! objectp(tar))tar = find_living(arg);
 
-		if (! objectp(tar))return notify_fail("Ä¿±ê²»´æÔÚ¡£\n");
+		if (! objectp(tar))return notify_fail("ç›®æ¨™ä¸å­˜åœ¨ã€‚\n");
 
         if (! wizardp(me) && tar->query_temp("apply/invisible") && ! me->query_condition("niuyanlei"))
-				  return notify_fail("Ä¿±ê²»´æÔÚ¡£\n");
+				  return notify_fail("ç›®æ¨™ä¸å­˜åœ¨ã€‚\n");
         
 		me = tar;
 	}
@@ -314,7 +314,7 @@ int main(object me, string arg)
         }
                 
 /*
-	// À¥ÂØÎŞ¼«µÄÍşÁ¦ + ÃüÖĞ
+	// æ˜†ä¾–ç„¡æ¥µçš„å¨åŠ› + å‘½ä¸­
 	if (weapon && weapon->query("skill_type") == "sword" 
 	    && me->query_skill_mapped(skill_type) == "qiankun-jian"
    	    && me->query_skill("kunlun-wuji", 1) >= 100)
@@ -323,28 +323,28 @@ int main(object me, string arg)
 		attack = attack + itemp * 200;
 	}
 	
-	// Äæ×ªÇ¬À¤¼¼ÄÜÌáÉı10%ÃüÖĞ
+	// é€†è½‰ä¹¾å¤æŠ€èƒ½æå‡10%å‘½ä¸­
 	if (me->query("special_skill/nizhuan"))
 		attack += attack / 10;
 */	
         parry_points = COMBAT_D->skill_power(me, "parry", SKILL_USAGE_DEFENSE);
         dodge_points = COMBAT_D->skill_power(me, "dodge", SKILL_USAGE_DEFENSE);
 
-	// ÉËº¦µÈ¼¶
+	// å‚·å®³ç­‰ç´š
 	if (weapon)
 	{
-	      // ½«¸½¼Ó³åÑ¨Ğ§¹û      
+	      // å°‡é™„åŠ æ²–ç©´æ•ˆæœ      
 	      damage = me->query_temp("apply/damage") + 
 	               me->query_temp("apply/damage") * me->query("jingmai/jingmai_weapon") / 100;
 	}
 	else
 	      damage = me->query_temp("apply/damage") + me->query_temp("apply/unarmed_damage");
 
-	// ±øÆ÷Õı¸º10%µÄÆ«²î
+	// å…µå™¨æ­£è² 10%çš„åå·®
 	damage1 = damage / 10;
 	damage2 = damage / 10;
 
-	// À¥ÂØÎŞ¼«µÄÍşÁ¦
+	// æ˜†ä¾–ç„¡æ¥µçš„å¨åŠ›
 	if (weapon && weapon->query("skill_type") == "sword" 
 	    && me->query_skill_mapped(skill_type) == "qiankun-jian"
    	    && me->query_skill("kunlun-wuji", 1) >= 100)
@@ -357,39 +357,39 @@ int main(object me, string arg)
 	if (mapp(action) && action["force"])
 	      damage += action["damage"];
 
-	// µÈ¼¶µÄ×÷ÓÃ
-	// µÈ¼¶¶Ô¹¥»÷Á¦µÄÓ°ÏìĞŞÕı--Æ½ÕĞ
+	// ç­‰ç´šçš„ä½œç”¨
+	// ç­‰ç´šå°æ”»æ“ŠåŠ›çš„å½±éŸ¿ä¿®æ­£--å¹³æ‹›
 	if (me->query_skill(skill_type) > 750)
 	{
-		// 3750¼¶ÎªÓĞĞ§×î¸ßµÈ¼¶£¬¼´»ù±¾2500LV
-		// ´Ë¿ÌµÈ¼¶Ó°Ïì¹¥»÷Ìá¸ß4±¶
+		// 3750ç´šç‚ºæœ‰æ•ˆæœ€é«˜ç­‰ç´šï¼Œå³åŸºæœ¬2500LV
+		// æ­¤åˆ»ç­‰ç´šå½±éŸ¿æ”»æ“Šæé«˜4å€
 		if (me->query_skill(skill_type) >= 3750)
 		{
 			damage = damage + 750 + (me->query_skill(skill_type) - 750) * 4;
 		}
-		// 3000LV£¬¼´»ù±¾2000LV
-		// ´Ë¿ÌµÈ¼¶Ìá¸ß3±¶
+		// 3000LVï¼Œå³åŸºæœ¬2000LV
+		// æ­¤åˆ»ç­‰ç´šæé«˜3å€
 		else
 		if (me->query_skill(skill_type) >= 3000)
 		{
 			damage = damage + 750 + (me->query_skill(skill_type) - 750) * 3;
 		}
-		// 2250LV£¬¼´»ù±¾1500LV
-		// ´Ë¿Ì2.5±¶
+		// 2250LVï¼Œå³åŸºæœ¬1500LV
+		// æ­¤åˆ»2.5å€
 		else
 		if (me->query_skill(skill_type) >= 2250)
 		{
 			damage = damage + 750 + (me->query_skill(skill_type) - 750) * 5 / 2;
 		}
-		// 1500LV£¬¼´»ù±¾1000LV
-		// ´Ë¿Ì2±¶
+		// 1500LVï¼Œå³åŸºæœ¬1000LV
+		// æ­¤åˆ»2å€
 		else
 		if (me->query_skill(skill_type) >= 1500)
 		{
 			damage = damage + 750 + (me->query_skill(skill_type) - 750) * 2;
 		}
-		// 750LV£¬¼´»ù±¾500LV
-		// ´Ë¿Ì1.5±¶
+		// 750LVï¼Œå³åŸºæœ¬500LV
+		// æ­¤åˆ»1.5å€
 		else
 		{
 			damage = damage + 750 + (me->query_skill(skill_type) - 750) * 3 / 2;
@@ -403,11 +403,11 @@ int main(object me, string arg)
 	damage += me->query("str") * 50;
 	damage += me->query_str() * 5;
 
-	// breakupµÄ×÷ÓÃ
+	// breakupçš„ä½œç”¨
 	if (me->query("breakup"))damage = damage + damage / 10;
 
-	// ÒşÊ¿ÌØ¼¼º£ÄÉ°Ù´¨Ìá¸ßÉËº¦
-	// Ìá¸ß£º10% + [£¨Ö°ÒµµÈ¼¶ - 20) / 2]%
+	// éš±å£«ç‰¹æŠ€æµ·ç´ç™¾å·æé«˜å‚·å®³
+	// æé«˜ï¼š10% + [ï¼ˆè·æ¥­ç­‰ç´š - 20) / 2]%
 	if (me->query_temp("special2/haina/joblv") > 20)
 	{
 		 damage = damage + damage / 100 * (10 + (me->query_temp("special2/haina/joblv") - 20) / 2);
@@ -418,7 +418,7 @@ int main(object me, string arg)
 		 damage = damage + (me->query("sky12/floor") - 1) * 50;
 	}
 	
-	// ·¢»ÓÅû·çÏâÇ¶×÷ÓÃ
+	// ç™¼æ®æŠ«é¢¨é‘²åµŒä½œç”¨
 	damage += COMBAT_D->enchase_surcoat_damage(me);
 
 	if (COMBAT_D->enchased_surcoat_9kong(me))
@@ -428,7 +428,7 @@ int main(object me, string arg)
 		attack += 300;			
 	}
 	
-	// ³åÑ¨Ìá¸ßÉËº¦
+	// æ²–ç©´æé«˜å‚·å®³
 	damage = damage + me->query("jingmai/jingmai_damage") * 100;
 	
 	
@@ -441,70 +441,70 @@ int main(object me, string arg)
 	
 	damage2 += damage_bonus / 2;
 
-	// ·À»¤µÈ¼¶
+	// é˜²è­·ç­‰ç´š
 	defense = me->query_temp("apply/armor");
-	// ³åÑ¨Ìá¸ß·ÀÓù
+	// æ²–ç©´æé«˜é˜²å¾¡
 	defense = defense + me->query("jingmai/jingmai_armor") * 100;
 	
-	// ·¢»ÓÅû·çÏâÇ¶µÄ×÷ÓÃ
-	if (COMBAT_D->enchase_surcoat_item(me, "Á÷ĞĞ¸ÏÔÂ"))
+	// ç™¼æ®æŠ«é¢¨é‘²åµŒçš„ä½œç”¨
+	if (COMBAT_D->enchase_surcoat_item(me, "æµè¡Œè¶•æœˆ"))
 		defense += 500;
 	
 	
-	// Í¬°éÏµÍ³µÄÓ°Ïì
+	// åŒä¼´ç³»çµ±çš„å½±éŸ¿
 	mater = me->query("me_mater");
 	if (objectp(mater) && mater->query("level") >= 28)
 	{
 		switch(mater->query("types"))
 		{
-			case "·ÀÓùĞÍ":
+			case "é˜²å¾¡å‹":
 				defense = defense + mater->query("level") * 5;
 				break;
-			case "¹¥»÷ĞÍ":
+			case "æ”»æ“Šå‹":
 				dodge_points = dodge_points + mater->query("level") * 10;
 				break;
-			case "Áé¶¯ĞÍ":
+			case "éˆå‹•å‹":
 				damage = damage + mater->query("level") * 5;
 				break;				
-			case "ÖÇ»ÛĞÍ":
+			case "æ™ºæ…§å‹":
 				damage = damage + mater->query("level") * 4;
 				break;				
 		}
 		
 	}
 
-	// Õ½¶·ÆÀ¼Û
+	// æˆ°é¬¥è©•åƒ¹
 	job_score = 1 + damage / 100 + attack / 100 + dodge_points / 100 + 
                     parry_points / 100 + defense / 200;
 
-    // Ê¹ÓÃÌìÑÛÊôĞÔµÄÈË²é¿´ÆäËûÈË½öÏÔÊ¾Õ½¶·ÆÀ¼Û
+    // ä½¿ç”¨å¤©çœ¼å±¬æ€§çš„äººæŸ¥çœ‹å…¶ä»–äººåƒ…é¡¯ç¤ºæˆ°é¬¥è©•åƒ¹
     if (! wizardp(this_player()) && sizeof(arg) && arg != this_player()->query("id") && this_player()->query("skyeye"))
     {
-	    // Ä¿±ê±ØĞë¸ú×Ô¼ºÔÚÍ¬Ò»·¿¼ä²¢ÇÒ×Ô¼º¿É¼û			
+	    // ç›®æ¨™å¿…é ˆè·Ÿè‡ªå·±åœ¨åŒä¸€æˆ¿é–“ä¸¦ä¸”è‡ªå·±å¯è¦‹			
             if (environment(this_player()) != environment(me))
-			return notify_fail("Ä¿±ê²»´æÔÚ¡£\n");
+			return notify_fail("ç›®æ¨™ä¸å­˜åœ¨ã€‚\n");
 
-	    if (wizardp(me))return notify_fail("Ä¿±ê²»´æÔÚ¡£\n"); 
+	    if (wizardp(me))return notify_fail("ç›®æ¨™ä¸å­˜åœ¨ã€‚\n"); 
 							
-	    tell_object(this_player(), HIR + me->name() + "(" + me->query("id") + ")Õ½¶·ÆÀ¼Û£º " HIY + 
+	    tell_object(this_player(), HIR + me->name() + "(" + me->query("id") + ")æˆ°é¬¥è©•åƒ¹ï¼š " HIY + 
 			sprintf("%d", job_score) + HIR "\n" NOR);
 	    return 1;
     }
 
-	line = HIY "\nÄãµÄÕ½¶·ÊôĞÔÈçÏÂ\t\t\t" HIR "-= Ö°ÒµµÈ¼¶ " + sprintf("%d", me->query_joblv()) + " LV =-\n" NOR;
+	line = HIY "\nä½ çš„æˆ°é¬¥å±¬æ€§å¦‚ä¸‹\t\t\t" HIR "-= è·æ¥­ç­‰ç´š " + sprintf("%d", me->query_joblv()) + " LV =-\n" NOR;
 	line += LINE;
-	line += sprintf(NOR + WHT "Ö°    Òµ£º%-25sÕ½¶·ÆÀ¼Û£º%d\n" NOR, 
-                        stringp(me->query("yhjob/job")) ? me->query("yhjob/job") : "ÎäÊ¿",
+	line += sprintf(NOR + WHT "è·    æ¥­ï¼š%-25sæˆ°é¬¥è©•åƒ¹ï¼š%d\n" NOR, 
+                        stringp(me->query("yhjob/job")) ? me->query("yhjob/job") : "æ­¦å£«",
                         job_score);
 
 
-	// »Ø±ÜµãÊı
+	// å›é¿é»æ•¸
 	huibi_points = dodge_points + (weapon? parry_points: (parry_points / 10));
-	// ÒÆĞÎ»»Î»ÌáÉıÕ½¶·»Ø±ÜÂÊ15%
+	// ç§»å½¢æ›ä½æå‡æˆ°é¬¥å›é¿ç‡15%
 	if (me->query("special_skill/yixing"))
 		huibi_points = huibi_points + huibi_points * 3 / 20;
 	
-	// Ì××°
+	// å¥—è£
 	tzlv = TAOZHUANG_D->taozhuang_level(me);
 	tz = TAOZHUANG_D->taozhuang_shuxing(tzlv);
 	if (tzlv > 0)
@@ -516,15 +516,15 @@ int main(object me, string arg)
 	}
 	if (! me->query("yuanshen/status"))
 	{
-		line += sprintf(NOR + WHT "ÃüÖĞµÈ¼¶£º%-25d»Ø±ÜµÈ¼¶£º%d\n" NOR, 
+		line += sprintf(NOR + WHT "å‘½ä¸­ç­‰ç´šï¼š%-25då›é¿ç­‰ç´šï¼š%d\n" NOR, 
                 	        attack / 100 + 1, huibi_points / 100 + 1);
         }
         else
         {
-        	attack_up += 1000; // ³õÊ¼ÔªÉñÓĞ+10ÃüÖĞ
+        	attack_up += 1000; // åˆå§‹å…ƒç¥æœ‰+10å‘½ä¸­
         	if (me->query("yuanshen/QHmingzhong"))
         		attack_up = attack_up + yuanshen_level(me, 0) * 100 * 2; 	
-        	line += sprintf(NOR + WHT "ÃüÖĞµÈ¼¶£º%-46s»Ø±ÜµÈ¼¶£º%s\n" NOR, 
+        	line += sprintf(NOR + WHT "å‘½ä¸­ç­‰ç´šï¼š%-46så›é¿ç­‰ç´šï¼š%s\n" NOR, 
         	        sprintf("%d", attack / 100) + HIG " + " + sprintf("%d", attack_up / 100) + NOR + WHT,
         	        sprintf("%d", huibi_points / 100 + 1) + HIG " + 10" WHT);
         }
@@ -532,15 +532,15 @@ int main(object me, string arg)
 	if (! me->query("yuanshen/status"))
 	{
 		if (damage + damage2 < 100000)
-			line += sprintf(NOR + WHT "ÉËº¦µÈ¼¶£º%-3d¡ª %-19d·À»¤µÈ¼¶£º%d\n" WHT, 
+			line += sprintf(NOR + WHT "å‚·å®³ç­‰ç´šï¼š%-3dâ”€ %-19dé˜²è­·ç­‰ç´šï¼š%d\n" WHT, 
                 		        (damage - damage1) / 100, (damage + damage2) / 100, defense / 100 + 1);
 		else
-			line += sprintf(NOR + WHT "ÉËº¦µÈ¼¶£º%-3d¡ª %-18d·À»¤µÈ¼¶£º%d\n" WHT, 
+			line += sprintf(NOR + WHT "å‚·å®³ç­‰ç´šï¼š%-3dâ”€ %-18dé˜²è­·ç­‰ç´šï¼š%d\n" WHT, 
                 		        (damage - damage1) / 100, (damage + damage2) / 100, defense / 100 + 1);                		       
         }
         else
         {
-        	damage_up += 1000; // ³õÊ¼ÔªÉñÓĞ+ÉËº¦ÃüÖĞ
+        	damage_up += 1000; // åˆå§‹å…ƒç¥æœ‰+å‚·å®³å‘½ä¸­
         	defense_up += 1000;
         	if (me->query("yuanshen/QHgongji"))
         		damage_up = damage_up + yuanshen_level(me, 0) * 100 * 2;    
@@ -548,13 +548,13 @@ int main(object me, string arg)
         	if (me->query("yuanshen/QHfangyu"))
         		defense_up = defense_up + yuanshen_level(me, 0) * 100 * 4;    
         			  	
-        	line += sprintf(NOR + WHT "ÉËº¦µÈ¼¶£º%-46s·À»¤µÈ¼¶£º%s\n" WHT, 
-        	        sprintf("%-3d¡ª %-19d", (damage - damage1) / 100, (damage + damage2) / 100) + HIG " + " + 
+        	line += sprintf(NOR + WHT "å‚·å®³ç­‰ç´šï¼š%-46sé˜²è­·ç­‰ç´šï¼š%s\n" WHT, 
+        	        sprintf("%-3dâ”€ %-19d", (damage - damage1) / 100, (damage + damage2) / 100) + HIG " + " + 
         	                sprintf("%d", damage_up / 100) + NOR + WHT,
         	        sprintf("%d", defense / 100 + 1) + HIG " + " + sprintf("%d", defense_up / 100) + WHT);        	
         }
 
-	line += sprintf(NOR + WHT "¸£    Ôµ£º+%-24dÆø    ÔË£º+%d\n" NOR, 
+	line += sprintf(NOR + WHT "ç¦    ç·£ï¼š+%-24dæ°£    é‹ï¼š+%d\n" NOR, 
                         me->query_temp("apply/fy") + me->query("jingmai/jingmai_fy") + tz["fy"],
                         me->query_temp("apply/qy") + me->query("jingmai/jingmai_qy") + tz["qy"]);
         
@@ -566,85 +566,85 @@ int main(object me, string arg)
         	add_yanjiu = me->query_temp("apply/add_yanjiu");
         	add_jiqu = me->query_temp("apply/add_jiqu");
         }
-	line += sprintf(NOR + WHT "Í·ÊÎÑĞ¾¿Ğ§ÂÊ£º+%-20sÍ·ÊÎ¼³È¡Ğ§ÂÊ£º+%s\n" NOR, 
+	line += sprintf(NOR + WHT "é ­é£¾ç ”ç©¶æ•ˆç‡ï¼š+%-20sé ­é£¾æ±²å–æ•ˆç‡ï¼š+%s\n" NOR, 
                         sprintf("%d",add_yanjiu) + "%",
                         sprintf("%d", add_jiqu) + "%");
                                                           		
 	line += LINE;
 
-	if (COMBAT_D->enchased_surcoat_special(me, "Ã¨ÑıÊ¯"))
+	if (COMBAT_D->enchased_surcoat_special(me, "è²“å¦–çŸ³"))
 	{
-		line = line + HIM "ÎŞÊÓ¶ÔÊÖ" + COMBAT_D->enchased_surcoat_special(me, "Ã¨ÑıÊ¯") + 
-		       "%·ÀÓù¸øÓè¹¥»÷¡£\n" NOR;
+		line = line + HIM "ç„¡è¦–å°æ‰‹" + COMBAT_D->enchased_surcoat_special(me, "è²“å¦–çŸ³") + 
+		       "%é˜²å¾¡çµ¦äºˆæ”»æ“Šã€‚\n" NOR;
 	}
 	
-	// Ôö¼ÓÔªÉñ²é¿´
+	// å¢åŠ å…ƒç¥æŸ¥çœ‹
 	/*
-	line += HIC "¡Ô" HIY "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤ÔªÉñ©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤" HIC "¡Ô\n" NOR;
+	line += HIC "â‰¡" HIY "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€å…ƒç¥â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€" HIC "â‰¡\n" NOR;
 
 	if (me->query("yuanshen/wuxing") == 1 ||
 	    me->query("yuanshen/wuxing") == 4)
 	{
-		line += sprintf(NOR + WHT "ÔªÉñÊôĞÔ£º%-47s" NOR + WHT "ÔªÉñµÈ¼¶£º%-s(%s£¥)\n" NOR, 
-	                       me->query("yuanshen/status") ? WUXING(me->query("yuanshen/wuxing")) : HIM "ÎŞ" NOR , 
+		line += sprintf(NOR + WHT "å…ƒç¥å±¬æ€§ï¼š%-47s" NOR + WHT "å…ƒç¥ç­‰ç´šï¼š%-s(%sï¼…)\n" NOR, 
+	                       me->query("yuanshen/status") ? WUXING(me->query("yuanshen/wuxing")) : HIM "ç„¡" NOR , 
 	                       me->query("yuanshen/status") ? sprintf("%d", yuanshen_level(me, 0)) : "----",
 	                       me->query("yuanshen/status") ? sprintf("%d", yuanshen_level(me, 1)) : "----" );	
 	}
 	else
 	{
-		line += sprintf(NOR + WHT "ÔªÉñÊôĞÔ£º%-40s" NOR + WHT "ÔªÉñµÈ¼¶£º%-s(%s£¥)\n" NOR, 
-	                       me->query("yuanshen/status") ? WUXING(me->query("yuanshen/wuxing")) : HIM "ÎŞ" NOR , 
+		line += sprintf(NOR + WHT "å…ƒç¥å±¬æ€§ï¼š%-40s" NOR + WHT "å…ƒç¥ç­‰ç´šï¼š%-s(%sï¼…)\n" NOR, 
+	                       me->query("yuanshen/status") ? WUXING(me->query("yuanshen/wuxing")) : HIM "ç„¡" NOR , 
 	                       me->query("yuanshen/status") ? sprintf("%d", yuanshen_level(me, 0)) : "----",
 	                       me->query("yuanshen/status") ? sprintf("%d", yuanshen_level(me, 1)) : "----" );	
 	}
 
-	line += sprintf(NOR + WHT "¾­Ñé·Ö³É£º%-24sÊôĞÔ±ä¸ü£º%s\n" NOR, 
+	line += sprintf(NOR + WHT "ç¶“é©—åˆ†æˆï¼š%-24så±¬æ€§è®Šæ›´ï¼š%s\n" NOR, 
                        "20%" , 
                        me->query("yuanshen/status") ? 
-                           sprintf("Ê£Óà %d Ğ¡Ê±", (me->query("yuanshen/last_change_wuxing") + 15* 3600 * 24 - time()) / 3600) : 
-                           	                   "Ê£Óà 0 Ğ¡Ê±");
+                           sprintf("å‰©ä½™ %d å°æ™‚", (me->query("yuanshen/last_change_wuxing") + 15* 3600 * 24 - time()) / 3600) : 
+                           	                   "å‰©ä½™ 0 å°æ™‚");
                        
-	line += sprintf(NOR + WHT "Ç¿»¯Ñ§Ï°£º%-24sÇ¿»¯·ÀÓù£º%s\n" NOR, 
-                       me->query("yuanshen/QHxuexi") ? "¡Ì" : "----" , me->query("yuanshen/QHfangyu") ? "¡Ì" : "----");	
+	line += sprintf(NOR + WHT "å¼·åŒ–å­¸ç¿’ï¼š%-24så¼·åŒ–é˜²å¾¡ï¼š%s\n" NOR, 
+                       me->query("yuanshen/QHxuexi") ? "âˆš" : "----" , me->query("yuanshen/QHfangyu") ? "âˆš" : "----");	
                        
-        line += sprintf(NOR + WHT "Ç¿»¯¹¥»÷£º%-24sÇ¿»¯ĞŞÑø£º%s\n" NOR, 
-                       me->query("yuanshen/QHgongji") ? "¡Ì" : "----" , me->query("yuanshen/QHxiuyang") ? "¡Ì" : "----");                               
-        line += sprintf(NOR + WHT "Ç¿»¯ÃüÖĞ£º%-24s±£ÁôÊôĞÔ£º%s\n" NOR, 
-                       me->query("yuanshen/QHmingzhong") ? "¡Ì" : "----" , me->query("yuanshen/other") ? "¡Ì" : "----");      
+        line += sprintf(NOR + WHT "å¼·åŒ–æ”»æ“Šï¼š%-24så¼·åŒ–ä¿®é¤Šï¼š%s\n" NOR, 
+                       me->query("yuanshen/QHgongji") ? "âˆš" : "----" , me->query("yuanshen/QHxiuyang") ? "âˆš" : "----");                               
+        line += sprintf(NOR + WHT "å¼·åŒ–å‘½ä¸­ï¼š%-24sä¿ç•™å±¬æ€§ï¼š%s\n" NOR, 
+                       me->query("yuanshen/QHmingzhong") ? "âˆš" : "----" , me->query("yuanshen/other") ? "âˆš" : "----");      
                             
-	line += HIC "\nÎåĞĞ£º½ğ¿ËÄ¾£¬Ä¾¿ËÍÁ£¬ÍÁ¿ËË®£¬Ë®¿Ë»ğ£¬»ğ¿Ë½ğ\n" NOR;
+	line += HIC "\näº”è¡Œï¼šé‡‘å…‹æœ¨ï¼Œæœ¨å…‹åœŸï¼ŒåœŸå…‹æ°´ï¼Œæ°´å…‹ç«ï¼Œç«å…‹é‡‘\n" NOR;
 	line += LINE;
 	
 	
-	// Ôö¼ÓÌ××°²é¿´
+	// å¢åŠ å¥—è£æŸ¥çœ‹
 	
-	line += HIC "¡Ô" HIY "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤Ì××°©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤" HIC "¡Ô\n" NOR;	
-	line += NOR + WHT "Ì××°×´Ì¬£º" + TAOZHUANG_D->taozhuang_name(tzlv) + "\n";
-	line += sprintf(NOR + WHT "ÉËº¦µÈ¼¶£º+%-24d·À»¤µÈ¼¶£º+%d\n" NOR, 
+	line += HIC "â‰¡" HIY "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€å¥—è£â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€" HIC "â‰¡\n" NOR;	
+	line += NOR + WHT "å¥—è£ç‹€æ…‹ï¼š" + TAOZHUANG_D->taozhuang_name(tzlv) + "\n";
+	line += sprintf(NOR + WHT "å‚·å®³ç­‰ç´šï¼š+%-24dé˜²è­·ç­‰ç´šï¼š+%d\n" NOR, 
                         tz["damage"],tz["defense"]);
- 	line += sprintf(NOR + WHT "»Ø±ÜµÈ¼¶£º+%-24dÃüÖĞµÈ¼¶£º+%d\n" NOR, 
+ 	line += sprintf(NOR + WHT "å›é¿ç­‰ç´šï¼š+%-24då‘½ä¸­ç­‰ç´šï¼š+%d\n" NOR, 
                         tz["huibi"],tz["attack"]);    
- 	line += sprintf(NOR + WHT "ÑĞ¾¿Ğ§ÂÊ£º+%-24s¼³È¡Ğ§ÂÊ£º+%s\n" NOR, 
+ 	line += sprintf(NOR + WHT "ç ”ç©¶æ•ˆç‡ï¼š+%-24sæ±²å–æ•ˆç‡ï¼š+%s\n" NOR, 
                         sprintf("%d", tz["yanjiu"]) + "%",sprintf("%d", tz["jiqu"]) + "%");   
 
- 	line += sprintf(NOR + WHT "ÑĞ¾¿´ÎÊı£º+%-24s¼¤·¢Ôö¼Ó£º+%d\n" NOR,
+ 	line += sprintf(NOR + WHT "ç ”ç©¶æ¬¡æ•¸ï¼š+%-24sæ¿€ç™¼å¢åŠ ï¼š+%d\n" NOR,
                         sprintf("%d", tz["times"]) + "%", TAOZHUANG_D->jifa_level(tzlv));               
- 	line += sprintf(NOR + WHT "¸£    Ôµ£º+%-24dÆø    ÔË£º+%d\n" NOR, 
+ 	line += sprintf(NOR + WHT "ç¦    ç·£ï¼š+%-24dæ°£    é‹ï¼š+%d\n" NOR, 
                         tz["fy"],tz["qy"]);
- 	line += sprintf(NOR + WHT "ºóÌìÎòĞÔ£º+%-24dºóÌì¸ù¹Ç£º+%d\n" NOR, 
+ 	line += sprintf(NOR + WHT "å¾Œå¤©æ‚Ÿæ€§ï¼š+%-24då¾Œå¤©æ ¹éª¨ï¼š+%d\n" NOR, 
                         tz["int"],tz["con"]);       
- 	line += sprintf(NOR + WHT "ºóÌì±ÛÁ¦£º+%-24dºóÌìÉí·¨£º+%d\n" NOR, 
+ 	line += sprintf(NOR + WHT "å¾Œå¤©è‡‚åŠ›ï¼š+%-24då¾Œå¤©èº«æ³•ï¼š+%d\n" NOR, 
                         tz["str"],tz["dex"]);
 
-	line += HIC "\nÌ××°ÌØ¼¼£º¼û help taozhuang ÎÄ¼ş¡£\n" NOR;
+	line += HIC "\nå¥—è£ç‰¹æŠ€ï¼šè¦‹ help taozhuang æ–‡ä»¶ã€‚\n" NOR;
 
 	//line += TAOZHUANG_D->taozhuang_desc(tzlv) + "\n";
 	line += LINE;
 */	
-	//line += HIR "¸÷ÏîÊôĞÔµÄÆÀ¼Û±ê×¼ÇëÊäÈëÖ¸Áî power -p ²é¿´¡£\n" NOR;
-	//line += HIC "ÓĞ¹ØÔªÉñµÄ½éÉÜ¼°Ê¹ÓÃÏê¼û help yuanshen ¡£\n" NOR;
-	line += HIY "ÂÖ»ØµãÊ¹ÓÃÇé¿öÇëÓÃ power -l ²é¿´¡£\n" NOR;
-	line += HIG "µ±Ç°¹ºÂòµÄ·şÎñ(help yhshop_srv£©ÇëÊäÈëÖ¸Áî power -s ²é¿´¡£\n" NOR;
+	//line += HIR "å„é …å±¬æ€§çš„è©•åƒ¹æ¨™æº–è«‹è¼¸å…¥æŒ‡ä»¤ power -p æŸ¥çœ‹ã€‚\n" NOR;
+	//line += HIC "æœ‰é—œå…ƒç¥çš„ä»‹ç´¹åŠä½¿ç”¨è©³è¦‹ help yuanshen ã€‚\n" NOR;
+	line += HIY "è¼ªå›é»ä½¿ç”¨æƒ…æ³è«‹ç”¨ power -l æŸ¥çœ‹ã€‚\n" NOR;
+	line += HIG "ç•¶å‰è³¼è²·çš„æœå‹™(help yhshop_srvï¼‰è«‹è¼¸å…¥æŒ‡ä»¤ power -s æŸ¥çœ‹ã€‚\n" NOR;
 
 	
 	write(line);

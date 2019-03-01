@@ -1,4 +1,4 @@
-// strike.c »ù±¾ÕÆ·¨
+// strike.c åŸºæœ¬æŒæ³•
 // Last Modified by winder on Mar. 10 2000
 
 #include <ansi.h>;
@@ -13,13 +13,13 @@ int power_point(object me) { return 1; }
 
 int help(object me)
 {
-        write(HIC"\n»ù±¾ÕÆ·¨£º"NOR"\n");
+        write(HIC"\nåŸºæœ¬æŒæ³•ï¼š"NOR"\n");
         write(@HELP
 
-    ÕÆÀàÎä¼¼µÄ»ù±¾¹¦£¬²¢ÄÜ¸ÄÉÆÄãºóÌìµÄëöÁ¦¡£
+    æŒé¡æ­¦æŠ€çš„åŸºæœ¬åŠŸï¼Œä¸¦èƒ½æ”¹å–„ä½ å¾Œå¤©çš„è†‚åŠ›ã€‚
 
-        Ñ§Ï°ÒªÇó£º
-                ÎŞ
+        å­¸ç¿’è¦æ±‚ï¼š
+                ç„¡
 HELP
         );
         return 1;

@@ -1,16 +1,16 @@
 // object.c
 
-/* ´«»Ø¸ú ob ÔÚÍ¬Ò»»·¾³»òÍ¬Ò»×ù±êÄÚÖ®Îï¼şÕóÁĞ, °üÀ¨ ob ±¾Éí */
-/* ´Ë simul_efun ¶ÔÓÚ mud Ğ§ÂÊÓĞºÜ´óµÄÓ°Ïì, ÈôÓĞ±ØÒª, Ğè¸ÄĞ´³ÉÕæÕıµÄ efun */
+/* å‚³å›è·Ÿ ob åœ¨åŒä¸€ç’°å¢ƒæˆ–åŒä¸€åº§æ¨™å…§ä¹‹ç‰©ä»¶é™£åˆ—, åŒ…æ‹¬ ob æœ¬èº« */
+/* æ­¤ simul_efun å°äº mud æ•ˆç‡æœ‰å¾ˆå¤§çš„å½±éŸ¿, è‹¥æœ‰å¿…è¦, éœ€æ”¹å¯«æˆçœŸæ­£çš„ efun */
 object *present_objects(object ob)
 {
-        // env ÎªÄ¿Ç°Îï¼şËùÔÚµÄ¿Õ¼ä
+        // env ç‚ºç›®å‰ç‰©ä»¶æ‰€åœ¨çš„ç©ºé–“
         object env = environment(ob);
         
-        // Ã»ÓĞ»·¾³£¡£¿
+        // æ²’æœ‰ç’°å¢ƒï¼ï¼Ÿ
         if( !env ) return allocate(0);
         
-        // Èç¹ûÔÚ map_d ÏµÍ³ÒÔÍâÖ±½Ó´«»Ø efun:all_inventory µÄÖµ
+        // å¦‚æœåœ¨ map_d ç³»çµ±ä»¥å¤–ç›´æ¥å‚³å› efun:all_inventory çš„å€¼
         return all_inventory(env);
 }
 
@@ -137,7 +137,7 @@ void destruct(object ob)
         string filename1, filename2;
 
         if( ob ) {
-                // ÓÎÏ·ÏµÍ³Ã»ÓĞÊ¹ÓÃbind£¬Òò´ËÎªÁË±ÜÃâcall_outµÄBUG£¬×öÒÔÏÂĞŞ¸Ä
+                // éŠæˆ²ç³»çµ±æ²’æœ‰ä½¿ç”¨bindï¼Œå› æ­¤ç‚ºäº†é¿å…call_outçš„BUGï¼Œåšä»¥ä¸‹ä¿®æ”¹
                 filename1 = file_name(ob);
                 if( stringp(filename1) ) {
                         if( sscanf(filename1, "/kungfu/skill/%*s/%s", filename1) == 2 ) {

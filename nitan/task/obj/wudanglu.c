@@ -2,15 +2,15 @@
 inherit TASK;
 void create()
 {
-    set_name(BLU"Îäµ±Â¼"NOR, ({ "wudanglu" }) );
+    set_name(BLU"æ­¦ç•¶éŒ„"NOR, ({ "wudanglu" }) );
     set_weight(1);
     if( clonep() )
             destruct(this_object());
     else {
-            set("unit", "±¾");
+            set("unit", "æœ¬");
             set("material", "paper");
-            set("long", "³¤ÇÚÎäµ±Â¼¡£\n");
+            set("long", "é•·å‹¤æ­¦ç•¶éŒ„ã€‚\n");
           } 
-    set("owner", "ËÎÇàÊé");
+    set("owner", "å®‹é’æ›¸");
         setup();
 }  

@@ -2,10 +2,10 @@ inherit ROOM;
  
 void create()
 {
-        set("short", "С·");
+        set("short", "小路");
         set("long", @LONG
-����һ��С��������������Զ�����졣С��������ֲ��һЩ�һ�����
-��ֻһƳ�ͷ��֣���Щ�һ�ȫ�ǰ�ɫ�ġ�
+這是一條小徑，彎彎曲曲向遠方延伸。小徑兩邊種植了一些桃花樹。
+你只一瞥就發現：這些桃花全是白色的。
 LONG );
         set("exits", ([
                 "east"  : __DIR__"road2",

@@ -5,7 +5,7 @@
 
 inherit F_SSERVER;
 
-string name() { return HIG "×·»ê×¦" NOR; }
+string name() { return HIG "è¿½é­‚çˆª" NOR; }
 
 int perform(object me, object target)
 {
@@ -16,33 +16,33 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(name() + "Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(name() + "åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( objectp(query_temp("weapon", me)) )
-                return notify_fail("Ö»ÓÐ¿ÕÊÖ²ÅÄÜÊ©Õ¹" + name() + "¡££¡\n");
+                return notify_fail("åªæœ‰ç©ºæ‰‹æ‰èƒ½æ–½å±•" + name() + "ã€‚ï¼\n");
 
         if (me->query_skill_mapped("claw") != "sanyin-zhua")
-                return notify_fail("ÄãËùÓÃµÄ²¢·ÇÈýÒõòÚò¼×¦£¬²»ÄÜÊ©Õ¹" + name() + "£¡\n");
+                return notify_fail("ä½ æ‰€ç”¨çš„ä¸¦éžä¸‰é™°èœˆèš£çˆªï¼Œä¸èƒ½æ–½å±•" + name() + "ï¼\n");
 
         if (me->query_skill_prepared("claw") != "sanyin-zhua")
-                return notify_fail("ÄãËù±¸µÄ²¢·ÇÈýÒõòÚò¼×¦£¬²»ÄÜÊ©Õ¹" + name() + "£¡\n");
+                return notify_fail("ä½ æ‰€å‚™çš„ä¸¦éžä¸‰é™°èœˆèš£çˆªï¼Œä¸èƒ½æ–½å±•" + name() + "ï¼\n");
 
         /*
         if (me->query_skill_mapped("force") != "huagong-dafa")
-                return notify_fail("ÄãËùÓÃµÄ²¢·Ç»¯¹¦´ó·¨£¬Ê©Õ¹²»³ö" + name() + "£¡\n");
+                return notify_fail("ä½ æ‰€ç”¨çš„ä¸¦éžåŒ–åŠŸå¤§æ³•ï¼Œæ–½å±•ä¸å‡º" + name() + "ï¼\n");
 
         if ((int)me->query_skill("huagong-dafa", 1) < 120)
-                return notify_fail("Äã»¯¹¦´ó·¨ÐÞÎªÌ«²î£¬²»ÄÜÔËÓÃ" + name() + "£¡\n");
+                return notify_fail("ä½ åŒ–åŠŸå¤§æ³•ä¿®ç‚ºå¤ªå·®ï¼Œä¸èƒ½é‹ç”¨" + name() + "ï¼\n");
         */
 
         if (me->query_skill("sanyin-zhua", 1) < 120)
-                return notify_fail("ÄãÈýÒõòÚò¼×¦ÐÞÎªÌ«²î£¬²»ÄÜÔËÓÃ" + name() + "£¡\n");
+                return notify_fail("ä½ ä¸‰é™°èœˆèš£çˆªä¿®ç‚ºå¤ªå·®ï¼Œä¸èƒ½é‹ç”¨" + name() + "ï¼\n");
 
         if( query("neili", me) <= 400 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»Ê¹ÓÃ×·»ê×¦£¡\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ä½¿ç”¨è¿½é­‚çˆªï¼\n");
 
-        message_combatd(HIB "$NºöÈ»ºÙºÙ¸ÉÐ¦¼¸Éù£¬Ë«Ðä¿ñÎè¾íÆðµØÉÏ»ÆÉ³·ÉÑïÁîÈË¿´²»³öÒª´ÓºÎ´¦³öÕÐ£¬\n"
-                        "Í»È»$N¼â½ÐÒ»Éù£¬ÉùÎ´Í£Ó°ÏÈÖÁÏò×Å$nÆËÀ´£¬Ë«×¦Á¬×¥Êý×¦£¬ÆäËÙÖ®¿ìÁî$nÎÞ´Ó¶ãÉÁ¡£\n"
+        message_combatd(HIB "$Nå¿½ç„¶å˜¿å˜¿å¹¹ç¬‘å¹¾è²ï¼Œé›™è¢–ç‹‚èˆžå·èµ·åœ°ä¸Šé»ƒæ²™é£›æšä»¤äººçœ‹ä¸å‡ºè¦å¾žä½•è™•å‡ºæ‹›ï¼Œ\n"
+                        "çªç„¶$Nå°–å«ä¸€è²ï¼Œè²æœªåœå½±å…ˆè‡³å‘è‘—$næ’²ä¾†ï¼Œé›™çˆªé€£æŠ“æ•¸çˆªï¼Œå…¶é€Ÿä¹‹å¿«ä»¤$nç„¡å¾žèº²é–ƒã€‚\n"
                         NOR, me, target);
 
         level = me->query_skill("sanyin-zhua", 1) + me->query_skill("finger", 1);

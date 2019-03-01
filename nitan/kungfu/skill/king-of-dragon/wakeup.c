@@ -6,25 +6,25 @@
 int exert(object me, object target)
 {
         if( (!target) || query("id", target) == query("id", me) )
-                return notify_fail("ÄãÒªÓÃÕæÆø¾ÈĞÑË­£¿\n");
+                return notify_fail("ä½ è¦ç”¨çœŸæ°£æ•‘é†’èª°ï¼Ÿ\n");
 /*
         if( me->is_fighting() || target->is_fighting())
-                return notify_fail("Õ½¶·ÖĞÎŞ·¨ÔË¹¦¾ÈÈË£¡\n");
+                return notify_fail("æˆ°é¬¥ä¸­ç„¡æ³•é‹åŠŸæ•‘äººï¼\n");
 */
         if(target == me)
-                return notify_fail("Äã²»ÄÜÎª×Ô¼º¾ÈĞÑ×Ô¼º£¡\n");
+                return notify_fail("ä½ ä¸èƒ½ç‚ºè‡ªå·±æ•‘é†’è‡ªå·±ï¼\n");
 
         if( query("max_neili", me)<1000 )
-                return notify_fail("ÄãµÄÄÚÁ¦ĞŞÎª²»¹»¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¿®ç‚ºä¸å¤ ã€‚\n");
 
         if( query("neili", me)<1000 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ã€‚\n");
 
         if( query("eff_qi", target)<query("max_qi", target)/5 )
                 return notify_fail( target->name() +
-                        "ÒÑ¾­ÊÜÉË¹ıÖØ£¬¾­ÊÜ²»ÆğÄãµÄÕæÆøÕğµ´£¡\n");
+                        "å·²ç¶“å—å‚·éé‡ï¼Œç¶“å—ä¸èµ·ä½ çš„çœŸæ°£éœ‡ç›ªï¼\n");
 
-        message_combatd(HIY "$N×øÁËÏÂÀ´ÔËÆğÄÚ¹¦£¬½«ÊÖÕÆÌùÔÚ$n±³ĞÄ£¬»º»ºµØ½«ÕæÆøÊäÈë$nÌåÄÚ....\n\n¹ıÁË²»¾Ã£¬$N¶îÍ·ÉÏÃ°³ö¶¹´óµÄº¹Öé£¬$nÍÂ³öÒ»¿ÚğöÑª£¬Á³É«¿´ÆğÀ´ºìÈó¶àÁË¡£\n$nÂıÂıµÄËÕĞÑ¹ıÀ´¡£\n" NOR, me, target );
+        message_combatd(HIY "$Nåäº†ä¸‹ä¾†é‹èµ·å…§åŠŸï¼Œå°‡æ‰‹æŒè²¼åœ¨$nèƒŒå¿ƒï¼Œç·©ç·©åœ°å°‡çœŸæ°£è¼¸å…¥$né«”å…§....\n\néäº†ä¸ä¹…ï¼Œ$Né¡é ­ä¸Šå†’å‡ºè±†å¤§çš„æ±—ç ï¼Œ$nåå‡ºä¸€å£ç˜€è¡€ï¼Œè‡‰è‰²çœ‹èµ·ä¾†ç´…æ½¤å¤šäº†ã€‚\n$næ…¢æ…¢çš„è˜‡é†’éä¾†ã€‚\n" NOR, me, target );
 
         target->receive_curing("qi", 10 + (int)me->query_skill("force")/3 );
         addn("qi", 10+me->query_skill("force")/3, target);

@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short",HIB"�Һ�"NOR);
+        set("short",HIB"匾後"NOR);
         set("long", @LONG
-������ǹ�Ĺ�����Ҷ�֮�󣬺������ʲô���������������ʯ��
-��������һƬ�λơ������ƺ�����һ��ͨ����
+這裡就是古墓中堂匾額之後，黑漆漆的什麼都看不清楚。匾下石室
+裡點著燭火，一片暈黃。裡面似乎還有一條通道。
 LONG        );
         set("exits",([
                 "down"  : __DIR__"zhongting",

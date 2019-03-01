@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ºóÏá");
+        set("short", "å¾Œå»‚");
         set("long", @LONG
-ÕâÀïÊÇÌÒÔ´ËÂµÄ³ø·¿£¬Ò»¸öÀÏºÍÉĞÕıÔÚÔî±ßÃ¦À´Ã¦È¥£¬¿´À´Ëû
-¾ÍÊÇÕâÀïµÄ´óÊ¦¸µÁË¡£Èç¹ûÄãµÄ¶Ç×Ó¶öÁË£¬¾Í¸Ï¿ìÒª (serve)Ğ©³Ô
-µÄ°É¡£
+é€™è£¡æ˜¯æ¡ƒæºå¯ºçš„å»šæˆ¿ï¼Œä¸€å€‹è€å’Œå°šæ­£åœ¨ç¶é‚Šå¿™ä¾†å¿™å»ï¼Œçœ‹ä¾†ä»–
+å°±æ˜¯é€™è£¡çš„å¤§å¸«å‚…äº†ã€‚å¦‚æœä½ çš„è‚šå­é¤“äº†ï¼Œå°±è¶•å¿«è¦ (serve)äº›åƒ
+çš„å§ã€‚
 LONG );
         set("no_clean_up", 0);
         set("no_fight", 1);
@@ -35,15 +35,15 @@ int do_serve()
 {
         object food, water, me = this_player(), ob = this_object();
 
-        if( query("family/family_name", me) != "´óÀí¶Î¼Ò" )
-return notify_fail("ÀÏºÍÉĞµÀ£º°¢ÃÖÍÓ·ğ£¬Äã·Ç±¾ÅÉµÜ×Ó£¬²»ÄÜÄÃÈ¡Ê³Îï¡£\n");
+        if( query("family/family_name", me) != "å¤§ç†æ®µå®¶" )
+return notify_fail("è€å’Œå°šé“ï¼šé˜¿å½Œé™€ä½›ï¼Œä½ éæœ¬æ´¾å¼Ÿå­ï¼Œä¸èƒ½æ‹¿å–é£Ÿç‰©ã€‚\n");
         if(present("mifang", me) || present("qingtang", me)) 
-return notify_fail("ÀÏºÍÉĞµÀ£º°¢ÃÖÍÓ·ğ£¬³ÔÍêÁËÔÙÄÃ£¬±ğÀË·ÑÊ³Îï¡£\n");
+return notify_fail("è€å’Œå°šé“ï¼šé˜¿å½Œé™€ä½›ï¼Œåƒå®Œäº†å†æ‹¿ï¼Œåˆ¥æµªè²»é£Ÿç‰©ã€‚\n");
         if(present("mifang", ob) || present("qingtang", ob)) 
-return notify_fail("ÀÏºÍÉĞµÀ£º³ÔÍêÁËÔÙÄÃ£¬±ğÀË·ÑÊ³Îï¡£\n");
+return notify_fail("è€å’Œå°šé“ï¼šåƒå®Œäº†å†æ‹¿ï¼Œåˆ¥æµªè²»é£Ÿç‰©ã€‚\n");
         if (query("ricewater")>0)
         {
-                message_vision("ÀÏºÍÉĞÁ¬Éù´ğÓ¦£¬¸ø$NÒ»ÍëÇåÌÀºÍÒ»ÍëÃ×·¹¡£\n",me);
+                message_vision("è€å’Œå°šé€£è²ç­”æ‡‰ï¼Œçµ¦$Nä¸€ç¢—æ¸…æ¹¯å’Œä¸€ç¢—ç±³é£¯ã€‚\n",me);
                 food=new(__DIR__"obj/mifang");
                 water=new(__DIR__"obj/qingtang");
                 food->move(me);
@@ -51,12 +51,12 @@ return notify_fail("ÀÏºÍÉĞµÀ£º³ÔÍêÁËÔÙÄÃ£¬±ğÀË·ÑÊ³Îï¡£\n");
                 addn("ricewater",-1);
         }
         else 
-                message_vision("ÀÏºÍÉĞ¶Ô$NÇ¸ÉùµÀ: àË£¬³ÔµÄºÈµÄ¶¼Ã»ÁË¡£\n",me);
+                message_vision("è€å’Œå°šå°$Næ­‰è²é“: å—¨ï¼Œåƒçš„å–çš„éƒ½æ²’äº†ã€‚\n",me);
         return 1; 
 }
 int valid_leave(object me,string dir)
 {
         if(dir=="south" && (present("mifang", me) || present("qingtang", me))) 
-             return notify_fail("ÀÏºÍÉĞËµµÀ£º³ÔÁË¾Í±ğ´ø×ß¡£\n");
+             return notify_fail("è€å’Œå°šèªªé“ï¼šåƒäº†å°±åˆ¥å¸¶èµ°ã€‚\n");
         return ::valid_leave(me,dir);
 }

@@ -1,7 +1,7 @@
 // $file_name.c                                         /* COMMENT_ENTRY */
 // Create by TEMPLATE_D. $time.                         /* COMMENT_ENTRY */
 // armor.c
-// ×Ô¶¯´´½¨·À¾ßµÄ»ù×¼ÎÄ¼þ¡£                             /* COMMENT_EXIT  */
+// è‡ªå‹•å‰µå»ºé˜²å…·çš„åŸºæº–æ–‡ä»¶ã€‚                             /* COMMENT_EXIT  */
 
 #include <armor.h>
 inherit CHARM;
@@ -10,15 +10,15 @@ inherit CHARM;
 void create()
 {
 //**    set_name("$name", ({ "$id", }));                /* NAME_ENTRY */
-        set_name("»¤Éí·û", ({ "charm", }));                /* NAME_EXIT  */ 
+        set_name("è­·èº«ç¬¦", ({ "charm", }));                /* NAME_EXIT  */ 
 
         if (clonep())
                 set_default_object(__FILE__);
         else
         {
 //**            set("$dbase_key", "$dbase_value\n");    /* DBASE_ENTRY */
-                set("long", "ÕâÊÇÒ»¸öÆÕÍ¨µÄ»¤Éí·û¡£\n");  /* DBASE_EXIT  */
-                set("unit", "¸ö");
+                set("long", "é€™æ˜¯ä¸€å€‹æ™®é€šçš„è­·èº«ç¬¦ã€‚\n");  /* DBASE_EXIT  */
+                set("unit", "å€‹");
                 set("value", 200);
                 set("material", "stone");
                 set("armor_prop/armor", 1);

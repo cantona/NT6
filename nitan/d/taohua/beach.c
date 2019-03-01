@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����");
+        set("short", "海濱");
         set("long", @LONG
-������һƬ�����ĺ�̲��һ���Ǻ���һ����һƬ�һ��֡�һЩ����ʯ
-��һ�飬��һ���ɢ���ں�̲�ϡ�������һ����̨��
+這裡是一片空闊的海灘。一面是海，一面是一片桃花林。一些大青石
+東一塊，西一塊的散放在海灘上。北面是一座高台。
 LONG );
          set("exits", ([
                 "west"    : __DIR__"citeng",

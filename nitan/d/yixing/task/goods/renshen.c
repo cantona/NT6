@@ -1,4 +1,4 @@
-// /d/yixing/task/goods/renshen.c ÈË²Î
+// /d/yixing/task/goods/renshen.c äººåƒ
 // Last Modified by winder on Jul. 12 2002
 
 inherit ITEM;
@@ -6,12 +6,12 @@ inherit ITEM;
 
 void create()
 {
-        set_name("³¤°×É½ÈË²Î", ({"renshen", "shen"}));
+        set_name("é•·ç™½å±±äººåƒ", ({"renshen", "shen"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Öê");
-                set("long", "ÕâÊÇÒ»ÖêÕ´ÂúÉ½ÄàµÄ³¤°×É½ÈË²Î¡£\n");
+                set("unit", "æ ª");
+                set("long", "é€™æ˜¯ä¸€æ ªæ²¾æ»¿å±±æ³¥çš„é•·ç™½å±±äººåƒã€‚\n");
                 set("value", 10000);
                 set("medicine", 1);
         }

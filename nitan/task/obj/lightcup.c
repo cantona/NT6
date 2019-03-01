@@ -2,20 +2,20 @@
 inherit TASK;
 void create()
 {
-    set_name(HIB "Ò¹¹â±­" NOR,({"yeguangbei"}));
+    set_name(HIB "å¤œå…‰æ¯" NOR,({"yeguangbei"}));
     set_weight(300);
         if( clonep() )
             destruct(this_object());
         else {
-        set("long", "Ò»¸öÊ¢ÂúÁËÏÊºìÈçÑªµÄÆÏÌÑÃÀ¾ÆµÄÒ¹¹â±­¡£\n");
-                set("unit", "¸ö");
+        set("long", "ä¸€å€‹ç››æ»¿äº†é®®ç´…å¦‚è¡€çš„è‘¡è„ç¾é…’çš„å¤œå…‰æ¯ã€‚\n");
+                set("unit", "å€‹");
         set("value", 0);
         set("max_liquid", 10);
         } 
-        set("owner","»ªºÕôŞ");
+        set("owner","è¯èµ«è‰®");
         set("liquid", ([
         "type": "alcohol",
-        "name": "ÆÏÌÑÃÀ¾Æ",
+        "name": "è‘¡è„ç¾é…’",
                 "remaining": 5,
         "drunk_apply": 20,
         ]) );

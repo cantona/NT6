@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "���鱮");
+        set("short", "御書碑");
         set("long",@long
-��ɽ֮����´�������ο������������������������λ��檵ĺ���
-Ĺ��Ĺ�����ޱ�������׭������Т�ڻʵ����顰������������Ԫѫ֮��
-�������ĳ���һ����ǧ���֣��Թųơ����µ�һ������
+在山之西南麓，有南宋抗金名將韓世忠與樑紅玉等四位妻妾的合葬
+墓。墓左豎巨碑，碑上篆刻著宋孝宗皇帝御書“中興佐命定國元勛之碑
+”，碑文長達一萬三千多字，自古稱“天下第一碑”。
 long);
         set("outdoors", "suzhou");
         set("exits",([

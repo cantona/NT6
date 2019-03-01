@@ -7,8 +7,8 @@ inherit F_DEALER;
 
 void create()
 {
-        set_name("ÂôÌÇĞ¡··" , ({ "tang fan", "fan" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("è³£ç³–å°è²©" , ({ "tang fan", "fan" }) );
+        set("gender", "ç”·æ€§" );
         set("age",20);
         set("combat_exp", 15000);
         set_skill("unarmed", 20);
@@ -42,6 +42,6 @@ void init()
 void greeting(object ob)
 {
         if (environment(ob)==environment())
-        message_vision("ÂôÌÇµÄĞ¡··³å$PßººÈ×Å£º¼ÒÀïÓĞÏ²ÊÂÂğ£¿ÂòµãÌÇ¹ûÕĞ´ıÅóÓÑ°É¡£\n",ob);
+        message_vision("è³£ç³–çš„å°è²©æ²–$På†å–è‘—ï¼šå®¶è£¡æœ‰å–œäº‹å—ï¼Ÿè²·é»ç³–æœæ‹›å¾…æœ‹å‹å§ã€‚\n",ob);
         return;
 }

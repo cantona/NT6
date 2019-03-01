@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�ص�");
+        set("short", "地道");
         set("long", @LONG
-�ص�����ߺڰ����������ǣ�һ��ùζ�˱Ƕ������ص���ʯ̨��
-�쳣�ֲڣ�������ǽ�ϲ�ʱ����ˮ�ε������ϡ�
+地道裡光線黑暗，空氣渾濁，一股霉味撲鼻而來。地道裡石台階
+異常粗糙，兩邊土牆上不時滲出水滴掉到地上。
 LONG );
         set("exits", ([ /* sizeof() == 2 */
             "south" : __DIR__"tunnel1",

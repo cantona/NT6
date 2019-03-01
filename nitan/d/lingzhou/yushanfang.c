@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "���ŷ�");
+        set("short", "御膳房");
         set("long", @LONG
-�������ŷ������᷿����λ����������ס�������᷿���ŷ�������
-ס�ġ������ǲ񷿡�Ժ�Ӵ�ɨ�ĺܸɾ����м���һ��ˮ����
+這裡是膳房，西廂房是兩位江南名廚的住處，東廂房是膳房下手們
+住的。北面是柴房。院子打掃的很幹凈，中間有一口水井。
 LONG
         );
         set("exits", ([ /* sizeof() == 3 */

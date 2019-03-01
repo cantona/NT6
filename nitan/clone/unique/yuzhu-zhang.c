@@ -6,20 +6,20 @@ inherit STAFF;
 
 void create()
 {
-        set_name(HIG "ÓñÖñÕÈ" NOR, ({"yuzhu zhang", "zhang", "staff"}));
+        set_name(HIG "ç‰ç«¹æ–" NOR, ({"yuzhu zhang", "zhang", "staff"}));
         set_weight(5000);
 
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ù");
-                set("long", HIG"Ò»¸ù±ÌÂÌÓÌÈçôä´ä°ãµÄÖñÕÈ¡£\n"NOR);
+                set("unit", "æ ¹");
+                set("long", HIG"ä¸€æ ¹ç¢§ç¶ çŒ¶å¦‚ç¿¡ç¿ èˆ¬çš„ç«¹æ–ã€‚\n"NOR);
                 set("value", 8000000);
                 set("material", "bamboo");
                 set("rigidity", 3000);
                 set("replica_ob","/clone/weapon/zhubang");
-                set("wield_msg", "$N³é³öÒ»¸ùÇà¹âÉÁÉÁµÄÂÌÓñÖñÕÈ×¥ÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N°ÑÊÖÖĞµÄÂÌÖñÕÈ²å»ØÑüÖĞ¡£\n");
+                set("wield_msg", "$NæŠ½å‡ºä¸€æ ¹é’å…‰é–ƒé–ƒçš„ç¶ ç‰ç«¹æ–æŠ“åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$NæŠŠæ‰‹ä¸­çš„ç¶ ç«¹æ–æ’å›è…°ä¸­ã€‚\n");
         }
         init_staff(200); 
         setup();

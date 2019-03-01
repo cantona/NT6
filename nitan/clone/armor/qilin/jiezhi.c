@@ -6,13 +6,13 @@ inherit RINGS;
 
 void create()
 {
-        set_name(HIR "»ğÑÛÖ®½ä" NOR, ({ "huoyan ring", "huoyan", "ring" }));
+        set_name(HIR "ç«çœ¼ä¹‹æˆ’" NOR, ({ "huoyan ring", "huoyan", "ring" }));
         set_weight(500);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ã¶");
-                set("long", HIR "ÓÉ»ğ÷è÷ëµÄ¾«ÆÇ»Ã»¯¶ø³ÉµÄ½äÖ¸£¬ÉÁ¶¯×Å»ğÑæµÄ¹âÃ¢£¬ÁîÈËÉñÍù¡£\n" NOR);
+                set("unit", "æš");
+                set("long", HIR "ç”±ç«éº’éºŸçš„ç²¾é­„å¹»åŒ–è€Œæˆçš„æˆ’æŒ‡ï¼Œé–ƒå‹•è‘—ç«ç‡„çš„å…‰èŠ’ï¼Œä»¤äººç¥å¾€ã€‚\n" NOR);
                 set("value", 20000000);
                 set("material", "gold");
                 set("armor_prop/dex", 20);

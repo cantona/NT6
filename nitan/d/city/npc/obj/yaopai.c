@@ -5,40 +5,40 @@ inherit ITEM;
 #include <ansi.h>
 
 string *xc_msg1 =({
-        "ÄãÉñÃØÙâÙâµÄËÄ´¦ÕÅÍûxc_placeµÄÃ¿¸ö½ÇÂä£¬",
-        "Äã´óÄ£´óÑùÔÚxc_place×ªÁË¼¸¸öÈ¦×Ó£¬",
-        "ÄãÂúÁ³ÑÏËàµÄ×ĞÏ¸²é¿´xc_placeµÄÇé¿ö£¬",
-        "Äã×ĞÏ¸¹Û²ìÁËxc_placeµÄÇé¿ö£¬",
-        "ÄãÔÚxc_placeÀ´»ØµÄÑ²²éÁË¼¸±é£¬",
-        "ÄãÏ¸ĞÄÁôÒâxc_placeÉÏµÄÄ°ÉúÃæ¿×£¬",
-        "ÄãÏò½ÖÉÏµÄÈË´òÌ½ÁËxc_place½üÈÕµÄÇé¿ö£¬",
-        "ÄãÁôÒâÁËÏÂxc_place½üÀ´µÄ±ä»¯£¬",
+        "ä½ ç¥ç§˜å…®å…®çš„å››è™•å¼µæœ›xc_placeçš„æ¯å€‹è§’è½ï¼Œ",
+        "ä½ å¤§æ¨¡å¤§æ¨£åœ¨xc_placeè½‰äº†å¹¾å€‹åœˆå­ï¼Œ",
+        "ä½ æ»¿è‡‰åš´è‚…çš„ä»”ç´°æŸ¥çœ‹xc_placeçš„æƒ…æ³ï¼Œ",
+        "ä½ ä»”ç´°è§€å¯Ÿäº†xc_placeçš„æƒ…æ³ï¼Œ",
+        "ä½ åœ¨xc_placeä¾†å›çš„å·¡æŸ¥äº†å¹¾éï¼Œ",
+        "ä½ ç´°å¿ƒç•™æ„xc_placeä¸Šçš„é™Œç”Ÿé¢å­”ï¼Œ",
+        "ä½ å‘è¡—ä¸Šçš„äººæ‰“æ¢äº†xc_placeè¿‘æ—¥çš„æƒ…æ³ï¼Œ",
+        "ä½ ç•™æ„äº†ä¸‹xc_placeè¿‘ä¾†çš„è®ŠåŒ–ï¼Œ",
 });
 string *xc_msg2 = ({
-        "¾İÄãµÄ¹Û²ìÀ´¿´£¬xc_place£¬",
-        "ÒÔÏÖÔÚµÄÇé¿öÀ´¿´£¬xc_place",
-        "Äã¾õµÃxc_place",
-        "ÄãÄ¬Ä¬ÔÚĞÄÀï¼ÇÏÂ---xc_place",
+        "æ“šä½ çš„è§€å¯Ÿä¾†çœ‹ï¼Œxc_placeï¼Œ",
+        "ä»¥ç¾åœ¨çš„æƒ…æ³ä¾†çœ‹ï¼Œxc_place",
+        "ä½ è¦ºå¾—xc_place",
+        "ä½ é»˜é»˜åœ¨å¿ƒè£¡è¨˜ä¸‹---xc_place",
 });
 
 string *xc_msg3 = ({
-        "Ã»ÓĞ·¢ÏÖÈÎºÎ¿ÉÒÉÖ®´¦¡£",
-        "Ò»ÇĞÕı³£¡£",
-        "Ã»ÓĞÈÎºÎÒì³£µÄ¼£Ïó¡£",
-        "Ò»ÇĞÌ«Æ½¡£",
-        "Ò»ÇĞÏà°²ÎŞÊÂ¡£",
+        "æ²’æœ‰ç™¼ç¾ä»»ä½•å¯ç–‘ä¹‹è™•ã€‚",
+        "ä¸€åˆ‡æ­£å¸¸ã€‚",
+        "æ²’æœ‰ä»»ä½•ç•°å¸¸çš„è·¡è±¡ã€‚",
+        "ä¸€åˆ‡å¤ªå¹³ã€‚",
+        "ä¸€åˆ‡ç›¸å®‰ç„¡äº‹ã€‚",
 });
 
 string look_it(object me);
 void create()
 {
-        set_name(HIG"Ñ²³ÇÑüÅÆ"NOR, ({ "yao pai","pai" }) );
+        set_name(HIG"å·¡åŸè…°ç‰Œ"NOR, ({ "yao pai","pai" }) );
         set_weight(600);
         if( clonep() )                 
         set_default_object(__FILE__);
         else {
-                set("unit", "¿é");
-                set("long", "ÕâÊÇÒ»¿é"HIW"ÊôÓÚ°ïÅÉ"NOR"µÄÑ²³ÇÑüÅÆ£¬´øÉÏËü¿ÉÒÔÑ²Âß(xunluo)°ïÅÉµØÅÌ¡£\n");
+                set("unit", "å¡Š");
+                set("long", "é€™æ˜¯ä¸€å¡Š"HIW"å±¬äºå¹«æ´¾"NOR"çš„å·¡åŸè…°ç‰Œï¼Œå¸¶ä¸Šå®ƒå¯ä»¥å·¡é‚(xunluo)å¹«æ´¾åœ°ç›¤ã€‚\n");
                 set("value", 0);
              }   
 }
@@ -56,10 +56,10 @@ int do_xunluo(object me, object ob)
         renwu=query("bunch_quest", me);
         
         if( !mapp(renwu) )
-                return notify_fail("ÄãÄ¿Ç°Ã»ÓĞÁìÈ¡ÈÎºÎ°ïÅÉÈÎÎñ£¡\n");
+                return notify_fail("ä½ ç›®å‰æ²’æœ‰é ˜å–ä»»ä½•å¹«æ´¾ä»»å‹™ï¼\n");
         
         if( renwu["id"]!="xc")
-                return notify_fail("ÀÏ´óÃ»ÓĞÈÃÄãÀ´Ñ²³Ç°¡£¡\n");
+                return notify_fail("è€å¤§æ²’æœ‰è®“ä½ ä¾†å·¡åŸå•Šï¼\n");
         
         the_place = base_name(environment(this_player()));
         if (member_array(the_place,renwu["place"]) != -1)
@@ -68,10 +68,10 @@ int do_xunluo(object me, object ob)
                 msg2 = replace_string(xc_msg2[random(sizeof(xc_msg2))],"xc_place",the_place->short());
                 msg3 = xc_msg3[random(sizeof(xc_msg3))];
                 renwu["place"] -= ({ the_place });
-                tell_object(me, msg1+msg2+msg3+"\nÂíÉÏÈ¥Ñ²²éÏÂÒ»¸öµØ·½°É£¡\n");
+                tell_object(me, msg1+msg2+msg3+"\né¦¬ä¸Šå»å·¡æŸ¥ä¸‹ä¸€å€‹åœ°æ–¹å§ï¼\n");
         }
         else
-                tell_object(me,"ÄãÃ»±ØÒªÔÚÕâÀïÑ²Âß°¡£¡\n");
+                tell_object(me,"ä½ æ²’å¿…è¦åœ¨é€™è£¡å·¡é‚å•Šï¼\n");
                 
         return 1;
 }

@@ -5,17 +5,17 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIR "ÑªÖ®½û¼É" NOR, ({ "blood taboo", "blood", "taboo" }));
+        set_name(HIR "è¡€ä¹‹ç¦å¿Œ" NOR, ({ "blood taboo", "blood", "taboo" }));
         set_weight(30);
 
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "Ò»Æ¿Ó¨ÌÞÍ¸ÑªÖ®½û¼É£¬É¢Éä³öÑ¤Ä¿µÄ¹â²Ê¡£\n"
-                            "Ëû¿ÉÒÔÓÃÀ´Ö±½Ó½â³ý(jiechu)ÄãÓëÄ§»ÃÊÞÖ®¼äÇ©¶©µÄÑªÖ®ÃËÔ¼¡£\n" NOR);
+                set("long", HIW "ä¸€ç“¶ç‘©å‰”é€è¡€ä¹‹ç¦å¿Œï¼Œæ•£å°„å‡ºçµ¢ç›®çš„å…‰å½©ã€‚\n"
+                            "ä»–å¯ä»¥ç”¨ä¾†ç›´æŽ¥è§£é™¤(jiechu)ä½ èˆ‡é­”å¹»ç¸ä¹‹é–“ç°½è¨‚çš„è¡€ä¹‹ç›Ÿç´„ã€‚\n" NOR);
                 set("value", 1);
                 set("no_sell", 1);
-                set("unit", "Æ¿");
+                set("unit", "ç“¶");
         }
         set("auto_load", 1);
         setup();
@@ -35,14 +35,14 @@ int do_remove(string arg)
         me = this_player();
 
         if( !query("warcraft", me) )
-                return notify_fail("ÄãÃ»ÓÐºÍÈÎºÎÒ»Ö»Ä§»ÃÊÞÇ©¶©ÆõÔ¼£¬ÎÞÐè½â³ýÑªÖ®ÃËÔ¼¡£\n");
+                return notify_fail("ä½ æ²’æœ‰å’Œä»»ä½•ä¸€åªé­”å¹»ç¸ç°½è¨‚å¥‘ç´„ï¼Œç„¡éœ€è§£é™¤è¡€ä¹‹ç›Ÿç´„ã€‚\n");
         
         filename = "/data/warcraft/" + query("id", me);
         if (file_size(filename + ".c") > 0) 
         {
                 if (warcraft = find_object(filename)) 
                 {
-                        tell_object(me, HIR "ÄãÓë" + warcraft->name() + HIR "Ö®¼äµÄÑªÖ®ÃËÔ¼ÒÑ¾­½â³ý¡£\n" NOR);
+                        tell_object(me, HIR "ä½ èˆ‡" + warcraft->name() + HIR "ä¹‹é–“çš„è¡€ä¹‹ç›Ÿç´„å·²ç¶“è§£é™¤ã€‚\n" NOR);
                         destruct(warcraft); 
                 }
                 

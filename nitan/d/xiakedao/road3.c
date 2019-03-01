@@ -1,13 +1,13 @@
-// /d/xiakedao/road3.c ���͵� ɽ·3
+// /d/xiakedao/road3.c 俠客島 山路3
 
 inherit ROOM;
 void create()
 {
-        set("short", "ɽ·");
+        set("short", "山路");
         set("long", @LONG
-����ͨ��ɽ����С·��·���Ӳݴ�����������һЩ��֪����Ұ
-�������ܾ����ĵ�û����������������������һ��ɽҰ�ķҷ�ֱ��
-���顣
+這是通往山頂的小路，路旁雜草叢生，夾雜著一些不知名的野
+花。四周靜悄悄地沒有人聲。你深深吸口氣，一陣山野的芬芳直入
+心扉。
 LONG );
         set("outdoors", "xiakedao");
         set("exits", ([

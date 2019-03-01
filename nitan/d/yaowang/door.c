@@ -3,13 +3,13 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "´óÃÅ");
+        set("short", "å¤§é–€");
         set("long", @LONG
-ÕâÀïÊÇÒ»´¦×¯Õý¸ß´óÊ¯ÃÅ£¬ÓëÖÚ²»Í¬µÄÊÇÃÅÁ½ÅÔ¸÷°Ú×ÅÒ»¸ö
-ÇàÊ¯µñ¿ÌµÄÎÔ»¢£¬ÃÅÉÏ»¹ÓÐ²»ÉÙµÄÐ¡¿×£¬Ò²²»ÖªµÀÊÇ×öÊ²Ã´ÓÃµÄ£¬
-ÃÅµÄÕýÉÏ·½µÄÇ½ÀïÇ¶×ÅÒ»¿éÊ¯°å£¬Ê¯°åÉÏ¿Ì×Å¡°Ò©Íõ¹È¡±Èý¸ö²Ô
-¾¢µÄ´ó×Ö£¬Ô­À´ÕâÀï¾ÍÊÇÁîÎäÁÖÈËÊ¿±äÉ«µÄÒ©Íõ¹È¡£ÔÚÃÅµÄÓÒ±ß
-Á¢×ÅÒ»¿éÊ¯±®(bei)¡£
+é€™è£¡æ˜¯ä¸€è™•èŽŠæ­£é«˜å¤§çŸ³é–€ï¼Œèˆ‡çœ¾ä¸åŒçš„æ˜¯é–€å…©æ—å„æ“ºè‘—ä¸€å€‹
+é’çŸ³é›•åˆ»çš„è‡¥è™Žï¼Œé–€ä¸Šé‚„æœ‰ä¸å°‘çš„å°å­”ï¼Œä¹Ÿä¸çŸ¥é“æ˜¯åšä»€éº¼ç”¨çš„ï¼Œ
+é–€çš„æ­£ä¸Šæ–¹çš„ç‰†è£¡åµŒè‘—ä¸€å¡ŠçŸ³æ¿ï¼ŒçŸ³æ¿ä¸Šåˆ»è‘—â€œè—¥çŽ‹è°·â€ä¸‰å€‹è’¼
+å‹çš„å¤§å­—ï¼ŒåŽŸä¾†é€™è£¡å°±æ˜¯ä»¤æ­¦æž—äººå£«è®Šè‰²çš„è—¥çŽ‹è°·ã€‚åœ¨é–€çš„å³é‚Š
+ç«‹è‘—ä¸€å¡ŠçŸ³ç¢‘(bei)ã€‚
 LONG
         );
         set("exits", ([
@@ -19,20 +19,20 @@ LONG
         "south" : __DIR__"tiandi2",
 ]));
         set("item_desc", ([
-                "bei" :  HIW"\n     ©³©¥©¥©·\n"+
-                   HIW"     ©§ "HIB"Ò©"HIW" ©§\n"+
-                   HIW"     ©§ "HIB"Íõ"HIW" ©§\n"+
-                   HIW"     ©§ "HIB"¹È"HIW" ©§\n"+
-                   HIW"     ©§ "HIB"ÖØ"HIW" ©§\n"+
-                   HIW"     ©§ "HIB"µØ"HIW" ©§\n"+
-                   HIW"     ©§ "HIB"ÉÃ"HIW" ©§\n"+
-                   HIW"     ©§ "HIB"´³"HIW" ©§\n"+
-                   HIW"     ©§ "HIB"Õß"HIW" ©§\n"+
-                   HIW"     ©§    ©§\n"+
-                   HIW"     ©§ "HIR"É±"HIW" ©§\n"+
-                   HIW"     ©§ "HIR"ÎÞ"HIW" ©§\n"+
-                   HIW"     ©§ "HIR"Éâ"HIW" ©§\n"+
-                   HIW"     ©»©¥©¥©¿\n"NOR,
+                "bei" :  HIW"\n     â–¡â–¡â–¡â–¡\n"+
+                   HIW"     â–¡ "HIB"è—¥"HIW" â–¡\n"+
+                   HIW"     â–¡ "HIB"çŽ‹"HIW" â–¡\n"+
+                   HIW"     â–¡ "HIB"è°·"HIW" â–¡\n"+
+                   HIW"     â–¡ "HIB"é‡"HIW" â–¡\n"+
+                   HIW"     â–¡ "HIB"åœ°"HIW" â–¡\n"+
+                   HIW"     â–¡ "HIB"æ“…"HIW" â–¡\n"+
+                   HIW"     â–¡ "HIB"é—–"HIW" â–¡\n"+
+                   HIW"     â–¡ "HIB"è€…"HIW" â–¡\n"+
+                   HIW"     â–¡    â–¡\n"+
+                   HIW"     â–¡ "HIR"æ®º"HIW" â–¡\n"+
+                   HIW"     â–¡ "HIR"ç„¡"HIW" â–¡\n"+
+                   HIW"     â–¡ "HIR"èµ¦"HIW" â–¡\n"+
+                   HIW"     â–¡â–¡â–¡â–¡\n"NOR,
         ]));
         set("outdoors", "yaowang");
 
@@ -42,7 +42,7 @@ LONG
 int valid_leave(object me, string dir)
 {
         if( dir=="north" 
-         && query("party/party_name", me) != "Ò©Íõ¹È" )
-                return notify_fail(WHT"Çë¿´Ê¯±®£¡\n"NOR);
+         && query("party/party_name", me) != "è—¥çŽ‹è°·" )
+                return notify_fail(WHT"è«‹çœ‹çŸ³ç¢‘ï¼\n"NOR);
         return ::valid_leave(me, dir);
 }

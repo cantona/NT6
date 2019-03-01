@@ -6,10 +6,10 @@ int do_dan(object me,object obj);
 int do_yao(object me,object obj);
 void create()
 {
-        set("short", HIY"Á¶µ¤·¿"NOR);
+        set("short", HIY"ç…‰ä¸¹æˆ¿"NOR);
         set("long", @LONG
-ÕâÀïÊÇ»ªÙ¢µÄÁ¶µ¤ÊÒ,·¿¼äÖĞÑë·Å×ÅÒ»¸öÁ¶µ¤Â¯,
-Íæ¼ÒÃÇ¿ÉÒÔÄÃ×Å×Ô¼ºÍÚ¾òÀ´µÄ²İÒ©Á·³ö×Ô¼ºËùĞèµÄµ¤µ¤Ò©!
+é€™è£¡æ˜¯è¯ä½—çš„ç…‰ä¸¹å®¤,æˆ¿é–“ä¸­å¤®æ”¾è‘—ä¸€å€‹ç…‰ä¸¹çˆ,
+ç©å®¶å€‘å¯ä»¥æ‹¿è‘—è‡ªå·±æŒ–æ˜ä¾†çš„è‰è—¥ç·´å‡ºè‡ªå·±æ‰€éœ€çš„ä¸¹ä¸¹è—¥!
 LONG
         );
         set("exits", ([
@@ -34,13 +34,13 @@ int do_fangdan(string arg)
     object ob;
     object me = this_player();
 
-    if(!arg) return notify_fail("ÄãÒª·ÅÊ²Ã´Ò©½øÈ¥£¿\n");
+    if(!arg) return notify_fail("ä½ è¦æ”¾ä»€éº¼è—¥é€²å»ï¼Ÿ\n");
 
     if( !query_temp("zhuyao", me) )
-    return notify_fail("Á·µ¤ÒªÏÈ·ÅÖ÷Ò©,Òª²»È»Á·²»³öºÃµ¤!\n");
+    return notify_fail("ç·´ä¸¹è¦å…ˆæ”¾ä¸»è—¥,è¦ä¸ç„¶ç·´ä¸å‡ºå¥½ä¸¹!\n");
 
     if( !objectp(obj = present(arg, me)) )
-    return notify_fail("ÄãÉíÉÏ²¢Ã»ÓĞÕâÑù¶«Î÷!\n");
+    return notify_fail("ä½ èº«ä¸Šä¸¦æ²’æœ‰é€™æ¨£æ±è¥¿!\n");
 
     return do_dan(me, obj);
 
@@ -52,13 +52,13 @@ int do_zhuyao(string arg)
     object ob;
     object me = this_player();
 
-    if(!arg) return notify_fail("ÄãÒªÄÃÊ²Ã´¶«Î÷µ±Ö÷Ò©£¿\n");
+    if(!arg) return notify_fail("ä½ è¦æ‹¿ä»€éº¼æ±è¥¿ç•¶ä¸»è—¥ï¼Ÿ\n");
 
     if( !objectp(obj = present(arg, me)) )
-    return notify_fail("ÄãÉíÉÏ²¢Ã»ÓĞÕâÑù¶«Î÷!\n");
+    return notify_fail("ä½ èº«ä¸Šä¸¦æ²’æœ‰é€™æ¨£æ±è¥¿!\n");
 
   if(me->is_busy())
-  return notify_fail("ÄúÏÖÔÚÕıÃ¦,µÈÒ»ÏÂÔÙÍÚ°É!\n");
+  return notify_fail("æ‚¨ç¾åœ¨æ­£å¿™,ç­‰ä¸€ä¸‹å†æŒ–å§!\n");
 
 
     return do_yao(me, obj);
@@ -78,24 +78,24 @@ int do_liandan(string arg)
     zjb=query_temp("zjb_dan", me);
     liandan = me->query_skill("liandan-shu",1);
 
-    if (!arg) return notify_fail("ÄãÒªÁ·ÄÄ¸öÖÖÀàµÄµ¤£¿\n");
+    if (!arg) return notify_fail("ä½ è¦ç·´å“ªå€‹ç¨®é¡çš„ä¸¹ï¼Ÿ\n");
 
     if( !query_temp("liandan", me) )
-    return notify_fail("ÄãÃ»·Åµ¤,ÄãÁ·¸öÆ¨!\n");
+    return notify_fail("ä½ æ²’æ”¾ä¸¹,ä½ ç·´å€‹å±!\n");
 
 
-// By zjb@ty ÒÔÏÂ¶¼ÊÇÖÎÁÆ²Ğ·ÏµÄÒ©µÄÁ··¨
+// By zjb@ty ä»¥ä¸‹éƒ½æ˜¯æ²»ç™‚æ®˜å»¢çš„è—¥çš„ç·´æ³•
     if (arg == "shoubi") {
     addn("combat_exp", 1000, me);
     delete_temp("zhuyaoname", me);
     delete_temp("danname", me);
 
     
-// By zjb@ty Á¶µ¤µÄ¶îÍâ½±Àø!
+// By zjb@ty ç…‰ä¸¹çš„é¡å¤–çå‹µ!
     addn("combat_exp", zjb*1000+random(1000), me);
     addn("potential", zjb*100+random(500), me);
     me->start_busy(5);
-    write(HIR"ÄãÔÚÁ¶µ¤µÄÊ±ºò²»Öª²»¾õ¾­ÑéÒ²Ëæ×ÅÉÏÈ¥ÁË!\n"NOR);
+    write(HIR"ä½ åœ¨ç…‰ä¸¹çš„æ™‚å€™ä¸çŸ¥ä¸è¦ºç¶“é©—ä¹Ÿéš¨è‘—ä¸Šå»äº†!\n"NOR);
 
     if (shoubi==32 && zhuyao==1) {
     delete_temp("liandan", me);
@@ -103,7 +103,7 @@ int do_liandan(string arg)
     dan=new("/d/zjb/yao/shoubi1");
     set("zhuren", ""+query("id", me)+"", dan);
     dan->move(me);
-    return notify_fail(HIG"ÄãÁ·³öÁËÖÎÁÆ±ÛÉËµÄÁ¼Ò©ÉËÒ©Íè!\n"NOR);
+    return notify_fail(HIG"ä½ ç·´å‡ºäº†æ²»ç™‚è‡‚å‚·çš„è‰¯è—¥å‚·è—¥ä¸¸!\n"NOR);
     }
     if (shoubi==26 && zhuyao==2) {
     delete_temp("liandan", me);
@@ -112,7 +112,7 @@ int do_liandan(string arg)
     dan = new("/d/zjb/yao/shoubi2");
     set("zhuren", ""+query("id", me)+"", dan);
     dan->move(me);
-    return notify_fail(HIB"ÄãÁ·³öÁËÖÎÁÆ±ÛÉËµÄÁ¼Ò©²¹ÉËÍè!\n"NOR);
+    return notify_fail(HIB"ä½ ç·´å‡ºäº†æ²»ç™‚è‡‚å‚·çš„è‰¯è—¥è£œå‚·ä¸¸!\n"NOR);
     }
     if (shoubi==27 && zhuyao==3) {
     delete_temp("liandan", me);
@@ -121,7 +121,7 @@ int do_liandan(string arg)
     dan = new("/d/zjb/yao/shoubi3");
     set("zhuren", ""+query("id", me)+"", dan);
     dan->move(me);
-    return notify_fail(HIG"ÄãÁ·³öÁËÖÎÁÆ±ÛÉËµÄÁ¼Ò©ÏÈ¸´ÌÀ!\n"NOR);
+    return notify_fail(HIG"ä½ ç·´å‡ºäº†æ²»ç™‚è‡‚å‚·çš„è‰¯è—¥å…ˆå¾©æ¹¯!\n"NOR);
     }
     if (shoubi==33 && zhuyao==4) {
     delete_temp("liandan", me);
@@ -130,7 +130,7 @@ int do_liandan(string arg)
     dan = new("/d/zjb/yao/shoubi4");
     set("zhuren", ""+query("id", me)+"", dan);
     dan->move(me);
-    return notify_fail(HIG"ÄãÁ·³öÁËÖÎÁÆ±ÛÉËµÄÁ¼Ò©¸´·½Ñª½ßôú!\n"NOR);
+    return notify_fail(HIG"ä½ ç·´å‡ºäº†æ²»ç™‚è‡‚å‚·çš„è‰¯è—¥å¾©æ–¹è¡€ç«­é…Š!\n"NOR);
     }
 
     delete_temp("liandan", me);
@@ -139,7 +139,7 @@ int do_liandan(string arg)
     dan = new("/d/zjb/yao/chayao");
     set("zhuren", ""+query("id", me)+"", dan);
     dan->move(me);
-    return notify_fail(HIW"ÄãµÄÅä·½ºÃÏó²»¶Ô,Á·³öÒ»¸öÎŞÃûÒ©Æ·!\n"NOR);
+    return notify_fail(HIW"ä½ çš„é…æ–¹å¥½è±¡ä¸å°,ç·´å‡ºä¸€å€‹ç„¡åè—¥å“!\n"NOR);
     }
 
     if (arg == "tui") {
@@ -147,11 +147,11 @@ int do_liandan(string arg)
     delete_temp("zhuyaoname", me);
     delete_temp("danname", me);
     
-// By zjb@ty Á¶µ¤µÄ¶îÍâ½±Àø!
+// By zjb@ty ç…‰ä¸¹çš„é¡å¤–çå‹µ!
     addn("combat_exp", zjb*1000+random(1000), me);
     addn("potential", zjb*100+random(500), me);
     me->start_busy(5);
-    write(HIR"ÄãÔÚÁ¶µ¤µÄÊ±ºò²»Öª²»¾õ¾­ÑéÒ²Ëæ×ÅÉÏÈ¥ÁË!\n"NOR);
+    write(HIR"ä½ åœ¨ç…‰ä¸¹çš„æ™‚å€™ä¸çŸ¥ä¸è¦ºç¶“é©—ä¹Ÿéš¨è‘—ä¸Šå»äº†!\n"NOR);
 
     if (tui==74 && zhuyao==11) {
     delete_temp("liandan", me);
@@ -160,7 +160,7 @@ int do_liandan(string arg)
     dan = new("/d/zjb/yao/tui1");
     set("zhuren", ""+query("id", me)+"", dan);
     dan->move(me);
-    return notify_fail(HIC"ÄãÁ·³öÁËÖÎÁÆÍÈÉËµÄÁ¼Ò©--»îÑªÖ¹Í´ÌÀ!\n"NOR);
+    return notify_fail(HIC"ä½ ç·´å‡ºäº†æ²»ç™‚è…¿å‚·çš„è‰¯è—¥--æ´»è¡€æ­¢ç—›æ¹¯!\n"NOR);
     }
     if (tui==151 && zhuyao==12) {
     delete_temp("liandan", me);
@@ -169,7 +169,7 @@ int do_liandan(string arg)
     dan = new("/d/zjb/yao/tui2");
     set("zhuren", ""+query("id", me)+"", dan);
     dan->move(me);
-    return notify_fail(HIG"ÄãÁ·³öÁËÖÎÁÆÍÈÉËµÄÁ¼Ò©--ËÎÊÏ½Ó¹ÇÉ¢!\n"NOR);
+    return notify_fail(HIG"ä½ ç·´å‡ºäº†æ²»ç™‚è…¿å‚·çš„è‰¯è—¥--å®‹æ°æ¥éª¨æ•£!\n"NOR);
     }
 
     delete_temp("liandan", me);
@@ -178,7 +178,7 @@ int do_liandan(string arg)
     dan = new("/d/zjb/yao/chayao");
     set("zhuren", ""+query("id", me)+"", dan);
     dan->move(me);
-    return notify_fail(HIW"ÄãµÄÅä·½ºÃÏó²»¶Ô,Á·³öÒ»¸öÎŞÃûÒ©Æ·!\n"NOR);
+    return notify_fail(HIW"ä½ çš„é…æ–¹å¥½è±¡ä¸å°,ç·´å‡ºä¸€å€‹ç„¡åè—¥å“!\n"NOR);
     }
     
     if (arg == "all") {
@@ -186,11 +186,11 @@ int do_liandan(string arg)
     delete_temp("zhuyaoname", me);
     delete_temp("danname", me);
 
-// By zjb@ty Á¶µ¤µÄ¶îÍâ½±Àø!
+// By zjb@ty ç…‰ä¸¹çš„é¡å¤–çå‹µ!
     addn("combat_exp", zjb*1000+random(1000), me);
     addn("potential", zjb*100+random(500), me);
     me->start_busy(5);
-    write(HIR"ÄãÔÚÁ¶µ¤µÄÊ±ºò²»Öª²»¾õ¾­ÑéÒ²Ëæ×ÅÉÏÈ¥ÁË!\n"NOR);
+    write(HIR"ä½ åœ¨ç…‰ä¸¹çš„æ™‚å€™ä¸çŸ¥ä¸è¦ºç¶“é©—ä¹Ÿéš¨è‘—ä¸Šå»äº†!\n"NOR);
 
     if (all==51 && zhuyao==21) {
     delete_temp("liandan", me);
@@ -199,7 +199,7 @@ int do_liandan(string arg)
     dan = new("/d/zjb/yao/all1");
     set("zhuren", ""+query("id", me)+"", dan);
     dan->move(me);
-    return notify_fail(HIG"ÄãÁ·³öÁËÁÆÉËÊ¥Ò©--ìî¸¯Éú¼¡É¢!\n"NOR);
+    return notify_fail(HIG"ä½ ç·´å‡ºäº†ç™‚å‚·è–è—¥--è¢ªè…ç”Ÿè‚Œæ•£!\n"NOR);
     }
     if (all==64 && zhuyao==22) {
     delete_temp("liandan", me);
@@ -208,7 +208,7 @@ int do_liandan(string arg)
     dan = new("/d/zjb/yao/all2");
     set("zhuren", ""+query("id", me)+"", dan);
     dan->move(me);
-    return notify_fail(HIG"ÄãÁ·³öÁËÁÆÉËÊ¥Ò©--ÆßÀåµ¤!\n"NOR);
+    return notify_fail(HIG"ä½ ç·´å‡ºäº†ç™‚å‚·è–è—¥--ä¸ƒå˜ä¸¹!\n"NOR);
     }
     if (all==40 && zhuyao==23) {
     delete_temp("liandan", me);
@@ -217,7 +217,7 @@ int do_liandan(string arg)
     dan = new("/d/zjb/yao/all3");
     set("zhuren", ""+query("id", me)+"", dan);
     dan->move(me);
-    return notify_fail(HIG"ÄãÁ·³öÁËÁÆÉËÊ¥Ò©--×³½îĞø¹Çµ¤!\n"NOR);
+    return notify_fail(HIG"ä½ ç·´å‡ºäº†ç™‚å‚·è–è—¥--å£¯ç­‹çºŒéª¨ä¸¹!\n"NOR);
     }
     if (all==55 && zhuyao==24) {
     delete_temp("liandan", me);
@@ -226,7 +226,7 @@ int do_liandan(string arg)
     dan = new("/d/zjb/yao/all4");
     set("zhuren", ""+query("id", me)+"", dan);
     dan->move(me);
-    return notify_fail(HIG"ÄãÁ·³öÁËÁÆÉËÊ¥Ò©--ÖìÉ°Ã»Ò©É¢!\n"NOR);
+    return notify_fail(HIG"ä½ ç·´å‡ºäº†ç™‚å‚·è–è—¥--æœ±ç ‚æ²’è—¥æ•£!\n"NOR);
     }
     
     delete_temp("liandan", me);
@@ -235,21 +235,21 @@ int do_liandan(string arg)
     dan = new("/d/zjb/yao/chayao");
     set("zhuren", ""+query("id", me)+"", dan);
     dan->move(me);
-    return notify_fail(HIW"ÄãµÄÅä·½ºÃÏó²»¶Ô,Á·³öÒ»¸öÎŞÃûÒ©Æ·!\n"NOR);
+    return notify_fail(HIW"ä½ çš„é…æ–¹å¥½è±¡ä¸å°,ç·´å‡ºä¸€å€‹ç„¡åè—¥å“!\n"NOR);
     }
 
-// By zjb@ty ÒÔÏÂÊÇËæ»úÁ¶µ¤µÄ³ÌĞò!    
+// By zjb@ty ä»¥ä¸‹æ˜¯éš¨æ©Ÿç…‰ä¸¹çš„ç¨‹åº!    
     if (arg == "random") {
     addn("combat_exp", 1000, me);
     delete_temp("zhuyaoname", me);
     delete_temp("danname", me);
     
-// By zjb@ty Á¶µ¤µÄ¶îÍâ½±Àø!
+// By zjb@ty ç…‰ä¸¹çš„é¡å¤–çå‹µ!
     me->improve_skill("liandan-shu", me->query_int()*300+random(100));
     addn("combat_exp", zjb*1000+random(1000), me);
     addn("potential", zjb*100+random(500), me);
     me->start_busy(5);
-    write(HIR"ÄãÔÚÁ¶µ¤µÄÊ±ºò²»Öª²»¾õ¾­ÑéÒ²Ëæ×ÅÉÏÈ¥ÁË!\n"NOR);
+    write(HIR"ä½ åœ¨ç…‰ä¸¹çš„æ™‚å€™ä¸çŸ¥ä¸è¦ºç¶“é©—ä¹Ÿéš¨è‘—ä¸Šå»äº†!\n"NOR);
 
     if ( liandan > 500 && zjb > 15) {
     if ( zjb>15 && zjb<20 && all2 < 211 &&all2 > 100 
@@ -260,7 +260,7 @@ int do_liandan(string arg)
     dan = new("/d/zjb/yao/dan11");
     set("zhuren", ""+query("id", me)+"", dan);
     dan->move(me);
-    return notify_fail(BLINK HIR"Äã¾¹È»Á·³öÁË¿ÉÒÔÊ¹ÈËÖØÉúµÄ»¹»êµ¤!!!\n"NOR);
+    return notify_fail(BLINK HIR"ä½ ç«Ÿç„¶ç·´å‡ºäº†å¯ä»¥ä½¿äººé‡ç”Ÿçš„é‚„é­‚ä¸¹!!!\n"NOR);
     }
     }
 
@@ -274,7 +274,7 @@ int do_liandan(string arg)
     dan = new("/d/zjb/yao/dan19");
     set("zhuren", ""+query("id", me)+"", dan);
     dan->move(me);
-    return notify_fail(HIC"ÄãÁ·³öÁË¿ÉÒÔÔö¼ÓÈ«²¿Îä¹¦µÄ¼¼ÄÜµ¤!!!\n"NOR);
+    return notify_fail(HIC"ä½ ç·´å‡ºäº†å¯ä»¥å¢åŠ å…¨éƒ¨æ­¦åŠŸçš„æŠ€èƒ½ä¸¹!!!\n"NOR);
     }
 
     if ( zjb < 15 && zjb>3 && all2 < 200 && all2 > 30 
@@ -285,7 +285,7 @@ int do_liandan(string arg)
     dan = new("/d/zjb/yao/dan12");
     set("zhuren", ""+query("id", me)+"", dan);
     dan->move(me);
-    return notify_fail(HIB"ÄãÁ·³öÁË¿ÉÒÔÊ¹ÈË·µÀÏ»¹Í¯µÄÏÉµ¤!!!\n"NOR);
+    return notify_fail(HIB"ä½ ç·´å‡ºäº†å¯ä»¥ä½¿äººè¿”è€é‚„ç«¥çš„ä»™ä¸¹!!!\n"NOR);
     }
 
     if ( zjb < 15 && zjb>10 && all2 < 150 && all2 > 40 
@@ -296,7 +296,7 @@ int do_liandan(string arg)
     dan = new("/d/zjb/yao/dan6");
     set("zhuren", ""+query("id", me)+"", dan);
     dan->move(me);
-    return notify_fail(HIR"ÄãÁ·³öÁË¿ÉÒÔÔö¼ÓÏÈÌì±ÛÁ¦µÄ±ÛÁ¦µ¤!!!\n"NOR);
+    return notify_fail(HIR"ä½ ç·´å‡ºäº†å¯ä»¥å¢åŠ å…ˆå¤©è‡‚åŠ›çš„è‡‚åŠ›ä¸¹!!!\n"NOR);
     }
 
     if ( zjb < 15 && zjb>10 && all2 < 150 && all2 > 40 
@@ -307,7 +307,7 @@ int do_liandan(string arg)
     dan = new("/d/zjb/yao/dan7");
     set("zhuren", ""+query("id", me)+"", dan);
     dan->move(me);
-    return notify_fail(HIR"ÄãÁ·³öÁË¿ÉÒÔÔö¼ÓÏÈÌìÉí·¨µÄÉí·¨µ¤!!!\n"NOR);
+    return notify_fail(HIR"ä½ ç·´å‡ºäº†å¯ä»¥å¢åŠ å…ˆå¤©èº«æ³•çš„èº«æ³•ä¸¹!!!\n"NOR);
     }
 
     if ( zjb < 15 && zjb>10 && all2 < 150 && all2 > 40 
@@ -318,7 +318,7 @@ int do_liandan(string arg)
     dan = new("/d/zjb/yao/dan8");
     set("zhuren", ""+query("id", me)+"", dan);
     dan->move(me);
-    return notify_fail(HIR"ÄãÁ·³öÁË¿ÉÒÔÔö¼ÓÏÈÌì¸ù¹ÇµÄ¸ù¹Çµ¤!!!\n"NOR);
+    return notify_fail(HIR"ä½ ç·´å‡ºäº†å¯ä»¥å¢åŠ å…ˆå¤©æ ¹éª¨çš„æ ¹éª¨ä¸¹!!!\n"NOR);
     }
 
     if ( zjb < 15 && zjb>10 && all2 < 150 && all2 > 40 
@@ -329,7 +329,7 @@ int do_liandan(string arg)
     dan = new("/d/zjb/yao/dan9");
     set("zhuren", ""+query("id", me)+"", dan);
     dan->move(me);
-    return notify_fail(HIR"ÄãÁ·³öÁË¿ÉÒÔÔö¼ÓÏÈÌìÎòĞÔµÄÎòĞÔµ¤!!!\n"NOR);
+    return notify_fail(HIR"ä½ ç·´å‡ºäº†å¯ä»¥å¢åŠ å…ˆå¤©æ‚Ÿæ€§çš„æ‚Ÿæ€§ä¸¹!!!\n"NOR);
     }
 
    if ( zjb < 15 && zjb>10 && all2 < 150 && all2 > 40 
@@ -340,7 +340,7 @@ int do_liandan(string arg)
     dan = new("/d/zjb/yao/dan23");
     set("zhuren", ""+query("id", me)+"", dan);
     dan->move(me);
-    return notify_fail(HIR"ÄãÁ·³öÁË¿ÉÒÔÔö¼ÓÆæ¹¦µÄÆæ¹¦Íè!!!\n"NOR);
+    return notify_fail(HIR"ä½ ç·´å‡ºäº†å¯ä»¥å¢åŠ å¥‡åŠŸçš„å¥‡åŠŸä¸¸!!!\n"NOR);
     }
 
     if ( zjb < 15 && zjb>10 && all2 < 150 && all2 > 40 
@@ -351,7 +351,7 @@ int do_liandan(string arg)
     dan = new("/d/zjb/yao/dan10");
     set("zhuren", ""+query("id", me)+"", dan);
     dan->move(me);
-    return notify_fail(HIR"ÄãÁ·³öÁË¿ÉÒÔÔö¼ÓÏÈÌìÈİÃ²µÄÑøÑÕµ¤!!\n"NOR);
+    return notify_fail(HIR"ä½ ç·´å‡ºäº†å¯ä»¥å¢åŠ å…ˆå¤©å®¹è²Œçš„é¤Šé¡ä¸¹!!\n"NOR);
     }
 
     }
@@ -363,7 +363,7 @@ int do_liandan(string arg)
     dan = new("/d/city/npc/obj/yangjing");
     set("zhuren", ""+query("id", me)+"", dan);
     dan->move(me);
-    return notify_fail(HIY"ÄãÁ·³öÁËÁÆ¾«ÓÃµÄÑø¾«µ¤!\n"NOR);
+    return notify_fail(HIY"ä½ ç·´å‡ºäº†ç™‚ç²¾ç”¨çš„é¤Šç²¾ä¸¹!\n"NOR);
     }
 
 
@@ -374,7 +374,7 @@ int do_liandan(string arg)
     dan = new("/d/city/npc/obj/jinchuang");
     set("zhuren", ""+query("id", me)+"", dan);
     dan->move(me);
-    return notify_fail(HIY"ÄãÁ·³öÁËÁÆÉËÓÃµÄ½ğ´´Ò©!\n"NOR);
+    return notify_fail(HIY"ä½ ç·´å‡ºäº†ç™‚å‚·ç”¨çš„é‡‘å‰µè—¥!\n"NOR);
     }
 
     if ( zjb < 8 && zjb>3 && all2 < 100 && all2 > 30 && random(10)>4
@@ -385,7 +385,7 @@ int do_liandan(string arg)
     dan = new("/d/zjb/yao/dan2");
     set("zhuren", ""+query("id", me)+"", dan);
     dan->move(me);
-    return notify_fail(HIG"ÄãÁ·³öÁË¿ÉÊ¹×Ô¼ºÊ¹×Ô¼ºÍÑÀëbusyµÄ¼²·çµ¤\n"NOR);
+    return notify_fail(HIG"ä½ ç·´å‡ºäº†å¯ä½¿è‡ªå·±ä½¿è‡ªå·±è„«é›¢busyçš„ç–¾é¢¨ä¸¹\n"NOR);
     }
     
     if ( zjb < 6 && zjb > 3 && all2 < 100 && all2 > 20 
@@ -396,7 +396,7 @@ int do_liandan(string arg)
     dan = new("/d/zjb/yao/dan3");
     set("zhuren", ""+query("id", me)+"", dan);
     dan->move(me);
-    return notify_fail(HIW"ÄãÁ·³öÁËÉÙÁÖÊ¥Ò©ÆĞÌá×Ó!\n"NOR);
+    return notify_fail(HIW"ä½ ç·´å‡ºäº†å°‘æ—è–è—¥è©æå­!\n"NOR);
     }
     
     if ( zjb < 10 && zjb > 4 && all2 < 100 && all2 > 20 
@@ -407,7 +407,7 @@ int do_liandan(string arg)
     dan = new("/d/zjb/yao/dan4");
     set("zhuren", ""+query("id", me)+"", dan);
     dan->move(me);
-    return notify_fail(HIW"ÄãÁ·³öÁËÉÙÁÖÊ¥Ò©´ó»¹µ¤!\n"NOR);
+    return notify_fail(HIW"ä½ ç·´å‡ºäº†å°‘æ—è–è—¥å¤§é‚„ä¸¹!\n"NOR);
     }
 
     if ( zjb < 6 && zjb > 3 && all2 < 100 && all2 > 20 
@@ -418,7 +418,7 @@ int do_liandan(string arg)
     dan = new("/d/zjb/yao/dan5");
     set("zhuren", ""+query("id", me)+"", dan);
     dan->move(me);
-    return notify_fail(HIW"ÄãÁ·³öÁË²¹¾«Ê¥Ò©,Éö±¦!!!\n"NOR);
+    return notify_fail(HIW"ä½ ç·´å‡ºäº†è£œç²¾è–è—¥,è…å¯¶!!!\n"NOR);
     }
 
     if ( zjb < 10 && zjb > 2 && all2 < 100 && all2 > 10 
@@ -429,7 +429,7 @@ int do_liandan(string arg)
     dan = new("/d/zjb/yao/dan13");
     set("zhuren", ""+query("id", me)+"", dan);
     dan->move(me);
-    return notify_fail(HIG"ÄãÁ·³öÁË¿É½â°Ù¶¾µÄ½â¶¾Íè!!!\n"NOR);
+    return notify_fail(HIG"ä½ ç·´å‡ºäº†å¯è§£ç™¾æ¯’çš„è§£æ¯’ä¸¸!!!\n"NOR);
     }
 
     if ( zjb < 10 && zjb > 2 && all2 < 100 && all2 > 10 
@@ -440,7 +440,7 @@ int do_liandan(string arg)
     dan = new("/d/zjb/yao/dan14");
     set("zhuren", ""+query("id", me)+"", dan);
     dan->move(me);
-    return notify_fail(HIG"ÄãÁ·³öÁË¿ÉÔö¼Ó¹¥»÷Á¦µÄÕ½ÉñÍè!!!\n"NOR);
+    return notify_fail(HIG"ä½ ç·´å‡ºäº†å¯å¢åŠ æ”»æ“ŠåŠ›çš„æˆ°ç¥ä¸¸!!!\n"NOR);
     }
 
     if ( zjb < 15 && zjb > 2 && all2 < 100 && all2 > 30 
@@ -451,7 +451,7 @@ int do_liandan(string arg)
     dan = new("/d/zjb/yao/dan15");
     set("zhuren", ""+query("id", me)+"", dan);
     dan->move(me);
-    return notify_fail(HIG"ÄãÁ·³öÁË¿ÉÔö¼Ó¼¼ÄÜµÄÁúµ¤!!!\n"NOR);
+    return notify_fail(HIG"ä½ ç·´å‡ºäº†å¯å¢åŠ æŠ€èƒ½çš„é¾ä¸¹!!!\n"NOR);
     }
 
     if ( zjb < 7&& zjb > 2 && all2 < 100 && all2 > 20 &&random(10)>4
@@ -462,7 +462,7 @@ int do_liandan(string arg)
     dan = new("/d/zjb/yao/dan1");
     set("zhuren", ""+query("id", me)+"", dan);
     dan->move(me);
-    return notify_fail(HIR"ÄãÁ·³öÁË¿ÉÊ¹×Ô¼º×´Ì¬»Ö¸´ÂúµÄÑªÆøµ¤!\n"NOR);
+    return notify_fail(HIR"ä½ ç·´å‡ºäº†å¯ä½¿è‡ªå·±ç‹€æ…‹æ¢å¾©æ»¿çš„è¡€æ°£ä¸¹!\n"NOR);
     }
 
     if ( zjb < 10 && zjb > 3 && all2 < 100 && all2 > 10 
@@ -473,7 +473,7 @@ int do_liandan(string arg)
     dan = new("/d/zjb/yao/dan16");
     set("zhuren", ""+query("id", me)+"", dan);
     dan->move(me);
-    return notify_fail(HIB"ÄãÁ·³öÁË¿ÉÔö¼ÓÕıÆøµÄÕıÆøÍè!!!\n"NOR);
+    return notify_fail(HIB"ä½ ç·´å‡ºäº†å¯å¢åŠ æ­£æ°£çš„æ­£æ°£ä¸¸!!!\n"NOR);
     }
 
     if ( zjb < 15 && zjb > 3 && all2 < 150 && all2 > 30 
@@ -484,7 +484,7 @@ int do_liandan(string arg)
     dan = new("/d/zjb/yao/dan17");
     set("zhuren", ""+query("id", me)+"", dan);
     dan->move(me);
-    return notify_fail(HIR"ÄãÁ·³öÁË¿ÉÔö¼Ó»ù±¾ÄÚ¹¦µÄÌ«¼¶µ¤!!!\n"NOR);
+    return notify_fail(HIR"ä½ ç·´å‡ºäº†å¯å¢åŠ åŸºæœ¬å…§åŠŸçš„å¤ªç´šä¸¹!!!\n"NOR);
     }
 
     if ( zjb < 15 && zjb > 1 && all2 < 150 && all2 > 10 
@@ -495,7 +495,7 @@ int do_liandan(string arg)
     dan = new("/d/zjb/yao/dan18");
     set("zhuren", ""+query("id", me)+"", dan);
     dan->move(me);
-    return notify_fail(HIR"ÄãÁ·³öÁË¿ÉÔö¼Ó»ù±¾¸ºÉñµÄĞ°ÉñÍè!!!\n"NOR);
+    return notify_fail(HIR"ä½ ç·´å‡ºäº†å¯å¢åŠ åŸºæœ¬è² ç¥çš„é‚ªç¥ä¸¸!!!\n"NOR);
     }
 
     if ( zjb < 15 && zjb > 3 && all2 < 150 && all2 > 30 
@@ -506,7 +506,7 @@ int do_liandan(string arg)
     dan = new("/d/zjb/yao/dan20");
     set("zhuren", ""+query("id", me)+"", dan);
     dan->move(me);
-    return notify_fail(HIR"ÄãÁ·³öÁË¿ÉÔö¼Ó»ù±¾Çá¹¦µÄ¾ª·çÍè!!!\n"NOR);
+    return notify_fail(HIR"ä½ ç·´å‡ºäº†å¯å¢åŠ åŸºæœ¬è¼•åŠŸçš„é©šé¢¨ä¸¸!!!\n"NOR);
     }
 
     if ( zjb < 15 && zjb > 3 && all2 < 150 && all2 > 30 
@@ -517,7 +517,7 @@ int do_liandan(string arg)
     dan = new("/d/zjb/yao/dan21");
     set("zhuren", ""+query("id", me)+"", dan);
     dan->move(me);
-    return notify_fail(HIR"ÄãÁ·³öÁË¿ÉÔö¼Ó»ù±¾È­½ÅµÄÉñÁ¦Íè!!!\n"NOR);
+    return notify_fail(HIR"ä½ ç·´å‡ºäº†å¯å¢åŠ åŸºæœ¬æ‹³è…³çš„ç¥åŠ›ä¸¸!!!\n"NOR);
     }
 
     if ( zjb < 10 && zjb > 4 && all2 < 150 && all2 > 50 
@@ -528,7 +528,7 @@ int do_liandan(string arg)
     dan = new("/d/zjb/yao/dan22");
     set("zhuren", ""+query("id", me)+"", dan);
     dan->move(me);
-    return notify_fail(HIR"ÄãÁ·³öÁË¿ÉÔö¼Ó¶ÁÊéĞ´×ÖµÄÖÇÁ¦Íè!!!\n"NOR);
+    return notify_fail(HIR"ä½ ç·´å‡ºäº†å¯å¢åŠ è®€æ›¸å¯«å­—çš„æ™ºåŠ›ä¸¸!!!\n"NOR);
     }
 
     delete_temp("liandan", me);
@@ -537,7 +537,7 @@ int do_liandan(string arg)
     dan = new("/d/zjb/yao/chayao");
     set("zhuren", ""+query("id", me)+"", dan);
     dan->move(me);
-    return notify_fail(HIW"Äã´Ë´ÎÁ¶µ¤Ê§°Ü,Á·³öÒ»¸öÎŞÃûÒ©Æ·!\n"NOR);
+    return notify_fail(HIW"ä½ æ­¤æ¬¡ç…‰ä¸¹å¤±æ•—,ç·´å‡ºä¸€å€‹ç„¡åè—¥å“!\n"NOR);
 }
     }
 
@@ -549,12 +549,12 @@ int do_dan(object me,object obj)
     foreach ( ob in all_inventory(me)){
     if (ob->short(1)!=arg) continue;
     if( !query("yao", ob)){
-    write("ÕâÑù¶«Î÷²¢²»ÄÜÄÃÀ´Á·Ò©!\n");
+    write("é€™æ¨£æ±è¥¿ä¸¦ä¸èƒ½æ‹¿ä¾†ç·´è—¥!\n");
     return 1;
     }
 
     if( query_temp("danname/"+query("id", ob, me)+"") )
-    return notify_fail("ÄãÒÑ¾­°Ñ"+ob->name()+"·Å½øÁ·µ¤Â¯ÁË!\n");
+    return notify_fail("ä½ å·²ç¶“æŠŠ"+ob->name()+"æ”¾é€²ç·´ä¸¹çˆäº†!\n");
 
     if( query("shoubi", ob) )
     addn_temp("liandan/shoubi",query("shoubi",  ob), me);
@@ -570,7 +570,7 @@ int do_dan(object me,object obj)
 
     set_temp("danname/"+query("id", ob)+"", 1, me);
     addn_temp("zjb_dan", 1, me);
-    write(HIR"Äã°Ñ"+ob->name()+HIR"·Å½øÁËÁ¶µ¤Â¯!\n"NOR);
+    write(HIR"ä½ æŠŠ"+ob->name()+HIR"æ”¾é€²äº†ç…‰ä¸¹çˆ!\n"NOR);
     destruct(ob);
     return 1;
     }
@@ -583,15 +583,15 @@ int do_yao(object me,object obj)
     me = this_player();
  
     if( query_temp("zhuyao", me) )
-    return notify_fail("¶Ô²»ÆğÄãÒÑ¾­ÄÃ"+query_temp("zhuyaoname", me)+"×öÖ÷Ò©ÁË!\n");
+    return notify_fail("å°ä¸èµ·ä½ å·²ç¶“æ‹¿"+query_temp("zhuyaoname", me)+"åšä¸»è—¥äº†!\n");
 
     foreach ( ob in all_inventory(me)){
     if (ob->short(1)!=arg) continue;
     if( !query("zhuyao", ob)){
-    write("ÕâÑù¶«Î÷²¢²»ÄÜ×öÖ÷Ò©!\n");
+    write("é€™æ¨£æ±è¥¿ä¸¦ä¸èƒ½åšä¸»è—¥!\n");
       return 1;
     }
-    write(HIR"ÄãÄÃ"+ob->name()+HIR"×öÖ÷Ò©!\n"NOR);
+    write(HIR"ä½ æ‹¿"+ob->name()+HIR"åšä¸»è—¥!\n"NOR);
     set_temp("zhuyao",query("zhuyao",  ob), me);
     set_temp("zhuyaoname", ""+ob->name()+"", me);
     destruct(ob);

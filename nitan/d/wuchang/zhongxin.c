@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create ()
 {
-        set("short","���Ĺ㳡");
+        set("short","中心廣場");
         set("long", @LONG
-�������人����ĵش��ˡ�����㼯������ĺ������ˡ��ο͡�
-�����������ò����֡���Ȼ�������Ҳ�ס������������Ȼ���ַǷ���
+這裡是武漢最繁華的地帶了。這裡匯集了五湖四海的商人、遊客。
+熙熙攘攘，好不熱鬧。雖然近來動亂不住，但是這裡仍然熱鬧非凡。
 LONG);
 
         set("exits", ([

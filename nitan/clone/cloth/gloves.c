@@ -6,12 +6,12 @@ inherit HANDS;
 
 void create()
 {
-        set_name("ÊÖÌ×", ({ "shou tao", "gloves" }) );
+        set_name("æ‰‹å¥—", ({ "shou tao", "gloves" }) );
         set_weight(800);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ë«");
+                set("unit", "é›™");
                 set("material", "cloth");
                 set("value", 100);
                 set("armor_prop/armor", 2);

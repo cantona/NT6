@@ -10,16 +10,16 @@ string ask_me();
 
 void create()
 {
-        set_name("³Ì³°·ç", ({ "cheng chaofeng", "cheng", "chaofeng", }));
+        set_name("ç¨‹å˜²é¢¨", ({ "cheng chaofeng", "cheng", "chaofeng", }));
         set("long",
-        "ËûÊÇÒ»Î»Éí¿íÌåÅÖµÄÀÏÕß£¬Éí´©Ò»¼ş°×²¼³¤ÅÛ¡£\n"
-        "ËûÕıĞ¦ÎûÎûµØ¿´×ÅÄã£¬ºÃÏó¶ÔÄãÆÄÓĞºÃ¸Ğ¡£\n"
+        "ä»–æ˜¯ä¸€ä½èº«å¯¬é«”èƒ–çš„è€è€…ï¼Œèº«ç©¿ä¸€ä»¶ç™½å¸ƒé•·è¢ã€‚\n"
+        "ä»–æ­£ç¬‘å˜»å˜»åœ°çœ‹è‘—ä½ ï¼Œå¥½è±¡å°ä½ é —æœ‰å¥½æ„Ÿã€‚\n"
         );
 
-            set("title",HIG "Ã÷½Ì" HIC "ÇàÁúÌ³" NOR "Ì³Ö÷");
+            set("title",HIG "æ˜æ•™" HIC "é’é¾å£‡" NOR "å£‡ä¸»");
         set("level",5);
 
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("attitude", "friendly");
 
             set("age", 51);
@@ -57,9 +57,9 @@ void create()
         prepare_skill("finger", "nianhua-zhi");
 
         set("inquiry", ([
-                "Ã÷½Ì" :    (: ask_me :),
+                "æ˜æ•™" :    (: ask_me :),
         ]));
-        create_family("Ã÷½Ì", 4, "ÇàÁúÌ³Ì³Ö÷");
+        create_family("æ˜æ•™", 4, "é’é¾å£‡å£‡ä¸»");
         setup();
 
         carry_object("/d/mingjiao/obj/baipao")->wear();
@@ -72,7 +72,7 @@ void init()
 
 string ask_me()
 {
-        return "ÄãÏë¼ÓÈëÎÒÃ÷½Ì(join mingjiao)Âğ£¿";
+        return "ä½ æƒ³åŠ å…¥æˆ‘æ˜æ•™(join mingjiao)å—ï¼Ÿ";
 }
 
 #include "tanzhu.h"

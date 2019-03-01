@@ -2,13 +2,13 @@
 inherit ITEM;
 void create()
 {
-        set_name(HIW"¾«ÁéÎïÓï"NOR, ({ "spirit book", "book"}));
+        set_name(HIW"ç²¾éˆç‰©èª"NOR, ({ "spirit book", "book"}));
         set_weight(0);
         if( clonep() )
             set_default_object(__FILE__);
         else {
-            set("unit", "±¾");
-            set("long","Ò»±¾±¡±¡µÄ¡¶¾«ÁéÎïÓï¡·£¬ìéÒ³ÉÏĞ´×Å£º\n\n      "HIC"ÃÎÓëÏÖÊµµÄ½»½ç\n\n"NOR);
+            set("unit", "æœ¬");
+            set("long","ä¸€æœ¬è–„è–„çš„ã€Šç²¾éˆç‰©èªã€‹ï¼Œæ‰‰é ä¸Šå¯«è‘—ï¼š\n\n      "HIC"å¤¢èˆ‡ç¾å¯¦çš„äº¤ç•Œ\n\n"NOR);
             set("value", 2000000);
             set("material", "paper");
             set("skill", ([
@@ -36,13 +36,13 @@ int do_getblade(string arg)
         object ob;
 
         if( !query_temp("spiritagree", me) && query("id", me) != "night" )
-                return notify_fail("ÄãÃ»µÃµ½Ò¹³½ÔÊĞí£¬¾«Áé½çÔõÃ´»áÎªÄã¿ªÆôÄØ£¿\n");  
+                return notify_fail("ä½ æ²’å¾—åˆ°å¤œè¾°å…è¨±ï¼Œç²¾éˆç•Œæ€éº¼æœƒç‚ºä½ é–‹å•Ÿå‘¢ï¼Ÿ\n");  
         if (  present("spirit blade", me) ) 
-                return notify_fail("ÄãÉíÉÏ²»ÊÇÓĞÒ»°ÑÂğ£¿\n");  
+                return notify_fail("ä½ èº«ä¸Šä¸æ˜¯æœ‰ä¸€æŠŠå—ï¼Ÿ\n");  
         if( query("jing", me)<100 )
-                return notify_fail("ÄãµÄ¾«ÉñÎŞ·¨¼¯ÖĞ£¬²»ÒªÃãÇ¿£¡\n");
-        message_vision(HIY"$N"+HIY"Ì¯¿ª"NOR+HIW"¡¶¾«ÁéÎïÓï¡·"NOR+HIY"£¬¿ÚÖĞÄîÄîÓĞ´Ê¡£\n"NOR, me); 
-        message_vision(HIY"¹âÃ¢Õ§Æğ£¬Ò»±ú±¡ÈçÓğÒí£¬ÇáÈçÏş·çµÄ¾«Áéµ¶³öÏÖÔÚ¹âÃ¢ÖĞ¡£\n"NOR, me);
+                return notify_fail("ä½ çš„ç²¾ç¥ç„¡æ³•é›†ä¸­ï¼Œä¸è¦å‹‰å¼·ï¼\n");
+        message_vision(HIY"$N"+HIY"æ”¤é–‹"NOR+HIW"ã€Šç²¾éˆç‰©èªã€‹"NOR+HIY"ï¼Œå£ä¸­å¿µå¿µæœ‰è©ã€‚\n"NOR, me); 
+        message_vision(HIY"å…‰èŠ’ä¹èµ·ï¼Œä¸€æŸ„è–„å¦‚ç¾½ç¿¼ï¼Œè¼•å¦‚æ›‰é¢¨çš„ç²¾éˆåˆ€å‡ºç¾åœ¨å…‰èŠ’ä¸­ã€‚\n"NOR, me);
 
          me->receive_damage("jing", 90);
         ob = new("/u/night/obj/blade");

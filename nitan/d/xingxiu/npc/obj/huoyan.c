@@ -5,15 +5,15 @@
 inherit ITEM;
 void create()
 {
-        set_name(HIR"»ğÑæ"NOR, ({ "huo yan"}) );
+        set_name(HIR"ç«ç‡„"NOR, ({ "huo yan"}) );
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long",HIR"»ğÑæ¸ßÔ¼³ß£¬É«×÷´¿±Ì£¬¹íÆøÉ­É­£¬ºÍÑ°³£»ğÑæ´óÒì¡£\n"NOR );
+                set("long",HIR"ç«ç‡„é«˜ç´„å°ºï¼Œè‰²ä½œç´”ç¢§ï¼Œé¬¼æ°£æ£®æ£®ï¼Œå’Œå°‹å¸¸ç«ç‡„å¤§ç•°ã€‚\n"NOR );
                 set("no_get", 1);
                 set("value", 1);
-                set("unit", "¶Ñ");
-                set("fire_name", "»ğÑæ");
+                set("unit", "å †");
+                set("fire_name", "ç«ç‡„");
                 set("weight", 30000);
                 set("location", 1);
         }
@@ -28,12 +28,12 @@ void init()
         call_out("change", 50); 
 }
 
-string *fire_msg = ({BLU"»ğÑæ"NOR,RED"»ğÑæ"NOR,WHT"»ğÑæ"NOR,GRN"»ğÑæ"NOR,MAG"»ğÑæ"NOR});
+string *fire_msg = ({BLU"ç«ç‡„"NOR,RED"ç«ç‡„"NOR,WHT"ç«ç‡„"NOR,GRN"ç«ç‡„"NOR,MAG"ç«ç‡„"NOR});
 
 void change()
 {
         string msg = fire_msg[random(sizeof(fire_msg))];
-        tell_room(environment(this_object()),this_object()->name()+ HIR"»íÈ»Ò»°µ£¬½Ó×Å»ğ¹â±¬³¤£¬¾¹È»±äÁËÑÕÉ«£¬¿´ÆğÀ´¹ÖÒìÎŞ±È£¡\n"NOR);    
+        tell_room(environment(this_object()),this_object()->name()+ HIR"è±ç„¶ä¸€æš—ï¼Œæ¥è‘—ç«å…‰çˆ†é•·ï¼Œç«Ÿç„¶è®Šäº†é¡è‰²ï¼Œçœ‹èµ·ä¾†æ€ªç•°ç„¡æ¯”ï¼\n"NOR);    
         set("name", msg, this_object());
         remove_call_out("change");
         call_out("change", 50);  
@@ -41,6 +41,6 @@ void change()
  
 void dest()
 {
-        tell_room(environment(this_object()),HIR"»ğÑæ½¥½¥µØÏ¨ÃğÁË¡£\n"NOR);
+        tell_room(environment(this_object()),HIR"ç«ç‡„æ¼¸æ¼¸åœ°ç†„æ»…äº†ã€‚\n"NOR);
         destruct(this_object());
 }

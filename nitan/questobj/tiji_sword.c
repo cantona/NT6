@@ -6,17 +6,17 @@ inherit SWORD;
 
 void create()
 {
-        set_name(HIB"ĞÇ"HIM"Óê"NOR, ({ "xingyu sword", "lqy", "sword" }));
+        set_name(HIB"æ˜Ÿ"HIM"é›¨"NOR, ({ "xingyu sword", "lqy", "sword" }));
         set_weight(6000);
         set("taskobj", 1);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
+                set("unit", "æŸ„");
                 set("value", 0);
                 set("material", "steel");
-                set("wield_msg", "$NÍùÑüÖĞÒ»´ø£¬³é³öÁËÒ»¿Ú$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$NÊÖÖĞ$nÓ­·çÒ»¶¶£¬Õ£ÑÛ¼äÒÑÈ»²»¼ûÓ°×Ù¡£\n");
+                set("wield_msg", "$Nå¾€è…°ä¸­ä¸€å¸¶ï¼ŒæŠ½å‡ºäº†ä¸€å£$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Næ‰‹ä¸­$nè¿é¢¨ä¸€æŠ–ï¼Œçœ¨çœ¼é–“å·²ç„¶ä¸è¦‹å½±è¹¤ã€‚\n");
         }
         setup();
 }

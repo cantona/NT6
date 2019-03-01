@@ -12,25 +12,25 @@ int update_condition(object me, int duration)
         string msg;
         
         if( !living(me) ) {
-                message("vision", me->name() + "Í´¿àµØÉëÒ÷ÁËÒ»Éù¡£\n", environment(me), me);
+                message("vision", me->name() + "ç—›è‹¦åœ°å‘»åŸäº†ä¸€è²ã€‚\n", environment(me), me);
         }
         else {
-                tell_object(me,HIR"ÄãÖ»¾õµ¤ÌïÖÐÒ»¹ÉÕæÆøÄæÐÐ£¬ÐØÖÐ·³¶ñÓûÅ»£¡\n" NOR );
-                message_vision(HIW"$NÑÛ¾¦ÖÐÉä³öÒìÑù¹âÃ¢£¬¿ÚÖÐà«à«×ÔÓï¡£\n"NOR,me);
+                tell_object(me,HIR"ä½ åªè¦ºä¸¹ç”°ä¸­ä¸€è‚¡çœŸæ°£é€†è¡Œï¼Œèƒ¸ä¸­ç…©æƒ¡æ¬²å˜”ï¼\n" NOR );
+                message_vision(HIW"$Nçœ¼ç›ä¸­å°„å‡ºç•°æ¨£å…‰èŠ’ï¼Œå£ä¸­å–ƒå–ƒè‡ªèªžã€‚\n"NOR,me);
         }
         
-        set_temp("die_reason", "ÐÞÁ¶ÆßÉËÈ­×ß»ðÈëÄ§ËÀÁË", me);
+        set_temp("die_reason", "ä¿®ç…‰ä¸ƒå‚·æ‹³èµ°ç«å…¥é­”æ­»äº†", me);
         me->receive_wound("qi", 10);
         
         ob = all_inventory(environment(me));
         for(i=0; i<sizeof(ob); i++) {
-                if( query("race", ob[i]) != "ÈËÀà"
+                if( query("race", ob[i]) != "äººé¡ž"
                 ||  ob[i]==me || !me->visible(ob[i])) 
                         continue;
-                tell_object(me, "\n"+ob[i]->name()+"¶ÔÖøÄãºÈµÀ£º¡¸"
-                        + RANK_D->query_rude(me)+"£¡½ñÈÕ²»ÊÇÄãËÀ¾ÍÊÇÎÒ»î£¡¡¹\n\n");
-                tell_object(me, HIR "Èç¹ûÄãÒªºÍ" + ob[i]->name()
-                        + "ÐÔÃüÏà²«£¬ÇëÄãÒ²¶ÔÕâ¸öÈËÏÂÒ»´Î kill Ö¸Áî¡£\n"NOR);
+                tell_object(me, "\n"+ob[i]->name()+"å°è‘—ä½ å–é“ï¼šã€Œ"
+                        + RANK_D->query_rude(me)+"ï¼ä»Šæ—¥ä¸æ˜¯ä½ æ­»å°±æ˜¯æˆ‘æ´»ï¼ã€\n\n");
+                tell_object(me, HIR "å¦‚æžœä½ è¦å’Œ" + ob[i]->name()
+                        + "æ€§å‘½ç›¸æï¼Œè«‹ä½ ä¹Ÿå°é€™å€‹äººä¸‹ä¸€æ¬¡ kill æŒ‡ä»¤ã€‚\n"NOR);
                 me->want_kill(ob[i]);
                 me->kill_ob(ob[i]);
                 ob[i]->fight_ob(me);

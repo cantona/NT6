@@ -19,15 +19,15 @@ nosave int state;
 nosave int *tlist = ({ 0, 550, 559, 600 });
 nosave int *hlist = ({ 45, 1, 1, 1 });
 
-// Í¨ÖªÒ»´Î×¼±¸µÄÊ±¼ä£ºÁè³¿5:50·Ö
-// Í¨ÖªÔÙ´Î×¼±¸µÄÊ±¼ä£ºÁè³¿5:59·Ö
-// ¿ªÊ¼½øĞĞ±¸·İµÄÊ±¼ä£ºÁè³¿6:00·Ö
-// Áè³¿ÁùµãÒÔºóµ½µÚ¶şÌìÁè³¿5:50·ÖÖ®Ç°ÊôÓÚĞİÃß×´Ì¬
+// é€šçŸ¥ä¸€æ¬¡æº–å‚™çš„æ™‚é–“ï¼šå‡Œæ™¨5:50åˆ†
+// é€šçŸ¥å†æ¬¡æº–å‚™çš„æ™‚é–“ï¼šå‡Œæ™¨5:59åˆ†
+// é–‹å§‹é€²è¡Œå‚™ä»½çš„æ™‚é–“ï¼šå‡Œæ™¨6:00åˆ†
+// å‡Œæ™¨å…­é»ä»¥å¾Œåˆ°ç¬¬äºŒå¤©å‡Œæ™¨5:50åˆ†ä¹‹å‰å±¬äºä¼‘çœ ç‹€æ…‹
 
-// Ìá¹©¸øÍâÃæµÄ½Ó¿Úº¯Êı
+// æä¾›çµ¦å¤–é¢çš„æ¥å£å‡½æ•¸
 void backup_data();
 
-// ÄÚ²¿Ê¹ÓÃµÄº¯Êı
+// å…§éƒ¨ä½¿ç”¨çš„å‡½æ•¸
 protected void remove_backup(mixed lt);
 protected void check_all_player();
 protected void change_state(int new_state);
@@ -45,7 +45,7 @@ void create()
 {
         seteuid(ROOT_UID);
 
-        sys_info("±¸·İÏµÍ³ÒÑ¾­Æô¶¯¡£");
+        sys_info("å‚™ä»½ç³»çµ±å·²ç¶“å•Ÿå‹•ã€‚");
         state = SLEEPING;
         set_heart_beat(hlist[state]);
 }
@@ -113,8 +113,8 @@ protected void change_state(int new_state)
         case GET_READY_2:
                 if (lt[LT_HOUR] * 100 + lt[LT_MIN] != tlist[BACKUPING])
                 {
-                        message_system(sprintf("ÏÖÔÚÊÇ %d µã %d ·Ö£¬ÏµÍ³½«ÔÚ %d µã %d ·Ö"
-                                       "×Ô¶¯±¸·İËùÓĞÍæ¼ÒµÄÊı¾İ£¬ÆÚ¼äÓÎÏ·»áÓĞÍ£ÖÍ¡£",
+                        message_system(sprintf("ç¾åœ¨æ˜¯ %d é» %d åˆ†ï¼Œç³»çµ±å°‡åœ¨ %d é» %d åˆ†"
+                                       "è‡ªå‹•å‚™ä»½æ‰€æœ‰ç©å®¶çš„æ•¸æ“šï¼ŒæœŸé–“éŠæˆ²æœƒæœ‰åœæ»¯ã€‚",
                                        lt[LT_HOUR], lt[LT_MIN],
                                        (tlist[BACKUPING] / 100) % 100,
                                        tlist[BACKUPING] % 100));
@@ -124,13 +124,13 @@ protected void change_state(int new_state)
 
         case BACKUPING:
                 state = new_state;
-                message_system(sprintf(HIY "ÏÖÔÚÊÇ %d µã %d ·Ö£¬ÏµÍ³¿ªÊ¼"
-                                       "×Ô¶¯±¸·İËùÓĞÍæ¼ÒÊı¾İ£¬ÇëÉÔºò..." NOR,
+                message_system(sprintf(HIY "ç¾åœ¨æ˜¯ %d é» %d åˆ†ï¼Œç³»çµ±é–‹å§‹"
+                                       "è‡ªå‹•å‚™ä»½æ‰€æœ‰ç©å®¶æ•¸æ“šï¼Œè«‹ç¨å€™..." NOR,
                                        lt[LT_HOUR], lt[LT_MIN]));
 
                 backup_data();
 
-                message_system(sprintf(HIC "ÏµÍ³ÒÑ¾­´¦ÀíÍê±¸·İ¹¤×÷¡£" NOR,
+                message_system(sprintf(HIC "ç³»çµ±å·²ç¶“è™•ç†å®Œå‚™ä»½å·¥ä½œã€‚" NOR,
                                        lt[LT_HOUR], lt[LT_MIN]));
 
                 // after backup, change state to SLEEPING
@@ -166,7 +166,7 @@ void backup_data()
 
         seteuid(getuid());
 
-        sys_info("±¸·İ¹¤×÷¿ªÊ¼¡£");
+        sys_info("å‚™ä»½å·¥ä½œé–‹å§‹ã€‚");
         lt = localtime(time());
 
         // because LT_MON is from 0..11, so I must add 1
@@ -175,19 +175,19 @@ void backup_data()
                         lt[LT_YEAR], lt[LT_MON], lt[LT_MDAY]);
         if (! assure_not_exist(bkdir))
         {
-                sys_info(sprintf("±¸·İÊ§°Ü£ºÎŞ·¨É¾³ı(%s)¡£", bkdir));
+                sys_info(sprintf("å‚™ä»½å¤±æ•—ï¼šç„¡æ³•åˆªé™¤(%s)ã€‚", bkdir));
                 return;
         }
 
         // backup data
         count = CMD_CP->copy_dir(DATA_DIR, bkdir);
         if (count)
-                sys_info(sprintf("×Ü¹²ÓĞ%d¸öÎÄ¼ş±»±£´æµ½(%s)ÖĞ¡£", count, bkdir));
+                sys_info(sprintf("ç¸½å…±æœ‰%då€‹æ–‡ä»¶è¢«ä¿å­˜åˆ°(%s)ä¸­ã€‚", count, bkdir));
 
         call_out("remove_backup", 1, lt);
 }
 
-// É¾³ıÒÔÇ°µÄ±¸·İ
+// åˆªé™¤ä»¥å‰çš„å‚™ä»½
 void remove_backup(mixed lt)
 {
         object *obs;
@@ -214,7 +214,7 @@ void remove_backup(mixed lt)
                         continue;
 
                 CMD_RM->rm_dir(BACKUP_DIR + file[i][0]);
-                sys_info(sprintf("±¸·İ(%s)ÒÑ¾­±»×Ô¶¯É¾³ı¡£", file[i][0]));
+                sys_info(sprintf("å‚™ä»½(%s)å·²ç¶“è¢«è‡ªå‹•åˆªé™¤ã€‚", file[i][0]));
         }
 
         // update all loging object
@@ -226,23 +226,23 @@ void remove_backup(mixed lt)
                         obs[i]->start_log();
                 }
 
-        // ÎªÁËÏÔÊ¾ÕıÈ·µÄÊ±¼ä£¬ËùÒÔÊ¹ÓÃ call_out ºô½Ğ¡£
-        call_out("sys_info", 0, "±¸·İ¹¤×÷Íê±Ï¡£");
+        // ç‚ºäº†é¡¯ç¤ºæ­£ç¢ºçš„æ™‚é–“ï¼Œæ‰€ä»¥ä½¿ç”¨ call_out å‘¼å«ã€‚
+        call_out("sys_info", 0, "å‚™ä»½å·¥ä½œå®Œç•¢ã€‚");
 
-        // 10sÒÔºó¼ì²éËùÓĞµÄÍæ¼Ò
+        // 10sä»¥å¾Œæª¢æŸ¥æ‰€æœ‰çš„ç©å®¶
         call_out("check_all_player", 1);
 }
 
-// ¼ì²éËùÓĞÍæ¼Ò
+// æª¢æŸ¥æ‰€æœ‰ç©å®¶
 protected void check_all_player()
 {
-        message_system("ÏµÍ³¿ªÊ¼ºË²éËùÓĞÍæ¼Ò£¬²¢Çå³ı³¤Ê±¼ä²»ÉÏÏßµÄÊ¹ÓÃÕß...");
-        sys_info("ÏµÍ³¿ªÊ¼¼ì²éËùÓĞÍæ¼Ò¡£");
+        message_system("ç³»çµ±é–‹å§‹æ ¸æŸ¥æ‰€æœ‰ç©å®¶ï¼Œä¸¦æ¸…é™¤é•·æ™‚é–“ä¸ä¸Šç·šçš„ä½¿ç”¨è€…...");
+        sys_info("ç³»çµ±é–‹å§‹æª¢æŸ¥æ‰€æœ‰ç©å®¶ã€‚");
 
-        EXAMINE_CMD->search_dir(0, 1);  // ²»ÇåÀí³¤Ê±¼ä²»ÉÏÏßµÄÊ¹ÓÃÕß... 
+        EXAMINE_CMD->search_dir(0, 1);  // ä¸æ¸…ç†é•·æ™‚é–“ä¸ä¸Šç·šçš„ä½¿ç”¨è€…... 
 
-        // ÎªÁËÏÔÊ¾ÕıÈ·µÄÊ±¼ä£¬ËùÒÔÊ¹ÓÃ call_out ºô½Ğ¡£
-        call_out("sys_info", 0, "ÏµÍ³¼ì²éËùÓĞÍæ¼ÒÍê±Ï¡£");
+        // ç‚ºäº†é¡¯ç¤ºæ­£ç¢ºçš„æ™‚é–“ï¼Œæ‰€ä»¥ä½¿ç”¨ call_out å‘¼å«ã€‚
+        call_out("sys_info", 0, "ç³»çµ±æª¢æŸ¥æ‰€æœ‰ç©å®¶å®Œç•¢ã€‚");
 }
 
 // check that y/m/d wether or not close cy/cm/cd(current time)
@@ -307,5 +307,5 @@ protected void sys_info(string msg)
 
 string query_name()
 {
-        return "±¸·İ¾«Áé(BACKUP_D)";
+        return "å‚™ä»½ç²¾éˆ(BACKUP_D)";
 }

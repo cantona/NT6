@@ -8,11 +8,11 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("±¾³¾", ({ "ben chen","chen"}) );
-        set("gender", "ÄĞĞÔ" );
-        set("long", "Ëû¾ÍÊÇÌìÄÏÎªµÛµÄ´óÀí±£¶¨µÛ¶ÎÕıÃ÷¡£´óÀíÀú´ú¹úÖ÷¾ùÑ·Î»
-ÌìÁúËÂ³ö¼ÒÎªÉ®£¬±£¶¨µÛÒà²»ÀıÍâ¡£\n" );
-        set("title", "ÌìÁúËÂµÚÊ®Æß´úÉ®ÈË");
+        set_name("æœ¬å¡µ", ({ "ben chen","chen"}) );
+        set("gender", "ç”·æ€§" );
+        set("long", "ä»–å°±æ˜¯å¤©å—ç‚ºå¸çš„å¤§ç†ä¿å®šå¸æ®µæ­£æ˜ã€‚å¤§ç†æ­·ä»£åœ‹ä¸»å‡éœä½
+å¤©é¾å¯ºå‡ºå®¶ç‚ºåƒ§ï¼Œä¿å®šå¸äº¦ä¸ä¾‹å¤–ã€‚\n" );
+        set("title", "å¤©é¾å¯ºç¬¬åä¸ƒä»£åƒ§äºº");
         set("class", "bonze");
         set("age", 45);
         set("shen_type", 1);
@@ -51,11 +51,11 @@ void create()
         map_skill("finger", "sun-finger");
         map_skill("sword", "duanjia-jian");
         prepare_skill("finger","sun-finger");
-        create_family("´óÀí¶Î¼Ò", 15, "¸ßÉ®");
+        create_family("å¤§ç†æ®µå®¶", 15, "é«˜åƒ§");
         
         set("inquiry" ,([
-                "ÁùÂöÉñ½£Æ×" : "ºß£¡\n",
-                "ÁùÂöÉñ½£" :  "ºß£¡\n",
+                "å…­è„ˆç¥åŠè­œ" : "å“¼ï¼\n",
+                "å…­è„ˆç¥åŠ" :  "å“¼ï¼\n",
         ]));
         
         setup();

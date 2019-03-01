@@ -7,10 +7,10 @@ int do_zhao(string arg);
 
 void create ()
 {
-        set ("short", "Ò©ÆÔ");
+        set ("short", "è—¥åœƒ");
         set ("long", @LONG
-ÕâÀïÊÇÌÆÃÅ¶¾Ò©·¿µÄÒ©ÆÔ¡£ÕâÀïµÄ¿ÕÆøÖĞÆ®µ´×ÅÒ»¹ÉÒìÏã£¬ÎÅµ½
-ÕâÖÖÆøÎ¶£¬ÄãÖ»¾õµÃÍ·ÓĞÒ»Ğ©·¢»è£¬²ÉÍêÒ©»¹ÊÇ¸Ï¿ìÀë¿ª°É¡£
+é€™è£¡æ˜¯å”é–€æ¯’è—¥æˆ¿çš„è—¥åœƒã€‚é€™è£¡çš„ç©ºæ°£ä¸­é£„ç›ªè‘—ä¸€è‚¡ç•°é¦™ï¼Œèåˆ°
+é€™ç¨®æ°£å‘³ï¼Œä½ åªè¦ºå¾—é ­æœ‰ä¸€äº›ç™¼æ˜ï¼Œæ¡å®Œè—¥é‚„æ˜¯è¶•å¿«é›¢é–‹å§ã€‚
 LONG);
         set("area","tangmen");
         set("outdoors", "tangmen");
@@ -38,20 +38,20 @@ int do_zhao(string arg)
         jingli_cost = (-1) * (5 + random(15));
 
         if ( !arg || ( arg != "yao" ) )
-                return notify_fail("ÄãÏë¸ÉÊ²Ã´£¿\n");
+                return notify_fail("ä½ æƒ³å¹¹ä»€éº¼ï¼Ÿ\n");
 
         if( query_temp("find", me) )
-                return notify_fail("ÄãÒÑ¾­ÕÒµ½ÁËÒ»Öê²İÒ©£¬¿ÉÒÔ½»²îÁË£¡\n");
+                return notify_fail("ä½ å·²ç¶“æ‰¾åˆ°äº†ä¸€æ ªè‰è—¥ï¼Œå¯ä»¥äº¤å·®äº†ï¼\n");
 
         if( query("jingli", me) <= (-jingli_cost) )
-                return notify_fail("ÄãÌ«Æ£ÀÍÁË£¬Ã»ÓĞ¾«Á¦ÔÙÕÒÒ©ÁË¡£\n");
+                return notify_fail("ä½ å¤ªç–²å‹äº†ï¼Œæ²’æœ‰ç²¾åŠ›å†æ‰¾è—¥äº†ã€‚\n");
 
         if ( (int)query("yao") >= 1 )
         {
-                message_vision(YEL"$N¶×ÏÂÉíÀ´£¬Ğ¡ĞÄÒíÒíµÄÔÚ»¨ÆÔÖĞÑ°ÕÒ×ÅÒ©²İ¡£\n"NOR, me);
+                message_vision(YEL"$Nè¹²ä¸‹èº«ä¾†ï¼Œå°å¿ƒç¿¼ç¿¼çš„åœ¨èŠ±åœƒä¸­å°‹æ‰¾è‘—è—¥è‰ã€‚\n"NOR, me);
                 if( random(1+query("kar", me)-10) >= 3 )
                 {
-                        message_vision(HIG"$N²»¶ÏµÄ²¦¶¯×Å»¨ÆÔÖĞµÄ²İÒ©£¬ÖÕÓÚÕÒµ½ÁËÒ»Öê¡£\n$N½«ÕâÖêÒ©²İĞ¡ĞÄµÄÊÕÔÚ»³ÖĞ¡£\n"NOR, me);
+                        message_vision(HIG"$Nä¸æ–·çš„æ’¥å‹•è‘—èŠ±åœƒä¸­çš„è‰è—¥ï¼Œçµ‚äºæ‰¾åˆ°äº†ä¸€æ ªã€‚\n$Nå°‡é€™æ ªè—¥è‰å°å¿ƒçš„æ”¶åœ¨æ‡·ä¸­ã€‚\n"NOR, me);
                         new(__DIR__"obj/caoyao")->move(me);
                         set_temp("find", 1, me);
                 }
@@ -60,7 +60,7 @@ int do_zhao(string arg)
                 addn("yao",-1);
         }
         else
-                return notify_fail("ÕâÀï¶¼ÒÑ¾­±»·­±éÁË£¬Ã»ÓĞÊ²Ã´¿ÉÕÒµÄÁË¡£\n");
+                return notify_fail("é€™è£¡éƒ½å·²ç¶“è¢«ç¿»éäº†ï¼Œæ²’æœ‰ä»€éº¼å¯æ‰¾çš„äº†ã€‚\n");
 
         return 1;
 }

@@ -1,5 +1,5 @@
 // accede.c
-// ÏµÍ³ÈÎÎñ ultra_quest µÄÏà¹ØÎÄ¼ş
+// ç³»çµ±ä»»å‹™ ultra_quest çš„ç›¸é—œæ–‡ä»¶
 
 #include <ansi.h>
 inherit F_CLEAN_UP;
@@ -12,67 +12,67 @@ int main(object me, string arg)
 
         while (arg)
         {
-                // Ã»ÓĞÈÎÎñ£¬Ôò·µ»Ø
+                // æ²’æœ‰ä»»å‹™ï¼Œå‰‡è¿”å›
                 if( !query("ultraquest/quest/id", me) )
-                        return notify_fail("¸Õ²ÅÃ»ÈËÏòÄãÑ°Çó°ïÖú¡£\n");
+                        return notify_fail("å‰›æ‰æ²’äººå‘ä½ å°‹æ±‚å¹«åŠ©ã€‚\n");
 
-                // ²é¿´µ±Ç° ultra_quest ÌØÊâÈÎÎñµÄ×´Ì¬
+                // æŸ¥çœ‹ç•¶å‰ ultra_quest ç‰¹æ®Šä»»å‹™çš„ç‹€æ…‹
                 if( !stringp(type=query("ultraquest/quest/type", me) )
-                   || (type != "mathematics"            // ±ÈÊÔÑİËã
-                   && type != "literate"                // ±ÈÊÔÊ«´Ê
-                   && type != "chess"                   // ±ÈÊÔÆå¼¼
-                   && type != "calligraphy"             // °ïÃ¦Êé·¨
-                   && type != "drawing"                 // °ïÃ¦»æ»­
-                   && type != "medical"))               // °ïÃ¦ÖÎ²¡
-                        return notify_fail("¸Õ²ÅÃ»ÈËÏòÄãÑ°Çó°ïÖú¡£\n");
+                   || (type != "mathematics"            // æ¯”è©¦æ¼”ç®—
+                   && type != "literate"                // æ¯”è©¦è©©è©
+                   && type != "chess"                   // æ¯”è©¦æ£‹æŠ€
+                   && type != "calligraphy"             // å¹«å¿™æ›¸æ³•
+                   && type != "drawing"                 // å¹«å¿™ç¹ªç•«
+                   && type != "medical"))               // å¹«å¿™æ²»ç—…
+                        return notify_fail("å‰›æ‰æ²’äººå‘ä½ å°‹æ±‚å¹«åŠ©ã€‚\n");
 
                 if (! objectp(ob = present(arg, environment(me))))
-                        return notify_fail("ÕâÀïÃ»ÓĞÕâ¸öÈË¡£\n");
+                        return notify_fail("é€™è£¡æ²’æœ‰é€™å€‹äººã€‚\n");
 
                 if( query_temp("need_accede/user", ob) != query("id", me) )
-                        return notify_fail(CYN + ob->name() + CYN "µÉÑÛ"
-                                           "Íû×ÅÄãµÀ£ºÄãÊÇË­£¿ÕÒÎÒÓĞÊ²Ã´"
-                                           "ÊÂ£¿\n" NOR);
+                        return notify_fail(CYN + ob->name() + CYN "çªçœ¼"
+                                           "æœ›è‘—ä½ é“ï¼šä½ æ˜¯èª°ï¼Ÿæ‰¾æˆ‘æœ‰ä»€éº¼"
+                                           "äº‹ï¼Ÿ\n" NOR);
 
                 if (ob == me)
-                        return notify_fail("×Ô¼ºÓ¦³ê×Ô¼º£¿\n");
+                        return notify_fail("è‡ªå·±æ‡‰é…¬è‡ªå·±ï¼Ÿ\n");
 
                 if (me->is_fighting())
-                        return notify_fail("Äã»¹ÊÇ´òÍê¼ÜÔÙËµ°É¡£\n");
+                        return notify_fail("ä½ é‚„æ˜¯æ‰“å®Œæ¶å†èªªå§ã€‚\n");
 
                 if (me->is_busy())
-                        return notify_fail("Äã»¹ÊÇÓĞ¿ÕÁËÔÙËµ°É¡£\n");
+                        return notify_fail("ä½ é‚„æ˜¯æœ‰ç©ºäº†å†èªªå§ã€‚\n");
 
                 if( !query("can_speak", ob) )
-                        return notify_fail("Äã´óÄÔÓĞË®£¿\n");
+                        return notify_fail("ä½ å¤§è…¦æœ‰æ°´ï¼Ÿ\n");
 
                 if (! living(ob))
-                        return notify_fail("Äã»¹ÊÇµÈ" + ob->name() +
-                                           "ĞÑÁËºóÔÙËµ°É¡£\n");
+                        return notify_fail("ä½ é‚„æ˜¯ç­‰" + ob->name() +
+                                           "é†’äº†å¾Œå†èªªå§ã€‚\n");
 
                 if (ob->is_fighting())
-                        return notify_fail("Äã»¹ÊÇµÈ" + ob->name() +
-                                           "´òÍê¼ÜÔÙËµ°É¡£\n");
+                        return notify_fail("ä½ é‚„æ˜¯ç­‰" + ob->name() +
+                                           "æ‰“å®Œæ¶å†èªªå§ã€‚\n");
 
                 if (ob->is_busy())
-                        return notify_fail("Äã»¹ÊÇµÈ" + ob->name() +
-                                           "Ã¦ÍêÁËÔÙËµ°É¡£\n");
+                        return notify_fail("ä½ é‚„æ˜¯ç­‰" + ob->name() +
+                                           "å¿™å®Œäº†å†èªªå§ã€‚\n");
 
-                notify_fail(CYN + ob->name() + CYN "µÉÑÛÍû×ÅÄãµÀ£ºÄãÊÇË­"
-                            "£¿ÕÒÎÒÓĞÊ²Ã´ÊÂ£¿\n" NOR);
+                notify_fail(CYN + ob->name() + CYN "çªçœ¼æœ›è‘—ä½ é“ï¼šä½ æ˜¯èª°"
+                            "ï¼Ÿæ‰¾æˆ‘æœ‰ä»€éº¼äº‹ï¼Ÿ\n" NOR);
 
                 return ob->need_accede(me);
         }
-        write("Äã´òËãÓ¦³êË­£¿\n");
+        write("ä½ æ‰“ç®—æ‡‰é…¬èª°ï¼Ÿ\n");
         return 1;
 }
 
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½£ºaccede <Ä³ÈË>
+æŒ‡ä»¤æ ¼å¼ï¼šaccede <æŸäºº>
 
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄãÓ¦³êÄ³Ğ©ÈË¶ÔÄãÌá³öµÄÒªÇó¡£
+é€™å€‹æŒ‡ä»¤å¯ä»¥è®“ä½ æ‡‰é…¬æŸäº›äººå°ä½ æå‡ºçš„è¦æ±‚ã€‚
 HELP);
         return 1;
 }

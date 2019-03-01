@@ -1,17 +1,17 @@
-// baizhusipao.c °×ÜÑË¿ÅÛ
+// baizhusipao.c ç™½è‹§çµ²è¢
 
 #include <armor.h>
 inherit CLOTH;
 void create()
 {
-        set_name("°×ÜÑË¿ÅÛ", ({ "baisi pao", "cloth" }));
-        set("long","Ò»Ì×ÓñÉ«µÄÜÑË¿ÅÛ£¬²Ã¼ôºÍÌå£¬·ìÖÆ¾«Ï¸¡£\n");
+        set_name("ç™½è‹§çµ²è¢", ({ "baisi pao", "cloth" }));
+        set("long","ä¸€å¥—ç‰è‰²çš„è‹§çµ²è¢ï¼Œè£å‰ªå’Œé«”ï¼Œç¸«åˆ¶ç²¾ç´°ã€‚\n");
         set_weight(2000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
                 set("material", "cloth");
-                set("unit", "Ì×");
+                set("unit", "å¥—");
                 set("value", 1000);
                 set("armor_prop/armor", 2);
                 set("armor_prop/per", 2);

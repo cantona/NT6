@@ -1,4 +1,4 @@
-// chuanfu.c ÀÏ´¬·ò
+// chuanfu.c è€èˆ¹å¤«
 
 #include <ansi.h>
 
@@ -7,11 +7,11 @@ void goto_matou1(object ob);
 
 void create()
 {
-        set_name("ÀÏ´¬·ò", ({ "lao chuanfu","chuanfu" }));
-        set("gender", "ÄĞĞÔ");
+        set_name("è€èˆ¹å¤«", ({ "lao chuanfu","chuanfu" }));
+        set("gender", "ç”·æ€§");
         set("age", 56);
         set("long",
-                "ÕâÊÇÒ»¸öÀÏ´¬·ò¡£±¥¾­·çËªµÄÁ³ÉÏÊ²Ã´Ò²¿´²»³öÀ´¡£\n",
+                "é€™æ˜¯ä¸€å€‹è€èˆ¹å¤«ã€‚é£½ç¶“é¢¨éœœçš„è‡‰ä¸Šä»€éº¼ä¹Ÿçœ‹ä¸å‡ºä¾†ã€‚\n",
         );
 
         set("combat_exp", 1000000);
@@ -43,17 +43,17 @@ int accept_object(object who, object ob)
 
     if( query("money_id", ob) && ob->value() >= 2000 )
         {
-        message_vision("ÀÏ´¬·ò¶Ô$NËµ£ººÃ£¡ÕâÎ»" + RANK_D->query_respect(who) + "ÇëÉÏ´¬°É¡£\n" , who);
+        message_vision("è€èˆ¹å¤«å°$Nèªªï¼šå¥½ï¼é€™ä½" + RANK_D->query_respect(who) + "è«‹ä¸Šèˆ¹å§ã€‚\n" , who);
         who->move ("/d/city/duchuan");
                 call_out("goto_matou1", time, who) ;
                return 1;
         }
     else  
-                message_vision("ÀÏ´¬·òÖåÃ¼¶Ô$NËµ£ºÄú¸øµÄÒ²Ì«ÉÙÁË°É£¿\n", who);
+                message_vision("è€èˆ¹å¤«çšºçœ‰å°$Nèªªï¼šæ‚¨çµ¦çš„ä¹Ÿå¤ªå°‘äº†å§ï¼Ÿ\n", who);
         return 0;
 }
 void goto_matou1(object ob)
 {
-   tell_object(ob, "¶É´¬ÖÕÓÚµ½°¶ÁË¡£Äã×ßÏÂ´¬À´¡£\n" ) ;
+   tell_object(ob, "æ¸¡èˆ¹çµ‚äºåˆ°å²¸äº†ã€‚ä½ èµ°ä¸‹èˆ¹ä¾†ã€‚\n" ) ;
    ob->move ("/d/shaolin/matou1") ;
 }

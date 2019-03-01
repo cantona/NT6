@@ -1,4 +1,4 @@
-// pi.c °íÈËË¤õÓµÄÎ÷¹ÏÆ¤
+// pi.c çµ†äººæ‘”è·¤çš„è¥¿ç“œçš®
 // By Alf, Last Update 2002.0915
 
 #include <ansi.h>
@@ -6,15 +6,15 @@ inherit ITEM;
 
 void create()
 {
-    set_name(HIY"Î÷¹ÏÆ¤"NOR,({"xigua pi","pi"}));
+    set_name(HIY"è¥¿ç“œçš®"NOR,({"xigua pi","pi"}));
     set_weight(200);
     if(clonep())
         set_default_object(__FILE__);
     else
     {
-        set("unit","¿é");
-        set("long","Ò»¿éÎ÷¹ÏÆ¤¡£\n");
-        set("no_get","Ò»¿éÎ÷¹ÏÆ¤£¬¶¼¸øÈË²ÈÀÃÁË£¬ÄãÒ²²»ÏÓ¶ñĞÄ£¿\n");
+        set("unit","å¡Š");
+        set("long","ä¸€å¡Šè¥¿ç“œçš®ã€‚\n");
+        set("no_get","ä¸€å¡Šè¥¿ç“œçš®ï¼Œéƒ½çµ¦äººè¸©çˆ›äº†ï¼Œä½ ä¹Ÿä¸å«Œæƒ¡å¿ƒï¼Ÿ\n");
         set("value",1);
         set("env/invisible",1);
         set("pi_gone",10+random(10));
@@ -37,21 +37,21 @@ void init()
     
     if(interactive(me) && living(me) && random(chance) == 1) 
     {
-        msg = HIY""+me->name()+"²»Ğ¡ĞÄ²ÈÔÚÎ÷¹ÏÆ¤ÉÏ£¬¡°¹¾ßË¡±Ò»ÉùË¤ÁË¸ö´óÂíÅ¿";
+        msg = HIY""+me->name()+"ä¸å°å¿ƒè¸©åœ¨è¥¿ç“œçš®ä¸Šï¼Œâ€œå’•å’šâ€ä¸€è²æ‘”äº†å€‹å¤§é¦¬è¶´";
         me->start_busy(2);
         
         if( query("pi_gone", ob) <= 0 )
         {
-            msg += "£¬Î÷¹ÏÆ¤È´²»Öª·ÉÄÄÈ¥ÁË¡£\n";
+            msg += "ï¼Œè¥¿ç“œçš®å»ä¸çŸ¥é£›å“ªå»äº†ã€‚\n";
             tell_room(environment(me),msg);
             destruct(ob);
         }
         else
         {
-            set("long", "Ò»¿éÎ÷¹ÏÆ¤£¬²»ÖªµÀÊÇË­¶ªµÄ¡£\n", ob);
+            set("long", "ä¸€å¡Šè¥¿ç“œçš®ï¼Œä¸çŸ¥é“æ˜¯èª°ä¸Ÿçš„ã€‚\n", ob);
             set("env/invisible", 0, ob);
             addn("pi_gone", -1, ob);
-            msg += "¡£\n"+me->name()+"Õ¾ÆğÉíÀ´£¬ÅÄÁËÅÄÆ¨¹É£¬Ò»Á³µÄÉ±Æø£º¡°ÄÌÄÌµÄµ½µ×ÊÇË­¸ÉµÄ£¿¡±\n"NOR;
+            msg += "ã€‚\n"+me->name()+"ç«™èµ·èº«ä¾†ï¼Œæ‹äº†æ‹å±è‚¡ï¼Œä¸€è‡‰çš„æ®ºæ°£ï¼šâ€œå¥¶å¥¶çš„åˆ°åº•æ˜¯èª°å¹¹çš„ï¼Ÿâ€\n"NOR;
             tell_room(environment(me),msg);
         }
     }

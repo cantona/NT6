@@ -1,4 +1,4 @@
-// yinlun.c ÒøÂÖ
+// yinlun.c éŠ€è¼ª
 // Last Modified by winder on Sep. 7 2001
 
 #include <ansi.h>;
@@ -8,17 +8,17 @@ inherit F_UNIQUE;
 
 void create()
 {
-        set_name(HIW"ÒøÂÖ"NOR ,({ "yin lun", "lun", "yinlun" }));
+        set_name(HIW"éŠ€è¼ª"NOR ,({ "yin lun", "lun", "yinlun" }));
         set_weight(70000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long",HIW"ÕâÊÇÒ»±úÒø¹âÉÁÉÁµÄ·¨ÂÖ¡£\n"NOR);
+                set("unit", "æŠŠ");
+                set("long",HIW"é€™æ˜¯ä¸€æŸ„éŠ€å…‰é–ƒé–ƒçš„æ³•è¼ªã€‚\n"NOR);
                 set("value", 10000);
                 set("material", "silver");
-                set("wield_msg", "$N¡¸à§¡¹µÄÒ»Éù³é³öÒ»±ú$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg","$N½«ÊÖÖĞµÄ$n·Å»ØÑü¼ä¡£\n");
+                set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€è²æŠ½å‡ºä¸€æŸ„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg","$Nå°‡æ‰‹ä¸­çš„$næ”¾å›è…°é–“ã€‚\n");
         }
         init_hammer(100);
         setup();

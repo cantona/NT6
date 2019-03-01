@@ -9,13 +9,13 @@ int do_read(string arg);
 
 void create()
 {
-        set_name(HIW"ĞÂÊÖÈëÃÅ±Ø¶Á"NOR, ({"book", "newbie book"}));
+        set_name(HIW"æ–°æ‰‹å…¥é–€å¿…è®€"NOR, ({"book", "newbie book"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
-                set("long", "ÕâÊÇÅÌ¹Å¸øĞÂÊÖÃÇ×¼±¸µÄÊé£¬²»¹ÜÄãÄàÁä"
-                            "ÈçºÎ£¬Èç¹û½øÁËÄàÌ¶Îñ±Ø¿´¿´¡£\n");
+                set("unit", "æœ¬");
+                set("long", "é€™æ˜¯ç›¤å¤çµ¦æ–°æ‰‹å€‘æº–å‚™çš„æ›¸ï¼Œä¸ç®¡ä½ æ³¥é½¡"
+                            "å¦‚ä½•ï¼Œå¦‚æœé€²äº†æ³¥æ½­å‹™å¿…çœ‹çœ‹ã€‚\n");
         }
         setup();
 }
@@ -28,7 +28,7 @@ void init()
 int do_read(string arg)
 {
         if (! arg || arg != "book")
-                return notify_fail("ÄãÒª¶ÁÊ²Ã´£¿ÒªÏë¶ÁÊéÇëÊäÈë(read book)¡£\n");
+                return notify_fail("ä½ è¦è®€ä»€éº¼ï¼Ÿè¦æƒ³è®€æ›¸è«‹è¼¸å…¥(read book)ã€‚\n");
 
         return HELP_CMD->main(this_player(), "feature");
 }

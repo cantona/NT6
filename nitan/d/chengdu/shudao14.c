@@ -3,10 +3,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÊñµÀ");
+        set("short", "èœ€é“");
         set("long", @LONG
-Äã×ßÔÚÒÔÏÕÖø³ÆÌìÏÂµÄÊñµÀÉÏ£¬µÀÂ·Ê®·ÖÏÁÕ­£¬Î÷±ß²»Ô¶ÓÐÒ»×ù
-¸ßÉ½¡£ÒªÈ¥³É¶¼µÄ»°£¬±ØÐë·­¹ýÕâ×ù¸ßÉ½¡£ËÄÖÜÒ»Æ¬»ÄÁ¹£¬ÃìÎÞÈËÑÌ¡£
+ä½ èµ°åœ¨ä»¥éšªè‘—ç¨±å¤©ä¸‹çš„èœ€é“ä¸Šï¼Œé“è·¯ååˆ†ç‹¹çª„ï¼Œè¥¿é‚Šä¸é æœ‰ä¸€åº§
+é«˜å±±ã€‚è¦åŽ»æˆéƒ½çš„è©±ï¼Œå¿…é ˆç¿»éŽé€™åº§é«˜å±±ã€‚å››å‘¨ä¸€ç‰‡è’æ¶¼ï¼Œæ¸ºç„¡äººç…™ã€‚
 LONG );
         set("exits", ([
                   "westup" : __DIR__"shudao15",

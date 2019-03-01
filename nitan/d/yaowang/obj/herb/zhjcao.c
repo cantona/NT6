@@ -2,12 +2,12 @@
 
 void create()
 {
-        set_name(GRN "×ª½î²İ" NOR, ({ "zhuanjin cao", "Pachysandra terminalis", "herb_zhjcao" }));
+        set_name(GRN "è½‰ç­‹è‰" NOR, ({ "zhuanjin cao", "Pachysandra terminalis", "herb_zhjcao" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "»ÆÑî¿ÆÖ²Îï¶¥»¨°åµÊ¹û(ÓÖ³Æ¸»¹ó²İ)(Pachysandra terminalis)µÄ´ø¸ùÈ«²İ¡£ÒòÆäÓĞÊæ½î»îÂç¹¦Ğ§£¬¹ÊµÃ´ËÃû¡£\n" NOR);
-                set("base_unit", "Öê");
+                set("long", HIW "é»ƒæ¥Šç§‘æ¤ç‰©é ‚èŠ±æ¿å‡³æœ(åˆç¨±å¯Œè²´è‰)(Pachysandra terminalis)çš„å¸¶æ ¹å…¨è‰ã€‚å› å…¶æœ‰èˆ’ç­‹æ´»çµ¡åŠŸæ•ˆï¼Œæ•…å¾—æ­¤åã€‚\n" NOR);
+                set("base_unit", "æ ª");
                 set("base_value", 60000);
                 set("base_weight", 100);
         }

@@ -19,24 +19,24 @@ int main(object me, string arg)
         e = EMOTE_D->query_all_emote();
         if (arg == "-r" || arg && sscanf(arg, "-r %d", d))
         {
-                str = HIM "°´ÕÕÊ±¼äË³ÐòÏÔÊ¾" + LOCAL_MUD_NAME();
+                str = HIM "æŒ‰ç…§æ™‚é–“é †åºé¡¯ç¤º" + LOCAL_MUD_NAME();
                 if (d)
                 {
-                        str += "×î½ü" + chinese_number(d) + "ÌìÔö¼ÓµÄ±íÇé¶¯´Ê";
+                        str += "æœ€è¿‘" + chinese_number(d) + "å¤©å¢žåŠ çš„è¡¨æƒ…å‹•è©ž";
                         d *= 86400;
                         e = filter_array(e, (: filter_emote :), d);
                 } else
                 {
-                        str += "ËùÓÐµÄ±íÇé¶¯´Ê";
+                        str += "æ‰€æœ‰çš„è¡¨æƒ…å‹•è©ž";
                         e = sort_array(e, (: sort_emote :));
                 }
                 str += "\n" NOR;
         } else
         {
-                str = HIW + LOCAL_MUD_NAME() + "±íÇé¶¯×÷×Ü»ã\n" NOR;
+                str = HIW + LOCAL_MUD_NAME() + "è¡¨æƒ…å‹•ä½œç¸½åŒ¯\n" NOR;
                 e = sort_array(EMOTE_D->query_all_emote(), 1);
         }
-        str += "¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª\n";
+        str += "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n";
         for(i=0; i<sizeof(e); i++)
                 str += sprintf("%-15s%s", e[i], (i%5==4)?"\n": "");
         me->start_more(str);
@@ -69,13 +69,13 @@ int sort_emote(string e1, string e2)
 int help(object me)
 {
   write(@HELP
-Ö¸Áî¸ñÊ½ : semote [-r [n]]
+æŒ‡ä»¤æ ¼å¼ : semote [-r [n]]
 
-Õâ¸öÖ¸Áî¿ÉÒÔÁÐ³öÄ¿Ç°ËùÄÜÊ¹ÓÃµÄemote¡£Èç¹ûÍæ¼ÒÊ¹ÓÃÁË
-Ñ¡Ïî -r Ôò¿ÉÒÔ°´ÕÕÊ±¼äË³ÐòÏÔÊ¾ËùÓÐµÄemote£¬Èç¹ûÑ¡Ïî
-ºóÃæÌí¼ÓÁË²ÎÊý£¬Ôò½«Ö»ÏÔÊ¾×î½ü¼¸Ìì±àÐ´µÄemote¡£
+é€™å€‹æŒ‡ä»¤å¯ä»¥åˆ—å‡ºç›®å‰æ‰€èƒ½ä½¿ç”¨çš„emoteã€‚å¦‚æžœçŽ©å®¶ä½¿ç”¨äº†
+é¸é … -r å‰‡å¯ä»¥æŒ‰ç…§æ™‚é–“é †åºé¡¯ç¤ºæ‰€æœ‰çš„emoteï¼Œå¦‚æžœé¸é …
+å¾Œé¢æ·»åŠ äº†åƒæ•¸ï¼Œå‰‡å°‡åªé¡¯ç¤ºæœ€è¿‘å¹¾å¤©ç·¨å¯«çš„emoteã€‚
 
-±ÈÈçsemote -r 1½«ÏÔÊ¾×î½üÒ»ÌìÐÂ±àÐ´»òÐÞ¸ÄµÄemote¡£
+æ¯”å¦‚semote -r 1å°‡é¡¯ç¤ºæœ€è¿‘ä¸€å¤©æ–°ç·¨å¯«æˆ–ä¿®æ”¹çš„emoteã€‚
 HELP
     );
     return 1;

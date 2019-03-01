@@ -1,4 +1,4 @@
-// gancao.c ¸Ê²İ
+// gancao.c ç”˜è‰
 
 inherit ITEM;
 #include <ansi.h>
@@ -11,13 +11,13 @@ void init()
 
 void create()
 {
-        set_name(HIY"¸Ê²İ"NOR, ({"gancao"}));
+        set_name(HIY"ç”˜è‰"NOR, ({"gancao"}));
         set_weight(500);
         set("vegetable", 2);
         set("value", 10);
         set("nostrum", 16);
-        set("unit", "Ö§");
-        set("long", "ÕâÊÇÒ»Ö§ÇĞ¶ÌÁËµÄ¸Ê²İ£¬¿´À´¿ÉÒÔÈëÒ©¡£\n");
+        set("unit", "æ”¯");
+        set("long", "é€™æ˜¯ä¸€æ”¯åˆ‡çŸ­äº†çš„ç”˜è‰ï¼Œçœ‹ä¾†å¯ä»¥å…¥è—¥ã€‚\n");
         set("pour_type", "1");
         setup();
 }
@@ -26,13 +26,13 @@ int do_eat(string arg)
 {
         object me = this_player();
 
-        if(!id(arg)) return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+        if(!id(arg)) return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if(!present(this_object(), me))
-                return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if( me->is_busy() )
-                return notify_fail("±ğ¼±£¬ÂıÂı³Ô£¬Ğ¡ĞÄ±ğÒ­×ÅÁË¡£\n");
+                return notify_fail("åˆ¥æ€¥ï¼Œæ…¢æ…¢åƒï¼Œå°å¿ƒåˆ¥å™è‘—äº†ã€‚\n");
 
-        write("ÄãÒ»¿Ú¾Í°Ñ¸Ê²İ³ÔÁËÏÂÈ¥¡£¾õµÃÓĞÒ»µãµãÌğ¡£\n");
+        write("ä½ ä¸€å£å°±æŠŠç”˜è‰åƒäº†ä¸‹å»ã€‚è¦ºå¾—æœ‰ä¸€é»é»ç”œã€‚\n");
         destruct(this_object());
         return 1;
 }

@@ -4,14 +4,14 @@
 inherit ROOM;
 void create()
 {
-        set("short", "½ðÅ£Îä¹Ý");
+        set("short", "é‡‘ç‰›æ­¦é¤¨");
         set("long", @LONG
-¡¸½ðÅ£Îä¹Ý¡¹ÔÚ½­ºþÖÐºÜÓÐÃûÉù£¬ºÜ¶à´óÏÀ×ÔÐ¡¾ÍÊÇ´ÓÕâÀï×ß½ø
-½­ºþ¡£ËäÈ»ËûÃÇÔÚ½­ºþÔçÒÑ³ÉÃûÁ¢Íò£¬ÕâÀïµÄÊ¦¸µÄê¼ÍÒ²¶¼´óÁË£¬È´
-ÊÇËûÃÇµÄÆôÃÉÒµÊ¦£¬ËûÃÇÒ²³£»ØÀ´¿´ÍûÊ¦¸µÃÇ£¬Òò´ËÕâÀï³¤¾ÃµÃµ½ºÚ
-°×Á½µÀµÄ×ðÖØ£¬²»ÈÝÇÖ·¸¡£ÕâÀïÊÇÎä¹Ý´óÌü¡£¹ÝÖ÷ÂíÎåµÂÔÚ´ËÇëÊÚ£º
-»ù±¾Çá¹¦£¬»ù±¾ÄÚ¹¦£¬»ù±¾ÕÐ¼Ü£¬»ù±¾ÊÖ·¨£¬^M»ù±¾µ¶·¨¡£  Ç½ÉÏÌù
-×Å¸öÌù×Ó(tiezi)¡£
+ã€Œé‡‘ç‰›æ­¦é¤¨ã€åœ¨æ±Ÿæ¹–ä¸­å¾ˆæœ‰åè²ï¼Œå¾ˆå¤šå¤§ä¿ è‡ªå°å°±æ˜¯å¾žé€™è£¡èµ°é€²
+æ±Ÿæ¹–ã€‚é›–ç„¶ä»–å€‘åœ¨æ±Ÿæ¹–æ—©å·²æˆåç«‹è¬ï¼Œé€™è£¡çš„å¸«å‚…å¹´ç´€ä¹Ÿéƒ½å¤§äº†ï¼Œå»
+æ˜¯ä»–å€‘çš„å•Ÿè’™æ¥­å¸«ï¼Œä»–å€‘ä¹Ÿå¸¸å›žä¾†çœ‹æœ›å¸«å‚…å€‘ï¼Œå› æ­¤é€™è£¡é•·ä¹…å¾—åˆ°é»‘
+ç™½å…©é“çš„å°Šé‡ï¼Œä¸å®¹ä¾µçŠ¯ã€‚é€™è£¡æ˜¯æ­¦é¤¨å¤§å»³ã€‚é¤¨ä¸»é¦¬äº”å¾·åœ¨æ­¤è«‹æŽˆï¼š
+åŸºæœ¬è¼•åŠŸï¼ŒåŸºæœ¬å…§åŠŸï¼ŒåŸºæœ¬æ‹›æž¶ï¼ŒåŸºæœ¬æ‰‹æ³•ï¼Œ^MåŸºæœ¬åˆ€æ³•ã€‚  ç‰†ä¸Šè²¼
+è‘—å€‹è²¼å­(tiezi)ã€‚
 LONG );
         set("objects", ([
                 __DIR__"npc/mawude" : 1,
@@ -22,28 +22,28 @@ LONG );
         set("no_beg",1);
         set("item_desc", ([
             "tiezi" : @TEXT
-½ðÅ£Îä¹Ý¾´ÆôÕß£º²»Ðë°ÑËùÓÐµÄ»ù±¾Îä¹¦Ñ§È«¡£±ØÒªµÄ»ù±¾Îä¹¦ÊÇ£º
+é‡‘ç‰›æ­¦é¤¨æ•¬å•Ÿè€…ï¼šä¸é ˆæŠŠæ‰€æœ‰çš„åŸºæœ¬æ­¦åŠŸå­¸å…¨ã€‚å¿…è¦çš„åŸºæœ¬æ­¦åŠŸæ˜¯ï¼š
 
-¢å »ù±¾ÄÚ¹¦
-¢æ »ù±¾Çá¹¦
-¢ç »ù±¾ÕÐ¼Ü
-¢è »ù±¾È­½Å£ºÓÉ»ù±¾×¦·¨¡¢»ù±¾ÊÖ·¨¡¢»ù±¾ÕÆ·¨¡¢»ù±¾Ö¸·¨¡¢»ù
-             ±¾×¦·¨ÒÔ¼°»ù±¾È­·¨ÈÎÑ¡Ò»ÖÖ¡£
-¢é »ù±¾±øÆ÷£ºÓÉ»ù±¾µ¶·¨¡¢»ù±¾¹÷·¨¡¢»ù±¾½£·¨¡¢»ù±¾ÕÈ·¨¡¢»ù
-             ±¾°ô·¨ÒÔ¼°»ù±¾°µÆ÷ÈÎÑ¡Ò»ÖÖ¡£
+â–¡ åŸºæœ¬å…§åŠŸ
+â–¡ åŸºæœ¬è¼•åŠŸ
+â–¡ åŸºæœ¬æ‹›æž¶
+â–¡ åŸºæœ¬æ‹³è…³ï¼šç”±åŸºæœ¬çˆªæ³•ã€åŸºæœ¬æ‰‹æ³•ã€åŸºæœ¬æŽŒæ³•ã€åŸºæœ¬æŒ‡æ³•ã€åŸº
+             æœ¬çˆªæ³•ä»¥åŠåŸºæœ¬æ‹³æ³•ä»»é¸ä¸€ç¨®ã€‚
+â–¡ åŸºæœ¬å…µå™¨ï¼šç”±åŸºæœ¬åˆ€æ³•ã€åŸºæœ¬æ£æ³•ã€åŸºæœ¬åŠæ³•ã€åŸºæœ¬æ–æ³•ã€åŸº
+             æœ¬æ£’æ³•ä»¥åŠåŸºæœ¬æš—å™¨ä»»é¸ä¸€ç¨®ã€‚
 
-©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤
-¡¸½ðÅ£Îä¹Ý¡¹Ëù´«ÊÚ»ù±¾Îä¹¦
-©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤
-£±£©»ù±¾Çá¹¦ (dodge)            £¸£©»ù±¾È­·¨ (cuff)
-£²£©»ù±¾ÄÚ¹¦ (force)            £¹£©»ù±¾µ¶·¨ (blade)
-£³£©»ù±¾ÕÐ¼Ü (parry)            £±£°£©»ù±¾°ô·¨ (stick)
-£´£©»ù±¾×¦·¨ (claw)             £±£±£©»ù±¾¹÷·¨ (club)
-£µ£©»ù±¾ÊÖ·¨ (hand)             £±£²£©»ù±¾ÕÈ·¨ (staff)
-£¶£©»ù±¾ÕÆ·¨ (strike)           £±£³£©»ù±¾½£·¨ (sword)
-£·£©»ù±¾Ö¸·¨ (finger)           £±£´£©»ù±¾°µÆ÷ (throwing)
-©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤
-Ñ§Ï°ÃüÁîÊÇ: xue Ê¦¸µÃû Îä¹¦¼¼ÄÜ
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+ã€Œé‡‘ç‰›æ­¦é¤¨ã€æ‰€å‚³æŽˆåŸºæœ¬æ­¦åŠŸ
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+ï¼‘ï¼‰åŸºæœ¬è¼•åŠŸ (dodge)            ï¼˜ï¼‰åŸºæœ¬æ‹³æ³• (cuff)
+ï¼’ï¼‰åŸºæœ¬å…§åŠŸ (force)            ï¼™ï¼‰åŸºæœ¬åˆ€æ³• (blade)
+ï¼“ï¼‰åŸºæœ¬æ‹›æž¶ (parry)            ï¼‘ï¼ï¼‰åŸºæœ¬æ£’æ³• (stick)
+ï¼”ï¼‰åŸºæœ¬çˆªæ³• (claw)             ï¼‘ï¼‘ï¼‰åŸºæœ¬æ£æ³• (club)
+ï¼•ï¼‰åŸºæœ¬æ‰‹æ³• (hand)             ï¼‘ï¼’ï¼‰åŸºæœ¬æ–æ³• (staff)
+ï¼–ï¼‰åŸºæœ¬æŽŒæ³• (strike)           ï¼‘ï¼“ï¼‰åŸºæœ¬åŠæ³• (sword)
+ï¼—ï¼‰åŸºæœ¬æŒ‡æ³• (finger)           ï¼‘ï¼”ï¼‰åŸºæœ¬æš—å™¨ (throwing)
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+å­¸ç¿’å‘½ä»¤æ˜¯: xue å¸«å‚…å æ­¦åŠŸæŠ€èƒ½
 TEXT
         ]) );
         set("exits", ([
@@ -63,6 +63,6 @@ TEXT
 int valid_leave(object me, string dir)
 {
         if( !query_temp("marks/jinniu_paied", me) && (dir == "up") )
-        return notify_fail("ÂíÎåµÂÐ¦µÀ: ÄÇÊÇ±¾¹ÝµÜ×Ó²ÅÄÜ½øÈ¥µÄ¡£\n");
+        return notify_fail("é¦¬äº”å¾·ç¬‘é“: é‚£æ˜¯æœ¬é¤¨å¼Ÿå­æ‰èƒ½é€²åŽ»çš„ã€‚\n");
         else  return 1;
 }

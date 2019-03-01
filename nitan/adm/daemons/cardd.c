@@ -45,7 +45,7 @@ void create()
         seteuid(ROOT_UID);
 }
 
-// ²éÑ¯ CARD Ïà¹ØĞÅÏ¢
+// æŸ¥è©¢ CARD ç›¸é—œä¿¡æ¯
 public mixed db_query_card(string CardSn, string key)
 {
         mixed  res;
@@ -129,12 +129,12 @@ public varargs int db_create_card(mixed ob, string CardSn, string CardPass, int 
 public int db_make_card(object me, int amount, int ctype)
 {
         string strtmpSn, strtmpPass;
-        string strQZ, strPS;           //  ¿¨ºÅÇ°×º£¬ÓÃÒÔ±íÊ¾¿¨µÄÀà±ğÃæ¶î
+        string strQZ, strPS;           //  å¡è™Ÿå‰ç¶´ï¼Œç”¨ä»¥è¡¨ç¤ºå¡çš„é¡åˆ¥é¢é¡
         int nCount, i;
         mixed res, ret;
         string sql;
 
-        // ×¢²áÂë×éºÏĞòÁĞ
+        // æ³¨å†Šç¢¼çµ„åˆåºåˆ—
         string *codes = ({
                "A", "B", "C", "D", "E", "F", "G", "H", "I",
                "J", "K", "L", "M", "N", "O", "P", "Q", "R",
@@ -152,20 +152,20 @@ public int db_make_card(object me, int amount, int ctype)
         if( amount <= 0 )
                 return 0;
 
-        // Îª±£Ö¤Êı¾İ´æ´¢Ã»ÓĞÎÊÌâ£¬Ã¿´Î×î¶àÉú³É500¸ö¿¨ºÅ
+        // ç‚ºä¿è¨¼æ•¸æ“šå­˜å„²æ²’æœ‰å•é¡Œï¼Œæ¯æ¬¡æœ€å¤šç”Ÿæˆ500å€‹å¡è™Ÿ
         if( amount > 500 )
         {
-                write("Îª±£Ö¤Êı¾İ´æ´¢Ã»ÓĞÎÊÌâ£¬Ã¿´Î×î¶àÉú³É500¸ö¿¨ºÅ£¡\n");
+                write("ç‚ºä¿è¨¼æ•¸æ“šå­˜å„²æ²’æœ‰å•é¡Œï¼Œæ¯æ¬¡æœ€å¤šç”Ÿæˆ500å€‹å¡è™Ÿï¼\n");
                 return 0;
         }
 
         if( !ctype )
         {
-                write("ÇëÊäÈë¿¨ºÅÖÖÀà¡£" HIC + "10 OR 50 OR 100" + NOR "·Ö±ğ´ú±í10RMB£¬50RMBºÍ100RMBÃæ¶î£¡\n");
+                write("è«‹è¼¸å…¥å¡è™Ÿç¨®é¡ã€‚" HIC + "10 OR 50 OR 100" + NOR "åˆ†åˆ¥ä»£è¡¨10RMBï¼Œ50RMBå’Œ100RMBé¢é¡ï¼\n");
                 return 0;
         }
 
-        // ±ØĞëÊäÈëºÏ·¨µÄ¿¨ºÅÖÖÀà
+        // å¿…é ˆè¼¸å…¥åˆæ³•çš„å¡è™Ÿç¨®é¡
         switch(ctype)
         {
         case 10:
@@ -184,18 +184,18 @@ public int db_make_card(object me, int amount, int ctype)
                 break;
 
         default:
-                write("ÇëÊäÈë¿¨ºÅÖÖÀà¡£" HIC + "10 OR 50 OR 100" + NOR "·Ö±ğ´ú±í10RMB£¬50RMBºÍ100RMBÃæ¶î£¡\n");
+                write("è«‹è¼¸å…¥å¡è™Ÿç¨®é¡ã€‚" HIC + "10 OR 50 OR 100" + NOR "åˆ†åˆ¥ä»£è¡¨10RMBï¼Œ50RMBå’Œ100RMBé¢é¡ï¼\n");
                 return 0;
                 break;
         }
 
-        // ³õÊ¼»¯
+        // åˆå§‹åŒ–
         strtmpSn = "";
         nCount = 0;
         res = ({});
         while(1)
         {
-                // ¿¨ºÅÉú³ÉÍê±Ï£¬½øĞĞºóĞø´¦Àí
+                // å¡è™Ÿç”Ÿæˆå®Œç•¢ï¼Œé€²è¡Œå¾ŒçºŒè™•ç†
                 if( nCount >= amount )
                 {
                         for (i = 0; i < sizeof(res); i+=2)
@@ -203,16 +203,16 @@ public int db_make_card(object me, int amount, int ctype)
                                 reset_eval_cost();
                                 if( !db_create_card(me, res[i], res[i+1], ctype) )
                                 {
-                                        write("Éú³É¿¨ºÅÊ±Ê§°Ü£¡\n");
+                                        write("ç”Ÿæˆå¡è™Ÿæ™‚å¤±æ•—ï¼\n");
                                         return 0;
                                 }
-                                log_file("static/cards", sprintf("Card: %s-%s£¬value = %d.\n", res[i], res[i+1], ctype));
+                                log_file("static/cards", sprintf("Card: %s-%sï¼Œvalue = %d.\n", res[i], res[i+1], ctype));
                         }
                         return 1;
                 }
 
-                // ²úÉúÒ»¸öËæ»ú¿¨ºÅ
-                strtmpSn = strQZ; // ¿¨ºÅÇ°×º
+                // ç”¢ç”Ÿä¸€å€‹éš¨æ©Ÿå¡è™Ÿ
+                strtmpSn = strQZ; // å¡è™Ÿå‰ç¶´
                 strtmpPass = strPS;
                 for(i = 0; i < SN_LEN; i ++)
                 {
@@ -223,18 +223,18 @@ public int db_make_card(object me, int amount, int ctype)
                 sql = sprintf("SELECT card FROM %s WHERE card = \"%s\"",
                               CARD_TABLE, strtmpSn);
                 ret = DATABASE_D->db_query(sql);
-                if( ret ) continue; // Êı¾İ¿âÒÑ¾­´æÔÚ
+                if( ret ) continue; // æ•¸æ“šåº«å·²ç¶“å­˜åœ¨
                 sql = sprintf("SELECT password FROM %s WHERE password = \"%s\"",
                               CARD_TABLE, strtmpPass);
                 ret = DATABASE_D->db_query(sql);
-                if( ret ) continue; // Êı¾İ¿âÒÑ¾­´æÔÚ
+                if( ret ) continue; // æ•¸æ“šåº«å·²ç¶“å­˜åœ¨
 */
                 nCount ++;
                 res += ({ strtmpSn, strtmpPass });
         }
 }
 
-// Éè¶¨¿¨ºÅÊôĞÔ
+// è¨­å®šå¡è™Ÿå±¬æ€§
 public int db_set_card(string CardSn, string key, mixed data)
 {
         mixed  ret;
@@ -271,13 +271,13 @@ public int db_card_pay(object me, string CardSn, string CardPass)
 
         if (time() - query_temp("last_try_card_pay", me) < 5 )
         {
-                write("Äã¾àÀëÉÏ´Î³äÖµ´íÎóµÄÊ±¼ä²»×ã5Ãë£¬ÇëÉÔÎ¢ÔÙÊÔ¡£\n");
+                write("ä½ è·é›¢ä¸Šæ¬¡å……å€¼éŒ¯èª¤çš„æ™‚é–“ä¸è¶³5ç§’ï¼Œè«‹ç¨å¾®å†è©¦ã€‚\n");
                 return 0;
         }
 
         if( !CardSn || sizeof(CardSn) != SN_LEN+2 )
         {
-                write("³äÖµ¿¨ºÅÎ»Êı´íÎó£¬ÇëÈ·ÈÏÄãµÄ³äÖµ¿¨ºÅµÄÕıÈ·ĞÔ¡£\n");
+                write("å……å€¼å¡è™Ÿä½æ•¸éŒ¯èª¤ï¼Œè«‹ç¢ºèªä½ çš„å……å€¼å¡è™Ÿçš„æ­£ç¢ºæ€§ã€‚\n");
                 set_temp("last_try_card_pay", time(), me);
                 return 0;
         }
@@ -292,7 +292,7 @@ public int db_card_pay(object me, string CardSn, string CardPass)
         case "HU":
                 break;
         default:
-                write("³äÖµ¿¨ºÅ´íÎó£¬ÇëÈ·ÈÏÄãµÄ³äÖµ¿¨ºÅµÄÕıÈ·ĞÔ¡£\n");
+                write("å……å€¼å¡è™ŸéŒ¯èª¤ï¼Œè«‹ç¢ºèªä½ çš„å……å€¼å¡è™Ÿçš„æ­£ç¢ºæ€§ã€‚\n");
                 set_temp("last_try_card_pay", time(), me);
                 return 0;
                 break;
@@ -302,27 +302,27 @@ public int db_card_pay(object me, string CardSn, string CardPass)
 
         if( !arrayp(res) || !stringp(pass = res[0]) )
         {
-                write("³äÖµ¿¨ºÅ´íÎó£¬ÇëÈ·ÈÏÄãµÄ³äÖµ¿¨ºÅµÄÕıÈ·ĞÔ¡£\n");
+                write("å……å€¼å¡è™ŸéŒ¯èª¤ï¼Œè«‹ç¢ºèªä½ çš„å……å€¼å¡è™Ÿçš„æ­£ç¢ºæ€§ã€‚\n");
                 return 0;
         }
 
         if( CardPass != pass )
         {
-                write("³äÖµ¿¨ÃÜÂë´íÎó£¬ÇëÈ·ÈÏÄãµÄ³äÖµ¿¨ÃÜÂëµÄÕıÈ·ĞÔ¡£\n");
+                write("å……å€¼å¡å¯†ç¢¼éŒ¯èª¤ï¼Œè«‹ç¢ºèªä½ çš„å……å€¼å¡å¯†ç¢¼çš„æ­£ç¢ºæ€§ã€‚\n");
                 return 0;
         }
 
         value = res[1];
 
-        // »î¶¯ÆÚ¼ä
+        // æ´»å‹•æœŸé–“
         money = value + value / 5;
 
-        // ´¦Àí¿¨³åÖµºó±ê¼Ç
+        // è™•ç†å¡æ²–å€¼å¾Œæ¨™è¨˜
         sql = "UPDATE cards SET sale = 1, paytime = " + time() + ", payid = " + DB_STR(query("id", me)) + " WHERE card = '" + CardSn + "'";
         ret = DATABASE_D->db_query(sql);
         if( !intp(ret) )
         {
-                write(HIR "³äÖµÊ§°Ü(0000)£¬²¢¾¡¿ìÓëADMINÁªÏµ¡£\n" NOR);
+                write(HIR "å……å€¼å¤±æ•—(0000)ï¼Œä¸¦ç›¡å¿«èˆ‡ADMINè¯ç³»ã€‚\n" NOR);
                 return 0;
         }
 
@@ -332,7 +332,7 @@ public int db_card_pay(object me, string CardSn, string CardPass)
                 MEMBER_D->db_create_member(me, money);
 
 
-        tell_object(me, HIG "¹§Ï²£¡ÍõÕß±Ò(NT)³äÖµ³É¹¦£¬³äÖµÃæ¶î" + HIR + sprintf("%d", value) +
-                        HIG "Ôª£¬»ñµÃ " + HIR + sprintf("%d", money) + HIG + " ÍõÕß±Ò(NT)¡£\n" NOR);
+        tell_object(me, HIG "æ­å–œï¼ç‹è€…å¹£(NT)å……å€¼æˆåŠŸï¼Œå……å€¼é¢é¡" + HIR + sprintf("%d", value) +
+                        HIG "å…ƒï¼Œç²å¾— " + HIR + sprintf("%d", money) + HIG + " ç‹è€…å¹£(NT)ã€‚\n" NOR);
         return 1;
 }

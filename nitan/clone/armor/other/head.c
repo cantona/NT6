@@ -6,13 +6,13 @@ inherit HEAD;
 
 void create()
 {
-        set_name("Í·¿ø", ({"head"}));
+        set_name("é ­ç›”", ({"head"}));
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
                 set("material", "iron");
-                set("unit", "¸ö");
+                set("unit", "å€‹");
                 set("armor_prop/armor", 1);
         }
         setup();

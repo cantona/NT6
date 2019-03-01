@@ -8,7 +8,7 @@ void remove_effect(object me, int dam,int attack);
 void checking(object me,int dam,int attack);
 void checking2(object me,int dam,int attack,int old_dam,int old_att);
 
-string name() { return "ÔÆÑÌÆ®Ãì"; }
+string name() { return "é›²ç…™é£„æ¸º"; }
 
 int perform(object me, object target)
 {
@@ -24,36 +24,36 @@ int perform(object me, object target)
         if( !target ) target = offensive_target(me);
         else set_temp("offensive_target", target, me);
 
-        if( query("family/family_name", me) != "¶ÎÊÏ»Ê×å" && !wizardp(me) )
-                return notify_fail(HIW "Äã·Ç´óÀíµÜ×ÓÎŞ·¨Ê©Õ¹¡¸ÔÆÑÌÆ®Ãì¡¹£¡\n" NOR);
+        if( query("family/family_name", me) != "æ®µæ°çš‡æ—" && !wizardp(me) )
+                return notify_fail(HIW "ä½ éå¤§ç†å¼Ÿå­ç„¡æ³•æ–½å±•ã€Œé›²ç…™é£„æ¸ºã€ï¼\n" NOR);
 
         if( !target || !target->is_character() || !me->is_fighting(target) )
-                return notify_fail(HIW "ÔÆÑÌÆ®ÃìÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(HIW "é›²ç…™é£„æ¸ºåªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( query_temp("piaomiao", me) )
-                return notify_fail(HIW "ÄãÕıÔÚÊ¹ÓÃÔÆÑÌÆ®Ãì£¡\n");
+                return notify_fail(HIW "ä½ æ­£åœ¨ä½¿ç”¨é›²ç…™é£„æ¸ºï¼\n");
 
         if( me->query_skill("force") < 200 )
-                return notify_fail(HIW "ÄãµÄÄÚ¹¦»ğºòÎ´µ½£¡\n");
+                return notify_fail(HIW "ä½ çš„å…§åŠŸç«å€™æœªåˆ°ï¼\n");
 
         if( me->query_skill("wuluo-zhang", 1) < 150 )
-                return notify_fail(HIW "ÄãµÄ»ù±¾ÎåÂŞÇáÑÌÕÆÉĞÎ´´¿Êì£¬ÎŞ·¨Ê©Õ¹ÔÆÑÌÆ®Ãì£¡\n");
+                return notify_fail(HIW "ä½ çš„åŸºæœ¬äº”ç¾…è¼•ç…™æŒå°šæœªç´”ç†Ÿï¼Œç„¡æ³•æ–½å±•é›²ç…™é£„æ¸ºï¼\n");
 
         if( me->query_skill("strike", 1) < 150 )
-                return notify_fail(HIW "ÄãµÄ»ù±¾ÕÆ·¨ÉĞÎ´´¿Êì£¬ÎŞ·¨Ê©Õ¹ÔÆÑÌÆ®Ãì£¡\n");
+                return notify_fail(HIW "ä½ çš„åŸºæœ¬æŒæ³•å°šæœªç´”ç†Ÿï¼Œç„¡æ³•æ–½å±•é›²ç…™é£„æ¸ºï¼\n");
 
         if( me->query_skill_mapped("force") != "kurong-changong")
-                return notify_fail(HIW "ÄãËùÓÃµÄÄÚ¹¦ĞÄ·¨²»ÊÇ¿İÈÙìø¹¦£¬ÎŞ·¨¾Û¼¯ÕæÆø¡£\n");
+                return notify_fail(HIW "ä½ æ‰€ç”¨çš„å…§åŠŸå¿ƒæ³•ä¸æ˜¯æ¯æ¦®ç¦ªåŠŸï¼Œç„¡æ³•èšé›†çœŸæ°£ã€‚\n");
 
         if( query("max_neili", me) <= 2000 )
-                return notify_fail(HIW "ÄãµÄÄÚÁ¦ĞŞÎª²»×ã£¬ÎŞ·¢Ìå»á³öÔÆÑÌÆ®Ãì£¡\n" NOR);
+                return notify_fail(HIW "ä½ çš„å…§åŠ›ä¿®ç‚ºä¸è¶³ï¼Œç„¡ç™¼é«”æœƒå‡ºé›²ç…™é£„æ¸ºï¼\n" NOR);
 
         if( query("neili", me)<800 )
-                return notify_fail(HIW "ÄãµÄÄÚÁ¦²»¹»£¬ÄÚ¾¢²»×ãÒÔÊ©Õ¹ÔÆÑÌÆ®Ãì£¡\n" NOR);
+                return notify_fail(HIW "ä½ çš„å…§åŠ›ä¸å¤ ï¼Œå…§å‹ä¸è¶³ä»¥æ–½å±•é›²ç…™é£„æ¸ºï¼\n" NOR);
 
-        if(me->is_busy()) return notify_fail(HIW "ÄãÕıÃ¦×ÅÄØ,Ã»°ì·¨Ê©Õ¹ÔÆÑÌÆ®Ãì£¡\n" NOR);
+        if(me->is_busy()) return notify_fail(HIW "ä½ æ­£å¿™è‘—å‘¢,æ²’è¾¦æ³•æ–½å±•é›²ç…™é£„æ¸ºï¼\n" NOR);
 
-        message_vision(HIB"$NÔËÆğÄÚ¹¦ĞÄ·¨£¬½«ÕæÆøÄı¾ÛÔËÍùÊÖÕÆ£¬¶ÙÊ±$NÊÖÕÆ·´°×£¬ÕÆÖĞ·ºÆğÒ»Õó"NOR HIW"°×ÑÌ"NOR HIB"¡£\n" NOR, me);
+        message_vision(HIB"$Né‹èµ·å…§åŠŸå¿ƒæ³•ï¼Œå°‡çœŸæ°£å‡èšé‹å¾€æ‰‹æŒï¼Œé “æ™‚$Næ‰‹æŒåç™½ï¼ŒæŒä¸­æ³›èµ·ä¸€é™£"NOR HIW"ç™½ç…™"NOR HIB"ã€‚\n" NOR, me);
 
         addn("neili", -200, me);
 
@@ -83,7 +83,7 @@ void checking(object me, int dam, int attack)
         if( !target || !me->is_fighting(target) ) target = offensive_target(me);
 
         if( pm > limit || pm > 6 ) {
-                message_vision(BLU "\n$N³¤ºôÒ»¿ÚÆø£¬½«ÄÚ¾¢ÊÕ»Øµ¤Ìï¡£\n"NOR, me);
+                message_vision(BLU "\n$Né•·å‘¼ä¸€å£æ°£ï¼Œå°‡å…§å‹æ”¶å›ä¸¹ç”°ã€‚\n"NOR, me);
                 remove_effect(me, dam, attack);
                 me->start_busy(1);
                 return;
@@ -97,9 +97,9 @@ void checking(object me, int dam, int attack)
 
         if( !me->is_fighting() )
         {
-                message_vision(HIM "\n$N×İÉíÏòºóÒ»Ô¾£¬ÊÕÆğÁË¾ÛÆğµÄÄÚ¾¢¡£\n"NOR, me);
+                message_vision(HIM "\n$Nç¸±èº«å‘å¾Œä¸€èºï¼Œæ”¶èµ·äº†èšèµ·çš„å…§å‹ã€‚\n"NOR, me);
                 remove_effect(me, dam, attack);
-                tell_object(me, MAG "\nÄã½«ÆøÏ¢µ÷½ÚÖÁÔ­±¾µÄ×´Ì¬¡£\n\n"NOR);
+                tell_object(me, MAG "\nä½ å°‡æ°£æ¯èª¿ç¯€è‡³åŸæœ¬çš„ç‹€æ…‹ã€‚\n\n"NOR);
 
                 return;
         }
@@ -121,9 +121,9 @@ void checking2(object me,int dam,int attack,int old_dam,int old_att)
 {
         if( query_temp("piaomiao", me) )
         {
-                message_vision(BLU "\n$N³¤ºôÒ»¿ÚÆø£¬½«ÄÚ¾¢ÊÕ»Øµ¤Ìï¡£\n"NOR, me);
+                message_vision(BLU "\n$Né•·å‘¼ä¸€å£æ°£ï¼Œå°‡å…§å‹æ”¶å›ä¸¹ç”°ã€‚\n"NOR, me);
                 me->start_busy(1);
-                tell_object(me, MAG "\nÄã½«ÆøÏ¢µ÷½ÚÖÁÔ­±¾µÄ×´Ì¬¡£\n\n"NOR);
+                tell_object(me, MAG "\nä½ å°‡æ°£æ¯èª¿ç¯€è‡³åŸæœ¬çš„ç‹€æ…‹ã€‚\n\n"NOR);
                 addn_temp("apply/attack", -attack, me);
                 addn_temp("apply/unarmed_damage", -dam, me);
                 delete_temp("piaomiao", me);

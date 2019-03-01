@@ -37,5 +37,5 @@ void create()
 
 string query_name()
 {
-        return "���ϵͳ(SERIAL_NUMBER_D)";
+        return "序號系統(SERIAL_NUMBER_D)";
 }

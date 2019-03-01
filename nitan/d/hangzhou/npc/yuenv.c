@@ -1,4 +1,4 @@
-// yuenv.c Ô½Å®
+// yuenv.c è¶Šå¥³
 
 #include <ansi.h>
 
@@ -8,11 +8,11 @@ int ask_me();
 
 void create()
 {
-        set_name("Ô½Å®", ({ "yue nv", "yuenv" }));
+        set_name("è¶Šå¥³", ({ "yue nv", "yuenv" }));
         set("long", @LONG
-ËýÊÇÒ»Î»ÄêÇáµÄÄÁÑòÅ®£¬Á³ÉÏ¹Ò×ÅÒ»Ë¿ÓëÄêÁä²»Ïà³ÆµÄ°§Ë¼¡£
+å¥¹æ˜¯ä¸€ä½å¹´è¼•çš„ç‰§ç¾Šå¥³ï¼Œè‡‰ä¸ŠæŽ›è‘—ä¸€çµ²èˆ‡å¹´é½¡ä¸ç›¸ç¨±çš„å“€æ€ã€‚
 LONG );
-        set("gender", "Å®ÐÔ");
+        set("gender", "å¥³æ€§");
         set("class", "swordsman");
         set("age", 18);
         set("attitude", "friendly");
@@ -42,9 +42,9 @@ LONG );
         map_skill("sword", "yuenv-jian");
 
         set("inquiry", ([
-                "¾øÕÐ" : (: ask_me :),
-                "¾ø¼¼" : (: ask_me :),
-                "Î÷×ÓÅõÐÄ" : (: ask_me :),
+                "çµ•æ‹›" : (: ask_me :),
+                "çµ•æŠ€" : (: ask_me :),
+                "è¥¿å­æ§å¿ƒ" : (: ask_me :),
         ]));
 
         set("chat_chance_combat", 120);
@@ -70,26 +70,26 @@ int recognize_apprentice(object ob, string skill)
 
         if (skill == "yuenv-jian")
         {
-                if( query("gender", ob) == "Å®ÐÔ" )
+                if( query("gender", ob) == "å¥³æ€§" )
                 {
-                        message_vision("$NÑÛÈ¦Ò»ºì£¬¶Ô$nµÀ£ºÒ²ºÃ¡£\n",
+                        message_vision("$Nçœ¼åœˆä¸€ç´…ï¼Œå°$né“ï¼šä¹Ÿå¥½ã€‚\n",
                                        this_object(), ob);
                         set_temp("can_learn/yuenv/yuenv-jian", 1, ob);
                         return 1;
                 }
-                message_vision("$NÆ³ÁË$nÒ»ÑÛ£¬Ã»ÓÐÀí$n¡£\n", this_object(), ob);
+                message_vision("$Nçž¥äº†$nä¸€çœ¼ï¼Œæ²’æœ‰ç†$nã€‚\n", this_object(), ob);
                 return -1;
         }
 
         if (skill == "sword")
         {
-                message_vision("$N¿´ÁË¿´$n£¬µãµãÍ·µÀ£º½£ÊõÒ²Ã»ÓÐÊ²Ã´ÄÑÑ§µÄ¡£\n",
+                message_vision("$Nçœ‹äº†çœ‹$nï¼Œé»žé»žé ­é“ï¼šåŠè¡“ä¹Ÿæ²’æœ‰ä»€éº¼é›£å­¸çš„ã€‚\n",
                                this_object(), ob);
                 set_temp("can_learn/yuenv/sword", 1, ob);
                 return 1;
         }
 
-        command("say ÎÒÖ»¶®µÃÒ»µã½£Êõ£¬Äã¿É²»ÒªÎªÄÑÎÒ¡£");
+        command("say æˆ‘åªæ‡‚å¾—ä¸€é»žåŠè¡“ï¼Œä½ å¯ä¸è¦ç‚ºé›£æˆ‘ã€‚");
         return -1;
 }
 
@@ -100,31 +100,31 @@ int ask_me()
         me = this_player();
         if( query("can_perform/yuenv-jian/pengxin", me) )
         {
-                command("say ÄãºÜÏ²»¶¿ªÍæÐ¦Ã´£¿Ñ§¹ýÁË»¹À´ÕÒÎÒ£¿");
+                command("say ä½ å¾ˆå–œæ­¡é–‹çŽ©ç¬‘éº¼ï¼Ÿå­¸éŽäº†é‚„ä¾†æ‰¾æˆ‘ï¼Ÿ");
         } else
-        if( query("gender", me) != "Å®ÐÔ" )
+        if( query("gender", me) != "å¥³æ€§" )
         {
-                command("say ÄãÃÇÄÐÈËÃ»ÓÐÊ²Ã´ºÃ¶«Î÷£¬»¹ÊÇ±ðËµÊ²Ã´»¨ÑÔÇÉÓïÁË¡£");
+                command("say ä½ å€‘ç”·äººæ²’æœ‰ä»€éº¼å¥½æ±è¥¿ï¼Œé‚„æ˜¯åˆ¥èªªä»€éº¼èŠ±è¨€å·§èªžäº†ã€‚");
         } else
         if( query("per", me) >= 30 )
         {
-                message_vision("$N¿´×Å$n£¬ÓÄÓÄµÄÌ¾ÁËÒ»¿ÚÆø£¬ËÆºõÏëÆðÁËÊ²Ã´¡£\n",
+                message_vision("$Nçœ‹è‘—$nï¼Œå¹½å¹½çš„å˜†äº†ä¸€å£æ°£ï¼Œä¼¼ä¹Žæƒ³èµ·äº†ä»€éº¼ã€‚\n",
                                this_object(), me);
         } else
         if (me->query_skill("force") < 120)
         {
-                command("say ÄãµÄÄÚ¹¦µ××ÓÕâÃ´²î£¬»¹Ì¸Ê²Ã´¾øÕÐ£¬Ð¦ËÀÈË¼ÒÁË¡£");
+                command("say ä½ çš„å…§åŠŸåº•å­é€™éº¼å·®ï¼Œé‚„è«‡ä»€éº¼çµ•æ‹›ï¼Œç¬‘æ­»äººå®¶äº†ã€‚");
                 return 1;
         } else
         if (me->query_skill("yuenv-jian", 1) < 100)
         {
-                command("say Äã»¹ÊÇÁ·ºÃÎÒµÄ½£ÊõÔÙËµ°É£¬²»ÒªºÃ¸ßðÍÔ¶£¬·´¶øÒ»ÊÂÎÞ³É¡£");
+                command("say ä½ é‚„æ˜¯ç·´å¥½æˆ‘çš„åŠè¡“å†èªªå§ï¼Œä¸è¦å¥½é«˜é¶©é ï¼Œåè€Œä¸€äº‹ç„¡æˆã€‚");
                 return 1;
         } else
         {
                 command("nod");
-                command("say ºÃ°É£¬ÎÒ¾Í½ÐÄãÕâÒ»ÕÐ¡°Î÷×ÓÅõÐÄ¡±£¬ÒÔºóÄãÈô¼ûµ½... »¹ÊÇËãÁË°É¡£");
-                tell_object(me, "ÄãÌýÁËÔ½Å®µÄÖ¸µã£¬Ã÷°×ÁËÈçºÎÔËÓÃÕâÒ»¾ø¼¼¡£\n");
+                command("say å¥½å§ï¼Œæˆ‘å°±å«ä½ é€™ä¸€æ‹›â€œè¥¿å­æ§å¿ƒâ€ï¼Œä»¥å¾Œä½ è‹¥è¦‹åˆ°... é‚„æ˜¯ç®—äº†å§ã€‚");
+                tell_object(me, "ä½ è½äº†è¶Šå¥³çš„æŒ‡é»žï¼Œæ˜Žç™½äº†å¦‚ä½•é‹ç”¨é€™ä¸€çµ•æŠ€ã€‚\n");
                 set("can_perform/yuenv-jian/pengxin", 1, me);
         }
         return 1;

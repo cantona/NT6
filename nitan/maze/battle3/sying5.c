@@ -6,9 +6,9 @@ int do_attack(string arg);
 
 void create()
 {
-        set("short", "³ÇÇ½ÉÏ");
+        set("short", "åŸç‰†ä¸Š");
         set("long", @LONG
-ÕâÀï¾ÍÊÇ¡¸´óËÎ¡¹¾üÓªÇ°³ÇÇ½¡£
+é€™è£¡å°±æ˜¯ã€Œå¤§å®‹ã€è»ç‡Ÿå‰åŸç‰†ã€‚
 LONG );
 
         set("no_magic", "1");
@@ -16,7 +16,7 @@ LONG );
                "down" :   __DIR__"syuanmen1",
         ]));
 
-        create_door("down", "ÌúÃÅ", "up", DOOR_CLOSED);
+        create_door("down", "éµé–€", "up", DOOR_CLOSED);
         setup();
 }
 
@@ -36,53 +36,53 @@ int do_attack(string arg)
         me = this_player();
         env = environment(me);
 
-        if (! arg) return notify_fail("ÄãÒªÖ¸»Ó²¿¶Ó³¯Ë­·¢Æğ½ø¹¥£¿\n");
+        if (! arg) return notify_fail("ä½ è¦æŒ‡æ®éƒ¨éšŠæœèª°ç™¼èµ·é€²æ”»ï¼Ÿ\n");
 
         /*
         if( query("env/auto_war", me) )
-                return notify_fail("ÄãÒÑ¾­ÉèÖÃÎªÓÉÏµÍ³×Ô¶¯Ö¸»Ó×÷Õ½£¡ÈçÏë×Ô¼º²Ù×÷£¬ÇëĞŞ¸ÄÉèÖÃ¡£\n");
+                return notify_fail("ä½ å·²ç¶“è¨­ç½®ç‚ºç”±ç³»çµ±è‡ªå‹•æŒ‡æ®ä½œæˆ°ï¼å¦‚æƒ³è‡ªå·±æ“ä½œï¼Œè«‹ä¿®æ”¹è¨­ç½®ã€‚\n");
 */
         
         if( query_temp("warquest/attack", me) )
-                return notify_fail("ÄãµÄ¶ÓÎéÕıÔÚÁĞÕó½ø¹¥£¬²»ÒªÂÒ·¢ºÅÁîÁË£¡\n");
+                return notify_fail("ä½ çš„éšŠä¼æ­£åœ¨åˆ—é™£é€²æ”»ï¼Œä¸è¦äº‚ç™¼è™Ÿä»¤äº†ï¼\n");
 
         if( !query("craft/siegecity/luoshi", me) )
-                return notify_fail("ÄãÄ¿Ç°»¹Ã»ÓĞÍ¨Ïş¡¸ÊØ³ÇÏµ±ø·¨¡¹ÖĞ¡¸ÂäÊ¯¡¹ÕâÖÖ±ø·¨£¡\n");
+                return notify_fail("ä½ ç›®å‰é‚„æ²’æœ‰é€šæ›‰ã€Œå®ˆåŸç³»å…µæ³•ã€ä¸­ã€Œè½çŸ³ã€é€™ç¨®å…µæ³•ï¼\n");
                 
         if( !query_temp("warquest/train", me) )
-                return notify_fail("ÄãÎ´´øÒ»±øÒ»×ä£¬Ö¸»Ó¸öÊ²Ã´Ñ½£¿\n");
+                return notify_fail("ä½ æœªå¸¶ä¸€å…µä¸€å’ï¼ŒæŒ‡æ®å€‹ä»€éº¼å‘€ï¼Ÿ\n");
 
         if( query_temp("warquest/train", me) != "infantry" )
-                return notify_fail("ÄãÓÖ²»ÊÇÂÊÁì²½±ø£¬ÈçºÎÊµÊ©ÂäÊ¯£¿\n");
+                return notify_fail("ä½ åˆä¸æ˜¯ç‡é ˜æ­¥å…µï¼Œå¦‚ä½•å¯¦æ–½è½çŸ³ï¼Ÿ\n");
         
         if( query_temp("warquest/group", me)<1 )
-                return notify_fail("ÄãµÄ¶ÓÎéÒÑ¾­ËğÊ§´ù¾¡£¬ÎŞ·¨ÁĞÕó³å·æÁË£¡\n");
+                return notify_fail("ä½ çš„éšŠä¼å·²ç¶“æå¤±æ®†ç›¡ï¼Œç„¡æ³•åˆ—é™£æ²–é‹’äº†ï¼\n");
 
         if (WAR_D->query_stones(me) < 1)
-                return notify_fail("ÄãµÄ¾üÓªÀïÒÑ¾­Ã»ÓĞÈÎºÎéÛÄ¾¹öÊ¯£¬ÎŞ·¨ÊµÊ©ÂäÊ¯ÁË£¡\n");
+                return notify_fail("ä½ çš„è»ç‡Ÿè£¡å·²ç¶“æ²’æœ‰ä»»ä½•æª‘æœ¨æ»¾çŸ³ï¼Œç„¡æ³•å¯¦æ–½è½çŸ³äº†ï¼\n");
                                 
         if (sscanf(arg, "%s on %s", who, dir) != 2)
-                return notify_fail("Ö¸Áî¸ñÊ½´íÎó£¬ÇëÓÃ luoshi <¾ü¶Ó> on <·½Ïò> Ö¸»ÓÄãµÄ¶ÓÎé£¡\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼éŒ¯èª¤ï¼Œè«‹ç”¨ luoshi <è»éšŠ> on <æ–¹å‘> æŒ‡æ®ä½ çš„éšŠä¼ï¼\n");
 
         if( !mapp(exits=query("exits", env)) || undefinedp(exits[dir]) )
-                return notify_fail("ÎŞ·¨ÕÒµ½Ä¿±ê£¬ÇëÓÃ luoshi <¾ü¶Ó> on <·½Ïò> Ö¸»ÓÄãµÄ¶ÓÎé£¡\n");
+                return notify_fail("ç„¡æ³•æ‰¾åˆ°ç›®æ¨™ï¼Œè«‹ç”¨ luoshi <è»éšŠ> on <æ–¹å‘> æŒ‡æ®ä½ çš„éšŠä¼ï¼\n");
 
         room = get_object(exits[dir]);
-        if (! room) return notify_fail("ÎŞ·¨ÕÒµ½Ä¿±ê£¬ÇëÓÃ luoshi <¾ü¶Ó> on <·½Ïò> Ö¸»ÓÄãµÄ¶ÓÎé£¡\n");
+        if (! room) return notify_fail("ç„¡æ³•æ‰¾åˆ°ç›®æ¨™ï¼Œè«‹ç”¨ luoshi <è»éšŠ> on <æ–¹å‘> æŒ‡æ®ä½ çš„éšŠä¼ï¼\n");
 
         if( query("no_fight", room) )
-                return notify_fail("ÄÇÀï²»ÔÊĞíËºÉ±£¡£¡\n");
+                return notify_fail("é‚£è£¡ä¸å…è¨±æ’•æ®ºï¼ï¼\n");
 
         if (! objectp(ob = present(who, room)))
-                    return notify_fail("ÎŞ·¨ÕÒµ½Ä¿±ê£¬ÇëÓÃ luoshi <¾ü¶Ó> on <·½Ïò> Ö¸»ÓÄãµÄ¶ÓÎé£¡\n");
+                    return notify_fail("ç„¡æ³•æ‰¾åˆ°ç›®æ¨™ï¼Œè«‹ç”¨ luoshi <è»éšŠ> on <æ–¹å‘> æŒ‡æ®ä½ çš„éšŠä¼ï¼\n");
 
         if( !query_temp("warquest", ob) || query_temp("warquest/party", ob) != "meng" )
-                    return notify_fail("Äã¾üÎñÔÚÉí£¬»¹ÊÇ²»ÒªÇáÒ×ÕĞÈÇÊÇ·ÇµÄºÃ£¡\n");
+                    return notify_fail("ä½ è»å‹™åœ¨èº«ï¼Œé‚„æ˜¯ä¸è¦è¼•æ˜“æ‹›æƒ¹æ˜¯éçš„å¥½ï¼\n");
 
-        message_vision(HIY "$N½«ÊÖÖĞ±¦½£Ò»»Ó£¬´óºÈµÀ£º²½±øÓª×¼±¸ÏòµĞ¾üÂäÊ¯£¡£¡\n" NOR, me, ob);
+        message_vision(HIY "$Nå°‡æ‰‹ä¸­å¯¶åŠä¸€æ®ï¼Œå¤§å–é“ï¼šæ­¥å…µç‡Ÿæº–å‚™å‘æ•µè»è½çŸ³ï¼ï¼\n" NOR, me, ob);
         
-        zhen = "ÆÕÍ¨Õó";
-        craft = "ÂäÊ¯";
+        zhen = "æ™®é€šé™£";
+        craft = "è½çŸ³";
          set_temp("warquest/attack", 1, me);
         me->start_call_out((: call_other, WAR_D, "attack_over", me :), 10);
         WAR_D->do_attack(me, ob, zhen, craft, env, dir, room);

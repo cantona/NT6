@@ -1,37 +1,37 @@
-# falg Îª 0 ËµÃ÷ÒÔÏÂ¶¨Ê±ÊÇÒÀÕÕÏÖÊµÉú»îÖĞµÄÊ±¼ä
-# falg Îª 1 ËµÃ÷ÒÔÏÂ¶¨Ê±ÊÇÒÀÕÕÓÎÏ·ÖĞµÄÊ±¼ä
+# falg ç‚º 0 èªªæ˜ä»¥ä¸‹å®šæ™‚æ˜¯ä¾ç…§ç¾å¯¦ç”Ÿæ´»ä¸­çš„æ™‚é–“
+# falg ç‚º 1 èªªæ˜ä»¥ä¸‹å®šæ™‚æ˜¯ä¾ç…§éŠæˆ²ä¸­çš„æ™‚é–“
 #
-# day_in_month Ò»¸öÔÂÖĞµÄµÚ¼¸Ìì£¬·¶Î§ 1-31
+# day_in_month ä¸€å€‹æœˆä¸­çš„ç¬¬å¹¾å¤©ï¼ŒèŒƒåœ 1-31
 #
-# day_in_week  ĞÇÆÚ¼¸ ·¶Î§ 0-6 ( 0 ÎªĞÇÆÚÈÕ )
+# day_in_week  æ˜ŸæœŸå¹¾ èŒƒåœ 0-6 ( 0 ç‚ºæ˜ŸæœŸæ—¥ )
 #
-# month_in_year ÔÂ·İ ·¶Î§ 0-11
+# month_in_year æœˆä»½ èŒƒåœ 0-11
 #
-# hour  Ğ¡Ê±    ·¶Î§ 0-23
+# hour  å°æ™‚    èŒƒåœ 0-23
 #
-# minute ·ÖÖÓ   ·¶Î§ 0-59
+# minute åˆ†é˜   èŒƒåœ 0-59
 #
-# object¡¢function ÊÇÌõ¼şÂú×ãÊ±´¥·¢ object->function
+# objectã€function æ˜¯æ¢ä»¶æ»¿è¶³æ™‚è§¸ç™¼ object->function
 #
-# Ã»ÓĞÓÃµÄÏîÓÃ '*' ĞÇºÅ Ìî²¹
-# Ã¿Ò»ÏîÖĞ¿ÉÒÔÓÃ ',' ¶ººÅÀ´·Ö¸î¶àÌõ¼ş
+# æ²’æœ‰ç”¨çš„é …ç”¨ '*' æ˜Ÿè™Ÿ å¡«è£œ
+# æ¯ä¸€é …ä¸­å¯ä»¥ç”¨ ',' é€—è™Ÿä¾†åˆ†å‰²å¤šæ¢ä»¶
 #
-# ÒÔÏÂÊÇ¸ñÊ½£º
+# ä»¥ä¸‹æ˜¯æ ¼å¼ï¼š
 #flag:minute:hour:day_in_week:day_in_month:month_in_year:year object function string *args
 #
 
 
-#Ã¿·ÖÖÓ¼ì²âÅÅ³ÌĞÄÌøÇé¿ö
+#æ¯åˆ†é˜æª¢æ¸¬æ’ç¨‹å¿ƒè·³æƒ…æ³
 0:*:*:*:*:*:* /adm/daemons/scheduled start_events
 
-#Ã¿·ÖÖÓÇåÀíÏµÍ³ÄÚ´æ
+#æ¯åˆ†é˜æ¸…ç†ç³»çµ±å…§å­˜
 0:*:*:*:*:*:* /adm/daemons/timed auto_relaim
 
-#Ã¿ 15 ·ÖÖÓ¸üĞÂ MUDLIST ¼ÍÂ¼
+#æ¯ 15 åˆ†é˜æ›´æ–° MUDLIST ç´€éŒ„
 0:*/15:*:*:*:*:* /adm/daemons/mudlistd distributed_connect
 #0:*/18:*:*:*:*:* /adm/daemons/mysql_schedule_d refresh_mudlist
 
-#¿ª·ÅÕ½³¡±¨Ãû
+#é–‹æ”¾æˆ°å ´å ±å
 0:20:14:*:*:*:* /adm/daemons/battlefieldd start_join battle1
 0:20:15:*:*:*:* /adm/daemons/battlefieldd start_join battle2
 0:20:16:*:*:*:* /adm/daemons/battlefieldd2 start_join
@@ -45,13 +45,13 @@
 0:20:3:*:*:*:* /adm/daemons/battlefieldd start_join battle2
 0:20:4:*:*:*:* /adm/daemons/battlefieldd start_join battle1
 0:20:5:*:*:*:* /adm/daemons/battlefieldd start_join battle2
-# ÌìÏÂµÚÒ»´ó°ïÕù¶·Õ½
+# å¤©ä¸‹ç¬¬ä¸€å¤§å¹«çˆ­é¬¥æˆ°
 0:10:20:*:*:*:* /adm/daemons/bunchd start_join
 
-# ÓÎÏ·Ê±¼äÃ¿ÔÂ1ÈÕ°ïÅÉÅÌµã
+# éŠæˆ²æ™‚é–“æ¯æœˆ1æ—¥å¹«æ´¾ç›¤é»
 1:11:11:*:1:*:* /adm/daemons/bunchd manage_areas
 
-#¶¨Ê±³öÏÖµÄBOSS
+#å®šæ™‚å‡ºç¾çš„BOSS
 0:1:*:*:*:*:* /adm/daemons/timed place_boss pantu
 0:6:*:*:*:*:* /adm/daemons/timed place_boss taofan
 0:8:*/3:*:*:*:* /adm/daemons/timed place_boss god_dragon

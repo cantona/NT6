@@ -4,13 +4,13 @@
 inherit SHIELD;
 void create()
 {
-        set_name(HIR "ÂÖ»ØÉúËÀ²¾" NOR, ({ "shengsi bu" }) );
+        set_name(HIR "è¼ªå›žç”Ÿæ­»ç°¿" NOR, ({ "shengsi bu" }) );
         set_weight(1);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
                 set("material", "leather");
-                set("unit", "±¾");
+                set("unit", "æœ¬");
                 set("armor_prop/armor", 5);
                 set("armor_prop/defense", 3);
         }

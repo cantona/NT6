@@ -1,4 +1,4 @@
-// box.c ¹¦µÂÏä
+// box.c åŠŸå¾·ç®±
 
 #include <ansi.h>
 
@@ -6,14 +6,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name("¹¦µÂÏä", ({ "gongde xiang", "xiang", "box" }) );
+        set_name("åŠŸå¾·ç®±", ({ "gongde xiang", "xiang", "box" }) );
         set_weight(3000);
         set_max_encumbrance(5000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
-                set("long", "ÕâÊÇÒ»¸öĞ¡ÃíÀï³£¼ûµÄ¹¦µÂÏä£¬×¨ÃÅÓÃÀ´½ÓÊÜÉÆÄĞĞÅÅ®ÃÇµÄ¾è¿î¡£\n");
+                set("unit", "å€‹");
+                set("long", "é€™æ˜¯ä¸€å€‹å°å»Ÿè£¡å¸¸è¦‹çš„åŠŸå¾·ç®±ï¼Œå°ˆé–€ç”¨ä¾†æ¥å—å–„ç”·ä¿¡å¥³å€‘çš„ææ¬¾ã€‚\n");
                 set("value", 1000);
                 set("material", "wood");
                 set("no_get",1);
@@ -37,7 +37,7 @@ void init()
                 ob=new("/clone/money/silver");
                 ob->set_amount(10);
                 ob->move(this_object());
-                tell_object(me, "\nÄãºöÈ»¿´µ½¹¦µÂÏäÀïÓĞÊ²÷á¶«Î÷ÔÚÉÁÉÁ·¢¹â£¡\n\n");
+                tell_object(me, "\nä½ å¿½ç„¶çœ‹åˆ°åŠŸå¾·ç®±è£¡æœ‰ä»€éº¼æ±è¥¿åœ¨é–ƒé–ƒç™¼å…‰ï¼\n\n");
                 addn("combat_exp", 1, me);
         }
         */
@@ -52,19 +52,19 @@ int do_put(string arg)
 
         me = this_player();
 
-        if(!arg) return notify_fail("ÄãÒª½«Ê²Ã´¶«Î÷·Å½øÄÄÀï£¿\n");
+        if(!arg) return notify_fail("ä½ è¦å°‡ä»€éº¼æ±è¥¿æ”¾é€²å“ªè£¡ï¼Ÿ\n");
 
         if( sscanf(arg, "%s in %s", item, target)!=2
         ||  sscanf(item, "%d %s", amount, item)!=2
         ||  !objectp(obj = present(item, me)) )
 
-        return notify_fail("ÄãÒª¸øË­Ê²Ã´¶«Î÷£¿\n");
+        return notify_fail("ä½ è¦çµ¦èª°ä»€éº¼æ±è¥¿ï¼Ÿ\n");
 
         if( query("money_id", obj) == "silver"
         &&  obj->query_amount() >= 5 && obj->query_amount() < 100000 && amount >= 5 )
         {
                 if( query("begger", me)>0){
-                        message_vision( sprintf(HIY "$N½«Ò»%s%s·Å½ø%s¡£\n" NOR,
+                        message_vision( sprintf(HIY "$Nå°‡ä¸€%s%sæ”¾é€²%sã€‚\n" NOR,
                                 query("unit", obj),obj->name(),
                                 this_object()->name()),me );
                         obj->set_amount(obj->query_amount() - amount);;
@@ -77,7 +77,7 @@ int do_put(string arg)
 
         if( query("money_id", obj) && obj->value() >= 100000 )
         {
-                tell_object(me,"Äãò¯³ÏµØÆíµ»£¬Ï£Íû¹ıÈ¥ÔÚ½­ºşÖĞµÄ³ğÉ±¡£\n");
+                tell_object(me,"ä½ è™”èª åœ°ç¥ˆç¦±ï¼Œå¸Œæœ›éå»åœ¨æ±Ÿæ¹–ä¸­çš„ä»‡æ®ºã€‚\n");
                 me->remove_all_killer();
                 destruct(obj);
                 return 1;

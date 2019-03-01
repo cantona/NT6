@@ -2,16 +2,16 @@
 inherit ITEM;
 void create()
 {
-        set_name(HIR "¾Å×ªµ¤" NOR, ({"jiuzhuandan"}));
+        set_name(HIR "ä¹è½‰ä¸¹" NOR, ({"jiuzhuandan"}));
         set_weight(1);
         if (clonep())
                 set_default_object(__FILE__);
         else {  
-        	set("long", HIC "¾Å×ªµ¤ÄËÊÇÉñÅ©ÊÏÍ¨¹ı¾Å¾Å°ËÊ®Ò»´ÎÁ¶ÖÆ¶ø³É¡£\n" + 
-        	                "·şÊ³(fushi jiuzhuandan)ºó£¬15·ÖÖÓÄÚ¿É¶îÍâÌáÉıÑĞ¾¿Ğ§ÂÊ3%¡£\n" HIR
-        	                /*"ÓµÓĞÕß£ºÓµÓĞÕßID*/"\n" NOR);
-                set("unit", "¿Å");
-                set("owner", "ÓµÓĞÕßID"); // °ó¶¨ÓµÓĞÕß
+        	set("long", HIC "ä¹è½‰ä¸¹ä¹ƒæ˜¯ç¥è¾²æ°é€šéä¹ä¹å…«åä¸€æ¬¡ç…‰åˆ¶è€Œæˆã€‚\n" + 
+        	                "æœé£Ÿ(fushi jiuzhuandan)å¾Œï¼Œ15åˆ†é˜å…§å¯é¡å¤–æå‡ç ”ç©¶æ•ˆç‡3%ã€‚\n" HIR
+        	                /*"æ“æœ‰è€…ï¼šæ“æœ‰è€…ID*/"\n" NOR);
+                set("unit", "é¡†");
+                set("owner", "æ“æœ‰è€…ID"); // ç¶å®šæ“æœ‰è€…
 	        set("no_drop", 1);set("no_store", 1);set("no_sell", 1);
         }
         setup();
@@ -31,13 +31,13 @@ int do_use(string arg)
 	me = this_player();
 
 	if (! arg || arg != query("id"))
-		return notify_fail("ÄãÒª·şÊ³Ê²Ã´£¿\n");
+		return notify_fail("ä½ è¦æœé£Ÿä»€éº¼ï¼Ÿ\n");
 
 	if (! objectp(ob = present(arg, me)))
-		return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâ¸ö¶«Î÷£¡\n");
+		return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™å€‹æ±è¥¿ï¼\n");
 /*
 	if( query("owner", ob) != query("id", me) )
-		return notify_fail(ob->name() + NOR "ÒÑ¾­ÓÚÆäËûÍæ¼Ò°ó¶¨£¡\n");
+		return notify_fail(ob->name() + NOR "å·²ç¶“äºå…¶ä»–ç©å®¶ç¶å®šï¼\n");
 */
 
 	if( !query("add_yanjiu_xiaolv15", me) || 
@@ -48,8 +48,8 @@ set("add_yanjiu_xiaolv15", time()+900, 		me);
 addn("add_yanjiu_xiaolv15", 900, 		me);
 	}
 
-	tell_object(me, HIG "¹§Ï²£¡Äã·şÏÂ" + ob->name() + HIG "ºó£¬15·ÖÖÓÄÚÑĞ¾¿Ğ§ÂÊ¶îÍâÌá¸ß3%£¡\n");
-	tell_object(me,HIG"Ä¿Ç°¸ÃĞ§¹û»¹Ê£ÓàÊ±¼ä£º"+sprintf("%d",query("add_yanjiu_xiaolv15", me))+"Ãë¡£\n");
+	tell_object(me, HIG "æ­å–œï¼ä½ æœä¸‹" + ob->name() + HIG "å¾Œï¼Œ15åˆ†é˜å…§ç ”ç©¶æ•ˆç‡é¡å¤–æé«˜3%ï¼\n");
+	tell_object(me,HIG"ç›®å‰è©²æ•ˆæœé‚„å‰©ä½™æ™‚é–“ï¼š"+sprintf("%d",query("add_yanjiu_xiaolv15", me))+"ç§’ã€‚\n");
 	
 	me->save();
 	

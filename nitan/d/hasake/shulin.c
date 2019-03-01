@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-       set("short",HIY"ɽ��"NOR);
+       set("short",HIY"山陵"NOR);
        set("long", @LONG
-ͻȻ֮�䣬������������һƬɽ�꣬ɽ����ľ�ԴУ��ڸ����ͻȻ������
-�������������ɽһ�㡣�������������������ɳ����Ƭɽ����ס�ˣ�
-���Զ����ȫ��������
+突然之間，西北方出現了一片山陵，山上樹木蒼蔥，在戈壁中突然看到，
+真如見到世外仙山一般。大戈壁上丘陵起伏，幾個沙丘將這片山陵遮住了，
+因此遠處完全望不見。
 LONG);
         set("exits", ([
                 "west" : __DIR__"gebi2",

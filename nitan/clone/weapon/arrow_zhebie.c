@@ -1,4 +1,4 @@
-// ÕÜ±ğ×¨ÓÃ¼ı
+// å“²åˆ¥å°ˆç”¨ç®­
  
 #include <weapon.h>
 #include <ansi.h>
@@ -6,17 +6,17 @@
 inherit THROWING;
 
 int is_arrow() { return 1; }
-int is_arrow_zhebie() { return 1;} // À´×Ô /clone/weapon/bow.c µ÷ÓÃ
+int is_arrow_zhebie() { return 1;} // ä¾†è‡ª /clone/weapon/bow.c èª¿ç”¨
 
 void create()
 {
-        set_name(HIR "ÉñµñÓê¼ı" NOR, ({ "arrow", "jian" }));
+        set_name(HIR "ç¥é›•é›¨ç®­" NOR, ({ "arrow", "jian" }));
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", HIR "Ò»¸ùÓÃÉñµñÓğÃ«×÷³ÉµÄ¼ı£¬·æÀûÎŞ±È£¬Ö»ÓĞÃÉ¹ÅÕÜ±ğ²ÅÅäÓµÓĞ¡£\n" NOR);
-                set("unit", "°Ñ");
-                set("base_unit", "¸ù");
+                set("long", HIR "ä¸€æ ¹ç”¨ç¥é›•ç¾½æ¯›ä½œæˆçš„ç®­ï¼Œé‹’åˆ©ç„¡æ¯”ï¼Œåªæœ‰è’™å¤å“²åˆ¥æ‰é…æ“æœ‰ã€‚\n" NOR);
+                set("unit", "æŠŠ");
+                set("base_unit", "æ ¹");
                 set("base_weight", 100);
                 set("base_value", 200);
                        set("wound_percent", 300);                       
@@ -26,5 +26,5 @@ void create()
         init_throwing(3000);
         setup();
 
-        set("no_wield", "Õâ²»ÊÇÓÃÀ´×°±¸µÄ¡£\n");
+        set("no_wield", "é€™ä¸æ˜¯ç”¨ä¾†è£å‚™çš„ã€‚\n");
 }

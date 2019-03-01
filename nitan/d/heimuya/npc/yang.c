@@ -4,10 +4,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÑîÁ«Í¤", ({ "yang lianting", "yang" }));
-        set("long","ËûÉíĞÎ¿ıÎà£¬ÂúÁ³ò°÷×£¬ĞÎÃ²¼«ÎªĞÛ½¡¡£\n");
-        set("title", "ÈÕÔÂÉñ½Ì³ÉµÂÌÃ×Ü¹Ü");
-        set("gender", "ÄĞĞÔ");
+        set_name("æ¥Šè“®äº­", ({ "yang lianting", "yang" }));
+        set("long","ä»–èº«å½¢é­æ¢§ï¼Œæ»¿è‡‰è™¯é«¯ï¼Œå½¢è²Œæ¥µç‚ºé›„å¥ã€‚\n");
+        set("title", "æ—¥æœˆç¥æ•™æˆå¾·å ‚ç¸½ç®¡");
+        set("gender", "ç”·æ€§");
         set("age", 40);
         set("per", 29);
 

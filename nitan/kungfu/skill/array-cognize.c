@@ -19,55 +19,55 @@ void skill_improved(object me)
          && !query("array/yulin", me) )
         { 
                 set("array/yulin", 1, me);
-                tell_object(me, HIC "Äã´ÓÍ¨ÏşÁË¡¸" HIW "Õó·¨" HIC "¡¹ÖĞ¡¸" HIW "ÓãÁÛÕó" HIC "¡¹µÄ°ÂÃØ¡£\n" NOR); 
+                tell_object(me, HIC "ä½ å¾é€šæ›‰äº†ã€Œ" HIW "é™£æ³•" HIC "ã€ä¸­ã€Œ" HIW "é­šé±—é™£" HIC "ã€çš„å¥§ç§˜ã€‚\n" NOR); 
         }
                 
         if (lvl > 140  
          && !query("array/fengshi", me) )
         { 
                 set("array/fengshi", 1, me);
-                tell_object(me, HIC "Äã´ÓÍ¨ÏşÁË¡¸" HIW "Õó·¨" HIC "¡¹ÖĞ¡¸" HIW "·æÊ¸Õó" HIC "¡¹µÄ°ÂÃØ¡£\n" NOR); 
+                tell_object(me, HIC "ä½ å¾é€šæ›‰äº†ã€Œ" HIW "é™£æ³•" HIC "ã€ä¸­ã€Œ" HIW "é‹’çŸ¢é™£" HIC "ã€çš„å¥§ç§˜ã€‚\n" NOR); 
         }  
 
         if (lvl > 180  
          && !query("array/heyi", me) )
         { 
                 set("array/heyi", 1, me);
-                tell_object(me, HIC "Äã´ÓÍ¨ÏşÁË¡¸" HIW "Õó·¨" HIC "¡¹ÖĞ¡¸" HIW "º×ÒíÕó" HIC "¡¹µÄ°ÂÃØ¡£\n" NOR); 
+                tell_object(me, HIC "ä½ å¾é€šæ›‰äº†ã€Œ" HIW "é™£æ³•" HIC "ã€ä¸­ã€Œ" HIW "é¶´ç¿¼é™£" HIC "ã€çš„å¥§ç§˜ã€‚\n" NOR); 
         }  
 
         if (lvl > 220  
          && !query("array/yanyue", me) )
         { 
                 set("array/yanyue", 1, me);
-                tell_object(me, HIC "Äã´ÓÍ¨ÏşÁË¡¸" HIW "Õó·¨" HIC "¡¹ÖĞ¡¸" HIW "ÙÈÔÂÕó" HIC "¡¹µÄ°ÂÃØ¡£\n" NOR); 
+                tell_object(me, HIC "ä½ å¾é€šæ›‰äº†ã€Œ" HIW "é™£æ³•" HIC "ã€ä¸­ã€Œ" HIW "åƒæœˆé™£" HIC "ã€çš„å¥§ç§˜ã€‚\n" NOR); 
         }                      
 
         if (lvl > 260  
          && !query("array/fangyuan", me) )
         { 
                 set("array/fangyuan", 1, me);
-                tell_object(me, HIC "Äã´ÓÍ¨ÏşÁË¡¸" HIW "Õó·¨" HIC "¡¹ÖĞ¡¸" HIW "·½Ô²Õó" HIC "¡¹µÄ°ÂÃØ¡£\n" NOR); 
+                tell_object(me, HIC "ä½ å¾é€šæ›‰äº†ã€Œ" HIW "é™£æ³•" HIC "ã€ä¸­ã€Œ" HIW "æ–¹åœ“é™£" HIC "ã€çš„å¥§ç§˜ã€‚\n" NOR); 
         }
 
         if (lvl > 300  
          && !query("array/yanxing", me) )
         { 
                 set("array/yanxing", 1, me);
-                tell_object(me, HIC "Äã´ÓÍ¨ÏşÁË¡¸" HIW "Õó·¨" HIC "¡¹ÖĞ¡¸" HIW "ÑãĞĞÕó" HIC "¡¹µÄ°ÂÃØ¡£\n" NOR); 
+                tell_object(me, HIC "ä½ å¾é€šæ›‰äº†ã€Œ" HIW "é™£æ³•" HIC "ã€ä¸­ã€Œ" HIW "é›è¡Œé™£" HIC "ã€çš„å¥§ç§˜ã€‚\n" NOR); 
         }
 
         if (lvl > 340  
          && !query("array/changshe", me) )
         { 
                 set("array/changshe", 1, me);
-                tell_object(me, HIC "Äã´ÓÍ¨ÏşÁË¡¸" HIW "Õó·¨" HIC "¡¹ÖĞ¡¸" HIW "³¤ÉßÕó" HIC "¡¹µÄ°ÂÃØ¡£\n" NOR); 
+                tell_object(me, HIC "ä½ å¾é€šæ›‰äº†ã€Œ" HIW "é™£æ³•" HIC "ã€ä¸­ã€Œ" HIW "é•·è›‡é™£" HIC "ã€çš„å¥§ç§˜ã€‚\n" NOR); 
         }
         
         if (lvl > 380  
          && !query("array/yunlong", me) )
         { 
                 set("array/yunlong", 1, me);
-                tell_object(me, HIC "Äã´ÓÍ¨ÏşÁË¡¸" HIW "Õó·¨" HIC "¡¹ÖĞ¡¸" HIW "ÔÆÁúÕó" HIC "¡¹µÄ°ÂÃØ¡£\n" NOR); 
+                tell_object(me, HIC "ä½ å¾é€šæ›‰äº†ã€Œ" HIW "é™£æ³•" HIC "ã€ä¸­ã€Œ" HIW "é›²é¾é™£" HIC "ã€çš„å¥§ç§˜ã€‚\n" NOR); 
         }
 } 

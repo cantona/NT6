@@ -5,17 +5,17 @@ inherit F_DEALER;
 
 void create()
 {
-        set_name("·ïÆß", ({ "feng qi", "feng", "qi" }) );
-        set("gender", "ÄÐÐÔ" );
-        set("title", "¾ÆÂ¥ÀÏ°å" );
+        set_name("é³³ä¸ƒ", ({ "feng qi", "feng", "qi" }) );
+        set("gender", "ç”·æ€§" );
+        set("title", "é…’æ¨“è€æ¿" );
         set("age", 42);
         set("long", @LONG
-·ïÆßÊÇ·ïÌìÄÏµÄÔ¶·¿×æµÜ£¬ÔÚÕâÓ¢ÐÛÂ¥µ±ÕÆ¹ñ¡£Îä¹¦Ã»ÓÐÊ²Ã´£¬ÎªÈË
-È´¼«ÊÇ»úÁé£¬½­ºþÉÏ´ó´óÐ¡Ð¡µÄÊÂÇé¶¼ÖªµÀÒ»Ð©
+é³³ä¸ƒæ˜¯é³³å¤©å—çš„é æˆ¿ç¥–å¼Ÿï¼Œåœ¨é€™è‹±é›„æ¨“ç•¶æŽŒæ«ƒã€‚æ­¦åŠŸæ²’æœ‰ä»€éº¼ï¼Œç‚ºäºº
+å»æ¥µæ˜¯æ©Ÿéˆï¼Œæ±Ÿæ¹–ä¸Šå¤§å¤§å°å°çš„äº‹æƒ…éƒ½çŸ¥é“ä¸€äº›
 LONG );
         set("combat_exp", 10000);
         set("attitude", "friendly");
-        set("rank_info/respect", "Æß¸ç");
+        set("rank_info/respect", "ä¸ƒå“¥");
         set("vendor_goods", ({
                 "/clone/food/jitui",
                 "/clone/food/jiudai",
@@ -49,12 +49,12 @@ void greeting(object ob)
         switch (random(2))
         {
                 case 0:
-                        say( "·ïÆßÐ¦ßäßäµØËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-                                + "£¬½øÀ´ºÈ±­²è£¬ÐªÐªÍÈ°É¡£\n");
+                        say( "é³³ä¸ƒç¬‘å’ªå’ªåœ°èªªé“ï¼šé€™ä½" + RANK_D->query_respect(ob)
+                                + "ï¼Œé€²ä¾†å–æ¯èŒ¶ï¼Œæ­‡æ­‡è…¿å§ã€‚\n");
                         break;
                 case 1:
-                        say( "·ïÆßÐ¦ßäßäµØËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-                                + "£¬¿ìÇë½ø¡£\n");
+                        say( "é³³ä¸ƒç¬‘å’ªå’ªåœ°èªªé“ï¼šé€™ä½" + RANK_D->query_respect(ob)
+                                + "ï¼Œå¿«è«‹é€²ã€‚\n");
                         break;
         }
 }

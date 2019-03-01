@@ -1,13 +1,13 @@
-// xiaoxiao.c ½­ºşÏüĞ¡
+// xiaoxiao.c æ±Ÿæ¹–å®µå°
 
 #include <ansi.h>
 inherit NPC;
 
 void create()
 {
-        set_name("½­ºşÏüĞ¡", ({ "jianghu  xiaoxiao"}));
-        set("long","Ò»¸ö¹¦·ò²»ÊÇºÜºÃ£¬µ«ÊÇÒÑ¾­¿ªÊ¼×÷¶ñ½­ºşµÄĞ¡±²¡£\nÉñÌ¬ö»öº£¬ÈÃÈËÌÖÑá¡£\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("æ±Ÿæ¹–å®µå°", ({ "jianghu  xiaoxiao"}));
+        set("long","ä¸€å€‹åŠŸå¤«ä¸æ˜¯å¾ˆå¥½ï¼Œä½†æ˜¯å·²ç¶“é–‹å§‹ä½œæƒ¡æ±Ÿæ¹–çš„å°è¼©ã€‚\nç¥æ…‹é½·é½ªï¼Œè®“äººè¨å­ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", random(10) + 25);
         set("attitude", "peaceful");
         set("str", 25);

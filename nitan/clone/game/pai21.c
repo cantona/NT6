@@ -1,5 +1,5 @@
-// pai21.c 21µãÅÆ
-// make by Ã¨²¿Ã¨(Catyboy)
+// pai21.c 21é»ç‰Œ
+// make by è²“éƒ¨è²“(Catyboy)
 
 #include <ansi.h>
 #define MAX_PAI  52
@@ -7,22 +7,22 @@
 inherit ITEM;
 
 int has_start;
-mapping player;                        // Íæ¼ÒID
+mapping player;                        // ç©å®¶ID
 mapping player_data;
 
-// ²ÎÊı
-int game_start;                        // 1¾ÖÊÇ·ñ¿ªÊ¼?
-string who_play;                // ÕıÔÚ³öÅÆµÄÈË
+// åƒæ•¸
+int game_start;                        // 1å±€æ˜¯å¦é–‹å§‹?
+string who_play;                // æ­£åœ¨å‡ºç‰Œçš„äºº
 
-// ÅÆÈİÆ÷
-int remain;                                // ËùÊ£µÄÅÆÊıÁ¿
-mixed pai_on_desk;                // ¿ÉÒÔÊ¹ÓÃµÄÅÆ                
-mapping player_hand;        // Íæ¼ÒÊÖÉÏµÄÅÆ
+// ç‰Œå®¹å™¨
+int remain;                                // æ‰€å‰©çš„ç‰Œæ•¸é‡
+mixed pai_on_desk;                // å¯ä»¥ä½¿ç”¨çš„ç‰Œ                
+mapping player_hand;        // ç©å®¶æ‰‹ä¸Šçš„ç‰Œ
 
-// ¼ÆÊıÆ÷
+// è¨ˆæ•¸å™¨
 mapping counter = ([]);
 
-string *suit_str = ({  WHT"·½¿é"NOR , HIB"Ã·»¨"NOR ,HIR"ºìÌÒ"NOR , HBWHT BLK"ºÚÌÒ"NOR});
+string *suit_str = ({  WHT"æ–¹å¡Š"NOR , HIB"æ¢…èŠ±"NOR ,HIR"ç´…æ¡ƒ"NOR , HBWHT BLK"é»‘æ¡ƒ"NOR});
 string *suit_char = ({ "D","C","H","S"});
 string *rank_str = ({ "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A" });
 
@@ -76,7 +76,7 @@ int c21(mixed* inv)
 
 void reset_pai()
 {
-        // ÖØÖÃÅÆ£¨ÅÆºĞ£¬Íæ¼ÒµÄÅÆ)
+        // é‡ç½®ç‰Œï¼ˆç‰Œç›’ï¼Œç©å®¶çš„ç‰Œ)
         int i;
         string* key;
         
@@ -93,12 +93,12 @@ void reset_pai()
 
 int reset_all()
 {
-        // ÖØÖÃÕû¸öÓÎÏ·
+        // é‡ç½®æ•´å€‹éŠæˆ²
         int i;
 
         has_start = 0;
         if(sizeof(player)!=0)
-                msg(this_player(),0,"$NÖØĞÂÖÃÅÆÁË¡£\n");
+                msg(this_player(),0,"$Né‡æ–°ç½®ç‰Œäº†ã€‚\n");
         
         player = ([]);
         player_hand = ([]);
@@ -112,12 +112,12 @@ int reset_all()
 
 void create()
 {
-        set_name("21µãÅÆ×À", ({"card desk","pai","pai21"}));
+        set_name("21é»ç‰Œæ¡Œ", ({"card desk","pai","pai21"}));
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»ÕÅ×À×Ó£¬ÉÏÃæ·Å×ÅÒ»Ğ©ÅÆ£¬Ê¹ÓÃ·½·¨ÇëÊ¹ÓÃ(helppai)ÃüÁî¡£\n");
-                set("unit", "ÕÅ");
+                set("long", "ä¸€å¼µæ¡Œå­ï¼Œä¸Šé¢æ”¾è‘—ä¸€äº›ç‰Œï¼Œä½¿ç”¨æ–¹æ³•è«‹ä½¿ç”¨(helppai)å‘½ä»¤ã€‚\n");
+                set("unit", "å¼µ");
                 set("value", 1);
         }
         player = ([]);
@@ -126,27 +126,27 @@ void create()
 
 void init()
 {
-        // °ïÖú
+        // å¹«åŠ©
         add_action("do_help", "helppai");
 
-        // »ù±¾Ö¸Áî
-    add_action("do_reset", "reset");                // ÖØÖÃÕû¸öÓÎÏ·
-        add_action("do_restart", "restart");        // ÖØĞÂÓÎÏ·
-        add_action("do_join", "join");                        // ¼ÓÈëÅÆ¾Ö
-        add_action("do_start", "start");                // ¿ªÊ¼ÓÎÏ·
+        // åŸºæœ¬æŒ‡ä»¤
+    add_action("do_reset", "reset");                // é‡ç½®æ•´å€‹éŠæˆ²
+        add_action("do_restart", "restart");        // é‡æ–°éŠæˆ²
+        add_action("do_join", "join");                        // åŠ å…¥ç‰Œå±€
+        add_action("do_start", "start");                // é–‹å§‹éŠæˆ²
         
-        add_action("do_xipai", "xipai");                // Ï´ÅÆ
-        add_action("do_view", "view");                        // ¿´ÅÆ
+        add_action("do_xipai", "xipai");                // æ´—ç‰Œ
+        add_action("do_view", "view");                        // çœ‹ç‰Œ
                 
-        add_action("do_nextone", "next");                // ´ß´ÙÏÂÒ»¸ö
-        add_action("do_pass", "pass");                        // ²»ÒªÅÆ
+        add_action("do_nextone", "next");                // å‚¬ä¿ƒä¸‹ä¸€å€‹
+        add_action("do_pass", "pass");                        // ä¸è¦ç‰Œ
         
-        // À©Õ¹Ö¸Áî
-        add_action("do_chupai", "play");                // Íæ
-        add_action("do_daopai", "daopai");                // µ¹ÅÆ
+        // æ“´å±•æŒ‡ä»¤
+        add_action("do_chupai", "play");                // ç©
+        add_action("do_daopai", "daopai");                // å€’ç‰Œ
 
-        // ¼ÆÊıÆ÷
-        add_action("do_showc", "showc");                // ÏÔÊ¾¼ÆÊıÆ÷
+        // è¨ˆæ•¸å™¨
+        add_action("do_showc", "showc");                // é¡¯ç¤ºè¨ˆæ•¸å™¨
 }
 
 int do_reset(string arg)
@@ -154,9 +154,9 @@ int do_reset(string arg)
         if(arg == "counter")
         {
                 if(!is_playing(this_player()))
-                        return notify_fail("Äã¶¼²»ÍæÅÆ°¡£¡\n");
+                        return notify_fail("ä½ éƒ½ä¸ç©ç‰Œå•Šï¼\n");
 
-                msg(this_player(),0,"$N¸´Î»¼ÆÊıÆ÷ÁË¡£\n");
+                msg(this_player(),0,"$Nå¾©ä½è¨ˆæ•¸å™¨äº†ã€‚\n");
                 counter = ([]);
                 return 1;
         }
@@ -172,17 +172,17 @@ int do_restart(string arg)
         string* key;
 
         if(!is_playing(this_player()))
-                return notify_fail("Äã¶¼²»Íæ£¬¿ªÊ¼Ê²Ã´°¡£¡\n");
+                return notify_fail("ä½ éƒ½ä¸ç©ï¼Œé–‹å§‹ä»€éº¼å•Šï¼\n");
 
         if(!has_start)
-                return notify_fail("ÓÎÏ·»¹Ã»ÓĞ¿ªÊ¼¡£\n");
+                return notify_fail("éŠæˆ²é‚„æ²’æœ‰é–‹å§‹ã€‚\n");
 
         if(sizeof(player)!=0)
-                msg(this_player(),0,"$N¿ªÊ¼ĞÂµÄÒ»ÂÖÅÆ¾ÖÁË¡£\n\n");
+                msg(this_player(),0,"$Né–‹å§‹æ–°çš„ä¸€è¼ªç‰Œå±€äº†ã€‚\n\n");
 
         reset_pai();
         restore_player_data();
-        msg(0,0,"ÔÚ¿ªÊ¼ÓÎÏ·Ö®Ç°(play)£¬Çë¸÷Î»Ï´ÅÆ(xipai)¡£\n");
+        msg(0,0,"åœ¨é–‹å§‹éŠæˆ²ä¹‹å‰(play)ï¼Œè«‹å„ä½æ´—ç‰Œ(xipai)ã€‚\n");
         return 1;
 }
 
@@ -192,29 +192,29 @@ int do_join(string arg)
 
         me = this_player();
         if(has_start)
-                return notify_fail("ÅÆ¾ÖÒÑ¾­¿ªÊ¼£¬²»ÄÜ¼ÓÈëÁË¡£\n");
+                return notify_fail("ç‰Œå±€å·²ç¶“é–‹å§‹ï¼Œä¸èƒ½åŠ å…¥äº†ã€‚\n");
         if(is_playing(me))
-                return notify_fail("ÄãÒÑ¾­²Î¼ÓÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“åƒåŠ äº†ã€‚\n");
         
         // add player
         player[me->query("id")]="yes";
         player_hand[me->query("id")]=allocate(MAX_PAI);
-        msg(me,0,"$N¼ÓÈëÅÆ¾ÖÁË¡£\n");
+        msg(me,0,"$NåŠ å…¥ç‰Œå±€äº†ã€‚\n");
         return 1;
 }
 
 int do_start(string arg)
 {
         if(!is_playing(this_player()))
-                return notify_fail("Äã¶¼²»Íæ£¬¿ªÊ¼Ê²Ã´°¡£¡\n");
+                return notify_fail("ä½ éƒ½ä¸ç©ï¼Œé–‹å§‹ä»€éº¼å•Šï¼\n");
         
         if(has_start)
-                return notify_fail("ÅÆ¾ÖÒÑ¾­¿ªÊ¼ÁË¡£\n");
+                return notify_fail("ç‰Œå±€å·²ç¶“é–‹å§‹äº†ã€‚\n");
 
         has_start = 1;
-        msg(this_player(),0,"$N¿ªÊ¼ÁËÅÆ¾Ö¡£\n\n");
+        msg(this_player(),0,"$Né–‹å§‹äº†ç‰Œå±€ã€‚\n\n");
         auto_order();
-        msg(0,0,"ÔÚ¿ªÊ¼ÓÎÏ·Ö®Ç°(play)£¬Çë¸÷Î»Ï´ÅÆ(xipai)¡£\n");
+        msg(0,0,"åœ¨é–‹å§‹éŠæˆ²ä¹‹å‰(play)ï¼Œè«‹å„ä½æ´—ç‰Œ(xipai)ã€‚\n");
         return 1;
 }
 
@@ -224,7 +224,7 @@ int do_xipai(string arg)
         mixed* pai;
 
         if(!is_playing(this_player()))
-                return notify_fail("Äã¶¼²»Íæ£¬Ï´Ê²Ã´ÅÆ°¡£¡\n");
+                return notify_fail("ä½ éƒ½ä¸ç©ï¼Œæ´—ä»€éº¼ç‰Œå•Šï¼\n");
         
         pai = pai_on_desk;
         sum = remain;
@@ -238,7 +238,7 @@ int do_xipai(string arg)
                 pai[which] = temp;
                 rand --;
         }
-        msg(this_player(),0,"$NÏ´ÁËÏ´×ÀÃæµÄÅÆ¡£\n");
+        msg(this_player(),0,"$Næ´—äº†æ´—æ¡Œé¢çš„ç‰Œã€‚\n");
         return 1;
 }
 
@@ -250,13 +250,13 @@ int do_chupai(string arg)
         object ob;
                 
         if(!is_playing(this_player()))
-                return notify_fail("Äã¶¼²»Íæ°¡£¡\n");
+                return notify_fail("ä½ éƒ½ä¸ç©å•Šï¼\n");
 
         if(who_play==0)
                 who_play = this_player()->query("id");
 
         if(who_play!=this_player()->query("id"))
-                return notify_fail("»¹Ã»ÓĞÂÖµ½µ½Äã°¡¡£\n");
+                return notify_fail("é‚„æ²’æœ‰è¼ªåˆ°åˆ°ä½ å•Šã€‚\n");
 
         done = 0;
                 
@@ -266,7 +266,7 @@ int do_chupai(string arg)
         if(!pick_in(this_player()->query("id"),id))
                 return 0;
 
-        msg(this_player(),0,"$NÃşÁËÒ»ÕÅ"+id_to_pai(id)+"¡£\n");
+        msg(this_player(),0,"$Næ‘¸äº†ä¸€å¼µ"+id_to_pai(id)+"ã€‚\n");
 
         done = 1;
 
@@ -274,10 +274,10 @@ int do_chupai(string arg)
         inv = player_hand[this_player()->query("id")];
         sum = c21(inv);
                         
-        msg(this_player(),0,"$NÊÖÉÏÓĞ"HIY+sum+"µã"NOR"ÁË¡£\n");
+        msg(this_player(),0,"$Næ‰‹ä¸Šæœ‰"HIY+sum+"é»"NOR"äº†ã€‚\n");
         if(sum>21)
         {
-                do_pass(HIR"±¬ÁË£¡£¡£¡"NOR"\n");
+                do_pass(HIR"çˆ†äº†ï¼ï¼ï¼"NOR"\n");
                 return 1;
         }
         
@@ -302,10 +302,10 @@ int do_view(string arg)
         
         pai = player_hand[arg];
         if(pai==0)
-                return notify_fail("ÅÆ¾ÖÃ»ÓĞÕâ¸öÍæ¼Ò¡£\n");
+                return notify_fail("ç‰Œå±€æ²’æœ‰é€™å€‹ç©å®¶ã€‚\n");
         
         if(hand_name)
-                write(hand_name+"£º");
+                write(hand_name+"ï¼š");
         write(view_pai(arg)+"\n");
         return 1;
 }
@@ -320,7 +320,7 @@ string extra_long()
         me = this_player();
         idx = keys(player);
         
-        r = sprintf("ÅÆºĞÀïÃæÓĞ%dÕÅÅÆ\n",remain);
+        r = sprintf("ç‰Œç›’è£¡é¢æœ‰%då¼µç‰Œ\n",remain);
         
         if(sizeof(player)>0)
         {
@@ -330,7 +330,7 @@ string extra_long()
                         key = idx[i];
                         who = get_player(key);
                         if(who)
-                                r = r + key + "£º"+view_pai(key)+"\n";
+                                r = r + key + "ï¼š"+view_pai(key)+"\n";
                 }
                 r = r + "******************************************\n";
         }
@@ -351,7 +351,7 @@ int pick_out()
         }
         else
         {
-                msg(0,0,"Ã»ÓĞÅÆÁË");
+                msg(0,0,"æ²’æœ‰ç‰Œäº†");
                 return -1;
         }
 }
@@ -403,7 +403,7 @@ string view_pai(string which)
                 return 0;
  
         if(sizeof_pai(pai)==0)
-                return "Ã»ÓĞÅÆ";
+                return "æ²’æœ‰ç‰Œ";
 
         s = "";
         for(i=0;i<pai[0];i++)
@@ -411,7 +411,7 @@ string view_pai(string which)
                 p = id_to_pai(pai[i+1]);
                 s+= p +" ";
         }
-        return sprintf("%s£º%dµã",s,c21(pai));
+        return sprintf("%sï¼š%dé»",s,c21(pai));
 }
 
 int do_nextone(string arg)
@@ -420,21 +420,21 @@ int do_nextone(string arg)
         string id;
 
         if(!is_playing(this_player()))
-                return notify_fail("Äã¶¼²»ÍæÅÆ°¡£¡\n");
+                return notify_fail("ä½ éƒ½ä¸ç©ç‰Œå•Šï¼\n");
 
         if(who_play==0)
-                return notify_fail("ÏÖÔÚÊÇË­³öÅÆ°¡£¿\n");
+                return notify_fail("ç¾åœ¨æ˜¯èª°å‡ºç‰Œå•Šï¼Ÿ\n");
 
         id = who_play;
         ob = get_player(id);
         
         if(ob==0)
-                return msg(0,0,"ÓĞÍæ¼ÒÈ±³¡ÁË£¬ÇëÖØĞÂ¿ªÊ¼ÓÎÏ·(reset pai)¡£\n");
+                return msg(0,0,"æœ‰ç©å®¶ç¼ºå ´äº†ï¼Œè«‹é‡æ–°é–‹å§‹éŠæˆ²(reset pai)ã€‚\n");
 
         if(this_player()->query("id")!=id)
-                msg(this_player(),ob,"$N¶Ô$nËµµÀ£ºµ½ÄãÁË¡£\n");
+                msg(this_player(),ob,"$Nå°$nèªªé“ï¼šåˆ°ä½ äº†ã€‚\n");
         else
-                msg(this_player(),0,"¶Ô×Ô¼ºËµµÀ£ºµ½ÎÒÀ²£¡\n");
+                msg(this_player(),0,"å°è‡ªå·±èªªé“ï¼šåˆ°æˆ‘å•¦ï¼\n");
         return 1;
 }
 
@@ -446,14 +446,14 @@ int do_pass(string arg)
         int i,temp;
 
         if(!is_playing(this_player()))
-                return notify_fail("Äã¶¼²»ÍæÅÆ°¡£¡\n");
+                return notify_fail("ä½ éƒ½ä¸ç©ç‰Œå•Šï¼\n");
 
         if(who_play!=this_player()->query("id"))
-                return notify_fail("»¹Ã»ÓĞµ½Äã°¡£¡\n");
+                return notify_fail("é‚„æ²’æœ‰åˆ°ä½ å•Šï¼\n");
 
         if(!arg)
-                arg = "£Ğ£Á£Ó£Ó£¡£¡";
-        msg(this_player(),0,"$NËµµÀ£º"+arg+"\n");
+                arg = "ï¼°ï¼¡ï¼³ï¼³ï¼ï¼";
+        msg(this_player(),0,"$Nèªªé“ï¼š"+arg+"\n");
         old = who_play;
         who_play = player[who_play];
 
@@ -466,7 +466,7 @@ int do_pass(string arg)
                                 
         if(player[who_play] == "")
         {
-                msg(0,0,"´ó¼Ò¶¼²»ÒªÁË¡£\n");
+                msg(0,0,"å¤§å®¶éƒ½ä¸è¦äº†ã€‚\n");
                 finish_21();
                 return 1;
         }
@@ -480,9 +480,9 @@ string id_to_pai(int id)
         if(id <0)
                 return HIR"???"NOR;
         if(id == 52)
-                return HIY"Ğ¡¹í"NOR + "JS";
+                return HIY"å°é¬¼"NOR + "JS";
         if(id>=53)
-                return HIY"´ó¹í"NOR + "JB";
+                return HIY"å¤§é¬¼"NOR + "JB";
         i = id/13;
         j = id-i*13;
         return suit_str[i] + suit_char[i] + rank_str[j];
@@ -549,10 +549,10 @@ int do_showc(string arg)
 
         idx = keys(counter);
         
-        r = "¼ÆÊı±í(Scoreboard)\n£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­\nID¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡·ÖÊı\n£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­\n";
+        r = "è¨ˆæ•¸è¡¨(Scoreboard)\nï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼\nIDã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€åˆ†æ•¸\nï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼\n";
         for(i=0;i<sizeof(idx);i++)
                 r = sprintf("%s%-14s%10d\n", r,idx[i],counter[idx[i]]);
-        r += "£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­\n";
+        r += "ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼\n";
 
         msg(0,0,r);
         return 1;
@@ -568,10 +568,10 @@ int do_daopai(string arg)
         int i,id;
         
         if(!is_playing(this_player()))
-                return notify_fail("Äã¶¼²»Íæ£¬¸ãÊ²Ã´°¡£¡\n");
+                return notify_fail("ä½ éƒ½ä¸ç©ï¼Œæä»€éº¼å•Šï¼\n");
 
         if(!has_start)
-                return notify_fail("ÓÎÏ·»¹Ã»ÓĞ¿ªÊ¼¡£\n");
+                return notify_fail("éŠæˆ²é‚„æ²’æœ‰é–‹å§‹ã€‚\n");
 
         if(remain>0)
         {
@@ -579,11 +579,11 @@ int do_daopai(string arg)
                 for(i=1;i<remain;i++)
                         pai_on_desk[i-1] = pai_on_desk[i];
                 pai_on_desk[remain-1] = id;
-                msg(this_player(),0,"$Nµ¹ÁËÒ»ÏÂÅÆ¡£\n");
+                msg(this_player(),0,"$Nå€’äº†ä¸€ä¸‹ç‰Œã€‚\n");
                 return 1;
         }
         else
-                return notify_fail("Ã»ÓĞÅÆÁË¡£\n");
+                return notify_fail("æ²’æœ‰ç‰Œäº†ã€‚\n");
 }
 
 int pai_number(int pai)
@@ -665,7 +665,7 @@ void finish_21()
         inv = sort_array(inv2,"sort_21",this_object());
         
         lpoint = -1;
-        r = "½á¹û\n£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­\nID¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡µãÊı       µÃ·Ö\n£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­\n";
+        r = "çµæœ\nï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼\nIDã€€ã€€ã€€ã€€ã€€ã€€ã€€ã€€é»æ•¸       å¾—åˆ†\nï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼\n";
         for(i=0;i<sizeof(inv);i++)
         {
                 sscanf(inv[i],"%s:%d",id,k);
@@ -686,49 +686,49 @@ void finish_21()
 
                 press_counter(id,fen);
         }
-        r += "£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­\n\n";
+        r += "ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼\n\n";
         msg(0,0,r);
         
         reset_pai();
         restore_player_data();
-        msg(0,0,"Çë¸÷Î»ÖØĞÂÏ´ÅÆ(xipai)¿ªÊ¼ĞÂµÄÒ»¾Ö¡£\n");
+        msg(0,0,"è«‹å„ä½é‡æ–°æ´—ç‰Œ(xipai)é–‹å§‹æ–°çš„ä¸€å±€ã€‚\n");
 }
 
 int do_help(string arg)
 {
         this_player()->start_more( @HELP
-Íæ21µãÅÆ×ÀÊ¹ÓÃ·½·¨:
-¡ª¡ª[¿ªÊ¼ÓÎÏ·]¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
-°ïÖúÃüÁî£ºhelppai
-¼ÓÈëÃüÁî£ºjoin¡¡¡¡¡¡¡¡¡¡¼ÓÈëÓÎÏ·
-¿ªÊ¼ÃüÁî£ºstart ¡¡¡¡¡¡¡¡¿ªÊ¼ÒÔºó²»ÄÜÔÙ¼ÓÈë
-ÖØÖÃÃüÁî£ºreset pai ¡¡¡¡½áÊøÓÎÏ·
+ç©21é»ç‰Œæ¡Œä½¿ç”¨æ–¹æ³•:
+â”€â”€[é–‹å§‹éŠæˆ²]â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+å¹«åŠ©å‘½ä»¤ï¼šhelppai
+åŠ å…¥å‘½ä»¤ï¼šjoinã€€ã€€ã€€ã€€ã€€åŠ å…¥éŠæˆ²
+é–‹å§‹å‘½ä»¤ï¼šstart ã€€ã€€ã€€ã€€é–‹å§‹ä»¥å¾Œä¸èƒ½å†åŠ å…¥
+é‡ç½®å‘½ä»¤ï¼šreset pai ã€€ã€€çµæŸéŠæˆ²
 
-¡ª¡ª[ÓÎÏ·ÃüÁî]¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
-ÖØĞÂÓÎÏ·£ºrestart
-¡¡¡¡ÃşÅÆ£ºplay¡¡¡¡¡¡¡¡¡¡½øĞĞÓÎÏ·
-²»ÔÙÒªÅÆ: pass
+â”€â”€[éŠæˆ²å‘½ä»¤]â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+é‡æ–°éŠæˆ²ï¼šrestart
+ã€€ã€€æ‘¸ç‰Œï¼šplayã€€ã€€ã€€ã€€ã€€é€²è¡ŒéŠæˆ²
+ä¸å†è¦ç‰Œ: pass
 
-¡ª¡ª[ÆäËüÃüÁî]¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
-Ï´ÅÆÃüÁî£ºxipai
-¿´ÅÆÃüÁî£ºview [Íæ¼ÒID] ¹Û²ìÍæ¼ÒÊÖÉÏµÄÅÆ
-´ß´ÙÃüÁî£ºnext¡¡¡¡¡¡¡¡¡¡´ß´ÙÕıÔÚ³öÅÆµÄÈË
+â”€â”€[å…¶å®ƒå‘½ä»¤]â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+æ´—ç‰Œå‘½ä»¤ï¼šxipai
+çœ‹ç‰Œå‘½ä»¤ï¼šview [ç©å®¶ID] è§€å¯Ÿç©å®¶æ‰‹ä¸Šçš„ç‰Œ
+å‚¬ä¿ƒå‘½ä»¤ï¼šnextã€€ã€€ã€€ã€€ã€€å‚¬ä¿ƒæ­£åœ¨å‡ºç‰Œçš„äºº
 
-¡ª¡ª[¼ÆÊıÅÆÊ¹ÓÃ]¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
-ÏÔÊ¾: showc
-ÖØÖÃ: reset counter
-
-
+â”€â”€[è¨ˆæ•¸ç‰Œä½¿ç”¨]â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+é¡¯ç¤º: showc
+é‡ç½®: reset counter
 
 
-¡ª¡ª[ÓÎÏ·¹æÔò]¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
-ÓÎÏ·¿ªÊ¼ÒÔºó£¬Ã¿ÈËÂÖÁ÷ÃşÅÆÖ±µ½²»ÃşÎªÖ¹¡£
-×îºó¸ù¾İÃ¿ÈËÊÖÉÏµÄµãÊı¾ö¶¨Ê¤¸º¡£
-µãÊı > 21 ÎªÊä£¬µãÊı<21µÄÊ±ºòµãÊı´óÕßÊ¤¡£
-J£¬Q£¬kÎª10µã£¬A¿ÉÒÔÎª1µã»òÕßÎª11µã¡£
 
-¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª
-                        make by Ã¨²¿Ã¨(Catyboy) v1.0
+
+â”€â”€[éŠæˆ²è¦å‰‡]â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+éŠæˆ²é–‹å§‹ä»¥å¾Œï¼Œæ¯äººè¼ªæµæ‘¸ç‰Œç›´åˆ°ä¸æ‘¸ç‚ºæ­¢ã€‚
+æœ€å¾Œæ ¹æ“šæ¯äººæ‰‹ä¸Šçš„é»æ•¸æ±ºå®šå‹è² ã€‚
+é»æ•¸ > 21 ç‚ºè¼¸ï¼Œé»æ•¸<21çš„æ™‚å€™é»æ•¸å¤§è€…å‹ã€‚
+Jï¼ŒQï¼Œkç‚º10é»ï¼ŒAå¯ä»¥ç‚º1é»æˆ–è€…ç‚º11é»ã€‚
+
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+                        make by è²“éƒ¨è²“(Catyboy) v1.0
 HELP
         );
         return 1;

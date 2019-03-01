@@ -3,15 +3,15 @@ inherit SKILL;
 string type() { return "knowledge"; } 
 
 int is_fmsk() { return 1; }
-string family_name() { return "Ñªµ¶ÃÅ"; }
+string family_name() { return "è¡€åˆ€é–€"; }
 
 int valid_learn(object me)
 {        
         if (me->query_skill("xuedao-dafa", 1) < 100)
-                return notify_fail("ÄãÑªµ¶´ó·¨»ðºò²»×ã£¬ÎÞ·¨ÑÐÏ°ÑªÓ°´ó·¨¡£\n");        
+                return notify_fail("ä½ è¡€åˆ€å¤§æ³•ç«å€™ä¸è¶³ï¼Œç„¡æ³•ç ”ç¿’è¡€å½±å¤§æ³•ã€‚\n");        
         
         if( query("family/family_name", me) != family_name() )
-                return notify_fail("ÑªÓ°´ó·¨Ö»ÄÜÑªµ¶ÃÅµÜ×Ó·½¿ÉÑÐÏ°¡£\n");
+                return notify_fail("è¡€å½±å¤§æ³•åªèƒ½è¡€åˆ€é–€å¼Ÿå­æ–¹å¯ç ”ç¿’ã€‚\n");
 
         return 1;
 }

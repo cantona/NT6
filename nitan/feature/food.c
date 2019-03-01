@@ -42,15 +42,15 @@ string extra_long()
 {
         string str;
 
-        str =  "ÎïÆ·ÀàĞÍ    £º    Ê³Îï\n";
-        str += sprintf("ÖØ    Á¿    £º    %d\n", this_object()->query_weight());
-        str += sprintf("ÄÜ    Á¿    £º    %d\n", query("food_supply"));
-        str += sprintf("Ê£    Óà    £º    %d\n", query("food_remaining"));
-        str += sprintf("Ê¹ÓÃ·½Ê½    £º    ÊäÈëÖ¸Áî eat %s Ê³ÓÃ¡£\n", query("id"));
+        str =  "ç‰©å“é¡å‹    ï¼š    é£Ÿç‰©\n";
+        str += sprintf("é‡    é‡    ï¼š    %d\n", this_object()->query_weight());
+        str += sprintf("èƒ½    é‡    ï¼š    %d\n", query("food_supply"));
+        str += sprintf("å‰©    ä½™    ï¼š    %d\n", query("food_remaining"));
+        str += sprintf("ä½¿ç”¨æ–¹å¼    ï¼š    è¼¸å…¥æŒ‡ä»¤ eat %s é£Ÿç”¨ã€‚\n", query("id"));
         if( this_object()->query_autoload() )
-                str += "ÏÂÏß¶ªÊ§    £º    ·ñ\n";
+                str += "ä¸‹ç·šä¸Ÿå¤±    ï¼š    å¦\n";
         else
-                str += "ÏÂÏß¶ªÊ§    £º    ÊÇ\n";
+                str += "ä¸‹ç·šä¸Ÿå¤±    ï¼š    æ˜¯\n";
         return str;
 }
 
@@ -58,16 +58,16 @@ int feed_ob(object me)
 {
         string str;
         if( me->is_busy() )
-                return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É¡£\n");
+                return notify_fail("ä½ ä¸Šä¸€å€‹å‹•ä½œé‚„æ²’æœ‰å®Œæˆã€‚\n");
         if( !living(me) ) return 0;
 
         if( stringp(query("food_race")) )
-                return notify_fail( "Õâ¿É²»ÊÇ¸øÈË³ÔµÄ¶«Î÷£¡\n");
+                return notify_fail( "é€™å¯ä¸æ˜¯çµ¦äººåƒçš„æ±è¥¿ï¼\n");
 
         if( !query("food_remaining") )
-                return notify_fail( name() + "ÒÑ¾­Ã»Ê²Ã´ºÃ³ÔµÄÁË¡£\n");
+                return notify_fail( name() + "å·²ç¶“æ²’ä»€éº¼å¥½åƒçš„äº†ã€‚\n");
         if( (int)query("food", me) >= (int)me->max_food_capacity() )
-                return notify_fail("ÄãÒÑ¾­³ÔÌ«±¥ÁË£¬ÔÙÒ²Èû²»ÏÂÈÎºÎ¶«Î÷ÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“åƒå¤ªé£½äº†ï¼Œå†ä¹Ÿå¡ä¸ä¸‹ä»»ä½•æ±è¥¿äº†ã€‚\n");
 
         addn("food", query("food_supply"), me);
 
@@ -84,13 +84,13 @@ int feed_ob(object me)
         addn("food_remaining", -1);
         if( !query("food_remaining") ) {
                 if( !stringp(str = query("eat_all")) )
-                str = "$N½«Ê£ÏÂµÄ$n³ÔµÃÇ¬Ç¬¾»¾»¡£\n";
+                str = "$Nå°‡å‰©ä¸‹çš„$nåƒå¾—ä¹¾ä¹¾å‡ˆå‡ˆã€‚\n";
                 message_vision(str, this_player(),this_object());
                 if( !this_object()->finish_eat() )
                         destruct(this_object());
         } else  {
                 if( !stringp(str = query("eat_msg")) )
-                str = "$NÄÃÆğ$nÒ§ÁË¼¸¿Ú¡£\n";
+                str = "$Næ‹¿èµ·$nå’¬äº†å¹¾å£ã€‚\n";
                 message_vision(str, this_player(),this_object());
         }
         //me->start_busy(1);
@@ -113,19 +113,19 @@ void decay()
         switch(addn("decay", 1))
         {
                 case 2:
-                        set_temp("apply/long",({query("long")+"¿ÉÊÇ¿´ÆğÀ´²»ÊÇºÜĞÂÏÊ¡£\n"}));
-                        tell_object(ob, me->name()+"µÄÑÕÉ«ÓĞĞ©²»¶ÔÁË¡£\n");
+                        set_temp("apply/long",({query("long")+"å¯æ˜¯çœ‹èµ·ä¾†ä¸æ˜¯å¾ˆæ–°é®®ã€‚\n"}));
+                        tell_object(ob, me->name()+"çš„é¡è‰²æœ‰äº›ä¸å°äº†ã€‚\n");
                         break;
                 case 3:
-                        set_temp("apply/long", ({query("long")+"¿ÉÊÇÕıÔÚÉ¢·¢³öÒ»¹ÉÄÑÎÅµÄÎ¶µÀ¡£\n"}));
-                        tell_object(ob,me->name()+"É¢·¢³öÒ»¹ÉÄÑÎÅµÄÎ¶µÀ¡£\n");
+                        set_temp("apply/long", ({query("long")+"å¯æ˜¯æ­£åœ¨æ•£ç™¼å‡ºä¸€è‚¡é›£èçš„å‘³é“ã€‚\n"}));
+                        tell_object(ob,me->name()+"æ•£ç™¼å‡ºä¸€è‚¡é›£èçš„å‘³é“ã€‚\n");
                         break;
                 case 4:
-                        set_temp("apply/long",({query("long")+"¿ÉÊÇÓĞĞ©¸¯ÀÃÁË¡£\n"}));
-                        tell_object(ob,me->name()+"ÓĞĞ©¸¯ÀÃÁË£¬·¢³ö´Ì±ÇµÄÎ¶µÀ¡£\n");
+                        set_temp("apply/long",({query("long")+"å¯æ˜¯æœ‰äº›è…çˆ›äº†ã€‚\n"}));
+                        tell_object(ob,me->name()+"æœ‰äº›è…çˆ›äº†ï¼Œç™¼å‡ºåˆºé¼»çš„å‘³é“ã€‚\n");
                         break;
                 default:
-                        tell_object(ob,me->name()+"Õû¸ö¸¯ÀÃµôÁË¡£\n");
+                        tell_object(ob,me->name()+"æ•´å€‹è…çˆ›æ‰äº†ã€‚\n");
                         destruct(this_object());
                         return;
         }

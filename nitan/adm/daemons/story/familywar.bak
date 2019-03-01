@@ -1,7 +1,7 @@
-// story:familywar ÃÅÅÉÌôÅÏ
+// story:familywar é–€æ´¾æŒ‘ç•”
 
 #include <ansi.h>
-#include "/adm/etc/teamquest/faminfo.c" // °üº¬±»¹¥´òÃÅÅÉµÄËùÓÐÐÅÏ¢
+#include "/adm/etc/teamquest/faminfo.c" // åŒ…å«è¢«æ”»æ‰“é–€æ´¾çš„æ‰€æœ‰ä¿¡æ¯
 
 #define FAM                      fam_info[family]
 #define WAITING                  1
@@ -16,7 +16,7 @@ int stop                       = 0;
 int no_clean_up() { return 1; }
 void notify_npc();
 
-public int change_status(int status) // ¸Ä±äµ±Ç°×´Ì¬
+public int change_status(int status) // æ”¹è®Šç•¶å‰ç‹€æ…‹
 {
       if (status > 3 || status < 0)
                status = 3;
@@ -24,7 +24,7 @@ public int change_status(int status) // ¸Ä±äµ±Ç°×´Ì¬
       return (now_status = status);
 }
 
-public int query_status() // »ñÈ¡µ±Ç°×´Ì¬¡£Íâ²¿quest.cµ÷ÓÃ
+public int query_status() // ç²å–ç•¶å‰ç‹€æ…‹ã€‚å¤–éƒ¨quest.cèª¿ç”¨
 {
       return now_status;
 }
@@ -41,7 +41,7 @@ void select_family()
         string fam;        
         fams = keys(fam_info);
         
-        // ±£Ö¤²»ÊÇÉÏ´Î³öÏÖ¹ýµÄÃÅÅÉ
+        // ä¿è¨¼ä¸æ˜¯ä¸Šæ¬¡å‡ºç¾éŽçš„é–€æ´¾
         while(1)
         {
               fam = fams[random(sizeof(fams))];
@@ -56,40 +56,40 @@ void select_family()
 string show_time()
 {
         select_family();
-        change_status(WAITING); // µÈ´ýµ÷Ç²£¬ÔÝ²»½ø¹¥ºÍQUEST
-        return "·×ÂÒ½­ºþ£¬ÈºÐÛÖðÂ¹¡£ÎäÁÖÖÐÈË¶¼ÓûÒ»Í³ÖÐÔ­ÎäÁÖ£¬³É¾ÍÒ»·¬°ÔÒµ¡£";
+        change_status(WAITING); // ç­‰å¾…èª¿é£ï¼Œæš«ä¸é€²æ”»å’ŒQUEST
+        return "ç´›äº‚æ±Ÿæ¹–ï¼Œç¾¤é›„é€é¹¿ã€‚æ­¦æž—ä¸­äººéƒ½æ¬²ä¸€çµ±ä¸­åŽŸæ­¦æž—ï¼Œæˆå°±ä¸€ç•ªéœ¸æ¥­ã€‚";
 }
 
 string show_info(int i)
 {
         string* msg = ({
-             "ÉñÃØ×éÖ¯Ê×Áì£ºÌýËµ" + family + "ÔÚÖÐÔ­ÉùÃûÏÔºÕ£¬ÃÅÍ½ÖÚ¶à£¬" + FAM["master_name"] +
-             "Îä¹¦³¬×¿£¬\n¶ø" + FAM["skill"] + "¸üÊÇÍþÁ¦¾ªÈË£¬²»¿ÉÐ¡êï¡£",
+             "ç¥žç§˜çµ„ç¹”é¦–é ˜ï¼šè½èªª" + family + "åœ¨ä¸­åŽŸè²åé¡¯èµ«ï¼Œé–€å¾’çœ¾å¤šï¼Œ" + FAM["master_name"] +
+             "æ­¦åŠŸè¶…å“ï¼Œ\nè€Œ" + FAM["skill"] + "æ›´æ˜¯å¨åŠ›é©šäººï¼Œä¸å¯å°è¦·ã€‚",
 
-             "ÉñÃØ×éÖ¯»¤·¨£º¿´À´" + family + "²»³ý£¬Ê¼ÖÕÊÇÎÒÃÇÍ³Ò»ÖÐÔ­ÎäÁÖµÄÐÄ¸¹´ó»¼¡£",
+             "ç¥žç§˜çµ„ç¹”è­·æ³•ï¼šçœ‹ä¾†" + family + "ä¸é™¤ï¼Œå§‹çµ‚æ˜¯æˆ‘å€‘çµ±ä¸€ä¸­åŽŸæ­¦æž—çš„å¿ƒè…¹å¤§æ‚£ã€‚",
 
-             "ÉñÃØ×éÖ¯Ê×Áì£º¾ÍÒÀÄãµÄ¼Æ²ßÐÐÊÂ£¬Á¢¼´ÕÙ¼¯ÈËÊÖµ½" HIR + FAM["fir_room_nm"] + NOR + WHT "¼¯ºÏ¡£",
+             "ç¥žç§˜çµ„ç¹”é¦–é ˜ï¼šå°±ä¾ä½ çš„è¨ˆç­–è¡Œäº‹ï¼Œç«‹å³å¬é›†äººæ‰‹åˆ°" HIR + FAM["fir_room_nm"] + NOR + WHT "é›†åˆã€‚",
 
-             "ÉñÃØ×éÖ¯»¤·¨£ºÊÇ£¡Ò»ÖùÏãºóÊôÏÂÕÙ¼¯ÈËÊÖÔÚ" HIR + FAM["fir_room_nm"] + NOR + WHT "ÌýºòÊ×Áìµ÷Ç²£¡",
+             "ç¥žç§˜çµ„ç¹”è­·æ³•ï¼šæ˜¯ï¼ä¸€æŸ±é¦™å¾Œå±¬ä¸‹å¬é›†äººæ‰‹åœ¨" HIR + FAM["fir_room_nm"] + NOR + WHT "è½å€™é¦–é ˜èª¿é£ï¼",
 
-             family + "µÜ×Ó£ºÙ÷¸æ" + FAM["master_rank"] + "£¬ÓÐÒ»Èº²»Ã÷Éí·ÝµÄ½­ºþÈËÊÏ¾Û¼¯ÔÚ"HIR + 
-             FAM["fir_room_nm"] + NOR + WHT "£¬ÑïÑÔÒª²ùÆ½ÎÒÃÇ" + family + "£¡",
+             family + "å¼Ÿå­ï¼šç¨Ÿå‘Š" + FAM["master_rank"] + "ï¼Œæœ‰ä¸€ç¾¤ä¸æ˜Žèº«ä»½çš„æ±Ÿæ¹–äººæ°èšé›†åœ¨"HIR + 
+             FAM["fir_room_nm"] + NOR + WHT "ï¼Œæšè¨€è¦éŸå¹³æˆ‘å€‘" + family + "ï¼",
     
-             FAM["master_name"] + "Å­µÀ£º¡°ÆñÓÐ´ËÀí£¬ÎÒÌÃÌÃ" + family + "ÆñÄÜÈÝËûÃÇÈöÒ°£¡"
-             "ÄãÁ¢¼´´«ÁîÏÂÈ¥£¬ÕÙ¼¯\n±¾ÃÅµÜ×ÓÔÚ" HIY + FAM["guard_room_nm"] + NOR + WHT "¼¯ºÏ¡£¡±",
+             FAM["master_name"] + "æ€’é“ï¼šâ€œè±ˆæœ‰æ­¤ç†ï¼Œæˆ‘å ‚å ‚" + family + "è±ˆèƒ½å®¹ä»–å€‘æ’’é‡Žï¼"
+             "ä½ ç«‹å³å‚³ä»¤ä¸‹åŽ»ï¼Œå¬é›†\næœ¬é–€å¼Ÿå­åœ¨" HIY + FAM["guard_room_nm"] + NOR + WHT "é›†åˆã€‚â€",
              
-             family + "µÜ×Ó£º¡°ÊÇ£¡¡±",                 // i == 6
+             family + "å¼Ÿå­ï¼šâ€œæ˜¯ï¼â€",                 // i == 6
 
-             "ÉñÃØ×éÖ¯»¤·¨£ºÆôÙ÷Ê×Áì£¬" + family + "ÃÅÏÂµÜ×ÓÒÑ¾­¾Û¼¯ÔÚ" HIY + FAM["guard_room_nm"] +
-             NOR + WHT "£¬¿´À´ËûÃÇÒª·´¿¹µ½µ×£¡",
+             "ç¥žç§˜çµ„ç¹”è­·æ³•ï¼šå•Ÿç¨Ÿé¦–é ˜ï¼Œ" + family + "é–€ä¸‹å¼Ÿå­å·²ç¶“èšé›†åœ¨" HIY + FAM["guard_room_nm"] +
+             NOR + WHT "ï¼Œçœ‹ä¾†ä»–å€‘è¦åæŠ—åˆ°åº•ï¼",
 
-             FAM["master_name"] + "£º" + family + "µÜ×ÓÌýÃü£¬ÊÄËÀ±£ÎÀ" + family + "£¬±ðÈÃÄÇÐ©¿ñÍýÐ¡ÈËµÃ³Ñ£¡", 
+             FAM["master_name"] + "ï¼š" + family + "å¼Ÿå­è½å‘½ï¼Œèª“æ­»ä¿è¡›" + family + "ï¼Œåˆ¥è®“é‚£äº›ç‹‚å¦„å°äººå¾—é€žï¼", 
 
-             family + "ÖÚµÜ×Ó£ºÊÇ£¡", 
+             family + "çœ¾å¼Ÿå­ï¼šæ˜¯ï¼", 
 
         });
 
-        if (i == 6)notify_npc(); // ³õÊ¼»¯ËùÓÐÏà¹ØNPCºÍÍ¨ÖªÏà¹Øplayer
+        if (i == 6)notify_npc(); // åˆå§‹åŒ–æ‰€æœ‰ç›¸é—œNPCå’Œé€šçŸ¥ç›¸é—œplayer
 
         if (i == 9)
         {
@@ -100,7 +100,7 @@ string show_info(int i)
         if (i == 99)
         {
               CHANNEL_D->do_channel(this_object(), "rumor", 
-                                    "ÌýËµÉñÃØ×éÖ¯¾ö¶¨ÔÚÈý·ÖÖÓºó½ø¹¥" HIW + family  + HIM + "£¡\n");
+                                    "è½èªªç¥žç§˜çµ„ç¹”æ±ºå®šåœ¨ä¸‰åˆ†é˜å¾Œé€²æ”»" HIW + family  + HIM + "ï¼\n");
 
               return "";
         }
@@ -117,13 +117,13 @@ void start_attack()
 {
        object *listeners;
        listeners = filter_array(users(), (: filter_listener :));
-       message("story",  NOR + WHT "\n¡¾°ïÅÉÌôÅÏ¡¿ÉñÃØ×éÖ¯Ê×Áì£ºÊ±³½ÒÑµ½£¬¿ªÊ¼ÐÐ¶¯£¡" + "\n" NOR, listeners);
-       CHANNEL_D->do_channel(this_object(), "rumor", "ÌýËµÉñÃØ×éÖ¯¿ªÊ¼¹¥´ò" HIW + family + HIM "£¡\n");
+       message("story",  NOR + WHT "\nã€å¹«æ´¾æŒ‘ç•”ã€‘ç¥žç§˜çµ„ç¹”é¦–é ˜ï¼šæ™‚è¾°å·²åˆ°ï¼Œé–‹å§‹è¡Œå‹•ï¼" + "\n" NOR, listeners);
+       CHANNEL_D->do_channel(this_object(), "rumor", "è½èªªç¥žç§˜çµ„ç¹”é–‹å§‹æ”»æ‰“" HIW + family + HIM "ï¼\n");
        change_status(ATTACKING);
        return;
 }
 
-// ³õÊ¼»¯ËùÓÐÏà¹ØNPCºÍÍ¨ÖªÏà¹Øplayer
+// åˆå§‹åŒ–æ‰€æœ‰ç›¸é—œNPCå’Œé€šçŸ¥ç›¸é—œplayer
 void notify_npc()
 {
         object *obs;
@@ -138,21 +138,21 @@ void notify_npc()
         if (sizeof(obs) <= 0)
         {
                 CHANNEL_D->do_channel(this_object(), "rumor", 
-                                      "ÌýËµÉñÃØ×éÖ¯ÐÐ¼£°ÜÂ¶£¬±»¹Ù¸®½ËÃðÁË¡£\n");
+                                      "è½èªªç¥žç§˜çµ„ç¹”è¡Œè·¡æ•—éœ²ï¼Œè¢«å®˜åºœå‰¿æ»…äº†ã€‚\n");
 
                 change_status(OVER);
                 stop = 1;
         }
 
-        // Ê×ÏÈÍ¨Öª±¾ÃÅÍæ¼Ò
+        // é¦–å…ˆé€šçŸ¥æœ¬é–€çŽ©å®¶
         for (i = 0; i < sizeof(obs); i ++)
         {
                if (! objectp(obs[i]) || 
                    query("family/family_name", obs[i]) != family )
                          continue;
 
-               tell_object(obs[i], HIG + family + "µÜ×Ó¸æËßÄã£ºÊ¦ÃÇÓÐÄÑ£¬»ðËÙµ½" + HIR +
-                           FAM["guard_room_nm"] + HIG " ¼¯ºÏ£¬µÈºòµ÷Ç²£¡\n");
+               tell_object(obs[i], HIG + family + "å¼Ÿå­å‘Šè¨´ä½ ï¼šå¸«å€‘æœ‰é›£ï¼Œç«é€Ÿåˆ°" + HIR +
+                           FAM["guard_room_nm"] + HIG " é›†åˆï¼Œç­‰å€™èª¿é£ï¼\n");
                tell_object(obs[i], BEEP);
         }
 
@@ -161,7 +161,7 @@ void notify_npc()
         
         if (objectp(master_ob))master_ob->move(FAM["master_room"]);
 
-        // ³õÊ¼»¯±¾ÃÅNPC²¢ÒÆ¶¯µ½guard_room_fi
+        // åˆå§‹åŒ–æœ¬é–€NPCä¸¦ç§»å‹•åˆ°guard_room_fi
         fam_npc = FAM["npc_list"];
         for (i = 0; i < sizeof(fam_npc); i ++)
         {
@@ -173,39 +173,39 @@ void notify_npc()
 
                if (environment(fam_ob))
                {
-                       message("vision", HIW + fam_ob->name() + "»Å»ÅÕÅÕÅµØËµµÀ£ºÊ¦ÃÇÓÐÊÂ£¬Ë¡"
-                               "²»·îÅã£¬ÎÒÏÈ×ßÒ»²½ÁË£¡\n" NOR,
+                       message("vision", HIW + fam_ob->name() + "æ…Œæ…Œå¼µå¼µåœ°èªªé“ï¼šå¸«å€‘æœ‰äº‹ï¼Œæ•"
+                               "ä¸å¥‰é™ªï¼Œæˆ‘å…ˆèµ°ä¸€æ­¥äº†ï¼\n" NOR,
                                environment(fam_ob));
                }
                fam_ob->move(FAM["guard_room_fi"]);
         }
 
-        // ³õÊ¼»¯ÌôÅÏÕß
-        // ÒÆ¶¯ÌôÅÏÕßµ½fir_room_fi
+        // åˆå§‹åŒ–æŒ‘ç•”è€…
+        // ç§»å‹•æŒ‘ç•”è€…åˆ°fir_room_fi
         if (objectp(master_ob))
         {
                 string title;
                 int para;
 
-                // ÏÈ³õÊ¼»¯ÉñÃØ×éÖ¯Ê×Áì
+                // å…ˆåˆå§‹åŒ–ç¥žç§˜çµ„ç¹”é¦–é ˜
                 for (i = 0; i < 11; i ++)
                 {
                       war_ob = new(CLASS_D("generate") + "/spekilled.c");
 
-                      if (i == 0) // Ê×Áì
+                      if (i == 0) // é¦–é ˜
                       {
-                             title = HIR "ÉñÃØ×éÖ¯¡¤Ê×Áì" NOR;
+                             title = HIR "ç¥žç§˜çµ„ç¹”ï¹’é¦–é ˜" NOR;
                              set("is_leader", 1, war_ob);
                              para = 5;
                       }
-                      else if (i > 0 && i < 5) // »¤·¨
+                      else if (i > 0 && i < 5) // è­·æ³•
                       {
-                             title = HIW "ÉñÃØ×éÖ¯¡¤»¤·¨" NOR;
+                             title = HIW "ç¥žç§˜çµ„ç¹”ï¹’è­·æ³•" NOR;
                              para = 3;
                       }
                       else 
                       {
-                             title = HIC "ÉñÃØ×éÖ¯¡¤¸ßÊÖ" NOR;
+                             title = HIC "ç¥žç§˜çµ„ç¹”ï¹’é«˜æ‰‹" NOR;
                              para = 2;
                       }
 
@@ -215,24 +215,24 @@ void notify_npc()
                       addn_temp("apply/parry", master_ob->query_skill("force")*para/20, war_ob);
                       addn_temp("apply/damage", para*30, war_ob);
                       addn_temp("apply/unarmed_damage", para*30, war_ob);
-                      addn_temp("apply/armor", para*500, war_ob);//ºÜ¸ßµÄ·ÀÓù
-                      set("fam_info", FAM, war_ob);//¼ÇÂ¼¹¥´òÃÅÅÉÐÅÏ¢
-                      set_temp("move", 0, war_ob);//¼ÇÂ¼ÒÆ¶¯´ÎÊý
+                      addn_temp("apply/armor", para*500, war_ob);//å¾ˆé«˜çš„é˜²å¾¡
+                      set("fam_info", FAM, war_ob);//è¨˜éŒ„æ”»æ‰“é–€æ´¾ä¿¡æ¯
+                      set_temp("move", 0, war_ob);//è¨˜éŒ„ç§»å‹•æ¬¡æ•¸
                       set("title", title, war_ob);
-                      set("team_num", 1, war_ob);//ÉèÖÃteam_numÒÔ±ãÈÎºÎÒ»¸öNPCÊÜµ½¹¥»÷
-                                                  // Ê±ËùÓÐÓÐteam_num±êÖ¾µÄNPC¶¼»á²ÎÓë·´»÷
-                                                  // »¹¿ÉÒÔ±£Ö¤ÈëÇÖÕß²»¹¥»÷´øÓÐteam_num±êÖ¾
-                                                  // µÄÍ¬°é
+                      set("team_num", 1, war_ob);//è¨­ç½®team_numä»¥ä¾¿ä»»ä½•ä¸€å€‹NPCå—åˆ°æ”»æ“Š
+                                                  // æ™‚æ‰€æœ‰æœ‰team_numæ¨™å¿—çš„NPCéƒ½æœƒåƒèˆ‡åæ“Š
+                                                  // é‚„å¯ä»¥ä¿è¨¼å…¥ä¾µè€…ä¸æ”»æ“Šå¸¶æœ‰team_numæ¨™å¿—
+                                                  // çš„åŒä¼´
                       set("shen", 0, war_ob);
 
-                      // ÒÆ¶¯µ½fir_room_fi
+                      // ç§»å‹•åˆ°fir_room_fi
                       war_ob->move(FAM["fir_room_fi"]);
                }
        }
        else
        {
                      CHANNEL_D->do_channel(this_object(), "rumor", 
-                                           "ÌýËµÉñÃØ×éÖ¯±»¹Ù¸®½ËÃðÁË¡£\n");
+                                           "è½èªªç¥žç§˜çµ„ç¹”è¢«å®˜åºœå‰¿æ»…äº†ã€‚\n");
                      
                      change_status(OVER);
                      stop = 1;
@@ -241,27 +241,27 @@ void notify_npc()
 
 nosave mixed *story = ({
         (: show_time :),
-        "Ò»¸öÉñÃØµÄ×éÖ¯ÇÄÈ»×³´ó£¬³öÏÖÔÚÖÐÔ­¡£",
+        "ä¸€å€‹ç¥žç§˜çš„çµ„ç¹”æ‚„ç„¶å£¯å¤§ï¼Œå‡ºç¾åœ¨ä¸­åŽŸã€‚",
         (: show_info, 0 :),
         (: show_info, 1 :),
-        "ÉñÃØ×éÖ¯Ê×Áì£ºµÄÈ·Èç´Ë£¬ÄÇÄãÓÐºÎ¸ß¼û£¿",
-        "ÉñÃØ×éÖ¯»¤·¨£º¾¡¿ìÕÙ¼¯ÈËÊÖ£¬¹¥Ëü¸ö´ëÊÖ²»¼°£¬Õ¶²Ý³ý¸ù£¬·ñÔòºó»¼ÎÞÇî£¡",
+        "ç¥žç§˜çµ„ç¹”é¦–é ˜ï¼šçš„ç¢ºå¦‚æ­¤ï¼Œé‚£ä½ æœ‰ä½•é«˜è¦‹ï¼Ÿ",
+        "ç¥žç§˜çµ„ç¹”è­·æ³•ï¼šç›¡å¿«å¬é›†äººæ‰‹ï¼Œæ”»å®ƒå€‹æŽªæ‰‹ä¸åŠï¼Œæ–¬è‰é™¤æ ¹ï¼Œå¦å‰‡å¾Œæ‚£ç„¡çª®ï¼",
         (: show_info, 2 :),
         (: show_info, 3 :),
-        "Ò»ÖùÏãºó¡¡¡­¡­",
+        "ä¸€æŸ±é¦™å¾Œã€€â€¦â€¦",
         (: show_info, 4 :),
         (: show_info, 5 :),
         (: show_info, 6 :),
-        "Ò»ÖùÏãºó ¡­¡­",
+        "ä¸€æŸ±é¦™å¾Œ â€¦â€¦",
         (: show_info, 7 :),
-        "ÉñÃØ×éÖ¯Ê×Áì£ººÜºÃ£¡ÄÇ¾ÍµÈËûÃÇÈ«µ½µ½ÆëÁË£¬ÎÒÃÇÀ´¸öÒ»Íø´ò¾¡£¬Õ¶²Ý³ý¸ù£¡",
-        "ÉñÃØ×éÖ¯»¤·¨£º¹þ¹þ£¡Ê×ÁìÕæÊÇÉîÄ±Ô¶ÂÇ£¬ÖÐÔ­ÎäÁÖ±Ø½«ÊÇÊ×ÁìµÄÄÒÖÐÖ®Îï£¡",
+        "ç¥žç§˜çµ„ç¹”é¦–é ˜ï¼šå¾ˆå¥½ï¼é‚£å°±ç­‰ä»–å€‘å…¨åˆ°åˆ°é½Šäº†ï¼Œæˆ‘å€‘ä¾†å€‹ä¸€ç¶²æ‰“ç›¡ï¼Œæ–¬è‰é™¤æ ¹ï¼",
+        "ç¥žç§˜çµ„ç¹”è­·æ³•ï¼šå“ˆå“ˆï¼é¦–é ˜çœŸæ˜¯æ·±è¬€é æ…®ï¼Œä¸­åŽŸæ­¦æž—å¿…å°‡æ˜¯é¦–é ˜çš„å›Šä¸­ä¹‹ç‰©ï¼",
         (: show_info, 8 :),
         (: show_info, 9 :),
-        "ÉñÃØ×éÖ¯Ê×Áì£º×óÓÒ»¤·¨ÌýÃü£¡",
-        "ÉñÃØ×éÖ¯×óÓÒ»¤·¨£ºÊôÏÂÔÚ£¡",       
-        "ÉñÃØ×éÖ¯Ê×Áì£º´«ÎÒºÅÁî£¬Ò»ÖùÏãºó¿ªÊ¼ÐÐ¶¯£¡",
-        "ÉñÃØ×éÖ¯×óÓÒ»¤·¨£ºÊÇ£¡",       
+        "ç¥žç§˜çµ„ç¹”é¦–é ˜ï¼šå·¦å³è­·æ³•è½å‘½ï¼",
+        "ç¥žç§˜çµ„ç¹”å·¦å³è­·æ³•ï¼šå±¬ä¸‹åœ¨ï¼",       
+        "ç¥žç§˜çµ„ç¹”é¦–é ˜ï¼šå‚³æˆ‘è™Ÿä»¤ï¼Œä¸€æŸ±é¦™å¾Œé–‹å§‹è¡Œå‹•ï¼",
+        "ç¥žç§˜çµ„ç¹”å·¦å³è­·æ³•ï¼šæ˜¯ï¼",       
 });
 
 void create()
@@ -269,7 +269,7 @@ void create()
         seteuid(getuid());
 }
 
-string prompt() { return HIR "¡¾°ïÅÉÌôÅÏ¡¿" NOR; }
+string prompt() { return HIR "ã€å¹«æ´¾æŒ‘ç•”ã€‘" NOR; }
 
 mixed query_story_message(int step)
 {

@@ -2,16 +2,16 @@
 inherit ITEM;
 void create()
 {
-        set_name(HIG "°ÙÁúµ¤" NOR, ({"bailong dan"}));
+        set_name(HIG "ç™¾é¾ä¸¹" NOR, ({"bailong dan"}));
         set_weight(1);
         if (clonep())
                 set_default_object(__FILE__);
         else {  
-        	set("long", HIC "°ÙÁúµ¤ÄËÊ¹ÓÃÊı°ÙÌõÁúÑªÁ¶»¯¶ø³É£¡\n" + 
-        	                "·şÊ³(fushi bailongdan)ºó¿ÉÓÀ¾ÃÌáÉı¶ÁÊéĞ´×Ö1¼¶¡£\n" HIR
-        	                /*"ÓµÓĞÕß£ºÓµÓĞÕßID*/"\n" NOR);
-                set("unit", "¿Å");
-                set("owner", "ÓµÓĞÕßID"); // °ó¶¨ÓµÓĞÕß
+        	set("long", HIC "ç™¾é¾ä¸¹ä¹ƒä½¿ç”¨æ•¸ç™¾æ¢é¾è¡€ç…‰åŒ–è€Œæˆï¼\n" + 
+        	                "æœé£Ÿ(fushi bailongdan)å¾Œå¯æ°¸ä¹…æå‡è®€æ›¸å¯«å­—1ç´šã€‚\n" HIR
+        	                /*"æ“æœ‰è€…ï¼šæ“æœ‰è€…ID*/"\n" NOR);
+                set("unit", "é¡†");
+                set("owner", "æ“æœ‰è€…ID"); // ç¶å®šæ“æœ‰è€…
 	        set("no_drop", 1);set("no_store", 1);set("no_sell", 1);
         }
         setup();
@@ -29,17 +29,17 @@ int do_use(string arg)
 	me = this_player();
 
 	if (! arg || arg != query("id"))
-		return notify_fail("ÄãÒª·şÊ³Ê²Ã´£¿\n");
+		return notify_fail("ä½ è¦æœé£Ÿä»€éº¼ï¼Ÿ\n");
 
 	if (! objectp(ob = present(arg, me)))
-		return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâ¸ö¶«Î÷£¡\n");
+		return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™å€‹æ±è¥¿ï¼\n");
 /*
 	if( query("owner", ob) != query("id", me) )
-		return notify_fail(ob->name() + NOR "ÒÑ¾­ÓÚÆäËûÍæ¼Ò°ó¶¨£¡\n");
+		return notify_fail(ob->name() + NOR "å·²ç¶“äºå…¶ä»–ç©å®¶ç¶å®šï¼\n");
 */	
    me->add_skill("literate", 1);
 
-	tell_object(me, HIG "¹§Ï²£¡Äã·şÏÂ" + ob->name() + HIG "ºó£¬¶ÁÊéĞ´×ÖÌáÉı1¼¶£¡\n");
+	tell_object(me, HIG "æ­å–œï¼ä½ æœä¸‹" + ob->name() + HIG "å¾Œï¼Œè®€æ›¸å¯«å­—æå‡1ç´šï¼\n");
 	
 	me->save();
 	

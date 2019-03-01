@@ -5,15 +5,15 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÄÚÌÃ");
+        set("short", "å…§å ‚");
         set("long", @LONG
-ÕâÀïÊÇÒ©ÆÌµÄÄÚÌÃ£¬¶«Ê×°ÚÁËÒ»¸öÊé¼Ü£¬ÉÏÃæ·ÅÁË²»ÉÙÒ½Êé¡£´ËÍâ
-»¹ÓÐ¼¸ÕÅ×ÀÒÎ(chair)¡£¿´À´´ó¸ÅÊÇÒ©ÆÌ½Ó´ý¿ÍÈËµÄµØ·½¡£
+é€™è£¡æ˜¯è—¥èˆ–çš„å…§å ‚ï¼Œæ±é¦–æ“ºäº†ä¸€å€‹æ›¸æž¶ï¼Œä¸Šé¢æ”¾äº†ä¸å°‘é†«æ›¸ã€‚æ­¤å¤–
+é‚„æœ‰å¹¾å¼µæ¡Œæ¤…(chair)ã€‚çœ‹ä¾†å¤§æ¦‚æ˜¯è—¥èˆ–æŽ¥å¾…å®¢äººçš„åœ°æ–¹ã€‚
 LONG );
         set("item_desc", ([
                 "chair"   : 
-"Ò»ÕÅÒÎ×Ó£¬Ä¨ÊÃµÃºÜ¸É¾»£¬ÒÎ±³¿Ì×ÅË«ÁúÇÀÖéµÄÍ¼°¸£¬Á½ÌõÁú¿ÌµÃÉõÊÇ
-Éú¶¯£¬ÕÅÑÀÎè×¦µØÇÀ¶áÒ»¸öÏâÔÚÒÎ±³ÉÏÇà¹â·¢ÁÁµÄÌúÇò(Iron Ball)¡£\n",
+"ä¸€å¼µæ¤…å­ï¼ŒæŠ¹æ‹­å¾—å¾ˆå¹¹å‡ˆï¼Œæ¤…èƒŒåˆ»è‘—é›™é¾æ¶ç çš„åœ–æ¡ˆï¼Œå…©æ¢é¾åˆ»å¾—ç”šæ˜¯
+ç”Ÿå‹•ï¼Œå¼µç‰™èˆžçˆªåœ°æ¶å¥ªä¸€å€‹é‘²åœ¨æ¤…èƒŒä¸Šé’å…‰ç™¼äº®çš„éµçƒ(Iron Ball)ã€‚\n",
         ]));
         set("exits", ([
                 "out"   : __DIR__"jishitang",

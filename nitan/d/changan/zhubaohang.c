@@ -4,12 +4,12 @@ inherit ROOM;
 
 void create ()
 {
-        set ("short", "Öé±¦ÐÐ");
+        set ("short", "ç å¯¶è¡Œ");
         set("long", @LONG
-Öé±¦ÐÐÖÐÖé¹â±¦ÆøËÄÉä£¬Ñ£µÄÈËÓÐÐ©Õö²»¿ªÑÛ¾¦¡£¾«ÖÂµÄ³¤¹ñÖÐ
-³ÂÉè×Å¸÷ÀàÊ×ÊÎÖé±¦ÓñÆ÷£¬¼¸¸öÀÏÐÐ¼ÒÕýÅã×Å¿ÍÈËÌôÑ¡ËùÐèÖé±¦¡£Ò»
-¸öµñ»¨Ä¾¼ÜÉÏ°Ú×Å¿ÅÈý³ß¶à¸ßµÄÓñÊ÷£¬Õä¹óÖ®ÍâÓÖÍ¸×Åµ­ÑÅÐãÀö£¬Çú
-ÕÛº¬ÐîÖ®Æø¡£
+ç å¯¶è¡Œä¸­ç å…‰å¯¶æ°£å››å°„ï¼Œçœ©çš„äººæœ‰äº›çœä¸é–‹çœ¼ç›ã€‚ç²¾è‡´çš„é•·æ«ƒä¸­
+é™³è¨­è‘—å„é¡žé¦–é£¾ç å¯¶çŽ‰å™¨ï¼Œå¹¾å€‹è€è¡Œå®¶æ­£é™ªè‘—å®¢äººæŒ‘é¸æ‰€éœ€ç å¯¶ã€‚ä¸€
+å€‹é›•èŠ±æœ¨æž¶ä¸Šæ“ºè‘—é¡†ä¸‰å°ºå¤šé«˜çš„çŽ‰æ¨¹ï¼Œçè²´ä¹‹å¤–åˆé€è‘—æ·¡é›…ç§€éº—ï¼Œæ›²
+æŠ˜å«è“„ä¹‹æ°£ã€‚
 LONG );
         set("exits", ([
                 "south" : "/d/changan/yongtai-beikou",

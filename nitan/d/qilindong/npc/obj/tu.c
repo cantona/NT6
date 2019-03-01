@@ -5,21 +5,21 @@ inherit ITEM;
 inherit F_AUTOLOAD;
 void create()
 {
-        set_name(HIB"²Ø±¦Í¼"NOR, ({"bao tu","baotu"}) );
+        set_name(HIB"è—å¯¶åœ–"NOR, ({"bao tu","baotu"}) );
         set_weight(10);
         set("no_steal", 1);
         set("no_beg", 1);
         set("no_sell", 1);
 //        set("no_get", 1);
-        set("no_drop","ÍÛ£¿²Ø±¦Í¼¶¼Ïë¶ªµô,Ğ¡ĞÄÔâÌìÇ´¡£\n\n");
+        set("no_drop","å“‡ï¼Ÿè—å¯¶åœ–éƒ½æƒ³ä¸Ÿæ‰,å°å¿ƒé­å¤©è­´ã€‚\n\n");
         set("long",@LONG
-´ËÄËµ±ÄêĞÛ°ÔÁôÏÂµÄ±¦²ØÍ¼,¿ì¿´¿´(kan)°É£¡
+æ­¤ä¹ƒç•¶å¹´é›„éœ¸ç•™ä¸‹çš„å¯¶è—åœ–,å¿«çœ‹çœ‹(kan)å§ï¼
 LONG );
         if( clonep() )
                         set_default_object(__FILE__);
         else
        {
-                set("unit", "±¾");
+                set("unit", "æœ¬");
                 set("material", "unknow");
         }
 }
@@ -33,13 +33,13 @@ int query_autoload()
 {
         return 1;
 }
-//½éÉÜ
+//ä»‹ç´¹
 int kan_tu()
 {
         object me;
         me=this_player();
         tell_object(me,
-    "´«ËµÖĞµÄ¾øÊÀºÃ½£¾ÍÔÚÎåµ±É½ÉÏ£¡\n");
+    "å‚³èªªä¸­çš„çµ•ä¸–å¥½åŠå°±åœ¨äº”ç•¶å±±ä¸Šï¼\n");
         return 1;
 }
 

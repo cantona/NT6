@@ -7,27 +7,27 @@ int exert(object me, object target)
         int level = me->query_skill("linji-zhuang", 1);
         int jingli, jing, extrajing;
 
-        if (level < 90) return notify_fail("ÄãµÄÁÙ¼ÃÊ®¶ş×¯ĞŞÎª»¹²»¹»¡£\n");
+        if (level < 90) return notify_fail("ä½ çš„è‡¨æ¿ŸåäºŒèŠä¿®ç‚ºé‚„ä¸å¤ ã€‚\n");
 
         if( query("max_neili", me)<5*level )
-                return notify_fail("ÄãµÄÄÚÁ¦»¹²»¹»Ç¿¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›é‚„ä¸å¤ å¼·ã€‚\n");
 
         if( query("eff_qi", me)<query("max_qi", me)/2 )
-                return notify_fail("ÄãÒÑ¾­ÊÜÉË¹ıÖØ£¬Ö»ÅÂÒ»ÔËÕæÆø±ãÓĞÉúÃüÎ£ÏÕ£¡\n");
+                return notify_fail("ä½ å·²ç¶“å—å‚·éé‡ï¼Œåªæ€•ä¸€é‹çœŸæ°£ä¾¿æœ‰ç”Ÿå‘½å±éšªï¼\n");
 
         if( query("eff_jing", me)<query("max_jing", me)/2 )
-                return notify_fail("ÄãÒÑ¾­ÊÜÉË¹ıÖØ£¬Ö»ÅÂÒ»ÔËÕæÆø±ãÓĞÉúÃüÎ£ÏÕ£¡\n");
+                return notify_fail("ä½ å·²ç¶“å—å‚·éé‡ï¼Œåªæ€•ä¸€é‹çœŸæ°£ä¾¿æœ‰ç”Ÿå‘½å±éšªï¼\n");
 
         extrajing=query("jing", me)-query("max_jing", me)/2;
         if (extrajing < 1)
-                return notify_fail("ÄãµÄ¾«ÉñÌ«²î¡£");
+                return notify_fail("ä½ çš„ç²¾ç¥å¤ªå·®ã€‚");
 
         if( query("neili", me)<1 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ã€‚\n");
 
         jingli=query("max_jingli", me)-query("jingli", me);
         if ( jingli < 10 )
-                return notify_fail("ÄãÏÖÔÚ¾«Á¦³äÅæ¡£\n");
+                return notify_fail("ä½ ç¾åœ¨ç²¾åŠ›å……æ²›ã€‚\n");
         jing = 90*jingli/level;
         if (jing < 5) jing = 5;
         if (extrajing < jing) {
@@ -37,9 +37,9 @@ int exert(object me, object target)
         addn("jing", -jing, me);
         addn("jingli", jingli, me);
 
-        write( HIY "Äã°µÔËÁúº×Á½×¯£¬ÆôÌìÃÅ£¬±ÕµØ»§£¬¾Û¾«³ÉÁ¦£¬¶Ù¾õÆøÁ¦±¶Ôö¡£\n" NOR);
+        write( HIY "ä½ æš—é‹é¾é¶´å…©èŠï¼Œå•Ÿå¤©é–€ï¼Œé–‰åœ°æˆ¶ï¼Œèšç²¾æˆåŠ›ï¼Œé “è¦ºæ°£åŠ›å€å¢ã€‚\n" NOR);
         message("vision",
-                HIY + "Ö»¼û" + me->name() + "ÉÔÏÔÆ£·¦£¬µ«×ªË²¼ä±ã¾«Éñ¶¶ËÓ¡£\n" NOR,
+                HIY + "åªè¦‹" + me->name() + "ç¨é¡¯ç–²ä¹ï¼Œä½†è½‰ç¬é–“ä¾¿ç²¾ç¥æŠ–æ“»ã€‚\n" NOR,
                 environment(me), me);
 
         return 1;

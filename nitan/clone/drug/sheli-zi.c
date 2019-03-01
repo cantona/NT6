@@ -1,5 +1,5 @@
 // Code of ShenZhou
-// sheli-zii.c ÉáÀû×Ó
+// sheli-zii.c èˆåˆ©å­
 
 #include <ansi.h>
 
@@ -11,14 +11,14 @@ void setup()
 int cure_ob(string);
 void create()
 {
-        set_name("ÉáÀû×Ó", ({"sheli zi", "zi"}));
+        set_name("èˆåˆ©å­", ({"sheli zi", "zi"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
-                set("long", "ÕâÊÇÒ»¿Å»î·ğ×ø»¯µÄÉáÀû×Ó£¬Ğ¡Ö¸¼â´óĞ¡£¬É«·º»Ò°×£¬ÒşÒşÓĞ±¦¹âÁ÷¶¯¡£\n");
-                set("no_drop","ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
-                set("no_get", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄÇ¶ù¡£\n");
+                set("unit", "é¡†");
+                set("long", "é€™æ˜¯ä¸€é¡†æ´»ä½›ååŒ–çš„èˆåˆ©å­ï¼Œå°æŒ‡å°–å¤§å°ï¼Œè‰²æ³›ç°ç™½ï¼Œéš±éš±æœ‰å¯¶å…‰æµå‹•ã€‚\n");
+                set("no_drop","é€™æ¨£æ±è¥¿ä¸èƒ½é›¢é–‹ä½ ã€‚\n");
+                set("no_get", "é€™æ¨£æ±è¥¿ä¸èƒ½é›¢é–‹é‚£å…’ã€‚\n");
                 set("value", 10000);
                 set("no_sell", 1);
                 set("medicine", 1);
@@ -36,12 +36,12 @@ int cure_ob(object me)
                 addn("max_jingli", -add, me);
                 addn("eff_jingli", -add, me);
                 me->apply_condition("bonze_drug", 80);
-        message_vision(HIR "$N³ÔÏÂÒ»¿ÅÉáÀû×Ó£¬Ö»¾õµÃ¸Î³¦´ç¶Ï£¬ÎåÔàÓûÁÑ£¬Ô­À´·şÊ³Ì«¶àÒ©Îï£¬Ò©Ğ§ÊÊµÃÆä·´£¡\n" NOR, this_player());
+        message_vision(HIR "$Nåƒä¸‹ä¸€é¡†èˆåˆ©å­ï¼Œåªè¦ºå¾—è‚è…¸å¯¸æ–·ï¼Œäº”è‡Ÿæ¬²è£‚ï¼ŒåŸä¾†æœé£Ÿå¤ªå¤šè—¥ç‰©ï¼Œè—¥æ•ˆé©å¾—å…¶åï¼\n" NOR, this_player());
         me->unconcious();
         destruct(this_object());
         }
         else {
-                message_vision(HIY "$N³ÔÏÂÒ»¿ÅÉáÀû×Ó£¬ÓÍÈ»¼äÖ»¾õÄÔ´üÀï×¢½øÁËÒ»ÂÆÇåĞÂÖ®Æø...\n" NOR, this_player());
+                message_vision(HIY "$Nåƒä¸‹ä¸€é¡†èˆåˆ©å­ï¼Œæ²¹ç„¶é–“åªè¦ºè…¦è¢‹è£¡æ³¨é€²äº†ä¸€ç¸·æ¸…æ–°ä¹‹æ°£...\n" NOR, this_player());
                 addn("max_jingli", add, me);
                 addn("eff_jingli", add, me);
                 me->apply_condition("bonze_drug", 80);

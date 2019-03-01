@@ -3,14 +3,14 @@ inherit NPC;
 
 void create()
 {
-        set_name("Ôª²Æ", ({ "yuan cai", "yuan" }) );
-        set("gender", "ÄĞĞÔ" );
-        set("title",  "µêÖ÷" );
+        set_name("å…ƒè²¡", ({ "yuan cai", "yuan" }) );
+        set("gender", "ç”·æ€§" );
+        set("title",  "åº—ä¸»" );
         set("age", 43);
-        set("long", "ËûÊÇÕâÀïµÄµêÖ÷£¬¿´ÉÏÈ¥ÖÒºñÀÏÊµµÄÑù×Ó¡£\n");
+        set("long", "ä»–æ˜¯é€™è£¡çš„åº—ä¸»ï¼Œçœ‹ä¸Šå»å¿ åšè€å¯¦çš„æ¨£å­ã€‚\n");
         set("combat_exp", 100);
         set("attitude", "friendly");
-        set("rank_info/respect", "ÀÏ°å");
+        set("rank_info/respect", "è€æ¿");
         setup();
 }
 
@@ -19,7 +19,7 @@ int accept_object(object who, object ob)
         
         if( query("money_id", ob) && ob->value() >= 5000 )
         {
-                tell_object(who, CYN "Ôª²ÆÒ»¹şÑü£¬ËµµÀ£º¶àĞ»¿Í¹Ù£¬Â¥ÉÏÇë¡£\n" NOR);
+                tell_object(who, CYN "å…ƒè²¡ä¸€å“ˆè…°ï¼Œèªªé“ï¼šå¤šè¬å®¢å®˜ï¼Œæ¨“ä¸Šè«‹ã€‚\n" NOR);
                 set_temp("rent_paid", 1, who);
                 return 1;
         }

@@ -5,13 +5,13 @@
 inherit SWORD;
 void create()
 {
-        set_name(HIW "²Ôñ·Éñ½£" NOR, ({ "cang qiong" }) );
+        set_name(HIW "è’¼ç©¹ç¥åŠ" NOR, ({ "cang qiong" }) );
         set_weight(10000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
-                set("long", "Ò»±úÃ»ÓĞ½£Í·µÄ³¤½£\n");
+                set("unit", "æŸ„");
+                set("long", "ä¸€æŸ„æ²’æœ‰åŠé ­çš„é•·åŠ\n");
                 set("value", 50000);
                 set("rigidity",2000);        
                 set("material", "steel");

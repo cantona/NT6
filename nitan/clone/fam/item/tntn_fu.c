@@ -6,14 +6,14 @@ int do_use(string arg);
 
 void create()
 {
-        set_name(NOR + YEL "Í¯ÄÐÍ¯Å®·û" NOR, ({"tntn fu", "fu"}));
+        set_name(NOR + YEL "ç«¥ç”·ç«¥å¥³ç¬¦" NOR, ({"tntn fu", "fu"}));
         set_weight(10);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", NOR + YEL "ÕâÊÇÒ»ÕÅµÀ·û£¬ÉÏÃæ»­×ÅÁ½¸öÐ¡ÍÞ£¬Ò»¸öÄÐÒ»¸öÅ®£¬ÐÎÌ¬Ê®·Ö±ÆÕæ¡£\n"
-                                      "*ÔÚÉß¾«¶´ÈÓ³ö´Ë·û£¨reng fu£©¿ÉÒý³öÉß¾«¡£\n\n" NOR);
-                set("unit", "ÕÅ");
+                set("long", NOR + YEL "é€™æ˜¯ä¸€å¼µé“ç¬¦ï¼Œä¸Šé¢ç•«è‘—å…©å€‹å°å¨ƒï¼Œä¸€å€‹ç”·ä¸€å€‹å¥³ï¼Œå½¢æ…‹ååˆ†é€¼çœŸã€‚\n"
+                                      "*åœ¨è›‡ç²¾æ´žæ‰”å‡ºæ­¤ç¬¦ï¼ˆreng fuï¼‰å¯å¼•å‡ºè›‡ç²¾ã€‚\n\n" NOR);
+                set("unit", "å¼µ");
                 set("value", 8000);
         }
 }
@@ -38,35 +38,35 @@ int do_use(string arg)
         if(! objectp(present("tntn fu", me)))return 0;
         
         if (me->is_fighting() || me->is_busy())
-                 return notify_fail("ÄãÕýÃ¦ÄØ£¡\n");
+                 return notify_fail("ä½ æ­£å¿™å‘¢ï¼\n");
                  
         ob = environment(me);
         
         if (base_name(ob) != "/d/shenlong/shejingdong")
-                return notify_fail("´Ë·ûÖ»ÄÜÔÚÉß¾«¶´Ê¹ÓÃ¡£\n");
+                return notify_fail("æ­¤ç¬¦åªèƒ½åœ¨è›‡ç²¾æ´žä½¿ç”¨ã€‚\n");
 
         ob = find_living("jiutou shejing");
         
         if (objectp(ob) && environment(ob))
         {
                 if (base_name(environment(ob)) == "/d/shenlong/shejingdong")
-                        return notify_fail("Éß¾«ÒÑ¾­³öÏÖÁË£¬²»ÐèÒªÔÙÊ¹ÓÃ·û¡£\n");
+                        return notify_fail("è›‡ç²¾å·²ç¶“å‡ºç¾äº†ï¼Œä¸éœ€è¦å†ä½¿ç”¨ç¬¦ã€‚\n");
         }
 
-        // ÕýÔÚÇå³¡Ôò²»ÄÜÈÓ
+        // æ­£åœ¨æ¸…å ´å‰‡ä¸èƒ½æ‰”
         ob = environment(me);
         if( query("doing", ob) )
         {
-                return notify_fail("ÕâÀï¸ÕÕ½¶·Íê£¬ÕýÔÚÇå³¡£¬Äã»¹ÊÇµÈÏÂ´Î°É£¡\n");
+                return notify_fail("é€™è£¡å‰›æˆ°é¬¥å®Œï¼Œæ­£åœ¨æ¸…å ´ï¼Œä½ é‚„æ˜¯ç­‰ä¸‹æ¬¡å§ï¼\n");
         }
         
-        // Ê¹ÓÃÃèÊö
-        message_sort(HIY + "\n$N" HIY "ÈÓ³öÍ¯ÄÐÍ¯Å®·û£¬ÃÍÈ»¼ä£¬µØ¶¯É½Ò¡£¬Ô¶´¦´«À´à²~~à²"
-                     "Éù£¬ËÆºõÊÇÉß¾«ÔÚ³¯Õâ±ßÒÆ¶¯£¬Ò»Ê±¼ä£¬¿ÕÆø¼¸ºõÄý¹Ì ¡­¡­\n" NOR, me);
+        // ä½¿ç”¨æè¿°
+        message_sort(HIY + "\n$N" HIY "æ‰”å‡ºç«¥ç”·ç«¥å¥³ç¬¦ï¼ŒçŒ›ç„¶é–“ï¼Œåœ°å‹•å±±æ–ï¼Œé è™•å‚³ä¾†å—–~~å—–"
+                     "è²ï¼Œä¼¼ä¹Žæ˜¯è›‡ç²¾åœ¨æœé€™é‚Šç§»å‹•ï¼Œä¸€æ™‚é–“ï¼Œç©ºæ°£å¹¾ä¹Žå‡å›º â€¦â€¦\n" NOR, me);
 
         me->start_busy(5);
         
-        // ÕÙ»½³ö¾ÅÍ·Éß¾«
+        // å¬å–šå‡ºä¹é ­è›‡ç²¾
         remove_call_out("summon_shejing");
         call_out("summon_shejing", 5, me);
 
@@ -85,20 +85,20 @@ void summon_shejing(object me)
         {
                 if (base_name(environment(ob)) == "/d/shenlong/shejingdong")
                 {
-                        write("Éß¾«ÒÑ¾­³öÏÖÁË£¬²»ÐèÒªÔÙÊ¹ÓÃ·û£¬Äã¸Ï½ô½«·ûÊÕÆð¡£\n");
+                        write("è›‡ç²¾å·²ç¶“å‡ºç¾äº†ï¼Œä¸éœ€è¦å†ä½¿ç”¨ç¬¦ï¼Œä½ è¶•ç·Šå°‡ç¬¦æ”¶èµ·ã€‚\n");
                         return;                        
                 }
         }        
 
         ob = new("/d/shenlong/npc/shejing");
         
-        message_sort(HIR + "\nÃÍÈ»¼ä£¬Ò»ÕóÉãÈËÐÄÆÇµÄ½ÐÉù´òÆÆÁË¼Å¾²£¬Ö»¼ûÒ»Ö»¾Þ´óµÄ¶¾Éß³öÏÖÔÚ"
-                           "Éß¾«¶´ÄÚ£¬´ËÉßÒÑ»¯ÉíÈËÐÎ£¬ÐÞÁ¶³É¾«£¬ÓÐ¾ÅÍ·£¬ÐÎ×´ÉõÊÇ¿ÉÅÂ¡£\n" NOR, me);
+        message_sort(HIR + "\nçŒ›ç„¶é–“ï¼Œä¸€é™£æ”äººå¿ƒé­„çš„å«è²æ‰“ç ´äº†å¯‚éœï¼Œåªè¦‹ä¸€åªå·¨å¤§çš„æ¯’è›‡å‡ºç¾åœ¨"
+                           "è›‡ç²¾æ´žå…§ï¼Œæ­¤è›‡å·²åŒ–èº«äººå½¢ï¼Œä¿®ç…‰æˆç²¾ï¼Œæœ‰ä¹é ­ï¼Œå½¢ç‹€ç”šæ˜¯å¯æ€•ã€‚\n" NOR, me);
         
         ob->move("/d/shenlong/shejingdong");
         set("life_time", time(), ob);
         
-        // ´Ý»Ù·û
+        // æ‘§æ¯€ç¬¦
         destruct(this_object());
         
         return;        

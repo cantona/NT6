@@ -11,12 +11,12 @@ nosave string *reborn_skill = ({
         "recover", "astral",
 });
 nosave string *words = ({
-        "°à", "Èô", "²¤", "ÂÜ", "ÃÜ", "°¡", "Âð", "ßä", "ºå",
-        "¶È", "ÖÚ", "Éú", "Õß", "Ó¦", "Ã÷", "ÒÔ", "ºÎ", "µÃ",
-        "ÓÐ", "¿Õ", "¾»", "Ïà", "ÎÒ", "Ðé", "Íý", "Çé", "ÉÙ",
-        "¸£", "Èç", "í", "·¨", "½ð", "Ë¼", "Îò", "Ãð", "Ê§",
+        "ç­", "è‹¥", "è ", "è˜¿", "å¯†", "å•Š", "å—Ž", "å’ª", "å“„",
+        "åº¦", "çœ¾", "ç”Ÿ", "è€…", "æ‡‰", "æ˜Ž", "ä»¥", "ä½•", "å¾—",
+        "æœ‰", "ç©º", "å‡ˆ", "ç›¸", "æˆ‘", "è™›", "å¦„", "æƒ…", "å°‘",
+        "ç¦", "å¦‚", "â–¡", "æ³•", "é‡‘", "æ€", "æ‚Ÿ", "æ»…", "å¤±",
 });
-// ´æÅÌÎÄµµ
+// å­˜ç›¤æ–‡æª”
 string query_save_file() {
         return DATA_DIR "npc/buddha";
 }
@@ -44,13 +44,13 @@ void create()
 {
         seteuid(getuid());
         restore();
-        set_name(HIY "ÊÍåÈÄ²Äá" NOR, ({ "buddha", "fo zu", "fo", "shijia muni" }));
+        set_name(HIY "é‡‹è¿¦ç‰Ÿå°¼" NOR, ({ "buddha", "fo zu", "fo", "shijia muni" }));
         set("long", @LONG
-·ð×æ×¯ÑÏ±¦Ïñ£¬ÈÃÈË²»¸ÒÕýÊÓ¡£
+ä½›ç¥–èŽŠåš´å¯¶åƒï¼Œè®“äººä¸æ•¢æ­£è¦–ã€‚
 LONG);
-        set("nickname", HIW "Èý½ç·¨Íõ" NOR);
-        set("title", HIC "·ð×æ" NOR);
-        set("gender", "ÄÐÐÔ" );
+        set("nickname", HIW "ä¸‰ç•Œæ³•çŽ‹" NOR);
+        set("title", HIC "ä½›ç¥–" NOR);
+        set("gender", "ç”·æ€§" );
         set("age", 500);
         set("attitude", "friendly");
         set("max_jing", 1000099);
@@ -86,7 +86,7 @@ LONG);
         map_skill("medical", "shaolin-yishu");
 
         set("inquiry", ([
-                "×ªÊÀÖØÉú" : (: ask_reborn :),
+                "è½‰ä¸–é‡ç”Ÿ" : (: ask_reborn :),
         ]));
 
         set("chat_chance_combat", 200);
@@ -121,25 +121,25 @@ int ask_reborn()
 
         /*
         if( query("reborn/times", me)){
-                command("say ÄãµÄ°¢ÀµÒ®Ê¶²»ÊÇÒÑ¾­´ò¿ªÁËÂð£¿");
+                command("say ä½ çš„é˜¿è³´è€¶è­˜ä¸æ˜¯å·²ç¶“æ‰“é–‹äº†å—Žï¼Ÿ");
                 return 1;
         }
         */
 
         if( !query("reborn_lunhui", me)){
-                command("say ÄãµÄ×ªÊÀ»úÔµÎ´µ½£¬Ç¿Çó²»µÃ£¡");
+                command("say ä½ çš„è½‰ä¸–æ©Ÿç·£æœªåˆ°ï¼Œå¼·æ±‚ä¸å¾—ï¼");
                 return 1;
         }
 
         if( !me->query_family() )
         {
-                command("say ÄãÎÞÃÅÎÞÅÉ£¬×ªÊÀµÃ²»³¥Ê§£¡");
+                command("say ä½ ç„¡é–€ç„¡æ´¾ï¼Œè½‰ä¸–å¾—ä¸å„Ÿå¤±ï¼");
                 return 1;
         }
 
-        command("say Äã¿ÉÊÇÒ²¶Ô´ËÉú¸Ðµ½À§»ó£¬ÏëÒªÌ½Ñ°ÈËÉúÕæÚÐÂð£¿");
-        command("say ÈôÒª×ªÉúÔòÄãÖ®ÎäÑ§¾Í½«¾¡»Ù£¬Äã¿ÉÔ¸Òâ£¿");
-        message_vision( HIC"$N" HIC"¶Ô$n" HIC"µÀ£ºÈôÄãÐÄÒâÒÑ¾ö¾ÍÊäÈë decide °É£¡\n"NOR,
+        command("say ä½ å¯æ˜¯ä¹Ÿå°æ­¤ç”Ÿæ„Ÿåˆ°å›°æƒ‘ï¼Œæƒ³è¦æŽ¢å°‹äººç”ŸçœŸè«¦å—Žï¼Ÿ");
+        command("say è‹¥è¦è½‰ç”Ÿå‰‡ä½ ä¹‹æ­¦å­¸å°±å°‡ç›¡æ¯€ï¼Œä½ å¯é¡˜æ„ï¼Ÿ");
+        message_vision( HIC"$N" HIC"å°$n" HIC"é“ï¼šè‹¥ä½ å¿ƒæ„å·²æ±ºå°±è¼¸å…¥ decide å§ï¼\n"NOR,
                         this_object(), me) ;
 
         set_temp("reborn/ask", 1, me);
@@ -158,16 +158,16 @@ int do_decide()
         if( !query_temp("reborn/ask", me) )
                 return 0;
 
-        tell_object(me, HIW "·ð×æÔÚÄã¶ú±ßËµµÀ£ºÎÒ¸æËßÄãÒ»¾ä½ÒÓï£¬"
-                "Äã¿É²ÎÎòÒ»ÏÂÊÇÉ¶ÒâË¼£¬\nÀ´ÊÀÄãÈôÓÐÔµÔÙ¼ûµ½ÎÒ£¬"
-                "Æ¾´Ë½ÒÓïÎÒ»á¸øÄã¿ªÆôÇ°Éú¼ÇÒä£¡\n"
-                "´Ë½ÒÓïÐëµ±½÷¼ÇÔÚÐÄ£¬ÇÐ¼ÇÇÐ¼Ç£¡\n" NOR);
+        tell_object(me, HIW "ä½›ç¥–åœ¨ä½ è€³é‚Šèªªé“ï¼šæˆ‘å‘Šè¨´ä½ ä¸€å¥æ­èªžï¼Œ"
+                "ä½ å¯åƒæ‚Ÿä¸€ä¸‹æ˜¯å•¥æ„æ€ï¼Œ\nä¾†ä¸–ä½ è‹¥æœ‰ç·£å†è¦‹åˆ°æˆ‘ï¼Œ"
+                "æ†‘æ­¤æ­èªžæˆ‘æœƒçµ¦ä½ é–‹å•Ÿå‰ç”Ÿè¨˜æ†¶ï¼\n"
+                "æ­¤æ­èªžé ˆç•¶è¬¹è¨˜åœ¨å¿ƒï¼Œåˆ‡è¨˜åˆ‡è¨˜ï¼\n" NOR);
 
         for( i = 0; i < 5; i++)
                 msg += words[random(sizeof(words))];
 
-        tell_object(me, HIY "\n·ð×æÔÚÄã¶ú±ßËµµÀ£¬¸øÄãµÄ½ÒÓïÊÇ£º" HIR + msg + "\n" NOR);
-        tell_object(me, HIY "¼ÇÏÂÁËÂð£¿ÎÒ¼´¿Ì¾ÍËÍÄãÈ¥Í¶Ì¥ÁË£¡\n\n"NOR);
+        tell_object(me, HIY "\nä½›ç¥–åœ¨ä½ è€³é‚Šèªªé“ï¼Œçµ¦ä½ çš„æ­èªžæ˜¯ï¼š" HIR + msg + "\n" NOR);
+        tell_object(me, HIY "è¨˜ä¸‹äº†å—Žï¼Ÿæˆ‘å³åˆ»å°±é€ä½ åŽ»æŠ•èƒŽäº†ï¼\n\n"NOR);
 
         remove_call_out("reborn_player");
         call_out("reborn_player", 3, me, msg);
@@ -185,7 +185,7 @@ int reborn_player(object me, string msg)
         int money, endtime, day;
 
         my = me->query_entire_dbase();
-        if( my["gender"] == "ÎÞÐÔ" ) my["gender"] = "ÄÐÐÔ";
+        if( my["gender"] == "ç„¡æ€§" ) my["gender"] = "ç”·æ€§";
 
         off_skills = my["offer"];
         all_skills = me->query_skills();
@@ -272,10 +272,10 @@ int reborn_player(object me, string msg)
         }
         reborn_data[query("id",me)] = tmp_data;
         save();
-        message("vision",HBRED"¡¾×ªÊÀÖØÉú¡¿Ìì½ç£º"+query("name", me)+"("+query("id", me)+")"
-                HBRED "ÒÑµÃ·ð×æµã»¯×ªÊÀÖ®µÀ£¬µÃµ½ÈËÉñÄ§Èý½ç±ÓÓÓ£¬ÔªÉñ×ªÊÀÖØÉú£¡\n" NOR, users());
+        message("vision",HBRED"ã€è½‰ä¸–é‡ç”Ÿã€‘å¤©ç•Œï¼š"+query("name", me)+"("+query("id", me)+")"
+                HBRED "å·²å¾—ä½›ç¥–é»žåŒ–è½‰ä¸–ä¹‹é“ï¼Œå¾—åˆ°äººç¥žé­”ä¸‰ç•Œåº‡ä½‘ï¼Œå…ƒç¥žè½‰ä¸–é‡ç”Ÿï¼\n" NOR, users());
 
-        message_vision("Ö»¼û$N»¯×÷Ò»ÂÅÇáÑÌ£¬½¥½¥ÏûÊ§ÁË¡­¡­\n", me);
+        message_vision("åªè¦‹$NåŒ–ä½œä¸€å±¢è¼•ç…™ï¼Œæ¼¸æ¼¸æ¶ˆå¤±äº†â€¦â€¦\n", me);
         UPDATE_D->remove_user(query("id", me), 0);
         return 1;
 }

@@ -5,10 +5,10 @@ int accept_fight(object ob);
 void create()
 {
         seteuid(getuid());
-        set_name("Ìï²®¹â", ({ "tian boguang", "tian","boguang" }));
-        set("long", "ËûÒ»ÉíÆ®ÒİµÄ°×É«³¤ÉÀ£¬·çÁ÷ÈåÑÅ¡£\n");
-        set("nickname", HIM "ÍòÀï¶ÀĞĞ" NOR);
-        set("gender", "ÄĞĞÔ");
+        set_name("ç”°ä¼¯å…‰", ({ "tian boguang", "tian","boguang" }));
+        set("long", "ä»–ä¸€èº«é£„é€¸çš„ç™½è‰²é•·è¡«ï¼Œé¢¨æµå„’é›…ã€‚\n");
+        set("nickname", HIM "è¬è£¡ç¨è¡Œ" NOR);
+        set("gender", "ç”·æ€§");
         set("age", 37);
         set("attitude", "friendly");
         set("shen_type", -1);
@@ -47,7 +47,7 @@ void create()
         }) );
         set("chat_chance", 10);
         set("chat_msg", ({
-                CYN "Ìï²®¹âĞ¦µÀ£ºÄá¹ÃÒ²Ã»¹ØÏµÂï£¬ĞîÆğÍ··¢£¬Á½¸öÔÂ¾ÍÊÇĞ¡ÃÀÈËÁË¡£\n" NOR,
+                CYN "ç”°ä¼¯å…‰ç¬‘é“ï¼šå°¼å§‘ä¹Ÿæ²’é—œç³»å˜›ï¼Œè“„èµ·é ­ç™¼ï¼Œå…©å€‹æœˆå°±æ˜¯å°ç¾äººäº†ã€‚\n" NOR,
         }) );
 
         setup();
@@ -71,24 +71,24 @@ void init()
 void greeting(object ob)
 {
         if( !ob || environment(ob) != environment() ) return;
-        if( query("gender", ob) == "Å®ĞÔ" )
+        if( query("gender", ob) == "å¥³æ€§" )
         {
         if( query("age", ob)<26 )
-                say(CYN "Ìï²®¹âĞ¦µÀ£ºÃî¼«£¬Ãî¼«£¬ÓÖÀ´ÁËÒ»¸öĞ¡¹ÃÄï¡£\n" NOR);     
+                say(CYN "ç”°ä¼¯å…‰ç¬‘é“ï¼šå¦™æ¥µï¼Œå¦™æ¥µï¼Œåˆä¾†äº†ä¸€å€‹å°å§‘å¨˜ã€‚\n" NOR);     
         else 
-                say(CYN "Ìï²®¹âĞ¦µÀ£ºÃî¼«£¬Ãî¼«£¬¿ÉÏ§Ì«ÀÏÁËµã£¬ÎÒ¿ÉÃ»Î¸¿Ú¡£\n" NOR);     
+                say(CYN "ç”°ä¼¯å…‰ç¬‘é“ï¼šå¦™æ¥µï¼Œå¦™æ¥µï¼Œå¯æƒœå¤ªè€äº†é»ï¼Œæˆ‘å¯æ²’èƒƒå£ã€‚\n" NOR);     
         }
         else 
-                say(CYN "Ìï²®¹âĞ¦×ÅÕĞÕĞÊÖ£ºÕâÎ»"+RANK_D->query_respect(ob) + "À´ºÈ"
-                    "Á½±­£¬Õâ¸öĞ¡Äá¹ÃÂï£¬·´ÕıÒ²Ã»Ê²Ã´ÊÂ£¬¾ÍÈÃËı×ø×Å¾ÍÊÇ¡£\n" NOR);
+                say(CYN "ç”°ä¼¯å…‰ç¬‘è‘—æ‹›æ‹›æ‰‹ï¼šé€™ä½"+RANK_D->query_respect(ob) + "ä¾†å–"
+                    "å…©æ¯ï¼Œé€™å€‹å°å°¼å§‘å˜›ï¼Œåæ­£ä¹Ÿæ²’ä»€éº¼äº‹ï¼Œå°±è®“å¥¹åè‘—å°±æ˜¯ã€‚\n" NOR);
         return;
 }
 
 int accept_fight(object ob)
 {
-        if( query("gender", ob) == "Å®ĞÔ" )
+        if( query("gender", ob) == "å¥³æ€§" )
         {
-                write(CYN "Ìï²®¹âĞ¦µÀ£º»¨¹ÃÄï£¿É±ÁËÌ«¿ÉÏ§ÁËµÄ¡£\n" NOR);
+                write(CYN "ç”°ä¼¯å…‰ç¬‘é“ï¼šèŠ±å§‘å¨˜ï¼Ÿæ®ºäº†å¤ªå¯æƒœäº†çš„ã€‚\n" NOR);
                 return 0;
         }
         return 1;

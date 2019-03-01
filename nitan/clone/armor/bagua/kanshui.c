@@ -6,16 +6,16 @@ inherit RINGS;
 
 void create()
 {
-        set_name(HIY "°ËØÔ¿²Ë®»·" NOR, ({ "kanshui huan", "kanshui", "huan" }));
+        set_name(HIY "å…«å¦åæ°´ç’°" NOR, ({ "kanshui huan", "kanshui", "huan" }));
         set_weight(100);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIY"Ñ×»Æ·çÓêÊ®Äê¼ÍÄîÌ××°Ö®£º°ËØÔ¿²Ë®»·\n" NOR);
-                set("unit", "Ã¶");
+                set("long", HIY"ç‚é»ƒé¢¨é›¨åå¹´ç´€å¿µå¥—è£ä¹‹ï¼šå…«å¦åæ°´ç’°\n" NOR);
+                set("unit", "æš");
                 set("value", 100);
                 set("armor_prop/int", 10);
-                set("armor_prop/T_bagua", 1); // Ì××°¼ÆÊı±êÖ¾
+                set("armor_prop/T_bagua", 1); // å¥—è£è¨ˆæ•¸æ¨™å¿—
         }
         setup();
 }

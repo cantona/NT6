@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "���������");
+        set("short", "廢棄的民居");
         set("long", @LONG
-������һ�����õ���ӣ��������Ѿ��������ܳ�һ������
-�ˣ���Ժ���Ĵ��и�ϱڣ��Ӳݴ�����Ժ�ӵ�һ������������
-������һ���ѿ츯�õ���ܡ�
+這裡是一幢破爛的民居，看樣子已經被廢棄很常一段日子
+了，大院內四處殘戈斷壁，雜草叢生。院子的一個陰暗角落裡
+還立著一個已快腐爛的書架。
 LONG );
         set("exits", ([
                 "out"      : __DIR__"eastroad3",

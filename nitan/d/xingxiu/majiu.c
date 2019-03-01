@@ -1,17 +1,17 @@
-//Room: majiu1.c ����
+//Room: majiu1.c 馬廄
 //Date: Oct. 2 1997 by That
 
 inherit ROOM;
 
 void create()
 {
-        set("short","����");
+        set("short","馬廄");
         set("long",@LONG
-���Ǳ���С������ǣ����깩Ӧ���ʲ��ϡ�����ش��Ὦ�������
-�Ӷ��ÿͣ�������Զ�����������ֵܿ����������ǻ����ǣ�����Ǻ���
-�տ���������ι�����㣬������������ˬˬ��һֱ�ź򵽿�����·����
-�Ǿ�ľ���϶���һ����ľ��(paizi)��
-    �����жѷ������Ѳ��ϣ�������һ����ۡ�
+這是北疆小鎮的馬廄，常年供應新鮮草料。這裡地處會疆，邊民古
+樸而好客，把所有遠方來賓均作兄弟看待。馬夫們會把馬牽到馬廄好生
+照看，將它們喂飽飲足，再梳理得清清爽爽，一直伺候到客人上路。馬
+廄舊木柱上釘著一塊破木牌(paizi)。
+    馬廄中堆放著幾堆草料，正中有一口泔槽。
 LONG);
         set("no_fight", "1");
         set("no_beg", "1");
@@ -24,9 +24,9 @@ LONG);
         ]));
         set("item_desc", ([
                 "paizi": @TEXT
-������ֻҪ������һ�����������Ϳ��Թ͵�һƥ���ˡ�
+客人們只要給馬夫一兩白銀的租金就可以雇到一匹馬了。
 
-ǰ��      ������:  rideca
+前往      長安城:  rideca
 
 
 TEXT]));

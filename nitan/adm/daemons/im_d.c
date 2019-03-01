@@ -1,23 +1,23 @@
-/* *********************¾WÂ·¼´•rÍ¨ÓÏµ½y***********************
+/* *********************â–¡è·¯å³â–¡é€šâ–¡ç³»â–¡***********************
 *  
 *                                                  By Whatup *
 *                                               
-* ëx¾€
+* â–¡â–¡
 :whatup_!whatup@mail2000.com.tw QUIT :Leaving...
-ÉÏ¾€
+ä¸Šâ–¡
 :whatup_!whatup@mail2000.com.tw JOIN :&bitlbee
     :root!root@localhost.localdomain PRIVMSG &bitlbee :Question on MSN connection (handle yukang.tw@yahoo.com.tw):
-    :root!root@localhost.localdomain PRIVMSG &bitlbee :The user whatup.tw@gmail.com (”Tòï-Ò¨õà) wants to add you to his/her buddy list. Do you want to allow this?
+    :root!root@localhost.localdomain PRIVMSG &bitlbee :The user whatup.tw@gmail.com (â–¡è»-èˆ€è¸µ) wants to add you to his/her buddy list. Do you want to allow this?
     :root!root@localhost.localdomain PRIVMSG &bitlbee :You can use the yes/no commands to answer this question.
 
-*                                     ==Î´½›Í¬Òâ£¬‡À½ûÁ÷³ö==  *
-*               ±±´óÏÀ¿ÍĞĞ ĞŞ¸Ä°æ 2001Äê¡£
-*               ±±´óÏÀ¿ÍĞĞ£¬Á¬Ğø¿ª·Å15ÄêµÄMUD¡£pkuxkx.net
+*                                     ==æœªâ–¡åŒæ„ï¼Œâ–¡ç¦æµå‡º==  *
+*               åŒ—å¤§ä¿ å®¢è¡Œ ä¿®æ”¹ç‰ˆ 2001å¹´ã€‚
+*               åŒ—å¤§ä¿ å®¢è¡Œï¼Œé€£çºŒé–‹æ”¾15å¹´çš„MUDã€‚pkuxkx.net
 **************************************************************/
 
-/* ˜Ëî^ÒıÈë™n */
+/* â–¡â–¡å¼•å…¥â–¡ */
 #include <ansi.h>
-/* ‚ÉåeÔO¶¨ */
+/* â–¡â–¡â–¡å®š */
 //#include <debug.h>
 #include <net/socket.h>
 #include <socket_err.h>
@@ -32,7 +32,7 @@
 #define DEBUG 1
 inherit F_DBASE;
 
-/* †¢Ê¼ÔO¶¨ */
+/* â–¡å§‹â–¡å®š */
 private mapping users=([]);
 
 private int process_identify(object me,string pass);
@@ -43,13 +43,13 @@ void send_ping();
 void auto_login();
 void auto_login1();
 
-/* ™n°¸Ö÷™n */
+/* â–¡æ¡ˆä¸»â–¡ */
 void create()
 {
-	set("channel_id", "QQ¾«Áé");
+	set("channel_id", "QQç²¾éˆ");
 	seteuid(getuid());
 #ifdef DEBUG
-    TELL(sprintf("[%s]†¢Ê¼Íê³É¡£",ctime(time()) ));
+    TELL(sprintf("[%s]â–¡å§‹å®Œæˆã€‚",ctime(time()) ));
 #endif 
     call_out((:send_ping:),PING_TIME);
     call_out("auto_login",1);
@@ -69,7 +69,7 @@ void remove()
     foreach(int fd,mapping m in users)
     {
         if(m["obj"])
-        tell_object(m["obj"],"ÖØĞÂ¸üĞÂ im Ïµ½y£¬ÕˆÖØĞÂµÇÈë¡£\n");
+        tell_object(m["obj"],"é‡æ–°æ›´æ–° im ç³»â–¡ï¼Œâ–¡é‡æ–°ç™»å…¥ã€‚\n");
         socket_write(fd,"QUIT\r\n");
         socket_close(fd);
     }
@@ -84,7 +84,7 @@ void reset()
 		}
 	}
 }
-/* é_Ê¼µÇÈë */
+/* â–¡å§‹ç™»å…¥ */
 void login_irc(object user)
 {
     int err,fd;
@@ -92,13 +92,13 @@ void login_irc(object user)
     id = "account";
     if(!id)
     {
-        tell_object(user,"Äã›]ÓĞµÇÈë ID ");
+        tell_object(user,"ä½ â–¡æœ‰ç™»å…¥ ID ");
         return ;
     }
     fd = socket_create(STREAM, "read_callback","close_socket");
     if ( fd < 0 )
     {
-        tell_object(user,"ßB½YÊ§”¡£¬¿ÉÄÜÊÇÖ÷™C›]ÓĞé_†¢»òÊÇ¾WÂ·Ÿo·¨ßB¾€¡£");
+        tell_object(user,"â–¡â–¡å¤±â–¡ï¼Œå¯èƒ½æ˜¯ä¸»â–¡â–¡æœ‰â–¡â–¡æˆ–æ˜¯â–¡è·¯â–¡æ³•â–¡â–¡ã€‚");
         return;
     }
     users[fd] = allocate_mapping(5);
@@ -112,14 +112,14 @@ void login_irc(object user)
     if( err==EESUCCESS )
     {
 #ifdef DEBUG
-    TELL(sprintf("[%s] %s ³É¹¦†¢„Ó Socket ,é_Ê¼œÊ‚äµÇÈë irc.fd = %d\n",
+    TELL(sprintf("[%s] %s æˆåŠŸâ–¡â–¡ Socket ,â–¡å§‹â–¡â–¡ç™»å…¥ irc.fd = %d\n",
          ctime(time()) ,id,fd));
 #endif 
     }
     else
     {
 #ifdef DEBUG
-    TELL(sprintf("[%s]†¢„Ó Socket Ê§”¡,Ÿo·¨ËÍßB½Y¾WÂ·Ö÷™C.\n",
+    TELL(sprintf("[%s]â–¡â–¡ Socket å¤±â–¡,â–¡æ³•é€â–¡â–¡â–¡è·¯ä¸»â–¡.\n",
          ctime(time()) ));
 #endif 
         return ;
@@ -133,7 +133,7 @@ private int process_identify(object me,string pass)
     int fd = me->query_temp("im_fd");
     if( fd < -1 ) 
     {
-        tell_object(me,"[IM Message]:ßB¾€Ê§”¡£¬ÕˆÉÔááÔÙÔ‡£¡\n");
+        tell_object(me,"[IM Message]:â–¡â–¡å¤±â–¡ï¼Œâ–¡ç¨å¾Œå†â–¡ï¼\n");
         return 1;
     }
     if(users[fd]["obj"] == me)
@@ -199,23 +199,23 @@ protected void read_callback(int fd,mixed message)
 		    m = replace_string(m,"account :","account:");
                     if(sscanf(m,":%s!%s PRIVMSG account:%s",name,mail,msg) == 3 )
                     {
-                        //:root!root@localhost.localdomain PRIVMSG &bitlbee :The user whatup.tw@gmail.com (”Tòï-Ò¨õà) wants to add you to his/her buddy list. Do you want to allow this?
+                        //:root!root@localhost.localdomain PRIVMSG &bitlbee :The user whatup.tw@gmail.com (â–¡è»-èˆ€è¸µ) wants to add you to his/her buddy list. Do you want to allow this?
                         if(sscanf(msg,"The user %s wants to add you to his/her buddy list. Do you want to allow this?",mail) == 1)
                         {
-                            tell_object(users[fd]["obj"],"\n[IM Message]:"+mail+"ÏëÒª°ÑÄã¼ÓÈëËûµÄºÃÓÑÃû†Î£¬Í¬ÒâµÄÔ’ÓÃ im yes£¬²»Í¬ÒâµÄÔ’£¬ÓÃ im no¡£\n");
+                            tell_object(users[fd]["obj"],"\n[IM Message]:"+mail+"æƒ³è¦æŠŠä½ åŠ å…¥ä»–çš„å¥½å‹åâ–¡ï¼ŒåŒæ„çš„â–¡ç”¨ im yesï¼Œä¸åŒæ„çš„â–¡ï¼Œç”¨ im noã€‚\n");
                         }
                         else  if( sscanf(msg,"%s:%s",id,msg1) == 2 || sscanf(msg,"%s] %s",id,msg1) == 2 )
                             {
-                            	//È¥µô²»±ØÒªµÄ×ª·¢Ç°×º
-                            	msg = replace_string(msg,"±±ÏÀÏûÏ¢×ª·¢ (744093028): ","");
-                            	msg = replace_string(msg,"ÏûÏ¢×ª·¢ (739663638): ","");
-                            	msg = replace_string(msg,"ÏûÏ¢×ª·¢ (1064453141)",BLU+"ÏûÏ¢ÒÑËÍÖÁQQÈº");
-                            	//¹ıÂËº¬ÓĞ·Ç·¨×Ö·ûµÄ±íÇé
+                            	//å»æ‰ä¸å¿…è¦çš„è½‰ç™¼å‰ç¶´
+                            	msg = replace_string(msg,"åŒ—ä¿ æ¶ˆæ¯è½‰ç™¼ (744093028): ","");
+                            	msg = replace_string(msg,"æ¶ˆæ¯è½‰ç™¼ (739663638): ","");
+                            	msg = replace_string(msg,"æ¶ˆæ¯è½‰ç™¼ (1064453141)",BLU+"æ¶ˆæ¯å·²é€è‡³QQç¾¤");
+                            	//éæ¿¾å«æœ‰éæ³•å­—ç¬¦çš„è¡¨æƒ…
                             	if ((strsrch(msg,"/:o")==-1)&&(strsrch(msg,"xiaoi.com")==-1)) {
 	                            	if (strsrch(msg,"[img]")!=-1)
 	                            	{
 	                            		str1 = explode(msg,"img]");
-	                            		msg = str1[0]+"×Ô¶¨ÒåÍ¼Æ¬]";
+	                            		msg = str1[0]+"è‡ªå®šç¾©åœ–ç‰‡]";
 	                            	}
 	                            	msg = replace_string(msg,"): chat","):chat");
 	                            	msg = replace_string(msg,"] chat","):chat");
@@ -240,67 +240,67 @@ protected void read_callback(int fd,mixed message)
                         switch(msg)
                         { 
                             case "The nick is (probably) not registered":
-                                TELL("\n[IM Message]:µÚÒ»´ÎÊ¹ÓÃÔ“¾«ì`£¬×Ô„ÓÔ]ƒÔ¤Ì–£¡\n");
+                                TELL("\n[IM Message]:ç¬¬ä¸€æ¬¡ä½¿ç”¨â–¡ç²¾â–¡ï¼Œè‡ªâ–¡â–¡â–¡â–¡â–¡ï¼\n");
                                 socket_write(fd,"PRIVMSG &bitlbee :register "+crypt(users[fd]["id"],users[fd]["id"])[0..10]+"\r\n");
                                 break;
                             case "Incorrect password":
-                                TELL("\n[IM Message]:µÇÈëÃÜ´aåeÕ`(ÕˆÍ¨ÖªÏµ½y¹ÜÀí†T)£¡\n");
+                                TELL("\n[IM Message]:ç™»å…¥å¯†â–¡â–¡â–¡(â–¡é€šçŸ¥ç³»â–¡ç®¡ç†â–¡)ï¼\n");
                                 break;
                             case "YAHOO - Login error: Error 99 (Logged in on a different machine or device)":
-                                tell_object(users[fd]["obj"],"\n[IM Message]:ÄãÒÑÔÚÆäËûëŠÄXµÇÈë YAHOO£¡\n");
+                                tell_object(users[fd]["obj"],"\n[IM Message]:ä½ å·²åœ¨å…¶ä»–â–¡â–¡ç™»å…¥ YAHOOï¼\n");
                                 break;
                             case "MSN - Logged out: Someone else logged in with your account":
-                                TELL("\n[IM Message]:ÄãÒÑÔÚÆäËûëŠÄXµÇÈë MSN £¡\n");
+                                TELL("\n[IM Message]:ä½ å·²åœ¨å…¶ä»–â–¡â–¡ç™»å…¥ MSN ï¼\n");
                                 break;
                             case "YAHOO - Signing off..":
-                                tell_object(users[fd]["obj"],"\n[IM Message]:ÄãµÇ³ö YAHOO £¡\n");
+                                tell_object(users[fd]["obj"],"\n[IM Message]:ä½ ç™»å‡º YAHOO ï¼\n");
                                 break;
                             case "MSN - Signing off..":
-                                TELL("\n[IM Message]:ÄãµÇ³ö MSN £¡\n");
+                                TELL("\n[IM Message]:ä½ ç™»å‡º MSN ï¼\n");
                                 //remove_call_out("auto_login1");
 								//call_out("auto_login1",60);
                                 break;
 //                            case "MSN - Logging in: Authenticated, getting buddy list":
                             case ":root!root@localhost PRIVMSG &bitlbee :msn(account) - Logging in: Logged in":
-                                TELL("\n[IM Message]:MSN µÇÈë³É¹¦£¡\n");
+                                TELL("\n[IM Message]:MSN ç™»å…¥æˆåŠŸï¼\n");
                                 break;
                             case "YAHOO - Logged in":
-                                tell_object(users[fd]["obj"],"\n[IM Message]:YAHOO µÇÈë³É¹¦£¡\n");
+                                tell_object(users[fd]["obj"],"\n[IM Message]:YAHOO ç™»å…¥æˆåŠŸï¼\n");
                                 break;
                             case "No accounts known. Use 'account add' to add one.":
-                                tell_object(users[fd]["obj"],"\n[IM Message]:ÕˆÊ¹ÓÃ im register msn »òÊÇ im register yahoo Ô]ƒÔ¤Ì–£¡\n");
+                                tell_object(users[fd]["obj"],"\n[IM Message]:â–¡ä½¿ç”¨ im register msn æˆ–æ˜¯ im register yahoo â–¡â–¡â–¡â–¡ï¼\n");
                                 break;
                             case "MSN - Login error: Error during Passport authentication":
-                                tell_object(users[fd]["obj"],"\n[IM Message]:MSNÃÜ´aåeÕ`£¡\n");
+                                tell_object(users[fd]["obj"],"\n[IM Message]:MSNå¯†â–¡â–¡â–¡ï¼\n");
                                 break;
                             default:
                         }
                     }
                     
-                    // ÉÏÕ¾ÓÏ¢ :paiting!paiting@hotmail.com JOIN :&bitlbee
+                    // ä¸Šç«™â–¡æ¯ :paiting!paiting@hotmail.com JOIN :&bitlbee
                     if(sscanf(m,":%s!%s JOIN :&bitlbee",id,name) == 2)
                     {
                         send_who(fd,id);
-                        TELL(sprintf("[IM Message]:%sÉÏÏßÁË £¡",id));
+                        TELL(sprintf("[IM Message]:%sä¸Šç·šäº† ï¼",id));
     					socket_write(fd,"set charset 'gb2312'\r\n");
     					socket_write(fd,"PRIVMSG &bitlbee :set charset 'gb2312'\r\n");
 			CH_D->register_relay_channel("qq");
                         continue;
                     }
-                    // ÏÂÕ¾ÓÏ¢ :paiting!paiting@hotmail.com QUIT :Leaving...
+                    // ä¸‹ç«™â–¡æ¯ :paiting!paiting@hotmail.com QUIT :Leaving...
                     if(sscanf(m,":%s!%s QUIT :Leaving...",id,name) == 2)
                     {
                         map_delete(users[fd]["list"],id);
-                        TELL(sprintf("[IM Message]:%sÀëÏßÁË £¡",id));
+                        TELL(sprintf("[IM Message]:%sé›¢ç·šäº† ï¼",id));
                         continue;
                     }
-                    //  î›r×ƒ¾€ÉÏ :root!root@rw.twku.net MODE &bitlbee +v paiting
+                    // â–¡â–¡â–¡â–¡ä¸Š :root!root@rw.twku.net MODE &bitlbee +v paiting
                     if(sscanf(m,":root!root@rw.twku.net MODE &bitlbee +v %s",id) == 1)
                     {
                         send_who(fd,id);
                         continue;
                     }
-                    //  î›r×ƒaway»òÃ¦ä› :root!root@rw.twku.net MODE &bitlbee -v paiting
+                    // â–¡â–¡â–¡awayæˆ–å¿™â–¡ :root!root@rw.twku.net MODE &bitlbee -v paiting
                     if(sscanf(m,":root!root@rw.twku.net MODE &bitlbee -v %s",id) == 1)
                     {
                         send_who(fd,id);
@@ -330,20 +330,20 @@ void socket_write(int fd,mixed message)
 //    i = efun::socket_write(fd,message);
     switch(i)
     {
-        case EEFDRANGE:       TELL("ÃèÊöÖµ (descriptor) ³¬³ö¹ ‡ú¡£"); break;
-        case EEBADF:          TELL("ŸoĞ§µÄÃèÊöÖµ¡£"); break;
-        case EESECURITY:      TELL("ÆóˆDß`·´°²È«¡£"); break;
-        case EENOADDR:        TELL("socket Î´Ö¸¶¨Î»Ö·¡£"); break;
-        case EEBADADDR:       TELL("Î»Ö·¸ñÊ½µÄ†–î}¡£"); break;
-        case EENOTCONN:       TELL("socket ÉĞÎ´ßB½Ó¡£"); break;
-        case EEALREADY:       TELL("²Ù×÷ÒÑÔÚßMĞĞÖĞ¡£"); break;
-        case EETYPENOTSUPP:   TELL("²»Ö§Ô®´ËÎï¼şĞÍ‘B¡£"); break;
-//        case EEBADDATA:       TELL("ËÍ³öµÄÙYÁÏº¬ÓĞÌ«¶à³² îŒÓ´Î (nested level)¡£"); break;
-        case EESENDTO:        TELL("sendto µÄ†–î}¡£"); break;
-        case EEMODENOTSUPP:   TELL("²»Ö§Ô®´Ë socket ĞÍ‘B¡£"); break;
-        case EEWOULDBLOCK:    TELL("²Ù×÷Œ¢•şÍ£œş (block)¡£"); break;
-        case EESEND:          TELL("ËÍ³ö (send) µÄ†–î}¡£"); break;
-        case EECALLBACK:      TELL("µÈ´ı»Øºô (callback) ÖĞ¡£"); break;
+        case EEFDRANGE:       TELL("æè¿°å€¼ (descriptor) è¶…å‡ºâ–¡â–¡ã€‚"); break;
+        case EEBADF:          TELL("â–¡æ•ˆçš„æè¿°å€¼ã€‚"); break;
+        case EESECURITY:      TELL("ä¼â–¡â–¡åå®‰å…¨ã€‚"); break;
+        case EENOADDR:        TELL("socket æœªæŒ‡å®šä½å€ã€‚"); break;
+        case EEBADADDR:       TELL("ä½å€æ ¼å¼çš„â–¡â–¡ã€‚"); break;
+        case EENOTCONN:       TELL("socket å°šæœªâ–¡æ¥ã€‚"); break;
+        case EEALREADY:       TELL("æ“ä½œå·²åœ¨â–¡è¡Œä¸­ã€‚"); break;
+        case EETYPENOTSUPP:   TELL("ä¸æ”¯æ´æ­¤ç‰©ä»¶å‹â–¡ã€‚"); break;
+//        case EEBADDATA:       TELL("é€å‡ºçš„â–¡æ–™å«æœ‰å¤ªå¤šå·¢â–¡â–¡æ¬¡ (nested level)ã€‚"); break;
+        case EESENDTO:        TELL("sendto çš„â–¡â–¡ã€‚"); break;
+        case EEMODENOTSUPP:   TELL("ä¸æ”¯æ´æ­¤ socket å‹â–¡ã€‚"); break;
+        case EEWOULDBLOCK:    TELL("æ“ä½œâ–¡â–¡åœâ–¡ (block)ã€‚"); break;
+        case EESEND:          TELL("é€å‡º (send) çš„â–¡â–¡ã€‚"); break;
+        case EECALLBACK:      TELL("ç­‰å¾…å›å‘¼ (callback) ä¸­ã€‚"); break;
         default:
 
     }
@@ -358,7 +358,7 @@ protected void close_socket(int fd)
     map_delete(users,fd);
     socket_close(fd);
 #ifdef DEBUG
-    TELL(sprintf("[%s] %d,ßB¾€½YÊø\n",
+    TELL(sprintf("[%s] %d,â–¡â–¡â–¡æŸ\n",
          ctime(time()),fd ));
 #endif
 }
@@ -373,7 +373,7 @@ void send_command(int fd,mixed message)
          ctime(time()),fd,message ));
 #endif
 }
-// ÌÀí irc ¾€ÉÏÊ¹ÓÃÕß
+// â–¡ç† irc â–¡ä¸Šä½¿ç”¨è€…
 varargs void send_who(int fd,string id)
 {
     if(undefinedp(id))   socket_write(fd,"WHO &bitlbee\r\n");
@@ -383,11 +383,11 @@ varargs void send_who(int fd,string id)
 void process_who(int fd,string str)
 {
     string id,ip,status,nick,name;
-    //:rw.twku.net 352 whatup &bitlbee whatup 218-184-22-55.cm.dynamic.apol.com.tw rw.twku.net whatup H :0 Ğ¡£øƒº
+    //:rw.twku.net 352 whatup &bitlbee whatup 218-184-22-55.cm.dynamic.apol.com.tw rw.twku.net whatup H :0 å°ï½˜â–¡
     if(sscanf(str,":%*s 352 %*s &bitlbee %s %s %*s %s %s :%*d %s",
        id,ip,name,status,nick) == 9) 
     users[fd]["list"][name] = ({ id,ip,name,status,nick});
-    //:rw.twku.net 352 whatup whatup_ whatup mail2000.com.tw rw.twku.net whatup_ H :0 ô~¸×-ÓĞÕlÒª gmail ¤Ì–£¬ÎÒÓĞÒ»¶Ñ-.
+    //:rw.twku.net 352 whatup whatup_ whatup mail2000.com.tw rw.twku.net whatup_ H :0 â–¡ç¼¸-æœ‰â–¡è¦ gmail â–¡â–¡ï¼Œæˆ‘æœ‰ä¸€å †-.
     //:%*s 352 %*s %*s %s %s %*s %s %s :%*d %*s
     if(sscanf(str,":%*s 352 %*s %*s %s %s %*s %s %s :%*d %s",
        id,ip,name,status,nick) == 10) 
@@ -403,21 +403,21 @@ int process_send_msg(object me,string who,string msg)
 #endif	
     if(undefinedp(users[fd]) ||
        undefinedp(users[fd]["list"][who]))
-        return notify_fail("[IM Message] ¼´•rÓÏ¢ÉÏµÄºÃÓÑÃû†Î›]ÓĞß@‚€ÈË£¡\n");
+        return notify_fail("[IM Message] å³â–¡â–¡æ¯ä¸Šçš„å¥½å‹åâ–¡â–¡æœ‰â–¡â–¡äººï¼\n");
 //	socket_write(fd,"PRIVMSG &bitlbee :set charset 'utf-8'\r\n");	
     socket_write(fd,"PRIVMSG &bitlbee :"+ who + ":"+msg+"\r\n");
 //		socket_write(fd,"PRIVMSG &bitlbee :set charset 'gb2312'\r\n");	
     {
         string *n = users[fd]["list"][who];
         if (n[4]&&n[0]&&n[1])
-        	tell_object(me,sprintf(HIW HBBLU"ÄãÓÃ¼´•rÓÏ¢‚÷½o %s : %s\n"NOR,
+        	tell_object(me,sprintf(HIW HBBLU"ä½ ç”¨å³â–¡â–¡æ¯â–¡â–¡ %s : %s\n"NOR,
             	      n[4]+"("+n[0]+"@"+n[1]+")\n["+who+"]",msg));
     }
     return 1;
 }
 int del_account(int fd,string protocol) 
 {
-        // ÒªÏÈëx¾€£¬²ÅÄÜ„hµô
+        // è¦å…ˆâ–¡â–¡ï¼Œæ‰èƒ½â–¡æ‰
         socket_write(fd,"PRIVMSG &bitlbee :account off "+protocol+"\r\n");
         socket_write(fd,"PRIVMSG &bitlbee :account del "+protocol+"\r\n");
 }
@@ -436,11 +436,11 @@ void auto_login()
 		
         if(me->query_temp("im_fd") && query_users()[me->query_temp("im_fd")]["obj"] == me)
         {
-//            TELL("[IM Message]:ÄãÕıÔÚµÇÈëÖĞ£¬ÕˆÓÃ im quit ëx¾€¡£");
+//            TELL("[IM Message]:ä½ æ­£åœ¨ç™»å…¥ä¸­ï¼Œâ–¡ç”¨ im quit â–¡â–¡ã€‚");
 //            return;
 				close_socket(me->query_temp("im_fd"));
         }
-        TELL("[IM Message]:¿ªÊ¼µÇÂ¼±¾µØirc·şÎñÆ÷¡£");
+        TELL("[IM Message]:é–‹å§‹ç™»éŒ„æœ¬åœ°ircæœå‹™å™¨ã€‚");
         login_irc(me);
         call_out("auto_login1",5);
         return;
@@ -452,7 +452,7 @@ void auto_login1()
 
     del_account(me->query_temp("im_fd"),"msn");
     register_account(me->query_temp("im_fd"),"msn","msn_acount","msn_passwd");
-    TELL("[IM Message] MSNÕÊºÅÌí¼ÓÍê±Ï¡£\n");
+    TELL("[IM Message] MSNå¸³è™Ÿæ·»åŠ å®Œç•¢ã€‚\n");
 	return;
 }
 

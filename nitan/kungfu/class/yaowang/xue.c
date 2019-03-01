@@ -7,13 +7,13 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("Ñ¦Èµ", ({ "xue que", "xue", "que" }));
-        set("nickname", HIC "ÈýµÜ×Ó" NOR);
+        set_name("è–›éµ²", ({ "xue que", "xue", "que" }));
+        set("nickname", HIC "ä¸‰å¼Ÿå­" NOR);
         set("long",@LONG
-Ò©Íõ¹ÈµÚ¶þ´úµÜ×ÓÑ¦Èµ¡£
+è—¥çŽ‹è°·ç¬¬äºŒä»£å¼Ÿå­è–›éµ²ã€‚
 LONG );
 
-        set("gender", "Å®ÐÔ");
+        set("gender", "å¥³æ€§");
         set("age", 30);
         set("attitude", "friendly");
         set("shen_type", 1);
@@ -68,7 +68,7 @@ LONG );
 
         prepare_skill("hand", "jiuqu-zhegufa");
 
-        create_family("Ò©Íõ¹È", 2, "µÜ×Ó");
+        create_family("è—¥çŽ‹è°·", 2, "å¼Ÿå­");
         set("class", "bonze");
 
         set("chat_chance_combat", 80);
@@ -88,7 +88,7 @@ LONG );
         setup();
 
         set("inquiry", ([
-                "ÆßÐÇº£ÌÄ" : "ÆßÐÇº£ÌÄÄËÌìÏÂµÚÒ»¶¾£¬ÎÞÒ©¿ÉÖÎ£¡",
+                "ä¸ƒæ˜Ÿæµ·æ£ " : "ä¸ƒæ˜Ÿæµ·æ£ ä¹ƒå¤©ä¸‹ç¬¬ä¸€æ¯’ï¼Œç„¡è—¥å¯æ²»ï¼",
          ]) );
 
         carry_object("/clone/cloth/cloth")->wear();
@@ -101,19 +101,19 @@ void attempt_apprentice(object ob)
 
         if( query("combat_exp", ob)<20000 )
         {
-                command("say ÄãÏÖÔÚ¾­ÑéÉÐÇ³£¬Áì»á²»ÁËÊ²Ã´£¬»¹ÊÇÏÈÈ¥Ôö³¤µã¾­Ñé°É¡£");
+                command("say ä½ ç¾åœ¨ç¶“é©—å°šæ·ºï¼Œé ˜æœƒä¸äº†ä»€éº¼ï¼Œé‚„æ˜¯å…ˆåŽ»å¢žé•·é»žç¶“é©—å§ã€‚");
                 return;
         }
 
         if ((int)ob->query_skill("medical", 1) < 20)
         {
-                command("say ÄãÏÈÈ¥Ð¡ÌúÄÇ¶ùÑ§Ð©»ù±¾Ò½Êõ°É¡£");
+                command("say ä½ å…ˆåŽ»å°éµé‚£å…’å­¸äº›åŸºæœ¬é†«è¡“å§ã€‚");
                 return;
         }
 
 
         command("pat"+query("id", ob));
-        command("say ²»´í£¬²»´í£¡¼ÈÈ»ÄãÈç´ËÓÐÐÄ£¬ÎÒ¾ÍÊÕÏÂÄãÕâ¸öÍ½µÜ¡£");
+        command("say ä¸éŒ¯ï¼Œä¸éŒ¯ï¼æ—¢ç„¶ä½ å¦‚æ­¤æœ‰å¿ƒï¼Œæˆ‘å°±æ”¶ä¸‹ä½ é€™å€‹å¾’å¼Ÿã€‚");
         command("recruit "+query("id", ob));
         if( query("class", ob) != "bonze" )
                 set("class", "bonze", ob);

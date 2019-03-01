@@ -3,10 +3,10 @@ inherit KNOWER;
 
 void create()
 {
-        set_name("Óæ·ò", ({ "yu fu", "yu", "fu" }));
-        set("gender", "ÄÐÐÔ");
+        set_name("æ¼å¤«", ({ "yu fu", "yu", "fu" }));
+        set("gender", "ç”·æ€§");
         set("age", 40 + random(10));
-        set("long", "Ò»¸öÍ·´÷¶·óÒµÄÓæ·ò£¬ÕýÓÆÈ»×ÔµÃµØÔÚ°¶±ß´¹µö¡£\n");
+        set("long", "ä¸€å€‹é ­æˆ´é¬¥ç¬ çš„æ¼å¤«ï¼Œæ­£æ‚ ç„¶è‡ªå¾—åœ°åœ¨å²¸é‚Šåž‚é‡£ã€‚\n");
 
         set("attitude", "friendly");
 
@@ -25,7 +25,7 @@ void create()
         setup();
         set("chat_chance", 1);
         set("chat_msg", ({
-                CYN "Óæ·ò¿´ÁËÄãÒ»ÑÛ£¬×ÔÑÔ×ÔÓïµÀ£ºÕâÊÀµÀÕæÊÇÔ½À´Ô½²»Ì«Æ½ÁË¡£\n" NOR,
+                CYN "æ¼å¤«çœ‹äº†ä½ ä¸€çœ¼ï¼Œè‡ªè¨€è‡ªèªžé“ï¼šé€™ä¸–é“çœŸæ˜¯è¶Šä¾†è¶Šä¸å¤ªå¹³äº†ã€‚\n" NOR,
         }) );
         carry_object("/clone/cloth/cloth")->wear();
         add_money("coin", 20);

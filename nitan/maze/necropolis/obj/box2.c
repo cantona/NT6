@@ -4,12 +4,12 @@ inherit ITEM;
 void create()
 {
         object good,dropper;
-        set_name(HIR"±¦Ïä"NOR, ({"box"}) );
+        set_name(HIR"å¯¶ç®±"NOR, ({"box"}) );
         set_weight(300);
         set("no_get", 1);
         set_max_encumbrance(80000000);
-        set("unit", "¸ö");
-        set("long", "Ò»¸öÉ¢·¢×ÅÉñÃØ¹âÃ¢µÄ±¦Ïä¡£\n");
+        set("unit", "å€‹");
+        set("long", "ä¸€å€‹æ•£ç™¼è‘—ç¥žç§˜å…‰èŠ’çš„å¯¶ç®±ã€‚\n");
         set("closed", 1);
         set("value", 2000);
 
@@ -51,9 +51,9 @@ int do_open(string arg)
                                  
         if (!is_closed())
         {
-                return notify_fail("±¦ÏäÒÑ¾­´ò¿ªÁË¡£ \n");
+                return notify_fail("å¯¶ç®±å·²ç¶“æ‰“é–‹äº†ã€‚ \n");
         }
-        message_vision("$N½«±¦Ïä´ò¿ª¡£ \n", me);
+        message_vision("$Nå°‡å¯¶ç®±æ‰“é–‹ã€‚ \n", me);
         set("closed", 0, this_object());
         //me->move(environment(this_object()));
         return 1;

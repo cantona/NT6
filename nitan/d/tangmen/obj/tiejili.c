@@ -3,17 +3,17 @@
 inherit THROWING;
 void create()
 {
-        set_name("ÌúİğŞ¼", ({ "tie jili", "jili" }) );
+        set_name("éµè’ºè—œ", ({ "tie jili", "jili" }) );
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
+                set("unit", "æŠŠ");
                 set("value",1000);
-                set("base_unit", "¿Å");
+                set("base_unit", "é¡†");
                 set("base_weight", 100);
                 set("base_value", 40);
                 set("material", "steel");
-                set("long", "Ò»¿ÅÓĞÃ¢´ÌµÄÌúÇò¡£\n");
+                set("long", "ä¸€é¡†æœ‰èŠ’åˆºçš„éµçƒã€‚\n");
                 
         }
        set_amount(25);

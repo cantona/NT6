@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "³¯Ìì¹¬");
+        set("short", "æœå¤©å®®");
         set("long", @LONG
-ÕâÀïÒÑ½üÎäµ±¾ø¶¥£¬Ö»¼ûÊ¯ÌÝÖ±ËÊ£¬Î£µÅ¸ßÐü£¬Á½ÅÔ¸¨ÒÔË÷Á´¡¢
-ÌúÀ¹¹´Á¬¡£
+é€™è£¡å·²è¿‘æ­¦ç•¶çµ•é ‚ï¼Œåªè¦‹çŸ³æ¢¯ç›´è³ï¼Œå±è¹¬é«˜æ‡¸ï¼Œå…©æ—è¼”ä»¥ç´¢éˆã€
+éµæ””å‹¾é€£ã€‚
 LONG );
         set("objects", ([
                 CLASS_D("wudang") + "/qingxu": 1,

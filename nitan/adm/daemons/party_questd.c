@@ -15,13 +15,13 @@ inherit F_DBASE;
 #include <npc/masia.c>
 #include <npc/indian.c>
 
-#define MIN_IDLE        30              // É±ÊÖÈÎÎñ×îĞ¡Ê±¼ä¼ä¸ô
-#define MAX_MOVED       5               // NPCËæ»ú×ß¶¯µÄ·¶Î§
-#define WAIT_TIME       600             // ÈÎÎñ±£ÁôÊ±¼ä
-#define HEARTBEAT       10              // ÈÎÎñÏµÍ³ĞÄÌø
-#define QUEST_NUM       5               // Ã¿¸öÈÎÎñÁĞ±íµÄÈÎÎñÊıÁ¿
+#define MIN_IDLE        30              // æ®ºæ‰‹ä»»å‹™æœ€å°æ™‚é–“é–“éš”
+#define MAX_MOVED       5               // NPCéš¨æ©Ÿèµ°å‹•çš„èŒƒåœ
+#define WAIT_TIME       600             // ä»»å‹™ä¿ç•™æ™‚é–“
+#define HEARTBEAT       10              // ä»»å‹™ç³»çµ±å¿ƒè·³
+#define QUEST_NUM       5               // æ¯å€‹ä»»å‹™åˆ—è¡¨çš„ä»»å‹™æ•¸é‡
 
-// ÈÎÎñÖĞµÄÎïÆ·Ö±½Óµ÷ÓÃ×ÚÊ¦ÈÎÎñµÄÎïÆ·ÁĞ±í
+// ä»»å‹™ä¸­çš„ç‰©å“ç›´æ¥èª¿ç”¨å®—å¸«ä»»å‹™çš„ç‰©å“åˆ—è¡¨
 #define QUEST_GOOD_OBJ(x)     ("/quest/questdg/quest/questdg" + x)
 #define QUEST_BAD_OBJ(x)      ("/quest/questkh/quest/questkh" + x)
 
@@ -40,124 +40,124 @@ mapping bunch_city_quest = ([
 ]);
 
 string *need_send_msg = ({
-        "½üÈÕºÚµÀÁªÃËÒªÓĞ´ó¾Ù¶¯£¬ÄãºÃºÃ×¼±¸×¼±¸£¡",
-        "×¢ÒâÒ»ÏÂ»ªÉ½ÅÉµÜ×ÓµÄ¾Ù¶¯£¡",
-        "×¢ÒâÒ»ÏÂºâÉ½ÅÉµÜ×ÓµÄ¾Ù¶¯£¡",
-        "×¢ÒâÒ»ÏÂÉÙÁÖÅÉµÜ×ÓµÄ¾Ù¶¯£¡",
-        "×¢ÒâÒ»ÏÂ¶ÎÊÏ»Ê×åµÜ×ÓµÄ¾Ù¶¯£¡",
-        "×¢ÒâÒ»ÏÂÄ½ÈİÊÀ¼ÒµÄ¾Ù¶¯£¡",
-        "×¢ÒâÒ»ÏÂ¹ØÍâºú¼ÒµÄ¾Ù¶¯£¡",
-        "´ÌÌ½Ò»ÏÂºú²»¹é×î½üÔÚÄÄÀï¡£",
-        "×¢ÒâÒ»ÏÂÌÒ»¨µºµÜ×ÓµÄ¾Ù¶¯£¡",
-        "°×µÀÁªÃËµÄĞĞ¶¯½üÈÕÓĞµãÉñÃØ£¬ÄãºÃºÃ¹Û²ì¡£",
+        "è¿‘æ—¥é»‘é“è¯ç›Ÿè¦æœ‰å¤§èˆ‰å‹•ï¼Œä½ å¥½å¥½æº–å‚™æº–å‚™ï¼",
+        "æ³¨æ„ä¸€ä¸‹è¯å±±æ´¾å¼Ÿå­çš„èˆ‰å‹•ï¼",
+        "æ³¨æ„ä¸€ä¸‹è¡¡å±±æ´¾å¼Ÿå­çš„èˆ‰å‹•ï¼",
+        "æ³¨æ„ä¸€ä¸‹å°‘æ—æ´¾å¼Ÿå­çš„èˆ‰å‹•ï¼",
+        "æ³¨æ„ä¸€ä¸‹æ®µæ°çš‡æ—å¼Ÿå­çš„èˆ‰å‹•ï¼",
+        "æ³¨æ„ä¸€ä¸‹æ…•å®¹ä¸–å®¶çš„èˆ‰å‹•ï¼",
+        "æ³¨æ„ä¸€ä¸‹é—œå¤–èƒ¡å®¶çš„èˆ‰å‹•ï¼",
+        "åˆºæ¢ä¸€ä¸‹èƒ¡ä¸æ­¸æœ€è¿‘åœ¨å“ªè£¡ã€‚",
+        "æ³¨æ„ä¸€ä¸‹æ¡ƒèŠ±å³¶å¼Ÿå­çš„èˆ‰å‹•ï¼",
+        "ç™½é“è¯ç›Ÿçš„è¡Œå‹•è¿‘æ—¥æœ‰é»ç¥ç§˜ï¼Œä½ å¥½å¥½è§€å¯Ÿã€‚",
 });
 
 string *bad_msg1 = ({
-        "nameÀÏÊÇ¸úÎÒÃÇºÚµÀ×÷¶Ô£¬",
-        "Ôç¾ÍÏëÔ×µônameÕâ¸öÎ±¾ı×ÓÁË£¬",
-        "Ôç¾Í¿´nameÕâ¸ö¼Ò»ï²»Ë³ÑÛ£¬",
-        "nameÉÏ´ÎÉ±ÁËÎÒÃÇÒ»¸öºÚµÀĞÖµÜÌÓÄäÖÁ½ñ£¬",
-        "nameË«ÊÖÕ´ÂúÁËÎÒÃÇºÚµÀĞÖµÜµÄÏÊÑª£¬",
-        "×Ô´Óname³öÂôÁËÎÒÃÇĞÖµÜ£¬Ò»Ö±¶ã×Å²»Â¶Ãæ£¬",
-        "nameÎ¥±³µÀÉÏµÄ¹æ¾Ø£¬",
-        "ÌıËµ¹ıname³öÂôĞÖµÜµÄÊÂÇé°É£¿",
-        "¼ÇµÃÈ¥ÄênameÍ¶±¼°×µÀµÄÊÂÇé°É£¿",
-        "nameÕâ¸öËùÎ½ÕıÈË¾ı×ÓÉ±º¦ÁËÎÒÃÇºÜ¶àµÜĞÖ£¬",
-        "×î½üºÚ°×µÀ·×ÕùÓÖÆğ£¬×ÜÃËÖ÷¾ö¶¨½ènameµÄÈËÍ·À´Á¢Íş£¬",
-        "×î½üºÚµÀÊÆÁ¦Æ£Èí£¬µÃ½ènameµÄÈËÍ·À´¹ÄÎèÏÂÊ¿Æø£¬",
-        "½üÀ´name¶ÔÎÒÃÇºÚµÀ×ÜÃËÖ÷³öÑÔ²»Ñ·£¬",
-        "name×òÈÕ¾¹È»ÑïÑÔÒª²ùÆ½ÎÒÃÇºÚµÀ×Ü¶æ£¬",
-        "nameÕâ¸öĞ¡×ÓËù×÷ËùÎª¶ª¾¡ÁËÎÒÃÇºÚµÀµÄÁ³£¬",
-        "×Ü¶æÖ÷µÄĞ¡ÀÏÆÅ¸øname¹´´î×ßÁË£¬",
+        "nameè€æ˜¯è·Ÿæˆ‘å€‘é»‘é“ä½œå°ï¼Œ",
+        "æ—©å°±æƒ³å®°æ‰nameé€™å€‹å½å›å­äº†ï¼Œ",
+        "æ—©å°±çœ‹nameé€™å€‹å®¶ä¼™ä¸é †çœ¼ï¼Œ",
+        "nameä¸Šæ¬¡æ®ºäº†æˆ‘å€‘ä¸€å€‹é»‘é“å…„å¼Ÿé€ƒåŒ¿è‡³ä»Šï¼Œ",
+        "nameé›™æ‰‹æ²¾æ»¿äº†æˆ‘å€‘é»‘é“å…„å¼Ÿçš„é®®è¡€ï¼Œ",
+        "è‡ªå¾nameå‡ºè³£äº†æˆ‘å€‘å…„å¼Ÿï¼Œä¸€ç›´èº²è‘—ä¸éœ²é¢ï¼Œ",
+        "nameé•èƒŒé“ä¸Šçš„è¦çŸ©ï¼Œ",
+        "è½èªªénameå‡ºè³£å…„å¼Ÿçš„äº‹æƒ…å§ï¼Ÿ",
+        "è¨˜å¾—å»å¹´nameæŠ•å¥”ç™½é“çš„äº‹æƒ…å§ï¼Ÿ",
+        "nameé€™å€‹æ‰€è¬‚æ­£äººå›å­æ®ºå®³äº†æˆ‘å€‘å¾ˆå¤šå¼Ÿå…„ï¼Œ",
+        "æœ€è¿‘é»‘ç™½é“ç´›çˆ­åˆèµ·ï¼Œç¸½ç›Ÿä¸»æ±ºå®šå€Ÿnameçš„äººé ­ä¾†ç«‹å¨ï¼Œ",
+        "æœ€è¿‘é»‘é“å‹¢åŠ›ç–²è»Ÿï¼Œå¾—å€Ÿnameçš„äººé ­ä¾†é¼“èˆä¸‹å£«æ°£ï¼Œ",
+        "è¿‘ä¾†nameå°æˆ‘å€‘é»‘é“ç¸½ç›Ÿä¸»å‡ºè¨€ä¸éœï¼Œ",
+        "nameæ˜¨æ—¥ç«Ÿç„¶æšè¨€è¦éŸå¹³æˆ‘å€‘é»‘é“ç¸½èˆµï¼Œ",
+        "nameé€™å€‹å°å­æ‰€ä½œæ‰€ç‚ºä¸Ÿç›¡äº†æˆ‘å€‘é»‘é“çš„è‡‰ï¼Œ",
+        "ç¸½èˆµä¸»çš„å°è€å©†çµ¦nameå‹¾æ­èµ°äº†ï¼Œ",
 });
 
 string *bad_msg2 = ({
-        "Ëû×î½üÇ±·üÔÚplaceÒ»´ø£¬",
-        "ÓĞµÜĞÖ×î½üÔÚplace·¢ÏÖÁËËûµÄ×Ù¼££¬",
-        "×òÈÕÓĞÈË¿´µ½ËûÔÚplace³öÃ»£¬",
-        "×òÍíËûÔøÔÚplaceµÄÒ»¼Ò¿Íµê³öÏÖ£¬",
-        "½ñÈÕÇå³¿Ëû´Óplace±±ÃÅ»ìÈë³ÇÖĞ£¬",
-        "×òÍíËû¾Íµ½´ïÁËplace£¬¿ÉÄÜ»¹Î´Áï×ß£¬",
-        "placeµÄÒ»¼Ò¿Íµê×î½üÀ´ÁËÒ»¸öÉñÃØÈËÎï£¬",
-        "ÓĞÈËÇÇ×°´ò°ç³öÏÖÔÚplace£¬",
-        "placeÀ´ÁË¸öÄ°ÉúÈË¾ÙÖ¹¹îÒì£¬",
-        "placeÓÖÓĞµÜĞÖ¸øÕâ¸ö¼Ò»ïÆÛ¸ºÁË£¬",
-        "placeºÚµÀĞÖµÜËµÇ°²»¾ÃÓöµ½Ò»¸ö¼Ò»ïºÜÏóËû£¬",
-        "Ëû×î½üºÜ¿ÉÄÜÔÚplaceÒ»´ø£¬",
-        "Ëû¿ÉÄÜÕıÇ°ÍùplaceÒ»´ø£¬",
-        "ËûÓĞÒ»¸öºÃÓÑÔÚplace£¬¿ÉÄÜËû»áÈ¥¶ãËûÅóÓÑÄÇÀï£¬",
-        "placeÓĞËûÒ»´¦ÃØÃÜÎÑµã£¬²»ÖªµÀËûÊÇ·ñÇ±·üÔÚÄÇÀï£¬",
-        "¼¸ºõËùÓĞµØ·½¶¼ËÑË÷¹ıÁË£¬Ö»Ê£ÏÂplace»¹Ã»È«²¿ËÑË÷£¬",
+        "ä»–æœ€è¿‘æ½›ä¼åœ¨placeä¸€å¸¶ï¼Œ",
+        "æœ‰å¼Ÿå…„æœ€è¿‘åœ¨placeç™¼ç¾äº†ä»–çš„è¹¤è·¡ï¼Œ",
+        "æ˜¨æ—¥æœ‰äººçœ‹åˆ°ä»–åœ¨placeå‡ºæ²’ï¼Œ",
+        "æ˜¨æ™šä»–æ›¾åœ¨placeçš„ä¸€å®¶å®¢åº—å‡ºç¾ï¼Œ",
+        "ä»Šæ—¥æ¸…æ™¨ä»–å¾placeåŒ—é–€æ··å…¥åŸä¸­ï¼Œ",
+        "æ˜¨æ™šä»–å°±åˆ°é”äº†placeï¼Œå¯èƒ½é‚„æœªæºœèµ°ï¼Œ",
+        "placeçš„ä¸€å®¶å®¢åº—æœ€è¿‘ä¾†äº†ä¸€å€‹ç¥ç§˜äººç‰©ï¼Œ",
+        "æœ‰äººå–¬è£æ‰“æ‰®å‡ºç¾åœ¨placeï¼Œ",
+        "placeä¾†äº†å€‹é™Œç”Ÿäººèˆ‰æ­¢è©­ç•°ï¼Œ",
+        "placeåˆæœ‰å¼Ÿå…„çµ¦é€™å€‹å®¶ä¼™æ¬ºè² äº†ï¼Œ",
+        "placeé»‘é“å…„å¼Ÿèªªå‰ä¸ä¹…é‡åˆ°ä¸€å€‹å®¶ä¼™å¾ˆè±¡ä»–ï¼Œ",
+        "ä»–æœ€è¿‘å¾ˆå¯èƒ½åœ¨placeä¸€å¸¶ï¼Œ",
+        "ä»–å¯èƒ½æ­£å‰å¾€placeä¸€å¸¶ï¼Œ",
+        "ä»–æœ‰ä¸€å€‹å¥½å‹åœ¨placeï¼Œå¯èƒ½ä»–æœƒå»èº²ä»–æœ‹å‹é‚£è£¡ï¼Œ",
+        "placeæœ‰ä»–ä¸€è™•ç§˜å¯†çª©é»ï¼Œä¸çŸ¥é“ä»–æ˜¯å¦æ½›ä¼åœ¨é‚£è£¡ï¼Œ",
+        "å¹¾ä¹æ‰€æœ‰åœ°æ–¹éƒ½æœç´¢éäº†ï¼Œåªå‰©ä¸‹placeé‚„æ²’å…¨éƒ¨æœç´¢ï¼Œ",
 });
 
 string *bad_msg3 = ({
-        "µÜĞÖÃÇ¸Ï¿ìÈ¥°ÑËûÔ×ÁË¡£",
-        "µÜĞÖÃÇÈ¥¿´¿´£¬·¢ÏÖËû¾Í²»ÒªÊÖÏÂÁôÇé¡£",
-        "²»ÒªÈÃËûÔÙ¼ûµ½Ã÷ÌìµÄÌ«Ñô¡£",
-        "×ÜËãÓĞÏßË÷ËÍËûÉÏÎ÷ÌìÁË¡£",
-        "ÓÃËûµÄÑªÀ´ÑïÎÒÃÇºÚµÀµÄÍş·ç°É¡£",
-        "µÜĞÖÃÇÖªµÀ¸ÃÔõÃ´×öÁË°É£¡",
-        "ÕÒµ½Ëû£¬É±ÎŞÉâ£¡",
-        "Ö»ÒªÕÒµ½Ëû£¬¸ñÉ±ÎğÂÛ£¡",
+        "å¼Ÿå…„å€‘è¶•å¿«å»æŠŠä»–å®°äº†ã€‚",
+        "å¼Ÿå…„å€‘å»çœ‹çœ‹ï¼Œç™¼ç¾ä»–å°±ä¸è¦æ‰‹ä¸‹ç•™æƒ…ã€‚",
+        "ä¸è¦è®“ä»–å†è¦‹åˆ°æ˜å¤©çš„å¤ªé™½ã€‚",
+        "ç¸½ç®—æœ‰ç·šç´¢é€ä»–ä¸Šè¥¿å¤©äº†ã€‚",
+        "ç”¨ä»–çš„è¡€ä¾†æšæˆ‘å€‘é»‘é“çš„å¨é¢¨å§ã€‚",
+        "å¼Ÿå…„å€‘çŸ¥é“è©²æ€éº¼åšäº†å§ï¼",
+        "æ‰¾åˆ°ä»–ï¼Œæ®ºç„¡èµ¦ï¼",
+        "åªè¦æ‰¾åˆ°ä»–ï¼Œæ ¼æ®ºå‹¿è«–ï¼",
 });
 
 string *good_msg1 = ({
-        "name×÷¶ñ¶à¶Ë£¬",
-        "Ôç¾ÍÏë²ù³ınameÕâ¸ö¶ñÔôÁË£¬",
-        "¶ÔnameÕâ¶ñÄ§ÎÒÃÇ°×µÀÈËÊ¿¹ıÈ¥Ì«·Å×İÁËµã£¬",
-        "nameÉÏ´ÎÉ±ÁËÎÒÃÇÒ»¸öÍ¬µÀÌÓÄäÖÁ½ñ£¬",
-        "nameË«ÊÖÕ´ÂúÁËÎÒÃÇÕıµÀÈËÊ¿µÄÏÊÑª£¬",
-        "×Ô´Óname³öÂôÁËËûµÄĞÖµÜ£¬Ò»Ö±¶ã×Å²»Â¶Ãæ£¬",
-        "nameÎ¥±³ÎÒÃÇÕıÅÉÈËÊ¿µÄĞĞÊÂ×¼Ôò£¬",
-        "ÌıËµ¹ıname³öÂôĞÖµÜµÄÊÂÇé°É£¿",
-        "¼ÇµÃÈ¥ÄênameÍ¶±¼Ä§½ÌµÄÊÂÇé°É£¿",
-        "nameÕâ¸öÉ«ÀÇÎª»ö½­ºşÒÑ¾Ã£¬",
-        "×î½üºÚ°×µÀ·×ÕùÓÖÆğ£¬²»È¡ÁËnameµÄÈËÍ·²»×ãÒÔºëÑïÕıÆø£¬",
-        "×î½üÎÒÃÇÕıÅÉÈËÊ¿Á¬Á¬¸øºÚµÀÆÛÑ¹£¬nameµÄÈËÍ·ÕıºÃÓÃÀ´¹ÄÎèÊ¿Æø£¬",
-        "½üÀ´name¶ÔÎÒÃÇÕıÅÉ³öÑÔ²»Ñ·£¬",
-        "name×òÈÕ¾¹È»ÑïÑÔÒª²ùÆ½ÎÒÃÇ°×µÀ×Ü²¿£¬",
-        "nameÕâ¸öĞ¡×ÓËù×÷ËùÎª¶ª¾¡ÁËÎÒÃÇÕıÅÉÈËÊ¿µÄÁ³£¬",
-        "name³ÔºÈæÎ¶Ä£¬ÎŞ¶ñ²»×÷£¬",
+        "nameä½œæƒ¡å¤šç«¯ï¼Œ",
+        "æ—©å°±æƒ³éŸé™¤nameé€™å€‹æƒ¡è³Šäº†ï¼Œ",
+        "å°nameé€™æƒ¡é­”æˆ‘å€‘ç™½é“äººå£«éå»å¤ªæ”¾ç¸±äº†é»ï¼Œ",
+        "nameä¸Šæ¬¡æ®ºäº†æˆ‘å€‘ä¸€å€‹åŒé“é€ƒåŒ¿è‡³ä»Šï¼Œ",
+        "nameé›™æ‰‹æ²¾æ»¿äº†æˆ‘å€‘æ­£é“äººå£«çš„é®®è¡€ï¼Œ",
+        "è‡ªå¾nameå‡ºè³£äº†ä»–çš„å…„å¼Ÿï¼Œä¸€ç›´èº²è‘—ä¸éœ²é¢ï¼Œ",
+        "nameé•èƒŒæˆ‘å€‘æ­£æ´¾äººå£«çš„è¡Œäº‹æº–å‰‡ï¼Œ",
+        "è½èªªénameå‡ºè³£å…„å¼Ÿçš„äº‹æƒ…å§ï¼Ÿ",
+        "è¨˜å¾—å»å¹´nameæŠ•å¥”é­”æ•™çš„äº‹æƒ…å§ï¼Ÿ",
+        "nameé€™å€‹è‰²ç‹¼ç‚ºç¦æ±Ÿæ¹–å·²ä¹…ï¼Œ",
+        "æœ€è¿‘é»‘ç™½é“ç´›çˆ­åˆèµ·ï¼Œä¸å–äº†nameçš„äººé ­ä¸è¶³ä»¥å¼˜æšæ­£æ°£ï¼Œ",
+        "æœ€è¿‘æˆ‘å€‘æ­£æ´¾äººå£«é€£é€£çµ¦é»‘é“æ¬ºå£“ï¼Œnameçš„äººé ­æ­£å¥½ç”¨ä¾†é¼“èˆå£«æ°£ï¼Œ",
+        "è¿‘ä¾†nameå°æˆ‘å€‘æ­£æ´¾å‡ºè¨€ä¸éœï¼Œ",
+        "nameæ˜¨æ—¥ç«Ÿç„¶æšè¨€è¦éŸå¹³æˆ‘å€‘ç™½é“ç¸½éƒ¨ï¼Œ",
+        "nameé€™å€‹å°å­æ‰€ä½œæ‰€ç‚ºä¸Ÿç›¡äº†æˆ‘å€‘æ­£æ´¾äººå£«çš„è‡‰ï¼Œ",
+        "nameåƒå–å«–è³­ï¼Œç„¡æƒ¡ä¸ä½œï¼Œ",
 });
 
 string *good_msg2 = ({
-        "Ëû×î½üÇ±·üÔÚplaceÒ»´ø£¬",
-        "ÓĞµÜĞÖ×î½üÔÚplace·¢ÏÖÁËËûµÄ×Ù¼££¬",
-        "×òÈÕÓĞÈË¿´µ½ËûÔÚplace³öÃ»£¬",
-        "×òÍíËûÔøÔÚplaceµÄÒ»¼Ò¶Ä³¡³öÏÖ£¬",
-        "½ñÈÕÇå³¿Ëû´Óplace±±ÃÅ»ìÈë³ÇÖĞ£¬",
-        "×òÍíËû¾Íµ½´ïÁËplace£¬¿ÉÄÜ»¹Î´Áï×ß£¬",
-        "placeµÄÒ»¼Ò¿Íµê×î½üÀ´ÁËÒ»¸öÄ°ÉúÈË£¬",
-        "ÓĞÈËÇÇ×°´ò°ç³öÏÖÔÚplace£¬",
-        "placeÀ´ÁË¸öÄ°ÉúÈË¾ÙÖ¹¹îÒì£¬",
-        "placeÓÖÓĞµÜĞÖ¸øÕâ¸ö¼Ò»ïÆÛ¸ºÁË£¬",
-        "placeÓĞĞÖµÜËµÇ°²»¾ÃÓöµ½Ò»¸ö¼Ò»ïºÜÏóËû£¬",
-        "Ëû×î½üºÜ¿ÉÄÜÔÚplaceÒ»´ø£¬",
-        "Ëû¿ÉÄÜÕıÇ°ÍùplaceÒ»´ø£¬",
-        "ËûÓĞÒ»¸öĞ¡æªÔÚplace£¬¿ÉÄÜËû»á¶ãÔÚÄÇÀï£¬",
-        "placeÓĞËûÒ»´¦ÃØÃÜÎÑµã£¬²»ÖªµÀËûÊÇ·ñÇ±·üÔÚÄÇÀï£¬",
-        "¼¸ºõËùÓĞµØ·½¶¼ËÑË÷¹ıÁË£¬Ö»Ê£ÏÂplace»¹Ã»È«²¿ËÑË÷£¬",
+        "ä»–æœ€è¿‘æ½›ä¼åœ¨placeä¸€å¸¶ï¼Œ",
+        "æœ‰å¼Ÿå…„æœ€è¿‘åœ¨placeç™¼ç¾äº†ä»–çš„è¹¤è·¡ï¼Œ",
+        "æ˜¨æ—¥æœ‰äººçœ‹åˆ°ä»–åœ¨placeå‡ºæ²’ï¼Œ",
+        "æ˜¨æ™šä»–æ›¾åœ¨placeçš„ä¸€å®¶è³­å ´å‡ºç¾ï¼Œ",
+        "ä»Šæ—¥æ¸…æ™¨ä»–å¾placeåŒ—é–€æ··å…¥åŸä¸­ï¼Œ",
+        "æ˜¨æ™šä»–å°±åˆ°é”äº†placeï¼Œå¯èƒ½é‚„æœªæºœèµ°ï¼Œ",
+        "placeçš„ä¸€å®¶å®¢åº—æœ€è¿‘ä¾†äº†ä¸€å€‹é™Œç”Ÿäººï¼Œ",
+        "æœ‰äººå–¬è£æ‰“æ‰®å‡ºç¾åœ¨placeï¼Œ",
+        "placeä¾†äº†å€‹é™Œç”Ÿäººèˆ‰æ­¢è©­ç•°ï¼Œ",
+        "placeåˆæœ‰å¼Ÿå…„çµ¦é€™å€‹å®¶ä¼™æ¬ºè² äº†ï¼Œ",
+        "placeæœ‰å…„å¼Ÿèªªå‰ä¸ä¹…é‡åˆ°ä¸€å€‹å®¶ä¼™å¾ˆè±¡ä»–ï¼Œ",
+        "ä»–æœ€è¿‘å¾ˆå¯èƒ½åœ¨placeä¸€å¸¶ï¼Œ",
+        "ä»–å¯èƒ½æ­£å‰å¾€placeä¸€å¸¶ï¼Œ",
+        "ä»–æœ‰ä¸€å€‹å°å¦¾åœ¨placeï¼Œå¯èƒ½ä»–æœƒèº²åœ¨é‚£è£¡ï¼Œ",
+        "placeæœ‰ä»–ä¸€è™•ç§˜å¯†çª©é»ï¼Œä¸çŸ¥é“ä»–æ˜¯å¦æ½›ä¼åœ¨é‚£è£¡ï¼Œ",
+        "å¹¾ä¹æ‰€æœ‰åœ°æ–¹éƒ½æœç´¢éäº†ï¼Œåªå‰©ä¸‹placeé‚„æ²’å…¨éƒ¨æœç´¢ï¼Œ",
 });
 
 string *good_msg3 = ({
-        "µÜĞÖÃÇ¸Ï¿ìÈ¥°ÑËû²ù³ıÁË¡£",
-        "µÜĞÖÃÇÈ¥¿´¿´£¬·¢ÏÖËû¾Í²»ÒªÊÖÏÂÁôÇé¡£",
-        "²»ÒªÈÃËûÔÙÎª»ö½­ºşÁË¡£",
-        "×ÜËãÓĞÏßË÷ËÍËûÉÏÎ÷ÌìÁË¡£",
-        "ÓÃËûµÄÑªÀ´¸øĞ°ÃÅÍáµÀÒ»¸ö¾¯¸æ¡£",
-        "µÜĞÖÃÇÖªµÀ¸ÃÔõÃ´×öÁË°É£¡",
-        "ÕÒµ½Ëû£¬É±ÎŞÉâ£¡",
-        "Ö»ÒªÕÒµ½Ëû£¬¸ñÉ±ÎğÂÛ£¡",
+        "å¼Ÿå…„å€‘è¶•å¿«å»æŠŠä»–éŸé™¤äº†ã€‚",
+        "å¼Ÿå…„å€‘å»çœ‹çœ‹ï¼Œç™¼ç¾ä»–å°±ä¸è¦æ‰‹ä¸‹ç•™æƒ…ã€‚",
+        "ä¸è¦è®“ä»–å†ç‚ºç¦æ±Ÿæ¹–äº†ã€‚",
+        "ç¸½ç®—æœ‰ç·šç´¢é€ä»–ä¸Šè¥¿å¤©äº†ã€‚",
+        "ç”¨ä»–çš„è¡€ä¾†çµ¦é‚ªé–€æ­ªé“ä¸€å€‹è­¦å‘Šã€‚",
+        "å¼Ÿå…„å€‘çŸ¥é“è©²æ€éº¼åšäº†å§ï¼",
+        "æ‰¾åˆ°ä»–ï¼Œæ®ºç„¡èµ¦ï¼",
+        "åªè¦æ‰¾åˆ°ä»–ï¼Œæ ¼æ®ºå‹¿è«–ï¼",
 });
 
 string *search_msg = ({
-        "¸ù¾İÎÒÃÇÃÜÌ½·¢ÏÖµÄÏßË÷£¬",
-        "ÎÒÃÇµÄ¼äµı·¢»Ø×îĞÂÏûÏ¢£¬",
-        "Í¨¹ıËÄ·½´òÌı£¬",
-        "ÎÒÃÇµÄĞÖµÜÁ¬ĞøÈıÌìÈıÒ¹¶ÔËû×·²é£¬",
-        "¸ù¾İËÄ·½µÃÀ´µÄ×îĞÂÏûÏ¢£¬",
-        "ÓĞĞÖµÜ´ÓØ¤°ïÌ×µ½ÁËÏûÏ¢£¬",
-        "ÓĞÏûÏ¢ÁéÍ¨ÈËÊ¿Í¸Â¶£¬",
+        "æ ¹æ“šæˆ‘å€‘å¯†æ¢ç™¼ç¾çš„ç·šç´¢ï¼Œ",
+        "æˆ‘å€‘çš„é–“è«œç™¼å›æœ€æ–°æ¶ˆæ¯ï¼Œ",
+        "é€šéå››æ–¹æ‰“è½ï¼Œ",
+        "æˆ‘å€‘çš„å…„å¼Ÿé€£çºŒä¸‰å¤©ä¸‰å¤œå°ä»–è¿½æŸ¥ï¼Œ",
+        "æ ¹æ“šå››æ–¹å¾—ä¾†çš„æœ€æ–°æ¶ˆæ¯ï¼Œ",
+        "æœ‰å…„å¼Ÿå¾ä¸å¹«å¥—åˆ°äº†æ¶ˆæ¯ï¼Œ",
+        "æœ‰æ¶ˆæ¯éˆé€šäººå£«é€éœ²ï¼Œ",
 });
 
 mapping levels = ([
@@ -179,15 +179,15 @@ mapping levels = ([
 ]);
 
 nosave mapping city = ([
-        "bje" : "±±¾©¶«³Ç",
-        "bjw" : "±±¾©Î÷³Ç",
-        "yz"  : "ÑïÖİ³Ç",
-        "ca"  : "³¤°²³Ç",
-        "cd"  : "³É¶¼³Ç",
-        "sz"  : "ËÕÖİ³Ç",
-        "hz"  : "º¼Öİ³Ç",
-        "xy"  : "ÏåÑô³Ç",
-        "dl"  : "´óÀíÒ»´ø",
+        "bje" : "åŒ—äº¬æ±åŸ",
+        "bjw" : "åŒ—äº¬è¥¿åŸ",
+        "yz"  : "æšå·åŸ",
+        "ca"  : "é•·å®‰åŸ",
+        "cd"  : "æˆéƒ½åŸ",
+        "sz"  : "è˜‡å·åŸ",
+        "hz"  : "æ­å·åŸ",
+        "xy"  : "è¥„é™½åŸ",
+        "dl"  : "å¤§ç†ä¸€å¸¶",
 ]);
 
 nosave mapping static_npc = ([
@@ -693,7 +693,7 @@ nosave mapping static_npc = ([
 ]);
 
 nosave mapping place = ([
-        "±±¾©¶«³Ç": ({
+        "åŒ—äº¬æ±åŸ": ({
                         "/d/beijing/cagc_e","/d/beijing/caroad_e1",
                         "/d/beijing/caroad_e2","/d/beijing/zahuo",
                         "/d/beijing/yancao","/d/beijing/xingchang",
@@ -714,7 +714,7 @@ nosave mapping place = ([
                         "/d/beijing/dong_2","/d/beijing/guozijian",
                         "/d/beijing/wang_2",
                      }),
-        "±±¾©Î÷³Ç" : ({
+        "åŒ—äº¬è¥¿åŸ" : ({
                         "/d/beijing/niaoshi","/d/beijing/xi_1",
                         "/d/beijing/caroad_w1","/d/beijing/yangliu1",
                         "/d/beijing/yangliu2","/d/beijing/yangliu3",
@@ -753,7 +753,7 @@ nosave mapping place = ([
                         "/d/beijing/di_dajie2","/d/beijing/di_anmen",
                         "/d/beijing/qingmu_dating",
                      }),
-        "ÑïÖİ³Ç"   : ({
+        "æšå·åŸ"   : ({
                         "/d/city/zuixianlou2","/d/city/zuixianlou3",
                         "/d/city/zuixianlou","/d/city/beidajie2",
                         "/d/city/beimen","/d/city/beidajie1",
@@ -765,7 +765,7 @@ nosave mapping place = ([
                         "/d/city/yaopu","/d/city/datiepu",
                         "/d/city/dongmen",
                      }),
-         "³¤°²³Ç"   : ({
+         "é•·å®‰åŸ"   : ({
                         "/d/changan/huanggong","/d/changan/bridge1",
                         "/d/changan/baihu2","/d/changan/beian-dadao",
                         "/d/changan/beian-daokou","/d/changan/bingying1",
@@ -813,7 +813,7 @@ nosave mapping place = ([
                         "/d/changan/dongan-dadao","/d/changan/fengxu1",
                         "/d/changan/baihu3","/d/changan/guozijian",
                      }),
-        "³É¶¼³Ç"   : ({
+        "æˆéƒ½åŸ"   : ({
                         "/d/chengdu/guangchang","/d/chengdu/tidugate",
                         "/d/chengdu/shuduroad2","/d/chengdu/shuduroad1",
                         "/d/chengdu/eastroad2","/d/chengdu/eastroad1",
@@ -831,7 +831,7 @@ nosave mapping place = ([
                         "/d/chengdu/eastroad1","/d/chengdu/jiudian",
                         "/d/chengdu/wuguan",
                      }),
-        "ËÕÖİ³Ç"   : ({
+        "è˜‡å·åŸ"   : ({
                         "/d/suzhou/beimen","/d/suzhou/beidajie2",
                         "/d/suzhou/zijinan","/d/suzhou/jiudian",
                         "/d/suzhou/beidajie1","/d/suzhou/xiyuan",
@@ -854,7 +854,7 @@ nosave mapping place = ([
                         "/d/suzhou/xuanmiao","/d/suzhou/shuchang",
                         "/d/suzhou/ximen",
                      }),
-        "º¼Öİ³Ç"   : ({
+        "æ­å·åŸ"   : ({
                         "/d/hangzhou/suti2", "/d/hangzhou/jujingyuan",
                         "/d/hangzhou/liuzhuang", "/d/hangzhou/road19",
                         "/d/hangzhou/huangniling", "/d/hangzhou/qinglindong",
@@ -902,7 +902,7 @@ nosave mapping place = ([
                         "/d/hangzhou/maojiabu","/d/hangzhou/huangniling",
                         "/d/hangzhou/shuiledong","/d/hangzhou/manjuelong",
                      }),
-        "ÏåÑô³Ç"   : ({
+        "è¥„é™½åŸ"   : ({
                         "/d/xiangyang/westjie2", "/d/xiangyang/southjie2",
                         "/d/xiangyang/xiaorong1", "/d/xiangyang/zhonglie",
                         "/d/xiangyang/guangchang", "/d/xiangyang/dingzi",
@@ -959,7 +959,7 @@ nosave mapping place = ([
                         "/d/xiangyang/walln6","/d/xiangyang/walln7",
                         "/d/xiangyang/walln8",
                      }),
-        "´óÀíÒ»´ø" : ({
+        "å¤§ç†ä¸€å¸¶" : ({
                         "/d/dali/northgate", "/d/dali/southgate",
                         "/d/dali/shanlu2", "/d/dali/buxiongbu",
                         "/d/dali/jinzhihe", "/d/dali/xiaodao1",
@@ -1009,7 +1009,7 @@ int is_the_bunch(mapping arg, string type);
 varargs mixed create_quest(string the_city, string bunch_type, object player);
 varargs void delete_city_quest(string arg, string type, string bh);
 
-// ²éÑ¯Ö¸¶¨³ÇÊĞµÄÈÎÎñÁĞ±í£¬Ê¹ÓÃ²ÎÊıbhÔò·µ»Ø±àºÅÎªbhµÄÈÎÎñ
+// æŸ¥è©¢æŒ‡å®šåŸå¸‚çš„ä»»å‹™åˆ—è¡¨ï¼Œä½¿ç”¨åƒæ•¸bhå‰‡è¿”å›ç·¨è™Ÿç‚ºbhçš„ä»»å‹™
 varargs mixed query_city_quest(string arg, string type, string bh)
 {
         int i;
@@ -1033,7 +1033,7 @@ varargs mixed query_city_quest(string arg, string type, string bh)
         return bunch_quest;
 }
 
-// ²éÑ¯×·É±ÈÎÎñÁĞ±í£¬Ê¹ÓÃ²ÎÊıBHÎª·µ»Ø±àºÅÎªbhµÄÈÎÎñ
+// æŸ¥è©¢è¿½æ®ºä»»å‹™åˆ—è¡¨ï¼Œä½¿ç”¨åƒæ•¸BHç‚ºè¿”å›ç·¨è™Ÿç‚ºbhçš„ä»»å‹™
 varargs mixed query_zhuisha_quest(string type, string bh)
 {
         int i;
@@ -1052,10 +1052,10 @@ varargs mixed query_zhuisha_quest(string type, string bh)
         return 0;
 }
 
-// ÓÃÓÚ²úÉú°ïÅÉÌØ¶¨ÈÎÎñ£¬¸ÃÈÎÎñÊÇÒÔ°ïÅÉÍ¨ÖªµÄĞÎÊ½·¢ËÍ¸øÍæ¼Ò
-// ÌØÊâÈÎÎñ·ÖÎªÁ½ÖÖ
-// µÚÒ»ÖÖ£¬Ö»·¢ËÍ¸øÒ»¸öÍæ¼Ò£¬Ö»ÄÜ¸ÃÍæ¼ÒÈ¥Íê³É
-// µÚ¶şÖÖ£¬·¢ËÍ¸øËùÓĞµÄÍæ¼Ò£¬Ë­ÇÀÏÈÍê³ÉË­µÃµ½½±Àø
+// ç”¨äºç”¢ç”Ÿå¹«æ´¾ç‰¹å®šä»»å‹™ï¼Œè©²ä»»å‹™æ˜¯ä»¥å¹«æ´¾é€šçŸ¥çš„å½¢å¼ç™¼é€çµ¦ç©å®¶
+// ç‰¹æ®Šä»»å‹™åˆ†ç‚ºå…©ç¨®
+// ç¬¬ä¸€ç¨®ï¼Œåªç™¼é€çµ¦ä¸€å€‹ç©å®¶ï¼Œåªèƒ½è©²ç©å®¶å»å®Œæˆ
+// ç¬¬äºŒç¨®ï¼Œç™¼é€çµ¦æ‰€æœ‰çš„ç©å®¶ï¼Œèª°æ¶å…ˆå®Œæˆèª°å¾—åˆ°çå‹µ
 void ready_to_start()
 {
         int num;
@@ -1071,7 +1071,7 @@ void ready_to_start()
                                 !$1->in_prison() &&
                                bunchp($1) :), 10000, 270000000);
 
-        num = 300 - sizeof(all_user);        // ·ûºÏÌõ¼şµÄÍæ¼ÒÔ½¶à£¬ÔòÌØÊâÈÎÎñ²úÉúËÙ¶ÈÔ½¸ß
+        num = 300 - sizeof(all_user);        // ç¬¦åˆæ¢ä»¶çš„ç©å®¶è¶Šå¤šï¼Œå‰‡ç‰¹æ®Šä»»å‹™ç”¢ç”Ÿé€Ÿåº¦è¶Šé«˜
         if (num < MIN_IDLE) num = MIN_IDLE;
         call_out("start_quest", num);
 }
@@ -1084,8 +1084,8 @@ int clean_up()
 void create()
 {
         seteuid(ROOT_UID);
-        set("channel_id", "ÈÎÎñ¾«Áé");
-        CHANNEL_D->do_channel( this_object(), "sys", "°ï»áÈÎÎñÏµÍ³ÒÑ¾­Æô¶¯¡£");
+        set("channel_id", "ä»»å‹™ç²¾éˆ");
+        CHANNEL_D->do_channel( this_object(), "sys", "å¹«æœƒä»»å‹™ç³»çµ±å·²ç¶“å•Ÿå‹•ã€‚");
         ready_to_start();
         set_heart_beat(2);
 }
@@ -1094,18 +1094,18 @@ void heart_beat()
 {
         int i;
 
-        // ¼ì²é×·É±ÈÎÎñ£¬Èç¹ûÄ¿±êÒÑ¾­²»ÔÚ£¬¾Í´Ó×·É±ÈÎÎñÁĞ±íÖĞÈ¥³ı
+        // æª¢æŸ¥è¿½æ®ºä»»å‹™ï¼Œå¦‚æœç›®æ¨™å·²ç¶“ä¸åœ¨ï¼Œå°±å¾è¿½æ®ºä»»å‹™åˆ—è¡¨ä¸­å»é™¤
         if (sizeof(bunch_zs))
                 for (i = 0;i < sizeof(bunch_zs);i++)
                         if (! objectp(bunch_zs[i]["ob"]))
                                 bunch_zs[i] = 0;
         bunch_zs -= ({ 0 });
 
-        // ¼ì²éÑ²³ÇÈÎÎñ
+        // æª¢æŸ¥å·¡åŸä»»å‹™
         remove_call_out("check_xuncheng");
         call_out("check_xuncheng", 0);
 
-        // ¼ì²é¸÷¸ö³ÇÊĞµÄÈÎÎñ
+        // æª¢æŸ¥å„å€‹åŸå¸‚çš„ä»»å‹™
         remove_call_out("check_city_quest");
         call_out("check_city_quest", 0);
 
@@ -1168,7 +1168,7 @@ void start_quest()
 
         ready_to_start();
         all_user = users();
-        // ÔÙ´ÎÈ·¶¨Äà°ÍÖĞ·ûºÏÌõ¼şµÄÍæ¼ÒÊıÄ¿
+        // å†æ¬¡ç¢ºå®šæ³¥å·´ä¸­ç¬¦åˆæ¢ä»¶çš„ç©å®¶æ•¸ç›®
         all_user = filter_array(all_user,(: interactive($1) &&
                                 ! wizardp($1) &&
                                 query("combat_exp", $1) >= $2 &&
@@ -1179,10 +1179,10 @@ void start_quest()
                                bunchp($1) :), 10000, 270000000);
 
         num = sizeof(all_user);
-        //Èç¹ûÃ»ÓĞÕâÀàÍæ¼Ò£¬¾ÍÖĞÖ¹ÈÎÎñ½ø³Ì
+        //å¦‚æœæ²’æœ‰é€™é¡ç©å®¶ï¼Œå°±ä¸­æ­¢ä»»å‹™é€²ç¨‹
         if (! num) return;
 
-        CHANNEL_D->do_channel( this_object(), "sys", "°ï»áÈÎÎñÏµÍ³¿ªÊ¼²úÉú×·É±ÈÎÎñ¡£");
+        CHANNEL_D->do_channel( this_object(), "sys", "å¹«æœƒä»»å‹™ç³»çµ±é–‹å§‹ç”¢ç”Ÿè¿½æ®ºä»»å‹™ã€‚");
 
         ob = create_npc(1);
         bunch_quest = ([]);
@@ -1191,7 +1191,7 @@ void start_quest()
         random_move(ob);
         random_move(ob);
 
-        bunch_quest["type"] = "×·É±";
+        bunch_quest["type"] = "è¿½æ®º";
         bunch_quest["ob"] = ob;
         bunch_quest["bonus"]=query("bonus", ob)*2;
         bunch_quest["name"] = ob->name();
@@ -1199,7 +1199,7 @@ void start_quest()
         bunch_quest["difficult"]=check_difficult(query("lvl", ob));
         bunch_quest["reward"]=check_reward(query("lvl", ob));
 
-        if (random(2))        //ºÚµÀ×·É±
+        if (random(2))        //é»‘é“è¿½æ®º
         {
                 set("shen", 20000, ob);
                 bunch_quest["bunch_type"] = "bad";
@@ -1208,14 +1208,14 @@ void start_quest()
                 if (sizeof(all_user))
                         for (i = 0;i < sizeof(all_user);i++)
                         {
-                                tell_object(all_user[i],HIB"Ó­Ãæ¼±²½¹ıÀ´Ò»Î»¡¼"+query("bunch/bunch_name", all_user[i])+
-                                            "¡½ĞÖµÜ³¯Äã¼±¼±Ã¦Ã¦µØËµ£º¡°ºÚµÀÍ¬ÃË·¢ÏÂ×·É±ÁîÁË£¡\n" NOR +
-                                            bunch_quest["msg"] + "¡±\n");
-                                tell_object(all_user[i], "ËµÍêÓÖÊÇÒ»±§È­µÀ£º¡°ĞÖµÜ»¹ÓĞÒªÎñÔÚÉí£¬ÏÈĞĞ¸æ´Ç£¡\n");
+                                tell_object(all_user[i],HIB"è¿é¢æ€¥æ­¥éä¾†ä¸€ä½â–¡"+query("bunch/bunch_name", all_user[i])+
+                                            "â–¡å…„å¼Ÿæœä½ æ€¥æ€¥å¿™å¿™åœ°èªªï¼šâ€œé»‘é“åŒç›Ÿç™¼ä¸‹è¿½æ®ºä»¤äº†ï¼\n" NOR +
+                                            bunch_quest["msg"] + "â€\n");
+                                tell_object(all_user[i], "èªªå®Œåˆæ˜¯ä¸€æŠ±æ‹³é“ï¼šâ€œå…„å¼Ÿé‚„æœ‰è¦å‹™åœ¨èº«ï¼Œå…ˆè¡Œå‘Šè¾­ï¼\n");
                         }
                 else destruct(ob);
         }
-        else                //°×µÀ×·É±
+        else                //ç™½é“è¿½æ®º
         {
                 set("shen", -20000, ob);
                 bunch_quest["bunch_type"] = "good";
@@ -1224,17 +1224,17 @@ void start_quest()
                 if (sizeof(all_user))
                         for (i = 0;i < sizeof(all_user);i++)
                         {
-                                tell_object(all_user[i],HIW"Ó­Ãæ±¼À´Ò»Î»¡¼"+query("bunch/bunch_name", all_user[i])+
-                                            "¡½µÜĞÖ³¯ÄãÃÍÕĞÊÖ²¢²Á×ÅÂúÁ³µÄº¹Ë®ÇÄÉùµÀ£º¡°°×µÀÁªÃË"+
-                                            "·¢ÏÂÍ¨¼©ÁîÀ²£¡\n"NOR+
-                                            bunch_quest["msg"] + "¡±\n");
-                                tell_object(all_user[i],"ËµÍêÓÖÊÇÒ»±§È­µÀ£º¡°ÔÚÏÂ»¹ÓĞÒªÎñÔÚÉí£¬ÏÈĞĞ¸æ´Ç£¡\n");
+                                tell_object(all_user[i],HIW"è¿é¢å¥”ä¾†ä¸€ä½â–¡"+query("bunch/bunch_name", all_user[i])+
+                                            "â–¡å¼Ÿå…„æœä½ çŒ›æ‹›æ‰‹ä¸¦æ“¦è‘—æ»¿è‡‰çš„æ±—æ°´æ‚„è²é“ï¼šâ€œç™½é“è¯ç›Ÿ"+
+                                            "ç™¼ä¸‹é€šç·ä»¤å•¦ï¼\n"NOR+
+                                            bunch_quest["msg"] + "â€\n");
+                                tell_object(all_user[i],"èªªå®Œåˆæ˜¯ä¸€æŠ±æ‹³é“ï¼šâ€œåœ¨ä¸‹é‚„æœ‰è¦å‹™åœ¨èº«ï¼Œå…ˆè¡Œå‘Šè¾­ï¼\n");
                         }
                 else destruct(ob);
         }
         if (ob)
         {
-                //Ã¿¸öÈÎÎñ¶¼±ØĞëÓĞ×Ô¼ºµÄÁ÷Ë®ºÅ£¬Ê¹ÓÃget_bianhao()º¯ÊıÀ´»ñÈ¡Í³Ò»µÄÁ÷Ë®ºÅ
+                //æ¯å€‹ä»»å‹™éƒ½å¿…é ˆæœ‰è‡ªå·±çš„æµæ°´è™Ÿï¼Œä½¿ç”¨get_bianhao()å‡½æ•¸ä¾†ç²å–çµ±ä¸€çš„æµæ°´è™Ÿ
                 bunch_quest["num"] = get_bianhao("zhuisha");
                 bunch_quest["id"] = "zs" + (string)bunch_quest["num"];
                 bunch_zs += ({ bunch_quest });
@@ -1361,7 +1361,7 @@ varargs void place_npc(object ob, string *not_place)
         set("place", p, ob);
         set("startroom", startroom, ob);
         set_temp("moved", ({}), ob);
-        message_vision("$N×ßÁË¹ıÀ´¡£\n", ob);
+        message_vision("$Nèµ°äº†éä¾†ã€‚\n", ob);
 }
 
 int check_level(object ob)
@@ -1383,30 +1383,30 @@ string check_difficult(int lvl)
         {
                 case 1:
                 case 2:
-                        difficult = "ºÜÈİÒ×";
+                        difficult = "å¾ˆå®¹æ˜“";
                         break;
                 case 3:
                 case 4:
-                        difficult = "ÈİÒ×";
+                        difficult = "å®¹æ˜“";
                         break;
                 case 5:
                 case 6:
-                        difficult = "½ÏÈİÒ×";
+                        difficult = "è¼ƒå®¹æ˜“";
                         break;
                 case 7:
                 case 8:
-                        difficult = "ÖĞµÈ";
+                        difficult = "ä¸­ç­‰";
                         break;
                 case 9:
                 case 10:
-                        difficult = "½ÏÀ§ÄÑ";
+                        difficult = "è¼ƒå›°é›£";
                         break;
                 case 11:
                 case 12:
-                        difficult = "À§ÄÑ";
+                        difficult = "å›°é›£";
                         break;
                 default:
-                        difficult = "ºÜÀ§ÄÑ";
+                        difficult = "å¾ˆå›°é›£";
                         break;
         }
         return difficult;
@@ -1420,30 +1420,30 @@ string check_reward(int lvl)
         {
                 case 1:
                 case 2:
-                        reward = "ºÜÉÙ";
+                        reward = "å¾ˆå°‘";
                         break;
                 case 3:
                 case 4:
-                        reward = "ÉÙ";
+                        reward = "å°‘";
                         break;
                 case 5:
                 case 6:
-                        reward = "½ÏÉÙ";
+                        reward = "è¼ƒå°‘";
                         break;
                 case 7:
                 case 8:
-                        reward = "ÖĞµÈ";
+                        reward = "ä¸­ç­‰";
                         break;
                 case 9:
                 case 10:
-                        reward = "½Ï¸ß";
+                        reward = "è¼ƒé«˜";
                         break;
                 case 11:
                 case 12:
-                        reward = "¸ß";
+                        reward = "é«˜";
                         break;
                 default:
-                        reward = "ºÜ¸ß";
+                        reward = "å¾ˆé«˜";
                         break;
         }
         return reward;
@@ -1456,7 +1456,7 @@ string bad_zhuisha_msg(string name,string place,string difficult)
         msg2 = search_msg[random(sizeof(search_msg))];
         msg3 = replace_string(bad_msg2[random(sizeof(bad_msg2))],"place",place);
         msg4 = bad_msg3[random(sizeof(bad_msg3))];
-        msg5 = "Õâ¸öÈÎÎñÄÑ¶È¾İÆäËûĞÖµÜËµÊÇ" + difficult + "£¬ÕâÊÇÄãÁ¢¹¦µÄ»ú»á°¡£¡";
+        msg5 = "é€™å€‹ä»»å‹™é›£åº¦æ“šå…¶ä»–å…„å¼Ÿèªªæ˜¯" + difficult + "ï¼Œé€™æ˜¯ä½ ç«‹åŠŸçš„æ©Ÿæœƒå•Šï¼";
         return msg1 + msg2 + "\n" + msg3 + msg4 + "\n" + msg5;
 }
 
@@ -1467,7 +1467,7 @@ string good_zhuisha_msg(string name,string place,string difficult)
         msg2 = search_msg[random(sizeof(search_msg))];
         msg3 = replace_string(good_msg2[random(sizeof(good_msg2))],"place",place);
         msg4 = good_msg3[random(sizeof(good_msg3))];
-        msg5 = "Õâ¸öÈÎÎñÄÑ¶È¾İÆäËûÍ¬µÀËµÊÇ" + difficult + "£¬Äã×Ô¼º¿´×Å°ì£¡";
+        msg5 = "é€™å€‹ä»»å‹™é›£åº¦æ“šå…¶ä»–åŒé“èªªæ˜¯" + difficult + "ï¼Œä½ è‡ªå·±çœ‹è‘—è¾¦ï¼";
         return msg1 + msg2 + "\n" + msg3 + msg4 + "\n" + msg5;
 }
 
@@ -1481,19 +1481,19 @@ void check_xuncheng()
         string date;
 
         date = NATURE_D->game_time();
-        sscanf(date, "%sÈÕ%*s¿Ì", date);
+        sscanf(date, "%sæ—¥%*såˆ»", date);
 
         city_id = keys(city);
         for (i=0;i < sizeof(city_id);i++)
         {
                 bunch_quest = bunch_city_quest[city_id[i]];
 
-                //Èç¹ûÌìÊı»¹Ã»ÓĞ±ä»¯£¬²¢ÇÒÑ²³ÇÈÎÎñÒÑ¾­´æÔÚ£¬¾Í²»´¦Àí
+                //å¦‚æœå¤©æ•¸é‚„æ²’æœ‰è®ŠåŒ–ï¼Œä¸¦ä¸”å·¡åŸä»»å‹™å·²ç¶“å­˜åœ¨ï¼Œå°±ä¸è™•ç†
                 if (sizeof(bunch_quest))
                 {
                         for (j = 0;j<sizeof(bunch_quest);j++)
                                 if (bunch_quest[j]["id"] == "xc")
-                                        //Èç¹û´æÔÚÑ²³ÇÈÎÎñ£¬Ôò¿´ÈÕÆÚ£¬Èç¹ûÈÕÆÚ±ä»¯ÁËÔòÉ¾³ı¾ÉÈÎÎñ
+                                        //å¦‚æœå­˜åœ¨å·¡åŸä»»å‹™ï¼Œå‰‡çœ‹æ—¥æœŸï¼Œå¦‚æœæ—¥æœŸè®ŠåŒ–äº†å‰‡åˆªé™¤èˆŠä»»å‹™
                                         if (bunch_quest[j]["date"] == date)
                                                 have_it = 1;
                                         else
@@ -1505,12 +1505,12 @@ void check_xuncheng()
                 xc_map=({});
                 all_map=place[city[city_id[i]]];
 
-                //Ñ²³ÇµÄ½±Àø¸ù¾İ³ÇÊĞ°üÀ¨µÄµØ·½´óĞ¡À´È·¶¨¡£
+                //å·¡åŸçš„çå‹µæ ¹æ“šåŸå¸‚åŒ…æ‹¬çš„åœ°æ–¹å¤§å°ä¾†ç¢ºå®šã€‚
                 bonus = sizeof(all_map);
                 if (bonus<40) bonus=40;
                 if (bonus>70) bonus=70;
 
-                //´Ó¸Ã³ÇÊĞµØÍ¼ÖĞËæ»úÑ¡Ôñ10µ½20¸öµØµã×÷ÎªÑ²³ÇÈÎÎñ
+                //å¾è©²åŸå¸‚åœ°åœ–ä¸­éš¨æ©Ÿé¸æ“‡10åˆ°20å€‹åœ°é»ä½œç‚ºå·¡åŸä»»å‹™
                 xc_num=10+random(10);
                 bonus += xc_num;
                 bonus += random(bonus)*2;
@@ -1527,17 +1527,17 @@ void check_xuncheng()
 
                 xc_quest["id"]="xc";
                 xc_quest["time"]=time();
-                xc_quest["name"]="Ñ²" + city[city_id[i]];
-                xc_quest["type"]="Ñ²³Ç";
+                xc_quest["name"]="å·¡" + city[city_id[i]];
+                xc_quest["type"]="å·¡åŸ";
                 xc_quest["bunch_type"]="bad";
                 xc_quest["bonus"]=bonus;
                 xc_quest["enable"]=1;
                 xc_quest["place"]=xc_map;
                 xc_quest["date"]=date;
                 xc_quest["num"] = get_bianhao(city_id[i]);
-                xc_quest["difficult"]="ÈİÒ×";
-                xc_quest["reward"]="½Ï¸ß";
-                xc_quest["msg"] = "ÄãĞèÒªÑ²ÂßÒÔÏÂµØÇø£º\n";
+                xc_quest["difficult"]="å®¹æ˜“";
+                xc_quest["reward"]="è¼ƒé«˜";
+                xc_quest["msg"] = "ä½ éœ€è¦å·¡é‚ä»¥ä¸‹åœ°å€ï¼š\n";
                 for (j=0;j<sizeof(xc_quest["place"]);j++)
                         xc_quest["msg"] += get_object(xc_quest["place"][j])->short() + "\n";
                 bunch_quest += ({ xc_quest });
@@ -1560,14 +1560,14 @@ void check_city_quest()
 
                 bunch_quest -= ({ 0 });
 
-               //¼ì²éÈÎÎñ×´¿ö£¬Çå³ı¾ÉÈÎÎñ
+               //æª¢æŸ¥ä»»å‹™ç‹€æ³ï¼Œæ¸…é™¤èˆŠä»»å‹™
                 if (sizeof(bunch_quest))
                         for (j=0;j<sizeof(bunch_quest);j++)
                                 if (time() - bunch_quest[j]["time"] > WAIT_TIME ||
-                                    (bunch_quest[j]["type"] == "²ù³ıÍâµĞ" && !objectp(bunch_quest[j]["ob"])) ||
-                                    (bunch_quest[j]["type"] == "µ÷½â¾À·×" && !objectp(bunch_quest[j]["ob"])))
+                                    (bunch_quest[j]["type"] == "éŸé™¤å¤–æ•µ" && !objectp(bunch_quest[j]["ob"])) ||
+                                    (bunch_quest[j]["type"] == "èª¿è§£ç³¾ç´›" && !objectp(bunch_quest[j]["ob"])))
                                 {
-                                        if ((bunch_quest[j]["type"] == "²ù³ıÍâµĞ" || bunch_quest[j]["type"] == "µ÷½â¾À·×") &&
+                                        if ((bunch_quest[j]["type"] == "éŸé™¤å¤–æ•µ" || bunch_quest[j]["type"] == "èª¿è§£ç³¾ç´›") &&
                                             objectp(bunch_quest[j]["ob"]))
                                                 bunch_quest[j]["ob"]->destruct_me();
                                         bunch_quest[j]=0;
@@ -1575,15 +1575,15 @@ void check_city_quest()
 
                 bunch_quest -= ({ 0 });
 
-                //¼ì²éÕıÅÉÈÎÎñÊÇ·ñ³ä×ã
+                //æª¢æŸ¥æ­£æ´¾ä»»å‹™æ˜¯å¦å……è¶³
                 bunch_quest_good = filter_array(bunch_quest,(: is_the_bunch($1,"good") :));
 
-                //Çå³ıÎå·ÖÖÓÖ®ÄÚÃ»ÈË×öµÄÈÎÎñ£¬Í³¼ÆÈÎÎñµÄÊıÁ¿
+                //æ¸…é™¤äº”åˆ†é˜ä¹‹å…§æ²’äººåšçš„ä»»å‹™ï¼Œçµ±è¨ˆä»»å‹™çš„æ•¸é‡
                 if (sizeof(bunch_quest_good))
                         new_num = QUEST_NUM - sizeof(bunch_quest_good);
                 else new_num = QUEST_NUM;
 
-                //ÈÃÈÎÎñ±£³ÖÔÚQUEST_NUM¸ö×óÓÒ£¬×·É±ÈÎÎñ²»ËãÔÚÄÚ
+                //è®“ä»»å‹™ä¿æŒåœ¨QUEST_NUMå€‹å·¦å³ï¼Œè¿½æ®ºä»»å‹™ä¸ç®—åœ¨å…§
                 if (new_num > 0)
                         for (j = 0;j < new_num;j++)
                         {
@@ -1591,20 +1591,20 @@ void check_city_quest()
                                 new_quest = create_quest(city_id[i],"good");
                                 {
                                         bunch_quest += ({ new_quest });
-                                        //ÖØĞÂÉèÖÃ³ÇÊĞÈÎÎñÁĞ±í
+                                        //é‡æ–°è¨­ç½®åŸå¸‚ä»»å‹™åˆ—è¡¨
                                         bunch_city_quest[city_id[i]] = bunch_quest;
                                 }
                         }
 
-                //¼ì²éºÚµÀÈÎÎñÊÇ·ñ³ä×ã
+                //æª¢æŸ¥é»‘é“ä»»å‹™æ˜¯å¦å……è¶³
                 bunch_quest_bad = filter_array(bunch_quest,(: is_the_bunch($1,"bad") :));
 
-                //Çå³ıÎå·ÖÖÓÖ®ÄÚÃ»ÈË×öµÄÈÎÎñ£¬Í³¼ÆÈÎÎñµÄÊıÁ¿
+                //æ¸…é™¤äº”åˆ†é˜ä¹‹å…§æ²’äººåšçš„ä»»å‹™ï¼Œçµ±è¨ˆä»»å‹™çš„æ•¸é‡
                 if (sizeof(bunch_quest_bad))
                         new_num = QUEST_NUM - sizeof(bunch_quest_bad);
                 else new_num = QUEST_NUM;
 
-                //ÈÃÈÎÎñ±£³ÖÔÚQUEST_NUM¸ö×óÓÒ£¬×·É±ÈÎÎñ²»ËãÔÚÄÚ
+                //è®“ä»»å‹™ä¿æŒåœ¨QUEST_NUMå€‹å·¦å³ï¼Œè¿½æ®ºä»»å‹™ä¸ç®—åœ¨å…§
                 if (new_num > 0)
                         for (j = 0;j < new_num;j++)
                         {
@@ -1612,7 +1612,7 @@ void check_city_quest()
                                 if (mapp(new_quest))
                                 {
                                         bunch_quest += ({ new_quest });
-                                        //ÖØĞÂÉèÖÃ³ÇÊĞÈÎÎñÁĞ±í
+                                        //é‡æ–°è¨­ç½®åŸå¸‚ä»»å‹™åˆ—è¡¨
                                         bunch_city_quest[city_id[i]] = bunch_quest;
                                 }
                         }
@@ -1643,7 +1643,7 @@ varargs mixed create_quest(string the_city,string bunch_type,object player)
         object the_room,the_npc,env,npc,jiufen_npc;
         int i,j,control,bh;
 
-        control = 0;                //ÓÃÕâ¸ö±äÁ¿À´¿ØÖÆÑ­»·
+        control = 0;                //ç”¨é€™å€‹è®Šé‡ä¾†æ§åˆ¶å¾ªç’°
         if (bunch_type == "good")
         {
                 switch(random(4))
@@ -1653,11 +1653,11 @@ varargs mixed create_quest(string the_city,string bunch_type,object player)
                                 env_rooms = keys(all_static_npc);
                                 for (;;)
                                 {
-                                        if (control > 50) break;        //Ñ­»·³¬¹ı50¾ÍÖĞ¶Ï
+                                        if (control > 50) break;        //å¾ªç’°è¶…é50å°±ä¸­æ–·
                                         room = env_rooms[random(sizeof(env_rooms))];
                                         env = get_object(room);
                                         if (!env)
-                                                log_file("static/party_quest",sprintf("ÃÅÅÉÈÎÎñ´íÎó¼ÇÂ¼£º%s\n",room));
+                                                log_file("static/party_quest",sprintf("é–€æ´¾ä»»å‹™éŒ¯èª¤è¨˜éŒ„ï¼š%s\n",room));
                                         if (! objectp(npc = present(all_static_npc[room], env)) ||
                                                       query("shen", npc)<0 )
                                         {
@@ -1673,36 +1673,36 @@ varargs mixed create_quest(string the_city,string bunch_type,object player)
                                         new_quest["time"]=time();
                                         new_quest["num"]=get_bianhao(the_city);
                                         new_quest["id"]=the_city+(string)new_quest["num"];
-                                        new_quest["type"] = "Ñ°ÕÒÎïÆ·";
+                                        new_quest["type"] = "å°‹æ‰¾ç‰©å“";
                                         switch(random(3))
                                         {
                                                 case 0:
                                                         obj_mapp = QUEST_GOOD_OBJ("0find")->query_questdg();
                                                         new_quest["obj_name"] = obj_mapp["name"];
                                                         new_quest["bonus"] = 500;
-                                                        new_quest["difficult"] = "ÈİÒ×";
-                                                        new_quest["reward"] = "ÉÙ";
+                                                        new_quest["difficult"] = "å®¹æ˜“";
+                                                        new_quest["reward"] = "å°‘";
                                                         break;
                                                 case 2:
                                                         obj_mapp = QUEST_GOOD_OBJ("1find")->query_questdg();
                                                         new_quest["obj_name"] = obj_mapp["name"];
                                                         new_quest["bonus"] = 800;
-                                                        new_quest["difficult"] = "ÖĞµÈ";
-                                                        new_quest["reward"] = "ÖĞµÈ";
+                                                        new_quest["difficult"] = "ä¸­ç­‰";
+                                                        new_quest["reward"] = "ä¸­ç­‰";
                                                         break;
                                                 case 1:
                                                         obj_mapp = QUEST_GOOD_OBJ("2find")->query_questdg();
                                                         new_quest["obj_name"] = obj_mapp["name"];
                                                         new_quest["bonus"] = 1100;
-                                                        new_quest["difficult"] = "À§ÄÑ";
-                                                        new_quest["reward"] = "¸ß";
+                                                        new_quest["difficult"] = "å›°é›£";
+                                                        new_quest["reward"] = "é«˜";
                                                         break;
                                         }
-                                        new_quest["name"]="°ï" + room->short() + "µÄ" + npc->name() +
-                                                          "ÕÒµ½" + new_quest["obj_name"];
-                                        new_quest["msg"]=room->short() + "µÄ" + npc->name() +
-                                                          "ĞèÒª" + new_quest["obj_name"] +
-                                                          "£¬ÄãÈ¥°ÑËüÕÒµ½²¢ËÍ¹ıÈ¥¡£";
+                                        new_quest["name"]="å¹«" + room->short() + "çš„" + npc->name() +
+                                                          "æ‰¾åˆ°" + new_quest["obj_name"];
+                                        new_quest["msg"]=room->short() + "çš„" + npc->name() +
+                                                          "éœ€è¦" + new_quest["obj_name"] +
+                                                          "ï¼Œä½ å»æŠŠå®ƒæ‰¾åˆ°ä¸¦é€éå»ã€‚";
                                         return new_quest;
                                 } else return 0;
                                 break;
@@ -1716,12 +1716,12 @@ varargs mixed create_quest(string the_city,string bunch_type,object player)
                                 room = env_rooms[random(sizeof(env_rooms))];
                                 env = get_object(room);
                                 if (!env)
-                                        log_file("static/party_quest",sprintf("ÃÅÅÉÈÎÎñ´íÎó¼ÇÂ¼£º%s\n",room));
+                                        log_file("static/party_quest",sprintf("é–€æ´¾ä»»å‹™éŒ¯èª¤è¨˜éŒ„ï¼š%s\n",room));
                                 npc->move(env);
                                 set("place", env->short(), npc);
                                 set("startroom", room, npc);
                                 set_temp("moved", ({}), npc);
-                                message_vision("$N×ßÁË¹ıÀ´¡£\n", npc);
+                                message_vision("$Nèµ°äº†éä¾†ã€‚\n", npc);
                                 random_move(npc);
                                 random_move(npc);
                                 random_move(npc);
@@ -1729,22 +1729,22 @@ varargs mixed create_quest(string the_city,string bunch_type,object player)
 
                                 new_quest = ([]);
 
-                                new_quest["type"]="²ù³ıÍâµĞ";
+                                new_quest["type"]="éŸé™¤å¤–æ•µ";
                                 new_quest["ob"]=npc;
                                 new_quest["time"]=time();
                                 new_quest["bunch_type"]="good";
                                 new_quest["num"]=get_bianhao(the_city);
                                 new_quest["id"]=the_city+(string)new_quest["num"];
                                 new_quest["bonus"]=query("bonus", npc);
-                                new_quest["name"]="²ù³ıÀ´ÎÒÃÇ" + city[the_city] +
-                                                  "×÷¶ñµÄ" + npc->name();
+                                new_quest["name"]="éŸé™¤ä¾†æˆ‘å€‘" + city[the_city] +
+                                                  "ä½œæƒ¡çš„" + npc->name();
                                 new_quest["place"]=query("place", npc);
                                 new_quest["difficult"]=check_difficult(query("lvl", npc));
                                 new_quest["reward"]=check_reward(query("lvl", npc));
-                                new_quest["msg"]=npc->name() + "Î£º¦½­ºşÈÕ¾Ã£¬½ñÈÕÀ´µ½ÁËÎÒÃÇ" +
-                                                 city[the_city] + "µØ½ç£¬²»ÖªµÀÒâÍ¼ºÎÎª¡£\nÏëÀ´²»ÊÇ" +
-                                                 "À´¸ÉÊ²Ã´ºÃÊÂµÄ£¬¸ù¾İ×îĞÂÏûÏ¢ËûÔÚ" + new_quest["place"] +
-                                                 "¸½½ü³öÏÖ¡£\nÕÒµ½Ëû£¬°ÑËû¸ø²ù³ıÁË£¡";
+                                new_quest["msg"]=npc->name() + "å±å®³æ±Ÿæ¹–æ—¥ä¹…ï¼Œä»Šæ—¥ä¾†åˆ°äº†æˆ‘å€‘" +
+                                                 city[the_city] + "åœ°ç•Œï¼Œä¸çŸ¥é“æ„åœ–ä½•ç‚ºã€‚\næƒ³ä¾†ä¸æ˜¯" +
+                                                 "ä¾†å¹¹ä»€éº¼å¥½äº‹çš„ï¼Œæ ¹æ“šæœ€æ–°æ¶ˆæ¯ä»–åœ¨" + new_quest["place"] +
+                                                 "é™„è¿‘å‡ºç¾ã€‚\næ‰¾åˆ°ä»–ï¼ŒæŠŠä»–çµ¦éŸé™¤äº†ï¼";
                                 return new_quest;
                                 break;
                         case 2:
@@ -1755,11 +1755,11 @@ varargs mixed create_quest(string the_city,string bunch_type,object player)
                                 env_rooms = keys(all_static_npc);
                                 for (;;)
                                 {
-                                        if (control > 50) break;        //Ñ­»·³¬¹ı50¾ÍÖĞ¶Ï
+                                        if (control > 50) break;        //å¾ªç’°è¶…é50å°±ä¸­æ–·
                                         room = env_rooms[random(sizeof(env_rooms))];
                                         env = get_object(room);
                                         if (!env)
-                                                log_file("static/party_quest",sprintf("ÃÅÅÉÈÎÎñ´íÎó¼ÇÂ¼£º%s\n",room));
+                                                log_file("static/party_quest",sprintf("é–€æ´¾ä»»å‹™éŒ¯èª¤è¨˜éŒ„ï¼š%s\n",room));
                                         if (! objectp(npc = present(all_static_npc[room], env)) ||
                                                       query("shen", npc)<0 )
                                         {
@@ -1775,40 +1775,40 @@ varargs mixed create_quest(string the_city,string bunch_type,object player)
                                         new_quest["time"]=time();
                                         new_quest["num"]=get_bianhao(the_city);
                                         new_quest["id"]=the_city+(string)new_quest["num"];
-                                        new_quest["type"] = "Ñ°ÕÒÎïÆ·";
+                                        new_quest["type"] = "å°‹æ‰¾ç‰©å“";
                                         switch(random(3))
                                         {
                                                 case 0:
                                                         obj_mapp = QUEST_GOOD_OBJ("0find")->query_questdg();
                                                         new_quest["obj_name"] = obj_mapp["name"];
                                                         new_quest["bonus"] = 500;
-                                                        new_quest["difficult"] = "ÈİÒ×";
-                                                        new_quest["reward"] = "ÉÙ";
+                                                        new_quest["difficult"] = "å®¹æ˜“";
+                                                        new_quest["reward"] = "å°‘";
                                                         break;
                                                 case 2:
                                                         obj_mapp = QUEST_GOOD_OBJ("1find")->query_questdg();
                                                         new_quest["obj_name"] = obj_mapp["name"];
                                                         new_quest["bonus"] = 900;
-                                                        new_quest["difficult"] = "ÖĞµÈ";
-                                                        new_quest["reward"] = "ÖĞµÈ";
+                                                        new_quest["difficult"] = "ä¸­ç­‰";
+                                                        new_quest["reward"] = "ä¸­ç­‰";
                                                         break;
                                                 case 1:
                                                         obj_mapp = QUEST_GOOD_OBJ("2find")->query_questdg();
                                                         new_quest["obj_name"] = obj_mapp["name"];
                                                         new_quest["bonus"] = 1300;
-                                                        new_quest["difficult"] = "À§ÄÑ";
-                                                        new_quest["reward"] = "¸ß";
+                                                        new_quest["difficult"] = "å›°é›£";
+                                                        new_quest["reward"] = "é«˜";
                                                         break;
                                         }
 
-                                        new_quest["name"]="°ï" + city[other_city]+ room->short() +
-                                                          "µÄ" + npc->name() +
-                                                          "ÕÒµ½" + new_quest["obj_name"];
+                                        new_quest["name"]="å¹«" + city[other_city]+ room->short() +
+                                                          "çš„" + npc->name() +
+                                                          "æ‰¾åˆ°" + new_quest["obj_name"];
 
                                         new_quest["msg"]=city[other_city] + room->short() +
-                                                          "µÄ" + npc->name() +
-                                                          "ĞèÒª" + new_quest["obj_name"] +
-                                                          "£¬ÄãÈ¥°ÑËüÕÒµ½²¢ËÍ¹ıÈ¥¡£";
+                                                          "çš„" + npc->name() +
+                                                          "éœ€è¦" + new_quest["obj_name"] +
+                                                          "ï¼Œä½ å»æŠŠå®ƒæ‰¾åˆ°ä¸¦é€éå»ã€‚";
                                         return new_quest;
                                 } else return 0;
                                 break;
@@ -1817,11 +1817,11 @@ varargs mixed create_quest(string the_city,string bunch_type,object player)
                                 env_rooms = keys(all_static_npc);
                                 for (;;)
                                 {
-                                        if (control > 50) break;        //Ñ­»·³¬¹ı50¾ÍÖĞ¶Ï
+                                        if (control > 50) break;        //å¾ªç’°è¶…é50å°±ä¸­æ–·
                                         room = env_rooms[random(sizeof(env_rooms))];
                                         env = get_object(room);
                                         if (!env)
-                                                log_file("static/party_quest",sprintf("ÃÅÅÉÈÎÎñ´íÎó¼ÇÂ¼£º%s\n",room));
+                                                log_file("static/party_quest",sprintf("é–€æ´¾ä»»å‹™éŒ¯èª¤è¨˜éŒ„ï¼š%s\n",room));
                                         if (! objectp(npc = present(all_static_npc[room], env)) ||
                                                       query("shen", npc)<0 )
                                         {
@@ -1836,47 +1836,47 @@ varargs mixed create_quest(string the_city,string bunch_type,object player)
                                         new_quest["time"]=time();
                                         new_quest["num"]=get_bianhao(the_city);
                                         new_quest["id"]=the_city+(string)new_quest["num"];
-                                        new_quest["type"] = "µ÷½â¾À·×";
+                                        new_quest["type"] = "èª¿è§£ç³¾ç´›";
                                         switch(random(3))
                                         {
                                                 case 0:
                                                         obj_mapp = QUEST_GOOD_OBJ("0find")->query_questdg();
                                                         new_quest["obj_name"] = obj_mapp["name"];
                                                         new_quest["bonus"] = 600;
-                                                        new_quest["difficult"] = "ÈİÒ×";
-                                                        new_quest["reward"] = "ÉÙ";
+                                                        new_quest["difficult"] = "å®¹æ˜“";
+                                                        new_quest["reward"] = "å°‘";
                                                         break;
                                                 case 2:
                                                         obj_mapp = QUEST_GOOD_OBJ("1find")->query_questdg();
                                                         new_quest["obj_name"] = obj_mapp["name"];
                                                         new_quest["bonus"] = 1000;
-                                                        new_quest["difficult"] = "ÖĞµÈ";
-                                                        new_quest["reward"] = "ÖĞµÈ";
+                                                        new_quest["difficult"] = "ä¸­ç­‰";
+                                                        new_quest["reward"] = "ä¸­ç­‰";
                                                         break;
                                                 case 1:
                                                         obj_mapp = QUEST_GOOD_OBJ("2find")->query_questdg();
                                                         new_quest["obj_name"] = obj_mapp["name"];
                                                         new_quest["bonus"] = 1400;
-                                                        new_quest["difficult"] = "À§ÄÑ";
-                                                        new_quest["reward"] = "¸ß";
+                                                        new_quest["difficult"] = "å›°é›£";
+                                                        new_quest["reward"] = "é«˜";
                                                         break;
                                         }
                                         jiufen_npc = new(CLASS_D("generate") + "/jiufen_npc");
                                         NPC_D->generate_cn_name(jiufen_npc);
                                         jiufen_npc->move(env);
-                                        message_vision("$N×ßÁË¹ıÀ´£¬¿´¼û$n£¬ÓÖÏ²ÓÖÅ­£ºÔ­À´Äã¶ãÔÚÕâÀï°¡£¡\n",jiufen_npc,npc);
+                                        message_vision("$Nèµ°äº†éä¾†ï¼Œçœ‹è¦‹$nï¼Œåˆå–œåˆæ€’ï¼šåŸä¾†ä½ èº²åœ¨é€™è£¡å•Šï¼\n",jiufen_npc,npc);
                                         jiufen_npc->set_leader(npc);
                                         jiufen_npc->set_jiufen_object(npc);
                                         jiufen_npc->set_quest_ob(new_quest["obj_name"]);
-                                        jiufen_npc->set("inquiry/¾À·×","TNND,"+npc->name()+
-                                                    "È¥Äê´ÓÎÒÕâÀïÄÃ×ßÁË" + new_quest["obj_name"] +
-                                                    "µ½ÏÖÔÚ»¹Ã»ÓĞ»¹¸øÎÒ£¡");
+                                        jiufen_npc->set("inquiry/ç³¾ç´›","TNND,"+npc->name()+
+                                                    "å»å¹´å¾æˆ‘é€™è£¡æ‹¿èµ°äº†" + new_quest["obj_name"] +
+                                                    "åˆ°ç¾åœ¨é‚„æ²’æœ‰é‚„çµ¦æˆ‘ï¼");
                                         new_quest["ob"]=jiufen_npc;
-                                        new_quest["name"]="°ï" + room->short() + "µÄ" + npc->name() +
-                                                          "µ÷½â¾À·×";
-                                        new_quest["msg"]=room->short() + "µÄ" + npc->name() +
-                                                          "ºÍ" + jiufen_npc->name() + "·¢ÉúÁË¾À·×£¬ÄãÈ¥" +
-                                                          "¸øËûÃÇµ÷½âÒ»ÏÂ°É¡£";
+                                        new_quest["name"]="å¹«" + room->short() + "çš„" + npc->name() +
+                                                          "èª¿è§£ç³¾ç´›";
+                                        new_quest["msg"]=room->short() + "çš„" + npc->name() +
+                                                          "å’Œ" + jiufen_npc->name() + "ç™¼ç”Ÿäº†ç³¾ç´›ï¼Œä½ å»" +
+                                                          "çµ¦ä»–å€‘èª¿è§£ä¸€ä¸‹å§ã€‚";
                                         return new_quest;
                                 } else return 0;
                                 break;
@@ -1890,11 +1890,11 @@ varargs mixed create_quest(string the_city,string bunch_type,object player)
                                 env_rooms = keys(all_static_npc);
                                 for (;;)
                                 {
-                                        if (control > 50) break;        //Ñ­»·³¬¹ı50¾ÍÖĞ¶Ï
+                                        if (control > 50) break;        //å¾ªç’°è¶…é50å°±ä¸­æ–·
                                         room = env_rooms[random(sizeof(env_rooms))];
                                         env = get_object(room);
                                         if (!env)
-                                                log_file("static/party_quest",sprintf("ÃÅÅÉÈÎÎñ´íÎó¼ÇÂ¼£º%s\n",room));
+                                                log_file("static/party_quest",sprintf("é–€æ´¾ä»»å‹™éŒ¯èª¤è¨˜éŒ„ï¼š%s\n",room));
                                         if (! objectp(npc = present(all_static_npc[room], env)) ||
                                                       query("shen", npc)>0 )
                                         {
@@ -1910,36 +1910,36 @@ varargs mixed create_quest(string the_city,string bunch_type,object player)
                                         new_quest["time"]=time();
                                         new_quest["num"]=get_bianhao(the_city);
                                         new_quest["id"]=the_city+(string)new_quest["num"];
-                                        new_quest["type"] = "Ñ°ÕÒÎïÆ·";
+                                        new_quest["type"] = "å°‹æ‰¾ç‰©å“";
                                         switch(random(3))
                                         {
                                                 case 0:
                                                         obj_mapp = QUEST_BAD_OBJ("0find")->query_questkh();
                                                         new_quest["obj_name"] = obj_mapp["name"];
                                                         new_quest["bonus"] = 500;
-                                                        new_quest["difficult"] = "ÈİÒ×";
-                                                        new_quest["reward"] = "ÉÙ";
+                                                        new_quest["difficult"] = "å®¹æ˜“";
+                                                        new_quest["reward"] = "å°‘";
                                                         break;
                                                 case 2:
                                                         obj_mapp = QUEST_BAD_OBJ("1find")->query_questkh();
                                                         new_quest["obj_name"] = obj_mapp["name"];
                                                         new_quest["bonus"] = 800;
-                                                        new_quest["difficult"] = "ÖĞµÈ";
-                                                        new_quest["reward"] = "ÖĞµÈ";
+                                                        new_quest["difficult"] = "ä¸­ç­‰";
+                                                        new_quest["reward"] = "ä¸­ç­‰";
                                                         break;
                                                 case 1:
                                                         obj_mapp = QUEST_BAD_OBJ("2find")->query_questkh();
                                                         new_quest["obj_name"] = obj_mapp["name"];
                                                         new_quest["bonus"] = 1100;
-                                                        new_quest["difficult"] = "À§ÄÑ";
-                                                        new_quest["reward"] = "¸ß";
+                                                        new_quest["difficult"] = "å›°é›£";
+                                                        new_quest["reward"] = "é«˜";
                                                         break;
                                         }
-                                        new_quest["name"]="°ï" + room->short() + "µÄ" + npc->name() +
-                                                          "ÕÒµ½" + new_quest["obj_name"];
-                                        new_quest["msg"]=room->short() + "µÄ" + npc->name() +
-                                                          "ĞèÒª" + new_quest["obj_name"] +
-                                                          "£¬ÄãÈ¥°ÑËüÕÒµ½²¢ËÍ¹ıÈ¥¡£";
+                                        new_quest["name"]="å¹«" + room->short() + "çš„" + npc->name() +
+                                                          "æ‰¾åˆ°" + new_quest["obj_name"];
+                                        new_quest["msg"]=room->short() + "çš„" + npc->name() +
+                                                          "éœ€è¦" + new_quest["obj_name"] +
+                                                          "ï¼Œä½ å»æŠŠå®ƒæ‰¾åˆ°ä¸¦é€éå»ã€‚";
                                         return new_quest;
                                 } else return 0;
                                 break;
@@ -1953,12 +1953,12 @@ varargs mixed create_quest(string the_city,string bunch_type,object player)
                                 room = env_rooms[random(sizeof(env_rooms))];
                                 env = get_object(room);
                                 if (!env)
-                                        log_file("static/party_quest",sprintf("ÃÅÅÉÈÎÎñ´íÎó¼ÇÂ¼£º%s\n",room));
+                                        log_file("static/party_quest",sprintf("é–€æ´¾ä»»å‹™éŒ¯èª¤è¨˜éŒ„ï¼š%s\n",room));
                                 npc->move(env);
                                 set("place", env->short(), npc);
                                 set("startroom", room, npc);
                                 set_temp("moved", ({}), npc);
-                                message_vision("$N×ßÁË¹ıÀ´¡£\n", npc);
+                                message_vision("$Nèµ°äº†éä¾†ã€‚\n", npc);
                                 random_move(npc);
                                 random_move(npc);
                                 random_move(npc);
@@ -1966,23 +1966,23 @@ varargs mixed create_quest(string the_city,string bunch_type,object player)
 
                                 new_quest = ([]);
 
-                                new_quest["type"]="²ù³ıÍâµĞ";
+                                new_quest["type"]="éŸé™¤å¤–æ•µ";
                                 new_quest["ob"]=npc;
                                 new_quest["time"]=time();
                                 new_quest["bunch_type"]="bad";
                                 new_quest["num"]=get_bianhao(the_city);
                                 new_quest["id"]=the_city+(string)new_quest["num"];
                                 new_quest["bonus"]=query("bonus", npc);
-                                new_quest["name"]="²ù³ıÀ´ÎÒÃÇ" + city[the_city] +
-                                                  "ÌôĞÆµÄ" + npc->name();
+                                new_quest["name"]="éŸé™¤ä¾†æˆ‘å€‘" + city[the_city] +
+                                                  "æŒ‘èˆ‹çš„" + npc->name();
                                 new_quest["place"]=query("place", npc);
                                 new_quest["difficult"]=check_difficult(query("lvl", npc));
                                 new_quest["reward"]=check_reward(query("lvl", npc));
-                                new_quest["msg"]=npc->name() + "ËØÈ»×ÔÃüÕıÅÉÈËÊ¿£¬ÀÏÊÇ¸úÎÒÃÇºÚµÀµÜĞÖ"+
-                                                 "×÷¶Ô£¬½ñÈÕÀ´µ½ÁËÎÒÃÇ" + city[the_city] +
-                                                 "µØ½ç¡£\n¿´ËûÖº¸ßÆøÑïµÄÑù×Ó£¬À´Õß²»ÉÆ£¡"+
-                                                 "¸ù¾İ×îĞÂÏûÏ¢£¬ËûÔÚ" + new_quest["place"] +
-                                                 "¸½½ü³öÏÖ¡£\nÕÒµ½Ëû£¬°ÑËû¸øÔ×ÁË£¡";
+                                new_quest["msg"]=npc->name() + "ç´ ç„¶è‡ªå‘½æ­£æ´¾äººå£«ï¼Œè€æ˜¯è·Ÿæˆ‘å€‘é»‘é“å¼Ÿå…„"+
+                                                 "ä½œå°ï¼Œä»Šæ—¥ä¾†åˆ°äº†æˆ‘å€‘" + city[the_city] +
+                                                 "åœ°ç•Œã€‚\nçœ‹ä»–è¶¾é«˜æ°£æšçš„æ¨£å­ï¼Œä¾†è€…ä¸å–„ï¼"+
+                                                 "æ ¹æ“šæœ€æ–°æ¶ˆæ¯ï¼Œä»–åœ¨" + new_quest["place"] +
+                                                 "é™„è¿‘å‡ºç¾ã€‚\næ‰¾åˆ°ä»–ï¼ŒæŠŠä»–çµ¦å®°äº†ï¼";
                                 return new_quest;
                                 break;
                         case 2:
@@ -1993,11 +1993,11 @@ varargs mixed create_quest(string the_city,string bunch_type,object player)
                                 env_rooms = keys(all_static_npc);
                                 for (;;)
                                 {
-                                        if (control > 50) break;        //Ñ­»·³¬¹ı50¾ÍÖĞ¶Ï
+                                        if (control > 50) break;        //å¾ªç’°è¶…é50å°±ä¸­æ–·
                                         room = env_rooms[random(sizeof(env_rooms))];
                                         env = get_object(room);
                                         if (!env)
-                                                log_file("static/party_quest",sprintf("ÃÅÅÉÈÎÎñ´íÎó¼ÇÂ¼£º%s\n",room));
+                                                log_file("static/party_quest",sprintf("é–€æ´¾ä»»å‹™éŒ¯èª¤è¨˜éŒ„ï¼š%s\n",room));
                                         if (! objectp(npc = present(all_static_npc[room], env)) ||
                                                       query("shen", npc)>0 )
                                         {
@@ -2009,24 +2009,24 @@ varargs mixed create_quest(string the_city,string bunch_type,object player)
                                 {
                                         new_quest = ([]);
                                         new_quest["bonus"]=600;
-                                        new_quest["difficult"]="ÈİÒ×";
-                                        new_quest["reward"]="ÉÙ";
+                                        new_quest["difficult"]="å®¹æ˜“";
+                                        new_quest["reward"]="å°‘";
                                         new_quest["target"]=base_name(npc);
                                         new_quest["bunch_type"]="bad";
                                         new_quest["time"]=time();
                                         new_quest["num"]=get_bianhao(the_city);
                                         new_quest["id"]=the_city+(string)new_quest["num"];
-                                        new_quest["type"] = "´«¿ÚĞÅ";
+                                        new_quest["type"] = "å‚³å£ä¿¡";
                                         new_quest["send_msg"] = need_send_msg[random(sizeof(need_send_msg ))];
-                                        new_quest["name"]="Ïò" + city[other_city]+ room->short() +
-                                                          "µÄ" + npc->name() +
-                                                          "´«Ò»¸ö¿ÚĞÅ";
+                                        new_quest["name"]="å‘" + city[other_city]+ room->short() +
+                                                          "çš„" + npc->name() +
+                                                          "å‚³ä¸€å€‹å£ä¿¡";
 
                                         new_quest["msg"]=city[other_city] + room->short() +
-                                                          "µÄ" + npc->name() +
-                                                          "Ò²ÊÇÎÒÃÇºÚµÀµÄĞÖµÜ£¬ÏÖÔÚĞèÒªÄã´«¸ö¿ÚĞÅ¸ø" +
-                                                          ((query("gender", npc) == "Å®ĞÔ")?"Ëı":"Ëû")+
-                                                          "¡£\nÄÚÈİÊÇ£º" + new_quest["send_msg"];
+                                                          "çš„" + npc->name() +
+                                                          "ä¹Ÿæ˜¯æˆ‘å€‘é»‘é“çš„å…„å¼Ÿï¼Œç¾åœ¨éœ€è¦ä½ å‚³å€‹å£ä¿¡çµ¦" +
+                                                          ((query("gender", npc) == "å¥³æ€§")?"å¥¹":"ä»–")+
+                                                          "ã€‚\nå…§å®¹æ˜¯ï¼š" + new_quest["send_msg"];
                                         return new_quest;
                                 } else return 0;
                                 break;
@@ -2035,11 +2035,11 @@ varargs mixed create_quest(string the_city,string bunch_type,object player)
                                 env_rooms = keys(all_static_npc);
                                 for (;;)
                                 {
-                                        if (control > 50) break;        //Ñ­»·³¬¹ı50¾ÍÖĞ¶Ï
+                                        if (control > 50) break;        //å¾ªç’°è¶…é50å°±ä¸­æ–·
                                         room = env_rooms[random(sizeof(env_rooms))];
                                         env = get_object(room);
                                         if (!env)
-                                                log_file("static/party_quest",sprintf("ÃÅÅÉÈÎÎñ´íÎó¼ÇÂ¼£º%s\n",room));
+                                                log_file("static/party_quest",sprintf("é–€æ´¾ä»»å‹™éŒ¯èª¤è¨˜éŒ„ï¼š%s\n",room));
                                         if (! objectp(npc = present(all_static_npc[room], env)) ||
                                                       query("shen", npc)>0 )
                                         {
@@ -2054,47 +2054,47 @@ varargs mixed create_quest(string the_city,string bunch_type,object player)
                                         new_quest["time"]=time();
                                         new_quest["num"]=get_bianhao(the_city);
                                         new_quest["id"]=the_city+(string)new_quest["num"];
-                                        new_quest["type"] = "µ÷½â¾À·×";
+                                        new_quest["type"] = "èª¿è§£ç³¾ç´›";
                                         switch(random(3))
                                         {
                                                 case 0:
                                                         obj_mapp = QUEST_GOOD_OBJ("0find")->query_questdg();
                                                         new_quest["obj_name"] = obj_mapp["name"];
                                                         new_quest["bonus"] = 600;
-                                                        new_quest["difficult"] = "ÈİÒ×";
-                                                        new_quest["reward"] = "ÉÙ";
+                                                        new_quest["difficult"] = "å®¹æ˜“";
+                                                        new_quest["reward"] = "å°‘";
                                                         break;
                                                 case 2:
                                                         obj_mapp = QUEST_GOOD_OBJ("1find")->query_questdg();
                                                         new_quest["obj_name"] = obj_mapp["name"];
                                                         new_quest["bonus"] = 900;
-                                                        new_quest["difficult"] = "ÖĞµÈ";
-                                                        new_quest["reward"] = "ÖĞµÈ";
+                                                        new_quest["difficult"] = "ä¸­ç­‰";
+                                                        new_quest["reward"] = "ä¸­ç­‰";
                                                         break;
                                                 case 1:
                                                         obj_mapp = QUEST_GOOD_OBJ("2find")->query_questdg();
                                                         new_quest["obj_name"] = obj_mapp["name"];
                                                         new_quest["bonus"] = 1300;
-                                                        new_quest["difficult"] = "À§ÄÑ";
-                                                        new_quest["reward"] = "¸ß";
+                                                        new_quest["difficult"] = "å›°é›£";
+                                                        new_quest["reward"] = "é«˜";
                                                         break;
                                         }
                                         jiufen_npc = new(CLASS_D("generate") + "/jiufen_npc");
                                         NPC_D->generate_cn_name(jiufen_npc);
                                         jiufen_npc->move(env);
-                                        message_vision("$N×ßÁË¹ıÀ´£¬¿´¼û$n£¬ÓÖÏ²ÓÖÅ­£ºÔ­À´Äã¶ãÔÚÕâÀï°¡£¡\n",jiufen_npc,npc);
+                                        message_vision("$Nèµ°äº†éä¾†ï¼Œçœ‹è¦‹$nï¼Œåˆå–œåˆæ€’ï¼šåŸä¾†ä½ èº²åœ¨é€™è£¡å•Šï¼\n",jiufen_npc,npc);
                                         jiufen_npc->set_leader(npc);
                                         jiufen_npc->set_jiufen_object(npc);
                                         jiufen_npc->set_quest_ob(new_quest["obj_name"]);
-                                        jiufen_npc->set("inquiry/¾À·×","ÆøËÀÎÒÁË,"+npc->name()+
-                                                    "È¥Äê´ÓÎÒÕâÀïÄÃ×ßÁË" + new_quest["obj_name"] +
-                                                    "µ½ÏÖÔÚ»¹Ã»ÓĞ»¹¸øÎÒ£¡");
+                                        jiufen_npc->set("inquiry/ç³¾ç´›","æ°£æ­»æˆ‘äº†,"+npc->name()+
+                                                    "å»å¹´å¾æˆ‘é€™è£¡æ‹¿èµ°äº†" + new_quest["obj_name"] +
+                                                    "åˆ°ç¾åœ¨é‚„æ²’æœ‰é‚„çµ¦æˆ‘ï¼");
                                         new_quest["ob"]=jiufen_npc;
-                                        new_quest["name"]="°ï" + room->short() + "µÄ" + npc->name() +
-                                                          "µ÷½â¾À·×";
-                                        new_quest["msg"]=room->short() + "µÄ" + npc->name() +
-                                                          "ºÍ" + jiufen_npc->name() + "·¢ÉúÁË¾À·×£¬ÄãÈ¥" +
-                                                          "¸øËûÃÇµ÷½âÒ»ÏÂ°É¡£";
+                                        new_quest["name"]="å¹«" + room->short() + "çš„" + npc->name() +
+                                                          "èª¿è§£ç³¾ç´›";
+                                        new_quest["msg"]=room->short() + "çš„" + npc->name() +
+                                                          "å’Œ" + jiufen_npc->name() + "ç™¼ç”Ÿäº†ç³¾ç´›ï¼Œä½ å»" +
+                                                          "çµ¦ä»–å€‘èª¿è§£ä¸€ä¸‹å§ã€‚";
                                         return new_quest;
                                 } else return 0;
                                 break;
@@ -2103,7 +2103,7 @@ varargs mixed create_quest(string the_city,string bunch_type,object player)
         return 0;
 }
 
-//±¾º¯ÊıÓÃÓÚ²éÕÒµØµãÁĞ±íµÄ´íÎó
+//æœ¬å‡½æ•¸ç”¨äºæŸ¥æ‰¾åœ°é»åˆ—è¡¨çš„éŒ¯èª¤
 void check_all_place()
 {
         int i,j;
@@ -2116,7 +2116,7 @@ void check_all_place()
                 the_place = place[city[all_city[i]]];
                 for (j = 0;j<sizeof(the_place);j++)
                         if (!objectp(env = get_object(the_place[j])))
-                                log_file("static/party_quest",sprintf("ÃÅÅÉÈÎÎñ´íÎó¼ÇÂ¼£º%s\n",the_place[j]));
+                                log_file("static/party_quest",sprintf("é–€æ´¾ä»»å‹™éŒ¯èª¤è¨˜éŒ„ï¼š%s\n",the_place[j]));
         }
 }
 

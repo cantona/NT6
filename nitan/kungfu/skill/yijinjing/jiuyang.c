@@ -12,22 +12,22 @@ int exert(object me, object target)
         int skill;
 
         if( !query("can_exert/yijinjing/jiuyang", me) )
-                return notify_fail("你还没有领悟过少林九阳真气呢！\n");
+                return notify_fail("浣犻倓娌掓湁闋樻偀閬庡皯鏋椾節闄界湡姘ｅ憿锛乗n");
 
         if ((int)me->query_skill("yijinjing", 1) < 140)
-                return notify_fail("你的易筋经修为如此之浅还想运用九阳真气？\n");
+                return notify_fail("浣犵殑鏄撶瓔缍撲慨鐐哄姝や箣娣洪倓鎯抽亱鐢ㄤ節闄界湡姘ｏ紵\n");
 
         if( query("max_neili", me)<1500 )
-                return notify_fail("你的内力修为太差，多多打坐吧。\n");
+                return notify_fail("浣犵殑鍏у姏淇偤澶樊锛屽澶氭墦鍧愬惂銆俓n");
 
         if( query("neili", me)<300 )
-                return notify_fail("你的真气不够。\n");
+                return notify_fail("浣犵殑鐪熸埃涓嶅銆俓n");
 
         if( query_temp("sl/jiuyang", me) )
-                return notify_fail("你已经在运真气增加攻击力。\n");
+                return notify_fail("浣犲凡缍撳湪閬嬬湡姘ｅ鍔犳敾鎿婂姏銆俓n");
 
         skill = me->query_skill("yijinjing",1);
-        message_combatd(HIR"\n$N潜运少林九阳神功，体内真气澎湃不息，全身佛光流动，宝相庄严！\n" NOR, me);
+        message_combatd(HIR"\n$N娼涢亱灏戞灄涔濋櫧绁炲姛锛岄珨鍏х湡姘ｆ編婀冧笉鎭紝鍏ㄨ韩浣涘厜娴佸嫊锛屽鐩歌帄鍤达紒\n" NOR, me);
 
         addn_temp("apply/attack", skill, me);
         set_temp("sl/jiuyang", 1, me);
@@ -43,6 +43,6 @@ void remove_effect(object me, int amount)
         if( query_temp("sl/jiuyang", me)){
                 addn_temp("apply/attack", -amount, me);
                 delete_temp("sl/jiuyang", me);
-                message_vision(HIY"$N将九阳真气收回丹田，面露慈祥笑容。\n" NOR, me);
+                message_vision(HIY"$N灏囦節闄界湡姘ｆ敹鍥炰腹鐢帮紝闈㈤湶鎱堢ゥ绗戝銆俓n" NOR, me);
         }
 }

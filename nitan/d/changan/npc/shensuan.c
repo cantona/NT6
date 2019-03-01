@@ -8,12 +8,12 @@ int ask_suanming();
 string ask_mimi();
 void create()
 {
-        set_name("ÈüÉñÏÉ", ({ "shensuan zi", "shensuan" }) );
-        set("nickname", "ÉñËã×Ó");
-        set("gender", "ÄĞĞÔ");
+        set_name("è³½ç¥ä»™", ({ "shensuan zi", "shensuan" }) );
+        set("nickname", "ç¥ç®—å­");
+        set("gender", "ç”·æ€§");
         set("age", 66);
         set("long",
-                "ÉñËã×ÓÕı×øÔÚ°åµÊÍ·Å¿ÔÚ×À×ÓÉÏË¯¾õ£¬ÍÙÒºÒ»Ö±Á÷µ½ÁË×À×Óµ×ÏÂ¡£\n");
+                "ç¥ç®—å­æ­£ååœ¨æ¿å‡³é ­è¶´åœ¨æ¡Œå­ä¸Šç¡è¦ºï¼Œå”¾æ¶²ä¸€ç›´æµåˆ°äº†æ¡Œå­åº•ä¸‹ã€‚\n");
         set("attitude", "peaceful");
         set_skill("taoism", 300);
         set_skill("force",200);
@@ -27,9 +27,9 @@ void create()
         set("shen_type", 1);
 
         set("inquiry", ([
-                "ËãÃü": (: ask_suanming :),
-                "ÃØÃÜ": (: ask_mimi :),
-                "ĞÅ": (: ask_letter :),
+                "ç®—å‘½": (: ask_suanming :),
+                "ç§˜å¯†": (: ask_mimi :),
+                "ä¿¡": (: ask_letter :),
         ]));
 
         setup();
@@ -55,7 +55,7 @@ int look_ob()
 int ask_suanming()
 {
         if( query_temp("knock", this_player())){
-                command("whisper "+query("id", this_player())+"Ã»µã³ÏÒâ£¬ÀÏ·òË¡ÄÑ´ÓÃü£¡\n");
+                command("whisper "+query("id", this_player())+"æ²’é»èª æ„ï¼Œè€å¤«æ•é›£å¾å‘½ï¼\n");
                 set_temp("knock", 0, this_player());
                 return 1;
         }
@@ -65,10 +65,10 @@ int ask_suanming()
 string ask_mimi()
 {
         object me=this_player();
-        if( !query_temp("mimi", me))return "Õâ¸öÂï£¬ÎÒ²»ÖªµÀÒ²£¡";
+        if( !query_temp("mimi", me))return "é€™å€‹å˜›ï¼Œæˆ‘ä¸çŸ¥é“ä¹Ÿï¼";
         delete_temp("mimi", me);
         set_temp("letter", 1, me);
-        return "ºÜ¶àÄêÇ°£¬ÎÒµÄÒ¯Ò¯µÄÒ¯Ò¯¸øÎÒÁôÏÂÒ»·âĞÅ£¬ÎÒÖªµÀĞÅÖĞÒş²Ø×ÅÒ»¸ö´óÃØÃÜ¡£";
+        return "å¾ˆå¤šå¹´å‰ï¼Œæˆ‘çš„çˆºçˆºçš„çˆºçˆºçµ¦æˆ‘ç•™ä¸‹ä¸€å°ä¿¡ï¼Œæˆ‘çŸ¥é“ä¿¡ä¸­éš±è—è‘—ä¸€å€‹å¤§ç§˜å¯†ã€‚";
 }
 
 int ask_letter()
@@ -76,19 +76,19 @@ int ask_letter()
         object ob,me=this_player();
         int p1;
         if (query("letter") < 1)
-                say("ÉñËã×ÓºÜÒÅº¶µÄËµµÀ£ºÕâÑù¶«Î÷ÎÒÒÑ¾­¸øÈËÁË¡£\n");
+                say("ç¥ç®—å­å¾ˆéºæ†¾çš„èªªé“ï¼šé€™æ¨£æ±è¥¿æˆ‘å·²ç¶“çµ¦äººäº†ã€‚\n");
         if( query("passwd1", me) )
         {
-                say("ÉñËã×ÓºÜ²»ÄÍ·³µÄËµµÀ£ºÎÒ°ÑÎÒÖªµÀµÄ¶¼¸æËßÄãÁË£¬»¹ÎÊÊ²Ã´Âï£¡\n");
+                say("ç¥ç®—å­å¾ˆä¸è€ç…©çš„èªªé“ï¼šæˆ‘æŠŠæˆ‘çŸ¥é“çš„éƒ½å‘Šè¨´ä½ äº†ï¼Œé‚„å•ä»€éº¼å˜›ï¼\n");
         }else
         if( query_temp("letter", me) )
         {
-                say("ÉñËã×ÓºÙºÙµÄ¼éĞ¦ÁË¼¸Éù£¬µÀ£ºÄãÏëÒªÕâ·âÊÖĞÅÂğ£¿\n");
-                write("ÉñËã×ÓÍáÍ·ÏëÁË»á£¬ËµµÀ£ººÃ°É£¡\n");
+                say("ç¥ç®—å­å˜¿å˜¿çš„å§¦ç¬‘äº†å¹¾è²ï¼Œé“ï¼šä½ æƒ³è¦é€™å°æ‰‹ä¿¡å—ï¼Ÿ\n");
+                write("ç¥ç®—å­æ­ªé ­æƒ³äº†æœƒï¼Œèªªé“ï¼šå¥½å§ï¼\n");
                 p1=random(6)+1;
                 set("passwd1", p1, me);
-                write("Õâ·âĞÅµÄºóÃæÒÑ¾­¿´²»µ½ÁË£¬µ«ÎÒÒşÔ¼¼ÇµÃÔø¶à´ÎÌáµ½"+CHINESE_D->chinese_number(p1)+"ÑùÊ²Ã´¶«Î÷µÄ¡£\n");
-                write("ÏÖÔÚÎÒ¾Í°ÑÕâ·âĞÅ½»¸øÄãÁË£¬ÎÒ¶ÔÕâ·âĞÅÒÑ¾­Ê§È¥ĞËÈ¤ÁË£¬°¦£¬ÄãÒª±£ÖØ°¡£¡£¡\n");
+                write("é€™å°ä¿¡çš„å¾Œé¢å·²ç¶“çœ‹ä¸åˆ°äº†ï¼Œä½†æˆ‘éš±ç´„è¨˜å¾—æ›¾å¤šæ¬¡æåˆ°"+CHINESE_D->chinese_number(p1)+"æ¨£ä»€éº¼æ±è¥¿çš„ã€‚\n");
+                write("ç¾åœ¨æˆ‘å°±æŠŠé€™å°ä¿¡äº¤çµ¦ä½ äº†ï¼Œæˆ‘å°é€™å°ä¿¡å·²ç¶“å¤±å»èˆˆè¶£äº†ï¼Œå”‰ï¼Œä½ è¦ä¿é‡å•Šï¼ï¼\n");
                 delete_temp("letter", me);
                 addn("letter", -1);
                 ob=present("letter",this_object());
@@ -96,7 +96,7 @@ int ask_letter()
                         ob=new("/d/changan/obj/letter.c");
                 ob->move(me);
         } else {
-                message("vision","ÉñËã×Ó²»ÖªµÀÄãÔÚËµÊ²Ã´Ò²£¡£¡\n", me);
+                message("vision","ç¥ç®—å­ä¸çŸ¥é“ä½ åœ¨èªªä»€éº¼ä¹Ÿï¼ï¼\n", me);
         }
         return 1;
 }
@@ -104,16 +104,16 @@ int ask_letter()
 int accept_object(object me, object ob)
 {
         command("smile");
-        command("say ºÙºÙ£¬¶àĞ»ÕâÎ»" + RANK_D->query_respect(me) + " £¡");
+        command("say å˜¿å˜¿ï¼Œå¤šè¬é€™ä½" + RANK_D->query_respect(me) + " ï¼");
         if( query("money_id", ob) && query("class", me) != "bonze" )
         {
                 if(ob->value() < 1000000)
                 {
-                        command("say °¦£¬½üÀ´ÉúÒâÄÑ×ö°¡£¬ÊÇ²»ÊÇÄÜÔÙ¸øµã...");
+                        command("say å”‰ï¼Œè¿‘ä¾†ç”Ÿæ„é›£åšå•Šï¼Œæ˜¯ä¸æ˜¯èƒ½å†çµ¦é»...");
                         return 1;
                 }else{
                         // command("smile shensuan");
-                        command("say ¸æËßÎÒ£¬" + RANK_D->query_respect(me) + "£¬ÄãÒªËã(suan)×Ô¼º£¬»¹ÊÇËãË­¡£");
+                        command("say å‘Šè¨´æˆ‘ï¼Œ" + RANK_D->query_respect(me) + "ï¼Œä½ è¦ç®—(suan)è‡ªå·±ï¼Œé‚„æ˜¯ç®—èª°ã€‚");
                         add_action("do_suan","suan");
                         set_temp("give_money", 1, me);
                         return 1;
@@ -132,7 +132,7 @@ int do_suan(string arg)
         if( !query_temp("give_money", me))return 0;
         if(!objectp(ob = find_player(name)) )   return 0;
         if( !ob || wizardp(ob)) {
-                command("tell "+query("id", me)+" Ğê£¬Ğ¡Éùµã£¬ÉñÏÉÎÒÔõÃ´¸ÒËã°¡¡£");
+                command("tell "+query("id", me)+" å™“ï¼Œå°è²é»ï¼Œç¥ä»™æˆ‘æ€éº¼æ•¢ç®—å•Šã€‚");
                 return 1;
         }
 
@@ -155,51 +155,51 @@ int do_suan(string arg)
                 case 0 :
                 if( str1+ntg1+dex1+per1+con1+kar1>(query("age", ob)+6)*6){
                         command("nod");
-                        command("say ²»´í£¬"+ob->name()+"Ò²»¹ËãĞŞÁ·ÓĞ·½¡£");
+                        command("say ä¸éŒ¯ï¼Œ"+ob->name()+"ä¹Ÿé‚„ç®—ä¿®ç·´æœ‰æ–¹ã€‚");
                 } else {
                         command("sigh");
-                        command("say "+ob->name()+"»¹ÒªÔÚ»ù±¾¹¦ÉÏ¶àÏÂµã¹¦·ò£¡");
+                        command("say "+ob->name()+"é‚„è¦åœ¨åŸºæœ¬åŠŸä¸Šå¤šä¸‹é»åŠŸå¤«ï¼");
                 }
                 break;
                 case 1 :
                 if(kar > 22) {
                         command("smile");
-                        command("say "+ob->name()+"¸£ÔµÉîºñ£¬¼ªÈË×ÔÓĞÌìÏà¡£");
+                        command("say "+ob->name()+"ç¦ç·£æ·±åšï¼Œå‰äººè‡ªæœ‰å¤©ç›¸ã€‚");
                 }else {
                         command("hmm");
-                        command("say "+ob->name()+"ÕâÒ»Éú¿´À´ÊÇ×¢¶¨Òª¶àÀúÄ¥ÄÑÁË¡£");
+                        command("say "+ob->name()+"é€™ä¸€ç”Ÿçœ‹ä¾†æ˜¯æ³¨å®šè¦å¤šæ­·ç£¨é›£äº†ã€‚");
                 }
                 break;
                 case 2 :
                 if( ntg>25 || ntg1>40+query("age", ob)){
                         command("nod");
-                        command("say "+ob->name()+"Ìì×Ê¹ıÈË£¬ÈôÄÜ¶à¼ÓÅ¬Á¦£¬±Ø¶¨ÄÜ³öÈËÍ·µØ¡£");
+                        command("say "+ob->name()+"å¤©è³‡éäººï¼Œè‹¥èƒ½å¤šåŠ åŠªåŠ›ï¼Œå¿…å®šèƒ½å‡ºäººé ­åœ°ã€‚");
                 } else {
                         command("shake");
-                        command("say "+ob->name()+"Èç¹ûÖªµÀ£¢±¿ÄñÏÈ·É£¢µÄµÀÀí£¬»¹ÊÇÓĞ»ú»áµÄ¡£");
+                        command("say "+ob->name()+"å¦‚æœçŸ¥é“ã€ç¬¨é³¥å…ˆé£›ã€çš„é“ç†ï¼Œé‚„æ˜¯æœ‰æ©Ÿæœƒçš„ã€‚");
                 }
                 break;
                 case 3 :
                 if(str > 25)
-                        command("say "+ob->name()+"Èç¹ûÓĞÒâ×êÑĞ£¬µ¹Ò²²»ÄÑ³ÉÎªÒ»´ú´óÏÀ¡£");
-                else    command("say "+ob->name()+"Ó¦¸Ã×¨¾«¼¸ÃÅÎä¹¦£¬²»¿ÉÒÔÌ°¶à¡£");
+                        command("say "+ob->name()+"å¦‚æœæœ‰æ„é‘½ç ”ï¼Œå€’ä¹Ÿä¸é›£æˆç‚ºä¸€ä»£å¤§ä¿ ã€‚");
+                else    command("say "+ob->name()+"æ‡‰è©²å°ˆç²¾å¹¾é–€æ­¦åŠŸï¼Œä¸å¯ä»¥è²ªå¤šã€‚");
                 break;
                 case 4 :
                 if(per > 23 ) {
                         command("nod");
-                        command("say "+ob->name()+"ÌìÉúÃÀÃ²£¬ÈôÄÜ¼ÌĞø±£Ñø£¬±Ø¶¨ÄÜ³¤Ãü°ÙËê");
+                        command("say "+ob->name()+"å¤©ç”Ÿç¾è²Œï¼Œè‹¥èƒ½ç¹¼çºŒä¿é¤Šï¼Œå¿…å®šèƒ½é•·å‘½ç™¾æ­²");
                 }else {
                         command("shake");
-                        command("say "+ob->name()+"ÏàÃ²ËäÈ»Èç´Ë£¬ÈôÄÜÑ°Ğ©ÏÉÔµ£¬»¹ÊÇ¿ÉÒÔÃÀÈİµÄ¡£");
+                        command("say "+ob->name()+"ç›¸è²Œé›–ç„¶å¦‚æ­¤ï¼Œè‹¥èƒ½å°‹äº›ä»™ç·£ï¼Œé‚„æ˜¯å¯ä»¥ç¾å®¹çš„ã€‚");
                 }
                 break;
                 case 5 :
                 if( dex1>(query("age", ob)+60)){
                         command("nod");
-                        command("say "+ob->name()+"ÉíÇáÈçÑà£¬ÒÑ´ïÒ»Î­¶É½­µÄÄÜÁ¦£¬ÔÙÏÂ¿à¹¦£¬¶¨³É´óÆ÷");
+                        command("say "+ob->name()+"èº«è¼•å¦‚ç‡•ï¼Œå·²é”ä¸€è‘¦æ¸¡æ±Ÿçš„èƒ½åŠ›ï¼Œå†ä¸‹è‹¦åŠŸï¼Œå®šæˆå¤§å™¨");
                 }else {
                         command("shake");
-                        command("say "+ob->name()+"²½·¥³ÁÖØ£¬ÔÚ½­ºşÖĞÌÓÃü²ÅÊÇÖØÒªµÄ£¬Á·´í¹¦ÁË°¡!");
+                        command("say "+ob->name()+"æ­¥ä¼æ²‰é‡ï¼Œåœ¨æ±Ÿæ¹–ä¸­é€ƒå‘½æ‰æ˜¯é‡è¦çš„ï¼Œç·´éŒ¯åŠŸäº†å•Š!");
                 }
                 break;
         }

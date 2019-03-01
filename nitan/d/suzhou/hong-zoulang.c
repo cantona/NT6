@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ºìÄï×¯×ßÀÈ");
+        set("short", "ç´…å¨˜èŽŠèµ°å»Š");
         set("long", @LONG
-×ßÀÈÁ½±ßÊÇºìÆá½ð·ÛµÄÀÈÖùµñÀ¸£¬¸ßµÍ´íÂäµØÌô×ÅÁ½ÅÅºìµÆÁý¡£
-µØÉÏÆÌ×ÅºñºñµÄ´óºìµØÌº£¬¼±´ý½á»éµÄÐÂÈËÃÇ½øÀ´²ÈÔÚÉÏÃæ£¬Ò»¹ÉÏ²
-ÇìÐÒ¸£Ö®¸Ð×ÔÐÄµ×ÓÍÈ»¶øÉú¡£Ç°ÃæÊÇÒ»¸ö²»´óµÄÃÅÌü¡£
+èµ°å»Šå…©é‚Šæ˜¯ç´…æ¼†é‡‘ç²‰çš„å»ŠæŸ±é›•æ¬„ï¼Œé«˜ä½ŽéŒ¯è½åœ°æŒ‘è‘—å…©æŽ’ç´…ç‡ˆç± ã€‚
+åœ°ä¸Šèˆ–è‘—åŽšåŽšçš„å¤§ç´…åœ°æ¯¯ï¼Œæ€¥å¾…çµå©šçš„æ–°äººå€‘é€²ä¾†è¸©åœ¨ä¸Šé¢ï¼Œä¸€è‚¡å–œ
+æ…¶å¹¸ç¦ä¹‹æ„Ÿè‡ªå¿ƒåº•æ²¹ç„¶è€Œç”Ÿã€‚å‰é¢æ˜¯ä¸€å€‹ä¸å¤§çš„é–€å»³ã€‚
 LONG );
         set("exits", ([
                 "west" : "/d/suzhou/hong-damen",

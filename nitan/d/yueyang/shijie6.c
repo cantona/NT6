@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��ʯ��");
+        set("short", "青石階");
         set("long", @LONG
-���Ǿ���ͤ����ʯ�ף��������ϣ��������¡������Ǿ���ͤ������
-�£����������������µĸߴ�����һ��ʯ̨��ÿ���ؤ���ɽ��ᣬ��
-������̨�Ͼ��С�
+這是酒香亭傍的石階，這裡往南，就是懸崖。北面是酒香亭。懸崖
+下，有龍虎猴三洞，崖的高處，有一座石台。每年的丐幫君山大會，都
+是在那台上舉行。
 LONG );
         set("outdoors", "dongting");
         set("no_clean_up", 0);

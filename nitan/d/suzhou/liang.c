@@ -11,9 +11,9 @@ void init()
 
 void create()
 {
-        set("short", "ÁºÉÏ");
+        set("short", "æ¨‘ä¸Š");
         set("long",@long
-ÕâÊÇ±ÌË®Í¤ÉÏµÄ·¿Áº£¬ÉÏÃæ»­ÂúÁËÏ£Ææ¹Å¹ÖµÄ×Ö»­¡£
+é€™æ˜¯ç¢§æ°´äº­ä¸Šçš„æˆ¿æ¨‘ï¼Œä¸Šé¢ç•«æ»¿äº†å¸Œå¥‡å¤æ€ªçš„å­—ç•«ã€‚
 long
         );
         set("outdoors","suzhou");
@@ -31,25 +31,25 @@ int lingwu(string arg)
         int bl,sl;
 
         if (!living(me)) return 0;
-        if (!arg) return notify_fail("ÄãÒªÁìÎòÊ²Ã´£¿\n");
+        if (!arg) return notify_fail("ä½ è¦é ˜æ‚Ÿä»€éº¼ï¼Ÿ\n");
         if (!find_object(SKILL_D(arg)))
 //         if (!find_object(SKILL_D(arg)))
-                return notify_fail("Ã»ÓĞÕâÖÖ¼¼ÄÜ¡£\n");
+                return notify_fail("æ²’æœ‰é€™ç¨®æŠ€èƒ½ã€‚\n");
         if (!me->query_skill(arg,1))
-                return notify_fail("Äã²»»áÕâÖÖ¼¼ÄÜ¡£\n");
+                return notify_fail("ä½ ä¸æœƒé€™ç¨®æŠ€èƒ½ã€‚\n");
         if (!(special=me->query_skill_mapped(arg)))
-                return notify_fail("ÄãÖ»ÄÜ´ÓÌØÊâ¼¼ÄÜÖĞÁìÎò¡£\n");
+                return notify_fail("ä½ åªèƒ½å¾ç‰¹æ®ŠæŠ€èƒ½ä¸­é ˜æ‚Ÿã€‚\n");
         bl=me->query_skill(arg,1);
         if( bl>query("jing", me) || 
                 query("jing", me)*100/query("max_jing", me)<20 )
         {
                 me->receive_damage("jing",bl/2);
-                return notify_fail("ÄãÃ»°ì·¨¼¯ÖĞ¾«Éñ¡£\n");
+                return notify_fail("ä½ æ²’è¾¦æ³•é›†ä¸­ç²¾ç¥ã€‚\n");
         }
         sl=me->query_skill(special,1);
         if (bl > sl)
-                return notify_fail("ÄãµÄ"+CHINESE_D->chinese(special)+"ÔìÒè²»¹»£¬ÎŞ·¨ÁìÎò¸üÉîÒ»²ãµÄ"+CHINESE_D->chinese(arg)+"¡£\n");
-        write("Äã¶Ô×Å×Ö»­î¨Ë¼¿àÏë£¬¶Ô"+CHINESE_D->chinese(arg)+"µÄÌå»áÓÖÉîÁËÒ»²ã¡£\n");
+                return notify_fail("ä½ çš„"+CHINESE_D->chinese(special)+"é€ è©£ä¸å¤ ï¼Œç„¡æ³•é ˜æ‚Ÿæ›´æ·±ä¸€å±¤çš„"+CHINESE_D->chinese(arg)+"ã€‚\n");
+        write("ä½ å°è‘—å­—ç•«ç‘æ€è‹¦æƒ³ï¼Œå°"+CHINESE_D->chinese(arg)+"çš„é«”æœƒåˆæ·±äº†ä¸€å±¤ã€‚\n");
         me->receive_damage("jing",bl/2);
         me->improve_skill(arg,sl/5+1);
         return 1;
@@ -58,13 +58,13 @@ int do_jump(string arg)
 {
         object me = this_player();
 
-        if (arg !="down") return notify_fail("ÄãÒªµ½ÄÇÈ¥£¿\n");
+        if (arg !="down") return notify_fail("ä½ è¦åˆ°é‚£å»ï¼Ÿ\n");
         if( arg=="down")
         {
-                write("Äã×İÉíÌøÏÂÁË·¿Áº¡£\n");
-                message("vision", me->name() + "Ò»×İÉíÌøÏÂÁË·¿Áº¡£\n", environment(me), ({me}) );
+                write("ä½ ç¸±èº«è·³ä¸‹äº†æˆ¿æ¨‘ã€‚\n");
+                message("vision", me->name() + "ä¸€ç¸±èº«è·³ä¸‹äº†æˆ¿æ¨‘ã€‚\n", environment(me), ({me}) );
                 me->move(__DIR__"bishuiting");
-                message("vision", me->name() + "´ÓÉÏÃæÌøÁËÏÂÀ´¡£\n", environment(me), ({me}) );
+                message("vision", me->name() + "å¾ä¸Šé¢è·³äº†ä¸‹ä¾†ã€‚\n", environment(me), ({me}) );
         }
         return 1;
 }

@@ -1,4 +1,4 @@
-// ÉÏ¹ÅÊ®´óÉñÆ÷Ö® ÕæÁúÊ¯ 
+// ä¸Šå¤åå¤§ç¥å™¨ä¹‹ çœŸé¾çŸ³ 
 // Create by Rcwiz for Hero.cn 2003/09
 
 #include <ansi.h>
@@ -9,17 +9,17 @@ int is_magic_item() { return 1; }
 
 void create()
 {
-        set_name(NOR + YEL + "ÕæÁúÊ¯" NOR, ({ "zhenlong shi", "zhenlong", "shi" }) );
+        set_name(NOR + YEL + "çœŸé¾çŸ³" NOR, ({ "zhenlong shi", "zhenlong", "shi" }) );
         set_weight(50);
         if (clonep())
                 set_default_object(__FILE__);
         else
         {
-                set("unit", "¿é");
-                set("long", NOR + YEL "ÕâÊÇÒ»¿é·º×ÅÆß²Ê¹âÃ¢µÄÊ¯Í·£¬´«Ëµ´ËÊ¯ÄË»ÆµÛµÄ"
-                                      "»¤Éí·û¡£\n"
-                                      "Ö»Òª´øÔÚÉíÉÏËÀÍöºó²»»á¶ªÊ§¾­Ñé£¬Ç±ÄÜÒÔ¼°¼¼ÄÜ¡£\n"
-                                      "´ËÉñÆ÷ÏÂÏßºó²»¶ªÊ§¡£\n" NOR);
+                set("unit", "å¡Š");
+                set("long", NOR + YEL "é€™æ˜¯ä¸€å¡Šæ³›è‘—ä¸ƒå½©å…‰èŠ’çš„çŸ³é ­ï¼Œå‚³èªªæ­¤çŸ³ä¹ƒé»ƒå¸çš„"
+                                      "è­·èº«ç¬¦ã€‚\n"
+                                      "åªè¦å¸¶åœ¨èº«ä¸Šæ­»äº¡å¾Œä¸æœƒä¸Ÿå¤±ç¶“é©—ï¼Œæ½›èƒ½ä»¥åŠæŠ€èƒ½ã€‚\n"
+                                      "æ­¤ç¥å™¨ä¸‹ç·šå¾Œä¸ä¸Ÿå¤±ã€‚\n" NOR);
 
         }
         setup();

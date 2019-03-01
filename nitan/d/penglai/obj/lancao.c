@@ -6,14 +6,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIG "À¼²İ" NOR, ({ "penglai lancao" }) );
+        set_name(HIG "è˜­è‰" NOR, ({ "penglai lancao" }) );
         set_weight(100);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Ã");
+                set("unit", "æ£µ");
                 set("value", 1);
-                set("long", HIY "ÕâÊÇÒ»¿ÃÀ¼²İ£¬ĞÎ×´ºÜÆæÌØ£¬ËÆºõÔÚÈË¼äÎ´Ôø¼û¹ı¡£\n" NOR);
+                set("long", HIY "é€™æ˜¯ä¸€æ£µè˜­è‰ï¼Œå½¢ç‹€å¾ˆå¥‡ç‰¹ï¼Œä¼¼ä¹åœ¨äººé–“æœªæ›¾è¦‹éã€‚\n" NOR);
         }
 
         setup();

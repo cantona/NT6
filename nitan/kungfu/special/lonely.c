@@ -1,12 +1,12 @@
-// lonely.c  ÌìÉ·¹ÂÐÇ
+// lonely.c  å¤©ç…žå­¤æ˜Ÿ
 
 #include <ansi.h>
 
 inherit F_CLEAN_UP;
 
-string name() { return CYN "ÌìÉ·¹ÂÐÇ" NOR; }
+string name() { return CYN "å¤©ç…žå­¤æ˜Ÿ" NOR; }
 
 int perform(object me, string skill)
 {
-        return notify_fail("ÌìÉ·¹ÂÐÇÕâÏî¼¼ÄÜ²»ÐèÒªÔËÓÃ¡£\n");
+        return notify_fail("å¤©ç…žå­¤æ˜Ÿé€™é …æŠ€èƒ½ä¸éœ€è¦é‹ç”¨ã€‚\n");
 }

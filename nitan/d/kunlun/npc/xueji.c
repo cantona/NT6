@@ -5,10 +5,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("Ñ©¼¦", ({ "xue ji","ji" }) );
-        set("race", "·ÉÇÝ");
+        set_name("é›ªé›ž", ({ "xue ji","ji" }) );
+        set("race", "é£›ç¦½");
         set("age", 2);
-        set("long", "Ò»Ö»·Ê·Ê°×°×µÄÑ©¼¦¡£\n");
+        set("long", "ä¸€åªè‚¥è‚¥ç™½ç™½çš„é›ªé›žã€‚\n");
 
         set("combat_exp", 100);
         set_temp("apply/attack", 20);
@@ -22,7 +22,7 @@ void create()
 void die()
 {
        object ob;
-       message_vision("$N²Òº¿Ò»Éù£¬ÂýÂýµ¹ÏÂËÀÁË£¡\n", this_object());
+       message_vision("$Næ…˜åšŽä¸€è²ï¼Œæ…¢æ…¢å€’ä¸‹æ­»äº†ï¼\n", this_object());
        ob = new(__DIR__"obj/xueji-rou");
        ob->move(environment(this_object()));
        destruct(this_object());

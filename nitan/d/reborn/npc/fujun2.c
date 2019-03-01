@@ -24,10 +24,10 @@ string *valid_types = ({
 
 void create()
 {
-        set_name(BLU "»ªÉ½¸®¾ı" NOR, ({ "huashan fujun", "huashan", "fujun" }));
-        set("long", "Ëû¾ÍÊÇ»ªÉ½¸®¾ı¡£\n");
-        set("title", HIW "Î÷ÔÀ" NOR);
-        set("gender", "ÄĞĞÔ");
+        set_name(BLU "è¯å±±åºœå›" NOR, ({ "huashan fujun", "huashan", "fujun" }));
+        set("long", "ä»–å°±æ˜¯è¯å±±åºœå›ã€‚\n");
+        set("title", HIW "è¥¿å²³" NOR);
+        set("gender", "ç”·æ€§");
         set("age", 50);
         set("str", 91);
         set("int", 39);
@@ -63,7 +63,7 @@ void create()
         prepare_skill("unarmed", "kuihua-mogong");
 
         set("inquiry", ([
-                "Ï×¼À"  : (: ask_offer : ),
+                "ç»ç¥­"  : (: ask_offer : ),
                 "offer" : (: ask_offer : ),
         ])); 
         
@@ -114,16 +114,16 @@ int ask_offer()
                 
         if( !objectp( ob = present("contract", me) ) ||
             query("owner", ob) != query("id", me)){
-                tell_object(me, BLU "»ªÉ½¸®¾ıËµµÀ£º¡¸Äã»¹Ã»ÓĞÈ¥ÁìÈ¡ÑÖÍõÆõ(contract)£¬ÎÒ²»»á½ÓÊÜÄãµÄÏ×¼ÀÇëÇó¡£¡¹\n" NOR);
+                tell_object(me, BLU "è¯å±±åºœå›èªªé“ï¼šã€Œä½ é‚„æ²’æœ‰å»é ˜å–é–»ç‹å¥‘(contract)ï¼Œæˆ‘ä¸æœƒæ¥å—ä½ çš„ç»ç¥­è«‹æ±‚ã€‚ã€\n" NOR);
                 return 1;
         }
 
-        message_vision(CYN "$N" CYN "ÑÈµÀ£º¡¸¼ÈÊÇÉí»³ÑÖÍõÆõ£¬±¾¸®¾ıÕâ±ã¸øÄãÒ»¸ö»ú»á°É¡£¡¹\n"
-                       CYN "$N" CYN "µÍÍ·ÉòÒ÷Æ¬¿ÌÓÖµÀ£º¡¸×ªÉú·ÇÍ¬Ñ°³££¬·ÇÓĞ¹ıÈËÖ®µ¨Ê¶ÔËÆø£¬²»ÄÜ³É´Ë´óÊÂ£¬ÎÒÕâ±ã´ı¿¼ÑéÄãÒ»·¬¡£¡¹\n"
-                       CYN "$N" CYN "ĞøµÀ£º¡¸ÄãÎÒÒÔËùÑ§Ö®Îä¹¦×÷Îª¶Ä×¢£¬ÎÒÃÇÀ´ºÀ¶ÄÒ»³¡ÈçºÎ£¿¡¹\n" NOR, 
+        message_vision(CYN "$N" CYN "è¨é“ï¼šã€Œæ—¢æ˜¯èº«æ‡·é–»ç‹å¥‘ï¼Œæœ¬åºœå›é€™ä¾¿çµ¦ä½ ä¸€å€‹æ©Ÿæœƒå§ã€‚ã€\n"
+                       CYN "$N" CYN "ä½é ­æ²ˆåŸç‰‡åˆ»åˆé“ï¼šã€Œè½‰ç”ŸéåŒå°‹å¸¸ï¼Œéæœ‰éäººä¹‹è†½è­˜é‹æ°£ï¼Œä¸èƒ½æˆæ­¤å¤§äº‹ï¼Œæˆ‘é€™ä¾¿å¾…è€ƒé©—ä½ ä¸€ç•ªã€‚ã€\n"
+                       CYN "$N" CYN "çºŒé“ï¼šã€Œä½ æˆ‘ä»¥æ‰€å­¸ä¹‹æ­¦åŠŸä½œç‚ºè³­æ³¨ï¼Œæˆ‘å€‘ä¾†è±ªè³­ä¸€å ´å¦‚ä½•ï¼Ÿã€\n" NOR, 
                        this_object(), me); 
                        
-        tell_object(me, BLU "»ªÉ½¸®¾ıÏëÒªÓëÄã¶Ä²©£¬ÄãÊÇ·ñÍ¬Òâ(answer yes/no)£¿\n" NOR);
+        tell_object(me, BLU "è¯å±±åºœå›æƒ³è¦èˆ‡ä½ è³­åšï¼Œä½ æ˜¯å¦åŒæ„(answer yes/no)ï¼Ÿ\n" NOR);
         add_action("do_answer", "answer"); 
                        
         return 1; 
@@ -137,20 +137,20 @@ int do_answer(string arg)
                 return 0;
                 
         if( arg == "yes" ) { 
-                message_vision(BLU "$N" BLU "´óĞ¦µÀ£º¡¸ºÃºÃºÃ£¡¹ûÈ»ÓĞ¹ıÈËÖ®µ¨Ê¶£¡\n"
-                               BLU "$N" BLU "ÌÍ³öÒ»Ã¶Í­Ç®ÍùÉÏÒ»Å×£¬Ö»¼ûÍ­Ç®·­×ª²»Ö¹ºóÂäÈë$N" BLU "ÕÆÖĞ£¬Ëæ¼´±ã±»½ô½ô¸Ç×¡¡£\n" NOR,
+                message_vision(BLU "$N" BLU "å¤§ç¬‘é“ï¼šã€Œå¥½å¥½å¥½ï¼æœç„¶æœ‰éäººä¹‹è†½è­˜ï¼\n"
+                               BLU "$N" BLU "æå‡ºä¸€æšéŠ…éŒ¢å¾€ä¸Šä¸€æ‹‹ï¼Œåªè¦‹éŠ…éŒ¢ç¿»è½‰ä¸æ­¢å¾Œè½å…¥$N" BLU "æŒä¸­ï¼Œéš¨å³ä¾¿è¢«ç·Šç·Šè“‹ä½ã€‚\n" NOR,
                                this_object(), me);
-                tell_object(me, BLU "»ªÉ½¸®¾ıµÀ£º¡¸ÄÃ(wager)Ò»ÃÅÏñÑùµÄ¼¼ÒÕ³öÀ´£¬È»ºó²Â²Â(guess)ÊÇÕıÃæ(front)»¹ÊÇ·´Ãæ(back)£¿²Â¶ÔÈı´Î±ãËãÄã¹ı¹Ø¡£¡¹\n" NOR);
+                tell_object(me, BLU "è¯å±±åºœå›é“ï¼šã€Œæ‹¿(wager)ä¸€é–€åƒæ¨£çš„æŠ€è—å‡ºä¾†ï¼Œç„¶å¾ŒçŒœçŒœ(guess)æ˜¯æ­£é¢(front)é‚„æ˜¯åé¢(back)ï¼ŸçŒœå°ä¸‰æ¬¡ä¾¿ç®—ä½ éé—œã€‚ã€\n" NOR);
                 set_temp("can_wager", 1, me);
                 add_action("do_wager", "wager");   
                 add_action("do_guess", "guess");             
         } else if( arg == "no" ) { 
-                message_vision(BLU "$N" BLU "´óÅ­µÀ£ºÄãÁ¬Õâµãµ¨Ê¶¶¼Ã»ÓĞ£¬»¹Ïë×ªÊÀ£¬¼òÖ±ÊÇ³ÕĞÄÍıÏë£¡\n" NOR,
+                message_vision(BLU "$N" BLU "å¤§æ€’é“ï¼šä½ é€£é€™é»è†½è­˜éƒ½æ²’æœ‰ï¼Œé‚„æƒ³è½‰ä¸–ï¼Œç°¡ç›´æ˜¯ç—´å¿ƒå¦„æƒ³ï¼\n" NOR,
                                this_object(), me); 
                 remove_call_out("destroy");
                 call_out("destroy", 1);
         } else 
-                return notify_fail("ÄãÒª»Ø´ğÊ²Ã´£¿\n"); 
+                return notify_fail("ä½ è¦å›ç­”ä»€éº¼ï¼Ÿ\n"); 
                 
         return 1; 
 }
@@ -166,21 +166,21 @@ int do_wager(string arg)
         if( query("worship", this_object()) != query("id", me) )
                 return 0;
                 
-        if( !arg ) return notify_fail("¸ñÊ½£ºwager skill\n");
+        if( !arg ) return notify_fail("æ ¼å¼ï¼šwager skill\n");
 
         if( !query_temp("can_wager", me) )
-                return notify_fail(BLU "»ªÉ½¸®¾ıÖåÃ¼µÀ£º¡£¡£¡£\n" NOR);
+                return notify_fail(BLU "è¯å±±åºœå›çšºçœ‰é“ï¼šã€‚ã€‚ã€‚\n" NOR);
         
         if( me->query_skillo(arg, 1) < 3000 )
-                return notify_fail(BLU "»ªÉ½¸®¾ıÖåÃ¼µÀ£º¡¸ÕâµãĞ¡ÍæÒâÄã»¹ÊÇÄÃ»Ø¼Ò×Ô¼ºÍæ°É¡£¡¹\n" NOR);       
+                return notify_fail(BLU "è¯å±±åºœå›çšºçœ‰é“ï¼šã€Œé€™é»å°ç©æ„ä½ é‚„æ˜¯æ‹¿å›å®¶è‡ªå·±ç©å§ã€‚ã€\n" NOR);       
                 
         if( !SKILL_D(arg)->valid_enable("parry") && 
             !SKILL_D(arg)->valid_enable("dodge") &&
             !SKILL_D(arg)->valid_enable("throwing") &&
             !SKILL_D(arg)->valid_enable("force")) 
-                return notify_fail(BLU "»ªÉ½¸®¾ıÖåÃ¼µÀ£º¡¸Äã»¹ÊÇÄÃ³öÒ»ÃÅÏñÑùµÄ¼¼ÒÕ°É¡£¡¹\n" NOR);
+                return notify_fail(BLU "è¯å±±åºœå›çšºçœ‰é“ï¼šã€Œä½ é‚„æ˜¯æ‹¿å‡ºä¸€é–€åƒæ¨£çš„æŠ€è—å§ã€‚ã€\n" NOR);
         
-        message_vision(HIW "$N" HIW "´óĞ¦µÀ£º¡°ºÃ°É£¬ÄÇÎÒ¾ÍÄÃÎÒËùÑ§" + to_chinese(arg) + "×÷Îª¶Ä×¢¡£¡±\n" NOR, me);
+        message_vision(HIW "$N" HIW "å¤§ç¬‘é“ï¼šâ€œå¥½å§ï¼Œé‚£æˆ‘å°±æ‹¿æˆ‘æ‰€å­¸" + to_chinese(arg) + "ä½œç‚ºè³­æ³¨ã€‚â€\n" NOR, me);
         set_temp("wager", arg, me);
 
         return 1;
@@ -199,18 +199,18 @@ int do_guess(string arg)
         if( !arg || (arg != "front" && arg != "back"))
                 return 0;       
         
-        message_vision(HIW "$N" HIW "½Ó×ÅµÀ£º¡°ÎÒ¶ÄÍ­°åÊÇ " + arg + " ÏòÉÏ¡£¡±\n" NOR, me);  
+        message_vision(HIW "$N" HIW "æ¥è‘—é“ï¼šâ€œæˆ‘è³­éŠ…æ¿æ˜¯ " + arg + " å‘ä¸Šã€‚â€\n" NOR, me);  
         if( random(10) < 5 ) {
-                message_vision(HIW "$N" HIW "½«ÊÖÕÆÌ¯¿ª£¬Í­°åÊÇÕıÃæ(front)ÏòÉÏ¡£\n" NOR, ob, me);
+                message_vision(HIW "$N" HIW "å°‡æ‰‹æŒæ”¤é–‹ï¼ŒéŠ…æ¿æ˜¯æ­£é¢(front)å‘ä¸Šã€‚\n" NOR, ob, me);
                 if( arg == "front" ) {
                         addn_temp("guess/win", 1, me);
                         if( query_temp("guess/win", me)<2 )
-                                message_vision(BLU "$N" BLU "µÀ£º¡¸ÄãÊ¤ÁËÒ»ÌË¡£¡¹\n" NOR, ob, me);
+                                message_vision(BLU "$N" BLU "é“ï¼šã€Œä½ å‹äº†ä¸€è¶Ÿã€‚ã€\n" NOR, ob, me);
                         else if( query_temp("guess/win", me) == 2 )
-                                message_vision(BLU "$N" BLU "µÀ£º¡¸²»´í²»´í£¬ÄãÊ¤ÁËÁ½ÌË¡£¡¹\n" NOR, ob, me);
+                                message_vision(BLU "$N" BLU "é“ï¼šã€Œä¸éŒ¯ä¸éŒ¯ï¼Œä½ å‹äº†å…©è¶Ÿã€‚ã€\n" NOR, ob, me);
                         else {
-                                message_vision(BLU "$N" BLU "Ğ¦µÀ£º¡¸½­É½´úÓĞ²ÅÈË³ö£¬¹ûÕæÊÇÑÖÍõÆõµÄÓĞÔµÈË£¡¡¹\n"
-                                               BLU "$N" BLU "ÓÖµÀ£º¡¸±¾¸®¾ı×îÖØÊÖÉÏ¹¦·ò£¬Äã±ØĞëÏ×¼À(offer)Ò»ÃÅ¿ÕÊÖÎä¼¼¡£¡¹\n" NOR, 
+                                message_vision(BLU "$N" BLU "ç¬‘é“ï¼šã€Œæ±Ÿå±±ä»£æœ‰æ‰äººå‡ºï¼ŒæœçœŸæ˜¯é–»ç‹å¥‘çš„æœ‰ç·£äººï¼ã€\n"
+                                               BLU "$N" BLU "åˆé“ï¼šã€Œæœ¬åºœå›æœ€é‡æ‰‹ä¸ŠåŠŸå¤«ï¼Œä½ å¿…é ˆç»ç¥­(offer)ä¸€é–€ç©ºæ‰‹æ­¦æŠ€ã€‚ã€\n" NOR, 
                                                ob, me);
                                 delete_temp("can_wager", me);
                                 delete_temp("wager", me);
@@ -219,22 +219,22 @@ int do_guess(string arg)
                                 add_action("do_offer", "offer");
                         }
                 } else {
-                        message_vision(BLU "$N" BLU "Ğ¦µÀ£º¡¸¿´À´ÄãÔËÆø²»¼Ñ°¡£¬Ã»ÊÂ£¬ÎÒÃÇÔÙÀ´£¡¡¹\n" NOR, ob, me);
+                        message_vision(BLU "$N" BLU "ç¬‘é“ï¼šã€Œçœ‹ä¾†ä½ é‹æ°£ä¸ä½³å•Šï¼Œæ²’äº‹ï¼Œæˆ‘å€‘å†ä¾†ï¼ã€\n" NOR, ob, me);
                         me->set_skill(query_temp("wager", me),200);
                         delete_temp("wager", me);
-                        tell_object(me, BLU "»ªÉ½¸®¾ıÁè¿ÕÒ»ÌÍ£¬ÄãºöÈ»¾õµÃ×Ô¼ºÉíÉÏÉÙÁËÊ²Ã´¡£\n" NOR);                        
+                        tell_object(me, BLU "è¯å±±åºœå›å‡Œç©ºä¸€æï¼Œä½ å¿½ç„¶è¦ºå¾—è‡ªå·±èº«ä¸Šå°‘äº†ä»€éº¼ã€‚\n" NOR);                        
                 }
         } else {
-                message_vision(HIC "$N" HIC "½«ÊÖÕÆÌ¯¿ª£¬Í­°åÊÇ·´Ãæ(back)ÏòÉÏ¡£\n" NOR, ob, me);
+                message_vision(HIC "$N" HIC "å°‡æ‰‹æŒæ”¤é–‹ï¼ŒéŠ…æ¿æ˜¯åé¢(back)å‘ä¸Šã€‚\n" NOR, ob, me);
                 if( arg == "back" ) {
                         addn_temp("guess/win", 1, me);
                         if( query_temp("guess/win", me)<2 )
-                                message_vision(BLU "$N" BLU "µÀ£º¡¸ÄãÊ¤ÁËÒ»ÌË¡£¡¹\n" NOR, ob, me);
+                                message_vision(BLU "$N" BLU "é“ï¼šã€Œä½ å‹äº†ä¸€è¶Ÿã€‚ã€\n" NOR, ob, me);
                         else if( query_temp("guess/win", me) == 2 )
-                                message_vision(BLU "$N" BLU "µÀ£º¡¸²»´í²»´í£¬ÄãÊ¤ÁËÁ½ÌË¡£¡¹\n" NOR, ob, me);
+                                message_vision(BLU "$N" BLU "é“ï¼šã€Œä¸éŒ¯ä¸éŒ¯ï¼Œä½ å‹äº†å…©è¶Ÿã€‚ã€\n" NOR, ob, me);
                         else {
-                                message_vision(BLU "$N" BLU "Ğ¦µÀ£º¡¸½­É½´úÓĞ²ÅÈË³ö£¬¹ûÕæÊÇÑÖÍõÆõµÄÓĞÔµÈË£¡¡¹\n"
-                                               BLU "$N" BLU "ÓÖµÀ£º¡¸±¾¸®¾ı×îÖØÊÖÉÏ¹¦·ò£¬Äã±ØĞëÏ×¼À(offer)Ò»ÃÅ¿ÕÊÖÎä¼¼¡£¡¹\n" NOR, 
+                                message_vision(BLU "$N" BLU "ç¬‘é“ï¼šã€Œæ±Ÿå±±ä»£æœ‰æ‰äººå‡ºï¼ŒæœçœŸæ˜¯é–»ç‹å¥‘çš„æœ‰ç·£äººï¼ã€\n"
+                                               BLU "$N" BLU "åˆé“ï¼šã€Œæœ¬åºœå›æœ€é‡æ‰‹ä¸ŠåŠŸå¤«ï¼Œä½ å¿…é ˆç»ç¥­(offer)ä¸€é–€ç©ºæ‰‹æ­¦æŠ€ã€‚ã€\n" NOR, 
                                                ob, me);
                                 delete_temp("can_wager", me);
                                 delete_temp("wager", me);
@@ -243,10 +243,10 @@ int do_guess(string arg)
                                 add_action("do_offer", "offer");
                         }
                 } else {
-                        message_vision(BLU "$N" BLU "Ğ¦µÀ£º¡¸¿´À´ÄãÔËÆø²»¼Ñ°¡£¬Ã»ÊÂ£¬ÎÒÃÇÔÙÀ´£¡¡¹\n" NOR, ob, me);
+                        message_vision(BLU "$N" BLU "ç¬‘é“ï¼šã€Œçœ‹ä¾†ä½ é‹æ°£ä¸ä½³å•Šï¼Œæ²’äº‹ï¼Œæˆ‘å€‘å†ä¾†ï¼ã€\n" NOR, ob, me);
                         me->set_skill(query_temp("wager", me),200);
                         delete_temp("wager", me);
-                        tell_object(me, BLU "»ªÉ½¸®¾ıÁè¿ÕÒ»ÌÍ£¬ÄãºöÈ»¾õµÃ×Ô¼ºÉíÉÏÉÙÁËÊ²Ã´¡£\n" NOR);                        
+                        tell_object(me, BLU "è¯å±±åºœå›å‡Œç©ºä¸€æï¼Œä½ å¿½ç„¶è¦ºå¾—è‡ªå·±èº«ä¸Šå°‘äº†ä»€éº¼ã€‚\n" NOR);                        
                 }                
         }      
         return 1;
@@ -261,23 +261,23 @@ void do_broadcast(int index)
         {
         case(0):
                 tell_room(environment(),
-                        BLU "»ªÉ½¸®¾ıµãÍ·µÀ£º¡¸Èç´ËÉõºÃ£¬ÎÒÕâ±ã¼ÇÔØµ½ÑÖÍõÆõÉÏ¡£¡¹\n" NOR);
+                        BLU "è¯å±±åºœå›é»é ­é“ï¼šã€Œå¦‚æ­¤ç”šå¥½ï¼Œæˆ‘é€™ä¾¿è¨˜è¼‰åˆ°é–»ç‹å¥‘ä¸Šã€‚ã€\n" NOR);
                 break;
         case(1):
                 tell_room(environment(),
-                        BLU "Ö»¼û»ªÉ½¸®¾ıà«à«ÓĞ´Ê£¬Õ§Ê±É½á°ÂÒ¶¯¡¢ÔÆ¼äÒç³ö¹âÃ¢£¬Ö»¼ûÒ»ÊÚ°¸Æ®È»¶øÏÂ£¬ÆäÉÏÎÄ·¿ËÄ±¦Ò»Ó¦¾ãÈ«¡£\n" NOR);
+                        BLU "åªè¦‹è¯å±±åºœå›å–ƒå–ƒæœ‰è©ï¼Œä¹æ™‚å±±åµäº‚å‹•ã€é›²é–“æº¢å‡ºå…‰èŠ’ï¼Œåªè¦‹ä¸€æˆæ¡ˆé£„ç„¶è€Œä¸‹ï¼Œå…¶ä¸Šæ–‡æˆ¿å››å¯¶ä¸€æ‡‰ä¿±å…¨ã€‚\n" NOR);
                 break;
         case(2):
                 tell_room(environment(),
-                        BLU "»ªÉ½¸®¾ıÌá±Ê»ÓÈ÷£¬Ö»¼ûË¿Ë¿×Ï¹âÉøÈëÑÖÍõÆõÉÏ£¬Æ¬¿Ì¼´³É¡£\n" NOR);
+                        BLU "è¯å±±åºœå›æç­†æ®æ´’ï¼Œåªè¦‹çµ²çµ²ç´«å…‰æ»²å…¥é–»ç‹å¥‘ä¸Šï¼Œç‰‡åˆ»å³æˆã€‚\n" NOR);
                 break;
         case(3):
                 tell_room(environment(),
-                        BLU "»ªÉ½¸®¾ıÂúÒâµÀ£º¡¸Õâ±ã³ÉÁË¡£±¾¸®¾ı¹¦³ÉÉíÍË£¬Ğ¡ÓÑ¶à¶à±£ÖØ¡£¡¹\n" NOR);
+                        BLU "è¯å±±åºœå›æ»¿æ„é“ï¼šã€Œé€™ä¾¿æˆäº†ã€‚æœ¬åºœå›åŠŸæˆèº«é€€ï¼Œå°å‹å¤šå¤šä¿é‡ã€‚ã€\n" NOR);
                 break;
         default:
                 tell_room(environment(),
-                        BLU "»ªÉ½¸®¾ı»¯×öÒ»ÕóÇåÑÌÏûÊ§£¬×ªË²±ãÒÑÆ®ÃìÎŞ×Ù¡£\nÊÚ°¸»¯×öÒ»ÕóÇåÑÌÏûÊ§£¬×ªË²±ãÒÑÆ®ÃìÎŞ×Ù¡£\n" NOR);
+                        BLU "è¯å±±åºœå›åŒ–åšä¸€é™£æ¸…ç…™æ¶ˆå¤±ï¼Œè½‰ç¬ä¾¿å·²é£„æ¸ºç„¡è¹¤ã€‚\næˆæ¡ˆåŒ–åšä¸€é™£æ¸…ç…™æ¶ˆå¤±ï¼Œè½‰ç¬ä¾¿å·²é£„æ¸ºç„¡è¹¤ã€‚\n" NOR);
 
                 remove_call_out("destroy");
                 destruct(this_object());
@@ -299,24 +299,24 @@ int do_offer(string arg)
                 return 0;
                 
         if( !arg || sscanf(arg, "%s %d", skill, level) != 2 )
-                return notify_fail("¸ñÊ½£ºoffer skill level\n");
+                return notify_fail("æ ¼å¼ï¼šoffer skill level\n");
 
         if( !objectp( ob = present("contract", me) ) ||
                 query("owner", ob) != query("id", me) )
-                return notify_fail(BLU "»ªÉ½¸®¾ıËµµÀ£º¡¸Äã»¹Ã»ÓĞÈ¥ÁìÈ¡ÑÖÍõÆõ(contract)£¬ÎÒ²»»á½ÓÊÜÄãµÄÏ×¼ÀÇëÇó¡£¡¹\n" NOR);
+                return notify_fail(BLU "è¯å±±åºœå›èªªé“ï¼šã€Œä½ é‚„æ²’æœ‰å»é ˜å–é–»ç‹å¥‘(contract)ï¼Œæˆ‘ä¸æœƒæ¥å—ä½ çš„ç»ç¥­è«‹æ±‚ã€‚ã€\n" NOR);
 
         if( query("offer_huashan", ob) )
-                return notify_fail(BLU "»ªÉ½¸®¾ıËµµÀ£º¡¸ÄãÒÑ¾­ÔÚ»ªÉ½Ï×¼À¹ıÁË£¬¾Í²»ÓÃÔÙÀ´Ï×¼À°É¡£¡¹\n" NOR);
+                return notify_fail(BLU "è¯å±±åºœå›èªªé“ï¼šã€Œä½ å·²ç¶“åœ¨è¯å±±ç»ç¥­éäº†ï¼Œå°±ä¸ç”¨å†ä¾†ç»ç¥­å§ã€‚ã€\n" NOR);
                 
         if( !query_temp("can_offer", me) || 
                 query_temp("can_offer", me) != query("id", this_object()) )
-                return notify_fail(BLU "»ªÉ½¸®¾ıÖåÃ¼µÀ£º¡¸Äã»¹ÊÇÏÈÈ¥Íê³ÉÎÒµÄÌõ¼şÔÙÀ´Ï×¼À°É¡£¡¹\n" NOR);
+                return notify_fail(BLU "è¯å±±åºœå›çšºçœ‰é“ï¼šã€Œä½ é‚„æ˜¯å…ˆå»å®Œæˆæˆ‘çš„æ¢ä»¶å†ä¾†ç»ç¥­å§ã€‚ã€\n" NOR);
 
         if( me->query_skillo(skill, 1) < 3000 || level < 3000 )
-                return notify_fail(BLU "»ªÉ½¸®¾ıÖåÃ¼µÀ£º¡¸ÄãÏ×¼ÀµÄ¼¼ÄÜµÈ¼¶±ØĞë´ïµ½3000¼¶£¡¡¹\n" NOR);
+                return notify_fail(BLU "è¯å±±åºœå›çšºçœ‰é“ï¼šã€Œä½ ç»ç¥­çš„æŠ€èƒ½ç­‰ç´šå¿…é ˆé”åˆ°3000ç´šï¼ã€\n" NOR);
 
         if( me->query_skillo(skill, 1) < level )
-                return notify_fail(BLU "»ªÉ½¸®¾ıÖåÃ¼µÀ£º¡¸ÄãÕâÃÅ¼¼ÄÜÃ»ÓĞÕâÃ´¸ßµÄµÈ¼¶¡£¡¹\n" NOR);
+                return notify_fail(BLU "è¯å±±åºœå›çšºçœ‰é“ï¼šã€Œä½ é€™é–€æŠ€èƒ½æ²’æœ‰é€™éº¼é«˜çš„ç­‰ç´šã€‚ã€\n" NOR);
         
         unarmed = 0;
         for( i=0; i<sizeof(valid_types); i++ ) {
@@ -325,15 +325,15 @@ int do_offer(string arg)
                         break;
                 }
         }                
-        if( !unarmed ) return notify_fail(BLU "»ªÉ½¸®¾ıÖåÃ¼µÀ£º¡¸Äã»¹ÊÇÏÈÏ×¼À¸ö¿ÕÊÖ¼¼ÄÜ°É¡£¡¹\n" NOR);
+        if( !unarmed ) return notify_fail(BLU "è¯å±±åºœå›çšºçœ‰é“ï¼šã€Œä½ é‚„æ˜¯å…ˆç»ç¥­å€‹ç©ºæ‰‹æŠ€èƒ½å§ã€‚ã€\n" NOR);
 
         me->add_skill(skill, -level); 
         delete_temp("can_offer", me);
         set("offer/"+skill, level, me);
         
-        message_vision( HIR "$N" HIR "ÂÔÒ»³ÁË¼µÀ£º¡¸¼ÈÈ»Èç´Ë£¬ÎªÏÔ³ÏÒâ£¬ÎÒ¾ö¶¨Ï×¼À" + to_chinese(skill) + level + "¼¶¡£¡¹\n" NOR, me );
-        tell_object(me, BLU "»ªÉ½¸®¾ıÁè¿ÕÒ»ÌÍ£¬ÄãºöÈ»¾õµÃ×Ô¼ºÉíÉÏÉÙÁËÊ²Ã´¡£\n" NOR);                      
-        msg = HIW + NATURE_D->game_time() + "£¬" + me->query_idname() + HIW "ÓÚ»ªÉ½Ï×¼À" + to_chinese(skill) + level + "¼¶¡£\n";
+        message_vision( HIR "$N" HIR "ç•¥ä¸€æ²‰æ€é“ï¼šã€Œæ—¢ç„¶å¦‚æ­¤ï¼Œç‚ºé¡¯èª æ„ï¼Œæˆ‘æ±ºå®šç»ç¥­" + to_chinese(skill) + level + "ç´šã€‚ã€\n" NOR, me );
+        tell_object(me, BLU "è¯å±±åºœå›å‡Œç©ºä¸€æï¼Œä½ å¿½ç„¶è¦ºå¾—è‡ªå·±èº«ä¸Šå°‘äº†ä»€éº¼ã€‚\n" NOR);                      
+        msg = HIW + NATURE_D->game_time() + "ï¼Œ" + me->query_idname() + HIW "äºè¯å±±ç»ç¥­" + to_chinese(skill) + level + "ç´šã€‚\n";
         
         rec=query("offer", ob);
         if( ! rec ) rec = ({});
@@ -347,7 +347,7 @@ int do_offer(string arg)
 
 void destroy()
 {
-        message_vision( BLU "$N»¯×öÒ»ÕóÇåÑÌÏûÊ§£¬×ªË²±ãÒÑÆ®ÃìÎŞ×Ù¡£\n" NOR,
+        message_vision( BLU "$NåŒ–åšä¸€é™£æ¸…ç…™æ¶ˆå¤±ï¼Œè½‰ç¬ä¾¿å·²é£„æ¸ºç„¡è¹¤ã€‚\n" NOR,
                         this_object() );
         destruct(this_object());
         return;

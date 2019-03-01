@@ -1,4 +1,4 @@
-// pine_forest10.c ËÉÁÖĞ¡Ïª
+// pine_forest10.c é¬†æ—å°æºª
 // Last Modified by winder on Aug. 18 2002
 
 #include <localtime.h>
@@ -11,10 +11,10 @@ void create()
         object *ob;
         local = localtime(time()*60);
 
-        set("short", HIM"ËÉÖĞ²İµØ"NOR);
+        set("short", HIM"é¬†ä¸­è‰åœ°"NOR);
         set("long", @LONG
-ÑÛÇ°»ô»íÈ»¿ªÀÊ£¬ÃÜÁÖÖĞÂ¶³öÒ»Æ¬¿ÕµØ£¬ÖĞ¼äÒ»ÌõÏªË®äıäıÁ÷¹ı¡£
-Ïª±ßÆæ»¨Òì²İ£¬³¤µÃÌØ±ğÏÊÑŞ¡£
+çœ¼å‰éœè±ç„¶é–‹æœ—ï¼Œå¯†æ—ä¸­éœ²å‡ºä¸€ç‰‡ç©ºåœ°ï¼Œä¸­é–“ä¸€æ¢æºªæ°´æ½ºæ½ºæµéã€‚
+æºªé‚Šå¥‡èŠ±ç•°è‰ï¼Œé•·å¾—ç‰¹åˆ¥é®®è‰·ã€‚
 LONG
         );
         if( local[LT_MON] > 5 && local[LT_MON] < 10 )
@@ -39,6 +39,6 @@ void init()
         object me = this_player();
         
         if( !objectp(query_temp("armor/boots", me)) )
-                me->receive_damage("qi", 10, "±»ËÉÕëÔúËÀÁË");  
+                me->receive_damage("qi", 10, "è¢«é¬†é‡ç´®æ­»äº†");  
 
 }

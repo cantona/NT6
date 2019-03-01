@@ -9,21 +9,21 @@ int  is_stay_in_room()  { return 1; }
 
 void create()
 {
-        set_name(HIC "ÏåÑôÊØ¾ü" NOR, ({"xiangyang shoujun", "shoujun" }));
-        set("gender", "ÄÐÐÔ");
+        set_name(HIC "è¥„é™½å®ˆè»" NOR, ({"xiangyang shoujun", "shoujun" }));
+        set("gender", "ç”·æ€§");
         set("age", 20 + random(20));
-        set("long", "ÕâÊÇÒ»Î»ÏåÑôµÄÊ¿±ø£¬³¤ÄêÓëÃÉ¹ÅÈË×÷Õ½£¡");
+        set("long", "é€™æ˜¯ä¸€ä½è¥„é™½çš„å£«å…µï¼Œé•·å¹´èˆ‡è’™å¤äººä½œæˆ°ï¼");
         set("chat_chance", 120);
         set("chat_msg", ({ (: random_move :) }));
         
         set("no_get", 1);
 
-        // ÏåÑôÊ¿±ø±êÖ¾
+        // è¥„é™½å£«å…µæ¨™å¿—
         set("xybing", 1);
 
         set_temp("apply/armor", 1000);
         set_temp("apply/damage", 3000);
-        set_temp("apply/attack", 100000); // ¸ßÃüÖÐ
+        set_temp("apply/attack", 100000); // é«˜å‘½ä¸­
 
         set("str", 50);
         set("int", 10 + random(14));
@@ -45,7 +45,7 @@ void create()
                 
         set_temp("born_time", time());
 
-        set_temp("dest_now", 0); // ³·ÍË±ê¼Ç 0 Îª²»³·ÍË¼ÌÐøÕ½¶·
+        set_temp("dest_now", 0); // æ’¤é€€æ¨™è¨˜ 0 ç‚ºä¸æ’¤é€€ç¹¼çºŒæˆ°é¬¥
 
         setup();
 
@@ -57,7 +57,7 @@ void create()
 
 int accept_fight(object ob)
 {
-        command("say ÎÒ¿ÉÃ»ÐËÈ¤ÅãÄãÍæ£¬¿ì¸øÎÒ¹ö¿ª¡£");
+        command("say æˆ‘å¯æ²’èˆˆè¶£é™ªä½ çŽ©ï¼Œå¿«çµ¦æˆ‘æ»¾é–‹ã€‚");
         return 0;
 }
 
@@ -68,17 +68,17 @@ int accept_hit(object ob)
 
 int accept_ansuan(object ob)
 {
-        return notify_fail("ÄÇÈË¾¯ÌèÐÔºÃ¸ß£¬ÄãÄÑÒÔÏÂÊÖ¡£\n");
+        return notify_fail("é‚£äººè­¦æƒ•æ€§å¥½é«˜ï¼Œä½ é›£ä»¥ä¸‹æ‰‹ã€‚\n");
 }
 
 int accept_touxi(object ob)
 {
-        return notify_fail("ÄÇÈË¾¯ÌèÐÔºÃ¸ß£¬ÄãÄÑÒÔÏÂÊÖ¡£\n");
+        return notify_fail("é‚£äººè­¦æƒ•æ€§å¥½é«˜ï¼Œä½ é›£ä»¥ä¸‹æ‰‹ã€‚\n");
 }
 
 void die()
 {
-        // Õý³£ËÀÍö
+        // æ­£å¸¸æ­»äº¡
         XYWAR_D->soldier_die("xiangyang");
         ::die();
 
@@ -90,14 +90,14 @@ void heart_beat()
         object env;
         string route;
         
-        // ½ÓÊÜµ÷¶¯
+        // æŽ¥å—èª¿å‹•
         if (XYWAR_D->is_moved())
         {
                 env = environment(this_object());
                 
                 if (! objectp(env))return ::heart_beat();
                 
-                // ÒÑ¾­µ½ÁËÔò²»µ÷¶¯
+                // å·²ç¶“åˆ°äº†å‰‡ä¸èª¿å‹•
                 if (base_name(env) == XYWAR_D->xy_soldier_poision("env"))
                         return ::heart_beat();
                         
@@ -129,19 +129,19 @@ void random_move()
                 return;
         }
 
-        // ¼ì²éÏåÑô±£ÎÀÕ½ÊÇ·ñ½áÊø
+        // æª¢æŸ¥è¥„é™½ä¿è¡›æˆ°æ˜¯å¦çµæŸ
         if (XYWAR_D->dest_status() == 1)
         {
                 set_temp("dest_now", 1);
         }
 /*
-        // ¹ù¾¸ËÀÍö£¬³·ÍË
+        // éƒ­é–æ­»äº¡ï¼Œæ’¤é€€
         if (XYWAR_D->is_guojing_die())
         {
                 set_temp("dest_now", 1);
         }
 */
-        // ÊØ»¤·½Î»
+        // å®ˆè­·æ–¹ä½
         route = query("route");
         
         if (stringp(route))command("guard " + route);
@@ -154,13 +154,13 @@ void init()
         if (! living(me) || me->query_temp("apply/invisible"))
                  return;
 
-        // ÏåÑô±ø²»Ïà»¥Õ½¶·
+        // è¥„é™½å…µä¸ç›¸äº’æˆ°é¬¥
         if (! me->query("mgbing"))return;                        
 
         if (playerp(me))return;
 
-        // ÑÓ³ÙÒ»¶¨Ê±¼ä¹¥»÷
-        // ÎªÁËÉèÖÃfighting±ê¼ÇÒ²¸üÕæÊµ
+        // å»¶é²ä¸€å®šæ™‚é–“æ”»æ“Š
+        // ç‚ºäº†è¨­ç½®fightingæ¨™è¨˜ä¹Ÿæ›´çœŸå¯¦
         call_out("do_kill", 1 + random(3), me);
         if (playerp(me))me->set("env/combatd",4);
 }
@@ -172,10 +172,10 @@ void do_kill(object me)
         if (! living(me) || me->query_temp("apply/invisible"))
                  return;
 
-        // ²¢²»ÊÇÃ¿¸ö¶ÔÏó¶¼¹¥»÷£¬ÕâÑù×öÊÇÎªÁË½ÚÔ¼ÏµÍ³×ÊÔ´ºÍ¸üÎªÕæÊµ
+        // ä¸¦ä¸æ˜¯æ¯å€‹å°è±¡éƒ½æ”»æ“Šï¼Œé€™æ¨£åšæ˜¯ç‚ºäº†ç¯€ç´„ç³»çµ±è³‡æºå’Œæ›´ç‚ºçœŸå¯¦
         if (me->is_fighting() && random(3) == 1)return;
 
-        // Ö»ÄÜÍ¬Ê±¹¥»÷Ò»¸öÈË
+        // åªèƒ½åŒæ™‚æ”»æ“Šä¸€å€‹äºº
         if (this_object()->is_fighting())return;
 
         if (! "/cmds/std/kill"->main(this_object(), me->query("id")))

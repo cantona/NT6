@@ -6,12 +6,12 @@ inherit RIVER;
 
 void create()
 {
-        set("short", "������ͷ");
+        set("short", "岳陽碼頭");
         set("long", @LONG
-������ͷʮ�����֣���ɫ�˵������������кܶ����������������
-��ɽ�ģ�Ҳ��Щ��å�������Ⱥ��ĥ��������̵���졣������ؤ����
-�泣פ֮������������Ҳ�ǳ��ࡣ�ű�������Ƕ�ͥ��(hu)ˮ���ˡ�Զ
-Զ���Կ�����̵ľ�ɽ���������̵ĺ�ˮ�С�
+岳陽碼頭十分熱鬧，各色人等來來往往，有很多是往湖裡遊玩或上
+君山的，也有些流氓混混在人群中磨肩擦踵想撈點外快。岳陽是丐幫總
+舵常駐之處，江湖人物也非常多。腳邊西面就是洞庭湖(hu)水面了。遠
+遠可以看到青碧的君山浸泡在亮綠的湖水中。
 LONG );
         set("exits", ([
                 "eastup" : __DIR__"shijie7",
@@ -22,35 +22,35 @@ LONG );
         ]));
         set("item_desc", ([
                 "hu" : "
-������ͥ������Զɽ���̳������ƺƵ��������޼��ģ����ɳ�ף�����
-���𣬳���Ϧ����������ǧ�����Թ���������ͥ�����Ժ���ɽɫ������
-�ˣ���������ѧ��Ϊ֮�㵹��ʫ����������������������������ͣ�̶
-���޷羵δĥ��ң����ͥɽˮɫ����������һ���ݡ���
-    ��������һҶС�ۣ�Ҳ����(yell)һ�����Ҿ���������\n",
+　　洞庭湖“銜遠山，吞長江，浩浩盪盪，橫無際涯，渚清沙白，芳草
+如茵，朝暉夕陰，氣象萬千。”自古以來，洞庭湖就以湖光山色吸引遊
+人，歷代著名學家為之傾倒。詩人劉禹錫吟道：“湖光秋月兩相和，潭
+面無風鏡未磨，遙望洞庭山水色，白銀盤裡一青螺。”
+    近岸處有一葉小舟，也許喊(yell)一聲船家就能聽見。\n",
         ]));
         set("outdoors", "yueyang");
         set("no_clean_up", 0);
-  set("yell_about", "����");             // yell ����
-  set("river_type", "��");               // �����ϴ�������
-  set("need_dodge",300);                 // ��Ҫ�����Ṧ
-  set("come_msg_out",   "һҶ���ۻ�����ʻ�˹�����������һ��̤�Ű���ϵ̰����Ա�˿����¡�\n");
-  set("busy_msg",       "ֻ���ú�������������������������æ���š�����\n");
-  set("wait_msg",       "����һֻ�ɴ��ϵ�������˵�������������أ������ɡ�\n");
-  set("leave_msg_out",  "������̤�Ű��������������һ�㣬���������ʻȥ��\n");
-  set("leave_msg_in",   "������̤�Ű���������˵��һ��������ඡ������һ�㣬���������ʻȥ��\n");
-  set("come_msg_in",    "����˵���������ϰ��ɡ����漴��һ��̤�Ű���ϵ̰���\n");
-  set("item_desc/river", HIC "\nֻ����������һҶС�ۣ�Ҳ��������("
-                         HIY "yell" HIC ")һ������(" HIY "boat" HIC
-                        ")��\n���������������Ը��Ṧ����,Ҳ��ֱ��"
-                        "��ˮ(" HIY "cross" HIC ")̤��������\n" NOR);
-  set("boat_short", "�ɴ�");    
+  set("yell_about", "船家");             // yell 船家
+  set("river_type", "湖");               // 江面上傳來回響
+  set("need_dodge",300);                 // 需要多少輕功
+  set("come_msg_out",   "一葉扁舟緩緩地駛了過來，艄公將一塊踏腳板搭上堤岸，以便乘客上下。\n");
+  set("busy_msg",       "只聽得湖面上隱隱傳來：“別急嘛，這兒正忙著吶……”\n");
+  set("wait_msg",       "岸邊一只渡船上的老艄公說道：正等著你呢，上來吧。\n");
+  set("leave_msg_out",  "艄公把踏腳板收了起來，竹篙一點，扁舟向湖心駛去。\n");
+  set("leave_msg_in",   "艄公把踏腳板收起來，說了一聲“坐穩嘍”，竹篙一點，扁舟向湖心駛去。\n");
+  set("come_msg_in",    "艄公說“到啦，上岸吧”，隨即把一塊踏腳板搭上堤岸。\n");
+  set("item_desc/river", HIC "\n只見近岸處有一葉小舟，也許大聲喊("
+                         HIY "yell" HIC ")一聲船家(" HIY "boat" HIC
+                        ")就\n能聽見。倘若你自負輕功絕佳,也可直接"
+                        "渡水(" HIY "cross" HIC ")踏江而過。\n" NOR);
+  set("boat_short", "渡船");    
   set("boat_desc",  @LONG
-һҶС�ۣ�Ʈҡ�ڶ�ͥ�����档���ۺ��ģ����Ĺ����޵أ�������
-��ɽ������Ŀ��ȥ�����̲���������������ɫȫ�޴�ɫ�����ˮ����
-ϴ����һ�����쾵���ġ����ǣ���������ʮ������ɵľ�ɽ��������㣬
-��֪�����˶�������ī�͡�
+一葉小舟，飄搖在洞庭湖湖面。泛舟湖心，“四顧疑無地，中流忽
+有山”。舉目望去，“煙波不動景沉沉，碧色全無翠色深。疑是水仙梳
+洗處，一螺青黛鏡中心。”那，就是由七十二峰組成的君山，峰峰靈秀，
+不知陶醉了多少文人墨客。
 LONG );
-  set("to",         __DIR__"matou");  // �����յ� /*   ��ѡ   */
+  set("to",         __DIR__"matou");  // 船的終點 /*   必選   */
 	set("coor/x", -6240);
 	set("coor/y", -3010);
 	set("coor/z", -20);

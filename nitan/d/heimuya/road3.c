@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "»ÆÍÁÂ·");
+        set("short", "é»ƒåœŸè·¯");
         set("long", @LONG
-Äã×ßÔÚÒ»Ìõ»ÆÍÁÂ·ÉÏ¡£Î÷ÃæÍûÈ¥£¬ÒþÒþ¿ÉÒÔ¿´µ½Æ½¶¨ÖÝ¡£Íû¶«£¬
-±±¾©³Ç¿ìµ½ÁË¡£
+ä½ èµ°åœ¨ä¸€æ¢é»ƒåœŸè·¯ä¸Šã€‚è¥¿é¢æœ›åŽ»ï¼Œéš±éš±å¯ä»¥çœ‹åˆ°å¹³å®šå·žã€‚æœ›æ±ï¼Œ
+åŒ—äº¬åŸŽå¿«åˆ°äº†ã€‚
 LONG );
         set("outdoors", "heimuya");
         set("exits", ([
@@ -23,7 +23,7 @@ void init()
 {
         object me = this_player();
         if (!objectp(me) || !userp(me)) return;
-        message_vision(HIB "Ò¹ÒÑ¾­ÉîÁË£¬·­¹ý±±±ßµÄÐ¡¸ß¸Ú¿ÉÒÔÓÉÐ¡Â·µ½Íò°²ËÂ¡£\n"NOR, me);
+        message_vision(HIB "å¤œå·²ç¶“æ·±äº†ï¼Œç¿»éŽåŒ—é‚Šçš„å°é«˜å´—å¯ä»¥ç”±å°è·¯åˆ°è¬å®‰å¯ºã€‚\n"NOR, me);
         remove_call_out("mes");
         call_out("mes",3,this_player());
         set_temp("want_enter", 1, this_player());
@@ -34,7 +34,7 @@ void mes(object me)
 {
         if (!me) return;
         if (environment(me) == this_object())
-        message_vision(HIR "ÄãÊÇ·ñÔ¸Òâ½øÈë(enter)Íò°²ËÂ£¿\n"NOR, me);
+        message_vision(HIR "ä½ æ˜¯å¦é¡˜æ„é€²å…¥(enter)è¬å®‰å¯ºï¼Ÿ\n"NOR, me);
 } 
 
 int do_enter()
@@ -42,7 +42,7 @@ int do_enter()
         object me = this_player();
         if( query_temp("want_enter", me) )
         {
-                tell_object(me, HIR "Äã¾ö¶¨½øÈëÍò°²ËÂ¡£\n" NOR);
+                tell_object(me, HIR "ä½ æ±ºå®šé€²å…¥è¬å®‰å¯ºã€‚\n" NOR);
                 me->move("/d/tulong/yitian/was_damen");
         }
         return 1;

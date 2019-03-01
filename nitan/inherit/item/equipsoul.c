@@ -6,13 +6,13 @@ int is_equip_soul() { return 1; }
 
 string chinese_s(int arg)
 {
-      if( arg == 1 ) return HIK "ÁÓÖÊµÄ"; 
-      if( arg == 2 ) return HIB "ÆÕÍ¨µÄ"; 
-      if( arg == 3 ) return HIR "¾«ÖÂµÄ"; 
-      if( arg == 4 ) return HIM "×¿Ô½µÄ"; 
-      if( arg == 5 ) return HIY "ÎŞÏ¾µÄ"; 
-      if( arg == 6 ) return HIY "ÍêÃÀµÄ";
-      if( arg == 7 ) return HIY "ÉñÖ®µÄ"; 
+      if( arg == 1 ) return HIK "åŠ£è³ªçš„"; 
+      if( arg == 2 ) return HIB "æ™®é€šçš„"; 
+      if( arg == 3 ) return HIR "ç²¾è‡´çš„"; 
+      if( arg == 4 ) return HIM "å“è¶Šçš„"; 
+      if( arg == 5 ) return HIY "ç„¡æš‡çš„"; 
+      if( arg == 6 ) return HIY "å®Œç¾çš„";
+      if( arg == 7 ) return HIY "ç¥ä¹‹çš„"; 
 }
 
 string extra_long()
@@ -22,11 +22,11 @@ string extra_long()
         mapping data;
         int value;
 
-        str =  sprintf( WHT "\n»êÆÇÊôĞÔ : ×°±¸Ö®»ê<%s" NOR+WHT">£¬ÖØÁ¿%d¿Ë£¬ÏÂÏß%s¶ªÊ§\n" NOR,
+        str =  sprintf( WHT "\né­‚é­„å±¬æ€§ : è£å‚™ä¹‹é­‚<%s" NOR+WHT">ï¼Œé‡é‡%då…‹ï¼Œä¸‹ç·š%sä¸Ÿå¤±\n" NOR,
                         this_object()->name(), this_object()->query_weight(),
-                        (this_object()->query_autoload() || query("auto_load")) ? "²»" : "" );
+                        (this_object()->query_autoload() || query("auto_load")) ? "ä¸" : "" );
 
-        if( query("status") ) str += sprintf(WHT "»êÆÇÆ·ÖÊ : " NOR "%s\n" NOR, chinese_s(query("status")));
+        if( query("status") ) str += sprintf(WHT "é­‚é­„å“è³ª : " NOR "%s\n" NOR, chinese_s(query("status")));
 
         return str;
 }

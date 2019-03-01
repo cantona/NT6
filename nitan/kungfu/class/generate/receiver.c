@@ -11,7 +11,7 @@ int is_stay_in_room() { return 1; }
 void create()
 {
         ::create();
-        set("gender", "ÄÐÐÔ" );
+        set("gender", "ç”·æ€§" );
         set("age", 30 + random(30));
         set("long", "");
         set("attitude", "friendly");
@@ -31,14 +31,14 @@ void set_from_me(object me)
 
 int accept_fight(object ob)
 {
-        command("say ºÜºÃ£¡ÄÇÎÒ¾Í²»¿ÍÆøÁË¡£");
+        command("say å¾ˆå¥½ï¼é‚£æˆ‘å°±ä¸å®¢æ°£äº†ã€‚");
         kill_ob(ob);
         return 1;
 }
 
 int accept_hit(object ob)
 {
-        command("say ºß£¡Ê²Ã´ÈË£¿");
+        command("say å“¼ï¼ä»€éº¼äººï¼Ÿ");
         kill_ob(ob);
         return 1;
 }
@@ -67,10 +67,10 @@ int accept_object(object who, object ob)
                 set("reply_to_name",query("send_from_name",  ob), rob);
                 set("receive_from",query("id",  who), rob);
                 set("receive_from_name", who->name(1), rob);
-                rob->set("long","ÕâÊÇÒ»·âÓÉ"+name()+"ÊÕµ½"+
-                                 query("send_from_name", ob)+"µÄÀ´ÐÅÐ´µÄ»ØÖ´¡£\n");
-                command("say ¶àÐ»ÕâÎ»" + RANK_D->query_respect(who) + "°ÑÐÅ´øµ½£¬ÕâµãÇ®ËãÊÇÄãµÄÐÁ¿à·ÑÁË¡£");
-                message_vision("$N½»¸ø$nÒ»ÕÅ»ØÖ´¡£\n", this_object(), who);
+                rob->set("long","é€™æ˜¯ä¸€å°ç”±"+name()+"æ”¶åˆ°"+
+                                 query("send_from_name", ob)+"çš„ä¾†ä¿¡å¯«çš„å›žåŸ·ã€‚\n");
+                command("say å¤šè¬é€™ä½" + RANK_D->query_respect(who) + "æŠŠä¿¡å¸¶åˆ°ï¼Œé€™é»žéŒ¢ç®—æ˜¯ä½ çš„è¾›è‹¦è²»äº†ã€‚");
+                message_vision("$Näº¤çµ¦$nä¸€å¼µå›žåŸ·ã€‚\n", this_object(), who);
                 rob->move(who, 1);
 
                 bonus = new("/clone/money/silver");
@@ -88,6 +88,6 @@ int accept_object(object who, object ob)
 
 void destruct_me()
 {
-        message_vision("$N¼±¼±Ã¦Ã¦µÄ×ßÁË¡£\n", this_object());
+        message_vision("$Næ€¥æ€¥å¿™å¿™çš„èµ°äº†ã€‚\n", this_object());
         destruct(this_object());
 }

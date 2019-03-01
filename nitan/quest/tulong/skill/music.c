@@ -1,4 +1,4 @@
-// music.c ¾«Áé·¨Êõ
+// music.c ç²¾éˆæ³•è¡“
 // Modified by edward
 
 inherit SKILL;

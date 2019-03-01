@@ -4,13 +4,13 @@ inherit NPC;
 
 void create()
 {       
-        string *order = ({"ÕÅ", "Íõ", "Àî", "ÕÔ", "Ëï", "Ğì", "Ö£", "ÖÜ", "Îâ",
-                "½¯", "Éò", "Ñî", "Ãç", "Òü", "½ğ", "Îº", "ÌÕ", "Óá", "Áø", "Öì"});
-        string *orderr = ({"°ü°ü", "±¦±¦", "¹Ô¹Ô", "Ğ¡Ğ¡", "ÀÚÀÚ",
-                "¼¦¼¦", "Ñ»Ñ»", "¹·¹·", "Ã¨Ã¨","ÇåÇå","Ã÷Ã÷","·É·É"});
+        string *order = ({"å¼µ", "ç‹", "æ", "è¶™", "å­«", "å¾", "é„­", "å‘¨", "å³",
+                "è”£", "æ²ˆ", "æ¥Š", "è‹—", "å°¹", "é‡‘", "é­", "é™¶", "ä¿", "æŸ³", "æœ±"});
+        string *orderr = ({"åŒ…åŒ…", "å¯¶å¯¶", "ä¹–ä¹–", "å°å°", "ç£Šç£Š",
+                "é›é›", "é´‰é´‰", "ç‹—ç‹—", "è²“è²“","æ¸…æ¸…","æ˜æ˜","é£›é£›"});
         set_name(order[random(20)]+orderr[random(8)], ({ "boy","nanhai" }) );
-        set("title", "ÎŞÖªÄĞº¢");
-        set("gender", "ÄĞĞÔ" );
+        set("title", "ç„¡çŸ¥ç”·å­©");
+        set("gender", "ç”·æ€§" );
         set("age",5+random(3));
         set("combat_exp", 100);
         set("attitude", "friendly");
@@ -41,28 +41,28 @@ int do_dating(string arg)
         object ob = this_object();
         
         if ( !arg || arg != "wenzi")
-             return notify_fail("ÄãÏëÑ¯ÎÊÊ²Ã´£¬Äãµ¹ÊÇËµ°¡£¡\n");
+             return notify_fail("ä½ æƒ³è©¢å•ä»€éº¼ï¼Œä½ å€’æ˜¯èªªå•Šï¼\n");
         
         if( query("dname") != query("id", me) )
-             return notify_fail("ÎÒ²»ÏëËµ£¬Äã²»ÒªÎÊ£¬ÎÊÁËÒ²°×ÎÊ£¡\n");
+             return notify_fail("æˆ‘ä¸æƒ³èªªï¼Œä½ ä¸è¦å•ï¼Œå•äº†ä¹Ÿç™½å•ï¼\n");
              
         if( (query_temp("askok", me)) )
-             return notify_fail("¹ØÓÚÄãµÄÎÊÌâ£¬ÎÒÒª¿¼ÂÇÒ»ÏÂ£¬ÄãÏÖÔÚÊÇ²»ÊÇ¾õµÃÓĞµãÈÈ°¡£¡\n");
+             return notify_fail("é—œäºä½ çš„å•é¡Œï¼Œæˆ‘è¦è€ƒæ…®ä¸€ä¸‹ï¼Œä½ ç¾åœ¨æ˜¯ä¸æ˜¯è¦ºå¾—æœ‰é»ç†±å•Šï¼\n");
         
         if( !(query_temp("asked", me)) )
-             return notify_fail("ÄãÕâ¸öÕæÆæ¹Ö£¬ÓĞÎÊÂ·µÄ£¬ÓĞÎÊÒªÇ®µÄ£¬ÓĞÎÊ³ÔµÄ£¬Ã»ÌıÓĞÎÊÎÃ×ÓµÄ¡£\n");
+             return notify_fail("ä½ é€™å€‹çœŸå¥‡æ€ªï¼Œæœ‰å•è·¯çš„ï¼Œæœ‰å•è¦éŒ¢çš„ï¼Œæœ‰å•åƒçš„ï¼Œæ²’è½æœ‰å•èšŠå­çš„ã€‚\n");
         
         switch( random(6))
         {
-            case 0 : str = "ÌÆ¼ÒÆÌ×Ó";where = "/d/tangmen/tjpuzi";break;
-            case 1 : str = "ÌÆÃÅ¾ÆÂ¥";where = "/d/tangmen/jiulou";break;
-            case 2 : str = "¿Íµê";where = "/d/tangmen/kedian";break;
-            case 3 : str = "Ò©ÆÌ";where = "/d/tangmen/hcfdian";break;
-            case 4 : str = "±øÆ÷ÆÌ";where = "/d/tangmen/tmbingqi";break;
-            default : str = "ÌÆÊÏÇ®×¯";where = "/d/tangmen/tsqianz";break;
+            case 0 : str = "å”å®¶èˆ–å­";where = "/d/tangmen/tjpuzi";break;
+            case 1 : str = "å”é–€é…’æ¨“";where = "/d/tangmen/jiulou";break;
+            case 2 : str = "å®¢åº—";where = "/d/tangmen/kedian";break;
+            case 3 : str = "è—¥èˆ–";where = "/d/tangmen/hcfdian";break;
+            case 4 : str = "å…µå™¨èˆ–";where = "/d/tangmen/tmbingqi";break;
+            default : str = "å”æ°éŒ¢èŠ";where = "/d/tangmen/tsqianz";break;
         }
         
-        tell_object(me,HIC"ÄãÈ¥"+str+"ÕÒÕÒ°¡£¡\n"NOR);    
+        tell_object(me,HIC"ä½ å»"+str+"æ‰¾æ‰¾å•Šï¼\n"NOR);    
         
         set_temp("mingchen", str, me);
         set_temp("where", where, me);
@@ -70,7 +70,7 @@ int do_dating(string arg)
         set_temp("askok", 1, me);
         delete_temp("asked", me);
                         
-        tell_object(me,HIC"»°Òô¸ÕÂä£¬Ò»¸ö×İÉíÃ»ÓĞÓ°ÁË£¡\n"NOR);
+        tell_object(me,HIC"è©±éŸ³å‰›è½ï¼Œä¸€å€‹ç¸±èº«æ²’æœ‰å½±äº†ï¼\n"NOR);
         destruct(ob);
         return 1;   
         

@@ -11,31 +11,31 @@ int main(object me, string arg)
         function f;
 
         if (! arg)
-                return notify_fail("ÄãÒªÍùÊ²Ã´¶«Î÷ÀïÃæ¹à£¿\n");
+                return notify_fail("ä½ è¦å¾€ä»€éº¼æ±è¥¿è£¡é¢çŒï¼Ÿ\n");
 
         if( !query("resource/water", environment(me)) )
-                return notify_fail("ÕâÀïÃ»ÓĞµØ·½¿ÉÒÔ×°Ë®¡£\n");
+                return notify_fail("é€™è£¡æ²’æœ‰åœ°æ–¹å¯ä»¥è£æ°´ã€‚\n");
 
         if (me->is_busy())
-                return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É¡£\n");
+                return notify_fail("ä½ ä¸Šä¸€å€‹å‹•ä½œé‚„æ²’æœ‰å®Œæˆã€‚\n");
 
         if (me->is_fighting())
-                return notify_fail("ÄãÕıÃ¦×Å´ò¼Ü£¬Ã»¹¤·ò×°Ë®£¡\n");
+                return notify_fail("ä½ æ­£å¿™è‘—æ‰“æ¶ï¼Œæ²’å·¥å¤«è£æ°´ï¼\n");
 
         if (! objectp(ob = present(arg, me)))
-                return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+                return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™æ¨£æ±è¥¿ã€‚\n");
 
         if( !mapp(my=query("liquid", ob)) )
-                return notify_fail("Õâ¸öÈİÆ÷×°²»ÁËË®¡£\n");
+                return notify_fail("é€™å€‹å®¹å™¨è£ä¸äº†æ°´ã€‚\n");
 
-        if (my["remaining"] && my["name"] != "ÇåË®")
-                message_vision("$N½«" + ob->name() + "ÀïÊ£ÏÂµÄ" +
-                               my["name"] + "µ¹µô¡£\n", me);
+        if (my["remaining"] && my["name"] != "æ¸…æ°´")
+                message_vision("$Nå°‡" + ob->name() + "è£¡å‰©ä¸‹çš„" +
+                               my["name"] + "å€’æ‰ã€‚\n", me);
 
-        message_vision("$N½«" + ob->name() + "×°ÂúÇåË®¡£\n", me);
+        message_vision("$Nå°‡" + ob->name() + "è£æ»¿æ¸…æ°´ã€‚\n", me);
 
         my["type"] = "water";
-        my["name"] = "ÇåË®";
+        my["name"] = "æ¸…æ°´";
         my["remaining"]=query("max_liquid", ob);
         my["drink_func"] = 0;
 
@@ -45,9 +45,9 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : fill <ÈİÆ÷>
+æŒ‡ä»¤æ ¼å¼ : fill <å®¹å™¨>
  
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÓĞË®µÄµØ·½°ÑÈİÆ÷¹àÂúÇåË®¡£
+é€™å€‹æŒ‡ä»¤å¯ä»¥è®“æœ‰æ°´çš„åœ°æ–¹æŠŠå®¹å™¨çŒæ»¿æ¸…æ°´ã€‚
  
 HELP
     );

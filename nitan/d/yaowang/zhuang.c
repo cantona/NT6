@@ -22,14 +22,14 @@ void show_msg(object me)
         if( ((n=query("qi", me)) <= 5) || (sk<40) || (random(10)>(sk-35)) )
         {
                 if(n>25) n=25;
-                message_vision("$NÒ»¸öÃ»Õ¾ÎÈ£¬µ¹ÔÔ³åË¤ÁËÏÂÈ¥¡£\n", me);
+                message_vision("$Nä¸€å€‹æ²’ç«™ç©©ï¼Œå€’æ ½æ²–æ‘”äº†ä¸‹åŽ»ã€‚\n", me);
                 me->receive_damage("qi",n);
                 me->move(__DIR__"lianwu");
-                tell_room(environment(me), me->name()+"Ë¤ÁËÏÂÀ´¡£\n", ({me}));
+                tell_room(environment(me), me->name()+"æ‘”äº†ä¸‹ä¾†ã€‚\n", ({me}));
                 return;
         }
 
-        message_vision("$NÔúÁË¸öÂí²½£¬ÎÆË¿²»¶¯¡£\n", me);
+        message_vision("$Nç´®äº†å€‹é¦¬æ­¥ï¼Œç´‹çµ²ä¸å‹•ã€‚\n", me);
 }
 
 int valid_leave(object ob,string dir)

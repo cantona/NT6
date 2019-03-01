@@ -1,7 +1,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-#define CHAN "¡¸" HIW "²ø×Ö¾÷" NOR "¡¹"
+#define CHAN "ã€Œ" HIW "çºå­—è¨£" NOR "ã€"
 
 inherit F_SSERVER;
 
@@ -13,47 +13,47 @@ int perform(object me, object target)
 
         /*
         if( userp(me) && !query("can_perform/yunlong-bian/chan", me) )
-                return notify_fail("ÄãËùÊ¹ÓÃµÄÍâ¹¦ÖĞÃ»ÓĞÕâÖÖ¹¦ÄÜ¡£\n");
+                return notify_fail("ä½ æ‰€ä½¿ç”¨çš„å¤–åŠŸä¸­æ²’æœ‰é€™ç¨®åŠŸèƒ½ã€‚\n");
         */
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(CHAN "Ö»ÄÜÔÚÕ½¶·ÖĞ¶Ô¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(CHAN "åªèƒ½åœ¨æˆ°é¬¥ä¸­å°å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me) )
             || query("skill_type", weapon) != "whip" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô£¬ÄÑÒÔÊ©Õ¹" CHAN "¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ï¼Œé›£ä»¥æ–½å±•" CHAN "ã€‚\n");
 
         if ((int)me->query_skill("yunlong-bian",1) < 50)
-                return notify_fail("ÄãÔÆÁú±Ş·¨»ğºòÌ«Ç³£¬ÄÑÒÔÊ©Õ¹" CHAN "¡£\n");
+                return notify_fail("ä½ é›²é¾é­æ³•ç«å€™å¤ªæ·ºï¼Œé›£ä»¥æ–½å±•" CHAN "ã€‚\n");
 
         if (me->query_skill_mapped("whip") != "yunlong-bian")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢ÔÆÁú±Ş·¨£¬ÄÑÒÔÊ©Õ¹" CHAN "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼é›²é¾é­æ³•ï¼Œé›£ä»¥æ–½å±•" CHAN "ã€‚\n");
 
         if (target->is_busy())
-                return notify_fail(target->name() + "Ä¿Ç°Õı×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É¡£\n");
+                return notify_fail(target->name() + "ç›®å‰æ­£è‡ªé¡§ä¸æš‡ï¼Œæ”¾è†½æ”»æ“Šå§ã€‚\n");
 
         if( query("neili", me)<50 )
-                return notify_fail("ÄãÏÖÔÚµÄÕæÆø²»×ã£¬ÄÑÒÔÊ©Õ¹" CHAN "¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çš„çœŸæ°£ä¸è¶³ï¼Œé›£ä»¥æ–½å±•" CHAN "ã€‚\n");
 
         if (! living(target))
-               return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+               return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = WHT "$N" WHT "Ê¹³öÔÆÁú±Ş·¨¡¸²ø¡¹×Ö¾÷£¬Á¬»Ó" + weapon->name() +
-              WHT"ÆóÍ¼°Ñ$n"  WHT "µÄÈ«Éí²ø×¡¡£\n" NOR;
+        msg = WHT "$N" WHT "ä½¿å‡ºé›²é¾é­æ³•ã€Œçºã€å­—è¨£ï¼Œé€£æ®" + weapon->name() +
+              WHT"ä¼åœ–æŠŠ$n"  WHT "çš„å…¨èº«çºä½ã€‚\n" NOR;
 
         ap = attack_power(me, "whip");
         dp = defense_power(target, "parry");
         
         if (ap / 2 + random(ap) > dp)
         {
-                msg += HIR "½á¹û$p" HIR "¶ÙÊ±±»$P" HIR "µÄ±ŞÊÆÀÎÀÎ²ø×¡£¬"
-                       "¹¥µÃ´ëÊÖ²»¼°£¡\n" NOR;
+                msg += HIR "çµæœ$p" HIR "é “æ™‚è¢«$P" HIR "çš„é­å‹¢ç‰¢ç‰¢çºä½ï¼Œ"
+                       "æ”»å¾—æªæ‰‹ä¸åŠï¼\n" NOR;
                 target->start_busy((int)me->query_skill("whip") / 80 + 1);
         } else
         {
-                msg += CYN "¿ÉÊÇ$p" CYN "¿´ÆÆÁË$P" CYN "µÄÆóÍ¼£¬²¢Ã»ÓĞÉÏ"
-                "µ±¡£\n" NOR;
+                msg += CYN "å¯æ˜¯$p" CYN "çœ‹ç ´äº†$P" CYN "çš„ä¼åœ–ï¼Œä¸¦æ²’æœ‰ä¸Š"
+                "ç•¶ã€‚\n" NOR;
         }
         addn("neili", -30, me);
         me->start_busy(2);

@@ -1,15 +1,15 @@
-// yongdao1.c ð®µÀ
+// yongdao1.c ç”¬é“
 
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "ð®µÀ");
+        set("short", "ç”¬é“");
         set("long", @LONG
-ÕâÊÇÒ»Ìõ³¤³¤µÄð®µÀ£¬Á½±ßµã×ÅÓÍµÆ£¬¹âÏßËä°µ£¬È´Ò²¿É±æµÀ
-Â·£¬ÍâÃæÒþÔ¼ÄÜÌý¼ûÆÙ²¼µÄÂ¡Â¡Ë®Éù£¬¶´¿ÚË®»¨·É½¦£¬µØÃæÉõÊÇÊª
-Èó¡£
+é€™æ˜¯ä¸€æ¢é•·é•·çš„ç”¬é“ï¼Œå…©é‚Šé»žè‘—æ²¹ç‡ˆï¼Œå…‰ç·šé›–æš—ï¼Œå»ä¹Ÿå¯è¾¨é“
+è·¯ï¼Œå¤–é¢éš±ç´„èƒ½è½è¦‹ç€‘å¸ƒçš„éš†éš†æ°´è²ï¼Œæ´žå£æ°´èŠ±é£›æ¿ºï¼Œåœ°é¢ç”šæ˜¯æ¿•
+æ½¤ã€‚
 LONG );
         set("exits", ([
                "south" : __DIR__"yongdao2",

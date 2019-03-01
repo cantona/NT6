@@ -3,13 +3,13 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "���۱���");
+        set("short", "大雄寶殿");
         set("long", @LONG
-�����������µĴ��۱�����й������������������Ҹ������⡢
-����������һȺ����С���������ڷ���ǰ�ĵ����о���������������
-��������һ�����ӷ����黨ǳЦ�����ݣ����˶�ʱ���𼸷�����֮
-�С����߾�����һ�Ӷ�ɮ�������룬�������ֳֽ䵶���ƺ���Ѳ��
-��ɮ�ˡ�
+這裡是少林寺的大雄寶殿。正中供奉著如來三寶，左右各是文殊、
+普賢菩薩。一群青衣小和尚們正在佛像前的地上誦經。縷縷香煙與梵
+唱交錯在一起，仰視佛祖拈花淺笑的面容，令人頓時生起幾分脫俗之
+感。身邊經常有一隊隊僧人魚貫而入，看他們手持戒刀，似乎是巡寺
+的僧人。
 LONG );
         set("exits", ([
                 "southdown" : __DIR__"guangchang2",
@@ -38,11 +38,11 @@ int do_ketou()
         me = this_player();
 
         if( query("jing", me)<30 )
-                return notify_fail("ͻȻ��е�һ���㱣����������Լ�����ͷ��\n");
+                return notify_fail("突然你感到一陣恍惚，看來再難以繼續磕頭。\n");
 
         if( query_temp("ketou_times", me) == 0 )
         {
-                message_vision(HIR "\n$N" HIR "��ͷ�ĵ����˹�ȥ��\n" NOR, me);
+                message_vision(HIR "\n$N" HIR "磕頭磕得暈了過去。\n" NOR, me);
                 set_temp("ketou_times", random(50), me);
                 me->unconcious();
                 return 1;
@@ -50,8 +50,8 @@ int do_ketou()
 
         addn_temp("ketou_times", -1, me);
 
-        message_vision(CYN "$N" CYN "�ϵع�������������������"
-                       "ǰ��ͷ��\n" NOR, me);
+        message_vision(CYN "$N" CYN "虔誠地跪下來，在如來佛祖面"
+                       "前磕頭。\n" NOR, me);
 
         if (random(100) == 37 &&
             ! present("silk", me) &&
@@ -60,8 +60,8 @@ int do_ketou()
                 addn("book_count", -1);
                 ob=new("/clone/book/book-silk");
                 ob->move("/d/shaolin/dxbdian");
-                tell_object(me, HIM "\nͻȻ����ǰ��ž����һ����"
-                                "��һ����Ƥ�ߴ������ı��\n" NOR);
+                tell_object(me, HIM "\n突然你面前「啪」地一聲掉"
+                                "下一束羊皮線穿起來的薄絹。\n" NOR);
         }
 
         if ((int)me->query_skill("force", 1) >= 30 &&
@@ -72,8 +72,8 @@ int do_ketou()
                 if (me->can_improve_skill("force"))
                         me->improve_skill("force",1+random(query("con", me)));
                 if (random(5) == 0)
-                tell_object(me, HIY "ڤڤ֮�У����ƺ����÷�����"
-                                "�㲦�����ڹ���������ѡ�\n" NOR);
+                tell_object(me, HIY "冥冥之中，你似乎覺得佛祖在"
+                                "點撥你在內功方面的疑難。\n" NOR);
         }
         return 1;
 

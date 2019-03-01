@@ -20,17 +20,17 @@ int valid_force(string force)
 int valid_learn(object me)
 {
         if (query("int", me) < 32)
-                return notify_fail("ÄãÏÈÌìÎòÐÔ²»¹»£¬ÎÞ·¨ÁìÎòÊ¥»ðÉñ¹¦¡£\n");
+                return notify_fail("ä½ å…ˆå¤©æ‚Ÿæ€§ä¸å¤ ï¼Œç„¡æ³•é ˜æ‚Ÿè–ç«ç¥žåŠŸã€‚\n");
 
         if ((int)me->query_skill("force", 1) < 180)
-                return notify_fail("ÄãµÄ»ù±¾ÄÚ¹¦»ðºò»¹²»¹»£¬»¹²»ÄÜÑ§Ï°Ê¥»ðÉñ¹¦¡£\n");
+                return notify_fail("ä½ çš„åŸºæœ¬å…§åŠŸç«å€™é‚„ä¸å¤ ï¼Œé‚„ä¸èƒ½å­¸ç¿’è–ç«ç¥žåŠŸã€‚\n");
 
         return ::valid_learn(me);
 }
 
 int practice_skill(object me)
 {
-        return notify_fail("Ê¥»ðÉñ¹¦Ö»ÄÜÓÃÑ§(learn)µÄÀ´Ôö¼ÓÊìÁ·¶È¡£\n");
+        return notify_fail("è–ç«ç¥žåŠŸåªèƒ½ç”¨å­¸(learn)çš„ä¾†å¢žåŠ ç†Ÿç·´åº¦ã€‚\n");
 }
 
 mixed hit_ob(object me, object victim, int damage_bonus)
@@ -61,8 +61,8 @@ mixed hit_ob(object me, object victim, int damage_bonus)
 
         if (lvl / 2 + random(lvl) > victim->query_skill("force", 1) &&
             ! query_temp("shenghuo-ling/max_hit", me) ) {
-                 message_vision(HIR "\nÉ²ÄÇ¼ä$N" HIR "Éí·¨¶¸È»¼Ó¿ì£¬½£ÕÐÁ¬Ãà¶ø³ö£¬ÕÐÊ½¹îÒìÎÞ±È"
-                                "£¬Áî$n" HIR "ÄÑÒÔ×ÁÄ¥¡£\n" NOR, me, victim);
+                 message_vision(HIR "\nå‰Žé‚£é–“$N" HIR "èº«æ³•é™¡ç„¶åŠ å¿«ï¼ŒåŠæ‹›é€£ç¶¿è€Œå‡ºï¼Œæ‹›å¼è©­ç•°ç„¡æ¯”"
+                                "ï¼Œä»¤$n" HIR "é›£ä»¥ç¢ç£¨ã€‚\n" NOR, me, victim);
 
 
                  me->start_busy(1+ random(attack_time));

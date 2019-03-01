@@ -19,7 +19,7 @@ int main(object me, string arg)
 
         if( arg == "clear" ) {
                 me->clear_msg_log();
-                write("Çå³ıµôËùÓĞµÄÑ¶Ï¢¼ÍÂ¼¡£\n");
+                write("æ¸…é™¤æ‰æ‰€æœ‰çš„è¨Šæ¯ç´€éŒ„ã€‚\n");
                 me->save();
                 return 1;
         }
@@ -27,15 +27,15 @@ int main(object me, string arg)
         if( arg == "system" ) {
                 t=query("msg/time", me);
                 if( !t ) {
-                        tell_object(me, WHT "»¶Ó­Äú½øÈë" + LOCAL_MUD_NAME() +
-                                        WHT "£¬½ñºóÇëÊ¹ÓÃ" HIY " msg " NOR WHT
-                                        "ÃüÁî²éÔÄÓÊ¼şĞÅÏ¢¡£\n" NOR);
+                        tell_object(me, WHT "æ­¡è¿æ‚¨é€²å…¥" + LOCAL_MUD_NAME() +
+                                        WHT "ï¼Œä»Šå¾Œè«‹ä½¿ç”¨" HIY " msg " NOR WHT
+                                        "å‘½ä»¤æŸ¥é–±éƒµä»¶ä¿¡æ¯ã€‚\n" NOR);
                         set("msg/time", time(), me);
                         return 1;
                 }
                 data = me->query_mail();
                 if( !arrayp(data) || !sizeof(data) ) {
-                        tell_object(me, HIY "ÄúÃ»ÓĞÊÕµ½ĞÂÓÊ¼ş¡£\n" NOR);
+                        tell_object(me, HIY "æ‚¨æ²’æœ‰æ”¶åˆ°æ–°éƒµä»¶ã€‚\n" NOR);
                         return 1;
                 }
 
@@ -48,45 +48,45 @@ int main(object me, string arg)
                                 break;
                 }
                 if( !total )
-                        tell_object(me, HIY "ÄãÄ¿Ç°Ã»ÓĞÎ´ÔøÔÄ¶Á¹ıµÄÓÊ¼ş¡£\n" NOR);
+                        tell_object(me, HIY "ä½ ç›®å‰æ²’æœ‰æœªæ›¾é–±è®€éçš„éƒµä»¶ã€‚\n" NOR);
                 else
-                        tell_object(me, sprintf(WHT "ÄãÄ¿Ç°Ò»¹²ÓĞ " HIY "%d" NOR
-                                        WHT " ÌõÓÊ¼ş»¹Ã»ÓĞÔÄ¶Á£¬ÇëÊ¹ÓÃ("
-                                        HIY "msg" NOR WHT ")ÃüÁîÔÄ¶Á¡£\n" NOR, total));
+                        tell_object(me, sprintf(WHT "ä½ ç›®å‰ä¸€å…±æœ‰ " HIY "%d" NOR
+                                        WHT " æ¢éƒµä»¶é‚„æ²’æœ‰é–±è®€ï¼Œè«‹ä½¿ç”¨("
+                                        HIY "msg" NOR WHT ")å‘½ä»¤é–±è®€ã€‚\n" NOR, total));
                 return 1;
         }
         if( arg == "info" ) {
                 mapping setup=query("msg", me);
 
                 if( !mapp(setup) || !sizeof(keys(setup)-({ "size" })) )
-                        return notify_fail("Ã»ÓĞÉè¶¨¼ÍÂ¼ÈÎºÎÑ¶Ï¢¡£\n");
+                        return notify_fail("æ²’æœ‰è¨­å®šç´€éŒ„ä»»ä½•è¨Šæ¯ã€‚\n");
 
                 map_delete(setup, "size");
-                write("Ä¿Ç°Éè¶¨µÄÑ¶Ï¢¼ÍÂ¼ÏîÄ¿£º"+implode(keys(setup), ", ")+"\n");
+                write("ç›®å‰è¨­å®šçš„è¨Šæ¯ç´€éŒ„é …ç›®ï¼š"+implode(keys(setup), ", ")+"\n");
                 return 1;
         }
 
         if( arg && (size = to_int(arg)) ) {
                 if( size < 10 || size > 1000 )
-                        return notify_fail("Ñ¶Ï¢×îÉÙ¼ÍÂ¼ 10 ±Ê£¬×î¶à¼ÍÂ¼ 1000 ±Ê¡£\n");
+                        return notify_fail("è¨Šæ¯æœ€å°‘ç´€éŒ„ 10 ç­†ï¼Œæœ€å¤šç´€éŒ„ 1000 ç­†ã€‚\n");
 
                 set("msg/size", size, me);
-                write("Éè¶¨Ñ¶Ï¢¼ÍÂ¼±ÊÊıÎª "+size+" ±Ê¡£\n");
+                write("è¨­å®šè¨Šæ¯ç´€éŒ„ç­†æ•¸ç‚º "+size+" ç­†ã€‚\n");
                 me->save();
                 return 1;
         }
 
         if( arg && sscanf(arg, "mail %s", id) == 1 ) {
                 if( !wizardp(me) && time()-query_temp("last_mail_msg", me)<60 )
-                        return notify_fail(HIC "ÄãÔÚÒ»·ÖÖÓÄÚÖ»ÄÜ·¢ËÍÒ»Ìõ¶ÌÏûÏ¢¡£\n" NOR);
+                        return notify_fail(HIC "ä½ åœ¨ä¸€åˆ†é˜å…§åªèƒ½ç™¼é€ä¸€æ¢çŸ­æ¶ˆæ¯ã€‚\n" NOR);
 
                 if( id == query("id", me) )
-                        return notify_fail(HIC "ÄãÓĞÃ»ÓĞÎÊÌâ£¬×Ô¼º¸ø×Ô¼ºĞ´ĞÅÏ¢£¿£¡\n" NOR);
+                        return notify_fail(HIC "ä½ æœ‰æ²’æœ‰å•é¡Œï¼Œè‡ªå·±çµ¦è‡ªå·±å¯«ä¿¡æ¯ï¼Ÿï¼\n" NOR);
 
                 target = UPDATE_D->global_find_player(id);
 
                 if( !objectp(target) )
-                        return notify_fail("Ã»ÓĞÕâ¸öÍæ¼Ò¡£\n");
+                        return notify_fail("æ²’æœ‰é€™å€‹ç©å®¶ã€‚\n");
 
                 UPDATE_D->global_destruct_player(target, 1);
 
@@ -94,11 +94,11 @@ int main(object me, string arg)
                 if( !wizardp(me)
                      && !MEMBER_D->is_valid_member(query("id", me) )
                     && id != "lonely" )
-                          return notify_fail("Ö»ÓĞ»áÔ±²ÅÄÜ·¢ËÍ¶ÌÏûÏ¢¡£\n");
+                          return notify_fail("åªæœ‰æœƒå“¡æ‰èƒ½ç™¼é€çŸ­æ¶ˆæ¯ã€‚\n");
                 */
 
                 set_temp("last_send_msg", time(), me);
-                write(HIG "ÇëÊäÈë¶ÌÏûÏ¢ÄÚÈİ£¨³¤¶È²»³¬¹ı500¸öºº×Ö£©¡£\n" NOR);
+                write(HIG "è«‹è¼¸å…¥çŸ­æ¶ˆæ¯å…§å®¹ï¼ˆé•·åº¦ä¸è¶…é500å€‹æ¼¢å­—ï¼‰ã€‚\n" NOR);
 
                 me->edit(bind((: call_other, __FILE__, "done", me, id :), me));
 
@@ -107,24 +107,24 @@ int main(object me, string arg)
         else if( arg && sscanf(arg, "+%s", type) == 1 ) {
                 if( type == "say" || type == "tell" || type == "emotion" || type == "reply" || type == "answer" || type == "whisper" || CHANNEL_D->valid_channel(wiz_level(me->query_id(1)), type) ) {
                         set("msg/"+type, 1, me);
-                        write("¿ªÊ¼¼ÍÂ¼ "+type+" µÄÑ¶Ï¢¡£\n");
+                        write("é–‹å§‹ç´€éŒ„ "+type+" çš„è¨Šæ¯ã€‚\n");
                         me->save();
                         return 1;
                 }
                 else
-                        return notify_fail("ÎŞ·¨Éè¶¨ "+type+" ÕâÖÖÑ¶Ï¢¡£\n");
+                        return notify_fail("ç„¡æ³•è¨­å®š "+type+" é€™ç¨®è¨Šæ¯ã€‚\n");
         }
         else if( arg && sscanf(arg, "-%s", type) == 1 ) {
 
                 if( type == "say" || type == "tell" || type == "emotion" || type == "reply" || type == "answer" || type == "whisper" || CHANNEL_D->valid_channel(wiz_level(me->query_id(1)), type) ) 
                 {
                         delete("msg/"+type, me);
-                        write("Í£Ö¹¼ÍÂ¼ "+type+" µÄÑ¶Ï¢¡£\n");
+                        write("åœæ­¢ç´€éŒ„ "+type+" çš„è¨Šæ¯ã€‚\n");
                         me->save();
                         return 1;
                 }
                 else
-                        return notify_fail("ÎŞ·¨Éè¶¨ "+type+" ÕâÖÖÑ¶Ï¢¡£\n");
+                        return notify_fail("ç„¡æ³•è¨­å®š "+type+" é€™ç¨®è¨Šæ¯ã€‚\n");
         }
 
         if( wizardp(me) && arg && objectp(target = find_player(arg)) && wiz_level(target) <= wiz_level(me) )
@@ -137,7 +137,7 @@ int main(object me, string arg)
         if( size ) {
                 string *str;
 
-                str = ({ (target?target->query_idname():"")+"¹²ÓĞ "+(size/3)+" ±Ê¾ÉÑ¶Ï¢¼ÍÂ¼£º\n©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n" });
+                str = ({ (target?target->query_idname():"")+"å…±æœ‰ "+(size/3)+" ç­†èˆŠè¨Šæ¯ç´€éŒ„ï¼š\nâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n" });
 
                 if( arg && !target ) {
                         for(i=0;i<size;i+=3)
@@ -151,13 +151,13 @@ int main(object me, string arg)
                                 //str += ({ HIW+TIME_D->replace_ctime(atoi(data[i]))+NOR"-"+data[i+2] });
                 }
 
-                str += ({ "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤Ä¿Ç°Ê±¿Ì "HIW+ctime(time())[11..15]+NOR"©¤©¤\n" });
+                str += ({ "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ç›®å‰æ™‚åˆ» "HIW+ctime(time())[11..15]+NOR"â”€â”€\n" });
                 me->start_more(implode(str, ""));
                 set("msg/time", time(), me);
                 me->save();
         }
         else
-                write(target?target->query_idname():""+"Ä¿Ç°Ã»ÓĞÈÎºÎÑ¶Ï¢¼ÍÂ¼¡£\n");
+                write(target?target->query_idname():""+"ç›®å‰æ²’æœ‰ä»»ä½•è¨Šæ¯ç´€éŒ„ã€‚\n");
 
         return 1;
 }
@@ -170,23 +170,23 @@ void done(object me, string id, string msg)
         if( !me || !msg || msg == "" )
                 return;
 
-        // ¼ì²é³¤¶È
+        // æª¢æŸ¥é•·åº¦
         if( sizeof(msg) > 1000 ) {
-                write("¶ÌÏûÏ¢¹ı³¤£¬×î³¤²»ÄÜ´óÓÚ1000¸ö×Ö½Ú¡£\n");
+                write("çŸ­æ¶ˆæ¯éé•·ï¼Œæœ€é•·ä¸èƒ½å¤§äº1000å€‹å­—ç¯€ã€‚\n");
                 return;
         }
 
         msg = replace_string(msg, "\"", "");
         if( objectp(ob = find_player(id)) ) {
                 if( !wizardp(me) && ob->is_mail_limit() ) {
-                        tell_object(me, ob->query_idname() + "µÄ¶ÌÏûÏ¢ÒÑÂú£¡\n");
+                        tell_object(me, ob->query_idname() + "çš„çŸ­æ¶ˆæ¯å·²æ»¿ï¼\n");
                         UPDATE_D->global_destruct_player(ob, 1);
                         return;
                 }
 
-                ob->add_msg_log("mail", HIR "¡¾ÓÊ¼şĞÅÏ¢¡¿À´×Ô" + me->query_idname() + HIR "µÄÓÊ¼şÄÚÈİÈçÏÂ\n"HIW+msg+NOR"\n");
+                ob->add_msg_log("mail", HIR "ã€éƒµä»¶ä¿¡æ¯ã€‘ä¾†è‡ª" + me->query_idname() + HIR "çš„éƒµä»¶å…§å®¹å¦‚ä¸‹\n"HIW+msg+NOR"\n");
                 ob->save();
-                tell_object(ob, HIR "¡¾ÓÊ¼şĞÅÏ¢¡¿ÄãĞÂÊÕµ½Ò»·âÀ´×Ô" + me->query_idname() + HIR "µÄÓÊ¼ş(msg mail)¡£\n" NOR);
+                tell_object(ob, HIR "ã€éƒµä»¶ä¿¡æ¯ã€‘ä½ æ–°æ”¶åˆ°ä¸€å°ä¾†è‡ª" + me->query_idname() + HIR "çš„éƒµä»¶(msg mail)ã€‚\n" NOR);
         } else {
 #ifdef DB_SAVE
                 mail = DATABASE_D->db_query_player(id, "f_mail");
@@ -195,16 +195,16 @@ void done(object me, string id, string msg)
 
                 if( wiz_level(id) < 1 ) {
                         if( !wizardp(me) && sizeof(mail_log) >= 60 ) {
-                                tell_object(me, "¶Ô·½µÄ¶ÌÏûÏ¢ÒÑÂú£¡\n");
+                                tell_object(me, "å°æ–¹çš„çŸ­æ¶ˆæ¯å·²æ»¿ï¼\n");
                                 return;
                         }
                 } else {
                         if( sizeof(mail_log) >= 300 ) {
-                                tell_object(me, "¶Ô·½µÄ¶ÌÏûÏ¢ÒÑÂú£¡\n");
+                                tell_object(me, "å°æ–¹çš„çŸ­æ¶ˆæ¯å·²æ»¿ï¼\n");
                                 return;
                         }
                 }
-                msg = HIR "¡¾ÓÊ¼şĞÅÏ¢¡¿À´×Ô" + me->query_idname() + HIR "µÄÓÊ¼şÄÚÈİÈçÏÂ\n"HIW+msg+NOR"\n";
+                msg = HIR "ã€éƒµä»¶ä¿¡æ¯ã€‘ä¾†è‡ª" + me->query_idname() + HIR "çš„éƒµä»¶å…§å®¹å¦‚ä¸‹\n"HIW+msg+NOR"\n";
                 mail_log += ({ time(), "mail", msg });
 
                 mail = save_variable(mail_log);
@@ -212,36 +212,36 @@ void done(object me, string id, string msg)
 #else
                 ob = UPDATE_D->global_find_player(id);
                 if( ob->is_mail_limit() ) {
-                        tell_object(me, ob->query_idname() + "µÄ¶ÌÏûÏ¢ÒÑÂú£¡\n");
+                        tell_object(me, ob->query_idname() + "çš„çŸ­æ¶ˆæ¯å·²æ»¿ï¼\n");
                         UPDATE_D->global_destruct_player(ob, 1);
                         return;
                 }
 
-                ob->add_msg_log("mail", HIR "¡¾ÓÊ¼şĞÅÏ¢¡¿À´×Ô" + me->query_idname() + HIR "µÄÓÊ¼şÄÚÈİÈçÏÂ\n"HIW+msg+NOR"\n");
+                ob->add_msg_log("mail", HIR "ã€éƒµä»¶ä¿¡æ¯ã€‘ä¾†è‡ª" + me->query_idname() + HIR "çš„éƒµä»¶å…§å®¹å¦‚ä¸‹\n"HIW+msg+NOR"\n");
                 ob->save();
                 UPDATE_D->global_destruct_player(ob, 1);
 #endif
         }
 
-        tell_object(me, HIY "¡¾ÓÊ¼şĞÅÏ¢¡¿ÄãµÄ¶ÌÏûÏ¢ÒÑ¾­³É¹¦·¢ËÍ£¡\n" NOR);
+        tell_object(me, HIY "ã€éƒµä»¶ä¿¡æ¯ã€‘ä½ çš„çŸ­æ¶ˆæ¯å·²ç¶“æˆåŠŸç™¼é€ï¼\n" NOR);
         return;
 }
 
 int help(object me)
 {
         write(@HELP
-ÏÔÊ¾×î½üÊÕµ½µÄ 1000 ¸öÁÄÌì/Ò¥ÑÔÆµµÀ»òÊÇÃÜÓïÑ¶Ï¢¡£
+é¡¯ç¤ºæœ€è¿‘æ”¶åˆ°çš„ 1000 å€‹èŠå¤©/è¬ è¨€é »é“æˆ–æ˜¯å¯†èªè¨Šæ¯ã€‚
 
-msg                     ²é¿´ËùÓĞÑ¶Ï¢µÄ¼ÍÂ¼
-msg ÖÖÀà                ²é¿´Ä³ÀàÑ¶Ï¢µÄ¼ÍÂ¼£¬ÀıÈç msg mail Ôò½ö²é¿´ mail ĞÅÏ¢
-msg +ÖÖÀà               Ôö¼ÓÄ³ÀàÑ¶Ï¢µÄ¼ÍÂ¼
-msg -ÖÖÀà               Í£Ö¹Ä³ÀàÑ¶Ï¢µÄ¼ÍÂ¼
-msg ±ÊÊı                Éè¶¨Ñ¶Ï¢¼ÍÂ¼±ÊÊı£¬×îÉÙ¼ÍÂ¼ 10 ±Ê£¬×î¶à¼ÍÂ¼ 1000 ±Ê
-msg clear               É¾³ıËùÓĞÑ¶Ï¢
-msg info                ²éÑ¯Ä¿Ç°µÄÑ¶Ï¢¼ÍÂ¼ÏîÄ¿
-msg mail <Ä³ÈË>         ¸øÄ³ÈË(²»ÔÚÏßÉÏ)ÁôÑÔ
+msg                     æŸ¥çœ‹æ‰€æœ‰è¨Šæ¯çš„ç´€éŒ„
+msg ç¨®é¡                æŸ¥çœ‹æŸé¡è¨Šæ¯çš„ç´€éŒ„ï¼Œä¾‹å¦‚ msg mail å‰‡åƒ…æŸ¥çœ‹ mail ä¿¡æ¯
+msg +ç¨®é¡               å¢åŠ æŸé¡è¨Šæ¯çš„ç´€éŒ„
+msg -ç¨®é¡               åœæ­¢æŸé¡è¨Šæ¯çš„ç´€éŒ„
+msg ç­†æ•¸                è¨­å®šè¨Šæ¯ç´€éŒ„ç­†æ•¸ï¼Œæœ€å°‘ç´€éŒ„ 10 ç­†ï¼Œæœ€å¤šç´€éŒ„ 1000 ç­†
+msg clear               åˆªé™¤æ‰€æœ‰è¨Šæ¯
+msg info                æŸ¥è©¢ç›®å‰çš„è¨Šæ¯ç´€éŒ„é …ç›®
+msg mail <æŸäºº>         çµ¦æŸäºº(ä¸åœ¨ç·šä¸Š)ç•™è¨€
 
-Ñ¶Ï¢ÖÖÀà°üÀ¨£º¹«¿ªÆµµÀ(chat, rumor, ...), say, tell, ...
+è¨Šæ¯ç¨®é¡åŒ…æ‹¬ï¼šå…¬é–‹é »é“(chat, rumor, ...), say, tell, ...
 
 HELP );
         return 1;

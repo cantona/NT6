@@ -19,11 +19,11 @@ void init(object ob)
 
 
         if( query_temp("used") )
-                return tell_object(ob, name(1)+"µÄÇ¿´óÄÜÁ¦ÒÑ¾­±»ÎüÊÕ¡£\n");
+                return tell_object(ob, name(1)+"çš„å¼·å¤§èƒ½åŠ›å·²ç¶“è¢«å¸æ”¶ã€‚\n");
 
         //ob->start_condition(BATTLEFIELD_GLORY);
         BATTLEFIELD2_D->add_bonus_score(ob, 100);
-        tell_object(ob, "ÄãÒòÎªÅö´¥"+name(1)+"¶ø»ñµÃ "HIY"100"NOR" µãÕ½¼¨ºìÀû¡£\n");
+        tell_object(ob, "ä½ å› ç‚ºç¢°è§¸"+name(1)+"è€Œç²å¾— "HIY"100"NOR" é»æˆ°ç¸¾ç´…åˆ©ã€‚\n");
 
         call_out((: delay_destruct :), 0);
 
@@ -32,14 +32,14 @@ void init(object ob)
 
 void create()
 {
-        set_name(WHT"Õ½ÕùÈÙÒ«Ê¯±®"NOR, ({ "battlefield glory statue", "statue" }) );
+        set_name(WHT"æˆ°çˆ­æ¦®è€€çŸ³ç¢‘"NOR, ({ "battlefield glory statue", "statue" }) );
         set_weight(200);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "µÚÒ»¸ö¿´µ½Õâ¸öÊ¯±®µÄÈË¿ÉÒÔ»ñµÃ¼«Ç¿´óµÄÄÜÁ¦¡£");
+                set("long", "ç¬¬ä¸€å€‹çœ‹åˆ°é€™å€‹çŸ³ç¢‘çš„äººå¯ä»¥ç²å¾—æ¥µå¼·å¤§çš„èƒ½åŠ›ã€‚");
                 set("value", 1000000);
-                set("unit", "¸ö");
+                set("unit", "å€‹");
                 set("no_get", 1);
         }
 }

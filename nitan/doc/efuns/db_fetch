@@ -1,20 +1,20 @@
 
         db_fetch()
 
-        Ãû³Æ£º
-                db_fetch() ·µ»Ø×îºóÒ»´Î db_exec º¯Êý²Ù×÷µÄ·µ»ØÖµ
-                        µÄÕóÁÐ¡£
+        åç¨±ï¼š
+                db_fetch() è¿”å›žæœ€å¾Œä¸€æ¬¡ db_exec å‡½æ•¸æ“ä½œçš„è¿”å›žå€¼
+                        çš„é™£åˆ—ã€‚
 
-        Óï·¨£º
+        èªžæ³•ï¼š
                 array db_fetch(int db_handle, int row)
-                ÕóÁÐ db_fetch(ÕûÊý handle, ÕûÊý row)
+                é™£åˆ— db_fetch(æ•´æ•¸ handle, æ•´æ•¸ row)
 
-        ÓÃ·¨£º
-                ´Ëº¯Êý·µ»Ø×îºóÒ»´Î db_exec º¯Êý²Ù×÷µÄ·µ»ØÖµµÄÕóÁÐ¡£
-                handle Îª½øÐÐ²Ù×÷µÄÊý¾Ý¿âµÄ¾ä±ú¡£
-                row ÐÐÊý¡£½á¹ûµÄ×ÜÐÐÊýÎª db_exec µÄ·µ»ØÖµ¡£
+        ç”¨æ³•ï¼š
+                æ­¤å‡½æ•¸è¿”å›žæœ€å¾Œä¸€æ¬¡ db_exec å‡½æ•¸æ“ä½œçš„è¿”å›žå€¼çš„é™£åˆ—ã€‚
+                handle ç‚ºé€²è¡Œæ“ä½œçš„æ•¸æ“šåº«çš„å¥æŸ„ã€‚
+                row è¡Œæ•¸ã€‚çµæžœçš„ç¸½è¡Œæ•¸ç‚º db_exec çš„è¿”å›žå€¼ã€‚
 
-        by ·¢ÏÖºÅ(Find@tx)
+        by ç™¼ç¾è™Ÿ(Find@tx)
 
 
 

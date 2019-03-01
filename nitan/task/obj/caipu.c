@@ -2,15 +2,15 @@
 inherit TASK;
 void create()
 {
-    set_name(HIC"×íÏÉÂ¥²ËÆ×" NOR, ({ "cai pu" }) );
+    set_name(HIC"é†‰ä»™æ¨“èœè­œ" NOR, ({ "cai pu" }) );
     set_weight(1);
     if( clonep() )
             destruct(this_object());
     else {
-            set("unit", "±¾");
+            set("unit", "æœ¬");
             set("material", "stone");
-            set("long", "Ò»±¾×íÏÉÂ¥²ËÆ×\n");
+            set("long", "ä¸€æœ¬é†‰ä»™æ¨“èœè­œ\n");
           }
-    set("owner", "ÙşÀÏ°å");
+    set("owner", "å†¼è€æ¿");
     setup();
 }

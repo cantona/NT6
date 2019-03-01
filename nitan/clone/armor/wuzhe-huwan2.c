@@ -5,13 +5,13 @@ inherit WRISTS;
 
 void create()
 {
-        set_name(HIM "ÎäÕß»¤Íó" NOR, ({ "wuzhe huwan2", "wuzhe", "huwan2" }));
+        set_name(HIM "æ­¦è€…è­·è…•" NOR, ({ "wuzhe huwan2", "wuzhe", "huwan2" }));
         set_weight(800);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIM "Ò»Ë«ÎäÊ¿ÓÃµÄ»¤Íó¡£\n" NOR);;
-                set("unit", "Ë«");
+                set("long", HIM "ä¸€é›™æ­¦å£«ç”¨çš„è­·è…•ã€‚\n" NOR);;
+                set("unit", "é›™");
                 set("value", 500000);
                 set("armor_prop/armor", 200);
                                 set("armor_prop/str", 5);

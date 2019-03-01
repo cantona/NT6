@@ -9,21 +9,21 @@ int is_arrow() { return 1; }
 
 void create()
 {
-        set_name(HIC "·ïÎ²¼ı" NOR, ({ "fengwei jian", "arrow" }) );
+        set_name(HIC "é³³å°¾ç®­" NOR, ({ "fengwei jian", "arrow" }) );
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Êø");
+                set("unit", "æŸ");
                 set("value", 0);
-                set("base_unit", "Ö§");
+                set("base_unit", "æ”¯");
                 set("base_weight", 300);
                 set("base_value", 0);
                 set("wound_percent", 100); 
                 set("material", "iron");
-                set("long", "ÕâÊÇ·ïÎ²¼ı£¬¿ÉÒÔÁ¬Öé¼ı·¢£¬ÊÆµÀÊ®·ÖĞ×ÃÍ¡£\n");
+                set("long", "é€™æ˜¯é³³å°¾ç®­ï¼Œå¯ä»¥é€£ç ç®­ç™¼ï¼Œå‹¢é“ååˆ†å…‡çŒ›ã€‚\n");
         }
         set_amount(20);
         init_throwing(300); 
-        set("no_wield", "Õâ²»ÊÇÓÃÀ´×°±¸µÄ¡£\n"); 
+        set("no_wield", "é€™ä¸æ˜¯ç”¨ä¾†è£å‚™çš„ã€‚\n"); 
         setup();
 }

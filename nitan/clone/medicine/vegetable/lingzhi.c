@@ -1,4 +1,4 @@
-// lingzhi.c ÁéÖ¥
+// lingzhi.c éˆèŠ
 
 inherit ITEM;
 #include <ansi.h>
@@ -11,13 +11,13 @@ void init()
 
 void create()
 {
-        set_name(MAG"ÁéÖ¥"NOR, ({"lingzhi"}));
+        set_name(MAG"éˆèŠ"NOR, ({"lingzhi"}));
         set_weight(500);
         set("vegetable", 8);
         set("value", 10000);
         set("nostrum", 1);
-        set("unit", "¶ä");
-        set("long", "ÕâÊÇÒ»¶ä²ÅÕª²»¾ÃµÄÁéÖ¥£¬¿´À´¿ÉÒÔÈëÒ©¡£\n");
+        set("unit", "æœµ");
+        set("long", "é€™æ˜¯ä¸€æœµæ‰æ‘˜ä¸ä¹…çš„éˆèŠï¼Œçœ‹ä¾†å¯ä»¥å…¥è—¥ã€‚\n");
         set("pour_type", "1");
         setup();
 }
@@ -26,13 +26,13 @@ int do_eat(string arg)
 {
         object me = this_player();
 
-        if(!id(arg)) return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+        if(!id(arg)) return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if(!present(this_object(), me))
-                return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if( me->is_busy() )
-                return notify_fail("±ğ¼±£¬ÂıÂı³Ô£¬Ğ¡ĞÄ±ğÒ­×ÅÁË¡£\n");
+                return notify_fail("åˆ¥æ€¥ï¼Œæ…¢æ…¢åƒï¼Œå°å¿ƒåˆ¥å™è‘—äº†ã€‚\n");
 
-        write("ÄãÈı¿ÚÁ½¿Ú¾Í°ÑÁéÖ¥³ÔÁËÏÂÈ¥¡£½¥½¥¾õµÃÉíÉÏÓĞÁËÁ¦Æø¡£\n");
+        write("ä½ ä¸‰å£å…©å£å°±æŠŠéˆèŠåƒäº†ä¸‹å»ã€‚æ¼¸æ¼¸è¦ºå¾—èº«ä¸Šæœ‰äº†åŠ›æ°£ã€‚\n");
         set("qi",query("eff_qi",  me), me);
         destruct(this_object());
         return 1;

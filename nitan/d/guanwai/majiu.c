@@ -4,7 +4,7 @@ inherit TRANS_ROOM;
 void create()
 {
 mapping map_short = ([
-         "beijing"     : "����",
+         "beijing"     : "北京",
 
 ]);
 
@@ -12,11 +12,11 @@ mapping trans_pay = ([
          "beijing"     : 300,
 ]);
 
-      set("short","����");
+      set("short","馬廄");
       set("long",@LONG
-���ǹ�������ǣ�����ຮ֮�أ��ķ����ʲ��ϡ��������󺺹��ܳ�
-�࣬�����ǻ����ǣ�����Ǻ����տ���������ι�����㣬��ϴˢ�ø�Ǭ��
-����һֱ�ź򵽿�����·������ѩ���µ�ľ���϶���һ����ľ��(paizi)��
+這是關外的馬廄，關外苦寒之地，頗乏新鮮草料。但東北大漢慣能吃
+苦，馬夫們會把馬牽到馬廄好生照看，將它們喂飽飲足，再洗刷得幹乾凈
+凈，一直伺候到客人上路。馬廄雪披下的木柱上釘著一塊破木牌(paizi)。
 LONG);
       set("exits",([
                 "east"      : __DIR__"kedian",

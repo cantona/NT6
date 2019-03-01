@@ -2,10 +2,10 @@ inherit DEMONROOM;
 
 void create()
 {
-        set("short", "����ľ��");
+        set("short", "東灌木林");
         set("long",@LONG
-����һƬ��ľ�֡���û���뵽����һ���µ��Ͼ���������һƬ��
-ľ�֣����ɸе��ǳ��Ծ���
+這是一片灌木林。你沒有想到這樣一個孤島上竟有這樣大一片灌
+木林，不由感到非常吃驚。
 LONG);
 
         set("exits", ([

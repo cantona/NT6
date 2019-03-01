@@ -6,13 +6,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(GRN"Ã¨¶ùÑÛ"NOR, ({ "maoer yan", "yan" }) );
+        set_name(GRN"è²“å…’çœ¼"NOR, ({ "maoer yan", "yan" }) );
         set_weight(50);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»Á£°µÂÌ¶ø·¢·ÅºÁ¹âµÄ±¦Ê¯¡£\n");
-                set("unit", "Á£");
+                set("long", "ä¸€ç²’æš—ç¶ è€Œç™¼æ”¾æ¯«å…‰çš„å¯¶çŸ³ã€‚\n");
+                set("unit", "ç²’");
                 set("value", 100000 );
         }
 

@@ -3,13 +3,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(YEL "¶ÍÔìÊ¯" NOR, ({ "forging stone", "forging", "stone" }));
+        set_name(YEL "é›é€ çŸ³" NOR, ({ "forging stone", "forging", "stone" }));
         set_weight(3000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", YEL "Ò»¿éÓµÓĞÉñÃØÄ§Á¦µÄ¶ÍÔìÊ¯£¬ºÍ×°±¸Ò»Æğ¶ÍÔì¿ÉÉı¼¶×°±¸¡£\n" NOR);
-                set("unit", "¿é");
+                set("long", YEL "ä¸€å¡Šæ“æœ‰ç¥ç§˜é­”åŠ›çš„é›é€ çŸ³ï¼Œå’Œè£å‚™ä¸€èµ·é›é€ å¯å‡ç´šè£å‚™ã€‚\n" NOR);
+                set("unit", "å¡Š");
                 set("value", 500000);
                 set("no_sell", 1);
         }

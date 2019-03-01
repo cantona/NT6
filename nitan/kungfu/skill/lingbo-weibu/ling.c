@@ -3,7 +3,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-string name() { return HIW "ÂåÉñÁè²¨" NOR; }
+string name() { return HIW "æ´›ç¥å‡Œæ³¢" NOR; }
 
 inherit F_SSERVER;
 
@@ -17,27 +17,27 @@ int perform(object me, object target)
 
         if (! target) target = offensive_target(me);
         if (! target || ! target->is_character() || ! me->is_fighting(target))
-                return notify_fail("ÄãÒ»¸öÈËÌøÉõÃ´£¿\n");
+                return notify_fail("ä½ ä¸€å€‹äººè·³ç”šéº¼ï¼Ÿ\n");
 
         if ((level = me->query_skill("lingbo-weibu", 1)) < 120)
-                return notify_fail("ÄãµÄÁè²¨Î¢²½»¹²»¹»ÊìÁ·£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n" NOR);
+                return notify_fail("ä½ çš„å‡Œæ³¢å¾®æ­¥é‚„ä¸å¤ ç†Ÿç·´ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n" NOR);
 
         if( query("neili", me)<600 )
-                return notify_fail("ÄãÏÖÔÚÕæÆø²»×ã£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n" NOR);
+                return notify_fail("ä½ ç¾åœ¨çœŸæ°£ä¸è¶³ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n" NOR);
 
         if( query_temp("lingbo", me) )
-                return notify_fail("ÄãÒÑ¾­ÔËÆğ¡¸ÂåÉñÁè²¨¡¹ÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“é‹èµ·ã€Œæ´›ç¥å‡Œæ³¢ã€äº†ã€‚\n");
 
-        if( query("gender", me) == "Å®ĞÔ" )
-               msg = HIW "\n$N" HIW "ÌáÆğÕæÆø£¬ÒÀÕÕÏÈÌì·üôËÁùÊ®"
-                     "ËÄØÔ£¬½«Áè²¨Î¢²½ÓÉÍ·µ½Î²Ñ¸ËÙÎŞ±ÈµÄ×ßÁËÒ»´Î¡£ "
-                     "$N" HIW "·ÂÈçÂåÉñÔÙÉú£¬ÉíĞÎ¶ÙÊ±ÇáÓ¯ÎŞ±È£¬"
-                     "Î¢²½Áè²¨£¬Õæ¸ö½«åĞÒ£¶ş×Ö·¢»ÓµÃÁÜÀì¾¡ÖÁ¡£\n" NOR;
+        if( query("gender", me) == "å¥³æ€§" )
+               msg = HIW "\n$N" HIW "æèµ·çœŸæ°£ï¼Œä¾ç…§å…ˆå¤©ä¼ç¾²å…­å"
+                     "å››å¦ï¼Œå°‡å‡Œæ³¢å¾®æ­¥ç”±é ­åˆ°å°¾è¿…é€Ÿç„¡æ¯”çš„èµ°äº†ä¸€æ¬¡ã€‚ "
+                     "$N" HIW "ä»¿å¦‚æ´›ç¥å†ç”Ÿï¼Œèº«å½¢é “æ™‚è¼•ç›ˆç„¡æ¯”ï¼Œ"
+                     "å¾®æ­¥å‡Œæ³¢ï¼ŒçœŸå€‹å°‡é€é™äºŒå­—ç™¼æ®å¾—æ·‹æ¼“ç›¡è‡³ã€‚\n" NOR;
 
-        else   msg = HIC "\n$N" HIC "ÌáÆğÕæÆø£¬ÒÀÕÕÏÈÌì·üôËÁùÊ®"
-                     "ËÄØÔ£¬½«Áè²¨Î¢²½ÓÉÍ·µ½Î²Ñ¸ËÙÎŞ±ÈµÄ×ßÁËÒ»´Î¡£                    "
-                     "Ö»¼û$N" HIC "ÒâÌ¬Æ®Òİ£¬Ó°×ÓÂÒ·É£¬ÉíĞÎ¶ÙÊ±Çá"
-                     "Ó¯ÎŞ±È£¬Õæ¸ö½«åĞÒ£¶ş×Ö·¢»ÓµÃÁÜÀì¾¡ÖÁ¡£\n" NOR;
+        else   msg = HIC "\n$N" HIC "æèµ·çœŸæ°£ï¼Œä¾ç…§å…ˆå¤©ä¼ç¾²å…­å"
+                     "å››å¦ï¼Œå°‡å‡Œæ³¢å¾®æ­¥ç”±é ­åˆ°å°¾è¿…é€Ÿç„¡æ¯”çš„èµ°äº†ä¸€æ¬¡ã€‚                    "
+                     "åªè¦‹$N" HIC "æ„æ…‹é£„é€¸ï¼Œå½±å­äº‚é£›ï¼Œèº«å½¢é “æ™‚è¼•"
+                     "ç›ˆç„¡æ¯”ï¼ŒçœŸå€‹å°‡é€é™äºŒå­—ç™¼æ®å¾—æ·‹æ¼“ç›¡è‡³ã€‚\n" NOR;
 
         message_combatd(msg, me, target);
 /*
@@ -58,14 +58,14 @@ int perform(object me, object target)
 
         if (ap / 2 + random(ap) > dp)
         {
-                msg = HIW "$NÓÌÈçÉñÏÉÏÂ·²£¬$n¸úËæ×Å$NµÄÎè²½×ªÁË¸öÍ·ÔÎÑÛ»¨\n" NOR;
+                msg = HIW "$NçŒ¶å¦‚ç¥ä»™ä¸‹å‡¡ï¼Œ$nè·Ÿéš¨è‘—$Nçš„èˆæ­¥è½‰äº†å€‹é ­æšˆçœ¼èŠ±\n" NOR;
                 if (! target->is_busy())
                 target->start_busy(ap / 60 + 4);
                 addn("neili", -400, me);
                 me->start_busy(1);
         } else
         {
-                msg = HIG "¿ÉÊÇ$n¿´ÆÆÁË$NµÄÎè²½,ÒÇÌ¬´ÓÈİµÄ¶ãÁË¹ıÈ¥\n" NOR;
+                msg = HIG "å¯æ˜¯$nçœ‹ç ´äº†$Nçš„èˆæ­¥,å„€æ…‹å¾å®¹çš„èº²äº†éå»\n" NOR;
                 addn("neili", -100, me);
                 me->start_busy(3);
         }
@@ -82,7 +82,7 @@ void remove_effect(object me, int amount, int amount1)
         {
                 addn_temp("dex", -amount, me);
                 delete_temp("lingbo", me);
-                tell_object(me, "ÄãµÄ¡¸ÂåÉñÁè²¨¡¹ÔË¹¦Íê±Ï£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï¡£\n");
+                tell_object(me, "ä½ çš„ã€Œæ´›ç¥å‡Œæ³¢ã€é‹åŠŸå®Œç•¢ï¼Œå°‡å…§åŠ›æ”¶å›ä¸¹ç”°ã€‚\n");
         }
 }
 */

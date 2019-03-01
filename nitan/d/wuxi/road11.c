@@ -5,17 +5,17 @@ inherit ROOM;
 #include <ansi.h>;
 void create()
 {
-        set("short", "��ͷ�");
+        set("short", "黿頭渚");
         set("long", @LONG
-̫��������ǧ�꣬���޷������ͷ����������㲻�ɵؾ�̾��
-�侹����˷羰����֮����ֻ����ɽ��ʯ��ͻ��̫���̲�֮�У����
-��ʯ (shi)�����Ժ��棬�����İ�������ϸ�ڡ��Ƿ�Զ����ֻ������
-ˮ��������Ž���Ŀ�����ľ���Ȼ��
+太湖三萬六千頃，無限風光在黿頭。來到這裡，你不由地驚嘆人
+間竟有如此風景絕佳之處。只見奇山異石，突入太湖碧波之中，層層
+巨石 (shi)，半臥湖面，驚濤拍岸，黛浪細騰。登峰遠眺，只覺萬頃
+水波疊泛金漚，窮盡目力，心境闊然。
 LONG );
         set("outdoors", "wuxi");
         set("no_clean_up", 0);
         set("item_desc", ([
-                "shi" : "�ĸ��Ծ������Ĵ��֣�  "HIG"������Խ\n"NOR,
+                "shi" : "四個蒼勁有力的大字：  "HIG"包孕吳越\n"NOR,
         ]));
         set("exits", ([
                 "east"   : __DIR__"road12",

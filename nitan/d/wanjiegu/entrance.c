@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "´óÉ­ÁÖ");
+        set("short", "å¤§æ£®æ—");
         set("long", @LONG
-ÕâÀïÊÇºÃ´óÒ»×ùÉ­ÁÖ£¬ºÚÑ¹Ñ¹µÄÒ»Æ¬Íû²»µ½±ß¡£×îÌØ±ğÊÇ×óÊ×Ò»
-ÅÅ²¢ÁĞ×Å¾ÅÖê²ÎÌì´óËÉÊ÷£¬Ã¿¿ÅÊ÷¶¼¸ßËÊÈëÔÆ¡£Ê÷ÏÂ²İ´ÔÃ¯ÃÜ£¬µ²×¡
-ÁËÈ¥Â·¡£
+é€™è£¡æ˜¯å¥½å¤§ä¸€åº§æ£®æ—ï¼Œé»‘å£“å£“çš„ä¸€ç‰‡æœ›ä¸åˆ°é‚Šã€‚æœ€ç‰¹åˆ¥æ˜¯å·¦é¦–ä¸€
+æ’ä¸¦åˆ—è‘—ä¹æ ªåƒå¤©å¤§é¬†æ¨¹ï¼Œæ¯é¡†æ¨¹éƒ½é«˜è³å…¥é›²ã€‚æ¨¹ä¸‹è‰å¢èŒ‚å¯†ï¼Œæ“‹ä½
+äº†å»è·¯ã€‚
 LONG );
         set("outdoors", "wanjiegu");
         set("exits", ([ /* sizeof() == 1 */
@@ -17,8 +17,8 @@ LONG );
         set("no_clean_up", 0);
 
         set("item_desc", ([ /* sizeof() == 2 */
-            "²İ´Ô" : "Ò»Æ¬Ã¯ÃÜµÄ²İ´Ô£¬Äã¿ÉÒÔÊÔ×Å°ÑËü²¦¿ª(pushaside)¡£\n",
-            "grass" : "Ò»Æ¬Ã¯ÃÜµÄ²İ´Ô£¬Äã¿ÉÒÔÊÔ×Å°ÑËü²¦¿ª(pushaside)¡£\n",
+            "è‰å¢" : "ä¸€ç‰‡èŒ‚å¯†çš„è‰å¢ï¼Œä½ å¯ä»¥è©¦è‘—æŠŠå®ƒæ’¥é–‹(pushaside)ã€‚\n",
+            "grass" : "ä¸€ç‰‡èŒ‚å¯†çš„è‰å¢ï¼Œä½ å¯ä»¥è©¦è‘—æŠŠå®ƒæ’¥é–‹(pushaside)ã€‚\n",
         ]));
 
         setup();
@@ -32,9 +32,9 @@ void init()
 int do_push(string arg)
 {
         if( !arg ) return 0;
-        if( arg != "²İ´Ô" && arg != "grass" ) return 0;
-        if( arg == "²İ´Ô" || arg == "grass" ) {
-            message_vision("$N²¦¿ª³¤²İ£¬Ê÷ÉÏ³öÏÖÒ»¶´¡£\n", this_player() );
+        if( arg != "è‰å¢" && arg != "grass" ) return 0;
+        if( arg == "è‰å¢" || arg == "grass" ) {
+            message_vision("$Næ’¥é–‹é•·è‰ï¼Œæ¨¹ä¸Šå‡ºç¾ä¸€æ´ã€‚\n", this_player() );
             set("exits/enter", __DIR__"tree_hole");
             call_out("close_passage", 10);
             return 1;
@@ -47,5 +47,5 @@ void close_passage()
 
         if( !query("exits/enter") ) return;
         delete("exits/enter");
-        message("vision","Ò»Õó·ç´µÀ´£¬³¤²İ½«Ê÷¶´¸Ç×¡ÁË¡£\n", this_object() );
+        message("vision","ä¸€é™£é¢¨å¹ä¾†ï¼Œé•·è‰å°‡æ¨¹æ´è“‹ä½äº†ã€‚\n", this_object() );
 }

@@ -11,12 +11,12 @@ int ask_qiankun();
 
 void create()
 {
-        set_name("Ð¡ÕÑ", ({ "xiao zhao", "xiao", "zhao" }));
-        set("nickname", HIC "ÌìÑÄË¼¾ý²»¿ÉÍü" NOR);
+        set_name("å°æ˜­", ({ "xiao zhao", "xiao", "zhao" }));
+        set("nickname", HIC "å¤©æ¶¯æ€å›ä¸å¯å¿˜" NOR);
         set("long",
-            "ËýË«Ä¿Õ¿Õ¿ÓÐÉñ£¬ÐÞÃ¼¶Ë±Ç£¬¼Õ±ßÎ¢ÏÖÀæÎÐ£¬ÕæÊÇÐãÃÀÎÞÂ×£¬Ö»ÊÇÄê¼ÍÓ×\n"
-            "Ð¡£¬Éí²ÄÉÐÎ´³¤³É£¬ËäÈ»ÈÝÃ²¾øÀö£¬È´ÑÚ²»×¡ÈÝÑÕÖÐµÄÖÉÆø¡£\n");
-        set("gender", "Å®ÐÔ");
+            "å¥¹é›™ç›®æ¹›æ¹›æœ‰ç¥žï¼Œä¿®çœ‰ç«¯é¼»ï¼Œé °é‚Šå¾®ç¾æ¢¨æ¸¦ï¼ŒçœŸæ˜¯ç§€ç¾Žç„¡å€«ï¼Œåªæ˜¯å¹´ç´€å¹¼\n"
+            "å°ï¼Œèº«æå°šæœªé•·æˆï¼Œé›–ç„¶å®¹è²Œçµ•éº—ï¼Œå»æŽ©ä¸ä½å®¹é¡ä¸­çš„ç¨šæ°£ã€‚\n");
+        set("gender", "å¥³æ€§");
         set("age", 15);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -47,16 +47,16 @@ void create()
 
         set_temp("apply/attack", 15);
         set_temp("apply/damage", 15);
-        set("party/party_name", HIG "Ã÷½Ì" NOR);
-        set("party/rank", HIG "²¨Ë¹Ê¥½ÌÖ÷" NOR);
+        set("party/party_name", HIG "æ˜Žæ•™" NOR);
+        set("party/rank", HIG "æ³¢æ–¯è–æ•™ä¸»" NOR);
         set("party/level", 1);
         set("inquiry", ([
-            "ÕÅÎÞ¼É" :  (: ask_wuji :),
-            "ÒÐÌì½£" :  (: ask_jian :),
-            "»Æ½ð" :    (: ask_gold :),
-            "¸è" :      (: ask_ge :),
-            "Ç¬À¤´óÅ²ÒÆ": (: ask_qiankun :),
-            "Ç¬À¤´óÅ²ÒÆÐÄ·¨": (: ask_qiankun :),
+            "å¼µç„¡å¿Œ" :  (: ask_wuji :),
+            "å€šå¤©åŠ" :  (: ask_jian :),
+            "é»ƒé‡‘" :    (: ask_gold :),
+            "æ­Œ" :      (: ask_ge :),
+            "ä¹¾å¤å¤§æŒªç§»": (: ask_qiankun :),
+            "ä¹¾å¤å¤§æŒªç§»å¿ƒæ³•": (: ask_qiankun :),
             "wuji" :    (: ask_wuji :),
             "jian" :    (: ask_jian :),
             "gold" :    (: ask_gold :),
@@ -65,26 +65,26 @@ void create()
 
         set("chat_chance", 3);
         set("chat_msg", ({
-                    "Ð¡ÕÑµÍÉùÒ÷µÀ£ºÌìÑÄË¼¾ý²»¿ÉÍü Îäµ±É½¶¥ËÉ°Ø³¤\n",
-                    "Ð¡ÕÑµÍÉùÒ÷µÀ£º±¦µ¶°ÙÁ¶ÉúÐþ¹â ×Ö×÷É¥ÂÒÒâáÝáå\n",
-                    "Ð¡ÕÑµÍÉùÒ÷µÀ£ºð©±ÛËÆÓñÃ·»¨×± ¸¡é¶±±äéº£Ã£Ã£\n",
-                    "Ð¡ÕÑµÍÉùÒ÷µÀ£ºË­ËÍ±ùô´À´ÏÉÏç Çî·¢Ê®ÔØ·º¹éº½\n",
-                    "Ð¡ÕÑµÍÉùÒ÷µÀ£ºÆßÏÀ¾Û»áÀÖÎ´Ñë °ÙËêÊÙÑç´Ý¸Î³¦\n",
-                    "Ð¡ÕÑµÍÉùÒ÷µÀ£ºÓÐÅ®³¤ÉàÈçÀûÇ¹ ÕëÆä¸àÙâÒ©ÆäëÁ\n",
-                    "Ð¡ÕÑµÍÉùÒ÷µÀ£º²»»ÚÖÙ×ÓÓâÎÒÇ½ µ±µÀÊ±¼ûÖÐÉ½ÀÇ\n",
-                    "Ð¡ÕÑµÍÉùÒ÷µÀ£ºÆæÄ±Ãî¼ÆÃÎÒ»³¡ °þ¼«¶ø¸´²Î¾ÅÑô\n",
-                    "Ð¡ÕÑµÍÉùÒ÷µÀ£ºÇàÒí³öÃ»Ò»Ð¦Ñï ÒÐÌì³¤½£·Éº®Ã¢\n",
-                    "Ð¡ÕÑµÍÉùÒ÷µÀ£º»öÆðÏôÇ½ÆÆ½ðÌÀ Óë×Ó¹²Ñ¨Ïà·ö½«\n",
-                    "Ð¡ÕÑµÍÉùÒ÷µÀ£ºÅÅÄÑ½â·×µ±ÁùÇ¿ ÈºÐÛ¹éÐÄÔ¼ÈýÕÂ\n",
-                    "Ð¡ÕÑµÍÉùÒ÷µÀ£ºÁéÜ½×í¿ÍÂÌÁø×¯ Ì«¼«³õ´«Èá¿Ë¸Õ\n",
-                    "Ð¡ÕÑµÍÉùÒ÷µÀ£º¾Ù»ðÁÇÌìºÎ»Í»Í ¿¡Ã²ÓñÃæ¸ÊËðÉË\n",
-                    "Ð¡ÕÑµÍÉùÒ÷µÀ£º°Ù³ß¸ßËþÈÎ»ØÏè ¶÷¶ÏÒå¾ø×ÏÉÀÍõ\n",
-                    "Ð¡ÕÑµÍÉùÒ÷µÀ£ºËÄÅ®Í¬ÖÛºÎËùÍû ¶«Î÷ÓÀ¸ôÈç²ÎÉÌ\n",
-                    "Ð¡ÕÑµÍÉùÒ÷µÀ£ºµ¶½£ÆëÊ§ÈËÔÆÍö Ô©ÃÉ²»°×³îÓû¿ñ\n",
-                    "Ð¡ÕÑµÍÉùÒ÷µÀ£ºóï³¤ÇÙ¶ÌÒÂÁ÷»Æ ÐÂ¸¾ËØÊÖÁÑºìÉÑ\n",
-                    "Ð¡ÕÑµÍÉùÒ÷µÀ£ºÍÀÊ¨ÓÐ»áÊëÎªÑê Ø²½ÃÈýËÉÓôÇà²Ô\n",
-                    "Ð¡ÕÑµÍÉùÒ÷µÀ£ºÌìÏÂÓ¢ÐÛÄªÄÜµ± ¾ý×Ó¿ÉÆÛÖ®ÒÔ·½\n",
-                    "Ð¡ÕÑµÍÉùÒ÷µÀ£ºÃØóÅ±øÊé´ËÖÐ²Ø ²»Ê¶ÕÅÀÉÊÇÕÅÀÉ\n",
+                    "å°æ˜­ä½Žè²åŸé“ï¼šå¤©æ¶¯æ€å›ä¸å¯å¿˜ æ­¦ç•¶å±±é ‚é¬†æŸé•·\n",
+                    "å°æ˜­ä½Žè²åŸé“ï¼šå¯¶åˆ€ç™¾ç…‰ç”ŸçŽ„å…‰ å­—ä½œå–ªäº‚æ„å½·å¾¨\n",
+                    "å°æ˜­ä½Žè²åŸé“ï¼šçš“è‡‚ä¼¼çŽ‰æ¢…èŠ±å¦ æµ®æ§ŽåŒ—æºŸæµ·èŒ«èŒ«\n",
+                    "å°æ˜­ä½Žè²åŸé“ï¼šèª°é€å†°èˆ¸ä¾†ä»™é„‰ çª®ç™¼åè¼‰æ³›æ­¸èˆª\n",
+                    "å°æ˜­ä½Žè²åŸé“ï¼šä¸ƒä¿ èšæœƒæ¨‚æœªå¤® ç™¾æ­²å£½å®´æ‘§è‚è…¸\n",
+                    "å°æ˜­ä½Žè²åŸé“ï¼šæœ‰å¥³é•·èˆŒå¦‚åˆ©æ§ é‡å…¶è†å…®è—¥å…¶è‚“\n",
+                    "å°æ˜­ä½Žè²åŸé“ï¼šä¸æ‚”ä»²å­é€¾æˆ‘ç‰† ç•¶é“æ™‚è¦‹ä¸­å±±ç‹¼\n",
+                    "å°æ˜­ä½Žè²åŸé“ï¼šå¥‡è¬€å¦™è¨ˆå¤¢ä¸€å ´ å‰æ¥µè€Œå¾©åƒä¹é™½\n",
+                    "å°æ˜­ä½Žè²åŸé“ï¼šé’ç¿¼å‡ºæ²’ä¸€ç¬‘æš å€šå¤©é•·åŠé£›å¯’èŠ’\n",
+                    "å°æ˜­ä½Žè²åŸé“ï¼šç¦èµ·è•­ç‰†ç ´é‡‘æ¹¯ èˆ‡å­å…±ç©´ç›¸æ‰¶å°‡\n",
+                    "å°æ˜­ä½Žè²åŸé“ï¼šæŽ’é›£è§£ç´›ç•¶å…­å¼· ç¾¤é›„æ­¸å¿ƒç´„ä¸‰ç« \n",
+                    "å°æ˜­ä½Žè²åŸé“ï¼šéˆèŠ™é†‰å®¢ç¶ æŸ³èŽŠ å¤ªæ¥µåˆå‚³æŸ”å…‹å‰›\n",
+                    "å°æ˜­ä½Žè²åŸé“ï¼šèˆ‰ç«ç‡Žå¤©ä½•ç…Œç…Œ ä¿Šè²ŒçŽ‰é¢ç”˜æå‚·\n",
+                    "å°æ˜­ä½Žè²åŸé“ï¼šç™¾å°ºé«˜å¡”ä»»å›žç¿” æ©æ–·ç¾©çµ•ç´«è¡«çŽ‹\n",
+                    "å°æ˜­ä½Žè²åŸé“ï¼šå››å¥³åŒèˆŸä½•æ‰€æœ› æ±è¥¿æ°¸éš”å¦‚åƒå•†\n",
+                    "å°æ˜­ä½Žè²åŸé“ï¼šåˆ€åŠé½Šå¤±äººé›²äº¡ å†¤è’™ä¸ç™½æ„æ¬²ç‹‚\n",
+                    "å°æ˜­ä½Žè²åŸé“ï¼šç°«é•·ç´çŸ­è¡£æµé»ƒ æ–°å©¦ç´ æ‰‹è£‚ç´…è£³\n",
+                    "å°æ˜­ä½Žè²åŸé“ï¼šå± ç…æœ‰æœƒå­°ç‚ºæ®ƒ å¤­çŸ¯ä¸‰é¬†é¬±é’è’¼\n",
+                    "å°æ˜­ä½Žè²åŸé“ï¼šå¤©ä¸‹è‹±é›„èŽ«èƒ½ç•¶ å›å­å¯æ¬ºä¹‹ä»¥æ–¹\n",
+                    "å°æ˜­ä½Žè²åŸé“ï¼šç§˜ç¬ˆå…µæ›¸æ­¤ä¸­è— ä¸è­˜å¼µéƒŽæ˜¯å¼µéƒŽ\n",
         }) );
 
         setup();
@@ -94,33 +94,33 @@ void create()
 int ask_wuji()
 {
         command("sigh"+query("id", this_player()));
-        say("Ð¡ÕÑÓÄÓÄµØËµ£ºÌìÑÄË¼¾ý²»¿ÉÍü£¬¶«Î÷ÓÀ¸ôÈç²ÎÉÌ¡£\n");
+        say("å°æ˜­å¹½å¹½åœ°èªªï¼šå¤©æ¶¯æ€å›ä¸å¯å¿˜ï¼Œæ±è¥¿æ°¸éš”å¦‚åƒå•†ã€‚\n");
         return 1;
 }
 
 int ask_jian()
 {
-        command("say ÎÒ²»ÖªµÀÔÚÄÄÀï...±ðÎÊÎÒ¡£");
+        command("say æˆ‘ä¸çŸ¥é“åœ¨å“ªè£¡...åˆ¥å•æˆ‘ã€‚");
         return 1;
 }
 
 int ask_gold()
 {
-        command("say ²»ÐÐ°¡£¬Õâ²»ÄÜËæ±ã¸øÈË¡£");
+        command("say ä¸è¡Œå•Šï¼Œé€™ä¸èƒ½éš¨ä¾¿çµ¦äººã€‚");
         return 1;
 }
 
 int ask_ge()
 {
         command("nod"+query("id", this_player()));
-        say("Ð¡ÕÑÂüÉù³ªµÀ£º\n\n" +
-        "ÊÀÇéÍÆÎïÀí  ÈËÉú¹óÊÊÒâ\n\n"+
-        "ÏëÈË¼äÔìÎï°áÐË·Ï  ¼ª²ØÐ× Ð×²Ø¼ª  ¸»¹óÄÇÄÜ³¤¸»¹ó\n\n"+
-        "ÈÕÓ¯ê¾  ÔÂÂú¿÷Ê´  µØÏÂ¶«ÄÏ  Ìì¸ßÎ÷±±  ÌìµØÉÐÎÞÍêÌå\n\n"+
-        "Õ¹·Å³îÃ¼  ÐÝÕùÏÐÆø  ½ñÈÕÈÝÑÕ  ÀÏÓÚ×òÈÕ  ¹ÅÍù½ñÀ´  ¾¡ÐëÈç´Ë\n\n"+
-        "¹ÜËûÏÍµÄÓÞµÄ  Æ¶µÄºÍ¸»µÄ  µ½Í·ÕâÒ»Éí  ÄÑÌÓÄÇÒ»ÈÕ\n\n"+
-        "ÊÜÓÃÁËÒ»³¯  Ò»³¯±ãÒË\n\n"+
-        "°ÙËê¹âÒõ  ÆßÊ®ÕßÏ¡  ¼±¼±Á÷Äê  ÌÏÌÏÊÅË®\n\n");
+        say("å°æ˜­æ›¼è²å”±é“ï¼š\n\n" +
+        "ä¸–æƒ…æŽ¨ç‰©ç†  äººç”Ÿè²´é©æ„\n\n"+
+        "æƒ³äººé–“é€ ç‰©æ¬èˆˆå»¢  å‰è—å…‡ å…‡è—å‰  å¯Œè²´é‚£èƒ½é•·å¯Œè²´\n\n"+
+        "æ—¥ç›ˆæ˜ƒ  æœˆæ»¿è™§è•  åœ°ä¸‹æ±å—  å¤©é«˜è¥¿åŒ—  å¤©åœ°å°šç„¡å®Œé«”\n\n"+
+        "å±•æ”¾æ„çœ‰  ä¼‘çˆ­é–’æ°£  ä»Šæ—¥å®¹é¡  è€äºŽæ˜¨æ—¥  å¤å¾€ä»Šä¾†  ç›¡é ˆå¦‚æ­¤\n\n"+
+        "ç®¡ä»–è³¢çš„æ„šçš„  è²§çš„å’Œå¯Œçš„  åˆ°é ­é€™ä¸€èº«  é›£é€ƒé‚£ä¸€æ—¥\n\n"+
+        "å—ç”¨äº†ä¸€æœ  ä¸€æœä¾¿å®œ\n\n"+
+        "ç™¾æ­²å…‰é™°  ä¸ƒåè€…ç¨€  æ€¥æ€¥æµå¹´  æ»”æ»”é€æ°´\n\n");
         return 1;
 }
 
@@ -128,15 +128,15 @@ int ask_qiankun()
 {
         object me = this_player();
         if( query_temp("mark/qiankun", me) && 
-                query("party/party_name", me) == HIG"Ã÷½Ì"NOR )
+                query("party/party_name", me) == HIG"æ˜Žæ•™"NOR )
         {
-                message_vision( CYN"Ð¡ÕÑÝ¸¶ûÒ»Ð¦£¬¶Ô$NËµµÀ£ºÇ¬À¤´óÅ²ÒÆÐÄ·¨ÔÚ±¾½ÌÃÜµÀÀï£¬ÎÒÃÇÈ¥È¡°É¡£\n"NOR,me);
+                message_vision( CYN"å°æ˜­èŽžçˆ¾ä¸€ç¬‘ï¼Œå°$Nèªªé“ï¼šä¹¾å¤å¤§æŒªç§»å¿ƒæ³•åœ¨æœ¬æ•™å¯†é“è£¡ï¼Œæˆ‘å€‘åŽ»å–å§ã€‚\n"NOR,me);
                 set_leader(me);
                 delete_temp("mark/qiankun", me);
         }
         else
         {
-                command("say ×ÔÉÏ´ú½ÌÖ÷Ñô¶¥ÌìÀëÆæÊ§×Ù£¬Ç¬À¤´óÅ²ÒÆÐÄ·¨ÒÑ¾­Ê§ÂäºÜ¾ÃÁË¡£\n");
+                command("say è‡ªä¸Šä»£æ•™ä¸»é™½é ‚å¤©é›¢å¥‡å¤±è¹¤ï¼Œä¹¾å¤å¤§æŒªç§»å¿ƒæ³•å·²ç¶“å¤±è½å¾ˆä¹…äº†ã€‚\n");
                 set_temp("mark/qiankun", 1, me);
                 set_leader(0);
         }

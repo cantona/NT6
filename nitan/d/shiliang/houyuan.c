@@ -2,10 +2,10 @@
 inherit ROOM;
 void create()
 {
-        set("short", "��Ժ");
+        set("short", "後院");
         set("long", @LONG
-�����Ǹ����ĺ�Ժ���������죬֪�������ϲ�ͣ�ؽ��ţ��и�
-������������ɨ�ŵ��档
+這裡是個大大的後院，古樹參天，知了在樹上不停地叫著，有個
+僕人在那裡清掃著地面。
 LONG
         );
         set("outdoors","shiliang");

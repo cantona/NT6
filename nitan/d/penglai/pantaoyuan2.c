@@ -4,22 +4,22 @@ inherit DEMONROOM;
 
 void create()
 {
-        set("short", "ó´ÌÒÔ°");
+        set("short", "èŸ æ¡ƒåœ’");
         set("long",@LONG
-ÕâÀïÊÇÅîÀ³ÏÉµºµÄó´ÌÒÔ°£¬ó´ÌÒÊ÷Ò»°ÙÄê¿ª»¨£¬ÔÙ¹ýÒ»°ÙÄê²Å
-½á¹û£¬Ã¿·êó´ÌÒ³öÏÖµÄÊ±ºòÈºÏÉ±ã»á»á¾ÛÔÚ´Ë¾ÙÐÐó´ÌÒ´ó»á¡£ËäÈ»
-Í¬¾ÓÒ»µº£¬µ«ÊÇÃ¿¹ýÁ½°ÙÄêÈºÏÉ²Å»á½è×Åó´ÌÒ´ó»á¾Û»áÒ»´Î£¬¹²Ïí
-ó´ÌÒÃÀ¾Æ¡£
+é€™è£¡æ˜¯è“¬èŠä»™å³¶çš„èŸ æ¡ƒåœ’ï¼ŒèŸ æ¡ƒæ¨¹ä¸€ç™¾å¹´é–‹èŠ±ï¼Œå†éŽä¸€ç™¾å¹´æ‰
+çµæžœï¼Œæ¯é€¢èŸ æ¡ƒå‡ºç¾çš„æ™‚å€™ç¾¤ä»™ä¾¿æœƒæœƒèšåœ¨æ­¤èˆ‰è¡ŒèŸ æ¡ƒå¤§æœƒã€‚é›–ç„¶
+åŒå±…ä¸€å³¶ï¼Œä½†æ˜¯æ¯éŽå…©ç™¾å¹´ç¾¤ä»™æ‰æœƒå€Ÿè‘—èŸ æ¡ƒå¤§æœƒèšæœƒä¸€æ¬¡ï¼Œå…±äº«
+èŸ æ¡ƒç¾Žé…’ã€‚
 LONG);
 
         set("exits", ([
                 "northwest"   : __DIR__"fanchendao",
                 "southwest"   : __DIR__"pantaoyuan1",
         ]));
-        set("no_rideto", 1);         // ÉèÖÃ²»ÄÜÆïÂíµ½ÆäËûµØ·½
-        set("no_flyto", 1);          // ÉèÖÃ²»ÄÜ´ÓÆðÀ´µØ·½ÆïÂíÀ´ÕâÀï
-        set("no_die", 1);            // ËÀÍöºóÒÆ¶¯µ½±âÈµ¾Ó
-        set("penglai", 1);           // ±íÊ¾ÔÚÅîÀ³µº
+        set("no_rideto", 1);         // è¨­ç½®ä¸èƒ½é¨Žé¦¬åˆ°å…¶ä»–åœ°æ–¹
+        set("no_flyto", 1);          // è¨­ç½®ä¸èƒ½å¾žèµ·ä¾†åœ°æ–¹é¨Žé¦¬ä¾†é€™è£¡
+        set("no_die", 1);            // æ­»äº¡å¾Œç§»å‹•åˆ°æ‰éµ²å±…
+        set("penglai", 1);           // è¡¨ç¤ºåœ¨è“¬èŠå³¶
 
         set("n_time", 30); 
         set("n_npc", 1); 
@@ -36,14 +36,14 @@ void init ()
                 if (! this_player()->query("penglai/go_quest/ok"))
                 {
                         this_player()->start_busy(3);
-                        tell_object(this_player(), NOR + WHT "Äãµ½ÁË´Ë´¦£¬ËÄÖÜÏÉÆøçÔÈÆÁîÄãÒ»Ê±¼äÄÑÒÔ±æ±ð·½Ïò¡£\n" NOR);
+                        tell_object(this_player(), NOR + WHT "ä½ åˆ°äº†æ­¤è™•ï¼Œå››å‘¨ä»™æ°£ç¹šç¹žä»¤ä½ ä¸€æ™‚é–“é›£ä»¥è¾¨åˆ¥æ–¹å‘ã€‚\n" NOR);
                 }
                 else
                 {
                         if (random(2))
                         {
                                 this_player()->start_busy(1);
-                                tell_object(this_player(), NOR + WHT "Äãµ½ÁË´Ë´¦£¬ËÄÖÜÏÉÆøçÔÈÆÁîÄãÒ»Ê±¼äÄÑÒÔ±æ±ð·½Ïò¡£\n" NOR);                
+                                tell_object(this_player(), NOR + WHT "ä½ åˆ°äº†æ­¤è™•ï¼Œå››å‘¨ä»™æ°£ç¹šç¹žä»¤ä½ ä¸€æ™‚é–“é›£ä»¥è¾¨åˆ¥æ–¹å‘ã€‚\n" NOR);                
                         }
                 }
         }

@@ -6,17 +6,17 @@ inherit HAMMER;
 
 void create()
 {
-        set_name("Ä¾Óãé³", ({ "muyu chui", "chui" }) );
+        set_name("æœ¨é­šæ§Œ", ({ "muyu chui", "chui" }) );
         set_weight(500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
+                set("unit", "æŠŠ");
                 set("value", 50);
                 set("material", "wood");
-                set("long", "ÕâÊÇÒ»°ÑºÍÉĞÄî¾­ÇÎÄ¾ÓãÓÃµÄĞ¡Ä¾é³¡£\n");
-                set("wield_msg", "$N´ÓÒÂ´üÀïÌÍ³öÒ»¸ù$n£¬ÎÕÔÚÊÖÖĞµ±ÎäÆ÷¡£\n");
-                set("unequip_msg", "$N½«ÊÖÖĞµÄ$n·Å»ØÒÂ´ü¡£\n");
+                set("long", "é€™æ˜¯ä¸€æŠŠå’Œå°šå¿µç¶“ä¿æœ¨é­šç”¨çš„å°æœ¨æ§Œã€‚\n");
+                set("wield_msg", "$Nå¾è¡£è¢‹è£¡æå‡ºä¸€æ ¹$nï¼Œæ¡åœ¨æ‰‹ä¸­ç•¶æ­¦å™¨ã€‚\n");
+                set("unequip_msg", "$Nå°‡æ‰‹ä¸­çš„$næ”¾å›è¡£è¢‹ã€‚\n");
                 set("shaolin",1);
         }
         init_hammer(1);

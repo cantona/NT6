@@ -1,4 +1,4 @@
-// µ¯Éä¶¾Ò©
+// å½ˆå°„æ¯’è—¥
 
 #include <ansi.h>
 
@@ -12,50 +12,50 @@ int exert(object me, object target)
         string msg;
 
         if( query("no_fight", environment(me)) )
-                return notify_fail("ÕâÀï²»ÄÜÕ½¶·£¬Äã²»¿ÉÒÔÊ¹ÓÃ¶¾¼¼ÉËÈË¡£\n");
+                return notify_fail("é€™è£¡ä¸èƒ½æˆ°é¬¥ï¼Œä½ ä¸å¯ä»¥ä½¿ç”¨æ¯’æŠ€å‚·äººã€‚\n");
 
         if (! target || me == target)
-                return notify_fail("ÄãÏë¹¥»÷Ë­£¿\n");
+                return notify_fail("ä½ æƒ³æ”»æ“Šèª°ï¼Ÿ\n");
 
         if (target->query_competitor())
-                return notify_fail("±ÈÎäµÄÊ±ºò×îºÃÊÇÕý´ó¹âÃ÷µÄ½ÏÁ¿¡£\n");
+                return notify_fail("æ¯”æ­¦çš„æ™‚å€™æœ€å¥½æ˜¯æ­£å¤§å…‰æ˜Žçš„è¼ƒé‡ã€‚\n");
 
         if ((int)me->query_skill("poison", 1) < 80)
-                return notify_fail("ÄãµÄ»ù±¾¶¾¼¼»ðºò²»¹»¡£\n");
+                return notify_fail("ä½ çš„åŸºæœ¬æ¯’æŠ€ç«å€™ä¸å¤ ã€‚\n");
 
         if ((int)me->query_skill("hamagong", 1) < 100)
-                return notify_fail("ÄãµÄÄÚ¹¦»ðºò²»¹»¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸç«å€™ä¸å¤ ã€‚\n");
 
         if( query("neili", me)<500 )
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦²»×ã£¬²»ÄÜµ¯Éä¶¾Ò©¡£\n");
+                return notify_fail("ä½ ç¾åœ¨å…§åŠ›ä¸è¶³ï¼Œä¸èƒ½å½ˆå°„æ¯’è—¥ã€‚\n");
 
         if( !objectp(du=query_temp("handing", me)) )
-                return notify_fail("ÄãµÃÏÈ×¼±¸(hand)ºÃ¶¾Ò©ÔÙËµ¡£\n");
+                return notify_fail("ä½ å¾—å…ˆæº–å‚™(hand)å¥½æ¯’è—¥å†èªªã€‚\n");
 
         if( !mapp(query("poison", du)) )
-                return notify_fail(du->name() + "ÓÖ²»ÊÇ¶¾Ò©£¬ÄãÂÒµ¯Ê²Ã´£¿\n");
+                return notify_fail(du->name() + "åˆä¸æ˜¯æ¯’è—¥ï¼Œä½ äº‚å½ˆä»€éº¼ï¼Ÿ\n");
 
-        msg = CYN "$N" CYN "ÔË×ªÄÚÁ¦£¬ÇáÇáÐüÆðÒ»Ð©" + du->name() +
-              CYN "¶Ô×¼$n" CYN "µ¯ÁË¹ýÈ¥¡£\n" NOR;
+        msg = CYN "$N" CYN "é‹è½‰å…§åŠ›ï¼Œè¼•è¼•æ‡¸èµ·ä¸€äº›" + du->name() +
+              CYN "å°æº–$n" CYN "å½ˆäº†éŽåŽ»ã€‚\n" NOR;
         me->start_busy(2 + random(2));
         addn("neili", -300, me);
 
         if( query("neili", me)/2+random(query("neili", me))<
             query("neili", target) )
         {
-                msg += WHT "È»¶ø$nÇáÇáÒ»¶¶£¬½«$NÉä¹ýÀ´µÄ" + du->name() +
-                       WHT "Ï¤ÊýÕð¿ª¡£\n" NOR;
+                msg += WHT "ç„¶è€Œ$nè¼•è¼•ä¸€æŠ–ï¼Œå°‡$Nå°„éŽä¾†çš„" + du->name() +
+                       WHT "æ‚‰æ•¸éœ‡é–‹ã€‚\n" NOR;
         } else
         {
                 ap = me->query_skill("poison", 1) / 2 +
                      me->query_skill("force");
                 if (ap / 2 + random(ap) < target->query_skill("dodge") * 3 / 2)
                 {
-                        msg += WHT "$n¼ûÊÆ²»Ãî£¬¼±Ã¦ÌÚÅ²ÉíÐÎ£¬±Ü¿ªÁË$NµÄ¹¥»÷¡£\n" NOR;
+                        msg += WHT "$nè¦‹å‹¢ä¸å¦™ï¼Œæ€¥å¿™é¨°æŒªèº«å½¢ï¼Œé¿é–‹äº†$Nçš„æ”»æ“Šã€‚\n" NOR;
                         target->start_busy(1);
                 } else
                 {
-                        msg += GRN "$nÁ¬Ã¦¶ãÉÁ£¬½á¹ûÈÔÈ»¾õµÃÎ¢Î¢Ò»ÕóËáÂé¡£\n" NOR;
+                        msg += GRN "$né€£å¿™èº²é–ƒï¼Œçµæžœä»ç„¶è¦ºå¾—å¾®å¾®ä¸€é™£é…¸éº»ã€‚\n" NOR;
                         target->affect_by(query("poison_type", du),query("poison", du));
                         target->start_busy(1);
                 }

@@ -1,11 +1,11 @@
 inherit ROOM;
 void create()
 {
-        set("short", "���");
+        set("short", "戈壁");
         set("long", @LONG
-���ƽ̹�羵����ɳĮ�ϵ�ɳ�����ȫȻ��ͬ��ֻ��һƬ
-ƽɳ������Զ����ֻ�������ӣ����������������˾�������
-Ҳ������֮�У��پ���ǧ���ޣ�һ����С�쳣��
+戈壁平坦如鏡，和沙漠上的沙丘起伏全然不同，只見一片
+平沙，凝眸遠眺，只覺天地相接，萬籟無聲，身當此境，不禁
+也生栗栗之感，頓覺大千無限，一己渺小異常。
 LONG);
         set("outdoors", "xiyu");
         set("exits", ([

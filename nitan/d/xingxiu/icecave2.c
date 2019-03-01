@@ -5,15 +5,15 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "±ù¶´");
+        set("short", "å†°æ´");
         set("long", @LONG
-½øµ½±ù¶´ÀïÃæ£¬ÄÇ¶´¶¥ÉÏ½ô½ô´¹¹Ò×Å±ù×¶(icicle)£¬³¤¶Ì²»Æë£¬
-´ÖÏ¸²»Ò»£»¶´µ×ÏÂ±ùÊ÷´ÔÉú£¬Ç§×ËÍòÌ¬¡£´©ĞĞ¶´ÄÚ£¬ºÃËÆ½øÁË¹â¹ÖÂ½
-ÀëµÄÉñ»°ÊÀ½ç¡£¶´¶¥ÓĞ¸ö¿ßÁşËÆºõ¿ÉÒÔÅÀ³öÈ¥(out)¡£
+é€²åˆ°å†°æ´è£¡é¢ï¼Œé‚£æ´é ‚ä¸Šç·Šç·Šå‚æ›è‘—å†°éŒ(icicle)ï¼Œé•·çŸ­ä¸é½Šï¼Œ
+ç²—ç´°ä¸ä¸€ï¼›æ´åº•ä¸‹å†°æ¨¹å¢ç”Ÿï¼Œåƒå§¿è¬æ…‹ã€‚ç©¿è¡Œæ´å…§ï¼Œå¥½ä¼¼é€²äº†å…‰æ€ªé™¸
+é›¢çš„ç¥è©±ä¸–ç•Œã€‚æ´é ‚æœ‰å€‹çªŸçª¿ä¼¼ä¹å¯ä»¥çˆ¬å‡ºå»(out)ã€‚
 LONG );
 
         set("item_desc",([
-                "icicle" : "ÕâĞ©±ù×¶³¤¶Ì²»Ò»£¬ÔÚ»ğÕÛÕÕÒ«ÏÂÉ¢·¢³ö¾§Ó¨µÄ¹âÔó£¬ÄãºÜÏëµ¯(flick)¼¸¸ùÏÂÀ´ÍæÍæ¡£\n",
+                "icicle" : "é€™äº›å†°éŒé•·çŸ­ä¸ä¸€ï¼Œåœ¨ç«æŠ˜ç…§è€€ä¸‹æ•£ç™¼å‡ºæ™¶ç‘©çš„å…‰æ¾¤ï¼Œä½ å¾ˆæƒ³å½ˆ(flick)å¹¾æ ¹ä¸‹ä¾†ç©ç©ã€‚\n",
         ]));
 
         set("exits", ([
@@ -40,24 +40,24 @@ int do_flick(string arg)
                 return 0;
 
         if (me->query_busy())
-                return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ æ­£å¿™è‘—å‘¢ã€‚\n");
 
         if (query("icicle") < 1)
-                return notify_fail("ÕâÀïµÄ±ù×¶Äã¶¼¹»²»×ÅÁË¡£\n");
+                return notify_fail("é€™è£¡çš„å†°éŒä½ éƒ½å¤ ä¸è‘—äº†ã€‚\n");
 
         if( query("jing", me)<30 || query("jingli", me)<30 )
-                return notify_fail("ÄãµÄ¾«Éñ²»ÄÜ¼¯ÖĞ¡£\n");
+                return notify_fail("ä½ çš„ç²¾ç¥ä¸èƒ½é›†ä¸­ã€‚\n");
 
         if( arg=="icicle")
         {
         me->receive_damage("jing", 15);        
         me->receive_damage("qi", 15);
         addn("icicle", -1);
-        message_vision("$NÇáÇáµØÓÃÊÖÖ¸µ¯¶ÏÁËÒ»¸ù±ù×¶¡£\n", me);
+        message_vision("$Nè¼•è¼•åœ°ç”¨æ‰‹æŒ‡å½ˆæ–·äº†ä¸€æ ¹å†°éŒã€‚\n", me);
         if (random(me->query_skill("feixing-shu", 1)) > 30){
         me->improve_skill("feixing-shu",query("int", me));
-        message_vision("$Nµ¯·É³öÈ¥µÄ±ù×¶×²¶ÏÁËÁíÒ»¸ù±ù×¶£¬Æ¹Æ¹ÅÒÅÒÂÒÏì¡£\n", me);
-        tell_object(me, "ÄãËÆºõÁìÎòÁËÒ»²ã°µÆ÷µÄ¼¼ÄÜ¡£\n");
+        message_vision("$Nå½ˆé£›å‡ºå»çš„å†°éŒæ’æ–·äº†å¦ä¸€æ ¹å†°éŒï¼Œä¹’ä¹’ä¹“ä¹“äº‚éŸ¿ã€‚\n", me);
+        tell_object(me, "ä½ ä¼¼ä¹é ˜æ‚Ÿäº†ä¸€å±¤æš—å™¨çš„æŠ€èƒ½ã€‚\n");
         if (me->query_skill("feixing-shu", 1) > 100)
         me->receive_damage("jing", 15);
         if (me->query_skill("feixing-shu", 1) > 150)
@@ -79,9 +79,9 @@ int do_out(string arg)
         object me;
         me = this_player();
 
-        message_vision("$NÅÊÉÏ¶´±Ú´Ó¿ßÁşÀïÅÀÁË³öÈ¥£¬\n", me);
+        message_vision("$Næ”€ä¸Šæ´å£å¾çªŸçª¿è£¡çˆ¬äº†å‡ºå»ï¼Œ\n", me);
         me->move("/d/xingxiu/shanluan");
-        message("vision", me->name() + "Ë®ÁÜÁÜµÄ²»Öª´ÓÊ²Ã´µØ·½ÅÀÁËÉÏÀ´¡£\n",
+        message("vision", me->name() + "æ°´æ·‹æ·‹çš„ä¸çŸ¥å¾ä»€éº¼åœ°æ–¹çˆ¬äº†ä¸Šä¾†ã€‚\n",
                     environment(me), ({me}) );
         return 1;
 }

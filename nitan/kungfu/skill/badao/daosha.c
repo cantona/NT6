@@ -10,26 +10,26 @@ int perform(object me, object target)
         object weapon;
         
         if( query("neili", me)<600 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ã€‚\n");
 
         if ((int)me->query_skill("badao", 1) < 500)
-                return notify_fail("ÄãµÄ°Ôµ¶ĞŞÎª²»¹»¡£\n");
+                return notify_fail("ä½ çš„éœ¸åˆ€ä¿®ç‚ºä¸å¤ ã€‚\n");
 
         if (me->query_skill_mapped("blade") != "badao")
-                return notify_fail("Äã»¹Ã»ÓĞ¼¤·¢°Ôµ¶ÄØ¡£\n");
+                return notify_fail("ä½ é‚„æ²’æœ‰æ¿€ç™¼éœ¸åˆ€å‘¢ã€‚\n");
                 
         if( query_temp("badao-dasha", me) )
-                return notify_fail("ÄãÒÑ¾­Ê©Õ¹Æğµ¶É·ÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“æ–½å±•èµ·åˆ€ç…äº†ã€‚\n");
                 
         if( !objectp(weapon=query_temp("weapon", me)) || 
             query("skill_type", weapon) != "blade" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô£¡\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ï¼\n");
                 
         skill = me->query_skill("badao", 1);
         addn("neili", -500, me);
 
-        message_combatd(HIY "$N»Ó¶¯ÆğÊÖÖĞ" + weapon->name() + HIY "£¬Ò»¹ÉÇ¿¾¢µÄÆøÁ÷×ÔÈ«ÉíÓ¿Ïò" + weapon->name() + 
-                        HIY "£¬¶ÙÊ±£¬µ¶ÆøËÄÒç£¬É±ÆøÌÚÌÚ¡£\n" NOR, me);
+        message_combatd(HIY "$Næ®å‹•èµ·æ‰‹ä¸­" + weapon->name() + HIY "ï¼Œä¸€è‚¡å¼·å‹çš„æ°£æµè‡ªå…¨èº«æ¹§å‘" + weapon->name() + 
+                        HIY "ï¼Œé “æ™‚ï¼Œåˆ€æ°£å››æº¢ï¼Œæ®ºæ°£é¨°é¨°ã€‚\n" NOR, me);
 
         addn_temp("apply/damage", skill/2, me);
         set_temp("badao-dasha", 1, me);
@@ -47,6 +47,6 @@ void remove_effect(object me, int amount)
         {
                 addn_temp("apply/damage", -(amount/2), me);
                 delete_temp("badao-dasha", me);
-                tell_object(me, "ÄãµÄ°Ôµ¶ÔËĞĞÍê±Ï£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï¡£\n");
+                tell_object(me, "ä½ çš„éœ¸åˆ€é‹è¡Œå®Œç•¢ï¼Œå°‡å…§åŠ›æ”¶å›ä¸¹ç”°ã€‚\n");
         }
 }

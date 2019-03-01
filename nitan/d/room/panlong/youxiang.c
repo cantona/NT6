@@ -1,4 +1,4 @@
-// youxiang.c ���������᷿
+// youxiang.c 盤龍居右廂房
 
 #include <room.h>
 
@@ -7,15 +7,15 @@ inherit ROOM;                                   /* EXAMPLE */
 
 void create()
 {
-        set("short", "���᷿");
+        set("short", "右廂房");
         set("long", @LONG
-���������ӵ����᷿���ǿ��˾�ס�ĵط���
+這是盤龍居的右廂房，是客人居住的地方。
 LONG );
 
-        set("default_long", "����ROOM_NAME�����᷿���ǿ��˾�ס�ĵط�����" /* EXAMPLE */
-                            "Ȼ�����ݻ���ȴҲ���õ÷ǳ����ʡ�һ�Ŵ���" /* EXAMPLE */
-                            "��ɾ���û�ж������ƣ�����������ʵ��ʹ" /* EXAMPLE */
-                            "���ڹ���ǡ���ô���" );                    /* EXAMPLE */
+        set("default_long", "這是ROOM_NAME的右廂房，是客人居住的地方。雖" /* EXAMPLE */
+                            "然不算奢華，卻也布置得非常舒適。一張床整" /* EXAMPLE */
+                            "齊幹凈，沒有多少折紋，而窗簾厚大結實，使" /* EXAMPLE */
+                            "屋內光線恰到好處。" );                    /* EXAMPLE */
                                                                        /* EXAMPLE */
 
         set("exits", ([
@@ -25,7 +25,7 @@ LONG );
         set("sleep_room", 1);
         set("no_fight", 1);
 
-        create_door("east", "ľ��", "west", DOOR_CLOSED);
+        create_door("east", "木門", "west", DOOR_CLOSED);
 
         setup();
 

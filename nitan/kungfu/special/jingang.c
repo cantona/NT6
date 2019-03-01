@@ -3,18 +3,18 @@
 
 inherit F_CLEAN_UP;
 
-string name() { return HIY "½ğ¸Õ»¤Ìå" NOR; }
+string name() { return HIY "é‡‘å‰›è­·é«”" NOR; }
 
 int perform(object me, string skill, string arg)
 {
         int add_dam;              
 
         if (me->query_temp("special/jingang"))
-                return notify_fail("½ğ¸Õ»¤Ìå¼¼ÄÜÒÑ¾­ÔÚÊ©Õ¹ÖĞÁË¡£\n");
+                return notify_fail("é‡‘å‰›è­·é«”æŠ€èƒ½å·²ç¶“åœ¨æ–½å±•ä¸­äº†ã€‚\n");
 
-        if (me->is_busy())return notify_fail("µÈÄãÃ¦ÍêÔÙËµ°É£¡\n");
+        if (me->is_busy())return notify_fail("ç­‰ä½ å¿™å®Œå†èªªå§ï¼\n");
 
-        message_vision(HIY "$N" HIY "Ë«È­»Ó³ö£¬´óºÈÒ»Éù£¬ÃÍÈ»¼äÈ«Éí½ğ¹âÁıÕÖ£¬Æ¤·ôÓÌÈç¶ÉÉÏÒ»²ã½ğ×ÓÒ»°ã ¡­¡­\n" NOR, me);
+        message_vision(HIY "$N" HIY "é›™æ‹³æ®å‡ºï¼Œå¤§å–ä¸€è²ï¼ŒçŒ›ç„¶é–“å…¨èº«é‡‘å…‰ç± ç½©ï¼Œçš®è†šçŒ¶å¦‚æ¸¡ä¸Šä¸€å±¤é‡‘å­ä¸€èˆ¬ â€¦â€¦\n" NOR, me);
  
         me->start_busy(1);
 
@@ -31,7 +31,7 @@ void remove_effect(object me, int add_dam)
         {
                 me->add_temp("apply/armor", -500);
                 me->delete_temp("special/jingang");
-                tell_object(me, "Äã½ğ¸Õ»¤ÌåÌØ¼¼Ê©Õ¹Íê±Ï¡£\n");
+                tell_object(me, "ä½ é‡‘å‰›è­·é«”ç‰¹æŠ€æ–½å±•å®Œç•¢ã€‚\n");
         }
 }
 

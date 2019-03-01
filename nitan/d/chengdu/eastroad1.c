@@ -4,17 +4,17 @@
 inherit ROOM;
 void create()
 {
-        set("short", "�����");
+        set("short", "東大街");
         set("long", @LONG
-�����ڶ���ּ�ʵ����ʯ������ϡ��ϱ߿���ͨ�򶫳��ţ�·��
-��һ����ª�Ĳ�̯��һ��ϴ�÷����˵ľɷ���������ͷ������������
-�⣬һ�ų����Ϸ��ż�ֻ��Ŵִ��� (Wan)������ʢ���ſɿڵĲ�ˮ��
-    ������ͨ������֣�������һ��������ﴫ������ȭ�����֡�
+你走在東大街堅實的青石板地面上。南邊可以通向東城門，路邊
+有一個簡陋的茶攤，一塊洗得發白了的舊帆布正頂著頭頂火辣辣的陽
+光，一張長幾上放著幾只大號粗瓷碗 (Wan)。碗中盛滿著可口的茶水。
+    往西北通往北大街，東北方一座大店面裡傳出陣陣劃拳的喧鬧。
 LONG );
         set("outdoors", "chengdu");
         set("resource/water", 1);
         set("item_desc", ([
-                "wan" : "������Ĵ���裬��һ��ɣ�\n",
+                "wan" : "香噴噴的大碗茶，來一碗吧！\n",
         ]));
         set("exits", ([
                     "northeast" : __DIR__"jiudian",
@@ -48,9 +48,9 @@ int do_drink(string arg)
         {
                 set("water", current_water+60, me);
                 message("vision", me->name() +
-                        "����һ���ˮ��.... \n", environment(me), ({me}));
-                write("�����һ���ˮ��.����.����..���˸��ɾ�������ѽ��\n");
+                        "端起一碗茶水來.... \n", environment(me), ({me}));
+                write("你端起一碗茶水來.咕嚕.咕嚕..喝了個幹凈。真解渴呀！\n");
         }
-        else write("��ʵ���ǺȲ����ˡ�\n");
+        else write("你實在是喝不下了。\n");
         return 1;
 }

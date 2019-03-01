@@ -3,16 +3,16 @@
 
 inherit F_CLEAN_UP;
 
-string name() { return HIY "Äæ×ªÇ¬À¤" NOR; }
+string name() { return HIY "é€†è½‰ä¹¾å¤" NOR; }
 
 int perform(object me, string skill)
 {
-        return notify_fail("ÄãÌìÉúÊÜµ½ÉÏÌìµÄÇàíù£¬ÓµÓÐÄæ×ªÇ¬À¤Ö®ÉñÁ¦£¬¾ß±¸ÒÔÏÂÌØÊâÄÜÁ¦£º\n"
-                           "ÃüÖÐÌáÉý£º+10%\n"
-                           "ÑÐ¾¿´ÎÊý£º+10 ´Î\n"
-                           "ÄÚÁ¦ÉÏÏÞ£º+500\n"
-                           "¾«Á¦ÉÏÏÞ£º+500\n"
-                           "ÆäËûÌØÐ§£ºÈçÓÐ[ÏÉ·çµÀ¹Ç]¼¼ÄÜ¿ÉÔÙ¶îÍâÌáÉýÑÐ¾¿´ÎÊý10´Î\n"
-                           "²»ÐèÒªÔËÓÃ¡£\n");
+        return notify_fail("ä½ å¤©ç”Ÿå—åˆ°ä¸Šå¤©çš„é’çžï¼Œæ“æœ‰é€†è½‰ä¹¾å¤ä¹‹ç¥žåŠ›ï¼Œå…·å‚™ä»¥ä¸‹ç‰¹æ®Šèƒ½åŠ›ï¼š\n"
+                           "å‘½ä¸­æå‡ï¼š+10%\n"
+                           "ç ”ç©¶æ¬¡æ•¸ï¼š+10 æ¬¡\n"
+                           "å…§åŠ›ä¸Šé™ï¼š+500\n"
+                           "ç²¾åŠ›ä¸Šé™ï¼š+500\n"
+                           "å…¶ä»–ç‰¹æ•ˆï¼šå¦‚æœ‰[ä»™é¢¨é“éª¨]æŠ€èƒ½å¯å†é¡å¤–æå‡ç ”ç©¶æ¬¡æ•¸10æ¬¡\n"
+                           "ä¸éœ€è¦é‹ç”¨ã€‚\n");
 }
 

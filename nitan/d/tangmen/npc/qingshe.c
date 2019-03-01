@@ -6,14 +6,14 @@ inherit NPC;
 
 void create()
 {
-        set_name("ÖñÒ¶Çà", ({ "qing she", "she", "qing" }) );
-        set("race", "Ò°ÊŞ");
+        set_name("ç«¹è‘‰é’", ({ "qing she", "she", "qing" }) );
+        set("race", "é‡ç¸");
         set("age", 2);
-        set("long", "Ò»Ö»ÈÃÈË¿´ÁËÆğ¼¦Æ¤¸í´ñµÄÖñÒ¶ÇàÉß¡£\n");
+        set("long", "ä¸€åªè®“äººçœ‹äº†èµ·é›çš®ç–™ç˜©çš„ç«¹è‘‰é’è›‡ã€‚\n");
         set("attitude", "peaceful");
         set("str", 20);
         set("cor", 20);
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "Æß´ç", "Î²°Í" }) );
+        set("limbs", ({ "é ­éƒ¨", "èº«é«”", "ä¸ƒå¯¸", "å°¾å·´" }) );
         set("verbs", ({ "bite" }) );
 
         set("combat_exp", 3000+random(300));
@@ -43,7 +43,7 @@ void init()
 void die()
 {
         object ob;
-        message_vision("$Nµ¹ÔÚµØÉÏ£¬ËÀÁË£¡\n", this_object());
+        message_vision("$Nå€’åœ¨åœ°ä¸Šï¼Œæ­»äº†ï¼\n", this_object());
 //        ob = new("/d/baituo/obj/qingdan");
 //        ob->move(environment(this_object()));
         destruct(this_object());
@@ -56,6 +56,6 @@ int hit_ob(object me, object ob, int damage)
         if( random(damage)>query_temp("apply/armor", ob )
         &&        (int)ob->query_condition("snake_poison") < 10 ) {
                 ob->apply_condition("snake_poison", 20);
-        tell_object(ob, HIG "Äã¾õµÃ±»Ò§ÖĞµÄµØ·½Ò»ÕóÂéÄ¾£¡\n" NOR );
+        tell_object(ob, HIG "ä½ è¦ºå¾—è¢«å’¬ä¸­çš„åœ°æ–¹ä¸€é™£éº»æœ¨ï¼\n" NOR );
         }
 }

@@ -1,8 +1,8 @@
 inherit ROOM;
 
 protected int nut = 3;
-protected string ll = "ÕâÀïÊÇÒ»Æ¬µÍ°«µÄ¹àÄ¾´Ô£¬¿ÕÆøÖĞÓĞÒ»ÖÖµ­µ­µÄÓÄÏã£¬ÉíÁÙ
-¿Õ¹È£¬ÎÅ×Åµ­µ­µÄ·Ò·¼Ö®Æø£¬ÈÃÈËĞÄ¿õÉñâù¡£";
+protected string ll = "é€™è£¡æ˜¯ä¸€ç‰‡ä½çŸ®çš„çŒæœ¨å¢ï¼Œç©ºæ°£ä¸­æœ‰ä¸€ç¨®æ·¡æ·¡çš„å¹½é¦™ï¼Œèº«è‡¨
+ç©ºè°·ï¼Œèè‘—æ·¡æ·¡çš„èŠ¬èŠ³ä¹‹æ°£ï¼Œè®“äººå¿ƒæ› ç¥æ€¡ã€‚";
 
 string query_long();
 string query_item_desc();
@@ -11,14 +11,14 @@ string query_long()
 {
         if(nut <= 0)
                 return ll+"\n";
-        return ll+"´ÔÖĞ»¹½á×Å¼¸¿Å×Ø\nÉ«µÄ[Ğ¡¹û×Ó]¡£\n";
+        return ll+"å¢ä¸­é‚„çµè‘—å¹¾é¡†æ£•\nè‰²çš„[å°æœå­]ã€‚\n";
 }
 
 string query_item_desc()
 {
         if(nut > 0)
-                return "ÕâÊÇÒ»¿ÅĞ¡Ö¸¼×¸Ç´óµÄ×ØÉ«¹û×Ó£¬¿É°®
-µÄÑù×ÓÖ»ÏëÈÃÈËÕª(pick)ÏÂÀ´¿´¿´¡£\n";
+                return "é€™æ˜¯ä¸€é¡†å°æŒ‡ç”²è“‹å¤§çš„æ£•è‰²æœå­ï¼Œå¯æ„›
+çš„æ¨£å­åªæƒ³è®“äººæ‘˜(pick)ä¸‹ä¾†çœ‹çœ‹ã€‚\n";
 
         return 0;
 }
@@ -40,17 +40,17 @@ int do_pick(string arg)
         object ob, me = this_player();
         mapping q;
 
-        if(arg != "¹û×Ó" && arg != "Ğ¡¹û×Ó")
-                return notify_fail("ÄãÒªÕªÊ²Ã´£¿\n");
+        if(arg != "æœå­" && arg != "å°æœå­")
+                return notify_fail("ä½ è¦æ‘˜ä»€éº¼ï¼Ÿ\n");
 
         if(nut <= 0)
-                return notify_fail(sprintf("ÕâÀïÃ»ÓĞ%s¡£\n", arg));
+                return notify_fail(sprintf("é€™è£¡æ²’æœ‰%sã€‚\n", arg));
 
-        if( !mapp(q=query("quest/yaowang_quest", me)) || (q["name"] != "º£ËÉ×Ó") || q["get_nut"] )
-                return notify_fail("ÄãÃ»Ğ¡ĞÄ±»¹àÄ¾ÉÏµÄĞ¡´ÌÔúÁËÒ»ÏÂ£¬ÌÛµÃ¸Ï½ôËõ»ØÁËÊÖ¡£\n");
+        if( !mapp(q=query("quest/yaowang_quest", me)) || (q["name"] != "æµ·é¬†å­") || q["get_nut"] )
+                return notify_fail("ä½ æ²’å°å¿ƒè¢«çŒæœ¨ä¸Šçš„å°åˆºç´®äº†ä¸€ä¸‹ï¼Œç–¼å¾—è¶•ç·Šç¸®å›äº†æ‰‹ã€‚\n");
 
         nut--;
-        message_vision("$NĞ¡ĞÄÒíÒíµÄÕªÏÂÁËÒ»¿ÅĞ¡¹û×Ó¡£\n", me);
+        message_vision("$Nå°å¿ƒç¿¼ç¿¼çš„æ‘˜ä¸‹äº†ä¸€é¡†å°æœå­ã€‚\n", me);
 
         ob = new(__DIR__"obj/nut");
 

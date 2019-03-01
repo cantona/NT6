@@ -5,15 +5,15 @@ inherit F_UNIQUE;
  
 void create()
 {
-        set_name("¡¸¿ñ·ç¿ìµ¶¡¹ÈëÃÅ", ({ "kuangfeng book0", "book0", }));
+        set_name("ã€Œç‹‚é¢¨å¿«åˆ€ã€å…¥é–€", ({ "kuangfeng book0", "book0", }));
         set_weight(500);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
+                set("unit", "æœ¬");
                 set("long",
-        "ÕâÊÇÒ»±¾·¢¾ÉµÄÃØ¼®¡£ÉÏÊé£º¡°¿ñ·ç¿ìµ¶(ÈëÃÅ)¡±¡£\n"
-        "ÊéÆ¤·º»Æ£¬¿´À´ÒÑ¾­±£´æºÜ¾ÃÁË¡£\n", );
+        "é€™æ˜¯ä¸€æœ¬ç™¼èˆŠçš„ç§˜ç±ã€‚ä¸Šæ›¸ï¼šâ€œç‹‚é¢¨å¿«åˆ€(å…¥é–€)â€ã€‚\n"
+        "æ›¸çš®æ³›é»ƒï¼Œçœ‹ä¾†å·²ç¶“ä¿å­˜å¾ˆä¹…äº†ã€‚\n", );
                 set("value", 0);
                 set("material", "paper");
                 set("skill", ([

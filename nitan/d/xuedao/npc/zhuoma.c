@@ -6,9 +6,9 @@ inherit KNOWER;
 
 void create()
 {
-        set_name("×¿Âê", ({ "zhuo ma", "zhuo", "ma" }));
-        set("long", "ËýÊÇÒ»Î»²Ø×åÅ®Í¬°û¡£\n");
-        set("gender", "Å®ÐÔ");
+        set_name("å“ç‘ª", ({ "zhuo ma", "zhuo", "ma" }));
+        set("long", "å¥¹æ˜¯ä¸€ä½è—æ—å¥³åŒèƒžã€‚\n");
+        set("gender", "å¥³æ€§");
         set("age", 25);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -51,6 +51,6 @@ void greeting(object ob)
 {
         if (! ob) return;
 
-        say (CYN "×¿ÂêºÏÊ²ÎªÀñ£¬ËµµÀ£º°¢åôÙ¢·ð£¡" +
-             RANK_D->query_respect(ob) + CYN "£¬Æ¶ÄáÕâÏáÓÐÀñÁË¡£\n" NOR);
+        say (CYN "å“ç‘ªåˆä»€ç‚ºç¦®ï¼Œèªªé“ï¼šé˜¿å¼­ä½—ä½›ï¼" +
+             RANK_D->query_respect(ob) + CYN "ï¼Œè²§å°¼é€™å»‚æœ‰ç¦®äº†ã€‚\n" NOR);
 }

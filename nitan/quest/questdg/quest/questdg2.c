@@ -11,19 +11,19 @@ mapping query_questdg()
                 questdg = QUESTDG_D("2find")->query_questdg();
         else
         questdg = QUESTDG_D("2kill")->query_questdg();
-        if (questdg["type"] == "Ñ°") 
+        if (questdg["type"] == "å°‹") 
         {
                 if (random(5) == 3)
                 {
-                        questdg["type"] = "ËÍ";
-                        questdg["name"] = "»ØÖ´";
+                        questdg["type"] = "é€";
+                        questdg["name"] = "å›åŸ·";
                 }
         } 
-        if (questdg["type"] == "É±") 
+        if (questdg["type"] == "æ®º") 
         {
                 if (random(3) == 2)
                 {
-                        questdg["type"] = "ÇÜ";
+                        questdg["type"] = "æ“’";
                 }
         } 
         return questdg;

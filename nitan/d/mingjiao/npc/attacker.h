@@ -7,7 +7,7 @@ void init()
            && query("outer_times", random(this_object())) == 1
           ) {
                  ob = new("/d/mingjiao/npc/attacker");
-                 message_vision("\nһ����ӰͻȻ�������˳�������ס$N��ȥ·��\n\n", me); 
+                 message_vision("\n一個人影突然從旁跳了出來，攔住$N的去路！\n\n", me); 
                  ob->move(environment(me));
                  addn_temp("mj/attacker", 1, me);
                  addn_temp("mj/attacker1", 1, me);
@@ -23,6 +23,6 @@ int valid_leave(object me, string dir)
           && objectp(ob=present("attacker", environment(me)))
            && query("victim", ob) == query("id", me )
           && !userp(ob))
-            return notify_fail(ob->name()+"һ�Բ�����������������ǰ��\n");
+            return notify_fail(ob->name()+"一言不發，閃身攔在你面前！\n");
             return ::valid_leave(me, dir);
 } 

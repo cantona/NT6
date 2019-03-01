@@ -11,16 +11,16 @@ inherit BOSS;
 void create()
 {
         object ob1, ob2;
-        set_name("½ğÂÖ·¨Íõ", ({ "jinlun fawang", "jinlun", "fawang" }));
+        set_name("é‡‘è¼ªæ³•ç‹", ({ "jinlun fawang", "jinlun", "fawang" }));
         set("long", @LONG
-Ëû±ãÊÇ´óÂÖËÂµÄ»¤½Ì·¨Íõ¡£¹óÎªÃÉ¹Å¹úÊ¦£¬¼«
-ÊÜ³É¼ªË¼º¹ÖØÓÃ£¬³£ÄêÀ´Ëæ¾ü¶ÓÕ÷Õ½£¬ÈÅÂÒÖĞ
-Ô­ÎäÁÖ£¬µØÎ»ÏÔºÕ×ğ³çÎŞ±È¡£½ğÂÖ·¨ÍõÌ¤×ãÖĞ
-Ô­ºóº±·êµĞÊÖ£¬ÃêÊÓÖĞÔ­ÈºĞÛ¡£ÆäÎäµÀÖ®¸ßÉî
-µ±¿ÉÎ½Î÷ÓòµÚÒ»ÈË¡£
+ä»–ä¾¿æ˜¯å¤§è¼ªå¯ºçš„è­·æ•™æ³•ç‹ã€‚è²´ç‚ºè’™å¤åœ‹å¸«ï¼Œæ¥µ
+å—æˆå‰æ€æ±—é‡ç”¨ï¼Œå¸¸å¹´ä¾†éš¨è»éšŠå¾æˆ°ï¼Œæ“¾äº‚ä¸­
+åŸæ­¦æ—ï¼Œåœ°ä½é¡¯èµ«å°Šå´‡ç„¡æ¯”ã€‚é‡‘è¼ªæ³•ç‹è¸è¶³ä¸­
+åŸå¾Œç½•é€¢æ•µæ‰‹ï¼Œè—è¦–ä¸­åŸç¾¤é›„ã€‚å…¶æ­¦é“ä¹‹é«˜æ·±
+ç•¶å¯è¬‚è¥¿åŸŸç¬¬ä¸€äººã€‚
 LONG);
-        set("nickname", HIY "ÃÉ¹Å¹úÊ¦" NOR);
-        set("gender", "ÄĞĞÔ");
+        set("nickname", HIY "è’™å¤åœ‹å¸«" NOR);
+        set("gender", "ç”·æ€§");
         set("class", "bonze");
         set("age", 58);
         set("attitude", "peaceful");
@@ -95,9 +95,9 @@ LONG);
                 (: exert_function, "powerup" :),
         }));
 
-        create_family("´óÂÖËÂ", 1, "×¡³Ö");
+        create_family("å¤§è¼ªå¯º", 1, "ä½æŒ");
 
-        set("end_time", 1200);  // ±ØĞëÕ½¶·²»ÉÙÓÚ1200ÃëºóËÀÍö
+        set("end_time", 1200);  // å¿…é ˆæˆ°é¬¥ä¸å°‘äº1200ç§’å¾Œæ­»äº¡
         set("rewards", ([
                 "exp"   : 30000,
                 "pot"   : 10000,
@@ -108,8 +108,8 @@ LONG);
         ]));
 
         set("drops", ([
-                "RA&RANDOM40"    :       100,   // µÍ¼¶ÆÕÍ¨×°±¸
-                "RA&RANDOM50"    :       40,    // µÍ¼¶ÆÕÍ¨×°±¸
+                "RA&RANDOM40"    :       100,   // ä½ç´šæ™®é€šè£å‚™
+                "RA&RANDOM50"    :       40,    // ä½ç´šæ™®é€šè£å‚™
                 "FI&/clone/goods/enchant-scroll" :   20,
                 "FI&/clone/goods/sun"    :   20,
                 "FI&/clone/goods/moon"   :   20,
@@ -182,7 +182,7 @@ mixed hit_ob(object me, object ob, int damage_bouns)
 {
         ob->start_busy(5 + random(6));
         me->receive_wound("qi", 1500 + random(1500), ob);
-        return HIY "$N" HIY "´óºÈÒ»Éù£¬Æ´ËÀ·´¿¹£¬¾¹±ÆµÃ$n" HIY "ÊÖÃ¦½ÅÂÒ¡£\n" NOR;
+        return HIY "$N" HIY "å¤§å–ä¸€è²ï¼Œæ‹¼æ­»åæŠ—ï¼Œç«Ÿé€¼å¾—$n" HIY "æ‰‹å¿™è…³äº‚ã€‚\n" NOR;
 }
 
 void heart_beat()
@@ -203,7 +203,7 @@ varargs void die(object killer)
                 return;
         }
 
-        if( time() < query_temp("end_time") ) // Ê±¼äÃ»ÓĞµ½£¬ËÀÍö²»ÁË
+        if( time() < query_temp("end_time") ) // æ™‚é–“æ²’æœ‰åˆ°ï¼Œæ­»äº¡ä¸äº†
         {
                 addn("jing", query("max_jing") / 10);
                 if( query("jing") > query("max_jing") ) set("jing", query("max_jing"));
@@ -213,7 +213,7 @@ varargs void die(object killer)
                 if( query("qi") > query("max_qi") ) set("qi", query("max_qi"));
                 addn("eff_qi", query("max_qi") / 10);
                 if( query("eff_qi") > query("max_qi") ) set("eff_qi", query("max_qi"));
-                message_vision(HIR "\n$N" HIR "´óºÈÒ»Éù£¬ÔËÓÃÃØ·¨£¬ÆøÑªÓĞËù»ØÉı£¡\n\n" NOR, this_object());
+                message_vision(HIR "\n$N" HIR "å¤§å–ä¸€è²ï¼Œé‹ç”¨ç§˜æ³•ï¼Œæ°£è¡€æœ‰æ‰€å›å‡ï¼\n\n" NOR, this_object());
                 return;
         }
 
@@ -227,20 +227,20 @@ varargs void die(object killer)
                 return;
         }
 
-        // Õ½Ê¤½ğÂÖ»ñÈ¡Ğ¡ÁúÅ®ÏßË÷
+        // æˆ°å‹é‡‘è¼ªç²å–å°é¾å¥³ç·šç´¢
         if (query("can_perform/surge-force/quest/step", killer) == 1)
         {
-                message_vision(HIR "$N" HIR "ÑÛ¼û$n" HIR "¿ìÒªÖ§³Ö²»×¡£¬¸Ï½ôÉÏÇ°Ò»²½ºÈµÀ£º¿ìËµ£¬Ğ¡ÁúÅ®ºÎÔÚ£¿"
-                                   "·ñÔò£¬È¡ÄãÀÏÃü£¡\n$n" HIR "Å­µÀ£ºĞ¡ÁúÅ®ÒÑ¾­±»ÄÇ¹«ËïÖ¹×½È¥£¬À§ÓÚ¾øÇéÉ½×¯ÄÚ£¬¹Ø"
-                                   "ÎÒºÎÊÂ£¿\n\nÕıËµ»°¼ä£¬$n" HIR "ÒÑ³Ã»úÉ±³öÒ»ÌõÑªÂ·...\n\n" NOR, killer, this_object());
+                message_vision(HIR "$N" HIR "çœ¼è¦‹$n" HIR "å¿«è¦æ”¯æŒä¸ä½ï¼Œè¶•ç·Šä¸Šå‰ä¸€æ­¥å–é“ï¼šå¿«èªªï¼Œå°é¾å¥³ä½•åœ¨ï¼Ÿ"
+                                   "å¦å‰‡ï¼Œå–ä½ è€å‘½ï¼\n$n" HIR "æ€’é“ï¼šå°é¾å¥³å·²ç¶“è¢«é‚£å…¬å­«æ­¢æ‰å»ï¼Œå›°äºçµ•æƒ…å±±èŠå…§ï¼Œé—œ"
+                                   "æˆ‘ä½•äº‹ï¼Ÿ\n\næ­£èªªè©±é–“ï¼Œ$n" HIR "å·²è¶æ©Ÿæ®ºå‡ºä¸€æ¢è¡€è·¯...\n\n" NOR, killer, this_object());
 
-                tell_object(killer, HIM "¿´À´£¬»¹ÊÇ¸Ï¿ìÈ¥¾øÇéÉ½×¯Ò»ÌË°É£¡\n\n" NOR);
+                tell_object(killer, HIM "çœ‹ä¾†ï¼Œé‚„æ˜¯è¶•å¿«å»çµ•æƒ…å±±èŠä¸€è¶Ÿå§ï¼\n\n" NOR);
                 set("can_perform/surge-force/quest/step", 2, killer);
                 killer->save();
         }
 
         command("chat* haha");
-        command("chat ÌìÏÂ¼ä¾¹ÓĞÎä¹¦Èç´ËÁËµÃµÄÈËÎï£¬ÀÏñÄ¸Ê°İÏÂ·ç£¡");
+        command("chat å¤©ä¸‹é–“ç«Ÿæœ‰æ­¦åŠŸå¦‚æ­¤äº†å¾—çš„äººç‰©ï¼Œè€è¡²ç”˜æ‹œä¸‹é¢¨ï¼");
 
         return ::die();
 }

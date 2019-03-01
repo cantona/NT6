@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-        set("short", "��Ȼͼ��");
+        set("short", "天然圖畫");
         set("long", @LONG
-�����ұڴ���������ӳ�ԣ��Ƹ���ɽ���ΡȻ�������Ĺ˷���
-ʯ�죬������翣�Զ�����ͣ����ڻ��С����������š���һʯ��
-��ɲ�ʯ��֮�䣬ʮ���վ���
+這裡巖壁矗立，綠樹映輝，牌閣在山埡間巍然屹立。四顧峰奇
+石異，雲霧縹緲，遠近觀賞，如在畫中。閣左“天生橋”，一石丈
+余飛插石壁之間，十分險峻。
 LONG );
         set("outdoors", "qingcheng");
         set("exits", ([

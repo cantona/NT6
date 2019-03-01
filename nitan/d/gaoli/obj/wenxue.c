@@ -3,10 +3,10 @@ inherit ITEM;
 
 void create()
 {
-   set_name("¡¶Èı×Ö¾­¡·", ({ "san zi jing","jing","book" }));
+   set_name("ã€Šä¸‰å­—ç¶“ã€‹", ({ "san zi jing","jing","book" }));
    set_weight(600);
-   set("unit", "±¾");
-   set("long","ÕâÊÇÎªÁËÌá¸ßÎÄ»¯ĞŞÑøµÄÊé.\n");
+   set("unit", "æœ¬");
+   set("long","é€™æ˜¯ç‚ºäº†æé«˜æ–‡åŒ–ä¿®é¤Šçš„æ›¸.\n");
    set("value", 300);
    set("skill", ([
      "name":      "literate",    

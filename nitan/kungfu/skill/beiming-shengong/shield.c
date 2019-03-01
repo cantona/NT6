@@ -1,5 +1,5 @@
 // This program is a part of NITAN MudLIB
-// shield.c 北冥神功护体神功
+// shield.c 鍖楀啣绁炲姛璀烽珨绁炲姛
 
 #include <ansi.h>
 
@@ -12,23 +12,23 @@ int exert(object me, object target)
         int skill;
 
         if( target != me ) 
-                return notify_fail("你只能用北冥护体神功来提升自己的防御力。\n");
+                return notify_fail("浣犲彧鑳界敤鍖楀啣璀烽珨绁炲姛渚嗘彁鍗囪嚜宸辩殑闃插尽鍔涖�俓n");
 
         if( query("neili", me)<200 )
-                return notify_fail("你的内力不够。\n");
+                return notify_fail("浣犵殑鍏у姏涓嶅銆俓n");
 
         if( (int)me->query_skill("beiming-shengong",1) < 100 ) 
-                return notify_fail("你的北冥神功修为不够。\n");
+                return notify_fail("浣犵殑鍖楀啣绁炲姛淇偤涓嶅銆俓n");
 
         if( query_temp("shield", me) )
-                return notify_fail("你已经在运功中了。\n");
+                return notify_fail("浣犲凡缍撳湪閬嬪姛涓簡銆俓n");
 
         skill = me->query_skill("force");
         addn("neili", -100, me);
         me->receive_damage("qi", 0);
 
         message_combatd(
-        HIW "$N双手平举过顶，运起北冥护体神功，全身笼罩在劲气之中！\n" NOR, me);
+        HIW "$N闆欐墜骞宠垑閬庨爞锛岄亱璧峰寳鍐ヨ楂旂鍔燂紝鍏ㄨ韩绫犵僵鍦ㄥ媮姘ｄ箣涓紒\n" NOR, me);
 
         addn_temp("apply/armor", skill/2, me);
         set_temp("shield", 1, me);
@@ -48,6 +48,6 @@ void remove_effect(object me, int amount)
         {
                 addn_temp("apply/armor", -amount, me);
                 delete_temp("shield", me);
-                tell_object(me, "你的北冥护体神功运行完毕，将内力收回丹田。\n");
+                tell_object(me, "浣犵殑鍖楀啣璀烽珨绁炲姛閬嬭瀹岀暍锛屽皣鍏у姏鏀跺洖涓圭敯銆俓n");
         }
 }

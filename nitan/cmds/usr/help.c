@@ -98,7 +98,7 @@ int main(object me, string arg)
                         // me->start_more(color_filter(read_file(HELP_DIR + "/topics")));
                 } else
                 {
-                        write("Ã»ÄÜÕÒµ½°ïÖúÖ÷Ìâ¡£\n");
+                        write("æ²’èƒ½æ‰¾åˆ°å¹«åŠ©ä¸»é¡Œã€‚\n");
                 }
                 return 1;
         }
@@ -112,7 +112,7 @@ int main(object me, string arg)
 
                 me->start_more(color_filter(MAP_D->show_map(environment(me))));
                 return 1;
-                //return notify_fail("ÇëÄúÊ¹ÓÃ map Ö¸Áî²ì¿´µØÍ¼¡£\n");
+                //return notify_fail("è«‹æ‚¨ä½¿ç”¨ map æŒ‡ä»¤å¯Ÿçœ‹åœ°åœ–ã€‚\n");
                 if (!objectp(here = environment(me)))
                 {
                         help(me);
@@ -122,7 +122,7 @@ int main(object me, string arg)
                 here_name = base_name(here);
                 if (sscanf(here_name,"/d/%s/",here_name) != 1)
                 {
-                        write("Ã»ÓĞ¹ØÓÚÕâÀïµÄ°ïÖúĞÅÏ¢¡£\n");
+                        write("æ²’æœ‰é—œäºé€™è£¡çš„å¹«åŠ©ä¿¡æ¯ã€‚\n");
                         return 1;
                 }
 
@@ -145,7 +145,7 @@ int main(object me, string arg)
 
                 if (!(the_file = here_map[here_name]))
                 {
-                        write("Ã»ÓĞ¹ØÓÚÕâÀïµÄ°ïÖúĞÅÏ¢¡£\n");
+                        write("æ²’æœ‰é—œäºé€™è£¡çš„å¹«åŠ©ä¿¡æ¯ã€‚\n");
                         return 1;
                 }
 
@@ -153,7 +153,7 @@ int main(object me, string arg)
 
                 if (file_size(the_file) <= 0)
                 {
-                        write("Ã»ÓĞ¹ØÓÚÕâÀïµÄ°ïÖúĞÅÏ¢¡£\n");
+                        write("æ²’æœ‰é—œäºé€™è£¡çš„å¹«åŠ©ä¿¡æ¯ã€‚\n");
                         return 1;
                 }
 
@@ -176,7 +176,7 @@ int main(object me, string arg)
 
         // Else, try if a command name is specified.
         if( stringp(file = me->find_command(arg)) ) {
-                notify_fail("ÓĞÕâ¸öÖ¸Áî´æÔÚ£¬µ«ÊÇ²¢Ã»ÓĞÏêÏ¸µÄËµÃ÷ÎÄ¼ş¡£\n");
+                notify_fail("æœ‰é€™å€‹æŒ‡ä»¤å­˜åœ¨ï¼Œä½†æ˜¯ä¸¦æ²’æœ‰è©³ç´°çš„èªªæ˜æ–‡ä»¶ã€‚\n");
                 return file->help(me);
         }
 
@@ -193,12 +193,12 @@ int main(object me, string arg)
                 }
         }
 
-// Îä¹¦°ïÖúÎÄ¼ş
+// æ­¦åŠŸå¹«åŠ©æ–‡ä»¶
         sscanf(arg, "%s.%s", arg, str);
         if( file_size(SKILL_D(arg)+".c") < 1 )
-                return notify_fail("Ã»ÓĞÕë¶ÔÕâÏîÖ÷ÌâµÄËµÃ÷ÎÄ¼ş¡£\n");
+                return notify_fail("æ²’æœ‰é‡å°é€™é …ä¸»é¡Œçš„èªªæ˜æ–‡ä»¶ã€‚\n");
 
-// Îä¹¦¾øÕĞ°ïÖúÎÄ¼ş
+// æ­¦åŠŸçµ•æ‹›å¹«åŠ©æ–‡ä»¶
         if( stringp(str) )
         {
                 string exert;
@@ -206,36 +206,36 @@ int main(object me, string arg)
                 if( stringp(exert = SKILL_D(arg)->exert_function_file(str)) &&
                         file_size(exert +".c") > 0)
                 {
-                        notify_fail("¶Ô²»Æğ£¬"+to_chinese(arg)+"ÄÚ¹¦·½ÃæµÄ¡¸"+str+"¡¹¹¦ÄÜÃ»ÓĞÏêÏ¸µÄËµÃ÷¡£\n");
+                        notify_fail("å°ä¸èµ·ï¼Œ"+to_chinese(arg)+"å…§åŠŸæ–¹é¢çš„ã€Œ"+str+"ã€åŠŸèƒ½æ²’æœ‰è©³ç´°çš„èªªæ˜ã€‚\n");
                         return exert->help(me);
                 }
                 else
                 if( stringp(exert = SKILL_D(arg)->perform_action_file(str)) &&
                         file_size(exert +".c") > 0)
                 {
-                        notify_fail("¶Ô²»Æğ£¬"+to_chinese(arg)+"Íâ¹¦·½ÃæµÄ¡¸"+str+"¡¹¹¦ÄÜÃ»ÓĞÏêÏ¸µÄËµÃ÷¡£\n");
+                        notify_fail("å°ä¸èµ·ï¼Œ"+to_chinese(arg)+"å¤–åŠŸæ–¹é¢çš„ã€Œ"+str+"ã€åŠŸèƒ½æ²’æœ‰è©³ç´°çš„èªªæ˜ã€‚\n");
                         return exert->help(me);
                 }
-                return notify_fail("¶Ô²»Æğ£¬"+to_chinese(arg)+"Ã»ÓĞ¡¸"+str+"¡¹ÕâÏî¹¦ÄÜ¡£\n");
+                return notify_fail("å°ä¸èµ·ï¼Œ"+to_chinese(arg)+"æ²’æœ‰ã€Œ"+str+"ã€é€™é …åŠŸèƒ½ã€‚\n");
         }
         if( !SKILL_D(arg)->help(me) )
         {
-                write(HIY"\nÖ¸¶¨Îä¼¼Ã»ÓĞÏêÏ¸°ïÖúËµÃ÷¡£\n"NOR);
+                write(HIY"\næŒ‡å®šæ­¦æŠ€æ²’æœ‰è©³ç´°å¹«åŠ©èªªæ˜ã€‚\n"NOR);
         }
-        return notify_fail("Ã»ÓĞÕë¶ÔÕâÏîÖ÷ÌâµÄËµÃ÷ÎÄ¼ş¡£\n");
+        return notify_fail("æ²’æœ‰é‡å°é€™é …ä¸»é¡Œçš„èªªæ˜æ–‡ä»¶ã€‚\n");
 }
 
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½£ºhelp <Ö÷Ìâ>              ÀıÈç£º> help cmds
-          help <º¯ÊıÃû³Æ>()        ÀıÈç£º> help call_out()
+æŒ‡ä»¤æ ¼å¼ï¼šhelp <ä¸»é¡Œ>              ä¾‹å¦‚ï¼š> help cmds
+          help <å‡½æ•¸åç¨±>()        ä¾‹å¦‚ï¼š> help call_out()
 
-Õâ¸öÖ¸ÁîÌá¹©ÄãÕë¶ÔÄ³Ò»Ö÷ÌâµÄÏêÏ¸ËµÃ÷ÎÄ¼ş£¬ÈôÊÇ²»Ö¸¶¨Ö÷Ìâ£¬ÔòÌá¹©ÄãÓĞ¹Ø
-Ö÷ÌâµÄÎÄ¼ş¡£
-Íæ¼ÒÈç¹ûĞèÒª²é¿´ËùÔÚµØµÄµØÍ¼£¬¿ÉÒÔ³¢ÊÔhelp here¡£ Èç¹ûÄÜËÑË÷µ½µØÍ¼£¬½«
-ÏÔÊ¾¸ÃÍæ¼ÒËùÔÚ·¿¼äËùÊôÇøÓòµÄµØÍ¼¡£Èç¹û¸Ã·¿¼äÔÚµØÍ¼ÖĞÓĞ±ê¼Ç£¬Ôò»á×Ô¶¯½«
-ÆäÉÁË¸ÏÔÊ¾¡£
+é€™å€‹æŒ‡ä»¤æä¾›ä½ é‡å°æŸä¸€ä¸»é¡Œçš„è©³ç´°èªªæ˜æ–‡ä»¶ï¼Œè‹¥æ˜¯ä¸æŒ‡å®šä¸»é¡Œï¼Œå‰‡æä¾›ä½ æœ‰é—œ
+ä¸»é¡Œçš„æ–‡ä»¶ã€‚
+ç©å®¶å¦‚æœéœ€è¦æŸ¥çœ‹æ‰€åœ¨åœ°çš„åœ°åœ–ï¼Œå¯ä»¥å˜—è©¦help hereã€‚ å¦‚æœèƒ½æœç´¢åˆ°åœ°åœ–ï¼Œå°‡
+é¡¯ç¤ºè©²ç©å®¶æ‰€åœ¨æˆ¿é–“æ‰€å±¬å€åŸŸçš„åœ°åœ–ã€‚å¦‚æœè©²æˆ¿é–“åœ¨åœ°åœ–ä¸­æœ‰æ¨™è¨˜ï¼Œå‰‡æœƒè‡ªå‹•å°‡
+å…¶é–ƒçˆé¡¯ç¤ºã€‚
 HELP
         );
         return 1;

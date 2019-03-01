@@ -11,24 +11,24 @@ int main(object me, string arg)
                 return 0;
 
         if (! arg)
-                return notify_fail("ÄãÒª¸½Ë­µÄÉí£¿\n");
+                return notify_fail("ä½ è¦é™„èª°çš„èº«ï¼Ÿ\n");
 
         if (! me->is_admin())
-                return notify_fail("Äã²»ÄÜ¸½Éí¡£\n");
+                return notify_fail("ä½ ä¸èƒ½é™„èº«ã€‚\n");
 
         ob = present(arg, environment(me));
 
         if (! ob || ! living(ob))
-                return notify_fail("ÕâÀïÃ»ÓĞÕâ¸öÉúÎï¡£\n");
+                return notify_fail("é€™è£¡æ²’æœ‰é€™å€‹ç”Ÿç‰©ã€‚\n");
 
         if (geteuid(ob) != geteuid(me))
-                return notify_fail(ob->name() + "µÄ euid ºÍÄã²»ºÏ£¬ÎŞ"
-                                "·¨½øĞĞ¸½Éí¡£\n");
+                return notify_fail(ob->name() + "çš„ euid å’Œä½ ä¸åˆï¼Œç„¡"
+                                "æ³•é€²è¡Œé™„èº«ã€‚\n");
 
         if( query_temp("body_ob", ob) )
-                return notify_fail( ob->name() + "ÒÑ¾­±»ÈË¸½Éí¹ıÁË¡£\n");
+                return notify_fail( ob->name() + "å·²ç¶“è¢«äººé™„èº«éäº†ã€‚\n");
 
-        message_vision("$N»¯³ÉÒ»µÀ¹âÃ¢×ê½ø$nÌåÄÚ¡£\n", me, ob);
+        message_vision("$NåŒ–æˆä¸€é“å…‰èŠ’é‘½é€²$né«”å…§ã€‚\n", me, ob);
         LOGIN_D->enter_world(me, ob, 1);
         ob->clear_written();
         ob->write_prompt();
@@ -38,10 +38,10 @@ int main(object me, string arg)
 int help()
 {
         write(@TEXT
-Ö¸Áî¸ñÊ½£ºposssess <Ä¿±êÉúÎï>
+æŒ‡ä»¤æ ¼å¼ï¼šposssess <ç›®æ¨™ç”Ÿç‰©>
 
-¸½Éíµ½ÁíÒ»¸öÉúÎïÉÏ£¬Õâ¸öÉúÎï±ØĞëºÍÄãÓĞÏàÍ¬µÄ EUID¡£
-¸½ÉíááÓÃ quit Ö¸Áî»á»Øµ½Ô­À´µÄÉíÌå¡£
+é™„èº«åˆ°å¦ä¸€å€‹ç”Ÿç‰©ä¸Šï¼Œé€™å€‹ç”Ÿç‰©å¿…é ˆå’Œä½ æœ‰ç›¸åŒçš„ EUIDã€‚
+é™„èº«å¾Œç”¨ quit æŒ‡ä»¤æœƒå›åˆ°åŸä¾†çš„èº«é«”ã€‚
 TEXT );
         return 1;
 }

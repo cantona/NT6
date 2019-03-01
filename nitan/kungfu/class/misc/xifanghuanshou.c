@@ -9,13 +9,13 @@ inherit NPC;
 
 void create()
 {
-	set_name(HIY "Æß²Ê" HIM "ÁğÁ§ÊŞ" NOR, ({ "qicai liulishou", "qicai", "liulishou" }) );
-	set("title", HIW "Ê¥µ®" HIR "¹ÖÊŞ" NOR);
-	set("gender", "ÄĞĞÔ");
+	set_name(HIY "ä¸ƒå½©" HIM "ç‰ç’ƒç¸" NOR, ({ "qicai liulishou", "qicai", "liulishou" }) );
+	set("title", HIW "è–èª•" HIR "æ€ªç¸" NOR);
+	set("gender", "ç”·æ€§");
 	set("age", 8888);
 	set("long", @LONG
-ÕâÊÇÒ»Ö»³¤ÏàÆæÌØ¹ÖÊŞ£¬È«Éí»Ã³öÆß²ÊÖ®É«£¬Í·´óÉíĞ¡£¬Ò»¶Ô»ëÔ²µÄÑÛ
-ÖéÉÁË¸³öÉãÈËµÄ¹âÃ¢¡£
+é€™æ˜¯ä¸€åªé•·ç›¸å¥‡ç‰¹æ€ªç¸ï¼Œå…¨èº«å¹»å‡ºä¸ƒå½©ä¹‹è‰²ï¼Œé ­å¤§èº«å°ï¼Œä¸€å°æ¸¾åœ“çš„çœ¼
+ç é–ƒçˆå‡ºæ”äººçš„å…‰èŠ’ã€‚
 LONG );
 	set("combat_exp", 2000000000);
 	set("shen_type", 0);
@@ -30,7 +30,7 @@ LONG );
         set("jingli", 5000000);
         set("max_jingli", 5000000);
 
-	set("no_nuoyi", 1); // ²»±»Å²ÒÆÓ°Ïì
+	set("no_nuoyi", 1); // ä¸è¢«æŒªç§»å½±éŸ¿
 
         set("str", 200);
         set("int", 100);
@@ -63,7 +63,7 @@ LONG );
 
 int accept_fight(object ob)
 {
-        message_vision("$NÒ»Éù¾Şºğ£¬ÆËÁË¹ıÀ´¡£\n",
+        message_vision("$Nä¸€è²å·¨å¼ï¼Œæ’²äº†éä¾†ã€‚\n",
                        this_object(), ob);
         kill_ob(ob);
         return -1;
@@ -83,7 +83,7 @@ mixed hit_ob(object me, object ob, int damage_bouns)
 {
 		ob->start_busy(20 + random(10));
 		me->receive_wound("qi", 5000 + random(3000), ob);
-        return HIY "$N" HIY "ÖÜÎ§ÎíÆøçÔÈÆ£¬Ö±±ÆµÃ$n" HIY "Í·ÔÎÄ¿Ñ£¡£\n" NOR;
+        return HIY "$N" HIY "å‘¨åœéœ§æ°£ç¹šç¹ï¼Œç›´é€¼å¾—$n" HIY "é ­æšˆç›®çœ©ã€‚\n" NOR;
 }
 
 void heart_beat()
@@ -96,7 +96,7 @@ void heart_beat()
 
 void unconcious()
 {
-	    // ·ÀÖ¹Ö±½Ócall_die()
+	    // é˜²æ­¢ç›´æ¥call_die()
 		if (query("qi") > 500000)
 		{
 			revive();
@@ -108,19 +108,19 @@ void unconcious()
 
 void die(object killer)
 {
-        object dob;             // ´òÔÎÕâ¸öNPCµÄÈË
-        int n;                  // ¿ÉÒÔ½±ÀøµÄÈËµÄÊıÄ¿
-        int exp;                // ĞèÒª¹Ï·ÖµÄ¾­Ñé
-        int pot;                // ĞèÒª¹Ï·ÖµÄÇ±ÄÜ
-        int tihui;              // ĞèÒª¹Ï·ÖµÄÌå»á
-        int weiwang;            // ĞèÒª¹Ï·ÖµÄÍşÍû
-        int score;              // ĞèÒª¹Ï·ÖµÄÔÄÀú
-        object *t;              // É±ËÀÎÒµÄÈËµÄ¶ÓÎéÁĞ±í
+        object dob;             // æ‰“æšˆé€™å€‹NPCçš„äºº
+        int n;                  // å¯ä»¥çå‹µçš„äººçš„æ•¸ç›®
+        int exp;                // éœ€è¦ç“œåˆ†çš„ç¶“é©—
+        int pot;                // éœ€è¦ç“œåˆ†çš„æ½›èƒ½
+        int tihui;              // éœ€è¦ç“œåˆ†çš„é«”æœƒ
+        int weiwang;            // éœ€è¦ç“œåˆ†çš„å¨æœ›
+        int score;              // éœ€è¦ç“œåˆ†çš„é–±æ­·
+        object *t;              // æ®ºæ­»æˆ‘çš„äººçš„éšŠä¼åˆ—è¡¨
         object tob;
         int i;
 
-        // ¶¨Òå½±ÀøÎïÆ·ÁĞ±í
-		// ¼¸ÂÊ  X / Íò·ÖÖ®Ò»
+        // å®šç¾©çå‹µç‰©å“åˆ—è¡¨
+		// å¹¾ç‡  X / è¬åˆ†ä¹‹ä¸€
 		mixed oblist = ([
 
 		]);
@@ -129,14 +129,14 @@ void die(object killer)
 		string s_gift, *key_s_gift;
 		int gift_point;
 		
-	    // ·ÀÖ¹Ö±½Ócall_die()
+	    // é˜²æ­¢ç›´æ¥call_die()
 		if (query("qi") > 100000)
 		{
 			revive();
 			return;
 		}
 
-        // ÕÒµ½É±ÁËÎÒ(NPC)»òÊÇ´òÔÎÎÒµÄÈË
+        // æ‰¾åˆ°æ®ºäº†æˆ‘(NPC)æˆ–æ˜¯æ‰“æšˆæˆ‘çš„äºº
         if (! objectp(dob = killer))
                 dob = query_last_damage_from();
 
@@ -189,7 +189,7 @@ void die(object killer)
 						             //"weiwang"  : weiwang + ((tob == dob) ? 50000 : 0),
 							     //"score"    : score + ((tob == dob) ? 50000 : 0),
 							      "mar"      : tihui + ((tob == dob) ? 10000 : 0),
-							     "prompt"   : "ÄãµÄ¶ÓÎé´ò°Ü" + name() + "Ö®ºó"]), 999);
+							     "prompt"   : "ä½ çš„éšŠä¼æ‰“æ•—" + name() + "ä¹‹å¾Œ"]), 999);
 
 				 }
 			}
@@ -202,25 +202,25 @@ void die(object killer)
 							     //"weiwang"  : weiwang,
 						             //"score"    : score,
 						             "mar"      : tihui + ((tob == dob) ? 10000 : 0),
-							     "prompt"   : "ÄãÔÚ´ò°Ü" + name() + "Ö®ºó"]), 999);
+							     "prompt"   : "ä½ åœ¨æ‰“æ•—" + name() + "ä¹‹å¾Œ"]), 999);
 		}
 
         }
-        //25%¼¸ÂÊµô³öÆß²ÊÁğÁ§Ñ¥
+        //25%å¹¾ç‡æ‰å‡ºä¸ƒå½©ç‰ç’ƒé´
  	if (objectp(dob) && environment(dob) == environment(this_object()) && random(4) == 1)
 	{
 		gift_ob = new("/clone/armor/qicai-xue");
-		message_vision(HIR "¶£~~Ò»Éù£¬´Ó$N" HIR "µô³öÒ»Ñù¶«Î÷£¬$n" HIR 
-			           "¸Ï½ô¼ğÁËÆğÀ´¡£\n" NOR, this_object(), dob);
-		tell_object(dob, BLINK + HIG "ÄãµÃµ½ÁË" + gift_ob->name() + BLINK + HIG "¡£\n" NOR);
+		message_vision(HIR "å®~~ä¸€è²ï¼Œå¾$N" HIR "æ‰å‡ºä¸€æ¨£æ±è¥¿ï¼Œ$n" HIR 
+			           "è¶•ç·Šæ€äº†èµ·ä¾†ã€‚\n" NOR, this_object(), dob);
+		tell_object(dob, BLINK + HIG "ä½ å¾—åˆ°äº†" + gift_ob->name() + BLINK + HIG "ã€‚\n" NOR);
 		gift_ob->move(dob, 1);
 	}
 
-        // ÏûÊ§
-        command("chat ¿´À´ÕâÌË¶«·½Ö®ĞĞÊµÔÚÊÇ×ÔÌÖÃ»È¤£¡");
-	message_vision("$N³¤Ğ¥Ò»Éù£¬»¯×÷Ò»ÍÅ»ğÑæ£¬ÏûÊ§ÔÚÌì¼Ê¡£\n", this_object());
+        // æ¶ˆå¤±
+        command("chat çœ‹ä¾†é€™è¶Ÿæ±æ–¹ä¹‹è¡Œå¯¦åœ¨æ˜¯è‡ªè¨æ²’è¶£ï¼");
+	message_vision("$Né•·å˜¯ä¸€è²ï¼ŒåŒ–ä½œä¸€åœ˜ç«ç‡„ï¼Œæ¶ˆå¤±åœ¨å¤©éš›ã€‚\n", this_object());
         CHANNEL_D->do_channel(this_object(), "rumor",
-                        "ÌıËµ" + name() + HIM "±»Ò»ÈºÎäÁÖÒìÊ¿´ò°Ü£¬°ÜĞË¶ø¹é¡£" NOR);
+                        "è½èªª" + name() + HIM "è¢«ä¸€ç¾¤æ­¦æ—ç•°å£«æ‰“æ•—ï¼Œæ•—èˆˆè€Œæ­¸ã€‚" NOR);
                         
 	destruct(this_object());
 
@@ -231,7 +231,7 @@ void random_move()
 {
 	if (time() - query("born_time") > 1800)
 	{
-		message_vision("$N³¤Ğ¥Ò»Éù£¬»¯×÷Ò»ÍÅ»ğÑæ£¬ÏûÊ§ÔÚÌì¼Ê¡£\n", this_object());
+		message_vision("$Né•·å˜¯ä¸€è²ï¼ŒåŒ–ä½œä¸€åœ˜ç«ç‡„ï¼Œæ¶ˆå¤±åœ¨å¤©éš›ã€‚\n", this_object());
 		destruct(this_object());
 		return;
 	}

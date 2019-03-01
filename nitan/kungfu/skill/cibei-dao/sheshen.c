@@ -1,11 +1,11 @@
 // This program is a part of NITAN MudLIB
-// sheshen.c ¡¸ÉáÉíÎ¹Ó¥¡¹
+// sheshen.c ã€Œèˆèº«å–‚é·¹ã€
 
 #include <ansi.h>
 
 inherit F_CLEAN_UP;
 
-string name() { return "ÉáÉíÎ¹Ó¥"; }
+string name() { return "èˆèº«å–‚é·¹"; }
 void remove_effect(object me, int a_amount, int d_amount);
 
 int perform(object me)
@@ -15,21 +15,21 @@ int perform(object me)
         string msg;
 
         if ((int)me->query_skill("cibei-dao", 1) < 60)
-                return notify_fail("ÄãµÄ´È±¯µ¶·¨²»¹»æµÊì£¬²»»áÊ¹ÓÃ¡¸ÉáÉíÎ¹Ó¥¡¹¡£\n");
+                return notify_fail("ä½ çš„æ…ˆæ‚²åˆ€æ³•ä¸å¤ å«»ç†Ÿï¼Œä¸æœƒä½¿ç”¨ã€Œèˆèº«å–‚é·¹ã€ã€‚\n");
 
         if( query("neili", me)<200 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬ÎŞ·¨Ê¹ÓÃ¡¸ÉáÉíÎ¹Ó¥¡¹¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼Œç„¡æ³•ä½¿ç”¨ã€Œèˆèº«å–‚é·¹ã€ã€‚\n");
 
         if( query_temp("cbd_sheshen", me) )
-                return notify_fail("ÄãÒÑ¾­ÔÚÔË¹¦ÖĞÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“åœ¨é‹åŠŸä¸­äº†ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me)) ||
               query("skill_type", weapon) != "blade" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ã€‚\n");
 
         skill = me->query_skill("cibei-dao", 1);
-        msg = HIR "$N" HIR "Ê¹³ö´È±¯µ¶·¨¡¸ÉáÉíÎ¹Ó¥¡¹£¬½«»ëÉíµÄ¹¦Á¦¶¼ÔËµ½" +
-              weapon->name() + HIR "ÉÏ£¡\n" NOR;
+        msg = HIR "$N" HIR "ä½¿å‡ºæ…ˆæ‚²åˆ€æ³•ã€Œèˆèº«å–‚é·¹ã€ï¼Œå°‡æ¸¾èº«çš„åŠŸåŠ›éƒ½é‹åˆ°" +
+              weapon->name() + HIR "ä¸Šï¼\n" NOR;
         message_combatd(msg, me);
 
         addn_temp("apply/attack", skill/3, me);
@@ -52,6 +52,6 @@ void remove_effect(object me, int a_amount, int d_amount)
                 addn_temp("apply/attack", -a_amount, me);
                 addn_temp("apply/defense", d_amount, me);
                 delete_temp("cbd_sheshen", me);
-                tell_object(me, "ÄãµÄ¡¸ÉáÉíÎ¹Ó¥¡¹ÔËĞĞÍê±Ï£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï¡£\n");
+                tell_object(me, "ä½ çš„ã€Œèˆèº«å–‚é·¹ã€é‹è¡Œå®Œç•¢ï¼Œå°‡å…§åŠ›æ”¶å›ä¸¹ç”°ã€‚\n");
         }
 }

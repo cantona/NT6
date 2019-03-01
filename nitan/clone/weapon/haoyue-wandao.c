@@ -4,16 +4,16 @@ inherit BLADE;
 
 void create()
 {
-        set_name(HIY "ºÆÔÂÍäµ¶" NOR, ({ "haoyue wandao" }));
+        set_name(HIY "æµ©æœˆå½åˆ€" NOR, ({ "haoyue wandao" }));
         set_weight(500);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
-                set("long", NOR + WHT "ÕâÊÇÒ»±úÁÁ»Î»ÎµÄÍäµ¶£¬µ½±úÉÏµñ¿Ì×ÅÒ»¸öÔÂÁÁ¡£\n" NOR);
+                set("unit", "æŸ„");
+                set("long", NOR + WHT "é€™æ˜¯ä¸€æŸ„äº®æ™ƒæ™ƒçš„å½åˆ€ï¼Œåˆ°æŸ„ä¸Šé›•åˆ»è‘—ä¸€å€‹æœˆäº®ã€‚\n" NOR);
                 set("material", "tian jing");
-                set("wield_msg", "$N¡¸à§¡¹µÄÒ»Éù³é³öÒ»±ú$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²å»Øµ¶ÇÊ¡£\n");
+                set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€è²æŠ½å‡ºä¸€æŸ„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°‡æ‰‹ä¸­çš„$næ’å›åˆ€é˜ã€‚\n");
                 set("value", 100000);
         }
         init_blade(600);

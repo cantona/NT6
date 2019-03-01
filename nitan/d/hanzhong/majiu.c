@@ -3,11 +3,11 @@ inherit TRANS_ROOM;
 
 void create()
 {
-      set("short","����");
+      set("short","馬廄");
         set("long", @LONG
-�����书������ǣ���Ϊƽʱ�������˲��࣬�Ե���Щ�ƾɡ���
-�������µ���ľ���϶���һ����ľ�� (paizi)�����жѷ������Ѳ��ϣ�
-������һ����ۡ�
+這是武功鎮的馬廄，因為平時來往的人不多，顯得有些破舊。馬
+廄雨檐下的爛木柱上釘著一塊破木牌 (paizi)。廄中堆放著幾堆草料，
+正中有一口泔槽。
 LONG );
       set("outdoors", "hanzhong");
       set("no_fight", 1);

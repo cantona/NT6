@@ -9,15 +9,15 @@ void init()
 
 void create()
 {
-        string *order = ({HIC"ÖĞ»ª"NOR, HIC"´óÇ°ÃÅ"NOR, HIR"ÈáºÍ"+HIW"ÆßĞÇ"NOR, HIM"ºìËşÉ½"NOR, HIM"Íò±¦Â·"NOR, HIB"Ï£¶û¶Ù"NOR, 
-HIW"ÔÆÑÌ"NOR, HIY"Ê¥ÂŞÀ¼"NOR, HIY"ÂæÍÕ"NOR, HIG"ÈıÎå"NOR, HIG"ÓñÏª"NOR, HIR"ºìË«Ï²"NOR});
+        string *order = ({HIC"ä¸­è¯"NOR, HIC"å¤§å‰é–€"NOR, HIR"æŸ”å’Œ"+HIW"ä¸ƒæ˜Ÿ"NOR, HIM"ç´…å¡”å±±"NOR, HIM"è¬å¯¶è·¯"NOR, HIB"å¸Œçˆ¾é “"NOR, 
+HIW"é›²ç…™"NOR, HIY"è–ç¾…è˜­"NOR, HIY"é§±é§"NOR, HIG"ä¸‰äº”"NOR, HIG"ç‰æºª"NOR, HIR"ç´…é›™å–œ"NOR});
         set_name( (order[random(sizeof(order))]), ({ "xiang yan", "yan" }) );
         set_weight(80);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»ºĞÏãÑÌ£¬¿ÉÒÔ "+HIR"(xiyan) \n"NOR);
-                set("unit", "ºĞ");
+                set("long", "ä¸€ç›’é¦™ç…™ï¼Œå¯ä»¥ "+HIR"(xiyan) \n"NOR);
+                set("unit", "ç›’");
                 set("no_give", 1);
                 set("no_sell", 1);
                 set("no_get", 1);
@@ -32,35 +32,35 @@ int do_smoke()
         object obj = this_object();
 
         if(environment(obj) != me)
-                return notify_fail("ÄãÊÇÔÚ¿´ÑÌ°É£¿\n");
+                return notify_fail("ä½ æ˜¯åœ¨çœ‹ç…™å§ï¼Ÿ\n");
         if(query("master") && query("master") != me->query("id"))
-                return notify_fail("ÕâÑÌÒÑ¾­µãÈ¼ÁË£¬¶øÇÒ²»ÊÇÄãµÄÑÌ¡£\n");
+                return notify_fail("é€™ç…™å·²ç¶“é»ç‡ƒäº†ï¼Œè€Œä¸”ä¸æ˜¯ä½ çš„ç…™ã€‚\n");
         add("count",-1);
         me->add("food", -20);
         me->add("water", -20);
         switch(query("count")) {
-                case 1: message_vision("$NÃÍÎüÁËÒ»¿ÚÊ£ÏÂµÄ"+YEL"ÑÌÆ¨¹É"+NOR"£¬Á½¸ùÊÖÖ¸¼Ğ×¡Ò»µ¯£¬ÈÓµôÁËÑÌÍ·¡£\n", me);
+                case 1: message_vision("$NçŒ›å¸äº†ä¸€å£å‰©ä¸‹çš„"+YEL"ç…™å±è‚¡"+NOR"ï¼Œå…©æ ¹æ‰‹æŒ‡å¤¾ä½ä¸€å½ˆï¼Œæ‰”æ‰äº†ç…™é ­ã€‚\n", me);
                         break; 
-                case 2: message_vision("$NÍÂ³öÒ»´®"+HIC"ÑÌÈ¦"+NOR"£¬¿´×ÅËüÓÆÏĞµØÉ¢¿ª¡£\n", me);
+                case 2: message_vision("$Nåå‡ºä¸€ä¸²"+HIC"ç…™åœˆ"+NOR"ï¼Œçœ‹è‘—å®ƒæ‚ é–’åœ°æ•£é–‹ã€‚\n", me);
                         break;
-                case 3: message_vision("$N±ÕÉÏÑÛ¾¦£¬ÉîÉîµØÎüÁËÒ»¿Ú$n£¬ÓÖ´Ó±Ç¿×ÖĞÅç³öÀ´£º¡°Ë¬°¡£¡Ë¬°¡£¡¡±\n", me, obj);
+                case 3: message_vision("$Né–‰ä¸Šçœ¼ç›ï¼Œæ·±æ·±åœ°å¸äº†ä¸€å£$nï¼Œåˆå¾é¼»å­”ä¸­å™´å‡ºä¾†ï¼šâ€œçˆ½å•Šï¼çˆ½å•Šï¼â€\n", me, obj);
                         break;
-                case 4: message_vision("$NºİºİµÄÎüÁËÒ»¿Ú$n£¬´ó¸ÅÊÇÎüµÃÌ«ÃÍÁË£¬Ò»ÕÅÁ³ÕÇµÄÍ¨ºì¡£\n", me, obj);
+                case 4: message_vision("$Nç‹ ç‹ çš„å¸äº†ä¸€å£$nï¼Œå¤§æ¦‚æ˜¯å¸å¾—å¤ªçŒ›äº†ï¼Œä¸€å¼µè‡‰æ¼²çš„é€šç´…ã€‚\n", me, obj);
                         break;
-                case 5: message_vision("$NÎüÁËÒ»¿Ú$n£¬Ò¡Í·»ÎÄÔµØËµµÀ£º¡°·¹ºóÒ»Ö§ÑÌ£¬Èü¹ı"+HIM"»îÉñÏÉ¡£¡±\n"NOR, me, obj );
+                case 5: message_vision("$Nå¸äº†ä¸€å£$nï¼Œæ–é ­æ™ƒè…¦åœ°èªªé“ï¼šâ€œé£¯å¾Œä¸€æ”¯ç…™ï¼Œè³½é"+HIM"æ´»ç¥ä»™ã€‚â€\n"NOR, me, obj );
                         break;
-                case 6: message_vision("$NÇÌÆğ¶şÀÉÍÈ£¬ÃĞÉÏÑÛ¾¦£¬ÃÍÎüÁËÒ»¿Ú$n£¬×ÔÑÔ×ÔÓïµÀ£º¡°Õâ¶«Î÷º¦ÈËÓÖº¦¼º£¬ÎªÉ¶ÎÒ»¹ÄÇÃ´Ï²»¶£¿¡±\n", me, obj);
+                case 6: message_vision("$Nç¿¹èµ·äºŒéƒè…¿ï¼Œçœ¯ä¸Šçœ¼ç›ï¼ŒçŒ›å¸äº†ä¸€å£$nï¼Œè‡ªè¨€è‡ªèªé“ï¼šâ€œé€™æ±è¥¿å®³äººåˆå®³å·±ï¼Œç‚ºå•¥æˆ‘é‚„é‚£éº¼å–œæ­¡ï¼Ÿâ€\n", me, obj);
                         break;
                 case 7: set("master", me->query("id"));
-                        message_vision("$N³é³öÒ»Ö§$n£¬µã×ÅÁË"BLINK HIR"»ğ"+NOR" ÃÀ×Ì×ÌµØÎüÁËÆğÀ´¡£\n", me, obj);
+                        message_vision("$NæŠ½å‡ºä¸€æ”¯$nï¼Œé»è‘—äº†"BLINK HIR"ç«"+NOR" ç¾æ»‹æ»‹åœ°å¸äº†èµ·ä¾†ã€‚\n", me, obj);
                         break;
                 default:
                         break;
         }        
         if(query("count") > 1) call_out("do_smoke", 10);
         else {
-		obj->set_name(HIR+me->query("name")+"³é¹ıµÄÑÌÆ¨¹É"NOR,({"yan pi gu"}));
-		obj->set("long",HIC"±»"+me->query("name")+"³é¹ıµÄÑÌÆ¨¹É"NOR);
+		obj->set_name(HIR+me->query("name")+"æŠ½éçš„ç…™å±è‚¡"NOR,({"yan pi gu"}));
+		obj->set("long",HIC"è¢«"+me->query("name")+"æŠ½éçš„ç…™å±è‚¡"NOR);
 		obj->set("no_get",1);
 		obj->unequip();
 		obj->move(environment(me));
@@ -73,7 +73,7 @@ void smoked(object obj)
 {
   if(obj && environment(obj)) {
     tell_object(environment(obj),
-      "Ò»ÕóÎ¢·ç´µ¹ı£¬"+obj->name()+"»¯ÎªÆ¬Æ¬³¾ÍÁ£¬ÏûÊ§²»¼ûÁË¡£\n");
+      "ä¸€é™£å¾®é¢¨å¹éï¼Œ"+obj->name()+"åŒ–ç‚ºç‰‡ç‰‡å¡µåœŸï¼Œæ¶ˆå¤±ä¸è¦‹äº†ã€‚\n");
     destruct(obj);
   }
 }

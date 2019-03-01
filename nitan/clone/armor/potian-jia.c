@@ -6,17 +6,17 @@ inherit ARMOR;
 
 void create()
 {
-        set_name(HIR "�����" NOR, ({ "potian jia" }) );
+        set_name(HIR "破天甲" NOR, ({ "potian jia" }) );
         set_weight(1000);
-                set("long", HIW "����һ������ͨͨ�Ļ��ף�������Χɢ��������������������������"
-                        "ʲôҲ�����塣\n" HIC
-                    HIC "��Ч�м�������+ 100        ��Ч�Ṧ������+ 100\n" NOR
-                    HIC "����Ч��������+ 20%        ����Ч���ȼ���  300\n" NOR
-                    HIC "�����ر�������+ 40%\n" NOR);
+                set("long", HIW "這是一張普普通通的護甲，護甲周圍散發出淡淡的霧氣將其周身籠罩"
+                        "什麼也看不清。\n" HIC
+                    HIC "有效招架修正：+ 100        有效輕功修正：+ 100\n" NOR
+                    HIC "抗毒效果修正：+ 20%        防御效果等級：  300\n" NOR
+                    HIC "抗毒回避修正：+ 40%\n" NOR);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "��");
+                set("unit", "件");
                 set("material", "steel");
                                 set("value", 800000);
                 set("armor_prop/armor", 300);
@@ -26,9 +26,9 @@ void create()
                                 set("armor_prop/avoid_poison", 40);
                 }
                 set("material", "tian jing");
-                set("wear_msg", HIR "������ƿն��죬����������֮������ȴ������$N" HIC "�϶�Ϊһ��[2;37;0m\n" NOR);
-                set("remove_msg", HIR "$N" HIC "���쳤Х������׶������죬ɲ�Ǽ���Χ������ɢ�������������"
-                                                        "��ʧ����ʡ�\n" NOR);
+                set("wear_msg", HIR "破天甲破空而響，陣陣霧氣隨之而出，卻早已與$N" HIC "合而為一。[2;37;0m\n" NOR);
+                set("remove_msg", HIR "$N" HIC "仰天長嘯，破天甲叮呤做響，剎那間周圍霧氣漸散，但破天甲早已"
+                                                        "消失于天際。\n" NOR);
 
         setup();
 }
@@ -64,20 +64,20 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
                 switch (random(4))
                 {
                 case 0:
-                        result += (["msg" : HIR "$n" HIR "ƽ���ؿ���$N" HIR "��$N" HIR "��"
-                                            "��һƬãȻ�����룺�ѵ���С������ǧ��\n" NOR]);
+                        result += (["msg" : HIR "$n" HIR "平靜地看著$N" HIR "，$N" HIR "腦"
+                                            "子一片茫然，心想：難道這小子是老千？\n" NOR]);
                         break;
                 case 1:
-                        result += (["msg" : HIR "$n" HIR "ƽ���ؿ���$N" HIR "��$N" HIR "��"
-                                            "��һƬãȻ�����룺�ѵ���С������ǧ��\n" NOR]);
+                        result += (["msg" : HIR "$n" HIR "平靜地看著$N" HIR "，$N" HIR "腦"
+                                            "子一片茫然，心想：難道這小子是老千？\n" NOR]);
                         break;
                 case 2:
-                        result += (["msg" : HIR "$n" HIR "ƽ���ؿ���$N" HIR "��$N" HIR "��"
-                                            "��һƬãȻ�����룺�ѵ���С������ǧ��\n" NOR]);
+                        result += (["msg" : HIR "$n" HIR "平靜地看著$N" HIR "，$N" HIR "腦"
+                                            "子一片茫然，心想：難道這小子是老千？\n" NOR]);
                         break;
                 default:
-                        result += (["msg" : HIR "$n" HIR "ƽ���ؿ���$N" HIR "��$N" HIR "��"
-                                            "��һƬãȻ�����룺�ѵ���С������ǧ��\n" NOR]);
+                        result += (["msg" : HIR "$n" HIR "平靜地看著$N" HIR "，$N" HIR "腦"
+                                            "子一片茫然，心想：難道這小子是老千？\n" NOR]);
                         break;
                 }
                 return result;

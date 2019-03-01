@@ -1,75 +1,75 @@
 
      socket_connect(3)      MudOS (5 Sep 1994)       socket_connect(3)
 
-     ���ƣ�
-          socket_connect() - ��ʼ��һ�� socket �ϵ�����(connection)
+     名稱：
+          socket_connect() - 初始化一個 socket 上的連接(connection)
 
-     �﷨��
+     語法：
           #include 
 
           int socket_connect( int s, string address,
                               string read_callback,
                               string write_callback );
 
-          ���� socket_connect( ���� s, �ִ� address,
-                               �ִ� read_callback,
-                               �ִ� write_callback );
+          整數 socket_connect( 整數 s, 字串 address,
+                               字串 read_callback,
+                               字串 write_callback );
 
-     �÷���
-          ���� s ��һ�� socket��s ������һ�� STREAM ��̬����һ�� MUD
-          ��̬�� socket��address ����� socket ��Ҫ�������ӵ�λַ��λ
-          ַ�� "127.0.0.1 23" ���ָ�ʽ��
+     用法：
+          參數 s 是一個 socket。s 必須是一個 STREAM 型態或是一個 MUD
+          型態的 socket。address 是這個 socket 將要嘗試連接的位址。位
+          址是 "127.0.0.1 23" 這種格式。
 
-          read_callback �����Ǹ�������ʽ����������һ�˵õ�����ʱ���е�
-          ��ʽ���ơ������ȡ�غ�(callback)��ʽӦ�������¸�ʽ��
+          read_callback 參數是給驅動程式在由它的另一端得到資料時呼叫的
+          函式名稱。這個讀取回呼(callback)函式應該是如下格式：
 
                void read_callback(int fd, mixed message)
 
-          ����� fd ��Ҫ�������ϵ� socket���� message �ǽ��յ������ϡ�
+          這裡的 fd 是要接收資料的 socket，而 message 是接收到的資料。
 
-          write_callback �����Ǹ�������ʽ�� socket ��׼����д��ʱ����
-          �ĺ�ʽ���ơ����д��غ���ʽӦ�������¸�ʽ��
+          write_callback 參數是給驅動程式在 socket 已準備好寫入時呼叫
+          的函式名稱。這個寫入回呼函式應該是如下格式：
 
                void write_callback(int fd)
 
-          ����� fd ����׼����д��� socket��
+          這裡的 fd 是已準備好寫入的 socket。
 
-     ����ֵ��
-          socket_connect() ���أ�
+     傳回值：
+          socket_connect() 傳回：
 
-               �ɹ�ʱ�� EESUCCESS��
+               成功時是 EESUCCESS。
 
-               ʧ��ʱ��һ��������������ĸ�ֵ��
+               失敗時是一個含有如下意義的負值。
 
-     ����ֵ��
-          EEFDRANGE      ����ֵ(descriptor)������Χ��
+     錯誤值：
+          EEFDRANGE      描述值(descriptor)超出□圍。
 
-          EEBADF         ��Ч������ֵ��
+          EEBADF         無效的描述值。
 
-          EESECURITY     ��ͼΥ����ȫ��
+          EESECURITY     企圖違反安全。
 
-          EEMODENOTSUPP  ��֧Ԯ�� socket ��̬��
+          EEMODENOTSUPP  不支援此 socket 型態。
 
-          EEISLISTEN     socket ��������(listening)��
+          EEISLISTEN     socket 正在傾聽(listening)。
 
-          EEISCONN       socket �����ӡ�
+          EEISCONN       socket 已連接。
 
-          EEBADADDR      λַ��ʽ���⡣
+          EEBADADDR      位址格式問題。
 
-          EEINTR         �жϵ�ϵͳ���С�
+          EEINTR         中斷的系統呼叫。
 
-          EEADDRINUSE    λַ�ѱ�ʹ�á�
+          EEADDRINUSE    位址已被使用。
 
-          EEALREADY      �������ڽ����С�
+          EEALREADY      操作已在進行中。
 
-          EECONNREFUSED  ���ӱ��ܾ���
+          EECONNREFUSED  連接被拒絕。
 
-          EECONNECT      �������⡣
+          EECONNECT      連接問題。
 
-     ���գ�
+     參照：
           socket_accept(3), socket_close(3), socket_create(3)
 
-     ���룺
+     翻譯：
           Kenny@Broken.History       97.Jul.27       (printed 3/16/95)
 
 

@@ -1,14 +1,14 @@
-// ´óÌÆË«Áú´«
+// å¤§å”é›™é¾å‚³
  
-// ma.c Âí·ò×Ó
+// ma.c é¦¬å¤«å­
 
 inherit NPC;
 
 void create()
 {
 //  reload("gaoli_ma");
-  set_name("Âí·ò×Ó", ({"ma fuzhi", "ma", "fuzhi"}));
-  set("gender", "ÄĞĞÔ");
+  set_name("é¦¬å¤«å­", ({"ma fuzhi", "ma", "fuzhi"}));
+  set("gender", "ç”·æ€§");
   set("combat_exp", 3000);
   set("age", 38);
   set("per", 29);

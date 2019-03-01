@@ -1,4 +1,4 @@
-// cundaota4.c ´æµÀËş¶¥
+// cundaota4.c å­˜é“å¡”é ‚
 // Winder Oct.10 1998
 
 #include <ansi.h>
@@ -8,11 +8,11 @@ int do_dian(string arg);
 
 void create()
 {
-        set("short", "´æµÀËş¶¥");
+        set("short", "å­˜é“å¡”é ‚");
         set("long", @LONG
-ÕâÀïÊÇ´æµÀËşµÄËş¶¥£¬ËşÌİµ½ÕâÀï¾Íµ½ÁË¾¡Í·¡£Ç½±ÚÉÏ¿ª×Å¼¸
-¸ö´°»§(window)£¬Ò»¸öÖĞÄêµÀÈËÕıÅõ×ÅÒ»±¾Êé¿à¿àÑĞ¶Á¡£ÌìÉ«»è°µ£¬
-×ÀÉÏ°Ú·Å×ÅÒ»Ö§À¯Öò(candle)£¬È´Ã»ÓĞµã×Å¡£
+é€™è£¡æ˜¯å­˜é“å¡”çš„å¡”é ‚ï¼Œå¡”æ¢¯åˆ°é€™è£¡å°±åˆ°äº†ç›¡é ­ã€‚ç‰†å£ä¸Šé–‹è‘—å¹¾
+å€‹çª—æˆ¶(window)ï¼Œä¸€å€‹ä¸­å¹´é“äººæ­£æ§è‘—ä¸€æœ¬æ›¸è‹¦è‹¦ç ”è®€ã€‚å¤©è‰²æ˜æš—ï¼Œ
+æ¡Œä¸Šæ“ºæ”¾è‘—ä¸€æ”¯è Ÿç‡­(candle)ï¼Œå»æ²’æœ‰é»è‘—ã€‚
 LONG
         );
         set("exits", ([
@@ -23,8 +23,8 @@ LONG
         ]));
 
         set("item_desc", ([
-        "window": "´°Íâ°×ÔÆÆ®¹ı£¬ËÆºõÄãÒ»ÉìÊÖ¾Í¿ÉÒÔ×¥×¡Ò»Æ¬¡£\n",
-        "candle": "Ò»Ö§ÆÕÍ¨µÄÀ¯Öò£¬ÒÑ¾­µãµÄÖ»Ê£Ò»Ğ¡°ëÁË¡£\n"
+        "window": "çª—å¤–ç™½é›²é£„éï¼Œä¼¼ä¹ä½ ä¸€ä¼¸æ‰‹å°±å¯ä»¥æŠ“ä½ä¸€ç‰‡ã€‚\n",
+        "candle": "ä¸€æ”¯æ™®é€šçš„è Ÿç‡­ï¼Œå·²ç¶“é»çš„åªå‰©ä¸€å°åŠäº†ã€‚\n"
         ]) );
 
         set("count",1);
@@ -46,22 +46,22 @@ int do_dian(string arg)
         object me=this_player();
 
         if (!arg || arg != "candle")
-                return notify_fail("ÄãÒªµãÈ¼Ê²Ã´£¿\n");
+                return notify_fail("ä½ è¦é»ç‡ƒä»€éº¼ï¼Ÿ\n");
 
         if ( query("count")>0 &&
         present("zhangjing", environment(me)) &&
         living(present("zhangjing", environment(me))) ) {
-                message_vision(HIG"$N×ßÉÏÇ°È¥£¬´ò×Å»ğ°ÑÀ¯ÖòµãÈ¼£¬ÎİÀï¶ÙÊ±ÁÁÌÃÁËĞí¶à¡£\n"NOR,this_player());
-                message_vision("ÕÆ¾­µÀ³¤Ì§ÆğÍ·£¬ºÃÏó¸Õ´Ó³ÁË¼ÖĞ»Ö¸´¹ıÀ´ËÆµÄ£¬µÀ£ºÌì\n",this_player());
-                message_vision("É«ÒÑÍíÁËÂğ£¬°¦£¬ÎÒ¶ÁÕâ±¾µÀµÂ¾­¾¹È»Á¬ÌìÉ«Ò²Íü¼ÇÁË¡£\n",this_player());
-                message_vision("ºÃ£¬¶àĞ»ÕâÎ»"+RANK_D->query_respect(me)+"ÁË£¬ÎÒÉíÉÏÕâ¶«Î÷ÊÇÕÆÒ©Ê¦µÜËÍ¸øÎÒ\n",this_player());
-                message_vision("µÄ£¬Ò²²»ÖªµÀÓĞÊ²Ã´ÓÃ£¬ÏÖÔÚËÍ¸øÄãÀ²¡£\n",this_player());
+                message_vision(HIG"$Nèµ°ä¸Šå‰å»ï¼Œæ‰“è‘—ç«æŠŠè Ÿç‡­é»ç‡ƒï¼Œå±‹è£¡é “æ™‚äº®å ‚äº†è¨±å¤šã€‚\n"NOR,this_player());
+                message_vision("æŒç¶“é“é•·æŠ¬èµ·é ­ï¼Œå¥½è±¡å‰›å¾æ²‰æ€ä¸­æ¢å¾©éä¾†ä¼¼çš„ï¼Œé“ï¼šå¤©\n",this_player());
+                message_vision("è‰²å·²æ™šäº†å—ï¼Œå”‰ï¼Œæˆ‘è®€é€™æœ¬é“å¾·ç¶“ç«Ÿç„¶é€£å¤©è‰²ä¹Ÿå¿˜è¨˜äº†ã€‚\n",this_player());
+                message_vision("å¥½ï¼Œå¤šè¬é€™ä½"+RANK_D->query_respect(me)+"äº†ï¼Œæˆ‘èº«ä¸Šé€™æ±è¥¿æ˜¯æŒè—¥å¸«å¼Ÿé€çµ¦æˆ‘\n",this_player());
+                message_vision("çš„ï¼Œä¹Ÿä¸çŸ¥é“æœ‰ä»€éº¼ç”¨ï¼Œç¾åœ¨é€çµ¦ä½ å•¦ã€‚\n",this_player());
                 addn("count",-1);
                 ob=new("/clone/medicine/vegetable/moyao");
                 ob->move(me);
         }
         else {
-                message_vision("$N×ßÉÏÇ°È¥£¬´ò×Å»ğ°ÑÀ¯ÖòµãÈ¼£¬ÎİÀï¶ÙÊ±ÁÁÌÃÁËĞí¶à¡£\n",this_player());
+                message_vision("$Nèµ°ä¸Šå‰å»ï¼Œæ‰“è‘—ç«æŠŠè Ÿç‡­é»ç‡ƒï¼Œå±‹è£¡é “æ™‚äº®å ‚äº†è¨±å¤šã€‚\n",this_player());
         }
         return 1;
 }

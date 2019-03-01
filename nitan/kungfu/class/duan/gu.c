@@ -8,11 +8,11 @@ mixed ask_skill1();
 
 void create()
 {
-        set_name("¹ÅóÆ³Ï", ({ "gu ducheng", "gu", "ducheng" }));
-        set("title", "´óÀí¹ú»¤ÎÀ" );
-        set("nickname", HIY "ÖÒÐÄ¹¢¹¢" NOR);
-        set("long", "ËûÊÇ´óÀí¹úËÄ´ó»¤ÎÀÖ®Ò»¡£\n");
-        set("gender", "ÄÐÐÔ");
+        set_name("å¤ç¯¤èª ", ({ "gu ducheng", "gu", "ducheng" }));
+        set("title", "å¤§ç†åœ‹è­·è¡›" );
+        set("nickname", HIY "å¿ å¿ƒè€¿è€¿" NOR);
+        set("long", "ä»–æ˜¯å¤§ç†åœ‹å››å¤§è­·è¡›ä¹‹ä¸€ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 40);
         set("class", "officer");
         set("attitude", "friendly");
@@ -55,10 +55,10 @@ void create()
         prepare_skill("strike", "wuluo-zhang");
 
         set("inquiry", ([
-                "´í×Ö¾÷"   : (: ask_skill1 :),
+                "éŒ¯å­—è¨£"   : (: ask_skill1 :),
         ]));
 
-        create_family("¶ÎÊÏ»Ê×å", 15, "¼Ò³¼");
+        create_family("æ®µæ°çš‡æ—", 15, "å®¶è‡£");
 
         set("chat_chance_combat", 120);
         set("chat_msg_combat", ({
@@ -81,31 +81,31 @@ void attempt_apprentice(object ob)
                 return;
 
         command("ah");
-        command("say ÊÀ×ÓµîÏÂºÎÐèÈç´Ë£¬Ö»ÒªÓÐÊÂ·Ô¸ÀÔÚÏÂÒ»Éù±ãÊÇ¡£");
-        command("say ÈôÊÀ×Ó²»ÏÓÆú£¬ÎÒÕâÀïµ¹ÊÇÓÐÒ»Ì×¸«·¨¿ÉÒÔ´«ÊÚÓèÄã¡£");
+        command("say ä¸–å­æ®¿ä¸‹ä½•éœ€å¦‚æ­¤ï¼Œåªè¦æœ‰äº‹å©å’åœ¨ä¸‹ä¸€è²ä¾¿æ˜¯ã€‚");
+        command("say è‹¥ä¸–å­ä¸å«Œæ£„ï¼Œæˆ‘é€™è£¡å€’æ˜¯æœ‰ä¸€å¥—æ–§æ³•å¯ä»¥å‚³æŽˆäºˆä½ ã€‚");
 
         return;
 }
 
 int recognize_apprentice(object ob, string skill)
 {
-        if( query("family/family_name", ob) != "¶ÎÊÏ»Ê×å" )
+        if( query("family/family_name", ob) != "æ®µæ°çš‡æ—" )
         {
                 command("heng");
-                command("say ÄãËãÊ²Ã´ÈË£¿¹ÅÄ³ÎªºÎÒªÌýÃüÓÚÄã£¿");
+                command("say ä½ ç®—ä»€éº¼äººï¼Ÿå¤æŸç‚ºä½•è¦è½å‘½äºŽä½ ï¼Ÿ");
                 return -1;
         }
 
         if (skill != "pangen-cuojiefu" && skill != "hammer")
         {
-                command("say ÎÒ¾ÍÖ»ÓÐÕâÌ×¸«·¨ÄÃµÃ³öÊÖ£¬ÆäÓàµÄ»¹ÊÇÕÒÄãµùµùÑ§°É¡£");
+                command("say æˆ‘å°±åªæœ‰é€™å¥—æ–§æ³•æ‹¿å¾—å‡ºæ‰‹ï¼Œå…¶ä½™çš„é‚„æ˜¯æ‰¾ä½ çˆ¹çˆ¹å­¸å§ã€‚");
                 return -1;
         }
 
         if( !query_temp("can_learn/guducheng", ob) )
         {
                 command("hehe");
-                command("say ¼ÈÈ»ÊÀ×ÓÓÐÐÄÏ°Îä£¬ÔÚÏÂÀíµ±½ß¾¡ËùÄÜ´«ÊÚ¡£");
+                command("say æ—¢ç„¶ä¸–å­æœ‰å¿ƒç¿’æ­¦ï¼Œåœ¨ä¸‹ç†ç•¶ç«­ç›¡æ‰€èƒ½å‚³æŽˆã€‚");
                 set_temp("can_learn/guducheng", 1, ob);
         }
         return 1;
@@ -117,34 +117,34 @@ mixed ask_skill1()
 
         me = this_player();
         if( query("can_perform/pangen-cuojiefu/cuo", me) )
-                return "Õâ¸ö¡­Õâ¡­ÔÚÏÂ²»ÊÇÒÑ¾­½Ì¹ýÄãÁËÂð£¿";
+                return "é€™å€‹â€¦é€™â€¦åœ¨ä¸‹ä¸æ˜¯å·²ç¶“æ•™éŽä½ äº†å—Žï¼Ÿ";
 
         if( query("family/family_name", me) != query("family/family_name") )
-                return RANK_D->query_respect(me) + "ºÍ¹ÅÄ³ËØ²»ÏàÊ¶£¬ºÎ³ö´ËÑÔ£¿";
+                return RANK_D->query_respect(me) + "å’Œå¤æŸç´ ä¸ç›¸è­˜ï¼Œä½•å‡ºæ­¤è¨€ï¼Ÿ";
 
         if (me->query_skill("pangen-cuojiefu", 1) < 1)
-                return "ÊÀ×ÓµîÏÂ»¹ÊÇÏÈÑ§ÁËÔÚÏÂµÄÅÌ¸ù´í½Ú¸«ÔÙËµ°É¡£";
+                return "ä¸–å­æ®¿ä¸‹é‚„æ˜¯å…ˆå­¸äº†åœ¨ä¸‹çš„ç›¤æ ¹éŒ¯ç¯€æ–§å†èªªå§ã€‚";
 
         if( query("family/gongji", me)<150 )
-                return "Õâ¸ö¡­²»ÊÇÎÒ²»Ô¸Òâ¡­Ö»ÊÇÍõÒ¯·Ô¸ÀÁË£¬ÎÞ¹¦ÀÍÕß²»µÃ¡­ÄÇ¸ö¡£";
+                return "é€™å€‹â€¦ä¸æ˜¯æˆ‘ä¸é¡˜æ„â€¦åªæ˜¯çŽ‹çˆºå©å’äº†ï¼Œç„¡åŠŸå‹žè€…ä¸å¾—â€¦é‚£å€‹ã€‚";
 
         if (me->query_skill("force") < 120)
-                return "Õâ¸ö¡­ÊÀ×ÓµîÏÂµÄÄÚ¹¦ÐÞÎª»¹ÓÐ´ýÌá¸ß¡£";
+                return "é€™å€‹â€¦ä¸–å­æ®¿ä¸‹çš„å…§åŠŸä¿®ç‚ºé‚„æœ‰å¾…æé«˜ã€‚";
 
         if( query("max_neili", me)<800 )
-                return "Õâ¸ö¡­ÊÀ×ÓµîÏÂµÄÄÚÁ¦ÐÞÎª»¹ÓÐ´ýÌá¸ß¡£";
+                return "é€™å€‹â€¦ä¸–å­æ®¿ä¸‹çš„å…§åŠ›ä¿®ç‚ºé‚„æœ‰å¾…æé«˜ã€‚";
 
         if (me->query_skill("pangen-cuojiefu", 1) < 100)
-                return "ÊÀ×ÓµîÏÂÅÌ¸ù´í½Ú¸«µÄ»ðºò»¹²»¹»£¬ÉÐÇÒÓÃ²»ÁËÕâÕÐ¡£";
+                return "ä¸–å­æ®¿ä¸‹ç›¤æ ¹éŒ¯ç¯€æ–§çš„ç«å€™é‚„ä¸å¤ ï¼Œå°šä¸”ç”¨ä¸äº†é€™æ‹›ã€‚";
 
-        message_sort(HIY "\n$n" HIY "¶Ô$N" HIY "µãÁËµãÍ·£¬Ëæ¼´È¡³öÑü"
-                     "¼ä´ó¸«£¬Á¦¹á¸«±ú£¬¶¸È»¼äÒ»Éù¶ÏºÈ£¬½ÓÁ¬ÃÍ»ÓÊý¸«"
-                     "£¬ÍþÃÍÖÐ²»Ê§¾«Ææ£¬ÕÐÊýÇÉÃî£¬ÆøÊÆÈçºç¡£\n\n" NOR,
+        message_sort(HIY "\n$n" HIY "å°$N" HIY "é»žäº†é»žé ­ï¼Œéš¨å³å–å‡ºè…°"
+                     "é–“å¤§æ–§ï¼ŒåŠ›è²«æ–§æŸ„ï¼Œé™¡ç„¶é–“ä¸€è²æ–·å–ï¼ŒæŽ¥é€£çŒ›æ®æ•¸æ–§"
+                     "ï¼Œå¨çŒ›ä¸­ä¸å¤±ç²¾å¥‡ï¼Œæ‹›æ•¸å·§å¦™ï¼Œæ°£å‹¢å¦‚è™¹ã€‚\n\n" NOR,
                      me, this_object()); 
 
         command("bow");
-        command("say ¹ÅÄ³²ÅÊ¶Ç³±¡£¬ËùÑ§½ö´Ë¶øÒÑ£¬ÈÃÊÀ×ÓµîÏÂ¼ûÐ¦ÁË¡£");
-        tell_object(me, HIC "ÄãÑ§»áÁË¡¸´í×Ö¾÷¡¹¡£\n" NOR);
+        command("say å¤æŸæ‰è­˜æ·ºè–„ï¼Œæ‰€å­¸åƒ…æ­¤è€Œå·²ï¼Œè®“ä¸–å­æ®¿ä¸‹è¦‹ç¬‘äº†ã€‚");
+        tell_object(me, HIC "ä½ å­¸æœƒäº†ã€ŒéŒ¯å­—è¨£ã€ã€‚\n" NOR);
         if (me->can_improve_skill("hammer"))
                 me->improve_skill("hammer", 1500000);
         if (me->can_improve_skill("pangen-cuojiefu"))

@@ -5,11 +5,11 @@
 inherit F_CLEAN_UP;
 
 mapping weapon_name = ([
-        "sword" : "½£",
-        "blade" : "µ¶",
-        "staff" : "ÕÈ",
-        "whip"  : "±Ş",
-        "club"  : "¹÷",
+        "sword" : "åŠ",
+        "blade" : "åˆ€",
+        "staff" : "æ–",
+        "whip"  : "é­",
+        "club"  : "æ£",
 ]);
 
 void do_remote_fight(object me, object couple, object target, int n);
@@ -24,7 +24,7 @@ int main(object me, string arg)
         object target;
 
         if( query("no_fight", environment(me)) )
-                return notify_fail("ÕâÀï²»ÄÜÕ½¶·¡£\n");
+                return notify_fail("é€™è£¡ä¸èƒ½æˆ°é¬¥ã€‚\n");
 
         if (! arg)
         {
@@ -34,25 +34,25 @@ int main(object me, string arg)
                 target = present(arg, environment(me));
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail("»áĞÄÒ»»÷Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("æœƒå¿ƒä¸€æ“Šåªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !stringp(couple_id=query("couple/couple_id", me)) )
-                return notify_fail("Äã»¹Ã»ÓĞ°éÂÂ£¬Ê¹Ê²Ã´»áĞÄÒ»»÷£¿\n");
+                return notify_fail("ä½ é‚„æ²’æœ‰ä¼´ä¾¶ï¼Œä½¿ä»€éº¼æœƒå¿ƒä¸€æ“Šï¼Ÿ\n");
 
         couple_name=query("couple/couple_name", me);
 
         if (! objectp(couple = find_player(couple_id)))
-                return notify_fail(couple_name + "²»ÔÚÕâ¸öÊÀ½çÉÏ£¬ÎŞ·¨¸øÓëÄãÁ¦Á¿¡£\n");
+                return notify_fail(couple_name + "ä¸åœ¨é€™å€‹ä¸–ç•Œä¸Šï¼Œç„¡æ³•çµ¦èˆ‡ä½ åŠ›é‡ã€‚\n");
 
         if (couple->is_ghost())
-                return notify_fail(couple_name + "ÏÖÔÚÊÇ¹í»êÒ»¸ö£¬ÎŞ"
-                                   "·¨´©Ô½Áé½ç¸øÓëÄãÁ¦Á¿¡£\n");
+                return notify_fail(couple_name + "ç¾åœ¨æ˜¯é¬¼é­‚ä¸€å€‹ï¼Œç„¡"
+                                   "æ³•ç©¿è¶Šéˆç•Œçµ¦èˆ‡ä½ åŠ›é‡ã€‚\n");
 
         if (! living(couple))
-                return notify_fail("ÄãµÄĞÄÁéÏÖÔÚÎŞ·¨ºÍ" + couple_name + "¹µÍ¨¡£\n");
+                return notify_fail("ä½ çš„å¿ƒéˆç¾åœ¨ç„¡æ³•å’Œ" + couple_name + "æºé€šã€‚\n");
 
         if (target == couple)
-                return notify_fail("ÄãÓĞ²¡°¡£¡\n");
+                return notify_fail("ä½ æœ‰ç—…å•Šï¼\n");
 
         same_place = (environment(couple) == environment(me));
 
@@ -77,67 +77,67 @@ void do_remote_fight(object me, object couple, object target, int n)
 
         if( query("jingli", me)<need )
         {
-                write("ÄãÊÔÍ¼ºÍÄãµÄ°éÂÂ½øĞĞĞÄÁéÉÏµÄ¹µÍ¨£¬µ«ÊÇ"
-                      "Ò»Ê±¾õµÃ¾«Á¦²»¼Ã£¬ÄÑÒÔÁªÏµ¡£\n");
+                write("ä½ è©¦åœ–å’Œä½ çš„ä¼´ä¾¶é€²è¡Œå¿ƒéˆä¸Šçš„æºé€šï¼Œä½†æ˜¯"
+                      "ä¸€æ™‚è¦ºå¾—ç²¾åŠ›ä¸æ¿Ÿï¼Œé›£ä»¥è¯ç³»ã€‚\n");
                 return;
         }
 
         if( query("jingli", couple)<need )
         {
-                write("ÄãÒşÒşÔ¼Ô¼µÄ¸Ğ¾õµ½Äã°éÂÂ"
-                      "µÄÁéÁ¦£¬µ«ÊÇ·Ç³£Î¢Èõ£¬ºÜÄÑ²¶×½µ½¡£\n");
+                write("ä½ éš±éš±ç´„ç´„çš„æ„Ÿè¦ºåˆ°ä½ ä¼´ä¾¶"
+                      "çš„éˆåŠ›ï¼Œä½†æ˜¯éå¸¸å¾®å¼±ï¼Œå¾ˆé›£æ•æ‰åˆ°ã€‚\n");
                 return;
         }
 
         if (me->is_busy())
         {
-                write("( ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É£¬²»ÄÜÊ©Õ¹»áĞÄÒ»»÷¡£)\n");
+                write("( ä½ ä¸Šä¸€å€‹å‹•ä½œé‚„æ²’æœ‰å®Œæˆï¼Œä¸èƒ½æ–½å±•æœƒå¿ƒä¸€æ“Šã€‚)\n");
                 return;
         }
 
         if (random(2))
-                tell_object(me, HIM "ÄãĞÄÖĞÄ¬Ä¬µÄÄî×Å" + couple->name(1) +
-                            HIM "µÄÃû×Ö£¬ÒşÒş¸Ğµ½ÄÇÈô¼´ÈôÀëµÄ"
-                            "Áé¾õ£¬´©Í¸ÁËÎŞ¾¡µÄĞé¿Õ£¬ºÍÄãĞÄĞÄÏàÁ¬¡£\n\n" NOR);
+                tell_object(me, HIM "ä½ å¿ƒä¸­é»˜é»˜çš„å¿µè‘—" + couple->name(1) +
+                            HIM "çš„åå­—ï¼Œéš±éš±æ„Ÿåˆ°é‚£è‹¥å³è‹¥é›¢çš„"
+                            "éˆè¦ºï¼Œç©¿é€äº†ç„¡ç›¡çš„è™›ç©ºï¼Œå’Œä½ å¿ƒå¿ƒç›¸é€£ã€‚\n\n" NOR);
         else
-                tell_object(me, HIM "´©¹ıÁËçÎç¿µÄĞé¿Õ£¬Äã·Â·ğ¿´µ½" + couple->name(1) +
-                            HIM "£¬¸øÓèÄãÎŞÉÏµÄ¹ÄÎèºÍÎŞ¾¡µÄÁ¦Á¿¡£\n\n" NOR);
+                tell_object(me, HIM "ç©¿éäº†ç¸¹ç·²çš„è™›ç©ºï¼Œä½ ä»¿ä½›çœ‹åˆ°" + couple->name(1) +
+                            HIM "ï¼Œçµ¦äºˆä½ ç„¡ä¸Šçš„é¼“èˆå’Œç„¡ç›¡çš„åŠ›é‡ã€‚\n\n" NOR);
 
         if (random(2))
-                tell_object(couple, HIM "ÄãËÆºõ¸Ğ¾õµ½" + me->name(1) +
-                            HIM "ÔÚÄãĞÄÁéÉî´¦ºô»½ÄãµÄÃû×Ö£¬Á½ÈËÖ®"
-                            "¼äÓĞÈçĞÄÓĞÁéÏ¬£¬ÄãÄ¬Ä¬µÄÎª" +
+                tell_object(couple, HIM "ä½ ä¼¼ä¹æ„Ÿè¦ºåˆ°" + me->name(1) +
+                            HIM "åœ¨ä½ å¿ƒéˆæ·±è™•å‘¼å–šä½ çš„åå­—ï¼Œå…©äººä¹‹"
+                            "é–“æœ‰å¦‚å¿ƒæœ‰éˆçŠ€ï¼Œä½ é»˜é»˜çš„ç‚º" +
                             gender_pronoun(query("gender", me))+
-                            "×£¸££ºÈ¥°É£¬ÎÒµÄ°®ÈË£¡\n" NOR);
+                            "ç¥ç¦ï¼šå»å§ï¼Œæˆ‘çš„æ„›äººï¼\n" NOR);
         else
-                tell_object(couple, HIM "Ú¤Ú¤Äã¸Ğµ½ÁË" + me->name(1) +
-                            HIM "¶ÔÄãµÄºô»½£¬ÕâÒ»É²ÄÇ£¬ÄãÃÇÔÚĞÄÁéÉÏ"
-                            "È«È»ÏàÍ¨£¬ÈÃÄã°ÑÎŞĞÎµÄÁ¦Á¿×¢Èë¸ø¶Ô·½£¬¹ÄÎè×Å" +
-                            gender_pronoun(query("gender", me))+"¡£\n"NOR);
+                tell_object(couple, HIM "å†¥å†¥ä½ æ„Ÿåˆ°äº†" + me->name(1) +
+                            HIM "å°ä½ çš„å‘¼å–šï¼Œé€™ä¸€å‰é‚£ï¼Œä½ å€‘åœ¨å¿ƒéˆä¸Š"
+                            "å…¨ç„¶ç›¸é€šï¼Œè®“ä½ æŠŠç„¡å½¢çš„åŠ›é‡æ³¨å…¥çµ¦å°æ–¹ï¼Œé¼“èˆè‘—" +
+                            gender_pronoun(query("gender", me))+"ã€‚\n"NOR);
 
         addn("jingli", -cost, me);
         addn("jingli", -cost, couple);
         weapon=query_temp("weapon", me);
         if (weapon && (chinese_type = weapon_name[query("skill_type", weapon)]))
         {
-                if( query("gender", me) == "Å®ĞÔ" )
-                        msg = HIG "$N" HIG "µ¯" + chinese_type +
-                              "ÇáÒ÷£¬ÍğÈô»Æİº³ö¹È£¬Æ®Éí¶ø½ø£¬ÊÖÖĞµÄ" +
-                              weapon->name() + HIG "»¯×÷Á÷ĞÇÒ¹Óê£¬ÅûÏò$n"
-                              HIG "¡£\n" NOR;
+                if( query("gender", me) == "å¥³æ€§" )
+                        msg = HIG "$N" HIG "å½ˆ" + chinese_type +
+                              "è¼•åŸï¼Œå®›è‹¥é»ƒé¶¯å‡ºè°·ï¼Œé£„èº«è€Œé€²ï¼Œæ‰‹ä¸­çš„" +
+                              weapon->name() + HIG "åŒ–ä½œæµæ˜Ÿå¤œé›¨ï¼ŒæŠ«å‘$n"
+                              HIG "ã€‚\n" NOR;
                 else
-                        msg = HIC "$N³Ö" + chinese_type + "¶ø½ø£¬¾¹È»ÊÓ$n" HIC "ÓĞÈôÎŞÎï£¬ÊÖÖĞ" +
-                              weapon->name() + HIC "»ÓÈ÷×ÔÈç£¬µ´Æğ²ã²ã" +
-                              chinese_type + "Ó°£¬½«$p" HIC "À§ÔÚµ±ÖĞ¡£\n" NOR;
+                        msg = HIC "$NæŒ" + chinese_type + "è€Œé€²ï¼Œç«Ÿç„¶è¦–$n" HIC "æœ‰è‹¥ç„¡ç‰©ï¼Œæ‰‹ä¸­" +
+                              weapon->name() + HIC "æ®æ´’è‡ªå¦‚ï¼Œç›ªèµ·å±¤å±¤" +
+                              chinese_type + "å½±ï¼Œå°‡$p" HIC "å›°åœ¨ç•¶ä¸­ã€‚\n" NOR;
         } else
         {
-                if( query("gender", me) == "Å®ĞÔ" )
-                        msg = HIG "$N" HIG "ÇáÉùÇ³Ğ¦£¬Æ®È»¶ø½ø£¬Éí·¨¾ªÑŞ"
-                              "¾øÂ×£¬ÓĞÈô¾ÅÌìĞşÅ®Ì¤×ãºì³¾£¬¾ÙÊÖÍ¶×ãÖ®¼äÃ»ÓĞÈÎºÎÆÆÕÀ¡£\n" NOR;
+                if( query("gender", me) == "å¥³æ€§" )
+                        msg = HIG "$N" HIG "è¼•è²æ·ºç¬‘ï¼Œé£„ç„¶è€Œé€²ï¼Œèº«æ³•é©šè‰·"
+                              "çµ•å€«ï¼Œæœ‰è‹¥ä¹å¤©ç„å¥³è¸è¶³ç´…å¡µï¼Œèˆ‰æ‰‹æŠ•è¶³ä¹‹é–“æ²’æœ‰ä»»ä½•ç ´ç¶»ã€‚\n" NOR;
                 else
-                        msg = HIC "$N" HIC "×İÉù³¤Ğ¥£¬Ò»¹ÉÉ±ÆøÁİÈ»¶øÆğ£¬Ìì"
-                              "µØµÇÊ±É«±ä£¬$N" HIC "Ğ®·çÀ×Íò¾ûÖ®ÊÆ£¬Ñ¹Ïò$n"
-                              HIC "¡£\n" NOR;
+                        msg = HIC "$N" HIC "ç¸±è²é•·å˜¯ï¼Œä¸€è‚¡æ®ºæ°£å‡œç„¶è€Œèµ·ï¼Œå¤©"
+                              "åœ°ç™»æ™‚è‰²è®Šï¼Œ$N" HIC "æŒ¾é¢¨é›·è¬éˆä¹‹å‹¢ï¼Œå£“å‘$n"
+                              HIC "ã€‚\n" NOR;
         }
 
         message_combatd(msg, me, target);
@@ -170,22 +170,22 @@ void do_here_fight(object me, object couple, object target, int n)
 
         if (me->is_busy())
         {
-                write("( ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É£¬²»ÄÜÊ©Õ¹»áĞÄÒ»»÷¡£)\n");
+                write("( ä½ ä¸Šä¸€å€‹å‹•ä½œé‚„æ²’æœ‰å®Œæˆï¼Œä¸èƒ½æ–½å±•æœƒå¿ƒä¸€æ“Šã€‚)\n");
                 return;
         }
 
         if (couple->is_busy())
         {
-                write("ÄãµÄ°éÂÂÏÖÔÚÕıÃ¦£¬ÎŞ·¨ÅäºÏÄã½øĞĞ»áĞÄÒ»»÷¡£\n");
+                write("ä½ çš„ä¼´ä¾¶ç¾åœ¨æ­£å¿™ï¼Œç„¡æ³•é…åˆä½ é€²è¡Œæœƒå¿ƒä¸€æ“Šã€‚\n");
                 return;
         }
 
         if (! couple->is_fighting(target))
                 couple->fight_ob(target);
 
-        message_combatd(HIY "$N" HIY "ºÍ$n" HIY "Á½ÈËÑÛÉñÒ»½»£¬ĞÄÒâÒÑ"
-                        "È»ÏàÍ¨£¬²»ÓÉµÄ»áĞÄÒ»Ğ¦£¬Ö»¼û¶şÈËÉíĞÎÒ»´í£¬ö®Ê±\n"
-                        "ÒÑ¾­Ïò" + target->name() + "¹¥³öÊıÕĞ£¡\n" NOR,
+        message_combatd(HIY "$N" HIY "å’Œ$n" HIY "å…©äººçœ¼ç¥ä¸€äº¤ï¼Œå¿ƒæ„å·²"
+                        "ç„¶ç›¸é€šï¼Œä¸ç”±çš„æœƒå¿ƒä¸€ç¬‘ï¼Œåªè¦‹äºŒäººèº«å½¢ä¸€éŒ¯ï¼Œéœæ™‚\n"
+                        "å·²ç¶“å‘" + target->name() + "æ”»å‡ºæ•¸æ‹›ï¼\n" NOR,
                         me, couple);
 
         enhance1 = ((int)couple->query_skill("force") + n / 10) / 5;
@@ -216,14 +216,14 @@ void do_here_fight(object me, object couple, object target, int n)
 int help (object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½£ºspattack [<Ê©ÓÃ¶ÔÏó>]
+æŒ‡ä»¤æ ¼å¼ï¼šspattack [<æ–½ç”¨å°è±¡>]
 
-Èç¹ûÄã½á»éÁË£¬¾Í¿ÉÒÔÊ¹ÓÃ»áĞÄÒ»»÷£¬ÁªÊÖ´ò»÷¶ÔÄãÕıÔÚ¹¥»÷µÄ¶ÔÊÖ£¬
-¼´Ê¹ÄãµÄ°éÂÂ²»ÔÚÄãµÄÉí±ß£¬Ò²¿ÉÒÔÔËÓÃÁéÁ¦´©¹ıÒ£Ô¶µÄÊ±¿Õ¸øÓëÄã
-Ö§³Ö£¬µ±È»ÕâĞèÒªºÄ·Ñ¾«Á¦£¬Á½¸öÈËÁéÈâ½áºÏµÄ´ÎÊıÔ½¶à£¬ºÄ·ÑµÄ¾«
-Á¦¾ÍÔ½ÉÙ¡£Èç¹ûÄãµÄ°éÂÂ¾ÍÔÚÄãµÄÉí±ß£¬Ôò¿ÉÒÔÒ»ÆğÊ©Õ¹ÕĞÊı¹¥»÷¶Ô
-ÊÖ£¬²»ĞèÒªºÄ·Ñ¾«Á¦£¬ÕĞÊıµÄÍşÁ¦ÓëÁ½µÄÈËÁéÈâ½áºÏµÄ´ÎÊıÓÚ°éÂÂµÄ
-ÄÚ¹¦µÈ¼¶Ïà¹Ø¡£
+å¦‚æœä½ çµå©šäº†ï¼Œå°±å¯ä»¥ä½¿ç”¨æœƒå¿ƒä¸€æ“Šï¼Œè¯æ‰‹æ‰“æ“Šå°ä½ æ­£åœ¨æ”»æ“Šçš„å°æ‰‹ï¼Œ
+å³ä½¿ä½ çš„ä¼´ä¾¶ä¸åœ¨ä½ çš„èº«é‚Šï¼Œä¹Ÿå¯ä»¥é‹ç”¨éˆåŠ›ç©¿éé™é çš„æ™‚ç©ºçµ¦èˆ‡ä½ 
+æ”¯æŒï¼Œç•¶ç„¶é€™éœ€è¦è€—è²»ç²¾åŠ›ï¼Œå…©å€‹äººéˆè‚‰çµåˆçš„æ¬¡æ•¸è¶Šå¤šï¼Œè€—è²»çš„ç²¾
+åŠ›å°±è¶Šå°‘ã€‚å¦‚æœä½ çš„ä¼´ä¾¶å°±åœ¨ä½ çš„èº«é‚Šï¼Œå‰‡å¯ä»¥ä¸€èµ·æ–½å±•æ‹›æ•¸æ”»æ“Šå°
+æ‰‹ï¼Œä¸éœ€è¦è€—è²»ç²¾åŠ›ï¼Œæ‹›æ•¸çš„å¨åŠ›èˆ‡å…©çš„äººéˆè‚‰çµåˆçš„æ¬¡æ•¸äºä¼´ä¾¶çš„
+å…§åŠŸç­‰ç´šç›¸é—œã€‚
 HELP );
         return 1;
 }

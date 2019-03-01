@@ -4,10 +4,10 @@
 inherit ROOM;
 void create()
 {
-        set("short","ɽ·");
+        set("short","山路");
         set("long", @LONG
-һ��ɽ·��������ï�ܵ����֣����������಻���Ĵ�ɽ����·��
-�Լ��ɼ�һЩ����Ĵ���ɽ·���������š�
+一條山路，兩邊是茂密的樹林，西面是延綿不絕的大山，道路兩
+旁間或可見一些夷族的村鎮。山路向南蜿蜒著。
 LONG );
         set("objects", ([
            "/d/dali/npc/shennongdizi": 1,

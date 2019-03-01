@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��¥");
+        set("short", "鼓樓");
         set("long", @LONG
-һ��ľ�ṹ��Сͤ��¥���ϲ���˸���ģ���������ÿ�쳿��ĺ
-��ʱ���á���һ��С¥��ͨ���²㡣��¥���Ľǹ�������������ҡ
-�ţ����⶯����
+一座木結構的小亭閣樓，上層擺了個大鼓，是寺廟內每天晨鐘暮
+鼓時所用。有一條小樓梯通向下層。閣樓的四角掛著鐵馬，隨風擺搖
+著，分外動聽。
 LONG );
         set("no_clean_up", 0);
         set("exits", ([

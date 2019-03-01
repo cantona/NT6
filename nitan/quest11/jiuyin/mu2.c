@@ -1,14 +1,14 @@
 // mu2.c
-// Ä¹
+// å¢“
 
 inherit ROOM;
 #include <ansi.h>
 void create()
 {
-	set("short", "Ä¹ÊÒ");
+	set("short", "å¢“å®¤");
 	set("long",@long
-ÕâÀïÊÇ¹ùÏåÄ¹ÏÂµÄÄ¹ÊÒ¡£Ä¹ÊÒ²»´ó£¬ÕýÃæÊÇÒ»¾ß°×ÓñÊ¯¹×£¬ÅÔ±ß·Å×ÅÒ»Õµ
-³¤Ã÷µÆ¡£Ê¯¹×Ò»³¾²»È¾£¬¿´À´¾­³£ÓÐÈË½øÀ´´òÉ¨¡£
+é€™è£¡æ˜¯éƒ­è¥„å¢“ä¸‹çš„å¢“å®¤ã€‚å¢“å®¤ä¸å¤§ï¼Œæ­£é¢æ˜¯ä¸€å…·ç™½çŽ‰çŸ³æ£ºï¼Œæ—é‚Šæ”¾è‘—ä¸€ç›ž
+é•·æ˜Žç‡ˆã€‚çŸ³æ£ºä¸€å¡µä¸æŸ“ï¼Œçœ‹ä¾†ç¶“å¸¸æœ‰äººé€²ä¾†æ‰“æŽƒã€‚
 long);
 	set("exits", ([
 		"up" : __DIR__"mu",
@@ -31,41 +31,41 @@ int do_move(string arg)
 	me = this_player();
 
 	if (arg != "coffin" || !arg) 
-		return notify_fail("ÄãÒª¸ÉÊ²Ã´£¿\n");
+		return notify_fail("ä½ è¦å¹¹ä»€éº¼ï¼Ÿ\n");
 
 	if (me->is_busy() || me->is_fighting()) 
-		return notify_fail("ÄãÕýÃ¦×ÅÄÄ£¡\n");
+		return notify_fail("ä½ æ­£å¿™è‘—å“ªï¼\n");
 
 	if ( me->query("combat_exp") < 1000000 ) return 0;
 	if ( !me->query("quest/jiuyin2/emeijump")) return 0;
 
-	message_vision("$NÔË×ãÆø£¬Ë«ÊÖÓÃÁ¦È¥°á°×ÓñÊ¯¹×¸Ç¡£\n", me);
-	message_vision(HIR"ºöÈ»¼ä¼¸Ö§¶Ì¼ý´Ó¹×ºóÒ»¸ö»ú¹ØÀïÉä³öÀ´£¬Ö±ÉäÏò$NµÄÃæÃÅ£¡\n"NOR, me);
+	message_vision("$Né‹è¶³æ°£ï¼Œé›™æ‰‹ç”¨åŠ›åŽ»æ¬ç™½çŽ‰çŸ³æ£ºè“‹ã€‚\n", me);
+	message_vision(HIR"å¿½ç„¶é–“å¹¾æ”¯çŸ­ç®­å¾žæ£ºå¾Œä¸€å€‹æ©Ÿé—œè£¡å°„å‡ºä¾†ï¼Œç›´å°„å‘$Nçš„é¢é–€ï¼\n"NOR, me);
 
 	dex = me->query_dex(1) + me->query("kar");
 
 	if( random(dex) < 18 && !me->query("hanshui_food") && random(2) ) {
-		message_vision(HIW"$NÁ¬Ã¦¶ãÉÁ£¬½á¹ûÃ»ÄÜ¶ã¹ýÈ¥¡£\n"NOR, me);
+		message_vision(HIW"$Né€£å¿™èº²é–ƒï¼Œçµæžœæ²’èƒ½èº²éŽåŽ»ã€‚\n"NOR, me);
 		me->add("quest/jiuyin2/fail", 1);
 		me->set("quest/jiuyin2/time", time());
-		log_file("quest/jiuyin",sprintf("%-18sÏë´Ó¹ùÏåÄ¹ÖÐÏÆ¿ª¹×¸Ç£¬¶ðÃ¼¾ÅÒõ²¿·ÖÊ§°Ü%s´Î¡£\n",
+		log_file("quest/jiuyin",sprintf("%-18sæƒ³å¾žéƒ­è¥„å¢“ä¸­æŽ€é–‹æ£ºè“‹ï¼Œå¨¥çœ‰ä¹é™°éƒ¨åˆ†å¤±æ•—%sæ¬¡ã€‚\n",
        			me->name(1)+"("+capitalize(getuid(me))+")",chinese_number(me->query("quest/jiuyin2/fail"))), me);
 		me->unconcious(); 
-		me->set_temp("last_damage_from","ÉíÖÐ¾Þ¶¾¶¾·¢");
+		me->set_temp("last_damage_from","èº«ä¸­å·¨æ¯’æ¯’ç™¼");
        		me->die();
 		if (tmp = present("corpse", this_object())) {
 			object *ob = deep_inventory(tmp);
 			int i = sizeof(ob);
 			while (i--) if (userp(ob[i])) ob[i]->move(this_object());
 			destruct(tmp);
-			if (me) tell_room(this_object(), me->name()+"µÄÊ¬¹Ç¶¼ÕÒ²»µ½ÁË¡£\n");
+			if (me) tell_room(this_object(), me->name()+"çš„å±éª¨éƒ½æ‰¾ä¸åˆ°äº†ã€‚\n");
 		}
 		return 1;
 	}
 	else {
-		message_vision(HIW"$NÍ·Ò»µÍ£¬±Ü¿ª¶Ì¼ý£¬ÏÆ¿ª¹×¸Ç¡£\n"NOR, me);
-		me->set_temp("marks/ÏÆ", 1);
-		log_file("quest/jiuyin",sprintf("%-18sÔÚ¶ðÃ¼¾ÅÒõ²¿·ÖÊ§°Ü%s´Îºó³É¹¦ÔÚ¹ùÏåÄ¹ÖÐÏÆ¿ª¹×¸Ç£¬Éí£º%d£¬¸££º%d¡£\n",
+		message_vision(HIW"$Né ­ä¸€ä½Žï¼Œé¿é–‹çŸ­ç®­ï¼ŒæŽ€é–‹æ£ºè“‹ã€‚\n"NOR, me);
+		me->set_temp("marks/æŽ€", 1);
+		log_file("quest/jiuyin",sprintf("%-18såœ¨å¨¥çœ‰ä¹é™°éƒ¨åˆ†å¤±æ•—%sæ¬¡å¾ŒæˆåŠŸåœ¨éƒ­è¥„å¢“ä¸­æŽ€é–‹æ£ºè“‹ï¼Œèº«ï¼š%dï¼Œç¦ï¼š%dã€‚\n",
        			me->name(1)+"("+capitalize(getuid(me))+")",chinese_number(me->query("quest/jiuyin2/fail")),
        			me->query_dex(), me->query("kar")), me);
 		return 1;
@@ -79,20 +79,20 @@ int do_na(string arg)
 	me = this_player();
 	ob = this_object();
 
-	if (me->is_busy() || me->is_fighting()) return notify_fail("ÄãÕýÃ¦×ÅÄÄ£¡\n");
+	if (me->is_busy() || me->is_fighting()) return notify_fail("ä½ æ­£å¿™è‘—å“ªï¼\n");
 
 
-	if (arg != "all from coffin") return notify_fail("ÄãÒª¸ÉÊ²Ã´£¿\n");
+	if (arg != "all from coffin") return notify_fail("ä½ è¦å¹¹ä»€éº¼ï¼Ÿ\n");
 
-	if (!me->query_temp("marks/ÏÆ")) 
-		return notify_fail("Äã²»´ò¿ªÊ¯¹×µÄ¸Ç×Ó£¬ÔõÃ´ÄÜÄÃÀïÃæµÄ¶«Î÷£¿\n");
+	if (!me->query_temp("marks/æŽ€")) 
+		return notify_fail("ä½ ä¸æ‰“é–‹çŸ³æ£ºçš„è“‹å­ï¼Œæ€Žéº¼èƒ½æ‹¿è£¡é¢çš„æ±è¥¿ï¼Ÿ\n");
 
 	if( random(30) > 5 ) {
-		write("ÄãÔÚÊ¯¹×ÀïÃþÁË°ëÌì£¬Ê²Ã´Ò²Ã»ÓÐÄÃµ½¡£\n", me);
-		write("Ö»Ìý¼ûÅ¾µÄÒ»Éù£¬¹×¸Ç²»ÖªÔõÃ´ÓÖºÏÉÏÁË¡£\n", me);
-		log_file("quest/jiuyin",sprintf("%-18sÔÚÊ§°Ü%s´Îºó£¬ÔÚ¹ùÏåÄ¹ÖÐÏÆ¿ª¹×¸Ç£¬µ«Î´µÃµ½ÈÎºÎ¶«Î÷¡£\n",
+		write("ä½ åœ¨çŸ³æ£ºè£¡æ‘¸äº†åŠå¤©ï¼Œä»€éº¼ä¹Ÿæ²’æœ‰æ‹¿åˆ°ã€‚\n", me);
+		write("åªè½è¦‹å•ªçš„ä¸€è²ï¼Œæ£ºè“‹ä¸çŸ¥æ€Žéº¼åˆåˆä¸Šäº†ã€‚\n", me);
+		log_file("quest/jiuyin",sprintf("%-18såœ¨å¤±æ•—%sæ¬¡å¾Œï¼Œåœ¨éƒ­è¥„å¢“ä¸­æŽ€é–‹æ£ºè“‹ï¼Œä½†æœªå¾—åˆ°ä»»ä½•æ±è¥¿ã€‚\n",
        			me->name(1)+"("+capitalize(getuid(me))+")",chinese_number(me->query("quest/jiuyin2/fail"))), me);
-		me->delete_temp("marks/ÏÆ");
+		me->delete_temp("marks/æŽ€");
 		return 1;
 	}
 	if (ob->query("count") > 0) {
@@ -100,21 +100,21 @@ int do_na(string arg)
 			case 0: { 
 				new("/d/emei/obj/yangpi")->move(me);
 				me->set("quest/jiuyin2/emei", 1);
-				log_file("quest/jiuyin",sprintf("%-18sÔÚ¶ðÃ¼¾ÅÒõ²¿·ÖÊ§°Ü%s´Îºó³É¹¦ÔÚ¹ùÏåÄ¹ÖÐµÃµ½É½ÑòÆ¤¡£\n",
+				log_file("quest/jiuyin",sprintf("%-18såœ¨å¨¥çœ‰ä¹é™°éƒ¨åˆ†å¤±æ•—%sæ¬¡å¾ŒæˆåŠŸåœ¨éƒ­è¥„å¢“ä¸­å¾—åˆ°å±±ç¾Šçš®ã€‚\n",
        					me->name(1)+"("+capitalize(getuid(me))+")",chinese_number(me->query("quest/jiuyin2/fail"))), me);
-				write("Äã´ÓÊ¯¹×ÖÐÄÃ³öÒ»¿éÉ½ÑòÆ¤¡£\n", me);
+				write("ä½ å¾žçŸ³æ£ºä¸­æ‹¿å‡ºä¸€å¡Šå±±ç¾Šçš®ã€‚\n", me);
 				break;
 			}
 			case 1: {
 				new("/d/emei/obj/yuzhuo")->move(me);
-				write("Äã´ÓÊ¯¹×ÄÃ³öÖ§ºÚÓñïí¡£\n", me);
-				log_file("quest/jiuyin",sprintf("%-18sÔÚ¶ðÃ¼¾ÅÒõ²¿·ÖÊ§°Ü%s´Îºó£¬ÔÚ¹ùÏåÄ¹ÖÐÏÆ¿ª¹×¸Ç£¬µ«Î´µÃµ½É½ÑòÆ¤¡£\n",
+				write("ä½ å¾žçŸ³æ£ºæ‹¿å‡ºæ”¯é»‘çŽ‰é²ã€‚\n", me);
+				log_file("quest/jiuyin",sprintf("%-18såœ¨å¨¥çœ‰ä¹é™°éƒ¨åˆ†å¤±æ•—%sæ¬¡å¾Œï¼Œåœ¨éƒ­è¥„å¢“ä¸­æŽ€é–‹æ£ºè“‹ï¼Œä½†æœªå¾—åˆ°å±±ç¾Šçš®ã€‚\n",
        					me->name(1)+"("+capitalize(getuid(me))+")",chinese_number(me->query("quest/jiuyin2/fail"))), me);
 				break;
 			}
 		}
-		write("Ö»Ìý¼ûÅ¾µÄÒ»Éù£¬¹×¸Ç²»ÖªÔõÃ´ÓÖºÏÉÏÁË¡£\n", me);
-		me->delete_temp("marks/ÏÆ");
+		write("åªè½è¦‹å•ªçš„ä¸€è²ï¼Œæ£ºè“‹ä¸çŸ¥æ€Žéº¼åˆåˆä¸Šäº†ã€‚\n", me);
+		me->delete_temp("marks/æŽ€");
 		ob->add("count", -1);
 	}
 	return 1;

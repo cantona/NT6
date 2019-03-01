@@ -1,20 +1,20 @@
   
 mapping city_area=([
- "ÑïÖİ³Ç" : ({"/d/city/","beidajie1","beidajie2","beimen","guangchang",
+ "æšå·åŸ" : ({"/d/city/","beidajie1","beidajie2","beimen","guangchang",
               "nandajie1","nandajie2","nanmen","qianzhuang","shuyuan",
               "xidajie1","xidajie2","ximen",
             }),
- "ÈªÖİ³Ç" : ({"/d/quanzhou/","beimen","haigang","jiaxing","jxnanmen",
+ "æ³‰å·åŸ" : ({"/d/quanzhou/","beimen","haigang","jiaxing","jxnanmen",
               "nanhu","nanhu1","nanmen","qzroad1","qzroad2","qzroad3",
               "qzroad4","qzroad5","tieqiang","yanyu","zahuopu","zhongxin",
             }),
- "ÏåÑô³Ç" : ({"/d/xiangyang/","guangchang","eastjie1","eastjie2","eastroad1",
+ "è¥„é™½åŸ" : ({"/d/xiangyang/","guangchang","eastjie1","eastjie2","eastroad1",
               "eastroad2","jiekou2","northroad2","dingzi","northroad1",
               "jiekou1","westroad2","westroad1","westjie2","westjie1",
             }), 
          ]);
 
-string *city_name=({"ÑïÖİ³Ç","ÈªÖİ³Ç","ÏåÑô³Ç"});
+string *city_name=({"æšå·åŸ","æ³‰å·åŸ","è¥„é™½åŸ"});
 string site_name;
 int haojie_times;
 
@@ -56,9 +56,9 @@ void haojie_begin(int num)
      haojie_times++;
 
      site_name=city_name[random(sizeof(city_name))];
-     message("channel:rumor", HIR"¡¾½­ºşºÆ½Ù¡¿"HIW"½­ºşÓ¢ĞÛÁî"
-            +HIR"ÖØÏÖ½­ºş£¬ºÅÕÙ¸÷Â·ºÀ½ÜÆë¸°"+HIY+site_name+HIR"µÖÓù"
-             +HIB"ÉñÃØÉ±ÊÖ×éÖ¯"+HIR"Ö®ÈëÇÖ£¡\n"NOR,users());
+     message("channel:rumor", HIR"ã€æ±Ÿæ¹–æµ©åŠ«ã€‘"HIW"æ±Ÿæ¹–è‹±é›„ä»¤"
+            +HIR"é‡ç¾æ±Ÿæ¹–ï¼Œè™Ÿå¬å„è·¯è±ªå‚‘é½Šèµ´"+HIY+site_name+HIR"æŠµå¾¡"
+             +HIB"ç¥ç§˜æ®ºæ‰‹çµ„ç¹”"+HIR"ä¹‹å…¥ä¾µï¼\n"NOR,users());
      for(n=0;n<num;n++)
      {
           killer=new("/quest/chousha/killer");
@@ -76,8 +76,8 @@ void haojie_new(int num)
      if( haojie_times >= 4 )
      {
           haojie_times=1;
-          message("channel:rumor", HIR"¡¾½­ºşºÆ½Ù¡¿¾­¹ıÒ»¶ÎÊ±¼äµÄÊâËÀ"
-            +HIR"²«¶·£¬Ë«·½½ÔÓĞÉËÍö£¬½øÈëÁË¶ÌÔİµÄĞİÕû£¡\n"NOR,users()); 
+          message("channel:rumor", HIR"ã€æ±Ÿæ¹–æµ©åŠ«ã€‘ç¶“éä¸€æ®µæ™‚é–“çš„æ®Šæ­»"
+            +HIR"æé¬¥ï¼Œé›™æ–¹çš†æœ‰å‚·äº¡ï¼Œé€²å…¥äº†çŸ­æš«çš„ä¼‘æ•´ï¼\n"NOR,users()); 
 
           remove_call_out("haojie_begin");
           call_out("haojie_begin",120,num);
@@ -103,9 +103,9 @@ void haojie_close()
       ulist[k]->delte_temp("apply/short");
    }
 
-   message("channel:rumor", HIR"¡¾½­ºşºÆ½Ù¡¿¾­¹ı¸÷Â·ÎäÁÖºÀ½ÜµÄÊâËÀ¿¹Õù£¬"
-   +HIY"ÉñÃØÉ±ÊÖ×éÖ¯"+HIR"³Æ°ÔÖĞÔ­ÎäÁÖµÄÒõÄ±ÖÕÓÚÔİÊ±Ğû¸æÆÆÃğ£¬\n½­ºşÖĞÓÖËÆºõ»Ö¸´"
-   +"ÁËÒÔÍùµÄÆ¬¿Ì°²Æ½£¡\n"NOR,users());
+   message("channel:rumor", HIR"ã€æ±Ÿæ¹–æµ©åŠ«ã€‘ç¶“éå„è·¯æ­¦æ—è±ªå‚‘çš„æ®Šæ­»æŠ—çˆ­ï¼Œ"
+   +HIY"ç¥ç§˜æ®ºæ‰‹çµ„ç¹”"+HIR"ç¨±éœ¸ä¸­åŸæ­¦æ—çš„é™°è¬€çµ‚äºæš«æ™‚å®£å‘Šç ´æ»…ï¼Œ\næ±Ÿæ¹–ä¸­åˆä¼¼ä¹æ¢å¾©"
+   +"äº†ä»¥å¾€çš„ç‰‡åˆ»å®‰å¹³ï¼\n"NOR,users());
 
    haojie_times=0;
    killer_rate=6;

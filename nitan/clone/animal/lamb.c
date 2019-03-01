@@ -5,10 +5,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("»ÆÑò", ({ "lamb", "yang", "huang yang" }) );
-        set("race", "×ßÐó");
+        set_name("é»ƒç¾Š", ({ "lamb", "yang", "huang yang" }) );
+        set("race", "èµ°ç•œ");
         set("age", 11);
-        set("long", "Ò»Ö»Ò°»ÆÑò£¬ÕýµÍÍ·ÈÏÕæµØ³Ô×Å²Ý¡£\n");
+        set("long", "ä¸€åªé‡Žé»ƒç¾Šï¼Œæ­£ä½Žé ­èªçœŸåœ°åƒè‘—è‰ã€‚\n");
 
         set("str", 26);
         set("cor", 30);
@@ -17,7 +17,7 @@ void create()
 
         set("chat_chance", 6);
         set("chat_msg", ({
-                "»ÆÑòßã~~ßã~~µÄ½ÐÁË¼¸Éù¡£\n"
+                "é»ƒç¾Šå’©~~å’©~~çš„å«äº†å¹¾è²ã€‚\n"
         }) );
 
         set_temp("apply/attack", 15);
@@ -30,7 +30,7 @@ void create()
 void die()
 {
         object ob;
-        message_vision("$Nµ¹ÔÚµØÉÏ£¬ßã~~µÄÒ»Éù¾ÍËÀÁË£¡\n", this_object());
+        message_vision("$Nå€’åœ¨åœ°ä¸Šï¼Œå’©~~çš„ä¸€è²å°±æ­»äº†ï¼\n", this_object());
         ob = new(__DIR__"obj/yangrou");
         ob->move(environment(this_object()));
         ob = new(__DIR__"obj/yangpi");

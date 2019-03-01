@@ -4,13 +4,13 @@ inherit ITEM;
 int j=3;
 void create()
 {
-        set_name("Çå±øÈËÂí", ({ "qingbingrenma"}));
-        set("unit", "Ö»");
+        set_name("æ¸…å…µäººé¦¬", ({ "qingbingrenma"}));
+        set("unit", "åª");
         set_weight(90000000);
         set("long", "
-Ò»Ö»Ô¶µÀ¶øÀ´µÄÇå±øÈËÂí£¬¿´À´ÓĞ²»ÉÙ¸ßÊÖ¡£ÖĞ¼ä²å
-×ÅÒ»Ãæ´óÆì£¬ËÆºõĞ´×Å¡°´óÇå¡±¶ş¸ö´ó×Ö£¬¶ÓÎéÖ®ÖĞ
-ËÆºõÓĞÒ»Á¾Çô³µ¡£¡£¡£\n");
+ä¸€åªé é“è€Œä¾†çš„æ¸…å…µäººé¦¬ï¼Œçœ‹ä¾†æœ‰ä¸å°‘é«˜æ‰‹ã€‚ä¸­é–“æ’
+è‘—ä¸€é¢å¤§æ——ï¼Œä¼¼ä¹å¯«è‘—â€œå¤§æ¸…â€äºŒå€‹å¤§å­—ï¼ŒéšŠä¼ä¹‹ä¸­
+ä¼¼ä¹æœ‰ä¸€è¼›å›šè»Šã€‚ã€‚ã€‚\n");
         set("no_get", 1);
         set("no_drop", 1);
          set("no_put",1);
@@ -34,11 +34,11 @@ int do_rob()
 
    if(!living(me)) return 0;
    if( !query("kill_yunlong", me) )
-       return notify_fail("Äãµ¨×Ó²»Ğ¡£¬¾¹¸ÒºÍ´óÇå×ö¶Ô£¿\n");
+       return notify_fail("ä½ è†½å­ä¸å°ï¼Œç«Ÿæ•¢å’Œå¤§æ¸…åšå°ï¼Ÿ\n");
    if(objectp(present("qingbing", environment(me))))
-       return notify_fail("Çå±ø¿´À´Îä¹¦²»Èõ£¬Äã»¹ÊÇÏÈ´ò·¢ÁËÃæÇ°Õâ¸öÔÙËµ°É£¡\n");  
+       return notify_fail("æ¸…å…µçœ‹ä¾†æ­¦åŠŸä¸å¼±ï¼Œä½ é‚„æ˜¯å…ˆæ‰“ç™¼äº†é¢å‰é€™å€‹å†èªªå§ï¼\n");  
 
-   message_vision(HIR"$N¶Ô×Å$n´óºğÒ»Éù£º"+me->name()+"ÔÚ´Ë£¡¿ì°ÑÇô³µÀïµÄÒåÊ¿¸ø·ÅÁË£¡\n"NOR, me, ob);
+   message_vision(HIR"$Nå°è‘—$nå¤§å¼ä¸€è²ï¼š"+me->name()+"åœ¨æ­¤ï¼å¿«æŠŠå›šè»Šè£¡çš„ç¾©å£«çµ¦æ”¾äº†ï¼\n"NOR, me, ob);
    set_temp("xx_rob", 1, me);
    remove_call_out("make_bs");
    call_out("make_bs", 1, me, ob); 
@@ -56,7 +56,7 @@ void make_bs(object me, object ob)
            obj1->do_copy(me);
           j=j-1;     }
 else {
-       message_vision(HIW"$N¼ûÒÑ¾­ÎŞ»îÈË£¬½«·´ÇåÒåÊ¿¾È³ö£¡£¡\n"NOR, me);    
+       message_vision(HIW"$Nè¦‹å·²ç¶“ç„¡æ´»äººï¼Œå°‡åæ¸…ç¾©å£«æ•‘å‡ºï¼ï¼\n"NOR, me);    
        ;    
        obj=new(__DIR__"dashi");
        obj->move(environment(me));
@@ -65,12 +65,12 @@ else {
        addn("combat_exp", 30, me);
        addn("potential", 10, me);
        addn("shen", 100, me);
-        tell_object(me,"Äã±»½±ÀøÁË\n¶ş°Ùµã¾­ÑéÖµ¡£\n");
+        tell_object(me,"ä½ è¢«çå‹µäº†\näºŒç™¾é»ç¶“é©—å€¼ã€‚\n");
        delete_temp("rob_start", me);
        delete_temp("xx_rob", me);
        delete_temp("rob_job", me);
        delete_temp("j", me);
-       message_vision("$N×ª¹ı¼¸¸öĞ¡É½Çğ¾Í²»¼ûÁË¡£\n",ob);
+       message_vision("$Nè½‰éå¹¾å€‹å°å±±ä¸˜å°±ä¸è¦‹äº†ã€‚\n",ob);
        destruct(ob);
     }
 }
@@ -78,7 +78,7 @@ else {
 void aaa(object me)
 {
         if (! me) return;
-       message_vision("$N×ª¹ı¼¸¸öĞ¡É½Çğ¾Í²»¼ûÁË¡£\n",me);       
+       message_vision("$Nè½‰éå¹¾å€‹å°å±±ä¸˜å°±ä¸è¦‹äº†ã€‚\n",me);       
        destruct(me);
        return;
 }

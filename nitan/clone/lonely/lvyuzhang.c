@@ -10,15 +10,15 @@ string do_unwield();
 
 void create() 
 { 
-     set_name(HIG "ÂÌÓñÕÈ" NOR, ({ "lvyu zhang", "stick", "lvyu" })); 
+     set_name(HIG "ç¶ çŽ‰æ–" NOR, ({ "lvyu zhang", "stick", "lvyu" })); 
      set_weight(1500); 
      if (clonep()) 
              destruct(this_object()); 
      else { 
              set("long", @LONG 
-ÕâÊÇÒ»¸ù¾§Ó¨±ÌÂÌµÄÖñ°ô£¬ÄËÊÇØ¤°ïÀú´ú°ïÖ÷µÄÎ¨Ò»ÐÅÎï¡£ 
+é€™æ˜¯ä¸€æ ¹æ™¶ç‘©ç¢§ç¶ çš„ç«¹æ£’ï¼Œä¹ƒæ˜¯ä¸å¹«æ­·ä»£å¹«ä¸»çš„å”¯ä¸€ä¿¡ç‰©ã€‚ 
 LONG ); 
-             set("unit", "¸ù"); 
+             set("unit", "æ ¹"); 
              set("value", 800000); 
              set("no_sell", 1); 
              set("material", "bamboo");
@@ -37,7 +37,7 @@ string do_wield()
 
      addn_temp("apply/attack", me->query_skill("dagou-bang")/4, me);
      addn_temp("apply/defense", me->query_skill("parry")/4, me);
-     return HIG "$NÊÖÍóÒ»¶¶£¬²»ÖªºÎÊ±£¬ÊÖÉÏÒÑ¾­¶àÁËÒ»¸ù¾§Ó¨ÌêÍ¸µÄÖñ°ô¡£\n" NOR;  
+     return HIG "$Næ‰‹è…•ä¸€æŠ–ï¼Œä¸çŸ¥ä½•æ™‚ï¼Œæ‰‹ä¸Šå·²ç¶“å¤šäº†ä¸€æ ¹æ™¶ç‘©å‰ƒé€çš„ç«¹æ£’ã€‚\n" NOR;  
 } 
 
 string do_unwield() 
@@ -47,7 +47,7 @@ string do_unwield()
 
      addn_temp("apply/attack",-me->query_skill("dagou-bang")/4, me);
      addn_temp("apply/defense",-me->query_skill("parry")/4, me);
-     return HIG "$NÎ¢Î¢Ò»Ð¦£¬ÊÖÒ»Ëõ£¬ÊÖÖÐÖñ°ôÒÑ²»¼û×ÙÓ°¡£\n" NOR;
+     return HIG "$Nå¾®å¾®ä¸€ç¬‘ï¼Œæ‰‹ä¸€ç¸®ï¼Œæ‰‹ä¸­ç«¹æ£’å·²ä¸è¦‹è¹¤å½±ã€‚\n" NOR;
 } 
 
 mixed hit_ob(object me, object victim, int damage_bonus) 
@@ -65,9 +65,9 @@ mixed hit_ob(object me, object victim, int damage_bonus)
      case 0: 
              if (! victim->is_busy()) 
                      victim->start_busy(me->query_skill("staff") / 10 + 2); 
-             return HIC "$N¿çÇ°Ò»²½£¬ÊÖÖÐµÄ" NOR+HIG "ÂÌÓñÕÈ" NOR+HIC "»Ã»¯³ÉÎÞÊýÔ²È¦£¬" 
-                    "Öñ°ôÓÐÈçÆÌÌì¸ÇµØ°ãÑ¹Ïò$n£¬Ö±±Æ\n" 
-                    "µÃ$nÊÖÃ¦½ÅÂÒ£¬½û²»×¡Á¬Á¬µ¹ÍË¡£\n" NOR; 
+             return HIC "$Nè·¨å‰ä¸€æ­¥ï¼Œæ‰‹ä¸­çš„" NOR+HIG "ç¶ çŽ‰æ–" NOR+HIC "å¹»åŒ–æˆç„¡æ•¸åœ“åœˆï¼Œ" 
+                    "ç«¹æ£’æœ‰å¦‚èˆ–å¤©è“‹åœ°èˆ¬å£“å‘$nï¼Œç›´é€¼\n" 
+                    "å¾—$næ‰‹å¿™è…³äº‚ï¼Œç¦ä¸ä½é€£é€£å€’é€€ã€‚\n" NOR; 
 
      case 1: 
              n = me->query_skill("staff"); 
@@ -77,10 +77,10 @@ mixed hit_ob(object me, object victim, int damage_bonus)
              n /= 2; 
              victim->receive_damage("jing", n, me); 
              victim->receive_wound("jing", n / 2, me); 
-             return random(2) ? HIG "$NÒ»Éù³¤Ð¥£¬ÊÖÖÐµÄÂÌÓñÕÈ»¯×÷Ò»µ½ÇàÃ¢£¬¡°à§¡±µÄÉ¨" 
-                                HIG "¹ý$n¡£\n" NOR: 
-                                HIG "$NÍ»È»´óÉùºÈµÀ£º¡°Êó±²£¬ÄÄÀïÅÜ£¿¡±ÊÖÖÐÂÌÓñÕÈºöµØ" 
-                                HIG "Ò»¶¶£¬$nµÇÊ±¾õµÃÑÛÇ°Ò»»¨¡£\n" NOR; 
+             return random(2) ? HIG "$Nä¸€è²é•·å˜¯ï¼Œæ‰‹ä¸­çš„ç¶ çŽ‰æ–åŒ–ä½œä¸€åˆ°é’èŠ’ï¼Œâ€œå”°â€çš„æŽƒ" 
+                                HIG "éŽ$nã€‚\n" NOR: 
+                                HIG "$Nçªç„¶å¤§è²å–é“ï¼šâ€œé¼ è¼©ï¼Œå“ªè£¡è·‘ï¼Ÿâ€æ‰‹ä¸­ç¶ çŽ‰æ–å¿½åœ°" 
+                                HIG "ä¸€æŠ–ï¼Œ$nç™»æ™‚è¦ºå¾—çœ¼å‰ä¸€èŠ±ã€‚\n" NOR; 
      } 
 
      // double effect 
@@ -112,14 +112,14 @@ void return_to_hong()
                      return; 
              } 
 
-             message_vision("ºöÈ»Ò»¸öØ¤°ïµÜ×Ó×ßÁË¹ýÀ´£¬¿´µ½$N£¬Ã¦ÕÐºôµÀ£º¡°ºé°ïÖ÷ÈÃ" 
-                            "ÎÒÀ´ÕÒÄãÄÃ»ØÂÌÓñÕÈ£¬ÄãÏÖÔÚ²»ÓÃÁËÃ´£¿¡±\n" 
-                            "$NµÀ£º¡°ºÃÁË£¬ºÃÁË£¬Äã¾ÍÄÃ»ØÈ¥°É¡£¡±\n" 
-                            "$N½«ÂÌÓñÕÈ½»¸øØ¤°ïµÜ×Ó´ø×ßÁË¡£\n", me); 
+             message_vision("å¿½ç„¶ä¸€å€‹ä¸å¹«å¼Ÿå­èµ°äº†éŽä¾†ï¼Œçœ‹åˆ°$Nï¼Œå¿™æ‹›å‘¼é“ï¼šâ€œæ´ªå¹«ä¸»è®“" 
+                            "æˆ‘ä¾†æ‰¾ä½ æ‹¿å›žç¶ çŽ‰æ–ï¼Œä½ ç¾åœ¨ä¸ç”¨äº†éº¼ï¼Ÿâ€\n" 
+                            "$Né“ï¼šâ€œå¥½äº†ï¼Œå¥½äº†ï¼Œä½ å°±æ‹¿å›žåŽ»å§ã€‚â€\n" 
+                            "$Nå°‡ç¶ çŽ‰æ–äº¤çµ¦ä¸å¹«å¼Ÿå­å¸¶èµ°äº†ã€‚\n", me); 
      } else 
      { 
-             message("vision", "ºöÈ»Ò»¸öØ¤°ïµÜ×Ó×ßÁË¹ýÀ´£¬¼ñÆðÂÌÓñÕÈ£¬Ì¾ÁË¿Ú" 
-                               "Æø£¬Ò¡Ò¡Í·×ßÁË¡£\n", me); 
+             message("vision", "å¿½ç„¶ä¸€å€‹ä¸å¹«å¼Ÿå­èµ°äº†éŽä¾†ï¼Œæ’¿èµ·ç¶ çŽ‰æ–ï¼Œå˜†äº†å£" 
+                               "æ°£ï¼Œæ–æ–é ­èµ°äº†ã€‚\n", me); 
      } 
 
      destruct(this_object()); 

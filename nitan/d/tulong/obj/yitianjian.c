@@ -13,23 +13,23 @@ void start_borrowing()
 
 void create()
 {
-        set_name(CYN "ÒĞÌì½£" NOR, ({ "yitian sword", "jian", "sword" }) );
+        set_name(CYN "å€šå¤©åŠ" NOR, ({ "yitian sword", "jian", "sword" }) );
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
-                set("long", HIY "Õâ±ãÓëÌìÏÂÖÁ×ğµÄÍÀÁú±¦µ¶²¢³ÆµÄÒĞÌì½£¡£\nÏà´«ÈÃµ¶½£¶Ô¿³(duikan)¿ÉÒÔµÃµ½¿õÊÀµÄÎäÁÖÃØ¼®¡£\n" NOR);
+                set("unit", "æŸ„");
+                set("long", HIY "é€™ä¾¿èˆ‡å¤©ä¸‹è‡³å°Šçš„å± é¾å¯¶åˆ€ä¸¦ç¨±çš„å€šå¤©åŠã€‚\nç›¸å‚³è®“åˆ€åŠå°ç (duikan)å¯ä»¥å¾—åˆ°æ› ä¸–çš„æ­¦æ—ç§˜ç±ã€‚\n" NOR);
                 set("value", 100000);
-                set("no_sell", "ÕâÑù¶«Î÷²»ÄÜÂô¡£\n");
+                set("no_sell", "é€™æ¨£æ±è¥¿ä¸èƒ½è³£ã€‚\n");
                 set("no_store", 1);
                 set("rigidity",8000);   
                 set("unique", 1); 
                 set("replica_ob","/d/city/npc/obj/changjian"); 
                 set("enchase/flute", 9);    
                 set("material", "steel");
-                set("wield_msg", HIW "Ö»Ìı¡°à²¡±µÄÒ»ÉùÆÆ¿ÕÉùÏì£¬ºÅ³ÆÌìÏÂµÚÒ»Éñ±øµÄÒĞÌì½£ÒÑ±»$NÎÕÔÚÊÖÖĞ¡£\n" NOR);
-                set("unwield_msg", HIW "$N½«ÒĞÌì½£²å»ØÑü¼ä£¬ÌìµØÓÖ½¥½¥·Å³ö¹âÃ¢¡£\n"NOR);
+                set("wield_msg", HIW "åªè½â€œå—–â€çš„ä¸€è²ç ´ç©ºè²éŸ¿ï¼Œè™Ÿç¨±å¤©ä¸‹ç¬¬ä¸€ç¥å…µçš„å€šå¤©åŠå·²è¢«$Næ¡åœ¨æ‰‹ä¸­ã€‚\n" NOR);
+                set("unwield_msg", HIW "$Nå°‡å€šå¤©åŠæ’å›è…°é–“ï¼Œå¤©åœ°åˆæ¼¸æ¼¸æ”¾å‡ºå…‰èŠ’ã€‚\n"NOR);
         }
         set("enchase/apply_prop", ([
                 "add_busy"  : 10,
@@ -54,7 +54,7 @@ mixed hit_ob(object me, object victim, int damage_bonus)
         if( query("neili", victim)<0 )
         set("neili", 0, victim);
 
-        return HIW "ÒĞÌì½£Ğ¯×Åì¬ì¬´Ì¹Ç·çÉù£¬Ö±Ö±´ÌÏò$n£¬$nÖ»¸Ğµ½È«ÉíµÄÄÚÁ¦¾¹Ò»Ë¿Ë¿Ëæ×Å½£·æÓ¿³ö¡£\n" NOR;
+        return HIW "å€šå¤©åŠæ”œè‘—é¢¼é¢¼åˆºéª¨é¢¨è²ï¼Œç›´ç›´åˆºå‘$nï¼Œ$nåªæ„Ÿåˆ°å…¨èº«çš„å…§åŠ›ç«Ÿä¸€çµ²çµ²éš¨è‘—åŠé‹’æ¹§å‡ºã€‚\n" NOR;
 }
 
 void return_to_back() 
@@ -81,13 +81,13 @@ void return_to_back()
                         call_out("return_to_back", 1); 
                         return; 
                 } 
-                //ÊÇ·ñÓ¦¸ÃÖ´ĞĞunwield
-                tell_object(me, HIR"\nÒ»ÌõÈËÓ°´ÓÄãÑÛÇ°Ò»ÉÁ¶ø¹ı£º" +
-                            "¡°¶àĞ»ÌæÀÏ·òÈ¡»Ø" NOR + name() + HIR
-                            "£¬¾Í´ËĞ»¹ı£¬ÔÛÃÇºó»áÓĞÆÚ£¡¡±\n\n"NOR);
+                //æ˜¯å¦æ‡‰è©²åŸ·è¡Œunwield
+                tell_object(me, HIR"\nä¸€æ¢äººå½±å¾ä½ çœ¼å‰ä¸€é–ƒè€Œéï¼š" +
+                            "â€œå¤šè¬æ›¿è€å¤«å–å›" NOR + name() + HIR
+                            "ï¼Œå°±æ­¤è¬éï¼Œå’±å€‘å¾Œæœƒæœ‰æœŸï¼â€\n\n"NOR);
         } else 
         { 
-                message("vision", "ºöÈ»Ò»¸öÈË×ßÁË¹ıÀ´£¬¼ñÆğ"+name()+"£¬Ì¾ÁË¿ÚÆø£¬Ò¡Ò¡Í·×ßÁË¡£\n", me); 
+                message("vision", "å¿½ç„¶ä¸€å€‹äººèµ°äº†éä¾†ï¼Œæ’¿èµ·"+name()+"ï¼Œå˜†äº†å£æ°£ï¼Œæ–æ–é ­èµ°äº†ã€‚\n", me); 
         } 
 
         move("/clone/misc/void");

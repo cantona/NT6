@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "���޾�");
+        set("short", "無無境");
         set("long", @LONG
-һƬˮ�ؾ�����ǰ��һ������ľ�ź�����ϣ����䵹Ӱǡ��һԲ��
-ӳ�ſ����ˮ�棬ʹ�����������������·���ᵽ������֮Դ������
-֮�������С�
+一片水池靜臥眼前，一座精雕木橋橫跨其上，與其倒影恰成一圓，
+映著空靈的水面，使你心中似有所動。仿佛體會到了眾生之源，萬物
+之本的真諦。
 LONG );
         set("outdoors","tianlongsi");
         set("exits", ([

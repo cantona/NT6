@@ -5,15 +5,15 @@ inherit NPC;
 void create()
 {
         object ob;
-        set_name("ºéÆß¹«", ({ "hong qigong", "hong", "qigong" }));
+        set_name("æ´ªä¸ƒå…¬", ({ "hong qigong", "hong", "qigong" }));
         set("long", @LONG
-Ëû¾ÍÊÇØ¤°ïµÚÊ®ÆßÈÎ°ïÖ÷£¬ºÅ³Æ¾ÅÖ¸ÉñØ¤µÄºé
-Æß¹«ÀÏÒ¯×Ó¡£Ö»¼ûËûÐëÃ¼½Ô°×£¬ÖÜÉíÉÏÏÂåååÝ
-²»ÒÑ£¬Ä£ÑùÉõÊÇö»öº¡£¿ÉÊÇËûÄ¿¹âÈçµç£¬ÏÔµÃ
-ÕýÒåÁÝÈ»£¬²»Å­¶ø×ÔÍþ¡£
+ä»–å°±æ˜¯ä¸å¹«ç¬¬åä¸ƒä»»å¹«ä¸»ï¼Œè™Ÿç¨±ä¹æŒ‡ç¥žä¸çš„æ´ª
+ä¸ƒå…¬è€çˆºå­ã€‚åªè¦‹ä»–é ˆçœ‰çš†ç™½ï¼Œå‘¨èº«ä¸Šä¸‹é‚‹é¢
+ä¸å·²ï¼Œæ¨¡æ¨£ç”šæ˜¯é½·é½ªã€‚å¯æ˜¯ä»–ç›®å…‰å¦‚é›»ï¼Œé¡¯å¾—
+æ­£ç¾©å‡œç„¶ï¼Œä¸æ€’è€Œè‡ªå¨ã€‚
 LONG);
-        set("nickname", HIW "±±Ø¤" NOR);
-        set("gender", "ÄÐÐÔ");
+        set("nickname", HIW "åŒ—ä¸" NOR);
+        set("gender", "ç”·æ€§");
         set("class", "beggar");
         set("age", 75);
         set("attitude", "peaceful");
@@ -78,7 +78,7 @@ LONG);
 
         prepare_skill("strike", "xianglong-zhang");
 
-        create_family("Ø¤°ï", 17, "°ïÖ÷");
+        create_family("ä¸å¹«", 17, "å¹«ä¸»");
 
         set("chat_chance_combat", 120);
         set("chat_msg_combat", ({
@@ -168,7 +168,7 @@ void die()
 
         return;
 }
-// ÆøÑªÐ¡ÓÚ1000ÔòËÀÍö£¬±ÜÃâËûÈËÐ­Öú°ïÃ¦×ªÊÀ
+// æ°£è¡€å°äºŽ1000å‰‡æ­»äº¡ï¼Œé¿å…ä»–äººå”åŠ©å¹«å¿™è½‰ä¸–
 void heart_beat()
 {
         if (this_object()->query("qi") < 1000 || this_object()->query("eff_qi") < 1000)

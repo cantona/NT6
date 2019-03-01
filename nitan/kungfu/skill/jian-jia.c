@@ -1,4 +1,4 @@
-// jian-jia.c İóİç
+// jian-jia.c è’¹è‘­
 
 #include <ansi.h>
 
@@ -11,10 +11,10 @@ int valid_enable(string usage) { return usage == "tanqin-jifa"; }
 int valid_learn(object me)
 {
         if (me->query_skill("tanqin-jifa", 1) < 30)
-                return notify_fail("ÄãµÄµ¯ÇÙ¼¼·¨Ë®Æ½Ì«²î£¬»¹ÊÇÏÈÁ·ºÃÔÙËµ°É£¡\n");
+                return notify_fail("ä½ çš„å½ˆç´æŠ€æ³•æ°´å¹³å¤ªå·®ï¼Œé‚„æ˜¯å…ˆç·´å¥½å†èªªå§ï¼\n");
 
         if (me->query_skill("tanqin-jifa", 1) < me->query_skill("qiuyue-lai", 1))
-                return notify_fail("ÄãµÄµ¯ÇÙ¼¼·¨ËùÓĞÓĞÏŞ£¬ÎŞ·¨Áì»á¸ü¾«ÃîµÄİóİç¡£\n");
+                return notify_fail("ä½ çš„å½ˆç´æŠ€æ³•æ‰€æœ‰æœ‰é™ï¼Œç„¡æ³•é ˜æœƒæ›´ç²¾å¦™çš„è’¹è‘­ã€‚\n");
 
         return 1;
 }
@@ -25,13 +25,13 @@ int practice_skill(object me)
 
         if( !objectp(ob=query_temp("handing", me)) || 
             ! ob->valid_as_qin())
-                return notify_fail("Äã²»ÄÃÇÙÔÚÊÖÉÏ£¬ÔõÃ´Á·Ï°£¿\n");
+                return notify_fail("ä½ ä¸æ‹¿ç´åœ¨æ‰‹ä¸Šï¼Œæ€éº¼ç·´ç¿’ï¼Ÿ\n");
 
         if( query("jing", me)<80 )
-                return notify_fail("ÄãµÄ¾«Éñ²»¹»ºÃ£¬Ã»·¨Á·Ï°ÁË¡£\n");
+                return notify_fail("ä½ çš„ç²¾ç¥ä¸å¤ å¥½ï¼Œæ²’æ³•ç·´ç¿’äº†ã€‚\n");
 
         if( query("qi", me)<30 )
-                return notify_fail("ÄãÏÖÔÚ¿Ú¸ÉÉàÔï£¬ÊµÔÚÊÇÌ«ÀÛÁË¡£\n");
+                return notify_fail("ä½ ç¾åœ¨å£å¹¹èˆŒç‡¥ï¼Œå¯¦åœ¨æ˜¯å¤ªç´¯äº†ã€‚\n");
 
         me->receive_damage("jing", 25);
         me->receive_damage("qi", 10);
@@ -50,17 +50,17 @@ void do_effect(object me)
                 if (! obs[i]->is_character() || obs[i] == me || ! living(obs[i]))
                         continue;
 
-                tell_object(obs[i], HIC "µ«ÌıÇÙÔÏÖĞ×à×Å¡¸" HIW "İóİç²Ô²Ô£¬°×Â¶ÎªËª£¬ËùÎ½ÒÁ"
-                                    "ÈË£¬ÔÚÌìÒ»·½¡­¡­" HIC "¡¹\nÈ´²»ÖªÇÙÔÏºÎÒÔÈç´Ë²øÃà£¬¾¹"
-                                    "ËÆ³äÂúÁËË¼Ä½Ö®Çé¡£\n" NOR);
+                tell_object(obs[i], HIC "ä½†è½ç´éŸ»ä¸­å¥è‘—ã€Œ" HIW "è’¹è‘­è’¼è’¼ï¼Œç™½éœ²ç‚ºéœœï¼Œæ‰€è¬‚ä¼Š"
+                                    "äººï¼Œåœ¨å¤©ä¸€æ–¹â€¦â€¦" HIC "ã€\nå»ä¸çŸ¥ç´éŸ»ä½•ä»¥å¦‚æ­¤çºç¶¿ï¼Œç«Ÿ"
+                                    "ä¼¼å……æ»¿äº†æ€æ…•ä¹‹æƒ…ã€‚\n" NOR);
 
                 if( query_temp("love", obs[i]) == query("id", me) )
                 {
-                        tell_object(obs[i], HIM "ÄãĞÄÖĞİëµØÒ»¶¯£ºËûÇÙÖĞËùÌáµÄ¡¸ÒÁÈË¡¹ÄÑµÀ"
-                                            "ÊÇÎÒÃ´£¿\n" NOR);
+                        tell_object(obs[i], HIM "ä½ å¿ƒä¸­é©€åœ°ä¸€å‹•ï¼šä»–ç´ä¸­æ‰€æçš„ã€Œä¼Šäººã€é›£é“"
+                                            "æ˜¯æˆ‘éº¼ï¼Ÿ\n" NOR);
 
-                        message("vision", HIM "\nÖ»¼û" HIM + obs[i]->name() + HIM "µÄÁ³Î¢"
-                                          "Î¢Ò»ºì¡£\n" NOR, environment(obs[i]), ({obs[i]}));
+                        message("vision", HIM "\nåªè¦‹" HIM + obs[i]->name() + HIM "çš„è‡‰å¾®"
+                                          "å¾®ä¸€ç´…ã€‚\n" NOR, environment(obs[i]), ({obs[i]}));
 
                         continue;
                 }

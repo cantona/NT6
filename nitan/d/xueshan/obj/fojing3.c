@@ -12,12 +12,12 @@ void init()
 
 void create()
 {
-        set_name("³ÖÊÀÍÓÂŞÄá¾­", ({ "shu", "book"}));
+        set_name("æŒä¸–é™€ç¾…å°¼ç¶“", ({ "shu", "book"}));
         set_weight(600);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
+                set("unit", "æœ¬");
                 set("value", 400);
                 set("material", "paper");
 
@@ -37,41 +37,41 @@ int do_du(string arg)
         return 0;
 
         if( query("pigging", where)){
-                write("Äã»¹ÊÇ×¨ĞÄ¹°Öí°É£¡\n");
+                write("ä½ é‚„æ˜¯å°ˆå¿ƒæ‹±è±¬å§ï¼\n");
                 return 1;
         }
         if (me->is_busy()) {
-                write("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+                write("ä½ ç¾åœ¨æ­£å¿™è‘—å‘¢ã€‚\n");
                 return 1;
         }
 
         if( me->is_fighting() ) {
-                write("ÄãÎŞ·¨ÔÚÕ½¶·ÖĞ×¨ĞÄÏÂÀ´ÑĞ¶ÁĞÂÖª£¡\n");
+                write("ä½ ç„¡æ³•åœ¨æˆ°é¬¥ä¸­å°ˆå¿ƒä¸‹ä¾†ç ”è®€æ–°çŸ¥ï¼\n");
                 return 1;
         }
 
         if (!id(arg)) { 
-                write("ÄãÒª¶ÁÊ²Ã´£¿\n");
+                write("ä½ è¦è®€ä»€éº¼ï¼Ÿ\n");
                 return 1;
         }
 
-        if( (query("family/family_name", me) != "Ñ©É½ËÂ"
+        if( (query("family/family_name", me) != "é›ªå±±å¯º"
          || query("class", me) != "bonze" )
-         && query("family/family_name", me) != "Ñªµ¶ÃÅ" )
+         && query("family/family_name", me) != "è¡€åˆ€é–€" )
         
         {
-                write("ÄãÎ´Èë·ğÃÅ£¬³¾Ôµ²»¶Ï£¬ÎŞ·¨¼ÌĞøĞŞ³ÖÃÜ×ÚĞÄ·¨¡£\n");
+                write("ä½ æœªå…¥ä½›é–€ï¼Œå¡µç·£ä¸æ–·ï¼Œç„¡æ³•ç¹¼çºŒä¿®æŒå¯†å®—å¿ƒæ³•ã€‚\n");
                 return 1;
         }
 
         if( !me->query_skill("literate", 1) ){
-                write("ÄãÊÇ¸öÎÄÃ¤£¬ÏÈÑ§µãÎÄ»¯(literate)°É¡£\n");
+                write("ä½ æ˜¯å€‹æ–‡ç›²ï¼Œå…ˆå­¸é»æ–‡åŒ–(literate)å§ã€‚\n");
                 return 1;
         }
 
-        message("vision", me->name() + "×ĞÏ¸µØÑĞ¶Á¡¶³ÖÊÀÍÓÂŞÄá¾­¡·¡£\n", environment(me), me);
+        message("vision", me->name() + "ä»”ç´°åœ°ç ”è®€ã€ŠæŒä¸–é™€ç¾…å°¼ç¶“ã€‹ã€‚\n", environment(me), me);
         if( query("jing", me)<15){
-                write("ÄãÏÖÔÚ¹ıÓÚÆ£¾ë£¬ÎŞ·¨×¨ĞÄÏÂÀ´ÑĞ¶ÁĞÂÖª¡£\n");
+                write("ä½ ç¾åœ¨éäºç–²å€¦ï¼Œç„¡æ³•å°ˆå¿ƒä¸‹ä¾†ç ”è®€æ–°çŸ¥ã€‚\n");
                 return 1;
         }
 
@@ -82,35 +82,35 @@ int do_du(string arg)
 
 
         if( query("neili", me)<neili_lost){
-                write("ÄãÄÚÁ¦²»¹»¡£\n");
+                write("ä½ å…§åŠ›ä¸å¤ ã€‚\n");
                 return 1;
         }
 
             if ((!objectp(ob = present("kulou guan", me)) ) ||
                (!query("equipped", ob))){
-                write("Äã¾õµÃÍ·ÉÏ·Â·ğÉÙÁËµãÊ²÷á£¬¶ÁµÃÍ·»èÑÛ»¨¡£\n");
+                write("ä½ è¦ºå¾—é ­ä¸Šä»¿ä½›å°‘äº†é»ä»€éº¼ï¼Œè®€å¾—é ­æ˜çœ¼èŠ±ã€‚\n");
                 return 1;
         }
             if ((!objectp(ob = present("rentou lian", me)) ) ||
                (!query("equipped", ob))){
-                write("Äã¾õµÃÉíÉÏ·Â·ğÉÙÁËµãÊ²÷á£¬¶ÁµÃÍ·»èÑÛ»¨¡£\n");
+                write("ä½ è¦ºå¾—èº«ä¸Šä»¿ä½›å°‘äº†é»ä»€éº¼ï¼Œè®€å¾—é ­æ˜çœ¼èŠ±ã€‚\n");
                 return 1;
         }
             if ((!objectp(ob = present("lubo", me)) ) ||
                (!query("equipped", ob))){
-                write("Äã¾õµÃÊÖÖĞ·Â·ğÉÙÁËµãÊ²÷á£¬¶ÁµÃÍ·»èÑÛ»¨¡£\n");
+                write("ä½ è¦ºå¾—æ‰‹ä¸­ä»¿ä½›å°‘äº†é»ä»€éº¼ï¼Œè®€å¾—é ­æ˜çœ¼èŠ±ã€‚\n");
                 return 1;
         }
 
         // keep some kinda of limit on it to provent newbie with 400 level lamaism
         if( me->query_skill("lamaism", 1) > 
             (me->query_skill("longxiang", 1))*1.5 ){
-                write("ÄãÑĞ¶ÁÁËÒ»»á¶ù£¬µ«ÊÇ·¢ÏÖÉÏÃæËùËµµÄ¶ÔÄã¶øÑÔ¶¼Ì«Éî°ÂÁË£¬Ã»ÓĞÑ§µ½ÈÎºÎ¶«Î÷¡£\n");
+                write("ä½ ç ”è®€äº†ä¸€æœƒå…’ï¼Œä½†æ˜¯ç™¼ç¾ä¸Šé¢æ‰€èªªçš„å°ä½ è€Œè¨€éƒ½å¤ªæ·±å¥§äº†ï¼Œæ²’æœ‰å­¸åˆ°ä»»ä½•æ±è¥¿ã€‚\n");
                 return 1;
         }
 
         if( me->query_skill("lamaism", 1) > 400){
-                write("ÄãÑĞ¶ÁÁËÒ»»á¶ù£¬µ«ÊÇ·¢ÏÖÉÏÃæËùËµµÄ¶ÔÄã¶øÑÔ¶¼Ì«Ç³ÁË£¬Ã»ÓĞÑ§µ½ÈÎºÎ¶«Î÷¡£\n");
+                write("ä½ ç ”è®€äº†ä¸€æœƒå…’ï¼Œä½†æ˜¯ç™¼ç¾ä¸Šé¢æ‰€èªªçš„å°ä½ è€Œè¨€éƒ½å¤ªæ·ºäº†ï¼Œæ²’æœ‰å­¸åˆ°ä»»ä½•æ±è¥¿ã€‚\n");
                 return 1;
         }
 
@@ -120,6 +120,6 @@ int do_du(string arg)
                 me->set_skill("lamaism", 0);
         }
         me->improve_skill("lamaism", (int)me->query_skill("literate", 1)/3+1);
-        write("ÄãÑĞ¶Á¡¶³ÖÊÀÍÓÂŞÄá¾­¡·£¬ÆÄÓĞĞÄµÃ¡£\n");
+        write("ä½ ç ”è®€ã€ŠæŒä¸–é™€ç¾…å°¼ç¶“ã€‹ï¼Œé —æœ‰å¿ƒå¾—ã€‚\n");
         return 1;
 }

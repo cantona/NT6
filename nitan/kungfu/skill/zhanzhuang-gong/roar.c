@@ -1,4 +1,4 @@
-// roar.c ·ğÃÅÊ¨×Óºğ
+// roar.c ä½›é–€ç…å­å¼
 // Last Modified by winder on May. 29 2001
 
 #include <ansi.h>
@@ -14,20 +14,20 @@ int exert(object me, object target)
   !query("perform/roar", me) && 
   !query("can_perform/zhanzhuang-gong/roar", me) && 
   !query_temp("murong/xingyi", me) )
-   return notify_fail("ÄãËùÊ¹ÓÃµÄÄÚ¹¦ÖĞÃ»ÓĞÕâÖÖ¹¦ÄÜ¡£");
+   return notify_fail("ä½ æ‰€ä½¿ç”¨çš„å…§åŠŸä¸­æ²’æœ‰é€™ç¨®åŠŸèƒ½ã€‚");
         if( (query("neili", me)<600) || 
                 (query("max_neili", me)<600) || 
                 ((int)me->query_skill("zhanzhuang-gong",1) < 100) )
-                return notify_fail("Äã¹Ä×ãÕæÆø£¢ß÷£¢µÄºğÁËÒ»Éù, ½á¹ûÏÅ×ßÁË¼¸Ö»ÀÏÊó¡£\n");
+                return notify_fail("ä½ é¼“è¶³çœŸæ°£ã€å–µã€çš„å¼äº†ä¸€è², çµæœåš‡èµ°äº†å¹¾åªè€é¼ ã€‚\n");
         if( query("no_fight", environment(me)) )
-                return notify_fail("ÔÚÕâÀï²»ÄÜ¹¥»÷ËûÈË¡£\n");
+                return notify_fail("åœ¨é€™è£¡ä¸èƒ½æ”»æ“Šä»–äººã€‚\n");
 
         skill = me->query_skill("force");
         addn("neili", -150, me);
         me->receive_damage("qi", 10);
 
         me->start_busy(5);
-        message_combatd(HIY"$NÉîÉîµØÎüÒ»àíÆø£¬ÕæÁ¦±Å·¢£¬·¢³öÒ»Éù¾ªÌì¶¯µØµÄ¾Şºğ£¡\n" NOR, me);
+        message_combatd(HIY"$Næ·±æ·±åœ°å¸ä¸€å›—æ°£ï¼ŒçœŸåŠ›è¿¸ç™¼ï¼Œç™¼å‡ºä¸€è²é©šå¤©å‹•åœ°çš„å·¨å¼ï¼\n" NOR, me);
 
         ob = all_inventory(environment(me));
         for(i=0; i<sizeof(ob); i++)
@@ -45,7 +45,7 @@ int exert(object me, object target)
                         ob[i]->receive_damage("jing", damage * 2 );
                         if( query("neili", ob[i])<skill*2 )
                                 ob[i]->receive_wound("jing", damage);
-                tell_object(ob[i], "Äã¾õµÃÑÛÇ°Ò»Õó½ğĞÇÂÒÃ°£¬¶ú¶äÍ´µÃÏñÊÇÒªÁÑ¿ªÒ»Ñù£¡\n");
+                tell_object(ob[i], "ä½ è¦ºå¾—çœ¼å‰ä¸€é™£é‡‘æ˜Ÿäº‚å†’ï¼Œè€³æœµç—›å¾—åƒæ˜¯è¦è£‚é–‹ä¸€æ¨£ï¼\n");
                 }
 
                 if( userp(ob[i]) ) ob[i]->fight_ob(me);
@@ -57,15 +57,15 @@ int exert(object me, object target)
 
 int help(object me)
 {
-        write(WHT"\nÕ¾×®¹¦Ö®·ğÃÅÊ¨×Óºğ£º"NOR"\n");
+        write(WHT"\nç«™æ¨åŠŸä¹‹ä½›é–€ç…å­å¼ï¼š"NOR"\n");
         write(@HELP
 
-        Ê¹ÓÃ¹¦Ğ§£º
-                ÉËº¦×Ô¼ºÖÜÎ§µÄËùÓĞÉúÎïµÄ¾«Æø
+        ä½¿ç”¨åŠŸæ•ˆï¼š
+                å‚·å®³è‡ªå·±å‘¨åœçš„æ‰€æœ‰ç”Ÿç‰©çš„ç²¾æ°£
 
-        ³öÊÖÒªÇó£º
-                Õ¾×®¹¦100¼¶
-                ÄÚÁ¦600
+        å‡ºæ‰‹è¦æ±‚ï¼š
+                ç«™æ¨åŠŸ100ç´š
+                å…§åŠ›600
 HELP
         );
         return 1;

@@ -1,12 +1,12 @@
-// À¥ÂØÕıÁ½ÒÇ½£Ö®Ë«½£ºÏ±Ú
+// æ˜†ä¾–æ­£å…©å„€åŠä¹‹é›™åŠåˆå£
 // Last Modified by Winder on Jun. 23 2001
 
 #include <ansi.h>
 inherit F_SSERVER;
-#define PNAME "¡¸Ë«½£ºÏèµ¡¹"
+#define PNAME "ã€Œé›™åŠåˆç’§ã€"
 int remove_effect(object me);
 int remove_effect1(object target);
-// ÓĞbug´ı½â¾ö
+// æœ‰bugå¾…è§£æ±º
 int perform(object me, string arg)
 {
         object weapon, weapon1, target;
@@ -22,53 +22,53 @@ int perform(object me, string arg)
    !query("can_perform/"+sskill+"/"+pfname, me) && 
    !query_temp("murong/xingyi", me) && 
    !SCBORN_D->valid_perform(me,sskill,pfname))
-   return notify_fail("ÄãËùÊ¹ÓÃµÄÍâ¹¦ÖĞÃ»ÓĞÕâÖÖ¹¦ÄÜ¡£\n");
+   return notify_fail("ä½ æ‰€ä½¿ç”¨çš„å¤–åŠŸä¸­æ²’æœ‰é€™ç¨®åŠŸèƒ½ã€‚\n");
 
-        if(!arg) return notify_fail("ÄãÏëºÍË­Ò»ÆğºÏèµ£¿\n");
+        if(!arg) return notify_fail("ä½ æƒ³å’Œèª°ä¸€èµ·åˆç’§ï¼Ÿ\n");
         if(!objectp(target = present(arg, environment(me))))
-                return notify_fail("ÕâÀïÃ»ÓĞÕâ¸öÈË¡£\n");
-/*ĞèÒªÅĞ¶ÏÊÇ·ñ¹¥»÷Í¬Ò»¸öÈË*/
+                return notify_fail("é€™è£¡æ²’æœ‰é€™å€‹äººã€‚\n");
+/*éœ€è¦åˆ¤æ–·æ˜¯å¦æ”»æ“ŠåŒä¸€å€‹äºº*/
         if( !target->is_fighting() ||
                 !target->is_character() ||
                 !me->is_fighting())
-                return notify_fail("ºÏèµÖ»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ¡£\n");
+                return notify_fail("åˆç’§åªèƒ½åœ¨æˆ°é¬¥ä¸­ä½¿ç”¨ã€‚\n");
         if( !living(target) || query_temp("noliving", target) )
-                return notify_fail(target->name()+"ÒÑ¾­ÎŞ·¨Õ½¶·ÁË¡£\n"); 
-        if(target==me) return notify_fail("ºÍ×Ô¼ººÏèµ£¿\n"); 
+                return notify_fail(target->name()+"å·²ç¶“ç„¡æ³•æˆ°é¬¥äº†ã€‚\n"); 
+        if(target==me) return notify_fail("å’Œè‡ªå·±åˆç’§ï¼Ÿ\n"); 
         if(me->is_fighting(target))
-                return notify_fail("ÄãÕıÔÚºÍ"+target->name()+"´ò¼ÜÄØ¡£\n");
+                return notify_fail("ä½ æ­£åœ¨å’Œ"+target->name()+"æ‰“æ¶å‘¢ã€‚\n");
         weapon=query_temp("weapon", me);
         weapon1=query_temp("weapon", target);
         if( !weapon || query("skill_type", weapon) != "sword" || 
                 me->query_skill_mapped("sword") != "liangyi-sword" ||
                 me->query_skill_mapped("parry") != "liangyi-sword")
-                return notify_fail("ÄãÏÖÔÚÎŞ·¨Ê¹ÓÃ¡¸Ë«½£ºÏèµ¡¹¡£\n");
+                return notify_fail("ä½ ç¾åœ¨ç„¡æ³•ä½¿ç”¨ã€Œé›™åŠåˆç’§ã€ã€‚\n");
 
         if( !weapon1 || query("skill_type", weapon1) != "sword" || 
                 target->query_skill_mapped("sword") != "liangyi-sword" ||
                 target->query_skill_mapped("parry") != "liangyi-sword")
-                return notify_fail(target->name()+"ÏÖÔÚÎŞ·¨Ê¹ÓÃ¡¸Ë«½£ºÏèµ¡¹¡£\n");
+                return notify_fail(target->name()+"ç¾åœ¨ç„¡æ³•ä½¿ç”¨ã€Œé›™åŠåˆç’§ã€ã€‚\n");
         skill = me->query_skill("liangyi-sword", 1);
         skill1 = target->query_skill("liangyi-sword", 1);
         if(skill < 100 )
-                return notify_fail("ÄãµÄÁ½ÒÇ½£·¨µÈ¼¶²»¹»£¬²»ÄÜÊ¹ÓÃ¡¸Ë«½£ºÏèµ¡¹¡£\n");
+                return notify_fail("ä½ çš„å…©å„€åŠæ³•ç­‰ç´šä¸å¤ ï¼Œä¸èƒ½ä½¿ç”¨ã€Œé›™åŠåˆç’§ã€ã€‚\n");
         if((int)me->query_skill("xuantian-wuji", 1) < 100 )
-                return notify_fail("ÄãµÄĞşÌìÎŞ¼¶¹¦µÈ¼¶²»¹»£¬²»ÄÜÊ¹ÓÃ¡¸Ë«½£ºÏèµ¡¹¡£\n");           
+                return notify_fail("ä½ çš„ç„å¤©ç„¡ç´šåŠŸç­‰ç´šä¸å¤ ï¼Œä¸èƒ½ä½¿ç”¨ã€Œé›™åŠåˆç’§ã€ã€‚\n");           
         if( query("neili", me)<500 )
-                return notify_fail("ÄãÏÖÔÚÕæÆøÌ«Èõ£¬²»ÄÜÊ¹ÓÃ¡¸Ë«½£ºÏèµ¡¹¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çœŸæ°£å¤ªå¼±ï¼Œä¸èƒ½ä½¿ç”¨ã€Œé›™åŠåˆç’§ã€ã€‚\n");
         if( query("max_neili", me)<1000 )
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ£¬²»ÄÜÊ¹ÓÃ¡¸Ë«½£ºÏèµ¡¹¡£\n");
+                return notify_fail("ä½ ç¾åœ¨å…§åŠ›å¤ªå¼±ï¼Œä¸èƒ½ä½¿ç”¨ã€Œé›™åŠåˆç’§ã€ã€‚\n");
         if( query_temp("ly_hebi", me) )
-                return notify_fail("ÄãÒÑ¾­ÔÚÊ¹ÓÃ¡¸Ë«½£ºÏèµ¡¹ÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“åœ¨ä½¿ç”¨ã€Œé›™åŠåˆç’§ã€äº†ã€‚\n");
         if( query_temp("ly_hebi", target) )
-                return notify_fail(target->name()+"ÒÑ¾­ÔÚºÍËûÈËÊ¹ÓÃ¡¸Ë«½£ºÏèµ¡¹ÁË¡£\n");
+                return notify_fail(target->name()+"å·²ç¶“åœ¨å’Œä»–äººä½¿ç”¨ã€Œé›™åŠåˆç’§ã€äº†ã€‚\n");
         if( query_temp("lyhebi_target", me) )
         {
                 if( query_temp("lyhebi_target", me) == target )
-                        return notify_fail("ÄãÒÑ¾­×öºÃºÍ"+target->name()+"Ë«½£ºÏèµµÄ×¼±¸ÁË¡£\n");
+                        return notify_fail("ä½ å·²ç¶“åšå¥½å’Œ"+target->name()+"é›™åŠåˆç’§çš„æº–å‚™äº†ã€‚\n");
                 else
                 {
-                        tell_object(query_temp("hebi_target", me),YEL+me->name()+"²»´òËãºÍÄã½øĞĞË«½£ºÏèµÁË¡£\n"NOR);
+                        tell_object(query_temp("hebi_target", me),YEL+me->name()+"ä¸æ‰“ç®—å’Œä½ é€²è¡Œé›™åŠåˆç’§äº†ã€‚\n"NOR);
                         delete_temp("lyprepare_hebi", me);
                         delete_temp("lyhebi_target", me);
                 }
@@ -76,7 +76,7 @@ int perform(object me, string arg)
         if( query_temp("lyprepare_hebi", target) && 
                 query_temp("lyhebi_target", target) == me )
         {
-                message_combatd(MAG"\n $N¶Ô$nÊ¹¸öÑÛÉ«,ÊÖÖĞ"+weapon->name()+MAG+"ºÍ$nµÄ"+weapon1->name()+MAG+"½»´íÏà»÷£¬Ë«½£ÆëÉÏ£¬¶ÙÊ±Ö»¼û½£¹âÁèÀ÷£¬ÍşÁ¦´óÔö£¡\n"NOR, me, target);
+                message_combatd(MAG"\n $Nå°$nä½¿å€‹çœ¼è‰²,æ‰‹ä¸­"+weapon->name()+MAG+"å’Œ$nçš„"+weapon1->name()+MAG+"äº¤éŒ¯ç›¸æ“Šï¼Œé›™åŠé½Šä¸Šï¼Œé “æ™‚åªè¦‹åŠå…‰å‡Œå²ï¼Œå¨åŠ›å¤§å¢ï¼\n"NOR, me, target);
                 delete_temp("lyprepare_hebi", me);
                 delete_temp("lyhebi_target", me);
                 delete_temp("lyprepare_hebi", target);
@@ -94,8 +94,8 @@ int perform(object me, string arg)
                 target->start_call_out( (: call_other, __FILE__, "remove_effect", target :), (skill+skill1)/2);
                 return 1;
         }
-        message_combatd(HIC"\n $N½«ÊÖÖĞ"+weapon->name()+HIC"Ò»ºá£¬°µÊ¾$nºÍ$PÒ»ÆğÔËÓÃË«½£ºÏèµ¡£\n"NOR, me, target);
-        tell_object(target, YEL"ÄãÈç¹ûÔ¸ÒâºÍ"+me->name()+"½øĞĞË«½£ºÍ±Ú£¬ÇëÒ²¶Ô"+me->name()+"ÏÂÒ»´Î ( perform hebi <player's id> ) µÄÃüÁî¡£\n"NOR); 
+        message_combatd(HIC"\n $Nå°‡æ‰‹ä¸­"+weapon->name()+HIC"ä¸€æ©«ï¼Œæš—ç¤º$nå’Œ$Pä¸€èµ·é‹ç”¨é›™åŠåˆç’§ã€‚\n"NOR, me, target);
+        tell_object(target, YEL"ä½ å¦‚æœé¡˜æ„å’Œ"+me->name()+"é€²è¡Œé›™åŠå’Œå£ï¼Œè«‹ä¹Ÿå°"+me->name()+"ä¸‹ä¸€æ¬¡ ( perform hebi <player's id> ) çš„å‘½ä»¤ã€‚\n"NOR); 
         set_temp("lyprepare_hebi", 1, me);
         set_temp("lyhebi_target", target, me);
         set_temp("no_unwield", 1, me);
@@ -159,7 +159,7 @@ int check_reply(object me,object target )
                 delete_temp("lyhebi_target", me);
                 delete_temp("no_unwield", me);
                 delete_temp("no_unwield", target);
-                message_combatd(HIY"ËÆºõ¶Ô·½¶Ô$NµÄ°µÊ¾Ã»ÓĞ·´Ó¦£¬$NÔÚÖ»ºÃÈ¡ÏûÁËË«½£ºÏ±ÚµÄÇëÇó¡£\n"NOR, me);
+                message_combatd(HIY"ä¼¼ä¹å°æ–¹å°$Nçš„æš—ç¤ºæ²’æœ‰åæ‡‰ï¼Œ$Nåœ¨åªå¥½å–æ¶ˆäº†é›™åŠåˆå£çš„è«‹æ±‚ã€‚\n"NOR, me);
                 return 1;
         }
 }
@@ -174,7 +174,7 @@ int remove_effect(object me)
                 delete_temp("no_unwield", me);
                 addn_temp("apply/attack", -attack1, me);
                 addn_temp("apply/damage", -damage1, me);
-                message_combatd(HIC"Ë«½£ºÏèµÍê½á£¬$NµÄ¹¥ÊØ»Ö¸´Õı³£ÁË¡£\n"NOR, me);
+                message_combatd(HIC"é›™åŠåˆç’§å®Œçµï¼Œ$Nçš„æ”»å®ˆæ¢å¾©æ­£å¸¸äº†ã€‚\n"NOR, me);
                 return 1; 
         }
 }
@@ -189,26 +189,26 @@ int remove_effect1(object target)
                 delete_temp("no_unwield", target);
                 addn_temp("apply/attack", -attack2, target);
                 addn_temp("apply/damage", -damage2, target);
-                message_combatd(HIC"Ë«½£ºÏèµÍê½á£¬$N¹¥ÊØ»Ö¸´Õı³£ÁË¡£\n"NOR, target);
+                message_combatd(HIC"é›™åŠåˆç’§å®Œçµï¼Œ$Næ”»å®ˆæ¢å¾©æ­£å¸¸äº†ã€‚\n"NOR, target);
                 return 1; 
         }
 }
-string name() {return replace_string(replace_string(PNAME,"¡¸",""),"¡¹","");}
+string name() {return replace_string(replace_string(PNAME,"ã€Œ",""),"ã€","");}
 
 int help(object me)
 {
-        write(WHT"\n"+to_chinese(explode(__FILE__,"/")[<2])+"Ö®"+name()+WHT"£º"NOR"\n");
+        write(WHT"\n"+to_chinese(explode(__FILE__,"/")[<2])+"ä¹‹"+name()+WHT"ï¼š"NOR"\n");
         write(@HELP
 
-        Ê¹ÓÃ¹¦Ğ§£º
-                Á½¸öµÈ¼¶Ïà½üµÄÈË²Å¿ÉÒÔÊ¹ÓÃ£¬¿É¼ÓÇ¿¹¥»÷´ÎÊı¡£
+        ä½¿ç”¨åŠŸæ•ˆï¼š
+                å…©å€‹ç­‰ç´šç›¸è¿‘çš„äººæ‰å¯ä»¥ä½¿ç”¨ï¼Œå¯åŠ å¼·æ”»æ“Šæ¬¡æ•¸ã€‚
 
-        ³öÊÖÒªÇó£º
-                ĞşÌìÎŞ¼«¹¦100¼¶
-                Á½ÒÇ½£ÓĞĞ§100¼¶
-                ×î´óÄÚÁ¦ 1000
-                ¼¤·¢ÕıÁ½ÒÇ½£·¨ÎªÕĞ¼Ü¼¼ÄÜ
-                ¼¤·¢ÕıÁ½ÒÇ½£·¨Îª½£·¨¼¼ÄÜ
+        å‡ºæ‰‹è¦æ±‚ï¼š
+                ç„å¤©ç„¡æ¥µåŠŸ100ç´š
+                å…©å„€åŠæœ‰æ•ˆ100ç´š
+                æœ€å¤§å…§åŠ› 1000
+                æ¿€ç™¼æ­£å…©å„€åŠæ³•ç‚ºæ‹›æ¶æŠ€èƒ½
+                æ¿€ç™¼æ­£å…©å„€åŠæ³•ç‚ºåŠæ³•æŠ€èƒ½
 HELP
         );
         return 1;

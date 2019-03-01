@@ -1,4 +1,4 @@
-// magate.c ÉñÖ®Âêè§
+// magate.c ç¥ä¹‹ç‘ªç‘™
 
 #include <ansi.h>
 #include <armor.h>
@@ -9,24 +9,24 @@ int is_enchase_ob(){ return 1; }
 
 void create()
 {
-        set_name(HIR "ÉñÖ®Âêè§" NOR, ({ "magic agate" }) );
+        set_name(HIR "ç¥ä¹‹ç‘ªç‘™" NOR, ({ "magic agate" }) );
         set_weight(50);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", HIR "Ò»¿éÉÁË¸ÕâÆæÒì¹âÃ¢µÄ°µºìÉ«Âêè§£¬"
-                    "ÈÃÈË¸Ğµ½Ò»ÕóÕóµÄĞÄ¼Â¡£\n" NOR);
+                set("long", HIR "ä¸€å¡Šé–ƒçˆé€™å¥‡ç•°å…‰èŠ’çš„æš—ç´…è‰²ç‘ªç‘™ï¼Œ"
+                    "è®“äººæ„Ÿåˆ°ä¸€é™£é™£çš„å¿ƒæ‚¸ã€‚\n" NOR);
                 set("value", 200000);
-                set("unit", "¿é");
+                set("unit", "å¡Š");
                 set("can_be_enchased", 1);
                 set("magic/type", "fire");
                 set("magic/power", 15 + random(16));
                 set("armor_prop/per", 8);
                 set("no_identify", 1);
-                set("wear_msg", HIC "$N" HIC "ÇáÇáµØ°Ñ$n"
-                    HIC "´÷ÔÚÍ·ÉÏ¡£\n" NOR);
-                set("remove_msg", HIC "$N" HIC "ÇáÇáµØ°Ñ$n"
-                    HIC "´ÓÍ·ÉÏÕªÁËÏÂÀ´¡£\n" NOR);
+                set("wear_msg", HIC "$N" HIC "è¼•è¼•åœ°æŠŠ$n"
+                    HIC "æˆ´åœ¨é ­ä¸Šã€‚\n" NOR);
+                set("remove_msg", HIC "$N" HIC "è¼•è¼•åœ°æŠŠ$n"
+                    HIC "å¾é ­ä¸Šæ‘˜äº†ä¸‹ä¾†ã€‚\n" NOR);
         }
         setup();
 }

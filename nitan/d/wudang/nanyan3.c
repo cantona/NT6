@@ -6,11 +6,11 @@ inherit ROOM;
 void create()
 {
         object ob1, ob2;
-        set("short", "ÄÏÑÒÃÔ¹¬");
+        set("short", "å—å·–è¿·å®®");
         set("long", @LONG
-ÄãÏÖÔÚÄÏÑÒ¹¬µØÏÂÃÜÊÒÖÐ£¬¸ß¹ÒµÄÍó´ÖµÄÓÍÖòÕÕµÃÂúÌÃÍ¸ÁÁ¡£µ«
-ÖÜÎ§¾²Ú×ÈçÒ¹£¬³ýÁËÖò»ðÉÁË¸µÄ·çÉùÍâ£¬ÄãÊ²Ã´Ò²Ìý²»¼û¡£ÕâÀïÖ»ÓÐ
-ÄãÒ»¸öÈË¡£Äã½ÅÏÂ»º»º¶ø¶¯£¬È«Éñ½ä±¸£¬Ã»ÓÐÈËÄÜ°ïÖúÄã¡£
+ä½ ç¾åœ¨å—å·–å®®åœ°ä¸‹å¯†å®¤ä¸­ï¼Œé«˜æŽ›çš„è…•ç²—çš„æ²¹ç‡­ç…§å¾—æ»¿å ‚é€äº®ã€‚ä½†
+å‘¨åœéœè¬å¦‚å¤œï¼Œé™¤äº†ç‡­ç«é–ƒçˆçš„é¢¨è²å¤–ï¼Œä½ ä»€éº¼ä¹Ÿè½ä¸è¦‹ã€‚é€™è£¡åªæœ‰
+ä½ ä¸€å€‹äººã€‚ä½ è…³ä¸‹ç·©ç·©è€Œå‹•ï¼Œå…¨ç¥žæˆ’å‚™ï¼Œæ²’æœ‰äººèƒ½å¹«åŠ©ä½ ã€‚
 LONG );
         set("exits", ([
                 "east"      : __DIR__"nanyan1",

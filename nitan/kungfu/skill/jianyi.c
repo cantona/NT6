@@ -1,21 +1,21 @@
 #include <ansi.h>
-// »ªÉ½ÅÉ jianyi
+// è¯å±±æ´¾ jianyi
 inherit SKILL; 
 string type() { return "knowledge"; } 
 
 int is_fmsk() { return 1; }
-string family_name() { return "»ªÉ½ÅÉ"; }
+string family_name() { return "è¯å±±æ´¾"; }
 
 int valid_learn(object me)
 {        
         if (me->query_skill("zixia-shengong", 1) < 120)
-                return notify_fail("Äã×ÏÏ¼Éñ¹¦»ðºò²»×ã£¬ÎÞ·¨ÑÐÏ°½£Òâ¡£\n");
+                return notify_fail("ä½ ç´«éœžç¥žåŠŸç«å€™ä¸è¶³ï¼Œç„¡æ³•ç ”ç¿’åŠæ„ã€‚\n");
         
-        if( query("family/family_name", me) != family_name() && query("family/family_name", me) != "»ªÉ½½£×Ú" )
-                return notify_fail("½£ÒâÖ»ÄÜ»ªÉ½ÅÉµÜ×Ó·½¿ÉÑÐÏ°¡£\n");
+        if( query("family/family_name", me) != family_name() && query("family/family_name", me) != "è¯å±±åŠå®—" )
+                return notify_fail("åŠæ„åªèƒ½è¯å±±æ´¾å¼Ÿå­æ–¹å¯ç ”ç¿’ã€‚\n");
 
         if (me->query_skill("huashan-sword", 1) < 150)
-                return notify_fail("Äã»ªÉ½½£·¨ÐÞÎª²»×ã£¬ÎÞ·¨¼ÌÐøÑÐÏ°½£Òâ¡£\n");
+                return notify_fail("ä½ è¯å±±åŠæ³•ä¿®ç‚ºä¸è¶³ï¼Œç„¡æ³•ç¹¼çºŒç ”ç¿’åŠæ„ã€‚\n");
 
         return 1;
 }

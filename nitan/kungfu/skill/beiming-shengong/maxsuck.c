@@ -10,44 +10,44 @@ int exert(object me, object target)
 
         if (target == me) target = offensive_target(me);
 
-        if (me->is_busy()) return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
+        if (me->is_busy()) return notify_fail("ä½ æ­£å¿™è‘—å‘¢ã€‚\n");
 
         if( query("no_fight", environment(me)) )
-                return notify_fail("ÔÚÕâÀï²»ÄÜ¹¥»÷ËûÈË¡£\n");
+                return notify_fail("åœ¨é€™è£¡ä¸èƒ½æ”»æ“Šä»–äººã€‚\n");
 
         if( !objectp(target) || query("id", target) == "muren" )
-                return notify_fail("ÄãÒªÎüÈ¡Ë­µÄµ¤Ôª£¿\n");
+                return notify_fail("ä½ è¦å¸å–èª°çš„ä¸¹å…ƒï¼Ÿ\n");
                 
-        if( query("race", target) != "ÈËÀà" )
-                return notify_fail("¸ã´íÁË£¡Ö»ÓĞÈË²ÅÄÜÓĞµ¤Ôª£¡\n");
+        if( query("race", target) != "äººé¡" )
+                return notify_fail("æéŒ¯äº†ï¼åªæœ‰äººæ‰èƒ½æœ‰ä¸¹å…ƒï¼\n");
        
         if( query_temp("sucked", me) )
-                return notify_fail("Äã¸Õ¸ÕÎüÈ¡¹ıµ¤Ôª£¡\n");
+                return notify_fail("ä½ å‰›å‰›å¸å–éä¸¹å…ƒï¼\n");
         if( objectp(query_temp("weapon", me)) )
-                return notify_fail("Äã±ØĞë¿ÕÊÖ²ÅÄÜÊ©ÓÃ±±Ú¤Éñ¹¦ÎüÈËµ¤Ôª£¡\n");
+                return notify_fail("ä½ å¿…é ˆç©ºæ‰‹æ‰èƒ½æ–½ç”¨åŒ—å†¥ç¥åŠŸå¸äººä¸¹å…ƒï¼\n");
 
         if ((int)me->query_skill("beiming-shengong", 1) < 90)
-                return notify_fail("ÄãµÄ±±Ú¤Éñ¹¦¹¦Á¦²»¹»£¬²»ÄÜÎüÈ¡¶Ô·½µÄµ¤Ôª£¡\n");
+                return notify_fail("ä½ çš„åŒ—å†¥ç¥åŠŸåŠŸåŠ›ä¸å¤ ï¼Œä¸èƒ½å¸å–å°æ–¹çš„ä¸¹å…ƒï¼\n");
 
         if( query("neili", me)<20 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬²»ÄÜÊ¹ÓÃ»¯¹¦´ó·¨¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ï¼Œä¸èƒ½ä½¿ç”¨åŒ–åŠŸå¤§æ³•ã€‚\n");
 
         if( me->query_skill("beiming-shengong",1)<query("max_neili", me)/20 )
-                return notify_fail("ÄãµÄ±±Ú¤Éñ¹¦Ì«µÍÁË£¬ÔÙÎüÈ¡Ò²ÊÇÍ½ÀÍ¡£\n");
+                return notify_fail("ä½ çš„åŒ—å†¥ç¥åŠŸå¤ªä½äº†ï¼Œå†å¸å–ä¹Ÿæ˜¯å¾’å‹ã€‚\n");
                 
         if( query("max_neili", me)*2 >= me->query_neili_limit()*3 )
-                return notify_fail("ÄãµÄÄÚÁ¦ĞŞÎªËÆºõÒÑ¾­´ïµ½ÁËÆ¿¾±£¬ÔÙÎüÈ¡Ò²ÊÇÍ½ÀÍ¡£\n"); 
+                return notify_fail("ä½ çš„å…§åŠ›ä¿®ç‚ºä¼¼ä¹å·²ç¶“é”åˆ°äº†ç“¶é ¸ï¼Œå†å¸å–ä¹Ÿæ˜¯å¾’å‹ã€‚\n"); 
 
         if( query("max_neili", target)<100 || query("no_suck", target) )
                 return notify_fail(target->name() +
-                        "µ¤Ôª»ÁÉ¢£¬¹¦Á¦Î´¾Û£¬ÄãÎŞ·¨´ÓËûÌåÄÚÎüÈ¡ÈÎºÎ¶«Î÷£¡\n");
+                        "ä¸¹å…ƒæ¸™æ•£ï¼ŒåŠŸåŠ›æœªèšï¼Œä½ ç„¡æ³•å¾ä»–é«”å…§å¸å–ä»»ä½•æ±è¥¿ï¼\n");
 
         if( query("max_neili", target)<query("max_neili", me)/18 )
                 return notify_fail(target->name() +
-                        "µÄÄÚ¹¦ĞŞÎªÔ¶²»ÈçÄã£¬ÄãÎŞ·¨´ÓËûÌåÄÚÎüÈ¡µ¤Ôª£¡\n");
+                        "çš„å…§åŠŸä¿®ç‚ºé ä¸å¦‚ä½ ï¼Œä½ ç„¡æ³•å¾ä»–é«”å…§å¸å–ä¸¹å…ƒï¼\n");
 
         message_combatd(
-                HIG "$N³¯$nÎ¢Î¢Ò»Ğ¦£¬Í»È»·­ÕÆ±ä×¦£¬¿ÛÏò$nµÄÊÖÍó£¡\n\n" NOR,
+                HIG "$Næœ$nå¾®å¾®ä¸€ç¬‘ï¼Œçªç„¶ç¿»æŒè®Šçˆªï¼Œæ‰£å‘$nçš„æ‰‹è…•ï¼\n\n" NOR,
                 me, target );
                 
         me->want_kill(target);               
@@ -63,8 +63,8 @@ int exert(object me, object target)
              
         if (ap / 2 + random(ap) > dp || ! living(target))
         {
-                tell_object(target, HIR "ÄãÖ»¾õÈ«Éí·¦Á¦£¬È«Éí¹¦Á¦ÈçÈÚÑ©°ãÏûÊ§µÃÎŞÓ°ÎŞ×Ù£¡\n" NOR);
-                tell_object(me, HIG "Äã¾õµÃ" + target->name() + "µÄµ¤Ôª×ÔÊÖÕÆÔ´Ô´²»¾øµØÁ÷ÁË½øÀ´¡£\n" NOR);
+                tell_object(target, HIR "ä½ åªè¦ºå…¨èº«ä¹åŠ›ï¼Œå…¨èº«åŠŸåŠ›å¦‚èé›ªèˆ¬æ¶ˆå¤±å¾—ç„¡å½±ç„¡è¹¤ï¼\n" NOR);
+                tell_object(me, HIG "ä½ è¦ºå¾—" + target->name() + "çš„ä¸¹å…ƒè‡ªæ‰‹æŒæºæºä¸çµ•åœ°æµäº†é€²ä¾†ã€‚\n" NOR);
                 
                 suck = 100 + (me->query_skill("beiming-shengong", 1) - 90) / 2;
                 
@@ -82,7 +82,7 @@ int exert(object me, object target)
         }
         else
         {       
-                message_combatd(HIY "¿ÉÊÇ$p¿´ÆÆÁË$PµÄÆóÍ¼£¬»úÁéµØÁïÁË¿ªÈ¥¡£\n" NOR, me, target);
+                message_combatd(HIY "å¯æ˜¯$pçœ‹ç ´äº†$Pçš„ä¼åœ–ï¼Œæ©Ÿéˆåœ°æºœäº†é–‹å»ã€‚\n" NOR, me, target);
                 me->start_busy(2 + random(5));
                 // remove_call_out("del_sucked");
                 call_out("del_sucked", 15, me);

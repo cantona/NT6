@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�ڶ�");
+        set("short", "內洞");
         set("long", @LONG
-�ڶ����ⶴ��С������ʯ�ڱߴ���һ��ľ�������ﲻ����⣬��
-�����������ӣ�һ��ů�����ڡ�
+內洞比外洞稍小。靠側石壁邊搭著一個木床，洞裡不見天光，長
+年燒著鬆明子，一洞暖意融融。
 LONG );
         set("no_beg", 1); 
         set("exits", ([

@@ -1,6 +1,6 @@
 // board.h
 
-// ±íÃûÇ°×º
+// è¡¨åå‰ç¶´
 #define TABLE_PREFIX    "phpbb_"
 
 #define TOPICS_TABLE    TABLE_PREFIX "topics"
@@ -13,35 +13,35 @@
 
 #define DEBUG_MSG(x)    tell_object(find_player("lonely"), HIR + x + NOR);
 
-#define POST_ID         0       // ÎÄÕÂ±àºÅ
-#define TOPIC_ID        1       // Ö÷Ìâ±àºÅ
-#define POSTER_ID       2       // ÎÄÕÂ×÷Õß
-#define POST_TIME       3       // ·¢±íÊ±¼ä
+#define POST_ID         0       // æ–‡ç« ç·¨è™Ÿ
+#define TOPIC_ID        1       // ä¸»é¡Œç·¨è™Ÿ
+#define POSTER_ID       2       // æ–‡ç« ä½œè€…
+#define POST_TIME       3       // ç™¼è¡¨æ™‚é–“
 
-#define POST_SUBJECT    0       // ÎÄÕÂ±êÌâ
-#define BBCODE_UID      1       // bbcode µÄ¼ø¶¨ºÅ
-#define POST_TEXT       2       // ÎÄÕÂÄÚÈİ
+#define POST_SUBJECT    0       // æ–‡ç« æ¨™é¡Œ
+#define BBCODE_UID      1       // bbcode çš„é‘’å®šè™Ÿ
+#define POST_TEXT       2       // æ–‡ç« å…§å®¹
 
-#define TOPIC_TITLE     0       // Ö÷Ìâ±êÌâ
-#define TOPIC_POSTER    2       // Ö÷Ìâ×÷Õß
-#define TOPIC_TIME      3       // ·¢±íÊ±¼ä
-#define TOPIC_VIEWS     4       // Ö÷Ìâä¯ÀÀ´ÎÊı
-#define TOPIC_REPLIES   5       // Ö÷Ìâ»Ø¸´
-#define TOPIC_FIRST_ID  6       // Ö÷ÌâÊ×Ìù±àºÅ
+#define TOPIC_TITLE     0       // ä¸»é¡Œæ¨™é¡Œ
+#define TOPIC_POSTER    2       // ä¸»é¡Œä½œè€…
+#define TOPIC_TIME      3       // ç™¼è¡¨æ™‚é–“
+#define TOPIC_VIEWS     4       // ä¸»é¡Œç€è¦½æ¬¡æ•¸
+#define TOPIC_REPLIES   5       // ä¸»é¡Œå›å¾©
+#define TOPIC_FIRST_ID  6       // ä¸»é¡Œé¦–è²¼ç·¨è™Ÿ
 
-// BBS Ä£Ê½(ÏÔÊ¾ËùÓĞµÄÎÄÕÂ£¬°üÀ¨»Ø¸´)
+// BBS æ¨¡å¼(é¡¯ç¤ºæ‰€æœ‰çš„æ–‡ç« ï¼ŒåŒ…æ‹¬å›å¾©)
 int is_bbs_mode(object me) { return (me->query("env/board_mode") == 0); }
-// Web ÂÛÌ³Ä£Ê½(Ö»ÏÔÊ¾Ö÷Ìâ£¬»Ø¸´ÔÚ²ì¿´Ö÷ÌâÊ±ÔÙÏÔÊ¾)
+// Web è«–å£‡æ¨¡å¼(åªé¡¯ç¤ºä¸»é¡Œï¼Œå›å¾©åœ¨å¯Ÿçœ‹ä¸»é¡Œæ™‚å†é¡¯ç¤º)
 // int is_web_mode(object me) { return (me->query("env/board_mode") == 1); }
 int is_web_mode(object me) { return me->query("env/board_mode"); }
 
-// ÏÔÊ¾»Ø¸´µÄ·½Ê½
-#define SHOW_NONE       0       // ²»ÏÔÊ¾
-#define SHOW_LAST       1       // ÏÔÊ¾×îºóÒ»Æª
-#define SHOW_ALL        2       // ÏÔÊ¾ËùÓĞ
+// é¡¯ç¤ºå›å¾©çš„æ–¹å¼
+#define SHOW_NONE       0       // ä¸é¡¯ç¤º
+#define SHOW_LAST       1       // é¡¯ç¤ºæœ€å¾Œä¸€ç¯‡
+#define SHOW_ALL        2       // é¡¯ç¤ºæ‰€æœ‰
 
-// Web ÂÛÌ³µØÖ·
+// Web è«–å£‡åœ°å€
 #define WEB_URL         "http://www.mudbuilder.com/phpbb/"
-#define FORUM_URL       WEB_URL "viewforum.php?f=%d"    // °æÃæÒ³ÃæµØÖ·
-#define TOPIC_URL       WEB_URL "viewtopic.php?t=%d"    // Ö÷ÌâÒ³ÃæµØÖ·
+#define FORUM_URL       WEB_URL "viewforum.php?f=%d"    // ç‰ˆé¢é é¢åœ°å€
+#define TOPIC_URL       WEB_URL "viewtopic.php?t=%d"    // ä¸»é¡Œé é¢åœ°å€
 

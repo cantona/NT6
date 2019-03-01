@@ -5,10 +5,10 @@ inherit BOSS;
 void create()
 {
         object ob;
-        set_name(HIW "ÀîÁ«Ó¢" NOR, ({ "li lianying", "li", "lianying" }));
-        set("long", "Ëû¾ÍÊÇ´óÄÚÌ«¼à×Ü¹Ü¡£\n");
-        set("title", HIB "Ì«¼à×Ü¹Ü" NOR);
-        set("gender", "ÎŞĞÔ");
+        set_name(HIW "æè“®è‹±" NOR, ({ "li lianying", "li", "lianying" }));
+        set("long", "ä»–å°±æ˜¯å¤§å…§å¤ªç›£ç¸½ç®¡ã€‚\n");
+        set("title", HIB "å¤ªç›£ç¸½ç®¡" NOR);
+        set("gender", "ç„¡æ€§");
         set("age", 50);
         set("shen_type", -1);
         set("str", 91);
@@ -78,8 +78,8 @@ void create()
 
         set("killer_reward", 
                 ([
-                "RA&RANDOM100"                                    :       10000,  // µÍ¼¶ÆÕÍ¨×°±¸
-                "RA&RANDOM110"                                    :       300,    // ÖĞ¼¶ÆÕÍ¨×°±¸
+                "RA&RANDOM100"                                    :       10000,  // ä½ç´šæ™®é€šè£å‚™
+                "RA&RANDOM110"                                    :       300,    // ä¸­ç´šæ™®é€šè£å‚™
                 "FI&/clone/enchase/rune23"   :   300,
                 "FI&/clone/enchase/rune24"   :   300,
                 "FI&/clone/enchase/rune25"   :   300,

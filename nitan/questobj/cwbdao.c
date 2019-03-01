@@ -6,18 +6,18 @@ inherit BLADE;
 
 void create()
 {
-        set_name(HIR"´³Íõ"HIY"±¦µ¶"NOR,({"chuangwang baodao","blade","baodao"}));
+        set_name(HIR"é—–ç‹"HIY"å¯¶åˆ€"NOR,({"chuangwang baodao","blade","baodao"}));
         set_weight(6000);
         set("taskobj", 1);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
+                set("unit", "æŸ„");
                 set("value", 0);
                 set("material", "iron");
-                set("long", "ÕâÊÇ´³ÍõËùÊ¹ÓÃ¹ıµÄµ¶£¬ÉÏÃæ¿ÌÓĞ¼¸ĞĞĞ¡×Ö¡£\n" );
-                set("wield_msg","Ò»µÀ°×¹â£¬$nÒÑÔÚ$NÊÖÖĞ£¬Ö»¾õÇà¹âËÄÉä£¬º®ÆøÍ¸¹Ç£¬²»½û»úÁæÁæµÄ´ò¸öÀäÕ½¡£\n");
-                set("unwield_msg", "$N½«$n²å»ØÑü¼ä£¬»ª¹â¶ÙÁ²£¬ÌìµØ¼äÖ»ÎÅÁúÃù¡£\n");
+                set("long", "é€™æ˜¯é—–ç‹æ‰€ä½¿ç”¨éçš„åˆ€ï¼Œä¸Šé¢åˆ»æœ‰å¹¾è¡Œå°å­—ã€‚\n" );
+                set("wield_msg","ä¸€é“ç™½å…‰ï¼Œ$nå·²åœ¨$Næ‰‹ä¸­ï¼Œåªè¦ºé’å…‰å››å°„ï¼Œå¯’æ°£é€éª¨ï¼Œä¸ç¦æ©Ÿä¼¶ä¼¶çš„æ‰“å€‹å†·æˆ°ã€‚\n");
+                set("unwield_msg", "$Nå°‡$næ’å›è…°é–“ï¼Œè¯å…‰é “æ–‚ï¼Œå¤©åœ°é–“åªèé¾é³´ã€‚\n");
         }
         setup();
 }

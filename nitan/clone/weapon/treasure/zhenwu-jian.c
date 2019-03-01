@@ -1,4 +1,4 @@
-// zhenwu-jian.c ÕæÎä½£
+// zhenwu-jian.c çœŸæ­¦åŠ
 // Last Modified by winder on Sep. 7 2001
 
 #include <ansi.h>;
@@ -8,18 +8,18 @@ inherit F_UNIQUE;
 
 void create()
 {
-        set_name(HIC"ÕæÎä½£"NOR, ({ "zhenwu jian", "sword", "jian" }));
+        set_name(HIC"çœŸæ­¦åŠ"NOR, ({ "zhenwu jian", "sword", "jian" }));
         set_weight(50000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
-                set("long","´Ë½£½£ÇÊÍ­ÂÌ°ßìµ£¬ÒÔÍ­Ë¿Ç¶×ÅÁ½¸ö×­ÎÄ£º¡°ÕæÎä¡±¡£\nÄËÊÇ´´ÅÉÖ®×æÕÅÈý·áËùÓÃÅå½££¬ÏòÀ´ÊÇÎäµ±ÅÉÕòÉ½Ö®±¦¡£\n");
+                set("unit", "æŸ„");
+                set("long","æ­¤åŠåŠéž˜éŠ…ç¶ æ–‘æ–•ï¼Œä»¥éŠ…çµ²åµŒè‘—å…©å€‹ç¯†æ–‡ï¼šâ€œçœŸæ­¦â€ã€‚\nä¹ƒæ˜¯å‰µæ´¾ä¹‹ç¥–å¼µä¸‰è±æ‰€ç”¨ä½©åŠï¼Œå‘ä¾†æ˜¯æ­¦ç•¶æ´¾éŽ®å±±ä¹‹å¯¶ã€‚\n");
                 set("value", 10000);
                 set("material", "steel");
                 set("weapon_prop/per", 8);
-                set("wield_msg", "$N¡¸à§¡¹µÄÒ»Éù³é³ö$n¡£½£ÃæÁ÷ÎÆÈçË®£¬å£È»Èç¾µ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖÐµÄ$n²å»Ø½£ÇÊ¡£\n");
+                set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€è²æŠ½å‡º$nã€‚åŠé¢æµç´‹å¦‚æ°´ï¼Œæ¾¹ç„¶å¦‚é¡ã€‚\n");
+                set("unwield_msg", "$Nå°‡æ‰‹ä¸­çš„$næ’å›žåŠéž˜ã€‚\n");
         }
         init_sword(180);
         setup();
@@ -48,9 +48,9 @@ mixed weapon_hit_ob(object me, object victim, int damage_bonus)
                 if (!victim->is_busy())
                 {
                 victim->start_busy(me->query_skill("sword") / 100 + 1);
-                return HIC "$N" HIC "¿çÇ°Ò»²½£¬ÊÖÖÐµÄ" NOR + HIY "ÕæÎä½£" NOR
-                       + HIC "»Ã»¯³ÉÎÞÊýÔ²È¦£¬Ïò$n" HIC "±ÆÈ¥£¬½£·¨Ï¸ÃÜÖ®¼«¡£\n"
-                       "$n" HIC "´ó³ÔÒ»¾ª£¬²»ÖªÈçºÎµÖµ²£¬Ö»ÓÐÁ¬Á¬ºóÍË£¡\n" NOR;
+                return HIC "$N" HIC "è·¨å‰ä¸€æ­¥ï¼Œæ‰‹ä¸­çš„" NOR + HIY "çœŸæ­¦åŠ" NOR
+                       + HIC "å¹»åŒ–æˆç„¡æ•¸åœ“åœˆï¼Œå‘$n" HIC "é€¼åŽ»ï¼ŒåŠæ³•ç´°å¯†ä¹‹æ¥µã€‚\n"
+                       "$n" HIC "å¤§åƒä¸€é©šï¼Œä¸çŸ¥å¦‚ä½•æŠµæ“‹ï¼Œåªæœ‰é€£é€£å¾Œé€€ï¼\n" NOR;
                 }
         case 1:
                 n = me->query_skill("sowrd");
@@ -60,11 +60,11 @@ mixed weapon_hit_ob(object me, object victim, int damage_bonus)
                 n /= 2;
                 victim->receive_damage("jing", n, me);
                 victim->receive_wound("jing", n / 2, me);
-                return random(2) ? HIY "$N" HIY "Ò»Éù³¤Ò÷£¬ÊÖÖÐµÄÕæÎä½£»¯×÷Ò»"
-                                   "µÀ³¤ºç£¬¡°à§¡±µÄÉ¨¹ý$n" HIY "¶øÈ¥£¡\n" NOR:
-                                   HIY "$N" HIY "Í»È»´óÉùºÈµÀ£º¡°Ð°Ä§ÍâµÀ£¬»¹"
-                                   "²»ÊÜËÀ£¿¡±ÊÖÖÐÕæÎä½£" HIY "ºöµÄÒ»¶¶£¬$n"
-                                   HIY "µÇÊ±¾õµÃÑÛ»¨çÔÂÒ£¡\n" NOR;
+                return random(2) ? HIY "$N" HIY "ä¸€è²é•·åŸï¼Œæ‰‹ä¸­çš„çœŸæ­¦åŠåŒ–ä½œä¸€"
+                                   "é“é•·è™¹ï¼Œâ€œå”°â€çš„æŽƒéŽ$n" HIY "è€ŒåŽ»ï¼\n" NOR:
+                                   HIY "$N" HIY "çªç„¶å¤§è²å–é“ï¼šâ€œé‚ªé­”å¤–é“ï¼Œé‚„"
+                                   "ä¸å—æ­»ï¼Ÿâ€æ‰‹ä¸­çœŸæ­¦åŠ" HIY "å¿½çš„ä¸€æŠ–ï¼Œ$n"
+                                   HIY "ç™»æ™‚è¦ºå¾—çœ¼èŠ±ç¹šäº‚ï¼\n" NOR;
         }
 
         // double effect

@@ -6,13 +6,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIM "²ÊÆ±" NOR, ({ "cai piao", "piao", "lottery" }));
+        set_name(HIM "å½©ç¥¨" NOR, ({ "cai piao", "piao", "lottery" }));
         set_weight(10);
         set("long", @LONG
-ÕâÊÇÒ»ÕÅ¡°ÄàÌ¶²©²Ê¡±ÓĞ½±¸£Àû²ÊÆ±£¬¿ÉÒÔÊ¹ÓÃtianxieÖ¸ÁîÀ´ÌîĞ´²ÊÆ±¡£
+é€™æ˜¯ä¸€å¼µâ€œæ³¥æ½­åšå½©â€æœ‰çç¦åˆ©å½©ç¥¨ï¼Œå¯ä»¥ä½¿ç”¨tianxieæŒ‡ä»¤ä¾†å¡«å¯«å½©ç¥¨ã€‚
 LONG);
 
-        set("unit", "ÕÅ");
+        set("unit", "å¼µ");
         set("value", 0);
         set("lottery", 1);
 
@@ -31,23 +31,23 @@ int do_tianxie(string arg)
         string *numbers;
 
         if (! arg || ! sscanf(arg, "%s", cost))
-                return notify_fail("Ö¸Áî¸ñÊ½£ºtianxie <ÎåÎ»ºÅÂë>¡£\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼štianxie <äº”ä½è™Ÿç¢¼>ã€‚\n");
 
         if (strlen(cost) != 5 || cost[0..0] < "0" || cost[0..0] > "9" ||
             cost[1..1] < "0" || cost[1..1] > "9" ||
             cost[2..2] < "0" || cost[2..2] > "9" ||
             cost[3..3] < "0" || cost[3..3] > "9" ||
             cost[4..4] < "0" || cost[4..4] > "9")
-                return notify_fail("ÄãÌîµÄºÅÂëÓĞÎó£¡\n");
+                return notify_fail("ä½ å¡«çš„è™Ÿç¢¼æœ‰èª¤ï¼\n");
 
         numbers = query("caipiao/numbers");
         if (! numbers)    numbers = ({});
 
         if (sizeof(numbers) >= 10)
-                return notify_fail("ÕâÕÅ²ÊÆ±ÄãÒÑ¾­ÌîÂúÁË¡£\n");
+                return notify_fail("é€™å¼µå½©ç¥¨ä½ å·²ç¶“å¡«æ»¿äº†ã€‚\n");
 
         numbers += ({ cost });
-        tell_object(me, sprintf("ÄãÔÚ²ÊÆ±µÚ%sÀ¸ÌîÉÏÁË%s¼¸¸öÊı×Ö¡£\n", 
+        tell_object(me, sprintf("ä½ åœ¨å½©ç¥¨ç¬¬%sæ¬„å¡«ä¸Šäº†%så¹¾å€‹æ•¸å­—ã€‚\n", 
                     chinese_number(sizeof(numbers)), cost));
         set("caipiao/numbers", numbers);
         return 1;

@@ -5,10 +5,10 @@ int ask_me();
 
 void create()
 {
-        set_name("ÌÆ¶ï»¯", ({ "tang ehua", "tang", "ehua" }) );
-        set("title", HIB"Ò©Íõ¹È"NOR+HIC"Ò½Ê¦"NOR);
-        set("long", "ËûÊÇ»Ø´ºÌÃµÄ×øÌÃÀÏÒ½Ê¦£¬¸ºÔğ¸ø¿´²¡¡£\n" );
-        set("gender", "ÄĞĞÔ" );
+        set_name("å”è¨›åŒ–", ({ "tang ehua", "tang", "ehua" }) );
+        set("title", HIB"è—¥ç‹è°·"NOR+HIC"é†«å¸«"NOR);
+        set("long", "ä»–æ˜¯å›æ˜¥å ‚çš„åå ‚è€é†«å¸«ï¼Œè² è²¬çµ¦çœ‹ç—…ã€‚\n" );
+        set("gender", "ç”·æ€§" );
         set("age", 52);
         set("combat_exp", 100);
         set("attitude", "friendly");
@@ -37,8 +37,8 @@ void init()
 int greeting(object ob)
 {
 
-        if( query("family/family_name", ob) == "Ò©Íõ¹È"){
-                command("say ÕâÎ»ĞÖµÜĞÁ¿àÁË£¬¿ìÇë½ø£¡\n");
+        if( query("family/family_name", ob) == "è—¥ç‹è°·"){
+                command("say é€™ä½å…„å¼Ÿè¾›è‹¦äº†ï¼Œå¿«è«‹é€²ï¼\n");
                 return 1;}
         else {
         switch( random(4) ) {
@@ -68,14 +68,14 @@ int ask_me()
 
         if( !query_temp("heal", me)){
                 command("say "+RANK_D->query_respect(me)+
-                        "ÄãÏÈ½»Õï½ğ"+MONEY_D->price_str(i*10)+"°É£¡\n");
+                        "ä½ å…ˆäº¤è¨ºé‡‘"+MONEY_D->price_str(i*10)+"å§ï¼\n");
                 return 1;
         }
         delete_temp("heal", me);
         set("eff_qi", obj, me);
         set("qi", obj, me);
-        message_vision ("ÌÆ¶ï»¯Îª$N°ÑÁË°ÑÂö£¬ÄÃ³öÒ»¸ùÒøÕëÔÚ$NÑ¨Î»ÉÏÔúÁË¼¸ÏÂ¡£\n", me);
-        command("say ÄãµÄÉËºÃµÃ²î²»¶àÁË£¡");
+        message_vision ("å”è¨›åŒ–ç‚º$NæŠŠäº†æŠŠè„ˆï¼Œæ‹¿å‡ºä¸€æ ¹éŠ€é‡åœ¨$Nç©´ä½ä¸Šç´®äº†å¹¾ä¸‹ã€‚\n", me);
+        command("say ä½ çš„å‚·å¥½å¾—å·®ä¸å¤šäº†ï¼");
         return 1;
 }
 
@@ -86,19 +86,19 @@ int accept_object(object me, object ob)
         if(i<5) i=5;
 
         command("smile");
-        command("say ºÇºÇ£¬¶àĞ»ÕâÎ»" + RANK_D->query_respect(me) + " £¡");
+        command("say å‘µå‘µï¼Œå¤šè¬é€™ä½" + RANK_D->query_respect(me) + " ï¼");
 
         if( query("money_id", ob) )
         {
                 if(ob->value() < (i*10))
                 {
-                        command("say ÕâÎ»¸øµÄÎ´ÃâÉÙÁËµã¡£");
+                        command("say é€™ä½çµ¦çš„æœªå…å°‘äº†é»ã€‚");
                         return 1;
                 }
                 else
                 {
                         set_temp("heal", 1, me);
-                        command("say ºÃÎÒÊÕÏÂÁË£¡");
+                        command("say å¥½æˆ‘æ”¶ä¸‹äº†ï¼");
                         return 1;
                 }
         }

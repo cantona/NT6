@@ -25,15 +25,15 @@ int main(object me, string arg)
         {
                 make=query("can_make", me);
                 if (! mapp(make))
-                        return notify_fail("ÄãÏÖÔÚ²»»áÖÆÈÎºÎÒ©Îï¡£\n");
+                        return notify_fail("ä½ ç¾åœ¨ä¸æœƒåˆ¶ä»»ä½•è—¥ç‰©ã€‚\n");
 
                 ks = keys(make);
-                msg = "ÄãÏÖÔÚÒÑ¾­»áÖÆ";
+                msg = "ä½ ç¾åœ¨å·²ç¶“æœƒåˆ¶";
                 if (sizeof(ks) >= 2)
-                        msg += implode(ks[0..sizeof(ks) - 2], "¡¢") +
-                                "ºÍ" + ks[sizeof(ks) - 1] + "ÁË¡£\n";
+                        msg += implode(ks[0..sizeof(ks) - 2], "ã€") +
+                                "å’Œ" + ks[sizeof(ks) - 1] + "äº†ã€‚\n";
                 else
-                        msg += ks[0] + "ÁË¡£\n";
+                        msg += ks[0] + "äº†ã€‚\n";
                 msg = sort_string(msg, 64);
                 write(msg);
                 return 1;
@@ -43,24 +43,24 @@ int main(object me, string arg)
         only_list = sscanf(arg, "%s ?", arg);
 
         if( !stringp(med=query("can_make/"+arg, me)) )
-                return notify_fail("Äã»¹²»»áÅäÕâÖÖÒ©°¡£¡\n");
+                return notify_fail("ä½ é‚„ä¸æœƒé…é€™ç¨®è—¥å•Šï¼\n");
 
         // The player can only make the medicine under the /clone/medicine,
         // nothing, but for save memory.
         med = MEDICINE(med);
         if (file_size(med + ".c") < 0)
-                return notify_fail("ÕâÖÖÒ©·½ºÃÏñÒÑ¾­Ê§´«ÁË£¿Äã»¹ÊÇÎÊÎÊÎ×Ê¦°É¡£\n");
+                return notify_fail("é€™ç¨®è—¥æ–¹å¥½åƒå·²ç¶“å¤±å‚³äº†ï¼Ÿä½ é‚„æ˜¯å•å•å·«å¸«å§ã€‚\n");
 
         if (! mapp(req = query("mixture", get_object(med))))
-                return notify_fail(med->name() + "ºÃÏñÎŞ·¨ÅäÖÆ...\n");
+                return notify_fail(med->name() + "å¥½åƒç„¡æ³•é…åˆ¶...\n");
 
         if (! mapp(herb = req["herb"]))
-                return notify_fail(med->name() + "ĞèÒªÊ²Ã´Ô­ÁÏÄØ...\n");
+                return notify_fail(med->name() + "éœ€è¦ä»€éº¼åŸæ–™å‘¢...\n");
 
         if (only_list)
         {
                 // show herb
-                write("Á¶ÖÆ" + arg + "ĞèÒªÒÔÏÂÕâĞ©Ò©²Ä£º\n");
+                write("ç…‰åˆ¶" + arg + "éœ€è¦ä»¥ä¸‹é€™äº›è—¥æï¼š\n");
                 ks = keys(herb);
                 for (i = 0; i < sizeof(ks); i++)
                 {
@@ -71,35 +71,35 @@ int main(object me, string arg)
         }
 
         if (me->is_fighting())
-                return notify_fail("´ò¼ÜµÄÊ±ºòÄã»¹ÓĞÏĞ¹¤·òÅäÒ©£¿\n");
+                return notify_fail("æ‰“æ¶çš„æ™‚å€™ä½ é‚„æœ‰é–’å·¥å¤«é…è—¥ï¼Ÿ\n");
 
         if (me->is_busy())
-                return notify_fail("»¹ÊÇÏÈ°ÑÊÖÍ·µÄÊÂÇéÃ¦Íê°É¡£\n");
+                return notify_fail("é‚„æ˜¯å…ˆæŠŠæ‰‹é ­çš„äº‹æƒ…å¿™å®Œå§ã€‚\n");
 
         if( query("no_fight", environment(me)) && 0 )
-                return notify_fail("ÄãÔÚÕâÀïÖÆÒ©Ö»ÅÂÒª´òÈÅµ½±ğÈË¡£\n");
+                return notify_fail("ä½ åœ¨é€™è£¡åˆ¶è—¥åªæ€•è¦æ‰“æ“¾åˆ°åˆ¥äººã€‚\n");
 
         qm=query_temp("handing", me);
         if (! qm)
-                return notify_fail("ÄãµÄÏÈ°ÑÄÜ¹»Ä¥Ò©µÄÑĞ²§ÄÃ(hand)ÔÚÊÖÉÏ²ÅĞĞ¡£\n");
+                return notify_fail("ä½ çš„å…ˆæŠŠèƒ½å¤ ç£¨è—¥çš„ç ”ç µæ‹¿(hand)åœ¨æ‰‹ä¸Šæ‰è¡Œã€‚\n");
 
         if (! qm->can_make_medicine())
-                return notify_fail(qm->name() + "ºÃÏñÎŞ·¨·¢»ÓÑĞ²§µÄ×÷ÓÃ°É¡£\n");
+                return notify_fail(qm->name() + "å¥½åƒç„¡æ³•ç™¼æ®ç ”ç µçš„ä½œç”¨å§ã€‚\n");
 
         if (sizeof(all_inventory(qm)) > 0)
-                return notify_fail("Äã»¹ÊÇÏÈ°Ñ" + qm->name() + "ÀïÃæµÄ¶«Î÷ÄÃ³öÀ´ÔÙËµ¡£\n");
+                return notify_fail("ä½ é‚„æ˜¯å…ˆæŠŠ" + qm->name() + "è£¡é¢çš„æ±è¥¿æ‹¿å‡ºä¾†å†èªªã€‚\n");
 
         if( query("jing", me)<query("max_jing", me)*7/10 )
-                return notify_fail("ÄãÏÖÔÚ¾«ÉñÄÑÒÔ¼¯ÖĞ£¬ÎŞ·¨ÅäÒ©¡£\n");
+                return notify_fail("ä½ ç¾åœ¨ç²¾ç¥é›£ä»¥é›†ä¸­ï¼Œç„¡æ³•é…è—¥ã€‚\n");
 
         ks = keys(req) - ({ "herb", "neili", "jing", "jingli", "min_level", "time" });
 
         // check skills
         for (i = 0; i < sizeof(ks); i++)
                 if (me->query_skillo(ks[i], 1) < req[ks[i]])
-                        return notify_fail("ÄãµÄ" + to_chinese(ks[i]) +
-                                           "Ë®Æ½²»¹»£¬»¹ÎŞ·¨µ÷¼Á" +
-                                           med->name() + "¡£\n");
+                        return notify_fail("ä½ çš„" + to_chinese(ks[i]) +
+                                           "æ°´å¹³ä¸å¤ ï¼Œé‚„ç„¡æ³•èª¿åŠ‘" +
+                                           med->name() + "ã€‚\n");
 
         // check herb
         ks = keys(herb);
@@ -111,35 +111,35 @@ int main(object me, string arg)
                 {
                         if (file_size(HERB(ks[i]) + ".c") < 0)
                         {
-                                write("Ã»ÓĞ(" + ks[i] + ")ÕâÖÖÒ©²Ä°¡£¡"
-                                      "ÔõÃ´»ØÊÂ£¿\n");
+                                write("æ²’æœ‰(" + ks[i] + ")é€™ç¨®è—¥æå•Šï¼"
+                                      "æ€éº¼å›äº‹ï¼Ÿ\n");
                                 return 1;
                         }
-                        return notify_fail("ÄãµãÁËµãÒ©²Ä£¬·¢ÏÖ" +
+                        return notify_fail("ä½ é»äº†é»è—¥æï¼Œç™¼ç¾" +
                                            HERB(ks[i])->name() +
-                                           "µÄ·ÖÁ¿»¹²»¹»¡£\n");
+                                           "çš„åˆ†é‡é‚„ä¸å¤ ã€‚\n");
                 }
                 hlist[i] = hob;
         }
 
         // decrease herb
-        msg = "ÄãÑ¡³ö";
+        msg = "ä½ é¸å‡º";
         for (i = 0; i < sizeof(ks); i++)
         {
-                if (i) msg += "¡¢";
+                if (i) msg += "ã€";
                 msg += chinese_number(herb[ks[i]]) +
                        query("base_unit", hlist[i])+
                        hlist[i]->name();
                 hlist[i]->add_amount(-herb[ks[i]]);
         }
-        msg += "£¬È»ºóĞ¡ĞÄÒíÒíµÄ°ÑËüÃÇ·Åµ½" + qm->name() + "ÀïÃæ£¬¿ªÊ¼ÖÆÒ©¡£\n";
+        msg += "ï¼Œç„¶å¾Œå°å¿ƒç¿¼ç¿¼çš„æŠŠå®ƒå€‘æ”¾åˆ°" + qm->name() + "è£¡é¢ï¼Œé–‹å§‹åˆ¶è—¥ã€‚\n";
         msg = sort_string(msg, 64);
         write(msg);
-        message("vision", me->name() + "¶«ÃşÃş£¬Î÷ÅªÅª£¬²»ÖªµÀÔÚ¸ÉÉ¶¡£\n",
+        message("vision", me->name() + "æ±æ‘¸æ‘¸ï¼Œè¥¿å¼„å¼„ï¼Œä¸çŸ¥é“åœ¨å¹¹å•¥ã€‚\n",
                 environment(me), ({ me }));
         me->start_busy(bind((:call_other, __FILE__, "making" :), me),
                        bind((:call_other, __FILE__, "halt_make" :), me));
-        me->set_short_desc("ÕıÔÚ×¨ĞÄÖÂÖ¾µÄÁ¶ÖÆÒ©Îï¡£");
+        me->set_short_desc("æ­£åœ¨å°ˆå¿ƒè‡´å¿—çš„ç…‰åˆ¶è—¥ç‰©ã€‚");
         set_temp("pending/making", 0, me);
         set_temp("making/medicine", med, me);
         set_temp("making/time", req["time"], me);
@@ -171,7 +171,7 @@ int making(object me)
         qm=query_temp("making/container", me);
         if( qm != query_temp("handing", me) )
         {
-                write("àÅ£¿ÑĞ²§ÄØ...£¿ÎÒµÄÑĞ²§£¡\n");
+                write("å—¯ï¼Ÿç ”ç µå‘¢...ï¼Ÿæˆ‘çš„ç ”ç µï¼\n");
                 return stop_making(me);
         }
 
@@ -179,50 +179,50 @@ int making(object me)
         {
         default:
                 step = 0;
-                msg_me = "ÄãÄÃÆğ°ôèÆ£¬ÂıÂıµÄµ·×Å" + qm->name() + "ÀïÃæµÄÒ©²Ä¡£\n";
-                msg_out = "$NÄÃÆğ°ôèÆ¶£ßÛ¶£ßÛµÄµ·µÃºÜÆğ¾¢¡£\n";
+                msg_me = "ä½ æ‹¿èµ·æ£’æµï¼Œæ…¢æ…¢çš„æ—è‘—" + qm->name() + "è£¡é¢çš„è—¥æã€‚\n";
+                msg_out = "$Næ‹¿èµ·æ£’æµå®â–¡å®â–¡çš„æ—å¾—å¾ˆèµ·å‹ã€‚\n";
                 break;
         case 1:
-                msg_me = "ÆËßêÆËßê£¬Ò©²ÄÑÛ¼û±ä³ÉÁËÒ»¿é¿éĞ¡Ëé¿é¡£\n";
-                msg_out = "$NÃ»ÍêÃ»ÁËµÄµ·¹Ä¡£\n";
+                msg_me = "æ’²å“§æ’²å“§ï¼Œè—¥æçœ¼è¦‹è®Šæˆäº†ä¸€å¡Šå¡Šå°ç¢å¡Šã€‚\n";
+                msg_out = "$Næ²’å®Œæ²’äº†çš„æ—é¼“ã€‚\n";
                 break;
         case 2:
-                msg_me = "ÄãÇáÇáµÄÑĞÄ¥×ÅÒ©²Ä£¬ÈÃËüÔ½À´Ô½Ï¸¡£\n";
-                msg_out = "$N½ôÕÅµÄÄ¥×Å¶«Î÷¡£\n";
+                msg_me = "ä½ è¼•è¼•çš„ç ”ç£¨è‘—è—¥æï¼Œè®“å®ƒè¶Šä¾†è¶Šç´°ã€‚\n";
+                msg_out = "$Nç·Šå¼µçš„ç£¨è‘—æ±è¥¿ã€‚\n";
                 break;
         case 3:
-                msg_me = "Äã½Ó×Å°ÑÄÇĞ©²ĞÁôµÄ´ó¿é¶ùÒ»µãµÄÒ©²Äµ·Ëé¡£\n";
-                msg_out = "$NÍ»È»ÓÖ¶£ßÛ¶£ßÛµÄµ·¸ö²»Í£¡£\n";
+                msg_me = "ä½ æ¥è‘—æŠŠé‚£äº›æ®˜ç•™çš„å¤§å¡Šå…’ä¸€é»çš„è—¥ææ—ç¢ã€‚\n";
+                msg_out = "$Nçªç„¶åˆå®â–¡å®â–¡çš„æ—å€‹ä¸åœã€‚\n";
                 break;
         case 4:
-                msg_me = "ÄãÏ¸Ï¸µÄ½«ËùÓĞµÄÒ©²ÄÄ¥³ÉÁË·ÛÄ©¡£\n";
-                msg_out = "$NÄÃ×Å°ôèÆÄ¥À´Ä¥È¥¡£\n";
+                msg_me = "ä½ ç´°ç´°çš„å°‡æ‰€æœ‰çš„è—¥æç£¨æˆäº†ç²‰æœ«ã€‚\n";
+                msg_out = "$Næ‹¿è‘—æ£’æµç£¨ä¾†ç£¨å»ã€‚\n";
                 break;
         case 5:
-                msg_me = "ÄãÇáÇáµÄºÏÉÏ" + qm->name() +
-                         "£¬Ä¬Ä¬µÄÔËÓÃÄÚÁ¦£¬ºæÅàÀïÃæµÄÒ©²Ä¡£\n";
-                msg_out = "$NºÏÉÏ" + qm->name() + "£¬Ë«ÊÖ±§×Å£¬²»ÖªµÀÔÚ¸ÉÊ²Ã´¡£\n";
+                msg_me = "ä½ è¼•è¼•çš„åˆä¸Š" + qm->name() +
+                         "ï¼Œé»˜é»˜çš„é‹ç”¨å…§åŠ›ï¼Œçƒ˜åŸ¹è£¡é¢çš„è—¥æã€‚\n";
+                msg_out = "$Nåˆä¸Š" + qm->name() + "ï¼Œé›™æ‰‹æŠ±è‘—ï¼Œä¸çŸ¥é“åœ¨å¹¹ä»€éº¼ã€‚\n";
                 break;
         case 6:
                 if( query("jing", me)<req["jing"] )
                 {
-                        write("Äã¾õµÃ¾«Éñ²»¼Ã£¬¿´À´ÄÑÒÔ¼ÌĞøµ÷¼Á¡¸" +
-                              med->name() + "¡¹¡£\n");
+                        write("ä½ è¦ºå¾—ç²¾ç¥ä¸æ¿Ÿï¼Œçœ‹ä¾†é›£ä»¥ç¹¼çºŒèª¿åŠ‘ã€Œ" +
+                              med->name() + "ã€ã€‚\n");
                         return stop_making(me);
                 }
                         
         
                 if( query("neili", me)<req["neili"] )
                 {
-                        write("Äã¾õµÃÄÚÁ¦²»¼Ã£¬¿´À´ÄÑÒÔ¼ÌĞøµ÷¼Á¡¸" +
-                              med->name() + "¡¹¡£\n");
+                        write("ä½ è¦ºå¾—å…§åŠ›ä¸æ¿Ÿï¼Œçœ‹ä¾†é›£ä»¥ç¹¼çºŒèª¿åŠ‘ã€Œ" +
+                              med->name() + "ã€ã€‚\n");
                         return stop_making(me);
                 }
         
                 if( query("jingli", me)<req["jingli"] )
                 {
-                        write("Äã¾õµÃ¾«Á¦²»¼Ã£¬¿´À´ÄÑÒÔ¼ÌĞøµ÷¼Á¡¸" +
-                              med->name() + "¡¹¡£\n");
+                        write("ä½ è¦ºå¾—ç²¾åŠ›ä¸æ¿Ÿï¼Œçœ‹ä¾†é›£ä»¥ç¹¼çºŒèª¿åŠ‘ã€Œ" +
+                              med->name() + "ã€ã€‚\n");
                         return stop_making(me);
                 }
         
@@ -239,21 +239,21 @@ int making(object me)
                         step--;
                 }
 
-                msg_me = random(2) ? "Äã¾õµÃ" + qm->name() + "ÂıÂıµÄÈÈÁËÆğÀ´£¬¸Ğ"
-                                     "¾õµ½ÀïÃæµÄÒ©²ÄËÆºõÒÑ¾­ÈÚ»¯ÁË¡£\n"
-                                   : "Äã²»¶ÏµÄ½«ÄÚÁ¦´«Èë" + qm->name() + "£¬·¢ÈÈ"
-                                     "Ê¹ÀïÃæµÄÒ©²ÄÈÚ»¯ºÏÒ»¡£\n";
-                msg_out = random(2) ? "$NÏñÀÏºÍÉĞÒ»Ñù±ÕÄ¿Ú¤Éñ×øÔÚÄÇÀï¡£\n"
-                                    : "$NÊÖÀïÎÕ×Å" + qm->name() + "Ã»ÍêÃ»ÁËµÄ×ªÀ´×ªÈ¥¡£\n";
+                msg_me = random(2) ? "ä½ è¦ºå¾—" + qm->name() + "æ…¢æ…¢çš„ç†±äº†èµ·ä¾†ï¼Œæ„Ÿ"
+                                     "è¦ºåˆ°è£¡é¢çš„è—¥æä¼¼ä¹å·²ç¶“èåŒ–äº†ã€‚\n"
+                                   : "ä½ ä¸æ–·çš„å°‡å…§åŠ›å‚³å…¥" + qm->name() + "ï¼Œç™¼ç†±"
+                                     "ä½¿è£¡é¢çš„è—¥æèåŒ–åˆä¸€ã€‚\n";
+                msg_out = random(2) ? "$Nåƒè€å’Œå°šä¸€æ¨£é–‰ç›®å†¥ç¥ååœ¨é‚£è£¡ã€‚\n"
+                                    : "$Næ‰‹è£¡æ¡è‘—" + qm->name() + "æ²’å®Œæ²’äº†çš„è½‰ä¾†è½‰å»ã€‚\n";
 
                 break;
         case 7:
-                msg_me = "ÄãÔËÓÃÄÚÁ¦£¬¸ô×Å" + qm->name() + "Ê¹ÀïÃæµÄÒ©²Ä³¹µ×µÄÈÚºÏ¡£\n";
-                msg_out = "$NÃ¼Ã«¶¯ÁË¶¯£¬½Ó×ÅÓÖÏñÀÏºÍÉĞÒ»Ñù±ÕÄ¿Ú¤Éñ×øÔÚÄÇÀï¡£\n";
+                msg_me = "ä½ é‹ç”¨å…§åŠ›ï¼Œéš”è‘—" + qm->name() + "ä½¿è£¡é¢çš„è—¥æå¾¹åº•çš„èåˆã€‚\n";
+                msg_out = "$Nçœ‰æ¯›å‹•äº†å‹•ï¼Œæ¥è‘—åˆåƒè€å’Œå°šä¸€æ¨£é–‰ç›®å†¥ç¥ååœ¨é‚£è£¡ã€‚\n";
                 break;
         case 8:
-                msg_me = "Äã³¤ÓõÁËÒ»¿ÚÆø£¬ÂıÂıµÄ°ÑÊÖÄÃ¿ª£¬´ò¿ªÁË" + qm->name() + "¡£\n";
-                msg_out = "$N³¤ÓõÁËÒ»¿ÚÆø£¬ÂıÂıµÄ°ÑÊÖÄÃ¿ª£¬´ò¿ªÁË" + qm->name() + "¡£\n";
+                msg_me = "ä½ é•·åäº†ä¸€å£æ°£ï¼Œæ…¢æ…¢çš„æŠŠæ‰‹æ‹¿é–‹ï¼Œæ‰“é–‹äº†" + qm->name() + "ã€‚\n";
+                msg_out = "$Né•·åäº†ä¸€å£æ°£ï¼Œæ…¢æ…¢çš„æŠŠæ‰‹æ‹¿é–‹ï¼Œæ‰“é–‹äº†" + qm->name() + "ã€‚\n";
                 break;
         case 9:
                 if ((random(me->query_skill("medical", 1) +
@@ -262,20 +262,20 @@ int making(object me)
                 {
                         ob = new(med);
                         ob->move(qm, 1);
-                        msg_me = HIM "Äã°Ñ¡¸" + ob->name() + HIM "¡¹³É¹¦µÄÖÆºÃÁË£¡\n" NOR;
-                        msg_out = HIM "$N" HIM "×ì½ÇÂ¶³öÒ»Ë¿Î¢Ğ¦¡£\n" NOR;
+                        msg_me = HIM "ä½ æŠŠã€Œ" + ob->name() + HIM "ã€æˆåŠŸçš„åˆ¶å¥½äº†ï¼\n" NOR;
+                        msg_out = HIM "$N" HIM "å˜´è§’éœ²å‡ºä¸€çµ²å¾®ç¬‘ã€‚\n" NOR;
                         me->improve_skill("liandan-shu", me->query_int()*100+100); 
                 }else if( !query("special_skill/lucky", me) || random(2) == 0 )
                 {
-                        msg_me = HIG "ÕæÁîÈË¾ÚÉ¥£¡¾ÓÈ»Ê§°ÜÁË£¬ÕæÊÇ¿ÉÏ§ÁË¡£\n" NOR;
-                        msg_out = HIG "$N" HIG "Ò»Á³¾ÚÉ¥£¬²»"
-                                  "ÖªµÀ·¢ÉúÁËÊ²Ã´µ¹Ã¹ÊÂ¡£\n" NOR;
+                        msg_me = HIG "çœŸä»¤äººæ²®å–ªï¼å±…ç„¶å¤±æ•—äº†ï¼ŒçœŸæ˜¯å¯æƒœäº†ã€‚\n" NOR;
+                        msg_out = HIG "$N" HIG "ä¸€è‡‰æ²®å–ªï¼Œä¸"
+                                  "çŸ¥é“ç™¼ç”Ÿäº†ä»€éº¼å€’éœ‰äº‹ã€‚\n" NOR;
                 }else
                 {
                         ob = new(med);
                         ob->move(qm, 1);
-                        msg_me = HIM "Äã¸Ğ¾õËÆºõÓĞÊ²Ã´µØ·½Ã»ÓĞ×ö¶Ô£¬È»¶øÄãµÄÔËÆøÊµÔÚÌ«ºÃÁË£¡\nÄã°Ñ¡¸" + ob->name() + HIM "¡¹³É¹¦µÄÖÆºÃÁË£¡\n" NOR;
-                        msg_out = HIM "$N" HIM "×ì½ÇÂ¶³öÒ»Ë¿Î¢Ğ¦¡£\n" NOR;
+                        msg_me = HIM "ä½ æ„Ÿè¦ºä¼¼ä¹æœ‰ä»€éº¼åœ°æ–¹æ²’æœ‰åšå°ï¼Œç„¶è€Œä½ çš„é‹æ°£å¯¦åœ¨å¤ªå¥½äº†ï¼\nä½ æŠŠã€Œ" + ob->name() + HIM "ã€æˆåŠŸçš„åˆ¶å¥½äº†ï¼\n" NOR;
+                        msg_out = HIM "$N" HIM "å˜´è§’éœ²å‡ºä¸€çµ²å¾®ç¬‘ã€‚\n" NOR;
                         me->improve_skill("liandan-shu", me->query_int()*10+10); 
                 }
                 break;
@@ -295,8 +295,8 @@ int making(object me)
 
 int halt_make(object me)
 {
-        message_vision("$N°ÑÊÖÖĞµÄÑĞ²§Ò»·­¸ö£¬¶«Î÷"
-                       "È«¶¼µ¹ÁË³öÀ´¡£\n", me);
+        message_vision("$NæŠŠæ‰‹ä¸­çš„ç ”ç µä¸€ç¿»å€‹ï¼Œæ±è¥¿"
+                       "å…¨éƒ½å€’äº†å‡ºä¾†ã€‚\n", me);
         stop_making(me);
         return 1;
 }
@@ -304,11 +304,11 @@ int halt_make(object me)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : make [<Ò©Æ·>] [?]
+æŒ‡ä»¤æ ¼å¼ : make [<è—¥å“>] [?]
 
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄãÁ¶ÖÆÄ³ÑùÒ©Æ·£¬Èç¹ûÃ»ÓĞÖ¸Ã÷Ò©Æ·Ôò»áÁĞ³öµ±Ç°
-Äã»áÁ¶ÖÆµÄÒ©Æ·¡£Èç¹ûÔÚÖ¸Ã÷µÄÒ©Æ·ºóÃæÌí¼ÓÒ»¸ö"?" Ôò»áÁĞ³öÁ¶
-ÖÆÕâÖÖÒ©Æ·ĞèÒªµÄ²ÄÁÏ¡£
+é€™å€‹æŒ‡ä»¤å¯ä»¥è®“ä½ ç…‰åˆ¶æŸæ¨£è—¥å“ï¼Œå¦‚æœæ²’æœ‰æŒ‡æ˜è—¥å“å‰‡æœƒåˆ—å‡ºç•¶å‰
+ä½ æœƒç…‰åˆ¶çš„è—¥å“ã€‚å¦‚æœåœ¨æŒ‡æ˜çš„è—¥å“å¾Œé¢æ·»åŠ ä¸€å€‹"?" å‰‡æœƒåˆ—å‡ºç…‰
+åˆ¶é€™ç¨®è—¥å“éœ€è¦çš„ææ–™ã€‚
 
 HELP );
     return 1;

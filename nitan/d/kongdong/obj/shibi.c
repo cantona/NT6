@@ -9,13 +9,13 @@ int look_item(string arg);
 
 void create()
 {
-	set_name(HIC"Ê¯±Ú"NOR, ({ "shibi" }) );
+	set_name(HIC"çŸ³å£"NOR, ({ "shibi" }) );
         set_weight(200000);
 	if( clonep() )
 		set_default_object(__FILE__);
 	else {
-		set("long", "ÕâÊÇÒ»¿éÊ¯±Ú£¬±íÃæ¹âÁÁÈç¾µ£¬¿Ì×ÅĞ´»ÓÎè×Åµ¶·¨µÄĞ¡ÈË. \n");
-		set("unit", "¿é");
+		set("long", "é€™æ˜¯ä¸€å¡ŠçŸ³å£ï¼Œè¡¨é¢å…‰äº®å¦‚é¡ï¼Œåˆ»è‘—å¯«æ®èˆè‘—åˆ€æ³•çš„å°äºº. \n");
+		set("unit", "å¡Š");
 		set("no_get",1);
 		set("value",1000);
 		set("material", "stone");
@@ -33,11 +33,11 @@ int can_xiu( string arg )
     object me;
     me = this_player();
     if ( me->query("marks/kongdong/dao")!=2)
-      return notify_fail(HIB"ÄãÊÇÔõÃ´½øÀ´µÄ£¿È¥ËÀ°É£¡ºÇºÇ£¬ÏÅ»£ÄãµÄ£¡ÏÂ´Î°´ÕÕ¹æ¾Ø½øÀ´£¡\n"NOR);
+      return notify_fail(HIB"ä½ æ˜¯æ€éº¼é€²ä¾†çš„ï¼Ÿå»æ­»å§ï¼å‘µå‘µï¼Œåš‡å”¬ä½ çš„ï¼ä¸‹æ¬¡æŒ‰ç…§è¦çŸ©é€²ä¾†ï¼\n"NOR);
     if( !me->can_act() || me->is_fighting() )
-        return notify_fail(HIB"ÄãÏÖÔÚÄÄ¶ùÓĞĞÄË¼È¥ÑĞ¾¿Õâ¿ìÊ¯±ÚÉÏµÄ¶«Î÷¡£\n"NOR); 
-    tell_object( me, WHT"Äã¶Ô×ÅÊ¯±Ú£¬Ç±ĞÄµÄÑĞ¾¿ÆğÀ´¡£\n"NOR);
-    me->disable_command("verb", HIB"Ò»ĞÄÆñÄÜ¶şÓÃ£¡? £¡\n"NOR);
+        return notify_fail(HIB"ä½ ç¾åœ¨å“ªå…’æœ‰å¿ƒæ€å»ç ”ç©¶é€™å¿«çŸ³å£ä¸Šçš„æ±è¥¿ã€‚\n"NOR); 
+    tell_object( me, WHT"ä½ å°è‘—çŸ³å£ï¼Œæ½›å¿ƒçš„ç ”ç©¶èµ·ä¾†ã€‚\n"NOR);
+    me->disable_command("verb", HIB"ä¸€å¿ƒè±ˆèƒ½äºŒç”¨ï¼? ï¼\n"NOR);
     call_out("start_canxiu", 10, me );
     return 1;
 }
@@ -50,18 +50,18 @@ void start_canxiu( object me )
     {
         me->enable_path();
         me->receive_damage("gin", 50 );
-        tell_object( me, YEL"ÄãÄªÃûÆäÃî¿´×ÅÊ¯±ÚÉÏÄÇĞ©ÕĞÊ½£¬Ö»¾õĞÄÀï¿Õµ´µ´µÄ¡£\n"NOR);
+        tell_object( me, YEL"ä½ è«åå…¶å¦™çœ‹è‘—çŸ³å£ä¸Šé‚£äº›æ‹›å¼ï¼Œåªè¦ºå¿ƒè£¡ç©ºç›ªç›ªçš„ã€‚\n"NOR);
         return;
     }
     if (!me->query_jibie("huoyan-dao"))
     {           me->enable_path();      
         me->improve_jibie("huoyan-dao", 1);
-            tell_object( me, WHT"Äã¾ÓÈ»ÁìÎò³öÒ»Ì×ÒÔÕÆÓùµ¶µÄÆæÃîµ¶·¨¡£\n"NOR
-                             HIM"ÄãµÄ¡º»ğÑæµ¶¡»½ø²½ÁË£¡\n" NOR);
+            tell_object( me, WHT"ä½ å±…ç„¶é ˜æ‚Ÿå‡ºä¸€å¥—ä»¥æŒå¾¡åˆ€çš„å¥‡å¦™åˆ€æ³•ã€‚\n"NOR
+                             HIM"ä½ çš„ã€ç«ç‡„åˆ€ã€é€²æ­¥äº†ï¼\n" NOR);
              return;
         }
-    tell_object( me, WHT"ÄãÂıÂıµÄ±È»®×ÅÄÇÇ½ÉÏµÄĞ¡ÈË¶ùÍ¼ĞÎ£¬ĞÄÖĞÍ»È»Áé¹âÒ»ÉÁ\n"
-                    WHT"Äã³ÁË¼ÆäÖĞ£¬¾Ã¾Ã²»ĞÑ......\n"NOR);
+    tell_object( me, WHT"ä½ æ…¢æ…¢çš„æ¯”åŠƒè‘—é‚£ç‰†ä¸Šçš„å°äººå…’åœ–å½¢ï¼Œå¿ƒä¸­çªç„¶éˆå…‰ä¸€é–ƒ\n"
+                    WHT"ä½ æ²‰æ€å…¶ä¸­ï¼Œä¹…ä¹…ä¸é†’......\n"NOR);
     me->set_temp("block_msg/all", 1);
     time = 30 ;
     call_out("get_gain", time, me );
@@ -76,27 +76,27 @@ void get_gain( object me )
 
     me->delete_temp("block_msg/all");
 
-    msg = CYN"²»ÖªµÀ¹ıÁËĞí¾Ã£¬Äã²Å´Ó³ÁË¼ÖĞĞÑÀ´£¬·¢ÏÖÕâÃÅ¹¦·òºÜÊÇÆæÃî¡£\n"NOR;
+    msg = CYN"ä¸çŸ¥é“éäº†è¨±ä¹…ï¼Œä½ æ‰å¾æ²‰æ€ä¸­é†’ä¾†ï¼Œç™¼ç¾é€™é–€åŠŸå¤«å¾ˆæ˜¯å¥‡å¦™ã€‚\n"NOR;
     if ( me->query_lingwu_ratio( "huoyan-dao" )<90)
     {       point=0;
-            msg += WHT"Ö»¸Ğµ½Ê¯±ÚÉÏµÄÍ¼°¸ÕæÊÇÊÇĞşÃîÍò·Ö¡£\n" NOR;
+            msg += WHT"åªæ„Ÿåˆ°çŸ³å£ä¸Šçš„åœ–æ¡ˆçœŸæ˜¯æ˜¯ç„å¦™è¬åˆ†ã€‚\n" NOR;
      }
     else if ( me->query_jibie( "huoyan-dao" )>149)
     {       point=0;
-            msg += WHT"Ö»¾õµÃÊ¯±ÚÉÏµÄÒ»ÕĞÒÇÊ½¶¼ÒÑ¾­ÁËÊìÓÚĞÄÁË¡£\n" NOR;
+            msg += WHT"åªè¦ºå¾—çŸ³å£ä¸Šçš„ä¸€æ‹›å„€å¼éƒ½å·²ç¶“äº†ç†Ÿäºå¿ƒäº†ã€‚\n" NOR;
      }     
     else {
     point = me->query_xiuwei("blade")/1500;
-    msg += HIM"Ö»¾õÊ¯±ÚÉÏÕâÌ×ÒÔÕÆÓùµ¶µÄ¹¦·òÕĞÊ½ÆæÃî£¬ÍşÁ¦Ò»¶¨Ò²·ÇÍ¬Ğ¡¿É¡£\n" NOR; 
+    msg += HIM"åªè¦ºçŸ³å£ä¸Šé€™å¥—ä»¥æŒå¾¡åˆ€çš„åŠŸå¤«æ‹›å¼å¥‡å¦™ï¼Œå¨åŠ›ä¸€å®šä¹ŸéåŒå°å¯ã€‚\n" NOR; 
         if( !me->query_jibie("huoyan-dao") )
-            msg += HIM"ÄãÖÕÓÚÑ§»áÁË¾øÊÀµÄµÄµ¶·¨¡£\n"NOR;
+            msg += HIM"ä½ çµ‚äºå­¸æœƒäº†çµ•ä¸–çš„çš„åˆ€æ³•ã€‚\n"NOR;
      
-        msg += HIG "ÄãµÄ¡º»ğÑæµ¶¡»½ø²½ÁË£¡\n" NOR;
+        msg += HIG "ä½ çš„ã€ç«ç‡„åˆ€ã€é€²æ­¥äº†ï¼\n" NOR;
         me->improve_jibie("huoyan-dao", 1);
         me->improve_xiuwei("blade",  point); 
-        msg += HIW"ÄãµÄ¡¼ µ¶ Êõ ¡½µÄĞŞÎªÓĞËùÌá¸ß¡£"NOR;
+        msg += HIW"ä½ çš„â–¡ åˆ€ è¡“ â–¡çš„ä¿®ç‚ºæœ‰æ‰€æé«˜ã€‚"NOR;
         me->improve_xiuwei("zonggang", random(point) );        
-        msg += HIW"ÔÚ¡¼ Îä Ñ§ ¡½ÉÏµÄÔìÒèÒ²¸üÉîÁË¡£\n"NOR;
+        msg += HIW"åœ¨â–¡ æ­¦ å­¸ â–¡ä¸Šçš„é€ è©£ä¹Ÿæ›´æ·±äº†ã€‚\n"NOR;
     }
     
     tell_object( me, msg );

@@ -1,4 +1,4 @@
-//bcailiao.c                ËÄ´¨ÌÆÃÅ¡ªïÚ·¿
+//bcailiao.c                å››å·å”é–€â”€é¢æˆ¿
 
 #include <ansi.h>
 #include <room.h>
@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "´¢ÁÏ·¿");
+        set("short", "å„²æ–™æˆ¿");
         set("long",
-"ÕâÀïÊÇÌÆÃÅ´¢´æÖÆÔì°µÆ÷²ÄÁÏµÄ·¿¼ä¡£¸ÖïÚ£¬ÒøÕë£¬·É»ÈÊ¯£¬ÌúÝðÞ¼\n"
-"£¬Èý²æÀâ£¬ÌúÍè£¬·Éµ¶£¬Ã»Óð¼ý£¬ÁúÐë¶¤µÈµÈµÈµÈ£¬ËùÓÐ¿ÉÒÔËµµÃÉÏÃûµÄ\n"
-"°µÆ÷ºÍÖÆ×÷²ÄÁÏ£¬¶¼¿ÉÒÔÔÚÕâÀïÑ°µ½ËüµÄ×ÙÓ°¡£¶«±±ÃæÊÇÒ»ÌõÇàÊ¯Ð¡Â·¡£\n"
+"é€™è£¡æ˜¯å”é–€å„²å­˜åˆ¶é€ æš—å™¨ææ–™çš„æˆ¿é–“ã€‚é‹¼é¢ï¼ŒéŠ€é‡ï¼Œé£›è—çŸ³ï¼Œéµè’ºè—œ\n"
+"ï¼Œä¸‰å‰æ£±ï¼Œéµä¸¸ï¼Œé£›åˆ€ï¼Œæ²’ç¾½ç®­ï¼Œé¾é ˆé‡˜ç­‰ç­‰ç­‰ç­‰ï¼Œæ‰€æœ‰å¯ä»¥èªªå¾—ä¸Šåçš„\n"
+"æš—å™¨å’Œåˆ¶ä½œææ–™ï¼Œéƒ½å¯ä»¥åœ¨é€™è£¡å°‹åˆ°å®ƒçš„è¹¤å½±ã€‚æ±åŒ—é¢æ˜¯ä¸€æ¢é’çŸ³å°è·¯ã€‚\n"
 );
         set("exits", ([
                 "northeast" : __DIR__"houroad3",

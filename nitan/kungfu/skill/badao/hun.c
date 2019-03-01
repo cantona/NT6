@@ -1,6 +1,6 @@
 #include <ansi.h>
 
-string name() { return HIW "µ¶»ê" NOR; } 
+string name() { return HIW "åˆ€é­‚" NOR; } 
 
 inherit F_SSERVER; 
 
@@ -11,28 +11,28 @@ int perform(object me, object target)
         object weapon;
         
         if( query("neili", me)<8000 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ã€‚\n");
 
         if ((int)me->query_skill("badao", 1) < 1500)
-                return notify_fail("ÄãµÄ°Ôµ¶ÐÞÎª²»¹»¡£\n");
+                return notify_fail("ä½ çš„éœ¸åˆ€ä¿®ç‚ºä¸å¤ ã€‚\n");
 
         if (me->query_skill_mapped("blade") != "badao")
-                return notify_fail("Äã»¹Ã»ÓÐ¼¤·¢°Ôµ¶ÄØ¡£\n");
+                return notify_fail("ä½ é‚„æ²’æœ‰æ¿€ç™¼éœ¸åˆ€å‘¢ã€‚\n");
                 
         if (find_living(query("id", me) + "-daohun"))
-                return notify_fail("ÄãµÄµ¶»ê»¹Ã»ÓÐÏûÊ§£¬ÔÝÊ±²»ÄÜÊ©Õ¹¸ÃÕÐ¡£\n");
+                return notify_fail("ä½ çš„åˆ€é­‚é‚„æ²’æœ‰æ¶ˆå¤±ï¼Œæš«æ™‚ä¸èƒ½æ–½å±•è©²æ‹›ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me)) || 
             query("skill_type", weapon) != "blade" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô£¡\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ï¼\n");
 
         skill = me->query_skill("badao", 1);
         addn("neili", -8000, me);
 
-        message_combatd(HIY "\n$N" HIY "¼ÀÆðÊÖÖÐ" + weapon->name() + HIY "£¬É²ÄÇ¼ä»ª¹âËÄÆð£¬Ò»µÀ"
-                        "°×Ó°´Ó" + weapon->name() + HIY "ÖÐ»Ã»¯¶ø³ö ¡­¡­\n\n" NOR, me);
+        message_combatd(HIY "\n$N" HIY "ç¥­èµ·æ‰‹ä¸­" + weapon->name() + HIY "ï¼Œå‰Žé‚£é–“è¯å…‰å››èµ·ï¼Œä¸€é“"
+                        "ç™½å½±å¾ž" + weapon->name() + HIY "ä¸­å¹»åŒ–è€Œå‡º â€¦â€¦\n\n" NOR, me);
 
-        // ÉèÖÃµ¶»ê
+        // è¨­ç½®åˆ€é­‚
         ob = new("/kungfu/class/misc/daohun");
         ob->init_npc(me);
         ob->move(environment(me));

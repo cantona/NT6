@@ -6,16 +6,16 @@ inherit NECK;
 
 void create()
 {
-        set_name(HIY "ÎŞÎª" NOR, ({ "wu wei", "wu", "wei" }));
+        set_name(HIY "ç„¡ç‚º" NOR, ({ "wu wei", "wu", "wei" }));
         set_weight(500);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "´®");
+                set("unit", "ä¸²");
                 set("value", 200000);
                 set("material", "gold");
                 set("armor_prop/joblv", 1);
-                set("special/desc", HIR "¿ÉÆÆ¸ñÌáÉı×ªÊÀÖ°Òµ¼¼ÄÜ1¼¶¡£" NOR);
+                set("special/desc", HIR "å¯ç ´æ ¼æå‡è½‰ä¸–è·æ¥­æŠ€èƒ½1ç´šã€‚" NOR);
                 set("limit", ([ 
                                         "exp" : 2000000,
                                         "scborn" : 1,

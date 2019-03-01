@@ -5,13 +5,13 @@ inherit F_FOOD;
 #include <ansi.h>;
 void create()
 {
-        set_name(HIG"Ç§²ã¸â"NOR, ({"qianceng gao", "gao"}));
+        set_name(HIG"åƒå±¤ç³•"NOR, ({"qianceng gao", "gao"}));
         set_weight(80);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÇ§²ã¸âÊÇÒ»²ãÃæ·ÛÒ»²ãÃÛÌÇÖíÓÍ×ö³É£¬¸üÓĞ¹ğ»¨ÏãÆø£¬¼ÈËÉÇÒÌğ¡£\n");
-                set("unit", "¿é");
+                set("long", "é€™åƒå±¤ç³•æ˜¯ä¸€å±¤é¢ç²‰ä¸€å±¤èœœç³–è±¬æ²¹åšæˆï¼Œæ›´æœ‰æ¡‚èŠ±é¦™æ°£ï¼Œæ—¢é¬†ä¸”ç”œã€‚\n");
+                set("unit", "å¡Š");
                 set("value", 100);
                 set("food_remaining", 10);
                 set("food_supply", 10);

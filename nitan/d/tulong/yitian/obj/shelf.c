@@ -3,7 +3,7 @@ inherit ITEM;
 
 void create()
 {
-        set_name(RED "ºìÄ¾½£¼Ü" NOR, ({ "shelf"}) );
+        set_name(RED "ç´…æœ¨åŠæ¶" NOR, ({ "shelf"}) );
         set_weight(50000);
         set_max_encumbrance(800000);
         set("no_get", 1);
@@ -11,8 +11,8 @@ void create()
                 set_default_object(__FILE__);
         else {
                 set("prep", "in");
-                set("unit", "Ö»");
-                set("long", RED "Ò»Ö»ÓÉÃû¹óºìÄ¾ËùÖÆ£¬ÓÃÀ´´æ·ÅÅä½£µÄ¼Ü×Ó¡£\n" NOR);
+                set("unit", "åª");
+                set("long", RED "ä¸€åªç”±åè²´ç´…æœ¨æ‰€åˆ¶ï¼Œç”¨ä¾†å­˜æ”¾é…åŠçš„æ¶å­ã€‚\n" NOR);
                 set("value", 1);
         }
 }

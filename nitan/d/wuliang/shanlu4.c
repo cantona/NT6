@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ջ��");
+        set("short", "棧道");
         set("long", @LONG
-����һ�ν���ɽ�¼��ϵ�ջ�����ƹ�һ������������ջ�������
-ջ���������¶�������Ȼɽ�紵����֦ľҡ�죬����һ��������ζ��
-û�С�
+這是一段建在山坡脊上的棧道。雲貴一帶常有這樣的棧道，這段
+棧道不過因坡而建，雖然山風吹拂，枝木搖響，可是一點履險意味都
+沒有。
 LONG );
         set("outdoors", "wuliang");
         set("no_clean_up", 0);

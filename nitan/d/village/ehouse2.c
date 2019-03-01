@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��լ");
+        set("short", "民宅");
         set("long", @LONG
-����һ��ܽ�ʵ�ķ��ӣ���ȻҲ�Ǽ��������������ĳ�����ı�
-����������������Ҫ�úܶࡣǽ�Ϲ��š����°���һЩũ�ߡ�
+這是一間很結實的房子，雖然也是間土坯房，但看的出建造的比
+村裡其他的土坯房要好很多。牆上掛著、地下擺著一些農具。
 LONG );
         set("exits", ([ /* sizeof() == 1 */
             "south" :__DIR__"eroad2",

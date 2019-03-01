@@ -1,4 +1,4 @@
-// yitian.c ÒĞÌì½£¾ö
+// yitian.c å€šå¤©åŠæ±º
 
 #include <ansi.h>
 #include <weapon.h>
@@ -6,7 +6,7 @@
 
 inherit F_SSERVER;
 
-string name() { return "ÒĞÌì½£¾÷"; }
+string name() { return "å€šå¤©åŠè¨£"; }
 
 int perform(object me, object target)
 {
@@ -19,34 +19,34 @@ int perform(object me, object target)
         if( !target ) target = offensive_target(me);
 
         if( !me->is_fighting() )
-                return notify_fail("¡¸ÒĞÌì½£¾ö¡¹Ö»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œå€šå¤©åŠæ±ºã€åªèƒ½åœ¨æˆ°é¬¥ä¸­ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me) )
          || query("skill_type", weapon) != "sword" )
-                return notify_fail("¡¸ÒĞÌì½£¾ö¡¹±ØĞëÓÃ½£²ÅÄÜÊ¹ÓÃ£¡\n");
+                return notify_fail("ã€Œå€šå¤©åŠæ±ºã€å¿…é ˆç”¨åŠæ‰èƒ½ä½¿ç”¨ï¼\n");
 
         if (me->query_skill_mapped("sword") != "yitian-jian")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢ÒĞÌì½£·¨£¬ÔõÃ´Ê¹ÓÃ¡¸ÒĞÌì½£¾ö¡¹°¡£¿\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼å€šå¤©åŠæ³•ï¼Œæ€éº¼ä½¿ç”¨ã€Œå€šå¤©åŠæ±ºã€å•Šï¼Ÿ\n");
 
         if( query("max_neili", me)<1000 )
-                return notify_fail("ÄãµÄÄÚ¹¦ĞŞÎª²»¹»£¡\n");
+                return notify_fail("ä½ çš„å…§åŠŸä¿®ç‚ºä¸å¤ ï¼\n");
         if( query("neili", me)<500 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¡\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼\n");
 
         if( (int)me->query_skill("yitian-jian",1) < 120 )
-                return notify_fail("ÄãµÄÒĞÌì½£·¨»¹²»µ½¼Ò£¬ÎŞ·¨Ê¹ÓÃ¡¸ÒĞÌì½£¾ö¡¹£¡\n");
+                return notify_fail("ä½ çš„å€šå¤©åŠæ³•é‚„ä¸åˆ°å®¶ï¼Œç„¡æ³•ä½¿ç”¨ã€Œå€šå¤©åŠæ±ºã€ï¼\n");
 
         if( !living(target) )
-                return notify_fail("¶Ô·½ÒÑ¾­ÕâÑùÁË£¬²»ĞèÒªÕâÃ´·ÑÁ¦°É£¿£¡\n");
+                return notify_fail("å°æ–¹å·²ç¶“é€™æ¨£äº†ï¼Œä¸éœ€è¦é€™éº¼è²»åŠ›å§ï¼Ÿï¼\n");
 
-        msg =HIY "$N" HIY "³¤Ğ¥Ò»Éù£º\n" HIR "ÎäÁÖÖÁ×ğ¡¢±¦µ¶ÍÀÁú¡£ºÅÁîÌìÏÂ£¬Äª¸Ò²»´Ó¡£ÒĞÌì²»³ö£¬Ë­ÓëÕù·æ? \n"
-             HIR "¶ÙÊ±·çÔÆ±äÉ«£¬" HIR "$N" HIR "ÊÖÖĞÎè³öÂşÌì½£¹â........ \n" NOR;
+        msg =HIY "$N" HIY "é•·å˜¯ä¸€è²ï¼š\n" HIR "æ­¦æ—è‡³å°Šã€å¯¶åˆ€å± é¾ã€‚è™Ÿä»¤å¤©ä¸‹ï¼Œè«æ•¢ä¸å¾ã€‚å€šå¤©ä¸å‡ºï¼Œèª°èˆ‡çˆ­é‹’? \n"
+             HIR "é “æ™‚é¢¨é›²è®Šè‰²ï¼Œ" HIR "$N" HIR "æ‰‹ä¸­èˆå‡ºæ¼«å¤©åŠå…‰........ \n" NOR;
 
         message_combatd(msg, me);
         addn_temp("apply/attack", i, me);
         addn_temp("apply/damage", i*2, me);
         {
-                msg =  HIC "-----°ÎÔÆ¼ûÈÕ!----- \n"NOR;
+                msg =  HIC "-----æ‹”é›²è¦‹æ—¥!----- \n"NOR;
                 message_combatd(msg,me,target);
                 COMBAT_D->do_attack(me,target,weapon,TYPE_REGULAR,msg);
                 if (! me->is_fighting(target))
@@ -54,29 +54,14 @@ int perform(object me, object target)
                         addn_temp("apply/attack", -i, me);
                         addn_temp("apply/damage", -i*2, me);
                         addn("neili", -200, me);
-                        msg =HIY "$N°µÄîÒĞÌì½£¾ö£¬Éí·¨¶¸È»¼Ó¿ì£¡\n" NOR;
+                        msg =HIY "$Næš—å¿µå€šå¤©åŠæ±ºï¼Œèº«æ³•é™¡ç„¶åŠ å¿«ï¼\n" NOR;
                         message_combatd(msg, me);
                         me->start_busy(1+random(2));
                         return 1;
                 }
 
                 if( !living(target) ) return 1;
-                        msg =  BLU "-----ĞÇºÓÔÚÌì!----- \n"NOR;
-                message_combatd(msg,me,target);
-                COMBAT_D->do_attack(me,target,weapon,TYPE_REGULAR,msg);
-
-                if (! me->is_fighting(target))
-                {
-                        addn_temp("apply/attack", -i, me);
-                        addn_temp("apply/damage", -i*2, me);
-                        addn("neili", -200, me);
-                        msg =HIY "$N°µÄîÒĞÌì½£¾ö£¬Éí·¨¶¸È»¼Ó¿ì£¡\n" NOR;
-                        message_combatd(msg, me);
-                        me->start_busy(1+random(2));
-                        return 1;
-                }
-                if( !living(target) ) return 1;
-                msg =  HIY "-----ÒĞÌì²»³ö!----- \n"NOR;
+                        msg =  BLU "-----æ˜Ÿæ²³åœ¨å¤©!----- \n"NOR;
                 message_combatd(msg,me,target);
                 COMBAT_D->do_attack(me,target,weapon,TYPE_REGULAR,msg);
 
@@ -85,13 +70,13 @@ int perform(object me, object target)
                         addn_temp("apply/attack", -i, me);
                         addn_temp("apply/damage", -i*2, me);
                         addn("neili", -200, me);
-                        msg =HIY "$N°µÄîÒĞÌì½£¾ö£¬Éí·¨¶¸È»¼Ó¿ì£¡\n" NOR;
+                        msg =HIY "$Næš—å¿µå€šå¤©åŠæ±ºï¼Œèº«æ³•é™¡ç„¶åŠ å¿«ï¼\n" NOR;
                         message_combatd(msg, me);
                         me->start_busy(1+random(2));
                         return 1;
                 }
                 if( !living(target) ) return 1;
-                msg =  HIR "-----Ë­ÓëÕù·æ!----- \n"NOR;
+                msg =  HIY "-----å€šå¤©ä¸å‡º!----- \n"NOR;
                 message_combatd(msg,me,target);
                 COMBAT_D->do_attack(me,target,weapon,TYPE_REGULAR,msg);
 
@@ -100,20 +85,35 @@ int perform(object me, object target)
                         addn_temp("apply/attack", -i, me);
                         addn_temp("apply/damage", -i*2, me);
                         addn("neili", -200, me);
-                        msg =HIY "$N°µÄîÒĞÌì½£¾ö£¬Éí·¨¶¸È»¼Ó¿ì£¡\n" NOR;
+                        msg =HIY "$Næš—å¿µå€šå¤©åŠæ±ºï¼Œèº«æ³•é™¡ç„¶åŠ å¿«ï¼\n" NOR;
                         message_combatd(msg, me);
                         me->start_busy(1+random(2));
                         return 1;
                 }
                 if( !living(target) ) return 1;
-                msg =  HIM "-----ºÅÁîÌìÏÂ!----- \n"NOR;
+                msg =  HIR "-----èª°èˆ‡çˆ­é‹’!----- \n"NOR;
+                message_combatd(msg,me,target);
+                COMBAT_D->do_attack(me,target,weapon,TYPE_REGULAR,msg);
+
+                if (! me->is_fighting(target))
+                {
+                        addn_temp("apply/attack", -i, me);
+                        addn_temp("apply/damage", -i*2, me);
+                        addn("neili", -200, me);
+                        msg =HIY "$Næš—å¿µå€šå¤©åŠæ±ºï¼Œèº«æ³•é™¡ç„¶åŠ å¿«ï¼\n" NOR;
+                        message_combatd(msg, me);
+                        me->start_busy(1+random(2));
+                        return 1;
+                }
+                if( !living(target) ) return 1;
+                msg =  HIM "-----è™Ÿä»¤å¤©ä¸‹!----- \n"NOR;
                 message_combatd(msg,me,target);
                 COMBAT_D->do_attack(me,target,weapon,TYPE_REGULAR,msg);
         }
         addn_temp("apply/attack", -i, me);
         addn_temp("apply/damage", -i*2, me);
         addn("neili", -200, me);
-        msg =HIY "$N°µÄîÒĞÌì½£¾ö£¬Éí·¨¶¸È»¼Ó¿ì£¡\n" NOR;
+        msg =HIY "$Næš—å¿µå€šå¤©åŠæ±ºï¼Œèº«æ³•é™¡ç„¶åŠ å¿«ï¼\n" NOR;
         message_combatd(msg, me);
         me->start_busy(1+random(2));
         return 1;

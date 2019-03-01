@@ -4,11 +4,11 @@ int do_use(string arg);
 int do_zuan(string arg);
 void create()
 {
-        set("short", "É½¶´¾¡Í·");
+        set("short", "å±±æ´ç›¡é ­");
         set("long", @LONG
-Äã¼ÌĞøÍùÀïÃæ×ßÈ¥£¬ÕâÀïÔ½·¢µØºÚÆğÀ´£¬ÉìÊÖ²»¼ûÎåÖ¸£¬Ğí
-¶àòùòğÔÚÄã¶ú±ß²»Í£µØ¹ÖĞ¦£¬ÕæÁîÈËÃ«¹Çã¤È»£¬ÄãÃ£È»²»ÖªµÀÈç
-ºÎÊÇºÃ¡£ÕâÀïÒÑ¾­É½¶´¾¡Í·ÁË£¬ÎŞÂ·¿É×ß¡£
+ä½ ç¹¼çºŒå¾€è£¡é¢èµ°å»ï¼Œé€™è£¡è¶Šç™¼åœ°é»‘èµ·ä¾†ï¼Œä¼¸æ‰‹ä¸è¦‹äº”æŒ‡ï¼Œè¨±
+å¤šè™è åœ¨ä½ è€³é‚Šä¸åœåœ°æ€ªç¬‘ï¼ŒçœŸä»¤äººæ¯›éª¨æ‚šç„¶ï¼Œä½ èŒ«ç„¶ä¸çŸ¥é“å¦‚
+ä½•æ˜¯å¥½ã€‚é€™è£¡å·²ç¶“å±±æ´ç›¡é ­äº†ï¼Œç„¡è·¯å¯èµ°ã€‚
 LONG
         );
         set("exits", ([
@@ -32,9 +32,9 @@ int do_use(string arg)
         if (!present("fire", me))  return 0;
         if( arg=="fire" ) {
              write(
-             "ÄãµãÈ¼ÁË»ğÕÛ£¬·¢ÏÖÉ½¶´ÓÒ±ßÓĞÒ»µÀÁÑ·ì£¬ËÆºõ¿ÉÒÔ×ê(zuan)³öÈ¥¡£\n"
+             "ä½ é»ç‡ƒäº†ç«æŠ˜ï¼Œç™¼ç¾å±±æ´å³é‚Šæœ‰ä¸€é“è£‚ç¸«ï¼Œä¼¼ä¹å¯ä»¥é‘½(zuan)å‡ºå»ã€‚\n"
              );
-             set_temp("marks/×ê1", 1, this_player());
+             set_temp("marks/é‘½1", 1, this_player());
              return 1;
        }
 }
@@ -42,18 +42,18 @@ int do_zuan(string arg)
 {
         object me;
         me = this_player();
-        if( query_temp("marks/×ê1", me)){
-            message("vision", me->name() + "Í»È»Ò»½Å²È¿Õ£¬ÉíÌåÖ±ÍùÏÂ×¹£¡\n",
+        if( query_temp("marks/é‘½1", me)){
+            message("vision", me->name() + "çªç„¶ä¸€è…³è¸©ç©ºï¼Œèº«é«”ç›´å¾€ä¸‹å¢œï¼\n",
                     environment(me), ({me}) );
             me->move(__DIR__"midao");
             me->unconcious();
-            message("vision", me->name() + "´ÓÉ½¶´ÀïµôÁËÏÂÀ´¡£\n",
+            message("vision", me->name() + "å¾å±±æ´è£¡æ‰äº†ä¸‹ä¾†ã€‚\n",
                     environment(me), ({me}) );
-            delete_temp("marks/×ê1", this_player());
+            delete_temp("marks/é‘½1", this_player());
             return 1;
         }
         else {
-            write("ÄãÏëÍùÄÄ¶ù×ê?!\n");
+            write("ä½ æƒ³å¾€å“ªå…’é‘½?!\n");
             return 1;
         }
 }

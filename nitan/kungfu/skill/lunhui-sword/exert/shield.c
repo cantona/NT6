@@ -10,16 +10,16 @@ int exert(object me, object target)
         int skill;
 
         if (target != me)
-                return notify_fail("ÄãÖ»ÄÜÓÃÁùµÀÂÖ»Ø½£À´ÌáÉý×Ô¼ºµÄÕ½¶·Á¦¡£\n");
+                return notify_fail("ä½ åªèƒ½ç”¨å…­é“è¼ªå›žåŠä¾†æå‡è‡ªå·±çš„æˆ°é¬¥åŠ›ã€‚\n");
 
         if( query_temp("shield", me) )
-                return notify_fail("ÄãÒÑ¾­ÔÚÔË¹¦ÖÐÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“åœ¨é‹åŠŸä¸­äº†ã€‚\n");
 
         skill = me->query_skill("force");
 
-        message_combatd(HIR "$N" HIR "°µÔËÁùµÀÂÖ»ØÕæÆø£¬Ðëô§£¬Ö»¼ûÌì±ßÔÆ¿ªÎíÈ¥£¬Á÷¹âÒç²Ê£¬Ò»°ÑÆø½£±¼Éä¶ø³ö£¬Î§ÈÆÔÚ$N" HIR "ËÄÖÜ¡£\n" NOR, me);
+        message_combatd(HIR "$N" HIR "æš—é‹å…­é“è¼ªå›žçœŸæ°£ï¼Œé ˆè‡¾ï¼Œåªè¦‹å¤©é‚Šé›²é–‹éœ§åŽ»ï¼Œæµå…‰æº¢å½©ï¼Œä¸€æŠŠæ°£åŠå¥”å°„è€Œå‡ºï¼Œåœç¹žåœ¨$N" HIR "å››å‘¨ã€‚\n" NOR, me);
 
-        // ´òÍ¨BREAKUPºóµÄÐ§¹ûÔö¼Ó10%
+        // æ‰“é€šBREAKUPå¾Œçš„æ•ˆæžœå¢žåŠ 10%
         if( query("breakup", me))skill=skill+skill*1/10;
                 
         addn_temp("apply/armor", skill/2, me);
@@ -44,7 +44,7 @@ void remove_effect(object me, int amount)
                 addn_temp("apply/parry", -(amount/10), me);
 
                 delete_temp("shield", me);
-                tell_object(me, HIW "ÄãµÄÁùµÀÂÖ»Ø½£¡¸Éñ½£»¤Ìå¡¹ÔËÐÐÍê±Ï£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï¡£\n" NOR);
+                tell_object(me, HIW "ä½ çš„å…­é“è¼ªå›žåŠã€Œç¥žåŠè­·é«”ã€é‹è¡Œå®Œç•¢ï¼Œå°‡å…§åŠ›æ”¶å›žä¸¹ç”°ã€‚\n" NOR);
         }
 
 

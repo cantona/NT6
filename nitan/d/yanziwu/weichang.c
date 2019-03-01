@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��Χ��");
+        set("short", "綠圍場");
         set("long", @LONG
-������Ľ������Χ��֮����Χ�����󣬵������ï��С�޺ܶࡣ��
-��������������ȥ�ĺ�������ʱ�ǰ����Ȥ�������������ǵļ�ͷ��
-�����
+這裡是慕容世家圍獵之處。圍場不大，但林深草茂，小獸很多。秋
+來春往，南來北去的候鳥正當時令，前來湊趣，來考究主人們的箭頭是
+否鋒銳。
 LONG );
         set("outdoors", "yanziwu");
         set("exits", ([

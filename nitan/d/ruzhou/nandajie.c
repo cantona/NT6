@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�ϴ��");
+        set("short", "南大街");
         set("long", @LONG
-���������ݳǵ��ϴ�֡���ȥ�����ݳ����ģ������Ǻ���ׯ������
-Ҳû��ʲô���̣����������ݵ��ϳ��š�
+這裡是汝州城的南大街。北去是汝州城中心，東面是紅娘莊，西面
+也沒有什麼店舖，南面是汝州的南城門。
 LONG
         );
 

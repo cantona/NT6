@@ -10,9 +10,9 @@ inherit F_QUESTER;
 #include "taishan.h"
 void create()
 {
-        set_name("ÌìÃÅµÀÈË", ({ "tianmen daoren", "daoren", "tianmen" }) );
-        set("gender", "ÄĞĞÔ");
-        set("title", HIG"Ì©É½ÅÉµÚÊ®Èı´úÕÆÃÅ"NOR);
+        set_name("å¤©é–€é“äºº", ({ "tianmen daoren", "daoren", "tianmen" }) );
+        set("gender", "ç”·æ€§");
+        set("title", HIG"æ³°å±±æ´¾ç¬¬åä¸‰ä»£æŒé–€"NOR);
         set("class", "taoist");
         set("age", 45);
         set("attitude", "peaceful");
@@ -56,7 +56,7 @@ void create()
                 (: exert_function, "recover" :),
         }) );
 
-        create_family("Ì©É½ÅÉ", 13, "ÕÆÃÅ");
+        create_family("æ³°å±±æ´¾", 13, "æŒé–€");
         set("master_ob", 5); 
         setup();
 
@@ -83,8 +83,8 @@ void greeting(object ob)
         string family;
 
         family=query("family/family_name", ob);
-        if(family!="Ì©É½ÅÉ")
-                command("say "+RANK_D->query_respect(ob)+"ÈôÊÇ¼ÓÈëÎÒÌ©É½ÅÉ£¬±ØÄÜ¹â´ó±¾ÅÉ£¡");
+        if(family!="æ³°å±±æ´¾")
+                command("say "+RANK_D->query_respect(ob)+"è‹¥æ˜¯åŠ å…¥æˆ‘æ³°å±±æ´¾ï¼Œå¿…èƒ½å…‰å¤§æœ¬æ´¾ï¼");
         else command("nod"+query("id", ob));
 }
 
@@ -94,13 +94,13 @@ void attempt_apprentice(object ob)
                 return;
 
         if( query("shen", ob)<50000 )
-        command("say ÎÒÌ©É½ÅÉµÜ×Ó¶¼ÊÇĞĞÏÀÕÌÒåÖ®±²£¬"+RANK_D->query_respect(ob)+"»¹×öµÄ²»¹»°¡¡£");
+        command("say æˆ‘æ³°å±±æ´¾å¼Ÿå­éƒ½æ˜¯è¡Œä¿ ä»—ç¾©ä¹‹è¼©ï¼Œ"+RANK_D->query_respect(ob)+"é‚„åšçš„ä¸å¤ å•Šã€‚");
         else
                 if((int)ob->query_skill("panshi-shengong",1) < 100)
-                        command("say ÄãµÄ±¾ÃÅĞÄ·¨»¹µÃ¶à¶àÁ·Ï°¡£");
+                        command("say ä½ çš„æœ¬é–€å¿ƒæ³•é‚„å¾—å¤šå¤šç·´ç¿’ã€‚");
                 else
                 {
-                        command("say ºÃ°¡£¬ÄÇÎÒ¾ÍÊÕÏÂÄã°É¡£");
+                        command("say å¥½å•Šï¼Œé‚£æˆ‘å°±æ”¶ä¸‹ä½ å§ã€‚");
                         command("recruit "+query("id", ob));
                 }
 }

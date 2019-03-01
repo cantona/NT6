@@ -1,44 +1,44 @@
 // This program is a part of NITAN MudLIB
-// yinlong-shou.c ÒøÁúÊÖ
+// yinlong-shou.c éŠ€é¾æ‰‹
 
 inherit SKILL;
 
 mapping *action = ({
-([      "action" : "$NµÄÉíĞĞÆ®ºö²»¶¨£¬ÈçÍ¬»ÃÓ°Ò»°ã£¬ÉÁµ½ÁË$nµÄÉíºó£¬Ò»ÕĞ¡¸ÎŞÓ°ÎŞ×Ù¡¹ÅÄÏò$nµÄ$l",
+([      "action" : "$Nçš„èº«è¡Œé£„å¿½ä¸å®šï¼Œå¦‚åŒå¹»å½±ä¸€èˆ¬ï¼Œé–ƒåˆ°äº†$nçš„èº«å¾Œï¼Œä¸€æ‹›ã€Œç„¡å½±ç„¡è¹¤ã€æ‹å‘$nçš„$l",
         "force" : 130,
         "dodge" : -20,
         "parry" : -20,
         "damage" : 100,
         "lvl" : 0,
-        "skill_name" : "ÎŞÓ°ÎŞ×Ù",
-        "damage_type" : "ÄÚÉË"
+        "skill_name" : "ç„¡å½±ç„¡è¹¤",
+        "damage_type" : "å…§å‚·"
 ]),
-([      "action" : "$NË«ÕÆÈçÍ¬ÁúÉñÒ»°ã£¬ÕÀ·Å¿ªÀ´£¬ÕıÊÇÒ»ÕĞ¡¸ÁúÉñÌ½Ó°¡¹£¬»÷Ïò$nµÄ$l",
+([      "action" : "$Né›™æŒå¦‚åŒé¾ç¥ä¸€èˆ¬ï¼Œç¶»æ”¾é–‹ä¾†ï¼Œæ­£æ˜¯ä¸€æ‹›ã€Œé¾ç¥æ¢å½±ã€ï¼Œæ“Šå‘$nçš„$l",
         "force" : 150,
         "dodge" : -10,
         "parry" : -10,
         "damage" : 130,
         "lvl" : 20,
-        "skill_name" : "ÁúÉñÌ½Ó°",
-        "damage_type" : "ÄÚÉË"
+        "skill_name" : "é¾ç¥æ¢å½±",
+        "damage_type" : "å…§å‚·"
 ]),
-([      "action" : "$NÉíĞĞÈÆ×Å$n¼±ËÙ×ª¶¯£¬ºöÈ»³öÕÆ£¬ÕıÊÇÒ»ÕĞ¡¸·ÉÌì»ÃÕÆ¡¹´òÏò$nµÄ$l",
+([      "action" : "$Nèº«è¡Œç¹è‘—$næ€¥é€Ÿè½‰å‹•ï¼Œå¿½ç„¶å‡ºæŒï¼Œæ­£æ˜¯ä¸€æ‹›ã€Œé£›å¤©å¹»æŒã€æ‰“å‘$nçš„$l",
         "force" : 150,
         "dodge" : -30,
         "parry" : -30,
         "damage" : 135,
         "lvl" : 30,
-        "skill_name" : "·ÉÌì»ÃÕÆ",
-        "damage_type" : "ÄÚÉË"
+        "skill_name" : "é£›å¤©å¹»æŒ",
+        "damage_type" : "å…§å‚·"
 ]),
-([      "action" : "$NË«ÕÆÉÏÏÂ·¬·É£¬ÈçÍ¬»¯³ÉÁËÇ§Íò¸öÊÖÕÆ£¬ÕıÊÇÒ»ÕĞ¡¸¾ÅÌìÇ§»Ã¡¹ÅÄÏò$nµÄ$l´¦",
+([      "action" : "$Né›™æŒä¸Šä¸‹ç•ªé£›ï¼Œå¦‚åŒåŒ–æˆäº†åƒè¬å€‹æ‰‹æŒï¼Œæ­£æ˜¯ä¸€æ‹›ã€Œä¹å¤©åƒå¹»ã€æ‹å‘$nçš„$lè™•",
         "force" : 250,
         "dodge" : -20,
         "parry" : -20,
         "damage" : 110,
         "lvl" : 40,
-        "skill_name" : "¾ÅÌìÇ§»Ã",
-        "damage_type" : "ÄÚÉË"
+        "skill_name" : "ä¹å¤©åƒå¹»",
+        "damage_type" : "å…§å‚·"
 ]),
 });
 
@@ -47,9 +47,9 @@ int valid_enable(string usage) { return usage=="strike" || usage=="parry"; }
 int valid_learn(object me)
 {
         if( query_temp("weapon", me) || query_temp("secondary_weapon", me) )
-                return notify_fail("Á·ÒøÁúÊÖ±ØĞë¿ÕÊÖ¡£\n");
+                return notify_fail("ç·´éŠ€é¾æ‰‹å¿…é ˆç©ºæ‰‹ã€‚\n");
         if( query("max_neili", me)<50 )
-                return notify_fail("ÄãµÄÄÚÁ¦Ì«Èõ£¬ÎŞ·¨Á·ÒøÁúÊÖ¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›å¤ªå¼±ï¼Œç„¡æ³•ç·´éŠ€é¾æ‰‹ã€‚\n");
         return 1;
 }
 
@@ -65,9 +65,9 @@ mapping query_action(object me, object weapon)
 int practice_skill(object me)
 {
         if( query("qi", me)<30 )
-                return notify_fail("ÄãµÄÌåÁ¦Ì«µÍÁË¡£\n");
+                return notify_fail("ä½ çš„é«”åŠ›å¤ªä½äº†ã€‚\n");
         if( query("neili", me)<20 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»Á·ÒøÁúÊÖ¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ç·´éŠ€é¾æ‰‹ã€‚\n");
         me->receive_damage("qi", 25);
         addn("neili", -10, me);
         return 1;

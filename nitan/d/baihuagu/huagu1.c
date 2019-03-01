@@ -5,10 +5,10 @@
 inherit ROOM;
 void create()
 {
-        set("short", MAG"°Ù»¨¹È"NOR);
+        set("short", MAG"ç™¾èŠ±è°·"NOR);
         set("long", 
-HIR"À´µ½´Ë´¦£¬ÄãÍ»È»ÑÛÇ°Ò»ÁÁ£¬µ«¾õÇàÇà´ä¹È£¬µã×º×Å»òºì»ò×Ï£¬
-»ò»Æ»ò°×µÄÏÊ»¨£¬¾¹ÊÇ»»ÁËÒ»¸öÊÀ½ç¡£µÀÅÔÓÐÒ»ÖêÌÒÊ÷£¬¿ªµÃÕýÑÞ¡£\n"NOR);  
+HIR"ä¾†åˆ°æ­¤è™•ï¼Œä½ çªç„¶çœ¼å‰ä¸€äº®ï¼Œä½†è¦ºé’é’ç¿ è°·ï¼Œé»žç¶´è‘—æˆ–ç´…æˆ–ç´«ï¼Œ
+æˆ–é»ƒæˆ–ç™½çš„é®®èŠ±ï¼Œç«Ÿæ˜¯æ›äº†ä¸€å€‹ä¸–ç•Œã€‚é“æ—æœ‰ä¸€æ ªæ¡ƒæ¨¹ï¼Œé–‹å¾—æ­£è‰·ã€‚\n"NOR);  
         set("outdoors", "baihuagu");
         set("exits", ([
                 "enter": __DIR__"huagu2",
@@ -36,7 +36,7 @@ int dropleaf(object me)
         if(me)
         if(environment(me) == this_object())
         {
-                tell_object(me,HIM"Ò»Ö¦ÌÒ»¨Ëæ·çÆ®ÏÂ£®£®£®£®\n"NOR);
+                tell_object(me,HIM"ä¸€æžæ¡ƒèŠ±éš¨é¢¨é£„ä¸‹ï¼Žï¼Žï¼Žï¼Ž\n"NOR);
                 leaf = new(__DIR__"obj/leaf");
                 leaf->move(this_object());      
         }

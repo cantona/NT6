@@ -1,13 +1,13 @@
-// chongling-jian perform hebi Ë«½£ºÏèµ
+// chongling-jian perform hebi é›™åŠåˆç’§
 
 #include <ansi.h>
-#define ME  "ÄãÏÖÔÚ²»ÄÜÊ¹ÓÃË«½£ºÏèµ¡£\n"
-#define TAR  "¶Ô·½ÏÖÔÚ²»ÄÜÊ¹ÓÃË«½£ºÏèµ¡£\n"
+#define ME  "ä½ ç¾åœ¨ä¸èƒ½ä½¿ç”¨é›™åŠåˆç’§ã€‚\n"
+#define TAR  "å°æ–¹ç¾åœ¨ä¸èƒ½ä½¿ç”¨é›™åŠåˆç’§ã€‚\n"
 
 int check_fight(object me, object target, int amount);
 private int remove_effect(object me, object target, int amount);
 
-string name() { return "Ë«½£ºÍèµ"; }
+string name() { return "é›™åŠå’Œç’§"; }
 
 int perform(object me, object target)
 {
@@ -16,7 +16,7 @@ int perform(object me, object target)
         object wep1, wep2;
         wep1=query_temp("weapon", me);
 
-        if (! target || target == me) return notify_fail("ÄãÒªºÍË­Ë«½£ºÏèµ£¿\n");
+        if (! target || target == me) return notify_fail("ä½ è¦å’Œèª°é›™åŠåˆç’§ï¼Ÿ\n");
 
         if( query_temp("hebi", me))return notify_fail(ME);
         if( query_temp("hebi", target))return notify_fail(TAR);
@@ -24,8 +24,8 @@ int perform(object me, object target)
         if( query("jing", target)<200)return notify_fail(TAR);
         if( query("neili", me)<1000)return notify_fail(ME);
         if( query("neili", target)<1000)return notify_fail(TAR);
-        if (! me->is_fighting()) return notify_fail("Ë«½£ºÏèµÖ»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ¡£\n");
-        if (me->is_fighting(target)) return notify_fail("ÄãÕıÔÚºÍ¶Ô·½´ò¼Ü£¬Ê¹ÓÃË«½£ºÏèµ¸ÉÊ²Ã´£¿\n");
+        if (! me->is_fighting()) return notify_fail("é›™åŠåˆç’§åªèƒ½åœ¨æˆ°é¬¥ä¸­ä½¿ç”¨ã€‚\n");
+        if (me->is_fighting(target)) return notify_fail("ä½ æ­£åœ¨å’Œå°æ–¹æ‰“æ¶ï¼Œä½¿ç”¨é›™åŠåˆç’§å¹¹ä»€éº¼ï¼Ÿ\n");
 
         if ((int)me->query_skill("liangyi-dao", 1) < 140)
                 return notify_fail(ME);
@@ -38,7 +38,7 @@ int perform(object me, object target)
         enemy = me->query_enemy();
         i = sizeof(enemy);
         while (i--) if (target->is_fighting(enemy[i])) break;
-        if (i < 0) return notify_fail(target->name() + "²¢Ã»ÓĞºÍÄãµÄ¶ÔÊÖÔÚ½»Õ½¡£\n");
+        if (i < 0) return notify_fail(target->name() + "ä¸¦æ²’æœ‰å’Œä½ çš„å°æ‰‹åœ¨äº¤æˆ°ã€‚\n");
 
         if ((int)target->query_skill("chongling-jian", 1) < 140)
                 return notify_fail(TAR);
@@ -50,7 +50,7 @@ int perform(object me, object target)
         ||  target->query_skill_mapped("sword") != "chongling-jian")
                 return notify_fail(TAR);
 
-        message_combatd(HIY "\n$N·´ÊÖÎèÁË¸ö½£»¨£¬$nµÇÊ±»áÒâ£¬Á½ÈËÍ¬Ê±´ÓÁ½²àÆÛÉÏ£¬ÍşÁ¦¶ÙÊ±¶¸Ôö¡£\n" NOR, me, target);
+        message_combatd(HIY "\n$Nåæ‰‹èˆäº†å€‹åŠèŠ±ï¼Œ$nç™»æ™‚æœƒæ„ï¼Œå…©äººåŒæ™‚å¾å…©å´æ¬ºä¸Šï¼Œå¨åŠ›é “æ™‚é™¡å¢ã€‚\n" NOR, me, target);
         set_temp("hebi", 1, me);
         set_temp("hebi", 1, target);
         me->receive_damage("jing", 100);
@@ -71,7 +71,7 @@ int perform(object me, object target)
 
         if( query("couple/id", me) == query("id", target) )
         {
-                message_combatd(HIY "\n$NºÍ$n¸÷×Ô»áÒâ£¬$nÒ»¸ö²àÉí£¬$NÊÖÖĞ$w" + HIY "Ñ¸½İÎŞ±ÈµØ´ÌÉÏÒ»½£¡£\n" NOR, me, target);
+                message_combatd(HIY "\n$Nå’Œ$nå„è‡ªæœƒæ„ï¼Œ$nä¸€å€‹å´èº«ï¼Œ$Næ‰‹ä¸­$w" + HIY "è¿…æ·ç„¡æ¯”åœ°åˆºä¸Šä¸€åŠã€‚\n" NOR, me, target);
                 COMBAT_D->do_attack(me,enemy[i],query_temp("weapon", me),1);
                 target->start_busy(random(6));
         }
@@ -99,7 +99,7 @@ int check_fight(object me, object target, int amount)
 private int remove_effect(object me, object target, int amount)
 {
         if (living(me) && ! me->is_ghost() && living(target) && ! target->is_ghost())
-        message_combatd(HIY "\n$NºÍ$nË«½£ºÏèµÓÃÍê£¬ÁéÏ¬»¥Í¨£¬ÏàÊÓÒ»Ğ¦£¬¸÷×ÔÊÕÕĞ¡£\n" NOR, me, target);
+        message_combatd(HIY "\n$Nå’Œ$né›™åŠåˆç’§ç”¨å®Œï¼ŒéˆçŠ€äº’é€šï¼Œç›¸è¦–ä¸€ç¬‘ï¼Œå„è‡ªæ”¶æ‹›ã€‚\n" NOR, me, target);
 
         addn_temp("apply/dex", -amount, me);
         addn_temp("apply/str", -amount, me);

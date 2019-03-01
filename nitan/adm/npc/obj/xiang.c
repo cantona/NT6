@@ -41,18 +41,18 @@ mixed *store_signs()
 
 void create()
 {
-        set_name(HIM "¾Û±¦Ïä" NOR, ({ "ju baoxiang", "baoxiang", "xiang" }));
+        set_name(HIM "èšå¯¶ç®±" NOR, ({ "ju baoxiang", "baoxiang", "xiang" }));
         set_weight(1000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", sort_string(HIW "Ò»¸öËÄÖÜ±ßÔµ»·ÈÆ×ÅÉñÃØ¹â»·µÄÏä×Ó£¬¾İËµ"
-                                "¿ÉÒÔ½«¶«Î÷ÎŞÏŞÖÆµÄ´æ£¨store£©½øÈ¥,²»»á"
-                                "¶ªÊ§£¬ÇÒÎŞÂÛÊ²Ã´Ê±ºò¶¼¿ÉÒÔÈ¡£¨take£©³ö"
-                                "À´£¬»¹¿ÉÒÔÊ¹ÓÃÃÜÂëËø£¨lock£©·ÀµÁ¡£" NOR, 38, 0));
+                set("long", sort_string(HIW "ä¸€å€‹å››å‘¨é‚Šç·£ç’°ç¹è‘—ç¥ç§˜å…‰ç’°çš„ç®±å­ï¼Œæ“šèªª"
+                                "å¯ä»¥å°‡æ±è¥¿ç„¡é™åˆ¶çš„å­˜ï¼ˆstoreï¼‰é€²å»,ä¸æœƒ"
+                                "ä¸Ÿå¤±ï¼Œä¸”ç„¡è«–ä»€éº¼æ™‚å€™éƒ½å¯ä»¥å–ï¼ˆtakeï¼‰å‡º"
+                                "ä¾†ï¼Œé‚„å¯ä»¥ä½¿ç”¨å¯†ç¢¼é–ï¼ˆlockï¼‰é˜²ç›œã€‚" NOR, 38, 0));
 
                 set("value", 100);
-                set("unit", "¸ö");
+                set("unit", "å€‹");
         }
         set("no_get", 1);
         setup();
@@ -66,10 +66,10 @@ string extra_long()
         if (query("open") || wizardp(this_player()))
         {
                 if (! store || sizeof(store) < 1)
-                        return "Ä¿Ç°Ã»ÓĞ´æ·ÅÈÎºÎÎïÆ·ÔÚÏä×ÓÀï¡£\n";
+                        return "ç›®å‰æ²’æœ‰å­˜æ”¾ä»»ä½•ç‰©å“åœ¨ç®±å­è£¡ã€‚\n";
 
-                msg = HIW "\nÄ¿Ç°Äã´æ·ÅµÄÎïÆ·ÓĞ£º\n±àºÅ  ÎïÆ·                                      ÊıÁ¿\n"
-                          "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n" NOR;
+                msg = HIW "\nç›®å‰ä½ å­˜æ”¾çš„ç‰©å“æœ‰ï¼š\nç·¨è™Ÿ  ç‰©å“                                      æ•¸é‡\n"
+                          "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n" NOR;
 
                 for (int i = 0; i < sizeof(store); i++)
                 {
@@ -81,7 +81,7 @@ string extra_long()
                         if (store[i]["amount"] == 0)
                                 store[i] = 0;
                 }
-                msg += HIW "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n" NOR;
+                msg += HIW "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n" NOR;
 
                 store -= ({ 0 });
         if (sizeof(data_dbase))
@@ -92,11 +92,11 @@ string extra_long()
         } else
         {
                 if (query("closed"))
-                        msg = HIW "Ïä×ÓÄ¿Ç°ÊÇ¹Ø×ÅµÄ£¬ËÆºõ»¹ÉÏÁËÃÜÂëËø£¬ÄãĞèÒªÏÈ´ò"
-                        "¿ª£¨open£©Ïä×Ó²Å¿ÉÒÔ²é¿´£¨look£©Ïä×ÓÀïµÄÎïÆ·¡£" NOR;
+                        msg = HIW "ç®±å­ç›®å‰æ˜¯é—œè‘—çš„ï¼Œä¼¼ä¹é‚„ä¸Šäº†å¯†ç¢¼é–ï¼Œä½ éœ€è¦å…ˆæ‰“"
+                        "é–‹ï¼ˆopenï¼‰ç®±å­æ‰å¯ä»¥æŸ¥çœ‹ï¼ˆlookï¼‰ç®±å­è£¡çš„ç‰©å“ã€‚" NOR;
                 else
-                        msg = HIW "Ïä×ÓÄ¿Ç°ÊÇ¹Ø×ÅµÄ£¬²»¹ıÃ»ÓĞÉÏÃÜÂëËø£¬ÄãĞèÒªÏÈ´ò"
-                        "¿ª£¨open£©Ïä×Ó²Å¿ÉÒÔ²é¿´£¨look£©Ïä×ÓÀïµÄÎïÆ·¡£" NOR;
+                        msg = HIW "ç®±å­ç›®å‰æ˜¯é—œè‘—çš„ï¼Œä¸éæ²’æœ‰ä¸Šå¯†ç¢¼é–ï¼Œä½ éœ€è¦å…ˆæ‰“"
+                        "é–‹ï¼ˆopenï¼‰ç®±å­æ‰å¯ä»¥æŸ¥çœ‹ï¼ˆlookï¼‰ç®±å­è£¡çš„ç‰©å“ã€‚" NOR;
 
                 return sort_string(msg, 38, 0);
         }
@@ -134,11 +134,11 @@ int do_open(string arg)
         me = this_player();
 
         if (! id(arg))
-                return notify_fail("ÄãÒªÏë´ò¿ªÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦æƒ³æ‰“é–‹ä»€éº¼ï¼Ÿ\n");
 
         if( query("closed") && query("owner", this_object()) != me )
         {
-                write("Ïä×ÓÒÑ¾­ÉÏÁË°µËø£¬ÇëÊäÈë¿ªÏäÃÜÂë£º");
+                write("ç®±å­å·²ç¶“ä¸Šäº†æš—é–ï¼Œè«‹è¼¸å…¥é–‹ç®±å¯†ç¢¼ï¼š");
                 input_to((: get_passwd :), me);
                 return 1;
         }
@@ -146,7 +146,7 @@ int do_open(string arg)
         set("open", 1);
         set("closed", 0);
         save();
-        write(HIG "Ïä×ÓÒÑ¾­³É¹¦´ò¿ª£¬¿ÉÊäÈë look ²é¿´Ïä×ÓÀï×°µÄ¶«Î÷£¡\n" NOR);
+        write(HIG "ç®±å­å·²ç¶“æˆåŠŸæ‰“é–‹ï¼Œå¯è¼¸å…¥ look æŸ¥çœ‹ç®±å­è£¡è£çš„æ±è¥¿ï¼\n" NOR);
         return 1;
 }
 
@@ -157,11 +157,11 @@ int get_passwd(string pass, object ob)
                 set("open", 1);
                 set("closed", 0);
                 save();
-                write(HIG "Ïä×ÓÒÑ¾­³É¹¦½âËø£¬¿ÉÊäÈë look ²é¿´Ïä×ÓÀï×°µÄ¶«Î÷£¡\n" NOR);
+                write(HIG "ç®±å­å·²ç¶“æˆåŠŸè§£é–ï¼Œå¯è¼¸å…¥ look æŸ¥çœ‹ç®±å­è£¡è£çš„æ±è¥¿ï¼\n" NOR);
                 return 1;
         } else
         {
-                write("ÃÜÂë´íÎó£¬ÇëºË¶ÔÃÜÂëºóÔÙÊÔ£¡\n");
+                write("å¯†ç¢¼éŒ¯èª¤ï¼Œè«‹æ ¸å°å¯†ç¢¼å¾Œå†è©¦ï¼\n");
                 return 1;
         }
 }
@@ -175,10 +175,10 @@ int do_lock(string arg)
         me = this_player();
 
         if (! id(arg))
-                return notify_fail("ÄãÒªÏëËøÉÏÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦æƒ³é–ä¸Šä»€éº¼ï¼Ÿ\n");
 
         if (query("closed") && ! query("open"))
-                return notify_fail("Ïä×ÓÒÑ¾­ÉÏÁË°µËø¡£\n");
+                return notify_fail("ç®±å­å·²ç¶“ä¸Šäº†æš—é–ã€‚\n");
 
         set("open", 0);
 
@@ -188,11 +188,11 @@ int do_lock(string arg)
                         set("closed", 1);
                 save();
 
-                write("Äã°ÑÏä×ÓºÏÉÏ" + (query("passwd") ? "²¢¼ÓÉÏÁË°µËø£¡" : "¡£") + "\n");
+                write("ä½ æŠŠç®±å­åˆä¸Š" + (query("passwd") ? "ä¸¦åŠ ä¸Šäº†æš—é–ï¼" : "ã€‚") + "\n");
                 return 1;
         }
 
-        write("Ïä×ÓÒÑ¾­ºÏÉÏ£¬ÄãĞèÒª¸øÏä×Ó¸ü»»°µËøÂğ£¿£¨" HIR "y" HIG "/" HIY "n" HIG "£©\n" NOR);
+        write("ç®±å­å·²ç¶“åˆä¸Šï¼Œä½ éœ€è¦çµ¦ç®±å­æ›´æ›æš—é–å—ï¼Ÿï¼ˆ" HIR "y" HIG "/" HIY "n" HIG "ï¼‰\n" NOR);
         input_to((: confirm :), me);
         return 1;
 }
@@ -201,7 +201,7 @@ int confirm(string yn, object me)
 {
         if (upper_case(yn) == "Y")
         {
-                write(HIW "ÇëÉè¶¨Ïä×Ó°µËøµÄÃÜÂë£º" NOR);
+                write(HIW "è«‹è¨­å®šç®±å­æš—é–çš„å¯†ç¢¼ï¼š" NOR);
                 input_to((: set_passwd :), 1, me);
 
                 return 1;
@@ -213,7 +213,7 @@ int confirm(string yn, object me)
                         save();
                         return 1;
                 }
-                write(HIG "ÄúÑ¡ÔñÁË·ÅÆú¼Ó°µËø¡£\n" NOR);
+                write(HIG "æ‚¨é¸æ“‡äº†æ”¾æ£„åŠ æš—é–ã€‚\n" NOR);
                 return 1;
         }
 }
@@ -224,7 +224,7 @@ int set_passwd(string pass, object ob)
 
         if (strlen(pass) < 5)
         {
-                write("¹ÜÀíÃÜÂëµÄ³¤¶ÈÖÁÉÙÒªÎå¸ö×ÖÔª£¬ÇëÖØÉèÄúµÄ°µËøÃÜÂë£º\n");
+                write("ç®¡ç†å¯†ç¢¼çš„é•·åº¦è‡³å°‘è¦äº”å€‹å­—å…ƒï¼Œè«‹é‡è¨­æ‚¨çš„æš—é–å¯†ç¢¼ï¼š\n");
                 input_to((: set_passwd :), 1, ob);
                 return 1;
         }
@@ -232,7 +232,7 @@ int set_passwd(string pass, object ob)
         set("closed", 1);
         set("passwd", crypt(pass, 0));
         save();
-        write(HIG "Ïä×ÓÒÑ¾­³É¹¦ËøÉÏ£¬Çë¼Ç×¡ÄãÉè¶¨µÄÃÜÂë£¡\n" NOR);
+        write(HIG "ç®±å­å·²ç¶“æˆåŠŸé–ä¸Šï¼Œè«‹è¨˜ä½ä½ è¨­å®šçš„å¯†ç¢¼ï¼\n" NOR);
         return 1;
 }
 
@@ -250,34 +250,34 @@ int do_take(string arg)
         me = this_player();
 
         if (query("open") != 1 && ! wizardp(me))
-                return notify_fail("Ïä×ÓÒÑ¾­ÉÏËø£¬ÇëÏÈ½âËø¡£\n");
+                return notify_fail("ç®±å­å·²ç¶“ä¸Šé–ï¼Œè«‹å…ˆè§£é–ã€‚\n");
 
         if (! arg || sscanf(arg, "%d %d", sn, amount) != 2)
-                return notify_fail("¸ñÊ½´íÎó£¬ÇëÓÃ take ±àºÅ ÊıÁ¿ À´È¡»ØÎïÆ·¡£\n");
+                return notify_fail("æ ¼å¼éŒ¯èª¤ï¼Œè«‹ç”¨ take ç·¨è™Ÿ æ•¸é‡ ä¾†å–å›ç‰©å“ã€‚\n");
 
         if (amount < 1 || amount > 10000)
-                return notify_fail("Ã¿´ÎÈ¡ÎïÆ·µÄÊıÁ¿²»µÃĞ¡ÓÚÒ»Í¬Ê±Ò²²»ÄÜ´óÓÚÒ»Íò¡£\n");
+                return notify_fail("æ¯æ¬¡å–ç‰©å“çš„æ•¸é‡ä¸å¾—å°äºä¸€åŒæ™‚ä¹Ÿä¸èƒ½å¤§äºä¸€è¬ã€‚\n");
 
-        if (sn < 1) return notify_fail("ÄãÒªÈ¡µÚ¼¸ºÅÎïÆ·£¿\n");
+        if (sn < 1) return notify_fail("ä½ è¦å–ç¬¬å¹¾è™Ÿç‰©å“ï¼Ÿ\n");
 
         if (! store || sizeof(store) < 1 || sn > sizeof(store))
-                return notify_fail("ÄãµÄÏä×ÓÀïÃ»ÓĞ´æ·ÅÕâÏîÎïÆ·¡£\n");
+                return notify_fail("ä½ çš„ç®±å­è£¡æ²’æœ‰å­˜æ”¾é€™é …ç‰©å“ã€‚\n");
 
         if (amount > store[sn-1]["amount"])
-                // return notify_fail("ÕâÑùÎïÆ·ÄãÃ»ÓĞÄÇÃ´¶à¸ö¡£\n");
+                // return notify_fail("é€™æ¨£ç‰©å“ä½ æ²’æœ‰é‚£éº¼å¤šå€‹ã€‚\n");
                 amount = store[sn-1]["amount"];
 
         if (! (ob = new(store[sn-1]["file"])))
         {
                 store[sn-1] = 0;
                 store -= ({ 0 });
-                tell_object(me, "ÎŞ·¨È¡³ö¸ÃÎïÆ·£¬ÏµÍ³×Ô¶¯Çå³ıÖ®¡£\n");
+                tell_object(me, "ç„¡æ³•å–å‡ºè©²ç‰©å“ï¼Œç³»çµ±è‡ªå‹•æ¸…é™¤ä¹‹ã€‚\n");
                 return 1;
         }
 
         if (me->query_encumbrance() + ob->query_weight() * amount > me->query_max_encumbrance())
         {
-                tell_object(me, "ÄãµÄ¸ºÖØ²»¹»£¬ÎŞ·¨Ò»´ÎÈ¡³öÕâÃ´¶àÎïÆ·¡£\n");
+                tell_object(me, "ä½ çš„è² é‡ä¸å¤ ï¼Œç„¡æ³•ä¸€æ¬¡å–å‡ºé€™éº¼å¤šç‰©å“ã€‚\n");
                 destruct(ob);
                 return 1;
         }
@@ -293,14 +293,14 @@ int do_take(string arg)
                 ob->set_amount(amount);
                 ob->move(me, 1);
                 save();
-                message_vision("$N´ÓÏä×ÓÀïÈ¡³öÒ»"+query("unit", ob)+query("name", ob)+"¡£\n",me);
+                message_vision("$Nå¾ç®±å­è£¡å–å‡ºä¸€"+query("unit", ob)+query("name", ob)+"ã€‚\n",me);
                 return 1;
         }
 
         destruct(ob);
         if( amount > 200 ) {
                 amount = 200;
-                tell_object(me, "¸ÃÎïÆ·Ã¿´Î×î¶àÖ»ÄÜÈ¡200¸ö¡£\n");
+                tell_object(me, "è©²ç‰©å“æ¯æ¬¡æœ€å¤šåªèƒ½å–200å€‹ã€‚\n");
         }
 
         store[sn-1]["amount"] -= amount;
@@ -374,7 +374,7 @@ int do_take(string arg)
                 if( query("bind_owner", ob) && 
                     query("bind_owner", ob) != query("id", me) )
                 {
-                        tell_object(me, ob->name() + "ÒÑ¾­°ó¶¨£¬ÎŞ·¨ÒÆ¶¯¡£\n");
+                        tell_object(me, ob->name() + "å·²ç¶“ç¶å®šï¼Œç„¡æ³•ç§»å‹•ã€‚\n");
                         store_item(me, ob, 1);
                         continue;
                 }
@@ -392,8 +392,8 @@ int do_take(string arg)
         }
         save();
         if( ob )
-        message_vision("$N´ÓÏä×ÓÀïÈ¡³ö" + chinese_number(amount) +
-                        query("unit", ob)+query("name", ob)+"¡£\n",me);
+        message_vision("$Nå¾ç®±å­è£¡å–å‡º" + chinese_number(amount) +
+                        query("unit", ob)+query("name", ob)+"ã€‚\n",me);
         return 1;
 }
 
@@ -405,21 +405,21 @@ int do_store(string arg)
 
         me = this_player();
 
-        if (! arg) return notify_fail("ÄãÒª´æ·ÅÊ²Ã´¶«Î÷£¿\n");
+        if (! arg) return notify_fail("ä½ è¦å­˜æ”¾ä»€éº¼æ±è¥¿ï¼Ÿ\n");
 
-        if (me->is_busy()) return notify_fail("ÄãÕıÔÚÃ¦×ÅÄØ£¡\n");
+        if (me->is_busy()) return notify_fail("ä½ æ­£åœ¨å¿™è‘—å‘¢ï¼\n");
 
         if (query("open") != 1 && ! wizardp(me))
-                return notify_fail("Ïä×ÓÊÇºÏÉÏµÄ£¬ÇëÏÈ´ò¿ª£¨open£©ºóÔÙ·ÅÈëÎïÆ·¡£\n");
+                return notify_fail("ç®±å­æ˜¯åˆä¸Šçš„ï¼Œè«‹å…ˆæ‰“é–‹ï¼ˆopenï¼‰å¾Œå†æ”¾å…¥ç‰©å“ã€‚\n");
 
         if (store && sizeof(store) > 500)
-                return notify_fail("Ïä×Ó×î¶àÖ»ÄÜ´æÈëÎå°Ù¸ö¸ñ×Ó£¬ÏÖÔÚÏä×ÓÒÑ¾­ÂúÁË¡£\n");
+                return notify_fail("ç®±å­æœ€å¤šåªèƒ½å­˜å…¥äº”ç™¾å€‹æ ¼å­ï¼Œç¾åœ¨ç®±å­å·²ç¶“æ»¿äº†ã€‚\n");
 
         if (arg == "all")
         {
                 inv = all_inventory(me);
                 if (sizeof(inv) > 100)
-                        return notify_fail("ÄãÉíÉÏµÄÎïÆ·Ì«¶àÁË£¬ºÜÈİÒ×¸ã»ì£¬Äã»¹ÊÇÒ»¸öÒ»¸ö´æ°É¡£\n");
+                        return notify_fail("ä½ èº«ä¸Šçš„ç‰©å“å¤ªå¤šäº†ï¼Œå¾ˆå®¹æ˜“ææ··ï¼Œä½ é‚„æ˜¯ä¸€å€‹ä¸€å€‹å­˜å§ã€‚\n");
 
                 for(i = 0; i < sizeof(inv); i++)
                 {
@@ -431,16 +431,16 @@ int do_store(string arg)
         if (sscanf(arg, "%d %s", amount, item) == 2)
         {
                 if(! objectp(ob1 = present(item, me)))
-                        return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+                        return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™æ¨£æ±è¥¿ã€‚\n");
 
                 if (! ob1->query_amount())
-                        return notify_fail(ob1->name() + "²»ÄÜ±»·Ö¿ª´æ·Å¡£\n");
+                        return notify_fail(ob1->name() + "ä¸èƒ½è¢«åˆ†é–‹å­˜æ”¾ã€‚\n");
 
                 if (amount < 1)
-                        return notify_fail("´æ¶«Î÷µÄÊıÁ¿ÖÁÉÙÊÇÒ»¸ö¡£\n");
+                        return notify_fail("å­˜æ±è¥¿çš„æ•¸é‡è‡³å°‘æ˜¯ä¸€å€‹ã€‚\n");
 
                 if (amount > ob1->query_amount())
-                        return notify_fail("ÄãÃ»ÓĞÄÇÃ´¶àµÄ" + ob1->name() + "¡£\n");
+                        return notify_fail("ä½ æ²’æœ‰é‚£éº¼å¤šçš„" + ob1->name() + "ã€‚\n");
 
                 if (amount == (int)ob1->query_amount())
                         return store_item(me, ob1, amount);
@@ -459,7 +459,7 @@ int do_store(string arg)
         }
 
         if(! objectp(ob1 = present(arg, me)))
-                return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+                return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™æ¨£æ±è¥¿ã€‚\n");
 
         if (ob1->query_amount())
                 return do_store(ob1->query_amount() + " " + arg);
@@ -481,20 +481,20 @@ int store_item(object me, object ob, int amount)
 
         if (inherits(F_SILENTDEST, ob))
         {
-                tell_object(me,"Ïä×Ó²»±£´æ"+query("name", ob)+"£¬ÇëÄã×Ô¼ºÍ×ÉÆ´¦Àí¡£\n");
+                tell_object(me,"ç®±å­ä¸ä¿å­˜"+query("name", ob)+"ï¼Œè«‹ä½ è‡ªå·±å¦¥å–„è™•ç†ã€‚\n");
                 return 0;
         }
 
         if (member_array(ITEM + ".c", deep_inherit_list(ob)) == -1 &&
             member_array(COMBINED_ITEM + ".c", deep_inherit_list(ob)) == -1)
         {
-                tell_object(me,"Ïä×Ó²»±£´æ"+query("name", ob)+"£¬ÇëÄã×Ô¼ºÍ×ÉÆ´¦Àí¡£\n");
+                tell_object(me,"ç®±å­ä¸ä¿å­˜"+query("name", ob)+"ï¼Œè«‹ä½ è‡ªå·±å¦¥å–„è™•ç†ã€‚\n");
                 return 0;
         }
 
         if (member_array(MONEY+ ".c", deep_inherit_list(ob)) != -1)
         {
-                tell_object(me,"Ïä×Ó²»±£´æ"+query("name", ob)+"£¬Òª´æÇ®µÄ»°ÇëÈ¥Ç®×¯°É¡£\n");
+                tell_object(me,"ç®±å­ä¸ä¿å­˜"+query("name", ob)+"ï¼Œè¦å­˜éŒ¢çš„è©±è«‹å»éŒ¢èŠå§ã€‚\n");
                 return 0;
         }
 
@@ -504,7 +504,7 @@ int store_item(object me, object ob, int amount)
             ob->is_no_clone() ||
             query("maze_item", ob) )
         {
-                tell_object(me,"ÂşÓÎ°ü²»±£´æ"+query("name", ob)+"£¬ÇëÄã×Ô¼ºÍ×ÉÆ´¦Àí¡£\n");
+                tell_object(me,"æ¼«éŠåŒ…ä¸ä¿å­˜"+query("name", ob)+"ï¼Œè«‹ä½ è‡ªå·±å¦¥å–„è™•ç†ã€‚\n");
                 return 0;
         }
 
@@ -512,30 +512,30 @@ int store_item(object me, object ob, int amount)
             ob->is_item_make() ||
             ! clonep(ob))
         {
-                tell_object(me,"ÂşÓÎ°ü²»±£´æ"+query("name", ob)+"£¬ÇëÄã×Ô¼ºÍ×ÉÆ´¦Àí¡£\n");
+                tell_object(me,"æ¼«éŠåŒ…ä¸ä¿å­˜"+query("name", ob)+"ï¼Œè«‹ä½ è‡ªå·±å¦¥å–„è™•ç†ã€‚\n");
                 return 0;
         }
 
         if (sscanf(base_name(ob), "/data/%*s") &&
             ! ob->is_inlaid())
         {
-                tell_object(me,"ÂşÓÎ°ü²»±£´æ"+query("name", ob)+"£¬ÇëÄã×Ô¼ºÍ×ÉÆ´¦Àí¡£\n");
+                tell_object(me,"æ¼«éŠåŒ…ä¸ä¿å­˜"+query("name", ob)+"ï¼Œè«‹ä½ è‡ªå·±å¦¥å–„è™•ç†ã€‚\n");
                 return 0;
         }
 
         switch(query("equipped", ob) )
         {
         case "worn":
-                tell_object(me, ob->name() + "±ØĞëÏÈÍÑÏÂÀ´²ÅÄÜ´æ·Å¡£\n");
+                tell_object(me, ob->name() + "å¿…é ˆå…ˆè„«ä¸‹ä¾†æ‰èƒ½å­˜æ”¾ã€‚\n");
                 return 0;
         case "wielded":
-                tell_object(me, ob->name() + "±ØĞëÏÈ½â³ı×°±¸²ÅÄÜ´æ·Å¡£\n");
+                tell_object(me, ob->name() + "å¿…é ˆå…ˆè§£é™¤è£å‚™æ‰èƒ½å­˜æ”¾ã€‚\n");
                 return 0;
         }
 
         if (sizeof(all_inventory(ob)))
         {
-                tell_object(me,"ÇëÄãÏÈ°Ñ"+query("name", ob)+"ÀïÃæµÄ¶«Î÷ÏÈÄÃ³öÀ´ÔÙ´æ·Å¡£\n");
+                tell_object(me,"è«‹ä½ å…ˆæŠŠ"+query("name", ob)+"è£¡é¢çš„æ±è¥¿å…ˆæ‹¿å‡ºä¾†å†å­˜æ”¾ã€‚\n");
                 return 0;
         }
 
@@ -558,8 +558,8 @@ int store_item(object me, object ob, int amount)
                         store += ({ TO_STORE(amount, sn)});
                         store_data(me, ob, sn);
                         save();
-                        message_vision("$N´æÈë"+chinese_number(amount)+query("unit", ob)+
-                                        query("name", ob)+"µ½Ïä×ÓÀï¡£\n",me);
+                        message_vision("$Nå­˜å…¥"+chinese_number(amount)+query("unit", ob)+
+                                        query("name", ob)+"åˆ°ç®±å­è£¡ã€‚\n",me);
                         destruct(ob);
                         destruct(obj);
                         return 1;
@@ -575,8 +575,8 @@ int store_item(object me, object ob, int amount)
                 {
                         store[i]["amount"] += amount;
 
-                        message_vision("$N´æÈë" + (amount > 1 ? "Ò»" : chinese_number(amount)) +
-                                        query("unit", ob)+query("name", ob)+"µ½Ïä×ÓÀï¡£\n",me);
+                        message_vision("$Nå­˜å…¥" + (amount > 1 ? "ä¸€" : chinese_number(amount)) +
+                                        query("unit", ob)+query("name", ob)+"åˆ°ç®±å­è£¡ã€‚\n",me);
                         destruct(ob);
                         save();
                         return 1;
@@ -586,8 +586,8 @@ int store_item(object me, object ob, int amount)
         store += ({TO_STORE(amount, 0)});
         save();
 
-        message_vision("$N´æÈë" + (amount > 1 ? "Ò»" : chinese_number(amount)) +
-                        query("unit", ob)+query("name", ob)+"µ½Ïä×ÓÀï¡£\n",me);
+        message_vision("$Nå­˜å…¥" + (amount > 1 ? "ä¸€" : chinese_number(amount)) +
+                        query("unit", ob)+query("name", ob)+"åˆ°ç®±å­è£¡ã€‚\n",me);
 
         destruct(ob);
         return 1;

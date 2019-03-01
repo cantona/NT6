@@ -1,85 +1,85 @@
 inherit SHAOLIN_SKILL; 
 
 mapping *action = ({ 
-([      "action" : "$NÂí²½Ò»Á¢£¬Éí×ÓÎ¢Çú£¬°µºÈÒ»Éù£¬Ò»ÕÐ¡¸ÍûÔÂ°ÝÌì¡¹£¬Ò»ÕÆÖ±Åü$nµÄ$l", 
+([      "action" : "$Né¦¬æ­¥ä¸€ç«‹ï¼Œèº«å­å¾®æ›²ï¼Œæš—å–ä¸€è²ï¼Œä¸€æ‹›ã€Œæœ›æœˆæ‹œå¤©ã€ï¼Œä¸€æŽŒç›´åŠˆ$nçš„$l", 
         "force" : 110, 
         "dodge" : 10, 
         "parry" : 10, 
         "attack": 30, 
         "damage": 40, 
         "lvl" : 10, 
-        "skill_name" : "ÍûÔÂ°ÝÌì", 
-        "damage_type" : "ðöÉË" 
+        "skill_name" : "æœ›æœˆæ‹œå¤©", 
+        "damage_type" : "ç˜€å‚·" 
 ]), 
-([      "action" : "$N¡°¹þ¹þ¡±Ò»Ð¦£¬×óÕÆÓÉÏÂÖÁÉÏ£¬ÓÒÕÆÆ½Æ½»÷³ö£¬Ò»ÕÐ¡¸¿çÈÕÏòÌì¡¹£¬½»Ìæ´òÏò$n", 
+([      "action" : "$Nâ€œå“ˆå“ˆâ€ä¸€ç¬‘ï¼Œå·¦æŽŒç”±ä¸‹è‡³ä¸Šï¼Œå³æŽŒå¹³å¹³æ“Šå‡ºï¼Œä¸€æ‹›ã€Œè·¨æ—¥å‘å¤©ã€ï¼Œäº¤æ›¿æ‰“å‘$n", 
         "force" : 130, 
         "dodge" : 20, 
         "parry" : 30, 
         "attack": 30, 
         "damage": 50, 
         "lvl" : 30, 
-        "skill_name" : "¿çÈÕÏòÌì", 
-        "damage_type" : "ðöÉË" 
+        "skill_name" : "è·¨æ—¥å‘å¤©", 
+        "damage_type" : "ç˜€å‚·" 
 ]), 
-([      "action" : "$N¶Ô$nÒ»Éù´óºÈ£¬Ê¹Ò»ÕÐ¡¸³¤ºç¾­Ìì¡¹£¬×óÕÆ»÷³ö£¬Ëæ¼´ÓÒÕÆ¸úÉÏ£¬Á½ÖØÁ¦µÀ´òÏò$nµÄ$l", 
+([      "action" : "$Nå°$nä¸€è²å¤§å–ï¼Œä½¿ä¸€æ‹›ã€Œé•·è™¹ç¶“å¤©ã€ï¼Œå·¦æŽŒæ“Šå‡ºï¼Œéš¨å³å³æŽŒè·Ÿä¸Šï¼Œå…©é‡åŠ›é“æ‰“å‘$nçš„$l", 
         "force" : 140, 
         "dodge" : 27, 
         "parry" : 43, 
         "attack": 40, 
         "damage": 60, 
         "lvl" : 60, 
-        "skill_name" : "³¤ºç¾­Ìì", 
-        "damage_type" : "ÕðÉË" 
+        "skill_name" : "é•·è™¹ç¶“å¤©", 
+        "damage_type" : "éœ‡å‚·" 
 ]),
-([      "action" : "$NÃÆºÈÒ»Éù£¬Ë«ÕÆÏòÉÏ·Ö¿ª£¬Ò»¼Ç¡¸¾Ù»ðÉÕÌì¡¹£¬ÕÆ»®»¡Ïß£¬×óÓÒÍ¬Ê±»÷Ïò$nµÄ$l", 
+([      "action" : "$Næ‚¶å–ä¸€è²ï¼Œé›™æŽŒå‘ä¸Šåˆ†é–‹ï¼Œä¸€è¨˜ã€Œèˆ‰ç«ç‡’å¤©ã€ï¼ŒæŽŒåŠƒå¼§ç·šï¼Œå·¦å³åŒæ™‚æ“Šå‘$nçš„$l", 
         "force" : 160, 
         "dodge" : 37, 
         "parry" : 33, 
         "attack": 54, 
         "damage": 78, 
         "lvl" : 80, 
-        "skill_name" : "¾Ù»ðÉÕÌì", 
-        "damage_type" : "ðöÉË" 
+        "skill_name" : "èˆ‰ç«ç‡’å¤©", 
+        "damage_type" : "ç˜€å‚·" 
 ]), 
-([      "action" : "$NÊ©³ö¡¸Ò»±ÛÇæÌì¡¹£¬Ò»Éù´óºð£¬Ò»ÕÆÁè¿ÕÅü³ö£¬ÕÆ·çÖ±±Æ$nµÄ$l", 
+([      "action" : "$Næ–½å‡ºã€Œä¸€è‡‚æ“Žå¤©ã€ï¼Œä¸€è²å¤§å¼ï¼Œä¸€æŽŒå‡Œç©ºåŠˆå‡ºï¼ŒæŽŒé¢¨ç›´é€¼$nçš„$l", 
         "force" : 180, 
         "dodge" : 42, 
         "parry" : 23, 
         "attack": 64, 
         "damage": 89, 
         "lvl" : 110, 
-        "skill_name" : "Ò»±ÛÇæÌì", 
-        "damage_type" : "ðöÉË" 
+        "skill_name" : "ä¸€è‡‚æ“Žå¤©", 
+        "damage_type" : "ç˜€å‚·" 
 ]), 
-([      "action" : "$NÒ»Éù³¤Ð¥£¬Ë«ÕÆ½»´í»÷³ö£¬Ò»ÕÐ¡¸Ê¯ÆÆÌì¾ª¡¹£¬ÕÆ·çÃÜ²¼$nµÄÇ°ºó×óÓÒ", 
+([      "action" : "$Nä¸€è²é•·å˜¯ï¼Œé›™æŽŒäº¤éŒ¯æ“Šå‡ºï¼Œä¸€æ‹›ã€ŒçŸ³ç ´å¤©é©šã€ï¼ŒæŽŒé¢¨å¯†å¸ƒ$nçš„å‰å¾Œå·¦å³", 
         "force" : 190, 
         "dodge" : 46, 
         "parry" : 33, 
         "attack": 54, 
         "damage": 93, 
         "lvl" : 140, 
-        "skill_name" : "Ê¯ÆÆÌì¾ª", 
-        "damage_type" : "ðöÉË" 
+        "skill_name" : "çŸ³ç ´å¤©é©š", 
+        "damage_type" : "ç˜€å‚·" 
 ]), 
-([      "action" : "$NÅ­ºðÒ»Éù£¬Áè¿Õ·ÉÆð£¬Ò»Ê½¡¸Ìì±ÀµØÁÑ¡¹£¬Ë«ÕÆ¾Ó¸ßÁÙÏÂ£¬ÆëÆëÅÄÏò$n", 
+([      "action" : "$Næ€’å¼ä¸€è²ï¼Œå‡Œç©ºé£›èµ·ï¼Œä¸€å¼ã€Œå¤©å´©åœ°è£‚ã€ï¼Œé›™æŽŒå±…é«˜è‡¨ä¸‹ï¼Œé½Šé½Šæ‹å‘$n", 
         "force" : 200, 
         "dodge" : 43, 
         "parry" : 43, 
         "attack": 55, 
         "damage": 103, 
         "lvl" : 170, 
-        "skill_name" : "Ìì±ÀµØÁÑ", 
-        "damage_type" : "ÄÚÉË" 
+        "skill_name" : "å¤©å´©åœ°è£‚", 
+        "damage_type" : "å…§å‚·" 
 ]), 
-([      "action" : "$NÑöÌì´óÐ¦£¬ÊÆÈô·è¿ñ£¬ÒÂÅÛ·ÉÎè£¬Ò»ÕÐ¡¸ÎÞ·¨ÎÞÌì¡¹£¬ÕÆ·çÁèÀ÷£¬ÈçÓêµã°ãÏò$n",  
+([      "action" : "$Nä»°å¤©å¤§ç¬‘ï¼Œå‹¢è‹¥ç˜‹ç‹‚ï¼Œè¡£è¢é£›èˆžï¼Œä¸€æ‹›ã€Œç„¡æ³•ç„¡å¤©ã€ï¼ŒæŽŒé¢¨å‡ŒåŽ²ï¼Œå¦‚é›¨é»žèˆ¬å‘$n",  
         "force" : 210, 
         "dodge" : 33, 
         "parry" : 53, 
         "attack": 58, 
         "damage": 105, 
         "lvl" : 190, 
-        "skill_name" : "ÎÞ·¨ÎÞÌì", 
-        "damage_type" : "ÄÚÉË" 
+        "skill_name" : "ç„¡æ³•ç„¡å¤©", 
+        "damage_type" : "å…§å‚·" 
 ]) 
 }); 
 int valid_enable(string usage) { return usage=="strike" || usage=="parry"; } 
@@ -87,18 +87,18 @@ int valid_enable(string usage) { return usage=="strike" || usage=="parry"; }
 int valid_learn(object me) 
 {
         if( query_temp("weapon", me) || query_temp("secondary_weapon", me) )
-                return notify_fail("Á·¡¸ÎÕÊ¯ÕÆ¡¹±ØÐë¿ÕÊÖ¡£\n"); 
+                return notify_fail("ç·´ã€Œæ¡çŸ³æŽŒã€å¿…é ˆç©ºæ‰‹ã€‚\n"); 
         if (me->query_skill("weituo-zhang", 1) < 80
         && me->query_skill("sanhua-zhang", 1) < 80
         && me->query_skill("weituo-zhang", 1) < 80
         && me->query_skill("banruo-zhang", 1) < 80)
-                return notify_fail("ÄãµÄ±ØÐëÏÈ¾«Í¨É¢»¨ÕÆ£¬°ãÈôÕÆ£¬Î¤ÍÓÕÆÖÐµÄÒ»ÖÖ²ÅÄÜ¼ÌÐøÑ§Ï°¸ßÉîµÄÕÆ·¨¡£\n"); 
+                return notify_fail("ä½ çš„å¿…é ˆå…ˆç²¾é€šæ•£èŠ±æŽŒï¼Œèˆ¬è‹¥æŽŒï¼ŒéŸ‹é™€æŽŒä¸­çš„ä¸€ç¨®æ‰èƒ½ç¹¼çºŒå­¸ç¿’é«˜æ·±çš„æŽŒæ³•ã€‚\n"); 
 
         if ((int)me->query_skill("force", 1) < 80) 
-                return notify_fail("ÄãµÄ»ù±¾ÄÚ¹¦»ðºò²»¹»£¬»¹ÎÞ·¨ÑÐÏ°ÎÕÊ¯ÕÆ¡£\n"); 
+                return notify_fail("ä½ çš„åŸºæœ¬å…§åŠŸç«å€™ä¸å¤ ï¼Œé‚„ç„¡æ³•ç ”ç¿’æ¡çŸ³æŽŒã€‚\n"); 
 
         if( query("max_neili", me)<800 )
-                return notify_fail("ÄãµÄÄÚÁ¦Ì«Èõ£¬ÎÞ·¨ÐÞÁ¶Î¤ÍÓÕÆ¡£\n"); 
+                return notify_fail("ä½ çš„å…§åŠ›å¤ªå¼±ï¼Œç„¡æ³•ä¿®ç…‰éŸ‹é™€æŽŒã€‚\n"); 
         return 1; 
 }
 
@@ -123,9 +123,9 @@ mapping query_action(object me, object weapon)
 int practice_skill(object me) 
 {
         if( query("qi", me)<60 )
-                return notify_fail("ÄãµÄÌåÁ¦Ì«²î£¬Ã»·¨¼ÌÐøÁ·Ï°ÎÕÊ¯ÕÆ¡£\n"); 
+                return notify_fail("ä½ çš„é«”åŠ›å¤ªå·®ï¼Œæ²’æ³•ç¹¼çºŒç·´ç¿’æ¡çŸ³æŽŒã€‚\n"); 
         if( query("neili", me)<70 )
-                return notify_fail("ÄãµÄÄÚÁ¦Ì«²î£¬ÎÞ·¨¼ÌÐøÁ·Ï°ÎÕÊ¯ÕÆ¡£\n"); 
+                return notify_fail("ä½ çš„å…§åŠ›å¤ªå·®ï¼Œç„¡æ³•ç¹¼çºŒç·´ç¿’æ¡çŸ³æŽŒã€‚\n"); 
         addn("qi", -55, me);
         addn("neili", -50, me);
         return 1; 

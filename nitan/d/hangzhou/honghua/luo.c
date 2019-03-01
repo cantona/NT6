@@ -1,4 +1,4 @@
-// luo.c Âæ±ù
+// luo.c é§±å†°
 
 #include <ansi.h>
 
@@ -7,12 +7,12 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("Âæ±ù", ({ "luo bing", "luo","bing" }));
-        set("title", HIR "ºì»¨»á"HIG"Ê®Ò»µ±¼Ò" NOR);
-        set("nickname", HIG "Ô§Ñìµ¶" NOR);
+        set_name("é§±å†°", ({ "luo bing", "luo","bing" }));
+        set("title", HIR "ç´…èŠ±æœƒ"HIG"åä¸€ç•¶å®¶" NOR);
+        set("nickname", HIG "é´›é´¦åˆ€" NOR);
         set("long", 
-"ËıÊÇÒ»¸öĞãÃÀµÄÉÙ¸¾¡£Ò»ÊÖ¶Ìµ¶£¬Ò»ÊÖÎÕ×ÅÒ»±ú³¤µ¶¡£\n");
-        set("gender", "Å®ĞÔ");
+"å¥¹æ˜¯ä¸€å€‹ç§€ç¾çš„å°‘å©¦ã€‚ä¸€æ‰‹çŸ­åˆ€ï¼Œä¸€æ‰‹æ¡è‘—ä¸€æŸ„é•·åˆ€ã€‚\n");
+        set("gender", "å¥³æ€§");
         set("class", "fighter");
         set("age", 24);
         set("attitude", "friendly");

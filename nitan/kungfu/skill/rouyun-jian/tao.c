@@ -1,6 +1,6 @@
 #include <ansi.h>
 
-#define TAO "¡¸" HIC "Èı»·Ì×ÔÂ" NOR "¡¹"
+#define TAO "ã€Œ" HIC "ä¸‰ç’°å¥—æœˆ" NOR "ã€"
 
 inherit F_SSERVER;
  
@@ -12,35 +12,35 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if( userp(me) && !query("can_perform/rouyun-jian/tao", me) )
-                return notify_fail("ÄãËùÊ¹ÓÃµÄÍâ¹¦ÖĞÃ»ÓĞÕâÖÖ¹¦ÄÜ¡£\n");
+                return notify_fail("ä½ æ‰€ä½¿ç”¨çš„å¤–åŠŸä¸­æ²’æœ‰é€™ç¨®åŠŸèƒ½ã€‚\n");
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(TAO "Ö»ÄÜÔÚÕ½¶·ÖĞ¶Ô¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(TAO "åªèƒ½åœ¨æˆ°é¬¥ä¸­å°å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me)) || 
               query("skill_type", weapon) != "sword" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ã€‚\n");
 
         if (me->query_skill("rouyun-jian", 1) < 140)
-                return notify_fail("ÄãµÄÈáÔÆ½£·¨ĞŞÎª²»¹»£¬ÄÑÒÔÊ©Õ¹" TAO "¡£\n");
+                return notify_fail("ä½ çš„æŸ”é›²åŠæ³•ä¿®ç‚ºä¸å¤ ï¼Œé›£ä»¥æ–½å±•" TAO "ã€‚\n");
 
         if (me->query_skill("force") < 180)
-                return notify_fail("ÄãµÄÄÚ¹¦ĞŞÎª²»¹»£¬ÄÑÒÔÊ©Õ¹" TAO "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸä¿®ç‚ºä¸å¤ ï¼Œé›£ä»¥æ–½å±•" TAO "ã€‚\n");
 
         if (me->query_skill("dodge") < 180)
-                return notify_fail("ÄãµÄÇá¹¦ĞŞÎª²»¹»£¬ÄÑÒÔÊ©Õ¹" TAO "¡£\n");
+                return notify_fail("ä½ çš„è¼•åŠŸä¿®ç‚ºä¸å¤ ï¼Œé›£ä»¥æ–½å±•" TAO "ã€‚\n");
 
         if( query("neili", me)<200 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬ÄÑÒÔÊ©Õ¹" TAO "¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" TAO "ã€‚\n");
 
         if (me->query_skill_mapped("sword") != "rouyun-jian")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢ÈáÔÆ½£·¨£¬ÄÑÒÔÊ©Õ¹" TAO "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼æŸ”é›²åŠæ³•ï¼Œé›£ä»¥æ–½å±•" TAO "ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIC "$N" HIC "Ê¹³öÈáÔÆ½£·¨¡¸Èı»·Ì×ÔÂ¡¹£¬Ò»ÕĞÖ®ÖĞÁíÔÌÈıÕĞ£¬ÆÌÌì"
-              "¸ÇµØÕÖÏò$n" HIC "£¡\n" NOR;
+        msg = HIC "$N" HIC "ä½¿å‡ºæŸ”é›²åŠæ³•ã€Œä¸‰ç’°å¥—æœˆã€ï¼Œä¸€æ‹›ä¹‹ä¸­å¦è˜Šä¸‰æ‹›ï¼Œèˆ–å¤©"
+              "è“‹åœ°ç½©å‘$n" HIC "ï¼\n" NOR;
         message_combatd(msg, me, target);
         addn("neili", -150, me);
 

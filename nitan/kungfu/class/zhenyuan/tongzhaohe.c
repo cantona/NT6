@@ -1,4 +1,4 @@
-// tongzhaohe Í¯Õ×ºÍ
+// tongzhaohe ç«¥å…†å’Œ
 
 #include <ansi.h>
 #include "zhenyuan.h"
@@ -9,11 +9,11 @@ inherit F_GUARDER;
 
 void create()
 {
-        set_name("Í¯Õ×ºÍ", ({ "tong zhaohe", "tong", "zhaohe"}));
-          set("long", "´ËÈËÏàÃ²â«Ëö£¬Éí²ÄÊİÏ÷£¬Ò»¸±ÓĞÆøÃ»Á¦µÄÑù×Ó¡£"
-                    "ÊÇÕòÔ¶ïÚ¾ÖÀïºÕºÕÓĞÃûµÄ»ì»ì¡£\n");
-        set("title", "ÕòÔ¶ïÚ¾ÖïÚÊ¦");
-          set("gender", "ÄĞĞÔ");
+        set_name("ç«¥å…†å’Œ", ({ "tong zhaohe", "tong", "zhaohe"}));
+          set("long", "æ­¤äººç›¸è²ŒçŒ¥ç‘£ï¼Œèº«æç˜¦å‰Šï¼Œä¸€å‰¯æœ‰æ°£æ²’åŠ›çš„æ¨£å­ã€‚"
+                    "æ˜¯é®é é¢å±€è£¡èµ«èµ«æœ‰åçš„æ··æ··ã€‚\n");
+        set("title", "é®é é¢å±€é¢å¸«");
+          set("gender", "ç”·æ€§");
           set("age", 35);
         set("class", "fighter");
         set("attitude", "peaceful");
@@ -59,14 +59,14 @@ void create()
         }));
 
         set("guarder", ([
-                "refuse_other": CYN "$N" CYN "¶Ô$n" CYN "ÖåÃ¼µÀ£º"
-                                "Î¹£¡ÄãÕâµ¹ÊÇÍùÄÄÀï×ß°¡£¿" NOR,
-                "refuse_carry": CYN "$N" CYN "¶Ô$n" CYN "æÒÆ¤Ğ¦Á³"
-                                "µØµÀ£ºÄã±³ÉÏ±³µÄÊÇ¸öÉ¶£¿ÈÓÏÂÀ´¸ø"
-                                "ÔÛÇÆÇÆ¡£" NOR,
+                "refuse_other": CYN "$N" CYN "å°$n" CYN "çšºçœ‰é“ï¼š"
+                                "å–‚ï¼ä½ é€™å€’æ˜¯å¾€å“ªè£¡èµ°å•Šï¼Ÿ" NOR,
+                "refuse_carry": CYN "$N" CYN "å°$n" CYN "å¬‰çš®ç¬‘è‡‰"
+                                "åœ°é“ï¼šä½ èƒŒä¸ŠèƒŒçš„æ˜¯å€‹å•¥ï¼Ÿæ‰”ä¸‹ä¾†çµ¦"
+                                "å’±ç§ç§ã€‚" NOR,
         ]));
 
-          create_family("°ËØÔÃÅ", 3, "µÜ×Ó");
+          create_family("å…«å¦é–€", 3, "å¼Ÿå­");
           setup();
 
         carry_object("/clone/weapon/gangdao")->wield();
@@ -79,7 +79,7 @@ void attempt_apprentice(object me)
                 return;
 
         command("@@");
-        command("say ¾ÓÈ»ÓĞÈË°İÎÒÎªÊ¦£¿ÄîÔÚÄãÓĞĞÄ£¬ÎÒ¾ÍÊÕÏÂÄãºÃÁË¡£");
+        command("say å±…ç„¶æœ‰äººæ‹œæˆ‘ç‚ºå¸«ï¼Ÿå¿µåœ¨ä½ æœ‰å¿ƒï¼Œæˆ‘å°±æ”¶ä¸‹ä½ å¥½äº†ã€‚");
         command("recruit "+query("id", me));
         if( query("class", me) != "fighter" )
                 set("class", "fighter", me);

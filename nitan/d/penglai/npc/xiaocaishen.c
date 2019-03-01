@@ -5,8 +5,8 @@ int is_pld_npc(){return 1;}
 
 void create()
 {
-        set_name(HIY "Ğ¡²ÆÉñ" NOR, ({ "xiao caishen", "xiao", "caishen" }));
-        set("long", HIY "ÕâÊÇÏÉ½çµÄĞ¡²ÆÉñ£¬¾İËµ×¨ÃÅ´òÀíÏÉ½çµÄ½ğ¿â¡£\n" NOR);
+        set_name(HIY "å°è²¡ç¥" NOR, ({ "xiao caishen", "xiao", "caishen" }));
+        set("long", HIY "é€™æ˜¯ä»™ç•Œçš„å°è²¡ç¥ï¼Œæ“šèªªå°ˆé–€æ‰“ç†ä»™ç•Œçš„é‡‘åº«ã€‚\n" NOR);
 
         set("age", 4000);
         set("str", 20);

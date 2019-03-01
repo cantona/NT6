@@ -14,7 +14,7 @@ void init()
         if( interactive(ob) && objectp(present("xionghuang", ob)) &&
                 !query_temp("xionghuang") )
         {
-                message_vision("$N¼¤ÁÒµØÅ¤¶¯ÁË¼¸ÏÂ\n", this_object());
+                message_vision("$Næ¿€çƒˆåœ°æ‰­å‹•äº†å¹¾ä¸‹\n", this_object());
                 addn_temp("apply/attack", -10);
                 addn_temp("apply/damage", -10);
                 set_temp("xionghuang", 1);
@@ -25,7 +25,7 @@ void init()
                 !query_temp("xionghuang") && !is_busy() &&
                 !is_fighting() && living(this_object()) )
         {
-                message_vision(HIR "" + query("name") + "½«Éí×ÓÒ»¾íËæ¼´±ãÏò$NÏ®»÷£¡£¡£¡\n" NOR, ob);
+                message_vision(HIR "" + query("name") + "å°‡èº«å­ä¸€å·éš¨å³ä¾¿å‘$Nè¥²æ“Šï¼ï¼ï¼\n" NOR, ob);
                 addn_temp("apply/attack", 20);
                 addn_temp("apply/damage", 20);
                 for(int i = 0; i < snake_attspeed(ob); i++ )
@@ -48,7 +48,7 @@ void recover()
 void die()
 {
         object ob;
-        message_vision("$NÅ¾µÄÒ»Éù¶Ï³ÉÁ½½Ø£¡$NËÀÁË¡£\n", this_object());
+        message_vision("$Nå•ªçš„ä¸€è²æ–·æˆå…©æˆªï¼$Næ­»äº†ã€‚\n", this_object());
         ob = new(NOSTRUM_DIR"shedan1");
         ob->move(environment(this_object()));
         destruct(this_object());

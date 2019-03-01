@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short","×ßÀÈ");
+        set("short","èµ°å»Š");
         set("long",@LONG
-ÕâÊÇ´ÓÖÐÌüÍ¨ÏòÁ·Îä³¡µÄ×ßÀÈ¡£³¤³¤µÄ×ßÀÈÇúÇúÕÛÕÛ£¬µñÀ¸»­Öù£¬
-²Ê»æïÎ¿Õ£¬ÂúÄ¿ÂÌÒâ£¬Á½ÅÔÖÖÂúÁË»¨Ê÷¡£
+é€™æ˜¯å¾žä¸­å»³é€šå‘ç·´æ­¦å ´çš„èµ°å»Šã€‚é•·é•·çš„èµ°å»Šæ›²æ›²æŠ˜æŠ˜ï¼Œé›•æ¬„ç•«æŸ±ï¼Œ
+å½©ç¹ªé¤ç©ºï¼Œæ»¿ç›®ç¶ æ„ï¼Œå…©æ—ç¨®æ»¿äº†èŠ±æ¨¹ã€‚
 LONG );
         set("exits",([
                 "north" : __DIR__"zoulang5",
@@ -26,12 +26,12 @@ LONG );
 
 int valid_leave(object me, string dir)
 {
-        if( dir == "south" && query("family/family_name", me) != "ÌÒ»¨µº" )
+        if( dir == "south" && query("family/family_name", me) != "æ¡ƒèŠ±å³¶" )
                 if (present("zhuang ding", this_object()))
-                        return notify_fail("Ò»Î»×¯¶¡À¹×¡ÁËÄã£¬¹§¹§¾´¾´µØËµ£º¡°ÕâÎ»¹ó¿ÍÇëÁô²½£¬ÄÇÃæÊÇ±¾×¯µÜ×ÓµÄÁ·Îä³¡¡£¡±\n");
+                        return notify_fail("ä¸€ä½èŽŠä¸æ””ä½äº†ä½ ï¼Œæ­æ­æ•¬æ•¬åœ°èªªï¼šâ€œé€™ä½è²´å®¢è«‹ç•™æ­¥ï¼Œé‚£é¢æ˜¯æœ¬èŽŠå¼Ÿå­çš„ç·´æ­¦å ´ã€‚â€\n");
 /*
                 else
-                        return notify_fail("Ò»Î»×¯¶¡ºöÈ»´Ó»¨´ÔÀï×êÁË³öÀ´£¬À¹×¡ÁËÄã£¬¹§¹§¾´¾´µØËµ£º¡°ÕâÎ»¹ó¿ÍÇëÁô²½£¬ÄÇÃæÊÇ±¾×¯µÜ×ÓµÄÁ·Îä³¡¡£¡±\n¿´ÄãÍ£²½²»¶¯ÁË£¬ÄÇÎ»×¯¶¡Ò»¹°ÊÖ£¬ÓÖÍË»ØÁËÒþÉí´¦¡£\n");
+                        return notify_fail("ä¸€ä½èŽŠä¸å¿½ç„¶å¾žèŠ±å¢è£¡é‘½äº†å‡ºä¾†ï¼Œæ””ä½äº†ä½ ï¼Œæ­æ­æ•¬æ•¬åœ°èªªï¼šâ€œé€™ä½è²´å®¢è«‹ç•™æ­¥ï¼Œé‚£é¢æ˜¯æœ¬èŽŠå¼Ÿå­çš„ç·´æ­¦å ´ã€‚â€\nçœ‹ä½ åœæ­¥ä¸å‹•äº†ï¼Œé‚£ä½èŽŠä¸ä¸€æ‹±æ‰‹ï¼Œåˆé€€å›žäº†éš±èº«è™•ã€‚\n");
         
 */
         return ::valid_leave(me, dir);

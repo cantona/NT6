@@ -3,13 +3,13 @@
 inherit TESSERA;
 
 mapping gems = ([
-        "ruby":         "ºì±¦Ê¯",
-        "topaz":        "»Æ±¦Ê¯",
-        "sapphire":     "À¶±¦Ê¯",
-        "emerald":      "ôä´äÂÌ",
-        "amethyst":     "×ÏË®¾§",
-        "diamond":      "Ë®¾§×ê",
-        "skull":        "÷¼÷ÃÍ·",
+        "ruby":         "ç´…å¯¶çŸ³",
+        "topaz":        "é»ƒå¯¶çŸ³",
+        "sapphire":     "è—å¯¶çŸ³",
+        "emerald":      "ç¿¡ç¿ ç¶ ",
+        "amethyst":     "ç´«æ°´æ™¶",
+        "diamond":      "æ°´æ™¶é‘½",
+        "skull":        "éª·é«é ­",
 ]);
 mapping gems_color = ([
         "ruby":         HIR,
@@ -22,10 +22,10 @@ mapping gems_color = ([
 ]);
 
 string *gems_level = ({
-        "Ï¸ËéµÄ",
+        "ç´°ç¢çš„",
         "",
-        "Ï¡ÊÀ",
-        "ÉñÖ®",
+        "ç¨€ä¸–",
+        "ç¥ä¹‹",
 });
 
 string *gems_level_id = ({
@@ -69,8 +69,8 @@ void create()
         
         set_name(query_gem_name(gem, level), ({query_gem_id(gem, level)}));
         set_weight(20);
-        set("long", WHT "ÕâÊÇÒ»¿Å±¦Ê¯£¬ÉÏÃæËÆºõ¸½×ÅÄ³ÖÖÉñÆæµÄÄ§Á¦¡£\n" NOR);
-        set("unit", "¿Å");     
+        set("long", WHT "é€™æ˜¯ä¸€é¡†å¯¶çŸ³ï¼Œä¸Šé¢ä¼¼ä¹é™„è‘—æŸç¨®ç¥å¥‡çš„é­”åŠ›ã€‚\n" NOR);
+        set("unit", "é¡†");     
         set("no_beg", 1);
         set("no_steal", 1);
         set("no_pawn", 1);

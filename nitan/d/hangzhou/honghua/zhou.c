@@ -1,4 +1,4 @@
-// zhou.c ÖÜÖÙÓ¢
+// zhou.c å‘¨ä»²è‹±
 
 #include <ansi.h>
 
@@ -7,12 +7,12 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("ÖÜÖÙÓ¢", ({ "zhou zhongying", "zhou","zhongying" }));
-        set("title", HIC "Ìúµ¨×¯×¯Ö÷" NOR);
-        set("nickname", HIW "Ìúµ¨" NOR);
+        set_name("å‘¨ä»²è‹±", ({ "zhou zhongying", "zhou","zhongying" }));
+        set("title", HIC "éµè†½èŠèŠä¸»" NOR);
+        set("nickname", HIW "éµè†½" NOR);
         set("long", 
-"Ëû°×·¢Æ®¶¯£¬¾«ÉñÛÇîå£¬ÄËÊÇÎ÷±±ÎäÁÖµÄÁìĞäÈËÎïÌúµ¨ÖÜÖÙÓ¢¡£\n");
-        set("gender", "ÄĞĞÔ");
+"ä»–ç™½ç™¼é£„å‹•ï¼Œç²¾ç¥çŸé‘ ï¼Œä¹ƒæ˜¯è¥¿åŒ—æ­¦æ—çš„é ˜è¢–äººç‰©éµè†½å‘¨ä»²è‹±ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("class", "fighter");
         set("age", 61);
         set("attitude", "friendly");
@@ -48,7 +48,7 @@ void create()
         map_skill("unarmed", "jingang-quan");
 
         set("env/wimpy", 20);
-        create_family("ÉÙÁÖÅÉ", 51, "Ë×¼ÒµÜ×Ó");
+        create_family("å°‘æ—æ´¾", 51, "ä¿—å®¶å¼Ÿå­");
          setup();
         carry_object("/clone/misc/cloth")->wear();
         carry_object(__DIR__"obj/tiedan")->wield();

@@ -1,5 +1,5 @@
 // Daemon : /adm/daemons/gambled.c
-// ²©²ÊÏµÍ³
+// åšå½©ç³»çµ±
 // By jjgod for hell. 00/05/07.
 // Update by Lonely
 
@@ -14,27 +14,27 @@ inherit F_SAVE;
 #define FINISHING               "finishing"
 
 mapping item_data = ([
- "Ê®Ç¿Èü¹Ú¾üÔ¤²â" : ([ "long" : "ÊÀ½ç±­ÍâÎ§ÈüÖ®Ê®Ç¿ÈüÂíÉÏ¾ÍÒª¿ªÊ¼"
-                                "ÁË£¬¾¿¾¹±¾´ÎÊ®Ç¿ÈüË­ÄÜ³öÏß£¿ÖĞ¹ú"
-                                "¶ÓÄÜ·ñË³Àû³å³öÑÇÖŞ£¿ÄÜ·ñ¸ùÖÎ¿Öº«"
-                                "¿ÖÒÁÖ¢£¿ÇëÄãÔÚÄãÈÏÎª¿ÉÒÔ³öÏßµÄ¶Ó"
-                                "ÎéÉÏÏÂ×¢°É£¡",
+ "åå¼·è³½å† è»é æ¸¬" : ([ "long" : "ä¸–ç•Œæ¯å¤–åœè³½ä¹‹åå¼·è³½é¦¬ä¸Šå°±è¦é–‹å§‹"
+                                "äº†ï¼Œç©¶ç«Ÿæœ¬æ¬¡åå¼·è³½èª°èƒ½å‡ºç·šï¼Ÿä¸­åœ‹"
+                                "éšŠèƒ½å¦é †åˆ©æ²–å‡ºäºæ´²ï¼Ÿèƒ½å¦æ ¹æ²»æéŸ“"
+                                "æä¼Šç—‡ï¼Ÿè«‹ä½ åœ¨ä½ èªç‚ºå¯ä»¥å‡ºç·šçš„éšŠ"
+                                "ä¼ä¸Šä¸‹æ³¨å§ï¼",
                        "end_time" : 1210996409,
                        "status"   : OPENING,
                        "min_money" : 10000, 
                        "number" : 3,
-                       "subject" : ([ "ÖĞ¹ú¶Ó" : 10, 
-                                      "·¨¹ú¶Ó" : 20, 
-                                      "µÂ¹ú¶Ó" : 50, 
-                                      "Ó¢¹ú¶Ó" : 70, 
-                                      "ÃÀ¹ú¶Ó" : 80, 
-                                      "°ÍÎ÷¶Ó" : 100, ]),
+                       "subject" : ([ "ä¸­åœ‹éšŠ" : 10, 
+                                      "æ³•åœ‹éšŠ" : 20, 
+                                      "å¾·åœ‹éšŠ" : 50, 
+                                      "è‹±åœ‹éšŠ" : 70, 
+                                      "ç¾åœ‹éšŠ" : 80, 
+                                      "å·´è¥¿éšŠ" : 100, ]),
                      ]), 
 ]);
 
 mapping user_data = ([
-"wind" : ([ "Ê®Ç¿Èü¹Ú¾üÔ¤²â" : ([ "team" : ({ "ÖĞ¹ú¶Ó", "°ÍÎ÷¶Ó",
-                                               "·¨¹ú¶Ó", }),
+"wind" : ([ "åå¼·è³½å† è»é æ¸¬" : ([ "team" : ({ "ä¸­åœ‹éšŠ", "å·´è¥¿éšŠ",
+                                               "æ³•åœ‹éšŠ", }),
                                    "money" : 80000, ]),
            ]),
 ]);
@@ -51,81 +51,81 @@ private void change_team_type(string arg, object me, string name);
 private void get_name_end(string arg, object me);
 /****************************************************************
  *                                                              *
- *            ÓĞ¹Ø±¾²©²ÊÏµÍ³(About this Gamble system)          *
+ *            æœ‰é—œæœ¬åšå½©ç³»çµ±(About this Gamble system)          *
  *                                                              *
- *     ±¾²©²ÊÏµÍ³²ÉÓÃÈ«×Ô¶¯ĞÎÊ½£¬¼´Î×Ê¦ÊÖ¶¯Éè¶¨Ò»¸öÏîÄ¿ÒÔºó£¬Ö» *
- * ÒªµÈ´ı±ÈÈü½áÊøºó½«±ÈÈü½á¹ûÊäÈë£¬¾Í¿ÉÒÔÍê³ÉÒ»Õû¸ö²©²ÊÓÎÏ·µÄ¹ı *
- * ³Ì¡£                                                         *
+ *     æœ¬åšå½©ç³»çµ±æ¡ç”¨å…¨è‡ªå‹•å½¢å¼ï¼Œå³å·«å¸«æ‰‹å‹•è¨­å®šä¸€å€‹é …ç›®ä»¥å¾Œï¼Œåª *
+ * è¦ç­‰å¾…æ¯”è³½çµæŸå¾Œå°‡æ¯”è³½çµæœè¼¸å…¥ï¼Œå°±å¯ä»¥å®Œæˆä¸€æ•´å€‹åšå½©éŠæˆ²çš„é *
+ * ç¨‹ã€‚                                                         *
  *                                                              *
- *     µ¥Ò»ÏîÄ¿µÄÕû¸öÔËĞĞÁ÷³ÌÈçÏÂ£º                             *
+ *     å–®ä¸€é …ç›®çš„æ•´å€‹é‹è¡Œæµç¨‹å¦‚ä¸‹ï¼š                             *
  *                                                              *
- *     1¡¢ÊäÈëÏîÄ¿ÄÚÈİ£¬´ËÊ±Îª´´½¨Ì¬(Initing)¡£                 *
- *     2¡¢¿ªÊ¼ÔÊĞíÍ¶×¢£¬´ËÊ±Îª¿ª·ÅÌ¬(Opening)¡£                 *
- *     3¡¢Í£Ö¹¼ÌĞøÍ¶×¢£¬´ËÊ±ÎªÍ£Ö¹Ì¬(Stopped)¡£                 *
- *     4¡¢½áÊøÕâ¸öÏîÄ¿£¬´ËÊ±Îª½áÊøÌ¬(Finishing)¡£               *
+ *     1ã€è¼¸å…¥é …ç›®å…§å®¹ï¼Œæ­¤æ™‚ç‚ºå‰µå»ºæ…‹(Initing)ã€‚                 *
+ *     2ã€é–‹å§‹å…è¨±æŠ•æ³¨ï¼Œæ­¤æ™‚ç‚ºé–‹æ”¾æ…‹(Opening)ã€‚                 *
+ *     3ã€åœæ­¢ç¹¼çºŒæŠ•æ³¨ï¼Œæ­¤æ™‚ç‚ºåœæ­¢æ…‹(Stopped)ã€‚                 *
+ *     4ã€çµæŸé€™å€‹é …ç›®ï¼Œæ­¤æ™‚ç‚ºçµæŸæ…‹(Finishing)ã€‚               *
  *                                                              *
- *     ¹ÜÀíÊ±µÄµ÷ÓÃ½á¹¹ÈçÏÂ£º                                   *
+ *     ç®¡ç†æ™‚çš„èª¿ç”¨çµæ§‹å¦‚ä¸‹ï¼š                                   *
  *                                                              *
- *                          ¹ÜÀíÏµÍ³Ö÷½çÃæ                      *
+ *                          ç®¡ç†ç³»çµ±ä¸»ç•Œé¢                      *
  *        +----------+----------+----------+----------+         *
- *     ´´½¨ÏîÄ¿   ĞŞ¸ÄÏîÄ¿   ²é¿´Í¶×¢   ½áÊøÏîÄ¿   ÍË³öÏµÍ³     *
+ *     å‰µå»ºé …ç›®   ä¿®æ”¹é …ç›®   æŸ¥çœ‹æŠ•æ³¨   çµæŸé …ç›®   é€€å‡ºç³»çµ±     *
  *        |          |          |          |          |         *
- *     ÊäÈëÃû³Æ   Ñ¡ÔñÏîÄ¿   Ñ¡ÔñÍæ¼Ò   Ñ¡ÔñÏîÄ¿     ÍË³ö       *
+ *     è¼¸å…¥åç¨±   é¸æ“‡é …ç›®   é¸æ“‡ç©å®¶   é¸æ“‡é …ç›®     é€€å‡º       *
  *        |          |          |          |                    *
- *     ÊäÈëÃèÊö   ĞŞ¸Ä×ÓÏî   ²éÑ¯Íê±Ï   É¾³ıÍê±Ï                *
+ *     è¼¸å…¥æè¿°   ä¿®æ”¹å­é …   æŸ¥è©¢å®Œç•¢   åˆªé™¤å®Œç•¢                *
  *        |          |          |          |                    *
- *     ½áÊøÊ±¼ä   ĞŞ¸ÄÍê±Ï      |          |                    *
+ *     çµæŸæ™‚é–“   ä¿®æ”¹å®Œç•¢      |          |                    *
  *        |          |          |          |                    *
- *     ×îÉÙÍ¶×¢      |          |          |                    *
+ *     æœ€å°‘æŠ•æ³¨      |          |          |                    *
  *        |          |          |          |                    *
- *     Í¶×¢ÊıÁ¿      |          |          |                    *
+ *     æŠ•æ³¨æ•¸é‡      |          |          |                    *
  *        |          |          |          |                    *
- *     ´´½¨Íê±Ï------+----------+-------·µ»Ø½çÃæ                *
+ *     å‰µå»ºå®Œç•¢------+----------+-------è¿”å›ç•Œé¢                *
  *                                                              *
- * ´¢´æÊı¾İ£º                                                   *
+ * å„²å­˜æ•¸æ“šï¼š                                                   *
  *                                                              *
- *     item_data Ó³Éä£ºÏîÄ¿Êı¾İ                                 *
- *     user_data Ó³Éä£ºÓÃ»§Êı¾İ                                 *
+ *     item_data æ˜ å°„ï¼šé …ç›®æ•¸æ“š                                 *
+ *     user_data æ˜ å°„ï¼šç”¨æˆ¶æ•¸æ“š                                 *
  *                                                              *
- * º¯ÊıÁĞ±í£º                                                   *
+ * å‡½æ•¸åˆ—è¡¨ï¼š                                                   *
  *                                                              *
- *     ¹©Íâ²¿µ÷ÓÃµÄ£º                                           *
- *     public void start_manage()  £º½øÈë¹ÜÀí½çÃæ               *
- *     public void printf_over()   : ÉèÖÃ½á¹û½çÃæ               *
- *     public void do_chip()       £º½øÈëÍ¶×¢½çÃæ               *
- *     public void change_status() £ºĞŞ¸ÄÏîÄ¿×´Ì¬               *
- *     public string query_status()£º²éÑ¯ÏîÄ¿×´Ì¬               *
- *     public mapping query_item() £º»ñÈ¡ÏîÄ¿Êı¾İ               *
- *     public mapping query_data() £º»ñµÃËùÓĞ¼ÍÂ¼               *
+ *     ä¾›å¤–éƒ¨èª¿ç”¨çš„ï¼š                                           *
+ *     public void start_manage()  ï¼šé€²å…¥ç®¡ç†ç•Œé¢               *
+ *     public void printf_over()   : è¨­ç½®çµæœç•Œé¢               *
+ *     public void do_chip()       ï¼šé€²å…¥æŠ•æ³¨ç•Œé¢               *
+ *     public void change_status() ï¼šä¿®æ”¹é …ç›®ç‹€æ…‹               *
+ *     public string query_status()ï¼šæŸ¥è©¢é …ç›®ç‹€æ…‹               *
+ *     public mapping query_item() ï¼šç²å–é …ç›®æ•¸æ“š               *
+ *     public mapping query_data() ï¼šç²å¾—æ‰€æœ‰ç´€éŒ„               *
  *                                                              *
- *     ÄÚ²¿Ë½ÓĞµÄ£º                                             *
- *     private void write_prompt()      £ºÏÔÊ¾¹ÜÀí½çÃæ          *
- *     private void end_manage()        £ºÍË³ö¹ÜÀí½çÃæ          *
- *     private void get_type()          £ºÑ¡Ôñ¹ÜÀíÀà±ğ          *
- *     private void get_name()          £ºÊäÈëÏîÄ¿Ãû³Æ          *
- *     private void select_change_type()£ºÑ¡ÔñĞŞ¸ÄÀà±ğ          *
- *     private void get_long()          £ºÊäÈëÏîÄ¿ÃèÊö          *
- *     private void get_team_number()   £ºÊäÈë¶ÓÎéÊıÁ¿          *
- *     private void get_team_info()     £ºÊäÈë¶ÓÎéÊı¾İ          *
- *     private void get_date_off()      £ºÊäÈë½áÊøÊ±¼ä          *
- *     private void get_chip_number()   £ºÊäÈëÍ¶×¢ÊıÁ¿          *
- *     private void get_name_todel()    £ºÑ¡ÔñÉ¾³ıÏîÄ¿          *
- *     private void get_user()          £ºÑ¡Ôñ²éÑ¯Íæ¼Ò          *
- *     private void get_user_info()     £º»ñµÃÍæ¼ÒĞÅÏ¢          *
+ *     å…§éƒ¨ç§æœ‰çš„ï¼š                                             *
+ *     private void write_prompt()      ï¼šé¡¯ç¤ºç®¡ç†ç•Œé¢          *
+ *     private void end_manage()        ï¼šé€€å‡ºç®¡ç†ç•Œé¢          *
+ *     private void get_type()          ï¼šé¸æ“‡ç®¡ç†é¡åˆ¥          *
+ *     private void get_name()          ï¼šè¼¸å…¥é …ç›®åç¨±          *
+ *     private void select_change_type()ï¼šé¸æ“‡ä¿®æ”¹é¡åˆ¥          *
+ *     private void get_long()          ï¼šè¼¸å…¥é …ç›®æè¿°          *
+ *     private void get_team_number()   ï¼šè¼¸å…¥éšŠä¼æ•¸é‡          *
+ *     private void get_team_info()     ï¼šè¼¸å…¥éšŠä¼æ•¸æ“š          *
+ *     private void get_date_off()      ï¼šè¼¸å…¥çµæŸæ™‚é–“          *
+ *     private void get_chip_number()   ï¼šè¼¸å…¥æŠ•æ³¨æ•¸é‡          *
+ *     private void get_name_todel()    ï¼šé¸æ“‡åˆªé™¤é …ç›®          *
+ *     private void get_user()          ï¼šé¸æ“‡æŸ¥è©¢ç©å®¶          *
+ *     private void get_user_info()     ï¼šç²å¾—ç©å®¶ä¿¡æ¯          *
  *                                                              *
- *     ´ËÍâ£¬²ÉÓÃ heart_beat ¶¨Ê±ÅĞ¶¨Ò»¸öÏîÄ¿ÊÇ·ñÓ¦¸ÃÍ£Ö¹£¬Ä¿Ç° *
- * µÄ heart_beat Éè¶¨ÖµÎª 30£¬¼´½áÊøÊ±¼ä¾«È·ÂÊÎª +- 60s¡£       *
+ *     æ­¤å¤–ï¼Œæ¡ç”¨ heart_beat å®šæ™‚åˆ¤å®šä¸€å€‹é …ç›®æ˜¯å¦æ‡‰è©²åœæ­¢ï¼Œç›®å‰ *
+ * çš„ heart_beat è¨­å®šå€¼ç‚º 30ï¼Œå³çµæŸæ™‚é–“ç²¾ç¢ºç‡ç‚º +- 60sã€‚       *
  *                                                              *
  ****************************************************************/
  
-// ´´½¨´æÅÌÎÄ¼ş
+// å‰µå»ºå­˜ç›¤æ–‡ä»¶
 void create()
 {
         seteuid(getuid());
         restore();
 }
 
-// ·µ»Ø´æÅÌÎÄ¼şÎ»ÖÃ
+// è¿”å›å­˜ç›¤æ–‡ä»¶ä½ç½®
 string query_save_file()
 {
         return DATA_FILE;
@@ -141,35 +141,35 @@ void mud_shutdown()
         save();
 }
 
-// ÌáÊ¾·û
+// æç¤ºç¬¦
 private void write_prompt(object me)
 {
-        write("Äú´òËã£º" WHT "A" NOR "¡¢´´½¨ĞÂµÄÏîÄ¿ " WHT "B" NOR "¡¢ĞŞ¸Ä¾ÉµÄÏîÄ¿ "
-              WHT "C" NOR "¡¢²é¿´Íæ¼ÒÍ¶×¢ \n" WHT "        D" NOR "¡¢½áÊøÒ»¸öÏîÄ¿ " WHT
-              "E" NOR "¡¢É¾³ıÒ»¸öÏîÄ¿ " WHT "F" NOR "¡¢ÍË³ö¹ÜÀíÏµÍ³ \n");
-        write("ÇëÑ¡Ôñ£º");
+        write("æ‚¨æ‰“ç®—ï¼š" WHT "A" NOR "ã€å‰µå»ºæ–°çš„é …ç›® " WHT "B" NOR "ã€ä¿®æ”¹èˆŠçš„é …ç›® "
+              WHT "C" NOR "ã€æŸ¥çœ‹ç©å®¶æŠ•æ³¨ \n" WHT "        D" NOR "ã€çµæŸä¸€å€‹é …ç›® " WHT
+              "E" NOR "ã€åˆªé™¤ä¸€å€‹é …ç›® " WHT "F" NOR "ã€é€€å‡ºç®¡ç†ç³»çµ± \n");
+        write("è«‹é¸æ“‡ï¼š");
         input_to("get_type", me);
 
 }
 
-// ÍË³ö¹ÜÀí
+// é€€å‡ºç®¡ç†
 private void end_manage()
 {
-        write("\nÄú·ÅÆúÁË²©²Ê¹ÜÀí¡£\n");
-        write(HIW "£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­\n" NOR);
+        write("\næ‚¨æ”¾æ£„äº†åšå½©ç®¡ç†ã€‚\n");
+        write(HIW "ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼\n" NOR);
         return;
 }
 
-// ½øÈë¹ÜÀíÏµÍ³
+// é€²å…¥ç®¡ç†ç³»çµ±
 public void start_manage(object me)
 {
-        write(HIW "£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­\n" NOR);
-        write("\t\t\t  " + MUD_NAME + "²©²Ê¹ÜÀí³ÌĞò\n\n");
+        write(HIW "ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼\n" NOR);
+        write("\t\t\t  " + MUD_NAME + "åšå½©ç®¡ç†ç¨‹åº\n\n");
         write_prompt(me);
         return;
 }
 
-// Ñ¡Ôñ¹ÜÀíµÄÀà±ğ
+// é¸æ“‡ç®¡ç†çš„é¡åˆ¥
 private void get_type(string arg, object me)
 {
         array  users, items;
@@ -181,18 +181,18 @@ private void get_type(string arg, object me)
         case "a": 
         case "A":
                 items = keys(item_data);
-                msg = "Ä¿Ç°µÄÏîÄ¿ÓĞ£º\n\n";
+                msg = "ç›®å‰çš„é …ç›®æœ‰ï¼š\n\n";
                 
                 for (i = 0; i < sizeof(items); i++)
                 {
-                        msg += WHT + (i+1) + NOR "¡¢" + items[i] + "\n";
+                        msg += WHT + (i+1) + NOR "ã€" + items[i] + "\n";
                 }
                 
                 if (! sizeof(items)) msg = "";
                 
                 write(msg);
-                write("\nÄú´òËã´´½¨ĞÂµÄ²©²ÊÏîÄ¿¡£\n");
-                write("ÇëÊäÈëĞÂ½¨µÄÏîÄ¿Ãû³Æ£º");
+                write("\næ‚¨æ‰“ç®—å‰µå»ºæ–°çš„åšå½©é …ç›®ã€‚\n");
+                write("è«‹è¼¸å…¥æ–°å»ºçš„é …ç›®åç¨±ï¼š");
                 input_to("get_name", me);
                 return;
         case "b": 
@@ -201,40 +201,40 @@ private void get_type(string arg, object me)
                 
                 if (! sizeof(items))
                 {
-                        write("\nÄ¿Ç°Ã»ÓĞ¿ÉĞŞ¸ÄÏîÄ¿¡£\n\n");
+                        write("\nç›®å‰æ²’æœ‰å¯ä¿®æ”¹é …ç›®ã€‚\n\n");
                         
-                        write("²éÑ¯Íê±Ï¡£\n");
+                        write("æŸ¥è©¢å®Œç•¢ã€‚\n");
                         write_prompt(me);
                         return;
                 }
                 
-                msg = "Ä¿Ç°µÄÏîÄ¿ÓĞ£º\n\n";
+                msg = "ç›®å‰çš„é …ç›®æœ‰ï¼š\n\n";
                 
                 for (i = 0; i < sizeof(items); i++)
                 {
-                        msg += WHT + (i+1) + NOR "¡¢" + items[i] + "\n";
+                        msg += WHT + (i+1) + NOR "ã€" + items[i] + "\n";
                 }
                 write(msg);
-                write("\nÄú´òËãĞŞ¸Ä¾ÉµÄ²©²ÊÏîÄ¿¡£\n");
-                write("ÇëÊäÈëÄúÒªĞŞ¸ÄµÄÏîÄ¿Ãû³Æ£º");
+                write("\næ‚¨æ‰“ç®—ä¿®æ”¹èˆŠçš„åšå½©é …ç›®ã€‚\n");
+                write("è«‹è¼¸å…¥æ‚¨è¦ä¿®æ”¹çš„é …ç›®åç¨±ï¼š");
                 input_to("get_name", me);
                 return;
         case "c": 
         case "C": 
                 users = keys(user_data);
                 
-                write("Äú´òËã²é¿´Íæ¼ÒÍ¶×¢Çé¿ö¡£\n");
+                write("æ‚¨æ‰“ç®—æŸ¥çœ‹ç©å®¶æŠ•æ³¨æƒ…æ³ã€‚\n");
                 
                 if (! sizeof(users))
                 {
-                        write("\nÄ¿Ç°Ã»ÓĞÈÎºÎÍæ¼ÒÍ¶×¢¡£\n\n");
+                        write("\nç›®å‰æ²’æœ‰ä»»ä½•ç©å®¶æŠ•æ³¨ã€‚\n\n");
                         
-                        write("²éÑ¯Íê±Ï¡£\n");
+                        write("æŸ¥è©¢å®Œç•¢ã€‚\n");
                         write_prompt(me);
                         return;
                 }
                 
-                write("Ä¿Ç°Í¶×¢µÄÍæ¼ÒÓĞ£º\n\n");
+                write("ç›®å‰æŠ•æ³¨çš„ç©å®¶æœ‰ï¼š\n\n");
                 msg = WHT "";
                 
                 for (i = 0; i < sizeof(users); i++ )
@@ -244,60 +244,60 @@ private void get_type(string arg, object me)
                         if (! (j % 5)) msg += "\n";
                 }
                 write(msg + NOR);
-                write("\n\nÒ»¹²ÓĞ " WHT + i + NOR " ÃûÍæ¼ÒÒÑ¾­Í¶×¢¡£\n");
-                write("\nÇëÑ¡ÔñÄã¾ßÌå²é¿´µÄÍæ¼Ò£º");
+                write("\n\nä¸€å…±æœ‰ " WHT + i + NOR " åç©å®¶å·²ç¶“æŠ•æ³¨ã€‚\n");
+                write("\nè«‹é¸æ“‡ä½ å…·é«”æŸ¥çœ‹çš„ç©å®¶ï¼š");
                 input_to("get_user", me);
                 return;
         case "d": 
         case "D": 
-                write("Äã´òËã½áÊøÒ»¸ö²©²ÊÏîÄ¿¡£\n");
+                write("ä½ æ‰“ç®—çµæŸä¸€å€‹åšå½©é …ç›®ã€‚\n");
                 
                 items = keys(item_data);
-                // ±ØĞëÊÇÒÑ¾­Í£Ö¹µÄÏîÄ¿²ÅĞĞ
+                // å¿…é ˆæ˜¯å·²ç¶“åœæ­¢çš„é …ç›®æ‰è¡Œ
                 items = filter_array(items, (: query_status($1) == OPENING :));
                 
                 if (! sizeof(items))
                 {
-                        write("\nÄ¿Ç°Ã»ÓĞ¿ÉĞŞ¸ÄÏîÄ¿¡£\n\n");
+                        write("\nç›®å‰æ²’æœ‰å¯ä¿®æ”¹é …ç›®ã€‚\n\n");
                         
-                        write("²éÑ¯Íê±Ï¡£\n");
+                        write("æŸ¥è©¢å®Œç•¢ã€‚\n");
                         write_prompt(me);
                         return;
                 }
                 
-                msg = "Ä¿Ç°µÄÏîÄ¿ÓĞ£º\n\n";
+                msg = "ç›®å‰çš„é …ç›®æœ‰ï¼š\n\n";
                 
                 for (i = 0; i < sizeof(items); i++)
                 {
-                        msg += WHT + (i+1) + NOR "¡¢" + items[i] + "\n";
+                        msg += WHT + (i+1) + NOR "ã€" + items[i] + "\n";
                 }
                 write(msg);
-                write("\nÇëÊäÈëÄúÒª½áÊøµÄÏîÄ¿Ãû³Æ£º");
+                write("\nè«‹è¼¸å…¥æ‚¨è¦çµæŸçš„é …ç›®åç¨±ï¼š");
                 input_to("get_name_end", me);
                 return;
         case "e": 
         case "E": 
-                write("Äã´òËãÉ¾³ıÒ»¸ö²©²ÊÏîÄ¿¡£\n");
+                write("ä½ æ‰“ç®—åˆªé™¤ä¸€å€‹åšå½©é …ç›®ã€‚\n");
                 
                 items = keys(item_data);
                 
                 if (! sizeof(items))
                 {
-                        write("\nÄ¿Ç°Ã»ÓĞ¿ÉĞŞ¸ÄÏîÄ¿¡£\n\n");
+                        write("\nç›®å‰æ²’æœ‰å¯ä¿®æ”¹é …ç›®ã€‚\n\n");
                         
-                        write("²éÑ¯Íê±Ï¡£\n");
+                        write("æŸ¥è©¢å®Œç•¢ã€‚\n");
                         write_prompt(me);
                         return;
                 }
 
-                msg = "Ä¿Ç°µÄÏîÄ¿ÓĞ£º\n\n";
+                msg = "ç›®å‰çš„é …ç›®æœ‰ï¼š\n\n";
                 
                 for (i = 0; i < sizeof(items); i++)
                 {
-                        msg += WHT + (i+1) + NOR "¡¢" + items[i] + "\n";
+                        msg += WHT + (i+1) + NOR "ã€" + items[i] + "\n";
                 }
                 write(msg);
-                write("\nÇëÊäÈëÄúÒªÉ¾³ıµÄÏîÄ¿ĞòºÅ£º");
+                write("\nè«‹è¼¸å…¥æ‚¨è¦åˆªé™¤çš„é …ç›®åºè™Ÿï¼š");
                 input_to("get_name_todel", me);
                 return;
         default: 
@@ -307,7 +307,7 @@ private void get_type(string arg, object me)
         
 }
 
-// Ñ¡Ôñ¹ÜÀíµÄÏîÄ¿Ãû³Æ
+// é¸æ“‡ç®¡ç†çš„é …ç›®åç¨±
 private void get_name(string arg, object me)
 {
         array teams;
@@ -320,7 +320,7 @@ private void get_name(string arg, object me)
                 end_manage();
                 return;
         }
-        // ĞŞ¸Ä¾ÉÏîÄ¿
+        // ä¿®æ”¹èˆŠé …ç›®
         if (mapp(item_data[arg]) && sizeof(item_data[arg]) >= 5)
         {
                 teams = keys(item_data[arg]["subject"]);
@@ -328,18 +328,18 @@ private void get_name(string arg, object me)
                 for (i = 0; i < sizeof(teams); i++)
                 {
                         team = teams[i];
-                        msg += sprintf("%10s£º" WHT "1 : %d\n" NOR , team, item_data[arg]["subject"][team]);
+                        msg += sprintf("%10sï¼š" WHT "1 : %d\n" NOR , team, item_data[arg]["subject"][team]);
                 }
                 
                 change_status(arg, INITING);
-                write("\n1¡¢Ãû³Æ£º" WHT + arg + NOR "\n"
-                      "2¡¢ÃèÊö£º\n\n" WHT + sort_msg(item_data[arg]["long"]) + NOR "\n\n"
-                      "3¡¢½áÊøÊ±¼ä£º" WHT + CHINESE_D->chinese_time(5, ctime(item_data[arg]["end_time"])) + 
-                      (item_data[arg]["end_time"] > time() ? "" : HIR "(ÒÑ½áÊø)") + NOR "\n"
-                      "4¡¢¿ÉÍ¶×¢ÊıÁ¿£º" WHT + item_data[arg]["number"] + " ¸ö\n" NOR 
-                      "5¡¢×îĞ¡Í¶×¢Á¿£º" WHT + item_data[arg]["min_money"] + " Á½»Æ½ğ\n" NOR 
-                      "6¡¢¶ÓÎé¼°ÅâÂÊ£º\n\n" + msg + "\n" );
-                write("ÇëÑ¡ÔñÄúÒªĞŞ¸ÄµÄÏîÄ¿£º");
+                write("\n1ã€åç¨±ï¼š" WHT + arg + NOR "\n"
+                      "2ã€æè¿°ï¼š\n\n" WHT + sort_msg(item_data[arg]["long"]) + NOR "\n\n"
+                      "3ã€çµæŸæ™‚é–“ï¼š" WHT + CHINESE_D->chinese_time(5, ctime(item_data[arg]["end_time"])) + 
+                      (item_data[arg]["end_time"] > time() ? "" : HIR "(å·²çµæŸ)") + NOR "\n"
+                      "4ã€å¯æŠ•æ³¨æ•¸é‡ï¼š" WHT + item_data[arg]["number"] + " å€‹\n" NOR 
+                      "5ã€æœ€å°æŠ•æ³¨é‡ï¼š" WHT + item_data[arg]["min_money"] + " å…©é»ƒé‡‘\n" NOR 
+                      "6ã€éšŠä¼åŠè³ ç‡ï¼š\n\n" + msg + "\n" );
+                write("è«‹é¸æ“‡æ‚¨è¦ä¿®æ”¹çš„é …ç›®ï¼š");
                 input_to("select_change_type", me, arg);
                 return;
         }
@@ -352,28 +352,28 @@ private void get_name(string arg, object me)
                 for (i = 0; i < sizeof(teams); i++)
                 {
                         team = teams[i];
-                        msg += sprintf("%10s£º" WHT "1 : %d\n" NOR , team, item["subject"][team]);
+                        msg += sprintf("%10sï¼š" WHT "1 : %d\n" NOR , team, item["subject"][team]);
                 }
                 
                 change_status(arg, INITING);
-                write("\n1¡¢Ãû³Æ£º" WHT + arg + NOR "\n"
-                      "2¡¢ÃèÊö£º\n\n" WHT + sort_msg(item["long"]) + NOR "\n\n"
-                      "3¡¢½áÊøÊ±¼ä£º" WHT + CHINESE_D->chinese_time(5, ctime(item["end_time"])) +  
-                      (item["end_time"] > time() ? "" : HIR "(ÒÑ½áÊø)") + NOR "\n"
-                      "4¡¢¿ÉÍ¶×¢ÊıÁ¿£º" WHT + item["number"] + " ¸ö\n" NOR 
-                      "5¡¢×îĞ¡Í¶×¢Á¿£º" WHT + item["min_money"] + " Á½»Æ½ğ\n" NOR
-                      "6¡¢¶ÓÎé¼°ÅâÂÊ£º\n\n" + msg + "\n" );
-                write("ÇëÑ¡ÔñÄúÒªĞŞ¸ÄµÄÏîÄ¿£º");
+                write("\n1ã€åç¨±ï¼š" WHT + arg + NOR "\n"
+                      "2ã€æè¿°ï¼š\n\n" WHT + sort_msg(item["long"]) + NOR "\n\n"
+                      "3ã€çµæŸæ™‚é–“ï¼š" WHT + CHINESE_D->chinese_time(5, ctime(item["end_time"])) +  
+                      (item["end_time"] > time() ? "" : HIR "(å·²çµæŸ)") + NOR "\n"
+                      "4ã€å¯æŠ•æ³¨æ•¸é‡ï¼š" WHT + item["number"] + " å€‹\n" NOR 
+                      "5ã€æœ€å°æŠ•æ³¨é‡ï¼š" WHT + item["min_money"] + " å…©é»ƒé‡‘\n" NOR
+                      "6ã€éšŠä¼åŠè³ ç‡ï¼š\n\n" + msg + "\n" );
+                write("è«‹é¸æ“‡æ‚¨è¦ä¿®æ”¹çš„é …ç›®ï¼š");
                 input_to("select_change_type", me, arg);
                 return;
         }
-        // ´´½¨ĞÂÏîÄ¿
+        // å‰µå»ºæ–°é …ç›®
         else
         {
                 item_data[arg] = ([ ]);
                 change_status(arg, INITING);
                 save();
-                write("\nÇëÊäÈëÏîÄ¿µÄÏêÏ¸ÃèÊö£º\n");
+                write("\nè«‹è¼¸å…¥é …ç›®çš„è©³ç´°æè¿°ï¼š\n");
                 me->edit((: call_other, __FILE__, "get_long", me, arg :));
                 return;
         }
@@ -384,45 +384,45 @@ private void select_change_type(string arg, object me, string name)
         switch (arg)
         {
         case "1":
-                write("\nÄã´òËãĞŞ¸ÄÕâ¸öÏîÄ¿µÄÃû³Æ¡£\n");
-                write("Äã´òËã¸Ä³ÉÊ²Ã´ÄØ£º");
+                write("\nä½ æ‰“ç®—ä¿®æ”¹é€™å€‹é …ç›®çš„åç¨±ã€‚\n");
+                write("ä½ æ‰“ç®—æ”¹æˆä»€éº¼å‘¢ï¼š");
                 input_to("change_name", me, name);
                 return;
         case "2":
-                write("\nÄã´òËãĞŞ¸ÄÕâ¸öÏîÄ¿µÄ³¤ÃèÊö¡£\n");
-                write("Äã´òËã¸Ä³ÉÊ²Ã´ÄØ£º");
+                write("\nä½ æ‰“ç®—ä¿®æ”¹é€™å€‹é …ç›®çš„é•·æè¿°ã€‚\n");
+                write("ä½ æ‰“ç®—æ”¹æˆä»€éº¼å‘¢ï¼š");
                 me->edit((: call_other, __FILE__, "change_long", me, name :));
                 return; 
         case "3": 
-                write("\nÄã´òËãĞŞ¸ÄÕâ¸öÏîÄ¿µÄ½áÊøÊ±¼ä¡£\n");
-                write("Õâ¸öÏîÄ¿½«ÔÚ¶àÉÙÌìºó½áÊø£¿");
+                write("\nä½ æ‰“ç®—ä¿®æ”¹é€™å€‹é …ç›®çš„çµæŸæ™‚é–“ã€‚\n");
+                write("é€™å€‹é …ç›®å°‡åœ¨å¤šå°‘å¤©å¾ŒçµæŸï¼Ÿ");
                 input_to("change_date", me, name);
                 return; 
         case "4": 
-                write("\nÄã´òËãĞŞ¸ÄÕâ¸öÏîÄ¿µÄ¿ÉÍ¶×¢¶ÓÎéÊı¡£\n");
-                write("Õâ¸öÏîÄ¿ÔÊĞíµÄÍ¶×¢¶ÓÎéÊıÎª£º");
+                write("\nä½ æ‰“ç®—ä¿®æ”¹é€™å€‹é …ç›®çš„å¯æŠ•æ³¨éšŠä¼æ•¸ã€‚\n");
+                write("é€™å€‹é …ç›®å…è¨±çš„æŠ•æ³¨éšŠä¼æ•¸ç‚ºï¼š");
                 input_to("change_number", me, name);
                 return; 
         case "5": 
-                write("\nÄã´òËãĞŞ¸ÄÕâ¸öÏîÄ¿µÄ×îĞ¡Í¶×¢Á¿¡£\n");
-                write("Äã´òËã¸Ä³É¶àÉÙÄØ£º");
+                write("\nä½ æ‰“ç®—ä¿®æ”¹é€™å€‹é …ç›®çš„æœ€å°æŠ•æ³¨é‡ã€‚\n");
+                write("ä½ æ‰“ç®—æ”¹æˆå¤šå°‘å‘¢ï¼š");
                 input_to("change_money", me, name);
                 return;
         case "6": 
-                write("\nÄã´òËãĞŞ¸ÄÕâ¸öÏîÄ¿µÄ¶ÓÎéÊı¾İ¡£\n");
-                write("ÄãÒªÔõÃ´ĞŞ¸Ä£¿[" WHT "1" NOR "¡¢ĞŞ¸Ä " WHT "2" NOR "¡¢É¾³ı]");
+                write("\nä½ æ‰“ç®—ä¿®æ”¹é€™å€‹é …ç›®çš„éšŠä¼æ•¸æ“šã€‚\n");
+                write("ä½ è¦æ€éº¼ä¿®æ”¹ï¼Ÿ[" WHT "1" NOR "ã€ä¿®æ”¹ " WHT "2" NOR "ã€åˆªé™¤]");
                 input_to("change_team_type", me, name);
                 return;
         default: 
                 change_status(name, OPENING);
-                write("\nÄã·ÅÆúÁËĞŞ¸Ä¡£\n\n");
-                write("ĞŞ¸ÄÍê±Ï¡£\n");
+                write("\nä½ æ”¾æ£„äº†ä¿®æ”¹ã€‚\n\n");
+                write("ä¿®æ”¹å®Œç•¢ã€‚\n");
                 write_prompt(me);
                 return;
         }
 }
 
-// ĞŞ¸ÄÏîÄ¿µÄÃû³Æ
+// ä¿®æ”¹é …ç›®çš„åç¨±
 private void change_name(string arg, object me, string name)
 {
         mapping item;
@@ -436,8 +436,8 @@ private void change_name(string arg, object me, string name)
         if (mapp(item_data[arg]))
         {
                 change_status(name, OPENING);
-                write("\nÕâÊÇÒ»¸öÒÑ´æÔÚµÄÏîÄ¿£¬²»¿ÉÒÔĞŞ¸Ä¡£\n\n");
-                write("Äã»Øµ½ÁË²©²Ê¹ÜÀíÖ÷½çÃæ¡£\n");
+                write("\né€™æ˜¯ä¸€å€‹å·²å­˜åœ¨çš„é …ç›®ï¼Œä¸å¯ä»¥ä¿®æ”¹ã€‚\n\n");
+                write("ä½ å›åˆ°äº†åšå½©ç®¡ç†ä¸»ç•Œé¢ã€‚\n");
                 write_prompt(me);
                 return;
         }
@@ -450,13 +450,13 @@ private void change_name(string arg, object me, string name)
         log_file("gamble",sprintf("%schangetheitem%s'snameto%son%s.\n",query("id", me),
                            name, arg, ctime(time())));
 
-        write("\nÏîÄ¿ " WHT + name + NOR + " µÄÃû×ÖÒÑ¾­±»³É¹¦¸ÄÎªÁË " WHT + arg + NOR + "¡£\n\n");
-        write("ĞŞ¸ÄÍê±Ï£¬Äã»Øµ½ÁË¹ÜÀíÏµÍ³Ö÷½çÃæ¡£\n");
+        write("\né …ç›® " WHT + name + NOR + " çš„åå­—å·²ç¶“è¢«æˆåŠŸæ”¹ç‚ºäº† " WHT + arg + NOR + "ã€‚\n\n");
+        write("ä¿®æ”¹å®Œç•¢ï¼Œä½ å›åˆ°äº†ç®¡ç†ç³»çµ±ä¸»ç•Œé¢ã€‚\n");
         write_prompt(me);
         return;
 }
 
-// ÊäÈëÏîÄ¿µÄ³¤ÃèÊö
+// è¼¸å…¥é …ç›®çš„é•·æè¿°
 private void change_long(object me, string arg, string long)
 {
         if (long == "")
@@ -470,8 +470,8 @@ private void change_long(object me, string arg, string long)
         change_status(arg, OPENING);
         save();
                 
-        write("\nÏîÄ¿" WHT + arg + NOR "µÄÃèÊöÒÑ¾­±»³É¹¦¸ÄÎªÁË\n " WHT + sort_msg(long) + NOR "\n\n");
-        write("ĞŞ¸ÄÍê±Ï£¬Äã»Øµ½ÁË¹ÜÀíÏµÍ³Ö÷½çÃæ¡£\n");
+        write("\né …ç›®" WHT + arg + NOR "çš„æè¿°å·²ç¶“è¢«æˆåŠŸæ”¹ç‚ºäº†\n " WHT + sort_msg(long) + NOR "\n\n");
+        write("ä¿®æ”¹å®Œç•¢ï¼Œä½ å›åˆ°äº†ç®¡ç†ç³»çµ±ä¸»ç•Œé¢ã€‚\n");
         write_prompt(me);
         return;
 }
@@ -489,9 +489,9 @@ private void change_date(string arg, object me, string name)
         
         if (! sscanf(arg, "%d", day) || day <= 0)
         {
-                write("\n·Ç·¨µÄ¸ñÊ½£¬ÇëÖØĞÂÊäÈë¡£\n\n");
+                write("\néæ³•çš„æ ¼å¼ï¼Œè«‹é‡æ–°è¼¸å…¥ã€‚\n\n");
                 
-                write("ÇëÎÊÕâ¸öÏîÄ¿½«ÔÚ¶àÉÙÌìºó½áÊøÍ¶×¢£¿[¸ñÊ½£º" WHT "5" NOR "]");
+                write("è«‹å•é€™å€‹é …ç›®å°‡åœ¨å¤šå°‘å¤©å¾ŒçµæŸæŠ•æ³¨ï¼Ÿ[æ ¼å¼ï¼š" WHT "5" NOR "]");
                 input_to("change_date", me, name);
                 return;
         }
@@ -501,8 +501,8 @@ private void change_date(string arg, object me, string name)
         change_status(name, OPENING);
         save();
                 
-        write("\nÏîÄ¿" WHT + name + NOR "µÄ½áÊøÊ±¼äÒÑ¾­±»³É¹¦¸ÄÎªÁË " WHT + chinese_number(day) + NOR " Ìì×óÓÒ½áÊø¡£\n\n");
-        write("ĞŞ¸ÄÍê±Ï£¬Äã»Øµ½ÁË¹ÜÀíÏµÍ³Ö÷½çÃæ¡£\n");
+        write("\né …ç›®" WHT + name + NOR "çš„çµæŸæ™‚é–“å·²ç¶“è¢«æˆåŠŸæ”¹ç‚ºäº† " WHT + chinese_number(day) + NOR " å¤©å·¦å³çµæŸã€‚\n\n");
+        write("ä¿®æ”¹å®Œç•¢ï¼Œä½ å›åˆ°äº†ç®¡ç†ç³»çµ±ä¸»ç•Œé¢ã€‚\n");
         write_prompt(me);
         return;
 }
@@ -520,9 +520,9 @@ private void change_number(string arg, object me, string name)
         
         if (! sscanf(arg, "%d", number) || number <= 0)
         {
-                write("\n·Ç·¨µÄ¸ñÊ½£¬ÇëÖØĞÂÊäÈë¡£\n\n");
+                write("\néæ³•çš„æ ¼å¼ï¼Œè«‹é‡æ–°è¼¸å…¥ã€‚\n\n");
                 
-                write("ÇëÊäÈëÔÊĞíÍæ¼ÒÑ¡ÔñµÄ¶ÓÎéÊıÄ¿£º");
+                write("è«‹è¼¸å…¥å…è¨±ç©å®¶é¸æ“‡çš„éšŠä¼æ•¸ç›®ï¼š");
                 input_to("change_number", me, name);
                 return;
         }
@@ -531,8 +531,8 @@ private void change_number(string arg, object me, string name)
         change_status(name, OPENING);
         save();
         
-        write("\nÏîÄ¿ " WHT + name + NOR + " µÄÍ¶×¢¶ÓÎéÊıÒÑ¾­±»³É¹¦¸ÄÎªÁË " WHT + chinese_number(number) + NOR + "¸ö¡£\n\n");
-        write("ĞŞ¸ÄÍê±Ï£¬Äã»Øµ½ÁË¹ÜÀíÏµÍ³Ö÷½çÃæ¡£\n");
+        write("\né …ç›® " WHT + name + NOR + " çš„æŠ•æ³¨éšŠä¼æ•¸å·²ç¶“è¢«æˆåŠŸæ”¹ç‚ºäº† " WHT + chinese_number(number) + NOR + "å€‹ã€‚\n\n");
+        write("ä¿®æ”¹å®Œç•¢ï¼Œä½ å›åˆ°äº†ç®¡ç†ç³»çµ±ä¸»ç•Œé¢ã€‚\n");
         write_prompt(me);
         return;
 }
@@ -550,9 +550,9 @@ private void change_money(string arg, object me, string name)
         
         if (! sscanf(arg, "%d", money) || money <= 0)
         {
-                write("\n·Ç·¨µÄ¸ñÊ½£¬ÇëÖØĞÂÊäÈë¡£\n\n");
+                write("\néæ³•çš„æ ¼å¼ï¼Œè«‹é‡æ–°è¼¸å…¥ã€‚\n\n");
                 
-                write("ÇëÊäÈëÏîÄ¿µÄ×îÉÙÍ¶×¢»Æ½ğÁ¿£º[¸ñÊ½£º" WHT "10000" NOR "]");
+                write("è«‹è¼¸å…¥é …ç›®çš„æœ€å°‘æŠ•æ³¨é»ƒé‡‘é‡ï¼š[æ ¼å¼ï¼š" WHT "10000" NOR "]");
                 input_to("get_least_money", me, name);
                 return;
         }
@@ -561,13 +561,13 @@ private void change_money(string arg, object me, string name)
         change_status(name, OPENING);
         save();
 
-        write("\nÏîÄ¿ " WHT + name + NOR + " µÄ×îĞ¡Í¶×¢Á¿ÒÑ¾­±»³É¹¦¸ÄÎªÁË " WHT + chinese_number(money) + NOR + "¡£\n\n");
-        write("ĞŞ¸ÄÍê±Ï£¬Äã»Øµ½ÁË¹ÜÀíÏµÍ³Ö÷½çÃæ¡£\n");
+        write("\né …ç›® " WHT + name + NOR + " çš„æœ€å°æŠ•æ³¨é‡å·²ç¶“è¢«æˆåŠŸæ”¹ç‚ºäº† " WHT + chinese_number(money) + NOR + "ã€‚\n\n");
+        write("ä¿®æ”¹å®Œç•¢ï¼Œä½ å›åˆ°äº†ç®¡ç†ç³»çµ±ä¸»ç•Œé¢ã€‚\n");
         write_prompt(me);
         return;
 }
 
-// Ñ¡ÔñĞŞ¸Ä¶ÓÎéµÄÊı¾İÀàĞÍ
+// é¸æ“‡ä¿®æ”¹éšŠä¼çš„æ•¸æ“šé¡å‹
 private void change_team_type(string arg, object me, string name)
 {
         if (arg == "")
@@ -578,19 +578,19 @@ private void change_team_type(string arg, object me, string name)
         }
         if (arg == "1")
         {
-                write("\nÄã´òËãĞŞ¸ÄÏîÄ¿" + name + "µÄ¶ÓÎéÊı¾İ¡£\n");
+                write("\nä½ æ‰“ç®—ä¿®æ”¹é …ç›®" + name + "çš„éšŠä¼æ•¸æ“šã€‚\n");
                 input_to("change_team_info", me, name);
                 return;
         }
         else 
         {
-                write("\nÄã´òËãÉ¾³ıÏîÄ¿" + name + "µÄÒ»¸ö¶ÓÎéÊı¾İ¡£\n");
+                write("\nä½ æ‰“ç®—åˆªé™¤é …ç›®" + name + "çš„ä¸€å€‹éšŠä¼æ•¸æ“šã€‚\n");
                 input_to("del_team_info", me, name);
                 return;
         }
 }
 
-// ÊäÈëÏîÄ¿µÄ³¤ÃèÊö
+// è¼¸å…¥é …ç›®çš„é•·æè¿°
 private void get_long(object me, string arg, string long)
 {
         if (long == "")
@@ -602,13 +602,13 @@ private void get_long(object me, string arg, string long)
         item_data[arg]["long"] = replace_string(long, "\n", "");
         save();
         
-        write("\nÇëÊäÈëÏîÄ¿°üº¬µÄ¶ÓÎéÊıÄ¿£º");
+        write("\nè«‹è¼¸å…¥é …ç›®åŒ…å«çš„éšŠä¼æ•¸ç›®ï¼š");
         input_to("get_team_number", me, arg);
         
         return;
 }
 
-// ÊäÈëÏîÄ¿µÄ¶ÓÎéÊı
+// è¼¸å…¥é …ç›®çš„éšŠä¼æ•¸
 private void get_team_number(string arg, object me, string name)
 {
         int times;
@@ -623,25 +623,25 @@ private void get_team_number(string arg, object me, string name)
         
         if (times > 20 || times <= 0)
         {
-                write("¶Ô²»Æğ£¬Õâ¸öÊıÄ¿ÊÇ²»ºÏ·¨µÄ¡£\n");
+                write("å°ä¸èµ·ï¼Œé€™å€‹æ•¸ç›®æ˜¯ä¸åˆæ³•çš„ã€‚\n");
                 
-                write("ÇëÊäÈëÏîÄ¿°üº¬µÄ¶ÓÎéÊıÄ¿£º");
+                write("è«‹è¼¸å…¥é …ç›®åŒ…å«çš„éšŠä¼æ•¸ç›®ï¼š");
                 input_to("get_team_number", me, name);
                 
                 return;
         }
         
-        // ³õÊ¼»¯¶ÓÎéÓ³Éä
+        // åˆå§‹åŒ–éšŠä¼æ˜ å°„
         item_data[name]["subject"] = ([ ]);
         save();
         
-        write("\nÇëÊäÈëµÚÒ»¸ö¶ÓÎéµÄÃû³Æ¼°ÅâÂÊ[¸ñÊ½£º" WHT "ÖĞ¹ú¶Ó:30" NOR "]£º");
+        write("\nè«‹è¼¸å…¥ç¬¬ä¸€å€‹éšŠä¼çš„åç¨±åŠè³ ç‡[æ ¼å¼ï¼š" WHT "ä¸­åœ‹éšŠ:30" NOR "]ï¼š");
         input_to("get_team_info", me, name, times);
         
         return;
 }
 
-// ÊäÈë¾ßÌåÒ»¸ö¶ÓÎéµÄĞÅÏ¢
+// è¼¸å…¥å…·é«”ä¸€å€‹éšŠä¼çš„ä¿¡æ¯
 private void get_team_info(string arg, object me, string name, int times)
 {
         string team;
@@ -655,18 +655,18 @@ private void get_team_info(string arg, object me, string name, int times)
         
         if (sscanf(arg, "%s:%d", team, bonus) != 2)
         {
-                write("¸ñÊ½´íÎó£¬ÇëÖØĞÂÊäÈë¡£\n");
-                write("ÇëÊäÈëµÚÒ»¸ö¶ÓÎéµÄÃû³Æ¼°ÅâÂÊ[¸ñÊ½£º" WHT "ÖĞ¹ú¶Ó:30" NOR "]£º");
+                write("æ ¼å¼éŒ¯èª¤ï¼Œè«‹é‡æ–°è¼¸å…¥ã€‚\n");
+                write("è«‹è¼¸å…¥ç¬¬ä¸€å€‹éšŠä¼çš„åç¨±åŠè³ ç‡[æ ¼å¼ï¼š" WHT "ä¸­åœ‹éšŠ:30" NOR "]ï¼š");
                 input_to("get_team_info", me, name, times);
         
                 return;
         }
         
-        // ·ÀÖ¹³öÏÖÖØ¸´ÊäÈë
+        // é˜²æ­¢å‡ºç¾é‡å¾©è¼¸å…¥
         if (item_data[name]["subject"][team])
         {
-                write("Õâ¸ö¶ÓÎéÒÑ¾­ÊäÈë¹ıÁË¡£\n");
-                write("ÇëÊäÈëÏÂÒ»¸ö¶ÓÎéµÄÃû³Æ¼°ÅâÂÊ[¸ñÊ½£º" WHT "ÖĞ¹ú¶Ó:30" NOR "]£º");
+                write("é€™å€‹éšŠä¼å·²ç¶“è¼¸å…¥éäº†ã€‚\n");
+                write("è«‹è¼¸å…¥ä¸‹ä¸€å€‹éšŠä¼çš„åç¨±åŠè³ ç‡[æ ¼å¼ï¼š" WHT "ä¸­åœ‹éšŠ:30" NOR "]ï¼š");
                 input_to("get_team_info", me, name, times);
         
                 return;
@@ -674,26 +674,26 @@ private void get_team_info(string arg, object me, string name, int times)
         
         item_data[name]["subject"][team] = bonus; 
         
-        // Èç¹ûËùÓĞµÄ¶ÓÎé¶¼ÊäÈëÍêÁË
+        // å¦‚æœæ‰€æœ‰çš„éšŠä¼éƒ½è¼¸å…¥å®Œäº†
         if (times == sizeof(item_data[name]["subject"]))
         {
-                write("\nÇëÎÊÕâ¸öÏîÄ¿½«ÔÚ¶àÉÙÌìºó½áÊøÍ¶×¢£¿[¸ñÊ½£º" WHT "5" NOR "]");
+                write("\nè«‹å•é€™å€‹é …ç›®å°‡åœ¨å¤šå°‘å¤©å¾ŒçµæŸæŠ•æ³¨ï¼Ÿ[æ ¼å¼ï¼š" WHT "5" NOR "]");
                 input_to("get_date_off", me, name);
                 return;
         }
         
-        write("Ä¿Ç°»¹Ê£ÏÂ£º" + (times - sizeof(item_data[name]["subject"])) + "¸ö¶Ó¡£\n");
+        write("ç›®å‰é‚„å‰©ä¸‹ï¼š" + (times - sizeof(item_data[name]["subject"])) + "å€‹éšŠã€‚\n");
         
         item_data[name]["subject"][team] = bonus;
         save();
         
-        write("\nÇëÊäÈëÏÂÒ»¸ö¶ÓÎéµÄÃû³Æ¼°ÅâÂÊ[¸ñÊ½£º" WHT "ÖĞ¹ú¶Ó:30" NOR "]£º");
+        write("\nè«‹è¼¸å…¥ä¸‹ä¸€å€‹éšŠä¼çš„åç¨±åŠè³ ç‡[æ ¼å¼ï¼š" WHT "ä¸­åœ‹éšŠ:30" NOR "]ï¼š");
         input_to("get_team_info", me, name, times);
         
         return;
 }
 
-// ÊäÈë½áÊøµÄÊ±¼ä
+// è¼¸å…¥çµæŸçš„æ™‚é–“
 private void get_date_off(string arg, object me, string name)
 {
         int day, time;
@@ -706,9 +706,9 @@ private void get_date_off(string arg, object me, string name)
         
         if (! sscanf(arg, "%d", day) || day <= 0)
         {
-                write("\n·Ç·¨µÄ¸ñÊ½£¬ÇëÖØĞÂÊäÈë¡£\n\n");
+                write("\néæ³•çš„æ ¼å¼ï¼Œè«‹é‡æ–°è¼¸å…¥ã€‚\n\n");
                 
-                write("ÇëÎÊÕâ¸öÏîÄ¿½«ÔÚ¶àÉÙÌìºó½áÊøÍ¶×¢£¿[¸ñÊ½£º" WHT "5" NOR "]");
+                write("è«‹å•é€™å€‹é …ç›®å°‡åœ¨å¤šå°‘å¤©å¾ŒçµæŸæŠ•æ³¨ï¼Ÿ[æ ¼å¼ï¼š" WHT "5" NOR "]");
                 input_to("get_date_off", me, name);
                 return;
         }
@@ -718,15 +718,15 @@ private void get_date_off(string arg, object me, string name)
         item_data[name]["end_time"] = time;
         save();
         
-        write("\nÏîÄ¿" WHT + name + NOR "½«ÔÚ " WHT + CHINESE_D->chinese_time(5, ctime(time)) +
-              NOR " ×óÓÒ½áÊø¡£\n\n");
+        write("\né …ç›®" WHT + name + NOR "å°‡åœ¨ " WHT + CHINESE_D->chinese_time(5, ctime(time)) +
+              NOR " å·¦å³çµæŸã€‚\n\n");
               
-        write("ÇëÊäÈëÏîÄ¿µÄ×îÉÙÍ¶×¢»Æ½ğÁ¿£º[¸ñÊ½£º" WHT "10000" NOR "]");
+        write("è«‹è¼¸å…¥é …ç›®çš„æœ€å°‘æŠ•æ³¨é»ƒé‡‘é‡ï¼š[æ ¼å¼ï¼š" WHT "10000" NOR "]");
         input_to("get_least_money", me, name);
         return;
 }
 
-// ÊäÈë×îÉÙÍ¶×¢Á¿
+// è¼¸å…¥æœ€å°‘æŠ•æ³¨é‡
 private void get_least_money(string arg, object me, string name)
 {
         int money;
@@ -739,9 +739,9 @@ private void get_least_money(string arg, object me, string name)
         
         if (! sscanf(arg, "%d", money) || money <= 0)
         {
-                write("\n·Ç·¨µÄ¸ñÊ½£¬ÇëÖØĞÂÊäÈë¡£\n\n");
+                write("\néæ³•çš„æ ¼å¼ï¼Œè«‹é‡æ–°è¼¸å…¥ã€‚\n\n");
                 
-                write("ÇëÊäÈëÏîÄ¿µÄ×îÉÙÍ¶×¢»Æ½ğÁ¿£º[¸ñÊ½£º" WHT "10000" NOR "]");
+                write("è«‹è¼¸å…¥é …ç›®çš„æœ€å°‘æŠ•æ³¨é»ƒé‡‘é‡ï¼š[æ ¼å¼ï¼š" WHT "10000" NOR "]");
                 input_to("get_least_money", me, name);
                 return;
         }
@@ -749,15 +749,15 @@ private void get_least_money(string arg, object me, string name)
         item_data[name]["min_money"] = money;
         save();
         
-        write("\nÏîÄ¿" WHT + name + NOR "µÄ×îĞ¡Í¶×¢Á¿ÊÇ " WHT + money +
-              NOR " Á½»Æ½ğ¡£\n\n");
+        write("\né …ç›®" WHT + name + NOR "çš„æœ€å°æŠ•æ³¨é‡æ˜¯ " WHT + money +
+              NOR " å…©é»ƒé‡‘ã€‚\n\n");
         
-        write("ÇëÊäÈëÔÊĞíÍæ¼ÒÑ¡ÔñµÄ¶ÓÎéÊıÄ¿£º");
+        write("è«‹è¼¸å…¥å…è¨±ç©å®¶é¸æ“‡çš„éšŠä¼æ•¸ç›®ï¼š");
         input_to("get_chip_number", me, name);
         return;
 }
 
-// ÊäÈëÔÊĞíÍæ¼ÒÑ¡ÔñµÄ¶ÓÎéÊıÄ¿
+// è¼¸å…¥å…è¨±ç©å®¶é¸æ“‡çš„éšŠä¼æ•¸ç›®
 private void get_chip_number(string arg, object me, string name)
 {
         int number;
@@ -772,9 +772,9 @@ private void get_chip_number(string arg, object me, string name)
             || number <= 0
             || number >= sizeof(item_data[name]["subject"]))
         {
-                write("\n·Ç·¨µÄ¸ñÊ½£¬ÇëÖØĞÂÊäÈë¡£\n\n");
+                write("\néæ³•çš„æ ¼å¼ï¼Œè«‹é‡æ–°è¼¸å…¥ã€‚\n\n");
                 
-                write("ÇëÊäÈëÔÊĞíÍæ¼ÒÑ¡ÔñµÄ¶ÓÎéÊıÄ¿£º");
+                write("è«‹è¼¸å…¥å…è¨±ç©å®¶é¸æ“‡çš„éšŠä¼æ•¸ç›®ï¼š");
                 input_to("get_chip_number", me, name);
                 return;
         }
@@ -782,24 +782,24 @@ private void get_chip_number(string arg, object me, string name)
         item_data[name]["number"] = number;
         save();
         
-        write("ÏîÄ¿" WHT + name + NOR "ÔÊĞíÍæ¼ÒÑ¡ÔñµÄ¶ÓÎéÊıÄ¿ÊÇ " WHT + chinese_number(number) +
-              NOR " ¸ö¡£\n\n");
+        write("é …ç›®" WHT + name + NOR "å…è¨±ç©å®¶é¸æ“‡çš„éšŠä¼æ•¸ç›®æ˜¯ " WHT + chinese_number(number) +
+              NOR " å€‹ã€‚\n\n");
               
-        // È«²¿ÄÚÈİ±à¼­Íê±Ï
+        // å…¨éƒ¨å…§å®¹ç·¨è¼¯å®Œç•¢
         change_status(name, OPENING);
         save();
         
         log_file("gamble",sprintf("%screateagambleitemcalled%son%s.\n",query("id", me),
                            name, ctime(time())));
 
-        write("È«²¿ÄÚÈİ±à¼­±£´æÍê±Ï¡£\n");
+        write("å…¨éƒ¨å…§å®¹ç·¨è¼¯ä¿å­˜å®Œç•¢ã€‚\n");
         
-        write("Äã»Øµ½µÄ¹ÜÀíÏµÍ³Ö÷½çÃæ¡£\n"); 
+        write("ä½ å›åˆ°çš„ç®¡ç†ç³»çµ±ä¸»ç•Œé¢ã€‚\n"); 
         write_prompt(me);        
         return;
 }
 
-// É¾³ıÒ»¸öÏîÄ¿
+// åˆªé™¤ä¸€å€‹é …ç›®
 private void get_name_todel(string arg, object me)
 {
         int number;
@@ -813,9 +813,9 @@ private void get_name_todel(string arg, object me)
         
         if (! sscanf(arg, "%d", number) || number <= 0)
         {
-                write("\n·Ç·¨µÄ¸ñÊ½£¬ÇëÖØĞÂÊäÈë¡£\n\n");
+                write("\néæ³•çš„æ ¼å¼ï¼Œè«‹é‡æ–°è¼¸å…¥ã€‚\n\n");
                 
-                write("ÇëÊäÈëÄãÒªÉ¾³ıµÄÏîÄ¿ĞòºÅ£º");
+                write("è«‹è¼¸å…¥ä½ è¦åˆªé™¤çš„é …ç›®åºè™Ÿï¼š");
                 input_to("get_name_todel", me);
                 return;
         }
@@ -823,56 +823,56 @@ private void get_name_todel(string arg, object me)
         names = keys(item_data);
         if (! mapp(item_data[names[number - 1]]))
         {
-                write("\nÃ»ÓĞÕâ¸öÏîÄ¿¡£\n\n");
+                write("\næ²’æœ‰é€™å€‹é …ç›®ã€‚\n\n");
                 
-                write("ÇëÊäÈëÄãÒªÉ¾³ıµÄÏîÄ¿ĞòºÅ£º");
+                write("è«‹è¼¸å…¥ä½ è¦åˆªé™¤çš„é …ç›®åºè™Ÿï¼š");
                 input_to("get_name_todel", me);
                 return;
         }
         
-        write("ÏîÄ¿" WHT + names[number - 1] + NOR "±»³É¹¦É¾³ıÁË¡£\n\n");
+        write("é …ç›®" WHT + names[number - 1] + NOR "è¢«æˆåŠŸåˆªé™¤äº†ã€‚\n\n");
         map_delete(item_data, names[number - 1]);
         log_file("gamble",sprintf("%sdeleteagambleitemcalled%son%s.\n",query("id", me),
                            names[number - 1], ctime(time())));
         save();
         
-        write("Äã»Øµ½µÄ¹ÜÀíÏµÍ³Ö÷½çÃæ¡£\n"); 
+        write("ä½ å›åˆ°çš„ç®¡ç†ç³»çµ±ä¸»ç•Œé¢ã€‚\n"); 
         write_prompt(me);        
         return;
 }
 
-// Íæ¼ÒÍ¶×¢½çÃæ
+// ç©å®¶æŠ•æ³¨ç•Œé¢
 public void do_chip(object me)
 {
         array items = keys(item_data);
-        string msg = "Ä¿Ç°ÔÊĞíÍ¶×¢µÄÏîÄ¿ÓĞ£º\n\n";
+        string msg = "ç›®å‰å…è¨±æŠ•æ³¨çš„é …ç›®æœ‰ï¼š\n\n";
         int i;
         
-        write(HIW "£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­\n" NOR);
-        write("\t\t  ¡¸" HIW + MUD_NAME + "²©²Ê¹«Ë¾" NOR "¡¹\n\n");
+        write(HIW "ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼\n" NOR);
+        write("\t\t  ã€Œ" HIW + MUD_NAME + "åšå½©å…¬å¸" NOR "ã€\n\n");
         
         if (! sizeof(items))
         {
-                write("Ã»ÓĞ¿É¹©ÏÂ×¢µÄÏîÄ¿¡£\n");
-                write(HIW "£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­\n" NOR);
+                write("æ²’æœ‰å¯ä¾›ä¸‹æ³¨çš„é …ç›®ã€‚\n");
+                write(HIW "ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼\n" NOR);
                 return;
         }
         
         for (i = 0; i < sizeof(items); i++)
         {
-                // Èç¹ûÃ»ÓĞ¿ª·Å
+                // å¦‚æœæ²’æœ‰é–‹æ”¾
                 if (query_status(items[i]) != OPENING)
                         continue;
-                msg += WHT + (i+1) + NOR "¡¢" + items[i] + "\n";
+                msg += WHT + (i+1) + NOR "ã€" + items[i] + "\n";
         }
         write(msg);
-        write("\nÇëÑ¡ÔñÄúÒª²ÎÓë²©²ÊµÄÏîÄ¿[" WHT "Enter" NOR " ÍË³ö]£º");
+        write("\nè«‹é¸æ“‡æ‚¨è¦åƒèˆ‡åšå½©çš„é …ç›®[" WHT "Enter" NOR " é€€å‡º]ï¼š");
         input_to("select_name_tochip", me);
         
         return;
 }
 
-// Ñ¡ÔñÍ¶×¢µÄÏîÄ¿
+// é¸æ“‡æŠ•æ³¨çš„é …ç›®
 private void select_name_tochip(string arg, object me)
 {
         string name, *teams, msg = "";
@@ -882,15 +882,15 @@ private void select_name_tochip(string arg, object me)
                 
         if (arg == "")
         {
-                write("\nÄã·ÅÆúÁËÍ¶×¢¡£\n");
-                write(HIW "£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­\n" NOR);
+                write("\nä½ æ”¾æ£„äº†æŠ•æ³¨ã€‚\n");
+                write(HIW "ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼\n" NOR);
                 return;
         }
 
         if (! sscanf(arg, "%d", i) || i <= 0)
         {
-                write("\nÄã·¢ÉÕÁË£¿ÔõÃ´¿ÉÄÜ»áÓĞÕâ¸öÏîÄ¿£¿\n");
-                write("ÇëÑ¡ÔñÄúÒª²ÎÓë²©²ÊµÄÏîÄ¿[" WHT "Enter" NOR " ÍË³ö]£º");
+                write("\nä½ ç™¼ç‡’äº†ï¼Ÿæ€éº¼å¯èƒ½æœƒæœ‰é€™å€‹é …ç›®ï¼Ÿ\n");
+                write("è«‹é¸æ“‡æ‚¨è¦åƒèˆ‡åšå½©çš„é …ç›®[" WHT "Enter" NOR " é€€å‡º]ï¼š");
                 input_to("select_name_tochip", me);
         
                 return;
@@ -900,8 +900,8 @@ private void select_name_tochip(string arg, object me)
         
         if (! mapp(item = item_data[name]))
         {
-                write("\nÃ»·¢ÉÕ£¿µ«È·ÊµÃ»ÓĞÕâ¸öÏîÄ¿Ñ½¡£\n");
-                write("ÇëÑ¡ÔñÄúÒª²ÎÓë²©²ÊµÄÏîÄ¿[" WHT "Enter" NOR " ÍË³ö]£º");
+                write("\næ²’ç™¼ç‡’ï¼Ÿä½†ç¢ºå¯¦æ²’æœ‰é€™å€‹é …ç›®å‘€ã€‚\n");
+                write("è«‹é¸æ“‡æ‚¨è¦åƒèˆ‡åšå½©çš„é …ç›®[" WHT "Enter" NOR " é€€å‡º]ï¼š");
                 input_to("select_name_tochip", me);
         
                 return;
@@ -913,38 +913,38 @@ private void select_name_tochip(string arg, object me)
                 teams = user_data[id][name]["team"];
                 for (i = 0; i < sizeof(teams); i++)
                 {
-                        msg += sprintf("%10s£º" WHT "1 : %d\n" NOR , teams[i], item["subject"][teams[i]]);
+                        msg += sprintf("%10sï¼š" WHT "1 : %d\n" NOR , teams[i], item["subject"][teams[i]]);
                 }                
-                write("\nÕâ¸öÏîÄ¿Äã²»ÊÇÒÑ¾­Í¶×¢ÁËÂğ£¿¿É²»ÄÜ·´»ÚÅ¶¡£\n");
-                write("\n1¡¢Ãû³Æ£º" WHT + name + NOR "\n"
-                        "2¡¢ÃèÊö£º\n\n" WHT + sort_msg(item["long"]) + NOR "\n\n"
-                        "3¡¢½áÊøÊ±¼ä£º" WHT + CHINESE_D->chinese_time(5, ctime(item["end_time"])) + 
-                        (item["end_time"] > time() ? "" : HIR "(ÒÑ½áÊø)") + NOR "\n"
-                        "4¡¢¿ÉÍ¶×¢ÊıÁ¿£º" WHT + item["number"] + " ¸ö\n" NOR 
-                        "5¡¢ÒÑÍ¶×¢»Æ½ğ£º" WHT + user_data[id][name]["money"] + " Á½»Æ½ğ\n" NOR
-                        "6¡¢¶ÓÎé¼°ÅâÂÊ£º\n\n" + msg + "\n" );
+                write("\né€™å€‹é …ç›®ä½ ä¸æ˜¯å·²ç¶“æŠ•æ³¨äº†å—ï¼Ÿå¯ä¸èƒ½åæ‚”å“¦ã€‚\n");
+                write("\n1ã€åç¨±ï¼š" WHT + name + NOR "\n"
+                        "2ã€æè¿°ï¼š\n\n" WHT + sort_msg(item["long"]) + NOR "\n\n"
+                        "3ã€çµæŸæ™‚é–“ï¼š" WHT + CHINESE_D->chinese_time(5, ctime(item["end_time"])) + 
+                        (item["end_time"] > time() ? "" : HIR "(å·²çµæŸ)") + NOR "\n"
+                        "4ã€å¯æŠ•æ³¨æ•¸é‡ï¼š" WHT + item["number"] + " å€‹\n" NOR 
+                        "5ã€å·²æŠ•æ³¨é»ƒé‡‘ï¼š" WHT + user_data[id][name]["money"] + " å…©é»ƒé‡‘\n" NOR
+                        "6ã€éšŠä¼åŠè³ ç‡ï¼š\n\n" + msg + "\n" );
 
-                write("ÇëÑ¡ÔñÄúÒª²ÎÓë²©²ÊµÄÏîÄ¿[" WHT "Enter" NOR " ÍË³ö]£º");
+                write("è«‹é¸æ“‡æ‚¨è¦åƒèˆ‡åšå½©çš„é …ç›®[" WHT "Enter" NOR " é€€å‡º]ï¼š");
                 input_to("select_name_tochip", me);
                 return; 
         }
                 
         if (item["status"] != OPENING)
         {
-                write("\nÕâ¸öÏîÄ¿»¹Ã»¿ª·Å»òÕßÊÇÒÑ¾­Í£Ö¹ÁË£¬Äã»¹ÊÇ»»Ò»¸ö°É¡£\n");
-                write("ÇëÑ¡ÔñÄúÒª²ÎÓë²©²ÊµÄÏîÄ¿[" WHT "Enter" NOR " ÍË³ö]£º");
+                write("\né€™å€‹é …ç›®é‚„æ²’é–‹æ”¾æˆ–è€…æ˜¯å·²ç¶“åœæ­¢äº†ï¼Œä½ é‚„æ˜¯æ›ä¸€å€‹å§ã€‚\n");
+                write("è«‹é¸æ“‡æ‚¨è¦åƒèˆ‡åšå½©çš„é …ç›®[" WHT "Enter" NOR " é€€å‡º]ï¼š");
                 input_to("select_name_tochip", me);
         
                 return;
         }
         
         /*
-        // Í¶×¢ÊÇ·Ö¿ªÀ´Ò»¶ÓÒ»¶ÓµÄÍ¶
+        // æŠ•æ³¨æ˜¯åˆ†é–‹ä¾†ä¸€éšŠä¸€éšŠçš„æŠ•
         if (mapp(user_data[id]) && 
             arrayp(teams = user_data[id][name]["team"]) && 
             sizeof(teams) >= item_data[name]["number"])
         {
-                write("ÄãÏÂ×¢µÄ¶ÓÎéÒÑ¾­¹»¶àµÄÁË¡£\n");
+                write("ä½ ä¸‹æ³¨çš„éšŠä¼å·²ç¶“å¤ å¤šçš„äº†ã€‚\n");
                 return;
         }
         */                  
@@ -953,25 +953,25 @@ private void select_name_tochip(string arg, object me)
                 
         for (i = 0; i < sizeof(teams); i++)
         {
-                msg += sprintf("%10s£º" WHT "1 : %d\n" NOR , teams[i], item["subject"][teams[i]]);
+                msg += sprintf("%10sï¼š" WHT "1 : %d\n" NOR , teams[i], item["subject"][teams[i]]);
         }
 
-        write("\n1¡¢Ãû³Æ£º" WHT + name + NOR "\n"
-                        "2¡¢ÃèÊö£º\n\n" WHT + sort_msg(item["long"]) + NOR "\n\n"
-                        "3¡¢½áÊøÊ±¼ä£º" WHT + CHINESE_D->chinese_time(5, ctime(item["end_time"])) + 
-                        (item["end_time"] > time() ? "" : HIR "(ÒÑ½áÊø)") + NOR "\n"
-                        "4¡¢¿ÉÍ¶×¢ÊıÁ¿£º" WHT + item["number"] + " ¸ö\n" NOR 
-                        "5¡¢×îĞ¡Í¶×¢Á¿£º" WHT + item["min_money"] + " Á½»Æ½ğ\n" NOR
-                        "6¡¢¶ÓÎé¼°ÅâÂÊ£º\n\n" + msg + "\n" );
+        write("\n1ã€åç¨±ï¼š" WHT + name + NOR "\n"
+                        "2ã€æè¿°ï¼š\n\n" WHT + sort_msg(item["long"]) + NOR "\n\n"
+                        "3ã€çµæŸæ™‚é–“ï¼š" WHT + CHINESE_D->chinese_time(5, ctime(item["end_time"])) + 
+                        (item["end_time"] > time() ? "" : HIR "(å·²çµæŸ)") + NOR "\n"
+                        "4ã€å¯æŠ•æ³¨æ•¸é‡ï¼š" WHT + item["number"] + " å€‹\n" NOR 
+                        "5ã€æœ€å°æŠ•æ³¨é‡ï¼š" WHT + item["min_money"] + " å…©é»ƒé‡‘\n" NOR
+                        "6ã€éšŠä¼åŠè³ ç‡ï¼š\n\n" + msg + "\n" );
 
-        write("ÇëÊäÈëÄãÒªÍ¶×¢µÄ¶ÓÎé[¶à¸öÓÃ¡°" WHT "," NOR "¡±¸ô¿ª]£º");
+        write("è«‹è¼¸å…¥ä½ è¦æŠ•æ³¨çš„éšŠä¼[å¤šå€‹ç”¨â€œ" WHT "," NOR "â€éš”é–‹]ï¼š");
 
         input_to("select_team_tochip", me, name);
 
         return;
 }
 
-// Ñ¡ÔñÍ¶×¢µÄ¶ÓÎé
+// é¸æ“‡æŠ•æ³¨çš„éšŠä¼
 protected void select_team_tochip(string arg, object me, string name)
 {
         array teams, all_teams;
@@ -979,8 +979,8 @@ protected void select_team_tochip(string arg, object me, string name)
         
         if (arg == "")
         {
-                write("\nÄã·ÅÆúÁËÍ¶×¢¡£\n");
-                write(HIW "£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­\n" NOR);
+                write("\nä½ æ”¾æ£„äº†æŠ•æ³¨ã€‚\n");
+                write(HIW "ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼\n" NOR);
                 return;
         }
 
@@ -994,8 +994,8 @@ protected void select_team_tochip(string arg, object me, string name)
         if (! arrayp(teams = explode(arg, ",")) ||
             ! n = sizeof(teams))
         {
-                write("\nÊäÈë¸ñÊ½´íÎó£¬ÇëÖØĞÂÊäÈë¡£\n");
-                write("ÇëÊäÈëÄãÒªÍ¶×¢µÄ¶ÓÎé[¶à¸öÓÃ¡°" WHT "," NOR "¡±¸ô¿ª]£º");
+                write("\nè¼¸å…¥æ ¼å¼éŒ¯èª¤ï¼Œè«‹é‡æ–°è¼¸å…¥ã€‚\n");
+                write("è«‹è¼¸å…¥ä½ è¦æŠ•æ³¨çš„éšŠä¼[å¤šå€‹ç”¨â€œ" WHT "," NOR "â€éš”é–‹]ï¼š");
                 input_to("select_team_tochip", me, name);
                 return;
         }
@@ -1003,8 +1003,8 @@ protected void select_team_tochip(string arg, object me, string name)
         all_teams = keys(item_data[name]["subject"]);
         if (n != item_data[name]["number"])
         {
-                write("\nÊäÈëµÄ¶ÓÎéÊıÄ¿²»·ûºÏ¡£\n");
-                write("ÇëÖØĞÂÊäÈëÄãÒªÍ¶×¢µÄ¶ÓÎé[¶à¸öÓÃ¡°" WHT "," NOR "¡±¸ô¿ª]£º");
+                write("\nè¼¸å…¥çš„éšŠä¼æ•¸ç›®ä¸ç¬¦åˆã€‚\n");
+                write("è«‹é‡æ–°è¼¸å…¥ä½ è¦æŠ•æ³¨çš„éšŠä¼[å¤šå€‹ç”¨â€œ" WHT "," NOR "â€éš”é–‹]ï¼š");
                 input_to("select_team_tochip", me, name);
                 return;
         }
@@ -1013,8 +1013,8 @@ protected void select_team_tochip(string arg, object me, string name)
         {
                 if (member_array(teams[i], all_teams) == -1)
                 {
-                        write("\nÕâ¸ö¶ÓÎé²»ÊôÓÚÕâ¸öÏîÄ¿¡£\n");
-                        write("ÇëÖØĞÂÊäÈëÄãÒªÍ¶×¢µÄ¶ÓÎé[¶à¸öÓÃ¡°" WHT "," NOR "¡±¸ô¿ª]£º");
+                        write("\né€™å€‹éšŠä¼ä¸å±¬äºé€™å€‹é …ç›®ã€‚\n");
+                        write("è«‹é‡æ–°è¼¸å…¥ä½ è¦æŠ•æ³¨çš„éšŠä¼[å¤šå€‹ç”¨â€œ" WHT "," NOR "â€éš”é–‹]ï¼š");
                         input_to("select_team_tochip", me, name);
                         return;
                 }
@@ -1022,8 +1022,8 @@ protected void select_team_tochip(string arg, object me, string name)
         
         user_data+=([query("id", me):([name:(["team":teams])])]);
         
-        write("\nÄãÑ¡ÔñÏÂ×¢µÄ¶ÓÎéÊÇ" WHT + implode(teams, NOR "¡¢" WHT) + NOR + "¡£\n\n");
-        write("\nÇëÊäÈëÄãÒªÏÂ×¢µÄ»Æ½ğ£º");
+        write("\nä½ é¸æ“‡ä¸‹æ³¨çš„éšŠä¼æ˜¯" WHT + implode(teams, NOR "ã€" WHT) + NOR + "ã€‚\n\n");
+        write("\nè«‹è¼¸å…¥ä½ è¦ä¸‹æ³¨çš„é»ƒé‡‘ï¼š");
         input_to("get_money_tochip", me, name);
         
         return;
@@ -1042,9 +1042,9 @@ protected void get_money_tochip(string arg, object me, string name)
         
         if (! sscanf(arg, "%d", money) || money <= 0)
         {
-                write("\n·Ç·¨µÄ¸ñÊ½£¬ÇëÖØĞÂÊäÈë¡£\n\n");
+                write("\néæ³•çš„æ ¼å¼ï¼Œè«‹é‡æ–°è¼¸å…¥ã€‚\n\n");
                 
-                write("ÇëÊäÈë×îÉÙÍ¶×¢»Æ½ğÁ¿£º[¸ñÊ½£º" WHT "10000" NOR "]");
+                write("è«‹è¼¸å…¥æœ€å°‘æŠ•æ³¨é»ƒé‡‘é‡ï¼š[æ ¼å¼ï¼š" WHT "10000" NOR "]");
                 input_to("get_money_tochip", me, name);
                 return;
         }
@@ -1053,15 +1053,15 @@ protected void get_money_tochip(string arg, object me, string name)
         
         if (count_lt(money, item_data[name]["min_money"]))
         {
-                write("ÄãÖÁÉÙÒªÏÂ×¢" + chinese_number(item_data[name]["min_money"]) + "Á½»Æ½ğ°É¡£\n");
+                write("ä½ è‡³å°‘è¦ä¸‹æ³¨" + chinese_number(item_data[name]["min_money"]) + "å…©é»ƒé‡‘å§ã€‚\n");
                 input_to("get_money_tochip", me, name);
                 return;
         }
         
         if( count_le(query("balance", me),count_mul(money,10000)) )
         {
-                write("\nÄãÒøĞĞµÄ´æ¿îÓà¶î²»×ã£¬ÇëÖØĞÂÊäÈë¡£\n\n");                                 
-                write("ÇëÊäÈë×îÉÙÍ¶×¢»Æ½ğÁ¿£º[¸ñÊ½£º" WHT "10000" NOR "]");
+                write("\nä½ éŠ€è¡Œçš„å­˜æ¬¾ä½™é¡ä¸è¶³ï¼Œè«‹é‡æ–°è¼¸å…¥ã€‚\n\n");                                 
+                write("è«‹è¼¸å…¥æœ€å°‘æŠ•æ³¨é»ƒé‡‘é‡ï¼š[æ ¼å¼ï¼š" WHT "10000" NOR "]");
                 input_to("get_money_tochip", me, name);
                 return;
         }
@@ -1070,11 +1070,11 @@ protected void get_money_tochip(string arg, object me, string name)
         user_data[id][name] += ([ "money" : money ]);                               
         save();
         
-        write("Í¶×¢³É¹¦¡£\n");
+        write("æŠ•æ³¨æˆåŠŸã€‚\n");
         return;
 }
 
-// Ñ¡Ôñ²éÑ¯µÄÍæ¼Ò
+// é¸æ“‡æŸ¥è©¢çš„ç©å®¶
 private void get_user(string arg, object me)
 {
         mapping user;
@@ -1086,20 +1086,20 @@ private void get_user(string arg, object me)
         }
         if (! mapp(user = user_data[arg]))
         {
-                write("Ã»ÓĞÕâ¸öÍ¶×¢ÓÃ»§¡£\n");
-                write("ÇëÑ¡ÔñÄã¾ßÌå²é¿´µÄÍæ¼Ò£º");
+                write("æ²’æœ‰é€™å€‹æŠ•æ³¨ç”¨æˆ¶ã€‚\n");
+                write("è«‹é¸æ“‡ä½ å…·é«”æŸ¥çœ‹çš„ç©å®¶ï¼š");
                 input_to("get_user", me);
                 return;
         }
-        write("ÓÃ»§ " + WHT + arg + NOR " ²Î¼ÓÍ¶×¢µÄÏîÄ¿ÓĞ£º\n\n" WHT + implode(keys(user), NOR "/" WHT) + NOR "\n");
+        write("ç”¨æˆ¶ " + WHT + arg + NOR " åƒåŠ æŠ•æ³¨çš„é …ç›®æœ‰ï¼š\n\n" WHT + implode(keys(user), NOR "/" WHT) + NOR "\n");
         
-        write("\nÇëÑ¡Ôñ¾ßÌå²é¿´µÄÏîÄ¿£º");
+        write("\nè«‹é¸æ“‡å…·é«”æŸ¥çœ‹çš„é …ç›®ï¼š");
         input_to("get_user_info", me, arg);
         
         return;
 }
 
-// »ñµÃÍæ¼ÒµÄ¾ßÌåĞÅÏ¢
+// ç²å¾—ç©å®¶çš„å…·é«”ä¿¡æ¯
 private void get_user_info(string arg, object me, string id)
 {
         mapping user;
@@ -1111,17 +1111,17 @@ private void get_user_info(string arg, object me, string id)
         }
         if (! mapp(user = user_data[id][arg]))
         {
-                write("Ã»ÓĞÕâ¸öÏîÄ¿¡£\n");
-                write("ÇëÑ¡Ôñ¾ßÌå²é¿´µÄÏîÄ¿£º");
+                write("æ²’æœ‰é€™å€‹é …ç›®ã€‚\n");
+                write("è«‹é¸æ“‡å…·é«”æŸ¥çœ‹çš„é …ç›®ï¼š");
                 input_to("get_user_info", me, arg);
                 return;
         }
-        write("\nÍ¶×¢Õß£º" + WHT + id + NOR + "\n");
-        write("ÏîÄ¿Ãû£º" + WHT + arg + NOR + "\n");
-        write("Í¶×¢Á¿£º" + WHT + user_data[id][arg]["money"] + NOR " Á½»Æ½ğ" + NOR + "\n");
-        write("Í¶×¢¶ÓÎé£º" WHT + implode(user_data[id][arg]["team"], NOR " & " WHT) + NOR + "\n\n");
+        write("\næŠ•æ³¨è€…ï¼š" + WHT + id + NOR + "\n");
+        write("é …ç›®åï¼š" + WHT + arg + NOR + "\n");
+        write("æŠ•æ³¨é‡ï¼š" + WHT + user_data[id][arg]["money"] + NOR " å…©é»ƒé‡‘" + NOR + "\n");
+        write("æŠ•æ³¨éšŠä¼ï¼š" WHT + implode(user_data[id][arg]["team"], NOR " & " WHT) + NOR + "\n\n");
         
-        write("²éÑ¯Íê±Ï£¬Äã»Øµ½µÄ¹ÜÀíÏµÍ³Ö÷½çÃæ¡£\n"); 
+        write("æŸ¥è©¢å®Œç•¢ï¼Œä½ å›åˆ°çš„ç®¡ç†ç³»çµ±ä¸»ç•Œé¢ã€‚\n"); 
         write_prompt(me); 
         return;
 }
@@ -1135,12 +1135,12 @@ private void get_name_end(string arg, object me)
         }
               
         change_status(arg, STOPPED);        
-        write("ĞŞ¸ÄÍê±Ï£¬Äã»Øµ½µÄ¹ÜÀíÏµÍ³Ö÷½çÃæ¡£\n"); 
+        write("ä¿®æ”¹å®Œç•¢ï¼Œä½ å›åˆ°çš„ç®¡ç†ç³»çµ±ä¸»ç•Œé¢ã€‚\n"); 
         write_prompt(me); 
         return;
 }
 
-// ¸Ä±äÏîÄ¿µÄ×´Ì¬
+// æ”¹è®Šé …ç›®çš„ç‹€æ…‹
 public void change_status(string name, string status)
 {
         if (mapp(item_data[name]))
@@ -1152,7 +1152,7 @@ public void change_status(string name, string status)
         else return;
 }
 
-// ²éÑ¯ÏîÄ¿µÄ×´Ì¬
+// æŸ¥è©¢é …ç›®çš„ç‹€æ…‹
 public string query_status(string name)
 {
         if (! stringp(name) || name == ""
@@ -1166,14 +1166,14 @@ public string query_status(string name)
         }
 }
 
-// ·µ»ØÒ»¸öÏîÄ¿ÄÚÈİ(ÒÔ¹©²©²ÊÎİµ÷ÓÃ)
+// è¿”å›ä¸€å€‹é …ç›®å…§å®¹(ä»¥ä¾›åšå½©å±‹èª¿ç”¨)
 public mapping query_item(string name)
 {
         if (mapp(item_data[name]))
                 return item_data[name];
 }
 
-// ·µ»ØÕû¸öÊı¾İ¿â
+// è¿”å›æ•´å€‹æ•¸æ“šåº«
 varargs public mapping query_data(int raw)
 {
         if (raw)

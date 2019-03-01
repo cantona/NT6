@@ -9,11 +9,11 @@ void create()
 {
         int skill;
         skill = random(30);
-        set_name("ÑÆÆÍ", ({ "ya pu","pu", "servant"}) );
-        set("gender", "ÄĞĞÔ");
+        set_name("å•åƒ•", ({ "ya pu","pu", "servant"}) );
+        set("gender", "ç”·æ€§");
         set("age", 30);
         set("long",
-                "ÕâÊÇ¸öÌÒ»¨µºÉÏµÄÓ¶ÆÍ£¬¶ú¶äÒÑ±»´ÌÁû£¬ÉàÍ·Ò²±»¸îÈ¥£¬ÉñÇéÄ¾È»¡£\n");
+                "é€™æ˜¯å€‹æ¡ƒèŠ±å³¶ä¸Šçš„å‚­åƒ•ï¼Œè€³æœµå·²è¢«åˆºè¾ï¼ŒèˆŒé ­ä¹Ÿè¢«å‰²å»ï¼Œç¥æƒ…æœ¨ç„¶ã€‚\n");
         set("combat_exp", 10000);
         set("shen_type", -1);
         set("attitude", "peaceful");
@@ -49,10 +49,10 @@ int do_ask(string arg)
         string arg1, arg2;
 
         if( !arg || sscanf(arg, "%s about %s", arg1, arg2) != 2 )
-                return notify_fail("Ê²Ã´£¿\n");
+                return notify_fail("ä»€éº¼ï¼Ÿ\n");
 
         if( arg1 == "ya pu" || arg1 == "pu" || arg == "servant") {
-                write(CYN"ÑÆÆÍÍ´¿àµØÒ¡ÁËÒ¡Í·£¬Ö¸ÁËÖ¸×Ô¼ºµÄ×ì°Í£¬ºí¼ä·¢³ö¼¸ÉùË»ÑÆµÄÑ½Ñ½Éù¡£\n"NOR);
+                write(CYN"å•åƒ•ç—›è‹¦åœ°æ–äº†æ–é ­ï¼ŒæŒ‡äº†æŒ‡è‡ªå·±çš„å˜´å·´ï¼Œå–‰é–“ç™¼å‡ºå¹¾è²å˜¶å•çš„å‘€å‘€è²ã€‚\n"NOR);
                 return 1;
         }
         return 0;

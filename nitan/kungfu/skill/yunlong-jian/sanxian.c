@@ -12,33 +12,33 @@ int perform(object me, object target)
         ||  !target->is_character()
         ||  !me->is_fighting(target) 
         || !living(target))
-                return notify_fail("¡¸ÔÆÁúÈıÏÖ¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œé›²é¾ä¸‰ç¾ã€åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( (int)me->query_skill("yunlong-jian", 1) < 120 )
-                return notify_fail("ÄãµÄÔÆÁú½£·¨¹¦Á¦Ì«Ç³£¬±ğ×öÃÎÁË¡£\n");
+                return notify_fail("ä½ çš„é›²é¾åŠæ³•åŠŸåŠ›å¤ªæ·ºï¼Œåˆ¥åšå¤¢äº†ã€‚\n");
 
         if( (int)me->query_skill("sword", 1) < 120 )
-                return notify_fail("ÄãµÄ»ù±¾½£·¨¹¦Á¦Ì«Ç³£¬±ğ×öÃÎÁË¡£\n");
+                return notify_fail("ä½ çš„åŸºæœ¬åŠæ³•åŠŸåŠ›å¤ªæ·ºï¼Œåˆ¥åšå¤¢äº†ã€‚\n");
                         
         if( query("max_neili", me)<1200 )
-                return notify_fail("ÄãµÄÄÚÁ¦Ì«Ç³£¬±ğ×öÃÎÁË¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›å¤ªæ·ºï¼Œåˆ¥åšå¤¢äº†ã€‚\n");
                 
         if( query("neili", me)<500 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬±ğ×öÃÎÁË¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼Œåˆ¥åšå¤¢äº†ã€‚\n");
                 
         if( me->query_skill_mapped("force") != "yunlong-shengong" &&
             me->query_skill_mapped("force") != "jiuyang-shengong") 
             
-                return notify_fail("ÄãÓÃÊ²Ã´Îª»ù´¡À´Ê¹ÔÆÁú½£¾ø¼¼Ã´?\n");
+                return notify_fail("ä½ ç”¨ä»€éº¼ç‚ºåŸºç¤ä¾†ä½¿é›²é¾åŠçµ•æŠ€éº¼?\n");
         if( !(weapon=query_temp("weapon", me)) || query("skill_type", weapon) != "sword"
             || me->query_skill_mapped("sword") != "yunlong-jian")
-                return notify_fail("ÄãÊ¹µÃÁËÔÆÁú½£¾ø¼¼Ã´?\n");
+                return notify_fail("ä½ ä½¿å¾—äº†é›²é¾åŠçµ•æŠ€éº¼?\n");
                 
         lvl = ( (int)me->query_skill("yunlong-jian", 1) + (int)me->query_skill("force", 1) ) /8;
         
         addn("neili", -300, me);
-        message_combatd(HIR "\n$N³¤Ğ¦Ò»Éù£¬ËæÊÖÒ»¶¶£¬" + weapon->name() + HIR"¾¹ÎËÎË×÷Ïì£¬ÍğÈôÁúÒ÷Ò»°ã¡£\n"
-                "Í»È»¼ä½£¹âÒ»ÉÁ£¬ÅÔÈËÖ»Ìı¡°ßêßê¡±¼¸ÉùÇáÏì£¬ $NÒÑÔÚÒ»Ë²¼äÏò$n´ÌÁËÈı½££¬¿ìµÄÒìºõÑ°³££¡\n"NOR, 
+        message_combatd(HIR "\n$Né•·ç¬‘ä¸€è²ï¼Œéš¨æ‰‹ä¸€æŠ–ï¼Œ" + weapon->name() + HIR"ç«Ÿå—¡å—¡ä½œéŸ¿ï¼Œå®›è‹¥é¾åŸä¸€èˆ¬ã€‚\n"
+                "çªç„¶é–“åŠå…‰ä¸€é–ƒï¼Œæ—äººåªè½â€œå“§å“§â€å¹¾è²è¼•éŸ¿ï¼Œ $Nå·²åœ¨ä¸€ç¬é–“å‘$nåˆºäº†ä¸‰åŠï¼Œå¿«çš„ç•°ä¹å°‹å¸¸ï¼\n"NOR, 
                 me, target);
                 
         addn_temp("apply/dex", lvl, me);

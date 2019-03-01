@@ -4,30 +4,30 @@ inherit ITEM;
 #define VA_DIR          "/clone/fam/etc/"
 #define GIFT_DIR        "/clone/fam/pill/"
 
-// ¹óÖØÎïÆ·ÁĞ±í
+// è²´é‡ç‰©å“åˆ—è¡¨
 string *VA_LIST = ({ "va1", "va2", "va3", "va4", "va5", "va6", });
 
-// ÆÕÍ¨ÎïÆ·ÁĞ±í
+// æ™®é€šç‰©å“åˆ—è¡¨
 string *NORMAL_LIST = ({ "food1", "full1", "linghui1", "linghui2",
                          "lingzhi1", "lingzhi2", "neili1", "neili2",
                          "puti1", "puti2", "renshen1", "renshen2",
                          "sheli1", "sheli2", "xuelian1", "xuelian2", });
 
-// ÌØÊâÎïÆ·ÁĞ±í
+// ç‰¹æ®Šç‰©å“åˆ—è¡¨
 string *SM_LIST = ({ "dimai", "yulu", "lingzhi3", "lingzhi4",
                      "puti3", "puti4", "renshen3", "renshen4",
                      "sheli3", "sheli4", "xuelian3", "xuelian4",});
 
 void create()
 {
-        set_name(WHT "°ü¹ü" NOR, ({ "bag", "baoguo", "bao", "guo" }));
+        set_name(WHT "åŒ…è£¹" NOR, ({ "bag", "baoguo", "bao", "guo" }));
         set_weight(200);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
-                set("long", WHT "ÕâÊÇÒ»¸ö»Ò²¼°ü¹ü£¬ÀïÃæÕÍ¹Ä¹ÄµÄ£¬²»Öª×°"
-                            "ÁËĞ©Ê²Ã´¡£\n" NOR);
+                set("unit", "å€‹");
+                set("long", WHT "é€™æ˜¯ä¸€å€‹ç°å¸ƒåŒ…è£¹ï¼Œè£¡é¢è„¹é¼“é¼“çš„ï¼Œä¸çŸ¥è£"
+                            "äº†äº›ä»€éº¼ã€‚\n" NOR);
                 set("no_sell", 1);
                 set("value", 500);
                 set("material", "cloth");
@@ -55,16 +55,16 @@ int do_open(string arg)
 
         if (query("gift_count") < 1)
         {
-                write("°ü¹üÀïÃæÊ²Ã´Ò²Ã»ÓĞÁË¡£\n");
+                write("åŒ…è£¹è£¡é¢ä»€éº¼ä¹Ÿæ²’æœ‰äº†ã€‚\n");
                 return 1;
         }
 
         me = this_player();
-        message_vision(WHT "\n$N" WHT "²ğ¿ª°ü¹ü£¬·¢ÏÖÀïÃæÁôÓĞÕÅ"
-                       "×ÖÌõ£¬Ğ´×Å¡¸" HIR "Ê¦ÃÅ¼±ÊÂ£¬Çë»ğËÙ¸Ï»Ø"
-                       NOR + WHT "¡¹¡£\n³ı´ËÖ®Íâ×ÖÌõÏÂºÃÏó»¹Ñ¹"
-                       "×ÅÊ²Ã´¶«Î÷£¬±»¹üµÃºÜÑÏÃÜ£¬$N" WHT "¼û×´"
-                       "Á¬Ã¦È¡³ö¡£\n" NOR, me);
+        message_vision(WHT "\n$N" WHT "æ‹†é–‹åŒ…è£¹ï¼Œç™¼ç¾è£¡é¢ç•™æœ‰å¼µ"
+                       "å­—æ¢ï¼Œå¯«è‘—ã€Œ" HIR "å¸«é–€æ€¥äº‹ï¼Œè«‹ç«é€Ÿè¶•å›"
+                       NOR + WHT "ã€ã€‚\né™¤æ­¤ä¹‹å¤–å­—æ¢ä¸‹å¥½è±¡é‚„å£“"
+                       "è‘—ä»€éº¼æ±è¥¿ï¼Œè¢«è£¹å¾—å¾ˆåš´å¯†ï¼Œ$N" WHT "è¦‹ç‹€"
+                       "é€£å¿™å–å‡ºã€‚\n" NOR, me);
 
         if (random(5) <= 3)
                 gift = new(VA_DIR + VA_LIST[random(sizeof(VA_LIST))]);
@@ -79,12 +79,12 @@ int do_open(string arg)
         else
                 un=query("unit", gift);
 
-        tell_object(me, HIC "Äã»ñµÃÁËÒ»" + un + HIC "¡¸" + gift->name() +
-                        HIC "¡¹¡£\n" NOR);
+        tell_object(me, HIC "ä½ ç²å¾—äº†ä¸€" + un + HIC "ã€Œ" + gift->name() +
+                        HIC "ã€ã€‚\n" NOR);
 
         gift->move(me, 1);
         addn("gift_count", -1);
-        set("long", WHT "ÕâÊÇÒ»¸ö»Ò²¼°ü¹ü£¬ÀïÃæµÄ¶«Î÷ÒÑ¾­±»È¡³öÀ´ÁË¡£\n" NOR);
+        set("long", WHT "é€™æ˜¯ä¸€å€‹ç°å¸ƒåŒ…è£¹ï¼Œè£¡é¢çš„æ±è¥¿å·²ç¶“è¢«å–å‡ºä¾†äº†ã€‚\n" NOR);
         set("value", 0);
         return 1;
 }

@@ -7,20 +7,20 @@ inherit F_MASTER;
 
 void create()
 {
-	set_name("³ÎÃ÷", ({
+	set_name("æ¾„æ˜", ({
 		"chengming luohan",
 		"chengming",
 		"guizhen",
 		"luohan",
 	}));
 	set("long",
-		"ËûÊÇÒ»Î»Ğë·¢»¨°×µÄÀÏÉ®£¬Éí´©Ò»Ï®½ğ±ßºÚ²¼ôÂôÄ¡£ËûÉí²ÄÊİ¸ß£¬\n"
-		"Ì«ÑôÑ¨¸ß¸ß¹ÄÆğ£¬ËÆºõÉí»³¾øÊÀÎä¹¦¡£\n"
+		"ä»–æ˜¯ä¸€ä½é ˆç™¼èŠ±ç™½çš„è€åƒ§ï¼Œèº«ç©¿ä¸€è¥²é‡‘é‚Šé»‘å¸ƒè¢ˆè£Ÿã€‚ä»–èº«æç˜¦é«˜ï¼Œ\n"
+		"å¤ªé™½ç©´é«˜é«˜é¼“èµ·ï¼Œä¼¼ä¹èº«æ‡·çµ•ä¸–æ­¦åŠŸã€‚\n"
 	);
 
 
-	set("nickname", "¹éÕæÂŞºº");
-	set("gender", "ÄĞĞÔ");
+	set("nickname", "æ­¸çœŸç¾…æ¼¢");
+	set("gender", "ç”·æ€§");
 	set("attitude", "friendly");
 	set("class", "bonze");
 
@@ -56,7 +56,7 @@ void create()
 
 	prepare_skill("strike", "banruo-zhang");
 
-	create_family("ÉÙÁÖÅÉ", 37, "µÜ×Ó");
+	create_family("å°‘æ—æ´¾", 37, "å¼Ÿå­");
 
 	setup();
 

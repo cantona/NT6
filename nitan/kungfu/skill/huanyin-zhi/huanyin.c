@@ -1,4 +1,4 @@
-// huanyin.c »ÃÒõÉñÖ¸
+// huanyin.c å¹»é™°ç¥æŒ‡
 
 #include <ansi.h>
 #include <combat.h>
@@ -13,31 +13,31 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if( query("no_fight", environment(me)) )
-                return notify_fail("ÕâÀï²»ÄÜ¹¥»÷±ğÈË! \n");
+                return notify_fail("é€™è£¡ä¸èƒ½æ”»æ“Šåˆ¥äºº! \n");
 
         if (! target || ! target->is_character())
-                return notify_fail("Ê©¶¾Ö»ÄÜ¶Ô¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("æ–½æ¯’åªèƒ½å°å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( query("not_living", target) )
-                return notify_fail("¿´Çå³ş£¬ÄÇ²»ÊÇ»îÈË¡£\n");
+                return notify_fail("çœ‹æ¸…æ¥šï¼Œé‚£ä¸æ˜¯æ´»äººã€‚\n");
 
         if ((int)me->query_skill("force") < 300)
-                return notify_fail("ÄãµÄÄÚ¹¦»ğºò²»×ãÒÔÊ©Õ¹»ÃÒõÉñÖ¸¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸç«å€™ä¸è¶³ä»¥æ–½å±•å¹»é™°ç¥æŒ‡ã€‚\n");
 
         if ((int)me->query_skill("huanyin-zhi", 1) < 150)
-                return notify_fail("ÄãµÄ»ÃÒõÖ¸·¨ĞŞÎª²»¹»£¬ÏÖÔÚ»¹ÎŞ·¨Ê©Õ¹»ÃÒõÉñÖ¸¡£\n");
+                return notify_fail("ä½ çš„å¹»é™°æŒ‡æ³•ä¿®ç‚ºä¸å¤ ï¼Œç¾åœ¨é‚„ç„¡æ³•æ–½å±•å¹»é™°ç¥æŒ‡ã€‚\n");
 
         if (me->query_skill_mapped("finger") != "huanyin-zhi")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢»ÃÒõÖ¸·¨£¬ÎŞ·¨Ê©Õ¹»ÃÒõÉñÖ¸¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼å¹»é™°æŒ‡æ³•ï¼Œç„¡æ³•æ–½å±•å¹»é™°ç¥æŒ‡ã€‚\n");
 
         if( query("neili", me)<400 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬ÏÖÔÚÎŞ·¨Ê©Õ¹»ÃÒõÉñÖ¸¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼Œç¾åœ¨ç„¡æ³•æ–½å±•å¹»é™°ç¥æŒ‡ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIG "$N" HIG "ÉîÉîµÄÎüÁËÒ»¿ÚÆø£¬»º»ºµÄ´Ì"
-              "³öÒ»Ö¸£¬Ğ®´ıÒ»¹Éº®Æø±ÆÏò$n" HIG "¡£\n" NOR;
+        msg = HIG "$N" HIG "æ·±æ·±çš„å¸äº†ä¸€å£æ°£ï¼Œç·©ç·©çš„åˆº"
+              "å‡ºä¸€æŒ‡ï¼ŒæŒ¾å¾…ä¸€è‚¡å¯’æ°£é€¼å‘$n" HIG "ã€‚\n" NOR;
 
         ap = attack_power(me, "finger");
         dp = defense_power(target, "force");
@@ -46,9 +46,9 @@ int perform(object me, object target)
         {
                 damage = damage_power(me, "finger");
                 msg += COMBAT_D->do_damage(me, target, UNARMED_ATTACK, damage, 50,
-                                           HIG "$p" HIG "¼±Ã¦ºóÍË£¬È»¶øÕâÖ¸ºÎµÈĞşÃî£¬Õı"
-                                           "ºÃµãÖĞ$p" HIG "ĞØÇ°£¬$p" HIG "²»½û´òÁËÒ»¸öÀä"
-                                           "Õ½¡£\n" NOR);
+                                           HIG "$p" HIG "æ€¥å¿™å¾Œé€€ï¼Œç„¶è€Œé€™æŒ‡ä½•ç­‰ç„å¦™ï¼Œæ­£"
+                                           "å¥½é»ä¸­$p" HIG "èƒ¸å‰ï¼Œ$p" HIG "ä¸ç¦æ‰“äº†ä¸€å€‹å†·"
+                                           "æˆ°ã€‚\n" NOR);
                 target->affect_by("huanyin_poison",
                                   ([ "level" : ap / 5 + random(ap / 5),
                                      "id":query("id", me),
@@ -57,8 +57,8 @@ int perform(object me, object target)
                 me->start_busy(2);
         } else
         {
-                msg += CYN "¿ÉÊÇ$p" CYN "ÔË×ãÄÚÁ¦£¬ÒÔÉîºñµÄÄÚ¹¦"
-                       "»¯½âÁËÕâÒ»Ö¸µÄÒõº®ÄÚÁ¦¡£\n" NOR;
+                msg += CYN "å¯æ˜¯$p" CYN "é‹è¶³å…§åŠ›ï¼Œä»¥æ·±åšçš„å…§åŠŸ"
+                       "åŒ–è§£äº†é€™ä¸€æŒ‡çš„é™°å¯’å…§åŠ›ã€‚\n" NOR;
                 me->start_busy(4);
                 addn("neili", -80, me);
         }

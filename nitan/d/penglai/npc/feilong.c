@@ -5,8 +5,8 @@ int is_pld_npc(){return 1;}
 
 void create()
 {
-        set_name(HIW "·ÉÁú" NOR, ({ "fei long", "fei", "long" }));
-        set("long", HIW "ÕâÊÇÒ»Ö»³¤×Å³á°òµÄ¶ñÁú£¬¿´ÆðÀ´ÁîÈËÃ«¹Çã¤È»¡£\n" NOR);
+        set_name(HIW "é£›é¾" NOR, ({ "fei long", "fei", "long" }));
+        set("long", HIW "é€™æ˜¯ä¸€åªé•·è‘—ç¿…è†€çš„æƒ¡é¾ï¼Œçœ‹èµ·ä¾†ä»¤äººæ¯›éª¨æ‚šç„¶ã€‚\n" NOR);
 
         set("age", 190);
         set("str", 40);
@@ -42,7 +42,7 @@ void create()
 }
 void init()
 {
-        // Ëæ»ú¹¥»÷Íæ¼Ò
+        // éš¨æ©Ÿæ”»æ“ŠçŽ©å®¶
         if (userp(this_player()))
         {
                 kill_ob(this_player());

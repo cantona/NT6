@@ -4,9 +4,9 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "²àÌü");
+        set("short", "å´å»³");
         set("long", @LONG
-ÕâÀïÊÇÍò°²ËÂµÄ²àÌü£¬µØÉÏ°Ú×Å¼¸¸öÆÑÍÅ¡£
+é€™è£¡æ˜¯è¬å®‰å¯ºçš„å´å»³ï¼Œåœ°ä¸Šæ“ºè‘—å¹¾å€‹è’²åœ˜ã€‚
 LONG );
         set("exits", ([
                 "west" : "/d/tulong/yitian/was_zoulang1",

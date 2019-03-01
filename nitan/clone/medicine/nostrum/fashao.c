@@ -1,4 +1,4 @@
-// fashao.c ÍËÉÕÁé
+// fashao.c é€€ç‡’éˆ
 
 inherit ITEM;
 #include <ansi.h>
@@ -10,12 +10,12 @@ void init()
 
 void create()
 {
-        set_name(HIY"ÍËÉÕÁé"NOR, ({"tuishao ling", "tuishaoling","ling"}));
+        set_name(HIY"é€€ç‡’éˆ"NOR, ({"tuishao ling", "tuishaoling","ling"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°ü");
-                set("long", "ÕâÊÇÒ»°üÖÎ·¢ÉÕµÄÒ©£¬ÁÆĞ§ÏÔÖø¡£\n");
+                set("unit", "åŒ…");
+                set("long", "é€™æ˜¯ä¸€åŒ…æ²»ç™¼ç‡’çš„è—¥ï¼Œç™‚æ•ˆé¡¯è‘—ã€‚\n");
                 set("value", 2000);
                 set("only_do_effect", 1);
         }
@@ -28,14 +28,14 @@ int do_eat(string arg)
         if (!id(arg))
                 return 0;
         if (me->is_busy() )
-                return notify_fail("±ğ¼±£¬ÂıÂıÀ´¡£\n");
+                return notify_fail("åˆ¥æ€¥ï¼Œæ…¢æ…¢ä¾†ã€‚\n");
         if (! me->query_condition("ill_fashao"))
         {
-                write("ÄãÏÖÔÚÓÖÃ»ÓĞ·¢ÉÕ£¬±ğÂÒ³ÔÒ©¡£\n");
+                write("ä½ ç¾åœ¨åˆæ²’æœ‰ç™¼ç‡’ï¼Œåˆ¥äº‚åƒè—¥ã€‚\n");
                 return 1;
         } else {
                 me->clear_condition("ill_fashao");
-                message_vision("$N³ÔÏÂÒ»°üÍËÉÕÁé£¬¿´ÆğÀ´¾«Éñ¶àÁË¡£\n", me);
+                message_vision("$Nåƒä¸‹ä¸€åŒ…é€€ç‡’éˆï¼Œçœ‹èµ·ä¾†ç²¾ç¥å¤šäº†ã€‚\n", me);
                 me->start_busy(2);
                 destruct(this_object());
                 return 1;

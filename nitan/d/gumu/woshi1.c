@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short",HIC"Ğ¡ÎÔÊÒ"NOR);
+        set("short",HIC"å°è‡¥å®¤"NOR);
         set("long", @LONG
-ÕâÀïÊÇÑî¹ıµ±ÄêµÄÎÔÊÒ£¬·¿ÖĞ¿Õ¿Õ¶´¶´¡£Ò»¿é³¤ÌõÇàÊ¯×÷´²£¬´²ÉÏ
-ÆÌÁËÕÅ²İÏ¯£¬Ò»·ù°×²¼µ±×÷±¡±»£¬´ËÍâ³ıÁËÒ»¸ùÈË¸ßµÄÉşË÷ºá¹ıÊÒÖĞ£¬
-±ğÎŞËûÎï¡£
+é€™è£¡æ˜¯æ¥Šéç•¶å¹´çš„è‡¥å®¤ï¼Œæˆ¿ä¸­ç©ºç©ºæ´æ´ã€‚ä¸€å¡Šé•·æ¢é’çŸ³ä½œåºŠï¼ŒåºŠä¸Š
+èˆ–äº†å¼µè‰å¸­ï¼Œä¸€å¹…ç™½å¸ƒç•¶ä½œè–„è¢«ï¼Œæ­¤å¤–é™¤äº†ä¸€æ ¹äººé«˜çš„ç¹©ç´¢æ©«éå®¤ä¸­ï¼Œ
+åˆ¥ç„¡ä»–ç‰©ã€‚
 LONG        );
         set("exits", ([
                 "west" : __DIR__"mudao20",
@@ -41,28 +41,28 @@ int do_zuo(string arg)
 
         exp=query("combat_exp", me);
         if (me->is_busy() || me->is_fighting())
-                return notify_fail("ÄãÕıÃ¦×ÅÄÄ£¡\n");
+                return notify_fail("ä½ æ­£å¿™è‘—å“ªï¼\n");
         if (arg == "bed" || arg == "chuang")
         {
                 if( me->query_skill("yunv-xinfa", 1) < 1)
                 {
-                        message_vision("$NÏÖÔÚµÄÄÚ¹¦³ĞÊÜ²»×¡º®Óñ´²µÄº®±ùÖ®Æø¡£\n", me);
+                        message_vision("$Nç¾åœ¨çš„å…§åŠŸæ‰¿å—ä¸ä½å¯’ç‰åºŠçš„å¯’å†°ä¹‹æ°£ã€‚\n", me);
                         me->start_busy(1);
                         return 1;
                 }
                 if( query("neili", me)<300 )
                 {
-                        message_vision("$NÏÖÔÚµÄ¹¦Á¦³ĞÊÜ²»×¡º®Óñ´²µÄº®±ùÖ®Æø¡£\n", me);
+                        message_vision("$Nç¾åœ¨çš„åŠŸåŠ›æ‰¿å—ä¸ä½å¯’ç‰åºŠçš„å¯’å†°ä¹‹æ°£ã€‚\n", me);
                         me->start_busy(1);
                         return 1;
                 }
                 lvl = (int)me->query_skill("force", 1);
                 if(lvl > 100 && lvl < 200)
                 {
-                        message_vision("$NÌÉÉÏÁËº®Óñ´²£¬¿ªÊ¼Ç±ÔËÄÚ¹¦£¬Ê¹ÄÚÏ¢±éĞĞ´óĞ¡ÖÜÌì¡£\n", me);
+                        message_vision("$Nèººä¸Šäº†å¯’ç‰åºŠï¼Œé–‹å§‹æ½›é‹å…§åŠŸï¼Œä½¿å…§æ¯éè¡Œå¤§å°å‘¨å¤©ã€‚\n", me);
                         if (random(10) > 6)
                         {
-                                message_vision("$Nµ÷Ï¢Íê±Ï£¬Ö»¾õµÃ¾«Éñ½¡Íú£¬ÄÚÏ¢³äÅæÓû±¼ÌÚ¶ø³ö¡£\n", me);
+                                message_vision("$Nèª¿æ¯å®Œç•¢ï¼Œåªè¦ºå¾—ç²¾ç¥å¥æ—ºï¼Œå…§æ¯å……æ²›æ¬²å¥”é¨°è€Œå‡ºã€‚\n", me);
                                 if ((lvl*lvl*lvl/10) < exp)
                                 {
                                         me->improve_skill("force", random(lvl));
@@ -70,14 +70,14 @@ int do_zuo(string arg)
                                 me->receive_damage("qi", random(lvl/3));
                         }
                         else
-                                message_vision("$Nµ÷Ï¢Íê±Ï£¬Õ¾ÆğÉíÀ´£¬ÌáÁËÌáÄÚÁ¦£¬ºÃÏóÃ»Ê²Ã´³¤½ø¡£\n", me);
+                                message_vision("$Nèª¿æ¯å®Œç•¢ï¼Œç«™èµ·èº«ä¾†ï¼Œæäº†æå…§åŠ›ï¼Œå¥½è±¡æ²’ä»€éº¼é•·é€²ã€‚\n", me);
                 }
                 else
-                        message_vision("$NÌÉÉÏº®Óñ´²£¬Ö»¾õµÃ±ùÀä´Ì¹Ç£¬¡®°¡¡¯µÄÒ»ÉùÀÇ±·²»¿°µØÌøÁËÆğÀ´¡£\n", me);
+                        message_vision("$Nèººä¸Šå¯’ç‰åºŠï¼Œåªè¦ºå¾—å†°å†·åˆºéª¨ï¼Œâ€˜å•Šâ€™çš„ä¸€è²ç‹¼ç‹½ä¸å ªåœ°è·³äº†èµ·ä¾†ã€‚\n", me);
                 me->start_busy(1);
                 return 1;
         }
-        else return notify_fail("ÄãÒª×øÔÚÄÄÀï£¿\n");
+        else return notify_fail("ä½ è¦ååœ¨å“ªè£¡ï¼Ÿ\n");
 }
 
 int do_liao(string arg)
@@ -85,24 +85,24 @@ int do_liao(string arg)
         object me = this_player();
 
         if (me->is_fighting() || me->is_busy())
-                return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ æ­£å¿™è‘—å‘¢ã€‚\n");
         if( query("eff_qi", me) >= query("max_qi", me) )
-                return notify_fail("ÄãÏÖÔÚÉíÉÏÃ»ÓĞÊÜµ½ÈÎºÎÉËº¦£¡\n");
+                return notify_fail("ä½ ç¾åœ¨èº«ä¸Šæ²’æœ‰å—åˆ°ä»»ä½•å‚·å®³ï¼\n");
         if ( (int)me->query_condition("bed_poison") > 0 )
         {
                 me->receive_wound("qi", 10);
-                message_vision(HIR "$NÍ»È»Ö»¾õÒ»ÕóÆæº®ÇÖÈëÉíÌå£¬ÏëÊÇÁ½´ÎÁÆÉËÊ±¸ôÌ«¶Ì£¬Éí×ÓÉĞÎ´¸´Ô­Ö®¹Ê¡£\n"NOR, me);
+                message_vision(HIR "$Nçªç„¶åªè¦ºä¸€é™£å¥‡å¯’ä¾µå…¥èº«é«”ï¼Œæƒ³æ˜¯å…©æ¬¡ç™‚å‚·æ™‚éš”å¤ªçŸ­ï¼Œèº«å­å°šæœªå¾©åŸä¹‹æ•…ã€‚\n"NOR, me);
                 me->unconcious();
                 return 1;
         }
         if (arg == "bed" || arg == "chuang")
         {
-                message_vision(HIY"$NÅÀÉÏº®Óñ´²£¬Òª½èÇ§Äêº®ÓñÁÆÉË¡£\n"NOR, me);
+                message_vision(HIY"$Nçˆ¬ä¸Šå¯’ç‰åºŠï¼Œè¦å€Ÿåƒå¹´å¯’ç‰ç™‚å‚·ã€‚\n"NOR, me);
                 if (me->query_skill("yunv-xinfa", 1) < 40)
-                        return notify_fail("º®Óñ´²ÁÆÉËĞèÒÔ´¿ÊìµÄÓñÅ®ĞÄ¾­ÄÚ¹¦Ïà¸¨£¬·ñÔòÎŞ·¨ÍâÁÆ¡£\n");
+                        return notify_fail("å¯’ç‰åºŠç™‚å‚·éœ€ä»¥ç´”ç†Ÿçš„ç‰å¥³å¿ƒç¶“å…§åŠŸç›¸è¼”ï¼Œå¦å‰‡ç„¡æ³•å¤–ç™‚ã€‚\n");
                 set("eff_qi",query("max_qi",  me), me);
                 me->apply_condition("bed_poison", 25);
                 return 1;
         }
-        return notify_fail("ÄãÒªÔÚÄÄÀïÁÆÉË£¿\n");
+        return notify_fail("ä½ è¦åœ¨å“ªè£¡ç™‚å‚·ï¼Ÿ\n");
 }

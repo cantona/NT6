@@ -10,15 +10,15 @@ inherit TESSERA;
 void create()
 {
 //**    set_name("$name", ({ "$id", }));                        /* NAME_ENTRY */
-        set_name(HIY "ϸ��ĻƱ�ʯ" NOR, ({ "chipped topaz" }) ); /* NAME_EXIT  */
+        set_name(HIY "細碎的黃寶石" NOR, ({ "chipped topaz" }) ); /* NAME_EXIT  */
         set_weight(20);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
 //**            set("$dbase_key", "$dbase_value\n");            /* DBASE_ENTRY */
-                set("long", HIY "һƬ��ɫ�ĻƱ�ʯ��Ƭ��\n" NOR); /* DBASE_EXIT  */
+                set("long", HIY "一片黃色的黃寶石碎片。\n" NOR); /* DBASE_EXIT  */
                 set("value", 20000);
-                set("unit", "��");
+                set("unit", "顆");
                 set("level", 1);
                 set("material", "ctopaz");
                 set("can_be_enchased", 1);

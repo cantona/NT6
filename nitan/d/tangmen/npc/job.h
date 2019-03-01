@@ -9,23 +9,23 @@ int ask_job()
         myfam=query("family", me);
         
 
-        if (! myfam || myfam["family_name"] != "ÌÆÃÅÊÀ¼Ò")
+        if (! myfam || myfam["family_name"] != "å”é–€ä¸–å®¶")
         {
-                command("say ÄãÊÇÎÒÃÇµÄÈËÂğ£¿ÔÙËµÎÒµÄÈÎÎñÄã²»Ò»¶¨¿Ï×ö°¡£¬»ØÈ¥°É£¡");
+                command("say ä½ æ˜¯æˆ‘å€‘çš„äººå—ï¼Ÿå†èªªæˆ‘çš„ä»»å‹™ä½ ä¸ä¸€å®šè‚¯åšå•Šï¼Œå›å»å§ï¼");
                 return 1;
         }
 
         if( query("tangmen/yanli", me) >= 100 )
         {       
                 command("gongxi");
-                command("say ¿´Äã³¤µÄÒ»±íÈË²Å£¬¾ÍÖªµÀÄãÊÇÒ»¿éÁÏ£¬ÉÏÉ½È¥°É£¡");
+                command("say çœ‹ä½ é•·çš„ä¸€è¡¨äººæ‰ï¼Œå°±çŸ¥é“ä½ æ˜¯ä¸€å¡Šæ–™ï¼Œä¸Šå±±å»å§ï¼");
                 set("tangmen/upshan", 1, me);
                 return 1;
         }
 
         if( query_temp("started", me) )
         {
-                command("say ÄãÓĞÈÎÎñ£¬ÎªÊ²Ã´²»È¥×ö£¿");
+                command("say ä½ æœ‰ä»»å‹™ï¼Œç‚ºä»€éº¼ä¸å»åšï¼Ÿ");
                 return 1;
         }
         
@@ -34,19 +34,19 @@ int ask_job()
                 delete_temp("tmjob_failed", me);
                 me->apply_condition("tmagain", 10);
                 command("hmm");
-                command("ÄãÏÈÏÂÈ¥ĞªĞª°É£¬¹ı»áÔÙÀ´£¡\n");
+                command("ä½ å…ˆä¸‹å»æ­‡æ­‡å§ï¼Œéæœƒå†ä¾†ï¼\n");
                 return 1;
         }               
         
         if (me->query_condition("tmagain") > 0)
         {       command("heng");
-                command("say ×ö²»ÁËËµÒ»ÏÂ£¬ÄãµÈµÈ°É£¡");
+                command("say åšä¸äº†èªªä¸€ä¸‹ï¼Œä½ ç­‰ç­‰å§ï¼");
                 return 1;
         }        
 
         if( query_temp("jobok", me) == 1 )
         {
-                command("say ºÃºÃ£¬¸ÉµÄºÃ£¬ÄãÏÂÈ¥ĞªĞª°É¡£");
+                command("say å¥½å¥½ï¼Œå¹¹çš„å¥½ï¼Œä½ ä¸‹å»æ­‡æ­‡å§ã€‚");
                 addn("combat_exp", 3000, me);
                 delete_temp("started", me);
                 delete_temp("find_wz", me);
@@ -57,9 +57,9 @@ int ask_job()
         }
         
 
-        command("say ÄãÈ¥¸øÎÒ×¥Ò»Ö»ÎÃ×Ó»ØÀ´°É¡£");
-        command("say ´ËÊÂ²»¿ÉÂí»¢£¬¹ØÏµµ½ÄãµÄÇ°³Ì£¬Ò»¶¨ÒªÈ«Á¦È¥×ö¡£");
-        command("say ÕÒ²»µ½µÄ»°¾ÍÎÊÎÊ±ğÈË£¬Ëµ²»¶¨ÓĞÊÕ»ñ°¡");
+        command("say ä½ å»çµ¦æˆ‘æŠ“ä¸€åªèšŠå­å›ä¾†å§ã€‚");
+        command("say æ­¤äº‹ä¸å¯é¦¬è™ï¼Œé—œç³»åˆ°ä½ çš„å‰ç¨‹ï¼Œä¸€å®šè¦å…¨åŠ›å»åšã€‚");
+        command("say æ‰¾ä¸åˆ°çš„è©±å°±å•å•åˆ¥äººï¼Œèªªä¸å®šæœ‰æ”¶ç²å•Š");
 
         set_temp("started", 1, me);
         remove_call_out("putting");
@@ -90,7 +90,7 @@ int putting(object me)
         me->apply_condition("tmjob", 20);
         ob1->move(wh1);
         ob2->move(wh2);        
-        tell_object(me, HIC "Òª¿ìÈ¥¿ì»Ø°¡£¡\n" NOR);
+        tell_object(me, HIC "è¦å¿«å»å¿«å›å•Šï¼\n" NOR);
         return 1;
 }       
         

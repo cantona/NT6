@@ -5,18 +5,18 @@ inherit STAFF;
 
 void create()
 {
-        set_name(YEL "Ë®ÑÌÍ²" NOR, ({"yan tong", "yan", "tong"}));
+        set_name(YEL "æ°´ç…™ç­’" NOR, ({"yan tong", "yan", "tong"}));
         set_weight(50);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", YEL "ÕâÊÇÒ»Ö§ÔÆÄÏÈËÏ²°®µÄË®ÑÌÍ²¡£Äã¿É"
-                            "ÒÔÓÃ(fire)À´ÎüÑÌ¡£\n" NOR);
-                set("unit", "¸ö");
+                set("long", YEL "é€™æ˜¯ä¸€æ”¯é›²å—äººå–œæ„›çš„æ°´ç…™ç­’ã€‚ä½ å¯"
+                            "ä»¥ç”¨(fire)ä¾†å¸ç…™ã€‚\n" NOR);
+                set("unit", "å€‹");
                 set("value", 100);
                 set("material", "steel");
-                set("wield_msg", "$N´ÓÉíºó³é³ö$nÎÕÔÚÊÖÖÐµ±×öÎäÆ÷¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖÐµÄ$n·ÅÁË»ØÈ¥¡£\n");
+                set("wield_msg", "$Nå¾žèº«å¾ŒæŠ½å‡º$næ¡åœ¨æ‰‹ä¸­ç•¶åšæ­¦å™¨ã€‚\n");
+                set("unwield_msg", "$Nå°‡æ‰‹ä¸­çš„$næ”¾äº†å›žåŽ»ã€‚\n");
         }
         init_staff(10);
         setup();
@@ -33,16 +33,16 @@ int do_fire(string arg)
         object ob = present("shui yan", me);
 
         if (arg != "yan" || ! arg)
-                return notify_fail("ÄãÒª¸ÉÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦å¹¹ä»€éº¼ï¼Ÿ\n");
 
         if (me->is_busy())
-                return notify_fail("ÂýÂýÎü£¬Ð¡ÐÄ±ðÇº×ÅÁË¡£\n");
+                return notify_fail("æ…¢æ…¢å¸ï¼Œå°å¿ƒåˆ¥å—†è‘—äº†ã€‚\n");
 
         if (! objectp(ob))
-                return notify_fail("ÄãÒÑ¾­Ã»ÓÐÑÌÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“æ²’æœ‰ç…™äº†ã€‚\n");
 
-        message_vision(HIW "$N" HIW "ÄÃÆðË®ÑÌÍ²¹¾¹¾µÄÎüÁË¼¸¿Ú£¬»º»º"
-                       "µÄÍÂ³öÑÌÎí£¬Ö»¾õµÄ¾«ÉñºÃ¶àÁË¡£\n" NOR, me);
+        message_vision(HIW "$N" HIW "æ‹¿èµ·æ°´ç…™ç­’å’•å’•çš„å¸äº†å¹¾å£ï¼Œç·©ç·©"
+                       "çš„åå‡ºç…™éœ§ï¼Œåªè¦ºçš„ç²¾ç¥žå¥½å¤šäº†ã€‚\n" NOR, me);
         addn("jing", 50, me);
         if( query("jing", me)>query("max_jing", me)*2 )
         set("jing",query("max_jing",  me)*2, me);

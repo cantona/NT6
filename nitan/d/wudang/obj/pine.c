@@ -1,4 +1,4 @@
-// pine.c ËÉÊ÷ 
+// pine.c é¬†æ¨¹ 
 // Last Modified by winder on Aug. 18 2002
 
 #include <ansi.h>
@@ -9,13 +9,13 @@ int chop_times = 0;
 
 void create()
 {
-        set_name(HIR"ºìËÉÊ÷"NOR,({"pine"}));
+        set_name(HIR"ç´…é¬†æ¨¹"NOR,({"pine"}));
         set_weight(900000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»¿Ã¹ÅÀÏµÄºìËÉÊ÷¡£\n");
-                set("unit", "¿Ã");
+                set("long", "é€™æ˜¯ä¸€æ£µå¤è€çš„ç´…é¬†æ¨¹ã€‚\n");
+                set("unit", "æ£µ");
                 set("value", 8);
                 set("no_get", 1);
             }
@@ -26,7 +26,7 @@ void create()
 void init()
 {
         add_action("do_chop", "chop");
-        add_action("do_chop", "¿³");
+        add_action("do_chop", "ç ");
 }
 
 int do_chop(string arg)
@@ -34,39 +34,39 @@ int do_chop(string arg)
         object weapon, me = this_player();
         object piece;
         
-        if( !arg || arg!="pine" && arg != "Ê÷" )
-                return notify_fail("ÄãÒª¿³ÉõÃ´£¿\n");
+        if( !arg || arg!="pine" && arg != "æ¨¹" )
+                return notify_fail("ä½ è¦ç ç”šéº¼ï¼Ÿ\n");
 
         if( !objectp(weapon=query_temp("weapon", me)) )
         {
-        message_vision(HIR"$N»ÓÊÖ³¯ËÉÊ÷Ò»ÕóÃÍ¿³£¬ÅªµÃË«ÊÖÏÊÑªÁÜÁÜ¡£\n"NOR, me);
-                me->receive_damage("qi", 50, "Á÷Ñª¹ı¶àËÀÁË");
+        message_vision(HIR"$Næ®æ‰‹æœé¬†æ¨¹ä¸€é™£çŒ›ç ï¼Œå¼„å¾—é›™æ‰‹é®®è¡€æ·‹æ·‹ã€‚\n"NOR, me);
+                me->receive_damage("qi", 50, "æµè¡€éå¤šæ­»äº†");
                 return 1;
         }else if( query("skill_type", weapon) != "sword" && 
                         query("skill_type", weapon) != "blade" && 
                         query("skill_type", weapon) != "axe" )
                 {
-                        message_vision(HIW"$N»ÓÆğÊÖÖĞ" + weapon->name() + HIW"³¯ËÉÊ÷Ò»ÕóÃÍ¿³¡£\n"NOR, me);
-                        message_vision(HIW"½á¹û¡¸Å¾¡¹µØÒ»Éù£¬$NÊÖÖĞµÄ" + weapon->name() + HIW"ÒÑ¾­¶ÏÎªÁ½½Ø£¡\n"NOR , me );
+                        message_vision(HIW"$Næ®èµ·æ‰‹ä¸­" + weapon->name() + HIW"æœé¬†æ¨¹ä¸€é™£çŒ›ç ã€‚\n"NOR, me);
+                        message_vision(HIW"çµæœã€Œå•ªã€åœ°ä¸€è²ï¼Œ$Næ‰‹ä¸­çš„" + weapon->name() + HIW"å·²ç¶“æ–·ç‚ºå…©æˆªï¼\n"NOR , me );
 
                         weapon->unequip();
                         seteuid(getuid());
                         piece = new("/clone/misc/piece");
-                        piece->set_name("¶ÏµôµÄ"+query("name", weapon),({query("id", weapon),"piece"}));
+                        piece->set_name("æ–·æ‰çš„"+query("name", weapon),({query("id", weapon),"piece"}));
                         piece->move(environment(me));
                         destruct(weapon);
                         return 1;
                 }
 
-        message_vision(HIW"$N²ÙÆğÊÖÖĞ" + weapon->name() + HIW"£¬¿Ô³Ô¿Ô³ÔµØ¿³Ê÷¡£\n"NOR, me);
-        me->receive_damage("qi",5+random(35-query("str", me)),"¿³Ê÷ÀÛËÀÁË");
+        message_vision(HIW"$Næ“èµ·æ‰‹ä¸­" + weapon->name() + HIW"ï¼Œå­åƒå­åƒåœ°ç æ¨¹ã€‚\n"NOR, me);
+        me->receive_damage("qi",5+random(35-query("str", me)),"ç æ¨¹ç´¯æ­»äº†");
         chop_times++;
 
         if ( !start_collapse && random(chop_times) ) 
         {
                 start_collapse = 1;
                 chop_times = 0;
-                message_vision(HIC"ËÉÊ÷¿ªÊ¼ËÉ¶¯ÆğÀ´£¬Ö¨Ö¨Ñ½Ñ½·¢³öÏìÉù¡£\n"NOR, this_object());
+                message_vision(HIC"é¬†æ¨¹é–‹å§‹é¬†å‹•èµ·ä¾†ï¼Œå±å±å‘€å‘€ç™¼å‡ºéŸ¿è²ã€‚\n"NOR, this_object());
                 call_out("collapse", 20, me);
         }                
 
@@ -84,19 +84,19 @@ void collapse(object me)
 
         if ( chop_times <= 0 || random(chop_times) < 2)
         {
-                message_vision(HIC"ËÉÊ÷Ò¡°ÚÁËÁ½ÏÂ£¬ÓÖÕ¾×¡ÁË¡£\n"NOR, ob);
+                message_vision(HIC"é¬†æ¨¹æ–æ“ºäº†å…©ä¸‹ï¼Œåˆç«™ä½äº†ã€‚\n"NOR, ob);
                 start_collapse = 0;        
                 return;
         } 
 
-        message_vision(RED"ËÉÊ÷ºäµÄÒ»Éùµ¹ÁËÏÂÀ´¡­\n"NOR, ob);
+        message_vision(RED"é¬†æ¨¹è½Ÿçš„ä¸€è²å€’äº†ä¸‹ä¾†â€¦\n"NOR, ob);
 
         if ( random(chop_times) > 5 ) 
         if ( present(me, environment(ob)) )   
         {
-                message_vision(HIR"ÕıÔÒÔÚ$nÍ·ÉÏ£¡\n"NOR, ob, me);
-                me->receive_damage("qi", 30*chop_times, "±»ËÉÊ÷¸ÉÔÒËÀÁË");
-                me->receive_wound("qi", 20*chop_times, "±»ËÉÊ÷¸ÉÔÒËÀÁË");
+                message_vision(HIR"æ­£ç ¸åœ¨$né ­ä¸Šï¼\n"NOR, ob, me);
+                me->receive_damage("qi", 30*chop_times, "è¢«é¬†æ¨¹å¹¹ç ¸æ­»äº†");
+                me->receive_wound("qi", 20*chop_times, "è¢«é¬†æ¨¹å¹¹ç ¸æ­»äº†");
         }
         else 
         {
@@ -105,9 +105,9 @@ void collapse(object me)
                 for (i = 0; i < sizeof(inv); i++)
                 if (userp(inv[i]))
                 {
-                        message_vision(HIR"ÕıÔÒÔÚ$nÍ·ÉÏ£¡\n"NOR, ob, inv[i]);
-                        inv[i]->receive_damage("qi",30*chop_times, "±»ËÉÊ÷¸ÉÔÒËÀÁË");
-                        inv[i]->receive_wound("qi", 20*chop_times, "±»ËÉÊ÷¸ÉÔÒËÀÁË");
+                        message_vision(HIR"æ­£ç ¸åœ¨$né ­ä¸Šï¼\n"NOR, ob, inv[i]);
+                        inv[i]->receive_damage("qi",30*chop_times, "è¢«é¬†æ¨¹å¹¹ç ¸æ­»äº†");
+                        inv[i]->receive_wound("qi", 20*chop_times, "è¢«é¬†æ¨¹å¹¹ç ¸æ­»äº†");
                 }
         }
         if (chop_times >= 13) chop_times = 13;

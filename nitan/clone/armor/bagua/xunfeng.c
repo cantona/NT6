@@ -6,16 +6,16 @@ inherit SURCOAT;
 
 void create()
 {
-        set_name(HIY "°ËØÔÙã·çÒí" NOR, ({ "xunfeng yi", "xunfeng", "yi" }));
+        set_name(HIY "å…«å¦å·½é¢¨ç¿¼" NOR, ({ "xunfeng yi", "xunfeng", "yi" }));
         set_weight(100);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIY"Ñ×»Æ·çÓêÊ®Äê¼ÍÄîÌ××°Ö®£º°ËØÔÙã·çÒí\n" NOR);
-                set("unit", "¼ş");
+                set("long", HIY"ç‚é»ƒé¢¨é›¨åå¹´ç´€å¿µå¥—è£ä¹‹ï¼šå…«å¦å·½é¢¨ç¿¼\n" NOR);
+                set("unit", "ä»¶");
                 set("value", 100);
                 set("armor_prop/huibi", 1000);
-                set("armor_prop/T_bagua", 1); // Ì××°¼ÆÊı±êÖ¾
+                set("armor_prop/T_bagua", 1); // å¥—è£è¨ˆæ•¸æ¨™å¿—
         }
         setup();
 }

@@ -25,41 +25,41 @@ int main(object me, string arg)
                 {
                         ownstockvalue = data["value"];
                         if( undefinedp(stocks[num]) ) continue;
-                        curstockvalue = stocks[num]["ÏÖ¼Û"];
+                        curstockvalue = stocks[num]["ç¾åƒ¹"];
 
                         gain = (curstockvalue - ownstockvalue)*100. / ownstockvalue;
 
-                        if( stocks[num]["ÕÇµø"] < 0 )
+                        if( stocks[num]["æ¼²è·Œ"] < 0 )
                         {
                                 stockcolor = HIG;
 
-                                if( stocks[num]["×´Ì¬"] == "t3g2" )
+                                if( stocks[num]["ç‹€æ…‹"] == "t3g2" )
                                         stockcolor += BGRN;
 
-                                stockdesc = " ¡õ"+sprintf("%.2f", -stocks[num]["ÕÇµø"]);
+                                stockdesc = " â–¡"+sprintf("%.2f", -stocks[num]["æ¼²è·Œ"]);
                         }
-                        else if( stocks[num]["ÕÇµø"] > 0 )
+                        else if( stocks[num]["æ¼²è·Œ"] > 0 )
                         {
                                 stockcolor = HIR;
 
-                                if( stocks[num]["×´Ì¬"] == "t3r2" )
+                                if( stocks[num]["ç‹€æ…‹"] == "t3r2" )
                                         stockcolor += BRED;
 
-                                stockdesc = " ¡ø"+sprintf("%.2f", stocks[num]["ÕÇµø"]);
+                                stockdesc = " â–²"+sprintf("%.2f", stocks[num]["æ¼²è·Œ"]);
                         }
                         else
                         {
                                 stockcolor = HIW;
-                                stockdesc = " ¡ª";
+                                stockdesc = " â”€";
                         }
-                        msg += ({ HIY"¹É"NOR YEL"Æ±" });
-                        msg += ({ sprintf(NOR" %-12s %12s %-12s%-19s %12s\n", HIM+num + NOR" "HIW +stocks[num]["¹ÉÆ±Ãû³Æ"]+NOR, WHT +(data["amount"]) +NOR" ÕÅ", NOR YEL"³Ö¹É "HIW+sprintf("%.2f", ownstockvalue||0.0)+NOR, NOR YEL"ÏÖ¼Û "+stockcolor+sprintf("%6.2f", curstockvalue||0.0)+stockdesc+NOR, NOR YEL"ÀûÈó "+(curstockvalue>ownstockvalue?HIR:curstockvalue<ownstockvalue?HIG:HIW)+(gain>0?"+":gain==0.?" ":"")+sprintf("%.2f", gain||0.0)+"%"+NOR ) });
+                        msg += ({ HIY"è‚¡"NOR YEL"ç¥¨" });
+                        msg += ({ sprintf(NOR" %-12s %12s %-12s%-19s %12s\n", HIM+num + NOR" "HIW +stocks[num]["è‚¡ç¥¨åç¨±"]+NOR, WHT +(data["amount"]) +NOR" å¼µ", NOR YEL"æŒè‚¡ "HIW+sprintf("%.2f", ownstockvalue||0.0)+NOR, NOR YEL"ç¾åƒ¹ "+stockcolor+sprintf("%6.2f", curstockvalue||0.0)+stockdesc+NOR, NOR YEL"åˆ©æ½¤ "+(curstockvalue>ownstockvalue?HIR:curstockvalue<ownstockvalue?HIG:HIW)+(gain>0?"+":gain==0.?" ":"")+sprintf("%.2f", gain||0.0)+"%"+NOR ) });
                 }
 
         }
         else
 
-                msg += ({ NOR"ÊÖÉÏÃ»ÓĞ³ÖÓĞÈÎºÎ¹ÉÆ±" });
+                msg += ({ NOR"æ‰‹ä¸Šæ²’æœ‰æŒæœ‰ä»»ä½•è‚¡ç¥¨" });
 
         me->start_more(implode(msg, ""));
         return 1;
@@ -67,6 +67,6 @@ int main(object me, string arg)
 
 int help()
 {
-        write("\n´ËÃüÁî¿ÉÒÔÁĞ³öÄãµÄ¹ÉÆ±Çé¿ö¡£\n\n");
+        write("\næ­¤å‘½ä»¤å¯ä»¥åˆ—å‡ºä½ çš„è‚¡ç¥¨æƒ…æ³ã€‚\n\n");
         return 1;
 }

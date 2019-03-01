@@ -4,12 +4,12 @@
 inherit ROOM;
 void create()
 {
-	set("short", HIY"���߹�"NOR);
+	set("short", HIY"靈蛇谷"NOR);
         set("long", @LONG
-�����ǵ����һ��ɽ�ȡ�ɽ�ȳ��������滨��ݣ������������
-��������������Զ�뷲�����㵽�˴˴�������Ϊ�ɾ����˵���Ȼ����
-�ж��߳�û��Ψ�д˴���������֮��Ӱ��Ҳ���˼����˳��ڴ˼�����
-֮����
+這裡是島裡的一個山谷。山谷長著許多奇花異草，到處花香鳥語，
+分外美麗，這裡遠離凡塵，你到了此處不禁疑為仙境。此島雖然到處
+有毒蛇出沒但唯有此處不見毒物之蹤影，也許此間主人長在此間修行
+之果。
 LONG );
 	set("exits", ([ 
   		"southup" : __DIR__"shanguang",
@@ -18,6 +18,6 @@ LONG );
 	set("objects",([
              CLASS_D("mingjiao") + "/dai" : 1,
 	]));
-	set("outdoors","���ߵ�");
+	set("outdoors","靈蛇島");
 	setup();
 }

@@ -2,10 +2,10 @@ inherit ROOM;
  
 void create()
 {
-	set("short", "�յ�");
+	set("short", "空地");
 	set("long",@LONG
-����һƬ�յأ����ܶ�����ʯ���Ӳݴ�����������һ��С�ݡ���
-��������Ĺ�ľ�֡�������һ�������Ĵ����������һƬ��ƺ��
+這是一片空地，四周都是亂石，雜草叢生。北邊是一間小屋。南
+面是深深的灌木林。東面有一條工整的大道，西面是一片草坪。
 LONG);
 	set("exits", ([
 		"west" : __DIR__"caoping",

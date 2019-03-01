@@ -1,14 +1,14 @@
-// tong2.c ÓÒÙ×
+// tong2.c å³åƒ®
 
 #include <ansi.h>
 inherit NPC;
 
 void create()
 {
-        set_name("ÓÒÙ×", ({ "you tong", "you", "tong" }) );
-        set("gender", "ÄĞĞÔ");
+        set_name("å³åƒ®", ({ "you tong", "you", "tong" }) );
+        set("gender", "ç”·æ€§");
         set("age", 13);
-        set("long","ËûÊÇÑ©É½·Éºüºúì³µÄÍ¯×Ó¡£\n");
+        set("long","ä»–æ˜¯é›ªå±±é£›ç‹èƒ¡æ–çš„ç«¥å­ã€‚\n");
         set("attitude", "friendly");
         set("str", 20);
         set("int", 20);

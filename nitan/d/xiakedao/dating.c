@@ -5,16 +5,16 @@ inherit ROOM;
 int do_push(string arg);
 void create()
 {
-        set("short", "´óÌü");
+        set("short", "å¤§å»³");
         set("long", @LONG
-ÕâÊÇ¡ºÏÀ¿Íµº¡»µÄ´óÌü£¬ËÄÖÜµãÂúÁËÅ£ÓÍÀ¯Öò£¬ÄÏÃæ·Å×ÅÒ»¸ö
-´óÆÁ·ç¡£¶´ÄÚ°Ú×ÅÒ»°ÙÀ´ÕÅ×À×Ó£¬±ö¿ÍÕıÂçÒï½øÀ´£¬Êı°ÙÃû»ÆÒÂºº
-×Ó´©Ë÷°ãÀ´È¥£¬Òıµ¼±ö¿ÍÈë×ù¡£
+é€™æ˜¯ã€ä¿ å®¢å³¶ã€çš„å¤§å»³ï¼Œå››å‘¨é»æ»¿äº†ç‰›æ²¹è Ÿç‡­ï¼Œå—é¢æ”¾è‘—ä¸€å€‹
+å¤§å±é¢¨ã€‚æ´å…§æ“ºè‘—ä¸€ç™¾ä¾†å¼µæ¡Œå­ï¼Œè³“å®¢æ­£çµ¡ç¹¹é€²ä¾†ï¼Œæ•¸ç™¾åé»ƒè¡£æ¼¢
+å­ç©¿ç´¢èˆ¬ä¾†å»ï¼Œå¼•å°è³“å®¢å…¥åº§ã€‚
 LONG );
 //        set("valid_startroom",1);
         set("no_fight","1");
         set("item_desc",([
-                "pingfeng" : "ÕâÊÇÒ»¸öÓÃÓñÊ¯×÷µÄÆÁ·ç£¬·Ç³£Æ¯ÁÁ£¬Ò²ĞíÄãÄÜÓÃÊÖ°ÑËüÍÆ(push)¿ª¡£\n",
+                "pingfeng" : "é€™æ˜¯ä¸€å€‹ç”¨ç‰çŸ³ä½œçš„å±é¢¨ï¼Œéå¸¸æ¼‚äº®ï¼Œä¹Ÿè¨±ä½ èƒ½ç”¨æ‰‹æŠŠå®ƒæ¨(push)é–‹ã€‚\n",
         ]));
         set("exits", ([
                 "north" : __DIR__"shidong5",
@@ -46,22 +46,22 @@ int do_push(string arg)
         {
                 if( (query("id", inv[i]) == "pai1") && 
                     (query_temp("own", inv[i]) != query("id", me)) )
-                    return notify_fail("ÏÀ¿ÍµºµÜ×ÓËµµÀ£ºÕâÎ»" +
-                      RANK_D->query_respect(me) + "ºÃÏó²»ÊÇÏÀ¿ÍµºµÄ¿ÍÈË°É£¿\n");
+                    return notify_fail("ä¿ å®¢å³¶å¼Ÿå­èªªé“ï¼šé€™ä½" +
+                      RANK_D->query_respect(me) + "å¥½è±¡ä¸æ˜¯ä¿ å®¢å³¶çš„å®¢äººå§ï¼Ÿ\n");
                 if( (query("id", inv[i]) == "pai2") && 
                     (query_temp("own", inv[i]) != query("id", me)) )
-                    return notify_fail("ÏÀ¿ÍµºµÜ×ÓËµµÀ£ºÕâÎ»" +
-                      RANK_D->query_respect(me) + "ºÃÏó²»ÊÇÏÀ¿ÍµºµÄ¿ÍÈË°É£¿\n");
+                    return notify_fail("ä¿ å®¢å³¶å¼Ÿå­èªªé“ï¼šé€™ä½" +
+                      RANK_D->query_respect(me) + "å¥½è±¡ä¸æ˜¯ä¿ å®¢å³¶çš„å®¢äººå§ï¼Ÿ\n");
         }
         if( !arg || arg!="pingfeng")
         {
-                write("ÄãÒªÍÆÊ²Ã´Ñ½¡£\n");
+                write("ä½ è¦æ¨ä»€éº¼å‘€ã€‚\n");
                 return 1;
         }
-        message_vision("$NÔÚÆÁ·çÇ°Õ¾¶¨£¬ÉîÎüÒ»¿ÚÆø£¬Á½ÊÖ½ôÎÕ×¡ÆÁ·ç¡£\n", me);
+        message_vision("$Nåœ¨å±é¢¨å‰ç«™å®šï¼Œæ·±å¸ä¸€å£æ°£ï¼Œå…©æ‰‹ç·Šæ¡ä½å±é¢¨ã€‚\n", me);
         if (n >=100)
         {
-                message_vision("$Nµ¤ÌïÒ»ÔËÆø£¬ÃÍµÄÒ»ÍÆ£¬Ö»¼ûÆÁ·çÖ®ºó£¬Â¶³öÒ»Ìõ³¤³¤µÄğ®µÀ¡£\n", me);
+                message_vision("$Nä¸¹ç”°ä¸€é‹æ°£ï¼ŒçŒ›çš„ä¸€æ¨ï¼Œåªè¦‹å±é¢¨ä¹‹å¾Œï¼Œéœ²å‡ºä¸€æ¢é•·é•·çš„ç”¬é“ã€‚\n", me);
                 set("exits/south", __DIR__"yongdao3");
                 set("neili", n-100, me);
                 remove_call_out("close");
@@ -69,13 +69,13 @@ int do_push(string arg)
         }
         else
         {
-                message_vision("$Nµ¤ÌïÒ»ÔËÆø£¬ÃÍµÄÒ»ÍÆ£¬ÆÁ·çÈ´Ë¿ºÁÃ»¶¯¡£\n", me);
+                message_vision("$Nä¸¹ç”°ä¸€é‹æ°£ï¼ŒçŒ›çš„ä¸€æ¨ï¼Œå±é¢¨å»çµ²æ¯«æ²’å‹•ã€‚\n", me);
                 set("neili", 0, me);
         }
         return 1;
 }
 void close(object room)
 {
-        message("visoin", "ÆÁ·ç×Ô¶¯ÓÖºÏÉÏÁË¡£\n", room);
+        message("visoin", "å±é¢¨è‡ªå‹•åˆåˆä¸Šäº†ã€‚\n", room);
         delete("exits/south", room);
 }

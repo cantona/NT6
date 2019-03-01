@@ -3,29 +3,29 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "µ±ÆÌ");
+        set("short", "ç•¶èˆ–");
         set("long", @LONG
-ÕâÊÇÖÜËÉÌì¿ªµÄµ±ÆÌ¡£Õâµ±ÆÌ¿ÉÄÜºÍ¹Ù¸®ÓÐ¹´½á¡£ÔÚÕâÀï
-²»¹ÜÄãµÄ¶«Î÷µÄÀ´Â·ÈçºÎ¶¼ÕÕÊÕ¡£ÄãÒ²¿ÉÒÔ¿´¿´ÓÐÊ²Ã´¶«Î÷Äã
-ÐèÒªÒ²¿ÉÒÔÈ¥ÂòÒ»µã¡£²»¹ý¼ÛÇ®¿ÉÄÜ±ÈÆäËûµØ·½Òª¹óÒ»µã¡£¹ñ
-Ì¨µÄÇ½ÉÏ¹Ò×ÅÒ»¸öÅÆ×Ó(paizi)¡£
+é€™æ˜¯å‘¨é¬†å¤©é–‹çš„ç•¶èˆ–ã€‚é€™ç•¶èˆ–å¯èƒ½å’Œå®˜åºœæœ‰å‹¾çµã€‚åœ¨é€™è£¡
+ä¸ç®¡ä½ çš„æ±è¥¿çš„ä¾†è·¯å¦‚ä½•éƒ½ç…§æ”¶ã€‚ä½ ä¹Ÿå¯ä»¥çœ‹çœ‹æœ‰ä»€éº¼æ±è¥¿ä½ 
+éœ€è¦ä¹Ÿå¯ä»¥åŽ»è²·ä¸€é»žã€‚ä¸éŽåƒ¹éŒ¢å¯èƒ½æ¯”å…¶ä»–åœ°æ–¹è¦è²´ä¸€é»žã€‚æ«ƒ
+å°çš„ç‰†ä¸ŠæŽ›è‘—ä¸€å€‹ç‰Œå­(paizi)ã€‚
 LONG);
         set("no_fight", 1);
         set("no_steal", 1);
         set("no_beg", 1);
         set("item_desc", ([
-                "paizi" : WHT "\n\n        ¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n"
-                              "        ¡ù                  ¡ù\n"
-                              "        ¡ù     ¹«Æ½½»Ò×     ¡ù\n"
-                              "        ¡ù                  ¡ù\n"
-                              "        ¡ù  " NOR + HIW "Âô³ö" NOR + WHT "£º   " NOR + HIY "sell" NOR + WHT "   ¡ù\n"
-                              "        ¡ù                  ¡ù\n"
-                              "        ¡ù  " NOR + HIW "Âò½ø" NOR + WHT "£º   " NOR + HIY "buy" NOR + WHT "    ¡ù\n"
-                              "        ¡ù                  ¡ù\n"
-                              "        ¡ù  " NOR + HIW "¹À¼Û" NOR + WHT "£º   " NOR + HIY "value" NOR + WHT "  ¡ù\n"
-                              "        ¡ù                  ¡ù\n"
-                              "        ¡ù                  ¡ù\n"
-                              "        ¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n\n\n" NOR,
+                "paizi" : WHT "\n\n        â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»\n"
+                              "        â€»                  â€»\n"
+                              "        â€»     å…¬å¹³äº¤æ˜“     â€»\n"
+                              "        â€»                  â€»\n"
+                              "        â€»  " NOR + HIW "è³£å‡º" NOR + WHT "ï¼š   " NOR + HIY "sell" NOR + WHT "   â€»\n"
+                              "        â€»                  â€»\n"
+                              "        â€»  " NOR + HIW "è²·é€²" NOR + WHT "ï¼š   " NOR + HIY "buy" NOR + WHT "    â€»\n"
+                              "        â€»                  â€»\n"
+                              "        â€»  " NOR + HIW "ä¼°åƒ¹" NOR + WHT "ï¼š   " NOR + HIY "value" NOR + WHT "  â€»\n"
+                              "        â€»                  â€»\n"
+                              "        â€»                  â€»\n"
+                              "        â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»\n\n\n" NOR,
         ]));
 
 

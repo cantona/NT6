@@ -1,6 +1,6 @@
 // This is player's own skill (Write by Lonely@nt2)
-// Create by ½£Ã÷(Jianmin) at Tue Oct 21 16:53:53 2008
-// ·ÉÌìÓù½£(fly-sword.c)
+// Create by åŠæ˜(Jianmin) at Tue Oct 21 16:53:53 2008
+// é£›å¤©å¾¡åŠ(fly-sword.c)
 
 #include <ansi.h>
 inherit SKILL;        
@@ -9,15 +9,15 @@ int is_invent_skill() { return 1; }
 
 mapping *action = ({
 // ZHAOSHI : 0
-([      "action" : "ÂÒ»÷Êõ,ÒÔ±ÈÈâÑÛ¸ü¿ìµÄËÙ¶ÈÏò¶ÔÊÖÂÒ»÷.",
+([      "action" : "äº‚æ“Šè¡“,ä»¥æ¯”è‚‰çœ¼æ›´å¿«çš„é€Ÿåº¦å‘å°æ‰‹äº‚æ“Š.",
         "attack" : 260,
         "damage" : 260,
         "force" : 260,
         "dodge" : 260,
         "parry" : 260,
         "lvl" : 100,
-        "damage_type" : "´ÌÉË",
-        "skill_name" : "Áú³²ÉÁ"
+        "damage_type" : "åˆºå‚·",
+        "skill_name" : "é¾å·¢é–ƒ"
  ]),
 // ZHAOSHI : 1
 });
@@ -28,10 +28,10 @@ int valid_learn(object me)
         
         if( !objectp(weapon=query_temp("weapon", me) )
                  || query("skill_type", weapon) != "sword" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ã€‚\n");
                 
         if( query("max_neili", me)<50 )
-                return notify_fail("ÄãµÄÄÚÁ¦Ì«Èõ£¬ÎŞ·¨Á·" + "·ÉÌìÓù½£" + "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›å¤ªå¼±ï¼Œç„¡æ³•ç·´" + "é£›å¤©å¾¡åŠ" + "ã€‚\n");
                 
         return 1;
 }
@@ -80,13 +80,13 @@ int practice_skill(object me)
         object weapon; 
         if( !objectp(weapon=query_temp("weapon", me)) || 
                 query("skill_type", weapon) != "sword" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");        
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ã€‚\n");        
         
         if( query("qi", me)<25 )
-                return notify_fail("ÄãµÄÌåÁ¦²»¹»ÁË£¬ĞİÏ¢Ò»ÏÂÔÙÁ·°É¡£\n");
+                return notify_fail("ä½ çš„é«”åŠ›ä¸å¤ äº†ï¼Œä¼‘æ¯ä¸€ä¸‹å†ç·´å§ã€‚\n");
                 
         if( query("neili", me)<3 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»ÁË£¬ĞİÏ¢Ò»ÏÂÔÙÁ·°É¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ äº†ï¼Œä¼‘æ¯ä¸€ä¸‹å†ç·´å§ã€‚\n");
                 
         me->receive_damage("qi", 25);
         addn("neili", -3, me);
@@ -101,7 +101,7 @@ mixed hit_ob(object me, object victim, int damage)
         if (random(damage) > victim->query_str()) 
         {
                 result = ([ "damage" : damage ]);
-                result += ([ "msg" : HIW "ÄãÌıµ½¡¸¿¦àê¡¹Ò»ÉùÇáÏì£¬ÒÑ±»$NµÄ±øÆ÷Ëù·¢É±Æø´ìÉË£¬$n¶ÙÊ±ÑªÃ°ÈıÕÉ£¡£¡£¡\n" NOR ]);
+                result += ([ "msg" : HIW "ä½ è½åˆ°ã€Œå–€åš“ã€ä¸€è²è¼•éŸ¿ï¼Œå·²è¢«$Nçš„å…µå™¨æ‰€ç™¼æ®ºæ°£æŒ«å‚·ï¼Œ$né “æ™‚è¡€å†’ä¸‰ä¸ˆï¼ï¼ï¼\n" NOR ]);
 
                 return result;
         }

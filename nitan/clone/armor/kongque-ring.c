@@ -6,13 +6,13 @@ inherit RINGS;
 
 void create()
 {
-        set_name(HIG "¿×È¸»·" NOR, ({ "kongque ring", "kongque", "ring" }));
+        set_name(HIG "å­”é›€ç’°" NOR, ({ "kongque ring", "kongque", "ring" }));
         set_weight(500);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
-                set("long", HIG "¿×È¸»·ÄËÉñÄñ¿×È¸Ö®»¯Éí£¬ÏóÕ÷×Å¡¸Ãô½İ¡¹£¡\n" NOR);
+                set("unit", "å€‹");
+                set("long", HIG "å­”é›€ç’°ä¹ƒç¥é³¥å­”é›€ä¹‹åŒ–èº«ï¼Œè±¡å¾è‘—ã€Œæ•æ·ã€ï¼\n" NOR);
                 set("value", 200000);
                 set("material", "gold");
                 set("armor_prop/dex", 20);

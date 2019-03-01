@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����ͤ");
+        set("short", "花橋亭");
         set("long", @LONG
-����һ�����ڴ�·�����Сͤ�ӣ����������������ڴ���Ϣ����ȥ
-����˳���ţ���ͨ���ۿڡ�
+這是一個建在大路中央的小亭子，三三兩兩的行人在此休息。南去
+便是順濟橋，可通往港口。
 LONG );
         set("outdoors", "quanzhou");
         set("no_clean_up", 0);

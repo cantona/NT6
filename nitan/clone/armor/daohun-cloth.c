@@ -7,13 +7,13 @@ inherit CLOTH;
 
 void create()
 {
-        set_name(HIW "ÊÉ»êÕ½ÒÂ" NOR, ({ "shihun zhanyi"}) );
+        set_name(HIW "å™¬é­‚æˆ°è¡£" NOR, ({ "shihun zhanyi"}) );
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼ş");
-                set("long", HIW "Ò»¼şÆæÒìµÄÕ½ÒÂ£¬Í¨ÌåÍ¸Ã÷£¬Æ®ºö²»¶¨£¬ËÆºõ²»ÊôÓÚÈË¼ä¡£\n" NOR);
+                set("unit", "ä»¶");
+                set("long", HIW "ä¸€ä»¶å¥‡ç•°çš„æˆ°è¡£ï¼Œé€šé«”é€æ˜ï¼Œé£„å¿½ä¸å®šï¼Œä¼¼ä¹ä¸å±¬äºäººé–“ã€‚\n" NOR);
                 set("material", "steel");
                 set("value", 1);
                 set("armor_prop/armor", 100);

@@ -5,30 +5,30 @@ inherit ARMOR;
 
 void create()
 {
-        set_name(HIW "Éñ»¢Õ½¼×" NOR, ({ "shenhu zhanjia", "shenhu", "zhanjia" }));
+        set_name(HIW "ç¥è™æˆ°ç”²" NOR, ({ "shenhu zhanjia", "shenhu", "zhanjia" }));
         set_weight(6000);
         if (clonep())set_default_object(__FILE__);
         else {
-                set("unit", "ÕÅ");
-                set("long", HIW "\nÒ»ÕÅÍ¶Éä×ÅÆæÒì¹âÃ¢µÄÕ½¼×£¬ÄËÌìµØ¼äµÄ¼«Æ·¡£\n" NOR
-                            HIG "ÓĞĞ§ÕĞ¼ÜĞŞÕı£º+ 70        ÓĞĞ§Çá¹¦ĞŞÕı£º+ 10\n" NOR
-                            HIG "¿¹¶¾Ğ§¹ûĞŞÕı£º+ 20%       ·ÀÓùĞ§¹ûµÈ¼¶£º 220\n" NOR
-                            HIG "¿¹¶¾»Ø±ÜĞŞÕı£º+ 20%\n" NOR);
+                set("unit", "å¼µ");
+                set("long", HIW "\nä¸€å¼µæŠ•å°„è‘—å¥‡ç•°å…‰èŠ’çš„æˆ°ç”²ï¼Œä¹ƒå¤©åœ°é–“çš„æ¥µå“ã€‚\n" NOR
+                            HIG "æœ‰æ•ˆæ‹›æ¶ä¿®æ­£ï¼š+ 70        æœ‰æ•ˆè¼•åŠŸä¿®æ­£ï¼š+ 10\n" NOR
+                            HIG "æŠ—æ¯’æ•ˆæœä¿®æ­£ï¼š+ 20%       é˜²å¾¡æ•ˆæœç­‰ç´šï¼š 220\n" NOR
+                            HIG "æŠ—æ¯’å›é¿ä¿®æ­£ï¼š+ 20%\n" NOR);
                 set("value", 2000000);
                 set("material", "tiger");
 
-                set("material_name", "°×»¢¹Ç¡¢°×»¢½î¡¢°×»¢Æ¤¡¢ÈçÒâÍ¨Ììïã");
+                set("material_name", "ç™½è™éª¨ã€ç™½è™ç­‹ã€ç™½è™çš®ã€å¦‚æ„é€šå¤©â–¡");
                 set("can_summon", 1);
                 set("summon_id", "shenhujia");
-                set("ctype", "»¤¼×");
-                set("summon_wear_msg", HIW "É²ÄÇ¼ä£¬·çÉùÖèÆğ£¬É½ºéÅØÏø£¬Ìì¼Ê´¦Ò»µÀ°×¹â\n"
-                                       "»®¹ı£¬½¥½¥µØÓë$N" HIW "ºÏÎªÒ»Ìå¡£\n" NOR);
-                set("summon_remove_msg", HIW "·çÓê½¥Ï¢£¬Ò»Ö»°×»¢ÌÚ¿Õ¶øÆğ£¬ÏûÊ§ÔÚÌì¼Ê¡£\n" NOR);
+                set("ctype", "è­·ç”²");
+                set("summon_wear_msg", HIW "å‰é‚£é–“ï¼Œé¢¨è²é©Ÿèµ·ï¼Œå±±æ´ªå’†å“®ï¼Œå¤©éš›è™•ä¸€é“ç™½å…‰\n"
+                                       "åŠƒéï¼Œæ¼¸æ¼¸åœ°èˆ‡$N" HIW "åˆç‚ºä¸€é«”ã€‚\n" NOR);
+                set("summon_remove_msg", HIW "é¢¨é›¨æ¼¸æ¯ï¼Œä¸€åªç™½è™é¨°ç©ºè€Œèµ·ï¼Œæ¶ˆå¤±åœ¨å¤©éš›ã€‚\n" NOR);
                 set("armor_prop/armor", 350);
                 set("armor_prop/dodge", 10);
                 set("armor_prop/parry", 70);
-                set("armor_prop/reduce_poison", 20); // Ìá¸ß30%¿¹¶¾Ğ§¹û
-                set("armor_prop/avoid_poison", 20); // Ìá¸ß20%»Ø±ÜĞ§¹û
+                set("armor_prop/reduce_poison", 20); // æé«˜30%æŠ—æ¯’æ•ˆæœ
+                set("armor_prop/avoid_poison", 20); // æé«˜20%å›é¿æ•ˆæœ
 
         }
         setup();

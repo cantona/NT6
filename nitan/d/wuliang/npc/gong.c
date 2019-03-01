@@ -4,8 +4,8 @@
 inherit NPC;
 void create()
 {
-        set_name("¹¨¹â½Ü", ({ "gong guangjie", "gong", "guangjie"}));
-        set("gender", "ÄĞĞÔ");
+        set_name("é¾”å…‰å‚‘", ({ "gong guangjie", "gong", "guangjie"}));
+        set("gender", "ç”·æ€§");
         set("attitude", "friendly");
 
         set("age", 20);
@@ -36,10 +36,10 @@ void create()
         map_skill("parry", "damo-jian");
 
         set("inquiry", ([
-                "ÎŞÁ¿Óñ±Ú"  : "ÄÇÊÇ±¾ÅÉ½ûµØ£¬ÈÎºÎÍâÈË²»µÃÉÃÈë¡£¸É·¸½û¼É£¬¿É½ĞÄãËÀÔáÉíÖ®µØ¡£",
+                "ç„¡é‡ç‰å£"  : "é‚£æ˜¯æœ¬æ´¾ç¦åœ°ï¼Œä»»ä½•å¤–äººä¸å¾—æ“…å…¥ã€‚å¹¹çŠ¯ç¦å¿Œï¼Œå¯å«ä½ æ­»è‘¬èº«ä¹‹åœ°ã€‚",
         ]));
 
-        create_family("ÎŞÁ¿½£¶«×Ú", 5, "µÜ×Ó");
+        create_family("ç„¡é‡åŠæ±å®—", 5, "å¼Ÿå­");
         setup();
 
         carry_object("/clone/cloth/cloth")->wear();

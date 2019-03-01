@@ -2,16 +2,16 @@ inherit ROOM;
       
 void create()
 {
-        set("short", "ÁîÅÆÌÃ");
+        set("short", "ä»¤ç‰Œå ‚");
         set("long", @LONG
-ÕâÀïÊÇºÚÄ¾ÑÂµÄµÚÈý´óÌÃÇàÁúÌÃµÄÁîÅÆÊÒ¡£ÊÒÄÚÇà×©ÆÌµØ¡£×ÀÉÏ
-ÓÐÒ»ºÐ×Ó(box1)¡£
+é€™è£¡æ˜¯é»‘æœ¨å´–çš„ç¬¬ä¸‰å¤§å ‚é’é¾å ‚çš„ä»¤ç‰Œå®¤ã€‚å®¤å…§é’ç£šèˆ–åœ°ã€‚æ¡Œä¸Š
+æœ‰ä¸€ç›’å­(box1)ã€‚
 LONG );
         set("exits", ([        
             "west"      : __DIR__"qing",
         ]));
         set("item_desc", ([
-            "box1": "ÕâÊÇ¸ö·ÅÁîÅÆµÄºÐ×Ó£¬²»¹ýÒÔ±»ÈË´ò¿ª£¬¿Õ¿ÕÈçÒ² ¡£\n",
+            "box1": "é€™æ˜¯å€‹æ”¾ä»¤ç‰Œçš„ç›’å­ï¼Œä¸éŽä»¥è¢«äººæ‰“é–‹ï¼Œç©ºç©ºå¦‚ä¹Ÿ ã€‚\n",
                ]) );
         set("no_clean_up", 0);
         setup();

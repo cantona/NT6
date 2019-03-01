@@ -1,4 +1,4 @@
-// bingxue-xinfa.c ±ùÑ©ĞÄ·¨
+// bingxue-xinfa.c å†°é›ªå¿ƒæ³•
 // Last Modified by winder on Jul. 15 2001
 
 #include <ansi.h>;
@@ -19,16 +19,16 @@ int valid_learn(object me)
         int lvl = (int)me->query_skill("bingxue-xinfa", 1);
 
         if ( me->query_skill("force", 1) < 10)
-                return notify_fail("ÄãµÄ»ù±¾ÄÚ¹¦»¹²»µ½»ğºò¡£\n");
-        if( query("gender", me) == "ÎŞĞÔ" && lvl>49 )
-                return notify_fail("ÄãÎŞ¸ùÎŞĞÔ£¬ÒõÑô²»µ÷£¬ÄÑÒÔÁì»á¸ßÉîµÄ±ùÑ©ĞÄ·¨¡£\n");
+                return notify_fail("ä½ çš„åŸºæœ¬å…§åŠŸé‚„ä¸åˆ°ç«å€™ã€‚\n");
+        if( query("gender", me) == "ç„¡æ€§" && lvl>49 )
+                return notify_fail("ä½ ç„¡æ ¹ç„¡æ€§ï¼Œé™°é™½ä¸èª¿ï¼Œé›£ä»¥é ˜æœƒé«˜æ·±çš„å†°é›ªå¿ƒæ³•ã€‚\n");
 
         return ::valid_learn(me);
 }
 
 int practice_skill(object me)
 {
-        return notify_fail("±ùÑ©ĞÄ·¨Ö»ÄÜÓÃÑ§µÄ£¬»òÊÇ´ÓÔËÓÃ(exert)ÖĞÔö¼ÓÊìÁ·¶È¡£\n");
+        return notify_fail("å†°é›ªå¿ƒæ³•åªèƒ½ç”¨å­¸çš„ï¼Œæˆ–æ˜¯å¾é‹ç”¨(exert)ä¸­å¢åŠ ç†Ÿç·´åº¦ã€‚\n");
 }
 
 string exert_function_file(string func)
@@ -37,14 +37,14 @@ string exert_function_file(string func)
 }
 int help(object me)
 {
-        write(HIC"\n±ùÑ©ĞÄ·¨£º"NOR"\n");
+        write(HIC"\nå†°é›ªå¿ƒæ³•ï¼š"NOR"\n");
         write(@HELP
 
-    ±ùÑ©ĞÄ·¨ÊÇÑ©É½ÁèÏö³ÇµÄÄÚ¹¦ĞÄ·¨£¬ÊÇÑ©É½ÅÉµÜ×Ó±¾ÃÅÄÚ¹¦¡£
+    å†°é›ªå¿ƒæ³•æ˜¯é›ªå±±å‡Œéœ„åŸçš„å…§åŠŸå¿ƒæ³•ï¼Œæ˜¯é›ªå±±æ´¾å¼Ÿå­æœ¬é–€å…§åŠŸã€‚
 
-        Ñ§Ï°ÒªÇó£º
-                »ù±¾ÄÚ¹¦10¼¶
-                Ì«¼àÎŞ·¨ÁìÎò50¼¶ÒÔÉÏµÄ±ùÑ©ĞÄ·¨
+        å­¸ç¿’è¦æ±‚ï¼š
+                åŸºæœ¬å…§åŠŸ10ç´š
+                å¤ªç›£ç„¡æ³•é ˜æ‚Ÿ50ç´šä»¥ä¸Šçš„å†°é›ªå¿ƒæ³•
 HELP
         );
         return 1;

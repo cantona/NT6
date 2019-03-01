@@ -9,10 +9,10 @@ int do_tui(string arg);
 
 void create()
 {
-        set("short", "Öñ¾¶");
+        set("short", "ç«¹å¾‘");
         set("long",
-"ÕâÀïÖñ×ÓºÜÃ¯ÃÜ£¬¹âÏß¼«°µ¡£¿ÕÆøÖÐÓÐµ­µ­µÄÖñ×ÓµÄÇåÏã¡£ÔÚÕâÑùµÄ\n"
-"µØ·½£¬»áÒþ²Ø×ÅÊ²Ã´Âð£¿\n"
+"é€™è£¡ç«¹å­å¾ˆèŒ‚å¯†ï¼Œå…‰ç·šæ¥µæš—ã€‚ç©ºæ°£ä¸­æœ‰æ·¡æ·¡çš„ç«¹å­çš„æ¸…é¦™ã€‚åœ¨é€™æ¨£çš„\n"
+"åœ°æ–¹ï¼Œæœƒéš±è—è‘—ä»€éº¼å—Žï¼Ÿ\n"
 );
         set("exits", ([
                 "east" : __DIR__"bamboo",
@@ -37,9 +37,9 @@ int do_use(string arg)
         if (!present("moonsoul", me))  return 0;
         if( arg=="moonsoul" ) {
              write(
-             "ÄãÌÍ³ö»³ÖÐµÄ"+HIC"ÔÂÆÇ"NOR+"£¬"+HIC"ÔÂÆÇ"NOR+"·¢³öÓÄÀ¶µÄ¹âÃ¢¡£ÑÒ±ÚÉÏËÆºõÓÐµÀ°µÃÅ£¬Ò²Ðí¿ÉÒÔÊÔ×ÅÍÆ(tui)Ò»ÏÂ¡£\n"
+             "ä½ æŽå‡ºæ‡·ä¸­çš„"+HIC"æœˆé­„"NOR+"ï¼Œ"+HIC"æœˆé­„"NOR+"ç™¼å‡ºå¹½è—çš„å…‰èŠ’ã€‚å·–å£ä¸Šä¼¼ä¹Žæœ‰é“æš—é–€ï¼Œä¹Ÿè¨±å¯ä»¥è©¦è‘—æŽ¨(tui)ä¸€ä¸‹ã€‚\n"
              );
-             set_temp("marks/×ê1", 1, this_player());
+             set_temp("marks/é‘½1", 1, this_player());
              return 1;
        }
 }
@@ -49,18 +49,18 @@ int do_tui(string arg)
         object me;
         me = this_player();
 
-        if( query_temp("marks/×ê1", me)){
-            message("vision", me->name() + "Ò»ÏÂ×Ó¾Í²»¼ûÁË¡£\n",
+        if( query_temp("marks/é‘½1", me)){
+            message("vision", me->name() + "ä¸€ä¸‹å­å°±ä¸è¦‹äº†ã€‚\n",
                     environment(me), ({me}) );
             me->move(__DIR__"moonroom");
-            message("vision", me->name() + "´ÓÑÒ·ì°µÃÅÀïµøÁË³öÀ´¡£\n",
+            message("vision", me->name() + "å¾žå·–ç¸«æš—é–€è£¡è·Œäº†å‡ºä¾†ã€‚\n",
                     environment(me), ({me}) );
-            delete_temp("marks/×ê1", this_player());
+            delete_temp("marks/é‘½1", this_player());
 
             return 1;
         }
         else {
-            write("ÂÒÍÆÓÐÊ²Ã´ÓÃ?!\n");
+            write("äº‚æŽ¨æœ‰ä»€éº¼ç”¨?!\n");
             return 1;
         }
 }

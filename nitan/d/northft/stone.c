@@ -30,8 +30,8 @@ void do_push(object who)
 
 set("exits/east", __DIR__"ftn12", 		room1);
 set("exits/west", __DIR__"ftn11", 		room2);
-		tell_object(room1, "��ʯͷ����¡��һ��������һ�ԡ�\n");	
-		tell_object(room2, "��ʯͷ����¡��һ��������һ�ԡ�\n");
+		tell_object(room1, "大石頭“轟隆”一聲滾到了一旁。\n");	
+		tell_object(room2, "大石頭“轟隆”一聲滾到了一旁。\n");
 
 		if(find_call_out("do_close") >= 0)
 			remove_call_out("do_close");
@@ -39,7 +39,7 @@ set("exits/west", __DIR__"ftn11", 		room2);
 	}
 
 	else
-		tell_object(who, "��ʯͷ��˿û����\n");
+		tell_object(who, "大石頭紋絲沒動。\n");
 }
 
 protected void do_close()
@@ -56,8 +56,8 @@ protected void do_close()
 delete("exits/east", 	room1);
 delete("exits/west", 	room2);
 
-	tell_object(room1, "��ʯͷ����¡��һ��������·�м䵲ס��ȥ·��\n");	
-	tell_object(room2, "��ʯͷ����¡��һ��������·�м䵲ס��ȥ·��\n");
+	tell_object(room1, "大石頭“轟隆”一聲滾到了路中間擋住了去路。\n");	
+	tell_object(room2, "大石頭“轟隆”一聲滾到了路中間擋住了去路。\n");
 
 	open = 0;
 }

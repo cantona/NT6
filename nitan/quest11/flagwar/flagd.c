@@ -1,4 +1,4 @@
-// Flagd.c ÇÀÆìÕ½Ö÷¿ØÖÆ³ÌĞò
+// Flagd.c æ¶æ——æˆ°ä¸»æ§åˆ¶ç¨‹åº
 
 #include <ansi.h>
 inherit F_DBASE; 
@@ -43,7 +43,7 @@ void end_flag_war();
 void put_flag_in_room(string t);
 int sort_user(object ob1, object ob2);
 
-mapping party_str = (["blue":HIB"À¶¶Ó"NOR, "red":HIR"ºì¶Ó"NOR]);
+mapping party_str = (["blue":HIB"è—éšŠ"NOR, "red":HIR"ç´…éšŠ"NOR]);
 int query_flagwar_time() {
 	if(can_accept) return -1;
 	if(!round_event_id || !SCHEDULE_D->query_event(round_event_id)) return -2;
@@ -96,8 +96,8 @@ void clear_all_data() {
 void create()
 {
         seteuid(ROOT_UID);
-        set("channel_id", "ÇÀÆìÕ½¾«Áé");
-        CHANNEL_D->do_channel(this_object(), "sys", "ÇÀÆìÕ½ÒÑ¾­Æô¶¯¡£");
+        set("channel_id", "æ¶æ——æˆ°ç²¾éˆ");
+        CHANNEL_D->do_channel(this_object(), "sys", "æ¶æ——æˆ°å·²ç¶“å•Ÿå‹•ã€‚");
         clear_all_data();
         round_event_id = SCHEDULE_D->set_event(ROUND_TIME, 0, this_object(), "start_flag_war");
 }
@@ -107,11 +107,11 @@ void remove()
 }
 void message_flag(string str) {
 	 if(str)
-	 message("channel:rumor", HIG "¡¾ÇÀÆìÇé±¨¡¿»î¶¯Ö÷³ÖÈË£º"+str+"\n" NOR, users());
+	 message("channel:rumor", HIG "ã€æ¶æ——æƒ…å ±ã€‘æ´»å‹•ä¸»æŒäººï¼š"+str+"\n" NOR, users());
 }
 void message_flag_tell(string str) {
 	 if(str)
-	 message("vision", HIG "¡¾ÇÀÆìÕ½³¡¡¿Õ½³¡²ÃÅĞ¹Ù£º"+str+"\n" NOR, all_player_ob);
+	 message("vision", HIG "ã€æ¶æ——æˆ°å ´ã€‘æˆ°å ´è£åˆ¤å®˜ï¼š"+str+"\n" NOR, all_player_ob);
 }
 void add_flag_round() {
 	string round;
@@ -128,12 +128,12 @@ string query_flag_round() {
 }
 void start_flag_war() {
 	if(objectp(WAR_D->query_marshal())) {
-		message_flag("µÚ "+query_flag_round()+" ³¡ÇÀÆìÕ½½«ÑÓÖÁ 10 ·ÖÖÓºóÖØĞÂ¿ªÊ¼¡£");
+		message_flag("ç¬¬ "+query_flag_round()+" å ´æ¶æ——æˆ°å°‡å»¶è‡³ 10 åˆ†é˜å¾Œé‡æ–°é–‹å§‹ã€‚");
 		round_event_id = SCHEDULE_D->set_event(600, 0, this_object(), "start_flag_war");
 		return;
 	}
   clear_all_data();
-	message_flag("µÚ "+query_flag_round()+" ³¡ÇÀÆìÕ½½«ÔÚ "+START_TIME+" ·ÖÖÓºó¿ªÊ¼£¬ÇëÊ¹ÓÃ flag join ±¨Ãû¡£");
+	message_flag("ç¬¬ "+query_flag_round()+" å ´æ¶æ——æˆ°å°‡åœ¨ "+START_TIME+" åˆ†é˜å¾Œé–‹å§‹ï¼Œè«‹ä½¿ç”¨ flag join å ±åã€‚");
 	can_accept = 1;
 	start_time = time();
 	if(round_event_id) SCHEDULE_D->delete_event(round_event_id);
@@ -146,11 +146,11 @@ void start_flag_war_count(int num) {
       		// check player have click html?
 
       	if(sizeof(all_player) < 5) {
-      		message_flag("ÓÉÓÚÈËÊı¹ıÉÙ±¾³¡ÇÀÆìÕ½È¡Ïû¡£");
+      		message_flag("ç”±äºäººæ•¸éå°‘æœ¬å ´æ¶æ——æˆ°å–æ¶ˆã€‚");
       		foreach(string id in all_player) {
       			if(!me = find_player(id)) continue;
       			me->add("balance", 500000);
-      			tell_object(me, HIY"ÓÉÓÚÈËÊı¹ıÉÙ±¾³¡ÇÀÆìÕ½È¡Ïû£¬ÍË»¹±¨Ãû·ÑÓÃ¡£\n"NOR);
+      			tell_object(me, HIY"ç”±äºäººæ•¸éå°‘æœ¬å ´æ¶æ——æˆ°å–æ¶ˆï¼Œé€€é‚„å ±åè²»ç”¨ã€‚\n"NOR);
       		}
           clear_all_data();
           add_flag_round();
@@ -158,11 +158,11 @@ void start_flag_war_count(int num) {
       	} else {
       		startnow = 1;
       		can_accept = 0;
-          // ¹Ø±ÕÆğµã³ö¿Ú
+          // é—œé–‰èµ·é»å‡ºå£
           if(be = load_object(BLUE_START)) be->delete("exits");
           if(re = load_object(RED_START)) re->delete("exits");
 
-      		// ÕâÀï¿ªÊ¼·ÖÅä¶ÓÎé      		
+      		// é€™è£¡é–‹å§‹åˆ†é…éšŠä¼      		
       		foreach(string id in all_player) {
  	        if(!me = find_player(id)) {
  	         leave_player(id);
@@ -180,15 +180,15 @@ void start_flag_war_count(int num) {
  	         if(sizeof(red) >= sizeof(blue)) {
  	         	blue[mes->query("id")] = 0;
  	          mes->set_temp("flag_war/party", "blue");
- 	          mes->set_temp("title", HIB"ÇÀÆìÀ¶¶Ó"NOR);
+ 	          mes->set_temp("title", HIB"æ¶æ——è—éšŠ"NOR);
  	         } else {
  	         	red[mes->query("id")] = 0;
  	         	mes->set_temp("flag_war/party", "red");
- 	         	mes->set_temp("title", HIR"ÇÀÆìºì¶Ó"NOR);
+ 	         	mes->set_temp("title", HIR"æ¶æ——ç´…éšŠ"NOR);
  	         }
  	         init_player(mes);
       		}
-          message_flag("ÇÀÆìÕ½¿ªÊ¼£¬±¾³¡ºì¶ÓÓĞ "+sizeof(red)+" ÈË£¬À¶¶ÓÓĞ "+sizeof(blue)+" ÈË£¬Ê¤Àû½±½ğ£º"+MONEY_D->money_str(reward_money)+"¡£");
+          message_flag("æ¶æ——æˆ°é–‹å§‹ï¼Œæœ¬å ´ç´…éšŠæœ‰ "+sizeof(red)+" äººï¼Œè—éšŠæœ‰ "+sizeof(blue)+" äººï¼Œå‹åˆ©çé‡‘ï¼š"+MONEY_D->money_str(reward_money)+"ã€‚");
           SCHEDULE_D->set_event(MIN_TIME, 0, this_object(), "start_flag_war_count_in", START_TIME_COUNT);
           SCHEDULE_D->set_event(END_TIME, 0, this_object(), "end_flag_war");
           check_event_id = SCHEDULE_D->set_event(1, 1, this_object(), "auto_check");
@@ -196,7 +196,7 @@ void start_flag_war_count(int num) {
       	}
       } else {
       	num--;
-      	message_flag("µÚ "+query_flag_round()+" ³¡ÇÀÆìÕ½½«ÔÚ "+num+" ·ÖÖÓºó¿ªÊ¼£¬ÇëÊ¹ÓÃ flag join ±¨Ãû¡£");
+      	message_flag("ç¬¬ "+query_flag_round()+" å ´æ¶æ——æˆ°å°‡åœ¨ "+num+" åˆ†é˜å¾Œé–‹å§‹ï¼Œè«‹ä½¿ç”¨ flag join å ±åã€‚");
       	SCHEDULE_D->set_event(MIN_TIME, 0, this_object(), "start_flag_war_count", num);
       }
 }
@@ -205,14 +205,14 @@ void start_flag_war_count_in(int num) {
 	if(num <= 1) {
     if(be = load_object(BLUE_START)) be->open_exit();
     if(re = load_object(RED_START)) re->open_exit();
-   	message_flag_tell("ÇÀÆìÕ½ÒÑ¾­¿ª·Å³ö¿ÚÁË£¬Çë¿ìµã³ö·¢°É¡£");
+   	message_flag_tell("æ¶æ——æˆ°å·²ç¶“é–‹æ”¾å‡ºå£äº†ï¼Œè«‹å¿«é»å‡ºç™¼å§ã€‚");
    	put_flag_in_room("center");
     SCHEDULE_D->set_event(5+random(10), 0, this_object(), "put_flag_in_room", "west");
     SCHEDULE_D->set_event(5+random(10), 0, this_object(), "put_flag_in_room", "east");
     
 	} else {
    num--;
-   message_flag_tell("ÇÀÆìÕ½½«ÔÚ "+num+" ·ÖÖÓºó¿ª·Å³ö¿Ú£¬Çë×öºÃ×¼±¸¡£");
+   message_flag_tell("æ¶æ——æˆ°å°‡åœ¨ "+num+" åˆ†é˜å¾Œé–‹æ”¾å‡ºå£ï¼Œè«‹åšå¥½æº–å‚™ã€‚");
    SCHEDULE_D->set_event(MIN_TIME, 0, this_object(), "start_flag_war_count_in", num);		
 	}
 }
@@ -221,7 +221,7 @@ int add_player(object me, int money) {
 	    if(member_array(me->query("id"), all_player) != -1) return 0;
 	    all_player += ({ me->query("id") });
 	    reward_money += money;
-	    message_flag(me->query_idname()+"±¨Ãû²Î¼ÓÇÀÆìÕ½¡£");
+	    message_flag(me->query_idname()+"å ±ååƒåŠ æ¶æ——æˆ°ã€‚");
 	    return 1;
 }
 void auto_check() {
@@ -237,7 +237,7 @@ void auto_check() {
 	   foreach(object pl in all_player_ob) {
         if(!pl) continue;
         
-        // ¼ìÑéÎ»ÖÃ
+        // æª¢é©—ä½ç½®
         if(room = base_name(environment(pl))) {
         if (!sscanf(room, "/d/flagwar/%*s")) {
          leave_player(pl->query("id"));  	   	  	
@@ -254,17 +254,17 @@ void leave_player(string id) {
       if(member_array(id, keys(blue)) != -1) map_delete(blue, id);
       if(me = find_player(id)) {
       if(startnow) {
-      	message_flag(me->query_idname()+"ÔÚÖĞÍ¾ÌÓÀëÇÀÆìÕ½ÁË¡£");
+      	message_flag(me->query_idname()+"åœ¨ä¸­é€”é€ƒé›¢æ¶æ——æˆ°äº†ã€‚");
       	restore_player(me);
       	if(!me->is_net_dead()) {
-      	tell_object(me, "ÄãÒ»¿ÚÆøÌÓ³öÁËÕ½³¡£¬À´µ½ÑïÖİÖĞÑë¹ã³¡¡£\n");   	
+      	tell_object(me, "ä½ ä¸€å£æ°£é€ƒå‡ºäº†æˆ°å ´ï¼Œä¾†åˆ°æšå·ä¸­å¤®å»£å ´ã€‚\n");   	
       	me->move("/d/city/guangchang");
-      	message("vision", "Ö»¼û" + me->name() + "»ÅÀï»ÅÕÅµÄÅÜÁË¹ıÀ´¡£\n", environment(me), ({ me }));
+      	message("vision", "åªè¦‹" + me->name() + "æ…Œè£¡æ…Œå¼µçš„è·‘äº†éä¾†ã€‚\n", environment(me), ({ me }));
         }
       } else {
       	me->add("balance", 490000);
       	reward_money -= 500000;
-      	message_flag(me->query_idname()+"È¡Ïû±¨ÃûÇÀÆìÕ½£¬ÍË»¹±¨Ãû·Ñ"+MONEY_D->money_str(490000)+"¡£");
+      	message_flag(me->query_idname()+"å–æ¶ˆå ±åæ¶æ——æˆ°ï¼Œé€€é‚„å ±åè²»"+MONEY_D->money_str(490000)+"ã€‚");
       }
     }
 }
@@ -274,8 +274,8 @@ void init_player(object me)
         me->set_override("die", (: call_other, __FILE__, "check_die" :));
         me->set_override("unconcious", (: call_other, __FILE__, "check_die" :));
         me->move("/d/flagwar/"+me->query_temp("flag_war/party")+"_entry");
-        tell_object(me, HIY "»î¶¯Ö÷³ÖÈË½«Äã´øµ½ÁË" + environment(me)->short() + HIY "¡£\n");
-        message("vision", HIY"Ö»¼û»î¶¯Ö÷³ÖÈË½«" + me->name() + "´øµ½ÁË" + environment(me)->short() + HIY "¡£\n", environment(me), ({ me }));
+        tell_object(me, HIY "æ´»å‹•ä¸»æŒäººå°‡ä½ å¸¶åˆ°äº†" + environment(me)->short() + HIY "ã€‚\n");
+        message("vision", HIY"åªè¦‹æ´»å‹•ä¸»æŒäººå°‡" + me->name() + "å¸¶åˆ°äº†" + environment(me)->short() + HIY "ã€‚\n", environment(me), ({ me }));
 }
 int check_quit(object me)
 {
@@ -291,19 +291,19 @@ void send_rune(object me)
 	if(random(3) >= 2) return;
 	rune = new(runes[random(sizeof(runes))]);
   rune->move(me);
-  tell_object(me, HIG"Äã»ñµÃÁËÒ»¸ö"+rune->name()+"¡£\n"NOR);
+  tell_object(me, HIG"ä½ ç²å¾—äº†ä¸€å€‹"+rune->name()+"ã€‚\n"NOR);
 	rune = new(gems[random(sizeof(gems))]);
   rune->move(me);
-  tell_object(me, HIG"Äã»ñµÃÁËÒ»¸ö"+rune->name()+"¡£\n"NOR);  
+  tell_object(me, HIG"ä½ ç²å¾—äº†ä¸€å€‹"+rune->name()+"ã€‚\n"NOR);  
   if(random(300) >= 295) {
 	rune = new(runes[random(sizeof(runes))]);
   rune->move(me);
-  tell_object(me, HIG"Äã»ñµÃÁËÒ»¸ö"+rune->name()+"¡£\n"NOR);
+  tell_object(me, HIG"ä½ ç²å¾—äº†ä¸€å€‹"+rune->name()+"ã€‚\n"NOR);
   }
   if(random(300) >= 295) {
 	rune = new(gems[random(sizeof(gems))]);
   rune->move(me);
-  tell_object(me, HIG"Äã»ñµÃÁËÒ»¸ö"+rune->name()+"¡£\n"NOR);
+  tell_object(me, HIG"ä½ ç²å¾—äº†ä¸€å€‹"+rune->name()+"ã€‚\n"NOR);
   }  
 }
 void random_item(object me)
@@ -311,7 +311,7 @@ void random_item(object me)
 	object item;
 	string *items = ({"/d/flagwar/obj/item1","/d/flagwar/obj/item2","/d/flagwar/obj/item3","/d/flagwar/obj/item4","/d/flagwar/obj/item4","/d/flagwar/obj/item5","/d/flagwar/obj/item6"});
 	item = new(items[random(sizeof(items))]);
-	message_flag_tell(party_str[me->query_temp("flag_war/party")]+HIG+"µÄ"+me->query_idname()+HIG+"»ñµÃÇÀÆìÕ½×¨ÓÃÌØÊâÎïÆ·"+item->name()+"¡£");
+	message_flag_tell(party_str[me->query_temp("flag_war/party")]+HIG+"çš„"+me->query_idname()+HIG+"ç²å¾—æ¶æ——æˆ°å°ˆç”¨ç‰¹æ®Šç‰©å“"+item->name()+"ã€‚");
 	item->move(me);
 }
 int check_die(object me)
@@ -322,7 +322,7 @@ int check_die(object me)
 	      if(objectp(flag = present("fwar flag", me)))
         if(flag->move(environment(me))) drop_flag(me, flag);
 	      if(objectp(flag = present("fwar count seal", me))) {
-        message_flag_tell(party_str[me->query_temp("flag_war/party")]+HIG+"µÄ"+me->query_idname()+HIG+"ÔÚÁÙËÀÇ°Òı·¢"+flag->name());
+        message_flag_tell(party_str[me->query_temp("flag_war/party")]+HIG+"çš„"+me->query_idname()+HIG+"åœ¨è‡¨æ­»å‰å¼•ç™¼"+flag->name());
         foreach(object ppl in all_inventory(environment(me))) {
          if(ppl == me) continue;
          ppl->start_busy(20);
@@ -333,7 +333,7 @@ int check_die(object me)
         if(me->query_temp("flag_war/stab_event_id")) SCHEDULE_D->delete_event(me->query_temp("flag_war/stab_event_id"));
         me->delete_temp("flag_war/stab_now");
 	      if(!objectp(ob = me->query_last_damage_from())) {
-	      message_flag_tell(party_str[me->query_temp("flag_war/party")]+HIG+"µÄ"+me->query_idname()+HIG+"ÄªÃûÆäÃî±»É±£¬"+party_str[me->query_temp("flag_war/party")]+HIG+"¿Û 3 ·Ö¡£");
+	      message_flag_tell(party_str[me->query_temp("flag_war/party")]+HIG+"çš„"+me->query_idname()+HIG+"è«åå…¶å¦™è¢«æ®ºï¼Œ"+party_str[me->query_temp("flag_war/party")]+HIG+"æ‰£ 3 åˆ†ã€‚");
 
         my["eff_qi"] = my["max_qi"];
         my["eff_jing"] = my["max_jing"];
@@ -355,7 +355,7 @@ int check_die(object me)
 	      if(random(6) >= 3) random_item(me);
 	      return 1;
 	      } else {
-        message_flag_tell(party_str[me->query_temp("flag_war/party")]+HIG+"µÄ"+me->query_idname()+HIG+"±»"+ob->query_idname()+HIG+"ÎŞÇéµÄ»÷É±£¬"+party_str[me->query_temp("flag_war/party")]+HIG+"¿Û 3 ·Ö¡£");
+        message_flag_tell(party_str[me->query_temp("flag_war/party")]+HIG+"çš„"+me->query_idname()+HIG+"è¢«"+ob->query_idname()+HIG+"ç„¡æƒ…çš„æ“Šæ®ºï¼Œ"+party_str[me->query_temp("flag_war/party")]+HIG+"æ‰£ 3 åˆ†ã€‚");
 	      my["eff_qi"] = my["max_qi"];
         my["eff_jing"] = my["max_jing"];
         my["qi"] = my["max_jing"];
@@ -393,27 +393,27 @@ int check_die(object me)
 }
 void get_flag(object me, object ob)
 {
-	mapping party_str = (["blue":HIB"À¶¶Ó"NOR, "red":HIR"ºì¶Ó"NOR]);
+	mapping party_str = (["blue":HIB"è—éšŠ"NOR, "red":HIR"ç´…éšŠ"NOR]);
 	if(!me || !ob) return;
-	message_flag_tell(party_str[me->query_temp("flag_war/party")]+HIG+"µÄ"+me->query_idname()+HIG+"¶áµÃÁË"+ob->name()+HIG+"¡£");
+	message_flag_tell(party_str[me->query_temp("flag_war/party")]+HIG+"çš„"+me->query_idname()+HIG+"å¥ªå¾—äº†"+ob->name()+HIG+"ã€‚");
 	me->set_temp("flag_war/move_busy", 1);
-	me->set_temp("title", me->query_temp("title")+" "HIM"¿¸ÆìÕß"NOR);
+	me->set_temp("title", me->query_temp("title")+" "HIM"æ‰›æ——è€…"NOR);
 }
 void drop_flag(object me, object ob)
 {
 	
 	if(!me || !ob) return;
-	message_flag_tell(party_str[me->query_temp("flag_war/party")]+HIG+"µÄ"+me->query_idname()+HIG+"ÒÅÊ§ÁË"+ob->name()+HIG+"¡£");
+	message_flag_tell(party_str[me->query_temp("flag_war/party")]+HIG+"çš„"+me->query_idname()+HIG+"éºå¤±äº†"+ob->name()+HIG+"ã€‚");
 	me->delete_temp("flag_war/move_busy");
-	if(me->query_temp("flag_war/party") == "blue") me->set_temp("title", HIB"ÇÀÆìÀ¶¶Ó"NOR);
-	else me->set_temp("title", HIR"ÇÀÆìºì¶Ó"NOR);
+	if(me->query_temp("flag_war/party") == "blue") me->set_temp("title", HIB"æ¶æ——è—éšŠ"NOR);
+	else me->set_temp("title", HIR"æ¶æ——ç´…éšŠ"NOR);
 }
 
 void end_flag_war()
 {
-	if(!sizeof(red)) message_flag_tell("ÓÉÓÚ"+party_str["red"]+HIG+"ÒÑ¾­Ã»ÓĞÈËÁË£¬±¾³¡ÇÀÆìÕ½½«ÔÚ "+END_TIME_COUNT+" ·ÖÖÓºóÌáÔç½áÊø¡£");
-	else if(!sizeof(blue)) message_flag_tell("ÓÉÓÚ"+party_str["blue"]+HIG+"ÒÑ¾­Ã»ÓĞÈËÁË£¬±¾³¡ÇÀÆìÕ½½«ÔÚ "+END_TIME_COUNT+" ·ÖÖÓºóÌáÔç½áÊø¡£");
-  message_flag_tell("±¾³¡ÇÀÆìÕ½½«ÔÚ "+END_TIME_COUNT+" ·ÖÖÓºó½áÊø¡£");
+	if(!sizeof(red)) message_flag_tell("ç”±äº"+party_str["red"]+HIG+"å·²ç¶“æ²’æœ‰äººäº†ï¼Œæœ¬å ´æ¶æ——æˆ°å°‡åœ¨ "+END_TIME_COUNT+" åˆ†é˜å¾Œææ—©çµæŸã€‚");
+	else if(!sizeof(blue)) message_flag_tell("ç”±äº"+party_str["blue"]+HIG+"å·²ç¶“æ²’æœ‰äººäº†ï¼Œæœ¬å ´æ¶æ——æˆ°å°‡åœ¨ "+END_TIME_COUNT+" åˆ†é˜å¾Œææ—©çµæŸã€‚");
+  message_flag_tell("æœ¬å ´æ¶æ——æˆ°å°‡åœ¨ "+END_TIME_COUNT+" åˆ†é˜å¾ŒçµæŸã€‚");
   SCHEDULE_D->set_event(MIN_TIME, 0, this_object(), "end_flag_war_count", END_TIME_COUNT);		
 }
 
@@ -421,12 +421,12 @@ void end_flag_war_count(int num) {
 	object be, re;
 	if(num <= 1) {
 	 startnow = 0;
-	 message_flag("±¾³¡ÇÀÆìÕ½½áÊø£¬ÕıÔÚÍ³¼Æ½á¹û¡£");
+	 message_flag("æœ¬å ´æ¶æ——æˆ°çµæŸï¼Œæ­£åœ¨çµ±è¨ˆçµæœã€‚");
 	 give_bouns();
-   //SCHEDULE_D->set_event(5, 0, this_object(), "give_bouns"); // ¸ø½±Àø
+   //SCHEDULE_D->set_event(5, 0, this_object(), "give_bouns"); // çµ¦çå‹µ
 	} else {
    num--;
-   message_flag_tell("±¾³¡ÇÀÆìÕ½½«ÔÚ "+num+" ·ÖÖÓºó½áÊø¡£");
+   message_flag_tell("æœ¬å ´æ¶æ——æˆ°å°‡åœ¨ "+num+" åˆ†é˜å¾ŒçµæŸã€‚");
    SCHEDULE_D->set_event(MIN_TIME, 0, this_object(), "end_flag_war_count", num);		
 	}
 }
@@ -437,7 +437,7 @@ void give_bouns() {
 	object ob;
 	if(!all_player) return;
 
-	// ½±Àø
+	// çå‹µ
 	allppl = sizeof(all_player);
 	if(allppl > 50) allppl = 50;
 	base_exp = REWARD_EXP*allppl;
@@ -452,14 +452,14 @@ void give_bouns() {
 //	if(base_exp >= 400000) base_exp = 400000;
 //	if(base_pot >= 250000) base_pot = 250000;
 //	if(base_expri >= 100000) base_expri = 100000;
-	// ×Ü·Ö
+	// ç¸½åˆ†
 	allsc = bsc+rsc;
 	if(allsc <= 0) allsc = 1;
 	if(reward_money <= 0) reward_money = 0;
 	else reward_money *= 0.9;
-	message_flag("±¾³¡ÇÀÆìÕ½½á¹ûÎªºì¶Ó "+rsc+" ·Ö£¬À¶¶Ó "+bsc+" ·Ö¡£");
+	message_flag("æœ¬å ´æ¶æ——æˆ°çµæœç‚ºç´…éšŠ "+rsc+" åˆ†ï¼Œè—éšŠ "+bsc+" åˆ†ã€‚");
 	if(rsc == bsc) {
-		message_flag("Ë«·½Õ½¿ö²ÒÁÒ£¬²»·ÖĞùéù£¬ÒÔÆ½ÊÖÊÕ³¡£¬·¢·Å²Î¼Ó½±¡£");
+		message_flag("é›™æ–¹æˆ°æ³æ…˜çƒˆï¼Œä¸åˆ†è»’è¼Šï¼Œä»¥å¹³æ‰‹æ”¶å ´ï¼Œç™¼æ”¾åƒåŠ çã€‚");
 		exp = REWARD_EXP / 4;
 		pot = REWARD_POT / 4;
 		expri = REWARD_EXPRI / 4;
@@ -471,14 +471,14 @@ void give_bouns() {
 			pl->add("potential", pot);
 			pl->add("experience", expri);
 			pl->add("action_point", 5);	
-		  tell_object(pl, HIC"Í¸¹ı²Î¼ÓÇÀÆìÕ½Äã»ñµÃÁË"+chinese_number(exp)+"µã¾­Ñé£¬"+chinese_number(pot)+"µãÇ±ÄÜºÍ"+chinese_number(expri)+"µãÌå»á¡£\n"NOR);
+		  tell_object(pl, HIC"é€éåƒåŠ æ¶æ——æˆ°ä½ ç²å¾—äº†"+chinese_number(exp)+"é»ç¶“é©—ï¼Œ"+chinese_number(pot)+"é»æ½›èƒ½å’Œ"+chinese_number(expri)+"é»é«”æœƒã€‚\n"NOR);
 		  restore_player(pl);
-      	tell_object(pl, "ÄãÀ´µ½ÁËÑïÖİÖĞÑë¹ã³¡¡£\n");
+      	tell_object(pl, "ä½ ä¾†åˆ°äº†æšå·ä¸­å¤®å»£å ´ã€‚\n");
       	pl->move("/d/city/guangchang");
-      	message("vision", "Ö»¼û" + pl->name() + "ÅÜÁË¹ıÀ´¡£\n", environment(pl), ({ pl }));		  
+      	message("vision", "åªè¦‹" + pl->name() + "è·‘äº†éä¾†ã€‚\n", environment(pl), ({ pl }));		  
 		}
 	} else if(rsc > bsc) {
-		message_flag("±¾³¡ÇÀÆìÕ½ºì¶ÓÊ¤Àû£¬ÒÀ»ı·Ö·¢·Å½±Àø¡£");
+		message_flag("æœ¬å ´æ¶æ——æˆ°ç´…éšŠå‹åˆ©ï¼Œä¾ç©åˆ†ç™¼æ”¾çå‹µã€‚");
 		foreach(string id in keys(red)) {
 			if(!objectp(ob = find_player(id))) continue;
 			if(!ob->query_temp("flag_war")) continue;
@@ -494,11 +494,11 @@ void give_bouns() {
 			ob->add("balance", m);
 			ob->add("action_point", 15);
 			send_rune(ob);
-		  tell_object(ob, HIC"Í¸¹ı²Î¼ÓÇÀÆìÕ½Äã»ñµÃÁË"+chinese_number(exp)+"µã¾­Ñé£¬"+chinese_number(pot)+"µãÇ±ÄÜºÍ"+chinese_number(expri)+"µãÌå»á¼°"+MONEY_D->money_str(m)+"¡£\n"NOR);
+		  tell_object(ob, HIC"é€éåƒåŠ æ¶æ——æˆ°ä½ ç²å¾—äº†"+chinese_number(exp)+"é»ç¶“é©—ï¼Œ"+chinese_number(pot)+"é»æ½›èƒ½å’Œ"+chinese_number(expri)+"é»é«”æœƒåŠ"+MONEY_D->money_str(m)+"ã€‚\n"NOR);
 		  restore_player(ob);
-      	tell_object(ob, "ÄãÀ´µ½ÁËÑïÖİÖĞÑë¹ã³¡¡£\n");
+      	tell_object(ob, "ä½ ä¾†åˆ°äº†æšå·ä¸­å¤®å»£å ´ã€‚\n");
       	ob->move("/d/city/guangchang");
-      	message("vision", "Ö»¼û" + ob->name() + "ÅÜÁË¹ıÀ´¡£\n", environment(ob), ({ ob }));
+      	message("vision", "åªè¦‹" + ob->name() + "è·‘äº†éä¾†ã€‚\n", environment(ob), ({ ob }));
 		}
 		foreach(string id in keys(blue)) {
 			if(!objectp(ob = find_player(id))) continue;
@@ -511,14 +511,14 @@ void give_bouns() {
 		ob->add("experience", expri);
 		ob->add("action_point", 10);
 		send_rune(ob);
-		  tell_object(ob, HIC"Í¸¹ı²Î¼ÓÇÀÆìÕ½Äã»ñµÃÁË"+chinese_number(exp)+"µã¾­Ñé£¬"+chinese_number(pot)+"µãÇ±ÄÜºÍ"+chinese_number(expri)+"µãÌå»á¡£\n"NOR);
+		  tell_object(ob, HIC"é€éåƒåŠ æ¶æ——æˆ°ä½ ç²å¾—äº†"+chinese_number(exp)+"é»ç¶“é©—ï¼Œ"+chinese_number(pot)+"é»æ½›èƒ½å’Œ"+chinese_number(expri)+"é»é«”æœƒã€‚\n"NOR);
 		  restore_player(ob);
-      	tell_object(ob, "ÄãÀ´µ½ÁËÑïÖİÖĞÑë¹ã³¡¡£\n");
+      	tell_object(ob, "ä½ ä¾†åˆ°äº†æšå·ä¸­å¤®å»£å ´ã€‚\n");
       	ob->move("/d/city/guangchang");
-      	message("vision", "Ö»¼û" + ob->name() + "ÅÜÁË¹ıÀ´¡£\n", environment(ob), ({ ob }));			
+      	message("vision", "åªè¦‹" + ob->name() + "è·‘äº†éä¾†ã€‚\n", environment(ob), ({ ob }));			
 		}		
 	} else {
-		message_flag("±¾³¡ÇÀÆìÕ½À¶¶ÓÊ¤Àû£¬ÒÀ»ı·Ö·¢·Å½±Àø¡£");
+		message_flag("æœ¬å ´æ¶æ——æˆ°è—éšŠå‹åˆ©ï¼Œä¾ç©åˆ†ç™¼æ”¾çå‹µã€‚");
 		foreach(string id in keys(blue)) {
 			if(!objectp(ob = find_player(id))) continue;
 			if(!ob->query_temp("flag_war")) continue;
@@ -534,11 +534,11 @@ void give_bouns() {
 			ob->add("balance", m);
 			ob->add("action_point", 15);
 			send_rune(ob);
-		  tell_object(ob, HIC"Í¸¹ı²Î¼ÓÇÀÆìÕ½Äã»ñµÃÁË"+chinese_number(exp)+"µã¾­Ñé£¬"+chinese_number(pot)+"µãÇ±ÄÜºÍ"+chinese_number(expri)+"µãÌå»á¼°"+MONEY_D->money_str(m)+"¡£\n"NOR);
+		  tell_object(ob, HIC"é€éåƒåŠ æ¶æ——æˆ°ä½ ç²å¾—äº†"+chinese_number(exp)+"é»ç¶“é©—ï¼Œ"+chinese_number(pot)+"é»æ½›èƒ½å’Œ"+chinese_number(expri)+"é»é«”æœƒåŠ"+MONEY_D->money_str(m)+"ã€‚\n"NOR);
 		  restore_player(ob);
-      	tell_object(ob, "ÄãÀ´µ½ÁËÑïÖİÖĞÑë¹ã³¡¡£\n");
+      	tell_object(ob, "ä½ ä¾†åˆ°äº†æšå·ä¸­å¤®å»£å ´ã€‚\n");
       	ob->move("/d/city/guangchang");
-      	message("vision", "Ö»¼û" + ob->name() + "ÅÜÁË¹ıÀ´¡£\n", environment(ob), ({ ob }));		  
+      	message("vision", "åªè¦‹" + ob->name() + "è·‘äº†éä¾†ã€‚\n", environment(ob), ({ ob }));		  
 		}
 		foreach(string id in keys(red)) {
 			if(!objectp(ob = find_player(id))) continue;
@@ -551,11 +551,11 @@ void give_bouns() {
 		ob->add("experience", expri);
 		ob->add("action_point", 10);
 		send_rune(ob);
-		  tell_object(ob, HIC"Í¸¹ı²Î¼ÓÇÀÆìÕ½Äã»ñµÃÁË"+chinese_number(exp)+"µã¾­Ñé£¬"+chinese_number(pot)+"µãÇ±ÄÜºÍ"+chinese_number(expri)+"µãÌå»á¡£\n"NOR);				
+		  tell_object(ob, HIC"é€éåƒåŠ æ¶æ——æˆ°ä½ ç²å¾—äº†"+chinese_number(exp)+"é»ç¶“é©—ï¼Œ"+chinese_number(pot)+"é»æ½›èƒ½å’Œ"+chinese_number(expri)+"é»é«”æœƒã€‚\n"NOR);				
 		  restore_player(ob);
-      	tell_object(ob, "ÄãÀ´µ½ÁËÑïÖİÖĞÑë¹ã³¡¡£\n");
+      	tell_object(ob, "ä½ ä¾†åˆ°äº†æšå·ä¸­å¤®å»£å ´ã€‚\n");
       	ob->move("/d/city/guangchang");
-      	message("vision", "Ö»¼û" + ob->name() + "ÅÜÁË¹ıÀ´¡£\n", environment(ob), ({ ob }));			
+      	message("vision", "åªè¦‹" + ob->name() + "è·‘äº†éä¾†ã€‚\n", environment(ob), ({ ob }));			
 		}			
 	}
 	add_flag_round();
@@ -596,21 +596,21 @@ void stab_flag(object me, object ob) {
 	int stab_event_id;
 	if(!me || !ob || !startnow) return;
 	if(me->query_temp("flag_war/stab_now")) return;
-	message_flag_tell(party_str[me->query_temp("flag_war/party")]+HIG+"µÄ"+me->query_idname()+HIG+"ÔÚ"+environment(me)->short()+HIG+"×¼±¸½«"+ob->name()+HIG+"²åÉÏÆìÌ¨¡£");
+	message_flag_tell(party_str[me->query_temp("flag_war/party")]+HIG+"çš„"+me->query_idname()+HIG+"åœ¨"+environment(me)->short()+HIG+"æº–å‚™å°‡"+ob->name()+HIG+"æ’ä¸Šæ——å°ã€‚");
 	if(!me->query_temp("flag_war/move_busy")) stab_event_id = SCHEDULE_D->set_event(1, 0, this_object(), "stab_flag_count", 1, me, ob);
 	else stab_event_id = SCHEDULE_D->set_event(1, 0, this_object(), "stab_flag_count", 5+random(5), me, ob);
 	
-	message_vision("$N×¼±¸½«$n²åÉÏÆìÌ¨¡£\n" , me, ob);
+	message_vision("$Næº–å‚™å°‡$næ’ä¸Šæ——å°ã€‚\n" , me, ob);
 	me->set_temp("flag_war/stab_now", 1);
 	me->set_temp("flag_war/stab_event_id", stab_event_id);
 	me->start_busy(5);
 }
 void stab_flag_count(int num, object me, object ob) {
   int reward, pa, stab_event_id;
-  string *msgs = ({"$NÅ¬Á¦µÄ½«$n²åÉÏÆìÌ¨£¬È´²»ÖªÔõÃ´µÄ²å²»½øÈ¥¡£","$NÓÃÁ¦µÄ½«$n°áÉÏÆìÌ¨£¬µ«ÊÇ$NÌ«ÀÛÁËÍµÀÁĞİÏ¢¡£","$NÄ¬Ä¬µÄ·Å¿Õ·¢×Å´ô£¬²»ÖªµÀÔÚÏëĞ©Ê²Ã´¡£","$N²»¶ÏµÄÃ¦Âµ×Å£¬µ«È´²»ÖªµÀÔÚÃ¦Ğ©Ê²Ã´¡£"});
+  string *msgs = ({"$NåŠªåŠ›çš„å°‡$næ’ä¸Šæ——å°ï¼Œå»ä¸çŸ¥æ€éº¼çš„æ’ä¸é€²å»ã€‚","$Nç”¨åŠ›çš„å°‡$næ¬ä¸Šæ——å°ï¼Œä½†æ˜¯$Nå¤ªç´¯äº†å·æ‡¶ä¼‘æ¯ã€‚","$Né»˜é»˜çš„æ”¾ç©ºç™¼è‘—å‘†ï¼Œä¸çŸ¥é“åœ¨æƒ³äº›ä»€éº¼ã€‚","$Nä¸æ–·çš„å¿™ç¢Œè‘—ï¼Œä½†å»ä¸çŸ¥é“åœ¨å¿™äº›ä»€éº¼ã€‚"});
 	if(!me || !ob || !num || !startnow) return;
 	if(me->is_fighting() || !environment(me)->query("stab_flag")) {
-		message_vision(HIY"$N×°ÉèÆì×ÓµÄ¶¯×÷±»´ò¶ÏÁË¡£\n"NOR, me);
+		message_vision(HIY"$Nè£è¨­æ——å­çš„å‹•ä½œè¢«æ‰“æ–·äº†ã€‚\n"NOR, me);
 		if(me->query_temp("flag_war/stab_event_id")) SCHEDULE_D->delete_event(me->query_temp("flag_war/stab_event_id"));
 		me->delete_temp("flag_war/stab_now");
 		me->start_busy(5);
@@ -621,17 +621,17 @@ void stab_flag_count(int num, object me, object ob) {
   pa = me->query_temp("flag_war/stab_count");
   if(pa >= 2) reward = reward/pa;
   if(reward < 5) reward = 5;
-  message_flag_tell(party_str[me->query_temp("flag_war/party")]+HIG+"µÄ"+me->query_idname()+HIG+"ÔÚ"+environment(me)->short()+HIG+"½«"+ob->name()+HIG+"²åÉÏÆìÌ¨ÁË¡£");
+  message_flag_tell(party_str[me->query_temp("flag_war/party")]+HIG+"çš„"+me->query_idname()+HIG+"åœ¨"+environment(me)->short()+HIG+"å°‡"+ob->name()+HIG+"æ’ä¸Šæ——å°äº†ã€‚");
   me->add_temp("flag_war/stab_count", 1);
   me->delete_temp("flag_war/stab_now");
   if(me->query_temp("flag_war/stab_event_id")) SCHEDULE_D->delete_event(me->query_temp("flag_war/stab_event_id"));
   me->delete_temp("flag_war/stab_event_id");
 	if(me->query_temp("flag_war/party") == "blue") {
 		bfin++;
-		me->set_temp("title", HIB"ÇÀÆìÀ¶¶Ó"NOR);
+		me->set_temp("title", HIB"æ¶æ——è—éšŠ"NOR);
 	} else {
 		rfin++;
-		me->set_temp("title", HIR"ÇÀÆìºì¶Ó"NOR);
+		me->set_temp("title", HIR"æ¶æ——ç´…éšŠ"NOR);
   }
   me->delete_temp("flag_war/move_busy");
   add_score(me, reward);
@@ -650,9 +650,9 @@ int add_score(object me, int reward)
 	if(!me || !reward) return 0;
 	if(!me->query_temp("flag_war/party")) return 0;
 	if(set_score(me->query("id"), me->query_temp("flag_war/party"), reward)) {
-	message_flag_tell(me->query_idname()+HIG+"Îª"+party_str[me->query_temp("flag_war/party")]+HIG+"¶áµÃ "+reward+" ·Ö¡£");
+	message_flag_tell(me->query_idname()+HIG+"ç‚º"+party_str[me->query_temp("flag_war/party")]+HIG+"å¥ªå¾— "+reward+" åˆ†ã€‚");
   } else {
-  	tell_object(me, "·ÖÊıÔö¼Ó³ö´í£¬ÇëÊ¹ÓÃ sos post »Ø±¨¡£\n");
+  	tell_object(me, "åˆ†æ•¸å¢åŠ å‡ºéŒ¯ï¼Œè«‹ä½¿ç”¨ sos post å›å ±ã€‚\n");
     return 0;
   }
   return 1;
@@ -688,18 +688,18 @@ string query_party_score(string party)
 		scs2 = rfin;
 		partys = red;
 	}
-	result += sprintf(" "+party_str[party]+"£º ¶ÓÎéÈËÊı %d ÈË¡¢Ä¿Ç°»ı·Ö %d ·Ö¡¢²åÆì³É¹¦\ %d ´Î¡£\n", sizeof(partys), scs, scs2);
+	result += sprintf(" "+party_str[party]+"ï¼š éšŠä¼äººæ•¸ %d äººã€ç›®å‰ç©åˆ† %d åˆ†ã€æ’æ——æˆåŠŸ\ %d æ¬¡ã€‚\n", sizeof(partys), scs, scs2);
 	foreach(string ppid, int ppnum in partys) {
 		if(!objectp(pp = find_player(ppid))) continue;
 		if(pp->query_temp("flag_war/party") != party) continue;
-		result += sprintf("  "+"%-12s %-30s »ı·Ö£º%d ·Ö\n", pp->query_temp("title"), ANSI_D->remove_ansi(pp->query_idname()), ppnum);		
+		result += sprintf("  "+"%-12s %-30s ç©åˆ†ï¼š%d åˆ†\n", pp->query_temp("title"), ANSI_D->remove_ansi(pp->query_idname()), ppnum);		
 	}
 	return result;
 }
 
 string query_party_score_total()
 {
-	return sprintf("×Ü²Î¼ÓÈËÊı£º %d ÈË¡¢×Ü½±½ğ£º%s¡¢½øĞĞÊ±¼ä£º%s\n", sizeof(all_player), MONEY_D->money_str(reward_money), time_period(time() - start_time));
+	return sprintf("ç¸½åƒåŠ äººæ•¸ï¼š %d äººã€ç¸½çé‡‘ï¼š%sã€é€²è¡Œæ™‚é–“ï¼š%s\n", sizeof(all_player), MONEY_D->money_str(reward_money), time_period(time() - start_time));
 }
 
 void put_flag_in_room(string t)
@@ -711,21 +711,21 @@ void put_flag_in_room(string t)
 		switch(t) {
 			case "west":
        flag->move(load_object(WEST_FLAG));
-       message_flag_tell(flag->name()+HIG+"³öÏÖÔÚ"+environment(flag)->short()+"¡£");
+       message_flag_tell(flag->name()+HIG+"å‡ºç¾åœ¨"+environment(flag)->short()+"ã€‚");
 			break;
 			case "east":
 			 flag->move(load_object(EAST_FLAG));
-			 message_flag_tell(flag->name()+HIG+"³öÏÖÔÚ"+environment(flag)->short()+"¡£");
+			 message_flag_tell(flag->name()+HIG+"å‡ºç¾åœ¨"+environment(flag)->short()+"ã€‚");
 			break;
 			case "random":
 			 all_flag_room = ({WEST_FLAG,EAST_FLAG,CENTER_FLAG});
 			 room = load_object(all_flag_room[random(sizeof(all_flag_room))]);
 			 flag->move(room);
-			 message_flag_tell(flag->name()+HIG+"³öÏÖÔÚ"+environment(flag)->short()+"¡£");
+			 message_flag_tell(flag->name()+HIG+"å‡ºç¾åœ¨"+environment(flag)->short()+"ã€‚");
 			break;
 			default:
 			 flag->move(load_object(CENTER_FLAG));
-			 message_flag_tell(flag->name()+HIG+"³öÏÖÔÚ"+environment(flag)->short()+"¡£");
+			 message_flag_tell(flag->name()+HIG+"å‡ºç¾åœ¨"+environment(flag)->short()+"ã€‚");
 			break;
 		}
 }

@@ -1,14 +1,14 @@
-// health.c ÄÚÁ²Ç¬À¤
+// health.c å…§æ–‚ä¹¾å¤
 // Created by Vin 26/8/2001
 
 #include <ansi.h>
 
 inherit F_CLEAN_UP;
 
-string name() { return HIY "ÄÚÁ²Ç¬À¤" NOR; }
+string name() { return HIY "å…§æ–‚ä¹¾å¤" NOR; }
 
 int perform(object me, string skill)
 {
-        return notify_fail("ÕâÏî¼¼ÄÜÄÜ¹»Ôö¼ÓÄãµÄ×î´óÆøÑª£¬²»ÐèÒªÔËÓÃ¡£\n");
+        return notify_fail("é€™é …æŠ€èƒ½èƒ½å¤ å¢žåŠ ä½ çš„æœ€å¤§æ°£è¡€ï¼Œä¸éœ€è¦é‹ç”¨ã€‚\n");
 }
 

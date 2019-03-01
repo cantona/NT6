@@ -6,19 +6,19 @@ inherit ITEM;
 
 void create()
 {
-        set_name( "µÀµÂ¾­¡¸µÚÒ»ÕÂ¡¹", ({ "jing", "daode jing" }));
+        set_name( "é“å¾·ç¶“ã€Œç¬¬ä¸€ç« ã€", ({ "jing", "daode jing" }));
         set_weight(200);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
+                set("unit", "æœ¬");
                 set("long",
                         CYN
-                        "\n\t\t\tµÚÒ»ÕÂ\n\n"
-                        "\n\tµÀ¿ÉµÀ£¬·Ç³£µÀ¡£Ãû¿ÉÃû£¬·Ç³£Ãû¡£\n"
-                        "\tÎÞÃûÌìµØÖ®Ê¼£»ÓÐÃûÍòÎïÖ®Ä¸¡£\n"
-                        "\t¹Ê³£ÎÞ£¬ÓûÒÔ¹ÛÆäÃî£»³£ÓÐ£¬ÓûÒÔ¹ÛÆäáè¡£\n"
-                        "\t´ËÁ½Õß£¬Í¬³ö¶øÒìÃû£¬Í¬Î½Ö®Ðþ¡£ÐþÖ®ÓÖÐþ£¬ÖÚÃîÖ®ÃÅ¡£\n\n"
+                        "\n\t\t\tç¬¬ä¸€ç« \n\n"
+                        "\n\té“å¯é“ï¼Œéžå¸¸é“ã€‚åå¯åï¼Œéžå¸¸åã€‚\n"
+                        "\tç„¡åå¤©åœ°ä¹‹å§‹ï¼›æœ‰åè¬ç‰©ä¹‹æ¯ã€‚\n"
+                        "\tæ•…å¸¸ç„¡ï¼Œæ¬²ä»¥è§€å…¶å¦™ï¼›å¸¸æœ‰ï¼Œæ¬²ä»¥è§€å…¶å¾¼ã€‚\n"
+                        "\tæ­¤å…©è€…ï¼ŒåŒå‡ºè€Œç•°åï¼ŒåŒè¬‚ä¹‹çŽ„ã€‚çŽ„ä¹‹åˆçŽ„ï¼Œçœ¾å¦™ä¹‹é–€ã€‚\n\n"
                         NOR
                 );
                 set("value", 500);

@@ -9,7 +9,7 @@ int  is_stay_in_room();
 void create()
 {
         ::create();
-        set("gender", "ÄĞĞÔ" );
+        set("gender", "ç”·æ€§" );
         set("age", 30 + random(30));
         set("long", "");
         set("attitude", "friendly");
@@ -29,14 +29,14 @@ void set_from_me(object me)
 
 int accept_fight(object ob)
 {
-        command("say ºÜºÃ£¡ÄÇÎÒ¾Í²»¿ÍÆøÁË¡£");
+        command("say å¾ˆå¥½ï¼é‚£æˆ‘å°±ä¸å®¢æ°£äº†ã€‚");
         kill_ob(ob);
         return 1;
 }
 
 int accept_hit(object ob)
 {
-        command("say ºß£¡Ê²Ã´ÈË£¿");
+        command("say å“¼ï¼ä»€éº¼äººï¼Ÿ");
         kill_ob(ob);
         return 1;
 }
@@ -53,6 +53,6 @@ void random_move()
 
 void destruct_me()
 {
-        message_vision("$N¼±¼±Ã¦Ã¦µÄ×ßÁË¡£\n", this_object());
+        message_vision("$Næ€¥æ€¥å¿™å¿™çš„èµ°äº†ã€‚\n", this_object());
         destruct(this_object());
 }

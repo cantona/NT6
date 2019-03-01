@@ -5,11 +5,11 @@ int is_key() {return 1;}
 
 void create()
 {
-        set_name("Ë½·¿Ô¿³×", ({"key", "yaoshi"}));
+        set_name("ç§æˆ¿é‘°åŒ™", ({"key", "yaoshi"}));
         set("long",
-                "ÕâÊÇÒ»°ÑÌÒ»¨´åË½ÈË×¡Õ¬µÄÔ¿³×¡£
-¿ÉÒÔÓÃÀ´¿ªÃÅ(unlock)ºÍ¹ØÃÅ(lock)¡£\n");
-        set("unit", "°Ñ");
+                "é€™æ˜¯ä¸€æŠŠæ¡ƒèŠ±æ‘ç§äººä½å®…çš„é‘°åŒ™ã€‚
+å¯ä»¥ç”¨ä¾†é–‹é–€(unlock)å’Œé—œé–€(lock)ã€‚\n");
+        set("unit", "æŠŠ");
         set("weight", 10);
         set("no_put",1);
         set("no_get",1);
@@ -32,9 +32,9 @@ int do_unlock()
     return 0;
 
         if( !query("home", me) )
-                return notify_fail("ÄãÃ»Ë½Õ¬Ñ½£¬ÔÚÕâ¿ªÊ²Ã´¿ª£¡\n");
-        if( query("short", environment(me)) != "ÌÒ»¨Æº" )
-                return notify_fail("ÄãµÄË½Õ¬ÔÚÌÒ»¨¹ÈÀïÌÒ»¨ÆºÉÏ£¡\n");
+                return notify_fail("ä½ æ²’ç§å®…å‘€ï¼Œåœ¨é€™é–‹ä»€éº¼é–‹ï¼\n");
+        if( query("short", environment(me)) != "æ¡ƒèŠ±åª" )
+                return notify_fail("ä½ çš„ç§å®…åœ¨æ¡ƒèŠ±è°·è£¡æ¡ƒèŠ±åªä¸Šï¼\n");
         rooms = children("/d/taohuacun/obj/player");
         for (i=0;i < sizeof(rooms);i++)
         {
@@ -61,7 +61,7 @@ int do_unlock()
           set("exits/out", "/d/taohuacun/taohua5", room);
 //        set("sleep_room", "1");
         set("sleep_room", "1", room);
-        message_vision(HIG "$NÌÍ³öÔ¿³×£¬ÇáÇáÒ»Ğı£¬¾ÙÊÖÍÆ¿ª·¿ÃÅ¡£\n" NOR,me);
+        message_vision(HIG "$Næå‡ºé‘°åŒ™ï¼Œè¼•è¼•ä¸€æ—‹ï¼Œèˆ‰æ‰‹æ¨é–‹æˆ¿é–€ã€‚\n" NOR,me);
         return 1;
 }
 int do_lock()
@@ -74,8 +74,8 @@ int do_lock()
   if (!present(this_object(), this_player()))
     return 0;
         if( query("owner", environment(me)) != query("id", me )
-          && query("short", environment(me)) != "ÌÒ»¨Æº" )
-                return notify_fail("ÄãµÄË½Õ¬ÔÚÌÒ»¨¹ÈÀïÌÒ»¨ÆºÉÏ£¡\n");
+          && query("short", environment(me)) != "æ¡ƒèŠ±åª" )
+                return notify_fail("ä½ çš„ç§å®…åœ¨æ¡ƒèŠ±è°·è£¡æ¡ƒèŠ±åªä¸Šï¼\n");
 
         if(!( here = find_object("/d/taohuacun/taohua5")) )
                 here = load_object("/d/taohuacun/taohua5");
@@ -91,10 +91,10 @@ int do_lock()
                           }
                   if (flag) destruct(room);
         delete("exits/enter", here);
-        message_vision(HIG "Ö»ÌıµÃÅöµÄÒ»ÉùÏì£¬$N°Ñ·¿ÃÅ¹ØÉÏÁË¡£\n" NOR, this_player());
+        message_vision(HIG "åªè½å¾—ç¢°çš„ä¸€è²éŸ¿ï¼Œ$NæŠŠæˆ¿é–€é—œä¸Šäº†ã€‚\n" NOR, this_player());
         }
         else
-        {return notify_fail("ÃÅÃ»ÓĞ¿ª×Å°¡¡£\n");}
+        {return notify_fail("é–€æ²’æœ‰é–‹è‘—å•Šã€‚\n");}
         return 1;
 }
 void owner_is_killed()

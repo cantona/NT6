@@ -2,11 +2,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("Óã¹Ö", ({ "fish monster", "fish" }) );
-        set("race", "Ò°ÊÞ");
+        set_name("é­šæ€ª", ({ "fish monster", "fish" }) );
+        set("race", "é‡Žç¸");
         set("age", 300);
-        set("long", "ÕâÊÇÒ»Ö»ÉíÐÎºÜ´ó£¬ÒÑ³É¾«¹ÖµÄÓã£¬»ëÉí¸²ÂúÑ¤ÀöµÄÁÛÆ¬£¬\n"
-            "Ò»¿Ú·æÀûµÄÑÀ³Ý£¬Õý»¢ÊÓµ¢µ¢µÄ¿´×ÅÄã\n");
+        set("long", "é€™æ˜¯ä¸€åªèº«å½¢å¾ˆå¤§ï¼Œå·²æˆç²¾æ€ªçš„é­šï¼Œæ¸¾èº«è¦†æ»¿çµ¢éº—çš„é±—ç‰‡ï¼Œ\n"
+            "ä¸€å£é‹’åˆ©çš„ç‰™é½’ï¼Œæ­£è™Žè¦–è€½è€½çš„çœ‹è‘—ä½ \n");
         set("attitude", "aggressive");
 
         set("max_qi",10000); 
@@ -15,7 +15,7 @@ void create()
         set("str", 26);
         set("cor", 30); 
         set("dex", 30);
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "¸¹²¿", "Î²°Í" }) );
+        set("limbs", ({ "é ­éƒ¨", "èº«é«”", "è…¹éƒ¨", "å°¾å·´" }) );
 
         set("verbs", ({ "bite" }) );
 
@@ -30,7 +30,7 @@ void create()
 void die()
 {
         object ob;
-        message_vision("$N¿ÚÖÐÍÂ³öÒ»Á£ÄÚµ¤£¬¶ÇÆ¤ÍùÉÏÒ»·­£¬$NËÀÁË¡£\n", this_object());
+        message_vision("$Nå£ä¸­åå‡ºä¸€ç²’å…§ä¸¹ï¼Œè‚šçš®å¾€ä¸Šä¸€ç¿»ï¼Œ$Næ­»äº†ã€‚\n", this_object());
         ob = new("/quest/tulong/obj/neidan");
         ob->move(environment(this_object()));
         destruct(this_object());

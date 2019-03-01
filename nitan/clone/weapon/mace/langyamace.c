@@ -7,17 +7,17 @@ inherit MACE;
 
 void create()
 {
-        set_name("ÀÇÑÀ°ô", ({"langya bang", "mace", "langyabang", "langya"}));
+        set_name("ç‹¼ç‰™æ£’", ({"langya bang", "mace", "langyabang", "langya"}));
         set_weight(8000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
+                set("unit", "æŸ„");
                 set("value", 18000);
                 set("material", "iron");
-                set("long", "ÎÚºÚµÄÀÇÑÀ°ôÉÏÉúÂúÁËµ¹´Ì£¬ÈÃÈË²»ÓÉµÃÁİÈ»ÉúÎ·¡£\n");
-                set("wield_msg", "$N¡°ºô¡±µÄÒ»Éù³é³öÒ»±ú$n£¬¶ñºİºİµØ¶¢×ÅÖÜÎ§µÄÈË£¡\n");
-                set("unwield_msg", "$NĞ¡ĞÄÒíÒíµØÊÕÆğ$n£¬²îµã±»µ¹´ÌÉË×Å×Ô¼º¡£\n");
+                set("long", "çƒé»‘çš„ç‹¼ç‰™æ£’ä¸Šç”Ÿæ»¿äº†å€’åˆºï¼Œè®“äººä¸ç”±å¾—å‡œç„¶ç”Ÿç•ã€‚\n");
+                set("wield_msg", "$Nâ€œå‘¼â€çš„ä¸€è²æŠ½å‡ºä¸€æŸ„$nï¼Œæƒ¡ç‹ ç‹ åœ°ç›¯è‘—å‘¨åœçš„äººï¼\n");
+                set("unwield_msg", "$Nå°å¿ƒç¿¼ç¿¼åœ°æ”¶èµ·$nï¼Œå·®é»è¢«å€’åˆºå‚·è‘—è‡ªå·±ã€‚\n");
         }
         
         init_mace(35);

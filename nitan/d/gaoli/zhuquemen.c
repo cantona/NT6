@@ -1,14 +1,14 @@
 // /d/gaoli/xuanwumen
-// Room in ����
+// Room in 高麗
 // rich 99/03/28
 inherit ROOM;
 void create()        
 {
-        set("short", "��ʤ��");
+        set("short", "得勝門");
         set("long", @LONG
-�����Ǹ����ĵ�ʤ�š�����͵��˳��У�Զ����ɽ�˺�����������
-��������������һ����·ͨ��ۿڡ���������һЩִ�ڵı�ʿ��������
-��Ķ���������ʿ��
+這裡是高麗的得勝門。北面就到了城中，遠望人山人海，往來行人
+車流不絕。南面一條大路通向港口。城門下有一些執勤的兵士。兵將警
+惕的盯著往來人士。
 LONG
         );
 set("outdoors", "gaoli");

@@ -2,12 +2,12 @@
 
 void create()
 {
-        set_name(HIC "½Ó¹Çµ¤" NOR, ({ "jiegudan", "Torricellia angulata", "herb_jgdan" }));
+        set_name(HIC "æ¥éª¨ä¸¹" NOR, ({ "jiegudan", "Torricellia angulata", "herb_jgdan" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "É½ÜïİÇ¿Æ(ÇÊ±úÄ¾¿Æ)Ö²Îï½ÇÒ¶ÇÊ±úÄ¾(Torricellia angulata)µÄ¸ù¡¢¸ùÆ¤¼°Ò¶¡£ÒòÆäÓĞÖÎÁÆ¹ÇÕÛµÄ¹¦Ğ§£¬¹ÊµÃ´ËÃû¡£\n" NOR);
-                set("base_unit", "¸ù");
+                set("long", HIW "å±±èŒ±è¸ç§‘(é˜æŸ„æœ¨ç§‘)æ¤ç‰©è§’è‘‰é˜æŸ„æœ¨(Torricellia angulata)çš„æ ¹ã€æ ¹çš®åŠè‘‰ã€‚å› å…¶æœ‰æ²»ç™‚éª¨æŠ˜çš„åŠŸæ•ˆï¼Œæ•…å¾—æ­¤åã€‚\n" NOR);
+                set("base_unit", "æ ¹");
                 set("base_value", 30000);
                 set("base_weight", 100);
         }

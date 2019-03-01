@@ -4,15 +4,15 @@ inherit SKILL;
 string type() { return "knowledge"; } 
 
 int is_fmsk() { return 1; }
-string family_name() { return "À¥ÂØÅÉ"; }
+string family_name() { return "æ˜†ä¾–æ´¾"; }
 
 int valid_learn(object me)
 {        
         if (me->query_skill("qiankun-jian", 1) < 120)
-                return notify_fail("ÄãÇ¬À¤Éñ½£»ğºò²»×ã£¬ÎŞ·¨ÑĞÏ°À¥ÂØÎŞ¼«¡£\n");        
+                return notify_fail("ä½ ä¹¾å¤ç¥åŠç«å€™ä¸è¶³ï¼Œç„¡æ³•ç ”ç¿’æ˜†ä¾–ç„¡æ¥µã€‚\n");        
 
         if( query("family/family_name", me) != family_name() )
-                return notify_fail("À¥ÂØÎŞ¼«Ö»ÄÜÀ¥ÂØÅÉµÜ×Ó·½¿ÉÑĞÏ°¡£\n");
+                return notify_fail("æ˜†ä¾–ç„¡æ¥µåªèƒ½æ˜†ä¾–æ´¾å¼Ÿå­æ–¹å¯ç ”ç¿’ã€‚\n");
 
         return 1;
 }

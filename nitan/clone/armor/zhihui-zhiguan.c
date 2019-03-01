@@ -6,14 +6,14 @@ inherit HEAD;
  
 void create()
 {
-        set_name(HIR "ÖÇ»ÛÖ®¹Ú" NOR, ({ "zhihui guan", "zhihui", "guan" }) );
+        set_name(HIR "æ™ºæ…§ä¹‹å† " NOR, ({ "zhihui guan", "zhihui", "guan" }) );
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
                 set("material", "gold");
-                set("unit", "¶¥");
-                set("long", HIR "ÕâÊÇÒ»¶¥³äÂúÖÇ»ÛÖ®¹âµÄÍ·¹Ú£¬Åå´øºó¿ÉÊ¹Ú¤Ë¼½±Àø¼Ó±¶¡£\n" NOR);
+                set("unit", "é ‚");
+                set("long", HIR "é€™æ˜¯ä¸€é ‚å……æ»¿æ™ºæ…§ä¹‹å…‰çš„é ­å† ï¼Œä½©å¸¶å¾Œå¯ä½¿å†¥æ€çå‹µåŠ å€ã€‚\n" NOR);
                 set("value", 350000);
                 set("armor_prop/int", 6);
                 set("armor_prop/reflect2", 1);

@@ -6,11 +6,11 @@
 inherit ROOM;
 void create()
 {
-        set("short", "¶«´ó½Ö");
+        set("short", "æ±å¤§è¡—");
         set("long", @LONG
-ÕâÊÇÁéÖÝ¶«´ó½Ö£¬Í¬ÑùµÄ¿íÀ«Óë¸É¾»£¬Ïà±ÈÎ÷´ó½ÖµÄÀäÇåÒªÈÈÄÖ¶à
-ÁË£¬½ÖÉÏÈËÀ´ÈËÍù£¬ÎõÎõÈÁÈÁ£¬¼¸¸öÐ¡º¢ÕýÔÚºúÍ¬¿ÚÍæË££¬ÄÏÃæÓÐ²»ÉÙ
-ÈËÎ§ÔÚÒ»Æð£¬±±ÃæÊÇÑÃÃÅ£¬Â·±ßÓÐÌõ¹·ÕýÔÚ×·Ò»Ö»Ã¨¡£
+é€™æ˜¯éˆå·žæ±å¤§è¡—ï¼ŒåŒæ¨£çš„å¯¬é—Šèˆ‡å¹¹å‡ˆï¼Œç›¸æ¯”è¥¿å¤§è¡—çš„å†·æ¸…è¦ç†±é¬§å¤š
+äº†ï¼Œè¡—ä¸Šäººä¾†äººå¾€ï¼Œç†™ç†™æ”˜æ”˜ï¼Œå¹¾å€‹å°å­©æ­£åœ¨èƒ¡åŒå£çŽ©è€ï¼Œå—é¢æœ‰ä¸å°‘
+äººåœåœ¨ä¸€èµ·ï¼ŒåŒ—é¢æ˜¯è¡™é–€ï¼Œè·¯é‚Šæœ‰æ¢ç‹—æ­£åœ¨è¿½ä¸€åªè²“ã€‚
 LONG );
         set("exits", ([
                 "south" : __DIR__"jiangjungate",

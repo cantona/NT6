@@ -1,5 +1,5 @@
 // This program is a part of NITAN MudLIB
-// duo.c  ½ğÉß½£·¨  (¶áÆÇ)
+// duo.c  é‡‘è›‡åŠæ³•  (å¥ªé­„)
 
 #include <ansi.h>
 inherit F_SSERVER;
@@ -13,22 +13,22 @@ int perform(object me, object target)
         
         if( !target ) target = offensive_target(me);
         if( !target || !target->is_character() )
-                return notify_fail("¶áÆÇÖ»ÄÜ¶ÔÍ¬µØ·½µÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("å¥ªé­„åªèƒ½å°åŒåœ°æ–¹çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
         if( !target
         ||      !target->is_character()
         ||      !me->is_fighting(target) )
-                return notify_fail("¶áÆÇÖ»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("å¥ªé­„åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
                 
         if( (int)me->query_skill("jinshe-jian", 1) < 100 )
-                return notify_fail("ÄãµÄ½ğÉß½£·¨²»¹»æµÊì£¬²»»áÊ¹ÓÃ¡¸¶áÆÇ¡¹¡£\n");
+                return notify_fail("ä½ çš„é‡‘è›‡åŠæ³•ä¸å¤ å«»ç†Ÿï¼Œä¸æœƒä½¿ç”¨ã€Œå¥ªé­„ã€ã€‚\n");
                 
         if( query("neili", me)<200 )
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ£¬²»ÄÜÊ¹³ö¶áÆÇ¡£\n");
+                return notify_fail("ä½ ç¾åœ¨å…§åŠ›å¤ªå¼±ï¼Œä¸èƒ½ä½¿å‡ºå¥ªé­„ã€‚\n");
                 
         if( query_temp("sword", target) == 1 )
-                return notify_fail(query("name", target)+"ÕıÔÚ»ê·ÉÆÇÉ¢¼ä£¬¿ì·ÅÊÖ¹¥»÷°¡!\n");
+                return notify_fail(query("name", target)+"æ­£åœ¨é­‚é£›é­„æ•£é–“ï¼Œå¿«æ”¾æ‰‹æ”»æ“Šå•Š!\n");
                 
-        msg = HIW "$NÍ»È»ÑÛÖĞ½ğÃ¢´óÊ¢£¬Ò»¹Éº®ÒâÆÆ¿ÕÖ±Ï®$n¡£\n"NOR;
+        msg = HIW "$Nçªç„¶çœ¼ä¸­é‡‘èŠ’å¤§ç››ï¼Œä¸€è‚¡å¯’æ„ç ´ç©ºç›´è¥²$nã€‚\n"NOR;
         addn("neili", -400, me);
         me->start_busy(1);
         
@@ -39,7 +39,7 @@ int perform(object me, object target)
 
         if (ap / 2 + random(ap) > dp)
         {
-                msg += WHT"$p±»ÏÅµÃ»ê·ÉÆÇÉ¢£¬Ö»¼û¶Ô·½¹¥ÊÆ´óÊ¢£¬Ô½Õ½Ô½ÓÂ¡£\n"NOR;
+                msg += WHT"$pè¢«åš‡å¾—é­‚é£›é­„æ•£ï¼Œåªè¦‹å°æ–¹æ”»å‹¢å¤§ç››ï¼Œè¶Šæˆ°è¶Šå‹‡ã€‚\n"NOR;
                 if (! target->is_busy())
                 target->start_busy(3);
                 addn("neili", -100, me);
@@ -59,7 +59,7 @@ int perform(object me, object target)
         }
         else
         {
-                msg += HIY"$p³Á×ÅÓ¦Õ½£¬Ã»ÓĞÊÜµ½¡°¶áÆÇ¡±¹¥»÷µÄÓ°Ïì£¡\n"NOR;
+                msg += HIY"$pæ²‰è‘—æ‡‰æˆ°ï¼Œæ²’æœ‰å—åˆ°â€œå¥ªé­„â€æ”»æ“Šçš„å½±éŸ¿ï¼\n"NOR;
         }
         message_combatd(msg, me, target);
         return 1;
@@ -71,6 +71,6 @@ void end(object target,int damage)
         delete_temp("sword", target);
         addn_temp("apply/attack", 0-damage, target);
         addn_temp("apply/defense", 0-damage, target);
-        message_vision(RED"$NÖÕÓÚ´Ó¶áÆÇµÄÒõÓ°Àï»Ö¸´ÁË³öÀ´¡£\n"NOR,target);
+        message_vision(RED"$Nçµ‚äºå¾å¥ªé­„çš„é™°å½±è£¡æ¢å¾©äº†å‡ºä¾†ã€‚\n"NOR,target);
 }
 

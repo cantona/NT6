@@ -14,19 +14,19 @@ int main(object me, string arg)
 
         //if (! mapp(query("resource/quarry", environment(me))))
         if (! mapp(query("quarry", environment(me))))
-                return notify_fail("уБюО©╢╡╩ЁЖспр╟йчЁЖож╣дяЫвс║ё\n");
+                return notify_fail("И─≥Хё║Г°▀Д╦█Е┤╨Ф°┴И┤▌Г█╦Е┤╨Г▐╬Г └Ф╗ёЕ╜░Ц─┌\n");
  
         if (! objectp(yr = present("you er", me)) || yr->query_amount() < 1 ||
             !query("lure", yr) )
-                return notify_fail("дЦиМиоц╩спсу╤Эак║ё\n");    
+                return notify_fail("Д╫═Х╨╚Д╦┼Ф╡▓Ф°┴Х╙≤И╓▄Д╨├Ц─┌\n");    
                 
         if (me->is_busy() || me->is_fighting())
-                return notify_fail("╣хдЦц╕мЙактык╣╟иё║\n");
+                return notify_fail("Г╜┴Д╫═Е©≥Е╝▄Д╨├Е├█Х╙╙Е░╖О╪│\n");
 
         if( query_temp("hunting", me) )
-                return notify_fail("╠Пве╪╠ё╛ты╣х╣хё║\n");
+                return notify_fail("Е┬╔Х▒≈Ф─╔О╪▄Е├█Г╜┴Г╜┴О╪│\n");
 
-        message_vision(HIG "$N╫╚" + yr->name() + "╥етз╣ьиоё╛╤Цтзр╩ет╬╡╬╡йь╨Нве ║╜║╜\n" NOR, me);
+        message_vision(HIG "$NЕ╟┤" + yr->name() + "Ф■╬Е°╗Е°╟Д╦┼О╪▄Х╨╡Е°╗Д╦─Ф≈│И²°И²°Е╝┬Д╬╞Х▒≈ Б─╕Б─╕\n" NOR, me);
         yr->add_amount(-1);
         
         t = 3 + random(3);
@@ -65,12 +65,12 @@ void do_hunting(object me)
         delete_temp("hunting", me);
         delete_temp("hunting_env", me);
 
-        // ╩Я╣ц╪╦бйеп╤ойг╥Я╤╞нОЁЖож
+        // Г█╡Е╬≈Е╧╬Г▌┤Е┬╓Ф√╥Ф≤╞Е░╕Е▀∙Г┴╘Е┤╨Г▐╬
         point = quarry[temp[i]];
 
         if (random(100) >= point)
         {
-                write(HIY "дЦ╣хак╟КлЛх╢╡╩╪ШатнОЁЖожё╛╤Ьсу╤Эря╬╜╠Джйё╛ж╩╨цвВ╟у║ё\n" NOR);
+                write(HIY "Д╫═Г╜┴Д╨├Е█┼Е╓╘Е█╩Д╦█Х╕▀Г█╣Г┴╘Е┤╨Г▐╬О╪▄Х─▄Х╙≤И╓▄Е╥╡Г╤⌠Х╝┼ХЁ╙О╪▄Е▐╙Е╔╫Д╫°Г╫╥Ц─┌\n" NOR);
                 return;
         }       
         
@@ -81,23 +81,23 @@ void do_hunting(object me)
         switch(random(4))
         {
                 case 0:
-                        message_vision(HIG "╡╩р╩╩А╤Ыё╛р╩ж╩" + obq->name() + HIG "╢эакЁЖю╢ё╛╫╚"
-                                      "су╤Эр╩©зр╖тзвЛюО║ё\n" NOR, me);
+                        message_vision(HIG "Д╦█Д╦─Ф°┐Е┘▓О╪▄Д╦─Е▐╙" + obq->name() + HIG "Г╚└Д╨├Е┤╨Д╬├О╪▄Е╟┤"
+                                      "Х╙≤И╓▄Д╦─Е▐ёЕ▓╛Е°╗Е≤╢Хё║Ц─┌\n" NOR, me);
                         break;
 
                 case 1:
-                        message_vision(HIM "в╙яш╪Дё╛р╩ж╩" + obq->name() + HIM "м╩х╩ЁЖожё╛╫╚" 
-                                       "су╤Эмл╫ЬвЛюО║ё\n" NOR, me);
+                        message_vision(HIM "Х╫┴Г°╪И√⌠О╪▄Д╦─Е▐╙" + obq->name() + HIM "Г╙│Г└╤Е┤╨Г▐╬О╪▄Е╟┤" 
+                                       "Х╙≤И╓▄Е░·И─╡Е≤╢Хё║Ц─┌\n" NOR, me);
                         break;
 
                 case 2:
-                        message_vision(HIW "а╪╬цё╛р╩ж╩" + obq->name() + HIW "╢Ср║╢С╟з╣ьвъак"
-                                       "ЁЖю╢ё╛впо╦╣ь╢Ра©весу╤Э║ё\n" NOR, me);
+                        message_vision(HIW "Х┴╞Д╧┘О╪▄Д╦─Е▐╙" + obq->name() + HIW "Е╓╖Ф░√Е╓╖Ф⌠╨Е°╟Х╣╟Д╨├"
+                                       "Е┤╨Д╬├О╪▄Д╩■Г╢╟Е°╟Ф┴⌠И┤▐Х▒≈Х╙≤И╓▄Ц─┌\n" NOR, me);
                         break;
 
                 default:
-                        message_vision(HIC "иый╠ё╛р╩ж╩" + obq->name() + HIC "╢эак╧Щю╢ё╛р╩©з╫╚"
-                                       "су╤Э╣ПтзаквЛиоё╛оЮц╡л╟ю╥ж╝╪╚║ё\n" NOR, me);
+                        message_vision(HIC "Е╟▒Ф≥┌О╪▄Д╦─Е▐╙" + obq->name() + HIC "Г╚└Д╨├И│▌Д╬├О╪▄Д╦─Е▐ёЕ╟┤"
+                                       "Х╙≤И╓▄Е▐╪Е°╗Д╨├Е≤╢Д╦┼О╪▄Г⌡╦Х╡▄Х╡╙Е╘╙Д╧▀Ф╔╣Ц─┌\n" NOR, me);
                         break;
         }
 
@@ -108,10 +108,10 @@ void do_hunting(object me)
 int help(object me)
 {
         write(@HELP
-ж╦аН╦Яй╫ :
+Ф▄┤Д╩╓Ф═╪Е╪▐ :
 
-        lured <су╤Э>ё╨тз╣╠г╟╣ь╣Ц╥ежцсу╤Э╣х╢ЩатнОЁЖож║ё
-                      в╒ё╨р╩╢нж╩дэ╥ер╩╦Жсу╤Э║ё
+        lured <Х╙≤И╓▄>О╪ Е°╗Г∙╤Е┴█Е°╟И╩·Ф■╬Г╫╝Х╙≤И╓▄Г╜┴Е╬┘Г█╣Г┴╘Е┤╨Г▐╬Ц─┌
+                      ФЁ╗О╪ Д╦─Ф╛║Е▐╙Х┐╫Ф■╬Д╦─Е─▀Х╙≤И╓▄Ц─┌
                      
 HELP
     );

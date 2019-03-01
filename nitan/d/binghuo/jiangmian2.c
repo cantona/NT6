@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Ǯ������");
+        set("short", "錢塘江面");
         set("long", @LONG
-��������Խ����ʻ�������ʱ��֮����ӿ�ĳ�ˮ���˳�����˳
-��˳ˮ�����и�Զ��ԶԶ����Ǯ�����ڵĶ���֮�У��и�����С����
-ɽʯ��ᾣ������˾ӡ��Ǿ�������ɽ����
+江船穿波越浪下駛。半個多時辰之後，上湧的潮水反退出海，順
+風順水，舟行更遠。遠遠望見錢塘江口的東海之中，有個荒涼小島，
+山石嶙峋，向無人居。那就是王盤山島。
 LONG );
         set("no_sleep_room",1);
         set("outdoors", "wangpan");

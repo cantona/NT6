@@ -1,23 +1,23 @@
-// dbshan.c ±ùÉ½
+// dbshan.c å†°å±±
 // Modify By River@SJ 99.06
 #include <ansi.h>
 inherit ROOM;
 
 void create()
 {
-        set("short", HIW"±ùÉ½"NOR);
+        set("short", HIW"å†°å±±"NOR);
         set("long", @LONG
-´ó±ùÉ½ÔÚÈÕ¹âµÄÕÕÉäÏÂ·¢³ö´ÌÑÛµÄ¹âÃ¢£¬ÏÔµÃÊ®·ÖÆæÀö£¬ÕâÀïµ½
-´¦¶¼ÊÇ±ùÑ©£¬±ùÉ½ÆÄ´ó£¬ÈçÂ½µØÉÏÖ®É½Çð£¬Ò»ÑÛÍûÈ¥£¬ºá°ÙÓàÕÉ£¬×Ý
-³¤¼¸Ê®ÕÉ£¬±ùÉ½ÉÏ»¬²»Áô²½¡£º£ÖÐ²»Ê±ÓÐ¼¸¿éÐ¡¸¡»ù(fubing)ÕýÔÚÏò
-±±Æ®Á÷¡£
+å¤§å†°å±±åœ¨æ—¥å…‰çš„ç…§å°„ä¸‹ç™¼å‡ºåˆºçœ¼çš„å…‰èŠ’ï¼Œé¡¯å¾—ååˆ†å¥‡éº—ï¼Œé€™è£¡åˆ°
+è™•éƒ½æ˜¯å†°é›ªï¼Œå†°å±±é —å¤§ï¼Œå¦‚é™¸åœ°ä¸Šä¹‹å±±ä¸˜ï¼Œä¸€çœ¼æœ›åŽ»ï¼Œæ©«ç™¾ä½™ä¸ˆï¼Œç¸±
+é•·å¹¾åä¸ˆï¼Œå†°å±±ä¸Šæ»‘ä¸ç•™æ­¥ã€‚æµ·ä¸­ä¸æ™‚æœ‰å¹¾å¡Šå°æµ®åŸº(fubing)æ­£åœ¨å‘
+åŒ—é£„æµã€‚
 LONG );
-	set("outdoors", "¼«±±");
+	set("outdoors", "æ¥µåŒ—");
         set("exits", ([  
               "east" : __DIR__"dbshan1",
         ]));
         set("item_desc", ([
-                "fubing" : "ÅÔ±ßµÄº£Ë®ÀïÃæÆ¯¸¡×Å¼¸¿é¸¡±ù£¬µ«ÊÇÏà¸ôºÜÔ¶£¬¿´À´»¹Ã»·¨¹ýÈ¥\n",
+                "fubing" : "æ—é‚Šçš„æµ·æ°´è£¡é¢æ¼‚æµ®è‘—å¹¾å¡Šæµ®å†°ï¼Œä½†æ˜¯ç›¸éš”å¾ˆé ï¼Œçœ‹ä¾†é‚„æ²’æ³•éŽåŽ»\n",
         ]));
         setup();
 }
@@ -32,7 +32,7 @@ void init()
 
 void change()
 {
-      tell_room(this_object(),HIW"±ãÔÚ´ËÊ±£¬Ö»ÌýµÃ¶¡¶¬¡¢¶¡¶¬ÊýÉù£¬¼«ÊÇÇå´à¶¯Ìý£¬¼¸¿é¸¡±ùÆ®½üÁË¡£\n"NOR);    
+      tell_room(this_object(),HIW"ä¾¿åœ¨æ­¤æ™‚ï¼Œåªè½å¾—ä¸å†¬ã€ä¸å†¬æ•¸è²ï¼Œæ¥µæ˜¯æ¸…è„†å‹•è½ï¼Œå¹¾å¡Šæµ®å†°é£„è¿‘äº†ã€‚\n"NOR);    
       this_object()->set_temp("fubing", 1);    
       remove_call_out("change1");
       call_out("change1", 10);  
@@ -40,7 +40,7 @@ void change()
 
 void change1()
 {
-      tell_room(this_object(),"º£ÖÐ³±Á÷Ó¿¹ý£¬ÄÇÇå´àÖ®ÉùÓÖ½¥½¥Ô¶È¥ÁË¡£\n");    
+      tell_room(this_object(),"æµ·ä¸­æ½®æµæ¹§éŽï¼Œé‚£æ¸…è„†ä¹‹è²åˆæ¼¸æ¼¸é åŽ»äº†ã€‚\n");    
       this_object()->delete_temp("fubing");    
       remove_call_out("change");
       call_out("change", 50+random(150));  
@@ -51,12 +51,12 @@ int do_jump(string arg)
      object me = this_player();
      if(!query_temp("fubing")) return 0;
      if( ! arg || arg=="fubing" ) {
-         message("vision",me->name() + "Ò»×ÝÉí£¬Õû¸öÈËÒÑµ½ÁË¸¡±ùÉÏ¡£\n",environment(me), ({me}) );
+         message("vision",me->name() + "ä¸€ç¸±èº«ï¼Œæ•´å€‹äººå·²åˆ°äº†æµ®å†°ä¸Šã€‚\n",environment(me), ({me}) );
          me->move(__DIR__"foubing");
-         message("vision",me->name() + "´Ó±ùÉ½ÉÏ·ÉÉí¶øÀ´¡£\n",environment(me), ({me}) );
+         message("vision",me->name() + "å¾žå†°å±±ä¸Šé£›èº«è€Œä¾†ã€‚\n",environment(me), ({me}) );
          if(random(me->query_dex()) < 50){
-             message_vision("½á¹û$NÒ»²»Ð¡ÐÄ½ÅÏÂÒ»»¬£¬ÑöÌìÒ»¸ö´óË¤õÓ£¡\n",me);
-             me->set_temp("last_damage_from", "Ë¤µ¹ÔÚ±ùÉ½ÉÏ£¬ÄÔÒçÑª¶ø");
+             message_vision("çµæžœ$Nä¸€ä¸å°å¿ƒè…³ä¸‹ä¸€æ»‘ï¼Œä»°å¤©ä¸€å€‹å¤§æ‘”è·¤ï¼\n",me);
+             me->set_temp("last_damage_from", "æ‘”å€’åœ¨å†°å±±ä¸Šï¼Œè…¦æº¢è¡€è€Œ");
              me->receive_wound("qi", 50);
              me->receive_damage("qi", 100);
          }

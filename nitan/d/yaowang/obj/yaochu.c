@@ -8,14 +8,14 @@ void init()
 
 void create()
 {
-        set_name("Ò©³ú", ({"yao chu", "chu"}));
+        set_name("è—¥é‹¤", ({"yao chu", "chu"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("no_drop","²»ÒªÂÒ¶ª£¬Õâ¶«Î÷´òµ½ÈË»áÍ´µÄ£¡\n");
+                set("unit", "æŠŠ");
+                set("no_drop","ä¸è¦äº‚ä¸Ÿï¼Œé€™æ±è¥¿æ‰“åˆ°äººæœƒç—›çš„ï¼\n");
                 set("no_put",1);
-                set("long", "ÕâÊÇÒ»°ÑºÜÖØµÄÒ©³ú£¬Äã¿ÉÒÔÓÃËüÀ´ÍÚÒ©£¨dig yao£©¡£\n");
+                set("long", "é€™æ˜¯ä¸€æŠŠå¾ˆé‡çš„è—¥é‹¤ï¼Œä½ å¯ä»¥ç”¨å®ƒä¾†æŒ–è—¥ï¼ˆdig yaoï¼‰ã€‚\n");
                 set("value", 5000);
         }
         setup();
@@ -24,21 +24,21 @@ void create()
 int do_wayao(string arg)
 {       object ob;
         object me=this_player();
-        if( me->is_busy() || query_temp("pending/exercising", me))return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
-        if (!arg||arg!="yao") return notify_fail("ÄãÒªÍÚÊ²Ã´ÄØ£¿£¡\n");
-        if( (query("jing", me)<20))return notify_fail("ÄãµÄ¾«Á¦²»ÄÜ¼¯ÖĞ£¬ÍÚÁËÒ²ÊÇ°×ÍÚ£¡\n");
-        if( query("qi", me)<40)return notify_fail("ÄãÌ«ÀÛÁË£¬ÔõÃ´¶¼ÄÃ²»¶¯Õâ°ÑÒ©³ú£¡\n");
-        if (present("zhengui yaocai", environment(this_object()))||present("putong yaocai",environment(this_object()))) return notify_fail("±ğ²»Öª×ã,ÄãÒÑ¾­ÍÚµ½Ò©ÁË£¡\n");
-        if(environment(this_object()) != me)  return notify_fail("ÄãÊÇÔÚ¿´±ğÈËÍÚ°É£¿\n");
+        if( me->is_busy() || query_temp("pending/exercising", me))return notify_fail("ä½ ç¾åœ¨æ­£å¿™è‘—å‘¢ã€‚\n");
+        if (!arg||arg!="yao") return notify_fail("ä½ è¦æŒ–ä»€éº¼å‘¢ï¼Ÿï¼\n");
+        if( (query("jing", me)<20))return notify_fail("ä½ çš„ç²¾åŠ›ä¸èƒ½é›†ä¸­ï¼ŒæŒ–äº†ä¹Ÿæ˜¯ç™½æŒ–ï¼\n");
+        if( query("qi", me)<40)return notify_fail("ä½ å¤ªç´¯äº†ï¼Œæ€éº¼éƒ½æ‹¿ä¸å‹•é€™æŠŠè—¥é‹¤ï¼\n");
+        if (present("zhengui yaocai", environment(this_object()))||present("putong yaocai",environment(this_object()))) return notify_fail("åˆ¥ä¸çŸ¥è¶³,ä½ å·²ç¶“æŒ–åˆ°è—¥äº†ï¼\n");
+        if(environment(this_object()) != me)  return notify_fail("ä½ æ˜¯åœ¨çœ‹åˆ¥äººæŒ–å§ï¼Ÿ\n");
         if( query_temp("wayao1", environment(me)) )
         {
         me->start_busy(random(3)+1);
-        message_vision("$N»Ó¶¯Ò©³ú¡°ºôßê¡¢ºôßê¡±µØÔÚµØÉÏÍÚÁËÆğÀ´,ËÆºõÔÚÕÒÊ²Ã´¶«Î÷¡£\n",me);
+        message_vision("$Næ®å‹•è—¥é‹¤â€œå‘¼å“§ã€å‘¼å“§â€åœ°åœ¨åœ°ä¸ŠæŒ–äº†èµ·ä¾†,ä¼¼ä¹åœ¨æ‰¾ä»€éº¼æ±è¥¿ã€‚\n",me);
         addn("jing", -10, me);
         addn("qi", -20, me);
         if(random(7)<3)
         {
-        message_vision(YEL"$NÍÚÁË°ëÌì£¬ÖÕÓÚ°ÑÄÇ¿ÅÒ©²ÄĞ¡ĞÄÒíÒíµØ¾òÁË³öÀ´¡£\n"NOR,me);
+        message_vision(YEL"$NæŒ–äº†åŠå¤©ï¼Œçµ‚äºæŠŠé‚£é¡†è—¥æå°å¿ƒç¿¼ç¿¼åœ°æ˜äº†å‡ºä¾†ã€‚\n"NOR,me);
         new(__DIR__"obj/yaocai")->move(me);
         addn_temp("wayao1", -1, environment(me));
         destruct(this_object());
@@ -50,12 +50,12 @@ int do_wayao(string arg)
         if( query_temp("wayao2", environment(me)) )
         {
         me->start_busy(1+random(4));
-        message_vision(CYN"$N»Ó¶¯Ò©³ú¿ªÊ¼ÔÚµØÉÏÍÚÁËÆğÀ´¡£\n"NOR,me);
+        message_vision(CYN"$Næ®å‹•è—¥é‹¤é–‹å§‹åœ¨åœ°ä¸ŠæŒ–äº†èµ·ä¾†ã€‚\n"NOR,me);
         addn("kee", -20, me);
         addn("sen", -30, me);
              if(random(7)<4)
       {
-        message_vision(YEL"$NÍÚÁË°ëÌì£¬ÖÕÓÚ°ÑÄÇ¿ÅÒ©²ÄĞ¡ĞÄÒíÒíµØ¾òÁË³öÀ´¡£\n"NOR,me);
+        message_vision(YEL"$NæŒ–äº†åŠå¤©ï¼Œçµ‚äºæŠŠé‚£é¡†è—¥æå°å¿ƒç¿¼ç¿¼åœ°æ˜äº†å‡ºä¾†ã€‚\n"NOR,me);
 //        new(__DIR__"obj/yaocai")->move(me);
         addn_temp("wayao2", -1, environment(me));
         destruct(this_object());
@@ -63,5 +63,5 @@ int do_wayao(string arg)
       }
         return 1;
     }
-      return notify_fail("ÕâÀïÊ²Ã´¶¼Ã»ÓĞ,Ô­À´ÊÇÄã¿´»¨ÁËÑÛ¡£\n");
+      return notify_fail("é€™è£¡ä»€éº¼éƒ½æ²’æœ‰,åŸä¾†æ˜¯ä½ çœ‹èŠ±äº†çœ¼ã€‚\n");
 }

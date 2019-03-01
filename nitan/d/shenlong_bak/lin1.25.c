@@ -2,9 +2,9 @@ inherit DEMONROOM;
 
 void create()
 {
-        set("short", "ÉñÃØÑÒ¶´±ù½Ñ·Ö²í¿Ú");
+        set("short", "ç¥žç§˜å·–æ´žå†°çª–åˆ†å²”å£");
         set("long",@LONG
-ÕâÊÇÉñÁúµº¶«ÄÏ²¿ÑÒ¶´Éî´¦µÄÒ»¸ö±ù½Ñ£¬ÕâÀïÒì³£º®Àä¡£
+é€™æ˜¯ç¥žé¾å³¶æ±å—éƒ¨å·–æ´žæ·±è™•çš„ä¸€å€‹å†°çª–ï¼Œé€™è£¡ç•°å¸¸å¯’å†·ã€‚
 LONG);
 
         set("exits", ([

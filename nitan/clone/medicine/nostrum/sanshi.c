@@ -4,14 +4,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIR"ÈıÊ¬ÄÔÉñµ¤"NOR, ({"sanshinao shendan", "sanshi dan", "dan"}));
+        set_name(HIR"ä¸‰å±è…¦ç¥ä¸¹"NOR, ({"sanshinao shendan", "sanshi dan", "dan"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
                 set("long", 
-"Ò»Á£»ğºìÉ«µÄµ¤Ò©£¬¿´Ñù×Ó²»ÊÇÑ°³£ÎïÆ·¡£ÄãÖ»¿ÉÒÔ³Ë±ğÈËÈËÊÂ²»ÖªÊ±
-Î¹(wei)¸øÈË¼Ò³Ô¡£\n");
-                set("unit", "Á£");
+"ä¸€ç²’ç«ç´…è‰²çš„ä¸¹è—¥ï¼Œçœ‹æ¨£å­ä¸æ˜¯å°‹å¸¸ç‰©å“ã€‚ä½ åªå¯ä»¥ä¹˜åˆ¥äººäººäº‹ä¸çŸ¥æ™‚
+å–‚(wei)çµ¦äººå®¶åƒã€‚\n");
+                set("unit", "ç²’");
                 set("value", 20000);
         }
         set("pour_type", "1");
@@ -29,13 +29,13 @@ int do_wei(string arg)
 
         if (!present(ob, me)) return 0;
         if( query("id", me) != query("owner", ob) )
-                return notify_fail("Õâ²»ÊÇÄãÁ·µÄµ¤£¬ÄãÎ¹Ò²Ã»ÓÃ¡£\n");
-        if(!arg) return notify_fail("ÄãÒª¸øË­Î¹ÈıÊ¬ÄÔÉñµ¤£¿\n");
+                return notify_fail("é€™ä¸æ˜¯ä½ ç·´çš„ä¸¹ï¼Œä½ å–‚ä¹Ÿæ²’ç”¨ã€‚\n");
+        if(!arg) return notify_fail("ä½ è¦çµ¦èª°å–‚ä¸‰å±è…¦ç¥ä¸¹ï¼Ÿ\n");
         if(!objectp(who = present(arg, environment(me))))
-                return notify_fail("ÕâÀïÃ»ÓĞÕâ¸öÈË¡£\n");
+                return notify_fail("é€™è£¡æ²’æœ‰é€™å€‹äººã€‚\n");
         if( living(who) && !query_temp("noliving", who) )
-                return notify_fail("ÈË¼ÒÓĞÖªÓĞ¾õµÄ£¬Ë­¿Ï³ÔÄãµÄ³ôÒ©£¿\n");
-        message_vision("$NÇË¿ª$nµÄ×ì£¬½«"+query("name", ob)+"Èû½ø$n×ìÀï¡£\n",me,who);
+                return notify_fail("äººå®¶æœ‰çŸ¥æœ‰è¦ºçš„ï¼Œèª°è‚¯åƒä½ çš„è‡­è—¥ï¼Ÿ\n");
+        message_vision("$Næ’¬é–‹$nçš„å˜´ï¼Œå°‡"+query("name", ob)+"å¡é€²$nå˜´è£¡ã€‚\n",me,who);
         set("sanshi",query("id",  me), who);
         destruct(this_object());
         return 1;

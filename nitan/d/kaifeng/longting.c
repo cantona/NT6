@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��ͤ���");
+        set("short", "龍亭大殿");
         set("long", @LONG
-��ͤ���ԭ���ǵ����й���������֮�󣬹����Ƿϣ������ڴ˵�
-�����������䱦�ֳ¸���ֱ��������̾Ϊ��ֹ�����ϱ������
-֮��ɡ�
+龍亭大殿原先是帝王行宮，後宋亡之後，宮殿頹廢，後人在此地
+復建大殿，殿內珍寶林陳高檐直柱，令人嘆為觀止。集南北宮殿建築
+之大成。
 LONG );
         set("no_clean_up", 0);
         set("exits", ([

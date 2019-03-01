@@ -9,12 +9,12 @@ int sort_by_id(mapping quest1, mapping quest2);
 
 void create()
 {
-        set("short", "ÐÞÂÞÃÅ·ÖÌ³");
+        set("short", "ä¿®ç¾…é–€åˆ†å£‡");
         set("long", @LONG
-ÕâÀïÊÇºÚµÀ×éÖ¯ÐÞÂÞÃÅµÄ³É¶¼·ÖÌ³£¬ÕâÊÇÒ»¼äÒõÉ­¿Ö²ÀµÄ·¿¼ä£¬
-µ½²»ÊÇÒòÎªËûµÄÃû×Ö¿ÉÅÂ£¬¶øÊÇ×óÓÒÁ½ÅÔµÄÄÇÁ½×ðÐÞÂÞÍõµÄËÜÏñ£¬ÐÎ
-Ì¬¹îÒì£¬ÈÃÈË¸Ð¾õ·Â·ðºÍÊÀ½ç¸ôÀëÁËÒ»°ã¡£Ç½ÉÏ¹Ò×ÅÐÞÂÞÃÅµÄÈÎÎñÅÆ
-£¨paizi£©¡£
+é€™è£¡æ˜¯é»‘é“çµ„ç¹”ä¿®ç¾…é–€çš„æˆéƒ½åˆ†å£‡ï¼Œé€™æ˜¯ä¸€é–“é™°æ£®ææ€–çš„æˆ¿é–“ï¼Œ
+åˆ°ä¸æ˜¯å› ç‚ºä»–çš„åå­—å¯æ€•ï¼Œè€Œæ˜¯å·¦å³å…©æ—çš„é‚£å…©å°Šä¿®ç¾…çŽ‹çš„å¡‘åƒï¼Œå½¢
+æ…‹è©­ç•°ï¼Œè®“äººæ„Ÿè¦ºä»¿ä½›å’Œä¸–ç•Œéš”é›¢äº†ä¸€èˆ¬ã€‚ç‰†ä¸ŠæŽ›è‘—ä¿®ç¾…é–€çš„ä»»å‹™ç‰Œ
+ï¼ˆpaiziï¼‰ã€‚
 LONG );
 
         set("objects", ([

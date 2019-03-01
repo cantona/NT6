@@ -22,12 +22,12 @@ int main(object me, string arg)
         if (! SECURITY_D->valid_grant(me, "(admin)"))
                 return 0;
 
-        // ÎÞ²ÎÊýÔòÁÐ³ö·þÎñÆ÷ÖÐËùÓÐÊý¾Ý¿â
+        // ç„¡åƒæ•¸å‰‡åˆ—å‡ºæœå‹™å™¨ä¸­æ‰€æœ‰æ•¸æ“šåº«
         if (! arg)
         {
                 i = 1;
-                msg = sprintf(HIC "%s(" HIW "%s" HIC ")µÄÊý¾Ý¿âÁÐ±í£º\n" NOR
-                              HIW "©¤©¤Êý¾Ý¿âÃû©¤©¤©¤©¤©¤©¤±íÊý©¤©¤©¤\n" NOR,
+                msg = sprintf(HIC "%s(" HIW "%s" HIC ")çš„æ•¸æ“šåº«åˆ—è¡¨ï¼š\n" NOR
+                              HIW "â”€â”€æ•¸æ“šåº«åâ”€â”€â”€â”€â”€â”€è¡¨æ•¸â”€â”€â”€\n" NOR,
                               LOCAL_MUD_NAME(), upper_case(INTERMUD_MUD_NAME));
 
                 while (sizeof(ret = DATABASE_D->db_fetch_row("SHOW DATABASES", i)))
@@ -37,10 +37,10 @@ int main(object me, string arg)
                                        DATABASE_D->db_query(sql));
                         i++;
                 }
-                msg += sprintf(HIW "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n" NOR 
-                               HIC "±¾»ú¹²ÓÐ " HIW "%d" HIC " ¸öÊý¾Ý¿â¡£" NOR, i - 1);
+                msg += sprintf(HIW "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n" NOR 
+                               HIC "æœ¬æ©Ÿå…±æœ‰ " HIW "%d" HIC " å€‹æ•¸æ“šåº«ã€‚" NOR, i - 1);
         }
-        // ÁÐ³öÖ¸¶¨ÓÎÏ·Êý¾Ý¿âµÄÊý¾Ý±í(ÏÔÊ¾ÁÐÊýÁ¿)
+        // åˆ—å‡ºæŒ‡å®šéŠæˆ²æ•¸æ“šåº«çš„æ•¸æ“šè¡¨(é¡¯ç¤ºåˆ—æ•¸é‡)
         else
         if (arg == "-d" || sscanf(arg, "-d %s", db) && db == DATABASE)
         {
@@ -49,10 +49,10 @@ int main(object me, string arg)
                 sql = sprintf("SHOW TABLES FROM %s", db);
 
                 if (! intp(DATABASE_D->db_query(sql)))
-                        return notify_fail(CYN "Ã»ÓÐ " WHT + db + CYN " Õâ¸öÊý¾Ý¿â¡£\n" NOR);
+                        return notify_fail(CYN "æ²’æœ‰ " WHT + db + CYN " é€™å€‹æ•¸æ“šåº«ã€‚\n" NOR);
 
-                msg = sprintf(HIC "Êý¾Ý¿â(" HIW "%s" HIC ")µÄÊý¾Ý±í£º\n" NOR
-                              HIW "©¤©¤Êý¾Ý±íÃû©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤ÁÐ©¤©¤©¤ÐÐ©¤©¤\n" NOR, db);
+                msg = sprintf(HIC "æ•¸æ“šåº«(" HIW "%s" HIC ")çš„æ•¸æ“šè¡¨ï¼š\n" NOR
+                              HIW "â”€â”€æ•¸æ“šè¡¨åâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€åˆ—â”€â”€â”€è¡Œâ”€â”€\n" NOR, db);
 
                 while (sizeof(ret = DATABASE_D->db_fetch_row(sql, i)))
                 {
@@ -66,10 +66,10 @@ int main(object me, string arg)
                                        ret[0], cnum, lnum);
                         i++;
                 }
-                msg += sprintf(HIW "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n" NOR 
-                               HIC "´ËÊý¾Ý¿â¹²ÓÐ " HIW "%d" HIC " ÕÅÊý¾Ý±í¡£" NOR, i - 1);
+                msg += sprintf(HIW "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n" NOR 
+                               HIC "æ­¤æ•¸æ“šåº«å…±æœ‰ " HIW "%d" HIC " å¼µæ•¸æ“šè¡¨ã€‚" NOR, i - 1);
         }
-        // ÁÐ³öÆäËûÊý¾Ý¿âÖÐÖ¸¶¨Êý¾Ý±íµÄ×Ö¶ÎÐÅÏ¢
+        // åˆ—å‡ºå…¶ä»–æ•¸æ“šåº«ä¸­æŒ‡å®šæ•¸æ“šè¡¨çš„å­—æ®µä¿¡æ¯
         else
         if (sscanf(arg, "-d %s", db))
         {
@@ -78,10 +78,10 @@ int main(object me, string arg)
                 sql = sprintf("SHOW TABLES FROM %s", db);
 
                 if (! intp(DATABASE_D->db_query(sql)))
-                        return notify_fail(CYN "Ã»ÓÐ " WHT + db + CYN " Õâ¸öÊý¾Ý¿â¡£\n" NOR);
+                        return notify_fail(CYN "æ²’æœ‰ " WHT + db + CYN " é€™å€‹æ•¸æ“šåº«ã€‚\n" NOR);
 
-                msg = sprintf(HIC "Êý¾Ý¿â(" HIW "%s" HIC ")µÄÊý¾Ý±í£º\n" NOR
-                              HIW "©¤©¤Êý¾Ý±íÃû©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤ÁÐ©¤©¤\n" NOR, db);
+                msg = sprintf(HIC "æ•¸æ“šåº«(" HIW "%s" HIC ")çš„æ•¸æ“šè¡¨ï¼š\n" NOR
+                              HIW "â”€â”€æ•¸æ“šè¡¨åâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€åˆ—â”€â”€\n" NOR, db);
 
                 while (sizeof(ret = DATABASE_D->db_fetch_row(sql, i)))
                 {
@@ -92,10 +92,10 @@ int main(object me, string arg)
                                        ret[0], cnum);
                         i++;
                 }
-                msg += sprintf(HIW "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n" NOR 
-                               HIC "´ËÊý¾Ý¿â¹²ÓÐ " HIW "%d" HIC " ÕÅÊý¾Ý±í¡£" NOR, i - 1);
+                msg += sprintf(HIW "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n" NOR 
+                               HIC "æ­¤æ•¸æ“šåº«å…±æœ‰ " HIW "%d" HIC " å¼µæ•¸æ“šè¡¨ã€‚" NOR, i - 1);
         }
-        // ÁÐ³öÓÎÏ·Êý¾Ý¿âÖÐÖ¸¶¨Êý¾Ý±íµÄ×Ö¶ÎÐÅÏ¢
+        // åˆ—å‡ºéŠæˆ²æ•¸æ“šåº«ä¸­æŒ‡å®šæ•¸æ“šè¡¨çš„å­—æ®µä¿¡æ¯
         else
         if (sscanf(arg, "-t %s", tb))
         {
@@ -103,10 +103,10 @@ int main(object me, string arg)
                 sql = sprintf("SHOW COLUMNS FROM %s", tb);
 
                 if (! intp(DATABASE_D->db_query(sql)))
-                        return notify_fail(CYN "Ã»ÓÐ " WHT + tb + CYN " Õâ¸öÊý¾Ý±í¡£\n" NOR);
+                        return notify_fail(CYN "æ²’æœ‰ " WHT + tb + CYN " é€™å€‹æ•¸æ“šè¡¨ã€‚\n" NOR);
 
-                msg = sprintf(HIC "Êý¾Ý±í(" HIW "%s" HIC ")µÄ½á¹¹£º\n" NOR
-                              HIW "©¤©¤×Ö¶ÎÃû©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤¸½¼ÓÐÅÏ¢©¤©¤©¤©¤©¤©¤\n" NOR, tb);
+                msg = sprintf(HIC "æ•¸æ“šè¡¨(" HIW "%s" HIC ")çš„çµæ§‹ï¼š\n" NOR
+                              HIW "â”€â”€å­—æ®µåâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€é™„åŠ ä¿¡æ¯â”€â”€â”€â”€â”€â”€\n" NOR, tb);
 
                 while (sizeof(ret = DATABASE_D->db_fetch_row(sql, i)))
                 {
@@ -118,28 +118,28 @@ int main(object me, string arg)
                                        implode(res, CYN " | " WHT));
                         i++;
                 }
-                msg += sprintf(HIW "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n" NOR 
-                               HIC "´ËÊý¾Ý±í¹²ÓÐ " HIW "%d" HIC " ¸ö×Ö¶Î¡£" NOR, i - 1);
+                msg += sprintf(HIW "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n" NOR 
+                               HIC "æ­¤æ•¸æ“šè¡¨å…±æœ‰ " HIW "%d" HIC " å€‹å­—æ®µã€‚" NOR, i - 1);
         }
-        // °´ÕÕ±í´ïÊ½²éÑ¯ÖÆ¶¨Êý¾Ý±íÖÐÖÆ¶¨×Ö¶ÎµÄÄÚÈÝ
+        // æŒ‰ç…§è¡¨é”å¼æŸ¥è©¢åˆ¶å®šæ•¸æ“šè¡¨ä¸­åˆ¶å®šå­—æ®µçš„å…§å®¹
         else
         if (sscanf(arg, "-s %s %s", tb, arg) == 2)
         {
                 sql = sprintf("SHOW COLUMNS FROM %s", tb);
 
                 if (! intp(DATABASE_D->db_query(sql)))
-                        return notify_fail(CYN "Ã»ÓÐ " WHT + tb + CYN " Õâ¸öÊý¾Ý±í¡£\n" NOR);
+                        return notify_fail(CYN "æ²’æœ‰ " WHT + tb + CYN " é€™å€‹æ•¸æ“šè¡¨ã€‚\n" NOR);
 
-                // Ö¸¶¨±í´ïÊ½
+                // æŒ‡å®šè¡¨é”å¼
                 if (sscanf(arg, "%s where %s", col, expr) == 2)
                 {
                         i = 1;
                         sql = sprintf("SELECT %s FROM %s WHERE %s", col, tb, expr);
 
-                        msg = sprintf(HIC "²éÑ¯(" HIW "%s" HIC ")µÄ½á¹û£º\n" NOR
-                              HIW "©¤©¤×Ö¶ÎÃû©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n" NOR
+                        msg = sprintf(HIC "æŸ¥è©¢(" HIW "%s" HIC ")çš„çµæžœï¼š\n" NOR
+                              HIW "â”€â”€å­—æ®µåâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n" NOR
                               HIC "   %s\n" NOR
-                              HIW "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤²éÑ¯½á¹û©¤©¤\n" NOR,
+                              HIW "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€æŸ¥è©¢çµæžœâ”€â”€\n" NOR,
                               sql, col);
 
                         while (sizeof(ret = DATABASE_D->db_fetch_row(sql, i)))
@@ -148,23 +148,23 @@ int main(object me, string arg)
                                                "\n" NOR, ret[0]);
                                 i++;
                         }
-                        msg += sprintf(HIW "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n" NOR 
-                                       HIC "´Ë´Î²éÑ¯¹²ÓÐ " HIW "%d" HIC " ¸ö·ûºÏ½á¹û¡£" NOR, i - 1);
+                        msg += sprintf(HIW "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n" NOR 
+                                       HIC "æ­¤æ¬¡æŸ¥è©¢å…±æœ‰ " HIW "%d" HIC " å€‹ç¬¦åˆçµæžœã€‚" NOR, i - 1);
                         if (! (i - 1))
-                                return notify_fail(sprintf(CYN "²éÑ¯£º" WHT "%s" CYN "\nÃ»ÓÐµÃµ½ÈÎºÎ½á¹û£¬Çë¼ì"
-                                                           "²éÊÇ·ñÎÞ´Ë×Ö¶Î»ò±í´ïÊ½ÊäÈë´íÎó¡£\n" NOR, sql));
+                                return notify_fail(sprintf(CYN "æŸ¥è©¢ï¼š" WHT "%s" CYN "\næ²’æœ‰å¾—åˆ°ä»»ä½•çµæžœï¼Œè«‹æª¢"
+                                                           "æŸ¥æ˜¯å¦ç„¡æ­¤å­—æ®µæˆ–è¡¨é”å¼è¼¸å…¥éŒ¯èª¤ã€‚\n" NOR, sql));
                 }
-                // ²»Ö¸¶¨±í´ïÊ½
+                // ä¸æŒ‡å®šè¡¨é”å¼
                 else
                 {
                         col = arg;
                         i = 1;
                         sql = sprintf("SELECT %s FROM %s", col, tb);
 
-                        msg = sprintf(HIC "²éÑ¯(" HIW "%s" HIC ")µÄ½á¹û£º\n" NOR
-                              HIW "©¤©¤×Ö¶ÎÃû©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n" NOR
+                        msg = sprintf(HIC "æŸ¥è©¢(" HIW "%s" HIC ")çš„çµæžœï¼š\n" NOR
+                              HIW "â”€â”€å­—æ®µåâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n" NOR
                               HIC "   %s\n" NOR
-                              HIW "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤²éÑ¯½á¹û©¤©¤\n" NOR,
+                              HIW "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€æŸ¥è©¢çµæžœâ”€â”€\n" NOR,
                               sql, col);
 
                         while (sizeof(ret = DATABASE_D->db_fetch_row(sql, i)))
@@ -173,27 +173,27 @@ int main(object me, string arg)
                                                "\n" NOR, ret[0]);
                                 i++;
                         }
-                        msg += sprintf(HIW "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n" NOR 
-                                       HIC "´Ë´Î²éÑ¯¹²ÓÐ " HIW "%d" HIC " ¸ö·ûºÏ½á¹û¡£" NOR, i - 1);
+                        msg += sprintf(HIW "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n" NOR 
+                                       HIC "æ­¤æ¬¡æŸ¥è©¢å…±æœ‰ " HIW "%d" HIC " å€‹ç¬¦åˆçµæžœã€‚" NOR, i - 1);
                         if (! (i - 1))
-                                return notify_fail(sprintf(CYN "²éÑ¯£º" WHT "%s" CYN "\nÃ»ÓÐµÃµ½ÈÎºÎ½á¹û£¬Çë¼ì"
-                                                           "²éÊÇ·ñÎÞ´Ë×Ö¶Î»òÕßÊý¾Ý±íÎª¿Õ¡£\n" NOR, sql));
+                                return notify_fail(sprintf(CYN "æŸ¥è©¢ï¼š" WHT "%s" CYN "\næ²’æœ‰å¾—åˆ°ä»»ä½•çµæžœï¼Œè«‹æª¢"
+                                                           "æŸ¥æ˜¯å¦ç„¡æ­¤å­—æ®µæˆ–è€…æ•¸æ“šè¡¨ç‚ºç©ºã€‚\n" NOR, sql));
                 }
         }
-        // ²éÑ¯Ö¸¶¨Ò»¸öÁÐµÄËùÓÐÐÅÏ¢
-        // Ïòºó²éÑ¯
+        // æŸ¥è©¢æŒ‡å®šä¸€å€‹åˆ—çš„æ‰€æœ‰ä¿¡æ¯
+        // å‘å¾ŒæŸ¥è©¢
         else
         if (sscanf(arg, "-n %s where %s", tb, expr) == 2)
         {
                 i = 1;
 
-                // ×¼±¸Òª²éÑ¯µÄÁÐºÅ
+                // æº–å‚™è¦æŸ¥è©¢çš„åˆ—è™Ÿ
                 n=query("db_last_query/"+tb, me)+1;
 
-                // ×¼±¸ÁÐÐÅÏ¢
+                // æº–å‚™åˆ—ä¿¡æ¯
                 sql = sprintf("SHOW COLUMNS FROM %s", tb);
                 if (! intp(DATABASE_D->db_query(sql)))
-                        return notify_fail(CYN "Ã»ÓÐ " WHT + tb + CYN " Õâ¸öÊý¾Ý±í¡£\n" NOR);
+                        return notify_fail(CYN "æ²’æœ‰ " WHT + tb + CYN " é€™å€‹æ•¸æ“šè¡¨ã€‚\n" NOR);
 
                 arr = ({ });
                 while (sizeof(res = DATABASE_D->db_fetch_row(sql, i)))
@@ -201,41 +201,41 @@ int main(object me, string arg)
                         arr += ({ res[0] });
                         i++;
                 }
-                // ×¼±¸ÐÐÐÅÏ¢
+                // æº–å‚™è¡Œä¿¡æ¯
                 sql = sprintf("SELECT * FROM %s WHERE %s", tb, expr);
                 j = DATABASE_D->db_query(sql);
                 n = j < n ? j : n;
                 ret = DATABASE_D->db_fetch_row(sql, n);
 
-                // ÏÔÊ¾ÐÅÏ¢
-                msg = sprintf(HIC "²éÑ¯(" HIW "%s" HIC ")µÄµÚ " HIW "%d" HIC " ÐÐ½á¹û£º\n" NOR
-                              HIW "©¤©¤×Ö¶ÎÃû©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤×Ö¶ÎÄÚÈÝ©¤©¤©¤©¤©¤©¤©¤©¤\n" NOR,
+                // é¡¯ç¤ºä¿¡æ¯
+                msg = sprintf(HIC "æŸ¥è©¢(" HIW "%s" HIC ")çš„ç¬¬ " HIW "%d" HIC " è¡Œçµæžœï¼š\n" NOR
+                              HIW "â”€â”€å­—æ®µåâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€å­—æ®µå…§å®¹â”€â”€â”€â”€â”€â”€â”€â”€\n" NOR,
                               sql, n);
                 cnum = sizeof(arr);
 
                 if (! cnum || ! sizeof(ret))
-                        return notify_fail(sprintf(CYN "²éÑ¯£º" WHT "%s" CYN "\nÃ»ÓÐµÃµ½ÈÎºÎ½á¹û£¬Çë¼ì"
-                                                   "²éÊÇ·ñÎÞ´Ë×Ö¶Î»ò±í´ïÊ½ÊäÈë´íÎó¡£\n" NOR, sql));
+                        return notify_fail(sprintf(CYN "æŸ¥è©¢ï¼š" WHT "%s" CYN "\næ²’æœ‰å¾—åˆ°ä»»ä½•çµæžœï¼Œè«‹æª¢"
+                                                   "æŸ¥æ˜¯å¦ç„¡æ­¤å­—æ®µæˆ–è¡¨é”å¼è¼¸å…¥éŒ¯èª¤ã€‚\n" NOR, sql));
                 for (i = 0; i < cnum; i++)
                         msg += sprintf(CYN "  %-30s " WHT "%O\n" NOR, arr[i], ret[i]);
 
-                msg += sprintf(HIW "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n" NOR 
-                               HIC "´ËÁÐ¹²ÓÐ " HIW "%d" HIC " ¸ö×Ö¶Î¡£" NOR, cnum);
+                msg += sprintf(HIW "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n" NOR 
+                               HIC "æ­¤åˆ—å…±æœ‰ " HIW "%d" HIC " å€‹å­—æ®µã€‚" NOR, cnum);
 
-                // ×¼±¸ÏÂÒ»´Î²éÑ¯
+                // æº–å‚™ä¸‹ä¸€æ¬¡æŸ¥è©¢
                 set("db_last_query/"+tb, n, me);
         }
-        // ÏòÇ°²éÑ¯
+        // å‘å‰æŸ¥è©¢
         else
         if (sscanf(arg, "-f %s where %s", tb, expr) == 2)
         {
                 i = 1;
                 n=query("db_last_query/"+tb, me)-1;
 
-                // ×¼±¸ÁÐÐÅÏ¢
+                // æº–å‚™åˆ—ä¿¡æ¯
                 sql = sprintf("SHOW COLUMNS FROM %s", tb);
                 if (! intp(DATABASE_D->db_query(sql)))
-                        return notify_fail(CYN "Ã»ÓÐ " WHT + tb + CYN " Õâ¸öÊý¾Ý±í¡£\n" NOR);
+                        return notify_fail(CYN "æ²’æœ‰ " WHT + tb + CYN " é€™å€‹æ•¸æ“šè¡¨ã€‚\n" NOR);
 
                 arr = ({ });
                 while (sizeof(res = DATABASE_D->db_fetch_row(sql, i)))
@@ -243,36 +243,36 @@ int main(object me, string arg)
                         arr += ({ res[0] });
                         i++;
                 }
-                // ×¼±¸ÐÐÐÅÏ¢
+                // æº–å‚™è¡Œä¿¡æ¯
                 sql = sprintf("SELECT * FROM %s WHERE %s", tb, expr);
                 n = n < 1 ? 1 : n;
                 ret = DATABASE_D->db_fetch_row(sql, n);
 
-                // ÏÔÊ¾ÐÅÏ¢
-                msg = sprintf(HIC "²éÑ¯(" HIW "%s" HIC ")µÄµÚ " HIW "%d" HIC " ÐÐ½á¹û£º\n" NOR
-                              HIW "©¤©¤×Ö¶ÎÃû©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤×Ö¶ÎÄÚÈÝ©¤©¤©¤©¤©¤©¤©¤©¤\n" NOR,
+                // é¡¯ç¤ºä¿¡æ¯
+                msg = sprintf(HIC "æŸ¥è©¢(" HIW "%s" HIC ")çš„ç¬¬ " HIW "%d" HIC " è¡Œçµæžœï¼š\n" NOR
+                              HIW "â”€â”€å­—æ®µåâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€å­—æ®µå…§å®¹â”€â”€â”€â”€â”€â”€â”€â”€\n" NOR,
                               sql, n);
                 cnum = sizeof(arr);
 
                 if (! cnum || ! sizeof(ret))
-                        return notify_fail(sprintf(CYN "²éÑ¯£º" WHT "%s" CYN "\nÃ»ÓÐµÃµ½ÈÎºÎ½á¹û£¬Çë¼ì"
-                                                   "²éÊÇ·ñÎÞ´Ë×Ö¶Î»ò±í´ïÊ½ÊäÈë´íÎó¡£\n" NOR, sql));
+                        return notify_fail(sprintf(CYN "æŸ¥è©¢ï¼š" WHT "%s" CYN "\næ²’æœ‰å¾—åˆ°ä»»ä½•çµæžœï¼Œè«‹æª¢"
+                                                   "æŸ¥æ˜¯å¦ç„¡æ­¤å­—æ®µæˆ–è¡¨é”å¼è¼¸å…¥éŒ¯èª¤ã€‚\n" NOR, sql));
                 for (i = 0; i < cnum; i++)
                         msg += sprintf(CYN "  %-30s " WHT "%O\n" NOR, arr[i], ret[i]);
 
-                msg += sprintf(HIW "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n" NOR 
-                               HIC "´ËÁÐ¹²ÓÐ " HIW "%d" HIC " ¸ö×Ö¶Î¡£" NOR, cnum);
+                msg += sprintf(HIW "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n" NOR 
+                               HIC "æ­¤åˆ—å…±æœ‰ " HIW "%d" HIC " å€‹å­—æ®µã€‚" NOR, cnum);
 
-                // ×¼±¸ÏÂÒ»´Î²éÑ¯
+                // æº–å‚™ä¸‹ä¸€æ¬¡æŸ¥è©¢
                 set("db_last_query/"+tb, n, me);
         }
-        // Ö´ÐÐ SQL Óï¾ä
+        // åŸ·è¡Œ SQL èªžå¥
         else
         if (arg == "-e" || sscanf(arg, "-e %s", sql))
         {
                 if (! stringp(sql) || sql == "")
                 {
-                        write(HIC "ÇëÊäÈëÄãÒªÖ´ÐÐµÄÓï¾ä£º\n" NOR);
+                        write(HIC "è«‹è¼¸å…¥ä½ è¦åŸ·è¡Œçš„èªžå¥ï¼š\n" NOR);
                         me->edit((: call_other, __FILE__, "done_edit", me :));
                 } else
                 done_edit(me, sql);
@@ -290,29 +290,29 @@ protected void done_edit(object me, string sql)
 
         if (! sql || sql == "")
         {
-                tell_object(me, HIC "ÄãÈ¡ÏûÁËÊäÈë¡£\n" NOR);
+                tell_object(me, HIC "ä½ å–æ¶ˆäº†è¼¸å…¥ã€‚\n" NOR);
                 return;
         }
         if (sql[<1..<0] == "\n") sql = sql[0..<2];
-        msg = sprintf(HIC "Óï¾ä(" HIW "%s" HIC ")µÄÖ´ÐÐ½á¹û£º\n" 
-                      HIW "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"
-                      "©¤©¤©¤©¤©¤©¤©¤\n" NOR, sql);
+        msg = sprintf(HIC "èªžå¥(" HIW "%s" HIC ")çš„åŸ·è¡Œçµæžœï¼š\n" 
+                      HIW "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"
+                      "â”€â”€â”€â”€â”€â”€â”€\n" NOR, sql);
         if (! ret = DATABASE_D->db_query(sql))
         {
-                msg += CYN "Ã»ÓÐµÃµ½ÈÎºÎ¿ÉÓÃÐÅÏ¢¡£\n" HIW "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"
-                       "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n" NOR;
+                msg += CYN "æ²’æœ‰å¾—åˆ°ä»»ä½•å¯ç”¨ä¿¡æ¯ã€‚\n" HIW "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"
+                       "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n" NOR;
         } else
         if (stringp(ret))
         {
-                msg += sprintf(HIR "´íÎóÐÅÏ¢£º" NOR WHT "%s\n" NOR
-                               HIW "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"
-                               "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n" NOR, ret);
+                msg += sprintf(HIR "éŒ¯èª¤ä¿¡æ¯ï¼š" NOR WHT "%s\n" NOR
+                               HIW "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"
+                               "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n" NOR, ret);
         } else
         {
                 res = DATABASE_D->db_all_query(sql);
                 msg += sprintf(WHT "%O\n" NOR
-                               HIW "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤"
-                               "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n" NOR, res);
+                               HIW "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€"
+                               "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n" NOR, res);
         }
         tell_object(me, msg);
         return;
@@ -321,22 +321,22 @@ protected void done_edit(object me, string sql)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½: db [ -d [ Êý¾Ý¿âÃû ] ] |
-             [ -t <Êý¾Ý±íÃû> ] |
-             [ -s <Êý¾Ý±íÃû> <×Ö¶ÎÃû> [ where <±í´ïÊ½> ] ] |
-             [ -n <Êý¾Ý±íÃû> where <±í´ïÊ½> ] |
-             [ -f <Êý¾Ý±íÃû> where <±í´ïÊ½> ]
-             [ -e [ <SQL Óï¾ä> ] ]
+æŒ‡ä»¤æ ¼å¼: db [ -d [ æ•¸æ“šåº«å ] ] |
+             [ -t <æ•¸æ“šè¡¨å> ] |
+             [ -s <æ•¸æ“šè¡¨å> <å­—æ®µå> [ where <è¡¨é”å¼> ] ] |
+             [ -n <æ•¸æ“šè¡¨å> where <è¡¨é”å¼> ] |
+             [ -f <æ•¸æ“šè¡¨å> where <è¡¨é”å¼> ]
+             [ -e [ <SQL èªžå¥> ] ]
 
-´ËÖ¸ÁîÓÃÓÚÓÎÏ·Êý¾Ý¿âµÄ¹ÜÀí¡£Äã¿ÉÒÔÊ¹ÓÃ -d ²ÎÊýÁÐ³öÊý¾Ý¿âµÄ
-ÄÚÈÝ£¬-t ÁÐ³ö±¾ÓÎÏ·Êý¾Ý¿âµÄÊý¾Ý±íµÄÄÚÈÝ¡£-s ²ÎÊýÓÃÓÚÔÚÊý¾Ý
-¿âÀï·ûºÏÖ¸¶¨±í´ïÊ½µÄÐÐ£¬Èô²»Ö¸¶¨±í´ïÊ½£¬ÔòÏÔÊ¾´Ë±íÖÐËùÓÐµÄ
-ÁÐ¡£ ¿¼ÂÇµ½ mud ÖÐÏÔÊ¾µÄÎÊÌâ£¬ÕâÀï±ØÐëÖ¸¶¨×Ö¶ÎÃû£¬Ò²¾ÍÊÇÖ»
-ÄÜÍ¬Ê±ÏÔÊ¾ËùÓÐ½á¹ûÒ»¸ö×Ö¶ÎµÄÐÅÏ¢¡£Èç¹ûÄãÏë»ñµÃÒ»¸ö½á¹ûËùÓÐ
-×Ö¶ÎµÄÐÅÏ¢£¬¿ÉÒÔÊ¹ÓÃ -n ²ÎÊýÏòºó²éÑ¯»òÕß -f ²ÎÊýÏòÇ°²éÑ¯¡£
+æ­¤æŒ‡ä»¤ç”¨äºŽéŠæˆ²æ•¸æ“šåº«çš„ç®¡ç†ã€‚ä½ å¯ä»¥ä½¿ç”¨ -d åƒæ•¸åˆ—å‡ºæ•¸æ“šåº«çš„
+å…§å®¹ï¼Œ-t åˆ—å‡ºæœ¬éŠæˆ²æ•¸æ“šåº«çš„æ•¸æ“šè¡¨çš„å…§å®¹ã€‚-s åƒæ•¸ç”¨äºŽåœ¨æ•¸æ“š
+åº«è£¡ç¬¦åˆæŒ‡å®šè¡¨é”å¼çš„è¡Œï¼Œè‹¥ä¸æŒ‡å®šè¡¨é”å¼ï¼Œå‰‡é¡¯ç¤ºæ­¤è¡¨ä¸­æ‰€æœ‰çš„
+åˆ—ã€‚ è€ƒæ…®åˆ° mud ä¸­é¡¯ç¤ºçš„å•é¡Œï¼Œé€™è£¡å¿…é ˆæŒ‡å®šå­—æ®µåï¼Œä¹Ÿå°±æ˜¯åª
+èƒ½åŒæ™‚é¡¯ç¤ºæ‰€æœ‰çµæžœä¸€å€‹å­—æ®µçš„ä¿¡æ¯ã€‚å¦‚æžœä½ æƒ³ç²å¾—ä¸€å€‹çµæžœæ‰€æœ‰
+å­—æ®µçš„ä¿¡æ¯ï¼Œå¯ä»¥ä½¿ç”¨ -n åƒæ•¸å‘å¾ŒæŸ¥è©¢æˆ–è€… -f åƒæ•¸å‘å‰æŸ¥è©¢ã€‚
 
-ÓÉÓÚÓÎÏ·µÄÊý¾Ý¿âÁ¬½ÓµÄÐ§ÂÊÎÊÌâ£¬±¾Ö¸Áî²»Ìá¹©¶Ô·ÇÓÎÏ·Êý¾Ý¿â
-µÄ²Ù×÷¡£
+ç”±äºŽéŠæˆ²çš„æ•¸æ“šåº«é€£æŽ¥çš„æ•ˆçŽ‡å•é¡Œï¼Œæœ¬æŒ‡ä»¤ä¸æä¾›å°éžéŠæˆ²æ•¸æ“šåº«
+çš„æ“ä½œã€‚
 HELP);
         return 1;
 }

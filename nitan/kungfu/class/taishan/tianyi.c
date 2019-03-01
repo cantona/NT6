@@ -8,8 +8,8 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("ÌìÒÒµÀÈË", ({ "tianyi daoren", "daoren", "tianyi" }) );
-        set("gender", "ÄĞĞÔ");
+        set_name("å¤©ä¹™é“äºº", ({ "tianyi daoren", "daoren", "tianyi" }) );
+        set("gender", "ç”·æ€§");
         set("class", "taoist");
         set("age", 45);
         set("attitude", "peaceful");
@@ -53,7 +53,7 @@ void create()
                 (: exert_function, "recover" :),
         }) );
 
-        create_family("Ì©É½ÅÉ", 13, "µÜ×Ó");
+        create_family("æ³°å±±æ´¾", 13, "å¼Ÿå­");
         setup();
 
         carry_object(WEAPON_DIR+"sword/houjian")->wield();
@@ -78,8 +78,8 @@ void greeting(object ob)
         string family;
 
         family=query("family/family_name", ob);
-        if(family!="Ì©É½ÅÉ")
-                command("say "+RANK_D->query_respect(ob)+"ÈôÊÇ¼ÓÈëÎÒÌ©É½ÅÉ£¬±ØÄÜ¹â´ó±¾ÅÉ£¡");
+        if(family!="æ³°å±±æ´¾")
+                command("say "+RANK_D->query_respect(ob)+"è‹¥æ˜¯åŠ å…¥æˆ‘æ³°å±±æ´¾ï¼Œå¿…èƒ½å…‰å¤§æœ¬æ´¾ï¼");
         else command("nod"+query("id", ob));
 }
 
@@ -89,10 +89,10 @@ void attempt_apprentice(object ob)
                 return;
 
         if( query("mingwang", ob)<0 )
-                command("say ÎÒÌ©É½ÅÉµÜ×Ó¶¼ÊÇĞĞÏÀÕÌÒåÖ®±²£¬"+RANK_D->query_respect(ob)+"»¹×öµÄ²»¹»°¡¡£");
+                command("say æˆ‘æ³°å±±æ´¾å¼Ÿå­éƒ½æ˜¯è¡Œä¿ ä»—ç¾©ä¹‹è¼©ï¼Œ"+RANK_D->query_respect(ob)+"é‚„åšçš„ä¸å¤ å•Šã€‚");
         else
         {
-                command("say ºÃ°¡£¬ÄÇÎÒ¾ÍÊÕÏÂÄã°É¡£");
+                command("say å¥½å•Šï¼Œé‚£æˆ‘å°±æ”¶ä¸‹ä½ å§ã€‚");
                 command("recruit "+query("id", ob));
         }
 }

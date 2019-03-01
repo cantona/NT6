@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "С��");
+        set("short", "小店");
         set("long", @LONG
-�����Ǻ����سǵ�һ��С�꣬��Щ�򵥵���ʳ��ר��׬��Щ�ο�
-��Ǯ��
+這裡是衡陽縣城的一間小店，賣些簡單的飲食，專門賺那些遊客
+的錢。
 LONG );
         set("exits", ([
                 "north" : __DIR__"hengyang1",

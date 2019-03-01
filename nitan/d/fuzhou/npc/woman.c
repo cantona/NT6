@@ -4,10 +4,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("�ٸ�",({ "woman" }) );
-        set("gender", "Ů��" );
+        set_name("少婦",({ "woman" }) );
+        set("gender", "女性" );
         set("age", 25);
-        set("long", "���Ǹ������ٸ���˫Ŀ���飬һ���ظ��Ĺ����ҡ�\n");
+        set("long", "這是個美麗少婦，雙目含情，一對胸脯鼓鼓囊囊。\n");
         set_temp("apply/defense", 6);
         set("combat_exp", 700);
         set("shen", 100);
@@ -38,10 +38,10 @@ void greeting(object ob)
         switch( random(2) )
         {
                 case 0:
-                        say("�ٸ�����˵������λ" + RANK_D->query_respect(ob) + "����������ƤС����ū�Ҹ���ô�찡��\n");
+                        say("少婦低聲說道：這位" + RANK_D->query_respect(ob) + "，瞧我這頑皮小兒，奴家該怎麼辦啊？\n");
                         break;
                 case 1:
-                        say("�ٸ�������˵������λ" + RANK_D->query_respect(ob) + "��ū�ҵ��Ǹ�������֪���ֵ��������ȥ�ˣ������ҹܽ�һ��С���ɡ�\n");
+                        say("少婦嗚嚥著說道：這位" + RANK_D->query_respect(ob) + "，奴家的那個死鬼不知道又到哪裡鬼混去了，您幫我管教一下小兒吧。\n");
                         break;
         }
 }

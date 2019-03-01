@@ -1,4 +1,4 @@
-// puti-zi.c ÆĞÌá×Ó
+// puti-zi.c è©æå­
 
 #include <ansi.h>
 
@@ -10,14 +10,14 @@ void setup()
 
 void create()
 {
-        set_name(HIG "ÆĞÌá×Ó" NOR, ({"puti zi", "zi"}));
+        set_name(HIG "è©æå­" NOR, ({"puti zi", "zi"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
-                set("long", HIG "ÕâÊÇÒ»¿Å¾§Ó¨ÈçÓñµÄÆĞÌá×Ó£¬²É×ÔÁéÉ½·ğ×æ×ù"
-                            "Ç°£¬ÕäÏ¡ÎŞ±È£¬\nÄËÍòÄêÆĞÌáÊ÷Ö®Êµ£¬¹¦ÄÜ»¯°Ù½Ù"
-                            "£¬¶ÉÇ§ÔÖ£¬ÓëÌìµØÍ¬ÊÙ¡£\n");
+                set("unit", "é¡†");
+                set("long", HIG "é€™æ˜¯ä¸€é¡†æ™¶ç‘©å¦‚ç‰çš„è©æå­ï¼Œæ¡è‡ªéˆå±±ä½›ç¥–åº§"
+                            "å‰ï¼Œçç¨€ç„¡æ¯”ï¼Œ\nä¹ƒè¬å¹´è©ææ¨¹ä¹‹å¯¦ï¼ŒåŠŸèƒ½åŒ–ç™¾åŠ«"
+                            "ï¼Œæ¸¡åƒç½ï¼Œèˆ‡å¤©åœ°åŒå£½ã€‚\n");
                 set("value", 50000);
                 set("only_do_effect", 1);
         }
@@ -32,8 +32,8 @@ int do_effect(object me)
 /*
         if ((int)me->query_condition("putizi_drug") > 0)
         {
-                write("Äã¾õµÃÏÖÔÚÄÚÏ¢Î´¶¨£¬¾­ÂöÒşÒş»¹ÄÜ¸Ğµ½ÕæÆø³åµ´£¬²»"
-                      "¸ÒÃ³È»·şÊ³¡£\n");
+                write("ä½ è¦ºå¾—ç¾åœ¨å…§æ¯æœªå®šï¼Œç¶“è„ˆéš±éš±é‚„èƒ½æ„Ÿåˆ°çœŸæ°£æ²–ç›ªï¼Œä¸"
+                      "æ•¢è²¿ç„¶æœé£Ÿã€‚\n");
                 return 1;
         } else
 */
@@ -44,15 +44,15 @@ int do_effect(object me)
                         set("max_neili", neili_limit, me);
                 set("neili",query("max_neili",  me), me);
 
-                message_vision(HIY "$N" HIY "³ÔÏÂÒ»¿ÅÆĞÌá×Ó£¬¶ÙÈ»¼äÖ»¾õÒ»¹ÉºÆ"
-                               "µ´ÎŞ±ÈµÄÕæÆøÖ±³å¶¥ÃÅ£¬Á¬Ã¦ÔË¹¦ÎüÄÉ¡£\n" NOR,
+                message_vision(HIY "$N" HIY "åƒä¸‹ä¸€é¡†è©æå­ï¼Œé “ç„¶é–“åªè¦ºä¸€è‚¡æµ©"
+                               "ç›ªç„¡æ¯”çš„çœŸæ°£ç›´æ²–é ‚é–€ï¼Œé€£å¿™é‹åŠŸå¸ç´ã€‚\n" NOR,
                                me);
                 // me->apply_condition("putizi_drug", 1000);
         } else
         {
-                message_vision(HIY "$N" HIY "Ò»Ñö²±£¬ÍÌÏÂÁËÒ»¿ÅÆĞÌá×Ó¡£\n" NOR,
+                message_vision(HIY "$N" HIY "ä¸€ä»°è„–ï¼Œåä¸‹äº†ä¸€é¡†è©æå­ã€‚\n" NOR,
                                me);
-                tell_object(me, "Äã¾õµÃÃ»É¶¸Ğ¾õ£¬²»Èç»¨ÉúºÃ³Ô¡£\n");
+                tell_object(me, "ä½ è¦ºå¾—æ²’å•¥æ„Ÿè¦ºï¼Œä¸å¦‚èŠ±ç”Ÿå¥½åƒã€‚\n");
         }
 
         // me->start_busy(random(5) + 5);

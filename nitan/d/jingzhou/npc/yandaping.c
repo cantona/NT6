@@ -4,11 +4,11 @@ inherit NPC;
 #include <ansi.h>;
 void create ()
 {
-        set_name("ÑÔ´ïÆ½", ({"yan daping","yan"}));
+        set_name("è¨€é”å¹³", ({"yan daping","yan"}));
         set("long", "
-ÕâÈËÉíĞÎÊİÏ÷£¬Ë«Ä¿¾¼¾¼ÓĞÉñ£¬·şÊÎ¼«ÊÇ»ªÀö£¬Ò»¸±´ó²ÆÖ÷µÄÄ£Ñù¶ù¡£\n");
-        set("gender", "ÄĞĞÔ");
-        set("nickname", HIY"Â½µØÉñÁú"NOR);
+é€™äººèº«å½¢ç˜¦å‰Šï¼Œé›™ç›®ç‚¯ç‚¯æœ‰ç¥ï¼Œæœé£¾æ¥µæ˜¯è¯éº—ï¼Œä¸€å‰¯å¤§è²¡ä¸»çš„æ¨¡æ¨£å…’ã€‚\n");
+        set("gender", "ç”·æ€§");
+        set("nickname", HIY"é™¸åœ°ç¥é¾"NOR);
         set("age", 52);
         set("combat_exp", 1000000);
         set("str", 25);

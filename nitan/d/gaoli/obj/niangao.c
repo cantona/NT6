@@ -1,17 +1,17 @@
-// Õ³¸â¡£¸ßÀöÌØ²ú¡£:-)
+// ç²˜ç³•ã€‚é«˜éº—ç‰¹ç”¢ã€‚:-)
 
 inherit ITEM;
 inherit F_FOOD;
 
 void create()
 {
-        set_name("Õ³¸â", ({"nian gao", "gao"}));
+        set_name("ç²˜ç³•", ({"nian gao", "gao"}));
         set_weight(80);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇ¸ßÀöµÄÌØ²úÕ³¸â¡£\n");
-                set("unit", "¸ö");
+                set("long", "é€™æ˜¯é«˜éº—çš„ç‰¹ç”¢ç²˜ç³•ã€‚\n");
+                set("unit", "å€‹");
                 set("value", 50);
                 set("food_remaining", 3);
                 set("food_supply", 20);

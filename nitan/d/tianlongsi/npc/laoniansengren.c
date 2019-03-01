@@ -7,18 +7,18 @@ void greeting(object ob);
 string ask_me();
 void create()
 {
-        set_name("ÀÏÄêÉ®ÈË", ({ "laonian sengren", "seng", "sengren" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("è€å¹´åƒ§äºº", ({ "laonian sengren", "seng", "sengren" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 80);
-        set("long","ËûÊÇËÂÖĞÕÆ¹ÜÑÌ»ğµÄÉ®ÈË¡£\n");
+        set("long","ä»–æ˜¯å¯ºä¸­æŒç®¡ç…™ç«çš„åƒ§äººã€‚\n");
         set("combat_exp", 1000);
         set("attitude", "friendly");
-        set("rank_info/respect", "ÀÏÉ®");
+        set("rank_info/respect", "è€åƒ§");
         set("vendor_goods", ({
                 "/d/tianlongsi/obj/xiang",
         }));
         set("inquiry" ,([
-                "ÉáÀû×Ó" : (:ask_me():),
+                "èˆåˆ©å­" : (:ask_me():),
         ]));
         setup();
         carry_object("/d/xueshan/obj/c-jiasha")->wear();
@@ -39,8 +39,8 @@ void init()
 void greeting(object ob)
 {
         if( !ob || environment(ob) != environment() ) return;
-        say( "ÀÏÄêÉ®ÈËĞ¦ßäßäµØËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-                                + "£¬ÂòÖùÏã°É¡£\n");
+        say( "è€å¹´åƒ§äººç¬‘å’ªå’ªåœ°èªªé“ï¼šé€™ä½" + RANK_D->query_respect(ob)
+                                + "ï¼Œè²·æŸ±é¦™å§ã€‚\n");
 }
 
 string ask_me()
@@ -49,8 +49,8 @@ string ask_me()
         if( query_temp("marks/ask_temp2", me) )
                 {
                 set_temp("marks/ask_temp3", 1, me);
-                return "¡°Ê§ÇÔµÄÄÇÌìÍíÉÏÎÒ¿´¼ûÒ»¸öºÚÓ°ÍùºóÃæÅÜÁË¡£\n";
+                return "â€œå¤±ç«Šçš„é‚£å¤©æ™šä¸Šæˆ‘çœ‹è¦‹ä¸€å€‹é»‘å½±å¾€å¾Œé¢è·‘äº†ã€‚\n";
                 }
         else
-                return "¡°ÄãºúËµ°ËµÀÊ²Ã´£¿¡±\n";
+                return "â€œä½ èƒ¡èªªå…«é“ä»€éº¼ï¼Ÿâ€\n";
 }

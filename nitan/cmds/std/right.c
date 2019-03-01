@@ -11,9 +11,9 @@ int main(object me, string arg)
         seteuid(getuid());
 
         if (! arg)
-                return notify_fail("ÄãÒª´ğÓ¦Ë­£¿\n");
+                return notify_fail("ä½ è¦ç­”æ‡‰èª°ï¼Ÿ\n");
 
-        notify_fail("ÕâÈËÃ»ÓĞÏòÄãÌá³öÊ²Ã´ÒªÇó°¡£¿\n");
+        notify_fail("é€™äººæ²’æœ‰å‘ä½ æå‡ºä»€éº¼è¦æ±‚å•Šï¼Ÿ\n");
         if (! functionp(f = query_temp("pending/answer/" + arg + "/right", me)))
                 return 0;
 
@@ -24,9 +24,9 @@ int main(object me, string arg)
 int help(object me)
 {
    write( @HELP
-Ö¸Áî¸ñÊ½: right <someone>
+æŒ‡ä»¤æ ¼å¼: right <someone>
 
-Í¬ÒâÄ³ÈËÏòÄãÌá³öµÄÒªÇó¡£
+åŒæ„æŸäººå‘ä½ æå‡ºçš„è¦æ±‚ã€‚
 HELP );
    return 1;
 }

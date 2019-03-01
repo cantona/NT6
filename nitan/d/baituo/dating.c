@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����");
+        set("short", "大廳");
         set("long", @LONG
-���ǰ���ɽׯ�Ĵ������ڲ����輫������������һ�ź�ɫ̴ľ��
-��������·��ž����Ļ�ƿ��һЩ���Ĵ������ıڹ������ҵ��ֻ���
-�ǳ�֮��Ŀ��
+這是白駝山莊的大廳，內部擺設極盡豪華，當中一張黑色檀木條
+案，上面陳放著精美的花瓶和一些珍貴的瓷器，四壁掛滿名家的字畫，
+非常之醒目。
 LONG );
         set("valid_startroom", 1);
         set("exits", ([

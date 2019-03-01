@@ -5,19 +5,19 @@ inherit NPC;
 
 void create()
 {
-        set_name("ĞşÄÑ´óÊ¦", ({
+        set_name("ç„é›£å¤§å¸«", ({
                 "xuannan dashi",
                 "xuannan",
                 "dashi",
         }));
         set("long",
-                "ËûÊÇÒ»Î»°×Ğë°×Ã¼µÄÀÏÉ®£¬Éí´©Ò»Ï®ÒøË¿×Ø»ÆôÂôÄ¡£ËûÉí²Ä¼«Êİ£¬\n"
-                "Á½ÊÖ¸üÏó¼¦×¦Ò»Ñù¡£ËûË«Ä¿Î¢±Õ£¬Ò»¸±Ã»¾«´ò²ÉµÄÄ£Ñù¡£\n"
+                "ä»–æ˜¯ä¸€ä½ç™½é ˆç™½çœ‰çš„è€åƒ§ï¼Œèº«ç©¿ä¸€è¥²éŠ€çµ²æ£•é»ƒè¢ˆè£Ÿã€‚ä»–èº«ææ¥µç˜¦ï¼Œ\n"
+                "å…©æ‰‹æ›´è±¡é›çˆªä¸€æ¨£ã€‚ä»–é›™ç›®å¾®é–‰ï¼Œä¸€å‰¯æ²’ç²¾æ‰“æ¡çš„æ¨¡æ¨£ã€‚\n"
         );
 
 
-        set("nickname", "°ãÈôÌÃÊ××ù");
-        set("gender", "ÄĞĞÔ");
+        set("nickname", "èˆ¬è‹¥å ‚é¦–åº§");
+        set("gender", "ç”·æ€§");
         set("attitude", "friendly");
         set("class", "bonze");
 
@@ -64,7 +64,7 @@ void create()
         prepare_skill("finger", "yizhi-chan");
         prepare_skill("strike", "banruo-zhang");
 
-        create_family("ÉÙÁÖÅÉ", 36, "µÜ×Ó");
+        create_family("å°‘æ—æ´¾", 36, "å¼Ÿå­");
 
 
         //set("master_ob",4);

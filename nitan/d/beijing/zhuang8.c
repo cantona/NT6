@@ -4,9 +4,9 @@ inherit ROOM;
 
 void create()
 {
-    set("short", "³¤ÀÈ");
+    set("short", "é•·å»Š");
         set("long", @LONG
-ÕâÊÇÌõ³¤³¤µÄ×ßÀÈ£¬ËÄ´¦ºÚ³Á³ÁµÄ¡£
+é€™æ˜¯æ¢é•·é•·çš„èµ°å»Šï¼Œå››è™•é»‘æ²‰æ²‰çš„ã€‚
 LONG );
     set("exits", ([
         "north" : "/d/beijing/zhuang9",

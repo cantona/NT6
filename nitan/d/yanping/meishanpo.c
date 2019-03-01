@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "÷ɽ��");
+        set("short", "梅山坡");
         set("long", @LONG
-÷ɽ���ϱ�ֲ÷��������ӯҰ��һ������������Ⱥ�����ţ�����
-�ش����糯�����������ޱߡ���÷ɽ���͡�λ����ƽ�˾�֮һ����
-��������������ɧ�ͣ��ӽ����ƣ�������ʱ��
+梅山坡上遍植梅花，漫坡盈野，一到花季，但見群芳綻放，萬物
+回春，如朝陽遍洒，璀璨無邊。“梅山朝暉”位列延平八景之一，年
+年吸引無數文人騷客，揮金擲酒，共享花時。
 LONG );
         set("exits", ([
                 "westup"   : __DIR__"zhouxue",

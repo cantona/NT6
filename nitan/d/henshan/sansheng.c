@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "������");
+        set("short", "三生塔");
         set("long", @LONG
-�������Ǹ����¿�ɽ��ʦ��˼��Ǵ�����˵��˼��ʦ����������
-������ʳ�����������Զ���п����ӣ���˵���ܽ��ڻ�˼��ʦ����
-��ǧ�꣬��ͤͤ���ǣ�������ԡ�
+三生塔是福嚴寺開山禪師慧思埋骨處，據說慧思禪師的三生均埋
+骨這裡，故稱三生塔。不遠處有棵銀杏，據說曾受戒于慧思禪師，樹
+齡千年，仍亭亭華蓋，歲歲青蒼。
 LONG );
         set("exits", ([ 
                "southup"   : __DIR__"jigaoming",

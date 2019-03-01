@@ -3,12 +3,12 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Âí×¯");
+        set("short", "é¦¬èŽŠ");
         set("long",
-"ÕâÀïÒ»×ùÆÄÎªºÀ»ªµÄ´óÕ¬Ôº³öÏÖÔÚÄãµÄÑÛÇ°£¬Á½Í·¸ß´óµÄ
-Ê¯Ê¨×ÓÕò×¡ÁË´óÃÅÁ½²à£¬ÖìÆá´óÃÅ×ã×ãÓÐÈý´çºñ¡£ÃÅÉÏ¹Ò×ÅÁ½
-¸öµÆÁý£¬Ð´×Å¡¸" HIW "Âí×¯" NOR "¡¹¶þ×Ö¡£Âí´óÔªÄËØ¤°ï¸±°ïÖ÷£¬ÒÔÆä¼Ò´«
-¾ø¼¼ÈýÊ®¶þÊÆËøºíÇÜÄÃÊÖÕðË¸½­ºþ£¬ÔÚÎäÁÖÖÐÍþÃûÔ¶Ñï¡£
+"é€™è£¡ä¸€åº§é —ç‚ºè±ªè¯çš„å¤§å®…é™¢å‡ºç¾åœ¨ä½ çš„çœ¼å‰ï¼Œå…©é ­é«˜å¤§çš„
+çŸ³ç…å­éŽ®ä½äº†å¤§é–€å…©å´ï¼Œæœ±æ¼†å¤§é–€è¶³è¶³æœ‰ä¸‰å¯¸åŽšã€‚é–€ä¸ŠæŽ›è‘—å…©
+å€‹ç‡ˆç± ï¼Œå¯«è‘—ã€Œ" HIW "é¦¬èŽŠ" NOR "ã€äºŒå­—ã€‚é¦¬å¤§å…ƒä¹ƒä¸å¹«å‰¯å¹«ä¸»ï¼Œä»¥å…¶å®¶å‚³
+çµ•æŠ€ä¸‰åäºŒå‹¢éŽ–å–‰æ“’æ‹¿æ‰‹éœ‡çˆæ±Ÿæ¹–ï¼Œåœ¨æ­¦æž—ä¸­å¨åé æšã€‚
 ");
         set("outdoors", "yangzhou");
         set("region", "yangzhou");

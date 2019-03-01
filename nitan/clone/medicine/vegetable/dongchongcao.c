@@ -1,4 +1,4 @@
-// dongchongcao.c ¶¬³æ²İ
+// dongchongcao.c å†¬èŸ²è‰
 
 #include <ansi.h>
 inherit ITEM;
@@ -13,12 +13,12 @@ void init()
 
 void create()
 {
-        set_name(HIB"¶¬³æ²İ"NOR, ({"dongchong cao", "cao"}));
+        set_name(HIB"å†¬èŸ²è‰"NOR, ({"dongchong cao", "cao"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Öê");
-                set("long", HIB"ÕâÊÇÒ»ÖêÏÄ¼¾´Ó¶¬¼¾×êÈëÍÁÖĞµÄËÀ³æÉíÉÏ³¤³öµÄ¶¬³æÏÄ²İ¡£ÊÜÉËÁË·óÉÏÓĞÆæĞ§¡£\n"NOR);
+                set("unit", "æ ª");
+                set("long", HIB"é€™æ˜¯ä¸€æ ªå¤å­£å¾å†¬å­£é‘½å…¥åœŸä¸­çš„æ­»èŸ²èº«ä¸Šé•·å‡ºçš„å†¬èŸ²å¤è‰ã€‚å—å‚·äº†æ•·ä¸Šæœ‰å¥‡æ•ˆã€‚\n"NOR);
                 set("value", 2500);
         }
         set("pour_type", "1");
@@ -31,17 +31,17 @@ int do_fu(string arg)
         int howmuch = query("amount");
         object me = this_player();
 
-        if(!id(arg)) return notify_fail("ÄãÒª·óÊ²Ã´£¿\n");
+        if(!id(arg)) return notify_fail("ä½ è¦æ•·ä»€éº¼ï¼Ÿ\n");
         if(!present(this_object(), me))
-                return notify_fail("ÄãÒª·óÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦æ•·ä»€éº¼ï¼Ÿ\n");
         if( me->is_busy() )
-                return notify_fail("±ğ¼±£¬ÂıÂı·ó£¬Ğ¡ĞÄ±ğ·óÍáÁË¡£\n");
+                return notify_fail("åˆ¥æ€¥ï¼Œæ…¢æ…¢æ•·ï¼Œå°å¿ƒåˆ¥æ•·æ­ªäº†ã€‚\n");
 
         if( query("eff_qi", me) == query("max_qi", me) )
-                return notify_fail("ÄãÏÖÔÚÉíÉÏÃ»ÓĞÊÜµ½ÈÎºÎÉËº¦£¡\n");
+                return notify_fail("ä½ ç¾åœ¨èº«ä¸Šæ²’æœ‰å—åˆ°ä»»ä½•å‚·å®³ï¼\n");
         else {
                 me->receive_curing("qi", 150);
-                message_vision("$N°ÑÒ»Öê¶¬³æ²İ·Å½ø¿ÚÖĞ½ÀËé£¬Ğ¡ĞÄ·óÔÚÉË¿ÚÉÏ£¬ÆøÉ«¿´ÆğÀ´ºÃ¶àÁË¡£\n", me);
+                message_vision("$NæŠŠä¸€æ ªå†¬èŸ²è‰æ”¾é€²å£ä¸­åš¼ç¢ï¼Œå°å¿ƒæ•·åœ¨å‚·å£ä¸Šï¼Œæ°£è‰²çœ‹èµ·ä¾†å¥½å¤šäº†ã€‚\n", me);
                 destruct(this_object());
                 return 1;
         }

@@ -6,13 +6,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIW"±ùÑ©ÐÄ·¨"NOR, ({ "bingxue-book" }));
+        set_name(HIW"å†°é›ªå¿ƒæ³•"NOR, ({ "bingxue-book" }));
         set_weight(600);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
-                set("long", "ÕâÊÇÒ»±¾Ñ§±ùÑ©ÐÄ·¨µÄÊé¡£\n");
+                set("unit", "æœ¬");
+                set("long", "é€™æ˜¯ä¸€æœ¬å­¸å†°é›ªå¿ƒæ³•çš„æ›¸ã€‚\n");
                 set("value", 1000);
                 set("material", "paper");
                 set("skill", ([

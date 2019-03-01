@@ -4,11 +4,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("É½ºï",({"monkey", "houzi", "hou"}) );
-        set("race", "Ò°ÊŞ");
-        set("gender", "ĞÛĞÔ" );
+        set_name("å±±çŒ´",({"monkey", "houzi", "hou"}) );
+        set("race", "é‡ç¸");
+        set("gender", "é›„æ€§" );
         set("age", 15);
-        set("long", "ÕâÊÇÒ»Ö»Ğ×º·µÄÉ½ºï¡£\n");
+        set("long", "é€™æ˜¯ä¸€åªå…‡æ‚çš„å±±çŒ´ã€‚\n");
         set("combat_exp", 20000);
         set("str", 25);
         set("dex", 25);
@@ -21,7 +21,7 @@ void create()
         set("max_jingli",800);
         set("jingli",800);
         
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "Ç°½Å", "ºó½Å", "Î²°Í" }) );
+        set("limbs", ({ "é ­éƒ¨", "èº«é«”", "å‰è…³", "å¾Œè…³", "å°¾å·´" }) );
         set("verbs", ({ "knock", "hoof" }) );
 
         set_temp("apply/damage", 20);

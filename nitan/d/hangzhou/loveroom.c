@@ -1,4 +1,4 @@
-// loveroom.c ÏàÔ¼Ğù
+// loveroom.c ç›¸ç´„è»’
 #include <ansi.h>
 #include <room.h>
 inherit ROOM;
@@ -13,7 +13,7 @@ create_food(string nmstr, string* idlist, string longstr)
         if (longstr)
               set("long", longstr, obj);
         else
-              set("long", "Ò»ÅÌÈÈÆøÌÚÌÚ,ÏãÅçÅçµÄ"+nmstr+"¡£\n", obj);
+              set("long", "ä¸€ç›¤ç†±æ°£é¨°é¨°,é¦™å™´å™´çš„"+nmstr+"ã€‚\n", obj);
         obj->move(this_object());
 }
 
@@ -27,7 +27,7 @@ create_water(string nmstr, string* idlist, string cup, string longstr)
         if (longstr)
               set("long", longstr, obj);
         else
-              set("long", "Ò»±­¿É¿ÚµÄ"+nmstr+"¡£\n", obj);
+              set("long", "ä¸€æ¯å¯å£çš„"+nmstr+"ã€‚\n", obj);
         set("liquid/name", nmstr, obj);
         obj->move(this_object());
 }
@@ -42,19 +42,19 @@ create_wine(string nmstr, string* idlist, string cup, string longstr)
         if (longstr)
                 set("long", longstr, obj);
         else
-                set("long", "Ò»±­´¼ÕıµÄ"+nmstr+"¡£\n", obj);
+                set("long", "ä¸€æ¯é†‡æ­£çš„"+nmstr+"ã€‚\n", obj);
         set("liquid/name", nmstr, obj);
         obj->move(this_object());
 }
 
 void create()
 {
-        set("short", MAG"ÏàÔ¼Ğù"NOR);
+        set("short", MAG"ç›¸ç´„è»’"NOR);
         set("long", @LONG
-Â¥ÍâÂ¥µÄÏàÔ¼Ğù£¬ËÄÃæÍ¨´°¡£ºş·ç·÷Ãæ£¬µ­µ­ÉúÅ¯¡£Ô¶ÍûËÕµÌÒ»
-Ïß£¬Ó³²¨£¬ËøÀ½£¬ÍûÉ½£¬Ñ¹µÌ£¬¶«ÆÖ£¬¿çºçÁùÇÅ¶ÏĞøÁ¬ÑØ£¬ÑÌÁøÁıÉ´£¬
-Á÷İº½¿Ìä¡£½ü´¦°×µÌºáØ¨ºşÉÏ£¬µÌÉÏÑîÁø¸²µØ£¬·¼²İº®ÒğÈçÒ»¶Î±Ì³ñ
-Æ®È»ºşÃæ¡£ÊÒÄÚÒ»ÕÅ¾«ÇÉµÄĞ¡×À¡£×ÀÉÏÒ»Ö½¾«ÖÂµÄ²Ëµ¥(menu)¡£
+æ¨“å¤–æ¨“çš„ç›¸ç´„è»’ï¼Œå››é¢é€šçª—ã€‚æ¹–é¢¨æ‹‚é¢ï¼Œæ·¡æ·¡ç”Ÿæš–ã€‚é æœ›è˜‡å ¤ä¸€
+ç·šï¼Œæ˜ æ³¢ï¼Œé–ç€¾ï¼Œæœ›å±±ï¼Œå£“å ¤ï¼Œæ±æµ¦ï¼Œè·¨è™¹å…­æ©‹æ–·çºŒé€£æ²¿ï¼Œç…™æŸ³ç± ç´—ï¼Œ
+æµé¶¯å¬Œå•¼ã€‚è¿‘è™•ç™½å ¤æ©«äº™æ¹–ä¸Šï¼Œå ¤ä¸Šæ¥ŠæŸ³è¦†åœ°ï¼ŒèŠ³è‰å¯’èŒµå¦‚ä¸€æ®µç¢§ç¶¢
+é£„ç„¶æ¹–é¢ã€‚å®¤å…§ä¸€å¼µç²¾å·§çš„å°æ¡Œã€‚æ¡Œä¸Šä¸€ç´™ç²¾è‡´çš„èœå–®(menu)ã€‚
 LONG
         );
         set("exits", ([ /* sizeof() == 1 */
@@ -63,17 +63,17 @@ LONG
         set("sleep_room",1);
         set("item_desc", ([
             "menu": @TEXT
-        order party:    Å¨ÇéÓÄ»á    (200Á½Òø×Ó)
+        order party:    æ¿ƒæƒ…å¹½æœƒ    (200å…©éŠ€å­)
 
-        order end  :    ½áÊø¿ñ»¶
+        order end  :    çµæŸç‹‚æ­¡
 
-        close door  :   ¹Ø±Õ·¿ÃÅ
+        close door  :   é—œé–‰æˆ¿é–€
 
-        open door   :   ´ò¿ª·¿ÃÅ
+        open door   :   æ‰“é–‹æˆ¿é–€
 
 TEXT
         ]) );
-        //create_door("down", "ºìÄ¾µñ»¨ÃÅ", "up", DOOR_OPENED);
+        //create_door("down", "ç´…æœ¨é›•èŠ±é–€", "up", DOOR_OPENED);
         set("no_clean_up", 0);
 	set("coor/x", 840);
 	set("coor/y", -2040);
@@ -108,10 +108,10 @@ int do_broadcast(string arg)
                 return 0;
         type = query("order_type");
         if (type == "party") {
-                mesg = me->name() + "ÔÚº¼ÖİÂ¥ÍâÂ¥ºÍÄ³ÈËÓÄ»á !!!!!!\n";
-        message("channel:chat", RED+"¡¾Í¨¸æ¡¿"+mesg+NOR, users() );
-        message("channel:chat", GRN+"¡¾Í¨¸æ¡¿"+mesg+NOR, users() );
-        message("channel:chat", CYN+"¡¾Í¨¸æ¡¿"+mesg+NOR, users() );
+                mesg = me->name() + "åœ¨æ­å·æ¨“å¤–æ¨“å’ŒæŸäººå¹½æœƒ !!!!!!\n";
+        message("channel:chat", RED+"ã€é€šå‘Šã€‘"+mesg+NOR, users() );
+        message("channel:chat", GRN+"ã€é€šå‘Šã€‘"+mesg+NOR, users() );
+        message("channel:chat", CYN+"ã€é€šå‘Šã€‘"+mesg+NOR, users() );
         return 1;}
 }
 
@@ -126,8 +126,8 @@ int do_order(string arg)
         env = this_object();
         mesg = query("order_owner");
         if( mesg && (arg == "end") && (mesg == query("id", me))){
-                mesg = "ÓÄ»áÖÕÓÚ½áÊøÁË !!!!!!\n";
-                message("channel:chat", RED+"¡¾Í¨¸æ¡¿"+mesg+NOR, users() );
+                mesg = "å¹½æœƒçµ‚äºçµæŸäº† !!!!!!\n";
+                message("channel:chat", RED+"ã€é€šå‘Šã€‘"+mesg+NOR, users() );
                 delete_temp("plugin");
                 delete("order_owner");
                 delete("order_type");
@@ -142,31 +142,31 @@ int do_order(string arg)
                 return 1;
         }
         if (mesg)
-                return notify_fail("ÕâÀïÒÑ¾­±»ÈË°ü×âÁË.\n");
-        notify_fail("ÄãÃ»ÓĞ×ã¹»µÄÇ®»òÁãÇ®²»¹».\n");
+                return notify_fail("é€™è£¡å·²ç¶“è¢«äººåŒ…ç§Ÿäº†.\n");
+        notify_fail("ä½ æ²’æœ‰è¶³å¤ çš„éŒ¢æˆ–é›¶éŒ¢ä¸å¤ .\n");
         if (arg == "party") {
-                mesg = me->name() + "ºÍÄ³ÈËÔÚº¼ÖİÂ¥ÍâÂ¥ÓÄ»á !!!!!!\n";
+                mesg = me->name() + "å’ŒæŸäººåœ¨æ­å·æ¨“å¤–æ¨“å¹½æœƒ !!!!!!\n";
                 if (me->can_afford(20000) == 0)
                         return 0;
                 me->pay_money(20000);
-                create_water(CYN"Áú¾®²è"NOR, ({ "tea" }), MAG"×ÏÉ°²èÖÑ"NOR );
-                create_water(HIG"±ÌÂİ´º"NOR, ({ "tea" }), MAG"×ÏÉ°Õµ"NOR );
-                create_wine(HIY"ÉÜĞË»Æ¾Æ"NOR, ({ "wine" }), HIW"ÏóÑÀ±­"NOR );
-                create_wine(GRN"ÖñÒ¶Çà"NOR, ({ "wine" }), HIG"ôä´ä±­"NOR );
-                create_wine(RED"Å®¶ùºì"NOR, ({ "wine" }), MAG"×ÏÌ´±­"NOR );
-                create_food(RED"¶«ÆÂÈâ"NOR, ({ "pork" }) );
-                create_food(HIB"Î÷ºş´×Óã"NOR, ({ "fish" }) );
-                create_food(HIR"Áú¾®ÏºÈÊ"NOR, ({ "shrimp" }) );
-                create_food(YEL"½Ğ»¯Í¯¼¦"NOR, ({ "chicken" }) );
-                create_food(HIR"¹ğ»¨ÏÊÀõ¸ş"NOR, ({ "guihua geng" }) );
-                create_food(HIY"°Ù¹ûÓÍ°ü"NOR, ({ "baozi" }) );
+                create_water(CYN"é¾äº•èŒ¶"NOR, ({ "tea" }), MAG"ç´«ç ‚èŒ¶ç›…"NOR );
+                create_water(HIG"ç¢§èºæ˜¥"NOR, ({ "tea" }), MAG"ç´«ç ‚ç›"NOR );
+                create_wine(HIY"ç´¹èˆˆé»ƒé…’"NOR, ({ "wine" }), HIW"è±¡ç‰™æ¯"NOR );
+                create_wine(GRN"ç«¹è‘‰é’"NOR, ({ "wine" }), HIG"ç¿¡ç¿ æ¯"NOR );
+                create_wine(RED"å¥³å…’ç´…"NOR, ({ "wine" }), MAG"ç´«æª€æ¯"NOR );
+                create_food(RED"æ±å¡è‚‰"NOR, ({ "pork" }) );
+                create_food(HIB"è¥¿æ¹–é†‹é­š"NOR, ({ "fish" }) );
+                create_food(HIR"é¾äº•è¦ä»"NOR, ({ "shrimp" }) );
+                create_food(YEL"å«åŒ–ç«¥é›"NOR, ({ "chicken" }) );
+                create_food(HIR"æ¡‚èŠ±é®®æ —ç¾¹"NOR, ({ "guihua geng" }) );
+                create_food(HIY"ç™¾æœæ²¹åŒ…"NOR, ({ "baozi" }) );
                 }
          else {
-                return notify_fail("Õâ¶ùÖ»³Ğ°ìÓÄ»áĞ¡Ñç¡£\n");
+                return notify_fail("é€™å…’åªæ‰¿è¾¦å¹½æœƒå°å®´ã€‚\n");
         }
-        message("channel:chat", RED+"¡¾Í¨¸æ¡¿"+mesg+NOR, users() );
-        message("channel:chat", GRN+"¡¾Í¨¸æ¡¿"+mesg+NOR, users() );
-        message("channel:chat", CYN+"¡¾Í¨¸æ¡¿"+mesg+NOR, users() );
+        message("channel:chat", RED+"ã€é€šå‘Šã€‘"+mesg+NOR, users() );
+        message("channel:chat", GRN+"ã€é€šå‘Šã€‘"+mesg+NOR, users() );
+        message("channel:chat", CYN+"ã€é€šå‘Šã€‘"+mesg+NOR, users() );
         set("order_owner",query("id", me));
         set("order_type", arg);
         return 1;
@@ -176,15 +176,15 @@ int do_close(string arg)
 {
         object me=this_player();
         object room;
-        if(arg!="door") return notify_fail("ÄãÒª¸ÉÊ²Ã´£¿\n");
+        if(arg!="door") return notify_fail("ä½ è¦å¹¹ä»€éº¼ï¼Ÿ\n");
         if (me->is_busy() || me->is_fighting())
-                 return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
+                 return notify_fail("ä½ æ­£å¿™è‘—å‘¢ã€‚\n");
         room=this_object();
         delete("exits/down", room);
         query_temp("plugin", me);
         set_temp("plugin", 1, me);
         me->start_busy(10);
-        message("channel:chat", HIR+"¡¾Í¨¸æ¡¿"+me->name()+"Á¬ÃÅ¶¼¹ØÉÏÀ² !!!!\n"NOR, users() );
+        message("channel:chat", HIR+"ã€é€šå‘Šã€‘"+me->name()+"é€£é–€éƒ½é—œä¸Šå•¦ !!!!\n"NOR, users() );
         return 1;
 }
 
@@ -192,15 +192,15 @@ int do_open(string arg)
 {
         object me=this_player();
         object room;
-        if(arg!="door") return notify_fail("ÄãÒª¸ÉÊ²Ã´£¿\n");
+        if(arg!="door") return notify_fail("ä½ è¦å¹¹ä»€éº¼ï¼Ÿ\n");
         if (me->is_busy() || me->is_fighting())
-                 return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
+                 return notify_fail("ä½ æ­£å¿™è‘—å‘¢ã€‚\n");
         room=this_object();
         set("exits/down", __DIR__"jiulou", room);
         query_temp("plugin", me);
         delete_temp("plugin", me);
         me->start_busy(10);
-        message("channel:chat", HIR+"¡¾Í¨¸æ¡¿"+me->name()+"ÖÕÓÚ´ò¿ªÃÅÀ² !!!!\n"NOR, users() );
+        message("channel:chat", HIR+"ã€é€šå‘Šã€‘"+me->name()+"çµ‚äºæ‰“é–‹é–€å•¦ !!!!\n"NOR, users() );
         return 1;
 }
 
@@ -208,5 +208,5 @@ int valid_leave(object me, string dir)
 {
         if( query("id", me) != query("order_owner") )
                 return 1;
-        return notify_fail(RED + "ÏÈÓÃ order end ½áÊøºóÔÙ×ß.\n" + NOR);
+        return notify_fail(RED + "å…ˆç”¨ order end çµæŸå¾Œå†èµ°.\n" + NOR);
 }

@@ -24,10 +24,10 @@ int main(object me, string arg)
                 return 0;
                 
         if (! arg || sscanf(arg, "%s", file) != 1) 
-                return notify_fail("Ö¸Áî¸ñÊ½ tounix <file|dir>\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ tounix <file|dir>\n");
                 
         if (! SECURITY_D->valid_write(file, me))
-                return notify_fail("Ã»ÓĞ×ã¹»µÄ¶ÁĞ´È¨ÏŞ.\n");
+                return notify_fail("æ²’æœ‰è¶³å¤ çš„è®€å¯«æ¬Šé™.\n");
 
         if (file_size(file) == -1 )
                 file=resolve_path(query("cwd", me),file);
@@ -43,9 +43,9 @@ int main(object me, string arg)
                 file += "/";
 
         if (file_size(file) != -2) 
-                return notify_fail(file + " ²¢²»ÊÇÒ»¸öÄ¿Â¼¡£\n");
+                return notify_fail(file + " ä¸¦ä¸æ˜¯ä¸€å€‹ç›®éŒ„ã€‚\n");
                 
-        write(HIW "ÅúÁ¿µµ°¸×ª»»ÖĞ£¬ÇëÉÔºò...\n" NOR);
+        write(HIW "æ‰¹é‡æª”æ¡ˆè½‰æ›ä¸­ï¼Œè«‹ç¨å€™...\n" NOR);
 
         dir = deep_file_list(file);
         for(i = 0; i < sizeof(dir); i++)
@@ -55,15 +55,15 @@ int main(object me, string arg)
                 {
                         convert_file(dir[i]);
                         total++;
-                        // write(dir[i] +" ÎÄ×ª»»Íê³É¡£\n");
+                        // write(dir[i] +" æ–‡è½‰æ›å®Œæˆã€‚\n");
                 }
         }
-        write("\nÄ¿Â¼¡Ã" + file + "ÄÚËùÓĞÎÄ¼ş×ª»»Íê³É¡£\n");
+        write("\nç›®éŒ„ï¸°" + file + "å…§æ‰€æœ‰æ–‡ä»¶è½‰æ›å®Œæˆã€‚\n");
 
         if (total > 0)
-                write(HIC "×Ü¹²ÓĞ " + HIW + total + HIC " ¸öµµ°¸±»³É¹¦×ª»»Îª UNIX ¸ñÊ½£¡\n" NOR);
+                write(HIC "ç¸½å…±æœ‰ " + HIW + total + HIC " å€‹æª”æ¡ˆè¢«æˆåŠŸè½‰æ›ç‚º UNIX æ ¼å¼ï¼\n" NOR);
         else
-                write(HIC "Ã»ÓĞ×ª»»ÈÎºÎµµ°¸¡£\n" NOR);
+                write(HIC "æ²’æœ‰è½‰æ›ä»»ä½•æª”æ¡ˆã€‚\n" NOR);
         return 1;
 }
 

@@ -1,4 +1,4 @@
-// pingpu_kagl.c Æ½ÆÒ×åµÄ¿­´ï¸ñÀ¼ÈË
+// pingpu_kagl.c å¹³åŸ”æ—çš„å‡±é”æ ¼è˜­äºº
 // Last Modifyed by Ahda on Jan. 4 2002
 
 inherit NPC;
@@ -8,8 +8,8 @@ void create()
         int age;
         age = 20 + random(40);
         
-        set_name("Æ½ÆÒ×å¿­´ï¸ñÀ¼ÈË", ({ "kaidagelan man", "pingpu", "kaida", "gelan", }));
-        set("gender", "ÄĞĞÔ");
+        set_name("å¹³åŸ”æ—å‡±é”æ ¼è˜­äºº", ({ "kaidagelan man", "pingpu", "kaida", "gelan", }));
+        set("gender", "ç”·æ€§");
         set("age", age);
 
         set_skill("unarmed", 20);

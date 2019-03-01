@@ -5,13 +5,13 @@ inherit NPC;
 
 void create()
 {
-        set_name("�в�ɮ", ({"tuobo seng","seng"}));
-        set("title", "���ֵ���");
+        set_name("托砵僧", ({"tuobo seng","seng"}));
+        set("title", "少林弟子");
         set("long",
-                "����һλδͨ���ʵ�������У����Ϲ��ź������΢Ц��\n"
+                "他是一位未通世故的青年和尚，臉上掛著孩兒般的微笑。\n"
         );
 
-        set("gender", "����");
+        set("gender", "男性");
         set("attitude", "heroism");
         set("class", "bonze");
 
@@ -31,7 +31,7 @@ void create()
         set("chat_chance", 30);
 
         set("chat_msg", ({
-                "�в�ɮ˵��: ����λʩ�����������Ӹ�ƶɮ���������£��츣������\n",
+                "托砵僧說道: 請這位施主化幾兩銀子給貧僧，積點陰德，造福眾生。\n",
                 (: random_move :)
         }) );
 
@@ -60,18 +60,18 @@ int accept_object(object me, object ob)
         object ling;
         
         command("smile");
-        command("say �����ӷ𣬶�л��λ" + RANK_D->query_respect(me) + " ��");
+        command("say 阿弭陀佛，多謝這位" + RANK_D->query_respect(me) + " ！");
 
         if( query("money_id", ob) && ob->value() >= 10000 && query("class", me) != "bonze" )
         {
                 command("say " + RANK_D->query_respect(me) + 
-                "������ƺ�ʩ�������������գ����·�������һ������Ӣ�ۣ���֪��Ը����������һ�Σ�");
+                "如此樂善好施，兼又身懷絕藝，本寺方丈正欲一晤天下英雄，不知可願赴少林寺內一遊？");
 
                 ling=new("/d/shaolin/obj/tie-ling");
                 ling->move(me);
-                message_vision("�в�ɮ��$Nһ���������ơ�\n", me);
+                message_vision("托砵僧給$N一塊鐵鑄令牌。\n", me);
 
-                command("say ������ʱһ�գ���ʱʧЧ��������ʱǰ���£�������в��㣬�м��мǣ�"); 
+                command("say 此牌限時一日，逾時失效，請于限時前離寺，否則多有不便，切記切記！"); 
                 return 1;
         }
 

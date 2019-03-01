@@ -6,14 +6,14 @@ inherit MYHEART2;
 
 void create()
 {
-        set_name(HIC "·öÉ£ÍÞÍÞ" NOR, ({ "fusang wawa", "fusang", "wawa" }) );
+        set_name(HIC "æ‰¶æ¡‘å¨ƒå¨ƒ" NOR, ({ "fusang wawa", "fusang", "wawa" }) );
         set_weight(1);
         if( clonep())
                 set_default_object(__FILE__);
         else {
                 set("material", "paper");
-                set("unit", "¸ö");
-                set("long", HIC "Ò»¸öÖÆ×÷¾«ÃÀµÄ²¼ÍÞÍÞ£¬·öÉ£ÎäÊ¿¶àÓÃ´Ë×÷Îª»¤Éí·û£¬ÒÔÇóÆ½°²¡£\n" NOR);
+                set("unit", "å€‹");
+                set("long", HIC "ä¸€å€‹åˆ¶ä½œç²¾ç¾Žçš„å¸ƒå¨ƒå¨ƒï¼Œæ‰¶æ¡‘æ­¦å£«å¤šç”¨æ­¤ä½œç‚ºè­·èº«ç¬¦ï¼Œä»¥æ±‚å¹³å®‰ã€‚\n" NOR);
                 set("value", 1000000);
                 set("limit", ([
                         "exp"    :   2000000,

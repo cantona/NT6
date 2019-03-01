@@ -3,48 +3,48 @@
 #include <ansi.h>
 
 mapping hammer_obj = ([
-        "/d/xueshan/obj/yinlun":1,            //ÔİÊ±ÎŞ´¦»ñÈ¡
-        "/d/xueshan/obj/lubo":36,             //Á«×ù
-        "/d/xueshan/obj/jinlun":1,            //ÔİÊ±ÎŞ´¦»ñÈ¡
-        "/d/xueshan/obj/falun":20,            //Ñ©É½¿â·¿¡¢Ëæ»úÈı¸öÖ®ÄÚ
-        "/d/xueshan/obj/faling":18,           //¼ÀìëÀ®Âï(ËÄ¸ö)¡¢Ëşµ×
-        "/d/xingxiu/obj/yaochu":26,           //ÉñÅ©µÜ×Ó¡¢²ÉÒ©ÈË£¨Èı¸ö£©
-        "/d/xiakedao/obj/zhutou":1,           //ÏÀ¿ÍµºµÄÒ»ÂÉÁ®¼Û
-        "/d/xiakedao/obj/forleg":1,           //ÏÀ¿ÍµºµÄÒ»ÂÉÁ®¼Û
-        "/d/xiakedao/obj/backleg":1,          //ÏÀ¿ÍµºµÄÒ»ÂÉÁ®¼Û
-        "/d/xiakedao/npc/obj/jitui":1,        //ÏÀ¿ÍµºµÄÒ»ÂÉÁ®¼Û
-        "/d/wudang/obj/shitou":20,            //Îäµ±Ğ¡Â·
-        "/d/wanjiegu/npc/obj/muyu":34,        //»ÆÃ¼´óÊ¦
-        "/d/village/npc/obj/hothammer":33,    //·ëÌú½³
-        "/d/village/npc/obj/hammer":5,        //·ëÌú½³¹ºÂò
-        "/d/tulong/yitian/npc/obj/tongbo":18, //²§É®
-        "/d/tulong/tulong/obj/stone":5,       //º£Ì²
-        "/d/tulong/tulong/npc/obj/hammer":36, //³£½ğÅô
-        "/d/shaolin/obj/muchui":25,           //ÉÙÁÖ¶«²àµî¡¢Î÷²àµî
-        "/d/quanzhen/npc/obj/jitui":5,        //¹ºÂò
-        "/d/mingjiao/obj/shigu":22,           //¸ê±ÚÌ²£¨Áù¸ù£©
-        "/d/mingjiao/obj/mutang":22,          //É½ÃÅÃÅÎÀ£¨Á½¸ö£©¡¢Î×Ê¿ËÄ¸ö
-        "/d/heimuya/obj/zijinchui":1,         //ÔİÊ±ÎŞ´¦»ñÈ¡
-        "/d/heimuya/npc/obj/zijinchui":33,    //Í¯°ÙĞÜ
-        "/d/hangzhou/obj/shitou":20,          //º¼Öİ±¦Ê¯É½
-        "/d/guanwai/npc/obj/tongren":33,      //ëøÒ»À×
-        "/d/guanwai/npc/obj/tiepipa":33,      //½¹ÎÄÆÚ
-        "/d/foshan/obj/shikuai":12,           //·ğÉ½ÁÖ¼äµÀ
-        "/d/dali/npc/obj/yaoqin":30,          //´óÀí¸èÅ®£¨Á½¸ö£©
-        "/d/chengdu/npc/obj/jitui":5,           //¿ÉÒÔ¹ºÂò
-        "/d/city/obj/stone":20,               //Éß¹È
-        "/d/city/obj/shitou":15,              //ÑïÖİ³ÇÍâÃÜÁÖ
-        "/d/city/obj/jitui":5,                //¿ÉÒÔ¹ºÂò
-        "/d/city/obj/hammer":1,               //ÔİÊ±ÎŞ´¦»ñÈ¡
-        "/d/city/obj/bone":26,                //´óºÍ½Ö±ß
-        "/d/city/npc/obj/jitui":5,            //¿ÉÒÔ¹ºÂò
-        "/d/city/npc/obj/hammer":1,           //ÔİÊ±ÎŞ´¦»ñÈ¡
-        "/d/changan/npc/obj/jitui":5,         //¿ÉÒÔ¹ºÂò
-        "/d/changan/npc/obj/hammer":26,       //Ä½ÈİºÀ¡¢ÕÅºâ¡¢ÏôÈº
-        "/d/beijing/npc/obj/hammer":25,       //±±¾©Ìú½³
-        "/clone/weapon/hammer":5,             //ºÜ¶à
-        "/clone/weapon/falun":5,              //ºÜ¶à
-        "/clone/food/jitui":5,                //¿ÉÒÔ¹ºÂò
+        "/d/xueshan/obj/yinlun":1,            //æš«æ™‚ç„¡è™•ç²å–
+        "/d/xueshan/obj/lubo":36,             //è“®åº§
+        "/d/xueshan/obj/jinlun":1,            //æš«æ™‚ç„¡è™•ç²å–
+        "/d/xueshan/obj/falun":20,            //é›ªå±±åº«æˆ¿ã€éš¨æ©Ÿä¸‰å€‹ä¹‹å…§
+        "/d/xueshan/obj/faling":18,           //ç¥­ç¥€å–‡å˜›(å››å€‹)ã€å¡”åº•
+        "/d/xingxiu/obj/yaochu":26,           //ç¥è¾²å¼Ÿå­ã€æ¡è—¥äººï¼ˆä¸‰å€‹ï¼‰
+        "/d/xiakedao/obj/zhutou":1,           //ä¿ å®¢å³¶çš„ä¸€å¾‹å»‰åƒ¹
+        "/d/xiakedao/obj/forleg":1,           //ä¿ å®¢å³¶çš„ä¸€å¾‹å»‰åƒ¹
+        "/d/xiakedao/obj/backleg":1,          //ä¿ å®¢å³¶çš„ä¸€å¾‹å»‰åƒ¹
+        "/d/xiakedao/npc/obj/jitui":1,        //ä¿ å®¢å³¶çš„ä¸€å¾‹å»‰åƒ¹
+        "/d/wudang/obj/shitou":20,            //æ­¦ç•¶å°è·¯
+        "/d/wanjiegu/npc/obj/muyu":34,        //é»ƒçœ‰å¤§å¸«
+        "/d/village/npc/obj/hothammer":33,    //é¦®éµåŒ 
+        "/d/village/npc/obj/hammer":5,        //é¦®éµåŒ è³¼è²·
+        "/d/tulong/yitian/npc/obj/tongbo":18, //ç µåƒ§
+        "/d/tulong/tulong/obj/stone":5,       //æµ·ç˜
+        "/d/tulong/tulong/npc/obj/hammer":36, //å¸¸é‡‘éµ¬
+        "/d/shaolin/obj/muchui":25,           //å°‘æ—æ±å´æ®¿ã€è¥¿å´æ®¿
+        "/d/quanzhen/npc/obj/jitui":5,        //è³¼è²·
+        "/d/mingjiao/obj/shigu":22,           //æˆˆå£ç˜ï¼ˆå…­æ ¹ï¼‰
+        "/d/mingjiao/obj/mutang":22,          //å±±é–€é–€è¡›ï¼ˆå…©å€‹ï¼‰ã€å·«å£«å››å€‹
+        "/d/heimuya/obj/zijinchui":1,         //æš«æ™‚ç„¡è™•ç²å–
+        "/d/heimuya/npc/obj/zijinchui":33,    //ç«¥ç™¾ç†Š
+        "/d/hangzhou/obj/shitou":20,          //æ­å·å¯¶çŸ³å±±
+        "/d/guanwai/npc/obj/tongren":33,      //æ»•ä¸€é›·
+        "/d/guanwai/npc/obj/tiepipa":33,      //ç„¦æ–‡æœŸ
+        "/d/foshan/obj/shikuai":12,           //ä½›å±±æ—é–“é“
+        "/d/dali/npc/obj/yaoqin":30,          //å¤§ç†æ­Œå¥³ï¼ˆå…©å€‹ï¼‰
+        "/d/chengdu/npc/obj/jitui":5,           //å¯ä»¥è³¼è²·
+        "/d/city/obj/stone":20,               //è›‡è°·
+        "/d/city/obj/shitou":15,              //æšå·åŸå¤–å¯†æ—
+        "/d/city/obj/jitui":5,                //å¯ä»¥è³¼è²·
+        "/d/city/obj/hammer":1,               //æš«æ™‚ç„¡è™•ç²å–
+        "/d/city/obj/bone":26,                //å¤§å’Œè¡—é‚Š
+        "/d/city/npc/obj/jitui":5,            //å¯ä»¥è³¼è²·
+        "/d/city/npc/obj/hammer":1,           //æš«æ™‚ç„¡è™•ç²å–
+        "/d/changan/npc/obj/jitui":5,         //å¯ä»¥è³¼è²·
+        "/d/changan/npc/obj/hammer":26,       //æ…•å®¹è±ªã€å¼µè¡¡ã€è•­ç¾¤
+        "/d/beijing/npc/obj/hammer":25,       //åŒ—äº¬éµåŒ 
+        "/clone/weapon/hammer":5,             //å¾ˆå¤š
+        "/clone/weapon/falun":5,              //å¾ˆå¤š
+        "/clone/food/jitui":5,                //å¯ä»¥è³¼è²·
 ]);
 
 int check_value(string filename)

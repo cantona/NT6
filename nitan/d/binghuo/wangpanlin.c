@@ -5,12 +5,12 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����");
+        set("short", "樹林");
         set("long", @LONG
-����ɽ�Ǹ�С����ɽʯ��ľ���޿ɹ�֮�������Ͻ��и����壬Φ
-�ɸ��ʣ�ͣ����ʮ���Ҵ󴬣����Ǿ޾����ɳ��һ���˵���������
-�������������ڱȽ����������������ԭ�����˲�����ϰ����������
-����涷��
+王盤山是個小島，山石樹木亦無可觀之處。東南角有個港灣，桅
+檣高聳，停泊著十來艘大船，想是巨鯨幫、海沙派一幹人的座船。林
+裡兩個劍客正在比劍，招數巧妙狠辣，原來兩人並非練習劍法，竟是
+真打真鬥。
 LONG );
         set("no_sleep_room",1);
         set("outdoors", "wangpan");

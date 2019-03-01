@@ -1,4 +1,4 @@
-// qiangdao.c Ç¿µÁ
+// qiangdao.c å¼·ç›œ
 // lag.2000/3/17
 
 inherit NPC;
@@ -11,11 +11,11 @@ void create()
         me=this_player();
         if (! me) return;
         myskill=me->query_skill("force");
-        set_name(HIC"åÐÒ£ÅÉÅÑÍ½"NOR,({query("id", me)+"-pantu"}));
-        set("title",query("name", me)+"¶¨ÏÂµÄ");
-        set("gender", "ÄÐÐÔ");
+        set_name(HIC"é€é™æ´¾å›å¾’"NOR,({query("id", me)+"-pantu"}));
+        set("title",query("name", me)+"å®šä¸‹çš„");
+        set("gender", "ç”·æ€§");
         set("age", 28);
-        set("long", "ËûÊÇÒ»¸öåÐÒ£ÅÉÅÑÍ½¡£\n");
+        set("long", "ä»–æ˜¯ä¸€å€‹é€é™æ´¾å›å¾’ã€‚\n");
 
         set("attitude", "peaceful");
         set("qi",query("qi", me)*4/5);
@@ -29,7 +29,7 @@ void create()
         set("per",query("per", me)*4/5);
         set("killer",query("id", me));
         set("combat_exp",query("combat_exp", me)*4/5);
-// ¼ÓÏÂÃæ5¾äÊÇÈÃÇ¿µÁ×Ô¶¯×ß£¬ÔöÌíÍæ¼Ò×ö»úÆ÷ÈËµÄÀ§ÄÑ£¡-ÌÇÔ²SMILE
+// åŠ ä¸‹é¢5å¥æ˜¯è®“å¼·ç›œè‡ªå‹•èµ°ï¼Œå¢žæ·»çŽ©å®¶åšæ©Ÿå™¨äººçš„å›°é›£ï¼-ç³–åœ“SMILE
         set("chat_chance_combat", 30);
         set("chat_msg_combat", ({
                 (: perform_action, "blade.wanshi" :),
@@ -84,7 +84,7 @@ void leave()
 {
         object ob = this_object();
         if (!ob->is_fighting()) {
-                message_vision(HIC "åÐÒ£ÅÉÅÑÍ½×ê½øÂ·±ßµÄÔÓ²Ý£¬²»¼ûÁË¡£\n" NOR,this_object());
+                message_vision(HIC "é€é™æ´¾å›å¾’é‘½é€²è·¯é‚Šçš„é›œè‰ï¼Œä¸è¦‹äº†ã€‚\n" NOR,this_object());
                 destruct(this_object());
                 }
         else call_out("leave",30);
@@ -93,7 +93,7 @@ void leave()
 void die()
 {
         object ob;
-        message_vision("$N´ó½ÐÒ»Éù£ºÎÒ²»¸ÊÐÄ£¡ÏûÊ§ÁË¡£\n", this_object());
+        message_vision("$Nå¤§å«ä¸€è²ï¼šæˆ‘ä¸ç”˜å¿ƒï¼æ¶ˆå¤±äº†ã€‚\n", this_object());
         ob = new("/d/xiaoyao/obj/zhi");
         ob->move(environment(this_object()));
         destruct(this_object());

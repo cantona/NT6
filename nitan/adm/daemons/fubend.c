@@ -33,8 +33,8 @@ int clean_up() { return 1; }
 void create()
 {
         seteuid(ROOT_UID);
-        set("channel_id", "¸±±¾¾«Áé");
-        CHANNEL_D->do_channel(this_object(), "sys", "¸±±¾ÏµÍ³ÒÑ¾­Æô¶¯¡£");
+        set("channel_id", "å‰¯æœ¬ç²¾éˆ");
+        CHANNEL_D->do_channel(this_object(), "sys", "å‰¯æœ¬ç³»çµ±å·²ç¶“å•Ÿå‹•ã€‚");
         load_all_fuben();
 }
 
@@ -108,12 +108,12 @@ public int enter_fuben(object me, string fbname)
         int ret, dest_time;
 
         if( undefinedp(fuben_data[fbname]) ) {
-                tell_object(me, "Ã»ÓĞÕâ¸ö¸±±¾¡£\n");
+                tell_object(me, "æ²’æœ‰é€™å€‹å‰¯æœ¬ã€‚\n");
                 return 0;
         }
 
         if( me->query_condition("killer") ) {
-                tell_object(me, "ÄãÊÇ±»Í¨¼©µÄ×ï·¸£¬ÎŞ·¨½øÈë¸±±¾£¡\n");
+                tell_object(me, "ä½ æ˜¯è¢«é€šç·çš„ç½ªçŠ¯ï¼Œç„¡æ³•é€²å…¥å‰¯æœ¬ï¼\n");
                 return 0;
         }
 
@@ -121,7 +121,7 @@ public int enter_fuben(object me, string fbname)
         if( sizeof(inv) > 0 ) {
                 foreach( object ob in inv ) {
                         if( interactive(ob) || userp(ob) ) {
-                                tell_object(me, "Äã²»¿ÉÒÔ½«ÆäËûÍæ¼Ò±³½ø¸±±¾¡£\n");
+                                tell_object(me, "ä½ ä¸å¯ä»¥å°‡å…¶ä»–ç©å®¶èƒŒé€²å‰¯æœ¬ã€‚\n");
                                 return 0;
                         }
                 }
@@ -129,12 +129,12 @@ public int enter_fuben(object me, string fbname)
 
         if( !undefinedp(fuben_data[fbname]["team"]) ) {
                 if( !me->in_team() ) {
-                        tell_object(me, "Äã±ØĞë×é¶Ó²ÅÄÜ½øÈëÕâ¸ö¸±±¾£¡\n");
+                        tell_object(me, "ä½ å¿…é ˆçµ„éšŠæ‰èƒ½é€²å…¥é€™å€‹å‰¯æœ¬ï¼\n");
                         return 0;
                 }
 
                 if( !objectp(me->query_team_leader()) ) {
-                        tell_object(me, "ÄãµÄ¶ÓÎéºÃÏó³öÏÖÁËÎÊÌâ£¡\n");
+                        tell_object(me, "ä½ çš„éšŠä¼å¥½è±¡å‡ºç¾äº†å•é¡Œï¼\n");
                         return 0;
                 }
                 owner=(query("id", me->query_team_leader()));
@@ -143,7 +143,7 @@ public int enter_fuben(object me, string fbname)
                         owner=query("id", me);
                 } else {
                         if( !objectp(me->query_team_leader()) ) {
-                                tell_object(me, "ÄãµÄ¶ÓÎéºÃÏó³öÏÖÁËÎÊÌâ£¡\n");
+                                tell_object(me, "ä½ çš„éšŠä¼å¥½è±¡å‡ºç¾äº†å•é¡Œï¼\n");
                                 return 0;
                         }
                         owner=(query("id", me->query_team_leader()));
@@ -155,7 +155,7 @@ public int enter_fuben(object me, string fbname)
         entry = find_object(filename);
         if( !entry ) {
                 if( me->in_team() && !me->is_team_leader() ) {
-                        tell_object(me, "±ØĞëÓÉ¶Ó³¤À´´´½¨¸±±¾£¡\n");
+                        tell_object(me, "å¿…é ˆç”±éšŠé•·ä¾†å‰µå»ºå‰¯æœ¬ï¼\n");
                         return 0;
                 }
                 if( undefinedp(fuben_list[fbname]) )
@@ -186,9 +186,9 @@ public int enter_fuben(object me, string fbname)
         if( entry ) {
                 /*
                 CHANNEL_D->do_channel(this_object(),"sys",
-                        query("name", me)+"("+query("id", me)+")"+"½øÈëÁË¸±±¾"+fbname+"("+owner+")¡£");
+                        query("name", me)+"("+query("id", me)+")"+"é€²å…¥äº†å‰¯æœ¬"+fbname+"("+owner+")ã€‚");
                 */
-                tell_object(me, HIR "×£ÄãºÃÔËÆø£¡\n" NOR);
+                tell_object(me, HIR "ç¥ä½ å¥½é‹æ°£ï¼\n" NOR);
                 me->move(entry);
 
                 return 1;
@@ -358,7 +358,7 @@ void clear_maze_item(object user)
 
 public int delay_clear_fuben(string fbname,string owner)
 {
-        tell_fuben(fbname,owner,HBCYN+fuben_data[fbname]["name"]+"("+owner+")¸±±¾½«ÔÚ"+DELAY_CLEAR_TIME+"ÃëºóÏûÊ§¡£\n"NOR);
+        tell_fuben(fbname,owner,HBCYN+fuben_data[fbname]["name"]+"("+owner+")å‰¯æœ¬å°‡åœ¨"+DELAY_CLEAR_TIME+"ç§’å¾Œæ¶ˆå¤±ã€‚\n"NOR);
         call_out("clear_fuben",DELAY_CLEAR_TIME,fbname,owner);
         return 1;
 }
@@ -387,14 +387,14 @@ public int clear_fuben(string fbname,string owner)
         }
         if( out ) outroom = get_object(out);
         else      outroom = get_object(VOID_OB);
-        tell_fuben(fbname,owner,HBCYN+fuben_data[fbname]["name"]+"("+owner+")¸±±¾¿Õ¼ä±»´İ»Ù¡£\n"NOR);
+        tell_fuben(fbname,owner,HBCYN+fuben_data[fbname]["name"]+"("+owner+")å‰¯æœ¬ç©ºé–“è¢«æ‘§æ¯€ã€‚\n"NOR);
         for( i=0;i<sz;i++ ) {
                 file = "/f/"+fbname+"/"+owner+"/"+key[i];
                 if( objectp(room = find_object(file)) ) {
                         if( room->is_maze() )
-                                room->remove_all_players(outroom, "Ò»ÕóÊ±¿ÕµÄÅ¤Çú½«Äã´«ËÍµ½ÁíÒ»¸öµØ·½....\n");
+                                room->remove_all_players(outroom, "ä¸€é™£æ™‚ç©ºçš„æ‰­æ›²å°‡ä½ å‚³é€åˆ°å¦ä¸€å€‹åœ°æ–¹....\n");
                         else if( arrayp(inv = all_inventory(room)) ) {
-                                tell_room(room, "Ò»ÕóÊ±¿ÕµÄÅ¤Çú½«Äã´«ËÍµ½ÁíÒ»¸öµØ·½....\n");
+                                tell_room(room, "ä¸€é™£æ™‚ç©ºçš„æ‰­æ›²å°‡ä½ å‚³é€åˆ°å¦ä¸€å€‹åœ°æ–¹....\n");
                                 for( j=sizeof(inv)-1;j>=0;j-- ) {
                                         if( interactive(inv[j]) || userp(inv[j]) ) {
                                                 clear_maze_item(inv[j]);
@@ -408,7 +408,7 @@ public int clear_fuben(string fbname,string owner)
         if( mapp(fuben_all[fbname]) )
                 map_delete(fuben_all[fbname], owner);
 
-        //CHANNEL_D->do_channel(this_object(),"sys","ÏµÍ³ÇåÀíÁË¸±±¾"+fbname+"("+owner+")¡£");
+        //CHANNEL_D->do_channel(this_object(),"sys","ç³»çµ±æ¸…ç†äº†å‰¯æœ¬"+fbname+"("+owner+")ã€‚");
 
         if( !MEMBER_D->is_valid_member(owner) ) {
                 if( undefinedp(all[fbname]) )
@@ -456,7 +456,7 @@ public void check_clear(object room)
 public int valid_enter(object usr, string fbname)
 {
         if( !state || member_array(fbname, valid_fbname) != -1 ) {
-                tell_object(usr, "¸Ã¸±±¾±»Î×Ê¦¹Ø±Õ£¬ÄúÔİÊ±ÎŞ·¨½øÈë¡£\n");
+                tell_object(usr, "è©²å‰¯æœ¬è¢«å·«å¸«é—œé–‰ï¼Œæ‚¨æš«æ™‚ç„¡æ³•é€²å…¥ã€‚\n");
                 return -4;
         }
 
@@ -465,13 +465,13 @@ public int valid_enter(object usr, string fbname)
                     !undefinedp(all[fbname][query_ip_number(usr)]) &&
                     !MEMBER_D->is_valid_member(usr) && 
                     sizeof(all[fbname][query_ip_number(usr)]) > VALID_CREATE_NUMBER ) {
-                        tell_object(usr, "¸Ã¸±±¾ÏŞÖÆIP¶àÖØ½øÈë£¬ÄúÒÑ¾­³¬¹ı×î¸ßÉÏÏŞ¡£\n");
+                        tell_object(usr, "è©²å‰¯æœ¬é™åˆ¶IPå¤šé‡é€²å…¥ï¼Œæ‚¨å·²ç¶“è¶…éæœ€é«˜ä¸Šé™ã€‚\n");
                         return -3;
                 }
         }
 
         if( undefinedp(fuben_data[fbname]) ) {
-                tell_object(usr, "ÓÎÏ·ÖĞÄ¿Ç°²¢Ã»ÓĞ¿ª·Å¸Ã¸±±¾£¬ÇëÄúºË¶ÔºóÔÙÊÔ¡£\n");
+                tell_object(usr, "éŠæˆ²ä¸­ç›®å‰ä¸¦æ²’æœ‰é–‹æ”¾è©²å‰¯æœ¬ï¼Œè«‹æ‚¨æ ¸å°å¾Œå†è©¦ã€‚\n");
                 return -2;
         }
 
@@ -480,38 +480,38 @@ public int valid_enter(object usr, string fbname)
 
         /*
         if( query("level", usr)<to_int(fuben_data[fbname]["level"])){
-                tell_object(usr, "ÄúÊµÕ½¾­Ñé²»×ã£¬½ø¸±±¾¿ÖÓĞ²»²â£¬»¹ÊÇÏÈÀúÁ·Ò»ÏÂÔÙÀ´°É¡£\n");
+                tell_object(usr, "æ‚¨å¯¦æˆ°ç¶“é©—ä¸è¶³ï¼Œé€²å‰¯æœ¬ææœ‰ä¸æ¸¬ï¼Œé‚„æ˜¯å…ˆæ­·ç·´ä¸€ä¸‹å†ä¾†å§ã€‚\n");
                 return 0;
         }
 
         if( query("level", usr) >= to_int(fuben_data[fbname]["level"]) ){
-                tell_object(usr, "Äú¾­ÑéÌ«¸ßÁË£¬¾Í²»Òª½øÈ¥ÆÛ¸ºÄÇĞ©¿ÉÁ¯µÄĞ¡¹ÖÎïÁË°É¡£\n");
+                tell_object(usr, "æ‚¨ç¶“é©—å¤ªé«˜äº†ï¼Œå°±ä¸è¦é€²å»æ¬ºè² é‚£äº›å¯æ†çš„å°æ€ªç‰©äº†å§ã€‚\n");
                 return -1;
         }
         */
 
         if( !undefinedp(fuben_data[fbname]["interval"]) ) {
                 if( time()-query("fuben/"+fbname, usr)<to_int(fuben_data[fbname]["interval"])){
-                        tell_object(usr, "ÄãÀëÉÏ´Î½øÈë¸±±¾Ê±¼äÌ«¶Ì£¬ÇëĞİÏ¢»áÔÙÀ´¡£\n");
+                        tell_object(usr, "ä½ é›¢ä¸Šæ¬¡é€²å…¥å‰¯æœ¬æ™‚é–“å¤ªçŸ­ï¼Œè«‹ä¼‘æ¯æœƒå†ä¾†ã€‚\n");
                         return -5;
                 }
         }
 
         if( !undefinedp(fuben_data[fbname]["team"]) ) {
                 if( !usr->in_team() || !sizeof(usr->query_team()) ) {
-                        tell_object(usr, "¸Ã¸±±¾±ØĞë×é¶Ó²ÅÄÜ½øÈë¡£\n");
+                        tell_object(usr, "è©²å‰¯æœ¬å¿…é ˆçµ„éšŠæ‰èƒ½é€²å…¥ã€‚\n");
                         return -6;
                 }
 
                 if( sizeof(usr->query_team()) > to_int(fuben_data[fbname]["team"]) ) {
-                        tell_object(usr, "ÄãµÄ¶ÓÎéÈËÊı³¬¹ı¸Ã¸±±¾¹æ¶¨µÄÉÏÏŞ¡£\n");
+                        tell_object(usr, "ä½ çš„éšŠä¼äººæ•¸è¶…éè©²å‰¯æœ¬è¦å®šçš„ä¸Šé™ã€‚\n");
                         return -7;
                 }
         }
 
         if( !undefinedp(fuben_data[fbname]["single"]) ) {
                 if( usr->in_team() && usr->is_team_leader() ) {
-                        tell_object(usr, "¸Ã¸±±¾ÊÇµ¥ÈË¸±±¾£¬Äú±ØĞë½âÉ¢¶ÓÎé·½¿É½øÈë¡£\n");
+                        tell_object(usr, "è©²å‰¯æœ¬æ˜¯å–®äººå‰¯æœ¬ï¼Œæ‚¨å¿…é ˆè§£æ•£éšŠä¼æ–¹å¯é€²å…¥ã€‚\n");
                         return -8;
                 }
         }
@@ -523,20 +523,20 @@ public int valid_enter(object usr, string fbname)
 public int close_fuben(object me, string fbname)
 {
         if( !stringp(fbname) ) {
-                tell_object(me, HIC "ÇëÊäÈëÄãÒª¹Ø±ÕµÄ¸±±¾<ID>¡£\n" NOR);
+                tell_object(me, HIC "è«‹è¼¸å…¥ä½ è¦é—œé–‰çš„å‰¯æœ¬<ID>ã€‚\n" NOR);
                 return 1;
         }
 
         if( fbname == "all" ) {
-                tell_object(me, HIC "¹Ø±Õ¸±±¾ÈÎÎñÍê±Ï¡£\n" NOR);
+                tell_object(me, HIC "é—œé–‰å‰¯æœ¬ä»»å‹™å®Œç•¢ã€‚\n" NOR);
                 state = 0;
                 return 1;
         } else {
                 if( member_array(fbname, valid_fbname) == -1 ) {
                         valid_fbname += ({ fbname });
-                        tell_object(me, HIC "¹Ø±Õ¸±±¾<"+fbname+">ÈÎÎñÍê±Ï¡£\n" NOR);
+                        tell_object(me, HIC "é—œé–‰å‰¯æœ¬<"+fbname+">ä»»å‹™å®Œç•¢ã€‚\n" NOR);
                 } else
-                        tell_object(me, HIC "¸±±¾<"+fbname+">ÒÑ¾­´¦ÓÚ¹Ø±ÕÖĞ¡£\n" NOR);
+                        tell_object(me, HIC "å‰¯æœ¬<"+fbname+">å·²ç¶“è™•äºé—œé–‰ä¸­ã€‚\n" NOR);
                 return 1;
         }
 }
@@ -544,20 +544,20 @@ public int close_fuben(object me, string fbname)
 public int open_fuben(object me, string fbname)
 {
         if( !stringp(fbname) ) {
-                tell_object(me, HIC "ÇëÊäÈëÄãÒª¿ªÆôµÄ¸±±¾<ID>¡£\n" NOR);
+                tell_object(me, HIC "è«‹è¼¸å…¥ä½ è¦é–‹å•Ÿçš„å‰¯æœ¬<ID>ã€‚\n" NOR);
                 return 1;
         }
 
         if( fbname == "all" ) {
-                tell_object(me, HIC "¿ªÆô¸±±¾ÈÎÎñÍê±Ï¡£\n" NOR);
+                tell_object(me, HIC "é–‹å•Ÿå‰¯æœ¬ä»»å‹™å®Œç•¢ã€‚\n" NOR);
                 state = 1;
                 return 1;
         } else {
                 if( member_array(fbname, valid_fbname) != -1 ) {
                         valid_fbname -= ({ fbname });
-                        tell_object(me, HIC "¿ªÆô¸±±¾<"+fbname+">ÈÎÎñÍê±Ï¡£\n" NOR);
+                        tell_object(me, HIC "é–‹å•Ÿå‰¯æœ¬<"+fbname+">ä»»å‹™å®Œç•¢ã€‚\n" NOR);
                 } else
-                        tell_object(me, HIC "¸±±¾<"+fbname+">ÒÑ¾­´¦ÓÚ¿ªÆôÖĞ¡£\n" NOR);
+                        tell_object(me, HIC "å‰¯æœ¬<"+fbname+">å·²ç¶“è™•äºé–‹å•Ÿä¸­ã€‚\n" NOR);
                 return 1;
         }
 }

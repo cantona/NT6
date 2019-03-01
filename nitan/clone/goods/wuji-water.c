@@ -1,4 +1,4 @@
-// Ğş±øÊ¥Ë®ÓÃÓÚ¿ª¿×±øÆ÷
+// ç„å…µè–æ°´ç”¨äºé–‹å­”å…µå™¨
 
 #include <ansi.h>
 
@@ -6,17 +6,17 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIM "ÎŞ¼«Ê¥Ë®" NOR, ({ "wuji water", "water" }) );
+        set_name(HIM "ç„¡æ¥µè–æ°´" NOR, ({ "wuji water", "water" }) );
         set_weight(30);
 
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "Ò»Æ¿Ó¨ÌŞÍ¸Ê¥Ë®£¬É¢Éä³öÑ¤Ä¿µÄ¹â²Ê¡£\n"
-                            "Ëû¿ÉÒÔÓÃÀ´Ö±½ÓÀ©Õ¹(kuokong)±øÆ÷»ò·À¾ß×î´ó¿×Êı¡£\n" NOR);
+                set("long", HIW "ä¸€ç“¶ç‘©å‰”é€è–æ°´ï¼Œæ•£å°„å‡ºçµ¢ç›®çš„å…‰å½©ã€‚\n"
+                            "ä»–å¯ä»¥ç”¨ä¾†ç›´æ¥æ“´å±•(kuokong)å…µå™¨æˆ–é˜²å…·æœ€å¤§å­”æ•¸ã€‚\n" NOR);
                 set("value", 1);
                 set("no_sell", 1);
-                set("unit", "Æ¿");
+                set("unit", "ç“¶");
         }
 
         setup();
@@ -33,21 +33,21 @@ int do_kuokong(string arg)
         object ob;
 
         if (! arg)
-                return notify_fail("ÄãÒªÍùÊ²Ã´µÀ¾ßÉÏÊ¹ÓÃÎŞ¼«Ê¥Ë®£¿\n");
+                return notify_fail("ä½ è¦å¾€ä»€éº¼é“å…·ä¸Šä½¿ç”¨ç„¡æ¥µè–æ°´ï¼Ÿ\n");
 
         me = this_player();
         if (! objectp(ob = present(arg, me)) &&
             ! objectp(ob = present(arg, environment(me))))
-                return notify_fail("ÄãÉíÉÏºÍ¸½½üÃ»ÓĞÕâÑùµÀ¾ß°¡¡£\n");
+                return notify_fail("ä½ èº«ä¸Šå’Œé™„è¿‘æ²’æœ‰é€™æ¨£é“å…·å•Šã€‚\n");
         
         if (ob == this_object() || ob->is_character())
-                return notify_fail("ÄãÏëÒª¸ÉÊ²Ã´?\n");
+                return notify_fail("ä½ æƒ³è¦å¹¹ä»€éº¼?\n");
         
         if (! ob->is_item_make())
-                return notify_fail(ob->name() + "ÎŞ·¨ÓÃÎŞ¼«Ê¥Ë®À´À©Õ¹°¼²Û¡£\n");
+                return notify_fail(ob->name() + "ç„¡æ³•ç”¨ç„¡æ¥µè–æ°´ä¾†æ“´å±•å‡¹æ§½ã€‚\n");
         
         if( !query("enchase/flute", ob) )
-                return notify_fail("Äã»¹ÊÇÏÈÈ¥¿ª¿×ºóÔÙ¿¼ÂÇÀ©Õ¹°¼²Û°É¡£\n");
+                return notify_fail("ä½ é‚„æ˜¯å…ˆå»é–‹å­”å¾Œå†è€ƒæ…®æ“´å±•å‡¹æ§½å§ã€‚\n");
                 
         set("ultimate/37", 1, ob);
         set("ultimate/39", 1, ob);
@@ -59,8 +59,8 @@ int do_kuokong(string arg)
                 set("enchase/flute", 7, ob);
         
         ob->save();
-        tell_object(me, "Äã°ÑÒ»Æ¿" + name() + "È÷ÔÚ" + ob->name() + "ÉÏ£¬"
-                        "Ö»¼û" + ob->name() + "Í¨Ìåºì¹âÒ»ÉÁ¼´Ãğ£¬»íÈ»ÒÑ¾­¶à³ö¼¸¸ö°¼²Û£¡\n");
+        tell_object(me, "ä½ æŠŠä¸€ç“¶" + name() + "æ´’åœ¨" + ob->name() + "ä¸Šï¼Œ"
+                        "åªè¦‹" + ob->name() + "é€šé«”ç´…å…‰ä¸€é–ƒå³æ»…ï¼Œè±ç„¶å·²ç¶“å¤šå‡ºå¹¾å€‹å‡¹æ§½ï¼\n");
 
         destruct(this_object());
         return 1;

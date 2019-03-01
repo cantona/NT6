@@ -1,6 +1,6 @@
-//      Ñ×»Æ-Íæ¼Ò×Ô´´Îä¹¦ÏµÍ³
+//      ç‚é»ƒ-ç©å®¶è‡ªå‰µæ­¦åŠŸç³»çµ±
 //      Made at 2006-03-04 22:19:30 by Rcwiz
-//      /kungfu/skill/paoxiao-lun.c  ´óË®·¨ºìÁ«ÅØÏøÂÖ
+//      /kungfu/skill/paoxiao-lun.c  å¤§æ°´æ³•ç´…è“®å’†å“®è¼ª
 
 inherit SKILL;
 #include <ansi.h>
@@ -8,9 +8,9 @@ inherit SKILL;
 #define PMSKILLS_D        "/adm/daemons/pmskillsd"
 
 string *parry_msg = ({
-HIG "»·¾³È÷¼Ò»á¼ÆÊ¦¼±¿ÚÁî¹şìªìªìªìªÈöÉú»îÉÏ \n" NOR,
-HIG "»·¾³È÷¼Ò»á¼ÆÊ¦¼±¿ÚÁî¹şìªìªìªìªÈöÉú»îÉÏ \n" NOR,
-HIG "»·¾³È÷¼Ò»á¼ÆÊ¦¼±¿ÚÁî¹şìªìªìªìªÈöÉú»îÉÏ \n" NOR,
+HIG "ç’°å¢ƒæ´’å®¶æœƒè¨ˆå¸«æ€¥å£ä»¤å“ˆé¢¯é¢¯é¢¯é¢¯æ’’ç”Ÿæ´»ä¸Š \n" NOR,
+HIG "ç’°å¢ƒæ´’å®¶æœƒè¨ˆå¸«æ€¥å£ä»¤å“ˆé¢¯é¢¯é¢¯é¢¯æ’’ç”Ÿæ´»ä¸Š \n" NOR,
+HIG "ç’°å¢ƒæ´’å®¶æœƒè¨ˆå¸«æ€¥å£ä»¤å“ˆé¢¯é¢¯é¢¯é¢¯æ’’ç”Ÿæ´»ä¸Š \n" NOR,
 });
 
 string query_parry_msg(object weapon)
@@ -23,14 +23,14 @@ string who_make(){ return "yeying"; }
 
 //####actions start####
 mapping *action = ({
-([        "action"     :  "»·¾³È÷¼Ò»á¼ÆÊ¦¼±¿ÚÁî¹şìªìªìªìªÈö",
+([        "action"     :  "ç’°å¢ƒæ´’å®¶æœƒè¨ˆå¸«æ€¥å£ä»¤å“ˆé¢¯é¢¯é¢¯é¢¯æ’’",
           "force"      :  387,
           "attack"     :  159,
           "parry"      :  48,
           "dodge"      :  80,
           "damage"     :  230,
-          "skill_name" :  "»·¾³ÊÇÊÇÊÇ",
-          "damage_type":  "ğöÉË",
+          "skill_name" :  "ç’°å¢ƒæ˜¯æ˜¯æ˜¯",
+          "damage_type":  "ç˜€å‚·",
 ])
 });
 //####actions end####
@@ -66,9 +66,9 @@ int valid_learn(object me)
         object ob;
         if( query_temp("weapon", me )
          || query("secondary_weapon", me) )
-                return notify_fail("Äã±ØĞë¿ÕÊÖÁ·Ï°¡£\n");
+                return notify_fail("ä½ å¿…é ˆç©ºæ‰‹ç·´ç¿’ã€‚\n");
         if (me->query_skill("unarmed", 1) < me->query_skill("paoxiao-lun", 1))
-                return notify_fail("ÄãµÄ»ù±¾È­½Å»ğºòÓĞÏŞ£¬ÎŞ·¨Áì»á¸ü¸ßÉîµÄ´óË®·¨ºìÁ«ÅØÏøÂÖ¡£\n");
+                return notify_fail("ä½ çš„åŸºæœ¬æ‹³è…³ç«å€™æœ‰é™ï¼Œç„¡æ³•é ˜æœƒæ›´é«˜æ·±çš„å¤§æ°´æ³•ç´…è“®å’†å“®è¼ªã€‚\n");
         return 1;
 }
 
@@ -102,7 +102,7 @@ mixed hit_ob(object me, object victim, int damage_bonus)
         if (damage_bonus < 160 || ! living(victim))return 0;
 
         if( random(3) || me->is_busy() || query_temp("pmskill/lian", me) || query("neili", me)<100)return 0;
-        message_vision(HIR "\n»·¾³È÷¼Ò»á¼ÆÊ¦¼±¿ÚÁî»·¾³È÷¼Ò»á¼ÆÊ¦¼±¿ÚÁî\n" NOR, me, victim);
+        message_vision(HIR "\nç’°å¢ƒæ´’å®¶æœƒè¨ˆå¸«æ€¥å£ä»¤ç’°å¢ƒæ´’å®¶æœƒè¨ˆå¸«æ€¥å£ä»¤\n" NOR, me, victim);
 
         me->start_busy(1 + random(attack_time));
 
@@ -149,13 +149,13 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
                 switch (random(3))
                 {
                 case 0:
-                   result += (["msg" : HIC "»·¾³È÷¼Ò»á¼ÆÊ¦¼±¿ÚÁî»·¾³È÷¼Ò»á¼ÆÊ¦¼±¿ÚÁî\n" NOR]);
+                   result += (["msg" : HIC "ç’°å¢ƒæ´’å®¶æœƒè¨ˆå¸«æ€¥å£ä»¤ç’°å¢ƒæ´’å®¶æœƒè¨ˆå¸«æ€¥å£ä»¤\n" NOR]);
                 break;
                 case 1:
-                   result += (["msg" : HIC "»·¾³È÷¼Ò»á¼ÆÊ¦¼±¿ÚÁî»·¾³È÷¼Ò»á¼ÆÊ¦¼±¿ÚÁî\n" NOR]);
+                   result += (["msg" : HIC "ç’°å¢ƒæ´’å®¶æœƒè¨ˆå¸«æ€¥å£ä»¤ç’°å¢ƒæ´’å®¶æœƒè¨ˆå¸«æ€¥å£ä»¤\n" NOR]);
                 break;
                 default:
-                   result += (["msg" : HIC "»·¾³È÷¼Ò»á¼ÆÊ¦¼±¿ÚÁî»·¾³È÷¼Ò»á¼ÆÊ¦¼±¿ÚÁî\n" NOR]);
+                   result += (["msg" : HIC "ç’°å¢ƒæ´’å®¶æœƒè¨ˆå¸«æ€¥å£ä»¤ç’°å¢ƒæ´’å®¶æœƒè¨ˆå¸«æ€¥å£ä»¤\n" NOR]);
                 break;
                 }
                 return result;
@@ -165,7 +165,7 @@ mixed valid_damage(object ob, object me, int damage, object weapon)
 
 int practice_skill(object me)
 {
-        if( !query("scborn", me))return notify_fail("×Ô´´ÎäÑ§Ö»ÄÜÓÃÑ§(learn)µÄÀ´ÌáÉıµÈ¼¶¡£\n");
+        if( !query("scborn", me))return notify_fail("è‡ªå‰µæ­¦å­¸åªèƒ½ç”¨å­¸(learn)çš„ä¾†æå‡ç­‰ç´šã€‚\n");
 }
 
 int difficult_level(){ return 2000;}

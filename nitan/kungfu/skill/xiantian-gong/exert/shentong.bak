@@ -1,5 +1,5 @@
 // This program is a part of NITAN MudLIB
-// shentong.c ÏÈÌì¹¦ ´¿ÑôÉñÍ¨¹¦
+// shentong.c å…ˆå¤©åŠŸ ç´”é™½ç¥é€šåŠŸ
 
 #include <ansi.h>
 
@@ -21,34 +21,34 @@ int exert(object me, object target)
         if( !target )target = me->select_opponent();
 
         if( !target || !target->is_character() || !me->is_fighting(target) )
-                return notify_fail("¡¸´¿ÑôÉñÍ¨¹¦¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œç´”é™½ç¥é€šåŠŸã€åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
 
         if( query("neili", me)<1000 )
         {
-                 return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                 return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ã€‚\n");
         }
 
         if( query_temp("shentong", me) )
-                return notify_fail("ÄãÒÑ¾­ÔÚÔË¹¦\ÖĞÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“åœ¨é‹åŠŸ\ä¸­äº†ã€‚\n");
         /*
         if( !target        ||        !me->is_fighting() )
-                return notify_fail("´¿ÑôÉñÍ¨¹¦Ö»ÓĞÔÚÕ½¶·ÖĞ²ÅÄÜÊ¹ÓÃ¡£\n");
+                return notify_fail("ç´”é™½ç¥é€šåŠŸåªæœ‰åœ¨æˆ°é¬¥ä¸­æ‰èƒ½ä½¿ç”¨ã€‚\n");
         */
 
         if( query("can_exert/xiantian-gong/shentong", me)<60 )
-                return notify_fail("Äã»¹Î´ÁìÎòºÍÁ·³É´¿ÑôÉñÍ¨¹¦£¡\n");
+                return notify_fail("ä½ é‚„æœªé ˜æ‚Ÿå’Œç·´æˆç´”é™½ç¥é€šåŠŸï¼\n");
 
         if( me->query_skill("force") < 300 )
-                return notify_fail("ÄãµÄĞşÃÅÏÈÌì¹¦»ğºòÎ´µ½£¬ÎŞ·¨Ê©Õ¹´¿ÑôÉñÍ¨¹¦£¡\n");
+                return notify_fail("ä½ çš„ç„é–€å…ˆå¤©åŠŸç«å€™æœªåˆ°ï¼Œç„¡æ³•æ–½å±•ç´”é™½ç¥é€šåŠŸï¼\n");
 
         if( me->query_skill("taoism") < 90 )
-                return notify_fail("ÄãµÄµÀÑ§ĞÄ·¨»ğºòÎ´µ½£¬ÎŞ·¨Ê©Õ¹´¿ÑôÉñÍ¨¹¦£¡\n");
+                return notify_fail("ä½ çš„é“å­¸å¿ƒæ³•ç«å€™æœªåˆ°ï¼Œç„¡æ³•æ–½å±•ç´”é™½ç¥é€šåŠŸï¼\n");
 
         message_combatd(
-                  HIW "$NÔËÆğ´¿ÑôÉñÍ¨¹¦£¬Æ¬¿ÌÖ®¼ä£¬°×ÆøÁıÕÖÈ«Éí£¬Ë«ÑÛ¾«¹âËÄÉä£¬ÉíÊÖ·ÖÍâ½Ã½¡£¬½øÍËÉñËÙ£¬ÓëÆ½Ê±ÅĞÈôÁ½ÈË¡£\n" NOR, me);
+                  HIW "$Né‹èµ·ç´”é™½ç¥é€šåŠŸï¼Œç‰‡åˆ»ä¹‹é–“ï¼Œç™½æ°£ç± ç½©å…¨èº«ï¼Œé›™çœ¼ç²¾å…‰å››å°„ï¼Œèº«æ‰‹åˆ†å¤–çŸ¯å¥ï¼Œé€²é€€ç¥é€Ÿï¼Œèˆ‡å¹³æ™‚åˆ¤è‹¥å…©äººã€‚\n" NOR, me);
         message_combatd(
-                  HIG "\nÄã²»½û²ïÒì£¬ÄÑµÀÕâ¾ÍÊÇÍõÖØÑô¶À²½ÎäÁÖ£¬´ò±éÌìÏÂÎŞµĞÊÖµÄ²»´«¾ø¼¼£º´¿ÑôÉñÍ¨¹¦¡£¾İËµµ±ÄêÁ¬È«ÕæÆß×ÓºÍÖÜ²®Í¨Ò²Ã»Á·³É¡£\n" NOR, me);
+                  HIG "\nä½ ä¸ç¦è©«ç•°ï¼Œé›£é“é€™å°±æ˜¯ç‹é‡é™½ç¨æ­¥æ­¦æ—ï¼Œæ‰“éå¤©ä¸‹ç„¡æ•µæ‰‹çš„ä¸å‚³çµ•æŠ€ï¼šç´”é™½ç¥é€šåŠŸã€‚æ“šèªªç•¶å¹´é€£å…¨çœŸä¸ƒå­å’Œå‘¨ä¼¯é€šä¹Ÿæ²’ç·´æˆã€‚\n" NOR, me);
 
         skill = me->query_skill("force");
         addn("neili", -skill/2, me);

@@ -13,18 +13,18 @@ int update_condition(object me, int duration)
 {
         if( duration < 1 ) return 0;
 
-        message("vision", HIG + me->name() + "Í·ÖØ½ÅÇá£¬ÔÎÔÎºõºõÌ§²»"
-                          "ÆðÍ·À´£¬¿´À´ÊÇÖÐÊîÁË¡£\n" NOR,
+        message("vision", HIG + me->name() + "é ­é‡è…³è¼•ï¼Œæšˆæšˆä¹Žä¹ŽæŠ¬ä¸"
+                          "èµ·é ­ä¾†ï¼Œçœ‹ä¾†æ˜¯ä¸­æš‘äº†ã€‚\n" NOR,
                 environment(me), me);
 
         if( !living(me) && me->query("qi") < 2 ) {
-                me->set_temp("die_reason", "ÖÐÊîÌ«Éî£¬±©±ÐÉíÍöÁË");
+                me->set_temp("die_reason", "ä¸­æš‘å¤ªæ·±ï¼Œæš´æ–ƒèº«äº¡äº†");
                 me->die();
                 return 0;
         }
         else
-        tell_object(me, HIB "Äã¾õµÃÐØÒÜÖ®¼äÒ»Õó·­ÌÚ£¬Í·ÖØ"
-                        "½ÅÇá£¬ÄÔÃÅ·¢ÈÈ£¬¿´À´ÊÇÖÐÊîÁË¡£\n" NOR );
+        tell_object(me, HIB "ä½ è¦ºå¾—èƒ¸è‡†ä¹‹é–“ä¸€é™£ç¿»é¨°ï¼Œé ­é‡"
+                        "è…³è¼•ï¼Œè…¦é–€ç™¼ç†±ï¼Œçœ‹ä¾†æ˜¯ä¸­æš‘äº†ã€‚\n" NOR );
 
         me->receive_wound("qi", 2);
         me->receive_damage("qi", 2);

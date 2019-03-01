@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "���ʴ�ʿԺ");
+        set("short", "兜率大士院");
         set("long", @LONG
-����һ��ΰ������ܵ�����Զ�ĵط��������Ͼ���������������
-ɮ����֮������Ĳ���á����ǳ��˲������״���ĵط�������ò�Ҫ
-���Դ��롣������ȷ���ܸ���ɮ�Ǵ�ȥ����Ϣ��
+這是一般參拜者所能到的最遠的地方，再往南就是天龍寺歷代高
+僧靜修之處──牟尼堂。那是常人不可輕易打攪的地方，你最好不要
+擅自闖入。除非你確信能給高僧們帶去好消息。
 LONG );
         set("exits", ([
                 "north" : __DIR__"qingxinge",

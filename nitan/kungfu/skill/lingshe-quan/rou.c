@@ -1,12 +1,12 @@
 // This program is a part of NITAN MudLIB
-// rou.c Èá×Ö¾÷
+// rou.c æŸ”å­—è¨£
 
 #include <ansi.h>
 #include <combat.h>
 
 inherit F_SSERVER;
 
-string name() { return HIW "Èá×Ö¾÷" NOR; }
+string name() { return HIW "æŸ”å­—è¨£" NOR; }
 
 int perform(object me, object target)
 {
@@ -20,19 +20,19 @@ int perform(object me, object target)
                 target = me->select_opponent();
         }
         if (! target || ! me->is_fighting(target))
-                return notify_fail("¡¸Èá×Ö¾÷¡¹Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€ŒæŸ”å­—è¨£ã€åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( objectp(query_temp("weapon", me)) )
-                return notify_fail("ÄãÒªÊ©Õ¹È­·¨²»ÄÜÊ¹ÓÃÎäÆ÷¡£\n");
+                return notify_fail("ä½ è¦æ–½å±•æ‹³æ³•ä¸èƒ½ä½¿ç”¨æ­¦å™¨ã€‚\n");
 
         if ((int)me->query_skill("lingshe-quan", 1) < 120)
-                return notify_fail("ÄãµÄÁéÉßÈ­·¨²»¹»æµÊì£¬ÏÖÔÚ»¹ÎÞ·¨Ê¹ÓÃ¡¸Èá×Ö¾÷¡¹¡£\n");
+                return notify_fail("ä½ çš„éˆè›‡æ‹³æ³•ä¸å¤ å«»ç†Ÿï¼Œç¾åœ¨é‚„ç„¡æ³•ä½¿ç”¨ã€ŒæŸ”å­—è¨£ã€ã€‚\n");
 
         if( query("neili", me)<200 )
-                return notify_fail("ÄãÏÖÔÚÕæÆø²»¹»£¬ÎÞ·¨ÔËÓÃ¡¸Èá×Ö¾÷¡¹¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çœŸæ°£ä¸å¤ ï¼Œç„¡æ³•é‹ç”¨ã€ŒæŸ”å­—è¨£ã€ã€‚\n");
 
-        msg = HIG "$N" HIG "Ò»È­´ò³ö£¬°ëÍ¾ÖÐÊÖ±ÛºöÈ»²»¿ÉË¼ÒéµÄ×ªÁË¸öÈ¦×Ó£¬´òÏò$n"
-              HIG "£¬Áî$p" HIG "·À²»Ê¤·À¡£\n"NOR;
+        msg = HIG "$N" HIG "ä¸€æ‹³æ‰“å‡ºï¼ŒåŠé€”ä¸­æ‰‹è‡‚å¿½ç„¶ä¸å¯æ€è­°çš„è½‰äº†å€‹åœˆå­ï¼Œæ‰“å‘$n"
+              HIG "ï¼Œä»¤$p" HIG "é˜²ä¸å‹é˜²ã€‚\n"NOR;
 
         ap = attack_power(me, "cuff");
         dp = defense_power(target, "dodge");
@@ -45,12 +45,12 @@ int perform(object me, object target)
 
                 addn("neili", -100, me);
                 msg += COMBAT_D->do_damage(me, target, UNARMED_ATTACK, damage, 50,
-                                           HIR "Ö»¼û$n" HIR "´ó³ÔÒ»¾ª£¬²Ö»ÊÖ®ÏÂ²»¼°ÉÁ¶ã£¬±»$N"
-                                           HIR "Ò»È­´òÁË¸öÕýÖÐ£¬ÃÆºßÒ»Éù£¬Á¬ÍËÊý²½£¡\n" NOR);
+                                           HIR "åªè¦‹$n" HIR "å¤§åƒä¸€é©šï¼Œå€‰çš‡ä¹‹ä¸‹ä¸åŠé–ƒèº²ï¼Œè¢«$N"
+                                           HIR "ä¸€æ‹³æ‰“äº†å€‹æ­£ä¸­ï¼Œæ‚¶å“¼ä¸€è²ï¼Œé€£é€€æ•¸æ­¥ï¼\n" NOR);
                 me->start_busy(2);
         } else
         {
-                msg += HIC "¿ÉÊÇ$p" HIC "¼û»úµÄ¿ì£¬Á¬Ã¦Ê©Õ¹Éí·¨£¬±Ü¿ªÁËÈ­¡£\n" NOR;
+                msg += HIC "å¯æ˜¯$p" HIC "è¦‹æ©Ÿçš„å¿«ï¼Œé€£å¿™æ–½å±•èº«æ³•ï¼Œé¿é–‹äº†æ‹³ã€‚\n" NOR;
                 addn("neili", -50, me);
                 me->start_busy(3);
         }

@@ -3,8 +3,8 @@ inherit __DIR__"bhd_npc.c";
 
 void create()
 {
-        set_name(NOR + WHT "巨型野猪" NOR, ({ "juxing shanzhu", "juxing", "shanzhu" }));
-        set("long", HIW "这是一只巨大的野猪，大得令人难以想象，个头似乎超过两头老虎大，凶猛异常。\n" NOR);
+        set_name(NOR + WHT "宸ㄥ瀷閲庤爆" NOR, ({ "juxing shanzhu", "juxing", "shanzhu" }));
+        set("long", HIW "閫欐槸涓�鍙法澶х殑閲庤爆锛屽ぇ寰椾护浜洪洠浠ユ兂璞★紝鍊嬮牠浼间箮瓒呴亷鍏╅牠鑰佽檸澶э紝鍏囩寷鐣板父銆俓n" NOR);
 
         set("age", 500);
         set("str",800);
@@ -39,7 +39,7 @@ void create()
 }
 void init()
 {
-        // 随机攻击玩家
+        // 闅ㄦ鏀绘搳鐜╁
         if (userp(this_player()) && random(2) == 1)
         {
                 kill_ob(this_player());

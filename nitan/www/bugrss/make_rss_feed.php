@@ -90,7 +90,7 @@ class make_rss_feed
 		$this->elements[$i]["author"] = $auth;
 		$this->elements[$i]["pubDate"] = substr(date("l",$pubDate),0,3).date(", d M Y H:i:s T",$pubDate);
 		$this->elements[$i]["category"] = $category;
-		// 不知道干嘛的
+		// 涓嶇煡閬撳构鍢涚殑
 		$this->elements[$i]["guid"] = $guid;
 		$this->ptr++;
 	}

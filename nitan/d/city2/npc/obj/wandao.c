@@ -4,17 +4,17 @@ inherit BLADE;
 #include <ansi.h>
 void create()
 {
-        set_name(HIW"»Ø·çµ¶"NOR, ({ "wan dao","dao","blade" }));   
+        set_name(HIW"å›é¢¨åˆ€"NOR, ({ "wan dao","dao","blade" }));   
         set_weight(12000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
-                set("long", "ÕâÊÇÒ»±ú·æÀûµÄ»Ø·çµ¶£¬ÊÇ¹¬ÖĞÊÌÎÀµÄ³£±¸ÎäÆ÷¡£\n");
+                set("unit", "æŸ„");
+                set("long", "é€™æ˜¯ä¸€æŸ„é‹’åˆ©çš„å›é¢¨åˆ€ï¼Œæ˜¯å®®ä¸­ä¾è¡›çš„å¸¸å‚™æ­¦å™¨ã€‚\n");
                 set("value", 10000);
                 set("material", "steel");
-                set("wield_msg", "$N¡¸à§¡¹µÄÒ»Éù³é³öÒ»±ú$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²å»Øµ¶ÇÊ¡£\n");
+                set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€è²æŠ½å‡ºä¸€æŸ„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°‡æ‰‹ä¸­çš„$næ’å›åˆ€é˜ã€‚\n");
         }
         init_blade(200);
         setup();                   

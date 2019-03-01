@@ -1,4 +1,4 @@
-// edemote.c emote±à¼­Æ÷
+// edemote.c emoteç·¨è¼¯å™¨
 
 #include <ansi.h>
 
@@ -7,12 +7,12 @@ inherit F_AUTOLOAD;
 
 void create()
 {
-        set_name(HIC "±íÇé¶¯´Ê±à¼­Æ÷" NOR, ({"emote editor", "editor"}));
+        set_name(HIC "è¡¨æƒ…å‹•è©ç·¨è¼¯å™¨" NOR, ({"emote editor", "editor"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼Ü");
-                set("long", "ÕâÊÇÒ»¼Ü¿´ÆğÀ´¹Ö¹ÖµÄÒÇÆ÷£¬ÉÏÃæÌù×ÅËµÃ÷(help editor)¡£\n");
+                set("unit", "æ¶");
+                set("long", "é€™æ˜¯ä¸€æ¶çœ‹èµ·ä¾†æ€ªæ€ªçš„å„€å™¨ï¼Œä¸Šé¢è²¼è‘—èªªæ˜(help editor)ã€‚\n");
                 set("value", 1);
                 set("no_sell", 1);
         }
@@ -27,12 +27,12 @@ int query_autoload()
 int do_help(string arg)
 {
         if (! arg || ! id(arg))
-                return notify_fail("ÄãÒª¿´Ê²Ã´°ïÖú£¿\n");
+                return notify_fail("ä½ è¦çœ‹ä»€éº¼å¹«åŠ©ï¼Ÿ\n");
         write (@HELP
-¹ØÓÚ±íÇé¶¯´Ê±à¼­Æ÷µÄËµÃ÷£º
+é—œäºè¡¨æƒ…å‹•è©ç·¨è¼¯å™¨çš„èªªæ˜ï¼š
 
-¿ÉÒÔÊ¹ÓÃµÄÃüÁî°üÀ¨ edemote¡¢cpemote¡¢rnemote£¬¾ßÌåÇë²Î¼ûÕâ
-Ğ©ÃüÁîµÄ°ïÖú¡£
+å¯ä»¥ä½¿ç”¨çš„å‘½ä»¤åŒ…æ‹¬ edemoteã€cpemoteã€rnemoteï¼Œå…·é«”è«‹åƒè¦‹é€™
+äº›å‘½ä»¤çš„å¹«åŠ©ã€‚
 
 HELP );
         return 1;

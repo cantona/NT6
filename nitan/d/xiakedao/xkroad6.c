@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "���С��");
+        set("short", "漁村小屋");
         set("long", @LONG
-С�������С��ʮ�ּ�ª������ûʲô�ҵ������Ϲ��������þ�
-�˵���ߡ���Ŵ��˶������ˣ�ֻ��һ��С����������������һ
-�����̡�
+小村的漁民小屋十分簡陋，幾乎沒什麼家當，壁上掛滿了早用舊
+了的漁具。大概大人都出海了，只有一個小孩在屋裡，看到你進來一
+臉驚惶。
 LONG );
         set("outdoors", "nanhai");
         set("exits", ([

@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��̨");
+        set("short", "天台");
         set("long", @LONG
- ������ѩɽ�µĸߴ������߿ɼ���ΰ�Ĵ�ѩɽ���ϱ߿��Ը����
-���羵��ʥ����
+ 這裡是雪山寺的高處。北邊可見雄偉的大雪山，南邊可以俯瞰美
+麗如鏡的聖湖。
 LONG );
         set("exits", ([
                 "west" : __DIR__"chanshi",

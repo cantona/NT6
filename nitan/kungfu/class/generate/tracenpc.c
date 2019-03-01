@@ -11,7 +11,7 @@ void create()
         int lvl;
 
         ::create();
-        set("gender", "ÄÐÐÔ" );
+        set("gender", "ç”·æ€§" );
         set("age", 50 + random(40));
         set("attitude", "friendly");
         set("scale", 150);
@@ -22,7 +22,7 @@ void create()
         lvl = 6 + random(6);
         NPC_D->init_npc_skill(this_object(), lvl);
 
-        // ³õÊ¼»¯NPCµÄÄÜÁ¦
+        // åˆå§‹åŒ–NPCçš„èƒ½åŠ›
         my = query_entire_dbase();
         my["max_qi"] = 1000 + lvl * 300 + random(500);
         my["max_jing"] = my["max_qi"] / 2;
@@ -38,7 +38,7 @@ varargs int move(mixed dest, int raw)
 {
         int r;
 
-        // Ö´ÐÐÔ­±¾µÄMOVEº¯Êý
+        // åŸ·è¡ŒåŽŸæœ¬çš„MOVEå‡½æ•¸
         r = ::move(dest, raw);
 
         if (query_temp("trace"))
@@ -49,7 +49,7 @@ varargs int move(mixed dest, int raw)
         return r;
 }
 
-// ÅÐ¶ÏÊÇ·ñÓÐÈËÐèÒªµ÷½â
+// åˆ¤æ–·æ˜¯å¦æœ‰äººéœ€è¦èª¿è§£
 void give_intercession()
 {
         mixed ob;
@@ -72,30 +72,30 @@ void give_intercession()
                 return;
 
         me = query_leader();
-        message("vision", HIC + sort_msg(name() + "¿´¼û" + ob->name() +
-                          HIC "£¬ÝëµØ³åÉÏÇ°È¥£¬´ó½ÐµÀ£º¡°ÀÏÌì¿ªÑÛ°¡£¬ÐÖµÜ½ñ"
-                          "ÌìÖÕÓÚÑ°µ½ÄãÁË£¡¡±Ëµ°ÕÖ»¼ûÁ½ÈËÓµÔÚÒ»Æð£¬ÈÈÀá×Ýºá"
-                          "£¬³¡ÃæÉ·ÊÇ¸ÐÈË¡£\n" NOR), environment());
+        message("vision", HIC + sort_msg(name() + "çœ‹è¦‹" + ob->name() +
+                          HIC "ï¼Œé©€åœ°æ²–ä¸Šå‰åŽ»ï¼Œå¤§å«é“ï¼šâ€œè€å¤©é–‹çœ¼å•Šï¼Œå…„å¼Ÿä»Š"
+                          "å¤©çµ‚äºŽå°‹åˆ°ä½ äº†ï¼â€èªªç½·åªè¦‹å…©äººæ“åœ¨ä¸€èµ·ï¼Œç†±æ·šç¸±æ©«"
+                          "ï¼Œå ´é¢ç…žæ˜¯æ„Ÿäººã€‚\n" NOR), environment());
         if (objectp(me))
         {
                 delete_temp("trace/" + ob, me);
-                tell_object(me, HIY "\nÄã¼ûÁ½ÈË´Ë·¬×´Ì¬£¬ÆÄÎª¸Ð¿®£¬²»ÓÉµÃ°µ"
-                                "×ÔÐÀÎ¿¡£\n\n" NOR);
+                tell_object(me, HIY "\nä½ è¦‹å…©äººæ­¤ç•ªç‹€æ…‹ï¼Œé —ç‚ºæ„Ÿæ…¨ï¼Œä¸ç”±å¾—æš—"
+                                "è‡ªæ¬£æ…°ã€‚\n\n" NOR);
 
                 GIFT_D->bonus(me, ([ "exp" : 200 + random(100),
                                      "pot" : 200 + random(100),
                                      "score"   : 20 + random(20),
                                      "weiwang" : 10 + random(10),
-                                     "prompt"  : "Í¨¹ýÕâ´ÎÖúÈËÑ°ÓÑ" ]));
+                                     "prompt"  : "é€šéŽé€™æ¬¡åŠ©äººå°‹å‹" ]));
 
 /*
-                CHANNEL_D->do_channel(this_object(), "rumor", "ÌýËµ" + me->name(1) +
-                                                     "("+query("id", me)+")°ï"+
-                                                     name() + HIM "ÕÒµ½ÁËÊ§É¢µÄÐÖµÜ"
-                                                     + ob->name() + HIM "¡£" NOR);
+                CHANNEL_D->do_channel(this_object(), "rumor", "è½èªª" + me->name(1) +
+                                                     "("+query("id", me)+")å¹«"+
+                                                     name() + HIM "æ‰¾åˆ°äº†å¤±æ•£çš„å…„å¼Ÿ"
+                                                     + ob->name() + HIM "ã€‚" NOR);
 */
 
-                // ±»ÁÐÎªÃÅÅÉÖÐ¶ÏµÄ×ÔÓÉÈÎÎñ
+                // è¢«åˆ—ç‚ºé–€æ´¾ä¸­æ–·çš„è‡ªç”±ä»»å‹™
                 if( query("quest/freequest", me)>0 )
                         GIFT_D->delay_freequest_bonus(me);
         }

@@ -7,12 +7,12 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("¼§ÇåĞé", ({"ji qingxu", "ji"}));
-        set("gender", "ÄĞĞÔ");
+        set_name("å§¬æ¸…è™›", ({"ji qingxu", "ji"}));
+        set("gender", "ç”·æ€§");
         set("age", 24);
         set("class", "taoist");
         set("long",
-                "ËûÊÇÒ»Î»Ìå¸ñÇ¿½¡µÄÇàÄêµÀÊ¿£¬ËÆºõÉí»³ÎäÒÕ¡£\n");
+                "ä»–æ˜¯ä¸€ä½é«”æ ¼å¼·å¥çš„é’å¹´é“å£«ï¼Œä¼¼ä¹èº«æ‡·æ­¦è—ã€‚\n");
         set("attitude", "friendly");
         set("shen_type",1);
         set("str", 26);
@@ -62,10 +62,10 @@ void create()
         map_skill("finger", "zhongnan-zhi");
         prepare_skill("finger", "zhongnan-zhi");
 
-        create_family("È«Õæ½Ì", 4, "µÜ×Ó");
+        create_family("å…¨çœŸæ•™", 4, "å¼Ÿå­");
 
         set("inquiry", ([
-                "È«Õæ½Ì" :  "ÎÒÈ«Õæ½ÌÊÇÌìÏÂµÀ¼ÒĞşÃÅÕı×Ú¡£\n",
+                "å…¨çœŸæ•™" :  "æˆ‘å…¨çœŸæ•™æ˜¯å¤©ä¸‹é“å®¶ç„é–€æ­£å®—ã€‚\n",
         ]) );
 
         set("master_ob",1);

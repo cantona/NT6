@@ -1,4 +1,4 @@
-// leg.c »ù±¾ÍÈ·¨
+// leg.c åŸºæœ¬è…¿æ³•
 // Last Modified by winder on Mar. 10 2000
 
 #include <ansi.h>;
@@ -13,13 +13,13 @@ int power_point(object me) { return 1; }
 
 int help(object me)
 {
-        write(HIC"\n»ù±¾ÍÈ·¨£º"NOR"\n");
+        write(HIC"\nåŸºæœ¬è…¿æ³•ï¼š"NOR"\n");
         write(@HELP
 
-    ÍÈ·¨ÀàÎä¼¼µÄ»ù±¾¹¦¡£
+    è…¿æ³•é¡æ­¦æŠ€çš„åŸºæœ¬åŠŸã€‚
 
-        Ñ§Ï°ÒªÇó£º
-                ÎŞ
+        å­¸ç¿’è¦æ±‚ï¼š
+                ç„¡
 HELP
         );
         return 1;

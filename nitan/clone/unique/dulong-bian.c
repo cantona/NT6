@@ -1,4 +1,4 @@
-// dulong-bian.c ¶¾Áú±Ş 
+// dulong-bian.c æ¯’é¾é­ 
 
 #include <weapon.h>
 #include <ansi.h>
@@ -7,21 +7,21 @@ inherit WHIP;
 
 void create()
 {
-        set_name("¶¾Áú±Ş",({ "dulong bian", "bian", "whip", "dulong" }) );
+        set_name("æ¯’é¾é­",({ "dulong bian", "bian", "whip", "dulong" }) );
         set_weight(700);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
+                set("unit", "æŠŠ");
                 set("value", 7000000);
                 set("rigidity", 100000);
                 set("replica_ob","/clone/weapon/whip");
                 set("poison_applied", 300);
                 set("material", "leather");
                 set("long", 
-                "ÕâÊÇÒ»ÌõÀÃÒøÒ²ËÆµÄÒøÉ«Èí±Ş£¬³¤´ïËÄÕÉÓĞÓà£¬±ŞÍ·×°×ÅÊ®¶àÖ»Ã÷»Î»ÎµÄ¼âÀûµ¹¹³¡£\n");
-                set("wield_msg", "$N¡¸à§¡¹µÄÒ»Éù´ÓÑüºó³é³öÒ»±ú$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n±ğ»ØÑüºó¡£\n");
+                "é€™æ˜¯ä¸€æ¢çˆ›éŠ€ä¹Ÿä¼¼çš„éŠ€è‰²è»Ÿé­ï¼Œé•·é”å››ä¸ˆæœ‰ä½™ï¼Œé­é ­è£è‘—åå¤šåªæ˜æ™ƒæ™ƒçš„å°–åˆ©å€’é‰¤ã€‚\n");
+                set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€è²å¾è…°å¾ŒæŠ½å‡ºä¸€æŸ„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°‡æ‰‹ä¸­çš„$nåˆ¥å›è…°å¾Œã€‚\n");
         }
         init_whip(50);
         setup();

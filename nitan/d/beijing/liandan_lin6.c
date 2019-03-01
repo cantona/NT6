@@ -4,11 +4,11 @@ int do_cai(string arg);
 
 void create()
 {
-        set("short", "��������");
+        set("short", "城西後林");
         set("long", @LONG
-����һƬï�ܵ����֡��ܶ�ü�ʮ�ɸߵĴ�������һ�飬��һ��
-�������ɡ�������¶����ڱε���Ȼ�޹⡣�����л���ʱ����������
-��Ȼ���������졣
+這是一片茂密的樹林。很多棵幾十丈高的大樹聚在一塊，象一把
+把瓊天大傘，連日月都被遮蔽得黯然無光。樹林中還不時可以聽到大
+自然發出的聲響。
 LONG );
         set("exits", ([
                 "north" : "/d/beijing/liandan_lin2",

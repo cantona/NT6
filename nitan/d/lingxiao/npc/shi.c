@@ -4,11 +4,11 @@ inherit NPC;
 
 void create()
 {
-        set_name("Ê±ÍòÄê", ({"shi wannian", "shi", "wannian"}));
-        set("gender", "ÄĞĞÔ");
-        set("long", "ËûÊÇÁèÏö³ÇµÚÁù´úµÜ×ÓÊ±ÍòÄê£¬ÄËÊÇ¼Ì°×Íò½£¡¢·â\n"
-                    "ÍòÀïºóÎä¹¦×î¸ß¡¢½£·¨×î¾«µÄµÜ×Ó¡£´ËÊ±ËûÔÚ´ËÊØ\n"
-                    "ÎÀ¼àÓü¡£\n");
+        set_name("æ™‚è¬å¹´", ({"shi wannian", "shi", "wannian"}));
+        set("gender", "ç”·æ€§");
+        set("long", "ä»–æ˜¯å‡Œéœ„åŸç¬¬å…­ä»£å¼Ÿå­æ™‚è¬å¹´ï¼Œä¹ƒæ˜¯ç¹¼ç™½è¬åŠã€å°\n"
+                    "è¬è£¡å¾Œæ­¦åŠŸæœ€é«˜ã€åŠæ³•æœ€ç²¾çš„å¼Ÿå­ã€‚æ­¤æ™‚ä»–åœ¨æ­¤å®ˆ\n"
+                    "è¡›ç›£ç„ã€‚\n");
         set("age", 24);
         set("attitude", "peaceful");
 
@@ -26,8 +26,8 @@ void create()
 
         set("chat_chance", 8);
         set("chat_msg", ({
-                CYN "Ê±ÍòÄêºŞºŞËµµÀ£ºÀÏ·è×Ó²»ÖªµÀÓÖÔõÃ´ÁË£¬°Ñ×Ô¼º¹ØÔÚÀïÃæÅªËÀ²»¿Ï³öÀ´¡£\n" NOR,
-                       CYN "Ê±ÍòÄê°Ñ½£Ò»µ¯£¬°ÁÈ»µÀ£ºÓĞÎÒÊØÔÚÕâ£¬Ë­¶¼±ğÏë°ÑÀÏ·è×Ó·Å³öÀ´¡£\n" NOR,
+                CYN "æ™‚è¬å¹´æ¨æ¨èªªé“ï¼šè€ç˜‹å­ä¸çŸ¥é“åˆæ€éº¼äº†ï¼ŒæŠŠè‡ªå·±é—œåœ¨è£¡é¢å¼„æ­»ä¸è‚¯å‡ºä¾†ã€‚\n" NOR,
+                       CYN "æ™‚è¬å¹´æŠŠåŠä¸€å½ˆï¼Œå‚²ç„¶é“ï¼šæœ‰æˆ‘å®ˆåœ¨é€™ï¼Œèª°éƒ½åˆ¥æƒ³æŠŠè€ç˜‹å­æ”¾å‡ºä¾†ã€‚\n" NOR,
         }) );
 
         set_skill("force", 160);
@@ -55,7 +55,7 @@ void create()
         prepare_skill("strike", "piaoxu-zhang");
         prepare_skill("cuff", "lingxiao-quan");
 
-        create_family("ÁèÏö³Ç", 6, "µÜ×Ó");
+        create_family("å‡Œéœ„åŸ", 6, "å¼Ÿå­");
 
         set("chat_chance_combat", 120);
         set("chat_msg_combat", ({
@@ -72,7 +72,7 @@ void create()
 
 void attempt_apprentice(object ob)
 {
-        command("say ÎÒ²»ÊÕÍ½£¬ÄãÈ¥ÕÒÎÒÆäËüÊ¦ĞÖºÃÁË¡£");
+        command("say æˆ‘ä¸æ”¶å¾’ï¼Œä½ å»æ‰¾æˆ‘å…¶å®ƒå¸«å…„å¥½äº†ã€‚");
 }
 
 void init()
@@ -82,19 +82,19 @@ void init()
 
         ob = this_player();
 
-              if( query("family/family_name", ob) != "ÁèÏö³Ç" )
+              if( query("family/family_name", ob) != "å‡Œéœ„åŸ" )
         {
                 command("heng");
-                command("say Äã¾ÓÈ»¸Ò´³Èë±¾ÅÉ½ûµØ£¬ÊÜËÀ°É£¡\n");
+                command("say ä½ å±…ç„¶æ•¢é—–å…¥æœ¬æ´¾ç¦åœ°ï¼Œå—æ­»å§ï¼\n");
                 remove_call_out("kill_ob");
                 call_out("kill_ob", 1, ob); 
         } else
-        if( query("family/master_name", ob) == "°××ÔÔÚ" )
+        if( query("family/master_name", ob) == "ç™½è‡ªåœ¨" )
         {
-                command("say Ê¦ĞÖ»ØÀ´ÁË£¬¿ìÈ¥¼ûÊ¦×æ°É£¬²»¹ıĞ¡ĞÄµã¡­¡­Ã»×¼ËûÓÖ·¸²¡ÁË¡£");
+                command("say å¸«å…„å›ä¾†äº†ï¼Œå¿«å»è¦‹å¸«ç¥–å§ï¼Œä¸éå°å¿ƒé»â€¦â€¦æ²’æº–ä»–åˆçŠ¯ç—…äº†ã€‚");
         } else
-        if( query("family/master_name", ob) == "°×Íò½£" )
+        if( query("family/master_name", ob) == "ç™½è¬åŠ" )
         {
-                command("say ÄãÊÇ°×Ê¦¸çµÄµÜ×Ó°É£¬ÀÏÒ¯×Ó¾ÍÔÚÀïÃæ£¬ËûµÄ²¡Ô½À´Ô½²»µÃÁËÀ²¡£");
+                command("say ä½ æ˜¯ç™½å¸«å“¥çš„å¼Ÿå­å§ï¼Œè€çˆºå­å°±åœ¨è£¡é¢ï¼Œä»–çš„ç—…è¶Šä¾†è¶Šä¸å¾—äº†å•¦ã€‚");
         }
 }

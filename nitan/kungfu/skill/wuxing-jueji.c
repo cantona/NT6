@@ -1,4 +1,4 @@
-// wuxing-jueji.c ÎåÐÐ¾ø¼¼
+// wuxing-jueji.c äº”è¡Œçµ•æŠ€
 
 #include <ansi.h>
 
@@ -9,16 +9,16 @@ int valid_enable(string usage) { return usage == "throwing"; }
 int valid_learn(object me)
 {
         if ((int)me->query_skill("force") < 60)
-                return notify_fail("ÄãµÄÄÚ¹¦ÐÄ·¨»ðºò²»¹»£¬ÎÞ·¨Ñ§ÎåÐÐ¾ø¼¼¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸå¿ƒæ³•ç«å€™ä¸å¤ ï¼Œç„¡æ³•å­¸äº”è¡Œçµ•æŠ€ã€‚\n");
 
         if ((int)me->query_skill("dodge") < 80)
-                return notify_fail("ÄãµÄÇá¹¦»ðºò²»¹»£¬ÎÞ·¨ÁìÎòÎåÐÐ¾ø¼¼¡£\n");
+                return notify_fail("ä½ çš„è¼•åŠŸç«å€™ä¸å¤ ï¼Œç„¡æ³•é ˜æ‚Ÿäº”è¡Œçµ•æŠ€ã€‚\n");
 
         if ((int)me->query_dex() < 26)
-                return notify_fail("ÄãµÄÉí·¨²»¹»ÁéÇÉ£¬ÎÞ·¨ÁìÎòÎåÐÐ¾ø¼¼¡£\n");
+                return notify_fail("ä½ çš„èº«æ³•ä¸å¤ éˆå·§ï¼Œç„¡æ³•é ˜æ‚Ÿäº”è¡Œçµ•æŠ€ã€‚\n");
 
         if ((int)me->query_skill("throwing", 1) < (int)me->query_skill("wuxing-jueji", 1))
-                return notify_fail("ÄãµÄ»ù±¾°µÆ÷Ë®Æ½ÓÐÏÞ£¬ÄÑÒÔÁì»á¸ü¸ßÉîµÄÎåÐÐ¾ø¼¼¡£\n");
+                return notify_fail("ä½ çš„åŸºæœ¬æš—å™¨æ°´å¹³æœ‰é™ï¼Œé›£ä»¥é ˜æœƒæ›´é«˜æ·±çš„äº”è¡Œçµ•æŠ€ã€‚\n");
 
         return 1;
 }
@@ -28,10 +28,10 @@ int practice_skill(object me)
         object weapon;
 
         if( query("qi", me)<60 )
-                return notify_fail("ÄãµÄÌåÁ¦Ì«µÍÁË¡£\n");
+                return notify_fail("ä½ çš„é«”åŠ›å¤ªä½Žäº†ã€‚\n");
 
         if( query("neili", me)<60 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»Á·ÎåÐÐ¾ø¼¼¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ç·´äº”è¡Œçµ•æŠ€ã€‚\n");
 
         me->receive_damage("qi", 52);
         addn("neili", -35, me);

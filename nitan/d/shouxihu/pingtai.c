@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short","ƽ̨ʯ��");
+        set("short","平台石欄");
         set("long",@LONG
-ƽ̨�ж������죬��̫��ʯΪ������ֲ�ɻ������ڣ���Ϊ�����辰��
-����ֱ�����߳ߣ�����磬�����˼��룬�ഫΪ����ʱ��ˮ֮�����
-�����ء�����ǡ���ʯ������ࡣ
+平台中二具鐵鑊，以太湖石為座，夏植荷花于鑊內，成為絕大盆景。
+鐵鑊直徑六七尺，厚二寸，高與人肩齊，相傳為蕭樑時鎮水之物。儀征
+焦汝霖《鐵鑊記》碑石立于其側。
 LONG );
         set("outdoors", "shouxihu");
         set("exits", ([

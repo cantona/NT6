@@ -4,15 +4,15 @@ inherit NPC;
 
 void create()
 {
-        set_name("°¢´ó", ({ "a da", "a", "da" }));
-        set("long", "°Ë±ÛÉñ½£·½¶«°×ÊÇØ¤°ïËÄ´ó³¤ÀÏÖ®Ê×£¬½£Êõ\n"
-                    "Ö®¾«£¬Ãû¶¯½­ºþ£¬Ö»ÒòËû³ö½£Ææ¿ì£¬ÓÐÈçÉú\n"
-                    "ÁËÆß°ËÌõÊÖ±ÛÒ»°ã£¬Òò´ËÉÏµÃÁËÕâ¸öÍâºÅ¡£\n"
-                    "Ê®¶àÄêÇ°ÌýËµËûÉíÈ¾ÖØ²¡ÉíÍö£¬µ±Ê±ÈËÈË¶¼\n"
-                    "¸ÐÍïÏ§£¬²»¾õËû¾¹ÉÐÔÚÈËÊÀ¡£\n");
-        set("title", "Ø¤°ïËÄ´ó³¤ÀÏÖ®Ê×");
-        set("nickname", HIW "°Ë±ÛÉñ½£" NOR);
-        set("gender", "ÄÐÐÔ");
+        set_name("é˜¿å¤§", ({ "a da", "a", "da" }));
+        set("long", "å…«è‡‚ç¥žåŠæ–¹æ±ç™½æ˜¯ä¸å¹«å››å¤§é•·è€ä¹‹é¦–ï¼ŒåŠè¡“\n"
+                    "ä¹‹ç²¾ï¼Œåå‹•æ±Ÿæ¹–ï¼Œåªå› ä»–å‡ºåŠå¥‡å¿«ï¼Œæœ‰å¦‚ç”Ÿ\n"
+                    "äº†ä¸ƒå…«æ¢æ‰‹è‡‚ä¸€èˆ¬ï¼Œå› æ­¤ä¸Šå¾—äº†é€™å€‹å¤–è™Ÿã€‚\n"
+                    "åå¤šå¹´å‰è½èªªä»–èº«æŸ“é‡ç—…èº«äº¡ï¼Œç•¶æ™‚äººäººéƒ½\n"
+                    "æ„Ÿæƒ‹æƒœï¼Œä¸è¦ºä»–ç«Ÿå°šåœ¨äººä¸–ã€‚\n");
+        set("title", "ä¸å¹«å››å¤§é•·è€ä¹‹é¦–");
+        set("nickname", HIW "å…«è‡‚ç¥žåŠ" NOR);
+        set("gender", "ç”·æ€§");
         set("age", 68);
         set("attitude", "peaceful");
         set("shen_type", -1);
@@ -70,25 +70,25 @@ void init()
 
 int accept_fight(object who)
 {
-        command("say Ã»¿¤Ö÷µÄ·Ô¸ÀÎÒ²»»á³öÊÖ¡£");
+        command("say æ²’éƒ¡ä¸»çš„å©å’æˆ‘ä¸æœƒå‡ºæ‰‹ã€‚");
         return 0;
 }
 
 int accept_hit(object who)
 {
-        command("say Ã»¿¤Ö÷µÄ·Ô¸ÀÎÒ²»»á³öÊÖ¡£");
+        command("say æ²’éƒ¡ä¸»çš„å©å’æˆ‘ä¸æœƒå‡ºæ‰‹ã€‚");
         return 0;
 }
 
 int accept_kill(object who)
 {
-        command("say Ã»¿¤Ö÷µÄ·Ô¸ÀÎÒ²»»á³öÊÖ£¬É±ÁËÎÒÒ²Ò»Ñù¡£");
-        return notify_fail("É²ÄÇ¼äÄãÖ»¾õµÃÏÂ²»ÁËÊÖ¡£\n");
+        command("say æ²’éƒ¡ä¸»çš„å©å’æˆ‘ä¸æœƒå‡ºæ‰‹ï¼Œæ®ºäº†æˆ‘ä¹Ÿä¸€æ¨£ã€‚");
+        return notify_fail("å‰Žé‚£é–“ä½ åªè¦ºå¾—ä¸‹ä¸äº†æ‰‹ã€‚\n");
 }
 
 int accept_ansuan(object who)
 {
-        return notify_fail("Äã¸ÕÏë°µËã£¬¿ÉÊÇÖ»¼ûÂ¥ÉÏÈËÓ°»Î¶¯£¬¸ù±¾¿´²»Çå³þ¡£\n");
+        return notify_fail("ä½ å‰›æƒ³æš—ç®—ï¼Œå¯æ˜¯åªè¦‹æ¨“ä¸Šäººå½±æ™ƒå‹•ï¼Œæ ¹æœ¬çœ‹ä¸æ¸…æ¥šã€‚\n");
 }
 
 int begin()
@@ -107,14 +107,14 @@ int begin()
         if( !query_temp("win_aer", me) )
         {
                 command("heng");
-                command("say ¸óÏÂÊÇË­£¿ÎªºÎ¸Õ²Å²»³öÕ½£¬ÏÖÔÚÀ´³Ã»ú¼ð±ãÒË¡£");
-                return notify_fail("¿´ÆðÀ´°¢´ó²¢²»Ïë¸úÄã½ÏÁ¿¡£\n");
+                command("say é–£ä¸‹æ˜¯èª°ï¼Ÿç‚ºä½•å‰›æ‰ä¸å‡ºæˆ°ï¼Œç¾åœ¨ä¾†è¶æ©Ÿæ€ä¾¿å®œã€‚");
+                return notify_fail("çœ‹èµ·ä¾†é˜¿å¤§ä¸¦ä¸æƒ³è·Ÿä½ è¼ƒé‡ã€‚\n");
         }
 
         if( !objectp(weapon=query_temp("weapon", me)) )
         {
-                command("say ÎÒÖ»ºÍÄã±È±øÆ÷¹¦·ò£¡");
-                return notify_fail("¿´ÆðÀ´°¢´ó²¢²»Ïë¸úÄã½ÏÁ¿¡£\n");
+                command("say æˆ‘åªå’Œä½ æ¯”å…µå™¨åŠŸå¤«ï¼");
+                return notify_fail("çœ‹èµ·ä¾†é˜¿å¤§ä¸¦ä¸æƒ³è·Ÿä½ è¼ƒé‡ã€‚\n");
         }
 
         if (sword)
@@ -122,30 +122,30 @@ int begin()
                 command("nod");
                 command("bow");
 
-                message_vision(CYN "Í»È»ÕÔÃôºÈµÀ£º¡°Âý×Å£¡ÄÃ×ÅÒÐÌì½£ºÍ$n" CYN
-                                   "¶·£¡¡±\n" NOR,
+                message_vision(CYN "çªç„¶è¶™æ•å–é“ï¼šâ€œæ…¢è‘—ï¼æ‹¿è‘—å€šå¤©åŠå’Œ$n" CYN
+                                   "é¬¥ï¼â€\n" NOR,
                                    obj, this_player());
 
-                message_vision(CYN "°¢´óÎ¢Î¢µãÁËµãÍ·£¬µÀ£º¡°×ñÃü£¡¡±\n\n" NOR,
+                message_vision(CYN "é˜¿å¤§å¾®å¾®é»žäº†é»žé ­ï¼Œé“ï¼šâ€œéµå‘½ï¼â€\n\n" NOR,
                                    obj, this_player());
 
-                message_vision(CYN "°¢´ó¹ªÉíÉÏÇ°£¬ÇáÇáÔÚ" NOR+RED 
-                                   "ºìÄ¾½£¼Ü" NOR+CYN
-                                   "ÉÏÒ»ÅÄ£¬ÄÇºÅ³ÆÌìÏÂµÚÒ»Éñ±øµÄ" NOR+WHT
-                                   "ÒÐÌì½£" NOR+CYN
-                                   "¶ÙÊ±Áè¿ÕÔ¾Æð£¬·ÉÈç°¢´óÊÖÖÐ¡£\n\n" NOR,
+                message_vision(CYN "é˜¿å¤§èº¬èº«ä¸Šå‰ï¼Œè¼•è¼•åœ¨" NOR+RED 
+                                   "ç´…æœ¨åŠæž¶" NOR+CYN
+                                   "ä¸Šä¸€æ‹ï¼Œé‚£è™Ÿç¨±å¤©ä¸‹ç¬¬ä¸€ç¥žå…µçš„" NOR+WHT
+                                   "å€šå¤©åŠ" NOR+CYN
+                                   "é “æ™‚å‡Œç©ºèºèµ·ï¼Œé£›å¦‚é˜¿å¤§æ‰‹ä¸­ã€‚\n\n" NOR,
                                    obj, this_player());
 
-                message_vision(HIW "Ö»Ìý¡°à²¡±µÄÒ»ÉùÆÆ¿ÕÉùÏì£¬ºÅ³ÆÌìÏÂµÚÒ»Éñ±øµÄÒÐÌì½£ÒÑ±»°¢´óÎÕÔÚÊÖÖÐ¡£\n\n" NOR,
+                message_vision(HIW "åªè½â€œå—–â€çš„ä¸€è²ç ´ç©ºè²éŸ¿ï¼Œè™Ÿç¨±å¤©ä¸‹ç¬¬ä¸€ç¥žå…µçš„å€šå¤©åŠå·²è¢«é˜¿å¤§æ¡åœ¨æ‰‹ä¸­ã€‚\n\n" NOR,
                                    this_object(),this_player());
 
                 sword->move(this_object());
                 sword->wield();
 
-                command("say ½øÕÐÁË¡£");
+                command("say é€²æ‹›äº†ã€‚");
 
-                message_vision(HIR "°¢´óÑöÌìÒ»ÉùÇåÐ¥£¬ÊÖÖÐÒÐÌì½£º®Ã¢¶ÙÊ±±¬ÕÇÊý±¶£¬¡°Ë¢Ë¢Ë¢Ë¢¡±Á¬ÐøÊý½££¬Ïò$n" HIR 
-                                   "¸÷´¦Òªº¦Á¬Ðø´ÌÈ¥£¡\nÉí·¨Ö®¿ì£¬½£·¨Ö®¸ßÃ÷£¬µÄÈ·ÊÀËùº±¼û¡£\n\n" NOR,
+                message_vision(HIR "é˜¿å¤§ä»°å¤©ä¸€è²æ¸…å˜¯ï¼Œæ‰‹ä¸­å€šå¤©åŠå¯’èŠ’é “æ™‚çˆ†æ¼²æ•¸å€ï¼Œâ€œåˆ·åˆ·åˆ·åˆ·â€é€£çºŒæ•¸åŠï¼Œå‘$n" HIR 
+                                   "å„è™•è¦å®³é€£çºŒåˆºåŽ»ï¼\nèº«æ³•ä¹‹å¿«ï¼ŒåŠæ³•ä¹‹é«˜æ˜Žï¼Œçš„ç¢ºä¸–æ‰€ç½•è¦‹ã€‚\n\n" NOR,
                                    this_object(),this_player());
         }
 
@@ -165,24 +165,24 @@ void unconcious()
         if (objectp(query("anti")))
         {
                 message_vision(HIR "\n$n" HIR 
-                                   "°µ×ÔÃþË÷°¢´ó½£ÕÐÖÐµÄÆÆÕÀ£¬ÊÖÖÐ±øÆ÷»ÓÈ÷£¬½«°¢´óÊÖÖÐµÄÒÐÌì½£ÀÎÀÎÈ¦×¡£¬"
-                                   "°¢´ó¶Ù¸Ð²»Ãî£¬¸ÕÒª³·½£»Ø\n·À£¬Ö»¾õÐØ¿ÚÒ»Õó±ùÁ¹£¬$n" HIR 
-                                   "µÄ½£ÉíÒÑ¾­¹áÐØ¶øÈë¡£\n\n" NOR,
+                                   "æš—è‡ªæ‘¸ç´¢é˜¿å¤§åŠæ‹›ä¸­çš„ç ´ç¶»ï¼Œæ‰‹ä¸­å…µå™¨æ®æ´’ï¼Œå°‡é˜¿å¤§æ‰‹ä¸­çš„å€šå¤©åŠç‰¢ç‰¢åœˆä½ï¼Œ"
+                                   "é˜¿å¤§é “æ„Ÿä¸å¦™ï¼Œå‰›è¦æ’¤åŠå›ž\né˜²ï¼Œåªè¦ºèƒ¸å£ä¸€é™£å†°æ¶¼ï¼Œ$n" HIR 
+                                   "çš„åŠèº«å·²ç¶“è²«èƒ¸è€Œå…¥ã€‚\n\n" NOR,
                                    this_object(),query("anti"));
 
                 message_vision(HIR "$n" HIR
-                                   "µÃÊÆ²»ÈÄÈË£¬½ô½Ó×ÅÁ¬¹¥³öÊý½££¬½«°¢´óÈ«Éí¸÷´¦½îÂö¾¡ÊýÏ÷¶Ï¡£\n\n" NOR,
+                                   "å¾—å‹¢ä¸é¥’äººï¼Œç·ŠæŽ¥è‘—é€£æ”»å‡ºæ•¸åŠï¼Œå°‡é˜¿å¤§å…¨èº«å„è™•ç­‹è„ˆç›¡æ•¸å‰Šæ–·ã€‚\n\n" NOR,
                                    this_object(),query("anti"));
 
-                message_vision(CYN "\nÕÔÃôÒ»ÕÅÇÎÁ³¶ÙÊ±²Ò°×£¬Ì¾ÁË¿ÚÆø£¬ËµµÀ£º¡°ºÜºÃ£¬ÕâÒÐÌì½£Äã¾ÍÄÃÈ¥°É£¡¡±\n" NOR,
+                message_vision(CYN "\nè¶™æ•ä¸€å¼µä¿è‡‰é “æ™‚æ…˜ç™½ï¼Œå˜†äº†å£æ°£ï¼Œèªªé“ï¼šâ€œå¾ˆå¥½ï¼Œé€™å€šå¤©åŠä½ å°±æ‹¿åŽ»å§ï¼â€\n" NOR,
                                    this_object());
 
-                message_vision(CYN "ÕÔÃô¶Ô×Å$n" CYN 
-                                   "æÌÈ»Ò»Ð¦£¬Ëæ¼´ÇáÇáÉìÁËÉìÑü£¬ÇáÉùËµµÀ£º¡°Â¹ÏÈÉú£¬º×ÏÈÉú£¬ÎÒÀÛÁË¡£¡±\n" NOR,
+                message_vision(CYN "è¶™æ•å°è‘—$n" CYN 
+                                   "å«£ç„¶ä¸€ç¬‘ï¼Œéš¨å³è¼•è¼•ä¼¸äº†ä¼¸è…°ï¼Œè¼•è²èªªé“ï¼šâ€œé¹¿å…ˆç”Ÿï¼Œé¶´å…ˆç”Ÿï¼Œæˆ‘ç´¯äº†ã€‚â€\n" NOR,
                                    this_object(), query("anti"));
 
-                message_vision(HIR "Ö»¼ûÕÔÃôÉíºóÉÁ³öÁ½¸öÈËÓ°£¬Ïà»¥Ê¹ÁË¸öÑÛÉñ£¬¶þ»°²»Ëµ£¬¶Ô×Å$n" HIR 
-                                   "Ö±ÆË¹ýÀ´¡£¡±\n" NOR,
+                message_vision(HIR "åªè¦‹è¶™æ•èº«å¾Œé–ƒå‡ºå…©å€‹äººå½±ï¼Œç›¸äº’ä½¿äº†å€‹çœ¼ç¥žï¼ŒäºŒè©±ä¸èªªï¼Œå°è‘—$n" HIR 
+                                   "ç›´æ’²éŽä¾†ã€‚â€\n" NOR,
                                    this_object(), query("anti"));
 
                 delete_temp("bi", query("anti"));

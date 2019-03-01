@@ -6,14 +6,14 @@ inherit MYHEART2;
 
 void create()
 {
-        set_name(HIM "Ç³²İ¹ÛÒô" NOR, ({ "qiancao guanyin", "qiancao", "guanyin" }) );
+        set_name(HIM "æ·ºè‰è§€éŸ³" NOR, ({ "qiancao guanyin", "qiancao", "guanyin" }) );
         set_weight(1);
         if( clonep())
                 set_default_object(__FILE__);
         else {
                 set("material", "paper");
-                set("unit", "¸ö");
-                set("long", HIM "ÕâÊÇÒ»¸ö²ú×Ô·öÉ£Ç³²İËÂµÄ»¤ÉíÈËÅ¼£¬ÉÏÃæĞåÓĞ¡¸Ç³²İ¹ÛÒô¡¹µÄ×ÖÑù¡£\n" NOR);
+                set("unit", "å€‹");
+                set("long", HIM "é€™æ˜¯ä¸€å€‹ç”¢è‡ªæ‰¶æ¡‘æ·ºè‰å¯ºçš„è­·èº«äººå¶ï¼Œä¸Šé¢ç¹¡æœ‰ã€Œæ·ºè‰è§€éŸ³ã€çš„å­—æ¨£ã€‚\n" NOR);
                 set("value", 1000000);
                 set("limit", ([
                         "exp"    :   2000000,

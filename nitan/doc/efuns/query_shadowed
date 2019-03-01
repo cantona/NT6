@@ -2,31 +2,31 @@
 
         query_shadowed()
 
-        Ãû³Æ:
+        åç¨±:
                 query_shadowed( object ob | void)
-                ²éÕÒ×è¸ôÎï¼þ¡£
+                æŸ¥æ‰¾é˜»éš”ç‰©ä»¶ã€‚
 
-        Óï·¨:
+        èªžæ³•:
                 object query_shadowed( object ob | void);
-                Îï¼þ query_shadowed( Îï¼þ ob »òÕß ÎÞ²ÎÊý);
+                ç‰©ä»¶ query_shadowed( ç‰©ä»¶ ob æˆ–è€… ç„¡åƒæ•¸);
 
-        ÓÃ·¨:
-                Èç¹ûÃ»ÓÐ²ÎÊý£¬Ôò»á´«»Ø this_object() µÄ×è¸ô
-                Îï¼þ£¬·ñÔò»á´«»ØÎï¼þ ob µÄ×è¸ôÎï¼þ¡£
+        ç”¨æ³•:
+                å¦‚æžœæ²’æœ‰åƒæ•¸ï¼Œå‰‡æœƒå‚³å›ž this_object() çš„é˜»éš”
+                ç‰©ä»¶ï¼Œå¦å‰‡æœƒå‚³å›žç‰©ä»¶ ob çš„é˜»éš”ç‰©ä»¶ã€‚
 
-                Èç¹ûÎï¼þ ob (²ÎÊýÎª ob)»òÕß this_object() (ÎÞ
-                ²ÎÊý)Ã»ÓÐÉè¶¨¹ý×è¸ôÎï¼þ»òÕß×è¸ôÎï¼þÒÑ±»´Ý»Ù£¬
-                Ôò´«»Ø 0¡£
+                å¦‚æžœç‰©ä»¶ ob (åƒæ•¸ç‚º ob)æˆ–è€… this_object() (ç„¡
+                åƒæ•¸)æ²’æœ‰è¨­å®šéŽé˜»éš”ç‰©ä»¶æˆ–è€…é˜»éš”ç‰©ä»¶å·²è¢«æ‘§æ¯€ï¼Œ
+                å‰‡å‚³å›ž 0ã€‚
 
-        ËµÃ÷£º
-                ÓÉÓÚÔ­ MudOS µÄ shadow ²¿·ÖÓÐÐ©²»ºÏÀí£¬Ê¹ÓÃ²»
-                ·½±ã£¬¶øÇÒ´æÔÚ°²È«Òþ»¼£¬Òò´ËÕâ²¿·ÖµÄ³ÌÐòÖØÐÂÐ´
-                ¹ý£¬shadow ²¿·ÖµÄº¯ÊýµÄÊ¹ÓÃºÍÔ­ MudOS Ìá¹©µÄº¯
-                ÊýÓÐºÜ´óµÄ²»Í¬£¬ÈçÒªÔÚÆäËü MudOS Ö§³ÖµÄÓÎÏ·ÖÐ
-                Ê¹ÓÃ shadow Çë²Î¿¼ËüµÄ MudOS µÄËµÃ÷¡£
+        èªªæ˜Žï¼š
+                ç”±äºŽåŽŸ MudOS çš„ shadow éƒ¨åˆ†æœ‰äº›ä¸åˆç†ï¼Œä½¿ç”¨ä¸
+                æ–¹ä¾¿ï¼Œè€Œä¸”å­˜åœ¨å®‰å…¨éš±æ‚£ï¼Œå› æ­¤é€™éƒ¨åˆ†çš„ç¨‹åºé‡æ–°å¯«
+                éŽï¼Œshadow éƒ¨åˆ†çš„å‡½æ•¸çš„ä½¿ç”¨å’ŒåŽŸ MudOS æä¾›çš„å‡½
+                æ•¸æœ‰å¾ˆå¤§çš„ä¸åŒï¼Œå¦‚è¦åœ¨å…¶å®ƒ MudOS æ”¯æŒçš„éŠæˆ²ä¸­
+                ä½¿ç”¨ shadow è«‹åƒè€ƒå®ƒçš„ MudOS çš„èªªæ˜Žã€‚
 
-        ²Î¿¼:
+        åƒè€ƒ:
                 shadow(), query_shadowing()
 
-        by ·¢ÏÖºÅ(Find@tx)
+        by ç™¼ç¾è™Ÿ(Find@tx)
 

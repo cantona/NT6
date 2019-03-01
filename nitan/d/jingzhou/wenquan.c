@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��Ȫ��");
+        set("short", "溫泉井");
         set("long", @LONG
-�㿴��һ����Ȫ�����������ǰ����������ð��������Ȫˮ����
-Ȫ�䲻�󣬵�����ʹ���뵽��ȥ��һ�ݣ���˵�����������β���
+你看到一眼溫泉呈現在你的面前，汩汩往外冒著熱氣和泉水，溫
+泉雖不大，但足以使人想到下去泡一泡，據說還可以療傷治病。
 LONG );
         set("outdoors", "jingzhou");
         set("exits", ([

@@ -4,18 +4,18 @@
 inherit SWORD;
 void create()
 {
-        set_name(HIW"°×ÓñÑşÇÙ"NOR, ({ "yao qin", "qin"}));
+        set_name(HIW"ç™½ç‰ç‘¤ç´"NOR, ({ "yao qin", "qin"}));
         set("taskobj", 1);
         set_weight(6000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¾ß");
-                set("long", "ÕâÊÇÒ»¾ßÓÃ°×Óñ×ö³ÉµÄÑşÇÙ¡£\n");
+                set("unit", "å…·");
+                set("long", "é€™æ˜¯ä¸€å…·ç”¨ç™½ç‰åšæˆçš„ç‘¤ç´ã€‚\n");
                 set("value", 0);
                 set("material", "steel");
-                set("wield_msg", "$N´Ó±³ºó½«$nÄÃÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n·Å»Ø±³ºó¡£\n");
+                set("wield_msg", "$Nå¾èƒŒå¾Œå°‡$næ‹¿åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°‡æ‰‹ä¸­çš„$næ”¾å›èƒŒå¾Œã€‚\n");
         }
         setup();
 }

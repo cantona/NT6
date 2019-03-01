@@ -2,15 +2,15 @@
 inherit TASK;
 void create()
 {
-    set_name( CYN "ÒÂÑù" NOR, ({ "yi yang" }) );
+    set_name( CYN "è¡£æ¨£" NOR, ({ "yi yang" }) );
     set_weight(1);
     if( clonep() )
             destruct(this_object());
     else {
-            set("unit", "¼ş");
+            set("unit", "ä»¶");
             set("material", "cloth");
-            set("long", "Ò»¼şÓÃÀ´×öÒÂ·şµÄÒÂÑù£¬ÉÏÃæ»¹ÓĞÒ»¹Éµ­µ­µÄÇåÏã¡£\n");
+            set("long", "ä¸€ä»¶ç”¨ä¾†åšè¡£æœçš„è¡£æ¨£ï¼Œä¸Šé¢é‚„æœ‰ä¸€è‚¡æ·¡æ·¡çš„æ¸…é¦™ã€‚\n");
           }
-    set("owner", "ÔøÈá");
+    set("owner", "æ›¾æŸ”");
     setup();
 }

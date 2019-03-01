@@ -3,11 +3,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "²ñ·¿");
+        set("short", "æŸ´æˆ¿");
         set("long", @LONG
-ÕâÊÇÒ»¼ä°«Ğ¡µÄÍß·¿£¬Æ½Ê±×÷Îª¶Ñ·ÅÔÓÎïËùÓÃ¡£·¿ÎİÀï²¼
-ÂúÁËÖëÍø£¬µØÃæÂúÊÇ»Ò³¾¡£¿´Ñù×ÓÒÑ¾­ºÜ¾ÃÃ»ÓĞÈË´òÉ¨ÁË¡£²ñ
-·¿µÄÒ»½ÇĞ±·Å×Å¼¸À¦¸É²ñ¡£
+é€™æ˜¯ä¸€é–“çŸ®å°çš„ç“¦æˆ¿ï¼Œå¹³æ™‚ä½œç‚ºå †æ”¾é›œç‰©æ‰€ç”¨ã€‚æˆ¿å±‹è£¡å¸ƒ
+æ»¿äº†è››ç¶²ï¼Œåœ°é¢æ»¿æ˜¯ç°å¡µã€‚çœ‹æ¨£å­å·²ç¶“å¾ˆä¹…æ²’æœ‰äººæ‰“æƒäº†ã€‚æŸ´
+æˆ¿çš„ä¸€è§’æ–œæ”¾è‘—å¹¾æ†å¹¹æŸ´ã€‚
 LONG);
         set("exits", ([
                 "west" : __DIR__"ma_dayuan",
@@ -27,10 +27,10 @@ void init()
 {
         object me = this_player();
 
-        if( query("family/family_name", me) == "Îå¶¾½Ì" )
+        if( query("family/family_name", me) == "äº”æ¯’æ•™" )
         {
-                tell_object(me, HIR "\nÄãÍ»È»·¢ÏÖÒ»Ö»É«²Ê°ßìµµÄÖ©Öë£¬¾¹"
-                                "ËÆÎå¶¾½ÌµÄ¶ÀÃÅÃÜĞÅ¡£\n" NOR);
+                tell_object(me, HIR "\nä½ çªç„¶ç™¼ç¾ä¸€åªè‰²å½©æ–‘æ–•çš„èœ˜è››ï¼Œç«Ÿ"
+                                "ä¼¼äº”æ¯’æ•™çš„ç¨é–€å¯†ä¿¡ã€‚\n" NOR);
                 set_temp("want_back_wudu", 1, me);
 
                 remove_call_out("letter");
@@ -47,12 +47,12 @@ void letter(object me)
         if( !query_temp("want_back_wudu", me) )
                 return;
 
-        tell_object(me, WHT "  ©³©¥©¥©¥©¥©¥©¥©·\n"
-                            "  ©§²ñ·¿Ë®¸×ÏÂÓĞ©§\n"
-                            "  ©§±¾½ÌÃÜµÀÄÜ¹»©§\n"
-                            "  ©§Ö±Í¨(" HIY "back" NOR + WHT ")Îå©§\n"
-                            "  ©§¶¾½Ì  ÆëÔÆ°Á©§\n"
-                            "  ©»©¥©¥©¥©¥©¥©¥©¿\n" NOR);
+        tell_object(me, WHT "  â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡\n"
+                            "  â–¡æŸ´æˆ¿æ°´ç¼¸ä¸‹æœ‰â–¡\n"
+                            "  â–¡æœ¬æ•™å¯†é“èƒ½å¤ â–¡\n"
+                            "  â–¡ç›´é€š(" HIY "back" NOR + WHT ")äº”â–¡\n"
+                            "  â–¡æ¯’æ•™  é½Šé›²å‚²â–¡\n"
+                            "  â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡\n" NOR);
 }
 
 int do_back()
@@ -61,11 +61,11 @@ int do_back()
 
         if( query_temp("want_back_wudu", me) )
         {
-                message("vision", HIC "ºöÈ»¼äÖ»¼û" + me->name() +
-                                  HIC "ÉíĞÎÒ»»Î£¬¾¹Ã»ÁË×ÙÓ°¡£\n" NOR,
+                message("vision", HIC "å¿½ç„¶é–“åªè¦‹" + me->name() +
+                                  HIC "èº«å½¢ä¸€æ™ƒï¼Œç«Ÿæ²’äº†è¹¤å½±ã€‚\n" NOR,
                                   environment(me), ({me}));
                 me->move("/d/wudu/midao5");
-                tell_object(me, HIC "\nÄã×ê½øÁË²ñ·¿Ë®¸×ÏÂµÄÃÜµÀ¡£\n\n" NOR);
+                tell_object(me, HIC "\nä½ é‘½é€²äº†æŸ´æˆ¿æ°´ç¼¸ä¸‹çš„å¯†é“ã€‚\n\n" NOR);
         }
         return 1;
 }

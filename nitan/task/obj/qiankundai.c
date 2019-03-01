@@ -2,15 +2,15 @@
 inherit TASK; 
 void create() 
 { 
-        set_name( MAG "Ç¬À¤´ü" NOR, ({ "qiankun dai" }) ); 
+        set_name( MAG "ä¹¾å¤è¢‹" NOR, ({ "qiankun dai" }) ); 
         set_weight(20); 
         if( clonep() ) 
                 destruct(this_object()); 
         else { 
-                set("unit", "¸ö"); 
+                set("unit", "å€‹"); 
                 set("material", "paper"); 
-                set("long", "Ò»¸öÆÕÆÕÍ¨Í¨ÉõÖÁÓĞĞ©ÆÆ¾É²»¿°µÄ²¼´ü£¬ÖªµÀ¾¿¾¹ÓĞºÎÓÃµÄÈËÉÙÖ®ÉõÉÙ¡£\n"); 
+                set("long", "ä¸€å€‹æ™®æ™®é€šé€šç”šè‡³æœ‰äº›ç ´èˆŠä¸å ªçš„å¸ƒè¢‹ï¼ŒçŸ¥é“ç©¶ç«Ÿæœ‰ä½•ç”¨çš„äººå°‘ä¹‹ç”šå°‘ã€‚\n"); 
         } 
-        set("owner", "Ëµ²»µÃ"); 
+        set("owner", "èªªä¸å¾—"); 
         setup(); 
 } 

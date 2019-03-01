@@ -9,30 +9,30 @@ int exert(object me, object target, int amount)
         object *ob;
         int i, skill, force,extra,level; 
         if( query("class", me) != "yihua" )
-                return notify_fail ("£ÛĞÇĞ¼Ğı×ª£İÖ»ÓĞÒÆ»¨¹¬µÜ×ÓÄÜÊ¹ÓÃ¡£\n");
+                return notify_fail ("ï¹æ˜Ÿå±‘æ—‹è½‰ï¹åªæœ‰ç§»èŠ±å®®å¼Ÿå­èƒ½ä½¿ç”¨ã€‚\n");
         if( !me->is_fighting() )
-                return notify_fail("ĞÇĞ¼Ğı×ªÖ»ÄÜÔÚÕ½¶·ÖĞÊ¹ÓÃ¡£\n"); 
+                return notify_fail("æ˜Ÿå±‘æ—‹è½‰åªèƒ½åœ¨æˆ°é¬¥ä¸­ä½¿ç”¨ã€‚\n"); 
         if( query_temp("xingxiexuanzhuan", me)+10>time() )
-                                        return notify_fail("Äã²»ÄÜÕâÃ´¿ì¾ÍÊ©Õ¹ÏÂÒ»´ÎĞÇĞ¼Ğı×ª¡£\n"); 
+                                        return notify_fail("ä½ ä¸èƒ½é€™éº¼å¿«å°±æ–½å±•ä¸‹ä¸€æ¬¡æ˜Ÿå±‘æ—‹è½‰ã€‚\n"); 
         skill = me->query_skill("mingyu-force",1);
         extra = me->query_skill("force");
         force=query("force", me);
-        if (skill<180 && userp(me)) return notify_fail("ÄãµÄÃ÷Óñ¹¦ÉĞÎ´´ïµ½µÚ¾ÅÖØ£¬²»ÄÜÊ©Õ¹ĞÇĞ¼Ğı×ª¡£\n"); 
+        if (skill<180 && userp(me)) return notify_fail("ä½ çš„æ˜ç‰åŠŸå°šæœªé”åˆ°ç¬¬ä¹é‡ï¼Œä¸èƒ½æ–½å±•æ˜Ÿå±‘æ—‹è½‰ã€‚\n"); 
         level = skill/20;
         if (level>11)
                         level = 11;
         if( userp(me) && level<10 && force < 1500 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n"); 
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ã€‚\n"); 
         
         
-        combat_message_vision(HIW"$NÉîÎüÒ»¿ÚÆø£¬´ß¶¯µÚ"+chinese_number(level)+"ÖØµÄÃ÷Óñ¹¦,Á³ÉÏÍ»È»±äµÃ·Çºì·Ç°×£¬Õû¸öÈË¾¹ËÆÍ¸Ã÷µÄ£¡\n",me);
-        combat_message_vision("$N¼¡ÈâÀïµÄÃ¿Ò»ºŞ½îÂç£¬Ã¿Ò»ºŞ¹ÇÍ·¶¼áİ·ğÄÜ¿´µÃÇåÇå³ş³ş£¬Ëµ²»³öµÄ¹îÃØ¿ÉÅÂ£¡\n"NOR,me);
+        combat_message_vision(HIW"$Næ·±å¸ä¸€å£æ°£ï¼Œå‚¬å‹•ç¬¬"+chinese_number(level)+"é‡çš„æ˜ç‰åŠŸ,è‡‰ä¸Šçªç„¶è®Šå¾—éç´…éç™½ï¼Œæ•´å€‹äººç«Ÿä¼¼é€æ˜çš„ï¼\n",me);
+        combat_message_vision("$Nè‚Œè‚‰è£¡çš„æ¯ä¸€æ¨ç­‹çµ¡ï¼Œæ¯ä¸€æ¨éª¨é ­éƒ½å½·ä½›èƒ½çœ‹å¾—æ¸…æ¸…æ¥šæ¥šï¼Œèªªä¸å‡ºçš„è©­ç§˜å¯æ€•ï¼\n"NOR,me);
         
         set_temp("xingxiexuanzhuan", time(), me);
         
         if (me->query_busy()<2) me->start_busy(2);
         me->start_call_out( (:call_other, __FILE__, "give_effect",me,extra,level:),1);
-        //me->ccommand("say ¿ÉÒÔÂ¥£¡"); 
+        //me->ccommand("say å¯ä»¥æ¨“ï¼"); 
 
         return 1;
 }   
@@ -43,7 +43,7 @@ void give_effect(object me,int extra,int level)
         int i,count,extra_enemy;
         enemy = me->query_enemy();
         if (!sizeof(enemy)) return;
-        combat_message_vision(HIW"$NÄÚÁ¦·Çµ«²»ÏòÍâ»Ó·¢£¬·´¶øÏòÄÚÊÕËõ£¬ÒÔµ¤ÌïÎªÖĞĞÄĞÎ³ÉÕæÆøäöÎĞ£¡\n"NOR,me);
+        combat_message_vision(HIW"$Nå…§åŠ›éä½†ä¸å‘å¤–æ®ç™¼ï¼Œåè€Œå‘å…§æ”¶ç¸®ï¼Œä»¥ä¸¹ç”°ç‚ºä¸­å¿ƒå½¢æˆçœŸæ°£æ¼©æ¸¦ï¼\n"NOR,me);
         for (i=0;i<sizeof(enemy);i++)
                 {
                         extra_enemy =  enemy[i]->query_skill("force");
@@ -66,7 +66,7 @@ void take_effect(object me,object target,int level)
 
         if( /*query("step_less", target) || */!query_temp("condition/mingyu", target) || !objectp(me) || !objectp(target) || !target->is_fighting(me) )
                         {
-                msg = HIW"$NÖÕÓÚ°ÚÍÑÁËÃ÷Óñ¹¦µÄÕæÆøäöÎĞ¡£\n"NOR;
+                msg = HIW"$Nçµ‚äºæ“ºè„«äº†æ˜ç‰åŠŸçš„çœŸæ°£æ¼©æ¸¦ã€‚\n"NOR;
                         combat_message_vision(msg,target);      
                         delete_temp("condition/mingyu", target);
       return;
@@ -76,9 +76,9 @@ void take_effect(object me,object target,int level)
                                                 switch (i) {
                                                         case 0:
                                                                                 if (level>=10)
-                                                                                                msg = GRN"$NÉí´¦Ã÷Óñ¹¦µÄÕæÆøäöÎĞÖĞ£¬Í»¾õ¾Ù²½Î¨¼è£¡¡£\n"NOR;
+                                                                                                msg = GRN"$Nèº«è™•æ˜ç‰åŠŸçš„çœŸæ°£æ¼©æ¸¦ä¸­ï¼Œçªè¦ºèˆ‰æ­¥å”¯è‰±ï¼ã€‚\n"NOR;
                                                                                 else
-                                                                                                msg = YEL"$NÉí´¦Ã÷Óñ¹¦µÄÕæÆøäöÎĞÖĞ£¬Í»¾õ¾Ù²½Î¨¼è£¡¡£\n"NOR;
+                                                                                                msg = YEL"$Nèº«è™•æ˜ç‰åŠŸçš„çœŸæ°£æ¼©æ¸¦ä¸­ï¼Œçªè¦ºèˆ‰æ­¥å”¯è‰±ï¼ã€‚\n"NOR;
                                                                                 combat_message_vision(msg,target);
                                                                                 if (level>=10)
                                                                                                 //true_busy(target,2+random(2));
@@ -90,15 +90,15 @@ void take_effect(object me,object target,int level)
                                                         case 1:
                                                                                 
                                                                                 if( !query("force", target) && level<11){
-                                                                                                msg = YEL"$NÄÚÁ¦ºÄ¾¡£¬½Å²½õçõÇ£¬Ò¡Ò¡Óû×¹£¡\n"NOR;
+                                                                                                msg = YEL"$Nå…§åŠ›è€—ç›¡ï¼Œè…³æ­¥è¹£è·šï¼Œæ–æ–æ¬²å¢œï¼\n"NOR;
                                                                                                 combat_message_vision(msg,target);
                                                                                                 if (target->query_busy()<2) target->start_busy(2);
                                                                                                 break;
                                                                                 } 
                                                                                 if (level>=11)
-                                                                                                msg = RED"$NÉí´¦Ã÷Óñ¹¦µÄÕæÆøäöÎĞÖĞ£¬È«ÉíÆøÑªÈçÈÚÑ©°ã¿ªÊ¼ÏûÊ§£¡\n"NOR;
+                                                                                                msg = RED"$Nèº«è™•æ˜ç‰åŠŸçš„çœŸæ°£æ¼©æ¸¦ä¸­ï¼Œå…¨èº«æ°£è¡€å¦‚èé›ªèˆ¬é–‹å§‹æ¶ˆå¤±ï¼\n"NOR;
                                                                                 else
-                                                                                                msg = WHT"$NÉí´¦Ã÷Óñ¹¦µÄÕæÆøäöÎĞÖĞ£¬È«Éí¹¦Á¦ÈçÈÚÑ©°ã¿ªÊ¼ÏûÊ§£¡\n"NOR;
+                                                                                                msg = WHT"$Nèº«è™•æ˜ç‰åŠŸçš„çœŸæ°£æ¼©æ¸¦ä¸­ï¼Œå…¨èº«åŠŸåŠ›å¦‚èé›ªèˆ¬é–‹å§‹æ¶ˆå¤±ï¼\n"NOR;
                                                                                 combat_message_vision(msg,target);
                                                                                 max_force=query("max_force", target);
                                                                                 if(level>=11 && max_force<=1200)
@@ -109,7 +109,7 @@ void take_effect(object me,object target,int level)
                                                                                         addn("force", max_force/10, me);
                                                                                 else
                                                                                         addn("force", max_force/3, me);
-                                                                                //×î¶àÎüµ½Èı±¶max_force
+                                                                                //æœ€å¤šå¸åˆ°ä¸‰å€max_force
                                                                                 if( 3*query("max_force", me)<query("force", me) )
                                                                                    set("force", 3*query("max_force", me), me);
                                                                                 //if (me->query_busy()<1) me->start_busy(1);
@@ -118,7 +118,7 @@ void take_effect(object me,object target,int level)
                                                                                 inv=all_inventory(target);
                                                                                 i = sizeof(inv);
                                                                                 if (i) {
-                                                                                        msg = CYN"$NÉí´¦Ã÷Óñ¹¦µÄÕæÆøäöÎĞÖĞ£¬ÉíÉÏÎïÊÂ·×·×ÀëÌå·É³ö£¡\n"NOR;
+                                                                                        msg = CYN"$Nèº«è™•æ˜ç‰åŠŸçš„çœŸæ°£æ¼©æ¸¦ä¸­ï¼Œèº«ä¸Šç‰©äº‹ç´›ç´›é›¢é«”é£›å‡ºï¼\n"NOR;
                                                                                         combat_message_vision(msg,target)
                                                                                         k = random(i)
                                                                                         for (j=0;j<k;j++

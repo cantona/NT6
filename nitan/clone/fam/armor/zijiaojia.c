@@ -5,25 +5,25 @@ inherit ARMOR;
 
 void create()
 {
-        set_name(NOR + MAG "×ÏòÔÁÛ¼×" NOR, ({ "zijiao linjia", "zijiao", "linjia" }));
+        set_name(NOR + MAG "ç´«è›Ÿé±—ç”²" NOR, ({ "zijiao linjia", "zijiao", "linjia" }));
         set_weight(9000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸±");
-                set("long", NOR + MAG "\nÒ»¸±³äÂú×ÅÉñÆæÁ¦Á¿µÄÁÛ¼×£¬É¢·¢×ÅÉãÈËĞÄÆÇµÄº®Ã¢¡£\n" NOR
-                            HIC "ÓĞĞ§ÕĞ¼ÜĞŞÕı£º+ 50        ÓĞĞ§Çá¹¦ĞŞÕı£º+ 30\n" NOR
-                            HIC "¿¹¶¾Ğ§¹ûĞŞÕı£º+ 30%       ·ÀÓùĞ§¹ûµÈ¼¶£º 200\n" NOR
-                            HIC "¿¹¶¾»Ø±ÜĞŞÕı£º+ 15%\n" NOR);
+                set("unit", "å‰¯");
+                set("long", NOR + MAG "\nä¸€å‰¯å……æ»¿è‘—ç¥å¥‡åŠ›é‡çš„é±—ç”²ï¼Œæ•£ç™¼è‘—æ”äººå¿ƒé­„çš„å¯’èŠ’ã€‚\n" NOR
+                            HIC "æœ‰æ•ˆæ‹›æ¶ä¿®æ­£ï¼š+ 50        æœ‰æ•ˆè¼•åŠŸä¿®æ­£ï¼š+ 30\n" NOR
+                            HIC "æŠ—æ¯’æ•ˆæœä¿®æ­£ï¼š+ 30%       é˜²å¾¡æ•ˆæœç­‰ç´šï¼š 200\n" NOR
+                            HIC "æŠ—æ¯’å›é¿ä¿®æ­£ï¼š+ 15%\n" NOR);
 
                 set("material", "dragon");
-                set("material_name", "×ÏòÔĞë¡¢×ÏòÔÆ¤¸ï¡¢×ÏòÔ½î¡¢µØÂöÑªÈª");
+                set("material_name", "ç´«è›Ÿé ˆã€ç´«è›Ÿçš®é©ã€ç´«è›Ÿç­‹ã€åœ°è„ˆè¡€æ³‰");
                 set("can_summon", 1);
                 set("summon_id", "zijiaojia");
-                set("ctype", "»¤¼×");
-                set("summon_wear_msg", NOR + MAG "É²ÄÇ¼ä£¬ÌìµØ±äÉ«£¬À×Éù´ó×÷£¬×ÏÆø´óÊ¢£¬ÃÖÂşËÄÖÜ¡£\n"
-                                       "×ªÑÛ¼ä£¬×ÏÆø½¥½¥»¯×÷Ò»ÌõòÔÁú£¬Óë$N" NOR + MAG "ºÏÎªÒ»Ìå¡£\n" NOR);
-                set("summon_remove_msg", NOR + MAG "À×Éù½¥Ï¢£¬×ÏÆø½¥É¢£¬ÌìµØ»Ö¸´ÁËÆ½¾²¡£\n" NOR);
+                set("ctype", "è­·ç”²");
+                set("summon_wear_msg", NOR + MAG "å‰é‚£é–“ï¼Œå¤©åœ°è®Šè‰²ï¼Œé›·è²å¤§ä½œï¼Œç´«æ°£å¤§ç››ï¼Œå½Œæ¼«å››å‘¨ã€‚\n"
+                                       "è½‰çœ¼é–“ï¼Œç´«æ°£æ¼¸æ¼¸åŒ–ä½œä¸€æ¢è›Ÿé¾ï¼Œèˆ‡$N" NOR + MAG "åˆç‚ºä¸€é«”ã€‚\n" NOR);
+                set("summon_remove_msg", NOR + MAG "é›·è²æ¼¸æ¯ï¼Œç´«æ°£æ¼¸æ•£ï¼Œå¤©åœ°æ¢å¾©äº†å¹³éœã€‚\n" NOR);
 
                 set("value", 3000000);
                 set("armor_prop/armor", 200);
@@ -31,8 +31,8 @@ void create()
                 set("armor_prop/parry", 50);
                 set("armor_prop/reduce_poison", 30);
                 set("armor_prop/avoid_poison", 15);
-                set("avoid_msg", NOR + MAG "Ò»µÀº®Ã¢ÉÁ¹ı£¬×ÏòÔÁÛ¼×½«¶¾ÖÊÈ«²¿ÎüÊÕ¡£\n" NOR);
-                set("reduce_msg", HIR "Ò»µÀº®Ã¢»®¹ı£¬×ÏòÔÁÛ¼×ÎüÊÕÁË²¿·Ö¶¾ÖÊ¡£" NOR);
+                set("avoid_msg", NOR + MAG "ä¸€é“å¯’èŠ’é–ƒéï¼Œç´«è›Ÿé±—ç”²å°‡æ¯’è³ªå…¨éƒ¨å¸æ”¶ã€‚\n" NOR);
+                set("reduce_msg", HIR "ä¸€é“å¯’èŠ’åŠƒéï¼Œç´«è›Ÿé±—ç”²å¸æ”¶äº†éƒ¨åˆ†æ¯’è³ªã€‚" NOR);
         }
         setup();
 }

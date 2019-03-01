@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-        set("short","ͥԺ");
+        set("short","庭院");
         set("long",@LONG
-����������������ͥԺ���м�һ��Сˮ̶�������������಻֪��
-�Ļ�����ֻϲȵ�ڻ����б�����ȥ�����Ա���ƬС���֣���Ӱ�·���
-ʯ��ʯ�ʣ����������������塣
+這裡是鎮南王府的庭院，中間一個小水潭，邊上種著許多不知名
+的花，幾只喜鵲在花叢中蹦來跳去，花叢邊有片小竹林，竹影下放著
+石桌石凳，經常有人在這下棋。
 LONG);
         set("outdoors", "daliwang");
         set("exits",([ /* sizeof() == 1 */

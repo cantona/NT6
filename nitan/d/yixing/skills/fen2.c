@@ -1,5 +1,5 @@
 // /kungfu/skill/huoyan-dao/fen.c
-// /d/yixing/skills/fen.c perform ·Ù
+// /d/yixing/skills/fen.c perform ç„š
 // Last Modified by winder on Jul. 12 2002
 
 #include <ansi.h>
@@ -11,30 +11,30 @@ int perform(object me, object target)
         int damage;
         string *limb, type, result, str;
 
-        type = "ÄÚÉË";
+        type = "å…§å‚·";
 
         if( !target ) target = offensive_target(me);
 
         if( !target || !target->is_character() || !me->is_fighting(target) )
-                return notify_fail("Äã²»ÔÚÕ½¶·ÖĞ¡£\n");
+                return notify_fail("ä½ ä¸åœ¨æˆ°é¬¥ä¸­ã€‚\n");
 
         if( objectp(query_temp("weapon", me)) )
-                return notify_fail("Äã²»ÊÇ¿ÕÊÖ¡£\n");
+                return notify_fail("ä½ ä¸æ˜¯ç©ºæ‰‹ã€‚\n");
 
 /*
         if( target->is_busy() )
-                return notify_fail(target->name() + "Ä¿Ç°Õı×Ô¹Ë²»Ï¾£¬·Åµ¨¹¥»÷°É¡£\n");
+                return notify_fail(target->name() + "ç›®å‰æ­£è‡ªé¡§ä¸æš‡ï¼Œæ”¾è†½æ”»æ“Šå§ã€‚\n");
 */
         
         if( (int)me->query_skill("huoyan-dao", 1) < 120 )
-                return notify_fail("ÄãµÄ»ğÑæµ¶ĞŞÎª²»¹»¡£\n");
+                return notify_fail("ä½ çš„ç«ç‡„åˆ€ä¿®ç‚ºä¸å¤ ã€‚\n");
         if ( me->query_skill_mapped("force") != "xiaowuxiang" &&
                 me->query_skill_mapped("force") != "longxiang-banruo")
-                return notify_fail("ÄãËùÓÃÄÚ¹¦²»¶Ô£¡\n");
+                return notify_fail("ä½ æ‰€ç”¨å…§åŠŸä¸å°ï¼\n");
         if( query("neili", me) <= 500 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¡\n");
-        message_vision(HIR "$N³¤ÎüÒ»¿ÚÆø£¬ÉíÉÏÒÂÉÀ»º»ºÕÇÆğ£¬Á½ÕÆ±äµÃÍ¨ºì£¬Éä³öÒ»¹É×ÆÈËÈÈÆø¡£$nµÄÉíÓ°±»ÁıÕÖÔÚÒ»ÍÅ»ğÑæÖ®ÖĞ¡£\n\n" NOR, me,target);
-//        tell_object(target, BLU "ÄãÖ»¾õÒ»¹ÉÈÈÀËÆËÃæ£¬»ôµÄĞØ¿ÚÒ»Õó¾çÍ´¡£\n"NOR);
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ï¼\n");
+        message_vision(HIR "$Né•·å¸ä¸€å£æ°£ï¼Œèº«ä¸Šè¡£è¡«ç·©ç·©æ¼²èµ·ï¼Œå…©æŒè®Šå¾—é€šç´…ï¼Œå°„å‡ºä¸€è‚¡ç¼äººç†±æ°£ã€‚$nçš„èº«å½±è¢«ç± ç½©åœ¨ä¸€åœ˜ç«ç‡„ä¹‹ä¸­ã€‚\n\n" NOR, me,target);
+//        tell_object(target, BLU "ä½ åªè¦ºä¸€è‚¡ç†±æµªæ’²é¢ï¼Œéœçš„èƒ¸å£ä¸€é™£åŠ‡ç—›ã€‚\n"NOR);
         addn("neili", -100, me);
 
         if( random(query("combat_exp", me))>query("combat_exp", target)/2 )
@@ -44,10 +44,10 @@ int perform(object me, object target)
                         armor=query_temp("armor/cloth", target);
                         if( query("armor_prop/armor", armor)<150 )
                         {
-                                message_vision(HIY"Ö»¼û$NÉíÉÏµÄ$n"+HIY+"ÒÑ±»ÕğµÃ·ÛËé£¬±ä³ÉÒ»¿é¿éÆÆ²¼µôÔÚµØÉÏ¡£\n"NOR, target, armor);
+                                message_vision(HIY"åªè¦‹$Nèº«ä¸Šçš„$n"+HIY+"å·²è¢«éœ‡å¾—ç²‰ç¢ï¼Œè®Šæˆä¸€å¡Šå¡Šç ´å¸ƒæ‰åœ¨åœ°ä¸Šã€‚\n"NOR, target, armor);
                                 armor->unequip();
                                 armor->move(environment(target));
-                                set("name", "ÆÆËéµÄ"+query("name", armor), armor);
+                                set("name", "ç ´ç¢çš„"+query("name", armor), armor);
                                 set("value", 0, armor);
                                 set("armor_prop/armor", 0, armor);
                                 target->reset_action();
@@ -69,7 +69,7 @@ int perform(object me, object target)
         }
         else 
         {
-                message_vision(HIY "$p¸Ï½ôÏòááÔ¾¿ªÊıÕÉ£¬¶ã¿ª$PµÄ¹¥»÷¡£\n" NOR, me, target);
+                message_vision(HIY "$pè¶•ç·Šå‘å¾Œèºé–‹æ•¸ä¸ˆï¼Œèº²é–‹$Pçš„æ”»æ“Šã€‚\n" NOR, me, target);
         }
         me->start_busy(1+random(3));
         return 1;

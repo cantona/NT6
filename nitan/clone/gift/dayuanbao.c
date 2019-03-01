@@ -1,4 +1,4 @@
-// dayuanbao.c ´ó½ğÔª±¦
+// dayuanbao.c å¤§é‡‘å…ƒå¯¶
 
 #include <ansi.h>
 
@@ -6,14 +6,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name(YEL "´ó½ğÔª±¦" NOR, ({ "da yuanbao", "da", "yuanbao" }));
+        set_name(YEL "å¤§é‡‘å…ƒå¯¶" NOR, ({ "da yuanbao", "da", "yuanbao" }));
         set_weight(2000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»Ö»»Æ³Î³ÎµÄ½ğÔª±¦¡£\n");
+                set("long", "ä¸€åªé»ƒæ¾„æ¾„çš„é‡‘å…ƒå¯¶ã€‚\n");
                 set("value", 2000000);
-                set("unit", "Ö»");
+                set("unit", "åª");
         }
 }
 

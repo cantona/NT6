@@ -5,7 +5,7 @@ inherit F_CLEAN_UP;
 int main(object me, string arg)
 {
         if( !wizardp(me) && time()-query_temp("last_combat", me)<10 )
-                return notify_fail("ÏµÍ³Æø´­ĞêµØÌ¾µÀ£ºÂıÂıÀ´ ....\n");   
+                return notify_fail("ç³»çµ±æ°£å–˜å™“åœ°å˜†é“ï¼šæ…¢æ…¢ä¾† ....\n");   
 
         set_temp("last_combat", time(), me);
         SKILLS_D->query_skill_power(me, arg);
@@ -15,23 +15,23 @@ int main(object me, string arg)
 int help (object me)
 {
         write(@HELP
-²é¿´Îä¹¦¸÷ÖÖ²ÎÊıÖµ
-    combat attack             ²é¿´ÃüÖĞÁ¦ÅÅÃû
-    combat dodge              ²é¿´¶ãÉÁÁ¦ÅÅÃû
-    combat parry              ²é¿´ÕĞ¼ÜÁ¦ÅÅÃû
-    combat damage             ²é¿´ÉËº¦Á¦ÅÅÃû
-    combat force              ²é¿´ÄÚ¹¦µÄÅÅÃû
-    combat difficult          ²é¿´ÄÑ¶ÈµÄÅÅÃû
-    combat ultimate           ²é¿´ÖÕ¼«µÄÎä¹¦
-    combat expert             ²é¿´³¬¼¶µÄÎä¹¦
-    combat advance            ²é¿´¸ß¼¶µÄÎä¹¦
-    combat normal             ²é¿´ÆÕÍ¨µÄÎä¹¦
-    combat public             ²é¿´¹«¹²µÄÎä¹¦
-    combat family             ²é¿´ÃÅÅÉµÄÎä¹¦
-    combat private            ²é¿´×Ô´´µÄÎä¹¦
-    combat <ÃÅÅÉÃû³Æ>         ²é¿´¸ÃÃÅÅÉÎä¹¦
-    combat <¼¼ÄÜÃû³Æ>         ²é¿´¸ÃÎä¹¦²ÎÊı
-    combat <¼¼ÄÜÖÖÀà>         ²é¿´¿É¼¤·¢Îä¹¦
+æŸ¥çœ‹æ­¦åŠŸå„ç¨®åƒæ•¸å€¼
+    combat attack             æŸ¥çœ‹å‘½ä¸­åŠ›æ’å
+    combat dodge              æŸ¥çœ‹èº²é–ƒåŠ›æ’å
+    combat parry              æŸ¥çœ‹æ‹›æ¶åŠ›æ’å
+    combat damage             æŸ¥çœ‹å‚·å®³åŠ›æ’å
+    combat force              æŸ¥çœ‹å…§åŠŸçš„æ’å
+    combat difficult          æŸ¥çœ‹é›£åº¦çš„æ’å
+    combat ultimate           æŸ¥çœ‹çµ‚æ¥µçš„æ­¦åŠŸ
+    combat expert             æŸ¥çœ‹è¶…ç´šçš„æ­¦åŠŸ
+    combat advance            æŸ¥çœ‹é«˜ç´šçš„æ­¦åŠŸ
+    combat normal             æŸ¥çœ‹æ™®é€šçš„æ­¦åŠŸ
+    combat public             æŸ¥çœ‹å…¬å…±çš„æ­¦åŠŸ
+    combat family             æŸ¥çœ‹é–€æ´¾çš„æ­¦åŠŸ
+    combat private            æŸ¥çœ‹è‡ªå‰µçš„æ­¦åŠŸ
+    combat <é–€æ´¾åç¨±>         æŸ¥çœ‹è©²é–€æ´¾æ­¦åŠŸ
+    combat <æŠ€èƒ½åç¨±>         æŸ¥çœ‹è©²æ­¦åŠŸåƒæ•¸
+    combat <æŠ€èƒ½ç¨®é¡>         æŸ¥çœ‹å¯æ¿€ç™¼æ­¦åŠŸ
 
 HELP);
         return 1;

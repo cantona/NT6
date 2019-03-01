@@ -11,15 +11,15 @@
 #define TOPTEN_RICH        DATA_DIR + "topten/rich.txt"
 #define TOPTEN_EXP         DATA_DIR + "topten/exp.txt"
 #define TOPTEN_NEILI       DATA_DIR + "topten/neili.txt"
-#define DUSHU_B                 NOR+WHT"½­ºş"HIR"¶ÁÊé"NOR+WHT"ÅÅĞĞ°ñ"NOR
-#define JINGLI_B                 NOR+RED"½­ºş"HIW"¾«Á¦"NOR+RED"ÅÅĞĞ°ñ"NOR
-#define RICH_B                     NOR+CYN"½­ºş"HIY"¸»ºÀ"NOR+CYN"ÅÅĞĞ°ñ"NOR
-//#define PKER_B                 CYN"Ê®´ó"HIR"É±ÈË¿ñÄ§"NOR
-#define EXP_B           NOR+YEL"½­ºş"HIM"¾­Ñé"NOR+YEL"ÅÅĞĞ°ñ"NOR
-//#define SHEN_B        CYN"Ê®´ó"RED"Ğ°µÀÈËÎï"NOR               
-#define NEILI_B                    NOR+BLU"½­ºş"HIC"ÄÚÁ¦"NOR+BLU"ÅÅĞĞ°ñ"NOR
-//#define PER_B                    CYN"½­ºş"HIM"Ê®´óÃÀÅ®"NOR
-//#define AGE_B                    CYN"½­ºşÊ®´ó"GRN"ÀÏÇ°±²"NOR
+#define DUSHU_B                 NOR+WHT"æ±Ÿæ¹–"HIR"è®€æ›¸"NOR+WHT"æ’è¡Œæ¦œ"NOR
+#define JINGLI_B                 NOR+RED"æ±Ÿæ¹–"HIW"ç²¾åŠ›"NOR+RED"æ’è¡Œæ¦œ"NOR
+#define RICH_B                     NOR+CYN"æ±Ÿæ¹–"HIY"å¯Œè±ª"NOR+CYN"æ’è¡Œæ¦œ"NOR
+//#define PKER_B                 CYN"åå¤§"HIR"æ®ºäººç‹‚é­”"NOR
+#define EXP_B           NOR+YEL"æ±Ÿæ¹–"HIM"ç¶“é©—"NOR+YEL"æ’è¡Œæ¦œ"NOR
+//#define SHEN_B        CYN"åå¤§"RED"é‚ªé“äººç‰©"NOR               
+#define NEILI_B                    NOR+BLU"æ±Ÿæ¹–"HIC"å…§åŠ›"NOR+BLU"æ’è¡Œæ¦œ"NOR
+//#define PER_B                    CYN"æ±Ÿæ¹–"HIM"åå¤§ç¾å¥³"NOR
+//#define AGE_B                    CYN"æ±Ÿæ¹–åå¤§"GRN"è€å‰è¼©"NOR
 
 void topten_checkplayer(object);
 int get_all_data(object,string);
@@ -31,7 +31,7 @@ string query_type();
 
 
 void topten_checkplayer(object player)
-{//¶ÔÓÚÍâÃ²µÈÊôĞÔÓÃÏÈÌì»¹ÊÇºóÌìÄØ£¿»¹ÓĞÓĞĞ©ÊÇĞèÒªÓĞµãÇø·ÖµÄ£¨±ÈÈçÄĞÅ®ĞÔ±ğ£©
+{//å°äºå¤–è²Œç­‰å±¬æ€§ç”¨å…ˆå¤©é‚„æ˜¯å¾Œå¤©å‘¢ï¼Ÿé‚„æœ‰æœ‰äº›æ˜¯éœ€è¦æœ‰é»å€åˆ†çš„ï¼ˆæ¯”å¦‚ç”·å¥³æ€§åˆ¥ï¼‰
         topten_add(player,"rich");
         //topten_add(player,"pker");
         topten_add(player,"exp");
@@ -46,16 +46,16 @@ void topten_checkplayer(object player)
 
 string query_type()
 {
-        return HIY+CHINESE_MUD_NAME+"ÏÖÔÚÓĞÒÔÏÂÀàĞÍµÄÅÅĞĞ°ñ£º\n"+
-                HIR"Ò»£º\t"NOR+RICH_B+"\n"+
-                HIR"¶ş£º\t"NOR EXP_B+"\n"+
-                //HIR"Èı£º\t"NOR+PKER_B+"\n"+
-                HIR"Èı£º\t"NOR+NEILI_B+"\n"+
-                HIR"ËÄ£º\t"NOR+JINGLI_B+"\n"+
-                HIR"Îå£º\t"NOR+DUSHU_B+"\n"+
-                //HIR"Îå£º\t"NOR+SHEN_B+"\n"+
-                //HIR"Áù£º\t"NOR+PER_B+"\n"+
-                //HIR"Æß£º\t"NOR+AGE_B+"\n"+
+        return HIY+CHINESE_MUD_NAME+"ç¾åœ¨æœ‰ä»¥ä¸‹é¡å‹çš„æ’è¡Œæ¦œï¼š\n"+
+                HIR"ä¸€ï¼š\t"NOR+RICH_B+"\n"+
+                HIR"äºŒï¼š\t"NOR EXP_B+"\n"+
+                //HIR"ä¸‰ï¼š\t"NOR+PKER_B+"\n"+
+                HIR"ä¸‰ï¼š\t"NOR+NEILI_B+"\n"+
+                HIR"å››ï¼š\t"NOR+JINGLI_B+"\n"+
+                HIR"äº”ï¼š\t"NOR+DUSHU_B+"\n"+
+                //HIR"äº”ï¼š\t"NOR+SHEN_B+"\n"+
+                //HIR"å…­ï¼š\t"NOR+PER_B+"\n"+
+                //HIR"ä¸ƒï¼š\t"NOR+AGE_B+"\n"+
                 NOR;
 }
 int topten_save(string f_name,string b_name,string str)
@@ -70,7 +70,7 @@ int topten_save(string f_name,string b_name,string str)
                 str+=astr[i]+"\n";
 
         if(!write_file(f_name,str,1))
-                return notify_fail("ÎŞ·¨Ğ´ÎÄ¼ş"+f_name+"£¬È¨ÏŞ²»¹»!²»ÄÜ¸üĞÂ"+b_name+"!\n");
+                return notify_fail("ç„¡æ³•å¯«æ–‡ä»¶"+f_name+"ï¼Œæ¬Šé™ä¸å¤ !ä¸èƒ½æ›´æ–°"+b_name+"!\n");
 
         return 1;
 }
@@ -113,18 +113,18 @@ string topten_query(string type)
                         return query_type();
         }
         if(file_size(f_name)==-1)
-                return b_name+"µÄÊı¾İÎÄ¼ş»¹Ã»ÓĞ´´½¨£¡\n";
+                return b_name+"çš„æ•¸æ“šæ–‡ä»¶é‚„æ²’æœ‰å‰µå»ºï¼\n";
         astr=explode(read_file(f_name),"\n");
         str=HIG+CHINESE_MUD_NAME+" : "NOR+b_name+"\n";
         for(i=0;i<sizeof(astr);i++)
         {
                 bstr=explode(astr[i],";");
-                str+=NOR CYN"ÅÅĞĞµÚ"HIR+chinese_number(i+1)+NOR"£º";
+                str+=NOR CYN"æ’è¡Œç¬¬"HIR+chinese_number(i+1)+NOR"ï¼š";
                 for(j=0;j<sizeof(bstr);j++)
                 {
                         if(sscanf(bstr[j],"%s(%s)%d",name,id,data)!=3)
-                                return "Êı¾İ´íÎó!ÎÄ¼ş£º"+f_name+"µÚ"+i+"ĞĞµÚ"+j+"Ïî£¡\n"+
-                                        "¸ÃĞĞÊı¾İ£º"+bstr[j]+"\n";
+                                return "æ•¸æ“šéŒ¯èª¤!æ–‡ä»¶ï¼š"+f_name+"ç¬¬"+i+"è¡Œç¬¬"+j+"é …ï¼\n"+
+                                        "è©²è¡Œæ•¸æ“šï¼š"+bstr[j]+"\n";
                         str+=name+"("+id+")\t";
                 }
                 str+="\n"NOR;
@@ -156,13 +156,13 @@ int get_all_data(object player,string type)
                         total=query("max_jingli", player);
                         break;
                 /*case "per":
-                        if( query("gender", player) != "Å®ĞÔ" )
+                        if( query("gender", player) != "å¥³æ€§" )
                         total=-1;
                 else
                         total=player->query_per();
                         break;*/
                 default:
-                        total=-1;//ÓÃ-1±êÖ¾ÀàĞÍ³ö´í£¡
+                        total=-1;//ç”¨-1æ¨™å¿—é¡å‹å‡ºéŒ¯ï¼
         }
         return total;
 }
@@ -203,21 +203,21 @@ int topten_del(string pid,string type)
                         f_name=TOPTEN_DUSHU;
                         break;
                 default:
-                        return notify_fail("Ã»ÓĞ"+type+"ÕâÖÖÅÅĞĞ°ñ£¡\n");
+                        return notify_fail("æ²’æœ‰"+type+"é€™ç¨®æ’è¡Œæ¦œï¼\n");
         }
         
         if(file_size(f_name)==-1)
-                return notify_fail(b_name+"»¹Ã»ÓĞ´´½¨£¡\n");
+                return notify_fail(b_name+"é‚„æ²’æœ‰å‰µå»ºï¼\n");
         
         str=read_file(f_name);
         
         astr=explode(str,"\n");
         for(i=0;i<sizeof(astr);i++)
         {
-                //¸ÃĞĞ°üÀ¨idÔòÎªÕæ
+                //è©²è¡ŒåŒ…æ‹¬idå‰‡ç‚ºçœŸ
                 if(strsrch(astr[i],pid)!=-1)
                 {
-                        //ÎªÕæ±íÊ¾¸ÃĞĞÖ»ÓĞÒ»¸öid£¬¼´pid
+                        //ç‚ºçœŸè¡¨ç¤ºè©²è¡Œåªæœ‰ä¸€å€‹idï¼Œå³pid
                         if(strsrch(astr[i],";")==-1)
                         {
                                 str="";
@@ -233,7 +233,7 @@ int topten_del(string pid,string type)
                                 bstr=explode(astr[i],";");
                                 for(j=0;j<sizeof(bstr);j++)
                                 {
-                                        //ËµÃ÷¸ÃÏî¼´pid,Ó¦¸ÃÈ¥³ı
+                                        //èªªæ˜è©²é …å³pid,æ‡‰è©²å»é™¤
                                         if(strsrch(bstr[j],pid)!=-1)
                                         {
                                                 astr[i]="";
@@ -247,7 +247,7 @@ int topten_del(string pid,string type)
                                                                         astr[i]+=bstr[k];
                                                         }
                                                 }
-                                                //±¾À´È¥³ıºójµÄÑ­»·Ó¦¸ÃÍ£Ö¹,µ«ÊÇ²»Ó°Ïì½á¹û
+                                                //æœ¬ä¾†å»é™¤å¾Œjçš„å¾ªç’°æ‡‰è©²åœæ­¢,ä½†æ˜¯ä¸å½±éŸ¿çµæœ
                                         }
                                         str=implode(astr,"\n");
                                 }
@@ -264,7 +264,7 @@ int topten_add(object player,string type)
         string *astr;
         int i,j,data;
         
-        //½ûÖ¹Î×Ê¦²Î¼ÓÅÅĞĞ°ñ
+        //ç¦æ­¢å·«å¸«åƒåŠ æ’è¡Œæ¦œ
         if(wizardp(player))
         return 0;
         if( query("id", player) == "idle")return 0;
@@ -301,7 +301,7 @@ int topten_add(object player,string type)
                         f_name=TOPTEN_DUSHU;
                         break;
                 default:
-                        return notify_fail("Ã»ÓĞ"+type+"ÕâÖÖÅÅĞĞ°ñ£¡\n");
+                        return notify_fail("æ²’æœ‰"+type+"é€™ç¨®æ’è¡Œæ¦œï¼\n");
         }
         
         if(!objectp(player) || !userp(player))
@@ -313,11 +313,11 @@ int topten_add(object player,string type)
                 return topten_save(f_name,b_name,str);
         }
 
-        //Ö÷Òª³ÌĞò£¡
+        //ä¸»è¦ç¨‹åºï¼
         if(get_all_data(player,type)==-1)
-                return notify_fail("Êı¾İ²éÑ¯´íÎó£¬¿ÉÄÜÊÇ²éÑ¯ÀàĞÍ´íÎó£¡\n");
+                return notify_fail("æ•¸æ“šæŸ¥è©¢éŒ¯èª¤ï¼Œå¯èƒ½æ˜¯æŸ¥è©¢é¡å‹éŒ¯èª¤ï¼\n");
         
-        //Ó¦¸ÃÏÈÅÅ³ı¸ÃplayerµÄid!
+        //æ‡‰è©²å…ˆæ’é™¤è©²playerçš„id!
         topten_del(query("id", player),type);
         str=read_file(f_name);
         astr=explode(str,"\n");
@@ -326,13 +326,13 @@ int topten_add(object player,string type)
         while(i<sizeof(astr))
         {
                 if(sscanf(astr[i],"%s(%s)%d",name,id,data)!=3) //|| sscanf(astr,"%s(%s)%d;%*s",name,id,data)!=3)
-                        return notify_fail(b_name+"ÎÄ¼şÊı¾İ´íÎó£¡Çëºô½ĞÎ×Ê¦£¡\n");
+                        return notify_fail(b_name+"æ–‡ä»¶æ•¸æ“šéŒ¯èª¤ï¼è«‹å‘¼å«å·«å¸«ï¼\n");
                 
                 str="";
                 
                 if(data<(int)get_all_data(player,type))
                 {
-                        //µ¥¶À¼ÓÈë£¬ÔİÊ±Ã»¿¼ÂÇÈËÊı³¬¹ıÊ®ĞĞ£¡
+                        //å–®ç¨åŠ å…¥ï¼Œæš«æ™‚æ²’è€ƒæ…®äººæ•¸è¶…éåè¡Œï¼
                         for(j=0;j<sizeof(astr);j++)
                         {
                                 if( strsrch(astr[j],query("id", player)) != -1 && strsrch(astr[j],query("name", player)) != -1 )
@@ -347,7 +347,7 @@ int topten_add(object player,string type)
                 else
                 if(data==(int)get_all_data(player,type))
                 {
-                        //²¢ÅÅ¼ÓÈë
+                        //ä¸¦æ’åŠ å…¥
                         for(j=0;j<sizeof(astr);j++)
                         {
                                 //by wenwu

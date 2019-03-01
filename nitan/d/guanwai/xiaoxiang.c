@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "С��");
+        set("short", "小巷");
         set("long", @LONG
-����һ��Ƨ�������С����ܼž�������һ����ӰҲû�С�������ʯ
-��·������һ����Ļ�ѩ�����ڽ��·�������֨����������С��ľ�ͷ��
-һ�����ݡ�
+這是一個僻靜幽深的小巷，四周寂靜無聲，一個人影也沒有。長長的石
+板路上落了一層厚厚的積雪，踩在腳下發出“咯吱”的響聲。小巷的盡頭有
+一座土屋。
 LONG );
         set("exits", ([
                 "south" : __DIR__"tuwu",

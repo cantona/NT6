@@ -14,28 +14,28 @@ int main(object me, string arg)
                 return 0;
 
         if (! arg)
-                return notify_fail("Ö¸Áî¸ñÊ½: chblk <player id>\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼: chblk <player id>\n");
     
         ob = UPDATE_D->global_find_player(arg);
         if (! ob)
-                return notify_fail(LOCAL_MUD_NAME() + "²¢Ã»ÓĞÕâ¸öÈË£¡\n");
+                return notify_fail(LOCAL_MUD_NAME() + "ä¸¦æ²’æœ‰é€™å€‹äººï¼\n");
 
         if (wiz_level(ob) > 0)
         {
                 UPDATE_D->global_destruct_player(ob);
-                return notify_fail("Äã²»ÄÜ¹Ø±ÕÎ×Ê¦µÄÆµµÀ¡£\n");
+                return notify_fail("ä½ ä¸èƒ½é—œé–‰å·«å¸«çš„é »é“ã€‚\n");
         }
 
         if( query("chblk_on", ob) )
         {
                 UPDATE_D->global_destruct_player(ob);
-                return notify_fail("Õâ¸öÈËµÄÆµµÀÒÑ¾­±»¹Ø±ÕÁË¡£\n");
+                return notify_fail("é€™å€‹äººçš„é »é“å·²ç¶“è¢«é—œé–‰äº†ã€‚\n");
         }
 
         set("chblk_on", 1, ob);
         set("chblk_by", geteuid(me), ob);
-        write("Äã¹Ø±ÕÁË" + ob->name(1) + "µÄÆµµÀ¡£\n");
-        tell_object(ob, me->name(1) + "¹Ø±ÕÁËÄãµÄÆµµÀ¡£\n");
+        write("ä½ é—œé–‰äº†" + ob->name(1) + "çš„é »é“ã€‚\n");
+        tell_object(ob, me->name(1) + "é—œé–‰äº†ä½ çš„é »é“ã€‚\n");
 
         UPDATE_D->global_destruct_player(ob, 1);
         return 1;
@@ -44,9 +44,9 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : chblk <Íæ¼Ò>
+æŒ‡ä»¤æ ¼å¼ : chblk <ç©å®¶>
 
-´ËÃüÁî½«¹Ø±ÕÄ³¸öÍæ¼ÒµÄÆµµÀ¡£
+æ­¤å‘½ä»¤å°‡é—œé–‰æŸå€‹ç©å®¶çš„é »é“ã€‚
 
 HELP );
         return 1;

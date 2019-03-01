@@ -1,15 +1,15 @@
-// xiaowu3.c ������С��
+// xiaowu3.c 孫婆婆小屋
 // Java Oct.10 1998
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "С��");
+        set("short", "小屋");
         set("long", @LONG
-������Զ��������һ��С�ݣ���ʰ���������һ����Ⱦ���������
-��ͨ�˼�һ�㣬��ľ�����Σ�ϸ�ŵı���������Ĵ󴲡����ֱ����
-��������Ĺ�Ĺ֮�л�����Ȱ��衣
+這裡是遠離正廳的一間小屋，收拾得整整潔潔一塵不染。擺設就如
+普通人家一般，紅木的桌椅，細磁的杯壺，沉香的大床。你簡直想象不
+到這幽深的古墓之中還有這等擺設。
 LONG        );
         set("exits", ([
                 "west" : __DIR__"mudao13",

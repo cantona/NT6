@@ -4,15 +4,15 @@ inherit THROWING;
 
 void create()
 {
-        set_name("¸ÖïÚ", ({"gangbiao", "biao" }));
+        set_name("é‹¼é¢", ({"gangbiao", "biao" }));
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»°ÑÆÕÍ¨µÄ¸ÖïÚ¡£\n");
-                set("unit", "Ğ©");
+                set("long", "é€™æ˜¯ä¸€æŠŠæ™®é€šçš„é‹¼é¢ã€‚\n");
+                set("unit", "äº›");
                 set("base_value", 1);
                 set("material", "steel");
-                set("base_unit", "Ã¶");
+                set("base_unit", "æš");
                 set("base_weight", 10);
         }
         set_amount(1);

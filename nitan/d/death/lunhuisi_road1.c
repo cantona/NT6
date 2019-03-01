@@ -6,15 +6,15 @@ string look_duilian();
 
 void create()
 {
-        set("short", HIB "¡¾ÂÖ»ØµÀ¡¿" NOR);
+        set("short", HIB "ã€è¼ªå›žé“ã€‘" NOR);
         set("long", HIB @LONG
 
-                    ÂÖ         »Ø         µÀ
+                    è¼ª         å›ž         é“
 
-    ÂÖ»ØµÀÉÏº®ÆøÉ­É­µÄ£¬ÇàÊ¯ÆÌÉèµÄµØÃæÂúÊÇ»Ò³¾¡£ËÄÖÜÒ»Æ¬¼Å¾²£¬Å¼
-¶û´«À´¼¸ÉùÔ©»êÒ°¹íµÄâú¿ÞÉù£¬Ê¹Æø·ÕÏÔµÃ¸ñÍâµÄ¿Ö²À¹îÒì¡£ÄãµÄÃæÇ°ÊÇ
-Ò»×ùÐÛÎ°µÄ´óµî£¬µîÌÃµÄ¸ßØÒÉÏÐ´×Å¡¸ÂÖ»ØË¾¡¹Èý¸ö´ó×Ö£¬ØÒÏÂÓÐÒ»·ù²Ð
-È±²»È«µÄ¶ÔÁª(duilian)¡£ÂÖ»ØË¾¾Þ´óºñÊµµÄÍ­ÃÅ(door)½ô½ô¹Ø±Õ×Å¡£
+    è¼ªå›žé“ä¸Šå¯’æ°£æ£®æ£®çš„ï¼Œé’çŸ³èˆ–è¨­çš„åœ°é¢æ»¿æ˜¯ç°å¡µã€‚å››å‘¨ä¸€ç‰‡å¯‚éœï¼Œå¶
+çˆ¾å‚³ä¾†å¹¾è²å†¤é­‚é‡Žé¬¼çš„æ…Ÿå“­è²ï¼Œä½¿æ°£æ°›é¡¯å¾—æ ¼å¤–çš„ææ€–è©­ç•°ã€‚ä½ çš„é¢å‰æ˜¯
+ä¸€åº§é›„å‰çš„å¤§æ®¿ï¼Œæ®¿å ‚çš„é«˜åŒ¾ä¸Šå¯«è‘—ã€Œè¼ªå›žå¸ã€ä¸‰å€‹å¤§å­—ï¼ŒåŒ¾ä¸‹æœ‰ä¸€å¹…æ®˜
+ç¼ºä¸å…¨çš„å°è¯(duilian)ã€‚è¼ªå›žå¸å·¨å¤§åŽšå¯¦çš„éŠ…é–€(door)ç·Šç·Šé—œé–‰è‘—ã€‚
 
 LONG NOR );
 
@@ -24,11 +24,11 @@ LONG NOR );
         ]));
 
         set("item_desc", ([
-                "door" : YEL "Ò»ÉÈºñºñµÄÍ­ÃÅ£¬ÉÏÃæ²¼ÂúÁËÖëÍøºÍ»Ò³¾¡£\n" NOR,
+                "door" : YEL "ä¸€æ‰‡åŽšåŽšçš„éŠ…é–€ï¼Œä¸Šé¢å¸ƒæ»¿äº†è››ç¶²å’Œç°å¡µã€‚\n" NOR,
                 "duilian" :       (: look_duilian :),
         ]));
 
-        create_door("enter", YEL "Í­ÃÅ" NOR, "out", DOOR_CLOSED);
+        create_door("enter", YEL "éŠ…é–€" NOR, "out", DOOR_CLOSED);
         set("no_magic", 1);
         setup();
 }
@@ -37,19 +37,19 @@ string look_duilian()
 {
         return
         RED "\n"
-        "             ¡ù¡ù¡ù¡ù¡ù¡ù¡ù            ¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n"
-        "             ¡ù¡ù¡ù¡ù¡ù¡ù¡ù            ¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n"
-        "             ¡ù¡ù      ¡ù¡ù            ¡ù¡ù      ¡ù¡ù\n"
-        "             ¡ù¡ù" NOR + HIW "¡¡Ìì¡¡" NOR + RED "¡ù¡ù            ¡ù¡ù" NOR + HIW "  Ñª  " NOR + RED "¡ù¡ù\n"
-        "             ¡ù¡ù¡¡ ¡¡ ¡ù¡ù            ¡ù¡ù      ¡ù¡ù\n"
-        "             ¡ù¡ù" NOR + HIW "  µØ  " NOR + RED "¡ù¡ù            ¡ù¡ù" NOR + HIW "  Âö  " NOR + RED "¡ù¡ù\n"
-        "             ¡ù¡ù      ¡ù¡ù            ¡ù¡ù      ¡ù¡ù\n"
-        "             ¡ù¡ù" NOR + HIW "  ±À  " NOR + RED "¡ù¡ù            ¡ù¡ù" NOR + HIW "  ³Ê  " NOR + RED "¡ù¡ù\n"
-        "             ¡ù¡ù      ¡ù¡ù            ¡ù¡ù      ¡ù¡ù\n"
-        "             ¡ù¡ù" NOR + HIW "  ÁÑ  " NOR + RED "¡ù¡ù            ¡ù¡ù" NOR + HIW "  ÏÖ  " NOR + RED "¡ù¡ù\n"
-        "             ¡ù¡ù      ¡ù¡ù            ¡ù¡ù      ¡ù¡ù\n"
-        "             ¡ù¡ù" NOR + HIW "  Ê±  " NOR + RED "¡ù¡ù            ¡ù¡ù" NOR + HIW "  ¼ä  " NOR + RED "¡ù¡ù\n"
-        "             ¡ù¡ù    ¡¡¡ù¡ù            ¡ù¡ù      ¡ù¡ù\n"
-        "             ¡ù¡ù¡ù¡ù¡ù¡ù¡ù            ¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n"
-        "             ¡ù¡ù¡ù¡ù¡ù¡ù¡ù            ¡ù¡ù¡ù¡ù¡ù¡ù¡ù\n" NOR;
+        "             â€»â€»â€»â€»â€»â€»â€»            â€»â€»â€»â€»â€»â€»â€»\n"
+        "             â€»â€»â€»â€»â€»â€»â€»            â€»â€»â€»â€»â€»â€»â€»\n"
+        "             â€»â€»      â€»â€»            â€»â€»      â€»â€»\n"
+        "             â€»â€»" NOR + HIW "ã€€å¤©ã€€" NOR + RED "â€»â€»            â€»â€»" NOR + HIW "  è¡€  " NOR + RED "â€»â€»\n"
+        "             â€»â€»ã€€ ã€€ â€»â€»            â€»â€»      â€»â€»\n"
+        "             â€»â€»" NOR + HIW "  åœ°  " NOR + RED "â€»â€»            â€»â€»" NOR + HIW "  è„ˆ  " NOR + RED "â€»â€»\n"
+        "             â€»â€»      â€»â€»            â€»â€»      â€»â€»\n"
+        "             â€»â€»" NOR + HIW "  å´©  " NOR + RED "â€»â€»            â€»â€»" NOR + HIW "  å‘ˆ  " NOR + RED "â€»â€»\n"
+        "             â€»â€»      â€»â€»            â€»â€»      â€»â€»\n"
+        "             â€»â€»" NOR + HIW "  è£‚  " NOR + RED "â€»â€»            â€»â€»" NOR + HIW "  ç¾  " NOR + RED "â€»â€»\n"
+        "             â€»â€»      â€»â€»            â€»â€»      â€»â€»\n"
+        "             â€»â€»" NOR + HIW "  æ™‚  " NOR + RED "â€»â€»            â€»â€»" NOR + HIW "  é–“  " NOR + RED "â€»â€»\n"
+        "             â€»â€»    ã€€â€»â€»            â€»â€»      â€»â€»\n"
+        "             â€»â€»â€»â€»â€»â€»â€»            â€»â€»â€»â€»â€»â€»â€»\n"
+        "             â€»â€»â€»â€»â€»â€»â€»            â€»â€»â€»â€»â€»â€»â€»\n" NOR;
 }

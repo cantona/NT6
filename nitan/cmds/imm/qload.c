@@ -11,10 +11,10 @@ int main()
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : qload 
+æŒ‡ä»¤æ ¼å¼ : qload 
 
-Õâ¸öÖ¸ÁîÏÔÊ¾³öÄ¿Ç° CPU µÄ¸ºµ£, cmds/s ÊÇÃ¿Ãë±àÒë¼¸¸ö cmds
-comp lines/s ÊÇÃ¿Ãë¼¸ĞĞ¡£
+é€™å€‹æŒ‡ä»¤é¡¯ç¤ºå‡ºç›®å‰ CPU çš„è² æ“”, cmds/s æ˜¯æ¯ç§’ç·¨è­¯å¹¾å€‹ cmds
+comp lines/s æ˜¯æ¯ç§’å¹¾è¡Œã€‚
 HELP
     );
     return 1;

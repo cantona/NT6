@@ -1,5 +1,5 @@
 
-// ÃÉ¹Å¾ü¶Ó½ø¹¥Â·Ïß
+// è’™å¤è»éšŠé€²æ”»è·¯ç·š
 protected mapping ward_way = ([
         "/d/city2/mying1"           :     "south",
         "/d/city2/mying"            :     "south",
@@ -23,7 +23,7 @@ protected mapping ward_way = ([
         "/d/city2/sying"            :     "south",
 ]);
 
-// Õì²ìÂ·Ïß¼°ÉÕÁ¸Â·Ïß
+// åµå¯Ÿè·¯ç·šåŠç‡’ç³§è·¯ç·š
 protected mapping forrecon_way = ([
         "/d/city2/mying6"            :     "north",
         "/d/city2/mying5"        :     "north",
@@ -70,7 +70,7 @@ protected mapping backrecon_way = ([
         "/d/city2/sying"            :     "south",
 ]);
 
-// ÑºÔËÁ¸²İ¡¢¹ºÖÃ±ø¼×¡¢¹ºÖÃ¼ıÓğ¡¢¹ºÖÃÊ¯Ä¾¡¢¹ºÖÃÕ½Âí¡¢ÕĞÄ¼Ê¿±øÂ·Ïß
+// æŠ¼é‹ç³§è‰ã€è³¼ç½®å…µç”²ã€è³¼ç½®ç®­ç¾½ã€è³¼ç½®çŸ³æœ¨ã€è³¼ç½®æˆ°é¦¬ã€æ‹›å‹Ÿå£«å…µè·¯ç·š
 protected mapping forward_way = ([
         "/d/city2/sying1"           :     "south",
         "/d/city2/sying4"           :     "south",
@@ -123,13 +123,13 @@ protected string *ward_place = ({
 });
 
 protected string *degree_desc = ({
-       HIC "ñÔ½«" NOR,
-       HIY "×ô½«" NOR,
-       HIY "¸±½«" NOR,
-       HIR "½«¾ü" NOR,
-       HIR "Ìá¶½" NOR,
-       HIR "×Ü¶½" NOR,
-       MAG "±ø²¿ÊÌÀÉ" NOR,
-       MAG "±ø²¿ÉĞÊé" NOR,
-       HIB "Õò±±½Ú¶ÈÊ¹" NOR,
+       HIC "è£¨å°‡" NOR,
+       HIY "ä½å°‡" NOR,
+       HIY "å‰¯å°‡" NOR,
+       HIR "å°‡è»" NOR,
+       HIR "æç£" NOR,
+       HIR "ç¸½ç£" NOR,
+       MAG "å…µéƒ¨ä¾éƒ" NOR,
+       MAG "å…µéƒ¨å°šæ›¸" NOR,
+       HIB "é®åŒ—ç¯€åº¦ä½¿" NOR,
 });

@@ -15,7 +15,7 @@ string zm_apply()
         object ob = this_player();
         if (query("class", ob) != "bonze")
         {
-                return "你非我雪山僧众，岂能出任掌门弟子一职！";
+                return "浣犻潪鎴戦洩灞卞儳鐪撅紝璞堣兘鍑轰换鎺岄杸寮熷瓙涓�鑱凤紒";
         }
         return ::zm_apply();
 }

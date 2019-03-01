@@ -5,7 +5,7 @@
 
 inherit F_SSERVER;
 
-string name() { return "È¥½£ÊÆ"; }
+string name() { return "å»åŠå‹¢"; }
 
 int perform(object me, object target)
 {
@@ -16,15 +16,15 @@ int perform(object me, object target)
 
         if( !target ) target = offensive_target(me);
         if( !target || !target->is_character() )
-                return notify_fail("È¥½£ÊÆÖ»ÄÜ¶Ô¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("å»åŠå‹¢åªèƒ½å°å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( me->query_skill("liancheng-jianfa") < 80 )
-                return notify_fail("ÄãµÄÁ¬³Ç½£·¨²»¹»æµÊì£¬²»ÄÜÊ©ÓÃÈ¥½£ÊÆ¡£\n");
+                return notify_fail("ä½ çš„é€£åŸåŠæ³•ä¸å¤ å«»ç†Ÿï¼Œä¸èƒ½æ–½ç”¨å»åŠå‹¢ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", target)) )
-                return notify_fail("¶ÔÊÖ²¢Ã»ÓĞÊ¹ÓÃÎäÆ÷¡£\n");
+                return notify_fail("å°æ‰‹ä¸¦æ²’æœ‰ä½¿ç”¨æ­¦å™¨ã€‚\n");
 
-        msg = "$NÇåĞ¥Ò»Éù£¬¶¶Ö±ÊÖÖĞµÄ±øÈĞ£¬ÒÔÁ¬³Ç½£·¨µÄÈ¥½£ÊÆË³ÊÆ´îÉÏÁË$nµÄ±øÆ÷£¡\n";
+        msg = "$Næ¸…å˜¯ä¸€è²ï¼ŒæŠ–ç›´æ‰‹ä¸­çš„å…µåˆƒï¼Œä»¥é€£åŸåŠæ³•çš„å»åŠå‹¢é †å‹¢æ­ä¸Šäº†$nçš„å…µå™¨ï¼\n";
 
         ap = attack_power(me, "sword");
         dp = defense_power(target, "parry");
@@ -32,7 +32,7 @@ int perform(object me, object target)
         if (ap / 2 + random(ap) > dp)
         {
                 me->start_busy(1);
-                msg += HIY "Ö»ÌıµÃÒ»Õó½ğÌú½»ÃùÖ®Éù£¬½á¹û$pµÄ±øÈĞ±»$PÊÖÖĞµÄ±øÆ÷Ò»Á¬Ò»´ø£¬Ô¶Ô¶µØ·ÉÁË¿ªÈ¥£¡\n" NOR;
+                msg += HIY "åªè½å¾—ä¸€é™£é‡‘éµäº¤é³´ä¹‹è²ï¼Œçµæœ$pçš„å…µåˆƒè¢«$Pæ‰‹ä¸­çš„å…µå™¨ä¸€é€£ä¸€å¸¶ï¼Œé é åœ°é£›äº†é–‹å»ï¼\n" NOR;
                 obj=query_temp("weapon", target);
                 obj->unequip();
                 obj->move(environment(me));
@@ -40,7 +40,7 @@ int perform(object me, object target)
                 target->start_busy(1 + random(4));
         } else
         {
-                msg += "¿ÉÊÇ$p¿´ÆÆÁË$PµÄÆóÍ¼£¬²¢Ã»ÓĞÉÏµ±¡£\n" NOR;
+                msg += "å¯æ˜¯$pçœ‹ç ´äº†$Pçš„ä¼åœ–ï¼Œä¸¦æ²’æœ‰ä¸Šç•¶ã€‚\n" NOR;
                 me->start_busy(2);
         }
         message_combatd(msg, me, target);

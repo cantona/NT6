@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ʯ����");
+        set("short", "石板大道");
         set("long", @LONG
-��������ݸ���Զ��·�������������ϣ����üͷҲ��չ
-�˿���������ҲԽ��Խ�󡣱���������ݸ����ϳ����ˡ�
+這兒靠中州府不遠，路上行人來往不斷，你的眉頭也舒展
+了開來，步子也越邁越大。北面就是中州府的南城門了。
 LONG);
         set("exits", ([
                   "south" : __DIR__"toyy",

@@ -1,4 +1,4 @@
-// /clone/book/mask_jiuyin.c ¾ÅÒõ¼Ù¾­
+// /clone/book/mask_jiuyin.c ä¹é™°å‡ç¶“
 
 #include <ansi.h>
 
@@ -15,24 +15,24 @@ void init()
 
 void create()
 {
-        set_name(YEL"¾ÅÒõ¼Ù¾­"NOR, ({ "mask_jiuyin", "jiuyin-jiajing" }));
+        set_name(YEL"ä¹é™°å‡ç¶“"NOR, ({ "mask_jiuyin", "jiuyin-jiajing" }));
         set_weight(300);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
+                set("unit", "æœ¬");
                 set("material", "paper");
-                set("no_drop", "ÄãºÃ²»ÈİÒ×ÄÃµ½ÊÖµÄ±¦¾­£¬ÄãÉáµÃ¶ªÃ´£¿\n");
-                set("no_put", "ÕâÃ´±¦¹óµÄ¶«Î÷£¬²»Òªµ½´¦ÂÒ·Å¡£\n");
-                set("long", "Õâ¾ÍÊÇÎäÁÖÖĞÈËÈËÃÎÃÂÒÔÇóµÄ¡°¾ÅÒõÕæ¾­¡±°¡£¬Ç§Íò²»Òª¶ªÁËÅ¶¡£:P \n");
+                set("no_drop", "ä½ å¥½ä¸å®¹æ˜“æ‹¿åˆ°æ‰‹çš„å¯¶ç¶“ï¼Œä½ èˆå¾—ä¸Ÿéº¼ï¼Ÿ\n");
+                set("no_put", "é€™éº¼å¯¶è²´çš„æ±è¥¿ï¼Œä¸è¦åˆ°è™•äº‚æ”¾ã€‚\n");
+                set("long", "é€™å°±æ˜¯æ­¦æ—ä¸­äººäººå¤¢å¯ä»¥æ±‚çš„â€œä¹é™°çœŸç¶“â€å•Šï¼Œåƒè¬ä¸è¦ä¸Ÿäº†å“¦ã€‚:P \n");
         }
 }
 
 int do_du(string arg)
 {
         if (!arg && arg != "mask_jiuyin" && arg != "jiuyin-jiajing")
-                return notify_fail("ÄãÒª¶ÁÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦è®€ä»€éº¼ï¼Ÿ\n");
         if (!present(this_object(), this_player())) return 0;
 
-        return notify_fail("Ã»ÓĞÈË½âÊÍ¾­Òå£¬Äã×Ô¼ºÄÜ¿´µÃ¶®Ã´£¿\n");
+        return notify_fail("æ²’æœ‰äººè§£é‡‹ç¶“ç¾©ï¼Œä½ è‡ªå·±èƒ½çœ‹å¾—æ‡‚éº¼ï¼Ÿ\n");
 }

@@ -1,16 +1,16 @@
-// ½ğÃÛÉ¢(jinmi san)
+// é‡‘èœœæ•£(jinmi san)
 
 #include <ansi.h>
 #include "medicine.h"
 
 void create()
 {
-        set_name(HIW "½ğÃÛÉ¢" NOR, ({"jinmi san", "jinmi", "san"}));
+        set_name(HIW "é‡‘èœœæ•£" NOR, ({"jinmi san", "jinmi", "san"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»°ü½ğÃÛÉ¢£¬¾İËµ¿ÉÒÔ½âÓñ·äÕë¶¾¡£\n");                
-                set("base_unit", "°ü");
+                set("long", "é€™æ˜¯ä¸€åŒ…é‡‘èœœæ•£ï¼Œæ“šèªªå¯ä»¥è§£ç‰èœ‚é‡æ¯’ã€‚\n");                
+                set("base_unit", "åŒ…");
                 set("base_value", 8000);
                 set("base_weight", 80);
                 set("only_do_effect", 1); 
@@ -34,13 +34,13 @@ int do_effect(object me)
 {
         if (! me->query_condition("yufengdu"))
         {
-                tell_object(me,"Äã²¢Ã»ÓĞÖĞ·ä¶¾°¡£¡\n");
+                tell_object(me,"ä½ ä¸¦æ²’æœ‰ä¸­èœ‚æ¯’å•Šï¼\n");
                 return 1;
         }
 
         me->clear_condition("yufengdu");
-        message_vision(HIY "$N·şÏÂÁËÒ»°ü½ğÃÛÉ¢¡£¿àÖĞ´øÌğ£¬ÌğÖĞ´ø¿à£¬Ò»¹ÉÏãÆøÇßÈËĞÄÆ¢¡£\n"NOR,me);
-        tell_object(me,HIY "Äã¸Ğ¾õÌåÄÚµÄ·ä¶¾ÒÑÂıÂıÏûÈ¥¡£\n" NOR, me);
+        message_vision(HIY "$Næœä¸‹äº†ä¸€åŒ…é‡‘èœœæ•£ã€‚è‹¦ä¸­å¸¶ç”œï¼Œç”œä¸­å¸¶è‹¦ï¼Œä¸€è‚¡é¦™æ°£æ²äººå¿ƒè„¾ã€‚\n"NOR,me);
+        tell_object(me,HIY "ä½ æ„Ÿè¦ºé«”å…§çš„èœ‚æ¯’å·²æ…¢æ…¢æ¶ˆå»ã€‚\n" NOR, me);
 
         destruct(this_object());
         return 1;

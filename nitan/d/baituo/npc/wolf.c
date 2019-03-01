@@ -5,15 +5,15 @@ inherit NPC;
 
 void create()
 {
-        set_name("Ұ��", ({ "wolf", "yelang", "lang" }) );
-        set("race", "Ұ��");
+        set_name("野狼", ({ "wolf", "yelang", "lang" }) );
+        set("race", "野獸");
         set("age", 5);
-        set("long", "һֻ���е�Ұ�ǣ������ŵĴ�����¶�ż��������\n");
+        set("long", "一只獨行的野狼，半張著的大嘴裡露著幾顆獠牙。\n");
 //        set("attitude", "aggressive");
         set("attitude", "peace");
         set("shen_type", -1);
 
-        set("limbs", ({ "��ͷ", "����", "ǰצ", "��ץ", "β��" }) );
+        set("limbs", ({ "狼頭", "狼身", "前爪", "後抓", "尾巴" }) );
         set("verbs", ({ "bite", "claw" }) );
 
         set("combat_exp", 20000);
@@ -25,7 +25,7 @@ void create()
 
         set("chat_chance", 10);
         set("chat_msg", ({
-                "Ұ��������β�ͣ�ͻȻ̧ͷ�����㷢��һ�������ĳ�����\n",
-                "Ұ�����������ĵ��۹���������飬Ѫ��޿�������Ź����ӡ�\n",
+                "野狼耷邋著尾巴，突然抬頭，沖你發出一聲凄厲的長嚎。\n",
+                "野狼閃著綠幽幽的眼光沖你瞄了瞄，血盆巨口裡答答滴著哈喇子。\n",
         }) );
 }

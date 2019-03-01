@@ -3,7 +3,7 @@
 
 #define IN_OUT_RATE     80/100
 #define BUSI_SAVE_DIR   "/data/business/"
-#define MAX_TRADE       20000000 // Ã¿±Ê×î´óµÄÃ³Ò×¶îÎª 2 Ç§ÍòÁ½°×Òø
+#define MAX_TRADE       20000000 // æ¯ç­†æœ€å¤§çš„è²¿æ˜“é¡ç‚º 2 åƒè¬å…©ç™½éŠ€
 #undef IN_TEST
 
 #include <ansi.h>
@@ -14,13 +14,13 @@ inherit ROOM;
 
 class ware
 {
-        string name;    /* ÖĞÎÄÃû×Ö */
+        string name;    /* ä¸­æ–‡åå­— */
         string id;      /* id */
-        int value;      /* µ±Ç°µ¥¼Û(µ¥Î»£ºÒø×Ó) */
-        int o_value;    /* ³õÊ¼¼Û¸ñ */
-        int amount;     /* µ±Ç°±£ÓĞÊıÁ¿ */
-        int o_amount;   /* ³õÊ¼ÊıÁ¿ */
-        string unit;    /* µ¥Î» */
+        int value;      /* ç•¶å‰å–®åƒ¹(å–®ä½ï¼šéŠ€å­) */
+        int o_value;    /* åˆå§‹åƒ¹æ ¼ */
+        int amount;     /* ç•¶å‰ä¿æœ‰æ•¸é‡ */
+        int o_amount;   /* åˆå§‹æ•¸é‡ */
+        string unit;    /* å–®ä½ */
 }
 
 nomask protected int valid_check();
@@ -35,11 +35,11 @@ string query_save_file()
 mapping all_wares = ([]);
 nosave int no_trade = 0;
 
-int system_change = 0;  // ¹©ÏµÍ³µ÷ÕûÓÃ¡£change µÄµ¥Î»Îª»Æ½ğ.
+int system_change = 0;  // ä¾›ç³»çµ±èª¿æ•´ç”¨ã€‚change çš„å–®ä½ç‚ºé»ƒé‡‘.
 
 nosave int price_rate = 100;
 
-// »Ö¸´µ÷Õû
+// æ¢å¾©èª¿æ•´
 // {
 nosave int change_max = 20000000; /* silver */
 nosave string *changed_class = ({});
@@ -62,7 +62,7 @@ nomask varargs protected void do_count(string name,int silver)
         {
                 foreach(class ware oneitem in all_wares[kinds[i]])
                 {
-                        orig += oneitem->o_value * oneitem->o_amount; /* silverÊı */
+                        orig += oneitem->o_value * oneitem->o_amount; /* silveræ•¸ */
                         cha += (oneitem->o_amount -  oneitem->amount)*oneitem->o_value;
                 }
         }
@@ -83,26 +83,26 @@ nomask varargs protected void do_count(string name,int silver)
                 {
                         if(silver > 0)
                                 CHANNEL_D->do_channel( this_object(), "news",
-                                        sprintf("ÌıËµÓÉÓÚÓĞÈËÔÚ%s´óÁ¿ÊÕ¹º%sÖÂÊ¹µ±µØÎï¼Û·ÉÕÇ¡£\n",domain,name));
+                                        sprintf("è½èªªç”±äºæœ‰äººåœ¨%så¤§é‡æ”¶è³¼%sè‡´ä½¿ç•¶åœ°ç‰©åƒ¹é£›æ¼²ã€‚\n",domain,name));
                         else
                                 CHANNEL_D->do_channel( this_object(), "news",
-                                        sprintf("ÌıËµÓÉÓÚÓĞÈËÔÚ%s´óÁ¿Å×ÊÛ%sÖÂÊ¹µ±µØÎï¼Û·ÉËÙÏÂ»¬¡£\n",domain,name));
+                                        sprintf("è½èªªç”±äºæœ‰äººåœ¨%så¤§é‡æ‹‹å”®%sè‡´ä½¿ç•¶åœ°ç‰©åƒ¹é£›é€Ÿä¸‹æ»‘ã€‚\n",domain,name));
                 }
                 else if(change >= 1)
                 {
                         if(silver > 0)
                                 CHANNEL_D->do_channel( this_object(), "news",
-                                        sprintf("ÌıËµÓÉÓÚÓĞÈËÔÚ%s´óÁ¿ÊÕ¹º%sÖÂÊ¹µ±µØÎï¼ÛÓĞËùÉÏÑï¡£\n",domain,name));
+                                        sprintf("è½èªªç”±äºæœ‰äººåœ¨%så¤§é‡æ”¶è³¼%sè‡´ä½¿ç•¶åœ°ç‰©åƒ¹æœ‰æ‰€ä¸Šæšã€‚\n",domain,name));
                         else
                                 CHANNEL_D->do_channel( this_object(), "news",
-                                        sprintf("ÌıËµÓÉÓÚÓĞÈËÔÚ%s´óÁ¿Å×ÊÛ%sÖÂÊ¹µ±µØÓĞËùÏÂ½µ¡£\n",domain,name));
+                                        sprintf("è½èªªç”±äºæœ‰äººåœ¨%så¤§é‡æ‹‹å”®%sè‡´ä½¿ç•¶åœ°æœ‰æ‰€ä¸‹é™ã€‚\n",domain,name));
                 }
         }
 
         price_rate = 100 + rate;
 }
 
-// ´ËÎï¼şÓ¦ÊÜµ½×îÑÏ¸ñµÄ¼ì²é¡£
+// æ­¤ç‰©ä»¶æ‡‰å—åˆ°æœ€åš´æ ¼çš„æª¢æŸ¥ã€‚
 nomask protected int valid_check()
 {
 
@@ -112,15 +112,15 @@ nomask protected int valid_check()
         if(clonep())
                 return 0;
         if(!sscanf((fname = file_name(this_object())),"/d/%*s"))
-                error("ÉÌÕ»Îï¼ş±ØĞë´æÔÚÓÚÇøÓòÄ¿Â¼ÏÂ¡£\n");
+                error("å•†æ£§ç‰©ä»¶å¿…é ˆå­˜åœ¨äºå€åŸŸç›®éŒ„ä¸‹ã€‚\n");
         idx = strsrch(fname, "/", -1);
         if(fname[idx+1..] != "business")
-                error("ÉÌÕ»Îï¼şµÄÎÄ¼şÃû±ØĞëÊÇ'business'¡£\n");
+                error("å•†æ£§ç‰©ä»¶çš„æ–‡ä»¶åå¿…é ˆæ˜¯'business'ã€‚\n");
 
         sscanf(fname,"/d/%s/business",domain);
 
         if(member_array(domain,BUSINESS_D->query_valid_domains()) == -1)
-                error("´ËÇøÓòÄ¿Ç°Îª·ÇÃ³Ò×ÇøÓò£¬ÈçĞèÍ¨ÉÌÇëÏòÉñÉêÇë¡£\n");
+                error("æ­¤å€åŸŸç›®å‰ç‚ºéè²¿æ˜“å€åŸŸï¼Œå¦‚éœ€é€šå•†è«‹å‘ç¥ç”³è«‹ã€‚\n");
 
         return 1;
 }
@@ -134,7 +134,7 @@ nomask void setup()
                 init_wares();
         else
                 do_count();
-        set("channel_id", "ÉÌ»á");
+        set("channel_id", "å•†æœƒ");
         set("no_clean_up",1);
         ::setup();
 }
@@ -216,12 +216,12 @@ nomask int do_check()
         {
                 foreach(class ware oneitem in all_wares[kinds[i]])
                 {
-                        orig += oneitem->o_value * oneitem->o_amount; /* silverÊı */
+                        orig += oneitem->o_value * oneitem->o_amount; /* silveræ•¸ */
                         cha += (oneitem->o_amount -  oneitem->amount)*oneitem->o_value;
                 }
         }
 
-        printf("´ËµØ³õÊ¼×Ü¼ÛÖµÊıÎª£º%d Á½°×Òø\nµ±Ç°ÊıÖµ²î£º%d Á½°×Òø\nµ±Ç°×ÜÎï¼ÛÖ¸ÊıÎª£º°Ù·ÖÖ® %d\nÏµÍ³µ÷ÕûÖµ£º%d\n",
+        printf("æ­¤åœ°åˆå§‹ç¸½åƒ¹å€¼æ•¸ç‚ºï¼š%d å…©ç™½éŠ€\nç•¶å‰æ•¸å€¼å·®ï¼š%d å…©ç™½éŠ€\nç•¶å‰ç¸½ç‰©åƒ¹æŒ‡æ•¸ç‚ºï¼šç™¾åˆ†ä¹‹ %d\nç³»çµ±èª¿æ•´å€¼ï¼š%d\n",
                 orig, cha, price_rate,system_change );
         return 1;
 }
@@ -232,7 +232,7 @@ nomask int do_chakan(string arg)
         int i,n;
 
         if(!n = sizeof(all_wares))
-                return notify_fail("Ä¿Ç°Ã»ÓĞ¿ÉÃ³Ò×µÄ»õÎï¡£\n");
+                return notify_fail("ç›®å‰æ²’æœ‰å¯è²¿æ˜“çš„è²¨ç‰©ã€‚\n");
 
         if(stringp(arg))
         {
@@ -243,18 +243,18 @@ nomask int do_chakan(string arg)
                                 output_list(sprintf("%d",(i+1)),this_player());
                                 return 1;
                         }
-                return notify_fail("ÄãÒª²é¿´ÄÄÀà»õÎïµÄ¼Û¸ñ£¿\n");
+                return notify_fail("ä½ è¦æŸ¥çœ‹å“ªé¡è²¨ç‰©çš„åƒ¹æ ¼ï¼Ÿ\n");
         }
         else
         {
                 int l,bk;
                 string out;
-                kinds += ({ "ËùÓĞÀà±ğ" });
+                kinds += ({ "æ‰€æœ‰é¡åˆ¥" });
                 n = sizeof(kinds);
                 for(i=0;i<n;i++)
                         if(strlen(kinds[i]) > l)
                                 l = strlen(kinds[i]);
-                out = "ÇëÑ¡ÔñÄãÒª²é¿´µÄ»õÎïÀà±ğ£º\n";
+                out = "è«‹é¸æ“‡ä½ è¦æŸ¥çœ‹çš„è²¨ç‰©é¡åˆ¥ï¼š\n";
                 bk = to_int(50/(l+5));
                 l++;
                 for(i=0;i<n;i++)
@@ -275,7 +275,7 @@ nomask protected void output_list(string number,object who)
 
         if(!sscanf(number,"%d",n))
         {
-                write("ÇëÑ¡ÔñÄãÒª²é¿´µÄ»õÎïÀà±ğ£º\n");
+                write("è«‹é¸æ“‡ä½ è¦æŸ¥çœ‹çš„è²¨ç‰©é¡åˆ¥ï¼š\n");
                 input_to((: output_list :),who);
                 return;
         }
@@ -283,15 +283,15 @@ nomask protected void output_list(string number,object who)
         n--;
         if( (n < 0 ) || (n > sizeof(kinds)) )
         {
-                write("ÇëÑ¡ÔñÄãÒª²é¿´µÄ»õÎïÀà±ğ£º\n");
+                write("è«‹é¸æ“‡ä½ è¦æŸ¥çœ‹çš„è²¨ç‰©é¡åˆ¥ï¼š\n");
                 input_to((: output_list :),who);
                 return;
         }
 
         if(n < sizeof(kinds))
         {
-                output = sprintf("±¾»õÕ»Ä¿Ç°¿ÉÒÔÃ³Ò×µÄ%sÀà»õÎï£º\n",kinds[n]);
-                output += sprintf("%-8s%-20s %|8s%|6s%12s/%s\n","ÖÖÀà","»õÎïÃû³Æ","ÊıÁ¿","µ¥Î»","Âô³ö¼Û","ÂòÈë¼Û(µ¥Î»£ºÒø×Ó)");
+                output = sprintf("æœ¬è²¨æ£§ç›®å‰å¯ä»¥è²¿æ˜“çš„%sé¡è²¨ç‰©ï¼š\n",kinds[n]);
+                output += sprintf("%-8s%-20s %|8s%|6s%12s/%s\n","ç¨®é¡","è²¨ç‰©åç¨±","æ•¸é‡","å–®ä½","è³£å‡ºåƒ¹","è²·å…¥åƒ¹(å–®ä½ï¼šéŠ€å­)");
                 output += "-------------------------------------------------------------------------\n";
                 output += list_one_kind(kinds[n]);
                 write(output);
@@ -300,8 +300,8 @@ nomask protected void output_list(string number,object who)
 
         else
         {
-                output = "±¾»õÕ»Ä¿Ç°ËùÓĞ¿ÉÒÔÃ³Ò×µÄ»õÎï£º\n";
-                output += sprintf("%-8s%-20s %|8s%|6s%12s/%s\n","ÖÖÀà","»õÎïÃû³Æ","ÊıÁ¿","µ¥Î»","Âô³ö¼Û","ÂòÈë¼Û(µ¥Î»£ºÒø×Ó)");
+                output = "æœ¬è²¨æ£§ç›®å‰æ‰€æœ‰å¯ä»¥è²¿æ˜“çš„è²¨ç‰©ï¼š\n";
+                output += sprintf("%-8s%-20s %|8s%|6s%12s/%s\n","ç¨®é¡","è²¨ç‰©åç¨±","æ•¸é‡","å–®ä½","è³£å‡ºåƒ¹","è²·å…¥åƒ¹(å–®ä½ï¼šéŠ€å­)");
                 output += "-------------------------------------------------------------------------\n";
                 for(i=0;i<n;i++)
                         output += list_one_kind(kinds[i]);
@@ -330,7 +330,7 @@ nomask protected string list_one_kind(string kind)
                         output += sprintf("%-8s%-20s%|14s    %8d/%-8d\n",
                                 i==0?kind:"",
                                 sprintf("%s(%s)",items[i]->name,items[i]->id),
-                                "[ÎŞ  »õ]",
+                                "[ç„¡  è²¨]",
                                 (sell = to_int(items[i]->value*price_rate/100)),
                                 sell*IN_OUT_RATE);
                 else
@@ -351,24 +351,24 @@ nomask protected int do_shougou(string arg)
         string *kinds = keys(all_wares);
 
         if(no_trade)
-                return notify_fail("ÏÖÔÚÕıÔÚÅÌ¿â£¬ÇëµÈÒ»ÏÂÔÙÀ´¡£\n");
+                return notify_fail("ç¾åœ¨æ­£åœ¨ç›¤åº«ï¼Œè«‹ç­‰ä¸€ä¸‹å†ä¾†ã€‚\n");
 
 /*
 #ifdef IN_TEST
         if(!wizardp(this_player()))
-                return notify_fail("²âÊÔÆÚ¼ä²»ÔÊĞíÍæ¼Ò²ÎÓëÃ³Ò×¡£\n");
+                return notify_fail("æ¸¬è©¦æœŸé–“ä¸å…è¨±ç©å®¶åƒèˆ‡è²¿æ˜“ã€‚\n");
 #else
         if(wizardp(this_player()))
-                return notify_fail("ÕıÊ½ÔËĞĞÆÚ¼ä²»ÔÊĞíÎ×Ê¦²ÎÓëÃ³Ò×¡£\n");
+                return notify_fail("æ­£å¼é‹è¡ŒæœŸé–“ä¸å…è¨±å·«å¸«åƒèˆ‡è²¿æ˜“ã€‚\n");
 #endif
 */
 
         if( !stringp(arg) || (arg == "") )
-                return notify_fail("ÄãÒªÊÕ¹ºÊ²Ã´»õÎï£¿\n");
+                return notify_fail("ä½ è¦æ”¶è³¼ä»€éº¼è²¨ç‰©ï¼Ÿ\n");
 
         if(sscanf(arg,"%d %s",num,arg) == 2)
                 if(num < 1)
-                        return notify_fail("ÊÕ¹ºÊıÁ¿ÖÁÉÙÎª 1¡£");
+                        return notify_fail("æ”¶è³¼æ•¸é‡è‡³å°‘ç‚º 1ã€‚");
 
         n = sizeof(kinds);
         for(i=0;i<n;i++)
@@ -382,10 +382,10 @@ nomask protected int do_shougou(string arg)
         }
 
         if(!item)
-                return notify_fail("ÄãÒªÊÕ¹ºÊ²Ã´»õÎï£¿\n");
+                return notify_fail("ä½ è¦æ”¶è³¼ä»€éº¼è²¨ç‰©ï¼Ÿ\n");
 
         if(item->amount < 1)
-                return notify_fail(sprintf("×î½ü±¾µØ%sÒÑ¾­¶Ï»õÁË£¬Äú¹ıÒ»¶ÎÊ±¼äÔÚÀ´¿´¿´°É¡£\n",
+                return notify_fail(sprintf("æœ€è¿‘æœ¬åœ°%så·²ç¶“æ–·è²¨äº†ï¼Œæ‚¨éä¸€æ®µæ™‚é–“åœ¨ä¾†çœ‹çœ‹å§ã€‚\n",
                         item->name));
 
         if(num > 0)
@@ -394,7 +394,7 @@ nomask protected int do_shougou(string arg)
                 return 1;
         }
 
-        write(sprintf("ÄúÒªÊÕ¹º¶àÉÙ%s%s£¿",item->unit,item->name));
+        write(sprintf("æ‚¨è¦æ”¶è³¼å¤šå°‘%s%sï¼Ÿ",item->unit,item->name));
         input_to((: get_shougou_amount :),this_player(),item);
         return 1;
 }
@@ -410,26 +410,26 @@ nomask protected void get_shougou_amount(string arg,object me,class ware w)
 
         if(!sscanf(arg,"%d",n))
         {
-                write(sprintf("ÄúÒªÊÕ¹º¶àÉÙ%s%s£¿",w->unit,w->name));
+                write(sprintf("æ‚¨è¦æ”¶è³¼å¤šå°‘%s%sï¼Ÿ",w->unit,w->name));
                 input_to((: get_shougou_amount :),me,w);
                 return;
         }
 
         if(n < 1)
         {
-                write("ÊÕ¹ºÊıÁ¿ÖÁÉÙÎª 1¡£");
+                write("æ”¶è³¼æ•¸é‡è‡³å°‘ç‚º 1ã€‚");
                 return;
         }
 
         if(n > 210000000)
         {
-                write("ÊÕ¹ºÊıÁ¿²»¿É´óÓÚ 21 ÒÚ¡£");
+                write("æ”¶è³¼æ•¸é‡ä¸å¯å¤§äº 21 å„„ã€‚");
                 return;
         }
 
         if( n > w->amount )
         {
-                write(sprintf("¶Ô²»Æğ£¬±¾µØÄ¿Ç°Ö»ÓĞ %d %s%s£¬Äú¹ıÒ»¶ÎÊ±¼äÔÚÀ´¿´¿´°É¡£\n",
+                write(sprintf("å°ä¸èµ·ï¼Œæœ¬åœ°ç›®å‰åªæœ‰ %d %s%sï¼Œæ‚¨éä¸€æ®µæ™‚é–“åœ¨ä¾†çœ‹çœ‹å§ã€‚\n",
                         w->amount,w->unit,w->name));
                 return;
         }
@@ -437,7 +437,7 @@ nomask protected void get_shougou_amount(string arg,object me,class ware w)
         one = w->value*price_rate/100;
         if(n > (MAX_TRADE/one))
         {
-                write(sprintf("¶Ô²»Æğ£¬±¾µØÉÌ»á¹æ¶¨Ã¿±ÊÃ³Ò×¶î²»ÄÜ³¬¹ı%sÁ½°×Òø¡£\n",
+                write(sprintf("å°ä¸èµ·ï¼Œæœ¬åœ°å•†æœƒè¦å®šæ¯ç­†è²¿æ˜“é¡ä¸èƒ½è¶…é%så…©ç™½éŠ€ã€‚\n",
                         chinese_number(MAX_TRADE)));
                 return;
         }
@@ -448,7 +448,7 @@ nomask protected void get_shougou_amount(string arg,object me,class ware w)
         //if(!pay_from_bank(me,value*100))
         if( query("balance", me)<value*100 )
         {
-                write(sprintf("ÊÕ¹º %d %s%s ¹²Ğè×Ê½ğ %d Á½Òø×Ó£¬ÄãµÄÒøĞĞ´æ¿î²»¹»¡£\n",
+                write(sprintf("æ”¶è³¼ %d %s%s å…±éœ€è³‡é‡‘ %d å…©éŠ€å­ï¼Œä½ çš„éŠ€è¡Œå­˜æ¬¾ä¸å¤ ã€‚\n",
                         n,w->unit,w->name,value));
                 return;
         }
@@ -458,15 +458,15 @@ nomask protected void get_shougou_amount(string arg,object me,class ware w)
 
         if(!me->buy_in(w->name,w->id,w->unit,n,one))
         {
-                write("ÄãµÄÊÕ¹ºĞĞÎªÃ»ÓĞ³É¹¦£¬±¾Ç®ËğÊ§´ù¾¡£¬ÇëÁ¢¿ÌÏòÎ×Ê¦Í¨±¨¡£\n");
-                log_file("warehouse",sprintf("%s(%s) ÊÕ¹º%s %d %sÊ§°Ü£¬ËğÊ§±¾½ğ %d Á½°×Òø¡£%s\n",
+                write("ä½ çš„æ”¶è³¼è¡Œç‚ºæ²’æœ‰æˆåŠŸï¼Œæœ¬éŒ¢æå¤±æ®†ç›¡ï¼Œè«‹ç«‹åˆ»å‘å·«å¸«é€šå ±ã€‚\n");
+                log_file("warehouse",sprintf("%s(%s) æ”¶è³¼%s %d %så¤±æ•—ï¼Œæå¤±æœ¬é‡‘ %d å…©ç™½éŠ€ã€‚%s\n",
                         me->name(),query("id", me),w->name,n,w->unit,value,ctime(time())));
                 return;
         }
 
         domain = domain_file(base_name(this_object()));
 
-        write(sprintf("\nÄã´Ó%sÉÌÕ»ÊÕ¹ºÁË %d %s%s¡£\nÉÌÕ»µÄÕË·¿ÏÈÉúÔÚÒ»¸ö´ó±¾×ÓÉÏ¼ÇÁËÏÂÀ´¡£\n\n",
+        write(sprintf("\nä½ å¾%så•†æ£§æ”¶è³¼äº† %d %s%sã€‚\nå•†æ£§çš„è³¬æˆ¿å…ˆç”Ÿåœ¨ä¸€å€‹å¤§æœ¬å­ä¸Šè¨˜äº†ä¸‹ä¾†ã€‚\n\n",
                 to_chinese(domain),n,w->unit,w->name));
 
         w->amount -= n;
@@ -475,7 +475,7 @@ nomask protected void get_shougou_amount(string arg,object me,class ware w)
         save();
 
 #ifndef IN_TEST
-        log_file("warehouse",sprintf("%s(%s)ÔÚ%sÒÔµ¥¼Û%dÁ½°×ÒøÊÕ¹º%s%d%s¡£%s\n",
+        log_file("warehouse",sprintf("%s(%s)åœ¨%sä»¥å–®åƒ¹%då…©ç™½éŠ€æ”¶è³¼%s%d%sã€‚%s\n",
                 me->name(),query("id", me),to_chinese(domain),one,w->name,n,w->unit,ctime(time())));
 #endif
 
@@ -489,24 +489,24 @@ nomask protected int do_paochu(string arg)
         string *kinds = keys(all_wares);
 
         if(no_trade)
-                return notify_fail("ÏÖÔÚÕıÔÚÅÌ¿â£¬ÇëµÈÒ»ÏÂÔÙÀ´¡£\n");
+                return notify_fail("ç¾åœ¨æ­£åœ¨ç›¤åº«ï¼Œè«‹ç­‰ä¸€ä¸‹å†ä¾†ã€‚\n");
 
 /*
 #ifdef IN_TEST
         if(!wizardp(this_player()))
-                return notify_fail("²âÊÔÆÚ¼ä²»ÔÊĞíÍæ¼Ò²ÎÓëÃ³Ò×¡£\n");
+                return notify_fail("æ¸¬è©¦æœŸé–“ä¸å…è¨±ç©å®¶åƒèˆ‡è²¿æ˜“ã€‚\n");
 #else
         if(wizardp(this_player()))
-                return notify_fail("ÕıÊ½ÔËĞĞÆÚ¼ä²»ÔÊĞíÎ×Ê¦²ÎÓëÃ³Ò×¡£\n");
+                return notify_fail("æ­£å¼é‹è¡ŒæœŸé–“ä¸å…è¨±å·«å¸«åƒèˆ‡è²¿æ˜“ã€‚\n");
 #endif
 */
 
         if( !stringp(arg) || (arg == "") )
-                return notify_fail("ÄãÒªÅ×³öÊ²Ã´»õÎï£¿\n");
+                return notify_fail("ä½ è¦æ‹‹å‡ºä»€éº¼è²¨ç‰©ï¼Ÿ\n");
 
         if(sscanf(arg,"%d %s",num,arg) == 2)
                 if(num < 1)
-                        return notify_fail("Å×ÊÛÊıÁ¿ÖÁÉÙÎª 1¡£");
+                        return notify_fail("æ‹‹å”®æ•¸é‡è‡³å°‘ç‚º 1ã€‚");
 
         n = sizeof(kinds);
         for(i=0;i<n;i++)
@@ -520,7 +520,7 @@ nomask protected int do_paochu(string arg)
         }
 
         if(!item)
-                return notify_fail("ÄãÒªÅ×³öÊ²Ã´»õÎï£¿\n");
+                return notify_fail("ä½ è¦æ‹‹å‡ºä»€éº¼è²¨ç‰©ï¼Ÿ\n");
 
         if(num > 0)
         {
@@ -528,7 +528,7 @@ nomask protected int do_paochu(string arg)
                 return 1;
         }
 
-        write(sprintf("ÄúÒªÅ×³ö¶àÉÙ%s%s£¿",item->unit,item->name));
+        write(sprintf("æ‚¨è¦æ‹‹å‡ºå¤šå°‘%s%sï¼Ÿ",item->unit,item->name));
         input_to((: get_paochu_amount :),this_player(),item);
         return 1;
 }
@@ -543,7 +543,7 @@ nomask protected void get_paochu_amount(string arg,object me,class ware w)
 
         if(!sscanf(arg,"%d",n))
         {
-                write(sprintf("ÄúÒªÅ×³ö¶àÉÙ%s%s£¿",w->unit,w->name));
+                write(sprintf("æ‚¨è¦æ‹‹å‡ºå¤šå°‘%s%sï¼Ÿ",w->unit,w->name));
                 input_to((: get_paochu_amount :),me,w);
                 return;
         }
@@ -551,7 +551,7 @@ nomask protected void get_paochu_amount(string arg,object me,class ware w)
 
         if(n < 1)
         {
-                write("Å×ÊÛÊıÁ¿ÖÁÉÙÎª 1¡£");
+                write("æ‹‹å”®æ•¸é‡è‡³å°‘ç‚º 1ã€‚");
                 return;
         }
 
@@ -559,20 +559,20 @@ nomask protected void get_paochu_amount(string arg,object me,class ware w)
 
         if(n > (MAX_TRADE/one))
         {
-                write(sprintf("¶Ô²»Æğ£¬±¾µØÉÌ»á¹æ¶¨Ã¿±ÊÃ³Ò×¶î²»ÄÜ³¬¹ı%sÁ½°×Òø¡£\n",
+                write(sprintf("å°ä¸èµ·ï¼Œæœ¬åœ°å•†æœƒè¦å®šæ¯ç­†è²¿æ˜“é¡ä¸èƒ½è¶…é%så…©ç™½éŠ€ã€‚\n",
                         chinese_number(MAX_TRADE)));
                 return;
         }
 
         if(!(r = me->sell_out(w->id,n,one)))
         {
-                write(sprintf("ÄãÔÚ±¾µØÃ»ÓĞ%s¡£\n",w->name));
+                write(sprintf("ä½ åœ¨æœ¬åœ°æ²’æœ‰%sã€‚\n",w->name));
                 return;
         }
 
         if(r == -1)
         {
-                write(sprintf("ÄãÔÚ±¾µØÃ»ÓĞÕâÃ´¶àÊıÁ¿µÄ%s¡£\n",w->name));
+                write(sprintf("ä½ åœ¨æœ¬åœ°æ²’æœ‰é€™éº¼å¤šæ•¸é‡çš„%sã€‚\n",w->name));
                 return;
         }
 
@@ -583,8 +583,8 @@ nomask protected void get_paochu_amount(string arg,object me,class ware w)
         /*
         if( !save_to_bank(me,value*100) )
         {
-                tell_object(me,"ÄãµÄ»õ¿îÈ«²¿ËğÊ§ÁË£¬ÇëÏòÎ×Ê¦±¨¸æ¡£\n");
-                log_file("warehouse",sprintf("%s(%s)ÓÉÓÚÒøĞĞ´æ¿î³¬¶îÅ×ÊÛÎïÆ·Ê±ËğÊ§ÁË %d Á½Òø×Ó¡£%s\n",
+                tell_object(me,"ä½ çš„è²¨æ¬¾å…¨éƒ¨æå¤±äº†ï¼Œè«‹å‘å·«å¸«å ±å‘Šã€‚\n");
+                log_file("warehouse",sprintf("%s(%s)ç”±äºéŠ€è¡Œå­˜æ¬¾è¶…é¡æ‹‹å”®ç‰©å“æ™‚æå¤±äº† %d å…©éŠ€å­ã€‚%s\n",
                         me->name(),query("id", me),value,ctime(time())));
                 return 0;
         }
@@ -592,7 +592,7 @@ nomask protected void get_paochu_amount(string arg,object me,class ware w)
         addn("balance", value*100, me);
 #endif
 
-        write(sprintf("ÄãÔÚ±¾µØÅ×ÊÛÁË %d %s%s£¬\nÓ¦µÃ»õ¿î %d Á½Òø×ÓÒÑ´æÈëÄúµÄÒøĞĞÕË»§¡£\n",
+        write(sprintf("ä½ åœ¨æœ¬åœ°æ‹‹å”®äº† %d %s%sï¼Œ\næ‡‰å¾—è²¨æ¬¾ %d å…©éŠ€å­å·²å­˜å…¥æ‚¨çš„éŠ€è¡Œè³¬æˆ¶ã€‚\n",
                 n,w->unit,w->name,value));
 
         w->amount += n;
@@ -600,12 +600,12 @@ nomask protected void get_paochu_amount(string arg,object me,class ware w)
         save();
 
 #ifndef IN_TEST
-        log_file("warehouse",sprintf("%s(%s)ÔÚ%sÒÔµ¥¼Û%dÁ½°×ÒøÅ×³ö%s%d%s¡£%s\n",
+        log_file("warehouse",sprintf("%s(%s)åœ¨%sä»¥å–®åƒ¹%då…©ç™½éŠ€æ‹‹å‡º%s%d%sã€‚%s\n",
                 me->name(),query("id", me),to_chinese(domain),one,w->name,n,w->unit,ctime(time())));
 #endif
 }
 
-// ÏµÍ³¿ØÖÆµÄËæ»ú±ä¶¯
+// ç³»çµ±æ§åˆ¶çš„éš¨æ©Ÿè®Šå‹•
 nomask void random_change(int sum)
 {
 
@@ -618,19 +618,19 @@ nomask void random_change(int sum)
         if(!sum)
                 return;
 
-        no_trade = 1;   // ±ä¶¯ÆÚ¼ä½ûÖ¹Ã³Ò×
+        no_trade = 1;   // è®Šå‹•æœŸé–“ç¦æ­¢è²¿æ˜“
 
         system_change += sum;
-        do_count("ÉÌÆ·",sum*100);
+        do_count("å•†å“",sum*100);
         save();
-        log_file("business",sprintf("%s: ÉÌÆ·¼Û¸ñËæ»ú±ä¶¯ %s Éæ¼°×Ü½ğ¶î %d Á½°×Òø. %s\n",
+        log_file("business",sprintf("%s: å•†å“åƒ¹æ ¼éš¨æ©Ÿè®Šå‹• %s æ¶‰åŠç¸½é‡‘é¡ %d å…©ç™½éŠ€. %s\n",
                 domain_file(base_name(this_object())),
-                sum > 0 ? "ÉÏµ÷" : "ÏÂµø",
+                sum > 0 ? "ä¸Šèª¿" : "ä¸‹è·Œ",
                 sum*100, ctime(time())));
         no_trade = 0;
 }
 
-// ÏµÍ³¿ØÖÆµÄ»Ö¸´
+// ç³»çµ±æ§åˆ¶çš„æ¢å¾©
 nomask void random_recover()
 {
         string *cs;
@@ -644,7 +644,7 @@ nomask void random_recover()
                 return;
 */
 
-        no_trade = 1;   // ±ä¶¯ÆÚ¼ä½ûÖ¹Ã³Ò×
+        no_trade = 1;   // è®Šå‹•æœŸé–“ç¦æ­¢è²¿æ˜“
 
         if(sizeof(changed_class) >= sizeof(cs = keys(all_wares)))
                 changed_class = ({});
@@ -686,10 +686,10 @@ nomask void random_recover()
                 }
                 else
                         oneitem->amount += ch;
-                log_file("business",sprintf("%s: »Ö¸´µ÷Õû %s %s %d %s. %s\n",
+                log_file("business",sprintf("%s: æ¢å¾©èª¿æ•´ %s %s %d %s. %s\n",
                         domain_file(base_name(this_object())),
                         oneitem->id,
-                        flag?"¼õÉÙ":"Ôö¼Ó",
+                        flag?"æ¸›å°‘":"å¢åŠ ",
                         ch,
                         oneitem->unit,
                         ctime(time()),

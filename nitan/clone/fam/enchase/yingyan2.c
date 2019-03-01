@@ -3,14 +3,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIY "Ó¥ÑÛ" NOR, ({"ying yan" }));
+        set_name(HIY "é·¹çœ¼" NOR, ({"ying yan" }));
         set_weight(2000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
+                set("unit", "é¡†");
                 set("value", 500000);
-                set("enchase/name", "Ó¥ÑÛ");
+                set("enchase/name", "é·¹çœ¼");
                 set("enchase/point", 120);
                 set("enchase/type", "wrists");
                                 set("enchase/cur_firm", 100);

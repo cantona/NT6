@@ -12,30 +12,30 @@ int main(object me, string arg)
         int i;
 
         if (PK_D->is_ready())
-                return notify_fail("ÏÖÔÚÕıÔÚ±¨ÃûÄØ£¬µÈ»á¶ùÔÙËµ¡£\n");
+                return notify_fail("ç¾åœ¨æ­£åœ¨å ±åå‘¢ï¼Œç­‰æœƒå…’å†èªªã€‚\n");
 
         obs = PK_D->query_all_competitor();
         if (! arrayp(obs) || ! sizeof(obs))
         {
                 if (PK_D->is_pking())
-                        return notify_fail("ÎŞ·¨ºÍ PK DAEMON ½øĞĞÕı³£µÄÁªÏµ¡£\n");
-                return notify_fail("ÏÖÔÚÍÀÈË³¡ÄÚ²¢Ã»ÓĞÊ²Ã´ÈË¡£\n");
+                        return notify_fail("ç„¡æ³•å’Œ PK DAEMON é€²è¡Œæ­£å¸¸çš„è¯ç³»ã€‚\n");
+                return notify_fail("ç¾åœ¨å± äººå ´å…§ä¸¦æ²’æœ‰ä»€éº¼äººã€‚\n");
         }
 
         obs -= ({ me, 0 });
         if (! sizeof(obs))
         {
-                write("ÏÖÔÚÍÀÈË³¡ÖĞÖ»ÓĞÄãÒ»¸öÈËÁË¡£\n");
+                write("ç¾åœ¨å± äººå ´ä¸­åªæœ‰ä½ ä¸€å€‹äººäº†ã€‚\n");
                 return 1;
         }
 
-        msg = HIR "ÏÖÔÚÍÀÈË³¡ÖĞ³ıÁËÄã»¹Ê£ÏÂ" + chinese_number(sizeof(obs)) +
-              "ÈË£¬ËûÃÇÊÇ£º\n" NOR;
-        msg += HIC "¡Ô" HIY "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤" HIC "¡Ô\n" NOR;
+        msg = HIR "ç¾åœ¨å± äººå ´ä¸­é™¤äº†ä½ é‚„å‰©ä¸‹" + chinese_number(sizeof(obs)) +
+              "äººï¼Œä»–å€‘æ˜¯ï¼š\n" NOR;
+        msg += HIC "â‰¡" HIY "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€" HIC "â‰¡\n" NOR;
         for (i = 0; i < sizeof(obs); i++)
         {
                 sht=obs[i]->name(1)+"("+query("id", obs[i])+")";
-                msg+=(query("gender", obs[i]) == "Å®ĞÔ"?HIC:WHT)+
+                msg+=(query("gender", obs[i]) == "å¥³æ€§"?HIC:WHT)+
                         sprintf("%-20s", sht) + NOR;
                 if (! ((i + 1) % 4))
                         msg += "\n";
@@ -43,7 +43,7 @@ int main(object me, string arg)
 
         if (i % 4)
                 msg += "\n";
-        msg += HIC "¡Ô" HIY "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤" HIC "¡Ô\n" NOR;
+        msg += HIC "â‰¡" HIY "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€" HIC "â‰¡\n" NOR;
         write(msg);
         return 1;
 }
@@ -51,9 +51,9 @@ int main(object me, string arg)
 int help(object me)
 {
 write(@HELP
-Ö¸Áî¸ñÊ½ : pkd
+æŒ‡ä»¤æ ¼å¼ : pkd
 
-ÓÃÕâÌõÖ¸Áî¿ÉÒÔ²é¿´Ä¿Ç°»¹ÓĞË­ÔÚÍÀÈË³¡ÖĞ±ÈÈü¡£
+ç”¨é€™æ¢æŒ‡ä»¤å¯ä»¥æŸ¥çœ‹ç›®å‰é‚„æœ‰èª°åœ¨å± äººå ´ä¸­æ¯”è³½ã€‚
  
 HELP );
         return 1;

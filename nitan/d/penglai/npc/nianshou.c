@@ -5,11 +5,11 @@ int is_pld_npc(){return 1;}
 
 void create()
 {
-        //set_name(HIR "年兽" NOR, ({ "nian shou", "nian", "shou" }));
-        //set("long", HIR "传说中的年兽，打败它在新的一年能带给你好运。\n" NOR);
+        //set_name(HIR "骞寸嵏" NOR, ({ "nian shou", "nian", "shou" }));
+        //set("long", HIR "鍌宠涓殑骞寸嵏锛屾墦鏁楀畠鍦ㄦ柊鐨勪竴骞磋兘甯剁郸浣犲ソ閬嬨�俓n" NOR);
 
-        set_name(HIM "幻兽" NOR, ({ "huan shou", "huan", "shou" }));
-        set("long", HIM "神话故事中能令人产生幻觉的怪兽。\n" NOR);
+        set_name(HIM "骞荤嵏" NOR, ({ "huan shou", "huan", "shou" }));
+        set("long", HIM "绁炶┍鏁呬簨涓兘浠や汉鐢㈢敓骞昏鐨勬�嵏銆俓n" NOR);
         
         set("age", 190);
         set("str", 40);

@@ -1,5 +1,5 @@
 // Code of JHSH
-// shugan.c Ê÷¸É
+// shugan.c æ¨¹å¹¹
 // zhangchi 7/00
 
 
@@ -7,14 +7,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name("Ê÷¸É", ({ "shu gan","trunk"}) );
+        set_name("æ¨¹å¹¹", ({ "shu gan","trunk"}) );
         set_weight(20000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»¸ù¸Õ¸Õ¿³ÏÂÀ´µÄÊ÷¸É¡£\n");
-                set("unit", "¸ù");
-                set("no_get", "ÕâÃ´´óµÄÊ÷¸É£¬ÄãÄÜÄÃÆğÀ´Âğ£¿");
+                set("long", "é€™æ˜¯ä¸€æ ¹å‰›å‰›ç ä¸‹ä¾†çš„æ¨¹å¹¹ã€‚\n");
+                set("unit", "æ ¹");
+                set("no_get", "é€™éº¼å¤§çš„æ¨¹å¹¹ï¼Œä½ èƒ½æ‹¿èµ·ä¾†å—ï¼Ÿ");
                 set("value",1);
         }
 }
@@ -30,7 +30,7 @@ void init()
 
 int set_owner(string arg)
 {
-        if (!arg) return notify_fail("Ö¸Áî¸ñÊ½£ºsetowner <xxx>\n");
+        if (!arg) return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šsetowner <xxx>\n");
         set("owner",arg);
         write("OK!\n");
                 
@@ -39,7 +39,7 @@ int set_owner(string arg)
 
 int do_give()
 {
-        return notify_fail("ÄãÕı¿¸×Å´óÄ¾Í·ÄØ£¬ÔõÃ´¸øÈË£¿\n");
+        return notify_fail("ä½ æ­£æ‰›è‘—å¤§æœ¨é ­å‘¢ï¼Œæ€éº¼çµ¦äººï¼Ÿ\n");
 }
 
 int do_carry(string arg)
@@ -50,30 +50,30 @@ int do_carry(string arg)
         if (!arg) return 0;
 
         if (me->is_busy() || me->is_fighting() )
-                return notify_fail("ÄãÕıÃ¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ æ­£å¿™è‘—å‘¢ã€‚\n");
 
         if (arg != "shu gan" && arg != "trunk")
-                return notify_fail("ÄãÒª¿¸Ê²Ã´£¿\n");
+                return notify_fail("ä½ è¦æ‰›ä»€éº¼ï¼Ÿ\n");
 
         if( query("owner") != query("id", me) )
                 if (present(query("owner"),environment(me)) )
                 {
                         owner=find_player(query("owner"));
-                        message_vision("$NÍµÍµµØÏë°ÑÊ÷¸ÉÌ§ÆğÀ´£¬Í»È»$nµÉÁË$NÒ»ÑÛ£¬ÏÅµØ$N¸Ï½ôËõÊÖ¡£\n",me,owner);
+                        message_vision("$Nå·å·åœ°æƒ³æŠŠæ¨¹å¹¹æŠ¬èµ·ä¾†ï¼Œçªç„¶$nçªäº†$Nä¸€çœ¼ï¼Œåš‡åœ°$Nè¶•ç·Šç¸®æ‰‹ã€‚\n",me,owner);
                         return 1;
                 }
                 else
                 {
-                        message_vision("$NÇÆÁËÇÆÅÔ±ßÃ»ÈË£¬ÍµÍµÃşÃşµØ°ÑÊ÷¸É¿¸µ½¼çÉÏ¡£\n",me);
+                        message_vision("$Nç§äº†ç§æ—é‚Šæ²’äººï¼Œå·å·æ‘¸æ‘¸åœ°æŠŠæ¨¹å¹¹æ‰›åˆ°è‚©ä¸Šã€‚\n",me);
                         this_object()->move(me);
-                        set_temp("apply/short", ({(query("title", me)+""+query("name", me)+"¿¸×ÅÒ»¸ùÊ÷¸É")}), me);
+                        set_temp("apply/short", ({(query("title", me)+""+query("name", me)+"æ‰›è‘—ä¸€æ ¹æ¨¹å¹¹")}), me);
 
                         return 1;
                 }
         
-        message_vision("$NÊ¹¾¢Ò»Ì§£¬½«¸Õ¿³ÏÂÀ´µÄÊ÷¸É¿¸µ½¼çÉÏ\n",me);
+        message_vision("$Nä½¿å‹ä¸€æŠ¬ï¼Œå°‡å‰›ç ä¸‹ä¾†çš„æ¨¹å¹¹æ‰›åˆ°è‚©ä¸Š\n",me);
         this_object()->move(me);
-        set_temp("apply/short", ({(query("title", me)+""+query("name", me)+"¿¸×ÅÒ»¸ùÊ÷¸É")}), me);
+        set_temp("apply/short", ({(query("title", me)+""+query("name", me)+"æ‰›è‘—ä¸€æ ¹æ¨¹å¹¹")}), me);
 
 
         return 1;

@@ -5,12 +5,12 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "¾ŞÄ¾Æì»ú¹Ø");
+        set("short", "å·¨æœ¨æ——æ©Ÿé—œ");
         set("long", @LONG
-ÄãÑÛÇ°ÖèÈ»Ò»°µ£¬ëüëÊÖĞ£¬Ö»¼û×óÓÒÇ°ºó£¬µ½´¦¶¼ÊÇÆÌÌì¸ÇµØµÄ
-²»ÖªÃûµÄ¾ŞÊ÷£¬ºÃÏóËÉ°Ø£¬ÓÖËÆÀäÉ¼£¬´ØÔÚÒ»Æğ£¬ÃÜÊµµÄÖ¦Ò¶ÏóÒ»Åî
-Åî¾ŞÉ¡ºãÉìÏòÌì¿Õ£¬ÕÚÌì±ÎÈÕ¡£ÄãËÆºõÃÔÊ§ÁË·½Ïò£¬ÏóÃ»Í·²ÔÓ¬°ãµ½
-´¦ÂÒ´³¡£
+ä½ çœ¼å‰é©Ÿç„¶ä¸€æš—ï¼Œæœ¦æœ§ä¸­ï¼Œåªè¦‹å·¦å³å‰å¾Œï¼Œåˆ°è™•éƒ½æ˜¯èˆ–å¤©è“‹åœ°çš„
+ä¸çŸ¥åçš„å·¨æ¨¹ï¼Œå¥½è±¡é¬†æŸï¼Œåˆä¼¼å†·æ‰ï¼Œç°‡åœ¨ä¸€èµ·ï¼Œå¯†å¯¦çš„æè‘‰è±¡ä¸€è“¬
+è“¬å·¨å‚˜æ†ä¼¸å‘å¤©ç©ºï¼Œé®å¤©è”½æ—¥ã€‚ä½ ä¼¼ä¹è¿·å¤±äº†æ–¹å‘ï¼Œè±¡æ²’é ­è’¼è …èˆ¬åˆ°
+è™•äº‚é—–ã€‚
 LONG );
         set("exits", ([
                 "east" :  __FILE__,
@@ -23,10 +23,10 @@ LONG );
 }
 void init()
 {
-        if (this_player()->query_family() == "Ã÷½Ì") return;
+        if (this_player()->query_family() == "æ˜æ•™") return;
         this_player()->receive_damage("qi", 15);
         this_player()->receive_wound("qi",  15);
-        message_vision(HIG"Í»È»Ò»Õó¾ŞÄ¾×®ÕÚÌì±ÎÈÕÁè¿ÕÔÒÏò$N£¡\n"NOR, this_player());
+        message_vision(HIG"çªç„¶ä¸€é™£å·¨æœ¨æ¨é®å¤©è”½æ—¥å‡Œç©ºç ¸å‘$Nï¼\n"NOR, this_player());
 }
 
 int valid_leave(object me, string dir)
@@ -37,7 +37,7 @@ int valid_leave(object me, string dir)
         total_steps = 10 ;
         if ( total_steps <= 0 ) total_steps = 1 ;
         myfam = (mapping) query("family", this_player());
-        if(myfam && myfam["family_name"] == "Ã÷½Ì")
+        if(myfam && myfam["family_name"] == "æ˜æ•™")
                 total_steps = 1 ;
         if ( dir == "west")
                 addn_temp("mingjiao/steps",1,me);
@@ -48,7 +48,7 @@ int valid_leave(object me, string dir)
         {
                 me->move(__DIR__"jmqshenmu");
                 delete_temp("mingjiao/steps", me);
-                tell_object(me, "Äã×ßÁË°ëÌì£¬ÖÕÓÚ×ßµ½ÉñÄ¾¡£ÕæÀÛ! \n");
+                tell_object(me, "ä½ èµ°äº†åŠå¤©ï¼Œçµ‚äºèµ°åˆ°ç¥æœ¨ã€‚çœŸç´¯! \n");
                 return 1;
         }
 
@@ -56,7 +56,7 @@ int valid_leave(object me, string dir)
         {
                 me->move(__DIR__"jmqshulin6");
                 delete_temp("mingjiao/steps", me);
-                tell_object(me, "Äã×ßÁË°ëÌì£¬ÖÕÓÚ×ßµ½ÉñÄ¾¡£ÕæÀÛ! \n");
+                tell_object(me, "ä½ èµ°äº†åŠå¤©ï¼Œçµ‚äºèµ°åˆ°ç¥æœ¨ã€‚çœŸç´¯! \n");
                 return 1;
         }
 

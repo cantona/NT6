@@ -12,11 +12,11 @@ int set_perform();
 
 void create()
 {
-        set_name("·ÉÔô",({ "fei zei","fei","zei" }) );
-        set("title",HIY"·ÉÌì¶İµØ"NOR);
+        set_name("é£›è³Š",({ "fei zei","fei","zei" }) );
+        set("title",HIY"é£›å¤©éåœ°"NOR);
         set("age", 30+random(20));
         set("long", 
-"ÕâÊÇÎŞ¶ñ²»×öµÄ·ÉÔô£¬±³ÉÏÓĞÒ»¸öĞ¡Ğ¡°ü¹ü£¬¿´Ñù×ÓÊÇ²ÅÍµÁËÊ²Ã´¶«Î÷ÔÚÊÖ¡£\n");
+"é€™æ˜¯ç„¡æƒ¡ä¸åšçš„é£›è³Šï¼ŒèƒŒä¸Šæœ‰ä¸€å€‹å°å°åŒ…è£¹ï¼Œçœ‹æ¨£å­æ˜¯æ‰å·äº†ä»€éº¼æ±è¥¿åœ¨æ‰‹ã€‚\n");
         set("int", 30);
         set("str", 20+random(10));
         set("con", 30);
@@ -64,18 +64,18 @@ void init()
                         if(money = present("gold_money", ob))
                         {
                                 //destruct(money);
-                                tell_object(ob,HIR"ÄãÍ»È»·¢ÏÖÉíÉÏµÄ"+query("name", money)+HIR+"²»¼ûÁË£¡\n"NOR);
+                                tell_object(ob,HIR"ä½ çªç„¶ç™¼ç¾èº«ä¸Šçš„"+query("name", money)+HIR+"ä¸è¦‹äº†ï¼\n"NOR);
                                 if (!money->move(this_object())) destruct(money);
                         }
                         else if(money = present("silver_money", ob))
                         {
                                 //destruct(money);
-                                tell_object(ob,HIR"ÄãÍ»È»·¢ÏÖÉíÉÏµÄ"+query("name", money)+HIR+"²»¼ûÁË£¡\n"NOR);
+                                tell_object(ob,HIR"ä½ çªç„¶ç™¼ç¾èº«ä¸Šçš„"+query("name", money)+HIR+"ä¸è¦‹äº†ï¼\n"NOR);
                                 if (!money->move(this_object())) destruct(money);
                         }
 //                        else if(money = present("budai",ob))
 //                        {
-//                                tell_object(ob, HIR "ÄãÍ»È»·¢ÏÖÉíÉÏµÄ"+money->query("name")+HIR+"²»¼ûÁË£¡\n"NOR);                                
+//                                tell_object(ob, HIR "ä½ çªç„¶ç™¼ç¾èº«ä¸Šçš„"+money->query("name")+HIR+"ä¸è¦‹äº†ï¼\n"NOR);                                
 //                                if (!money->move(this_object())) destruct(money);
 //                        }
                         else 
@@ -85,14 +85,14 @@ void init()
                                 {
                                         if( (inv[i]->is_container()) || (inv[i]->is_unique() && !query("equipped", inv[i])) )
                                         {
-                                                tell_object(ob,HIR"ÄãÍ»È»·¢ÏÖÉíÉÏµÄ"+query("name", inv[i])+HIR+"²»¼ûÁË£¡\n"NOR);
+                                                tell_object(ob,HIR"ä½ çªç„¶ç™¼ç¾èº«ä¸Šçš„"+query("name", inv[i])+HIR+"ä¸è¦‹äº†ï¼\n"NOR);
                                                 if (!inv[i]->move(this_object())) destruct(inv[i]);
                                                     break;
                                           }
                                 }
                                 if ( i==sizeof(inv) )
                                 {
-                                  command("say ÄãÕâ¸öÇî¹âµ°£¬Á¬µãÓÍË®¶¼Ã»ÓĞ£¬¸øÎÒ¹ö£¡");
+                                  command("say ä½ é€™å€‹çª®å…‰è›‹ï¼Œé€£é»æ²¹æ°´éƒ½æ²’æœ‰ï¼Œçµ¦æˆ‘æ»¾ï¼");
                                         if (!ob->is_busy()) ob->start_busy(1);
                                 }
                         }
@@ -139,7 +139,7 @@ int do_halt()
 
         if ( me->is_fighting(ob))
         {
-                message_vision(HIW"$NºÈµÀ£º¡°¼ÈÈ»±»Äã¿´³öÉí·İ£¬¾ÍĞİÏë»î×ÅÀë¿ª£¡¡±\n"NOR, ob, me);
+                message_vision(HIW"$Nå–é“ï¼šâ€œæ—¢ç„¶è¢«ä½ çœ‹å‡ºèº«ä»½ï¼Œå°±ä¼‘æƒ³æ´»è‘—é›¢é–‹ï¼â€\n"NOR, ob, me);
                 return 1;
         }
         return 0;
@@ -155,7 +155,7 @@ void die()
         
         me=query_temp("last_damage_from", ob);
         fme=query_temp("last_opponent", ob);
-        if (!objectp(me) || !userp(me))//Èç¹ûÊÇnpc´òËÀ »òÕßÒâÍâËÀÍö
+        if (!objectp(me) || !userp(me))//å¦‚æœæ˜¯npcæ‰“æ­» æˆ–è€…æ„å¤–æ­»äº¡
         {
                 if( !query_temp("enemy", ob))return ::die();
                 enemys=keys(query_temp("enemy", ob));
@@ -171,7 +171,7 @@ void die()
                         }
                 }
                 if (flag==1) return ::die();
-//                else return; //Èç¹û»·¾³ÖĞ»¹ÓĞÍæ¼ÒµĞÈË ÄÇÃ´½«²»»á±»npc´òËÀ
+//                else return; //å¦‚æœç’°å¢ƒä¸­é‚„æœ‰ç©å®¶æ•µäºº é‚£éº¼å°‡ä¸æœƒè¢«npcæ‰“æ­»
         }
         else
         {
@@ -183,11 +183,11 @@ void die()
                 addn("combat_exp", exp, me);
                 addn("potential", pot, me);
                 addn("score", score, me);
-                message_vision("$NÒ§ÑÀÇĞ³İµØ¶Ô×ÅÌì¿Õ´ó½Ğ£º¡°ÔôÀÏÌì£¡¡±\n",ob);
-                tell_object(me,HIW"ÄãÉ±µĞÓĞ¹¦£¬µÃµ½ÈçÏÂ½±Àø£º\n");
-                tell_object(me,chinese_number(exp) +"µãÊµÕ½¾­Ñé\n" +
-                chinese_number(pot) + "µãÇ±ÄÜ\n" +
-                chinese_number(score)+"µã½­ºşÔÄÀú\n"NOR);
+                message_vision("$Nå’¬ç‰™åˆ‡é½’åœ°å°è‘—å¤©ç©ºå¤§å«ï¼šâ€œè³Šè€å¤©ï¼â€\n",ob);
+                tell_object(me,HIW"ä½ æ®ºæ•µæœ‰åŠŸï¼Œå¾—åˆ°å¦‚ä¸‹çå‹µï¼š\n");
+                tell_object(me,chinese_number(exp) +"é»å¯¦æˆ°ç¶“é©—\n" +
+                chinese_number(pot) + "é»æ½›èƒ½\n" +
+                chinese_number(score)+"é»æ±Ÿæ¹–é–±æ­·\n"NOR);
                 return ::die(); 
         }
 }

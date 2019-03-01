@@ -4,13 +4,13 @@
 #undef TEST
 
 /*
-zhen ji ����
-zhen yq ����
-zhen in ����
-zhen huan ������
-zhen san ��ɢ��
-zhen talk ��˵��
-zhen check �����쿴��Ա��״̬
+zhen ji 建立
+zhen yq 邀請
+zhen in 加入
+zhen huan 換陣主
+zhen san 解散陣法
+zhen talk 陣法說話
+zhen check 陣主察看成員的狀態
 */
 
 inherit F_CLEAN_UP;
@@ -24,15 +24,15 @@ nomask int main(object me, string arg)
 
 #ifdef TEST
         if(!wizardp(me))
-                return notify_fail("�����ڼ�ֻ����ʦ��ʹ���󷨡�\n");
+                return notify_fail("測試期間只有巫師能使用陣法。\n");
 #endif
 
         if(!stringp(arg) || arg =="")
         {
                 if(!me->in_array())
-                        return notify_fail("��Ŀǰû�м����κ��󷨡�\n");
-        // �ȼ� 15 ��
-        // ��Ԯ��ʱ�������ȼ��ߡ��󷨹���Ч����
+                        return notify_fail("你目前沒有加入任何陣法。\n");
+        // 等級 15 級
+        // 救援及時、防御等級高、陣法攻擊效果好
                 else
                 {
                         object *memb;
@@ -40,27 +40,27 @@ nomask int main(object me, string arg)
                         object w;
         
                         if( (w = me->query_array_master()) == me)
-                                out = sprintf("��Ŀǰ�������֡�%s��\n",me->query_array_name());
+                                out = sprintf("你目前正在主持『%s』\n",me->query_array_name());
                         else
-                                out = sprintf("��Ŀǰ����%s���ֵġ�%s����\n",w->name(),me->query_array_name());
+                                out = sprintf("你目前正在%s主持的『%s』中\n",w->name(),me->query_array_name());
         
                         memb = me->query_array_member() - ({ me,0 });
         
                         if(!sizeof(memb))
-                                out += "������û��������Ա��\n";
+                                out += "陣形中沒有其他成員。\n";
                         else
                         {
-                                out += "��Ա�У�\n";
+                                out += "成員有：\n";
                                 foreach(object cy in memb)
                                         out += sprintf("\t%s\n",cy->name());
                                 out += sprintf("\t%s\n",me->name());
                         }
 
-                        out += sprintf("��%s��%s��\n",
+                        out += sprintf("『%s』%s。\n",
                         me->query_array_name(),
                         me->query_array_status()?
-                                sprintf("���ڷ�������\n�󷨵ȼ�Ϊ��%d",me->query_array_level()):
-                                "��������û�з��ӳ���");
+                                sprintf("正在發揮威力\n陣法等級為：%d",me->query_array_level()):
+                                "的威力還沒有發揮出來");
                         write(out);
                         return 1;
                 }
@@ -71,22 +71,22 @@ nomask int main(object me, string arg)
                 object who;
 
                 if(!me->in_array())
-                        return notify_fail("��Ŀǰû�м����κ��󷨡�\n");
+                        return notify_fail("你目前沒有加入任何陣法。\n");
 
                 if(!me->is_array_master())
-                        return notify_fail("ֻ���������ܲ鿴��Ա��״̬��\n");
+                        return notify_fail("只有陣主才能查看成員的狀態。\n");
 
                 if( !sscanf(arg,"check %s",usr)
                 || !objectp(who = present(usr,environment(me)))
                 || !userp(who) )
-                        return notify_fail("��Ҫ�鿴�ĸ���Ա��״̬��\n");
+                        return notify_fail("你要查看哪個成員的狀態？\n");
                 if(!me->is_array_member(who))
-                        return notify_fail(sprintf("%s���ǡ�%s���ĳ�Ա��\n",
+                        return notify_fail(sprintf("%s不是『%s』的成員。\n",
                                 who->name(),me->query_array_name() ));
 
-                write(sprintf("��%s��%s%s��\n\t��ǰʹ���书Ϊ��%s\n\t��%s���ĵȼ�Ϊ��%d\n\t��%s���ȼ�Ϊ��%d\n",
+                write(sprintf("『%s』%s%s：\n\t當前使用武功為：%s\n\t『%s』的等級為：%d\n\t『%s』等級為：%d\n",
                         who->query_array_name(),
-                        who == me?"����":"��Ա",
+                        who == me?"陣主":"成員",
                         who->name(),
                         to_chinese(who->query_current_skill()),
                         who->query_array_name(),
@@ -98,29 +98,29 @@ nomask int main(object me, string arg)
                 return 1;
         }
 
-        if(arg == "ji")        // ����
+        if(arg == "ji")        // 建立
         {
                 string out;
 
                 if(me->is_fighting())
-                        return notify_fail("�����ں��˴�ܣ��˲������������顣\n");
+                        return notify_fail("你正在和人打架，顧不上其它的事情。\n");
 
                 if(me->in_team())
-                        return notify_fail("�����ڶ����У��޷���֯�󷨡�\n");
+                        return notify_fail("你正在隊伍中，無法組織陣法。\n");
 
-                if(me->in_array()) // xx�����xx
+                if(me->in_array()) // xx帶領的xx
                 {
                         if(me->query_array_master() == me)
-                                return notify_fail(sprintf("�������������֡�%s����\n",
+                                return notify_fail(sprintf("你現在正在主持『%s』。\n",
                                 me->query_array_name()));
                         else
-                                return notify_fail(sprintf("���Ѿ���%s����ġ�%s���ĳ�Ա�ˡ�\n",
+                                return notify_fail(sprintf("你已經是%s帶領的『%s』的成員了。\n",
                                         me->query_array_master()->name(),
                                         me->query_array_name()));
                 }
 
                 if(!(ski = me->query_skills_name()) || !(n = sizeof(ski)))
-                        return notify_fail("��ʲô�󷨶����ᡣ\n");
+                        return notify_fail("你什麼陣法都不會。\n");
                 
                 for(i=0;i<n;i++)
                 {
@@ -130,17 +130,17 @@ nomask int main(object me, string arg)
                 }
                 
                 if(!n = sizeof(z_ski))
-                        return notify_fail("��ʲô�󷨶����ᡣ\n");
+                        return notify_fail("你什麼陣法都不會。\n");
                 if(n == 1)
                 {
                         build_up(me,z_ski[0]);
                         return 1;
                 }
                 
-                out = "��Ŀǰ���յ����У�\n";
+                out = "你目前掌握的陣法有：\n";
                 for(i=0;i<n;i++)
-                        out += sprintf("\t%d. ��%s��\n",(i+1),z_ski[i]->query_name());
-                out += "��ѡ����Ҫ�齨���󷨣�(q�˳�)";
+                        out += sprintf("\t%d. 『%s』\n",(i+1),z_ski[i]->query_name());
+                out += "請選擇你要組建的陣法：(q退出)";
                 write(out);
                 input_to((: select_array :),me,z_ski);
                 return 1;
@@ -154,44 +154,44 @@ nomask int main(object me, string arg)
                 object who;
 
                 if(!me->in_array())
-                        return notify_fail("��Ŀǰû�м����κ��󷨡�\n");
+                        return notify_fail("你目前沒有加入任何陣法。\n");
 
                 if(!me->is_array_master())
-                        return notify_fail("ֻ���������������������\n");
+                        return notify_fail("只有陣主才能邀請別人入陣。\n");
 
                 if(me->is_fighting())
-                        return notify_fail("�����ں��˴�ܣ��˲������������顣\n");
+                        return notify_fail("你正在和人打架，顧不上其它的事情。\n");
 
                 if( !sscanf(arg,"yq %s",usr)
                 || !objectp(who = present(usr,environment(me)))
                 || !userp(who)
                 || (who == me) )
-                        return notify_fail("��Ҫ����˭����\n");
+                        return notify_fail("你要邀請誰入陣？\n");
 
                 if(me->is_array_member(who))        // already in
-                        return notify_fail(sprintf("%s�Ѿ��������ֵġ�%s�����ˡ�\n",
+                        return notify_fail(sprintf("%s已經在你主持的『%s』中了。\n",
                                 who->name(),me->query_array_name()));
 
 #ifdef TEST
                 if(userp(who) && !wizardp(who))
-                        return notify_fail("�����ڼ���ֻ��������ʦ����\n");
+                        return notify_fail("測試期間你只能邀請巫師入陣。\n");
 #else
                 if(wizardp(who))
-                        return notify_fail("�㲻��������ʦ����\n");
+                        return notify_fail("你不能邀請巫師入陣。\n");
 #endif
 
                 if(who->in_team())
-                        return notify_fail("�Է����������Ķ����У��޷���������󷨡�\n");
+                        return notify_fail("對方正在其它的隊伍中，無法加入你的陣法。\n");
 
                 if(!me->can_become_member(who))
                         return 0;
 
-                tell_object(who,sprintf("%s���������%s���ֵġ�%s����\n",
+                tell_object(who,sprintf("%s邀請你加入%s主持的『%s』。\n",
                         me->name(),
                         gender_pronoun(query("gender", me)),
                         me->query_array_name() ));
 
-                tell_object(me,sprintf("������%s���������ֵġ�\n",
+                tell_object(me,sprintf("你邀請%s加入你主持的。\n",
                         who->name(),me->query_array_name()));
 
                 set_temp("pending/team", me, who);
@@ -203,21 +203,21 @@ nomask int main(object me, string arg)
                 object who=query_temp("pending/team", me);
 
                 if(!objectp(who))
-                        return notify_fail("�㲢û�б��κ�����������󷨡�\n");
+                        return notify_fail("你並沒有被任何人邀請加入陣法。\n");
 
                 if(me->in_team())
-                        return notify_fail("�����ڶ����У��޷������������󷨡�\n");
+                        return notify_fail("你正在隊伍中，無法加入其它的陣法。\n");
 
                 if(environment(who) != environment(me))
-                        return notify_fail(sprintf("%s�Ѿ����ˡ�\n",who->name()));
+                        return notify_fail(sprintf("%s已經走了。\n",who->name()));
 
                 if(me->in_array())
                 {
                         if(me->query_array_master() == me)
-                                return notify_fail(sprintf("���������֡�%s��,�޷������������󷨡�\n",
+                                return notify_fail(sprintf("你正在主持『%s』,無法加入其它的陣法。\n",
                                         me->query_array_name()));
                         else
-                                return notify_fail(sprintf("������%s���ֵġ�%s����,�޷������������󷨡�\n",
+                                return notify_fail(sprintf("你正在%s主持的『%s』中,無法加入其它的陣法。\n",
                                         me->query_array_master()->name(),
                                         me->query_array_name()));
                 }
@@ -225,7 +225,7 @@ nomask int main(object me, string arg)
                 if(!who->add_array_member(me))
                         return 0;
 
-                tell_object(me,sprintf("��Ӧ������%s���ֵġ�%s����\n",
+                tell_object(me,sprintf("你應邀加入%s主持的『%s』。\n",
                         who->name(),who->query_array_name() ));
                 return 1;
         }
@@ -236,26 +236,26 @@ nomask int main(object me, string arg)
                 object *memb;
 
                 if(!me->in_array())
-                        return notify_fail("��û�����κ���֮�С�\n");
+                        return notify_fail("你沒有在任何陣法之中。\n");
 
                 if(sizeof(memb = me->query_array_member()) < 2)
-                        return notify_fail(sprintf("��%s����Ŀǰ��û��������Ա��\n",
+                        return notify_fail(sprintf("『%s』中目前還沒有其他成員。\n",
                                 me->query_array_name()));
 
                 if(!sscanf(arg,"talk %s",msg))
-                        msg = "������\n";
+                        msg = "。。。\n";
 
                 if(msg[<1] != '\n')
                         msg += "\n";
 
-                message("tell_object",sprintf("��%s��%s(%s)��%s",
+                message("tell_object",sprintf("【%s】%s(%s)：%s",
                         me->query_array_name(),
                         me->name(),
                         capitalize(query("id", me)),
                         msg ), memb);
                 return 1;
         }
-        write("�� help zhen ��ô�����ʹ�÷����İ�����\n");
+        write("請 help zhen 獲得此命令使用方法的幫助。\n");
         return 1;
 }
 
@@ -279,7 +279,7 @@ protected void select_array(string arg,object me,string *ski)
 
         if(!sscanf("%d",n))
         {
-                tell_object(me,"\n��ѡ����Ҫ�齨���󷨣�(q�˳�)");
+                tell_object(me,"\n請選擇你要組建的陣法：(q退出)");
                 input_to((: select_array :),me,ski);
                 return;
         }
@@ -288,7 +288,7 @@ protected void select_array(string arg,object me,string *ski)
 
         if( (n < 0) || (n >= size) )
         {
-                tell_object(me,"\n��ѡ����Ҫ�齨���󷨣�(q�˳�)");
+                tell_object(me,"\n請選擇你要組建的陣法：(q退出)");
                 input_to((: select_array :),me,ski);
                 return;
         }
@@ -310,54 +310,54 @@ protected void build_up(object me,string fn)
         if(!me->build_up_array(fn))
                 return;
 
-        message_vision(sprintf("$N��ʼ��֯��%s����\n",me->query_array_name()),me);
+        message_vision(sprintf("$N開始組織『%s』。\n",me->query_array_name()),me);
 }
 
 int help(object me)
 {
    write( @HELP
 
-�󷨲������ʹ�÷������£�
+陣法操作命令，使用方法如下：
 
 zhen ji
-        ��ʼ�齨һ����������󷨣������Ҫ�ǻ�
-        ����󷨣����Զ�����ѡ����Ҫ�齨���󷨡�
-        ��������Լ�дΪ�� zj
+        開始組建一個你所會的陣法，如果你要是會
+        多個陣法，會自動讓你選擇想要組建的陣法。
+        此命令可以簡寫為： zj
 
 zhen yq <ID>
-        ������˼����㿪ʼ�齨���󷨣�<ID> ����
-        Ҫ�����˵� ID����Ȼ����Ҫ������ת����
-        �Ļ���������
-        ��������Լ�дΪ�� zyq <ID>
+        邀請別人加入你開始組建的陣法，<ID> 是你
+        要邀請人的 ID，當然此人要符合運轉此陣法
+        的基本條件。
+        此命令可以簡寫為： zyq <ID>
 
 zhen in
-        ������ܵ��˱��˵����룬���Ը��Ļ�����
-        �����������������Ρ�
-        ��������Լ�дΪ�� zin
+        如果你受到了別人的邀請，如果願意的話，可
+        以用這個命令加入陣形。
+        此命令可以簡寫為： zin
 
 zhen san
-        ��ɢĿǰ�������õ��󷨡���ɢ����ֻ������
-        ��������
-        ��������Լ�дΪ�� zs
+        解散目前正在運用的陣法。解散命令只能由陣
+        主發出。
+        此命令可以簡寫為： zs
 
 zhen talk
-        �Ѿ��齨���󷨳�Ա֮��������������Ի���
-        ��������Լ�дΪ�� zt
+        已經組建的陣法成員之間可以用這個命令對話。
+        此命令可以簡寫為： zt
 
 zhen check <ID>
-        ������������������鵱ǰ�󷨳�Ա��һЩ״
-        ̬���磺��Ա��ǰ��ʹ�õ��书�����󷨵ĵȼ���
-        ����Ҫ����书�ĵȼ�������<ID>ΪҪ����
-        Ա�� ID��
-        ��������Լ�дΪ�� zck <ID>
+        陣主可以用這個命令檢查當前陣法成員的一些狀
+        態，如：成員當前所使用的武功，此陣法的等級，
+        陣法所要求的武功的等級。。。<ID>為要檢查成
+        員的 ID。
+        此命令可以簡寫為： zck <ID>
 
 zhen
-        �����κβ����� zhen ���������ʾ�㵱ǰ����
-        ���ε�һЩ״̬���磺������˭��������Щ��Ա��
-        �Ƿ�ʼ������������������ɵ��󷨵���Ч��
-        ���Ƕ��١�����
+        不加任何參數的 zhen 命令可以顯示你當前所在
+        陣形的一些狀態，如：陣主是誰，都有哪些成員，
+        是否開始發揮威力，你們所組成的陣法的有效等
+        級是多少。。。
 
-�����󷨵���ϸ�İ�����Ϣ�� help zhenfa �鿴��
+關于陣法的詳細的幫助信息可 help zhenfa 查看。
 
 HELP
    );

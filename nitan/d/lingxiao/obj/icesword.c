@@ -8,14 +8,14 @@ inherit SWORD;
 
 void create()
 {
-        set_name(HIW "±ù½£" NOR, ({"ice sword", "sword", "jian"}));
+        set_name(HIW "å†°åŠ" NOR, ({"ice sword", "sword", "jian"}));
         set_weight(5000);
-        set("unit", "°Ñ");
-        set("long", "Ò»°ÑÉ¢·¢×ÅÉ­É­º®ÆøµÄ±ù½£,ÁîÈËÍûÖ®Éúº®¡£\n");
+        set("unit", "æŠŠ");
+        set("long", "ä¸€æŠŠæ•£ç™¼è‘—æ£®æ£®å¯’æ°£çš„å†°åŠ,ä»¤äººæœ›ä¹‹ç”Ÿå¯’ã€‚\n");
         set("value", 8);
         set("material", "ice");
-        set("wield_msg", "$N¡¸à§¡¹µØÒ»Éù³é³öÒ»°Ñ$nÎÕÔÚÊÖÖÐ£¬Ö»¾õÒ»¹Éº®ÆøÆËÃæ¶øÀ´£¡\n");
-        set("unwield_msg", "$N½«ÊÖÖÐµÄ$n²åÈëÑü¼ä£¬¾õµÃÅ¯ºÍ¶àÁË¡£\n");
+        set("wield_msg", "$Nã€Œå”°ã€åœ°ä¸€è²æŠ½å‡ºä¸€æŠŠ$næ¡åœ¨æ‰‹ä¸­ï¼Œåªè¦ºä¸€è‚¡å¯’æ°£æ’²é¢è€Œä¾†ï¼\n");
+        set("unwield_msg", "$Nå°‡æ‰‹ä¸­çš„$næ’å…¥è…°é–“ï¼Œè¦ºå¾—æš–å’Œå¤šäº†ã€‚\n");
         init_sword(50);
         if( clonep(this_object()) )
         {
@@ -48,7 +48,7 @@ void melt()
                 if( (int)env->query_skill("bingxue-xinfa", 1) < 20 )
                 {
                         if(environment(env))
-                        message_vision("$N¾õµÃÉíÉÏÁ¹Á¹µÄ£¬ÊªÊªµÄ£¬Ô­À´ÊÇ±ù½£»¯ÁË¡£\n", env);
+                        message_vision("$Nè¦ºå¾—èº«ä¸Šæ¶¼æ¶¼çš„ï¼Œæ¿•æ¿•çš„ï¼ŒåŽŸä¾†æ˜¯å†°åŠåŒ–äº†ã€‚\n", env);
                         destruct(this_object());
                         return;
                 }
@@ -58,7 +58,7 @@ void melt()
 //a room.
                 if( query("outdoors", env) != "lingxiao" )
                 {
-                        tell_object(env,"±ù½£ÖÕÓÚ»¯³ÉÁËÒ»Ì²Ë®£¬Á÷µÃµ½´¦¶¼ÊÇ¡£\n");
+                        tell_object(env,"å†°åŠçµ‚äºŽåŒ–æˆäº†ä¸€ç˜æ°´ï¼Œæµå¾—åˆ°è™•éƒ½æ˜¯ã€‚\n");
                         destruct(this_object());
                         return;
                 }

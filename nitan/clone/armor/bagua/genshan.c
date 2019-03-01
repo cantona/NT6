@@ -6,16 +6,16 @@ inherit WAIST;
 
 void create()
 {
-        set_name(HIY "°ËØÔôŞÉ½´ø" NOR, ({ "genshan dai", "genshan", "dai" }));
+        set_name(HIY "å…«å¦è‰®å±±å¸¶" NOR, ({ "genshan dai", "genshan", "dai" }));
         set_weight(100);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIY"Ñ×»Æ·çÓêÊ®Äê¼ÍÄîÌ××°Ö®£º°ËØÔôŞÉ½´ø\n" NOR);
-                set("unit", "Ìõ");
+                set("long", HIY"ç‚é»ƒé¢¨é›¨åå¹´ç´€å¿µå¥—è£ä¹‹ï¼šå…«å¦è‰®å±±å¸¶\n" NOR);
+                set("unit", "æ¢");
                 set("value", 100);
                 set("armor_prop/damage", 1000);
-                set("armor_prop/T_bagua", 1); // Ì××°¼ÆÊı±êÖ¾
+                set("armor_prop/T_bagua", 1); // å¥—è£è¨ˆæ•¸æ¨™å¿—
         }
         setup();
 }

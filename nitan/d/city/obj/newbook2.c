@@ -6,14 +6,14 @@ int help(object me);
 
 void create()
 {
-        set_name("¿Õ°×µÄÊé", ({"book"}));
+        set_name("ç©ºç™½çš„æ›¸", ({"book"}));
         set_weight(10);
         set_weight(1);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»±¾ÒÑ¾­Ğ´ºÃµÄÊé£¬Äã¿ÉÓÃ¶Á(read)À´¿´ËüµÄÄÚÈİ¡£\n");
-                set("unit", "±¾");
+                set("long", "ä¸€æœ¬å·²ç¶“å¯«å¥½çš„æ›¸ï¼Œä½ å¯ç”¨è®€(read)ä¾†çœ‹å®ƒçš„å…§å®¹ã€‚\n");
+                set("unit", "æœ¬");
                 set("material", "paper");
                 set("value", 2000);
                 set("no_sell", 1);
@@ -38,16 +38,16 @@ int do_read(string arg)
         if( !arg || sscanf(arg, "%s %d", msg, page_no)!=2 ) return help(me);
 
         if (msg != "page") 
-             return  notify_fail("¶ÁÊéÓÃ (read page #) ¡£\n");
+             return  notify_fail("è®€æ›¸ç”¨ (read page #) ã€‚\n");
             if (page_no > 20 || page_no < 1) 
-              return  notify_fail("ÊéÔÚ 1 µ½ 20 Ò³Ö®¼ä¡£\n");
+              return  notify_fail("æ›¸åœ¨ 1 åˆ° 20 é ä¹‹é–“ã€‚\n");
 
                 new_book=query("new_book", this_book);
 
         if(!(this_page = new_book["text"][page_no]))
-             return  notify_fail("ÕâÒ»Ò³»¹Ã»Ğ´£¬ÔõÃ´¶Á£¿\n");;
+             return  notify_fail("é€™ä¸€é é‚„æ²’å¯«ï¼Œæ€éº¼è®€ï¼Ÿ\n");;
 
-        printf("¡¾%s¡¿£º\n¡¾×÷Õß¡¿£º%s\n\n",
+        printf("ã€%sã€‘ï¼š\nã€ä½œè€…ã€‘ï¼š%s\n\n",
                 new_book["title"],new_book["arthur"]);
         this_player()->start_more(this_page);
 
@@ -56,7 +56,7 @@ int do_read(string arg)
 
 int help(object me)
 {
-        write("Ö¸Áî¸ñÊ½£º\n
-        ¶ÁÊéÓÃ (read page #) ¡£\n");
+        write("æŒ‡ä»¤æ ¼å¼ï¼š\n
+        è®€æ›¸ç”¨ (read page #) ã€‚\n");
         return 1;
 }

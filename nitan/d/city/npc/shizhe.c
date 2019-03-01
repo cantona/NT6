@@ -6,10 +6,10 @@ string ask_me();
 void create()
 {
         set_name(HIR+LOCAL_MUD_NAME()+NOR, ({ "shizhe" }) );
-        set("nickname", HIR"ÌôÕ½¼«ÏŞ"NOR);
-        set("gender", "ÄĞĞÔ" );
+        set("nickname", HIR"æŒ‘æˆ°æ¥µé™"NOR);
+        set("gender", "ç”·æ€§" );
         set("age", 18);
-        set("long", YEL"ÕâÎ»ÊÇ¡¼"+LOCAL_MUD_NAME()+"¡½µÄÊ¹Õß£¬ÏòËû´òÌı¡°ÀñÎï¡±£¬Ëû»á´ø¸øÄúÏë²»µ½µÄ¾ªÏ²¡£\n"NOR);
+        set("long", YEL"é€™ä½æ˜¯â–¡"+LOCAL_MUD_NAME()+"â–¡çš„ä½¿è€…ï¼Œå‘ä»–æ‰“è½â€œç¦®ç‰©â€ï¼Œä»–æœƒå¸¶çµ¦æ‚¨æƒ³ä¸åˆ°çš„é©šå–œã€‚\n"NOR);
         set("shen_type", 1);
         set("combat_exp", 1000000);
         set("str", 30);
@@ -24,7 +24,7 @@ void create()
         set("score", 100000);
 
         set("inquiry", ([
-                         "ÀñÎï" : (: ask_me :)
+                         "ç¦®ç‰©" : (: ask_me :)
         ]));
         setup();
 }
@@ -44,8 +44,8 @@ void init()
 void greeting(object ob)
 {
    if( !ob || environment(ob) != environment() ) return;
-   command("whisper"+query("id", ob)+""HIW"»¶Ó­¹âÁÙ"+HIR+"(askshizheaboutÀñÎï)"+NOR+HIW+"£¬Ğ¡µÄÖúÄúĞĞ×ß½­ºş£®"NOR);
-   command("es " + HIR"¡º"+HIY+LOCAL_MUD_NAME()+HIR+"¡»"NOR+WHT"»¶Ó­ÄúµÄ¹âÁÙ,"+HIR"ip:"NOR+WHT+RELEASE_SERVER()+NOR+HIR"port:"NOR+WHT+LOCAL_PORT()+NOR);
+   command("whisper"+query("id", ob)+""HIW"æ­¡è¿å…‰è‡¨"+HIR+"(askshizheaboutç¦®ç‰©)"+NOR+HIW+"ï¼Œå°çš„åŠ©æ‚¨è¡Œèµ°æ±Ÿæ¹–ï¼"NOR);
+   command("es " + HIR"ã€"+HIY+LOCAL_MUD_NAME()+HIR+"ã€"NOR+WHT"æ­¡è¿æ‚¨çš„å…‰è‡¨,"+HIR"ip:"NOR+WHT+RELEASE_SERVER()+NOR+HIR"port:"NOR+WHT+LOCAL_PORT()+NOR);
 }
 
 string ask_me()
@@ -54,12 +54,12 @@ string ask_me()
         mapping fam; 
         
          if( query("comeworld", me) )
-                return "ºÇºÇ¡«Õâ¾ÍÊÇÄúµÄ²»ÊÇÁË£¡Ğ¡µÄÒÑ¾­¶ÔÄúÊ©¹ı·¨Á¦ÁË£¡";
+                return "å‘µå‘µï½é€™å°±æ˜¯æ‚¨çš„ä¸æ˜¯äº†ï¼å°çš„å·²ç¶“å°æ‚¨æ–½éæ³•åŠ›äº†ï¼";
          else{
                 set("comeworld", 1, me);
                 addn("potential", 1000, me);
                 addn("food", 10000, me);
                 addn("water", 10000, me);
-                return "ÀñÎïÇåµ¥: Ç±ÄÜ: 1000,Ê³ÎïºÍÒûË®¸÷: 10000¡£" ;
+                return "ç¦®ç‰©æ¸…å–®: æ½›èƒ½: 1000,é£Ÿç‰©å’Œé£²æ°´å„: 10000ã€‚" ;
              }
 }

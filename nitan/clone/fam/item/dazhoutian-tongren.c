@@ -1,4 +1,4 @@
-// Í­ÈË
+// éŠ…äºº
 
 #include <ansi.h>
 
@@ -10,16 +10,16 @@ int is_wmtongren() { return 1; };
 
 void create()
 {
-        set_name(HIY "´óÖÜÌìÍ­ÈË" NOR, ({ "dazhoutian tongren" }) );
+        set_name(HIY "å¤§å‘¨å¤©éŠ…äºº" NOR, ({ "dazhoutian tongren" }) );
         set_weight(50);
 
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIY "ÕâÊÇÒ»¸öÆÆ¾ÉµÄÍ­ÈË£¬ÉÏÃæ»æÖÆÁËÒ»Ð©Í¼°¸£¬µ«ÊÇÒÑ¾­ÎÞ·¨±çÊ¶¡£\n" HIG
-                                "Ê¹ÓÃÖ¸Áî kg dazhoutian tongren ¼ø¶¨³åÑ¨Í­ÈË¡£\n" NOR);
+                set("long", HIY "é€™æ˜¯ä¸€å€‹ç ´èˆŠçš„éŠ…äººï¼Œä¸Šé¢ç¹ªåˆ¶äº†ä¸€äº›åœ–æ¡ˆï¼Œä½†æ˜¯å·²ç¶“ç„¡æ³•è¾¯è­˜ã€‚\n" HIG
+                                "ä½¿ç”¨æŒ‡ä»¤ kg dazhoutian tongren é‘’å®šæ²–ç©´éŠ…äººã€‚\n" NOR);
                 set("value", 1);
-                set("unit", "¸ö");
+                set("unit", "å€‹");
                 set("skill", ([
                         "name" : "jingluo-xue",
                         "exp_required" : 50000,
@@ -48,10 +48,10 @@ int do_kg(string arg)
         if (! me)return 0;
         
         if (! arg || arg != "dazhoutian tongren")
-                return notify_fail("ÄãÒª¶ÔÊ²Ã´½øÐÐ¿ª¹â¼ø¶¨¡£\n");
+                return notify_fail("ä½ è¦å°ä»€éº¼é€²è¡Œé–‹å…‰é‘’å®šã€‚\n");
                 
         if (! objectp(ob = present("dazhoutian tongren", me)))
-                return notify_fail("ÄãÉíÉÏÃ»ÓÐÕâÑùÎïÆ·¡£\n");        
+                return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™æ¨£ç‰©å“ã€‚\n");        
                 
         TONGREN_D->open_tongren(me, ob);
         

@@ -4,18 +4,18 @@ inherit F_CLEAN_UP;
 int main(object me, string arg)
 {
        if (! SECURITY_D->valid_grant(me, "(arch)"))
-                return notify_fail("ARCHÒÔÉÏµÄÎ×Ê¦²Å¿ÉÒÔ·¢²¼ÏµÍ³ÌáÊ¾¡£\n");
-        if (!arg) return notify_fail("ÄãÏëÒª´ó½ĞÊ²Ã´?\n");
+                return notify_fail("ARCHä»¥ä¸Šçš„å·«å¸«æ‰å¯ä»¥ç™¼å¸ƒç³»çµ±æç¤ºã€‚\n");
+        if (!arg) return notify_fail("ä½ æƒ³è¦å¤§å«ä»€éº¼?\n");
                                 message_system(arg);
         return 1;
 }
 int help(object me)
 {
   write(@HELP
-Ö¸Áî¸ñÊ½ : syschat <Ñ¶Ï¢>
+æŒ‡ä»¤æ ¼å¼ : syschat <è¨Šæ¯>
  
-Õâ¸öÖ¸ÁîÈÃÄã½« <Ñ¶Ï¢> ´«ËÍ³öÈ¥, ËùÓĞÕıÔÚÓÎÏ·ÖĞµÄÈË¶¼
-»áÌı¼ûÄãµÄ»°.
+é€™å€‹æŒ‡ä»¤è®“ä½ å°‡ <è¨Šæ¯> å‚³é€å‡ºå», æ‰€æœ‰æ­£åœ¨éŠæˆ²ä¸­çš„äººéƒ½
+æœƒè½è¦‹ä½ çš„è©±.
  
 HELP
     );

@@ -1,4 +1,4 @@
-// ylbian.c ÔÆÁú±Ş
+// ylbian.c é›²é¾é­
 
 #include <ansi.h>
 #include <weapon.h>
@@ -7,17 +7,17 @@ inherit F_UNIQUE;
 
 void create()
 {
-        set_name(HIC "ÔÆÁú±Ş" NOR, ({ "yunlong bian", "bian" }));
+        set_name(HIC "é›²é¾é­" NOR, ({ "yunlong bian", "bian" }));
         set_weight(2000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
-                set("long", "ÕâÊÇÌìµØ»á×Ü¶æÖ÷³Â½üÄÏµÄÌùÉíÉñ±ø¡£\n");
+                set("unit", "æŸ„");
+                set("long", "é€™æ˜¯å¤©åœ°æœƒç¸½èˆµä¸»é™³è¿‘å—çš„è²¼èº«ç¥å…µã€‚\n");
                 set("value", 100);
                 set("material", "leather");
-                set("wield_msg", "$N¡¸à§¡¹µÄÒ»Éù¶¶³öÒ»±ú$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n¾í»ØÑü¼ä¡£\n");
+                set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€è²æŠ–å‡ºä¸€æŸ„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°‡æ‰‹ä¸­çš„$nå·å›è…°é–“ã€‚\n");
         }
         init_whip(150);
         setup();

@@ -3,11 +3,11 @@
 inherit ROOM;
 void create ()
 {
-        set ("short", "Î÷°²µÀ¿Ú");
+        set ("short", "è¥¿å®‰é“å£");
         set("long", @LONG
-³¤°²³Ç×Ô¹ÅÊÇ·±»ªÊ¤µØ£¬ÎªÊý´ú»Ê³¯½¨¶¼Ö®µØ£¬ÓÖÎªÑÎÉÌ´ó¼ÖËù
-¾Û¼¯£¬Òó¸»¼×ÓÚÌìÏÂ¡£Î÷°²µÀ¿ÚÊÇÒ»¸öËÄÍ¨°Ë´ïµÄÂ·¿Ú£¬¶«·½ÓÐÒ»Ìõ
-´óÂ·Í¨Íù·ö·çµÀ£¬Î÷ÃæÊÇ³¤°²Î÷³ÇÃÅ£¬ÄÏ±±·½ÏòÊÇÓÀÌ©´óµÀ¡£ 
+é•·å®‰åŸŽè‡ªå¤æ˜¯ç¹è¯å‹åœ°ï¼Œç‚ºæ•¸ä»£çš‡æœå»ºéƒ½ä¹‹åœ°ï¼Œåˆç‚ºé¹½å•†å¤§è³ˆæ‰€
+èšé›†ï¼Œæ®·å¯Œç”²äºŽå¤©ä¸‹ã€‚è¥¿å®‰é“å£æ˜¯ä¸€å€‹å››é€šå…«é”çš„è·¯å£ï¼Œæ±æ–¹æœ‰ä¸€æ¢
+å¤§è·¯é€šå¾€æ‰¶é¢¨é“ï¼Œè¥¿é¢æ˜¯é•·å®‰è¥¿åŸŽé–€ï¼Œå—åŒ—æ–¹å‘æ˜¯æ°¸æ³°å¤§é“ã€‚ 
 LONG );
         set("exits",([//sizeof() == 5
                 "south" : "/d/changan/yongtai-dadao4",

@@ -1,18 +1,18 @@
-// feicui.c ôä´ä¼¦
+// feicui.c ç¿¡ç¿ é›
 
 inherit ITEM;
 #include <ansi.h>;
 
 void create()
 {
-        set_name(GRN"ôä´ä¼¦"NOR, ({ "stone chicken", "feicui ji", "ji" }));
+        set_name(GRN"ç¿¡ç¿ é›"NOR, ({ "stone chicken", "feicui ji", "ji" }));
         set("weight", 5000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¶Ô");
+                set("unit", "å°");
                 set("value", 80000);
-                set("long", "Ò»¶Ôôä´ä¼¦£¬Ò»¹«Ä¸£¬µñ¹¤¼«ÊÇ¾«Ï¸¡£\n");
+                set("long", "ä¸€å°ç¿¡ç¿ é›ï¼Œä¸€å…¬æ¯ï¼Œé›•å·¥æ¥µæ˜¯ç²¾ç´°ã€‚\n");
                 set("material", "stone");
         }
         setup();

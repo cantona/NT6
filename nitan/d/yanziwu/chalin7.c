@@ -5,12 +5,12 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�軨��");
+        set("short", "茶花林");
         set("long", @LONG
-���ڻ����е���ײײ�����Ƕ��У���֪�������ǳ��ڣ���ʱ������
-��ֻ�ǲ軨�����˼���·�����ۼ�С·��һ������һ����Ҳ��֪��һ��
-������·��Ҫ�ص�С��ͣ����ȴ�е�����ˣ����������룺�����ߵ�ˮ
-����˵����
+你在花林中跌跌撞撞地蹣跚而行，不知道那裡是出口，來時所留神
+的只是茶花，忘了記憶路徑，眼見小路東一條、西一條，也不知那一條
+才是來路，要回到小船停泊處卻有點兒難了，于是你心想：“先走到水
+邊再說。”
 LONG );
         set("outdoors", "mantuo");
         set("no_clean_up", 0);
@@ -28,6 +28,6 @@ LONG );
 int valid_leave(object me, string dir)
 {
         if (dir == "north")
-                tell_object(me,HIY"��������˲軨�֡�\n"NOR);
+                tell_object(me,HIY"你總算出了茶花林。\n"NOR);
         return ::valid_leave(me, dir);
 }

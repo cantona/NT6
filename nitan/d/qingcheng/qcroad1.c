@@ -4,10 +4,10 @@
 inherit ROOM;
 void create()
 {
-        set("short", "��ʯ���");
+        set("short", "青石大道");
         set("long", @LONG
-��������ʯ����ϡ�������ϡ������ֺ���Ƭ����Ұ��һ����
-СϪ��·ƽ�У�Ϫ���峺���ף�ˮ��������
+你走在青石大道上。兩邊是稀硫的樹林和連片的田野。一條條
+小溪和路平行，溪流清澈見底，水流甚急。
 LONG );
         set("outdoors","qingcheng");
         set("exits", ([

@@ -1,6 +1,6 @@
-// sfeecard.c ������ѿ�
+// sfeecard.c 超級免費卡
 //
-// ʹ����ѿ���������Ҫ�����κ�����
+// 使用免費卡建房不需要花費任何銀兩
 
 #include <ansi.h>
 
@@ -8,12 +8,12 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIC "��ѿ�" NOR, ({ "card", "fee free card" }));
+        set_name(HIC "免費卡" NOR, ({ "card", "fee free card" }));
         set_weight(10);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "��");
+                set("unit", "張");
                 set("material", "paper");
                 set("fee free", 200000000);
                 set("value", 1);
@@ -25,9 +25,9 @@ string long()
 {
         string msg;
 
-        msg = "����һ�ų���ס����ѿ���ƾ���ſ�������ѹ���һ�׼۸�";
+        msg = "這是一張超級住房免費卡，憑這張卡可以免費購買一套價格";
         msg += MONEY_D->price_str(query("fee free"));
-        msg += "���µ�ס��һ�ס�\n";
+        msg += "以下的住房一套。\n";
         return msg;
 }
 

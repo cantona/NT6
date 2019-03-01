@@ -1,23 +1,23 @@
-ĞŞ¸Ä Package contrib:
+ä¿®æ”¹ Package contrib:
 
-    ĞÂÔö void remove_input_to(void | object);
-         ÓÃÀ´È¡ÏûÎï¼şµÄ input_to ×´Ì¬
+    æ–°å¢ void remove_input_to(void | object);
+         ç”¨ä¾†å–æ¶ˆç‰©ä»¶çš„ input_to ç‹€æ…‹
          
-    ĞŞ¸Ä void store_variable(string, mixed , void | object);
-         ¿ÉÊäÈë¶ÔÏóÎï¼ş
+    ä¿®æ”¹ void store_variable(string, mixed , void | object);
+         å¯è¼¸å…¥å°è±¡ç‰©ä»¶
          
-    ĞŞ¸Ä mixed fetch_variable(string,void | object);
-         ¿ÉÊäÈë¶ÔÏóÎï¼ş
+    ä¿®æ”¹ mixed fetch_variable(string,void | object);
+         å¯è¼¸å…¥å°è±¡ç‰©ä»¶
          
-    ĞÂÔö object find_player(string);
-         ´úÌæ #define NO_ADD_ACTION ºóÖ® efun find_player();
+    æ–°å¢ object find_player(string);
+         ä»£æ›¿ #define NO_ADD_ACTION å¾Œä¹‹ efun find_player();
          
-    ĞÂÔö string remove_fringe_blanks(string);
-         È¥³ıÒ»×Ö´®Ç°ºóÖ®¿Õ°××ÖÔª
+    æ–°å¢ string remove_fringe_blanks(string);
+         å»é™¤ä¸€å­—ä¸²å‰å¾Œä¹‹ç©ºç™½å­—å…ƒ
          
-    ĞÂÔö string base_name(object);
-         È¡´ú simul_efun base_name()
+    æ–°å¢ string base_name(object);
+         å–ä»£ simul_efun base_name()
 
-By Clode@RW on 2002/6/3 04:02ÏÂÎç
-×î½ü¸üĞÂ -06/04/2005 17:54-
+By Clode@RW on 2002/6/3 04:02ä¸‹åˆ
+æœ€è¿‘æ›´æ–° -06/04/2005 17:54-
 

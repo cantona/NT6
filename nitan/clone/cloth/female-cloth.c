@@ -6,14 +6,14 @@
 inherit CLOTH;
 
 string* clothname = ({
-        HIM"�ۺ����"NOR,
-        HIW"�׳���"NOR,
-        HIG"���̳�ȹ"NOR,
-        HIY"��Ƽа�"NOR,
-        HIB"����С��"NOR,
-        HIC"����С��"NOR,
-        HIR"ɢ����"NOR,
-        MAG"��ɴС����"NOR,
+        HIM"粉紅綢衫"NOR,
+        HIW"白綢衫"NOR,
+        HIG"湖綠長裙"NOR,
+        HIY"鵝黃夾襖"NOR,
+        HIB"青衫小袖"NOR,
+        HIC"天青小袂"NOR,
+        HIR"散花衣"NOR,
+        MAG"紫紗小夾衫"NOR,
 });
 string* clothid = ({
         "pink cloth",
@@ -26,14 +26,14 @@ string* clothid = ({
         "purple jiashan",
 });
 string* clothlong = ({
-        "����ۺ�ɫ�ĳ����������ż�ֻ��ȵ������������һ�ɵ��㡣\n",
-        "����һ����ӯƮ���İ׳�������\n",
-        "����һ�����¿��˵ĺ��̳�ȹ��\n",
-        "����һ��Ů��ϲ���Ķ�Ƽа���\n",
-        "����һ��С�����������С�䡣\n",
-        "����һ���ý������ż���÷��������С�ǡ�\n",
-        "�����ɫ��ɢ��������ˬˬ������Ʈ�ݡ�\n",
-        "����һ����ɴС������\n",
+        "這件粉紅色的綢衫上面繡著幾只黃鵲，聞起來還有一股淡香。\n",
+        "這是一件輕盈飄動的白綢輕衫。\n",
+        "這是一件清新可人的湖綠長裙。\n",
+        "這是一件女孩喜歡的鵝黃夾襖。\n",
+        "這是一件小巧玲瓏的青衫小袖。\n",
+        "這是一件用金線繡著幾朵梅花的天青小袂。\n",
+        "這件紅色的散花衣輕輕爽爽，很是飄逸。\n",
+        "這是一件紫紗小夾衫。\n",
 });
 
 void create()
@@ -46,7 +46,7 @@ void create()
                 set_default_object(__FILE__);
         else {
               //  set("long", clothlong[i]);
-                set("unit", "��");
+                set("unit", "件");
                 set("value", 0);
                 set("material", "cloth");
                 set("armor_prop/armor", 1);

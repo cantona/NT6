@@ -10,15 +10,15 @@ inherit TESSERA;
 void create()
 {
 //**    set_name("$name", ({ "$id", }));                        /* NAME_ENTRY */
-        set_name(HIB "ÉñÖ®À¶±¦Ê¯" NOR, ({ "magic sapphire" }) );  /* NAME_EXIT  */
+        set_name(HIB "ç¥ä¹‹è—å¯¶çŸ³" NOR, ({ "magic sapphire" }) );  /* NAME_EXIT  */
         set_weight(20);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
 //**            set("$dbase_key", "$dbase_value\n");            /* DBASE_ENTRY */
-                set("long", HIB "Ò»¿Å»À·¢×ÅÆæÒìµÄ¹â²ÊµÄÀ¶±¦Ê¯£¬¸øÈËÒÔ²»Í¬Ñ°³£µÄ¸Ğ¾õ¡£\n" NOR);  /* DBASE_EXIT  */
+                set("long", HIB "ä¸€é¡†ç…¥ç™¼è‘—å¥‡ç•°çš„å…‰å½©çš„è—å¯¶çŸ³ï¼Œçµ¦äººä»¥ä¸åŒå°‹å¸¸çš„æ„Ÿè¦ºã€‚\n" NOR);  /* DBASE_EXIT  */
                 set("value", 200000);
-                set("unit", "¿Å");
+                set("unit", "é¡†");
                 set("level", 4);
                 set("material", "msapphire");
                 set("can_be_enchased", 1);

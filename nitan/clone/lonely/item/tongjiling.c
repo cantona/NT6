@@ -3,16 +3,16 @@ inherit ITEM;
 
 void create()
 {
-        set_name(NOR + RED "Í¨¼©Áî" NOR, ({ "tongji ling", "tongji", "ling" }));
+        set_name(NOR + RED "é€šç·ä»¤" NOR, ({ "tongji ling", "tongji", "ling" }));
         set_weight(100);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", NOR + RED "ÕâÊÇÒ»ÕÅÖå°Í°ÍµÄÍ¨¼©Áî£¬ÉÏÃæ»¹´ø"
-                            "ÓĞÒşÒşÑª¼£¡£\n" NOR);
-                set("unit", "ÕÅ");
+                set("long", NOR + RED "é€™æ˜¯ä¸€å¼µçšºå·´å·´çš„é€šç·ä»¤ï¼Œä¸Šé¢é‚„å¸¶"
+                            "æœ‰éš±éš±è¡€è·¡ã€‚\n" NOR);
+                set("unit", "å¼µ");
                 set("value", 10);
-                set("no_sell", "¹Ù¡­¹Ù¸®µÄÍ¨¼©Áî¡­ÄãÒ²¸ÒÄÃÀ´ÂôÇ®£¿");
+                set("no_sell", "å®˜â€¦å®˜åºœçš„é€šç·ä»¤â€¦ä½ ä¹Ÿæ•¢æ‹¿ä¾†è³£éŒ¢ï¼Ÿ");
                 set("material", "paper");
         }
         setup();

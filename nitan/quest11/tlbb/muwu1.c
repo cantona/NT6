@@ -7,13 +7,13 @@ inherit ROOM;
 
 void create()
 {
-	set("short", "¿ÕµØ");
+	set("short", "ç©ºåœ°");
 	set("long", @LONG
-Äã¶¨ÁË¶¨Éñ£¬¿´¼ûÑÛÇ°ÊÇÒ»¿é´ó¿ÕµØ£¬¹âÍºÍºµÄÊ²Ã´¶¼Ã»³¤£¬¿ÕµØ±±ÃæºÃ
-ÏóÓĞÒ»¼äÎİ×Ó,ÄÏÃæÊÇÄãÌø¹ıÀ´µÄÊ÷Ç½¡£
+ä½ å®šäº†å®šç¥ï¼Œçœ‹è¦‹çœ¼å‰æ˜¯ä¸€å¡Šå¤§ç©ºåœ°ï¼Œå…‰ç¦¿ç¦¿çš„ä»€éº¼éƒ½æ²’é•·ï¼Œç©ºåœ°åŒ—é¢å¥½
+è±¡æœ‰ä¸€é–“å±‹å­,å—é¢æ˜¯ä½ è·³éä¾†çš„æ¨¹ç‰†ã€‚
 LONG
 	);
-	set("outdoors", "´óÀí");
+	set("outdoors", "å¤§ç†");
 
 	set("exits", ([
 		"north" : __DIR__"muwu2",
@@ -28,11 +28,11 @@ void init()
 	me=this_player();
 	if ( interactive(me)
 	 && !present("duan yanqing",this_object())
-	 && me->query_temp("quest/ÌìÁú°Ë²¿/Áè²¨Î¢²½Æª/kill")){
+	 && me->query_temp("quest/å¤©é¾å…«éƒ¨/å‡Œæ³¢å¾®æ­¥ç¯‡/kill")){
 		obj=new(__DIR__"npc/dyq");
-	  obj->set_name("¶ÎÑÓÇì", ({ "duan yanqing", "duan","yanqing"}) );
-	  obj->set("title",HIC"ËÄ´ó¶ñÈË"NOR);
-	  obj->set("nickname",HIG"¶ñ¹áÂúÓ¯"NOR);
+	  obj->set_name("æ®µå»¶æ…¶", ({ "duan yanqing", "duan","yanqing"}) );
+	  obj->set("title",HIC"å››å¤§æƒ¡äºº"NOR);
+	  obj->set("nickname",HIG"æƒ¡è²«æ»¿ç›ˆ"NOR);
 		obj->move(this_object());
 	}
 	add_action("do_jump", "jump");
@@ -44,21 +44,21 @@ int do_jump(string arg)
 	object me;
 	me = this_player();
 	if (!arg || arg !="wall") 
-		return notify_fail("ÄãÒªÌøµ½ÄÇÈ¥£¿\n");
+		return notify_fail("ä½ è¦è·³åˆ°é‚£å»ï¼Ÿ\n");
 	if (random(me->query_skill("dodge",1)) < 60){ 
-		write("ÄãÎüÆø·ÜÁ¦Ò»Ìø£¬ÎŞÄÎÔËÆø²»ºÃ£¬Ã»Ìø¹ıÊ÷Ç½£¬Ë¤ÁËÏÂÀ´¡£\n");
-		write("ÄãÊÜÁËµãÉË!\n");
+		write("ä½ å¸æ°£å¥®åŠ›ä¸€è·³ï¼Œç„¡å¥ˆé‹æ°£ä¸å¥½ï¼Œæ²’è·³éæ¨¹ç‰†ï¼Œæ‘”äº†ä¸‹ä¾†ã€‚\n");
+		write("ä½ å—äº†é»å‚·!\n");
 		me->add("qi", -100);
 		me->add("jingli", -80);
 		me->receive_wound("qi", 50);
 		return 1;
 	}
 	else {
-		write("ÄãÒ»ÎüÆø£¬ÇáÇáÇÉÇÉµÄÌø¹ıÁË´óÊ÷Ç½¡£\n");
-		message("vision",me->name() + "Ò»×İÉíÌø¹ıÁËÊ÷Ç½¡£\n",environment(me), ({me}) );
+		write("ä½ ä¸€å¸æ°£ï¼Œè¼•è¼•å·§å·§çš„è·³éäº†å¤§æ¨¹ç‰†ã€‚\n");
+		message("vision",me->name() + "ä¸€ç¸±èº«è·³éäº†æ¨¹ç‰†ã€‚\n",environment(me), ({me}) );
 		me->start_busy(1);
 		me->move(__DIR__"shanlin-6");
-		message("vision",me->name() + "´ÓÊ÷Ç½ºóÃæÌøÁË¹ıÀ´¡£\n",environment(me), ({me}) );
+		message("vision",me->name() + "å¾æ¨¹ç‰†å¾Œé¢è·³äº†éä¾†ã€‚\n",environment(me), ({me}) );
 		return 1;
 	}
 }
@@ -67,12 +67,12 @@ int valid_leave(object me,string dir)
 {
 	if( dir == "north" 
 	&& objectp(present("duan yanqing", environment(me))))
-		return notify_fail("¶ÎÑÓÇìµ²×¡ÁËÂ·£¬ÄãÎŞ·¨¹ıÈ¥!\n");   
+		return notify_fail("æ®µå»¶æ…¶æ“‹ä½äº†è·¯ï¼Œä½ ç„¡æ³•éå»!\n");   
 	if ( interactive(me = this_player()) 
-	 && this_player()->query_temp("quest/ÌìÁú°Ë²¿/Áè²¨Î¢²½Æª/kill")
+	 && this_player()->query_temp("quest/å¤©é¾å…«éƒ¨/å‡Œæ³¢å¾®æ­¥ç¯‡/kill")
 	 && (dir =="north")){
-		this_player()->delete_temp("quest/ÌìÁú°Ë²¿/Áè²¨Î¢²½Æª/kill");
-		this_player()->set_temp("quest/ÌìÁú°Ë²¿/Áè²¨Î¢²½Æª/kill_duan",1);
+		this_player()->delete_temp("quest/å¤©é¾å…«éƒ¨/å‡Œæ³¢å¾®æ­¥ç¯‡/kill");
+		this_player()->set_temp("quest/å¤©é¾å…«éƒ¨/å‡Œæ³¢å¾®æ­¥ç¯‡/kill_duan",1);
 		return 1;
 	}
 	return ::valid_leave(me,dir);

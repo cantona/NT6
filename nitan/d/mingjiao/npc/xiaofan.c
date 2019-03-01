@@ -1,4 +1,4 @@
-// xiaofan.c Ğ¡··×Ó
+// xiaofan.c å°è²©å­
 
 inherit KNOWER;
 inherit F_DEALER;
@@ -6,13 +6,13 @@ inherit F_DEALER;
 
 void create()
 {
-        set_name("Ğ¡··×Ó", ({ "xiao fan", "xiao", "fan" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("å°è²©å­", ({ "xiao fan", "xiao", "fan" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 34);
-        set("long", "ÕâÊÇ¸öĞ¡··£¬±ğ¿´Ëû³¤µÄÀÏÀÏÊµÊµ£¬¿ÉÄã±ğÏë´ÓËûÄÇ¶ùÌÍ±ãÒË¡£\n");
+        set("long", "é€™æ˜¯å€‹å°è²©ï¼Œåˆ¥çœ‹ä»–é•·çš„è€è€å¯¦å¯¦ï¼Œå¯ä½ åˆ¥æƒ³å¾ä»–é‚£å…’æä¾¿å®œã€‚\n");
         set("combat_exp", 300);
         set("attitude", "peaceful");
-        set("rank_info/respect", "Ğ¡··×Ó");
+        set("rank_info/respect", "å°è²©å­");
         set("vendor_goods", ({
                 "/d/mingjiao/obj/book",
                 "/d/village/npc/obj/stick",
@@ -39,7 +39,7 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
         switch(random(2)){
           case 0:
-          say(CYN"Ğ¡··×ÓĞ¦ßäßäµØËµµÀ£ºÕâÎ»"+RANK_D->query_respect(ob)+"£¬ÒªÃ÷½Ì¼òÊ·Âğ£¿\n"NOR);
+          say(CYN"å°è²©å­ç¬‘å’ªå’ªåœ°èªªé“ï¼šé€™ä½"+RANK_D->query_respect(ob)+"ï¼Œè¦æ˜æ•™ç°¡å²å—ï¼Ÿ\n"NOR);
           break;
           case 1:
           break;

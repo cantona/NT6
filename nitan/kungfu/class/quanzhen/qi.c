@@ -1,4 +1,4 @@
-// qi.c ÆîÖ¾³Ï
+// qi.c ç¥å¿—èª 
 // By Lgg,1998.10
 
 #include "quanzhen.h"
@@ -8,14 +8,14 @@ string ask_me();
 
 void create()
 {
-        set_name("ÆîÖ¾³Ï", ({"qi zhicheng", "qi"}));
-        set("gender", "ÄĞĞÔ");
+        set_name("ç¥å¿—èª ", ({"qi zhicheng", "qi"}));
+        set("gender", "ç”·æ€§");
         set("age", 24);
         set("class", "taoist");
         set("long",
-                "Ëû¾ÍÊÇÈ«Õæ½ÌµÚÈı´úµÜ×ÓÖĞµÄºÃÊÖ£¬Ì·´¦¶ËµÄ´óµÜ×ÓÆîÖ¾³Ï¡£\n"
-                "ËûÏàÃ²Ó¢¿¡£¬¾«Ã÷ÄÜ¸É£¬ÉîÊÜ³¤±²µÄĞÅÈÎ£¬ÅÉÇ²ËûÈ¥ÕÆ¹Ü½ÌÖĞ\n"
-                "µÄ¾­Êéµä¼®¡£\n");
+                "ä»–å°±æ˜¯å…¨çœŸæ•™ç¬¬ä¸‰ä»£å¼Ÿå­ä¸­çš„å¥½æ‰‹ï¼Œè­šè™•ç«¯çš„å¤§å¼Ÿå­ç¥å¿—èª ã€‚\n"
+                "ä»–ç›¸è²Œè‹±ä¿Šï¼Œç²¾æ˜èƒ½å¹¹ï¼Œæ·±å—é•·è¼©çš„ä¿¡ä»»ï¼Œæ´¾é£ä»–å»æŒç®¡æ•™ä¸­\n"
+                "çš„ç¶“æ›¸å…¸ç±ã€‚\n");
         set("attitude", "friendly");
         set("shen_type",1);
         set("str", 25);
@@ -65,12 +65,12 @@ void create()
         map_skill("finger", "zhongnan-zhi");
         prepare_skill("finger", "zhongnan-zhi");
 
-        create_family("È«Õæ½Ì", 3, "µÜ×Ó");
+        create_family("å…¨çœŸæ•™", 3, "å¼Ÿå­");
 
         set("book_count",1);
         set("inquiry", ([
-                "È«Õæ½Ì" :  "ÎÒÈ«Õæ½ÌÊÇÌìÏÂµÀ¼ÒĞşÃÅÕı×Ú¡£\n",
-                "µÀµÂ¾­" : (: ask_me :),
+                "å…¨çœŸæ•™" :  "æˆ‘å…¨çœŸæ•™æ˜¯å¤©ä¸‹é“å®¶ç„é–€æ­£å®—ã€‚\n",
+                "é“å¾·ç¶“" : (: ask_me :),
         ]) );
 
         setup();
@@ -85,7 +85,7 @@ void attempt_apprentice(object ob)
         if (! permit_recruit(ob))
                 return;
 
-        command("say ºÃ°É£¬ÎÒ¾ÍÊÕÏÂÄãÕâ¸öÍ½µÜÁË¡£");
+        command("say å¥½å§ï¼Œæˆ‘å°±æ”¶ä¸‹ä½ é€™å€‹å¾’å¼Ÿäº†ã€‚");
         command("recruit "+query("id", ob));
 }
 
@@ -94,15 +94,15 @@ string ask_me()
         mapping fam;
         object ob;
 
-        if( !(fam=query("family", this_player())) || fam["family_name"] != "È«Õæ½Ì" )
+        if( !(fam=query("family", this_player())) || fam["family_name"] != "å…¨çœŸæ•™" )
                 return RANK_D->query_respect(this_player()) +
-                "Óë±¾½ÌºÁÎŞ¹Ï¸ğ£¬ÄãÕâ»°¿É½ĞÎÒÅª²»Ã÷°×ÁË¡£";
+                "èˆ‡æœ¬æ•™æ¯«ç„¡ç“œè‘›ï¼Œä½ é€™è©±å¯å«æˆ‘å¼„ä¸æ˜ç™½äº†ã€‚";
         if (query("book_count") < 1)
-                return "ÄãÀ´ÍíÁË£¬µÀµÂ¾­ÒÑ¾­±»ÈËÈ¡×ßÁË¡£";
+                return "ä½ ä¾†æ™šäº†ï¼Œé“å¾·ç¶“å·²ç¶“è¢«äººå–èµ°äº†ã€‚";
         addn("book_count", -1);
         ob = new("/d/quanzhen/npc/obj/daodejing-ii");
         ob->move(this_player());
-        return "ºÃ°É£¬Õâ±¾¡¸µÀµÂ¾­¡¹ÄãÄÃ»ØÈ¥ºÃºÃÑĞ¶Á¡£";
+        return "å¥½å§ï¼Œé€™æœ¬ã€Œé“å¾·ç¶“ã€ä½ æ‹¿å›å»å¥½å¥½ç ”è®€ã€‚";
 }
 
 void reset()

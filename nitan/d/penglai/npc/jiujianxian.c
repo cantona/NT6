@@ -9,11 +9,11 @@ string ask_jiu();
 
 void create()
 {
-        set_name(HIW "¾Æ½£ÏÉ" NOR, ({ "jiujian xian", "jiujian", "xian" }));
+        set_name(HIW "é…’åŠä»™" NOR, ({ "jiujian xian", "jiujian", "xian" }));
 
-        set("long", HIW "ÕâÈËºÃÉúÃæÊì£¬ÄÑµÀÊñÉ½ÅÉµÄ¾Æ½£ÏÉ£¬ËûÔõ»áÔÚÕâÀï£¿¡£\n" NOR);
+        set("long", HIW "é€™äººå¥½ç”Ÿé¢ç†Ÿï¼Œé›£é“èœ€å±±æ´¾çš„é…’åŠä»™ï¼Œä»–æ€æœƒåœ¨é€™è£¡ï¼Ÿã€‚\n" NOR);
 
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("age", 9999);
         set("attitude", "friendly");
         set("shen_type", 1);
@@ -44,9 +44,9 @@ void create()
         map_skill("unarmed", "yinyang-shiertian");
         
         set("inquiry", ([
-                "ÅîÀ³ÏÉµº"               :   "Õâ²»ÊÇÄã¸ÃÀ´µÄµØ·½£¬ÎÒ¿´Äã»¹ÊÇ¿ì×ß°É¡£\n",
-                "ÊñÉ½ÅÉ"                 :   "ÄãÒ²ÌıËµ¹ıÂğ£¬¿´²»³öÀ´°¡£¬ºÇºÇ¡£\n",
-                "ÇàÃ·¾Æ"                 :   (: ask_jiu :),
+                "è“¬èŠä»™å³¶"               :   "é€™ä¸æ˜¯ä½ è©²ä¾†çš„åœ°æ–¹ï¼Œæˆ‘çœ‹ä½ é‚„æ˜¯å¿«èµ°å§ã€‚\n",
+                "èœ€å±±æ´¾"                 :   "ä½ ä¹Ÿè½èªªéå—ï¼Œçœ‹ä¸å‡ºä¾†å•Šï¼Œå‘µå‘µã€‚\n",
+                "é’æ¢…é…’"                 :   (: ask_jiu :),
         ]));
         
         set("chat_chance_combat", 120);
@@ -65,34 +65,34 @@ string ask_jiu()
         object ob_xy, ob_xnj, ob_hbk, ob_qmj;
         int i;
 
-        // ĞèÒª²ÄÁÏ
+        // éœ€è¦ææ–™
         /*
-         ÇàÃ·     2
-         ÅîÀ³ó´ÌÒ 1
-         ¾Õ»¨     1
+         é’æ¢…     2
+         è“¬èŠèŸ æ¡ƒ 1
+         èŠèŠ±     1
        */
         command("nod");
-        command("say ¼ÈÈ»ÊÇÎªÁËÇàÃ·¾Æ¶øÀ´£¬ÎÒ¾Æ½£ÏÉµ±È»Òå²»Èİ´Ç¡£");
-        command("say ²»¹ıÄğÖÆÇàÃ·¾ÆĞèÒªÒ»Ğ©ÌØÊâµÄ²ÄÁÏ£º");
+        command("say æ—¢ç„¶æ˜¯ç‚ºäº†é’æ¢…é…’è€Œä¾†ï¼Œæˆ‘é…’åŠä»™ç•¶ç„¶ç¾©ä¸å®¹è¾­ã€‚");
+        command("say ä¸éé‡€åˆ¶é’æ¢…é…’éœ€è¦ä¸€äº›ç‰¹æ®Šçš„ææ–™ï¼š");
         message_vision(HIM  + "\n"
-                       "ÇàÃ·     2 ¿Å \n"
-                       "ÅîÀ³ó´ÌÒ 1 ¸ö\n"
-                       "¾Õ»¨     1 ¶ä\n\n" NOR, this_object());
-        command("say Èç¹ûÄãÕâĞ©²ÄÁÏ¶¼±¸ÆëÁËµÄ»°¾ÍÀ´ÕÒÎÒ°É£¡");
-        command("say Íü¼ÇÌáĞÑÄãÁË£¬Èç¹ûÄãÊÇµÚÒ»´ÎÕÒ±¾½£ÏÉÄğÖÆÇàÃ·¾Æ£¬ºÙºÙ ¡­¡­");
+                       "é’æ¢…     2 é¡† \n"
+                       "è“¬èŠèŸ æ¡ƒ 1 å€‹\n"
+                       "èŠèŠ±     1 æœµ\n\n" NOR, this_object());
+        command("say å¦‚æœä½ é€™äº›ææ–™éƒ½å‚™é½Šäº†çš„è©±å°±ä¾†æ‰¾æˆ‘å§ï¼");
+        command("say å¿˜è¨˜æé†’ä½ äº†ï¼Œå¦‚æœä½ æ˜¯ç¬¬ä¸€æ¬¡æ‰¾æœ¬åŠä»™é‡€åˆ¶é’æ¢…é…’ï¼Œå˜¿å˜¿ â€¦â€¦");
         
         if (! me->query_temp("want_make_qingmeijiu"))
         {
                 me->set_temp("want_make_qingmeijiu", 1);
-                return "ÔõÃ´Ñù£¿Èç¹ûÄã¿¼ÂÇºÃÁË£¬ÔÙÀ´ÕÒÎÒ£¡\n";
+                return "æ€éº¼æ¨£ï¼Ÿå¦‚æœä½ è€ƒæ…®å¥½äº†ï¼Œå†ä¾†æ‰¾æˆ‘ï¼\n";
         }
                 
                         
-        // ĞèÒªÇàÃ·
+        // éœ€è¦é’æ¢…
         if (! objectp(ob_xy = present("penglai qingmei", me)))
-                return "ÄãºÃÏó»¹Ã»±¸ÆëÇàÃ·°É£¿\n";                        
+                return "ä½ å¥½è±¡é‚„æ²’å‚™é½Šé’æ¢…å§ï¼Ÿ\n";                        
         if (base_name(ob_xy) != "/d/penglai/obj/qingmei")
-                return "ÄãºÃÏó»¹Ã»±¸ÆëÇàÃ·°É£¿\n";
+                return "ä½ å¥½è±¡é‚„æ²’å‚™é½Šé’æ¢…å§ï¼Ÿ\n";
         
         if ("/adm/daemons/stored"->get_ob_amount(me, ob_xy) >= 2)
         {
@@ -104,15 +104,15 @@ string ask_jiu()
         }
         else
         {
-                return "ÔõÃ´Ñù£¬2¿ÅÇàÃ·±¸ÆëÁËÂğ£¿\n";
+                return "æ€éº¼æ¨£ï¼Œ2é¡†é’æ¢…å‚™é½Šäº†å—ï¼Ÿ\n";
         }
         
         
-        // ĞèÒªÅîÀ³ó´ÌÒ
+        // éœ€è¦è“¬èŠèŸ æ¡ƒ
         if (! objectp(ob_xnj = present("penglai pantao", me)))
-                return "ÄãºÃÏó»¹Ã»±¸ÆëÅîÀ³ó´ÌÒ°É£¿\n";                        
+                return "ä½ å¥½è±¡é‚„æ²’å‚™é½Šè“¬èŠèŸ æ¡ƒå§ï¼Ÿ\n";                        
         if (base_name(ob_xnj) != "/d/penglai/obj/pantao")
-                return "ÄãºÃÏó»¹Ã»±¸ÆëÅîÀ³ó´ÌÒ°É£¿\n";
+                return "ä½ å¥½è±¡é‚„æ²’å‚™é½Šè“¬èŠèŸ æ¡ƒå§ï¼Ÿ\n";
 
         if ("/adm/daemons/stored"->get_ob_amount(me, ob_xnj) >= 1)
         {
@@ -124,14 +124,14 @@ string ask_jiu()
         }
         else
         {
-                return "ÔõÃ´Ñù£¬1¸öÅîÀ³ó´ÌÒ±¸ÆëÁËÂğ£¿\n";
+                return "æ€éº¼æ¨£ï¼Œ1å€‹è“¬èŠèŸ æ¡ƒå‚™é½Šäº†å—ï¼Ÿ\n";
         }        
 
-        // ĞèÒª¾Õ»¨
+        // éœ€è¦èŠèŠ±
         if (! objectp(ob_hbk = present("penglai juhua", me)))
-                return "ÄãºÃÏó»¹Ã»±¸Æë¾Õ»¨°É£¿\n";                        
+                return "ä½ å¥½è±¡é‚„æ²’å‚™é½ŠèŠèŠ±å§ï¼Ÿ\n";                        
         if (base_name(ob_hbk) != "/d/penglai/obj/juhua")
-                return "ÄãºÃÏó»¹Ã»±¸Æë¾Õ»¨°É£¿\n";
+                return "ä½ å¥½è±¡é‚„æ²’å‚™é½ŠèŠèŠ±å§ï¼Ÿ\n";
 
         if ("/adm/daemons/stored"->get_ob_amount(me, ob_hbk) >= 1)
         {
@@ -143,10 +143,10 @@ string ask_jiu()
         }
         else
         {
-                return "ÔõÃ´Ñù£¬1¶ä¾Õ»¨±¸ÆëÁËÂğ£¿\n";
+                return "æ€éº¼æ¨£ï¼Œ1æœµèŠèŠ±å‚™é½Šäº†å—ï¼Ÿ\n";
         }
 
-        // ÏûºÄ²ÄÁÏ      
+        // æ¶ˆè€—ææ–™      
         ob_xy =  present("penglai qingmei", me);
         destruct(ob_xy);
         ob_xy =  present("penglai qingmei", me);
@@ -158,39 +158,39 @@ string ask_jiu()
         
        
         
-        command("say ¼ÈÈ»Äã²ÄÁÏ¶¼±¸ÆëÁË£¬ÕâÇàÃ·¾Æ¾ÍÓÉ±¾½£ÏÉÄğÖÆ°É¡£");
+        command("say æ—¢ç„¶ä½ ææ–™éƒ½å‚™é½Šäº†ï¼Œé€™é’æ¢…é…’å°±ç”±æœ¬åŠä»™é‡€åˆ¶å§ã€‚");
         
-        message_sort(HIR "\n$N" HIR "´ÓÑü¼äÈ¡³öÒ»¸öºùÂ«£¬½«¸÷ÖÖ²ÄÁÏ·Å½øºùÂ«ÖĞ£¬È»ºó±ÕÉÏÑÛ¾¦£¬¿ÚÖĞ"
-                     "Ä¬Äî×ÅÊ²Ã´£¬ËÆºõÕıÔÚÊ©Õ¹·¨Êõ ¡­¡­ Çê¿Ì£¬Ò»¹É¾ÆÏã´ÓºùÂ«ÖĞÆ®³ö¡£¿´À´ÕâÇàÃ·¾ÆÒÑ³É¡£\n\n" NOR, this_object(), me);
+        message_sort(HIR "\n$N" HIR "å¾è…°é–“å–å‡ºä¸€å€‹è‘«è˜†ï¼Œå°‡å„ç¨®ææ–™æ”¾é€²è‘«è˜†ä¸­ï¼Œç„¶å¾Œé–‰ä¸Šçœ¼ç›ï¼Œå£ä¸­"
+                     "é»˜å¿µè‘—ä»€éº¼ï¼Œä¼¼ä¹æ­£åœ¨æ–½å±•æ³•è¡“ â€¦â€¦ é ƒåˆ»ï¼Œä¸€è‚¡é…’é¦™å¾è‘«è˜†ä¸­é£„å‡ºã€‚çœ‹ä¾†é€™é’æ¢…é…’å·²æˆã€‚\n\n" NOR, this_object(), me);
 
-        command("say ºÃÁËºÃÁË£¬ºÜ¾ÃÃ»ÓĞÎÅµ½ÕâÇàÃ·¾ÆµÄÏãÎ¶ÁË¡£");
+        command("say å¥½äº†å¥½äº†ï¼Œå¾ˆä¹…æ²’æœ‰èåˆ°é€™é’æ¢…é…’çš„é¦™å‘³äº†ã€‚");
         
         if (! me->query("penglai/qingmeijiu_quest/ok"))
         {
-                command("say ±¾½£ÏÉÍü¼Ç¸æËßÄãÁË£¬·²ÊÇµÚÒ»´ÎÕÒÎÒÄğÖÆÇàÃ·¾Æºó£¬Õâ¾Æ¶¼ÓÉ±¾½£ÏÉ´úÎªÆ·³¢ÁË ¡­¡­");
-                message_vision(HIC "Ëµ°Õ£¬$N" HIC "²±×ÓÒ»Ñö£¬½«ºùÂ«ÀïµÄÇàÃ·¾ÆºÈÁË¸ö¾«¹â¡£\n" NOR, this_object());
+                command("say æœ¬åŠä»™å¿˜è¨˜å‘Šè¨´ä½ äº†ï¼Œå‡¡æ˜¯ç¬¬ä¸€æ¬¡æ‰¾æˆ‘é‡€åˆ¶é’æ¢…é…’å¾Œï¼Œé€™é…’éƒ½ç”±æœ¬åŠä»™ä»£ç‚ºå“å˜—äº† â€¦â€¦");
+                message_vision(HIC "èªªç½·ï¼Œ$N" HIC "è„–å­ä¸€ä»°ï¼Œå°‡è‘«è˜†è£¡çš„é’æ¢…é…’å–äº†å€‹ç²¾å…‰ã€‚\n" NOR, this_object());
                 command("haha");
-                command("say ºÃ¾Æ£¬ºÃ¾Æ°¡¡£");
+                command("say å¥½é…’ï¼Œå¥½é…’å•Šã€‚");
                 me->set("penglai/qingmeijiu_quest/ok", 1);
                 me->delete_temp("want_make_qingmeijiu");
                 me->save();
-                return "²»¹ıÄã²»ÓÃµ£ĞÄ£¬ÏÂ´ÎÄğÖÆºÃºóÎÒ±ã½«¾ÆËÍÄãÁË£¬¹ş¹ş ~~~";
+                return "ä¸éä½ ä¸ç”¨æ“”å¿ƒï¼Œä¸‹æ¬¡é‡€åˆ¶å¥½å¾Œæˆ‘ä¾¿å°‡é…’é€ä½ äº†ï¼Œå“ˆå“ˆ ~~~";
         }
         else
         {
                 ob_qmj = new("/d/penglai/obj/qingmeijiu");
                 ob_qmj->move(me, 1);
-                message_vision("$N" NOR "ÄÃ³öÒ»Æ¿ÇàÃ·¾Æ¸ø$n¡£\n" NOR, this_object(), me);
-                log_file("penglai_quest", me->query("id") + " ÖÆ×÷ÇàÃ·¾Æ³É¹¦£¡\n");
+                message_vision("$N" NOR "æ‹¿å‡ºä¸€ç“¶é’æ¢…é…’çµ¦$nã€‚\n" NOR, this_object(), me);
+                log_file("penglai_quest", me->query("id") + " åˆ¶ä½œé’æ¢…é…’æˆåŠŸï¼\n");
         }
         
-        tell_object(me, HIG "¹§Ï²Äã£¬»ñµÃÁËÇàÃ·¾Æ£¬¸Ï½ô½»¸øÊØÂ·ÏÉÈË°É£¡\n" NOR);        
+        tell_object(me, HIG "æ­å–œä½ ï¼Œç²å¾—äº†é’æ¢…é…’ï¼Œè¶•ç·Šäº¤çµ¦å®ˆè·¯ä»™äººå§ï¼\n" NOR);        
         
         me->delete_temp("want_make_qingmeijiu");
         
         me->save();
         
-        return "Ğ¡ĞÄ£¬±ğÈ÷ÁË£¬Õâ¾Æ¿ÉÊÇ·²¼äÆ·³¢²»µ½µÄ£¡\n";
+        return "å°å¿ƒï¼Œåˆ¥æ´’äº†ï¼Œé€™é…’å¯æ˜¯å‡¡é–“å“å˜—ä¸åˆ°çš„ï¼\n";
 }
 
 void unconcious()

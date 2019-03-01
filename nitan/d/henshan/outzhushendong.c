@@ -3,15 +3,15 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÖîÉñÏÉ¶´");
+        set("short", "è«¸ç¥ä»™æ´");
         set("long", @LONG
-¾ÙÄ¿ËÄÍû£¬ÖÜÎ§¾¡ÊÇĞüÑÂÇÍ±Ú(bi)£¬ÃÍÒ»Ì§Í·¿´¼û¶´¿ÚÉÏĞ´×Å¡¸
-ÖîÉñÏÉ¶´¡¹ËÄ¸ö´ó×Ö¡£µ«ÊÇ×ÖÌå¾­¹ı·çÓêµÄ³åÊ´ÒÑ¾­Ä¥Ëğ£¬ÖÜÎ§Ò°²İ
-ÔÓÉú£¬ĞÄÖĞ±¯Á¹²»ÒÑ¡£
+èˆ‰ç›®å››æœ›ï¼Œå‘¨åœç›¡æ˜¯æ‡¸å´–å³­å£(bi)ï¼ŒçŒ›ä¸€æŠ¬é ­çœ‹è¦‹æ´å£ä¸Šå¯«è‘—ã€Œ
+è«¸ç¥ä»™æ´ã€å››å€‹å¤§å­—ã€‚ä½†æ˜¯å­—é«”ç¶“éé¢¨é›¨çš„æ²–è•å·²ç¶“ç£¨æï¼Œå‘¨åœé‡è‰
+é›œç”Ÿï¼Œå¿ƒä¸­æ‚²æ¶¼ä¸å·²ã€‚
 LONG );
         set("item_desc",([
-               "bi" :   "¹âÍ»Í»µÄÇÍ±ÚÉÏ´¹ÏÂÊı¸ù³¤ÌÚ(teng)¡£\n",  
-               "teng" : YEL "¿´À´ºÜ½áÊµ£¬¿É×öÅÊÅÀÖ®ÓÃ¡£\n" NOR,
+               "bi" :   "å…‰çªçªçš„å³­å£ä¸Šå‚ä¸‹æ•¸æ ¹é•·é¨°(teng)ã€‚\n",  
+               "teng" : YEL "çœ‹ä¾†å¾ˆçµå¯¦ï¼Œå¯åšæ”€çˆ¬ä¹‹ç”¨ã€‚\n" NOR,
         ]));
 
         set("exits",([
@@ -37,24 +37,24 @@ int do_climb(string arg)
         qi=query("qi", me);
         
         if (! arg || arg != "teng")
-                return notify_fail("ÄãÏëÍùÄÄ¶ùÅÀ£¿\n");
+                return notify_fail("ä½ æƒ³å¾€å“ªå…’çˆ¬ï¼Ÿ\n");
         
         if ( !here = find_object(__DIR__"outzhushendong"))
                 here = load_object(__DIR__"outzhushendong");
         if ( !shilin = find_object(__DIR__"shilinfeng"))
                 shilin =load_object(__DIR__"shilinfeng");
 
-               msg = HIG "\n$N" HIG "À­×ÅÊ÷ÌÙÍùÇÍ±ÚÉÏÅÀÈ¥¡£\n"NOR;
+               msg = HIG "\n$N" HIG "æ‹‰è‘—æ¨¹ç±å¾€å³­å£ä¸Šçˆ¬å»ã€‚\n"NOR;
         
                if(qi < 100)
         {
-                msg += HIM "\n$N" HIM "ÌåÁ¦²»Öª£¬´ÓÇÍ±ÚÉÏË¤ÁËÏÂÀ´¡£\n" NOR;
+                msg += HIM "\n$N" HIM "é«”åŠ›ä¸çŸ¥ï¼Œå¾å³­å£ä¸Šæ‘”äº†ä¸‹ä¾†ã€‚\n" NOR;
                 message_vision(msg, me);
                 me->unconcious();
                 return 1;
         }
         message_vision(msg, me);
-        message("vision",HIG "\n"+me->name()+"´ÓÇÍ±ÚÏÂÃæÅÀÁËÉÏÀ´¡£\n", shilin, me);
+        message("vision",HIG "\n"+me->name()+"å¾å³­å£ä¸‹é¢çˆ¬äº†ä¸Šä¾†ã€‚\n", shilin, me);
         me->move(shilin);
 
         return 1;

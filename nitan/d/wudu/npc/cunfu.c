@@ -1,8 +1,8 @@
 // cunfu.c
 // by star
 inherit NPC;
-string *first_name = ({"ÕÅ", "ÕÔ", "Ç®", "Ëï","Àî"});
-string *name_words = ({"¹Ñ¸¾","´óÂè","´ó½ã","¶şÉ©","Èı½ã"});
+string *first_name = ({"å¼µ", "è¶™", "éŒ¢", "å­«","æ"});
+string *name_words = ({"å¯¡å©¦","å¤§åª½","å¤§å§","äºŒå«‚","ä¸‰å§"});
 
 
 void create()
@@ -13,9 +13,9 @@ void create()
 
 
         set_name(name,({"cun fu"}));
-        set("gender", "Å®ĞÔ" );
+        set("gender", "å¥³æ€§" );
         set("age", 32);
-        set("long", "ÕâÊÇ¸öÆÕÆÕÍ¨Í¨µÄÅ©¼Ò¸¾Å®£¬Á³ÉÏ²Á×ÅºñºñµÄ°×·Û¡£\n");
+        set("long", "é€™æ˜¯å€‹æ™®æ™®é€šé€šçš„è¾²å®¶å©¦å¥³ï¼Œè‡‰ä¸Šæ“¦è‘—åšåšçš„ç™½ç²‰ã€‚\n");
 
         set("max_qi", 200);
         set("shen_type", 1);

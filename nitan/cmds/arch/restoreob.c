@@ -21,12 +21,12 @@ int main(object me, string arg)
 
         if (BACKUP_D->is_backuping())
         {
-                write("×¢Òâ£º×Ô¶¯±¸·İÂíÉÏ¾ÍÒª¿ªÊ¼¹¤×÷£¬ÏÖÔÚ²»ÄÜÖ´ĞĞ»Ö¸´²Ù×÷¡£\n");
+                write("æ³¨æ„ï¼šè‡ªå‹•å‚™ä»½é¦¬ä¸Šå°±è¦é–‹å§‹å·¥ä½œï¼Œç¾åœ¨ä¸èƒ½åŸ·è¡Œæ¢å¾©æ“ä½œã€‚\n");
                 return 1;
         }
 
         if (! arg)
-                return notify_fail("ÄãÏëÒª¸ÉÊ²Ã´£¿\n");
+                return notify_fail("ä½ æƒ³è¦å¹¹ä»€éº¼ï¼Ÿ\n");
 
         if (sscanf(arg, "%s from %d", what, day) != 2)
         {
@@ -41,11 +41,11 @@ int main(object me, string arg)
                 ob = get_object(what);
 
         if (! ob || ! ob->is_ob_saved())
-                return notify_fail("ÄãÏëÒª»Ö¸´Ê²Ã´£¿\n");
+                return notify_fail("ä½ æƒ³è¦æ¢å¾©ä»€éº¼ï¼Ÿ\n");
         
         if (day < 1 || day > 7)
         {
-                write("Ã»ÓĞÕâ¸ö±¸·İÊı¾İÇø¡£\n");
+                write("æ²’æœ‰é€™å€‹å‚™ä»½æ•¸æ“šå€ã€‚\n");
                 return 1;
         }
 
@@ -59,10 +59,10 @@ int main(object me, string arg)
 inherit F_SAVE;
 inherit F_DBASE;
 
-// ±£´æÊı¾İµÄÓ³Éä±äÁ¿
+// ä¿å­˜æ•¸æ“šçš„æ˜ å°„è®Šé‡
 mapping save_dbase;
 
-// Ìá¹©¸øÍâ²¿µÄº¯Êı
+// æä¾›çµ¦å¤–éƒ¨çš„å‡½æ•¸
 mixed   query_data();
 mixed   query_object_data(object ob);
 
@@ -73,14 +73,14 @@ void create()
                 save_dbase = ([]);
 }
 
-// Ä³¸öÎï¼ş¶ÁÈ¡×Ô¼ºµÄ¼ÇÂ¼
+// æŸå€‹ç‰©ä»¶è®€å–è‡ªå·±çš„è¨˜éŒ„
 mixed query_data()
 {
         return query_object_data(previous_object());
 }
 
 
-// ¶ÁÈ¡Ä³¸ö¶ÔÏóµÄ¼ÇÂ¼
+// è®€å–æŸå€‹å°è±¡çš„è¨˜éŒ„
 mixed query_object_data(mixed ob)
 {
         string index;
@@ -115,7 +115,7 @@ TEXT;
         destruct(obn);
         rm("/cmds/arch/ob_dbase.c");
         
-        write(sprintf("´Ó(%s)ÖĞ¸´ÖÆ%sµÄÊı¾İÍê±Ï¡£\n", dir, ob->name()));
+        write(sprintf("å¾(%s)ä¸­å¾©åˆ¶%sçš„æ•¸æ“šå®Œç•¢ã€‚\n", dir, ob->name()));
 
         return 1;
 }

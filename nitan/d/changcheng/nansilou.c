@@ -6,11 +6,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����¥");
+        set("short", "南四樓");
         set("long", WHT@LONG
-һ������ʮ�ֶ��͵�����¥��������֪���ˡ��������ǷǺú�����
-��ζ�ˡ�ƣ��֮�࣬�ٷ���ȻԶ������������ʮ�ﳤ�Ĺع����ƺ�����
-��ߡ�����Ⱥɽ����֮�⣬���Ǿ����ˡ�
+一旦爬上十分陡峭的南四樓，你終于知道了“不到長城非好漢”的
+況味了。疲憊之余，臨風怡然遠眺，東邊是三十裡長的關溝，似乎近在
+咫尺。南面群山萬壑之外，就是京城了。
 LONG
 NOR  );
         set("outdoors", "changcheng");

@@ -6,7 +6,7 @@ string query_xiuwei_type() { return "force"; }
 
 int practice_skill(object me)
 {
-	return notify_fail("áÇá¼ĞÄ·¨Ö»ÄÜÓÃÑ§µÄ£¬»òÊÇ´ÓÔËÓÃ(exert)ÖĞÔö¼ÓÊìÁ·¶È¡£\n");
+	return notify_fail("å´†å³’å¿ƒæ³•åªèƒ½ç”¨å­¸çš„ï¼Œæˆ–æ˜¯å¾é‹ç”¨(exert)ä¸­å¢åŠ ç†Ÿç·´åº¦ã€‚\n");
 }
 
 int valid_xiulian( object me ) { return 1; }

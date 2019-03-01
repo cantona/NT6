@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-        set("short","ʯ�˷�");
+        set("short","石人房");
         set("long",@LONG
-����������������ͥԺ�϶˵�ʯ�˷������а���һЩ�����ز���
-ʯ�ˣ������������������ıڿ���С���ڣ���̨�Ϸ��ż���С�軨��
-��������Ҳ����ס������ʱ��������ɫ�ͷ��㡣
+這裡是鎮南王府的庭院南端的石人房，房中擺著一些大理特產的
+石人，看起來栩栩如生。四壁開著小窗口，窗台上放著幾砵小茶花，
+窗口欄桿也擋不住窗外四時不盡的綠色和芳香。
 LONG);
         set("exits",([ /* sizeof() == 1 */
             "north" : __DIR__"tingyuan",

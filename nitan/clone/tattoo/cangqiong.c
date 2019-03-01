@@ -4,21 +4,21 @@ inherit __DIR__"tattoo";
 
 void create()
 {
-        set_name(HIG "²Ôñ·ÔÂ»ªÍ¼" NOR, ({ "cangqiong tu", "cangqiong", "tu" }));
+        set_name(HIG "è’¼ç©¹æœˆè¯åœ–" NOR, ({ "cangqiong tu", "cangqiong", "tu" }));
         set_weight(3000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»ÕÅ¹Å¾ÉµÄÍ¼Æ¬£¬ÉÏÃæ»æ×ÅĞ©ÎÆÑù¡£");
-                set("unit", "ÕÅ");
+                set("long", "é€™æ˜¯ä¸€å¼µå¤èˆŠçš„åœ–ç‰‡ï¼Œä¸Šé¢ç¹ªè‘—äº›ç´‹æ¨£ã€‚");
+                set("unit", "å¼µ");
                 set("value", 10000000);
                 set("material", "paper");
-                set("tattoo_long", "ºÆå«µÄÓîÖæÔÂ¹Ò¸ß¿Õ");
-                set("can_tattoo", ({ "ĞØ¿Ú"}));
-                set("tattoo_type", ({ "Éí·¨" }));
+                set("tattoo_long", "æµ©ç€šçš„å®‡å®™æœˆæ›é«˜ç©º");
+                set("can_tattoo", ({ "èƒ¸å£"}));
+                set("tattoo_type", ({ "èº«æ³•" }));
                 set("tattoo_dex", 6);
                                 set("tattoo_special", "agile");
-                set("tattoo_spcname", "Èç¹íËÆ÷È");
+                set("tattoo_spcname", "å¦‚é¬¼ä¼¼é­…");
                                 set("scborn", 1);
         }
 }

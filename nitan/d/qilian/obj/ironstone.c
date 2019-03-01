@@ -5,13 +5,13 @@ inherit F_UNIQUE;
 
 void create()
 {
-        set_name(HIB"ÌúÊ¯"NOR, ({ "iron stone","stone"}));
+        set_name(HIB"éµçŸ³"NOR, ({ "iron stone","stone"}));
         set_weight(30000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿é");
-                set("long","ÕâÊÇÒ»¿éÔÉĞÇÌúÊ¯£¬±íÃæÉÕµÃ½¹ºÚµÄ£¬¿´ÉÏÈ¥¼áÓ²Ö®¼«¡£\nËÆºõÊÇÖÆÔì±øÆ÷µÄ¾øºÃ²ÄÁÏ¡£\n");
+                set("unit", "å¡Š");
+                set("long","é€™æ˜¯ä¸€å¡Šéš•æ˜ŸéµçŸ³ï¼Œè¡¨é¢ç‡’å¾—ç„¦é»‘çš„ï¼Œçœ‹ä¸Šå»å …ç¡¬ä¹‹æ¥µã€‚\nä¼¼ä¹æ˜¯åˆ¶é€ å…µå™¨çš„çµ•å¥½ææ–™ã€‚\n");
                 set("value", 0);
                 set("material", "stone");
         }

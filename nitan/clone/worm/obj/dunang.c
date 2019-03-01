@@ -3,9 +3,9 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIG "¶¾ÄÒ" NOR, ({"du nang", "dunang", "du", "nang"}));
-        set("unit", "¸ö");
-        set("long", HIG "ÕâÊÇÒ»¸ö¶¾³æµÄ¶¾ÄÒ£¬ÄÒÖĞ³äÂúÁË¶¾Òº£¬·¢×ÅÁ×¹â¡£\n" NOR);
+        set_name(HIG "æ¯’å›Š" NOR, ({"du nang", "dunang", "du", "nang"}));
+        set("unit", "å€‹");
+        set("long", HIG "é€™æ˜¯ä¸€å€‹æ¯’èŸ²çš„æ¯’å›Šï¼Œå›Šä¸­å……æ»¿äº†æ¯’æ¶²ï¼Œç™¼è‘—ç£·å…‰ã€‚\n" NOR);
         set("value", 100);
         set_weight(10);
         set("only_do_effect", 1);
@@ -14,8 +14,8 @@ void create()
 
 int do_effect(object me)
 {
-        message_vision("$NÒ»Ñö²±£¬½«¶¾ÄÒµÄ¶¾Òº¾¡Êıµ¹Èë×ìÖĞ¡£\n", me);
-        set_temp("die_reason", "³ÔÁË¶¾ÄÒÈ¥¼ûºÚ°×ÎŞ³£ÁË", me);
+        message_vision("$Nä¸€ä»°è„–ï¼Œå°‡æ¯’å›Šçš„æ¯’æ¶²ç›¡æ•¸å€’å…¥å˜´ä¸­ã€‚\n", me);
+        set_temp("die_reason", "åƒäº†æ¯’å›Šå»è¦‹é»‘ç™½ç„¡å¸¸äº†", me);
         me->die();
         destruct(this_object());
         return 1;

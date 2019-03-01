@@ -1,8 +1,8 @@
-// ��ʱ��ͼ maphere.c
+// 即時地圖 maphere.c
 // Modify by zjpwxh@sjpl 2004.4.24
 // Modify by zjpwxh@sjpl 2004.6.2
-// �Ľ��������㷨���Թ�ȱ�������ݹ�
-// ��������Ӱ���ٶȣ��ݹ���õ��£��������Խ��д������ʹ����Ӧ�ü�����Ѫ
+// 改進了搜索算法，以廣度遍歷代替遞歸
+// 由于嚴重影響速度（遞歸調用導致！），所以進行此命令的使用者應該減少氣血
 
 #include <ansi.h>
 #define MaxX 11
@@ -32,7 +32,7 @@ int main(object me, string arg)
                 Y = 6;
         } else {
                 if( !wizardp(me) && query("qi", me) < 100 )
-                        return notify_fail("���������̫�ã�����Ϣһ�°ɣ�\n");
+                        return notify_fail("你的體力不太好，先休息一下吧！\n");
 
                 if( !wizardp(me) )
                         addn("qi",-50,me);
@@ -48,12 +48,12 @@ int main(object me, string arg)
 
         where=environment(me);
         if(!objectp(where))
-                return notify_fail("�Բ��𣬲�֪���㵽��������ѽ������ʦ�ɣ�\n");
+                return notify_fail("對不起，不知道你到底在哪裡呀！找巫師吧！\n");
 
         if(base_name(where)[0..1] == "/f")
-                return notify_fail("�������޷�ͨ����ָ���ȡ��ͼ��Ϣ��\n");
+                return notify_fail("副本裡無法通過該指令獲取地圖信息！\n");
 
-        tmp = HIY"��ʱ��ͼ"HIW"(��ͼ��С��"HIM+X+HIW"/"HIR+Y+HIW")"HIM"[����ʹ�� 1024 X 768 �ֱ���]��\n\n"NOR;
+        tmp = HIY"即時地圖"HIW"(地圖大小："HIM+X+HIW"/"HIR+Y+HIW")"HIM"[建議使用 1024 X 768 分辨率]：\n\n"NOR;
         m = allocate(2*X+1);
         data = allocate((2*X+1)*(2*Y+1));
         rfile = ({});
@@ -105,7 +105,7 @@ int main(object me, string arg)
                                 tmp+="        ";
                         else
                         {
-                                //�������Ϊ�գ����Ҵ�ʱjΪż���У�������ո�
+                                //如果此項為空，並且此時j為偶數列，則輸出空格
                                 if( m[j][i]==" " && !(j%2) )
                                         tmp+="  ";
                                 else
@@ -123,7 +123,7 @@ int main(object me, string arg)
         text=explode(tmp, "\n");
         for(i=k; k<sizeof(text); k++)
                 write(text[k] + "\n");
-        write(HIM"["HIC"������ʾ��"HIG"("HIB"����"HIG"����ɫ�Ĵ�����Ŀǰ��������)��"HIY"(��ɫ�Ĵ����в�������ڵķ���)��"HIM"]\n"NOR);
+        write(HIM"["HIC"溫磬提示："HIG"("HIB"藍底"HIG"亮綠色的代表你目前所處房間)，"HIY"(黃色的代表有不規則出口的房間)，"HIM"]\n"NOR);
 
         return 1;
 }
@@ -136,7 +136,7 @@ object find_room(string path)
         return 0;
 }
 
-//���������I�J�K�L
+//←↑→↓□□□□
 int draw_path(int x,int y,string direc)
 {
         string str;
@@ -144,21 +144,21 @@ int draw_path(int x,int y,string direc)
         switch(direc)
         {
                 case "south":
-                case "north":              str="   ��   ";break;
-                case "southdown":          str="   ��   ";break;
-                case "northup":            str="   ��   ";break;
-                case "southup":            str="   ��   ";break;
-                case "northdown":          str="   ��   ";break;
+                case "north":              str="   ｜   ";break;
+                case "southdown":          str="   ↓   ";break;
+                case "northup":            str="   ↑   ";break;
+                case "southup":            str="   ↑   ";break;
+                case "northdown":          str="   ↓   ";break;
                 case "east":
-                case "west":               str="��";break;
+                case "west":               str="─";break;
                 case "eastdown":
-                case "eastup":             str="��";break;
+                case "eastup":             str="→";break;
                 case "westdown":
-                case "westup":             str="��";break;
+                case "westup":             str="←";break;
                 case "southeast":
-                case "northwest":          str="��";break;
+                case "northwest":          str="＼";break;
                 case "southwest":
-                case "northeast":          str="��";break;
+                case "northeast":          str="／";break;
                 default:
                         return 0;
         }
@@ -176,7 +176,7 @@ int draw_path(int x,int y,string direc)
         return 1;
 }
 
-// ���ù�ȱ���Ѱ·�㷨,ʹ��ͼ����ʾ���Ӻ���
+// 改用廣度遍歷尋路算法,使地圖的顯示更加合理
 int draw_room(int x,int y,object room)
 {
         int i,xx,yy;
@@ -245,13 +245,13 @@ void set_room(int x,int y,object room)
         mapping dir;
         string *dirs;
 
-        // ��ȡ����ɫ�ķ���short����
+        // 求取無顏色的房間short描述
         name=filter_color(room->short());
 
-        // ����Ķ����������4����������
+        // 房間的短名字最好在4個漢字以內
         if(strlen(name)>8)  name=name[0..7];
 
-        if(strlen(name)<7) //�Բ���4�����ֵķ��������о��д���
+        if(strlen(name)<7) //對不足4個漢字的房間名進行居中處理
         {
                 d=8-strlen(name);
                 if( d%2 )
@@ -308,12 +308,12 @@ void set_x_y(int x,int y,int rear)
 int help(object me)
 {
         write(@HELP
-ָ���ʽ��maphere [-m]
+指令格式：maphere [-m]
 
-�������������˽���Χ�ķ����ͼ�ķֲ�״��������־������֮������������
-���ӱ�־�м�ͷ��ָ������Ƹ��ߣ��в��淶���ڵķ����Ի�ɫ��־����������
-��������������ɫ����־�����ڷ�������ص���Ե�ʣ���Щ���佫�޷���ʾ������
-������Ĭ����x=7,y=14 �ĵ�ͼ��С��ʾ��ʹ��-mѡ������x=11,y=22 ��ʾ��
+本命令幫助玩家了解周圍的房間地圖的分布狀況，並標志出房間之間的連接情況。
+連接標志中箭頭所指方向地勢更高，有不規范出口的房間以黃色標志，你所處的
+房間以藍底亮綠色來標志！由于房間可能重疊的緣故，有些房間將無法顯示出來。
+本命令默認以x=7,y=14 的地圖大小顯示，使用-m選項將以最大化x=11,y=22 顯示。
 HELP);
         return 1;
 }

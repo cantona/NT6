@@ -5,17 +5,17 @@ inherit THROWING;
 
 void create()
 {
-        set_name(HIR "ìµòÚ½ğÕë" NOR, ({ "lanwu jinzhen", "lanwu", "jinzhen", "zhen" }) );
+        set_name(HIR "æ–•èœˆé‡‘é‡" NOR, ({ "lanwu jinzhen", "lanwu", "jinzhen", "zhen" }) );
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ğ©");
+                set("unit", "äº›");
                 set("value", 0);
-                set("base_unit", "¸ù");
+                set("base_unit", "æ ¹");
                 set("base_weight", 200);
                 set("base_value", 0);
                 set("material", "iron");
-                set("long", HIR "ÕâÊÇÒ»Ğ©ÑªºìÉ«µÄÏ¸³¤½ğÕë£¬³¤Ô¼´çĞí¡£\n" NOR);
+                set("long", HIR "é€™æ˜¯ä¸€äº›è¡€ç´…è‰²çš„ç´°é•·é‡‘é‡ï¼Œé•·ç´„å¯¸è¨±ã€‚\n" NOR);
         }
         set_amount(50);
         init_throwing(50);

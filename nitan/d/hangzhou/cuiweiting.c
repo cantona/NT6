@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-        set("short", "��΢ͤ");
+        set("short", "翠微亭");
         set("long", @LONG
-��΢ͤ���ڷ�����İ�ɽ�䣬������������Ϊ�������ɶ����ġ�
-�����С����곾�������£�����Ѱ���ϴ�΢����ʫ�䣬��ͤ������΢����
-��������ɽ��·��
+翠微亭建在飛來峰的半山間，是名將韓世忠為紀念岳飛而建的。
+岳飛有“經年塵土滿征衣，特特尋芳上翠微”的詩句，故亭名“翠微”。
+西邊是下山的路。
 LONG);
         set("exits", ([
                 "westdown"  : __DIR__"qinglindong",

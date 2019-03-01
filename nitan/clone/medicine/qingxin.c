@@ -5,13 +5,13 @@
 
 void create()
 {
-        set_name(HIG "ÇåĞÄ¶¨ÉñÉ¢" NOR, ({"qingxin san", "san"}));
+        set_name(HIG "æ¸…å¿ƒå®šç¥æ•£" NOR, ({"qingxin san", "san"}));
         set_weight(50);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIG "ÕâÊÇÒ»°üµ­ÂÌÉ«µÄ·ÛÄ©£¬¾ßÓĞ·Ç³£²»´íµÄÕò¶¨Ğ§¹û¡£\n" NOR);
-                set("base_unit", "°ü");
+                set("long", HIG "é€™æ˜¯ä¸€åŒ…æ·¡ç¶ è‰²çš„ç²‰æœ«ï¼Œå…·æœ‰éå¸¸ä¸éŒ¯çš„é®å®šæ•ˆæœã€‚\n" NOR);
+                set("base_unit", "åŒ…");
                 set("base_value", 3000);
                 set("base_weight", 60);
                 set("only_do_effect", 1);
@@ -39,21 +39,21 @@ int do_effect(object me)
 
         if( time()-query_temp("last_eat/qingxin", me)<20 )
         {
-                write("Äã¸Õ·şÓÃ¹ıÒ©£¬ĞèÒ©ĞÔ·¢»ÓÍêĞ§ÓÃÒÔºó²ÅÄÜ¼ÌĞø·şÓÃ¡£\n");
+                write("ä½ å‰›æœç”¨éè—¥ï¼Œéœ€è—¥æ€§ç™¼æ®å®Œæ•ˆç”¨ä»¥å¾Œæ‰èƒ½ç¹¼çºŒæœç”¨ã€‚\n");
                 return 1;
         }
 
         my = me->query_entire_dbase();
         if (my["eff_jing"] == my["max_jing"])
         {
-                write("ÄãÏÖÔÚ¾«Éñ×´Ì¬ºÜºÃ£¬ÎŞĞè·şÓÃ" + name() + "¡£\n");
+                write("ä½ ç¾åœ¨ç²¾ç¥ç‹€æ…‹å¾ˆå¥½ï¼Œç„¡éœ€æœç”¨" + name() + "ã€‚\n");
                 return 1;
         }
 
         set_temp("last_eat/qingxin", time(), me);
 
-        message_vision(HIG "$N" HIG "Ò»ÕÅ×ì£¬ÍÌÏÂÁË" + name() +
-                       HIG "£¬¿´ÉÏÈ¥¾«ÉñºÃ¶àÁË¡£\n" NOR, me);
+        message_vision(HIG "$N" HIG "ä¸€å¼µå˜´ï¼Œåä¸‹äº†" + name() +
+                       HIG "ï¼Œçœ‹ä¸Šå»ç²¾ç¥å¥½å¤šäº†ã€‚\n" NOR, me);
 
         me->receive_curing("jing", 150);
         me->receive_heal("jing", 150);

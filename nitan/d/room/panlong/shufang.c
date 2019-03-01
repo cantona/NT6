@@ -1,4 +1,4 @@
-// shufang.c ÅÌÁú¾ÓÊé·¿
+// shufang.c ç›¤é¾å±…æ›¸æˆ¿
 
 #include <ansi.h>
 
@@ -7,16 +7,16 @@ inherit ROOM;                                   /* EXAMPLE */
 
 void create()
 {
-        set("short", "Êé·¿");
+        set("short", "æ›¸æˆ¿");
         set("long", @LONG
-ÕâÀïÊÇÅÌÁú¾ÓµÄÖ÷ÈË¶ÁÊéĞ´×ÖµÄµØ·½£¬¸É¾»Ã÷ÁÁ¡£ÎÄ·¿ËÄ±¦ÕûÕûÆëÆë
-µÄ°ÚÔÚ×À×ÓÉÏÃæ¡£ÓĞÊ±Ö÷ÈËÒ²ÔÚÕâÀïÇ©·¢Ò»Ğ©ÑûÇë¿ÍÈËµÄÇë¼í¡£
+é€™è£¡æ˜¯ç›¤é¾å±…çš„ä¸»äººè®€æ›¸å¯«å­—çš„åœ°æ–¹ï¼Œå¹¹å‡ˆæ˜äº®ã€‚æ–‡æˆ¿å››å¯¶æ•´æ•´é½Šé½Š
+çš„æ“ºåœ¨æ¡Œå­ä¸Šé¢ã€‚æœ‰æ™‚ä¸»äººä¹Ÿåœ¨é€™è£¡ç°½ç™¼ä¸€äº›é‚€è«‹å®¢äººçš„è«‹æŸ¬ã€‚
 LONG );
 
-        set("default_long", "ÕâÀïÊÇROOM_NAMEµÄÖ÷ÈËROOM_OWNER¶ÁÊéĞ´×ÖµÄ"/* EXAMPLE */
-                            "µØ·½£¬¸É¾»Ã÷ÁÁ¡£ÎÄ·¿ËÄ±¦ÕûÕûÆëÆëµÄ°ÚÔÚ×À" /* EXAMPLE */
-                            "×ÓÉÏÃæ¡£ÓĞÊ±ROOM_OWNERÒ²ÔÚÕâÀïÇ©·¢(sign"/* EXAMPLE */
-                            ")Ò»Ğ©ÑûÇë¿ÍÈËµÄÇë¼í¡£");                  /* EXAMPLE */
+        set("default_long", "é€™è£¡æ˜¯ROOM_NAMEçš„ä¸»äººROOM_OWNERè®€æ›¸å¯«å­—çš„"/* EXAMPLE */
+                            "åœ°æ–¹ï¼Œå¹¹å‡ˆæ˜äº®ã€‚æ–‡æˆ¿å››å¯¶æ•´æ•´é½Šé½Šçš„æ“ºåœ¨æ¡Œ" /* EXAMPLE */
+                            "å­ä¸Šé¢ã€‚æœ‰æ™‚ROOM_OWNERä¹Ÿåœ¨é€™è£¡ç°½ç™¼(sign"/* EXAMPLE */
+                            ")ä¸€äº›é‚€è«‹å®¢äººçš„è«‹æŸ¬ã€‚");                  /* EXAMPLE */
                                                                        /* EXAMPLE */
 
         set("exits", ([
@@ -46,22 +46,22 @@ int do_sign()
         me = this_player();
 
 //**        if (! is_room_owner(me))
-//**                return notify_fail("ÄãÓÖ²»ÊÇÕâ¶ùµÄÖ÷ÈË£¬ÂÒ¸ã"
-//**                                   "Ê²Ã´£¿\n");
+//**                return notify_fail("ä½ åˆä¸æ˜¯é€™å…’çš„ä¸»äººï¼Œäº‚æ"
+//**                                   "ä»€éº¼ï¼Ÿ\n");
 
         if (me->is_busy())
-                return notify_fail("ÄãÏÖÔÚ»¹Ã¦×ÅÄØ¡£\n");
+                return notify_fail("ä½ ç¾åœ¨é‚„å¿™è‘—å‘¢ã€‚\n");
 
-        message_vision("$N³é¹ıÒ»ÕÅÖ½£¬ÄÃÆğ±ÊÀ´£¬ÔÚÉÏÃæ»­·ûËÆ"
-                       "µÄĞ´ÁËĞ©¶«Î÷¡£\n", me);
-        tell_object(me, "ÄãĞ´ºÃÒ»·İÊÖÚÍ¡£\n");
+        message_vision("$NæŠ½éä¸€å¼µç´™ï¼Œæ‹¿èµ·ç­†ä¾†ï¼Œåœ¨ä¸Šé¢ç•«ç¬¦ä¼¼"
+                       "çš„å¯«äº†äº›æ±è¥¿ã€‚\n", me);
+        tell_object(me, "ä½ å¯«å¥½ä¸€ä»½æ‰‹è«­ã€‚\n");
 
         ob = new("/d/room/roomobj/pass");
-        ob->set_name(HIW+query("name", me)+"ÊÖÚÍ"NOR,
+        ob->set_name(HIW+query("name", me)+"æ‰‹è«­"NOR,
                      ({ "pass", query("room_owner_id") + " pass" }));
-        ob->set("long","Ò»ÕÅÓÉ"+query("name",me)+"Ç×±ÊÇ©·¢µÄ"+
-                     "ÊÖÚÍ£¬Æ¾½èËüÄã¿ÉÒÔ½ø³ö" + query("room_name") +
-                     "¡£\n");
+        ob->set("long","ä¸€å¼µç”±"+query("name",me)+"è¦ªç­†ç°½ç™¼çš„"+
+                     "æ‰‹è«­ï¼Œæ†‘å€Ÿå®ƒä½ å¯ä»¥é€²å‡º" + query("room_name") +
+                     "ã€‚\n");
         ob->move(me);
         me->start_busy(4 + random(4));
         return 1;

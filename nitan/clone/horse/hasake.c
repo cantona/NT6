@@ -3,8 +3,8 @@ inherit "/clone/horse/horse.c";
 
 void create()
 {
-        set_name(HIM "哈萨克马" NOR, ({ "hasake ma"}));
-        set("long", HIM "此马产自内蒙古锡林郭勒地区，颇为强健。\n" NOR);
+        set_name(HIM "鍝堣柀鍏嬮Μ" NOR, ({ "hasake ma"}));
+        set("long", HIM "姝らΜ鐢㈣嚜鍏ц挋鍙ら尗鏋楅儹鍕掑湴鍗�锛岄牀鐐哄挤鍋ャ�俓n" NOR);
 
         set("tili", 2000);
         set("max_tili", 2000);

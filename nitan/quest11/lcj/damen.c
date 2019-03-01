@@ -1,27 +1,27 @@
-// Room: /d/xiangyang/damen.c ´óÃÅ
+// Room: /d/xiangyang/damen.c å¤§é–€
 // Modify By River 98/10
 // Modify By Lklv 2001.9.21
-// Modify by tangfeng for Á¬³Ç¾÷quest
+// Modify by tangfeng for é€£åŸŽè¨£quest
 
 inherit ROOM;
 #include <ansi.h>
 #include <wanted.h>
 
-#define QUESTDIR "quest/Á¬³Ç¾÷/"
-#define QUESTDIR1 "quest/Á¬³Ç¾÷/Ñ©¹È¼¤¶·Æª/"
-#define QUESTDIR2 "quest/Á¬³Ç¾÷/Îä¹ÝÌ½ÃÜÆª/"
+#define QUESTDIR "quest/é€£åŸŽè¨£/"
+#define QUESTDIR1 "quest/é€£åŸŽè¨£/é›ªè°·æ¿€é¬¥ç¯‡/"
+#define QUESTDIR2 "quest/é€£åŸŽè¨£/æ­¦é¤¨æŽ¢å¯†ç¯‡/"
 
 void create()
 {
-	set("short", "Îä¹Ý´óÃÅ");
+	set("short", "æ­¦é¤¨å¤§é–€");
 	set("long", @LONG
-ÕâÀïÊÇÏåÑôÎä¹ÝµÄ´óÃÅ£¬Á½ÉÈºÚÆáÆáµÄÄ¾ÃÅÏò×óÓÒ³¨¿ª×Å£¬ÃÅ¿ÚµÄÕýÉÏ·½
-¸ßÐü×ÅÒ»¿éºÚµ×½ð×ÖµÄ´óØÒ£¬ØÒÉÏÐ´×ÅËÄ¸ö´ó×Ö£º¡°ÏåÑôÎä¹Ý¡±¡£ÃÅÇ°µÄÌ¨½×
-Á½ÅÔ¸÷Á¢×ÅÒ»¸öÊ¯Ê¨£¬´Ó´óÃÅ¿ÚÏòÀïÃæÇÆÈ¥£¬Îä¹ÝµÄÔº×ÓÀïÈËÀ´ÈËÍù£¬¿´ÆðÀ´
-ºÃÏó¶¼ºÜÃ¦Âµ¡£´óÃÅÅÔ±ßÕ¾×ÅÒ»¸öÃÅÎÀ£¬Á³ÉÏÉñÇéÍþÑÏ¡£
+é€™è£¡æ˜¯è¥„é™½æ­¦é¤¨çš„å¤§é–€ï¼Œå…©æ‰‡é»‘æ¼†æ¼†çš„æœ¨é–€å‘å·¦å³æ•žé–‹è‘—ï¼Œé–€å£çš„æ­£ä¸Šæ–¹
+é«˜æ‡¸è‘—ä¸€å¡Šé»‘åº•é‡‘å­—çš„å¤§åŒ¾ï¼ŒåŒ¾ä¸Šå¯«è‘—å››å€‹å¤§å­—ï¼šâ€œè¥„é™½æ­¦é¤¨â€ã€‚é–€å‰çš„å°éšŽ
+å…©æ—å„ç«‹è‘—ä¸€å€‹çŸ³ç…ï¼Œå¾žå¤§é–€å£å‘è£¡é¢çž§åŽ»ï¼Œæ­¦é¤¨çš„é™¢å­è£¡äººä¾†äººå¾€ï¼Œçœ‹èµ·ä¾†
+å¥½è±¡éƒ½å¾ˆå¿™ç¢Œã€‚å¤§é–€æ—é‚Šç«™è‘—ä¸€å€‹é–€è¡›ï¼Œè‡‰ä¸Šç¥žæƒ…å¨åš´ã€‚
 LONG
         );
-	set("outdoors","Îä¹Ý");
+	set("outdoors","æ­¦é¤¨");
 	set("no_fight", 1);
 	set("exits", ([
 		"south" : __DIR__"eroad1",
@@ -41,8 +41,8 @@ int valid_leave(object me,string dir)
 	int x;
 
 	if ( me->query_temp( "wg_help" ) || me->query_temp( "wg_road" ) == 2 )
-		return notify_fail("Îä¹ÝÃÅÎÀËµµÀ£º" + RANK_D->query_respect(me) +
-			"»¹ÊÇÔÙÄÍÐÄµÈÒ»»á°É£¬Ëµ²»¶¨ÂíÉÏ¾ÍÓÐÈËÀ´ÕÌÒå°ïÖú¡£\n");
+		return notify_fail("æ­¦é¤¨é–€è¡›èªªé“ï¼š" + RANK_D->query_respect(me) +
+			"é‚„æ˜¯å†è€å¿ƒç­‰ä¸€æœƒå§ï¼Œèªªä¸å®šé¦¬ä¸Šå°±æœ‰äººä¾†ä»—ç¾©å¹«åŠ©ã€‚\n");
 	if ( me->query_temp( "wg_juanzeng" ) )
 		me->delete_temp( "wg_juanzeng" );
 	if ( me->query_temp( "wg_road" ) == 1 )
@@ -53,36 +53,36 @@ int valid_leave(object me,string dir)
 		if ( me->query("combat_exp") > 3000 )
 		{
 			if(!me->query(QUESTDIR1+"over") || me->query(QUESTDIR2+"over"))
-				return notify_fail("ÃÅÎÀÉÏÇ°°ÑÊÖÒ»Éì£ºÄãµÄÎä¹¦¹»¸ßÁË£¬ÔÚÎä¹ÝÑ§²»µ½Ê²Ã´ÁË¡£\n");
+				return notify_fail("é–€è¡›ä¸Šå‰æŠŠæ‰‹ä¸€ä¼¸ï¼šä½ çš„æ­¦åŠŸå¤ é«˜äº†ï¼Œåœ¨æ­¦é¤¨å­¸ä¸åˆ°ä»€éº¼äº†ã€‚\n");
 			if(me->query_temp(QUESTDIR2+"start"))
 			{
-				message_vision(HIY"\nÃÅÎÀÒÉ»óµØ¿´×Å$NµÀ£º$N¸Õ²ÅÔõÃ´½øÈ¥ÓÖ³öÀ´ÁË£¿\n", me);
+				message_vision(HIY"\né–€è¡›ç–‘æƒ‘åœ°çœ‹è‘—$Né“ï¼š$Nå‰›æ‰æ€Žéº¼é€²åŽ»åˆå‡ºä¾†äº†ï¼Ÿ\n", me);
 				me->delete_temp("quest/busy");//
-				me->delete_temp("quest/Á¬³Ç¾÷");
-				return notify_fail("ÃÅÎÀÉÏÇ°°ÑÊÖÒ»Éì£ºÄÇÓÐÕâÃ´ºÃµÄÊÂÇé£¬ÔÚÎä¹Ý½ø½ø³ö³ö¡£\n");
+				me->delete_temp("quest/é€£åŸŽè¨£");
+				return notify_fail("é–€è¡›ä¸Šå‰æŠŠæ‰‹ä¸€ä¼¸ï¼šé‚£æœ‰é€™éº¼å¥½çš„äº‹æƒ…ï¼Œåœ¨æ­¦é¤¨é€²é€²å‡ºå‡ºã€‚\n");
 			}
 			obj = users();
 			x = sizeof(obj);
 			while(x--)
 			{
 				if ( obj[x]->query_temp(QUESTDIR2+"start") && obj[x]!=me ) 
-					return notify_fail("ÃÅÎÀÉÏÇ°°ÑÊÖÒ»Éì£º"+obj[x]->query("name")+RANK_D->query_respect(obj[x]) +"ÒÑ¾­È¥Îä¹ÝÌ½ÃÜÈ¥ÁË£¬ÄãÔÙµÈµÈ£¡");		  
+					return notify_fail("é–€è¡›ä¸Šå‰æŠŠæ‰‹ä¸€ä¼¸ï¼š"+obj[x]->query("name")+RANK_D->query_respect(obj[x]) +"å·²ç¶“åŽ»æ­¦é¤¨æŽ¢å¯†åŽ»äº†ï¼Œä½ å†ç­‰ç­‰ï¼");		  
 			}
 		}
 	}
 	if ( dir == "enter" && me->query(QUESTDIR1+"over")&& !me->query(QUESTDIR2+"over"))
 	{
-		message_vision(HIY"\n$NµÍÍ·ËÆºõºÍÃÅÎÀËµÁËÐ©Ê²Ã´¡£ÃÅÎÀ°¡µØÒ»Éù½ÐÁË³öÀ´¡£\n", me);
+		message_vision(HIY"\n$Nä½Žé ­ä¼¼ä¹Žå’Œé–€è¡›èªªäº†äº›ä»€éº¼ã€‚é–€è¡›å•Šåœ°ä¸€è²å«äº†å‡ºä¾†ã€‚\n", me);
 		if(me->query(QUESTDIR+"time")&&time()-me->query(QUESTDIR+"time")<86400)
-			return notify_fail("ÃÅÎÀÉÏÇ°°ÑÊÖÒ»Éì£º²»¹ÜÔõÑù£¬½ñÌìºÜÃ¦ÁË£¬"+RANK_D->query_respect(me) +"ÏÈÐÐÐÝÏ¢È¥°É£¡");		  
+			return notify_fail("é–€è¡›ä¸Šå‰æŠŠæ‰‹ä¸€ä¼¸ï¼šä¸ç®¡æ€Žæ¨£ï¼Œä»Šå¤©å¾ˆå¿™äº†ï¼Œ"+RANK_D->query_respect(me) +"å…ˆè¡Œä¼‘æ¯åŽ»å§ï¼");		  
 		if(me->query(QUESTDIR+"combat_exp")&&me->query("combat_exp")-me->query(QUESTDIR+"combat_exp")<500000)
-			return notify_fail("ÃÅÎÀÉÏÇ°°ÑÊÖÒ»Éì£ºÒÔ"+RANK_D->query_respect(me) +"Ä¿Ç°µÄ¾­Ñé¾ÍËã½øÈ¥£¬Ò²×ö²»ÁËÊ²Ã´£¬»¹ÊÇ×¥½ôÁ·¹¦°É£¡");
+			return notify_fail("é–€è¡›ä¸Šå‰æŠŠæ‰‹ä¸€ä¼¸ï¼šä»¥"+RANK_D->query_respect(me) +"ç›®å‰çš„ç¶“é©—å°±ç®—é€²åŽ»ï¼Œä¹Ÿåšä¸äº†ä»€éº¼ï¼Œé‚„æ˜¯æŠ“ç·Šç·´åŠŸå§ï¼");
 
-		message_vision(HIY"ÃÅÎÀ°¡µØÒ»ÉùÌøÁËÆðÀ´¡£\n", me);
-		message_vision(HIY"Ö»¼ûÃÅÎÀÍùÅÔ±ßÒ»ÉÁ¡£$N´ÓÃÅ·ìÀï¼·ÁË½øÈ¥¡£\n", me);
+		message_vision(HIY"é–€è¡›å•Šåœ°ä¸€è²è·³äº†èµ·ä¾†ã€‚\n", me);
+		message_vision(HIY"åªè¦‹é–€è¡›å¾€æ—é‚Šä¸€é–ƒã€‚$Nå¾žé–€ç¸«è£¡æ“ äº†é€²åŽ»ã€‚\n", me);
 		me->set(QUESTDIR+"time",time());
 		me->set(QUESTDIR+"combat_exp",me->query("combat_exp")); 
-		me->set(QUESTDIR2+"start",1);//¿ªÊ¼
+		me->set(QUESTDIR2+"start",1);//é–‹å§‹
 		me->set_temp(QUESTDIR2+"start",1);
 		me->set_temp("quest/busy",1);
 	}

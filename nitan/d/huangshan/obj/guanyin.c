@@ -4,7 +4,7 @@ inherit ITEM;
 
 void create()
 {
-        set_name("¹ÛÒôÊ¯", ({ "guanyin shi","guanyin", "shi" }) );
+        set_name("è§€éŸ³çŸ³", ({ "guanyin shi","guanyin", "shi" }) );
         set_weight(500);
         set_max_encumbrance(8000);
         set("no_get", 1);
@@ -12,8 +12,8 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
-                set("long", "Ò»¸öÍ¤Í¤ÓñÁ¢µÄÊ¯ÈË£¬»îÏóÒ»×ğ¹Å×°ÊËÅ®£¬ÈË³Æ¹ÛÒôÊ¯¡£\n");
+                set("unit", "å€‹");
+                set("long", "ä¸€å€‹äº­äº­ç‰ç«‹çš„çŸ³äººï¼Œæ´»è±¡ä¸€å°Šå¤è£ä»•å¥³ï¼Œäººç¨±è§€éŸ³çŸ³ã€‚\n");
                 set("value", 1);
         }
 }

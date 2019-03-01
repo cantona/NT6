@@ -1,12 +1,12 @@
 // This program is a part of NITAN MudLIB
-// demon.c 万魔附体
+// demon.c 钀瓟闄勯珨
 // Created by Lonely 04/05/2009
 
 #include <ansi.h>
 
 inherit F_CLEAN_UP;
 
-string name() { return HIG "万魔附体" NOR; }
+string name() { return HIG "钀瓟闄勯珨" NOR; }
 
 void remove_effect(object me, int amount);
 
@@ -15,9 +15,9 @@ int perform(object me, string skill)
         int n;
 
         if( query_temp("special_skill/demon", me) )
-                return notify_fail("你万魔附体之术已在施展中了。\n");
+                return notify_fail("浣犺惉榄旈檮楂斾箣琛撳凡鍦ㄦ柦灞曚腑浜嗐�俓n");
 
-        message_vision(HIG "$N" HIG "施展出万魔附体之术，刹那间全身真气迸发，犹如蚩尤再现，威猛无比！\n" NOR, me);
+        message_vision(HIG "$N" HIG "鏂藉睍鍑鸿惉榄旈檮楂斾箣琛擄紝鍓庨偅闁撳叏韬湡姘ｈ扛鐧硷紝鐚跺铓╁挨鍐嶇従锛屽▉鐚涚劇姣旓紒\n" NOR, me);
 
         n = me->query_skill("force");
         if (n < 100) n = 100;
@@ -38,7 +38,7 @@ void remove_effect(object me, int amount)
                 addn_temp("apply/armor", -amount, me);
                 addn_temp("apply/reduce_damage", -30, me);
                 delete_temp("special_skill/demon", me);
-                tell_object(me, "你万魔附体之术已施展完毕。\n");
+                tell_object(me, "浣犺惉榄旈檮楂斾箣琛撳凡鏂藉睍瀹岀暍銆俓n");
         }
         
 }

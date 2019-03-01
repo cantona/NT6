@@ -8,14 +8,14 @@ inherit POISON;
 
 string name() { return "bt_poison"; }
 
-string chinese_name() { return "白驼奇毒"; }
+string chinese_name() { return "鐧介濂囨瘨"; }
 
 string update_msg_others()
 {
-       return HIB "$N的身子突然晃了两晃，显得很痛苦的样子。\n" NOR;
+       return HIB "$N鐨勮韩瀛愮獊鐒舵檭浜嗗叐鏅冿紝椤緱寰堢棝鑻︾殑妯ｅ瓙銆俓n" NOR;
 }
 
 string update_msg_self()
 {
-        return HIB "忽然一阵刺痛，你感觉毒性正在慢慢侵入你的身体！\n" NOR;
+        return HIB "蹇界劧涓�闄ｅ埡鐥涳紝浣犳劅瑕烘瘨鎬ф鍦ㄦ參鎱镜鍏ヤ綘鐨勮韩楂旓紒\n" NOR;
 }

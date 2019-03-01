@@ -1,20 +1,20 @@
-// xuanhuang.c Ğş»Æ×ÏÇåµ¤
+// xuanhuang.c ç„é»ƒç´«æ¸…ä¸¹
 
 #include <ansi.h>
 #include "gift.h"
 
 void create()
 {
-        set_name(HIM "Ğş»Æ×ÏÇåµ¤" NOR, ({ "xuanhuang dan", "dan" }) );
+        set_name(HIM "ç„é»ƒç´«æ¸…ä¸¹" NOR, ({ "xuanhuang dan", "dan" }) );
         set_weight(300);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¿Å×ÏÖĞ·º»ÆµÄ¾«ÖÂÆæµ¤£¬¾ßÓĞÕâÉñ»°°ãµÄ¹¦Ğ§£¬"
-                            "ÊÇÁ·ÎäÈËÃÎÃÂÒÔÇóµÄÃîÒ©¡£\n");
+                set("long", "ä¸€é¡†ç´«ä¸­æ³›é»ƒçš„ç²¾è‡´å¥‡ä¸¹ï¼Œå…·æœ‰é€™ç¥è©±èˆ¬çš„åŠŸæ•ˆï¼Œ"
+                            "æ˜¯ç·´æ­¦äººå¤¢å¯ä»¥æ±‚çš„å¦™è—¥ã€‚\n");
                 set("base_value", 250000);
                 set("base_weight", 100);
-                set("base_unit", "Á£");
+                set("base_unit", "ç²’");
                 set("only_do_effect", 1);
         }
         setup();
@@ -26,12 +26,12 @@ int do_effect(object me)
         int neili;
 
         effect = 0;
-        message_vision(HIW "$N" HIW "Ò»Ñö²±£¬ÍÌÏÂÁËÒ»¿Å" +
-                       this_object()->name() + HIW "£¬Ö»¼û$N"
-                       HIW "»ëÉíÒ»²ü£¬ÆßÇÏ¶¼Ã°³ö°×ÑÌÀ´¡£\n" NOR, me);
+        message_vision(HIW "$N" HIW "ä¸€ä»°è„–ï¼Œåä¸‹äº†ä¸€é¡†" +
+                       this_object()->name() + HIW "ï¼Œåªè¦‹$N"
+                       HIW "æ¸¾èº«ä¸€é¡«ï¼Œä¸ƒç«…éƒ½å†’å‡ºç™½ç…™ä¾†ã€‚\n" NOR, me);
         if( query("gift/xuanhuang", me) <= 20 )
         {                        
-                message_vision(HIW "Ö»¼û$N" HIW "»ëÉíÒ»²ü£¬ÆßÇÏ¶¼Ã°³ö°×ÑÌÀ´¡£\n", me);
+                message_vision(HIW "åªè¦‹$N" HIW "æ¸¾èº«ä¸€é¡«ï¼Œä¸ƒç«…éƒ½å†’å‡ºç™½ç…™ä¾†ã€‚\n", me);
                 //addn("combat_exp", 150000, me);
                 me->improve_skill("force", 250000);
                 me->improve_skill("parry", 250000);

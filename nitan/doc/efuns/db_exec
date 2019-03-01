@@ -1,22 +1,22 @@
 
         db_exec()
 
-        ���ƣ�
-                db_exec() �����ݿⷢ��һ�� SQL ��ѯ���
+        名稱：
+                db_exec() 向數據庫發送一條 SQL 查詢語句
 
-        �﷨��
+        語法：
                 mixed db_exec(int handle, string sql)
-                ����� db_exec(���� handle, �ַ��� sql)
+                混合型 db_exec(整數 handle, 字符串 sql)
 
-        �÷���
-                handle ���Ѵ򿪵����ݿ�ľ��
-                sql �������ݿⷢ�͵Ĳ�ѯ��䡣
+        用法：
+                handle 是已打開的數據庫的句柄
+                sql 是向數據庫發送的查詢語句。
 
-        ����ֵ��
-                ������Ϊ����ֵ��������
-                �ַ������ͣ�Ϊ������Ϣ��
+        返回值：
+                整數，為返回值的行數。
+                字符串類型，為錯誤信息。
 
-        by ���ֺ�(Find@tx)
+        by 發現號(Find@tx)
 
 
 

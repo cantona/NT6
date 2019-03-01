@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "С·");
+        set("short", "小路");
         set("long", @LONG
-���ﳤ�����Ӳݣ��������ǹ�ľ����ľ������գ�żȻ��һЩС
-����ͻȻ�������зɿ���ܿ����ش�ƫƧ��ʮ���ľ���
+這裡長滿了雜草，到處都是灌木。樹木遮天蔽日，偶然有一些小
+動物突然串出，有飛快的跑開。地處偏僻，十分幽靜。
 LONG );
         set("outdoors", "wanjiegu");
         set("exits", ([ /* sizeof() == 2 */

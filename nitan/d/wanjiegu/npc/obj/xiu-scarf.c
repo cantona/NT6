@@ -6,12 +6,12 @@ inherit EQUIP;
 
 void create()
 {
-        set_name( HIY "–Âª®–°∑ΩΩÌ" NOR, ({ "scarf" }) );
+        set_name( HIY "Áπ°Ëä±Â∞èÊñπÂ∑æ" NOR, ({ "scarf" }) );
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ãı");
+                set("unit", "Ê¢ù");
                 set("value", 300);
                 set("material", "cloth");
                 set("armor_type", "head");
@@ -19,7 +19,7 @@ void create()
                 set("armor_prop/armor", 4);
                 set("armor_prop/dodge", -1);
                 set("female_only", 1);
-                set("wear_msg","$N¥˜…œ“ªÃı$n°£\n");
-                set("remove_msg","$NΩ´$nΩ‚¡Àœ¬¿¥°£\n");
+                set("wear_msg","$NÊà¥‰∏ä‰∏ÄÊ¢ù$n„ÄÇ\n");
+                set("remove_msg","$NÂ∞á$nËß£‰∫Ü‰∏ã‰æÜ„ÄÇ\n");
         }
 }

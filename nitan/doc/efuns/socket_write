@@ -1,64 +1,64 @@
 
      socket_write(3)        MudOS (5 Sep 1994)         socket_write(3)
 
-     ���ƣ�
-          socket_write() - ͸��һ�� socket ��������
+     名稱：
+          socket_write() - 透過一個 socket 傳送資料
 
-     �﷨��
+     語法：
           #include 
 
           int socket_write( int s, mixed message,
                             void | string address );
 
-          ���� socket_write( ���� s, ��� message,
-                             �޲��� | �ִ� address );
+          整數 socket_write( 整數 s, 混合 message,
+                             無參數 | 字串 address );
 
-     �÷���
-          socket_write() ��һ�� socket s ���������ϡ���� socket s ��
-          STREAM ���� MUD ��̬����� socket �ͱ����������ӵ�(connected)
-          ���Ҳ���ָ��λַ����� socket �� DATAGRAM ��̬���ͱ���ָ��λ
-          ַ��λַ�ĸ�ʽ�� "127.0.0.1 23"��
+     用法：
+          socket_write() 用一個 socket s 來傳送資料。如果 socket s 是
+          STREAM 或是 MUD 型態，這個 socket 就必須是已連接的(connected)
+          而且不能指定位址。如果 socket 是 DATAGRAM 型態，就必須指定位
+          址。位址的格式是 "127.0.0.1 23"。
 
-     ����ֵ��
-          socket_write() ���أ�
+     傳回值：
+          socket_write() 傳回：
 
-               �ɹ�ʱ�� EESUCCESS��
+               成功時是 EESUCCESS。
 
-               ʧ��ʱ��һ��������������ĸ�ֵ��
+               失敗時是一個含有下述意義的負值。
 
-     ����ֵ��
-          EEFDRANGE      ����ֵ(descriptor)������Χ��
+     錯誤值：
+          EEFDRANGE      描述值(descriptor)超出□圍。
 
-          EEBADF         ��Ч������ֵ��
+          EEBADF         無效的描述值。
 
-          EESECURITY     ��ͼΥ����ȫ��
+          EESECURITY     企圖違反安全。
 
-          EENOADDR       socket δָ��λַ��
+          EENOADDR       socket 未指定位址。
 
-          EEBADADDR      λַ��ʽ���⡣
+          EEBADADDR      位址格式問題。
 
-          EENOTCONN      socket ��δ���ӡ�
+          EENOTCONN      socket 尚未連接。
 
-          EEALREADY      �������ڽ����С�
+          EEALREADY      操作已在進行中。
 
-          EETYPENOTSUPP  ��֧Ԯ�������̬��
+          EETYPENOTSUPP  不支援此物件型態。
 
-          EEBADDATA      �������Ϻ���̫���Ρ�
+          EEBADDATA      傳送資料含有太多層次。
 
-          EESENDTO       sendto ���⡣
+          EESENDTO       sendto 問題。
 
-          EEMODENOTSUPP  ��֧Ԯ�� socket ��̬��
+          EEMODENOTSUPP  不支援此 socket 型態。
 
-          EEWOULDBLOCK   ��������ͣ��(blocked)��
+          EEWOULDBLOCK   操作將會停滯(blocked)。
 
-          EESEND         �������⡣
+          EESEND         傳送問題。
 
-          EECALLBACK     �ȴ��غ�(callback)�С�
+          EECALLBACK     等待回呼(callback)中。
 
-     ���գ�
+     參照：
           socket_connect(3), socket_create(3)
 
-     ���룺
+     翻譯：
           Kenny@Broken.History       97.Jul.27       (printed 3/16/95)
 
 

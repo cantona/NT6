@@ -1,28 +1,28 @@
 
         variables()
 
-        Ãû³Æ£º
-                variables() ÁÐ³öÖ¸¶¨Îï¼þÖÐµÄËùÓÐ±äÁ¿
+        åç¨±ï¼š
+                variables() åˆ—å‡ºæŒ‡å®šç‰©ä»¶ä¸­çš„æ‰€æœ‰è®Šé‡
 
-        Óï·¨£º
+        èªžæ³•ï¼š
                 string *variables(object, int default: 0);
-                ×Ö·û´®ÕóÁÐ variables(Îï¼þ£¬ ÕûÊý Ä¬ÈÏÎª 0)
+                å­—ç¬¦ä¸²é™£åˆ— variables(ç‰©ä»¶ï¼Œ æ•´æ•¸ é»˜èªç‚º 0)
 
-        ÓÃ·¨£º
-                variables() µÄ·µ»ØÖµÓÉÁ½ÖÖ²»Í¬µÄÇé¿ö¡£
-                µ±µÚ¶þ¸ö²ÎÊýÎªÁã(Ä¬ÈÏ¾ÍÊÇ 0)£¬º¯Êý·µ»ØµÚÒ»¸ö
-                ²ÎÊýËùÖÆ¶¨µÄÎï¼þÖÐµÄËùÓÐ±äÁ¿ÃûµÄÒ»¸ö×Ö·û´®Õó
-                ÁÐ¡£
-                µ±µÚ¶þ¸ö²ÎÊýÎª·ÇÁãÖµÊ±£¬»á·µ»Ø¸ü¶àµÄÐÅÏ¢£¬
-                Ã¿Ò»¸öÕóÁÐÔªËØ»áÏñÏÂÃæÕâ¸ö¸ñÊ½£º
+        ç”¨æ³•ï¼š
+                variables() çš„è¿”å›žå€¼ç”±å…©ç¨®ä¸åŒçš„æƒ…æ³ã€‚
+                ç•¶ç¬¬äºŒå€‹åƒæ•¸ç‚ºé›¶(é»˜èªå°±æ˜¯ 0)ï¼Œå‡½æ•¸è¿”å›žç¬¬ä¸€å€‹
+                åƒæ•¸æ‰€åˆ¶å®šçš„ç‰©ä»¶ä¸­çš„æ‰€æœ‰è®Šé‡åçš„ä¸€å€‹å­—ç¬¦ä¸²é™£
+                åˆ—ã€‚
+                ç•¶ç¬¬äºŒå€‹åƒæ•¸ç‚ºéžé›¶å€¼æ™‚ï¼Œæœƒè¿”å›žæ›´å¤šçš„ä¿¡æ¯ï¼Œ
+                æ¯ä¸€å€‹é™£åˆ—å…ƒç´ æœƒåƒä¸‹é¢é€™å€‹æ ¼å¼ï¼š
 
-                        ({ ±äÁ¿Ãû, ±äÁ¿ÀàÐÍ }). 
+                        ({ è®Šé‡å, è®Šé‡é¡žåž‹ }). 
 
-                ÆäÖÐ"±äÁ¿ÀàÐÍ"Îª±äÁ¿µÄ LPC ÀàÐÍ£¬Èç "string"
-                »òÕß "protected int" µÈ¡£
+                å…¶ä¸­"è®Šé‡é¡žåž‹"ç‚ºè®Šé‡çš„ LPC é¡žåž‹ï¼Œå¦‚ "string"
+                æˆ–è€… "protected int" ç­‰ã€‚
 
-        Õâ¸öº¯ÊýÐèÒªÔÚ options ÎÄ¼þÀï¶¨ÒåÁË PACKAGE_CONTRIB .
+        é€™å€‹å‡½æ•¸éœ€è¦åœ¨ options æ–‡ä»¶è£¡å®šç¾©äº† PACKAGE_CONTRIB .
 
-        by ·¢ÏÖºÅ(Find@tx)
+        by ç™¼ç¾è™Ÿ(Find@tx)
 
 

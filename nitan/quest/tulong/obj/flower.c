@@ -4,21 +4,21 @@ inherit HEAD;
 
 void create()
 {
-        string *names=({HIW"°ÙºÏ"NOR,HIR"Ãµ¹å"NOR,HIB"Ü½ÈØ"NOR,HIY"º£ÌÄ"NOR,HIM"Ç¾Ş±"NOR,HIG"ÓñÀ¼"NOR,HIC"¶¡Ïã"NOR,
-                       HIY"À°Ã·"NOR,HIR"ÔÂ¼¾"NOR,HIW"Ñ©Á«"NOR});
+        string *names=({HIW"ç™¾åˆ"NOR,HIR"ç«ç‘°"NOR,HIB"èŠ™è“‰"NOR,HIY"æµ·æ£ "NOR,HIM"è–”è–‡"NOR,HIG"ç‰è˜­"NOR,HIC"ä¸é¦™"NOR,
+                       HIY"è‡˜æ¢…"NOR,HIR"æœˆå­£"NOR,HIW"é›ªè“®"NOR});
         set_name(names[random(sizeof(names))], ({"flower", "hua"}));
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¶ä");
-                set("long","Ò»¶äÃÀÀöµÄ"+query("name", this_object())+NOR"¡£\n");
+                set("unit", "æœµ");
+                set("long","ä¸€æœµç¾éº—çš„"+query("name", this_object())+NOR"ã€‚\n");
                 set("value", 0);
                 set("material", "plant");
                 set_weight(10);
                 set("armor_prop/armor", 0);
                 set("armor_prop/per", random(2)+1);
-                set("wear_msg", "$NÇáÇáµØ°ÑÒ»¶ä$n´÷ÔÚÍ·ÉÏ¡£\n");
-                set("unequip_msg", "$NÇáÇáµØ°Ñ$n´ÓÍ·ÉÏÕªÁËÏÂÀ´¡£\n");
+                set("wear_msg", "$Nè¼•è¼•åœ°æŠŠä¸€æœµ$næˆ´åœ¨é ­ä¸Šã€‚\n");
+                set("unequip_msg", "$Nè¼•è¼•åœ°æŠŠ$nå¾é ­ä¸Šæ‘˜äº†ä¸‹ä¾†ã€‚\n");
         }
         setup();
 }

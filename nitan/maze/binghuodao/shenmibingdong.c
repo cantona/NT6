@@ -2,9 +2,9 @@ inherit __DIR__"binghuodao";
 
 void create()
 {
-        set("short", "神秘冰洞");
+        set("short", "绁炵鍐版礊");
         set("long",
-"这是冰火岛上隐藏的一处冰洞，冰洞内冰锥纵横，寒冷异常。\n"
+"閫欐槸鍐扮伀宄朵笂闅辫棌鐨勪竴铏曞啺娲烇紝鍐版礊鍏у啺閷愮副姗紝瀵掑喎鐣板父銆俓n"
 );
         set("exits", ([ 
                 "east"   : __DIR__"shenmibingdong2", 

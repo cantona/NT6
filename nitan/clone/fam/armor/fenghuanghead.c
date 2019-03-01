@@ -5,26 +5,26 @@ inherit HEAD;
 
 void create()
 {
-        set_name(HIR "·ï»ËÍ·¹Ú" NOR, ({ "fenghuang touguan", "touguan", "fenghuang" }));
+        set_name(HIR "é³³å‡°é ­å† " NOR, ({ "fenghuang touguan", "touguan", "fenghuang" }));
         set_weight(4000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIR "Ò»¶¥ÓÃ»ğ·ï»ËÓğÃ«ºÍ·ï»Ë½Ç×ö³ÉµÄÍ·¹Ú£¬Í¸Éä³öÒ»µÀÉãÈËĞÄÆÇµÄ¹âÃ¢¡£\n" NOR
-                            HIC "ÓĞĞ§ÕĞ¼ÜĞŞÕı£º+ 10        ÓĞĞ§Çá¹¦ĞŞÕı£º + 5\n" NOR
-                            HIC "¿¹¶¾Ğ§¹ûĞŞÕı£º+ 5%       ·ÀÓùĞ§¹ûµÈ¼¶£º  10\n" NOR
-                            HIC "¿¹¶¾»Ø±ÜĞŞÕı£º+ 5%\n" NOR);
-                set("unit", "¶¥");
+                set("long", HIR "ä¸€é ‚ç”¨ç«é³³å‡°ç¾½æ¯›å’Œé³³å‡°è§’åšæˆçš„é ­å† ï¼Œé€å°„å‡ºä¸€é“æ”äººå¿ƒé­„çš„å…‰èŠ’ã€‚\n" NOR
+                            HIC "æœ‰æ•ˆæ‹›æ¶ä¿®æ­£ï¼š+ 10        æœ‰æ•ˆè¼•åŠŸä¿®æ­£ï¼š + 5\n" NOR
+                            HIC "æŠ—æ¯’æ•ˆæœä¿®æ­£ï¼š+ 5%       é˜²å¾¡æ•ˆæœç­‰ç´šï¼š  10\n" NOR
+                            HIC "æŠ—æ¯’å›é¿ä¿®æ­£ï¼š+ 5%\n" NOR);
+                set("unit", "é ‚");
                 set("value", 500000);
                 set("armor_prop/armor", 10);
                 set("armor_prop/avoid_poison", 5);
                 set("armor_prop/reduce_poison", 5);
                 set("armor_prop/dodge", 5);
                 set("armor_prop/parry", 10);
-                set("wear_msg", HIR "$N" HIR "ÇáÇáµØ°Ñ$n"
-                    HIR "´÷ÔÚÍ·ÉÏ£¬É²ÄÇ¼ä¹â»ªËÄÉä¡£\n" NOR);
-                set("remove_msg", HIC "$N" HIC "ÇáÇáµØ°Ñ$n"
-                    HIC "´ÓÑü¼äÈ¡ÁËÏÂÀ´¡£\n" NOR);
+                set("wear_msg", HIR "$N" HIR "è¼•è¼•åœ°æŠŠ$n"
+                    HIR "æˆ´åœ¨é ­ä¸Šï¼Œå‰é‚£é–“å…‰è¯å››å°„ã€‚\n" NOR);
+                set("remove_msg", HIC "$N" HIC "è¼•è¼•åœ°æŠŠ$n"
+                    HIC "å¾è…°é–“å–äº†ä¸‹ä¾†ã€‚\n" NOR);
         }
         setup();
 }

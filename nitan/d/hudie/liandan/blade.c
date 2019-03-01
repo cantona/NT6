@@ -6,13 +6,13 @@ void finish(object me, object ob);
 
 void create()
 {
-        set_name(RED"Á­µ¶"NOR, ({ "lian dao"}));
+        set_name(RED"é®åˆ€"NOR, ({ "lian dao"}));
         set_weight(100);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»°Ñ²ÉÒ©ÈË³£ÓÃµÄÁ­µ¶£¬ÓÃÀ´Ñ°ÕÒ£¨search£©²İÀàÒ©²Ä¡£\n");
-                set("unit", "°Ñ"); 
+                set("long", "ä¸€æŠŠæ¡è—¥äººå¸¸ç”¨çš„é®åˆ€ï¼Œç”¨ä¾†å°‹æ‰¾ï¼ˆsearchï¼‰è‰é¡è—¥æã€‚\n");
+                set("unit", "æŠŠ"); 
                 set("no_get",1);
                 set("no_drop",1);             
                 set("no_put",1);
@@ -39,26 +39,26 @@ int do_search()
     	 || query("id", weapon) != "liandao" )
     	if( !objectp(weapon=query_temp("secondary_weapon", me) )
     	 || query("id", weapon) != "liandao" )
-        	return notify_fail("Äã²»ÄÃ×Å¹¤¾ß£¬ÕÒµ½Ò©²ÄÒ²¸î²»ÏÂÀ´°¡£¡\n");
+        	return notify_fail("ä½ ä¸æ‹¿è‘—å·¥å…·ï¼Œæ‰¾åˆ°è—¥æä¹Ÿå‰²ä¸ä¸‹ä¾†å•Šï¼\n");
 
-        if( strsrch(query("short", environment(me)),"²İ")<0
-         && strsrch(query("short", environment(me)),"´Ô")<0
-              && strsrch(query("long", environment(me)),"²İ")<0
-              && strsrch(query("long", environment(me)),"´Ô")<0 )
+        if( strsrch(query("short", environment(me)),"è‰")<0
+         && strsrch(query("short", environment(me)),"å¢")<0
+              && strsrch(query("long", environment(me)),"è‰")<0
+              && strsrch(query("long", environment(me)),"å¢")<0 )
 
 
-  	return notify_fail("Ö»ÓĞ²İ´ÔÖĞ²ÅÓĞ¿ÉÄÜÕÒµ½Ò©²İ!\n");
+  	return notify_fail("åªæœ‰è‰å¢ä¸­æ‰æœ‰å¯èƒ½æ‰¾åˆ°è—¥è‰!\n");
   	
 	if(me->is_busy())
-  	return notify_fail("ÄãÏÖÔÚÕıÃ¦,µÈÒ»ÏÂÔÙÕÒ°É!\n");
+  	return notify_fail("ä½ ç¾åœ¨æ­£å¿™,ç­‰ä¸€ä¸‹å†æ‰¾å§!\n");
 
   	if( query("search", environment(me))>time() )
-  	return notify_fail("ÎªÁË»·¾³±£»¤£¬Çë²»Òª¼ùÌ¤²İÆº!\n");
+  	return notify_fail("ç‚ºäº†ç’°å¢ƒä¿è­·ï¼Œè«‹ä¸è¦è¸è¸è‰åª!\n");
 
   	me->start_busy(5);
 
 	me->start_call_out( (: call_other, __FILE__, "finish", me, ob :), 3);
-	message_vision( HIB"$NËÄ´¦ÕÅÍû£¬¿´¿´ÄÜ²»ÄÜÕÒµ½ÓĞÓÃµÄÒ©²İ¡£\n"NOR, this_player());
+	message_vision( HIB"$Nå››è™•å¼µæœ›ï¼Œçœ‹çœ‹èƒ½ä¸èƒ½æ‰¾åˆ°æœ‰ç”¨çš„è—¥è‰ã€‚\n"NOR, this_player());
 	return 1;
 }
 
@@ -69,13 +69,13 @@ void finish(object me, object ob)
   	if(random(5)>3) 
 	{
   		me->start_busy(2);
-  		message_vision( HIW"Ñ°ÕÒÒ»·¬Ö®ºó$NÒ»ÎŞËù»ñ£¬Ö»µÃÊ§ÍûµØÌ¾ÁË¿ÚÆø¡£\n"NOR, this_player());
+  		message_vision( HIW"å°‹æ‰¾ä¸€ç•ªä¹‹å¾Œ$Nä¸€ç„¡æ‰€ç²ï¼Œåªå¾—å¤±æœ›åœ°å˜†äº†å£æ°£ã€‚\n"NOR, this_player());
 
    	}
   
   	else if ( random(20)<1) 
 	{
-  		message_vision( HIG"$NºÃ²»ÈİÒ×ÕÒµ½Ò»¿ÃÓĞÓÃµÄÒ©²İ£¬¸îÁËÁ½ÏÂÈ´·¢ÏÖÁ­µ¶±À»µÁË!\n"NOR, this_player());
+  		message_vision( HIG"$Nå¥½ä¸å®¹æ˜“æ‰¾åˆ°ä¸€æ£µæœ‰ç”¨çš„è—¥è‰ï¼Œå‰²äº†å…©ä¸‹å»ç™¼ç¾é®åˆ€å´©å£äº†!\n"NOR, this_player());
   		destruct(ob);
   	}
 	else
@@ -89,7 +89,7 @@ addn("neili", -(query("neili", me)/10), 		me);
    		cao->move(me);
   		me->start_busy(2);
 
-   		message_vision(HIR"$NÍ»È»·¢ÏÖÒ»¿Ã"+cao->name()+HIR"£¬Á¬Ã¦ÄÃÆğÁ­µ¶£¬Ğ¡ĞÄÒíÒíµØ½«Æä¸îÈ¡ÏÂÀ´¡£\n"NOR, this_player());
+   		message_vision(HIR"$Nçªç„¶ç™¼ç¾ä¸€æ£µ"+cao->name()+HIR"ï¼Œé€£å¿™æ‹¿èµ·é®åˆ€ï¼Œå°å¿ƒç¿¼ç¿¼åœ°å°‡å…¶å‰²å–ä¸‹ä¾†ã€‚\n"NOR, this_player());
 	}
 }
 

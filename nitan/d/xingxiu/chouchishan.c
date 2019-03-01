@@ -4,11 +4,11 @@ inherit ROOM;
 #include <ansi.h>
 void create()
 {
-        set("short", GRN"���ɽ"NOR);
+        set("short", GRN"仇池山"NOR);
         set("long", @LONG
-����������ţ������Ƹߣ�ɽ��εض���ֱ�����졣ɽ��ƽ��ǧĶ����
-��������������ģ������ºͣ�Ȫˮ�࣬ʤ����ɽ�����ʯɫ���죬��ˮ����
-ǿ����������С�����ܡ�ԶԶ���Կ������ϱ���һ����ΰ�Ĺذ���
+這裡絕壁峭峙，孤險雲高，山峰拔地而起，直刺藍天。山頂平田千畝，風
+景秀美，物產豐饒，氣候溫和，泉水多，勝跡遍山。仇池石色赭紅，吸水性能
+強，適宜養育小樹花卉。遠遠可以看見東南邊有一座雄偉的關隘。
 LONG);
         set("outdoors", "silu");
         set("exits", ([

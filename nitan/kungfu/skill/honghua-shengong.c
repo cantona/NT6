@@ -1,4 +1,4 @@
-// honghua-shengong.c ºì»¨Éñ¹¦
+// honghua-shengong.c ç´…èŠ±ç¥žåŠŸ
 // Last Modified by winder on Sep. 12 2001
 
 #include <ansi.h>;
@@ -27,23 +27,23 @@ int valid_learn(object me)
         if(i <= 100) for (j = 1; j < i / 10; j++) t *= 2;
 
         if ((int)me->query_skill("force", 1) < 10)
-                return notify_fail("ÄãµÄ»ù±¾ÄÚ¹¦»ðºò»¹²»¹»¡£\n");
+                return notify_fail("ä½ çš„åŸºæœ¬å…§åŠŸç«å€™é‚„ä¸å¤ ã€‚\n");
         if(i <= 100)
         {
                 if( i>10 && query("shen", me)<t*100 )
-                        return notify_fail("ÄãµÄÏÀÒåÕýÆøÌ«µÍÁË£¬ÎÞ·¨Áì»á¸ü¸ßÉîµÄºì»¨Éñ¹¦¡£\n");
+                        return notify_fail("ä½ çš„ä¿ ç¾©æ­£æ°£å¤ªä½Žäº†ï¼Œç„¡æ³•é ˜æœƒæ›´é«˜æ·±çš„ç´…èŠ±ç¥žåŠŸã€‚\n");
         }
         else
         {
                 if( query("shen", me)<(51200+(i-100)*1000) )
-                        return notify_fail("ÄãµÄÏÀÒåÕýÆøÌ«µÍÁË£¬ÎÞ·¨Áì»á¸ü¸ßÉîµÄºì»¨Éñ¹¦¡£\n");
+                        return notify_fail("ä½ çš„ä¿ ç¾©æ­£æ°£å¤ªä½Žäº†ï¼Œç„¡æ³•é ˜æœƒæ›´é«˜æ·±çš„ç´…èŠ±ç¥žåŠŸã€‚\n");
         }
         return ::valid_learn(me);
 }
 
 int practice_skill(object me)
 {
-        return notify_fail("ºì»¨Éñ¹¦Ö»ÄÜÓÃÑ§(learn)µÄÀ´Ôö¼ÓÊìÁ·¶È¡£\n");
+        return notify_fail("ç´…èŠ±ç¥žåŠŸåªèƒ½ç”¨å­¸(learn)çš„ä¾†å¢žåŠ ç†Ÿç·´åº¦ã€‚\n");
 }
 
 string exert_function_file(string func)
@@ -52,14 +52,14 @@ string exert_function_file(string func)
 }
 int help(object me)
 {
-        write(HIM"\nºì»¨Éñ¹¦£º"NOR"\n");
+        write(HIM"\nç´…èŠ±ç¥žåŠŸï¼š"NOR"\n");
         write(@HELP
 
-    ºì»¨»áµÜ×ÓÄÚ¹¦£¬¾ß×ÔÁÆ¡¢ËûÁÆ¼°ÔË¹¦Ö®ÓÃ¡£
+    ç´…èŠ±æœƒå¼Ÿå­å…§åŠŸï¼Œå…·è‡ªç™‚ã€ä»–ç™‚åŠé‹åŠŸä¹‹ç”¨ã€‚
 
-        Ñ§Ï°ÒªÇó£º
-                »ù±¾ÄÚ¹¦10¼¶
-                ÏàÓ¦µÄÕýÆø
+        å­¸ç¿’è¦æ±‚ï¼š
+                åŸºæœ¬å…§åŠŸ10ç´š
+                ç›¸æ‡‰çš„æ­£æ°£
 HELP
         );
         return 1;

@@ -1,12 +1,12 @@
 // This program is a part of NITAN MudLIB
-// lei.c Ñ¸À×
+// lei.c è¿…é›·
 
 #include <ansi.h>
 #include <combat.h>
 
 inherit F_SSERVER;
 
-string name() { return "Ñ¸À×"; }
+string name() { return "è¿…é›·"; }
 
 int perform(object me, object target)
 {
@@ -22,40 +22,40 @@ int perform(object me, object target)
         if( !target ) target = offensive_target(me);
 
         if( !target || !me->is_fighting(target) )
-                return notify_fail("¡¸Ñ¸À×¡¹Ö»ÄÜÔÚÕ½¶·ÖÐ¶Ô¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œè¿…é›·ã€åªèƒ½åœ¨æˆ°é¬¥ä¸­å°å°æ‰‹ä½¿ç”¨ã€‚\n");
 
        if( !weapon || query("skill_type", weapon) != "sword" )
-                return notify_fail("Äã±ØÐëÔÚÊ¹ÓÃ½£Ê±²ÅÄÜÊ¹³ö¡¸Ñ¸À×¡¹£¡\n");
+                return notify_fail("ä½ å¿…é ˆåœ¨ä½¿ç”¨åŠæ™‚æ‰èƒ½ä½¿å‡ºã€Œè¿…é›·ã€ï¼\n");
 
         if (me->query_skill_mapped("parry") != "xuantie-jian")
-                return notify_fail("ÄãµÄ»ù±¾ÕÐ¼Ü±ØÐëÊÇÐþÌú½£·¨Ê±²ÅÄÜÊ¹³ö¡¸Ñ¸À×¡¹£¡\n");
+                return notify_fail("ä½ çš„åŸºæœ¬æ‹›æž¶å¿…é ˆæ˜¯çŽ„éµåŠæ³•æ™‚æ‰èƒ½ä½¿å‡ºã€Œè¿…é›·ã€ï¼\n");
 
         if(me->query_skill("xuantie-jian", 1) < 160 )
-                return notify_fail("ÄãµÄÐþÌú½£·¨»¹²»¹»æµÊì£¬Ê¹²»³ö¡¸Ñ¸À×¡¹¡£\n");
+                return notify_fail("ä½ çš„çŽ„éµåŠæ³•é‚„ä¸å¤ å«»ç†Ÿï¼Œä½¿ä¸å‡ºã€Œè¿…é›·ã€ã€‚\n");
 
         if(me->query_skill("surge-force", 1) < 160 )
-                return notify_fail("ÄãµÄÅ­º£¿ñÌÎÐÞÎª²»¹»£¬Ê¹²»³ö¡¸Ñ¸À×¡¹¡£\n");
+                return notify_fail("ä½ çš„æ€’æµ·ç‹‚æ¿¤ä¿®ç‚ºä¸å¤ ï¼Œä½¿ä¸å‡ºã€Œè¿…é›·ã€ã€‚\n");
 
         if( (int)me->query_skill("force", 1) < 200 )
-                return notify_fail("ÄãµÄÄÚ¹¦µÈ¼¶²»¹»£¬Ê¹²»³ö¡¸Ñ¸À×¡¹¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸç­‰ç´šä¸å¤ ï¼Œä½¿ä¸å‡ºã€Œè¿…é›·ã€ã€‚\n");
 
         if( (int)me->query_str() < 32)
-                return notify_fail("ÄãµÄëöÁ¦»¹²»¹»£¬Ê¹²»³ö¡¸Ñ¸À×¡¹¡£\n");
+                return notify_fail("ä½ çš„è†‚åŠ›é‚„ä¸å¤ ï¼Œä½¿ä¸å‡ºã€Œè¿…é›·ã€ã€‚\n");
 
         if( (int)me->query_dex() < 30)
-                return notify_fail("ÄãµÄÉí·¨»¹²»¹»£¬Ê¹²»³ö¡¸Ñ¸À×¡¹¡£\n");
+                return notify_fail("ä½ çš„èº«æ³•é‚„ä¸å¤ ï¼Œä½¿ä¸å‡ºã€Œè¿…é›·ã€ã€‚\n");
 
         if( query("max_neili", me)<1800 )
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦Ì«Èõ£¬Ê¹²»³ö¡¸Ñ¸À×¡¹¡£\n");
+                return notify_fail("ä½ ç¾åœ¨å…§åŠ›å¤ªå¼±ï¼Œä½¿ä¸å‡ºã€Œè¿…é›·ã€ã€‚\n");
 
         if( query("neili", me)<900 )
-                return notify_fail("ÄãÏÖÔÚÕæÆøÌ«Èõ£¬Ê¹²»³ö¡¸Ñ¸À×¡¹¡£\n");
+                return notify_fail("ä½ ç¾åœ¨çœŸæ°£å¤ªå¼±ï¼Œä½¿ä¸å‡ºã€Œè¿…é›·ã€ã€‚\n");
 
         addn_temp("apply/str", z/6, me);
         addn_temp("apply/attack", j/6, me);
         addn_temp("apply/damage", z/2, me);
 
-        msg = BLU "\n$N½«ÊÖÖÐµÄ"+weapon->name()+"»º»ºÏò$nÒ»Ñ¹£¬ºöÈ»½£¹âÒ»ÉÁ£¬ Ò»½£»ÃÎªËÄ½££¬ÍðÈç±¼À×³¸µç¹¥Ïò$n£¡\n\n"NOR;
+        msg = BLU "\n$Nå°‡æ‰‹ä¸­çš„"+weapon->name()+"ç·©ç·©å‘$nä¸€å£“ï¼Œå¿½ç„¶åŠå…‰ä¸€é–ƒï¼Œ ä¸€åŠå¹»ç‚ºå››åŠï¼Œå®›å¦‚å¥”é›·æŽ£é›»æ”»å‘$nï¼\n\n"NOR;
         message_combatd(msg, me, target);
 
         COMBAT_D->do_attack(me,target,query_temp("weapon", me));

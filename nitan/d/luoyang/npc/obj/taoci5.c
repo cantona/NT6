@@ -3,13 +3,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIC "Ááçç·ÉÌìÅå" NOR, ({ "feitian pei", "feitian", "pei"}) );
+        set_name(HIC "ç²ç“é£›å¤©ä½©" NOR, ({ "feitian pei", "feitian", "pei"}) );
         set_weight(5000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ö»");
-                set("long", HIC "¾­ÌÆÈı²ÊÉÕÖÆµÄÁáçç·ÉÌìÅå£¬·Ç³£µÄ°º¹ó¡£\n" NOR);
+                set("unit", "åª");
+                set("long", HIC "ç¶“å”ä¸‰å½©ç‡’åˆ¶çš„ç²ç“é£›å¤©ä½©ï¼Œéå¸¸çš„æ˜‚è²´ã€‚\n" NOR);
                 set("value", 1500);
         }
 }

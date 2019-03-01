@@ -4,9 +4,9 @@
 inherit NPC;
 void create()
 {
-        set_name("½üÎÀ±ø",({"jinwei bing","bing"}));
-        set("gender","ÄĞĞÔ");
-        set("long","ÌùÉí±£»¤ÌúÄ¾ÕæµÄÓÂÊ¿£¡\n");
+        set_name("è¿‘è¡›å…µ",({"jinwei bing","bing"}));
+        set("gender","ç”·æ€§");
+        set("long","è²¼èº«ä¿è­·éµæœ¨çœŸçš„å‹‡å£«ï¼\n");
         set("combat_exp",200000);
         set("age",18+random(30));
         set("qi",1500);

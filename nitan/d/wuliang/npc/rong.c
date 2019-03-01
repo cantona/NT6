@@ -4,12 +4,12 @@
 inherit NPC;
 void create()
 {
-        set_name("Èİ×Ó¾Ø", ({ "rong ziju", "rong", "ziju"}));
+        set_name("å®¹å­çŸ©", ({ "rong ziju", "rong", "ziju"}));
         set("long",
-                "ËûÊÇÒ»Î»Éí²Ä¸ß´óµÄÖĞÄêµÀÈË¡£\n"
+                "ä»–æ˜¯ä¸€ä½èº«æé«˜å¤§çš„ä¸­å¹´é“äººã€‚\n"
         );
 
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("attitude", "friendly");
         set("class", "taoist");
 
@@ -41,10 +41,10 @@ void create()
         map_skill("parry", "damo-jian");
 
         set("inquiry", ([
-                "ÎŞÁ¿Óñ±Ú"  : "ÄÇÊÇ±¾ÅÉ½ûµØ£¬ÈÎºÎÍâÈË²»µÃÉÃÈë¡£¸É·¸½û¼É£¬¿É½ĞÄãËÀÔáÉíÖ®µØ¡£",
+                "ç„¡é‡ç‰å£"  : "é‚£æ˜¯æœ¬æ´¾ç¦åœ°ï¼Œä»»ä½•å¤–äººä¸å¾—æ“…å…¥ã€‚å¹¹çŠ¯ç¦å¿Œï¼Œå¯å«ä½ æ­»è‘¬èº«ä¹‹åœ°ã€‚",
         ]));
 
-        create_family("ÎŞÁ¿½£¶«×Ú", 4, "µÜ×Ó");
+        create_family("ç„¡é‡åŠæ±å®—", 4, "å¼Ÿå­");
         setup();
 
         carry_object("/d/wudang/obj/greyrobe")->wear();

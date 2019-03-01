@@ -1,4 +1,4 @@
-// weishi.h Éı¼¶µ½ÎÀÊ¿, °İÊ¦
+// weishi.h å‡ç´šåˆ°è¡›å£«, æ‹œå¸«
 int ask_me()
 {
         object ob, me;
@@ -6,19 +6,19 @@ int ask_me()
         ob = this_player();
         if ((int)ob->query_skill("kurong-changong",1) < 60)
         {
-                command("say ÄãÏëµ±ÎÀÊ¿£¬ÔÙÁ·¼¸Äê¹¦°É¡£\n");
+                command("say ä½ æƒ³ç•¶è¡›å£«ï¼Œå†ç·´å¹¾å¹´åŠŸå§ã€‚\n");
                 return 1;
         }
         
-        if( query("guard", ob) == "ÕòÄÏÍõ¸®¼Ò³¼" )
+        if( query("guard", ob) == "é®å—ç‹åºœå®¶è‡£" )
         {
                 set_temp("fight_ok", 1, ob);
-                command("say ºÃ£¬¼ÈÈ»Èç´ËÏëÇĞ´è£¬ÄÇ¾Í¿´ÄãµÄ±¾ÊÂÈçºÎÁË¡£\n");
+                command("say å¥½ï¼Œæ—¢ç„¶å¦‚æ­¤æƒ³åˆ‡ç£‹ï¼Œé‚£å°±çœ‹ä½ çš„æœ¬äº‹å¦‚ä½•äº†ã€‚\n");
                 return 1;
         }
         else
         {
-                command("say Ö»ÓĞ¼Ò³¼²ÅÄÜÉıÎÀÊ¿¡£\n");
+                command("say åªæœ‰å®¶è‡£æ‰èƒ½å‡è¡›å£«ã€‚\n");
                 return 1;
         }
 }
@@ -52,15 +52,15 @@ int checking(object me, object ob)
 
         if( (query("qi", me)*100/my_max_qi) <= 50 )
         {
-                command("say Çà³öì¶À¶Ê¤ì¶À¶£¬²»À¢ÊÇ´óÀí¶Î¼ÒµÄºÃµÜ×Ó£¡¹§Ï²ÄãÁË£¡\n");
-                command("say ÄãµÄÒÑ¾­¿ÉÒÔÊ¤ÈÎ´óÀíÎÀÊ¿£¡\n");
-                upgrade_title(ob, "ÕòÄÏÍõ¸®ÎÀÊ¿");
+                command("say é’å‡ºæ–¼è—å‹æ–¼è—ï¼Œä¸æ„§æ˜¯å¤§ç†æ®µå®¶çš„å¥½å¼Ÿå­ï¼æ­å–œä½ äº†ï¼\n");
+                command("say ä½ çš„å·²ç¶“å¯ä»¥å‹ä»»å¤§ç†è¡›å£«ï¼\n");
+                upgrade_title(ob, "é®å—ç‹åºœè¡›å£«");
                 return 1;
         }
         if( (query("qi", ob)*100/his_max_qi)<50 )
         {
-                command("say ¿´À´" + RANK_D->query_respect(ob) + 
-                        "»¹µÃ¶à¼ÓÁ·Ï°£¬·½ÄÜÔÚ´óÀí¶Î¼ÒÖî¶àµÜ×ÓÖĞ³öÈËÍ·µØ£¡\n");
+                command("say çœ‹ä¾†" + RANK_D->query_respect(ob) + 
+                        "é‚„å¾—å¤šåŠ ç·´ç¿’ï¼Œæ–¹èƒ½åœ¨å¤§ç†æ®µå®¶è«¸å¤šå¼Ÿå­ä¸­å‡ºäººé ­åœ°ï¼\n");
                 return 1;
         }
         return 1;  
@@ -74,36 +74,36 @@ void upgrade_title(object ob,string arg)
 /*
 string clear_title(string arg)
 {
-        if (strsrch(arg, "´óÀíÕòÄÏÍõ¸®¼Ò³¼") >= 0)
+        if (strsrch(arg, "å¤§ç†é®å—ç‹åºœå®¶è‡£") >= 0)
         {
-                arg = replace_string(arg, "´óÀíÕòÄÏÍõ¸®¼Ò³¼","");
+                arg = replace_string(arg, "å¤§ç†é®å—ç‹åºœå®¶è‡£","");
         }
         return arg;
 }
 */
 void attempt_apprentice(object ob)
 {
-        if( (query("guard", ob) != "ÕòÄÏÍõ¸®¼ÒÅ«") && 
-            (query("family/family_name", ob) != "´óÀí¶Î¼Ò") )
+        if( (query("guard", ob) != "é®å—ç‹åºœå®¶å¥´") && 
+            (query("family/family_name", ob) != "å¤§ç†æ®µå®¶") )
         {
                 command("shake"+query("id", this_player()));
-                command("say ÎÒÔçÒÑÍ¶Éí´óÀíÎª³¼£¬²»ÔÙÉæ×ã½­ºşË×Îñ£¬²»ÄÜÊÕÍ½ÁË¡£\n");
+                command("say æˆ‘æ—©å·²æŠ•èº«å¤§ç†ç‚ºè‡£ï¼Œä¸å†æ¶‰è¶³æ±Ÿæ¹–ä¿—å‹™ï¼Œä¸èƒ½æ”¶å¾’äº†ã€‚\n");
                 return;
         }
         if( query("shen", ob)<0 )
         {
-                command("say ÎÒ´óÀí¶ÎÊÏÏòÀ´²»ÓëÄúÕâÖÖºÚµÀÈËÎï´ò½»µÀ£¬ÄúÇë»Ø°É£¡");
+                command("say æˆ‘å¤§ç†æ®µæ°å‘ä¾†ä¸èˆ‡æ‚¨é€™ç¨®é»‘é“äººç‰©æ‰“äº¤é“ï¼Œæ‚¨è«‹å›å§ï¼");
                 return;
         }
         if( query("combat_exp", ob)>10000 || query("age", ob)>17 )
         {
-                command("say ÕòÄÏÍõ¸®ÊÕÁË´óÏÀÄú£¬Ò²ÈÃÄãÌ«Çü×ğÁË°É£¡");
+                command("say é®å—ç‹åºœæ”¶äº†å¤§ä¿ æ‚¨ï¼Œä¹Ÿè®“ä½ å¤ªå±ˆå°Šäº†å§ï¼");
                 return;
         }
-        command("say ºÜºÃ£¬ºÜºÃ¡£¼ÈÒÑÈë¸®£¬±ãµ±¾¡ÖÒ±¨Ö÷£¬ÕâÌõĞÔÃüÒ²¾Í²»ÊÇ×Ô¼ºµÄÁË¡£\n");
+        command("say å¾ˆå¥½ï¼Œå¾ˆå¥½ã€‚æ—¢å·²å…¥åºœï¼Œä¾¿ç•¶ç›¡å¿ å ±ä¸»ï¼Œé€™æ¢æ€§å‘½ä¹Ÿå°±ä¸æ˜¯è‡ªå·±çš„äº†ã€‚\n");
         command("recruit "+query("id", ob));
-        if( query("gender", ob) == "ÄĞĞÔ" )
-                set("guard", "ÕòÄÏÍõ¸®¼Ò¶¡", ob);
+        if( query("gender", ob) == "ç”·æ€§" )
+                set("guard", "é®å—ç‹åºœå®¶ä¸", ob);
         else
-                set("guard", "ÕòÄÏÍõ¸®æ¾Å®", ob);
+                set("guard", "é®å—ç‹åºœå©¢å¥³", ob);
 }

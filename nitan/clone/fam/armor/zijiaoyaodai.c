@@ -5,26 +5,26 @@ inherit WAIST;
 
 void create()
 {
-        set_name(NOR + MAG "×ÏòÔÑü´ø" NOR, ({ "zijiao belt", "belt", "zijiao" }));
+        set_name(NOR + MAG "ç´«è›Ÿè…°å¸¶" NOR, ({ "zijiao belt", "belt", "zijiao" }));
         set_weight(4000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", NOR + MAG "Ò»¸ùÓÃÄÏº£¶ñòÔÖ®½î×ö³ÉµÄÑü´ø£¬ÒşÒşµØÍ¸×ÅĞ°Æø¡£\n" NOR
-                            HIC "ÓĞĞ§ÕĞ¼ÜĞŞÕı£º+ 15        ÓĞĞ§Çá¹¦ĞŞÕı£º + 5\n" NOR
-                            HIC "¿¹¶¾Ğ§¹ûĞŞÕı£º+ 5%        ·ÀÓùĞ§¹ûµÈ¼¶£º  40\n" NOR
-                            HIC "¿¹¶¾»Ø±ÜĞŞÕı£º+ 5%\n" NOR);
-                set("unit", "¸ù");
+                set("long", NOR + MAG "ä¸€æ ¹ç”¨å—æµ·æƒ¡è›Ÿä¹‹ç­‹åšæˆçš„è…°å¸¶ï¼Œéš±éš±åœ°é€è‘—é‚ªæ°£ã€‚\n" NOR
+                            HIC "æœ‰æ•ˆæ‹›æ¶ä¿®æ­£ï¼š+ 15        æœ‰æ•ˆè¼•åŠŸä¿®æ­£ï¼š + 5\n" NOR
+                            HIC "æŠ—æ¯’æ•ˆæœä¿®æ­£ï¼š+ 5%        é˜²å¾¡æ•ˆæœç­‰ç´šï¼š  40\n" NOR
+                            HIC "æŠ—æ¯’å›é¿ä¿®æ­£ï¼š+ 5%\n" NOR);
+                set("unit", "æ ¹");
                 set("value", 500000);
                 set("armor_prop/armor", 40);
                 set("armor_prop/avoid_poison", 5);
                 set("armor_prop/reduce_poison", 5);
                 set("armor_prop/dodge", 5);
                 set("armor_prop/parry", 15);
-                set("wear_msg", NOR + MAG "$N" NOR + MAG "ÇáÇáµØ°Ñ$n"
-                    NOR + MAG "ÏµÔÚÑü¼ä¡£\n" NOR);
-                set("remove_msg", HIC "$N" HIC "ÇáÇáµØ°Ñ$n"
-                    HIC "´ÓÑü¼äÈ¡ÁËÏÂÀ´¡£\n" NOR);
+                set("wear_msg", NOR + MAG "$N" NOR + MAG "è¼•è¼•åœ°æŠŠ$n"
+                    NOR + MAG "ç³»åœ¨è…°é–“ã€‚\n" NOR);
+                set("remove_msg", HIC "$N" HIC "è¼•è¼•åœ°æŠŠ$n"
+                    HIC "å¾è…°é–“å–äº†ä¸‹ä¾†ã€‚\n" NOR);
         }
         setup();
 }

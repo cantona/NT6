@@ -1,5 +1,5 @@
 // Code of ShenZhou
-// renshen-guo.c ÈË²Î¹û
+// renshen-guo.c äººåƒæœ
 
 #include <ansi.h>
 
@@ -7,13 +7,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIG "ÈË²Î¹û" NOR, ({"renshen guo", "guo"}));
+        set_name(HIG "äººåƒæœ" NOR, ({"renshen guo", "guo"}));
         set_weight(90);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ã¶");
-                set("long", "ÕâÊÇÒ»Ã¶ÈË²Î¹û£¬¿´ÉÏÈ¥¾ÍÏñÒ»¸ö°×°×ÅÖÅÖµÄĞ¡ÍŞÍŞ¡£\n");
+                set("unit", "æš");
+                set("long", "é€™æ˜¯ä¸€æšäººåƒæœï¼Œçœ‹ä¸Šå»å°±åƒä¸€å€‹ç™½ç™½èƒ–èƒ–çš„å°å¨ƒå¨ƒã€‚\n");
                 set("value", 20000);
                 set("no_sell", 1);
                 set("medicine", 1);
@@ -26,8 +26,8 @@ int cure_ob(object me)
 {
         if (me->query_condition("cool_drug") > 0){
         addn("max_neili", -1, me);
-        message_vision(HIR "$N³ÔÏÂÒ»Ã¶ÈË²Î¹û£¬Ö»¾õµÃÍ·ÖØ½ÅÇá£¬Ò¡Ò¡Óûµ¹£¬
-Ô­À´·şÊ³Ì«¼±Ì«¶à£¬Ò©Ğ§ÊÊµÃÆä·´£¡\n" NOR, me);
+        message_vision(HIR "$Nåƒä¸‹ä¸€æšäººåƒæœï¼Œåªè¦ºå¾—é ­é‡è…³è¼•ï¼Œæ–æ–æ¬²å€’ï¼Œ
+åŸä¾†æœé£Ÿå¤ªæ€¥å¤ªå¤šï¼Œè—¥æ•ˆé©å¾—å…¶åï¼\n" NOR, me);
         destruct(this_object());
         return 1;
         }
@@ -41,7 +41,7 @@ int cure_ob(object me)
         set("food", me->max_food_capacity(), me);
         set("water", me->max_water_capacity(), me);
         
-        message_vision(HIG "$N³ÔÏÂÒ»Ã¶ÈË²Î¹û£¬Ö»¾õµÃ¾«Éñ½¡Íú£¬ÆøÑª³äÓ¯£¬ÌåÄÚÕæÁ¦Ô´Ô´×ÌÉú£¬½«Æ£·¦¼¢¿ÊÒ»É¨¶ø¿Õ! \n" NOR, me);
+        message_vision(HIG "$Nåƒä¸‹ä¸€æšäººåƒæœï¼Œåªè¦ºå¾—ç²¾ç¥å¥æ—ºï¼Œæ°£è¡€å……ç›ˆï¼Œé«”å…§çœŸåŠ›æºæºæ»‹ç”Ÿï¼Œå°‡ç–²ä¹é¥‘æ¸´ä¸€æƒè€Œç©º! \n" NOR, me);
         me->apply_condition("cool_drug", 30);
         destruct(this_object());
         return 1;

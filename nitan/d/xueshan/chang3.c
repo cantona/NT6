@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�䳡");
+        set("short", "武場");
         set("long", @LONG
- ������ѩɽ�µ�С���䳡�����źö�ľ׮��ɳ����ɮ�����ճ���
-�ڴ˿̿�ϰ�䡣�����߾��Ǵ����䳡������ѩɽ����������������
+ 這裡是雪山寺的小練武場，樹著好多木樁和沙袋，僧人們日常均
+在此刻苦習武。往南走就是大練武場，許多雪山弟子在那裡練功。
 LONG );
         set("outdoors", "xueshan");
 

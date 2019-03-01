@@ -1,17 +1,17 @@
-// wineskin.c  ¾Æ´ü
+// wineskin.c  é…’è¢‹
 
 inherit ITEM;
 inherit F_LIQUID;
 
 void create()
 {
-        set_name("¿ÉÀÖ", ({"ke le", "ke", "le"}));
+        set_name("å¯æ¨‚", ({"ke le", "ke", "le"}));
         set_weight(700);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»±­·ÅÁË±ù¿éµÄ¿ÉÀÖ¡£\n");
-                set("unit", "±­");
+                set("long", "ä¸€æ¯æ”¾äº†å†°å¡Šçš„å¯æ¨‚ã€‚\n");
+                set("unit", "æ¯");
                 set("value", 20);
                 set("max_liquid", 15);
         }

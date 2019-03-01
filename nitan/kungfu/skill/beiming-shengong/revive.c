@@ -1,34 +1,34 @@
 // This program is a part of NITAN MudLIB
 // revive.c
 
-// ÐéÖñ¼ûÁËËýµÄÉËÊÆ£¬ÏëÆð´Ï±çÏÈÉúËÕÐÇºÓÔø½Ì¹ýËûÕâÃÅÖÎÉËÖ®·¨£¬µ±¼´´ßÍÕ½üÇ°£¬
-// ×óÊÖÖÐÖ¸Á¬µ¯£¬ÒÑ·â±ÕÁËÄÇÅ®×Ó¶Ï±Û´¦µÄÑ¨µÀ£¬ÑªÁ÷Á¢Ö¹¡£µÚÁù´Îµ¯Ö¸Ê±£¬Ê¹µÄ
-// ÊÇÍ¯ÀÑËù½ÌµÄÒ»ÕÐ¡®ÐÇÍèÌøÖÀ¡¯£¬Ò»¹ÉµÄ±±Ú¤ÕæÆøÉäÈëËýµÄ±Û¸ù¡®ÖÐ¸®Ñ¨¡¯ÖÐ¡£ÄÇÅ®
-// ×Ó¡°°¡¡±µÄÒ»Éù´ó½Ð£¬ÐÑÁË×ªÀ´£¬
+// è™›ç«¹è¦‹äº†å¥¹çš„å‚·å‹¢ï¼Œæƒ³èµ·è°è¾¯å…ˆç”Ÿè˜‡æ˜Ÿæ²³æ›¾æ•™éŽä»–é€™é–€æ²»å‚·ä¹‹æ³•ï¼Œç•¶å³å‚¬é§è¿‘å‰ï¼Œ
+// å·¦æ‰‹ä¸­æŒ‡é€£å½ˆï¼Œå·²å°é–‰äº†é‚£å¥³å­æ–·è‡‚è™•çš„ç©´é“ï¼Œè¡€æµç«‹æ­¢ã€‚ç¬¬å…­æ¬¡å½ˆæŒ‡æ™‚ï¼Œä½¿çš„
+// æ˜¯ç«¥å§¥æ‰€æ•™çš„ä¸€æ‹›â€˜æ˜Ÿä¸¸è·³æ“²â€™ï¼Œä¸€è‚¡çš„åŒ—å†¥çœŸæ°£å°„å…¥å¥¹çš„è‡‚æ ¹â€˜ä¸­åºœç©´â€™ä¸­ã€‚é‚£å¥³
+// å­â€œå•Šâ€çš„ä¸€è²å¤§å«ï¼Œé†’äº†è½‰ä¾†ï¼Œ
 
 #include <ansi.h>
 
 int exert(object me, object target)
 {       
         if( !target )           
-                return notify_fail("Äã×Ô¼ºÊÇÇåÐÑµÄÂð£¿\n");     
+                return notify_fail("ä½ è‡ªå·±æ˜¯æ¸…é†’çš„å—Žï¼Ÿ\n");     
 
         if( me->is_fighting() || target->is_fighting())         
-                return notify_fail("Õ½¶·ÖÐÎÞ·¨ÔË¹¦£¡\n");       
+                return notify_fail("æˆ°é¬¥ä¸­ç„¡æ³•é‹åŠŸï¼\n");       
 
         if(target == me)                
-                return notify_fail("Äã²»ÄÜ¶Ô×Ô¼ºÔË¹¦£¡\n");     
+                return notify_fail("ä½ ä¸èƒ½å°è‡ªå·±é‹åŠŸï¼\n");     
 
         if( query("max_neili", me)<1000 )
-                return notify_fail("ÄãµÄÄÚÁ¦ÐÞÎª²»¹»¡£\n");     
+                return notify_fail("ä½ çš„å…§åŠ›ä¿®ç‚ºä¸å¤ ã€‚\n");     
 
         if( query("neili", me)<350 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»¡£\n");        
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ã€‚\n");        
 
         if( living(target) )            
-                return notify_fail( target->name() +"ÒÑ¾­ÊÇÇåÐÑµÄ£¡\n");        
+                return notify_fail( target->name() +"å·²ç¶“æ˜¯æ¸…é†’çš„ï¼\n");        
 
-        message_vision(HIY "$N×óÊÖÖÐÖ¸Á¬µ¯£¬Ò»ÕÐ¡®ÐÇÍèÌøÖÀ¡¯£¬Ò»¹ÉÕæÆøÉäÈë$nµÄ±Û¸ù¡®ÖÐ¸®Ñ¨¡¯ÖÐ¡£\n\n" NOR,me, target );    
+        message_vision(HIY "$Nå·¦æ‰‹ä¸­æŒ‡é€£å½ˆï¼Œä¸€æ‹›â€˜æ˜Ÿä¸¸è·³æ“²â€™ï¼Œä¸€è‚¡çœŸæ°£å°„å…¥$nçš„è‡‚æ ¹â€˜ä¸­åºœç©´â€™ä¸­ã€‚\n\n" NOR,me, target );    
 
         target->revive(); 
         

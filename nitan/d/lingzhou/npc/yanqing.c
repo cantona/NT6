@@ -4,12 +4,12 @@ inherit NPC;
 
 void create()
 {
-        set_name("¶ÎÑÓÇì", ({ "duan yanqing", "duan", "yanqing" }));
+        set_name("æ®µå»¶æ…¶", ({ "duan yanqing", "duan", "yanqing" }));
         set_weight(10000000);
-        set("nickname", "¶ñ¹áÂúÓ¯");
+        set("nickname", "æƒ¡è²«æ»¿ç›ˆ");
         set("long", 
-"´ËÈËÉíĞÎĞŞ³¤£¬ÆäĞØÍ¹³ö£¬ÓÉÈçÒ»¹Ä¡£³¤÷×´¹ĞØ£¬¸ù¸ùÆáºÚ¡£µ«ÊÇÈ³ÁËË«ÍÈ£¬Öô×Å¸ù¸ÖÖÆ¹ÕÕÈ¡£\n");
-        set("gender", "ÄĞĞÔ");
+"æ­¤äººèº«å½¢ä¿®é•·ï¼Œå…¶èƒ¸å‡¸å‡ºï¼Œç”±å¦‚ä¸€é¼“ã€‚é•·é«¯å‚èƒ¸ï¼Œæ ¹æ ¹æ¼†é»‘ã€‚ä½†æ˜¯ç˜¸äº†é›™è…¿ï¼Œæ‹„è‘—æ ¹é‹¼åˆ¶æ‹æ–ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 55);
         set("attitude", "aggressive");
         set("shen_type", -1);

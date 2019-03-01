@@ -6,15 +6,15 @@ int ask_for_gongzi();
 
 void create()
 {
-       set_name("ÕÊ·¿ÏÈÉú", ({"zhang fang", "zhangfang", "xiansheng"}));
+       set_name("å¸³æˆ¿å…ˆç”Ÿ", ({"zhang fang", "zhangfang", "xiansheng"}));
         set("long",
-"ËûÒ»ÉíåååÝ£¬ÕûÌìÃÔÃÔºýºýµÄË¯²»ÐÑÄ£Ñù¡£\n");
-        set("gender", "ÄÐÐÔ");
+"ä»–ä¸€èº«é‚‹é¢ï¼Œæ•´å¤©è¿·è¿·ç³Šç³Šçš„ç¡ä¸é†’æ¨¡æ¨£ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("attitude", "heroism");
 
         set("inquiry",([
-                "¹¤×Ê"    : (: ask_for_gongzi :),
-                "Ð½Ë®"    : (: ask_for_gongzi :),
+                "å·¥è³‡"    : (: ask_for_gongzi :),
+                "è–ªæ°´"    : (: ask_for_gongzi :),
                 "salary"  : (: ask_for_gongzi :),
                 "payment" : (: ask_for_gongzi :),
                 "gongzi"  : (: ask_for_gongzi :),
@@ -61,15 +61,15 @@ int ask_for_gongzi()
                 payment=new("/clone/money/gold");
                 if (paytimes ==0)
                 {
-                        tell_object(me, "ÕÊ·¿ÏÈÉúµÀ£ºÄãµÄâÃÒøÒÑ¾­Áì¹ýÁË°É¡£\n");
+                        tell_object(me, "å¸³æˆ¿å…ˆç”Ÿé“ï¼šä½ çš„é¤‰éŠ€å·²ç¶“é ˜éŽäº†å§ã€‚\n");
                 }
                 else
                 {
                         payment->set_amount(paytimes);
                         payment->move(me);
-                        tell_object(me, "ÕÊ·¿ÏÈÉúµÀ£ºÕâÊÇÄãµÄâÃÒø£¬ÊÕºÃ°É¡£\n");
+                        tell_object(me, "å¸³æˆ¿å…ˆç”Ÿé“ï¼šé€™æ˜¯ä½ çš„é¤‰éŠ€ï¼Œæ”¶å¥½å§ã€‚\n");
                 }
         }
-        else tell_object(me,"ÕÊ·¿ÏÈÉúµÀ£ºÆÛ¸ºÎÒÀÏºýÍ¿£¿Äã¸ù±¾²»ÊÇÒ»Æ·ÌÃµÄÈË£¡\n");
+        else tell_object(me,"å¸³æˆ¿å…ˆç”Ÿé“ï¼šæ¬ºè² æˆ‘è€ç³Šå¡—ï¼Ÿä½ æ ¹æœ¬ä¸æ˜¯ä¸€å“å ‚çš„äººï¼\n");
         return 1;
 }

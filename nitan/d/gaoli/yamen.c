@@ -1,14 +1,14 @@
 // /d/gaoli/yamen
-// Room in ¸ßÀö
+// Room in é«˜éº—
 // rich 99/03/28
 inherit ROOM;
 void create()        
 {
-        set("short", "³Ç·ÀÑÃÃÅ");
+        set("short", "åŸŽé˜²è¡™é–€");
         set("long", @LONG
-ÕâÀïÊÇ¸ßÀöµÄ³Ç·ÀÑÃµÄ¹ÙÎÀ·¿£¬´ó¸ÅÓÐÈýÕÉ¼û·½£¬ÖÐ¼äÓÐÕÅ³¤°¸£¬
-Ò»Î»½«¾üÔÚÕâÀï°ì¹«£¬ÕâÀïÖ÷Òª¸ºÔð¸ßÀö³ÇµÄ·ÀÎñ°²È«£¬ÒÔ¼°·ÀµÁ£¬·À
-»ð£¬×½ÄÃÌÓ·¸µÈÊÂÎï¡£ 
+é€™è£¡æ˜¯é«˜éº—çš„åŸŽé˜²è¡™çš„å®˜è¡›æˆ¿ï¼Œå¤§æ¦‚æœ‰ä¸‰ä¸ˆè¦‹æ–¹ï¼Œä¸­é–“æœ‰å¼µé•·æ¡ˆï¼Œ
+ä¸€ä½å°‡è»åœ¨é€™è£¡è¾¦å…¬ï¼Œé€™è£¡ä¸»è¦è² è²¬é«˜éº—åŸŽçš„é˜²å‹™å®‰å…¨ï¼Œä»¥åŠé˜²ç›œï¼Œé˜²
+ç«ï¼Œæ‰æ‹¿é€ƒçŠ¯ç­‰äº‹ç‰©ã€‚ 
 LONG
         );
 set("exits", ([

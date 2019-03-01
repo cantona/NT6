@@ -1,204 +1,204 @@
 ---------------------------------------------------------------------------------
-$BBLU$$HIW$                        ¡¼ÄàÌ¶III¸÷ÃÅÅÉ²¿·Öskill½âÃÜ¡½                           $NOR$
+$BBLU$$HIW$                        â–¡æ³¥æ½­IIIå„é–€æ´¾éƒ¨åˆ†skillè§£å¯†â–¡                           $NOR$
 ---------------------------------------------------------------------------------
-©³©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©·
-©§    ÄàÌ¶ÀïµÄ²¿·ÖÃÅÅÉ¼¼ÄÜÓÐÊé¿É¶Á£¬ÕâÀïºöÂÔµôÖ±½ÓÎÊÊ¦¸¸¾Í¿ÉÒÔÄÃµ½µÄÒ»Ð©Êé¼®£¬Ö÷©§
-©§Òª½éÉÜÒ»Ð©ÐèÒª½âÃÕµÄ¶«Î÷¡£                                                        ©§
-©»©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¿
-©³©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©·
-©§$HIY$¾ÅÑôÉñ¹¦ (jiuyang-shengong)$NOR$  <Ã÷½Ì>                                                ©§
-©§                                                                                ©§
-©§    ÒªÇó£ºÃ÷½ÌµÜ×Ó£¬²»ÄÜÊÇÌ«¼à£¬ÏÈÌìÎòÐÔ30£¬ÏÈÌì¸ù¹Ç32£¬×î´óÄÚÁ¦ > 3500£¬        ©§
-©§          ÎäÑ§ÐÞÑø > 100                                                        ©§
-©§                                                                                ©§
-©§    Â·¾¶£ºÓÚÕÅÎÞ¼É´¦£¬ask zhang ¾ÅÑôÃØ¼®£¬È»ºóµ½Ã÷½ÌµÄ°ëÉ½ÑüµÄÃÜ¶´£¨ÕâÀï¿ªÃÅÐè©§
-©§          ÒªÄÚ¹¦Òª´ïµ½300£¬2000ÄÚÁ¦£©,½øÈ¥ºó¿ÉÒÔopen ·½Ïò£¬À´´ò¿ªËÄÃæµÄÃÅ£¬Íù ©§
-©§          ±±×ß3²½£¬ÍùÎ÷×ßÒ»²½£¬ÔÙup£¬¾Í¿ÉÒÔÕÒµ½³ÉÀ¥.É±Ö®£¬È¡ÆäÍ·£¬È»ºó³öÀ´´Ó¹Ø©§
-©§          Íâ£¨rideto hujia;s;s;e£©È¥±ù»ðµº£¬ÉÏµºÒÔºóÊÇ¸öÐ¡ÃÔ¹¬£¬ÉÏÏÂ×óÓÒÂÒ×ßÒ²©§
-©§          ÄÜ½øÈ¥£¬Ð»Ñ·Ð¡Ê¯É½µÄÉ½¶´Àï£¬¼ûµ½ºó°Ñ³ÉÀ¥µÄÈËÍ·¸øËû£¬Ëû»á¸øÄã        ©§
-©§          ½ðÃ«(jin mao)£¬È»ºóÔÙ»ØÕÅÎÞ¼É´¦°Ñ½ðÃ«¸øËûÔÙask zhang ¾ÅÑôÃØ¼®µÃµ½¾­ ©§
-©§          ÔÚÓÍÖÐµÄÌáÊ¾¡£È»ºóÉÏÀ¥ÂØÀ²£¨rideto kunlun;sw;se;eu;s;jump down£©¡£Õâ©§
-©§          Àï×îºÃÓÃ´óÃ×±³ÄãÌøÏÂÈ¥£¬ÈÃÄãµÄÄÃÊéidÔÎµô£¬È»ºóÁíÍâÄÃ¸ö´óÃ×±³×ÅËû        ©§
-©§          jump down£¬ÐÑÁËÒÔºóÈç¹ûÃ»ÓÐ³öÂ·¾Ízuan cave£¨Èç¹û·¢ÏÖÓÐ³öÂ·Â·£¬ÄÇ¾Í²»©§
-©§          ÊÇÄÃ¾­µÄµØµã£¬¾ÍÖØÐÂÌøÒ»´Î£©½øÈ¥ÀïÃæÕÒµ½Ò»¸öÊÜÉËµÄºï×ÓËü»áfollowÄã£¬©§
-©§          È»ºóÄã´øËüÈ¥ÕÒµ½Ê÷Ö¦£¬snap Ê÷Ö¦£¬ÓÃÊ÷Ö¦¸øËû°üÔú(Ö¸Áîbandage)£¬È»ºóËü©§
-©§          »á¸øÄãÒ»±¾¾­Êé,Õâ¸öÊ±ºòopen bag¾Í¿ÉÒÔµÃµ½¾ÅÑôÕæ¾­À²¡£                ©§
-©§                                                                                ©§
-©§    ×¢£º  ¿ÉÒÔ¶Áµ½380¼¶£¬Ã»ÓÐÕÒÕÅÎÞ¼ÉÎÊÒ²¿ÉÒÔÄÃµ½°ü£¬µ«ÊÇ´ò²»¿ª¡£¾ÅÑôÉñ¹¦ÊÜ        ©§
-©§          force£¬unarmed£¬sword»òbladeµÄÏÞÖÆ£¬¿ÉÒÔjifaµ½force£¬unarmed£¬dodge,©§
-©§          blade£¬sword£¬parry                                                        ©§
-©»©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¿
-©³©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©·
-©§$HIY$Ç¬À¤´óÅ²ÒÆ (qiankun-danuoyi)$NOR$  <Ã÷½Ì>                                                ©§
-©§                                                                                ©§
-©§    ÒªÇó£ºÃ÷½ÌµÜ×Ó£¬²»ÄÜÊÇÌ«¼à£¬ÏÈÌìÎòÐÔ > 27£¬×î´óÄÚÁ¦> 6000£¬ÓÐÐ§ÄÚ¹¦ > 450 ©§
-©§                                                                                ©§
-©§    Â·¾¶£ºÍ¬¾ÅÑôÉñ¹¦£¬µ½Ã÷½ÌÃÜµÀ£¬Ò»Ö±open north£¬ÕÒµ½Ñô¶¥Ìì·ò¸¾ÒÅÌå£¬ketou£¬ ©§
-©§          ¾Í»áµô³öÐÅºÍÑòÆ¤£¬ÐÅÊÇÑô¶¥ÌìµÄÒÅÐÅ£¬ÑòÆ¤µ±È»¾ÍÊÇÇ¬À¤´óÅ²ÒÆÐÄ·¨ÁË¡£        ©§
-©§                                                                                ©§
-©§    ×¢£º  ¿ÉÒÔ¶Áµ½380¼¶£¬Ã¿50¼¶Ò»²ã£¬×î¸ßÆß²ã£¬Ã¿Ò»²ãÐèÒª¶à1µãÏÈÌìÎòÐÔ£¬ËùÒÔÐÞ©§
-©§          ÂúÆß²ãÐèÒª34µãÏÈÌìÎòÐÔ¡£Ç¬À¤´óÅ²ÒÆ²»ÄÜÔ½¹ýÓÐÐ§ÄÚ¹¦µÄÈý·ÖÖ®¶þ£¬»¹ÊÜ        ©§
-©§          parryÏÞÖÆ£¬350¼¶Ç°»¹ÊÜ×î´óÄÚÁ¦ÏÞÖÆ£¬¹«Ê½ÊÇ                                ©§
-©§          Ç¬À¤´óÅ²ÒÆµÈ¼¶=(×î´óÄÚÁ¦-4000)/20£¬ÕâÑùÄã×î´óÄÚÁ¦´ïµ½11000¾Í¿ÉÒÔ²»ÊÜ©§
-©§          ÄÚÁ¦ÏÞÖÆÁË¡£Èç¹ûÔ½¹ýÏÞÖÆÐÞÁ¶»áÖÐÇ¬À¤¶¾£¬Ö»ÓÐ¾ÅÑôÉñ¹¦¿É½â¡£                ©§
-©§          ¾ÅÑôÉñ¹¦¿É½â¡£                                                        ©§
-©»©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¿
-©³©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©·
-©§$HIY$¶À¹Â¾Å½£ (lonely-sword)$NOR$  <»ªÉ½>                                                ©§
-©§                                                                                ©§
-©§    ÒªÇó£º»ªÉ½µÜ×Ó£¬ÏÈÌìÎòÐÔ34£¬ÏÈÌì¸ù¹Ç26(Õâ¸öºÃÏñÃ»ÓÐ)£¬ÐÔ¸ñ½Æ÷ï¶à±ä£¬        ©§
-©§          sword > 100                                                                ©§
-©§                                                                                ©§
-©§    Â·¾¶£ºÏÈÈ¥»ªÉ½Ë¼¹ýÑÂ£¨´ÓÕòÔÀ¹¬eu;sd;su;su£©say ·çÇåÑï£¬Ò»Ö±sayµ½³öÏÖÌáÊ¾½Ð©§
-©§          ÄãÈ¥ÕÒÐþÌú½££¬Õâ¸öÊ±ºò¾Í¿ÉÒÔµ½»ªÉ½³¯Ñô·å£¨´ÓÕòÔÀ¹¬eu;n;nw;ne;eu£©        ©§
-©§          shout ·çÀÏÇ°±²£¬Ö±µ½Ìï²®¹â³öÀ´£¬´òÓ®Ëû¾Í»á´øÄãµ½ÌÒ¹ÈÁùÏÉ´¦£¬ÔÙ·Ö±ð´ò©§
-©§          Ó®ÁùÏÉ£¬ËûÃÇ¾Í»áÈÃÄãÈ¥¼û·çÇåÑïÁË¡£                                        ©§
-©§                                                                                ©§
-©§    ×¢£º  ¼ûÌÒ¹ÈÁùÏÉÊ±ÓÃfight£¬Èç¹ûÄãkillµÄ»°·ç¼ûµ½»áÉ±Äã¡£ÔÚ·çÕâÀï×î¶àÑ§µ½121©§
-©§          ¼¶£¬È»ºó·Ö±ðÎÊËû°ËÖÖÕÐÊ½£¬¿ÉÒÔÓÖ¼Ó¼¸¼¶¾Å½£ºÍÎäÐÞ¡£¾Å½£Ö»ÓÐ¿¿        ©§
-©§          perform jueÀ´Ìá¸ßµÈ¼¶£¬120¼¶µÄÊ±ºòÄÜ³öperform qi£¬150¼¶³öperform po,©§
-©§          200¼¶³öperform yi¡£                                                        ©§
-©»©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¿
-©³©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©·
-©§$HIY$¾Å½£²Ð±¾ (dugu book)$NOR$                                                                ©§
-©§                                                                                ©§
-©§    ÒªÇó£ºlonely-sword > 300                                                        ©§
-©§                                                                                ©§
-©§    Â·¾¶£ºrideto xiangyang;e;e;n;n;n;w;w;n;n;n;w;s;s;s£¬È»ºówuµ½µ×£¬·´¸´ed;wu ©§
-©§            Ìýµ½ÓÐµñÉù£¬ÔÙl xiaowu;enter muwu;zhao ¿ÝÊ÷Ö¦;out;l shanlu;                ©§
-©§          climb shanlu;sw;nw;e;sw;se;se;ne;n;sw;w;s;n;sw;se;w;#2 nw;enter;        ©§
-©§          use huoshi;l tai;ca qingtai;l bi;l mu;kneel mu;move stone;                ©§
-©§          zuan shifeng;n;#10 l shitai;#4 climb shitai£¨ÕâÀïÂ·¾¶±È½Ï³¤£¬¿ÉÒÔ·Ö ©§
-©§          ¼¸´Î×ßÍê£©£¬ÔÚÕâÀïmove stone¾Í¿ÉÒÔÕÒµ½ÐþÌú½£(+620)ºÍÎÞÃû½£(+250)£¬        ©§
-©§          enter¾Í¿ÉÒÔÀ´µ½ÄÃ²Ð±¾µÄµØ·½£¬ÀïÃæÓÐÁù¸öÊ¯¶´£¬½ø¶´È¥£¬×ª¶¯Ê¯×À        ©§
-©§          (move desk)£¬³öÀ´£¬¿´Ê¯ÃÅÉÏµÄ»ð°Ñ£¬Èç¹ûÁù¸ö»ð°Ñ¶¼µã×Å£¬Ê¯ÃÅ¾Í¿ªÁË¡£        ©§
-©§                                                                                ©§
-©§    ×¢£º  ×ªÊ¯×ÀÃ»ÓÐ¹æÂÉ£¬¿´ÄãµÄÔËÆøÁË£¨Ã¿¸ö×À×Ó¶¼¿ØÖÆÒ»¸ö»ò¼¸¸ö»ð°ÑµÄ¿ª¹Ø£¬¿É©§
-©§          ÒÔ¼ÇÏÂÀ´×Ô¼ºÍÆËã£©¡£½øÈ¥¾ÍÄÜÄÃµ½¶À¹Â¾Å½£²Ð±¾ÁË¡£ÄÃµ½read canben,¾ÍÄÜ©§
-©§          Ñ§»á¾Å½£µÄauto-pfm£ºÎÞÕÐ¡£                                                ©§
-©»©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¿
-©³©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©·
-©§$HIY$ÉñÕÕ¾­ (shenzhaojing)$NOR$  <Ñªµ¶>                                                        ©§
-©§                                                                                ©§
-©§    ÒªÇó£ºÑªµ¶µÜ×Ó£¬ÏÈÌì±ÛÁ¦32£¬ÏÈÌì¸ù¹Ç32£¬force > 200£¬unarmed > 200£¬        ©§
-©§          ×î´óÄÚÁ¦ > 4000                                                        ©§
-©§                                                                                ©§
-©§    Â·¾¶£ºÏÈµ½¾£ÖÝ£¨rideto jingzhou;e;e;e;e;n£©ÄÃÒ°¾Õ»¨£¨Ëæ»úË¢³öÀ´£¬²»Ò»¶¨Ã¿ ©§
-©§          ´Î¶¼ÓÐ£©£¬È»ºóÒ»Â·É±½ø¾£ÖÝÑÃÃÅ£¬°Ñ»¨¸ø¾ÕÓÑ£¬Ëý»á¸øÄãÒ»°ÑÔ¿³×£¬»Øµ½ÑÃ©§
-©§          ÃÅºóÔº£¬unlock men£¬´ò¿ª¶«ÏáÃÅ£¬¼ûµ½ÁèËª»ª£¬ask ling about ¶¡µä£¬Ëý ©§
-©§          »á¸æËßÄãÒª±ÕÆø£¬Õâ¸öÊ±ºò¿ÉÒÔ½ø»¨Ô°È¥°ÑÂÌ¾Õ»¨¼ñÆðÀ´(Ã»ÎÊ»áÖÐ¶¾ËÀµô)£¬©§
-©§          È»ºóµ½ÑÃÃÅÕýÌüopen doorÕÒµ½¶¡µä£¬°Ñ»¨¸øËû£¬Ëû¾Í»á¸øÄãÉñÕÕ¾­¡£        ©§
-©§                                                                                ©§
-©§    ×¢£º  ¿É¶Áµ½400¼¶£¬ÉñÕÕ¾­ÊÜunarmedºÍforceÏÞÖÆ£¬Ì«¼àÖ»ÄÜÑ§µ½30¼¶¡£                ©§
-©»©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¿
-©³©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©·
-©§$HIY$±ÙÐ°½£·¨ (pixie-jian)$NOR$  <ÈÕÔÂÉñ½Ì>                                                ©§
-©§                                                                                ©§
-©§    ÒªÇó£ºÈÕÔÂÉñ½ÌµÜ×Ó£¬ÐÔ¸ñÒõÏÕ¼éÕ©»òÐÄºÝÊÖÀ±£¬Ì«¼à£¬ÏÈÌìÎòÐÔ34£¬ÏÈÌìÉí·¨32£¬©§
-©§          sword¡¢dodge¡¢parry¶¼´ïµ½100¼¶£¬¾­Ñé30W                                ©§
-©§                                                                                ©§
-©§    Â·¾¶£ºÒªÑ§±ÙÐ°½£·¨ÏÈÒª×Ô¹¬£¬¿Éµ½gc;e;e;e;e;e;eÕÒº£¹«¹«ÎÊ×Ô¹¬µÄÊÂ¡£±ÙÐ°½£·¨©§
-©§          Ö»ÄÜ´ÓôÂôÄÉÏ¶Á£¬ÓÐÈýÖÖ·½·¨¿ÉÒÔÄÃµ½£º                                ©§
-©§                                                                                ©§
-©§          Ò»¡¢ÏòÑôÀÏÕ¬£ºrideto fuzhou;s;s;w;w;n;break men;n;w;l hua;l liang;        ©§
-©§              jump liang;get jia sha                                                ©§
-©§                                                                                ©§
-©§          ¶þ¡¢×Ô¹¬ºó£¬È¥»ªÉ½ÓñÅ®ìô£¨ÕòÔÀ¹¬eu;w£©jump cliff£¬ÔÙclimb up£¬ÊÇÌ«¼à©§
-©§              µÄ»°¾Í»á´¥·¢¶Ô»°¾çÇé£¬ÍêÁË»áµÃµ½Ò»¼þôÂôÄ¡£                        ©§
-©§                                                                                ©§
-©§          Èý¡¢È¥ÂåÑôÕÒµ½  ÆÎÌïÉÙÁÖËÂ¸ßÊÖ ¶ÉÔªìøÊ¦(duyuan chanshi)£¬ÎÊËû¹ØÓÚ±Ù ©§
-©§              Ð°½£Æ×µÄÊÂ£¬Ëû»áÉ±Äã£¬¸ÉµôËû£¬ÉíÉÏ¾ÍÓÐ±¾ôÂôÄ¡£                        ©§
-©§                                                                                ©§
-©§    ×¢£º  ²»ÄÜÁ·Ï°£¬¿ÉÒÔ¶Áµ½180¼¶£¬È»ºóÑÐ¾¿¡£±ÙÐ°½£·¨ÊÜdodge£¬parry£¬swordºÍ        ©§
-©§          unarmedµÈ¼¶ÏÞÖÆ¡£¾øÕÐ¿ÉÒÔÍ¨¹ýyanjiu ¾øÕÐid from jiasha                ©§
-©§                                                                                ©§
-©§            Ãû³Æ       id           Ìõ¼þ                                           ©§
-©§          ¶áÄ¿Éñ½£     duo     pixie-jian > 80                                ©§
-©§          ¹í÷ÈÉí·¨     gui     pixie-jian > 100                                ©§
-©§          ÈºÐ°±ÙÒ×     pi      pixie-jian > 120                                ©§
-©§          ÆÆÔªÉñ½£     po      pixie-jian > 180                                ©§
-©§          ÈºÄ§ÂÒÎè     wu      pixie-jian > 350                                ©§
-©§          ÓÄÚ¤Ò»»÷     you     pixie-jian > 400 (Ö»ÄÜ´ÓÏòÑôÀÏÕ¬ÄÇ±¾Ñ§µ½)        ©§
-©»©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¿
-©³©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©·
-©§$HIY$½µÁúÊ®°ËÕÆ (dragon-strike)$NOR$  <Ø¤°ï>                                                ©§
-©§                                                                                ©§
-©§    ÒªÇó£ºÏÈÌì±ÛÁ¦31£¬ºóÌì±ÛÁ¦45£¬ÏÈÌì¸ù¹Ç24£¬ºóÌì¸ù¹Ç37£¬force > 150£¬        ©§
-©§          ×î´óÄÚÁ¦ > 1500                                                        ©§
-©§                                                                                ©§
-©§    Â·¾¶£ºÏÈ½á»é£¬È»ºóÅ®idÈ¥³É¶¼Ñ§cookingºÍchuancai-jiyi£¬Ñ§µ½cookingµÄ        ©§
-©§          ÓÐÐ§µÈ¼¶ > 200£¬ÔÚ³øÄïÄÇÀïÂò²ËÁÏ£¬Ëæ±ã×ö¸öÊ²Ã´²Ë£¬ÄÃ¸øºéÆß¹«³Ô£¬ºé¾Í©§
-©§          »á½ÌÅ®idåÐÒ£ÓÎÕÆ·¨£¬½ÌÄÐidÊ®°ËÂ·ÕÆ·¨£¬½«Ê®°ËÂ·ÕÆ·¨Á·µ½80¼¶ºó£¬Í¨¹ý        ©§
-©§          yanlian dragon-strikeÑ§»á½µÁúÊ®°ËÕÆ¡£                                ©§
-©§                                                                                ©§
-©§    ×¢£º  yanlianÓÐÒ»¶¨»úÂÊ³É¹¦£¬½µÁúÊ®°ËÕÆÊÜstrikeÏÞÖÆ£¬Ñ§½µÁúÊ®°ËÕÆÃ»ÓÐÃÅÅÉ ©§
-©§          ÏÞÖÆ£¬µ«¾øÕÐÖ»ÓÐØ¤°ïµÜ×Ó²ÅÄÜÑ§»á¡£                                        ©§
-©»©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¿
-©³©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©·
-©§$HIY$ÁùÂöÉñ½£ (six-finger)$NOR$  <¶ÎÊÏ»Ê×å>                                                ©§
-©§                                                                                ©§
-©§    ÒªÇó£º¶Î¼ÒµÜ×Ó£¬ÏÈÌìÎòÐÔ32£¬ºóÌìÎòÐÔ44£¬ÏÈÌì¸ù¹Ç26£¬ºóÌì¸ù¹Ç39£¬                ©§
-©§          literate > 200£¬lamaism > 200£¬buddhism > 200£¬force > 300£¬        ©§
-©§          ×î´óÄÚÁ¦ > 5000£¬ÎäÑ§ÐÞÑø > 100                                        ©§
-©§                                                                                ©§
-©§    Â·¾¶£ºµ½ÌìÁúËÂ£¨rideto dali;n;n;n;n;nw;n;ne;e;s;s;s;e;s;s;w;s;s;s;s;s;s£© ©§
-©§          ÕÒµ½¿ÝÈÙ£¬ask kurong about ÁùÂöÉñ½£Æ×;kill kurong£¬É±µôËû1/10µÄ»úÂÊ ©§
-©§          ÔÚ¿ÝÈÙÊ¬ÌåÉÏÄÃµ½½£Æ×£¬¿ÉÒÔ´ÓÉÏÃæÑ§µ½6ÖÖ½£·¨µ½120¼¶£¬È»ºó                ©§
-©§          yanlian six-fingerÑ§»áÁùÂöÉñ½£¡£                                        ©§
-©§                                                                                ©§
-©§    ×¢£º  ²»ÊÇ¶Î¼ÒµÜ×ÓÒ²ÄÜÄÃµ½²¢ÇÒÑ§Ï°6ÖÖ½£·¨£¬µ«ÊÇ²»ÄÜyanlian³ösix-finger        ©§
-©»©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¿
-©³©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©·
-©§$HIY$±ù²Ïº®¹¦ (freezing-force)$NOR$  <ÐÇËÞ>                                                ©§
-©§                                                                                ©§
-©§    ÒªÇó£ºÐÇËÞµÜ×Ó                                                                ©§
-©§                                                                                ©§
-©§    Â·¾¶£ºÕÒµ½°¢×Ï(rideto xingxiu;wu)£¬ask a zi about ÉñÄ¾Íõ¶¦£¬Ò»Ö±ÎÊµ½Ëý»Ø´ð©§
-©§          ½ÐÄãËÑ(sou)Ëý£¬Äã¾ÍsouËý£¬ÓÎÌ¹Ö®¸úÏô·å¾Í»áÌø³öÀ´killÄã£¬¸ÉµôÓÎÌ¹Ö®£¬©§
-©§          ÄÃµ½ÎÞÃûÊé(noname book)£¬´ÓÉÏÃæ¾Í¿ÉÒÔÑ§µ½¡£                                ©§
-©§                                                                                ©§
-©§    ×¢£º  ÊéÉÏÖ»ÄÜ¶Á180¼¶£¬Ïô·åºÍÓÎÌ¹Ö®¶¼ÊÇ200¼¶skill£¬»¹ÊÇ±È½ÏÀ÷º¦¡£Ö»ÄÜÎÊµÄ ©§
-©§          ÈË×Ô¼ºÉ±£¬±ðÈË°ïÃ¦É±Ïô·å»á±»´òÔÎ£¬É±ÓÎÌ¹Ö®Ëû»á´ø×Å°¢×Ï¾ÍÅÜÁË¡£        ©§
-©»©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¿
-©³©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©·
-©§$HIY$ÎüÐÇ´ó·¨ (xixing-dafa)$NOR$  <ÈÕÔÂÉñ½Ì>                                                ©§
-©§                                                                                ©§
-©§    ÒªÇó£ºÈÕÔÂÉñ½ÌµÜ×Ó£¬ÐÔ¸ñ·Ç¹âÃ÷ÀÚÂä£¬ÏÈÌì¸ù¹Ç20£¬force > 100                ©§
-©§                                                                                ©§
-©§    Â·¾¶£ºrideto hangzhou;n;sw;w;sw;w;wu;n;n;knock 4;knock 2;knock 5;knock 3; ©§
-©§          n;n;n;zuan table;n;n;pull floor;d;n;n;e;s;n;move man                ©§
-©§                                                                                ©§
-©§    ×¢£º  ¿É¶Á200¼¶¡£                                                                ©§
-©»©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¿
-©³©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©·
-©§$HIY$ÁùÑôÕÆ (liuyang-zhang)$NOR$    <ÁéðÕ¡¢åÐÒ£>                                        ©§
-©§$HIY$ÕÛÃ·ÊÖ (zhemei-shou)$NOR$      <ÁéðÕ¡¢åÐÒ£>                                        ©§
-©§$HIY$ÌìÓðÆæ½£ (tianyu-qijian)$NOR$  <ÁéðÕ>                                                ©§
-©§                                                                                ©§
-©§    ÒªÇó£º±ÛÁ¦29                                                                ©§
-©§                                                                                ©§
-©§    Â·¾¶£ºrideto lingjiu;zou tiesou;eu;#5 n;move stone;enterÕâÀïÓÐ¸öÃÉÃæÅ®ÀÉ£¬©§
-©§          ·ÇÁéðÕµÜ×ÓÖ»ÓÐÉ±ÁËËý²ÅÄÜÏÂÈ¥¡£nd;nd;ed;#5 n;e;n;w                        ©§
-©§                                                                                ©§
-©§    ×¢£º  ¿ÉÒÔÄÃµ½µÄÊéÓÐ£º                                                        ©§
-©§          ÌìÉ½ÁùÑôÕÆ·¨Í¼ÉÏ²á(zhangfa tu1)    ÁùÑôÕÆ10-50                        ©§
-©§          ÌìÉ½ÁùÑôÕÆ·¨Í¼ÏÂ²á(zhangfa tu2)    ÁùÑôÕÆ100-150                        ©§
-©§          ÌìÉ½ÕÛÃ·ÊÖ·¨Í¼ÉÏ¾í(shoufa tu1)     ÕÛÃ·ÊÖ10-50                        ©§
-©§          ÌìÉ½ÕÛÃ·ÊÖ·¨Í¼ÏÂ¾í(shoufa tu2)     ÕÛÃ·ÊÖ100-150                        ©§
-©§          ÌìÓðÆæ½£½£Æ×(jian pu)              ÌìÓðÆæ½£50-150                        ©§
-©»©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¿
-©³©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©·
-©§$HIY$¾ÅÒõÕæ¾­ (jiuyin zhenjing)$NOR$ <¹«¹²½âÃÕ>                                                ©§
-©§                                                                                ©§
-©§    Â·¾¶£ºÕâ¸ö·ÖÁ½²½£¬Òª·Ö±ðÄÃµ½ÒÐÌì½£¸úÍÀÁúµ¶£¬×°±¸µ¶£¬jiali max£¬                ©§
-©§          duikan yitian sword£¬¾Í¿ÉÒÔÄÃµ½ÁË£¬´ÓÉÏÃæ¿ÉÒÔÑ§µ½¾ÅÒõ°×¹Ç×¦£¬Ò×½îìÑ ©§
-©§          ¹Ç£¬ÉßÐÐÀê·­¡¢ÒøÁú±Þ·¨ºÍ´ßÐÄÕÆ¡£                                        ©§
-©§                                                                                ©§
-©§    ÒÐÌì½££ºrideto beijing;w;w;n;n;w;w;w;w;w;enterÈ»ºóÒ»Â·É±½øÈ¥£¬É±µ½ÕÔÃô´¦£¬©§
-©§            Í¨¹ýbi´òÓ®ºÎÌ«³å£¬°¢Èý£¬°¢¶þ£¬°¢´ó£¬ÐþÚ¤¶þÀÏ£¬¾Í¿ÉÒÔÄÃµ½ÁË¡£        ©§
-©§                                                                                ©§
-©§    ÍÀÁúµ¶£ºrideto nanyang;n;n;n;e°×¹êÊÙ»áÎÊÄãÊÇ·ñ²Î¼ÓÍõÅÌÉ½Ñïµ¶Á¢Íþ´ó»á£¬        ©§
-©§            accept£¬ÏÂ´¬ºó£¬get stone;break boat£¬È»ºó½øÈ¥£¬¸Éµô°×¹êÊÙÒ»¸ÉÈË£¬©§
-©§            µ½´ï»á³¡£¬°¤¸ö¸úÔÚ³¡µÄÈËbi£¬biÍêËùÓÐÈË¾ÍÄÜÄÃµ½ÍÀÁúµ¶¡£                ©§
-©»©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¥©¿
+â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡
+â–¡    æ³¥æ½­è£¡çš„éƒ¨åˆ†é–€æ´¾æŠ€èƒ½æœ‰æ›¸å¯è®€ï¼Œé€™è£¡å¿½ç•¥æŽ‰ç›´æŽ¥å•å¸«çˆ¶å°±å¯ä»¥æ‹¿åˆ°çš„ä¸€äº›æ›¸ç±ï¼Œä¸»â–¡
+â–¡è¦ä»‹ç´¹ä¸€äº›éœ€è¦è§£è¬Žçš„æ±è¥¿ã€‚                                                        â–¡
+â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡
+â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡
+â–¡$HIY$ä¹é™½ç¥žåŠŸ (jiuyang-shengong)$NOR$  <æ˜Žæ•™>                                                â–¡
+â–¡                                                                                â–¡
+â–¡    è¦æ±‚ï¼šæ˜Žæ•™å¼Ÿå­ï¼Œä¸èƒ½æ˜¯å¤ªç›£ï¼Œå…ˆå¤©æ‚Ÿæ€§30ï¼Œå…ˆå¤©æ ¹éª¨32ï¼Œæœ€å¤§å…§åŠ› > 3500ï¼Œ        â–¡
+â–¡          æ­¦å­¸ä¿®é¤Š > 100                                                        â–¡
+â–¡                                                                                â–¡
+â–¡    è·¯å¾‘ï¼šäºŽå¼µç„¡å¿Œè™•ï¼Œask zhang ä¹é™½ç§˜ç±ï¼Œç„¶å¾Œåˆ°æ˜Žæ•™çš„åŠå±±è…°çš„å¯†æ´žï¼ˆé€™è£¡é–‹é–€éœ€â–¡
+â–¡          è¦å…§åŠŸè¦é”åˆ°300ï¼Œ2000å…§åŠ›ï¼‰,é€²åŽ»å¾Œå¯ä»¥open æ–¹å‘ï¼Œä¾†æ‰“é–‹å››é¢çš„é–€ï¼Œå¾€ â–¡
+â–¡          åŒ—èµ°3æ­¥ï¼Œå¾€è¥¿èµ°ä¸€æ­¥ï¼Œå†upï¼Œå°±å¯ä»¥æ‰¾åˆ°æˆæ˜†.æ®ºä¹‹ï¼Œå–å…¶é ­ï¼Œç„¶å¾Œå‡ºä¾†å¾žé—œâ–¡
+â–¡          å¤–ï¼ˆrideto hujia;s;s;eï¼‰åŽ»å†°ç«å³¶ï¼Œä¸Šå³¶ä»¥å¾Œæ˜¯å€‹å°è¿·å®®ï¼Œä¸Šä¸‹å·¦å³äº‚èµ°ä¹Ÿâ–¡
+â–¡          èƒ½é€²åŽ»ï¼Œè¬éœå°çŸ³å±±çš„å±±æ´žè£¡ï¼Œè¦‹åˆ°å¾ŒæŠŠæˆæ˜†çš„äººé ­çµ¦ä»–ï¼Œä»–æœƒçµ¦ä½         â–¡
+â–¡          é‡‘æ¯›(jin mao)ï¼Œç„¶å¾Œå†å›žå¼µç„¡å¿Œè™•æŠŠé‡‘æ¯›çµ¦ä»–å†ask zhang ä¹é™½ç§˜ç±å¾—åˆ°ç¶“ â–¡
+â–¡          åœ¨æ²¹ä¸­çš„æç¤ºã€‚ç„¶å¾Œä¸Šæ˜†ä¾–å•¦ï¼ˆrideto kunlun;sw;se;eu;s;jump downï¼‰ã€‚é€™â–¡
+â–¡          è£¡æœ€å¥½ç”¨å¤§ç±³èƒŒä½ è·³ä¸‹åŽ»ï¼Œè®“ä½ çš„æ‹¿æ›¸idæšˆæŽ‰ï¼Œç„¶å¾Œå¦å¤–æ‹¿å€‹å¤§ç±³èƒŒè‘—ä»–        â–¡
+â–¡          jump downï¼Œé†’äº†ä»¥å¾Œå¦‚æžœæ²’æœ‰å‡ºè·¯å°±zuan caveï¼ˆå¦‚æžœç™¼ç¾æœ‰å‡ºè·¯è·¯ï¼Œé‚£å°±ä¸â–¡
+â–¡          æ˜¯æ‹¿ç¶“çš„åœ°é»žï¼Œå°±é‡æ–°è·³ä¸€æ¬¡ï¼‰é€²åŽ»è£¡é¢æ‰¾åˆ°ä¸€å€‹å—å‚·çš„çŒ´å­å®ƒæœƒfollowä½ ï¼Œâ–¡
+â–¡          ç„¶å¾Œä½ å¸¶å®ƒåŽ»æ‰¾åˆ°æ¨¹æžï¼Œsnap æ¨¹æžï¼Œç”¨æ¨¹æžçµ¦ä»–åŒ…ç´®(æŒ‡ä»¤bandage)ï¼Œç„¶å¾Œå®ƒâ–¡
+â–¡          æœƒçµ¦ä½ ä¸€æœ¬ç¶“æ›¸,é€™å€‹æ™‚å€™open bagå°±å¯ä»¥å¾—åˆ°ä¹é™½çœŸç¶“å•¦ã€‚                â–¡
+â–¡                                                                                â–¡
+â–¡    æ³¨ï¼š  å¯ä»¥è®€åˆ°380ç´šï¼Œæ²’æœ‰æ‰¾å¼µç„¡å¿Œå•ä¹Ÿå¯ä»¥æ‹¿åˆ°åŒ…ï¼Œä½†æ˜¯æ‰“ä¸é–‹ã€‚ä¹é™½ç¥žåŠŸå—        â–¡
+â–¡          forceï¼Œunarmedï¼Œswordæˆ–bladeçš„é™åˆ¶ï¼Œå¯ä»¥jifaåˆ°forceï¼Œunarmedï¼Œdodge,â–¡
+â–¡          bladeï¼Œswordï¼Œparry                                                        â–¡
+â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡
+â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡
+â–¡$HIY$ä¹¾å¤å¤§æŒªç§» (qiankun-danuoyi)$NOR$  <æ˜Žæ•™>                                                â–¡
+â–¡                                                                                â–¡
+â–¡    è¦æ±‚ï¼šæ˜Žæ•™å¼Ÿå­ï¼Œä¸èƒ½æ˜¯å¤ªç›£ï¼Œå…ˆå¤©æ‚Ÿæ€§ > 27ï¼Œæœ€å¤§å…§åŠ›> 6000ï¼Œæœ‰æ•ˆå…§åŠŸ > 450 â–¡
+â–¡                                                                                â–¡
+â–¡    è·¯å¾‘ï¼šåŒä¹é™½ç¥žåŠŸï¼Œåˆ°æ˜Žæ•™å¯†é“ï¼Œä¸€ç›´open northï¼Œæ‰¾åˆ°é™½é ‚å¤©å¤«å©¦éºé«”ï¼Œketouï¼Œ â–¡
+â–¡          å°±æœƒæŽ‰å‡ºä¿¡å’Œç¾Šçš®ï¼Œä¿¡æ˜¯é™½é ‚å¤©çš„éºä¿¡ï¼Œç¾Šçš®ç•¶ç„¶å°±æ˜¯ä¹¾å¤å¤§æŒªç§»å¿ƒæ³•äº†ã€‚        â–¡
+â–¡                                                                                â–¡
+â–¡    æ³¨ï¼š  å¯ä»¥è®€åˆ°380ç´šï¼Œæ¯50ç´šä¸€å±¤ï¼Œæœ€é«˜ä¸ƒå±¤ï¼Œæ¯ä¸€å±¤éœ€è¦å¤š1é»žå…ˆå¤©æ‚Ÿæ€§ï¼Œæ‰€ä»¥ä¿®â–¡
+â–¡          æ»¿ä¸ƒå±¤éœ€è¦34é»žå…ˆå¤©æ‚Ÿæ€§ã€‚ä¹¾å¤å¤§æŒªç§»ä¸èƒ½è¶ŠéŽæœ‰æ•ˆå…§åŠŸçš„ä¸‰åˆ†ä¹‹äºŒï¼Œé‚„å—        â–¡
+â–¡          parryé™åˆ¶ï¼Œ350ç´šå‰é‚„å—æœ€å¤§å…§åŠ›é™åˆ¶ï¼Œå…¬å¼æ˜¯                                â–¡
+â–¡          ä¹¾å¤å¤§æŒªç§»ç­‰ç´š=(æœ€å¤§å…§åŠ›-4000)/20ï¼Œé€™æ¨£ä½ æœ€å¤§å…§åŠ›é”åˆ°11000å°±å¯ä»¥ä¸å—â–¡
+â–¡          å…§åŠ›é™åˆ¶äº†ã€‚å¦‚æžœè¶ŠéŽé™åˆ¶ä¿®ç…‰æœƒä¸­ä¹¾å¤æ¯’ï¼Œåªæœ‰ä¹é™½ç¥žåŠŸå¯è§£ã€‚                â–¡
+â–¡          ä¹é™½ç¥žåŠŸå¯è§£ã€‚                                                        â–¡
+â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡
+â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡
+â–¡$HIY$ç¨å­¤ä¹åŠ (lonely-sword)$NOR$  <è¯å±±>                                                â–¡
+â–¡                                                                                â–¡
+â–¡    è¦æ±‚ï¼šè¯å±±å¼Ÿå­ï¼Œå…ˆå¤©æ‚Ÿæ€§34ï¼Œå…ˆå¤©æ ¹éª¨26(é€™å€‹å¥½åƒæ²’æœ‰)ï¼Œæ€§æ ¼ç‹¡é» å¤šè®Šï¼Œ        â–¡
+â–¡          sword > 100                                                                â–¡
+â–¡                                                                                â–¡
+â–¡    è·¯å¾‘ï¼šå…ˆåŽ»è¯å±±æ€éŽå´–ï¼ˆå¾žéŽ®å²³å®®eu;sd;su;suï¼‰say é¢¨æ¸…æšï¼Œä¸€ç›´sayåˆ°å‡ºç¾æç¤ºå«â–¡
+â–¡          ä½ åŽ»æ‰¾çŽ„éµåŠï¼Œé€™å€‹æ™‚å€™å°±å¯ä»¥åˆ°è¯å±±æœé™½å³°ï¼ˆå¾žéŽ®å²³å®®eu;n;nw;ne;euï¼‰        â–¡
+â–¡          shout é¢¨è€å‰è¼©ï¼Œç›´åˆ°ç”°ä¼¯å…‰å‡ºä¾†ï¼Œæ‰“è´ä»–å°±æœƒå¸¶ä½ åˆ°æ¡ƒè°·å…­ä»™è™•ï¼Œå†åˆ†åˆ¥æ‰“â–¡
+â–¡          è´å…­ä»™ï¼Œä»–å€‘å°±æœƒè®“ä½ åŽ»è¦‹é¢¨æ¸…æšäº†ã€‚                                        â–¡
+â–¡                                                                                â–¡
+â–¡    æ³¨ï¼š  è¦‹æ¡ƒè°·å…­ä»™æ™‚ç”¨fightï¼Œå¦‚æžœä½ killçš„è©±é¢¨è¦‹åˆ°æœƒæ®ºä½ ã€‚åœ¨é¢¨é€™è£¡æœ€å¤šå­¸åˆ°121â–¡
+â–¡          ç´šï¼Œç„¶å¾Œåˆ†åˆ¥å•ä»–å…«ç¨®æ‹›å¼ï¼Œå¯ä»¥åˆåŠ å¹¾ç´šä¹åŠå’Œæ­¦ä¿®ã€‚ä¹åŠåªæœ‰é         â–¡
+â–¡          perform jueä¾†æé«˜ç­‰ç´šï¼Œ120ç´šçš„æ™‚å€™èƒ½å‡ºperform qiï¼Œ150ç´šå‡ºperform po,â–¡
+â–¡          200ç´šå‡ºperform yiã€‚                                                        â–¡
+â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡
+â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡
+â–¡$HIY$ä¹åŠæ®˜æœ¬ (dugu book)$NOR$                                                                â–¡
+â–¡                                                                                â–¡
+â–¡    è¦æ±‚ï¼šlonely-sword > 300                                                        â–¡
+â–¡                                                                                â–¡
+â–¡    è·¯å¾‘ï¼šrideto xiangyang;e;e;n;n;n;w;w;n;n;n;w;s;s;sï¼Œç„¶å¾Œwuåˆ°åº•ï¼Œåå¾©ed;wu â–¡
+â–¡            è½åˆ°æœ‰é›•è²ï¼Œå†l xiaowu;enter muwu;zhao æž¯æ¨¹æž;out;l shanlu;                â–¡
+â–¡          climb shanlu;sw;nw;e;sw;se;se;ne;n;sw;w;s;n;sw;se;w;#2 nw;enter;        â–¡
+â–¡          use huoshi;l tai;ca qingtai;l bi;l mu;kneel mu;move stone;                â–¡
+â–¡          zuan shifeng;n;#10 l shitai;#4 climb shitaiï¼ˆé€™è£¡è·¯å¾‘æ¯”è¼ƒé•·ï¼Œå¯ä»¥åˆ† â–¡
+â–¡          å¹¾æ¬¡èµ°å®Œï¼‰ï¼Œåœ¨é€™è£¡move stoneå°±å¯ä»¥æ‰¾åˆ°çŽ„éµåŠ(+620)å’Œç„¡ååŠ(+250)ï¼Œ        â–¡
+â–¡          enterå°±å¯ä»¥ä¾†åˆ°æ‹¿æ®˜æœ¬çš„åœ°æ–¹ï¼Œè£¡é¢æœ‰å…­å€‹çŸ³æ´žï¼Œé€²æ´žåŽ»ï¼Œè½‰å‹•çŸ³æ¡Œ        â–¡
+â–¡          (move desk)ï¼Œå‡ºä¾†ï¼Œçœ‹çŸ³é–€ä¸Šçš„ç«æŠŠï¼Œå¦‚æžœå…­å€‹ç«æŠŠéƒ½é»žè‘—ï¼ŒçŸ³é–€å°±é–‹äº†ã€‚        â–¡
+â–¡                                                                                â–¡
+â–¡    æ³¨ï¼š  è½‰çŸ³æ¡Œæ²’æœ‰è¦å¾‹ï¼Œçœ‹ä½ çš„é‹æ°£äº†ï¼ˆæ¯å€‹æ¡Œå­éƒ½æŽ§åˆ¶ä¸€å€‹æˆ–å¹¾å€‹ç«æŠŠçš„é–‹é—œï¼Œå¯â–¡
+â–¡          ä»¥è¨˜ä¸‹ä¾†è‡ªå·±æŽ¨ç®—ï¼‰ã€‚é€²åŽ»å°±èƒ½æ‹¿åˆ°ç¨å­¤ä¹åŠæ®˜æœ¬äº†ã€‚æ‹¿åˆ°read canben,å°±èƒ½â–¡
+â–¡          å­¸æœƒä¹åŠçš„auto-pfmï¼šç„¡æ‹›ã€‚                                                â–¡
+â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡
+â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡
+â–¡$HIY$ç¥žç…§ç¶“ (shenzhaojing)$NOR$  <è¡€åˆ€>                                                        â–¡
+â–¡                                                                                â–¡
+â–¡    è¦æ±‚ï¼šè¡€åˆ€å¼Ÿå­ï¼Œå…ˆå¤©è‡‚åŠ›32ï¼Œå…ˆå¤©æ ¹éª¨32ï¼Œforce > 200ï¼Œunarmed > 200ï¼Œ        â–¡
+â–¡          æœ€å¤§å…§åŠ› > 4000                                                        â–¡
+â–¡                                                                                â–¡
+â–¡    è·¯å¾‘ï¼šå…ˆåˆ°èŠå·žï¼ˆrideto jingzhou;e;e;e;e;nï¼‰æ‹¿é‡ŽèŠèŠ±ï¼ˆéš¨æ©Ÿåˆ·å‡ºä¾†ï¼Œä¸ä¸€å®šæ¯ â–¡
+â–¡          æ¬¡éƒ½æœ‰ï¼‰ï¼Œç„¶å¾Œä¸€è·¯æ®ºé€²èŠå·žè¡™é–€ï¼ŒæŠŠèŠ±çµ¦èŠå‹ï¼Œå¥¹æœƒçµ¦ä½ ä¸€æŠŠé‘°åŒ™ï¼Œå›žåˆ°è¡™â–¡
+â–¡          é–€å¾Œé™¢ï¼Œunlock menï¼Œæ‰“é–‹æ±å»‚é–€ï¼Œè¦‹åˆ°å‡Œéœœè¯ï¼Œask ling about ä¸å…¸ï¼Œå¥¹ â–¡
+â–¡          æœƒå‘Šè¨´ä½ è¦é–‰æ°£ï¼Œé€™å€‹æ™‚å€™å¯ä»¥é€²èŠ±åœ’åŽ»æŠŠç¶ èŠèŠ±æ’¿èµ·ä¾†(æ²’å•æœƒä¸­æ¯’æ­»æŽ‰)ï¼Œâ–¡
+â–¡          ç„¶å¾Œåˆ°è¡™é–€æ­£å»³open dooræ‰¾åˆ°ä¸å…¸ï¼ŒæŠŠèŠ±çµ¦ä»–ï¼Œä»–å°±æœƒçµ¦ä½ ç¥žç…§ç¶“ã€‚        â–¡
+â–¡                                                                                â–¡
+â–¡    æ³¨ï¼š  å¯è®€åˆ°400ç´šï¼Œç¥žç…§ç¶“å—unarmedå’Œforceé™åˆ¶ï¼Œå¤ªç›£åªèƒ½å­¸åˆ°30ç´šã€‚                â–¡
+â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡
+â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡
+â–¡$HIY$è¾Ÿé‚ªåŠæ³• (pixie-jian)$NOR$  <æ—¥æœˆç¥žæ•™>                                                â–¡
+â–¡                                                                                â–¡
+â–¡    è¦æ±‚ï¼šæ—¥æœˆç¥žæ•™å¼Ÿå­ï¼Œæ€§æ ¼é™°éšªå§¦è©æˆ–å¿ƒç‹ æ‰‹è¾£ï¼Œå¤ªç›£ï¼Œå…ˆå¤©æ‚Ÿæ€§34ï¼Œå…ˆå¤©èº«æ³•32ï¼Œâ–¡
+â–¡          swordã€dodgeã€parryéƒ½é”åˆ°100ç´šï¼Œç¶“é©—30W                                â–¡
+â–¡                                                                                â–¡
+â–¡    è·¯å¾‘ï¼šè¦å­¸è¾Ÿé‚ªåŠæ³•å…ˆè¦è‡ªå®®ï¼Œå¯åˆ°gc;e;e;e;e;e;eæ‰¾æµ·å…¬å…¬å•è‡ªå®®çš„äº‹ã€‚è¾Ÿé‚ªåŠæ³•â–¡
+â–¡          åªèƒ½å¾žè¢ˆè£Ÿä¸Šè®€ï¼Œæœ‰ä¸‰ç¨®æ–¹æ³•å¯ä»¥æ‹¿åˆ°ï¼š                                â–¡
+â–¡                                                                                â–¡
+â–¡          ä¸€ã€å‘é™½è€å®…ï¼šrideto fuzhou;s;s;w;w;n;break men;n;w;l hua;l liang;        â–¡
+â–¡              jump liang;get jia sha                                                â–¡
+â–¡                                                                                â–¡
+â–¡          äºŒã€è‡ªå®®å¾Œï¼ŒåŽ»è¯å±±çŽ‰å¥³ç¥ ï¼ˆéŽ®å²³å®®eu;wï¼‰jump cliffï¼Œå†climb upï¼Œæ˜¯å¤ªç›£â–¡
+â–¡              çš„è©±å°±æœƒè§¸ç™¼å°è©±åŠ‡æƒ…ï¼Œå®Œäº†æœƒå¾—åˆ°ä¸€ä»¶è¢ˆè£Ÿã€‚                        â–¡
+â–¡                                                                                â–¡
+â–¡          ä¸‰ã€åŽ»æ´›é™½æ‰¾åˆ°  èŽ†ç”°å°‘æž—å¯ºé«˜æ‰‹ æ¸¡å…ƒç¦ªå¸«(duyuan chanshi)ï¼Œå•ä»–é—œäºŽè¾Ÿ â–¡
+â–¡              é‚ªåŠè­œçš„äº‹ï¼Œä»–æœƒæ®ºä½ ï¼Œå¹¹æŽ‰ä»–ï¼Œèº«ä¸Šå°±æœ‰æœ¬è¢ˆè£Ÿã€‚                        â–¡
+â–¡                                                                                â–¡
+â–¡    æ³¨ï¼š  ä¸èƒ½ç·´ç¿’ï¼Œå¯ä»¥è®€åˆ°180ç´šï¼Œç„¶å¾Œç ”ç©¶ã€‚è¾Ÿé‚ªåŠæ³•å—dodgeï¼Œparryï¼Œswordå’Œ        â–¡
+â–¡          unarmedç­‰ç´šé™åˆ¶ã€‚çµ•æ‹›å¯ä»¥é€šéŽyanjiu çµ•æ‹›id from jiasha                â–¡
+â–¡                                                                                â–¡
+â–¡            åç¨±       id           æ¢ä»¶                                           â–¡
+â–¡          å¥ªç›®ç¥žåŠ     duo     pixie-jian > 80                                â–¡
+â–¡          é¬¼é­…èº«æ³•     gui     pixie-jian > 100                                â–¡
+â–¡          ç¾¤é‚ªè¾Ÿæ˜“     pi      pixie-jian > 120                                â–¡
+â–¡          ç ´å…ƒç¥žåŠ     po      pixie-jian > 180                                â–¡
+â–¡          ç¾¤é­”äº‚èˆž     wu      pixie-jian > 350                                â–¡
+â–¡          å¹½å†¥ä¸€æ“Š     you     pixie-jian > 400 (åªèƒ½å¾žå‘é™½è€å®…é‚£æœ¬å­¸åˆ°)        â–¡
+â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡
+â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡
+â–¡$HIY$é™é¾åå…«æŽŒ (dragon-strike)$NOR$  <ä¸å¹«>                                                â–¡
+â–¡                                                                                â–¡
+â–¡    è¦æ±‚ï¼šå…ˆå¤©è‡‚åŠ›31ï¼Œå¾Œå¤©è‡‚åŠ›45ï¼Œå…ˆå¤©æ ¹éª¨24ï¼Œå¾Œå¤©æ ¹éª¨37ï¼Œforce > 150ï¼Œ        â–¡
+â–¡          æœ€å¤§å…§åŠ› > 1500                                                        â–¡
+â–¡                                                                                â–¡
+â–¡    è·¯å¾‘ï¼šå…ˆçµå©šï¼Œç„¶å¾Œå¥³idåŽ»æˆéƒ½å­¸cookingå’Œchuancai-jiyiï¼Œå­¸åˆ°cookingçš„        â–¡
+â–¡          æœ‰æ•ˆç­‰ç´š > 200ï¼Œåœ¨å»šå¨˜é‚£è£¡è²·èœæ–™ï¼Œéš¨ä¾¿åšå€‹ä»€éº¼èœï¼Œæ‹¿çµ¦æ´ªä¸ƒå…¬åƒï¼Œæ´ªå°±â–¡
+â–¡          æœƒæ•™å¥³idé€é™éŠæŽŒæ³•ï¼Œæ•™ç”·idåå…«è·¯æŽŒæ³•ï¼Œå°‡åå…«è·¯æŽŒæ³•ç·´åˆ°80ç´šå¾Œï¼Œé€šéŽ        â–¡
+â–¡          yanlian dragon-strikeå­¸æœƒé™é¾åå…«æŽŒã€‚                                â–¡
+â–¡                                                                                â–¡
+â–¡    æ³¨ï¼š  yanlianæœ‰ä¸€å®šæ©ŸçŽ‡æˆåŠŸï¼Œé™é¾åå…«æŽŒå—strikeé™åˆ¶ï¼Œå­¸é™é¾åå…«æŽŒæ²’æœ‰é–€æ´¾ â–¡
+â–¡          é™åˆ¶ï¼Œä½†çµ•æ‹›åªæœ‰ä¸å¹«å¼Ÿå­æ‰èƒ½å­¸æœƒã€‚                                        â–¡
+â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡
+â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡
+â–¡$HIY$å…­è„ˆç¥žåŠ (six-finger)$NOR$  <æ®µæ°çš‡æ—>                                                â–¡
+â–¡                                                                                â–¡
+â–¡    è¦æ±‚ï¼šæ®µå®¶å¼Ÿå­ï¼Œå…ˆå¤©æ‚Ÿæ€§32ï¼Œå¾Œå¤©æ‚Ÿæ€§44ï¼Œå…ˆå¤©æ ¹éª¨26ï¼Œå¾Œå¤©æ ¹éª¨39ï¼Œ                â–¡
+â–¡          literate > 200ï¼Œlamaism > 200ï¼Œbuddhism > 200ï¼Œforce > 300ï¼Œ        â–¡
+â–¡          æœ€å¤§å…§åŠ› > 5000ï¼Œæ­¦å­¸ä¿®é¤Š > 100                                        â–¡
+â–¡                                                                                â–¡
+â–¡    è·¯å¾‘ï¼šåˆ°å¤©é¾å¯ºï¼ˆrideto dali;n;n;n;n;nw;n;ne;e;s;s;s;e;s;s;w;s;s;s;s;s;sï¼‰ â–¡
+â–¡          æ‰¾åˆ°æž¯æ¦®ï¼Œask kurong about å…­è„ˆç¥žåŠè­œ;kill kurongï¼Œæ®ºæŽ‰ä»–1/10çš„æ©ŸçŽ‡ â–¡
+â–¡          åœ¨æž¯æ¦®å±é«”ä¸Šæ‹¿åˆ°åŠè­œï¼Œå¯ä»¥å¾žä¸Šé¢å­¸åˆ°6ç¨®åŠæ³•åˆ°120ç´šï¼Œç„¶å¾Œ                â–¡
+â–¡          yanlian six-fingerå­¸æœƒå…­è„ˆç¥žåŠã€‚                                        â–¡
+â–¡                                                                                â–¡
+â–¡    æ³¨ï¼š  ä¸æ˜¯æ®µå®¶å¼Ÿå­ä¹Ÿèƒ½æ‹¿åˆ°ä¸¦ä¸”å­¸ç¿’6ç¨®åŠæ³•ï¼Œä½†æ˜¯ä¸èƒ½yanlianå‡ºsix-finger        â–¡
+â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡
+â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡
+â–¡$HIY$å†°è ¶å¯’åŠŸ (freezing-force)$NOR$  <æ˜Ÿå®¿>                                                â–¡
+â–¡                                                                                â–¡
+â–¡    è¦æ±‚ï¼šæ˜Ÿå®¿å¼Ÿå­                                                                â–¡
+â–¡                                                                                â–¡
+â–¡    è·¯å¾‘ï¼šæ‰¾åˆ°é˜¿ç´«(rideto xingxiu;wu)ï¼Œask a zi about ç¥žæœ¨çŽ‹é¼Žï¼Œä¸€ç›´å•åˆ°å¥¹å›žç­”â–¡
+â–¡          å«ä½ æœ(sou)å¥¹ï¼Œä½ å°±souå¥¹ï¼ŒéŠå¦ä¹‹è·Ÿè•­å³°å°±æœƒè·³å‡ºä¾†killä½ ï¼Œå¹¹æŽ‰éŠå¦ä¹‹ï¼Œâ–¡
+â–¡          æ‹¿åˆ°ç„¡åæ›¸(noname book)ï¼Œå¾žä¸Šé¢å°±å¯ä»¥å­¸åˆ°ã€‚                                â–¡
+â–¡                                                                                â–¡
+â–¡    æ³¨ï¼š  æ›¸ä¸Šåªèƒ½è®€180ç´šï¼Œè•­å³°å’ŒéŠå¦ä¹‹éƒ½æ˜¯200ç´šskillï¼Œé‚„æ˜¯æ¯”è¼ƒåŽ²å®³ã€‚åªèƒ½å•çš„ â–¡
+â–¡          äººè‡ªå·±æ®ºï¼Œåˆ¥äººå¹«å¿™æ®ºè•­å³°æœƒè¢«æ‰“æšˆï¼Œæ®ºéŠå¦ä¹‹ä»–æœƒå¸¶è‘—é˜¿ç´«å°±è·‘äº†ã€‚        â–¡
+â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡
+â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡
+â–¡$HIY$å¸æ˜Ÿå¤§æ³• (xixing-dafa)$NOR$  <æ—¥æœˆç¥žæ•™>                                                â–¡
+â–¡                                                                                â–¡
+â–¡    è¦æ±‚ï¼šæ—¥æœˆç¥žæ•™å¼Ÿå­ï¼Œæ€§æ ¼éžå…‰æ˜Žç£Šè½ï¼Œå…ˆå¤©æ ¹éª¨20ï¼Œforce > 100                â–¡
+â–¡                                                                                â–¡
+â–¡    è·¯å¾‘ï¼šrideto hangzhou;n;sw;w;sw;w;wu;n;n;knock 4;knock 2;knock 5;knock 3; â–¡
+â–¡          n;n;n;zuan table;n;n;pull floor;d;n;n;e;s;n;move man                â–¡
+â–¡                                                                                â–¡
+â–¡    æ³¨ï¼š  å¯è®€200ç´šã€‚                                                                â–¡
+â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡
+â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡
+â–¡$HIY$å…­é™½æŽŒ (liuyang-zhang)$NOR$    <éˆé·²ã€é€é™>                                        â–¡
+â–¡$HIY$æŠ˜æ¢…æ‰‹ (zhemei-shou)$NOR$      <éˆé·²ã€é€é™>                                        â–¡
+â–¡$HIY$å¤©ç¾½å¥‡åŠ (tianyu-qijian)$NOR$  <éˆé·²>                                                â–¡
+â–¡                                                                                â–¡
+â–¡    è¦æ±‚ï¼šè‡‚åŠ›29                                                                â–¡
+â–¡                                                                                â–¡
+â–¡    è·¯å¾‘ï¼šrideto lingjiu;zou tiesou;eu;#5 n;move stone;enteré€™è£¡æœ‰å€‹è’™é¢å¥³éƒŽï¼Œâ–¡
+â–¡          éžéˆé·²å¼Ÿå­åªæœ‰æ®ºäº†å¥¹æ‰èƒ½ä¸‹åŽ»ã€‚nd;nd;ed;#5 n;e;n;w                        â–¡
+â–¡                                                                                â–¡
+â–¡    æ³¨ï¼š  å¯ä»¥æ‹¿åˆ°çš„æ›¸æœ‰ï¼š                                                        â–¡
+â–¡          å¤©å±±å…­é™½æŽŒæ³•åœ–ä¸Šå†Š(zhangfa tu1)    å…­é™½æŽŒ10-50                        â–¡
+â–¡          å¤©å±±å…­é™½æŽŒæ³•åœ–ä¸‹å†Š(zhangfa tu2)    å…­é™½æŽŒ100-150                        â–¡
+â–¡          å¤©å±±æŠ˜æ¢…æ‰‹æ³•åœ–ä¸Šå·(shoufa tu1)     æŠ˜æ¢…æ‰‹10-50                        â–¡
+â–¡          å¤©å±±æŠ˜æ¢…æ‰‹æ³•åœ–ä¸‹å·(shoufa tu2)     æŠ˜æ¢…æ‰‹100-150                        â–¡
+â–¡          å¤©ç¾½å¥‡åŠåŠè­œ(jian pu)              å¤©ç¾½å¥‡åŠ50-150                        â–¡
+â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡
+â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡
+â–¡$HIY$ä¹é™°çœŸç¶“ (jiuyin zhenjing)$NOR$ <å…¬å…±è§£è¬Ž>                                                â–¡
+â–¡                                                                                â–¡
+â–¡    è·¯å¾‘ï¼šé€™å€‹åˆ†å…©æ­¥ï¼Œè¦åˆ†åˆ¥æ‹¿åˆ°å€šå¤©åŠè·Ÿå± é¾åˆ€ï¼Œè£å‚™åˆ€ï¼Œjiali maxï¼Œ                â–¡
+â–¡          duikan yitian swordï¼Œå°±å¯ä»¥æ‹¿åˆ°äº†ï¼Œå¾žä¸Šé¢å¯ä»¥å­¸åˆ°ä¹é™°ç™½éª¨çˆªï¼Œæ˜“ç­‹â–¡ â–¡
+â–¡          éª¨ï¼Œè›‡è¡Œè²ç¿»ã€éŠ€é¾éž­æ³•å’Œå‚¬å¿ƒæŽŒã€‚                                        â–¡
+â–¡                                                                                â–¡
+â–¡    å€šå¤©åŠï¼šrideto beijing;w;w;n;n;w;w;w;w;w;enterç„¶å¾Œä¸€è·¯æ®ºé€²åŽ»ï¼Œæ®ºåˆ°è¶™æ•è™•ï¼Œâ–¡
+â–¡            é€šéŽbiæ‰“è´ä½•å¤ªæ²–ï¼Œé˜¿ä¸‰ï¼Œé˜¿äºŒï¼Œé˜¿å¤§ï¼ŒçŽ„å†¥äºŒè€ï¼Œå°±å¯ä»¥æ‹¿åˆ°äº†ã€‚        â–¡
+â–¡                                                                                â–¡
+â–¡    å± é¾åˆ€ï¼šrideto nanyang;n;n;n;eç™½é¾œå£½æœƒå•ä½ æ˜¯å¦åƒåŠ çŽ‹ç›¤å±±æšåˆ€ç«‹å¨å¤§æœƒï¼Œ        â–¡
+â–¡            acceptï¼Œä¸‹èˆ¹å¾Œï¼Œget stone;break boatï¼Œç„¶å¾Œé€²åŽ»ï¼Œå¹¹æŽ‰ç™½é¾œå£½ä¸€å¹¹äººï¼Œâ–¡
+â–¡            åˆ°é”æœƒå ´ï¼ŒæŒ¨å€‹è·Ÿåœ¨å ´çš„äººbiï¼Œbiå®Œæ‰€æœ‰äººå°±èƒ½æ‹¿åˆ°å± é¾åˆ€ã€‚                â–¡
+â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡
 

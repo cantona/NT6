@@ -5,10 +5,10 @@ inherit ROOM;
 #include <ansi.h>
 void create()
 {
-	set("short", "¼ÀÌ³");
+	set("short", "ç¥­å£‡");
 	set("long",@long
-ÕâÀïÊÇ»ªÉ½¾ø¶¥ÉÏÈËÃÇ¼ÀìëÉÏÌìµÄ¼ÀÌ³£¬»ªÉ½µÜ×Ó¶¼ÒªÏÂÉ½ÐÐÏÀÕÌÒå£¬ÒÔ
-»»È¡ÉÏ²Ô¶Ô»ªÉ½°ÙÐÕµÄ±£ÓÓ¡£
+é€™è£¡æ˜¯è¯å±±çµ•é ‚ä¸Šäººå€‘ç¥­ç¥€ä¸Šå¤©çš„ç¥­å£‡ï¼Œè¯å±±å¼Ÿå­éƒ½è¦ä¸‹å±±è¡Œä¿ ä»—ç¾©ï¼Œä»¥
+æ›å–ä¸Šè’¼å°è¯å±±ç™¾å§“çš„ä¿ä½‘ã€‚
 long);
 	set("exits", ([
 		"out" : __DIR__"yunuci",
@@ -38,15 +38,15 @@ int do_jitan(string arg)
 	if( !living(me) ) return 0;
 	
 	if(!ling)
-		return notify_fail("ÄãÉíÉÏÃ»ÓÐÁîÅÆÈçºÎ¸æÎ¿Ó¢ÁÒµÄÔÚÌìÖ®Áé£¿\n");
+		return notify_fail("ä½ èº«ä¸Šæ²’æœ‰ä»¤ç‰Œå¦‚ä½•å‘Šæ…°è‹±çƒˆçš„åœ¨å¤©ä¹‹éˆï¼Ÿ\n");
 
 	if (me->is_busy() || me->is_fighting())
-		return notify_fail("ÄãÕýÃ¦×ÅÄÄ£¡\n");
+		return notify_fail("ä½ æ­£å¿™è‘—å“ªï¼\n");
 
 	if( !me->query_temp("jitan") )
-		return notify_fail("ÄãÒª¸ÉÊ²Ã´£¿\n");
+		return notify_fail("ä½ è¦å¹¹ä»€éº¼ï¼Ÿ\n");
 
-	if ( !arg ) return notify_fail("ÄãÒª¸ÉÊ²Ã´£¿\n");
+	if ( !arg ) return notify_fail("ä½ è¦å¹¹ä»€éº¼ï¼Ÿ\n");
 	switch (arg){
 		case "strike":	break;
 		case "hand":	break;
@@ -55,11 +55,11 @@ int do_jitan(string arg)
 		case "cuff":	break;
 		case "finger":	break;
 		case "leg":	break;
-		default:	return notify_fail("ÄãÒª¸ÉÊ²Ã´£¿\n");
+		default:	return notify_fail("ä½ è¦å¹¹ä»€éº¼ï¼Ÿ\n");
 	}
 
-	message_vision("$N¹§¾´µØ´ÓÊÌÍ¯ÊÖÖÐ½Ó¹ýÃÉÃæÈË£¬°Ú·ÅÔÚ¼ÀÌ³Ç°£¬¹§¾´µØ¿ÄÁËÈý¸öÏìÍ·¡£\n", me);
-	write(HIW"Í»È»Ìì¿ÕÖÐ½µÏÂÒ»µÀÉÁµç£¬ÅüÏòÃÉÃæÈË¡£Ö»ÌýÃÉÃæÈËÒ»Éù²Ò½Ð£¬¾Í´ËÎ÷È¥¡£\n"NOR, me);
+	message_vision("$Næ­æ•¬åœ°å¾žä¾ç«¥æ‰‹ä¸­æŽ¥éŽè’™é¢äººï¼Œæ“ºæ”¾åœ¨ç¥­å£‡å‰ï¼Œæ­æ•¬åœ°ç£•äº†ä¸‰å€‹éŸ¿é ­ã€‚\n", me);
+	write(HIW"çªç„¶å¤©ç©ºä¸­é™ä¸‹ä¸€é“é–ƒé›»ï¼ŒåŠˆå‘è’™é¢äººã€‚åªè½è’™é¢äººä¸€è²æ…˜å«ï¼Œå°±æ­¤è¥¿åŽ»ã€‚\n"NOR, me);
 
 	addskill = (int)me->query("int",1) * 2;
 	addskill += (int)me->query("kar",1) * 2;
@@ -68,14 +68,14 @@ int do_jitan(string arg)
 	addskill = random(addskill) + 1;
 	if (arg != "force") {
 		me->improve_skill( arg , addskill);
-		write("ÄãµÄ"+to_chinese(arg)+"µÃµ½ÁË"+CHINESE_D->chinese_number(addskill)+"µãÌá¸ß¡£\n", me);
+		write("ä½ çš„"+to_chinese(arg)+"å¾—åˆ°äº†"+CHINESE_D->chinese_number(addskill)+"é»žæé«˜ã€‚\n", me);
 	}
 	else {
 		addskill=random(addskill/10) + 2;
 		while( member_array(me->query_skill_mapped("force"),quest_skill)== -1 )
 		{
 			me->improve_skill( me->query_skill_mapped("force") , addskill);
-			write("ÄãµÄ"+to_chinese(me->query_skill_mapped("force"))+"µÃµ½ÁË"+CHINESE_D->chinese_number(addskill)+"µãÌá¸ß¡£\n", me);
+			write("ä½ çš„"+to_chinese(me->query_skill_mapped("force"))+"å¾—åˆ°äº†"+CHINESE_D->chinese_number(addskill)+"é»žæé«˜ã€‚\n", me);
 		}
 	}
 	ling->add_temp("done", 1);

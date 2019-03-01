@@ -3,7 +3,7 @@
 #include <ansi.h>
 #include <combat.h>
 
-string name() { return HIW "ÌìÉı½£¾÷" NOR; }
+string name() { return HIW "å¤©å‡åŠè¨£" NOR; }
 
 inherit F_SSERVER;
 
@@ -16,30 +16,30 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail(name() + "Ö»ÄÜÔÚÕ½¶·ÖĞ¶Ô¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail(name() + "åªèƒ½åœ¨æˆ°é¬¥ä¸­å°å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( !objectp(weapon=query_temp("weapon", me)) ||
               query("skill_type", weapon) != "sword" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (me->query_skill("force") < 200)
-                return notify_fail("ÄãµÄÄÚ¹¦µÄĞŞÎª²»¹»£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸçš„ä¿®ç‚ºä¸å¤ ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (me->query_skill("liuyue-jian", 1) < 140)
-                return notify_fail("ÄãµÄÁ÷ÔÂ½£ÎèĞŞÎª²»¹»£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„æµæœˆåŠèˆä¿®ç‚ºä¸å¤ ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if( query("neili", me)<300 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (me->query_skill_mapped("sword") != "liuyue-jian")
-                return notify_fail("ÄãÃ»ÓĞ¼¤·¢Á÷ÔÂ½£Îè£¬ÄÑÒÔÊ©Õ¹" + name() + "¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¿€ç™¼æµæœˆåŠèˆï¼Œé›£ä»¥æ–½å±•" + name() + "ã€‚\n");
 
         if (! living(target))
-                return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+                return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIW "$N" HIW "ÊÖÍóÒ»Õó¼²¶¶£¬½£ÉíÎ¢²ü£¬½£×÷ÁúÒ÷¡£É²ÄÇ¼ä½£Ã¢¶¸ÕÇ£¬"
-              "ÈçÌìºÓµ¹ĞºÒ»°ãÈ÷Ïò$n"
-              HIW "¡£\n" NOR;
+        msg = HIW "$N" HIW "æ‰‹è…•ä¸€é™£ç–¾æŠ–ï¼ŒåŠèº«å¾®é¡«ï¼ŒåŠä½œé¾åŸã€‚å‰é‚£é–“åŠèŠ’é™¡æ¼²ï¼Œ"
+              "å¦‚å¤©æ²³å€’ç€‰ä¸€èˆ¬æ´’å‘$n"
+              HIW "ã€‚\n" NOR;
 
         message_combatd(msg, me, target);
         addn("neili", -100, me);

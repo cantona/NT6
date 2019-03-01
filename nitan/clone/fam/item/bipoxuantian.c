@@ -4,17 +4,17 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIG "±ÌÆÇĞşÌì" NOR, ({ "bipo xuantian", "bipo", "xuantian" }));
+        set_name(HIG "ç¢§é­„ç„å¤©" NOR, ({ "bipo xuantian", "bipo", "xuantian" }));
         set_weight(20000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIG "ÊÀ¼ä¼«Îªº±¼ûµÄ±¦Ê¯£¬´ÓÍòÄê±ù´¨ÖĞÈ¡µÃ¡£\n" NOR);
-                set("unit", "¿é");
+                set("long", HIG "ä¸–é–“æ¥µç‚ºç½•è¦‹çš„å¯¶çŸ³ï¼Œå¾è¬å¹´å†°å·ä¸­å–å¾—ã€‚\n" NOR);
+                set("unit", "å¡Š");
                 set("value", 300000);
                 set("item_origin", 1);
                 set("material_attrib", "stone");
-                set("material_name", HIG "±ÌÆÇĞşÌì" NOR);
+                set("material_name", HIG "ç¢§é­„ç„å¤©" NOR);
                 set("can_make", "all");
                 set("power_point", 150);
         }

@@ -4,11 +4,11 @@ inherit RIVER;
 
 void create()
 {
-          set ("short", "ÖÐÖÝ¶É");
+          set ("short", "ä¸­å·žæ¸¡");
           set ("long", @LONG
-ÕâÊÇÍ¨ÍùÑïÖÝ³ÇµÄ¶É¿Ú£¬Ç°Ãæ¾ÍÊÇ¹ö¹ö³¤½­ (river)£¬×Ç
-Á÷¹ö¹ö£¬ÍòÖÛ¾º·¢¡£Á½°¶¶É´¬À´À´ÍùÍù¡£ÏòÄÏÍ¨¹ýÖÐÖÝ´óÇÅ¾¶
-Ö±×ß¾ÍÊÇÖÐÖÝ¸®ÁË¡£
+é€™æ˜¯é€šå¾€æšå·žåŸŽçš„æ¸¡å£ï¼Œå‰é¢å°±æ˜¯æ»¾æ»¾é•·æ±Ÿ (river)ï¼Œæ¿
+æµæ»¾æ»¾ï¼Œè¬èˆŸç«¶ç™¼ã€‚å…©å²¸æ¸¡èˆ¹ä¾†ä¾†å¾€å¾€ã€‚å‘å—é€šéŽä¸­å·žå¤§æ©‹å¾‘
+ç›´èµ°å°±æ˜¯ä¸­å·žåºœäº†ã€‚
 LONG);
         set("arrive_room", "/d/zhongzhou/yangzhoudu");
           set("exits", ([

@@ -4,15 +4,15 @@ inherit F_FOOD;
 
 void create()
 {
-        string *order = ({HIW "´ó°×ÍÃ" NOR,HIM "ËÖÌÇ" NOR, HIY "»°Ã·" NOR, HIR "¼ĞĞÄÇÉ¿ËÁ¦" NOR, HIG "±¡ºÉ" NOR});
+        string *order = ({HIW "å¤§ç™½å…”" NOR,HIM "é…¥ç³–" NOR, HIY "è©±æ¢…" NOR, HIR "å¤¾å¿ƒå·§å…‹åŠ›" NOR, HIG "è–„è·" NOR});
         set_name( (order[random(5)]), ({ "sugar" }) );
         set_weight(80);
         set("value", 0);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»Á£¸ß¼¶Ï²ÌÇ¡£\n");
-                set("unit", "Á£");
+                set("long", "ä¸€ç²’é«˜ç´šå–œç³–ã€‚\n");
+                set("unit", "ç²’");
                 set("food_remaining", 2);
                 set("food_supply", 10);
 

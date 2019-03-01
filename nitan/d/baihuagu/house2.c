@@ -5,10 +5,10 @@ inherit ROOM;
 #include <ansi.h>;
 void create()
 {
-        set("short", HIY"周伯通居"NOR);
+        set("short", HIY"鍛ㄤ集閫氬眳"NOR);
         set("long", 
-"这是间很简陋的屋子，陈设简单，由此可见老顽童极于玩而不
-极于物。\n");
+"閫欐槸闁撳緢绨￠檵鐨勫眿瀛愶紝闄宠ō绨″柈锛岀敱姝ゅ彲瑕嬭�侀爲绔ユサ浜庣帺鑰屼笉
+妤典簬鐗┿�俓n");
         set("exits", ([
                 "west"  : __DIR__"house1",
                 "north" : __DIR__"shanpo1",

@@ -9,12 +9,12 @@ int is_chat_room() { return 1; }
 
 void create()
 {
-        set("short", HIR "ÄäÃûÁôÑÔÊÒ" NOR);
+        set("short", HIR "åŒ¿åç•™è¨€å®¤" NOR);
         set("long", @LONG
-Èç¹ûÄúÓÐÎÊÌâÁôÑÔ¸øÄàÌ¶Î×Ê¦µ«ÓÖ²»ÏëÆäËûÍæ¼Ò¿´µ½£¬ÄÇÃ´Äú¿É
-ÒÔÔÚÕâÀï(post)£¬ÆäËûÍæ¼Ò½«²»ÄÜ¿´µ½ÄúµÄÁôÑÔ£¬ÔÚÕâÀïÄú¿ÉÒÔ¾Ù±¨
-ÓÐÎÊÌâµÄidºÍÆäËû×÷±×ÐÐÎª£¬ÄàÌ¶Î×Ê¦½«ÎªÄúµÄÁôÑÔÍêÈ«±£ÃÜ¡£    
-                                    ==ÄàÌ¶ÖÆ×÷Èº==
+å¦‚æžœæ‚¨æœ‰å•é¡Œç•™è¨€çµ¦æ³¥æ½­å·«å¸«ä½†åˆä¸æƒ³å…¶ä»–çŽ©å®¶çœ‹åˆ°ï¼Œé‚£éº¼æ‚¨å¯
+ä»¥åœ¨é€™è£¡(post)ï¼Œå…¶ä»–çŽ©å®¶å°‡ä¸èƒ½çœ‹åˆ°æ‚¨çš„ç•™è¨€ï¼Œåœ¨é€™è£¡æ‚¨å¯ä»¥èˆ‰å ±
+æœ‰å•é¡Œçš„idå’Œå…¶ä»–ä½œå¼Šè¡Œç‚ºï¼Œæ³¥æ½­å·«å¸«å°‡ç‚ºæ‚¨çš„ç•™è¨€å®Œå…¨ä¿å¯†ã€‚    
+                                    ==æ³¥æ½­åˆ¶ä½œç¾¤==
 LONG );
 
         set("exits", ([
@@ -33,7 +33,7 @@ LONG );
 int valid_leave(object me, string dir)
 {
         if (dir == "west" && ! wizardp(me))
-                return notify_fail("Ö»ÓÐÎ×Ê¦²ÅÄÜ½øÈ¥£¡\n");
+                return notify_fail("åªæœ‰å·«å¸«æ‰èƒ½é€²åŽ»ï¼\n");
 
         return ::valid_leave(me, dir);
 }

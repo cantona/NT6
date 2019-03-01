@@ -1,4 +1,4 @@
-// /d/yixing/npc/cl_bei.c ±´º£Ê¯
+// /d/yixing/npc/cl_bei.c è²æµ·çŸ³
 // Last Modified by winder on Jul. 12 2002
 
 inherit NPC;
@@ -12,14 +12,14 @@ string ask_salary();
 
 void create()
 {
-        set_name("±´º£Ê¯", ({ "bei haishi", "bei" }));
-        set("nickname", "×ÅÊÖ³É´º");
-        set("party/party_name", HIC"³¤ÀÖ°ï"NOR);
-        set("party/rank", "×Ü¹Ü");
+        set_name("è²æµ·çŸ³", ({ "bei haishi", "bei" }));
+        set("nickname", "è‘—æ‰‹æˆæ˜¥");
+        set("party/party_name", HIC"é•·æ¨‚å¹«"NOR);
+        set("party/rank", "ç¸½ç®¡");
         set("long", 
-                "ËûÊÇÒ»¸öÉí´©»ÆÉÀµÄÀÏÈË£¬¿´ÉÏÈ¥Á³É«²Ô°×£¬Ëµ»°ÓĞÆøÎŞÁ¦£¬\n"
-                "»¹²»Í£µÄ¿ÈËÔ×Å£¬±ãËÆÉí»¼ÖØ²¡Ò»°ã¡£\n");
-        set("gender", "ÄĞĞÔ");
+                "ä»–æ˜¯ä¸€å€‹èº«ç©¿é»ƒè¡«çš„è€äººï¼Œçœ‹ä¸Šå»è‡‰è‰²è’¼ç™½ï¼Œèªªè©±æœ‰æ°£ç„¡åŠ›ï¼Œ\n"
+                "é‚„ä¸åœçš„å’³å—½è‘—ï¼Œä¾¿ä¼¼èº«æ‚£é‡ç—…ä¸€èˆ¬ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 50);
         set("attitude", "friendly");
         set("shen_type", -1);
@@ -53,17 +53,17 @@ void create()
         prepare_skill("cuff", "wuxing-quan");
 */
         set("inquiry", ([
-                "³¤ÀÖ°ï" : "³¤ÀÖ°ïµÄ¾ßÌåÊÂÎñÓÉÎÒ×Ü¹Ü¡£",
-                "Èë°ï" : "ÄãÈ¥ÎÊ°ïÖ÷°É¡£",
-                "°ïÎñ" : (: ask_job :),
+                "é•·æ¨‚å¹«" : "é•·æ¨‚å¹«çš„å…·é«”äº‹å‹™ç”±æˆ‘ç¸½ç®¡ã€‚",
+                "å…¥å¹«" : "ä½ å»å•å¹«ä¸»å§ã€‚",
+                "å¹«å‹™" : (: ask_job :),
                 "job"   : (: ask_job :),
-                "Îä¹¦" : "°ïÖ÷ÀÏÈË¼ÒµÄÎä¹¦±ÈÎÒÇ¿¶àÁË£¬Äã»¹ÊÇÏò°ïÖ÷Ñ§°É¡£",
-                "ÏãÖ÷" : "¸÷Î»ÏãÖ÷µÄÈÎÃüÓÉ°ïÖ÷ÀÏÈË¼ÒËµÁËËã¡£",
-                "Ë¾Í½ºá" : "ÎÒ¶ÔÎÒÃÇ°ïÖ÷ÀÏÈË¼ÒµÄ¾°ÑöÖ®Çé£¬ÓĞÈçÌÏÌÏ½­Ë®Á¬Ãà²»¾ø¡£",
-                "°ïÖ÷" : "ÎÒ¼Ò°ïÖ÷Ë¾Í½´óÒ¯ÄËÍşÕò½­ÄÏµÄ¡°¶«°ÔÌì¡±Ò²¡£",
-                "ÁÆÉË" : (: ask_cure :),
+                "æ­¦åŠŸ" : "å¹«ä¸»è€äººå®¶çš„æ­¦åŠŸæ¯”æˆ‘å¼·å¤šäº†ï¼Œä½ é‚„æ˜¯å‘å¹«ä¸»å­¸å§ã€‚",
+                "é¦™ä¸»" : "å„ä½é¦™ä¸»çš„ä»»å‘½ç”±å¹«ä¸»è€äººå®¶èªªäº†ç®—ã€‚",
+                "å¸å¾’æ©«" : "æˆ‘å°æˆ‘å€‘å¹«ä¸»è€äººå®¶çš„æ™¯ä»°ä¹‹æƒ…ï¼Œæœ‰å¦‚æ»”æ»”æ±Ÿæ°´é€£ç¶¿ä¸çµ•ã€‚",
+                "å¹«ä¸»" : "æˆ‘å®¶å¹«ä¸»å¸å¾’å¤§çˆºä¹ƒå¨é®æ±Ÿå—çš„â€œæ±éœ¸å¤©â€ä¹Ÿã€‚",
+                "ç™‚å‚·" : (: ask_cure :),
                 "cure" : (: ask_cure :),
-                "ºì°ü" : (: ask_salary :),
+                "ç´…åŒ…" : (: ask_salary :),
                 "salary" : (: ask_salary :),
         ]));
 
@@ -79,30 +79,30 @@ string ask_cure()
 
         myfam = (string)query("party/party_name");
         if( query("party/party_name", me) != myfam )
-                return RANK_D->query_rude(me) + "Äª·ÇÊÇÏë´òÌıÎÒ°ïµÄÃØÃÜ°É¡£";  
+                return RANK_D->query_rude(me) + "è«éæ˜¯æƒ³æ‰“è½æˆ‘å¹«çš„ç§˜å¯†å§ã€‚";  
 
         if( time()<query("bangs/curetime", me)+60 )
-                return RANK_D->query_rude(me) + "²»ÊÇ¸ÕÎÊ¹ıÎÒÂğ£¿";
+                return RANK_D->query_rude(me) + "ä¸æ˜¯å‰›å•éæˆ‘å—ï¼Ÿ";
 
         if( !(ling = present("bang ling", me)) )
-                return RANK_D->query_rude(me) + "¾¹Á¬×Ô¼ºµÄ°ïÁî¶¼¹Ü²»×¡£¡";
+                return RANK_D->query_rude(me) + "ç«Ÿé€£è‡ªå·±çš„å¹«ä»¤éƒ½ç®¡ä¸ä½ï¼";
 
         if( query("owner", ling) != query("id", me) )
-                return RANK_D->query_rude(me) + "¾¹Á¬×Ô¼ºµÄ°ïÁî¶¼¹Ü²»×¡£¡";
+                return RANK_D->query_rude(me) + "ç«Ÿé€£è‡ªå·±çš„å¹«ä»¤éƒ½ç®¡ä¸ä½ï¼";
 
         if( query("score", ling)<10 )
-                return RANK_D->query_rude(me) + "²»Îª°ïÖĞ³öÁ¦£¬¹âÖªµÀÀÌºÃ´¦¡£";
+                return RANK_D->query_rude(me) + "ä¸ç‚ºå¹«ä¸­å‡ºåŠ›ï¼Œå…‰çŸ¥é“æ’ˆå¥½è™•ã€‚";
 
         if( query("eff_qi", me)*10>query("max_qi", me)*8 )
-                return "ÉË²»ÖØµÄ»°£¬°¤Á½Ìì¾Í×ÔÓúÁË¡£";
+                return "å‚·ä¸é‡çš„è©±ï¼ŒæŒ¨å…©å¤©å°±è‡ªç™’äº†ã€‚";
 
         command("nod");
         addn("score", -2, ling);
         set("bangs/curetime", time(), me);
-        message_vision("$N½«Ò»Ò»°ü½ğ´´Ò©µİ¸ø$n¡£\n", this_object(), me);
-        message_vision("$NĞ¡ĞÄÒíÒíµØ°ÑÒ»°ü½ğ´´Ò©·óÔÚÉË¿ÚÉÏ£¬Ö»¾õÉËÊÆ´óÎªºÃ×ª£¬ÆøÉ«¿´ÆğÀ´ºÃ¶àÁË¡£\n", me);
+        message_vision("$Nå°‡ä¸€ä¸€åŒ…é‡‘å‰µè—¥éçµ¦$nã€‚\n", this_object(), me);
+        message_vision("$Nå°å¿ƒç¿¼ç¿¼åœ°æŠŠä¸€åŒ…é‡‘å‰µè—¥æ•·åœ¨å‚·å£ä¸Šï¼Œåªè¦ºå‚·å‹¢å¤§ç‚ºå¥½è½‰ï¼Œæ°£è‰²çœ‹èµ·ä¾†å¥½å¤šäº†ã€‚\n", me);
         me->receive_curing("qi", 50);
-        return "·şÒ»°ü½ğ´´Ò©¾ÍÃ»ÊÂÁË¡£";
+        return "æœä¸€åŒ…é‡‘å‰µè—¥å°±æ²’äº‹äº†ã€‚";
 }
 
 string ask_salary()
@@ -113,23 +113,23 @@ string ask_salary()
 
         myfam = (string)query("party/party_name");
         if( query("party/party_name", me) != myfam )
-                return RANK_D->query_rude(me) + "Äª·ÇÊÇÏë´òÌıÎÒ°ïµÄÃØÃÜ°É¡£";
+                return RANK_D->query_rude(me) + "è«éæ˜¯æƒ³æ‰“è½æˆ‘å¹«çš„ç§˜å¯†å§ã€‚";
 
 //        if( me->query_temp("bangs/pos") )
         if( query("bangs/pos", me) )
-                return RANK_D->query_respect(me) + "ÒÑÊÇÒ»ÌÃÖ®Ö÷ÁË£¬°ïÖ÷ÄÇ¶ù¶¨ÓĞÖØÉÍ¡£";
+                return RANK_D->query_respect(me) + "å·²æ˜¯ä¸€å ‚ä¹‹ä¸»äº†ï¼Œå¹«ä¸»é‚£å…’å®šæœ‰é‡è³ã€‚";
 
         if( !(ling = present("bang ling", me)) )
-                return RANK_D->query_rude(me) + "¾¹Á¬×Ô¼ºµÄ°ïÁî¶¼¹Ü²»×¡£¡";
+                return RANK_D->query_rude(me) + "ç«Ÿé€£è‡ªå·±çš„å¹«ä»¤éƒ½ç®¡ä¸ä½ï¼";
 
         if( query("owner", ling) != query("id", me) )
-                return RANK_D->query_rude(me) + "¾¹Á¬×Ô¼ºµÄ°ïÁî¶¼¹Ü²»×¡£¡";
+                return RANK_D->query_rude(me) + "ç«Ÿé€£è‡ªå·±çš„å¹«ä»¤éƒ½ç®¡ä¸ä½ï¼";
 
         if( time()<query("bangs/salarytime", me)+1800 )
-                return RANK_D->query_rude(me) + "²»ÊÇ¸ÕÎÊ¹ıÎÒÂğ£¿";
+                return RANK_D->query_rude(me) + "ä¸æ˜¯å‰›å•éæˆ‘å—ï¼Ÿ";
 
         if( (amount=query("score", ling))<30 )
-                return RANK_D->query_rude(me) + "×î½ü±íÏÖºÜ²îÑ½£¬ÄãÕâĞ©ÈÕ×ÓÔÚ¸ÉÂğ£¿";
+                return RANK_D->query_rude(me) + "æœ€è¿‘è¡¨ç¾å¾ˆå·®å‘€ï¼Œä½ é€™äº›æ—¥å­åœ¨å¹¹å—ï¼Ÿ";
 
         command("nod");
         set("bangs/salarytime", time(), me);
@@ -138,8 +138,8 @@ string ask_salary()
         wage->set_amount(amount);
         delete("score", ling);
         wage->move(me);
-        message_vision("$N×ªÉíÄÃ³öÒ»¸öºì°üµİ¸ø$n¡£\n", this_object(), me);
-        return "Äã×î½ü±íÏÖ²»´í£¬Õâ·İºì°üÄãÄÃÈ¥»¨°É¡£";
+        message_vision("$Nè½‰èº«æ‹¿å‡ºä¸€å€‹ç´…åŒ…éçµ¦$nã€‚\n", this_object(), me);
+        return "ä½ æœ€è¿‘è¡¨ç¾ä¸éŒ¯ï¼Œé€™ä»½ç´…åŒ…ä½ æ‹¿å»èŠ±å§ã€‚";
 }
 
 #include "guanjia.h";

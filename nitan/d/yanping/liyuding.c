@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "���㶥");
+        set("short", "鯉魚頂");
         set("long", @LONG
-���㶥���཭�ϣ���ͷ����������ֱָ���ģ���������ˮ������
-�ļ����������첻����ɽ��һ��ʵ�İ˲�ʯ������Խ��ŷ�ɽ������ң
-ң��ԡ�
+鯉魚頂延綿江畔，其頭部峻峭如梭，直指江心，如鯉魚逆水，波濤
+湍急，回流傳響不絕。山頂一座實心八層石塔，與對江九峰山的西塔遙
+遙相對。
 LONG );
         set("exits", ([
                 "southup"   : __DIR__"dongta",

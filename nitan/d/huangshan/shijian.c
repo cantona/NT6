@@ -4,20 +4,20 @@
 inherit ROOM;
 void create()
 {
-        set("short", "ÊÔ½£Ê¯");
+        set("short", "è©¦åŠçŸ³");
         set("long", @LONG
-Ò»¿é¾Þ´óµÄÊ¯Í· £¨stone£©£¬¹Â´¦Â·ÖÐ£¬ÖÐ¼äÒ»ºÛ£¬Éî¼¸½ü°ë£¬Ïà
-´«ÕâÊÇÒ»¹Å´ú½£Ê¦ÊÔ½£Ö®´¦£¬Öý½£Ç§Óà£¬×îºóÖÕÓÚÔì³öÒ»°Ñ¿ÉÒÔÅü¿ª´Ë
-Ê¯µÄ½££¬ÃûÎª¡°²Ôñ·Éñ½£¡±£¬¿ÉÏ§½£Ê¦ÒòÐÄÁ¦ã¾ã²¶øËÀ¡£Ïà´«»ÆÉ½½£Â®
-Ö÷ÈËÊÀ´úÏà´«µÄ±ãÊÇ´Ë½£¡£
+ä¸€å¡Šå·¨å¤§çš„çŸ³é ­ ï¼ˆstoneï¼‰ï¼Œå­¤è™•è·¯ä¸­ï¼Œä¸­é–“ä¸€ç—•ï¼Œæ·±å¹¾è¿‘åŠï¼Œç›¸
+å‚³é€™æ˜¯ä¸€å¤ä»£åŠå¸«è©¦åŠä¹‹è™•ï¼Œé‘„åŠåƒä½™ï¼Œæœ€å¾Œçµ‚äºŽé€ å‡ºä¸€æŠŠå¯ä»¥åŠˆé–‹æ­¤
+çŸ³çš„åŠï¼Œåç‚ºâ€œè’¼ç©¹ç¥žåŠâ€ï¼Œå¯æƒœåŠå¸«å› å¿ƒåŠ›æ†”æ‚´è€Œæ­»ã€‚ç›¸å‚³é»ƒå±±åŠå»¬
+ä¸»äººä¸–ä»£ç›¸å‚³çš„ä¾¿æ˜¯æ­¤åŠã€‚
 LONG
         );
         set("exits", ([ 
                 "east" : __DIR__"zuishi",
         ]));
         set("item_desc", ([
-                "stone": "Ò»¿é¾Þ´óµÄÊ¯Í·£¬ÖÐ¼äÒ»ºÛ£¬ÁÑ·ìÉî´¦ËÆºõÓÐÒ»
-¶«Î÷ÉÁÉÁ·¢¹â¡£ÄãËÆºõÒ²¿ÉÒÔÔÚÕâÀïÊÔÒ»ÊÔ£¨test£©ÄãµÄÎäÆ÷¡£\n"
+                "stone": "ä¸€å¡Šå·¨å¤§çš„çŸ³é ­ï¼Œä¸­é–“ä¸€ç—•ï¼Œè£‚ç¸«æ·±è™•ä¼¼ä¹Žæœ‰ä¸€
+æ±è¥¿é–ƒé–ƒç™¼å…‰ã€‚ä½ ä¼¼ä¹Žä¹Ÿå¯ä»¥åœ¨é€™è£¡è©¦ä¸€è©¦ï¼ˆtestï¼‰ä½ çš„æ­¦å™¨ã€‚\n"
         ]) );
         set("outdoors", "huangshan");
         set("coor/x", -615);
@@ -34,29 +34,29 @@ int do_test(string arg)
         object weapon, me = this_player();
         object piece;
 
-        if(!arg ) return notify_fail("ÄãÒªÊÔÒ»ÊÔÄãÉíÉÏµÄÄÄÑùÎäÆ÷£¿\n");
+        if(!arg ) return notify_fail("ä½ è¦è©¦ä¸€è©¦ä½ èº«ä¸Šçš„å“ªæ¨£æ­¦å™¨ï¼Ÿ\n");
         if(!(weapon = present(arg,me)))
-                return notify_fail("ÄãÉíÉÏËÆºõÃ»ÓÐÕâÑù¶«Î÷£¡\n");
+                return notify_fail("ä½ èº«ä¸Šä¼¼ä¹Žæ²’æœ‰é€™æ¨£æ±è¥¿ï¼\n");
         if( !query("weapon_prop", weapon) )
-                return notify_fail(weapon->name()+"ËÆºõ²¢²»ÊÇÒ»ÖÖÎäÆ÷£¡\n");
+                return notify_fail(weapon->name()+"ä¼¼ä¹Žä¸¦ä¸æ˜¯ä¸€ç¨®æ­¦å™¨ï¼\n");
         if( !query("equipped", weapon) )
-                return notify_fail("Äã²¢Ã»ÓÐ½«"+weapon->name()+"ÎÕÔÚÊÖÖÐ¡£\n");
-        message_vision("$NÓÃ¾¡È«Á¦£¬½«ÊÖÖÐµÄ"+weapon->name()+"ÃÍÁ¦Ïò¾ÞÊ¯»ÓÈ¥¡£¡£¡£¡£\n",me);
+                return notify_fail("ä½ ä¸¦æ²’æœ‰å°‡"+weapon->name()+"æ¡åœ¨æ‰‹ä¸­ã€‚\n");
+        message_vision("$Nç”¨ç›¡å…¨åŠ›ï¼Œå°‡æ‰‹ä¸­çš„"+weapon->name()+"çŒ›åŠ›å‘å·¨çŸ³æ®åŽ»ã€‚ã€‚ã€‚ã€‚\n",me);
         weapon->unequip();
         set("weapon_prop", 0, weapon);
         weapon->save();
         me->reset_action();
-        message_vision("Ö»Ìý¼û¡±îõ¡°µÄÒ»Éù£¬$NÊÖÖÐµÄ"+weapon->name()+"Ó¦Éù¶ø¶Ï£¡\n",me);
+        message_vision("åªè½è¦‹â€éºâ€œçš„ä¸€è²ï¼Œ$Næ‰‹ä¸­çš„"+weapon->name()+"æ‡‰è²è€Œæ–·ï¼\n",me);
         seteuid(getuid());
         piece = new("/clone/misc/piece");
-        piece->set_name("¶ÏµôµÄ"+query("name", weapon),({query("id", weapon),"piece"}));
+        piece->set_name("æ–·æŽ‰çš„"+query("name", weapon),({query("id", weapon),"piece"}));
         piece->move(this_player());
         destruct(weapon);
         if(random(500))
-                tell_object(this_object(),"´óÊ¯ÉÏµÄÁÑºÛËÆºõÓÖÉîÁËÒ»Ð©£¡\n");
+                tell_object(this_object(),"å¤§çŸ³ä¸Šçš„è£‚ç—•ä¼¼ä¹Žåˆæ·±äº†ä¸€äº›ï¼\n");
         else
         {
-                tell_object(this_object(),"Ò»¿éºÚ÷î÷îµÄ¶«Î÷´ÓÊ¯·ìÖÐµôÁË³öÀ´£¡\n");
+                tell_object(this_object(),"ä¸€å¡Šé»‘é»é»çš„æ±è¥¿å¾žçŸ³ç¸«ä¸­æŽ‰äº†å‡ºä¾†ï¼\n");
                 weapon = new(__DIR__"obj/banzhi");
                 weapon->move(this_object());
         }

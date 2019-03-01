@@ -6,11 +6,11 @@ string ask_me();
 
 void create()
 {
-        set_name("ÌìÀÇ×Ó", ({ "tianlang zi", "tianlang" }));
-        set("nickname", "ĞÇËŞÅÉÈıÊ¦ĞÖ");
+        set_name("å¤©ç‹¼å­", ({ "tianlang zi", "tianlang" }));
+        set("nickname", "æ˜Ÿå®¿æ´¾ä¸‰å¸«å…„");
         set("long", 
-                "Ëû¾ÍÊÇ¶¡´ºÇïµÄÈıµÜ×ÓÌìÀÇ×Ó¡£\n");
-        set("gender", "ÄĞĞÔ");
+                "ä»–å°±æ˜¯ä¸æ˜¥ç§‹çš„ä¸‰å¼Ÿå­å¤©ç‹¼å­ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 30);
         set("attitude", "peaceful");
         set("class", "fighter");
@@ -44,7 +44,7 @@ void create()
         set_skill("tianshan-zhang", 50);
 
         set("no_teach", ([
-                "huagong-dafa" : "»¯¹¦´ó·¨ÒªÀÏÏÉÇ××Ô´«ÊÚ¡£",
+                "huagong-dafa" : "åŒ–åŠŸå¤§æ³•è¦è€ä»™è¦ªè‡ªå‚³æˆã€‚",
         ]));
 
         map_skill("whip", "chanhun-suo");
@@ -58,7 +58,7 @@ void create()
         prepare_skill("strike", "chousui-zhang");
         prepare_skill("claw", "sanyin-zhua");
 
-        create_family("ĞÇËŞÅÉ", 2, "µÜ×Ó");
+        create_family("æ˜Ÿå®¿æ´¾", 2, "å¼Ÿå­");
 
         set("master_ob", 4);
         setup();
@@ -66,10 +66,10 @@ void create()
 
 void attempt_apprentice(object ob)
 {
-        command("say ÎÒ²»ÊÕÍ½¡£");
+        command("say æˆ‘ä¸æ”¶å¾’ã€‚");
         return 0;
 
-        command("say ºÃ°É£¬ÎÒ¾ÍÊÕÏÂÄãÁË¡£");
+        command("say å¥½å§ï¼Œæˆ‘å°±æ”¶ä¸‹ä½ äº†ã€‚");
         welcome(ob);
         command("recruit "+query("id", ob));
 }

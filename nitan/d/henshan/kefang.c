@@ -3,11 +3,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��ɽ�ɿͷ�");
+        set("short", "衡山派客房");
         set("long", @LONG
-����һ��ܴ�Ŀͷ����Ǻ�ɽ�ɹ�ǰ��������ο���ס�ķ����
-��ʮ�ּ�ª�� ��ǽ����ʮ����Сľ���� ��Ȼ��ª�˵㵫���ܱ��ڻ�
-ɽ��¶��ǿ�ö��ˡ�
+這是一間很大的客房，是衡山派供前來祭神的遊客暫住的房間陳
+設十分簡陋。 靠牆放了十幾張小木床。 雖然簡陋了點但是總比在荒
+山中露宿強得多了。
 LONG );
         set("sleep_room", 1);
         set("no_fight", 1);

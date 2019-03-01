@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ɽ·");
+        set("short", "山路");
         set("long", @LONG
-�����ǿ��������ĳ�ɽ���룬��ʯ��ᾡ�������ȥ���Ǵ�����Ե
-�ˡ�������һ��ѩɽ�������ơ�·�����и�ѩ�ӡ�
+這裡是靠近川西的崇山峻嶺，怪石嶙峋。再往東去就是川西邊緣
+了。往西有一座雪山高聳入雲。路邊上有個雪坑。
 LONG );
         set("exits", ([
                 "east"      : __DIR__"sroad2",

@@ -1,6 +1,6 @@
 // This program is a part of NT MudLIB
 // wting.c
-// ÊÔ½£Í¤
+// è©¦åŠäº­
 
 #include <ansi.h>
 inherit ROOM;
@@ -12,7 +12,7 @@ int do_plant(string arg);
 
 void create()
 {
-        set("short", HIR"ÊÔ½£Í¤"NOR);
+        set("short", HIR"è©¦åŠäº­"NOR);
         set("long", (: long_desc :));
 
         set("exits", ([
@@ -43,7 +43,7 @@ string long_desc()
                    /I____________I\\
                  //||||||||||||||||\\\\
              T\\//IIIIIIIIIIIIIIIIIIII\\\\/T
-            ^^^^"+HIG"||"NOR+HIY"^^^"+HIM"[ ÊÔ½£Í¤ ]"NOR+HIY"^^^"+HIG"||"+HIY"^^^^         "+HIY"
+            ^^^^"+HIG"||"NOR+HIY"^^^"+HIM"[ è©¦åŠäº­ ]"NOR+HIY"^^^"+HIG"||"+HIY"^^^^         "+HIY"
                 "+HIG"||"NOR+HIY"________________"+HIG"||"NOR+HIY"             "+HIC"
          []__|[]___[]___||___[]___[]|__[]___[]
          |_________|_|________|_|____________|"+HIB"
@@ -53,13 +53,13 @@ string long_desc()
                ||                  ||
                ||                  ||
                ||__________________||\n
-               "+HIC"ÕıÇ°·½Êú×ÅÒ»ÅÅ±øÆ÷¼Ü\n"NOR;
+               "+HIC"æ­£å‰æ–¹è±è‘—ä¸€æ’å…µå™¨æ¶\n"NOR;
         else
                 desc  = HIW"
-                   /I____________I\\         "+HIR"¡ï"+HIW"
+                   /I____________I\\         "+HIR"â˜…"+HIW"
                  //||||||||||||||||\\\\       "+HIY"||"+HIW"~~~~~~~~/
-             T\\//IIIIIIIIIIIIIIIIIIII\\\\/T   "+HIY"||   Îä   "+HIW"{
-            ^^^^"+HIG"||"NOR+HIY"^^^"+HIM"[ ÊÔ½£Í¤ ]"NOR+HIY"^^^"+HIG"||"+HIY"^^^^    "+HIY"||         "+HIW"\\"+HIY"
+             T\\//IIIIIIIIIIIIIIIIIIII\\\\/T   "+HIY"||   æ­¦   "+HIW"{
+            ^^^^"+HIG"||"NOR+HIY"^^^"+HIM"[ è©¦åŠäº­ ]"NOR+HIY"^^^"+HIG"||"+HIY"^^^^    "+HIY"||         "+HIW"\\"+HIY"
                 "+HIG"||"NOR+HIY"________________"+HIG"||"NOR+HIY"        ||"+HIW"~~~~~~~~~~~"+HIC"
          []__|[]___[]___||___[]___[]|__[]___[]
          |_________|_|________|_|____________|"+HIB"
@@ -69,7 +69,7 @@ string long_desc()
                ||                  ||
                ||                  ||
                ||__________________||\n
-               "+HIC"ÕıÇ°·½Êú×ÅÒ»ÅÅ±øÆ÷¼Ü\n"NOR;
+               "+HIC"æ­£å‰æ–¹è±è‘—ä¸€æ’å…µå™¨æ¶\n"NOR;
 
         return desc;
 }
@@ -80,18 +80,18 @@ int do_withdraw(string arg)
         int i, bGuarded = 0;
 
         if( !arg || arg != "flag" && arg != "qi" )
-                return notify_fail("ÄãÏëÒª°ÎÊ²Ã´£¿\n");
+                return notify_fail("ä½ æƒ³è¦æ‹”ä»€éº¼ï¼Ÿ\n");
 
         if( me->is_busy() )
                 return notify_fail(BUSY_MESSAGE);
 
         if( query("flag") <= 0 )
-                return notify_fail("Ã»Æì¿É°Î¡£\n");
+                return notify_fail("æ²’æ——å¯æ‹”ã€‚\n");
 
         if( query_temp("battle/team_name", me) == query("team_name") )
-                return notify_fail("Íµ×Ô¼ºµÄÆì£¿\n");
+                return notify_fail("å·è‡ªå·±çš„æ——ï¼Ÿ\n");
 
-        message_vision(HIY"$NÏòÆì¸ËÔ¾Æğ£¬ÏëÒ»°Ñ°ÎÏÂÆì×Ó¡£\n"NOR, me);
+        message_vision(HIY"$Nå‘æ——æ¡¿èºèµ·ï¼Œæƒ³ä¸€æŠŠæ‹”ä¸‹æ——å­ã€‚\n"NOR, me);
 
         obj = all_inventory(environment(me));
         for( i=0; i<sizeof(obj); i++ ) {
@@ -99,7 +99,7 @@ int do_withdraw(string arg)
                     query_temp("battle/team_name", obj[i]) != query_temp("battle/team_name", me) && 
                     obj[i]->visible(me) ) {
                         obj[i]->kill_ob(me);
-                        message_vision(HIR"$N¼±¶Ô$nºÈµÀ£º¡°$n¾¹¸ÒÍµÆì£¬¿´ÕĞ£¡¡±\n"NOR, obj[i],me,me);
+                        message_vision(HIR"$Næ€¥å°$nå–é“ï¼šâ€œ$nç«Ÿæ•¢å·æ——ï¼Œçœ‹æ‹›ï¼â€\n"NOR, obj[i],me,me);
                         me->kill_ob(obj[i]);
                         bGuarded = 1;
                 }
@@ -110,13 +110,13 @@ int do_withdraw(string arg)
                 flag = new(__DIR__"obj/flag");
                 flag->set_name(query("flag_name"), ({ "flag" }) );
                 if( flag->move(me) ) {
-                        message_vision(HIG"$NÒ»°Ñ³¶ÏÂÁË´óÆì£¬¸ß¸ß¾ÙÆğ¡£\n"NOR, me);
+                        message_vision(HIG"$Nä¸€æŠŠæ‰¯ä¸‹äº†å¤§æ——ï¼Œé«˜é«˜èˆ‰èµ·ã€‚\n"NOR, me);
                         set("flag",0);
                 } else {
                         destruct(flag);
                 }
                 CHANNEL_D->do_channel(this_object(), "war",
-                        "ÌıËµ"+me->name()+"¶á×ßÁË"+query("flag_name")+HIR"£¡"NOR );
+                        "è½èªª"+me->name()+"å¥ªèµ°äº†"+query("flag_name")+HIR"ï¼"NOR );
         }
         return 1;
 }
@@ -126,32 +126,32 @@ int do_plant(string arg)
         object flag, me = this_player();
 
         if( !BATTLEFIELD_D->in_battle(me) )
-                return notify_fail("ÏÖÔÚÃ»ÓĞ±ÈÈü¡£\n");
+                return notify_fail("ç¾åœ¨æ²’æœ‰æ¯”è³½ã€‚\n");
 
         if( me->is_busy() )
                 return notify_fail(BUSY_MESSAGE);
 
         if( !arg || arg != "flag" && arg != "qi" )
-                return notify_fail("ÄãÏëÒª²åÊ²Ã´£¿\n");
+                return notify_fail("ä½ æƒ³è¦æ’ä»€éº¼ï¼Ÿ\n");
 
         if( query("flag") > 0 )
-                return notify_fail("Æì¸ËÉÏÒÑÓĞÆìÁË¡£\n");
+                return notify_fail("æ——æ¡¿ä¸Šå·²æœ‰æ——äº†ã€‚\n");
 
         if( query_temp("battle/team_name", me) != query("team_name") )
-                return notify_fail("Õâ¿É²»ÊÇÄãµÄµØÅÌ¡£\n");
+                return notify_fail("é€™å¯ä¸æ˜¯ä½ çš„åœ°ç›¤ã€‚\n");
 
         flag = present("flag",me );
-        if( !flag ) return notify_fail("ÄãÊÖÖĞÃ»Æì¿ÉÒÔ²å¡£\n");
+        if( !flag ) return notify_fail("ä½ æ‰‹ä¸­æ²’æ——å¯ä»¥æ’ã€‚\n");
 
-        if( query("name", flag) == query("team_name")+"´óÆì" )
-                return notify_fail("×Ô¼ºµÄ¶ÓÆìÓ¦¸Ã²åÔÚ´ó±¾Óª²ÅÊÇ¡£\n");
+        if( query("name", flag) == query("team_name")+"å¤§æ——" )
+                return notify_fail("è‡ªå·±çš„éšŠæ——æ‡‰è©²æ’åœ¨å¤§æœ¬ç‡Ÿæ‰æ˜¯ã€‚\n");
 
-        message_vision(HIY"$N°Ñ´óÆì»©À²À²Õ¹¿ª£¬²åÉÏÁËÆì¸Ë¡£\n"NOR, me);
+        message_vision(HIY"$NæŠŠå¤§æ——å˜©å•¦å•¦å±•é–‹ï¼Œæ’ä¸Šäº†æ——æ¡¿ã€‚\n"NOR, me);
 
         set("flag",1);
 
         CHANNEL_D->do_channel(this_object(), "war",
-                "ÌıËµ"+me->name()+"½«"+query("name", flag)+HIR"²åµ½ÁËÊÔ½£Í¤£¡"NOR);
+                "è½èªª"+me->name()+"å°‡"+query("name", flag)+HIR"æ’åˆ°äº†è©¦åŠäº­ï¼"NOR);
         set("flag_name",query("name", flag));
 
         destruct(flag);

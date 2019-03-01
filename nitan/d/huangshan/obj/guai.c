@@ -4,7 +4,7 @@ inherit ITEM;
 
 void create()
 {
-        set_name("¹ÖÊ¯", ({ "guai shi", "guai", "shi" }) );
+        set_name("æ€ªçŸ³", ({ "guai shi", "guai", "shi" }) );
         set_weight(500);
         set_max_encumbrance(80000);
         set("no_get", 1);
@@ -13,8 +13,8 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿é");
-                set("long", "²Î²î²»ÆëµÄ¹ÖÊ¯¡£\n");
+                set("unit", "å¡Š");
+                set("long", "åƒå·®ä¸é½Šçš„æ€ªçŸ³ã€‚\n");
                 set("value", 1);
         }
 }

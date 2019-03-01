@@ -3,10 +3,10 @@ inherit ROOM;
 
 void create()
 {
-      set("short","×ÏÖñÁÖ");
+      set("short","ç´«ç«¹æž—");
       set("long",
-"½õÐå»¨Ô°ºóµÄ×ÏÖñÁÖ£¬ÊÇÒ¹³½ÏÐÊ±ÐÝí¬³£µ½µÄËùÔÚ¡£×ÏÖñÏ¸Êè£¬Çå·ç\n"
-"Î¢·÷¡£Âþ²½ÓÚ´Ë£¬ÊÀÊÂÖ®·×ÈÅ¶ÙÊ±ÑÌÏûÔÆÉ¢¡£\n"
+"éŒ¦ç¹¡èŠ±åœ’å¾Œçš„ç´«ç«¹æž—ï¼Œæ˜¯å¤œè¾°é–’æ™‚ä¼‘æ†©å¸¸åˆ°çš„æ‰€åœ¨ã€‚ç´«ç«¹ç´°ç–ï¼Œæ¸…é¢¨\n"
+"å¾®æ‹‚ã€‚æ¼«æ­¥äºŽæ­¤ï¼Œä¸–äº‹ä¹‹ç´›æ“¾é “æ™‚ç…™æ¶ˆé›²æ•£ã€‚\n"
 );
       set("exits",([ /* sizeof() == 1 */
           "west"  : __DIR__"bamboo2",

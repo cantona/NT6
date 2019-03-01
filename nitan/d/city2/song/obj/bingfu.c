@@ -12,7 +12,7 @@ void attack_begin(object me, object target, object room, object env, string dir)
 
 void create()
 {
-        set_name(HIY "±ø·û" NOR, ({"bing fu", "fu"}));
+        set_name(HIY "å…µç¬¦" NOR, ({"bing fu", "fu"}));
         set_weight(10);
         set("no_get", 1);
         set("no_steal", 1);
@@ -21,11 +21,11 @@ void create()
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ã¶");
-                set("long",HIY"Ò»Ã¶´óËÎÔªË§µ÷±øÇ²½«µÄ»¢Í·±ø·û¡£\n"NOR);
+                set("unit", "æš");
+                set("long",HIY"ä¸€æšå¤§å®‹å…ƒå¸¥èª¿å…µé£å°‡çš„è™é ­å…µç¬¦ã€‚\n"NOR);
                 set("material", "copper");
         }
-        set("master", "ºÚ¿Í");   
+        set("master", "é»‘å®¢");   
         set("owner", "lonely");
         setup();
 }
@@ -78,7 +78,7 @@ int do_waring(object me, object ob)
 
 int do_kill()
 {
-        tell_object(this_player(), "ÄãÏÖÔÚÊÇÒ»¾üÖ®Í³Ë§ÁË£¬Ò»¾ÙÒ»¶¯ÇëÈıË¼£¡\n");
+        tell_object(this_player(), "ä½ ç¾åœ¨æ˜¯ä¸€è»ä¹‹çµ±å¸¥äº†ï¼Œä¸€èˆ‰ä¸€å‹•è«‹ä¸‰æ€ï¼\n");
         return 1;
 }    
 
@@ -87,7 +87,7 @@ int do_yun(string arg)
         if (arg != "qi" && arg != "recover" && arg != "jing"
         &&  arg != "regenerate" && arg != "heal" && arg != "jingheal")
         {
-                tell_object(this_player(), "ÄãÏÖÔÚÊÇÒ»¾üÖ®Í³Ë§ÁË£¬Ò»¾ÙÒ»¶¯ÇëÈıË¼£¡\n");
+                tell_object(this_player(), "ä½ ç¾åœ¨æ˜¯ä¸€è»ä¹‹çµ±å¸¥äº†ï¼Œä¸€èˆ‰ä¸€å‹•è«‹ä¸‰æ€ï¼\n");
                 return 1;
         }
         return 0;
@@ -98,12 +98,12 @@ int do_escort()
         object me = this_player(), ob = this_object();
 
         if (file_name(environment(me)) != "/quest/quest_jun/sying1")
-                return notify_fail("ÇëÏÈ»ØÄãµÄÕÊÓªµ÷ÅÉ¾üÂí£¬·ñÔò½«ÓĞ°­ĞĞ³Ì£¡\n"); 
+                return notify_fail("è«‹å…ˆå›ä½ çš„å¸³ç‡Ÿèª¿æ´¾è»é¦¬ï¼Œå¦å‰‡å°‡æœ‰ç¤™è¡Œç¨‹ï¼\n"); 
 
         set_temp("jun_quest/escort", 1, me);
 
         if( query_temp("jun_quest/move", me) )
-                return notify_fail("ºÅÁîÒÑ¾­·¢²¼ÏÂÈ¥ÁË£¡\n");   
+                return notify_fail("è™Ÿä»¤å·²ç¶“ç™¼å¸ƒä¸‹å»äº†ï¼\n");   
 
         ob->start_move(me, ob);
         set("no_get", 1, me);
@@ -111,7 +111,7 @@ int do_escort()
         set_temp("jun_quest/last_move", "/quest/quest_jun/sying1", me);
         addn_temp("jun_quest/reward", 10, me);
 
-        message_vision(HIW "$N´óÉùºÈµÀ£º×óÓÒ¾üÂí¼´¿ÌËæ±¾Ë§Ç°¸°¾©Ê¦Ñº½âÁ¸²İ£¬²»µÃÓĞÎó£¡£¡\n" NOR, me); 
+        message_vision(HIW "$Nå¤§è²å–é“ï¼šå·¦å³è»é¦¬å³åˆ»éš¨æœ¬å¸¥å‰èµ´äº¬å¸«æŠ¼è§£ç³§è‰ï¼Œä¸å¾—æœ‰èª¤ï¼ï¼\n" NOR, me); 
         return 1;
 }
 
@@ -144,8 +144,8 @@ void move_me(object me, object ob)
                 if (site == "/d/bianliang/chengmen")
                 {
                         me->start_busy(10 + random(10));   
-                        message_vision(HIY "$NÂÊÁìµÄ½âÁ¸´ó¾üÖÕÓÚµ½´ïÁË¾©Ê¦ãêÁº£¬" +
-                                       "$N½«Á¸²İÔØÉÏÂí³µ£¬ÓÖÁ¢¿Ì¿ªÊ¼ÁËĞĞ¾üµÄ±¼³Ì....\n" NOR, me);
+                        message_vision(HIY "$Nç‡é ˜çš„è§£ç³§å¤§è»çµ‚äºåˆ°é”äº†äº¬å¸«æ±´æ¨‘ï¼Œ" +
+                                       "$Nå°‡ç³§è‰è¼‰ä¸Šé¦¬è»Šï¼Œåˆç«‹åˆ»é–‹å§‹äº†è¡Œè»çš„å¥”ç¨‹....\n" NOR, me);
                         set_temp("jun_quest/move", "backward", me);
                         move_way = backward_way;
                 }
@@ -155,8 +155,8 @@ void move_me(object me, object ob)
                 move_way = backward_way;
                 if (site == "/quest/quest_jun/sying1")
                 {
-                        message_vision(HIY "$NÂÊÁìµÄ½âÁ¸´ó¾üÖÕÓÚµ½´ïÁËÏåÑô¾üÓª£¬" +
-                                       "$NµÄÁ¸²İ¼°Ê±Ö§Ô®ÁË´ó¾üµÄ²¹¸ø....\n" NOR, me);
+                        message_vision(HIY "$Nç‡é ˜çš„è§£ç³§å¤§è»çµ‚äºåˆ°é”äº†è¥„é™½è»ç‡Ÿï¼Œ" +
+                                       "$Nçš„ç³§è‰åŠæ™‚æ”¯æ´äº†å¤§è»çš„è£œçµ¦....\n" NOR, me);
                         delete_temp("jun_quest/escort", me);
                         delete_temp("jun_quest/move", me);
                         delete_temp("jun_quest/last_move", me);
@@ -188,7 +188,7 @@ void move_me(object me, object ob)
         if( query_temp("jun_quest/last_move", me) )
                 me->move(query_temp("jun_quest/last_move", me));
 
-        message_vision(YEL "$NÂÊÁì×Å½âÁ¸´ó¶ÓÈËÂí²»·ÖÖçÒ¹µØĞĞ½ø×Å.....\n", me);
+        message_vision(YEL "$Nç‡é ˜è‘—è§£ç³§å¤§éšŠäººé¦¬ä¸åˆ†æ™å¤œåœ°è¡Œé€²è‘—.....\n", me);
         me->start_busy(2 + random(2));
         remove_call_out("move_me");
         call_out("move_me", 4, me, ob);
@@ -203,44 +203,44 @@ int do_attack(string arg)
 
         env = environment(me);  
 
-        if (! arg) return notify_fail("ÄãÒªÖ¸»Ó²¿¶Ó³¯Ë­·¢Æğ½ø¹¥£¿\n");
+        if (! arg) return notify_fail("ä½ è¦æŒ‡æ®éƒ¨éšŠæœèª°ç™¼èµ·é€²æ”»ï¼Ÿ\n");
         
         if( query_temp("jun_quest/attack", me) )
-                return notify_fail("ÄãµÄ¶ÓÎéÕıÔÚÁĞÕó½ø¹¥£¬²»ÒªÂÒ·¢ºÅÁîÁË£¡\n"); 
+                return notify_fail("ä½ çš„éšŠä¼æ­£åœ¨åˆ—é™£é€²æ”»ï¼Œä¸è¦äº‚ç™¼è™Ÿä»¤äº†ï¼\n"); 
 
         if( query_temp("jun_quest/group", me)<1 )
-                return notify_fail("ÄãµÄ¶ÓÎéÒÑ¾­ËğÊ§´ù¾¡£¬ÎŞ·¨ÁĞÕó³å·æÁË£¡\n"); 
+                return notify_fail("ä½ çš„éšŠä¼å·²ç¶“æå¤±æ®†ç›¡ï¼Œç„¡æ³•åˆ—é™£æ²–é‹’äº†ï¼\n"); 
  
 /*
         if( query_temp("jun_quest/train", me) == "infantry" )
         {
                 if( query("no_fight", env) )
-                        return notify_fail("ÕâÀï²»ĞíÕ½¶·£¡£¡\n");
+                        return notify_fail("é€™è£¡ä¸è¨±æˆ°é¬¥ï¼ï¼\n");
 */
                         
                 if (objectp(obb = present(arg, env)))
                 {
                         if( query("no_fight", env) )
-                                return notify_fail("ÕâÀï²»ĞíÕ½¶·£¡£¡\n");
+                                return notify_fail("é€™è£¡ä¸è¨±æˆ°é¬¥ï¼ï¼\n");
 /*
 
                         if( query("is_quest", obb) || 
                             query("is_robber", obb) )
-                                return notify_fail("Äã¾üÎñÔÚÉí£¬»¹ÊÇ²»ÒªÇáÒ×ÕĞÈÇÊÇ·ÇµÄºÃ£¡\n");
+                                return notify_fail("ä½ è»å‹™åœ¨èº«ï¼Œé‚„æ˜¯ä¸è¦è¼•æ˜“æ‹›æƒ¹æ˜¯éçš„å¥½ï¼\n");
 */
 
-                        message_vision(HIY "$N½«ÊÖÖĞ±¦½£Ò»»Ó£¬´óºÈµÀ£º" +
-                                       "Èı¾üÁĞÕó£¬×¼±¸ÏòµĞ¾ü·¢Æğ³å·æ£¡£¡\n" NOR, me);       
+                        message_vision(HIY "$Nå°‡æ‰‹ä¸­å¯¶åŠä¸€æ®ï¼Œå¤§å–é“ï¼š" +
+                                       "ä¸‰è»åˆ—é™£ï¼Œæº–å‚™å‘æ•µè»ç™¼èµ·æ²–é‹’ï¼ï¼\n" NOR, me);       
 
                         set_temp("jun_quest/attack", 1, me);
                         call_out("attack_over", 10, me);
                         attack_begin(me, obb, room, env, ""); 
                         return 1;  
                 } else
-                        return notify_fail("ÎŞ·¨ÕÒµ½Ä¿±ê£¬ÇëÓÃtuji sb Ö¸»ÓÄãµÄ¶ÓÎé£¡\n");
+                        return notify_fail("ç„¡æ³•æ‰¾åˆ°ç›®æ¨™ï¼Œè«‹ç”¨tuji sb æŒ‡æ®ä½ çš„éšŠä¼ï¼\n");
 /*
         } else
-                return notify_fail("ÄãÎ´´øÒ»±øÒ»×ä£¬Ö¸»Ó¸öÊ²Ã´Ñ½£¿\n");
+                return notify_fail("ä½ æœªå¸¶ä¸€å…µä¸€å’ï¼ŒæŒ‡æ®å€‹ä»€éº¼å‘€ï¼Ÿ\n");
 */
 }
 
@@ -257,8 +257,8 @@ void attack_begin(object me, object target, object room, object env, string dir)
                  || query_temp("jun_quest/train", me) == "infantry") )
 */
                 {
-                        message_vision(HIR "$NÖ¸»ÓµÄÈı¾üÉ±ÉùÀ×¶¯£¬" +
-                                       "Èç¿ñ·çÖèÓê°ã³¯$n·¢ÆğÁË¹¥»÷£¡£¡\n" NOR, me, target);  
+                        message_vision(HIR "$NæŒ‡æ®çš„ä¸‰è»æ®ºè²é›·å‹•ï¼Œ" +
+                                       "å¦‚ç‹‚é¢¨é©Ÿé›¨èˆ¬æœ$nç™¼èµ·äº†æ”»æ“Šï¼ï¼\n" NOR, me, target);  
                         // COMBAT_D->do_attack(me, target, me->query_temp("weapon"), 0); 
                         COMBAT_D->do_attack(me,target,query_temp("weapon", me));
                         addn_temp("jun_quest/reward", 4, me);
@@ -279,7 +279,7 @@ void attack_begin(object me, object target, object room, object env, string dir)
 /*
         if( query_temp("jun_quest/train", me) == "cavalry" )
         {
-                message_vision(HIW "Ò»Õó³åÉ±¹ıºó£¬$NÂÊÁì×ÅËÎ¾üÆï±øÈç·çÒ»°ãÏûÊ§ÁË£¡\n" NOR, me);
+                message_vision(HIW "ä¸€é™£æ²–æ®ºéå¾Œï¼Œ$Nç‡é ˜è‘—å®‹è»é¨å…µå¦‚é¢¨ä¸€èˆ¬æ¶ˆå¤±äº†ï¼\n" NOR, me);
                 me->move(env);
         }
 */
@@ -292,7 +292,7 @@ void attack_over(object me)
 {
         if (objectp(me))
         {
-                message_vision(HIW "$NÊÖÖĞÁîÆìÒ»»Ó£¬Èı¾ü¹¥ÊÆÒ»»º£¬ÖØĞÂ¿ªÊ¼ÁĞÕó£¬×¼±¸·¢ÆğĞÂÒ»ÂÖµÄ¹¥»÷£¡£¡\n" NOR, me); 
+                message_vision(HIW "$Næ‰‹ä¸­ä»¤æ——ä¸€æ®ï¼Œä¸‰è»æ”»å‹¢ä¸€ç·©ï¼Œé‡æ–°é–‹å§‹åˆ—é™£ï¼Œæº–å‚™ç™¼èµ·æ–°ä¸€è¼ªçš„æ”»æ“Šï¼ï¼\n" NOR, me); 
                 delete_temp("jun_quest/attack", me);
         }
         return;
@@ -303,12 +303,12 @@ int do_train(object me, string arg)
         me = this_player();
         
         if (file_name(environment(me)) != "/quest/quest_jun/sying1")
-                return notify_fail("ÇëÏÈ»ØÄãµÄÕÊÓª²ÅÄÜµ÷ÅÉÑµÁ·µÄ¾üÂí£¡\n"); 
+                return notify_fail("è«‹å…ˆå›ä½ çš„å¸³ç‡Ÿæ‰èƒ½èª¿æ´¾è¨“ç·´çš„è»é¦¬ï¼\n"); 
 
         if( query_temp("jun_quest/train_begin", me) )
-                return notify_fail("Äã²»ÊÇÕıÔÚÑµÁ·¶ÓÎéÂğ£¿£¡\n");
+                return notify_fail("ä½ ä¸æ˜¯æ­£åœ¨è¨“ç·´éšŠä¼å—ï¼Ÿï¼\n");
 
-        message_vision(HIW "$N´óÉùºÈµÀ£º×óÓÒ¾üÂí£¬¼´¿ÌËæ±¾Ë§Ç°È¥²ÙÁ·ÈËÂí£¬²»µÃÓĞÎó£¡£¡\n" NOR, me);   
+        message_vision(HIW "$Nå¤§è²å–é“ï¼šå·¦å³è»é¦¬ï¼Œå³åˆ»éš¨æœ¬å¸¥å‰å»æ“ç·´äººé¦¬ï¼Œä¸å¾—æœ‰èª¤ï¼ï¼\n" NOR, me);   
 
         set_temp("jun_quest/train", "infantry", me);
         me->move("/quest/quest_jun/sying2");
@@ -332,7 +332,7 @@ void train_begin(object me)
         {
                 remove_call_out("train_begin");
                 delete_temp("jun_quest/train_begin", me);
-                tell_object(me, "ÔªË§²¢Ã»ÓĞ·ÖÅÉ¸øÄãÑµÁ·¶ÓÎéµÄÃüÁî£¡\n");
+                tell_object(me, "å…ƒå¸¥ä¸¦æ²’æœ‰åˆ†æ´¾çµ¦ä½ è¨“ç·´éšŠä¼çš„å‘½ä»¤ï¼\n");
                 return;
         }
 
@@ -342,13 +342,13 @@ void train_begin(object me)
         {
                 remove_call_out("train_begin");
                 delete_temp("jun_quest/train_begin", me);
-                tell_object(me,"Á¸²İ²»×ã£¬¾ü¶ÓÑµÁ·±»ÆÈÖÕÖ¹£¡\n");
+                tell_object(me,"ç³§è‰ä¸è¶³ï¼Œè»éšŠè¨“ç·´è¢«è¿«çµ‚æ­¢ï¼\n");
 
                 if (objectp(master) && environment(master)
                 &&  master->query_condition("junquest_song"))
                 {
                         tell_object(master,
-                                HIY "Á¸²İ²»×ã£¬ÄãµÄ¶ÓÎé±»ÆÈÖÕÖ¹ÁËÑµÁ·£¡\n" NOR);
+                                HIY "ç³§è‰ä¸è¶³ï¼Œä½ çš„éšŠä¼è¢«è¿«çµ‚æ­¢äº†è¨“ç·´ï¼\n" NOR);
                 }                                    
                 return;
         }
@@ -357,12 +357,12 @@ void train_begin(object me)
         {
                 remove_call_out("train_begin");
                 delete_temp("jun_quest/train_begin", me);
-                tell_object(me,"Äã´ø±øµÄÄÜÁ¦²»×ã£¬ÑµÁ·²»ÁË¸ü¾«ÈñµÄ¶ÓÎéÁË£¡\n");
+                tell_object(me,"ä½ å¸¶å…µçš„èƒ½åŠ›ä¸è¶³ï¼Œè¨“ç·´ä¸äº†æ›´ç²¾éŠ³çš„éšŠä¼äº†ï¼\n");
 
                 if (objectp(master) && environment(master)
                 &&  master->query_condition("junquest_song"))
                 {
-                        tell_object(master, HIY "ÄãÓÖÑµÁ·³öÒ»ÓªµÄ¾«Èñ²¿¶ÓÁË£¡\n" NOR);
+                        tell_object(master, HIY "ä½ åˆè¨“ç·´å‡ºä¸€ç‡Ÿçš„ç²¾éŠ³éƒ¨éšŠäº†ï¼\n" NOR);
                 }                                    
                 return;
         }
@@ -373,19 +373,19 @@ void train_begin(object me)
         {
                 remove_call_out("train_begin");
                 delete_temp("jun_quest/train_begin", me);
-                tell_object(me, "ÇëÄãµ½Ö¸¶¨µÄ±øÓªÀïÃæÑµÁ·¶ÓÎé£¡\n"); 
+                tell_object(me, "è«‹ä½ åˆ°æŒ‡å®šçš„å…µç‡Ÿè£¡é¢è¨“ç·´éšŠä¼ï¼\n"); 
                 return;
         }
 
         if( random(query("degree_jungong", me))>1 )
         {
-                message_vision(HIW "$N½«ÊÖÖĞÁîÆìÒ»»Ó£¬¶ÓÎé¿ªÊ¼¼¯½á£¬"
-                        + "¿ªÊ¼ÅÅÁĞ×Å²»Í¬µÄÕóĞÎ£¬ºöÓÖÉ¢¿ª£¬\nºÏÊ±¾®È»ÓĞĞò£¬·Ö"
-                        + "Ê±ÔÓ¶ø²»ÂÒ£¬¿´À´$NÕæÄËÉîÚÏÓÃ±øÖ®µÀµÄÁ¼½«°¡£¡\n" NOR, me);
+                message_vision(HIW "$Nå°‡æ‰‹ä¸­ä»¤æ——ä¸€æ®ï¼ŒéšŠä¼é–‹å§‹é›†çµï¼Œ"
+                        + "é–‹å§‹æ’åˆ—è‘—ä¸åŒçš„é™£å½¢ï¼Œå¿½åˆæ•£é–‹ï¼Œ\nåˆæ™‚äº•ç„¶æœ‰åºï¼Œåˆ†"
+                        + "æ™‚é›œè€Œä¸äº‚ï¼Œçœ‹ä¾†$NçœŸä¹ƒæ·±è«³ç”¨å…µä¹‹é“çš„è‰¯å°‡å•Šï¼\n" NOR, me);
                 addn("eff_qi", 200, me);
         } else
-                message_vision(HIY "$N½«ÊÖÖĞÁîÆìÒ»»Ó£¬¿ÉÊÇ¶ÓÎéºÃÏóÂÒºåºåµÄ£¬"
-                        + "¸ù±¾²»Ìı$NµÄÖ¸»Óµ÷Ç²£¬\n$NÖ±ÆøµÃ´µºú×ÓµÉÑÛ£¡£¡£¡\n" NOR, me);
+                message_vision(HIY "$Nå°‡æ‰‹ä¸­ä»¤æ——ä¸€æ®ï¼Œå¯æ˜¯éšŠä¼å¥½è±¡äº‚å“„å“„çš„ï¼Œ"
+                        + "æ ¹æœ¬ä¸è½$Nçš„æŒ‡æ®èª¿é£ï¼Œ\n$Nç›´æ°£å¾—å¹èƒ¡å­çªçœ¼ï¼ï¼ï¼\n" NOR, me);
 
         liangcao -= 2;
         temp = sprintf("%d", liangcao);
@@ -415,15 +415,15 @@ void check_me(object me)
     
         if( num>0 && query_temp("jun_quest/train", me) )
         {
-                tell_object(me, HIR "ÄãµÄ¶ÓÎé¾«Èñ¶ÈÌá¸ßÁË£¡\n" NOR);
+                tell_object(me, HIR "ä½ çš„éšŠä¼ç²¾éŠ³åº¦æé«˜äº†ï¼\n" NOR);
                 addn_temp("jun_quest/group", num, me);
         }
 
         if( num<0 && !query_temp("jun_quest/train_begin", me) )
         {
                 if (num < g) num = g;
-                tell_object(me, HIW "ÄãËğÊ§ÁË" HIR + chinese_number(-num)
-                        + HIW"ÓªµÄÊ¿±ø£¡\n"NOR);
+                tell_object(me, HIW "ä½ æå¤±äº†" HIR + chinese_number(-num)
+                        + HIW"ç‡Ÿçš„å£«å…µï¼\n"NOR);
                 addn_temp("jun_quest/group", num, me);
         }
 
@@ -465,7 +465,7 @@ void check_me(object me)
                                                                 call_out("attack_over", 10, me);    
                                                                 me->move(room);
                                                                 message_vision(
-                                                                        HIR "$NÂÊÁì×ÅÒ»Ö§ËÎ¾üÆï±ø³¯$n³åÉ±¹ıÀ´£¡\n" NOR,
+                                                                        HIR "$Nç‡é ˜è‘—ä¸€æ”¯å®‹è»é¨å…µæœ$næ²–æ®ºéä¾†ï¼\n" NOR,
                                                                         me, obb);
                                                                 attack_begin(me, obb, room, env, "");
                                                                 break;
@@ -488,8 +488,8 @@ void check_me(object me)
                                 obb = ob[i]; 
                                 if( query_temp("jun_quest/party", obb) == "meng" )
                                 {
-                                        message_vision(HIW "$N´óÉùÏÂÁîµÀ£º²½±øÓªÁĞÕó£¡¶ÓÎé¿ªÊ¼ÅÅ³öÕûÆë"
-                                                + "µÄ·½Õó£¬ÔÚÒ»Æ¬ÉÁË¸µÄµ¶¹â\nÖĞ£¬$NÖ¸»Ó¶ÓÎé·¢ÆğÁË¿ÉÅÂµÄ³å·æ£¡\n" NOR, me);
+                                        message_vision(HIW "$Nå¤§è²ä¸‹ä»¤é“ï¼šæ­¥å…µç‡Ÿåˆ—é™£ï¼éšŠä¼é–‹å§‹æ’å‡ºæ•´é½Š"
+                                                + "çš„æ–¹é™£ï¼Œåœ¨ä¸€ç‰‡é–ƒçˆçš„åˆ€å…‰\nä¸­ï¼Œ$NæŒ‡æ®éšŠä¼ç™¼èµ·äº†å¯æ€•çš„æ²–é‹’ï¼\n" NOR, me);
                                         set_temp("jun_quest/attack", 1, me);
                                         call_out("attack_over", 10, me);
                                         attack_begin(me, obb, room, env, "");   
@@ -530,8 +530,8 @@ void check_me(object me)
                                                         {
                                                                 if( !query_temp("weapon", me) )
                                                                         me->command("wield bow");
-                                                                message_vision(HIB "$N´óÉùÏÂÁîµÀ£ºÉñåóÓª×¼±¸£¡Ò»ÅÅÅÅÀû¼ıÔÚÑô"
-                                                                        + "¹âÏÂÉÁÉÁ·¢¹â¡ª¡ªÉä»÷£¡£¡\n$NÒ»ÉùÁîÏÂ£¬ÍòåóÆë·¢£¡\n" NOR,
+                                                                message_vision(HIB "$Nå¤§è²ä¸‹ä»¤é“ï¼šç¥å¼©ç‡Ÿæº–å‚™ï¼ä¸€æ’æ’åˆ©ç®­åœ¨é™½"
+                                                                        + "å…‰ä¸‹é–ƒé–ƒç™¼å…‰â”€â”€å°„æ“Šï¼ï¼\n$Nä¸€è²ä»¤ä¸‹ï¼Œè¬å¼©é½Šç™¼ï¼\n" NOR,
                                                                         me);  
                                                                 set_temp("jun_quest/attack", 1, me);
                                                                 call_out("attack_over", 10, me);    
@@ -562,42 +562,42 @@ int do_order(string arg)
         mapping jiang;
 
         if (! arg || sscanf(arg, "%s to %s", who, what) != 2)
-                return notify_fail("ÇëÓÃ order sb to do sth. À´·¢²¼ºÅÁî£¡\n"); 
+                return notify_fail("è«‹ç”¨ order sb to do sth. ä¾†ç™¼å¸ƒè™Ÿä»¤ï¼\n"); 
 
         if (! objectp(ob = present(who, environment(me))))
-                return notify_fail("ÕâÀïÃ»ÓĞÄã¿ÉÒÔµ÷¶ÈµÄÕâÃû½«Áì£¡\n");
+                return notify_fail("é€™è£¡æ²’æœ‰ä½ å¯ä»¥èª¿åº¦çš„é€™åå°‡é ˜ï¼\n");
 
         if( query_temp("jun_quest/party", ob) != "song" )
-                return notify_fail("¶Ô·½²»ÊÇËÎ¾ü£¬ÈçºÎ¹©Äãµ÷¶È£¿£¡\n");
+                return notify_fail("å°æ–¹ä¸æ˜¯å®‹è»ï¼Œå¦‚ä½•ä¾›ä½ èª¿åº¦ï¼Ÿï¼\n");
 
         if( !query_temp("jun_quest/train", ob) )
-                return notify_fail("ÕâÖ§¶ÓÎéÉĞÎ´ÑµÁ·æµÊì£¬ÄÑ¿°´óÓÃ£¡\n"); 
+                return notify_fail("é€™æ”¯éšŠä¼å°šæœªè¨“ç·´å«»ç†Ÿï¼Œé›£å ªå¤§ç”¨ï¼\n"); 
 
         if (ob == me)
-                return notify_fail("×Ô¼ºÃüÁî×Ô¼º£¿Äã²»ÏÓÀÛ°¡Äã£¿£¡\n"); 
+                return notify_fail("è‡ªå·±å‘½ä»¤è‡ªå·±ï¼Ÿä½ ä¸å«Œç´¯å•Šä½ ï¼Ÿï¼\n"); 
        
         switch(what)
         {         
         case "follow":
-                message_vision(HIY "$NÂÔÒ»³ÁË¼£¬¶øºó¹û¸ÒµÄÏÂÁîµÀ£º¡°$n£¬" +
-                        "±¾Ë§¾ö¶¨Ó­Õ½ÃÉ¹Å´ó¾ü£¬\n½«¾üÇë¼´¿Ìµ÷ÅÉÈËÂíËæÍ¬±¾Ë§³öÕ÷£¡\n" NOR, me, ob);
-                message_vision(HIW "$N´óÉùÓ¦µÀ£ºÄ©½«×ñÃü£¡Ô¸Îª½«¾üĞ§È®ÂíÖ®ÀÍ£¡\n" NOR, ob);
+                message_vision(HIY "$Nç•¥ä¸€æ²‰æ€ï¼Œè€Œå¾Œæœæ•¢çš„ä¸‹ä»¤é“ï¼šâ€œ$nï¼Œ" +
+                        "æœ¬å¸¥æ±ºå®šè¿æˆ°è’™å¤å¤§è»ï¼Œ\nå°‡è»è«‹å³åˆ»èª¿æ´¾äººé¦¬éš¨åŒæœ¬å¸¥å‡ºå¾ï¼\n" NOR, me, ob);
+                message_vision(HIW "$Nå¤§è²æ‡‰é“ï¼šæœ«å°‡éµå‘½ï¼é¡˜ç‚ºå°‡è»æ•ˆçŠ¬é¦¬ä¹‹å‹ï¼\n" NOR, ob);
                 ob->set_leader(me);
                 break;
 
         case "guard":
-                message_vision(HIY "$N×ĞÏ¸²é¿´ÁËËÄÖÜµÄµØĞÎ£¬¶øºó¹û¸ÒµÄÏÂÁîµÀ£º¡°$nÌıÁî£¬" +
-                        "´Ë´¦µØÊÆÏÕÒª£¬\nÒ×ÊØÄÑ¹¥£¬»¹·³Çë½«¾üÔÚ´Ë´¦¼ÓÒÔ¶óÊØ£¡\n" NOR, me, ob);
-                message_vision(HIW "$N´óÉùÓ¦µÀ£ºÄ©½«×ñÃü£¡µ«´æÒ»±øÒ»×ä£¬¾ö²»Ê§ÕóµØ£¡\n" NOR, ob);
+                message_vision(HIY "$Nä»”ç´°æŸ¥çœ‹äº†å››å‘¨çš„åœ°å½¢ï¼Œè€Œå¾Œæœæ•¢çš„ä¸‹ä»¤é“ï¼šâ€œ$nè½ä»¤ï¼Œ" +
+                        "æ­¤è™•åœ°å‹¢éšªè¦ï¼Œ\næ˜“å®ˆé›£æ”»ï¼Œé‚„ç…©è«‹å°‡è»åœ¨æ­¤è™•åŠ ä»¥æ‰¼å®ˆï¼\n" NOR, me, ob);
+                message_vision(HIW "$Nå¤§è²æ‡‰é“ï¼šæœ«å°‡éµå‘½ï¼ä½†å­˜ä¸€å…µä¸€å’ï¼Œæ±ºä¸å¤±é™£åœ°ï¼\n" NOR, ob);
                 ob->set_leader(0);
                 break;
 
         case "stop":
                 if( query_temp("jun_quest/escort", ob) )
-                        return notify_fail("¶Ô·½ÒÑ¾­ÁíÓĞ¾üÎñÁË£¬ÎŞ·¨µ÷¶¯¾ü¶Ó£¡£¡\n");
-                message_vision(HIY "$N×ĞÏ¸²é¿´ÁËËÄÖÜµÄµØĞÎ£¬¶øºó¹û¸ÒµÄÏÂÁîµÀ£º¡°$nÌıÁî£¬" +
-                        "Á¢¼´Í£Ö¹¶ÓÎéĞĞ½ø£¡£¡\n" NOR, me, ob);
-                message_vision(HIW "$N´óÉùÓ¦µÀ£ºÄ©½«×ñÃü£¡£¡\n" NOR, ob);
+                        return notify_fail("å°æ–¹å·²ç¶“å¦æœ‰è»å‹™äº†ï¼Œç„¡æ³•èª¿å‹•è»éšŠï¼ï¼\n");
+                message_vision(HIY "$Nä»”ç´°æŸ¥çœ‹äº†å››å‘¨çš„åœ°å½¢ï¼Œè€Œå¾Œæœæ•¢çš„ä¸‹ä»¤é“ï¼šâ€œ$nè½ä»¤ï¼Œ" +
+                        "ç«‹å³åœæ­¢éšŠä¼è¡Œé€²ï¼ï¼\n" NOR, me, ob);
+                message_vision(HIW "$Nå¤§è²æ‡‰é“ï¼šæœ«å°‡éµå‘½ï¼ï¼\n" NOR, ob);
                 ob->command("move stop");
                 break;
 
@@ -606,11 +606,11 @@ int do_order(string arg)
                  && query("exits/"+dir, environment(me)) )
                 {
                         if( query_temp("jun_quest/escort", ob) )
-                                return notify_fail("¶Ô·½ÒÑ¾­ÁíÓĞ¾üÎñÁË£¬ÎŞ·¨µ÷¶¯¾ü¶Ó£¡£¡\n");
+                                return notify_fail("å°æ–¹å·²ç¶“å¦æœ‰è»å‹™äº†ï¼Œç„¡æ³•èª¿å‹•è»éšŠï¼ï¼\n");
 
-                        message_vision(HIY "$N×ĞÏ¸²é¿´ÁËËÄÖÜµÄµØĞÎ£¬¶øºó¹û¸ÒµÄÏÂÁîµÀ£º¡°$nÌıÁî£¬" +
-                                "Á¢¼´ÂÊÁì²¿¶Ó\n»ğËÙĞĞ½ø£¬²»µÃÓĞÎó£¡£¡\n" NOR, me, ob);     
-                        message_vision(HIW "$N´óÉùÓ¦µÀ£ºÄ©½«×ñÃü£¡£¡\n" NOR, ob);
+                        message_vision(HIY "$Nä»”ç´°æŸ¥çœ‹äº†å››å‘¨çš„åœ°å½¢ï¼Œè€Œå¾Œæœæ•¢çš„ä¸‹ä»¤é“ï¼šâ€œ$nè½ä»¤ï¼Œ" +
+                                "ç«‹å³ç‡é ˜éƒ¨éšŠ\nç«é€Ÿè¡Œé€²ï¼Œä¸å¾—æœ‰èª¤ï¼ï¼\n" NOR, me, ob);     
+                        message_vision(HIW "$Nå¤§è²æ‡‰é“ï¼šæœ«å°‡éµå‘½ï¼ï¼\n" NOR, ob);
                         ob->set_leader(0);
                         ob->command("move " + dir);
                 } else                   
@@ -619,7 +619,7 @@ int do_order(string arg)
                         ob->set_leader(0); 
                         ob->command("go " + what);
                 } else
-                        return notify_fail("ÉíÎªÒ»¾üÖ®Ë§£¬Çë²»ÒªÀÄÓÃÄãµÄ¾üÈ¨£¡\n");
+                        return notify_fail("èº«ç‚ºä¸€è»ä¹‹å¸¥ï¼Œè«‹ä¸è¦æ¿«ç”¨ä½ çš„è»æ¬Šï¼\n");
                 break; 
         } 
         return 1;
@@ -633,14 +633,14 @@ int do_inquiry()
         mapping jiang;
 
         if( !(jiang=query_temp("jun_quest/jiang", me)) )
-                return notify_fail("ÄãÏÖÔÚÃ»ÓĞÈÎÃü¹ıÈÎºÎ½«Áì£¡\n");
+                return notify_fail("ä½ ç¾åœ¨æ²’æœ‰ä»»å‘½éä»»ä½•å°‡é ˜ï¼\n");
 
-        str = HIR "ÄúÕÊÏÂĞ§Á¦µÄ½«Áì¹²¼Æ" + chinese_number(sizeof(jiang)) + "Ô±\n" NOR;
-        str += HIY "Ä¿Ç°ÉĞ¿Éµ÷¶ÈµÄ½«ÁìÃû²áÈçÏÂ£º\n" NOR;
-        str += me->short(1) + HIW "\n        Í³¾ü£º " +
-               chinese_number(query_temp("jun_quest/group", me))+"Óª"NOR;
-//        str += HIC "                Õ½¶·Ö¸Êı£º " + sprintf("%d\n" NOR,
-        str += HIC "                Õ½¶·Ö¸Êı£º " + sprintf("%s\n" NOR,
+        str = HIR "æ‚¨å¸³ä¸‹æ•ˆåŠ›çš„å°‡é ˜å…±è¨ˆ" + chinese_number(sizeof(jiang)) + "å“¡\n" NOR;
+        str += HIY "ç›®å‰å°šå¯èª¿åº¦çš„å°‡é ˜åå†Šå¦‚ä¸‹ï¼š\n" NOR;
+        str += me->short(1) + HIW "\n        çµ±è»ï¼š " +
+               chinese_number(query_temp("jun_quest/group", me))+"ç‡Ÿ"NOR;
+//        str += HIC "                æˆ°é¬¥æŒ‡æ•¸ï¼š " + sprintf("%d\n" NOR,
+        str += HIC "                æˆ°é¬¥æŒ‡æ•¸ï¼š " + sprintf("%s\n" NOR,
                query("combat_exp", me));
         n = 0;
         for (i = 0; i < sizeof(jiang); i++)
@@ -648,21 +648,21 @@ int do_inquiry()
                 obb=query_temp("jun_quest/jiang/jiang"+(i+1, me));
                 if (objectp(obb))
                 {
-                        str += obb->short(1) + HIW "\n        Í³¾ü£º " +
-                               chinese_number(query_temp("jun_quest/group", obb))+"Óª"NOR;
-//                        str += HIC "                Õ½¶·Ö¸Êı£º " + sprintf("%d\n" NOR,
-                        str += HIC "                Õ½¶·Ö¸Êı£º " + sprintf("%s\n" NOR,
+                        str += obb->short(1) + HIW "\n        çµ±è»ï¼š " +
+                               chinese_number(query_temp("jun_quest/group", obb))+"ç‡Ÿ"NOR;
+//                        str += HIC "                æˆ°é¬¥æŒ‡æ•¸ï¼š " + sprintf("%d\n" NOR,
+                        str += HIC "                æˆ°é¬¥æŒ‡æ•¸ï¼š " + sprintf("%s\n" NOR,
                                query("combat_exp", obb));
                         n++;
                 }
         }
 
-        if (n == 0)  str += MAG "ÄãÄ¿Ç°ÒÑ¾­Ã»ÓĞ¿ÉÓÃÖ®½«ÁË£¡\n" NOR;
-        str += HIB "ÒÑÕóÍö½«Áì" + chinese_number(sizeof(jiang)-n) + "Ãû\n" NOR;
+        if (n == 0)  str += MAG "ä½ ç›®å‰å·²ç¶“æ²’æœ‰å¯ç”¨ä¹‹å°‡äº†ï¼\n" NOR;
+        str += HIB "å·²é™£äº¡å°‡é ˜" + chinese_number(sizeof(jiang)-n) + "å\n" NOR;
 
         temp = read_file("/quest/quest_jun/song/liangcao", 1, 1);
         liangcao = atoi(temp);
-        str += HIM "Ä¿Ç°¾üÖĞ»¹ÓĞÁ¸²İ" + chinese_number(liangcao) + "µ£\n" NOR;
+        str += HIM "ç›®å‰è»ä¸­é‚„æœ‰ç³§è‰" + chinese_number(liangcao) + "æ“”\n" NOR;
 
         write(str);
         return 1;
@@ -675,17 +675,17 @@ int do_move(string dir)
         if (! dir || dir == "stop")
         {
                 remove_call_out("move_on");
-                write("²¿¶ÓĞĞ½øÖÕÖ¹£¡\n");
+                write("éƒ¨éšŠè¡Œé€²çµ‚æ­¢ï¼\n");
                 return 1;
         }
 
         if( query("exits/"+dir, environment(me)) )
         {
                 call_out("move_on", 2, me, dir);
-                write("²¿¶Ó¿ªÊ¼ĞĞ½ø£¡\n");
+                write("éƒ¨éšŠé–‹å§‹è¡Œé€²ï¼\n");
                 return 1;
         } else
-                write("ÎŞ·¨ÒÆ¶¯£¬Ã»ÓĞÖ¸¶¨·½ÏòµÄ³ö¿Ú£¡\n");
+                write("ç„¡æ³•ç§»å‹•ï¼Œæ²’æœ‰æŒ‡å®šæ–¹å‘çš„å‡ºå£ï¼\n");
         return 1;
 }
 
@@ -694,7 +694,7 @@ void move_on(object me, string dir)
         if( !query("exits/"+dir, environment(me)) )
         {
                 remove_call_out("move_on");
-                write("ÎŞ·¨ÒÆ¶¯£¬Ã»ÓĞÖ¸¶¨·½ÏòµÄ³ö¿Ú£¡\n");
+                write("ç„¡æ³•ç§»å‹•ï¼Œæ²’æœ‰æŒ‡å®šæ–¹å‘çš„å‡ºå£ï¼\n");
                 return;
         }
 
@@ -712,7 +712,7 @@ void move_on(object me, string dir)
         } else
         {
                 remove_call_out("move_on");
-                write("ÎŞ·¨ÒÆ¶¯£¬ĞĞ½øÖÕÖ¹£¡\n");
+                write("ç„¡æ³•ç§»å‹•ï¼Œè¡Œé€²çµ‚æ­¢ï¼\n");
                 return;
         }
 }
@@ -724,12 +724,12 @@ void owner_is_killed()
         master_name = query("master");
         master_id = query("owner");
 
-        message("channel:rumor", MAG "\n¡¾ËÎÊ·¼ÇÔØ¡¿£º" +
+        message("channel:rumor", MAG "\nã€å®‹å²è¨˜è¼‰ã€‘ï¼š" +
                 CHINESE_D->chinese_date((time()-14*365*24*60*60)) +
-                MAG "£¬ÃÉ¹ÅÆï±ø´ó°ÜËÎ¾üÓÚÏåÑô£¡£¡\n" +
-                "              ËÎ¾üÖ÷Ë§ " HIR + master_name + " ( " + master_id + " ) " NOR +
-                MAG "Õ½ËÀÉ³³¡£¬ÒÔÉíÑ³¹ú£¡£¡\n" NOR, users()); 
-        message("channel:rumor", HIR "\n¡¾Íõ³¯Õ½Õù¡¿¾¸¿µ³ÜÓÌÎ´Ñ©£¬³¼×ÓºŞºÎÊ±Ãğ°¡£¡\n" NOR, users());
+                MAG "ï¼Œè’™å¤é¨å…µå¤§æ•—å®‹è»äºè¥„é™½ï¼ï¼\n" +
+                "              å®‹è»ä¸»å¸¥ " HIR + master_name + " ( " + master_id + " ) " NOR +
+                MAG "æˆ°æ­»æ²™å ´ï¼Œä»¥èº«æ®‰åœ‹ï¼ï¼\n" NOR, users()); 
+        message("channel:rumor", HIR "\nã€ç‹æœæˆ°çˆ­ã€‘é–åº·æ¥çŒ¶æœªé›ªï¼Œè‡£å­æ¨ä½•æ™‚æ»…å•Šï¼\n" NOR, users());
         
         WAR_D->fail_war();
         destruct(this_object()); 

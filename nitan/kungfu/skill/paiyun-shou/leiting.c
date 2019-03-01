@@ -1,12 +1,12 @@
 // This program is a part of NITAN MudLIB
-// leiting.c  ÅÅÔÆÍÆÊÖ¡¸À×öªÒ»»÷¡¹
+// leiting.c  æ’é›²æ¨æ‰‹ã€Œé›·éœ†ä¸€æ“Šã€
 
 #include <ansi.h>
 #include <combat.h>
 
 inherit F_SSERVER;
 
-string name() { return "À×öªÒ»»÷"; }
+string name() { return "é›·éœ†ä¸€æ“Š"; }
 
 int perform(object me, object target)
 {
@@ -17,21 +17,21 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail("¡¸À×öªÒ»»÷¡¹Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ã€Œé›·éœ†ä¸€æ“Šã€åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if ((int)me->query_skill("paiyun-shou", 1) < 100)
-                return notify_fail("ÄãµÄÅÅÔÆÍÆÊÖ²»¹»æµÊì£¬²»»áÊ¹ÓÃ¡¸À×öªÒ»»÷¡¹¡£\n");
+                return notify_fail("ä½ çš„æ’é›²æ¨æ‰‹ä¸å¤ å«»ç†Ÿï¼Œä¸æœƒä½¿ç”¨ã€Œé›·éœ†ä¸€æ“Šã€ã€‚\n");
 
         if( objectp(query_temp("weapon", me)) )
-                return notify_fail("Äã±ØĞë¿ÕÊÖ²ÅÄÜÊ¹ÓÃ¡¸À×öªÒ»»÷¡¹£¡\n");
+                return notify_fail("ä½ å¿…é ˆç©ºæ‰‹æ‰èƒ½ä½¿ç”¨ã€Œé›·éœ†ä¸€æ“Šã€ï¼\n");
 
         if ((int)me->query_skill("force") < 120)
-                return notify_fail("ÄãµÄÄÚ¹¦»ğºò²»¹»£¬ÎŞ·¨Ê¹ÓÃ¡¸À×öªÒ»»÷¡¹¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸç«å€™ä¸å¤ ï¼Œç„¡æ³•ä½¿ç”¨ã€Œé›·éœ†ä¸€æ“Šã€ã€‚\n");
 
         if( query("neili", me)<500 )
-                return notify_fail("ÄãÏÖÔÚÄÚÁ¦²»¹»£¬ÎŞ·¨Ê¹ÓÃ¡¸À×öªÒ»»÷¡¹¡£\n");
+                return notify_fail("ä½ ç¾åœ¨å…§åŠ›ä¸å¤ ï¼Œç„¡æ³•ä½¿ç”¨ã€Œé›·éœ†ä¸€æ“Šã€ã€‚\n");
 
-        msg = HIG "$N" HIG "½«ÕæÆøÄıÓÚË«ÕÆ£¬Ò»ÉùÅ­ºÈ£¬Ë«±ÛÃÍÈ»·¢¾¢£¬Ïò$n" HIG "ÍÆ³ö¡£\n" NOR;
+        msg = HIG "$N" HIG "å°‡çœŸæ°£å‡äºé›™æŒï¼Œä¸€è²æ€’å–ï¼Œé›™è‡‚çŒ›ç„¶ç™¼å‹ï¼Œå‘$n" HIG "æ¨å‡ºã€‚\n" NOR;
 
         ap = attack_power(me, "hand") +
              me->query_str()*20;
@@ -46,13 +46,13 @@ int perform(object me, object target)
                 damage = damage_power(me, "hand");
 
                 msg += COMBAT_D->do_damage(me, target, UNARMED_ATTACK, damage, 50,
-                                           HIR "$n" HIR "ÉÁ±Ü²»¼°£¬ÕıÖĞÇ°ĞØ£¬"
-                                           HIR "Ö»Ìı¡°àØ¡±µÄÒ»Éù£¬$n"
-                                           HIR "¿ñÍÂÒ»¿ÚÏÊÑª£¬Éí×ÓÈçÖ½º×°ãÏòºó·É³ö¡£\n" NOR);
+                                           HIR "$n" HIR "é–ƒé¿ä¸åŠï¼Œæ­£ä¸­å‰èƒ¸ï¼Œ"
+                                           HIR "åªè½â€œâ–¡â€çš„ä¸€è²ï¼Œ$n"
+                                           HIR "ç‹‚åä¸€å£é®®è¡€ï¼Œèº«å­å¦‚ç´™é¶´èˆ¬å‘å¾Œé£›å‡ºã€‚\n" NOR);
                 me->start_busy(2);
         } else
-        {       msg += HIC "¿ÉÊÇ$p" HIC "ÔçÓĞ·À±¸£¬" HIC
-                       "¼±ÍËÒ»²½£¬±Ü¿ªÁË$P" HIC "ÕâÒ»»÷¡£\n"NOR;
+        {       msg += HIC "å¯æ˜¯$p" HIC "æ—©æœ‰é˜²å‚™ï¼Œ" HIC
+                       "æ€¥é€€ä¸€æ­¥ï¼Œé¿é–‹äº†$P" HIC "é€™ä¸€æ“Šã€‚\n"NOR;
                 me->start_busy(2);
         }
         message_vision(msg, me, target);

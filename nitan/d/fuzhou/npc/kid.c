@@ -4,10 +4,10 @@
 inherit NPC;
 void create()
 {
-        set_name("ÍçÍ¯",({ "kid" }) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("é ‘ç«¥",({ "kid" }) );
+        set("gender", "ç”·æ€§" );
         set("age", 6);
-        set("long", "ÕâÊÇ¸öÍçÆ¤Ğ¡Í¯£¬Í·ÉÏÔú×Å³åÌìĞ¡±è¡£\n");
+        set("long", "é€™æ˜¯å€‹é ‘çš®å°ç«¥ï¼Œé ­ä¸Šç´®è‘—æ²–å¤©å°è¾®ã€‚\n");
         set_temp("apply/defense", 5);
         set("combat_exp", 70);
         set("shen", 100);
@@ -38,10 +38,10 @@ void greeting(object ob)
         switch( random(2) )
         {
                 case 0:
-                        say("ÍçÍ¯´óÉù¿ŞÈÂµÀ£ºÕâÎ»" + RANK_D->query_respect(ob) + "£¬ÎÒÒªµÆÁı£¬¸øÎÒµÆÁı¡£\n");
+                        say("é ‘ç«¥å¤§è²å“­åš·é“ï¼šé€™ä½" + RANK_D->query_respect(ob) + "ï¼Œæˆ‘è¦ç‡ˆç± ï¼Œçµ¦æˆ‘ç‡ˆç± ã€‚\n");
                         break;
                 case 1:
-                        say("ÍçÍ¯´óÉù¿ŞÈÂµÀ£ºÕâÎ»" + RANK_D->query_respect(ob) + "£¬¿´Ê²Ã´¿´£¬ÔÙ¿´ÎÒ±âÄã¡£\n");
+                        say("é ‘ç«¥å¤§è²å“­åš·é“ï¼šé€™ä½" + RANK_D->query_respect(ob) + "ï¼Œçœ‹ä»€éº¼çœ‹ï¼Œå†çœ‹æˆ‘æ‰ä½ ã€‚\n");
                         break;
         }
 }

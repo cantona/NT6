@@ -1,4 +1,4 @@
-// cookery.c Åëâ¿ÊÖÒÕ
+// cookery.c çƒ¹é£ªæ‰‹è—
 // Last Modified by winder on Jun. 10 2000
 
 #include <ansi.h>;
@@ -18,17 +18,17 @@ int valid_learn(object me)
 }
 int practice_skill(object me)
 {
-        return notify_fail("Åëâ¿ÊÖÒÕÖ»ÄÜ¿¿Ñ§Ï°À´Ìá¸ß¡£\n");
+        return notify_fail("çƒ¹é£ªæ‰‹è—åªèƒ½é å­¸ç¿’ä¾†æé«˜ã€‚\n");
 }
 int help(object me)
 {
-        write(HIC"\nÅëâ¿ÊÖÒÕ£º"NOR"\n");
+        write(HIC"\nçƒ¹é£ªæ‰‹è—ï¼š"NOR"\n");
         write(@HELP
 
-    Åëâ¿ÊÖÒÕÊÇÄãÑçÇëÍæ¼ÒµÄ±¾Ç®¡£Çëhelp cookery¡£
+    çƒ¹é£ªæ‰‹è—æ˜¯ä½ å®´è«‹ç©å®¶çš„æœ¬éŒ¢ã€‚è«‹help cookeryã€‚
 
-        Ñ§Ï°ÒªÇó£º
-                ÎŞ¡£µ«Ìì¸³²ÅÆøÏŞÖÆÁË¶Ô¸ü¸ßÉî¾³½çµÄÅ¬Á¦
+        å­¸ç¿’è¦æ±‚ï¼š
+                ç„¡ã€‚ä½†å¤©è³¦æ‰æ°£é™åˆ¶äº†å°æ›´é«˜æ·±å¢ƒç•Œçš„åŠªåŠ›
 HELP
         );
         return 1;

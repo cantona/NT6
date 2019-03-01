@@ -11,12 +11,12 @@ inherit F_QUESTER;
 
 void create()
 {
-        set_name("×óÈ«", ({"zuo quan", "zuo", "quan"}));
-        set("title", "Ø¤°ïÆß´üµÜ×Ó");
-        set("gender", "ÄĞĞÔ");
+        set_name("å·¦å…¨", ({"zuo quan", "zuo", "quan"}));
+        set("title", "ä¸å¹«ä¸ƒè¢‹å¼Ÿå­");
+        set("gender", "ç”·æ€§");
         set("age", 35);
         set("long",
-                "ÕâÊÇÎ»ºÀË¬´ó·½µÄØ¤°ïÆß´üµÜ×Ó£¬¿´À´ÊÇ¸ö±±µØºÀ½Ü¡£\n");
+                "é€™æ˜¯ä½è±ªçˆ½å¤§æ–¹çš„ä¸å¹«ä¸ƒè¢‹å¼Ÿå­ï¼Œçœ‹ä¾†æ˜¯å€‹åŒ—åœ°è±ªå‚‘ã€‚\n");
         set("attitude", "peaceful");
         set("class", "beggar");
 
@@ -65,7 +65,7 @@ void create()
 
         prepare_skill("hand", "shexing-diaoshou");
 
-        create_family("Ø¤°ï", 19, "µÜ×Ó");
+        create_family("ä¸å¹«", 19, "å¼Ÿå­");
 
         set_temp("apply/damage", 100);
         set_temp("apply/unarmed_damage", 100);
@@ -87,11 +87,11 @@ void attempt_apprentice(object ob)
 
         if( query("shen", ob)<0 )
         {
-                command("say ÄãÉíÎªØ¤°ïµÜ×Ó£¬¾¹È»²»×öºÃÊÂ£¿");
+                command("say ä½ èº«ç‚ºä¸å¹«å¼Ÿå­ï¼Œç«Ÿç„¶ä¸åšå¥½äº‹ï¼Ÿ");
                 return;
         }
         command("nod");
-        command("say Äã°İÎÒÎªÊ¦£¬¿ÉÒª×öºÃ³Ô¿àµÄ×¼±¸£¬ºÃºÃ×ö¸öØ¤°ïµÜ×Ó£¡");
+        command("say ä½ æ‹œæˆ‘ç‚ºå¸«ï¼Œå¯è¦åšå¥½åƒè‹¦çš„æº–å‚™ï¼Œå¥½å¥½åšå€‹ä¸å¹«å¼Ÿå­ï¼");
         command("recruit "+query("id", ob));
 
         if( query("class", ob) != "beggar" )

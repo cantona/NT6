@@ -6,15 +6,15 @@ int update_condition(object me, int duration)
 {
         if (duration < 1)
         {
-                tell_object(me, HIR "Ö´·¨¾«Áé¸æËßÄã£º¡°ÄãÒÑ±»½û±Õ¶þ"
-                                "Ê®ËÄÐ¡Ê±£¬ÏÖÔÚÄã×ÔÓÉÁË£¡¡±\n");
+                tell_object(me, HIR "åŸ·æ³•ç²¾éˆå‘Šè¨´ä½ ï¼šâ€œä½ å·²è¢«ç¦é–‰äºŒ"
+                                "åå››å°æ™‚ï¼Œç¾åœ¨ä½ è‡ªç”±äº†ï¼â€\n");
                 CHANNEL_D->do_channel(this_object(), "rumor",
-                        "ÌýËµ" + me->name(1) + HIM + "ÐÌÂúÊÍ·ÅÁË¡£");
+                        "è½èªª" + me->name(1) + HIM + "åˆ‘æ»¿é‡‹æ”¾äº†ã€‚");
                 me->set("combat/WPK", 0);
                 me->set("combat/PKS", 0);
                 return 0;
         }
-        // ¼Æ»®ÖÐ²»¼õÉÙ³Í·£Ê±¼ä
+        // è¨ˆåŠƒä¸­ä¸æ¸›å°‘æ‡²ç½°æ™‚é–“
         if (! me->query("doing"))me->apply_condition("pk", duration - 1);
         return 1;
 }

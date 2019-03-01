@@ -5,18 +5,18 @@ inherit CLUB;
 
 void create()
 {
-        set_name("ÌúÇÂ", ({ "shenlong qiao", "tie qiao", "qiao" }));
+        set_name("éµé¬", ({ "shenlong qiao", "tie qiao", "qiao" }));
         set_weight(17000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("long","ÕâÊÇÒ»°ÑÍÚµØµÄÌúÇÂ£¬ÓÃ¾«¸Ö´òÖÆ£¬Ä¾±úÉÏµñ×ÅÒ»ÌõÑöÍ·ÍÂĞÅµÄ¹ÖÉß¡£\n");
+                set("unit", "æŠŠ");
+                set("long","é€™æ˜¯ä¸€æŠŠæŒ–åœ°çš„éµé¬ï¼Œç”¨ç²¾é‹¼æ‰“åˆ¶ï¼Œæœ¨æŸ„ä¸Šé›•è‘—ä¸€æ¢ä»°é ­åä¿¡çš„æ€ªè›‡ã€‚\n");
                 set("value", 5000);
                 set("material", "steel");
                 set("no_put",1);
-                set("wield_msg", "$N¡¸à§¡¹µÄÒ»Éù³é³öÒ»±ú$nÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", "$N½«ÊÖÖĞµÄ$n²å»ØºóÑü¡£\n");
+                set("wield_msg", "$Nã€Œå”°ã€çš„ä¸€è²æŠ½å‡ºä¸€æŸ„$næ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", "$Nå°‡æ‰‹ä¸­çš„$næ’å›å¾Œè…°ã€‚\n");
                 set("dig_times", 5);
         }
         init_club(15);

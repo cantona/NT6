@@ -4,17 +4,17 @@ inherit HAMMER;
 
 void create()
 {
-        set_name(HIY "É¨Öã" NOR, ({ "sao zhou", "sao", "zhou" }));
+        set_name(HIY "æƒå¸š" NOR, ({ "sao zhou", "sao", "zhou" }));
         set_weight(500);
 	if (clonep())
 		set_default_object(__FILE__);
 	else {
-		set("unit", "°Ñ");
-                set("long", HIY "ÕâÊÇÒ»°ÑÉ¨Öã£¬ÆÕÍ¨°ÙĞÕµÄÈÕ³£ÓÃÆ·¡£\n" NOR);
+		set("unit", "æŠŠ");
+                set("long", HIY "é€™æ˜¯ä¸€æŠŠæƒå¸šï¼Œæ™®é€šç™¾å§“çš„æ—¥å¸¸ç”¨å“ã€‚\n" NOR);
                 set("value", 10);
 		set("material", "steel");
-		set("wield_msg", HIY "$N" HIY "ÄÃ³öÒ»°ÑÉ¨ÖãÎÕÔÚÊÖÖĞ¡£\n" NOR);
-                set("unwield_msg", HIY "$N" HIY "½«ÊÖÖĞµÄÉ¨Öã¿¹ÔÚ¼çÉÏ¡£\n" NOR);
+		set("wield_msg", HIY "$N" HIY "æ‹¿å‡ºä¸€æŠŠæƒå¸šæ¡åœ¨æ‰‹ä¸­ã€‚\n" NOR);
+                set("unwield_msg", HIY "$N" HIY "å°‡æ‰‹ä¸­çš„æƒå¸šæŠ—åœ¨è‚©ä¸Šã€‚\n" NOR);
 	}
         init_hammer(4);
 	setup();

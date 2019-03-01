@@ -1,17 +1,17 @@
-// redbag.c ºì°ü
+// redbag.c ç´…åŒ…
 
 inherit ITEM;
 #include <ansi.h>;
 void create()
 {
-        set_name(HIR"ºì°ü"NOR, ({ "redbag", "bag" }));
+        set_name(HIR"ç´…åŒ…"NOR, ({ "redbag", "bag" }));
         set_weight(500);
         set_max_encumbrance(10000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
-                set("long", "Ò»¸ö×°×ÅÑ¹ËêÇ®µÄºì°ü£¬¹Ä¹ÄÄÒÄÒµØ²»Öª°ü×ÅÊ²Ã´ºÃ¶«Î÷¡£\n\n    "HIR"¹ıÄêºÃ£¡£¡\n\n"NOR); 
+                set("unit", "å€‹");
+                set("long", "ä¸€å€‹è£è‘—å£“æ­²éŒ¢çš„ç´…åŒ…ï¼Œé¼“é¼“å›Šå›Šåœ°ä¸çŸ¥åŒ…è‘—ä»€éº¼å¥½æ±è¥¿ã€‚\n\n    "HIR"éå¹´å¥½ï¼ï¼\n\n"NOR); 
                 set("value", 0);
         }
 }

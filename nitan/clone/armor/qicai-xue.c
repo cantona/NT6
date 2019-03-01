@@ -5,16 +5,16 @@ inherit BOOTS;
 
 void create()
 {
-        set_name( HIG "Æß" HIW "²Ê" HIM "ÁğÁ§" HIY "Ñ¥" NOR, ({ "qicai xue", "qicai", "xue" }) );
+        set_name( HIG "ä¸ƒ" HIW "å½©" HIM "ç‰ç’ƒ" HIY "é´" NOR, ({ "qicai xue", "qicai", "xue" }) );
         set_weight(10);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ë«");
-                set("long", HIC "ÕâÊÇÒ»Ë«·º×ÅÆß²Ê¹âÃ¢µÄ±¦Ñ¥£¬¾İËµ²¢·Ç²ú×Ô¶«ÍÁ¡£\n");
+                set("unit", "é›™");
+                set("long", HIC "é€™æ˜¯ä¸€é›™æ³›è‘—ä¸ƒå½©å…‰èŠ’çš„å¯¶é´ï¼Œæ“šèªªä¸¦éç”¢è‡ªæ±åœŸã€‚\n");
                 set("value", 2000000);
                 
-                set("armor_prop/dex", 60); //ºóÌìÉí·¨+60
+                set("armor_prop/dex", 60); //å¾Œå¤©èº«æ³•+60
                 set("armor_prop/int", 10); //
                 set("armor_prop/damage", 1000); 
                 set("material", "boots");

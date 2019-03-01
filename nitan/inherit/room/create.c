@@ -12,7 +12,7 @@ inherit ROOM;
 
 void setup()
 {
-        set("channel_id", "ÁÄÌì¾«Áé");
+        set("channel_id", "èŠå¤©ç²¾éˆ");
         ::setup();
 }
 
@@ -41,10 +41,10 @@ int do_chathere(string arg)
 
         rooms = query_chat_room();
         if (! sizeof(rooms))
-                return notify_fail("Ä¿Ç°Ã»ÓĞÈÎºÎÈË½¨Á¢ÁÄÌìÊÒ¡£\n");
+                return notify_fail("ç›®å‰æ²’æœ‰ä»»ä½•äººå»ºç«‹èŠå¤©å®¤ã€‚\n");
 
-        write("Ä¿Ç°ÔÚ" + short() + "µÄÁÄÌìÊÒÓĞÒÔÏÂÕâĞ©£º\n"
-              HIC "¡Ô" HIY "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤" HIC "¡Ô\n" NOR);
+        write("ç›®å‰åœ¨" + short() + "çš„èŠå¤©å®¤æœ‰ä»¥ä¸‹é€™äº›ï¼š\n"
+              HIC "â‰¡" HIY "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€" HIC "â‰¡\n" NOR);
         msg = allocate(sizeof(rooms));
         for (i = 0; i < sizeof(rooms); i++)
         {
@@ -55,7 +55,7 @@ int do_chathere(string arg)
                 }
 
                 owner=find_player(query("owner_id", rooms[i]));
-                msg[i] = sprintf("  %-30s    ÏÖÔÚ£º%dÈË",
+                msg[i] = sprintf("  %-30s    ç¾åœ¨ï¼š%däºº",
                                  rooms[i]->short(),
                                  sizeof(filter_array(all_inventory(rooms[i]), (: userp($1) && this_player()->visible($1) :))));
                 if (rooms[i]->welcome(this_player()))
@@ -65,7 +65,7 @@ int do_chathere(string arg)
         }
         msg = sort_array(filter_array(msg, (: stringp :)), 1);
         write(implode(msg, "\n") + "\n"
-              HIC "¡Ô" HIY "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤" HIC "¡Ô\n" NOR);
+              HIC "â‰¡" HIY "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€" HIC "â‰¡\n" NOR);
         return 1;
 }
 
@@ -81,23 +81,23 @@ int do_enter(string arg)
         me = this_player();
         if (! objectp(ob = query_chat_room(arg)) ||
             ob->invisible_for(me))
-                return notify_fail("Ã»ÓĞÕâ¸öÁÄÌìÊÒ¡£\n");
+                return notify_fail("æ²’æœ‰é€™å€‹èŠå¤©å®¤ã€‚\n");
 
         if( objectp(ride=query_temp("is_riding", me)) )
-                return notify_fail("Ã»ÌıËµ¹ıÓĞÈËÄÜÆï" + ride->name() +
-                                    "½øÁÄÌìÊÒµÄ¡£\n");
+                return notify_fail("æ²’è½èªªéæœ‰äººèƒ½é¨" + ride->name() +
+                                    "é€²èŠå¤©å®¤çš„ã€‚\n");
 
-        message_vision("$N¿ì²½Íù" + ob->short() + "×ßÈ¥¡£\n", me);
+        message_vision("$Nå¿«æ­¥å¾€" + ob->short() + "èµ°å»ã€‚\n", me);
         if (! ob->welcome(me))
         {
-                message("vision", "È´¼û" + me->name() + "×ªÁËÒ»È¦£¬ÓÖã¬"
-                        "ã¬µÄ×ßÁË»ØÀ´£¬¿´À´ÊÇ²»Ì«ÊÜÈË¼Ò»¶Ó­¡£\n",
+                message("vision", "å»è¦‹" + me->name() + "è½‰äº†ä¸€åœˆï¼Œåˆæ‚»"
+                        "æ‚»çš„èµ°äº†å›ä¾†ï¼Œçœ‹ä¾†æ˜¯ä¸å¤ªå—äººå®¶æ­¡è¿ã€‚\n",
                         environment(me), ({ me }));
-                tell_object(me, "ÈË¼Ò²»»¶Ó­Äã£¬Äã»¹ÊÇ±ğÈ¥É¨ĞËÁË¡£\n");
+                tell_object(me, "äººå®¶ä¸æ­¡è¿ä½ ï¼Œä½ é‚„æ˜¯åˆ¥å»æƒèˆˆäº†ã€‚\n");
                 return 1;
         }
         me->move(ob);
-        message("vision", me->name() + "×ßÁË½øÀ´¡£\n",
+        message("vision", me->name() + "èµ°äº†é€²ä¾†ã€‚\n",
                 environment(me), ({ me }));
         return 1;
 }
@@ -112,18 +112,18 @@ int do_newchat(string arg)
         rooms = filter_array(children(CHAT_ROOM),
                              (:clonep($1) && query("owner_id", $1) == query("id", $(me)):));
         if (sizeof(rooms) > 0)
-                return notify_fail("ÄãÒÑ¾­½¨ÁËÁÄÌìÊÒÁË£¬ÔÚ¹Ø±ÕËüÖ®Ç°²»ÄÜÁí½¨¡£\n");
+                return notify_fail("ä½ å·²ç¶“å»ºäº†èŠå¤©å®¤äº†ï¼Œåœ¨é—œé–‰å®ƒä¹‹å‰ä¸èƒ½å¦å»ºã€‚\n");
 
         if (me->query_skill("idle-force", 1) < 10)
-                return notify_fail("ÄãµÄ·¢´ôÉñ¹¦µÈ¼¶Ì«µÍ£¬»¹ÎŞ·¨·¢´ô³öÒ»¸öÁÄÌìÊÒÀ´¡£\n");
+                return notify_fail("ä½ çš„ç™¼å‘†ç¥åŠŸç­‰ç´šå¤ªä½ï¼Œé‚„ç„¡æ³•ç™¼å‘†å‡ºä¸€å€‹èŠå¤©å®¤ä¾†ã€‚\n");
 
         if( objectp(query_temp("is_riding", me)) )
-                return notify_fail("ÇëÏÈ´Ó×øÆïÉÏÏÂÀ´£¬ÔÙ·¢´ô³öÒ»¸öÁÄÌìÊÒ°É¡£\n"); 
+                return notify_fail("è«‹å…ˆå¾åé¨ä¸Šä¸‹ä¾†ï¼Œå†ç™¼å‘†å‡ºä¸€å€‹èŠå¤©å®¤å§ã€‚\n"); 
 
         room = new(CHAT_ROOM);
         room->init_room(this_object(), me);
-        write("Äã½¨ºÃÁËÁÄÌìÊÒ¡£\n");
-        message_vision("$NËÊËÊ¼ç£¬Íù" + room->short() + "¶øÈ¥¡£\n", me);
+        write("ä½ å»ºå¥½äº†èŠå¤©å®¤ã€‚\n");
+        message_vision("$Nè³è³è‚©ï¼Œå¾€" + room->short() + "è€Œå»ã€‚\n", me);
         me->move(room);
         if (find_call_out("clean_chat_room") == -1)
                 call_out("clean_chat_room", 15 * 60);
@@ -136,27 +136,27 @@ int do_clean(string arg)
         int i;
 
         if (! is_root(this_player()))
-                return notify_fail("ÄãÃ»ÓĞÈ¨ÏŞÔÚÕâÀïÇå³ıÁÄÌìÊÒ¡£\n");
+                return notify_fail("ä½ æ²’æœ‰æ¬Šé™åœ¨é€™è£¡æ¸…é™¤èŠå¤©å®¤ã€‚\n");
 
         rooms = query_chat_room();
         if (! sizeof(rooms))
-                return notify_fail("Ä¿Ç°Ã»ÓĞÈÎºÎÈË½¨Á¢ÁÄÌìÊÒ¡£\n");
+                return notify_fail("ç›®å‰æ²’æœ‰ä»»ä½•äººå»ºç«‹èŠå¤©å®¤ã€‚\n");
 
         if (arg)
         {
                 rooms=filter_array(rooms,(:query("owner_id", $1) == $(arg):));
                 if (! sizeof(rooms))
-                        return notify_fail("Ä¿Ç° " + arg + " ²¢Ã»ÓĞ½¨Á¢ÁÄÌìÊÒ¡£\n");
+                        return notify_fail("ç›®å‰ " + arg + " ä¸¦æ²’æœ‰å»ºç«‹èŠå¤©å®¤ã€‚\n");
         }
 
         rooms = filter_array(rooms, (: ! sizeof(filter_array(all_inventory($1), (: userp($1) || playerp($1) || $1->is_chatter() ||
                                                                                    $1->is_item_make() && $1->is_stay_in_room() :))) :));
         if (! sizeof(rooms))
-                return notify_fail("Ä¿Ç°Ã»ÓĞ¿ÕµÄ·ûºÏÌõ¼şµÄÁÄÌìÊÒ¡£\n");
+                return notify_fail("ç›®å‰æ²’æœ‰ç©ºçš„ç¬¦åˆæ¢ä»¶çš„èŠå¤©å®¤ã€‚\n");
 
         for (i = 0; i < sizeof(rooms); i++)
         {
-                write(rooms[i]->short() + "±»²ğ³ıÁË¡£\n");
+                write(rooms[i]->short() + "è¢«æ‹†é™¤äº†ã€‚\n");
                 destruct(rooms[i]);
         }
 
@@ -181,51 +181,51 @@ int do_help(string arg)
         {
         case "here":
                 write(@HELP
-ÔÚÕâÀïÄã¿ÉÒÔÊ¹ÓÃÒÔÏÂÕâĞ©ºÍÁÄÌìÊÒÏà¹ØµÄÃüÁî£º
-    enter        ½øÈëÒ»¸öÁÄÌìÊÒ
-    chathere     ²éÔÄÕâÀïµÄÁÄÌìÊÒ
-    newchat      ½¨Á¢ĞÂµÄÁÄÌìÊÒ
+åœ¨é€™è£¡ä½ å¯ä»¥ä½¿ç”¨ä»¥ä¸‹é€™äº›å’ŒèŠå¤©å®¤ç›¸é—œçš„å‘½ä»¤ï¼š
+    enter        é€²å…¥ä¸€å€‹èŠå¤©å®¤
+    chathere     æŸ¥é–±é€™è£¡çš„èŠå¤©å®¤
+    newchat      å»ºç«‹æ–°çš„èŠå¤©å®¤
 HELP );
                 break;
 
         case "enter":
                 write(@HELP_ENTER
-Ö¸Áî¸ñÊ½ : enter <ÁÄÌìÊÒID>
+æŒ‡ä»¤æ ¼å¼ : enter <èŠå¤©å®¤ID>
 
-´ËÖ¸ÁîÈÃÄã½øÈëÖ¸¶¨µÄÁÄÌìÊÒ£¬²ÎÓëÁÄÌì£¬µ±È»Ç°ÌáµÄ±£Ö¤Äã²»ÊÇ²»
-ÊÜ»¶Ó­µÄÈËÎï¡£
+æ­¤æŒ‡ä»¤è®“ä½ é€²å…¥æŒ‡å®šçš„èŠå¤©å®¤ï¼Œåƒèˆ‡èŠå¤©ï¼Œç•¶ç„¶å‰æçš„ä¿è¨¼ä½ ä¸æ˜¯ä¸
+å—æ­¡è¿çš„äººç‰©ã€‚
 
-Ïà¹ØÖ¸Áî£ºchathere£¬newchat
+ç›¸é—œæŒ‡ä»¤ï¼šchathereï¼Œnewchat
 HELP_ENTER );
                 break;
 
         case "chathere":
                 write(@HELP_CHATHERE
-Ö¸Áî¸ñÊ½ : herechat
+æŒ‡ä»¤æ ¼å¼ : herechat
 
-´ËÖ¸ÁîÈÃÄã²éÔÄÕâÀï¶¼ÓĞÄÄĞ©ÁÄÌìÊÒ£¬ÆäÖĞ¿´ÉÏÈ¥ÊÇºìÉ«µÄ±íÊ¾Äã²»
-ÊÜ»¶Ó­£¬ÇëÎğÈëÄÚ¡£
+æ­¤æŒ‡ä»¤è®“ä½ æŸ¥é–±é€™è£¡éƒ½æœ‰å“ªäº›èŠå¤©å®¤ï¼Œå…¶ä¸­çœ‹ä¸Šå»æ˜¯ç´…è‰²çš„è¡¨ç¤ºä½ ä¸
+å—æ­¡è¿ï¼Œè«‹å‹¿å…¥å…§ã€‚
 
-Ïà¹ØÖ¸Áî£ºenter£¬newchat
+ç›¸é—œæŒ‡ä»¤ï¼šenterï¼Œnewchat
 HELP_CHATHERE );
                 break;
         case "newchat":
                 write(@HELP_NEW_CHAT
-´ËÖ¸ÁîÈÃÄã×Ô¼º½¨Á¢Ò»¸öÁÄÌìÊÒ£¬²»¹ıÒªÓĞÒ»¶¨µÄÌõ¼ş¼´·¢´ôÉñ¹¦Âú
-Ê®¼¶²ÅÄÜ¹»½¨Á¢ÁÄÌìÊÒ¡£
+æ­¤æŒ‡ä»¤è®“ä½ è‡ªå·±å»ºç«‹ä¸€å€‹èŠå¤©å®¤ï¼Œä¸éè¦æœ‰ä¸€å®šçš„æ¢ä»¶å³ç™¼å‘†ç¥åŠŸæ»¿
+åç´šæ‰èƒ½å¤ å»ºç«‹èŠå¤©å®¤ã€‚
 
-Ïà¹ØÖ¸Áî£ºenter£¬chathere
+ç›¸é—œæŒ‡ä»¤ï¼šenterï¼Œchathere
 HELP_NEW_CHAT );
                 break;
 
         case "clean":
                 write(@HELP_CLEAN
-Çå³ıÄ¿Ç°Ã»ÓĞÈËµÄÁÄÌìÊÒ¡£
+æ¸…é™¤ç›®å‰æ²’æœ‰äººçš„èŠå¤©å®¤ã€‚
 HELP_CLEAN );
                 break;
 
         default:
-                return notify_fail("ÄãÒª²é¿´Ê²Ã´°ïÖú£¿\n");
+                return notify_fail("ä½ è¦æŸ¥çœ‹ä»€éº¼å¹«åŠ©ï¼Ÿ\n");
         }
 
         return 1;

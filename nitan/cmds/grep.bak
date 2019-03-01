@@ -4,9 +4,9 @@
  * File   : grep.c
  * Author : Cookys@RevivalWorld
  * Date   : 2001-07-11
- * Note   : grep Ö¸Áî¡£
+ * Note   : grep æŒ‡ä»¤ã€‚
  * Update :
- *  o 2001-07-30 Cookys ĞŞ¸´Ò»Ğ©Ğ¡ bug
+ *  o 2001-07-30 Cookys ä¿®å¾©ä¸€äº›å° bug
  *
  -----------------------------------------
  */
@@ -18,7 +18,7 @@
 inherit COMMAND;
 
 string help = @HELP
-        ±ê×¼ grep Ö¸Áî¡£
+        æ¨™æº– grep æŒ‡ä»¤ã€‚
 HELP;
 
 private void command(object me, string arg)
@@ -63,15 +63,15 @@ private void command(object me, string arg)
         if( src=="." && !sizeof(files = get_dir(dir)) )
         {
                 if (file_size(dir)==-2)    
-                        tell(me, "´ËÄ¿Â¼ÄÚÎŞÈÎºÎµµ°¸¡£\n", CMDMSG);
+                        tell(me, "æ­¤ç›®éŒ„å…§ç„¡ä»»ä½•æª”æ¡ˆã€‚\n", CMDMSG);
                 else           
-                        tell(me, "Ã»ÓĞÕâ¸öµµ°¸¡£\n", CMDMSG);
+                        tell(me, "æ²’æœ‰é€™å€‹æª”æ¡ˆã€‚\n", CMDMSG);
                 
                 return;
         }
         
         files-=({".",".."});
-        tell(me, sprintf("´Ó %s ÖĞÑ°ÕÒ %s ×Ö´®£º\n",dir,str), CMDMSG);
+        tell(me, sprintf("å¾ %s ä¸­å°‹æ‰¾ %s å­—ä¸²ï¼š\n",dir,str), CMDMSG);
         str_len=strlen(str);
         if( !deep )
         foreach( string file in files)
@@ -79,22 +79,22 @@ private void command(object me, string arg)
                 file_data=read_file(dir+file);
                 if( file_data && strsrch(file_data,str)!=-1 )
                 {
-                        return_str+=sprintf(HIY"\nÔÚµµ°¸ %s ÖĞº¬ÓĞ %s ×Ö´®£º\n"NOR,dir+file,str);
+                        return_str+=sprintf(HIY"\nåœ¨æª”æ¡ˆ %s ä¸­å«æœ‰ %s å­—ä¸²ï¼š\n"NOR,dir+file,str);
                         foreach(string file_entry in explode(file_data,"\n"))
                         {
                                 line++;
                                 if( (flag=strsrch(file_entry,str))!=-1 )
-                                        return_str+=sprintf("%4d£º%s\n",line,file_entry[0..flag-1]+HIG HBMAG+file_entry[flag..flag+str_len-1]+NOR+file_entry[flag+str_len..<1]);
+                                        return_str+=sprintf("%4dï¼š%s\n",line,file_entry[0..flag-1]+HIG HBMAG+file_entry[flag..flag+str_len-1]+NOR+file_entry[flag+str_len..<1]);
                         }
                         line=0;
                 }
                 //if(return_str)         tell(me, return_str, CMDMSG);
-                //        else tell(me, "Ã»ÓĞ·ûºÏµÄ×ÊÁÏ£¡£¡\n", CMDMSG);
+                //        else tell(me, "æ²’æœ‰ç¬¦åˆçš„è³‡æ–™ï¼ï¼\n", CMDMSG);
                 //return;
         } else for(int j=0;j<sizeof(files);j++ )
         {
                 file_data=read_file(dir+files[j]);
-                //return_str+=sprintf(HIC"º¬×ÓÄ¿Â¼Éî²ãËÑÑ°...\n\n"NOR);
+                //return_str+=sprintf(HIC"å«å­ç›®éŒ„æ·±å±¤æœå°‹...\n\n"NOR);
                 if( !file_data )
                 {
                         if( file_size(dir+files[j])==-2 )
@@ -112,26 +112,26 @@ private void command(object me, string arg)
                 
                 else        if( strsrch(file_data,str)!=-1 )
                 {
-                        return_str+=sprintf(HIY"\nÔÚµµ°¸ %s ÖĞº¬ÓĞ %s ×Ö´®£º\n"NOR,dir+files[j],str);
+                        return_str+=sprintf(HIY"\nåœ¨æª”æ¡ˆ %s ä¸­å«æœ‰ %s å­—ä¸²ï¼š\n"NOR,dir+files[j],str);
                         
                         foreach(string file_entry in explode(file_data,"\n"))
                         {
                                 line++;
                                 if( (flag=strsrch(file_entry,str))!=-1 )
-                                        return_str+=sprintf("%4d£º%s\n",line,file_entry[0..flag-1]+HIG HBMAG+file_entry[flag..flag+str_len-1]+NOR+file_entry[flag+str_len..<1]);
+                                        return_str+=sprintf("%4dï¼š%s\n",line,file_entry[0..flag-1]+HIG HBMAG+file_entry[flag..flag+str_len-1]+NOR+file_entry[flag+str_len..<1]);
                         }
                         line=0;
                 }
                 //printf("getdir:%O\ndir:%O\n",get_dir(dir+files[j]),dir+files[j]+"/");
                 
                   //tell(me, return_str, CMDMSG);
-                //        else tell(me, "Ã»ÓĞ·ûºÏµÄ×ÊÁÏ£¡£¡\n", CMDMSG);                
+                //        else tell(me, "æ²’æœ‰ç¬¦åˆçš„è³‡æ–™ï¼ï¼\n", CMDMSG);                
                 if(return_str!="")         tell(me, return_str, CMDMSG);
-                        else tell(me, "Ã»ÓĞ·ûºÏµÄ×ÊÁÏ£¡£¡\n", CMDMSG);
+                        else tell(me, "æ²’æœ‰ç¬¦åˆçš„è³‡æ–™ï¼ï¼\n", CMDMSG);
         }
         if(return_str!="")         
                 tell(me, return_str, CMDMSG);
         else 
-                tell(me, "Ã»ÓĞ·ûºÏµÄ×ÊÁÏ£¡£¡\n", CMDMSG);
+                tell(me, "æ²’æœ‰ç¬¦åˆçš„è³‡æ–™ï¼ï¼\n", CMDMSG);
         //tell(me, return_str, CMDMSG);
 }

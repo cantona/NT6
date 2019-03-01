@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�Ļ���");
+        set("short", "四槐樹");
         set("long", @LONG
-�ض������ȥ���йŻ��꣬�ߴ����ƣ�εȻ�д䣬��Ϊ�ƻ������
-���ͽ��Ļ����������������ۣ����´��������������껱����������
-���ٸġ�
+柏洞北面出去，有古槐株，高大擎雲，蔚然蔥翠，傳為唐槐，其地
+名就叫四槐樹。後來光陰荏苒，日月穿梭，又衍生了三株槐樹，地名便
+不再改。
 LONG );
         set("exits", ([
                 "northup"   : __DIR__"hutiange",

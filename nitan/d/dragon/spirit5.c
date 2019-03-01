@@ -6,12 +6,12 @@ int do_back(object me);
 
 void create()
 { 
-      set("short", "ÑİÎäÌ¨");
+      set("short", "æ¼”æ­¦å°");
       set("long",
-"[1;32mÕâÀï¿´ÉÏÈ¥ÏóÊÇÒ»¸ö±ÈÎä³¡£¬Ê®ÕÉ¼û·½µÄ³¡µØÉÏÕûÕûÆëÆëµØ\n"
-"ÆÌ×ÅÒ»È¦²ÊÉ«Âêè§Ê¯£¬¼Ü×ÅÏãÑÌôÁÈÆµÄËÄ¸ö¾Ş´ó½ğÒøÍ­Ìú¶¦£¬³¡µØÖĞ¼ä»¹\n"
-"ÆÌ×ÅÈíËÉµÄÆ¤ÈŞÖ¯½õÌº¡£ÔÚ³¡±ßÓĞÒ»¸öÊé¼ÜËÆµÄ°ÚÊÎ(shelf)£¬ÔÚËüÅÔ±ß\n"
-"»¹ÓĞÒ»ÕÅ¾î²¯(note)¡£\n"
+"[1;32mé€™è£¡çœ‹ä¸Šå»è±¡æ˜¯ä¸€å€‹æ¯”æ­¦å ´ï¼Œåä¸ˆè¦‹æ–¹çš„å ´åœ°ä¸Šæ•´æ•´é½Šé½Šåœ°\n"
+"èˆ–è‘—ä¸€åœˆå½©è‰²ç‘ªç‘™çŸ³ï¼Œæ¶è‘—é¦™ç…™è£Šç¹çš„å››å€‹å·¨å¤§é‡‘éŠ€éŠ…éµé¼ï¼Œå ´åœ°ä¸­é–“é‚„\n"
+"èˆ–è‘—è»Ÿé¬†çš„çš®çµ¨ç¹”éŒ¦æ¯¯ã€‚åœ¨å ´é‚Šæœ‰ä¸€å€‹æ›¸æ¶ä¼¼çš„æ“ºé£¾(shelf)ï¼Œåœ¨å®ƒæ—é‚Š\n"
+"é‚„æœ‰ä¸€å¼µçµ¹å¸›(note)ã€‚\n"
 );
    set("exits",([
            "south" : __DIR__"xiuxishi",
@@ -20,8 +20,8 @@ void create()
              "/quest/tulong/npc/shadow" : 1,
   ]));
   set("item_desc", ([
-     "shelf" : "ÕâÊÇÒ»¸öÒ©¼Ü£¬ÀïÃæ·Å×ÅÒ»Ğ©½ğ´´Ò©£¬ËÆºõ¿ÉÒÔÄÃ³öÀ´(take jinchuang)¡£\n", 
-      "note" : "ÓÂ¸ÒµÄÈË°¡£¬Èç¹ûÄãÃÇµÄ½Å²½µ½´ËÎªÖ¹£¬¾Í»ØÈ¥·²¼ä°É(back)¡£\n", 
+     "shelf" : "é€™æ˜¯ä¸€å€‹è—¥æ¶ï¼Œè£¡é¢æ”¾è‘—ä¸€äº›é‡‘å‰µè—¥ï¼Œä¼¼ä¹å¯ä»¥æ‹¿å‡ºä¾†(take jinchuang)ã€‚\n", 
+      "note" : "å‹‡æ•¢çš„äººå•Šï¼Œå¦‚æœä½ å€‘çš„è…³æ­¥åˆ°æ­¤ç‚ºæ­¢ï¼Œå°±å›å»å‡¡é–“å§(back)ã€‚\n", 
   ]));
 //  set("no_clean_up", 0);
   set("no_magic", 1);
@@ -39,13 +39,13 @@ void init()
 
 int do_quit(string arg)
 {
-        write(query("name", this_player())+"£¬ÕâÀïÖ»ÄÜfight£¡\n");
+        write(query("name", this_player())+"ï¼Œé€™è£¡åªèƒ½fightï¼\n");
         return 1;
 }
 
 int do_steal(string arg)
 {
-        write(query("name", this_player())+"£¬²»ÒªÎª´Ë²»²ÅÖ®ÊÂ£¡\n");
+        write(query("name", this_player())+"ï¼Œä¸è¦ç‚ºæ­¤ä¸æ‰ä¹‹äº‹ï¼\n");
         return 1;
 }
 int do_take(string arg)
@@ -53,23 +53,23 @@ int do_take(string arg)
         object me=this_player();
         object ob;
         if(!arg || arg!="jinchuang")
-          return notify_fail("ÄãÒªÄÃÊ²Ã´£¿\n");
+          return notify_fail("ä½ è¦æ‹¿ä»€éº¼ï¼Ÿ\n");
         if( !query("fighter", me) )
-          return notify_fail("Äã»¹Ã»±ÈÎä¾ÍÏëÄÃÒ©£¿\n"); 
+          return notify_fail("ä½ é‚„æ²’æ¯”æ­¦å°±æƒ³æ‹¿è—¥ï¼Ÿ\n"); 
        ob = new ("/clone/misc/jinchuang");   
        ob->move(me); 
-  message_vision ("$N´ÓÌ¨ÉÏÄÃÆğ$n¡£\n",me,ob); 
+  message_vision ("$Nå¾å°ä¸Šæ‹¿èµ·$nã€‚\n",me,ob); 
         return 1;  
 }
 
 int do_back(object me)
 {
         me=this_player();
-        message_vision(HIC"$NµÄÉíÓ°ÏûÊ§ÔÚÒ»Õó¹âÃ¢ÖĞ¡£\n"NOR,me); 
+        message_vision(HIC"$Nçš„èº«å½±æ¶ˆå¤±åœ¨ä¸€é™£å…‰èŠ’ä¸­ã€‚\n"NOR,me); 
         set("fighter", 0, me);
-        set_temp("m_success/³õ¼¶", 0, me);
-        set_temp("m_success/»ÃÓ°", 0, me);
-        set_temp("m_success/ÄõÁú", 0, me);
+        set_temp("m_success/åˆç´š", 0, me);
+        set_temp("m_success/å¹»å½±", 0, me);
+        set_temp("m_success/å­½é¾", 0, me);
         me->move("/d/city/wumiao");
         return 1;
 }
@@ -78,9 +78,9 @@ int do_back(object me)
 int valid_leave(string dir)
 {
               if((present("jinchuang yao", this_player())))
-            return notify_fail("Çë²»Òª´ø×ßÕâÀïµÄ¶«Î÷¡£\n"); 
+            return notify_fail("è«‹ä¸è¦å¸¶èµ°é€™è£¡çš„æ±è¥¿ã€‚\n"); 
         if((present("budai", this_player())))
-            return notify_fail("Çë·ÅÏÂ²¼´ü£¬ÕâÀïµÄ¶«Î÷²»ÄÜ´ø³öÈ¥£¬Ğ»Ğ»¡£\n"); 
+            return notify_fail("è«‹æ”¾ä¸‹å¸ƒè¢‹ï¼Œé€™è£¡çš„æ±è¥¿ä¸èƒ½å¸¶å‡ºå»ï¼Œè¬è¬ã€‚\n"); 
     return ::valid_leave();
 
  }

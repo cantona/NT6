@@ -1,14 +1,14 @@
-// shanqiu.c Ð¡É½Çð
+// shanqiu.c å°å±±ä¸˜
 
 inherit ROOM;
 
 void create()
 {
-        set("short", "Ð¡É½Çð");
+        set("short", "å°å±±ä¸˜");
         set("long", @LONG
-ÕâÀïÊÇ²ÝÔ­ºÍÉ­ÁÖµÄ·Ö½çÏß£¬ÍùÎ÷¿ÉÒÔ¿´µ½¸ßËÊÈçÔÆµÄÌìÉ½É½ÂöºÍ´Ó
-ÕâÀïÒ»Ö±ÑÓÉì³öÈ¥µÄÕëÒ¶ÁÖ£¬Íù¶«¿ÉÒÔ¿´¼û²¿×åµÄÅÜÂí³¡£¬»¹ÒþÒþ¿ÉÒÔÌý
-¼û¹þÈø¿Ë×åÈËµÄ»°Óï¡£
+é€™è£¡æ˜¯è‰åŽŸå’Œæ£®æž—çš„åˆ†ç•Œç·šï¼Œå¾€è¥¿å¯ä»¥çœ‹åˆ°é«˜è³å¦‚é›²çš„å¤©å±±å±±è„ˆå’Œå¾ž
+é€™è£¡ä¸€ç›´å»¶ä¼¸å‡ºåŽ»çš„é‡è‘‰æž—ï¼Œå¾€æ±å¯ä»¥çœ‹è¦‹éƒ¨æ—çš„è·‘é¦¬å ´ï¼Œé‚„éš±éš±å¯ä»¥è½
+è¦‹å“ˆè–©å…‹æ—äººçš„è©±èªžã€‚
 LONG);        
         set("exits", ([
             "eastdown" : __DIR__"road",

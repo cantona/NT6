@@ -5,10 +5,10 @@
 inherit F_CLEAN_UP;
 
 string help = @HELP
-±íÇéÖ¸Áî±à¼­Æ÷
+è¡¨æƒ…æŒ‡ä»¤ç·¨è¼¯å™¨
 
-edemote '±íÇéÖ¸Áî'	- ±à¼­±íÇéÖ¸Áî
-edemote -d '±íÇéÖ¸Áî'	- É¾³ý±íÇéÖ¸Áî
+edemote 'è¡¨æƒ…æŒ‡ä»¤'	- ç·¨è¼¯è¡¨æƒ…æŒ‡ä»¤
+edemote -d 'è¡¨æƒ…æŒ‡ä»¤'	- åˆªé™¤è¡¨æƒ…æŒ‡ä»¤
 
 HELP;
 
@@ -28,27 +28,27 @@ private void setup_emotion(object me, string emotion, mapping modifying_info, in
 
 private string replace_keys(string description)
 {
-	if( !description ) return "ÉÐÎ´Éè¶¨";
+	if( !description ) return "å°šæœªè¨­å®š";
 	
-	description = replace_string(description, "$ME", 	HIC"Äã"NOR);
-	description = replace_string(description, "$YOU", 	HIG"Ä³ÈË"NOR);
-	description = replace_string(description, "$T", 	HIM"ÊÂÎï"NOR);
+	description = replace_string(description, "$ME", 	HIC"ä½ "NOR);
+	description = replace_string(description, "$YOU", 	HIG"æŸäºº"NOR);
+	description = replace_string(description, "$T", 	HIM"äº‹ç‰©"NOR);
 	
 	return description;
 }
 private string emotion_detail_description(string emotion, mixed info)
 {
-	string msg = "©¤©¤ ±íÇé "HIY+emotion+NOR+" Ö®ÏêÏ¸ÐðÊöÈçÏÂ£º"+repeat_string("©¤", 13-(strlen(emotion)/2))+"\n";
+	string msg = "â”€â”€ è¡¨æƒ… "HIY+emotion+NOR+" ä¹‹è©³ç´°æ•˜è¿°å¦‚ä¸‹ï¼š"+repeat_string("â”€", 13-(strlen(emotion)/2))+"\n";
 	
-	msg += NOR WHT"1.ÎÞ¶ÔÏóÎÞ¸½¼ÓÎÄ×Ö    £º"NOR+replace_keys(info[NONE_ALL])+"\n";
-	msg += NOR WHT"2.ÎÞ¶ÔÏóÓÐ¸½¼ÓÎÄ×Ö    £º"NOR+replace_keys(info[NONE_ALL_ARG])+"\n";
-	msg += NOR WHT"3.¶ÔÏóÎª×Ô¼ºÎÞ¸½¼ÓÎÄ×Ö£º"NOR+replace_keys(info[ME_ALL])+"\n";
-	msg += NOR WHT"4.¶ÔÏóÎª×Ô¼ºÓÐ¸½¼ÓÎÄ×Ö£º"NOR+replace_keys(info[ME_ALL_ARG])+"\n";
-	msg += NOR WHT"5.¶ÔÏóÎªÄ³ÈËÎÞ¸½¼ÓÎÄ×Ö£º"NOR+replace_keys(info[YOU_ALL])+"\n";
-	msg += NOR WHT"6.¶ÔÏóÎªÄ³ÈËÓÐ¸½¼ÓÎÄ×Ö£º"NOR+replace_keys(info[YOU_ALL_ARG])+"\n";
-	msg += NOR WHT"7.±íÇé×¢½â            £º"NOR+(info[NOTE] || "ÉÐÎ´Éè¶¨")+"\n";
-	msg += NOR WHT"8.Ê¹ÓÃ´ÎÊý            £º"NOR+info[USE]+" ´Î\n";
-	msg += "©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤\n";
+	msg += NOR WHT"1.ç„¡å°è±¡ç„¡é™„åŠ æ–‡å­—    ï¼š"NOR+replace_keys(info[NONE_ALL])+"\n";
+	msg += NOR WHT"2.ç„¡å°è±¡æœ‰é™„åŠ æ–‡å­—    ï¼š"NOR+replace_keys(info[NONE_ALL_ARG])+"\n";
+	msg += NOR WHT"3.å°è±¡ç‚ºè‡ªå·±ç„¡é™„åŠ æ–‡å­—ï¼š"NOR+replace_keys(info[ME_ALL])+"\n";
+	msg += NOR WHT"4.å°è±¡ç‚ºè‡ªå·±æœ‰é™„åŠ æ–‡å­—ï¼š"NOR+replace_keys(info[ME_ALL_ARG])+"\n";
+	msg += NOR WHT"5.å°è±¡ç‚ºæŸäººç„¡é™„åŠ æ–‡å­—ï¼š"NOR+replace_keys(info[YOU_ALL])+"\n";
+	msg += NOR WHT"6.å°è±¡ç‚ºæŸäººæœ‰é™„åŠ æ–‡å­—ï¼š"NOR+replace_keys(info[YOU_ALL_ARG])+"\n";
+	msg += NOR WHT"7.è¡¨æƒ…æ³¨è§£            ï¼š"NOR+(info[NOTE] || "å°šæœªè¨­å®š")+"\n";
+	msg += NOR WHT"8.ä½¿ç”¨æ¬¡æ•¸            ï¼š"NOR+info[USE]+" æ¬¡\n";
+	msg += "â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n";
 	return msg;
 }
 
@@ -57,15 +57,15 @@ private void confirm_delete_emotion(object me, string emotion, string arg)
 	if( lower_case(arg) == "y" )
 	{
 		if( EMOTE_D->delete_emotion(emotion) )
-			tell(me, "É¾³ý±íÇéÖ¸Áî "+emotion+" ³É¹¦¡£\n");
+			tell(me, "åˆªé™¤è¡¨æƒ…æŒ‡ä»¤ "+emotion+" æˆåŠŸã€‚\n");
 		else
-			tell(me, "É¾³ýÊ§°Ü£¬ÇëÍ¨ÖªÎ×Ê¦´¦Àí¡£\n");
+			tell(me, "åˆªé™¤å¤±æ•—ï¼Œè«‹é€šçŸ¥å·«å¸«è™•ç†ã€‚\n");
 
 		return me->finish_input();
 	}
 	else
 	{
-		tell(me, "È¡ÏûÉ¾³ý¡£\n");
+		tell(me, "å–æ¶ˆåˆªé™¤ã€‚\n");
 		return me->finish_input();
 	}
 }
@@ -82,17 +82,17 @@ private void setup_emotion(object me, string emotion, mapping modifying_info, in
 	switch(arg)
 	{
 		case "cancel":
-			tell(me, "È¡ÏûÊäÈëÐðÊö¡£\n"+emotion_detail_description(emotion, modifying_info)+"ÇëÊäÈëÓûÉè¶¨Ö®ÏîÄ¿(Éè¶¨Íê±Ï save, È¡ÏûÉè¶¨ exit)£º\n>");
+			tell(me, "å–æ¶ˆè¼¸å…¥æ•˜è¿°ã€‚\n"+emotion_detail_description(emotion, modifying_info)+"è«‹è¼¸å…¥æ¬²è¨­å®šä¹‹é …ç›®(è¨­å®šå®Œç•¢ save, å–æ¶ˆè¨­å®š exit)ï¼š\n>");
 			input_to( (: choose_option, me, emotion, modifying_info :) );
 			break;
 		
 		case ".":
-			// ×î¼Ñ»¯ÐðÊö
+			// æœ€ä½³åŒ–æ•˜è¿°
 			if(multi_line_arg[<1..] == "\n") multi_line_arg = multi_line_arg[0..<2];
 			multi_line_arg = kill_repeat_ansi(trim(ansi(multi_line_arg)) + NOR);
 			modifying_info[option-1] = multi_line_arg;
 			
-			tell(me, "Éè¶¨Íê±Ï¡£\n"+emotion_detail_description(emotion, modifying_info)+"ÇëÊäÈëÓûÉè¶¨Ö®ÏîÄ¿(Éè¶¨Íê±Ï save, È¡ÏûÉè¶¨ exit)£º\n>");
+			tell(me, "è¨­å®šå®Œç•¢ã€‚\n"+emotion_detail_description(emotion, modifying_info)+"è«‹è¼¸å…¥æ¬²è¨­å®šä¹‹é …ç›®(è¨­å®šå®Œç•¢ save, å–æ¶ˆè¨­å®š exit)ï¼š\n>");
 			input_to( (: choose_option, me, emotion, modifying_info :) );
 			break;
 		default:
@@ -111,7 +111,7 @@ private void choose_option(object me, string emotion, mapping modifying_info, st
 		case "save":
 			if( sizeof(modifying_info) != 8 )
 			{
-				tell(me, "±ØÐëÉè¶¨ÍêËùÓÐ±íÇéÐðÊö²ÅÄÜ´¢´æÉè¶¨¡£\nÇëÊäÈëÓûÉè¶¨Ö®ÏîÄ¿(Éè¶¨Íê±Ï save, È¡ÏûÉè¶¨ exit)£º\n>");
+				tell(me, "å¿…é ˆè¨­å®šå®Œæ‰€æœ‰è¡¨æƒ…æ•˜è¿°æ‰èƒ½å„²å­˜è¨­å®šã€‚\nè«‹è¼¸å…¥æ¬²è¨­å®šä¹‹é …ç›®(è¨­å®šå®Œç•¢ save, å–æ¶ˆè¨­å®š exit)ï¼š\n>");
 				input_to( (: choose_option, me, emotion, modifying_info :) );
 				return;
 			}
@@ -124,17 +124,17 @@ private void choose_option(object me, string emotion, mapping modifying_info, st
 					
 				if( EMOTE_D->set_emotion(emotion, info) )
 				{
-					tell(me, "±íÇéÖ¸Áî "+emotion+" Éè¶¨´¢´æ³É¹¦¡£\n");
+					tell(me, "è¡¨æƒ…æŒ‡ä»¤ "+emotion+" è¨­å®šå„²å­˜æˆåŠŸã€‚\n");
 				}
 				else
-					tell(me, "±íÇéÖ¸Áî "+emotion+" Éè¶¨´¢´æÊ§°Ü¡£\n");
+					tell(me, "è¡¨æƒ…æŒ‡ä»¤ "+emotion+" è¨­å®šå„²å­˜å¤±æ•—ã€‚\n");
 					
 				return me->finish_input();
 			}
 			break;
 			
 		case "exit":
-			tell(me, "È¡Ïû¶Ô "+emotion+" ±íÇéÖ¸ÁîµÄÉè¶¨¡£\n");
+			tell(me, "å–æ¶ˆå° "+emotion+" è¡¨æƒ…æŒ‡ä»¤çš„è¨­å®šã€‚\n");
 			return me->finish_input();
 			
 		default:break;
@@ -144,17 +144,17 @@ private void choose_option(object me, string emotion, mapping modifying_info, st
 	
 	if( option > 8 || option < 1 )
 	{
-		tell(me, "Ã»ÓÐÕâ¸öÑ¡Ïî¡£\nÇëÊäÈëÓûÉè¶¨Ö®ÏîÄ¿(Éè¶¨Íê±Ï save, È¡ÏûÉè¶¨ exit)£º\n>");
+		tell(me, "æ²’æœ‰é€™å€‹é¸é …ã€‚\nè«‹è¼¸å…¥æ¬²è¨­å®šä¹‹é …ç›®(è¨­å®šå®Œç•¢ save, å–æ¶ˆè¨­å®š exit)ï¼š\n>");
 		input_to( (: choose_option, me, emotion, modifying_info :) );
 	}
 	else if( option == USE+1 ) 
 	{
-		tell(me, "Õâ¸öÑ¡ÏîÎÞ·¨Ê¹ÓÃÊÖ¶¯Éè¶¨¡£\nÇëÊäÈëÓûÉè¶¨Ö®ÏîÄ¿(Éè¶¨Íê±Ï save, È¡ÏûÉè¶¨ exit)£º\n>");
+		tell(me, "é€™å€‹é¸é …ç„¡æ³•ä½¿ç”¨æ‰‹å‹•è¨­å®šã€‚\nè«‹è¼¸å…¥æ¬²è¨­å®šä¹‹é …ç›®(è¨­å®šå®Œç•¢ save, å–æ¶ˆè¨­å®š exit)ï¼š\n>");
 		input_to( (: choose_option, me, emotion, modifying_info :) );
 	}
 	else
 	{
-		tell(me, "\n°´ ENTER ¿É³ÖÐøÊäÈë¶àÐÐ£¬ÊäÈë '.' ½áÊø£¬ÊäÈë 'cancel' È¡Ïû¡£\nÇëÊäÈë±ê×¼¸ñÊ½ÐðÊö "HIC"$ME(´ú±í×Ô¼º) "HIG"$YOU(´ú±í¶ÔÏó) "HIY"$T(´ú±í¸½¼ÓÎÄ×Ö)"NOR"£º\n>");
+		tell(me, "\næŒ‰ ENTER å¯æŒçºŒè¼¸å…¥å¤šè¡Œï¼Œè¼¸å…¥ '.' çµæŸï¼Œè¼¸å…¥ 'cancel' å–æ¶ˆã€‚\nè«‹è¼¸å…¥æ¨™æº–æ ¼å¼æ•˜è¿° "HIC"$ME(ä»£è¡¨è‡ªå·±) "HIG"$YOU(ä»£è¡¨å°è±¡) "HIY"$T(ä»£è¡¨é™„åŠ æ–‡å­—)"NOR"ï¼š\n>");
 		input_to( (: setup_emotion, me, emotion, modifying_info, option, "" :) );
 	}
 }
@@ -169,7 +169,7 @@ int main(object me, string arg)
 
 
 	if( !arg ) { 
-		tell(me, pnoun(2, me)+"ÏëÒªÔö¼Ó»òÐÞ¸ÄÄÄ¸ö±íÇéÖ¸Áî£¿\n"); 
+		tell(me, pnoun(2, me)+"æƒ³è¦å¢žåŠ æˆ–ä¿®æ”¹å“ªå€‹è¡¨æƒ…æŒ‡ä»¤ï¼Ÿ\n"); 
 		return 1;
 	}
 	
@@ -178,11 +178,11 @@ int main(object me, string arg)
 	if( sscanf(arg, "-d %s", arg) == 1 )
 	{
 		if( !arrayp(info = EMOTE_D->query_emotion(arg)) ) {
-			tell(me, "Ã»ÓÐ "+arg+" Õâ¸ö±íÇéÖ¸Áî¡£\n");
+			tell(me, "æ²’æœ‰ "+arg+" é€™å€‹è¡¨æƒ…æŒ‡ä»¤ã€‚\n");
 			return 1;
 		}
 		
-		tell(me, emotion_detail_description(arg, info)+"È·¶¨ÊÇ·ñÉ¾³ý "+arg+" ±íÇéÖ¸Áî(Yes/No)£¿");
+		tell(me, emotion_detail_description(arg, info)+"ç¢ºå®šæ˜¯å¦åˆªé™¤ "+arg+" è¡¨æƒ…æŒ‡ä»¤(Yes/No)ï¼Ÿ");
 		input_to( (: confirm_delete_emotion, me, arg :) );
 		return 1;
 	}
@@ -195,7 +195,7 @@ int main(object me, string arg)
 	else
 	{
 		if( !valid_emote_name(arg) ) {
-			tell(me, "²»ºÏ·¨µÄ±íÇéÖ¸ÁîÃû³Æ¡£\n");
+			tell(me, "ä¸åˆæ³•çš„è¡¨æƒ…æŒ‡ä»¤åç¨±ã€‚\n");
 			return 1;
 		}
 			
@@ -203,7 +203,7 @@ int main(object me, string arg)
 		modifying_info[USE] = 0;
 	}
 		
-	tell(me, emotion_detail_description(arg, modifying_info)+"ÇëÊäÈëÓûÉè¶¨Ö®ÏîÄ¿(Éè¶¨Íê±Ï save, È¡ÏûÉè¶¨ exit)£º\n>");
+	tell(me, emotion_detail_description(arg, modifying_info)+"è«‹è¼¸å…¥æ¬²è¨­å®šä¹‹é …ç›®(è¨­å®šå®Œç•¢ save, å–æ¶ˆè¨­å®š exit)ï¼š\n>");
 	input_to( (: choose_option, me, arg, modifying_info :) );
 	return 1;
 }

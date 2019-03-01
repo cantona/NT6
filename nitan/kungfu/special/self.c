@@ -1,28 +1,28 @@
-// self.c Ğ¡ÖÜÌìÔË×ª
+// self.c å°å‘¨å¤©é‹è½‰
 // Created by Doing Lu 10/7/2K
 
 #include <ansi.h>
 
 inherit F_CLEAN_UP;
 
-string name() { return HIC "Ğ¡ÖÜÌìÔË×ª" NOR; }
+string name() { return HIC "å°å‘¨å¤©é‹è½‰" NOR; }
 
 int perform(object me, string skill)
 {
         int heal;
 
         if( query("jing", me)<80 )
-                return notify_fail("ÄãµÄ¾«Æø²»¹»£¬ÏÖÔÚ»¹²»ÄÜÊ©Õ¹Ğ¡ÖÜÌìÔË×ª¡£\n");
+                return notify_fail("ä½ çš„ç²¾æ°£ä¸å¤ ï¼Œç¾åœ¨é‚„ä¸èƒ½æ–½å±•å°å‘¨å¤©é‹è½‰ã€‚\n");
 
         if (me->is_fighting())
-                return notify_fail("ÄãÕıÔÚ´ò¼Ü£¬ÎŞ·¨Ê¹ÓÃĞ¡ÖÜÌìÔË×ª¡£\n");
+                return notify_fail("ä½ æ­£åœ¨æ‰“æ¶ï¼Œç„¡æ³•ä½¿ç”¨å°å‘¨å¤©é‹è½‰ã€‚\n");
 
         if( query("qi", me) >= query("eff_qi", me) )
-                return notify_fail("ÄãµÄÌåÁ¦ºÜºÃ£¬Ã»ÓĞ±ØÒªÊ¹ÓÃĞ¡ÖÜÌìÔË×ª¡£\n");
+                return notify_fail("ä½ çš„é«”åŠ›å¾ˆå¥½ï¼Œæ²’æœ‰å¿…è¦ä½¿ç”¨å°å‘¨å¤©é‹è½‰ã€‚\n");
 
-        message_vision(HIC "$N" HIC "Ë«ÊÖÆ½¾Ù£¬ÉîÉîÍÂ³öÁËÒ»"
-                       "¿ÚÆø£¬Á³É«±äµÃÔ²Èó¶àÁË¡£\n" NOR, me);
-        tell_object(me, HIG "Äã¸Ğ¾õµ½ÄãµÄÆøÁ¦»Ö¸´ÁË¡£\n" NOR);
+        message_vision(HIC "$N" HIC "é›™æ‰‹å¹³èˆ‰ï¼Œæ·±æ·±åå‡ºäº†ä¸€"
+                       "å£æ°£ï¼Œè‡‰è‰²è®Šå¾—åœ“æ½¤å¤šäº†ã€‚\n" NOR, me);
+        tell_object(me, HIG "ä½ æ„Ÿè¦ºåˆ°ä½ çš„æ°£åŠ›æ¢å¾©äº†ã€‚\n" NOR);
 
         me->receive_damage("jing", 60 + random(20));
         heal = me->query_con() * 10;

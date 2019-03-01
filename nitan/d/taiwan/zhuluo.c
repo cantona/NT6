@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����");
+        set("short", "諸羅");
         set("long", @LONG
-���ޣ�λ�ڰ���ɽɽ´ԭΪƽ������¤��۾�֮�أ����������ʼ
-�𽥷�չ�ɶ��������ǰ���ɽ��ҵ��ľ�ļ�ɢ�����Ʋļӹ����ġ� 
+諸羅，位于阿裡山山麓原為平埔族土隴社聚居之地，于清代初年始
+逐漸發展成都會區。是阿裡山林業的木材集散地與制材加工中心。 
 LONG );
         set("exits", ([
                 "northwest" : __DIR__"pingye",

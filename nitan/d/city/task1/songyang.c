@@ -1,13 +1,13 @@
-// songyang.c ËÎÑï
+// songyang.c å®‹æš
 
 #include <ansi.h>
 inherit NPC;
 
 void create()
 {
-        set_name("ËÎÑï", ({ "song  yang"}));
-        set("long", "Ò»¸öĞĞ×ß½­ºşµÄ¶À½Ç´óµÁ£¬Ò»ÉíÇá¹¦ÓĞËùÔìÖ¬¡£\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("å®‹æš", ({ "song  yang"}));
+        set("long", "ä¸€å€‹è¡Œèµ°æ±Ÿæ¹–çš„ç¨è§’å¤§ç›œï¼Œä¸€èº«è¼•åŠŸæœ‰æ‰€é€ è„‚ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 35);
         set("attitude", "peaceful");
         set("str", 25);

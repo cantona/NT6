@@ -6,16 +6,16 @@ inherit F_UNIQUE;
 
 void create()
 {
-        set_name(HIY "Ã÷Öé" NOR, ({"ming zhu", "ming"}));
-        set("title", "±ø²¿ÉĞÊé");
-        set("gender", "ÄĞĞÔ");
+        set_name(HIY "æ˜ç " NOR, ({"ming zhu", "ming"}));
+        set("title", "å…µéƒ¨å°šæ›¸");
+        set("gender", "ç”·æ€§");
         set("age", 36);
         set("str", 25);
         set("dex", 20);
         set("int", 28);
         set("con", 28);
         set("per", 20);
-        set("long", "Õâ¿ÉÊÇÎõ³¯µÚÒ»´ó»¬Í·¡¢µÚÒ»´óÂíÆ¨¾«¡£\n");
+        set("long", "é€™å¯æ˜¯ç†™æœç¬¬ä¸€å¤§æ»‘é ­ã€ç¬¬ä¸€å¤§é¦¬å±ç²¾ã€‚\n");
 
         set("combat_exp", 1000);
         set("score", 200);

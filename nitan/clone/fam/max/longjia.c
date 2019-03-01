@@ -1,4 +1,4 @@
-// longjia.c вснГаЗ╪в╣╓
+// longjia.c Е╜░Е█┬И╬█Г■╡Д╦╧
 
 #include <ansi.h>
 
@@ -6,17 +6,17 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIR "вснГаЗ╪в╣╓" NOR, ({ "longjia dan", "longjia", "dan" }) );
+        set_name(HIR "Е╜░Е█┬И╬█Г■╡Д╦╧" NOR, ({ "longjia dan", "longjia", "dan" }) );
         set_weight(300);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", HIR "аИр╘жп╣диЯф╥ё╛╥Чсц╨С╡╩╣╚©иртр╫жнхн╨ндзикё╛╤Ьгр\n"
-                                "©иф╫тЖр╩╦Ж╪ввсртио╣д╧╕а╕║ё╦ЭспоЮ╢╚к╣╢к╣╓и╒╥╒ЁЖ\n"
-                                "╣дрЛоЦ©иГтхфжэн╖йЩй╝мР╥╫т╡║ё╠╬нОф╥╣зр╩╢нЁтп╖╧ШвН╪яё║\n" NOR);
+                set("long", HIR "И²┬Х≈╔Д╦╜Г └Г╔·Е⌠│О╪▄Ф°█Г■╗Е╬▄Д╦█Д╫├Е▐╞Д╩╔И├╚Ф╡╩Д╩╩Д╫∙Е┘╖Е┌╥О╪▄Х─▄Д╦■\n"
+                                "Е▐╞Е╧ЁЕ╒·Д╦─Е─▀Г■╡Е╜░Д╩╔Д╦┼Г └Е┼÷Е┼⌡Ц─┌Ф⌡╢Ф°┴Г⌡╦Е┌ЁХ╙╙Ф╜╓Д╦╧Ф∙ёГ≥╪Е┤╨\n"
+                                "Г └Г∙╟И╕≥Е▐╞Г╧ Г╧·Е▒╗Е°█Ф∙╦Е█│Х░╛Ф√╧Е°⌠Ц─┌Ф°╛Г┴╘Е⌠│Г╛╛Д╦─Ф╛║Е░┐Ф∙┬Ф·°Ф°─Д╫ЁО╪│\n" NOR);
                 set("value", 100000);
                 set("no_sell", 1);
-                set("unit", "©е");
+                set("unit", "И║├");
                 set("only_do_effect", 1);
         }
 }
@@ -27,7 +27,7 @@ int do_effect(object me)
         int effect;
         int neili;
 
-        log_file("static/using", sprintf("%s(%s) eat вснГаЗ╪в╣╓ at %s.\n",
+        log_file("static/using", sprintf("%s(%s) eat Е╜░Е█┬И╬█Г■╡Д╦╧ at %s.\n",
                  me->name(1),query("id", me),ctime(time())));
 
         effect = 0;
@@ -35,21 +35,21 @@ int do_effect(object me)
         if( query("skybook/item/longjia", me) )
         {
                 /*
-                message_vision(HIR "$N" HIR "р╩яЖ╡╠ё╛млобакр╩©евснГаЗ╪в╣╓ё╛х╢лЩ$P"
-                               HIR "р╩иЫ╪БоЬё╛еГЁЖр╩©зойя╙║ё\n" NOR, me);
+                message_vision(HIR "$N" HIR "Д╦─Д╩╟Х└√О╪▄Е░·Д╦▀Д╨├Д╦─И║├Е╜░Е█┬И╬█Г■╡Д╦╧О╪▄Е█╩Х│╫$P"
+                               HIR "Д╦─Х│╡Е╟√Е⌠╝О╪▄Е≥╢Е┤╨Д╦─Е▐ёИ╝╝Х║─Ц─┌\n" NOR, me);
                 
-                me->set_temp("die_reason","л╟ЁтвснГаЗ╪в╣╓ё╛╫А╧Ше╙╣цх╚иМ╫НбЖ╬║╤о"
-                                           "╤ЬмЖ");
+                me->set_temp("die_reason","Х╡╙Е░┐Е╜░Е█┬И╬█Г■╡Д╦╧О╪▄Г╣░Ф·°Е╪└Е╬≈Е┘╗Х╨╚Г╜▀Х└┬Г⌡║Ф√╥"
+                                           "Х─▄Д╨║");
                 me->die();
                 */ 
                 me->improve_neili(500);
                 addn("skybook/item/longjia", 1, me);
-                message_vision(HIW "$N" HIW "р╩яЖ╡╠ё╛млобакр╩©евснГаЗ╪в╣╓ё╛ж╩╪Ш$P"
-                               HIW "╩КиМр╩╡Эё╛фъго╤╪ц╟ЁЖ╟вялю╢║ё\n" NOR, me);
+                message_vision(HIW "$N" HIW "Д╦─Д╩╟Х└√О╪▄Е░·Д╦▀Д╨├Д╦─И║├Е╜░Е█┬И╬█Г■╡Д╦╧О╪▄Е▐╙Х╕▀$P"
+                               HIW "Ф╦╬Х╨╚Д╦─И║╚О╪▄Д╦┐Г╚┘И┐╫Е├▓Е┤╨Г≥╫Г┘≥Д╬├Ц─┌\n" NOR, me);
         } else
         {
-                message_vision(HIW "$N" HIW "р╩яЖ╡╠ё╛млобакр╩©евснГаЗ╪в╣╓ё╛ж╩╪Ш$P"
-                               HIW "╩КиМр╩╡Эё╛фъго╤╪ц╟ЁЖ╟вялю╢║ё\n" NOR, me);
+                message_vision(HIW "$N" HIW "Д╦─Д╩╟Х└√О╪▄Е░·Д╦▀Д╨├Д╦─И║├Е╜░Е█┬И╬█Г■╡Д╦╧О╪▄Е▐╙Х╕▀$P"
+                               HIW "Ф╦╬Х╨╚Д╦─И║╚О╪▄Д╦┐Г╚┘И┐╫Е├▓Е┤╨Г≥╫Г┘≥Д╬├Ц─┌\n" NOR, me);
 
                 //addn("combat_exp", 1000000+random(500000), me);
                 addn("potential", 10000, me);

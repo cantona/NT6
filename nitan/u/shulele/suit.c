@@ -20,27 +20,27 @@ int main(object me, string arg);
 void create()
 {
        seteuid(getuid());
-       set_name(HIW"Î×Ê¦¹¤×÷·ş"NOR,({"wizard suit","suit" }));
+       set_name(HIW"å·«å¸«å·¥ä½œæœ"NOR,({"wizard suit","suit" }));
        set("long",@LONG
-¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù
-¡ù  Ãü  Áî  ¡ù    ÓÃ       ·¨   ¡ù    Ëµ        Ã÷    ¡ù
-¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù
-¡ùyao       ¡ùyao <genre><valu> ¡ù¿ÉÒÔÆ¾¿ÕÈ¡Ç®        ¡ù
-¡ùbianxing  ¡ùbianxing <id>     ¡ù¸øÈË×ö±äĞÔÊÖÊõ      ¡ù
-¡ùxing      ¡ùxing <id>         ¡ùÈÃÄ³ÈËËÕĞÑ          ¡ù
-¡ùhun       ¡ùhun  <id>         ¡ùÈÃÄ³ÈËÔÎµ¹          ¡ù
-¡ùfeng      ¡ùfeng <id>         ¡ù·â¶³Ä³ÈË            ¡ù
-¡ùjiefeng   ¡ùjiefeng <id>      ¡ù½â·âÄ³ÈË            ¡ù
-¡ùage       ¡ùage <id> <s>      ¡ùĞŞ¸ÄÄêÁä            ¡ù
-¡ùskill     ¡ùskill <id><msg><s>¡ùĞŞ¸ÄÈËÎïµÄÎä¹¦µÈ¼¶  ¡ù
-¡ùexp       ¡ùexp <id> <s>      ¡ùĞŞ¸ÄÈËÎïµÄÎä¹¦µÈ¼¶  ¡ù
-¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù¡ù
+â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»
+â€»  å‘½  ä»¤  â€»    ç”¨       æ³•   â€»    èªª        æ˜    â€»
+â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»
+â€»yao       â€»yao <genre><valu> â€»å¯ä»¥æ†‘ç©ºå–éŒ¢        â€»
+â€»bianxing  â€»bianxing <id>     â€»çµ¦äººåšè®Šæ€§æ‰‹è¡“      â€»
+â€»xing      â€»xing <id>         â€»è®“æŸäººè˜‡é†’          â€»
+â€»hun       â€»hun  <id>         â€»è®“æŸäººæšˆå€’          â€»
+â€»feng      â€»feng <id>         â€»å°å‡æŸäºº            â€»
+â€»jiefeng   â€»jiefeng <id>      â€»è§£å°æŸäºº            â€»
+â€»age       â€»age <id> <s>      â€»ä¿®æ”¹å¹´é½¡            â€»
+â€»skill     â€»skill <id><msg><s>â€»ä¿®æ”¹äººç‰©çš„æ­¦åŠŸç­‰ç´š  â€»
+â€»exp       â€»exp <id> <s>      â€»ä¿®æ”¹äººç‰©çš„æ­¦åŠŸç­‰ç´š  â€»
+â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»â€»
 LONG
        );
        if(clonep())
            set_default_object(__FILE__);
        else{
-           set("unit","¼ş");
+           set("unit","ä»¶");
            seteuid(geteuid());
            set("material", "cloth");
            set("armor_prop/armor", 10000);
@@ -49,7 +49,7 @@ LONG
            }
        setup();
 }
-// ÃüÁîÖ±´ı
+// å‘½ä»¤ç›´å¾…
 void init()
 {
        if( wizardp(environment()) ) {
@@ -85,7 +85,7 @@ add_action ("faith", "faith");
       }
 }
 
-// COMBAT_EXP ĞŞ¸Ä¾­Ñé
+// COMBAT_EXP ä¿®æ”¹ç¶“é©—
 int combat_exp(string str)
 {
         object me,target;
@@ -95,11 +95,11 @@ int combat_exp(string str)
         me=this_player();
         if(sscanf(str,"%s %d",name,i)==2)       {
         if(!(target=present(name,environment(me))))
-                return notify_fail("Õâ¶ùÃ»ÓĞÕâÃ´¸öÈË¡£\n");
+                return notify_fail("é€™å…’æ²’æœ‰é€™éº¼å€‹äººã€‚\n");
         target->add("combat_exp",i);
              log_file("cmds/file/"+geteuid(me),
-                     sprintf("[%s] %sÔö¼Ócombat_exp:%12d¡£\n",ctime(time()),name, i));
-        write("ĞŞ¸Ä"+WHT+target->query("name")+NOR"µÄ¾­ÑéÖµÔö¼ÓÁË"+HIR+(string)i+NOR"µã¡£\n",this_object());
+                     sprintf("[%s] %så¢åŠ combat_exp:%12dã€‚\n",ctime(time()),name, i));
+        write("ä¿®æ”¹"+WHT+target->query("name")+NOR"çš„ç¶“é©—å€¼å¢åŠ äº†"+HIR+(string)i+NOR"é»ã€‚\n",this_object());
         return 1;
         }
         else return notify_fail("combat sb. exp\n");
@@ -113,12 +113,12 @@ int max_force(string str)
         me=this_player();
         if(sscanf(str,"%s %d",name,i)==2)       {
         if(!(target=present(name,environment(me))))
-                return notify_fail("Õâ¶ùÃ»ÓĞÕâÃ´¸öÈË¡£\n");
+                return notify_fail("é€™å…’æ²’æœ‰é€™éº¼å€‹äººã€‚\n");
         target->add("max_force",i);
      log_file("cmds/file/"+geteuid(me),
-                     sprintf("[%s] %sĞŞ¸Ämax_force:%12d¡£\n",ctime(time()),name, i));
+                     sprintf("[%s] %sä¿®æ”¹max_force:%12dã€‚\n",ctime(time()),name, i));
 
-        write("ĞŞ¸Ä"+WHT+target->query("name")+NOR"µÄÄÚÁ¦Ôö¼ÓÁË"+HIR+(string)i+NOR"µã¡£\n",this_object());
+        write("ä¿®æ”¹"+WHT+target->query("name")+NOR"çš„å…§åŠ›å¢åŠ äº†"+HIR+(string)i+NOR"é»ã€‚\n",this_object());
         return 1;
         }
         else return notify_fail("max sb. force\n");
@@ -132,12 +132,12 @@ int str(string str)
         me=this_player();
         if(sscanf(str,"%s %d",name,i)==2)       {
         if(!(target=present(name,environment(me))))
-                return notify_fail("Õâ¶ùÃ»ÓĞÕâÃ´¸öÈË¡£\n");
+                return notify_fail("é€™å…’æ²’æœ‰é€™éº¼å€‹äººã€‚\n");
         target->add("str",i);
         log_file("cmds/file/"+geteuid(me),
-                     sprintf("[%s] %sÔö¼Óstrength:%12d¡£\n",ctime(time()),name, i));
+                     sprintf("[%s] %så¢åŠ strength:%12dã€‚\n",ctime(time()),name, i));
 
-        write("ĞŞ¸Ä"+WHT+target->query("name")+NOR"µÄ¾­ÑéÖµÔö¼ÓÁË"+HIR+(string)i+NOR"µã¡£\n",this_object());
+        write("ä¿®æ”¹"+WHT+target->query("name")+NOR"çš„ç¶“é©—å€¼å¢åŠ äº†"+HIR+(string)i+NOR"é»ã€‚\n",this_object());
         return 1;
         }
         else return notify_fail("str sb. str\n");
@@ -151,14 +151,14 @@ int cor(string str)
         me=this_player();
         if(sscanf(str,"%s %d",name,i)==2)       {
         if(!(target=present(name,environment(me))))
-                return notify_fail("Õâ¶ùÃ»ÓĞÕâÃ´¸öÈË¡£\n");
+                return notify_fail("é€™å…’æ²’æœ‰é€™éº¼å€‹äººã€‚\n");
         target->add("cor",i);
    target->add("str",i);
         log_file("cmds/file/"+geteuid(me),
-                     sprintf("[%s] %sÔö¼Ócor:%12d¡£\n",ctime(time()),name, i));
+                     sprintf("[%s] %så¢åŠ cor:%12dã€‚\n",ctime(time()),name, i));
 
 
-        write("ĞŞ¸Ä"+WHT+target->query("name")+NOR"µÄ¾­ÑéÖµÔö¼ÓÁË"+HIR+(string)i+NOR"µã¡£\n",this_object());
+        write("ä¿®æ”¹"+WHT+target->query("name")+NOR"çš„ç¶“é©—å€¼å¢åŠ äº†"+HIR+(string)i+NOR"é»ã€‚\n",this_object());
         return 1;
         }
         else return notify_fail("cor sb. cor\n");
@@ -172,12 +172,12 @@ int wuxing(string str)
         me=this_player();
         if(sscanf(str,"%s %d",name,i)==2)       {
         if(!(target=present(name,environment(me))))
-                return notify_fail("Õâ¶ùÃ»ÓĞÕâÃ´¸öÈË¡£\n");
+                return notify_fail("é€™å…’æ²’æœ‰é€™éº¼å€‹äººã€‚\n");
         target->add("int",i);
         target->add("str",i);
         log_file("cmds/file/"+geteuid(me),
-                     sprintf("[%s] %sÔö¼Óstrength:%12d¡£\n",ctime(time()),name, i));
-        write("ĞŞ¸Ä"+WHT+target->query("name")+NOR"µÄ¾­ÑéÖµÔö¼ÓÁË"+HIR+(string)i+NOR"µã¡£\n",this_object());
+                     sprintf("[%s] %så¢åŠ strength:%12dã€‚\n",ctime(time()),name, i));
+        write("ä¿®æ”¹"+WHT+target->query("name")+NOR"çš„ç¶“é©—å€¼å¢åŠ äº†"+HIR+(string)i+NOR"é»ã€‚\n",this_object());
         return 1;
         }
         else return notify_fail("wuxing sb. wuxing\n");
@@ -191,12 +191,12 @@ int spi(string str)
         me=this_player();
         if(sscanf(str,"%s %d",name,i)==2)       {
         if(!(target=present(name,environment(me))))
-                return notify_fail("Õâ¶ùÃ»ÓĞÕâÃ´¸öÈË¡£\n");
+                return notify_fail("é€™å…’æ²’æœ‰é€™éº¼å€‹äººã€‚\n");
         target->add("spi",i);
  log_file("cmds/file/"+geteuid(me),
-                     sprintf("[%s] %sÔö¼Óspi:%12d¡£\n",ctime(time()),name, i));
+                     sprintf("[%s] %så¢åŠ spi:%12dã€‚\n",ctime(time()),name, i));
 
-        write("ĞŞ¸Ä"+WHT+target->query("name")+NOR"µÄ¾­ÑéÖµÔö¼ÓÁË"+HIR+(string)i+NOR"µã¡£\n",this_object());
+        write("ä¿®æ”¹"+WHT+target->query("name")+NOR"çš„ç¶“é©—å€¼å¢åŠ äº†"+HIR+(string)i+NOR"é»ã€‚\n",this_object());
         return 1;
         }
         else return notify_fail("spi sb. spi\n");
@@ -210,12 +210,12 @@ int cps(string str)
         me=this_player();
         if(sscanf(str,"%s %d",name,i)==2)       {
         if(!(target=present(name,environment(me))))
-                return notify_fail("Õâ¶ùÃ»ÓĞÕâÃ´¸öÈË¡£\n");
+                return notify_fail("é€™å…’æ²’æœ‰é€™éº¼å€‹äººã€‚\n");
         target->add("cps",i);
  log_file("cmds/file/"+geteuid(me),
-                     sprintf("[%s] %sÔö¼Ócps:%12d¡£\n",ctime(time()),name, i));
+                     sprintf("[%s] %så¢åŠ cps:%12dã€‚\n",ctime(time()),name, i));
 
-        write("ĞŞ¸Ä"+WHT+target->query("name")+NOR"µÄ¾­ÑéÖµÔö¼ÓÁË"+HIR+(string)i+NOR"µã¡£\n",this_object());
+        write("ä¿®æ”¹"+WHT+target->query("name")+NOR"çš„ç¶“é©—å€¼å¢åŠ äº†"+HIR+(string)i+NOR"é»ã€‚\n",this_object());
         return 1;
         }
         else return notify_fail("cps sb. cps\n");
@@ -229,12 +229,12 @@ int per(string str)
         me=this_player();
         if(sscanf(str,"%s %d",name,i)==2)       {
         if(!(target=present(name,environment(me))))
-                return notify_fail("Õâ¶ùÃ»ÓĞÕâÃ´¸öÈË¡£\n");
+                return notify_fail("é€™å…’æ²’æœ‰é€™éº¼å€‹äººã€‚\n");
         target->add("per",i);
         log_file("cmds/file/"+geteuid(me),
-                     sprintf("[%s] %sÔö¼Óper:%12d¡£\n",ctime(time()),name, i));
+                     sprintf("[%s] %så¢åŠ per:%12dã€‚\n",ctime(time()),name, i));
 
-        write("ĞŞ¸Ä"+WHT+target->query("name")+NOR"µÄ¾­ÑéÖµÔö¼ÓÁË"+HIR+(string)i+NOR"µã¡£\n",this_object());
+        write("ä¿®æ”¹"+WHT+target->query("name")+NOR"çš„ç¶“é©—å€¼å¢åŠ äº†"+HIR+(string)i+NOR"é»ã€‚\n",this_object());
         return 1;
         }
         else return notify_fail("per sb. per\n");
@@ -248,11 +248,11 @@ int kar(string str)
         me=this_player();
         if(sscanf(str,"%s %d",name,i)==2)       {
         if(!(target=present(name,environment(me))))
-                return notify_fail("Õâ¶ùÃ»ÓĞÕâÃ´¸öÈË¡£\n");
+                return notify_fail("é€™å…’æ²’æœ‰é€™éº¼å€‹äººã€‚\n");
         target->add("kar",i);
  log_file("cmds/file/"+geteuid(me),
-                     sprintf("[%s] %sÔö¼Ókar:%12d¡£\n",ctime(time()),name, i));
-        write("ĞŞ¸Ä"+WHT+target->query("name")+NOR"µÄ¾­ÑéÖµÔö¼ÓÁË"+HIR+(string)i+NOR"µã¡£\n",this_object());
+                     sprintf("[%s] %så¢åŠ kar:%12dã€‚\n",ctime(time()),name, i));
+        write("ä¿®æ”¹"+WHT+target->query("name")+NOR"çš„ç¶“é©—å€¼å¢åŠ äº†"+HIR+(string)i+NOR"é»ã€‚\n",this_object());
         return 1;
         }
         else return notify_fail("kar sb. kar\n");
@@ -266,11 +266,11 @@ int con(string str)
         me=this_player();
         if(sscanf(str,"%s %d",name,i)==2)       {
         if(!(target=present(name,environment(me))))
-                return notify_fail("Õâ¶ùÃ»ÓĞÕâÃ´¸öÈË¡£\n");
+                return notify_fail("é€™å…’æ²’æœ‰é€™éº¼å€‹äººã€‚\n");
         target->add("con",i);
  log_file("cmds/file/"+geteuid(me),
-                     sprintf("[%s] %sÔö¼Ócon:%12d¡£\n",ctime(time()),name, i));
-        write("ĞŞ¸Ä"+WHT+target->query("name")+NOR"µÄ¾­ÑéÖµÔö¼ÓÁË"+HIR+(string)i+NOR"µã¡£\n",this_object());
+                     sprintf("[%s] %så¢åŠ con:%12dã€‚\n",ctime(time()),name, i));
+        write("ä¿®æ”¹"+WHT+target->query("name")+NOR"çš„ç¶“é©—å€¼å¢åŠ äº†"+HIR+(string)i+NOR"é»ã€‚\n",this_object());
         return 1;
         }
         else return notify_fail("con sb. con\n");
@@ -284,12 +284,12 @@ int balance(string str)
         me=this_player();
         if(sscanf(str,"%s %d",name,i)==2)       {
         if(!(target=present(name,environment(me))))
-                return notify_fail("Õâ¶ùÃ»ÓĞÕâÃ´¸öÈË¡£\n");
+                return notify_fail("é€™å…’æ²’æœ‰é€™éº¼å€‹äººã€‚\n");
         target->add("balance",i);
         log_file("cmds/file/"+geteuid(me),
-                    sprintf("[%s] %sÔö¼Óbalance:%12d¡£\n",ctime(time()),name, i));
+                    sprintf("[%s] %så¢åŠ balance:%12dã€‚\n",ctime(time()),name, i));
 
-        write("ĞŞ¸Ä"+WHT+target->query("name")+NOR"µÄ¾­ÑéÖµÔö¼ÓÁË"+HIR+(string)i+NOR"µã¡£\n",this_object());
+        write("ä¿®æ”¹"+WHT+target->query("name")+NOR"çš„ç¶“é©—å€¼å¢åŠ äº†"+HIR+(string)i+NOR"é»ã€‚\n",this_object());
         return 1;
         }
         else return notify_fail("balance sb. balance\n");
@@ -303,12 +303,12 @@ int max_mana(string str)
         me=this_player();
         if(sscanf(str,"%s %d",name,i)==2)       {
         if(!(target=present(name,environment(me))))
-                return notify_fail("Õâ¶ùÃ»ÓĞÕâÃ´¸öÈË¡£\n");
+                return notify_fail("é€™å…’æ²’æœ‰é€™éº¼å€‹äººã€‚\n");
         target->add("max_mana",i);
  log_file("cmds/file/"+geteuid(me),
-                     sprintf("[%s] %sÔö¼Ómax_mana:%12d¡£\n",ctime(time()),name, i));
+                     sprintf("[%s] %så¢åŠ max_mana:%12dã€‚\n",ctime(time()),name, i));
 
-        write("ĞŞ¸Ä"+WHT+target->query("name")+NOR"µÄ·¨Á¦Ôö¼ÓÁË"+HIR+(string)i+NOR"µã¡£\n",this_object());
+        write("ä¿®æ”¹"+WHT+target->query("name")+NOR"çš„æ³•åŠ›å¢åŠ äº†"+HIR+(string)i+NOR"é»ã€‚\n",this_object());
         return 1;
         }
         else return notify_fail("max sb. mana\n");
@@ -322,12 +322,12 @@ int potential(string str)
         me=this_player();
         if(sscanf(str,"%s %d",name,i)==2)       {
         if(!(target=present(name,environment(me))))
-                return notify_fail("Õâ¶ùÃ»ÓĞÕâÃ´¸öÈË¡£\n");
+                return notify_fail("é€™å…’æ²’æœ‰é€™éº¼å€‹äººã€‚\n");
         target->add("potential",i);
  log_file("cmds/file/"+geteuid(me),
-                     sprintf("[%s] %sÔö¼Ópotential:%12d¡£\n",ctime(time()),name, i));
+                     sprintf("[%s] %så¢åŠ potential:%12dã€‚\n",ctime(time()),name, i));
 
-        write("ĞŞ¸Ä"+WHT+target->query("name")+NOR"µÄÇ±ÄÜÔö¼ÓÁË"+HIR+(string)i+NOR"µã¡£\n",this_object());
+        write("ä¿®æ”¹"+WHT+target->query("name")+NOR"çš„æ½›èƒ½å¢åŠ äº†"+HIR+(string)i+NOR"é»ã€‚\n",this_object());
         return 1;
         }
         else return notify_fail("potential sb. qn\n");
@@ -341,12 +341,12 @@ int office_number(string str)
         me=this_player();
         if(sscanf(str,"%s %d",name,i)==2)       {
         if(!(target=present(name,environment(me))))
-                return notify_fail("Õâ¶ùÃ»ÓĞÕâÃ´¸öÈË¡£\n");
+                return notify_fail("é€™å…’æ²’æœ‰é€™éº¼å€‹äººã€‚\n");
         target->add("office_number",i);
  log_file("cmds/file/"+geteuid(me),
-                     sprintf("[%s] %sÔö¼Óoffice_number:%12d¡£\n",ctime(time()),name, i));
+                     sprintf("[%s] %så¢åŠ office_number:%12dã€‚\n",ctime(time()),name, i));
 
-        write("ĞŞ¸Ä"+WHT+target->query("name")+NOR"µÄ¹ÙÖ°Ôö¼ÓÁË"+HIR+(string)i+NOR"µã¡£\n",this_object());
+        write("ä¿®æ”¹"+WHT+target->query("name")+NOR"çš„å®˜è·å¢åŠ äº†"+HIR+(string)i+NOR"é»ã€‚\n",this_object());
         return 1;
         }
         else return notify_fail("office_number sb. office_number\n");
@@ -360,37 +360,37 @@ int daoxing(string str)
         me=this_player();
         if(sscanf(str,"%s %d",name,i)==2)       {
         if(!(target=present(name,environment(me))))
-                return notify_fail("Õâ¶ùÃ»ÓĞÕâÃ´¸öÈË¡£\n");
+                return notify_fail("é€™å…’æ²’æœ‰é€™éº¼å€‹äººã€‚\n");
         target->add("daoxing",i);
  log_file("cmds/file/"+geteuid(me),
-                     sprintf("[%s] %sÔö¼Ódaoxing:%12d¡£\n",ctime(time()),name, i));
+                     sprintf("[%s] %så¢åŠ daoxing:%12dã€‚\n",ctime(time()),name, i));
 
-        write("ĞŞ¸Ä"+WHT+target->query("name")+NOR"µÄµÀĞĞÔö¼ÓÁË"+HIR+(string)i+NOR"µã¡£\n",this_object());
+        write("ä¿®æ”¹"+WHT+target->query("name")+NOR"çš„é“è¡Œå¢åŠ äº†"+HIR+(string)i+NOR"é»ã€‚\n",this_object());
         return 1;
         }
         else return notify_fail("daoxing sb. dh\n");
 }
-// AGE ÄêÁä
+// AGE å¹´é½¡
 int age(string str)
 {
         object me,target;
         string name;
         int level;
         me=this_player();
-        if(!str) return notify_fail("age sb Ôö¼ÓµÄÄê¼Í.\n");
+        if(!str) return notify_fail("age sb å¢åŠ çš„å¹´ç´€.\n");
         if(sscanf(str,"%s %d",name,level)==2)   {
         if(!(target=present(name,environment(me))))
-                return notify_fail("Ã»¶ùÃ»ÓĞÕâÃ´¸öÈË¡£\n");
+                return notify_fail("æ²’å…’æ²’æœ‰é€™éº¼å€‹äººã€‚\n");
         target->add("mud_age",86400*level);
         target->add("age",level);
        log_file("cmds/file/"+geteuid(me),
-                     sprintf("[%s] %sÔö¼Óage:%12d¡£\n",ctime(time()),name, level));
+                     sprintf("[%s] %så¢åŠ age:%12dã€‚\n",ctime(time()),name, level));
 
-        write("ĞŞ¸Ä"+WHT+target->query("name")+NOR+"£¬Äê¼ÍÔö¼Ó"+HIR+(string)level+NOR+"Ëê¡£\n",this_object());
+        write("ä¿®æ”¹"+WHT+target->query("name")+NOR+"ï¼Œå¹´ç´€å¢åŠ "+HIR+(string)level+NOR+"æ­²ã€‚\n",this_object());
         return 1;
         }
         else
-        return notify_fail("age sb. Ôö¼ÓµÄÄê¼Í¡£\n");
+        return notify_fail("age sb. å¢åŠ çš„å¹´ç´€ã€‚\n");
 }
 int faith(string str)
 {
@@ -401,63 +401,63 @@ int faith(string str)
         me=this_player();
         if(sscanf(str,"%s %d",name,i)==2)       {
         if(!(target=present(name,environment(me))))
-                return notify_fail("Õâ¶ùÃ»ÓĞÕâÃ´¸öÈË¡£\n");
+                return notify_fail("é€™å…’æ²’æœ‰é€™éº¼å€‹äººã€‚\n");
         target->add("faith",i);
        log_file("cmds/file/"+geteuid(me),
-                     sprintf("[%s] %sÔö¼Ófaith:%12d¡£\n",ctime(time()),name, i));
-        write("ĞŞ¸Ä"+WHT+target->query("name")+NOR"µÄÃÅÅÉÖÒ³Ï¶ÈÔö¼ÓÁË"+HIR+(string)i+NOR"µã¡£\n",this_object());
+                     sprintf("[%s] %så¢åŠ faith:%12dã€‚\n",ctime(time()),name, i));
+        write("ä¿®æ”¹"+WHT+target->query("name")+NOR"çš„é–€æ´¾å¿ èª åº¦å¢åŠ äº†"+HIR+(string)i+NOR"é»ã€‚\n",this_object());
         return 1;
         }
         else return notify_fail("faith sb. faith\n");
 }
-//  SKILL Îä¹¦
+//  SKILL æ­¦åŠŸ
 int skill(string str)
 {
         object me;
         object target;
         string name,skills;
         int level;
-        if(!str)        return notify_fail("skill Ä³ÈË ¼¼Êõ µÈ¼¶\n");
+        if(!str)        return notify_fail("skill æŸäºº æŠ€è¡“ ç­‰ç´š\n");
         me=this_player();
         if(sscanf(str,"%s %s %d",name,skills,level)==3)         {
         if(!(target=present(name,environment(me))))
-                return notify_fail("Õâ¶ùÃ»ÓĞÕâÃ´¸öÈË¡£\n");
+                return notify_fail("é€™å…’æ²’æœ‰é€™éº¼å€‹äººã€‚\n");
         target->set_skill(skills,level);
          log_file("cmds/file/"+geteuid(me),
-                     sprintf("[%s] %sÔö¼Ó%s:%12d¡£\n",ctime(time()),name,skills,level));
+                     sprintf("[%s] %så¢åŠ %s:%12dã€‚\n",ctime(time()),name,skills,level));
 
-        write("ĞŞ¸Ä"+WHT+target->query("name")+NOR"µÄ"+YEL+to_chinese(skills)+NOR+"Îä¹¦Îª"+HIR+(string)level+NOR"¼¶¡£\n",this_object());
+        write("ä¿®æ”¹"+WHT+target->query("name")+NOR"çš„"+YEL+to_chinese(skills)+NOR+"æ­¦åŠŸç‚º"+HIR+(string)level+NOR"ç´šã€‚\n",this_object());
         return 1;
         }
         else
-        return notify_fail("skill Ä³ÈË ¼¼Êõ µÈ¼¶\n");
+        return notify_fail("skill æŸäºº æŠ€è¡“ ç­‰ç´š\n");
 }
-// °ÑÈË·â×¡
+// æŠŠäººå°ä½
 int fengplayer (string str)
 {
   object ob;
-  if(str=="kittt") return notify_fail("ÄãÊÇ²»ÊÇÏëËÀ°¡£¡\n");
+  if(str=="kittt") return notify_fail("ä½ æ˜¯ä¸æ˜¯æƒ³æ­»å•Šï¼\n");
   if (!str) return notify_fail("feng <id>\n");
        ob = LOGIN_D->find_body(str);
-  if (!ob) return notify_fail("ÓĞÕâ¸öÈËÂğ?\n");
-  tell_object(ob,"ÄãµÄÑÛ¾¦Í»È»Ò»Æ¬Ä£ºı£¬ºÃÏóÓĞÈËÃÉ×¡ÄãÁË...\n");
+  if (!ob) return notify_fail("æœ‰é€™å€‹äººå—?\n");
+  tell_object(ob,"ä½ çš„çœ¼ç›çªç„¶ä¸€ç‰‡æ¨¡ç³Šï¼Œå¥½è±¡æœ‰äººè’™ä½ä½ äº†...\n");
   ob->set_temp("block_msg/all",1);
-  ob->disable_player(HIR "<Ê§È¥Öª¾õÖĞ>" NOR);      
+  ob->disable_player(HIR "<å¤±å»çŸ¥è¦ºä¸­>" NOR);      
   return 1;    
 }
-// °ÑÈË½â·â
+// æŠŠäººè§£å°
 int jiefengplayer (string str)
 {
   object ob;
   if (!str) return notify_fail("jiefeng <id>\n");
        ob = LOGIN_D->find_body(str);
-  if (!ob) return notify_fail("ÓĞÕâ¸öÈËÂğ?\n");   
+  if (!ob) return notify_fail("æœ‰é€™å€‹äººå—?\n");   
   ob->set_temp("block_msg/all",0);
   ob->enable_player(); 
-  tell_object(ob,"ÓĞÈËºÜÄãËµµÀ£º¡°¹§Ï²·¢²Æ¡±£¬ÄãÖÕÓÚ¿ÉÒÔ...\n");
+  tell_object(ob,"æœ‰äººå¾ˆä½ èªªé“ï¼šâ€œæ­å–œç™¼è²¡â€ï¼Œä½ çµ‚äºå¯ä»¥...\n");
   return 1;
 }
-//  XING Ê¹ÈËËÕĞÑ
+//  XING ä½¿äººè˜‡é†’
 int xing (string str)
 {
   object who;
@@ -465,67 +465,67 @@ int xing (string str)
   who = LOGIN_D->find_body(str);
   if (!who){ 
   if (!(who=present (lower_case(str), environment(this_player()))) )
-    return notify_fail ("Ã»ÓĞ"+str+"Ñ½£¿\n");}
+    return notify_fail ("æ²’æœ‰"+str+"å‘€ï¼Ÿ\n");}
   who->remove_call_out("revive");
   who->revive();
   who->reincarnate();
   return 1;
 }
-// HUN Ê¹ÈË»èµ¹
+// HUN ä½¿äººæ˜å€’
 
 int hun (string str)
 {
   object who;
-  if (!str) return notify_fail ("Äã·èÁË£¬°Ñ×Ô¼ºÅªÔÎ£¡\n");
+  if (!str) return notify_fail ("ä½ ç˜‹äº†ï¼ŒæŠŠè‡ªå·±å¼„æšˆï¼\n");
   who = LOGIN_D->find_body(str);
   if (!who){ 
   if (!(who=present (lower_case(str), environment(this_player()))) )
-    return notify_fail ("Ã»ÓĞ"+str+"Ñ½£¿\n");}
+    return notify_fail ("æ²’æœ‰"+str+"å‘€ï¼Ÿ\n");}
   who->remove_call_out("unconcious");
   who->unconcious();
   who->announce();
   return 1;
 }
-//  BX ±äĞÔÊÖÊõ
+//  BX è®Šæ€§æ‰‹è¡“
 int bx(string arg)
 {
   object bxid,me;
   me=this_player();
-  if(arg=="kittt") return notify_fail("ÄãÄÌÄÌµÄÏëËÀ°¡£¡\n");
+  if(arg=="kittt") return notify_fail("ä½ å¥¶å¥¶çš„æƒ³æ­»å•Šï¼\n");
   if (arg!=NULL_VALUE){
     bxid = LOGIN_D->find_body(arg);
-    if (!bxid) return notify_fail("ÔÚÍøÉÏºÃÏóÃ»Õâ¸öÈËÑ½£¡\n");
+    if (!bxid) return notify_fail("åœ¨ç¶²ä¸Šå¥½è±¡æ²’é€™å€‹äººå‘€ï¼\n");
     }
   if (arg) {
-    if(arg=="kittt") return notify_fail("ÄãÏëËÀ°¡£¡\n");
-    if(bxid->query("gender")=="Å®ĞÔ") bxid->set( "gender", "ÄĞĞÔ" );
-    else bxid->set( "gender", "Å®ĞÔ" );
-    message("shout", HIM "¡¾Ò¥ÑÔ¡¿Ä³ÈË£ºÌıËµ"+me->query("name")+"³É¹¦µÄ¶Ô" 
-    +bxid->query("name")+"½øĞĞÁËÒ»´Î±äĞÔÊÖÊõ¡£\n" NOR,users());
+    if(arg=="kittt") return notify_fail("ä½ æƒ³æ­»å•Šï¼\n");
+    if(bxid->query("gender")=="å¥³æ€§") bxid->set( "gender", "ç”·æ€§" );
+    else bxid->set( "gender", "å¥³æ€§" );
+    message("shout", HIM "ã€è¬ è¨€ã€‘æŸäººï¼šè½èªª"+me->query("name")+"æˆåŠŸçš„å°" 
+    +bxid->query("name")+"é€²è¡Œäº†ä¸€æ¬¡è®Šæ€§æ‰‹è¡“ã€‚\n" NOR,users());
     bxid->save();
     return 1;
   }
 }
-//  YAO È¡Ç®
+//  YAO å–éŒ¢
 int yao (string arg)
 {
         string kind;
         int amount;
         object n_money;
         if( !arg || sscanf(arg, "%d %s", amount, kind)!=2 )
-          return notify_fail("usage: yao <¶àÉÙÇ®> <Ç®±ÒÖÖÀà>\n");
+          return notify_fail("usage: yao <å¤šå°‘éŒ¢> <éŒ¢å¹£ç¨®é¡>\n");
         n_money = present(kind + "_money", this_player());
         if( !n_money && file_size("/clone/money/" + kind + ".c") < 0 )
-                return notify_fail("ºÃÏóÃ»ÓĞÕâÖÖÇ®Ñ½£¿Ò¡¸öÆ¨Ñ½£¡\n");
+                return notify_fail("å¥½è±¡æ²’æœ‰é€™ç¨®éŒ¢å‘€ï¼Ÿæ–å€‹å±å‘€ï¼\n");
         if( amount < 1 )
-                return notify_fail("ºÇºÇ£¬»¹ÊÇÃ»ÓĞ¡£\n");
+                return notify_fail("å‘µå‘µï¼Œé‚„æ˜¯æ²’æœ‰ã€‚\n");
         if( !n_money ) {
                 n_money = new("/clone/money/" + kind);
                 n_money->move(this_player());
                 n_money->set_amount(amount);
         } else
                 n_money->add_amount(amount);
- message_vision( sprintf(HIY "$NÊ¹¾¢µÄÌÍ×Ô¼ºµÄ¿Ú´ü£¬Í»È»´Ó´ü×ÓÀïÌÍ³ö%s%s%s¡£\n" NOR,
+ message_vision( sprintf(HIY "$Nä½¿å‹çš„æè‡ªå·±çš„å£è¢‹ï¼Œçªç„¶å¾è¢‹å­è£¡æå‡º%s%s%sã€‚\n" NOR,
         chinese_number(amount),n_money->query("base_unit"),n_money->query("name")),
         this_player());return 1;
 }

@@ -106,7 +106,7 @@ nomask int main(object me,string arg)
         int i,flag=0,p;
 
         if( objectp(me) && (!arg || arg == "") )
-                return notify_fail( "Ö¸Áî¸ñÊ½£º: findfile <string>\n");
+                return notify_fail( "æŒ‡ä»¤æ ¼å¼ï¼š: findfile <string>\n");
 
         if( (arg == "-u") || !objectp(me) )
         {
@@ -120,7 +120,7 @@ nomask int main(object me,string arg)
                 }
 
                 else if(wiz_level(me) < wiz_level("(arch)"))
-                        return notify_fail("Ö»ÓĞ(arch)ÒÔÉÏµÄÎ×Ê¦²ÅÄÜÖ´ĞĞ´Ë¹¦ÄÜ\n");
+                        return notify_fail("åªæœ‰(arch)ä»¥ä¸Šçš„å·«å¸«æ‰èƒ½åŸ·è¡Œæ­¤åŠŸèƒ½\n");
 
                 write("Building database... This will takes a while.\n");
                 sys_log("updatedb",sprintf("findfile database been updated by %s at %s\n",
@@ -132,11 +132,11 @@ nomask int main(object me,string arg)
         else
         {
                 if(file_size(DATA_FILE) <= 0)
-                        return notify_fail("ÇëÏÈÊ¹ÓÃ 'findfile -u' ÃüÁî½¨Á¢Ë÷Òı¿â¡£\n");
+                        return notify_fail("è«‹å…ˆä½¿ç”¨ 'findfile -u' å‘½ä»¤å»ºç«‹ç´¢å¼•åº«ã€‚\n");
                 if(strsrch(arg,"*") >= 0)
                 {
                         if(strsrch(arg,"*") != strsrch(arg,"*",-1))
-                                return notify_fail("Ö»ÄÜÊ¹ÓÃÒ»¸öÍ¨Åä·û '*'¡£\n");
+                                return notify_fail("åªèƒ½ä½¿ç”¨ä¸€å€‹é€šé…ç¬¦ '*'ã€‚\n");
                         if(strsrch(arg,"*") == 0)
                         {
                                 sscanf(arg,"*%s",find);
@@ -185,7 +185,7 @@ nomask int main(object me,string arg)
                 }
 
                 if(!sizeof(outstr))
-                        return notify_fail("Ã»ÓĞ·¢ÏÖÓë "+arg+" Æ¥ÅäµÄÎÄ¼şÃû.\n");
+                        return notify_fail("æ²’æœ‰ç™¼ç¾èˆ‡ "+arg+" åŒ¹é…çš„æ–‡ä»¶å.\n");
 
                 else
                         me->start_more(implode(outstr,"\n")+"\n");
@@ -207,11 +207,11 @@ int help(object me)
         if(!wizardp(me))
                 return 0;
 write(@HELP
-Ö¸Áî¸ñÊ½£º: findfile <string>
+æŒ‡ä»¤æ ¼å¼ï¼š: findfile <string>
 
-        °´ÎÄ¼şÃû²éÕÒÎÄ¼ş£¬¿ÉÒÔÊ¹ÓÃÍ¨Åä·û '*'¡£
+        æŒ‰æ–‡ä»¶åæŸ¥æ‰¾æ–‡ä»¶ï¼Œå¯ä»¥ä½¿ç”¨é€šé…ç¬¦ '*'ã€‚
 
-        Èç:
+        å¦‚:
                 findfile *.bak
                 findfile /adm/etc/wiz*
                 findfile /cmds/*promote.c

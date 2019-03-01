@@ -7,9 +7,9 @@ int cure_ob(string);
 
 void create()
 {
-        set_name("¶¾Éßµ¨", ({"shedan", "dan"}));
-        set("unit", "Á£");
-        set("long", "ÕâÊÇÒ»Ö»ÂÌÓ¨Ó¨µÄ¶¾Éßµ¨¡£\n");
+        set_name("æ¯’è›‡è†½", ({"shedan", "dan"}));
+        set("unit", "ç²’");
+        set("long", "é€™æ˜¯ä¸€åªç¶ ç‘©ç‘©çš„æ¯’è›‡è†½ã€‚\n");
         set("value", 200);
         set("medicine", 1);
         setup();
@@ -19,17 +19,17 @@ int do_eat(string arg)
         int taoism_limit, jingli_limit;
         object me = this_player();
 
-        if(!id(arg)) return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+        if(!id(arg)) return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if(!present(this_object(), me))
-                return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if( me->is_busy() )
-                return notify_fail("±ğ¼±£¬ÂıÂı³Ô£¬Ğ¡ĞÄ±ğÒ­×ÅÁË¡£\n");
+                return notify_fail("åˆ¥æ€¥ï¼Œæ…¢æ…¢åƒï¼Œå°å¿ƒåˆ¥å™è‘—äº†ã€‚\n");
 
         if ((int)me->query_condition("snake_poison") > 7)
         {
                 me->apply_condition("snake_poison", (int)me->query_condition("snake_poison") - 5);
         }
-        message_vision("$N³ÔÏÂÒ»¸±¶¾Éßµ¨£¬Ò»²»Ğ¡ĞÄÒ§ÆÆÁË£¬ºÃ¿àÅ¶¡£\n",me);
+        message_vision("$Nåƒä¸‹ä¸€å‰¯æ¯’è›‡è†½ï¼Œä¸€ä¸å°å¿ƒå’¬ç ´äº†ï¼Œå¥½è‹¦å“¦ã€‚\n",me);
         destruct(this_object());
         return 1;
 }

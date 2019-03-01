@@ -5,12 +5,12 @@ inherit F_DEALER;
 
 void create()
 {
-        set_name("Ìú½³", ({ "tiejiang", "smith" }));
+        set_name("éµåŒ ", ({ "tiejiang", "smith" }));
         set("shen_type", 1);
 
-        set("gender", "ÄĞĞÔ" );
+        set("gender", "ç”·æ€§" );
         set("age", 33);
-        set("long", "Ìú½³ÕıÓÃÌúÇ¯¼Ğ×¡Ò»¿éºìÈÈµÄÌú¿é·Å½øÂ¯ÖĞ¡£\n");
+        set("long", "éµåŒ æ­£ç”¨éµé‰—å¤¾ä½ä¸€å¡Šç´…ç†±çš„éµå¡Šæ”¾é€²çˆä¸­ã€‚\n");
 
         set("combat_exp", 400);
         set("attitude", "friendly");
@@ -40,5 +40,5 @@ void init()
 void greeting(object ob)
 {
         if( !ob || environment(ob) != environment() ) return;
-        say("Ìú½³ËµµÀ£º»¶Ó­ÕâÎ»"+RANK_D->query_respect(ob)+"¹âÁÙ£¬ÇëËæ±ã²Î¹Û¡£\n");
+        say("éµåŒ èªªé“ï¼šæ­¡è¿é€™ä½"+RANK_D->query_respect(ob)+"å…‰è‡¨ï¼Œè«‹éš¨ä¾¿åƒè§€ã€‚\n");
 }

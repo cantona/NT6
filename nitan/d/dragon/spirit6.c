@@ -2,10 +2,10 @@ inherit ROOM;
 #include <ansi.h> 
 void create()
 {
-        set("short", "ÁúÌ¶Èë¿Ú");
+        set("short", "é¾æ½­å…¥å£");
         set("long",
-"[1;32mÇ°·½¾ÍÊÇÁúÌ¶£¬½øÈ¥Ç°ÇëÈýË¼¡£Èç¹ûµ½´ËÖ¹²½£¬»¹À´µÃ¼°¡£\n"
-"ÈçÒª»ØÍ·£¬Çë¼üÈëback¡£ÔÚÎ÷Ãæ£¬ÓÐÒ»¸öÏòÏÂµÄÍ¨µÀ£¬¿´À´ËÆºõÏàµ±Éî¡£\n"
+"[1;32må‰æ–¹å°±æ˜¯é¾æ½­ï¼Œé€²åŽ»å‰è«‹ä¸‰æ€ã€‚å¦‚æžœåˆ°æ­¤æ­¢æ­¥ï¼Œé‚„ä¾†å¾—åŠã€‚\n"
+"å¦‚è¦å›žé ­ï¼Œè«‹éµå…¥backã€‚åœ¨è¥¿é¢ï¼Œæœ‰ä¸€å€‹å‘ä¸‹çš„é€šé“ï¼Œçœ‹ä¾†ä¼¼ä¹Žç›¸ç•¶æ·±ã€‚\n"
 );
 
         set("exits", ([ 
@@ -25,11 +25,11 @@ void init()
 int do_back(object me)
 {
         me=this_player();
-        message_vision(HIC"$NµÄÉíÓ°ÏûÊ§ÔÚÒ»Õó¹âÃ¢ÖÐ¡£\n"NOR,me); 
+        message_vision(HIC"$Nçš„èº«å½±æ¶ˆå¤±åœ¨ä¸€é™£å…‰èŠ’ä¸­ã€‚\n"NOR,me); 
         set_temp("mark/diary", 0, me);
-        set_temp("m_success/³õ¼¶", 0, me);
-        set_temp("m_success/»ÃÓ°", 0, me);
-        set_temp("m_success/ÄõÁú", 0, me);
+        set_temp("m_success/åˆç´š", 0, me);
+        set_temp("m_success/å¹»å½±", 0, me);
+        set_temp("m_success/å­½é¾", 0, me);
         me->move("/d/city/wumiao");
         return 1;
 }

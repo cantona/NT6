@@ -4,9 +4,9 @@ inherit ROOM;
 int do_use(string arg);
 void create()
 {
-        set("short", "ĹѨ");
+        set("short", "墓穴");
         set("long", @LONG
-����Լ�������ܵ�ǽ�ϲ���������ѡ�
+你隱約看到四周的牆上插著六柄火把。
 LONG );
         setup();
 }
@@ -24,11 +24,11 @@ int do_use(string arg)
         remove_call_out("close");
         call_out("close", 5, this_object());
              write(
-"��ȡ������һ�Σ�����ǰȥ��ȼ�����е�һֻ��ѣ�Ҳ��֪��ʲô���أ�
-��������ֻ���һһȼ��������\n");
+"你取出火折一晃，湊上前去點燃了其中的一只火把，也不知是什麼機關，
+其它的五只火把一一燃了起來。\n");
         set("long", @LONG
-����һƬ���ң����ֿ��ױ���ɢ���ڵ��ϣ������Ͽ��˸��ָ���
-��ͼ����������ͨ�˴Ҳ��֪������ʲô���ذ�����
+洞內一片凌亂，各種盔甲兵刃散落在地上，洞壁上刻了各種各樣
+的圖案，出口四通八達，也不知暗藏了什麼機關暗器。
 LONG
         );
         set("exits", ([
@@ -41,15 +41,15 @@ LONG
             destruct(ob);
         return 1;
        }
-        return notify_fail("�����ȼʲô��\n");
+        return notify_fail("你想點燃什麼？\n");
         }
 }
 
 void close(object room)
 {
-        message("vision","��һ�����ǽ�ϵĻ�Ѿ�Ϩ���ˡ�\n", room);
+        message("vision","不一會兒，牆上的火把就熄滅了。\n", room);
         set("long", @LONG
-����Լ�������ܵ�ǽ�ϲ���������ѡ�
+你隱約看到四周的牆上插著六柄火把。
 LONG
 );
         delete("exits", room);

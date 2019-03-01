@@ -15,15 +15,15 @@ int main(object me, string arg)
         int need_busy;
 
         if (! arg)
-                return notify_fail("ÄãÒªºÈÊ²Ã´¶«Î÷£¿\n");
+                return notify_fail("ä½ è¦å–ä»€éº¼æ±è¥¿ï¼Ÿ\n");
 
         if (sscanf(arg, "%s in %s", arg, from) == 2)
         {
-                // ¼ì²éÈÝ¾ß
+                // æª¢æŸ¥å®¹å…·
                 if (sscanf(from, "all %s", from))
                 {
                         if (me->is_busy())
-                                return notify_fail("ÄãÃ¦×ÅÄØ£¬Ã»ÓÐ¹¦·òÕÒ¶«Î÷¡£\n");
+                                return notify_fail("ä½ å¿™è‘—å‘¢ï¼Œæ²’æœ‰åŠŸå¤«æ‰¾æ±è¥¿ã€‚\n");
 
                         search_flag = 0;
                         foreach (from_ob in all_inventory(me))
@@ -44,7 +44,7 @@ int main(object me, string arg)
                         if (! search_flag)
                         {
                                 me->start_busy(2);
-                                return notify_fail("Äã·­±éÁËÉíÉÏ´øµÄ¶«Î÷£¬Ò²Ã»ÕÒµ½ÏëÒªµÄ¡£\n");
+                                return notify_fail("ä½ ç¿»éäº†èº«ä¸Šå¸¶çš„æ±è¥¿ï¼Œä¹Ÿæ²’æ‰¾åˆ°æƒ³è¦çš„ã€‚\n");
                         } else
                                 need_busy = 3;
                 } else
@@ -54,21 +54,21 @@ int main(object me, string arg)
                         if( query("env/careful", me) )
                         {
                                 if (! objectp(from_ob))
-                                        return notify_fail("ÄãÉíÉÏÃ»ÓÐÕâ¸öÈÝ¾ß¡£\n");
+                                        return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™å€‹å®¹å…·ã€‚\n");
                                 else
-                                        return notify_fail("ÄãÉíÉÏÃ»ÓÐÕâÑùÈÝ¾ß£¬¸½½üµÄ" +
-                                                           from_ob->name() + "ÄãÓÖ²»¸Ò¶¯¡£\n");
+                                        return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™æ¨£å®¹å…·ï¼Œé™„è¿‘çš„" +
+                                                           from_ob->name() + "ä½ åˆä¸æ•¢å‹•ã€‚\n");
                         }
         
                         if (! objectp(from_ob))
-                                return notify_fail("ÄãÉíÉÏÃ»ÓÐÕâÑùÈÝ¾ß£¬¸½½üÒ²Ã»ÓÐ¡£\n");
+                                return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™æ¨£å®¹å…·ï¼Œé™„è¿‘ä¹Ÿæ²’æœ‰ã€‚\n");
                 }
 
                 if (from_ob->is_character() && from_ob != me)
-                        return notify_fail("ÄãÒªÇÀ½Ù°¡£¿\n");
+                        return notify_fail("ä½ è¦æ¶åŠ«å•Šï¼Ÿ\n");
                 else
                 if (sizeof(all_inventory(from_ob)) < 1)
-                        return notify_fail(from_ob->name() + "ÀïÃæÊ²Ã´¶¼Ã»ÓÐ°¡¡£\n");
+                        return notify_fail(from_ob->name() + "è£¡é¢ä»€éº¼éƒ½æ²’æœ‰å•Šã€‚\n");
         } else
                 from_ob = me;
 
@@ -78,19 +78,19 @@ int main(object me, string arg)
                 if( query("env/careful", me) )
                 {
                         if (! objectp(ob))
-                                return notify_fail("ÄãÉíÉÏÃ»ÓÐÕâÑù¶«Î÷¡£\n");
+                                return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™æ¨£æ±è¥¿ã€‚\n");
                         else
-                                return notify_fail("ÄãÉíÉÏÃ»ÓÐÕâÑù¶«Î÷£¬¸½½üµÄ" +
-                                                   ob->name() + "ÄãÓÖ²»¸Ò¶¯¡£\n");
+                                return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™æ¨£æ±è¥¿ï¼Œé™„è¿‘çš„" +
+                                                   ob->name() + "ä½ åˆä¸æ•¢å‹•ã€‚\n");
                 }
 
                 if (! objectp(ob))
-                        return notify_fail("ÄãÉíÉÏÃ»ÓÐÕâÑù¶«Î÷£¬¸½½üÒ²Ã»ÓÐ¡£\n");
+                        return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™æ¨£æ±è¥¿ï¼Œé™„è¿‘ä¹Ÿæ²’æœ‰ã€‚\n");
         }
 
         if (me->is_busy())
         {
-                write("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓÐÍê³É¡£\n");
+                write("ä½ ä¸Šä¸€å€‹å‹•ä½œé‚„æ²’æœ‰å®Œæˆã€‚\n");
                 return 1;
         }
 
@@ -101,14 +101,14 @@ int main(object me, string arg)
                         living($1) && ($1 != $(me)) :));
                 if (sizeof(guard))
                         return notify_fail(guard[0]->name()
-                                + "ÕýÊØÔÚ" + ob->name() + "Ò»ÅÔ£¬·ÀÖ¹ÈÎºÎÈËÄÃ×ß¡£\n");
+                                + "æ­£å®ˆåœ¨" + ob->name() + "ä¸€æ—ï¼Œé˜²æ­¢ä»»ä½•äººæ‹¿èµ°ã€‚\n");
         }
 
         if( query("only_do_effect", ob) )
         {
                 if( !query("can_drink", ob) )
                 {
-                        write(ob->name() + "ÔõÃ´ºÈ£¿\n");
+                        write(ob->name() + "æ€Žéº¼å–ï¼Ÿ\n");
                         return 1;
                 }
 
@@ -116,23 +116,23 @@ int main(object me, string arg)
         }
 
         if( !mapp(query("liquid", ob)) )
-                return notify_fail("Äã²»ÖªµÀÔõÃ´ºÈ" + ob->name() + "... :)\n");
+                return notify_fail("ä½ ä¸çŸ¥é“æ€Žéº¼å–" + ob->name() + "... :)\n");
 
         if (me->is_fighting())
         {
-                write("Äã±ß´ò¼Ü±ßºÈ¶«Î÷Ò²²»ÅÂÇº×Å£¿\n");
+                write("ä½ é‚Šæ‰“æž¶é‚Šå–æ±è¥¿ä¹Ÿä¸æ€•å—†è‘—ï¼Ÿ\n");
                 return 1;
         }
 
         if( !query("liquid/remaining", ob) )
         {
                 write(ob->name()+(query("liquid/name", ob)?
-                      "ÀïµÄ"+query("liquid/name", ob)+"ÒÑ¾­±»ºÈµÃÒ»µÎÒ²²»Ê£ÁË¡£\n":
-                      "ÊÇ¿ÕµÄ¡£\n"));
+                      "è£¡çš„"+query("liquid/name", ob)+"å·²ç¶“è¢«å–å¾—ä¸€æ»´ä¹Ÿä¸å‰©äº†ã€‚\n":
+                      "æ˜¯ç©ºçš„ã€‚\n"));
                 if( query("env/auto_drinkout", me) && 
                     environment(ob) != environment(me))
                 {
-                        message_vision("$N¶ªÏÂÒ»¸ö$n¡£\n", me, ob);
+                        message_vision("$Nä¸Ÿä¸‹ä¸€å€‹$nã€‚\n", me, ob);
                         ob->move(environment(me));
                 }
                 return 1;
@@ -140,25 +140,25 @@ int main(object me, string arg)
 
         if( query("water", me)>me->max_water_capacity() )
         {
-                write("ÄãÒÑ¾­ºÈÌ«¶àÁË£¬ÔÙÒ²¹à²»ÏÂÒ»µÎË®ÁË¡£\n");
+                write("ä½ å·²ç¶“å–å¤ªå¤šäº†ï¼Œå†ä¹ŸçŒä¸ä¸‹ä¸€æ»´æ°´äº†ã€‚\n");
                 return 1;
         }
 
         addn("liquid/remaining", -1, ob);
-        message_vision("$NÄÃÆð" + ob->name() + "¹¾ààààµØºÈÁË¼¸¿Ú" +
-                       query("liquid/name", ob)+"¡£\n",me);
+        message_vision("$Næ‹¿èµ·" + ob->name() + "å’•åš•åš•åœ°å–äº†å¹¾å£" +
+                       query("liquid/name", ob)+"ã€‚\n",me);
         addn("water", 30, me);
 
         ob->do_effect();
         if( !query("liquid/remaining", ob) )
         {
-                write("ÄãÒÑ¾­½«"+ob->name()+"ÀïµÄ"+query("liquid/name", ob )
-                        + "ºÈµÃÒ»µÎÒ²²»Ê£ÁË¡£\n");
+                write("ä½ å·²ç¶“å°‡"+ob->name()+"è£¡çš„"+query("liquid/name", ob )
+                        + "å–å¾—ä¸€æ»´ä¹Ÿä¸å‰©äº†ã€‚\n");
                 ob->clear_effect();
                 if( query("env/auto_drinkout", me) && 
                     environment(ob) == me)
                 {
-                        message_vision("$N¶ªÏÂÒ»¸ö$n¡£\n", me, ob);
+                        message_vision("$Nä¸Ÿä¸‹ä¸€å€‹$nã€‚\n", me, ob);
                         ob->move(environment(me));
                 }
                 return 1;
@@ -181,17 +181,17 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : drink <ÈÝÆ÷> [in [all] <°ü¹ü>]
+æŒ‡ä»¤æ ¼å¼ : drink <å®¹å™¨> [in [all] <åŒ…è£¹>]
  
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄãºÈÈÝÆ÷ÀïÃæµÄÒºÌå¡£Èç¹ûÄãÃ»ÓÐÉèÖÃ±äÁ¿ careful£¬
-²¢ÇÒÄãÉíÉÏÃ»ÓÐ´øÕâÖÖÈÝÆ÷¾Í»á×Ô¶¯ÔÚÖÜÎ§µÄ»·¾³Ñ°ÕÒÄãÖ¸¶¨µÄÈÝÆ÷¡£
+é€™å€‹æŒ‡ä»¤å¯ä»¥è®“ä½ å–å®¹å™¨è£¡é¢çš„æ¶²é«”ã€‚å¦‚æžœä½ æ²’æœ‰è¨­ç½®è®Šé‡ carefulï¼Œ
+ä¸¦ä¸”ä½ èº«ä¸Šæ²’æœ‰å¸¶é€™ç¨®å®¹å™¨å°±æœƒè‡ªå‹•åœ¨å‘¨åœçš„ç’°å¢ƒå°‹æ‰¾ä½ æŒ‡å®šçš„å®¹å™¨ã€‚
 
-Èç¹ûÄãÖ¸Ã÷ÁË in£¬ ÄÇÃ´Äã½«´Ó°ü¹üÈ¡³öÈÝÆ÷ÒûÓÃ¡£ÌÈÈôÄãÉíÉÏÃ»ÓÐ
-Ö¸Ã÷µÄ°ü¹ü²¢ÇÒÃ»ÓÐÉèÖÃ»·¾³±äÁ¿ careful µÄ»°£¬ ¾Í»á×Ô¶¯ÔÚ¸½½ü
-µÄ»·¾³Ñ°ÕÒ¡£
+å¦‚æžœä½ æŒ‡æ˜Žäº† inï¼Œ é‚£éº¼ä½ å°‡å¾žåŒ…è£¹å–å‡ºå®¹å™¨é£²ç”¨ã€‚å€˜è‹¥ä½ èº«ä¸Šæ²’æœ‰
+æŒ‡æ˜Žçš„åŒ…è£¹ä¸¦ä¸”æ²’æœ‰è¨­ç½®ç’°å¢ƒè®Šé‡ careful çš„è©±ï¼Œ å°±æœƒè‡ªå‹•åœ¨é™„è¿‘
+çš„ç’°å¢ƒå°‹æ‰¾ã€‚
 
-Èç¹ûÄãÖ¸Ã÷ÁË all£¬ÄÇÃ´Äã½«ÔÚÉíÉÏËùÓÐÖ¸¶¨µÄ°ü¹üÖÐÑ°ÕÒÏëÒªµÄÈÝ
-Æ÷£¬ÕâÐèÒª»¨·ÑÄãÒ»¶ÎÊ±¼ä¡£
+å¦‚æžœä½ æŒ‡æ˜Žäº† allï¼Œé‚£éº¼ä½ å°‡åœ¨èº«ä¸Šæ‰€æœ‰æŒ‡å®šçš„åŒ…è£¹ä¸­å°‹æ‰¾æƒ³è¦çš„å®¹
+å™¨ï¼Œé€™éœ€è¦èŠ±è²»ä½ ä¸€æ®µæ™‚é–“ã€‚
 
 see also : eat
 

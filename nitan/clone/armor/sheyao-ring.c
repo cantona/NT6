@@ -6,13 +6,13 @@ inherit RINGS;
 
 void create()
 {
-        set_name(HIG "ÉßÑıÖ¸»·" NOR, ({ "sheyao ring", "sheyao", "ring" }));
+        set_name(HIG "è›‡å¦–æŒ‡ç’°" NOR, ({ "sheyao ring", "sheyao", "ring" }));
         set_weight(500);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
-                set("long", HIG "ÉßÑıÖ¸»·ÊÇ´«ËµÖĞÉß¾«Åå´øµÄÖ¸»·£¬ÓµÓĞÉñÃØµÄÁ¦Á¿£¡\n" NOR);
+                set("unit", "å€‹");
+                set("long", HIG "è›‡å¦–æŒ‡ç’°æ˜¯å‚³èªªä¸­è›‡ç²¾ä½©å¸¶çš„æŒ‡ç’°ï¼Œæ“æœ‰ç¥ç§˜çš„åŠ›é‡ï¼\n" NOR);
                 set("value", 200000);
                 set("material", "gold");
                 set("armor_prop/dex", 6);

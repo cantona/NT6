@@ -1,43 +1,43 @@
-// hatred.c É±Æø
+// hatred.c æ®ºæ°£
 // Created by Doing Lu 10/7/2K
 
 #include <ansi.h>
 
 inherit F_CLEAN_UP;
 
-string name() { return HIR "É±Æø³åÏö" NOR; }
+string name() { return HIR "æ®ºæ°£æ²–éœ„" NOR; }
 
 int perform(object me, string skill)
 {
         int count;
 
         if( query("qi", me)<80 )
-                return notify_fail("ÄãµÄÌåÁ¦²»Ö§£¬ÎÞ·¨ÐîÊÆÌáÉý×Ô¼ºµÄÉËº¦Á¦¡£\n");
+                return notify_fail("ä½ çš„é«”åŠ›ä¸æ”¯ï¼Œç„¡æ³•è“„å‹¢æå‡è‡ªå·±çš„å‚·å®³åŠ›ã€‚\n");
 
         if( query_temp("special_skill/hatred", me) )
-                return notify_fail("ÄãÏÖÔÚÒÑ¾­ÊÇÉ±ÆøÌÚÌÚÁË¡£\n");
+                return notify_fail("ä½ ç¾åœ¨å·²ç¶“æ˜¯æ®ºæ°£é¨°é¨°äº†ã€‚\n");
 
-        message_vision(HIR "$N" HIR "ÑÛÖÐ¾«¹âÉÁ¹ý£¬ÀäÀäµÄÉ¨¹ý"
-                       "ËÄÖÜ£¬Ò»¹Éº®ÒâÁÝÈ»¶øÆð¡£\n" NOR, me);
+        message_vision(HIR "$N" HIR "çœ¼ä¸­ç²¾å…‰é–ƒéŽï¼Œå†·å†·çš„æŽƒéŽ"
+                       "å››å‘¨ï¼Œä¸€è‚¡å¯’æ„å‡œç„¶è€Œèµ·ã€‚\n" NOR, me);
         switch(query("character", me) )
         {
-        case "¹âÃ÷ÀÚÂä":
+        case "å…‰æ˜Žç£Šè½":
                 count = 30;
                 break;
 
-        case "ÐÄºÝÊÖÀ±":
+        case "å¿ƒç‹ æ‰‹è¾£":
                 count = 42;
                 break;
 
-        case "½Æ÷ï¶à±ä":
+        case "ç‹¡é» å¤šè®Š":
                 count = 38;
                 break;
 
-        case "ÒõÏÕ¼éÕ©":
+        case "é™°éšªå§¦è©":
                 count = 48;
                 break;
 
-        case "¹úÊ¿ÎÞË«":
+        case "åœ‹å£«ç„¡é›™":
                 count = 60;
                 break;
 
@@ -59,5 +59,5 @@ void remove_effect(object me, int count)
         delete_temp("special_skill/hatred", me);
         addn_temp("apply/damage", -count, me);
         addn_temp("apply/unarmed_damage", -count, me);
-        tell_object(me, "Äã¾«ÉñÒ»ËÉÐ¸£¬É±Æøµ´È»ÎÞ´æ¡£\n");
+        tell_object(me, "ä½ ç²¾ç¥žä¸€é¬†æ‡ˆï¼Œæ®ºæ°£ç›ªç„¶ç„¡å­˜ã€‚\n");
 }

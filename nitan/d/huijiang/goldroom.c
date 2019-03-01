@@ -5,11 +5,11 @@ inherit ROOM;
 #include <ansi.h>
 void create()
 {
-        set("short", "������");
+        set("short", "儲藏室");
         set("long",@LONG
-����һ��С���ӣ����ϸɸɾ������˳���Ⱦ���ϱ߿�ǽ�ǵĵط���
-�ż������ӣ���������������˴�����۵ĺ����յ�������ͬ����һ
-�㡣
+這是一間小屋子，地上幹幹凈凈，纖塵不染。南邊靠牆角的地方放
+著幾個箱子，屋子兩壁廂點滿了粗如兒臂的紅燭，照得四下如同白晝一
+般。
 LONG );
         set("exits", ([
                 "east" : __DIR__"zongduo",

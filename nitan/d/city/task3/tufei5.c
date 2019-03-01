@@ -4,10 +4,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("Éñ¹ê»¨ÎÆ", ({ "picture"}) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("ç¥é¾œèŠ±ç´‹", ({ "picture"}) );
+        set("gender", "ç”·æ€§" );
         set("age", 34);
-        set("long", "Ëû¾ÍÊÇ´óÁÉÓĞÃûµÄÑàÔÆÊ®°ËÆïÖ®Ò»¡£\n");
+        set("long", "ä»–å°±æ˜¯å¤§é¼æœ‰åçš„ç‡•é›²åå…«é¨ä¹‹ä¸€ã€‚\n");
         set("max_qi", 5000);
         set("max_jing", 5000);
         set("max_neili", 5000);
@@ -53,7 +53,7 @@ int do_look(string arg)
 {
         if( arg == "picture" && query("id", this_object()) == "picture" )
     {
-            write("ÕâÊÇÒ»ÕÅ¹Ù¸®µÄ"+query("name", this_object())+"¡£\n");
+            write("é€™æ˜¯ä¸€å¼µå®˜åºœçš„"+query("name", this_object())+"ã€‚\n");
             destruct(this_object());
       return 1;
     }
@@ -101,9 +101,9 @@ void init()
                 set_skill("taiji-shengong", maxskill*6/7);
                 if (!present("long sword",obj))
                         carry_object("/clone/weapon/changjian")->wield();
-                set("title", "ÑàÔÆÊ®°ËÆï", obj);
+                set("title", "ç‡•é›²åå…«é¨", obj);
                 obj->set_weight(500000);
-                set_name("´óÁÉ¼éÏ¸", ({ "jian xi","jx"}) );
+                set_name("å¤§é¼å§¦ç´°", ({ "jian xi","jx"}) );
                 remove_call_out ("destroy_npc");
                 call_out ("destroy_npc", 900); // 15 min
         }
@@ -112,14 +112,14 @@ void init()
 }
 void destroy_npc()
 {
-        message_vision(query("name", this_object())+"ºöÈ»´òÁË¸ö¶ßàÂ£¬²»ÓÉĞÄÉú¾åÒâ£¬ÉíĞÎÒ»»Î£¬¶ÙÊ±»ìÈëÃ§Ã§ÈËº£Ö®ÖĞ¡£\n",environment(this_object()));
+        message_vision(query("name", this_object())+"å¿½ç„¶æ‰“äº†å€‹å“†å—¦ï¼Œä¸ç”±å¿ƒç”Ÿæ‡¼æ„ï¼Œèº«å½¢ä¸€æ™ƒï¼Œé “æ™‚æ··å…¥è½è½äººæµ·ä¹‹ä¸­ã€‚\n",environment(this_object()));
         destruct(this_object());
 }
 void die()
 {
         object ob,me;
         string own;
-        message_vision("$Nµ¹ÔÚµØÉÏ£¬ËÀÁË£¡\n", this_object());
+        message_vision("$Nå€’åœ¨åœ°ä¸Šï¼Œæ­»äº†ï¼\n", this_object());
         ob = this_object();
         own=query_temp("bt_ownname", ob);
         if(own) me = find_player(own);

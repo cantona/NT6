@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "������");
+        set("short", "榕樹上");
         set("long", @LONG
-�����Ǵ������Ķ��ˣ�������Ũ�ܵ�֦Ҷ��ʪ������̦޺��
-ͻȻ��һ��΢�紵������Ҷ���������������������������ȥ
-��ֻ����һ�����Σ����뻹�ǸϿ���ȥ�ɡ�
+這裡是大榕樹的頂端，四周是濃密的枝葉和濕漉漉的苔蘚。
+突然間一陣微風吹來，樹葉發出唰啦啦的聲音。從上面望下去
+你只覺得一陣眼暈，心想還是趕快下去吧。
 LONG);
         set("outdoors", "wudujiao");
         set("exits", ([

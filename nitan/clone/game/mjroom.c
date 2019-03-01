@@ -4,12 +4,12 @@
 inherit ROOM;
 void create()
 {
-        set("short",HIR"["+HIY+"ÉîÌï¹§×ÓÂé½«¹Ý"+HIR+"]"NOR);
+        set("short",HIR"["+HIY+"æ·±ç”°æ­å­éº»å°‡é¤¨"+HIR+"]"NOR);
         set("long", @LONG
-ÕâÊÇÒ»¼ä×¨ÃÅÈÃÍæ¼ÒÃÇÐÝÏ¢µÄÓéÀÖ³¡Ëù£¬µ±ÄãÔÚÎªÄãµÄ½ÇÉ«
-ÐÁ¿à¶Í  Ê±£¬±ðÍüÁËÐÝÏ¢ÊÇÎªÁË×ß¸ü³¤Ô¶µÄÂ·£¬ÕÒÈþÎåºÃÓÑÒ»Í¬
-À´´ò¸ö¼¸È¦°É£¬²»¹ý¿É±ð³ÁÃÔÔÚ¶Ä²©ÖÐà¸¡«¡«¡«¡«ÏêÏ¸µÄ¹æÔòÇë
-¿´¿´²¼¸æÀ¸£¨£â£ï£á£ò£ä£©
+é€™æ˜¯ä¸€é–“å°ˆé–€è®“çŽ©å®¶å€‘ä¼‘æ¯çš„å¨›æ¨‚å ´æ‰€ï¼Œç•¶ä½ åœ¨ç‚ºä½ çš„è§’è‰²
+è¾›è‹¦é›  æ™‚ï¼Œåˆ¥å¿˜äº†ä¼‘æ¯æ˜¯ç‚ºäº†èµ°æ›´é•·é çš„è·¯ï¼Œæ‰¾ä¸‰äº”å¥½å‹ä¸€åŒ
+ä¾†æ‰“å€‹å¹¾åœˆå§ï¼Œä¸éŽå¯åˆ¥æ²‰è¿·åœ¨è³­åšä¸­å–”ï½žï½žï½žï½žè©³ç´°çš„è¦å‰‡è«‹
+çœ‹çœ‹å¸ƒå‘Šæ¬„ï¼ˆï½‚ï½ï½ï½’ï½„ï¼‰
 LONG
 );
 
@@ -25,16 +25,16 @@ LONG
         
         set("item_desc",([
                 "board":"
- Ò»°ã»ù±¾µÄ²Ù×÷£º£º  Ã¿ÖÖÅÆ¶¼ÓÐÆä´úÂë¡¡Àý£ºÒ»Íò£­£¾1w ÆßË÷£­£¾7s
- ¼ÓÈëÅÆ¾Ö   £º"HIY"addin"NOR"        ¿ªÊ¼ÅÆ¾Ö   £º"HIY"start"NOR" 
- ÃþÅÆ       £º"HIY"mo"NOR"           ÖØ¿ªÅÆ¾Ö   £º"HIY"restart"NOR" 
- ¿´Íæ¼Ò1µÄÅÆ£º"HIY"-1"NOR"           ¿´Íæ¼Ò2µÄÅÆ£º"HIY"-2"NOR" 
- ¿´Íæ¼Ò3µÄÅÆ£º"HIY"-3 "NOR"          ¿´Íæ¼Ò4µÄÅÆ£º"HIY"-4"NOR" 
- ¿´×Ô¼ºµÄÅÆ £º"HIY"-"NOR"            ¿´ËùÓÐÍæ¼ÒµÄÅÆ£º"HIY"-0"NOR" 
- ¶ªÅÆ       £º"HIY"dump xx"NOR"      ³Ô         £º"HIY"eat xx xx "NOR"        
- Åö         £º"HIY"pon"NOR"          ¸Ü         £º"HIY"gon "NOR"              
- ºú         £º"HIY"hu"NOR"           Ìý         £º"HIY"tin xx  "NOR"          
- xxÎª´úÂë Àý£º"HIY"eat 2w 3w"NOR" 
+ ä¸€èˆ¬åŸºæœ¬çš„æ“ä½œï¼šï¼š  æ¯ç¨®ç‰Œéƒ½æœ‰å…¶ä»£ç¢¼ã€€ä¾‹ï¼šä¸€è¬ï¼ï¼ž1w ä¸ƒç´¢ï¼ï¼ž7s
+ åŠ å…¥ç‰Œå±€   ï¼š"HIY"addin"NOR"        é–‹å§‹ç‰Œå±€   ï¼š"HIY"start"NOR" 
+ æ‘¸ç‰Œ       ï¼š"HIY"mo"NOR"           é‡é–‹ç‰Œå±€   ï¼š"HIY"restart"NOR" 
+ çœ‹çŽ©å®¶1çš„ç‰Œï¼š"HIY"-1"NOR"           çœ‹çŽ©å®¶2çš„ç‰Œï¼š"HIY"-2"NOR" 
+ çœ‹çŽ©å®¶3çš„ç‰Œï¼š"HIY"-3 "NOR"          çœ‹çŽ©å®¶4çš„ç‰Œï¼š"HIY"-4"NOR" 
+ çœ‹è‡ªå·±çš„ç‰Œ ï¼š"HIY"-"NOR"            çœ‹æ‰€æœ‰çŽ©å®¶çš„ç‰Œï¼š"HIY"-0"NOR" 
+ ä¸Ÿç‰Œ       ï¼š"HIY"dump xx"NOR"      åƒ         ï¼š"HIY"eat xx xx "NOR"        
+ ç¢°         ï¼š"HIY"pon"NOR"          æ§“         ï¼š"HIY"gon "NOR"              
+ èƒ¡         ï¼š"HIY"hu"NOR"           è½         ï¼š"HIY"tin xx  "NOR"          
+ xxç‚ºä»£ç¢¼ ä¾‹ï¼š"HIY"eat 2w 3w"NOR" 
 ",
         ]));
         setup();

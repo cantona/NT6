@@ -12,31 +12,31 @@ int main(object me, string arg)
         object obj, dest;
 
         if (! arg)
-                return notify_fail("ÄãÒªÍùÊ²Ã´µÀ¾ßÉÏÏâÇ¶ÎïÆ·£¿\n");
+                return notify_fail("ä½ è¦å¾€ä»€éº¼é“å…·ä¸Šé‘²åµŒç‰©å“ï¼Ÿ\n");
 
         if (me->is_busy())
-                return notify_fail("ÏÈÃ¦ÍêÁËÄãµÄÊÂÇéÔÙ×öÕâ¼şÊÂÇé°É£¡\n");
+                return notify_fail("å…ˆå¿™å®Œäº†ä½ çš„äº‹æƒ…å†åšé€™ä»¶äº‹æƒ…å§ï¼\n");
 
         if (me->is_fighting())
-                return notify_fail("ÄãÏÖÔÚÕıÔÚ´ò¼Ü£¬Ã»Ê±¼ä×öÕâĞ©ÊÂÇé¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£åœ¨æ‰“æ¶ï¼Œæ²’æ™‚é–“åšé€™äº›äº‹æƒ…ã€‚\n");
 
         if (sscanf(arg, "%s with %s", item, tessera) != 2 &&
             sscanf(arg, "%s in %s", tessera, item) != 2)
-                return notify_fail("ÄãÒªÍùÕâÉÏÃæÏâÇ¶Ê²Ã´ÎïÆ·£¿\n");
+                return notify_fail("ä½ è¦å¾€é€™ä¸Šé¢é‘²åµŒä»€éº¼ç‰©å“ï¼Ÿ\n");
 
         if (! objectp(obj = present(tessera, me)))
-                return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑù¶«Î÷¿ÉÒÔÓÃÀ´ÏâÇ¶¡£\n");
+                return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™æ¨£æ±è¥¿å¯ä»¥ç”¨ä¾†é‘²åµŒã€‚\n");
 
         if (! objectp(dest = present(item, me)))
-                return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâÑùµÀ¾ß¡£\n");
+                return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™æ¨£é“å…·ã€‚\n");
 
         if( query("no_identify", obj) )
-                return notify_fail("´ËÎïÆ·»¹Ã»ÓĞÇ©¶¨¡£\n");
+                return notify_fail("æ­¤ç‰©å“é‚„æ²’æœ‰ç°½å®šã€‚\n");
 
         if( query("qianghua/level", obj) )
-                return notify_fail("´ËÎïÆ·ÒÑ¾­Ç¿»¯¹ı£¬ÎŞ·¨ÔÙÏâÇ¶ÎïÆ·¡£\n");
+                return notify_fail("æ­¤ç‰©å“å·²ç¶“å¼·åŒ–éï¼Œç„¡æ³•å†é‘²åµŒç‰©å“ã€‚\n");
 
-        notify_fail("ÄãÎŞ·¨°Ñ" + obj->name() + "ÏâÇ¶µ½" + dest->name() + "ÉÏ¡£\n");
+        notify_fail("ä½ ç„¡æ³•æŠŠ" + obj->name() + "é‘²åµŒåˆ°" + dest->name() + "ä¸Šã€‚\n");
 
         //return dest->do_enchase(me, obj);
         return ITEM_D->do_enchase(me, dest, obj);
@@ -46,11 +46,11 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : enchase <ÌØÊâÎïÆ·> in <µÀ¾ß>
-           enchase <µÀ¾ß> with <ÌØÊâÎïÆ·>
+æŒ‡ä»¤æ ¼å¼ : enchase <ç‰¹æ®Šç‰©å“> in <é“å…·>
+           enchase <é“å…·> with <ç‰¹æ®Šç‰©å“>
 
-Õâ¸öÖ¸Áî¿ÉÒÔÈÃÄã½«Ä³ÑùÌØÊâÎïÆ·ÏâÇ¶µ½ÁíÍâÒ»ÖÖµÀ¾ßÉÏ£¬Ê¹µÃµÀ¾ß
-¾ßÓĞÌØÊâµÄÄÜÁ¦¡£
+é€™å€‹æŒ‡ä»¤å¯ä»¥è®“ä½ å°‡æŸæ¨£ç‰¹æ®Šç‰©å“é‘²åµŒåˆ°å¦å¤–ä¸€ç¨®é“å…·ä¸Šï¼Œä½¿å¾—é“å…·
+å…·æœ‰ç‰¹æ®Šçš„èƒ½åŠ›ã€‚
 HELP
         );
         return 1;

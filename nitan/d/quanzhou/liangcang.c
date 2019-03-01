@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Á¸²Ö");
+        set("short", "ç³§å€‰");
         set("long", @LONG
-Á¸²ÖÊÇËùÕ¼µØ¿í¹ãµÄ¿â·¿£¬¶Ñ·Å×Å¶Ñ»ıÈçÉ½µÄ¾üÁ¸£¬·êµ½ºµÀÔÔÖÄê
-Ò²×ö¼ÃÔÖÖ®ÓÃ¡£ÓÉÓÚ²Ö¹ãÈËÉÙ£¬¾­³£ÒıÆğ·ËÍ½µÄ¿úÊÓ¡£
+ç³§å€‰æ˜¯æ‰€ä½”åœ°å¯¬å»£çš„åº«æˆ¿ï¼Œå †æ”¾è‘—å †ç©å¦‚å±±çš„è»ç³§ï¼Œé€¢åˆ°æ—±æ¾‡ç½å¹´
+ä¹Ÿåšæ¿Ÿç½ä¹‹ç”¨ã€‚ç”±äºå€‰å»£äººå°‘ï¼Œç¶“å¸¸å¼•èµ·åŒªå¾’çš„çªºè¦–ã€‚
 LONG );
         set("outdoors", "quanzhou");
         set("exits", ([
@@ -28,6 +28,6 @@ LONG );
 int valid_leave(object me, string dir)
 {
         if (dir == "northeast" && objectp(present("wu jiang", environment(me))))
-                return notify_fail("Îä½«´óºÈµÀ£º¶¼¶½ÓĞÁî£¬ÏĞÔÓÈËµÈ²»ÄÜÓÉ´Ë¾­¹ı£¡\n");
+                return notify_fail("æ­¦å°‡å¤§å–é“ï¼šéƒ½ç£æœ‰ä»¤ï¼Œé–’é›œäººç­‰ä¸èƒ½ç”±æ­¤ç¶“éï¼\n");
         return ::valid_leave(me, dir);
 }

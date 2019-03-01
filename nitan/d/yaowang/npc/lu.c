@@ -3,16 +3,16 @@ inherit NPC;
 
 void create()
 {
-        set_name(YEL"Ã·»¨Â¹"NOR, ({ "meihua lu", "lu" }) );
-        set("race", "Ò°ÊÞ");
+        set_name(YEL"æ¢…èŠ±é¹¿"NOR, ({ "meihua lu", "lu" }) );
+        set("race", "é‡Žç¸");
         set("age", 2);
-        set("long", "Ò»Ö»¿É°®µÄÃ·»¨Â¹£¬ËüµÄÑªÊÇ´ó²¹Ö®Îï¡£\n");
+        set("long", "ä¸€åªå¯æ„›çš„æ¢…èŠ±é¹¿ï¼Œå®ƒçš„è¡€æ˜¯å¤§è£œä¹‹ç‰©ã€‚\n");
         set("attitude", "peaceful");
  
         set("str", 30);
         set("cor", 26);
 
-        set("limbs", ({ "Í·²¿", "ÉíÌå", "×¦×Ó", "Î²°Í" }) );
+        set("limbs", ({ "é ­éƒ¨", "èº«é«”", "çˆªå­", "å°¾å·´" }) );
         set("verbs", ({ "bite" }) );
  
         set("combat_exp", 3000);
@@ -29,7 +29,7 @@ void create()
 void die()
 {
         object ob1, ob2, ob3;
-        message_vision(HIR"$NÁ½ÍÈÒ»µÅ£¬$NËÀÁË¡£\n"NOR, this_object());
+        message_vision(HIR"$Nå…©è…¿ä¸€è¹¬ï¼Œ$Næ­»äº†ã€‚\n"NOR, this_object());
         
         if(random(10)>8)
         {

@@ -1,4 +1,4 @@
-// shenghuo-ling Ê¥»ğÁî
+// shenghuo-ling è–ç«ä»¤
 
 #include <weapon.h>
 #include <ansi.h>
@@ -7,26 +7,26 @@ inherit SWORD;
 
 void create()
 {
-        set_name("Ê¥»ğÁî",({ "shenghuo ling", "shenghuo", "ling" }) );
+        set_name("è–ç«ä»¤",({ "shenghuo ling", "shenghuo", "ling" }) );
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else
         {
-                set("unit", "°Ñ");
+                set("unit", "æŠŠ");
                 set("value", 10000);
                 set("material", "steel");
                 set("no_drop", "1");
-                set("long", "ÕâÊÇÒ»±úÁ½³ßÀ´³¤µÄºÚÅÆ£¬·Ç½ğ·ÇÌú¡£ÖÊµØ¼áÓ²ÎŞ±È£¬\n"
-                            "ËÆÍ¸Ã÷£¬ÁîÖĞÒşÒşËÆÓĞ»ğÑæ·ÉÌÚ£¬ÊµÔòÊÇÁîÖÊÓ³¹â£¬ÑÕ\n"
-                            "É«±ä»Ã¡£ÁîÉÏ¿ÌµÃÓĞ²»ÉÙ²¨Ë¹ÎÄ×Ö¡£ \n");
-                set("wield_msg", HIY "$N¡°à§¡±µÄÒ»Éù£¬´ÓÑü¼ä³é³öÒ»Æ¬ºÚ÷îµÄÌúÅÆÎÕÔÚÊÖÖĞ¡£\n");
-                set("unwield_msg", HIY "$N½«Ê¥»ğÁî²å»ØÑü¼ä¡£\n" NOR);
+                set("long", "é€™æ˜¯ä¸€æŸ„å…©å°ºä¾†é•·çš„é»‘ç‰Œï¼Œéé‡‘ééµã€‚è³ªåœ°å …ç¡¬ç„¡æ¯”ï¼Œ\n"
+                            "ä¼¼é€æ˜ï¼Œä»¤ä¸­éš±éš±ä¼¼æœ‰ç«ç‡„é£›é¨°ï¼Œå¯¦å‰‡æ˜¯ä»¤è³ªæ˜ å…‰ï¼Œé¡\n"
+                            "è‰²è®Šå¹»ã€‚ä»¤ä¸Šåˆ»å¾—æœ‰ä¸å°‘æ³¢æ–¯æ–‡å­—ã€‚ \n");
+                set("wield_msg", HIY "$Nâ€œå”°â€çš„ä¸€è²ï¼Œå¾è…°é–“æŠ½å‡ºä¸€ç‰‡é»‘é»çš„éµç‰Œæ¡åœ¨æ‰‹ä¸­ã€‚\n");
+                set("unwield_msg", HIY "$Nå°‡è–ç«ä»¤æ’å›è…°é–“ã€‚\n" NOR);
         }
         set("skill", ([
                 "name"        : "shenghuo-ling",
                 "exp_required":  50000,
-   	            "family_name" : "Ã÷½Ì",
+   	            "family_name" : "æ˜æ•™",
                 "jing_cost"   :  40,
                 "difficulty"  :  30,
                 "max_skill"   :  200,

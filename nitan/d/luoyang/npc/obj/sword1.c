@@ -4,12 +4,12 @@ inherit SWORD;
 
 void create()
 {
-        set_name(HIY "³à½ğ½£" NOR, ({ "chijin jian", "chijin", "sword", "jian" }));
+        set_name(HIY "èµ¤é‡‘åŠ" NOR, ({ "chijin jian", "chijin", "sword", "jian" }));
         set_weight(5000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
+                set("unit", "æŸ„");
                 set("value", 200000);
                 set("material", "steel");
         }

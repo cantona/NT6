@@ -3,12 +3,12 @@ inherit ROOM;
 string look_book();
 void create()
 {
-        set("short","ÆÜÏ¼¹İ");
+        set("short","æ£²éœé¤¨");
         set("long",
-"ÕâÀïÊÇÈÕ³£Æğ¾ÓµÄµØ·½£¬ÊÕÊ°µÃÒ»³¾²»È¾£¬¶øÇÒÆÄÎªÑÅÖÂ£¬¾İËµÕâÀï\n"
-"µÄ×¯Ö÷ÆÄ°®Ï°Îä£¬¿´¿´Ç½ÉÏ¹Ò×ÅµÄ¶¾Ò©ÄÒºÍµ¶Ç¹¾Í¿ÉÒÔÖªµÀ¡£¿¿´°µÄµØ·½\n"
-"ÊÇÒ»¸öÊá×±Ì¨£¬¾µ×ÓÇ°ÃæÊÇÒ»±¾·­¿ªµÄÊé(Book)¡£»¹ÓĞÒ»¸öÆæĞÎ¹Ö×´µÄÂÖ\n"
-"ÅÌ·ÅÔÚÅÔ±ß£¬Ò²ĞíÊÇÊ²Ã´¹Å¹Ö»ú¹Ø¡£\n"
+"é€™è£¡æ˜¯æ—¥å¸¸èµ·å±…çš„åœ°æ–¹ï¼Œæ”¶æ‹¾å¾—ä¸€å¡µä¸æŸ“ï¼Œè€Œä¸”é —ç‚ºé›…è‡´ï¼Œæ“šèªªé€™è£¡\n"
+"çš„èŠä¸»é —æ„›ç¿’æ­¦ï¼Œçœ‹çœ‹ç‰†ä¸Šæ›è‘—çš„æ¯’è—¥å›Šå’Œåˆ€æ§å°±å¯ä»¥çŸ¥é“ã€‚é çª—çš„åœ°æ–¹\n"
+"æ˜¯ä¸€å€‹æ¢³å¦å°ï¼Œé¡å­å‰é¢æ˜¯ä¸€æœ¬ç¿»é–‹çš„æ›¸(Book)ã€‚é‚„æœ‰ä¸€å€‹å¥‡å½¢æ€ªç‹€çš„è¼ª\n"
+"ç›¤æ”¾åœ¨æ—é‚Šï¼Œä¹Ÿè¨±æ˜¯ä»€éº¼å¤æ€ªæ©Ÿé—œã€‚\n"
 );
         set("no_magic", "1");
 
@@ -39,18 +39,18 @@ string look_book()
         int puzzle;
 
         me = this_player();
-        result = "\nÕâ±¾ÊéÉÏÃ»ÓĞÊ²Ã´ÖµµÃ×¢ÒâµÄ¶«Î÷¡£\n";
+        result = "\né€™æœ¬æ›¸ä¸Šæ²’æœ‰ä»€éº¼å€¼å¾—æ³¨æ„çš„æ±è¥¿ã€‚\n";
         if( puzzle=query_temp("marks/xanadu_hall2", me) )
         {
                 set_temp("marks/xanadu_hall3", 1, me);
-              result += "¾ÍÔÚÄãÊ§ÍûµØÒª·ÅÏÂÊéµÄÊ±ºò£¬ÀïÃæµô³öÀ´Ò»ÕÅ×ÖÌõ£¬ÉÏÃæĞ´µ½: \n"
-                          "²¦¶¯ÂÖÅÌ¾ÍÓĞÒ»µÀÃÅ¿ÉÒÔ½øÈ¥¡£\n";
-                result += "¶ÔÁË£¬»¹ÓĞ£¬ÂÖÅÌµÄÊı×ÖÂï£¬Òª¿¼¿¼Äã...\n";
-                result += "Õâ¸öÊı£¬Ëü³ı"+query("seed1")+"Óà"+puzzle%query("seed1")+"£¬";
-                result += "Ëü³ı"+query("seed2")+"Óà"+puzzle%query("seed2")+"£¬";
-                result += "Ëü³ı"+query("seed3")+"Óà"+puzzle%query("seed3")+"£¬";
-                result += "Ëü³ı"+query("seed4")+"Óà"+puzzle%query("seed4")+"\n";
-                result += "È»ºóÊÔÒ»ÏÂ(turn)Äã²Âµ½µÄÊı×Ö£¬¿´¿´ÓĞÊ²Ã´·¢ÏÖ¡£\n";
+              result += "å°±åœ¨ä½ å¤±æœ›åœ°è¦æ”¾ä¸‹æ›¸çš„æ™‚å€™ï¼Œè£¡é¢æ‰å‡ºä¾†ä¸€å¼µå­—æ¢ï¼Œä¸Šé¢å¯«åˆ°: \n"
+                          "æ’¥å‹•è¼ªç›¤å°±æœ‰ä¸€é“é–€å¯ä»¥é€²å»ã€‚\n";
+                result += "å°äº†ï¼Œé‚„æœ‰ï¼Œè¼ªç›¤çš„æ•¸å­—å˜›ï¼Œè¦è€ƒè€ƒä½ ...\n";
+                result += "é€™å€‹æ•¸ï¼Œå®ƒé™¤"+query("seed1")+"ä½™"+puzzle%query("seed1")+"ï¼Œ";
+                result += "å®ƒé™¤"+query("seed2")+"ä½™"+puzzle%query("seed2")+"ï¼Œ";
+                result += "å®ƒé™¤"+query("seed3")+"ä½™"+puzzle%query("seed3")+"ï¼Œ";
+                result += "å®ƒé™¤"+query("seed4")+"ä½™"+puzzle%query("seed4")+"\n";
+                result += "ç„¶å¾Œè©¦ä¸€ä¸‹(turn)ä½ çŒœåˆ°çš„æ•¸å­—ï¼Œçœ‹çœ‹æœ‰ä»€éº¼ç™¼ç¾ã€‚\n";
         }
         return result;
 }
@@ -62,24 +62,24 @@ int do_turn(string arg)
 
         me = this_player();
         if(!arg)
-                return notify_fail("ÄãÒª°ÑÂÖÅÌ×ªµ½ÄÄÒ»¸öÊı×ÖÉÏ£¿\n");
+                return notify_fail("ä½ è¦æŠŠè¼ªç›¤è½‰åˆ°å“ªä¸€å€‹æ•¸å­—ä¸Šï¼Ÿ\n");
         if( query("neili", me)<500 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬²¦²»¶¯ÂÖÅÌ¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ï¼Œæ’¥ä¸å‹•è¼ªç›¤ã€‚\n");
             if( !(answer = (int)arg) || !(query_temp("marks/xanadu_hall3", me)) ) 
-              return notify_fail("ÄãÏ¹×ªÊ²Ã´£¿\n");
+              return notify_fail("ä½ çè½‰ä»€éº¼ï¼Ÿ\n");
         addn("force", -150, me);
-        message_vision("$N°ÑÂÖÅÌ²¦µ½ÁË"+arg+"µÄÎ»ÖÃ\n",me);
+        message_vision("$NæŠŠè¼ªç›¤æ’¥åˆ°äº†"+arg+"çš„ä½ç½®\n",me);
         puzzle=query_temp("marks/xanadu_hall2", me);
         if( ("X"+puzzle+"X") == ("X"+answer+"X") )
         {
-                write("Ò»Õó»ú¹ØÖ®ÉùÏì¹ıÖ®ºó£¬ÄãÀ´µ½ÁËÒ»¸öĞÂµÄµØ·½¡£\n");
+                write("ä¸€é™£æ©Ÿé—œä¹‹è²éŸ¿éä¹‹å¾Œï¼Œä½ ä¾†åˆ°äº†ä¸€å€‹æ–°çš„åœ°æ–¹ã€‚\n");
                 delete_temp("marks/xanadu_hall2", me);
                 delete_temp("marks/xanadu_hall3", me);
                 me->move(__DIR__"lou0");
-                tell_room(this_object(),"Ç½ÉÏÍ»È»¿ªÁËÒ»µÀÃÅ£¬"+query("name", me )
-+"ºÁ²»ÓÌÔ¥µØ×ßÁË½øÈ¥¡£\n");
+                tell_room(this_object(),"ç‰†ä¸Šçªç„¶é–‹äº†ä¸€é“é–€ï¼Œ"+query("name", me )
++"æ¯«ä¸çŒ¶è±«åœ°èµ°äº†é€²å»ã€‚\n");
         }
         else
-                message_vision("¿ÉÊÇÊ²Ã´¶¼Ã»ÓĞ·¢Éú¡£\n",me);
+                message_vision("å¯æ˜¯ä»€éº¼éƒ½æ²’æœ‰ç™¼ç”Ÿã€‚\n",me);
         return 1;
 }

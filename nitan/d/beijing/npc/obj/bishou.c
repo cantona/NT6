@@ -3,26 +3,26 @@
 inherit SWORD;
 void create()
 {
-        set_name( WHT"Ğş"NOR+CYN"Ìú"NOR+HIW"Ø°Ê×"NOR,  ({ "bi shou", "sword", "jian" }));
+        set_name( WHT"ç„"NOR+CYN"éµ"NOR+HIW"åŒ•é¦–"NOR,  ({ "bi shou", "sword", "jian" }));
         set_weight(10000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±ú");
-                set("long", "Ò»±úĞşÌúÖıÔìµÄØ°Ê×£¬·æÀûÎŞ±È¡£\n");
+                set("unit", "æŸ„");
+                set("long", "ä¸€æŸ„ç„éµé‘„é€ çš„åŒ•é¦–ï¼Œé‹’åˆ©ç„¡æ¯”ã€‚\n");
                 /*
-                set("no_drop", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄã¡£\n");
-                set("no_get", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄÇ¶ù¡£\n");
-                set("no_put", "ÕâÑù¶«Î÷²»ÄÜ·ÅÔÚÄÇ¶ù¡£\n");
-                set("no_steal", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄÇ¶ù¡£\n");
-                set("no_beg", "ÕâÑù¶«Î÷²»ÄÜÀë¿ªÄÇ¶ù¡£\n");
+                set("no_drop", "é€™æ¨£æ±è¥¿ä¸èƒ½é›¢é–‹ä½ ã€‚\n");
+                set("no_get", "é€™æ¨£æ±è¥¿ä¸èƒ½é›¢é–‹é‚£å…’ã€‚\n");
+                set("no_put", "é€™æ¨£æ±è¥¿ä¸èƒ½æ”¾åœ¨é‚£å…’ã€‚\n");
+                set("no_steal", "é€™æ¨£æ±è¥¿ä¸èƒ½é›¢é–‹é‚£å…’ã€‚\n");
+                set("no_beg", "é€™æ¨£æ±è¥¿ä¸èƒ½é›¢é–‹é‚£å…’ã€‚\n");
                 */
-                set("no_sell", "·²ÈËÄÄÀïÖªµÀÕâÉñ½£µÄÀ÷º¦¡£\n");
+                set("no_sell", "å‡¡äººå“ªè£¡çŸ¥é“é€™ç¥åŠçš„å²å®³ã€‚\n");
                 set("unique", 1);
                 set("value", 100000);
                 set("material", "gold");
-                set("wield_msg", HIR"$N³é³öÒ»±úº®Æø±ÆÈËµÄ"NOR+WHT"Ğş"NOR+CYN"Ìú"NOR+HIW"Ø°Ê×"NOR+HIR"ÄÃÔÚÊÖÖĞ£¬Ö»¸Ğµ½Ò»Õó"NOR+HIW"º®Æø"NOR+HIR"ÆËÃæ¶øÀ´¡£\n"NOR);
-                set("unwield_msg", HIR"$N½«ÊÖÖĞµÄ"NOR+WHT"Ğş"NOR+CYN"Ìú"NOR+HIW"Ø°Ê×"NOR+HIR"²å»ØÑ¥ÖĞ¡£\n"NOR);
+                set("wield_msg", HIR"$NæŠ½å‡ºä¸€æŸ„å¯’æ°£é€¼äººçš„"NOR+WHT"ç„"NOR+CYN"éµ"NOR+HIW"åŒ•é¦–"NOR+HIR"æ‹¿åœ¨æ‰‹ä¸­ï¼Œåªæ„Ÿåˆ°ä¸€é™£"NOR+HIW"å¯’æ°£"NOR+HIR"æ’²é¢è€Œä¾†ã€‚\n"NOR);
+                set("unwield_msg", HIR"$Nå°‡æ‰‹ä¸­çš„"NOR+WHT"ç„"NOR+CYN"éµ"NOR+HIW"åŒ•é¦–"NOR+HIR"æ’å›é´ä¸­ã€‚\n"NOR);
         }
         init_sword(200);
         setup();

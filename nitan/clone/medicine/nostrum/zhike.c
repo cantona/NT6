@@ -1,4 +1,4 @@
-// zhike.c Ö¹¿ÈÒ©
+// zhike.c æ­¢å’³è—¥
 
 inherit ITEM;
 #include <ansi.h>
@@ -10,12 +10,12 @@ void init()
 
 void create()
 {
-        set_name(HIY"Ö¹¿ÈÒ©"NOR, ({"zhike yao", "zhikeyao","yao"}));
+        set_name(HIY"æ­¢å’³è—¥"NOR, ({"zhike yao", "zhikeyao","yao"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°ü");
-                set("long", "ÕâÊÇÒ»°ü³£¼ûµÄÖ¹¿ÈÒ©¡£\n");
+                set("unit", "åŒ…");
+                set("long", "é€™æ˜¯ä¸€åŒ…å¸¸è¦‹çš„æ­¢å’³è—¥ã€‚\n");
                 set("value", 2000);
         }
         setup();
@@ -27,16 +27,16 @@ int do_eat(string arg)
         if (!id(arg))
                 return 0;
         if (me->is_busy() )
-                return notify_fail("±ð¼±£¬ÂýÂýÀ´¡£\n");
+                return notify_fail("åˆ¥æ€¥ï¼Œæ…¢æ…¢ä¾†ã€‚\n");
         if (! me->query_condition("ill_kesou"))
         {
-                write("ÄãÏÖÔÚÓÖÃ»ÓÐ¿ÈËÔ£¬±ðÂÒ³ÔÒ©¡£\n");
+                write("ä½ ç¾åœ¨åˆæ²’æœ‰å’³å—½ï¼Œåˆ¥äº‚åƒè—¥ã€‚\n");
                 return 1;
         } 
         else 
         {
                 me->clear_condition("ill_kesou");
-                message_vision("$N·þÏÂÒ»°üÖ¹¿ÈÒ©£¬¿ÈËÔºÃ¶àÁË¡£\n", me);
+                message_vision("$Næœä¸‹ä¸€åŒ…æ­¢å’³è—¥ï¼Œå’³å—½å¥½å¤šäº†ã€‚\n", me);
                 me->start_busy(2);
                 destruct(this_object());
                 return 1;

@@ -1,12 +1,12 @@
 // This program is a part of NT MudLIB
-// suxing.c ËØĞÄ¾÷
+// suxing.c ç´ å¿ƒè¨£
 
 #include <ansi.h>
 #include <combat.h>
 
 inherit F_SSERVER;
 
-string name() { return "ËØĞÄ¾ö"; }
+string name() { return "ç´ å¿ƒæ±º"; }
 
 void remove_effect(object me, int skill);
 
@@ -16,44 +16,44 @@ int perform(object me, object target)
         object weapon;
         int damage,ap,dp,married;
 
-        if( query("gender", me) != "Å®ĞÔ" )
-                return notify_fail("ÓñÅ®ËØĞÄÖ»ÄÜÊÇÅ®µÄÓÃ£¡\n");
+        if( query("gender", me) != "å¥³æ€§" )
+                return notify_fail("ç‰å¥³ç´ å¿ƒåªèƒ½æ˜¯å¥³çš„ç”¨ï¼\n");
 
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail("ËØĞÄ¾÷Ö»ÄÜ¶ÔÕ½¶·ÖĞµÄ¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("ç´ å¿ƒè¨£åªèƒ½å°æˆ°é¬¥ä¸­çš„å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if( me->query_skill_mapped("force") != "yunv-xinfa" )
-                return notify_fail("ÄãËùÓÃµÄ²¢·ÇÓñÅ®ĞÄ·¨£¬ÎŞ·¨Ê©Õ¹ËØĞÄ¾÷£¡\n");
+                return notify_fail("ä½ æ‰€ç”¨çš„ä¸¦éç‰å¥³å¿ƒæ³•ï¼Œç„¡æ³•æ–½å±•ç´ å¿ƒè¨£ï¼\n");
 
         if( me->query_skill("yunv-xinfa", 1) < 200 )
-                return notify_fail("ÄãµÄÓñÅ®ĞÄ·¨»ğºòÎ´µ½£¬ÎŞ·¨Ê©Õ¹ËØĞÄ¾÷£¡\n");
+                return notify_fail("ä½ çš„ç‰å¥³å¿ƒæ³•ç«å€™æœªåˆ°ï¼Œç„¡æ³•æ–½å±•ç´ å¿ƒè¨£ï¼\n");
 
         if( me->query_skill("yunv-jian", 1) < 200 )
-                return notify_fail("ÄãµÄÓñÅ®ËØĞÄ½£·¨»ğºòÎ´µ½£¬ÎŞ·¨Ê©Õ¹ËØĞÄ¾÷£¡\n");
+                return notify_fail("ä½ çš„ç‰å¥³ç´ å¿ƒåŠæ³•ç«å€™æœªåˆ°ï¼Œç„¡æ³•æ–½å±•ç´ å¿ƒè¨£ï¼\n");
 
         if( !(weapon=query_temp("weapon", me)) || query("skill_type", weapon) != "sword" )
-                return notify_fail("ÄãÊ¹ÓÃµÄ±øÆ÷²»¶Ô¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„å…µå™¨ä¸å°ã€‚\n");
 
         if( !stringp(me->query_skill_mapped("sword")) ||
             me->query_skill_mapped("sword") != "yunv-jian")
-                return notify_fail("Äã±ØĞë¼¤·¢ÓñÅ®ËØĞÄ½£×÷Îª½£·¨²ÅÄÜ¹»Ê¹ÓÃËØĞÄ¾÷¡£\n");
+                return notify_fail("ä½ å¿…é ˆæ¿€ç™¼ç‰å¥³ç´ å¿ƒåŠä½œç‚ºåŠæ³•æ‰èƒ½å¤ ä½¿ç”¨ç´ å¿ƒè¨£ã€‚\n");
 
         if( query("neili", me)<1000 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»Ê¹ÓÃÓñÅ®ËØĞÄ£¡\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ä½¿ç”¨ç‰å¥³ç´ å¿ƒï¼\n");
 
         if( query("jingli", me)<500 )
-                return notify_fail("ÄãµÄ¾«Á¦²»¹»Ê¹ÓÃÓñÅ®ËØĞÄ£¡\n");
+                return notify_fail("ä½ çš„ç²¾åŠ›ä¸å¤ ä½¿ç”¨ç‰å¥³ç´ å¿ƒï¼\n");
 
-        message_combatd(HIW "$NÍ»È»ÃæÉ«×¯ÖØ£¬Ë«Ä¿Çå³Î£¬ÊÖÖĞ" +
-                       query("name", weapon)+HIW+"ÃÉÉÏÁËÒ»²ã°×Ëª£¬º®Æø±ÆÈË£¡\n\n"NOR,me);
-        message_combatd(HIW "$NÌÚÉí¶øÆğ£¬×ËÌ¬ÎŞ±Èæ¹ÄÈÆ®Òİ£¬»Ó½£Ïò$nÖ±´Ì¹ıÈ¥£¬¿ìÓúÁ÷ĞÇ£¡\n\n"NOR,me,target);
+        message_combatd(HIW "$Nçªç„¶é¢è‰²èŠé‡ï¼Œé›™ç›®æ¸…æ¾„ï¼Œæ‰‹ä¸­" +
+                       query("name", weapon)+HIW+"è’™ä¸Šäº†ä¸€å±¤ç™½éœœï¼Œå¯’æ°£é€¼äººï¼\n\n"NOR,me);
+        message_combatd(HIW "$Né¨°èº«è€Œèµ·ï¼Œå§¿æ…‹ç„¡æ¯”å©€å¨œé£„é€¸ï¼Œæ®åŠå‘$nç›´åˆºéå»ï¼Œå¿«ç™’æµæ˜Ÿï¼\n\n"NOR,me,target);
 
         ap = attack_power(me, "sword") + me->query_skill("force");
         dp = defense_power(target, "parry") + me->query_skill("force");
 
-        if( mapp(query("family", target)) && query("family/family_name", target) == "È«Õæ½Ì" )
+        if( mapp(query("family", target)) && query("family/family_name", target) == "å…¨çœŸæ•™" )
                 ap += ap/3;
 
         if( query("can_learn/yunv-xinfa/wall", me) )
@@ -63,7 +63,7 @@ int perform(object me, object target)
         {
                 damage = damage_power(me, "sword");
                 if( query("can_learn/yunv-xinfa/wall", me) ) damage *= 2;
-                //ÅĞ¶Ï½á»é´ÎÊıºÍ·¢ÉúĞÔĞĞÎªµÄ´ÎÊı
+                //åˆ¤æ–·çµå©šæ¬¡æ•¸å’Œç™¼ç”Ÿæ€§è¡Œç‚ºçš„æ¬¡æ•¸
                 if( !mapp(query("couple", me)))married=1;
                 else married=query("couple/married", me);
                 if( mapp(query("sex", me)))married+=query("sex/times", me);
@@ -73,15 +73,15 @@ int perform(object me, object target)
                 target->receive_damage("qi", damage/2 + random(damage/2), me);
                 target->receive_wound("qi", damage, me);
 */
-                msg=HIR"Ö»Ìı$nÒ»Éù²Òºô£¬ÒÑÈ»¸ø$NµÄ"+NOR+query("name", weapon)+HIR+
-                      "ÖØÖØµÄ´ÌÖĞ£¬»ëÉíÉÏÏÂÄı½áÉÏÒ»²ã°×É«±ùËª£¬ÀäµÄÉªÉª·¢¶¶£¡\n"NOR;
+                msg=HIR"åªè½$nä¸€è²æ…˜å‘¼ï¼Œå·²ç„¶çµ¦$Nçš„"+NOR+query("name", weapon)+HIR+
+                      "é‡é‡çš„åˆºä¸­ï¼Œæ¸¾èº«ä¸Šä¸‹å‡çµä¸Šä¸€å±¤ç™½è‰²å†°éœœï¼Œå†·çš„ç‘Ÿç‘Ÿç™¼æŠ–ï¼\n"NOR;
                 msg = COMBAT_D->do_damage(me, target, WEAPON_ATTACK, damage, 200, msg);
                 if (!target->is_busy())
                         target->start_busy(1+random(2));
                 me->start_busy(2);
         } else
         {
-                msg = HIY "$n¼û×´´ó¾ªÊ§É«£¬Ë«×ãµãµØ£¬³éÉí¼±ÍË£¬¿°¿°±Ü¹ı$NµÄÕâ¼ÇËØĞÄ¾÷£¬ÒÑÊÇ´óº¹ÁÜÀì¡£\n"NOR;
+                msg = HIY "$nè¦‹ç‹€å¤§é©šå¤±è‰²ï¼Œé›™è¶³é»åœ°ï¼ŒæŠ½èº«æ€¥é€€ï¼Œå ªå ªé¿é$Nçš„é€™è¨˜ç´ å¿ƒè¨£ï¼Œå·²æ˜¯å¤§æ±—æ·‹æ¼“ã€‚\n"NOR;
                 me->start_busy(2+random(4));
         }
         message_combatd(msg, me, target);

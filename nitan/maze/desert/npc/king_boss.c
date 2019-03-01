@@ -3,11 +3,11 @@ inherit BOSS;
 
 void create()
 {
-        set_name(HIM"ÔôµÁÍõ"NOR, ({"zeidao wang", "wang", "boss"}) );
-        set("title", HIC "ÂÌÁÖ°ÔÖ÷" NOR);
-        set("gender", "ÄĞĞÔ" );
+        set_name(HIM"è³Šç›œç‹"NOR, ({"zeidao wang", "wang", "boss"}) );
+        set("title", HIC "ç¶ æ—éœ¸ä¸»" NOR);
+        set("gender", "ç”·æ€§" );
         set("age", random(30)+20);
-        set("long", "ÃÔÎíÉ­ÁÖµÄÔôµÁÊ×Áì£¬ÓĞ×ÅÒ»Éí²»·²µÄÎäÒÕ£¬ÇîĞ×¶ñ¼«ÊÖÏÂº±ÓĞÊ®ºÏÖ®½«¡£\n");
+        set("long", "è¿·éœ§æ£®æ—çš„è³Šç›œé¦–é ˜ï¼Œæœ‰è‘—ä¸€èº«ä¸å‡¡çš„æ­¦è—ï¼Œçª®å…‡æƒ¡æ¥µæ‰‹ä¸‹ç½•æœ‰ååˆä¹‹å°‡ã€‚\n");
         set("attitude", "aggressive");
         set("class", "lvlin");
         set("str", 30);
@@ -48,7 +48,7 @@ void create()
         map_skill("parry", "wuhu-duanmendao");
         map_skill("blade", "wuhu-duanmendao");
         map_skill("dodge", "shaolin-shenfa");
-        create_family("ÂÌÁÖ±©·çÃË", 3, "Ê×Áì");
+        create_family("ç¶ æ—æš´é¢¨ç›Ÿ", 3, "é¦–é ˜");
 
         set("auto_perform", 1);
         set("clear_fuben", 1); 

@@ -15,7 +15,7 @@ int main(object me, string arg)
                 return 0;
 
         seteuid(getuid());
-           if (! arg) return notify_fail("Ö¸Áî¸ñÊ½£ºcost <Ö¸Áî> [<²ÎÊı> ....]\n");
+           if (! arg) return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼šcost <æŒ‡ä»¤> [<åƒæ•¸> ....]\n");
 
         info = rusage();
         eval_cost = eval_cost();
@@ -23,7 +23,7 @@ int main(object me, string arg)
         eval_cost -= eval_cost();
         linfo = rusage();
 
-        write(sprintf(WHT "Eval cost£º%d µ¥Î»  CPU time = %d+%d ºÁÃë\n" NOR,
+        write(sprintf(WHT "Eval costï¼š%d å–®ä½  CPU time = %d+%d æ¯«ç§’\n" NOR,
                       eval_cost,
                       linfo["utime"] - info["utime"],
                       linfo["stime"] - info["stime"]));
@@ -33,9 +33,9 @@ int main(object me, string arg)
 int help()
 {
         write( @TEXT
-Ö¸Áî¸ñÊ½£ºcost <Ö¸Áî> [<²ÎÊı> .... ]
+æŒ‡ä»¤æ ¼å¼ï¼šcost <æŒ‡ä»¤> [<åƒæ•¸> .... ]
 
-Õâ¸öÖ¸ÁîÈÃÄã²âÁ¿ÁíÒ»¸öÖ¸ÁîÖ´ĞĞËùĞèµÄÊ±¼ä¡£
+é€™å€‹æŒ‡ä»¤è®“ä½ æ¸¬é‡å¦ä¸€å€‹æŒ‡ä»¤åŸ·è¡Œæ‰€éœ€çš„æ™‚é–“ã€‚
 TEXT );
         return 1 ;
 }

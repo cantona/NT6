@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��ԭ");
+        set("short", "草原");
         set("long", @LONG
-������ѩɽ���µ�һƬ��ԭ�������������Ⱥɽ��ɽ���ϻ�����
-�겻����ѩ��������һ����·��
+這裡是雪山腳下的一片草原。北面是起伏的群山，山頂上積著終
+年不化的雪。西邊有一條土路。
 LONG );
 
         set("exits", ([

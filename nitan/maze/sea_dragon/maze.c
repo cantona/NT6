@@ -8,82 +8,82 @@ inherit VRM_SERVER;
 
 void create()
 {
-        // ÃÔ¹¬·¿¼äËù¼Ì³ÐµÄÎï¼þµÄµµ°¸Ãû³Æ¡£
+        // è¿·å®®æˆ¿é–“æ‰€ç¹¼æ‰¿çš„ç‰©ä»¶çš„æª”æ¡ˆåç¨±ã€‚
         set_inherit_room( ROOM );
 
         set_lonely_create(1);
-        // ÃÔ¹¬½øÈëÒªÇó×îµÍµÈ¼¶¡£
+        // è¿·å®®é€²å…¥è¦æ±‚æœ€ä½Žç­‰ç´šã€‚
 
-        // ÃÔ¹¬½øÈëÒªÇó×î¸ßµÈ¼¶¡£
+        // è¿·å®®é€²å…¥è¦æ±‚æœ€é«˜ç­‰ç´šã€‚
 
-        // ÃÔ¹¬·¿¼ä´æÔÚµÄÊ±¼ä¡£
+        // è¿·å®®æˆ¿é–“å­˜åœ¨çš„æ™‚é–“ã€‚
         set_remove_time(1800);
 
-        //ÃÔ¹¬·¿¼äÀïµÄ¹ÖÎï¡£
+        //è¿·å®®æˆ¿é–“è£¡çš„æ€ªç‰©ã€‚
         set_maze_npcs(__DIR__"npc/beast");
 
-        // ÃÔ¹¬ÖÐµÄ¹ÖÎï³öÏÖ¿ÉÄÜÐÔ
+        // è¿·å®®ä¸­çš„æ€ªç‰©å‡ºç¾å¯èƒ½æ€§
         set_npcs_rate(50);
 
-        //ÃÔ¹¬·¿¼äÀïµÄBOSS¡£
+        //è¿·å®®æˆ¿é–“è£¡çš„BOSSã€‚
         set_exit_npcs(__DIR__"npc/dragon");
 
-        //ÃÔ¹¬µÄµ¥±ß³¤
+        //è¿·å®®çš„å–®é‚Šé•·
         set_maze_long(10);
 
-        //Èë¿Ú·½Ïò(³ö¿ÚÔÚ¶ÔÃæ)
+        //å…¥å£æ–¹å‘(å‡ºå£åœ¨å°é¢)
         set_entry_dir("north");
 
-        //Èë¿ÚÓëÇøÓòµÄÁ¬½Ó·½Ïò
+        //å…¥å£èˆ‡å€åŸŸçš„é€£æŽ¥æ–¹å‘
         set_link_entry_dir("north");
 
-        //Èë¿ÚÓëÇøÓòµÄÁ¬½Óµµ°¸Ãû
+        //å…¥å£èˆ‡å€åŸŸçš„é€£æŽ¥æª”æ¡ˆå
         set_link_entry_room("/d/xiakedao/haibin");
 
-        //³ö¿ÚÓëÇøÓòµÄÁ¬½Ó·½Ïò
+        //å‡ºå£èˆ‡å€åŸŸçš„é€£æŽ¥æ–¹å‘
         set_link_exit_dir("south");
 
-        //³ö¿ÚÓëÇøÓòµÄÁ¬½Óµµ°¸Ãû
+        //å‡ºå£èˆ‡å€åŸŸçš„é€£æŽ¥æª”æ¡ˆå
         set_link_exit_room("/d/xiakedao/haibin");
 
-        //Èë¿Ú·¿¼ä¶ÌÃèÊö
-        set_entry_short("º£µ×ÃÔ¹¬");
+        //å…¥å£æˆ¿é–“çŸ­æè¿°
+        set_entry_short("æµ·åº•è¿·å®®");
 
-        //Èë¿Ú·¿¼äÃèÊö
+        //å…¥å£æˆ¿é–“æè¿°
         set_entry_desc(@LONG
-ÕâÀïË®É«±äµÄ»ë×ÇÆðÀ´£¬ÖÜÎ§ÒÑ¿´²»´óÇå³þÁË¡£Å¼ÓÐ°µÁ÷Ï®À´£¬¾í
-ÆðÕóÕóµÄÄàÁ÷¡£ËÄ´¦³¤×ÅÐ©¸ß¸ßµÄº£²Ý£¬ÃÜÃÜÂéÂé°ÑÍ·ÉÏÕÚµÄÒ»Ë¿
-¹âÃ¢Ò²Ã»ÓÐÁË¡£
+é€™è£¡æ°´è‰²è®Šçš„æ¸¾æ¿èµ·ä¾†ï¼Œå‘¨åœå·²çœ‹ä¸å¤§æ¸…æ¥šäº†ã€‚å¶æœ‰æš—æµè¥²ä¾†ï¼Œå·
+èµ·é™£é™£çš„æ³¥æµã€‚å››è™•é•·è‘—äº›é«˜é«˜çš„æµ·è‰ï¼Œå¯†å¯†éº»éº»æŠŠé ­ä¸Šé®çš„ä¸€çµ²
+å…‰èŠ’ä¹Ÿæ²’æœ‰äº†ã€‚
 LONG
 );
 
-        //BOSS·¿¼ä¶ÌÃèÊö
-        set_exit_short("º£Ö®½Ç");
+        //BOSSæˆ¿é–“çŸ­æè¿°
+        set_exit_short("æµ·ä¹‹è§’");
 
-        //BOSS·¿¼äÃèÊö
+        //BOSSæˆ¿é–“æè¿°
         set_exit_desc(HIB"
 
-ÕâÀï¾ÍÊÇº£µÄ¾¡Í·ÁË¡£¡£¡£¡£¡£¡£
+é€™è£¡å°±æ˜¯æµ·çš„ç›¡é ­äº†ã€‚ã€‚ã€‚ã€‚ã€‚ã€‚
 "NOR);
 
-        //ÃÔ¹¬·¿¼äµÄ¶ÌÃèÊö
-        set_maze_room_short("º£µ×ÃÔ¹¬");
+        //è¿·å®®æˆ¿é–“çš„çŸ­æè¿°
+        set_maze_room_short("æµ·åº•è¿·å®®");
 
-        //ÃÔ¹¬·¿¼äµÄÃèÊö£¬Èç¹ûÓÐ¶àÌõÃèÊö£¬ÖÆÔìÃ¿¸ö·¿
-        //¼äµÄÊ±ºò»á´ÓÖÐËæ»úÑ¡ÔñÒ»¸ö¡£
+        //è¿·å®®æˆ¿é–“çš„æè¿°ï¼Œå¦‚æžœæœ‰å¤šæ¢æè¿°ï¼Œåˆ¶é€ æ¯å€‹æˆ¿
+        //é–“çš„æ™‚å€™æœƒå¾žä¸­éš¨æ©Ÿé¸æ“‡ä¸€å€‹ã€‚
         set_maze_room_desc(@LONG
-ÕâÀïË®É«±äµÄ»ë×ÇÆðÀ´£¬ÖÜÎ§ÒÑ¿´²»´óÇå³þÁË¡£Å¼ÓÐ°µÁ÷Ï®À´£¬¾í
-ÆðÕóÕóµÄÄàÁ÷¡£ËÄ´¦³¤×ÅÐ©¸ß¸ßµÄº£²Ý£¬ÃÜÃÜÂéÂé°ÑÍ·ÉÏÕÚµÄÒ»Ë¿
-¹âÃ¢Ò²Ã»ÓÐÁË¡£
+é€™è£¡æ°´è‰²è®Šçš„æ¸¾æ¿èµ·ä¾†ï¼Œå‘¨åœå·²çœ‹ä¸å¤§æ¸…æ¥šäº†ã€‚å¶æœ‰æš—æµè¥²ä¾†ï¼Œå·
+èµ·é™£é™£çš„æ³¥æµã€‚å››è™•é•·è‘—äº›é«˜é«˜çš„æµ·è‰ï¼Œå¯†å¯†éº»éº»æŠŠé ­ä¸Šé®çš„ä¸€çµ²
+å…‰èŠ’ä¹Ÿæ²’æœ‰äº†ã€‚
 LONG
 );
 
-        //ÒÔÏÂÊÇÈë¿Ú×ø±ê
+        //ä»¥ä¸‹æ˜¯å…¥å£åæ¨™
         set_link_entry_room_x(ENTER_ROOM_X);
         set_link_entry_room_y(ENTER_ROOM_Y);
         set_link_entry_room_z(ENTER_ROOM_Z);
         
-        // ÃÔ¹¬·¿¼äÊÇ·ñÎª»§Íâ·¿¼ä£¿
+        // è¿·å®®æˆ¿é–“æ˜¯å¦ç‚ºæˆ¶å¤–æˆ¿é–“ï¼Ÿ
         //set_outdoors(1);
 }
 

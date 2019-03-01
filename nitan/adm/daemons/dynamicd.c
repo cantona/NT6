@@ -9,7 +9,7 @@ inherit F_DBASE;
 string *additional_room = ({});
 string *additional_npc = ({});
 
-// ËùÓĞ¿ÉÄÜµÄ·½Ïò
+// æ‰€æœ‰å¯èƒ½çš„æ–¹å‘
 string *all_dir = ({
        "north","northeast","northwest","south",
        "southwest","southeast","east","west",
@@ -31,8 +31,8 @@ int clean_up() { return 1; }
 void create()
 {
        seteuid(ROOT_UID);
-       set("channel_id", "ÏµÍ³¾«Áé");
-       CHANNEL_D->do_channel( this_object(), "sys", "¶¯Ì¬µØÍ¼ÒÑ¾­Æô¶¯¡£\n");
+       set("channel_id", "ç³»çµ±ç²¾éˆ");
+       CHANNEL_D->do_channel( this_object(), "sys", "å‹•æ…‹åœ°åœ–å·²ç¶“å•Ÿå‹•ã€‚\n");
        call_out("regenerate_map",1);
 }
 
@@ -54,11 +54,11 @@ int regenerate_map()
                 j = random(sizeof(room_list));
                 dyna_room += ({room_list[j]});
                 room_list -= ({room_list[j]});
-        } // Ëæ»ú·ÖÅäÎ»ÖÃÍê±Ï
+        } // éš¨æ©Ÿåˆ†é…ä½ç½®å®Œç•¢
 
         size = sizeof(dyna_room);
 
-        CHANNEL_D->do_channel(this_object(),"sys", "¿ªÊ¼ÖØĞÂÉú³ÉÂÌÁøÉ½×¯µØÍ¼¡£\n");
+        CHANNEL_D->do_channel(this_object(),"sys", "é–‹å§‹é‡æ–°ç”Ÿæˆç¶ æŸ³å±±èŠåœ°åœ–ã€‚\n");
 
         room_object = ({});
         for(i=0;i<size;i++)
@@ -66,17 +66,17 @@ int regenerate_map()
                 if( !(cur_room = find_object(dyna_room[i])) )
                         cur_room = load_object(dyna_room[i]);
                         tell_room(cur_room,
-                                  HIY"´ÓÉ½×¯ÖĞĞÄ´«À´»ú¹Ø·¢¶¯µÄÂ¡Â¡Éù...\n¶ÙÊ±Ò»ÕóÌìĞıµØ×ª...\n");
+                                  HIY"å¾å±±èŠä¸­å¿ƒå‚³ä¾†æ©Ÿé—œç™¼å‹•çš„éš†éš†è²...\né “æ™‚ä¸€é™£å¤©æ—‹åœ°è½‰...\n");
                         delete("exits", cur_room);
                         delete("blocks", cur_room);
                         set("no_clean_up", 1, cur_room);
                         room_object += ({cur_room});
         }
 
-        // ¿ªÊ¼Éú³ÉÂ·¾¶
+        // é–‹å§‹ç”Ÿæˆè·¯å¾‘
         for(i=0;i<size;i++)
         {
-                //Éú³ÉËÄ¸ö²»Í¬µÄ·½Ïò¶Ô
+                //ç”Ÿæˆå››å€‹ä¸åŒçš„æ–¹å‘å°
                 dirs =  ({      "north","northeast","northwest","south",
                                 "southwest","southeast","east","west",
                                 "up","down","enter","out",
@@ -117,7 +117,7 @@ int regenerate_map()
                         set("exits/"+rev_dir2, dyna_room[i], (room_object[int_dir]));
                 }
                 int_dir = random(size);
-                tell_room(room_object[i],HIW"´ıÉùÒôÍ£ĞªÏÂÀ´£¬Äã·¢ÏÖÒ»ÇĞ¶¼ÒÑ¾­±äÁË...\n"NOR);
+                tell_room(room_object[i],HIW"å¾…è²éŸ³åœæ­‡ä¸‹ä¾†ï¼Œä½ ç™¼ç¾ä¸€åˆ‡éƒ½å·²ç¶“è®Šäº†...\n"NOR);
         }
         set("exits/south", DOOM_PATH+"/yongdao3", (room_object[size-1]));
         set("exits/north", DOOM_PATH+"/hall", (room_object[0]));

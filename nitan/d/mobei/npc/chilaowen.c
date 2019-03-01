@@ -4,10 +4,10 @@
 inherit NPC;
 void create()
 {
-        set_name("³àÀÏÎÂ",({"chi laowen","chi","laowen"}));
-        set("gender","ÄĞĞÔ");
-        set("nickname","ÃÉ¹ÅËÄ½Ü");
-        set("long","ÌúÄ¾ÕæÊÖÏÂËÄ½ÜÖ®Ò»£¬²İÔ­ÉÏµÄĞÛÓ¥£¬´óº¹µÄÃÍ½«¡£\n");
+        set_name("èµ¤è€æº«",({"chi laowen","chi","laowen"}));
+        set("gender","ç”·æ€§");
+        set("nickname","è’™å¤å››å‚‘");
+        set("long","éµæœ¨çœŸæ‰‹ä¸‹å››å‚‘ä¹‹ä¸€ï¼Œè‰åŸä¸Šçš„é›„é·¹ï¼Œå¤§æ±—çš„çŒ›å°‡ã€‚\n");
         set("combat_exp", 300000);
         set("age",45);
         set("qi",2000);

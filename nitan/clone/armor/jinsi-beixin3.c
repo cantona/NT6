@@ -7,12 +7,12 @@ inherit CLOTH;
 
 void create()
 {
-        set_name(HIY "½ðË¿±³ÐÄ" NOR, ({ "jinsi beixin3", "jinsi", "beixin3" }) );
+        set_name(HIY "é‡‘çµ²èƒŒå¿ƒ" NOR, ({ "jinsi beixin3", "jinsi", "beixin3" }) );
         set_weight(3000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼þ");
+                set("unit", "ä»¶");
                 set("material", "steel");
                                 set("value", 800000);
                 set("armor_prop/armor", 700);

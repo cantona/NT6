@@ -1,17 +1,17 @@
-// shabu_zhizhui.c É´²¼Ö±×º
+// shabu_zhizhui.c ç´—å¸ƒç›´ç¶´
 
 #include <armor.h>
 inherit CLOTH;
 
 void create()
 {
-        set_name("É´²¼Ö±×º", ({"shabu zhizhui", "cloth"}));
+        set_name("ç´—å¸ƒç›´ç¶´", ({"shabu zhizhui", "cloth"}));
         set_weight(1500);
         if ( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»Ì×ºÚÉ´²¼µÄ¶Ô½óÒÂ·ş£¬³£¼ûºÍÉĞĞĞÕß´©Öø¡£\n");
-                set("unit", "Ì×");
+                set("long", "ä¸€å¥—é»‘ç´—å¸ƒçš„å°è¥Ÿè¡£æœï¼Œå¸¸è¦‹å’Œå°šè¡Œè€…ç©¿è‘—ã€‚\n");
+                set("unit", "å¥—");
                 set("value", 300);
                 set("material", "cloth");
                 set("armor_prop/armor", 1);

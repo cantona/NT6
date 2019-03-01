@@ -4,18 +4,18 @@
 #include <room.h>
 
 inherit ROOM;
-#define QUESTDIR2 "quest/ÌìÁú°Ë²¿/ÌìÁúÓª¾ÈÆª/"
+#define QUESTDIR2 "quest/å¤©é¾å…«éƒ¨/å¤©é¾ç‡Ÿæ•‘ç¯‡/"
 
 void create()
 {
-	set("short", HIW"°×Ê¯Â·"NOR);
+	set("short", HIW"ç™½çŸ³è·¯"NOR);
 	set("long", @LONG
-×ß½ø´óÃÅ£¬Ö»¼ûºì×©Î§Ç½£¬°×Ê¯ÆÌÂ·£¬´ÓÕâÀïÒ»Ö±Í¨ÍùÌìÍõµî£¬Ì§Í·
-ÍûÈ¥£¬ËÂÖÐÍ¤Ì¨Â¥¸ó¹æÄ£ºê´ó£¬¹¹Öþ¾«Àö£¬Õ¬µØÁ¬ÔÆ£¬ÆäÆøÊÆÖ®Ê¢¸üÊ¤ÓÚ
-ÎåÌ¨£¬ÆÕÍÓµÈÖî´¦·ðÃÅÊ¤µØµÄÃûÉ½´óËÂ¡£Â·ÅÔÁ¢ÂúÁËÎÞÁ¿¹¦µÂ±®£¬Á½±ß¸÷
-ÓÐÒ»Ð¡Ôº£¬ÔºÖÐÂúÖÖ×ÅËÉÖñ¡£
+èµ°é€²å¤§é–€ï¼Œåªè¦‹ç´…ç£šåœç‰†ï¼Œç™½çŸ³èˆ–è·¯ï¼Œå¾žé€™è£¡ä¸€ç›´é€šå¾€å¤©çŽ‹æ®¿ï¼ŒæŠ¬é ­
+æœ›åŽ»ï¼Œå¯ºä¸­äº­å°æ¨“é–£è¦æ¨¡å®å¤§ï¼Œæ§‹ç¯‰ç²¾éº—ï¼Œå®…åœ°é€£é›²ï¼Œå…¶æ°£å‹¢ä¹‹ç››æ›´å‹äºŽ
+äº”å°ï¼Œæ™®é™€ç­‰è«¸è™•ä½›é–€å‹åœ°çš„åå±±å¤§å¯ºã€‚è·¯æ—ç«‹æ»¿äº†ç„¡é‡åŠŸå¾·ç¢‘ï¼Œå…©é‚Šå„
+æœ‰ä¸€å°é™¢ï¼Œé™¢ä¸­æ»¿ç¨®è‘—é¬†ç«¹ã€‚
 LONG);
-	set("outdoors", "ÌìÁúËÂ");
+	set("outdoors", "å¤©é¾å¯º");
   set("quest",1);
 	set("exits", ([             
 		"northup" : __DIR__"twd",
@@ -40,8 +40,8 @@ void init()
      &&!this_object()->query("busy_id"))
   {
      me->start_busy(1);
-     message_vision(HIR"\n±¾À´¾ÍÈË¶¡Ï¡ÉÙµÄÌìÁúËÂ½ñÈÕ¸üÏÔµÃÎÞ±ÈÏôÉ±¡£$NÁ³ÉÏÂ¶³öµ£ÐÄµÄÉñÉ«¡£\n",me);
-     tell_object(me,HIB"ÄãÁÏÏëÕâ³¡Õ½¶·¶¨ÊÇ·ÇÍ¬Ð¡¿É£¬¶øÕâ°×Ê¯Â·£¬¸üÊÇÍ¨ÍùÄÚÌÃµÄ±Ø¾­Ö®Â·¡£\n"NOR); 
+     message_vision(HIR"\næœ¬ä¾†å°±äººä¸ç¨€å°‘çš„å¤©é¾å¯ºä»Šæ—¥æ›´é¡¯å¾—ç„¡æ¯”è•­æ®ºã€‚$Nè‡‰ä¸Šéœ²å‡ºæ“”å¿ƒçš„ç¥žè‰²ã€‚\n",me);
+     tell_object(me,HIB"ä½ æ–™æƒ³é€™å ´æˆ°é¬¥å®šæ˜¯éžåŒå°å¯ï¼Œè€Œé€™ç™½çŸ³è·¯ï¼Œæ›´æ˜¯é€šå¾€å…§å ‚çš„å¿…ç¶“ä¹‹è·¯ã€‚\n"NOR); 
      this_object()->set("busy_id",me->query("id"));
      remove_call_out("killme");
      call_out("killme", 20, me);   
@@ -53,26 +53,26 @@ void killme(object me)
   if(!me) return;
   if(!present(me,this_object())) 
   {
-    tell_object(me,HIG"Äã¾¹È»²»ÔÚ°×Ê¯Â·£¬Ò²ËãÄãÁÙÕóÌÓÍÑ£¬ÌÓ¹ýÒ»½Ù¡£Ö»ÊÇÄãµÄ½­ºþÃûÍû´ó·ùÏÂ½µ¡£\n"NOR); 
-    me->delete_temp("quest/ÌìÁú°Ë²¿");
-	me->delete_temp("quest/busy");//ÈÎÎñ³åÍ»±êÖ¾È¡Ïû 
+    tell_object(me,HIG"ä½ ç«Ÿç„¶ä¸åœ¨ç™½çŸ³è·¯ï¼Œä¹Ÿç®—ä½ è‡¨é™£é€ƒè„«ï¼Œé€ƒéŽä¸€åŠ«ã€‚åªæ˜¯ä½ çš„æ±Ÿæ¹–åæœ›å¤§å¹…ä¸‹é™ã€‚\n"NOR); 
+    me->delete_temp("quest/å¤©é¾å…«éƒ¨");
+	me->delete_temp("quest/busy");//ä»»å‹™æ²–çªæ¨™å¿—å–æ¶ˆ 
     me->delete(QUESTDIR2+"start");
     me->add("mana",-random(300)-200);
     if(me->query("mana")<0) me->set("mana",0);
     this_object()->delete("busy_id");
-	log_file("quest/TLBB", sprintf("%s(%s)Ã»ÓÐÒ»Ö±´ôÔÚ°×Ê¯Â·£¬Ê§°Ü¡£\n", me->name(1),me->query("id")) );
+	log_file("quest/TLBB", sprintf("%s(%s)æ²’æœ‰ä¸€ç›´å‘†åœ¨ç™½çŸ³è·¯ï¼Œå¤±æ•—ã€‚\n", me->name(1),me->query("id")) );
   	return;
   }
   if(me->query_condition("killer"))
   {
-    tell_object(me,HIG"Õâ¶ÎÊ±¼äÄÚ£¬Äã¾¹È»²»×¨ÐÄ¿´ÊØ°×Ê¯Â·£¬±¾Òò²»ÔÙ·ÅÐÄÄãÁË£¬ÁíÍâÄãµÄ½­ºþÃûÍû´ó·ùÏÂ½µ¡£\n"NOR); 
-    me->delete_temp("quest/ÌìÁú°Ë²¿");
+    tell_object(me,HIG"é€™æ®µæ™‚é–“å…§ï¼Œä½ ç«Ÿç„¶ä¸å°ˆå¿ƒçœ‹å®ˆç™½çŸ³è·¯ï¼Œæœ¬å› ä¸å†æ”¾å¿ƒä½ äº†ï¼Œå¦å¤–ä½ çš„æ±Ÿæ¹–åæœ›å¤§å¹…ä¸‹é™ã€‚\n"NOR); 
+    me->delete_temp("quest/å¤©é¾å…«éƒ¨");
     me->delete(QUESTDIR2+"start");
-	me->delete_temp("quest/busy");//ÈÎÎñ³åÍ»±êÖ¾È¡Ïû 
+	me->delete_temp("quest/busy");//ä»»å‹™æ²–çªæ¨™å¿—å–æ¶ˆ 
     me->add("mana",-random(300)-200);
     if(me->query("mana")<0) me->set("mana",0);
     this_object()->delete("busy_id");
-	log_file("quest/TLBB", sprintf("%s(%s)questÆÚ¼ä±ä³Étjf£¬Ê§°Ü¡£\n", me->name(1),me->query("id")) );
+	log_file("quest/TLBB", sprintf("%s(%s)questæœŸé–“è®Šæˆtjfï¼Œå¤±æ•—ã€‚\n", me->name(1),me->query("id")) );
   	return;
   }
      obj=new(__DIR__"npc/dlsdizi");
@@ -91,7 +91,7 @@ void killme(object me)
      obj->move(environment(me)); 
      obj->set_leader(me);
 
-     //Íæ¼ÒÖ®¼ä±ÜÃâ³åÍ»
+     //çŽ©å®¶ä¹‹é–“é¿å…æ²–çª
      remove_call_out("busy");
      call_out("busy", 1); 
 	 return;
@@ -110,14 +110,14 @@ int valid_leave(object me, string dir)
      &&me->query_temp(QUESTDIR2+"jiumozhi")
      &&!me->query_temp(QUESTDIR2+"kill_dizi")
      &&!me->query(QUESTDIR2+"over"))
-		return notify_fail(RED"²»ÒªÂÒÅÜ£¬»¹ÊÇ×¨ÐÄµã¾ÈÔ®ÌìÁúËÂ¡£\n"NOR);
+		return notify_fail(RED"ä¸è¦äº‚è·‘ï¼Œé‚„æ˜¯å°ˆå¿ƒé»žæ•‘æ´å¤©é¾å¯ºã€‚\n"NOR);
 		
-  if(me->is_fighting()) return notify_fail(RED"²»ÒªÂÒÅÜ£¬»¹ÊÇ×¨ÐÄµã¾ÈÔ®ÌìÁúËÂ¡£\n"NOR);	
+  if(me->is_fighting()) return notify_fail(RED"ä¸è¦äº‚è·‘ï¼Œé‚„æ˜¯å°ˆå¿ƒé»žæ•‘æ´å¤©é¾å¯ºã€‚\n"NOR);	
   
-	if ( me->query("family/family_name") != "ÌìÁúËÂ" 
+	if ( me->query("family/family_name") != "å¤©é¾å¯º" 
 	 && dir != "out" 
 	 && me->query("shen") < 0
 	 && objectp(present("wu seng", environment(me))))
-		return notify_fail("ÎäÉ®À¹×¡Äã£¬ËµµÀ£ºÌìÁúËÂÄÚ²»µÃËæÒâ½ø³ö¡£\n");
+		return notify_fail("æ­¦åƒ§æ””ä½ä½ ï¼Œèªªé“ï¼šå¤©é¾å¯ºå…§ä¸å¾—éš¨æ„é€²å‡ºã€‚\n");
 	return ::valid_leave(me, dir);
 }

@@ -3,12 +3,12 @@ inherit ROOM;
 
 void create()
 {
-        set("short",RED"Î÷³§´óÃÅ"NOR);
+        set("short",RED"è¥¿å» å¤§é–€"NOR);
         set("long", @LONG
-ÕâÀï¾ÍÊÇ¾©³ÇµÄÌØÎñ»ú¹¹¡ª¡ªÎ÷³§µÄ´óÃÅ¡£ÕâÀï¾¯±¸ÉîÑÏ£¬²»Ê±
-ÓÐ´©×ÅÖÆ·þµÄÎ÷³§¹Ù±ø½ø½ø³ö³ö£¬Íû´óÃÅÀïÍûÈ¥£¬¿ÉÒÔÍû¼û´óÃÅÀïÃæ
-ÓÐÐí¶àÌ«¼à¡£´óÃÅÁ½ÅÔµÄÎ÷³§¹Ù±øÕýÈçÀÇËÆ»¢µÄ¶¢×ÅÄã¿´£¬Èç¹ûÄã²»
-ÏëÕÒËÀµÄ»°£¬×îºÃ»¹ÊÇ¸Ï¿ìÀë¿ªµÄºÃ¡£[2£»37£»0m
+é€™è£¡å°±æ˜¯äº¬åŸŽçš„ç‰¹å‹™æ©Ÿæ§‹â”€â”€è¥¿å» çš„å¤§é–€ã€‚é€™è£¡è­¦å‚™æ·±åš´ï¼Œä¸æ™‚
+æœ‰ç©¿è‘—åˆ¶æœçš„è¥¿å» å®˜å…µé€²é€²å‡ºå‡ºï¼Œæœ›å¤§é–€è£¡æœ›åŽ»ï¼Œå¯ä»¥æœ›è¦‹å¤§é–€è£¡é¢
+æœ‰è¨±å¤šå¤ªç›£ã€‚å¤§é–€å…©æ—çš„è¥¿å» å®˜å…µæ­£å¦‚ç‹¼ä¼¼è™Žçš„ç›¯è‘—ä½ çœ‹ï¼Œå¦‚æžœä½ ä¸
+æƒ³æ‰¾æ­»çš„è©±ï¼Œæœ€å¥½é‚„æ˜¯è¶•å¿«é›¢é–‹çš„å¥½ã€‚[2ï¼›37ï¼›0m
 LONG );
         set("exits", ([
                 "south" : "/d/beijing/xichang",
@@ -28,6 +28,6 @@ LONG );
 int valid_leave(object me, string dir)
 {
         if (objectp(present("guan bing", environment(me))) && dir == "south")
-                return notify_fail("Î÷³§¹Ù±øÉìÊÖ½«ÄãÀ¹×¡¡£\n\n");
+                return notify_fail("è¥¿å» å®˜å…µä¼¸æ‰‹å°‡ä½ æ””ä½ã€‚\n\n");
         return ::valid_leave(me, dir);
 }

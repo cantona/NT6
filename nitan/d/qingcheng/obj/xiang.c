@@ -4,14 +4,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name("´óÌúÏä", ({"xiang"}));
+        set_name("å¤§éµç®±", ({"xiang"}));
         set_max_encumbrance(5000);
         set("weight", 100000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "ÕâÊÇÒ»Ö»´óÌúÏä£¬ºÃÏóÓĞĞ©Ê²Ã´¶«Î÷ÔÚÀïÍ·¡£\n");
-                set("unit", "Ö»");
+                set("long", "é€™æ˜¯ä¸€åªå¤§éµç®±ï¼Œå¥½è±¡æœ‰äº›ä»€éº¼æ±è¥¿åœ¨è£¡é ­ã€‚\n");
+                set("unit", "åª");
                 set("open_count", 1);
                 set("no_get",1);
                 set("no_drop",1);
@@ -29,14 +29,14 @@ int do_open(string arg)
 {
         object ob, me = this_player(), obj = this_object();
         if(!arg || arg != "xiang")
-                return notify_fail("ÄãÒª´ò¿ªÊ²Ã´£¿\n");
+                return notify_fail("ä½ è¦æ‰“é–‹ä»€éº¼ï¼Ÿ\n");
         if( !present("tie key", me))
-                return notify_fail("ÄãÇË²»¿ª´óÌúÏäµÄËø¡£\n");
+                return notify_fail("ä½ æ’¬ä¸é–‹å¤§éµç®±çš„é–ã€‚\n");
   if (me->is_busy())
-          return notify_fail("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+          return notify_fail("ä½ ç¾åœ¨æ­£å¿™è‘—å‘¢ã€‚\n");
         if (query("open_count") > 0)
         {
-                message_vision("$NÓÃÒ»°ÑÔ¿³×´ò¿ªÁË´óÌúÏä¡£\n", me);
+                message_vision("$Nç”¨ä¸€æŠŠé‘°åŒ™æ‰“é–‹äº†å¤§éµç®±ã€‚\n", me);
                 addn("open_count", -1);
 
                 ob = new("/clone/book/qing9da");
@@ -60,5 +60,5 @@ int do_open(string arg)
                 me->start_busy(random(9) + 5);
                 return 1;
         }
-        else return notify_fail("´óÌúÏäÒÑ¾­´ò¿ªÁË¡£\n");
+        else return notify_fail("å¤§éµç®±å·²ç¶“æ‰“é–‹äº†ã€‚\n");
 }

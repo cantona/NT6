@@ -1,20 +1,20 @@
 inherit ROOM;
 #include <ansi.h>
 
-//ÊìÏ¤µØ²ãÁ·Ï°Á·Ï°ËùÓÃ
+//ç†Ÿæ‚‰åœ°å±¤ç·´ç¿’ç·´ç¿’æ‰€ç”¨
 
 string random_name()
 {
 string *msgs = ({
-        "±öÍ·Â¬×ðÕß","åÈÅµåÈ·¥õã×ðÕß","åÈÅµ°ÏÀå¶è×ðÕß","ËÕÆµÍÓ×ðÕß", 
-        "Åµ¾ÞÂÞ×ðÕß","°ÏÍÓÂÞ×ðÕß","åÈÀíåÈ×ðÕß","ÂÞ¸¥¶àÂÞ×ðÕß",
-        "Ðç²©åÈ×ðÕß","°ëÍÐåÈ×ðÕß","ÂÞÂÞ×ðÕß","ÄÇÙ¤Ï¬ÄÇ×ðÕß",
-        "Òò½ÒÍÓ×ðÕß","·¥ÄÇÆÅË¹×ðÕß","°¢ÊÏ¶à×ðÕß","×¢Ý±°ëÍÐåÈ×ðÕß",
-        "åÈÒ¶×ðÕß","ÃÖÀÕ×ðÕß",
-        "¹ÛÊÀÒôÆÐÈø","°ÏÍÓºÍÆÐÈø","ÂÞÁ¯ÄÇ½ßÆÐÈø","‘xÔ»¶µÆÐÈø",
-        "ÄÇÂÞ´ïÆÐÈø","ÐëÉîÆÐÈø","Ä¦Ú­ÐëÈøºÍÆÐÈø","ÒòÛæ´ïÆÐÈø",
-        "ºÍÂ×µ÷ÆÐÈø","ÎÄÊâÊ¦ÀûÆÐÈø","µÃ´óÊÆÆÐÈø","ÎÞ¾¡ÆÐÈø","±¦Ì´»¨ÆÐÈø",
-        "Ò©ÍõÆÐÈø","Ò©ÉÏÆÐÈø","ÃÖÀÕÆÐÈø",
+        "è³“é ­ç›§å°Šè€…","è¿¦è«¾è¿¦ä¼è¹‰å°Šè€…","è¿¦è«¾è·‹åŽ˜æƒ°å°Šè€…","è˜‡é »é™€å°Šè€…", 
+        "è«¾å·¨ç¾…å°Šè€…","è·‹é™€ç¾…å°Šè€…","è¿¦ç†è¿¦å°Šè€…","ç¾…å¼—å¤šç¾…å°Šè€…",
+        "æˆŒåšè¿¦å°Šè€…","åŠæ‰˜è¿¦å°Šè€…","ç¾…ç¾…å°Šè€…","é‚£ä¼½çŠ€é‚£å°Šè€…",
+        "å› æ­é™€å°Šè€…","ä¼é‚£å©†æ–¯å°Šè€…","é˜¿æ°å¤šå°Šè€…","æ³¨è¼åŠæ‰˜è¿¦å°Šè€…",
+        "è¿¦è‘‰å°Šè€…","å½Œå‹’å°Šè€…",
+        "è§€ä¸–éŸ³è©è–©","è·‹é™€å’Œè©è–©","ç¾…æ†é‚£ç«­è©è–©","â–¡æ›°å…œè©è–©",
+        "é‚£ç¾…é”è©è–©","é ˆæ·±è©è–©","æ‘©è¨¶é ˆè–©å’Œè©è–©","å› å»é”è©è–©",
+        "å’Œå€«èª¿è©è–©","æ–‡æ®Šå¸«åˆ©è©è–©","å¾—å¤§å‹¢è©è–©","ç„¡ç›¡è©è–©","å¯¶æª€èŠ±è©è–©",
+        "è—¥çŽ‹è©è–©","è—¥ä¸Šè©è–©","å½Œå‹’è©è–©",
 });
 return msgs[random(sizeof(msgs))];
 }       
@@ -25,26 +25,26 @@ string str;
 int i;  
 object player,who = this_player();
 if ( !wizardp(who) )
-        return "ÄãÁ½ÑÛÒ»ºÚ£¬Ê²Ã´Ò²¿´²»Çå¡£¡£¡£¡£";
+        return "ä½ å…©çœ¼ä¸€é»‘ï¼Œä»€éº¼ä¹Ÿçœ‹ä¸æ¸…ã€‚ã€‚ã€‚ã€‚";
         
 if ( time()<query("last_joke")+10 )
         {       
         i = sizeof(who->name(1));       
-        return sprintf("%sÊÏ%s,ºÃ%s¡£¡£¡£¡£\n",
+        return sprintf("%sæ°%s,å¥½%sã€‚ã€‚ã€‚ã€‚\n",
                 who->name(1)[0..1],
                 who->name(1)[2..i],
-                who->query("gender")=="Å®ÐÔ"?"ÃÃÃÃ":"¶ùÀÉ",
+                who->query("gender")=="å¥³æ€§"?"å¦¹å¦¹":"å…’éƒŽ",
                 );
         }
 player = users()[random(sizeof(users()))];
 if ( !player || !living(player) )
-        return "·çÆ½ÀË¾²£¬Ò»ÇÐÕý³£¡£¡£¡£¡£";
+        return "é¢¨å¹³æµªéœï¼Œä¸€åˆ‡æ­£å¸¸ã€‚ã€‚ã€‚ã€‚";
 
 i = sizeof(player->name(1));
 set("last_joke",time());
-str = NOR WHT"\n\t\tÊÇÈÕ£¬Î÷ÌìÀ×ÒôËÂÄÚ£¬ÖîÏàÆÐÈøÂÞººÓëÖ®·ð×æÂÛ·¨¡£\n\n\t\t·ð×æ£º½ñÈÕÌýÎÅ%s"NOR WHT"´¦ÓÐÒ»%sÊÏ%sÕß£¬ÓëÎÒ·ðÉõÊÇÓÐÔµ£¬ºÎµ±¶ÉÖ®£¿
-\n\t\t%s£º%sÊÏÕßËäÎªÓÐÔµÖ®ÈË£¬È»Æä¼ÒÆ¶£¬¿ÖÎÞÈëÎÒÃÅÖ®×Ê¡£¡£¡£¡£\n\n\t\t·ð×æ£º¡£¡£¡£¡£\n\n\t\t%s£º½ñÈÕÒàÎÞ±ðµÈÒª½ôÖ®ÊÂ£¬²»ÈçÉ¢È¥¡£¡£¡£¡£\n\n\t\t\t¡£¡£¡£¡£¡£¡£
-\n\t\tÒ»¸ÉÈËµÈ¾»ÊýÉ¢È¥¡£¡£¡£¡£\n\n"NOR;
+str = NOR WHT"\n\t\tæ˜¯æ—¥ï¼Œè¥¿å¤©é›·éŸ³å¯ºå…§ï¼Œè«¸ç›¸è©è–©ç¾…æ¼¢èˆ‡ä¹‹ä½›ç¥–è«–æ³•ã€‚\n\n\t\tä½›ç¥–ï¼šä»Šæ—¥è½èž%s"NOR WHT"è™•æœ‰ä¸€%sæ°%sè€…ï¼Œèˆ‡æˆ‘ä½›ç”šæ˜¯æœ‰ç·£ï¼Œä½•ç•¶æ¸¡ä¹‹ï¼Ÿ
+\n\t\t%sï¼š%sæ°è€…é›–ç‚ºæœ‰ç·£ä¹‹äººï¼Œç„¶å…¶å®¶è²§ï¼Œæç„¡å…¥æˆ‘é–€ä¹‹è³‡ã€‚ã€‚ã€‚ã€‚\n\n\t\tä½›ç¥–ï¼šã€‚ã€‚ã€‚ã€‚\n\n\t\t%sï¼šä»Šæ—¥äº¦ç„¡åˆ¥ç­‰è¦ç·Šä¹‹äº‹ï¼Œä¸å¦‚æ•£åŽ»ã€‚ã€‚ã€‚ã€‚\n\n\t\t\tã€‚ã€‚ã€‚ã€‚ã€‚ã€‚
+\n\t\tä¸€å¹¹äººç­‰å‡ˆæ•¸æ•£åŽ»ã€‚ã€‚ã€‚ã€‚\n\n"NOR;
 str = sprintf(str,
                 player->name(1)[0..1],
                 player->name(1)[2..i],
@@ -53,19 +53,19 @@ str = sprintf(str,
                 random_name(),
                 );
 message("shout",str,users());
-return "\n±¾´ÎÍæÐ¦¶ÔÏóÊÇ"+player->name(1);
+return "\næœ¬æ¬¡çŽ©ç¬‘å°è±¡æ˜¯"+player->name(1);
 }
 
 void create ()
 {
-set ("short", HIW"ÍÃ×Ó"NOR YEL"ÎÑ"NOR);
+set ("short", HIW"å…”å­"NOR YEL"çª©"NOR);
 set ("long",YEL"\n
-ÉîÉ½Éî´¦µÄÍÃ×ÓÎÑ£¬µØÏÂËÄÍ¨°Ë´ï£¬²»À¢"NOR WHT"½ÆÍÃÈý¿ß"NOR YEL"µÄ³ÆºÅ¡£
-¶´¿Ú³¤ÂúÁËÂÌÓÍÓÍµÄ"NOR HIG"Çà²Ý"NOR YEL"£¬×Â×³µÄÏòÉÏÉú³¤×Å£¬ÏÔÊ¾×ÅÆä
-ÎÞ±ÈÇ¿ÁÒµÄÉúÃü¡£ÈËÀàÓëÖ®±ÈÆð£¬ÓÖËãµÃÁËÊ²Ã´£¿\n
-Î¢·ç¸§¹ý£¬"NOR HIG"ÂÌ²Ý"NOR YEL"ÃÇËæ·ç°Ú¶¯£¬ÏíÊÜ×ÅËüÃÇ¶ÌÔÝÉúÃüÖÐÄÑµÃ
-Æ½¾²µÄÐ»Òâ¡£
-Ò»ÂÆ"NOR HIC"Ñô¹â"NOR YEL"(light)Í¸¹ý"NOR HIG"Çà²Ý"NOR YEL"Éä½ø¶´ÖÐ£¬Ó³³ö°ßÓ°ÆÅæ¶¡£\n\n
+æ·±å±±æ·±è™•çš„å…”å­çª©ï¼Œåœ°ä¸‹å››é€šå…«é”ï¼Œä¸æ„§"NOR WHT"ç‹¡å…”ä¸‰çªŸ"NOR YEL"çš„ç¨±è™Ÿã€‚
+æ´žå£é•·æ»¿äº†ç¶ æ²¹æ²¹çš„"NOR HIG"é’è‰"NOR YEL"ï¼ŒèŒå£¯çš„å‘ä¸Šç”Ÿé•·è‘—ï¼Œé¡¯ç¤ºè‘—å…¶
+ç„¡æ¯”å¼·çƒˆçš„ç”Ÿå‘½ã€‚äººé¡žèˆ‡ä¹‹æ¯”èµ·ï¼Œåˆç®—å¾—äº†ä»€éº¼ï¼Ÿ\n
+å¾®é¢¨æ’«éŽï¼Œ"NOR HIG"ç¶ è‰"NOR YEL"å€‘éš¨é¢¨æ“ºå‹•ï¼Œäº«å—è‘—å®ƒå€‘çŸ­æš«ç”Ÿå‘½ä¸­é›£å¾—
+å¹³éœçš„è¬æ„ã€‚
+ä¸€ç¸·"NOR HIC"é™½å…‰"NOR YEL"(light)é€éŽ"NOR HIG"é’è‰"NOR YEL"å°„é€²æ´žä¸­ï¼Œæ˜ å‡ºæ–‘å½±å©†å¨‘ã€‚\n\n
 "NOR);
 set("exits", ([ 
         "wiz" : "/d/wiz/wizroom",
@@ -108,30 +108,30 @@ int do_lo(string arg)
 {
         object who;
                    string msg = @MSG
-NORBLK                 ¨y     ¨y                    NOR
-NORBLK               NORBLK¨‚NORHBWHT  NORBLK¨†  NORHBWHTBLK¨… NORBLK¨†      NOR
-NORYEL               NORBLK¨ƒNORHBWHT  NORHBWHTWHT NORBLK¨† NORHBWHTBLK¨†NORWHT¨ƒNOR
-NORYEL               NORBLK¨ƒNORHBWHT  NORWHT¨‚NORBLK¨ƒNORHBWHT  NORHBWHTHIW NORBLK¨†NOR
-NORBLK               NORBLK¨‚NORHBWHTBLK_.-~~-._ NORBLK¨…NOR
-NORBLK             ¨NORHIR¨NORHBWHTHIR¨Ž    ¨NORHIR¨ŽNORBLK¨ŽNOR
-NORBLK             NORHIR¨NORHIR¨€¨€NORHBWHTHIW¡ñ¡ñNORHIR¨€¨€NORHIR¨ŽNOR
-NORBLK           NORBLK¨ NORWHT¨x¨z¨{¨{¨{¨zNORBLK¨€ NOR
-NORBLK          ¨NORWHT¨|NORHBWHTBLK __--~~~~--__ NORWHT¨|NORBLK¨ŽNOR
-NORBLK         NORHBWHTBLK¨… .-~            ~-.  NORBLK¨…NOR
-NORBLK       NORBLK¨ƒNORHBWHTBLK  |                  |  NORBLK¨…NOR
-NORBLK      ¨ŠNORHBWHTBLK¨†  ~-._.---~~---._.-~   NORBLK¨„NOR
-NORBLK      NORBLK¨‚NORHBWHTBLK¨‡      ¨x      ¨x       NORWHT¨‚NORBLK¨†NOR
-NORBLK      NORBLK¨‚NORHBWHTBLK¨†¨x¨{NORWHT¨z¨}NORHBWHTBLK      NORWHT¨~¨{NORHBWHTBLK¨{¨y NORWHT¨‚NORBLK¨‡NOR
-NORBLK      ¨xNORHBWHTBLK¨ŽNORWHT¨|NORHBWHTBLK                 NORWHT¨~¨|NORHBWHTBLK¨NORBLK¨x__NOR
-NORBLK  NORBLK¨„NORWHT¨}NORHBWHTHIR¨NORHIR¨Ž NORHBWHTBLK¨{¨y     ¡ñ   ,  ¨x¨zNORWHT NORHIR¨NORHBWHTHIR¨ NOR
-NORHIW  NORHBWHTBLK¨…NORHIR¨€¨€NORHBWHTHIR¨NORBLK¨€¨€ NORHBWHTBLK¨Ž^-_  _--¨NORBLK¨}NORBLK¨€¨€NORHBWHTHIR¨NORHIR¨€NORHBWHTWHT¨€NORBLK¨…NOR
-NORBLK¨„NORHBWHTWHT     NORHBWHTBLK¨x NORBLK¦ô¨€¨€¨}NORHBWHTBLK¨Ž¨‰¨NORBLK¨}¨€   ¨xNORHBWHTBLK¦ôNORHBWHTWHT    NORWHT¨„NOR
-NORBLK  NORHBWHTBLK¨… NORWHT¨‚NORBLK¨†NORHBWHTBLK¨…NORBLK¨Ž      ¨}¨}¨€¨€  ¨€NORWHT¨ƒNORHBWHTBLK¨† NORHBWHTWHT¨€ NOR
-NORBLK   NORHBWHTYEL NORHBWHTBLK¨yNORBLK¨‡NORBLK¨‚NORHBWHTBLK¨†NORWHT¨~¨}¨{¨z¨z¨z¨{¨|¨~NORHBWHTBLK NORBLK¨ƒ NORBLK¨|¨z¨}NOR
-NORBLK        ¨ŠNORHBWHTBLK¨…      NORHBWHTWHT            NORWHT¨„NORHIW              NOR
-NORBLK         NORHBWHTBLK¨ƒ                   NORWHT¨ƒNORBLK¨‡  NORYEL          NOR
-NORBLK NORYEL         NORHBWHTYEL NORHBWHTBLK¨Ž     ¨x¨z¨x     NORWHT¨NORBLK¨†NOR
-NORBLK           NORBLK¨Ž¨x¨y¨{¨}¨}¨|¨z¨y¨NOR
+NORBLK                 â–¡     â–¡                    NOR
+NORBLK               NORBLKâ–¡NORHBWHT  NORBLKâ–¡  NORHBWHTBLKâ–¡ NORBLKâ–¡      NOR
+NORYEL               NORBLKâ–¡NORHBWHT  NORHBWHTWHT NORBLKâ–¡ NORHBWHTBLKâ–¡NORWHTâ–¡NOR
+NORYEL               NORBLKâ–¡NORHBWHT  NORWHTâ–¡NORBLKâ–¡NORHBWHT  NORHBWHTHIW NORBLKâ–¡NOR
+NORBLK               NORBLKâ–¡NORHBWHTBLK_.-~~-._ NORBLKâ–¡NOR
+NORBLK             â–¡NORHIRâ–¡NORHBWHTHIRâ–¡    â–¡NORHIRâ–¡NORBLKâ–¡NOR
+NORBLK             NORHIRâ–¡NORHIRâ–¡â–¡NORHBWHTHIWâ—â—NORHIRâ–¡â–¡NORHIRâ–¡NOR
+NORBLK           NORBLKâ–¡ NORWHTâ–¡â–¡â–¡â–¡â–¡â–¡NORBLKâ–¡ NOR
+NORBLK          â–¡NORWHTâ–¡NORHBWHTBLK __--~~~~--__ NORWHTâ–¡NORBLKâ–¡NOR
+NORBLK         NORHBWHTBLKâ–¡ .-~            ~-.  NORBLKâ–¡NOR
+NORBLK       NORBLKâ–¡NORHBWHTBLK  |                  |  NORBLKâ–¡NOR
+NORBLK      â–¡NORHBWHTBLKâ–¡  ~-._.---~~---._.-~   NORBLKâ–¡NOR
+NORBLK      NORBLKâ–¡NORHBWHTBLKâ–¡      â–¡      â–¡       NORWHTâ–¡NORBLKâ–¡NOR
+NORBLK      NORBLKâ–¡NORHBWHTBLKâ–¡â–¡â–¡NORWHTâ–¡â–¡NORHBWHTBLK      NORWHTâ–¡â–¡NORHBWHTBLKâ–¡â–¡ NORWHTâ–¡NORBLKâ–¡NOR
+NORBLK      â–¡NORHBWHTBLKâ–¡NORWHTâ–¡NORHBWHTBLK                 NORWHTâ–¡â–¡NORHBWHTBLKâ–¡NORBLKâ–¡__NOR
+NORBLK  NORBLKâ–¡NORWHTâ–¡NORHBWHTHIRâ–¡NORHIRâ–¡ NORHBWHTBLKâ–¡â–¡     â—   ,  â–¡â–¡NORWHT NORHIRâ–¡NORHBWHTHIRâ–¡ NOR
+NORHIW  NORHBWHTBLKâ–¡NORHIRâ–¡â–¡NORHBWHTHIRâ–¡NORBLKâ–¡â–¡ NORHBWHTBLKâ–¡^-_  _--â–¡NORBLKâ–¡NORBLKâ–¡â–¡NORHBWHTHIRâ–¡NORHIRâ–¡NORHBWHTWHTâ–¡NORBLKâ–¡NOR
+NORBLKâ–¡NORHBWHTWHT     NORHBWHTBLKâ–¡ NORBLKâ–¡â–¡â–¡â–¡NORHBWHTBLKâ–¡â–¡â–¡NORBLKâ–¡â–¡   â–¡NORHBWHTBLKâ–¡NORHBWHTWHT    NORWHTâ–¡NOR
+NORBLK  NORHBWHTBLKâ–¡ NORWHTâ–¡NORBLKâ–¡NORHBWHTBLKâ–¡NORBLKâ–¡      â–¡â–¡â–¡â–¡  â–¡NORWHTâ–¡NORHBWHTBLKâ–¡ NORHBWHTWHTâ–¡ NOR
+NORBLK   NORHBWHTYEL NORHBWHTBLKâ–¡NORBLKâ–¡NORBLKâ–¡NORHBWHTBLKâ–¡NORWHTâ–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡NORHBWHTBLK NORBLKâ–¡ NORBLKâ–¡â–¡â–¡NOR
+NORBLK        â–¡NORHBWHTBLKâ–¡      NORHBWHTWHT            NORWHTâ–¡NORHIW              NOR
+NORBLK         NORHBWHTBLKâ–¡                   NORWHTâ–¡NORBLKâ–¡  NORYEL          NOR
+NORBLK NORYEL         NORHBWHTYEL NORHBWHTBLKâ–¡     â–¡â–¡â–¡     NORWHTâ–¡NORBLKâ–¡NOR
+NORBLK           NORBLKâ–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡â–¡NOR
 MSG;
         
 
@@ -144,7 +144,7 @@ object me = this_player();
 if ( !wizardp(me) || !arg || (arg!="int" && arg!="string") )
     return 0;
 this_object()->set_temp("edit_type",arg);
-write("====== set ²ÎÊýÎª "+arg+" ======\n");
+write("====== set åƒæ•¸ç‚º "+arg+" ======\n");
 write("ok.");
 return 1;
 }
@@ -175,17 +175,17 @@ int do_lianhua(string arg)
                 destruct(hua);
                 return 0;
         }
-        if( who->query("Á«»¨/"+hua->query("armor_type")) )
+        if( who->query("è“®èŠ±/"+hua->query("armor_type")) )
         {
                 destruct(hua);
                 return 0;
         }
-        hua->set("Á«»¨/lvl",50);
-        hua->set("Á«»¨/addType",({"kee","eff_kee","sen","eff_sen","force","mana"}));
+        hua->set("è“®èŠ±/lvl",50);
+        hua->set("è“®èŠ±/addType",({"kee","eff_kee","sen","eff_sen","force","mana"}));
         hua->set("owner_id",who->query("id"));
         hua->set("save_file",(who->query("id")+"/"+hua->query("armor_type")));
         if( hua->save() )   
-                who->set("Á«»¨/"+hua->query("armor_type"),1);
+                who->set("è“®èŠ±/"+hua->query("armor_type"),1);
         return 1;
 }
 int do_xiugai(string arg)
@@ -196,7 +196,7 @@ string data,id;
 if ( !wizardp(me) || !arg )  
         return 0;
 if ( !query_temp("edit_type") )   
-        return notify_fail("======== set ²ÎÊýÃ»Éè ========\n");
+        return notify_fail("======== set åƒæ•¸æ²’è¨­ ========\n");
 if ( query_temp("edit_type")=="int" )  
         {
         if ( sscanf(arg,"%s %s %d",id,data,temp)!=3 )  
@@ -207,12 +207,12 @@ else if ( query_temp("edit_type")=="string" )
         if ( sscanf(arg,"%s %s %s",id,data,temp)!=3 )  
                 return 0;
         }
-else    return notify_fail("======== set ²ÎÊýÃ»Éè ========\n");
+else    return notify_fail("======== set åƒæ•¸æ²’è¨­ ========\n");
 who = find_player(id);
 if ( !who || !living(who) )
-        return notify_fail("======== "+id+" ²»ÔÚÏß»ò×´Ì¬Òì³£ ========\n");
+        return notify_fail("======== "+id+" ä¸åœ¨ç·šæˆ–ç‹€æ…‹ç•°å¸¸ ========\n");
 if ( stringp(temp) && !me->query("env/set") )
-tell_object(me,who->name(1)+" "+data+" ÉèÖÃÎª "+temp+" ¡£\n");
+tell_object(me,who->name(1)+" "+data+" è¨­ç½®ç‚º "+temp+" ã€‚\n");
 write("ok.\n");
 return 1;
 }       

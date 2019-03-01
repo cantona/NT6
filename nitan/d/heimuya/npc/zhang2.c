@@ -4,14 +4,14 @@ inherit NPC;
 
 void create()
 {
-    set_name("ÕÅ³ËÔÆ", ({"zhang chengyun", "zhang", "chengyun"}));
-    set("nickname", HIW "°×Ô³ÉñÄ§" NOR );
-    set("title", "ÈÕÔÂÉñ½Ì³¤ÀÏ");
-    set("gender", "ÄÐÐÔ");
+    set_name("å¼µä¹˜é›²", ({"zhang chengyun", "zhang", "chengyun"}));
+    set("nickname", HIW "ç™½çŒ¿ç¥žé­”" NOR );
+    set("title", "æ—¥æœˆç¥žæ•™é•·è€");
+    set("gender", "ç”·æ€§");
     set("age", 42);
     set("shen_type", -1);
     set("long",
-        "ËûÊÇÈÕÔÂÉñ½Ì³¤ÀÏ¡£\n");
+        "ä»–æ˜¯æ—¥æœˆç¥žæ•™é•·è€ã€‚\n");
     set("attitude", "peaceful");
 
     set("per", 21);
@@ -47,7 +47,7 @@ void create()
     map_skill("unarmed", "changquan");
     map_skill("dodge", "lingxu-bu");
 
-    create_family("ÈÕÔÂÉñ½Ì", 2, "³¤ÀÏ");
+    create_family("æ—¥æœˆç¥žæ•™", 2, "é•·è€");
 
     setup();
     carry_object("/d/heimuya/npc/obj/shutonggun")->wield();

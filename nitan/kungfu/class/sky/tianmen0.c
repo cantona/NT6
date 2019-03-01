@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", NOR + WHT "¡¾Í¨ÌìÃÅÍâ¡¿" NOR);
+        set("short", NOR + WHT "ã€é€šå¤©é–€å¤–ã€‘" NOR);
         set("long", HIW @LONG
-ÄãÀ´µ½ÕâÀï£¬·¢ÏÖÕâÀïÃ£Ã£Ò»Æ¬ÔÆº£¡£²»Ô¶´¦ÓĞÒ»µÀ´óÃÅ£¬ÃÅÇ°Õ¾
-×ÅÒ»¸öÀÏÕß£¬ËÆºõÕı×¢ÊÓ×ÅÄã¡£´óÃÅµÄÕıÖĞÑëĞü¹Ò×ÅÒ»Õµ½ğ»ÆÉ«µÄ³¤Ã÷
-µÆ£¨changmingdeng for xueyi£©¡£
+ä½ ä¾†åˆ°é€™è£¡ï¼Œç™¼ç¾é€™è£¡èŒ«èŒ«ä¸€ç‰‡é›²æµ·ã€‚ä¸é è™•æœ‰ä¸€é“å¤§é–€ï¼Œé–€å‰ç«™
+è‘—ä¸€å€‹è€è€…ï¼Œä¼¼ä¹æ­£æ³¨è¦–è‘—ä½ ã€‚å¤§é–€çš„æ­£ä¸­å¤®æ‡¸æ›è‘—ä¸€ç›é‡‘é»ƒè‰²çš„é•·æ˜
+ç‡ˆï¼ˆchangmingdeng for xueyiï¼‰ã€‚
 LONG NOR );
         set("exits", ([
                 "enter" : __DIR__"tianmen",
@@ -35,24 +35,24 @@ int valid_leave(object me, string dir)
         object *inv;
         int i;
 
-        //if (! wizardp(me))return notify_fail("Ôİ²»¿ª·Å£¡\n");
+        //if (! wizardp(me))return notify_fail("æš«ä¸é–‹æ”¾ï¼\n");
 
         if (time() - me->query("last_enter_tianmen0") < 86400)                        
         {
-                 return notify_fail("¶Ô²»Æğ£¬Äã¾àÀëÉÏ´Î½øÈëÌì½ç²»×ã24Ğ¡Ê±£¬ÎŞ·¨ÔÙ´Î½øÈëÌì½ç¡£\n");
+                 return notify_fail("å°ä¸èµ·ï¼Œä½ è·é›¢ä¸Šæ¬¡é€²å…¥å¤©ç•Œä¸è¶³24å°æ™‚ï¼Œç„¡æ³•å†æ¬¡é€²å…¥å¤©ç•Œã€‚\n");
         }
 
-        // ½øÈë12ÖØÌìµÄÌõ¼ş
+        // é€²å…¥12é‡å¤©çš„æ¢ä»¶
         if ( dir == "enter" && ! me->query("sky12/floor"))
         {
                ob = present("xingjun yan", environment(me));
-               if (! objectp(ob))return notify_fail("Îï¼ş³ö´í£¡\n");
-               message_vision(HIC "ĞÇ¾ıÑÛ×ĞÏ¸µÄ¿´×Å$N" HIC " ¡­¡­\n" NOR, me);
+               if (! objectp(ob))return notify_fail("ç‰©ä»¶å‡ºéŒ¯ï¼\n");
+               message_vision(HIC "æ˜Ÿå›çœ¼ä»”ç´°çš„çœ‹è‘—$N" HIC " â€¦â€¦\n" NOR, me);
 
                if (! SCBORN_D->check_data(me))
                {
-                            message_vision(HIW "ĞÇ¾ıÑÛÀäÀäµØ¶Ô$N" HIW "ËµµÀ£ºÄãµÄÌõ¼ş»¹²»"
-                                           "¹»´³Ìì½çÊ®¶şÖØÌì¡£\n" NOR, me);
+                            message_vision(HIW "æ˜Ÿå›çœ¼å†·å†·åœ°å°$N" HIW "èªªé“ï¼šä½ çš„æ¢ä»¶é‚„ä¸"
+                                           "å¤ é—–å¤©ç•ŒåäºŒé‡å¤©ã€‚\n" NOR, me);
                                          
                             return notify_fail("\n");  
                }
@@ -60,15 +60,15 @@ int valid_leave(object me, string dir)
 
         if (dir == "enter")
         {
-                // ±³ÁËÈËÔò½øÈë²»ÁË
+                // èƒŒäº†äººå‰‡é€²å…¥ä¸äº†
                 inv = deep_inventory(me);
                 for (i = 0; i < sizeof(inv); i++)
                 {
                         if (! playerp(inv[i])) continue;
         
-                        // ±»ÈË±³ÆğµÄÓÃ»§
-                        return notify_fail(HIW "ĞÇ¾ıÑÛÀäÀäµØ¶Ô$N" HIW "ËµµÀ£º¡°ÎÒ¿´Äã»¹ÊÇÏÈ°Ñ" + inv[i]->name() + 
-                                           HIW "·ÅÏÂÔÙËµ°É£¡\n" NOR);                
+                        // è¢«äººèƒŒèµ·çš„ç”¨æˆ¶
+                        return notify_fail(HIW "æ˜Ÿå›çœ¼å†·å†·åœ°å°$N" HIW "èªªé“ï¼šâ€œæˆ‘çœ‹ä½ é‚„æ˜¯å…ˆæŠŠ" + inv[i]->name() + 
+                                           HIW "æ”¾ä¸‹å†èªªå§ï¼\n" NOR);                
                 }                
         }
 

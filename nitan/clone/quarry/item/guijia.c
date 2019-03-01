@@ -4,13 +4,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name(NOR + YEL "¹ê¼×" NOR, ({ "gui jia", "gui", "jia" }));
+        set_name(NOR + YEL "é¾œç”²" NOR, ({ "gui jia", "gui", "jia" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", NOR + YEL "ÎÚ¹êµÄ¼×¿Ç£¬²»´íµÄÖıÔì²ÄÁÏ¡£\n" NOR);
-                set("base_unit", "¿é");
-                set("unit", "¿é");
+                set("long", NOR + YEL "çƒé¾œçš„ç”²æ®¼ï¼Œä¸éŒ¯çš„é‘„é€ ææ–™ã€‚\n" NOR);
+                set("base_unit", "å¡Š");
+                set("unit", "å¡Š");
                 set("base_value", 10000);
                 set("base_weight", 1000);
         }

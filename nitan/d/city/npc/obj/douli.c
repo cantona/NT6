@@ -1,4 +1,4 @@
-// douli.c °µÆ÷
+// douli.c æš—å™¨
 
 #include <ansi.h>
 #include <armor.h>
@@ -6,18 +6,18 @@ inherit HEAD;
 
 void create()
 {
-        set_name(BLK "ÓÍÂ¨¼çÓß" NOR, ({"dou li"}) );
+        set_name(BLK "æ²¹ç°è‚©è¼¿" NOR, ({"dou li"}) );
         set_weight(1000);
         if ( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "´ËÓßÓÃÖñÃï×ö³ÉÈçÎ§£¬ÔÙ¼ÓºÚÓÍÒÔ·ÀÓê¡£´ËÓßÖ®È¡ºõÇá±ã£¬¶ø²»È¡»ªÀöÕßÒ²¡£\n");
+                set("long", "æ­¤è¼¿ç”¨ç«¹è”‘åšæˆå¦‚åœï¼Œå†åŠ é»‘æ²¹ä»¥é˜²é›¨ã€‚æ­¤è¼¿ä¹‹å–ä¹è¼•ä¾¿ï¼Œè€Œä¸å–è¯éº—è€…ä¹Ÿã€‚\n");
                 set("value", 600);
-                set("unit", "¶¥");
+                set("unit", "é ‚");
                 set("armor_prop/armor",2);
                 set("armor_prop/per", 5);
-                set("wear_msg","$N´÷ÉÏÒ»¶¥$n¡£\n");
-                set("unequip_msg", "$NÕªÏÂÍ·ÉÏµÄ$n£¬ÄÃÔÚÊÖÀï¡£\n");
+                set("wear_msg","$Næˆ´ä¸Šä¸€é ‚$nã€‚\n");
+                set("unequip_msg", "$Næ‘˜ä¸‹é ­ä¸Šçš„$nï¼Œæ‹¿åœ¨æ‰‹è£¡ã€‚\n");
         }
         setup();
 }

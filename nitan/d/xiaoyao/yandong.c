@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�Ҷ�");
+        set("short", "巖洞");
         set("long", @LONG
-��������û��˿���Ĺ�����ÿǰ��һ������Ҫ����̽����ʵ������
-ȴ���ý���ƽ������������ʯ��·��һ�㣬ֻ����·���ϵ�������б��
-Խ��Խ�͡�
+這裡四周沒有絲毫的光亮，每前進一步，都要先試探個虛實，但是
+卻覺得腳下平整，便似走在石板路上一般，只見道路不斷地往下傾斜，
+越走越低。
 LONG );
         set("exits", ([
                 "north" : __DIR__"damen",

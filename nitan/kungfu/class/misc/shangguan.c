@@ -11,9 +11,9 @@ string ask_me();
 
 void create()
 {
-        set_name("ÉÏ¹ÙÒøÆ±", ({ "cash" }));
-        set("long", "Ëû¾ÍÊÇ½ðÇ®°ï°ïÖ÷¡£\n");
-        set("gender", "ÄÐÐÔ");
+        set_name("ä¸Šå®˜éŠ€ç¥¨", ({ "cash" }));
+        set("long", "ä»–å°±æ˜¯é‡‘éŒ¢å¹«å¹«ä¸»ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 61);
         set("attitude", "peaceful");
         set("shen_type", 1);
@@ -31,7 +31,7 @@ void create()
         set("score", 70000);
 
         set_skill("idle-force", 500);
-        create_family("½ðÇ®°ï", 1, "°ïÖ÷");
+        create_family("é‡‘éŒ¢å¹«", 1, "å¹«ä¸»");
 
         setup();
         carry_object("/clone/weapon/changjian")->wield();

@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�����");
+        set("short", "北大街");
         set("long", @LONG
-����һ����������ʯ�ֵ������ϱ���ͷ���졣�����Ǳ�����ͨ���
-�⡣�ϱ��Եúܷ�æ��������һ�������¥����Ϊ����¥��������һ
-�����֣�������һ����ֱ�Ĵ�֣�ʮ�ַ�����
+這是一條寬闊的青石街道，向南北兩頭延伸。北邊是北城門通向城
+外。南邊顯得很繁忙。東邊是一座兩層的樓閣，名為春在樓。西面是一
+座廟庵，南面是一條筆直的大街，十分繁華。
 LONG );
         set("outdoors", "suzhou");
         set("no_clean_up", 0);

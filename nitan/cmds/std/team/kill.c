@@ -12,59 +12,59 @@ int main(object me, string arg)
         object *t;
         int i;
 
-        // team kill ÃüÁîÊ¹ÓÃµÄ±êÖ¾
+        // team kill å‘½ä»¤ä½¿ç”¨çš„æ¨™å¿—
         int kill_flag;
         int want_kill_flag;
 
         t = me->query_team();
         if (! arrayp(t))
-                return notify_fail("ÄãÕâ¸ö¶ÓÎéÖÐÏÖÔÚ"
-                                   "Ã»ÓÐ±ðÈË£¬Ïë³öÊÖ¾ÍÖ±½ÓÏÂKILLÃüÁî°É¡£\n");
+                return notify_fail("ä½ é€™å€‹éšŠä¼ä¸­ç¾åœ¨"
+                                   "æ²’æœ‰åˆ¥äººï¼Œæƒ³å‡ºæ‰‹å°±ç›´æŽ¥ä¸‹KILLå‘½ä»¤å§ã€‚\n");
 
         if (! me->is_team_leader())
-                return notify_fail("Ö»ÓÐ¶ÓÎéµÄÁìÐä²ÅÄÜÏÂÃüÁî¹¥»÷±ðÈË¡£\n");
+                return notify_fail("åªæœ‰éšŠä¼çš„é ˜è¢–æ‰èƒ½ä¸‹å‘½ä»¤æ”»æ“Šåˆ¥äººã€‚\n");
 
         if (! arg)
-                return notify_fail("ÄãÏëÂÊÁì¶ÓÎé¹¥»÷Ë­£¿\n");
+                return notify_fail("ä½ æƒ³çŽ‡é ˜éšŠä¼æ”»æ“Šèª°ï¼Ÿ\n");
 
         env = environment(me);
         t = filter_array(t, (: objectp($1) && living($1) &&
                                environment($1) == $(env) :));
         if (! sizeof(t))
-                return notify_fail("ÄãÕâ¸ö¶ÓÎéÖÐÏÖÔÚ"
-                                   "Ã»ÓÐÈËÄÜ¹»ÌýÄãµÄºÅÁî£¬»¹ÊÇ¿¿×Ô¼º°É¡£\n");
+                return notify_fail("ä½ é€™å€‹éšŠä¼ä¸­ç¾åœ¨"
+                                   "æ²’æœ‰äººèƒ½å¤ è½ä½ çš„è™Ÿä»¤ï¼Œé‚„æ˜¯é è‡ªå·±å§ã€‚\n");
 
         if( query("no_fight", env) )
-                return notify_fail("ÕâÀï²»ÄÜÕ½¶·¡£\n");
+                return notify_fail("é€™è£¡ä¸èƒ½æˆ°é¬¥ã€‚\n");
 
         if (! objectp(obj = present(arg, env)))
-                return notify_fail("ÄãÏë¹¥»÷Ë­£¿\n");
+                return notify_fail("ä½ æƒ³æ”»æ“Šèª°ï¼Ÿ\n");
 
         if (! obj->is_character() || obj->is_corpse())
-                return notify_fail("¿´Çå³þÁË£¬ÄÇ²»ÊÇ»îÈË£¡\n");
+                return notify_fail("çœ‹æ¸…æ¥šäº†ï¼Œé‚£ä¸æ˜¯æ´»äººï¼\n");
 
         if (obj == me)
-                return notify_fail("Ê²Ã´£¿ÄãÒª×ÔÉ±Ò²²»Òª½ÐÉÏÕâÃ´¶àÈË°¡£¡\n");
+                return notify_fail("ä»€éº¼ï¼Ÿä½ è¦è‡ªæ®ºä¹Ÿä¸è¦å«ä¸Šé€™éº¼å¤šäººå•Šï¼\n");
 
         if (member_array(obj, me->query_team()) != -1)
-                return notify_fail("ÄãÏë¹¥»÷¶ÓÎéÖÐµÄÈË£¿ºÃÏñÃ»ÈË»áÌýÄãµÄ»°¡£\n");
+                return notify_fail("ä½ æƒ³æ”»æ“ŠéšŠä¼ä¸­çš„äººï¼Ÿå¥½åƒæ²’äººæœƒè½ä½ çš„è©±ã€‚\n");
 
         if (query_temp("warquest/group", obj) && query("qi", obj) > query("max_qi", obj) )
-                return notify_fail("ÄãÏëÂÊÁì¼¸¸öÈËµÄ¶ÓÎé¹¥»÷¾ü¶Ó£¿¿ÖÅÂ²»ÐÐ°É£¡\n");
+                return notify_fail("ä½ æƒ³çŽ‡é ˜å¹¾å€‹äººçš„éšŠä¼æ”»æ“Šè»éšŠï¼Ÿææ€•ä¸è¡Œå§ï¼\n");
 
         if( query("can_speak", obj) )
         {
                 if (random(3) > 1)
-                        message_vision("\n$N´óÉùº°µÀ£º¡°´ó¼ÒÉÏ°¡£¬¶Ô¸¶" + obj->name() +
-                                       "ÕâÖÖÈË²»±Ø½²¾¿Ê²Ã´½­ºþµÀÒå£¡¡±\n\n",
+                        message_vision("\n$Nå¤§è²å–Šé“ï¼šâ€œå¤§å®¶ä¸Šå•Šï¼Œå°ä»˜" + obj->name() +
+                                       "é€™ç¨®äººä¸å¿…è¬›ç©¶ä»€éº¼æ±Ÿæ¹–é“ç¾©ï¼â€\n\n",
                                        me, obj);
                 else
-                        message_vision("\n$N³¶×ÅÉ¤×Óº°µÀ£º¡°´ó¼Ò²¢¼ç"
-                                       "×ÓÉÏ°¡£¡Ò»Æð³ýµô" + obj->name() +
-                                       "Õâ" + RANK_D->query_rude(obj) +
-                                       "£¡¡±\n\n", me, obj);
+                        message_vision("\n$Næ‰¯è‘—å—“å­å–Šé“ï¼šâ€œå¤§å®¶ä¸¦è‚©"
+                                       "å­ä¸Šå•Šï¼ä¸€èµ·é™¤æŽ‰" + obj->name() +
+                                       "é€™" + RANK_D->query_rude(obj) +
+                                       "ï¼â€\n\n", me, obj);
         } else
-                message_vision("\n$NÒ»»ÓÊÖ£¬ºÈµÀ£º¡°ÃðÁËÕâÐóÉú£¡¡±\n\n",
+                message_vision("\n$Nä¸€æ®æ‰‹ï¼Œå–é“ï¼šâ€œæ»…äº†é€™ç•œç”Ÿï¼â€\n\n",
                                me, obj);
 
         switch (obj->accept_kill(me))
@@ -75,27 +75,27 @@ int main(object me, string arg)
                 if (objectp(obj) &&
                     !me->is_killing(query("id", obj)) )
                 {
-                        // ÒòÎªÄ³ÖÖÔ­ÒòÕ½¶·Ã»ÓÐ·¢Éú
+                        // å› ç‚ºæŸç¨®åŽŸå› æˆ°é¬¥æ²’æœ‰ç™¼ç”Ÿ
                         return 1;
                 }
         default:
         }
 
-        // Õ½¶·ÒÑ¾­·¢Éú£¬¶ÓÎéÖÐËùÓÐµÄÈË²ÎÓëÕ½¶·
-        message("vision", HIR "ÄãºÍ´ó¼ÒÒ»Æð¸ú×Å" + me->name(1) +
-                          HIR "³åÁËÉÏÈ¥£¬Î§×Å" + obj->name() +
-                          "¾ÍÊÇÒ»¶ÙÂÒ¿³¡£\n" NOR, t, ({ me }));
+        // æˆ°é¬¥å·²ç¶“ç™¼ç”Ÿï¼ŒéšŠä¼ä¸­æ‰€æœ‰çš„äººåƒèˆ‡æˆ°é¬¥
+        message("vision", HIR "ä½ å’Œå¤§å®¶ä¸€èµ·è·Ÿè‘—" + me->name(1) +
+                          HIR "æ²–äº†ä¸ŠåŽ»ï¼Œåœè‘—" + obj->name() +
+                          "å°±æ˜¯ä¸€é “äº‚ç ã€‚\n" NOR, t, ({ me }));
 
-        // ÅÐ¶ÏÊÇ·ñÊÇÎÒÏÈÖ÷¶¯ÏëÉ±ËÀ¶Ô·½
+        // åˆ¤æ–·æ˜¯å¦æ˜¯æˆ‘å…ˆä¸»å‹•æƒ³æ®ºæ­»å°æ–¹
         if (userp(me) && userp(obj))
         {
-                // ¶Ô·½ÏëÉ±º¦µÄÈËºÍÎÒÃÇ¶ÔÎÒÖÐµÄ³ÉÔ±
+                // å°æ–¹æƒ³æ®ºå®³çš„äººå’Œæˆ‘å€‘å°æˆ‘ä¸­çš„æˆå“¡
                 string *obj_wants;
                 object *all_team;
                 object *ts;
 
-                // ÖØÐÂÈ¡¶ÓÎéµÄÈËÔ± - ÒòÎª¶ÓÎéÖÐÔÎµ¹µÄ³ÉÔ±
-                // Ã»ÓÐ°üº¬ÔÚ t Êý×éÖÐ¡£
+                // é‡æ–°å–éšŠä¼çš„äººå“¡ - å› ç‚ºéšŠä¼ä¸­æšˆå€’çš„æˆå“¡
+                // æ²’æœ‰åŒ…å«åœ¨ t æ•¸çµ„ä¸­ã€‚
                 all_team = me->query_team();
                 all_team -= ({ 0 });
                 obj_wants = obj->query_want() - ({ 0 });
@@ -104,9 +104,9 @@ int main(object me, string arg)
                         ts += ({ query("id", t[i]) });
                 if (sizeof(obj_wants - ts) != sizeof(obj_wants))
                 {
-                        // ¶Ô·½ÏëÉ±º¦ÎÒÃÇ¶ÔÎÒÖÐµÄÄ³Ò»Ð©ÈË£¬
-                        // Òò´ËÈÏÎªÊÇ¶Ô·½ÏëÉ±º¦ÎÒÃÇ£¬·ñÔò
-                        // ·´Ö®
+                        // å°æ–¹æƒ³æ®ºå®³æˆ‘å€‘å°æˆ‘ä¸­çš„æŸä¸€äº›äººï¼Œ
+                        // å› æ­¤èªç‚ºæ˜¯å°æ–¹æƒ³æ®ºå®³æˆ‘å€‘ï¼Œå¦å‰‡
+                        // åä¹‹
                         want_kill_flag = 0;
                 } else
                 {
@@ -115,31 +115,31 @@ int main(object me, string arg)
                 }
         }
 
-        // ÅÐ¶Ï¶Ô·½ÊÇ·ñ»áÉ±ËÀÎÒ
+        // åˆ¤æ–·å°æ–¹æ˜¯å¦æœƒæ®ºæ­»æˆ‘
         if (living(obj) && ! userp(obj))
         {
-                // ¶Ô·½»áÉ±ËÀÎÒÃÇ
+                // å°æ–¹æœƒæ®ºæ­»æˆ‘å€‘
                 obj->kill_ob(me);
                 kill_flag = 1;
         } else
         {
-                // ¶Ô·½²»»áÉ±ËÀÎÒÃÇ£¬Ö»ÊÇ¹¥»÷ÎÒÃÇ
+                // å°æ–¹ä¸æœƒæ®ºæ­»æˆ‘å€‘ï¼Œåªæ˜¯æ”»æ“Šæˆ‘å€‘
                 obj->fight_ob(me);
                 kill_flag = 0;
         }
 
-        // Çý¶¯¶ÓÎéÖÐËùÓÐµÄÈË
+        // é©…å‹•éšŠä¼ä¸­æ‰€æœ‰çš„äºº
         foreach (tob in t)
         {
-                // É±ÈË·½ÏòºÍ¶Ó³¤±£³ÖÒ»ÖÂ£ºÈç¹û¶Ô·½
-                // Ö÷¶¯¹¥»÷¶ÓÎéÖÐµÄÄ³Ò»¸öÈË£¬ÔòÉèÖÃ
-                // ÊÇ¶Ô·½ÌôÐÆ
+                // æ®ºäººæ–¹å‘å’ŒéšŠé•·ä¿æŒä¸€è‡´ï¼šå¦‚æžœå°æ–¹
+                // ä¸»å‹•æ”»æ“ŠéšŠä¼ä¸­çš„æŸä¸€å€‹äººï¼Œå‰‡è¨­ç½®
+                // æ˜¯å°æ–¹æŒ‘èˆ‹
                 if (want_kill_flag)
                         tob->want_kill(obj);
 
                 tob->kill_ob(obj);
 
-                // ÉèÖÃ¶ÔÊÖµÄ¹¥»÷×´Ì¬ºÍ¶Ó³¤±£³ÖÒ»ÖÂ
+                // è¨­ç½®å°æ‰‹çš„æ”»æ“Šç‹€æ…‹å’ŒéšŠé•·ä¿æŒä¸€è‡´
                 if (kill_flag)
                         obj->kill_ob(tob);
                 else

@@ -42,7 +42,7 @@ void connect()
 
 	current_socket_port = socket_port;
 	
-	DEBUG(sizeof(connectsort)+". "+ipport+" Á¬Ïß¼ì²é");
+	DEBUG(sizeof(connectsort)+". "+ipport+" é€£ç·šæª¢æŸ¥");
 	if( socket_connect(socket_port, resolvedaddress[ipport], "connect_read_callback", "connect_write_callback") < 0 ) 
 		socket_close(socket_port);
 
@@ -59,7 +59,7 @@ void connect_check()
 	{
 		save();
 		
-		MSG("MUDLIST ¸üĞÂ×ÊÁÏÍê±Ï£¬¹² "+sizeof(mudlist)+" ×é Mud ×ÊÁÏ");
+		MSG("MUDLIST æ›´æ–°è³‡æ–™å®Œç•¢ï¼Œå…± "+sizeof(mudlist)+" çµ„ Mud è³‡æ–™");
                 HTML_D->create_mudlist_html();
 		return;
 	}
@@ -77,7 +77,7 @@ void connect_check()
 	}
 	else
 	{
-		DEBUG(sizeof(connectsort)+". "+address+" ½øĞĞÃû³Æ½âÎö");
+		DEBUG(sizeof(connectsort)+". "+address+" é€²è¡Œåç¨±è§£æ");
 		resolve(address, "resolve_address_callback");
 	}
 }
@@ -98,7 +98,7 @@ void resolve_address_callback(string address, string resolved, int key)
 		mudlist[ipport]["CONNECT_FAILED_TIMES"]++;
 		map_delete(mudlist[ipport], "USERS");
 		
-		DEBUG(sizeof(connectsort)+". "+ipport+" ¼ì²éÓâÊ±");
+		DEBUG(sizeof(connectsort)+". "+ipport+" æª¢æŸ¥é€¾æ™‚");
 		connectsort = connectsort[1..];
 		connect_check();
 	}
@@ -129,7 +129,7 @@ void over_waiting_connect(int socket_port)
 		remove_call_out(current_call_out_handler);
 		socket_close(current_socket_port);
 	
-		DEBUG(sizeof(connectsort)+". "+ipport+" ¼ì²éÓâÊ±");
+		DEBUG(sizeof(connectsort)+". "+ipport+" æª¢æŸ¥é€¾æ™‚");
 		connectsort = connectsort[1..];
 		connect_check();
 	}
@@ -172,13 +172,13 @@ void connect_read_callback(int socket_port, mixed info)
 		if( !mudlist[ipport]["USERS"] )
 		{
                         socket_write(socket_port, "gb\n");
-			// Ê®ÃëÄÚÃ»ÔÙÊÕµ½ read_callback ¾ÍÌø¹ı users count ¼ÆËã
+			// åç§’å…§æ²’å†æ”¶åˆ° read_callback å°±è·³é users count è¨ˆç®—
 			current_call_out_handler = call_out((: connect_read_callback :), 10, socket_port, 0);
 			return;
 		}
 	}
 
-	DEBUG(sizeof(connectsort)+". "+ipport+" ¼ì²éÍê±Ï");
+	DEBUG(sizeof(connectsort)+". "+ipport+" æª¢æŸ¥å®Œç•¢");
 	socket_close(socket_port);
  
 	connectsort = connectsort[1..];
@@ -186,29 +186,29 @@ void connect_read_callback(int socket_port, mixed info)
 
 }
 
-// ½«µ¥Ò» Mud ¼ÓÈë MRTG
+// å°‡å–®ä¸€ Mud åŠ å…¥ MRTG
 void add_mud_to_mrtg(string name)
 {
 	mapping info = ([
 		"Directory":"mudlist/"+replace_string(name, " ", "_"),
 		"Target":"`cat \""LIBRARY_PATH+MRTGDATA+name+"\"`",
 		"YLegend":"user(s)",
-		"LegendI":"ÏßÉÏÈËÊı",
+		"LegendI":"ç·šä¸Šäººæ•¸",
 		"LegendO":"",
-		"Legend1":"ÔÚÓÎÏ·ÖĞµÄÏßÉÏÊ¹ÓÃÕßÈËÊı",
-		"ShortLegend":"ÈË",
+		"Legend1":"åœ¨éŠæˆ²ä¸­çš„ç·šä¸Šä½¿ç”¨è€…äººæ•¸",
+		"ShortLegend":"äºº",
 		"Legend2":"",
-		"Title": mudlist[name]["MUD_CHINESE_NAME"]+" - "+mudlist[name]["MUD_ENGLISH_NAME"]+" ÈËÊıÍ³¼ÆÁĞ±í",
-		"PageTop":mudlist[name]["MUD_CHINESE_NAME"]+" - "+mudlist[name]["MUD_ENGLISH_NAME"]+" ÈËÊıÍ³¼ÆÁĞ±í"
+		"Title": mudlist[name]["MUD_CHINESE_NAME"]+" - "+mudlist[name]["MUD_ENGLISH_NAME"]+" äººæ•¸çµ±è¨ˆåˆ—è¡¨",
+		"PageTop":mudlist[name]["MUD_CHINESE_NAME"]+" - "+mudlist[name]["MUD_ENGLISH_NAME"]+" äººæ•¸çµ±è¨ˆåˆ—è¡¨"
 	]);
 	
-	// ¼ÍÂ¼¸Ã Mud Ö®ÏßÉÏÍæ¼ÒÊı
+	// ç´€éŒ„è©² Mud ä¹‹ç·šä¸Šç©å®¶æ•¸
 	write_file(MRTGDATA+name, mudlist[name]["USERS"]+"\n0", 1);
 
 	MRTG_D->addmrtg(name, info);
 }
 
-// ½«ÖĞÎÄÍæ¼Ò×ÜÊı¼ÓÈë MRTG
+// å°‡ä¸­æ–‡ç©å®¶ç¸½æ•¸åŠ å…¥ MRTG
 void add_all_muds_to_mrtg(int alluser)
 {
 	string name="0_total_count";
@@ -218,24 +218,24 @@ void add_all_muds_to_mrtg(int alluser)
 		"Directory":"mudlist/"+name,
 		"Target":"`cat \""LIBRARY_PATH+MRTGDATA+name+"\"`",
 		"YLegend":"user(s)",
-		"LegendI":"ÏßÉÏÈËÊı",
-		"LegendO":"MUD ¼äÊı",
-                "Legend1":"ÔÚ MUDs ÓÎÏ·ÖĞµÄÏßÉÏ×ÜÊ¹ÓÃÕßÈËÊı",
-		"Legend2":"µ±Ê±Ëù¼à²âµÄ MUDs ÊıÁ¿",
+		"LegendI":"ç·šä¸Šäººæ•¸",
+		"LegendO":"MUD é–“æ•¸",
+                "Legend1":"åœ¨ MUDs éŠæˆ²ä¸­çš„ç·šä¸Šç¸½ä½¿ç”¨è€…äººæ•¸",
+		"Legend2":"ç•¶æ™‚æ‰€ç›£æ¸¬çš„ MUDs æ•¸é‡",
 		"ShortLegend":"&nbsp",
                 "MaxBytes":10000,
                 "AbsMax":20000,
-		"Title": "MUDs ÈËÊıÍ³¼ÆÁĞ±í",
-		"PageTop":"MUDs ÈËÊıÍ³¼ÆÁĞ±í"
+		"Title": "MUDs äººæ•¸çµ±è¨ˆåˆ—è¡¨",
+		"PageTop":"MUDs äººæ•¸çµ±è¨ˆåˆ—è¡¨"
 	]);
 	
-	// ¼ÍÂ¼ËùÓĞ Mud ÏßÉÏÍæ¼Ò×ÜÊı
+	// ç´€éŒ„æ‰€æœ‰ Mud ç·šä¸Šç©å®¶ç¸½æ•¸
 	write_file(MRTGDATA+"0_total_count", alluser+"\n"+sizeof(mudlist), 1);
 
 	MRTG_D->addmrtg(name, info);
 }
 
-// ¸üĞÂ MRTG ×ÊÑ¶
+// æ›´æ–° MRTG è³‡è¨Š
 void update_mrtg_data()
 {
 	int i;
@@ -246,7 +246,7 @@ void update_mrtg_data()
 	{
 		if( !stringp(name) || !mapp(m) ) continue;
 		
-		// ·ÖÉ¢´¦Àí
+		// åˆ†æ•£è™•ç†
 		call_out((:add_mud_to_mrtg, name:), ++i*2);
 
 		alluser += m["USERS"];
@@ -272,7 +272,7 @@ void distributed_connect()
 	connect_check();
 	
 	update_mrtg_data();
-	DEBUG("MUDLIST ¿ªÊ¼È¡µÃ×ÊÑ¶");
+	DEBUG("MUDLIST é–‹å§‹å–å¾—è³‡è¨Š");
 }
 
 void change_ipport(string old_ipport, string new_ipport)
@@ -355,5 +355,5 @@ void create()
 }
 string query_name()
 {
-	return "Äà°ÍÁĞ±íÏµÍ³(MUDLIST_D)";
+	return "æ³¥å·´åˆ—è¡¨ç³»çµ±(MUDLIST_D)";
 }

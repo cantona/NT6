@@ -1,49 +1,49 @@
 // This program is a part of NITAN MudLIB
-// yanzi-blade.c (Ñà×ÓË«·Éµ¶·¨)
+// yanzi-blade.c (ç‡•å­é›™é£›åˆ€æ³•)
 
 #include <ansi.h>;
 inherit SKILL;
 
 mapping *action = ({
-([      "action" : "$NÒ»Ê½" HIM "¡¸ÇïÑàË«·É¡¹" NOR "ºöµØ·ÅÊÖ£¬$wµÄÎ²¶ËÏòÉÏµ¯Æğ£¬ÒÔÒâÏë²»µ½·½Î»ºôµÄÏò$n$l¿³È¥",
+([      "action" : "$Nä¸€å¼" HIM "ã€Œç§‹ç‡•é›™é£›ã€" NOR "å¿½åœ°æ”¾æ‰‹ï¼Œ$wçš„å°¾ç«¯å‘ä¸Šå½ˆèµ·ï¼Œä»¥æ„æƒ³ä¸åˆ°æ–¹ä½å‘¼çš„å‘$n$lç å»",
         "force"  : 120,
         "attack" : 40,
         "dodge"  : -30,
         "parry"  : -15,
         "lvl"    : 0,
         "damage" : 40,
-        "damage_type" : "¸îÉË",
-        "skill_name"  : "ÇïÑàË«·É",
+        "damage_type" : "å‰²å‚·",
+        "skill_name"  : "ç§‹ç‡•é›™é£›",
 ]),
-([      "action" : "$NÍ»È»Ò»ÉùÇåĞ¥£¬Ò»ÕĞ" HIR "¡¸Ë«Ñà»Ø³²¡¹" NOR "ĞéĞéÊµÊµ£¬ÊÇÊÇ¶ø·ÇµÄ¿³Ïò$nµÄ$l",
+([      "action" : "$Nçªç„¶ä¸€è²æ¸…å˜¯ï¼Œä¸€æ‹›" HIR "ã€Œé›™ç‡•å›å·¢ã€" NOR "è™›è™›å¯¦å¯¦ï¼Œæ˜¯æ˜¯è€Œéçš„ç å‘$nçš„$l",
         "force"  : 150,
         "attack" : 45,
         "dodge"  : -40,
         "parry"  : -20,
         "lvl"    : 40,
         "damage" : 60,
-        "damage_type" : "¸îÉË",
-        "skill_name"  : "Ë«Ñà»Ø³²",
+        "damage_type" : "å‰²å‚·",
+        "skill_name"  : "é›™ç‡•å›å·¢",
 ]),
-([      "action" : "²»¼û$NÈçºÎ¶¯×÷£¬ºöÈ»À´µ½$nÓÒ²àÈı³ßĞí´¦," HIB "¡¸¿ÕÖĞÑàÎè¡¹" NOR "³é³ö$wËæÊÖÏò$nµÄ$l¿³È¥",
+([      "action" : "ä¸è¦‹$Nå¦‚ä½•å‹•ä½œï¼Œå¿½ç„¶ä¾†åˆ°$nå³å´ä¸‰å°ºè¨±è™•," HIB "ã€Œç©ºä¸­ç‡•èˆã€" NOR "æŠ½å‡º$wéš¨æ‰‹å‘$nçš„$lç å»",
         "force"  : 180,
         "attack" : 51,
         "dodge"  : -45,
         "parry"  : -25,
         "lvl"    : 60,
         "damage" : 80,
-        "damage_type" : "¸îÉË",
-        "skill_name"  : "¿ÕÖĞÑàÎè",
+        "damage_type" : "å‰²å‚·",
+        "skill_name"  : "ç©ºä¸­ç‡•èˆ",
 ]),
-([      "action" : "$NÊÖÖĞµÄ$w»®³öÒ»¸ö¸öµÄÈ¦×Ó£¬Ò»ÕĞ" HIW"¡¸Ìì·½µØÔ°¡¹" NOR"Ïò$nµÄ$l¿³È¥",
+([      "action" : "$Næ‰‹ä¸­çš„$wåŠƒå‡ºä¸€å€‹å€‹çš„åœˆå­ï¼Œä¸€æ‹›" HIW"ã€Œå¤©æ–¹åœ°åœ’ã€" NOR"å‘$nçš„$lç å»",
         "force"  : 220,
         "attack" : 55,
         "dodge"  : -50,
         "parry"  : -30,
         "lvl"    : 80,
         "damage" : 95,
-        "damage_type" : "¸îÉË",
-        "skill_name"  : "Ìì·½µØÔ°",
+        "damage_type" : "å‰²å‚·",
+        "skill_name"  : "å¤©æ–¹åœ°åœ’",
 ]),
 });
 
@@ -52,16 +52,16 @@ int valid_enable(string usage){ return usage == "blade" || usage == "parry";}
 int valid_learn(object me)
 {
         if( query("max_neili", me)<800 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ã€‚\n");
 
         if ((int)me->query_skill("force") < 150)
-                return notify_fail("ÄãµÄÄÚ¹¦»ğºòÌ«Ç³¡£\n");
+                return notify_fail("ä½ çš„å…§åŠŸç«å€™å¤ªæ·ºã€‚\n");
 
         if ((int)me->query_skill("blade", 1) < 120)
-                return notify_fail("ÄãµÄ»ù±¾µ¶·¨²»¹»£¬ÄÑÒÔĞŞÁ¶Ñà×ÓË«·Éµ¶·¨¡£\n");
+                return notify_fail("ä½ çš„åŸºæœ¬åˆ€æ³•ä¸å¤ ï¼Œé›£ä»¥ä¿®ç…‰ç‡•å­é›™é£›åˆ€æ³•ã€‚\n");
 
         if ((int)me->query_skill("blade", 1) < (int)me->query_skill("yanzi-blade", 1))
-                return notify_fail("ÄãµÄ»ù±¾µ¶·¨Ë®Æ½ÓĞÏŞ£¬ÎŞ·¨Áì»á¸ü¸ßÉîµÄÑà×ÓË«·Éµ¶·¨¡£\n");
+                return notify_fail("ä½ çš„åŸºæœ¬åˆ€æ³•æ°´å¹³æœ‰é™ï¼Œç„¡æ³•é ˜æœƒæ›´é«˜æ·±çš„ç‡•å­é›™é£›åˆ€æ³•ã€‚\n");
 
         return 1;
 }
@@ -79,13 +79,13 @@ int practice_skill(object me)
         object weapon;
 
         if( !objectp(weapon=query_temp("weapon", me)) || query("skill_type", weapon) != "blade" )
-                return notify_fail("ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\n");
+                return notify_fail("ä½ ä½¿ç”¨çš„æ­¦å™¨ä¸å°ã€‚\n");
 
         if( query("qi", me)<80 )
-                return notify_fail("ÄãµÄÌåÁ¦²»¹»£¬Á·²»ÁËÑà×ÓË«·Éµ¶·¨¡£\n");
+                return notify_fail("ä½ çš„é«”åŠ›ä¸å¤ ï¼Œç·´ä¸äº†ç‡•å­é›™é£›åˆ€æ³•ã€‚\n");
 
         if( query("neili", me)<120 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»£¬Á·²»ÁËÑà×ÓË«·Éµ¶·¨¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ï¼Œç·´ä¸äº†ç‡•å­é›™é£›åˆ€æ³•ã€‚\n");
 
         me->receive_damage("qi", 64);
         addn("neili", -84, me);

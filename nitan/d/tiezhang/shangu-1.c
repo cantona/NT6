@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ɽ��");
+        set("short", "山谷");
         set("long", @LONG
-������һ����խ��ɽ��֮�У�����ɽ�������ֱ������������Գ��֮��
-�ص��ڼž��Ŀչ�֮�С�
+你走在一條狹窄的山谷之中，兩旁山峰壁立，直插雲霄。鳥鳴猿啼之聲
+回盪在寂靜的空谷之中。
 LONG    );
         set("exits", ([
                 "northeast" : __DIR__"shangu-2",

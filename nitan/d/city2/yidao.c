@@ -3,11 +3,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "³ÇÍâæäµÀ");
+        set("short", "åŸå¤–é©›é“");
         set("long", @LONG
-ÕâÀïÊÇÍ¨ÍùÏåÑôÊØ¾ü¾üÓªµÄæäµÀ£¬ÓÉÓÚÁ¬ÄêÀ´Õ½»ğ²»Ö¹£¬ÏÔµÃ¸ñ
-ÍâµØ»ÄÁ¹£¬²»Ê±ÓĞÀ´ÍùµÄÂíÆ¥·É±¼¶ø¹ı£¬½¦ÆğÒ»ÍÁ³¾ÑÌ£¬ÑØÍ¾²»Ê±ÓĞ
-ÍÁ·Ë´óµÁ³öÏÖ£¬»¹ÊÇÉÙ×÷Í£ÁôµÄºÃ¡£
+é€™è£¡æ˜¯é€šå¾€è¥„é™½å®ˆè»è»ç‡Ÿçš„é©›é“ï¼Œç”±äºé€£å¹´ä¾†æˆ°ç«ä¸æ­¢ï¼Œé¡¯å¾—æ ¼
+å¤–åœ°è’æ¶¼ï¼Œä¸æ™‚æœ‰ä¾†å¾€çš„é¦¬åŒ¹é£›å¥”è€Œéï¼Œæ¿ºèµ·ä¸€åœŸå¡µç…™ï¼Œæ²¿é€”ä¸æ™‚æœ‰
+åœŸåŒªå¤§ç›œå‡ºç¾ï¼Œé‚„æ˜¯å°‘ä½œåœç•™çš„å¥½ã€‚
 LONG );
         set("outdoors", "xiangyang");
         set("no_magic",1);
@@ -35,7 +35,7 @@ void init()
         {
          me->move("/d/xiangyang/eastgate2");
          delete_temp("yidao", me);
-         tell_object(me,YEL"Ò»Â··ç³¾ÆÍÆÍÖ®ºó£¬ÏåÑôÒÑ¾­½üÔÚÑÛÇ°ÁË......\n"NOR);
+         tell_object(me,YEL"ä¸€è·¯é¢¨å¡µåƒ•åƒ•ä¹‹å¾Œï¼Œè¥„é™½å·²ç¶“è¿‘åœ¨çœ¼å‰äº†......\n"NOR);
          return;
         } 
 
@@ -43,11 +43,11 @@ void init()
         {
          me->move(__DIR__"syuanmen2");
          delete_temp("yidao", me);
-         tell_object(me,YEL"Ò»Â··ç³¾ÆÍÆÍÖ®ºó£¬´óËÎ¾üÓªÒÑ¾­½üÔÚÑÛÇ°ÁË......\n"NOR); 
+         tell_object(me,YEL"ä¸€è·¯é¢¨å¡µåƒ•åƒ•ä¹‹å¾Œï¼Œå¤§å®‹è»ç‡Ÿå·²ç¶“è¿‘åœ¨çœ¼å‰äº†......\n"NOR); 
          return;
         }
 
-        tell_object(me,YEL"Äã¿ìÂí¼Ó±Ş£¬Ò»Â··É³ÛÔÚæäµÀÉÏ......\n"NOR);
+        tell_object(me,YEL"ä½ å¿«é¦¬åŠ é­ï¼Œä¸€è·¯é£›é¦³åœ¨é©›é“ä¸Š......\n"NOR);
 
 }
 
@@ -69,7 +69,7 @@ int valid_leave(object me,string dir)
         }
 
         if(flag)
-        return notify_fail("½­Ñô´óµÁµ²×¡ÁËÄãµÄÈ¥Â·¡£\n");
+        return notify_fail("æ±Ÿé™½å¤§ç›œæ“‹ä½äº†ä½ çš„å»è·¯ã€‚\n");
         else
         if( query_temp("warquest/purchase", me) && n < 20 && random(12)>10 )
         {
@@ -79,7 +79,7 @@ int valid_leave(object me,string dir)
                 dadao->move(environment(me));
                 dadao->kill_ob(me);
                 me->kill_ob(dadao);
-        return notify_fail("ºöÈ»´ÓÂ·±ß´ÔÁÖÖĞÉ±³öÒ»Â·ÈËÂí£¡\n");
+        return notify_fail("å¿½ç„¶å¾è·¯é‚Šå¢æ—ä¸­æ®ºå‡ºä¸€è·¯äººé¦¬ï¼\n");
         }
 
        if( dir == "east" )

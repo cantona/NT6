@@ -7,7 +7,7 @@ int update_condition(object me, int duration)
 {
         if (duration < 1)
         {
-                tell_object(me, HIY"你巡城时间已过，如果四处查看完毕，可以回去覆命（xuncheng ok)了！\n" NOR);
+                tell_object(me, HIY"浣犲贰鍩庢檪闁撳凡閬庯紝濡傛灉鍥涜檿鏌ョ湅瀹岀暍锛屽彲浠ュ洖鍘昏鍛斤紙xuncheng ok)浜嗭紒\n" NOR);
                 return 0;
         }
         if (!duration) return 0;

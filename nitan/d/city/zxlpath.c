@@ -5,12 +5,12 @@ inherit ROOM;
 #include <ansi.h>
 void create()
 {
-	set("short", "×íÏÉÂ¥´óÌÃ");
+	set("short", "é†‰ä»™æ¨“å¤§å ‚");
         set("long", @LONG
-ÕâÊÇ×íÏÉÂ¥´óÌÃ£¬À´À´ÍùÍùµÄ¿ÍÈËºÍÅÜÌÃÐ¡¶þ£¬¼ÐÔÓ×ÅÈý¸öÑç»á
-Ìü´Ì¶úµÄºô½ÐÉù£¬Åö±­Éù£¬´òÄÖÉù£¬Àµ¾ÆÉù£¬ÈÈÄÖ·Ç·²¡£ÄãÔÚÈý¸öÑç
-»áÌüÇ°´òÁ¿×Å½øÄÄ¸ö´Õ¸öÈÈÄÖ£¬²äµã°×Ê³¡£    ¶«±ßÊÇÃµ¹åÌü£¬³¯ÄÏ
-µÄÊÇÄµµ¤Ìü£¬Ïò±±ÊÇÜ½ÈØÌü¡£
+é€™æ˜¯é†‰ä»™æ¨“å¤§å ‚ï¼Œä¾†ä¾†å¾€å¾€çš„å®¢äººå’Œè·‘å ‚å°äºŒï¼Œå¤¾é›œè‘—ä¸‰å€‹å®´æœƒ
+å»³åˆºè€³çš„å‘¼å«è²ï¼Œç¢°æ¯è²ï¼Œæ‰“é¬§è²ï¼Œè³´é…’è²ï¼Œç†±é¬§éžå‡¡ã€‚ä½ åœ¨ä¸‰å€‹å®´
+æœƒå»³å‰æ‰“é‡è‘—é€²å“ªå€‹æ¹Šå€‹ç†±é¬§ï¼Œè¹­é»žç™½é£Ÿã€‚    æ±é‚Šæ˜¯çŽ«ç‘°å»³ï¼Œæœå—
+çš„æ˜¯ç‰¡ä¸¹å»³ï¼Œå‘åŒ—æ˜¯èŠ™è“‰å»³ã€‚
 LONG );
 	set("exits", ([
 		"east"   : "/d/city/meigui",

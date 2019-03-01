@@ -1,5 +1,5 @@
 // This program is a part of NT mudlib
-// boss Ä£°å
+// boss æ¨¡æ¿
 
 #include <ansi.h>
 
@@ -9,12 +9,12 @@ int big_blowing();
 
 void create()
 {
-        set_name(HIY "»Æ½ğ¾ŞÁú" NOR, ({ "golden dragon king", "dragon king", "dragon" }) );
-        set("race", "Ò°ÊŞ");
-        set("gender", "ĞÛĞÔ");
+        set_name(HIY "é»ƒé‡‘å·¨é¾" NOR, ({ "golden dragon king", "dragon king", "dragon" }) );
+        set("race", "é‡ç¸");
+        set("gender", "é›„æ€§");
         set("age", 200);
         set("long",
-HIY"ÕâÊÇÒ»ÌõÈ«Éí½ğ»Æ£¬ÔÚ»ÆÉ³ÖĞ³¤´óµÄÉñÁú£¡ËüÈ«ÉíÉ¢·¢×Å½ğ»ÆÉ«µÄ¹âÃ¢£¡\n\n"NOR);
+HIY"é€™æ˜¯ä¸€æ¢å…¨èº«é‡‘é»ƒï¼Œåœ¨é»ƒæ²™ä¸­é•·å¤§çš„ç¥é¾ï¼å®ƒå…¨èº«æ•£ç™¼è‘—é‡‘é»ƒè‰²çš„å…‰èŠ’ï¼\n\n"NOR);
 
         set("dex",100);
         set("con",100);
@@ -33,8 +33,8 @@ HIY"ÕâÊÇÒ»ÌõÈ«Éí½ğ»Æ£¬ÔÚ»ÆÉ³ÖĞ³¤´óµÄÉñÁú£¡ËüÈ«ÉíÉ¢·¢×Å½ğ»ÆÉ«µÄ¹âÃ¢£¡\n\n"NOR);
 
         set("chat_chance", 5);
         set("chat_msg", ({
-                HIB "Í»È»Ò»Õó»ÆÉ³¾íÀ´£¡²îµã°ÑÄã¾í×ß£¡\n" NOR,
-                HIB "»Æ½ğ¾ŞÁúÍ»È»ÍÂ³öÒ»¿Å½ğ»ÆµÄÖé×Ó£¬ÓÖ¾íÁË»ØÈ¥£¡\n" NOR,
+                HIB "çªç„¶ä¸€é™£é»ƒæ²™å·ä¾†ï¼å·®é»æŠŠä½ å·èµ°ï¼\n" NOR,
+                HIB "é»ƒé‡‘å·¨é¾çªç„¶åå‡ºä¸€é¡†é‡‘é»ƒçš„ç å­ï¼Œåˆå·äº†å›å»ï¼\n" NOR,
         }));
 
         set("chat_chance_combat", 120);
@@ -50,7 +50,7 @@ HIY"ÕâÊÇÒ»ÌõÈ«Éí½ğ»Æ£¬ÔÚ»ÆÉ³ÖĞ³¤´óµÄÉñÁú£¡ËüÈ«ÉíÉ¢·¢×Å½ğ»ÆÉ«µÄ¹âÃ¢£¡\n\n"NOR);
         set_temp("apply/reduce_busy", 20);
         set_temp("apply/add_busy", 5);
 
-        // ÎïÆ·½±Àø
+        // ç‰©å“çå‹µ
         set("rewards", ([
                 "exp"   : 50000,
                 "pot"   : 20000,
@@ -61,8 +61,8 @@ HIY"ÕâÊÇÒ»ÌõÈ«Éí½ğ»Æ£¬ÔÚ»ÆÉ³ÖĞ³¤´óµÄÉñÁú£¡ËüÈ«ÉíÉ¢·¢×Å½ğ»ÆÉ«µÄ¹âÃ¢£¡\n\n"NOR);
         ]));
 
         set("drops", ([
-                "RA&RANDOM30"    :       100,  // µÍ¼¶ÆÕÍ¨×°±¸
-                "RA&RANDOM40"    :       30,   // ÖĞ¼¶ÆÕÍ¨×°±¸
+                "RA&RANDOM30"    :       100,  // ä½ç´šæ™®é€šè£å‚™
+                "RA&RANDOM40"    :       30,   // ä¸­ç´šæ™®é€šè£å‚™
                 "FI&/clone/fam/skpaper/whip1"   :   50,
                 "FI&/clone/fam/skpaper/club1"   :   50,
                 "FI&/clone/fam/skpaper/hammer1"   :   50,
@@ -90,8 +90,8 @@ void init()
 
 int big_blowing()
 {
-        message_vision(HIB "$N" HIB "´Ó»ÆÉ³ÀïÉîÉîµØÎüÈëÒ»¿ÚÆø£¬È«Éí·¢³öÒ«ÑÛµÄ½ğÉ«£¬"
-                       "Õû¸öÁú¸¹ÕÍ´óÁË¼¸±¶£¡£¡\n" NOR, this_object());
+        message_vision(HIB "$N" HIB "å¾é»ƒæ²™è£¡æ·±æ·±åœ°å¸å…¥ä¸€å£æ°£ï¼Œå…¨èº«ç™¼å‡ºè€€çœ¼çš„é‡‘è‰²ï¼Œ"
+                       "æ•´å€‹é¾è…¹è„¹å¤§äº†å¹¾å€ï¼ï¼\n" NOR, this_object());
 
         remove_call_out("hurting");
         call_out("hurting", random(2) + 1);
@@ -103,7 +103,7 @@ int hurting()
         int dam, i , num;
         object *inv;
 
-        message_vision(HIB "$N" HIB "Åç³öÒ»ÍÅ¾Ş´óµÄ»ÆÉ³£®£®£®£®£®£®Õû¸öÌìµØ¶¼±»»ÆÉ³ÍÌÃ»£¡£¡£¡\n" NOR,
+        message_vision(HIB "$N" HIB "å™´å‡ºä¸€åœ˜å·¨å¤§çš„é»ƒæ²™ï¼ï¼ï¼ï¼ï¼ï¼æ•´å€‹å¤©åœ°éƒ½è¢«é»ƒæ²™åæ²’ï¼ï¼ï¼\n" NOR,
                        this_object());
 
         inv = all_inventory(environment(this_object()));
@@ -138,8 +138,8 @@ mixed hit_ob(object me, object ob, int damage_bouns)
         if (damage < 0) damage = 0;
         ob->receive_wound("qi", damage, me);
         set("neili", query("max_neili", me), me);
-        return HIB "$N" HIB "¡°ºğ¡±µÄÒ»ÉùÍÂ³öÒ»Æ¬»ÆÉ³£¬µÇÊ±Áî$n"
-               HIB "ÓÌÈçÇ§Õë¼ÓÉí¡£\n" NOR;
+        return HIB "$N" HIB "â€œå¼â€çš„ä¸€è²åå‡ºä¸€ç‰‡é»ƒæ²™ï¼Œç™»æ™‚ä»¤$n"
+               HIB "çŒ¶å¦‚åƒé‡åŠ èº«ã€‚\n" NOR;
 }
 
 varargs void start_busy(mixed new_busy, mixed new_interrupt)

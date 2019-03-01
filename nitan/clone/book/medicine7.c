@@ -12,7 +12,7 @@ string* skills = ({
 void create()
 {
        // int i = random(sizeof(skills));
-        set_name(HIC"ÍõÄÑ¹Ã¶¾¾­"NOR, ({ "wangnangu dujing", "dujing", "jing"}));
+        set_name(HIC"ç‹é›£å§‘æ¯’ç¶“"NOR, ({ "wangnangu dujing", "dujing", "jing"}));
         set_weight(10);
         set("skill",([
               "name":         skills[random(sizeof(skills))]
@@ -20,8 +20,8 @@ void create()
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
-                set("long","ÕâÊÇµû¹È¶¾ÏÉÍõÄÑ¹ÃÒ»ÉúĞÄÑª»ã¼¯³ÉµÄÊ¹¶¾¾­Êé¡£\n");
+                set("unit", "æœ¬");
+                set("long","é€™æ˜¯è¶è°·æ¯’ä»™ç‹é›£å§‘ä¸€ç”Ÿå¿ƒè¡€åŒ¯é›†æˆçš„ä½¿æ¯’ç¶“æ›¸ã€‚\n");
                 set("value", 1500);
                 set("material", "paper");
                 set("skill", ([

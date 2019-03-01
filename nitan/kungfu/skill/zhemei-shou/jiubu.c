@@ -1,12 +1,12 @@
 // This program is a part of NITAN MudLIB
-// jiubu.c æ≈≤ø Ω
+// jiubu.c ‰πùÈÉ®Âºè
 
 #include <ansi.h>
 #include <combat.h>
 
 inherit F_SSERVER;
 
-string name() { return "æ≈≤ø Ω"; }
+string name() { return "‰πùÈÉ®Âºè"; }
 
 int perform(object me, object target)
 {
@@ -21,22 +21,22 @@ int perform(object me, object target)
                 target = me->select_opponent();
         }
         if (! target || ! me->is_fighting(target))
-                return notify_fail("°∏æ≈≤ø Ω°π÷ªƒ‹∂‘’Ω∂∑÷–µƒ∂‘ ÷ π”√°£\n");
+                return notify_fail("„Äå‰πùÈÉ®Âºè„ÄçÂè™ËÉΩÂ∞çÊà∞È¨•‰∏≠ÁöÑÂ∞çÊâã‰ΩøÁî®„ÄÇ\n");
 
         if ((int)me->query_skill("zhemei-shou", 1) < 120)
-                return notify_fail("ƒ„µƒ’€√∑ ÷∑®≤ªπªÊµ Ï£¨≤ªª· π”√°∏æ≈≤ø Ω°π°£\n");
+                return notify_fail("‰Ω†ÁöÑÊäòÊ¢ÖÊâãÊ≥ï‰∏çÂ§†Â´ªÁÜüÔºå‰∏çÊúÉ‰ΩøÁî®„Äå‰πùÈÉ®Âºè„Äç„ÄÇ\n");
 
         if ((int)me->query_skill("force") < 200)
-                return notify_fail("ƒ„µƒƒ⁄π¶–ﬁŒ™≤ªπª∏ﬂ£¨ƒ—“‘‘À”√°∏æ≈≤ø Ω°π°£\n");
+                return notify_fail("‰Ω†ÁöÑÂÖßÂäü‰øÆÁÇ∫‰∏çÂ§†È´òÔºåÈõ£‰ª•ÈÅãÁî®„Äå‰πùÈÉ®Âºè„Äç„ÄÇ\n");
 
         if( query("neili", me)<100 )
-                return notify_fail("ƒ„œ÷‘⁄’Ê∆¯≤ªπª£¨≤ªƒ‹ π”√°∏æ≈≤ø Ω°π°£\n");
+                return notify_fail("‰Ω†ÁèæÂú®ÁúüÊ∞£‰∏çÂ§†Ôºå‰∏çËÉΩ‰ΩøÁî®„Äå‰πùÈÉ®Âºè„Äç„ÄÇ\n");
 
         if (me->query_skill_mapped("hand") != "zhemei-shou")
-                return notify_fail("ƒ„√ª”–º§∑¢ÃÏ…Ω’€√∑ ÷£¨≤ªƒ‹ π”√°∏æ≈≤ø Ω°π°£\n");
+                return notify_fail("‰Ω†Ê≤íÊúâÊøÄÁôºÂ§©Â±±ÊäòÊ¢ÖÊâãÔºå‰∏çËÉΩ‰ΩøÁî®„Äå‰πùÈÉ®Âºè„Äç„ÄÇ\n");
 
-        msg = HIC "$N" HIC "À´ ÷–È–È µ µµƒ◊•œÚ$n"
-              HIC "µƒ“™∫¶£¨…Ì∑®ÁŒÁø£¨ ÷ Ω∆ÊÃÿ£¨¡Ó»Àƒ—“‘◊Ω√˛°£\n" NOR;
+        msg = HIC "$N" HIC "ÈõôÊâãËôõËôõÂØ¶ÂØ¶ÁöÑÊäìÂêë$n"
+              HIC "ÁöÑË¶ÅÂÆ≥ÔºåË∫´Ê≥ïÁ∏πÁ∑≤ÔºåÊâãÂºèÂ•áÁâπÔºå‰ª§‰∫∫Èõ£‰ª•ÊçâÊë∏„ÄÇ\n" NOR;
 
         ap=attack_power(me,"hand")+me->query_str()*20;
         dp=defense_power(target,"dodge")+target->query_dex()*20;
@@ -48,13 +48,13 @@ int perform(object me, object target)
                 addn("neili", -100, me);
 
                 msg += COMBAT_D->do_damage(me, target, UNARMED_ATTACK, damage, 60,
-                                           HIR "$p" HIR "“ª∏ˆ…¡±‹≤ªº∞£¨Ω·π˚±ª$P"
-                                           HIR "◊•¡À∏ˆ’˝÷–£¨ªÎ…Ìƒ⁄œ¢≤ª”…µ√“ª÷Õ£¨∆¯—™∑≠”ø°£\n" NOR);
+                                           HIR "$p" HIR "‰∏ÄÂÄãÈñÉÈÅø‰∏çÂèäÔºåÁµêÊûúË¢´$P"
+                                           HIR "Êäì‰∫ÜÂÄãÊ≠£‰∏≠ÔºåÊ∏æË∫´ÂÖßÊÅØ‰∏çÁî±Âæó‰∏ÄÊªØÔºåÊ∞£Ë°ÄÁøªÊπß„ÄÇ\n" NOR);
                 me->start_busy(2);
         } else
         {
-                msg += HIC "ø… «$p" HIC "…Ì ÷√ÙΩ›£¨«…√Óµƒ∂„π˝¡À$P"
-                       HIC "µƒπ•ª˜£°\n"NOR;
+                msg += HIC "ÂèØÊòØ$p" HIC "Ë∫´ÊâãÊïèÊç∑ÔºåÂ∑ßÂ¶ôÁöÑË∫≤ÈÅé‰∫Ü$P"
+                       HIC "ÁöÑÊîªÊìäÔºÅ\n"NOR;
                 addn("neili", -50, me);
                 me->start_busy(3);
         }

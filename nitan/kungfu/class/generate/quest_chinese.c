@@ -1,4 +1,4 @@
-// chan_cler �й���ս��
+// chan_cler 中國挑戰者
 
 inherit NPC;
 
@@ -16,9 +16,9 @@ function *init_family = ({ (: from_wudang :), (: from_shaolin :), (: from_huasha
 
 void create()
 {
-        set_name("�й���", ({ "chinese" }));
-        set("long", "һ���ˡ�\n");
-        set("gender", "����");
+        set_name("中國人", ({ "chinese" }));
+        set("long", "一個人。\n");
+        set("gender", "男性");
         set("age", 20);
         set("str", 20);
         set("int", 20);
@@ -53,9 +53,9 @@ private void from_wudang()
 {
         set("scale", 200);
         set("from", ({
-                "��˵���˳����䵱�����䵱�ɵĸ��֣�Ȼ�����䲻�޵£���ϧ����ϧ��",
-                "���Ŵ��˱����䵱ɽ��һũ�򣬶���ĿȾ����Ȼ���ͳɷǷ��书��",
-                "��˵�������䵱��ͽ�����그��ɱ���������󣬲�����շ�����ԭ��",
+                "據說此人出自武當，是武當派的高手，然而修武不修德，可惜啊可惜。",
+                "聽聞此人本是武當山下一農夫，耳瀆目染，居然練就成非凡武功。",
+                "據說此人乃武當棄徒，當年犯了殺戒逃至東洋，不想今日返回中原！",
         }));
 
         set_skill("taiji-shengong", 1);
@@ -94,12 +94,12 @@ private void from_shaolin()
 {
         set("scale", 150);
         set("from", ({
-                "��˵���˳������֣������ֵ��׼Ҹ��֣���ȴû�а��ȱ�֮�ģ�����",
-                "���Ŵ���͵ʦ�����֣�������һ���������׵ı��졣",
-                "��˵���������ֵĻ�ͷ�ӣ�͵ѧ���պ󱻷��֣���Ȼ����"
-                + "��ĦԺ���ϳ��������벻�����շ�����ԭ��",
-                "��˵���˵��그�����ֵĽ��ɣ��������£��벻�����Ӷ���"
-                + "�Ժ��Ȼ�س�������"
+                "據說此人出自少林，是少林的俗家高手，可卻沒有半點慈悲之心，唉！",
+                "聽聞此人偷師于少林，練就了一身超凡脫俗的本領。",
+                "據說此人乃少林的火工頭陀，偷學武藝後被發現，竟然打死"
+                + "達摩院長老出逃西域，想不到今日返回中原！",
+                "據說此人當年犯了少林的戒律，被迫離寺，想不到隱居多年"
+                + "以後居然重出江湖。"
         }));
 
         set_skill("hunyuan-yiqi", 1);
@@ -139,10 +139,10 @@ private void from_huashan()
 {
         set("scale", 130);
         set("from", ({
-                "��˵���˳��Ի�ɽ���޶����������м���Ȼ�������벻�������ֳ�ͷ��",
-                "���Ŵ��˱��ǻ�ɽ���ϣ�����֮��ԶͶ��أ���֪�ιʷ�����ԭ��",
-                "��˵���˱��Ǳ����Ե׵���ɽȥ�ģ�͵ѧ�����Ժ�û�ر���"
-                + "�����ٵؿ��ޣ��������ڵó�������",
+                "據說此人出自華山，無惡不作，後來行跡忽然不見，想不到今日又出頭。",
+                "聽聞此人本是華山長老，因劍氣之爭遠投異地，不知何故返回中原！",
+                "據說此人本是別派臥底到華山去的，偷學本領以後沒回本派"
+                + "反而覓地苦修，今日終于得出江湖。",
         }));
 
         set_skill("zixia-shengong", 1);
@@ -183,10 +183,10 @@ private void from_ouyang()
 {
         set("scale", 130);
         set("from", ({
-                "��˵����ԭ�ǵ���������ʦŷ������ֳ�����֪�ι�ʧ�٣���"
-                + "�վ�Ȼ�ֳ����ˡ�",
-                "���Ŵ���͵ѧ���������ɽׯŷ�����ҵ��书��������ŷ��"
-                + "�淢�ִ�����ˣ����˴��˶��ߣ���Ȼ����գ�����˼�飡",
+                "據說此人原是當今武林宗師歐陽鋒的兄長，不知何故失蹤，今"
+                + "日居然又出現了。",
+                "聽聞此人偷學了西域白駝山莊歐陽世家的武功，後來被歐陽"
+                + "鋒發現打成重傷，此人帶傷而走，竟然活到今日，不可思議！",
         }));
 
         set_skill("hamagong", 1);
@@ -225,8 +225,8 @@ private void from_gaibang()
 {
         set("scale", 130);
         set("from", ({
-                "��˵����ԭ��ؤ�ﳤ�ϣ��书�߾���������������Ů�Ӷ���"
-                + "������⣬�������ֽ�����������Ѫ���ȷ硣"
+                "據說此人原是丐幫長老，武功高絕，後因欺辱良家女子而被"
+                + "逐出幫外，今日重現江湖比如又起血雨腥風。"
         }));
 
         set_skill("huntian-qigong", 1);
@@ -258,14 +258,14 @@ private void from_gaibang()
 
 int accept_fight(object ob)
 {
-        command("say �ܺã����ҾͲ������ˡ�");
+        command("say 很好！那我就不客氣了。");
         kill_ob(ob);
         return 1;
 }
 
 int accept_hit(object ob)
 {
-        command("say �ߣ�ʲô�ˣ�");
+        command("say 哼！什麼人？");
         kill_ob(ob);
         return 1;
 }
@@ -282,6 +282,6 @@ void random_move()
 
 void destruct_me()
 {
-        message_vision("$N����ææ�����ˡ�\n", this_object());
+        message_vision("$N急急忙忙的走了。\n", this_object());
         destruct(this_object());
 }

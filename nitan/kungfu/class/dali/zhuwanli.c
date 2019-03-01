@@ -1,4 +1,4 @@
-// zhuwanli.c ñÒÍòÀï
+// zhuwanli.c è¤šè¬è£¡
 
 #include <ansi.h>
 inherit NPC;
@@ -10,10 +10,10 @@ int ask_me();
 int ask_for_toushen();
 void create()
 {
-        set_name("ñÒÍòÀï", ({ "zhu wanli", "zhu" }));
-        set("title",  "´óÀí¹ú»¤ÎÀ" );
-        set("long", "ËûÊÇ´óÀí¹úËÄ´ó»¤ÎÀÖ®Ò»¡£Éí´©»ÆÒÂ£¬Á³ÉÏÓ¢Æø±ÆÈË¡£ÊÖ³ÖÒ»¸ùÌú¸Ë¡£\n");
-        set("gender", "ÄĞĞÔ");
+        set_name("è¤šè¬è£¡", ({ "zhu wanli", "zhu" }));
+        set("title",  "å¤§ç†åœ‹è­·è¡›" );
+        set("long", "ä»–æ˜¯å¤§ç†åœ‹å››å¤§è­·è¡›ä¹‹ä¸€ã€‚èº«ç©¿é»ƒè¡£ï¼Œè‡‰ä¸Šè‹±æ°£é€¼äººã€‚æ‰‹æŒä¸€æ ¹éµæ¡¿ã€‚\n");
+        set("gender", "ç”·æ€§");
         set("age", 33);
         set("class", "officer");
         set("attitude", "friendly");
@@ -34,9 +34,9 @@ void create()
         set("score", 100000);
 
         set("inquiry",([
-                "Í¶Éí"    : (: ask_for_toushen :),
+                "æŠ•èº«"    : (: ask_for_toushen :),
                 "toushen" : (: ask_for_toushen :),
-                "Ö¸µãÎä¹¦" : (: ask_me :),
+                "æŒ‡é»æ­¦åŠŸ" : (: ask_me :),
         ]));
 
         set_skill("force", 50);
@@ -71,7 +71,7 @@ void create()
         carry_object(__DIR__"obj/diaogan")->wield();
         add_money("silver", 10);
 
-        create_family("´óÀí¶Î¼Ò",19,"»¤ÎÀ");
+        create_family("å¤§ç†æ®µå®¶",19,"è­·è¡›");
 }
 int ask_for_toushen()
 {
@@ -81,24 +81,24 @@ int ask_for_toushen()
 
         if( query("class", me) == "eunach" )
         {
-                command("say ¹«¹«£¿ÎÒÃÇ¸®Àï²»ÊÕ¹«¹«¡£\n");
+                command("say å…¬å…¬ï¼Ÿæˆ‘å€‘åºœè£¡ä¸æ”¶å…¬å…¬ã€‚\n");
                 return 1;
         }
         if( query("class", me) == "bonze" )
         {
-                say( "ñÒÍòÀïËµµÀ£ºÕâÎ»" + RANK_D->query_respect(me)
-                        + "£¬³ö¼ÒÈËÄÄ»¹ÄÜÔÙÓĞ¼Ò£¿\n");
+                say( "è¤šè¬è£¡èªªé“ï¼šé€™ä½" + RANK_D->query_respect(me)
+                        + "ï¼Œå‡ºå®¶äººå“ªé‚„èƒ½å†æœ‰å®¶ï¼Ÿ\n");
                 return 1;
         }
         if( (int)me->query_str() < 20)
         {
-                say( "ñÒÍòÀïËµµÀ£ºÕâÎ»" + RANK_D->query_respect(me)
-                        + "ÕâÃ´ÎÄÈõ£¬ÔõÃ´ÄÜÔÚ¸®Àï³ĞÖµ£¿\n");
+                say( "è¤šè¬è£¡èªªé“ï¼šé€™ä½" + RANK_D->query_respect(me)
+                        + "é€™éº¼æ–‡å¼±ï¼Œæ€éº¼èƒ½åœ¨åºœè£¡æ‰¿å€¼ï¼Ÿ\n");
                 return 1;
         }
-        say( "ñÒÍòÀïËµµÀ£ºÕâÎ»" + RANK_D->query_respect(me)
-                + "¾ÍÎ¯ÇüÄãÏÈÔÚ¸®ÀïÌıÓÃ°É¡£\n");
-        set("guard", "ÕòÄÏÍõ¸®¼ÒÅ«", me);
+        say( "è¤šè¬è£¡èªªé“ï¼šé€™ä½" + RANK_D->query_respect(me)
+                + "å°±å§”å±ˆä½ å…ˆåœ¨åºœè£¡è½ç”¨å§ã€‚\n");
+        set("guard", "é®å—ç‹åºœå®¶å¥´", me);
         return 1;
 }
 #include "/kungfu/class/dali/weishi.h"; 

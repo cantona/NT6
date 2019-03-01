@@ -3,11 +3,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��̶");
+        set("short", "深潭");
         set("long", @LONG
-���ܺ����ɣ�ʲô�������塣̶ˮ���Ŷ����ż�����ᴥ��һ��
-����֪�������޵Ŀݹǣ�����ȫ��ֱ��Ƥ������Ư����ˮ�У���
-���������鼱֮��Ψ���Ĵ�������
+四周黑蒙蒙，什麼都看不清。潭水發著惡臭，偶爾還會觸及一兩
+根不知是人是獸的枯骨，讓你全身直起雞皮疙瘩。你漂浮在水中，無
+助至極。情急之下唯有四處張望。
 LONG );
         set("no_sleep_room",1);
         set("objects", ([
@@ -26,8 +26,8 @@ int do_wang()
 {
             object ob = this_player();
 
-            message_vision(HIC "\n$N" HIC "��Ŀ���������ֻ����г�·�ģ���"
-                       "��������֮̽�Ĵ󶯡�\n"NOR, ob);
+            message_vision(HIC "\n$N" HIC "極目四望，發現還是有出路的，于"
+                       "是求生試探之心大動。\n"NOR, ob);
 
             switch (random(4))
             {

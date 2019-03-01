@@ -6,14 +6,14 @@ inherit THROWING;
  
 void create()
 {
-        set_name("·Éµ¶", ({ "fei dao", "feidao" }) );
+        set_name("é£›åˆ€", ({ "fei dao", "feidao" }) );
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", "ÌØÖÆµÄ·Éµ¶£¬Ã¿Ö»¶¼Ä¥µÃÊ®·Ö·æÈñ¡£\n");
-                set("unit", "°Ñ");
+                set("long", "ç‰¹åˆ¶çš„é£›åˆ€ï¼Œæ¯åªéƒ½ç£¨å¾—ååˆ†é‹’éŠ³ã€‚\n");
+                set("unit", "æŠŠ");
                 set("value", 0);
-                set("base_unit", "°Ñ");
+                set("base_unit", "æŠŠ");
                 set("base_weight", 1);
                 set("base_value", 0);
                 set("damage", 5);        //Here the damage=int_throwing, added by King

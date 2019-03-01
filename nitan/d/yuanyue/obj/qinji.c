@@ -2,7 +2,7 @@ inherit ITEM;
 
 void create()
 {
-    set_name("«Ÿº∏", ({ "qinji", "desk", "ji"}) );
+    set_name("Áê¥Âπæ", ({ "qinji", "desk", "ji"}) );
     set_weight(500);
     set_max_encumbrance(8);
     set("no_get", 1);
@@ -11,8 +11,8 @@ void create()
         set_default_object(__FILE__);
     else {
     set("prep", "on");
-        set("unit", "’≈");
-        set("long", "“ª’≈«Ÿº∏°£\n");
+        set("unit", "Âºµ");
+        set("long", "‰∏ÄÂºµÁê¥Âπæ„ÄÇ\n");
         set("value", 1);
     }
     setup();

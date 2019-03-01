@@ -2,10 +2,10 @@ inherit __DIR__"binghuodao";
 
 void create()
 {
-        set("short", "��ľ��");
+        set("short", "灌木叢");
         set("long",
-"Ũ�ܵĹ�ľ�ԣ�����ʱ�˵������ڴ˴����ƺ����ܵ���һЩ��\n"
-"��Ļ�����Ӱ�죬��ľ������Լ��ʲô��ֵ��춯��\n"
+"濃密的灌木叢，不合時宜的生長在此處，似乎是受到了一些特\n"
+"殊的環境所影響，灌木叢中隱約有什麼奇怪的響動。\n"
 );
         set("exits", ([ 
                 "west"    : __DIR__"shadi", 

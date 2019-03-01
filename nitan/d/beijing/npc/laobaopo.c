@@ -2,12 +2,12 @@ inherit NPC;
 
 void create()
 {
-        set_name("�����", ({ "laobao po", "laobao", "po" }) );
-        set("gender", "Ů��" );
-         set("title", "����Ժ�ϰ���");
+        set_name("老鴇婆", ({ "laobao po", "laobao", "po" }) );
+        set("gender", "女性" );
+         set("title", "怡紅院老板娘");
         set("age", 42);
         set("long", 
-            "\n�����������������ϣ����Է����ȴ棬ֻ�������ϵķ�̫���ˡ�\n");
+            "\n這老鴇婆雖是徐娘半老，但仍風韻尤存，只不過臉上的粉太厚了。\n");
         set("str", 25);
         set("dex", 25);
         set("con", 25);
@@ -42,28 +42,28 @@ void greeting(object me)
 {
     command("look"+query("id", me));
 
-    if( query("gender", me) == "����"){
-       command("say �㵱��������������������裬���������ɲػض��ӣ����ǲ��ź�̫�࣡");
+    if( query("gender", me) == "無性"){
+       command("say 你當老娘是爛婊子嗎？辣塊媽媽，老娘滿漢蒙藏回都接，就是不伺候太監！");
        command("kick"+query("id", me));
-       message("vision", me->name() +"�������һ���߳����⡣\n",
+       message("vision", me->name() +"被老鴇婆一腳踢出門外。\n",
                 environment(me), ({me}));
        me->move("/d/beijing/wang_8");
-       message("vision", me->name() +"���˴�����Ժ�����˳������Ե��ڵ��ϣ��ĵ�����������\n", 
+       message("vision", me->name() +"被人從怡紅院裡踢了出來，栽倒在地上，磕掉兩顆門牙。\n", 
                 environment(me), ({me}));
 
     }
     else {
     if( query("class", me) == "bonze"){
-       command("say �ϣ�" + RANK_D->query_respect(me) 
-                +"Ҳ�������������Ժ����");
-       command("say �뵱���ҽӹ�һ������������ϴ�ǰһ��Ҫ���һ����������Ӿ͹�����������ҡ�");
+       command("say 呦，" + RANK_D->query_respect(me) 
+                +"也來光顧我們怡紅院啊。");
+       command("say 想當年我接過一個西藏喇嘛，他上床前一定要念經，一面念經，眼珠子就骨溜溜的瞧著我。");
     }
-    if( query("gender", me) == "Ů��"){
-       command("say ��ѽ�������´����Ҳ��Ҥ�ӣ��ɺ���ͳ��");
+    if( query("gender", me) == "女性"){
+       command("say 哎呀，這年月大姑娘也逛窯子，成何體統。");
        command("sigh");
-       command("say ��ϧ�Ҷ��Ӳ��ڣ���Ȼ�����ź��㡣");
+       command("say 可惜我兒子不在，不然讓他伺候你。");
     }
-    command("say ¥��¥�µĹ����ǣ��������ˣ�");
+    command("say 樓上樓下的姑娘們，客人來了！");
     }
     return ;
 }

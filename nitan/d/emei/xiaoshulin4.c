@@ -3,10 +3,10 @@ inherit ROOM;
 
 void create()
 {
-              set("short","Ğ¡Ê÷ÁÖ");
+              set("short","å°æ¨¹æ—");
         set("long", @LONG
-ÕâÊÇ¶ëáÒÉ½½ğ¶¥»ª²ØâÖÍâµÄÒ»Æ¬Ğ¡Ê÷ÁÖ¡£±±±ßÊÇ¶ëáÒÅÉÅ®µÜ×ÓÃÇ
-µÄÇŞ¹¬µÄ´°»§£¬´°ÏÂºÃÏñ¶××ÅÒ»¸öÈË¡£
+é€™æ˜¯å³¨åµ‹å±±é‡‘é ‚è¯è—åºµå¤–çš„ä¸€ç‰‡å°æ¨¹æ—ã€‚åŒ—é‚Šæ˜¯å³¨åµ‹æ´¾å¥³å¼Ÿå­å€‘
+çš„å¯¢å®®çš„çª—æˆ¶ï¼Œçª—ä¸‹å¥½åƒè¹²è‘—ä¸€å€‹äººã€‚
 LONG );
               set("objects", ([
                    __DIR__"npc/songqingshu" : 1,
@@ -27,10 +27,10 @@ int valid_leave(object me, string dir)
 
         if (dir == "north")
         {
-                if( query("family/family_name", me) != "¶ëáÒÅÉ"
+                if( query("family/family_name", me) != "å³¨åµ‹æ´¾"
                 & objectp(present("song qingshu", environment(me))))
-                        return notify_fail(CYN "ËÎÇàÊéÒ»ÉùÀäºÈ£º¸óÏÂÊ²Ã´"
-                                           "ÈË£¬ÔÚÕâÀï¹íÍ·¹íÄÔµÄÏë¸ÉÊ²Ã´£¿\n" NOR);
+                        return notify_fail(CYN "å®‹é’æ›¸ä¸€è²å†·å–ï¼šé–£ä¸‹ä»€éº¼"
+                                           "äººï¼Œåœ¨é€™è£¡é¬¼é ­é¬¼è…¦çš„æƒ³å¹¹ä»€éº¼ï¼Ÿ\n" NOR);
         }
         return ::valid_leave(me, dir);
 }

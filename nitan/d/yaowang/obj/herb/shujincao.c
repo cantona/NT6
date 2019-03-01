@@ -2,12 +2,12 @@
 
 void create()
 {
-        set_name(RED "Êæ½î²İ" NOR, ({ "shujin cao", "Cucubalus baccifer", "herb_sjcao" }));
+        set_name(RED "èˆ’ç­‹è‰" NOR, ({ "shujin cao", "Cucubalus baccifer", "herb_sjcao" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", HIW "Ê¯Öñ¿ÆÖ²Îï¹·½îÂû(Cucubalus baccifer)µÄÈ«²İ¡£ÒòÆä¾ßÊæ½î»îÂç¹¦Ğ§£¬¹ÊµÃ´ËÃû¡£\n" NOR);
-                set("base_unit", "Öê");
+                set("long", HIW "çŸ³ç«¹ç§‘æ¤ç‰©ç‹—ç­‹è”“(Cucubalus baccifer)çš„å…¨è‰ã€‚å› å…¶å…·èˆ’ç­‹æ´»çµ¡åŠŸæ•ˆï¼Œæ•…å¾—æ­¤åã€‚\n" NOR);
+                set("base_unit", "æ ª");
                 set("base_value", 50000);
                 set("base_weight", 100);
         }

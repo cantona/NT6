@@ -5,16 +5,16 @@ inherit NECK;
 
 void create()
 {
-        set_name(HIG "´äÓñÅÆ" NOR, ({ "yupai" }));
-        set("long", "\nÕâÊÇÒ»¿é´äÂÌÉ«µÄÓñÅÆ£¬¾§Ó¨¹â½à£¬ÍêÃÀÎŞè¦£¬ºÃÒ»¿é¾øÊÀºÃÓñ¡£\n"+
-         "ÓñÉí³ÉÍÖÔ²×´£¬ÕıÖĞÓĞ"+HIR"º£¿İÊ¯ÀÃ"NOR+"ËÄ¸ö×­ÌåĞ¡×Ö¡£\n");
+        set_name(HIG "ç¿ ç‰ç‰Œ" NOR, ({ "yupai" }));
+        set("long", "\né€™æ˜¯ä¸€å¡Šç¿ ç¶ è‰²çš„ç‰ç‰Œï¼Œæ™¶ç‘©å…‰æ½”ï¼Œå®Œç¾ç„¡ç‘•ï¼Œå¥½ä¸€å¡Šçµ•ä¸–å¥½ç‰ã€‚\n"+
+         "ç‰èº«æˆæ©¢åœ“ç‹€ï¼Œæ­£ä¸­æœ‰"+HIR"æµ·æ¯çŸ³çˆ›"NOR+"å››å€‹ç¯†é«”å°å­—ã€‚\n");
         set("weight", 300);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿é");
+                set("unit", "å¡Š");
                 set("value", 50000);
-                set("material", "Óñ");
+                set("material", "ç‰");
                 set("armor_prop/armor", 2);
                 set("female_only", 1);
         }

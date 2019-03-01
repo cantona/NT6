@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��ľ��Ӫ��");
+        set("short", "鐵木真營帳");
         set("long", @LONG
-�ɹ���������Ϊ�����������ڶ�Ǩ���㣬׷��ˮ�ݣ����޶��ӣ���
-ëձ���������Աη�ѩ���ͽ����ɹŰ�������Ȼ����ľ���ס����ȴ
-��Ȼ�����޻���ֻ�Ǳ�Ѱ�����ô���������ֹ��
+蒙古人以遊牧為生，趕了牲口東遷西徙，追逐水草，並無定居，用
+毛氈搭搭成帳篷以蔽風雪，就叫做蒙古包。這雖然是鐵木真的住處，卻
+依然質樸無華，只是比尋常所用大了數倍不止。
 LONG);
         set("valid_startroom",1);
         set("objects", ([ /* sizeof() == 1 */

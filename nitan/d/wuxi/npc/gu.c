@@ -1,13 +1,13 @@
-// gu.c ¹ËÏÜ³É
+// gu.c é¡§æ†²æˆ
 
 inherit NPC;
 #include <ansi.h>
 
 void create()
 {
-        set_name("¹ËÏÜ³É", ({ "gu xiancheng", "gu" }));
-        set("gender", "ÄĞĞÔ");
-        set("long", "¹ËÏÜ³ÉÖØÓÚÑ§Ê¶£¬½²¾¿Æ·ĞĞ£¬ÊÜµ½¸÷µØÑ§ÕßÑöÄ½¡£\n");
+        set_name("é¡§æ†²æˆ", ({ "gu xiancheng", "gu" }));
+        set("gender", "ç”·æ€§");
+        set("long", "é¡§æ†²æˆé‡äºå­¸è­˜ï¼Œè¬›ç©¶å“è¡Œï¼Œå—åˆ°å„åœ°å­¸è€…ä»°æ…•ã€‚\n");
         set("age", 45);
         set("no_get", 1);
         set_skill("literate", 300);
@@ -22,8 +22,8 @@ void create()
         set("combat_exp", 400000);
         set("shen_type", 1);
         set("inquiry", ([
-                "Êé"   : "°¦£¡Êéµ½ÓÃÊ±·½ºŞÉÙ¡£",
-                "½èÊé" : "½è£¿Äã²»»¹ÎÒµ½ÄÄÀïÕÒÄã£¿ºß£¡",
+                "æ›¸"   : "å”‰ï¼æ›¸åˆ°ç”¨æ™‚æ–¹æ¨å°‘ã€‚",
+                "å€Ÿæ›¸" : "å€Ÿï¼Ÿä½ ä¸é‚„æˆ‘åˆ°å“ªè£¡æ‰¾ä½ ï¼Ÿå“¼ï¼",
         ]));
         setup();
 
@@ -31,24 +31,24 @@ void create()
 
 int recognize_apprentice(object ob)
 {
-        if( !query_temp("mark/¹Ë", ob) )
+        if( !query_temp("mark/é¡§", ob) )
                 return 0;
-        addn_temp("mark/¹Ë", -1, ob);
+        addn_temp("mark/é¡§", -1, ob);
         return 1;
 }
 
 int accept_object(object who, object ob)
 {
         object me = this_player();
-        if( !query_temp("mark/¹Ë", who) )
-                set_temp("mark/¹Ë", 0, who);
+        if( !query_temp("mark/é¡§", who) )
+                set_temp("mark/é¡§", 0, who);
         if( query("money_id", ob) && ob->value() >= 1000 )
         {
-                message_vision("¹ËÏÜ³ÉÍ¬ÒâÖ¸µã$NÒ»Ğ©¶ÁÊéĞ´×ÖµÄÎÊÌâ¡£\n", who);
-                addn_temp("mark/¹Ë", ob->value()/50, who);
+                message_vision("é¡§æ†²æˆåŒæ„æŒ‡é»$Nä¸€äº›è®€æ›¸å¯«å­—çš„å•é¡Œã€‚\n", who);
+                addn_temp("mark/é¡§", ob->value()/50, who);
                 if( me->query_skill("literate", 1) > 21)
                 {
-                        tell_object(me,"ÄãÏÖÔÚÒÑÓĞÒ»¶¨µÄÎÄ»¯ÖªÊ¶,Ò²¿ÉÒÔ×Ô¼º¶ÁÊéÉîÔìÁË¡£\n");
+                        tell_object(me,"ä½ ç¾åœ¨å·²æœ‰ä¸€å®šçš„æ–‡åŒ–çŸ¥è­˜,ä¹Ÿå¯ä»¥è‡ªå·±è®€æ›¸æ·±é€ äº†ã€‚\n");
                         return 1;
                 }
                 return 1;

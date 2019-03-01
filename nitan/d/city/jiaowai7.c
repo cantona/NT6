@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-    set("short", "�ݵ�");
+    set("short", "草地");
         set("long", @LONG
-�������ݽ����һƬ���ݵأ���Ӣ�ͷף������裬��¶Ϧ�⣬
-������Ƣ������̤��Զ���ʱ�⡣
+這是揚州郊外的一片芳草地，落英繽紛，蜂歌蝶舞，朝露夕光，
+沁人心脾。真是踏青遠足好時光。
 LONG );
     set("exits", ([
         "east" : "/d/city/jiaowai6",

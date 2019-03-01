@@ -1,4 +1,4 @@
-// qhcwan.c  Çà»¨´ÉÍë
+// qhcwan.c  é’èŠ±ç“·ç¢—
 
 #include <ansi.h>
 inherit ITEM;
@@ -7,14 +7,14 @@ inherit F_LIQUID;
 
 void create()
 {
-        set_name(HIW"È±¿ÚµÄ"HIC"Çà»¨´ÉÍë"NOR,({"qinghua ciwan","wan","ciwan"}));
+        set_name(HIW"ç¼ºå£çš„"HIC"é’èŠ±ç“·ç¢—"NOR,({"qinghua ciwan","wan","ciwan"}));
         set("taskobj", 1);
         set_weight(100);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»¸öÈ±ÁË¿ÚµÄ´Ö´ÉÍë¡£\n");
-                set("unit", "¸ö");
+                set("long", "ä¸€å€‹ç¼ºäº†å£çš„ç²—ç“·ç¢—ã€‚\n");
+                set("unit", "å€‹");
                 set("value", 0);
                 set("max_liquid", 15);
         }
@@ -22,7 +22,7 @@ void create()
         // we set it to contain wine at the beginning
         set("liquid", ([
                 "type": "alcohol",
-                "name": "ÇåË®",
+                "name": "æ¸…æ°´",
                 "remaining": 15,
                 "drunk_apply": 3,
 //                "slumber_effect": 100,

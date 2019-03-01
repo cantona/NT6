@@ -4,15 +4,15 @@ inherit ITEM;
 void create()
 {
                 
-        set_name(RED"ÃÔ¹¬Èë¿Ú"NOR, ({ "maze door","door"}) );
+        set_name(RED"è¿·å®®å…¥å£"NOR, ({ "maze door","door"}) );
         set_weight(5);
         set("no_get",1);
 
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", GRN"´ÓÕâ¸öÈë¿Ú¿ÉÒÔ½øÈëÃÔ¹¬¡£(enter door)\n"NOR); 
-                set("unit", "¸ö");
+                set("long", GRN"å¾žé€™å€‹å…¥å£å¯ä»¥é€²å…¥è¿·å®®ã€‚(enter door)\n"NOR); 
+                set("unit", "å€‹");
                 set("lore",1);
                 set("value", 20);
         }
@@ -35,7 +35,7 @@ int do_enter(string arg) {
         
         if( !stringp(entry) || entry == "" || 
             !(maze = find_object(entry)) )
-                return notify_fail("ÃÔ¹¬ÒÑ¾­´Ý»Ù£¬ÎÞ·¨½øÈë¡£\n");
+                return notify_fail("è¿·å®®å·²ç¶“æ‘§æ¯€ï¼Œç„¡æ³•é€²å…¥ã€‚\n");
                 
         this_player()->move(maze);
         return 1;

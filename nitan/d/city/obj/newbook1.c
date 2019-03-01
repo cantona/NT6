@@ -18,14 +18,14 @@ mapping text = ([]);
 
 void create()
 {
-        set_name("Ö½¸å", ({"book"}));
+        set_name("ç´™ç¨¿", ({"book"}));
         set_weight(10);
         set_weight(1);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»±¾¿Õ°×µÄÊé£¬Äã¿ÉÒÔÔÚÉÏÃæĞ´×Ö¡£(write)\n");
-                set("unit", "±¾");
+                set("long", "ä¸€æœ¬ç©ºç™½çš„æ›¸ï¼Œä½ å¯ä»¥åœ¨ä¸Šé¢å¯«å­—ã€‚(write)\n");
+                set("unit", "æœ¬");
                 set("material", "paper");
                 set("value", 100000);
         }
@@ -46,14 +46,14 @@ int do_title(string arg)
                   this_book = this_object();
 
           if (arg != "book") 
-              return  notify_fail("ÄãÒªĞ´Ê²Ã´£¿\n");
+              return  notify_fail("ä½ è¦å¯«ä»€éº¼ï¼Ÿ\n");
 
           if( !query("titled", this_book) )
                    {
               start_book_title(me);
                   }
                   else {
-              message_vision("$N×óÏëÓÒÏë£¬ÓÖ¾ö¶¨Òª°ÑÊéÃû¸ÄÒ»¸Ä¡£\n"NOR,me);
+              message_vision("$Nå·¦æƒ³å³æƒ³ï¼Œåˆæ±ºå®šè¦æŠŠæ›¸åæ”¹ä¸€æ”¹ã€‚\n"NOR,me);
                           start_book_title(me);
                   }
 
@@ -63,7 +63,7 @@ int do_title(string arg)
 
 int start_book_title(object me)
 {
-    tell_object(me,"¡¾ÊéÃû¡¿:");
+    tell_object(me,"ã€æ›¸åã€‘:");
     input_to( (: get_book_title :), me );
         return 1;
 }
@@ -76,13 +76,13 @@ void get_book_title(string book_title, object ob)
                 this_book = this_object();
 
         if( !book_title || (strlen(book_title)<2) ) {
-              write("ÇëÏÈĞ´ÊéÃû¡£\n");
-              tell_object(this_player(),"¡¾ÊéÃû¡¿:");
+              write("è«‹å…ˆå¯«æ›¸åã€‚\n");
+              tell_object(this_player(),"ã€æ›¸åã€‘:");
               input_to( (: get_book_title :),  me);
               return;
         }
 
-        message_vision("$NÏëÁË°ëÌì£¬ÖÕÓÚÔÚ·âÆ¤ÉÏÌâÁËÒ»¸öÊéÃû¡£\n"NOR,me);
+        message_vision("$Næƒ³äº†åŠå¤©ï¼Œçµ‚äºåœ¨å°çš®ä¸Šé¡Œäº†ä¸€å€‹æ›¸åã€‚\n"NOR,me);
 
                 new_book["title"] = book_title;
         new_book["arthur"]=me->name(1)+"("+query("id", me)+")";
@@ -90,7 +90,7 @@ void get_book_title(string book_title, object ob)
  
         set("titled", 1, this_book);
         this_book->set_name(book_title, ({"book"}));
-                set("long", "Ò»±¾Î´Ğ´ÍêµÄÊé£¬Äã¿ÉÒÔÔÚÉÏÃæ½Ó×ÅĞ´¡£(writebook)\n", this_book);
+                set("long", "ä¸€æœ¬æœªå¯«å®Œçš„æ›¸ï¼Œä½ å¯ä»¥åœ¨ä¸Šé¢æ¥è‘—å¯«ã€‚(writebook)\n", this_book);
         set("book_content", new_book, this_book);
 
         return;        
@@ -109,14 +109,14 @@ int do_write(string arg)
               if( !arg || sscanf(arg, "%s %d", msg, page_no)!=2 ) return help(me);
 
           if (msg != "page") 
-              return  notify_fail("Ğ´ÊéÓÃ (write page #) ¡£\n");
+              return  notify_fail("å¯«æ›¸ç”¨ (write page #) ã€‚\n");
                   if (page_no > 20 || page_no < 1) 
-              return  notify_fail("Ğ´ÊéÔÚ 1 µ½ 20 Ò³Ö®¼ä¡£\n");
+              return  notify_fail("å¯«æ›¸åœ¨ 1 åˆ° 20 é ä¹‹é–“ã€‚\n");
           if( !query("titled", this_book) )
-                      return  notify_fail("Äã»¹Ã»ÓĞ¸øÊéÌâÃûÄØ£¬ÏÈÏë¸öÊéÃûÔÙËµ°Ñ (title book)¡£\n");
+                      return  notify_fail("ä½ é‚„æ²’æœ‰çµ¦æ›¸é¡Œåå‘¢ï¼Œå…ˆæƒ³å€‹æ›¸åå†èªªæŠŠ (title book)ã€‚\n");
                   else 
                   {
-              message_vision("$NÄÃ³öÒ»Ö§±Ê£¬ÆÌ¿ªÊé±¾£¬¿ªÊ¼Ğ´×÷.....\n"NOR,me);
+              message_vision("$Næ‹¿å‡ºä¸€æ”¯ç­†ï¼Œèˆ–é–‹æ›¸æœ¬ï¼Œé–‹å§‹å¯«ä½œ.....\n"NOR,me);
                           start_book_text(me, page_no);
                   }
           return 1;
@@ -126,7 +126,7 @@ int do_write(string arg)
 
 int start_book_text(object me, int p_no)
 {
-        write("¡¾Êé±¾ÄÚÈİ¡¿:\n");
+        write("ã€æ›¸æœ¬å…§å®¹ã€‘:\n");
         me->edit( (: get_book_text, p_no :) );
         return 1;
 }
@@ -134,7 +134,7 @@ int start_book_text(object me, int p_no)
 void get_book_text(int p_no, string str)
 {
 
-        message_vision("$NĞ´ÍêÒ»¶Î£¬·ÅÏÂÊÖÖĞµÄ±Ê¡£\n"NOR,this_player());
+        message_vision("$Nå¯«å®Œä¸€æ®µï¼Œæ”¾ä¸‹æ‰‹ä¸­çš„ç­†ã€‚\n"NOR,this_player());
                    text[p_no] = str;
         new_book["text"] = text;
 
@@ -158,17 +158,17 @@ int do_read(string arg)
         if( !arg || sscanf(arg, "%s %d", msg, page_no)!=2 ) return help(me);
 
         if (msg != "page") 
-             return  notify_fail("¶ÁÊéÓÃ (read page #) ¡£\n");
+             return  notify_fail("è®€æ›¸ç”¨ (read page #) ã€‚\n");
             if (page_no > 20) 
-              return  notify_fail("Êé²»³¬¹ı 20 Ò³¡£\n");
+              return  notify_fail("æ›¸ä¸è¶…é 20 é ã€‚\n");
 
         if( !query("text_written", this_book) )
-             return  notify_fail("Õâ±¾Êé»¹Ã»Ğ´£¬ÔõÃ´¶Á£¿\n");
+             return  notify_fail("é€™æœ¬æ›¸é‚„æ²’å¯«ï¼Œæ€éº¼è®€ï¼Ÿ\n");
 
         if(!(this_page = new_book["text"][page_no]))
-             return  notify_fail("ÕâÒ»Ò³»¹Ã»Ğ´£¬ÔõÃ´¶Á£¿\n");;
+             return  notify_fail("é€™ä¸€é é‚„æ²’å¯«ï¼Œæ€éº¼è®€ï¼Ÿ\n");;
 
-        printf("¡¾%s¡¿£º\n¡¾×÷Õß¡¿£º%s\n\n",
+        printf("ã€%sã€‘ï¼š\nã€ä½œè€…ã€‘ï¼š%s\n\n",
                 new_book["title"],new_book["arthur"]);
                 this_player()->start_more(this_page);
 
@@ -178,8 +178,8 @@ int do_read(string arg)
 
 int help(object me)
 {
-        write("Ö¸Áî¸ñÊ½£º\n
-        Ğ´ÊéÓÃ (write page #) ¡£\n
-        ¶ÁÊéÓÃ (read page #) ¡£\n");
+        write("æŒ‡ä»¤æ ¼å¼ï¼š\n
+        å¯«æ›¸ç”¨ (write page #) ã€‚\n
+        è®€æ›¸ç”¨ (read page #) ã€‚\n");
         return 1;
 }

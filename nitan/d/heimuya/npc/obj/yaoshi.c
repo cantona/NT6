@@ -4,9 +4,9 @@ inherit ITEM;
 
 void create()
 {
-        set_name("µØÀÎÔ¿³×", ({"dilao key", "key"}));
+        set_name("åœ°ç‰¢é‘°åŒ™", ({"dilao key", "key"}));
         set("long",
-                "ÕâÊÇÒ»°ÑºÜÆÕÍ¨µÄÔ¿³×¡£\n");
-        set("unit", "°Ñ");
+                "é€™æ˜¯ä¸€æŠŠå¾ˆæ™®é€šçš„é‘°åŒ™ã€‚\n");
+        set("unit", "æŠŠ");
         set_weight(10);
 }

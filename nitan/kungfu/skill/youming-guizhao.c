@@ -1,18 +1,18 @@
 // This program is a part of NITAN MudLIB
-// youming-guizhao.c ÓÄÚ¤¹í×¦
+// youming-guizhao.c å¹½å†¥é¬¼çˆª
 
 #include <ansi.h>
 inherit SKILL;
 
 string *action_msg = ({
-        "$N×ó×¦Ç°Éì£¬´ø×ÅË¿Ë¿À¶Òõ¹íÆø£¬Ò»Ê½¡¸ÔªÉñ³öÇÏ¡¹£¬ÃÍµÃÏò$nµÄ¶¥ÃÅ²åÏÂ",
-        "$NË«ÕÆÁ¬ÅÄ£¬ÖþÆðÒ»µÀÆøÇ½ÍÆÏò$n£¬ºöÈ»Ò»×¦¡¸¹í÷È´©ÐÄ¡¹³åÆÆÆøÇ½Ö±²å$nµÄ$l",
-        "$NÊ¹³ö¡¸Ñª¹íËø¡¹Ë«×¦ÓÎÏò$n¿Û×¡$l£¬Æø¾¢¼¤·¢Íù×óÓÒÁ½ÏÂÒ»À­£¬±ãÒª½«$n¸î³ÉËéÆ¬",
-        "$NË«×¦Â£×¡$n£¬Ê¹Ò»Ê½¡¸Á¶Óü¹íº¿¡¹£¬Òõ¶¾ÄÚ¹¦Ëæ×¦¼âÍ¸Èë$nÌåÄÚ£¬Ö±Ï®¸÷´ó¹Ø½Ú",
-        "$NÁ¦Í¸Ö¸¼â£¬Ïò$nÐéÐéÊµÊµÁ¬×¥Ê®Îå×¦£¬¡¸Ñý·çÏ®Ìå¡¹´ø¶¯ÎÞÊýÒõÆø²ø×¡$n",
-        "$NÒ»Ê½¡¸Ë÷ÃüÑýÊÖ¡¹£¬×ó×¦ÉÏÏÂ·­¶¯ÐÎ³ÉÎÞÊý×¦Ó°£¬ÓÒ±ÛÒ»Éì£¬¹í÷È°ã×¥Ïò$nµÄ$l",
-        "$NÌ½ÊÖÉÏÇ°£¬Ë³×Å$nµÄÊÖ±ÛÅÊÔµÖ±ÉÏ£¬±äÊÖÎª×¦£¬Ò»ÕÐ¡¸¹Â»êÔ¦Ä§¡¹×¥Ïò$nµÄ$l",
-        "$NÁè¿Õ·ÉÂä£¬Ò»×¦Í»Ç°£¬¡¸Ä§×¦ÌìÏÂ¡¹»ý¾ÛÈ«Éí¹¦Á¦ÓÚÖ¸¼â£¬¿ì¾øÎÞ±ÈµØ²åÏò$n",
+        "$Nå·¦çˆªå‰ä¼¸ï¼Œå¸¶è‘—çµ²çµ²è—é™°é¬¼æ°£ï¼Œä¸€å¼ã€Œå…ƒç¥žå‡ºç«…ã€ï¼ŒçŒ›å¾—å‘$nçš„é ‚é–€æ’ä¸‹",
+        "$Né›™æŽŒé€£æ‹ï¼Œç¯‰èµ·ä¸€é“æ°£ç‰†æŽ¨å‘$nï¼Œå¿½ç„¶ä¸€çˆªã€Œé¬¼é­…ç©¿å¿ƒã€æ²–ç ´æ°£ç‰†ç›´æ’$nçš„$l",
+        "$Nä½¿å‡ºã€Œè¡€é¬¼éŽ–ã€é›™çˆªéŠå‘$næ‰£ä½$lï¼Œæ°£å‹æ¿€ç™¼å¾€å·¦å³å…©ä¸‹ä¸€æ‹‰ï¼Œä¾¿è¦å°‡$nå‰²æˆç¢Žç‰‡",
+        "$Né›™çˆªæ”ä½$nï¼Œä½¿ä¸€å¼ã€Œç…‰ç„é¬¼åšŽã€ï¼Œé™°æ¯’å…§åŠŸéš¨çˆªå°–é€å…¥$né«”å…§ï¼Œç›´è¥²å„å¤§é—œç¯€",
+        "$NåŠ›é€æŒ‡å°–ï¼Œå‘$nè™›è™›å¯¦å¯¦é€£æŠ“åäº”çˆªï¼Œã€Œå¦–é¢¨è¥²é«”ã€å¸¶å‹•ç„¡æ•¸é™°æ°£çºä½$n",
+        "$Nä¸€å¼ã€Œç´¢å‘½å¦–æ‰‹ã€ï¼Œå·¦çˆªä¸Šä¸‹ç¿»å‹•å½¢æˆç„¡æ•¸çˆªå½±ï¼Œå³è‡‚ä¸€ä¼¸ï¼Œé¬¼é­…èˆ¬æŠ“å‘$nçš„$l",
+        "$NæŽ¢æ‰‹ä¸Šå‰ï¼Œé †è‘—$nçš„æ‰‹è‡‚æ”€ç·£ç›´ä¸Šï¼Œè®Šæ‰‹ç‚ºçˆªï¼Œä¸€æ‹›ã€Œå­¤é­‚é¦­é­”ã€æŠ“å‘$nçš„$l",
+        "$Nå‡Œç©ºé£›è½ï¼Œä¸€çˆªçªå‰ï¼Œã€Œé­”çˆªå¤©ä¸‹ã€ç©èšå…¨èº«åŠŸåŠ›äºŽæŒ‡å°–ï¼Œå¿«çµ•ç„¡æ¯”åœ°æ’å‘$n",
 });
 
 int valid_enable(string usage) { return usage == "claw" || usage == "parry"; }
@@ -20,11 +20,11 @@ int valid_enable(string usage) { return usage == "claw" || usage == "parry"; }
 int valid_learn(object me)
 {
        if( query_temp("weapon", me) || query_temp("secondary_weapon", me) )
-               return notify_fail("Á·×¦¹¦±ØÐë¿ÕÊÖ¡£\n");
+               return notify_fail("ç·´çˆªåŠŸå¿…é ˆç©ºæ‰‹ã€‚\n");
        if ((int)me->query_skill("claw", 1) < 50)
-               return notify_fail("ÄãµÄ»ù±¾×¦¹¦»ðºò²»¹»£¬ÎÞ·¨Ñ§Ï°¡£\n");
+               return notify_fail("ä½ çš„åŸºæœ¬çˆªåŠŸç«å€™ä¸å¤ ï¼Œç„¡æ³•å­¸ç¿’ã€‚\n");
        if( query("max_neili", me)<1000 )
-               return notify_fail("ÄãµÄÄÚÁ¦Ì«Èõ£¬ÎÞ·¨Á·ÓÄÚ¤¹í×¦¡£\n");
+               return notify_fail("ä½ çš„å…§åŠ›å¤ªå¼±ï¼Œç„¡æ³•ç·´å¹½å†¥é¬¼çˆªã€‚\n");
        return 1;
 }
 
@@ -36,23 +36,23 @@ mapping query_action(object me, object weapon)
                 "attack": 70 + random(10),
                 "dodge" : -70 + random(10),
                 "parry" : -70 + random(10),
-                "damage_type" : "×¥ÉË",
+                "damage_type" : "æŠ“å‚·",
         ]);
 }
 
 int practice_skill(object me)
 {
         if ((int)me->query_skill("youming-guizhao", 1) < 199 )
-                return notify_fail("ÄãµÄÓÄÚ¤¹í×¦ÐÞÎª²»¹»£¬Ö»ÄÜÓÃÑ§(learn)µÄÀ´Ôö¼ÓÊìÁ·¶È¡£\n");
+                return notify_fail("ä½ çš„å¹½å†¥é¬¼çˆªä¿®ç‚ºä¸å¤ ï¼Œåªèƒ½ç”¨å­¸(learn)çš„ä¾†å¢žåŠ ç†Ÿç·´åº¦ã€‚\n");
 
         if( query_temp("weapon", me) || query_temp("secondary_weapon", me) )
-                return notify_fail("Á·ÓÄÚ¤¹í×¦±ØÐë¿ÕÊÖ¡£\n");
+                return notify_fail("ç·´å¹½å†¥é¬¼çˆªå¿…é ˆç©ºæ‰‹ã€‚\n");
 
         if( query("qi", me)<80 )
-                return notify_fail("ÄãµÄÌåÁ¦Ì«µÍÁË¡£\n");
+                return notify_fail("ä½ çš„é«”åŠ›å¤ªä½Žäº†ã€‚\n");
 
         if( query("neili", me)<80 )
-                return notify_fail("ÄãµÄÄÚÁ¦²»¹»Á·ÓÄÚ¤¹í×¦¡£\n");
+                return notify_fail("ä½ çš„å…§åŠ›ä¸å¤ ç·´å¹½å†¥é¬¼çˆªã€‚\n");
 
         me->receive_damage("qi", 70);
         addn("neili", -70, me);
@@ -70,7 +70,7 @@ mixed hit_ob(object me, object victim, int damage_bonus, int factor)
          && !query_temp("youming_hit", me) )
         {
                 set_temp("youming_hit", 1, me);
-                set_temp("apply/name", ({query("name", me)+"µÄ¹íÓ°"}), me);
+                set_temp("apply/name", ({query("name", me)+"çš„é¬¼å½±"}), me);
                 COMBAT_D->do_attack(me,victim,query_temp("weapon", me),1);
                 COMBAT_D->do_attack(me,victim,query_temp("weapon", me),1);
                 COMBAT_D->do_attack(me,victim,query_temp("weapon", me),1);

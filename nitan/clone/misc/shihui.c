@@ -6,12 +6,12 @@ void setup()
 {}
 void create()
 {
-        set_name(HIC"Ê¯»Ò·Û"NOR, ({"shihui fen", "shihui", "fen"}));
+        set_name(HIC"çŸ³ç°ç²‰"NOR, ({"shihui fen", "shihui", "fen"}));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "°ü");
-                set("long", "ÕâÊÇÒ»°üÓÃÀ´ÑÓ»ºÎïÆ·¸¯ÀÃµÄµÄÊ¯»Ò·Û£¬Ö»Òª°ÑÎïÆ·¹ü(guo)ÉÏÊ¯»Ò¾Í¿ÉÒÔÁË£¡\n");
+                set("unit", "åŒ…");
+                set("long", "é€™æ˜¯ä¸€åŒ…ç”¨ä¾†å»¶ç·©ç‰©å“è…çˆ›çš„çš„çŸ³ç°ç²‰ï¼Œåªè¦æŠŠç‰©å“è£¹(guo)ä¸ŠçŸ³ç°å°±å¯ä»¥äº†ï¼\n");
                 set("value", 30);
         }
         set("pour_type", "1");
@@ -28,15 +28,15 @@ int do_guo(string arg)
 {
         object ob, me = this_player();
 
-        if( !arg ) return notify_fail("ÄãÒªÓÃÊ¯»Ò·Û°ü¹üÊ²Ã´¶«Î÷£¿\n");
+        if( !arg ) return notify_fail("ä½ è¦ç”¨çŸ³ç°ç²‰åŒ…è£¹ä»€éº¼æ±è¥¿ï¼Ÿ\n");
         if(!present(this_object(), me)) return 0;
-        if( me->is_busy() ) return notify_fail("ÄãÕıÃ¦×ÅÆäËüÊÂÄØ¡£\n");
+        if( me->is_busy() ) return notify_fail("ä½ æ­£å¿™è‘—å…¶å®ƒäº‹å‘¢ã€‚\n");
 
         if( !objectp(ob = present(arg, me)) )
-                return notify_fail("ÕâÀïÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+                return notify_fail("é€™è£¡æ²’æœ‰é€™æ¨£æ±è¥¿ã€‚\n");
         if( living(ob) || !ob->id("head") )
-                return notify_fail("Ê¯»Ò·ÛÖ»ÄÜÓÃÀ´°ü¹üÍ·Â­¡£\n");
-        message_vision("$NÌÍ³öÒ»°ÑÊ¯»Ò·Û£¬°Ñ$nºñºñÊµÊµµØ°üÉÏ¡£\n", me, ob);
+                return notify_fail("çŸ³ç°ç²‰åªèƒ½ç”¨ä¾†åŒ…è£¹é ­é¡±ã€‚\n");
+        message_vision("$Næå‡ºä¸€æŠŠçŸ³ç°ç²‰ï¼ŒæŠŠ$nåšåšå¯¦å¯¦åœ°åŒ…ä¸Šã€‚\n", me, ob);
         set("shihui", 1, ob);
         destruct(this_object());
         return 1;

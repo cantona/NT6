@@ -1,4 +1,4 @@
-// fighter Á·¹¦ÈË
+// fighter ç·´åŠŸäºº
 
 #include <ansi.h>
 
@@ -14,25 +14,25 @@ void setup()
 
         ::setup();
 
-        set_temp("eff_status_msg", "Ëü¿´ÆğÀ´»¹¿ÉÒÔ¼ÌĞøÓÃÀ´Á·¹¦¡£");
+        set_temp("eff_status_msg", "å®ƒçœ‹èµ·ä¾†é‚„å¯ä»¥ç¹¼çºŒç”¨ä¾†ç·´åŠŸã€‚");
 }
 
 void unconcious()
 {
-        message_vision(HIY "ßÇÀ®Ò»Éù£¬" + name() +
-                       "»µÁË¡£\n\n" NOR, this_object());
+        message_vision(HIY "â–¡å–‡ä¸€è²ï¼Œ" + name() +
+                       "å£äº†ã€‚\n\n" NOR, this_object());
         set("jing", 0);
         set("eff_jing", 0);
         set("qi", 0);
         set("eff_qi", 0);
         set("damaged", 1);
-        set_temp("eff_status_msg", HIR " ËüÒÑ¾­±»´ò»µÁË¡£" NOR);
+        set_temp("eff_status_msg", HIR " å®ƒå·²ç¶“è¢«æ‰“å£äº†ã€‚" NOR);
 }
 
 void die()
 {
-        message_vision(HIR "\nÒ»ÕóÏ£Á¨»©À²µÄÉùÒô¹ıºó£¬" + name() +
-                       "ËãÊÇ³¹µ×µÄ±¨·ÏÁË¡£\n\n" NOR, this_object());
+        message_vision(HIR "\nä¸€é™£å¸Œå“©å˜©å•¦çš„è²éŸ³éå¾Œï¼Œ" + name() +
+                       "ç®—æ˜¯å¾¹åº•çš„å ±å»¢äº†ã€‚\n\n" NOR, this_object());
         destruct(this_object());
 }
 
@@ -50,26 +50,26 @@ int accept_fight(object ob)
         if( stringp(query("for_family", env)) &&
             query("for_family", env) == query("family/family_name", ob) &&
             query("out_family", ob) )
-                return notify_fail("Äã»¹ÊÇÍâ³öÀúÁ·°É£¬²»ÄÜ×Ü´ôÔÚÕâÀï¡£\n");
+                return notify_fail("ä½ é‚„æ˜¯å¤–å‡ºæ­·ç·´å§ï¼Œä¸èƒ½ç¸½å‘†åœ¨é€™è£¡ã€‚\n");
 
         if( query("combat_exp", ob) < 12000 )
-                return notify_fail("ÄãÕâµãÉíÊÖ»¹²»×ãÒÔºÍ" + name() + "Á·¹¦¡£\n");
+                return notify_fail("ä½ é€™é»èº«æ‰‹é‚„ä¸è¶³ä»¥å’Œ" + name() + "ç·´åŠŸã€‚\n");
 
         if( is_fighting() )
-                return notify_fail("Õâ¸ö" + name() + "ÕıÔÚºÍÈËÁ·¹¦ÄØ¡£\n");
+                return notify_fail("é€™å€‹" + name() + "æ­£åœ¨å’Œäººç·´åŠŸå‘¢ã€‚\n");
 
         if( query("damaged") )
-                return notify_fail("Õâ¸ö" + name() + "ÒÑ¾­±»´ò»µÁË£¡\n");
+                return notify_fail("é€™å€‹" + name() + "å·²ç¶“è¢«æ‰“å£äº†ï¼\n");
 
         if( query("fight_times") >= 10 ) {
                 unconcious();
-                return notify_fail("Õâ¸ö" + name() + "ÒÑ¾­±»´ò»µÁË£¡\n");
+                return notify_fail("é€™å€‹" + name() + "å·²ç¶“è¢«æ‰“å£äº†ï¼\n");
         }
 
         if( objectp(query("last_fighter")) &&
             query("id", query("last_fighter")) != query("id", ob) )
-                return notify_fail("ÕâÊÇ" + query("fighter_name") +
-                                   "µÄÁ·¹¦Ä¾ÈË£¡\n");
+                return notify_fail("é€™æ˜¯" + query("fighter_name") +
+                                   "çš„ç·´åŠŸæœ¨äººï¼\n");
 
         set("last_fighter", ob);
         set("fighter_name", ob->name());
@@ -189,10 +189,10 @@ int accept_fight(object ob)
 int accept_hit(object ob)
 {
         if( query("damaged") )
-                return notify_fail("Õâ¸ö" + name() + "ÒÑ¾­±»´ò»µÁË£¡\n");
+                return notify_fail("é€™å€‹" + name() + "å·²ç¶“è¢«æ‰“å£äº†ï¼\n");
 
         if( query("combat_exp", ob) < 12000 )
-                return notify_fail("ÄãÕâµãÉíÊÖ»¹²»×ãÒÔºÍ" + name() + "Á·¹¦¡£\n");
+                return notify_fail("ä½ é€™é»èº«æ‰‹é‚„ä¸è¶³ä»¥å’Œ" + name() + "ç·´åŠŸã€‚\n");
 
         return 1;
 }
@@ -204,16 +204,16 @@ int accept_kill(object ob)
         me = this_object();
 
         if( ob->is_busy() )
-                return notify_fail("ÄãÏÖÔÚÕıÃ¦£¬Ã»ÓĞÊ±¼ä²ğ¶«Î÷¡£\n");
+                return notify_fail("ä½ ç¾åœ¨æ­£å¿™ï¼Œæ²’æœ‰æ™‚é–“æ‹†æ±è¥¿ã€‚\n");
 
         if( query("combat_exp", ob) < 12000 )
-                return notify_fail("ÄãÕâµãÉíÊÖ»¹²»×ãÒÔ²ğµô" + name() + "¡£\n");
+                return notify_fail("ä½ é€™é»èº«æ‰‹é‚„ä¸è¶³ä»¥æ‹†æ‰" + name() + "ã€‚\n");
 
         if( !query("damaged") && query("combat_exp", ob) < query("combat_exp") ) {
-                    message_vision("$NÆËÉÏÈ¥Ïë²ğµô$n£¬½á¹û$n¡°ÅîÅî¡±¼¸ÏÂ"
-                               "¾Í°Ñ$NÁÃµ¹ÔÚµØ¡£\n", ob, me);
+                    message_vision("$Næ’²ä¸Šå»æƒ³æ‹†æ‰$nï¼Œçµæœ$nâ€œè“¬è“¬â€å¹¾ä¸‹"
+                               "å°±æŠŠ$Næ’©å€’åœ¨åœ°ã€‚\n", ob, me);
                     ob->start_busy(3);
-                    write("Õâ¸öÁ·¹¦µÄ" + name() + "Ì«Ç¿ÁË£¬Äã²ğ²»µôËü¡£\n");
+                    write("é€™å€‹ç·´åŠŸçš„" + name() + "å¤ªå¼·äº†ï¼Œä½ æ‹†ä¸æ‰å®ƒã€‚\n");
                 return -1;
         }
 
@@ -221,13 +221,13 @@ int accept_kill(object ob)
         remove_call_out("destroy");
         call_out("destroy", 0, ob, me);
 
-        write("ÉÏ£¡\n");
+        write("ä¸Šï¼\n");
         return -1;
 }
 
 int accept_ansuan(object ob)
 {
-        return notify_fail("Ò»¸ö" + name() + "ÓĞÊ²Ã´ºÃ°µËãµÄ£¿\n");
+        return notify_fail("ä¸€å€‹" + name() + "æœ‰ä»€éº¼å¥½æš—ç®—çš„ï¼Ÿ\n");
 }
 
 // remove kill action
@@ -250,7 +250,7 @@ void destroy(object ob, object me)
         if( !objectp(me) )
             return;
 
-        message_vision("$NÆËÉÏÈ¥¼¸ÏÂ×Ó¾Í°Ñ$n¸ø²ğÁË¡£\n", ob, me);
+        message_vision("$Næ’²ä¸Šå»å¹¾ä¸‹å­å°±æŠŠ$nçµ¦æ‹†äº†ã€‚\n", ob, me);
         destruct(me);
 }
 

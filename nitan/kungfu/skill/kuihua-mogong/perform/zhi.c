@@ -1,4 +1,4 @@
-// zhi.c ÓÄÚ¤ÉñÖ¸
+// zhi.c å¹½å†¥ç¥æŒ‡
 
 #include <ansi.h>
 #include <combat.h>
@@ -14,18 +14,18 @@ int perform(object me, object target)
         if (! target) target = offensive_target(me);
 
         if (! target || ! me->is_fighting(target))
-                return notify_fail("ÓÄÚ¤ÉñÖ¸Ö»ÄÜÔÚÕ½¶·ÖĞ¶Ô¶ÔÊÖÊ¹ÓÃ¡£\n");
+                return notify_fail("å¹½å†¥ç¥æŒ‡åªèƒ½åœ¨æˆ°é¬¥ä¸­å°å°æ‰‹ä½¿ç”¨ã€‚\n");
 
         if (me->query_skill("kuihua-mogong", 1) < 150)
-                return notify_fail("ÄãµÄ¿û»¨Ä§¹¦»¹²»¹»æµÊì£¬²»ÄÜÊ¹ÓÃÓÄÚ¤ÉñÖ¸£¡\n");
+                return notify_fail("ä½ çš„è‘µèŠ±é­”åŠŸé‚„ä¸å¤ å«»ç†Ÿï¼Œä¸èƒ½ä½¿ç”¨å¹½å†¥ç¥æŒ‡ï¼\n");
 
         if( query("neili", me)<300 )
-                return notify_fail("ÄãµÄÕæÆø²»¹»£¡\n");
+                return notify_fail("ä½ çš„çœŸæ°£ä¸å¤ ï¼\n");
 
         if (! living(target))
-              return notify_fail("¶Ô·½¶¼ÒÑ¾­ÕâÑùÁË£¬ÓÃ²»×ÅÕâÃ´·ÑÁ¦°É£¿\n");
+              return notify_fail("å°æ–¹éƒ½å·²ç¶“é€™æ¨£äº†ï¼Œç”¨ä¸è‘—é€™éº¼è²»åŠ›å§ï¼Ÿ\n");
 
-        msg = HIR "$N" HIR "½ø²½ÆÛÇ°£¬Ëæ¼´Ò»Ö¸ÎŞÉùÎŞÏ¢µÄÏò$n" HIR "µÄÒªº¦´Ì³ö£¡\n";
+        msg = HIR "$N" HIR "é€²æ­¥æ¬ºå‰ï¼Œéš¨å³ä¸€æŒ‡ç„¡è²ç„¡æ¯çš„å‘$n" HIR "çš„è¦å®³åˆºå‡ºï¼\n";
 
         ap = attack_power(me, "finger");
         dp = defense_power(target, "parry");
@@ -43,8 +43,8 @@ int perform(object me, object target)
                         damage = damage_power(me, "finger");
 
                         msg += COMBAT_D->do_damage(me, target, REMOTE_ATTACK, damage, 90,
-                                        HIR "$n" HIR "Ö»¾õ´ËÕĞ£¬ÒõÈáÎŞ±È£¬¹îÒìÄª²â£¬"
-                                        "ĞÄÖĞÒ»¾ª£¬È´ÃÍÈ»¼ä¾õµÃÒ»¹ÉÒõ·çÍ¸¹Ç¶ø¹ı¡£\n" NOR);
+                                        HIR "$n" HIR "åªè¦ºæ­¤æ‹›ï¼Œé™°æŸ”ç„¡æ¯”ï¼Œè©­ç•°è«æ¸¬ï¼Œ"
+                                        "å¿ƒä¸­ä¸€é©šï¼Œå»çŒ›ç„¶é–“è¦ºå¾—ä¸€è‚¡é™°é¢¨é€éª¨è€Œéã€‚\n" NOR);
                         addn("neili", -140, me);
 
                         message_combatd(msg, me, target);
@@ -52,16 +52,16 @@ int perform(object me, object target)
                         return 1;
                 } else
                 {
-                        msg += HIR "ÕâÒ»ÕĞËÙ¶ÈÖ®¿ìÍêÈ«³¬³öÁË$n" HIR "µÄÏëÏó£¬±»$N"
-                                HIR "ÕâÒ»Ö¸ÕıºÃ´ÌÖĞÁËµ¤ÌïÒªº¦£¬»ëÉíÕæÆøµÇÊ±»ÁÉ¢£¡\n" NOR;
+                        msg += HIR "é€™ä¸€æ‹›é€Ÿåº¦ä¹‹å¿«å®Œå…¨è¶…å‡ºäº†$n" HIR "çš„æƒ³è±¡ï¼Œè¢«$N"
+                                HIR "é€™ä¸€æŒ‡æ­£å¥½åˆºä¸­äº†ä¸¹ç”°è¦å®³ï¼Œæ¸¾èº«çœŸæ°£ç™»æ™‚æ¸™æ•£ï¼\n" NOR;
                         message_combatd(msg, me, target);
                         target->die(me);
                         return 1;
                 }
         } else
         {
-                msg += HIM "$n" HIM "´ó³ÔÒ»¾ª£¬Á¬Ã¦ÍËºó£¬¾ÓÈ»"
-                                "½ÄĞÒ¶ã¿ª×ÅÕâÒ»ÕĞ£¡\n" NOR;
+                msg += HIM "$n" HIM "å¤§åƒä¸€é©šï¼Œé€£å¿™é€€å¾Œï¼Œå±…ç„¶"
+                                "åƒ¥å¹¸èº²é–‹è‘—é€™ä¸€æ‹›ï¼\n" NOR;
                 me->start_busy(1 + random(2));
         }
 

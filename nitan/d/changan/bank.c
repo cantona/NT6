@@ -6,24 +6,24 @@ inherit ROOM;
 
 void create ()
 {
-        set ("short", "�ĺ�Ǯׯ");
+        set ("short", "四海錢莊");
         set("long", @LONG
-���ǳ����ǵ�һ�����ֺ�Ǯׯ���ϰ���ɽ���ˣ����Ǯׯ������
-������������ʱ�Ϳ�ʼ����һֱ�����������Ǯׯ�������ǳ��ã�
-������ȫ�����ض����˷ֵꡣ�����е���Ʊͨ��ȫ����Ǯׯ���ſڹ�
-��һ������(paizi)��
+這是長安城的一家老字號錢莊，老板是山西人，這家錢莊從他的
+祖先來到這裡時就開始辦起，一直傳到他的手裡。錢莊的信譽非常好，
+而且在全國各地都開了分店。它發行的銀票通行全國。錢莊的門口掛
+有一塊牌子(paizi)。
 LONG );
         set("item_desc", ([
                 "paizi": 
-HIG"��Ǯׯ�ṩ�ķ����У�\n"NOR
+HIG"本錢莊提供的服務有：\n"NOR
 HIC"--------------------------------\n"NOR
-HIG"check(chazhang)        ����\n"NOR 
+HIG"check(chazhang)        查帳\n"NOR 
 HIC"--------------------------------\n"NOR
-HIG"deposit(cun)           ���\n"NOR
+HIG"deposit(cun)           存款\n"NOR
 HIC"--------------------------------\n"NOR
-HIG"withdraw(qu)           ȡ��\n"NOR
+HIG"withdraw(qu)           取款\n"NOR
 HIC"--------------------------------\n"NOR
-HIG"convert(duihuan)       �һ�Ǯ��\n"NOR
+HIG"convert(duihuan)       兌換錢幣\n"NOR
 HIC"--------------------------------\n"NOR
 
         ]) );

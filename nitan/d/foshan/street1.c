@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "Î÷Õò½Ö");
+        set("short", "è¥¿éŽ®è¡—");
         set("long", @LONG
-·ðÉ½Õò½ÖµÀÆ½Õû¡£Î÷ÃæÊÇÕòÎ÷ÃÅ£¬±±ÃæÓÐÒ»×ù±±µÛÃí£¬½¨¹¹ºêÎ°£¬
-ºÃ´óÒ»×ùÉñìô¡£
+ä½›å±±éŽ®è¡—é“å¹³æ•´ã€‚è¥¿é¢æ˜¯éŽ®è¥¿é–€ï¼ŒåŒ—é¢æœ‰ä¸€åº§åŒ—å¸å»Ÿï¼Œå»ºæ§‹å®å‰ï¼Œ
+å¥½å¤§ä¸€åº§ç¥žç¥ ã€‚
 LONG );
         set("objects", ([
                 __DIR__"npc/jiading": 1,

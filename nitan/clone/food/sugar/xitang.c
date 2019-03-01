@@ -9,10 +9,10 @@ void init()
 
 void create()
 {
-        set_name(HIR"Ï²ÌÇ"NOR, ({"xi tang", "tang"}));
-        set("unit", "°ü");
+        set_name(HIR"å–œç³–"NOR, ({"xi tang", "tang"}));
+        set("unit", "åŒ…");
         set("value",10000);
-        set("long", "ÕâÊÇÒ»°ü¾«ÃÀÏ²ÌÇ¡£\n");
+        set("long", "é€™æ˜¯ä¸€åŒ…ç²¾ç¾å–œç³–ã€‚\n");
         set("amount",100);
         setup();
 }
@@ -20,10 +20,10 @@ void create()
 int do_eat(string arg)
 {
         object me=this_player();
-        if (!id(arg))  return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
+        if (!id(arg))  return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
         if(arg=="xi tang" || arg=="tang")
         {
-                message_vision(NOR"$N°ÑÒ»°ü"HIR"Ï²ÌÇ"NOR"³Ô¸ö¾«¹â£¬·ÖÏíÁËĞÂÀÉĞÂÄïµÄÌğÃÛÓëÎÂÜ°¡£\n",me);
+                message_vision(NOR"$NæŠŠä¸€åŒ…"HIR"å–œç³–"NOR"åƒå€‹ç²¾å…‰ï¼Œåˆ†äº«äº†æ–°éƒæ–°å¨˜çš„ç”œèœœèˆ‡æº«é¦¨ã€‚\n",me);
 
                 destruct(this_object());
         }

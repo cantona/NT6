@@ -18,15 +18,15 @@ void add_amount(int v) { set_amount((int)query_amount()+v); }
 
 void create()
 {
-        set_name(YEL "ËÖÓÍ" NOR, ({"su you", "butter", "you"}));
+        set_name(YEL "é…¥æ²¹" NOR, ({"su you", "butter", "you"}));
         set_weight(10);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "ºÏ");
-                set("long", "»Æ³Î³ÎµÄËÖÓÍ\n");
+                set("unit", "åˆ");
+                set("long", "é»ƒæ¾„æ¾„çš„é…¥æ²¹\n");
                 set("base_value", 1);
-                set("base_unit", "ºÏ");
+                set("base_unit", "åˆ");
                 set("base_weight", 10);
         }
                 // set("no_get",1);

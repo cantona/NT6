@@ -6,15 +6,15 @@ inherit ITEM;
 
 void create()
 {
-        set_name(GRN"����"NOR, ({ "tao shu", "shu", "tree" }) );
+        set_name(GRN"桃樹"NOR, ({ "tao shu", "shu", "tree" }) );
         set_weight(300000);
         set_max_encumbrance(5000000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "��");
-                set("long", "����һ��֦Ҷ��ï����������֮�һ�������������Ҫ�������ࡣ\n"
-                            "�ƺ�Ӧ�ÿ���(kan)Щ֦Ҷ���������ˡ�\n");
+                set("unit", "株");
+                set("long", "這是一株枝葉繁茂的桃樹，比之桃花島上其它桃樹要大上許多。\n"
+                            "似乎應該砍下(kan)些枝葉修理修理了。\n");
                 set("value", 1000);
                 set("material", "wood");
                 set("no_get",1);
@@ -37,28 +37,28 @@ int do_slash(string arg)
         if (me->is_busy()
          || query_temp("pending/exercising", me )
          || query_temp("exit_blocked", me) )
-                return notify_fail("��������æ���ء�\n");
+                return notify_fail("你現在正忙著呢。\n");
 
         if( !objectp(ob1=query_temp("weapon", me) )
          || query("skill_type", ob1) != "axe" )
-                return notify_fail("��û�г��ּһ���η�ľ����\n");        
+                return notify_fail("你沒有稱手家伙如何伐木？！\n");        
 
-        if( query("name", ob1) != "С����"){
-                message_vision(CYN"$Nһ����ȣ��ֳ�"+query("name", ob1)+"Ŀ¶�׹⣬��������ݺݵĿ��˹�ȥ��\n"NOR,me);
-                message_vision(CYN"ֻ���á����ꡱһ����������������Ϊ���Σ�\n"NOR,me);
+        if( query("name", ob1) != "小鐵斧"){
+                message_vision(CYN"$N一聲大喝，手持"+query("name", ob1)+"目露兇光，對桃樹惡狠狠的砍了過去！\n"NOR,me);
+                message_vision(CYN"只聽得“喀嚓”一聲，桃樹被攔腰砍為兩段！\n"NOR,me);
                 destruct(this_object());
                 return 1;
-//                return notify_fail("���鷳���ˡ�\n");
+//                return notify_fail("你麻煩大了。\n");
         }
 
         if (!arg || (arg != "shu" && arg !="tree" && arg != "tao shu"))
-                return notify_fail("��Ҫ��ʲ�᣿��\n");
+                return notify_fail("你要砍什麼？！\n");
         if (query("slashed"))
-                return notify_fail("���������Ѿ����������ˣ�\n");         
+                return notify_fail("這株桃樹已經被修整過了！\n");         
 
-        message_vision(CYN"$N����һ�������һ��С����������Ӵ����Ӵ��������һ�ζε���֦......\n"NOR, me);
+        message_vision(CYN"$N衣袖一卷，抽出一把小鐵斧，“吭喲！吭喲”的劈下一段段的桃枝......\n"NOR, me);
 
-        message_vision(CYN"$N���˲�����ʰ�𼸸���ľ֦��\n"NOR, me);
+        message_vision(CYN"$N擦了擦汗，拾起幾根桃木枝。\n"NOR, me);
         ob2 = new(__DIR__"taomu");
         ob2->move(me);
         ob3 = new(__DIR__"taomu");
@@ -66,8 +66,8 @@ int do_slash(string arg)
         ob4 = new(__DIR__"taomu");
         ob4->move(me);
         set("slashed", 1);
-        set("long", "����һ��֦Ҷ��ï����������֮�һ�������������Ҫ�������ࡣ\n"
-                    "�ƺ��ձ���������\n");
+        set("long", "這是一株枝葉繁茂的桃樹，比之桃花島上其它桃樹要大上許多。\n"
+                    "似乎剛被修整過。\n");
 
         call_out("renew", 300, me);
         return 1;
@@ -76,6 +76,6 @@ int do_slash(string arg)
 void renew()
 {
         delete("slashed", this_object());
-        set("long", "����һ��֦Ҷ��ï����������֮�һ�������������Ҫ�������ࡣ\n"
-                    "�ƺ�Ӧ�ÿ���(kan)Щ֦Ҷ���������ˡ�\n");
+        set("long", "這是一株枝葉繁茂的桃樹，比之桃花島上其它桃樹要大上許多。\n"
+                    "似乎應該砍下(kan)些枝葉修理修理了。\n");
 }

@@ -4,12 +4,12 @@ inherit ROOM;
 
 void create ()
 {
-        set ("short", "��Ӫ");
+        set ("short", "兵營");
         set("long", @LONG
-������һ���ٽֶ����ı�Ӫ�����볤���ı�����ֻ�м���֮ң��
-��Ӫ�ſ����Ʈ�ż�����Կ�����ʿ�������ڣ����Ҳ�����ɫ��Ѳ
-�������ܡ���Ӫ���浽�����йٱ������ػص��߶�����һ���佫����
-ָ��ʿ���жӲ�����
+這裡是一座臨街而建的兵營，距離長安的北城門只有幾步之遙。
+兵營門口旌旗飄揚，偶爾可以看見兵士進出換崗，並且不動聲色地巡
+視著四周。兵營裡面到處都有官兵來來回回地走動，有一名武將正在
+指揮士兵列隊操練。
 LONG );
          set("exits", ([ /* sizeof() == 1 */
                  "northwest" : "/d/changan/xian-daokou",

@@ -4,20 +4,20 @@ inherit BUILD_ROOM;
 
 void create()
 {
-        set("short", "¶«º£Ö®±õ");
+        set("short", "æ±æµ·ä¹‹æ¿±");
         set("long", @LONG
-ÕâÀïÊÇ´óº£Ö®±õ£¬ÀË»¨ÅÄ´ò×Å½¸Ê¯£¬·¢³öÕóÕóÏìÉù£¬º£ÃæÉÏÒ»Èº
-Èºº£Å¸¡ºÅ·Å·¡£¡£¡»µØ½Ð×Å£¬²»Ê±ÓÐÓã¶ùÔ¾³öº£Ãæ£¬½¦Æð²ã²ãµÄÀË»¨¡£
-±ßÉÏÓÐËÒ´ó´¬(chuan)£¬ ´¬ÉÏ×ø×Å¼¸¸öÓæ·ò´ò°çµÄÈË£¬³Ë´¬¿É¶É¹ý´ó
-º£µ½´ïº£µÄÁíÒ»¶Ë¡£Î÷ÃæÒ»Ö±×ß¾ÍÊÇÑà¾©ÁË£¬¶«ÃæÊÇÒ»ÍûÎÞ¼ÊµÄ´óº£¡£
-¼«Ä¿Ì÷Íû²»½ûÈÃÈËÐÄÐØ¿ªÀ©£¬ÉñÊæÒâ³©£¬µÄÈ·ÊÇÒ»¸öºÃ¾Ó´¦¡£
+é€™è£¡æ˜¯å¤§æµ·ä¹‹æ¿±ï¼ŒæµªèŠ±æ‹æ‰“è‘—ç¤çŸ³ï¼Œç™¼å‡ºé™£é™£éŸ¿è²ï¼Œæµ·é¢ä¸Šä¸€ç¾¤
+ç¾¤æµ·é·—ã€Žæ­æ­ã€‚ã€‚ã€åœ°å«è‘—ï¼Œä¸æ™‚æœ‰é­šå…’èºå‡ºæµ·é¢ï¼Œæ¿ºèµ·å±¤å±¤çš„æµªèŠ±ã€‚
+é‚Šä¸Šæœ‰è‰˜å¤§èˆ¹(chuan)ï¼Œ èˆ¹ä¸Šåè‘—å¹¾å€‹æ¼å¤«æ‰“æ‰®çš„äººï¼Œä¹˜èˆ¹å¯æ¸¡éŽå¤§
+æµ·åˆ°é”æµ·çš„å¦ä¸€ç«¯ã€‚è¥¿é¢ä¸€ç›´èµ°å°±æ˜¯ç‡•äº¬äº†ï¼Œæ±é¢æ˜¯ä¸€æœ›ç„¡éš›çš„å¤§æµ·ã€‚
+æ¥µç›®çœºæœ›ä¸ç¦è®“äººå¿ƒèƒ¸é–‹æ“´ï¼Œç¥žèˆ’æ„æš¢ï¼Œçš„ç¢ºæ˜¯ä¸€å€‹å¥½å±…è™•ã€‚
 LONG );
         set("exits", ([
                 "west" : "/d/beijing/road10",
                 "north" : "/d/tulong/tulong/haian",
         ]));
         set("item_desc", ([
-                "chuan" : "Ò»ËÒ´ó·«´¬£¬ÔìµÃºÜ½áÊµ£¬¿´À´¿ÉÒÔ³öÔ¶º£µÄ¡£\n",
+                "chuan" : "ä¸€è‰˜å¤§å¸†èˆ¹ï¼Œé€ å¾—å¾ˆçµå¯¦ï¼Œçœ‹ä¾†å¯ä»¥å‡ºé æµ·çš„ã€‚\n",
         ]));
         set("objects", ([
                 "/d/beijing/npc/flowerg":1,
@@ -35,7 +35,7 @@ LONG );
 }
 
 /*
-// Â·¾¶¸ÄÔÚº¼ÖÝÇ®ÌÁ½­ÅÏ
+// è·¯å¾‘æ”¹åœ¨æ­å·žéŒ¢å¡˜æ±Ÿç•”
 void init()
 {
         object dao, room, ren, ding;
@@ -56,10 +56,10 @@ void init()
         {
                 room = get_object("/d/tulong/tulong/daobian");
                 ren = present("bai guishou",room);
-                tell_object(me, HIC "Äã¿´¼ûÉ³Ì²ÉÏÍ£²´ÂúÁËº£´¬£¬ËùÓÐµÄº£´¬È«²¿±ê¼Ç×ÅÌìÓ¥½ÌµÄ±ê¼Ç¡£\n"NOR);
-                tell_object(me, CYN "°×¹êÊÙ¶ÔÄãËµµÀ£ºÎÒÌìÓ¥½ÌµÃµ½ÍÀÁú±¦µ¶£¬ÕâÎ»ÎäÁÖÍ¬µÀ¿ÉÔ¸Òâ²Î¼ÓÑïµ¶Á¢Íþ´ó»á£¿\n"NOR);
-                message("vision", HIR"\n¡¾ÒÐÌìÍÀÁú¡¿" NOR+WHT "°×¹êÊÙÑöÌìÒ»Éù³¤Ð¦¡£\n" NOR, all_interactive());
-                message("vision", HIR"\n¡¾ÒÐÌìÍÀÁú¡¿" NOR+WHT "°×¹êÊÙ£ºÎÒÌìÓ¥½ÌµÃµ½ÍÀÁú±¦µ¶£¬½ñÔÚÍõÅÌÉ½µº¾ÙÐÐÑïµ¶Á¢Íþ´ó»á¡£\n" NOR, all_interactive());
+                tell_object(me, HIC "ä½ çœ‹è¦‹æ²™ç˜ä¸Šåœæ³Šæ»¿äº†æµ·èˆ¹ï¼Œæ‰€æœ‰çš„æµ·èˆ¹å…¨éƒ¨æ¨™è¨˜è‘—å¤©é·¹æ•™çš„æ¨™è¨˜ã€‚\n"NOR);
+                tell_object(me, CYN "ç™½é¾œå£½å°ä½ èªªé“ï¼šæˆ‘å¤©é·¹æ•™å¾—åˆ°å± é¾å¯¶åˆ€ï¼Œé€™ä½æ­¦æž—åŒé“å¯é¡˜æ„åƒåŠ æšåˆ€ç«‹å¨å¤§æœƒï¼Ÿ\n"NOR);
+                message("vision", HIR"\nã€å€šå¤©å± é¾ã€‘" NOR+WHT "ç™½é¾œå£½ä»°å¤©ä¸€è²é•·ç¬‘ã€‚\n" NOR, all_interactive());
+                message("vision", HIR"\nã€å€šå¤©å± é¾ã€‘" NOR+WHT "ç™½é¾œå£½ï¼šæˆ‘å¤©é·¹æ•™å¾—åˆ°å± é¾å¯¶åˆ€ï¼Œä»Šåœ¨çŽ‹ç›¤å±±å³¶èˆ‰è¡Œæšåˆ€ç«‹å¨å¤§æœƒã€‚\n" NOR, all_interactive());
                 remove_call_out("mes");
                 call_out("mes",1,this_player());
                 set_temp("to_wang", 1, this_player());
@@ -71,7 +71,7 @@ void init()
 void mes(object me)
 {
       if (!me) return;
-        message_vision(HIR "ÄãÔ¸Òâ²Î¼Ó(accept/jieshou)ÍõÅÌÉ½µºÑïµ¶Á¢Íþ´ó»áÂð£¿\n"NOR, me);
+        message_vision(HIR "ä½ é¡˜æ„åƒåŠ (accept/jieshou)çŽ‹ç›¤å±±å³¶æšåˆ€ç«‹å¨å¤§æœƒå—Žï¼Ÿ\n"NOR, me);
 }
 
 int do_accept()
@@ -79,7 +79,7 @@ int do_accept()
         object me = this_player();
         if( query_temp("to_wang", me) )
         {
-                tell_object(me, HIR "Äã¾ö¶¨È¥²Î¼ÓÑïµ¶Á¢Íþ´ó»á¡£\n" NOR);
+                tell_object(me, HIR "ä½ æ±ºå®šåŽ»åƒåŠ æšåˆ€ç«‹å¨å¤§æœƒã€‚\n" NOR);
                 remove_call_out("moveto");
                 call_out("moveto",10,me);
         }
@@ -89,7 +89,7 @@ int do_accept()
 int moveto(object me)
 {
         me->move("/d/tulong/tulong/boat");
-        message_vision(HIC "\n$N×øÉÏÁËÌìÓ¥½ÌµÄ´ó´¬£¬Ìýµ½¶æ×ÓÊÖº°µÀ£º¡°¿ª´¬ÁË£¡¡±£¬´ó´¬ÂýÂýµÄÏò´óº£Ê»½ø¡£\n"NOR, me);
+        message_vision(HIC "\n$Nåä¸Šäº†å¤©é·¹æ•™çš„å¤§èˆ¹ï¼Œè½åˆ°èˆµå­æ‰‹å–Šé“ï¼šâ€œé–‹èˆ¹äº†ï¼â€ï¼Œå¤§èˆ¹æ…¢æ…¢çš„å‘å¤§æµ·é§›é€²ã€‚\n"NOR, me);
         remove_call_out("arrive1");
         call_out("arrive1",10,me);
         return 1;
@@ -97,7 +97,7 @@ int moveto(object me)
 
 int arrive1(object me)
 {
-        message_vision(HIB "\nÌìÓ¥½ÌµÄ´ó´¬ÔÚ´óº£ÉÏÂýÂýµÄÆ¯×Å......$N²»½û¸Ðµ½Ë¯ÒâëüëÊ¡£\n"NOR, me);
+        message_vision(HIB "\nå¤©é·¹æ•™çš„å¤§èˆ¹åœ¨å¤§æµ·ä¸Šæ…¢æ…¢çš„æ¼‚è‘—......$Nä¸ç¦æ„Ÿåˆ°ç¡æ„æœ¦æœ§ã€‚\n"NOR, me);
         remove_call_out("arrive2");
         call_out("arrive2",10,me);
         return 1;
@@ -105,9 +105,9 @@ int arrive1(object me)
 
 int arrive2(object me)
 {
-        message_vision(HIY "\n$NÍ»È»Ìýµ½Ò»Éù¾ªºÈ£º¡°µ½ÁË£¬ÏÂ´¬°É¡±£¡$N¶ÙÊ±ÌáÆð¾«Éñ£¬¸ú×ÅÌìÓ¥½Ì½ÌÖÚÏÂÁË´¬¡£\n"NOR, me);
+        message_vision(HIY "\n$Nçªç„¶è½åˆ°ä¸€è²é©šå–ï¼šâ€œåˆ°äº†ï¼Œä¸‹èˆ¹å§â€ï¼$Né “æ™‚æèµ·ç²¾ç¥žï¼Œè·Ÿè‘—å¤©é·¹æ•™æ•™çœ¾ä¸‹äº†èˆ¹ã€‚\n"NOR, me);
         me->move("/d/tulong/tulong/daobian");
-        tell_object(me, HIR "\nÄãÍ»È»Ïëµ½£º×îºÃÏÈÔÒÁËÆäËûÈËµÄ´¬(break boat)£¬ÈÃËûÃÇÎÞÂ·¿ÉÌÓ¡£\n" NOR);
+        tell_object(me, HIR "\nä½ çªç„¶æƒ³åˆ°ï¼šæœ€å¥½å…ˆç ¸äº†å…¶ä»–äººçš„èˆ¹(break boat)ï¼Œè®“ä»–å€‘ç„¡è·¯å¯é€ƒã€‚\n" NOR);
         return 1;
 }
 
@@ -118,20 +118,20 @@ int do_enter ( string arg )
         string dir;
         if (! arg || arg != "chuan")
         {
-                tell_object(this_player() , "ÄãÒª enter ÄÄ¶ù£¿\n" ) ;
+                tell_object(this_player() , "ä½ è¦ enter å“ªå…’ï¼Ÿ\n" ) ;
                 return 1 ;
         }
         ob = this_player () ;
-        message_vision("´¬·òÒ»¼ûÓÐÈËÉÏ´¬£¬Ã¦½ÐÁËÒ»Éù£º¿ª´¬à¶£¡\n", ob);
-        message_vision("´¬·òÉýÆð·«£¬´¬¾ÍÏò¶«·½º½ÐÐ¡£\n", ob);
+        message_vision("èˆ¹å¤«ä¸€è¦‹æœ‰äººä¸Šèˆ¹ï¼Œå¿™å«äº†ä¸€è²ï¼šé–‹èˆ¹å˜ï¼\n", ob);
+        message_vision("èˆ¹å¤«å‡èµ·å¸†ï¼Œèˆ¹å°±å‘æ±æ–¹èˆªè¡Œã€‚\n", ob);
         ob->move("/d/mingjiao/lsd/dahai") ;
-        tell_object(ob, BLU "ÄãÔÚº£ÉÏº½ÐÐÁËÈýÌìÈýÒ¹.......\n" NOR ) ;
+        tell_object(ob, BLU "ä½ åœ¨æµ·ä¸Šèˆªè¡Œäº†ä¸‰å¤©ä¸‰å¤œ.......\n" NOR ) ;
         call_out("home", 10 , ob );
         return 1 ;
 }
 void home( object ob )
 {
-        tell_object(ob , "´ó´¬ÖÕÓÚµÖ´ïÁËÄÏº£°¶±ß¡£Äã×ßÏÂ´¬À´¡£\n" ) ;
+        tell_object(ob , "å¤§èˆ¹çµ‚äºŽæŠµé”äº†å—æµ·å²¸é‚Šã€‚ä½ èµ°ä¸‹èˆ¹ä¾†ã€‚\n" ) ;
         ob->move("/d/mingjiao/lsd/anbian") ;
 }
 
@@ -148,7 +148,7 @@ int do_enter(string arg)
         me = this_player();
 
         if (! arg || arg != "haigang")
-	        return notify_fail("ÄãÒªµ½º£¸ÛÃ´£¬ÇëÊäÈë enter haigang¡£\n");
+	        return notify_fail("ä½ è¦åˆ°æµ·æ¸¯éº¼ï¼Œè«‹è¼¸å…¥ enter haigangã€‚\n");
 
         me->move("/d/shenlong/japangames/japan0");
 

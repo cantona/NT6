@@ -13,21 +13,21 @@
 #include <mudlib.h>
 
 #define PUBLIC_MUD_MAIL         "lonely-21@163.com"
-#define RANDOM_PWD_LEN          8 /* Ëæ»úÃÜÂë³¤¶È */
+#define RANDOM_PWD_LEN          8 /* éš¨æ©Ÿå¯†ç¢¼é•·åº¦ */
 #define REGFILE                 "/data/mail_reg.o"
 #define REG_ROOM                "/d/register/regroom"
 #define BASE64_D                "/adm/daemons/base64d"
 
 inherit F_SAVE;
 
-// classÀàĞÍÊÇC++ĞÂÔöµÄ£¬Ïë²»µ½LPCÒ²Ö§³Ö
+// classé¡å‹æ˜¯C++æ–°å¢çš„ï¼Œæƒ³ä¸åˆ°LPCä¹Ÿæ”¯æŒ
 class email
 {
-        string rcpt;    // ÊÕ¼şÕßµØÖ·
-        string body;    // ÄÚÈİ
-        int status;     // ×´Ì¬Âë
-        string id;      // ÓÃ»§ ID
-        string passwd;  // ÃÜÂë
+        string rcpt;    // æ”¶ä»¶è€…åœ°å€
+        string body;    // å…§å®¹
+        int status;     // ç‹€æ…‹ç¢¼
+        string id;      // ç”¨æˆ¶ ID
+        string passwd;  // å¯†ç¢¼
         object user;
         int normal;
 }
@@ -41,32 +41,32 @@ string    random_passwd(int len);
 void      check_user(object user);
 
 /*
- * ÕâÀïÊÇ·şÎñÆ÷ÄãµÄµÇÂ½ÃûºÍÃÜÂë¡£ÓĞÒ»Ğ©·şÎñÆ÷·¢ĞÅÒ²ÊÇÒª½øĞĞ
- * Éí·İÈÏÖ¤µÄ£¬ÏÖÔÚ²»ÉÙÌá¹©ÉÌÉîÊÜÀ¬»øÓÊ¼ş»Ù»µÃûÓşÖ®¿à£¬Ô½À´
- * Ô½¶àµÄ²ÉÓÃ·¢ĞÅÉí·İÈÏÖ¤£¬¾ÍÏñÓÃ Outlook express ÉèÖÃ·şÎñ
- * Æ÷±ØĞëÑ¡Ôñ¡°ÎÒµÄ·şÎñÆ÷ÒªÇóÉí·İÈÏÖ¤¡±¡£
- * Õâ¸ö³ÌĞò SMTP ºÍ ESMTP ¶¼¿ÉÓÃ£¬Èç¹ûÄãµÄ·şÎñÌá¹©ÉÌ²»ÒªÇó
- * Éí·İÈÏÖ¤£¬Äã¾¡¿ÉÒÔ²»Àí»áÕâ¸öÉè¶¨¡£
+ * é€™è£¡æ˜¯æœå‹™å™¨ä½ çš„ç™»é™¸åå’Œå¯†ç¢¼ã€‚æœ‰ä¸€äº›æœå‹™å™¨ç™¼ä¿¡ä¹Ÿæ˜¯è¦é€²è¡Œ
+ * èº«ä»½èªè¨¼çš„ï¼Œç¾åœ¨ä¸å°‘æä¾›å•†æ·±å—åƒåœ¾éƒµä»¶æ¯€å£åè­½ä¹‹è‹¦ï¼Œè¶Šä¾†
+ * è¶Šå¤šçš„æ¡ç”¨ç™¼ä¿¡èº«ä»½èªè¨¼ï¼Œå°±åƒç”¨ Outlook express è¨­ç½®æœå‹™
+ * å™¨å¿…é ˆé¸æ“‡â€œæˆ‘çš„æœå‹™å™¨è¦æ±‚èº«ä»½èªè¨¼â€ã€‚
+ * é€™å€‹ç¨‹åº SMTP å’Œ ESMTP éƒ½å¯ç”¨ï¼Œå¦‚æœä½ çš„æœå‹™æä¾›å•†ä¸è¦æ±‚
+ * èº«ä»½èªè¨¼ï¼Œä½ ç›¡å¯ä»¥ä¸ç†æœƒé€™å€‹è¨­å®šã€‚
  */
-// ESMTPÔÚĞÂµÄFoxMail v3.11Ò²Ö§³Ö¡£
+// ESMTPåœ¨æ–°çš„FoxMail v3.11ä¹Ÿæ”¯æŒã€‚
 
-string  *mail_reg; // ÕâÀï±£´æÒÑ×¢²áµÄEmailµØÖ·¡£
-mapping user_unreg=([]); // ÕâÀï±£´æÓÊ¼şÒÑ·¢³öµ«ÉĞÎ´È·ÈÏµÄÓÃ»§µÄID
+string  *mail_reg; // é€™è£¡ä¿å­˜å·²æ³¨å†Šçš„Emailåœ°å€ã€‚
+mapping user_unreg=([]); // é€™è£¡ä¿å­˜éƒµä»¶å·²ç™¼å‡ºä½†å°šæœªç¢ºèªçš„ç”¨æˆ¶çš„ID
 
 protected string mailname = "lonely-21",mailpasswd = "921121";
 
 protected mixed content = ([]);
 
-/* ÕâÀïÉè¶¨ÄãµÄ SMTP ·şÎñÆ÷µÄÓòÃûºÍ IP µØÖ· */
+/* é€™è£¡è¨­å®šä½ çš„ SMTP æœå‹™å™¨çš„åŸŸåå’Œ IP åœ°å€ */
 protected string domain_name = "smtp.163.com", address = "123.125.50.135";
 
 /*
- * ÏÂÃæÕâ²¿·ÖÊÇ½øĞĞ SMTP ·şÎñÆ÷ IP µØÖ·µÄ½âÎöÓÃµÄ¡£
- * Ò»°ã SMTP ·şÎñÆ÷µÄÓòÃûÊÇ²»»á±äµÄ£¬µ« IP µØÖ·ÓĞ¿É
- * ÄÜ±ä»¯¡£¶øÇÒÔÚÓÎÏ·ÔËĞĞÖĞºÜÉÙ»á×¢ÒâÕâ¸ö¡£Ò»µ©³öÏÖ
- * ±ä»¯ÊÇºÜÂé·³µÄ£¬263 ÓĞÒ»´Î¾Í¸Ä±äÁË IP µØÖ·Ò²Ã»ÓĞ
- * Í¨ÖªÎÒÃÇ£¬ÎÒµ½ÈıÌìÒÔºó²Å·¢ÏÖ£¬¸ãµÄÎÒºÜŞÏŞÎ£¬Òò´Ë
- * ¼ÓÉÏÁËÕâ¸ö¹¦ÄÜ¡£
+ * ä¸‹é¢é€™éƒ¨åˆ†æ˜¯é€²è¡Œ SMTP æœå‹™å™¨ IP åœ°å€çš„è§£æç”¨çš„ã€‚
+ * ä¸€èˆ¬ SMTP æœå‹™å™¨çš„åŸŸåæ˜¯ä¸æœƒè®Šçš„ï¼Œä½† IP åœ°å€æœ‰å¯
+ * èƒ½è®ŠåŒ–ã€‚è€Œä¸”åœ¨éŠæˆ²é‹è¡Œä¸­å¾ˆå°‘æœƒæ³¨æ„é€™å€‹ã€‚ä¸€æ—¦å‡ºç¾
+ * è®ŠåŒ–æ˜¯å¾ˆéº»ç…©çš„ï¼Œ263 æœ‰ä¸€æ¬¡å°±æ”¹è®Šäº† IP åœ°å€ä¹Ÿæ²’æœ‰
+ * é€šçŸ¥æˆ‘å€‘ï¼Œæˆ‘åˆ°ä¸‰å¤©ä»¥å¾Œæ‰ç™¼ç¾ï¼Œæçš„æˆ‘å¾ˆå°·å°¬ï¼Œå› æ­¤
+ * åŠ ä¸Šäº†é€™å€‹åŠŸèƒ½ã€‚
  */
 protected void resolve_callback( string o_address, string resolved, int key )
 {
@@ -75,11 +75,11 @@ protected void resolve_callback( string o_address, string resolved, int key )
                 address = resolved;
                 save();
                 restore();
-                log_file("smtp",sprintf("SMTP: Ô¶³Ì SMTP ÓÊ¼ş·şÎñÆ÷IPµØÖ·±»×ª»»Îª %s\n",address));
+                log_file("smtp",sprintf("SMTP: é ç¨‹ SMTP éƒµä»¶æœå‹™å™¨IPåœ°å€è¢«è½‰æ›ç‚º %s\n",address));
         }
 }
 
-/* Õâ¸öº¯ÊıÎÒÃÇÊÇÓÉ CRON_D ¶¨Ê±ºô½ĞµÄ£¬ÎÒÃÇÊÇ1Ğ¡Ê±¼ì²éÒ»´Î¡£*/
+/* é€™å€‹å‡½æ•¸æˆ‘å€‘æ˜¯ç”± CRON_D å®šæ™‚å‘¼å«çš„ï¼Œæˆ‘å€‘æ˜¯1å°æ™‚æª¢æŸ¥ä¸€æ¬¡ã€‚*/
 void update_mail_server_ip()
 {/*
         if(previous_object() && (geteuid(previous_object()) != ROOT_UID))
@@ -105,10 +105,10 @@ protected void create()
 }
 
 /*
- * Õâ¸öº¯ÊıÊÇÓÉÍæ¼Ò×¢²áÓÃµÄÄÇ¸ö·¿¼äÀïµÄ×¢²áÃüÁî
- * ºô½ĞµÄ£¬user ÊÇ½øĞĞ×¢²áµÄÍæ¼ÒÎï¼ş£¬mail ÊÇ×¢
- * ²áµÄµç×ÓÓÊ¼şµØÖ·¡£
- * ½÷É÷µÄÈËÓ¦µ±¶Ôºô½Ğ´Ëº¯ÊıµÄÎï¼ş½øĞĞÒ»ÏÂ¼ì²é¡£
+ * é€™å€‹å‡½æ•¸æ˜¯ç”±ç©å®¶æ³¨å†Šç”¨çš„é‚£å€‹æˆ¿é–“è£¡çš„æ³¨å†Šå‘½ä»¤
+ * å‘¼å«çš„ï¼Œuser æ˜¯é€²è¡Œæ³¨å†Šçš„ç©å®¶ç‰©ä»¶ï¼Œmail æ˜¯æ³¨
+ * å†Šçš„é›»å­éƒµä»¶åœ°å€ã€‚
+ * è¬¹æ…çš„äººæ‡‰ç•¶å°å‘¼å«æ­¤å‡½æ•¸çš„ç‰©ä»¶é€²è¡Œä¸€ä¸‹æª¢æŸ¥ã€‚
  */
 
 
@@ -126,14 +126,14 @@ void register_mail(object user,string mail)
 
         if( !objectp(link=query_temp("link_ob", user)) )
         {
-                tell_object(user,"ÄúµÄµµ°¸²»ÍêÈ«£¬ÎŞ·¨½øĞĞ×¢²á£¬ÇëÖØĞÂÁ¬ÏßÍê³É×¢²á.\n\n");
+                tell_object(user,"æ‚¨çš„æª”æ¡ˆä¸å®Œå…¨ï¼Œç„¡æ³•é€²è¡Œæ³¨å†Šï¼Œè«‹é‡æ–°é€£ç·šå®Œæˆæ³¨å†Š.\n\n");
                 destruct(user);
                 return;
         }
 
         if(strsrch(mail,',') >= 0)
         {
-        write(sprintf("ÄãµÄµç×ÓÓÊ¼şµØÖ·£º%s Àï°üº¬·Ç·¨×Ö·û£¬\nÇëÈÏÕæ¼ì²éºóÖØĞÂ×¢²á¡£\n",mail));
+        write(sprintf("ä½ çš„é›»å­éƒµä»¶åœ°å€ï¼š%s è£¡åŒ…å«éæ³•å­—ç¬¦ï¼Œ\nè«‹èªçœŸæª¢æŸ¥å¾Œé‡æ–°æ³¨å†Šã€‚\n",mail));
         return;
         }
 
@@ -143,19 +143,19 @@ void register_mail(object user,string mail)
         server = sprintf("%s 25",address);
 
         /*
-         * PUBLIC_MUD_MAIL ÊÇÔÚÆäËüµÄµØ·½¶¨ÒåµÄ£¬¾ÍÊÇÓÎÏ·
-         * ¶ÔÍâ½»Á÷µÄµç×ÓÓÊ¼şµØÖ·¡£
+         * PUBLIC_MUD_MAIL æ˜¯åœ¨å…¶å®ƒçš„åœ°æ–¹å®šç¾©çš„ï¼Œå°±æ˜¯éŠæˆ²
+         * å°å¤–äº¤æµçš„é›»å­éƒµä»¶åœ°å€ã€‚
          */
-        msg = sprintf("From: \"%s\" <%s>\nTo: %s\nSubject: ÄúÔÚ%sµÄÃÜÂë\n\n",
+        msg = sprintf("From: \"%s\" <%s>\nTo: %s\nSubject: æ‚¨åœ¨%sçš„å¯†ç¢¼\n\n",
         MUD_NAME,PUBLIC_MUD_MAIL,mail,CHINESE_MUD_NAME);
-        msg+=sprintf(user->name()+"£¬ÄãºÃ£¬¸ĞĞ»Äú¹âÁÙ"+MUD_NAME+"ÍøÂçÓÎÏ·¡£\n\nÄúµÄÕËºÅ£º%s\nÃÜÂë£º%s\n",query("id", user),passwd);
-        msg += "\n×¢Òâ£ºÕâ¸öÕËºÅÄ¿Ç°ÎªÁÙÊ±ÕËºÅ£¬ÇëÄúÓÚ48Ğ¡Ê±Ö®ÄÚµÇÂ½È·ÈÏ¡£\n";
-        msg +=   "\t  ¹ıÆÚÎ´µÇÂ½½«»á±»×Ô¶¯É¾³ı¡£\n";
-        msg +=   "\t  ÈçÓĞ×¢²áµÇÂ½·½ÃæµÄÎÊÌâ¿ÉÒÔÓë "+ PUBLIC_MUD_MAIL+" ÁªÏµ¡£\n";
-        msg += "\n\t  ±¾ÓÎÏ·µÄÖ÷Ò³ÔÚ "+MUD_WEB+"
-          ÄÇÀïÓĞÏêÏ¸µÄ°ïÖúºÍÍæ¼ÒĞ´µÄĞÂÊÖÖ¸ÄÏ¡¢¾­Ñé½éÉÜ£¬ÏàĞÅ»á\n\t  ¶ÔÄãºÜÓĞÓÃ´¦¡£
+        msg+=sprintf(user->name()+"ï¼Œä½ å¥½ï¼Œæ„Ÿè¬æ‚¨å…‰è‡¨"+MUD_NAME+"ç¶²çµ¡éŠæˆ²ã€‚\n\næ‚¨çš„è³¬è™Ÿï¼š%s\nå¯†ç¢¼ï¼š%s\n",query("id", user),passwd);
+        msg += "\næ³¨æ„ï¼šé€™å€‹è³¬è™Ÿç›®å‰ç‚ºè‡¨æ™‚è³¬è™Ÿï¼Œè«‹æ‚¨äº48å°æ™‚ä¹‹å…§ç™»é™¸ç¢ºèªã€‚\n";
+        msg +=   "\t  éæœŸæœªç™»é™¸å°‡æœƒè¢«è‡ªå‹•åˆªé™¤ã€‚\n";
+        msg +=   "\t  å¦‚æœ‰æ³¨å†Šç™»é™¸æ–¹é¢çš„å•é¡Œå¯ä»¥èˆ‡ "+ PUBLIC_MUD_MAIL+" è¯ç³»ã€‚\n";
+        msg += "\n\t  æœ¬éŠæˆ²çš„ä¸»é åœ¨ "+MUD_WEB+"
+          é‚£è£¡æœ‰è©³ç´°çš„å¹«åŠ©å’Œç©å®¶å¯«çš„æ–°æ‰‹æŒ‡å—ã€ç¶“é©—ä»‹ç´¹ï¼Œç›¸ä¿¡æœƒ\n\t  å°ä½ å¾ˆæœ‰ç”¨è™•ã€‚
 
-                 ×£ÄúÔÚ"+CHINESE_MUD_NAME+"ÍæµÄÓä¿ì£¡";
+                 ç¥æ‚¨åœ¨"+CHINESE_MUD_NAME+"ç©çš„æ„‰å¿«ï¼";
 
         newmail = new(class email);
         newmail->rcpt = mail;
@@ -169,7 +169,7 @@ void register_mail(object user,string mail)
         if(s<0)
         {
                 log_file("socket","Socket create err: "+socket_error(s)+"\n");
-                tell_object(user,"×¢²á¹ı³ÌÖĞ·şÎñÆ÷·¢Éú´íÎó£¬ÇëÔÙ×¢²áÒ»´Î¡£\n");
+                tell_object(user,"æ³¨å†Šéç¨‹ä¸­æœå‹™å™¨ç™¼ç”ŸéŒ¯èª¤ï¼Œè«‹å†æ³¨å†Šä¸€æ¬¡ã€‚\n");
                 return;
         }
 
@@ -180,12 +180,12 @@ void register_mail(object user,string mail)
         {
                 map_delete(content,s);
                 log_file("socket","Socket connect err: "+socket_error(err)+"\n");
-                tell_object(user,"×¢²á¹ı³ÌÖĞ·şÎñÆ÷·¢Éú´íÎó£¬ÇëÔÙ×¢²áÒ»´Î¡£\n");
+                tell_object(user,"æ³¨å†Šéç¨‹ä¸­æœå‹™å™¨ç™¼ç”ŸéŒ¯èª¤ï¼Œè«‹å†æ³¨å†Šä¸€æ¬¡ã€‚\n");
                 socket_close(s);
                 return;
         }
 
-        tell_object(user,"ÓÊ¼ş·¢ËÍÖĞ£¬ÇëÉÔºò1·Ö°ëÖÓ£®£®£®£®£®\n");
+        tell_object(user,"éƒµä»¶ç™¼é€ä¸­ï¼Œè«‹ç¨å€™1åˆ†åŠé˜ï¼ï¼ï¼ï¼ï¼\n");
         call_out("time_out",90,s);
 }
 
@@ -200,8 +200,8 @@ protected void time_out(int fd)
 
         if(objectp(mailmsg->user))
         {
-                tell_object(mailmsg->user,"\n·¢ËÍ¹ı³Ì³¬Ê±£¬ÇëÖØĞÂÔÙÊÔÒ»´Î¡£
-                ÎÊÌâÓĞ¿ÉÄÜÊÇ£ºSMTPÓÊ¼ş·şÎñÆ÷µÄIPµØÖ·ÒÑ¾­¸ü¸Ä¡£\n");
+                tell_object(mailmsg->user,"\nç™¼é€éç¨‹è¶…æ™‚ï¼Œè«‹é‡æ–°å†è©¦ä¸€æ¬¡ã€‚
+                å•é¡Œæœ‰å¯èƒ½æ˜¯ï¼šSMTPéƒµä»¶æœå‹™å™¨çš„IPåœ°å€å·²ç¶“æ›´æ”¹ã€‚\n");
                 (mailmsg->user)->stop_busy();
         }
 
@@ -217,7 +217,7 @@ void send_mail(object user, string mail_from, string mail_to, string topic, stri
 
         if(strlen(data) > 65536)
         {
-                write("Äã²»ÄÜ·¢ËÍ´óÓÚ64KµÄÓÊ¼ş¡£\n");
+                write("ä½ ä¸èƒ½ç™¼é€å¤§äº64Kçš„éƒµä»¶ã€‚\n");
                 return;
         }
 
@@ -230,7 +230,7 @@ void send_mail(object user, string mail_from, string mail_to, string topic, stri
 
         if(!mail_to || sscanf(mail_to, "%*s@%*s") != 2)
         {
-                write("ÎŞ·¨ÏòÕâ¸öµØÖ··¢ËÍÓÊ¼ş¡£\n");
+                write("ç„¡æ³•å‘é€™å€‹åœ°å€ç™¼é€éƒµä»¶ã€‚\n");
                 return;
         }
 
@@ -238,7 +238,7 @@ void send_mail(object user, string mail_from, string mail_to, string topic, stri
 
         if(strsrch(mail_to, ',') >= 0)
         {
-                write(sprintf("µç×ÓÓÊ¼şµØÖ·£º%s Àï°üº¬·Ç·¨×Ö·û£¬ÎŞ·¨·¢ËÍ¡£\n", mail_to));
+                write(sprintf("é›»å­éƒµä»¶åœ°å€ï¼š%s è£¡åŒ…å«éæ³•å­—ç¬¦ï¼Œç„¡æ³•ç™¼é€ã€‚\n", mail_to));
                 return;
         }
 
@@ -255,7 +255,7 @@ void send_mail(object user, string mail_from, string mail_to, string topic, stri
         if(s<0)
         {
                 log_file("socket","Socket create err: "+socket_error(s)+"\n");
-                write("ÓÊ¼ş·¢ËÍ¹ı³ÌÖĞ·şÎñÆ÷·¢Éú´íÎó£¬ÇëÖØÊÔÒ»´Î¡£\n");
+                write("éƒµä»¶ç™¼é€éç¨‹ä¸­æœå‹™å™¨ç™¼ç”ŸéŒ¯èª¤ï¼Œè«‹é‡è©¦ä¸€æ¬¡ã€‚\n");
                 return;
         }
 
@@ -266,12 +266,12 @@ void send_mail(object user, string mail_from, string mail_to, string topic, stri
         {
                 map_delete(content,s);
                 log_file("socket","Socket connect err: "+socket_error(err)+"\n");
-                write("ÓÊ¼ş·¢ËÍ¹ı³ÌÖĞ·şÎñÆ÷·¢Éú´íÎó£¬ÇëÖØÊÔÒ»´Î¡£\n");
+                write("éƒµä»¶ç™¼é€éç¨‹ä¸­æœå‹™å™¨ç™¼ç”ŸéŒ¯èª¤ï¼Œè«‹é‡è©¦ä¸€æ¬¡ã€‚\n");
                 socket_close(s);
                 return;
         }
 
-        tell_object(user,"ÓÊ¼ş·¢ËÍÖĞ£¬ÇëÉÔºò1·Ö°ëÖÓ£®£®£®£®£®\n");
+        tell_object(user,"éƒµä»¶ç™¼é€ä¸­ï¼Œè«‹ç¨å€™1åˆ†åŠé˜ï¼ï¼ï¼ï¼ï¼\n");
         call_out("time_out",90,s);
 }
 
@@ -291,11 +291,11 @@ protected void success_register(int fd)
 
         (mailmsg->user)->stop_busy();
         map_delete(content,fd);
-        tell_object(usr,sprintf("¸øÄú·ÖÅäµÄËæ»úÃÜÂëÒÑ¸ù¾İÄúµÇ¼ÇµÄµØÖ··¢Íù£º"HIW"%s"NOR"
-ÇëÄú"HIG"Îå·ÖÖÓ"NOR"ºó¼ì²éÄúµÄÓÊÏä¡£Èç¹ûÄúÔÚ"HIC"24"NOR"Ğ¡Ê±ºó»¹Î´ÄÜÊÕµ½ÎÒÃÇ
-¸øÄú·¢³öµÄÓÊ¼ş£¬ÇëÄúÏò "HIY"%s"NOR" ·¢ĞÅËµÃ÷ÏêÏ¸Çé¿ö£¬
-ÎÒÃÇ»á¾¡¿ìÎªÄú½â¾ö¡£²»±ãÖ®´¦Çë¶àÁÂ½â¡£
-×£ÄúÔÚ%sÍæµÄÓä¿ì£¬ÔÙ¼û£¡\n",mailmsg->rcpt,PUBLIC_MUD_MAIL,MUD_NAME));
+        tell_object(usr,sprintf("çµ¦æ‚¨åˆ†é…çš„éš¨æ©Ÿå¯†ç¢¼å·²æ ¹æ“šæ‚¨ç™»è¨˜çš„åœ°å€ç™¼å¾€ï¼š"HIW"%s"NOR"
+è«‹æ‚¨"HIG"äº”åˆ†é˜"NOR"å¾Œæª¢æŸ¥æ‚¨çš„éƒµç®±ã€‚å¦‚æœæ‚¨åœ¨"HIC"24"NOR"å°æ™‚å¾Œé‚„æœªèƒ½æ”¶åˆ°æˆ‘å€‘
+çµ¦æ‚¨ç™¼å‡ºçš„éƒµä»¶ï¼Œè«‹æ‚¨å‘ "HIY"%s"NOR" ç™¼ä¿¡èªªæ˜è©³ç´°æƒ…æ³ï¼Œ
+æˆ‘å€‘æœƒç›¡å¿«ç‚ºæ‚¨è§£æ±ºã€‚ä¸ä¾¿ä¹‹è™•è«‹å¤šè«’è§£ã€‚
+ç¥æ‚¨åœ¨%sç©çš„æ„‰å¿«ï¼Œå†è¦‹ï¼\n",mailmsg->rcpt,PUBLIC_MUD_MAIL,MUD_NAME));
 
         mail_reg=mail_reg+({mailmsg->rcpt});
         save();
@@ -311,11 +311,11 @@ protected void success_register(int fd)
         delete("new_begin", usr);
         link->save();
         usr->save();
-        tell_room(environment(usr),"ÄãÖ»¾õµÃÑÛÇ°Ò»»¨£¬"+query("name", usr)+"²»¼ûÁË¡£\n",({usr}));
-        message("channel:sys",sprintf(HIR"¡¾ÓÊ¼ş×¢²á¾«Áé¡¿"HIW"%s(%s)ÓÊ¼ş·¢³öÍË³öÓÎÏ·¡£\n"NOR,
+        tell_room(environment(usr),"ä½ åªè¦ºå¾—çœ¼å‰ä¸€èŠ±ï¼Œ"+query("name", usr)+"ä¸è¦‹äº†ã€‚\n",({usr}));
+        message("channel:sys",sprintf(HIR"ã€éƒµä»¶æ³¨å†Šç²¾éˆã€‘"HIW"%s(%s)éƒµä»¶ç™¼å‡ºé€€å‡ºéŠæˆ²ã€‚\n"NOR,
                 usr->name(),geteuid(usr)),filter_array(users(),(: wizardp($1) :)));
-        user_unreg[mailmsg->id]=time(); // Ìí¼ÓÕâ¸öÓÃ»§µÄIDµ½Î´È·ÈÏÃûµ¥ÖĞ
-        log_file("smtp",sprintf("%s(%s)µÄÓÊ¼şÒÑ¾­·¢Íù %s¡£\n",usr->name(),geteuid(usr),mailmsg->rcpt));
+        user_unreg[mailmsg->id]=time(); // æ·»åŠ é€™å€‹ç”¨æˆ¶çš„IDåˆ°æœªç¢ºèªåå–®ä¸­
+        log_file("smtp",sprintf("%s(%s)çš„éƒµä»¶å·²ç¶“ç™¼å¾€ %sã€‚\n",usr->name(),geteuid(usr),mailmsg->rcpt));
         save();
         restore();
         destruct(link);
@@ -327,7 +327,7 @@ protected void close_callback(int fd)
         socket_close(fd);
 }
 
-/* ´Ëº¯Êı´¦Àí·¢ËÍ¹ı³ÌÖĞµÄÖÂÃü´íÎó */
+/* æ­¤å‡½æ•¸è™•ç†ç™¼é€éç¨‹ä¸­çš„è‡´å‘½éŒ¯èª¤ */
 protected void mail_error(int fd,string message)
 {
         class email mailmsg;
@@ -339,7 +339,7 @@ protected void mail_error(int fd,string message)
 
         if(objectp(mailmsg->user))
         {
-                tell_object(mailmsg->user,sprintf("\n·¢ËÍ¹ı³ÌÖĞ³öÏÖÒì³£´íÎó£º\n%s\nÇëÖØÊÔÒ»´Î¡£\n\n",
+                tell_object(mailmsg->user,sprintf("\nç™¼é€éç¨‹ä¸­å‡ºç¾ç•°å¸¸éŒ¯èª¤ï¼š\n%s\nè«‹é‡è©¦ä¸€æ¬¡ã€‚\n\n",
                         message));
                 (mailmsg->user)->stop_busy();
         }
@@ -370,7 +370,7 @@ protected void read_callback(int fd,string message)
                 return;
         }
 
-        if(!mailmsg->status)  // ÎÕÊÖÁ¬Í¨
+        if(!mailmsg->status)  // æ¡æ‰‹é€£é€š
         {
                 socket_write(fd,sprintf("EHLO %s\r\n",query_host_name()));
                 mailmsg->status++;
@@ -407,7 +407,7 @@ protected void read_callback(int fd,string message)
                         return;
                 }
 
-                // ESMTP Ğ­Òé²»ĞèÒªÈÏÖ¤
+                // ESMTP å”è­°ä¸éœ€è¦èªè¨¼
                 socket_write(fd,sprintf("MAIL FROM: <%s>\r\n",PUBLIC_MUD_MAIL));
                 mailmsg->status = 3;
                 return;
@@ -417,14 +417,14 @@ protected void read_callback(int fd,string message)
         {
                 string quest;
 
-                if(rcode == 334)        // ÈÏÖ¤ÌáÎÊ
+                if(rcode == 334)        // èªè¨¼æå•
                 {
                         /*
-                         * ÕâÀïÊÇ ESMTP Ğ­ÒéµÄÈÏÖ¤²¿·Ö£¬ESMTP Ğ­Òé¹æ¶¨
-                         * ÈÏÖ¤ĞÅÏ¢Ê¹ÓÃ BASE64 ±àÂë¡£
-                         * ÕâÀïµÄ base64_decode ºÍ base64_encode º¯Êı
-                         * ¾ÍÊÇ base64_d ÀïÃæµÄ decode ºÍ encode º¯Êı£¬
-                         * ÎÒÃÇÊÇ¶¨Òå³ÉÁË simul_efun¡£
+                         * é€™è£¡æ˜¯ ESMTP å”è­°çš„èªè¨¼éƒ¨åˆ†ï¼ŒESMTP å”è­°è¦å®š
+                         * èªè¨¼ä¿¡æ¯ä½¿ç”¨ BASE64 ç·¨ç¢¼ã€‚
+                         * é€™è£¡çš„ base64_decode å’Œ base64_encode å‡½æ•¸
+                         * å°±æ˜¯ base64_d è£¡é¢çš„ decode å’Œ encode å‡½æ•¸ï¼Œ
+                         * æˆ‘å€‘æ˜¯å®šç¾©æˆäº† simul_efunã€‚
                          */
                         quest = message[4..];
                         quest = replace_string(quest,"\n","");
@@ -442,7 +442,7 @@ protected void read_callback(int fd,string message)
                         }
                 }
 
-                // ÈÏÖ¤Í¨¹ı
+                // èªè¨¼é€šé
                 socket_write(fd,sprintf("MAIL FROM: <%s>\r\n",PUBLIC_MUD_MAIL));
                 mailmsg->status = 3;
                 return;
@@ -512,9 +512,9 @@ protected varargs void write_callback(int fd,string outgoing)
 }
 
 /*
- * ¶ÔÍæ¼Ò×¢²áµÄµç×ÓÓÊ¼şµØÖ·µÄ¸÷Àà¼ì²é¾ÍÔÚÕâÀïÊµÏÖ£¬
- * ¿ÉÒÔ¸ù¾İ×Ô¼ºµÄĞèÒªÔö¼õ´úÂë¡£
- * Òª¼ÓÈë¶ÔÄ³Ğ© mail µØÖ·µÄÏŞÖÆ£¬Ò²ÔÚÕâÀïÊµÏÖ¡£
+ * å°ç©å®¶æ³¨å†Šçš„é›»å­éƒµä»¶åœ°å€çš„å„é¡æª¢æŸ¥å°±åœ¨é€™è£¡å¯¦ç¾ï¼Œ
+ * å¯ä»¥æ ¹æ“šè‡ªå·±çš„éœ€è¦å¢æ¸›ä»£ç¢¼ã€‚
+ * è¦åŠ å…¥å°æŸäº› mail åœ°å€çš„é™åˆ¶ï¼Œä¹Ÿåœ¨é€™è£¡å¯¦ç¾ã€‚
  */
 
 protected int mail_have_reg(object user,string mail)
@@ -531,8 +531,8 @@ protected int mail_have_reg(object user,string mail)
 
         if(member_array(mail,mail_reg)!=-1)
         {
-                tell_object(user,"Õâ¸öÓÊ¼şµØÖ·ÒÑ¾­×¢²á¹ıÁË£¬±¾ÓÎÏ·²»ÔÊĞíÍ¬Ò»µØÖ·¶àÖØ×¢²á¡£\n¶Ô²»Æğ£¡\n");
-                message("channel:sys",sprintf(HIR"¡¾ÓÊ¼ş×¢²á¾«Áé¡¿£º%s(%s)×¢²áÇëÇó±»¾Ü¾ø£¬ÍË³öÓÎÏ·¡£\n"NOR,
+                tell_object(user,"é€™å€‹éƒµä»¶åœ°å€å·²ç¶“æ³¨å†Šéäº†ï¼Œæœ¬éŠæˆ²ä¸å…è¨±åŒä¸€åœ°å€å¤šé‡æ³¨å†Šã€‚\nå°ä¸èµ·ï¼\n");
+                message("channel:sys",sprintf(HIR"ã€éƒµä»¶æ³¨å†Šç²¾éˆã€‘ï¼š%s(%s)æ³¨å†Šè«‹æ±‚è¢«æ‹’çµ•ï¼Œé€€å‡ºéŠæˆ²ã€‚\n"NOR,
                 user->name(),geteuid(user)),filter_array(users(),(: wizardp($1) :)));
                 destruct(user);
                 destruct(link);
@@ -546,9 +546,9 @@ protected int mail_have_reg(object user,string mail)
 }
 
 /*
- * ³¬¹ı48Ğ¡Ê±Î´Á¬ÏßÈ·ÈÏÉ¾³ıµµ°¸
- * Õâ¸öº¯ÊıÎÒÃÇÊÇÓÉ CRON_D ¶¨Ê±ºô½ĞµÄ£¬
- * Ò»Ğ¡Ê±¼ì²éÒ»´Î¡£
+ * è¶…é48å°æ™‚æœªé€£ç·šç¢ºèªåˆªé™¤æª”æ¡ˆ
+ * é€™å€‹å‡½æ•¸æˆ‘å€‘æ˜¯ç”± CRON_D å®šæ™‚å‘¼å«çš„ï¼Œ
+ * ä¸€å°æ™‚æª¢æŸ¥ä¸€æ¬¡ã€‚
  */
 void user_no_login()
 {
@@ -558,24 +558,24 @@ void user_no_login()
         object user,link;
         int i;
 
-// ÕâÁ½¾äÊÇÓÃÀ´¼ì²éÈ¨ÏŞµÄ
+// é€™å…©å¥æ˜¯ç”¨ä¾†æª¢æŸ¥æ¬Šé™çš„
         if(!previous_object()||(geteuid(previous_object()) != ROOT_UID)&&(geteuid(previous_object()) != "lonely"))
                 return;
 
-        name=keys(user_unreg); // »ñµÃËùÓĞÓÊ¼şÒÑ·¢³öµÈ´ıÈ·ÈÏµÄÓÃ»§array
+        name=keys(user_unreg); // ç²å¾—æ‰€æœ‰éƒµä»¶å·²ç™¼å‡ºç­‰å¾…ç¢ºèªçš„ç”¨æˆ¶array
         for(i=0; i<sizeof(name); i++){
-                if ((time()-user_unreg[name[i]])>=172800){ // ¼ÙÈçÕâĞ©idµÄ×¢²áÊ±¼äÓëÏÖÔÚÊ±¼äÏà²î2Ìì=48Ğ¡Ê±=172800Ãë
+                if ((time()-user_unreg[name[i]])>=172800){ // å‡å¦‚é€™äº›idçš„æ³¨å†Šæ™‚é–“èˆ‡ç¾åœ¨æ™‚é–“ç›¸å·®2å¤©=48å°æ™‚=172800ç§’
                         if (!sizeof(player)) player=({name[i]});
-                        else player+=({name[i]}); // ÔÚplayer Õâ¸öarrayÖĞ¼ÓÈëÕâ¸öÍæ¼Ò
-                        map_delete(user_unreg,name[i]); // ÔÚÔ­ÏÈµÄmappingÖĞÉ¾³ıÕâ¸öÍæ¼Ò
+                        else player+=({name[i]}); // åœ¨player é€™å€‹arrayä¸­åŠ å…¥é€™å€‹ç©å®¶
+                        map_delete(user_unreg,name[i]); // åœ¨åŸå…ˆçš„mappingä¸­åˆªé™¤é€™å€‹ç©å®¶
                         save();
                         restore();
                 }
         }
 
-// ÏÂÃæ¾ÍÊÇ¶ÔplayerÕâ¸öarrayµÄ´¦ÀíÁË
+// ä¸‹é¢å°±æ˜¯å°playeré€™å€‹arrayçš„è™•ç†äº†
         if(!player || !sizeof(player)){
-                message("system",HIW"£®£®£®ÎŞ·ûºÏÌõ¼şµÄÍæ¼Ò" NOR,users() );
+                message("system",HIW"ï¼ï¼ï¼ç„¡ç¬¦åˆæ¢ä»¶çš„ç©å®¶" NOR,users() );
                 return;
         }
 
@@ -596,11 +596,11 @@ void user_no_login()
                         rm(f);
                 if(file_size(f = sprintf(DATA_DIR+"user/%c/%s.o",one[0],one)) > 0)
                         rm(f);
-                log_file("smtp",sprintf("(%s)³¬¹ı48Ğ¡Ê±Î´Á¬ÏßÈ·ÈÏ±»É¾³ı¡£%s\n",one,time));
+                log_file("smtp",sprintf("(%s)è¶…é48å°æ™‚æœªé€£ç·šç¢ºèªè¢«åˆªé™¤ã€‚%s\n",one,time));
         }
 }
 
-/* Õâ¸öº¯Êı²úÉúÒ»¸ö³¤¶ÈÎª len µÄËæ»úÃÜÂë */
+/* é€™å€‹å‡½æ•¸ç”¢ç”Ÿä¸€å€‹é•·åº¦ç‚º len çš„éš¨æ©Ÿå¯†ç¢¼ */
 string random_passwd(int len)
 {
         int cap,low,num,n;
@@ -633,7 +633,7 @@ string random_passwd(int len)
         return passwd;
 }
 
-// ÏÂÃæµÄÕâ¸öº¯ÊıÊ±ÎÒ¼ÓÉÏÎªÁË´¦Àí48Ğ¡Ê±ÄÚÒÑ¾­µÇÂ½µÄÍæ¼Ò£¬´ÓÎ´×¢²áÓÃ»§ÁĞ±íÖĞÉ¾³ıÕâĞ©Íæ¼Ò¡£
+// ä¸‹é¢çš„é€™å€‹å‡½æ•¸æ™‚æˆ‘åŠ ä¸Šç‚ºäº†è™•ç†48å°æ™‚å…§å·²ç¶“ç™»é™¸çš„ç©å®¶ï¼Œå¾æœªæ³¨å†Šç”¨æˆ¶åˆ—è¡¨ä¸­åˆªé™¤é€™äº›ç©å®¶ã€‚
 void finish_reg(string id)
 {
         int i;
@@ -648,7 +648,7 @@ void finish_reg(string id)
         }
 }
 
-// ÏÂÃæµÄÊÇÎÒÓÃÀ´µ÷ÊÔµÄ½Ó¿Úº¯Êı
+// ä¸‹é¢çš„æ˜¯æˆ‘ç”¨ä¾†èª¿è©¦çš„æ¥å£å‡½æ•¸
 mapping query_users()
 {return user_unreg;}
 
@@ -657,10 +657,10 @@ string *query_mail_reg() { return mail_reg; }
 string query_smtp_info()
 {
         string msg;
-        msg="\n·şÎñÆ÷ÓòÃû£º"+domain_name;
-        msg+=("\n·şÎñÆ÷IPµØÖ·£º"+address);
-        msg+=("\nÓÃ»§Ãû£º"+mailname);
-        msg+=(" ÓÃ»§ÃÜÂë£º*****");
+        msg="\næœå‹™å™¨åŸŸåï¼š"+domain_name;
+        msg+=("\næœå‹™å™¨IPåœ°å€ï¼š"+address);
+        msg+=("\nç”¨æˆ¶åï¼š"+mailname);
+        msg+=(" ç”¨æˆ¶å¯†ç¢¼ï¼š*****");
         msg+="\n";
         return msg;
 }

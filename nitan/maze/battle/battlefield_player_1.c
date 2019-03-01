@@ -6,12 +6,12 @@
 inherit CONDITION_MOD;
 
 string id               = "battlefield_player_1";
-string name     = HIW"ÓÀ"NOR WHT"ºã"HIW"ÈÙ"NOR WHT"Ò«"NOR;
+string name     = HIW"æ°¸"NOR WHT"æ†"HIW"æ¦®"NOR WHT"è€€"NOR;
 string type     = CONDITION_TYPE_POSITIVE;
 int time                = 86400;
 int heartbeat   = 0;
 
-// Æô¶¯×´Ì¬Ê±µÄĞ§¹û
+// å•Ÿå‹•ç‹€æ…‹æ™‚çš„æ•ˆæœ
 void start_effect(object ob)
 {
         addn(query_key()+"/"+BUFF_STR, 8, ob);
@@ -30,13 +30,13 @@ void start_effect(object ob)
         ::start_effect(ob);
 }
 
-// ½áÊø×´Ì¬Ê±µÄĞ§¹û
+// çµæŸç‹€æ…‹æ™‚çš„æ•ˆæœ
 void stop_effect(object ob)
 {
         ::stop_effect(ob);
 }
 
-// ×´Ì¬½øĞĞÖĞµÄĞ§¹û
+// ç‹€æ…‹é€²è¡Œä¸­çš„æ•ˆæœ
 void heart_beat_effect(object ob)
 {
 

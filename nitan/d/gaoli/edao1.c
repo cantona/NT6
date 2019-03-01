@@ -1,14 +1,14 @@
 // /d/gaoli/xuanwumen
-// Room in ¸ßÀö
+// Room in é«˜éº—
 inherit ROOM;
 
 void create()
 {
-        set("short", "´óæäµÀ");
+        set("short", "å¤§é©›é“");
         set("long", @LONG
-Äã×ßÔÚÒ»Ìõ³¾ÍÁ·ÉÑïµÄ´óæäµÀÉÏ¡£ËÄÖÜÈËÀ´ÈËÍù¡£Ìôµ£×ÓµÄÐÐÉÌ£¬
-¸Ï×Å´ó³µµÄÂí·ò£¬ÎõÎõÈÁÈÁ£¬·Ç³£ÈÈÄÖ¡£²»Ê±»¹ÓÐÁ½ÈýÆï¿ìÂí´ÓÉí±ß·É
-³Û¶ø¹ý£¬ÑïÆðÒ»Â·³¾°£¡£µÀÂ·Á½ÅÔÊÇÕûÕûÆëÆëµÄÑîÊ÷ÁÖ¡£
+ä½ èµ°åœ¨ä¸€æ¢å¡µåœŸé£›æšçš„å¤§é©›é“ä¸Šã€‚å››å‘¨äººä¾†äººå¾€ã€‚æŒ‘æ“”å­çš„è¡Œå•†ï¼Œ
+è¶•è‘—å¤§è»Šçš„é¦¬å¤«ï¼Œç†™ç†™æ”˜æ”˜ï¼Œéžå¸¸ç†±é¬§ã€‚ä¸æ™‚é‚„æœ‰å…©ä¸‰é¨Žå¿«é¦¬å¾žèº«é‚Šé£›
+é¦³è€ŒéŽï¼Œæšèµ·ä¸€è·¯å¡µåŸƒã€‚é“è·¯å…©æ—æ˜¯æ•´æ•´é½Šé½Šçš„æ¥Šæ¨¹æž—ã€‚
 LONG
         );
 

@@ -1,17 +1,17 @@
 
         db_rollback()
 
-        Ãû³Æ£º
+        åç¨±ï¼š
                 db_rollback()
 
-        Óï·¨£º
+        èªæ³•ï¼š
                 int db_rollback(int handle)
-                ÕûÊı db_rollback(ÕûÊı handle)
+                æ•´æ•¸ db_rollback(æ•´æ•¸ handle)
 
-        ÓÃ·¨£º
-                MySQL ²»Ö§³Ö rollback
+        ç”¨æ³•ï¼š
+                MySQL ä¸æ”¯æŒ rollback
 
-        by ·¢ÏÖºÅ(Find@tx)
+        by ç™¼ç¾è™Ÿ(Find@tx)
 
 
 

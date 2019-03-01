@@ -4,17 +4,17 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "¶«Á·Îä³¡");
+        set("short", "æ±ç·´æ­¦å ´");
         set("long", @LONG
-ÕâÀïÊÇ»ªÉ½ÅÉµÄÁ·Îä³¡£¬³¡ÉÏÁ¢Õâ¼¸¸öÄ¾ÈË£¬µØ´¦Æ«Æ§£¬ÓĞĞ©»Ä
-Á¹¡£
+é€™è£¡æ˜¯è¯å±±æ´¾çš„ç·´æ­¦å ´ï¼Œå ´ä¸Šç«‹é€™å¹¾å€‹æœ¨äººï¼Œåœ°è™•ååƒ»ï¼Œæœ‰äº›è’
+æ¶¼ã€‚
 LONG );
         set("exits", ([ /* sizeof() == 2 */
             "west"     : __DIR__"wuchang1",
         ]));
         set("outdoors", "huashan");
 
-        set("for_family", "»ªÉ½ÅÉ");
+        set("for_family", "è¯å±±æ´¾");
 
         setup();
         replace_program(ROOM);

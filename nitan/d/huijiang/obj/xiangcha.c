@@ -1,4 +1,4 @@
-// Room: /d/huijiang/obj/xiangcha.c Ïã²è
+// Room: /d/huijiang/obj/xiangcha.c é¦™èŒ¶
 // Last Modified by winder on Sep. 12 2001
 
 inherit ITEM;
@@ -6,20 +6,20 @@ void init();
 
 void create()
 {
-        set_name("Ïã²è",({"tea", "cha", "xiang cha"}));
+        set_name("é¦™èŒ¶",({"tea", "cha", "xiang cha"}));
         set_weight(50);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("long", "Ò»±­ÈÈ²è£¬ÓÆÓÆµØÃ°×ÅÏãÆø¡«¡«¡«\n");
-                set("unit", "±­");
+                set("long", "ä¸€æ¯ç†±èŒ¶ï¼Œæ‚ æ‚ åœ°å†’è‘—é¦™æ°£ï½ï½ï½\n");
+                set("unit", "æ¯");
                 set("value", 30);
                 set("remaining",10);
                 set("drink_supply", 20);
         }
         set("liquid", ([
                 "type": "tea",
-                "name": "²è",
+                "name": "èŒ¶",
                 "remaining": 15,
                 "drunk_apply": 5,
         ]));

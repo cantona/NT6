@@ -1,5 +1,5 @@
 // This program is a part of NT MudLIB
-// xie.c Ğ»Ñ·
+// xie.c è¬éœ
 
 #include <ansi.h>
 #include "mingjiao.h"
@@ -14,12 +14,12 @@ string ask_boat();
 void create()
 {
         object ob;
-        set_name("Ğ»Ñ·",({"xie xun","xie","xun"}));
-        set("title", HIG "Ã÷½Ì" HIY "½ğÃ«Ê¨Íõ" NOR);
+        set_name("è¬éœ",({"xie xun","xie","xun"}));
+        set("title", HIG "æ˜æ•™" HIY "é‡‘æ¯›ç…ç‹" NOR);
 
-        set("long", "Ëû¾ÍÊÇÃ÷½ÌµÄËÄ´ó»¤·¨Ö®Ò»µÄ½ğÃ«Ê¨Íõ¡£\n"+
-                    "ËûÉí²Ä¿ıÎ°Òì³££¬ÂúÍ·½ğ·¢É¢Åû¼çÍ·¡£µ«Ë«Ä¿ÒÑÏ¹¡£\n"+
-                    "ÔÚÄãÃæÇ°Ò»Õ¾£¬Íş·çÁİÁİ£¬ÕæÈçÌìÉñÒ»°ã¡£\n");
+        set("long", "ä»–å°±æ˜¯æ˜æ•™çš„å››å¤§è­·æ³•ä¹‹ä¸€çš„é‡‘æ¯›ç…ç‹ã€‚\n"+
+                    "ä»–èº«æé­å‰ç•°å¸¸ï¼Œæ»¿é ­é‡‘ç™¼æ•£æŠ«è‚©é ­ã€‚ä½†é›™ç›®å·²çã€‚\n"+
+                    "åœ¨ä½ é¢å‰ä¸€ç«™ï¼Œå¨é¢¨å‡œå‡œï¼ŒçœŸå¦‚å¤©ç¥ä¸€èˆ¬ã€‚\n");
         set("age", 56);
         set("attitude", "peaceful");
         set("shen", -13000);
@@ -65,17 +65,17 @@ void create()
         }) );
 
         set("inquiry", ([
-                 "ÕÅÎŞ¼É"  : "ËûÊÇÎÒµÄÒå×Ó£¬ÎÒÒÑºÜ¾ÃÃ»ÓĞ¼ûµ½ËûÁË¡£",
-                 "ÆßÉËÈ­¾­": (: ask_me :),
-                 "ÍÀÁúµ¶": (: ask_dao :),
-                 "´¬"    : (: ask_boat :),
-                 "´¬²°"  : (: ask_boat :),
-                 "Ôì´¬"  : (: ask_boat :),
-                 "ÖĞÔ­"  : (: ask_boat :),
-                 "³ÉÀ¥"  : "Ëû¾ÍÊÇÎÒÄÇ¹·ÔôÊ¦¸µ£¬ËûÉ±ÁËÎÒÒ»¼ÒËÄ¿Ú£¬´Ë³ğ²»¹²´÷Ìì£¡",
+                 "å¼µç„¡å¿Œ"  : "ä»–æ˜¯æˆ‘çš„ç¾©å­ï¼Œæˆ‘å·²å¾ˆä¹…æ²’æœ‰è¦‹åˆ°ä»–äº†ã€‚",
+                 "ä¸ƒå‚·æ‹³ç¶“": (: ask_me :),
+                 "å± é¾åˆ€": (: ask_dao :),
+                 "èˆ¹"    : (: ask_boat :),
+                 "èˆ¹èˆ¶"  : (: ask_boat :),
+                 "é€ èˆ¹"  : (: ask_boat :),
+                 "ä¸­åŸ"  : (: ask_boat :),
+                 "æˆæ˜†"  : "ä»–å°±æ˜¯æˆ‘é‚£ç‹—è³Šå¸«å‚…ï¼Œä»–æ®ºäº†æˆ‘ä¸€å®¶å››å£ï¼Œæ­¤ä»‡ä¸å…±æˆ´å¤©ï¼",
         ]));
 
-        create_family("Ã÷½Ì", 36, "»¤·¨·¨Íõ");
+        create_family("æ˜æ•™", 36, "è­·æ³•æ³•ç‹");
 
         set("master_ob",5);
         setup();
@@ -87,8 +87,8 @@ void create()
 
 void attempt_apprentice(object ob)
 {
-        command("say ÀÏ·ò²»ÊÕµÜ×Ó¡£");
-        command("say ÕâÎ»"+RANK_D->query_respect(ob)+"»¹ÊÇÇë»Ø°É¡£");
+        command("say è€å¤«ä¸æ”¶å¼Ÿå­ã€‚");
+        command("say é€™ä½"+RANK_D->query_respect(ob)+"é‚„æ˜¯è«‹å›å§ã€‚");
         return;
 }
 
@@ -113,7 +113,7 @@ int recognize_apprentice(object ob, string skill)
         if( !query("can_learn/xiexun/qishang-quan", ob) )
                 return -1;
 
-        command("say Äãµ½µ×Ñ§²»Ñ§ÎÒµÄÆßÉËÈ­£¿²»ÏëÑ§¾Í¿ì¹ö£¡");
+        command("say ä½ åˆ°åº•å­¸ä¸å­¸æˆ‘çš„ä¸ƒå‚·æ‹³ï¼Ÿä¸æƒ³å­¸å°±å¿«æ»¾ï¼");
         return -1;
 }
 
@@ -122,25 +122,25 @@ string ask_me()
         mapping fam;
         object me = this_player();
 
-        if( !(fam=query("family", me)) || fam["family_name"] != "Ã÷½Ì" )
-                return "ÆßÉËÈ­¾­£¿Ã»ÌıËµ¹ı¡£";
+        if( !(fam=query("family", me)) || fam["family_name"] != "æ˜æ•™" )
+                return "ä¸ƒå‚·æ‹³ç¶“ï¼Ÿæ²’è½èªªéã€‚";
 
-        if (fam["master_name"] != "ÕÅÎŞ¼É")
-                return RANK_D->query_respect(me) + "»¹ÊÇÇë»Ø°É£¬ÄãËµµÄÊÇáÇá¼ÅÉµÄ¾ø¼¼£¬ÎÒÔõÃ´»áÖªµÀ£¿";
+        if (fam["master_name"] != "å¼µç„¡å¿Œ")
+                return RANK_D->query_respect(me) + "é‚„æ˜¯è«‹å›å§ï¼Œä½ èªªçš„æ˜¯å´†å³’æ´¾çš„çµ•æŠ€ï¼Œæˆ‘æ€éº¼æœƒçŸ¥é“ï¼Ÿ";
 
         if( query("can_lean/xiexun/qishang-quan", me) )
-                return "ÎÒ²»ÊÇ´ğÓ¦´«ÁËÄãÕâÈ­¾­ÁËÂğ£¿ÔõÃ´»¹ÒªÎÊ£¡";
+                return "æˆ‘ä¸æ˜¯ç­”æ‡‰å‚³äº†ä½ é€™æ‹³ç¶“äº†å—ï¼Ÿæ€éº¼é‚„è¦å•ï¼";
 
-        if( !query_temp("marks/ÆßÉË", me) )
-                return "ÎÒÕâÆßÉËÈ­¾­³ıÁËÎÒÒå×Ó£¬²»´«ÍâÈË£¡";
+        if( !query_temp("marks/ä¸ƒå‚·", me) )
+                return "æˆ‘é€™ä¸ƒå‚·æ‹³ç¶“é™¤äº†æˆ‘ç¾©å­ï¼Œä¸å‚³å¤–äººï¼";
 
         command("consider");
-        command("say ÎŞ¼ÉÕâº¢×Ó£¬ÔõÃ´¿É½«ÆßÉËÈ­´«ÓèËûÈËÄØ£¡");
-        command("say Ò²°Õ£¬ÎŞ¼É¼ÈÈ»ÈÃÄãÀ´µ½ÕâÀï£¬ÎÒ¾Í´«ÁËÄã°É¡£");
+        command("say ç„¡å¿Œé€™å­©å­ï¼Œæ€éº¼å¯å°‡ä¸ƒå‚·æ‹³å‚³äºˆä»–äººå‘¢ï¼");
+        command("say ä¹Ÿç½·ï¼Œç„¡å¿Œæ—¢ç„¶è®“ä½ ä¾†åˆ°é€™è£¡ï¼Œæˆ‘å°±å‚³äº†ä½ å§ã€‚");
         set("can_learn/xiexun/qishang-quan", 1, me);
-        delete_temp("marks/ÆßÉË", me);
-        command("whisper"+query("id", me)+"ÎåĞĞÖ®Æøµ÷ÒõÑô£¬ËğĞÄÉË·Î´İ¸Î³¦£¬²ØÀë¾«Ê§Òâ»Ğã±£¬Èı½¹ÆëÄæÙâ»êÆÇ·ÉÑï£¡");
-        return "ÄãÑ§ÍêÁË¾Í¿ÉÒÔ»ØÈ¥°É¡£";
+        delete_temp("marks/ä¸ƒå‚·", me);
+        command("whisper"+query("id", me)+"äº”è¡Œä¹‹æ°£èª¿é™°é™½ï¼Œæå¿ƒå‚·è‚ºæ‘§è‚è…¸ï¼Œè—é›¢ç²¾å¤±æ„ææƒšï¼Œä¸‰ç„¦é½Šé€†å…®é­‚é­„é£›æšï¼");
+        return "ä½ å­¸å®Œäº†å°±å¯ä»¥å›å»å§ã€‚";
 }
 
 string ask_boat()
@@ -148,28 +148,28 @@ string ask_boat()
         object me = this_player();
 
         if( !query("can_learn/xiexun/qishang-quan", me) )
-                return "´¬£¿Õâ¼«±±±ù»ğµºÀë¿ªÖĞÔ­ÍòÀï£¬ÄÄÀ´µÄ´¬²°£¿";
+                return "èˆ¹ï¼Ÿé€™æ¥µåŒ—å†°ç«å³¶é›¢é–‹ä¸­åŸè¬è£¡ï¼Œå“ªä¾†çš„èˆ¹èˆ¶ï¼Ÿ";
 
-        command("say µ±ÄêÎÒ°ïÒåµÜÒåÃÃËûÃÇÔÚºóÉ½´ÔÁÖÖĞ¿³·¥(chop)Ê÷Ä¾£¬È»ºó²Å°áµ½º£±ßÔì´¬(make)¡£");
-        return "Ò²²»ÖªµÀÏÖÔÚËûÃÇºÍÎÒÄÇÎŞ¼Éº¢¶ù¶¼ÔõÃ´ÑùÁË¡£";
+        command("say ç•¶å¹´æˆ‘å¹«ç¾©å¼Ÿç¾©å¦¹ä»–å€‘åœ¨å¾Œå±±å¢æ—ä¸­ç ä¼(chop)æ¨¹æœ¨ï¼Œç„¶å¾Œæ‰æ¬åˆ°æµ·é‚Šé€ èˆ¹(make)ã€‚");
+        return "ä¹Ÿä¸çŸ¥é“ç¾åœ¨ä»–å€‘å’Œæˆ‘é‚£ç„¡å¿Œå­©å…’éƒ½æ€éº¼æ¨£äº†ã€‚";
 }
 
 string ask_dao()
 {
         mapping fam;
 
-        if( !(fam=query("family", this_player())) || fam["family_name"] != "Ã÷½Ì" )
-                return RANK_D->query_respect(this_player())+"Óë±¾½ÌËØÎŞÀ´Íù£¬²»Öª´Ë»°´ÓºÎÌ¸Æğ£¿";
+        if( !(fam=query("family", this_player())) || fam["family_name"] != "æ˜æ•™" )
+                return RANK_D->query_respect(this_player())+"èˆ‡æœ¬æ•™ç´ ç„¡ä¾†å¾€ï¼Œä¸çŸ¥æ­¤è©±å¾ä½•è«‡èµ·ï¼Ÿ";
 
         if (present("tulong dao", this_object()))
         {
                 command("wield dao");
-                command("say ÎäÁÖÖÁ×ğ£¬±¦µ¶ÍÀÁú£¬ºÅÁîÌìÏÂ£¬Äª¸Ò²»´Ó£¬ÒĞÌì²»³ö£¬Ë­ÓëÕù·æ¡£");
-                write("\nĞ»Ñ·°ô×ÅÍÀÁú±¦µ¶£¬µÍÍ·Ú¤Ë¼µ¶¿ÚÖ®ÃØ¡£\n\n");
+                command("say æ­¦æ—è‡³å°Šï¼Œå¯¶åˆ€å± é¾ï¼Œè™Ÿä»¤å¤©ä¸‹ï¼Œè«æ•¢ä¸å¾ï¼Œå€šå¤©ä¸å‡ºï¼Œèª°èˆ‡çˆ­é‹’ã€‚");
+                write("\nè¬éœæ£’è‘—å± é¾å¯¶åˆ€ï¼Œä½é ­å†¥æ€åˆ€å£ä¹‹ç§˜ã€‚\n\n");
                 set_temp("xie_tld", 1, this_player());
-                return "²»Ñ°µ½±¦µ¶ÖĞÖ®ÃØ£¬ÎÒÖ®´ó³ğÈçºÎµÃ±¨£¿°¦......";
+                return "ä¸å°‹åˆ°å¯¶åˆ€ä¸­ä¹‹ç§˜ï¼Œæˆ‘ä¹‹å¤§ä»‡å¦‚ä½•å¾—å ±ï¼Ÿå”‰......";
         } else
-                return "ÎäÁÖÖÁ×ğ£¬±¦µ¶ÍÀÁú£¬ºÅÁîÌìÏÂ£¬Äª¸Ò²»´Ó£¡";
+                return "æ­¦æ—è‡³å°Šï¼Œå¯¶åˆ€å± é¾ï¼Œè™Ÿä»¤å¤©ä¸‹ï¼Œè«æ•¢ä¸å¾ï¼";
 }
 
 int accept_object(object who, object ob)
@@ -181,29 +181,29 @@ int accept_object(object who, object ob)
             !stringp(query("owner_id", ob)) || 
           query("owner_id", ob) != "cheng kun" )
         {
-                command("say ÀÏ·ò¶ÔÕâÑù¶«Î÷Ã»Ê²Ã´ĞËÈ¤¡­¡­");
+                command("say è€å¤«å°é€™æ¨£æ±è¥¿æ²’ä»€éº¼èˆˆè¶£â€¦â€¦");
                 return 0;
         }
 
-        command("say °¡¡­¡­³ÉÀ¥µÄÈËÍ·£¡ ³ÉÀ¥µÄÈËÍ·£¡");
-        command("chat ¹ş¹ş¹ş£¡¡­¡­³ÉÀ¥µÄÈËÍ·£¡ ³ÉÀ¥µÄÈËÍ·£¡");
+        command("say å•Šâ€¦â€¦æˆæ˜†çš„äººé ­ï¼ æˆæ˜†çš„äººé ­ï¼");
+        command("chat å“ˆå“ˆå“ˆï¼â€¦â€¦æˆæ˜†çš„äººé ­ï¼ æˆæ˜†çš„äººé ­ï¼");
         call_out("destroy", 1, ob);
 
         if( query("killed_by", ob) != query("id", who) )
         {
-                command("say µ«ËûºÃÏó²»ÊÇÄãÉ±µÄ°É£¿ÄãÊÇÔõÃ´µÃµ½Õâ¿éÈËÍ·µÄ£¿");
+                command("say ä½†ä»–å¥½è±¡ä¸æ˜¯ä½ æ®ºçš„å§ï¼Ÿä½ æ˜¯æ€éº¼å¾—åˆ°é€™å¡Šäººé ­çš„ï¼Ÿ");
                 return 1;
         }
           if( query_temp("xie_tld", who) && present("tulong dao",me) )
         {
-                command("say ÄãÈÃÎÒ´ó³ğµÃ±¨£¬Õâ°Ñµ¶¾ÍËãÎÒµÄĞ»Àñ£¬Ö»¿ÉÏ§²»ÄÜÊÖÈĞÁËÄÇ¶ñÔô¡£");
+                command("say ä½ è®“æˆ‘å¤§ä»‡å¾—å ±ï¼Œé€™æŠŠåˆ€å°±ç®—æˆ‘çš„è¬ç¦®ï¼Œåªå¯æƒœä¸èƒ½æ‰‹åˆƒäº†é‚£æƒ¡è³Šã€‚");
                 command("unwield dao");
                   command("give tulong dao to "+query("id", who));
                 delete_temp("xie_tld", who);
                 return 1;
         } else
         {
-                command("say ÄãÈÃÎÒ´ó³ğµÃ±¨£¬ÎÒÕâÀïÖ»ÓĞÎÒµÄ½ğÃ«ËÍ¸øÄãÁË£¬Ö»¿ÉÏ§²»ÄÜÊÖÈĞÁËÄÇ¶ñÔô¡£");
+                command("say ä½ è®“æˆ‘å¤§ä»‡å¾—å ±ï¼Œæˆ‘é€™è£¡åªæœ‰æˆ‘çš„é‡‘æ¯›é€çµ¦ä½ äº†ï¼Œåªå¯æƒœä¸èƒ½æ‰‹åˆƒäº†é‚£æƒ¡è³Šã€‚");
                 obj = new ("/d/mingjiao/obj/jinmao");
                 obj->move(this_player());
                 return 1;
@@ -220,10 +220,10 @@ int accept_ask(object me, string topic)
 {
         switch (topic)
         {
-        case "ÌìµØ»ìÔª" :
+        case "å¤©åœ°æ··å…ƒ" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/pili-shou/hun",
-                           "name"    : "ÌìµØ»ìÔª",
+                           "name"    : "å¤©åœ°æ··å…ƒ",
                            "sk1"     : "pili-shou",
                            "lv1"     : 140,
                            "force"   : 240,
@@ -231,10 +231,10 @@ int accept_ask(object me, string topic)
                            "shen"    : 48000, ]));
                 break;
 
-        case "»êÆÇ·ÉÑï" :
+        case "é­‚é­„é£›æš" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/qishang-quan/fei",
-                           "name"    : "»êÆÇ·ÉÑï",
+                           "name"    : "é­‚é­„é£›æš",
                            "sk1"     : "qishang-quan",
                            "lv1"     : 140,
                            "neili"   : 2000,
@@ -242,10 +242,10 @@ int accept_ask(object me, string topic)
                            "shen"    : 100000, ]));
                 break;
 
-        case "ÉË×Ö¾÷" :
+        case "å‚·å­—è¨£" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/qishang-quan/shang",
-                           "name"    : "ÉË×Ö¾÷",
+                           "name"    : "å‚·å­—è¨£",
                            "sk1"     : "qishang-quan",
                            "lv1"     : 160,
                            "neili"   : 2200,
@@ -253,10 +253,10 @@ int accept_ask(object me, string topic)
                            "shen"    : 100000, ]));
                 break;
 
-        case "ÌìµØ»ìÔª" :
+        case "å¤©åœ°æ··å…ƒ" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/pili-shou/hun",
-                           "name"    : "ÌìµØ»ìÔª",
+                           "name"    : "å¤©åœ°æ··å…ƒ",
                            "sk1"     : "pili-shou",
                            "lv1"     : 160,
                            "neili"   : 2200,

@@ -11,7 +11,7 @@ void check_festival();
 void create()
 {
         seteuid(getuid());
-        set("channel_id", "½ÚÈÕ½±Àø¾«Áé");   
+        set("channel_id", "ç¯€æ—¥çå‹µç²¾éˆ");   
         setup();
         check_festival();
 }
@@ -19,8 +19,8 @@ void create()
 void setup()
 {
         // /adm/etc/festival
-        // Ó¢ÎÄÃû:ÖĞÎÄÃû:¿ªÊ¼Ê±¼ä:½áÊøÊ±¼ä:½ÚÈÕÈÕÆÚ:½ÚÈÕÖĞÎÄÃû:¾­ÑéÏŞÖÆ:½±Àø
-        // ½±Àø£ºÀàĞÍ|ÊıÁ¿,ÀàĞÍ|ÊıÁ¿
+        // è‹±æ–‡å:ä¸­æ–‡å:é–‹å§‹æ™‚é–“:çµæŸæ™‚é–“:ç¯€æ—¥æ—¥æœŸ:ç¯€æ—¥ä¸­æ–‡å:ç¶“é©—é™åˆ¶:çå‹µ
+        // çå‹µï¼šé¡å‹|æ•¸é‡,é¡å‹|æ•¸é‡
         string sen;
         mixed fess;
         mixed tmp,tmp2;
@@ -40,7 +40,7 @@ void setup()
                 festivals[tmp[0]]["fdate"] = tmp[4];
                 festivals[tmp[0]]["stime"] = tmp[2];
                 festivals[tmp[0]]["etime"] = tmp[3];
-                festivals[tmp[0]]["type"] = atoi(tmp[6]);//0±íÊ¾ÁìÈ¡Ò»´Î£¬1±íÊ¾Ã¿ÈÕÁìÈ¡
+                festivals[tmp[0]]["type"] = atoi(tmp[6]);//0è¡¨ç¤ºé ˜å–ä¸€æ¬¡ï¼Œ1è¡¨ç¤ºæ¯æ—¥é ˜å–
                 festivals[tmp[0]]["explimit"] = atoi(tmp[7]);
                 festivals[tmp[0]]["reward"] = ([]);
                 tmp2 = explode(tmp[8],",");
@@ -66,56 +66,56 @@ string set_festival_string()
         mixed tmp;
         int i,sz,j,sz2;
         if(!(sz=sizeof(now_festivals))) {
-                ret = HIY + "µ±Ç°Ã»ÓĞÕıÔÚ½øĞĞµÄ½ÚÈÕ»î¶¯¡£\n"+NOR;
+                ret = HIY + "ç•¶å‰æ²’æœ‰æ­£åœ¨é€²è¡Œçš„ç¯€æ—¥æ´»å‹•ã€‚\n"+NOR;
         } else {
-                ret = HIY+"µ±Ç°ÕıÔÚ½øĞĞÖĞµÄ½ÚÈÕ»î¶¯ÓĞ£º\n";
+                ret = HIY+"ç•¶å‰æ­£åœ¨é€²è¡Œä¸­çš„ç¯€æ—¥æ´»å‹•æœ‰ï¼š\n";
                 for(i=0;i<sz;i++) {
-                        ret += HIY+"\t»î¶¯Ãû³Æ£º"+HIG+festivals[now_festivals[i]]["cname"]+"\n";
-                        ret += HIY+"\tÓ¢ÎÄ±êÊ¶£º"+HIG+now_festivals[i]+"\n";
-                        ret += HIY+"\tÆğÊ¼Ê±¼ä£º"+HIG+festivals[now_festivals[i]]["stime"]+"\n";
-                        ret += HIY+"\t½áÊøÊ±¼ä£º"+HIG+festivals[now_festivals[i]]["etime"]+"\n";
-                        ret += HIY+"\t¾­ÑéÏŞÖÆ£º"+HIG+festivals[now_festivals[i]]["explimit"]+"\n";
-                        ret += HIY+"\t½±ÀøÄÚÈİ£º"+HIG;
+                        ret += HIY+"\tæ´»å‹•åç¨±ï¼š"+HIG+festivals[now_festivals[i]]["cname"]+"\n";
+                        ret += HIY+"\tè‹±æ–‡æ¨™è­˜ï¼š"+HIG+now_festivals[i]+"\n";
+                        ret += HIY+"\tèµ·å§‹æ™‚é–“ï¼š"+HIG+festivals[now_festivals[i]]["stime"]+"\n";
+                        ret += HIY+"\tçµæŸæ™‚é–“ï¼š"+HIG+festivals[now_festivals[i]]["etime"]+"\n";
+                        ret += HIY+"\tç¶“é©—é™åˆ¶ï¼š"+HIG+festivals[now_festivals[i]]["explimit"]+"\n";
+                        ret += HIY+"\tçå‹µå…§å®¹ï¼š"+HIG;
                         tmp = keys(festivals[now_festivals[i]]["reward"]);
                         sz2 = sizeof(tmp);
                         for(j=0;j<sz2;j++) {
                                 switch(tmp[j]) {
                                 case "exp":
-                                        ret += "¾­Ñé";
+                                        ret += "ç¶“é©—";
                                         break;
                                 case "pot":
-                                        ret += "Ç±ÄÜ";
+                                        ret += "æ½›èƒ½";
                                         break;
                                 case "mar":
-                                        ret += "Ìå»á";
+                                        ret += "é«”æœƒ";
                                         break;
                                 case "neili":
-                                        ret += "ÄÚÁ¦";
+                                        ret += "å…§åŠ›";
                                         break;
                                 case "jingli":
-                                        ret += "¾«Á¦";
+                                        ret += "ç²¾åŠ›";
                                         break;
                                 case "weiwang":
-                                        ret += "ÍşÍû";
+                                        ret += "å¨æœ›";
                                         break;
                                 case "score":
-                                        ret += "ÔÄÀú";
+                                        ret += "é–±æ­·";
                                         break;
                                 case "gongxian":
-                                        ret += "¹±Ï×";
+                                        ret += "è²¢ç»";
                                         break;
                                 case "gold":
-                                        ret += "»Æ½ğ";
+                                        ret += "é»ƒé‡‘";
                                         break;
-                                default ://·¢µÀ¾ßµÄ¼òµ¥½Ó¿Ú
+                                default ://ç™¼é“å…·çš„ç°¡å–®æ¥å£
                                         ret+=query("name", get_object(tmp[j]));
                                         break;
                                 }
-                                ret += ":"+festivals[now_festivals[i]]["reward"][tmp[j]]+"£¬";
+                                ret += ":"+festivals[now_festivals[i]]["reward"][tmp[j]]+"ï¼Œ";
                         }
                         ret += "\n";
-                        ret += HIY+"\t½±ÀøÀàĞÍ£º"+HIG+((festivals[now_festivals[i]]["type"])?"Ã¿ÈÕÁìÈ¡":"ÏŞÁìÒ»´Î")+"\n";
-                        ret += HIY+"\tËùÊô½ÚÈÕ£º"+HIG+festivals[now_festivals[i]]["fname"]+"("+festivals[now_festivals[i]]["fdate"]+")\n\n";
+                        ret += HIY+"\tçå‹µé¡å‹ï¼š"+HIG+((festivals[now_festivals[i]]["type"])?"æ¯æ—¥é ˜å–":"é™é ˜ä¸€æ¬¡")+"\n";
+                        ret += HIY+"\tæ‰€å±¬ç¯€æ—¥ï¼š"+HIG+festivals[now_festivals[i]]["fname"]+"("+festivals[now_festivals[i]]["fdate"]+")\n\n";
 
                 }
         }       
@@ -130,8 +130,8 @@ string query_festival_string()
 
 int compare_date(mixed a,mixed b)
 {
-        //Ğ¡ÓÚµÈÓÚÊÇ1
-        //´óÓÚÊÇ0
+        //å°äºç­‰äºæ˜¯1
+        //å¤§äºæ˜¯0
         if(a[0]<b[0]) {
                 return 1;
         } else if(a[0]>b[0]) {
@@ -172,19 +172,19 @@ int is_festival(string arg)
 }
 void check_festival()
 {
-        //Ê¹ÓÃ½ÚÈÕµÄÖĞÎÄÃûÀ´½øĞĞÅĞ¶¨
+        //ä½¿ç”¨ç¯€æ—¥çš„ä¸­æ–‡åä¾†é€²è¡Œåˆ¤å®š
         
-        // ÏÈÅĞ¶ÏÊÇ·ñÓĞ¾ÉµÄ»î¶¯¹ıÆÚ
+        // å…ˆåˆ¤æ–·æ˜¯å¦æœ‰èˆŠçš„æ´»å‹•éæœŸ
         int i,sz;
         mixed tmp_fes;
         mixed feskeys;
         tmp_fes = copy(now_festivals);
         if(sz = sizeof(tmp_fes)) {
-                //Ò»¸öÒ»¸öÅĞ¶Ï
+                //ä¸€å€‹ä¸€å€‹åˆ¤æ–·
                 for(i=0;i<sz;i++) {
                         if(!is_festival(tmp_fes[i])) {
                                 now_festivals -= ({tmp_fes[i]});
-                                CHANNEL_D->channel_broadcast("mess","½ÚÈÕ¾«Áé£º½ÚÈÕ»î¶¯ "+festivals[tmp_fes[i]]["cname"]+" ½áÊøÁË¡£");
+                                CHANNEL_D->channel_broadcast("mess","ç¯€æ—¥ç²¾éˆï¼šç¯€æ—¥æ´»å‹• "+festivals[tmp_fes[i]]["cname"]+" çµæŸäº†ã€‚");
                         }
                 }
         }
@@ -195,7 +195,7 @@ void check_festival()
                         continue;
                 if(is_festival(feskeys[i])) {
                         now_festivals += ({feskeys[i]});
-                        CHANNEL_D->channel_broadcast("mess", "½ÚÈÕ¾«Áé£º½ÚÈÕ»î¶¯ "+festivals[feskeys[i]]["cname"]+" ¿ªÊ¼ÁË¡£");
+                        CHANNEL_D->channel_broadcast("mess", "ç¯€æ—¥ç²¾éˆï¼šç¯€æ—¥æ´»å‹• "+festivals[feskeys[i]]["cname"]+" é–‹å§‹äº†ã€‚");
                 }
         }       
         now_string = set_festival_string();
@@ -208,50 +208,50 @@ string give_festival_reward(object usr,string arg)
         mixed tmp;
         int i,j,sz2;
         object ob;
-        ret = "ÄúÔÚ½ÚÈÕ»î¶¯£º"+festivals[arg]["cname"]+"("+arg+")ÖĞ»ñµÃÁËÈçÏÂ½±Àø£º\n";
+        ret = "æ‚¨åœ¨ç¯€æ—¥æ´»å‹•ï¼š"+festivals[arg]["cname"]+"("+arg+")ä¸­ç²å¾—äº†å¦‚ä¸‹çå‹µï¼š\n";
         tmp = keys(festivals[arg]["reward"]);
                         sz2 = sizeof(tmp);
                         for(j=0;j<sz2;j++) {
                                 switch(tmp[j]) {
                                 case "exp":
                                         addn("combat_exp", festivals[arg]["reward"][tmp[j]], usr);
-                                        ret += "¾­Ñé";
+                                        ret += "ç¶“é©—";
                                         break;
                                 case "pot":
                                         addn("potential", festivals[arg]["reward"][tmp[j]], usr);
-                                        ret += "Ç±ÄÜ";
+                                        ret += "æ½›èƒ½";
                                         break;
                                 case "mar":
                                         addn("experience", festivals[arg]["reward"][tmp[j]], usr);
-                                        ret += "Ìå»á";
+                                        ret += "é«”æœƒ";
                                         break;
                                 case "neili":
                                         addn("max_neili", festivals[arg]["reward"][tmp[j]], usr);
-                                        ret += "ÄÚÁ¦";
+                                        ret += "å…§åŠ›";
                                         break;
                                 case "jingli":
                                         addn("max_jingli", festivals[arg]["reward"][tmp[j]], usr);
-                                        ret += "¾«Á¦";
+                                        ret += "ç²¾åŠ›";
                                         break;
                                 case "weiwang":
                                         addn("weiwang", festivals[arg]["reward"][tmp[j]], usr);
-                                        ret += "ÍşÍû";
+                                        ret += "å¨æœ›";
                                         break;
                                 case "score":
                                         addn("score", festivals[arg]["reward"][tmp[j]], usr);
-                                        ret += "ÔÄÀú";
+                                        ret += "é–±æ­·";
                                         break;
                                 case "gongxian":
                                         addn("family/gongji", festivals[arg]["reward"][tmp[j]], usr);
-                                        ret += "¹¦¼¨";
+                                        ret += "åŠŸç¸¾";
                                         break;
                                 case "gold":
                                         ob = new("/clone/money/gold");
                                         ob->set_amount(festivals[arg]["reward"][tmp[j]]);
                                         ob->move(usr);
-                                        ret += "»Æ½ğ";
+                                        ret += "é»ƒé‡‘";
                                         break;
-                                default ://·¢µÀ¾ßµÄ¼òµ¥½Ó¿Ú
+                                default ://ç™¼é“å…·çš„ç°¡å–®æ¥å£
                                         for(i=0;i<festivals[arg]["reward"][tmp[j]];i++)  {
                                                 ob = new(tmp[j]);
                                                 ob->move(usr);
@@ -259,7 +259,7 @@ string give_festival_reward(object usr,string arg)
                                         ret+=query("name", get_object(tmp[j]));
                                         break;
                                 }
-                                ret += ":"+festivals[arg]["reward"][tmp[j]]+"£¬";
+                                ret += ":"+festivals[arg]["reward"][tmp[j]]+"ï¼Œ";
                         }
 
                         ret += "\n";
@@ -275,7 +275,7 @@ string get_reward(object usr)
         mixed lc;
 
         if(!(sz=sizeof(now_festivals)))
-                return "Ä¿Ç°Ã»ÓĞÕıÔÚ½øĞĞÖĞµÄ½ÚÈÕ£¬Òò´ËÃ»ÓĞ¿ÉÒÔÁìÈ¡µÄ½±Àø¡£";    
+                return "ç›®å‰æ²’æœ‰æ­£åœ¨é€²è¡Œä¸­çš„ç¯€æ—¥ï¼Œå› æ­¤æ²’æœ‰å¯ä»¥é ˜å–çš„çå‹µã€‚";    
         ret = "";       
         lc = localtime(time());
         ty = lc[LT_YEAR];
@@ -287,42 +287,42 @@ string get_reward(object usr)
         if(!mapp(fes_record))
                 fes_record = ([]);
         for(i=0;i<sz;i++) {
-                //Ã¿¸öfesµÄÅĞ¶¨ºÍ½±Àø¡£¡£¡£¡£
-                if(undefinedp(fes_record[now_festivals[i]])) { //ÎŞ¼ÇÂ¼£¬¿ÉÁì½±
-                        //¸ø½±Àø
+                //æ¯å€‹fesçš„åˆ¤å®šå’Œçå‹µã€‚ã€‚ã€‚ã€‚
+                if(undefinedp(fes_record[now_festivals[i]])) { //ç„¡è¨˜éŒ„ï¼Œå¯é ˜ç
+                        //çµ¦çå‹µ
                         if( query("combat_exp", usr)<festivals[now_festivals[i]]["explimit"]){
-                                ret += festivals[now_festivals[i]]["cname"]+"("+now_festivals[i]+")ÒªÇó¾­ÑéÖÁÉÙÎª"+festivals[now_festivals[i]]["explimit"]+"£¬Äúµ±Ç°¾­Ñé²»×ã£¬ÎŞ·¨ÁìÈ¡½±Àø¡£\n";
+                                ret += festivals[now_festivals[i]]["cname"]+"("+now_festivals[i]+")è¦æ±‚ç¶“é©—è‡³å°‘ç‚º"+festivals[now_festivals[i]]["explimit"]+"ï¼Œæ‚¨ç•¶å‰ç¶“é©—ä¸è¶³ï¼Œç„¡æ³•é ˜å–çå‹µã€‚\n";
                         } else {
                                 ret += give_festival_reward(usr,now_festivals[i]);
-                                //¼Órecord
+                                //åŠ record
                                 fes_record[now_festivals[i]] = today;
                         }
-                } else {//ÓĞ¼ÇÂ¼
+                } else {//æœ‰è¨˜éŒ„
                         sscanf(fes_record[now_festivals[i]],"%d-%d-%d",y,m,d);
-                        if(compare_date(({festivals[now_festivals[i]]["stimey"],festivals[now_festivals[i]]["stimem"],festivals[now_festivals[i]]["stimed"]}),({y,m,d}))==0) {//½±Àø¼ÇÂ¼±È¿ªÆô¸üÔç£¬ËµÃ÷ÊÇÉÏ´Î½ÚÈÕ»ñµÃ£¬¿ÉÁì½±(¿ªÆôÊ±¼ä´óÓÚ½±Àø¼ÇÂ¼ 0)
-                                //¸ø½±Àø
+                        if(compare_date(({festivals[now_festivals[i]]["stimey"],festivals[now_festivals[i]]["stimem"],festivals[now_festivals[i]]["stimed"]}),({y,m,d}))==0) {//çå‹µè¨˜éŒ„æ¯”é–‹å•Ÿæ›´æ—©ï¼Œèªªæ˜æ˜¯ä¸Šæ¬¡ç¯€æ—¥ç²å¾—ï¼Œå¯é ˜ç(é–‹å•Ÿæ™‚é–“å¤§äºçå‹µè¨˜éŒ„ 0)
+                                //çµ¦çå‹µ
                                 if( query("combat_exp", usr)<festivals[now_festivals[i]]["explimit"]){
-                                         ret += festivals[now_festivals[i]]["cname"]+"("+now_festivals[i]+")ÒªÇó¾­ÑéÖÁÉÙÎª"+festivals[now_festivals[i]]["explimit"]+"£¬Äúµ±Ç°¾­Ñé²»×ã£¬ÎŞ·¨ÁìÈ¡½±Àø¡£\n";
+                                         ret += festivals[now_festivals[i]]["cname"]+"("+now_festivals[i]+")è¦æ±‚ç¶“é©—è‡³å°‘ç‚º"+festivals[now_festivals[i]]["explimit"]+"ï¼Œæ‚¨ç•¶å‰ç¶“é©—ä¸è¶³ï¼Œç„¡æ³•é ˜å–çå‹µã€‚\n";
                                 } else {
                                         ret += give_festival_reward(usr,now_festivals[i]);
-                                        //¼Órecord
+                                        //åŠ record
                                         fes_record[now_festivals[i]] = today;
                                 }
-                        } else { //Õâ´ÎÁì¹ı½±ÁË¡£¡£¡£
-                                if(festivals[now_festivals[i]]["type"]==0) { //ÀàĞÍÊÇÏŞÁìÒ»´Î£¬²»¸ø½±Àø
-                                        ret += festivals[now_festivals[i]]["cname"]+"("+now_festivals[i]+")Ö»ÄÜÁìÈ¡Ò»´Î½±Àø£¬ÄúÓÚ"+fes_record[now_festivals[i]]+"ÒÑÁìÈ¡¹ı£¬²»ÄÜÔÙ´ÎÁìÈ¡¡£\n";
-                                } else { //Ã¿ÈÕÁìÈ¡µÄ
-                                        if(compare_date(({ty,tm,td}),({y,m,d}))==0) { //½±Àø¼ÇÂ¼±È½ñÌìÔç£¬¿ÉÁìÈ¡(½ñÌì ´óÓÚ ½±Àø¼ÇÂ¼ 0)
+                        } else { //é€™æ¬¡é ˜éçäº†ã€‚ã€‚ã€‚
+                                if(festivals[now_festivals[i]]["type"]==0) { //é¡å‹æ˜¯é™é ˜ä¸€æ¬¡ï¼Œä¸çµ¦çå‹µ
+                                        ret += festivals[now_festivals[i]]["cname"]+"("+now_festivals[i]+")åªèƒ½é ˜å–ä¸€æ¬¡çå‹µï¼Œæ‚¨äº"+fes_record[now_festivals[i]]+"å·²é ˜å–éï¼Œä¸èƒ½å†æ¬¡é ˜å–ã€‚\n";
+                                } else { //æ¯æ—¥é ˜å–çš„
+                                        if(compare_date(({ty,tm,td}),({y,m,d}))==0) { //çå‹µè¨˜éŒ„æ¯”ä»Šå¤©æ—©ï¼Œå¯é ˜å–(ä»Šå¤© å¤§äº çå‹µè¨˜éŒ„ 0)
                                                 if( query("combat_exp", usr)<festivals[now_festivals[i]]["explimit"]){
-                                                        ret += festivals[now_festivals[i]]["cname"]+"("+now_festivals[i]+")ÒªÇó¾­ÑéÖÁÉÙÎª"+festivals[now_festivals[i]]["explimit"]+"£¬Äúµ±Ç°¾­Ñé²»×ã£¬ÎŞ·¨ÁìÈ¡½±Àø¡£\n";
+                                                        ret += festivals[now_festivals[i]]["cname"]+"("+now_festivals[i]+")è¦æ±‚ç¶“é©—è‡³å°‘ç‚º"+festivals[now_festivals[i]]["explimit"]+"ï¼Œæ‚¨ç•¶å‰ç¶“é©—ä¸è¶³ï¼Œç„¡æ³•é ˜å–çå‹µã€‚\n";
                                                 } else {
-                                                        //¸ø½±Àø
+                                                        //çµ¦çå‹µ
                                                         ret += give_festival_reward(usr,now_festivals[i]);
-                                                        //¼Órecord
+                                                        //åŠ record
                                                         fes_record[now_festivals[i]] = today;
                                                 }       
-                                        } else { //½ñÌìÒÑÁì£¬²»¸ø
-                                                ret += festivals[now_festivals[i]]["cname"]+"("+now_festivals[i]+")ÔÚ»î¶¯ÆÚ¼ä¿ÉÃ¿ÈÕÁìÈ¡½±ÀøÒ»´Î£¬Äú½ñÌì£¨"+today+"£©ÒÑ¾­ÁìÈ¡¹ı½±Àø£¬²»ÄÜÔÙ´ÎÁìÈ¡¡£\n";
+                                        } else { //ä»Šå¤©å·²é ˜ï¼Œä¸çµ¦
+                                                ret += festivals[now_festivals[i]]["cname"]+"("+now_festivals[i]+")åœ¨æ´»å‹•æœŸé–“å¯æ¯æ—¥é ˜å–çå‹µä¸€æ¬¡ï¼Œæ‚¨ä»Šå¤©ï¼ˆ"+today+"ï¼‰å·²ç¶“é ˜å–éçå‹µï¼Œä¸èƒ½å†æ¬¡é ˜å–ã€‚\n";
                                         }
                                 }
                         }

@@ -1,12 +1,12 @@
-// ����ָ��������ָ�����֡�
-// �����书�ؼ�����Ľ�����ң�    ���÷�ָ������Ҷָ������ָ��
-// ����������ס�֡������ߡ���  ����ָ
-// �Ϻ�������Ϫ����              ����ָ
-// �ض�������������              ������ָ
-// ����ɽ���޶����ˡ���          �������ָ
-// ���ϡ���ڤ���ˡ�              ��ڤָ
-// ����Ϊ��
-// canhe-zhi.c �κ�ָ��
+// 基本指法及特殊指法數種。
+// 少林武功秘籍藏于慕容世家：    天竺佛指、多羅葉指、修羅指法
+// 杭州靈隱寺住持「大悲尊者」：  蓮花指
+// 南海「孫玉溪」：              七星指
+// 關東「大天龍」：              大天龍指
+// 祁連山「無洞上人」：          祁連五絕指
+// 嶺南「幽冥道人」              幽冥指
+// 演練為：
+// canhe-zhi.c 參合指神功
 
 #include <ansi.h>
 #include <combat.h>
@@ -17,80 +17,80 @@ inherit SKILL;
 string martialtype() { return "skill"; }
 
 string *xue_name = ({
-        "�͹�Ѩ","����Ѩ","����Ѩ","��ԪѨ","����Ѩ","�м�Ѩ","�н�Ѩ","��ͻѨ","�ٻ�Ѩ",
-        "����Ѩ","����Ѩ","���Ѩ","�Ϲ�Ѩ","��ԨѨ","�쾮Ѩ","��ȪѨ","����Ѩ","����Ѩ",
+        "勞宮穴","膻中穴","曲池穴","關元穴","曲骨穴","中極穴","承漿穴","天突穴","百會穴",
+        "幽門穴","章門穴","大橫穴","紫宮穴","冷淵穴","天井穴","極泉穴","清靈穴","至陽穴",
 });
 
 string *xue2_name = ({
-        MAG "$NĬ����Ԫ�񹦣�������������ָ��ƽƽ�������޻��εص���$n������Ѩ" NOR,
-        YEL "$N�������ϣ�����΢�飬������֮���ţ�����˫��ʳָ����һ��������ָ��ͬʱϮ��$n" NOR,
-        WHT "$N��������ָ������ָ��ϳ�һ�ɽ�����ֱ��$n��ȥ"NOR,
-        RED "$N�������֣���ָ���ǻ��ţ��ٻ���£ָ��ȭ����ʱ��������������Ľ�������" NOR,
-        HIR "$Nָ��Ϭ������һ�����ν�������$n�������ڣ�$nֻ���ؿ�һʹ��ȫ��������к����" NOR
+        MAG "$N默運神元神功，將內力聚于手指，平平淡淡毫無花俏地點向$n的膻中穴" NOR,
+        YEL "$N兩掌豎合，掌心微虛，如蓮花之開放，接著雙手食指輕輕一彈，兩股指風同時襲向$n" NOR,
+        WHT "$N凌空虛點數指，數道指風合成一股劍氣，直向$n攻去"NOR,
+        RED "$N緩緩舉手，五指先是箕張，再緩緩攏指合拳，霎時生出氣凝河岳般的劍氣狂揚" NOR,
+        HIR "$N指風犀利，似一道無形劍氣，將$n籠罩于內，$n只覺胸口一痛，全身真氣狂瀉而出" NOR
 });
 mapping *action = ({
-([      "action": "$N˫ָ��£���������ϡ�"NOR + MAG "���÷�ָ" NOR "����"
-                  "��" NOR + MAG "����ָ" NOR "��Ϊһʽ����ʱһ���ֱ��$n",
+([      "action": "$N雙指並攏虛點而出，合「"NOR + MAG "天竺佛指" NOR "」及"
+                  "「" NOR + MAG "修羅指" NOR "」為一式，頓時一股罡風直射$n",
         "force" : 480,
         "attack": 110,
         "parry" :-90,
         "dodge" :-95,
         "damage": 160,
-        "weapon" : HIR "�κ����彣��" NOR,
-        "damage_type" : "����"
+        "weapon" : HIR "參合破體劍氣" NOR,
+        "damage_type" : "刺傷"
 ]),
-([      "action": "$N˫ָ���������ϡ�" HIG "����ָ" NOR "������" HIG "����Ҷ"
-                  "ָ" NOR "��Ϊһʽ����ʱ����������$nȫ������",
+([      "action": "$N雙指齊點而出，合「" HIG "蓮花指" NOR "」及「" HIG "多羅葉"
+                  "指" NOR "」為一式，頓時劍氣已籠罩$n全身各處",
         "force" : 460,
         "attack": 100,
         "parry" :-90,
         "dodge" :-115,
         "damage": 180,
-        "weapon" : HIR "�κ����彣��" NOR,
-        "damage_type" : "����"
+        "weapon" : HIR "參合破體劍氣" NOR,
+        "damage_type" : "刺傷"
 ]),
 ([
-        "action": "ֻ��$Nʮָ���ţ�����ָָ��㣬����" HIY "�������ָ" NOR "����"
-                  "��" HIY "������ָ" NOR "���ľ�����ʽͬʱʹ����\n��ʱ�����ݺᣬ��"
-                  "ɰ���𣬱���$n��ȥ",
+        "action": "只見$N十指箕張，隨手指指點點，將「" HIY "祁連五絕指" NOR "」及"
+                  "「" HIY "大天龍指" NOR "」的精髓招式同時使出，\n頓時劍氣縱橫，塵"
+                  "砂四起，逼向$n而去",
         "force" : 460,
         "attack": 100,
         "parry" :-135,
         "dodge" :-125,
         "damage": 180,
-        "weapon" : HIR "�κ����彣��" NOR,
-        "damage_type" : "����"
+        "weapon" : HIR "參合破體劍氣" NOR,
+        "damage_type" : "刺傷"
 ]),
 ([
-        "action": "ֻ��$N����Ծ�𣬳�Хһ������ն��£���" HIM "���ǽ���" NOR "������"
-                  "��$nȫ������",
+        "action": "只見$N縱身躍起，長嘯一聲，凌空而下，「" HIM "七星劍氣" NOR "」已射"
+                  "向$n全身各處",
         "force" : 460,
         "attack": 100,
         "parry" :-115,
         "dodge" :-145,
         "damage": 200,
-        "weapon" : HIR "�κ����彣��" NOR,
-        "damage_type" : "����"
+        "weapon" : HIR "參合破體劍氣" NOR,
+        "damage_type" : "刺傷"
 ]),
-([      "action": "$N�����ָ����ָ��������������������ָ��͸������" HIW "��ڤ����" NOR
-                  "������$n������Ѩ",
+([      "action": "$N伸出兩指，彈指無聲，陡見兩縷紫氣由指尖透出，「" HIW "幽冥劍氣" NOR
+                  "」射向$n周身大穴",
         "force" : 460,
         "attack": 120,
         "parry" :-130,
         "dodge" :-125,
         "damage": 200,
-        "weapon" : HIR "�κ����彣��" NOR,
-        "damage_type" : "����"
+        "weapon" : HIR "參合破體劍氣" NOR,
+        "damage_type" : "刺傷"
 ]),
-([      "action": "ң��$N���һָ�������$n��ָδ������" HIR "�κϽ���" NOR "���ѽ�$nѹ"
-                  "��͸��������",
+([      "action": "遙見$N伸出一指輕輕拂向$n，指未到，「" HIR "參合劍氣" NOR "」已將$n壓"
+                  "得透不過氣來",
         "force" : 480,
         "attack": 120,
         "parry" :-150,
         "dodge" :-165,
         "damage": 240,
-        "weapon" : HIR "�κ����彣��" NOR,
-        "damage_type" : "����"
+        "weapon" : HIR "參合破體劍氣" NOR,
+        "damage_type" : "刺傷"
 ])
 });
 
@@ -118,58 +118,58 @@ int get_finish(object me)
 
         if( query("int", me)<30 )
         {
-                tell_object(me, "��ֻ�����Լ������ԣ��޷��ϳɲκ�ָ�񹦡�\n");
+                tell_object(me, "你只覺依自己的悟性，無法合成參合指神功。\n");
                 return 0;
         }
 
         if( query("dex", me)<30 )
         {
-                tell_object(me, "��ֻ�����Լ��������鶯�ԣ������޷��ϳɲκ�ָ�񹦡�\n");
+                tell_object(me, "你只覺依自己的身法靈動性，根本無法合成參合指神功。\n");
                 return 0;
         }
 
         if (me->query_skill("literate", 1) < 200)
         {
-                tell_object(me, "����òκ�ָ�񹦼�����£��������о�һ��ѧ�ʿ��ܸ��а�"
-                                "����\n");
+                tell_object(me, "你覺得參合指神功極其深奧，看來多研究一下學問可能更有幫"
+                                "助。\n");
                 return 0;
         }
 
         /*
         if (me->query_skill("jingluo-xue", 1) < 160)
         {
-                tell_object(me, "��������ϣ��������ͨ������ѧӦ�ø�����������\n");
+                tell_object(me, "你演練完畢，發現如果通曉經絡學應該更有所幫助。\n");
                 return 0;
         }
         */
 
         if (me->query_skill("martial-cognize", 1) < 200)
         {
-                tell_object(me, "�㷢���Լ�����ѧ�����д���ߣ������޷������ɹ���\n");
+                tell_object(me, "你發現自己的武學修養尚待提高，暫且無法演練成功。\n");
                 return 0;
         }
 
         if (me->query_skill("force", 1) < 240)
         {
-                tell_object(me, "�㷢���Լ����ڹ����������������޷������ɹ���\n");
+                tell_object(me, "你發現自己的內功根基不夠，暫且無法演練成功。\n");
                 return 0;
         }
 
         if( query("max_neili", me)<4500 )
         {
-                tell_object(me, "������Լ��������̣��޷��ϳɲκ�ָ�񹦡�\n");
+                tell_object(me, "你覺得自己真氣不繼，無法合成參合指神功。\n");
                 return 0;
         }
 
         if (random(10) < 7)
         {
-                tell_object(me, "������������򣬻���������һ�ξ����ڻ��ͨ��\n");
+                tell_object(me, "你覺得有所感悟，或許再演練一次就能融會貫通。\n");
                 return 0;
         }
 
-        tell_object(me, HIY "\n���Ǽ䣬��ֻ������������������ָ���������Ժ��н����\n"
-                            "�֣��������ٴ��麣�������ڻ��ͨ����Ϊ���Ҿ�ѧ�κ�\n"
-                            "ָ�񹦡�������ͨ���˲κ�ָ�ľ��ϡ�\n" NOR);
+        tell_object(me, HIY "\n霎那間，你只覺自身所修煉的數種指法不斷在腦海中交替呈\n"
+                            "現，最後又如百川歸海，終于融會貫通，合為本家絕學參合\n"
+                            "指神功。你終于通曉了參合指的訣竅。\n" NOR);
 
         return 1;
 }
@@ -194,7 +194,7 @@ int valid_combine(string combo)
         /*
          object me = this_player();
          mappingmyfam=query("family", me);
-         if (myfam["master_name"] == "Ľ�ݲ�")
+         if (myfam["master_name"] == "慕容博")
         */
         return combo == "xingyi-zhang";
 }
@@ -202,33 +202,33 @@ int valid_combine(string combo)
 int valid_learn(object me)
 {
         if( query_temp("weapon", me) || query_temp("secondary_weapon", me) )
-                return notify_fail("���κ�ָ������֡�\n");
+                return notify_fail("練參合指必須空手。\n");
 
         if( query("int", me)<30 )
-                return notify_fail("�����������̫�ͣ��޷����κ�ָ��\n");
+                return notify_fail("你的先天悟性太低，無法領會參合指。\n");
 
         if( query("dex", me)<30 )
-                return notify_fail("������������������޷������κ�ָ��\n");
+                return notify_fail("你的先天身法孱弱，無法修煉參合指。\n");
 
         if ((int)me->query_skill("force", 1) < 200)
-                return notify_fail("����ڹ���򲻹����޷�������ָ��\n");
+                return notify_fail("你的內功火候不夠，無法修煉合指。\n");
 
         if( query("max_neili", me)<4500 )
-                return notify_fail("�������̫�����޷������κ�ָ��\n");
+                return notify_fail("你的內力太弱，無法修煉參合指。\n");
 
         if ((int)me->query_skill("finger", 1) < 160)
-                return notify_fail("��Ļ���ָ����򲻹����޷������κ�ָ��\n");
+                return notify_fail("你的基本指法火候不夠，無法修煉參合指。\n");
 
         /*
         if (me->query_skill("jingluo-xue", 1) < 160)
-                return notify_fail("�㷢���������кܶ���������ľ��繹���йأ��������⡣\n");
+                return notify_fail("你發現這裡面有很多奧妙都和人體的經絡構造有關，難以理解。\n");
         */
 
         if (me->query_skill("martial-cognize", 1) < 120)
-                return notify_fail("�����ѧ�����д���ߣ������޷������κ�ָ��\n");
+                return notify_fail("你的武學修養尚待提高，暫且無法修煉參合指。\n");
 
         if ((int)me->query_skill("finger", 1) < (int)me->query_skill("canhe-zhi", 1))
-                return notify_fail("��Ļ���ָ��ˮƽ���ޣ��޷���������Ĳκ�ָ��\n");
+                return notify_fail("你的基本指法水平有限，無法領會更高深的參合指。\n");
 
         return 1;
 }
@@ -239,15 +239,15 @@ int practice_skill(object me)
 
         if (me->query_skill("canhe-zhi", 1) > 120
             && me->query_skill("zihui-xinfa", 1) < 120)
-                return notify_fail("���ϻ��ķ���Ϊ������������ȥ���»��߻���ħ��\n");
+                return notify_fail("你紫徽心法修為不夠，這樣下去恐怕會走火入魔！\n");
 
         if( query("qi", me)<130 )
-                return notify_fail("�������̫���ˡ�\n");
+                return notify_fail("你的體力太低了。\n");
 
         cost = me->query_skill("canhe-zhi", 1) / 2 + 60;
 
         if( query("neili", me)<cost )
-                return notify_fail("������������ˡ�\n");
+                return notify_fail("你的內力不夠了。\n");
 
         me->receive_damage("qi", 100);
         addn("neili", -cost, me);
@@ -279,14 +279,14 @@ mapping query_action(object me, object weapon)
         if( random(10) == 1 && query("neili", me)>1000 )
         {
                 addn("neili", -300, me);
-                return ([       "action": HIC "$N" HIC "���������˫ָ���������ָ����"
-                                          "�����ƿն����ġ��κϽ������Ѿ�����$n",
+                return ([       "action": HIC "$N" HIC "凝神聚氣，雙指連續點出，指風凌"
+                                          "厲，破空而出的「參合劍氣」已經逼向$n",
                                 "dodge" :-140,
                                 "parry" :-140,
                                 "damage": 320,
                                 "force" : 560,
-                                "weapon" : HIR "�κ����彣��" NOR,
-                                "damage_type": "����"
+                                "weapon" : HIR "參合破體劍氣" NOR,
+                                "damage_type": "刺傷"
                         ]);
         }
 
@@ -294,16 +294,16 @@ mapping query_action(object me, object weapon)
         for(i = ttl; i > 0; i--)
                 if(lvl > action[i-1]["lvl"])
                 {
-                        seq = i; /* �������������� */
+                        seq = i; /* 獲得招數序號上限 */
                         break;
                 }
-        seq = random(seq);       /* ѡ������������ */
+        seq = random(seq);       /* 選擇出手招數序號 */
         return ([
                 "action"      : action[seq]["action"],
                 "dodge"       : d_e1 + (d_e2 - d_e1) * seq / ttl,
                 "parry"       : p_e1 + (p_e2 - p_e1) * seq / ttl,
                 "force"       : f_e1 + (f_e2 - f_e1) * seq / ttl,
-                "damage_type" : random(2) ? "����" : "����",
+                "damage_type" : random(2) ? "刺傷" : "瘀傷",
         ]);
 }
 
@@ -317,14 +317,14 @@ string query_parry_msg(object victim_weapon)
         switch (random(3))
         {
         case 0:
-                return NOR + WHT "$n" NOR + WHT"���˷���������ʳָ��ֱָ��$N" NOR + WHT
-                       "��ǰ��Ѩ��$Nһ������æ�����Ծȡ�\n" NOR;
+                return NOR + WHT "$n" NOR + WHT"不退反進，右手食指徑直指向$N" NOR + WHT
+                       "胸前大穴，$N一驚，連忙回身自救。\n" NOR;
         case 1:
-                return NOR + WHT "$n" NOR + WHT"˫ָ���������Ѹ���������������־��Ĳ�"
-                       "�Ͻ���������������$N" NOR + WHT"�޴����֡�\n" NOR;
+                return NOR + WHT "$n" NOR + WHT"雙指連連點出，迅捷有力，無數道鋼勁的參"
+                       "合劍氣護出周身，令$N" NOR + WHT"無從下手。\n" NOR;
         default:
-                return NOR + WHT "$n" NOR + WHT"��Хһ������������������$N" NOR + WHT
-                       "˫ָ������������$P��Χ������һ����һ�㣬����������\n";
+                return NOR + WHT "$n" NOR + WHT"長嘯一聲，但見無數劍氣自$N" NOR + WHT
+                       "雙指而出，籠罩在$P周圍，猶如一張網一般，毫無破綻。\n";
         }
 }
 
@@ -351,15 +351,15 @@ mixed hit_ob(object me, object victim, int damage_bonus)
         if (! target) {return "";}
         lvl = me->query_skill("canhe-zhi", 1);
 
-        // ���������񽣾������Խ��κϽ����ۻ�
+        // 身負六脈神劍絕技可以將參合劍氣折回
         if (slv = target->query_skill("six-finger", 1) > 200
             && target->query_skill_prepared("finger") == "six-finger"
             && slv >= me->query_skill("canhe-zhi", 1) - 60
             && random(10) == 0)
         {
                 msg = action[random(sizeof(action))]["action"];
-                msg += HIY "\n����$n" HIY "ббһָ�����ָ����磬�����ݺᣬ��Ȼ"
-                       "���죬����$N" HIY "�Ľ���ȫ���ۻأ������Լ���ȥ��\n" NOR;
+                msg += HIY "\n但見$n" HIY "斜斜一指點出，指出如風，劍氣縱橫，嗤然"
+                       "作響，竟將$N" HIY "的劍氣全部折回，反向自己射去！\n" NOR;
 
                 me->receive_wound("qi", slv / 4 + random(slv / 6), target);
                 p=query("qi", me)*100/query("max_qi", me);
@@ -374,7 +374,7 @@ mixed hit_ob(object me, object victim, int damage_bonus)
         {
                 addn("neili", -80, me);
                 victim->receive_wound("qi", (damage_bonus - 80) / 3, me);
-                        return HIR "��ֻ���������͡��ƿ������죬���Ͼ�����һЩѪ�Σ�\n" NOR;
+                        return HIR "你只聽「嗤嗤嗤」破空聲驟響，臉上竟濺到一些血滴！\n" NOR;
         }
 }
 
@@ -402,8 +402,8 @@ mixed hit_ob(object me, object victim, int damage_bonus)
                         else
                                 addn("neili", -damage_bonus/2+30, victim);
 
-                        return HIW "$NĬ����Ԫ�񹦣�ָ����ƮƮ�ص���$n��һ���ھ�������Ϣ������$n������Ѩ��\n"
-                               HIW "$nֻ��ȫ��һ�飬�ѱ�һ�е��С�" HIR + name + HIW "����\n" NOR;
+                        return HIW "$N默運神元神功，指風輕飄飄地點向$n，一股內勁無聲無息的繞向$n周身大穴！\n"
+                               HIW "$n只覺全身一麻，已被一招點中「" HIR + name + HIW "」！\n" NOR;
                 }
         }
 }
@@ -411,16 +411,16 @@ mixed hit_ob(object me, object victim, int damage_bonus)
 
 int help(object me)
 {
-        write(HIC"\n�κ�ָ��"NOR"\n");
+        write(HIC"\n參合指："NOR"\n");
         write(@HELP
 
-    �κ�ָΪ����Ľ�ݼ�ָ��������Ľ���ϼ�ѧԨԴ���κ�ָ����
-�಻ѷ�������ɴ������ָ��
-    ���������ƻ�����
+    參合指為姑蘇慕容家指法絕技。慕容氏家學淵源，參合指威力
+亦不遜于少林派大力金剛指。
+    可與星移掌互備。
 
-        ѧϰҪ��
-                ��Ԫ��15��
-                ����100
+        學習要求：
+                神元功15級
+                內力100
 HELP
         );
         return 1;

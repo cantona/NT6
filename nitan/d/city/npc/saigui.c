@@ -10,11 +10,11 @@ int  random2  (int  i)
 
 void  create()
 {
-    set_name("Èü¹ê",  ({  "sai  gui",  "gui"  })  );
-    set("race",  "Ò°ÊŞ");
-    set("gender",  "ĞÛĞÔ");
+    set_name("è³½é¾œ",  ({  "sai  gui",  "gui"  })  );
+    set("race",  "é‡ç¸");
+    set("gender",  "é›„æ€§");
     set("age",  2);
-    set("long",  "Ò»Ö»ÂıÌÚÌÚµÄÈü¹ê¡£\n");
+    set("long",  "ä¸€åªæ…¢é¨°é¨°çš„è³½é¾œã€‚\n");
     set("attitude",  "friendly");
     set("str",  20+random2(2));
     set("spi",  20+random2(2));
@@ -24,7 +24,7 @@ void  create()
     set("cps",  20);
     set("dex",  20);
     set("per",  20);
-    set("limbs",  ({  "Í·²¿",  "×¦×Ó",  "Î²°Í"  })  );
+    set("limbs",  ({  "é ­éƒ¨",  "çˆªå­",  "å°¾å·´"  })  );
     set("verbs",  ({  "bite"})  );
 
     setup();

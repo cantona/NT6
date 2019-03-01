@@ -1,20 +1,20 @@
 // Code of ShenZhou
-//»¯Ê¬·Û
+//åŒ–å±ç²‰
 
 inherit COMBINED_ITEM;
 
 void create()
 {
 
-        set_name("»¯Ê¬·Û", ({ "huashi fen", "fen" }) );
+        set_name("åŒ–å±ç²‰", ({ "huashi fen", "fen" }) );
         if( clonep() )
                 set_default_object(__FILE__);
         else {
                 set("long",
-                        "ÕâÊÇÒ»°ü½­ºşÖĞÈËÎÅ¶øÉ«±äµÄ»¯Ê¬·Û£¬·¢³öÓ«Ó«µÄ»Æ¹â¡£\n" );
-                set("unit", "°ü");
+                        "é€™æ˜¯ä¸€åŒ…æ±Ÿæ¹–ä¸­äººèè€Œè‰²è®Šçš„åŒ–å±ç²‰ï¼Œç™¼å‡ºç†’ç†’çš„é»ƒå…‰ã€‚\n" );
+                set("unit", "åŒ…");
                 set("base_value", 1000);
-                set("base_unit", "·İ");
+                set("base_unit", "ä»½");
                 set("no_sell", 1);
                 set("base_weight", 30);
                 set("medicine", 1);
@@ -39,12 +39,12 @@ int do_pour(string arg)
         if( !arg
         ||        sscanf(arg, "%s in %s", me, what)!=2
         ||        !id(me) )
-                return notify_fail("ÃüÁî¸ñÊ½: pour/dao <Ò©> in <ÎïÆ·>\n");
+                return notify_fail("å‘½ä»¤æ ¼å¼: pour/dao <è—¥> in <ç‰©å“>\n");
 
         ob = present(what, environment(this_player()));
         if( !ob || query("id", ob) != "corpse" )
-                return notify_fail("ÄãÖ»ÄÜ°Ñ»¯Ê¬·Ûµ¹ÔÚÄãÖÜÎ§µØÉÏµÄÊ¬ÌåÉÏ¡£\n");
-        message_vision("$N°ÑÒ»·İ»¯Ê¬·ÛÈöÔÚ$nÉÏ£¬Æ¬¿ÌÖ®¼ä£¬$n»¯×÷Ò»Ì²»ÆË®£¬ÏûÊ§µÃÎŞÓ°ÎŞ×ÙÁË¡£\n",
+                return notify_fail("ä½ åªèƒ½æŠŠåŒ–å±ç²‰å€’åœ¨ä½ å‘¨åœåœ°ä¸Šçš„å±é«”ä¸Šã€‚\n");
+        message_vision("$NæŠŠä¸€ä»½åŒ–å±ç²‰æ’’åœ¨$nä¸Šï¼Œç‰‡åˆ»ä¹‹é–“ï¼Œ$nåŒ–ä½œä¸€ç˜é»ƒæ°´ï¼Œæ¶ˆå¤±å¾—ç„¡å½±ç„¡è¹¤äº†ã€‚\n",
                 this_player(), ob);
         destruct(ob);
         addn("potential", 1, this_player());
@@ -61,18 +61,18 @@ int do_cast(string arg)
         if( !arg
         ||      sscanf(arg, "%s on %s", me, what)!=2
         ||      !id(me) )
-                return notify_fail("ÃüÁî¸ñÊ½: cast/tu <Ò©> on <ÎïÆ·>\n");
+                return notify_fail("å‘½ä»¤æ ¼å¼: cast/tu <è—¥> on <ç‰©å“>\n");
 
         ob = present(what, this_player());
         if( !ob)
-                return notify_fail("ÄãÉíÉÏÃ»ÓĞÕâ¸ö¶«Î÷¡£\n");
+                return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é€™å€‹æ±è¥¿ã€‚\n");
         if( query("id", ob) != "clothpiece" )
-                return notify_fail("»¯Ê¬·ÛÖ»ÄÜÍ¿ÔÚ²¼ÌõÉÏ¡£\n");
-        message_vision("$N½«Ò»Ğ©" + name() + "Í¿ÔÚ" + ob->name()
-                + "ÉÏ¡£\n", this_player());
+                return notify_fail("åŒ–å±ç²‰åªèƒ½å¡—åœ¨å¸ƒæ¢ä¸Šã€‚\n");
+        message_vision("$Nå°‡ä¸€äº›" + name() + "å¡—åœ¨" + ob->name()
+                + "ä¸Šã€‚\n", this_player());
         add_amount(-1);
         ob->set("hsf",this_player()->query_skill("poison",1 )
                         +this_player()->query_skill("hamagong",1));
-        set("long", "Õâ¸ù²¼ÌõÓĞĞ©ÒìÑù£¬ËÆºõÌØ±ğµÄ»Æ£¬ÇÒ·º×ÅÓ«¹â¡£\n", ob);
+        set("long", "é€™æ ¹å¸ƒæ¢æœ‰äº›ç•°æ¨£ï¼Œä¼¼ä¹ç‰¹åˆ¥çš„é»ƒï¼Œä¸”æ³›è‘—ç†’å…‰ã€‚\n", ob);
         return 1;
 }

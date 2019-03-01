@@ -3,10 +3,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÊñµÀ");
+        set("short", "èœ€é“");
         set("long", @LONG
-Äã×ßÔÚÒÔÏÕÖø³ÆÌìÏÂµÄÊñµÀÉÏ£¬×ßÔÚÕâÑùµÄÂ·ÉÏ·ÇÒª¸ñÍâÐ¡ÐÄ£¬
-ÓÃ¾¡È«ÉíÆøÁ¦²ÅÐÐ¡£²»¶àÒ»»á¶ù£¬Äã¾Í¾õµÃºÜÀÛÁË¡£
+ä½ èµ°åœ¨ä»¥éšªè‘—ç¨±å¤©ä¸‹çš„èœ€é“ä¸Šï¼Œèµ°åœ¨é€™æ¨£çš„è·¯ä¸Šéžè¦æ ¼å¤–å°å¿ƒï¼Œ
+ç”¨ç›¡å…¨èº«æ°£åŠ›æ‰è¡Œã€‚ä¸å¤šä¸€æœƒå…’ï¼Œä½ å°±è¦ºå¾—å¾ˆç´¯äº†ã€‚
 LONG );
         set("exits", ([
                 "westup" :  __DIR__"shudao16",
@@ -29,5 +29,5 @@ int init()
         me = this_player();
     i=query("max_qi", me)/50;
         me->receive_damage("qi", i);
-        tell_object(me, HIR "Äã·ÑÁ¦µÄ×ßÔÚÊñµÀÉÏ£¬ÀÛµÄÆø´­ÓõÓõ¡£\n" NOR);
+        tell_object(me, HIR "ä½ è²»åŠ›çš„èµ°åœ¨èœ€é“ä¸Šï¼Œç´¯çš„æ°£å–˜ååã€‚\n" NOR);
 }

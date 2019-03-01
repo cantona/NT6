@@ -6,9 +6,9 @@ int is_ghost() { return 1; }
 
 void create()
 {
-        set_name("ÎÌËÄ", ({ "wengsi" }) );
+        set_name("ç¿å››", ({ "wengsi" }) );
         set("long",
-"Ò»¸öÅûÍ·É¢·¢£¬»ëÉíÊÇÑªµÄÀ÷¹í£¬ÕıÔÚÕâÀïÆ®À´Æ®È¥¡£\n" );
+"ä¸€å€‹æŠ«é ­æ•£ç™¼ï¼Œæ¸¾èº«æ˜¯è¡€çš„å²é¬¼ï¼Œæ­£åœ¨é€™è£¡é£„ä¾†é£„å»ã€‚\n" );
         set("max_jing", 4000);
         set("max_qi", 4000);                    
         set("max_sen", 4000);
@@ -23,7 +23,7 @@ void create()
         set_skill("dodge", 500);
         set_skill("parry", 500);
         set_skill("sword",500);
-        set_skill("force",800); //·ÀÖ¹±ğÈËÀ´µ¯Ö¸
+        set_skill("force",800); //é˜²æ­¢åˆ¥äººä¾†å½ˆæŒ‡
         set_skill("hamagong",500);
         set_skill("tiyunzong",500);
         map_skill("sword","pixie-jian");
@@ -34,7 +34,7 @@ void create()
 
         set("chat_chance_combat",5);
         set("chat_msg_combat", ({
-                "»¹..ÎÒ..Ãü..À´...\n",
+                "é‚„..æˆ‘..å‘½..ä¾†...\n",
         }) );
 
         set("shen_type",-1);

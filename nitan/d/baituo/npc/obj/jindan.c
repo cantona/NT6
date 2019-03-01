@@ -10,9 +10,9 @@ void init()
 
 void create()
 {
-        set_name("½ğÉßµ¨", ({"jin", "jin dan"}));
-        set("unit", "Ö»");
-        set("long", "ÕâÊÇÒ»Ö»»Æ²Ó²ÓµÄ½ğÉßµ¨£¬ÊÇÖÆ±¸¡ºÉßµ¨¸à¡»µÄÔ­ÁÏ¡£\n");
+        set_name("é‡‘è›‡è†½", ({"jin", "jin dan"}));
+        set("unit", "åª");
+        set("long", "é€™æ˜¯ä¸€åªé»ƒç‡¦ç‡¦çš„é‡‘è›‡è†½ï¼Œæ˜¯åˆ¶å‚™ã€è›‡è†½è†ã€çš„åŸæ–™ã€‚\n");
         set("value", 200);
         setup();
 }
@@ -20,6 +20,6 @@ void create()
 int do_eat(string arg)
 {
         if (!id(arg))
-                return notify_fail("ÄãÒª³ÔÊ²Ã´£¿\n");
-        return notify_fail("ÄãÕÒËÀ°¡¡£\n");
+                return notify_fail("ä½ è¦åƒä»€éº¼ï¼Ÿ\n");
+        return notify_fail("ä½ æ‰¾æ­»å•Šã€‚\n");
 }

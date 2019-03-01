@@ -3,22 +3,22 @@ inherit NPC;
 
 void create()
 {
-        mapping name = NAMES_D->random_name(0, 0, "ÌÆ", 0, 0);
+        mapping name = NAMES_D->random_name(0, 0, "å”", 0, 0);
 
         if (! name)
-                name = ([ "name": "ÌÆ·ç",  "id": ({ "tang feng", "tang", "feng" }) ]);
+                name = ([ "name": "å”é¢¨",  "id": ({ "tang feng", "tang", "feng" }) ]);
                 
         set_name(name["name"], name["id"]);
-        set("gender", "ÄĞĞÔ");
+        set("gender", "ç”·æ€§");
         set("long",
-                "ÌÆÃÅÊÀ¼ÒµÜ×Ó£¬×ÅÒ»Éí»ÒÉ«µÄ¾¢×°\n"
+                "å”é–€ä¸–å®¶å¼Ÿå­ï¼Œè‘—ä¸€èº«ç°è‰²çš„å‹è£\n"
         );
         set("combat_exp", random(50000));
         set("class", "tangmen");
         set("neili", random(500));
         set("max_neili", random(500));
 
-        set("title", "ÌÆÃÅÊÀ¼ÒµÜ×Ó");
+        set("title", "å”é–€ä¸–å®¶å¼Ÿå­");
         set_skill("force", 10+random(80));
         set_skill("dodge", 10+random(80));
         set_skill("throwing", 10+random(80));
@@ -31,11 +31,11 @@ void create()
 
 int accept_fight(object me)
 {
-        if( query("family/family_name", me) == "ÌÆÃÅÊÀ¼Ò"){
+        if( query("family/family_name", me) == "å”é–€ä¸–å®¶"){
                 command("nod");
-                command("say ½øÕĞ°É¡£");
+                command("say é€²æ‹›å§ã€‚");
                 return 1;
         }
-        command("say ÌÆÃÅÊÀ¼ÒµÜ×Ó²»ºÍ±ğÅÉµÄÈË¹ıÕĞ¡£");
+        command("say å”é–€ä¸–å®¶å¼Ÿå­ä¸å’Œåˆ¥æ´¾çš„äººéæ‹›ã€‚");
         return 0;
 }

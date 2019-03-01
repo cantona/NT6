@@ -3,12 +3,12 @@ inherit F_VENDOR;
 int get_reward();
 void create()
 {
-        set_name("½ÚÈÕÊ¹Õß", ({ "jieri shizhe" }) );
-        set("gender", "Å®ĞÔ" );
+        set_name("ç¯€æ—¥ä½¿è€…", ({ "jieri shizhe" }) );
+        set("gender", "å¥³æ€§" );
         set("age", 14);
-        set("title", "Èç»¨ËÆÓñ");
+        set("title", "å¦‚èŠ±ä¼¼ç‰");
         set("long",
-                "½ÚÈÕÊ¹Õß¡£¡£¡£¡£Äã¿ÉÒÔÎÊËıÓĞ¹Ø½±ÀøµÄÊÂÇé£¨reward£©\n");
+                "ç¯€æ—¥ä½¿è€…ã€‚ã€‚ã€‚ã€‚ä½ å¯ä»¥å•å¥¹æœ‰é—œçå‹µçš„äº‹æƒ…ï¼ˆrewardï¼‰\n");
         set("combat_exp", 500000);
         set("attitude", "friendly");
         set("per",30);
@@ -36,7 +36,7 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
         switch( random(3) ) {
                 case 0:
-                        message_vision("$NÔÚ°ÙÃ¦ÖĞÌ§ÆğÍ·ÍûÁË$nÒ»ÑÛ¡£\n",this_object(),ob);
+                        message_vision("$Nåœ¨ç™¾å¿™ä¸­æŠ¬èµ·é ­æœ›äº†$nä¸€çœ¼ã€‚\n",this_object(),ob);
                         break;
         }
 }

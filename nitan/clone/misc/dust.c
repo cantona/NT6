@@ -5,14 +5,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name(NOR + WHT "»¯Ê¬·Û" NOR, ({ "dust" }));
+        set_name(NOR + WHT "åŒ–å±ç²‰" NOR, ({ "dust" }));
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
-                set("long", NOR + WHT "ÕâÊÇÒ»°üÓÃ»ÙÊ¬Ãğ¼£µÄ»¯Ê¬·Û£¬Ö»"
-                            "ÒªÒ»¶¡µã¾Í¿ÉÒÔ»¯È¥(" HIW "dissolve" NOR +
-                            WHT ")Ò»¾ßÊ¬Ìå¡£\n" NOR);
+                set("unit", "é¡†");
+                set("long", NOR + WHT "é€™æ˜¯ä¸€åŒ…ç”¨æ¯€å±æ»…è·¡çš„åŒ–å±ç²‰ï¼Œåª"
+                            "è¦ä¸€ä¸é»å°±å¯ä»¥åŒ–å»(" HIW "dissolve" NOR +
+                            WHT ")ä¸€å…·å±é«”ã€‚\n" NOR);
                 set("value", 50000);
         }
         setup();
@@ -29,21 +29,21 @@ int do_dissolve(string arg)
         object ob;
 
         if (! arg)
-                return notify_fail("ÄãÒªÓÃ»¯Ê¬·ÛÈÜ½âÊ²Ã´¶«Î÷£¿\n");
+                return notify_fail("ä½ è¦ç”¨åŒ–å±ç²‰æº¶è§£ä»€éº¼æ±è¥¿ï¼Ÿ\n");
 
         if (! objectp(ob = present(arg, environment(this_player()))))
-                return notify_fail("ÕâÀïÃ»ÓĞÕâÑù¶«Î÷¡£\n");
+                return notify_fail("é€™è£¡æ²’æœ‰é€™æ¨£æ±è¥¿ã€‚\n");
 
         if (! ob->is_corpse() && ! ob->is_body_part() && ! ob->is_head())
-                return notify_fail("»¯Ê¬·ÛÖ»ÄÜÓÃÀ´ÈÜ½âÊ¬Ìå¡£\n");
+                return notify_fail("åŒ–å±ç²‰åªèƒ½ç”¨ä¾†æº¶è§£å±é«”ã€‚\n");
 
         if( query("defeated_by", ob) && query("defeated_by", ob) != this_player() )
-                return notify_fail("Õâ¾ßÊ¬ÌåÒÑ±»±ğÈË¶¢ÉÏÁË£¬»¹ÊÇ±ğ¶¯ÎªÃî¡£\n");
+                return notify_fail("é€™å…·å±é«”å·²è¢«åˆ¥äººç›¯ä¸Šäº†ï¼Œé‚„æ˜¯åˆ¥å‹•ç‚ºå¦™ã€‚\n");
 
-        message_vision(WHT "$N" WHT "ÓÃÖ¸¼×ÌôÁËÒ»µã»¯Ê¬·ÛÔÚ$n"
-                       WHT "ÉÏ£¬¶ÙÊ±Ö»Ìı¡¸àÍàÍ¡¹¼¸Éù£¬É¢·¢³öÒ»"
-                       "¹É¶ñ³ô¡£\n" RED "´ı³ôÎ¶½¥½¥É¢¾¡£¬È´¼û"
-                       "$n" RED "½öÊ£ÏÂÁËÒ»Ì²»ÆË®¡£\n" NOR,
+        message_vision(WHT "$N" WHT "ç”¨æŒ‡ç”²æŒ‘äº†ä¸€é»åŒ–å±ç²‰åœ¨$n"
+                       WHT "ä¸Šï¼Œé “æ™‚åªè½ã€Œå—¤å—¤ã€å¹¾è²ï¼Œæ•£ç™¼å‡ºä¸€"
+                       "è‚¡æƒ¡è‡­ã€‚\n" RED "å¾…è‡­å‘³æ¼¸æ¼¸æ•£ç›¡ï¼Œå»è¦‹"
+                       "$n" RED "åƒ…å‰©ä¸‹äº†ä¸€ç˜é»ƒæ°´ã€‚\n" NOR,
                        this_player(), ob);
         destruct(ob);
         return 1;

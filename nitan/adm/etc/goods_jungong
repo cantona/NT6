@@ -1,21 +1,21 @@
 
-·ûÎÄ01:2000:symbol:/clone/tessera/rune01
-·ûÎÄ02:2000:symbol:/clone/tessera/rune02
-·ûÎÄ03:2000:symbol:/clone/tessera/rune03
-·ûÎÄ04:2000:symbol:/clone/tessera/rune04
-·ûÎÄ05:2000:symbol:/clone/tessera/rune05
-·ûÎÄ06:4000:symbol:/clone/tessera/rune06
-·ûÎÄ07:4000:symbol:/clone/tessera/rune07
-·ûÎÄ08:4000:symbol:/clone/tessera/rune08
-·ûÎÄ09:4000:symbol:/clone/tessera/rune09
-·ûÎÄ10:4000:symbol:/clone/tessera/rune10
-¶ÍÔìÊ¯:500:object:/clone/goods/forging-stone
-ÓñÇåÉ¢:500:pill:/clone/medicine/yuqing
-ÌìÏãÓñÂ¶Íè:500:object:/clone/gift/tianxiang
-¾Å×ª½ğµ¤:1000:object:/clone/gift/jiuzhuan
-Ğş»Æ×ÏÇåµ¤:5000:object:/clone/gift/xuanhuang
-Ğş»Æ×Ïóäµ¤:20000:object:/clone/fam/max/xuanhuang
-×ÓÎçÁú¼×µ¤:20000:object:/clone/fam/max/longjia
-ÕòÓü¾ªÌìÍè:40000:object:/clone/fam/max/zhenyu
-ÉñÊ¥ÑªÇå:5000:object:/clone/fam/etc/prize5:»Ö¸´È«Éí²»Á¼×´Ì¬µÄÒ©Æ·
-½ğ×©:1000:gold:/clone/money/gold:ÒøĞĞ´æ¿îÔö¼Ó10000Á½»Æ½ğ
+ç¬¦æ–‡01:2000:symbol:/clone/tessera/rune01
+ç¬¦æ–‡02:2000:symbol:/clone/tessera/rune02
+ç¬¦æ–‡03:2000:symbol:/clone/tessera/rune03
+ç¬¦æ–‡04:2000:symbol:/clone/tessera/rune04
+ç¬¦æ–‡05:2000:symbol:/clone/tessera/rune05
+ç¬¦æ–‡06:4000:symbol:/clone/tessera/rune06
+ç¬¦æ–‡07:4000:symbol:/clone/tessera/rune07
+ç¬¦æ–‡08:4000:symbol:/clone/tessera/rune08
+ç¬¦æ–‡09:4000:symbol:/clone/tessera/rune09
+ç¬¦æ–‡10:4000:symbol:/clone/tessera/rune10
+é›é€ çŸ³:500:object:/clone/goods/forging-stone
+ç‰æ¸…æ•£:500:pill:/clone/medicine/yuqing
+å¤©é¦™ç‰éœ²ä¸¸:500:object:/clone/gift/tianxiang
+ä¹è½‰é‡‘ä¸¹:1000:object:/clone/gift/jiuzhuan
+ç„é»ƒç´«æ¸…ä¸¹:5000:object:/clone/gift/xuanhuang
+ç„é»ƒç´«ç®ä¸¹:20000:object:/clone/fam/max/xuanhuang
+å­åˆé¾ç”²ä¸¹:20000:object:/clone/fam/max/longjia
+é®ç„é©šå¤©ä¸¸:40000:object:/clone/fam/max/zhenyu
+ç¥è–è¡€æ¸…:5000:object:/clone/fam/etc/prize5:æ¢å¾©å…¨èº«ä¸è‰¯ç‹€æ…‹çš„è—¥å“
+é‡‘ç£š:1000:gold:/clone/money/gold:éŠ€è¡Œå­˜æ¬¾å¢åŠ 10000å…©é»ƒé‡‘

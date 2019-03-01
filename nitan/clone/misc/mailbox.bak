@@ -11,16 +11,16 @@ void get_mail_text(mapping mail, string str);
 
 void create()
 {
-        set_name("ĞÅÏä", ({ "mailbox", "box" }) );
+        set_name("ä¿¡ç®±", ({ "mailbox", "box" }) );
         set("long",
-                "ÕâÊÇÒ»¸öÓÃÀ´¼ÄĞÅ¡¢ÊÕĞÅµÄĞÅÏä£¬Äã¿ÉÒÔÓÃÒÔÏÂÖ¸ÁîÀ´´¦ÀíÄãµÄÓÊ¼ş£º\n\n"
-                "mail <Ä³ÈË>               ¼ÄĞÅ¸ø±ğÈË¡£\n"
-                "forward <ĞÅ¼ş±àºÅ> <Ä³ÈË> ½«Ä³·âĞÅ×ª¼Ä¸ø±ğÈË¡£\n"
-                "from                      ²é¿´ĞÅÏäÖĞµÄĞÅ¼ş¡£\n"
-                "read <ĞÅ¼ş±àºÅ>           ÔÄ¶ÁÒ»·âĞÅ¼ş¡£\n"
-                "discard <ĞÅ¼ş±àºÅ>        ¶ªÆúÒ»·âĞÅ¼ş¡£\n"
+                "é€™æ˜¯ä¸€å€‹ç”¨ä¾†å¯„ä¿¡ã€æ”¶ä¿¡çš„ä¿¡ç®±ï¼Œä½ å¯ä»¥ç”¨ä»¥ä¸‹æŒ‡ä»¤ä¾†è™•ç†ä½ çš„éƒµä»¶ï¼š\n\n"
+                "mail <æŸäºº>               å¯„ä¿¡çµ¦åˆ¥äººã€‚\n"
+                "forward <ä¿¡ä»¶ç·¨è™Ÿ> <æŸäºº> å°‡æŸå°ä¿¡è½‰å¯„çµ¦åˆ¥äººã€‚\n"
+                "from                      æŸ¥çœ‹ä¿¡ç®±ä¸­çš„ä¿¡ä»¶ã€‚\n"
+                "read <ä¿¡ä»¶ç·¨è™Ÿ>           é–±è®€ä¸€å°ä¿¡ä»¶ã€‚\n"
+                "discard <ä¿¡ä»¶ç·¨è™Ÿ>        ä¸Ÿæ£„ä¸€å°ä¿¡ä»¶ã€‚\n"
         );
-        set("unit", "¸ö");
+        set("unit", "å€‹");
         set("no_put", 1);
         set("no_drop", 1);
         set("no_get", 1);
@@ -47,7 +47,7 @@ void init()
         {
         id=query("id", me);
         set_owner(id);
-        set_name( me->name(1) + "µÄĞÅÏä", ({ "mailbox", "box" }) );
+        set_name( me->name(1) + "çš„ä¿¡ç®±", ({ "mailbox", "box" }) );
                 add_action("do_mail", "mail");
                 add_action("do_forward", "forward");
                 add_action("do_from", "from");
@@ -67,7 +67,7 @@ void init()
                                         j += 1;
                         }
                         if( j > 0)
-                        write(HIY"ÄãÓĞ "+j+" ·âÃ»¶Á¹ıµÄĞÅ£¬ÇëÓÃ from Ö¸Áî²é¿´¡£\n"NOR);
+                        write(HIY"ä½ æœ‰ "+j+" å°æ²’è®€éçš„ä¿¡ï¼Œè«‹ç”¨ from æŒ‡ä»¤æŸ¥çœ‹ã€‚\n"NOR);
             else
             {
                 if("/adm/daemons/mail.c"->query_mail(id))
@@ -103,12 +103,12 @@ void send_mail(string rcvr, mapping mail)
         {
                 if(mbx = present("mailbox",ppl))
             {
-                tell_object(ppl, HIY "ÄãÓÖÓĞĞÅÁË£¡¿ìÓÃ from Ö¸Áî²é¿´£¡\n" NOR );
+                tell_object(ppl, HIY "ä½ åˆæœ‰ä¿¡äº†ï¼å¿«ç”¨ from æŒ‡ä»¤æŸ¥çœ‹ï¼\n" NOR );
                 mbx->receive_mail(mail);
             }
                 else
                 {
-                tell_object(ppl, HIY "ÄãÓĞĞÅÓ´£¡Çëµ½¸½½üµÄæäÕ¾È¥ÊÕÈ¡ÄãµÄĞÅ¼ş£¡\n" NOR );        
+                tell_object(ppl, HIY "ä½ æœ‰ä¿¡å–²ï¼è«‹åˆ°é™„è¿‘çš„é©›ç«™å»æ”¶å–ä½ çš„ä¿¡ä»¶ï¼\n" NOR );        
                         mbx = new(MAILBOX_OB);
                         mbx->set_owner(rcvr);
                         mbx->receive_mail(mail);
@@ -136,7 +136,7 @@ int do_mail(string arg)
     if( this_player()!=environment() ) return 0;
 
     if( !arg || arg=="" )
-        return notify_fail("ÄãÒª¼ÄĞÅ¸øË­£¿\n");
+        return notify_fail("ä½ è¦å¯„ä¿¡çµ¦èª°ï¼Ÿ\n");
 
     if (sscanf(arg, "%s@%s", arg, mud) == 2)
     {
@@ -144,37 +144,37 @@ int do_mail(string arg)
         {
             mail = ([
                 "from":this_player()->name(1)+"("+query("id", this_player())+"@"+mud_nname()+")",
-                "title": "ÎŞÌâ",
+                "title": "ç„¡é¡Œ",
                 "to": arg,
                 "time": time(),
                 "text": "",
                 "net" : 1,
                 "mud": mud
             ]);
-            write("ĞÅ¼ş±êÌâ£º");
+            write("ä¿¡ä»¶æ¨™é¡Œï¼š");
             input_to("get_mail_title", mail);
             return 1;
         }
     }
 
     if(file_size(DATA_DIR + "user/" + arg[0..0] + "/" + arg + ".o")<0)
-        return notify_fail("Ã»ÓĞÕâ¸öÈË£¡\n");
+        return notify_fail("æ²’æœ‰é€™å€‹äººï¼\n");
 
     mbx=new(MAILBOX_OB);
     mbx->set_owner(arg);
     if(!mbx->check_mail())
-        write("¶Ô·½ĞÅÏäÒÑ¾­ÈûÂú£¬ÎŞ·¨·¢ĞÅ£¬ÇëÓÃÆäËü·½Ê½Í¨Öª¶Ô·½½«ĞÅÏäÄÚĞÅ¼şÉ¾ÖÁ30·âÒÔÏÂ¡£\n");
+        write("å°æ–¹ä¿¡ç®±å·²ç¶“å¡æ»¿ï¼Œç„¡æ³•ç™¼ä¿¡ï¼Œè«‹ç”¨å…¶å®ƒæ–¹å¼é€šçŸ¥å°æ–¹å°‡ä¿¡ç®±å…§ä¿¡ä»¶åˆªè‡³30å°ä»¥ä¸‹ã€‚\n");
     else
     {
         mail = ([
                 "from":this_player()->name(1)+"("+query("id", this_player())+")",
-                "title": "ÎŞÌâ",
+                "title": "ç„¡é¡Œ",
                 "to": arg,
                 "time": time(),
                 "text": "",
                 "net": 0
         ]);
-        write("ĞÅ¼ş±êÌâ£º");
+        write("ä¿¡ä»¶æ¨™é¡Œï¼š");
         input_to("get_mail_title", mail);
     }
     destruct(mbx);
@@ -184,14 +184,14 @@ int do_mail(string arg)
 void get_mail_title(string str, mapping mail)
 {
         if( str!="" ) mail["title"] = str;
-        write("ĞÅ¼şÄÚÈİ£º\n");
+        write("ä¿¡ä»¶å…§å®¹ï¼š\n");
         this_player()->edit( (: get_mail_text, mail :) );
 }
 
 void get_mail_text(mapping mail, string str)
 {
         mail["text"] = str;
-        write("Äú×Ô¼ºÒªÁôÒ»·İ±¸·İÂğ(y/n)£¿[n]");
+        write("æ‚¨è‡ªå·±è¦ç•™ä¸€ä»½å‚™ä»½å—(y/n)ï¼Ÿ[n]");
         input_to("confirm_copy", mail);
 }
 
@@ -201,7 +201,7 @@ void confirm_copy(string yn, mapping mail)
         if (mail["net"])
         {
                 GMAIL->send_gmail(mail["mud"], mail["to"], this_player(), mail);
-                write("\nÍøÂ·Ñ¶Ï¢ÒÑËÍ³ö£¬¿ÉÄÜÒªÉÔºò²ÅÄÜµÃµ½»ØÓ¦¡£\n");
+                write("\nç¶²è·¯è¨Šæ¯å·²é€å‡ºï¼Œå¯èƒ½è¦ç¨å€™æ‰èƒ½å¾—åˆ°å›æ‡‰ã€‚\n");
         }
         else
         {
@@ -222,15 +222,15 @@ int do_from()
 
         if( !pointerp(mails) || !sizeof(mails) ) 
         {
-                write("ÄãµÄĞÅÏäÖĞÄ¿Ç°Ã»ÓĞÈÎºÎĞÅ¼ş¡£\n");
+                write("ä½ çš„ä¿¡ç®±ä¸­ç›®å‰æ²’æœ‰ä»»ä½•ä¿¡ä»¶ã€‚\n");
                 return 1;
         }
-        write("ÄãµÄĞÅÏäÖĞÏÖÔÚ¹²ÓĞ " + sizeof(mails) + " ·âĞÅ¼ş£º(¡°"+HIR+"ĞÂ"+NOR+"¡±±íÊ¾Î´¶Á¹ıµÄĞÅ¡£)\n\n");
+        write("ä½ çš„ä¿¡ç®±ä¸­ç¾åœ¨å…±æœ‰ " + sizeof(mails) + " å°ä¿¡ä»¶ï¼š(â€œ"+HIR+"æ–°"+NOR+"â€è¡¨ç¤ºæœªè®€éçš„ä¿¡ã€‚)\n\n");
         for(i=0; i<sizeof(mails); i++)
-                printf("%2d %-36s  ¼ÄĞÅÈË£º%s %s\n",
-                        i+1, mails[i]["title"], mails[i]["from"],mails[i]["read"]? "": HIR"ĞÂ"NOR,);
+                printf("%2d %-36s  å¯„ä¿¡äººï¼š%s %s\n",
+                        i+1, mails[i]["title"], mails[i]["from"],mails[i]["read"]? "": HIR"æ–°"NOR,);
     if(sizeof(mails)>30)
-        write("\nÌáĞÑ£ºĞÅÏäÓÊ¼ş³¬¹ı30·â½«ÎŞ·¨ÊÕµ½ĞÂÓÊ¼ş£¬Çë¾¡¿ì½«¾ÉÓÊ¼şÉ¾³ıµô¡£\n");
+        write("\næé†’ï¼šä¿¡ç®±éƒµä»¶è¶…é30å°å°‡ç„¡æ³•æ”¶åˆ°æ–°éƒµä»¶ï¼Œè«‹ç›¡å¿«å°‡èˆŠéƒµä»¶åˆªé™¤æ‰ã€‚\n");
         write("\n");
 
         return 1;
@@ -242,19 +242,19 @@ int do_read(string arg)
         mapping mail;
 
         if( !arg || !sscanf(arg, "%d", num) )
-                return notify_fail("ÄãÒª¶ÁÄÄÒ»·âĞÅ£¿\n");
+                return notify_fail("ä½ è¦è®€å“ªä¸€å°ä¿¡ï¼Ÿ\n");
 
         if( !pointerp(mails) || num < 1 || num > sizeof(mails) )
-                return notify_fail("Ã»ÓĞÕâ¸ö±àºÅµÄĞÅ¼ş¡£\n");
+                return notify_fail("æ²’æœ‰é€™å€‹ç·¨è™Ÿçš„ä¿¡ä»¶ã€‚\n");
 
         num --;
 
         mail = mails[num];
-        printf("ĞÅ¼ş±êÌâ£º%s\n¼Ä ĞÅ ÈË£º%s  %s\n\n%s\n",
+        printf("ä¿¡ä»¶æ¨™é¡Œï¼š%s\nå¯„ ä¿¡ äººï¼š%s  %s\n\n%s\n",
         mail["title"], mail["from"], ctime(mail["time"]),mail["text"] );
 
         if(!mail["read"])
-                mail += (["read":1]);  //±íÊ¾¶Á¹ıÁË
+                mail += (["read":1]);  //è¡¨ç¤ºè®€éäº†
 
         save();
         return 1;
@@ -265,10 +265,10 @@ int do_discard(string arg)
         int num;
 
         if( !arg || !sscanf(arg, "%d", num) )
-                return notify_fail("ÄãÒª¶ªÆúÄÄÒ»·âĞÅ£¿\n");
+                return notify_fail("ä½ è¦ä¸Ÿæ£„å“ªä¸€å°ä¿¡ï¼Ÿ\n");
 
         if( !pointerp(mails) || num > sizeof(mails) )
-                return notify_fail("Ã»ÓĞÕâ¸ö±àºÅµÄĞÅ¼ş¡£\n");
+                return notify_fail("æ²’æœ‰é€™å€‹ç·¨è™Ÿçš„ä¿¡ä»¶ã€‚\n");
 
         num --;
 
@@ -290,10 +290,10 @@ int do_forward(string arg)
         mapping m;
 
         if( !arg || sscanf(arg, "%d %s", num, dest)!=2 )
-                return notify_fail("ÄãÒª½«ÄÄÒ»·âĞÅ×ª¼Ä¸ø±ğÈË£¿\n");
+                return notify_fail("ä½ è¦å°‡å“ªä¸€å°ä¿¡è½‰å¯„çµ¦åˆ¥äººï¼Ÿ\n");
 
         if( !pointerp(mails) || num > sizeof(mails) )
-                return notify_fail("Ã»ÓĞÕâ¸ö±àºÅµÄĞÅ¼ş¡£\n");
+                return notify_fail("æ²’æœ‰é€™å€‹ç·¨è™Ÿçš„ä¿¡ä»¶ã€‚\n");
 
     if (sscanf(dest, "%s@%s", dest, mud) == 2)
     {
@@ -302,25 +302,25 @@ int do_forward(string arg)
             num --;
 
             m = ([
-                "from":mails[num]["from"]+"/×ª¼Ä×Ô"+query("name", this_player())+"@"+mud_nname(),
+                "from":mails[num]["from"]+"/è½‰å¯„è‡ª"+query("name", this_player())+"@"+mud_nname(),
                 "title": mails[num]["title"],
                 "to": dest,
                 "time": time(),
                 "text": mails[num]["text"],
             ]);
            GMAIL->send_gmail(mud, dest, this_player(), m);
-           write("ÍøÂ·Ñ¶Ï¢ÒÑËÍ³ö£¬¿ÉÄÜÒªÉÔºò²ÅÄÜµÃµ½»ØÓ¦¡£\n");
+           write("ç¶²è·¯è¨Šæ¯å·²é€å‡ºï¼Œå¯èƒ½è¦ç¨å€™æ‰èƒ½å¾—åˆ°å›æ‡‰ã€‚\n");
            return 1;
         }
     }
 
     if(file_size(DATA_DIR + "user/" + dest[0..0] + "/" + dest + ".o")<0)
-        return notify_fail("Ã»ÓĞÕâ¸öÈË£¡\n");
+        return notify_fail("æ²’æœ‰é€™å€‹äººï¼\n");
 
     mbx=new(MAILBOX_OB);
     mbx->set_owner(dest);
     if(!mbx->check_mail())
-        write("¶Ô·½ĞÅÏäÒÑ¾­ÈûÂú£¬ÎŞ·¨·¢ĞÅ£¬ÇëÓÃÆäËü·½Ê½Í¨Öª¶Ô·½½«ĞÅÏäÄÚĞÅ¼şÉ¾ÖÁ30·âÒÔÏÂ¡£\n");
+        write("å°æ–¹ä¿¡ç®±å·²ç¶“å¡æ»¿ï¼Œç„¡æ³•ç™¼ä¿¡ï¼Œè«‹ç”¨å…¶å®ƒæ–¹å¼é€šçŸ¥å°æ–¹å°‡ä¿¡ç®±å…§ä¿¡ä»¶åˆªè‡³30å°ä»¥ä¸‹ã€‚\n");
     else
     {
 
@@ -330,7 +330,7 @@ int do_forward(string arg)
         m["title"] = mails[num]["title"];
         m["text"] = mails[num]["text"];
         m["time"] = mails[num]["time"];
-        m["from"]=mails[num]["from"]+"/×ª¼Ä×Ô"+query("name", this_player());
+        m["from"]=mails[num]["from"]+"/è½‰å¯„è‡ª"+query("name", this_player());
         m["to"] = dest;
         send_mail( dest, m );
         write("Ok.\n");
@@ -344,7 +344,7 @@ void owner_is_killed()
         destruct(this_object()); 
 }
 
-int check_mail()//¼ì²é¶Ô·½ĞÅÏäÊÇ·ñÒÑÂú
+int check_mail()//æª¢æŸ¥å°æ–¹ä¿¡ç®±æ˜¯å¦å·²æ»¿
 {
     if( sizeof(mails) > 30 ) return 0;
     else return 1;
@@ -355,16 +355,16 @@ string remote_mail(string arg, string allname, mapping mail)
     object mbx;
 
     if(file_size(DATA_DIR + "user/" + arg[0..0] + "/" + arg + ".o")<0)
-        return "Ã»ÓĞÕâ¸öÈË£¡\n";
+        return "æ²’æœ‰é€™å€‹äººï¼\n";
 
     mbx=new(MAILBOX_OB);
     mbx->set_owner(arg);
     if(!mbx->check_mail())
     {
         destruct(mbx);
-        return "¶Ô·½ĞÅÏäÒÑ¾­ÈûÂú£¬ÎŞ·¨·¢ĞÅ£¬ÇëÓÃÆäËü·½Ê½Í¨Öª¶Ô·½½«ĞÅÏäÄÚĞÅ¼şÉ¾ÖÁ30·âÒÔÏÂ¡£\n";
+        return "å°æ–¹ä¿¡ç®±å·²ç¶“å¡æ»¿ï¼Œç„¡æ³•ç™¼ä¿¡ï¼Œè«‹ç”¨å…¶å®ƒæ–¹å¼é€šçŸ¥å°æ–¹å°‡ä¿¡ç®±å…§ä¿¡ä»¶åˆªè‡³30å°ä»¥ä¸‹ã€‚\n";
     }
     destruct(mbx);
     send_mail(arg, mail);
-    return "ÄúµÄÓÊ¼şÒÑ¾­³É¹¦·¢ËÍ¸øÁË" + allname + "£¡\n";
+    return "æ‚¨çš„éƒµä»¶å·²ç¶“æˆåŠŸç™¼é€çµ¦äº†" + allname + "ï¼\n";
 }

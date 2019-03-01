@@ -1,4 +1,4 @@
-// bangjue.c ´ò¹·°ôÐÄ·¨
+// bangjue.c æ‰“ç‹—æ£’å¿ƒæ³•
 
 inherit SKILL;
 
@@ -9,11 +9,11 @@ string type() { return "knowledge"; }
 int valid_learn(object me)
 {
         if ((int)me->query_skill("staff", 1) < 30)
-                return notify_fail("ÄãµÄ»ù±¾ÕÈ·¨Ì«²î, »¹Áì»á²»ÁË°ô¾ö¡£\n");
+                return notify_fail("ä½ çš„åŸºæœ¬æ–æ³•å¤ªå·®, é‚„é ˜æœƒä¸äº†æ£’æ±ºã€‚\n");
         return 1;
 }
 
 int practice_skill(object me)
 {
-        return notify_fail("´ò¹·°ôÐÄ·¨Ö»ÄÜ¿¿Ñ§(learn)À´Ìá¸ß¡£\n");
+        return notify_fail("æ‰“ç‹—æ£’å¿ƒæ³•åªèƒ½é å­¸(learn)ä¾†æé«˜ã€‚\n");
 }

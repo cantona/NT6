@@ -5,10 +5,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "������");
+        set("short", "北天門");
         set("long", @LONG
-����λ��ʯ��ɽ�ı�´����᷶��ı�����ڣ�·����һʯ��������
-д�š����䡹���֡�
+這裡位于石馬山的北麓，是岱頂的北面出口，路口有一石坊，上面
+寫著「玄武」二字。
 LONG );
         set("exits", ([
                 "southdown" : __DIR__"zhangren",

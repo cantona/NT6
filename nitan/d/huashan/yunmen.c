@@ -4,11 +4,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����");
+        set("short", "雲門");
         set("long", @LONG
-��ɯ��ƺ���ǻ�ɽʮ���̡�ʮ���̵ľ������ǡ����š��ˡ�����
-���š��ɾ����������µ�һ��ɽ����ʯ�̡�����֮�ڵ�С��ؾ�����
-��ƺ��
+過莎蘿坪，是華山十八盤。十八盤的盡處就是『雲門』了。這裡
+刻著『仙境』、『天下第一名山』等石刻。雲門之內的小盆地就是青
+柯坪。
 LONG );
         set("exits", ([ /* sizeof() == 2 */
             "northdown" : __DIR__"shaluo",

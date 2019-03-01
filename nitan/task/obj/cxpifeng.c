@@ -3,16 +3,16 @@
 inherit TASK;
 void create()
 {
-        set_name(HIR"²ÊÏ¼Åû·ç"NOR, ({ "cxpifeng" }) );
+        set_name(HIR"å½©éœžæŠ«é¢¨"NOR, ({ "cxpifeng" }) );
         set_weight(3000);
         if( clonep() )
             destruct(this_object());
         else {
-                set("unit", "¼þ");
+                set("unit", "ä»¶");
                 set("material", "cloth");
                 set("armor_prop/armor", 2);
                 set("armor_prop/spells", 3);
         }
-        set("owner", "ÈÎÓ¯Ó¯");
+        set("owner", "ä»»ç›ˆç›ˆ");
         setup();
 }

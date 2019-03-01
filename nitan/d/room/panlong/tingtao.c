@@ -1,19 +1,19 @@
-// tingtao.c ÅÌÁú¾ÓÌýÌÎ¸ó
+// tingtao.c ç›¤é¾å±…è½æ¿¤é–£
 
 //** inherit PRIVATE_ROOM;
 inherit ROOM;                                   /* EXAMPLE */
 
 void create()
 {
-        set("short", "ÌýÌÎ¸ó");
+        set("short", "è½æ¿¤é–£");
         set("long", @LONG
-ÕâÊÇÖñÁÖÒ»½ÇµÄÌýÌÎ¸ó£¬ÔÚÕâÀï·ç´µÖñÒ¶µÄÕóÕóÌÎÉùÌýµÄ·Ç³£Õæ
-ÇÐ£¬ÕæÊÇÈÃÈËÐÄ¿õÉñâù¡£ÊµÔÚÊÇÒ»¸ö²ÎÎòÎä¹¦µÄºÃÈ¥´¦¡£
+é€™æ˜¯ç«¹æž—ä¸€è§’çš„è½æ¿¤é–£ï¼Œåœ¨é€™è£¡é¢¨å¹ç«¹è‘‰çš„é™£é™£æ¿¤è²è½çš„éžå¸¸çœŸ
+åˆ‡ï¼ŒçœŸæ˜¯è®“äººå¿ƒæ› ç¥žæ€¡ã€‚å¯¦åœ¨æ˜¯ä¸€å€‹åƒæ‚Ÿæ­¦åŠŸçš„å¥½åŽ»è™•ã€‚
 LONG );
 
-        set("default_long", "ÕâÊÇÖñÁÖÒ»½ÇµÄÌýÌÎ¸ó£¬ÔÚÕâÀï·ç´µÖñÒ¶µÄÕó" /* EXAMPLE */
-                            "ÕóÌÎÉùÌýµÄ·Ç³£ÕæÇÐ£¬ÕæÊÇÈÃÈËÐÄ¿õÉñâù¡£Êµ" /* EXAMPLE */
-                            "ÔÚÊÇÒ»¸ö²ÎÎòÎä¹¦µÄºÃÈ¥´¦¡£");             /* EXAMPLE */
+        set("default_long", "é€™æ˜¯ç«¹æž—ä¸€è§’çš„è½æ¿¤é–£ï¼Œåœ¨é€™è£¡é¢¨å¹ç«¹è‘‰çš„é™£" /* EXAMPLE */
+                            "é™£æ¿¤è²è½çš„éžå¸¸çœŸåˆ‡ï¼ŒçœŸæ˜¯è®“äººå¿ƒæ› ç¥žæ€¡ã€‚å¯¦" /* EXAMPLE */
+                            "åœ¨æ˜¯ä¸€å€‹åƒæ‚Ÿæ­¦åŠŸçš„å¥½åŽ»è™•ã€‚");             /* EXAMPLE */
                                                                        /* EXAMPLE */
 
         set("exits", ([

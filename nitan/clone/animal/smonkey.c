@@ -5,13 +5,13 @@ inherit NPC;
 
 void create()
 {
-        set_name("Ğ¡ºï×Ó", ({ "monkey", "hou", "houzi" }) );
-        set("race", "×ßÊŞ");
+        set_name("å°çŒ´å­", ({ "monkey", "hou", "houzi" }) );
+        set("race", "èµ°ç¸");
         set("age", 2+random(3));
-        set("long", "Ò»Ö»»úÁéµÄĞ¡ºï×Ó£¬ÑÛ°Í°ÍµÄ¿´×ÅÄã£¬´ó¸ÅÏëÌÖĞ©³ÔµÄ¡£\n");
+        set("long", "ä¸€åªæ©Ÿéˆçš„å°çŒ´å­ï¼Œçœ¼å·´å·´çš„çœ‹è‘—ä½ ï¼Œå¤§æ¦‚æƒ³è¨äº›åƒçš„ã€‚\n");
         set("attitude", "peaceful");
 
-        set("limbs", ({ "Í·²¿", "ÉíÌå",  "Ç°ÍÈ", "ºóÍÈ", "Î²°Í" }) );
+        set("limbs", ({ "é ­éƒ¨", "èº«é«”",  "å‰è…¿", "å¾Œè…¿", "å°¾å·´" }) );
         set("verbs", ({ "bite", "claw" }) );
 
         set_skill("dodge", 10+random(20));
@@ -25,10 +25,10 @@ void create()
 
         set("chat_chance", 8);
         set("chat_msg", ({
-                "Ò»Ö»Ğ¡ºï×ÓºöÈ»ÅÜ¹ıÀ´£¬ÏòÄã×÷ÁË¸öÒ¾¡£\n",
-                "Ò»Ö»Ğ¡ºï×Óß´ß´ÔûÔûÅÜÁË¹ıÀ´¡£\n",
-                "Ğ¡ºï×Ó±Ä±ÄÌøÌøµØÅÜ¿ªÁË¡£\n",
-                "Ğ¡ºï×ÓÒ¡Ò¡Î²°ÍÅÜ¿ªÁË¡£\n",
+                "ä¸€åªå°çŒ´å­å¿½ç„¶è·‘éä¾†ï¼Œå‘ä½ ä½œäº†å€‹æ–ã€‚\n",
+                "ä¸€åªå°çŒ´å­å˜°å˜°å–³å–³è·‘äº†éä¾†ã€‚\n",
+                "å°çŒ´å­è¹¦è¹¦è·³è·³åœ°è·‘é–‹äº†ã€‚\n",
+                "å°çŒ´å­æ–æ–å°¾å·´è·‘é–‹äº†ã€‚\n",
         }) );
 }
 
@@ -38,7 +38,7 @@ int accept_object(object me, object obj)
 
         if( query("food_supply", obj) && obj->value() >= 0){
                 command("jump"+query("id", me));
-                say("Ğ¡ºï×ÓÈıÁ½ÏÂ±ã°Ñ"+query("name", obj)+"³ÔµÃ¸É¸É¾»¾»¡£\n");
+                say("å°çŒ´å­ä¸‰å…©ä¸‹ä¾¿æŠŠ"+query("name", obj)+"åƒå¾—å¹¹å¹¹å‡ˆå‡ˆã€‚\n");
 
                 remove_call_out("destroy_it");
                 call_out("destroy_it", 1, obj);
@@ -46,24 +46,24 @@ int accept_object(object me, object obj)
                 if( query("id", obj) != "banana" )
                         return 1;
 
-                message_vision("Ğ¡ºï×ÓÀ­³¶$NµÄÒÂ·ş£¬Ê¾Òâ$N¸ú×ÅËü¡£\n", me);
-                message("vision", me->name() + "Ëæ×ÅĞ¡ºï×Ó×ßÏòÉîÉ½£¬×ó¹ÕÓÒ¹ÕµØÒ»ÏÂ×Ó±ã¿´²»¼ûÁË¡£\n", environment(me), ({me}));
-                message("vision", "ÁíÒ»Ö»Ğ¡ºï×Ó×ßÁË¹ıÀ´¡£\n", environment(me),({me}));
-                write("ÄãËæ×ÅĞ¡ºï×ÓÔÚÉ½Àï×ß×Å£¬¶«×ªÎ÷×ªµØ¸ãµÃÄãÃÔÊ§ÁË·½Ïò¡£\n");
-                write("×ßÁËÁ¼¾Ã£¬Ğ¡ºï×Ó°ÑÄã´øµ½Ò»Æ¬ÃÜÁÖÇ°¡£\n");
-                write("½ô½Ó×Å£¬Ğ¡ºï×Ó±ãÍùÒ°ÁÖÀïÅÜÁË¡£\n");
+                message_vision("å°çŒ´å­æ‹‰æ‰¯$Nçš„è¡£æœï¼Œç¤ºæ„$Nè·Ÿè‘—å®ƒã€‚\n", me);
+                message("vision", me->name() + "éš¨è‘—å°çŒ´å­èµ°å‘æ·±å±±ï¼Œå·¦æ‹å³æ‹åœ°ä¸€ä¸‹å­ä¾¿çœ‹ä¸è¦‹äº†ã€‚\n", environment(me), ({me}));
+                message("vision", "å¦ä¸€åªå°çŒ´å­èµ°äº†éä¾†ã€‚\n", environment(me),({me}));
+                write("ä½ éš¨è‘—å°çŒ´å­åœ¨å±±è£¡èµ°è‘—ï¼Œæ±è½‰è¥¿è½‰åœ°æå¾—ä½ è¿·å¤±äº†æ–¹å‘ã€‚\n");
+                write("èµ°äº†è‰¯ä¹…ï¼Œå°çŒ´å­æŠŠä½ å¸¶åˆ°ä¸€ç‰‡å¯†æ—å‰ã€‚\n");
+                write("ç·Šæ¥è‘—ï¼Œå°çŒ´å­ä¾¿å¾€é‡æ—è£¡è·‘äº†ã€‚\n");
                 me->move("/d/quanzhou/milin");
-                message("vision", me->name()+"¸ú×ÅĞ¡ºï×Ó×ßÁË¹ıÀ´¡£\n", environment(me), ({me}) );
+                message("vision", me->name()+"è·Ÿè‘—å°çŒ´å­èµ°äº†éä¾†ã€‚\n", environment(me), ({me}) );
                 return 1;
         } else {
-                say("Ğ¡ºï×Ó°Ñ"+query("name", obj)+"½ÓÁË¹ıÀ´£¬ÍæÅªÁË¼¸ÏÂ£¬ËÆºõ²»¶®ÓĞÊ²Ã´ÓÃ¡£\n");
+                say("å°çŒ´å­æŠŠ"+query("name", obj)+"æ¥äº†éä¾†ï¼Œç©å¼„äº†å¹¾ä¸‹ï¼Œä¼¼ä¹ä¸æ‡‚æœ‰ä»€éº¼ç”¨ã€‚\n");
                 command("angry");
                 command("kick"+query("id", me));
                 if( query("money_id", obj)){
                         ob = new(base_name(obj));
                         ob->set_amount((int)obj->query_amount());
                         ob->move(environment(me));
-                        say("Ğ¡ºï×Ó°Ñ"+query("name", obj)+"¶ªµ½µØÉÏ¡£\n");}
+                        say("å°çŒ´å­æŠŠ"+query("name", obj)+"ä¸Ÿåˆ°åœ°ä¸Šã€‚\n");}
                 remove_call_out("drop_it");
                 call_out("drop_it", 1);
         }
@@ -90,6 +90,6 @@ void init()
         if( interactive(me) && living(me) )
         {
                 command("look"+query("id", me));
-                message_vision("Ğ¡ºï×ÓÉñÃØµØ¶Ô$NÕ£ÁËÕ£ÑÛ¾¦£¬¡°Ö¨£¬Ö¨£¬Ö¨¡±½ĞÁË¼¸Éù£¡\n", me);
+                message_vision("å°çŒ´å­ç¥ç§˜åœ°å°$Nçœ¨äº†çœ¨çœ¼ç›ï¼Œâ€œå±ï¼Œå±ï¼Œå±â€å«äº†å¹¾è²ï¼\n", me);
         }
 }

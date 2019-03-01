@@ -8,13 +8,13 @@ inherit SURCOAT;
  
 void create()
 {
-        set_name(HIY "Éñ" HIW "Ö®" HIM "×£¸£" NOR YEL "Åû·ç" NOR, ({ "zhufu surcoat", "surcoat", "pi feng", "pifeng" }) );
+        set_name(HIY "ç¥" HIW "ä¹‹" HIM "ç¥ç¦" NOR YEL "æŠ«é¢¨" NOR, ({ "zhufu surcoat", "surcoat", "pi feng", "pifeng" }) );
         set_weight(100);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ë«");
-                set("long", "ÕâÊÇÒ»¼ş²¼ÖÊµÄÅû·ç¡£\n"); 
+                set("unit", "é›™");
+                set("long", "é€™æ˜¯ä¸€ä»¶å¸ƒè³ªçš„æŠ«é¢¨ã€‚\n"); 
                 set("value", 1000); 
                 set("material", "cloth");
                 set("armor_prop/armor", 20);
@@ -24,7 +24,7 @@ void create()
         set("mark", "A2016");  
         set("mod_mark", "A2016");  
         set("mod_level", "M2010");  
-        set("mod_name", HIY"Éñ"HIW"Ö®"HIM"×£¸£"NOR YEL"Ì××°"NOR); 
+        set("mod_name", HIY"ç¥"HIW"ä¹‹"HIM"ç¥ç¦"NOR YEL"å¥—è£"NOR); 
 
         set("enchase", ([ 
                 "flute" : 1,
@@ -38,7 +38,7 @@ void create()
         set("insert", ([ /* sizeof() == 1 */
                 "1" : ([ /* sizeof() == 3 */
                         "id" : "magic stone",
-                        "name" : HIM"ĞşÊ¯"NOR,
+                        "name" : HIM"ç„çŸ³"NOR,
                         "apply_prop" : ([ /* sizeof() == 2 */
                                 "armor1" : 30,
                                 "int" : 1,

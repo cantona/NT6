@@ -1,14 +1,14 @@
         stringp(3)                LP MudOSv21c7                (7 Jul 1996)
-        º¯ÊıÃû³Æ:
-                stringp() - ÅĞ¶ÏÒ»¸ö±äÊıÊÇ·ñÎª×Ö´®ĞÍÌ¬ (string).
-        º¯ÊıÓï·¨:
+        å‡½æ•¸åç¨±:
+                stringp() - åˆ¤æ–·ä¸€å€‹è®Šæ•¸æ˜¯å¦ç‚ºå­—ä¸²å‹æ…‹ (string).
+        å‡½æ•¸èªæ³•:
                 int stringp( mixed arg );
-                ÕûÊı stringp( »ìºÏ arg );
-        º¯ÊıÓÃ·¨:
-                Èç¹û arg  ÊÇÒ»¸ö×Ö´®Ôò´«»Ø 1.
-        ²Î¿¼º¯Êı:
+                æ•´æ•¸ stringp( æ··åˆ arg );
+        å‡½æ•¸ç”¨æ³•:
+                å¦‚æœ arg  æ˜¯ä¸€å€‹å­—ä¸²å‰‡å‚³å› 1.
+        åƒè€ƒå‡½æ•¸:
                 mapp(3), pointerp(3), objectp(3), intp(3), bufferp(3),
                 floatp(3) functionp(3), nullp(3), undefinedp(3), 
                 errorp(3)
-        ÊÖ²á·­Òë:
+        æ‰‹å†Šç¿»è­¯:
                 Phoebus@ZH        97.Jul.23.                (Writen 5/23/97)

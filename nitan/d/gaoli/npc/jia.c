@@ -1,4 +1,4 @@
-// ´óÌÆË«Áú´«
+// å¤§å”é›™é¾å‚³
  
 // jia.c
 
@@ -8,14 +8,14 @@ inherit F_DEALER;
 void create()
 {
  
-  set_name("¼Ö´ó·ò", ({"jia daifu", "jia", "daifu"}));
-        set("title", "Ò©ÆÌÕÆ¹ñ");
-        set("gender", "ÄĞĞÔ");
+  set_name("è³ˆå¤§å¤«", ({"jia daifu", "jia", "daifu"}));
+        set("title", "è—¥èˆ–æŒæ«ƒ");
+        set("gender", "ç”·æ€§");
   set("shop_id",({"jia dafu", "jia", "dafu"}));
   set("age", 37);
   set("combat_exp", 30000);
    set("long",
-"¼Ö´ó·òÊÇ¸ßÀö³ÇÖĞ×îÓĞÃûµÄ´ó·ò,Ã¿ÌìÕÒËû¿´²¡µÄÈËÂçÒï²»¾ø.\n");
+"è³ˆå¤§å¤«æ˜¯é«˜éº—åŸä¸­æœ€æœ‰åçš„å¤§å¤«,æ¯å¤©æ‰¾ä»–çœ‹ç—…çš„äººçµ¡ç¹¹ä¸çµ•.\n");
   set("age", 38);
  set("attitude", "friendly");
   set("shen_type", 1);

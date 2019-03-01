@@ -4,10 +4,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("Ұ��", ({ "wolf","lang" }) );
-        set("race", "Ұ��");
+        set_name("野狼", ({ "wolf","lang" }) );
+        set("race", "野獸");
         set("age", 3);
-        set("long", "һֻ�ݹ����Ļ�ɫ���ǡ�\n");
+        set("long", "一只瘦骨如柴的灰色餓狼。\n");
         set("attitude", "heroism");
 
         set("str",35);
@@ -17,14 +17,14 @@ void create()
         set("max_jingli",900);
         set("jingli",900);
         
-        set("limbs", ({ "ͷ��", "����", "ǰ��", "���", "β��" }) );
+        set("limbs", ({ "頭部", "身體", "前腳", "後腳", "尾巴" }) );
         set("verbs", ({ "bite", "claw" }) );
 
         set("chat_chance", 6);
         set("chat_msg", ({
                 (: this_object(), "random_move" :),
-                "Ұ������Ѫ��������������\n",
-                "Ұ�Ƕ���������������\n",
+                "野狼張著血盆大嘴象你沖來。\n",
+                "野狼對著你齜了齜牙。\n",
         }) );                
 
         set("combat_exp", 50000);

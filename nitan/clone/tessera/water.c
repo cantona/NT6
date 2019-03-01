@@ -1,18 +1,18 @@
-// water.c Ğş±ù
+// water.c ç„å†°
 
 #include <ansi.h>
 inherit ITEM;
 
 void create()
 {
-        set_name(HIC "Ğş±ù" NOR, ({ "xuan bing", "water" }) );
+        set_name(HIC "ç„å†°" NOR, ({ "xuan bing", "water" }) );
         set_weight(30);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("long", HIC "ÕâÊÇÒ»¿éĞş±ù£¬¼«±±ÍòÄê±ùÉ½ËùÔĞ£¬É«ĞşºÚ£¬º®Æø±ÆÈË¡£\n" NOR);
+                set("long", HIC "é€™æ˜¯ä¸€å¡Šç„å†°ï¼Œæ¥µåŒ—è¬å¹´å†°å±±æ‰€å­•ï¼Œè‰²ç„é»‘ï¼Œå¯’æ°£é€¼äººã€‚\n" NOR);
                 set("value", 2000);
-                set("unit", "¿é");
+                set("unit", "å¡Š");
                 set("magic/element", "water");
         }
         setup();

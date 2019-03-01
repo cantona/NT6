@@ -6,15 +6,15 @@
 inherit NPC;
 void create()
 {
-        set_name("¸ßÈË", ({ "gaoren" }) );
-        set("gender", "ÄĞĞÔ" );
-        set("title","°ëÏÉÊŞ");
+        set_name("é«˜äºº", ({ "gaoren" }) );
+        set("gender", "ç”·æ€§" );
+        set("title","åŠä»™ç¸");
         set("age", 32);
-        set("long","Ò»¸öµÃ°ëµÀµÄÀÏµÀÊ¿£¬¶Ô¸ÄÉÆ¶¯ÎïµÄÌåÖÊ±ğÓĞÃî¼¼¡£\n");
+        set("long","ä¸€å€‹å¾—åŠé“çš„è€é“å£«ï¼Œå°æ”¹å–„å‹•ç‰©çš„é«”è³ªåˆ¥æœ‰å¦™æŠ€ã€‚\n");
         set("combat_exp", 5000);
         set("attitude", "friendly");
         set("chat_chance", 15);
-        set("title",HIW"Èı½çÉ¢ÈË"NOR);
+        set("title",HIW"ä¸‰ç•Œæ•£äºº"NOR);
         setup();
         carry_object("/clone/cloth/cloth")->wear();
 
@@ -37,11 +37,11 @@ void greeting(object ob)
         if( !ob || environment(ob) != environment() ) return;
         switch( random(5) ) {
                 case 0:
-                        say( "¸ßÈËËµµÀ£ºÕâÎ»" + RANK_D->query_respect(ob)
-                                + "£¬À´ÅãÎÒÁÄÒ»ÁÄ£¿\n");
+                        say( "é«˜äººèªªé“ï¼šé€™ä½" + RANK_D->query_respect(ob)
+                                + "ï¼Œä¾†é™ªæˆ‘èŠä¸€èŠï¼Ÿ\n");
                         break;
                 case 1:
-                        say( "¸ßÈËĞ¦µÀ£ºÕâ²»£¬ÉúÒâÀ´ÁË£¡\n");
+                        say( "é«˜äººç¬‘é“ï¼šé€™ä¸ï¼Œç”Ÿæ„ä¾†äº†ï¼\n");
                         break;
         }
 }
@@ -53,12 +53,12 @@ int do_train(string arg)
         string which;
         me = this_player();
         if(me->is_busy())
-        return notify_fail("ÄãÉÏÒ»¸ö¶¯×÷»¹Ã»ÓĞÍê³É¡£\n");
-        if(!arg) return notify_fail("¸ßÈËµÀ£º£¢ÄãÒªÊ²Ã´Ñ½£¿£¢\n");
+        return notify_fail("ä½ ä¸Šä¸€å€‹å‹•ä½œé‚„æ²’æœ‰å®Œæˆã€‚\n");
+        if(!arg) return notify_fail("é«˜äººé“ï¼šã€ä½ è¦ä»€éº¼å‘€ï¼Ÿã€\n");
         pet = present(arg,environment());
-        if(!objectp(pet)) return notify_fail("¸ßÈËµÀ£º£¢ÄãÒªÊ²Ã´Ñ½£¿£¢\n");
+        if(!objectp(pet)) return notify_fail("é«˜äººé“ï¼šã€ä½ è¦ä»€éº¼å‘€ï¼Ÿã€\n");
         if( query("possessed", pet) != me )
-        return notify_fail("¸ßÈËµÀ£º£¢ÄÇºÃÏó²»ÊÇÄãµÄ°É£¿£¢\n");
+        return notify_fail("é«˜äººé“ï¼šã€é‚£å¥½è±¡ä¸æ˜¯ä½ çš„å§ï¼Ÿã€\n");
         switch (random(2)){
         case 0: which = "max_jing"; break;
         case 1: which = "max_qi"; break;
@@ -68,15 +68,15 @@ int do_train(string arg)
         cost *= cost;
         if (cost > 200) cost = 200;
         gold = present("gold_money", me);
-        if(!gold) return notify_fail("ÄãÉíÉÏÃ»ÓĞ½ğ×Ó¡£\n");
+        if(!gold) return notify_fail("ä½ èº«ä¸Šæ²’æœ‰é‡‘å­ã€‚\n");
         if((int) gold->query_amount() < cost)
-        return notify_fail("ÄãÉíÉÏÃ»ÓĞ"+chinese_number(cost)+"Á½½ğ×Ó¡£\n");
+        return notify_fail("ä½ èº«ä¸Šæ²’æœ‰"+chinese_number(cost)+"å…©é‡‘å­ã€‚\n");
         if( query("score", me)<cost )
-        return notify_fail("ÄãµÄÆÀ¼Û²»¹»"+chinese_number(cost)+"µã¡£\n");
+        return notify_fail("ä½ çš„è©•åƒ¹ä¸å¤ "+chinese_number(cost)+"é»ã€‚\n");
         addn(which, 20, pet);
         pet->save();
         gold->add_amount(-cost);
         addn("score", -cost, me);
-        command("say Õâ¾ÍµÃÁË£¡\n");
+        command("say é€™å°±å¾—äº†ï¼\n");
         return 1;
 }

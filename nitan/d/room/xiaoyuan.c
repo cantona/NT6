@@ -3,21 +3,21 @@
 inherit ROOM;
 
 nosave mapping room_type = ([
-        "dule"    : "���־�",
-        "caihong" : "�ʺ��",
-        "panlong" : "������",
+        "dule"    : "獨樂居",
+        "caihong" : "彩虹居",
+        "panlong" : "盤龍居",
 ]);
 
 void create()
 {
         object ob;
 
-        set("short", "СԺ");
+        set("short", "小院");
         set("long", @LONG
-������һ�������Ժ�ӣ������ڷ���ľ��ש�ߡ�Ժ������һ���ˣ���
-��Ʈ�����ľ��ڽ�֮�硣����Χ�ż������ӣ�ר����־������ʦ���Ρ�Ժ
-�ǵ�һ�����Ϲ���һ�����ӣ����飺�������ַ��ݣ������߾�����³��Ǣ
-̸��
+這裡是一個不大的院子，到處擺放著木料磚瓦。院中坐著一個人，豐
+神飄洒，頗具宗匠之風。四周圍著幾個弟子，專心致志的在老師聽課。院
+角的一棵樹上掛著一個牌子，上書：代建各種房屋，有意者敬請與魯班洽
+談。
 LONG );
         set("exits", ([
                 "west"  : "/d/nanyang/yidao2",

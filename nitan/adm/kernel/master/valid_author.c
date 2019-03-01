@@ -1,6 +1,6 @@
 // This program is a part of NT MudLIB
 
-// ÎÞÎÄ¼þ
+// ç„¡æ–‡ä»¶
 int valid_author(string arg)
 {
         return 1;

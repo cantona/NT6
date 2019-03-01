@@ -6,30 +6,30 @@ inherit NPC;
 
 void create()
 {
-        set_name( YEL "�˰��" NOR, ({"gu bancheng","gu","bancheng"}) );
-        set("gender", "����" );
-        set("title", "�˼Ҳʲ����ϰ�");
+        set_name( YEL "顧半城" NOR, ({"gu bancheng","gu","bancheng"}) );
+        set("gender", "男性" );
+        set("title", "顧家彩帛舖老板");
         set("age", 51);
         set("long", @LONG
-���ϰ��������Ǻ�𣬵�����ȫ���ˣ�������Ӧ����������ˡ�����
-˵������������úã�����ǡ������ǵ��˶�������������ƥ��
-�У����⻹�ܲ��ã������������ƺ����а����ָĳɡ�ȫ�ǡ��Ĵ��㡣
+顧老板的生意很是紅火，店舖裡全是人，看起來應該擴大店面了。有人
+說是他的名字起得好，“半城”嘛，半個城的人都到他這裡來買布匹綢
+緞，生意還能不好？不過，現在似乎他有把名字改成“全城”的打算。
 LONG
         );
         set("chat_chance", 40);
         set("chat_msg", ({
-                "���ϰ�����͹٣��������Ϻõĺ���ɣ�\n",
-                "���ϰ�������ݳ�����������ĵط�����û��ɶ�����򲻵��ġ�\n",
-                "���ϰ�����Ǻǣ�С�϶���ҵ�Ҳ���ܺ��ڣ�����������Ϲ����\n",
-                "���ϰ�����ţ������ĳ���ү�������ǰ������Ӱ���\n",
+                "顧老板道：客官，看看這上好的湖綢吧！\n",
+                "顧老板道：揚州城是天下最繁華的地方啦，沒有啥這裡買不到的。\n",
+                "顧老板道：呵呵，小老兒這家店也就能糊口，您別聽他們瞎吹。\n",
+                "顧老板道：嗯，本府的程老爺，那真是愛民如子啊！\n",
         }));
         set("inquiry", ([
-                "�ʲ�" : "����Ҫ���У�����������������\n",
-                "here" : "��������ݸ���������������ʹ������ܷ���ġ�\n",
+                "彩帛" : "您家要塊綢緞？隨便挑，隨便挑……\n",
+                "here" : "這兒是揚州府，從這兒到東京和大理都很方便的。\n",
         ]) );
         set("attitude", "friendly");
-        set("rank_info/respect", "�ϸ�");
-        set("rank_info/rude","�����˵�");
+        set("rank_info/respect", "老哥");
+        set("rank_info/rude","老王八蛋");
         set("combat_exp",100);
         set_skill("unarmed", 5);
         setup();
@@ -50,6 +50,6 @@ void init()
 void greeting(object ob)
 {
         if( !ob || environment(ob) != environment() ) return;
-        message_vision("���ϰ�æ�Ÿ�����������һ��ͷ�������˽������к�һ���������Եȣ���\n",ob);
+        message_vision("顧老板忙著給客人量布，一回頭，見有人進來，招呼一聲：“您稍等！”\n",ob);
         return;
 }

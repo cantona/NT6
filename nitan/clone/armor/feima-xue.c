@@ -5,17 +5,17 @@ inherit BOOTS;
 
 void create()
 {
-        set_name( HIW "·ÉÂíÑ¥" NOR, ({ "feima xue", "feima", "xue" }) );
+        set_name( HIW "é£›é¦¬é´" NOR, ({ "feima xue", "feima", "xue" }) );
         set_weight(10);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "Ë«");
-                set("long", HIW "Ò»Ë«×ö¹¤ÆæÌØÈË¼äº±¼ûµÄ±¦Ñ¥×Ó£¬ÔÌ²Ø×ÅÉñÆæµÄÁ¦Á¿¡£\n");
+                set("unit", "é›™");
+                set("long", HIW "ä¸€é›™åšå·¥å¥‡ç‰¹äººé–“ç½•è¦‹çš„å¯¶é´å­ï¼Œè˜Šè—è‘—ç¥å¥‡çš„åŠ›é‡ã€‚\n");
                 set("value", 2000000);
                 set("armor_prop/armor", 200);
-                set("armor_prop/dex", 1); //ºóÌìÉí·¨+1
-                set("armor_prop/int", 2); //ºóÌìÎòĞÔ+2
+                set("armor_prop/dex", 1); //å¾Œå¤©èº«æ³•+1
+                set("armor_prop/int", 2); //å¾Œå¤©æ‚Ÿæ€§+2
                 set("material", "boots");
         }
         setup();

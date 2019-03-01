@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ÂÒÊ¯");
+        set("short", "äº‚çŸ³");
         set("long", @LONG
-Õâ¶ùÊÇÂÒÊ¯¶Ñ£¬ËÆºõ²»ÊÇÌìÈ»¶ø³É¡£Ò»Õóº£·ç´µÀ´£¬Äã´òÁËÒ»¸ö¶ß
-àÂ£¬²»½ûº¦ÅÂÆðÀ´£¬µ«Ï¸ÏëÒ»ÏÂ²»ÖªÆäËùÒÔÈ»¡£
+é€™å…’æ˜¯äº‚çŸ³å †ï¼Œä¼¼ä¹Žä¸æ˜¯å¤©ç„¶è€Œæˆã€‚ä¸€é™£æµ·é¢¨å¹ä¾†ï¼Œä½ æ‰“äº†ä¸€å€‹å“†
+å—¦ï¼Œä¸ç¦å®³æ€•èµ·ä¾†ï¼Œä½†ç´°æƒ³ä¸€ä¸‹ä¸çŸ¥å…¶æ‰€ä»¥ç„¶ã€‚
 LONG
         );
 
@@ -30,14 +30,14 @@ void init()
 
         if( interactive(me = this_player()) &&
                 !(query("sg/spy", me) || 
-                query("family/family_name", me) == "ÉñÁú½Ì") && 
+                query("family/family_name", me) == "ç¥žé¾æ•™") && 
                 random((int)me->query_skill("dodge")) < 80 )
         {
-                message_vision( HIR "$NµÄÑÛÇ°Í»È»³öÏÖÒ»¸öÎÞµ×µÄÉîÔ¨...$NµôÈëÁËÏÝÚåÖ®ÖÐ¡£\n" NOR, me);
-                message_vision( HIR"ÏÝÚåÖÐµÄ¸Ö°åÍ»È»Ã°³öÐí¶à·æÀûµÄ¸ÖÕë£¬ÉîÉîµØÔú½ø$NµÄÉíÌåÖÐ...\n" NOR, me);
+                message_vision( HIR "$Nçš„çœ¼å‰çªç„¶å‡ºç¾ä¸€å€‹ç„¡åº•çš„æ·±æ·µ...$NæŽ‰å…¥äº†é™·é˜±ä¹‹ä¸­ã€‚\n" NOR, me);
+                message_vision( HIR"é™·é˜±ä¸­çš„é‹¼æ¿çªç„¶å†’å‡ºè¨±å¤šé‹’åˆ©çš„é‹¼é‡ï¼Œæ·±æ·±åœ°ç´®é€²$Nçš„èº«é«”ä¸­...\n" NOR, me);
                 damage = 100000 / ( 100 + (int)me->query_skill("force"));
-                me->receive_wound("qi", damage + random(damage), "±»ÔúËÀÁË");
-                me->receive_damage("qi", damage + random(damage), "±»ÔúËÀÁË");
+                me->receive_wound("qi", damage + random(damage), "è¢«ç´®æ­»äº†");
+                me->receive_damage("qi", damage + random(damage), "è¢«ç´®æ­»äº†");
 
                 me->apply_condition("snake_poison", 50 + random(50) + me->query_condition("snake_poison"));
         }

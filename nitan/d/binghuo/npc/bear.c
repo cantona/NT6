@@ -5,10 +5,10 @@ inherit NPC;
 
 void create()
 {
-        set_name(WHT"����"NOR, ({ "bai xiong", "bear","xiong" }) );
-        set("race", "����");
+        set_name(WHT"白熊"NOR, ({ "bai xiong", "bear","xiong" }) );
+        set("race", "走獸");
         set("age", 20);
-        set("long", "һֻ���͵İ��ܣ�����˶���������С�\n");
+        set("long", "一只兇猛的白熊，形體碩大，人立而行。\n");
         set("attitude", "aggressive");
         set("shen_type", -1);
 
@@ -21,16 +21,16 @@ void create()
 
         set("chat_chance", 10);
         set("chat_msg", ({
-                "���ܳ�����ҡͷ��β�أ���֪����ʲô��˼��\n",
-                "���ܺǵ�һ��������Ҫ����������\n",
-                "���ܼ��˼����ӣ��������������Ц����ʱһ����š�\n",
+                "白熊沖著你搖頭擺尾地，不知道是什麼意思。\n",
+                "白熊呵的一聲，好象要向你撲來。\n",
+                "白熊擠了擠鼻子，你覺得它好象在笑，頓時一陣緊張。\n",
         }) );
 }
 
 void die()
 {
         object ob, corpse;
-        message_vision("$N���춯��һ���Һ�������ί���ڵأ����ˣ�\n", this_object());
+        message_vision("$N震天動地一聲慘嚎，慢慢委頓在地，死了！\n", this_object());
         if( objectp(corpse = CHAR_D->make_corpse(this_object())) )
         ob = new("/clone/medicine/nostrum/xiongdan");
         ob->move(corpse);

@@ -3,14 +3,14 @@ inherit ITEM;
 
 void create()
 {
-        set_name(HIW"°×¹Ç"NOR, ({ "bone" , "°×¹Ç"}) );
+        set_name(HIW"ç™½éª¨"NOR, ({ "bone" , "ç™½éª¨"}) );
         set_weight(50000+random(60000));
         set_max_encumbrance(400000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¾ß");
-                set("long", "Ò»¾ß²»ÖªÊÇĞ¡¶¯Îï»¹ÊÇÈËµÄÉ­É­°×¹Ç¡£\n");
+                set("unit", "å…·");
+                set("long", "ä¸€å…·ä¸çŸ¥æ˜¯å°å‹•ç‰©é‚„æ˜¯äººçš„æ£®æ£®ç™½éª¨ã€‚\n");
                 set("value", 1);
         }
         setup();

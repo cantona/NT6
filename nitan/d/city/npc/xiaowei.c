@@ -1,4 +1,4 @@
-// xiaoweri.c Ð£Î¾
+// xiaoweri.c æ ¡å°‰
 // Last Modified by Winder on Jul. 15 2000
 
 #include <ansi.h>
@@ -6,10 +6,10 @@ inherit NPC;
 
 void create()
 {
-        set_name(YEL "Ð£Î¾" NOR, ({ "xiao wei", "jiang" }));
-        set("title","ÑïÖÝÊØ±¸");
+        set_name(YEL "æ ¡å°‰" NOR, ({ "xiao wei", "jiang" }));
+        set("title","æšå·žå®ˆå‚™");
         set("age", 31);
-        set("gender", "ÄÐÐÔ");
+        set("gender", "ç”·æ€§");
         set("str", 24);
         set("dex", 16);
         set("combat_exp", 20000);
@@ -27,11 +27,11 @@ void create()
 
         set("chat_chance", 30);
         set("chat_msg", ({
-                "µ±ÁËÕâÃ´¶àÄê±ø£¬²ÅÊÇ¸öÐ£Î¾¡£¡£°¦¡£¡£¡£¡£\n",
-                "ÔÚÑïÖÝ»ìÁËÕâÃ´¶àÄêÁË£¬È´ºÃ¶àµØ·½Ã»È¥¹ý¡£¡£¡£\n",
-                "µ±±øÕæÊÇÎÞÁÄÍ¸¶¥ÁË¡£¡£¡£\n",
-                "Ð£Î¾ºÈµÀ£º´óµ¨µóÃñ£¬¾¹¸ÒÉ±¹Ù£¬Äª²»ÊÇÏëÔì·´²»³É£¿\n",
-                "Ð£Î¾ºÈµÀ£ºÄã»¹ÄÜÌÓ³ö´óËÎ¹ú½ç²»³É£¬»¹ÊÇ¹Ô¹ÔÍ¶½µ°É£¡\n",
+                "ç•¶äº†é€™éº¼å¤šå¹´å…µï¼Œæ‰æ˜¯å€‹æ ¡å°‰ã€‚ã€‚å”‰ã€‚ã€‚ã€‚ã€‚\n",
+                "åœ¨æšå·žæ··äº†é€™éº¼å¤šå¹´äº†ï¼Œå»å¥½å¤šåœ°æ–¹æ²’åŽ»éŽã€‚ã€‚ã€‚\n",
+                "ç•¶å…µçœŸæ˜¯ç„¡èŠé€é ‚äº†ã€‚ã€‚ã€‚\n",
+                "æ ¡å°‰å–é“ï¼šå¤§è†½åˆæ°‘ï¼Œç«Ÿæ•¢æ®ºå®˜ï¼ŒèŽ«ä¸æ˜¯æƒ³é€ åä¸æˆï¼Ÿ\n",
+                "æ ¡å°‰å–é“ï¼šä½ é‚„èƒ½é€ƒå‡ºå¤§å®‹åœ‹ç•Œä¸æˆï¼Œé‚„æ˜¯ä¹–ä¹–æŠ•é™å§ï¼\n",
         }));
         setup();
         carry_object(__DIR__"obj/gangdao")->wield();
@@ -54,7 +54,7 @@ void greeting()
         object me = this_player();
         if( me->query_condition("killer") )
         {
-                message_vision( "Ð£Î¾¶Ô×Å$N´óºÈÒ»Éù£º¡°É±ÈË·Å»ðµÄµóÃñ£¬¿ì¿ìÊÜËÀ°É£¡£¡£¡¡± \n", me );
+                message_vision( "æ ¡å°‰å°è‘—$Nå¤§å–ä¸€è²ï¼šâ€œæ®ºäººæ”¾ç«çš„åˆæ°‘ï¼Œå¿«å¿«å—æ­»å§ï¼ï¼ï¼â€ \n", me );
                 kill_ob(me);
         }
 }
@@ -65,10 +65,10 @@ int accept_fight(object me)
         int i;
         if ( random(5) == 0 )
         {
-                command("say ¾üÒ¯ÎÒ½ñÌìÐÄÇéºÃ£¬±ð·³ÎÒ£¬¹ö£¡£¡£¡£¡\n");
+                command("say è»çˆºæˆ‘ä»Šå¤©å¿ƒæƒ…å¥½ï¼Œåˆ¥ç…©æˆ‘ï¼Œæ»¾ï¼ï¼ï¼ï¼\n");
                 return 0;
         }
-        command("say ÎÒ¿´Äã½ñÌìÊÇ»îµÃ²»ÄÍ·³ÁË,"+RANK_D->query_rude(me)+",È¥ËÀ°É£¡\n");
+        command("say æˆ‘çœ‹ä½ ä»Šå¤©æ˜¯æ´»å¾—ä¸è€ç…©äº†,"+RANK_D->query_rude(me)+",åŽ»æ­»å§ï¼\n");
         me->apply_condition("killer", 360);
         all = all_inventory(environment(me));
         for ( i = 0; i < sizeof( all ); i ++ )

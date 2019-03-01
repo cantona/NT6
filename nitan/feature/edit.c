@@ -4,8 +4,8 @@ int edit(function callback, string text)
 {
         if( !text ) text = "";
 
-        write("½áÊøÀë¿ªÓÃ '.'£¬È¡ÏûÊäÈëÓÃ '~q'£¬Ê¹ÓÃÄÚ½¨ÁĞ±à¼­Æ÷ÓÃ '~e'¡£\n");
-        write("¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª¡ª\n");
+        write("çµæŸé›¢é–‹ç”¨ '.'ï¼Œå–æ¶ˆè¼¸å…¥ç”¨ '~q'ï¼Œä½¿ç”¨å…§å»ºåˆ—ç·¨è¼¯å™¨ç”¨ '~e'ã€‚\n");
+        write("â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€\n");
         write(text);
 
         input_to("input_line", text, callback);
@@ -25,7 +25,7 @@ void input_line(string line, string text, function callback)
                 (*callback)(text);
                 return;
         } else if( line == "~q" ) {
-                write("ÊäÈëÈ¡Ïû¡£\n");
+                write("è¼¸å…¥å–æ¶ˆã€‚\n");
                 return;
         } else if( line == "~e" ) {
         } else

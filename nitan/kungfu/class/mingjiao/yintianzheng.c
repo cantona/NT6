@@ -10,15 +10,15 @@ inherit F_COAGENT;
 #include "fawang.h"
 void create()
 {
-        set_name("ÒóÌìÕý", ({"yin tianzheng", "yin", "tianzheng", }));
+        set_name("æ®·å¤©æ­£", ({"yin tianzheng", "yin", "tianzheng", }));
         set("long",
-        "ËûÊÇÒ»Î»Éí²Ä¿ýÎàµÄÍºÀÏÕß£¬Éí´©Ò»¼þ°×É«³¤ÅÛ¡£\n"
-        "Ëû³¤Ã¼Ê¤Ñ©£¬´¹ÏÂÑÛ½Ç£¬±Ç×Ó¹³Çú£¬ÓÌÈçÓ¥×ì¡£\n"
+        "ä»–æ˜¯ä¸€ä½èº«æé­æ¢§çš„ç¦¿è€è€…ï¼Œèº«ç©¿ä¸€ä»¶ç™½è‰²é•·è¢ã€‚\n"
+        "ä»–é•·çœ‰å‹é›ªï¼Œåž‚ä¸‹çœ¼è§’ï¼Œé¼»å­é‰¤æ›²ï¼ŒçŒ¶å¦‚é·¹å˜´ã€‚\n"
         );
 
-        set("title",HIG "Ã÷½Ì" HIW "°×Ã¼Ó¥Íõ" NOR);
+        set("title",HIG "æ˜Žæ•™" HIW "ç™½çœ‰é·¹çŽ‹" NOR);
         set("level",9);
-        set("gender", "ÄÐÐÔ");
+        set("gender", "ç”·æ€§");
         set("attitude", "peaceful");
 
         set("age", 72);
@@ -77,8 +77,8 @@ void create()
                 (: command("perform strike.jue") :),
                 (: command("perform finger.feng") :),
         }) );
-        create_family("Ã÷½Ì", 35, "»¤·¨·¨Íõ");
-        set("inherit_title",HIG"Ã÷½Ì"NOR"¹âÃ÷É¢ÈË"NOR);
+        create_family("æ˜Žæ•™", 35, "è­·æ³•æ³•çŽ‹");
+        set("inherit_title",HIG"æ˜Žæ•™"NOR"å…‰æ˜Žæ•£äºº"NOR);
         set("master_ob",3);
 
         set_temp("apply/attack", 150);
@@ -106,10 +106,10 @@ int accept_ask(object me, string topic)
         switch (topic)
         {
 
-        case "³àÑª×¦" :
+        case "èµ¤è¡€çˆª" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/sougu-yingzhua/xue",
-                           "name"    : "³àÑª×¦",
+                           "name"    : "èµ¤è¡€çˆª",
                            "sk1"     : "sougu-yingzhua",
                            "lv1"     : 140,
                            "neili"   : 2000,
@@ -117,10 +117,10 @@ int accept_ask(object me, string topic)
                            "shen"    : 100000, ]));
                 break;
 
-        case "·âÉ±" :
+        case "å°æ®º" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/tougu-zhen/feng",
-                           "name"    : "·âÉ±",
+                           "name"    : "å°æ®º",
                            "sk1"     : "tougu-zhen",
                            "lv1"     : 100,
                            "force"   : 260,
@@ -129,10 +129,10 @@ int accept_ask(object me, string topic)
                            "shen"    : 68000, ]));
                 break;
 
-        case "¾øÉ±" :
+        case "çµ•æ®º" :
                 return MASTER_D->teach_pfm(me, this_object(),
                         ([ "perform" : "can_perform/yinfeng-dao/jue",
-                           "name"    : "¾øÉ±",
+                           "name"    : "çµ•æ®º",
                            "sk1"     : "yinfeng-dao",
                            "lv1"     : 140,
                            "force"   : 260,

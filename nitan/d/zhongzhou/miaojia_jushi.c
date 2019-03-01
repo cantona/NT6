@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����");
+        set("short", "居室");
         set("long", @LONG
-һ����Ϊ���µ�С�ݣ��ƺ���Ů�ӵľ���������������
-��һ֧��¯������ɢ�������㡣��ǰ��������һ�������ģ���
-��̴��ľ�Ĵ�������ĵ����Ž��г񱻡�
+一間頗為精致的小屋，似乎是女子的居所。房間的中央擺
+著一支香爐，緩緩散發著清香。門前還懸掛著一籠白鸚鵡，雕
+花檀香木的床上整齊的疊放著錦緞綢被。
 LONG);
         set("exits", ([
                   "south" : __DIR__"miaojia_zoulang1",

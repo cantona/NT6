@@ -1,4 +1,4 @@
-// baodan.c ±ª×Óµ¨
+// baodan.c è±¹å­è†½
 // Last Modified by winder on Aug. 1 2002
 
 #include <ansi.h>
@@ -9,13 +9,13 @@ void init();
 
 void create()
 {
-        set_name("±ª×Óµ¨", ({ "baozi dan", "dan" }) );
+        set_name("è±¹å­è†½", ({ "baozi dan", "dan" }) );
         set_weight(1000);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¿Å");
-                set("long", CYN"ÕâÊÇÒ»¿ÅÏóÈ­Í·Ò»Ñù´óµÄ±ª×Óµ¨£¬ÓÖºÚÓÖÂÌ¡£\n"NOR);
+                set("unit", "é¡†");
+                set("long", CYN"é€™æ˜¯ä¸€é¡†è±¡æ‹³é ­ä¸€æ¨£å¤§çš„è±¹å­è†½ï¼Œåˆé»‘åˆç¶ ã€‚\n"NOR);
                 set("value", 10000);
                 set("medicine", 1);
         }
@@ -32,7 +32,7 @@ int cure_ob(object me)
                 addn("eff_jingli", -1, me);
                 set("jingli", 0, me);
                 me->apply_condition("bonze_drug", 30);
-                message_vision(HIR "$N³ÔÏÂÒ»¿Å±ª×Óµ¨£¬Ö»¾õµÃ¸Î³¦´ç¶Ï£¬ÎåÔàÓûÁÑ£¬Ô­À´·şÊ³Ì«¶àÒ©Îï£¬Ò©Ğ§ÊÊµÃÆä·´£¡\n" NOR, this_player());
+                message_vision(HIR "$Nåƒä¸‹ä¸€é¡†è±¹å­è†½ï¼Œåªè¦ºå¾—è‚è…¸å¯¸æ–·ï¼Œäº”è‡Ÿæ¬²è£‚ï¼ŒåŸä¾†æœé£Ÿå¤ªå¤šè—¥ç‰©ï¼Œè—¥æ•ˆé©å¾—å…¶åï¼\n" NOR, this_player());
                 destruct(this_object());
                 return 1;
         }
@@ -48,7 +48,7 @@ int cure_ob(object me)
         addn("neili", 500, me);
         me->apply_condition("bonze_drug",
         me->query_condition("bonze_drug")+30);
-        message_vision(HIY "$NÍÌÏÂÒ»¿Å±ª×Óµ¨£¬Ö»¾õµÃÈ«Éí³äÂúÈÈÆø£¬¶·Ö¾°ºÑï£¬»ìÉíÓĞ¾¢¡£\n" NOR, me);
+        message_vision(HIY "$Nåä¸‹ä¸€é¡†è±¹å­è†½ï¼Œåªè¦ºå¾—å…¨èº«å……æ»¿ç†±æ°£ï¼Œé¬¥å¿—æ˜‚æšï¼Œæ··èº«æœ‰å‹ã€‚\n" NOR, me);
         destruct(this_object());
         return 1;
 }
@@ -57,5 +57,5 @@ void remove_effect(object me)
 {
         addn_temp("apply/attack", -100, me);
         delete_temp("qz/baozidan", me);
-        tell_object(me, "¹ıÁËÒ»»á¶ù£¬±ª×Óµ¨´øÀ´µÄÓà¾¢ºÃÏóÏûÊ§ÁË¡£\n");
+        tell_object(me, "éäº†ä¸€æœƒå…’ï¼Œè±¹å­è†½å¸¶ä¾†çš„ä½™å‹å¥½è±¡æ¶ˆå¤±äº†ã€‚\n");
 }

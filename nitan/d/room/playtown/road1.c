@@ -1,15 +1,15 @@
-// /d/playertown/road1.c ��ʯС��
+// /d/playertown/road1.c 碎石小道
 // Build 1999.12.10 bmw
 
 inherit BUILD_ROOM;
 
 void create()
 {
-        set("short","��ʯС��");
+        set("short","碎石小道");
         set("long",
-"������һ��������С���ϣ�ʱ���дӶ�������������������Ĵ�\n"
-"����ȥ��������һ�����ֵļ��У��Ǵ�Ůÿ���ȥ�ĵط��������Ǵ峤��\n"
-"����������һЩ�˻���Űݷá�\n"
+"你走在一條曲長的小道上，時而有從東面兩三個村民結伙向北面的村\n"
+"外離去，東面是一個熱鬧的集市，是村女每天必去的地方；西面是村長的\n"
+"居所，總有一些人會登門拜訪。\n"
 );
 
         set("recordable_room",1);

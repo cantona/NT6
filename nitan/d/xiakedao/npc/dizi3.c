@@ -1,4 +1,4 @@
-// dizi3.c µÜ×Ó
+// dizi3.c å¼Ÿå­
 
 #include <ansi.h>
 
@@ -7,10 +7,10 @@ inherit F_MASTER;
 
 void create()
 {
-        set_name("ÇàÒÂµÜ×Ó", ({ "di zi", "di", "zi" }));
-        set("long", "ÕâÊÇÈýÊ®¶àËêµÄ×³ºº£¬°ò´óÑüÔ²£¬ÊÇµºÖ÷´ÓÖÐÔ­ÕÐÄ¼À´µÄ¡£\n");
+        set_name("é’è¡£å¼Ÿå­", ({ "di zi", "di", "zi" }));
+        set("long", "é€™æ˜¯ä¸‰åå¤šæ­²çš„å£¯æ¼¢ï¼Œè†€å¤§è…°åœ“ï¼Œæ˜¯å³¶ä¸»å¾žä¸­åŽŸæ‹›å‹Ÿä¾†çš„ã€‚\n");
 
-        set("gender", "ÄÐÐÔ");
+        set("gender", "ç”·æ€§");
         set("age", 30);
         set("shen_type",1);
         set("attitude", "peaceful");
@@ -36,7 +36,7 @@ void create()
         set_skill("parry", 70);
         set_skill("hand", 70);
         set_skill("staff", 50);
-        create_family("ÏÀ¿Íµº", 2, "µÜ×Ó");
+        create_family("ä¿ å®¢å³¶", 2, "å¼Ÿå­");
 
         setup();
         carry_object(__DIR__"obj/bcloth")->wear();
@@ -64,20 +64,20 @@ void greeting(object ob)
                 return;
 
         message_vision("
-$NËµµÀ£º¶´ÄÚÓÐ¶þÊ®ËÄ×ùÊ¯ÊÒ£¬¸÷Î»¿ÉÇëËæÒâÀ´È¥¡£¿´µÃÑáÁË£¬¿Éµ½
-¶´ÍâÉ¢ÐÄ£¬Ò»Ó¦ÒûÊ³£¬Ê¯ÊÒÄÚ¾ùÓÐÖÃ±¸£¬¸÷Î»ËæÒâÈ¡ÓÃ£¬²»±Ø¿ÍÆø¡£", this_object());
+$Nèªªé“ï¼šæ´žå…§æœ‰äºŒåå››åº§çŸ³å®¤ï¼Œå„ä½å¯è«‹éš¨æ„ä¾†åŽ»ã€‚çœ‹å¾—åŽ­äº†ï¼Œå¯åˆ°
+æ´žå¤–æ•£å¿ƒï¼Œä¸€æ‡‰é£²é£Ÿï¼ŒçŸ³å®¤å…§å‡æœ‰ç½®å‚™ï¼Œå„ä½éš¨æ„å–ç”¨ï¼Œä¸å¿…å®¢æ°£ã€‚", this_object());
         message_vision("
-¶þÊ®ËÄ×ùÊ¯ÊÒ´óÖÂÊÇÕâÑù·Ö²¼µÄ£º
+äºŒåå››åº§çŸ³å®¤å¤§è‡´æ˜¯é€™æ¨£åˆ†å¸ƒçš„ï¼š
 
-        »ù±¾ÕÆ·¨                 »ù±¾¹³·¨                 »ù±¾È­½Å
-           £ü                       £ü                       £ü
-»ù±¾°µÆ÷¡ªÒ»½ø¡ª»ù±¾Çá¹¦ »ù±¾°ô·¨¡ª¶þ½ø¡ª»ù±¾Ç¹·¨ »ù±¾µ¶·¨¡ªÈý½ø¡ª»ù±¾ÕÐ¼Ü
-           £ü                       £ü                       £ü
-        »ù±¾½£·¨                 »ù±¾ÍÈ·¨                 »ù±¾´Ì·¨
+        åŸºæœ¬æŽŒæ³•                 åŸºæœ¬é‰¤æ³•                 åŸºæœ¬æ‹³è…³
+           ï½œ                       ï½œ                       ï½œ
+åŸºæœ¬æš—å™¨â”€ä¸€é€²â”€åŸºæœ¬è¼•åŠŸ åŸºæœ¬æ£’æ³•â”€äºŒé€²â”€åŸºæœ¬æ§æ³• åŸºæœ¬åˆ€æ³•â”€ä¸‰é€²â”€åŸºæœ¬æ‹›æž¶
+           ï½œ                       ï½œ                       ï½œ
+        åŸºæœ¬åŠæ³•                 åŸºæœ¬è…¿æ³•                 åŸºæœ¬åˆºæ³•
 
-        »ù±¾¸«·¨                 »ù±¾´¸·¨                 »ù±¾Ö¸·¨
-           £ü                       £ü                       £ü
-»ù±¾×¦·¨¡ªËÄ½ø¡ª»ù±¾ÕÈ·¨ »ù±¾ÄÚ¹¦¡ªÎå½ø¡ª»ù±¾Õó·¨   Ì«Ðþ¹¦¡ªÁù½ø¡ª»ù±¾±Þ·¨
-           £ü                       £ü                       £ü
-        »ù±¾È­·¨                 »ù±¾ÊÖ·¨                 »ù±¾¹÷·¨\n", this_object());
+        åŸºæœ¬æ–§æ³•                 åŸºæœ¬éŒ˜æ³•                 åŸºæœ¬æŒ‡æ³•
+           ï½œ                       ï½œ                       ï½œ
+åŸºæœ¬çˆªæ³•â”€å››é€²â”€åŸºæœ¬æ–æ³• åŸºæœ¬å…§åŠŸâ”€äº”é€²â”€åŸºæœ¬é™£æ³•   å¤ªçŽ„åŠŸâ”€å…­é€²â”€åŸºæœ¬éž­æ³•
+           ï½œ                       ï½œ                       ï½œ
+        åŸºæœ¬æ‹³æ³•                 åŸºæœ¬æ‰‹æ³•                 åŸºæœ¬æ£æ³•\n", this_object());
 }

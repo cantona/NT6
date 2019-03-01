@@ -1,18 +1,18 @@
-// yuma.c ÓñÂí
+// yuma.c ç‰é¦¬
 
 inherit ITEM;
 #include <ansi.h>;
 
 void create()
 {
-        set_name(GRN"ôä´äÓñÂí"NOR, ({ "stone horse", "yu ma", "ma" }));
+        set_name(GRN"ç¿¡ç¿ ç‰é¦¬"NOR, ({ "stone horse", "yu ma", "ma" }));
         set("weight", 5000);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "×ù");
+                set("unit", "åº§");
                 set("value", 50000);
-                set("long", "Ò»×ùôä´äµñ³ÉµÄÓñÂí¡£\n");
+                set("long", "ä¸€åº§ç¿¡ç¿ é›•æˆçš„ç‰é¦¬ã€‚\n");
                 set("material", "stone");
         }
         setup();

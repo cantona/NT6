@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "�ϴ��");
+        set("short", "南大街");
         set("long", @LONG
-������һ�������Ľֵ��ϣ����ϱ���ͷ���졣�ϱ����ϳ��ţ���
-��ͨ�������ģ�������һ�ҹ˿��ڶྣ�ݵı����⣬�����Ǿ������֣�
-���������Ǿ���Ҫ�أ����Ա��������ͻ����
+你走在一條繁華的街道上，向南北兩頭延伸。南邊是南城門，北
+邊通往市中心，西邊是一家顧客眾多荊州的兵器庫，東邊是荊州糧倉，
+荊州向來是軍事要地，所以兵器糧草屯積豐厚。
 LONG );
         set("outdoors", "jingzhou");
         set("exits", ([

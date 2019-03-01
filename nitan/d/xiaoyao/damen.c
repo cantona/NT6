@@ -5,11 +5,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ʯ�Ҵ���");
+        set("short", "石室大門");
         set("long", @LONG
-�����Ҷ���ͻȻ֮�䣬������һ���������Բ�ԭ���Ǹ��Ż���
-�Ż��ĺ�������һ��ͭ�����ɵĴ��ţ�ʮ�ֳ��ء���ʹ�Ǳ����ܺõ��ˣ�
-����Ҳ������Ϊ������
+穿多巖洞，突然之間，手碰到一個冷冰冰的圓物，原來是個門環，
+門環的後面象是一扇銅鐵鑄成的大門，十分沉重。即使是臂力很好的人，
+推它也覺得甚為吃力。
 LONG );
         set("exits", ([
                 "north" : __DIR__"shidong",

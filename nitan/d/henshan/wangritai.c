@@ -2,10 +2,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����̨");
+        set("short", "望日台");
         set("long", @LONG
-����̨����ף�ڵ����ҹ�𣬵�̨������ң�����ţ���ˮ�Գ࣬
-ٿ����ʣ����ֵ�����������������֮��ӿ���𣬹�ҫ��Ŀ��
+望日台緊鄰祝融殿。雞鳴夜起，登台東望，遙見海門，雲水皆赤，
+倏忽異彩，日輪盪漾，若沉若浮，稍之奮湧而起，光耀奪目。
 LONG );
         set("exits", ([
                 "southdown"  : __DIR__"shiziyan",

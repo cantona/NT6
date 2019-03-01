@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-        set("short", "С��");
+        set("short", "小橋");
         set("long", @LONG
-С�ź��СϪ�ϡ�Ϫˮ�峺��������ʯ�߲��������ű������
-��ǽ������ˡ�����ǵ��ҷ���֮�����ŵ��̵ġ����嶴�족����
-�����������ڴ˽�®�����嶷�׵������������࣬�����÷�������
+小橋橫跨小溪上。溪水清澈，遊魚卵石斑駁可數。橋北面就是
+青城建福宮了。青城是道家發軔之處，號道教的“第五洞天”，相
+傳東漢張陵在此結廬傳授五鬥米道，至今宮闕連綿，傳道嗣法不絕。
 LONG );
         set("outdoors","qingcheng");
         set("exits", ([

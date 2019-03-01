@@ -3,9 +3,9 @@ inherit __DIR__"bhd_npc.c";
 
 void create()
 {
-        set_name(HIM "九头飞龙" NOR, ({ "jiutou long", "jiutou", "long" }));
-        set("title", HIY "产卵中的" NOR);
-        set("long", HIM "九头飞龙在产卵期会发生变异，体型会变大一倍，战斗力异常恐怖。\n" NOR);
+        set_name(HIM "涔濋牠椋涢緧" NOR, ({ "jiutou long", "jiutou", "long" }));
+        set("title", HIY "鐢㈠嵉涓殑" NOR);
+        set("long", HIM "涔濋牠椋涢緧鍦ㄧ敘鍗垫湡鏈冪櫦鐢熻畩鐣帮紝楂斿瀷鏈冭畩澶т竴鍊嶏紝鎴伴鍔涚暟甯告亹鎬栥�俓n" NOR);
 
         set("age", 99999);
         set("str",1000);
@@ -43,7 +43,7 @@ void create()
 
 void init()
 {
-        // 随机攻击玩家
+        // 闅ㄦ鏀绘搳鐜╁
         if (userp(this_player()))
         {
                 kill_ob(this_player());

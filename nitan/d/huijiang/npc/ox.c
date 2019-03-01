@@ -5,10 +5,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("êóÅ£", ({ "mao niu","niu" }) );
-        set("race", "×ßÐó");
+        set_name("â–¡ç‰›", ({ "mao niu","niu" }) );
+        set("race", "èµ°ç•œ");
         set("age", 12);
-        set("long", "Ò»Í··¢Å­µÄ¹«Å££¬Á½¸ö½ÇÉÏÎ¢Î¢ÉÁ×Å½ð¹â¡£\n");
+        set("long", "ä¸€é ­ç™¼æ€’çš„å…¬ç‰›ï¼Œå…©å€‹è§’ä¸Šå¾®å¾®é–ƒè‘—é‡‘å…‰ã€‚\n");
 
         set("str", 25);
         set("cor", 24);
@@ -19,15 +19,15 @@ void create()
    
         set("chat_chance",5);
         set("chat_msg",({
-                "êóÅ£µÉ×ÅÍë´óµÄÑÛ¾¦£¬×ÐÏ¸ÑÐ¾¿×ÅÄã¡£\n",
-                "êóÅ£ÕÅ×ì¶ÔÌì½ÐÁËÁ½Éù£¬ÄãÈ´Ã»Ìýµ½Ò»µãÉùÒô¡£\n",
+                "â–¡ç‰›çžªè‘—ç¢—å¤§çš„çœ¼ç›ï¼Œä»”ç´°ç ”ç©¶è‘—ä½ ã€‚\n",
+                "â–¡ç‰›å¼µå˜´å°å¤©å«äº†å…©è²ï¼Œä½ å»æ²’è½åˆ°ä¸€é»žè²éŸ³ã€‚\n",
         }));
         setup();
 }
 
 void die()
 {
-        message_vision("$NÅ­ºßÒ»Éù£¬Ò»Í·×²ÏòÉ½±Ú£¬²»¼ûÁË¡£\n",this_object());
+        message_vision("$Næ€’å“¼ä¸€è²ï¼Œä¸€é ­æ’žå‘å±±å£ï¼Œä¸è¦‹äº†ã€‚\n",this_object());
         new(__DIR__"obj/niujiao")->move(environment(this_object()));
         destruct(this_object());
         return;

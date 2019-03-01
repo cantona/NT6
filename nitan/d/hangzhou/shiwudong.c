@@ -4,11 +4,11 @@
 inherit ROOM;
 void create()
 {
-        set("short", "ʯ�ݶ�");
+        set("short", "石屋洞");
         set("long", @LONG
-ɽ·����ʯ�ݶ���ʯ�ݶ��������ж������������������ߴ������
-�ྻ�������Ͽ���խ��״�縡�ݡ����ϱ㵽������¤��ɽ·�ľ�ͷ����
-һ���ɱ����ϵĴ����
+山路旁是石屋洞。石屋洞，洞中有洞，洞洞相連。主洞高大寬敞，
+潔凈明亮，上寬下窄，狀如浮螺。西上便到了滿覺隴；山路的盡頭連著
+一條由北至南的大道。
 LONG);
         set("exits", ([
                 "westup"    : __DIR__"manjuelong",

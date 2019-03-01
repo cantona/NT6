@@ -6,18 +6,18 @@ inherit EQUIP;
 
 void create()
 {
-        set_name( HIC "Ç³À¶É«Âí¹Ó" NOR, ({ "lan magua", "cloth" }) );
+        set_name( HIC "æ·ºè—è‰²é¦¬è¤‚" NOR, ({ "lan magua", "cloth" }) );
         set_weight(700);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "¼ş");
+                set("unit", "ä»¶");
                 set("value", 100);
                 set("material", "cloth");
                 set("armor_type", "cloth");
                 set("armor_prop/per", 1);
                 set("armor_prop/armor", 2);
-                set("wear_msg","$N´©ÉÏÒ»¼ş$n¡£\n");
-                set("remove_msg","$½«$nÍÑÁËÏÂÀ´¡£\n");
+                set("wear_msg","$Nç©¿ä¸Šä¸€ä»¶$nã€‚\n");
+                set("remove_msg","$å°‡$nè„«äº†ä¸‹ä¾†ã€‚\n");
         }
 }

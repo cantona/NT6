@@ -4,10 +4,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��ʷ��");
+        set("short", "國史館");
         set("long", @LONG
-��ʷ���Ǻ����峼�Ƿ�����޹�ʷ����ĳ������. ����Ĳ�����
-��. ��Ҫ�Ƿ�־��ʷ��.
+國史館是翰林儒臣們奉敕纂修國史等書的常設機構. 這裡的藏書頗
+多. 主要是方志和史書.
 LONG
         );
         set("exits", ([

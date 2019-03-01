@@ -12,7 +12,7 @@ int main(object me, string arg)
                 return 0;
 
         if (! arg)
-                return notify_fail("ÇëÄãÖ¸Ã÷Ò»¸öÍæ¼Ò¡£\n");
+                return notify_fail("è«‹ä½ æŒ‡æ˜ä¸€å€‹ç©å®¶ã€‚\n");
 
         wiz_status = SECURITY_D->get_status(me);
 
@@ -20,7 +20,7 @@ int main(object me, string arg)
 
         if( EXAMINE_D->end_log_player(arg,query("id", me)) )
         {
-                write("Í£Ö¹¼ÇÂ¼(" + arg + ")µÄÈÕÖ¾¡£\n");
+                write("åœæ­¢è¨˜éŒ„(" + arg + ")çš„æ—¥å¿—ã€‚\n");
                 return 1;
         }
 
@@ -30,11 +30,11 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½: endlog <player>
+æŒ‡ä»¤æ ¼å¼: endlog <player>
  
-Í£Ö¹¼ÇÂ¼ <player> µÄÈÕÖ¾¡£Èç¹ûÕâ¸öÍæ¼Ò±»ÉèÖÃÎªÓÀ¾Ã¼ÇÂ¼ÈÕÖ¾£¬
-Ôò¸ÃÏîÉèÖÃ½«È¡Ïû¡£³ıÁË admin£¬Ö»ÓĞµÈ¼¶²»ÑÇÓÚ¿ªÊ¼¼ÇÂ¼ÈÕÖ¾ÕßµÄ
-Î×Ê¦²ÅÄÜ¹»È¡Ïû¼ÇÂ¼ÈÕÖ¾¡£
+åœæ­¢è¨˜éŒ„ <player> çš„æ—¥å¿—ã€‚å¦‚æœé€™å€‹ç©å®¶è¢«è¨­ç½®ç‚ºæ°¸ä¹…è¨˜éŒ„æ—¥å¿—ï¼Œ
+å‰‡è©²é …è¨­ç½®å°‡å–æ¶ˆã€‚é™¤äº† adminï¼Œåªæœ‰ç­‰ç´šä¸äºäºé–‹å§‹è¨˜éŒ„æ—¥å¿—è€…çš„
+å·«å¸«æ‰èƒ½å¤ å–æ¶ˆè¨˜éŒ„æ—¥å¿—ã€‚
  
 HELP );
         return 1;

@@ -9,9 +9,9 @@ void create()
         int skill, nl, lvl;
         int exp;
 
-        set_name("ÃÉ¹ÅÎÀ¶Ó",({ "menggu weidui", "weidui" }) );
-        set("gender", "ÄĞĞÔ" );
-        set("long", "Õâ¾ÍÊÇ´Ë´ÎÁì±øÄÏÇÖµÄ¸ºÔğ·ÀÎÀµÄÃÉ¹ÅÎÀ¶Ó¡£\n");
+        set_name("è’™å¤è¡›éšŠ",({ "menggu weidui", "weidui" }) );
+        set("gender", "ç”·æ€§" );
+        set("long", "é€™å°±æ˜¯æ­¤æ¬¡é ˜å…µå—ä¾µçš„è² è²¬é˜²è¡›çš„è’™å¤è¡›éšŠã€‚\n");
 
         set("int", 30);
         set("str", 30 + random(20));
@@ -98,7 +98,7 @@ int do_kill(string arg)
 
         if (this_object()->id(arg))
         {
-                write("ÓĞÃ»ÓĞ¸ã´í£¬ÄÇÊÇÃÉ¹Å±øÒ®£¬»¹²»¿ìÅÜ£¿£¡\n");
+                write("æœ‰æ²’æœ‰æéŒ¯ï¼Œé‚£æ˜¯è’™å¤å…µè€¶ï¼Œé‚„ä¸å¿«è·‘ï¼Ÿï¼\n");
                 return 1;
         } else
         if ((sscanf(arg, "%s from %s",what, who) == 2 ||
@@ -106,12 +106,12 @@ int do_kill(string arg)
              sscanf(arg, "%s on %s", what, who) == 2 ||
              sscanf(arg, "%s %s", what, who) == 2) &&
              this_object()->id(who)) {
-                write("ÓĞÃ»ÓĞ¸ã´í£¬ÄÇÊÇÃÉ¹Å±øÒ®£¬»¹²»¿ìÅÜ£¿£¡\n");
+                write("æœ‰æ²’æœ‰æéŒ¯ï¼Œé‚£æ˜¯è’™å¤å…µè€¶ï¼Œé‚„ä¸å¿«è·‘ï¼Ÿï¼\n");
                 return 1;
         } else
         if (arg == "roar" || arg == "hou")
         {
-                write("ÓĞÃ»ÓĞ¸ã´í£¬ÄÇÊÇÃÉ¹Å±øÒ®£¬»¹²»¿ìÅÜ£¿£¡\n");
+                write("æœ‰æ²’æœ‰æéŒ¯ï¼Œé‚£æ˜¯è’™å¤å…µè€¶ï¼Œé‚„ä¸å¿«è·‘ï¼Ÿï¼\n");
                 return 1;
         }
 
@@ -124,11 +124,11 @@ varargs void die(object killer)
         if (objectp(killer) && playerp(killer)) 
         {
                 addn_temp("warquest/reward", 200, killer);
-                GIFT_D->delay_war_bonus(killer, ([ "prompt" : "Òò¼ßÃğÃÉ¹ÅÎÀ¶Ó", "exp" : 1000, "pot" : 400, "mar" : 40, "gold" : 4 ])); 
+                GIFT_D->delay_war_bonus(killer, ([ "prompt" : "å› æ®²æ»…è’™å¤è¡›éšŠ", "exp" : 1000, "pot" : 400, "mar" : 40, "gold" : 4 ])); 
         }
 
-        message_vision("$NÂÊÁìµÄÃÉ¹ÅÎÀ¶ÓÔÚ¼¸¾­Íç¿¹ºó£¬ÖÕÓÚ±»³¹µ×" +
-                        HIR "ÏûÃğÁË" NOR "£¡\n",
+        message_vision("$Nç‡é ˜çš„è’™å¤è¡›éšŠåœ¨å¹¾ç¶“é ‘æŠ—å¾Œï¼Œçµ‚äºè¢«å¾¹åº•" +
+                        HIR "æ¶ˆæ»…äº†" NOR "ï¼\n",
                         this_object());
         
         return ::die();

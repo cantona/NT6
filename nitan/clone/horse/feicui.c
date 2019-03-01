@@ -3,8 +3,8 @@ inherit "/clone/horse/horse.c";
 
 void create()
 {
-        set_name(HIG "ôä´ä¾Ô" NOR, ({ "feicui ju"}));
-        set("long", HIG "¾İËµôä´ä¾Ô²ú×ÔËÄ´¨£¬½ÅÁ¦²»´í¡¡¡£\n" NOR);
+        set_name(HIG "ç¿¡ç¿ é§’" NOR, ({ "feicui ju"}));
+        set("long", HIG "æ“šèªªç¿¡ç¿ é§’ç”¢è‡ªå››å·ï¼Œè…³åŠ›ä¸éŒ¯ã€€ã€‚\n" NOR);
 
         set("tili", 1000);
         set("max_tili", 1000);

@@ -3,10 +3,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��ʯС��");
+        set("short", "碎石小道");
         set("long", @LONG
-������һ����ʯС���������ɵ�����������µڶ����ð׻��õ�
-���ţ����ﲻʱ�а׻��õĵ����߶���
+這裡是一條碎石小道，向西可到達日月神教下第二大堂白虎堂的
+大門，這裡不時有白虎堂的弟子走動。
 LONG );
         set("outdoors", "heimuya");
         set("exits", ([

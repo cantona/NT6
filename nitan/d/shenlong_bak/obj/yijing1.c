@@ -1,4 +1,4 @@
-// yijing.c  ¡º»ÆµÛÄÚ¾­¡»
+// yijing.c  ã€é»ƒå¸å…§ç¶“ã€
 // Last Modified by winder on Jul. 12 2002
 
 #include <ansi.h>
@@ -9,13 +9,13 @@ void setup()
 
 void create()
 {
-        set_name("»ÆµÛÄÚ¾­", ({ "yijing", "book" }));
+        set_name("é»ƒå¸å…§ç¶“", ({ "yijing", "book" }));
         set_weight(600);
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
-                set("long", "ÕâÊÇÒ»±¾Ïß×°Êé£¬ÀïÃæÃÜÃÜÂéÂéµÄĞ´ÂúÁËÎÄ×Ö¡£\n");
+                set("unit", "æœ¬");
+                set("long", "é€™æ˜¯ä¸€æœ¬ç·šè£æ›¸ï¼Œè£¡é¢å¯†å¯†éº»éº»çš„å¯«æ»¿äº†æ–‡å­—ã€‚\n");
                 set("value", 300);
                 set("material", "paper");
         }
@@ -34,41 +34,41 @@ int do_study(string arg)
 
         if( query("pigging", where) )
         {
-                write("Äã»¹ÊÇ×¨ĞÄ¹°Öí°É£¡\n");
+                write("ä½ é‚„æ˜¯å°ˆå¿ƒæ‹±è±¬å§ï¼\n");
                 return 1;
         }
         if (me->is_busy()) {
-                write("ÄãÏÖÔÚÕıÃ¦×ÅÄØ¡£\n");
+                write("ä½ ç¾åœ¨æ­£å¿™è‘—å‘¢ã€‚\n");
                 return 1;
         }
         if( me->is_fighting() )
         {
-                write("ÄãÎŞ·¨ÔÚÕ½¶·ÖĞ×¨ĞÄÏÂÀ´ÑĞ¶ÁĞÂÖª£¡\n");
+                write("ä½ ç„¡æ³•åœ¨æˆ°é¬¥ä¸­å°ˆå¿ƒä¸‹ä¾†ç ”è®€æ–°çŸ¥ï¼\n");
                 return 1;
         }
         if (!id(arg))
         {
-                write("ÄãÒª¶ÁÊ²Ã´£¿\n");
+                write("ä½ è¦è®€ä»€éº¼ï¼Ÿ\n");
                 return 1;
         }
         if( (int)me->query_skill("literate", 1) < 20 )
         {
-                write("ÄãÊ¶µÄ×Ö²»¶à£¬¶Á²»¶®ÊéÖĞµÄ½²½â¡£\n");
+                write("ä½ è­˜çš„å­—ä¸å¤šï¼Œè®€ä¸æ‡‚æ›¸ä¸­çš„è¬›è§£ã€‚\n");
                 return 1;
         }
         if( (int)me->query_skill("medicine", 1) > 29 )
         {
-                write("¸óÏÂ¶ÔÒ½ÀíÂÔÓĞ¼ûÊ¶£¬²»±ØÔÙ¶Á¡º»ÆµÛÄÚ¾­¡»ÁË¡£\n");
+                write("é–£ä¸‹å°é†«ç†ç•¥æœ‰è¦‹è­˜ï¼Œä¸å¿…å†è®€ã€é»ƒå¸å…§ç¶“ã€äº†ã€‚\n");
                 return 1;
         }
         if( query("jing", me)<80 )
         {
-                write("ÄãµÄ¾«ÉñÇ·¼Ñ£¬Åõ×ÅÒ½¾­Á¬´òºÇÇ·¡£\n");
+                write("ä½ çš„ç²¾ç¥æ¬ ä½³ï¼Œæ§è‘—é†«ç¶“é€£æ‰“å‘µæ¬ ã€‚\n");
                 return 1;
         }
         if( query("sg/exp", me)<1000 && !query_temp("sgbook_poison", me) )
         {
-                message_vision("$NÉìÊ³Ö¸ÔÚ¿ÚÖĞÒ»Ìò£¬ÕºÁËĞ©ÍÙÒº·­ÔÄÆğÊéÀ´¡£\n", me);
+                message_vision("$Nä¼¸é£ŸæŒ‡åœ¨å£ä¸­ä¸€èˆ”ï¼Œè˜¸äº†äº›å”¾æ¶²ç¿»é–±èµ·æ›¸ä¾†ã€‚\n", me);
                 set_temp("sgbook_poison", 1, me);
                 call_out("poison", 5, me);
         }
@@ -77,24 +77,24 @@ int do_study(string arg)
         cost += random(cost / 2);
 
         me->improve_skill("medicine", random(2 * me->query_int()));
-        me->receive_damage("jing", cost, "ĞÄÁ¦½Ê´áËÀÁË");
-        message_vision("$NÒ»»á¶ù·­ÔÄ×Å¡º»ÆµÛÄÚ¾­¡»£¬Ò»»á¶ù¿àË¼Ú¤Ïë¡£\n", me);
+        me->receive_damage("jing", cost, "å¿ƒåŠ›çµç˜æ­»äº†");
+        message_vision("$Nä¸€æœƒå…’ç¿»é–±è‘—ã€é»ƒå¸å…§ç¶“ã€ï¼Œä¸€æœƒå…’è‹¦æ€å†¥æƒ³ã€‚\n", me);
         return 1;
 }
 
 void poison(object me)
 {
-        tell_object(me, HIR"ÄãÍ»È»¸Ğµ½Ò»ÕóÔÎĞı£¬Ô­À´ÊÇÊéÉÏ¾ç¶¾·¢×÷ÁË£¡\n"NOR);
-        me->receive_wound("qi", 50, "¾ç¶¾·¢×÷ËÀÁË");
+        tell_object(me, HIR"ä½ çªç„¶æ„Ÿåˆ°ä¸€é™£æšˆæ—‹ï¼ŒåŸä¾†æ˜¯æ›¸ä¸ŠåŠ‡æ¯’ç™¼ä½œäº†ï¼\n"NOR);
+        me->receive_wound("qi", 50, "åŠ‡æ¯’ç™¼ä½œæ­»äº†");
         call_out("extra", 20, me);
 }
 
 void extra(object me)
 {
         delete_temp("sgbook_poison", me);
-        tell_object(me, HIR"ÄãÍ»È»¸Ğµ½Ò»ÕóÔÎĞı£¬Ô­À´ÊÇÊéÉÏ¾ç¶¾·¢×÷ÁË£¡\n"NOR);
-        message("vision", me->name()+"½ÅÏÂ¼¸¸öõÔõÄ£¬Ë«½ÅÒ»µÅ±ã²»¶¯ÁË£¬ÑÛ¡¢¶ú¡¢±Ç¡¢¿ÚÖĞ¶¼Á÷³öºÚÑªÀ´£¡\n", environment(me), ({me}) );
+        tell_object(me, HIR"ä½ çªç„¶æ„Ÿåˆ°ä¸€é™£æšˆæ—‹ï¼ŒåŸä¾†æ˜¯æ›¸ä¸ŠåŠ‡æ¯’ç™¼ä½œäº†ï¼\n"NOR);
+        message("vision", me->name()+"è…³ä¸‹å¹¾å€‹è¸‰è¹Œï¼Œé›™è…³ä¸€è¹¬ä¾¿ä¸å‹•äº†ï¼Œçœ¼ã€è€³ã€é¼»ã€å£ä¸­éƒ½æµå‡ºé»‘è¡€ä¾†ï¼\n", environment(me), ({me}) );
         if( (int)me->query_skill("force") < 120 )
-                me->receive_wound("qi",query("max_qi", me)+100,"¾ç¶¾·¢×÷ËÀÁË");
+                me->receive_wound("qi",query("max_qi", me)+100,"åŠ‡æ¯’ç™¼ä½œæ­»äº†");
         else me->unconcious();
 }

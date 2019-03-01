@@ -1,4 +1,4 @@
-// push.c ÍÆÈË
+// push.c æ¨äºº
 
 #include <ansi.h>
 
@@ -24,49 +24,49 @@ mapping default_where = ([
 ]);
 
 mapping default_dirs = ([
-        "north":        "±±±ß",
-        "south":        "ÄÏ±ß",
-        "east":                "¶«±ß",
-        "west":                "Î÷±ß",
-        "northup":        "±±±ß",
-        "southup":        "ÄÏ±ß",
-        "eastup":        "¶«±ß",
-        "westup":        "Î÷±ß",
-        "northdown":        "±±±ß",
-        "southdown":        "ÄÏ±ß",
-        "eastdown":        "¶«±ß",
-        "westdown":        "Î÷±ß",
-        "northeast":        "¶«±±",
-        "northwest":        "Î÷±±",
-        "southeast":        "¶«ÄÏ",
-        "southwest":        "Î÷ÄÏ",
-        "up":                "ÉÏÃæ",
-        "down":                "ÏÂÃæ",
-        "enter":        "ÀïÃæ",
-        "out":                "ÍâÃæ",
+        "north":        "åŒ—é‚Š",
+        "south":        "å—é‚Š",
+        "east":                "æ±é‚Š",
+        "west":                "è¥¿é‚Š",
+        "northup":        "åŒ—é‚Š",
+        "southup":        "å—é‚Š",
+        "eastup":        "æ±é‚Š",
+        "westup":        "è¥¿é‚Š",
+        "northdown":        "åŒ—é‚Š",
+        "southdown":        "å—é‚Š",
+        "eastdown":        "æ±é‚Š",
+        "westdown":        "è¥¿é‚Š",
+        "northeast":        "æ±åŒ—",
+        "northwest":        "è¥¿åŒ—",
+        "southeast":        "æ±å—",
+        "southwest":        "è¥¿å—",
+        "up":                "ä¸Šé¢",
+        "down":                "ä¸‹é¢",
+        "enter":        "è£¡é¢",
+        "out":                "å¤–é¢",
 ]);
 
 mapping default_undirs = ([
-        "south":        "±±±ß",
-        "north":        "ÄÏ±ß",
-        "west":                "¶«±ß",
-        "east":                "Î÷±ß",
-        "southup":        "±±±ß",
-        "northup":        "ÄÏ±ß",
-        "westup":        "¶«±ß",
-        "eastup":        "Î÷±ß",
-        "southdown":        "±±±ß",
-        "northdown":        "ÄÏ±ß",
-        "westdown":        "¶«±ß",
-        "eastdown":        "Î÷±ß",
-        "southwest":        "¶«±±",
-        "southeast":        "Î÷±±",
-        "northwest":        "¶«ÄÏ",
-        "northeast":        "Î÷ÄÏ",
-        "down":                "ÉÏÃæ",
-        "up":                "ÏÂÃæ",
-        "out":                "ÀïÃæ",
-        "enter":        "ÍâÃæ",
+        "south":        "åŒ—é‚Š",
+        "north":        "å—é‚Š",
+        "west":                "æ±é‚Š",
+        "east":                "è¥¿é‚Š",
+        "southup":        "åŒ—é‚Š",
+        "northup":        "å—é‚Š",
+        "westup":        "æ±é‚Š",
+        "eastup":        "è¥¿é‚Š",
+        "southdown":        "åŒ—é‚Š",
+        "northdown":        "å—é‚Š",
+        "westdown":        "æ±é‚Š",
+        "eastdown":        "è¥¿é‚Š",
+        "southwest":        "æ±åŒ—",
+        "southeast":        "è¥¿åŒ—",
+        "northwest":        "æ±å—",
+        "northeast":        "è¥¿å—",
+        "down":                "ä¸Šé¢",
+        "up":                "ä¸‹é¢",
+        "out":                "è£¡é¢",
+        "enter":        "å¤–é¢",
 ]);
 
 int main(object me, string arg)
@@ -79,29 +79,29 @@ int main(object me, string arg)
         int wiz_push;
 
         if (! arg || sscanf(arg, "%s to %s", who, where_temp) != 2) 
-                return notify_fail("Ö¸Áî¸ñÊ½£ºpush <ÈËÎï> to <·½Ïò>\n");
+                return notify_fail("æŒ‡ä»¤æ ¼å¼ï¼špush <äººç‰©> to <æ–¹å‘>\n");
 
         env = environment(me);
         if( !env || query("no_fight", env) )
-                return notify_fail("ÕâÀï²»ÊÇÄãÏùÕÅµÄµØ·½¡£\n");
+                return notify_fail("é€™è£¡ä¸æ˜¯ä½ å›‚å¼µçš„åœ°æ–¹ã€‚\n");
 
         if (! objectp(target = present(who, env)))
-                return notify_fail("ÄãÒªÍÆ¿ªË­£¿\n");
+                return notify_fail("ä½ è¦æ¨é–‹èª°ï¼Ÿ\n");
 
         if (! target->is_character())
-                return notify_fail("¿´Çå³şÒ»µã£¬ÄÇ²¢²»ÊÇÉúÎï¡£\n");
+                return notify_fail("çœ‹æ¸…æ¥šä¸€é»ï¼Œé‚£ä¸¦ä¸æ˜¯ç”Ÿç‰©ã€‚\n");
 
         if (target->is_fighting())
-                return notify_fail("ÈË¼ÒÏÖÔÚÕıÔÚ´ò¼ÜÄØ£¬ÄãÏëÈ¥ÕÒ±â°¡¡£\n");
+                return notify_fail("äººå®¶ç¾åœ¨æ­£åœ¨æ‰“æ¶å‘¢ï¼Œä½ æƒ³å»æ‰¾æ‰å•Šã€‚\n");
 
         if( query("doing", target) )
-                return notify_fail("ÈË¼ÒÏÖÔÚÕıÔÚÚ¤ÉñÓÃ¹¦£¬²»Ì«ºÃ´òÈÅ±ğÈË°É¡£\n");
+                return notify_fail("äººå®¶ç¾åœ¨æ­£åœ¨å†¥ç¥ç”¨åŠŸï¼Œä¸å¤ªå¥½æ‰“æ“¾åˆ¥äººå§ã€‚\n");
 
         if (! living(target))
-                return notify_fail("ÕâÈËÏÖÔÚÃ»ÓĞÖª¾õ£¬Äã»¹ÊÇ·ö×ÅÈË¼Ò×ß°É¡£\n");
+                return notify_fail("é€™äººç¾åœ¨æ²’æœ‰çŸ¥è¦ºï¼Œä½ é‚„æ˜¯æ‰¶è‘—äººå®¶èµ°å§ã€‚\n");
 
         if (! playerp(target))
-                return notify_fail("Äã¿´ÁË¿´Õâ¸öÈË£¬Ã»¸Ò¶¯¡£\n");
+                return notify_fail("ä½ çœ‹äº†çœ‹é€™å€‹äººï¼Œæ²’æ•¢å‹•ã€‚\n");
 
         if (! undefinedp(default_where[where_temp]))
                 where = default_where[where_temp];
@@ -109,7 +109,7 @@ int main(object me, string arg)
                 where = where_temp;
 
         if( !mapp(exits=query("exits", env)) || undefinedp(exits[where]) )
-                return notify_fail("Ã»ÓĞÕâ¸ö·½Ïò¡£\n");
+                return notify_fail("æ²’æœ‰é€™å€‹æ–¹å‘ã€‚\n");
 
         if (! objectp(env_to = find_object(exits[where])))
         {
@@ -122,13 +122,13 @@ int main(object me, string arg)
         if (! wiz_push)
         {
                 if( query("qi", me)<150 )
-                        return notify_fail("ÄãÆøÁ¦²»¼Ñ£¬ÍÆ²»¶¯±ğÈË¡£\n");
+                        return notify_fail("ä½ æ°£åŠ›ä¸ä½³ï¼Œæ¨ä¸å‹•åˆ¥äººã€‚\n");
         
                 if( query("neili", me)<100 )
-                        return notify_fail("ÄãÄÚÁ¦²»¼Ã£¬ÍÆ²»¶¯±ğÈË¡£\n");
+                        return notify_fail("ä½ å…§åŠ›ä¸æ¿Ÿï¼Œæ¨ä¸å‹•åˆ¥äººã€‚\n");
         
                 if (me->query_skill("force") < 100)
-                        return notify_fail("ÄãÄÚ¹¦ĞŞÎªÓĞÏŞ£¬Ã»ÓĞµ½´ï¾ÙÇáÈôÖØµÄµØ²½¡£\n");
+                        return notify_fail("ä½ å…§åŠŸä¿®ç‚ºæœ‰é™ï¼Œæ²’æœ‰åˆ°é”èˆ‰è¼•è‹¥é‡çš„åœ°æ­¥ã€‚\n");
         }
 
         if (! undefinedp(default_dirs[where]))
@@ -144,18 +144,18 @@ int main(object me, string arg)
         switch (random(3))
         {
         case 0:
-                msg = "$NÇå¿ÈÒ»Éù£¬ºÈµÀ£º¡°ÈÃ¿ªÁË£¡¡±£¬Ë³ÊÆ¾Í°Ñ$nÍù" +
-                      dir + "Ò»¼·¡£\n";
+                msg = "$Næ¸…å’³ä¸€è²ï¼Œå–é“ï¼šâ€œè®“é–‹äº†ï¼â€ï¼Œé †å‹¢å°±æŠŠ$nå¾€" +
+                      dir + "ä¸€æ“ ã€‚\n";
                 break;
 
         case 1:
-                msg = "$NÖåÁËÖåÃ¼Í·£¬ÄÕµÀ£º¡°ÉÁ¿ª£¡¡±£¬ËæÊÖ°Ñ$nÍù" +
-                      dir + "Ò»ÍÆ¡£\n";
+                msg = "$Nçšºäº†çšºçœ‰é ­ï¼Œæƒ±é“ï¼šâ€œé–ƒé–‹ï¼â€ï¼Œéš¨æ‰‹æŠŠ$nå¾€" +
+                      dir + "ä¸€æ¨ã€‚\n";
                 break;
 
         default:
-                msg = "$NË«Ä¿Ò»µÉ£¬ºÈµÀ£º¡°»¹²»¿ì¿ì¸øÎÒÉÁ¿ª£¿¡±£¬Ëµ°Õ°Ñ$nÍù" +
-                      dir + "ÍÆÈ¥¡£\n";
+                msg = "$Né›™ç›®ä¸€çªï¼Œå–é“ï¼šâ€œé‚„ä¸å¿«å¿«çµ¦æˆ‘é–ƒé–‹ï¼Ÿâ€ï¼Œèªªç½·æŠŠ$nå¾€" +
+                      dir + "æ¨å»ã€‚\n";
                 break;
         }
 
@@ -166,31 +166,31 @@ int main(object me, string arg)
         }
 
         if (wiz_level(me) < wiz_level(target))
-                msg += "$NÓÃÁ¦ÍÆÁËÍÆ£¬Ö»¾õµÃºÃÏó×²µ½ÁËÒ»¶ÂÇ½Ò»Ñù¡£\n";
+                msg += "$Nç”¨åŠ›æ¨äº†æ¨ï¼Œåªè¦ºå¾—å¥½è±¡æ’åˆ°äº†ä¸€å µç‰†ä¸€æ¨£ã€‚\n";
         else
         if (! wiz_push && target->query_skill("force") >= 150)
-                msg += "$NÄ¬ÔËÄÚÁ¦£¬È´¾õµÃ$nÄÚ¹¦¸ù»ùÆÄÎªÔúÊµ£¬ÕâÒ»ÏÂ¾¹È»Ã»ÓĞº³¶¯¶Ô·½£¬²»ÓÉµÃÒ»ã¶¡£\n";
+                msg += "$Né»˜é‹å…§åŠ›ï¼Œå»è¦ºå¾—$nå…§åŠŸæ ¹åŸºé —ç‚ºç´®å¯¦ï¼Œé€™ä¸€ä¸‹ç«Ÿç„¶æ²’æœ‰æ’¼å‹•å°æ–¹ï¼Œä¸ç”±å¾—ä¸€æ„£ã€‚\n";
         else
         {
                 if (! env->valid_leave(target, where))
                 {
                         message_vision(msg, me, target);
-                        write("¹ı²»È¥£¬ÄãÍÆ²»¶¯ÈË¼Ò¡£\n");
+                        write("éä¸å»ï¼Œä½ æ¨ä¸å‹•äººå®¶ã€‚\n");
                         return 1;
                 }
 
                 if (! target || environment(target) != env)
                 {
                         message_vision(msg, me, target);
-                        write("Ææ¹ÖÁË£¬ÈËÄØ£¿\n");
+                        write("å¥‡æ€ªäº†ï¼Œäººå‘¢ï¼Ÿ\n");
                         return 1;
                 }
 
-                msg += "Ö»¼û$NÕâÒ»ÏÂ°Ñ$n¡°à½ààà½àà¡±µÄÍÆÁË¿ªÈ¥¡£\n";
+                msg += "åªè¦‹$Né€™ä¸€ä¸‹æŠŠ$nâ€œå˜Ÿåš•å˜Ÿåš•â€çš„æ¨äº†é–‹å»ã€‚\n";
                 message_vision(msg, me, target);
                 target->move(env_to);
-                message("vision", "Ö»¼û" + target->name() + "µøµø×²×²µÄ´Ó" +
-                                  undir + "»ÎÁË¹ıÀ´¡£\n", env_to, target);
+                message("vision", "åªè¦‹" + target->name() + "è·Œè·Œæ’æ’çš„å¾" +
+                                  undir + "æ™ƒäº†éä¾†ã€‚\n", env_to, target);
                 if (! target->is_busy())
                         target->stary_busy(5);
                 return 1;
@@ -205,10 +205,10 @@ int main(object me, string arg)
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : push <ÈËÎï> to <·½Ïò>
+æŒ‡ä»¤æ ¼å¼ : push <äººç‰©> to <æ–¹å‘>
 
-Õâ¸öÖ¸ÁîÈÃÄã°Ñ¾õµÃ·Á°­ÄãµÄÈËÍÆ¿ª£¬µ±È»£¬ÌÈÈôÈË¼ÒÄÚ¹¦ÔúÊµ£¬
-ÄãÕâÒ»ÏÂ×Ó¶à°ë×à²»ÁËĞ§¡£
+é€™å€‹æŒ‡ä»¤è®“ä½ æŠŠè¦ºå¾—å¦¨ç¤™ä½ çš„äººæ¨é–‹ï¼Œç•¶ç„¶ï¼Œå€˜è‹¥äººå®¶å…§åŠŸç´®å¯¦ï¼Œ
+ä½ é€™ä¸€ä¸‹å­å¤šåŠå¥ä¸äº†æ•ˆã€‚
 HELP );
         return 1;
 }

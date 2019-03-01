@@ -2,11 +2,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "���");
+        set("short", "漕幫");
         set("long", @LONG
-�����������ܲ���˵��ʲô����ʵ���Ǽ�����Թ�
-����һ���ڲ˳���һ��ط����ձ����ѣ����˴��ܡ�������
-å��������ȥ��
+這裡是漕幫的總部，說是什麼漕幫，其實就是幾個惡霸勾
+結在一起在菜場這一塊地方收收保護費，幫人打打架。幾個流
+氓正往裡屋去。
 LONG);
 
         set("exits", ([

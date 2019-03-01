@@ -3,10 +3,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����С·");
+        set("short", "江邊小路");
         set("long", @LONG
-�����ڳ������ϵ�һ��С·�ϣ��������ߣ��ͽ�����������Ĵ�
-ɽ���ˣ����Ϸ�������С·����֪��ͨ�����
+你走在長江邊上的一條小路上，再往西走，就進入了綿綿的四川
+山區了，東南方向有條小路，不知道通往哪裡。
 LONG );
         set("exits", ([
                   "east" :  __DIR__"shudao3",

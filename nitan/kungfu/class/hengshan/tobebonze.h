@@ -4,15 +4,15 @@ string ask_for_join()
         mapping myfam;
 
         myfam=query("family", me);
-        if (!myfam || (myfam["family_name"] != "ºãÉ½ÅÉ"))
-                return ("ÄãºÍºãÉ½Ã»ÓĞÔ¨Ô´£¬Æ¶Äá²»¸Ò¸øÄãÌê¶È¡£\n");
+        if (!myfam || (myfam["family_name"] != "æ†å±±æ´¾"))
+                return ("ä½ å’Œæ†å±±æ²’æœ‰æ·µæºï¼Œè²§å°¼ä¸æ•¢çµ¦ä½ å‰ƒåº¦ã€‚\n");
         if( query("class", me) == "bonze" )
-                return "°¢ÃÖÍÓ·ğ£¡³ö¼ÒÈË²»´òÚ¿Óï¡£ÄãÒÑ¾­²»ÊÇË×¼ÒÈËÁË¡£\n";
-        if( query("gender", me) != "Å®ĞÔ" )
-                return "°¢ÃÖÍÓ·ğ£¡ÉÆÔÕ£¡ÉÆÔÕ£¡Ê©Ö÷ÈôÕæĞÄğ§ÒÀÎÒ·ğ£¬¿ÉÈ¥ÉÙÁÖËÂÊÜ½ä¡£\n";
+                return "é˜¿å½Œé™€ä½›ï¼å‡ºå®¶äººä¸æ‰“èª‘èªã€‚ä½ å·²ç¶“ä¸æ˜¯ä¿—å®¶äººäº†ã€‚\n";
+        if( query("gender", me) != "å¥³æ€§" )
+                return "é˜¿å½Œé™€ä½›ï¼å–„å“‰ï¼å–„å“‰ï¼æ–½ä¸»è‹¥çœŸå¿ƒçšˆä¾æˆ‘ä½›ï¼Œå¯å»å°‘æ—å¯ºå—æˆ’ã€‚\n";
         set_temp("pending/join_bonze", 1, me);
-        command("say °¢ÃÖÍÓ·ğ£¡ÉÆÔÕ£¡ÉÆÔÕ£¡Ê©Ö÷ÈôÕæĞÄğ§ÒÀÎÒ·ğ£¬Çë¹òÏÂ(kneel)ÊÜ½ä¡£\n");
-        return "¼Ç×¡£¬Ò»µ©³öÁË¼Ò£¬ÊÇ²»ÄÜ»¹Ë×µÄ£¬·ñÔò½«»áÊÜµ½³Í·£¡£\n";
+        command("say é˜¿å½Œé™€ä½›ï¼å–„å“‰ï¼å–„å“‰ï¼æ–½ä¸»è‹¥çœŸå¿ƒçšˆä¾æˆ‘ä½›ï¼Œè«‹è·ªä¸‹(kneel)å—æˆ’ã€‚\n");
+        return "è¨˜ä½ï¼Œä¸€æ—¦å‡ºäº†å®¶ï¼Œæ˜¯ä¸èƒ½é‚„ä¿—çš„ï¼Œå¦å‰‡å°‡æœƒå—åˆ°æ‡²ç½°ã€‚\n";
 }
 
 int do_kneel()
@@ -22,12 +22,12 @@ int do_kneel()
         string name, new_name;
         if( !query_temp("pending/join_bonze", me) )
                 return 0;
-        message_vision("$NÄãË«ÊÖºÏÊ®£¬¹§¹§¾´¾´µØ¹òÁËÏÂÀ´¡£\n\n$n¿´×Å$NËµµÀ£ººÃ°É£¬Äã¾ÍÔÚ±¾âÖĞŞĞĞ°É¡£\n\n$nÉì³öÊÖÕÆ£¬ÔÚ$NÍ·¶¥ÇáÇáµØÄ¦êıÁË¼¸ÏÂ£¬½«$NµÄÍ··¢¾¡ÊıÌêÈ¥¡£\n\n", me, this_object() );
+        message_vision("$Nä½ é›™æ‰‹åˆåï¼Œæ­æ­æ•¬æ•¬åœ°è·ªäº†ä¸‹ä¾†ã€‚\n\n$nçœ‹è‘—$Nèªªé“ï¼šå¥½å§ï¼Œä½ å°±åœ¨æœ¬åºµä¿®è¡Œå§ã€‚\n\n$nä¼¸å‡ºæ‰‹æŒï¼Œåœ¨$Né ­é ‚è¼•è¼•åœ°æ‘©æŒ²äº†å¹¾ä¸‹ï¼Œå°‡$Nçš„é ­ç™¼ç›¡æ•¸å‰ƒå»ã€‚\n\n", me, this_object() );
         name=query("purename", me);
         if( !name)name=query("name", me);
-        new_name = "Èİ" + name[0..1];;
-        command("say ´Ó½ñÒÔºóÄãµÄ·¨Ãû½Ğ×ö" + new_name + "¡£");
-        command("chat "+name+"Ï÷·¢ÎªÄá£¬ÔÚºãÉ½ĞŞĞĞ£¬È¡·¨Ãû"+new_name+"¡£");
+        new_name = "å®¹" + name[0..1];;
+        command("say å¾ä»Šä»¥å¾Œä½ çš„æ³•åå«åš" + new_name + "ã€‚");
+        command("chat "+name+"å‰Šç™¼ç‚ºå°¼ï¼Œåœ¨æ†å±±ä¿®è¡Œï¼Œå–æ³•å"+new_name+"ã€‚");
         command("smile");
         set("marks/old_name", name, me);
         delete_temp("pending/join_bonze", me);

@@ -1,12 +1,12 @@
-// Room in ����
+// Room in 高麗
 inherit ROOM;
 void create()        
 {
-        set("short", "С·");
+        set("short", "小路");
         set("long", @LONG
-������һ��С·֮�ϡ����������߾��Ǹ�����һ�����̨�ˡ����
-̨�������ݾ��顣��ʱ�м����ٱ��������߹�����������������ˡ���
-�ߴ󺣵Ĳ��������������˼�����׳�ķ�Χ��
+你走在一條小路之上。再往西邊走就是高麗的一個烽火台了。烽火
+台用來傳遞軍情。不時有幾個官兵從這裡走過，檢查著來往的行人。南
+邊大海的波濤聲，更增添了幾分雄壯的氛圍。
 LONG
         );
 set("outdoors", "gaoli");

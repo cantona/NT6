@@ -4,10 +4,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("�η�����", ({"youfang daoren","daoren"}));
-        set("long", "����һλδͨ���ʵ�������ˣ����Ϲ��ź������΢Ц��\n");
+        set_name("遊方道人", ({"youfang daoren","daoren"}));
+        set("long", "他是一位未通世故的青年道人，臉上掛著孩兒般的微笑。\n");
 
-        set("gender", "����");
+        set("gender", "男性");
         set("attitude", "heroism");
         set("class", "quanzhen");
 
@@ -28,7 +28,7 @@ void create()
         set("chat_chance", 30);
 
         set("chat_msg", ({
-                "�η�����˵��: ����λʩ�����������Ӹ�ƶ������ϲ��ϲ���츣������\n",
+                "遊方道人說道: 請這位施主化幾兩銀子給貧道，隨喜隨喜，造福眾生。\n",
                 (: random_move :)
         }) );
 
@@ -44,7 +44,7 @@ void create()
         map_skill("dodge", "jinyan-gong");
         map_skill("strike", "haotian-zhang");
         map_skill("parry", "haotian-zhang");
-        create_family("ȫ���", 4, "����");
+        create_family("全真教", 4, "弟子");
         setup();
         carry_object(CLOTH_DIR"daopao")->wear();
 
@@ -57,18 +57,18 @@ int accept_object(object me, object ob)
         object ling;
         
         command("smile");
-        command("say �����ٷ𣬶�л��λ" + RANK_D->query_respect(me) + " ��");
+        command("say 無量壽佛，多謝這位" + RANK_D->query_respect(me) + " ！");
 
         if( query("money_id", ob) && ob->value() >= 10000 && query("class", me) != "bonze" )
         {
                 command("say " + RANK_D->query_respect(me) + 
-                "������ƺ�ʩ�������������գ�ȫ����ʦ����һ�����º��ܣ���֪��Ը����������һ�Σ�");
+                "如此樂善好施，兼又身懷絕藝，全真祖師正欲一晤天下豪傑，不知可願赴重陽宮內一遊？");
 
                 ling=new("/d/quanzhen/npc/obj/tie-ling");
                 ling->move(me);
-                message_vision("�η����˸�$Nһ���������ơ�\n", me);
+                message_vision("遊方道人給$N一塊鐵鑄令牌。\n", me);
 
-                command("say ������ʱһ�գ���ʱʧЧ��������ʱǰ�빬��������в��㣬�м��мǣ�"); 
+                command("say 此牌限時一日，逾時失效，請于限時前離宮，否則多有不便，切記切記！"); 
                 return 1;
         }
 

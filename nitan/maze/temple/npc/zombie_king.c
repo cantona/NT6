@@ -5,10 +5,10 @@ void do_summon();
 void set_from_me(object me);
 void create()
 {
-        set_name( "Ç§ÄêÀÏôÕ×Ó", ({ "zombie king" }));
+        set_name( "åƒå¹´è€ç²½å­", ({ "zombie king" }));
         set("vendetta_mark","zombie");
-        set("long", "Ç§ÄêºìÃ«ÀÏôÕ×Ó°¡£¬¿´ÆğÀ´ºÃ¿ÉÅÂ¡£¡£¡£\n");
-        set("title", HIB "(¹íÆø)" NOR);
+        set("long", "åƒå¹´ç´…æ¯›è€ç²½å­å•Šï¼Œçœ‹èµ·ä¾†å¥½å¯æ€•ã€‚ã€‚ã€‚\n");
+        set("title", HIB "(é¬¼æ°£)" NOR);
 
         set("str", 50);
         set("con", 120);
@@ -44,7 +44,7 @@ void create()
         }) );
 
         set("bellicosity", 5 );
-        set("death_msg",RED"\n$N»¯×÷ÁËÒ»Ì²ÑªË®¡£\n\n"NOR);
+        set("death_msg",RED"\n$NåŒ–ä½œäº†ä¸€ç˜è¡€æ°´ã€‚\n\n"NOR);
         set("clear_fuben", 1);
 
         set("auto_perform", 1);
@@ -57,10 +57,10 @@ void create()
         set_temp("apply/add_busy", 15);
 
         set("drops", ([
-                "RA&EPIL50"    :       120,   // ÖĞ¼¶ÆÕÍ¨×°±¸
-                "RA&EPIL60"    :       100,   // ÖĞ¼¶ÆÕÍ¨×°±¸
-                "RA&EPIL60"    :       80,   // ÖĞ¼¶ÆÕÍ¨×°±¸
-                "RA&EPIL70"    :       70,   // ÖĞ¼¶ÆÕÍ¨×°±¸
+                "RA&EPIL50"    :       120,   // ä¸­ç´šæ™®é€šè£å‚™
+                "RA&EPIL60"    :       100,   // ä¸­ç´šæ™®é€šè£å‚™
+                "RA&EPIL60"    :       80,   // ä¸­ç´šæ™®é€šè£å‚™
+                "RA&EPIL70"    :       70,   // ä¸­ç´šæ™®é€šè£å‚™
                 "FI&/clone/goods/sun" : 40, 
                 "FI&/clone/goods/moon" : 40, 
                 "FI&/clone/tessera/rune21" : 40, 
@@ -127,7 +127,7 @@ void do_summon()
         obs = all_inventory(environment(me));
         obs=filter_array(obs,(:query("id", $1) == "lord zombie":));
         if( sizeof(obs) > 3 ) return;
-        message_vision(HIM "\n$NàÀàÀ¸Éº¿£¬ÖÜÎ§µÄ½©Ê¬ÍõÓ¦Éù¶øÀ´¡£\n" NOR, me);
+        message_vision(HIM "\n$Nâ–¡â–¡å¹¹åšï¼Œå‘¨åœçš„åƒµå±ç‹æ‡‰è²è€Œä¾†ã€‚\n" NOR, me);
         zombie = new(__DIR__"zombie_lord");
         zombie->move(environment(me));
         enemies = me->query_enemy();
@@ -136,7 +136,7 @@ void do_summon()
                 zombie->kill_ob(enemy);
                 enemy->kill_ob(zombie);
         }
-        message_vision( "\n\n$N¶ñºİºİµØÆËÁËÉÏÀ´¡£\n" , zombie);
+        message_vision( "\n\n$Næƒ¡ç‹ ç‹ åœ°æ’²äº†ä¸Šä¾†ã€‚\n" , zombie);
         call_out("leave",30+random(10),zombie);
         if( !this_object()->is_busy() )
                 this_object()->start_busy(3);
@@ -144,7 +144,7 @@ void do_summon()
 
 void leave(object zombie){
         if( !zombie || zombie->is_fighting() ) return;
-        message_vision("\n$NÏûÊ§ÁË¡£\n",zombie);
+        message_vision("\n$Næ¶ˆå¤±äº†ã€‚\n",zombie);
         destruct(zombie);
 }
 

@@ -1,4 +1,4 @@
-// chanfang2.c ìø·¿
+// chanfang2.c ç¦ªæˆ¿
 // Winder Oct.10 1998
 
 #include <ansi.h>
@@ -6,10 +6,10 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "ìø·¿");
+        set("short", "ç¦ªæˆ¿");
         set("long", @LONG
-ÕâÀïÊÇÈ«ÕæµÜ×ÓÐÞÉíÑøÐÔ¡¢´ò°¾ÆøÁ¦µÄµØ·½¡£ÎªÁË·½±ãÁ·¹¦£¬×À
-ÒÎ¶¼Ã»ÓÐ°Ú·Å£¬½ö½öÔÚµØÏÂ¶ªÁË¼¸¸öÐ¡ÆÑÍÅ¡£
+é€™è£¡æ˜¯å…¨çœŸå¼Ÿå­ä¿®èº«é¤Šæ€§ã€æ‰“ç†¬æ°£åŠ›çš„åœ°æ–¹ã€‚ç‚ºäº†æ–¹ä¾¿ç·´åŠŸï¼Œæ¡Œ
+æ¤…éƒ½æ²’æœ‰æ“ºæ”¾ï¼Œåƒ…åƒ…åœ¨åœ°ä¸‹ä¸Ÿäº†å¹¾å€‹å°è’²åœ˜ã€‚
 LONG
         );
         set("exits", ([

@@ -22,29 +22,29 @@ int main()
         h = t % 24;                t /= 24;
         d = t;
 
-        if (d) time = chinese_number(d) + "Ìì";
+        if (d) time = chinese_number(d) + "å¤©";
         else time = "";
 
-        if (h) time += chinese_number(h) + "Ð¡Ê±";
-        if (m) time += chinese_number(m) + "·Ö";
-        time += chinese_number(s) + "Ãë";
+        if (h) time += chinese_number(h) + "å°æ™‚";
+        if (m) time += chinese_number(m) + "åˆ†";
+        time += chinese_number(s) + "ç§’";
 
 /*
         r = time() + AUTOBOOT_D->query_time() * 60;
         rtime = TIME_D->replace_ctime(r);
 */
 
-        //write(HIC + LOCAL_MUD_NAME() + "ÒÑ¾­Ö´ÐÐÁË" + time + "£¬½«ÔÚ " + rtime + " ÖØÆô¡£\n\n" NOR);
-        write(LOCAL_MUD_NAME() + "ÒÑ¾­Ö´ÐÐÁË" + time + "¡£\n\n");
+        //write(HIC + LOCAL_MUD_NAME() + "å·²ç¶“åŸ·è¡Œäº†" + time + "ï¼Œå°‡åœ¨ " + rtime + " é‡å•Ÿã€‚\n\n" NOR);
+        write(LOCAL_MUD_NAME() + "å·²ç¶“åŸ·è¡Œäº†" + time + "ã€‚\n\n");
         return 1;
 }
 
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : uptime
+æŒ‡ä»¤æ ¼å¼ : uptime
  
-Õâ¸öÖ¸Áî¸æËßÄúÕâ¸öÄà°ÍÓÎÏ·ÒÑ¾­Á¬ÐøÖ´ÐÐÁË¶à¾Ã¡£
+é€™å€‹æŒ‡ä»¤å‘Šè¨´æ‚¨é€™å€‹æ³¥å·´éŠæˆ²å·²ç¶“é€£çºŒåŸ·è¡Œäº†å¤šä¹…ã€‚
  
 HELP
     );

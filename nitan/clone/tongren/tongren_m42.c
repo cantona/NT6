@@ -5,18 +5,18 @@ inherit ITEM;
 int is_tongren() { return 1; }
 void create()
 {
-        set_name(YEL "³åÑ¨Í­ÈË¡¤×ãÌ«ÑôÂö¡¤ÏÂósÑ¨" NOR, ({ "tongren m42", "tongren" }));
+        set_name(YEL "å–³æ‚ƒè‚£ï •ï¹é€‹æ€®æ  é—•ï¹ç‹Ÿé€æ‚ƒ" NOR, ({ "tongren m42", "tongren" }));
         set_weight(50);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
-                set("long", NOR + YEL "ÕâÊÇÒ»¸ö³åÑ¨Í­ÈË£¬ÉÏÃæ»æÖÆÁËÒ»Ğ©¾­ÂçÑ¨Î»Í¼°¸£¬ÒÔ¼°³åÑ¨Ê¹ÓÃ·½·¨¡£\n" NOR);
+                set("unit", "è·º");
+                set("long", NOR + YEL "æ¶´å²†ç¨è·ºå–³æ‚ƒè‚£ï •ã„›å¥»é†±é¤…ç§¶è³¸ç¨è™³å†ªé‡æ‚ƒå¼‡èŠå¶ã„›çœ•æ‘¯å–³æ‚ƒå¦èššæºæ¥Šï¹\n" NOR);
                 set("value", 10000);
                 set("material", "steal");
         }
-        set("jingmai_name", "×ãÌ«ÑôÂö");
-        set("xuewei_name", "ÏÂósÑ¨");
+        set("jingmai_name", "é€‹æ€®æ  é—•");
+        set("xuewei_name", "ç‹Ÿé€æ‚ƒ");
         set("chongxue_xiaoguo", "POT:30");
         set("neili_cost", "12000");
         setup();

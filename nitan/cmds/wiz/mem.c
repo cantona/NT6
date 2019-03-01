@@ -19,7 +19,7 @@ int main(object me, string arg)
 
         if (! arg)
         {
-                write(sprintf( "%sÄ¿Ç°¹²Ê¹ÓÃ %s bytes ¼ÇÒäÌå¡£\n",
+                write(sprintf( "%sç›®å‰å…±ä½¿ç”¨ %s bytes è¨˜æ†¶é«”ã€‚\n",
                         LOCAL_MUD_NAME(), memory_expression(memory_info())));
                 return 1;
         }
@@ -35,7 +35,7 @@ int main(object me, string arg)
         if (arg == "-all")
         {
                 if (! SECURITY_D->valid_grant(me, "(admin)"))
-                        return notify_fail("Õâ¸öÖ¸Áî²ÎÊıÖ»ÄÜÓÉ¸ß¼¶Î×Ê¦Ê¹ÓÃ¡£\n");
+                        return notify_fail("é€™å€‹æŒ‡ä»¤åƒæ•¸åªèƒ½ç”±é«˜ç´šå·«å¸«ä½¿ç”¨ã€‚\n");
 
                 check_memory_info(me);
                 return 1;
@@ -52,9 +52,9 @@ int main(object me, string arg)
         if (! obj) obj = present(arg, me);
         if (! obj) obj = present(arg, environment(me));
         if (! obj) obj = find_object( resolve_path(query("cwd", me), arg) );
-        if (! obj) return notify_fail("Ã»ÓĞÕâÑùÎï¼ş....¡£\n");
+        if (! obj) return notify_fail("æ²’æœ‰é€™æ¨£ç‰©ä»¶....ã€‚\n");
 
-        write(sprintf( "%O ¹²Ê¹ÓÃ %s bytes ¼ÇÒäÌå¡£\n", obj, memory_expression(memory_info(obj))));
+        write(sprintf( "%O å…±ä½¿ç”¨ %s bytes è¨˜æ†¶é«”ã€‚\n", obj, memory_expression(memory_info(obj))));
         return 1;
 }
 
@@ -85,7 +85,7 @@ protected varargs void check_memory_info(object me, string file)
                 
                 if (! sizeof(obs))
                 {       
-                        write(sprintf("ÎÄ¼ş %s Î´ÔØÈëÄÚ´æ¡£\n", file));
+                        write(sprintf("æ–‡ä»¶ %s æœªè¼‰å…¥å…§å­˜ã€‚\n", file));
                         return;
                 } else
                         obs = unique_array(obs, (: base_name($1) :));
@@ -99,7 +99,7 @@ protected varargs void check_memory_info(object me, string file)
         if (sizeof(obs) > 1)
         obs = sort_array(obs, (: memory_info($1[0]) * sizeof($1) - memory_info($2[0]) * sizeof($2) :));
 
-        message_system("ÏµÍ³ÅúÁ¿Êı¾İ´¦ÀíÖĞ£¬ÇëÄÍĞÄµÈºò..."); 
+        message_system("ç³»çµ±æ‰¹é‡æ•¸æ“šè™•ç†ä¸­ï¼Œè«‹è€å¿ƒç­‰å€™..."); 
         
         all = 0;
         msg = "";
@@ -115,7 +115,7 @@ protected varargs void check_memory_info(object me, string file)
                 str = sprintf("%12s", memory_expression(tmp));
                 str = replace_string(str, "K", HIC "K" NOR);
                 str = replace_string(str, "M", HIR "M" NOR);
-                msg += sprintf("%-50s  %5d ¼ş  %s    %14s / %14s\n",
+                msg += sprintf("%-50s  %5d ä»¶  %s    %14s / %14s\n",
                                base_name(obs[i][0]), size, str,
                                size > 1 ? memory_expression(memory_info(obs[i][0])) : "--",
                                size > 1 ? memory_expression(tmp / size) : "--");
@@ -123,27 +123,27 @@ protected varargs void check_memory_info(object me, string file)
         
         // write(sprintf("%|50s  %8s  %s    %14s / %14s\n",
         write(sprintf("%-48s  %8s  %s    %14s / %14s\n",
-                      "ÎÄ¼şÃû        ",
-                      "¸´ÖÆ¼şÊıÁ¿    ",
-                      "ÄÚ´æÕ¼ÓÃ×Ü¶î  ",
-                      "µ¥Ò»Õ¼ÓÃ(²Î¿¼)",
-                      "Æ½¾ùÃ¿¼şÕ¼ÓÃ  "));
+                      "æ–‡ä»¶å        ",
+                      "å¾©åˆ¶ä»¶æ•¸é‡    ",
+                      "å…§å­˜ä½”ç”¨ç¸½é¡  ",
+                      "å–®ä¸€ä½”ç”¨(åƒè€ƒ)",
+                      "å¹³å‡æ¯ä»¶ä½”ç”¨  "));
         me->start_more(msg);
-        write(sprintf( "ÒÔÉÏºÏ¼ÆÊ¹ÓÃ %s bytes ¼ÇÒäÌå¡£\n", 
+        write(sprintf( "ä»¥ä¸Šåˆè¨ˆä½¿ç”¨ %s bytes è¨˜æ†¶é«”ã€‚\n", 
                        memory_expression(all) ));
-        write(sprintf( "%sÄ¿Ç°¹²Ê¹ÓÃ %s bytes ¼ÇÒäÌå¡£\n",
+        write(sprintf( "%sç›®å‰å…±ä½¿ç”¨ %s bytes è¨˜æ†¶é«”ã€‚\n",
                        LOCAL_MUD_NAME(), memory_expression(memory_info()) ));
-        message_system("ÏµÍ³ÅúÁ¿Êı¾İ´¦ÀíÍê±Ï£¬Çë¼ÌĞøÓÎÏ·¡£\n" ESC + "[K");   
+        message_system("ç³»çµ±æ‰¹é‡æ•¸æ“šè™•ç†å®Œç•¢ï¼Œè«‹ç¹¼çºŒéŠæˆ²ã€‚\n" ESC + "[K");   
         return;
 }
 
 int help(object me)
 {
         write(@HELP
-Ö¸Áî¸ñÊ½ : mem <Îï¼şÖ®Ãû³Æ»òµµÃû>
+æŒ‡ä»¤æ ¼å¼ : mem <ç‰©ä»¶ä¹‹åç¨±æˆ–æª”å>
 
-Õâ¸öÖ¸Áî¸æËßÄãÄ³¸öÎï¼şÕ¼ÓÃµÄ¼ÇÒäÌåÊıÁ¿¡£
-ÈôÃ»ÓĞÖ¸Ã÷Îï¼ş, Ôò»áÏÔÊ¾Ä¿Ç°ÓÎÏ·ËùÕ¼ÓÃµÄ¼ÇÒäÌå.
+é€™å€‹æŒ‡ä»¤å‘Šè¨´ä½ æŸå€‹ç‰©ä»¶ä½”ç”¨çš„è¨˜æ†¶é«”æ•¸é‡ã€‚
+è‹¥æ²’æœ‰æŒ‡æ˜ç‰©ä»¶, å‰‡æœƒé¡¯ç¤ºç›®å‰éŠæˆ²æ‰€ä½”ç”¨çš„è¨˜æ†¶é«”.
 HELP );
     return 1;
 }

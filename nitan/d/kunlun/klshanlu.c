@@ -7,11 +7,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "����ɽ´");
+        set("short", "昆侖山麓");
         set("long",@long
-��������ɽ��ѩɽ���࣬���Ӵ�����Զ�����أ���������Ʋʼ��
-��ɫ������ÿ�괺���Ժ󣬱�ѩ�ڻ��������һ�ɹ��峺Ϫ�������볤
-�����ƺӡ�
+整個昆侖山脈雪山連綿，冰河垂懸。遠望昆侖，有如橫臥雲彩間的
+銀色玉龍。每年春天以後，冰雪融化，匯成了一股股清澈溪流，流入長
+江，黃河。
 long);
         set("exits",([
                 "northup" : __DIR__"shanmen",

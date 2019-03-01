@@ -3,12 +3,12 @@ inherit ITEM;
 
 void create()
 {
-        set_name("ÑªÔÂ", ({"blood moon"}) );
+        set_name("è¡€æœˆ", ({"blood moon"}) );
         set_weight(300);
         set("no_get", 1);
         set("maze_item",1);
-        set("unit", "ÂÖ");
-        set("long", "Ò»ÂÖÑªºìÉ«µÄÔÂÁÁ£¬»á¶ÔËùÓÐ·Ç¹í¹ÖµÄÉúÎïÔì³ÉÉËº¦£¬²¢ÇÒÖÎÁÆ¹í¹ÖÉúÎï¡£\n");
+        set("unit", "è¼ª");
+        set("long", "ä¸€è¼ªè¡€ç´…è‰²çš„æœˆäº®ï¼Œæœƒå°æ‰€æœ‰éžé¬¼æ€ªçš„ç”Ÿç‰©é€ æˆå‚·å®³ï¼Œä¸¦ä¸”æ²»ç™‚é¬¼æ€ªç”Ÿç‰©ã€‚\n");
         set("value", 2000);
         setup();
 } 
@@ -25,7 +25,7 @@ void hurt() {
         objs = all_inventory(environment());
         foreach(obj in objs) {
                 if(obj==query("owner") || obj->is_undead()) {
-                        message_vision(HIC"ÑªÔÂµÄ¹â»ªÕÕÔÚ$NÉíÉÏ£¬$N±äµÃ¾«Éñ°Ù±¶£¡\n"NOR,obj);
+                        message_vision(HIC"è¡€æœˆçš„å…‰è¯ç…§åœ¨$Nèº«ä¸Šï¼Œ$Nè®Šå¾—ç²¾ç¥žç™¾å€ï¼\n"NOR,obj);
                         obj->receive_heal("qi",4000);
                         obj->receive_curing("qi",4000);
                         obj->receive_heal("jing",2000);
@@ -33,7 +33,7 @@ void hurt() {
                         continue;
                 }
                 if(userp(obj)) {
-                        message_vision(HIR"ÑªÔÂµÄ¹â»ªÕÕÔÚ$NÉíÉÏ£¬$NµÄÉúÃüÁ¦ÔÚ¿ìËÙµÄÁ÷Ê§£¡\n"NOR,obj);
+                        message_vision(HIR"è¡€æœˆçš„å…‰è¯ç…§åœ¨$Nèº«ä¸Šï¼Œ$Nçš„ç”Ÿå‘½åŠ›åœ¨å¿«é€Ÿçš„æµå¤±ï¼\n"NOR,obj);
                         obj->receive_damage("qi",2000+random(1000),query("owner"));
                         obj->receive_damage("jing",1000+random(1000),query("owner"));
                         COMBAT_D->report_status(obj);

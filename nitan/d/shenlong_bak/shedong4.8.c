@@ -4,10 +4,10 @@ inherit CREATE_CHAT_ROOM;
 int is_chat_room() { return 1; } 
 void create()
 {
-        set("short", "Éß¾«¶´Íâ");
+        set("short", "è›‡ç²¾æ´å¤–");
         set("long",@LONG
-ÕâÊÇÉß¾«¶´Íâ£¬ÔÙÍùÇ°×ß¾ÍÒª½øÈëÉß¾«¶´ÁË£¬¾İËµ£¬»¹Ã»ÓĞÈËÄÜ»î×Å
-×ß³öÉß¾«¶´¡£
+é€™æ˜¯è›‡ç²¾æ´å¤–ï¼Œå†å¾€å‰èµ°å°±è¦é€²å…¥è›‡ç²¾æ´äº†ï¼Œæ“šèªªï¼Œé‚„æ²’æœ‰äººèƒ½æ´»è‘—
+èµ°å‡ºè›‡ç²¾æ´ã€‚
 LONG);
 
 
@@ -16,7 +16,7 @@ LONG);
                 "enter"   : __DIR__"shejingdong",
         ]));
 
-        // ÎªÈ·±£100%°²È«£¬ÕâÀïÒ²ÉèÖÃÃâËÀ
+        // ç‚ºç¢ºä¿100%å®‰å…¨ï¼Œé€™è£¡ä¹Ÿè¨­ç½®å…æ­»
         set("no_die", 1);
 
         setup();
@@ -27,10 +27,10 @@ int valid_leave(object me, string dir)
         object ob;
         object env;
 
-        // ¼ì²éÊÇ·ñÒÑ¾­¿ªÊ¼Éß¾«Õ½¶·
+        // æª¢æŸ¥æ˜¯å¦å·²ç¶“é–‹å§‹è›‡ç²¾æˆ°é¬¥
         if (dir == "enter")
         {
-                //return notify_fail("¶Ô²»Æğ£¬Î×Ê¦»¹Ã»ÓĞÏÂÁî¿ª·Å£¬ÄãÔİÊ±²»ÄÜ²Î¼Ó¶Ô¿¹Éß¾«µÄÕ½¶·¡£\n");
+                //return notify_fail("å°ä¸èµ·ï¼Œå·«å¸«é‚„æ²’æœ‰ä¸‹ä»¤é–‹æ”¾ï¼Œä½ æš«æ™‚ä¸èƒ½åƒåŠ å°æŠ—è›‡ç²¾çš„æˆ°é¬¥ã€‚\n");
 
                 ob = find_living("jiutou shejing");
 
@@ -38,7 +38,7 @@ int valid_leave(object me, string dir)
                 {
              if (base_name(environment(ob)) == "/d/shenlong/shejingdong" ||query("schedule", me) || query("doing", me) == "trigger")
                         {
-  write("¶Ô²»Æğ£¬ÀïÃæÒÑ¾­¿ªÊ¼ÁË¶Ô¿¹Éß¾«µÄÕ½¶·(»òÕßÄãÉíÉÏ´øÓĞ¼Æ»®»òÕß´¥·¢ÇëÈ¡Ïû¡£\n");
+  write("å°ä¸èµ·ï¼Œè£¡é¢å·²ç¶“é–‹å§‹äº†å°æŠ—è›‡ç²¾çš„æˆ°é¬¥(æˆ–è€…ä½ èº«ä¸Šå¸¶æœ‰è¨ˆåŠƒæˆ–è€…è§¸ç™¼è«‹å–æ¶ˆã€‚\n");
                                 return 0;
                         }
                 }
@@ -46,10 +46,10 @@ int valid_leave(object me, string dir)
                 if (! objectp(env = find_object(__DIR__"shejingdong")))
                         env = load_object(__DIR__"shejingdong");
 
-                // ÕıÔÚÇå³¡Ôò²»ÄÜ½øÈë
+                // æ­£åœ¨æ¸…å ´å‰‡ä¸èƒ½é€²å…¥
                 if (query("doing", env))
                        {
-                               write("Éß¾«BOSSÒÑ¾­ÌôÕ½½áÊø£¬ÕıÔÚµÈ´ıÇå³¡£¬ÇëÉÔºóÔÙÊÔ£¡\n");
+                               write("è›‡ç²¾BOSSå·²ç¶“æŒ‘æˆ°çµæŸï¼Œæ­£åœ¨ç­‰å¾…æ¸…å ´ï¼Œè«‹ç¨å¾Œå†è©¦ï¼\n");
                                return 0;
                        }
 

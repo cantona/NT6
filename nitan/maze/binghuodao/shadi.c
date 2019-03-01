@@ -2,10 +2,10 @@ inherit __DIR__"binghuodao";
 
 void create()
 {
-        set("short", "沙地");
+        set("short", "娌欏湴");
         set("long",
-"这里是一片沙地，是由海滩的巨浪冲刷而成。然后走在沙地上，\n"
-"却感觉从脚心传来阵阵热气，似乎着沙地下面蕴藏着什么东西。\n"
+"閫欒！鏄竴鐗囨矙鍦帮紝鏄敱娴风仒鐨勫法娴矕鍒疯�屾垚銆傜劧寰岃蛋鍦ㄦ矙鍦颁笂锛孿n"
+"鍗绘劅瑕哄緸鑵冲績鍌充締闄ｉ櫍鐔辨埃锛屼技涔庤憲娌欏湴涓嬮潰铇婅棌钁椾粈楹兼澅瑗裤�俓n"
 );
         set("exits", ([ 
                 "west"    : __DIR__"haitan", 

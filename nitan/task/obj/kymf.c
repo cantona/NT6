@@ -2,15 +2,15 @@
 inherit TASK;
 void create()
 {
-    set_name("¿¾Ñ¼ÃØ·½", ({ "kaoya mifang", "mifang" }) );
+    set_name("çƒ¤é´¨ç§˜æ–¹", ({ "kaoya mifang", "mifang" }) );
     set_weight(1);
     if( clonep() )
             destruct(this_object());
     else {
-            set("unit", "±¾");
+            set("unit", "æœ¬");
             set("material", "paper");
-            set("long", "Ò»±¾ÕâÊÇ±±¾©×îÖøÃûµÄÈ«¾ÛµÃ³ÌÀÏ°åµÄ¿¾Ñ¼ÃØ·½¡£\n");
+            set("long", "ä¸€æœ¬é€™æ˜¯åŒ—äº¬æœ€è‘—åçš„å…¨èšå¾—ç¨‹è€æ¿çš„çƒ¤é´¨ç§˜æ–¹ã€‚\n");
           }
-    set("owner", "³ÌÀÏ°å");
+    set("owner", "ç¨‹è€æ¿");
     setup();
 }

@@ -7,20 +7,20 @@ inherit MEDICAL_BOOK;
 
 void create()
 {
-        set_name(HIG "Ä§½ÌÒ½Êõ" NOR, ({ "mojiao medical", "medical" }));
+        set_name(HIG "é­”æ•™é†«è¡“" NOR, ({ "mojiao medical", "medical" }));
         set_weight(500);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "±¾");
-                set("long", "ÕâÊÇÒ»±¾·º»ÆµÄÊé¼®£¬ÉÏÃæÓÃ¹Å×­Êé"
-                            "Ğ´×Å¡°Ä§½ÌÒ½Êõ¡±¼¸¸ö×Ö¡£\n",
+                set("unit", "æœ¬");
+                set("long", "é€™æ˜¯ä¸€æœ¬æ³›é»ƒçš„æ›¸ç±ï¼Œä¸Šé¢ç”¨å¤ç¯†æ›¸"
+                            "å¯«è‘—â€œé­”æ•™é†«è¡“â€å¹¾å€‹å­—ã€‚\n",
 
                 );
                 set("material", "paper");
                 set("skill", ([
                         "name": "mojiao-medical",
-						"family_name" : "Ä§½Ì",
+						"family_name" : "é­”æ•™",
                         "jing_cost": 60,
                         "difficulty": 40,
                         "max_skill": 160,
@@ -28,7 +28,7 @@ void create()
                 ]));
 
                 set("can_make", ([
-                        "tianmo" : 280,           // ÌìÄ§Ê¥Ñª¸à
+                        "tianmo" : 280,           // å¤©é­”è–è¡€è†
                 ]));
         }
         setup();

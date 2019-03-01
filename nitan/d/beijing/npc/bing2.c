@@ -2,10 +2,10 @@ inherit NPC;
 
 void create()
 {
-        set_name("¶«³§¹Ù±ø", ({ "guan bing", "bing" }));
+        set_name("æ±å» å®˜å…µ", ({ "guan bing", "bing" }));
         set("age", 22);
-        set("gender", "ÄÐÐÔ");
-        set("long", "¶«³§¹Ù±øÊÇ¾­¹ýÌØÊâÑµÁ·µÄ£¬Ã»ÊÂ×îºÃ±ðÈ¥ÕÐÈÇ¡£\n");
+        set("gender", "ç”·æ€§");
+        set("long", "æ±å» å®˜å…µæ˜¯ç¶“éŽç‰¹æ®Šè¨“ç·´çš„ï¼Œæ²’äº‹æœ€å¥½åˆ¥åŽ»æ‹›æƒ¹ã€‚\n");
         set("attitude", "peaceful");
 
         set("str", 25);
@@ -25,7 +25,7 @@ void create()
 
        set("chat_chance_combat", 10);
         set("chat_msg_combat", ({
-                "¶«³§¹Ù±øºÈµÀ£º´óµ¨µóÃñ£¬¾©³ÇÖ®ÖÐ£¬¾¹¸ÒÔì·´²»³É£¿\n",
+                "æ±å» å®˜å…µå–é“ï¼šå¤§è†½åˆæ°‘ï¼Œäº¬åŸŽä¹‹ä¸­ï¼Œç«Ÿæ•¢é€ åä¸æˆï¼Ÿ\n",
         }));
         setup();
         carry_object("/d/beijing/npc/obj/sword5")->wield();
@@ -45,7 +45,7 @@ void init()
 
 int accept_fight(object me)
 {
-        command("say ´óÒ¯ÎÒÕýÏëÕÒÈËÉ±ÄÅ£¬½ñÌìËãÄãµ¹Ã¹¡£\n");
+        command("say å¤§çˆºæˆ‘æ­£æƒ³æ‰¾äººæ®ºå¶ï¼Œä»Šå¤©ç®—ä½ å€’éœ‰ã€‚\n");
         me->apply_condition("killer", 500);
         kill_ob(me);
         return 1;

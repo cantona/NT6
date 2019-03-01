@@ -5,10 +5,10 @@ void greeting(object);
 void init();
 void create()
 {
-        set_name("Îä¹İµÜ×Ó", ({ "wuguan dizi", "dizi"}) );
-        set("gender", "ÄĞĞÔ" );
+        set_name("æ­¦é¤¨å¼Ÿå­", ({ "wuguan dizi", "dizi"}) );
+        set("gender", "ç”·æ€§" );
         set("age", 16);
-        set("long", "ÕâÊÇ¸öÅãÈËÁ·¹¦µÄÎä¹İµÜ×Ó¡£\n");
+        set("long", "é€™æ˜¯å€‹é™ªäººç·´åŠŸçš„æ­¦é¤¨å¼Ÿå­ã€‚\n");
         set("attitude", "friendly");
         set("shen_type", 0);
 
@@ -41,22 +41,22 @@ void greeting(object ob)
 {
         if( !ob || environment(ob) != environment() ) return;
         if( query("combat_exp", ob)<10000 )
-        message_vision("Îä¹İµÜ×Ó³å×Å$N½ĞµÀ£º¿ìÀ´¸úÎÒ±È»®¼¸ÕĞ¡£(bi dizi)\n",ob);
+        message_vision("æ­¦é¤¨å¼Ÿå­æ²–è‘—$Nå«é“ï¼šå¿«ä¾†è·Ÿæˆ‘æ¯”åŠƒå¹¾æ‹›ã€‚(bi dizi)\n",ob);
 }
 
 int do_bi(string arg)
 {
         object ob=this_player();
-        if(!arg||arg!="dizi") return  notify_fail("ÄãÒªºÍË­±È»®£¿\n");
+        if(!arg||arg!="dizi") return  notify_fail("ä½ è¦å’Œèª°æ¯”åŠƒï¼Ÿ\n");
         if( query("combat_exp", ob)>10000 )
-                return notify_fail("Îä¹İµÜ×ÓÒ¡Í·µÀ£ºÒÔÄãµÄÎä¹¦£¬ÎÒ²»ÄÜ×öÄãµÄÅãÁ·¡£\n");
-        say("Îä¹İµÜ×ÓÍ¬Òâ×÷ÄãµÄÅãÁ·¡£\n");
+                return notify_fail("æ­¦é¤¨å¼Ÿå­æ–é ­é“ï¼šä»¥ä½ çš„æ­¦åŠŸï¼Œæˆ‘ä¸èƒ½åšä½ çš„é™ªç·´ã€‚\n");
+        say("æ­¦é¤¨å¼Ÿå­åŒæ„ä½œä½ çš„é™ªç·´ã€‚\n");
         set("combat_exp",query("combat_exp", ob));
         command("hit"+query("id", ob));
         if(query("qi")<40)
-                message_vision("Îä¹İµÜ×Ó¶Ô$N´ó¼ÓÔŞÉÍ!\n",ob);
+                message_vision("æ­¦é¤¨å¼Ÿå­å°$Nå¤§åŠ è®šè³!\n",ob);
         else
-                message_vision("Îä¹İµÜ×Ó¶Ô$NĞ¦Ğ¦µÀ£ºÅ¬Á¦°É¡£\n",ob);
+                message_vision("æ­¦é¤¨å¼Ÿå­å°$Nç¬‘ç¬‘é“ï¼šåŠªåŠ›å§ã€‚\n",ob);
 
         set("eff_qi",200);
         set("qi",200);
@@ -66,7 +66,7 @@ int do_bi(string arg)
 
 int accept_fight(object ob)
 {
-        message_vision("Îä¹İµÜ×Ó¶Ô$N½ĞµÀ£ºÄÇÎÒ¾Í²»ÈÃÄãÁË£¡\n",ob);
+        message_vision("æ­¦é¤¨å¼Ÿå­å°$Nå«é“ï¼šé‚£æˆ‘å°±ä¸è®“ä½ äº†ï¼\n",ob);
         return 1;
 }
 

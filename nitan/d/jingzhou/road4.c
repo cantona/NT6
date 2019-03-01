@@ -3,11 +3,11 @@ inherit ROOM;
 
 void create()
 {
-        set("short", "��ɽ");
+        set("short", "青山");
         set("long", @LONG
-ɽ����ľï�ܣ�������䣬����羰������С���������ؽ��ţ�
-�������ҳ�ķ�϶���ս������γ���ʵİ�쵣�������鲻�ɵĸ���
-����������С��ĸ�������ǰ��ȥ��
+山中樹木茂密，花開萬朵，這裡風景秀美，小鳥在喳喳地叫著，
+陽光從樹頁的縫隙中照進來，形成五彩的斑斕，你的心情不由的高興
+起來，跟著小鳥的歌聲，向前走去。
 LONG );
         set("exits", ([
                 "northeast" : __DIR__"road3",

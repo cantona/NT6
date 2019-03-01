@@ -4,10 +4,10 @@ inherit BOSS;
 void do_summon();
 void create()
 {
-        set_name( "½©Ê¬Íõ", ({ "lord zombie" }));
+        set_name( "åƒµå±ç‹", ({ "lord zombie" }));
         set("vendetta_mark","zombie");
-        set("long", "ÕâÊÇÒ»¸ö¸¯ÀÃµÄ½©Ê¬Íõ£¬¿´ÆğÀ´ºÃ¿ÉÅÂ¡£¡£\n");
-        set("title", HIB "(¹íÆø)" NOR); 
+        set("long", "é€™æ˜¯ä¸€å€‹è…çˆ›çš„åƒµå±ç‹ï¼Œçœ‹èµ·ä¾†å¥½å¯æ€•ã€‚ã€‚\n");
+        set("title", HIB "(é¬¼æ°£)" NOR); 
 
         set("str", 50);
         set("con", 120);
@@ -28,7 +28,7 @@ void create()
 
         set("combat_exp", 200000000);
         set("bellicosity", 5 );
-        set("death_msg",RED"\n$N»¯×÷ÁËÒ»Ì²ÑªË®¡£\n\n"NOR);
+        set("death_msg",RED"\n$NåŒ–ä½œäº†ä¸€ç˜è¡€æ°´ã€‚\n\n"NOR);
 
         set_skill("force", 1200);
         set_skill("dodge", 1200);
@@ -49,8 +49,8 @@ void create()
 
 /*
         set("drops", ([
-                "RA&EPIL60"    :       70,    // ÖĞ¼¶ÆÕÍ¨×°±¸
-                "RA&EPIL70"    :       30,    // ÖĞ¼¶ÆÕÍ¨×°±¸
+                "RA&EPIL60"    :       70,    // ä¸­ç´šæ™®é€šè£å‚™
+                "RA&EPIL70"    :       30,    // ä¸­ç´šæ™®é€šè£å‚™
         ]));
 */
         
@@ -80,7 +80,7 @@ void do_summon()
         obs = all_inventory(environment(me));
         obs=filter_array(obs,(:query("id", $1) == "zombie":));
         if( sizeof(obs) > 10 ) return;
-        message_vision(HIM "\n$NàÀàÀ¸Éº¿£¬ÖÜÎ§µÄ½©Ê¬Ó¦Éù¶øÀ´¡£\n" NOR, me); 
+        message_vision(HIM "\n$Nâ–¡â–¡å¹¹åšï¼Œå‘¨åœçš„åƒµå±æ‡‰è²è€Œä¾†ã€‚\n" NOR, me); 
         zombie = new(__DIR__"zombie");
         zombie->move(environment(me));
         enemies = me->query_enemy();
@@ -89,7 +89,7 @@ void do_summon()
                 zombie->kill_ob(enemy);
                 enemy->kill_ob(zombie);
         } 
-        message_vision( "\n\n$N¶ñºİºİµØÆËÁËÉÏÀ´¡£\n" , zombie);
+        message_vision( "\n\n$Næƒ¡ç‹ ç‹ åœ°æ’²äº†ä¸Šä¾†ã€‚\n" , zombie);
         call_out("leave",20+random(10),zombie);
         if( !this_object()->is_busy() )
                 this_object()->start_busy(3);
@@ -97,6 +97,6 @@ void do_summon()
 
 void leave(object zombie){
         if( !zombie || zombie->is_fighting() ) return;
-        message_vision("\n$NÏûÊ§ÁË¡£\n",zombie);
+        message_vision("\n$Næ¶ˆå¤±äº†ã€‚\n",zombie);
         destruct(zombie);
 }

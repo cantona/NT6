@@ -3,8 +3,8 @@ inherit SNAKE;
 
 void create()
 {
-        set_name(NOR + YEL "½ğ»·Éß" NOR, ({ "jinhuan she", "jinhuan", "she" }));
-        set("long", YEL "ÕâÊÇÒ»Ö»ÈÃÈË¿´ÁËÆğÃ«¹Çã¤È»µÄ½ğ»·Éß¡£\n" NOR);
+        set_name(NOR + YEL "é‡‘ç’°è›‡" NOR, ({ "jinhuan she", "jinhuan", "she" }));
+        set("long", YEL "é€™æ˜¯ä¸€åªè®“äººçœ‹äº†èµ·æ¯›éª¨æ‚šç„¶çš„é‡‘ç’°è›‡ã€‚\n" NOR);
 
         set("age", 1);
         set("str", 15);
@@ -38,7 +38,7 @@ int convert(string arg)
         object ob;
 
         if (arg!="snake" && arg!="she" && arg!="jin she") return 0;
-        if( query("family/family_name", me) != "Å·ÑôÊÀ¼Ò" )
-                return notify_fail("Äã²»ÄÜ»¯ÉßÎªÕÈ¡£\n");
-        return notify_fail("½ğ»·Éß¹ıÓÚÏ¸Ğ¡£¬²»ÄÜ»¯ÎªÕÈ¡£\n");
+        if( query("family/family_name", me) != "æ­é™½ä¸–å®¶" )
+                return notify_fail("ä½ ä¸èƒ½åŒ–è›‡ç‚ºæ–ã€‚\n");
+        return notify_fail("é‡‘ç’°è›‡éäºç´°å°ï¼Œä¸èƒ½åŒ–ç‚ºæ–ã€‚\n");
 }

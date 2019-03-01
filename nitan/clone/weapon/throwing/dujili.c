@@ -6,13 +6,13 @@ inherit THROWING;
 
 void create()
 {
-        set_name("¶¾İğÀè", ({"poison dart", "dart"}));
+        set_name("æ¯’è’ºé»", ({"poison dart", "dart"}));
         if( clonep() )
                 set_default_object(__FILE__);
         else {
-                set("unit", "°Ñ");
-                set("base_unit", "Ö¦");
-                set("long","Ìú´òµÄİğÀè·æÀûÎŞ±È£¬ÈĞÉÏÉÁÏÖÂÌÉ«£¬ÏÔÊÇÎ¹ÁË¶¾Ò©¡£\n");
+                set("unit", "æŠŠ");
+                set("base_unit", "æ");
+                set("long","éµæ‰“çš„è’ºé»é‹’åˆ©ç„¡æ¯”ï¼Œåˆƒä¸Šé–ƒç¾ç¶ è‰²ï¼Œé¡¯æ˜¯å–‚äº†æ¯’è—¥ã€‚\n");
                 set("base_weight", 40);
                 set("value", 0);
                 set("base_value", 5);

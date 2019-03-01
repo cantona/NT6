@@ -49,69 +49,69 @@ string get_deng_pic( int deng )
     switch( deng )
     {
         case 0: return NOR+co1+"
-                    ©≥©•©•©•©•©∑
-                    ©ß"NOR+co3+"°Ò°Ò°Ò  "NOR+co1+"©ß
-                    ©ß"NOR+co3+"°Ò  °Ò  "NOR+co1+"©ß
-                    ©ß"NOR+co3+"    °Ò  "NOR+co1+"©ß
-                    ©ß"NOR+co3+"      °Ò"NOR+co1+"©ß
-                    ©ª©•©•©•©•©ø\n\n"NOR;
+                    ‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°
+                    ‚ñ°"NOR+co3+"‚óè‚óè‚óè  "NOR+co1+"‚ñ°
+                    ‚ñ°"NOR+co3+"‚óè  ‚óè  "NOR+co1+"‚ñ°
+                    ‚ñ°"NOR+co3+"    ‚óè  "NOR+co1+"‚ñ°
+                    ‚ñ°"NOR+co3+"      ‚óè"NOR+co1+"‚ñ°
+                    ‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°\n\n"NOR;
 
         case 1: return NOR+co1+"
-                    ©≥©•©•©•©•©∑
-                    ©ß"NOR+co3+"°Ò°Ò°Ò  "NOR+co1+"©ß
-                    ©ß"NOR+co2+"°Ò  "NOR+co3+"°Ò  "NOR+co1+"©ß
-                    ©ß"NOR+co3+"    °Ò  "NOR+co1+"©ß
-                    ©ß"NOR+co3+"      °Ò"NOR+co1+"©ß
-                    ©ª©•©•©•©•©ø\n\n"NOR;
+                    ‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°
+                    ‚ñ°"NOR+co3+"‚óè‚óè‚óè  "NOR+co1+"‚ñ°
+                    ‚ñ°"NOR+co2+"‚óè  "NOR+co3+"‚óè  "NOR+co1+"‚ñ°
+                    ‚ñ°"NOR+co3+"    ‚óè  "NOR+co1+"‚ñ°
+                    ‚ñ°"NOR+co3+"      ‚óè"NOR+co1+"‚ñ°
+                    ‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°\n\n"NOR;
 
         case 2: return NOR+co1+"
-                    ©≥©•©•©•©•©∑
-                    ©ß"NOR+co2+"°Ò"NOR+co3+"°Ò°Ò  "NOR+co1+"©ß
-                    ©ß"NOR+co2+"°Ò  "NOR+co3+"°Ò  "NOR+co1+"©ß
-                    ©ß"NOR+co3+"    °Ò  "NOR+co1+"©ß
-                    ©ß"NOR+co3+"      °Ò"NOR+co1+"©ß
-                    ©ª©•©•©•©•©ø\n\n"NOR;
+                    ‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°
+                    ‚ñ°"NOR+co2+"‚óè"NOR+co3+"‚óè‚óè  "NOR+co1+"‚ñ°
+                    ‚ñ°"NOR+co2+"‚óè  "NOR+co3+"‚óè  "NOR+co1+"‚ñ°
+                    ‚ñ°"NOR+co3+"    ‚óè  "NOR+co1+"‚ñ°
+                    ‚ñ°"NOR+co3+"      ‚óè"NOR+co1+"‚ñ°
+                    ‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°\n\n"NOR;
 
         case 3: return NOR+co1+"
-                    ©≥©•©•©•©•©∑
-                    ©ß"NOR+co2+"°Ò°Ò"NOR+co3+"°Ò  "NOR+co1+"©ß
-                    ©ß"NOR+co2+"°Ò  "NOR+co3+"°Ò  "NOR+co1+"©ß
-                    ©ß"NOR+co3+"    °Ò  "NOR+co1+"©ß
-                    ©ß"NOR+co3+"      °Ò"NOR+co1+"©ß
-                    ©ª©•©•©•©•©ø\n\n"NOR;
+                    ‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°
+                    ‚ñ°"NOR+co2+"‚óè‚óè"NOR+co3+"‚óè  "NOR+co1+"‚ñ°
+                    ‚ñ°"NOR+co2+"‚óè  "NOR+co3+"‚óè  "NOR+co1+"‚ñ°
+                    ‚ñ°"NOR+co3+"    ‚óè  "NOR+co1+"‚ñ°
+                    ‚ñ°"NOR+co3+"      ‚óè"NOR+co1+"‚ñ°
+                    ‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°\n\n"NOR;
 
         case 4: return NOR+co1+"
-                    ©≥©•©•©•©•©∑
-                    ©ß"NOR+co2+"°Ò°Ò°Ò  "NOR+co1+"©ß
-                    ©ß"NOR+co2+"°Ò  "NOR+co3+"°Ò  "NOR+co1+"©ß
-                    ©ß"NOR+co3+"    °Ò  "NOR+co1+"©ß
-                    ©ß"NOR+co3+"      °Ò"NOR+co1+"©ß
-                    ©ª©•©•©•©•©ø\n\n"NOR;
+                    ‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°
+                    ‚ñ°"NOR+co2+"‚óè‚óè‚óè  "NOR+co1+"‚ñ°
+                    ‚ñ°"NOR+co2+"‚óè  "NOR+co3+"‚óè  "NOR+co1+"‚ñ°
+                    ‚ñ°"NOR+co3+"    ‚óè  "NOR+co1+"‚ñ°
+                    ‚ñ°"NOR+co3+"      ‚óè"NOR+co1+"‚ñ°
+                    ‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°\n\n"NOR;
 
         case 5: return NOR+co1+"
-                    ©≥©•©•©•©•©∑
-                    ©ß"NOR+co2+"°Ò°Ò°Ò  "NOR+co1+"©ß
-                    ©ß"NOR+co2+"°Ò  °Ò  "NOR+co1+"©ß
-                    ©ß"NOR+co3+"    °Ò  "NOR+co1+"©ß
-                    ©ß"NOR+co3+"      °Ò"NOR+co1+"©ß
-                    ©ª©•©•©•©•©ø\n\n"NOR;
+                    ‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°
+                    ‚ñ°"NOR+co2+"‚óè‚óè‚óè  "NOR+co1+"‚ñ°
+                    ‚ñ°"NOR+co2+"‚óè  ‚óè  "NOR+co1+"‚ñ°
+                    ‚ñ°"NOR+co3+"    ‚óè  "NOR+co1+"‚ñ°
+                    ‚ñ°"NOR+co3+"      ‚óè"NOR+co1+"‚ñ°
+                    ‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°\n\n"NOR;
 
         case 6: return NOR+co1+"
-                    ©≥©•©•©•©•©∑
-                    ©ß"NOR+co2+"°Ò°Ò°Ò  "NOR+co1+"©ß
-                    ©ß"NOR+co2+"°Ò  °Ò  "NOR+co1+"©ß
-                    ©ß"NOR+co2+"    °Ò  "NOR+co1+"©ß
-                    ©ß"NOR+co3+"      °Ò"NOR+co1+"©ß
-                    ©ª©•©•©•©•©ø\n\n"NOR;
+                    ‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°
+                    ‚ñ°"NOR+co2+"‚óè‚óè‚óè  "NOR+co1+"‚ñ°
+                    ‚ñ°"NOR+co2+"‚óè  ‚óè  "NOR+co1+"‚ñ°
+                    ‚ñ°"NOR+co2+"    ‚óè  "NOR+co1+"‚ñ°
+                    ‚ñ°"NOR+co3+"      ‚óè"NOR+co1+"‚ñ°
+                    ‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°\n\n"NOR;
 
         case 7: return NOR+co1+"
-                    ©≥©•©•©•©•©∑
-                    ©ß"NOR+co2+"°Ò°Ò°Ò  "NOR+co1+"©ß
-                    ©ß"NOR+co2+"°Ò  °Ò  "NOR+co1+"©ß
-                    ©ß"NOR+co2+"    °Ò  "NOR+co1+"©ß
-                    ©ß"NOR+co2+"      °Ò"NOR+co1+"©ß
-                    ©ª©•©•©•©•©ø\n\n"NOR;
+                    ‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°
+                    ‚ñ°"NOR+co2+"‚óè‚óè‚óè  "NOR+co1+"‚ñ°
+                    ‚ñ°"NOR+co2+"‚óè  ‚óè  "NOR+co1+"‚ñ°
+                    ‚ñ°"NOR+co2+"    ‚óè  "NOR+co1+"‚ñ°
+                    ‚ñ°"NOR+co2+"      ‚óè"NOR+co1+"‚ñ°
+                    ‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°‚ñ°\n\n"NOR;
     }
 
-    return "ƒ„µƒ∆ﬂ–«µ∆¿Ôªπ”–∞À∏ˆµ∆¡¡◊≈£°£°£°£°£°£°£°’Ê «Ã´¿˜∫¶¡À£°£°£°\n";
+    return "‰Ω†ÁöÑ‰∏ÉÊòüÁáàË£°ÈÇÑÊúâÂÖ´ÂÄãÁáà‰∫ÆËëóÔºÅÔºÅÔºÅÔºÅÔºÅÔºÅÔºÅÁúüÊòØÂ§™Âé≤ÂÆ≥‰∫ÜÔºÅÔºÅÔºÅ\n";
 }

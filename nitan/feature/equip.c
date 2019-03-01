@@ -22,11 +22,11 @@ int wear()
         if( !owner || !owner->is_character() ) return 0;
 
         if( query("no_identify") )
-                return notify_fail(this_object()->name() + "ĞèÒª¼ø¶¨ºó²Å¿ÉÒÔÊ¹ÓÃ¡£\n");
+                return notify_fail(this_object()->name() + "éœ€è¦é‘’å®šå¾Œæ‰å¯ä»¥ä½¿ç”¨ã€‚\n");
 
         // Does the consistence valid ?
         if( query("consistence") < 1 )
-                return notify_fail(this_object()->name() + "ÏÖÔÚËğ»µÌ«ÑÏÖØÁË£¬²»ÄÜ¼ÌĞø´©´÷ÁË¡£\n");
+                return notify_fail(this_object()->name() + "ç¾åœ¨æå£å¤ªåš´é‡äº†ï¼Œä¸èƒ½ç¹¼çºŒç©¿æˆ´äº†ã€‚\n");
 
         // If already worn, just recognize it.
         if( query("equipped") ) return 1;
@@ -38,79 +38,79 @@ int wear()
         // Check if we have "armor_prop" defined.
         if( !mapp(armor_prop = query("armor_prop")) ||
             !stringp(type = query("armor_type")) )
-                return notify_fail("ÄãÖ»ÄÜ´©´÷¿Éµ±×÷»¤¾ßµÄ¶«Î÷¡£\n");
+                return notify_fail("ä½ åªèƒ½ç©¿æˆ´å¯ç•¶ä½œè­·å…·çš„æ±è¥¿ã€‚\n");
 
         if( query_temp("armor/"+type, owner) )
-                return notify_fail("ÄãÒÑ¾­´©´÷ÁËÍ¬ÀàĞÍµÄ»¤¾ßÁË¡£\n");
+                return notify_fail("ä½ å·²ç¶“ç©¿æˆ´äº†åŒé¡å‹çš„è­·å…·äº†ã€‚\n");
 
         if( type == "hands" &&
             weapon=query_temp("weapon", owner)){
                 if( query("flag", weapon)&TWO_HANDED )
-                        return notify_fail("Äã±ØĞë¿Õ³öÒ»Ö»ÊÖÀ´²ÅÄÜ×°±¸"+this_object()->name()+"¡£\n");
+                        return notify_fail("ä½ å¿…é ˆç©ºå‡ºä¸€åªæ‰‹ä¾†æ‰èƒ½è£å‚™"+this_object()->name()+"ã€‚\n");
                 if( query_temp("secondary_weapon", owner )
                  || query_temp("armor/finger", owner )
                  || query_temp("handing", owner) )
-                        return notify_fail("Äã±ØĞë¿Õ³öÒ»Ö»ÊÖÀ´²ÅÄÜ×°±¸"+this_object()->name()+"¡£\n");
+                        return notify_fail("ä½ å¿…é ˆç©ºå‡ºä¸€åªæ‰‹ä¾†æ‰èƒ½è£å‚™"+this_object()->name()+"ã€‚\n");
         }
 
         if( type == "hands" &&
             query_temp("armor/finger", owner) &&
             query_temp("handing", owner) )
-                        return notify_fail("Äã±ØĞë¿Õ³öÒ»Ö»ÊÖÀ´²ÅÄÜ×°±¸"+this_object()->name()+"¡£\n");
+                        return notify_fail("ä½ å¿…é ˆç©ºå‡ºä¸€åªæ‰‹ä¾†æ‰èƒ½è£å‚™"+this_object()->name()+"ã€‚\n");
 
         if( type == "finger" &&
             weapon=query_temp("weapon", owner)){
                 if( query("flag", weapon)&TWO_HANDED )
-                        return notify_fail("Äã±ØĞë¿Õ³öÒ»Ö»ÊÖÀ´²ÅÄÜ×°±¸"+this_object()->name()+"¡£\n");
+                        return notify_fail("ä½ å¿…é ˆç©ºå‡ºä¸€åªæ‰‹ä¾†æ‰èƒ½è£å‚™"+this_object()->name()+"ã€‚\n");
                 if( query_temp("secondary_weapon", owner )
                  || query_temp("armor/hands", owner )
                  || query_temp("handing", owner) )
-                        return notify_fail("Äã±ØĞë¿Õ³öÒ»Ö»ÊÖÀ´²ÅÄÜ×°±¸"+this_object()->name()+"¡£\n");
+                        return notify_fail("ä½ å¿…é ˆç©ºå‡ºä¸€åªæ‰‹ä¾†æ‰èƒ½è£å‚™"+this_object()->name()+"ã€‚\n");
         }
 
         if( type == "finger" &&
             query_temp("armor/hands", owner) &&
             query_temp("handing", owner) )
-                        return notify_fail("Äã±ØĞë¿Õ³öÒ»Ö»ÊÖÀ´²ÅÄÜ×°±¸"+this_object()->name()+"¡£\n");
+                        return notify_fail("ä½ å¿…é ˆç©ºå‡ºä¸€åªæ‰‹ä¾†æ‰èƒ½è£å‚™"+this_object()->name()+"ã€‚\n");
 
         if( userp(owner) && !wizardp(owner) &&
             (!query("reborn/times", owner) || query("id", owner) != this_object()->item_owner()) &&
             mapp(require = query("require")) && sizeof(require) ) {
                 if( !undefinedp(require["level"]) &&
                     query("level", owner)<require["level"] )
-                        return notify_fail("ÄãµÄµÈ¼¶²»¹»£¬ÎŞ·¨×°±¸´Ë·À¾ß¡£\n");
+                        return notify_fail("ä½ çš„ç­‰ç´šä¸å¤ ï¼Œç„¡æ³•è£å‚™æ­¤é˜²å…·ã€‚\n");
 
                 if( !undefinedp(require["max_level"]) &&
                     query("level", owner)>require["max_level"] )
-                        return notify_fail("ÄãµÄµÈ¼¶³¬¹ıÉÏÏŞ£¬ÎŞ·¨×°±¸´Ë·À¾ß¡£\n");
+                        return notify_fail("ä½ çš„ç­‰ç´šè¶…éä¸Šé™ï¼Œç„¡æ³•è£å‚™æ­¤é˜²å…·ã€‚\n");
 
                 if( !undefinedp(require["age"]) &&
                     query("age", owner)<require["age"] )
-                        return notify_fail("ÄãµÄÄêÁä²»¹»£¬ÎŞ·¨×°±¸´Ë·À¾ß¡£\n");
+                        return notify_fail("ä½ çš„å¹´é½¡ä¸å¤ ï¼Œç„¡æ³•è£å‚™æ­¤é˜²å…·ã€‚\n");
 
                 if( !undefinedp(require["max_age"]) &&
                     query("age", owner)>require["max_age"] )
-                        return notify_fail("ÄãµÄÄêÁä³¬¹ıÉÏÏŞ£¬ÎŞ·¨×°±¸´Ë·À¾ß¡£\n");
+                        return notify_fail("ä½ çš„å¹´é½¡è¶…éä¸Šé™ï¼Œç„¡æ³•è£å‚™æ­¤é˜²å…·ã€‚\n");
 
                 if( !undefinedp(require["str"]) &&
                     owner->query_str() < require["str"] )
-                        return notify_fail("ÄãµÄÁ¦Á¿²»×ã£¬ÎŞ·¨×°±¸´Ë·À¾ß¡£\n");
+                        return notify_fail("ä½ çš„åŠ›é‡ä¸è¶³ï¼Œç„¡æ³•è£å‚™æ­¤é˜²å…·ã€‚\n");
 
                 if( !undefinedp(require["dex"]) &&
                     owner->query_dex() < require["dex"] )
-                        return notify_fail("ÄãµÄÉí·¨²»×ã£¬ÎŞ·¨×°±¸´Ë·À¾ß¡£\n");
+                        return notify_fail("ä½ çš„èº«æ³•ä¸è¶³ï¼Œç„¡æ³•è£å‚™æ­¤é˜²å…·ã€‚\n");
 
                 if( !undefinedp(require["con"]) &&
                     owner->query_con() < require["con"] )
-                        return notify_fail("ÄãµÄ¸ù¹Ç²»×ã£¬ÎŞ·¨×°±¸´Ë·À¾ß¡£\n");
+                        return notify_fail("ä½ çš„æ ¹éª¨ä¸è¶³ï¼Œç„¡æ³•è£å‚™æ­¤é˜²å…·ã€‚\n");
 
                 if( !undefinedp(require["int"]) &&
                     owner->query_int() < require["int"] )
-                        return notify_fail("ÄãµÄÎòĞÔ²»×ã£¬ÎŞ·¨×°±¸´Ë·À¾ß¡£\n");
+                        return notify_fail("ä½ çš„æ‚Ÿæ€§ä¸è¶³ï¼Œç„¡æ³•è£å‚™æ­¤é˜²å…·ã€‚\n");
 
                 if( !undefinedp(require["neili"]) &&
                     owner->query_dex() < require["neili"] )
-                        return notify_fail("ÄãµÄÄÚÁ¦²»×ã£¬ÎŞ·¨×°±¸´Ë·À¾ß¡£\n");
+                        return notify_fail("ä½ çš„å…§åŠ›ä¸è¶³ï¼Œç„¡æ³•è£å‚™æ­¤é˜²å…·ã€‚\n");
         }
 
         set_temp("armor/"+type, this_object(), owner);
@@ -139,7 +139,7 @@ int wear()
                                 applied_prop[apply2[i]] += enchase_prop[apply2[i]];
                 }
         }
-        if( mapp(enchase_prop = copy(query("enchase/rune_prop"))) && sizeof(enchase_prop) ) { // ·ûÎÄÎïÓï
+        if( mapp(enchase_prop = copy(query("enchase/rune_prop"))) && sizeof(enchase_prop) ) { // ç¬¦æ–‡ç‰©èª
                 apply2 = keys(enchase_prop);
                 for( int i = 0; i<sizeof(apply2); i++ ) {
                         if( apply2[i] == "int" || apply2[i] == "str" ||
@@ -153,7 +153,7 @@ int wear()
                                 applied_prop[apply2[i]] += enchase_prop[apply2[i]];
                 }
         }
-        if( mapp(enchase_prop = copy(query("reform/apply_prop"))) && sizeof(enchase_prop) ) { // ¸ÄÔì
+        if( mapp(enchase_prop = copy(query("reform/apply_prop"))) && sizeof(enchase_prop) ) { // æ”¹é€ 
                 apply2 = keys(enchase_prop);
                 for( int i = 0; i<sizeof(apply2); i++ ) {
                         if( apply2[i] == "int" || apply2[i] == "str" ||
@@ -191,11 +191,11 @@ int wear()
             !query("bind_owner") && userp(owner) ) {
                 set("bind_owner",query("id", owner));
                 set("set_data", 1);
-                tell_object(owner, HIM "ÄãÄÚĞÄÉî´¦ÒşÒşÔ¼Ô¼µÄ¸ĞÓ¦µ½" + this_object()->name() +
-                                   HIM "ÓëÄãÈÚÎªÒ»Ìå¡£\n" NOR);
+                tell_object(owner, HIM "ä½ å…§å¿ƒæ·±è™•éš±éš±ç´„ç´„çš„æ„Ÿæ‡‰åˆ°" + this_object()->name() +
+                                   HIM "èˆ‡ä½ èç‚ºä¸€é«”ã€‚\n" NOR);
         }
 
-        // Õ½³¡ÉÏÎŞĞ§
+        // æˆ°å ´ä¸Šç„¡æ•ˆ
         if( flag && !query_temp("warquest", owner) )
         {
                 max_qi=query("max_qi", owner);
@@ -234,11 +234,11 @@ varargs int wield(int left)
         if( !owner || !owner->is_character() ) return 0;
 
         if( query("no_identify") )
-                return notify_fail(this_object()->name() + "ĞèÒª¼ø¶¨ºó²Å¿ÉÒÔÊ¹ÓÃ¡£\n");
+                return notify_fail(this_object()->name() + "éœ€è¦é‘’å®šå¾Œæ‰å¯ä»¥ä½¿ç”¨ã€‚\n");
 
         // Does the consistence valid ?
         if( query("consistence") < 1 )
-                return notify_fail(this_object()->name() + "ÏÖÔÚËğ»µÌ«ÑÏÖØÁË£¬²»ÄÜ¼ÌĞø×°±¸ÁË¡£\n");
+                return notify_fail(this_object()->name() + "ç¾åœ¨æå£å¤ªåš´é‡äº†ï¼Œä¸èƒ½ç¹¼çºŒè£å‚™äº†ã€‚\n");
 
         // If already wielded, just recognize it.
         if( query("equipped") ) return 1;
@@ -249,11 +249,11 @@ varargs int wield(int left)
                 if( stringp(no_wield) )
                         return notify_fail(no_wield);
                 else
-                        return notify_fail("ÕâÑù¶«Î÷ÎŞ·¨×°±¸¡£");
+                        return notify_fail("é€™æ¨£æ±è¥¿ç„¡æ³•è£å‚™ã€‚");
         }
 
         if( query("skill_type") == "throwing" )
-                return notify_fail("°µÆ÷Ö»ÄÜÄÃÔÚÊÖÀï£¬ÎŞĞè×°±¸¡£\n");
+                return notify_fail("æš—å™¨åªèƒ½æ‹¿åœ¨æ‰‹è£¡ï¼Œç„¡éœ€è£å‚™ã€‚\n");
 
         // If handing it now, stop handing
         if( query_temp("handing", owner) == this_object() )
@@ -262,51 +262,51 @@ varargs int wield(int left)
         // Check if we have "weapon_prop" defined.
         if( !mapp(weapon_prop = query("weapon_prop")) ||
             !stringp(query("skill_type")) )
-                return notify_fail("ÄãÖ»ÄÜ×°±¸¿Éµ±×÷ÎäÆ÷µÄ¶«Î÷¡£\n");
+                return notify_fail("ä½ åªèƒ½è£å‚™å¯ç•¶ä½œæ­¦å™¨çš„æ±è¥¿ã€‚\n");
 
         if( userp(owner) && !wizardp(owner) &&
             (!query("reborn/times", owner) || query("id", owner) != this_object()->item_owner()) &&
             mapp(require = query("require")) && sizeof(require) ) {
                 if( !undefinedp(require["level"]) &&
                     query("level", owner)<require["level"] )
-                        return notify_fail("ÄãµÄµÈ¼¶²»¹»£¬ÎŞ·¨×°±¸´ËÎäÆ÷¡£\n");
+                        return notify_fail("ä½ çš„ç­‰ç´šä¸å¤ ï¼Œç„¡æ³•è£å‚™æ­¤æ­¦å™¨ã€‚\n");
 
                 if( !undefinedp(require["max_level"]) &&
                     query("level", owner)>require["max_level"] )
-                        return notify_fail("ÄãµÄµÈ¼¶³¬¹ıÉÏÏŞ£¬ÎŞ·¨×°±¸´ËÎäÆ÷¡£\n");
+                        return notify_fail("ä½ çš„ç­‰ç´šè¶…éä¸Šé™ï¼Œç„¡æ³•è£å‚™æ­¤æ­¦å™¨ã€‚\n");
 
                 if( !undefinedp(require["age"]) &&
                     query("age", owner)<require["age"] )
-                        return notify_fail("ÄãµÄÄêÁä²»¹»£¬ÎŞ·¨×°±¸´ËÎäÆ÷¡£\n");
+                        return notify_fail("ä½ çš„å¹´é½¡ä¸å¤ ï¼Œç„¡æ³•è£å‚™æ­¤æ­¦å™¨ã€‚\n");
 
                 if( !undefinedp(require["max_age"]) &&
                     query("age", owner)>require["max_age"] )
-                        return notify_fail("ÄãµÄÄêÁä³¬¹ıÉÏÏŞ£¬ÎŞ·¨×°±¸´ËÎäÆ÷¡£\n");
+                        return notify_fail("ä½ çš„å¹´é½¡è¶…éä¸Šé™ï¼Œç„¡æ³•è£å‚™æ­¤æ­¦å™¨ã€‚\n");
 
                 if( !undefinedp(require["str"]) &&
                     owner->query_str() < require["str"] )
-                        return notify_fail("ÄãµÄÁ¦Á¿²»×ã£¬ÎŞ·¨×°±¸´ËÎäÆ÷¡£\n");
+                        return notify_fail("ä½ çš„åŠ›é‡ä¸è¶³ï¼Œç„¡æ³•è£å‚™æ­¤æ­¦å™¨ã€‚\n");
 
                 if( !undefinedp(require["dex"]) &&
                     owner->query_dex() < require["dex"] )
-                        return notify_fail("ÄãµÄÉí·¨²»×ã£¬ÎŞ·¨×°±¸´ËÎäÆ÷¡£\n");
+                        return notify_fail("ä½ çš„èº«æ³•ä¸è¶³ï¼Œç„¡æ³•è£å‚™æ­¤æ­¦å™¨ã€‚\n");
 
                 if( !undefinedp(require["con"]) &&
                     owner->query_con() < require["con"] )
-                        return notify_fail("ÄãµÄ¸ù¹Ç²»×ã£¬ÎŞ·¨×°±¸´Ë·À¾ß¡£\n");
+                        return notify_fail("ä½ çš„æ ¹éª¨ä¸è¶³ï¼Œç„¡æ³•è£å‚™æ­¤é˜²å…·ã€‚\n");
 
                 if( !undefinedp(require["int"]) &&
                     owner->query_int() < require["int"] )
-                        return notify_fail("ÄãµÄÎòĞÔ²»×ã£¬ÎŞ·¨×°±¸´Ë·À¾ß¡£\n");
+                        return notify_fail("ä½ çš„æ‚Ÿæ€§ä¸è¶³ï¼Œç„¡æ³•è£å‚™æ­¤é˜²å…·ã€‚\n");
 
                 if( !undefinedp(require["neili"]) &&
                     owner->query_dex() < require["neili"] )
-                        return notify_fail("ÄãµÄÄÚÁ¦²»×ã£¬ÎŞ·¨×°±¸´ËÎäÆ÷¡£\n");
+                        return notify_fail("ä½ çš„å…§åŠ›ä¸è¶³ï¼Œç„¡æ³•è£å‚™æ­¤æ­¦å™¨ã€‚\n");
         }
 
-        flag = query("flag"); // Ë«ÊÖÎäÆ÷±êÖ¾ 1:±ØĞëË«ÊÖ²ÅÄÜ×°±¸,2:¿ÉÒÔ²»Í¬ÊÖ×°±¸
+        flag = query("flag"); // é›™æ‰‹æ­¦å™¨æ¨™å¿— 1:å¿…é ˆé›™æ‰‹æ‰èƒ½è£å‚™,2:å¯ä»¥ä¸åŒæ‰‹è£å‚™
 
-        if( left ) { // Ö¸¶¨½«±øÆ÷×°±¸ÓÚ×óÊÖ
+        if( left ) { // æŒ‡å®šå°‡å…µå™¨è£å‚™äºå·¦æ‰‹
                 if( !(flag & SECONDARY) )
                         return 0;
                 if( query_temp("secondary_weapon", owner) )
@@ -319,19 +319,19 @@ varargs int wield(int left)
                     query_temp("armor/hands", owner) ||
                     query_temp("armor/finger", owner) ||
                     query_temp("handing", owner) )
-                        return notify_fail("Äã±ØĞë¿Õ³öË«ÊÖ²ÅÄÜ×°±¸¸ÃÎäÆ÷¡£\n");
+                        return notify_fail("ä½ å¿…é ˆç©ºå‡ºé›™æ‰‹æ‰èƒ½è£å‚™è©²æ­¦å™¨ã€‚\n");
                 set_temp("weapon", this_object(), owner);
                 set_temp("secondary_weapon", this_object(), owner);
         } else {
                 if( query_temp("armor/hands", owner) &&
                     (query_temp("armor/finger", owner) ||
                      query_temp("handing", owner)) )
-                        return notify_fail("Äã±ØĞë¿Õ³öÒ»Ö»ÊÖ²ÅÄÜ×°±¸¸ÃÎäÆ÷¡£\n");
+                        return notify_fail("ä½ å¿…é ˆç©ºå‡ºä¸€åªæ‰‹æ‰èƒ½è£å‚™è©²æ­¦å™¨ã€‚\n");
 
                 if( query_temp("armor/finger", owner) &&
                     (query_temp("armor/hands", owner) ||
                      query_temp("handing", owner)) )
-                        return notify_fail("Äã±ØĞë¿Õ³öÒ»Ö»ÊÖ²ÅÄÜ×°±¸¸ÃÎäÆ÷¡£\n");
+                        return notify_fail("ä½ å¿…é ˆç©ºå‡ºä¸€åªæ‰‹æ‰èƒ½è£å‚™è©²æ­¦å™¨ã€‚\n");
 
                 // If we are are using any weapon?
                 if( !(old_weapon=query_temp("weapon", owner)) )
@@ -351,14 +351,14 @@ varargs int wield(int left)
                                 old_weapon->unequip();
                                 set_temp("weapon", this_object(), owner);
                                 old_weapon->wield();
-                                message_vision("$N½«ÓÒÊÖµÄ$n»»µ½×óÊÖ¡£\n", owner, old_weapon);
+                                message_vision("$Nå°‡å³æ‰‹çš„$næ›åˆ°å·¦æ‰‹ã€‚\n", owner, old_weapon);
                         // We require unwield our old weapon before we can use this one.
                         } else
-                                return notify_fail("Äã±ØĞëÏÈ·ÅÏÂÄãÄ¿Ç°×°±¸µÄÎäÆ÷¡£\n");
+                                return notify_fail("ä½ å¿…é ˆå…ˆæ”¾ä¸‹ä½ ç›®å‰è£å‚™çš„æ­¦å™¨ã€‚\n");
 
                 // We have both hands wearing something.
                 } else
-                        return notify_fail("Äã±ØĞë¿Õ³öÒ»Ö»ÊÖÀ´Ê¹ÓÃÎäÆ÷¡£\n");
+                        return notify_fail("ä½ å¿…é ˆç©ºå‡ºä¸€åªæ‰‹ä¾†ä½¿ç”¨æ­¦å™¨ã€‚\n");
         }
 
         apply1 = keys(weapon_prop);
@@ -376,7 +376,7 @@ varargs int wield(int left)
                         addn_temp("apply/"+apply2[i], enchase_prop[apply2[i]], owner);
                 }
         }
-        if( mapp(enchase_prop = copy(query("enchase/rune_prop"))) && sizeof(enchase_prop) ) { // ·ûÎÄÎïÓï
+        if( mapp(enchase_prop = copy(query("enchase/rune_prop"))) && sizeof(enchase_prop) ) { // ç¬¦æ–‡ç‰©èª
                 apply2 = keys(enchase_prop);
                 for( int i = 0; i<sizeof(apply2); i++ ) {
                         if( apply2[i] == "int" || apply2[i] == "str" ||
@@ -386,7 +386,7 @@ varargs int wield(int left)
                         addn_temp("apply/"+apply2[i], enchase_prop[apply2[i]], owner);
                 }
         }
-        if( mapp(enchase_prop = copy(query("reform/apply_prop"))) && sizeof(enchase_prop) ) { // ¸ÄÔì
+        if( mapp(enchase_prop = copy(query("reform/apply_prop"))) && sizeof(enchase_prop) ) { // æ”¹é€ 
                 apply2 = keys(enchase_prop);
                 for( int i = 0; i<sizeof(apply2); i++ ) {
                         if( apply2[i] == "int" || apply2[i] == "str" ||
@@ -414,16 +414,16 @@ varargs int wield(int left)
         set("equipped", "wielded");
 
         // modified by Lonely
-        // bindable == 1 ×°±¸°ó¶¨
+        // bindable == 1 è£å‚™ç¶å®š
         if( query("bindable") && query("bindable") == 1 &&
             !query("bind_owner") && userp(owner) ) {
                 set("bind_owner",query("id", owner));
                 set("set_data", 1);
-                tell_object(owner, HIM "ÄãÄÚĞÄÉî´¦ÒşÒşÔ¼Ô¼µÄ¸ĞÓ¦µ½" + this_object()->name() +
-                                   HIM "ÓëÄãÈÚÎªÒ»Ìå¡£\n" NOR);
+                tell_object(owner, HIM "ä½ å…§å¿ƒæ·±è™•éš±éš±ç´„ç´„çš„æ„Ÿæ‡‰åˆ°" + this_object()->name() +
+                                   HIM "èˆ‡ä½ èç‚ºä¸€é«”ã€‚\n" NOR);
         }
 
-        // Õ½³¡ÉÏÎŞĞ§
+        // æˆ°å ´ä¸Šç„¡æ•ˆ
         if( f && !query_temp("warquest", owner) )
         {
                 max_qi=query("max_qi", owner);
@@ -459,7 +459,7 @@ int unequip()
                 return 0;
 
         if( !stringp(equipped = query("equipped")) )
-                return notify_fail("ÄãÄ¿Ç°²¢Ã»ÓĞ×°±¸ÕâÑù¶«Î÷¡£\n");
+                return notify_fail("ä½ ç›®å‰ä¸¦æ²’æœ‰è£å‚™é€™æ¨£æ±è¥¿ã€‚\n");
 
         if( equipped == "wielded" ) {
                 if( query_temp("weapon", owner) == this_object()){
@@ -547,7 +547,7 @@ int unequip()
 
         delete("equipped");
 
-        // Õ½³¡ÉÏÎŞĞ§
+        // æˆ°å ´ä¸Šç„¡æ•ˆ
         if( flag && !query_temp("warquest", owner) ) CHAR_D->setup_char(owner);
 
         return 1;

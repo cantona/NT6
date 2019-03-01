@@ -6,13 +6,13 @@ inherit ITEM;
 
 void create()
 {
-        set_name("ÓÍ²¼°ü", ({ "bag", "bao" }));
+        set_name("æ²¹å¸ƒåŒ…", ({ "bag", "bao" }));
         set_weight(200);
         if (clonep())
                 set_default_object(__FILE__);
         else {
-                set("unit", "¸ö");
-                set("long", "ÕâÊÇÒ»¸öÓÍ²¼°ü¹ü¡£\n");
+                set("unit", "å€‹");
+                set("long", "é€™æ˜¯ä¸€å€‹æ²¹å¸ƒåŒ…è£¹ã€‚\n");
                 set("value", 500);
                 set("material", "cloth");
         }
@@ -39,21 +39,21 @@ int do_open(string arg)
 
         if( !query("jiuyang/zhang", me) )
         {
-                write("Ê²Ã´£¿\n"); 
+                write("ä»€éº¼ï¼Ÿ\n"); 
                 return 1; 
         }
 
         if (query("book_count") < 1)
         {
-                write("ÓÍ²¼°üÀïÃæÊ²Ã´Ò²Ã»ÓÐÁË¡£\n");
+                write("æ²¹å¸ƒåŒ…è£¡é¢ä»€éº¼ä¹Ÿæ²’æœ‰äº†ã€‚\n");
                 return 1;
         }
 
         me = this_player();
         where = environment(me);
-        message_vision("$NÇáÇáµØ°ÑÓÍ²¼°üÀ´¿´Ê±£¬ÀïÃæÔ­À´ÊÇÒ»±¾"
-                       "±¡±¡µÄ¾­Êé£¬Ö»ÒòÓÍ²¼°üµÃ½ôÃÜ£¬Ëä³¤ÆÚ²Ø"
-                       "ÔÚÔ³¸¹Ö®ÖÐ£¬ÊéÒ³ÈÔÈ»ÍêºÃÎÞËð¡£\n", me);
+        message_vision("$Nè¼•è¼•åœ°æŠŠæ²¹å¸ƒåŒ…ä¾†çœ‹æ™‚ï¼Œè£¡é¢åŽŸä¾†æ˜¯ä¸€æœ¬"
+                       "è–„è–„çš„ç¶“æ›¸ï¼Œåªå› æ²¹å¸ƒåŒ…å¾—ç·Šå¯†ï¼Œé›–é•·æœŸè—"
+                       "åœ¨çŒ¿è…¹ä¹‹ä¸­ï¼Œæ›¸é ä»ç„¶å®Œå¥½ç„¡æã€‚\n", me);
         book = new("/clone/book/jiuyang-book");
         book->move(file_name(where));
         addn("book_count", -1);
